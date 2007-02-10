@@ -40,22 +40,8 @@ if [ -z "$dir" -o -z "$datetime" ]; then
   reason="cluster"; tag="cluster"
 elif bzgrep -q 'list of extra files and directories' $1; then
   reason="mtree"; tag="mtree"
-elif bzgrep -q "See <URL:http://gcc.gnu.org/bugs.html> for instructions." $1; then
-  reason="gcc_bug"; tag="gcc-bug"
-elif bzgrep -q "See <URL:http://www.gnu.org/software/gcc/bugs.html> for instructions." $1; then
-  reason="gcc_bug"; tag="gcc-bug"
-elif bzgrep -q 'Checksum mismatch' $1; then
-  reason="checksum"; tag="checksum"
-elif bzgrep -qE '/usr/local/bin/(perl|perl5.6.1):.*(not found|No such file or directory)' $1; then
-  reason="perl"; tag="perl"
-elif bzgrep -qE 'perl(.*): Perl is not installed, try .pkg_add -r perl.' $1; then
-  reason="perl"; tag="perl"
-elif bzgrep -q 'cannot find -lc_r' $1; then
-  reason="threads"; tag="threads"
-elif bzgrep -q "checking for.*lc_r\.\.\. no" $1; then
-  reason="threads"; tag="threads"
-elif bzgrep -qE '(No checksum recorded for|(Maybe|Either) .* is out of date, or)' $1; then
-  reason="distinfo_update"; tag="distinfo"
+elif bzgrep -qE "(Error: mtree file ./etc/mtree/BSD.local.dist. is missing|error in pkg_delete|filesystem was touched prior to .make install|list of files present before this port was installed|list of filesystem changes from before and after)" $1; then
+  reason="mtree"; tag="mtree"
 # note: must run before the configure_error check
 elif bzgrep -qE "Configuration .* not supported" $1; then
   reason="arch"; tag="arch"
@@ -69,10 +55,6 @@ elif bzgrep -qE '(configure: error:|Script.*configure.*failed unexpectedly|scrip
   fi
 elif bzgrep -q "Couldn't fetch it - please try" $1; then
   reason="fetch"; tag="fetch"
-elif bzgrep -q "out of .* hunks .*--saving rejects to" $1; then
-  reason="patch"; tag="patch"
-elif bzgrep -qi 'read-only file system' $1; then
-  reason="WRKDIR"; tag="wrkdir"
 elif bzgrep -q "Error: shared library \".*\" does not exist" $1; then
   reason="LIB_DEPENDS"; tag="libdepends"
 elif bzgrep -q ".*\.h: No such file" $1; then
@@ -85,14 +67,6 @@ elif bzgrep -q ".*\.h: No such file" $1; then
   else
 	reason="missing_header"; tag="header"
   fi
-elif bzgrep -q "pnohang: killing make checksum" $1; then
-  reason="fetch_timeout"; tag="fetch-timeout"
-elif bzgrep -qE "USER   PID  PPID  PGID.*JOBC STAT  TT       TIME COMMAND" $1; then
-  reason="runaway_process"; tag="runaway"
-elif bzgrep -q "pnohang: killing make package" $1; then
-  reason="runaway_process"; tag="runaway"
-elif bzgrep -qE "pkg_(add|create):.*(can't find enough temporary space|projected size of .* exceeds available free space)" $1; then
-  reason="disk_full"; tag="df"
 elif bzgrep -qE '(parse error|too (many|few) arguments to|argument.*doesn.*prototype|incompatible type for argument|conflicting types for|undeclared \(first use (in |)this function\)|incorrect number of parameters|has incomplete type and cannot be initialized|error: storage size.* isn.t known)' $1; then
   reason="compiler_error"; tag="cc"
 elif bzgrep -qE '(ANSI C.. forbids|is a contravariance violation|changed for new ANSI .for. scoping|[0-9]: passing .* changes signedness|discards qualifiers|lacks a cast|redeclared as different kind of symbol|invalid type .* for default argument to|wrong type argument to unary exclamation mark|duplicate explicit instantiation of|incompatible types in assignment|assuming . on overloaded member function|call of overloaded .* is ambiguous|declaration of C function .* conflicts with|initialization of non-const reference type|using typedef-name .* after|[0-9]: implicit declaration of function|[0-9]: size of array .* is too large|fixed or forbidden register .* for class|assignment of read-only variable|error: label at end of compound statement|error:.*(has no|is not a) member|error:.*is (private|protected)|error: uninitialized member|error: unrecognized command line option)' $1; then
@@ -103,12 +77,8 @@ elif bzgrep -qE 'error: (array type has incomplete element type|extra qualificat
   reason="gcc4_error"; tag="gcc4"
 elif bzgrep -qE '(/usr/libexec/elf/ld: cannot find|undefined reference to|cannot open -l.*: No such file)' $1; then
   reason="linker_error"; tag="ld"
-elif bzgrep -qE 'chown:.*[Ii]nvalid argument' $1; then
-  reason="chown"; tag="chown"
 elif bzgrep -q 'install: .*: No such file' $1; then
   reason="install_error"; tag="install"
-elif bzgrep -q "/usr/.*/man/.*: No such file or directory" $1; then
-  reason="manpage"; tag="manpage"
 elif bzgrep -qE "(Can't|unable to) open display" $1; then
   reason="DISPLAY"; tag="display"
 elif bzgrep -q "conflicts with installed package" $1; then
@@ -117,16 +87,13 @@ elif bzgrep -q " is already installed - perhaps an older version" $1; then
   reason="depend_object"; tag="dependobj"
 elif bzgrep -q "You may wish to ..make deinstall.. and install this port again" $1; then
   reason="depend_object"; tag="dependobj"
-elif bzgrep -q "error in dependency .*, exiting" $1; then
-  reason="depend_package"; tag="dependpkg"
 elif bzgrep -q "core dumped" $1; then
   reason="coredump"; tag="coredump"
 elif bzgrep -q "Segmentation fault" $1; then
   reason="segfault"; tag="segfault"
-elif bzgrep -q "initializer element is not constant" $1; then
-  reason="stdio"; tag="stdio"
-elif bzgrep -q "structure has no member named" $1; then
-  reason="struct_changes"; tag="struct"
+
+# below here are the less common items
+
 elif bzgrep -q ".s: Assembler messages:" $1; then
   reason="arch"; tag="arch"
 elif bzgrep -qE "Cannot (determine .* target|find the byte order) for this architecture" $1; then
@@ -183,20 +150,34 @@ elif bzgrep -q "autoheader: not found" $1; then
   reason="autoheader"; tag="autoheader"
 elif bzgrep -qE "automake(.*): not found" $1; then
   reason="automake"; tag="automake"
+elif bzgrep -q 'Checksum mismatch' $1; then
+  reason="checksum"; tag="checksum"
+elif bzgrep -qE 'chown:.*[Ii]nvalid argument' $1; then
+  reason="chown"; tag="chown"
 elif bzgrep -q "Shared object \"libc.so.6\" not found, required by" $1; then
   reason="compat6x"; tag="compat6x"
+elif bzgrep -q "error in dependency .*, exiting" $1; then
+  reason="depend_package"; tag="dependpkg"
+elif bzgrep -qE "pkg_(add|create):.*(can't find enough temporary space|projected size of .* exceeds available free space)" $1; then
+  reason="disk_full"; tag="df"
 elif bzgrep -q "Cannot open /dev/tty for read" $1; then
   reason="DISPLAY"; tag="display"
 elif bzgrep -q "RuntimeError: cannot open display" $1; then
   reason="DISPLAY"; tag="display"
 elif bzgrep -q "You must run this program under the X-Window System" $1; then
   reason="DISPLAY"; tag="display"
+elif bzgrep -qE '(No checksum recorded for|(Maybe|Either) .* is out of date, or)' $1; then
+  reason="distinfo_update"; tag="distinfo"
 elif bzgrep -qE "Member name contains .\.\." $1; then
   reason="fetch"; tag="fetch"
-elif bzgrep -q "fetch: transfer timed out" $1; then
+elif bzgrep -q "pnohang: killing make checksum" $1; then
   reason="fetch_timeout"; tag="fetch-timeout"
 elif bzgrep -q "fetch: transfer timed out" $1; then
   reason="fetch_timeout"; tag="fetch-timeout"
+elif bzgrep -q "See <URL:http://gcc.gnu.org/bugs.html> for instructions." $1; then
+  reason="gcc_bug"; tag="gcc-bug"
+elif bzgrep -q "See <URL:http://www.gnu.org/software/gcc/bugs.html> for instructions." $1; then
+  reason="gcc_bug"; tag="gcc-bug"
 elif bzgrep -q 'Run-time system build failed for some reason' $1; then
   reason="install_error"; tag="install"
 elif bzgrep -q 'tar: Error opening archive: Failed to open.*No such file or directory' $1; then
@@ -217,8 +198,14 @@ elif bzgrep -q "Could not create Makefile" $1; then
   reason="makefile"; tag="makefile"
 elif bzgrep -v "regression-test.continuing" $1 | grep -qE "make.*(cannot open [Mm]akefile|don.t know how to make|fatal errors encountered|No rule to make target|built-in)"; then
   reason="makefile"; tag="makefile"
-elif bzgrep -qE "(Error: mtree file ./etc/mtree/BSD.local.dist. is missing|error in pkg_delete|filesystem was touched prior to .make install|list of files present before this port was installed|list of filesystem changes from before and after)" $1; then
-  reason="mtree"; tag="mtree"
+elif bzgrep -q "/usr/.*/man/.*: No such file or directory" $1; then
+  reason="manpage"; tag="manpage"
+elif bzgrep -q "out of .* hunks .*--saving rejects to" $1; then
+  reason="patch"; tag="patch"
+elif bzgrep -qE '/usr/local/bin/(perl|perl5.6.1):.*(not found|No such file or directory)' $1; then
+  reason="perl"; tag="perl"
+elif bzgrep -qE 'perl(.*): Perl is not installed, try .pkg_add -r perl.' $1; then
+  reason="perl"; tag="perl"
 elif bzgrep -qE "cp:.*site_perl: No such file or directory" $1; then
   reason="perl"; tag="perl"
 elif bzgrep -q "Perl .* required--this is only version" $1; then
@@ -233,6 +220,20 @@ elif bzgrep -q "Signal 1[01]" $1; then
   reason="process_failed"; tag="process"
 elif bzgrep -q "python: not found" $1; then
   reason="python"; tag="python"
+elif bzgrep -qE "USER   PID  PPID  PGID.*JOBC STAT  TT       TIME COMMAND" $1; then
+  reason="runaway_process"; tag="runaway"
+elif bzgrep -q "pnohang: killing make package" $1; then
+  reason="runaway_process"; tag="runaway"
+elif bzgrep -q "initializer element is not constant" $1; then
+  reason="stdio"; tag="stdio"
+elif bzgrep -q "structure has no member named" $1; then
+  reason="struct_changes"; tag="struct"
+elif bzgrep -q "shminit failed: Permission denied" $1; then
+  reason="sysvipc"; tag="sysvipc"
+elif bzgrep -q 'cannot find -lc_r' $1; then
+  reason="threads"; tag="threads"
+elif bzgrep -q "checking for.*lc_r\.\.\. no" $1; then
+  reason="threads"; tag="threads"
 elif bzgrep -q ': The -pthread option is deprecated' $1; then
   reason="threads"; tag="threads"
 elif bzgrep -q "Error: pthreads are required to build this package" $1; then
@@ -247,8 +248,8 @@ elif bzgrep -q "/usr/bin/ld: cannot find -lXThrStub" $1; then
   reason="threads"; tag="threads"
 elif bzgrep -q "<varargs.h> is obsolete with this version of GCC" $1; then
   reason="varargs"; tag="varargs"
-elif bzgrep -q "shminit failed: Permission denied" $1; then
-  reason="sysvipc"; tag="sysvipc"
+elif bzgrep -qi 'read-only file system' $1; then
+  reason="WRKDIR"; tag="wrkdir"
 
 # Although these can be fairly common, and thus in one sense ought to be
 # earlier in the evaluation, in practice they are most often secondary
@@ -269,8 +270,6 @@ elif bzgrep -q "pkg_create: make_dist: tar command failed with code" $1; then
 else
   reason="???"; tag="unknown"
 fi
-
-# XXX MCL perhaps segfault, coredump should be unified into process failed?
 
 # clean up some error cases -- the way .logs works, it expects that
 # every field in it MUST be nonblank, so we insert a metatoken here.
