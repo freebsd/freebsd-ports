@@ -19,6 +19,8 @@ LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		wv-1.2.3:${PORTSDIR}/textproc/wv \
 		gmime-2.0.4:${PORTSDIR}/mail/gmime2
 
+BROKEN=		Installs file into /
+
 USE_FAM=	yes
 WANT_FAM_SYSTEM=	gamin
 USE_GSTREAMER=	core
