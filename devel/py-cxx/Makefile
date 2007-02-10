@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cxx
-PORTVERSION=	5.3.6
+PORTVERSION=	5.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,8 +19,10 @@ COMMENT=	Make it easier to extend Python with C++
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+USE_PYTHON_PREFIX=	yes
 
 .if !defined(NOPORTDOCS)
+DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 PORTDOCS=	*
 .endif
 

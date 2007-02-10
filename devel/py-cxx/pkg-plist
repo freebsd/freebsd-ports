@@ -4,6 +4,7 @@ include/%%PYTHON_VERSION%%/CXX/Extensions.hxx
 include/%%PYTHON_VERSION%%/CXX/IndirectPythonInterface.hxx
 include/%%PYTHON_VERSION%%/CXX/Objects.hxx
 include/%%PYTHON_VERSION%%/CXX/Version.hxx
+include/%%PYTHON_VERSION%%/CXX/WrapPython.h
 @dirrm include/%%PYTHON_VERSION%%/CXX
 %%PYTHON_SITELIBDIR%%/CXX/__init__.py
 %%PYTHON_SITELIBDIR%%/CXX/__init__.pyc
