@@ -39,6 +39,10 @@ PLIST_SUB=		GCONF_API_VERSION=${GCONF_API_VERSION} \
 
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+		${WRKSRC}/configure
+
 do-install:
 	${MKDIR} ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/.libs/libgconfjni-${GCONF_API_VERSION}.so \

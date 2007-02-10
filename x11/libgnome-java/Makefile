@@ -45,6 +45,8 @@ PKGMESSAGE=		${WRKDIR}/pkg-message
 post-extract:
 	@${REINPLACE_CMD} -e 's|||g' \
 		${WRKSRC}/gnome2-java.pc.in
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+	    	${WRKSRC}/configure
 
 do-install:
 	${MKDIR} ${PREFIX}/lib
