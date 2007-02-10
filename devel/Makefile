@@ -1793,6 +1793,7 @@
     SUBDIR += py-protocols-devel
     SUBDIR += py-psyco
     SUBDIR += py-px
+    SUBDIR += py-pycallgraph
     SUBDIR += py-pydasm
     SUBDIR += py-pytz
     SUBDIR += py-rbtree
