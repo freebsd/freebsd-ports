@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070210:
+  AFFECTS: users of x11/kdebase3
+  AUTHOR: kde@freebsd.org
+
+  The media kioslave now mounts cdrom/dvd volumes with local charset
+  conversion (mount_cd9660 -C <charset>), which requires the cd9660_iconv
+  kernel module to be available (will be autoloaded on demand).
+
 20070209:
   AFFECTS: users of x11/nvidia-driver
   AUTHOR: danfe@FreeBSD.org
