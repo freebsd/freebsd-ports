@@ -7,10 +7,12 @@
 
 PORTNAME=	yap
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://www.gnustep.it/marko/GPSText/
 DISTNAME=	Yap
 EXTRACT_SUFX=	.tgz
+DIST_SUBDIR=	repacked
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep a2ps/gs frontend
