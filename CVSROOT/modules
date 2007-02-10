@@ -9763,6 +9763,7 @@ p5-Math-BaseCalc	ports/math/p5-Math-BaseCalc
 p5-Math-Bezier	ports/math/p5-Math-Bezier
 p5-Math-Bezier-Convert	ports/math/p5-Math-Bezier-Convert
 p5-Math-BigInt	ports/math/p5-Math-BigInt
+p5-Math-BigInt-GMP	ports/math/p5-Math-BigInt-GMP
 p5-Math-BigRat	ports/math/p5-Math-BigRat
 p5-Math-Calc-Units	ports/math/p5-Math-Calc-Units
 p5-Math-Cephes	ports/math/p5-Math-Cephes
