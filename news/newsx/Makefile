@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${LOCALBASE}/news/lib/libcnews.a:${PORTSDIR}/news/cnews
 BUILD_DEPENDS=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
 .endif
 
+BROKEN=		Configure fails
+
 GNU_CONFIGURE=	yes
 
 CONFLICTS=	leafnode-1.9.*
