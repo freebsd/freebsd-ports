@@ -1,0 +1,11 @@
+Net::DNS::Resolver::Programmable is a Net::DNS::Resolver
+descendant class that allows a virtual DNS to be emulated
+instead of querying the real DNS.  A set of static DNS
+records may be supplied, or arbitrary code may be specified
+as a means for retrieving DNS records, or even generating
+them on the fly.
+
+WWW: http://search.cpan.org/dist/Net-DNS-Resolver-Programmable/
+
+- Koen Martens
+gmc@sonologic.nl
