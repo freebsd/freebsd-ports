@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fdupes
-PORTVERSION=	1.40
+DISTVERSION=	1.50-PR1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://netdial.caribe.net/~adrian2/programs/ \
 		http://critical.ch/distfiles/ \
@@ -15,21 +15,20 @@ MASTER_SITES=	http://netdial.caribe.net/~adrian2/programs/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Fdupes is a program for identifying or deleting duplicate files
 
-USE_GETOPT_LONG=	yes
-
 MAN1=		fdupes.1
 PLIST_FILES=	bin/fdupes
 
+CFLAGS+=	-DVERSION=\"${PORTVERSION}\"
+
 .include <bsd.port.pre.mk>
 
-CFLAGS+=	-DHAVE_DECL_GETOPT
+.if (${OSVERSION} < 500041)
+CFLAGS+=	-DOMIT_GETOPT_LONG=yes
+.endif
 
 do-build:
-.if ${OSVERSION} < 500041
-	${CC} ${CFLAGS} ${WRKSRC}/${PORTNAME}.c ${WRKSRC}/md5/md5.c -o ${WRKSRC}/${PORTNAME} -DVERSION=\"${PORTVERSION}\" -I${LOCALBASE}/include ${LOCALBASE}/lib/libgnugetopt.so
-.else
-	${CC} ${CFLAGS} ${WRKSRC}/${PORTNAME}.c ${WRKSRC}/md5/md5.c -o ${WRKSRC}/${PORTNAME} -DVERSION=\"${PORTVERSION}\"
-.endif
+	${CC} ${CFLAGS} ${WRKSRC}/${PORTNAME}.c ${WRKSRC}/md5/md5.c \
+		-o ${WRKSRC}/${PORTNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
