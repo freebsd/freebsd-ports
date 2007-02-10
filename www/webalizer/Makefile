@@ -170,6 +170,10 @@ post-install:
 .for i in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/webalizer.1 ${PREFIX}/man/man1/${i}
 .endfor
+.if defined(WITH_GEOIP)
+	${MKDIR} ${PREFIX}/share/geolizer
+	@${INSTALL_DATA} ${WRKDIR}/*.png ${PREFIX}/share/geolizer/
+.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for i in ${DOC1}
@@ -180,12 +184,11 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${EXAMPLESDIR}/${i}
 .endfor
 .if defined(WITH_GEOIP)
-	${MKDIR} ${DOCSDIR}/geolizer/flags
+	${MKDIR} ${DOCSDIR}/geolizer
 .for i in ${DOC2}
 	@${INSTALL_DATA} ${WRKDIR}/geolizer_2.01-10-patch/${i} \
 		${DOCSDIR}/geolizer/${i}
 .endfor
-	@${INSTALL_DATA} ${WRKDIR}/*.png ${DOCSDIR}/geolizer/flags/
 .endif
 .endif
 
