@@ -365,7 +365,6 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can use liba52 as default audio encoder by defining WITH_LIBA52_DEFAULT."
 	@${ECHO_MSG} "This implies WITH_LIBA52."
-	@${ECHO_MSG}
 .endif
 .if !defined(WITH_AVIFILE)
 	@${ECHO_MSG}
