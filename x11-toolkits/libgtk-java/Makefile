@@ -43,6 +43,8 @@ MAKE_ENV+=	BOOTCLASSPATH=${JAVA_CLASSES}
 post-patch:
 	@${REINPLACE_CMD} -e 's|sed -i|${SED} -i.bak -e|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|||' ${WRKSRC}/gtk2-java.pc.in
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+		${WRKSRC}/configure
 
 do-install:
 	${MKDIR} ${PREFIX}/lib

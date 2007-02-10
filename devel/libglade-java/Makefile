@@ -42,6 +42,10 @@ PLIST_SUB=		GLADE_API_VERSION=${GLADE_API_VERSION} \
 
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+		${WRKSRC}/configure
+
 do-install:
 	${MKDIR} ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/.libs/libgladejni-${GLADE_API_VERSION}.so \
