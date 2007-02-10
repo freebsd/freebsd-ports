@@ -15,7 +15,8 @@ DISTNAME=	robot-beta
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graph plotting and data analysis program using OpenLook
 
-BUILD_DEPENDS=	fsplit:${PORTSDIR}/devel/fortran-utils
+BUILD_DEPENDS=	fsplit:${PORTSDIR}/devel/fortran-utils \
+		imake:${X_IMAKE_PORT}
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 USE_X_PREFIX=	yes
