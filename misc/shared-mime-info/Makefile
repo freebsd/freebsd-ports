@@ -5,15 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	shared-mime-info
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	misc gnome
-MASTER_SITES=	http://www.marcuscom.com/downloads/ \
-		http://people.freedesktop.org/~hadess/
-DISTNAME=	shared-mime-info-${PORTVERSION}
+MASTER_SITES=	http://people.freedesktop.org/~hadess/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A MIME type database from the FreeDesktop project
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
