@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	beepmp
 DISTNAME=	bmp-${PORTVERSION}
 
-MAINTAINER=	mmendez@energyhq.be
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 multimedia player
 
 USE_GNOME=	gtk20 libglade2 desktopfileutils

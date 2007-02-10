@@ -25,7 +25,7 @@ DISTNAME=	xmame-${XMAMEVERSION:S/.r/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:xmame
 DIST_SUBDIR=	xmame
 
-MAINTAINER?=	mmendez@energyhq.be
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	UNIX/X11 port of the Multi Arcade Machine Emulator (MAME)
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2

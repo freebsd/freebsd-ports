@@ -10,7 +10,7 @@ PORTVERSION=	0.4.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.berlios.de/${PORTNAME}/
 
-MAINTAINER=	mmendez@energyhq.be
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 send-pr tool
 
 LIB_DEPENDS=	esmtp.6:${PORTSDIR}/mail/libesmtp
