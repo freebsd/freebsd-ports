@@ -63,14 +63,7 @@ PATH=$PATH:/sbin:/usr/sbin; export PATH
 name="mta"
 rcvar=`set_rcvar`
 
-_mta_rc_script="%%PREFIX%%/etc/rc.d/mta"
-_mta_osversion="`sysctl -n kern.osreldate`"
-if [ \( "$_mta_osversion" -lt "600101" \) -o \
-	\( \( $_mta_osversion -ge 700000 \) -a \
-		\( $_mta_osversion -lt 700007 \) \) ]
-then
-	_mta_rc_script="${_mta_rc_script}.sh"
-fi
+_mta_rc_script="%%PREFIX%%/etc/rc.d/mta%%RC_SUBR_SUFFIX%%"
 
 load_rc_config $name
 

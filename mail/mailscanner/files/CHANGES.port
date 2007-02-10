@@ -1,3 +1,9 @@
+Version 4.58.9
+================
+- Upgrade to MailScanner 4.58
+- fix: CHANGES.port was not installed anymore
+- startscripts now honor RC_SUBR_SUFFIX
+
 Version 4.57.6_1
 ================
 - Upgrade to MailScanner 4.57
