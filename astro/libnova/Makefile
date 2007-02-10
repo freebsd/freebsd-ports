@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	libnova
-PORTVERSION=	0.12.0
+PORTVERSION=	0.12.1
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_${PORTVERSION}-1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Astronomical Calculation Library
@@ -29,8 +28,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 IGNORE=		requires FreeBSD 5.3 or higher
 .endif
 
-post-extract:
-	@${TAR} xf ${WRKDIR}/${PORTNAME}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} -C ${WRKDIR}
+#post-extract:
+#	@${TAR} xf ${WRKDIR}/${PORTNAME}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} -C ${WRKDIR}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
