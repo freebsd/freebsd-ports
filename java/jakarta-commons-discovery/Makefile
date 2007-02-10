@@ -6,37 +6,33 @@
 #
 
 PORTNAME=	commons-discovery
-PORTVERSION=	0.2
+PORTVERSION=	0.4
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,-,/,}/binaries
 PKGNAMEPREFIX=	jakarta-
 
-MAINTAINER=	hq@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Java library for locating resources (including classes)
 
 USE_JAVA=	YES
 JAVA_VERSION=	1.3+
-JAVA_RUN=	JDK
 NO_BUILD=	YES
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	api LICENSE
+PORTDOCS=	*
 .endif
 JARFILE=	${PORTNAME}.jar
 PLIST_FILES+=	%%JAVAJARDIR%%/${JARFILE}
 
-post-extract:
-	@${MV} ${WRKSRC}/LICENSE ${WRKSRC}/docs/
-
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
-	@${INSTALL_DATA} ${WRKSRC}/${JARFILE} ${JAVAJARDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${JARFILE}
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation..."
-	@cd ${WRKSRC}/docs && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
-	@cd ${WRKSRC}/docs && ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	@cd ${WRKSRC}/docs && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
+	@cd ${WRKSRC}/docs && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 
