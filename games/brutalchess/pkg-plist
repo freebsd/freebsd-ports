@@ -21,9 +21,8 @@ libexec/objview
 %%DATADIR%%/models/pawn.obj
 %%DATADIR%%/models/queen.obj
 %%DATADIR%%/models/rook.obj
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm share/brutalchess/art
 @dirrm share/brutalchess/doc
 @dirrm share/brutalchess/fonts
 @dirrm share/brutalchess/models
+@dirrm share/brutalchess/
