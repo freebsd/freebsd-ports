@@ -38,6 +38,10 @@ PKGMESSAGE=		${WRKDIR}/pkg-message
 CONFIGURE_ENV+=	BOOTCLASSPATH=${JAVA_CLASSES}
 MAKE_ENV+=	BOOTCLASSPATH=${JAVA_CLASSES}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+		${WRKSRC}/configure
+
 do-install:
 	${MKDIR} ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/.libs/libcairojni-${CAIRO_API_VERSION}.so \
