@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	mmendez@energyhq.be
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A version of the popular TetriNET multiplayer tetris clone
 
 USE_GETTEXT=	yes

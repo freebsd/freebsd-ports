@@ -11,7 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/
 DISTNAME=	${PORTNAME}hv36-1
 
-MAINTAINER=	mmendez@energyhq.be
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emulates classic DEC, HP, GRI, IBM, Altair, SDS, Honeywell, and others
 
 USE_ZIP=	yes

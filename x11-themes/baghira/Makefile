@@ -11,7 +11,7 @@ CATEGORIES=	x11-themes kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	mmendez@energyhq.be
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Aqua like window decoration and widget style for KDE
 
 #WRKSRC=		${WRKDIR}/${PORTNAME}-release

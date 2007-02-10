@@ -8,7 +8,7 @@
 PORTNAME=	xmess
 PORTREVISION=	2
 
-MAINTAINER=	mmendez@energyhq.be
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 emulator for game consoles
 
 MASTERDIR=	${.CURDIR}/../xmame
