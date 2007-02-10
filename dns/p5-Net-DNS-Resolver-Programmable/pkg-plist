@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Net/DNS/Resolver/Programmable.pm
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/
+@dirrm %%SITE_PERL%%/Net/DNS/Resolver/
+@dirrm %%SITE_PERL%%/Net/DNS/

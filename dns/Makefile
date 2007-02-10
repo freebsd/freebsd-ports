@@ -77,6 +77,7 @@
     SUBDIR += p5-Data-Validate-Domain
     SUBDIR += p5-Net-DNS
     SUBDIR += p5-Net-DNS-Codes
+    SUBDIR += p5-Net-DNS-Resolver-Programmable
     SUBDIR += p5-Net-DNS-SEC
     SUBDIR += p5-Net-DNS-ToolKit
     SUBDIR += p5-Net-DNS-ZoneCheck
