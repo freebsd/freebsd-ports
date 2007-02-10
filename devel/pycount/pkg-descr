@@ -1,0 +1,7 @@
+pycount helps you with a simple analysis of Python code, categorizing it into
+comments, doc strings, blank lines and real code. It creates simple lines
+counts for individual or multiple files, but can also be used to strip
+comments from a source file, say. See a sample output of pycount running on
+itself in verbose mode.
+
+WWW:	http://python.net/~gherman/pycount.html

@@ -1837,6 +1837,7 @@
     SUBDIR += py-zopeInterface
     SUBDIR += py_otp_interface
     SUBDIR += pychecker
+    SUBDIR += pycount
     SUBDIR += pylint
     SUBDIR += pyobfuscate
     SUBDIR += pymacs
