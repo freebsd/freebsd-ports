@@ -12657,6 +12657,7 @@ pybookreader	ports/deskutils/pybookreader
 pychecker	ports/devel/pychecker
 pyching		ports/games/pyching
 pychm		ports/textproc/pychm
+pycount		ports/devel/pycount
 pydance		ports/games/pydance
 pydbdesigner	ports/databases/pydbdesigner
 pydbx		ports/databases/pydbx
