@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eric
-PORTVERSION=	3.9.1
+PORTVERSION=	3.9.4
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	eric-ide
@@ -24,10 +24,11 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/eric3 bin/eric3-api bin/eric3-doc bin/eric3-helpviewer \
 		bin/eric3-qregexp bin/eric3-re bin/eric3-trpreviewer \
-		bin/eric3-uipreviewer bin/eric3-unittest \
+		bin/eric3-uipreviewer bin/eric3-unittest bin/eric3-configure \
 		%%PYTHON_SITELIBDIR%%/sitecustomize.pyc \
 		%%PYTHON_SITELIBDIR%%/sitecustomize.py \
-		%%PYTHON_SITELIBDIR%%/eric3config.py
+		%%PYTHON_SITELIBDIR%%/eric3config.py \
+		%%PYTHON_SITELIBDIR%%/eric3config.pyc
 PLISTDIR=	${PYTHON_SITELIBDIR}/eric3
 
 .include <bsd.port.pre.mk>
