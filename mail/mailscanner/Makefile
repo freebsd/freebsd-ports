@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.57.6
-PORTREVISION=	1
+PORTVERSION=	4.58.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -122,7 +121,8 @@ USRLOCAL_FILES_LIB=	\
 		nod32-autoupdate rav-autoupdate \
 		rav-wrapper sophos-autoupdate
 
-USE_RC_SUBR=	mailscanner.sh mta.sh
+USE_RC_SUBR=	mailscanner mta
+SUB_LIST+=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 
 post-extract:
 	cd ${WRKSRC} && ${TAR} xvzf perl-tar/MailScanner-${PORTVERSION}-${PATCHLEVEL}.tar.gz > /dev/null && ${MV} MailScanner-${PORTVERSION}/* .
@@ -277,6 +277,7 @@ do-install:
 	# Sophos install script
 	${INSTALL_SCRIPT} ${FILESDIR}/Sophos.install.freebsd ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOC_FILES} ${DOCSDIR}
+	cd ${FILESDIR} && ${INSTALL_DATA} CHANGES.port ${DOCSDIR}
 .endif
 	cd ${FILESDIR} && \
 		${INSTALL_MAN} ${MAN8} ${MAN5PREFIX}/man/man8
