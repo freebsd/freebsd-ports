@@ -72,7 +72,8 @@ RUN_DEPENDS+=	htdig:${PORTSDIR}/textproc/htdig
 
 .if defined(WITH_HAL) && ${OSVERSION} > 500035
 EXTRA_PATCHES=	${FILESDIR}/extrapatch-kioslave_media_mediamanager-halbackend.cpp \
-		${FILESDIR}/extrapatch-kioslave_media_mediamanager-halbackend.h
+		${FILESDIR}/extrapatch-kioslave_media_mediamanager-halbackend.h \
+		${FILESDIR}/extrapatch-kioslave_media_mounthelper-kio_media_mounthelper.cpp
 LIB_DEPENDS+=	dbus-qt-1.1:${PORTSDIR}/devel/dbus-qt3 \
 		hal.1:${PORTSDIR}/sysutils/hal
 PLIST_SUB+=	MEDIA=""
