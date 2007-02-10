@@ -20,10 +20,11 @@ COMMENT=	A ncurses binding for Python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-DEPRECATED=	Development ceased and does not work with newer ncurses
-EXPIRATION_DATE=	2007-02-01
-
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 700000
+BROKEN=		does not work with newer ncurses
+.endif
 
 post-patch:
 .if ${PYTHON_REL} >= 230
