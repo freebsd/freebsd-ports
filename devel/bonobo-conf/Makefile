@@ -25,4 +25,8 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+	    	${WRKSRC}/configure
+
 .include <bsd.port.mk>
