@@ -7,6 +7,7 @@
 
 PORTNAME=	ekiga
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.0
@@ -36,7 +37,7 @@ MAN1=		ekiga.1
 .include <bsd.port.pre.mk>
 
 .ifndef (WITHOUT_AVAHI)
-LIB_DEPENDS+=	avahi-core.4:${PORTSDIR}/net/avahi
+LIB_DEPENDS+=	avahi-core.5:${PORTSDIR}/net/avahi
 CONFIGURE_ARGS+=--enable-avahi
 .else
 CONFIGURE_ARGS+=--disable-avahi
