@@ -1,0 +1,11 @@
+--- config/ltconfig.orig	Mon Feb 25 08:42:15 2002
++++ config/ltconfig	Sat Feb 10 15:32:52 2007
+@@ -1115,7 +1115,7 @@
+   ;;
+ 
+ freebsd*)
+-  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
+   version_type=freebsd-$objformat
+   case $version_type in
+     freebsd-elf*)
