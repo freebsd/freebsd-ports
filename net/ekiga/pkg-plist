@@ -100,6 +100,25 @@ share/gnome/help/ekiga/fr/figures/config_d8.png
 share/gnome/help/ekiga/fr/figures/config_d9.png
 share/gnome/help/ekiga/fr/figures/lumi.png
 share/gnome/help/ekiga/fr/figures/stats.png
+share/gnome/help/ekiga/sv/ekiga.xml
+share/gnome/help/ekiga/sv/figures/accounts_d1.png
+share/gnome/help/ekiga/sv/figures/accounts_h323.png
+share/gnome/help/ekiga/sv/figures/accounts_sip.png
+share/gnome/help/ekiga/sv/figures/audio_codecs.png
+share/gnome/help/ekiga/sv/figures/call_d1.png
+share/gnome/help/ekiga/sv/figures/chat_d1.png
+share/gnome/help/ekiga/sv/figures/config_d1.png
+share/gnome/help/ekiga/sv/figures/config_d10.png
+share/gnome/help/ekiga/sv/figures/config_d2.png
+share/gnome/help/ekiga/sv/figures/config_d3.png
+share/gnome/help/ekiga/sv/figures/config_d4.png
+share/gnome/help/ekiga/sv/figures/config_d5.png
+share/gnome/help/ekiga/sv/figures/config_d6.png
+share/gnome/help/ekiga/sv/figures/config_d7.png
+share/gnome/help/ekiga/sv/figures/config_d8.png
+share/gnome/help/ekiga/sv/figures/config_d9.png
+share/gnome/help/ekiga/sv/figures/lumi.png
+share/gnome/help/ekiga/sv/figures/stats.png
 share/gnome/help/ekiga/uk/ekiga.xml
 share/gnome/help/ekiga/uk/figures/accounts_d1.png
 share/gnome/help/ekiga/uk/figures/accounts_h323.png
@@ -124,6 +143,7 @@ share/gnome/omf/ekiga/ekiga-bg.omf
 share/gnome/omf/ekiga/ekiga-de.omf
 share/gnome/omf/ekiga/ekiga-es.omf
 share/gnome/omf/ekiga/ekiga-fr.omf
+share/gnome/omf/ekiga/ekiga-sv.omf
 share/gnome/omf/ekiga/ekiga-uk.omf
 share/gnome/pixmaps/ekiga.png
 share/gnome/pixmaps/ekiga/ekiga-logo.png
@@ -209,6 +229,8 @@ share/locale/zh_TW/LC_MESSAGES/ekiga.mo
 @dirrm share/gnome/omf/ekiga
 @dirrm share/gnome/help/ekiga/uk/figures
 @dirrm share/gnome/help/ekiga/uk
+@dirrm share/gnome/help/ekiga/sv/figures
+@dirrm share/gnome/help/ekiga/sv
 @dirrm share/gnome/help/ekiga/fr/figures
 @dirrm share/gnome/help/ekiga/fr
 @dirrm share/gnome/help/ekiga/es/figures
