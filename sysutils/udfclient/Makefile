@@ -9,7 +9,9 @@ PORTNAME=	udfclient
 PORTVERSION=	0.5.4.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.13thmonkey.org/udfclient/releases/ \
-		${MASTER_SITE_NETBSD}
+		${MASTER_SITE_NETBSD} \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	miwi
 DISTNAME=	UDFclient.${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
