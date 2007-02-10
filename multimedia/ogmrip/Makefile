@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ogmrip
-DISTVERSION=	0.10.0-rc4
-PORTREVISION=	1
+DISTVERSION=	0.10.2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,56 +18,106 @@ BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
 		lame:${PORTSDIR}/audio/lame \
-		gocr:${PORTSDIR}/graphics/gocr \
 		gsed:${PORTSDIR}/textproc/gsed
 RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
-		lame:${PORTSDIR}/audio/lame \
-		gocr:${PORTSDIR}/graphics/gocr
-LIB_DEPENDS=	xvidcore:${PORTSDIR}/multimedia/xvid \
-		dvdread:${PORTSDIR}/multimedia/libdvdread \
-		theora:${PORTSDIR}/multimedia/libtheora \
-		enchant:${PORTSDIR}/textproc/enchant
-
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	Broken and no maintainer
-EXPIRATION_DATE=2007-03-21
+		lame:${PORTSDIR}/audio/lame
+LIB_DEPENDS=	dvdread:${PORTSDIR}/multimedia/libdvdread
 
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomehack gnomeprefix gtk20 glib20 gconf2 libglade2 intlhack
+USE_GNOME=	glib20 libxml2 gnomehack
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
-GCONF_SCHEMAS=	ogmrip.schemas
+USE_GSED=	yes
 
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	--sharedstatedir=${PREFIX}/libdata
 GMAKE_ENV+=	GMSGFMT=${localbase}/bin/msgfmt
+
+OPTIONS=	GUI		"Build the GTK+ GUI"				on  \
+		HAL		"Enable Hardware Abstract Layer (HAL) support"	off \
+		FAAC		"Enable Advance Audio Coding (AAC) support"	off \
+		SRT		"Enable SRT text subtitles support"		off \
+		ENCHANT		"Enable spell checking for text subtitles"	off \
+		THEORA		"Enable Ogg Theora video codec support"		off \
+		MATROSKA	"Enable Matroska container support"		off \
+		DEBUG		"Enable debug"					off
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-maintainer-mode --enable-devel-mode
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/bin/mkvmerge)
-BUILD_DEPENDS+=	mkvmerge:${PORTSDIR}/multimedia/mkvtoolnix
-RUN_DEPENDS+=	mkvmerge:${PORTSDIR}/multimedia/mkvtoolnix
-PLIST_SUB+=	MKV_SUPPORT=""
+.if defined(WITHOUT_GUI)
+CONFIGURE_ARGS+=	--disable-gtk-support
+PLIST_SUB+=		GUI_SUPPORT="@comment "
 .else
-PLIST_SUB+=	MKV_SUPPORT="@comment "
+CONFIGURE_ARGS+=	--enable-gtk-support
+PLIST_SUB+=		GUI_SUPPORT=""
+USE_GNOME+=		libglade2 gconf2 intlhack
+GCONF_SCHEMAS=		ogmrip.schemas
 .endif
 
-X264_SUPPORT!=	${LOCALBASE}/bin/mencoder -ovc help 2> /dev/null | ${GREP} -q '^ *x264 *- .*$$' \
-	  && ${ECHO_CMD} "" || ${ECHO_CMD} "@comment "
-PLIST_SUB+=	X264_SUPPORT="${X264_SUPPORT}"
+.if defined(WITH_HAL)
+CONFIGURE_ARGS+=	--enable-hal-support
+LIB_DEPENDS+=		hal:${PORTSDIR}/sysutils/hal
+PLIST_SUB+=		HAL_SUPPORT=""
+.else
+CONFIGURE_ARGS+=	--disable-hal-support
+PLIST_SUB+=		HAL_SUPPORT="@comment "
+.endif
 
-.if !defined(WITH_DEBUG)
-pre-extract:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} " *** Define WITH_DEBUG to enable debug symbols ***"
-	@${ECHO_MSG} ""
+.if defined(WITH_MATROSKA)
+CONFIGURE_ARGS+=	--enable-matroska-support
+BUILD_DEPENDS+=		mkvmerge:${PORTSDIR}/multimedia/mkvtoolnix
+RUN_DEPENDS+=		mkvmerge:${PORTSDIR}/multimedia/mkvtoolnix
+PLIST_SUB+=		MATROSKA_SUPPORT=""
+.else
+CONFIGURE_ARGS+=	--disable-matroska-support
+PLIST_SUB+=		MATROSKA_SUPPORT="@comment "
+.endif
+
+.if defined(WITH_FAAC)
+CONFIGURE_ARGS+=	--enable-aac-support
+BUILD_DEPENDS+=		faac:${PORTSDIR}/audio/faac
+RUN_DEPENDS+=		faac:${PORTSDIR}/audio/faac
+PLIST_SUB+=		FAAC_SUPPORT=""
+.else
+CONFIGURE_ARGS+=	--disable-aac-support
+PLIST_SUB+=		FAAC_SUPPORT="@comment "
+.endif
+
+.if defined(WITH_SRT)
+CONFIGURE_ARGS+=	--enable-srt-support
+BUILD_DEPENDS+=		gocr:${PORTSDIR}/graphics/gocr
+RUN_DEPENDS+=		gocr:${PORTSDIR}/graphics/gocr
+PLIST_SUB+=		SRT_SUPPORT=""
+.else
+CONFIGURE_ARGS+=	--disable-srt-support
+PLIST_SUB+=		SRT_SUPPORT="@comment "
+.endif
+
+.if defined(WITH_THEORA)
+CONFIGURE_ARGS+=	--enable-theora-support
+LIB_DEPENDS+=		theora:${PORTSDIR}/multimedia/libtheora
+PLIST_SUB+=		THEORA_SUPPORT=""
+.else
+CONFIGURE_ARGS+=	--disable-theora-support
+PLIST_SUB+=		THEORA_SUPPORT="@comment "
+.endif
+
+.if defined(WITH_ENCHANT)
+CONFIGURE_ARGS+=	--enable-enchant-support
+LIB_DEPENDS+=		enchant:${PORTSDIR}/textproc/enchant
+PLIST_SUB+=		ENCHANT_SUPPORT=""
+.else
+CONFIGURE_ARGS+=	--disable-enchant-support
+PLIST_SUB+=		ENCHANT_SUPPORT="@comment "
 .endif
 
 pre-configure:
