@@ -26,5 +26,10 @@ USE_PYDISTUTILS=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^#ODE_BASE/ s|.*|ODE_BASE="${X11BASE}"|' ${WRKSRC}/setup.py
+# gcc4x compatibility
+	@${REINPLACE_CMD} -e 's|((PyObject *\*)__pyx_v_sp) = |__pyx_v_sp = (struct __pyx_obj_3ode_SpaceBase*)|' ${WRKSRC}/ode_notrimesh.c
+	@${REINPLACE_CMD} -e 's|((PyObject *\*)__pyx_v_m) = |__pyx_v_m = (struct __pyx_obj_3ode_Mass*)|' ${WRKSRC}/ode_notrimesh.c
+	@${REINPLACE_CMD} -e 's|((PyObject *\*)__pyx_v_jg) = |__pyx_v_jg = (struct __pyx_obj_3ode_JointGroup*)|' ${WRKSRC}/ode_notrimesh.c
+	@${REINPLACE_CMD} -e 's|((PyObject *\*)__pyx_v_cont) = |__pyx_v_cont = (struct __pyx_obj_3ode_Contact*)|' ${WRKSRC}/ode_notrimesh.c
 
 .include <bsd.port.mk>
