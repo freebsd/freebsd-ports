@@ -18,6 +18,8 @@ COMMENT=	QT-based editor with support for romanian charsets and spell checking
 BUILD_DEPENDS+=	${LOCALBASE}/include/readtags.h:${PORTSDIR}/devel/ctags
 RUN_DEPENDS+=	${LOCALBASE}/lib/readtags.o:${PORTSDIR}/devel/ctags
 
+BROKEN=		Segfault during build
+
 USE_XLIB=	yes
 USE_QT_VER=	3
 MAKE_ENV+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
