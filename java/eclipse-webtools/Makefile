@@ -19,7 +19,7 @@ COMMENT=	Webtools for eclipse
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
 		${LOCALBASE}/eclipse/features/org.eclipse.emf_2.2.1.v200609210005/feature.xml:${PORTSDIR}/java/eclipse-emf \
-		${LOCALBASE}/eclipse/features/org.eclipse.gef_3.2.2.v20070109/feature.xml:${PORTSDIR}/java/eclipse-gef \
+		${LOCALBASE}/eclipse/features/org.eclipse.gef_3.2.2.v20070208/feature.xml:${PORTSDIR}/java/eclipse-gef \
 		${LOCALBASE}/eclipse/features/org.eclipse.ve_1.2.0.v20060530_RC2-0-a2N7MMl7/feature.xml:${PORTSDIR}/java/eclipse-vep
 
 CONFLICTS=	eclipse-lomboz-3.*
