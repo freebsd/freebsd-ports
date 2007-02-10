@@ -354,6 +354,7 @@
     SUBDIR += p5-Mail-QuoteWrap
     SUBDIR += p5-Mail-RBL
     SUBDIR += p5-Mail-RFC822-Address
+    SUBDIR += p5-Mail-SPF
     SUBDIR += p5-Mail-SPF-Query
     SUBDIR += p5-Mail-SRS
     SUBDIR += p5-Mail-SendEasy
