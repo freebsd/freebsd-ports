@@ -2510,7 +2510,6 @@ graphics/php5-imlib2|graphics/pecl-imlib2|2006-11-01|Follow PECL ports naming co
 chinese/xcin25|chinese/xcin|2006-11-05|Reflect its real portname
 mail/nail|mail/heirloom-mailx|2006-11-05|Project name changed
 databases/php5-filepro||2006-11-06|Removed in 5.2 branch
-databases/php5-pdo||2006-11-08|Removed
 deskutils/offix-trash||2006-11-09|Has expired: development ceased in 1996
 devel/mingw||2006-11-09|Has expired: use mingw32-* ports instead
 devel/mingw-binutils||2006-11-09|Has expired: use mingw32-* ports instead
@@ -2800,7 +2799,6 @@ devel/py-logging||2007-02-05|Included with all current python versions in ports 
 misc/qt4-codecs-tw|chinese/qt4-codecs-tw|2007-02-06|Accidentally added to wrong category
 www/squid26|www/squid|2007-02-07|Squid 2.6 is now mainstream version
 irc/xchat-systray-plugin||2007-02-07|Has expired: Functionality is now included in xchat
-chinese/oicq||2007-02-07|Has expired: Does not work with newer OICQ protocol
 net/nicmond||2007-02-07|Has expired: Disappeared from the internet
 www/caudium10||2007-02-07|Has expired: Please use www/caudium12
 net/openldap22-client||2007-02-07|Removed: OpenLDAP 2.2.x is no longer supported by developers
