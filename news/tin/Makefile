@@ -6,12 +6,20 @@
 #
 
 PORTNAME=	tin
-PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTVERSION=	1.8.3
 CATEGORIES+=	news ipv6
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
-		ftp://ftp.stikman.com/pub/tin/stable/ \
-		ftp://ftp.sunet.se/pub/news/readers/tin/stable/
+		ftp://ftp.sunet.se/pub/news/readers/tin/stable/ \
+		ftp://sunsite.icm.edu.pl/pub/unix/news/tin/stable/ \
+		ftp://ftp.ka.nu/pub/news/clients/tin/stable/ \
+		ftp://ftp.tau.ac.il/pub/unix/news/tin/stable/ \
+		ftp://ftp.cuhk.edu.hk/pub/packages/news/tin/stable/ \
+		ftp://ftp.funet.fi/pub/unix/news/tin-unoff/ \
+		ftp://ftp.lip6.fr/pub/unix/news/readers/tin-unoff/ \
+		ftp://ftp.karlsruhe.org/pub/news/clients/tin/stable/ \
+		ftp://ftp.akk.uni-karlsruhe.de/pub/news/clients/tin/stable/ \
+		ftp://ftp.cs.tu-berlin.de/pub/net/news/tin/stable/ \
+		ftp://ftp.informatik.uni-hamburg.de/pub/soft/news/tin/stable/
 
 MAINTAINER?=	ache@FreeBSD.org
 COMMENT=	Easy-to-use threaded newsreader with NOV/NNTP support
@@ -39,7 +47,8 @@ CONFIGURE_ARGS+=--with-nntp-default-server=news \
 		--with-screen=ncurses \
 		--enable-break-long-lines \
 		--with-libiconv-prefix=${LOCALBASE} \
-		--with-mime-default-charset=US-ASCII
+		--with-mime-default-charset=US-ASCII \
+		--enable-ipv6
 CONFIGURE_ENV=	CFLAGS='${CFLAGS} -DNNTP_SERVER_FILE="\"${PREFIX}/etc/nntpserver\""' \
 		CPPFLAGS='${CPPFLAGS} -I${LOCALBASE}/include' \
 		LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
@@ -83,12 +92,6 @@ CONFIGURE_ARGS+=	--with-ispell=${PREFIX}/bin/ispell
     (exists(${LOCALBASE}/bin/metamail) && !defined(WITHOUT_TIN_METAMAIL))
 RUN_DEPENDS+=	metamail:${PORTSDIR}/mail/metamail
 CONFIGURE_ARGS+=	--with-metamail=${PREFIX}/bin/metamail
-.endif
-
-.if ${OSVERSION} >= 400014
-CONFIGURE_ARGS+=	--enable-ipv6
-.else
-CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
 post-patch:
