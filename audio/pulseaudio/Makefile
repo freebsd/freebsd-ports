@@ -8,6 +8,7 @@
 
 PORTNAME=	pulseaudio
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
@@ -41,7 +42,7 @@ IGNORE=	does not build on 4.X
 
 .if (exists(${LOCALBASE}/lib/libavahi-core.a) || defined(PACKAGE_BUILDING) \
 	|| defined(WITH_AVAHI)) && !defined(WITHOUT_AVAHI)
-LIB_DEPENDS+=	avahi-core.4:${PORTSDIR}/net/avahi
+LIB_DEPENDS+=	avahi-core.5:${PORTSDIR}/net/avahi
 CONFIGURE_ARGS+=	--enable-avahi
 PLIST_SUB+=	AVAHI=""
 .else
