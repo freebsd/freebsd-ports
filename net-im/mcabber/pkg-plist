@@ -1,8 +1,12 @@
 bin/mcabber
 %%EXAMPLESDIR%%/mcabberrc
 %%DATADIR%%/contrib/cicq2mcabber.pl
-%%DATADIR%%/contrib/eventcmd
-%%DATADIR%%/contrib/mcwizz.pl
+%%DATADIR%%/contrib/events/eventcmd
+%%DATADIR%%/contrib/events/eventcmd.osd
+%%DATADIR%%/contrib/events/mcnotify.py
+%%DATADIR%%/contrib/filter_statusmsg.py
+%%DATADIR%%/contrib/mcwizz.rb
+%%DATADIR%%/contrib/merge_history.py
 %%DATADIR%%/contrib/themes/light.txt
 %%DATADIR%%/contrib/themes/light2.txt
 %%DATADIR%%/contrib/themes/oliver.txt
@@ -151,6 +155,35 @@ bin/mcabber
 %%DATADIR%%/help/pl/hlp_status.txt
 %%DATADIR%%/help/pl/hlp_status_to.txt
 %%DATADIR%%/help/pl/hlp_version.txt
+%%DATADIR%%/help/ru/hlp.txt
+%%DATADIR%%/help/ru/hlp_add.txt
+%%DATADIR%%/help/ru/hlp_alias.txt
+%%DATADIR%%/help/ru/hlp_authorization.txt
+%%DATADIR%%/help/ru/hlp_bind.txt
+%%DATADIR%%/help/ru/hlp_buffer.txt
+%%DATADIR%%/help/ru/hlp_clear.txt
+%%DATADIR%%/help/ru/hlp_connect.txt
+%%DATADIR%%/help/ru/hlp_del.txt
+%%DATADIR%%/help/ru/hlp_disconnect.txt
+%%DATADIR%%/help/ru/hlp_event.txt
+%%DATADIR%%/help/ru/hlp_group.txt
+%%DATADIR%%/help/ru/hlp_help.txt
+%%DATADIR%%/help/ru/hlp_info.txt
+%%DATADIR%%/help/ru/hlp_move.txt
+%%DATADIR%%/help/ru/hlp_msay.txt
+%%DATADIR%%/help/ru/hlp_pgp.txt
+%%DATADIR%%/help/ru/hlp_quit.txt
+%%DATADIR%%/help/ru/hlp_rawxml.txt
+%%DATADIR%%/help/ru/hlp_rename.txt
+%%DATADIR%%/help/ru/hlp_request.txt
+%%DATADIR%%/help/ru/hlp_room.txt
+%%DATADIR%%/help/ru/hlp_roster.txt
+%%DATADIR%%/help/ru/hlp_say.txt
+%%DATADIR%%/help/ru/hlp_say_to.txt
+%%DATADIR%%/help/ru/hlp_set.txt
+%%DATADIR%%/help/ru/hlp_status.txt
+%%DATADIR%%/help/ru/hlp_status_to.txt
+%%DATADIR%%/help/ru/hlp_version.txt
 %%DATADIR%%/help/uk/hlp.txt
 %%DATADIR%%/help/uk/hlp_add.txt
 %%DATADIR%%/help/uk/hlp_alias.txt
@@ -181,6 +214,7 @@ bin/mcabber
 %%DATADIR%%/help/uk/hlp_status_to.txt
 %%DATADIR%%/help/uk/hlp_version.txt
 @dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%/contrib/events
 @dirrm %%DATADIR%%/contrib/themes
 @dirrm %%DATADIR%%/contrib
 @dirrm %%DATADIR%%/help/de
@@ -188,6 +222,7 @@ bin/mcabber
 @dirrm %%DATADIR%%/help/fr
 @dirrm %%DATADIR%%/help/nl
 @dirrm %%DATADIR%%/help/pl
+@dirrm %%DATADIR%%/help/ru
 @dirrm %%DATADIR%%/help/uk
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
