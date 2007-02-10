@@ -81,7 +81,7 @@ IGNORE=		needs Perl 5.6.0 or greater, please upgrade your Perl
 .endif
 
 .if !defined(WITHOUT_GMP)
-GMP_DEPEND=	${SITE_PERL_ARCH}/Math/BigInt/GMP.pm:${PORTSDIR}/math/p5-BigInt-GMP
+GMP_DEPEND=	${SITE_PERL_ARCH}/Math/BigInt/GMP.pm:${PORTSDIR}/math/p5-Math-BigInt-GMP
 BUILD_DEPENDS+=	${GMP_DEPEND}
 RUN_DEPENDS+=	${GMP_DEPEND}
 .endif
