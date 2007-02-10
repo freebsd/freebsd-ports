@@ -9892,6 +9892,7 @@ p5-Net-DHCPClient	ports/net/p5-Net-DHCPClient
 p5-Net-DLookup	ports/net/p5-Net-DLookup
 p5-Net-DNS	ports/dns/p5-Net-DNS
 p5-Net-DNS-Codes	ports/dns/p5-Net-DNS-Codes
+p5-Net-DNS-Resolver-Programmable	ports/dns/p5-Net-DNS-Resolver-Programmable
 p5-Net-DNS-SEC	ports/dns/p5-Net-DNS-SEC
 p5-Net-DNS-ToolKit	ports/dns/p5-Net-DNS-ToolKit
 p5-Net-DNS-ZoneCheck	ports/dns/p5-Net-DNS-ZoneCheck
