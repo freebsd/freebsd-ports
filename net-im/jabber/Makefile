@@ -36,6 +36,8 @@ USE_LDCONFIG=	yes
 MAN5=		jabber.xml.5
 MAN8=		jabberd.8
 
+BROKEN=		breaks all jabber protocols
+
 CPPFLAGS=	-I${LOCALBASE}/include/pth -I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib/pth -L${LOCALBASE}/lib
 
