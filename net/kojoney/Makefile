@@ -7,6 +7,7 @@
 
 PORTNAME=	kojoney
 PORTVERSION=	0.0.4.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=kojoney
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=kojoney
 MAINTAINER=	systemoperator@gmail.com
 COMMENT=	A low level interaction honeypot that emulates an SSH server
 
-RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/zope/interface/interface.py:${PORTSDIR}/devel/py-zopeInterface \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zopeInterface>=3.3.0_1:${PORTSDIR}/devel/py-zopeInterface \
 		${PYTHONPREFIX_SITELIBDIR}/Crypto:${PORTSDIR}/security/py-pycrypto \
 		${SITE_PERL}/IP/Country.pm:${PORTSDIR}/net/p5-IP-Country
 
