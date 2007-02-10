@@ -24,6 +24,8 @@ LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
 		boost_date_time.3:${PORTSDIR}/devel/boost \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
+BROKEN=		Does not compile (5.x) and incorrect pkg-plist (6.x)
+
 CONFLICTS=	bmpx-devel-[0-9]*
 
 USE_AUTOTOOLS=	autoconf:259
