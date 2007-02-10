@@ -1,7 +1,5 @@
 bin/robot
 lib/help/robot.info
-@dirrm lib/X11/config
-@dirrm lib/X11
 %%PORTDOCS%%%%DOCSDIR%%/RobotManual.ps.gz
 %%PORTDOCS%%%%EXAMPLESDIR%%/3d_demo.rob
 %%PORTDOCS%%%%EXAMPLESDIR%%/anime_demo.rob
