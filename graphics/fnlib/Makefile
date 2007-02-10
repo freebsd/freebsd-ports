@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	enlightenment
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fonts and font libraries necessary for Enlightenment
 
+USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	imlib

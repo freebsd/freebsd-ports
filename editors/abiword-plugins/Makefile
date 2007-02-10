@@ -20,6 +20,7 @@ COMMENT=	Multi-plugins for AbiWord
 BUILD_DEPENDS=	AbiWord-${ABIVERSION}:${PORTSDIR}/editors/abiword
 RUN_DEPENDS=	AbiWord-${ABIVERSION}:${PORTSDIR}/editors/abiword
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20

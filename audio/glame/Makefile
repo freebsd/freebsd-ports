@@ -26,7 +26,7 @@ USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui
 USE_GCC=	3.4
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libltdl:15
+USE_AUTOTOOLS=	libltdl:15 libtool:15
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		MAKEINFO="makeinfo --no-split"

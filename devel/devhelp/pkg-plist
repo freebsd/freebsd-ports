@@ -11,6 +11,7 @@ include/devhelp-1.0/devhelp/dh-search.h
 include/devhelp-1.0/devhelp/dh-util.h
 include/devhelp-1.0/devhelp/dh-window.h
 lib/libdevhelp-1.a
+lib/libdevhelp-1.la
 lib/libdevhelp-1.so
 lib/libdevhelp-1.so.0
 libdata/pkgconfig/libdevhelp-1.0.pc

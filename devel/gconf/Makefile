@@ -20,6 +20,7 @@ COMMENT=	A configuration database system for GNOME
 
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XLIB=	yes

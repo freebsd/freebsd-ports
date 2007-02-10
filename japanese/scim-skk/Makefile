@@ -18,6 +18,7 @@ COMMENT=	SCIM IMEngine module like SKK
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_AUTOTOOLS=	libtool:15
 USE_X_LIB=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes

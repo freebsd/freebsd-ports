@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Text editor widget based on Mozilla's editing functionality
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

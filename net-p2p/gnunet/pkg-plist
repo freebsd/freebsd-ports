@@ -88,16 +88,22 @@ lib/libgnunetutil.so
 lib/libgnunetutil.so.0
 share/GNUnet/gnunet_logo.png
 share/locale/de/LC_MESSAGES/GNUnet.mo
+lib/libgnunetafs_database_directory.a
 lib/libgnunetafs_database_directory.la
 lib/libgnunetafs_database_directory.so
+%%WITH_GDBM%%lib/libgnunetafs_database_gdbm.a
 %%WITH_GDBM%%lib/libgnunetafs_database_gdbm.la
 %%WITH_GDBM%%lib/libgnunetafs_database_gdbm.so
+%%WITH_TDB%%lib/libgnunetafs_database_tdb.a
 %%WITH_TDB%%lib/libgnunetafs_database_tdb.la
 %%WITH_TDB%%lib/libgnunetafs_database_tdb.so
+%%WITH_SQLITE%%lib/libgnunetafs_database_sqlite.a
 %%WITH_SQLITE%%lib/libgnunetafs_database_sqlite.la
 %%WITH_SQLITE%%lib/libgnunetafs_database_sqlite.so
+%%WITH_IPV6%%lib/libgnunettransport_tcp6.a
 %%WITH_IPV6%%lib/libgnunettransport_tcp6.la
 %%WITH_IPV6%%lib/libgnunettransport_tcp6.so
+%%WITH_IPV6%%lib/libgnunettransport_udp6.a
 %%WITH_IPV6%%lib/libgnunettransport_udp6.la
 %%WITH_IPV6%%lib/libgnunettransport_udp6.so
 @dirrm share/GNUnet

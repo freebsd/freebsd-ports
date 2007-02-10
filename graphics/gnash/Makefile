@@ -19,6 +19,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ogg.5:${PORTSDIR}/audio/libogg
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GL=		yes
 USE_GMAKE=	yes

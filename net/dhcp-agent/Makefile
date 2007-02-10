@@ -21,6 +21,7 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 GNU_CONFIGURE=	yes
 
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 
 MAN1=	dhcp-client.1 dhcp-sniff.1

@@ -21,6 +21,7 @@ LIB_DEPENDS=	geos:${PORTSDIR}/graphics/geos \
 		gdal:${PORTSDIR}/graphics/gdal
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_FREETYPE=	yes
 USE_QT_VER=	3

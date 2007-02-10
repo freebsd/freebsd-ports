@@ -19,6 +19,7 @@ COMMENT=	Plugin to add msn style "toaster" popups to Gaim
 BUILD_DEPENDS=	${LOCALBASE}/include/gaim/config.h:${PORTSDIR}/net-im/gaim
 RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
 
+USE_AUTOTOOLS=	libtool:15
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20

@@ -21,6 +21,7 @@ LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 		dockapp.2:${PORTSDIR}/x11-wm/libdockapp
 RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 
+USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mva@sysfault.org
 COMMENT=	A small, efficient C++ GUI library designed for games
 
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_GCC=	3.2+
 GNU_CONFIGURE=	yes

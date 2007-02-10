@@ -18,6 +18,7 @@ COMMENT=	GnoTime is a time tracker for gnome2
 
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
+USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnomeprefix intlhack gtkhtml3 libgnomeui
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

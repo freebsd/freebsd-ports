@@ -22,6 +22,7 @@ include/liboaf/oaf-servreg.h
 include/liboaf/oaf-util.h
 include/liboaf/oaf.h
 lib/liboaf.a
+lib/liboaf.la
 lib/liboaf.so
 lib/liboaf.so.0
 share/aclocal/oaf.m4

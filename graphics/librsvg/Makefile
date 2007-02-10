@@ -19,6 +19,7 @@ BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		popt.0:${PORTSDIR}/devel/popt
 
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_GNOME=	gnomelibs gdkpixbuf
