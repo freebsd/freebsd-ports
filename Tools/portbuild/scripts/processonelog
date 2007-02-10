@@ -79,8 +79,6 @@ elif bzgrep -qE '(/usr/libexec/elf/ld: cannot find|undefined reference to|cannot
   reason="linker_error"; tag="ld"
 elif bzgrep -q 'install: .*: No such file' $1; then
   reason="install_error"; tag="install"
-elif bzgrep -qE "(Can't|unable to) open display" $1; then
-  reason="DISPLAY"; tag="display"
 elif bzgrep -q "conflicts with installed package" $1; then
   reason="depend_object"; tag="dependobj"
 elif bzgrep -q " is already installed - perhaps an older version" $1; then
@@ -89,8 +87,6 @@ elif bzgrep -q "You may wish to ..make deinstall.. and install this port again" 
   reason="depend_object"; tag="dependobj"
 elif bzgrep -q "core dumped" $1; then
   reason="coredump"; tag="coredump"
-elif bzgrep -q "Segmentation fault" $1; then
-  reason="segfault"; tag="segfault"
 
 # below here are the less common items
 
@@ -160,6 +156,8 @@ elif bzgrep -q "error in dependency .*, exiting" $1; then
   reason="depend_package"; tag="dependpkg"
 elif bzgrep -qE "pkg_(add|create):.*(can't find enough temporary space|projected size of .* exceeds available free space)" $1; then
   reason="disk_full"; tag="df"
+elif bzgrep -qE "(Can't|unable to) open display" $1; then
+  reason="DISPLAY"; tag="display"
 elif bzgrep -q "Cannot open /dev/tty for read" $1; then
   reason="DISPLAY"; tag="display"
 elif bzgrep -q "RuntimeError: cannot open display" $1; then
@@ -224,6 +222,8 @@ elif bzgrep -qE "USER   PID  PPID  PGID.*JOBC STAT  TT       TIME COMMAND" $1; t
   reason="runaway_process"; tag="runaway"
 elif bzgrep -q "pnohang: killing make package" $1; then
   reason="runaway_process"; tag="runaway"
+elif bzgrep -q "Segmentation fault" $1; then
+  reason="segfault"; tag="segfault"
 elif bzgrep -q "initializer element is not constant" $1; then
   reason="stdio"; tag="stdio"
 elif bzgrep -q "structure has no member named" $1; then
