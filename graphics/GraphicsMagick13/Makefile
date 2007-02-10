@@ -27,6 +27,7 @@ OPTIONS=	Q8BIT "Use 8-bit pixels (speed) instead of 16 (quality)" off
 OPTIONS+=	FPX "Build FPX backend -- broken on non-i386 systems" \
 		    ${ARCH:S,i386,on,:C,^[^o].*,off,}
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes

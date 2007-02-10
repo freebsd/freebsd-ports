@@ -19,6 +19,7 @@ LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtkmm20 \
 		sqlite.2:${PORTSDIR}/databases/sqlite2 \
 		gtkspell:${PORTSDIR}/textproc/gtkspell
 
+USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 USE_OPENSSL=	yes
 USE_GMAKE=	yes

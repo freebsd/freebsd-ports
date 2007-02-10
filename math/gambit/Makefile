@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library of tools for doing computation in game theory
 
+USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 USE_WX=		2.6
 USE_GNOME=	gnometarget gtk20

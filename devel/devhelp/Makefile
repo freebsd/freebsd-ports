@@ -31,6 +31,7 @@ MOZILLA=	seamonkey
 .endif
 .endif
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GETTEXT=	yes

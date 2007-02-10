@@ -19,6 +19,7 @@ COMMENT=	Object Activation Framework for GNOME
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes

@@ -16,6 +16,7 @@ DISTNAME=	gst${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer plugin for monkeysaudio files
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

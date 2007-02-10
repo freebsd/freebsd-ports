@@ -17,6 +17,7 @@ COMMENT=	A window manager and workspace enhancer and integrator
 BUILD_DEPENDS=	imlib2-config:${PORTSDIR}/graphics/imlib2 \
 		swig:${PORTSDIR}/devel/swig13
 
+USE_AUTOTOOLS=	libtool:15
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

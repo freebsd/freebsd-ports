@@ -17,6 +17,7 @@ COMMENT=	A library of assorted spiffy things
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		Imlib2.3:${PORTSDIR}/graphics/imlib2
 
+USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes

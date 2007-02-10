@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A program to create labels and business cards
 
+USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui libgnomeprintui \
 		desktopfileutils intlhack

@@ -1,4 +1,5 @@
 %%PYTHON_SITELIBDIR%%/gtk-2.0/sexy.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/sexy.a
 %%PYTHON_SITELIBDIR%%/gtk-2.0/sexy.la
 share/pygtk/2.0/defs/sexy.defs
 @dirrmtry %%PYTHON_SITELIBDIR%%/gtk-2.0

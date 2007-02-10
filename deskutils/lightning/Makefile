@@ -18,6 +18,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}.source
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Redesign of the Mozilla Calendar with XUL interface
 
+USE_AUTOTOOLS=	libtool:15
 USE_GCC=	3.4+
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}

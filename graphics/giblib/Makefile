@@ -16,6 +16,7 @@ COMMENT=	A utility library that includes a wrapper for imlib2
 
 LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
 
+USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes

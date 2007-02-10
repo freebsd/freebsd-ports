@@ -18,6 +18,7 @@ COMMENT=	Provide View and Controller counterparts to GStreamer's Model
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
+USE_AUTOTOOLS=	libtool:15
 USE_GSTREAMER80=	core
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

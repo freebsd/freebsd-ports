@@ -26,6 +26,7 @@ RUN_DEPENDS=    dot:${PORTSDIR}/graphics/graphviz \
 
 DBDIR?=		/var/db
 
+USE_AUTOTOOLS=	libtool:15
 USE_GETOPT_LONG=yes
 USE_GNOME=	libxml2
 USE_GMAKE=	yes

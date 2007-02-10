@@ -22,6 +22,7 @@ COMMENT=	A set of Python bindings for gstreamer
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
 
+USE_AUTOTOOLS=	libtool:15
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes

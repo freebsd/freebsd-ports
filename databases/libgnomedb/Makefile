@@ -21,6 +21,7 @@ USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libgda3 gtksourceview \
 		intlhack referencehack

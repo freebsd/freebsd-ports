@@ -16,6 +16,8 @@ include/inti-1.0/inti/inti-sourceview.h
 @dirrm include/inti-1.0/inti/gtk-sourceview/private
 @dirrm include/inti-1.0/inti/gtk-sourceview
 lib/inti-1.0/include/inti-sourceview-config.h
+lib/libinti-sourceview-1.0.a
+lib/libinti-sourceview-1.0.la
 lib/libinti-sourceview-1.0.so
 lib/libinti-sourceview-1.0.so.0
 libdata/pkgconfig/inti-sourceview-1.0.pc

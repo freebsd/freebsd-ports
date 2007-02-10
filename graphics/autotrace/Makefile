@@ -20,6 +20,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		Magick.10:${PORTSDIR}/graphics/ImageMagick \
 		pstoedit.0:${PORTSDIR}/graphics/pstoedit
 
+USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \

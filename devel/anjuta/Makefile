@@ -20,6 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/gnu-autotools/bin/autoconf:${PORTSDIR}/devel/gnu-autoc
 		${LOCALBASE}/gnu-autotools/bin/automake:${PORTSDIR}/devel/gnu-automake \
 		libtool:${PORTSDIR}/devel/libtool15
 
+USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 INSTALLS_OMF=	yes

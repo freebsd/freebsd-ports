@@ -23,6 +23,7 @@ LIB_DEPENDS=	jasper.4:${PORTSDIR}/graphics/jasper \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif
 
+USE_AUTOTOOLS=	libtool:15
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
