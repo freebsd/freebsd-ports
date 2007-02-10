@@ -14,6 +14,7 @@ include/suitesparse/cholmod_complexity.h
 include/suitesparse/cholmod_config.h
 include/suitesparse/cholmod_core.h
 include/suitesparse/cholmod_internal.h
+include/suitesparse/cholmod_io64.h
 include/suitesparse/cholmod_matrixops.h
 include/suitesparse/cholmod_modify.h
 include/suitesparse/cholmod_partition.h

@@ -1,5 +1,5 @@
---- UFconfig/UFconfig.mk.orig	Wed Nov 29 20:18:52 2006
-+++ UFconfig/UFconfig.mk	Wed Jan 10 07:10:43 2007
+--- UFconfig/UFconfig.mk.orig	Wed Dec 13 03:52:47 2006
++++ UFconfig/UFconfig.mk	Sat Feb 10 21:45:50 2007
 @@ -31,8 +31,8 @@
  # C compiler and compiler flags:  These will normally not give you optimal
  # performance.  You should select the optimization parameters that are best
@@ -61,14 +61,14 @@
 -   	-Wall -W -Wshadow -Wmissing-prototypes -Wstrict-prototypes \
 -    	-Wredundant-decls -Wnested-externs -Wdisabled-optimization -ansi
 +#   	-Wall -W -Wshadow -Wmissing-prototypes -Wstrict-prototypes \
-+#    	-Wredundant-decls -Wnested-externs -Wdisabled-optimization -ansi
++#   	-Wredundant-decls -Wnested-externs -Wdisabled-optimization -ansi
  # CFLAGS = -O3 -fexceptions \
 -   	-Wall -W -Werror -Wshadow -Wmissing-prototypes -Wstrict-prototypes \
 -    	-Wredundant-decls -Wnested-externs -Wdisabled-optimization -ansi
--CFLAGS = -O3 -fexceptions
+-CFLAGS = -O3 -fexceptions -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE
 +#   	-Wall -W -Werror -Wshadow -Wmissing-prototypes -Wstrict-prototypes \
 +#    	-Wredundant-decls -Wnested-externs -Wdisabled-optimization -ansi
-+CFLAGS = %%CFLAGS%%
++# CFLAGS = -O3 -fexceptions -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE
  # CFLAGS = -O3
  
  # consider:
