@@ -9738,6 +9738,7 @@ p5-Mail-Procmailrc	ports/mail/p5-Mail-Procmailrc
 p5-Mail-QuoteWrap	ports/mail/p5-Mail-QuoteWrap
 p5-Mail-RBL	ports/mail/p5-Mail-RBL
 p5-Mail-RFC822-Address	ports/mail/p5-Mail-RFC822-Address
+p5-Mail-SPF	ports/mail/p5-Mail-SPF
 p5-Mail-SPF-Query	ports/mail/p5-Mail-SPF-Query
 p5-Mail-SRS	ports/mail/p5-Mail-SRS
 p5-Mail-SendEasy	ports/mail/p5-Mail-SendEasy
