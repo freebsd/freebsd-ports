@@ -49,6 +49,7 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:259
+ALL_TARGET=	#empty
 
 WANT_FORTRAN=	yes #dummy but future use
 BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
@@ -96,10 +97,9 @@ CXXFLAGS+=	-O2 -ffast-math
 pre-configure:
 	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
 
-do-build:
-	@cd ${WRKSRC} ; ${GMAKE}
+post-build:
 .if !defined(NOPORTDOCS)
-	@cd ${WRKSRC}/doc ; ${GMAKE}
+	cd ${WRKSRC}/doc ; ${GMAKE}
 .endif
 
 do-install:
