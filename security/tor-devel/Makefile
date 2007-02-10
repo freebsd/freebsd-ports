@@ -46,7 +46,7 @@ pre-su-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
 		${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
-post-install:
+post-su-install:
 	@${MKDIR} /var/run/tor
 	@${CHOWN} _tor:_tor /var/run/tor
 	@${TOUCH} /var/log/tor
