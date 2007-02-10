@@ -189,6 +189,7 @@
     SUBDIR += p5-Math-Bezier
     SUBDIR += p5-Math-Bezier-Convert
     SUBDIR += p5-Math-BigInt
+    SUBDIR += p5-Math-BigInt-GMP
     SUBDIR += p5-Math-BigRat
     SUBDIR += p5-Math-Calc-Units
     SUBDIR += p5-Math-Cephes
