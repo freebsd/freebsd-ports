@@ -21,7 +21,7 @@ LIB_DEPENDS=	tcl${SHORT_TK_VER}:${PORTSDIR}/lang/tcl${SHORT_TK_VER} \
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
 		--with-tclinclude=${LOCALBASE}/include/tcl${TK_VER} \
