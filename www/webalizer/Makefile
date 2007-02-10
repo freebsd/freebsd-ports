@@ -7,14 +7,19 @@
 
 PORTNAME=	webalizer
 PORTVERSION=	2.1.10
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/:main \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/:main \
-		http://sysd.org/proj/:geo
+		http://sysd.org/stas/files/active/0/:geo \
+		http://flags.blogpotato.de/zip/:flags
 PKGNAMESUFFIX?=	${WEBALIZER_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	${PORTNAME}-2.01-10-src
 DISTFILES=	${DISTNAME}.tar.bz2:main
+.if defined(WITH_GEOIP) || make(makesum) || defined(FETCH_ALL)
+DISTFILES+=	geolizer_2.01-10-patch.20070115.tar.gz:geo
+DISTFILES+=	world.small.zip:flags special.small.zip:flags
+.endif
 
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT=	A web server log file analysis program
@@ -24,6 +29,7 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/${GD_PORT}
 .endif
 .if defined(WITH_GEOIP)
 LIB_DEPENDS+=	GeoIP.5:${PORTSDIR}/net/GeoIP
+EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 .endif
 
 USE_BZIP2=	yes
@@ -34,9 +40,6 @@ GD_PORT?=	graphics/gd
 
 CONFLICTS=	geolizer-2*
 
-.if defined(WITH_GEOIP) || make(makesum) || defined(FETCH_ALL)
-DISTFILES+=	geolizer_2.01-10-patch.20050520.tar.bz2:geo
-.endif
 
 .if defined(WITH_GEOIP)
 WEBALIZER_SUFFIX=	-geoip
@@ -103,6 +106,44 @@ CONFIGURE_ENV+=		LIBS="-L${LOCALBASE}/lib -liconv"
 CFLAGS+=		-I${LOCALBASE}/include
 .endif
 
+do-extract:
+	@${RM} -rf ${WRKDIR}
+	@${MKDIR} ${WRKDIR}
+	@for file in ${EXTRACT_ONLY}; do \
+                case $$file in \
+		*.Z|*.gz) \
+			if ! (cd ${WRKDIR} && \
+				${GZCAT} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
+			then \
+				exit 1; \
+			fi \
+			;; \
+		*.bz2) \
+			if ! (cd ${WRKDIR} && \
+				${BZCAT} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
+			then \
+				exit 1; \
+			fi \
+			;; \
+		*.zip) \
+			if ! (cd ${WRKDIR} && \
+				${UNZIP_CMD} -qo ${_DISTDIR}/$$file -d ${WRKDIR});\
+			then \
+				exit 1; \
+			fi \
+			;; \
+		*) \
+			exit 1; \
+			;; \
+                esac; \
+	done
+.if !defined(EXTRACT_PRESERVE_OWNERSHIP)
+	@if [ `${ID} -u` = 0 ]; then \
+		${CHMOD} -R ug-s ${WRKDIR}; \
+		${CHOWN} -R 0:0 ${WRKDIR}; \
+	fi
+.endif
+
 pre-configure:
 	@${MV} ${WRKSRC}/webalizer.1 ${WRKSRC}/webalizer.1.sed
 	${SED} -e "s=/etc=${PREFIX}/etc=" \
@@ -139,11 +180,12 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${EXAMPLESDIR}/${i}
 .endfor
 .if defined(WITH_GEOIP)
-	${MKDIR} ${DOCSDIR}/geolizer
+	${MKDIR} ${DOCSDIR}/geolizer/flags
 .for i in ${DOC2}
 	@${INSTALL_DATA} ${WRKDIR}/geolizer_2.01-10-patch/${i} \
 		${DOCSDIR}/geolizer/${i}
 .endfor
+	@${INSTALL_DATA} ${WRKDIR}/*.png ${DOCSDIR}/geolizer/flags/
 .endif
 .endif
 
