@@ -20,7 +20,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_ICONV=	YES
 PERL_CONFIGURE=	YES
-CONFIGURE_ARGS+=	CC="${CXX}" LD="${CXX}" LIBS="-L/usr/local/lib -ltag -liconv"
+CONFIGURE_ARGS+=	CC="${CXX}" LD="${CXX}"
 
 MAN3=		Audio::TagLib.3 Audio::TagLib::APE::Footer.3 \
 		Audio::TagLib::APE::Item.3 Audio::TagLib::APE::ItemListMap.3 \
