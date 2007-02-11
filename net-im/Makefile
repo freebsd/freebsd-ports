@@ -105,6 +105,7 @@
     SUBDIR += p5-Net-MSN
     SUBDIR += p5-Net-NetSend
     SUBDIR += p5-Net-OSCAR
+    SUBDIR += p5-Net-Stomp
     SUBDIR += p5-Net-XMPP
     SUBDIR += psi
     SUBDIR += psi-gentoo
