@@ -20,7 +20,9 @@ BUILD_DEPENDS=	${LOCALBASE}/news/lib/libcnews.a:${PORTSDIR}/news/cnews
 BUILD_DEPENDS=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
 .endif
 
-BROKEN=		Configure fails
+.if defined(PACKAGE_BUILDING)
+IGNORE=		a configured INN is required
+.endif
 
 GNU_CONFIGURE=	yes
 
