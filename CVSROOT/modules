@@ -904,6 +904,7 @@ bn-aspell	ports/textproc/bn-aspell
 bnbt		ports/net-p2p/bnbt
 bnc		ports/irc/bnc
 bnf		ports/devel/bnf
+bnfc		ports/devel/bnfc
 boa		ports/www/boa
 boaconstructor	ports/devel/boaconstructor
 bobot++		ports/irc/bobot++
