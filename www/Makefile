@@ -886,6 +886,7 @@
     SUBDIR += pear-Text_Wiki
     SUBDIR += pear-UDDI
     SUBDIR += pecl-APC
+    SUBDIR += pecl-amfext
     SUBDIR += pecl-mnogosearch
     SUBDIR += pecl-pecl_http
     SUBDIR += pecl-tidy
