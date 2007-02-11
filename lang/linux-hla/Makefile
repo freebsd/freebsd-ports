@@ -22,6 +22,8 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
 BROKEN=		Does not compile
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hla ${PREFIX}/bin

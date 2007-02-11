@@ -47,6 +47,8 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/sendmail:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
 BUILD_DEPENDS=	re2c:${PORTSDIR}/devel/re2c
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 USE_GNOME=	glib20
 USE_PHP=	pcre session xml

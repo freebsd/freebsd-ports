@@ -26,6 +26,8 @@ RUN_DEPENDS=	tv_check:${PORTSDIR}/textproc/p5-xmltv \
 		wget:${PORTSDIR}/ftp/wget
 
 BROKEN=		Incorrect pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 ONLY_FOR_ARCHS= i386
 USE_BZIP2=	yes

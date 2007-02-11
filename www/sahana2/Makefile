@@ -19,6 +19,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/adodb:${PORTSDIR}/databases/adodb \
 		${PEARDIR}/simpletest:${PORTSDIR}/devel/simpletest
 
 BROKEN=		Conflicting dependencies: php4 vs php5
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 NO_BUILD=	yes
 USE_PHP=	gd gettext

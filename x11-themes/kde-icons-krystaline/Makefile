@@ -17,5 +17,7 @@ PLIST_DIR_PATTERN_EXTRA=	-v "random"
 PLIST_FILE_PATTERN_EXTRA=	-v "random"
 
 BROKEN=		Does not build
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

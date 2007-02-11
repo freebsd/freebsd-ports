@@ -34,6 +34,8 @@ BUILD_DEPENDS+=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 .endif
 
 BROKEN=		Does not build
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+

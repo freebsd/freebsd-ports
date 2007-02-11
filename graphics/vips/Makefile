@@ -21,6 +21,8 @@ LIB_DEPENDS=	fftw3.4:${PORTSDIR}/math/fftw3 \
 		lcms.1:${PORTSDIR}/graphics/lcms
 
 BROKEN=		Missing dependency
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes

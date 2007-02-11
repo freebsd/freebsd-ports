@@ -23,6 +23,8 @@ BUILD_DEPENDS=	${JAVALIBDIR}/xmms2java.jar:${PORTSDIR}/audio/java-xmms2 \
 		${JAVALIBDIR}/jid3lib.jar:${PORTSDIR}/audio/jid3lib
 
 BROKEN=		Does not build
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+

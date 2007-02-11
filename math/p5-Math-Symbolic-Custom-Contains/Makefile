@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Math/Symbolic.pm:${PORTSDIR}/math/p5-Math-Symbolic
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 BROKEN=		Incorrect pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 MAN3=	Math::Symbolic::Custom::Contains.3
 

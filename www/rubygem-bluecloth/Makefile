@@ -14,6 +14,8 @@ COMMENT=	Ruby implementation of Markdown, a text-to-HTML conversion tool
 PLIST_SUB+=	DISTNAME="${DISTNAME}"
 
 BROKEN=		Incorrect pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"

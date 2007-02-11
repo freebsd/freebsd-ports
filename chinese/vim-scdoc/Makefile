@@ -19,6 +19,8 @@ COMMENT=	Vim documentation Simplified Chinese
 RUN_DEPENDS=	vim:${PORTSDIR}/editors/vim
 
 BROKEN=		Does not build
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 PLIST_SUB=	PATH_SUB=vim64
 NO_BUILD=	yes

@@ -27,6 +27,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/Crypt/CBC.php:${PORTSDIR}/security/pear-Cry
 		${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql50-server
 
 BROKEN=		Broken dependency
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 NO_BUILD=	yes
 USE_PHP=	mysql pcre session

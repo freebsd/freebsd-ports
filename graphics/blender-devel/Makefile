@@ -26,6 +26,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg-devel
 
 BROKEN=		Does not build
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 PLIST_FILES=	bin/blender
 USE_X_PREFIX=	yes

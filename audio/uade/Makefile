@@ -21,6 +21,8 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes

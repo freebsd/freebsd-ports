@@ -20,6 +20,8 @@ COMMENT=	Sync to Mobile Application Link (MAL) compliant servers
 LIB_DEPENDS=	pisock.9:${PORTSDIR}/palm/pilot-link
 
 BROKEN=		Does not build with new pilot-link
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 # Code is not 64-bit clean
 NOT_FOR_ARCH=	amd64

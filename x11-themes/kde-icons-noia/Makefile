@@ -17,5 +17,7 @@ WRKSRC=		"${WRKDIR}/noia_kde_${PORTVERSION:C/\.//}"
 PORT_SHAREDIR=	${PORTNAME}
 
 BROKEN=		Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 .include "${.CURDIR}/Makefile.icons"

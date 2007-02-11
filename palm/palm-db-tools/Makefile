@@ -16,6 +16,8 @@ MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	Utilities for the PalmOS flat-file database programs
 
 BROKEN=		Does not build
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes

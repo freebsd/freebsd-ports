@@ -19,6 +19,8 @@ COMMENT=	A PHP5 extension for MeCab Morphological Analyzer
 LIB_DEPENDS=	mecab:${PORTSDIR}/japanese/mecab
 
 BROKEN=		Does not compile
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 USE_PHP=	yes
 DEFAULT_PHP_VER=5

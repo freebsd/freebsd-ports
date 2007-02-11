@@ -19,6 +19,8 @@ COMMENT=	An extension to read and write Paradox files
 LIB_DEPENDS=	px.6:${PORTSDIR}/databases/pxlib
 
 BROKEN=		Does not compile
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 USE_PHP=	yes
 USE_PHPIZE=	yes

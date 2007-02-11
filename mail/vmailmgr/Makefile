@@ -15,6 +15,8 @@ MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Virtual MAIL ManaGeR for virtual mailboxes and domains
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 USE_APACHE=	yes
 USE_QMAIL_RUN=	yes

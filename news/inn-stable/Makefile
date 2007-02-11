@@ -24,5 +24,7 @@ MD5_FILE=	${.CURDIR}/distinfo
 MASTERDIR=	${.CURDIR}/../inn
 
 BROKEN=		Fails to patch
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 .include "${MASTERDIR}/Makefile"

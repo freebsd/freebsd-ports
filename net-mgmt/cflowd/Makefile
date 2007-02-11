@@ -19,6 +19,8 @@ COMMENT=	Flow analysis tool used for analyzing Cisco's NetFlow switching
 LIB_DEPENDS=	Arts.0:${PORTSDIR}/net-mgmt/arts++
 
 BROKEN=		Does not compile
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

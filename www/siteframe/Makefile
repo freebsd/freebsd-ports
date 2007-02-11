@@ -16,6 +16,8 @@ COMMENT=	A web community content management system in PHP5 and MySQL
 RUN_DEPENDS=	${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 USE_APACHE=	yes
 WITH_APACHE2=	yes

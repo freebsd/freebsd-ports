@@ -16,6 +16,8 @@ COMMENT=	Tune Pine for Russian (KOI8-R) defaults
 RUN_DEPENDS=	pine:${PORTSDIR}/mail/pine4
 
 BROKEN=		Leaves behind config file on deinstall
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES

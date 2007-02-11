@@ -21,6 +21,8 @@ BUILD_DEPENDS=	${FIREFOX}:${PORTSDIR}/www/firefox
 RUN_DEPENDS=	${FIREFOX}:${PORTSDIR}/www/firefox
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 NO_BUILD=	yes
 
