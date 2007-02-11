@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-MAC-Vendor
-PORTVERSION=	1.16
+PORTVERSION=	1.17
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -17,8 +17,6 @@ COMMENT=	Look up the vendor for a MAC
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		Unfetchable
 
 MAN3=	Net::MAC::Vendor.3
 
