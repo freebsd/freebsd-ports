@@ -318,7 +318,6 @@
     SUBDIR += mirmon
     SUBDIR += misterproper
     SUBDIR += mmv
-    SUBDIR += moviedb
     SUBDIR += mshell
     SUBDIR += mtx
     SUBDIR += muuz

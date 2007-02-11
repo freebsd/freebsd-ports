@@ -1,5 +1,0 @@
-#!/bin/sh
-
-. env.sh
-shift
-./configure "${@}"
