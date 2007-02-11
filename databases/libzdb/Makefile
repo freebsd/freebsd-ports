@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	libzdb
-PORTVERSION=	1.1
-PORTREVISION=	0
+PORTVERSION=	1.1.3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.tildeslash.com/libzdb/dist/
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Thread-safe connection pool library
 
 GNU_CONFIGURE=	yes
