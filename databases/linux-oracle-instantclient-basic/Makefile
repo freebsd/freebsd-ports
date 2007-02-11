@@ -6,12 +6,13 @@
 #
 
 PORTNAME=		instantclient
-PORTVERSION=		10.2.0.3.${DISTDATE}
+PORTVERSION=		${ORACLEVERSION}.${DISTDATE}
+PORTREVISION=		1
 CATEGORIES=		databases
 MASTER_SITES=		#http://www.oracle.com/technology/software/tech/oci/instantclient/
 PKGNAMEPREFIX=		linux-oracle-
 PKGNAMESUFFIX=		-basic
-DISTNAME=		${PORTNAME}${PKGNAMESUFFIX}-${LINUXARCH}-${PORTVERSION:S/.${DISTDATE}/-${DISTDATE}/}
+DISTNAME=		${PORTNAME}${PKGNAMESUFFIX}-${LINUXARCH}-${ORACLEVERSION}-${DISTDATE}
 DIST_SUBDIR=		oracle
 
 MAINTAINER=		nork@FreeBSD.org
@@ -26,6 +27,8 @@ RESTRICTED=		Packaging prohibited by Oracle license
 USE_ZIP=		yes
 USE_LINUX_PREFIX=	yes
 
+ORACLEVERSION=		10.2.0.3
+
 BINS_LIST=		genezi
 
 LIBS_LIST=		libclntsh.so.10.1	\
@@ -37,10 +40,10 @@ LIBS_LIST=		libclntsh.so.10.1	\
 
 WRKSRC=			${WRKDIR}/instantclient_10_2
 
-INSTBINSDIR=		${PREFIX}/usr/lib/oracle/${PORTVERSION}/client/bin
-INSTLIBSDIR=		${PREFIX}/usr/lib/oracle/${PORTVERSION}/client/lib
+INSTBINSDIR=		${PREFIX}/usr/lib/oracle/${ORACLEVERSION}/client/bin
+INSTLIBSDIR=		${PREFIX}/usr/lib/oracle/${ORACLEVERSION}/client/lib
 
-PLIST_SUB=		PORTVERSION=${PORTVERSION}
+PLIST_SUB=		ORACLEVERSION=${ORACLEVERSION}
 
 .include <bsd.port.pre.mk>
 
