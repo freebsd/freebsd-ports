@@ -67,21 +67,27 @@ Local/Library/Frameworks/Pantomime.framework/Versions/A/Headers/NSFileManager+Ex
 Local/Library/Frameworks/Pantomime.framework/Versions/A/Headers/NSScanner+Extensions.h
 Local/Library/Frameworks/Pantomime.framework/Versions/A/Headers/NSString+Extensions.h
 Local/Library/Frameworks/Pantomime.framework/Versions/A/Headers/Pantomime.h
-Local/Library/Frameworks/Pantomime.framework/Versions/A/Headers/elm_defs.h
-Local/Library/Frameworks/Pantomime.framework/Versions/A/Headers/elm_lib.h
 Local/Library/Frameworks/Pantomime.framework/Versions/A/Headers/io.h
-Local/Library/Frameworks/Pantomime.framework/Versions/A/Headers/parseaddrs.h
 Local/Library/Frameworks/Pantomime.framework/Versions/A/Pantomime
 Local/Library/Frameworks/Pantomime.framework/Versions/A/Resources/English.lproj/Localizable.strings
+Local/Library/Frameworks/Pantomime.framework/Versions/A/Resources/English.lproj/InfoPlist.strings
+Local/Library/Frameworks/Pantomime.framework/Versions/A/Resources/German.lproj/InfoPlist.strings
+Local/Library/Frameworks/Pantomime.framework/Versions/A/Resources/German.lproj/Localizable.strings
 Local/Library/Frameworks/Pantomime.framework/Versions/A/Resources/Info-gnustep.plist
 Local/Library/Frameworks/Pantomime.framework/Versions/A/libPantomime.so
 Local/Library/Frameworks/Pantomime.framework/Versions/A/libPantomime.so.%%MAJORVERSION%%.2
 Local/Library/Frameworks/Pantomime.framework/Versions/A/libPantomime.so.%%VERSION%%
 Local/Library/Frameworks/Pantomime.framework/Versions/Current
+Local/Library/Frameworks/Pantomime.framework/Versions/Resources/English.lproj/Localizable.strings
+Local/Library/Frameworks/Pantomime.framework/Versions/Resources/German.lproj/Localizable.strings
 Local/Library/Headers/Pantomime
 Local/Library/Libraries/libPantomime.so
 Local/Library/Libraries/libPantomime.so.%%MAJORVERSION%%.2
 Local/Library/Libraries/libPantomime.so.%%VERSION%%
+@dirrm Local/Library/Frameworks/Pantomime.framework/Versions/Resources/German.lproj
+@dirrm Local/Library/Frameworks/Pantomime.framework/Versions/Resources/English.lproj
+@dirrm Local/Library/Frameworks/Pantomime.framework/Versions/Resources
+@dirrm Local/Library/Frameworks/Pantomime.framework/Versions/A/Resources/German.lproj
 @dirrm Local/Library/Frameworks/Pantomime.framework/Versions/A/Resources/English.lproj
 @dirrm Local/Library/Frameworks/Pantomime.framework/Versions/A/Resources
 @dirrm Local/Library/Frameworks/Pantomime.framework/Versions/A/Headers
