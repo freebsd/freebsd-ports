@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Email-MIME
-PORTVERSION=	1.857
+PORTVERSION=	1.858
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,11 +30,6 @@ MAN3=		Email::MIME.3
 RUN_DEPENDS+=	p5-MIME-Tools>=5.404:${PORTSDIR}/mail/p5-MIME-Tools
 .else
 RUN_DEPENDS+=	p5-Encode>=1.98.1:${PORTSDIR}/converters/p5-Encode
-.endif
-
-.if ${PERL_LEVEL} < 500600
-# inherited from mail/p5-MIME-Tools
-IGNORE=		requires Perl 5.6. Install lang/perl5 or lang/perl5.8, and try again
 .endif
 
 .include <bsd.port.post.mk>
