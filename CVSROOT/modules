@@ -11265,6 +11265,7 @@ pear-apd	ports/devel/pear-apd
 pearpc		ports/emulators/pearpc
 pebrot		ports/net-im/pebrot
 pecl-APC	ports/www/pecl-APC
+pecl-amfext	ports/www/pecl-amfext
 pecl-bcompiler	ports/devel/pecl-bcompiler
 pecl-big_int	ports/math/pecl-big_int
 pecl-bz2	ports/archivers/pecl-bz2
