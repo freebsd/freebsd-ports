@@ -3500,6 +3500,7 @@ global		ports/devel/global
 globus4		ports/net/globus4
 glom		ports/databases/glom
 gloox		ports/net-im/gloox
+glpi		ports/www/glpi
 glpk		ports/math/glpk
 glpng		ports/graphics/glpng
 glpuzzle	ports/games/glpuzzle
