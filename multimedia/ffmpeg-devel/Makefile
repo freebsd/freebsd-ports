@@ -498,14 +498,14 @@ post-patch:
 		${WRKSRC}/libavformat/audio.c
 .endif
 .ifdef(WITH_BKTR_DEV)
-	@${REINPLACE_CMD} -E \
-		-e "s!idev = 0!idev = ${WITH_BKTR_DEV}!" \
-		${WRKSRC}/libavformat/grab_bsdbktr.c
+#	@${REINPLACE_CMD} -E \
+#		-e "s!idev = 0!idev = ${WITH_BKTR_DEV}!" \
+#		${WRKSRC}/libavformat/grab_bsdbktr.c
 .endif
 .ifdef(WITH_BKTR_FORMAT)
-	@${REINPLACE_CMD} -E \
-		-e "s!VIDEO_FORMAT NTSC!VIDEO_FORMAT ${WITH_BKTR_FORMAT}!" \
-		${WRKSRC}/libavformat/grab_bsdbktr.c
+#	@${REINPLACE_CMD} -E \
+#		-e "s!VIDEO_FORMAT NTSC!VIDEO_FORMAT ${WITH_BKTR_FORMAT}!" \
+#		${WRKSRC}/libavformat/grab_bsdbktr.c
 .endif
 .endif # WITH_VIDEO_CAPTURE
 .endif # ${ARCH} == i386
