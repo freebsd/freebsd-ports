@@ -179,6 +179,9 @@ OPTIONS+=	RELAYMAILFROM	"Open relay based on mailfrom" off \
 		BIGTODO		"Bruce Guenter's BigToDo patch" off \
 		SMTPEXTFORK		"Allow qmail-smtpd fork external progs" off
 .endif
+
+OPTIONS+=	QEXTRA "enable QUEUE_EXTRA e-mail copy feature" off
+
 .if !defined(SLAVE_LDAP)
 OPTIONS+=	RCDLINK "create rc.d/qmail.sh" on
 .endif
@@ -631,6 +634,11 @@ post-patch:
 	@${REINPLACE_CMD} '/"man"/d; /man\/man/d; /man\/cat/d; \
 			   /"doc"/d; /"boot","/d' \
 		${WRKSRC}/hier.c
+.if defined (WITH_QEXTRA)
+	@${REINPLACE_CMD} 's!QUEUE_EXTRA ""!QUEUE_EXTRA "Tlog\\0"!g; \
+			   s!QUEUE_EXTRALEN 0!QUEUE_EXTRALEN 5!g' \
+			   ${WRKSRC}/extra.h
+.endif
 
 do-configure:
 	@${SED} -e 's,%%RCDLINK%%,${RCDLINK},g; s,%%LOCALBASE%%,${LOCALBASE},g' \
