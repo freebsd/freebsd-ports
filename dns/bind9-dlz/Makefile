@@ -87,7 +87,7 @@ CONFIGURE_ARGS+=	--with-dlz-mysql
 
 .if defined(WITH_LDAP)
 LDAP_SUFFIX=	+ldap
-USE_OPENLDAP_VER?=	22
+USE_OPENLDAP_VER?=	23
 CONFIGURE_ARGS+=	--with-dlz-ldap
 .endif
 
