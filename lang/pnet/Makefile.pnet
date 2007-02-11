@@ -54,7 +54,7 @@ pnet-strap-install:
 
 pre-everything:: post-everything
 .if !defined(WITH_OPTIMIZED_CSFLAGS)
-	@${ECHO_MSG} "Define optimized CSLAGS with"
+	@${ECHO_MSG} "Define optimized CSFLAGS with"
 	@${ECHO_MSG} "WITH_OPTIMIZED_CSFLAGS=yes"
 .endif
 
