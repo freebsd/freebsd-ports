@@ -3,6 +3,29 @@ bin/peardev
 bin/pecl
 etc/pear.conf
 %%DOCSDIR%%/Archive_Tar/docs/Archive_Tar.txt
+%%DOCSDIR%%/PEAR/INSTALL
+%%DOCSDIR%%/PEAR/README
+%%DOCSDIR%%/Structures_Graph/docs/generate.sh
+%%DOCSDIR%%/Structures_Graph/docs/html/Structures_Graph/Structures_Graph.html
+%%DOCSDIR%%/Structures_Graph/docs/html/Structures_Graph/Structures_Graph_Manipulator_AcyclicTest.html
+%%DOCSDIR%%/Structures_Graph/docs/html/Structures_Graph/Structures_Graph_Manipulator_TopologicalSorter.html
+%%DOCSDIR%%/Structures_Graph/docs/html/Structures_Graph/Structures_Graph_Node.html
+%%DOCSDIR%%/Structures_Graph/docs/html/Structures_Graph/_Structures_Graph_Manipulator_AcyclicTest_php.html
+%%DOCSDIR%%/Structures_Graph/docs/html/Structures_Graph/_Structures_Graph_Manipulator_TopologicalSorter_php.html
+%%DOCSDIR%%/Structures_Graph/docs/html/Structures_Graph/_Structures_Graph_Node_php.html
+%%DOCSDIR%%/Structures_Graph/docs/html/Structures_Graph/_Structures_Graph_php.html
+%%DOCSDIR%%/Structures_Graph/docs/html/Structures_Graph/tutorial_Structures_Graph.pkg.html
+%%DOCSDIR%%/Structures_Graph/docs/html/classtrees_Structures_Graph.html
+%%DOCSDIR%%/Structures_Graph/docs/html/elementindex.html
+%%DOCSDIR%%/Structures_Graph/docs/html/elementindex_Structures_Graph.html
+%%DOCSDIR%%/Structures_Graph/docs/html/errors.html
+%%DOCSDIR%%/Structures_Graph/docs/html/index.html
+%%DOCSDIR%%/Structures_Graph/docs/html/li_Structures_Graph.html
+%%DOCSDIR%%/Structures_Graph/docs/html/media/banner.css
+%%DOCSDIR%%/Structures_Graph/docs/html/media/stylesheet.css
+%%DOCSDIR%%/Structures_Graph/docs/html/packages.html
+%%DOCSDIR%%/Structures_Graph/docs/html/todolist.html
+%%DOCSDIR%%/Structures_Graph/docs/tutorials/Structures_Graph/Structures_Graph.pkg
 @exec mkdir -p %D/share/pear/.channels/.alias
 @exec mkdir -p %D/share/pear/.registry/.channel.__uri
 @exec mkdir -p %D/share/pear/.registry/.channel.pecl.php.net
@@ -125,6 +148,14 @@ etc/pear.conf
 %%DATADIR%%/tests/Structures_Graph/tests/testCase/BasicGraph.php
 @dirrm %%DOCSDIR%%/Archive_Tar/docs
 @dirrm %%DOCSDIR%%/Archive_Tar
+@dirrm %%DOCSDIR%%/PEAR
+@dirrm %%DOCSDIR%%/Structures_Graph/docs/html/Structures_Graph
+@dirrm %%DOCSDIR%%/Structures_Graph/docs/html/media
+@dirrm %%DOCSDIR%%/Structures_Graph/docs/html
+@dirrm %%DOCSDIR%%/Structures_Graph/docs/tutorials/Structures_Graph
+@dirrm %%DOCSDIR%%/Structures_Graph/docs/tutorials
+@dirrm %%DOCSDIR%%/Structures_Graph/docs
+@dirrm %%DOCSDIR%%/Structures_Graph
 @dirrmtry share/doc/pear
 @unexec rm %D/share/pear/.channels/.alias/pear.txt 2> /dev/null || true
 @unexec rm %D/share/pear/.channels/.alias/pecl.txt 2> /dev/null || true
