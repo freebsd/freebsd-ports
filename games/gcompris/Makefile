@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcompris
-PORTVERSION=	8.2.1
+DISTVERSION=	8.2.2-2
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gcompris
@@ -24,6 +24,7 @@ LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 RUN_DEPENDS=	gnuchess:${PORTSDIR}/games/gnuchess \
 		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite20
 
+WRKSRC=	${WRKDIR}/${PORTNAME}-8.2.2
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
@@ -54,10 +55,10 @@ CONFIGURE_ENV+=	DISPLAY="localhost:1001"
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
+		${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-DGNOME_DISABLE_DEPRECATED||g'
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
-	    	${WRKSRC}/configure
 
 .if !defined(DISPLAY)
 pre-configure:
