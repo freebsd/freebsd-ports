@@ -45,11 +45,9 @@
     SUBDIR += chpp
     SUBDIR += cl-meta
     SUBDIR += cl-meta-clisp
-    SUBDIR += cl-meta-cmucl
     SUBDIR += cl-meta-sbcl
     SUBDIR += cl-ppcre
     SUBDIR += cl-ppcre-clisp
-    SUBDIR += cl-ppcre-cmucl
     SUBDIR += cl-ppcre-sbcl
     SUBDIR += clit
     SUBDIR += clucene
