@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	ipbt
-DISTVERSION=	r6860
+DISTVERSION=	r7268
 CATEGORIES=	misc
 MASTER_SITES=	http://www.chiark.greenend.org.uk/~sgtatham/ipbt/
 
 MAINTAINER=	matt_mills@btopenworld.com
 COMMENT=	A high-tech ttyrec player with improvements over ttyplay
 
-USE_PERL5_BUILD=	yes
+USE_PERL5=	yes
 
 ALL_TARGET=	${PORTNAME}
-PLIST_FILES=	bin/ipbt
+PLIST_FILES=	bin/ipbt bin/ttygrep bin/ttydump
 
 .include <bsd.port.pre.mk>
 
@@ -30,5 +30,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/ttydump ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/ttygrep ${PREFIX}/bin
 
 .include <bsd.port.post.mk>

@@ -6,6 +6,7 @@ that ttyplay lacks. Notable features are:
 	* Adjustable play speed (faster/slower)
 	* Jump to beginning/end in a single keystroke
 	* Searching forward/backward for a given string
+	* ttygrep and ttydump utilities
 
 IPBT works by reading the entire input file and running it through
 an internal terminal emulator (the one from PuTTY).
