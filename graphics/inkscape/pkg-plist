@@ -398,6 +398,8 @@ share/locale/uk/LC_MESSAGES/inkscape.mo
 share/locale/vi/LC_MESSAGES/inkscape.mo
 share/locale/zh_CN/LC_MESSAGES/inkscape.mo
 share/locale/zh_TW/LC_MESSAGES/inkscape.mo
+@dirrmtry share/locale/en_US@piglatin/LC_MESSAGES
+@dirrmtry share/locale/en_US@piglatin
 @dirrm share/gnome/inkscape/ui
 @dirrm share/gnome/inkscape/tutorials
 @dirrm share/gnome/inkscape/templates
