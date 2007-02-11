@@ -6,18 +6,18 @@
 #
 
 PORTNAME=		instantclient
-PORTVERSION=		10.2.0.2.${DISTDATE}
+PORTVERSION=		${ORACLEVERSION}.${DISTDATE}
 CATEGORIES=		databases
 MASTER_SITES=		#http://www.oracle.com/technology/software/tech/oci/instantclient/
 PKGNAMEPREFIX=		linux-oracle-
 PKGNAMESUFFIX=		-sqlplus
-DISTNAME=		${PORTNAME}${PKGNAMESUFFIX}-${LINUXARCH}-${PORTVERSION:S/.${DISTDATE}/-${DISTDATE}/}
+DISTNAME=		${PORTNAME}${PKGNAMESUFFIX}-${LINUXARCH}-${ORACLEVERSION}-${DISTDATE}
 DIST_SUBDIR=		oracle
 
 MAINTAINER=		nork@FreeBSD.org
 COMMENT=		Oracle 10 InstantClient SQLPlus. Works with Oracle RDBMS 8.1.2+
 
-RUN_DEPENDS=		${LINUXBASE}/usr/lib/oracle/${PORTVERSION}/client/lib/libocci.so.10.1:${.CURDIR}/../linux-oracle-instantclient-basic
+RUN_DEPENDS=		${LINUXBASE}/usr/lib/oracle/${ORACLEVERSION}/client/lib/libocci.so.10.1:${PORTSDIR}/databases/linux-oracle-instantclient-basic
 
 ONLY_FOR_ARCHS=		i386	# amd64(not yet on own)
 NO_BUILD=		yes
@@ -28,6 +28,8 @@ RESTRICTED=		Packaging prohibited by Oracle license
 USE_ZIP=		yes
 USE_LINUX_PREFIX=	yes
 
+ORACLEVERSION=		10.2.0.3
+
 BINS_LIST=		sqlplus
 
 LIBS_LIST=		glogin.sql	\
@@ -36,19 +38,19 @@ LIBS_LIST=		glogin.sql	\
 
 WRKSRC=			${WRKDIR}/instantclient_10_2
 
-INSTLIBSDIR=		${PREFIX}/usr/lib/oracle/${PORTVERSION}/client/lib
-INSTBINSDIR=		${PREFIX}/usr/lib/oracle/${PORTVERSION}/client/bin
+INSTBINSDIR=		${PREFIX}/usr/lib/oracle/${ORACLEVERSION}/client/bin
+INSTLIBSDIR=		${PREFIX}/usr/lib/oracle/${ORACLEVERSION}/client/lib
 
-PLIST_SUB=		PORTVERSION=${PORTVERSION}
+PLIST_SUB=		ORACLEVERSION=${ORACLEVERSION}
 
 .include <bsd.port.pre.mk>
 
 .if		${ARCH} == "i386"
 LINUXARCH=		linux32
-DISTDATE=		20060331
+DISTDATE=		20061115
 .elif		${ARCH} == "amd64"
 LINUXARCH=		linux-x86-64
-DISTDATE=		20060228
+DISTDATE=		20070103
 .endif
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
@@ -71,12 +73,13 @@ IGNORE+=		and then restart this installation\n\n
 
 do-install:
 			${MKDIR} -m 0755 ${INSTBINSDIR}
-			${LN} -s ../lib/oracle/${PORTVERSION}/client/bin/sqlplus ${PREFIX}/usr/bin/sqlplus
+			${MKDIR} -m 0755 ${INSTLIBSDIR}
+			${LN} -s ../lib/oracle/${ORACLEVERSION}/client/bin/sqlplus ${PREFIX}/usr/bin/sqlplus
 .for i in ${BINS_LIST}
 			${INSTALL_SCRIPT} ${WRKSRC}/${i} ${INSTBINSDIR}/${i}
 .endfor
 .for i in ${LIBS_LIST}
-			${INSTALL_DATA} ${WRKSRC}/${i} ${INSTLIBSDIR}/${i}
+			${INSTALL_DATA}   ${WRKSRC}/${i} ${INSTLIBSDIR}/${i}
 .endfor
 
 .include <bsd.port.post.mk>

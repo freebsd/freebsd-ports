@@ -1,7 +1,7 @@
 usr/bin/sqlplus
-usr/lib/oracle/%%PORTVERSION%%/client/bin/sqlplus
-usr/lib/oracle/%%PORTVERSION%%/client/lib/glogin.sql
-usr/lib/oracle/%%PORTVERSION%%/client/lib/libsqlplus.so
-usr/lib/oracle/%%PORTVERSION%%/client/lib/libsqlplusic.so
-@dirrm usr/lib/oracle/%%PORTVERSION%%/client/bin
+usr/lib/oracle/%%ORACLEVERSION%%/client/bin/sqlplus
+usr/lib/oracle/%%ORACLEVERSION%%/client/lib/glogin.sql
+usr/lib/oracle/%%ORACLEVERSION%%/client/lib/libsqlplus.so
+usr/lib/oracle/%%ORACLEVERSION%%/client/lib/libsqlplusic.so
+@dirrm usr/lib/oracle/%%ORACLEVERSION%%/client/bin
 @dirrmtry usr/bin
