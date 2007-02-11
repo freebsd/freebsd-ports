@@ -17,6 +17,9 @@ COMMENT=	Batch job queueing system
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80 \
 		tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
+DEPRECATED=	Broken on all supported versions of FreeBSD
+EXPIRATION_DATE=2007-03-10
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--set-server-home=/var/spool/pbs --enable-docs

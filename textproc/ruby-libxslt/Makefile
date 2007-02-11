@@ -24,6 +24,9 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xslt.2:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xml/libxml.so:${PORTSDIR}/textproc/ruby-libxml
 
+DEPRECATED=	Broken on all supported versions of FreeBSD
+EXPIRATION_DATE=2007-03-10
+
 PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/xml/libxslt.so
 USE_BZIP2=	yes
 USE_RUBY=	yes

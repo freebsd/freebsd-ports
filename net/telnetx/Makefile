@@ -16,6 +16,9 @@ DISTNAME=	telnetx+transit.src.940401
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Telnet client with binary transfer protocols support
 
+DEPRECATED=	Broken on all supported versions of FreeBSD
+EXPIRATION_DATE=2007-03-10
+
 RUN_DEPENDS+=	bp:${PORTSDIR}/comms/bpl+
 RUN_DEPENDS+=	kermit:${PORTSDIR}/comms/kermit
 

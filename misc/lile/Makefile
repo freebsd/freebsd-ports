@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tar.z
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	An Input Line Editor that wraps itself around programs
 
+DEPRECATED=	Broken on all supported versions of FreeBSD
+EXPIRATION_DATE=2007-03-10
+
 MAN1=		ile.1
 PLIST_FILES=	bin/ile
 

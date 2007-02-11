@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	A hangul console
 
+DEPRECATED=	Broken on all supported versions of FreeBSD
+EXPIRATION_DATE=2007-03-10
+
 ONLY_FOR_ARCHS=	i386
 
 USE_GMAKE=	YES

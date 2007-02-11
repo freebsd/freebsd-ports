@@ -16,6 +16,9 @@ COMMENT=	A graphical disk space viewer for X
 
 LIB_DEPENDS=    xview.3:${PORTSDIR}/x11-toolkits/xview
 
+DEPRECATED=	Broken on all supported versions of FreeBSD
+EXPIRATION_DATE=2007-03-10
+
 PLIST_FILES=	bin/xdf
 USE_XLIB=	yes
 USE_X_PREFIX=   yes

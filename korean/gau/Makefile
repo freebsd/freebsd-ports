@@ -22,6 +22,9 @@ COMMENT=	Gtk-based Hangul terminal emulator (for modem/tcp)
 RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz \
 		${X11BASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
 
+DEPRECATED=	Broken on all supported versions of FreeBSD
+EXPIRATION_DATE=2007-03-10
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
