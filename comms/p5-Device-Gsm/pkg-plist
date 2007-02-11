@@ -12,6 +12,7 @@
 %%SITE_PERL%%/Device/Gsm/Sms/Structure.pm
 %%SITE_PERL%%/Device/Gsm/Sms.pm
 %%SITE_PERL%%/Device/Gsm/Pdu.pm
+%%SITE_PERL%%/Device/Gsm/Networks.pm
 %%SITE_PERL%%/Device/Gsm/Charset.pm
 %%SITE_PERL%%/Device/Gsm.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Device/Gsm/.packlist
