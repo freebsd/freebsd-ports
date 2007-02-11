@@ -11,6 +11,9 @@ CATEGORIES=	japanese x11 gnome
 
 MASTERDIR=	${.CURDIR}/../../x11/gnome-libs
 
+DEPRECATED=	Broken on all supported versions of FreeBSD
+EXPIRATION_DATE=2007-03-10
+
 EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
 MAINTAINER=	ports@FreeBSD.org
