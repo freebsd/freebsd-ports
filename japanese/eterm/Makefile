@@ -27,6 +27,9 @@ PLIST=		${MASTERDIR}/pkg-plist
 
 THEMES=		Escreen Eterm auto trans
 
+pre-configure:
+	@${REINPLACE_CMD} -e "s,echo aout,echo elf,g" ${WRKSRC}/configure
+
 post-configure:
 	for theme in ${THEMES} ; do \
 		${CP} ${WRKSRC}/themes/$$theme/theme.cfg ${WRKSRC}/themes/$$theme/theme.cfg.bak ; \
