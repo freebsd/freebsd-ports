@@ -1,9 +1,11 @@
+usr/lib/oracle/%%PORTVERSION%%/client/bin/genezi
 usr/lib/oracle/%%PORTVERSION%%/client/lib/libclntsh.so.10.1
 usr/lib/oracle/%%PORTVERSION%%/client/lib/libnnz10.so
 usr/lib/oracle/%%PORTVERSION%%/client/lib/libocci.so.10.1
 usr/lib/oracle/%%PORTVERSION%%/client/lib/libociei.so
 usr/lib/oracle/%%PORTVERSION%%/client/lib/libocijdbc10.so
 usr/lib/oracle/%%PORTVERSION%%/client/lib/ojdbc14.jar
+@dirrm usr/lib/oracle/%%PORTVERSION%%/client/bin
 @dirrm usr/lib/oracle/%%PORTVERSION%%/client/lib
 @dirrm usr/lib/oracle/%%PORTVERSION%%/client
 @dirrm usr/lib/oracle/%%PORTVERSION%%

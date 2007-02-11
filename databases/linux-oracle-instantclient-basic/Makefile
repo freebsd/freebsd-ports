@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		instantclient
-PORTVERSION=		10.2.0.2.${DISTDATE}
+PORTVERSION=		10.2.0.3.${DISTDATE}
 CATEGORIES=		databases
 MASTER_SITES=		#http://www.oracle.com/technology/software/tech/oci/instantclient/
 PKGNAMEPREFIX=		linux-oracle-
@@ -26,6 +26,7 @@ RESTRICTED=		Packaging prohibited by Oracle license
 USE_ZIP=		yes
 USE_LINUX_PREFIX=	yes
 
+BIN_LIST=		genezi
 LIBS_LIST=		libclntsh.so.10.1	\
 			libnnz10.so		\
 			libocci.so.10.1		\
@@ -35,6 +36,7 @@ LIBS_LIST=		libclntsh.so.10.1	\
 
 WRKSRC=			${WRKDIR}/instantclient_10_2
 
+INSTBINDIR=		${PREFIX}/usr/lib/oracle/${PORTVERSION}/client/bin
 INSTLIBSDIR=		${PREFIX}/usr/lib/oracle/${PORTVERSION}/client/lib
 
 PLIST_SUB=		PORTVERSION=${PORTVERSION}
@@ -43,10 +45,10 @@ PLIST_SUB=		PORTVERSION=${PORTVERSION}
 
 .if		${ARCH} == "i386"
 LINUXARCH=		linux32
-DISTDATE=		20060331
+DISTDATE=		20061115
 .elif		${ARCH} == "amd64"
 LINUXARCH=		linux-x86-64
-DISTDATE=		20060228
+DISTDATE=		20070103
 .endif
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
@@ -68,7 +70,11 @@ IGNORE+=		and then restart this installation\n\n
 .endif
 
 do-install:
+			@${MKDIR} -m 0755 ${INSTBINDIR}
 			@${MKDIR} -m 0755 ${INSTLIBSDIR}
+.for i in ${BIN_LIST}
+			${INSTALL_DATA} ${WRKSRC}/${i} ${INSTBINDIR}/${i}
+.endfor
 .for i in ${LIBS_LIST}
 			${INSTALL_DATA} ${WRKSRC}/${i} ${INSTLIBSDIR}/${i}
 .endfor
