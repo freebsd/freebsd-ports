@@ -10,7 +10,7 @@ PORTVERSION=	20020819
 CATEGORIES=	databases
 MASTER_SITES=	http://www.animenfo.com/extension/files/
 PKGNAMESUFFIX=	-client-gui-gtk${PKGNAMESUFFIX2}
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}
+DISTNAME=	${PORTNAME}-client-gui-gtk
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dinoex@FreeBSD.org
