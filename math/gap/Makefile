@@ -34,7 +34,7 @@ OPTIONS=	COMPRESSED_TOMLIB	"Compress tomlib files"		On \
 .include <bsd.port.pre.mk>
 
 GAP_VERSION=	gap4r4
-GAP_PKGTIME=	2006_11_09-19_37_UTC
+GAP_PKGTIME=	2007_02_10-17_06_UTC
 GAP_PKGDATE=	${GAP_PKGTIME:C/-.*//:S/_//g}
 GAP_WRKSRC=	${WRKSRC}/${GAP_VERSION}
 GAP_LIBDIR=	${PREFIX}/lib/${GAP_VERSION}
@@ -50,6 +50,7 @@ do-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e "/^CC=/d" ${GAP_WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s/@CC@/@BASECC@/" ${GAP_WRKSRC}/sysinfo.in
 
 do-configure:
 	(cd ${GAP_WRKSRC}; ./configure)
