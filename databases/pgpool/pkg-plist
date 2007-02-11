@@ -1,3 +1,4 @@
 @comment $FreeBSD$
 bin/pgpool
 etc/pgpool.conf.sample
+etc/pool_hba.conf.sample
