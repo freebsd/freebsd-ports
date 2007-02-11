@@ -26,7 +26,8 @@ RESTRICTED=		Packaging prohibited by Oracle license
 USE_ZIP=		yes
 USE_LINUX_PREFIX=	yes
 
-BIN_LIST=		genezi
+BINS_LIST=		genezi
+
 LIBS_LIST=		libclntsh.so.10.1	\
 			libnnz10.so		\
 			libocci.so.10.1		\
@@ -36,7 +37,7 @@ LIBS_LIST=		libclntsh.so.10.1	\
 
 WRKSRC=			${WRKDIR}/instantclient_10_2
 
-INSTBINDIR=		${PREFIX}/usr/lib/oracle/${PORTVERSION}/client/bin
+INSTBINSDIR=		${PREFIX}/usr/lib/oracle/${PORTVERSION}/client/bin
 INSTLIBSDIR=		${PREFIX}/usr/lib/oracle/${PORTVERSION}/client/lib
 
 PLIST_SUB=		PORTVERSION=${PORTVERSION}
@@ -70,10 +71,10 @@ IGNORE+=		and then restart this installation\n\n
 .endif
 
 do-install:
-			@${MKDIR} -m 0755 ${INSTBINDIR}
+			@${MKDIR} -m 0755 ${INSTBINSDIR}
 			@${MKDIR} -m 0755 ${INSTLIBSDIR}
-.for i in ${BIN_LIST}
-			${INSTALL_DATA} ${WRKSRC}/${i} ${INSTBINDIR}/${i}
+.for i in ${BINS_LIST}
+			${INSTALL_DATA} ${WRKSRC}/${i} ${INSTBINSDIR}/${i}
 .endfor
 .for i in ${LIBS_LIST}
 			${INSTALL_DATA} ${WRKSRC}/${i} ${INSTLIBSDIR}/${i}
