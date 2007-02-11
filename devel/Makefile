@@ -96,6 +96,7 @@
     SUBDIR += bison2
     SUBDIR += bisongen
     SUBDIR += bnf
+    SUBDIR += bnfc
     SUBDIR += boaconstructor
     SUBDIR += boehm-gc
     SUBDIR += bonobo
