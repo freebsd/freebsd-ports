@@ -89,6 +89,10 @@ INSTALLS_SHLIB=	yes
 
 MAN1=	mlterm.1 mlclient.1
 
+post-patch:
+	@${REINPLACE_CMD} -e "s,echo aout,echo elf,g" ${WRKSRC}/configure \
+		${WRKSRC}/kiklib/configure ${WRKSRC}/mkf/configure
+
 post-configure:
 	@${CP} ${LIBTOOL} ${WRKSRC}
 	@${REINPLACE_CMD} -e "s,@CGI_BIN@,${PREFIX}/libexec/w3mmlconfig," \
