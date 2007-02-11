@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oniguruma
-PORTVERSION=	4.5.0
+PORTVERSION=	4.6.0
 CATEGORIES=	devel textproc
 MASTER_SITES=	http://www.geocities.jp/kosako3/oniguruma/archive/
 DISTNAME=	onig-${PORTVERSION}
@@ -15,12 +15,15 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A BSDL Regular Expressions library compatible with POSIX/GNU/Perl
 
-USE_AUTOTOOLS=	libtool:15
 CONFLICTS=	oniguruma-2.*
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 DOCS=		HISTORY README doc/*
+
+post-patch:
+	${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
+		${WRKSRC}/configure
 
 post-configure:
 	${SED} -e 's|%%PREFIX%%|${PREFIX}|' \
