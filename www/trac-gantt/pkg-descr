@@ -14,4 +14,4 @@ Tickets" tab in Trac). The Gantt charts are pure XHTML and are
 generated on-the-fly from the ticket reports, using only the tickets
 provided by the report.
 
-WWW: http://willbarton.com/code/tracgantt
+WWW: http://willbarton.com/
