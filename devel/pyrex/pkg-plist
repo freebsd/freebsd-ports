@@ -21,6 +21,9 @@ bin/pyrexc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Main.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Main.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Main.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Compiler/ModuleNode.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Compiler/ModuleNode.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Compiler/ModuleNode.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Naming.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Naming.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Naming.pyo
@@ -63,24 +66,12 @@ bin/pyrexc
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/DarwinSystem.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/DarwinSystem.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/DarwinSystem.pyo
-%%PYTHON_SITELIBDIR%%/Pyrex/Mac/Finder_Std_Suite.py
-%%PYTHON_SITELIBDIR%%/Pyrex/Mac/Finder_Std_Suite.pyc
-%%PYTHON_SITELIBDIR%%/Pyrex/Mac/Finder_Std_Suite.pyo
-%%PYTHON_SITELIBDIR%%/Pyrex/Mac/MPW_Misc_Suite.py
-%%PYTHON_SITELIBDIR%%/Pyrex/Mac/MPW_Misc_Suite.pyc
-%%PYTHON_SITELIBDIR%%/Pyrex/Mac/MPW_Misc_Suite.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/MacSystem.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/MacSystem.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/MacSystem.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/MacUtils.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/MacUtils.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/MacUtils.pyo
-%%PYTHON_SITELIBDIR%%/Pyrex/Mac/PS_Misc_Suite.py
-%%PYTHON_SITELIBDIR%%/Pyrex/Mac/PS_Misc_Suite.pyc
-%%PYTHON_SITELIBDIR%%/Pyrex/Mac/PS_Misc_Suite.pyo
-%%PYTHON_SITELIBDIR%%/Pyrex/Mac/PyServerMain.py
-%%PYTHON_SITELIBDIR%%/Pyrex/Mac/PyServerMain.pyc
-%%PYTHON_SITELIBDIR%%/Pyrex/Mac/PyServerMain.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/TS_Misc_Suite.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/TS_Misc_Suite.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/TS_Misc_Suite.pyo
@@ -123,12 +114,19 @@ bin/pyrexc
 %%PYTHON_SITELIBDIR%%/Pyrex/Plex/test_tm.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Plex/test_tm.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Plex/test_tm.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Unix/LinuxSystem.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Unix/LinuxSystem.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Unix/LinuxSystem.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Unix/__init__.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Unix/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Unix/__init__.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Utils.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Utils.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Utils.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/__init__.py
 %%PYTHON_SITELIBDIR%%/Pyrex/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/__init__.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/Pyrex/Unix
 @dirrm %%PYTHON_SITELIBDIR%%/Pyrex/Plex
 @dirrm %%PYTHON_SITELIBDIR%%/Pyrex/Mac
 @dirrm %%PYTHON_SITELIBDIR%%/Pyrex/Distutils

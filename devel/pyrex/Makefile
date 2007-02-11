@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pyrex
-PORTVERSION=	0.9.4.1
+PORTVERSION=	0.9.5.1a
 CATEGORIES=	devel lang python
-MASTER_SITES=	http://nz.cosc.canterbury.ac.nz/~greg/python/Pyrex/
+MASTER_SITES=	http://www.cosc.canterbury.ac.nz/greg.ewing/python/Pyrex/
 PKGNAMEPREFIX=	${PYTHONPKGNAMEPREFIX}
 DISTNAME=	Pyrex-${PORTVERSION}
 
