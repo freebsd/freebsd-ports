@@ -1,0 +1,14 @@
+This module allows you to write a Stomp client.  Stomp is the Streaming
+Text Orientated Messaging Protocol (or the Protocol Briefly Known as
+TTMP and Represented by the symbol :ttmp).  It's a simple and easy to
+implement protocol for working with Message Orientated Middleware from
+any language.  Net::Stomp is useful for talking to Apache ActiveMQ, an
+open source (Apache 2.0 licensed) Java Message Service 1.1 (JMS) message
+broker packed with many enterprise features.
+
+A Stomp frame consists of a command, a series of headers and a body -
+see Net::Stomp::Frame for more details.
+
+For details on the protocol see http://stomp.codehaus.org/Protocol.
+
+WWW: http://search.cpan.org/dist/Net-Stomp/
