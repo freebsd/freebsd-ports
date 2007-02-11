@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pwman
-PORTVERSION=	0.3.2
-PORTREVISION=	4
+PORTVERSION=	0.3.5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +24,7 @@ MAN1=	pwman.1
 DOCS=	AUTHORS COPYING ChangeLog README TODO
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/gpg|${LOCALBASE}/bin/gpg|g' ${WRKSRC}/src/misc.c
+	@${REINPLACE_CMD} -e 's|/usr/bin/gpg|${LOCALBASE}/bin/gpg|g' ${WRKSRC}/src/options.c
 
 .if !defined(NOPORTDOCS)
 post-install:
