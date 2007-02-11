@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME 2 desktop weblog aggregator written in Python
 
 BROKEN=	Does not work with the newer GTK/GNOME python bindings
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 USE_GMAKE=	yes
 USE_XLIB=	yes

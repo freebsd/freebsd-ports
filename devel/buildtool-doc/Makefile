@@ -21,6 +21,8 @@ BUILD_DEPENDS=	${BUILDTOOL}:${PORTSDIR}/devel/buildtool \
 		${DOCBOOK_XSL}:${PORTSDIR}/textproc/docbook-xsl
 
 BROKEN=		Incorrect pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 .if defined(NOPORTDOCS)
 IGNORE=		contains only documentation

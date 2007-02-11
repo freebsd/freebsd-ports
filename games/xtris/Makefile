@@ -18,6 +18,8 @@ MAINTAINER=	sec@42.org
 COMMENT=	A multi-player version of a popular game for the X Window system
 
 BROKEN=		Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 RESTRICTED=	"Possible trademark infringement"
 WRKSRC=		${WRKDIR}/xtris

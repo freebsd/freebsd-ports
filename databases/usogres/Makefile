@@ -15,6 +15,8 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Real-time backup utility for PostgreSQL
 
 BROKEN=		Leaves behind config file on deinstall
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

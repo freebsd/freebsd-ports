@@ -16,6 +16,8 @@ COMMENT=	Tune Elm with MIME for KOI8-R defaults
 RUN_DEPENDS+=	elm:${PORTSDIR}/mail/elm+ME
 
 BROKEN=		Leaves behind files on deinstall
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 PLIST_FILES=	lib/elm.rc
 NO_WRKSUBDIR=	YES

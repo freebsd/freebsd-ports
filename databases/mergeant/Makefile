@@ -30,5 +30,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 BROKEN=	does not build with new libgnomedb
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 .include <bsd.port.mk>

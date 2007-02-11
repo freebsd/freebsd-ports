@@ -18,6 +18,8 @@ LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 BROKEN= does not build with new nautilus-cd-burner
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 USE_XLIB=	yes
 USE_GMAKE=	yes

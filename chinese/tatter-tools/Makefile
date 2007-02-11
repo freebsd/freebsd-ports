@@ -14,6 +14,8 @@ MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Cute and easy blog tool with Traditional-Chinese(zh_TW.UTF-8)
 
 BROKEN=		Incorrect pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 USE_PHP=	mysql pcre session xml
 NO_BUILD=	YES

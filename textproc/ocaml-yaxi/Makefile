@@ -27,6 +27,8 @@ RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		${OCAML_SITELIBDIR}/camomile/camomile.a:${PORTSDIR}/devel/ocaml-camomile
 
 BROKEN=		Does not build
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 OCAML_SITELIBDIR=	${LOCALBASE}/lib/ocaml/site-lib
 USE_GMAKE=	yes

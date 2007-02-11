@@ -8,6 +8,8 @@
 COMMENT=	Python module for libdnet
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 MASTERDIR=	${.CURDIR}/../libdnet
 

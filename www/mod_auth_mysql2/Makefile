@@ -17,6 +17,8 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	MySQL-based authentication module with VirtualHost support
 
 BROKEN=		Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 LATEST_LINK=	mod_auth_mysql2
 

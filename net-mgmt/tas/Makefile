@@ -15,6 +15,8 @@ MAINTAINER=	anton@chelcom.ru
 COMMENT=	Traffic accounting system
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 WRKSRC=		${WRKDIR}/tas
 

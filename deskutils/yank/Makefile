@@ -18,6 +18,8 @@ BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 RUN_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 
 BROKEN=		Incomplete pkg-plist
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

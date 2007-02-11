@@ -17,6 +17,8 @@ COMMENT=	Validates the HTML output of your apache2 webserver
 LIB_DEPENDS=	tidy:${PORTSDIR}/www/tidy-lib
 
 BROKEN=		Size mismatch
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 USE_APACHE=	20

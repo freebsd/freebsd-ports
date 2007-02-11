@@ -30,6 +30,8 @@ RUN_DEPENDS=	\
 		vamps:${PORTSDIR}/multimedia/vamps
 
 BROKEN=		Touches filesystem prior to 'make install'
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 CONFLICTS=	lxdvdrip-{{0.,1.[0-3],1.4[0-7]}*
 OPTIONS=	MPLAYER "Enable DVD playing using mplayer" on

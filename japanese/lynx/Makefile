@@ -20,6 +20,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A terminal-based World-Wide Web Client with multi-byte modification
 
 BROKEN=		Leaves behind config file on deinstall
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${VERSION:S/./-/g}
 

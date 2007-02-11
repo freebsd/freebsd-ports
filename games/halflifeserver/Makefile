@@ -21,6 +21,8 @@ MAINTAINER=	pat@FreeBSD.org
 COMMENT?=	Steam Enabled Half-Life Dedicated Server with CS and DOD
 
 BROKEN=		Incomplete fetch instructions
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes

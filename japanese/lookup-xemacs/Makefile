@@ -13,5 +13,7 @@ USE_EMACS=	yes
 EMACS_PORT_NAME=xemacs21-mule
 
 BROKEN=		Does not install
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 .include	"${MASTERDIR}/Makefile"

@@ -19,6 +19,8 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libopenal.so.0:${PORTSDIR}/audio/linux-openal 
 		${LINUXBASE}/usr/X11R6/lib/libGLU.so.1:${PORTSDIR}/graphics/linux_dri
 
 BROKEN=		Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 USE_X_PREFIX=	yes
 USE_LINUX=	yes

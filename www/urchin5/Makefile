@@ -15,6 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The most powerful web traffic analysis program available
 
 BROKEN=		Does not install
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 ONLY_FOR_ARCHS=	i386
 LICENSE=	commercial

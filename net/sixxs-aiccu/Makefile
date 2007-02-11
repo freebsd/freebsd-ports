@@ -16,6 +16,8 @@ MAINTAINER=	meno.abels@adviser.com
 COMMENT=	SixXS IPv6 TIC+ tunnel broker heartbeat client
 
 BROKEN=		Unfetchable
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2007-04-10
 
 USE_RC_SUBR=	sixxs-aiccu
 USE_GMAKE=	yes
