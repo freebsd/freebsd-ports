@@ -5,7 +5,7 @@
        splash_screens_file = File.new(file, File::CREAT|File::TRUNC|File::RDWR, 0644)
    
 -      new_splash_screens_file = "<?xml version=\"1.0\"?>\n<splash_screens>\n</splash_screens>\n"
-+      new_splash_screens_file = "<?xml version=\"1.0\"?>\n<splash_screens>\n%%SPLASHSCREENS%%\n<splash_screens>\n</splash_screens>\n"
++      new_splash_screens_file = "<?xml version=\"1.0\"?>\n<splash_screens>\n%%SPLASHSCREENS%%\n</splash_screens>\n"
  
        splash_screens_file.write(new_splash_screens_file)
      
