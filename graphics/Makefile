@@ -89,7 +89,6 @@
     SUBDIR += djvulibre-nox11
     SUBDIR += dore
     SUBDIR += dri
-    SUBDIR += dri-devel
     SUBDIR += driconf
     SUBDIR += drm-kmod
     SUBDIR += duhdraw
@@ -340,7 +339,6 @@
     SUBDIR += libart_lgpl
     SUBDIR += libaux
     SUBDIR += libcaca
-    SUBDIR += libdjvu++
     SUBDIR += libdrm
     SUBDIR += libemf
     SUBDIR += libexif
