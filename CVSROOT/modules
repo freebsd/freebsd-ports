@@ -442,6 +442,7 @@ appwrapper	ports/deskutils/appwrapper
 apr		ports/devel/apr
 apr-svn		ports/devel/apr-svn
 apsfilter	ports/print/apsfilter
+apt		ports/sysutils/apt
 apwal		ports/x11/apwal
 aqbanking	ports/finance/aqbanking
 aqbubble	ports/games/aqbubble
