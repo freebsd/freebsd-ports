@@ -7,9 +7,10 @@
 
 PORTNAME=	pantomime
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	mail gnustep
 MASTER_SITES=	http://www.collaboration-world.com/pantomime.data/releases/Stable/
-DISTNAME=	Pantomime-${PORTVERSION}pre2
+DISTNAME=	Pantomime-${PORTVERSION}pre3
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Mail/MIME handling library for GNUstep
