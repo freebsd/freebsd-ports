@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.126 2006/11/25 20:00:02 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.133 2007/02/11 19:19:23 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_g $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -46,7 +46,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 9;
-my $micro = 2;
+my $micro = 3;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -1435,13 +1435,6 @@ sub checkmakefile {
 		}
 	}
 
-	if ($whole =~ /\n(_USE_BSD_JAVA_MK_1_0)[+?:!]?=/) {
-		&perror("WARN", $file, -1, "This port uses bsd.java.mk 1.0 syntax. ".
-			"You should consider updating it to 2.0 syntax. ".
-			"Please refer to the Porter's Handbook for further ".
-			"information");
-	}
-
 	#
 	# whole file: direct use of command names
 	#
@@ -1987,6 +1980,10 @@ DIST_SUBDIR EXTRACT_ONLY
 			&perror("WARN", $file, -1, "EXTRACT_SUFX is \".tar.bz2.\" ".
 				"You should use USE_BZIP2 instead.");
 		}
+		if ($extractsufx eq '.zip') {
+			 &perror("WARN", $file, -1, "EXTRACT_SUFX is \".zip\" ".
+				"You should use USE_ZIP instead.");
+		}
 	} else {
 		print "OK: no EXTRACT_SUFX seen, using default value.\n"
 			if ($verbose);
@@ -2278,10 +2275,10 @@ MAINTAINER COMMENT
 	# NOTE: EXEC_DEPENDS is obsolete, so it should not be listed.
 	@linestocheck = qw(
 EXTRACT_DEPENDS LIB_DEPENDS PATCH_DEPENDS BUILD_DEPENDS RUN_DEPENDS
-FETCH_DEPENDS DEPENDS DEPENDS_TARGET
+FETCH_DEPENDS DEPENDS_TARGET
 	);
 
-	if ($tmp =~ /(LIB_|BUILD_|RUN_|FETCH_)?DEPENDS/) {
+	if ($tmp =~ /(LIB_|BUILD_|RUN_|FETCH_)DEPENDS/) {
 		&checkearlier($file, $tmp, @varnames);
 
 		my %seen_depends;
@@ -2309,27 +2306,18 @@ FETCH_DEPENDS DEPENDS DEPENDS_TARGET
 
 				print "OK: checking dependency value for $j.\n"
 					if ($verbose);
-				if (($j eq 'DEPENDS'
-				  && scalar(@l) != 1 && scalar(@l) != 2)
-				 || ($j ne 'DEPENDS'
+				if (($j ne 'DEPENDS'
 				  && scalar(@l) != 2 && scalar(@l) != 3)) {
 					&perror("WARN", $file, -1, "wrong dependency value ".
 						"for $j. $j requires ".
-						($j eq 'DEPENDS'
-							? "1 or 2 "
-							: "2 or 3 ").
+							"2 or 3 ".
 						"colon-separated tuples.");
 					next;
 				}
 				my %m = ();
-				if ($j eq 'DEPENDS') {
-					$m{'dir'} = $l[0];
-					$m{'tgt'} = $l[1];
-				} else {
-					$m{'dep'} = $l[0];
-					$m{'dir'} = $l[1];
-					$m{'tgt'} = $l[2];
-				}
+				$m{'dep'} = $l[0];
+				$m{'dir'} = $l[1];
+				$m{'tgt'} = $l[2];
 				print "OK: dep=\"$m{'dep'}\", ".
 					"dir=\"$m{'dir'}\", tgt=\"$m{'tgt'}\"\n"
 					if ($verbose);
@@ -2381,6 +2369,20 @@ FETCH_DEPENDS DEPENDS DEPENDS_TARGET
 					&perror("WARN", $file, -1, "dependency to $1 ".
 						"listed in $j.  consider using ".
 						"USE_LIBLTDL.");
+				}
+
+				# check CDRTOOLS
+				if ($m{'dir'} =~ /(cdrtools|cdrtools-cjk)$/) {
+					&perror("WARN", $file, -1, "dependency to $1 ".
+						"listed in $j.  consider using ".
+						"USE_CDRTOOLS.");
+				}
+
+				# check GHOSTSCRIPT
+				if ($m{'dep'} eq "gs") {
+					&perror("WARN", $file, -1, "dependency to gs ".
+						"listed in $j.  consider using ".
+						"USE_GHOSTSCRIPT(_BUILD|_RUN).");
 				}
 
 				# check JAVALIBDIR
