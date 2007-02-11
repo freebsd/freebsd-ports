@@ -1,15 +1,17 @@
---- Makefile.gtk.orig	Fri Apr 29 13:01:07 2005
-+++ Makefile.gtk	Fri Apr 29 13:06:39 2005
-@@ -82,7 +82,7 @@
+--- Makefile.gtk.orig	Wed Jan 24 18:22:52 2007
++++ Makefile.gtk	Sun Feb 11 13:41:43 2007
+@@ -98,8 +98,8 @@
  # TOOLPATH = /opt/gcc/bin
  CC = $(TOOLPATH)cc
  
 -CFLAGS = -O2 -Wall -Werror -g -I.././ -I../charset/ -I../windows/ -I../unix/ \
+-		-I../mac/ -I../macosx/ `gtk-config --cflags` -D _FILE_OFFSET_BITS=64
 +CFLAGS += -O2 -Wall -g -I.././ -I../charset/ -I../windows/ -I../unix/ \
- 		-I../mac/ -I../macosx/ `gtk-config --cflags`
++		-I../mac/ -I../macosx/ -D _FILE_OFFSET_BITS=64
  XLDFLAGS = `gtk-config --libs`
  ULDFLAGS =#
-@@ -99,7 +99,11 @@
+ INSTALL=install
+@@ -115,7 +115,11 @@
  .SUFFIXES:
  
  
@@ -19,18 +21,18 @@
 +all: plink pscp psftp
 +endif
  
- plink: be_all.o cmdline.o cproxy.o ldisc.o logging.o misc.o pinger.o \
+ plink: be_all_s.o cmdline.o cproxy.o ldisc.o logging.o misc.o pinger.o \
  		portfwd.o proxy.o raw.o rlogin.o settings.o ssh.o sshaes.o \
-@@ -828,7 +832,7 @@
+@@ -904,7 +908,7 @@
+ 	$(CC) $(COMPAT) $(XFLAGS) $(CFLAGS) -c ../unix/xpmputty.c
  
- version.o: FORCE;
- FORCE:
+ version.o: FORCE
 -	if test -z "$(VER)" && (cd ..; md5sum -c manifest); then \
 +	if test -z "$(VER)" ; then \
  		$(CC) $(COMPAT) $(XFLAGS) $(CFLAGS) `cat ../version.def` -c ../version.c; \
  	else \
  		$(CC) $(COMPAT) $(XFLAGS) $(CFLAGS) $(VER) -c ../version.c; \
-@@ -837,6 +841,7 @@
+@@ -913,6 +917,7 @@
  	$(INSTALL_PROGRAM) -m 755 plink $(DESTDIR)$(bindir)/plink
  	$(INSTALL_PROGRAM) -m 755 pscp $(DESTDIR)$(bindir)/pscp
  	$(INSTALL_PROGRAM) -m 755 psftp $(DESTDIR)$(bindir)/psftp
@@ -38,7 +40,7 @@
  	$(INSTALL_PROGRAM) -m 755 pterm $(DESTDIR)$(bindir)/pterm
  	if test -n "$(UTMP_GROUP)"; then \
  	  chgrp $(UTMP_GROUP) $(DESTDIR)$(bindir)/pterm && \
-@@ -848,13 +853,16 @@
+@@ -924,13 +929,16 @@
  	$(INSTALL_PROGRAM) -m 755 putty $(DESTDIR)$(bindir)/putty
  	$(INSTALL_PROGRAM) -m 755 puttygen $(DESTDIR)$(bindir)/puttygen
  	$(INSTALL_PROGRAM) -m 755 puttytel $(DESTDIR)$(bindir)/puttytel
