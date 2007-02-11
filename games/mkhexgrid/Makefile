@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mkhexgrid
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.nomic.net/~uckelman/mkhexgrid/releases/ \
 		http://aaron.daltons.ca/freebsd/
@@ -33,7 +33,7 @@ do-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/mkhexgrid.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/mkhexgrid.html ${DOCSDIR}
 	@${ECHO} "Documentation has been installed in ${DOCSDIR}."
 .endif
 
