@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	portmaint@melvyn.homeunix.org
+MAINTAINER=	mwisnicki+freebsd@gmail.com
 COMMENT=	A documentation system for C and C++
 
 BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
