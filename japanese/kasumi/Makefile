@@ -17,6 +17,8 @@ COMMENT=	A dictionary management tool for anthy
 USE_GMAKE=	yes
 USE_GNOME=	gnomehier gtk20
 USE_GETOPT_LONG=	yes
+LIB_DEPENDS=	anthy.1:${PORTSDIR}/japanese/anthy
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man
