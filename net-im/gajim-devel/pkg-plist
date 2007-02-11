@@ -436,17 +436,31 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/sun/16x16/opened.png
 %%DATADIR%%/data/iconsets/sun/16x16/requested.png
 %%DATADIR%%/data/iconsets/sun/16x16/xa.png
+%%DATADIR%%/data/iconsets/sun/32x32/away.png
+%%DATADIR%%/data/iconsets/sun/32x32/chat.png
+%%DATADIR%%/data/iconsets/sun/32x32/dnd.png
+%%DATADIR%%/data/iconsets/sun/32x32/error.png
+%%DATADIR%%/data/iconsets/sun/32x32/invisible.png
+%%DATADIR%%/data/iconsets/sun/32x32/muc_active.png
+%%DATADIR%%/data/iconsets/sun/32x32/muc_inactive.png
+%%DATADIR%%/data/iconsets/sun/32x32/not_in_roster.png
+%%DATADIR%%/data/iconsets/sun/32x32/offline.png
+%%DATADIR%%/data/iconsets/sun/32x32/online.png
+%%DATADIR%%/data/iconsets/sun/32x32/requested.png
+%%DATADIR%%/data/iconsets/sun/32x32/xa.png
 %%DATADIR%%/data/iconsets/sun/48x48/offline.png
 %%DATADIR%%/data/iconsets/sun/48x48/online.png
 %%DATADIR%%/data/iconsets/transports/aim/16x16/away.png
 %%DATADIR%%/data/iconsets/transports/aim/16x16/chat.png
 %%DATADIR%%/data/iconsets/transports/aim/16x16/dnd.png
+%%DATADIR%%/data/iconsets/transports/aim/16x16/not_in_roster.png
 %%DATADIR%%/data/iconsets/transports/aim/16x16/offline.png
 %%DATADIR%%/data/iconsets/transports/aim/16x16/online.png
 %%DATADIR%%/data/iconsets/transports/aim/16x16/xa.png
 %%DATADIR%%/data/iconsets/transports/aim/32x32/away.png
 %%DATADIR%%/data/iconsets/transports/aim/32x32/chat.png
 %%DATADIR%%/data/iconsets/transports/aim/32x32/dnd.png
+%%DATADIR%%/data/iconsets/transports/aim/32x32/not_in_roster.png
 %%DATADIR%%/data/iconsets/transports/aim/32x32/offline.png
 %%DATADIR%%/data/iconsets/transports/aim/32x32/online.png
 %%DATADIR%%/data/iconsets/transports/aim/32x32/xa.png
@@ -456,6 +470,7 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/transports/gadu-gadu/16x16/chat.png
 %%DATADIR%%/data/iconsets/transports/gadu-gadu/16x16/dnd.png
 %%DATADIR%%/data/iconsets/transports/gadu-gadu/16x16/invisible.png
+%%DATADIR%%/data/iconsets/transports/gadu-gadu/16x16/not_in_roster.png
 %%DATADIR%%/data/iconsets/transports/gadu-gadu/16x16/offline.png
 %%DATADIR%%/data/iconsets/transports/gadu-gadu/16x16/online.png
 %%DATADIR%%/data/iconsets/transports/gadu-gadu/16x16/xa.png
@@ -463,6 +478,7 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/transports/gadu-gadu/32x32/chat.png
 %%DATADIR%%/data/iconsets/transports/gadu-gadu/32x32/dnd.png
 %%DATADIR%%/data/iconsets/transports/gadu-gadu/32x32/invisible.png
+%%DATADIR%%/data/iconsets/transports/gadu-gadu/32x32/not_in_roster.png
 %%DATADIR%%/data/iconsets/transports/gadu-gadu/32x32/offline.png
 %%DATADIR%%/data/iconsets/transports/gadu-gadu/32x32/online.png
 %%DATADIR%%/data/iconsets/transports/gadu-gadu/32x32/xa.png
@@ -471,12 +487,14 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/transports/icq/16x16/away.png
 %%DATADIR%%/data/iconsets/transports/icq/16x16/chat.png
 %%DATADIR%%/data/iconsets/transports/icq/16x16/dnd.png
+%%DATADIR%%/data/iconsets/transports/icq/16x16/not_in_roster.png
 %%DATADIR%%/data/iconsets/transports/icq/16x16/offline.png
 %%DATADIR%%/data/iconsets/transports/icq/16x16/online.png
 %%DATADIR%%/data/iconsets/transports/icq/16x16/xa.png
 %%DATADIR%%/data/iconsets/transports/icq/32x32/away.png
 %%DATADIR%%/data/iconsets/transports/icq/32x32/chat.png
 %%DATADIR%%/data/iconsets/transports/icq/32x32/dnd.png
+%%DATADIR%%/data/iconsets/transports/icq/32x32/not_in_roster.png
 %%DATADIR%%/data/iconsets/transports/icq/32x32/offline.png
 %%DATADIR%%/data/iconsets/transports/icq/32x32/online.png
 %%DATADIR%%/data/iconsets/transports/icq/32x32/xa.png
@@ -485,24 +503,28 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/transports/irc/16x16/away.png
 %%DATADIR%%/data/iconsets/transports/irc/16x16/chat.png
 %%DATADIR%%/data/iconsets/transports/irc/16x16/dnd.png
+%%DATADIR%%/data/iconsets/transports/irc/16x16/not_in_roster.png
 %%DATADIR%%/data/iconsets/transports/irc/16x16/offline.png
 %%DATADIR%%/data/iconsets/transports/irc/16x16/online.png
 %%DATADIR%%/data/iconsets/transports/irc/16x16/xa.png
 %%DATADIR%%/data/iconsets/transports/irc/32x32/away.png
 %%DATADIR%%/data/iconsets/transports/irc/32x32/chat.png
 %%DATADIR%%/data/iconsets/transports/irc/32x32/dnd.png
+%%DATADIR%%/data/iconsets/transports/irc/32x32/not_in_roster.png
 %%DATADIR%%/data/iconsets/transports/irc/32x32/offline.png
 %%DATADIR%%/data/iconsets/transports/irc/32x32/online.png
 %%DATADIR%%/data/iconsets/transports/irc/32x32/xa.png
 %%DATADIR%%/data/iconsets/transports/msn/16x16/away.png
 %%DATADIR%%/data/iconsets/transports/msn/16x16/chat.png
 %%DATADIR%%/data/iconsets/transports/msn/16x16/dnd.png
+%%DATADIR%%/data/iconsets/transports/msn/16x16/not_in_roster.png
 %%DATADIR%%/data/iconsets/transports/msn/16x16/offline.png
 %%DATADIR%%/data/iconsets/transports/msn/16x16/online.png
 %%DATADIR%%/data/iconsets/transports/msn/16x16/xa.png
 %%DATADIR%%/data/iconsets/transports/msn/32x32/away.png
 %%DATADIR%%/data/iconsets/transports/msn/32x32/chat.png
 %%DATADIR%%/data/iconsets/transports/msn/32x32/dnd.png
+%%DATADIR%%/data/iconsets/transports/msn/32x32/not_in_roster.png
 %%DATADIR%%/data/iconsets/transports/msn/32x32/offline.png
 %%DATADIR%%/data/iconsets/transports/msn/32x32/online.png
 %%DATADIR%%/data/iconsets/transports/msn/32x32/xa.png
@@ -523,12 +545,14 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/transports/tlen/16x16/away.png
 %%DATADIR%%/data/iconsets/transports/tlen/16x16/chat.png
 %%DATADIR%%/data/iconsets/transports/tlen/16x16/dnd.png
+%%DATADIR%%/data/iconsets/transports/tlen/16x16/not_in_roster.png
 %%DATADIR%%/data/iconsets/transports/tlen/16x16/offline.png
 %%DATADIR%%/data/iconsets/transports/tlen/16x16/online.png
 %%DATADIR%%/data/iconsets/transports/tlen/16x16/xa.png
 %%DATADIR%%/data/iconsets/transports/tlen/32x32/away.png
 %%DATADIR%%/data/iconsets/transports/tlen/32x32/chat.png
 %%DATADIR%%/data/iconsets/transports/tlen/32x32/dnd.png
+%%DATADIR%%/data/iconsets/transports/tlen/32x32/not_in_roster.png
 %%DATADIR%%/data/iconsets/transports/tlen/32x32/offline.png
 %%DATADIR%%/data/iconsets/transports/tlen/32x32/online.png
 %%DATADIR%%/data/iconsets/transports/tlen/32x32/xa.png
@@ -549,12 +573,14 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/iconsets/transports/yahoo/16x16/away.png
 %%DATADIR%%/data/iconsets/transports/yahoo/16x16/chat.png
 %%DATADIR%%/data/iconsets/transports/yahoo/16x16/dnd.png
+%%DATADIR%%/data/iconsets/transports/yahoo/16x16/not_in_roster.png
 %%DATADIR%%/data/iconsets/transports/yahoo/16x16/offline.png
 %%DATADIR%%/data/iconsets/transports/yahoo/16x16/online.png
 %%DATADIR%%/data/iconsets/transports/yahoo/16x16/xa.png
 %%DATADIR%%/data/iconsets/transports/yahoo/32x32/away.png
 %%DATADIR%%/data/iconsets/transports/yahoo/32x32/chat.png
 %%DATADIR%%/data/iconsets/transports/yahoo/32x32/dnd.png
+%%DATADIR%%/data/iconsets/transports/yahoo/32x32/not_in_roster.png
 %%DATADIR%%/data/iconsets/transports/yahoo/32x32/offline.png
 %%DATADIR%%/data/iconsets/transports/yahoo/32x32/online.png
 %%DATADIR%%/data/iconsets/transports/yahoo/32x32/xa.png
@@ -814,6 +840,7 @@ share/pixmaps/gajim_about.png
 @dirrm %%DATADIR%%/data/iconsets/gota/48x48
 @dirrm %%DATADIR%%/data/iconsets/gota
 @dirrm %%DATADIR%%/data/iconsets/sun/16x16
+@dirrm %%DATADIR%%/data/iconsets/sun/32x32
 @dirrm %%DATADIR%%/data/iconsets/sun/48x48
 @dirrm %%DATADIR%%/data/iconsets/sun
 @dirrm %%DATADIR%%/data/iconsets/stellar/16x16
