@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.cs.utah.edu/flux/janos/${DISTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A virtual machine for executing Java bytecodes
 
+DEPRECATED=	Broken on all supported versions of FreeBSD
+EXPIRATION_DATE=2007-03-10
+
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-x

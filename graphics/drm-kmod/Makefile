@@ -14,6 +14,9 @@ MASTER_SITE_SUBDIR=	anholt
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A FreeBSD kernel modules for 3d acceleration with the DRI
 
+DEPRECATED=	Broken on all supported versions of FreeBSD
+EXPIRATION_DATE=2007-03-10
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PKGMESSAGE=	${WRKSRC}/.MESSAGE

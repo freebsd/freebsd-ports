@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	oberman@es.net
 COMMENT=	Loadable module and user excutable to support IBM Mwave ACP modem
 
+DEPRECATED=	Broken on all supported versions of FreeBSD
+EXPIRATION_DATE=2007-03-10
+
 ONLY_FOR_ARCHS=	i386
 
 GNU_CONFIGURE=	yes

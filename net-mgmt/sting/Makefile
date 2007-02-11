@@ -16,6 +16,9 @@ COMMENT=	A tool that measures end-to-end TCP connection characteristics
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+DEPRECATED=	Broken on all supported versions of FreeBSD
+EXPIRATION_DATE=2007-03-10
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113 || defined(IPFW2)

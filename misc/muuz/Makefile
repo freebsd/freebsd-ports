@@ -15,6 +15,9 @@ COMMENT=	X11 and sound tool that promotes relaxation, meditation, fun, more
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
+DEPRECATED=	Broken on all supported versions of FreeBSD
+EXPIRATION_DATE=2007-03-10
+
 USE_IMAKE=	yes
 MAN1=		muuz.1
 

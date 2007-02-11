@@ -15,6 +15,9 @@ EXTRACT_SUFX=	v1.1.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xperfmon++ : A graphical X11 system performance monitor
 
+DEPRECATED=	Broken on all supported versions of FreeBSD
+EXPIRATION_DATE=2007-03-10
+
 LATEST_LINK=	xperfmon3
 
 USE_IMAKE=	yes

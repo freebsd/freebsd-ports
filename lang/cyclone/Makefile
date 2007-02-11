@@ -18,6 +18,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-docs.tgz
 MAINTAINER=	vs@FreeBSD.org
 COMMENT=	A safe dialect of C from Cornell and AT&T Research
 
+DEPRECATED=	Broken on all supported versions of FreeBSD
+EXPIRATION_DATE=2007-03-10
+
 ONLY_FOR_ARCHS=	i386
 
 USE_GMAKE=	yes
