@@ -84,9 +84,9 @@ LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
 
 post-patch:
 .ifdef WITH_MOZILLA
-	${REINPLACE_CMD} -e 's,firefox-,$$gecko_provider-,g' \
+	@${REINPLACE_CMD} -e 's,firefox-,$$gecko_provider-,g' \
 		-e 's,\(gecko_provider=\).*$$,\1${GECKO},' \
-		-e 's,{print $$1},{print $$2},g' \
+		-e '/INCLUDE/s,{print $$1},{print $$2},g' \
 		${WRKSRC}/configure
 .endif
 .ifdef WITH_XPI
