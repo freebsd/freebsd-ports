@@ -63,7 +63,7 @@ JAVA_VENDOR=	freebsd bsdjava
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 # amd64
 
 .if ${ARCH} == amd64
 GCC_TARGET=		x86_64-portbld-freebsd${OSREL}
@@ -74,10 +74,10 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
 CODELINE=		680
-MILESTONE?=		6
+MILESTONE?=		7
 OOOTAG?=		OOF680_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
-SNAPDATE=		20070205
+SNAPDATE=		20070210
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 .if defined(WITH_CWS)
