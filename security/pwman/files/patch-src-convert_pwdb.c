@@ -1,7 +1,7 @@
---- src/pwlist.c.old	2005-03-09 16:07:07.000000000 +0000
-+++ src/pwlist.c	2005-03-09 16:06:37.000000000 +0000
-@@ -272,13 +272,32 @@
- write_password_node(xmlNodePtr root, Pw* pw)
+--- src/convert_pwdb.c.orig	Tue Feb 14 12:43:20 2006
++++ src/convert_pwdb.c	Mon Feb 12 06:53:53 2007
+@@ -186,13 +186,32 @@
+ write_password_node(xmlNodePtr root, Pw *pw)
  {
  	xmlNodePtr node;
 +	xmlChar *escaped;
