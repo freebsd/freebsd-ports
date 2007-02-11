@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	herrie
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	audio
 MASTER_SITES=	http://g-rave.nl/projects/herrie/distfiles/ \
 		http://www.il.fontys.nl/~ed/projects/herrie/distfiles/ \
@@ -17,11 +17,12 @@ COMMENT=	A small command line interface music player
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
+HAS_CONFIGURE=	yes
+CONFIGURE_ENV+=	PREFIX=${PREFIX}
+
 USE_OPENSSL=	yes
 USE_GNOME=	glib20
 USE_GETTEXT=	yes
-USE_GMAKE=	yes
-MAKEFILE=	GNUmakefile
 
 OPTIONS=	MAD "MAD MP3 support" on \
 		VORBIS "Ogg Vorbis support" on \
@@ -40,25 +41,25 @@ MANCOMPRESSED=	yes
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/mad \
 		id3tag.0:${PORTSDIR}/audio/libid3tag
 .else
-MAKE_ENV+=	NO_MP3=yes
+CONFIGURE_ARGS+=no_mp3
 .endif
 .if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 .else
-MAKE_ENV+=	NO_VORBIS=yes
+CONFIGURE_ARGS+=no_vorbis
 .endif
 .if !defined(WITHOUT_SNDFILE)
 LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
 .else
-MAKE_ENV+=	NO_SNDFILE=yes
+CONFIGURE_ARGS+=no_sndfile
 .endif
 .if !defined(WITHOUT_LIBAO)
 LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao
-MAKE_ARGS+=	AUDIO_OUTPUT=ao
+CONFIGURE_ARGS+=ao
 .endif
 .if !defined(WITHOUT_XCURSES)
 LIB_DEPENDS=	XCurses.2:${PORTSDIR}/devel/pdcurses
-MAKE_ARGS+=	XCURSES=yes
+CONFIGURE_ARGS+=xcurses
 .endif
 
 .include <bsd.port.post.mk>
