@@ -11007,6 +11007,7 @@ pamtester	ports/security/pamtester
 pan		ports/news/pan
 pancho		ports/net-mgmt/pancho
 panda		ports/print/panda
+pandoc		ports/textproc/pandoc
 pango		ports/x11-toolkits/pango
 pango-reference	ports/x11-toolkits/pango-reference
 pangoxsl	ports/x11-toolkits/pangoxsl
