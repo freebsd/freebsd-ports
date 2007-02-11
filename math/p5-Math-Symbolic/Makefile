@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-Symbolic
-PORTVERSION=	0.504
+PORTVERSION=	0.507
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
@@ -19,8 +19,6 @@ BUILD_DEPENDS=	${SITE_PERL}/Memoize.pm:${PORTSDIR}/devel/p5-Memoize \
 		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent \
 		${SITE_PERL}/${PERL_ARCH}/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		Unfetchable
 
 MAN3=	Math::Symbolic.3 \
 	Math::Symbolic::AuxFunctions.3 \
@@ -40,7 +38,8 @@ MAN3=	Math::Symbolic.3 \
 	Math::Symbolic::Parser.3 \
 	Math::Symbolic::Parser::Precompiled.3 \
 	Math::Symbolic::Variable.3 \
-	Math::Symbolic::VectorCalculus.3
+	Math::Symbolic::VectorCalculus.3 \
+	Math::precompile_recdescent_grammar.3
 
 PERL_CONFIGURE=	yes
 
