@@ -1,6 +1,21 @@
---- dd_rescue.c.orig	Mon Feb 14 09:47:10 2005
-+++ dd_rescue.c	Tue Mar 15 00:59:42 2005
-@@ -717,7 +717,8 @@
+--- dd_rescue.c.orig	Sun Jul 23 20:47:50 2006
++++ dd_rescue.c	Mon Feb 12 02:53:35 2007
+@@ -213,11 +213,13 @@
+ 
+ void savebb( int block )
+ {
++	FILE *bbfile;
++
+ 	fplog(stderr, "Bad block: %d\n", block);
+     
+ 	if( bbname == NULL )
+ 		return;
+-	FILE *bbfile = fopen(bbname,"a");
++	bbfile = fopen(bbname,"a");
+ 	fprintf(bbfile,"%d\n",block);
+ 	fclose(bbfile);
+ }
+@@ -742,7 +744,8 @@
  		ipos = 0;
  
  #ifdef O_DIRECT
