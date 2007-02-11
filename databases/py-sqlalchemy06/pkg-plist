@@ -21,3 +21,4 @@
 @dirrm %%EXAMPLEDIR%%/polymorph
 @dirrm %%EXAMPLEDIR%%/vertical
 @dirrm %%EXAMPLEDIR%%
+@exec %%PREFIX%%/bin/easy_install -q -N  -S %%PREFIX%%/%%PYTHON_SITELIBDIR%% %%EGG%%
