@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	obexapp
-PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTVERSION=	1.4.5
 CATEGORIES=	comms net
 MASTER_SITES=	http://www.geocities.com/m_evmenkin/
 
@@ -33,5 +32,9 @@ IGNORE=		Needs 5.x from 20 Jan 2004 or later (sdpd)
 # libbluetooth is only installed on i386 before this version
 ONLY_FOR_ARCHS=	i386
 .endif
+
+post-patch:
+	@${FIND} ${WRKSRC} -name \*.c | ${XARGS} \
+		${REINPLACE_CMD} -e 's|<sdp.h>|</usr/include/sdp.h>|'
 
 .include <bsd.port.post.mk>
