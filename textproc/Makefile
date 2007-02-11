@@ -685,6 +685,7 @@
     SUBDIR += p5-podlators
     SUBDIR += p5-xmltv
     SUBDIR += pa-aspell
+    SUBDIR += pandoc
     SUBDIR += par
     SUBDIR += pardiff
     SUBDIR += pcrs
