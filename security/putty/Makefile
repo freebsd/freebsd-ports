@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	putty
-PORTVERSION=	0.58
-PORTREVISION=	1
+PORTVERSION=	0.59
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://the.earth.li/~sgtatham/putty/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -20,23 +19,24 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 MAKEFILE=	Makefile.gtk
 CFLAGS+=	-DBSD_PTYS -DOMIT_UTMP
 
-.ifndef WITHOUT_IPV6
+.if !defined(WITHOUT_IPV6)
 CFLAGS+=	-DIPV6
 .endif
 
 PLIST_FILES=	bin/plink bin/pscp bin/psftp
 MAN1=		plink.1 pscp.1 psftp.1
 
-.ifndef WITHOUT_GTK
+.if !defined(WITHOUT_GTK)
 USE_GNOME=	gtk12
 PLIST_FILES+=	bin/pterm bin/putty bin/puttygen bin/puttytel
 MAN1+=		pterm.1 putty.1 puttygen.1 puttytel.1
 MAKE_ENV+=	PUTTY_WITH_GTK=yes
+CFLAGS+=	`${GTK_CONFIG} --cflags`
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,gtk-config,${GTK_CONFIG},; \
+	@${REINPLACE_CMD} -e 's,gtk-config,${GTK_CONFIG},g; \
 			      s,prefix=/usr/local,prefix=${PREFIX},' \
-			     ${WRKSRC}/${MAKEFILE}
+		${WRKSRC}/${MAKEFILE}
 
 .include <bsd.port.mk>
