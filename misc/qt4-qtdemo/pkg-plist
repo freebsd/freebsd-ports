@@ -73,6 +73,14 @@ share/qt4/demos/composition/composition.pro
 share/qt4/demos/composition/composition.qrc
 share/qt4/demos/composition/flower_2.png
 share/qt4/demos/composition/main.cpp
+share/qt4/demos/dbus-viewer/dbus-viewer
+share/qt4/demos/dbus-viewer/dbus-viewer.debug
+share/qt4/demos/dbus-viewer/dbus-viewer.pro
+share/qt4/demos/dbus-viewer/main.cpp
+share/qt4/demos/dbus-viewer/qdbusmodel.cpp
+share/qt4/demos/dbus-viewer/qdbusmodel.h
+share/qt4/demos/dbus-viewer/qdbusviewer.cpp
+share/qt4/demos/dbus-viewer/qdbusviewer.h
 share/qt4/demos/deform/deform
 share/qt4/demos/deform/deform.debug
 share/qt4/demos/deform/deform.pro
@@ -1136,6 +1144,66 @@ share/qt4/examples/painting/transformations/transformations.debug
 share/qt4/examples/painting/transformations/transformations.pro
 share/qt4/examples/painting/transformations/window.cpp
 share/qt4/examples/painting/transformations/window.h
+share/qt4/examples/qdbus/chat/chat
+share/qt4/examples/qdbus/chat/chat.cpp
+share/qt4/examples/qdbus/chat/chat.debug
+share/qt4/examples/qdbus/chat/chat.h
+share/qt4/examples/qdbus/chat/chat.pro
+share/qt4/examples/qdbus/chat/chat_adaptor.cpp
+share/qt4/examples/qdbus/chat/chat_adaptor.h
+share/qt4/examples/qdbus/chat/chat_interface.cpp
+share/qt4/examples/qdbus/chat/chat_interface.h
+share/qt4/examples/qdbus/chat/chatmainwindow.ui
+share/qt4/examples/qdbus/chat/chatsetnickname.ui
+share/qt4/examples/qdbus/chat/com.trolltech.chat.xml
+share/qt4/examples/qdbus/complexpingpong/complexping
+share/qt4/examples/qdbus/complexpingpong/complexping.cpp
+share/qt4/examples/qdbus/complexpingpong/complexping.debug
+share/qt4/examples/qdbus/complexpingpong/complexping.h
+share/qt4/examples/qdbus/complexpingpong/complexping.pro
+share/qt4/examples/qdbus/complexpingpong/complexpingpong.pro
+share/qt4/examples/qdbus/complexpingpong/complexpong
+share/qt4/examples/qdbus/complexpingpong/complexpong.cpp
+share/qt4/examples/qdbus/complexpingpong/complexpong.debug
+share/qt4/examples/qdbus/complexpingpong/complexpong.h
+share/qt4/examples/qdbus/complexpingpong/complexpong.pro
+share/qt4/examples/qdbus/complexpingpong/ping-common.h
+share/qt4/examples/qdbus/listnames/listnames
+share/qt4/examples/qdbus/listnames/listnames.cpp
+share/qt4/examples/qdbus/listnames/listnames.debug
+share/qt4/examples/qdbus/listnames/listnames.pro
+share/qt4/examples/qdbus/pingpong/ping
+share/qt4/examples/qdbus/pingpong/ping-common.h
+share/qt4/examples/qdbus/pingpong/ping.cpp
+share/qt4/examples/qdbus/pingpong/ping.debug
+share/qt4/examples/qdbus/pingpong/ping.pro
+share/qt4/examples/qdbus/pingpong/pingpong.pro
+share/qt4/examples/qdbus/pingpong/pong
+share/qt4/examples/qdbus/pingpong/pong.cpp
+share/qt4/examples/qdbus/pingpong/pong.debug
+share/qt4/examples/qdbus/pingpong/pong.h
+share/qt4/examples/qdbus/pingpong/pong.pro
+share/qt4/examples/qdbus/qdbus.pro
+share/qt4/examples/qdbus/remotecontrolledcar/car/car
+share/qt4/examples/qdbus/remotecontrolledcar/car/car.cpp
+share/qt4/examples/qdbus/remotecontrolledcar/car/car.debug
+share/qt4/examples/qdbus/remotecontrolledcar/car/car.h
+share/qt4/examples/qdbus/remotecontrolledcar/car/car.pro
+share/qt4/examples/qdbus/remotecontrolledcar/car/car.xml
+share/qt4/examples/qdbus/remotecontrolledcar/car/car_adaptor.cpp
+share/qt4/examples/qdbus/remotecontrolledcar/car/car_adaptor_p.h
+share/qt4/examples/qdbus/remotecontrolledcar/car/main.cpp
+share/qt4/examples/qdbus/remotecontrolledcar/controller/car.xml
+share/qt4/examples/qdbus/remotecontrolledcar/controller/car_interface.cpp
+share/qt4/examples/qdbus/remotecontrolledcar/controller/car_interface_p.h
+share/qt4/examples/qdbus/remotecontrolledcar/controller/controller
+share/qt4/examples/qdbus/remotecontrolledcar/controller/controller.cpp
+share/qt4/examples/qdbus/remotecontrolledcar/controller/controller.debug
+share/qt4/examples/qdbus/remotecontrolledcar/controller/controller.h
+share/qt4/examples/qdbus/remotecontrolledcar/controller/controller.pro
+share/qt4/examples/qdbus/remotecontrolledcar/controller/controller.ui
+share/qt4/examples/qdbus/remotecontrolledcar/controller/main.cpp
+share/qt4/examples/qdbus/remotecontrolledcar/remotecontrolledcar.pro
 share/qt4/examples/qtestlib/README
 share/qt4/examples/qtestlib/qtestlib.pro
 share/qt4/examples/qtestlib/tutorial1/testqstring.cpp
@@ -1723,6 +1791,14 @@ share/qt4/examples/xml/xml.pro
 @dirrm share/qt4/examples/qtestlib/tutorial2
 @dirrm share/qt4/examples/qtestlib/tutorial1
 @dirrm share/qt4/examples/qtestlib
+@dirrm share/qt4/examples/qdbus/remotecontrolledcar/controller
+@dirrm share/qt4/examples/qdbus/remotecontrolledcar/car
+@dirrm share/qt4/examples/qdbus/remotecontrolledcar
+@dirrm share/qt4/examples/qdbus/pingpong
+@dirrm share/qt4/examples/qdbus/listnames
+@dirrm share/qt4/examples/qdbus/complexpingpong
+@dirrm share/qt4/examples/qdbus/chat
+@dirrm share/qt4/examples/qdbus
 @dirrm share/qt4/examples/painting/transformations
 @dirrm share/qt4/examples/painting/svgviewer/files
 @dirrm share/qt4/examples/painting/svgviewer
@@ -1857,6 +1933,7 @@ share/qt4/examples/xml/xml.pro
 @dirrm share/qt4/demos/interview
 @dirrm share/qt4/demos/gradients
 @dirrm share/qt4/demos/deform
+@dirrm share/qt4/demos/dbus-viewer
 @dirrm share/qt4/demos/composition
 @dirrm share/qt4/demos/chip
 @dirrm share/qt4/demos/books/images
