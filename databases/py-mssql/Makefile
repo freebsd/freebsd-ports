@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mssql
-PORTVERSION=	0.7.3
+PORTVERSION=	0.8.0
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pymssql
@@ -18,7 +18,7 @@ COMMENT=	Python database interface for simple MS-SQL access
 
 LIB_DEPENDS=	sybdb.5:${PORTSDIR}/databases/freetds-msdblib
 
-USE_PYTHON=	2.2+
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
 
 post-patch:
