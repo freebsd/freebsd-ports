@@ -7,6 +7,7 @@
 
 PORTNAME=	sipxcommserverlib
 PORTVERSION=	3.6.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.sipfoundry.org/pub/sipX/3.6/SRC/
 
@@ -46,5 +47,13 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,/bin/bash,${PREFIX}/bin/bash," ${WRKSRC}/bin/pgpatch.sh
 	@${REINPLACE_CMD} -e "s,@PREFIX@,${PREFIX}," ${WRKSRC}/bin/pgpatch.sh
 	@${REINPLACE_CMD} -e "s,/bin/bash,${PREFIX}/bin/bash," ${WRKSRC}/src/sipdbtest/sipdbtest.sh.in
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${SED} -e "s,@bindir@,${PREFIX}/bin,g" < ${WRKSRC}/doc/INSTALL.ssl.in \
+	    > ${WRKSRC}/doc/INSTALL.ssl
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/INSTALL.ssl ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

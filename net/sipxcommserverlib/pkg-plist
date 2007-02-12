@@ -86,6 +86,8 @@ lib/libsipXcommserver.so.1
 lib/libsipXcommserverTest.a
 lib/libsipXcommserverTest.la
 libexec/sipx-utils.sh
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.ssl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 share/sipx/schema/authrules.xsd
 share/sipx/schema/urlmap.xsd
 @dirrm share/sipxpbx
