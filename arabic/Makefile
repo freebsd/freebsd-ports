@@ -6,6 +6,7 @@
     SUBDIR += ae_fonts_mono
     SUBDIR += ae_fonts_ttf
     SUBDIR += arabtex
+    SUBDIR += aspell
     SUBDIR += kacst_fonts
     SUBDIR += katoob
     SUBDIR += kde3-i18n
