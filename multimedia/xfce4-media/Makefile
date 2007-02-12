@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-media
 PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	http://spuriousinterrupt.org/files/xfmedia/
 DISTNAME=	xfmedia-${PORTVERSION}
@@ -20,14 +20,14 @@ LIB_DEPENDS=	xine.16:${PORTSDIR}/multimedia/libxine \
 		exo-0.3:${PORTSDIR}/x11/libexo
 
 GNU_CONFIGURE=	yes
-INSTALLS_ICONS= yes
+INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GCC=	3.4+
 USE_GETOPT_LONG=yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack gnometarget gtk20 intltool intlhack pkgconfig
-USE_XFCE=	configenv libexo libgui libutilpanel
+USE_XFCE=	configenv libexo libgui libutil panel
 USE_XLIB=	yes
 
 OPTIONS=	TAGLIB	"Enable metadata editing"		off \
@@ -57,6 +57,8 @@ CONFIGURE_ARGS+=--enable-startup-notification
 .else
 CONFIGURE_ARGS+=--disable-startup-notification
 .endif
+
+CFLAGS+=	-I${LOCALBASE}/include
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|xfmedia_remote_LDADD = |&@LIBXFCEGUI4_LIBS@|" \
