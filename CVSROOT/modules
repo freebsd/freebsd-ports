@@ -1876,6 +1876,7 @@ dirac-reference	ports/multimedia/dirac-reference
 diradmin	ports/net/diradmin
 dircomp		ports/sysutils/dircomp
 dircproxy	ports/irc/dircproxy
+dircproxy-devel	ports/irc/dircproxy-devel
 dirdiff		ports/sysutils/dirdiff
 directfb	ports/devel/directfb
 dirmngr		ports/security/dirmngr

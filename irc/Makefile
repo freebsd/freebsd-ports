@@ -16,6 +16,7 @@
     SUBDIR += darkbot
     SUBDIR += dcc
     SUBDIR += dircproxy
+    SUBDIR += dircproxy-devel 
     SUBDIR += eggcreator
     SUBDIR += eggdrop
     SUBDIR += epic4

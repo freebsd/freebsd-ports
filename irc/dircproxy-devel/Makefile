@@ -6,19 +6,29 @@
 #
 
 PORTNAME=	dircproxy
-PORTVERSION=	1.0.5
+PORTVERSION=	1.2.0.b2
 CATEGORIES=	irc
-MASTER_SITES=	http://www.securiweb.net/pub/oss/dircproxy/1.0/ \
-		ftp://ftp.netsplit.com/pub/dircproxy/stable/
+MASTER_SITES=	http://dircproxy.securiweb.net/pub/1.2/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-beta/g}
+PKGNAMESUFFIX=	-devel
+EXTRACT_SUFX=	.tar.bz
 
-MAINTAINER=	lesterm@mazpe.net
+MAINTAINER=	martin@matuska.org
 COMMENT=	A detachable irc proxy server with many features
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+SUB_FILES+=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
+.if !defined(NO_INSTALL_MANPAGES)
 MAN1=		dircproxy.1 dircproxy-crypt.1
+.endif
 
 post-install:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
+.if !defined(NO_INSTALL_MANPAGES)
+		@cd ${WRKSRC}/doc && make install-man
+.endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
