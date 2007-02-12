@@ -8,7 +8,8 @@
 PORTNAME=	bg5ps
 PORTVERSION=	1.3.0p3
 CATEGORIES=	chinese print
-MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
+MASTER_SITES=	http://ftp.jaist.ac.jp/pub/FreeBSD/distfiles/ \
+		http://www.gtlib.gatech.edu/pub/FreeBSD/distfiles/
 DISTNAME=	bg5ps-1.3.0
 
 MAINTAINER=	ports@FreeBSD.org
