@@ -1,11 +1,11 @@
-# New ports collection makefile for:	squirrelmail-compatibility-plugin
-# Date created:				3 Jul 2005
+# New ports collection makefile for:	squirrelmail-compatibility-plugin1
+# Date created:				3 Feb 2007
 # Whom:					Alexander Wittig <alexander@wittig.name>
 #
 # $FreeBSD$
 
 PORTNAME=	squirrelmail
-PORTVERSION=	2.0.6
+PORTVERSION=	1.3
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.squirrelmail.org/plugins/
 PKGNAMESUFFIX=	-${SQUIRREL_PLUGIN_NAME}-plugin
@@ -15,7 +15,9 @@ DIST_SUBDIR=	squirrelmail
 MAINTAINER=	alexander@wittig.name
 COMMENT=	Required by many plugins for compatibility with SquirrelMail
 
-RUN_DEPENDS=	squirrelmail>=1.4.9:${PORTSDIR}/mail/squirrelmail
+RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
+
+CONFLICTS=	squirrelmail-compatibility-plugin-2.*
 
 SQUIRREL_PLUGIN_NAME=	compatibility
 
@@ -36,6 +38,8 @@ NO_WRKSUBDIR=	yes
 USE_PERL5_BUILD=	yes
 WANT_PHP_WEB=	yes
 
+.include <bsd.port.pre.mk>
+
 pre-everything::
 	@${ECHO} ""
 .ifndef WITHOUT_ACTIVATE
@@ -53,11 +57,6 @@ do-install:
 	${CP} -rp ${WRKSRC}/${SQUIRREL_PLUGIN_NAME} ${SQUIRRELDIR}/plugins
 
 post-install:
-	@${ECHO} "Patching SquirrelMail for compatibility plugin"
-	@${ECHO} ""
-	${PATCH} -sN -p0 -d ${SQUIRRELDIR}/plugins/compatibility < ${SQUIRRELDIR}/plugins/compatibility/patches/compatibility_patch-1.4.9.diff
-	@${ECHO} ""
-
 .ifndef WITHOUT_ACTIVATE
 .if exists( ${SQUIRRELDIR}/config/config.php )
 	@${ECHO} "Activating plug-in in SquirrelMail"
@@ -68,4 +67,4 @@ post-install:
 	@${ECHO} "${SQUIRRELDIR}/config/conf.pl --install-plugin ${SQUIRREL_PLUGIN_NAME}"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
