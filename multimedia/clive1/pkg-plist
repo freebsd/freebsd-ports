@@ -1,0 +1,21 @@
+@comment $FreeBSD$
+bin/clive
+%%PYTHON_SITELIBDIR%%/clive/__init__.py
+%%PYTHON_SITELIBDIR%%/clive/__init__.pyc
+%%PYTHON_SITELIBDIR%%/clive/__init__.pyo
+%%PYTHON_SITELIBDIR%%/clive/cli.py
+%%PYTHON_SITELIBDIR%%/clive/cli.pyc
+%%PYTHON_SITELIBDIR%%/clive/cli.pyo
+%%PYTHON_SITELIBDIR%%/clive/extract.py
+%%PYTHON_SITELIBDIR%%/clive/extract.pyc
+%%PYTHON_SITELIBDIR%%/clive/extract.pyo
+%%PYTHON_SITELIBDIR%%/clive/opts.py
+%%PYTHON_SITELIBDIR%%/clive/opts.pyc
+%%PYTHON_SITELIBDIR%%/clive/opts.pyo
+%%PYTHON_SITELIBDIR%%/clive/util.py
+%%PYTHON_SITELIBDIR%%/clive/util.pyc
+%%PYTHON_SITELIBDIR%%/clive/util.pyo
+%%PYTHON_SITELIBDIR%%/clive/verinfo.py
+%%PYTHON_SITELIBDIR%%/clive/verinfo.pyc
+%%PYTHON_SITELIBDIR%%/clive/verinfo.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/clive

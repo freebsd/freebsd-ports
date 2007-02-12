@@ -15,6 +15,7 @@
     SUBDIR += bsdbktr_tvtune
     SUBDIR += camserv
     SUBDIR += castpodder
+    SUBDIR += clive
     SUBDIR += dirac
     SUBDIR += dirac-reference
     SUBDIR += dtv
