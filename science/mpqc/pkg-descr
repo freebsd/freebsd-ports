@@ -19,6 +19,7 @@ You can also validate your mpqc binaries when you employ other settings by:
 % make validate >& validate.log &
 (it may take few days, though)
 For details, please see file:///usr/local/share/doc/mpqc/hierarchy.html
-or http://aros.ca.sandia.gov/~cljanss/mpqc/html/ValidatingMPQC.html.
+or http://www.mpqc.org/mpqc-html/mpqcval.html
 
-WWW: http://aros.ca.sandia.gov/~cljanss/mpqc/
+WWW: http://www.mpqc.org/
+
