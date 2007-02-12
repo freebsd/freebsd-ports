@@ -9,15 +9,7 @@ PORTNAME=	nag
 PORTVERSION=	2.1.2
 PORTREVISION=	1
 CATEGORIES=	deskutils www
-MASTER_SITES=	ftp://ftp.horde.org/pub/nag/				\
-		ftp://ftp.planetmirror.com/pub/horde/nag/		\
-		ftp://ftp.au.horde.org/pub/horde/nag/			\
-		ftp://ftp.be.horde.org/nag/				\
-		ftp://ftp.es.horde.org/pub/nag/				\
-		ftp://ftp.it.horde.org/pub/mirror/horde.org/nag/	\
-		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/nag/	\
-		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/nag/	\
-		http://ftp.horde.org/pub/nag/
+MASTER_SITES=	HORDE
 DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
 MAINTAINER=	beech@alaskaparadise.com

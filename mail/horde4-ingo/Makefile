@@ -8,15 +8,7 @@
 PORTNAME=	ingo
 PORTVERSION=	1.1.2
 CATEGORIES=	mail www
-MASTER_SITES=	ftp://ftp.horde.org/pub/ingo/				\
-		ftp://ftp.planetmirror.com/pub/horde/ingo/		\
-		ftp://ftp.au.horde.org/pub/horde/ingo/			\
-		ftp://ftp.be.horde.org/ingo/				\
-		ftp://ftp.es.horde.org/pub/ingo/			\
-		ftp://ftp.it.horde.org/pub/mirror/horde.org/ingo/	\
-		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/ingo/	\
-		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/ingo/	\
-		http://ftp.horde.org/pub/ingo/
+MASTER_SITES=	HORDE
 DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
 MAINTAINER=	beech@alaskaparadise.com

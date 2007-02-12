@@ -9,14 +9,7 @@ PORTNAME=	gollem
 PORTVERSION=	1.0.2
 PORTREVISION=	1
 CATEGORIES=	ftp www
-MASTER_SITES=	ftp://ftp.horde.org/pub/gollem/				\
-		ftp://ftp.planetmirror.com/pub/horde/gollem/		\
-		ftp://ftp.be.horde.org/gollem/				\
-		ftp://ftp.es.horde.org/pub/gollem/			\
-		ftp://ftp.it.horde.org/pub/mirror/horde.org/gollem/	\
-		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/gollem/	\
-		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/gollem/\
-		http://ftp.horde.org/pub/gollem/
+MASTER_SITES=	HORDE
 DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
 MAINTAINER=	beech@alaskaparadise.com

@@ -8,15 +8,7 @@
 PORTNAME=	kronolith
 PORTVERSION=	2.1.4
 CATEGORIES=	deskutils www
-MASTER_SITES=	ftp://ftp.horde.org/pub/kronolith/				\
-		ftp://ftp.planetmirror.com/pub/horde/kronolith/			\
-		ftp://ftp.au.horde.org/pub/horde/kronolith/			\
-		ftp://ftp.be.horde.org/kronolith/				\
-		ftp://ftp.es.horde.org/pub/kronolith/				\
-		ftp://ftp.it.horde.org/pub/mirror/horde.org/kronolith/		\
-		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/kronolith/		\
-		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/kronolith/	\
-		http://ftp.horde.org/pub/kronolith/
+MASTER_SITES=	HORDE
 DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
 MAINTAINER=	beech@alaskaparadise.com

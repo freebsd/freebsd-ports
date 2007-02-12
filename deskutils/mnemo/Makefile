@@ -9,14 +9,7 @@ PORTNAME=	mnemo
 PORTVERSION=	2.1.1
 PORTREVISION=	1
 CATEGORIES=	deskutils www
-MASTER_SITES=	ftp://ftp.horde.org/pub/mnemo/				\
-		ftp://ftp.planetmirror.com/pub/horde/mnemo/		\
-		ftp://ftp.au.horde.org/pub/horde/mnemo/			\
-		ftp://ftp.be.horde.org/mnemo/				\
-		ftp://ftp.es.horde.org/pub/mnemo/			\
-		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/mnemo/	\
-		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/mnemo/	\
-		http://ftp.horde.org/pub/mnemo/
+MASTER_SITES=	HORDE
 DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
 MAINTAINER=	beech@alaskaparadise.com

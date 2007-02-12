@@ -9,14 +9,7 @@ PORTNAME=	chora
 PORTVERSION=	2.0.1
 PORTREVISION=	1
 CATEGORIES=	devel www
-MASTER_SITES=	ftp://ftp.horde.org/pub/chora/				\
-		ftp://ftp.planetmirror.com/pub/horde/chora/		\
-		ftp://ftp.au.horde.org/pub/horde/chora/			\
-		ftp://ftp.be.horde.org/chora/				\
-		ftp://ftp.es.horde.org/pub/chora/			\
-		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/chora/	\
-		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/chora/	\
-		http://ftp.horde.org/pub/chora/
+MASTER_SITES=	HORDE
 DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
 MAINTAINER=	beech@alaskaparadise.com

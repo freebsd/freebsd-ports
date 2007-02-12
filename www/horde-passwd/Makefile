@@ -9,15 +9,7 @@ PORTNAME=	horde-passwd
 PORTVERSION=	3.0
 PORTREVISION=	2
 CATEGORIES=	www mail
-MASTER_SITES=	ftp://ftp.horde.org/pub/passwd/				\
-		ftp://ftp.planetmirror.com/pub/horde/passwd/		\
-		ftp://ftp.au.horde.org/pub/horde/passwd/		\
-		ftp://ftp.be.horde.org/passwd/				\
-		ftp://ftp.es.horde.org/pub/passwd/			\
-		ftp://ftp.it.horde.org/pub/mirror/horde.org/passwd/	\
-		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/passwd/	\
-		http://ftp.horde.org/pub/passwd/			\
-		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/passwd/
+MASTER_SITES=	HORDE/passwd
 DISTNAME=	passwd-h3-${PORTVERSION}
 DIST_SUBDIR=	horde
 
