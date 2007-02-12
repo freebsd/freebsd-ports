@@ -36,7 +36,7 @@ post-patch:
 		-e 's!-g -O2!!' \
 		-e 's!-O2!!'
 
-pre-install:
+pre-su-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
 		${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
