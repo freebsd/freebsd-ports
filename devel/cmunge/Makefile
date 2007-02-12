@@ -9,10 +9,11 @@ PORTNAME=	cmunge
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.vcpc.univie.ac.at/vcpc/jhm/code/
+MASTER_SITES=	ftp://ftp.vcpc.univie.ac.at/vcpc/jhm/code/ \
+		http://bsd-geek.de/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lars.engels@0x20.net
 COMMENT=	A tool for encrypting and compacting C source code
 
 WRKSRC=		${WRKDIR}/cmunger
