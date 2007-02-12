@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dazuko
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	security
 MASTER_SITES=	http://dazuko.org/files/
 
