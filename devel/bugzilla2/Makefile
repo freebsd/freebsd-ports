@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	bugzilla
-PORTVERSION?=	2.22.1
+PORTVERSION?=	2.22.2
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -18,7 +18,6 @@ OPTIONS=	MYSQL "MySQL database support" on \
 		PGSQL "PostgreSQL database support" off \
 		CHARTING_MODULES "Bug charting support" on \
 		GRAPHVIZ "Use GraphViz" off \
-		EMAIL_GATEWAY "Use email gateway" off \
 		EXPORT_IMPORT "Import/export bugs (via XML)" off \
 		CONTRIB	"Install user-contributed scripts" off \
 		LDAP "Enable LDAP support" off
@@ -31,6 +30,8 @@ RUN_DEPENDS+=	\
 		${SITE_PERL}/Text/Wrap.pm:${PORTSDIR}/textproc/p5-Text-Tabs+Wrap \
 		${SITE_PERL}/${PERL_ARCH}/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper \
 		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
+		${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools \
+		${SITE_PERL}/Mail/Mailer.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${SITE_PERL}/PatchReader.pm:${PORTSDIR}/devel/p5-PatchReader
 
 CONFLICTS?=	ja-bugzilla-2.*
@@ -76,10 +77,6 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
 
 .ifdef WITH_GRAPHVIZ
 RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
-.endif
-
-.ifdef WITH_EMAIL_GATEWAY
-RUN_DEPENDS+=	${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools
 .endif
 
 .ifdef WITH_EXPORT_IMPORT

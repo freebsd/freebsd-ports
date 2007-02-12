@@ -5,6 +5,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/Bugzilla-Guide.html
 %%PORTDOCS%%%%DOCSDIR%%/html/about.html
 %%PORTDOCS%%%%DOCSDIR%%/html/administration.html
+%%PORTDOCS%%%%DOCSDIR%%/html/attachments.html
 %%PORTDOCS%%%%DOCSDIR%%/html/bug_page.html
 %%PORTDOCS%%%%DOCSDIR%%/html/bugreports.html
 %%PORTDOCS%%%%DOCSDIR%%/html/classifications.html
@@ -19,9 +20,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/cust-hooks.html
 %%PORTDOCS%%%%DOCSDIR%%/html/cust-templates.html
 %%PORTDOCS%%%%DOCSDIR%%/html/customization.html
-%%PORTDOCS%%%%DOCSDIR%%/html/dbdoc.html
 %%PORTDOCS%%%%DOCSDIR%%/html/dbmodify.html
 %%PORTDOCS%%%%DOCSDIR%%/html/disclaimer.html
+%%PORTDOCS%%%%DOCSDIR%%/html/edit-values.html
 %%PORTDOCS%%%%DOCSDIR%%/html/extraconfig.html
 %%PORTDOCS%%%%DOCSDIR%%/html/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/html/flags-overview.html
@@ -49,7 +50,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/installing-bugzilla.html
 %%PORTDOCS%%%%DOCSDIR%%/html/integration.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lifecycle.html
-%%PORTDOCS%%%%DOCSDIR%%/html/list.html
 %%PORTDOCS%%%%DOCSDIR%%/html/milestones.html
 %%PORTDOCS%%%%DOCSDIR%%/html/modules-manual-download.html
 %%PORTDOCS%%%%DOCSDIR%%/html/modules-manual-instructions.html
@@ -61,7 +61,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/parameters.html
 %%PORTDOCS%%%%DOCSDIR%%/html/paranoid-security.html
 %%PORTDOCS%%%%DOCSDIR%%/html/patches.html
-%%PORTDOCS%%%%DOCSDIR%%/html/patchviewer.html
 %%PORTDOCS%%%%DOCSDIR%%/html/products.html
 %%PORTDOCS%%%%DOCSDIR%%/html/query.html
 %%PORTDOCS%%%%DOCSDIR%%/html/quips.html
@@ -88,7 +87,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/versions.html
 %%PORTDOCS%%%%DOCSDIR%%/html/voting.html
 %%PORTDOCS%%%%DOCSDIR%%/html/whining.html
-%%PORTDOCS%%%%DOCSDIR%%/html/x757.html
+%%PORTDOCS%%%%DOCSDIR%%/html/x763.html
 %%PORTDOCS%%%%DOCSDIR%%/images/bzLifecycle.png
 %%PORTDOCS%%%%DOCSDIR%%/images/bzLifecycle.xml
 %%PORTDOCS%%%%DOCSDIR%%/images/callouts/1.gif
