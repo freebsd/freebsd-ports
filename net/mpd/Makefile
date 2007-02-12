@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	archie
 DIST_SUBDIR=	mpd
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Multi-link PPP daemon based on netgraph(4)
+COMMENT=	Multi-link PPP daemon based on netgraph(4) [legacy version]
 
 # lang/mpd
 CONFLICTS=	mpd-[^3]*
