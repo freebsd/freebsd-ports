@@ -12426,6 +12426,7 @@ py-mpz		ports/math/py-mpz
 py-msnp		ports/net-im/py-msnp
 py-mssql	ports/databases/py-mssql
 py-mt		ports/www/py-mt
+py-musepack	ports/audio/py-musepack
 py-musicbrainz	ports/audio/py-musicbrainz
 py-musicbrainz2	ports/audio/py-musicbrainz2
 py-mutagen	ports/audio/py-mutagen
