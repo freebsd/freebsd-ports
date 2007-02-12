@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	phpMyID
-PORTVERSION=	0.3
+PORTVERSION=	0.5
 CATEGORIES=	security www
 MASTER_SITES=	http://siege.org/projects/phpMyID/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A single user Identity Provider for the OpenID framework
 
 NO_BUILD=	yes
