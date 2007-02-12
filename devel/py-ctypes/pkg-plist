@@ -33,6 +33,9 @@
 %%PYTHON_SITELIBDIR%%/ctypes/test/test_arrays.py
 %%PYTHON_SITELIBDIR%%/ctypes/test/test_arrays.pyc
 %%PYTHON_SITELIBDIR%%/ctypes/test/test_arrays.pyo
+%%PYTHON_SITELIBDIR%%/ctypes/test/test_as_parameter.py
+%%PYTHON_SITELIBDIR%%/ctypes/test/test_as_parameter.pyc
+%%PYTHON_SITELIBDIR%%/ctypes/test/test_as_parameter.pyo
 %%PYTHON_SITELIBDIR%%/ctypes/test/test_bitfields.py
 %%PYTHON_SITELIBDIR%%/ctypes/test/test_bitfields.pyc
 %%PYTHON_SITELIBDIR%%/ctypes/test/test_bitfields.pyo
