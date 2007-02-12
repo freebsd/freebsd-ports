@@ -15,7 +15,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER?=	esk@ira.uka.de
 COMMENT?=	X Multimedia System --- An audio player with a Winamp GUI
 
-USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 gnomehack
