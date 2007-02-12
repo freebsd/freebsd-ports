@@ -7,6 +7,7 @@
 
 PORTNAME=	tin
 PORTVERSION=	1.8.3
+PORTREVISION=	1
 CATEGORIES+=	news ipv6
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
 		ftp://ftp.sunet.se/pub/news/readers/tin/stable/ \
@@ -95,14 +96,20 @@ CONFIGURE_ARGS+=	--with-metamail=${PREFIX}/bin/metamail
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's:/var/spool/news:/var/news:' \
-		-e 's:/etc/nntpserver:${PREFIX}/etc/nntpserver:' \
-		-e 's:/usr/lib/news:${PREFIX}/news/lib:' \
-		-e 's:/etc/mime\.types:${PREFIX}/etc/mime.types:' \
+	${REINPLACE_CMD} -e 's:/var/spool/news:/var/news:g' \
+		-e 's:/etc/nntpserver:${PREFIX}/etc/nntpserver:g' \
+		-e 's:/usr/lib/news:${PREFIX}/news/lib:g' \
+		-e 's:/etc/mime\.types:${PREFIX}/etc/mime.types:g' \
+		-e 's:url_handler\.sh:tinurl_handler.sh:g' \
 		${WRKSRC}/doc/tin.1 ${WRKSRC}/doc/tin.5
 	${REINPLACE_CMD} \
-		-e 's:/etc/mime\.types:${PREFIX}/etc/mime.types:' \
+		-e 's:/etc/mime\.types:${PREFIX}/etc/mime.types:g' \
 		${WRKSRC}/src/mimetypes.c
+	${REINPLACE_CMD} \
+		-e 's:url_handler\.sh:tinurl_handler.sh:g' \
+		${WRKSRC}/src/Makefile.in ${WRKSRC}/include/tin.h
+	${MV}   ${WRKSRC}/tools/url_handler.sh \
+		${WRKSRC}/tools/tinurl_handler.sh
 
 .if defined(WITH_TIN_CANLOCK)
 MAKE_ARGS+=	CANLIB='-L../libcanlock -lcanlock' \
