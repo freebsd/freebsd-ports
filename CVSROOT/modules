@@ -9664,6 +9664,7 @@ p5-Log-Dispatch	ports/devel/p5-Log-Dispatch
 p5-Log-Dispatch-Config	ports/devel/p5-Log-Dispatch-Config
 p5-Log-Dispatch-Email-EmailSend	ports/devel/p5-Log-Dispatch-Email-EmailSend
 p5-Log-Dispatch-FileRotate	ports/devel/p5-Log-Dispatch-FileRotate
+p5-Log-Dispatch-FileShared	ports/devel/p5-Log-Dispatch-FileShared
 p5-Log-Dispatch-Perl	ports/devel/p5-Log-Dispatch-Perl
 p5-Log-Log4perl	ports/devel/p5-Log-Log4perl
 p5-Log-Message	ports/devel/p5-Log-Message
