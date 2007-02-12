@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- amarok/src/lastfm.cpp.orig
 +++ amarok/src/lastfm.cpp
-@@ -729,7 +729,7 @@
+@@ -905,7 +905,7 @@
  
      QCString md5pass = KMD5( KMD5( m_password.utf8() ).hexDigest() + currentTime ).hexDigest();
  

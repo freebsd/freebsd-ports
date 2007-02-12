@@ -3,11 +3,10 @@ bin/amarokapp
 bin/amarokcollectionscanner
 bin/amarok_daapserver.rb
 bin/amarok_proxy.rb
-lib/libamarok.so
-lib/libamarok.so.0
 lib/libamarok.a
 lib/libamarok.la
-%%XMMS%%bin/amarok_xmmswrapper2
+lib/libamarok.so
+lib/libamarok.so.0
 lib/kde3/konqsidebar_universalamarok.a
 lib/kde3/konqsidebar_universalamarok.la
 lib/kde3/konqsidebar_universalamarok.so
@@ -23,15 +22,9 @@ lib/kde3/libamarok_nfs-device.a
 lib/kde3/libamarok_smb-device.so
 lib/kde3/libamarok_smb-device.la
 lib/kde3/libamarok_smb-device.a
-%%GPOD%%lib/kde3/libamarok_ipod-mediadevice.so
-%%GPOD%%lib/kde3/libamarok_ipod-mediadevice.la
-%%GPOD%%lib/kde3/libamarok_ipod-mediadevice.a
 %%NJB%%lib/kde3/libamarok_njb-mediadevice.so
 %%NJB%%lib/kde3/libamarok_njb-mediadevice.la
 %%NJB%%lib/kde3/libamarok_njb-mediadevice.a
-%%MTP%%lib/kde3/libamarok_mtp-mediadevice.so
-%%MTP%%lib/kde3/libamarok_mtp-mediadevice.la
-%%MTP%%lib/kde3/libamarok_mtp-mediadevice.a
 lib/kde3/libamarok_generic-mediadevice.so
 lib/kde3/libamarok_generic-mediadevice.la
 lib/kde3/libamarok_generic-mediadevice.a
@@ -56,7 +49,6 @@ share/apps/amarok/data/equalizer_presets.xml
 share/apps/amarok/data/firstrun.m3u
 share/apps/amarok/data/grid.png
 share/apps/amarok/data/magnatune_logo.png
-share/apps/amarok/data/magnatune_start_page.html
 share/apps/amarok/data/wirl1.png
 share/apps/amarok/data/wirl2.png
 share/apps/amarok/icons/crystalsvg/16x16/actions/covermanager.png
@@ -436,7 +428,6 @@ share/apps/amarok/images/currenttrack_repeat.png
 share/apps/amarok/images/currenttrack_repeat_small.png
 share/apps/amarok/images/currenttrack_stop.png
 share/apps/amarok/images/currenttrack_stop_small.png
-share/apps/amarok/images/description.png
 share/apps/amarok/images/eq_active2.png
 share/apps/amarok/images/eq_inactive2.png
 share/apps/amarok/images/lastfm.png
@@ -474,6 +465,7 @@ share/apps/amarok/ruby_lib/mongrel/configurator.rb
 share/apps/amarok/ruby_lib/mongrel/debug.rb
 share/apps/amarok/ruby_lib/mongrel/handlers.rb
 share/apps/amarok/ruby_lib/mongrel/init.rb
+share/apps/amarok/ruby_lib/mongrel/mime_types.yml
 share/apps/amarok/ruby_lib/mongrel/stats.rb
 share/apps/amarok/ruby_lib/mongrel/tcphack.rb
 share/apps/amarok/ruby_lib/rbconfig/datadir.rb
@@ -990,6 +982,7 @@ share/locale/el/LC_MESSAGES/amarok.mo
 share/locale/en_GB/LC_MESSAGES/amarok.mo
 share/locale/es/LC_MESSAGES/amarok.mo
 share/locale/et/LC_MESSAGES/amarok.mo
+share/locale/fa/LC_MESSAGES/amarok.mo
 share/locale/fi/LC_MESSAGES/amarok.mo
 share/locale/fr/LC_MESSAGES/amarok.mo
 share/locale/ga/LC_MESSAGES/amarok.mo
@@ -1016,6 +1009,7 @@ share/locale/ro/LC_MESSAGES/amarok.mo
 share/locale/ru/LC_MESSAGES/amarok.mo
 share/locale/rw/LC_MESSAGES/amarok.mo
 share/locale/sl/LC_MESSAGES/amarok.mo
+share/locale/se/LC_MESSAGES/amarok.mo
 share/locale/sk/LC_MESSAGES/amarok.mo
 share/locale/sq/LC_MESSAGES/amarok.mo
 share/locale/sr/LC_MESSAGES/amarok.mo
@@ -1029,9 +1023,7 @@ share/locale/uk/LC_MESSAGES/amarok.mo
 share/locale/uz/LC_MESSAGES/amarok.mo
 share/locale/zh_CN/LC_MESSAGES/amarok.mo
 share/locale/zh_TW/LC_MESSAGES/amarok.mo
-%%GPOD%%share/services/amarok_ipod-mediadevice.desktop
 %%NJB%%share/services/amarok_njb-mediadevice.desktop
-%%MTP%%share/services/amarok_mtp-mediadevice.desktop
 share/services/amarokitpc.protocol
 share/services/amaroklastfm.protocol
 share/services/amarokpcast.protocol
@@ -1072,12 +1064,20 @@ share/servicetypes/amarok_plugin.desktop
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/sl/LC_MESSAGES
 @dirrmtry share/locale/sl
+@dirrmtry share/locale/se/LC_MESSAGES
+@dirrmtry share/locale/se
 @dirrmtry share/locale/sk/LC_MESSAGES
 @dirrmtry share/locale/sk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
 @dirrmtry share/locale/tg/LC_MESSAGES
 @dirrmtry share/locale/tg
 @dirrmtry share/locale/uk/LC_MESSAGES
 @dirrmtry share/locale/uk
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
 @dirrm share/doc/HTML/sv/amarok
 @dirrm share/doc/HTML/ru/amarok
 @dirrm share/doc/HTML/pt_BR/amarok
