@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		basket
-PORTVERSION=		0.6.0
+PORTVERSION=		1.0
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://basket.kde.org/downloads/
 
@@ -21,12 +21,6 @@ USE_AUTOTOOLS=		libtool:15
 
 OPTIONS=	KONTACT	"Kontact plugin" on
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
 .if !defined(WITHOUT_KONTACT)
 LIB_DEPENDS+=	kontact.1:${PORTSDIR}/deskutils/kdepim3
 PLIST_SUB=	KONTACT=""
@@ -38,4 +32,4 @@ CONFIGURE_ENV+=	DO_NOT_COMPILE="kontact_plugin"
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O2//g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
