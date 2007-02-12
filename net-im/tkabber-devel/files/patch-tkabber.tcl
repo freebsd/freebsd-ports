@@ -1,11 +1,11 @@
---- tkabber.tcl.orig	Mon Aug  1 01:09:36 2005
-+++ tkabber.tcl	Wed Aug  3 11:35:21 2005
-@@ -75,7 +75,7 @@
+--- tkabber.tcl.orig	Sun Feb 11 22:34:35 2007
++++ tkabber.tcl	Mon Feb 12 14:44:44 2007
+@@ -102,7 +102,7 @@
      return $snapshot
  }
  
--set version "0.9.9-alpha[get_snapshot [file join $rootdir ChangeLog]]"
-+set version "0.9.9-alpha[get_snapshot [file join $rootdir version]]"
+-set tkabber_version "0.9.9-SVN[get_snapshot [file join $rootdir ChangeLog]]"
++set tkabber_version "0.9.9-SVN[get_snapshot [file join $rootdir version]]"
  set toolkit_version "Tcl/Tk [info patchlevel]"
- set debug_lvls {}
- 
+ if {$is_a_starkit} {
+     append toolkit_version " (starkit)"

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkabber
-PORTVERSION=	0.9.9.a.20061226
+PORTVERSION=	0.9.9.a.20070212
 CATEGORIES=	net-im
 MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -29,7 +29,7 @@ USE_TCL=	yes
 USE_TK=		yes
 
 SUBDIRS=	aniemoteicons emoticons ifacetk jabberlib-tclxml \
-		mclistbox-1.02 msgs pixmaps plugins sounds trans
+		mclistbox msgs pixmaps plugins sounds trans
 
 OPTIONS=	ZLIB "with zlib support" off
 
