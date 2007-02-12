@@ -1,5 +1,7 @@
 bin/scons
 bin/scons-%%SCONS_VER%%
+bin/scons-time
+bin/scons-time-%%SCONS_VER%%
 bin/sconsign
 bin/sconsign-%%SCONS_VER%%
 lib/scons-%%SCONS_VER%%/SCons/Action.py
@@ -74,6 +76,9 @@ lib/scons-%%SCONS_VER%%/SCons/Options/PathOption.pyo
 lib/scons-%%SCONS_VER%%/SCons/Options/__init__.py
 lib/scons-%%SCONS_VER%%/SCons/Options/__init__.pyc
 lib/scons-%%SCONS_VER%%/SCons/Options/__init__.pyo
+lib/scons-%%SCONS_VER%%/SCons/PathList.py
+lib/scons-%%SCONS_VER%%/SCons/PathList.pyc
+lib/scons-%%SCONS_VER%%/SCons/PathList.pyo
 lib/scons-%%SCONS_VER%%/SCons/Platform/__init__.py
 lib/scons-%%SCONS_VER%%/SCons/Platform/__init__.pyc
 lib/scons-%%SCONS_VER%%/SCons/Platform/__init__.pyo
@@ -419,6 +424,9 @@ lib/scons-%%SCONS_VER%%/SCons/Warnings.pyo
 lib/scons-%%SCONS_VER%%/SCons/__init__.py
 lib/scons-%%SCONS_VER%%/SCons/__init__.pyc
 lib/scons-%%SCONS_VER%%/SCons/__init__.pyo
+lib/scons-%%SCONS_VER%%/SCons/cpp.py
+lib/scons-%%SCONS_VER%%/SCons/cpp.pyc
+lib/scons-%%SCONS_VER%%/SCons/cpp.pyo
 lib/scons-%%SCONS_VER%%/SCons/dblite.py
 lib/scons-%%SCONS_VER%%/SCons/dblite.pyc
 lib/scons-%%SCONS_VER%%/SCons/dblite.pyo
