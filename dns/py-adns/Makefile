@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	adns
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	dns python
-MASTER_SITES=	http://adns-python.googlecode.com/files/ \
-		http://dustman.net/andy/python/adns-python/${PORTVERSION}/
+MASTER_SITES=	http://adns-python.googlecode.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	adns-python-${PORTVERSION}
 
