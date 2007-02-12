@@ -5,6 +5,7 @@
 
     SUBDIR += acroread
     SUBDIR += aspell
+    SUBDIR += aspell-pt_BR
     SUBDIR += ispell-pt_BR
     SUBDIR += kde3-i18n
     SUBDIR += kde3-i18n-pt_BR
