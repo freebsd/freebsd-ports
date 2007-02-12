@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	jrtplib
-PORTVERSION=	3.6.0
+PORTVERSION=	3.7.0
 CATEGORIES=	devel
-MASTER_SITES=	http://research.edm.luc.ac.be/jori/jrtplib/
+MASTER_SITES=	http://research.edm.uhasselt.be/jori/jrtplib/
 
 MAINTAINER=	hopet@ics.muni.cz
 COMMENT=	Object-oriented RTP library written in C++

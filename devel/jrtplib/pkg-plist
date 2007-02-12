@@ -47,7 +47,7 @@ include/jrtplib3/rtptypes_unix.h
 include/jrtplib3/rtptypes_win.h
 include/jrtplib3/rtpudpv4transmitter.h
 include/jrtplib3/rtpudpv6transmitter.h
-lib/libjrtp-3.6.0.so
+lib/libjrtp-3.7.0.so
 lib/libjrtp.a
 lib/libjrtp.la
 lib/libjrtp.so

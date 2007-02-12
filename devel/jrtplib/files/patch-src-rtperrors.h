@@ -4,7 +4,7 @@
  
  #define RTPERRORS_H
  
-+#include <stdio.h>
++#include <cstdio>
  #include <string>
  
  std::string RTPGetErrorString(int errcode);
