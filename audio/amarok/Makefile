@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	amarok
-PORTVERSION=	1.4.4
-PORTREVISION=	2
+PORTVERSION=	1.4.5
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
@@ -32,7 +31,6 @@ USE_LDCONFIG=	yes
 OPTIONS=	GPOD "iPod support" on \
 		NJB "Creative Nomad and Dell support" on \
 		MTP "MTP device support" on \
-		XMMS "XMMS visualizations" off \
 		OPENGL "OpenGL support" on \
 		AMAZON "Amazon cover fetching support" on \
 		MYSQL "Use MySQL as collection backend" off \
@@ -74,15 +72,6 @@ CONFIGURE_ARGS+=--with-libmtp
 PLIST_SUB+=	MTP=""
 .endif
 
-.if !defined(WITH_XMMS)
-PLIST_SUB+=	XMMS="@comment "
-CONFIGURE_ARGS+=--without-xmms
-.else
-BUILD_DEPENDS+=	xmms-config:${PORTSDIR}/multimedia/xmms
-LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
-PLIST_SUB+=	XMMS=""
-.endif
-
 .if defined(WITHOUT_OPENGL)
 CONFIGURE_ARGS+=--without-opengl
 .endif
@@ -99,6 +88,11 @@ CONFIGURE_ARGS+=--enable-mysql
 .if defined(WITH_POSTGRESQL)
 USE_PGSQL=	yes
 CONFIGURE_ARGS+=--enable-postgresql
+.endif
+
+.if defined(DEBUG)
+CONFIGURE_ARGS+=--enable-debug=full
+STRIP=          # none
 .endif
 
 pre-extract:	check-options-version
