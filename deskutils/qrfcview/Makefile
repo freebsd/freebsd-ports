@@ -15,7 +15,7 @@ MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Graphical RFC viewer
 
 USE_QT_VER=	4
-QT_COMPONENTS=	gui network corelib designer qmake uic moc
+QT_COMPONENTS=	gui network corelib designer qmake uic moc rcc
 PLIST_FILES=	bin/qRFCView
 
 pre-build:
