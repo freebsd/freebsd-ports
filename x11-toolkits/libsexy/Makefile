@@ -5,22 +5,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=		libsexy
-PORTVERSION=		0.1.8
-CATEGORIES=		x11-toolkits devel
-MASTER_SITES=		http://releases.chipx86.com/libsexy/libsexy/
+PORTNAME=	libsexy
+PORTVERSION=	0.1.10
+CATEGORIES=	x11-toolkits devel
+MASTER_SITES=	http://releases.chipx86.com/libsexy/libsexy/
 
-MAINTAINER=		andreas@syndrom23.de
-COMMENT=		Extension widgets for GTK+
+MAINTAINER=	andreas@syndrom23.de
+COMMENT=	Extension widgets for GTK+
 
-BUILD_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-LIB_DEPENDS=		enchant:${PORTSDIR}/textproc/enchant
-RUN_DEPENDS=		${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+LIB_DEPENDS=	enchant:${PORTSDIR}/textproc/enchant
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME=		gnomehack lthack gtk20 libxml2
-INSTALLS_SHLIB=		yes
-USE_X_PREFIX=		yes
-GNU_CONFIGURE=		yes
+USE_GNOME=	gnomehack lthack gtk20 libxml2
+USE_LDCONFIG=	yes
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
