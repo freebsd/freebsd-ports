@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	plex
-PORTVERSION=	1.1.4.1
+PORTVERSION=	1.1.5
 CATEGORIES=	devel python
-MASTER_SITES=	http://nz.cosc.canterbury.ac.nz/~greg/python/Plex/
+MASTER_SITES=	http://www.cosc.canterbury.ac.nz/greg.ewing/python/Plex/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Plex-${PORTVERSION}
 
@@ -18,6 +18,7 @@ COMMENT=	Lexical Analysis Module for Python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
+NO_WRKSUBDIR=	yes
 DOCSDIR=	share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
