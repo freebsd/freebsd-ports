@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	mpd
-DISTVERSION=	4.1rc2
+DISTVERSION=	4.1
 CATEGORIES=	net
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	mpd
 DIST_SUBDIR=	mpd4
 
 MAINTAINER=	mav@alkar.net
-COMMENT=	Multi-link PPP daemon based on netgraph(4) [development version]
+COMMENT=	Multi-link PPP daemon based on netgraph(4)
 
 LIB_DEPENDS=	pdel.0:${PORTSDIR}/devel/libpdel
 
-LATEST_LINK=	mpd4
+LATEST_LINK=    mpd4
 MTREE_FILE=	${FILESDIR}/mpd4.mtree
 MAN8=		mpd4.8
 MANCOMPRESSED=	maybe
