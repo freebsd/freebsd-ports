@@ -10,6 +10,7 @@ PORTVERSION=	2.0.7
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	pth
+PKGNAMESUFFIX?=	# empty
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	GNU Portable Threads
@@ -27,17 +28,16 @@ MAN3=		pth.3
 
 OPTIONS=	OPTIMIZED_CFLAGS "Build with optimized CFLAGS" on
 
+CONFLICTS?=	pth-hard-2.*
+
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_SYSCALL_HARD)
-PKGNAMESUFFIX=	-hard
+.if ${PKGNAMESUFFIX} == "-hard"
 CONFIGURE_ARGS+=	--enable-syscall-hard --disable-syscall-soft
 PLIST_SUB=	PTHREAD="@comment "
-CONFLICTS=	pth-*
 .else
 CONFIGURE_ARGS+=	--enable-syscall-soft --enable-pthread
 PLIST_SUB=	PTHREAD=""
-CONFLICTS=	pth-hard-*
 MAN1+=		pthread-config.1
 MAN3+=		pthread.3
 .endif
