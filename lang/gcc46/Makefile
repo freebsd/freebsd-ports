@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.3.0
-PORTREVISION=	20070202
+PORTREVISION=	20070209
 CATEGORIES=	lang java
 VERSIONSTRING=	4.3-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -93,7 +93,7 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gccint \
 		gcc${SUFFIX}/gfortran
 .if ${OSVERSION} >= 502102
-INFO+=		gcc${SUFFIX}/libgomp 
+INFO+=		gcc${SUFFIX}/libgomp
 .endif
 
 .if ! defined(WITHOUT_JAVA)
