@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-2.8ucl1.1.6
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	MBONE video tool
 
+BUILD_DEPENDS+= v4l_compat>=1.0.20060801:${PORTSDIR}/multimedia/v4l_compat
+
 LIB_DEPENDS=	tk84:${PORTSDIR}/x11-toolkits/tk84 \
 		uclmmbase:${PORTSDIR}/devel/uclmmbase
 
