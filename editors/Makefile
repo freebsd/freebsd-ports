@@ -84,6 +84,7 @@
     SUBDIR += jove
     SUBDIR += kate-plugins
     SUBDIR += kile
+    SUBDIR += klat
     SUBDIR += koffice-kde3
     SUBDIR += kxmleditor
     SUBDIR += lazarus
