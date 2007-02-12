@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri Mar 11 14:50:32 2005
-+++ Makefile.in	Sat Mar 19 16:06:28 2005
-@@ -212,7 +212,7 @@
+--- Makefile.in.orig	Mon Jan  8 11:39:27 2007
++++ Makefile.in	Mon Feb 12 10:18:02 2007
+@@ -260,7 +260,7 @@
  # This is the default Makefile target.  The objects listed here
  # are what get build when you type just "make" with no arguments.
  #
@@ -9,14 +9,14 @@
  
  Makefile: $(TOP)/Makefile.in
  	./config.status
-@@ -611,8 +611,8 @@
- 	$(LTINSTALL) sqlite3 $(DESTDIR)$(exec_prefix)/bin
+@@ -666,8 +666,8 @@
  	$(INSTALL) -d $(DESTDIR)$(prefix)/include
  	$(INSTALL) -m 0644 sqlite3.h $(DESTDIR)$(prefix)/include
+ 	$(INSTALL) -m 0644 $(TOP)/src/sqlite3ext.h $(DESTDIR)$(prefix)/include
 -	$(INSTALL) -d $(DESTDIR)$(libdir)/pkgconfig; 
 -	$(INSTALL) -m 0644 sqlite3.pc $(DESTDIR)$(libdir)/pkgconfig; 
-+	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/libdata/pkgconfig; 
-+	$(INSTALL) -m 0644 sqlite3.pc $(DESTDIR)$(exec_prefix)/libdata/pkgconfig; 
++	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/libdata/pkgconfig;
++	$(INSTALL) -m 0644 sqlite3.pc $(DESTDIR)$(exec_prefix)/libdata/pkgconfig;
  
  tcl_install:	libtclsqlite3.la
  	tclsh $(TOP)/tclinstaller.tcl $(VERSION)

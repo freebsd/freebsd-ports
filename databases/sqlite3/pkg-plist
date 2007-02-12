@@ -1,6 +1,7 @@
 bin/sqlite3
 %%WITH_TCLWRAPPER%%bin/tclsqlite3
 include/sqlite3.h
+include/sqlite3ext.h
 lib/libsqlite3.a
 lib/libsqlite3.la
 lib/libsqlite3.so
