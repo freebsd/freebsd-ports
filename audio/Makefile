@@ -486,6 +486,7 @@
     SUBDIR += prokyon3
     SUBDIR += pulseaudio
     SUBDIR += py-ao
+    SUBDIR += py-apetag
     SUBDIR += py-cddb
     SUBDIR += py-eyed3
     SUBDIR += py-flac
