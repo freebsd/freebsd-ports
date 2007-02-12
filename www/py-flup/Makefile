@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	flup
-PORTVERSION=	0.5.r2236
+PORTVERSION=	0.5.r2307
 CATEGORIES=	www python
-MASTER_SITES=	http://www.saddi.com/software/flup/dist/
+MASTER_SITES=	http://www.saddi.com/software/flup/dist/ \
+		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	flup-${PORTVERSION:E}
 
