@@ -4472,6 +4472,7 @@ husky-smapi	ports/news/husky-smapi
 husky-smapi-devel	ports/news/husky-smapi-devel
 husky-sqpack	ports/news/husky-sqpack
 hx		ports/net-p2p/hx
+hy-aspell	ports/textproc/hy-aspell
 hybserv		ports/irc/hybserv
 hydra		ports/www/hydra
 hydrogen	ports/audio/hydrogen
