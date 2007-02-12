@@ -555,6 +555,7 @@
     SUBDIR += pchar
     SUBDIR += pcnfsd
     SUBDIR += pcs
+    SUBDIR += pdb
     SUBDIR += pear-Auth_RADIUS
     SUBDIR += pear-Net_CDDB
     SUBDIR += pear-Net_CheckIP
