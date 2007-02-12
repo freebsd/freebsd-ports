@@ -6,6 +6,7 @@
 
 PORTNAME=	gd
 PORTVERSION=	0.56
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://newcenturycomputers.net/projects/download.cgi/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ COMMENT=	Python interface to the GD library
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
-.if defined(WITHOUT_X11)
+.if !defined(WITHOUT_X11)
 USE_XPM=	yes
 .endif
 USE_PYTHON=	yes
