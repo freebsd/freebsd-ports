@@ -25,17 +25,19 @@ CONFIGURE_ARGS=	--enable-optimize \
 MAN1=		pth-config.1
 MAN3=		pth.3
 
-OPTIONS=	OPTIMIZED_CFLAGS "Build with optimized CFLAGS" on \
-		SYSCALL_HARD "Build with hard syscalls" off
+OPTIONS=	OPTIMIZED_CFLAGS "Build with optimized CFLAGS" on
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SYSCALL_HARD)
+PKGNAMESUFFIX=	-hard
 CONFIGURE_ARGS+=	--enable-syscall-hard --disable-syscall-soft
 PLIST_SUB=	PTHREAD="@comment "
+CONFLICTS=	pth-*
 .else
 CONFIGURE_ARGS+=	--enable-syscall-soft --enable-pthread
 PLIST_SUB=	PTHREAD=""
+CONFLICTS=	pth-hard-*
 MAN1+=		pthread-config.1
 MAN3+=		pthread.3
 .endif
