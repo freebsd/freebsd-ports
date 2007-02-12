@@ -19,4 +19,6 @@ MAN1=	clive.1
 GNU_CONFIGURE=	yes
 USE_GETOPT_LONG=yes
 
+CONFLICTS=	py*-clive-[0-9]*
+
 .include <bsd.port.mk>
