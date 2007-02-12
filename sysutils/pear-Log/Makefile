@@ -58,7 +58,7 @@ BUILD_DEPENDS+=	${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
 .endif
 
 .if defined(WITH_PHP_SQLITE)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/${extension}.so:${PORTSDIR}/databases/php5-sqlite
+BUILD_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/sqlite.so:${PORTSDIR}/databases/php5-sqlite
 .endif
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
