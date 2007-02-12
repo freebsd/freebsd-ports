@@ -13524,6 +13524,7 @@ rubygem-net-ssh	ports/security/rubygem-net-ssh
 rubygem-openid	ports/net/rubygem-openid
 rubygem-pdfwriter	ports/print/rubygem-pdfwriter
 rubygem-rails	ports/www/rubygem-rails
+rubygem-rails-app-installer	ports/www/rubygem-rails-app-installer
 rubygem-rake	ports/devel/rubygem-rake
 rubygem-rapt	ports/devel/rubygem-rapt
 rubygem-redcloth	ports/www/rubygem-redcloth
