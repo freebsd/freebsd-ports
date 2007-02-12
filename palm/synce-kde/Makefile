@@ -20,8 +20,7 @@ LIB_DEPENDS+=	synce.0:${PORTSDIR}/palm/synce-libsynce \
 		orange.0:${PORTSDIR}/archivers/orange \
 		unshield.0:${PORTSDIR}/archivers/unshield
 
-RUN_DEPENDS+=	synce-serial-start:${PORTSDIR}/palm/synce-serial \
-		dccm:${PORTSDIR}/palm/synce-dccm
+RUN_DEPENDS+=	synce-serial-start:${PORTSDIR}/palm/synce-serial
 
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
