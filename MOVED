@@ -2826,3 +2826,4 @@ devel/cl-uffi-cmucl||2007-02-10|Depended on removed port devel/cl-asdf-cmucl
 textproc/cl-meta-cmucl||2007-02-10|Depended on removed port devel/cl-asdf-cmucl
 textproc/cl-ppcre-cmucl||2007-02-10|Depended on removed port devel/cl-asdf-cmucl
 www/cl-lml-cmucl||2007-02-10|Depended on removed port devel/cl-asdf-cmucl
+emulators/vmware-tools2||2007-02-12|Has expired: Unfetchable

@@ -15232,7 +15232,6 @@ vmw		ports/emulators/vmw
 vmware-guestd3	ports/emulators/vmware-guestd3
 vmware-guestd4	ports/emulators/vmware-guestd4
 vmware-guestd5	ports/emulators/vmware-guestd5
-vmware-tools2	ports/emulators/vmware-tools2
 vmware-tools3	ports/emulators/vmware-tools3
 vmware-tools4	ports/emulators/vmware-tools4
 vmware-tools5	ports/emulators/vmware-tools5
