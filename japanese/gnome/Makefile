@@ -19,6 +19,9 @@ COMMENT=	The Japanese "meta-port" for the GNOME integrated X11 desktop
 LIB_DEPENDS=	gnome.5:${PORTSDIR}/japanese/gnomelibs \
 		gal.23:${PORTSDIR}/japanese/gal
 
+DEPRECATED=	Depends on expiring ja-gnomelibs port
+EXPIRATION_DATE=2007-03-10
+
 NO_BUILD=	yes
 
 USE_PYTHON=	yes
