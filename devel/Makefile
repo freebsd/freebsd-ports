@@ -1719,6 +1719,7 @@
     SUBDIR += pstreams
     SUBDIR += psvn
     SUBDIR += pth
+    SUBDIR += pth-hard
     SUBDIR += ptmalloc
     SUBDIR += ptypes
     SUBDIR += publib
