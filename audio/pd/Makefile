@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pd
-PORTVERSION=	0.37
-PORTREVISION=	1
+PORTVERSION=	0.39
 CATEGORIES=	audio
 MASTER_SITES=	http://www-crca.ucsd.edu/~msp/Software/
 DISTNAME=	pd-0.37-1test1.src
