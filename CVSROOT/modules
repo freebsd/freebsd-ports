@@ -14187,6 +14187,7 @@ squirrel-sql	ports/databases/squirrel-sql
 squirrelmail	ports/mail/squirrelmail
 squirrelmail-change_ldappass-plugin	ports/mail/squirrelmail-change_ldappass-plugin
 squirrelmail-compatibility-plugin	ports/mail/squirrelmail-compatibility-plugin
+squirrelmail-compatibility-plugin1	ports/mail/squirrelmail-compatibility-plugin1
 squirrelmail-devel	ports/mail/squirrelmail-devel
 squirrelmail-email_footer-plugin	ports/mail/squirrelmail-email_footer-plugin
 squirrelmail-login_auth-plugin	ports/mail/squirrelmail-login_auth-plugin
