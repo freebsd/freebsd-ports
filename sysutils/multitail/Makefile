@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	multitail
-PORTVERSION=	4.2.0
+PORTVERSION=	4.3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.vanheusden.com/multitail/
 EXTRACT_SUFX=	.tgz
@@ -28,7 +28,6 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-config.c ${FILESDIR}/extra-patch-cv.c \
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^CC/d ; s/^CFLAGS=/CFLAGS+=/' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,/etc/multitail.conf,${PREFIX}/etc/multitail.conf,' \
 		${WRKSRC}/mt.c  ${WRKSRC}/Makefile
 
