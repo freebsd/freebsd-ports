@@ -42,6 +42,8 @@ BROKEN=		Does not compile
 
 post-patch:
 	@${REINPLACE_CMD} -e \
+		's|/etc/highlight|${DATADIR}|g' ${WRKSRC}/datadir.cpp
+	@${REINPLACE_CMD} -e \
 		's|/usr/share/highlight|${DATADIR}|' ${WRKSRC}/datadir.cpp
 
 do-install:
