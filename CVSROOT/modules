@@ -5908,6 +5908,7 @@ ktorrent	ports/net-p2p/ktorrent
 ktorrent-devel	ports/net-p2p/ktorrent-devel
 ktrack		ports/comms/ktrack
 ktritoc		ports/games/ktritoc
+ku-aspell	ports/textproc/ku-aspell
 kuake		ports/deskutils/kuake
 kudu		ports/graphics/kudu
 kuickshow	ports/graphics/kuickshow
