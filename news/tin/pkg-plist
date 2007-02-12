@@ -4,7 +4,7 @@ bin/tin
 @exec ln -fs %f %B/rtin
 @unexec rm -f %B/rtin
 bin/tinews.pl
-bin/url_handler.sh
+bin/tinurl_handler.sh
 bin/w2r.pl
 @unexec if cmp -s %D/etc/tin.defaults %D/etc/tin.defaults.dist; then rm -f %D/etc/tin.defaults; fi
 etc/tin.defaults.dist
