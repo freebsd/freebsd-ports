@@ -12,6 +12,9 @@ MASTERDIR=	${.CURDIR}/../../x11-toolkits/gal
 
 MAINTAINER=	ports@FreeBSD.org
 
+DEPRECATED=	Only exists to support ja-gnomelibs which is going away
+EXPIRATION_DATE=2007-03-10
+
 USE_PERL5_BUILD=yes
 
 post-patch:
