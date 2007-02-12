@@ -21,7 +21,7 @@ Please read:
 sipX provide a couple scripts to simplify the SSL certificate
 generation and installation procedure.  Please read:
 
-	%%DOCSDIR%%/INSTALL.ssl
+	%%PREFIX%%/share/doc/sipxcommserverlib/INSTALL.ssl
 
 You will also need to adjust your %%APACHEETCDIR%%/httpd.conf file.
 	Ensure httpd runs as user sipx and group sipx.  Ala:
