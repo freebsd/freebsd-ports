@@ -8,15 +8,7 @@
 PORTNAME=	turba
 PORTVERSION=	2.1.3
 CATEGORIES=	mail www
-MASTER_SITES=	ftp://ftp.horde.org/pub/turba/				\
-		ftp://ftp.planetmirror.com/pub/horde/turba/		\
-		ftp://ftp.au.horde.org/pub/horde/turba/			\
-		ftp://ftp.be.horde.org/turba/				\
-		ftp://ftp.es.horde.org/pub/turba/			\
-		ftp://ftp.it.horde.org/pub/mirror/horde.org/turba/	\
-		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/turba/	\
-		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/turba/	\
-		http://ftp.horde.org/pub/turba/
+MASTER_SITES=	HORDE
 DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
 MAINTAINER=	beech@alaskaparadise.com

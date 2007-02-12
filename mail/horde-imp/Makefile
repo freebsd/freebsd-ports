@@ -9,12 +9,7 @@ PORTNAME=	imp
 PORTVERSION=	4.1.3
 PORTREVISION=	2
 CATEGORIES=	mail www
-MASTER_SITES=	ftp://ftp.horde.org/pub/imp/				\
-		ftp://ftp.planetmirror.com/pub/horde/imp/		\
-		ftp://ftp.au.horde.org/pub/horde/imp/			\
-		ftp://ftp.be.horde.org/imp/				\
-		ftp://ftp.es.horde.org/pub/imp/				\
-		http://ftp.horde.org/pub/imp/
+MASTER_SITES=	HORDE
 DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
 MAINTAINER=	beech@alaskaparadise.com

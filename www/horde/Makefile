@@ -8,15 +8,7 @@
 PORTNAME=	horde
 PORTVERSION=	3.1.3
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
-		ftp://ftp.planetmirror.com/pub/horde/horde/		\
-		ftp://ftp.au.horde.org/pub/horde/horde/			\
-		ftp://ftp.be.horde.org/horde/				\
-		ftp://ftp.es.horde.org/pub/horde/			\
-		ftp://ftp.it.horde.org/pub/mirror/horde.org/horde/	\
-		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/horde/	\
-		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/horde/	\
-		http://ftp.horde.org/pub/horde/
+MASTER_SITES=	HORDE
 
 MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	A common code-base used by Horde applications, written in PHP
