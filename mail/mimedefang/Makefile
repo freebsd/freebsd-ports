@@ -49,6 +49,11 @@ MAN8=	mimedefang.8 mimedefang.pl.8 mimedefang-multiplexor.8 \
 BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/sendmail
 .endif
 
+.if exists( /usr/local/include/libmilter/mfapi.h )
+CONFIGURE_ARGS+= --with-milterinc=${LOCALBASE}/include
+CONFIGURE_ARGS+= --with-milterlib=${LOCALBASE}/lib
+.endif
+
 .if ${PERL_LEVEL} < 500601
 IGNORE=		requires perl 5.6.1 or later. Install lang/perl5 or lang/perl5.8 then try again
 .endif
