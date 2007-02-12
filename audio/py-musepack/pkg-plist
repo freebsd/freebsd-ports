@@ -1,0 +1,8 @@
+%%PYTHON_SITELIBDIR%%/musepack/__init__.py
+%%PYTHON_SITELIBDIR%%/musepack/__init__.pyc
+%%PYTHON_SITELIBDIR%%/musepack/__init__.pyo
+%%PYTHON_SITELIBDIR%%/musepack/apev2.py
+%%PYTHON_SITELIBDIR%%/musepack/apev2.pyc
+%%PYTHON_SITELIBDIR%%/musepack/apev2.pyo
+%%PYTHON_SITELIBDIR%%/musepack/mpc.so
+@dirrm %%PYTHON_SITELIBDIR%%/musepack

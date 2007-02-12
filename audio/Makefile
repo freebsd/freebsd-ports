@@ -494,6 +494,7 @@
     SUBDIR += py-libmpdclient
     SUBDIR += py-libtunepimp
     SUBDIR += py-mad
+    SUBDIR += py-musepack
     SUBDIR += py-musicbrainz
     SUBDIR += py-musicbrainz2
     SUBDIR += py-mutagen
