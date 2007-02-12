@@ -1,0 +1,7 @@
+lib/aspell-%%VER%%/ar.dat
+lib/aspell-%%VER%%/ar_affix.dat
+lib/aspell-%%VER%%/l-ar.cmap
+lib/aspell-%%VER%%/l-ar.cset
+share/aspell/ar.multi
+share/aspell/ar.rws
+share/aspell/arabic.alias
