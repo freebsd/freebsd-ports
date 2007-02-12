@@ -1,6 +1,6 @@
 # New ports collection makefile for:   portcheck
 # Date created:        01 January 2007
-# Whom:                Kim Naim Lesmer <naim@usebsd.com>
+# Whom:                Kim Naim Lesmer <naim@bitcare.dk>
 #
 # $FreeBSD$
 #
@@ -8,11 +8,10 @@
 PORTNAME=	portcheck
 PORTVERSION=	1.12
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://www.usebsd.com/pub/portcheck/files/ \
-		http://www.bitcare.dk/pub/portcheck/files/
+MASTER_SITES=	http://www.bitcare.dk/pub/portcheck/files/
 EXTRACT_SUFX=	.tbz
 
-MAINTAINER=	naim@usebsd.com
+MAINTAINER=	naim@bitcare.dk
 COMMENT=	Maintains the ports tree and checks up the installed packages
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/portaudit:${PORTSDIR}/ports-mgmt/portaudit
