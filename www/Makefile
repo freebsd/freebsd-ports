@@ -1010,6 +1010,7 @@
     SUBDIR += rubygem-mongrel
     SUBDIR += rubygem-mongrel_cluster
     SUBDIR += rubygem-rails
+    SUBDIR += rubygem-rails-app-installer
     SUBDIR += rubygem-redcloth
     SUBDIR += sahana2
     SUBDIR += sams
