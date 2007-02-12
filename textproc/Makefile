@@ -193,6 +193,7 @@
     SUBDIR += htmlize.el
     SUBDIR += htmlsection
     SUBDIR += htmltolatex
+    SUBDIR += hy-aspell
     SUBDIR += hyperestraier
     SUBDIR += ia-aspell
     SUBDIR += id-aspell
