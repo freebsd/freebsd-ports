@@ -9,9 +9,9 @@ PORTNAME=	gaddr
 PORTVERSION=	1.1.4
 PORTREVISION=	2
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://www.cse.unl.edu/~cluening/gaddr/
+MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lars.engels@0x20.net
 COMMENT=	A GTK (and optionally, GNOME) address book
 
 PLIST_FILES=	bin/gaddr
