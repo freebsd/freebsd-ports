@@ -1,4 +1,4 @@
-# New ports collection makefile for:  ssmping
+# New ports collection makefile for:  paris-traceroute
 # Date created:		10 January 2007
 # Whom:			dikshie@sfc.wide.ad.jp
 #
@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	paris-traceroute
-PORTVERSION=	0.91
+PORTVERSION=	0.92
 CATEGORIES=	net
 MASTER_SITES=	http://paris-traceroute.net/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-dev
