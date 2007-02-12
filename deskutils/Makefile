@@ -108,6 +108,7 @@
     SUBDIR += kluje
     SUBDIR += knowit
     SUBDIR += kompose
+    SUBDIR += kooldock
     SUBDIR += krefty
     SUBDIR += kronolith
     SUBDIR += krss
