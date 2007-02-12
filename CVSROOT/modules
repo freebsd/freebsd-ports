@@ -9542,6 +9542,7 @@ p5-Image-Magick-Iterator	ports/graphics/p5-Image-Magick-Iterator
 p5-Image-MetaData-GQview	ports/graphics/p5-Image-MetaData-GQview
 p5-Image-MetaData-JPEG	ports/graphics/p5-Image-MetaData-JPEG
 p5-Image-PBMlib	ports/graphics/p5-Image-PBMlib
+p5-Image-Pngslimmer	ports/graphics/p5-Image-Pngslimmer
 p5-Image-Size	ports/graphics/p5-Image-Size
 p5-Imager	ports/graphics/p5-Imager
 p5-Imager-Graph	ports/graphics/p5-Imager-Graph
