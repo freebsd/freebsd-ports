@@ -12166,6 +12166,7 @@ psutils-letter	ports/print/psutils-letter
 psvn		ports/devel/psvn
 psybnc		ports/irc/psybnc
 pt-aspell	ports/portuguese/aspell
+pt-aspell-pt_BR	ports/portuguese/aspell-pt_BR
 pt-ispell-pt_BR	ports/portuguese/ispell-pt_BR
 pt-kde3-i18n	ports/portuguese/kde3-i18n
 pt-kde3-i18n-pt	ports/portuguese/kde3-i18n
