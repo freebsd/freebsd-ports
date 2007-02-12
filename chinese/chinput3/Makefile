@@ -9,7 +9,8 @@ PORTNAME=	chinput
 PORTVERSION=	3.0.2.5
 PORTREVISION=	3
 CATEGORIES=	chinese x11
-MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/chinput3/
+MASTER_SITES=	http://ftp.jaist.ac.jp/pub/FreeBSD/distfiles/ \
+		http://www.gtlib.gatech.edu/pub/FreeBSD/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chinese GB2312,BIG5 code input server
