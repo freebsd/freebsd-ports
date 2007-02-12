@@ -6,6 +6,7 @@
 
 PORTNAME=	squirrelmail
 PORTVERSION=	2.0.6
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.squirrelmail.org/plugins/
 PKGNAMESUFFIX=	-${SQUIRREL_PLUGIN_NAME}-plugin
@@ -16,6 +17,8 @@ MAINTAINER=	alexander@wittig.name
 COMMENT=	Required by many plugins for compatibility with SquirrelMail
 
 RUN_DEPENDS=	squirrelmail>=1.4.9:${PORTSDIR}/mail/squirrelmail
+
+CONFLICTS=	squirrelmail-compatibility-plugin-1.*
 
 SQUIRREL_PLUGIN_NAME=	compatibility
 
@@ -35,6 +38,8 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_PERL5_BUILD=	yes
 WANT_PHP_WEB=	yes
+
+.include <bsd.port.pre.mk>
 
 pre-everything::
 	@${ECHO} ""
@@ -68,4 +73,4 @@ post-install:
 	@${ECHO} "${SQUIRRELDIR}/config/conf.pl --install-plugin ${SQUIRREL_PLUGIN_NAME}"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
