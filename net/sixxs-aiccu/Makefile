@@ -6,18 +6,14 @@
 #
 
 PORTNAME=	aiccu
-PORTVERSION=	20060725
+PORTVERSION=	20070115
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://www.sixxs.net/archive/sixxs/aiccu/unix/
+MASTER_SITES=	http://noc.sixxs.net/archive/sixxs/aiccu/unix/
 PKGNAMEPREFIX=	sixxs-
-DISTNAME=	aiccu_2006.07.25
+DISTNAME=	aiccu_20070115
 
 MAINTAINER=	meno.abels@adviser.com
 COMMENT=	SixXS IPv6 TIC+ tunnel broker heartbeat client
-
-BROKEN=		Unfetchable
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2007-04-10
 
 USE_RC_SUBR=	sixxs-aiccu
 USE_GMAKE=	yes
