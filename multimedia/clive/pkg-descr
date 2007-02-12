@@ -1,0 +1,6 @@
+clive is a command line program that extracts videos from YouTube and
+Google Video websites. It supports embedded video extraction, and can
+be used with ffmpeg to re-encode the extracted videos to different
+video formats (avi, mpeg, flv). 
+
+WWW:	https://gna.org/projects/clive
