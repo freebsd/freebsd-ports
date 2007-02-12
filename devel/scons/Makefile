@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scons
-PORTVERSION=	0.96.92
+PORTVERSION=	0.96.94
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,14 +14,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	A build tool alternative to make
 
-MAN1=		scons.1 sconsign.1
+MAN1=		scons.1 sconsign.1 scons-time.1
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-EXTRACT_AFTER_ARGS=	| ${TAR} -xf - 2>/dev/null || ${TRUE}
-PLIST_SUB=	SCONS_VER=${PORTVERSION}
 
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/scons.1 ${MANPREFIX}/man/man1
+PLIST_SUB=	SCONS_VER=${PORTVERSION}
 
 .include <bsd.port.mk>
