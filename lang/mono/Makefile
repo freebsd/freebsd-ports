@@ -8,6 +8,7 @@
 
 PORTNAME=	mono
 PORTVERSION=	1.2.2.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/sources/mono/ \
 		${MASTER_SITE_LOCAL}
@@ -21,6 +22,7 @@ CONFLICTS=	mono-devel-[0-9]* mono-svn-[0-9]*
 USE_BISON=	yes
 USE_GNOME=	gnomehack glib20
 USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
 LIBTOOLFILES=	configure libgc/configure
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
