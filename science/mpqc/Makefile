@@ -49,7 +49,6 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf:259
-ALL_TARGET=	#empty
 
 WANT_FORTRAN=	yes #dummy but future use
 BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
@@ -97,9 +96,10 @@ CXXFLAGS+=	-O2 -ffast-math
 pre-configure:
 	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
 
-post-build:
+do-build:
+	@cd ${WRKSRC} ; ${GMAKE}
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/doc ; ${GMAKE}
+	@cd ${WRKSRC}/doc ; ${GMAKE}
 .endif
 
 do-install:
@@ -119,9 +119,16 @@ post-install:
 	cd ${WRKSRC}/doc/html ; ${TAR} -chf - . | ${TAR} -xf - -C ${DOCSDIR}
 	${FIND} ${DOCSDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
 	${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	cd ${PREFIX} ; ${FIND} -s share/doc/${PORTNAME} -type f  >> ${TMPPLIST}
+	cd ${PREFIX} ; ${FIND} -s share/doc/${PORTNAME} -type l  >> ${TMPPLIST}
 .endif
+	cd ${PREFIX} ; ${FIND} -s share/mpqc -type f  >> ${TMPPLIST}
+	cd ${PREFIX} ; ${FIND} -s share/mpqc -type l  >> ${TMPPLIST}
+	cd ${PREFIX} ; ${FIND} -s share/mpqc -type d > ${WRKDIR}/dir.tmp
+	${SORT} -r ${WRKDIR}/dir.tmp | ${XARGS} -n 1 ${ECHO_CMD} @dirrm >> ${TMPPLIST}
 
 validate:
 	cd ${WRKSRC}/src/bin/mpqc/validate ; ${GMAKE} check0 ; ${GMAKE} check0_run ; ${GMAKE} check0_chk
 
 .include <bsd.port.post.mk>
+
