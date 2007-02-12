@@ -1,0 +1,9 @@
+This Perl extension aims to cut down the size of PNGs. Users pass a PNG to
+various functions (though only one presently exists -
+Image::Pngslimmer::discard_noncritical($blob)) and a slimmer version is
+returned. Image::Pngslimmer is designed for use where PNGs are being
+generated on the fly and where size matters - eg for J2ME use. There are
+other options - probably better ones - for handling static PNGs.
+and more image types.
+
+WWW: http://search.cpan.org/dist/Image-Pngslimmer/
