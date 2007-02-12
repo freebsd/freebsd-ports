@@ -16,6 +16,7 @@
     SUBDIR += cpmtools
     SUBDIR += cygne-sdl
     SUBDIR += darcnes
+    SUBDIR += desmume
     SUBDIR += dgen-sdl
     SUBDIR += dlx
     SUBDIR += dosbox
