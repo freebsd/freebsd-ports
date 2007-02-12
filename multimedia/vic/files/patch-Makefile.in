@@ -1,13 +1,16 @@
---- Makefile.in	Wed Apr 30 07:50:17 2003
-+++ Makefile.in	Tue Mar 22 13:18:58 2005
-@@ -59,5 +59,5 @@
+--- Makefile.in.orig	Wed Apr 30 13:50:17 2003
++++ Makefile.in	Fri Feb  9 16:08:03 2007
+@@ -58,7 +58,7 @@
+ INCLUDE_TK = @V_INCLUDE_TK@
  INCLUDE_TCL = @V_INCLUDE_TCL@
  INCLUDE_X11 = @V_INCLUDE_X11@
 -INCLUDE_MISC = @V_INCLUDE@ -I. -Icodec/tmndec -Icodec/tmn-x -Icodec/h263 -Irtp -Irender -Inet -Ivideo -Icodec -I../common/src
-+INCLUDE_MISC = @V_INCLUDE@ -I. -Icodec/tmndec -Icodec/tmn-x -Icodec/h263 -Irtp -Irender -Inet -Ivideo -Icodec -I${LOCALBASE}/include/uclmmbase
++INCLUDE_MISC = @V_INCLUDE@ -I. -Icodec/tmndec -Icodec/tmn-x -Icodec/h263 -Irtp -Irender -Inet -Ivideo -Icodec -I${LOCALBASE}/include/uclmmbase -I${LOCALBASE}/include
  
  STATIC = @V_STATIC@
-@@ -90,10 +90,10 @@
+ MKDEP = ./mkdep
+@@ -89,12 +89,12 @@
+ OBJ_XIL = @V_OBJ_XIL@
  OBJ_CRYPT = @V_OBJ_CRYPT@
  LIB = $(LIB_GRABBER) @V_LIB_TK@ @V_LIB_TCL@ @V_LIB_X11@ @V_LIB@ \
 -	codec/tmndec/libh263.a codec/tmn-x/libh263coder.a ../common/src/libuclmmbase.a -lm
@@ -20,14 +23,18 @@
 +CFLAGS += $(BFLAGS)
  
  #
-@@ -123,5 +123,5 @@
+ # Remember to add a dependency if you add any tcl sources here.
+@@ -122,7 +122,7 @@
+ 	codec/h263/idctenc.o codec/h263/sac.o
  
  # .c objects
 -OBJ1 =	net/inet.o net/inet6.o codec/cellb_tables.o tkStripchart.o md5c.o random.o \
 +OBJ1 =	net/inet.o net/inet6.o codec/cellb_tables.o tkStripchart.o \
  	$(H263_OBJS)
  #	session-rtpv1.o session-nv.o session-ivs.o # Not supported anymore
-@@ -330,13 +330,7 @@
+ # .cpp objects
+@@ -329,15 +329,9 @@
+ 	$(CC) -o $@ $(CFLAGS) render/ppmtolut/ppmtolut.c -lm $(STATIC)
  
  install: force
 -	 cp vic @prefix@/bin/vic
@@ -44,7 +51,9 @@
 +	 ${BSD_INSTALL_PROGRAM} histtolut @prefix@/bin/histtolut
  
  clean:
-@@ -411,6 +405,6 @@
+ 	rm -f *.o codec/jpeg/*.o codec/p64/*.o codec/h263/*.o \
+@@ -410,7 +404,7 @@
+ 
  
  codec/tmn-x/libh263coder.a:
 -	(cd codec/tmn-x; $(MAKE) CC=$(CC) CCOPT="$(CCOPT)" )
