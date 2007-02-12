@@ -1,72 +1,9 @@
 @unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin compatibility; fi
-@unexec mv -f %D/%%SQUIRRELDIR%%/functions/strings.php.orig %D/%%SQUIRRELDIR%%/functions/strings.php
-@exec mkdir -p %D/%%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.0
-@exec mkdir -p %D/%%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.1
-@exec mkdir -p %D/%%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.2
-@exec mkdir -p %D/%%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.3
-@exec mkdir -p %D/%%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.4
-@exec mkdir -p %D/%%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.5
-@exec mkdir -p %D/%%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.6
-@exec mkdir -p %D/%%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.7
-@exec mkdir -p %D/%%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.8
-@exec mkdir -p %D/%%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.9
-@exec mkdir -p %D/%%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.10
-@exec mkdir -p %D/%%SQUIRRELDIR%%/plugins/compatibility/includes/1.5.2
-%%SQUIRRELDIR%%/plugins/compatibility/compatibility.pot
-%%SQUIRRELDIR%%/plugins/compatibility/COPYING
 %%SQUIRRELDIR%%/plugins/compatibility/functions.php
-%%SQUIRRELDIR%%/plugins/compatibility/getpot
 %%SQUIRRELDIR%%/plugins/compatibility/index.php
 %%SQUIRRELDIR%%/plugins/compatibility/INSTALL
-%%SQUIRRELDIR%%/plugins/compatibility/make_release.sh
 %%SQUIRRELDIR%%/plugins/compatibility/README
 %%SQUIRRELDIR%%/plugins/compatibility/setup.php
-%%SQUIRRELDIR%%/plugins/compatibility/TODO
 %%SQUIRRELDIR%%/plugins/compatibility/version
-%%SQUIRRELDIR%%/plugins/compatibility/includes/1.2.7/global.php
-%%SQUIRRELDIR%%/plugins/compatibility/includes/1.2.8/global.php
-%%SQUIRRELDIR%%/plugins/compatibility/includes/1.2.9/global.php
-%%SQUIRRELDIR%%/plugins/compatibility/includes/1.2.10/global.php
-%%SQUIRRELDIR%%/plugins/compatibility/includes/1.2.11/global.php
-%%SQUIRRELDIR%%/plugins/compatibility/includes/1.5.0/global.php
-%%SQUIRRELDIR%%/plugins/compatibility/includes/1.5.1/global.php
-%%SQUIRRELDIR%%/plugins/compatibility/patches/compatibility_patch-1.4.0.diff
-%%SQUIRRELDIR%%/plugins/compatibility/patches/compatibility_patch-1.4.1.diff
-%%SQUIRRELDIR%%/plugins/compatibility/patches/compatibility_patch-1.4.2.diff
-%%SQUIRRELDIR%%/plugins/compatibility/patches/compatibility_patch-1.4.3.diff
-%%SQUIRRELDIR%%/plugins/compatibility/patches/compatibility_patch-1.4.4.diff
-%%SQUIRRELDIR%%/plugins/compatibility/patches/compatibility_patch-1.4.5.diff
-%%SQUIRRELDIR%%/plugins/compatibility/patches/compatibility_patch-1.4.6.diff
-%%SQUIRRELDIR%%/plugins/compatibility/patches/compatibility_patch-1.4.7.diff
-%%SQUIRRELDIR%%/plugins/compatibility/patches/compatibility_patch-1.4.8.diff
-%%SQUIRRELDIR%%/plugins/compatibility/patches/compatibility_patch-1.4.9.diff
-%%SQUIRRELDIR%%/plugins/compatibility/patches/compatibility_patch-1.5.0.diff
-%%SQUIRRELDIR%%/plugins/compatibility/patches.old/compatibility_patch-1.2.11.diff
-%%SQUIRRELDIR%%/plugins/compatibility/patches.old/compatibility_patch-1.4.4.diff
-%%SQUIRRELDIR%%/plugins/compatibility/patches.old/compatibility_patch-1.4.5.diff
-%%SQUIRRELDIR%%/plugins/compatibility/patches.old/compatibility_patch-1.4.6.diff
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.2.7
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.2.8
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.2.9
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.2.10
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.2.11
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.0
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.1
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.2
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.3
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.4
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.5
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.6
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.7
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.8
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.9
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.4.10
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.5.0
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.5.1
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes/1.5.2
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/includes
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/patches
-@dirrm %%SQUIRRELDIR%%/plugins/compatibility/patches.old
 @dirrm %%SQUIRRELDIR%%/plugins/compatibility
-@exec patch -sN -p0 -d %D/%%SQUIRRELDIR%%/plugins/compatibility < %D/%%SQUIRRELDIR%%/plugins/compatibility/patches/compatibility_patch-1.4.5.diff
 @exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin compatibility; fi
