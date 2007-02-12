@@ -1,5 +1,5 @@
---- swiggle.c.orig	Sat Oct 23 22:58:37 2004
-+++ swiggle.c	Wed Nov  1 16:34:10 2006
+--- swiggle.c.orig	Sun Jan 14 13:03:36 2007
++++ swiggle.c	Sun Feb 11 16:32:41 2007
 @@ -66,12 +66,14 @@
  char generated[1024];
  char *progname = "";
@@ -15,7 +15,7 @@
  int (*sort_func)();
  
  #define	MAX_PER_PAGE	(cols*rows)
-@@ -113,7 +115,7 @@
+@@ -115,7 +117,7 @@
  	progname = argv[0];
  	sort_func = sort_by_filename;
  
@@ -24,7 +24,7 @@
  		switch (i) {
  		case 'c':
  			cols = (int) strtol(optarg, &eptr, 10);
-@@ -163,6 +165,12 @@
+@@ -165,6 +167,12 @@
  				usage();
  			}
  			break;
@@ -37,7 +37,7 @@
  		case 'f':
  			force = 1;
  			break;
-@@ -172,6 +180,9 @@
+@@ -174,6 +182,9 @@
  		case 'o':
  			rm_orphans = 0;
  			break;
@@ -47,7 +47,7 @@
  		case 'v':
  			version();
  			break;
-@@ -353,7 +364,7 @@
+@@ -380,7 +391,7 @@
  		qsort(imglist, imgcount, sizeof(struct imginfo), sort_func);
  		
  		create_html(dir, imglist, imgcount);
@@ -56,7 +56,16 @@
  		printf("%d thumbnail index pages created.\n", x);
  	}
  	
-@@ -1040,6 +1051,11 @@
+@@ -868,7 +879,7 @@
+ 		if (closedir(curdir))
+ 			fprintf(stderr, "can't closedir(%s)\n", path);
+ 	} else
+-		fprintf(stderr, "can't opendir(%s)\n", buf);
++		fprintf(stdout, "can't opendir(%s)\n", path);
+ }
+ 
+ /*
+@@ -1076,6 +1087,11 @@
  	    "(default: %d)\n", thumbheight);
  	fprintf(stderr, "   -H <j> ... height of the scaled images in pixel "
  	    "(default: %d)\n", scaleheight);
