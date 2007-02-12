@@ -7,6 +7,7 @@
 
 PORTNAME=	glpi
 PORTVERSION=	0.68.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://glpi-project.org/IMG/gz/ \
 		http://download.gna.org/kanicule/
@@ -14,7 +15,7 @@ MASTER_SITES=	http://glpi-project.org/IMG/gz/ \
 MAINTAINER=	mathias@monnerville.com
 COMMENT=	Free IT and asset management software
 
-USE_PHP=	gettext mysql pcre session xml
+USE_PHP=	mysql pcre session xml
 WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
