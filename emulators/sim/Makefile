@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	sim
-PORTVERSION=	3.6.1
+PORTVERSION=	3.7
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/
-DISTNAME=	${PORTNAME}hv36-1
+DISTNAME=	${PORTNAME}hv37-0
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	trasz@pin.if.uz.zgora.pl
 COMMENT=	Emulates classic DEC, HP, GRI, IBM, Altair, SDS, Honeywell, and others
 
 USE_ZIP=	yes
@@ -28,7 +28,7 @@ BIN_FILES=	altair    h316   ibm1130 nova  pdp15 pdp9 vax780 \
 		i1401  id32    pdp10 pdp7  sds         \
 		gri       i1620  lgp     pdp11 pdp8  vax
 
-PORTDOCS=	0readme_36.txt 0readme_ethernet.txt
+PORTDOCS=	0readme_37.txt 0readme_ethernet.txt
 
 PLIST_FILES=	${BIN_FILES:S/^/bin\//g} %%DATADIR%%/ka655x.bin bin/sim-eclipse
 PLIST_DIRS=	%%DATADIR%%

@@ -1,10 +1,10 @@
---- makefile.orig	Mon Aug 22 18:36:56 2005
-+++ makefile	Mon Aug 22 18:37:56 2005
+--- makefile.orig	Fri Feb  2 07:12:20 2007
++++ makefile	Sun Feb 11 15:57:23 2007
 @@ -10,7 +10,7 @@
  else
  OS_CCDEFS = -D_GNU_SOURCE
  endif
--CC = gcc -std=c99 -O2 -U__STRICT_ANSI__ -g -lm $(OS_CCDEFS) -I .
+-CC = gcc -std=c99 -O2 -U__STRICT_ANSI__ -g -lm -lrt $(OS_CCDEFS) -I .
 +CC += ${CFLAGS} -lm $(OS_CCDEFS) -I .
  ifeq ($(USE_NETWORK),)
  else
