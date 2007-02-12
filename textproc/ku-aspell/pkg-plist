@@ -1,0 +1,5 @@
+lib/aspell-%%VER%%/ku.dat
+share/aspell/ku.multi
+share/aspell/ku.rws
+share/aspell/kurdi.alias
+share/aspell/kurdish.alias
