@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	RRD-Simple
-PORTVERSION=	1.40
+PORTVERSION=	1.41
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/N/NI/NICOLAW
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Test/Deep.pm:${PORTSDIR}/devel/p5-Test-Deep \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
-MAN3=		RRD::Simple.3
+MAN3=		RRD::Simple.3 RRD::Simple::Examples.3
 
 .include <bsd.port.pre.mk>
 
