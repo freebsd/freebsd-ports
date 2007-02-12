@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	eiciel
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.4
 CATEGORIES=	sysutils security
 MASTER_SITES=	http://rofi.pinchito.com/eiciel/download/
 
 MAINTAINER=	andreas@syndrom23.de
 COMMENT=	A GNOME-based ACL editor, with integration into Nautilus
 
-LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
+LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
 USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack nautilus2
@@ -32,10 +32,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		needs ACL support available in FreeBSD 5.0 and later
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^libeiciel_nautilus_la_LDFLAGS/ s|= |= -avoid-version -module |' \
