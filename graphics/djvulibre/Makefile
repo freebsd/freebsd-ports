@@ -28,8 +28,7 @@ CONFIGURE_ENV=	JPEG_CFLAGS="-I${LOCALBASE}/include" \
 		TIFF_LIBS="-L${LOCALBASE}/lib -ltiff" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		CXX="${CXX}" \
-		QTDIR="${X11BASE}"
+		CXX="${CXX}"
 CONFIGURE_ARGS=	--enable-threads=pthread --enable-shared
 USE_LDCONFIG=	yes
 
@@ -45,7 +44,7 @@ PORTDOCS=	djvu2spec.djvu lizard2002.djvu
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 USE_QT_VER=	3
-CONFIGURE_ENV+=	QTLIBS="-L${X11BASE}/lib -lqt-mt"
+CONFIGURE_ENV+=	QTLIBS="-L${QT_PREFIX}/lib -lqt-mt"
 MAN1+=		djview3.1 nsdejavu.1
 MLINKS+=	djview3.1 djview.1
 PLIST_SUB+=	X11=''
