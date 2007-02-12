@@ -5,23 +5,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=		libsexymm
-PORTVERSION=		0.1.7
-CATEGORIES=		x11-toolkits devel
-MASTER_SITES=		http://releases.chipx86.com/libsexy/libsexymm/
+PORTNAME=	libsexymm
+PORTVERSION=	0.1.9
+CATEGORIES=	x11-toolkits devel
+MASTER_SITES=	http://releases.chipx86.com/libsexy/libsexymm/
 
-MAINTAINER=		andreas@syndrom23.de
-COMMENT=		C++ bindings for libsexy
+MAINTAINER=	andreas@syndrom23.de
+COMMENT=	C++ bindings for libsexy
 
-LIB_DEPENDS=		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
-			sexy:${PORTSDIR}/x11-toolkits/libsexy
+LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
+		sexy:${PORTSDIR}/x11-toolkits/libsexy
 
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME=		gnomehack
-GNU_CONFIGURE=		yes
-USE_GMAKE=		yes
-INSTALLS_SHLIB=		yes
-USE_X_PREFIX=		yes
-USE_GCC=		3.4
+USE_GNOME=	gnomehack
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_LDCONFIG=	yes
+USE_X_PREFIX=	yes
 
 .include <bsd.port.mk>
