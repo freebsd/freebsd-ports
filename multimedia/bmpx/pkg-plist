@@ -4,7 +4,32 @@ bin/bmp-enqueue-uris-2.0
 bin/bmp-play-files-2.0
 bin/bmp-play-lastfm-2.0
 bin/bmp2
-include/bmp-2.0/bmp/dbus.h
+include/bmp-2.0/bmp/base_types.hh
+include/bmp-2.0/bmp/bmp.hh
+include/bmp-2.0/bmp/database_types.hh
+include/bmp-2.0/bmp/dbus.hh
+include/bmp-2.0/bmp/library_types.hh
+lib/bmpx/plugins/taglib/libtaglib_plugin_audible.la
+lib/bmpx/plugins/taglib/libtaglib_plugin_audible.so
+lib/bmpx/plugins/taglib/libtaglib_plugin_audible.so.0
+lib/bmpx/plugins/taglib/libtaglib_plugin_flac.la
+lib/bmpx/plugins/taglib/libtaglib_plugin_flac.so
+lib/bmpx/plugins/taglib/libtaglib_plugin_flac.so.0
+lib/bmpx/plugins/taglib/libtaglib_plugin_mpc.la
+lib/bmpx/plugins/taglib/libtaglib_plugin_mpc.so
+lib/bmpx/plugins/taglib/libtaglib_plugin_mpc.so.0
+lib/bmpx/plugins/taglib/libtaglib_plugin_mp3.la
+lib/bmpx/plugins/taglib/libtaglib_plugin_mp3.so
+lib/bmpx/plugins/taglib/libtaglib_plugin_mp3.so.0
+lib/bmpx/plugins/taglib/libtaglib_plugin_ogg.la
+lib/bmpx/plugins/taglib/libtaglib_plugin_ogg.so
+lib/bmpx/plugins/taglib/libtaglib_plugin_ogg.so.0
+lib/bmpx/plugins/taglib/libtaglib_plugin_rmff.la
+lib/bmpx/plugins/taglib/libtaglib_plugin_rmff.so
+lib/bmpx/plugins/taglib/libtaglib_plugin_rmff.so.0
+lib/bmpx/plugins/taglib/libtaglib_plugin_wma.la
+lib/bmpx/plugins/taglib/libtaglib_plugin_wma.so
+lib/bmpx/plugins/taglib/libtaglib_plugin_wma.so.0
 lib/bmpx/plugins/vfs/container/libcontainer_folder.la
 lib/bmpx/plugins/vfs/container/libcontainer_folder.so
 lib/bmpx/plugins/vfs/container/libcontainer_folder.so.0
@@ -31,24 +56,26 @@ lib/bmpx/plugins/vfs/transport/libtransport_http.so
 lib/bmpx/plugins/vfs/transport/libtransport_http.so.0
 libdata/pkgconfig/bmp-2.0.pc
 libexec/beep-media-player-2-bin
+libexec/beep-media-player-2-sentinel
 share/applications/bmp-2.0.desktop
+share/applications/bmp-2.0-offline.desktop
 share/applications/bmp-enqueue-2.0.desktop
 share/applications/bmp-play-2.0.desktop
 %%DATADIR%%/data/GPL.txt
+%%DATADIR%%/glade/dialog-add-podcast.glade
 %%DATADIR%%/glade/dialog-export.glade
 %%DATADIR%%/glade/dialog-filebrowser.glade
 %%DATADIR%%/glade/dialog-filelist.glade
 %%DATADIR%%/glade/dialog-gaim-send-file.glade
 %%DATADIR%%/glade/dialog-gsterror.glade
 %%DATADIR%%/glade/dialog-lastfm-recommend.glade
-%%DATADIR%%/glade/dialog-trackinfo.glade
+%%DATADIR%%/glade/dialog-lyrics.glade
+%%DATADIR%%/glade/dialog-progress.glade
 %%DATADIR%%/glade/library-ui-create-collection.glade
-%%DATADIR%%/glade/library-ui-modify-albums.glade
-%%DATADIR%%/glade/library-ui-modify.glade
+%%DATADIR%%/glade/library-ui-modify-import.glade
 %%DATADIR%%/glade/library-ui-relocate-album.glade
 %%DATADIR%%/glade/main-ui.glade
 %%DATADIR%%/glade/preferences-ui.glade
-%%DATADIR%%/glade/widget.glade
 %%DATADIR%%/icons/themes/darksphere/icon_player_128.png
 %%DATADIR%%/icons/themes/darksphere/icon_player_16.png
 %%DATADIR%%/icons/themes/darksphere/icon_player_32.png
@@ -123,33 +150,51 @@ share/applications/bmp-play-2.0.desktop
 %%DATADIR%%/icons/tray-icons/tray-icon-exit.png
 %%DATADIR%%/icons/tray-icons/tray-icon-paused.png
 %%DATADIR%%/icons/tray-icons/tray-icon-playing.png
-%%DATADIR%%/images/about-logo.png
-%%DATADIR%%/images/audio.png
+%%DATADIR%%/images/audio-default.png
+%%DATADIR%%/images/audio-empty.png
+%%DATADIR%%/images/audio-multiple.png
+%%DATADIR%%/images/blue-speaker.png
 %%DATADIR%%/images/cdda/audiocd-big.png
 %%DATADIR%%/images/cdda/audiocd-unplayable.png
-%%DATADIR%%/images/cdda/header-logo-left.png
-%%DATADIR%%/images/cdda/header-logo-right.png
-%%DATADIR%%/images/cdda/header-logo-slice.png
-%%DATADIR%%/images/collection.png
-%%DATADIR%%/images/downloads/header-logo-left.png
-%%DATADIR%%/images/downloads/header-logo-right.png
-%%DATADIR%%/images/downloads/header-logo-slice.png
-%%DATADIR%%/images/emblem-new.png
+%%DATADIR%%/images/collections/collection.png
 %%DATADIR%%/images/hal/dev-cdrom.png
 %%DATADIR%%/images/hal/dev-volume-1394.png
 %%DATADIR%%/images/hal/dev-volume-ide.png
 %%DATADIR%%/images/hal/dev-volume-usb.png
+%%DATADIR%%/images/hal/device-camera.png
+%%DATADIR%%/images/hal/device-cdrom.png
+%%DATADIR%%/images/hal/device-cf-card.png
+%%DATADIR%%/images/hal/device-floppy.png
+%%DATADIR%%/images/hal/device-harddrive.png
+%%DATADIR%%/images/hal/device-harddrive-usb.png
+%%DATADIR%%/images/hal/device-harddrive-1394.png
+%%DATADIR%%/images/hal/device-ipod.png
+%%DATADIR%%/images/hal/device-ms.png
+%%DATADIR%%/images/hal/device-removable.png
+%%DATADIR%%/images/hal/device-removable-usb.png
+%%DATADIR%%/images/hal/device-removable-1394.png
+%%DATADIR%%/images/hal/device-sdmmc-card.png
+%%DATADIR%%/images/hal/device-sm-card.png
 %%DATADIR%%/images/lastfm/audioscrobbler.png
 %%DATADIR%%/images/lastfm/header-logo-left.png
 %%DATADIR%%/images/lastfm/header-logo-right.png
 %%DATADIR%%/images/lastfm/header-logo-slice.png
 %%DATADIR%%/images/lastfm/lastfm-album.png
 %%DATADIR%%/images/lastfm/lastfm-artist.png
+%%DATADIR%%/images/lastfm/lastfm-friend.png
+%%DATADIR%%/images/lastfm/lastfm-mainuser.png
+%%DATADIR%%/images/lastfm/lastfm-neighbour.png
 %%DATADIR%%/images/lastfm/lastfm-net-idle.png
 %%DATADIR%%/images/lastfm/lastfm-net-rx.png
 %%DATADIR%%/images/lastfm/lastfm-net-tx.png
 %%DATADIR%%/images/lastfm/lastfm-station.png
+%%DATADIR%%/images/lastfm/lastfm-station-small.png
+%%DATADIR%%/images/lastfm/lastfm-tag.png
 %%DATADIR%%/images/lastfm/lastfm-track.png
+%%DATADIR%%/images/lastfm/lastfm-user.png
+%%DATADIR%%/images/library/new.png
+%%DATADIR%%/images/logo-about.png
+%%DATADIR%%/images/logo-splash.png
 %%DATADIR%%/images/main/add.png
 %%DATADIR%%/images/main/header-logo-left.png
 %%DATADIR%%/images/main/header-logo-right.png
@@ -160,23 +205,22 @@ share/applications/bmp-play-2.0.desktop
 %%DATADIR%%/images/main/yingyang.gif
 %%DATADIR%%/images/main/yingyang_paused.gif
 %%DATADIR%%/images/main/yingyang_seeking.png
+%%DATADIR%%/images/podcast/feed-default.png
 %%DATADIR%%/images/preferences/library.png
 %%DATADIR%%/images/preferences/misc.png
 %%DATADIR%%/images/preferences/musicbrainz.png
 %%DATADIR%%/images/preferences/playback.png
+%%DATADIR%%/images/preferences/podcasts.png
 %%DATADIR%%/images/rating/stars_0.png
 %%DATADIR%%/images/rating/stars_1.png
 %%DATADIR%%/images/rating/stars_2.png
 %%DATADIR%%/images/rating/stars_3.png
 %%DATADIR%%/images/rating/stars_4.png
 %%DATADIR%%/images/rating/stars_5.png
-%%DATADIR%%/images/splash.png
-%%DATADIR%%/images/stock/amazon.png
 %%DATADIR%%/images/stock/approve-partial.png
 %%DATADIR%%/images/stock/approve.png
 %%DATADIR%%/images/stock/audio.png
 %%DATADIR%%/images/stock/bmp.png
-%%DATADIR%%/images/stock/bookmarks.png
 %%DATADIR%%/images/stock/cdrom.png
 %%DATADIR%%/images/stock/entry-clear.png
 %%DATADIR%%/images/stock/lastfm-ban.png
@@ -187,10 +231,10 @@ share/applications/bmp-play-2.0.desktop
 %%DATADIR%%/images/stock/museek.png
 %%DATADIR%%/images/stock/musicbrainz.png
 %%DATADIR%%/images/stock/playlist.png
-%%DATADIR%%/images/stock/search.png
 %%DATADIR%%/images/stock/shoutcast.png
 %%DATADIR%%/images/stock/silk-add.png
 %%DATADIR%%/images/stock/silk-application_edit.png
+%%DATADIR%%/images/stock/silk-attach.png
 %%DATADIR%%/images/stock/silk-cart_put.png
 %%DATADIR%%/images/stock/silk-cd_add.png
 %%DATADIR%%/images/stock/silk-cd_delete.png
@@ -201,33 +245,31 @@ share/applications/bmp-play-2.0.desktop
 %%DATADIR%%/images/stock/silk-control_play_blue.png
 %%DATADIR%%/images/stock/silk-control_stop_blue.png
 %%DATADIR%%/images/stock/silk-delete.png
+%%DATADIR%%/images/stock/silk-drive.png
 %%DATADIR%%/images/stock/silk-exclamation.png
+%%DATADIR%%/images/stock/silk-feed.png
+%%DATADIR%%/images/stock/silk-feed_add.png
+%%DATADIR%%/images/stock/silk-feed_delete.png
+%%DATADIR%%/images/stock/silk-folder_star.png
+%%DATADIR%%/images/stock/silk-html.png
 %%DATADIR%%/images/stock/silk-mod-server_down.png
 %%DATADIR%%/images/stock/silk-mod-server_up.png
 %%DATADIR%%/images/stock/silk-new.png
+%%DATADIR%%/images/stock/silk-picture.png
 %%DATADIR%%/images/stock/silk-plugin.png
 %%DATADIR%%/images/stock/silk-plugin_disabled.png
 %%DATADIR%%/images/stock/silk-tag_blue_add.png
 %%DATADIR%%/images/stock/silk-tag_blue_delete.png
-%%DATADIR%%/images/stock/stock-table.png
-%%DATADIR%%/images/stock/streams.png
-%%DATADIR%%/images/stock/tachikoma.png
 %%DATADIR%%/images/stock/tag.png
 %%DATADIR%%/images/stock/xiph.png
-%%DATADIR%%/images/streams/header-logo-left.png
-%%DATADIR%%/images/streams/header-logo-right.png
-%%DATADIR%%/images/streams/header-logo-slice.png
+%%DATADIR%%/images/svg/button-background.svg
+%%DATADIR%%/images/svg/button-glow-overlay.svg
+%%DATADIR%%/images/svg/button-outline.svg
 %%DATADIR%%/images/throbber.gif
-%%DATADIR%%/musicbrainz/musicbrainz_mmd-1.0.rng
-%%DATADIR%%/ui/albums-tracklist.ui
-%%DATADIR%%/ui/modify.ui
-%%DATADIR%%/ui/playlist.ui
-%%DATADIR%%/ui/trayicon.ui
 share/dbus-1/services/org.beepmediaplayer.bmp.service
+share/dbus-1/services/org.beepmediaplayer.sentinel.service
 share/icons/hicolor/48x48/apps/bmpx.png
-share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-media-library-query.png
 %%NLS%%share/locale/af/LC_MESSAGES/bmpx.mo
-%%NLS%%share/locale/bg/LC_MESSAGES/bmpx.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/bmpx.mo
 %%NLS%%share/locale/de/LC_MESSAGES/bmpx.mo
 %%NLS%%share/locale/el/LC_MESSAGES/bmpx.mo
@@ -238,6 +280,7 @@ share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-media-library-query
 %%NLS%%share/locale/hu/LC_MESSAGES/bmpx.mo
 %%NLS%%share/locale/it/LC_MESSAGES/bmpx.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/bmpx.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/bmpx.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/bmpx.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/bmpx.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/bmpx.mo
@@ -247,19 +290,18 @@ share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-media-library-query
 %%NLS%%share/locale/sv/LC_MESSAGES/bmpx.mo
 %%NLS%%share/locale/th_TH/LC_MESSAGES/bmpx.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/bmpx.mo
-share/mime/packages/bmp-2.0.xml
 %%NLS%%@dirrmtry share/locale/th_TH/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/th_TH
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/musicbrainz
-@dirrm %%DATADIR%%/images/streams
+@dirrm %%DATADIR%%/images/svg
 @dirrm %%DATADIR%%/images/stock
 @dirrm %%DATADIR%%/images/rating
 @dirrm %%DATADIR%%/images/preferences
+@dirrm %%DATADIR%%/images/podcast
 @dirrm %%DATADIR%%/images/main
+@dirrm %%DATADIR%%/images/library
 @dirrm %%DATADIR%%/images/lastfm
 @dirrm %%DATADIR%%/images/hal
-@dirrm %%DATADIR%%/images/downloads
+@dirrm %%DATADIR%%/images/collections
 @dirrm %%DATADIR%%/images/cdda
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/icons/tray-icons
@@ -277,6 +319,7 @@ share/mime/packages/bmp-2.0.xml
 @dirrm lib/bmpx/plugins/vfs/transport
 @dirrm lib/bmpx/plugins/vfs/container
 @dirrm lib/bmpx/plugins/vfs
+@dirrm lib/bmpx/plugins/taglib
 @dirrm lib/bmpx/plugins
 @dirrm lib/bmpx
 @dirrm include/bmp-2.0/bmp

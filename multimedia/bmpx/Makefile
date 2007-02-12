@@ -24,8 +24,6 @@ LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
 		boost_date_time.3:${PORTSDIR}/devel/boost \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
-BROKEN=		Does not compile (5.x) and incorrect pkg-plist (6.x)
-
 CONFLICTS=	bmpx-devel-[0-9]*
 
 USE_AUTOTOOLS=	autoconf:259
@@ -80,4 +78,10 @@ CONFIGURE_ARGS+=	--disable-sid
 PLIST_SUB+=		SID="@comment "
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BROKEN=		Does not compile on 5.x
+.endif
+
+.include <bsd.port.post.mk>
