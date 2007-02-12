@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	Digest-Whirlpool
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.5
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Digest
@@ -18,6 +18,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-
 
 PERL_CONFIGURE=	yes
 
+MAN1=	whirlpoolsum.1
 MAN3=	Digest::Whirlpool.3
 
 .include <bsd.port.pre.mk>
