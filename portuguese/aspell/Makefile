@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	aspell
-DISTVERSION=	-pt-0.50-2
+DISTVERSION=	6-pt_PT-20070206-0
 PORTEPOCH=	1
 CATEGORIES=	portuguese textproc
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aspell Portuguese dictionary
 
-DICT=	 	pt
+DICT=	 	pt_PT
 
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>
