@@ -1,0 +1,5 @@
+lib/aspell-%%VER%%/pt_BR.dat
+lib/aspell-%%VER%%/pt_BR_affix.dat
+share/aspell/pt_BR.multi
+share/aspell/pt_BR.multi
+share/aspell/pt_BR.rws
