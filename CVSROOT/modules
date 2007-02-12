@@ -11078,6 +11078,7 @@ pcrs		ports/textproc/pcrs
 pcs		ports/net/pcs
 pcsc-lite	ports/devel/pcsc-lite
 pd		ports/audio/pd
+pdb		ports/net/pdb
 pdbar		ports/palm/pdbar
 pdbc		ports/palm/pdbc
 pdcurses	ports/devel/pdcurses
