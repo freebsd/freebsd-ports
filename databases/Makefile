@@ -402,6 +402,7 @@
     SUBDIR += puredb
     SUBDIR += pxlib
     SUBDIR += pxtools
+    SUBDIR += py-Elixir
     SUBDIR += py-MySQL
     SUBDIR += py-MySQLdb
     SUBDIR += py-MySQLdb-devel
