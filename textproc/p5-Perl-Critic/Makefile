@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Perl
@@ -74,6 +74,8 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitReadlineInForLoop.3 \
 	Perl::Critic::Policy::InputOutput::ProhibitTwoArgOpen.3 \
 	Perl::Critic::Policy::InputOutput::RequireBracedFileHandleWithPrint.3 \
+	Perl::Critic::Policy::InputOutput::RequireCheckedClose.3 \
+	Perl::Critic::Policy::InputOutput::RequireCheckedOpen.3 \
 	Perl::Critic::Policy::Miscellanea::ProhibitFormats.3 \
 	Perl::Critic::Policy::Miscellanea::ProhibitTies.3 \
 	Perl::Critic::Policy::Miscellanea::RequireRcsKeywords.3 \
