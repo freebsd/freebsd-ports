@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	gqclient
 DISTNAME=	gq-${PORTVERSION:S/r/rc/}
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	GTK-based LDAP client
 
 LIB_DEPENDS=	gnome-keyring:${PORTSDIR}/security/gnome-keyring
