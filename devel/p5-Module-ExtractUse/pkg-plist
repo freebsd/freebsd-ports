@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Module/ExtractUse.pm
+%%SITE_PERL%%/Module/ExtractUse/Grammar.pm
+@dirrmtry %%SITE_PERL%%/Module/ExtractUse
+@dirrmtry %%SITE_PERL%%/Module
