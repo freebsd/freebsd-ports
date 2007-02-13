@@ -6,51 +6,36 @@
 #
 
 PORTNAME=	iconv
-PORTVERSION=	${REAL_PORTVERSION}
+PORTVERSION=	${RUBY_PORTVERSION}
 PORTEPOCH=	1
 CATEGORIES=	converters ruby
-MASTER_SITES=	${REAL_MASTER_SITES}
+MASTER_SITES=	#empty
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+DISTFILES=	# empty
+DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An iconv wrapper class for Ruby
+
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/lang/ruby18:patch
 
 USE_ICONV=	yes
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
+MAKE_ARGS+=	sitelibdir='$$(rubylibdir)'
+
 INSTALL_TARGET=	site-install
+
+PLIST_FILES=	${RUBY_ARCHLIBDIR:S,${PREFIX},,:S,^/,,}/iconv.so
 
 .include <bsd.port.pre.mk>
 
-.if ${RUBY_VER} >= 1.7
-REAL_PORTVERSION=	${RUBY_PORTVERSION}
-DISTNAME=		${PORTNAME}
-DISTFILES=		# empty
-
-MAKE_ARGS+=	      sitelibdir='$$(rubylibdir)'
-
-BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
+RUBY_WRKDIR!=	cd ${PORTSDIR}/${RUBY_PORT}; ${MAKE} -V WRKDIR
 
 do-extract:
 	${MKDIR} ${WRKDIR}
-	${LN} -sf `cd ${PORTSDIR}/${RUBY_PORT}; ${MAKE} -V WRKDIR`/${PORTNAME} ${WRKDIR}/
-
-.else
-REAL_PORTVERSION=	0.5
-REAL_MASTER_SITES=	http://member.nifty.ne.jp/nokada/archive/
-DIST_SUBDIR=		ruby
-
-BROKEN=			Not fetchable
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
-.for f in *.html iconv.rlog rd.css
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
-.endfor
-.endif
-.endif
+	${LN} -sf ${RUBY_WRKDIR}/${PORTNAME} ${WRKDIR}/
 
 .include <bsd.port.post.mk>
