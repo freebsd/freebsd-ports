@@ -16,6 +16,8 @@ DISTNAME=	TclHaskell1_2
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Tcl/Tk binding for Haskell
 
+BROKEN=		Needs updating to build with latest GHC
+
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 BUILD_DEPENDS=	${GHC}:${PORTSDIR}/lang/${GHCDEP}
 RUN_DEPENDS=	${GHC}:${PORTSDIR}/lang/${GHCDEP}
@@ -24,7 +26,7 @@ RUN_DEPENDS=	${GHC}:${PORTSDIR}/lang/${GHCDEP}
 GHC=		ghc-5.04.3
 GHCDEP=		ghc5
 .else
-GHC=		ghc-6.4.2
+GHC=		ghc-6.6
 GHCDEP=		ghc
 .endif
 
