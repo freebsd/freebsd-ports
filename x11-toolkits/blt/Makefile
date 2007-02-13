@@ -22,6 +22,9 @@ PATCH_DIST_STRIP= -p1
 MAINTAINER=	kjc@iijlab.net
 COMMENT=	A Tk extension (with shared libs)
 
+USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	libtool:15
+
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 WRKSRC=		${WRKDIR}/blt2.4z
@@ -36,7 +39,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-tkincls=${LOCALBASE}/include/tk${TK_VER} \
 		--x-libraries=${X11BASE}/lib \
 		--x-includes=${X11BASE}/include
-INSTALLS_SHLIB=	yes
 
 TK_VER?=	8.4
 
