@@ -1,5 +1,5 @@
---- configure.orig	Thu Aug 28 15:41:03 2003
-+++ configure	Thu Aug 28 15:49:25 2003
+--- configure.orig	Fri Oct  4 13:33:59 2002
++++ configure	Tue Feb 13 16:39:48 2007
 @@ -1202,7 +1202,7 @@
  #
  #  1. command line (--with-cflags)
@@ -43,19 +43,13 @@
      TCL_LIB_NAME="tcl${TCL_MAJOR_VERSION}${TCL_MINOR_VERSION}"
      TK_LIB_NAME="tk${TK_MAJOR_VERSION}${TK_MINOR_VERSION}"
      ;;
-@@ -4111,7 +4113,14 @@
+@@ -4111,7 +4113,8 @@
      if test "$test_ok" = yes; then
        SHLIB_CFLAGS="-fpic"
        SHLIB_LD="ld"
 -      SHLIB_LD_FLAGS="-Bshareable -x"
-+      if test `objformat` = "elf"; then
-+        SHLIB_LD_FLAGS="-Bshareable -x -soname \$@"
-+        SHLIB_SUFFIX=".so.3"
-+      else
-+        SHLIB_LD_FLAGS="-Bshareable -x"
-+        SHLIB_SUFFIX=".so.3.0"
-+      fi
-+
++      SHLIB_LD_FLAGS="-Bshareable -x -soname \$@"
++      SHLIB_SUFFIX=".so.3"
      fi
      ;;
  
