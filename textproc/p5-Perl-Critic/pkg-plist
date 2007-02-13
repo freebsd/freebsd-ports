@@ -45,6 +45,8 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitReadlineInForLoop.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/ProhibitTwoArgOpen.pm
 %%SITE_PERL%%/Perl/Critic/Policy/InputOutput/RequireBracedFileHandleWithPrint.pm
+%%SITE_PERL%%/Perl/Critic/Policy/InputOutput/RequireCheckedClose.pm
+%%SITE_PERL%%/Perl/Critic/Policy/InputOutput/RequireCheckedOpen.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Miscellanea/ProhibitFormats.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Miscellanea/ProhibitTies.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Miscellanea/RequireRcsKeywords.pm
