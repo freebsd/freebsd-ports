@@ -70,7 +70,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/qt/include|${X11BASE}/include|; \
 		s|/usr/local/qt/lib|${X11BASE}/lib|' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|$$QTDIR|${X11BASE}|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|$$QTDIR|${QT_PREFIX}|' ${WRKSRC}/configure
 .endif
 
 post-install:

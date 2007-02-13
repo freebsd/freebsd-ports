@@ -21,7 +21,7 @@ LIB_DEPENDS=	fftw3.4:${PORTSDIR}/math/fftw3
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_QT_VER=	3
-QTDIR?=		${X11BASE}
+QTDIR?=		${QT_PREFIX}
 MAKE_ENV=	QMAKESPEC="${LOCALBASE}/share/qt/mkspecs/freebsd-g++"	\
 		QTDIR="${QTDIR}"
 

@@ -18,7 +18,7 @@ RUN_DEPENDS=	lsz:${PORTSDIR}/comms/lrzsz
 USE_QT_VER=	3
 USE_GMAKE=	yes
 
-MAKE_ENV+=	QTDIR="${X11BASE}"
+MAKE_ENV+=	QTDIR="${QT_PREFIX}"
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \

@@ -18,7 +18,7 @@ LIB_DEPENDS=	xapian.13:${PORTSDIR}/databases/xapian-core \
 		qt-mt.3:${PORTSDIR}/x11-toolkits/qt33
 
 USE_QT_VER=	3
-CONFIGURE_ENV=	QTDIR="${QT_PREFIX}" QMAKESPEC="freebsd-g++"
+CONFIGURE_ENV=	QMAKESPEC="freebsd-g++"
 MAKE_ENV=	${CONFIGURE_ENV}
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

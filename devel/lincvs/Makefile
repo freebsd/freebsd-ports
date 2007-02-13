@@ -20,7 +20,7 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_QT_VER=	3
-QTDIR?=		${X11BASE}
+QTDIR?=		${QT_PREFIX}
 MAKE_ENV+=	QTDIR=${QTDIR} QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 ALL_TARGET=	install
 

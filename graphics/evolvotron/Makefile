@@ -22,7 +22,7 @@ USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
-MAKE_ENV=	QTDIR=${X11BASE} MOC=${MOC}
+MAKE_ENV=	QTDIR=${QT_PREFIX} MOC=${MOC}
 
 .include <bsd.port.pre.mk>
 

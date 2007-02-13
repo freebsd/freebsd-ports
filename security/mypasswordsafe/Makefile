@@ -20,7 +20,7 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 WRKSRC=		${WRKDIR}/${DISTNAME:S/.src//}
-MAKE_ENV=	QTDIR="${X11BASE}" \
+MAKE_ENV=	QTDIR="${QT_PREFIX}" \
 		QMAKESPEC="${LOCALBASE}/share/qt/mkspecs/freebsd-g++"
 
 post-patch:

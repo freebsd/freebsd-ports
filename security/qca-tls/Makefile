@@ -26,7 +26,7 @@ QT_NONSTANDARD=	yes
 CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 CONFIGURE_ARGS=	--qtdir=${X11BASE} \
 		--with-openssl-inc=${OPENSSLINC} --with-openssl-lib=${OPENSSLLIB}
-MAKE_ARGS+=	QTDIR=${X11BASE} \
+MAKE_ARGS+=	QTDIR=${QT_PREFIX} \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
 PLIST_DIRS=	lib/plugins/crypto

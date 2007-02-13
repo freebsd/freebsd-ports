@@ -20,8 +20,8 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	3
-CONFIGURE_ARGS+=	QTDIR="${X11BASE}" CXXFLAGS="${CFLAGS} -pthread"
-MAKE_ENV=	QTDIR="${X11BASE}" MAKE="${GMAKE}" \
+CONFIGURE_ARGS+=	QTDIR="${QT_PREFIX}" CXXFLAGS="${CFLAGS} -pthread"
+MAKE_ENV=	QTDIR="${QT_PREFIX}" MAKE="${GMAKE}" \
 		QMAKESPEC="${LOCALBASE}/share/qt/mkspecs/freebsd-g++"
 
 .include <bsd.port.mk>

@@ -19,7 +19,7 @@ COMMENT=	BOUML, a free UML 2 modeler
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 USE_QT_VER=	3
-QTDIR?=		${X11BASE}
+QTDIR?=		${QT_PREFIX}
 ALL_TARGET=	compile
 MAKE_ENV=	QMAKESPEC="${LOCALBASE}/share/qt/mkspecs/freebsd-g++"	\
 		QTDIR="${QTDIR}"

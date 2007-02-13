@@ -18,7 +18,7 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 USE_X_PREFIX=	yes
 USE_QT_VER=	3
-MAKE_ENV=	QTDIR="${X11BASE}"
+MAKE_ENV=	QTDIR="${QT_PREFIX}"
 USE_LDCONFIG=	yes
 
 OPTIONS=	DESIGNER_PLUGIN "Install plugin for Qt Designer" on \

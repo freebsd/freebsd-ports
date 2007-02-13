@@ -21,7 +21,6 @@ COMMENT=	A command-line, ncurses, and (optional) Qt-GUI OSS audio mixer
 .if !defined(WITHOUT_X11)
 USE_QT_VER=	3
 CONFIGURE_ARGS+=--enable-qt
-CONFIGURE_ENV+=	QTDIR="${X11BASE}"
 .endif
 
 USE_PERL5_BUILD=	yes

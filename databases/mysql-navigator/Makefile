@@ -25,8 +25,7 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS+=--with-mysql-includes=${LOCALBASE}/include/mysql \
 		--with-mysql-libraries=${LOCALBASE}/lib/mysql
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV+=	MOC="${MOC}" QTDIR="${X11BASE}"
-MAKE_ENV+=	MOC="${MOC}" QTDIR="${X11BASE}"
+MAKE_ENV+=	MOC="${MOC}" QTDIR="${QT_PREFIX}"
 
 post-patch:
 	@${REINPLACE_CMD} 's#-O2#${CXXFLAGS}#g' ${WRKSRC}/configure

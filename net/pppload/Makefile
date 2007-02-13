@@ -17,7 +17,7 @@ COMMENT=	Display the current throughput of a network device in a window
 
 USE_QT_VER=	3
 USE_GMAKE=	yes
-MAKE_ENV=	QTDIR=${X11BASE} PTHREAD_LIBS=${PTHREAD_LIBS}
+MAKE_ENV=	QT_PREFIX="${QT_PREFIX}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 MAN1=		pppload.1
 PLIST_FILES=	bin/pppload

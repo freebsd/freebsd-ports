@@ -15,11 +15,11 @@
 -X11_INCLUDE_DIR = /usr/X11R6/include
 -QT_INCLUDE_DIR  = $(QTDIR)/include
 +X11_INCLUDE_DIR = $(X11BASE)/include
-+QT_INCLUDE_DIR  = $(X11BASE)/include/
++QT_INCLUDE_DIR  = $(QT_PREFIX)/include/
  
 -QT_LIB_DIR      = $(QTDIR)/lib
 -X11_LIB_DIR     = /usr/X11R6/lib
-+QT_LIB_DIR      = $(X11BASE)/lib
++QT_LIB_DIR      = $(QT_PREFIX)/lib
 +X11_LIB_DIR     = $(X11BASE)/lib
  
  

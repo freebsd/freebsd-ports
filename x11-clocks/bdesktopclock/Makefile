@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/BDesktopClock
 
 USE_X_PREFIX=	yes
 USE_QT_VER=	3
-MAKE_ENV+=	QTDIR=${X11BASE} \
+MAKE_ENV+=	QTDIR=${QT_PREFIX} \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
 PLIST_FILES=	bin/BDesktopClock
