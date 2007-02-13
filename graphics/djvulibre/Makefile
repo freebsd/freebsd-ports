@@ -7,12 +7,12 @@
 
 PORTNAME=	djvulibre
 PORTVERSION=	3.5.18
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	djvu
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 COMMENT?=	DjVu viewers, encoders, browser plugin, and utilities
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -63,6 +63,8 @@ post-patch:
 		 s|$$OPTS $$opt|$$OPTS|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|^#! /bin/bash|#! ${LOCALBASE}/bin/bash|g ; \
 		 s|any2djvu\.sh|any2djvu|g' ${WRKSRC}/tools/any2djvu
+	@${REINPLACE_CMD} -e 's,/netscape/,/djvulibre/,' \
+		 ${WRKSRC}/gui/nsdejavu/nsdejavu.1.in
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|= @CPPFLAGS|= $${FLAGS} @CPPFLAGS|g ; \
 		 s|@ $${FLAGS}|@|g ; \
