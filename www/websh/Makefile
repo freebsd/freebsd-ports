@@ -1,4 +1,4 @@
-# New ports collection makefile for:	mod_dtcl
+# New ports collection makefile for:	websh
 # Date created:				January 31, 2007
 # Whom:					Mikhail Teterin <mi@aldan.algebra.com>
 #
