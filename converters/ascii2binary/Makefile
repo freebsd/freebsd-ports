@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ascii2binary
-PORTVERSION=	2.12
+PORTVERSION=	2.13
 CATEGORIES=	converters
 MASTER_SITES=	http://billposer.org/Software/Downloads/
-EXTRACT_SUFX=	.tbz
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Convert between textual representations of numbers and binary
