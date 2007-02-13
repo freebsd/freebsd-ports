@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	interchange
-PORTVERSION=	5.4.1
+PORTVERSION=	5.4.2
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.icdevgroup.org/interchange/5.4/tar/
 
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${ARCH_PERL}/Safe/Hole.pm:${PORTSDIR}/security/p5-Safe-Hole \
 		${SITE_PERL}/Business/OnlinePayment.pm:${PORTSDIR}/finance/p5-Business-OnlinePayment
 
 USE_PERL5=	yes
-USE_BZIP2=      yes
+USE_BZIP2=	yes
 PERL_CONFIGURE=	yes
 
 OPTIONS=	MYSQL "Add MySQL support" off \
@@ -28,7 +28,7 @@ OPTIONS=	MYSQL "Add MySQL support" off \
 
 .include <bsd.port.pre.mk>
 
-USE_RC_SUBR=    interchange.sh
+USE_RC_SUBR=	interchange.sh
 
 .if defined(WITH_MYSQL)
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
@@ -118,9 +118,5 @@ post-install:
 	@${REINPLACE_CMD} -i "" -e "s:${PREFIX}:${PREFIX}/interchange:g; s:${PREFIX}/interchange/bin: ${PREFIX}/bin:g" ${PREFIX}/bin/${i}
 .endfor
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	needs perl 5.6.1 or higher, install lang/perl5.8 and try again.
-.endif
 
 .include <bsd.port.post.mk>
