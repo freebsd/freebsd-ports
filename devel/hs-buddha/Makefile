@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A declarative debugger for Haskell 98
 
+BROKEN=		Does not build with recent GHC
+
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
