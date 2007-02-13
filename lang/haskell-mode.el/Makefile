@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	haskell-mode
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	lang elisp
-MASTER_SITES=	http://www.iro.umontreal.ca/~monnier/elisp/ \
-		http://macemacsjp.sourceforge.jp/package/20051117/GPL/
+MASTER_SITES=	http://www.iro.umontreal.ca/~monnier/elisp/
 
 MAINTAINER=	umq@ueo.co.jp
 COMMENT=	An Emacs lisp mode for editing haskell programs
@@ -27,7 +26,7 @@ PLIST_FILES=	${ELISPFILES:C/^| [^ ]/${PLIST_DIRS}/g}
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	ChangeLog NEWS fontlock.hs indent.hs \
-		index.html installation-guide.html
+		README index.html
 .endif
 
 do-install:
