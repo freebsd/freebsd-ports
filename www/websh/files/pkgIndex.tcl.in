@@ -1,0 +1,3 @@
+if {[package vcompare [info tclversion] 8.3] < 0} return
+
+package ifneeded websh %%WS_VER%% [list load [file join [file dirname $dir] libwebsh%%TCL_DVER%%.so.1]]

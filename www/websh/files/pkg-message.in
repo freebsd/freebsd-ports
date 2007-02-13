@@ -1,0 +1,21 @@
+
+The websh _executable_ is deliberately not installed by this port.
+To load websh functionality into regular Tcl-scripts, simply use:
+
+	package require websh
+
+
+For a ready to use example on configuring the module, see:
+
+	%%EXAMPLESDIR%%/httpd.conf
+
+The file can be simply copied into the
+
+	%%PREFIX%%/%%APACHEETCDIR%%/Includes/
+
+under more recent Apache versions.
+
+Be sure to create %%PREFIX%%/etc/websh.conf -- most likely, you'll
+simply copy the installed %%PREFIX%%/etc/websh.conf.dist over.
+
+-

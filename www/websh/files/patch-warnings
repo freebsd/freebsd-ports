@@ -1,0 +1,398 @@
+This patch allows clean compiles with gcc's -Wall. Mostly
+it removes unused variables, but not only. Redundant
+initializations are removed in some places too, for example.
+
+Submitted to vendor:
+
+	http://issues.apache.org/bugzilla/show_bug.cgi?id=41523
+
+	-mi
+
+--- ../generic/args.c	Wed Sep 11 09:54:01 2002
++++ ../generic/args.c	Thu Feb  1 23:12:27 2007
+@@ -95,5 +95,4 @@
+ 
+     int pos = 0;
+-    char *tmp = NULL;
+ 
+     for (pos = (previous + 1); pos < objc; pos++) {
+@@ -310,5 +309,4 @@
+     int i;
+     char *tmp = NULL;
+-    int tmpLen = -1;
+ 
+     if (scanc < 0)
+--- ../generic/checksum.c	Wed Mar 24 10:15:45 2004
++++ ../generic/checksum.c	Thu Feb  1 23:13:25 2007
+@@ -85,5 +85,4 @@
+     char tmpc1 = 0;
+     char tmpc2 = 0;
+-    int i = 0;
+     unsigned char byte = 0;
+ 
+@@ -144,6 +143,5 @@
+ 
+     Tcl_Obj *crcObj = NULL;
+-    char *str = NULL;
+-    int len = 0;
++    int len;
+     int crc1;
+     int crc2;
+--- ../generic/conv.c	Wed Sep 11 09:54:01 2002
++++ ../generic/conv.c	Thu Feb  1 23:14:25 2007
+@@ -163,6 +163,5 @@
+ 
+     ConvData *convData = NULL;
+-    Tcl_Obj *res1 = NULL;
+-    Tcl_Obj *res2 = NULL;
++    Tcl_Obj *res1;
+ 
+     /* --------------------------------------------------------------------------
+--- ../generic/crypt.c	Thu Oct 25 13:50:15 2001
++++ ../generic/crypt.c	Thu Feb  1 23:18:30 2007
+@@ -26,7 +26,6 @@
+ {
+ 
+-    CryptData *cryptData = NULL;
+-    int ires = 0;
+-    Tcl_Obj *tmp = NULL;
++    CryptData *cryptData;
++    Tcl_Obj *tmp;
+ 
+     /* --------------------------------------------------------------------------
+--- ../generic/nca_d.c	Thu Oct 25 13:50:15 2001
++++ ../generic/nca_d.c	Thu Feb  1 23:20:57 2007
+@@ -259,14 +259,13 @@
+ {
+ 
+-    Tcl_Obj *out = NULL;
+-    int pack = 0, type = 0, prev = 0, newc = 0, pos = 0;
+-    Tcl_Obj *key = NULL;
+-    unsigned char *keyBytes = NULL;
+-    int keyLen = -1;
++    Tcl_Obj *out;
++    int pack, type, prev = 0, newc, pos = 0;
++    Tcl_Obj *key;
++    unsigned char *keyBytes;
++    int keyLen;
+     char outc;
+-    Tcl_Obj *tmp = NULL;
+-    int i = 0;
+-    char *str = NULL;
+-    int strLen = -1;
++    int i;
++    char *str;
++    int strLen;
+ 
+     if ((clientData == NULL) || (in == NULL))
+--- ../generic/dispatch.c	Fri Jul  1 08:11:34 2005
++++ ../generic/dispatch.c	Thu Feb  1 23:26:28 2007
+@@ -54,10 +54,7 @@
+     };
+ 
+-    int idx = 0;
+-    Tcl_Obj *post_data = NULL;
+-    Tcl_Obj *query_string = NULL;
+-    Tcl_Obj *formDataChannel = NULL;
+-    Tcl_Obj *formDataBoundary = NULL;
+-    Tcl_Obj *urlEncString = NULL;
++    int idx;
++    Tcl_Obj *post_data;
++    Tcl_Obj *query_string;
+ 
+     /* --------------------------------------------------------------------------
+@@ -408,6 +405,5 @@
+ {
+ 
+-    char *content_type = NULL;
+-    int iTmp = 0;
++    char *content_type;
+ 
+ /*   printf("DBG parsePostData - starting\n"); fflush(stdout); */
+--- ../generic/filecounter.c	Sat Mar  4 16:28:56 2006
++++ ../generic/filecounter.c	Thu Feb  1 23:27:44 2007
+@@ -59,5 +59,4 @@
+     enum subCommands
+     { CURVAL, NEXTVAL, GETVAL, CONFIG };
+-    char **ptr = (char **) subCommands;
+ 
+     int idx;
+--- ../generic/filelock.c	Thu Oct 25 13:50:15 2001
++++ ../generic/filelock.c	Thu Feb  1 23:28:32 2007
+@@ -24,8 +24,8 @@
+ {
+ 
+-    int res = -1;
+-    int filedes = -1;
++    int res;
++    int filedes;
+ 
+-    filedes = (int) handle;
++    filedes = (int)(intptr_t)handle;
+ 
+ #ifdef SYSV
+@@ -68,8 +68,8 @@
+ {
+ 
+-    int res = -1;
+-    int filedes = -1;
++    int res;
++    int filedes;
+ 
+-    filedes = (int) handle;
++    filedes = (int)(intptr_t)handle;
+ 
+ #ifdef SYSV
+@@ -106,8 +106,8 @@
+ {
+ 
+-    int res = 0;
+-    int filedes = -1;
++    int res;
++    int filedes;
+ 
+-    filedes = (int) handle;
++    filedes = (int)(intptr_t)handle;
+ 
+ #ifdef SYSV
+@@ -147,5 +147,4 @@
+ 
+     ClientData handle;
+-    int res = 0;
+ 
+     if (Tcl_GetChannelHandle(channel, TCL_WRITABLE, &handle) != TCL_OK) {
+@@ -175,5 +174,4 @@
+ 
+     ClientData handle;
+-    int res = 0;
+ 
+     if (Tcl_GetChannelHandle(channel, TCL_WRITABLE, &handle) != TCL_OK) {
+@@ -244,5 +242,4 @@
+     Tcl_Channel channel;
+     ClientData handle;
+-    int res = 0;
+ 
+     WebAssertObjc(objc != 2, 1, "channel");
+--- ../generic/formdata.c	Fri Sep  9 07:21:16 2005
++++ ../generic/formdata.c	Thu Feb  1 23:30:07 2007
+@@ -563,5 +563,4 @@
+     long rBytesPrev = 0;
+     long wBytes = 0;
+-    char *tmpCurLine = NULL;
+ 
+     /* --------------------------------------------------------------------------
+--- ../generic/htmlify.c	Fri Sep  9 08:33:59 2005
++++ ../generic/htmlify.c	Thu Feb  1 23:32:16 2007
+@@ -266,13 +266,10 @@
+ {
+ 
+-    int length = 0;		/* length of input */
++    int length;			/* length of input */
+     int pos = 0;		/* actual position in string */
+-    Tcl_UniChar *unic = NULL;
++    Tcl_UniChar *unic;
+     int plainfirst = 0;
+     int plainend = 0;
+-    int dump = 0;
+     int err = 0;		/* temporary use, may be removed */
+-
+-    Tcl_Obj *err_buffer = NULL;
+ 
+     if (in == NULL || out == NULL) {
+--- ../generic/log.c	Sun Mar  5 13:37:27 2006
++++ ../generic/log.c	Thu Feb  1 23:34:02 2007
+@@ -435,7 +435,5 @@
+ {
+ 
+-    LogData *logData = NULL;
+-    int iTmp = 0;
+-    int iCur = 0;
++    LogData *logData;
+ 
+     /* ------------------------------------------------------------------------
+@@ -697,6 +695,4 @@
+     case DELETE:{
+ 
+-	    LogDest *logDest = NULL;
+-
+ 	    /*      0               1      2 */
+ 	    /*      web::loglogDest delete logDest1 */
+@@ -893,6 +889,4 @@
+ 	}
+     case DELETE:{
+-
+-	    LogLevel *logLevel = NULL;
+ 
+ 	    /*      0              1      2 */
+--- ../generic/paramlist.c	Wed Sep 11 09:54:01 2002
++++ ../generic/paramlist.c	Thu Feb  1 23:35:23 2007
+@@ -86,7 +86,6 @@
+ {
+ 
+-    Tcl_Obj *existingValue = NULL;
+-    Tcl_Obj *copy = NULL;
+-    int len = 0;
++    Tcl_Obj *existingValue;
++    Tcl_Obj *copy;
+ 
+     if ((hash == NULL) || (key == NULL) || (value == NULL))
+@@ -538,5 +537,5 @@
+ 
+     if (hash != NULL) {
+-	while (he = Tcl_FirstHashEntry(hash, &hs)) {
++	while ((he = Tcl_FirstHashEntry(hash, &hs))) {
+ 	    tclo = (Tcl_Obj *) Tcl_GetHashValue(he);
+ 	    if (tclo != NULL)
+--- ../generic/request.c	Sat Mar  4 20:08:46 2006
++++ ../generic/request.c	Thu Feb  1 23:36:28 2007
+@@ -445,12 +445,10 @@
+ {
+ 
+-    int idx = -1;
+-
+     static char *params[] = { "-reset", "-channel", NULL };
+     enum params
+     { REQUESTRESET, DEFAULTCHANNELNAME };
+ 
+-    int res = 0;
+-    RequestData *requestData = NULL;
++    int res;
++    RequestData *requestData;
+ 
+     /* --------------------------------------------------------------------------
+--- ../generic/uricode.c	Wed Sep 11 09:54:01 2002
++++ ../generic/uricode.c	Thu Feb  1 23:37:41 2007
+@@ -80,13 +80,11 @@
+ {
+ 
+-    long length = 0;
+-    long i = 0;
++    long i;
+     char str[32];		/* for hex representation of i. 64 bit -> string
+ 				   with 16 chars. 32 should be long enough, then. */
+-    Tcl_Obj *tclo = NULL;
+-    char *utfs = NULL;
+-    Tcl_UniChar unic = 0;
+-    unsigned char *bytes = NULL;
+-    int bytesLen = -1;
++    Tcl_Obj *tclo;
++    Tcl_UniChar unic;
++    unsigned char *bytes;
++    int bytesLen;
+ 
+     IfNullLogRetNull(NULL, inString, "uriEncode: got NULL as input.");
+--- ../generic/webout.c	Fri Apr 30 16:54:17 2004
++++ ../generic/webout.c	Thu Feb  1 23:38:59 2007
+@@ -264,7 +264,6 @@
+ 
+ 	    case RESET:{
+-		    Tcl_Obj *tmp = NULL;
+-		    int err = 0;
+-		    char *tname = NULL;
++		    Tcl_Obj *tmp;
++		    char *tname;
+ 
+ 		    WebAssertObjc(objc != 2, 2, NULL);
+--- ../generic/weboutint.c	Sun Mar  5 11:56:32 2006
++++ ../generic/weboutint.c	Thu Feb  1 23:43:34 2007
+@@ -29,7 +29,5 @@
+ {
+ 
+-    char *varName = NULL;
+-    char *channelName = NULL;
+-    int mode = 0;
++    int mode;
+     Tcl_Channel channel = NULL;
+ 
+@@ -133,11 +131,6 @@
+ {
+ 
+-    Tcl_HashTable *hash = NULL;
+-    ResponseObj *responseObj = NULL;
+-    int err = 0;
+-    int mode = 0;
+-    char *name = NULL;
+-    Tcl_Obj *tmp = NULL;
+-    Tcl_Obj *tmp2 = NULL;
++    Tcl_HashTable *hash;
++    ResponseObj *responseObj;
+     char *defheaders[] = { HEADER, NULL };
+     int i;
+@@ -145,5 +138,4 @@
+     if (channelName == NULL)
+ 	return NULL;
+-    name = channelName;
+ 
+ /*   fprintf(stderr,"creating '%s'\n",channelName); fflush(stderr); */
+@@ -174,6 +166,6 @@
+ 
+     while (defheaders[i]) {
+-	char *key = NULL;
+-	Tcl_Obj *val = NULL;
++	char *key;
++	Tcl_Obj *val;
+ 
+ 	key = defheaders[i++];
+@@ -186,5 +178,5 @@
+     responseObj->bytesSent = 0;
+     responseObj->headers = hash;
+-    responseObj->name = Tcl_NewStringObj(name, -1);
++    responseObj->name = Tcl_NewStringObj(channelName, -1);
+     responseObj->httpresponse = NULL;
+     responseObj->headerHandler = headerHandler;
+@@ -352,7 +344,6 @@
+ {
+ 
+-    OutData *outData = NULL;
++    OutData *outData;
+     /* HashTableIterator iterator; */
+-    ResponseObj *responseObj = NULL;
+ 
+     if (clientData == NULL)
+@@ -384,5 +375,5 @@
+   int begin = 1;
+   int firstScan = 1;
+-  int inside = 0, p = 0;
++  int inside = 0;
+   int inLen = 0;
+   int res = 0;
+--- ../generic/interpool.c	Sun Mar  5 13:41:48 2006
++++ ../generic/interpool.c	Thu Feb  1 23:44:56 2007
+@@ -101,5 +101,4 @@
+ 
+     int result = 0;
+-    time_t t = 0;
+     LogPlugIn *logtoap = NULL;
+     Tcl_Obj *code = NULL;
+@@ -299,5 +298,4 @@
+     WebInterp *found = NULL;
+     WebInterpClass *webInterpClass = NULL;
+-    LogToApData *logToApData = NULL;
+     char *id = NULL;
+     Tcl_Obj *idObj = NULL;
+--- ../generic/mod_websh.c	Mon Dec 12 12:13:55 2005
++++ ../generic/mod_websh.c	Thu Feb  1 23:46:50 2007
+@@ -367,7 +367,4 @@
+ 
+     int res;
+-    void *sconf = r->server->module_config;
+-    websh_server_conf *conf =
+-	(websh_server_conf *) ap_get_module_config(sconf, &websh_module);
+ 
+ #ifdef APACHE2
+--- ../generic/modwebsh_ap.c	Thu Oct 27 18:00:55 2005
++++ ../generic/modwebsh_ap.c	Thu Feb  1 23:47:40 2007
+@@ -83,5 +83,4 @@
+ 
+     WebInterp *webInterp = (WebInterp *) clientData;
+-    int res = 0;
+ 
+     if (objc != 2) {
+--- ../generic/request_ap.c	Thu Nov  3 07:41:34 2005
++++ ../generic/request_ap.c	Thu Feb  1 23:48:28 2007
+@@ -40,5 +40,4 @@
+ {
+ 
+-    int res = 0;
+     /*Tcl_Obj *reso = NULL;*/
+     request_rec *r = NULL;
