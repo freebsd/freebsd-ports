@@ -264,11 +264,7 @@
     SUBDIR += ruby-programmingruby
     SUBDIR += ruby-reference
     SUBDIR += ruby-usersguide
-    SUBDIR += ruby16
-    SUBDIR += ruby16-shim-ruby18
-    SUBDIR += ruby16_static
     SUBDIR += ruby18
-    SUBDIR += ruby18_static
     SUBDIR += sather-specification
     SUBDIR += sather-tutorial
     SUBDIR += sbcl
