@@ -1,0 +1,20 @@
+Link the module (and the executable - websh) dynamically with
+-lwebsh84, instead of statically with all of the object files. This
+reduces the size of the module by a factor of 5.
+
+	-mi
+
+--- Makefile.in	Sun Mar  5 11:58:37 2006
++++ Makefile.in	Thu Feb  8 19:37:14 2007
+@@ -256,9 +256,9 @@
+ 
+ websh$(VERSION): tclAppInit.$(OBJEXT) $(web_OBJECTS)
+-	$(CC) @LDFLAGS@ tclAppInit.$(OBJEXT) $(web_OBJECTS) \
++	$(CC) @LDFLAGS@ tclAppInit.$(OBJEXT) $(web_LIB_FILE)\
+ 	$(TCL_LIB_SPEC) $(TCL_LIBS) $(TCL_LD_FLAGS) -o websh$(VERSION)
+ 
+ mod_websh$(MODULE_LIB_SUFFIX): $(web_ap_OBJECTS)
+-	$(SHLIB_LD_CURRENT) -o mod_websh$(MODULE_LIB_SUFFIX) $(web_ap_OBJECTS) $(TCL_LIB_SPEC)
++	$(SHLIB_LD_CURRENT) -o mod_websh$(MODULE_LIB_SUFFIX) $(web_OBJECTS_ap) $(web_LIB_FILE) $(TCL_LIB_SPEC)
+ 
+ mod_websh$(UNSHARED_LIB_SUFFIX): $(web_ap_OBJECTS)

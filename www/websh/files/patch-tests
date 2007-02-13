@@ -1,0 +1,12 @@
+--- ../tests/msc.test	Sat Mar  4 19:18:35 2006
++++ ../tests/msc.test	Sat Feb  3 18:35:12 2007
+@@ -81,6 +81,7 @@
+ 	global tcl_platform
+ 	if {"$tcl_platform(platform)" == "unix"
+-	    && "$tcl_platform(os)" == "Darwin"} {
+-	    # OSX does not complain if directory does not exist
++	    && ("$tcl_platform(os)" == "Darwin" ||
++	    [string match *BSD "$tcl_platform(os)"])} {
++	    # BSD does not complain if directory does not exist
+ 	    # It just returns the nonexistig path anyway
+ 	    set msg "ok"

@@ -1,0 +1,38 @@
+# This may be done for us already by apxs during install:
+#
+#LoadModule websh_module       %%APACHEMODDIR%%/mod_websh.so
+#
+# Add the following to your Apache config file or, if you use
+# Apache-2.x, simply drop into the %%PREFIX%%/%%APACHEETCDIR%%/Includes
+# 
+
+<IfModule mod_websh.c>
+
+# add handlers for the file you want to process
+# in this example, we treat .whtml files as SSI type
+# html files that contain websh snipplets and .ws3 files
+# as websh scripts (CGI-like) -> websh.conf
+
+AddHandler websh .whtml
+AddHandler websh .ws3
+# The vendor-distributed version passes ALL .html files
+# through mod_websh, which slows your server down. In this
+# example only files named *.whtml (and .ws3) get processed
+# by the module.
+#
+#	-mi
+
+DirectoryIndex index.whtml index.ws3
+
+# This allows you to check, that everything is working by accessing the
+# vendor's examples simply as http://yourserver/websh/
+Alias	/websh/ %%EXAMPLESDIR%%/
+<Directory %%EXAMPLESDIR%%>
+	Allow from all
+</Directory>
+
+# see sample for the configuration of 
+# SSI type configuration (htmlhandler) and script configuration
+WebshConfig etc/websh.conf
+
+</IfModule>

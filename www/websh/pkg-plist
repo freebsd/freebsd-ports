@@ -1,0 +1,29 @@
+lib/libwebsh84.so.1
+lib/libwebsh84.so
+lib/websh/pkgIndex.tcl
+lib/websh/htmlhandler.ws3
+lib/websh/otherhandler.ws3
+@dirrm lib/websh/
+etc/websh.conf.dist
+%%PORTDOCS%%%%EXAMPLESDIR%%/index.whtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/myApp.ws3
+%%PORTDOCS%%%%EXAMPLESDIR%%/other.whtml
+%%PORTDOCS%%%%EXAMPLESDIR%%/httpd.conf
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/Apache_module_specific_commands.html
+%%PORTDOCS%%%%DOCSDIR%%/command_dispatching_and_session_management.html
+%%PORTDOCS%%%%DOCSDIR%%/configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/context_handling.html
+%%PORTDOCS%%%%DOCSDIR%%/data_encryption.html
+%%PORTDOCS%%%%DOCSDIR%%/file_handling_and_file_IO.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/inter-process_and_-system_communication.html
+%%PORTDOCS%%%%DOCSDIR%%/logging.html
+%%PORTDOCS%%%%DOCSDIR%%/misc_commands.html
+%%PORTDOCS%%%%DOCSDIR%%/request_data_handling.html
+%%PORTDOCS%%%%DOCSDIR%%/response_data_handling.html
+%%PORTDOCS%%%%DOCSDIR%%/uri-html-_en-decoding.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%APACHEMODDIR%%/mod_websh.so
+@exec %D/sbin/apxs -e -A -n websh %D/%F
+@unexec %D/sbin/apxs -e -A -n websh %D/%F
