@@ -1,0 +1,23 @@
+--- po/Makefile.in.in.orig	Tue Oct 24 23:52:06 2006
++++ po/Makefile.in.in	Thu Nov 23 17:25:06 2006
+@@ -33,8 +33,7 @@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+ libdir = @libdir@
+-DATADIRNAME = @DATADIRNAME@
+-itlocaledir = $(prefix)/$(DATADIRNAME)/locale
++itlocaledir = @localedir@
+ subdir = po
+ install_sh = @install_sh@
+ # Automake >= 1.8 provides @mkdir_p@.
+@@ -44,8 +43,8 @@
+ INSTALL = @INSTALL@
+ INSTALL_DATA = @INSTALL_DATA@
+ 
+-GMSGFMT = @GMSGFMT@
+-MSGFMT = @MSGFMT@
++GMSGFMT = @INTLTOOL_MSGFMT@
++MSGFMT = @INTLTOOL_MSGFMT@
+ XGETTEXT = @XGETTEXT@
+ INTLTOOL_UPDATE = @INTLTOOL_UPDATE@
+ INTLTOOL_EXTRACT = @INTLTOOL_EXTRACT@

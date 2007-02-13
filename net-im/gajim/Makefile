@@ -1,66 +1,82 @@
 # New ports collection makefile for:	gajim
-# Date created:				27 April 2005
-# Whom:					Vsevolod Stakhov <vsevolod@highsecure.ru>
+# Date created:				Sun Nov 26 16:36:07 MSK 2006
+# Whom:					Denis Shaposhnikov <dsh@vlink.ru>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	gajim
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.gajim.org/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Jabber client based on a plugin system
+MAINTAINER=	dsh@vlink.ru
+COMMENT=	Gajim is a Jabber client based on a plugin system
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite21 \
-		bash:${PORTSDIR}/shells/bash
+LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenSSL/SSL.so:${PORTSDIR}/security/py-openssl
 
+GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_XLIB=	yes
-USE_GNOME=	gnometarget intlhack pygtk2
-USE_PYTHON=	2.4+
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
+USE_GNOME=	pygtk2
+USE_PYTHON=	2.4+
+USE_XLIB=	yes
 
-MAN1=		gajim.1 \
-		gajim-remote.1
+CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I ${X11BASE}/include" PYTHON=${PYTHON_CMD}
 
-CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
-
-.if defined(WITHOUT_DBUS)
-CONFIGURE_ARGS+=	--disable-remote
-PLIST_SUB+=	DBUS="@comment "
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
 .else
-LIB_DEPENDS+=	dbus-1.3:${PORTSDIR}/devel/dbus
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
-PLIST_SUB+=	DBUS=""
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITHOUT_GTKSPELL)
-CONFIGURE_ARGS+=	--disable-gtkspell
-PLIST_SUB+=	GTKSPELL="@comment "
-.else
-LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
-PLIST_SUB+=	GTKSPELL=""
-.endif
+MAN1=		gajim.1 gajim-remote.1
+
+EMOTICONS=	animated static
+ICONSETS=	crystal dcraven gnome goojim gossip gota jabberbulb nuvola \
+		simplebulb stellar sun transports
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|: install-docfilesDATA|:|g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e \
-		's|^#!.*|#!${LOCALBASE}/bin/bash|g' ${WRKSRC}/scripts/gajim.in
+.for i in gajim-remote.py gajim.py history_manager.py
+		${REINPLACE_CMD} -e '1,1s/python/${PYTHON_VERSION}/' \
+			${WRKSRC}/src/$i
+.endfor
+
+pre-build:
+		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/src
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS ChangeLog README README.html THANKS
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+		${MKDIR} ${DATADIR}/data/emoticons
+		(cd ${WRKSRC}/data/emoticons && \
+		${CP} -R ${EMOTICONS} ${DATADIR}/data/emoticons)
+
+		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/data/emoticons
+		${FIND} ${DATADIR}/data/emoticons -type d -print0 | \
+			${XARGS} -0 ${CHMOD} 755
+		${FIND} ${DATADIR}/data/emoticons -type f -print0 | \
+			${XARGS} -0 ${CHMOD} ${SHAREMODE}
+
+		${MKDIR} ${DATADIR}/data/iconsets
+		(cd ${WRKSRC}/data/iconsets && \
+		${CP} -R ${ICONSETS} ${DATADIR}/data/iconsets)
+
+		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/data/iconsets
+		${FIND} ${DATADIR}/data/iconsets -type d -print0 | \
+			${XARGS} -0 ${CHMOD} 755
+		${FIND} ${DATADIR}/data/iconsets -type f -print0 | \
+			${XARGS} -0 ${CHMOD} ${SHAREMODE}
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} >= 250
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
+.else
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite21
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
