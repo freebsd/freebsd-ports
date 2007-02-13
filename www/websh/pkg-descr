@@ -1,14 +1,10 @@
-From the software's readme.html:
+Web|sh is a TCL module for Apache. It is currently the most
+advanced and the best supported of the several such modules
+listed at
 
-	mod_dtcl is  a free/open source implementation  of server parsed
-	Tcl, under Apache,  distributed under the terms of  the GNU GPL.
-	It allows you to tightly integrate  html with Tcl, a widely used
-	scripting language  with many  years of development  invested in
-	it. This is an ideal combination, allowing you to greatly extend
-	what you could do with plain  html. Because Tcl is such a widely
-	used language, there is a  large amount of documentation for it,
-	both on  the net  and books.  There are  also many  external Tcl
-	modules  that you  can  load into  mod_dtcl,  to create  images,
-	access databases, etc.
+	http://tcl.apache.org/
 
-WWW: http://tcl.apache.org/mod_dtcl/
+Works with both Apache-1.3.x and 2.x and has an interesting development
+paradigm.
+
+WWW: http://tcl.apache.org/websh/
