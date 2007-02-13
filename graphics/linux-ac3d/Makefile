@@ -7,6 +7,7 @@
 
 PORTNAME=	ac3d
 PORTVERSION=	6.1
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://www.ac3d.org/ac3d/download/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -32,17 +33,30 @@ RESTRICTED=	no distribution permitted
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}lx
 
 SUB_FILES=	ac3d ac3ds
+
+PORTDOCS=	*
+
+DESKTOP_ENTRIES="AC3D" \
+		"Edit 3D models" \
+		"ac3d" \
+		"ac3d" \
+		"" \
+		false
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ac3d ${PREFIX}/libexec
 	${INSTALL_SCRIPT} ${WRKDIR}/ac3d ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/ac3ds ${PREFIX}/libexec
 	${INSTALL_SCRIPT} ${WRKDIR}/ac3ds ${PREFIX}/bin
+
+	${MKDIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/manual/top_files/image002.png \
+		${PREFIX}/share/pixmaps/ac3d.png
 
 # Install small Tcl/Tk distribution
 # Tcl/Tk, installed from ports tree will also make a job,
@@ -84,16 +98,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/IMPORTANT ${DOCSDIR}
-	${MKDIR} ${DOCSDIR}/manual
-	${INSTALL_DATA} ${WRKSRC}/manual/*.htm ${DOCSDIR}/manual
-	${MKDIR} ${DOCSDIR}/manual/main_files
-.for i in gif jpg
-	${INSTALL_DATA} ${WRKSRC}/manual/main_files/*.${i} \
-		${DOCSDIR}/manual/main_files
-.endfor
-	${MKDIR} ${DOCSDIR}/manual/top_files
-	${INSTALL_DATA} ${WRKSRC}/manual/top_files/*.gif \
-		${DOCSDIR}/manual/top_files
+	cd ${WRKSRC} && \
+		${FIND} manual -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
+		${FIND} manual -type f -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
 .endif
 
 # examples
