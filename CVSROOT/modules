@@ -15385,6 +15385,7 @@ webredirect	ports/www/webredirect
 webreport	ports/www/webreport
 webresolve	ports/www/webresolve
 webserver	ports/www/webserver
+websh		ports/www/websh
 websieve	ports/mail/websieve
 website		ports/textproc/website
 webstats	ports/www/webstats
