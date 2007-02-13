@@ -48,6 +48,18 @@ Submitted to vendor:
 +    Tcl_Obj *res1;
  
      /* --------------------------------------------------------------------------
+@@ -246,8 +245,9 @@
+ 	/* ute */
+ 	for (i = 0; i < WEBENC_LATIN_TABLE_LENGTH; i++)
+-	    if (convData->ute[i] != NULL)
++	    if (convData->ute[i] != NULL) {
+ 		Tcl_DecrRefCount(convData->ute[i]);
++	    }
+ 
+-	WebFreeIfNotNull(convData);
++	Tcl_Free((char *)convData);
+     }
+ }
 --- ../generic/crypt.c	Thu Oct 25 13:50:15 2001
 +++ ../generic/crypt.c	Thu Feb  1 23:18:30 2007
 @@ -26,7 +26,6 @@
@@ -62,6 +74,15 @@ Submitted to vendor:
      /* --------------------------------------------------------------------------
 --- ../generic/nca_d.c	Thu Oct 25 13:50:15 2001
 +++ ../generic/nca_d.c	Thu Feb  1 23:20:57 2007
+@@ -86,6 +86,7 @@
+ {
+ 
+-    if (clientData != NULL)
++    if (clientData != NULL) {
+ 	Tcl_DecrRefCount((Tcl_Obj *) clientData);
++    }
+ }
+ 
 @@ -259,14 +259,13 @@
  {
  
@@ -225,7 +246,7 @@ Submitted to vendor:
  
  	    /*      0              1      2 */
 --- ../generic/paramlist.c	Wed Sep 11 09:54:01 2002
-+++ ../generic/paramlist.c	Thu Feb  1 23:35:23 2007
++++ ../generic/paramlist.c	Tue Feb 13 18:34:47 2007
 @@ -86,7 +86,6 @@
  {
  
@@ -236,13 +257,45 @@ Submitted to vendor:
 +    Tcl_Obj *copy;
  
      if ((hash == NULL) || (key == NULL) || (value == NULL))
-@@ -538,5 +537,5 @@
+@@ -96,6 +95,7 @@
+      * remove existing
+      * ----------------------------------------------------------------------- */
+-    if ((existingValue = (Tcl_Obj *) removeFromHashTable(hash, key)) != NULL)
++    if ((existingValue = (Tcl_Obj *) removeFromHashTable(hash, key)) != NULL) {
+ 	Tcl_DecrRefCount(existingValue);
++    }
+ 
+     /* --------------------------------------------------------------------------
+@@ -123,6 +123,7 @@
+      * remove existing
+      * ----------------------------------------------------------------------- */
+-    if ((existingValue = (Tcl_Obj *) removeFromHashTable(hash, key)) != NULL)
++    if ((existingValue = (Tcl_Obj *) removeFromHashTable(hash, key)) != NULL) {
+ 	Tcl_DecrRefCount(existingValue);
++    }
+ 
+     Tcl_IncrRefCount(value);
+@@ -189,6 +190,7 @@
+      * remove existing
+      * ----------------------------------------------------------------------- */
+-    if ((tclo = (Tcl_Obj *) removeFromHashTable(hash, key)) != NULL)
++    if ((tclo = (Tcl_Obj *) removeFromHashTable(hash, key)) != NULL) {
+ 	Tcl_DecrRefCount(tclo);
++    }
+ 
+     return TCL_OK;
+@@ -538,8 +540,9 @@
  
      if (hash != NULL) {
 -	while (he = Tcl_FirstHashEntry(hash, &hs)) {
 +	while ((he = Tcl_FirstHashEntry(hash, &hs))) {
  	    tclo = (Tcl_Obj *) Tcl_GetHashValue(he);
- 	    if (tclo != NULL)
+-	    if (tclo != NULL)
++	    if (tclo != NULL) {
+ 		Tcl_DecrRefCount(tclo);
++	    }
+ 	    Tcl_DeleteHashEntry(he);
+ 	}
 --- ../generic/request.c	Sat Mar  4 20:08:46 2006
 +++ ../generic/request.c	Thu Feb  1 23:36:28 2007
 @@ -445,12 +445,10 @@
@@ -282,7 +335,7 @@ Submitted to vendor:
  
      IfNullLogRetNull(NULL, inString, "uriEncode: got NULL as input.");
 --- ../generic/webout.c	Fri Apr 30 16:54:17 2004
-+++ ../generic/webout.c	Thu Feb  1 23:38:59 2007
++++ ../generic/webout.c	Tue Feb 13 18:37:21 2007
 @@ -264,7 +264,6 @@
  
  	    case RESET:{
@@ -293,6 +346,15 @@ Submitted to vendor:
 +		    char *tname;
  
  		    WebAssertObjc(objc != 2, 2, NULL);
+@@ -388,6 +387,7 @@
+ 			}
+ 			/* forget old value */
+-			if (current)
++			if (current) {
+ 			    Tcl_DecrRefCount(current);
++			}
+ 		    }
+ 		    return TCL_OK;
 --- ../generic/weboutint.c	Sun Mar  5 11:56:32 2006
 +++ ../generic/weboutint.c	Thu Feb  1 23:43:34 2007
 @@ -29,7 +29,5 @@
@@ -396,3 +458,16 @@ Submitted to vendor:
 -    int res = 0;
      /*Tcl_Obj *reso = NULL;*/
      request_rec *r = NULL;
+--- ../generic/macros.h	Wed Sep 11 09:54:01 2002
++++ ../generic/macros.h	Tue Feb 13 18:33:16 2007
+@@ -60,8 +60,8 @@
+ 
+ #define WebDecrRefCountIfNotNull(data) \
+-    if( data != NULL ) Tcl_DecrRefCount(data);
++    if( data != NULL ) { Tcl_DecrRefCount(data); }
+ 
+ #define WebIncrRefCountIfNotNull(data) \
+-    if( data != NULL ) Tcl_IncrRefCount(data);
++    if( data != NULL ) { Tcl_IncrRefCount(data); }
+ 
+ #define WebDecrOldIncrNew(var,val) \
