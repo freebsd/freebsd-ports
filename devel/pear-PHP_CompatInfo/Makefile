@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHP_CompatInfo
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	devel pear
 
 MAINTAINER=	chinsan@FreeBSD.org
@@ -38,12 +38,17 @@ TESTS=		checkMax.php sample_req6056.php
 _EXAMPLESDIR=	docs/examples
 
 LATEST_LINK=	pear-PHP_CompatInfo
-OPTIONS=	PEAR_CONSOLE_TABLE "PEAR::Console_Table support" off
+OPTIONS=	PEAR_CONSOLE_TABLE "PEAR::Console_Table support" off \
+		PEAR_CONSOLE_GETARGS "PEAR::Console_Getargs support" off
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PEAR_CONSOLE_TABLE)
 RUN_DEPENDS+=	${PEARDIR}/Console/Table.php:${PORTSDIR}/devel/pear-Console_Table
+.endif
+
+.if defined(WITH_PEAR_CONSOLE_GETARGS)
+RUN_DEPENDS+=	${PEARDIR}/Console/Console_TestListener.php:${PORTSDIR}/devel/pear-Console_Getargs
 .endif
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
