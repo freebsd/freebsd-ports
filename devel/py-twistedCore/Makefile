@@ -7,6 +7,7 @@
 
 PORTNAME=	twistedCore
 PORTVERSION=	2.5.0
+PORTREVISION=	1
 CATEGORIES=	devel net python
 MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Twisted/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ DISTNAME=	TwistedCore-${PORTVERSION}
 MAINTAINER=	neal@nelson.name
 COMMENT=	An asynchronous networking framework for Python - Core module
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/zope/interface:${PORTSDIR}/devel/py-zopeInterface
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zopeInterface>=3.3.0_1:${PORTSDIR}/devel/py-zopeInterface
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CONFLICTS=	py??-twisted-[0-9]*
