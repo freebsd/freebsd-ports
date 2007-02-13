@@ -60,6 +60,7 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/menu/MSN.xml
 %%INSTDIR%%/resources/menu/RSS.xml
 %%INSTDIR%%/resources/menu/Tray.xml
+%%INSTDIR%%/resources/online.png
 %%INSTDIR%%/resources/settings/Default_Account.xml
 %%INSTDIR%%/resources/settings/Default_Global.xml
 %%INSTDIR%%/resources/settings/Window_Advanced_Account.xml

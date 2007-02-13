@@ -41,6 +41,10 @@ DIR2PRUNE=	resources/AppData/Backgrounds	\
 		resources/AppData/Games		\
 		resources/AppData/Plugins
 
+DESKTOP_ENTRIES="Mercury Messenger" "${COMMENT}"	\
+		"${INSTDIR}/resources/online.png"	\
+		"${SUB_FILES}" "" true
+
 .if defined(WITH_VIDEO)	# Experimental
 VIDJAR=		VidConf-libs.jar
 EXTRACT_ONLY+=	${DISTNAME}${EXTRACT_SUFX}
@@ -60,6 +64,11 @@ WITHOUT_TRAY=	yes
 LIB_DEPENDS+=	tray.0:${PORTSDIR}/x11-toolkits/jdic
 .endif
 
+post-extract:
+	${MKDIR} ${WRKDIR}/icons
+	cd ${WRKDIR}/icons &&	\
+	${EXTRACT_CMD} ${WRKDIR}/resources/AppData/StatusIcons/MMercury.zip
+
 do-install:
 	${MKDIR} ${INSTDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${SUB_FILES} ${INSTDIR}
@@ -68,6 +77,7 @@ do-install:
 	cd ${WRKDIR} && ${FIND} ${sd} -type d -exec ${MKDIR} ${INSTDIR}/{} \;
 	cd ${WRKDIR} && ${FIND} ${sd} -type f -exec ${INSTALL_DATA} {} ${INSTDIR}/{} \;
 .endfor
+	${INSTALL_DATA} ${WRKDIR}/icons/online.png ${INSTDIR}/resources
 .for ed in ${DIR2PRUNE}
 	${TOUCH} ${INSTDIR}/${ed}/.keep_me
 .endfor
