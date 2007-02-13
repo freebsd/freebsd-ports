@@ -50,22 +50,7 @@ Ruby_Include_MAINTAINER=	stas@FreeBSD.org
 # USE_RUBY_RDOC		- Says that the port uses rdoc to generate documents.
 # USE_RUBY_FEATURES	- Says that the port requires some of the following
 #			  features for building and/or running (default: none):
-#				benchmark	bigdecimal	devel-logger
-#				dl		drb		erb
-#				fileutils	gserver		iconv
-#				ipaddr		open-uri	openssl
-#				optparse	pp		racc-runtime
-#				rdoc		rexml		ruby18
-#				runit		set		soap
-#				stringio	strscan		testunit
-#				tsort		webrick		xmlrpc
-#				yaml		zlib
-#				benchmark	dl		fileutil
-#				optparse	pp		racc-runtime
-#				rexml		ruby18		set
-#				stringio	strscan		tsort
-#				yaml
-#
+#			  iconv
 # RUBY_REQUIRE		- Set to a Ruby expression to evaluate before building
 #			  the port.  The constant "Ruby" is set to the integer
 #			  version number of ruby, and the result of the
@@ -115,7 +100,6 @@ Ruby_Include_MAINTAINER=	stas@FreeBSD.org
 # RUBY_BASE_PORT	- Port path of base ruby without PORTSDIR, without
 #			  suffix except version.
 # RUBY_PORT		- Port path of ruby without PORTSDIR.
-# RUBY_SHIM18_PORT	- Port path of ruby16-shim-ruby18 without PORTSDIR.
 # RUBY_AMSTD_PORT	- Port path of ruby-amstd without PORTSDIR.
 # RUBY_RDTOOL_PORT	- Port path of rdtool without PORTSDIR.
 # RUBY_RDOC_PORT	- Port path of rdoc without PORTSDIR.
@@ -123,8 +107,6 @@ Ruby_Include_MAINTAINER=	stas@FreeBSD.org
 #
 # DEPEND_LIBRUBY	- LIB_DEPENDS entry for libruby.
 # DEPEND_RUBY		- BUILD_DEPENDS/RUN_DEPENDS entry for ruby.
-# DEPEND_RUBY_SHIM18	- BUILD_DEPENDS/RUN_DEPENDS entry for
-#			  ruby16-shim-ruby18.
 # DEPEND_RUBY_AMSTD	- BUILD_DEPENDS/RUN_DEPENDS entry for ruby-amstd.
 # DEPEND_RUBY_RDTOOL	- BUILD_DEPENDS entry for rdtool.
 # DEPEND_RUBY_RDOC	- BUILD_DEPENDS entry for rdoc.
@@ -190,19 +172,8 @@ RUBY_PATCHFILES?=	${RUBY_VERSION}-patch1.gz
 #RUBY_PORTVERSION?=	${RUBY_VERSION}
 RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_DISTVERSION}
 #MASTER_SITE_SUBDIR_RUBY=	snapshots
-.elif defined(RUBY_VER) && ${RUBY_VER} == 1.7
-IGNORE=	Ruby 1.7 is obsolete; set RUBY_VER to 1.8 instead.
 .else
-RUBY_VERSION?=		1.6.8
-RUBY_DISTVERSION?=	${RUBY_VERSION}-2004.07.28
-#RUBY_PATCHFILES?=	ruby-${RUBY_DISTVERSION}-${RUBY_PORTVERSION}.diff.bz2
-
-# Security patch
-RUBY_PATCHFILES?=	${RUBY_VERSION}-patch1.gz
-
-RUBY_PORTVERSION?=	${RUBY_VERSION}.2004.07.28
-#RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_VERSION}
-MASTER_SITE_SUBDIR_RUBY=	snapshots
+IGNORE=	Only ruby 1.8 supported
 .endif
 #      defined(RUBY_VER) && ${RUBY_VER} == 1.8
 
@@ -250,7 +221,6 @@ RUBY_RDOC?=		${LOCALBASE}/bin/rdoc
 # Ports
 RUBY_BASE_PORT?=	lang/ruby${RUBY_VER:S/.//}
 RUBY_PORT?=		${RUBY_BASE_PORT}
-RUBY_SHIM18_PORT?=	lang/ruby16-shim-ruby18
 RUBY_AMSTD_PORT?=	devel/ruby-amstd
 RUBY_RDTOOL_PORT?=	textproc/ruby-rdtool
 RUBY_RDOC_PORT?=	textproc/ruby-rdoc
@@ -259,14 +229,9 @@ RUBY_ICONV_PORT?=	converters/ruby-iconv
 # Depends
 DEPEND_LIBRUBY?=	${RUBY_NAME}.${RUBY_SHLIBVER}:${PORTSDIR}/${RUBY_PORT}
 DEPEND_RUBY?=		${RUBY}:${PORTSDIR}/${RUBY_PORT}
-DEPEND_RUBY_SHIM18?=	${RUBY_SITEARCHLIBDIR}/features/ruby18/file_ruby18.so:${PORTSDIR}/${RUBY_SHIM18_PORT}
 DEPEND_RUBY_AMSTD?=	${RUBY_SITELIBDIR}/amstd/version.rb:${PORTSDIR}/${RUBY_AMSTD_PORT}
 DEPEND_RUBY_RDTOOL?=	${RUBY_RD2}:${PORTSDIR}/${RUBY_RDTOOL_PORT}
-.if ${RUBY_VER} <= 1.6
-DEPEND_RUBY_ICONV=	${RUBY_SITEARCHLIBDIR}/iconv.so:${PORTSDIR}/${RUBY_ICONV_PORT}
-.else
 DEPEND_RUBY_ICONV=	${RUBY_ARCHLIBDIR}/iconv.so:${PORTSDIR}/${RUBY_ICONV_PORT}
-.endif
 
 # Directories
 RUBY_LIBDIR?=		${_RUBY_SYSLIBDIR}/ruby/${RUBY_VER}
@@ -303,14 +268,8 @@ PLIST_SUB+=	${PLIST_RUBY_DIRS:C,DIR="(${LOCALBASE}|${PREFIX})/,DIR=",} \
 			RUBY_NAME="${RUBY_NAME}" \
 			RUBY_DEFAULT_SUFFIX="${RUBY_DEFAULT_SUFFIX}"
 
-.if ${RUBY_VER} >= 1.7
 RUBY18_ONLY=		""
-.elif ${RUBY_VER} >= 1.6
-RUBY16_ONLY=		""
-.endif
-
-RUBY16_ONLY?=		"@comment "
-RUBY18_ONLY?=		"@comment "
+RUBY16_ONLY=		"@comment "
 
 PLIST_SUB+=		RUBY16_ONLY=${RUBY16_ONLY} \
 			RUBY18_ONLY=${RUBY18_ONLY}
@@ -421,43 +380,7 @@ RUN_DEPENDS+=		${DEPEND_RUBY}
 .endif
 .endif
 
-.if !defined(NOPORTDOCS) && defined(USE_RUBY_RDOC)
-USE_RUBY_FEATURES+=	rdoc
-.endif
-
 .if defined(USE_RUBY_FEATURES)
-_use=	${USE_RUBY_FEATURES:Mbenchmark} \
-	${USE_RUBY_FEATURES:Mbigdecimal} \
-	${USE_RUBY_FEATURES:Mdevel-logger} \
-	${USE_RUBY_FEATURES:Mdl} \
-	${USE_RUBY_FEATURES:Mdrb} \
-	${USE_RUBY_FEATURES:Merb} \
-	${USE_RUBY_FEATURES:Mfileutils} \
-	${USE_RUBY_FEATURES:Mgserver} \
-	${USE_RUBY_FEATURES:Mipaddr} \
-	${USE_RUBY_FEATURES:Mopen-uri} \
-	${USE_RUBY_FEATURES:Mopenssl} \
-	${USE_RUBY_FEATURES:Moptparse} \
-	${USE_RUBY_FEATURES:Mpp} \
-	${USE_RUBY_FEATURES:Mracc-runtime} \
-	${USE_RUBY_FEATURES:Mrdoc} \
-	${USE_RUBY_FEATURES:Mrexml} \
-	${USE_RUBY_FEATURES:Mruby18} \
-	${USE_RUBY_FEATURES:Mrunit} \
-	${USE_RUBY_FEATURES:Mset} \
-	${USE_RUBY_FEATURES:Msoap} \
-	${USE_RUBY_FEATURES:Mstringio} \
-	${USE_RUBY_FEATURES:Mstrscan} \
-	${USE_RUBY_FEATURES:Mtestunit} \
-	${USE_RUBY_FEATURES:Mtsort} \
-	${USE_RUBY_FEATURES:Mwebrick} \
-	${USE_RUBY_FEATURES:Mxmlrpc} \
-	${USE_RUBY_FEATURES:Myaml} \
-	${USE_RUBY_FEATURES:Mzlib}
-.if !empty(_use) && ${RUBY_VER} <= 1.6
-BUILD_DEPENDS+=		${DEPEND_RUBY_SHIM18}
-RUN_DEPENDS+=		${DEPEND_RUBY_SHIM18}
-.endif
 
 _use=	${USE_RUBY_FEATURES:Miconv}
 .if !empty(_use)
@@ -479,10 +402,6 @@ RUBY_NO_RD_HTML=	yes
 
 .if defined(RUBY_RD_HTML)
 .undef RUBY_NO_RD_HTML
-.endif
-
-.if (${ARCH} == alpha || ${ARCH} == sparc64) && ${RUBY_VER} <= 1.6
-RUBY_NO_RD_HTML=	yes
 .endif
 
 .if defined(NOPORTDOCS)
