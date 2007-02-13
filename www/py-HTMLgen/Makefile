@@ -8,15 +8,15 @@
 PORTNAME=	HTMLgen
 PORTVERSION=	2.2.2
 CATEGORIES=	www python
-MASTER_SITES=	http://starship.python.net/crew/friedrich/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://dryice.name/computer/FreeBSD/distfiles/ \
+		http://starship.python.net/crew/friedrich/
+MASTER_SITE_SUBDIR=	dryice
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	HTMLgen
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	A Python library for the generation of HTML documents
-
-DEPRECATED=	distfile and homepage disappeared
-EXPIRATION_DATE=	2006-12-30
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
