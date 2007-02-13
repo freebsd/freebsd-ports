@@ -16,6 +16,10 @@ DISTNAME=	greencard-${GC_VERSION}-src
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A foreign function interface preprocessor for Haskell
 
+BROKEN=		Does not build with latest GHC
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2007-09-01
+
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
 WRKSRC=		${WRKDIR}/greencard-${GC_VERSION}
