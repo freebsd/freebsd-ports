@@ -1,0 +1,11 @@
+--- data/Makefile.in.orig	Thu Nov 23 03:01:40 2006
++++ data/Makefile.in	Fri Nov 24 23:09:19 2006
+@@ -258,7 +258,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = glade emoticons pixmaps iconsets 
++SUBDIRS = glade pixmaps 
+ desktopdir = $(datadir)/applications
+ desktop_in_files = gajim.desktop.in.in 
+ desktop_DATA = $(desktop_in_files:.desktop.in.in=.desktop)
