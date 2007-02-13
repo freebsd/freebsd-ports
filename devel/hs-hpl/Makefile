@@ -16,6 +16,10 @@ DISTNAME=	ports-${PORTVERSION}
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell Ports Library provides ports in Haskell
 
+BROKEN=		Does not build with latest GHC
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2007-09-01
+
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
