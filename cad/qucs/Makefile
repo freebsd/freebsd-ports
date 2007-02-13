@@ -18,7 +18,6 @@ USE_QT_VER=	3
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	QTDIR="${X11BASE}"
 
 MAN1=		qucs.1 qucsator.1 qucsattenuator.1 qucsconv.1 qucsdigi.1 \
 		qucsedit.1 qucsfilter.1 qucshelp.1 qucslib.1 qucstrans.1

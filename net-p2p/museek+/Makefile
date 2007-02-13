@@ -30,7 +30,7 @@ USE_PYTHON=	yes
 USE_SCONS=	yes
 USE_FAM=	yes
 
-SCONS_ARGS=	QTDIR=${X11BASE} QT_LIB=qt-mt PREFIX=${PREFIX} VORBIS=yes
+SCONS_ARGS=	QTDIR=${QT_PREFIX} QT_LIB=qt-mt PREFIX=${PREFIX} VORBIS=yes
 DATADIR=	share/museek
 
 MAN1=		muscan.1 muscand.1 museekd.1 musetup.1 musetup-gtk.1 mulog.1 \

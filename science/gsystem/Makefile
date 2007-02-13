@@ -23,7 +23,7 @@ USE_KDELIBS_VER=	3
 
 INSTALLS_SHLIB=	yes
 
-QTDIR=		${X11BASE}
+QTDIR=		${QT_PREFIX}
 QMAKESPEC=	freebsd-g++
 
 .include <bsd.port.pre.mk>

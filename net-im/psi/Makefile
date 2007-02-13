@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --qtdir=${X11BASE} \
 		--with-qca-inc=${X11BASE}/include/plugins/qca \
 		--with-qca-lib=${X11BASE}/lib \
 		--disable-growl --disable-dnotify --disable-ghbnr
-MAKE_ARGS+=	QTDIR=${X11BASE} \
+MAKE_ARGS+=	QTDIR=${QT_PREFIX} \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
 PORTDOCS=	README ChangeLog

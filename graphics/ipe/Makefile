@@ -37,7 +37,7 @@ USE_GCC=	3.4
 BROKEN=		Does not compile on 4.x
 .endif
 
-QTDIR?=		${X11BASE}
+QTDIR?=		${QT_PREFIX}
 QMAKE?=		${LOCALBASE}/bin/qmake
 
 pre-fetch:

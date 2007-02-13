@@ -24,10 +24,10 @@ USE_QT_VER=	3
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		QTDIR="${X11BASE}" ac_qmake="${LOCALBASE}/bin/qmake" \
+		ac_qmake="${LOCALBASE}/bin/qmake" \
 		ac_libraries="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-alsa
-MAKE_ENV=	QTDIR="${X11BASE}" QMAKESPEC="freebsd-g++"
+MAKE_ENV=	QTDIR="${QT_PREFIX}" QMAKESPEC="freebsd-g++"
 
 PLIST=		${WRKDIR}/pkg-plist
 

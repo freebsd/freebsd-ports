@@ -4,7 +4,7 @@
  # $Id: qt.FreeBSD.mk,v 1.0 2004/11/05 10:22:11 denis Exp $
  
 -QTDIR= /usr/X11R6
-+QTDIR= ${X11BASE}
++QTDIR= ${QT_PREFIX}
  MOC= ${QTDIR}/bin/moc
  LUPDATE= ${QTDIR}/bin/lupdate
  LRELEASE= ${QTDIR}/bin/lrelease

@@ -23,7 +23,6 @@ CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--with-distri=freebsd --with-kde3-prefix=${LOCALBASE}\
 			--with-applnk-dir=${PREFIX}/share/applnk/Utilities \
 			--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=		QTDIR="${X11BASE}"
 USE_KDELIBS_VER=	3
 
 .include <bsd.port.pre.mk>

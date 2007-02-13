@@ -18,7 +18,7 @@ RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 USE_GMAKE=	yes
 USE_QT_VER=	3
 CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
-MAKE_ARGS+=	QTDIR=${X11BASE}
+MAKE_ARGS+=	QTDIR=${QT_PREFIX}
 
 do-configure:
 	cd ${WRKSRC}; \

@@ -42,7 +42,7 @@ BROKEN=		Does not build on FreeBSD versions prior to 5
 .endif
 
 .if !defined (QTDIR)
-QTDIR=		${X11BASE}
+QTDIR=		${QT_PREFIX}
 .endif
 
 .if !defined (GRASS_INST_DIR)

@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/CdCat-${PORTVERSION}/src
 
 USE_BZIP2=	yes
 USE_QT_VER=	3
-QTDIR?=		${X11BASE}
+QTDIR?=		${QT_PREFIX}
 USE_GMAKE=	yes
 MAKE_ENV=	QTDIR="${QTDIR}" MAKE="${GMAKE}" \
 		QMAKESPEC="${LOCALBASE}/share/qt/mkspecs/freebsd-g++"

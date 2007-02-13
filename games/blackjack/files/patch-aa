@@ -28,7 +28,7 @@
       insurance_window.o $(METAOBJS)
  
 -MOC=$(QTDIR)/bin/moc
-+MOC=$(X11BASE)/bin/moc
++MOC=$(QTDIR)/bin/moc
  
  .SUFFIXES: .cpp
  

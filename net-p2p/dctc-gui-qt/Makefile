@@ -21,8 +21,7 @@ RUN_DEPENDS=	dctc:${PORTSDIR}/net-p2p/dctc
 
 USE_QT_VER=	3
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-		QTDIR="${X11BASE}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 PLIST_FILES=	bin/dc_qt
 
 OPTIONS=	XINE "Enable support for video preview using libxine" off

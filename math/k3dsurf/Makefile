@@ -18,7 +18,7 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 USE_GL=		yes
 USE_QT_VER=	3
-QTDIR?=		${X11BASE}
+QTDIR?=		${QT_PREFIX}
 MAKE_ENV=	QMAKESPEC="${LOCALBASE}/share/qt/mkspecs/freebsd-g++"	\
 		QTDIR="${QTDIR}"
 

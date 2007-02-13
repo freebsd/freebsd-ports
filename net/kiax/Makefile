@@ -23,10 +23,10 @@ GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=	yes
 USE_QT_VER=	3
 
-CONFIGURE_ENV+=	QTDIR=${X11BASE} \
+CONFIGURE_ENV+=	\
       QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++ \
 		EXPR_COMPAT=yes
-MAKE_ARGS+=	QTDIR=${X11BASE} \
+MAKE_ARGS+=	QTDIR=${QT_PREFIX} \
       QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
 .include <bsd.port.pre.mk>

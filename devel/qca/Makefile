@@ -24,8 +24,8 @@ USE_X_PREFIX=	yes
 USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
-CONFIGURE_ARGS=	--qtdir=${X11BASE}
-MAKE_ARGS+=	QTDIR=${X11BASE} \
+CONFIGURE_ARGS=	--qtdir=${QT_PREFIX}
+MAKE_ARGS+=	QTDIR=${QT_PREFIX} \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
 do-install:

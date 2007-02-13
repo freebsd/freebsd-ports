@@ -5,7 +5,7 @@
  ####### Directories
  
 -QTDIR   =   /usr/lib/qt
-+QTDIR   =  	${X11BASE}
++QTDIR   =  	${QT_PREFIX}
  BASEDIR	=	$(QTDIR)
  INCDIR	=	$(BASEDIR)/include
  LIBDIR	=	$(BASEDIR)/lib

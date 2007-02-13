@@ -19,7 +19,6 @@ COMMENT=	A mathematical design and publishing application
 USE_QT_VER=	3
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	QTDIR="${QT_PREFIX}"
 
 QTCPPFLAGS+=	${PTHREAD_CFLAGS}
 QTCFGLIBS+=	${PTHREAD_LIBS}

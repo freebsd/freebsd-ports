@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	3
-MAKE_ENV+=	QTDIR=${X11BASE}
+MAKE_ENV+=	QTDIR=${QT_PREFIX}
 BUILD_WRKSRC=	${WRKSRC}/src
 
 DOCFILES=	xxdiff-doc.html xxdiff-integration.html xxdiff-scripts.html xxdiff-secrets.html \

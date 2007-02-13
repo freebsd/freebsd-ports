@@ -19,7 +19,7 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 USE_BZIP2=	yes
 USE_QT_VER=	3
-MAKE_ENV=	QTDIR=${X11BASE} \
+MAKE_ENV=	QTDIR=${QT_PREFIX} \
 		MOC=${MOC}
 
 PLIST_FILES=	bin/qgfe

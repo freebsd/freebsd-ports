@@ -20,7 +20,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.1$/-1/}-community.src
 
-QTDIR?=		${X11BASE}
+QTDIR?=		${QT_PREFIX}
 
 USE_X_PREFIX=	yes
 USE_QT_VER=	3

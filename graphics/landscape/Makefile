@@ -19,7 +19,7 @@ LIB_DEPENDS=		glut.4:${PORTSDIR}/graphics/libglut
 
 PLIST_FILES=		bin/landscape
 USE_KDELIBS_VER=	3
-QTDIR?=			${X11BASE}
+QTDIR?=			${QT_PREFIX}
 MAKE_ENV=		QTDIR="${QTDIR}"
 
 pre-build:
