@@ -1,0 +1,14 @@
+
+You are suggested to set the following on php.ini:
+
+	include_path should include "."
+	register_globals should be false (off)
+	magic_quotes_gpc should be false (off)
+
+Important Notices From Release Notes:
+
+If you start with this system, please use calendar1 instead of
+calendar2, it has a somewhat unclear future.
+
+The admin3 is not finished yet, don't use it, or READ THE DOCS
+if you really want to try it!

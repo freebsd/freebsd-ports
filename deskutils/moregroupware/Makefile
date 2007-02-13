@@ -6,48 +6,55 @@
 #
 
 PORTNAME=	moregroupware
-PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTVERSION=	0.7.4
 CATEGORIES=	deskutils www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	moregroupware
-DISTNAME=	${PORTNAME}-core-${PORTVERSION}${EXTRACT_SUFX}
-.if !defined(NOPORTDOCS)
-DISTFILES=	${PORTNAME}-core-${PORTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}-docs-${PORTVERSION}${EXTRACT_SUFX}
-.endif
+DISTNAME=	${PORTNAME}-core-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eksffa@freebsdbrasil.com.br
 COMMENT=	A web based GroupWare system
 
 # php extensions
-USE_PHP=	\
-		curl \
+USE_PHP=	curl \
 		gd \
 		pcre \
 		session \
 		xml
-# uses apache , php4 port decides if it is apache 1 or 2
+
 WANT_PHP_MOD=	yes
+
+OPTIONS=	ADDONS "install additional workgroup features (addons)" off \
+		POSTGRESQL "use PostgreSQL instead of MySQL" off
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+.endif
 
 .if defined(WITH_POSTGRESQL)
 RUN_DEPENDS+=	${LOCALBASE}/bin/psql:${PORTSDIR}/databases/postgresql74-server
 .else
-RUN_DEPENDS+=	${LOCALBASE}/bin/mysql:${PORTSDIR}/databases/mysql41-server
+RUN_DEPENDS+=	${LOCALBASE}/bin/mysql:${PORTSDIR}/databases/mysql50-server
 .endif
 
-.if defined(WITH_MODULES)
-DISTFILES+=	${PORTNAME}-modules-insecure-${PORTVERSION}${EXTRACT_SUFX}
-PLIST_SUB+=	MODULES=""
+.if defined (WITH_ADDONS)
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
+		${PORTNAME}-addons-${PORTVERSION}${EXTRACT_SUFX}
+PLIST_SUB+=	ADDONS=""
 .else
-PLIST_SUB+=	MODULES="@comment "
+PLIST_SUB+=	ADDONS="@comment "
 .endif
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/moregroupware
+WRKSRC=		${WRKDIR}/${PORTNAME:R}
 
 do-install:
 	@${CP} -r ${WRKSRC} ${PREFIX}/www/
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/www/moregroupware
 
-.include <bsd.port.mk>
+post-install:
+	${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>
