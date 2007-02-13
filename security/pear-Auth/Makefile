@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Auth
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	security pear
 
 MAINTAINER=	chinsan@FreeBSD.org
@@ -18,30 +18,32 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 LATEST_LINK=	pear-Auth
 OPTIONS=	PEAR_FILE_PASSWD "PEAR::File_Passwd support" off \
 		PEAR_NET_POP3 "PEAR::Net_POP3 support" off \
-		PEAR_CRYPT_CHAP "PEAR::CRYPT_CHAP support" off \
 		PEAR_DB "PEAR::DB support" off \
 		PEAR_MDB "PEAR::MDB support" off \
 		PEAR_MDB2 "PEAR::MDB2 support" off \
 		PEAR_AUTH_RADIUS "PEAR::AUTH_RADIUS support" off \
+		PEAR_CRYPT_CHAP "PEAR::CRYPT_CHAP support" off \
 		PEAR_FILE_SMBPASSWD "PEAR::File_SMBPasswd support" off \
 		PEAR_SOAP "PEAR::SOAP support" off
 
 CATEGORY=	Auth
-FILES=		Auth.php Container.php Auth/Anonymous.php Auth/Auth.php \
-		Auth/Controller.php Container/DB.php Container/DBLite.php \
-		Container/File.php Container/IMAP.php Container/KADM5.php\
-		Container/LDAP.php Container/MDB.php Container/MDB2.php \
+FILES=		Auth.php Auth.php.bak Auth/Anonymous.php Auth/Auth.php \
+		Auth/Controller.php Container.php Container/Array.php \
+		Container/DB.php Container/DBLite.php Container/File.php \
+		Container/IMAP.php Container/KADM5.php Container/LDAP.php \
+		Container/MDB.php Container/MDB2.php Container/Multiple.php \
 		Container/PEAR.php Container/POP3.php Container/RADIUS.php \
-		Container/SMBPasswd.php Container/SOAP.php Container/SOAP5.php \
-		Container/vpopmail.php Frontend/Html.php Frontend/md5.js
-TESTS=		auth_container_db_options.php auth_container_file_options.php \
+		Container/SAP.php Container/SMBPasswd.php Container/SOAP.php \
+		Container/SOAP5.php Container/vpopmail.php Frontend/Html.php \
+		Frontend/md5.js
+TESTS=		DBContainer.php FileContainer.php MDB2Container.php MDBContainer.php \
+		POP3Container.php POP3aContainer.php TestAuthContainer.php \
+		auth_container_db_options.php auth_container_file_options.php \
 		auth_container_mdb2_options.php auth_container_mdb_options.php \
-		auth_container_pop3a_options.php auth_container_pop3_options.php \
-		DBContainer.php FileContainer.php MDB2Container.php \
-		MDBContainer.php mysql_test_db.sql POP3aContainer.php \
-		POP3Container.php TestAuthContainer.php tests.php users \
-		bug8735.passwd bug8735.phpt
-DOCS=		README.Auth
+		auth_container_pop3_options.php auth_container_pop3a_options.php \
+		bug8735.passwd bug8735.phpt mysql_test_db.sql tests.php users
+EXAMPLES=	logging.php multi-container.php
+DOCS=		README.AdvancedSecurity README.Auth
 _DOCSDIR=	.
 
 post-extract:
