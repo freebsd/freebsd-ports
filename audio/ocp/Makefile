@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ocp
-DISTVERSION=	0.1.10.rc6
+PORTVERSION=	0.1.13
 CATEGORIES=	audio
 MASTER_SITES=	http://stian.lunafish.org/ocp/ \
 		http://critical.ch/distfiles/ \
@@ -113,7 +113,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ocp ${PREFIX}/bin
 
 	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/cp.pak ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/ocp.pak ${DATADIR}
 
 	${INSTALL_DATA} ${WRKSRC}/ocp.ini ${PREFIX}/etc/ocp.ini.default
 .if !exists(${PREFIX}/etc/ocp.ini)

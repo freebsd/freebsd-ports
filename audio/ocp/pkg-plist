@@ -3,6 +3,7 @@ bin/ocp
 etc/ocp.ini.default
 @exec [ -f %B/ocp.ini ] || cp %B/%f %B/ocp.ini
 lib/ocp/arctar.so
+lib/ocp/arczip.so
 lib/ocp/compat.so
 lib/ocp/cphelper.so
 lib/ocp/cphlpif.so
@@ -19,7 +20,6 @@ lib/ocp/devwnone.so
 lib/ocp/framelock.so
 lib/ocp/fstypes.so
 lib/ocp/hardware.so
-lib/ocp/inflate.so
 lib/ocp/libocp.so
 lib/ocp/load669.so
 lib/ocp/loadams.so
@@ -52,7 +52,7 @@ lib/ocp/plrbase.so
 lib/ocp/poutput.so
 lib/ocp/sets.so
 lib/ocp/smpbase.so
-%%DATADIR%%/cp.pak
+%%DATADIR%%/ocp.pak
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
