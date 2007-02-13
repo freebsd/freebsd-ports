@@ -1,6 +1,7 @@
 bin/sqlobject-admin
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/EGG-INFO/scripts/sqlobject-admin
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/EGG-INFO/entry_points.txt
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/EGG-INFO/not-zip-safe
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/EGG-INFO/requires.txt
@@ -36,6 +37,12 @@ bin/sqlobject-admin
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/declarative.py
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/declarative.pyc
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/declarative.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/dberrors.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/dberrors.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/dberrors.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/events.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/events.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/events.pyo
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/firebird/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/firebird/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/firebird/__init__.pyo
@@ -45,6 +52,27 @@ bin/sqlobject-admin
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/index.py
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/index.pyc
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/index.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include/pydispatch/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include/pydispatch/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include/pydispatch/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include/pydispatch/dispatcher.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include/pydispatch/dispatcher.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include/pydispatch/dispatcher.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include/pydispatch/errors.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include/pydispatch/errors.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include/pydispatch/errors.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include/pydispatch/robust.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include/pydispatch/robust.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include/pydispatch/robust.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include/pydispatch/robustapply.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include/pydispatch/robustapply.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include/pydispatch/robustapply.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include/pydispatch/saferef.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include/pydispatch/saferef.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include/pydispatch/saferef.pyo
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/inheritance/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/inheritance/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/inheritance/__init__.pyo
@@ -114,12 +142,23 @@ bin/sqlobject-admin
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/backports.py
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/backports.pyc
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/backports.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/csvexport.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/csvexport.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/csvexport.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/csvimport.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/csvimport.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/csvimport.pyo
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/moduleloader.py
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/moduleloader.pyc
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/moduleloader.pyo
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/threadinglocal.py
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/threadinglocal.pyc
 %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util/threadinglocal.pyo
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/wsgi_middleware.py
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/wsgi_middleware.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/wsgi_middleware.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include/pydispatch
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/include
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/util
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sybase
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYSQLOBJECT_EGG%%/sqlobject/sqlite
