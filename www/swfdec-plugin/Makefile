@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	swfdec-plugin
-PORTVERSION=	0.3.6
+PORTVERSION=	0.4.2
 CATEGORIES=	www
-MASTER_SITES=	http://www.schleef.org/swfdec/download/
-DISTNAME=	swfdec-${PORTVERSION}
+MASTER_SITES=	http://swfdec.freedesktop.org/download/swfdec-mozilla/0.4/
+DISTNAME=	swfdec-mozilla-${PORTVERSION}
 
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	Flash rendering plugin
 
-LIB_DEPENDS=	swfdec-0.3.0:${PORTSDIR}/graphics/swfdec
+LIB_DEPENDS=	swfdec-0.4:${PORTSDIR}/graphics/swfdec
 .if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="firefox"
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
@@ -24,11 +24,12 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${P
 .endif
 
 USE_SDL=	sdl
-USE_GNOME=	gnomehack gtk20 libartlgpl2
+USE_GNOME=	gnomehack gtk20
 USE_GSTREAMER=	yes
 USE_GETOPT_LONG=	yes
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include \
+		--with-audio=none
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -39,12 +40,10 @@ CONFIGURE_ENV+=	MOZILLA_CONFIG="${LOCALBASE}/lib/mozilla/mozilla-config"
 .endif
 
 INSTALLS_SHLIB=	yes
-INSTALL_WRKSRC=	${WRKSRC}/plugin
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,int16_t,__int16_t," ${WRKSRC}/libswfdec/swfdec_shape.c
-	@${REINPLACE_CMD} -e "s,mozilla/plugins/,browser_plugins/," ${WRKSRC}/plugin/Makefile.in
+	@${REINPLACE_CMD} -e "s|plugindir =.*|plugindir = $(PREFIX)/lib/browser_plugins|g" ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
