@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-InsideOut
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -21,10 +21,6 @@ MAN3=		Class::InsideOut::Manual::About.3 Class::InsideOut.3 \
 		Class::InsideOut::Manual::Advanced.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-RUN_DEPENDS+=	${LOCALBASE}/bin/pod2man:${PORTSDIR}/textproc/p5-podlators
-.endif
 
 .if ${PERL_LEVEL} < 500703
 RUN_DEPENDS+=	${SITE_PERL}/Class/ISA.pm:${PORTSDIR}/devel/p5-Class-ISA \
