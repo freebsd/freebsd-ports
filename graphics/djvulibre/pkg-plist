@@ -73,7 +73,7 @@ share/djvu/pubtext/DjVuXML-s.dtd
 %%X11%%@dirrm share/djvu/djview3/desktop
 %%X11%%@dirrm share/djvu/djview3/de
 %%X11%%@dirrm share/djvu/djview3
-@dirrm share/djvu
+@dirrmtry share/djvu
 @dirrmtry man/fr/man1
 @dirrmtry man/fr
 @dirrmtry man/de/man1
