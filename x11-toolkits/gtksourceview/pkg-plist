@@ -52,6 +52,7 @@ share/gnome/gtksourceview-1.0/language-specs/python.lang
 share/gnome/gtksourceview-1.0/language-specs/ruby.lang
 share/gnome/gtksourceview-1.0/language-specs/scheme.lang
 share/gnome/gtksourceview-1.0/language-specs/sh.lang
+share/gnome/gtksourceview-1.0/language-specs/spec.lang
 share/gnome/gtksourceview-1.0/language-specs/sql.lang
 share/gnome/gtksourceview-1.0/language-specs/tcl.lang
 share/gnome/gtksourceview-1.0/language-specs/texinfo.lang
