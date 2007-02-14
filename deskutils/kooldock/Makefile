@@ -9,7 +9,8 @@ PORTNAME=		kooldock
 PORTVERSION=		0.4.4
 CATEGORIES=		deskutils
 MASTER_SITES=		http://www.kde-apps.org/content/files/ \
-			http://www.kde-look.org/content/files/
+			http://www.kde-look.org/content/files/ \
+			http://freebsd.unixfreunde.de/sources/
 DISTNAME=		${KDELOOKITEM}-${PORTNAME}
 
 MAINTAINER=		gustau.perez@gmail.com
