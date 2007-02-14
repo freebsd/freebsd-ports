@@ -20,6 +20,9 @@ KMODDIR=	${TARGETDIR}/modules
 PLIST_SUB=	MSDOSFSKO=${MSDOSFSKO}
 NO_WRKSUBDIR=	yes
 
+DEPRECATED=	Use mount_cd9660(8), mount_msdosfs(8), or mount_ntfs(8) instead
+EXPIRATION_DATE=	2007-03-14
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000 && ${OSVERSION} < 501109
