@@ -1,3 +1,6 @@
+@exec %%EASY_INSTALL_CMD%% -q -N -S %D/%%PYTHON_SITELIBDIR%% %%PYICALENDAR_EGG_VER%%
+@unexec %%EASY_INSTALL_CMD%% -q -m -S %D/%%PYTHON_SITELIBDIR%% %%PYICALENDAR_EGG_VER%%
+%%PYTHON_SITELIBDIR%%/%%PYICALENDAR_EGG%%
 %%PORTDOCS%%%%DOCSDIR%%/example.txt
 %%PORTDOCS%%%%DOCSDIR%%/groupscheduled.ics
 %%PORTDOCS%%%%DOCSDIR%%/groupscheduled.txt
@@ -5,30 +8,5 @@
 %%PORTDOCS%%%%DOCSDIR%%/multiple.txt
 %%PORTDOCS%%%%DOCSDIR%%/small.ics
 %%PORTDOCS%%%%DOCSDIR%%/small.txt
-%%PYTHON_SITELIBDIR%%/icalendar/__init__.py
-%%PYTHON_SITELIBDIR%%/icalendar/__init__.pyc
-%%PYTHON_SITELIBDIR%%/icalendar/__init__.pyo
-%%PYTHON_SITELIBDIR%%/icalendar/cal.py
-%%PYTHON_SITELIBDIR%%/icalendar/cal.pyc
-%%PYTHON_SITELIBDIR%%/icalendar/cal.pyo
-%%PYTHON_SITELIBDIR%%/icalendar/caselessdict.py
-%%PYTHON_SITELIBDIR%%/icalendar/caselessdict.pyc
-%%PYTHON_SITELIBDIR%%/icalendar/caselessdict.pyo
-%%PYTHON_SITELIBDIR%%/icalendar/interfaces.py
-%%PYTHON_SITELIBDIR%%/icalendar/interfaces.pyc
-%%PYTHON_SITELIBDIR%%/icalendar/interfaces.pyo
-%%PYTHON_SITELIBDIR%%/icalendar/parser.py
-%%PYTHON_SITELIBDIR%%/icalendar/parser.pyc
-%%PYTHON_SITELIBDIR%%/icalendar/parser.pyo
-%%PYTHON_SITELIBDIR%%/icalendar/prop.py
-%%PYTHON_SITELIBDIR%%/icalendar/prop.pyc
-%%PYTHON_SITELIBDIR%%/icalendar/prop.pyo
-%%PYTHON_SITELIBDIR%%/icalendar/tools.py
-%%PYTHON_SITELIBDIR%%/icalendar/tools.pyc
-%%PYTHON_SITELIBDIR%%/icalendar/tools.pyo
-%%PYTHON_SITELIBDIR%%/icalendar/util.py
-%%PYTHON_SITELIBDIR%%/icalendar/util.pyc
-%%PYTHON_SITELIBDIR%%/icalendar/util.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/icalendar
-@dirrmtry %%PYTHON_SITELIBDIR%%/
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%PYTHON_SITELIBDIR%%
