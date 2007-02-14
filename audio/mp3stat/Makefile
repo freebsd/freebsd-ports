@@ -36,10 +36,6 @@ OPTIONS=	VORBIS "Ogg/Vorbis support" on
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-LIB_DEPENDS+=	magic.1:${PORTSDIR}/sysutils/file
-.endif
-
 .if ${OSVERSION} < 504000
 BUILD_DEPENDS+=	${LOCALBASE}/include/magic.h:${PORTSDIR}/sysutils/file
 .endif
