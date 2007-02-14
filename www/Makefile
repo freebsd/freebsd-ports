@@ -1012,6 +1012,7 @@
     SUBDIR += rubygem-rails
     SUBDIR += rubygem-rails-app-installer
     SUBDIR += rubygem-redcloth
+    SUBDIR += rubygem-scrapi
     SUBDIR += sahana2
     SUBDIR += sams
     SUBDIR += sarg
