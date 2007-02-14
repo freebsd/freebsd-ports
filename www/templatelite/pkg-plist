@@ -16,14 +16,22 @@
 %%PORTDOCS%%%%DOCSDIR%%/programming.methods.html
 %%PORTDOCS%%%%DOCSDIR%%/programming.variables.html
 %%PORTDOCS%%%%DOCSDIR%%/what.is.html
+%%PORTDOCS%%%%DOCSDIR%%/images/templatelite.jpg
 %%DATADIR%%/class.compiler.php
 %%DATADIR%%/class.config.php
 %%DATADIR%%/class.template.php
+%%DATADIR%%/internal/compile.compile_config.php
+%%DATADIR%%/internal/compile.compile_custom_block.php
+%%DATADIR%%/internal/compile.compile_custom_function.php
+%%DATADIR%%/internal/compile.compile_if.php
 %%DATADIR%%/internal/compile.generate_compiler_debug_output.php
 %%DATADIR%%/internal/compile.include.php
+%%DATADIR%%/internal/compile.parse_is_expr.php
 %%DATADIR%%/internal/compile.section_start.php
 %%DATADIR%%/internal/debug.tpl
+%%DATADIR%%/internal/template.build_dir.php
 %%DATADIR%%/internal/template.config_loader.php
+%%DATADIR%%/internal/template.destroy_dir.php
 %%DATADIR%%/internal/template.fetch_compile_include.php
 %%DATADIR%%/internal/template.generate_debug_output.php
 %%DATADIR%%/plugins/block.capture.php
@@ -50,11 +58,10 @@
 %%DATADIR%%/plugins/function.math.php
 %%DATADIR%%/plugins/function.popup.php
 %%DATADIR%%/plugins/function.popup_init.php
-%%DATADIR%%/plugins/modifier.array_reverse.php
+%%DATADIR%%/plugins/function.resize_image.php
 %%DATADIR%%/plugins/modifier.bbcode2html.php
 %%DATADIR%%/plugins/modifier.capitalize.php
 %%DATADIR%%/plugins/modifier.cat.php
-%%DATADIR%%/plugins/modifier.count.php
 %%DATADIR%%/plugins/modifier.count_characters.php
 %%DATADIR%%/plugins/modifier.count_paragraphs.php
 %%DATADIR%%/plugins/modifier.count_sentences.php
@@ -66,24 +73,21 @@
 %%DATADIR%%/plugins/modifier.escape.php
 %%DATADIR%%/plugins/modifier.indent.php
 %%DATADIR%%/plugins/modifier.lower.php
-%%DATADIR%%/plugins/modifier.nl2br.php
-%%DATADIR%%/plugins/modifier.number_format.php
 %%DATADIR%%/plugins/modifier.regex_replace.php
 %%DATADIR%%/plugins/modifier.replace.php
 %%DATADIR%%/plugins/modifier.spacify.php
 %%DATADIR%%/plugins/modifier.string_format.php
 %%DATADIR%%/plugins/modifier.strip.php
-%%DATADIR%%/plugins/modifier.strip_tags.php
 %%DATADIR%%/plugins/modifier.truncate.php
 %%DATADIR%%/plugins/modifier.upper.php
-%%DATADIR%%/plugins/modifier.urlencode.php
-%%DATADIR%%/plugins/modifier.wordwrap.php
 %%DATADIR%%/plugins/outputfilter.gzip.php
 %%DATADIR%%/plugins/outputfilter.trimwhitespace.php
 %%DATADIR%%/plugins/postfilter.showtemplatevars.php
+%%DATADIR%%/plugins/prefilter.jstrip.php
 %%DATADIR%%/plugins/prefilter.showinfoheader.php
 %%DATADIR%%/plugins/shared.escape_chars.php
 %%DATADIR%%/plugins/shared.make_timestamp.php
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/internal
 @dirrm %%DATADIR%%/plugins
