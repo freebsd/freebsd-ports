@@ -447,9 +447,11 @@ lib/libmpqc.a
 lib/libmpqc.la
 lib/libmpqc.so
 lib/libmpqc.so.8
+lib/libSCcints.so
 lib/libSCcints.so.8
 lib/libSCcints.la
 lib/libSCcints.a
+lib/libSCmbptr12.so
 lib/libSCmbptr12.so.8
 lib/libSCmbptr12.la
 lib/libSCmbptr12.a

@@ -121,6 +121,7 @@ post-install:
 	${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 	cd ${PREFIX} ; ${FIND} -s share/doc/${PORTNAME} -type f  >> ${TMPPLIST}
 	cd ${PREFIX} ; ${FIND} -s share/doc/${PORTNAME} -type l  >> ${TMPPLIST}
+	${ECHO_CMD} "@dirrm share/doc/${PORTNAME}" >> ${TMPPLIST}
 .endif
 	cd ${PREFIX} ; ${FIND} -s share/mpqc -type f  >> ${TMPPLIST}
 	cd ${PREFIX} ; ${FIND} -s share/mpqc -type l  >> ${TMPPLIST}
