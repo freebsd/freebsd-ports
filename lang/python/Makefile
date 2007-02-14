@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	python
-PORTVERSION=	2.4.3
+PORTVERSION=	2.4.4
 PORTEPOCH=	1
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	# empty
