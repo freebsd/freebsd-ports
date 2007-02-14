@@ -68,6 +68,7 @@ post-patch:
 		-e 's|(pkgconfigdir =).+(/pkgconfig)|\1 ${PREFIX}/libdata\2|' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -E -e 's|(-lXv)|\1 -lXext -L${X11BASE}/lib|; \
+		/objformat=/s|=.*|=elf|; \
 		s@(PKG_CONFIG --(cflags|libs) )"\$$REQUIRES"@\1 gtk@' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|stdint.h|sys/types.h|' \
