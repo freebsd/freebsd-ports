@@ -7,6 +7,7 @@
 
 PORTNAME=	${DICT}-aspell
 DISTVERSION=	5-ku-0.20-1
+PORTEPOCH=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
