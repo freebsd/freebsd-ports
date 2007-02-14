@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opencdk
-PORTVERSION=	0.5.11
+PORTVERSION=	0.5.13
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/gnutls/releases/opencdk/ \
