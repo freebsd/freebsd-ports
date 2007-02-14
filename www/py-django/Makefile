@@ -7,7 +7,7 @@
 
 PORTNAME?=	django
 PORTVERSION?=	0.95
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	www python
 MASTER_SITES?=	http://media.djangoproject.com/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,7 +32,8 @@ PLIST_SUB=	DJANGOVER=${DJANGOVER} \
 OPTIONS=	MOD_PYTHON3	"Install Apache2 with mod_python3"	off \
 		POSTGRESQL	"PostgreSQL support"	off \
 		MYSQL	"MySQL support"	off \
-		SQLITE	"SQLite support"	off
+		SQLITE	"SQLite support"	off \
+		FASTCGI	"FastCGI support"	off
 
 # bypass infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
@@ -53,6 +54,11 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_mysql.so:${PORTSDIR}/databases/py-MySQLdb
 
 .if defined(WITH_SQLITE)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite20
+.endif
+
+.if defined(WITH_FASTCGI)
+PYFLUP_EGG!=	${MAKE} -f ${PORTSDIR}/www/py-flup/Makefile -V PYFLUP_EGG
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/${PYFLUP_EGG}/flup/__init__.py:${PORTSDIR}/www/py-flup
 .endif
 
 post-install:
