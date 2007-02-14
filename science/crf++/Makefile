@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	crf++
-PORTVERSION=	0.45
+PORTVERSION=	0.46
 CATEGORIES=	science math
 MASTER_SITES=	http://chasen.org/~taku/software/CRF++/src/
 DISTNAME=	CRF++-${PORTVERSION}
