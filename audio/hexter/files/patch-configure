@@ -1,5 +1,41 @@
---- configure.orig	Sat Jan 20 12:27:18 2007
-+++ configure	Sat Jan 20 12:27:30 2007
+--- configure.orig	Wed Jan 18 22:23:05 2006
++++ configure	Wed Feb 14 07:51:19 2007
+@@ -7829,7 +7829,7 @@
+   ;;
+ 
+ freebsd*)
+-  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
+   version_type=freebsd-$objformat
+   case $version_type in
+     freebsd-elf*)
+@@ -11596,7 +11596,7 @@
+   ;;
+ 
+ freebsd*)
+-  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
+   version_type=freebsd-$objformat
+   case $version_type in
+     freebsd-elf*)
+@@ -14811,7 +14811,7 @@
+   ;;
+ 
+ freebsd*)
+-  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
+   version_type=freebsd-$objformat
+   case $version_type in
+     freebsd-elf*)
+@@ -17224,7 +17224,7 @@
+   ;;
+ 
+ freebsd*)
+-  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
+   version_type=freebsd-$objformat
+   case $version_type in
+     freebsd-elf*)
 @@ -20697,7 +20697,7 @@
  echo "GTK support: $with_gtk"
  
