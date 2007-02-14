@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	templatelite
-PORTVERSION=	1.90
+PORTVERSION=	2.10
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ COMMENT=	A smaller, faster alternative to the Smarty template engine
 NO_BUILD=	yes
 USE_PHP=	pcre
 WANT_PHP_WEB=	yes
-NO_WRKSUBDIR=	yes
+WRKSRC=	${WRKDIR}/template_lite
 SUB_FILES=	pkg-message
 
 do-install:
@@ -26,7 +26,7 @@ do-install:
 	@cd ${WRKSRC}/src && ${FIND} * | ${TAR} cTf - - | ${TAR} xUCf ${DATADIR} -
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/docs && ${FIND} * -type f -exec ${INSTALL_DATA} {} ${DOCSDIR} \;
+	@cd ${WRKSRC}/docs && ${FIND} * | ${TAR} cTf - - | ${TAR} xUCf ${DOCSDIR} -
 .endif
 
 post-install:
