@@ -1749,6 +1749,7 @@
     SUBDIR += py-durus
     SUBDIR += py-elementtree
     SUBDIR += py-epsilon
+    SUBDIR += py-ezpyinline
     SUBDIR += py-fam
     SUBDIR += py-fileutils
     SUBDIR += py-flakes
