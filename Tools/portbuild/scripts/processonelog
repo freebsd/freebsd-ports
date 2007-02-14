@@ -55,7 +55,7 @@ elif bzgrep -q "Couldn't fetch it - please try" $1; then
   reason="fetch"; tag="fetch"
 elif bzgrep -q "Error: shared library \".*\" does not exist" $1; then
   reason="LIB_DEPENDS"; tag="libdepends"
-elif bzgrep -q ".*\.h: No such file" $1; then
+elif bzgrep -qE "\.(c|cc|ccx|cpp|h|y)[1-9:]+ .+\.h: No such file" $1; then
   if bzgrep -qE "(X11/.*|Xosdefs)\.h: No such file" $1; then
 	if bzgrep -q "XFree86-.*\.tgz" $1; then
 	  reason="missing_header"; tag="header"
