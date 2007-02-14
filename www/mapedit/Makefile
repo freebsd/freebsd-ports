@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	mapedit
-PORTVERSION=	2.3
-PORTREVISION=	1
+PORTVERSION=	2.32
 CATEGORIES=	www
 MASTER_SITES=	http://www.boutell.com/mapedit/http/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	A WWW authoring tool to create clickable maps
 
 RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk11
