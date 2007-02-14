@@ -7,6 +7,7 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://josefsson.org/gnutls/releases/ \
 	ftp://ftp.gnutls.org/pub/gnutls/ \
@@ -39,8 +40,8 @@ CONFIGURE_ARGS+=	--with-included-lzo \
 MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
-.if defined(WITH_OPENCDK) || exists(${LOCALBASE}/lib/libopencdk.so.8)
-LIB_DEPENDS+=	opencdk.8:${PORTSDIR}/security/opencdk
+.if defined(WITH_OPENCDK) || exists(${LOCALBASE}/lib/libopencdk.so.9)
+LIB_DEPENDS+=	opencdk.9:${PORTSDIR}/security/opencdk
 .endif
 
 .if defined(WITH_LIBTASN1) || exists(${LOCALBASE}/lib/libtasn1.so.3)
