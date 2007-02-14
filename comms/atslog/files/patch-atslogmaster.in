@@ -1,0 +1,54 @@
+--- include/atslogmaster.in	Sun Jan 28 17:52:01 2007
++++ include/atslogmaster.in	Wed Feb 14 16:16:05 2007
+@@ -6,6 +6,7 @@
+ NOWDATE=`LANG=en_US;date`
+ BASENAME=`basename $0`
+ prefix=@prefix@
++ATSLOGDpid=""
+ 
+ # Readin config file                              
+ if [ -r @sysconfdir@/atslog.conf ]; then
+@@ -26,10 +27,11 @@
+ fi                                                
+ 
+ checkstatus(){
++    ATSLOGDpid=""
+     if [ -f $pidfile ] ; then
+         PID=`cat $pidfile`
+         if [ "x$PID" != "x" ] && kill -0 $PID 2>/dev/null ; then
+-            return $PID
++	    ATSLOGDpid=$PID
+         fi
+     fi
+     return 0
+@@ -39,10 +41,6 @@
+ PATH=$PATH:$bindir:$sharedir
+ 
+ checkstatus
+-ATSLOGDpid=$?
+-if [ $ATSLOGDpid -eq 0 ]; then
+-    ATSLOGDpid=""
+-fi
+ 
+ case "$debug" in
+     [Yy][Ee][Ss])
+@@ -98,10 +96,6 @@
+ 	echo "$msg8"
+     fi
+     checkstatus
+-    ATSLOGDpid=$?
+-    if [ $ATSLOGDpid -eq 0 ]; then
+-	ATSLOGDpid=""
+-    fi
+     startloging
+     if [ $? -eq 0 ]
+     then
+@@ -159,7 +153,7 @@
+     fi
+     sleep 1;
+     checkstatus
+-    if [ $? -eq 0 ];then
++    if [ -z ATSLOGDpid ];then
+ 	TORETURN=1; # atslogd not started
+ 	ERRORMESSAGE=$msg4
+ 	echomess
