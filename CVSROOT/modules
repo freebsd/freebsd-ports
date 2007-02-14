@@ -9835,6 +9835,7 @@ p5-Mknod	ports/devel/p5-Mknod
 p5-Module-Build	ports/devel/p5-Module-Build
 p5-Module-Build-Convert	ports/devel/p5-Module-Build-Convert
 p5-Module-Build-Kwalitee	ports/devel/p5-Module-Build-Kwalitee
+p5-Module-CPANTS-Analyse	ports/devel/p5-Module-CPANTS-Analyse
 p5-Module-Compile	ports/devel/p5-Module-Compile
 p5-Module-CoreList	ports/devel/p5-Module-CoreList
 p5-Module-Dependency	ports/devel/p5-Module-Dependency
