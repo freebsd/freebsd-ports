@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	simplejson
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	devel python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/s/simplejson/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
