@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtick
-PORTVERSION=	0.3.11
+PORTVERSION=	0.3.12
 CATEGORIES=	audio
 MASTER_SITES=	http://www.antcom.de/gtick/download/
 
@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_GETOPT_LONG=yes
 USE_GNOME=	gtk20
+USE_GETTEXT=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--mandir=${MAN1PREFIX}/man
