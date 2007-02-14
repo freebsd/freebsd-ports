@@ -19,25 +19,30 @@
 %%SITE_PERL%%/Bigtop/Backend/SQL/SQLite.pm
 %%SITE_PERL%%/Bigtop/Backend/SiteLook/GantryDefault.pm
 %%SITE_PERL%%/Bigtop/Deparser.pm
-%%SITE_PERL%%/Bigtop/Docs/About.pm
-%%SITE_PERL%%/Bigtop/Docs/Cookbook.pm
-%%SITE_PERL%%/Bigtop/Docs/Keywords.pm
-%%SITE_PERL%%/Bigtop/Docs/Modules.pm
-%%SITE_PERL%%/Bigtop/Docs/QuickRef.pm
-%%SITE_PERL%%/Bigtop/Docs/Syntax.pm
-%%SITE_PERL%%/Bigtop/Docs/TOC.pm
-%%SITE_PERL%%/Bigtop/Docs/TentRef.pm
-%%SITE_PERL%%/Bigtop/Docs/TentTut.pm
-%%SITE_PERL%%/Bigtop/Docs/Tutorial.pm
-%%SITE_PERL%%/Bigtop/Docs/Vim.pm
+%%SITE_PERL%%/Bigtop/Docs/About.pod
+%%SITE_PERL%%/Bigtop/Docs/Cookbook.pod
+%%SITE_PERL%%/Bigtop/Docs/Keywords.pod
+%%SITE_PERL%%/Bigtop/Docs/Modules.pod
+%%SITE_PERL%%/Bigtop/Docs/QuickRef.pod
+%%SITE_PERL%%/Bigtop/Docs/Syntax.pod
+%%SITE_PERL%%/Bigtop/Docs/TOC.pod
+%%SITE_PERL%%/Bigtop/Docs/TentRef.pod
+%%SITE_PERL%%/Bigtop/Docs/TentTut.pod
+%%SITE_PERL%%/Bigtop/Docs/Tutorial.pod
+%%SITE_PERL%%/Bigtop/Docs/Vim.pod
 %%SITE_PERL%%/Bigtop/Grammar.pm
 %%SITE_PERL%%/Bigtop/Keywords.pm
 %%SITE_PERL%%/Bigtop/Parser.pm
 %%SITE_PERL%%/Bigtop/ScriptHelp.pm
+%%SITE_PERL%%/Bigtop/ScriptHelp/Style.pm
+%%SITE_PERL%%/Bigtop/ScriptHelp/Style/Pg8Live.pm
+%%SITE_PERL%%/Bigtop/ScriptHelp/Style/Original.pm
 %%SITE_PERL%%/Bigtop/TentMaker.pm
 %%SITE_PERL%%/Bigtop/TentMakerPath.pm
 bin/bigtop
 bin/tentmaker
+@dirrmtry %%SITE_PERL%%/Bigtop/ScriptHelp/Style
+@dirrmtry %%SITE_PERL%%/Bigtop/ScriptHelp
 @dirrmtry %%SITE_PERL%%/Bigtop/Docs
 @dirrmtry %%SITE_PERL%%/Bigtop/Backend/SiteLook
 @dirrmtry %%SITE_PERL%%/Bigtop/Backend/SQL
