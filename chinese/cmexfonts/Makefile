@@ -8,8 +8,8 @@
 PORTNAME=	cmexfonts
 PORTVERSION=	0.1
 CATEGORIES=	chinese x11-fonts
-MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/cmexfonts/ \
-		ftp://sunsite.unc.edu/pub/Linux/X11/fonts/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	X11/fonts
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Big5+ Chinese Mingti bitmap font (by CMEX & DynaLab) for X11
