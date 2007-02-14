@@ -1,0 +1,17 @@
+--- configure.orig	Mon Feb 12 12:13:21 2007
++++ configure	Mon Feb 12 12:13:27 2007
+@@ -20574,8 +20574,12 @@
+ fi;
+     SSLLIBS="$SSLLIBS -lssl -lcrypto"
+ else
+-    SSLLIBS="`$PKG_CONFIG --libs openssl`"
+-    SSLFLAGS="`$PKG_CONFIG --cflags openssl`"
++	if `$PKG_CONFIG --libs openssl >> /dev/null 2>&1`; then
++    	SSLLIBS="`$PKG_CONFIG --libs openssl`"
++    	SSLFLAGS="`$PKG_CONFIG --cflags openssl`"
++	else
++		SSLLIBS="$SSLLIBS -lssl -lcrypto"
++	fi
+ fi
+ echo "$as_me:$LINENO: checking for OpenSSL libraries" >&5
+ echo $ECHO_N "checking for OpenSSL libraries... $ECHO_C" >&6

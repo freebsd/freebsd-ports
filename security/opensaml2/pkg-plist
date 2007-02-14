@@ -1,0 +1,29 @@
+bin/signtest
+include/saml/SAMLDateTime.h
+include/saml/config_pub.h
+include/saml/hresult.h
+include/saml/saml.h
+include/saml/version.h
+lib/libsaml.a
+lib/libsaml.so
+lib/libsaml.so.5
+%%PORTDOCS%%%%DOCSDIR%%/CURL.LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL-WIN32.txt
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/LOG4CPP.LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.txt
+%%PORTDOCS%%%%DOCSDIR%%/NOTICE.txt
+%%PORTDOCS%%%%DOCSDIR%%/OPENSSL.LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/TODO.txt
+share/xml/opensaml/cs-sstc-schema-assertion-01.xsd
+share/xml/opensaml/cs-sstc-schema-assertion-1.1.xsd
+share/xml/opensaml/cs-sstc-schema-protocol-01.xsd
+share/xml/opensaml/cs-sstc-schema-protocol-1.1.xsd
+share/xml/opensaml/soap-envelope.xsd
+share/xml/opensaml/xml.xsd
+share/xml/opensaml/xmldsig-core-schema.xsd
+@dirrm include/saml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/xml/opensaml

@@ -290,6 +290,7 @@
     SUBDIR += openbsm
     SUBDIR += opencdk
     SUBDIR += openct
+    SUBDIR += opensaml
     SUBDIR += opensc
     SUBDIR += openscep
     SUBDIR += openssh
