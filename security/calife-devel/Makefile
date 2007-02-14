@@ -8,8 +8,9 @@
 PORTNAME=	calife
 PORTVERSION=	3.0
 CATEGORIES=	security
-MASTER_SITES=	http://www.keltia.net/download/
-DISTNAME=	calife-3.0pre5
+MASTER_SITES=	ftp://frmug.org/pub/calife/ \
+		http://www.keltia.net/download/
+DISTNAME=	calife-3.0pre6
 
 MAINTAINER=	thomas@FreeBSD.org
 COMMENT=	A lightweight alternative to sudo
@@ -37,7 +38,7 @@ MAN5=		calife.auth.5
 
 post-install:
 .if ${OSVERSION} >= 500000
-	@${INSTALL_DATA} ${WRKSRC}/calife.pam ${PREFIX}/etc/pam.d/calife.sample
+	@${INSTALL_DATA} ${WRKSRC}/pam/freebsd5 ${PREFIX}/etc/pam.d/calife.sample
 	@${CAT} ${PKGMESSAGE}
 .endif
 
