@@ -46,6 +46,27 @@
 %%DOCSDIR%%/faq.html
 %%DOCSDIR%%/links.html
 %%DOCSDIR%%/contact.html
+%%DOCSDIR%%/API/dir_000000.html
+%%DOCSDIR%%/API/dir_000001.html
+%%DOCSDIR%%/API/dir_847afe0584ab2be2f35afc524ae78865.html
+%%DOCSDIR%%/API/dir_d95480e064f2cd25d4e283edd80a73aa.html
+%%DOCSDIR%%/API/dirs.html
+%%DOCSDIR%%/API/globals_0x63.html
+%%DOCSDIR%%/API/globals_0x66.html
+%%DOCSDIR%%/API/globals_0x6c.html
+%%DOCSDIR%%/API/globals_0x70.html
+%%DOCSDIR%%/API/globals_0x73.html
+%%DOCSDIR%%/API/globals_0x76.html
+%%DOCSDIR%%/API/ll_8h.html
+%%DOCSDIR%%/API/ll_8h-source.html
+%%DOCSDIR%%/API/structcddb__site__s.html
+%%DOCSDIR%%/API/structcddb__site__s-members.html
+%%DOCSDIR%%/API/tab_b.gif
+%%DOCSDIR%%/API/tab_l.gif
+%%DOCSDIR%%/API/tab_r.gif
+%%DOCSDIR%%/API/tabs.css
+%%DOCSDIR%%/API/visibility_8h.html
+%%DOCSDIR%%/API/visibility_8h-source.html
 @dirrm %%DOCSDIR%%/API
 @dirrm %%DOCSDIR%%/images
 @dirrm %%DOCSDIR%%
