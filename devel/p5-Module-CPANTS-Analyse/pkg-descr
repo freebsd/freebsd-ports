@@ -1,0 +1,12 @@
+Module::CPANTS::Analyse - Generate Kwalitee ratings for a distribution
+
+Kwalitee is inexact quality:
+* All dependencies in Makefile.PL or the Module::Build equivalent
+* Well-tested
+* Well-documented
+* Documents match code match tests
+* Covered well
+* Pod passes Test::Pod
+* All hyperlinks work 
+
+WWW: http://search.cpan.org/dist/Module-CPANTS-Analyse/
