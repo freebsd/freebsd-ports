@@ -8176,6 +8176,7 @@ openproducer	ports/graphics/openproducer
 openquicktime	ports/multimedia/openquicktime
 openradius	ports/net/openradius
 openrm		ports/graphics/openrm
+opensaml	ports/security/opensaml
 opensc		ports/security/opensc
 openscep	ports/security/openscep
 opensched	ports/textproc/opensched
