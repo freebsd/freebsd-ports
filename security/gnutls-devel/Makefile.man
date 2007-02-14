@@ -339,6 +339,7 @@ MAN3=	\
 	gnutls_x509_crt_export.3 \
 	gnutls_x509_crt_get_activation_time.3 \
 	gnutls_x509_crt_get_authority_key_id.3 \
+	gnutls_x509_crt_get_basic_constraints.3 \
 	gnutls_x509_crt_get_crl_dist_points.3 \
 	gnutls_x509_crt_get_dn.3 \
 	gnutls_x509_crt_get_dn_by_oid.3 \
@@ -355,6 +356,7 @@ MAN3=	\
 	gnutls_x509_crt_get_pk_algorithm.3 \
 	gnutls_x509_crt_get_pk_dsa_raw.3 \
 	gnutls_x509_crt_get_pk_rsa_raw.3 \
+	gnutls_x509_crt_get_proxy.3 \
 	gnutls_x509_crt_get_serial.3 \
 	gnutls_x509_crt_get_signature_algorithm.3 \
 	gnutls_x509_crt_get_subject_alt_name.3 \
@@ -365,6 +367,7 @@ MAN3=	\
 	gnutls_x509_crt_list_verify.3 \
 	gnutls_x509_crt_set_activation_time.3 \
 	gnutls_x509_crt_set_authority_key_id.3 \
+	gnutls_x509_crt_set_basic_constraints.3 \
 	gnutls_x509_crt_set_ca_status.3 \
 	gnutls_x509_crt_set_crl_dist_points.3 \
 	gnutls_x509_crt_set_dn_by_oid.3 \
@@ -374,6 +377,8 @@ MAN3=	\
 	gnutls_x509_crt_set_key.3 \
 	gnutls_x509_crt_set_key_purpose_oid.3 \
 	gnutls_x509_crt_set_key_usage.3 \
+	gnutls_x509_crt_set_proxy.3 \
+	gnutls_x509_crt_set_proxy_dn.3 \
 	gnutls_x509_crt_set_serial.3 \
 	gnutls_x509_crt_set_subject_alternative_name.3 \
 	gnutls_x509_crt_set_subject_key_id.3 \
