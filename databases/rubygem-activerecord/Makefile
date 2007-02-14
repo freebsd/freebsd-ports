@@ -48,7 +48,7 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/postgres.so:${PORTSDIR}/databases/ruby-post
 .endif
 
 .if defined(WITH_NATIVE_SQLITE3)
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/sqlite3_api.so:${PORTSDIR}/databases/ruby-sqlite3
+RUN_DEPENDS+=	rubygem-sqlite3>=1.2.1:${PORTSDIR}/databases/rubygem-sqlite3
 .endif
 
 .include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
