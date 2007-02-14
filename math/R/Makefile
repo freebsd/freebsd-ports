@@ -72,8 +72,14 @@ check-all: build
 
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-CONFIGURE_ARGS+=--with-lapack="-lalapack -lcblas" --with-blas="-lf77blas"
+CONFIGURE_ARGS+=--with-blas="-lf77blas -latlas"
+# A workaround to prevent hangs up during the build.
+.if ${ARCH} != "i386"
+CONFIGURE_ARGS+=--with-lapack="-lalapack -lcblas"
 PLIST_SUB+=	BLAS="@comment "
+.else
+PLIST_SUB+=	BLAS=""
+.endif
 .else
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 CONFIGURE_ARGS+=--with-blas="-lblas"
