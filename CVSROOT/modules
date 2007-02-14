@@ -13547,6 +13547,7 @@ rubygem-rscm	ports/devel/rubygem-rscm
 rubygem-rspec	ports/devel/rubygem-rspec
 rubygem-rtags	ports/devel/rubygem-rtags
 rubygem-rubyforge	ports/devel/rubygem-rubyforge
+rubygem-scrapi	ports/www/rubygem-scrapi
 rubygem-scruffy	ports/graphics/rubygem-scruffy
 rubygem-snmp	ports/net-mgmt/rubygem-snmp
 rubygem-sqlite3	ports/databases/rubygem-sqlite3
