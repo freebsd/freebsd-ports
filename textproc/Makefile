@@ -836,6 +836,7 @@
     SUBDIR += ruby-xtemplate
     SUBDIR += rubygem-ferret
     SUBDIR += rubygem-syntax
+    SUBDIR += rubygem-tidy
     SUBDIR += rw-aspell
     SUBDIR += rxp
     SUBDIR += s5
