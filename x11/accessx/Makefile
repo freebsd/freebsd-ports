@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	accessx
-PORTVERSION=	0.950
-PORTREVISION=	1
+PORTVERSION=	0.951
 CATEGORIES=	x11 accessibility
 MASTER_SITES=	http://www.disability.uiuc.edu/accessx/software/
 DISTNAME=	accessx${PORTVERSION:S/.//g}
@@ -19,6 +18,8 @@ RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/accessx
 USE_X_PREFIX=	yes
+
+PLIST_FILES=	bin/ax bin/accessx
 
 post-patch:
 	${REINPLACE_CMD} \
