@@ -127,6 +127,7 @@ SoXt		ports/x11-toolkits/SoXt
 Sockets		ports/net/Sockets
 Sockets-devel		ports/net/Sockets-devel
 SpecTcl		ports/devel/SpecTcl
+Subversive	ports/devel/Subversive
 Tee		ports/sysutils/Tee
 TenDRA		ports/lang/TenDRA
 Terminal	ports/x11/Terminal
