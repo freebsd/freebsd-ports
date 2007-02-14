@@ -1,0 +1,5 @@
+Standalone Djvu viewer and plugin based on the Qt4 toolkit. Uses djvulibre
+for rendering.
+
+Author:	Leon Bottou <leonb@users.sf.net>
+WWW:	http://djvu.sourceforge.net/
