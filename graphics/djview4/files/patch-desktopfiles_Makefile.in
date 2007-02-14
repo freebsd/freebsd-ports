@@ -1,0 +1,11 @@
+--- desktopfiles/Makefile.in.orig	Wed Feb 14 03:30:43 2007
++++ desktopfiles/Makefile.in	Wed Feb 14 03:30:56 2007
+@@ -56,7 +56,7 @@
+ 
+ install-djview-files: FORCE
+ 	${INSTALL} -d ${DESTDIR}${datadir_djview}
+-	${INSTALL_PROGRAM} register-djview-menu ${DESTDIR}${datadir_djview}
++	${INSTALL_SCRIPT} register-djview-menu ${DESTDIR}${datadir_djview}
+ 	${INSTALL_DATA} ${srcdir}/*djview4.png ${DESTDIR}${datadir_djview}
+ 	${INSTALL_DATA} ${srcdir}/*djview4.desktop ${DESTDIR}${datadir_djview}
+ 	-@echo "Run ${datadir_djview}/register-djview-menu install"
