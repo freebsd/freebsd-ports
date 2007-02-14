@@ -12,6 +12,9 @@
 # fusefs_enable (bool):		Set to NO by default.
 #				Set it to YES to enable fusefs.
 #
+# and the following line to /etc/sysctl.conf:
+#
+# kern.module_path=/boot/kernel:/boot/modules:%%PREFIX%%/modules
 
 . %%RC_SUBR%%
 
