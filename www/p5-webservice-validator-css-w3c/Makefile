@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WebService-Validator-CSS-W3C
-PORTVERSION=	0.02
+PORTVERSION=	0.2
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WebService
@@ -25,10 +25,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=	WebService::Validator::CSS::W3C.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500802
-IGNORE=		This port requires perl 5.8.2 or later.
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
