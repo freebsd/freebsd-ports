@@ -9,6 +9,7 @@ bin/python-shared%%PYVER%%
 bin/smtpd%%PYVER%%.py
 bin/smtpd.py
 %%PYTHON_INCLUDEDIR%%/Python.h
+%%PYTHON_INCLUDEDIR%%/Python-ast.h
 %%PYTHON_INCLUDEDIR%%/abstract.h
 %%PYTHON_INCLUDEDIR%%/bitset.h
 %%PYTHON_INCLUDEDIR%%/boolobject.h
@@ -139,6 +140,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/bsddb/test/test_join.py
 %%PYTHON_LIBDIR%%/bsddb/test/test_lock.py
 %%PYTHON_LIBDIR%%/bsddb/test/test_misc.py
+%%PYTHON_LIBDIR%%/bsddb/test/test_pickle.py
 %%PYTHON_LIBDIR%%/bsddb/test/test_queue.py
 %%PYTHON_LIBDIR%%/bsddb/test/test_recno.py
 %%PYTHON_LIBDIR%%/bsddb/test/test_thread.py
@@ -827,6 +829,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/reperf.py
 %%PYTHON_LIBDIR%%/test/sample_doctest.py
 %%PYTHON_LIBDIR%%/test/seq_tests.py
+%%PYTHON_LIBDIR%%/test/sgml_input.html
 %%PYTHON_LIBDIR%%/test/sortperf.py
 %%PYTHON_LIBDIR%%/test/string_tests.py
 %%PYTHON_LIBDIR%%/test/test.xml
@@ -1136,6 +1139,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/testrgb.uue
 %%PYTHON_LIBDIR%%/test/testtar.tar
 %%PYTHON_LIBDIR%%/test/tf_inherit_check.py
+%%PYTHON_LIBDIR%%/test/threaded_import_hangers.py
 %%PYTHON_LIBDIR%%/test/tokenize_tests.txt
 %%PYTHON_LIBDIR%%/test/xmltests.py
 %%PYTHON_LIBDIR%%/textwrap.py
@@ -1634,7 +1638,6 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/scripts
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/pynche/X
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/pynche
-%%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/msi
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/modulator/Templates
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/modulator
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/i18n
@@ -1643,7 +1646,6 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/framer
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/faqwiz
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/compiler
-%%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/buildbot
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/bgen/bgen
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/bgen
 %%PORTDOCS%%@dirrm share/%%PYTHON_VERSION%%/Tools/audiopy
