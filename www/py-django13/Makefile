@@ -6,10 +6,10 @@
 #
 
 PORTNAME?=	django
-PORTVERSION?=	0.95
-PORTREVISION?=	2
+PORTVERSION?=	0.95.1
+PORTREVISION?=	0
 CATEGORIES=	www python
-MASTER_SITES?=	http://media.djangoproject.com/releases/${PORTVERSION}/
+MASTER_SITES?=	http://media.djangoproject.com/releases/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Django-${PORTVERSION}
 

@@ -996,7 +996,7 @@ bin/django-admin.py
 %%PORTDOCS%%%%DOCSDIR%%/outputting_pdf.txt
 %%PORTDOCS%%%%DOCSDIR%%/overview.txt
 %%PORTDOCS%%%%DOCSDIR%%/redirects.txt
-%%PORTDOCS%%%%DOCSDIR%%/release_notes_%%DJANGOVER%%.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_0.95.txt
 %%PORTDOCS%%%%DOCSDIR%%/request_response.txt
 %%PORTDOCS%%%%DOCSDIR%%/serialization.txt
 %%PORTDOCS%%%%DOCSDIR%%/sessions.txt
