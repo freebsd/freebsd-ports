@@ -50,7 +50,7 @@ WITH_ATLAS=	yes
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 BLAS=		-lf77blas -latlas
-LAPACK=		-lalapack
+LAPACK=		-lalapack -lcblas
 .else
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
@@ -64,7 +64,10 @@ FCFLAGS+=	-fPIC
 FFLAGS+=	-fPIC ${FCFLAGS}
 .endif
 CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FCFLAGS="${FCFLAGS}"
-CONFIGURE_ARGS+=	--with-umfpack="-L${LOCALBASE} -lumfpack_elmer"
+CONFIGURE_ARGS+=	--with-umfpack="-L${LOCALBASE}/lib -lumfpack_elmer" \
+			--with-blas="-L${LOCALBASE}/lib ${BLAS}" \
+			--with-lapack="-L${LOCALBASE}/lib ${LAPACK}" \
+			--with-eiof="-L${LOCALBASE}/lib -leiof"
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|make|${GMAKE}|g' ${WRKSRC}/tests/runtests.in
