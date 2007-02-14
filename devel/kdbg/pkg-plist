@@ -115,6 +115,7 @@ share/locale/sk/LC_MESSAGES/kdbg.mo
 share/locale/sr/LC_MESSAGES/kdbg.mo
 share/locale/sv/LC_MESSAGES/kdbg.mo
 share/locale/tr/LC_MESSAGES/kdbg.mo
+share/config/kdbgrc
 @dirrm share/doc/HTML/ru/kdbg
 @dirrmtry share/doc/HTML/ru
 @dirrm share/doc/HTML/en/kdbg
@@ -131,6 +132,7 @@ share/locale/tr/LC_MESSAGES/kdbg.mo
 @dirrm share/apps/kdbg/icons/hicolor
 @dirrm share/apps/kdbg/icons
 @dirrm share/apps/kdbg
+@dirrm share/config
 @dirrmtry share/locale/cs/LC_MESSAGES
 @dirrmtry share/locale/cs
 @dirrmtry share/locale/nn/LC_MESSAGES
