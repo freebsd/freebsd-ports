@@ -2089,6 +2089,7 @@
     SUBDIR += websvn
     SUBDIR += wfut
     SUBDIR += wininfo
+    SUBDIR += winpdb
     SUBDIR += wizardkit
     SUBDIR += wxGlade
     SUBDIR += wxGlade-devel
