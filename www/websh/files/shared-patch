@@ -10,7 +10,7 @@ reduces the size of the module by a factor of 5.
  
  websh$(VERSION): tclAppInit.$(OBJEXT) $(web_OBJECTS)
 -	$(CC) @LDFLAGS@ tclAppInit.$(OBJEXT) $(web_OBJECTS) \
-+	$(CC) @LDFLAGS@ tclAppInit.$(OBJEXT) $(web_LIB_FILE)\
++	$(CC) @LDFLAGS@ tclAppInit.$(OBJEXT) $(web_LIB_FILE) \
  	$(TCL_LIB_SPEC) $(TCL_LIBS) $(TCL_LD_FLAGS) -o websh$(VERSION)
  
  mod_websh$(MODULE_LIB_SUFFIX): $(web_ap_OBJECTS)
