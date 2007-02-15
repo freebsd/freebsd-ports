@@ -9,7 +9,8 @@ PORTVERSION=	6.6
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot \
-		http://people.freebsd.org/~vs/ghcdist/${PORTVERSION}/:boot
+		${MASTER_SITE_LOCAL:S/$/:boot/}
+MASTER_SITE_SUBDIR=vs/ghcdist/${PORTVERSION}/:boot
 DISTFILES=	ghc-${PORTVERSION}-src${EXTRACT_SUFX}:source \
 		ghc-${PORTVERSION}-src-extralibs${EXTRACT_SUFX}:source
 
