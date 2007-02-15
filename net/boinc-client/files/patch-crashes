@@ -1,0 +1,12 @@
+--- clientgui/BOINCGUIApp.cpp.orig	Mon Jan 22 14:19:20 2007
++++ clientgui/BOINCGUIApp.cpp	Wed Feb 14 23:50:55 2007
+@@ -81,9 +81,7 @@
+     m_pSkinManager = NULL;
+     m_pFrame = NULL;
+     m_pDocument = NULL;
+-#if defined(__WXMSW__) || defined(__WXMAC__)
+     m_pTaskBarIcon = NULL;
+-#endif
+ #ifdef __WXMAC__
+     m_pMacSystemMenu = NULL;
+ #endif
