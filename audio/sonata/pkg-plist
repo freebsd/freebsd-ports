@@ -8,6 +8,10 @@ bin/sonata
 %%PYTHON_SITELIBDIR%%/sonata.pyc
 %%PYTHON_SITELIBDIR%%/sonata.pyo
 share/applications/sonata.desktop
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/TRANSLATORS
 share/locale/de/LC_MESSAGES/sonata.mo
 share/locale/fr/LC_MESSAGES/sonata.mo
 share/locale/pl/LC_MESSAGES/sonata.mo
@@ -19,10 +23,6 @@ share/pixmaps/sonata.png
 share/pixmaps/sonata_large.png
 share/pixmaps/sonatacd.png
 share/pixmaps/sonatacd_large.png
-%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/TRANSLATORS
 @dirrmtry share/applications
-@dirrmtry share/pixmaps
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/pixmaps
