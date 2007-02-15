@@ -6,6 +6,20 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070215:
+  AFFECTS: users of www/py-turbogears
+  AUTHOR: nivit@FreeBSD.org
+
+  TurboGears has been updated from version 0.8.9 to 1.0.1,
+  so there are significant changes. After upgrading the port,
+  with the usual portupgrade/portmanager command, it is highly
+  recommended to follow the instructions at this URL:
+
+     http://www.turbogears.com/download/upgrade.html
+
+  starting from section "Updating from 0.8 to 0.9" on, to make
+  your projects/code consistent with the new version.
+
 20070210:
   AFFECTS: users of x11/kdebase3
   AUTHOR: kde@freebsd.org
