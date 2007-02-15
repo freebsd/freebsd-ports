@@ -51,6 +51,7 @@
     SUBDIR += bmon
     SUBDIR += boclient
     SUBDIR += boinc-client
+    SUBDIR += boinc_curses
     SUBDIR += bounce
     SUBDIR += bpfstat
     SUBDIR += brutecopy

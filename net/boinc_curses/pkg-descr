@@ -1,0 +1,11 @@
+Console based boinc-client monitor and controller.
+
+Features
+- Colorful console application using ncurses
+- Single screen listing of results, transfers and recent messages
+- Updated real time
+- Control the client with single keypress
+- Using same communication protocol as boinc_gui
+- Works with all boinc projects
+
+WWW: http://www.oook.cz/bsd/boinc_curses/
