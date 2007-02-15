@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	6.66
+PORTVERSION=	6.75
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/ \
 		${MASTER_SITE_PERL_CPAN}
@@ -18,18 +18,18 @@ COMMENT=	Perl module for getting EXIF data from image files
 
 PERL_CONFIGURE=	yes
 
-MANTAGS=	AFCP AIFF APE APP12 ASF BMP BuildTagLookup Canon 	\
-		CanonCustom CanonRaw CanonVRD Casio DICOM DNG Exif FLAC \
-		Fixup Flash FlashPix FotoStation FujiFilm GIF GPS 	\
-		GeoTiff HtmlDump ICC_Profile ID3 IPTC JPEG JVC Jpeg2000 \
-		Kodak KyoceraRaw Leaf MIE MIFF MNG MPC MPEG MakerNotes 	\
-		Minolta MinoltaRaw Nikon NikonCapture Olympus PDF PICT 	\
-		PNG PPM Panasonic Pentax PhotoMechanic Photoshop 	\
-		PostScript PrintIM QuickTime RIFF Real Ricoh Sanyo 	\
-		Shift Shortcuts Sigma SigmaRaw Sony TagLookup TagNames 	\
-		Unknown Vorbis WriteCanonRaw WriteExif WriteIPTC 	\
-		WritePNG WritePhotoshop WritePostScript WriteXMP 	\
-		Writer XMP
+MANTAGS=	AFCP AIFF APE APP12 ASF BMP BuildTagLookup Canon	 \
+		CanonCustom CanonRaw CanonVRD Casio DICOM DNG Exif FLAC	 \
+		Fixup Flash FlashPix FotoStation FujiFilm GIF GPS	 \
+		GeoTiff HTML HtmlDump ICC_Profile ID3 IPTC JPEG JVC	 \
+		Jpeg2000 Kodak KyoceraRaw Leaf MIE MIFF MNG MPC MPEG	 \
+		MakerNotes Minolta MinoltaRaw Nikon NikonCapture Olympus \
+		PDF PICT PNG PPM Panasonic Pentax PhotoMechanic		 \
+		Photoshop PostScript PrintIM QuickTime RIFF Real Ricoh	 \
+		Sanyo Shift Shortcuts Sigma SigmaRaw Sony TagLookup	 \
+		TagNames Unknown Vorbis WriteCanonRaw WriteExif		 \
+		WriteIPTC WritePNG WritePhotoshop WritePostScript	 \
+		WriteXMP Writer XMP
 
 MAN3=		File::RandomAccess.3	\
 		Image::ExifTool.3 Image::ExifTool::MIEUnits.3 \
@@ -41,6 +41,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/html/*.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/html/*.css ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/TagNames
 	${INSTALL_DATA} ${WRKSRC}/html/TagNames/*.html ${DOCSDIR}/TagNames
 .endif
