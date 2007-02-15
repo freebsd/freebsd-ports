@@ -40,7 +40,9 @@ MAN1=		al.1 cert2spc.1 certmgr.1 chktrust.1 cilc.1 disco.1 dtd2xsd.1 \
 		soapsuds.1 sqlsharp.1 wsdl.1 xsd.1 mono-xmltool.1 sgen.1
 MAN5=		mono-config.5
 
-ONLY_FOR_ARCHS=	i386 amd64
+# Removed amd64 arch because builds are exhibiting semaphore problems on
+# pointyhat runs causing failure to build.
+ONLY_FOR_ARCHS=	i386 #amd64
 
 MONO_SHARED_DIR=${WRKDIR}
 
