@@ -27,6 +27,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/GIF.pm
 %%SITE_PERL%%/Image/ExifTool/GPS.pm
 %%SITE_PERL%%/Image/ExifTool/GeoTiff.pm
+%%SITE_PERL%%/Image/ExifTool/HTML.pm
 %%SITE_PERL%%/Image/ExifTool/HtmlDump.pm
 %%SITE_PERL%%/Image/ExifTool/ICC_Profile.pm
 %%SITE_PERL%%/Image/ExifTool/ID3.pm
@@ -86,6 +87,7 @@ bin/exiftool
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/ExifTool/.packlist
 %%PORTDOCS%%%%DOCSDIR%%/ExifTool.html
 %%PORTDOCS%%%%DOCSDIR%%/canon_raw.html
+%%PORTDOCS%%%%DOCSDIR%%/commentary.html
 %%PORTDOCS%%%%DOCSDIR%%/config.html
 %%PORTDOCS%%%%DOCSDIR%%/data_members.html
 %%PORTDOCS%%%%DOCSDIR%%/exiftool_pod.html
@@ -95,7 +97,9 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/htmldump.html
 %%PORTDOCS%%%%DOCSDIR%%/idiosyncracies.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/install.html
 %%PORTDOCS%%%%DOCSDIR%%/models.html
+%%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/verbose.html
 %%PORTDOCS%%%%DOCSDIR%%/writing.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/AFCP.html
@@ -121,6 +125,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/FujiFilm.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/GPS.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/GeoTiff.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/HTML.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/ICC_Profile.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/ID3.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/IPTC.html
