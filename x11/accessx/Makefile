@@ -7,6 +7,7 @@
 
 PORTNAME=	accessx
 PORTVERSION=	0.951
+PORTREVISION=	1
 CATEGORIES=	x11 accessibility
 MASTER_SITES=	http://www.disability.uiuc.edu/accessx/software/
 DISTNAME=	accessx${PORTVERSION:S/.//g}
