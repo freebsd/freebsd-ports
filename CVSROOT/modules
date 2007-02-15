@@ -898,6 +898,7 @@ bmp-flac	ports/audio/bmp-flac
 bmp-htmlplaylist	ports/audio/bmp-htmlplaylist
 bmp-mac		ports/audio/bmp-mac
 bmp-modplug	ports/audio/bmp-modplug
+bmp-musepack	ports/audio/bmp-musepack
 bmp-rootvis	ports/graphics/bmp-rootvis
 bmp-scrobbler	ports/audio/bmp-scrobbler
 bmp-songchange	ports/audio/bmp-songchange
