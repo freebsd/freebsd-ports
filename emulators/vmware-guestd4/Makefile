@@ -105,10 +105,10 @@ post-extract:
 
 post-patch:
 .if defined(WITH_VMWARE_VMMEMCTL)
-	${REINPLACE_CMD} -e 's|vmmemctl1.o||' ${WRKDIR}/vmmemctl-only/Makefile
+	LC_CTYPE=C ${REINPLACE_CMD} -e 's|vmmemctl1.o||' ${WRKDIR}/vmmemctl-only/Makefile
 	${ECHO_CMD} "OBJS+=vmmemctl1.o" >> ${WRKDIR}/vmmemctl-only/Makefile
 .endif
-	${REINPLACE_CMD} "`${PRINTF} 's|\0152\013\0350|\0152\\\n\0350|g'`" \
+	LC_CTYPE=C ${REINPLACE_CMD} "`${PRINTF} 's|\0152\013\0350|\0152\\\n\0350|g'`" \
 		${WRKSRC}/sbin/vmware-checkvm
 
 .if defined(VMWARE_X_PORTS)
