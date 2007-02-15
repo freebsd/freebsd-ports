@@ -7,6 +7,7 @@
 
 PORTNAME=	eiciel
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	sysutils security
 MASTER_SITES=	http://rofi.pinchito.com/eiciel/download/
 
@@ -19,6 +20,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack nautilus2
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
 MAN1=		eiciel.1
 
