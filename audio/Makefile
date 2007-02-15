@@ -58,6 +58,7 @@
     SUBDIR += bmp-htmlplaylist
     SUBDIR += bmp-mac
     SUBDIR += bmp-modplug
+    SUBDIR += bmp-musepack
     SUBDIR += bmp-scrobbler
     SUBDIR += bmp-songchange
     SUBDIR += bmp-wma
