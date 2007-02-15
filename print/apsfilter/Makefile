@@ -115,11 +115,7 @@ RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-${PAPERSIZE}
 .endif
 
 # needed for aps2file
-.if defined(WITH_BASH2)
-RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash2
-.else
 RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
-.endif
 
 # HP IJS driver is not automatically part of ghostscript port anymore
 RUN_DEPENDS+=	hpijs:${PORTSDIR}/print/hpijs
