@@ -37,7 +37,7 @@ MAKE_FLAGS=	JAVAC=${JAVAC} JAVAH=${JAVAH}
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	JAVA_HOME="${JAVA_HOME}"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/libjmp.la lib/libjmp.so lib/libjmp.so.0 \
 		share/locale/de/LC_MESSAGES/jmp.mo \
