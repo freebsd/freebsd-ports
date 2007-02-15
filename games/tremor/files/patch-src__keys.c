@@ -1,5 +1,5 @@
---- ./src/keys.c.orig	Fri Oct 29 19:15:24 2004
-+++ ./src/keys.c	Tue May 16 14:59:52 2006
+--- ./keys.c.orig	Fri Oct 29 19:15:24 2004
++++ ./keys.c	Tue May 16 14:59:52 2006
 @@ -674,7 +674,7 @@
  	FILE		*cmdhist;
  	cmdhistory_t	cmdhistory;

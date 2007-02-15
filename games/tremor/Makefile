@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	tremor
-PORTVERSION=	3.2.4
-PORTREVISION=	1
+PORTVERSION=	3.2.4.1
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake1/:src \
 		http://tremor.quakedev.com/:data
-DISTFILES=	Tremor-v${PORTVERSION}-bin-src.linux.tar.bz2:src \
-		tremor_3.2.4-bin.zip:data
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
+		${PORTNAME}_${PORTVERSION:S/.1//}-bin.zip:data
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	Tremor-v${PORTVERSION}-bin-src.linux.tar.bz2
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Enhaced Quake engine based on JoeQuake
@@ -24,22 +24,31 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 
 USE_BZIP2=	yes
-USE_GCC=	3.2+
+USE_GCC=	3.4+
 USE_GL=		yes
 USE_GMAKE=	yes
+ALL_TARGET=	release
 
-OPTIONS=	GOODIES "Extra graphics, DM maps and models" off \
+OPTIONS=	GLX "Build OpenGL X11 client" on \
+		GOODIES "Extra graphics, DM maps and models" off \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on \
 		SDL "Build SDL client" on \
-		TEXTURES "Collection of extra textures" off \
-		X86_ASM "Enable x86 assembly code when possible" on
-
-WRKSRC=		${WRKDIR}/Tremor_${PORTVERSION}-bin-src.linux
-ALL_TARGET=	release
+		TEXTURES "Collection of extra textures" off
 
 .include "${.CURDIR}/../quake-data/Makefile.include"
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_GLX) && defined(WITHOUT_SDL)
+IGNORE=		needs at least one executable (GLX and SDL)
+.endif
+
+.if !defined(WITHOUT_GLX)
+MAKE_ENV+=	BUILD_TREMOR=YES
+PLIST_SUB+=	GLX=""
+.else
+PLIST_SUB+=	GLX="@comment "
+.endif
 
 .if defined(WITH_GOODIES)
 DISTFILES+=	tremor_goodies.zip:data
@@ -48,17 +57,13 @@ PLIST_SUB+=	GOODIES=""
 PLIST_SUB+=	GOODIES="@comment "
 .endif
 
-.for f in OPTIMIZED_CFLAGS X86_ASM
-.   if !defined(WITHOUT_${f})
-MAKE_ENV+=	USE_${f}=YES
-.   else
-MAKE_ENV+=	USE_${f}=NO
-.   endif
-.endfor
+.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+MAKE_ENV+=	OPTIMIZE=YES
+.endif
 
 .if !defined(WITHOUT_SDL)
 USE_SDL=	sdl
-MAKE_ENV+=	BUILD_SDL=YES
+MAKE_ENV+=	BUILD_TREMOR_SDL=YES
 PLIST_SUB+=	SDL=""
 .else
 PLIST_SUB+=	SDL="@comment "
@@ -86,15 +91,13 @@ post-extract:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/release/${PORTNAME} ${PREFIX}/bin
+.if !defined(WITHOUT_GLX)
+	${INSTALL_PROGRAM} ${WRKSRC}/quake/${PORTNAME}-glx ${PREFIX}/bin
+.endif
 .if !defined(WITHOUT_SDL)
-	${INSTALL_PROGRAM} ${WRKSRC}/release/${PORTNAME}-sdl ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/quake/${PORTNAME}-sdl ${PREFIX}/bin
 .endif
 	${MKDIR} ${Q1DIR}/${PORTNAME}
 	${CP} -R ${WRKDIR}/base/* ${Q1DIR}/${PORTNAME}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/tremor.txt ${DOCSDIR}
-.endif
 
 .include <bsd.port.post.mk>

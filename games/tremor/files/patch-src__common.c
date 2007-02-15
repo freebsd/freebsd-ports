@@ -1,48 +1,61 @@
---- ./src/common.c.orig	Thu Nov 10 09:56:53 2005
-+++ ./src/common.c	Tue May 16 15:00:44 2006
-@@ -1769,14 +1769,18 @@
- */
- void COM_InitFilesystem (void)
+--- common.c.orig	Fri Jan 12 10:37:34 2007
++++ common.c	Thu Feb 15 00:51:54 2007
+@@ -1599,9 +1599,13 @@
  {
-+	char	*home;
-+	char	homepath[MAX_OSPATH];
+ 	searchpath_t    *search,*otherpaths=NULL;
+ 	pack_t          *pak;
+-	char      	*filename;        
++	char      	*filename, *p;
+ 	dirdata_t 	dirdata;
+ 
++	if ((p = strrchr(dir, '/')))
++		Q_strncpyz (com_gamedirname, ++p, sizeof(com_gamedirname));
++	else
++		Q_strncpyz (com_gamedirname, p, sizeof(com_gamedirname));
+ // update current gamedir
+ 	Q_strncpyz (com_gamedir, dir, sizeof(com_gamedir));
+ //
+@@ -1768,7 +1772,7 @@
+ {
  	int	i;
+ #if defined (HOMEDIR)
+-	char	*home, *tmp;
++	char	*home, homepath[MAX_OSPATH];
+ 	home = getenv("HOME");
+ #endif
  
-+	home = getenv("HOME");
-+
- // -basedir <path>
- // Overrides the system supplied base directory (under GAMENAME)
- 	if ((i = COM_CheckParm ("-basedir")) && i < com_argc-1)
- 		Q_strncpyz (com_basedir, com_argv[i+1], sizeof(com_basedir));
- 	else
--		Q_strncpyz (com_basedir, host_parms.basedir, sizeof(com_basedir));
-+		Q_strncpyz (com_basedir, DATADIR, sizeof(com_basedir));
- 
- 	for (i=0 ; i < strlen(com_basedir) ; i++)
- 		if (com_basedir[i] == '\\')
-@@ -1788,7 +1792,11 @@
- 
- 	// start up with GAMENAME by default (id1)
- 	COM_AddGameDirectory (va("%s/"GAMENAME, com_basedir));
+@@ -1797,7 +1801,11 @@
+ 	if (home != NULL)
+ 		COM_AddGameDirectory(va("%s/"HOMEDIR"/"GAMENAME, home));
+ #endif
 -	COM_AddGameDirectory (va("%s/base", com_basedir));	// JT021305 - use base as default GAMENAME
++	COM_AddGameDirectory (va("%s/tremor", com_basedir));
++#if defined (HOMEDIR)
 +	if (home != NULL)
-+		COM_AddGameDirectory(va("%s/.tremor/"GAMENAME, home));
-+	COM_AddGameDirectory (va("%s/tremor", com_basedir));	// JT021305 - use base as default GAMENAME
-+	if (home != NULL)
-+		COM_AddGameDirectory(va("%s/.tremor/tremor", home));
++		COM_AddGameDirectory(va("%s/"HOMEDIR"/tremor", home));
++#endif
  
  	if (COM_CheckParm("-rogue"))
  		COM_AddGameDirectory (va("%s/rogue", com_basedir));
-@@ -1807,4 +1815,12 @@
- // Adds basedir/gamedir as an override game
- 	if ((i = COM_CheckParm("-game")) && i < com_argc-1)
+@@ -1818,15 +1826,12 @@
          	COM_AddGameDirectory (va("%s/%s", com_basedir, com_argv[i+1]));
-+
+ 
+ #if defined (HOMEDIR)
+-	tmp = Sys_HomeDir();
+-	Sys_mkdir(tmp);
+-	COM_AddGameDirectory (tmp);
+-	chdir(tmp);
+-	if ((i = COM_CheckParm("-game")) && i < com_argc-1)
+-	{
+-		tmp = va("%s/%s", Sys_HomeDir(), com_argv[i+1]);
+-		Sys_mkdir(tmp);
+-		COM_AddGameDirectory (tmp);
 +	if (home != NULL) {
-+		Q_snprintfz(homepath, sizeof(homepath), "%s/.tremor/%s",
++		Q_snprintfz(homepath, sizeof(homepath), "%s/"HOMEDIR"/%s",
 +		    home, com_gamedirname);
 +		COM_CreatePath(homepath);
 +		Sys_mkdir(homepath);
 +		COM_AddGameDirectory(homepath);
-+	}
+ 	}
+ #endif
  }

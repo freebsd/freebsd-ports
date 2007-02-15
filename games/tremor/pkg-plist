@@ -1,6 +1,5 @@
-bin/tremor
+%%GLX%%bin/tremor-glx
 %%SDL%%bin/tremor-sdl
-%%PORTDOCS%%%%DOCSDIR%%/tremor.txt
 %%GOODIES%%%%Q1DIR%%/tremor/md3ammo.pak
 %%Q1DIR%%/tremor/autoexec.cfg
 %%Q1DIR%%/tremor/config.cfg
@@ -13,4 +12,3 @@ bin/tremor
 @dirrm %%Q1DIR%%/tremor/textures/charsets
 @dirrm %%Q1DIR%%/tremor/textures
 @dirrm %%Q1DIR%%/tremor
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
