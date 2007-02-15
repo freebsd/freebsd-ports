@@ -825,6 +825,7 @@
     SUBDIR += p5-App-Trace
     SUBDIR += p5-AppConfig
     SUBDIR += p5-AppConfig-Std
+    SUBDIR += p5-Array-Group
     SUBDIR += p5-Array-Iterator
     SUBDIR += p5-Array-Window
     SUBDIR += p5-AtExit
