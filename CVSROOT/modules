@@ -10662,6 +10662,7 @@ p5-Time-Duration	ports/devel/p5-Time-Duration
 p5-Time-Duration-Parse	ports/devel/p5-Time-Duration-Parse
 p5-Time-HiRes	ports/devel/p5-Time-HiRes
 p5-Time-Human	ports/textproc/p5-Time-Human
+p5-Time-Interval	ports/devel/p5-Time-Interval
 p5-Time-Local	ports/devel/p5-Time-Local
 p5-Time-Object	ports/devel/p5-Time-Object
 p5-Time-Period	ports/devel/p5-Time-Period
