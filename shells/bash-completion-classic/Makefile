@@ -20,16 +20,11 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message
 PLIST_FILES=	etc/bash_completion
 
-OPTIONS=	BASH2	"Use shells/bash2 instead of shells/bash"	off \
-		GSED	"Use GNU sed to enable additional completions"	off
+OPTIONS=	GSED	"Use GNU sed to enable additional completions"	off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_BASH2)
-RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash2
-.else
 RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
-.endif
 
 .if defined(WITH_GSED)
 RUN_DEPENDS+=	gsed:${PORTSDIR}/textproc/gsed
