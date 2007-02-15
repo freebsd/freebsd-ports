@@ -29,6 +29,9 @@ PATCHFILES=	bash205b-001 bash205b-002 bash205b-003 bash205b-004 \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU Bourne Again Shell
 
+DEPRECATED=	Old, unmaintained version, use shells/bash instead
+EXPIRATION_DATE=2007-05-15
+
 CONFLICTS=	bash-3*
 
 .include <bsd.port.pre.mk>
