@@ -1,0 +1,8 @@
+bin/rpdb2
+bin/winpdb
+%%PYTHON_SITELIBDIR%%/rpdb2.py
+%%PYTHON_SITELIBDIR%%/rpdb2.pyc
+%%PYTHON_SITELIBDIR%%/rpdb2.pyo
+%%PYTHON_SITELIBDIR%%/winpdb.py
+%%PYTHON_SITELIBDIR%%/winpdb.pyc
+%%PYTHON_SITELIBDIR%%/winpdb.pyo
