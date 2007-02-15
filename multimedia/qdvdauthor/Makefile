@@ -7,6 +7,7 @@
 
 PORTNAME=	qdvdauthor
 PORTVERSION=	0.1.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -86,7 +87,7 @@ USE_CDRTOOLS=	yes
 RUN_DEPENDS+=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
 .endif
 .if !defined(WITHOUT_LIBXINE)
-LIB_DEPENDS+=	xine.16:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=--with-xine-support
 .endif
 .if defined(WITH_MPLAYER)

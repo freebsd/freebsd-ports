@@ -8,7 +8,7 @@
 
 PORTNAME=	emotion
 PORTVERSION=	20060926
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
 
@@ -33,7 +33,7 @@ IGNORE=	is useless without playback library. Please run 'make config' and choose
 .endif
 
 .if !defined(WITHOUT_XINE)
-LIB_DEPENDS+=	xine.16:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=--enable-xine
 PLIST_SUB+=	XINE=""
 .else

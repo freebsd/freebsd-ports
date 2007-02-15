@@ -7,7 +7,7 @@
 
 PORTNAME=	epsilon
 PORTVERSION=	20060926
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
@@ -42,7 +42,7 @@ PLIST_SUB+=	EPEG="@comment "
 .endif
 
 .if defined(WITH_XINE)
-LIB_DEPENDS+=	xine.16:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=--enable-thumbnailer-xine
 PLIST_SUB+=	XINE=""
 .else

@@ -8,6 +8,7 @@
 
 PORTNAME=	muine
 PORTVERSION=	0.8.7
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://muine-player.org/releases/
 
@@ -44,7 +45,7 @@ CONFIGURE_ARGS+=	--disable-faad2
 
 .if defined (WITH_XINE)
 CONFIGURE_ARGS+=	--enable-xine=yes
-LIB_DEPENDS+=	xine.16:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine
 .else
 USE_GSTREAMER+=	gconf
 CONFIGURE_ARGS+=	--enable-gstreamer=0.10

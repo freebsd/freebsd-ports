@@ -7,7 +7,7 @@
 
 PORTNAME=	toxine
 PORTVERSION=	0.6.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	toxine
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	toxine
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Text user interface using the xine library
 
-LIB_DEPENDS=	xine.16:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
