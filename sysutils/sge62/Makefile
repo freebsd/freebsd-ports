@@ -7,6 +7,7 @@
 
 PORTNAME=	sge
 PORTVERSION=	${SGE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/122/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -39,18 +40,12 @@ NOT_FOR_ARCHS=	alpha
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	${SGE_ROOT}/lib/${SGE_ARCH}
-
-# We have to use fetch because the master site required cookies to
-# download the file.
-FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget
-DISABLE_SIZE=	yes
-FETCH_CMD=	wget -c
+USE_LDCONFIG=	${SGE_ROOT}/lib/${SGE_ARCH}
 
 SGE_BASE?=	sge
 SGE_ROOT=	${TARGETDIR}/${SGE_BASE}
 SGE_ARCH=	fbsd-${ARCH}
+SGE_BUILD_ARCH=	FREEBSD_${ARCH:U}
 SGE_VERSION=	6.0.10
 SGE_RELEASE=	6.0u10
 
@@ -117,6 +112,7 @@ ANT?=		${LOCALBASE}/bin/ant
 BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 PLIST_SUB+=	DRMAA=
 AIMK_ENV+=	JAVA_HOME=${JAVA_HOME}
+CATEGORIES+=	java
 .else
 AIMK_ARGS+=	-no-java -no-jni
 PLIST_SUB+=	DRMAA="@comment "
@@ -145,11 +141,16 @@ post-patch:
 	    -e "s|%%X11BASE%%|${X11BASE}|g" \
 	    ${WRKSRC}/aimk \
 	    ${WRKSRC}/dist/pvm/src/aimk
+	@test -d ${WRKSRC}/3rdparty/qtcsh/${SGE_BUILD_ARCH} || \
+	    (${CP} -r ${WRKSRC}/3rdparty/qtcsh/FREEBSD_I386 \
+		${WRKSRC}/3rdparty/qtcsh/${SGE_BUILD_ARCH} && \
+	     ${REINPLACE_CMD} -e 's|FREEBSD_I386|${SGE_BUILD_ARCH}|' \
+		${WRKSRC}/3rdparty/qtcsh/${SGE_BUILD_ARCH}/Makefile)
 	@${REINPLACE_CMD} -e 's|^CC = gcc|CC = ${CC}|' \
 	    -e 's|^CPP = gcc -E|CPP = ${CPP}|' \
 	    ${WRKSRC}/3rdparty/qmake/FREEBSD_*/Makefile \
 	    ${WRKSRC}/3rdparty/qmake/FREEBSD_*/glob/Makefile \
-	    ${WRKSRC}/3rdparty/qtcsh/FREEBSD_*/Makefile
+	    ${WRKSRC}/3rdparty/qtcsh/${SGE_BUILD_ARCH}/Makefile
 	@${RM} ${WRKSRC}/dist/util/arch_variables.orig
 	@${RM} ${WRKSRC}/dist/util/install_modules/inst_common.sh.orig
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
@@ -234,7 +235,8 @@ build-plist: build
 	    ${SORT} -r | \
 	    ${SED} -e 's|${WRKSRC}/../doc|%%PORTDOCS%%@dirrm %%DOCSDIR%%|' \
 	    >> ${PLIST}
-	@echo '@unexec rmdir %D/%%SGE_BASE%%/ 2>/dev/null || ( echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%SGE_BASE%% and its contents manually.")' >> ${PLIST}
+	@echo '@dirrmtry %%SGE_BASE%%' >> ${PLIST}
+	@echo '@unexec test -d %D/%%SGE_BASE%% && ( echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%SGE_BASE%% and its contents manually.")' >> ${PLIST}
 	@echo "# Do not edit!  Auto-generated file." > ${.CURDIR}/Makefile.man
 	@echo "# See build-plist target in Makefile." >> ${.CURDIR}/Makefile.man
 	@echo "#" >> ${.CURDIR}/Makefile.man

@@ -845,4 +845,5 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/devel/commd
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/devel
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@unexec rmdir %D/%%SGE_BASE%%/ 2>/dev/null || ( echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%SGE_BASE%% and its contents manually.")
+@dirrmtry %%SGE_BASE%%
+@unexec test -d %D/%%SGE_BASE%% && ( echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%SGE_BASE%% and its contents manually.")
