@@ -8,7 +8,9 @@
 PORTNAME=	amfext
 PORTVERSION=	0.8.7
 CATEGORIES=	www
-MASTER_SITES=	http://www.teslacore.it/projects/amfext/
+MASTER_SITES=	http://www.teslacore.it/projects/amfext/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	miwi
 PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	PECL
