@@ -7,6 +7,7 @@
 
 PORTNAME=	gxine
 PORTVERSION=	0.5.10
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xine
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	xine
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	An alternative GUI for the Xine media player
 
-LIB_DEPENDS=	xine.16:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15

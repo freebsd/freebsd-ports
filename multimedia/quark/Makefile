@@ -6,7 +6,7 @@
 
 PORTNAME=	quark
 PORTVERSION=	3.21
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://quark.sunsite.dk/ \
 		http://demian.dyndns.org/src/
@@ -14,7 +14,7 @@ MASTER_SITES=	http://quark.sunsite.dk/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An audio player, for geeks, by geeks
 
-LIB_DEPENDS=	xine.16:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gnomevfs2

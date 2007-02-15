@@ -7,6 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	plugin-
 CATEGORIES=     www multimedia
 MASTER_SITES=	SF
@@ -15,7 +16,7 @@ PKGNAMEPREFIX=	npapi-
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Embed Xine player into browser
 
-LIB_DEPENDS=	xine.16:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

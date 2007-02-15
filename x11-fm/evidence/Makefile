@@ -7,7 +7,7 @@
 
 PORTNAME=	evidence
 PORTVERSION=	0.9.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -98,7 +98,7 @@ PLIST_SUB+=	VORBIS:=""
 CONFIGURE_ARGS+=--disable-thumbnailer-xine
 PLIST_SUB+=	XINE:="@comment "
 .else
-LIB_DEPENDS+=	xine.16:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=--enable-thumbnailer-xine
 PLIST_SUB+=	XINE:=""
 .endif

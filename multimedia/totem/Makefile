@@ -7,7 +7,7 @@
 
 PORTNAME=	totem
 PORTVERSION=	2.16.5
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -72,7 +72,7 @@ USE_GSTREAMER+=	gnomevfs core gconf hal good mpeg2dec ugly
 WITHOUT_DVDNAV=	yes
 PLIST_SUB+=	GSTREAMER=""
 .else
-LIB_DEPENDS+=	xine.16:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine
 PLIST_SUB+=	GSTREAMER="@comment "
 .endif
 
