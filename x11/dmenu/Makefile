@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	dmenu
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	x11
-MASTER_SITES=	http://suckless.org/download/ \
+MASTER_SITES=	http://www.suckless.org/download/ \
 		http://schot.a-eskwadraat.nl/files/
 
 MAINTAINER=	schot@a-eskwadraat.nl
