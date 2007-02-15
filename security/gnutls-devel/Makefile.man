@@ -298,14 +298,19 @@ MAN3=	\
 	gnutls_x509_crl_get_crt_count.3 \
 	gnutls_x509_crl_get_crt_serial.3 \
 	gnutls_x509_crl_get_dn_oid.3 \
+	gnutls_x509_crt_get_extension_info.3 \
+	gnutls_x509_crt_get_extension_data.3 \
 	gnutls_x509_crl_get_issuer_dn.3 \
 	gnutls_x509_crl_get_issuer_dn_by_oid.3 \
 	gnutls_x509_crl_get_next_update.3 \
+	gnutls_x509_crt_get_signature.3 \
 	gnutls_x509_crl_get_signature_algorithm.3 \
+	gnutls_x509_crt_get_subject_alt_othername_oid.3 \
 	gnutls_x509_crl_get_this_update.3 \
 	gnutls_x509_crl_get_version.3 \
 	gnutls_x509_crl_import.3 \
 	gnutls_x509_crl_init.3 \
+	gnutls_x509_crt_print.3 \
 	gnutls_x509_crl_set_crt.3 \
 	gnutls_x509_crl_set_crt_serial.3 \
 	gnutls_x509_crl_set_next_update.3 \
