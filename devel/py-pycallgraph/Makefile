@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pycallgraph
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://pycallgraph.slowchop.com/files/download/ \
 		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
