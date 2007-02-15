@@ -7,7 +7,7 @@
 
 PORTNAME=	fusefs
 PORTVERSION=	0.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://fuse4bsd.creo.hu/downloads/ \
 		http://am-productions.biz/docs/
