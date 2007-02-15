@@ -12,7 +12,7 @@ CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	quakelee@cn.FreeBSD.org
 COMMENT=	Astronomical Calculation Library
 
 USE_AUTOTOOLS=	libtool:15
