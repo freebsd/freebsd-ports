@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -37,7 +37,7 @@ USE_ICONV=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME=	gnomehack gnometarget ltverhack
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_SDL=	sdl
@@ -51,10 +51,12 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fno-force-addr -I${LOCALBASE}/include -I${LOCA
 		EXTRA_X_LIBS="-lGL -lGLU -lXext -lX11 -lm"
 CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 --enable-ipv6 \
 		--mandir=${PREFIX}/man --with-external-libmad \
-		--with-external-libdts
+		--with-external-libdts --with-libflac --disable-v4l
 
 MAN1=	xine-config.1
 MAN5=	xine.5
+
+DOCSDIR=	${TARGETDIR}/share/doc/xine-lib
 
 .include <bsd.port.pre.mk>
 
@@ -79,7 +81,15 @@ USE_GNOME+=	esound
 PLIST_SUB+=	WITH_ESOUND=""
 .else
 PLIST_SUB+=	WITH_ESOUND="@comment "
-CONFIGURE_ARGS+=	--disable-esd --disable-esdtest
+CONFIGURE_ARGS+=	--without-esound
+.endif
+
+.if !defined(WITHOUT_JACK) && (exists(${LOCALBASE}/lib/libjack.so) || defined(WITH_JACK))
+LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
+PLIST_SUB+=	WITH_JACK=""
+.else
+PLIST_SUB+=	WITH_JACK="@comment "
+CONFIGURE_ARGS+=	--disable-jack
 .endif
 
 .if !defined(WITHOUT_GNOMEVFS2) && (${HAVE_GNOME:Mgnomevfs2} != "" || defined(WITH_GNOMEVFS2))
@@ -175,6 +185,11 @@ pre-everything::
 .else
 	@${ECHO_MSG} "===> WITH_ESOUND (esound support, enabled)"
 .endif
+.if !exists(${LOCALBASE}/lib/libjack.so) && !defined(WITH_JACK) || defined(WITHOUT_JACK)
+	@${ECHO_MSG} "===> WITH_JACK (JACK support)"
+.else
+	@${ECHO_MSG} "===> WITH_JACK (JACK support, enabled)"
+.endif
 .if !exists(${LOCALBASE}/lib/libpulse.so.0) && !defined(WITH_PULSEAUDIO) || defined(WITHOUT_PULSEAUDIO)
 	@${ECHO_MSG} "===> WITH_PULSEAUDIO (pulseaudio support)"
 .else
@@ -191,6 +206,13 @@ pre-everything::
 	@${ECHO_MSG} "===> WITH_XVMC (XvMC support, enabled)"
 .endif
 	@${ECHO_MSG} "===>"
+
+post-patch:
+# fix the shlib version by using the libtool patched by ltverhack
+	@${REINPLACE_CMD} -e 's|^LIBTOOL = .*|LIBTOOL = @LIBTOOL@|' \
+		${WRKSRC}/src/xine-utils/Makefile.in \
+		${WRKSRC}/src/xine-engine/Makefile.in \
+		${WRKSRC}/src/libw32dll/wine/Makefile.in
 
 pre-configure:
 	@${REINPLACE_CMD} -e \
