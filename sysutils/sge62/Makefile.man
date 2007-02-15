@@ -28,7 +28,6 @@ MLINKS+=drmaa_session.3 drmaa_init.3
 MLINKS+=drmaa_jobtemplate.3 drmaa_get_num_attr_values.3
 MLINKS+=drmaa_submit.3 drmaa_get_num_job_ids.3
 MLINKS+=drmaa_jobtemplate.3 drmaa_get_vector_attribute.3
-MLINKS+=drmaa_session.3 drmaa_init.3
 MLINKS+=drmaa_attributes.3 drmaa_get_vector_attribute_names.3
 MLINKS+=drmaa_jobcontrol.3 drmaa_job_ps.3
 MLINKS+=drmaa_attributes.3 drmaa_release_attr_names.3
