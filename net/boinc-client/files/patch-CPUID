@@ -1,0 +1,66 @@
+--- client/hostinfo_unix.C.orig	Tue Jan 23 18:24:42 2007
++++ client/hostinfo_unix.C	Wed Feb 14 23:59:49 2007
+@@ -308,6 +308,50 @@
+ 
+ #endif  // linux
+ 
++#ifdef __FreeBSD__
++#if defined(__i386__) || defined(__amd64__)
++#include <sys/types.h>
++#include <sys/cdefs.h>
++#include <machine/cpufunc.h>
++
++void use_cpuid(HOST_INFO& host) {
++	u_int p[4];
++	int hasMMX, hasSSE, hasSSE2, hasSSE3, has3DNow, has3DNowExt = 0;
++	char capabilities[256];
++
++	do_cpuid(0x0, p);
++
++	if (p[0] >= 0x1) {
++
++		do_cpuid(0x1, p);
++
++		hasMMX  = (p[3] & (1 << 23 )) >> 23; // 0x0800000
++		hasSSE  = (p[3] & (1 << 25 )) >> 25; // 0x2000000
++		hasSSE2 = (p[3] & (1 << 26 )) >> 26; // 0x4000000
++		hasSSE3 = (p[2] & (1 << 0 )) >> 0;
++	}
++
++	do_cpuid(0x80000000, p);
++	if (p[0]>=0x80000001) {
++		do_cpuid(0x80000001, p);
++		hasMMX  |= (p[3] & (1 << 23 )) >> 23; // 0x0800000
++		has3DNow    = (p[3] & (1 << 31 )) >> 31; //0x80000000
++		has3DNowExt = (p[3] & (1 << 30 )) >> 30;
++	}
++
++	capabilities[0] = '\0';
++	if (hasSSE) strncat(capabilities, "sse ", 4);
++	if (hasSSE2) strncat(capabilities, "sse2 ", 5);
++	if (hasSSE3) strncat(capabilities, "sse3 ", 5);
++	if (has3DNow) strncat(capabilities, "3dnow ", 6);
++	if (has3DNowExt) strncat(capabilities, "3dnowext ", 9);
++	if (hasMMX) strncat(capabilities, "mmx ", 4);
++	strip_whitespace(capabilities);
++	snprintf(host.p_model, sizeof(host.p_model), "%s [] [%s]", host.p_model, capabilities);
++}
++#endif
++#endif
++
+ // get all relevant host information
+ //
+ int HOST_INFO::get_host_info() {
+@@ -356,6 +400,12 @@
+     strncpy( p_model, "Alpha ", sizeof( p_model));
+     strncat( p_model, cpu_type_name, (sizeof( p_model)- strlen( p_model)- 1));
+ #endif
++#endif
++#endif
++
++#if defined(__FreeBSD__)
++#if defined(__i386__) || defined(__amd64__)
++    use_cpuid(*this);
+ #endif
+ #endif
+ 

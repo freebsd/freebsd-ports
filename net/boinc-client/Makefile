@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	boinc-client
-PORTVERSION=	5.4.9
-PORTREVISION=	1
+PORTVERSION=	5.8.11
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://www.oook.cz/bsd/distfiles/
 MASTER_SITE_SUBDIR=	pav
 
 MAINTAINER=	pav@FreeBSD.org
@@ -44,7 +44,7 @@ OPTIONS=	X11 "Build Boinc Manager GUI" on
 
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
-USE_WX=		2.6
+USE_WX=		2.6+
 WX_CONF_ARGS=	absolute
 CPPFLAGS+=		-I${X11BASE}/include
 .else
@@ -71,8 +71,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|gui_rpc_auth.cfg|${BOINC_HOME}/gui_rpc_auth.cfg|g' \
 		${WRKSRC}/client/file_names.h ${WRKSRC}/lib/boinc_cmd.C \
 		${WRKSRC}/clientgui/MainDocument.cpp
+	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' ${WRKSRC}/clientgui/stdwx.h
+
+# kill -O3 from clientgui build, it triggers some optimization bug and segfaults on runtime with -O3
+post-configure:
+	@${REINPLACE_CMD} -e 's|-O3 ||' ${WRKSRC}/clientgui/Makefile
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/version.h ${PREFIX}/include/BOINC
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
