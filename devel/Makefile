@@ -1525,6 +1525,7 @@
     SUBDIR += p5-Time-Duration
     SUBDIR += p5-Time-Duration-Parse
     SUBDIR += p5-Time-HiRes
+    SUBDIR += p5-Time-Interval
     SUBDIR += p5-Time-Local
     SUBDIR += p5-Time-Object
     SUBDIR += p5-Time-Period
