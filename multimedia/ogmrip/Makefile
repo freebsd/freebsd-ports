@@ -23,7 +23,8 @@ RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
 		lame:${PORTSDIR}/audio/lame
-LIB_DEPENDS=	dvdread:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	dvdread:${PORTSDIR}/multimedia/libdvdread \
+		x264:${PORTSDIR}/multimedia/x264
 
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
