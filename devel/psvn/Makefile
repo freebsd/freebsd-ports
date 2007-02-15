@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	psvn
-PORTVERSION=	22591
+PORTVERSION=	23396
 CATEGORIES=	devel elisp
 MASTER_SITES=	http://svn.collab.net/viewvc/*checkout*/svn/trunk/contrib/client-side/psvn/
 DISTNAME=	psvn.el\?pathrev=${PORTVERSION}
