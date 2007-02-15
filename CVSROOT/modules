@@ -925,6 +925,7 @@ boinc-client	ports/net/boinc-client
 boinc-einsteinathome	ports/astro/boinc-einsteinathome
 boinc-setiathome-enhanced	ports/astro/boinc-setiathome-enhanced
 boinc-simap	ports/biology/boinc-simap
+boinc_curses	ports/net/boinc_curses
 bomb		ports/games/bomb
 bomberclone	ports/games/bomberclone
 bomberinstinct	ports/games/bomberinstinct
