@@ -8,7 +8,7 @@
 
 PORTNAME=	nova
 PORTVERSION=	0.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +24,7 @@ LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
 		gnomecanvasmm-2.0.1:${PORTSDIR}/graphics/libgnomecanvasmm \
 		gnomeuimm-2.0.1:${PORTSDIR}/x11-toolkits/libgnomeuimm \
 		xml\\+\\+-1.0.1:${PORTSDIR}/textproc/libxml++ \
-		nova-0.12.0:${PORTSDIR}/astro/libnova
+		nova:${PORTSDIR}/astro/libnova
 RUN_DEPENDS=	${LOCALBASE}/share/nova/catalogs/sky2000.ncd:${PORTSDIR}/astro/sky2000
 
 USE_AUTOTOOLS=	libtool:15
