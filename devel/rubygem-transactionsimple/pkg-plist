@@ -1,25 +1,31 @@
 %%CACHE_DIR%%/transaction-simple-%%PORTVERSION%%%%EXTRACT_SUFX%%
-%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/Changelog
-%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/Install
+%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/History.txt
+%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/Install.txt
+%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/Licence.txt
+%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/Manifest.txt
 %%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/Rakefile
-%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/Readme
+%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/Readme.txt
 %%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/lib/transaction/simple.rb
 %%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/lib/transaction/simple/group.rb
 %%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/lib/transaction/simple/threadsafe.rb
 %%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/lib/transaction/simple/threadsafe/group.rb
-%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/tests/tc_transaction_simple.rb
-%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/tests/tc_transaction_simple_group.rb
-%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/tests/tc_transaction_simple_threadsafe.rb
-%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/tests/testall.rb
-%%SPEC_DIR%%//transaction-simple-%%PORTVERSION%%%%EXTRACT_SUFX%%spec
+%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/setup.rb
+%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/test/test_all.rb
+%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/test/test_broken_graph.rb
+%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/test/test_transaction_simple.rb
+%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/test/test_transaction_simple_group.rb
+%%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/test/test_transaction_simple_threadsafe.rb
+%%SPEC_DIR%%/transaction-simple-%%PORTVERSION%%%%EXTRACT_SUFX%%spec
 %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/created.rid
 %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/rdoc-style.css
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/files/History_txt.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/files/Install_txt.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/files/Licence_txt.html
+%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/files/Readme_txt.html
 %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/files/lib/transaction/simple_rb.html
 %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/files/lib/transaction/simple/group_rb.html
 %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/files/lib/transaction/simple/threadsafe_rb.html
 %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/files/lib/transaction/simple/threadsafe/group_rb.html
-%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/files/Readme.html
-%%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/files/Changelog.html
 %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple.src/M000001.html
 %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple.src/M000002.html
 %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/classes/Transaction/Simple.src/M000003.html
@@ -56,11 +62,11 @@
 %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/fr_class_index.html
 %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/fr_method_index.html
 %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/index.html
+@dirrm %%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/test
 @dirrm %%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/lib/transaction/simple/threadsafe
 @dirrm %%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/lib/transaction/simple
 @dirrm %%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/lib/transaction
 @dirrm %%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/lib
-@dirrm %%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%/tests
 @dirrm %%GEMS_DIR%%/transaction-simple-%%PORTVERSION%%
 @dirrm %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/files/lib/transaction/simple/threadsafe
 @dirrm %%DOC_DIR%%/transaction-simple-%%PORTVERSION%%/rdoc/files/lib/transaction/simple
