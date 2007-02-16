@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pacpl
-PORTVERSION=	3.2.5
-PORTREVISION=	1
+PORTVERSION=	3.3.0
 CATEGORIES=	audio
 MASTER_SITES=	SFE
 
@@ -45,7 +44,9 @@ ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 PACPL_LNG_FILES=	help long_help rip_help tag_help video_help
 PACPL_LNGS=	FR PT
-AMAROK_SCR=	README transcoding_pacx.pl
+PACPL_PATHS=	lame oggenc oggdec flac mac shorten faac faad mplayer mppenc mppdec wavpack wvunpack \
+		ofr ofs ttaenc lpac sox ffmpeg la:laudio bonk cdparanoia kdialog
+AMAROK_SCR=	transcoding_pacx.pl
 AMAROK_SCR_DIR=	share/apps/amarok/scripts/transcoding_pacx
 KONQ_MIME=	ape bonk kxs la lpac ofr ofs shn tta wavpack
 KONQ_SVCM=	${PORTNAME}
@@ -63,12 +64,16 @@ MAN1=		pacpl.1
 
 post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/man/pacpl.1.gz
-	@cd ${WRKSRC}/kde/amarok && ${TAR} xf pacx.amarokscript.tar.gz
-	@cd ${WRKSRC}/kde/amarok/pacx.amarokscript && ${MV} pacx.pl transcoding_pacx.pl
+	@cd ${WRKSRC}/kde/amarok/pacx && ${MV} pacx transcoding_pacx.pl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#/etc#${PREFIX}/etc#' ${WRKSRC}/pacpl
-	@${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#' ${WRKSRC}/pacpl.conf
+	@${REINPLACE_CMD} -e 's|/dev/cdrom|/dev/acd0|;/NICE/!s|/usr/bin|${LOCALBASE}/bin|'\
+		${WRKSRC}/pacpl.conf
+.for _bin in ${PACPL_PATHS}
+	@${REINPLACE_CMD} -e '/^${_bin:C/:.*//:U} .*=/s|=.*|=${LOCALBASE}/bin/${_bin:C/.*://}|'\
+		${WRKSRC}/pacpl.conf
+.endfor
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/pacpl ${PREFIX}/bin/
@@ -80,7 +85,7 @@ do-install:
 	@${INSTALL} -d ${PREFIX}/${AMAROK_SCR_DIR}/
 	@${INSTALL} -d ${PREFIX}/${KONQ_MIME_DIR}/
 	@${INSTALL} -d ${PREFIX}/${KONQ_SVCM_DIR}/
-	@${INSTALL_DATA} ${AMAROK_SCR:S|^|${WRKSRC}/kde/amarok/pacx.amarokscript/|} \
+	@${INSTALL_DATA} ${AMAROK_SCR:S|^|${WRKSRC}/kde/amarok/pacx/|} \
 		${PREFIX}/${AMAROK_SCR_DIR}/
 	@${INSTALL_DATA} ${KONQ_MIME:S|^|${WRKSRC}/kde/konqueror/mimes/x-|:S|$|.desktop|} \
 		${PREFIX}/${KONQ_MIME_DIR}/
