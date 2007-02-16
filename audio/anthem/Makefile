@@ -11,8 +11,11 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=lofi
 
-MAINTAINER=	conrads@cox.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A KDE midi sequencer
+
+DEPRECATED=	this software is not developed any more
+EXPIRATION_DATE=	2007-03-16
 
 LIB_DEPENDS=	tse3:${PORTSDIR}/audio/tse3
 
