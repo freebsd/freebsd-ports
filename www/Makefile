@@ -932,6 +932,7 @@
     SUBDIR += punbb
     SUBDIR += pwebstats
     SUBDIR += py-HTMLgen
+    SUBDIR += py-Lightbox
     SUBDIR += py-albatross
     SUBDIR += py-beautifulsoup
     SUBDIR += py-cherrypy

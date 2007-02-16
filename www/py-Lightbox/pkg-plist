@@ -1,0 +1,36 @@
+@comment $FreeBSD$
+@unexec %%EASY_INSTALL_CMD%% -q -N -m -S %D/%%PYTHON_SITELIBDIR%% %%PORTNAME%%==%%PORTVERSION%%
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/EGG-INFO/paster_plugins.txt
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/EGG-INFO/sqlobject.txt
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/lightbox/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/lightbox/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/lightbox/release.py
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/lightbox/release.pyc
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/lightbox/static/css/lightbox.css
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/lightbox/static/images/blank.gif
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/lightbox/static/images/close.gif
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/lightbox/static/images/image-1.jpg
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/lightbox/static/images/loading.gif
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/lightbox/static/images/next.gif
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/lightbox/static/images/prev.gif
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/lightbox/static/images/thumb-1.jpg
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/lightbox/static/javascript/lightbox.js
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/lightbox/templates/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/lightbox/templates/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/lightbox/widgets.py
+%%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/lightbox/widgets.pyc
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/lightbox/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/lightbox/static/javascript
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/lightbox/static/images
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/lightbox/static/css
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/lightbox/static
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/lightbox
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYLIGHTBOX_EGG%%
+@exec %%EASY_INSTALL_CMD%% -N -S %D/%%PYTHON_SITELIBDIR%% %%PORTNAME%%==%%PORTVERSION%%
