@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bigtop
-PORTVERSION=	0.23
+PORTVERSION=	0.25
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Bigtop
@@ -45,6 +45,7 @@ MAN3=		Bigtop.3 Bigtop::Backend::CGI.3 \
 		Bigtop::Deparser.3 Bigtop::Docs::About.3 \
 		Bigtop::Docs::Cookbook.3 Bigtop::Docs::Keywords.3 \
 		Bigtop::Docs::Modules.3 Bigtop::Docs::QuickRef.3 \
+		Bigtop::Docs::QuickStart.3 \
 		Bigtop::Docs::Syntax.3 Bigtop::Docs::TOC.3 \
 		Bigtop::Docs::TentRef.3 Bigtop::Docs::TentTut.3 \
 		Bigtop::Docs::Tutorial.3 Bigtop::Docs::Vim.3 \

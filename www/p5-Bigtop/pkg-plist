@@ -24,6 +24,7 @@
 %%SITE_PERL%%/Bigtop/Docs/Keywords.pod
 %%SITE_PERL%%/Bigtop/Docs/Modules.pod
 %%SITE_PERL%%/Bigtop/Docs/QuickRef.pod
+%%SITE_PERL%%/Bigtop/Docs/QuickStart.pod
 %%SITE_PERL%%/Bigtop/Docs/Syntax.pod
 %%SITE_PERL%%/Bigtop/Docs/TOC.pod
 %%SITE_PERL%%/Bigtop/Docs/TentRef.pod
