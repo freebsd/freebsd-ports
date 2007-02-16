@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	0.88.7
-PORTREVISION=	1
+PORTVERSION=	0.90
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -18,12 +17,10 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		arj:${PORTSDIR}/archivers/arj \
 		unzoo:${PORTSDIR}/archivers/unzoo \
-		arc:${PORTSDIR}/archivers/arc \
-		unzip:${PORTSDIR}/archivers/unzip
+		arc:${PORTSDIR}/archivers/arc
 
 OPTIONS=	MILTER "Compile the milter interface" Off \
 		CURL "Support URL downloading" Off \
-		LIBUNRAR "Support for external Unrar library" Off \
 		STDERR "Print logs to stderr instead of stdout" Off
 
 USE_AUTOTOOLS=	libtool:15
@@ -31,7 +28,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 
-PORTDOCS=	NEWS ChangeLog html
+PORTDOCS=	*
 
 DBDIR=		/var/db/clamav
 LOGDIR=		/var/log/clamav
@@ -55,14 +52,21 @@ LDFLAGS+=	-L${LOCALBASE}/lib \
 
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
-MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1
-MAN5=		clamd.conf.5 freshclam.conf.5
-MAN8=		clamd.8 clamav-milter.8
+MAN1=		clamconf.1 \
+		clamscan.1 \
+		freshclam.1 \
+		sigtool.1 \
+		clamdscan.1
+MAN5=		clamd.conf.5 \
+		freshclam.conf.5
+MAN8=		clamd.8 \
+		clamav-milter.8
 
 CONFLICTS=	clamav-devel-[0-9]*
 
 CLAMAVUSER?=	clamav
 CLAMAVGROUP?=	clamav
+
 CLAMAV_CLAMD_SOCKET?=	${RUNDIR}/clamd
 CLAMAV_MILTER_SOCKET?=	${RUNDIR}/clmilter.sock
 
@@ -83,10 +87,10 @@ SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?(User) .*$$|\1 ${CLAMAVUSER}|' \
 		-e 's|^\#?(AllowSupplementaryGroups)$$|\1|' \
 		-e 's|^\#?(ScanMail)$$|\1|' \
-		-e 's|^\#?(NotifyClamd)$$|\1|' \
 		-e 's|^\#?(DatabaseDirectory) .*$$|\1 ${DBDIR}|' \
 		-e 's|^\#?(DatabaseOwner) .*$$|\1 ${CLAMAVUSER}|' \
-		-e 's|^\#?(FixStaleSocket)$$|\1|'
+		-e 's|^\#?(FixStaleSocket)$$|\1|' \
+		-e 's|^\#?(NotifyClamd) .*$$|\1 ${PREFIX}/etc/clamd.conf|'
 
 PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 		CLAMAVGROUP=${CLAMAVGROUP}
@@ -122,16 +126,6 @@ CONFIGURE_ARGS+=	--with-libcurl
 CONFIGURE_ARGS+=	--without-libcurl
 .endif
 
-.if defined(WITH_LIBUNRAR)
-CFLAGS+=		-DUNRAR3
-LDFLAGS+=		-lunrar
-LIB_DEPENDS+=		unrar.3:${PORTSDIR}/archivers/libunrar
-EXTRA_PATCHES=		${FILESDIR}/extra-patch-libunrar
-.else
-RUN_DEPENDS+=		unrar:${PORTSDIR}/archivers/unrar
-EXTRA_PATCHES=		${FILESDIR}/extra-patch-libclamav__unrarlib.h
-.endif
-
 .if defined(WITH_STDERR)
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-shared_output.c
 .endif
@@ -141,15 +135,6 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's,unarj,arj,g' \
 		${WRKSRC}/docs/man/clamscan.1
-
-pre-build:
-	@if ${LDCONFIG} -r | ${GREP} -qw -e -lclamav; then \
-		${ECHO_MSG} "===>  *** WARNING ***"; \
-		${ECHO_MSG} "      Installed version of libclamav found."; \
-		${ECHO_MSG} "      This might cause build problems."; \
-	fi
-
-post-build:
 	@${REINPLACE_CMD} ${SED_CONF} ${BUILD_WRKSRC}/etc/clamd.conf
 	@${REINPLACE_CMD} ${SED_CONF} ${BUILD_WRKSRC}/etc/freshclam.conf
 
@@ -158,20 +143,15 @@ pre-install:
 		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@${CHOWN} -R ${CLAMAVUSER}:${CLAMAVGROUP} ${DESTDIR}${DBDIR}
 .for c in clamd freshclam
 	@[ -f ${TARGETDIR}/etc/${c}.conf ] || \
 		${CP} ${TARGETDIR}/etc/${c}.conf.default ${TARGETDIR}/etc/${c}.conf
 .endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${INSTALL_WRKSRC}/NEWS ${INSTALL_WRKSRC}/ChangeLog \
-		${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html
-	@${INSTALL_DATA} ${INSTALL_WRKSRC}/docs/html/*.* \
-		${DOCSDIR}/html
+	@${INSTALL_DATA} ${INSTALL_WRKSRC}/NEWS ${INSTALL_WRKSRC}/ChangeLog ${DOCSDIR}
+	@${INSTALL_DATA} ${INSTALL_WRKSRC}/docs/html/* ${DOCSDIR}/html
 .endif
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>

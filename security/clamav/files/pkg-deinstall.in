@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/security/clamav/files/pkg-deinstall.in,v 1.1 2005-05-13 08:16:40 jylefort Exp $
+# $FreeBSD: /tmp/pcvs/ports/security/clamav/files/pkg-deinstall.in,v 1.2 2007-02-16 00:19:32 garga Exp $
 
 if [ "$2" != "POST-DEINSTALL" ]; then
 	exit 0
@@ -7,7 +7,20 @@ fi
 
 CLAMAVUSER=%%CLAMAVUSER%%
 
+echo
+echo "===================================================="
+echo
+echo "If you want remove clamav permanently from you system"
+echo "execute following commands:"
+echo
+echo " # rm -rf %%LOGDIR%%"
+echo " # rm -rf %%RUNDIR%%"
+echo " # rm -rf %%DBDIR%%"
 if pw usershow "${CLAMAVUSER}" 2>/dev/null 1>&2; then
-	echo "To delete ${CLAMAVUSER} user permanently, use 'pw userdel \"${CLAMAVUSER}\"'"
+	echo " # pw userdel ${CLAMAVUSER}"
 fi
+echo
+echo "===================================================="
+echo
+
 exit 0
