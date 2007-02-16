@@ -1731,6 +1731,7 @@
     SUBDIR += pushmi
     SUBDIR += pwlib
     SUBDIR += py-Breve
+    SUBDIR += py-Jinja
     SUBDIR += py-anonfunc
     SUBDIR += py-argparse
     SUBDIR += py-asn1
