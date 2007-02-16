@@ -1,8 +1,6 @@
---- Human.pm.orig	Thu May 30 14:01:27 2002
-+++ Human.pm	Tue Jun 29 11:52:35 2004
-@@ -1,12 +1,15 @@
-+#!/usr/bin/perl -w
-+
+--- Human.pm.orig	Sun Feb 11 22:58:56 2007
++++ Human.pm	Sun Feb 11 23:00:27 2007
+@@ -1,12 +1,13 @@
  package Time::Human;
  
 -require 5.005_62;
@@ -19,7 +17,7 @@
  
  # Items to export into callers namespace by default. Note: do not export
  # names by default without a very good reason. Use EXPORT_OK instead.
-@@ -15,19 +18,19 @@
+@@ -15,19 +16,19 @@
  # This allows declaration	use Time::Human ':all';
  # If you do not need this, moving things directly into @EXPORT or @EXPORT_OK
  # will save memory.
@@ -36,15 +34,15 @@
      humanize
  	
  );
--our $VERSION = '1.02';
-+$VERSION = '1.02';
+-our $VERSION = '1.03';
++$VERSION = '1.03';
  
 -our %templates = (
 +%templates = (
  
      English => {
          numbers  => [ qw(one two three four five six seven eight nine ten eleven twelve) ],
-@@ -43,9 +46,9 @@
+@@ -43,9 +44,9 @@
      }
  );
  
