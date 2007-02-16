@@ -2027,6 +2027,7 @@
     SUBDIR += subversion-perl
     SUBDIR += subversion-python
     SUBDIR += subversion-ruby
+    SUBDIR += subversive
     SUBDIR += sunterlib
     SUBDIR += svk
     SUBDIR += svndelta
