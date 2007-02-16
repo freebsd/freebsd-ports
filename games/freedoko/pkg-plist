@@ -26,101 +26,211 @@ bin/freedoko
 %%PORTDOCS%%%%DOCSDIR%%/en/shortrules.tex
 %%PORTDOCS%%%%DOCSDIR%%/hpux.required_libs.txt
 %%DATADIR%%/backgrounds/table.png
-%%DATADIR%%/cardsets/Altenburg/License
-%%DATADIR%%/cardsets/Altenburg/french/backs/penguin.png
-%%DATADIR%%/cardsets/Altenburg/french/backs/xaos.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/club/ace.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/club/jack.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/club/king.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/club/nine.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/club/queen.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/club/ten.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/diamond/ace.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/diamond/jack.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/diamond/king.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/diamond/nine.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/diamond/queen.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/diamond/ten.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/heart/ace.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/heart/jack.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/heart/king.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/heart/nine.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/heart/queen.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/heart/ten.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/spade/ace.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/spade/jack.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/spade/king.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/spade/nine.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/spade/queen.png
-%%DATADIR%%/cardsets/Altenburg/french/cards/spade/ten.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/contra.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/dollen.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/doppelkopf.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/fox_highest_trump.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/genscher.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/hyperswines.club.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/hyperswines.diamond.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/hyperswines.heart.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/hyperswines.king.club.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/hyperswines.king.diamond.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/hyperswines.king.heart.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/hyperswines.king.spade.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/hyperswines.spade.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/marriage.club.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/marriage.color.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/marriage.foreign.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/marriage.heart.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/marriage.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/marriage.spade.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/marriage.trump.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/no_0.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/no_0_reply.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/no_120.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/no_120_reply.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/no_30.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/no_30_reply.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/no_60.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/no_60_reply.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/no_90.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/no_90_reply.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/poverty.0.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/poverty.1.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/poverty.2.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/poverty.3.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/poverty.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/re.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/solo.club.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/solo.diamond.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/solo.heart.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/solo.jack.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/solo.king-jack.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/solo.king-queen.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/solo.king.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/solo.koehler.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/solo.meatless.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/solo.queen-jack.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/solo.queen.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/solo.spade.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/swines-hyperswines.club.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/swines-hyperswines.diamond.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/swines-hyperswines.heart.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/swines-hyperswines.king.club.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/swines-hyperswines.king.diamond.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/swines-hyperswines.king.heart.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/swines-hyperswines.king.spade.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/swines-hyperswines.spade.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/swines.club.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/swines.diamond.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/swines.heart.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/swines.spade.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/thrown_kings.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/thrown_nines.png
-%%DATADIR%%/cardsets/Altenburg/french/icons/thrown_nines_and_kings.png
+%%DATADIR%%/cardsets/xskat/COPYRIGHT
+%%DATADIR%%/cardsets/xskat/french/COPYRIGHT
+%%DATADIR%%/cardsets/xskat/french/backs/christmas/candle.png
+%%DATADIR%%/cardsets/xskat/french/backs/christmas/christmasdog.png
+%%DATADIR%%/cardsets/xskat/french/backs/christmas/tree1.png
+%%DATADIR%%/cardsets/xskat/french/backs/christmas/tree2.png
+%%DATADIR%%/cardsets/xskat/french/backs/christmas/tree3.png
+%%DATADIR%%/cardsets/xskat/french/backs/penguin.png
+%%DATADIR%%/cardsets/xskat/french/backs/xaos.png
+%%DATADIR%%/cardsets/xskat/french/backs/xskat.png
+%%DATADIR%%/cardsets/xskat/french/cards/club/ace.png
+%%DATADIR%%/cardsets/xskat/french/cards/club/jack.png
+%%DATADIR%%/cardsets/xskat/french/cards/club/king.png
+%%DATADIR%%/cardsets/xskat/french/cards/club/nine.png
+%%DATADIR%%/cardsets/xskat/french/cards/club/queen.png
+%%DATADIR%%/cardsets/xskat/french/cards/club/ten.png
+%%DATADIR%%/cardsets/xskat/french/cards/diamond/ace.png
+%%DATADIR%%/cardsets/xskat/french/cards/diamond/jack.png
+%%DATADIR%%/cardsets/xskat/french/cards/diamond/king.png
+%%DATADIR%%/cardsets/xskat/french/cards/diamond/nine.png
+%%DATADIR%%/cardsets/xskat/french/cards/diamond/queen.png
+%%DATADIR%%/cardsets/xskat/french/cards/diamond/ten.png
+%%DATADIR%%/cardsets/xskat/french/cards/heart/ace.png
+%%DATADIR%%/cardsets/xskat/french/cards/heart/jack.png
+%%DATADIR%%/cardsets/xskat/french/cards/heart/king.png
+%%DATADIR%%/cardsets/xskat/french/cards/heart/nine.png
+%%DATADIR%%/cardsets/xskat/french/cards/heart/queen.png
+%%DATADIR%%/cardsets/xskat/french/cards/heart/ten.png
+%%DATADIR%%/cardsets/xskat/french/cards/spade/ace.png
+%%DATADIR%%/cardsets/xskat/french/cards/spade/jack.png
+%%DATADIR%%/cardsets/xskat/french/cards/spade/king.png
+%%DATADIR%%/cardsets/xskat/french/cards/spade/nine.png
+%%DATADIR%%/cardsets/xskat/french/cards/spade/queen.png
+%%DATADIR%%/cardsets/xskat/french/cards/spade/ten.png
+%%DATADIR%%/cardsets/xskat/french/icons/contra.png
+%%DATADIR%%/cardsets/xskat/french/icons/dollen.png
+%%DATADIR%%/cardsets/xskat/french/icons/doppelkopf.png
+%%DATADIR%%/cardsets/xskat/french/icons/five_nines.png
+%%DATADIR%%/cardsets/xskat/french/icons/fox_highest_trump.png
+%%DATADIR%%/cardsets/xskat/french/icons/genscher.png
+%%DATADIR%%/cardsets/xskat/french/icons/hyperswines.club.png
+%%DATADIR%%/cardsets/xskat/french/icons/hyperswines.diamond.png
+%%DATADIR%%/cardsets/xskat/french/icons/hyperswines.heart.png
+%%DATADIR%%/cardsets/xskat/french/icons/hyperswines.king.club.png
+%%DATADIR%%/cardsets/xskat/french/icons/hyperswines.king.diamond.png
+%%DATADIR%%/cardsets/xskat/french/icons/hyperswines.king.heart.png
+%%DATADIR%%/cardsets/xskat/french/icons/hyperswines.king.spade.png
+%%DATADIR%%/cardsets/xskat/french/icons/hyperswines.spade.png
+%%DATADIR%%/cardsets/xskat/french/icons/marriage.club.png
+%%DATADIR%%/cardsets/xskat/french/icons/marriage.color.png
+%%DATADIR%%/cardsets/xskat/french/icons/marriage.foreign.png
+%%DATADIR%%/cardsets/xskat/french/icons/marriage.heart.png
+%%DATADIR%%/cardsets/xskat/french/icons/marriage.png
+%%DATADIR%%/cardsets/xskat/french/icons/marriage.spade.png
+%%DATADIR%%/cardsets/xskat/french/icons/marriage.trump.png
+%%DATADIR%%/cardsets/xskat/french/icons/no_0.png
+%%DATADIR%%/cardsets/xskat/french/icons/no_0_reply.png
+%%DATADIR%%/cardsets/xskat/french/icons/no_120.png
+%%DATADIR%%/cardsets/xskat/french/icons/no_120_reply.png
+%%DATADIR%%/cardsets/xskat/french/icons/no_30.png
+%%DATADIR%%/cardsets/xskat/french/icons/no_30_reply.png
+%%DATADIR%%/cardsets/xskat/french/icons/no_60.png
+%%DATADIR%%/cardsets/xskat/french/icons/no_60_reply.png
+%%DATADIR%%/cardsets/xskat/french/icons/no_90.png
+%%DATADIR%%/cardsets/xskat/french/icons/no_90_reply.png
+%%DATADIR%%/cardsets/xskat/french/icons/poverty.0.png
+%%DATADIR%%/cardsets/xskat/french/icons/poverty.1.png
+%%DATADIR%%/cardsets/xskat/french/icons/poverty.2.png
+%%DATADIR%%/cardsets/xskat/french/icons/poverty.3.png
+%%DATADIR%%/cardsets/xskat/french/icons/poverty.png
+%%DATADIR%%/cardsets/xskat/french/icons/re.png
+%%DATADIR%%/cardsets/xskat/french/icons/six_kings.png
+%%DATADIR%%/cardsets/xskat/french/icons/solo.club.png
+%%DATADIR%%/cardsets/xskat/french/icons/solo.diamond.png
+%%DATADIR%%/cardsets/xskat/french/icons/solo.heart.png
+%%DATADIR%%/cardsets/xskat/french/icons/solo.jack.png
+%%DATADIR%%/cardsets/xskat/french/icons/solo.king-jack.png
+%%DATADIR%%/cardsets/xskat/french/icons/solo.king-queen.png
+%%DATADIR%%/cardsets/xskat/french/icons/solo.king.png
+%%DATADIR%%/cardsets/xskat/french/icons/solo.koehler.png
+%%DATADIR%%/cardsets/xskat/french/icons/solo.meatless.png
+%%DATADIR%%/cardsets/xskat/french/icons/solo.queen-jack.png
+%%DATADIR%%/cardsets/xskat/french/icons/solo.queen.png
+%%DATADIR%%/cardsets/xskat/french/icons/solo.spade.png
+%%DATADIR%%/cardsets/xskat/french/icons/swines-hyperswines.club.png
+%%DATADIR%%/cardsets/xskat/french/icons/swines-hyperswines.diamond.png
+%%DATADIR%%/cardsets/xskat/french/icons/swines-hyperswines.heart.png
+%%DATADIR%%/cardsets/xskat/french/icons/swines-hyperswines.king.club.png
+%%DATADIR%%/cardsets/xskat/french/icons/swines-hyperswines.king.diamond.png
+%%DATADIR%%/cardsets/xskat/french/icons/swines-hyperswines.king.heart.png
+%%DATADIR%%/cardsets/xskat/french/icons/swines-hyperswines.king.spade.png
+%%DATADIR%%/cardsets/xskat/french/icons/swines-hyperswines.spade.png
+%%DATADIR%%/cardsets/xskat/french/icons/swines.club.png
+%%DATADIR%%/cardsets/xskat/french/icons/swines.diamond.png
+%%DATADIR%%/cardsets/xskat/french/icons/swines.heart.png
+%%DATADIR%%/cardsets/xskat/french/icons/swines.spade.png
+%%DATADIR%%/cardsets/xskat/french/icons/thrown_kings.png
+%%DATADIR%%/cardsets/xskat/french/icons/thrown_nines.png
+%%DATADIR%%/cardsets/xskat/french/icons/thrown_nines_and_kings.png
+%%DATADIR%%/cardsets/xskat/german/COPYRIGHT
+%%DATADIR%%/cardsets/xskat/german/backs/christmas/candle.png
+%%DATADIR%%/cardsets/xskat/german/backs/christmas/christmasdog.png
+%%DATADIR%%/cardsets/xskat/german/backs/christmas/tree1.png
+%%DATADIR%%/cardsets/xskat/german/backs/christmas/tree2.png
+%%DATADIR%%/cardsets/xskat/german/backs/christmas/tree3.png
+%%DATADIR%%/cardsets/xskat/german/backs/penguin.png
+%%DATADIR%%/cardsets/xskat/german/backs/xaos.png
+%%DATADIR%%/cardsets/xskat/german/backs/xskat.png
+%%DATADIR%%/cardsets/xskat/german/cards/club/ace.png
+%%DATADIR%%/cardsets/xskat/german/cards/club/jack.png
+%%DATADIR%%/cardsets/xskat/german/cards/club/king.png
+%%DATADIR%%/cardsets/xskat/german/cards/club/nine.png
+%%DATADIR%%/cardsets/xskat/german/cards/club/queen.png
+%%DATADIR%%/cardsets/xskat/german/cards/club/ten.png
+%%DATADIR%%/cardsets/xskat/german/cards/diamond/ace.png
+%%DATADIR%%/cardsets/xskat/german/cards/diamond/jack.png
+%%DATADIR%%/cardsets/xskat/german/cards/diamond/king.png
+%%DATADIR%%/cardsets/xskat/german/cards/diamond/nine.png
+%%DATADIR%%/cardsets/xskat/german/cards/diamond/queen.png
+%%DATADIR%%/cardsets/xskat/german/cards/diamond/ten.png
+%%DATADIR%%/cardsets/xskat/german/cards/heart/ace.png
+%%DATADIR%%/cardsets/xskat/german/cards/heart/jack.png
+%%DATADIR%%/cardsets/xskat/german/cards/heart/king.png
+%%DATADIR%%/cardsets/xskat/german/cards/heart/nine.png
+%%DATADIR%%/cardsets/xskat/german/cards/heart/queen.png
+%%DATADIR%%/cardsets/xskat/german/cards/heart/ten.png
+%%DATADIR%%/cardsets/xskat/german/cards/spade/ace.png
+%%DATADIR%%/cardsets/xskat/german/cards/spade/jack.png
+%%DATADIR%%/cardsets/xskat/german/cards/spade/king.png
+%%DATADIR%%/cardsets/xskat/german/cards/spade/nine.png
+%%DATADIR%%/cardsets/xskat/german/cards/spade/queen.png
+%%DATADIR%%/cardsets/xskat/german/cards/spade/ten.png
+%%DATADIR%%/cardsets/xskat/german/icons/contra.png
+%%DATADIR%%/cardsets/xskat/german/icons/dollen.png
+%%DATADIR%%/cardsets/xskat/german/icons/doppelkopf.png
+%%DATADIR%%/cardsets/xskat/german/icons/five_nines.png
+%%DATADIR%%/cardsets/xskat/german/icons/fox_highest_trump.png
+%%DATADIR%%/cardsets/xskat/german/icons/genscher.png
+%%DATADIR%%/cardsets/xskat/german/icons/hyperswines.club.png
+%%DATADIR%%/cardsets/xskat/german/icons/hyperswines.diamond.png
+%%DATADIR%%/cardsets/xskat/german/icons/hyperswines.heart.png
+%%DATADIR%%/cardsets/xskat/german/icons/hyperswines.king.club.png
+%%DATADIR%%/cardsets/xskat/german/icons/hyperswines.king.diamond.png
+%%DATADIR%%/cardsets/xskat/german/icons/hyperswines.king.heart.png
+%%DATADIR%%/cardsets/xskat/german/icons/hyperswines.king.spade.png
+%%DATADIR%%/cardsets/xskat/german/icons/hyperswines.spade.png
+%%DATADIR%%/cardsets/xskat/german/icons/marriage.club.png
+%%DATADIR%%/cardsets/xskat/german/icons/marriage.color.png
+%%DATADIR%%/cardsets/xskat/german/icons/marriage.foreign.png
+%%DATADIR%%/cardsets/xskat/german/icons/marriage.heart.png
+%%DATADIR%%/cardsets/xskat/german/icons/marriage.png
+%%DATADIR%%/cardsets/xskat/german/icons/marriage.spade.png
+%%DATADIR%%/cardsets/xskat/german/icons/marriage.trump.png
+%%DATADIR%%/cardsets/xskat/german/icons/no_0.png
+%%DATADIR%%/cardsets/xskat/german/icons/no_0_reply.png
+%%DATADIR%%/cardsets/xskat/german/icons/no_120.png
+%%DATADIR%%/cardsets/xskat/german/icons/no_120_reply.png
+%%DATADIR%%/cardsets/xskat/german/icons/no_30.png
+%%DATADIR%%/cardsets/xskat/german/icons/no_30_reply.png
+%%DATADIR%%/cardsets/xskat/german/icons/no_60.png
+%%DATADIR%%/cardsets/xskat/german/icons/no_60_reply.png
+%%DATADIR%%/cardsets/xskat/german/icons/no_90.png
+%%DATADIR%%/cardsets/xskat/german/icons/no_90_reply.png
+%%DATADIR%%/cardsets/xskat/german/icons/poverty.0.png
+%%DATADIR%%/cardsets/xskat/german/icons/poverty.1.png
+%%DATADIR%%/cardsets/xskat/german/icons/poverty.2.png
+%%DATADIR%%/cardsets/xskat/german/icons/poverty.3.png
+%%DATADIR%%/cardsets/xskat/german/icons/poverty.png
+%%DATADIR%%/cardsets/xskat/german/icons/re.png
+%%DATADIR%%/cardsets/xskat/german/icons/six_kings.png
+%%DATADIR%%/cardsets/xskat/german/icons/solo.club.png
+%%DATADIR%%/cardsets/xskat/german/icons/solo.diamond.png
+%%DATADIR%%/cardsets/xskat/german/icons/solo.heart.png
+%%DATADIR%%/cardsets/xskat/german/icons/solo.jack.png
+%%DATADIR%%/cardsets/xskat/german/icons/solo.king-jack.png
+%%DATADIR%%/cardsets/xskat/german/icons/solo.king-queen.png
+%%DATADIR%%/cardsets/xskat/german/icons/solo.king.png
+%%DATADIR%%/cardsets/xskat/german/icons/solo.koehler.png
+%%DATADIR%%/cardsets/xskat/german/icons/solo.meatless.png
+%%DATADIR%%/cardsets/xskat/german/icons/solo.queen-jack.png
+%%DATADIR%%/cardsets/xskat/german/icons/solo.queen.png
+%%DATADIR%%/cardsets/xskat/german/icons/solo.spade.png
+%%DATADIR%%/cardsets/xskat/german/icons/swines-hyperswines.club.png
+%%DATADIR%%/cardsets/xskat/german/icons/swines-hyperswines.diamond.png
+%%DATADIR%%/cardsets/xskat/german/icons/swines-hyperswines.heart.png
+%%DATADIR%%/cardsets/xskat/german/icons/swines-hyperswines.king.club.png
+%%DATADIR%%/cardsets/xskat/german/icons/swines-hyperswines.king.diamond.png
+%%DATADIR%%/cardsets/xskat/german/icons/swines-hyperswines.king.heart.png
+%%DATADIR%%/cardsets/xskat/german/icons/swines-hyperswines.king.spade.png
+%%DATADIR%%/cardsets/xskat/german/icons/swines-hyperswines.spade.png
+%%DATADIR%%/cardsets/xskat/german/icons/swines.club.png
+%%DATADIR%%/cardsets/xskat/german/icons/swines.diamond.png
+%%DATADIR%%/cardsets/xskat/german/icons/swines.heart.png
+%%DATADIR%%/cardsets/xskat/german/icons/swines.spade.png
+%%DATADIR%%/cardsets/xskat/german/icons/thrown_kings.png
+%%DATADIR%%/cardsets/xskat/german/icons/thrown_nines.png
+%%DATADIR%%/cardsets/xskat/german/icons/thrown_nines_and_kings.png
+%%DATADIR%%/icon.png
+%%DATADIR%%/logo.png
 %%DATADIR%%/rules/beginner
 %%DATADIR%%/rules/standard
 %%DATADIR%%/rules/tournament
 %%DATADIR%%/translations/de-alt/text
 %%DATADIR%%/translations/de/aiconfig
+%%DATADIR%%/translations/de/aiconfig.heuristics.description
 %%DATADIR%%/translations/de/basistypes
 %%DATADIR%%/translations/de/bug_report
 %%DATADIR%%/translations/de/cards
@@ -164,22 +274,31 @@ bin/freedoko
 %%DATADIR%%/translations/fr/settings
 %%DATADIR%%/translations/fr/text
 %%DATADIR%%/translations/fr/versions
-%%DATADIR%%/translations/wiki.fr.html
 @dirrm %%DATADIR%%/translations/fr
 @dirrm %%DATADIR%%/translations/en
 @dirrm %%DATADIR%%/translations/de-alt
 @dirrm %%DATADIR%%/translations/de
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%/rules
-@dirrm %%DATADIR%%/cardsets/Altenburg/french/icons
-@dirrm %%DATADIR%%/cardsets/Altenburg/french/cards/spade
-@dirrm %%DATADIR%%/cardsets/Altenburg/french/cards/heart
-@dirrm %%DATADIR%%/cardsets/Altenburg/french/cards/diamond
-@dirrm %%DATADIR%%/cardsets/Altenburg/french/cards/club
-@dirrm %%DATADIR%%/cardsets/Altenburg/french/cards
-@dirrm %%DATADIR%%/cardsets/Altenburg/french/backs
-@dirrm %%DATADIR%%/cardsets/Altenburg/french
-@dirrm %%DATADIR%%/cardsets/Altenburg
+@dirrm %%DATADIR%%/cardsets/xskat/german/icons
+@dirrm %%DATADIR%%/cardsets/xskat/german/cards/spade
+@dirrm %%DATADIR%%/cardsets/xskat/german/cards/heart
+@dirrm %%DATADIR%%/cardsets/xskat/german/cards/diamond
+@dirrm %%DATADIR%%/cardsets/xskat/german/cards/club
+@dirrm %%DATADIR%%/cardsets/xskat/german/cards
+@dirrm %%DATADIR%%/cardsets/xskat/german/backs/christmas
+@dirrm %%DATADIR%%/cardsets/xskat/german/backs
+@dirrm %%DATADIR%%/cardsets/xskat/german
+@dirrm %%DATADIR%%/cardsets/xskat/french/icons
+@dirrm %%DATADIR%%/cardsets/xskat/french/cards/spade
+@dirrm %%DATADIR%%/cardsets/xskat/french/cards/heart
+@dirrm %%DATADIR%%/cardsets/xskat/french/cards/diamond
+@dirrm %%DATADIR%%/cardsets/xskat/french/cards/club
+@dirrm %%DATADIR%%/cardsets/xskat/french/cards
+@dirrm %%DATADIR%%/cardsets/xskat/french/backs/christmas
+@dirrm %%DATADIR%%/cardsets/xskat/french/backs
+@dirrm %%DATADIR%%/cardsets/xskat/french
+@dirrm %%DATADIR%%/cardsets/xskat
 @dirrm %%DATADIR%%/cardsets
 @dirrm %%DATADIR%%/backgrounds
 @dirrm %%DATADIR%%
