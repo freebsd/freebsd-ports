@@ -1,12 +1,12 @@
---- CONFIG/src/SpewMakeInc.c~	Sat Jan  6 13:50:21 2007
-+++ CONFIG/src/SpewMakeInc.c	Sat Jan  6 13:51:54 2007
-@@ -311,7 +311,8 @@
-             &mhz, &ptrbits, &ncpu, comps, &outfile, &srcdir, &blddir, &USEDEFL1,
-             &USEARCHDEF, &nof77, &f2cdefs, &cdefs, &pmake, &flapack,
-             &smaflags, &dmaflags, &l2size, &targ);
+--- CONFIG/src/SpewMakeInc.c~	Fri Feb 16 11:40:19 2007
++++ CONFIG/src/SpewMakeInc.c	Fri Feb 16 11:41:06 2007
+@@ -332,7 +332,8 @@
+             &mhz, &ptrbits, &ncpu, comps, &gccflags, &outfile, &srcdir,
+             &blddir, &USEDEFL1, &USEARCHDEF, &nof77, &f2cdefs, &cdefs, &pmake,
+             &flapack, &smaflags, &dmaflags, &f77lib, &l2size, &targ);
 -   if (ncpu > 1) THREADS = 1;
-+/*   if (ncpu > 1) THREADS = 1; */
-+   THREADS = 1;
++ /*   if (ncpu > 1) THREADS = 1; */
++    THREADS = 1;
     if (!outfile)
        fpout = stdout;
     else

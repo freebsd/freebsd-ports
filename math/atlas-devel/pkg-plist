@@ -40,13 +40,13 @@ lib/libptf77blas.so
 %%PORTDOCS%%share/doc/atlas/TestTime.txt
 %%PORTDOCS%%share/doc/atlas/TroubleShoot.txt
 %%PORTDOCS%%share/doc/atlas/Windows.txt
-%%PORTDOCS%%share/doc/atlas/atlas_contrib.ps
-%%PORTDOCS%%share/doc/atlas/atlas_devel.ps
-%%PORTDOCS%%share/doc/atlas/atlas_over.ps
-%%PORTDOCS%%share/doc/atlas/cblas.ps
-%%PORTDOCS%%share/doc/atlas/cblasqref.ps
-%%PORTDOCS%%share/doc/atlas/f77blasqref.ps
-%%PORTDOCS%%share/doc/atlas/lapackqref.ps
+%%PORTDOCS%%share/doc/atlas/atlas_contrib.pdf
+%%PORTDOCS%%share/doc/atlas/atlas_devel.pdf
+%%PORTDOCS%%share/doc/atlas/atlas_over.pdf
+%%PORTDOCS%%share/doc/atlas/cblas.pdf
+%%PORTDOCS%%share/doc/atlas/cblasqref.pdf
+%%PORTDOCS%%share/doc/atlas/f77blasqref.pdf
+%%PORTDOCS%%share/doc/atlas/lapackqref.pdf
 %%PORTDOCS%%@dirrm share/doc/atlas
 %%EXAMPLESDIR%%/xcl1blastst
 %%EXAMPLESDIR%%/xcl2blastst

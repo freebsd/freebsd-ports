@@ -1,6 +1,6 @@
---- CONFIG/src/backend/archinfo_freebsd.c.orig	Tue Dec 19 06:47:11 2006
-+++ CONFIG/src/backend/archinfo_freebsd.c	Wed Dec 27 11:29:26 2006
-@@ -73,15 +73,26 @@
+--- CONFIG/src/backend/archinfo_freebsd.c.orig	Wed Jan 31 06:30:00 2007
++++ CONFIG/src/backend/archinfo_freebsd.c	Thu Feb  8 16:37:05 2007
+@@ -73,13 +73,24 @@
        }
        break;
     case AFSPARC: /* don't know */
@@ -14,20 +14,16 @@
 +      }
        break;
     case AFALPHA:
--      #if 0
+       #if 0
        if (!CmndOneLine(NULL, "sysctl hw.model", res))
        {
-+#if 0
           if (strstr(res, "433au")) mach = Dec21164;
 +         else if (strstr(res, "500au")) mach = Dec21164;
 +         else if (strstr(res, "AlphaPC 164")) mach = Dec21164;
           else if (strstr(res, "XP1000")) mach = Dec21264;
 +         else mach = Dec21264;
-+#endif
        }
--      #endif
-       break;
-    case AFIA64: /* don't know */
+       #endif
        break;
 @@ -89,15 +100,33 @@
        if (!CmndOneLine(NULL, "sysctl hw.model", res))
@@ -72,31 +68,9 @@
     int mhz=0;
     char res[1024];
 -   if (!CmndOneLine(NULL, "sysctl hw.cpufrequency", res) )
--      mhz = GetFirstLong(res) / 1000000;
+-      mhz = GetFirstDouble(res) / 1000000;
 +   if (!CmndOneLine(NULL, "sysctl kern.timecounter.choice dev.cpu.0.freq | grep dev", res) ) //requires cpufreq.ko
-+      mhz = GetLastInt(res);
++   mhz = GetLastInt(res);
     return(mhz);
  }
  
-@@ -166,20 +195,7 @@
-  * RETURNS: 1 if cpu throttling is detected, 0 otherwise
-  */
- {
--   int iret=0;
--   int imax=0, imin=0, icur=0;
--   char res[1024];
--
--   if (!CmndOneLine(NULL, "sysctl hw.cpufrequency_max", res) )
--      imax = GetFirstInt(res);
--   if (!CmndOneLine(NULL, "sysctl hw.cpufrequency_min", res) )
--      imin = GetFirstInt(res);
--   if (imax)
--   {
--      if (imax != imin)
--         iret = 1;
--   }
--   return(iret);
-+  return 0;
- }
- 
- main(int nargs, char **args)

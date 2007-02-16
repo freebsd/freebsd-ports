@@ -9,8 +9,7 @@
 #       Program and compiler flags are finetuned to gcc.
 
 PORTNAME=	atlas
-PORTVERSION=	3.7.24
-PORTREVISION=	4
+PORTVERSION=	3.7.28
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	math-atlas
@@ -83,16 +82,18 @@ pre-configure:
 
 do-configure:
 #non threaded
+#dummy f77lib, it is not used.
 	${MKDIR} ${WRKSRC}/NON_THREADED ; cd ${WRKSRC}/NON_THREADED ; \
-		../configure -t 0
+		../configure -t 0 -Si cputhrchk 0 -Ss f77lib " "
 	${MKDIR} ${WRKSRC}/NON_THREADED_PIC ; cd ${WRKSRC}/NON_THREADED_PIC ; \
-		../configure -t 0 -Fa al '${PICFLAG} -DPIC'
+		../configure -t 0 -Fag al '${PICFLAG} -DPIC' -Si cputhrchk 0 -Ss f77lib " "
 #threaded
+#dummy f77lib, it is not used.
 	cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/thread-patch
 	${MKDIR} ${WRKSRC}/THREADED ; cd ${WRKSRC}/THREADED ; \
-		../configure -Fa al '${PTHREAD_CFLAGS} '
+		../configure -Fag al '${PTHREAD_CFLAGS} ' -Si cputhrchk 0 -Ss f77lib " "
 	${MKDIR} ${WRKSRC}/THREADED_PIC ; cd ${WRKSRC}/THREADED_PIC ; \
-		../configure -Fa al '${PTHREAD_CFLAGS} ${PICFLAG} -DPIC'
+		../configure -Fag al '${PTHREAD_CFLAGS} ${PICFLAG} -DPIC' -Si cputhrchk 0 -Ss f77lib " "
 
 do-build:
 # make lapack
