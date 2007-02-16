@@ -17,7 +17,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Secure and efficient mail gateway
 
 NOT_FOR_ARCHS=	ia64
-CONFILCTS=	meta1-*
+CONFLICTS=	meta1-*
 PORTNAME2=	smX
 WRKSRC=		${WRKDIR}/${PORTNAME2}-${PORTVERSION}
 GNU_CONFIGURE=	yes
