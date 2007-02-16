@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freedoko
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	free-doko
@@ -31,11 +31,13 @@ post-patch:
 		 s|@echo $$(CXX)|@true $$(CXX)|g ; \
 		 s|@$$(CXX)|$$(CXX)|g ; \
 		 s|make -C|$$(MAKE) -C|g'
+	@${RM} -rf ${WRKSRC}/../data/translations/fr/bak
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/FreeDoko ${PREFIX}/bin
 	${LN} -sf FreeDoko ${PREFIX}/bin/freedoko
 	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/icon.png ${WRKSRC}/logo.png ${DATADIR}
 .for dir in backgrounds cardsets rules translations
 	@cd ${WRKSRC}/../data && ${FIND} ${dir} ! -name "*Makefile*" | \
 		${CPIO} --quiet -pdum -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
