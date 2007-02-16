@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	tyrquake
-PORTVERSION=	0.55
+PORTVERSION=	0.56
 CATEGORIES=	games
 MASTER_SITES=	http://disenchant.net/files/engine/
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Very conservative branch of the Quake source code
 
-USE_GCC=	3.2+
 USE_GL=		yes
 USE_GMAKE=	yes
 MAKE_ENV=	QBASEDIR="${Q1DIR}"
@@ -35,10 +34,6 @@ MAKE_ENV+=	USE_X86_ASM=N
 
 post-patch:
 	@${REINPLACE_CMD} -e '/-mtune/d' ${WRKSRC}/${MAKEFILE}
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|<stdint\.h>|<inttypes.h>|' \
-		${WRKSRC}/common/model.c ${WRKSRC}/include/bspfile.h
-.endif
 
 do-install:
 .for file in tyr-quake tyr-glquake tyr-qwcl tyr-glqwcl tyr-qwsv
