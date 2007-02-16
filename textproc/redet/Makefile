@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	redet
-PORTVERSION=	8.19
+PORTVERSION=	8.20
 CATEGORIES=	textproc tk84
 MASTER_SITES=	http://www.billposer.org/Software/Downloads/ CSME
 
