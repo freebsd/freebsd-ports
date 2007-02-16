@@ -177,6 +177,8 @@ do-install:
 	@${MKDIR} ${PREFIX}/etc/php
 	@${ECHO_CMD} extension=${PHP_MODNAME}.so \
 		>> ${PREFIX}/etc/php/extensions.ini
+	@${SORT} -ruo ${PREFIX}/etc/php/extensions.ini \
+		${PREFIX}/etc/php/extensions.ini
 
 add-plist-info: add-plist-phpext
 add-plist-phpext:
@@ -199,6 +201,8 @@ add-plist-phpext:
 	@${ECHO_CMD} "@exec mkdir -p %D/etc/php" \
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "@exec echo extension=${PHP_MODNAME}.so >> %D/etc/php/extensions.ini" \
+		>> ${TMPPLIST}
+	@${ECHO_CMD} "@exec sort -ruo %D/etc/php/extensions.ini %D/etc/php/extensions.ini" \
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec cp %D/etc/php/extensions.ini %D/etc/php/extensions.ini.orig" \
 		>> ${TMPPLIST}
