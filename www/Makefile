@@ -61,6 +61,7 @@
     SUBDIR += cadaver
     SUBDIR += calamaris
     SUBDIR += campsite
+    SUBDIR += castget
     SUBDIR += caudium12
     SUBDIR += cgi-lib
     SUBDIR += cgi-lib.pl
