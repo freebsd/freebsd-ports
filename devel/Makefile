@@ -1730,6 +1730,7 @@
     SUBDIR += publib
     SUBDIR += pushmi
     SUBDIR += pwlib
+    SUBDIR += py-Breve
     SUBDIR += py-anonfunc
     SUBDIR += py-argparse
     SUBDIR += py-asn1
