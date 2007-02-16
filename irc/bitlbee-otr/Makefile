@@ -28,7 +28,10 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	MSN "Enable MSN protocol support" On \
 		LDAP "Enable LDAP authentication support" Off \
-		RECODE "Enable oscar_recode_charset" Off
+		RECODE "Enable oscar_recode_charset" Off \
+		DEBUG "Create debuggable binary" Off \
+		OPENSSL "Use openssl rather than gnutls" Off \
+		IPV6 "Compile IPV6 support" On
 
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man --config=${PREFIX}/etc/bitlbee
 
@@ -39,10 +42,15 @@ PATCHFILES+=	${PORTNAME}-1.0-ldap.diff
 .endif
 
 .if !defined(WITHOUT_MSN)
-LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--msn=1
 .else
 CONFIGURE_ARGS+=--msn=0 --ssl=bogus
+.endif
+
+.if defined(WITH_OPENSSL)
+CONFIGURE_ARGS+=--ssl=openssl
+.else
+LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls
 .endif
 
 .if defined(WITH_LDAP)
@@ -54,6 +62,14 @@ CONFIGURE_ARGS+=--ldap=${LOCALBASE}
 post-patch::
 	@cd ${WRKDIR} && \
 		${PATCH} ${PATCH_ARGS} < ${FILESDIR}/oscar-recode-patch
+.endif
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=--debug=1
+.endif
+
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=--ipv6=0
 .endif
 
 pre-install:
