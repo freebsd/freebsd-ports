@@ -27,9 +27,6 @@ CONFIGURE_ENV+=	CXX="${CXX}"
 ALL_TARGET+=	docs
 BUILD_DEPENDS+=	python:${PORTSDIR}/lang/python # XXX: Replace with USE_PYTHON_BUILD
 BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
-.else
-.undef HAVE_LATEX
-.endif # !defined(NOPORTDOCS)
 
 .if !defined(WITHOUT_LATEX)
 ALL_TARGET+=	pdf
@@ -42,6 +39,7 @@ MAKE_ARGS+=	HAVE_LATEX=yes
 .else # !defined(WITHOUT_LATEX)
 PLIST_SUB+=	HAVE_LATEX="@comment "
 .endif # !defined(WITHOUT_LATEX)
+.endif # !defined(NOPORTDOCS)
 
 .if !defined(WITHOUT_DOXYWIZARD)
 USE_QT_VER=	3
