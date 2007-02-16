@@ -139,6 +139,7 @@
     SUBDIR += lives
     SUBDIR += lsdvd
     SUBDIR += lxdvdrip
+    SUBDIR += mandvd
     SUBDIR += mjpegtools
     SUBDIR += mjpegtools-yuvfilters
     SUBDIR += mkvtoolnix
