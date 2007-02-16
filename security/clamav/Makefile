@@ -7,6 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.90
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -20,6 +21,7 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		arc:${PORTSDIR}/archivers/arc
 
 OPTIONS=	MILTER "Compile the milter interface" Off \
+		LDAP "libmilter was built with LDAP" Off \
 		CURL "Support URL downloading" Off \
 		STDERR "Print logs to stderr instead of stdout" Off
 
@@ -85,11 +87,11 @@ SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?(PidFile) .*/([a-z]+\.pid)$$|\1 ${RUNDIR}/\2|' \
 		-e 's|^\#?(LocalSocket) .*$$|\1 ${CLAMAV_CLAMD_SOCKET}|' \
 		-e 's|^\#?(User) .*$$|\1 ${CLAMAVUSER}|' \
-		-e 's|^\#?(AllowSupplementaryGroups)$$|\1|' \
-		-e 's|^\#?(ScanMail)$$|\1|' \
+		-e 's|^\#?(AllowSupplementaryGroups).*$$|\1 yes|' \
+		-e 's|^\#?(ScanMail).*$$|\1 yes|' \
 		-e 's|^\#?(DatabaseDirectory) .*$$|\1 ${DBDIR}|' \
 		-e 's|^\#?(DatabaseOwner) .*$$|\1 ${CLAMAVUSER}|' \
-		-e 's|^\#?(FixStaleSocket)$$|\1|' \
+		-e 's|^\#?(FixStaleSocket).*$$|\1 yes|' \
 		-e 's|^\#?(NotifyClamd) .*$$|\1 ${PREFIX}/etc/clamd.conf|'
 
 PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
@@ -103,7 +105,7 @@ PTHREAD_LIBS=	-pthread
 
 .if defined(WITH_MILTER)
 USE_RC_SUBR+=	clamav-milter
-.if !defined(WITHOUT_LDAP) && exists(${LOCALBASE}/lib/libldap.so)
+.if defined(WITH_LDAP) && exists(${LOCALBASE}/lib/libldap.so)
 USE_OPENLDAP=	yes
 LDFLAGS+=	-lldap
 .endif
