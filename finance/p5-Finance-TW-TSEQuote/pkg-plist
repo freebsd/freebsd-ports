@@ -1,7 +1,8 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/TW/TSEQuote/.packlist
+bin/pfq
 %%SITE_PERL%%/Finance/TW/TSEQuote.pm
-@dirrm %%SITE_PERL%%/Finance/TW
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/TW/TSEQuote
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/TW
+@dirrmtry %%SITE_PERL%%/Finance/TW
 @dirrmtry %%SITE_PERL%%/Finance
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/TW/TSEQuote/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/TW/TSEQuote
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/TW
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance
