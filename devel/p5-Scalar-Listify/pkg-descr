@@ -1,0 +1,13 @@
+A lot of Perl code ends up with scalars having either a single scalar value
+or a reference to an array of scalar values. In order to handle the two
+conditions, one must check for what is in the scalar value before getting on
+with one's task. Ie:
+
+  $text_scalar = 'text';
+  $aref_scalar = [ 1.. 5 ];
+
+  print ref($text_scalar) ? (join ':', @$text_scalar) : $text_scalar;
+
+And this module is designed to address just that!
+
+WWW: http://search.cpan.org/dist/Scalar-Listify/
