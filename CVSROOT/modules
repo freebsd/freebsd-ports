@@ -9288,6 +9288,7 @@ p5-Finance-Currency-Convert-WebserviceX	ports/finance/p5-Finance-Currency-Conver
 p5-Finance-Currency-Convert-XE	ports/finance/p5-Finance-Currency-Convert-XE
 p5-Finance-Quote	ports/finance/p5-Finance-Quote
 p5-Finance-QuoteHist	ports/finance/p5-Finance-QuoteHist
+p5-Finance-TW-EmergingQuote	ports/finance/p5-Finance-TW-EmergingQuote
 p5-Finance-TW-TSEQuote	ports/finance/p5-Finance-TW-TSEQuote
 p5-Flickr-API	ports/www/p5-Flickr-API
 p5-Flickr-Upload	ports/www/p5-Flickr-Upload
