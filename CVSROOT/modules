@@ -12249,6 +12249,7 @@ py-Elixir	ports/databases/py-Elixir
 py-GeoIP	ports/net/py-GeoIP
 py-HTMLgen	ports/www/py-HTMLgen
 py-HyperText	ports/textproc/py-HyperText
+py-Jinja	ports/devel/py-Jinja
 py-MySQL	ports/databases/py-MySQL
 py-MySQLdb	ports/databases/py-MySQLdb
 py-MySQLdb-devel	ports/databases/py-MySQLdb-devel
