@@ -7,6 +7,18 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20070215:
+  AFFECTS: users of security/clamav
+  AUTHOR: garga@FreeBSD.org
+
+  Since version 0.90, clamd.conf and clamav.conf have changed their syntax.
+  All parameters can now be turned on/off using a boolean value (0,1) or
+  (on,off) or (true,false), the old crude hack of "DisableDefaultScanOptions"
+  is no longer required.
+
+  Please, check ${PREFIX}/etc/(clamd|freshclam).conf.default and make needed
+  changes on your conf files.
+
+20070215:
   AFFECTS: users of www/py-turbogears
   AUTHOR: nivit@FreeBSD.org
 
