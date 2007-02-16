@@ -1,0 +1,9 @@
+Jinja is a small but very fast and easy to use stand-alone template engine
+written in pure python.
+Since version 0.6 it uses a new parser that increases parsing performance
+a lot by caching the nodelists on the harddisk if wanted.
+It includes multiple template inheritance and other features like simple
+value escaping.
+
+Author: Armin Ronacher
+WWW:	http://wsgiarea.pocoo.org/jinja/
