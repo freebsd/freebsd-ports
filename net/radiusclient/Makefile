@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	radiusclient
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.5
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/radiusclient-ng/
 DISTNAME=	${PORTNAME}-ng-${PORTVERSION}
