@@ -433,6 +433,7 @@ include/wine/windows/xmldso.idl
 include/wine/windows/xmldsodid.h
 include/wine/windows/zmouse.h
 include/wine/windows/ddk/compstui.h
+include/wine/windows/ddk/hidsdi.h
 include/wine/windows/ddk/ntddcdvd.h
 include/wine/windows/ddk/ntddser.h
 include/wine/windows/ddk/ntddtape.h
@@ -448,6 +449,7 @@ lib/wine/atl.dll.so
 lib/wine/avicap32.dll.so
 lib/wine/avifil32.dll.so
 lib/wine/avifile.dll16
+lib/wine/browseui.dll.so
 lib/wine/bug_report.pl
 lib/wine/cabinet.dll.so
 lib/wine/capi2032.dll.so
