@@ -28,6 +28,7 @@ bin/argouml
 %%DATADIR%%/ext/argouml-i18n-it.jar
 %%DATADIR%%/ext/argouml-i18n-nb.jar
 %%DATADIR%%/ext/argouml-i18n-pt.jar
+%%DATADIR%%/ext/argouml-i18n-pt_BR.jar
 %%DATADIR%%/ext/argouml-i18n-ru.jar
 %%DATADIR%%/ext/argouml-i18n-zh.jar
 @dirrm %%DATADIR%%/ext
