@@ -15,6 +15,9 @@ DISTNAME=	StandaloneZODB-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Zope Object Database, a persistent object database for Python
 
+DEPRECATED=	outdated software, databases/zodb3 should be used
+EXPIRATION_DATE=	2007-03-16
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bsddb3/__init__.py:${PORTSDIR}/databases/py-bsddb3
 
 USE_PYTHON=	yes
