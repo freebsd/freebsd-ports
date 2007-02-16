@@ -1732,6 +1732,7 @@
     SUBDIR += pwlib
     SUBDIR += py-Breve
     SUBDIR += py-Jinja
+    SUBDIR += py-TurboJinja
     SUBDIR += py-anonfunc
     SUBDIR += py-argparse
     SUBDIR += py-asn1
