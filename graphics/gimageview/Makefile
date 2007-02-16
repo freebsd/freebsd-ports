@@ -7,7 +7,7 @@
 
 PORTNAME=	gimageview
 PORTVERSION=	0.2.27
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkmmviewer
@@ -90,7 +90,7 @@ PLIST_SUB+=	WITH_LIBMPLAYER="@comment "
 .endif
 
 .if defined(WITH_LIBXINE)
-LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.16:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=	--with-xine
 PLIST_SUB+=	WITH_LIBXINE=""
 .else
@@ -99,6 +99,7 @@ PLIST_SUB+=	WITH_LIBXINE="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/DATADIRNAME=lib/DATADIRNAME=share/g' \
+		-e 's|echo aout|echo elf|' \
 		${WRKSRC}/configure
 
 post-configure:
