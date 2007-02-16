@@ -6948,6 +6948,7 @@ man2html	ports/textproc/man2html
 man2web		ports/www/man2web
 managepkg	ports/ports-mgmt/managepkg
 manck		ports/sysutils/manck
+mandvd		ports/multimedia/mandvd
 manedit		ports/editors/manedit
 mangband	ports/games/mangband
 mango		ports/misc/mango
