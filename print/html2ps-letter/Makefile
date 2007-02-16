@@ -5,13 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	html2ps-${PAPERSIZE}
-PORTVERSION=	1.0.b4
+PORTNAME=	html2ps
+DISTVERSION=	1.0b5
 PORTEPOCH=	1
-PORTREVISION=	1
 CATEGORIES=	print www perl5
 MASTER_SITES=	http://user.it.uu.se/~jan/
-DISTNAME=	html2ps-1.0b4
+PKGNAMESUFFIX=	-${PAPERSIZE}
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	HTML to PostScript converter
