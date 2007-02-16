@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	3.1.7
-PORTREVISION=	3
+PORTVERSION=	3.1.8
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
 PKGNAMEPREFIX=	p5-
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:apache,cpan
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	scheidell@secnap.net
 COMMENT=	A highly efficient mail filter for identifying spam
 
 BUILD_DEPENDS=	p5-Net-DNS>=0.53:${PORTSDIR}/dns/p5-Net-DNS \
