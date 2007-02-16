@@ -5,12 +5,12 @@
 #
 
 PORTNAME=	ntfs
-PORTVERSION=	0.20070118.BETA
+PORTVERSION=	0.20070207RC1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ntfs-3g.org/
 MASTER_SITE_SUBDIR=	fuse
 PKGNAMEPREFIX=	fusefs-
-DISTNAME=	${PORTNAME}-3g-${PORTVERSION:S,.BETA,-BETA,}
+DISTNAME=	${PORTNAME}-3g-${PORTVERSION:S,RC1,-RC1,}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	fjoe@FreeBSD.org
@@ -19,8 +19,6 @@ COMMENT=	Mount NTFS partitions and disk images
 LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 BUILD_DEPENDS=	fusefs-libs>=2.6.0:${PORTSDIR}/sysutils/fusefs-libs
-
-BROKEN=		Unfetchable
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
