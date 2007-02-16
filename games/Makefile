@@ -89,6 +89,7 @@
     SUBDIR += bubbros
     SUBDIR += bugsquish
     SUBDIR += bugsx
+    SUBDIR += bumprace
     SUBDIR += burgerspace
     SUBDIR += bygfoot
     SUBDIR += bzflag
