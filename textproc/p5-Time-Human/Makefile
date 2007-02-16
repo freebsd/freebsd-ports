@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Time-Human
-PORTVERSION=	1.02
-PORTREVISION=	1
+PORTVERSION=	1.03
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Time
@@ -25,5 +24,8 @@ MAN3=		Time::Human.3
 .if ${PERL_LEVEL} < 500600
 EXTRA_PATCHES+=	${PATCHDIR}/Human.pm-5005.patch
 .endif
+
+test:		build
+		cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
 
 .include <bsd.port.post.mk>
