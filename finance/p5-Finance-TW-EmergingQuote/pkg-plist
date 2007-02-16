@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Finance/TW/EmergingQuote.pm
+@dirrmtry %%SITE_PERL%%/Finance/TW
+@dirrmtry %%SITE_PERL%%/Finance
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/TW/EmergingQuote/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/TW/EmergingQuote
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance/TW
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Finance
