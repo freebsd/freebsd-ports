@@ -1,0 +1,27 @@
+%%CACHE_DIR%%/htmltools-%%PORTVERSION%%%%EXTRACT_SUFX%%
+%%GEMS_DIR%%/htmltools-%%PORTVERSION%%/INSTALL
+%%GEMS_DIR%%/htmltools-%%PORTVERSION%%/README
+%%GEMS_DIR%%/htmltools-%%PORTVERSION%%/demo/degolive.rb
+%%GEMS_DIR%%/htmltools-%%PORTVERSION%%/demo/ebaySearch.rb
+%%GEMS_DIR%%/htmltools-%%PORTVERSION%%/demo/xpath.rb
+%%GEMS_DIR%%/htmltools-%%PORTVERSION%%/lib/html/element.rb
+%%GEMS_DIR%%/htmltools-%%PORTVERSION%%/lib/html/rexml-nodepath.rb
+%%GEMS_DIR%%/htmltools-%%PORTVERSION%%/lib/html/sgml-parser.rb
+%%GEMS_DIR%%/htmltools-%%PORTVERSION%%/lib/html/stparser.rb
+%%GEMS_DIR%%/htmltools-%%PORTVERSION%%/lib/html/tags.rb
+%%GEMS_DIR%%/htmltools-%%PORTVERSION%%/lib/html/tree.rb
+%%GEMS_DIR%%/htmltools-%%PORTVERSION%%/lib/html/xmltree.rb
+%%GEMS_DIR%%/htmltools-%%PORTVERSION%%/lib/html/xpath.rb
+%%GEMS_DIR%%/htmltools-%%PORTVERSION%%/test/suite.rb
+%%GEMS_DIR%%/htmltools-%%PORTVERSION%%/test/tc_html-element.rb
+%%GEMS_DIR%%/htmltools-%%PORTVERSION%%/test/tc_html-tree.rb
+%%GEMS_DIR%%/htmltools-%%PORTVERSION%%/test/tc_source-parser.rb
+%%GEMS_DIR%%/htmltools-%%PORTVERSION%%/test/tc_stacking-parser.rb
+%%GEMS_DIR%%/htmltools-%%PORTVERSION%%/test/tc_xpath.rb
+%%SPEC_DIR%%/htmltools-%%PORTVERSION%%%%EXTRACT_SUFX%%spec
+@dirrm %%GEMS_DIR%%/htmltools-%%PORTVERSION%%/test
+@dirrm %%GEMS_DIR%%/htmltools-%%PORTVERSION%%/lib/html
+@dirrm %%GEMS_DIR%%/htmltools-%%PORTVERSION%%/lib
+@dirrm %%GEMS_DIR%%/htmltools-%%PORTVERSION%%/demo
+@dirrm %%GEMS_DIR%%/htmltools-%%PORTVERSION%%
+@dirrm %%DOC_DIR%%/htmltools-%%PORTVERSION%%
