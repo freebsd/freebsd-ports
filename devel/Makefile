@@ -1389,6 +1389,7 @@
     SUBDIR += p5-SVN-Statistics
     SUBDIR += p5-SVN-Web
     SUBDIR += p5-Scalar-Defer
+    SUBDIR += p5-Scalar-Listify
     SUBDIR += p5-Scalar-Util-Clone
     SUBDIR += p5-Scope-Guard
     SUBDIR += p5-Search-Binary
