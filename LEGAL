@@ -629,6 +629,8 @@ win32/*			multimedia/win32-codecs	Licensing status of the
 						codecs is unknown
 xchada01.lzh		games/xchadance		Contains commercial character
 						data
+xds-[0-9]*		lang/xds		Redistribution is forbidden
+xds-c-*			lang/xds-c		Redistribution is forbidden
 xephem-*		astro/xephem		Personal use only
 xev*.tar.gz		games/xbat		Possible copyright infringement
 XFrisk-*.tar.gz		games/xfrisk		Possible trademark infringement
