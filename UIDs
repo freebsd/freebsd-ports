@@ -82,11 +82,11 @@ fcron:*:247:247:fcron pseudo-user:/nonexistent:/sbin/nologin
 _tor:*:256:256:Tor anonymising router:/var/db/tor:/bin/sh
 _dns-proxy-tor:*:257:257:dns-proxy-tor user:/nonexistent:/sbin/nologin
 _trans-proxy-tor:*:258:258:dns-proxy-tor user:/nonexistent:/sbin/nologin
-smxs:*:260:260:Sendmail X SMTPS:/nonexistent:/sbin/nologin
-smxq:*:261:261:Sendmail X QMGR:/nonexistent:/sbin/nologin
-smxc:*:262:262:Sendmail X SMTPC:/nonexistent:/sbin/nologin
-smxm:*:263:263:Sendmail X misc:/nonexistent:/sbin/nologin
-smx:*:264:264:Sendmail X other:/nonexistent:/sbin/nologin
+smxs:*:260:260:Sendmail X SMTPS:/nonexistent:/usr/sbin/nologin
+smxq:*:261:261:Sendmail X QMGR:/nonexistent:/usr/sbin/nologin
+smxc:*:262:262:Sendmail X SMTPC:/nonexistent:/usr/sbin/nologin
+smxm:*:263:263:Sendmail X misc:/nonexistent:/usr/sbin/nologin
+smx:*:264:264:Sendmail X other:/nonexistent:/usr/sbin/nologin
 hacluster:*:275:275:Heartbeat cluster user:/nonexistent:/sbin/nologin
 mrtg:*:279:279:MRTG daemon:/nonexistent:/sbin/nologin
 _sphinx:*:312:312::0:0:Sphinxsearch Owner:/nonexistent:/sbin/nologin
