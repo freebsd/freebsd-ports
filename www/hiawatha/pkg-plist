@@ -1,16 +1,18 @@
 sbin/hiawatha
-sbin/cgi_wrapper
+sbin/cgi-wrapper
 sbin/wigwam
-sbin/fcgi-server
+sbin/php-fcgi
 sbin/newroot
 @unexec if cmp -s %D/etc/hiawatha/httpd.conf %D/etc/hiawatha/httpd.conf.sample; then rm -f %D/etc/hiawatha/httpd.conf; fi
 @unexec if cmp -s %D/etc/hiawatha/mimetype.conf %D/etc/hiawatha/mimetype.conf.sample; then rm -f %D/etc/hiawatha/mimetype.conf; fi
 @unexec if cmp -s %D/etc/hiawatha/throttle.conf %D/etc/hiawatha/throttle.conf.sample; then rm -f %D/etc/hiawatha/throttle.conf; fi
-@unexec if cmp -s %D/etc/hiawatha/cgi_wrapper.conf %D/etc/hiawatha/cgi_wrapper.conf.sample; then rm -f %D/etc/hiawatha/cgi_wrapper.conf; fi
+@unexec if cmp -s %D/etc/hiawatha/cgi-wrapper.conf %D/etc/hiawatha/cgi-wrapper.conf.sample; then rm -f %D/etc/hiawatha/cgi-wrapper.conf; fi
+@unexec if cmp -s %D/etc/hiawatha/php-fcgi.conf %D/etc/hiawatha/php-fcgi.conf.sample; then rm -f %D/etc/hiawatha/php-fcgi.conf; fi
 etc/hiawatha/httpd.conf.sample
 etc/hiawatha/mimetype.conf.sample
 etc/hiawatha/throttle.conf.sample
-etc/hiawatha/cgi_wrapper.conf.sample
+etc/hiawatha/cgi-wrapper.conf.sample
+etc/hiawatha/php-fcgi.conf.sample
 @dirrm etc/hiawatha
 @unexec if cmp -s %D/www/hiawatha/index.html %D/www/hiawatha/index.html.sample; then rm -f %D/www/hiawatha/index.html; fi
 www/hiawatha/index.html.sample

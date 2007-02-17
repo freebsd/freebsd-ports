@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	hiawatha
-PORTVERSION=	5.3
+PORTVERSION=	5.6
 CATEGORIES=	www
 MASTER_SITES=	http://hiawatha.leisink.org/files/
 
 MAINTAINER=	hugo@leisink.net
 COMMENT=	An advanced and secure webserver for Unix
 
-MAN1=		hiawatha.1 cgi_wrapper.1
+MAN1=		hiawatha.1 cgi-wrapper.1 php-fcgi.1 wigwam.1
 MANCOMPRESSED=	no
 
 USE_RC_SUBR=	hiawatha
@@ -22,10 +22,11 @@ SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var webrootdir=${PREFIX}/www/hiawatha
 
-OPTIONS=	SSL "Compile with SSL support?" On
-OPTIONS+=	PHP "Include the CGI version of PHP?" On
+OPTIONS=	SSL "Support for Secure Sockets Layer (SSL)?" On
+OPTIONS+=	CACHE "Internal file caching support?" On
+OPTIONS+=	COMMAND "Enable the Hiawatha CommandChannel?" Off
 
-CONFIG_FILES=	httpd.conf mimetype.conf throttle.conf cgi_wrapper.conf
+CONFIG_FILES=	httpd.conf mimetype.conf throttle.conf cgi-wrapper.conf php-fcgi.conf
 
 .include <bsd.port.pre.mk>
 
@@ -33,15 +34,17 @@ CONFIG_FILES=	httpd.conf mimetype.conf throttle.conf cgi_wrapper.conf
 CONFIGURE_ARGS+=--disable-ssl
 .endif
 
-.if !defined(WITHOUT_PHP)
-WANT_PHP_CGI=	yes
+.if defined(WITHOUT_CACHE)
+CONFIGURE_ARGS+=--disable-cache
+.endif
+
+.if defined(WITH_COMMAND)
+CONFIGURE_ARGS+=--enable-command
 .endif
 
 post-install:
-	${CP} -f ${WRKSRC}/extra/fcgi-server ${PREFIX}/sbin
-	${CP} -f ${WRKSRC}/extra/newroot ${PREFIX}/sbin
-	@for _file in ${CONFIG_FILES} ; do \
-		${CP} -f ${WRKSRC}/etc/hiawatha/$${_file} ${PREFIX}/etc/hiawatha/$${_file}.sample ; \
+	@for file in ${CONFIG_FILES} ; do \
+	    ${CP} -f ${WRKSRC}/etc/hiawatha/$${file} ${PREFIX}/etc/hiawatha/$${file}.sample ; \
 	done
 	${CP} -f ${WRKSRC}/doc/index.html ${PREFIX}/www/hiawatha/index.html.sample
 	@${CAT} ${PKGMESSAGE}
