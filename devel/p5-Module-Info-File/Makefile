@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	Module-Info-File
-PORTVERSION=	0.08
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Module
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Retrieves module information from a file or script
 
-BUILD_DEPENDS=	${SITE_PERL}/Module/Info.pm:${PORTSDIR}/devel/p5-Module-Info
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Module-Info>0.20:${PORTSDIR}/devel/p5-Module-Info
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	YES
+PERL_MODBUILD=	YES
 
 MAN1=		version.pl.1
 MAN3=		Module::Info::File.3
