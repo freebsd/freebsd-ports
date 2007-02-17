@@ -1,0 +1,41 @@
+@comment $FreeBSD$
+@unexec %%EASY_INSTALL_CMD%% -q -N -m -S %D/%%PYTHON_SITELIBDIR%% %%PORTNAME%%==%%PORTVERSION%%
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/EGG-INFO/paster_plugins.txt
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/EGG-INFO/sqlobject.txt
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/release.py
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/release.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/static/javascript/builder.js
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/static/javascript/controls.js
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/static/javascript/dragdrop.js
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/static/javascript/effects.js
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/static/javascript/prototype.js
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/static/javascript/scriptaculous.js
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/static/javascript/slider.js
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/static/javascript/unittest.js
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/templates/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/templates/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/tests/test_controllers.py
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/tests/test_controllers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/tests/test_model.py
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/tests/test_model.pyc
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/widgets.py
+%%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/widgets.pyc
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/static/javascript
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous/static
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/scriptaculous
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYSCRIPTACULOUS_EGG%%
+@exec %%EASY_INSTALL_CMD%% -N -S %D/%%PYTHON_SITELIBDIR%% %%PORTNAME%%==%%PORTVERSION%%
