@@ -37,6 +37,7 @@ include/xine/xineintl.h
 include/xine/xineutils.h
 include/xine/xmllexer.h
 include/xine/xmlparser.h
+lib/libxine.a
 lib/libxine.la
 lib/libxine.so
 lib/libxine.so.1
