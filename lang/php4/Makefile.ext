@@ -390,7 +390,10 @@ CONFIGURE_ARGS+=--with-zlib=/usr
 CONFIGURE_ARGS+=--without-cdb
 .	endif
 .	if defined(WITH_DB4)
-WITH_DB4_VER?=	43
+WITH_DB4_VER?=	44
+.		if ${WITH_DB4_VER} == 43
+LIB_DEPENDS+=	db-4.3.0:${PORTSDIR}/databases/db43
+.		else
 .		if ${WITH_DB4_VER} == 42
 LIB_DEPENDS+=	db-4.2.2:${PORTSDIR}/databases/db42
 .		else
@@ -400,7 +403,8 @@ LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
 .		if ${WITH_DB4_VER} == 4
 LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
 .		else
-LIB_DEPENDS+=	db-4.3.0:${PORTSDIR}/databases/db43
+LIB_DEPENDS+=	db-4.4.0:${PORTSDIR}/databases/db44
+.		endif
 .		endif
 .		endif
 .		endif
