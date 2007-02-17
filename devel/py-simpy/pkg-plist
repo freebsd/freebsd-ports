@@ -60,16 +60,16 @@
 %%EXAMPLESDIR%%/SimGUIStep.py
 %%EXAMPLESDIR%%/SimPy_worker_extend.py
 %%EXAMPLESDIR%%/WidgetPacking.py
-%%EXAMPLESDIR%%/airport.py
+%%EXAMPLESDIR%%/bakery.py
 %%EXAMPLESDIR%%/bank08renege.py
 %%EXAMPLESDIR%%/bank11GUI.py
 %%EXAMPLESDIR%%/bank11Plot.py
 %%EXAMPLESDIR%%/bcc.py
+%%EXAMPLESDIR%%/callCenter.py
 %%EXAMPLESDIR%%/cellphone.py
 %%EXAMPLESDIR%%/centralserver.py
 %%EXAMPLESDIR%%/demoSimPyEvents.py
 %%EXAMPLESDIR%%/jacksonnetwork.py
-%%EXAMPLESDIR%%/lemmings.py
 %%EXAMPLESDIR%%/needResources.py
 %%EXAMPLESDIR%%/shortestPath_SimPy.py
 @dirrm %%EXAMPLESDIR%%

@@ -6,7 +6,7 @@
 # $FreeBSD$
 
 PORTNAME=	simpy
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,11 +16,22 @@ DISTNAME=	SimPy-${PORTVERSION}
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Simulation in Python
 
-USE_PYTHON=	2.2+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+
+OPTIONS=	TKINTER		"Install py-tkinter for plot"      off
+OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
+DOCSDIR=	${TARGETDIR}/share/doc/py-${PORTNAME}
+.endif
+EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_TKINTER)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 .endif
 
 post-install:
@@ -33,4 +44,4 @@ post-install:
 	(cd ${WRKSRC}/SimPyModels && ${FIND} . | \
 		${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
