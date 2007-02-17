@@ -198,6 +198,7 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	Babbler:multimedia/etoile-babbler \
 	Mollusk:www/etoile-mollusk \
 	BioCocoa:biology/biococoa \
+	Yap:graphics/yap \
 
 #	CameraTransfer:graphics/cameratransfer \
 #	Mantella:www/etoile-mantella \
