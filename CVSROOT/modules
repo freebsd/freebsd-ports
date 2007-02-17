@@ -15790,6 +15790,7 @@ xdms		ports/archivers/xdms
 xdoclet		ports/java/xdoclet
 xdrawchem	ports/biology/xdrawchem
 xds		ports/lang/xds
+xds-c		ports/lang/xds-c
 xdtm		ports/x11/xdtm
 xdu		ports/sysutils/xdu
 xdvi		ports/print/xdvi
