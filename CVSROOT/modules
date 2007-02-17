@@ -12626,6 +12626,7 @@ py-turbogears	ports/www/py-turbogears
 py-turbojson	ports/devel/py-turbojson
 py-turbokid	ports/devel/py-turbokid
 py-turbomail	ports/mail/py-turbomail
+py-turbosetup	ports/www/py-turbosetup
 py-tvgrab	ports/textproc/py-tvgrab
 py-twisted	ports/devel/py-twisted
 py-twistedConch	ports/security/py-twistedConch
