@@ -6290,6 +6290,7 @@ libint		ports/science/libint
 libiodbc	ports/databases/libiodbc
 libiptcdata	ports/graphics/libiptcdata
 libirman	ports/comms/libirman
+libixp		ports/devel/libixp
 libjackasyn	ports/audio/libjackasyn
 libjbigi	ports/math/libjbigi
 libjingle	ports/net-im/libjingle
