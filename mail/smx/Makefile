@@ -7,6 +7,7 @@
 
 PORTNAME=	smx
 PORTVERSION=	0.0.0.0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/sendmail/&,}
@@ -109,6 +110,10 @@ CONFIGURE_ARGS+=	--disable-pmilter
 EXTRA_PATCHES+=		${FILESDIR}/batch.patch
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
+		${WRKSRC}/db-4.3.28.NC/dist/configure
+
 post-configure:
 	@${CP} ${WRKSRC}/misc/sm.check.sh ${WRKSRC}/misc/sm.setup.sh \
 		${WRKDIR}/
@@ -133,7 +138,7 @@ test:
 regression-test:	test
 
 pre-install:
-	if ! pw groupshow smxm; then pw groupadd smxs -g 260; fi
+	if ! pw groupshow smxs; then pw groupadd smxs -g 260; fi
 	if ! pw groupshow smxq; then pw groupadd smxq -g 261; fi
 	if ! pw groupshow smxc; then pw groupadd smxc -g 262; fi
 	if ! pw groupshow smxm; then pw groupadd smxm -g 263; fi
