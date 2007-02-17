@@ -964,6 +964,7 @@
     SUBDIR += py-scriptaculous
     SUBDIR += py-slimmer
     SUBDIR += py-turbogears
+    SUBDIR += py-turbosetup
     SUBDIR += py-twistedWeb
     SUBDIR += py-twistedWeb2
     SUBDIR += py-urljr
