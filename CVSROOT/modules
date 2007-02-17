@@ -12623,6 +12623,7 @@ py-tlslite	ports/security/py-tlslite
 py-tofu		ports/net/py-tofu
 py-trustedpickle	ports/security/py-trustedpickle
 py-turbocheetah	ports/devel/py-turbocheetah
+py-turbodjango	ports/www/py-turbodjango
 py-turbogears	ports/www/py-turbogears
 py-turbojson	ports/devel/py-turbojson
 py-turbokid	ports/devel/py-turbokid
