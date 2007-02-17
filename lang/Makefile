@@ -325,6 +325,7 @@
     SUBDIR += visualworks
     SUBDIR += wamcc
     SUBDIR += whitespace
+    SUBDIR += xds
     SUBDIR += xotcl
     SUBDIR += xsb
     SUBDIR += yabasic
