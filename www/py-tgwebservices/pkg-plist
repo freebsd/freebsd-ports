@@ -1,0 +1,53 @@
+@comment $FreeBSD$
+@unexec %%EASY_INSTALL_CMD%% -q -N -m -S %D/%%PYTHON_SITELIBDIR%% %%PORTNAME%%==%%PORTVERSION%%
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/controllers.py
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/controllers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/controllers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/release.py
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/release.pyc
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/release.pyo
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/runtime.py
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/runtime.pyc
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/runtime.pyo
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/soap.py
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/soap.pyc
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/soap.pyo
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/templates/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/templates/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/templates/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/templates/soap.html
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/templates/wsdl.html
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/fixtures.py
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/fixtures.pyc
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/fixtures.pyo
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/test_json.py
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/test_json.pyc
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/test_json.pyo
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/test_soap.py
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/test_soap.pyc
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/test_soap.pyo
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/test_xml.py
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/test_xml.pyc
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/test_xml.pyo
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/xml.py
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/xml.pyc
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/xml.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%
+@exec %%EASY_INSTALL_CMD%% -q -N -S %D/%%PYTHON_SITELIBDIR%% %%PORTNAME%%==%%PORTVERSION%%
