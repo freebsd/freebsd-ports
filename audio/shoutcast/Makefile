@@ -9,6 +9,7 @@ PORTVERSION=	1.9.7
 PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://www.shoutcast.com/downloads/sc1-9-7/
+DISTNAME=	${PORTNAME}-1-9-7-freebsd5-elf
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Nullsoft's streaming audio server (binary port)
@@ -25,15 +26,8 @@ WRKSRC=		${WRKDIR}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
-DISTNAME=	${PORTNAME}-1-9-7-freebsd5-elf
 .if ${OSVERSION} >= 600000
 LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
-.endif
-.elif ${OSVERSION} >= 400000
-DISTNAME=	${PORTNAME}-1-9-7-freebsd4-elf
-.else
-BROKEN=		unsupported FreeBSD version
 .endif
 
 post-patch:
