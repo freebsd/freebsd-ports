@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zwiki
-PORTVERSION=	0.55.0
+PORTVERSION=	0.58.0
 CATEGORIES=	www zope
 MASTER_SITES=	http://zwiki.org/releases/
 PKGNAMEPREFIX=	zope-

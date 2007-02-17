@@ -3,14 +3,14 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/Admin.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/Admin_tests.py
 %%ZOPEPRODUCTDIR%%/ZWiki/Admin_tests.pyc
-%%ZOPEPRODUCTDIR%%/ZWiki/CHANGES.txt
+%%ZOPEPRODUCTDIR%%/ZWiki/CHANGES
 %%ZOPEPRODUCTDIR%%/ZWiki/CMF.py
 %%ZOPEPRODUCTDIR%%/ZWiki/CMF.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/CMFInit.py
 %%ZOPEPRODUCTDIR%%/ZWiki/CMFInit.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/CMF_tests.py
 %%ZOPEPRODUCTDIR%%/ZWiki/CMF_tests.pyc
-%%ZOPEPRODUCTDIR%%/ZWiki/CONTRIBUTORS.txt
+%%ZOPEPRODUCTDIR%%/ZWiki/CONTRIBUTORS
 %%ZOPEPRODUCTDIR%%/ZWiki/Catalog.py
 %%ZOPEPRODUCTDIR%%/ZWiki/Catalog.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/Catalog_tests.py
@@ -40,12 +40,13 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/Extensions/mailin.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/Extensions/mailin_tests.py
 %%ZOPEPRODUCTDIR%%/ZWiki/Extensions/mailin_tests.pyc
-%%ZOPEPRODUCTDIR%%/ZWiki/GPL.txt
+%%ZOPEPRODUCTDIR%%/ZWiki/FILESYSTEM_VS_WIKI_DOCS
+%%ZOPEPRODUCTDIR%%/ZWiki/GPL
 %%ZOPEPRODUCTDIR%%/ZWiki/I18n.py
 %%ZOPEPRODUCTDIR%%/ZWiki/I18n.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/I18n_tests.py
 %%ZOPEPRODUCTDIR%%/ZWiki/I18n_tests.pyc
-%%ZOPEPRODUCTDIR%%/ZWiki/LICENSE.txt
+%%ZOPEPRODUCTDIR%%/ZWiki/LICENSE
 %%ZOPEPRODUCTDIR%%/ZWiki/Mail.py
 %%ZOPEPRODUCTDIR%%/ZWiki/Mail.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/Mail_tests.py
@@ -58,18 +59,18 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/OutlineSupport_tests.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/Outline_tests.py
 %%ZOPEPRODUCTDIR%%/ZWiki/Outline_tests.pyc
-%%ZOPEPRODUCTDIR%%/ZWiki/POLICY.txt
 %%ZOPEPRODUCTDIR%%/ZWiki/PageTypes.py
 %%ZOPEPRODUCTDIR%%/ZWiki/PageTypes.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/Permissions.py
 %%ZOPEPRODUCTDIR%%/ZWiki/Permissions.pyc
-%%ZOPEPRODUCTDIR%%/ZWiki/README.txt
-%%ZOPEPRODUCTDIR%%/ZWiki/README_tests.txt
+%%ZOPEPRODUCTDIR%%/ZWiki/README
+%%ZOPEPRODUCTDIR%%/ZWiki/REPO_POLICY
 %%ZOPEPRODUCTDIR%%/ZWiki/RSS.py
 %%ZOPEPRODUCTDIR%%/ZWiki/RSS.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/Regexps.py
 %%ZOPEPRODUCTDIR%%/ZWiki/Regexps.pyc
-%%ZOPEPRODUCTDIR%%/ZWiki/TODO.txt
+%%ZOPEPRODUCTDIR%%/ZWiki/TESTS
+%%ZOPEPRODUCTDIR%%/ZWiki/TODO
 %%ZOPEPRODUCTDIR%%/ZWiki/TextFormatter.py
 %%ZOPEPRODUCTDIR%%/ZWiki/TextFormatter.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/Utils.py
@@ -80,22 +81,12 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/Views.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/Views_tests.py
 %%ZOPEPRODUCTDIR%%/ZWiki/Views_tests.pyc
-%%ZOPEPRODUCTDIR%%/ZWiki/Wikis.py
-%%ZOPEPRODUCTDIR%%/ZWiki/Wikis.pyc
-%%ZOPEPRODUCTDIR%%/ZWiki/Wikis_tests.py
-%%ZOPEPRODUCTDIR%%/ZWiki/Wikis_tests.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/ZWikiPage.py
 %%ZOPEPRODUCTDIR%%/ZWiki/ZWikiPage.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/ZWikiPage_tests.py
 %%ZOPEPRODUCTDIR%%/ZWiki/ZWikiPage_tests.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/__init__.py
 %%ZOPEPRODUCTDIR%%/ZWiki/__init__.pyc
-%%ZOPEPRODUCTDIR%%/ZWiki/ftests/curltest.py
-%%ZOPEPRODUCTDIR%%/ZWiki/ftests/curltest.pyc
-%%ZOPEPRODUCTDIR%%/ZWiki/ftests/test_plone_zwiki_org.py
-%%ZOPEPRODUCTDIR%%/ZWiki/ftests/test_plone_zwiki_org.pyc
-%%ZOPEPRODUCTDIR%%/ZWiki/ftests/test_zwiki_org.py
-%%ZOPEPRODUCTDIR%%/ZWiki/ftests/test_zwiki_org.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/af.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/ar.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/de.po
@@ -110,6 +101,7 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/ja.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/nl.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/pl.po
+%%ZOPEPRODUCTDIR%%/ZWiki/i18n/plone-br.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/plone-de.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/plone-es.po
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/plone-fi.po
@@ -139,6 +131,7 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-manual.pot
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki-plone.pot
 %%ZOPEPRODUCTDIR%%/ZWiki/i18n/zwiki.pot
+%%ZOPEPRODUCTDIR%%/ZWiki/list_authors.hs
 %%ZOPEPRODUCTDIR%%/ZWiki/pagetypes/__init__.py
 %%ZOPEPRODUCTDIR%%/ZWiki/pagetypes/__init__.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/pagetypes/common.py
@@ -174,6 +167,109 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/plugins/__init__.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/plugins/fit.py
 %%ZOPEPRODUCTDIR%%/ZWiki/plugins/fit.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/ChangeLog
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/Extensions/Install.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/Extensions/Install.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/Extensions/__init__.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/Extensions/__init__.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/Extensions/setup_latexwiki.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/Extensions/setup_latexwiki.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/LICENSE.txt
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/NOTES.txt
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/README.txt
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/ReplaceInlineLatex.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/ReplaceInlineLatex.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/ReplaceInlineLatex_tests.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/ReplaceInlineLatex_tests.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/__init__.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/__init__.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/latexWrapper.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/latexWrapper.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/stxlatex.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/stxlatex.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/util.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/util.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/wikis/latexwiki/FrontPage.stxlatex
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/wikis/latexwiki/HelpPage.stxlatex
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/wikis/latexwiki/LaTeX.stxlatex
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/wikis/latexwiki/LatexTemplate.txt
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/wikis/latexwiki/UserOptions.stxlatex
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/wikis/latexwiki/WikiWikiWeb.stxlatex
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/wikis/latexwiki/ZWiki.stxlatex
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/wikis/latexwiki/blank.gif.gif
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/wikis/latexwiki/diffform.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/wikis/latexwiki/index_html.dtml
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/wikis/latexwiki/latexwiki.css.dtml
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/wikis/latexwiki/pngbehavior.htc.zexp
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/wikis/latexwiki/setup_latexwiki.zexp
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/wikis/latexwiki/site_logo.png
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/wikis/latexwiki/standard_error_message.dtml
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/wikis/latexwiki/wikipage.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/ChangeLog
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/Extensions/Install.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/Extensions/Install.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/Extensions/__init__.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/Extensions/__init__.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/Extensions/setup_latexwiki.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/Extensions/setup_latexwiki.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/Extensions/tangle.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/Extensions/tangle.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/INSTALL.txt
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/LICENSE.txt
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/Notes
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/README.txt
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/ReplaceInlineAxiom.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/ReplaceInlineAxiom.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/ReplaceInlineHTML.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/ReplaceInlineHTML.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/ReplaceInlineLatex.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/ReplaceInlineLatex.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/ReplaceInlineMaxima.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/ReplaceInlineMaxima.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/ReplaceInlineReduce.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/ReplaceInlineReduce.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/ReplacePamphlet.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/ReplacePamphlet.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/UPGRADE
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/__init__.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/__init__.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/axiom.sty
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/axiomWrapper.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/axiomWrapper.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/latexWrapper.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/latexWrapper.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/mathaction-maxima-5.9.3.lisp
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/maximaWrapper.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/maximaWrapper.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/pagetypes.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/pagetypes.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/pamphletWrapper.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/pamphletWrapper.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/reduceWrapper.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/reduceWrapper.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/texbreaker.c
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/texbreaker.i
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/texbreaker.mak
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/texbreaker.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/texbreaker.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/texbreaker_wrap.c
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/useproto.h
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/util.py
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/util.pyc
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/wikis/mathaction/FrontPage.stxlatex
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/wikis/mathaction/HelpPage.stxlatex
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/wikis/mathaction/LaTeX.stxlatex
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/wikis/mathaction/LatexTemplate.txt
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/wikis/mathaction/UserOptions.stxlatex
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/wikis/mathaction/WikiWikiWeb.stxlatex
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/wikis/mathaction/ZWiki.stxlatex
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/wikis/mathaction/blank.gif.gif
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/wikis/mathaction/index_html.dtml
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/wikis/mathaction/latexwiki.css.dtml
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/wikis/mathaction/pngbehavior.htc.zexp
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/wikis/mathaction/setup_latexwiki.zexp
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/wikis/mathaction/site_logo.png
+%%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/wikis/mathaction/standard_error_message.dtml
 %%ZOPEPRODUCTDIR%%/ZWiki/plugins/rating/__init__.py
 %%ZOPEPRODUCTDIR%%/ZWiki/plugins/rating/__init__.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/plugins/rating/rating.py
@@ -200,6 +296,7 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/scripts/print.dtml
 %%ZOPEPRODUCTDIR%%/ZWiki/scripts/toc.py
 %%ZOPEPRODUCTDIR%%/ZWiki/scripts/view_source.dtml
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/HelpPage.stx
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/README
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/RecentChanges.dtml
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/SearchPage.dtml
@@ -217,6 +314,7 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/diffform.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/editform.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/head.pt
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/helppage.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/hierarchylinks.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/links.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/maintemplate.pt
@@ -230,6 +328,7 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/subscribeform.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/subtopics_board.dtml
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/subtopics_outline.dtml
+%%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/testtemplate.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/useroptions.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/wikipage.pt
 %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki/wikipage_icon.gif
@@ -243,22 +342,28 @@
 %%ZOPEPRODUCTDIR%%/ZWiki/tools/zwikiimport.pyc
 %%ZOPEPRODUCTDIR%%/ZWiki/version.txt
 %%ZOPEPRODUCTDIR%%/ZWiki/wikis/basic/FrontPage.stx
-%%ZOPEPRODUCTDIR%%/ZWiki/wikis/basic/HelpPage.stx
 %%ZOPEPRODUCTDIR%%/ZWiki/wikis/basic/WikiWikiWeb.stx
 %%ZOPEPRODUCTDIR%%/ZWiki/wikis/basic/ZWiki.stx
 %%ZOPEPRODUCTDIR%%/ZWiki/wikis/basic/index_html.dtml
 %%ZOPEPRODUCTDIR%%/ZWiki/wikis/basic/standard_error_message.dtml
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/Extensions
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/ftests
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/i18n
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/pagetypes
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/plugins/rating
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/plugins/tracker
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/plugins
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/scripts
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/skins
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/tools
 @dirrm %%ZOPEPRODUCTDIR%%/ZWiki/wikis/basic
 @dirrm %%ZOPEPRODUCTDIR%%/ZWiki/wikis
-@dirrm %%ZOPEPRODUCTDIR%%/ZWiki
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/tools
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/skins/zwiki
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/skins
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/scripts
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/plugins/tracker
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/plugins/rating
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/wikis/mathaction
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/wikis
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction/Extensions
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/plugins/mathaction
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/wikis/latexwiki
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/wikis
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki/Extensions
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/plugins/latexwiki
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/plugins
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/pagetypes
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/i18n
+@dirrm %%ZOPEPRODUCTDIR%%/ZWiki/Extensions
+@dirrmtry %%ZOPEPRODUCTDIR%%/ZWiki

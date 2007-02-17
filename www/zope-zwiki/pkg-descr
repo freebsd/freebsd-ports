@@ -10,6 +10,9 @@ ZWiki is fully customisable and comes with several examples demonstrating
 various ways to implement a WikiWeb.  It has a number of advanced features
 which elevate it above the run-of-the-mill Wiki clone.
 
+NOTE: 
+This port/package doesn't care for LatexWiki and MathAction plugins.
+
 Author: Simon Michael <simon@joyful.com>
 WWW:    http://zwiki.org/
 
