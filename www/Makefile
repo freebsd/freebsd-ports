@@ -1003,7 +1003,6 @@
     SUBDIR += ruby-gtkhtml2
     SUBDIR += ruby-gtkmozembed
     SUBDIR += ruby-http-access
-    SUBDIR += ruby-mnogosearch
     SUBDIR += ruby-nora
     SUBDIR += ruby-tmpl
     SUBDIR += ruby-webunit
