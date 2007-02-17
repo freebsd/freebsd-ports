@@ -45,7 +45,7 @@ Note:  Please add new entries to the beginning of this file.
 	<name>php5-sqlite</name>
 	<name>php5-wddx</name>
 	<name>php5</name>
-	<range><lt>5.2.1</lt></range>
+	<range><lt>5.2.1_2</lt></range>
       </package>
       <package>
 	<name>php4-odbc</name>
