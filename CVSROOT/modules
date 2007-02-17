@@ -12616,6 +12616,7 @@ py-tarfile	ports/archivers/py-tarfile
 py-tconfpy	ports/devel/py-tconfpy
 py-testgears	ports/devel/py-testgears
 py-testoob	ports/devel/py-testoob
+py-tgwebservices	ports/www/py-tgwebservices
 py-tkinter	ports/x11-toolkits/py-tkinter
 py-tktreectrl	ports/x11-toolkits/py-tktreectrl
 py-tlslite	ports/security/py-tlslite
