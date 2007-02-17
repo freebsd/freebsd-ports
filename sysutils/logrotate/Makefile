@@ -7,7 +7,7 @@
 
 PORTNAME=		logrotate
 PORTVERSION=		3.7
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		sysutils
 MASTER_SITES=		${MASTER_SITE_DEBIAN_POOL}
 MASTER_SITE_SUBDIR=	l/logrotate
@@ -31,9 +31,9 @@ MAN8=		logrotate.8
 MANCOMPRESSED=	no
 
 post-install:
-	@${MKDIR} ${PREFIX}/etc/logrotate.d
+	@${MKDIR} ${EXAMPLESDIR}
 	@${SED} -e 's|__PREFIX__|${PREFIX}|' \
 		< ${FILESDIR}/logrotate.conf.sample > ${PREFIX}/etc/logrotate.conf.sample
-	@${INSTALL_DATA} ${FILESDIR}/syslog.sample ${PREFIX}/etc/logrotate.d/
+	@${INSTALL_DATA} ${FILESDIR}/syslog.sample ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
