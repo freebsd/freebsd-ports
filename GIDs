@@ -1,5 +1,6 @@
 $FreeBSD$
 # Please keep this file sorted by GID!
+smmsp:*:25:
 bind:*:53:
 rdfdb:*:55:
 spamd:*:58:
