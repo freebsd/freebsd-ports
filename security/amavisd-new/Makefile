@@ -43,6 +43,7 @@ AMAVISUSER?=	vscan
 AMAVISGROUP?=	vscan
 AMAVISDIR?=	/var/amavis
 AMAVISQUARANTINE?=	/var/virusmails
+DAEMON?=	/usr/sbin/daemon -p
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.p.+//}
 
@@ -84,12 +85,6 @@ PLIST_SUB+=	AMAVIS_NOAMAVIS=${AMAVIS_NOAMAVIS} \
 		AMAVIS_NOP0F=${AMAVIS_NOP0F}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-DAEMON=/usr/sbin/daemon
-.else
-DAEMON=/usr/sbin/daemon -p
-.endif
 
 USE_RC_SUBR+=	amavisd.sh
 

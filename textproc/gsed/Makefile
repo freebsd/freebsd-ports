@@ -35,12 +35,6 @@ DOCSDIR=	${TARGETDIR}/share/doc/${PKGBASE}
 
 .include <bsd.port.pre.mk>
 
-# Required for gcc 2.95 since it is pre-C99
-# and doesn't handle the 'bool' datatype properly.
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-lib-regexec.c
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} 's,^\* sed:,* GNU sed:,' \
 		${WRKSRC}/doc/config.texi

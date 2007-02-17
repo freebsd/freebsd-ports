@@ -20,11 +20,6 @@ PLIST_FILES=	sbin/dualserver etc/dualserver.conf.sample
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-dualserver.h \
-		${FILESDIR}/extra-patch-dualserver.cpp
-.endif
-
 pre-patch:
 	${REINPLACE_CMD} 's|/etc/dualserver.ini|${PREFIX}/etc/dualserver.conf|' ${WRKSRC}/dualserver.cpp
 	${REINPLACE_CMD} 's|/etc/dualserver.state|/var/run/dualserver.state|' ${WRKSRC}/dualserver.cpp
