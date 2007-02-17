@@ -38,4 +38,3 @@ share/nls/en_US.US-ASCII
 @dirrm %%DOCSDIR%%/example/src
 @dirrm %%DOCSDIR%%/example
 @dirrm %%DOCSDIR%%
-@dirrmtry libdata/pkgconfig
