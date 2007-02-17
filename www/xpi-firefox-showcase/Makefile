@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox-showcase
-PORTVERSION=	0.9.0.1
+PORTVERSION=	0.9.2.1
 DISTVERSIONSUFFIX=	-fx+fl
 CATEGORIES=	www
 
@@ -16,7 +16,7 @@ COMMENT=	Easily locate and select any open browser window
 XPI_DISTNAME=	firefox_showcase
 XPI_ID=		{89506680-e3f4-484c-a2c0-ed711d481eda}
 XPI_FILES=	chrome/showcase.jar components/showcase-clhandler.js defaults/preferences/showcase.js \
-		install.rdf chrome.manifest
+		install.rdf chrome.manifest LICENSE
 XPI_DIRS=	chrome components defaults/preferences defaults
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
