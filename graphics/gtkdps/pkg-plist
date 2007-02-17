@@ -13,6 +13,7 @@ include/gtkDPS/gtkDPSpaintsel.h
 include/gtkDPS/gtkDPSwidget.h
 include/gtkDPS/parseAFM.h
 lib/libgtkDPS.a
+lib/libgtkDPS.la
 lib/libgtkDPS.so
 lib/libgtkDPS.so.1
 share/aclocal/gtkDPS.m4
