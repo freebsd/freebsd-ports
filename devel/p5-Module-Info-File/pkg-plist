@@ -1,8 +1,4 @@
 bin/version.pl
 %%SITE_PERL%%/Module/Info/File.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Info/File/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Info/File
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Info
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
 @dirrmtry %%SITE_PERL%%/Module/Info
 @dirrmtry %%SITE_PERL%%/Module
