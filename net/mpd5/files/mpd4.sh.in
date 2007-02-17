@@ -38,7 +38,7 @@ case "${mpd_flags}" in
         exit 1
         ;;
 *)
-        command_args="${mpd_flags} -p ${pidfile}"
+        command_args="-p ${pidfile} ${mpd_flags}"
         ;;
 esac
 
