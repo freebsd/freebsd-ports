@@ -25,7 +25,6 @@ IGNOREFILES=	${DISTFILES}
 WRKSRC=		${WRKDIR}/vmware-tools-distrib
 
 ONLY_FOR_ARCHS=	i386 amd64
-USE_RC_SUBR=	vmware-guestd.sh
 .if !defined(BATCH)
 IS_INTERACTIVE=	yes
 .endif
@@ -42,6 +41,8 @@ LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
 .else
 PLIST_SUB+=	INSTALLXGTKTOOL:="@comment "
 .endif
+.else
+USE_RC_SUBR=	vmware-guestd.sh
 .endif
 
 RESTRICTED=	"Not sure if we can redistribute this."
