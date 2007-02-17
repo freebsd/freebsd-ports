@@ -8,6 +8,7 @@
 
 PORTNAME=	milter-regex
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.benzedrine.cx/
 
