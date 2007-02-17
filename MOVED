@@ -2828,3 +2828,4 @@ lang/ruby16-shim-ruby18||2007-02-13|Port passed expiry date and was removed.
 lang/ruby16_static||2007-02-13|Port passed expiry date and was removed.
 lang/ruby18_static||2007-02-13|Port passed expiry date and was removed.
 devel/Subversive|devel/subversive|2007-02-16|Normalize port name
+www/ruby-mnogosearch||2007-02-17|Has expired: distfile and homepage disappeared
