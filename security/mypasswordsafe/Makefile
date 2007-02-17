@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	MyPasswordSafe
-PORTVERSION=	20060326
+PORTVERSION=	20061216
 CATEGORIES=	security
 MASTER_SITES=	http://www.semanticgap.com/myps/release/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.src
-EXTRACT_SUFX=	.tgz
+EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Easy-to-use password manager compatible with Password Safe
@@ -19,7 +18,6 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 USE_GMAKE=	yes
 USE_KDELIBS_VER=3
-WRKSRC=		${WRKDIR}/${DISTNAME:S/.src//}
 MAKE_ENV=	QTDIR="${QT_PREFIX}" \
 		QMAKESPEC="${LOCALBASE}/share/qt/mkspecs/freebsd-g++"
 
