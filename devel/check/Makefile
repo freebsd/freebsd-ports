@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	check
 MAINTAINER=	luckrill@yahoo.com.cn
 COMMENT=	Check is a unit testing framework for C
 
+BROKEN=		Incorrect pkg-plist
+
 INFO=		check
 
 MANCOMPRESSED=	yes
