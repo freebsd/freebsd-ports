@@ -1,3 +1,4 @@
+@stopdaemon vmware-guestd
 sbin/vmware-checkvm
 sbin/vmware-guestd
 %%VMWARE_VMMEMCTL:%%lib/vmware-tools/modules/vmmemctl.ko
