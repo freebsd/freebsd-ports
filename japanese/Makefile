@@ -272,6 +272,7 @@
     SUBDIR += onew-wnn6
     SUBDIR += onew-wnn7
     SUBDIR += otojiro-fpw
+    SUBDIR += p5-Acme-Lou
     SUBDIR += p5-Date-Japanese-Era
     SUBDIR += p5-Date-Japanese-Holiday
     SUBDIR += p5-Encode-EUCJPMS
