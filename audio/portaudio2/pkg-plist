@@ -1,28 +1,7 @@
-%%WITH_PATESTS%%bin/patest_buffer
-%%WITH_PATESTS%%bin/patest_clip
-%%WITH_PATESTS%%bin/patest_dither
-%%WITH_PATESTS%%bin/patest_hang
-%%WITH_PATESTS%%bin/patest_latency
-%%WITH_PATESTS%%bin/patest_leftright
-%%WITH_PATESTS%%bin/patest_longsine
-%%WITH_PATESTS%%bin/patest_many
-%%WITH_PATESTS%%bin/patest_maxsines
-%%WITH_PATESTS%%bin/patest_multi_sine
-%%WITH_PATESTS%%bin/patest_pink
-%%WITH_PATESTS%%bin/patest_record
-%%WITH_PATESTS%%bin/patest_ringmix
-%%WITH_PATESTS%%bin/patest_saw
-%%WITH_PATESTS%%bin/patest_sine
-%%WITH_PATESTS%%bin/patest_sine8
-%%WITH_PATESTS%%bin/patest_sine_formats
-%%WITH_PATESTS%%bin/patest_sine_time
-%%WITH_PATESTS%%bin/patest_stop
-%%WITH_PATESTS%%bin/patest_sync
-%%WITH_PATESTS%%bin/patest_toomanysines
-%%WITH_PATESTS%%bin/patest_underflow
-%%WITH_PATESTS%%bin/patest_wire
-include/portaudio.h
-lib/libportaudio.a
-lib/libportaudio.so
-lib/libportaudio.so.0.0.18
-lib/libportaudio.so.%%SHLIB_VERSION%%
+include/portaudio2/portaudio.h
+lib/portaudio2/libportaudio.la
+lib/portaudio2/libportaudio.so
+lib/portaudio2/libportaudio.so.2
+libdata/pkgconfig/portaudio-2.0.pc
+@dirrm include/portaudio2
+@dirrm lib/portaudio2
