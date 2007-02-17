@@ -1,0 +1,9 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme/Lou/.packlist
+%%SITE_PERL%%/Acme/Lou.pm
+%%SITE_PERL%%/Acme/Lou/Effect.pm
+%%SITE_PERL%%/Acme/Lou/lou-ja2kana.db
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme/Lou
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Acme
+@dirrmtry %%SITE_PERL%%/Acme/Lou
+@dirrmtry %%SITE_PERL%%/Acme
