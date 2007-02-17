@@ -1,0 +1,8 @@
+libixp is a stand-alone client/server 9P library including ixpc client
+which behaves like wmiir in the past. It consists of less than 2000
+lines of code (including ixpc).
+
+libixp's server api is based heavily on that of Plan 9's lib9p, and the
+two libraries export virtually identical data structures.
+
+WWW: http://www.suckless.org/wiki/libs
