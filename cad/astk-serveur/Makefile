@@ -58,6 +58,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/ASTK_SERV
 PATCHDIR=	${MASTERDIR}/files
 PLIST_SUB=	ASTKDIR=${LINSTDIR}/ASTK_SERV SERV="" CLIENT="@comment "		\
 		vaster=${vaster}
+PATCH2RM=	conf/config bin/as_exec bin/as_serv lib/as_config.py	\
+		lib/as_exec.py conf/aster_profile.sh lib/as_system.py
 .else
 RUN_DEPENDS+=	xterm:${PORTSDIR}/x11/xterm						\
 		wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
@@ -65,6 +67,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}/ASTK_CLIENT
 PATCHDIR=	${MASTERDIR}/files.client
 PLIST_SUB=	ASTKDIR=${LINSTDIR}/ASTK_CLIENT SERV="@comment " CLIENT="" vaster=""	\
 		BWidget_DIR=${LINSTDIR}/ASTK_CLIENT/share/BWidget-${BWidget_VER}
+PATCH2RM=	lib/ASTK/init.tcl lib/ASTK/astkrc/outils share/tkselecteur.tcl
 .endif
 FILESDIR=	${PATCHDIR}
 
@@ -140,15 +143,8 @@ ASTK_LANG=	FR
 ASTK_LANG=	ENG
 .endif
 
-post-patch:
-.if !defined(CLIENT_SEUL)
-	@${RM} ${WRKSRC}/conf/config.orig ${WRKSRC}/bin/as_exec.orig		\
-		${WRKSRC}/bin/as_serv.orig ${WRKSRC}/lib/as_config.py.orig	\
-		${WRKSRC}/lib/as_exec.py.orig ${WRKSRC}/conf/aster_profile.sh.orig
-.else
-	@${RM} ${WRKSRC}/lib/ASTK/init.tcl.orig	${WRKSRC}/lib/ASTK/astkrc/outils.orig	\
-		${WRKSRC}/share/tkselecteur.tcl.orig
-.endif
+pre-configure:
+	${RM} ${PATCH2RM:C|^|${WRKSRC}/|:C|$|.orig|}
 
 do-configure:
 .if !defined(CLIENT_SEUL)
