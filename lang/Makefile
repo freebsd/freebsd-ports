@@ -326,6 +326,7 @@
     SUBDIR += wamcc
     SUBDIR += whitespace
     SUBDIR += xds
+    SUBDIR += xds-c
     SUBDIR += xotcl
     SUBDIR += xsb
     SUBDIR += yabasic
