@@ -454,6 +454,7 @@
     SUBDIR += py-milter
     SUBDIR += py-spambayes
     SUBDIR += py-spf
+    SUBDIR += py-turbomail
     SUBDIR += py-twistedMail
     SUBDIR += pygmy
     SUBDIR += pymsgauth

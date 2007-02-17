@@ -1,0 +1,11 @@
+TurboMail is a TurboGears extension, meaning that it starts up and
+shuts down alongside any TurboGears applications you write, in the
+same way that visit tracking and identity do.
+
+TurboMail uses built-in Python modules for SMTP communication and
+MIME e-mail creation, but greatly simplifies these tasks by performing
+the grunt-work for you. Additionally, TurboMail is multi-threaded,
+allowing for single or batch enqueueing and background delivery of mail.
+
+Author: Top Floor Computer Systems Ltd.
+WWW:	http://trac.orianagroup.com/turbomail/

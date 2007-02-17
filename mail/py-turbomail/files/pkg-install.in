@@ -1,0 +1,16 @@
+#!/bin/sh
+# $FreeBSD$
+PKGNAME=$1
+#
+case $2 in
+    POST-INSTALL)
+	%%EASY_INSTALL_CMD%% -q -S %%PYTHON_SITELIBDIR%% %%EGG_VER%%
+	;;
+    PRE-INSTALL)
+	;;
+    *)
+	echo "Unexpected Argument $2!!!"
+	exit 1
+	;;
+esac
+exit 0
