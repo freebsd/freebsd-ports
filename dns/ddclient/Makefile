@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ddclient
-PORTVERSION=	3.7.0
+PORTVERSION=	3.7.1
 CATEGORIES=	dns
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	radek@raadradd.com
 COMMENT=	Update dynamic DNS entries
@@ -33,7 +32,11 @@ PORTDOCS=	COPYING COPYRIGHT Changelog README README.cisco README.ssl \
 
 post-patch:
 	@${GREP} -lr '/usr' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g'
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+	@${REINPLACE_CMD} \
+		-e 's|/etc/ddclient|${PREFIX}/etc|' \
+		-e 's|/tmp|/var/tmp|' \
+		-e 's|/var/cache/ddclient|/var/tmp/ddclient|' \
+		-e '/PATH/s|/etc:/usr/local/lib:||' \
 		-e 's|/usr.*perl|${PERL}|g' ${WRKSRC}/ddclient
 
 do-install:
