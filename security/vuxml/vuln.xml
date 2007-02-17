@@ -34,6 +34,52 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="94234e00-be8a-11db-b2ec-000c6ec775d9">
+    <topic>rar -- password prompt buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>rar</name>
+	<range><lt>3.70.b1,1</lt></range>
+      </package>
+      <package>
+	<name>unrar</name>
+	<name>zh-unrar</name>
+	<range><lt>3.70.b1,4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>iDefense reports:</p>
+	<blockquote cite="http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=472">
+	  <p>Remote exploitation of a stack based buffer overflow
+	    vulnerability in RARLabs Unrar may allow an attacker to
+	    execute arbitrary code with the privileges of the user
+	    opening the archive.</p>
+	  <p>Unrar is prone to a stack based buffer overflow when
+	    processing specially crafted password protected
+	    archives.</p>
+	  <p>If users are using the vulnerable command line based
+	    unrar, they still need to interact with the program in
+	    order to trigger the vulnerability. They must respond to
+	    the prompt asking for the password, after which the
+	    vulnerability will be triggered. They do not need to enter
+	    a correct password, but they must at least push the enter
+	    key.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>22447</bid>
+      <cvename>CVE-2007-0855</cvename>
+      <url>http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=472</url>
+      <url>http://www.rarsoft.com/rarnew.htm</url>
+    </references>
+    <dates>
+      <discovery>2007-02-07</discovery>
+      <entry>2007-02-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7fcf1727-be71-11db-b2ec-000c6ec775d9">
     <topic>php -- multiple vulnerabilities</topic>
     <affects>
