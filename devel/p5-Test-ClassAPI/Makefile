@@ -6,26 +6,22 @@
 #
 
 PORTNAME=	Test-ClassAPI
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Test
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Provides basic first-pass API testing for large class trees
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/Inspector.pm:${PORTSDIR}/devel/p5-Class-Inspector \
-		${SITE_PERL}/Config/Tiny.pm:${PORTSDIR}/devel/p5-Config-Tiny
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Class-Inspector>=1.12:${PORTSDIR}/devel/p5-Class-Inspector \
+		p5-Config-Tiny>=2.00:${PORTSDIR}/devel/p5-Config-Tiny \
+		p5-Params-Util>=0:${PORTSDIR}/devel/p5-Params-Util
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=	Test::ClassAPI.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} <= 500503
-post-patch:
-	@${PERL} -pi -e 's,\r,,' ${WRKSRC}/lib/Test/ClassAPI.pm
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
