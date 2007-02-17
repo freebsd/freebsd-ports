@@ -9,3 +9,47 @@
  $TrophieSock = "@SPOOLDIR@/trophie";
  
  package MIME::Parser::ParanoidFiler;
+@@ -3669,7 +3669,7 @@
+ 
+     # Run clamscan
+     my($code, $category, $action) =
+-	run_virus_scanner($Features{'Virus:CLAMAV'} . " --mbox --stdout --disable-summary --infected $path 2>&1");
++	run_virus_scanner($Features{'Virus:CLAMAV'} . " --stdout --disable-summary --infected $path 2>&1");
+     if ($action ne 'proceed') {
+ 	return (wantarray ? ($code, $category, $action) : $code);
+     }
+@@ -3693,7 +3693,7 @@
+ 
+     # Run clamscan
+     my($code, $category, $action) =
+-	run_virus_scanner($Features{'Virus:CLAMAV'} . " -r --mbox --stdout --disable-summary --infected ./Work 2>&1");
++	run_virus_scanner($Features{'Virus:CLAMAV'} . " -r --stdout --disable-summary --infected ./Work 2>&1");
+     if ($action ne 'proceed') {
+ 	return (wantarray ? ($code, $category, $action) : $code);
+     }
+@@ -4506,10 +4506,10 @@
+ 	    md_syslog('err', "$MsgID: Clamd returned error: $err_detail");
+ 	    # If it's a zip module failure, try falling back on clamscan.
+ 	    # This is despicable, but it might work
+-	    if ($err_detail =~ /zip module failure/i &&
++	    if ($err_detail =~ /(?:zip module failure|Not supported data format)/i &&
+ 		$Features{'Virus:CLAMAV'}) {
+ 		my ($code, $category, $action) =
+-		run_virus_scanner($Features{'Virus:CLAMAV'} . " -r --unzip --mbox --stdout --disable-summary --infected $CWD/Work 2>&1");
++		run_virus_scanner($Features{'Virus:CLAMAV'} . " -r --unzip --stdout --disable-summary --infected $CWD/Work 2>&1");
+ 		if ($action ne 'proceed') {
+ 			return (wantarray ? ($code, $category, $action) : $code);
+ 		}
+@@ -4603,10 +4603,10 @@
+ 	    md_syslog('err', "$MsgID: Clamd returned error: $err_detail");
+ 	    # If it's a zip module failure, try falling back on clamscan.
+ 	    # This is despicable, but it might work
+-	    if ($err_detail =~ /zip module failure/i &&
++	    if ($err_detail =~ /(?:zip module failure|Not supported data format)/i &&
+ 		$Features{'Virus:CLAMAV'}) {
+ 		my ($code, $category, $action) =
+-		    run_virus_scanner($Features{'Virus:CLAMAV'} . " -r --unzip --mbox --stdout --disable-summary --infected $CWD/Work 2>&1");
++		    run_virus_scanner($Features{'Virus:CLAMAV'} . " -r --unzip --stdout --disable-summary --infected $CWD/Work 2>&1");
+ 		if ($action ne 'proceed') {
+ 			return (wantarray ? ($code, $category, $action) : $code);
+ 		}
