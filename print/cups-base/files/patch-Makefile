@@ -1,0 +1,11 @@
+--- Makefile.orig	Tue Aug 29 17:51:19 2006
++++ Makefile	Sun Jan 14 10:44:39 2007
+@@ -141,8 +141,6 @@
+ 	fi
+ 	if test -d /usr/share/applications; then \
+ 		echo Installing desktop icons...; \
+-		$(INSTALL_DIR) -m 755 $(BUILDROOT)/usr/share/applications; \
+-		$(INSTALL_DATA) desktop/cups.desktop $(BUILDROOT)/usr/share/applications; \
+ 		$(INSTALL_DIR) -m 755 $(BUILDROOT)/usr/share/icons/hicolor/16x16/apps; \
+ 		$(INSTALL_DATA) desktop/cups-16.png $(BUILDROOT)/usr/share/icons/hicolor/16x16/apps/cups.png; \
+ 		$(INSTALL_DIR) -m 755 $(BUILDROOT)/usr/share/icons/hicolor/32x32/apps; \

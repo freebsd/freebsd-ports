@@ -562,7 +562,6 @@ sbin/reject
 %%DOCSDIR%%/sv/images/button-view-page-log.gif
 %%DOCSDIR%%/sv/images/button-view-printable-version.gif
 %%DOCSDIR%%/sv/index.html
-share/applications/cups.desktop
 share/icons/hicolor/16x16/apps/cups.png
 share/icons/hicolor/32x32/apps/cups.png
 share/icons/hicolor/64x64/apps/cups.png
