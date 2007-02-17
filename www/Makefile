@@ -961,6 +961,7 @@
     SUBDIR += py-qp
     SUBDIR += py-qpy
     SUBDIR += py-scgi
+    SUBDIR += py-scriptaculous
     SUBDIR += py-slimmer
     SUBDIR += py-turbogears
     SUBDIR += py-twistedWeb
