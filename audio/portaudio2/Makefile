@@ -6,61 +6,24 @@
 #
 
 PORTNAME=	portaudio
-PORTVERSION=	18.1
-PORTREVISION=	2
+PORTVERSION=	19.b${SNAPREV}
 CATEGORIES=	audio
-MASTER_SITES=	http://www.portaudio.com/archives/
-DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/}
+MASTER_SITES=	CSME
+# svn export -rSNAPREV https://www.portaudio.com/repos/portaudio/branches/v19-devel
 
-MAINTAINER=	lofi@freebsd.org
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Portable cross-platform Audio API
 
-USE_ZIP=	yes
+SNAPREV=	1175
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS=	--disable-static --without-alsa --without-jack --without-asihpi \
+		--libdir=${PREFIX}/lib/${PORTNAME}2 --includedir=${PREFIX}/include/${PORTNAME}2
+USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}2
 
-PLIST_SUB+=	SHLIB_VERSION=${SHLIB_VERSION}
-SHLIB_VERSION=	0
-
-pre-everything::
-.if !defined(WITH_PATESTS)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You can additionally build portaudio's testsuite by defining WITH_PATESTS."
-	@${ECHO_MSG}
-PLIST_SUB+=	WITH_PATESTS="@comment "
-.else
-PLIST_SUB+=	WITH_PATESTS=""
-.endif
-
-pre-patch:
-# replace \r\n with \n
-	@${FIND} ${WRKSRC} -type f \
-		| ${XARGS} -x -n 10 \
-			${REINPLACE_CMD} -E \
-				-e 's|||'
 post-patch:
-# replace obsolete headers, and fix up thread library
-	@${FIND} ${WRKSRC} -type f \
-		| ${XARGS} -x -n 10 \
-			${REINPLACE_CMD} -E \
-				-e 's|malloc.h|stdlib.h|' \
-				-e 's|machine\/soundcard.h|sys\/soundcard.h|' \
-				-e 's|-lpthread|${PTHREAD_LIBS}|'
-pre-configure:
-# Make configure executable
-	@${CHMOD} +x ${WRKSRC}/configure
-
-.if !defined(WITH_PATESTS)
-post-configure:
-	@${REINPLACE_CMD} -e 's|tests$$||' ${WRKSRC}/Makefile
-.endif
-
-post-install:
-.if defined(WITH_PATESTS)
-	@${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin
-.endif
-	@${LN} -sf libportaudio.so \
-		${PREFIX}/lib/libportaudio.so.${SHLIB_VERSION}
+	@${GREP} -lre -lpthread ${WRKSRC}|${XARGS} ${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|'
+	@${REINPLACE_CMD} -e '/pkgconfig/s|$$[(]libdir[)]|${PREFIX}/libdata|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
