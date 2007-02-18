@@ -1,0 +1,12 @@
+LaTrine is a curses-based LAnguage TRaINEr. It takes a dictionary and
+asks you for a word or a phrase, and you try to give the correct answer.
+You can choose in what direction LaTrine shall ask, and the selection of
+the words or phrases will depend on how often you don't know the correct
+translation for the respective phrase. This is a conventional way to drill
+yourself in vocabulary. In addition to this package you need an
+appropriate dictionary. You may write your own word list, or you can
+download one from the internet. The Free Dictionaries Project provides
+dictionaries for about 50 language combinations, which can be used with
+LaTrine.
+
+WWW: http://www.godisch.de/debian/latrine/
