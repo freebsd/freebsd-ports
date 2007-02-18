@@ -1,9 +1,0 @@
-sbin/sircd
-etc/sircd.conf.sample
-lib/libsyscore.so
-lib/sircd/motd.txt
-lib/sircd/plugins/cl_base.so
-lib/sircd/plugins/cl_oper.so
-lib/sircd/plugins/sv_base.so
-@dirrm lib/sircd/plugins
-@dirrm lib/sircd
