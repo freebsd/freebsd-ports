@@ -213,6 +213,7 @@
     SUBDIR += silo
     SUBDIR += sisctrl
     SUBDIR += slim
+    SUBDIR += slock
     SUBDIR += stalonetray
     SUBDIR += startup-notification
     SUBDIR += sxpc
