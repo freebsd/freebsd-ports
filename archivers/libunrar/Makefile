@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libunrar
-PORTVERSION=	3.6.8
+PORTVERSION=	3.7.3
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://files2.rarlab.com/rar/ \
