@@ -1,0 +1,12 @@
+==============================================================================
+
+sourcenav has been installed.
+
+The program includes libraries that also come in other ports, so it has been
+installed under "%%PREFIX%%" to avoid conflicts.
+
+A symlink has been created in "bin" named "snavigator".
+
+Documentation can be found under "%%PREFIX%%".
+
+==============================================================================
