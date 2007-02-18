@@ -322,6 +322,10 @@ CONFIGURE_ARGS+=--enable-posix
 LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 
 CONFIGURE_ARGS+=--with-pspell=${LOCALBASE}
+
+# Ugly hack to load session before psell to avoid crashes
+USE_PHP=	session
+USE_PHP_BUILD=	yes
 .endif
 
 .if ${PHP_MODNAME} == "readline"
