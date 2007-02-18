@@ -121,6 +121,7 @@
     SUBDIR += en-aspell
     SUBDIR += enchant
     SUBDIR += eo-aspell
+    SUBDIR += eqe
     SUBDIR += eruby
     SUBDIR += es-aspell
     SUBDIR += estraier
