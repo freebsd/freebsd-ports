@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		brutalchess
-PORTVERSION=		0.5.1
+PORTVERSION=		0.5.2
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,7 @@ COMMENT=		Nice looking OpenGL chess game
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-CONFIGURE_TARGET=	--target=${ARCH}-unknown-freebsd${OSREL}
+CONFIGURE_TARGET=	--target=${ARCH}-portbld-freebsd${OSREL}
 
 USE_GMAKE=		yes
 USE_AUTOTOOLS=		libtool:15
