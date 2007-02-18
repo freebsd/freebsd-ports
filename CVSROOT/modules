@@ -8234,6 +8234,7 @@ orbitcpp	ports/devel/orbitcpp
 orca		ports/graphics/orca
 accessibility_orca	ports/accessibility/orca
 oregano		ports/cad/oregano
+org-mode.el	ports/deskutils/org-mode.el
 orion		ports/x11-wm/orion
 oroborus	ports/x11-wm/oroborus
 orpheus		ports/audio/orpheus
