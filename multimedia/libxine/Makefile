@@ -7,6 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -37,11 +38,10 @@ USE_ICONV=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
-USE_GNOME=	gnomehack gnometarget ltverhack
+USE_GNOME=	gnomehack gnometarget
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_SDL=	sdl
-USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fno-force-addr -I${LOCALBASE}/include -I${LOCALBASE}/include/dvdread -I${X11BASE}/include" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -59,6 +59,10 @@ MAN5=	xine.5
 DOCSDIR=	${TARGETDIR}/share/doc/xine-lib
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+USE_GCC=	4.1+
+.endif
 
 .if !defined(WITHOUT_ARTS) && (exists(${LOCALBASE}/bin/artsc-config) || defined(WITH_ARTS))
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
@@ -208,11 +212,12 @@ pre-everything::
 	@${ECHO_MSG} "===>"
 
 post-patch:
-# fix the shlib version by using the libtool patched by ltverhack
-	@${REINPLACE_CMD} -e 's|^LIBTOOL = .*|LIBTOOL = @LIBTOOL@|' \
-		${WRKSRC}/src/xine-utils/Makefile.in \
-		${WRKSRC}/src/xine-engine/Makefile.in \
-		${WRKSRC}/src/libw32dll/wine/Makefile.in
+.for f in libtool ltmain.sh
+	@${REINPLACE_CMD} -e \
+		'/freebsd-elf)/,/;;/ s|major="\.$$current"|major=.`expr $$current - $$age`|; \
+		/freebsd-elf)/,/;;/ s|versuffix="\.$$current"|versuffix="$$major"|' \
+		${WRKSRC}/${f}
+.endfor
 
 pre-configure:
 	@${REINPLACE_CMD} -e \
@@ -222,15 +227,13 @@ pre-configure:
 		 s|-I/usr/local/include||g ; \
 		 s|-lgiconv|-liconv|g ; \
 		 s|-funroll-loops||g ; \
-		 s|LIBFFMPEG_CFLAGS|LIBFFMPEG_CPPFLAGS|g' ${WRKSRC}/configure
+		 s|LIBFFMPEG_CFLAGS|LIBFFMPEG_CPPFLAGS|g ; \
+		 s|echo aout|echo elf|g' ${WRKSRC}/configure
 .if ${OSVERSION} >= 500035
 	@${REINPLACE_CMD} -e \
 		 's|-malign-loops|-falign-loops|g ; \
 		  s|-malign-jumps|-falign-jumps|g ; \
 		  s|-malign-functions|-falign-functions|g' ${WRKSRC}/configure
 .endif
-
-pre-build:
-	${CP} ${LTMAIN} ${WRKSRC}/ltmain.sh
 
 .include <bsd.port.post.mk>
