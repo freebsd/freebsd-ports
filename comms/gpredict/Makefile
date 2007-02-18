@@ -6,6 +6,7 @@
 
 PORTNAME=	gpredict
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	groundstation
@@ -21,5 +22,12 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 MAN1=		gpredict.1
+
+DESKTOP_ENTRIES="GPREDICT" \
+		"Predict satellite passage times" \
+		"${PREFIX}/share/pixmaps/gpredict/icons/gpredict-icon.png" \
+		"gpredict" \
+		"" \
+		true
 
 .include <bsd.port.mk>
