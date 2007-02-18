@@ -15184,6 +15184,7 @@ vchat		ports/net/vchat
 vcp		ports/sysutils/vcp
 vda2fbd		ports/converters/vda2fbd
 vde		ports/net/vde
+vde2		ports/net/vde2
 vdesk		ports/x11/vdesk
 vdk		ports/x11-toolkits/vdk
 vdkbuilder	ports/x11-toolkits/vdkbuilder
