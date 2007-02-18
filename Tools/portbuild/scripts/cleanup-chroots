@@ -52,11 +52,11 @@ fi
 for i in ${old}; do
 	if [ ! -d ${i}/used ]; then
 		old2="${i} ${old2}"
-	# Also remove "in use" chroots that were set up more than 48 hours ago
-	elif [ ! -z "`find $i/used -prune -mmin +2880`" ]; then
+	# Also remove "in use" chroots that were set up more than 5 days ago
+	elif [ ! -z "`find $i/used -prune -mmin +7200`" ]; then
 		echo "cleanup-chroots: Found old files on `hostname`:"
 		ls -l ${i}/tmp ${i}/used
-		echo "${i} allegedly in use but >48 hours old"
+		echo "${i} allegedly in use but >5 days old"
 		old2="${i} ${old2}"
 	fi
 done
