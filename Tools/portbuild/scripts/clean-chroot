@@ -67,18 +67,16 @@ if [ ${arch} = "i386" -o ${arch} = "amd64" ]; then
   cleanup_mount ${chroot} /compat/linux/proc
 fi
 
-for i in /a/ports /usr/src /dev; do
+for i in /a/ports /usr/src /dev /root/.ccache; do
   cleanup_mount ${chroot} ${i}
 done
 
 #kill_procs ${chroot}
 
-if [ "${use_md_swap}" = "1" ]; then
-  if [ "${clean}" -gt "0" ]; then
-    cleanup_mount ${chroot} ""
-    mdconfig -d -u $(basename ${chroot})
-    rm -rf ${chroot}
-  fi
+if [ "${use_md_swap}" = "1" -a \( "${md_persistent}" != "1" -a "${clean}" -gt "0" \) -o "${clean}" = "2" ]; then
+  cleanup_mount ${chroot} ""
+  mdconfig -d -u $(basename ${chroot})
+  rm -rf ${chroot}
 else
   if [ "${clean}" = 1 ]; then
     rm -rf ${chroot}/tmp/*
