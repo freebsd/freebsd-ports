@@ -170,6 +170,7 @@ if [ $phase = 1 ]; then
 ./usr/local/news
 ./usr/local/share/xml
 ./usr/X11R6/etc/gconf
+./usr/local/etc/gconf
 EOF
   # Record a "pristine" mtree.
   mtree -X /tmp/mtree.preexclude -xcn -k uid,gid,mode -p / > /tmp/mtree.pristine
@@ -235,6 +236,7 @@ else
 ./usr/local/news
 ./usr/local/share/xml
 ./usr/X11R6/etc/gconf
+./usr/local/etc/gconf
 EOF
   # Record a "pristine" mtree.
   mtree -X /tmp/mtree.buildexclude -xcn -k uid,gid,mode -p / > /tmp/mtree.prebuild
@@ -245,7 +247,7 @@ EOF
     pid=$(echo $$ % 32768 | bc)
     X11BASE=$(which Xvfb | sed -e 's./bin/Xvfb..')
     Xvfb :${pid} -fp ${X11BASE}/lib/X11/fonts/misc &
-    DISPLAY=:${pid}
+    DISPLAY=${JAIL_ADDR}:${pid}
     export DISPLAY
   fi
 
@@ -258,8 +260,7 @@ EOF
   cd $dir
   /pnohang $TIMEOUT /tmp/make.log5 ${pkgname} make -k regression-test
   cat /tmp/make.log5
-
-  mtree -X /tmp/mtree.buildexclude -x -f /tmp/mtree.prebuild -p / | egrep -v "^(${L}/var|${X}/lib/X11/xserver/SecurityPolicy|${L}/share/nls/POSIX|${L}/share/nls/en_US.US-ASCII|etc/services|compat |${X} |etc/manpath.config|etc/.*.bak|${L}/info/dir|${X}/lib/X11/fonts/.*/fonts\.|usr/(X11R6|local)/man/..( |/man. )|${X}/lib/X11/fonts/TrueType|${X}/etc/gconf/gconf.xml.defaults/%gconf-tree.*.xml )" > /tmp/list.preinstall
+  mtree -X /tmp/mtree.buildexclude -x -f /tmp/mtree.prebuild -p / | egrep -v "^(${L}/var|${X}/lib/X11/xserver/SecurityPolicy|${L}/share/nls/POSIX|${L}/share/nls/en_US.US-ASCII|etc/services|compat |${X} |etc/manpath.config|etc/.*.bak|${L}/info/dir|${X}/lib/X11/fonts/.*/fonts\.|usr/(X11R6|local)/man/..( |/man. )|${X}/lib/X11/fonts/TrueType|${X}/etc/gconf/gconf.xml.defaults/%gconf-tree.*.xml|${L}/etc/gconf/gconf.xml.defaults/%gconf-tree.*.xml )" > /tmp/list.preinstall
 
   if [ -s /tmp/list.preinstall ]; then
     echo "================================================================"
@@ -305,7 +306,7 @@ EOF
     cleanup 7
   fi
 
-  mtree -X /tmp/mtree.exclude -x -f /tmp/mtree -p / | egrep -v "^(${L}/var|${X}/lib/X11/xserver/SecurityPolicy|${L}/share/nls/POSIX|${L}/share/nls/en_US.US-ASCII|etc/services|compat |${X} |etc/manpath.config|etc/.*.bak|${L}/info/dir|${X}/lib/X11/fonts/.*/fonts\.|usr/(X11R6|local)/man/..( |/man. )|${X}/lib/X11/fonts/TrueType|${X}/etc/gconf/gconf.xml.defaults/%gconf-tree.*.xml )" > /tmp/list3
+  mtree -X /tmp/mtree.exclude -x -f /tmp/mtree -p / | egrep -v "^(${L}/var|${X}/lib/X11/xserver/SecurityPolicy|${L}/share/nls/POSIX|${L}/share/nls/en_US.US-ASCII|etc/services|compat |${X} |etc/manpath.config|etc/.*.bak|${L}/info/dir|${X}/lib/X11/fonts/.*/fonts\.|usr/(X11R6|local)/man/..( |/man. )|${X}/lib/X11/fonts/TrueType|${X}/etc/gconf/gconf.xml.defaults/%gconf-tree.*.xml|${L}/etc/gconf/gconf.xml.defaults/%gconf-tree.*.xml )" > /tmp/list3
 
   # Compare the state of the filesystem now to before the 'make install' phase
   dirty=0
