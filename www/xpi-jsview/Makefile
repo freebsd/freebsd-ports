@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jsview
-PORTVERSION=	1.2.4
+PORTVERSION=	1.3
 CATEGORIES=	www
 MASTER_SITES=	http://forum.softwareblaze.com/jsview/ CSME
 DISTNAME=	${PORTNAME}${DISTVERSION}
