@@ -20,6 +20,9 @@ BUILD_DEPENDS=	emacs-dl-${EMACS_VER}:${EMACSDL_DIR} \
 		${NONEXISTENT}:${EMACSDL_DIR}:configure
 RUN_DEPENDS=	emacs-dl-${EMACS_VER}:${EMACSDL_DIR}
 
+DEPRECATED=	has deprecated dependency
+EXPIRATION_DATE=	2007-03-01
+
 USE_AUTOTOOLS=	autoconf:213:env
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
