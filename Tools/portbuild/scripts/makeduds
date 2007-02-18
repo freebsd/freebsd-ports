@@ -31,6 +31,12 @@ index=${PORTSDIR}/${INDEXFILE}
 unset DISPLAY
 
 export PACKAGE_BUILDING=1
+export LOCALBASE=/nonexistentlocal
+export X11BASE=/nonexistentx
+export LINUXBASE=/nonexistentlinux
+export PKG_DBDIR=/nonexistentpkg
+export PORT_DBDIR=/nonexistentport
+
 cd ${PORTSDIR}
 make -j${DUDSJOBS} ignorelist ECHO_MSG=true > ${duds} || exit 1
 sort ${duds} > ${duds}.tmp
