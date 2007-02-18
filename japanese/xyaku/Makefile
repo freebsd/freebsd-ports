@@ -9,7 +9,7 @@ PORTNAME=	xyaku
 PORTVERSION=	1.4.0
 PORTREVISION=	2
 CATEGORIES=	japanese textproc
-MASTER_SITES=	http://home.catv.ne.jp/pp/ginoue/software/xyaku/ \
+MASTER_SITES=	http://www.sepia.dti.ne.jp/inoue/software/xyaku/ \
 		http://redundancy.redundancy.org/mirror/
 
 MAINTAINER=	lx@FreeBSD.org
