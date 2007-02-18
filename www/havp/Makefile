@@ -7,6 +7,7 @@
 
 PORTNAME=	havp
 PORTVERSION=	0.82
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.server-side.de/download/ \
 				http://bio3k.softboard.ru/uploads/arch/
