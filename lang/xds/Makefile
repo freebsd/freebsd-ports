@@ -37,7 +37,7 @@ post-patch:
 		${WRKSRC}/bin/xcwork
 
 post-build:
-	cd ${WRKSRC} && ${SETENV} PATH=${WRKSRC}/bin ./apisyms-x86
+	@cd ${WRKSRC} && ${SETENV} PATH=${WRKSRC}/bin ./apisyms-x86
 
 do-install:
 	@${FIND} ${WRKSRC} -type d -exec ${CHMOD} 755 {} \;
