@@ -16,114 +16,31 @@ MAINTAINER?=	nobutaka@FreeBSD.org
 COMMENT?=	A Portable Emacs Library for emacs21
 
 # distfile version
-APEL_VER=	10.6
-# setupel filename
-APEL_SETUPEL=	apel-setupel.el
-# document install directory by install-doc target
-APELDOCDIR?=	share/doc/apel
+APEL_VER=	10.7
 # apel lispdir
 APEL_LISPDIR?=			${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 APEL_VERSION_SPECIFIC_LISPDIR?=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
-
-# This is a master port.
-PORTCLASS?=	master
 
 # emacs port setup
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
-EMACS_MASTERDIR_PKGFILES=YES
 DESCR=		${PKGDIR}/pkg-descr
 
 # target name for make build
 ALL_TARGET?=	elc
 # environments
-SCRIPTS_ENV+=	TARGETS="${APEL_SETUPEL}"
-PLIST_SUB+=	APELDOCDIR=${APELDOCDIR} APEL_SETUPEL=${APEL_SETUPEL}
 MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
 		LISPDIR="${APEL_LISPDIR}" \
 		VERSION_SPECIFIC_LISPDIR="${APEL_VERSION_SPECIFIC_LISPDIR}"
 
-.include <bsd.port.pre.mk>
-
-.if defined(EMACS_PORT_NAME)
-.if (${EMACS_PORT_NAME} == "emacs20") || (${EMACS_PORT_NAME} == "emacs21") || (${EMACS_PORT_NAME} == "emacs22")
-PLIST=		${PKGDIR}/pkg-plist.emacs20
-.endif
-# depends on custom: emacs-19.34 or mule-19.34
-.if (${EMACS_VER} == "19.34")
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/custom.el:${PORTSDIR}/editors/custom-${EMACS_NAME}
-RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/custom.el:${PORTSDIR}/editors/custom-${EMACS_NAME}
-.endif
-.if (${EMACS_NAME} == "xemacs")
-.BEGIN:
-	@${ECHO} "Please use apel from editors/xemacs-packages port."
-	@${ECHO} "This port only for GNU Emacs."
-	@${FALSE}
-.endif
-.else
-.BEGIN:
-	@${ECHO} "Error: Bad port."
-	@${ECHO} "You must define EMACS_PORT_NAME."
-	@${FALSE}
-.endif
-
-pre-configure:
-.if defined(EMACS_NO_SUBDIRSEL) && (${EMACS_NO_SUBDIRSEL} == "YES")
-	@${CP} ${FILESDIR}/${APEL_SETUPEL}.in ${WRKDIR}
-.endif
-
-pre-install:
-.if defined(EMACS_PACKAGESDIR) && defined(EMACS_PACKAGES_SUBDIRS)
-	@${MAKE} mkdir-site-packages
-.endif
-.if defined(EMACS_PACKAGESDIR) && defined(XEMACS_PKGNAME)
-	@${MAKE} pkg-el-install
-.endif
-
 post-install:
-.if defined(EMACS_NO_SUBDIRSEL) && (${EMACS_NO_SUBDIRSEL} == "YES")
-	@${MAKE} setupel-install
-.endif
-.if defined(EMACS_PACKAGESDIR) && defined(MANIFEST)
-	@${MAKE} manifest-install
-.endif
 .if !defined(NOPORTDOCS)
-	@${MAKE} doc-install
-.endif
-
-###############################################################################
-#
-# local functions
-#
-mkdir-site-packages:
-	@(for i in ${EMACS_PACKAGES_SUBDIRS} ; do \
-	    ${MKDIR} ${LOCALBASE}/${EMACS_PACKAGESDIR}/$${i} ; \
-	done)
-
-pkg-el-install:
-	@(if [ -f ${FILESDIR}/_pkg.el ] ; then \
-	${MKDIR} ${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/${XEMACS_PKGNAME} ;\
-	${INSTALL_DATA} ${FILESDIR}/_pkg.el \
-	    ${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/${XEMACS_PKGNAME}/_pkg.el ;\
-	fi)
-
-doc-install:
-	@${MKDIR} ${LOCALBASE}/${APELDOCDIR}
+	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC} ; \
 	for i in ChangeLog README.* ; do \
-	    ${INSTALL_DATA} $${i} ${LOCALBASE}/${APELDOCDIR}/ ; \
+	    ${INSTALL_DATA} $${i} ${DOCSDIR} ; \
 	done)
+.endif
 
-setupel-install:
-	@${INSTALL_DATA} ${WRKDIR}/${APEL_SETUPEL} \
-			${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp
-
-manifest-install:
-	@${RM} -f ${WRKDIR}/${MANIFEST}
-	@${CAT} ${PLIST} | ${GREP} -e "^%%EMACS_PACKAGESDIR%%" | \
-		${SED} -e "s;^%%EMACS_PACKAGESDIR%%/;;" > ${WRKDIR}/${MANIFEST}
-	@${INSTALL_DATA} ${WRKDIR}/${MANIFEST} \
-		${LOCALBASE}/${EMACS_PACKAGESDIR}/pkginfo/
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
