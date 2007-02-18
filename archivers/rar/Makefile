@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	rar
-PORTVERSION=	3.60
+PORTVERSION=	3.70b1
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://files.rarlab.com/rar/ \
 		http://files2.rarlab.com/rar/
-DISTNAME=	rarbsd-3.6.0
+DISTNAME=	rarbsd-3.7.b1
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	File archiver (binary port)
@@ -37,13 +37,13 @@ LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
 
 do-install:
 .if !defined(WITH_STATIC)
-	${INSTALL_PROGRAM} ${WRKSRC}/rar ${TARGETDIR}/bin/rar
+	${INSTALL_PROGRAM} ${WRKSRC}/rar ${PREFIX}/bin/rar
 .else
-	${INSTALL_PROGRAM} ${WRKSRC}/rar_static ${TARGETDIR}/bin/rar
+	${INSTALL_PROGRAM} ${WRKSRC}/rar_static ${PREFIX}/bin/rar
 .endif
-	${INSTALL_MAN} ${WRKSRC}/rar.txt ${TARGETDIR}/man/cat1/rar.1
-	${INSTALL_DATA} ${WRKSRC}/rarfiles.lst ${TARGETDIR}/etc
-	${INSTALL_DATA} ${WRKSRC}/default.sfx ${TARGETDIR}/lib
+	${INSTALL_MAN} ${WRKSRC}/rar.txt ${PREFIX}/man/cat1/rar.1
+	${INSTALL_DATA} ${WRKSRC}/rarfiles.lst ${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/default.sfx ${PREFIX}/lib
 
 post-install:
 .if !defined(NOPORTDOCS)
