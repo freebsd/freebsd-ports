@@ -20,6 +20,9 @@ RUN_DEPENDS=	${RUBY_SITELIBDIR}/html-parser.rb:${PORTSDIR}/textproc/ruby-html-pa
 		${RUBY_SITELIBDIR}/htmlrepair.rb:${PORTSDIR}/textproc/ruby-htmlrepair \
 		${RUBY_SITELIBDIR}/htmlsplit.rb:${PORTSDIR}/textproc/ruby-htmlsplit
 
+DEPRECATED=	has deprecated dependencies
+EXPIRATION_DATE=	2007-03-01
+
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	rexml testunit
 
