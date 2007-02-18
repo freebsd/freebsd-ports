@@ -60,10 +60,6 @@ DOCSDIR=	${TARGETDIR}/share/doc/xine-lib
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-USE_GCC=	4.1+
-.endif
-
 .if !defined(WITHOUT_ARTS) && (exists(${LOCALBASE}/bin/artsc-config) || defined(WITH_ARTS))
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 PLIST_SUB+=	WITH_ARTS=""
