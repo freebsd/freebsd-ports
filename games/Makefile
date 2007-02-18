@@ -384,6 +384,7 @@
     SUBDIR += kwappen
     SUBDIR += ladder
     SUBDIR += lapispuzzle
+    SUBDIR += latrine
     SUBDIR += lbreakout
     SUBDIR += lbreakout2
     SUBDIR += ldmud

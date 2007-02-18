@@ -1,0 +1,11 @@
+bin/latrine
+share/locale/de/LC_MESSAGES/latrine.mo
+share/locale/fr/LC_MESSAGES/latrine.mo
+share/locale/ga/LC_MESSAGES/latrine.mo
+share/locale/it/LC_MESSAGES/latrine.mo
+share/locale/nl/LC_MESSAGES/latrine.mo
+share/locale/ro/LC_MESSAGES/latrine.mo
+share/locale/sv/LC_MESSAGES/latrine.mo
+share/locale/tr/LC_MESSAGES/latrine.mo
+share/locale/vi/LC_MESSAGES/latrine.mo
+etc/latrine.conf.sample
