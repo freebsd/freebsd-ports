@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070218:
+  AFFECTS: users of sysutils/symon
+  AUTHOR: uspoerlein@gmail.com
+
+  The symon port has been updated from 2.72 to 2.75. It changes the wire
+  protocol, therefore, you should update your symux(8) installation first,
+  before updating your symon(8) clients. symux(8) is backwards compatible and
+  understands both protocol versions.
+
 20070215:
   AFFECTS: users of security/clamav
   AUTHOR: garga@FreeBSD.org
