@@ -275,6 +275,7 @@
     SUBDIR += gnomememoryblocks
     SUBDIR += gnomermind
     SUBDIR += gnomesudoku
+    SUBDIR += gnono
     SUBDIR += gnubg
     SUBDIR += gnuchess
     SUBDIR += gnudoku
