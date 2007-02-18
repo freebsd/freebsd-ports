@@ -1,25 +1,24 @@
-# New ports collection makefile for:	jakarta-tomcat-devel
-# Date created:		Tue Aug 12 23:26:32 CST 2003
-# Whom:			Kang Liu <liukang@bjpu.edu.cn>
+# New ports collection makefile for:	apache-tomcat
+# Date created:		14 Feb 2007
+# Whom:			Nemo Liu <nemoliu@gmail.com>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	tomcat
-PORTVERSION=	5.5.20
+PORTNAME=	apache-tomcat
+PORTVERSION=	6.0.9
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
-MASTER_SITE_SUBDIR=	tomcat/tomcat-5/v${PORTVERSION}/bin
-DISTFILES=	apache-tomcat-${PORTVERSION}.tar.gz
+MASTER_SITE_SUBDIR=	tomcat/tomcat-6/v${PORTVERSION}/bin
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Open-source Java web server by Apache, 5.5.x branch
+MAINTAINER=	nemoliu@gmail.com
+COMMENT=	Open-source Java web server by Apache, 6.x branch
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 NO_BUILD=	YES
 
-USE_RC_SUBR=	tomcat55.sh
+USE_RC_SUBR=	tomcat6.sh
 SUB_FILES=	pkg-install pkg-deinstall
 
 MAJOR_VER=	${PORTVERSION:R}
@@ -36,11 +35,11 @@ AJP_1_3_PORT?=	8009
 STDOUT_LOG=	${LOG_DIR}/stdout.log
 STDERR_LOG=	${LOG_DIR}/stderr.log
 PID_FILE=	/var/run/${APP_SHORTNAME}.pid
+WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
+WRKSRC=		${WRKDIR}/apache-tomcat-${PORTVERSION}
 REPLACE_FILES=	${WRKSRC}/conf/server.xml
 REPLACE_LIST_TEMP=	${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
 JAR_FILE=	bin/bootstrap.jar
-WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
-WRKSRC=		${WRKDIR}/apache-tomcat-${PORTVERSION}
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} WWWOWN=${TOMCAT_USER} WWWGRP=${TOMCAT_GROUP}
 LATEST_LINK=	${APP_SHORTNAME}
 CONF_EXT=	sample
@@ -62,13 +61,6 @@ SUB_LIST=	AJP_1_3_PORT=${AJP_1_3_PORT} \
 		USER=${TOMCAT_USER}
 
 .include <bsd.port.pre.mk>
-
-.if ${JAVA_PORT_VERSION:C/^([0-9])\.([0-9])(.*)$/\1.\2/} == "1.4"
-DISTFILES+=	apache-tomcat-${PORTVERSION}-compat.tar.gz
-PLIST_SUB+=	JAVA14=""
-.else
-PLIST_SUB+=	JAVA14="@comment "
-.endif
 
 pre-patch:
 	@${ECHO_MSG} "Installation settings:"
@@ -123,7 +115,7 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} -n ">> Creating symlink to tools.jar..."
-	@${LN} -sf ${JAVA_HOME}/lib/tools.jar ${APP_HOME}/common/lib/tools.jar
+	@${LN} -sf ${JAVA_HOME}/lib/tools.jar ${APP_HOME}/lib/tools.jar
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} -n ">> Fixing ownership settings..."
@@ -137,4 +129,5 @@ do-install:
 
 post-install:
 	@${ECHO_MSG} "${APP_TITLE} ${PORTVERSION} has been installed in ${APP_HOME}."
+
 .include <bsd.port.post.mk>
