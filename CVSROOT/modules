@@ -14815,6 +14815,7 @@ tolua4		ports/lang/tolua4
 tomatoes	ports/games/tomatoes
 tomboy		ports/deskutils/tomboy
 tomcat55	ports/www/tomcat55
+tomcat6		ports/www/tomcat6
 tome		ports/games/tome
 tomsfastmath	ports/math/tomsfastmath
 tonicpoint-viewer	ports/graphics/tonicpoint-viewer
