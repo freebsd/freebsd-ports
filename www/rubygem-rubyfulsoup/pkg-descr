@@ -1,0 +1,14 @@
+Rubyful Soup is a Ruby port of the hit Python HTML/XML parser Beautiful Soup.
+It's designed to be a useful quick-and-dirty parser for screen-scraping,
+along the same lines as its parent:
+
+1. Rubyful Soup won't choke if you give it bad markup. It yields a parse tree
+that makes approximately as much sense as your original document.
+This is usually good enough to collect the data you need and then run away.
+
+2. Rubyful Soup provides a few simple methods and Ruby-like idioms for
+navigating and searching a parse tree: a toolkit for dissecting a document
+and extracting what you need. You don't have to create a custom parser for
+each application. It's more flexible and easier to learn than XPath. 
+
+WWW: http://www.crummy.com/software/BeautifulSoup/
