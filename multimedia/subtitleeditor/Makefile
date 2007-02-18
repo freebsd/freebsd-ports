@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	subtitleeditor
-PORTVERSION=	0.12.4
+PORTVERSION=	0.13.2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://kitone.free.fr/subtitleeditor/files/ CSME
 
