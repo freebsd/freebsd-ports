@@ -807,7 +807,6 @@
     SUBDIR += ruby-html-fillinform
     SUBDIR += ruby-html-parser
     SUBDIR += ruby-html-template
-    SUBDIR += ruby-htmlcompact
     SUBDIR += ruby-htmlrepair
     SUBDIR += ruby-htmlsplit
     SUBDIR += ruby-htmltools
@@ -822,7 +821,6 @@
     SUBDIR += ruby-rdtool
     SUBDIR += ruby-rss
     SUBDIR += ruby-rss.alt
-    SUBDIR += ruby-rwv2
     SUBDIR += ruby-sablot
     SUBDIR += ruby-sary
     SUBDIR += ruby-spreadsheet-excel

@@ -13386,7 +13386,6 @@ ruby-hmac	ports/security/ruby-hmac
 ruby-html-fillinform	ports/textproc/ruby-html-fillinform
 ruby-html-parser	ports/textproc/ruby-html-parser
 ruby-html-template	ports/textproc/ruby-html-template
-ruby-htmlcompact	ports/textproc/ruby-htmlcompact
 ruby-htmlrepair	ports/textproc/ruby-htmlrepair
 ruby-htmlsplit	ports/textproc/ruby-htmlsplit
 ruby-htmltools	ports/textproc/ruby-htmltools
@@ -13487,7 +13486,6 @@ ruby-rss	ports/textproc/ruby-rss
 ruby-rss.alt	ports/textproc/ruby-rss.alt
 ruby-rsvg2	ports/graphics/ruby-rsvg2
 ruby-rudl	ports/devel/ruby-rudl
-ruby-rwv2	ports/textproc/ruby-rwv2
 ruby-sablot	ports/textproc/ruby-sablot
 ruby-sary	ports/textproc/ruby-sary
 ruby-sdl	ports/devel/ruby-sdl

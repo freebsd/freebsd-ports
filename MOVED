@@ -2834,3 +2834,5 @@ editors/emacs20-mule-devel||2007-02-18|Has expired: homepage and patchfiles disa
 irc/sircd||2007-02-18|Has expired: No upgrade since 02-02-2002. Developer unavailable. Website gone.
 math/vtk43-headers||2007-02-18|Has expired: Please use vtk 4.4 or 5.x.
 math/vtk43||2007-02-18|Has expired: Please use vtk 4.4 or 5.x.
+textproc/ruby-htmlcompact||2007-02-18|Has expired: distfile and homepage disappeared
+textproc/ruby-rwv2||2007-02-18|Has expired: distfile disappeared and has no homepage
