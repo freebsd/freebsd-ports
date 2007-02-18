@@ -14,6 +14,7 @@ bin/%%GNU_HOST%%-gfortran%%SUFFIX%%
 info/gcc%%SUFFIX%%/dir
 %%JAVA%%bin/addr2name.awk%%SUFFIX%%
 %%JAVA%%bin/gappletviewer%%SUFFIX%%
+%%JAVA%%bin/gc-analyze%%SUFFIX%%
 %%JAVA%%bin/gcj%%SUFFIX%%
 %%JAVA%%bin/gcj-dbtool%%SUFFIX%%
 %%JAVA%%bin/gij%%SUFFIX%%

@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.3.0
-PORTREVISION=	20070209
+PORTREVISION=	20070216
 CATEGORIES=	lang java
 VERSIONSTRING=	4.3-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -103,7 +103,8 @@ EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
 # FIXME: we are currently getting weird build failures with libjava on
 # some 4.x and 5.x systems, which the following works around. PR 81788.
 CONFIGURE_ARGS+=--disable-rpath
-MAN1+=		gcj${SUFFIX}.1 \
+MAN1+=		gc-analyze${SUFFIX}.1 \
+		gcj${SUFFIX}.1 \
 		gcj-dbtool${SUFFIX}.1 \
 		gcjh${SUFFIX}.1 \
 		gij${SUFFIX}.1 \
