@@ -28,6 +28,7 @@
     SUBDIR += bpft
     SUBDIR += braa
     SUBDIR += bsd-airtools
+    SUBDIR += bsnmp-regex
     SUBDIR += bsnmpd
     SUBDIR += bsnmptools
     SUBDIR += bwm-ng
