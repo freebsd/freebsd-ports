@@ -1,17 +1,13 @@
 bin/alex
-bin/alex-%%PORTVERSION%%
-lib/alex-%%PORTVERSION%%/alex.bin
-lib/alex-%%PORTVERSION%%/AlexTemplate
-lib/alex-%%PORTVERSION%%/AlexTemplate-ghc
-lib/alex-%%PORTVERSION%%/AlexTemplate-ghc-debug
-lib/alex-%%PORTVERSION%%/AlexTemplate-debug
-lib/alex-%%PORTVERSION%%/AlexWrapper-basic
-lib/alex-%%PORTVERSION%%/AlexWrapper-posn
-lib/alex-%%PORTVERSION%%/AlexWrapper-monad
-lib/alex-%%PORTVERSION%%/AlexWrapper-gscan
-@dirrm lib/alex-%%PORTVERSION%%
-%%PORTDOCS%%%%DOCSDIR%%/alex.ps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+share/alex-%%PORTVERSION%%/AlexTemplate
+share/alex-%%PORTVERSION%%/AlexTemplate-debug
+share/alex-%%PORTVERSION%%/AlexTemplate-ghc
+share/alex-%%PORTVERSION%%/AlexTemplate-ghc-debug
+share/alex-%%PORTVERSION%%/AlexWrapper-basic
+share/alex-%%PORTVERSION%%/AlexWrapper-posn
+share/alex-%%PORTVERSION%%/AlexWrapper-monad
+share/alex-%%PORTVERSION%%/AlexWrapper-gscan
+@dirrm share/alex-%%PORTVERSION%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/Tokens.x
 %%PORTDOCS%%%%EXAMPLESDIR%%/Tokens_gscan.x
