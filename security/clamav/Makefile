@@ -7,7 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.90
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -23,7 +23,8 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 OPTIONS=	MILTER "Compile the milter interface" Off \
 		LDAP "libmilter was built with LDAP" Off \
 		CURL "Support URL downloading" Off \
-		STDERR "Print logs to stderr instead of stdout" Off
+		STDERR "Print logs to stderr instead of stdout" Off \
+		EXPERIMENTAL "Build experimental code" Off
 
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -37,9 +38,11 @@ LOGDIR=		/var/log/clamav
 RUNDIR=		/var/run/clamav
 PLIST_SUB+=	DBDIR=${DBDIR} LOGDIR=${LOGDIR} RUNDIR=${RUNDIR}
 
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-dbdir=${DBDIR} \
 		--with-zlib=/usr \
-		--mandir=${MANPREFIX:S/^${DESTDIR}//}/man \
+		--mandir=${MANPREFIX}/man \
 		--disable-zlib-vcheck \
 		--disable-clamuko \
 		--disable-clamav \
@@ -52,8 +55,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include \
 LDFLAGS+=	-L${LOCALBASE}/lib \
 		${PTHREAD_LIBS}
 
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
 MAN1=		clamconf.1 \
 		clamscan.1 \
 		freshclam.1 \
@@ -73,8 +74,7 @@ CLAMAV_CLAMD_SOCKET?=	${RUNDIR}/clamd
 CLAMAV_MILTER_SOCKET?=	${RUNDIR}/clmilter.sock
 
 SUB_FILES=	pkg-install pkg-deinstall
-SUB_LIST+=	DESTDIR=${DESTDIR} \
-		DBDIR=${DBDIR} \
+SUB_LIST+=	DBDIR=${DBDIR} \
 		LOGDIR=${LOGDIR} \
 		RUNDIR=${RUNDIR} \
 		CLAMAVUSER=${CLAMAVUSER} \
@@ -109,11 +109,11 @@ USE_RC_SUBR+=	clamav-milter
 USE_OPENLDAP=	yes
 LDFLAGS+=	-lldap
 .endif
-.if !exists(/usr/lib/libmilter.a)
+.if !exists(/usr/lib/libmilter.a) || exists(${LOCALBASE}/lib/libmilter.a)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
-CONFIGURE_ENV+=	SENDMAIL="${LOCALBASE}/sbin/sendmail"
+CONFIGURE_ARGS+=	--with-sendmail=${LOCALBASE}/sbin/sendmail
 .else
-CONFIGURE_ENV+=	SENDMAIL="/usr/sbin/sendmail"
+CONFIGURE_ARGS+=	--with-sendmail=/usr/sbin/sendmail
 .endif
 CONFIGURE_ARGS+=	--enable-milter
 PLIST_SUB+=	CLAMAV-MILTER=""
@@ -132,27 +132,33 @@ CONFIGURE_ARGS+=	--without-libcurl
 EXTRA_PATCHES+=		${FILESDIR}/extra-patch-shared_output.c
 .endif
 
+.if defined(WITH_EXPERIMENTAL)
+CONFIGURE_ARGS+=	--enable-experimental
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread -lc_r|${PTHREAD_LIBS}|g' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e 's,unarj,arj,g' \
-		${WRKSRC}/docs/man/clamscan.1
-	@${REINPLACE_CMD} ${SED_CONF} ${BUILD_WRKSRC}/etc/clamd.conf
-	@${REINPLACE_CMD} ${SED_CONF} ${BUILD_WRKSRC}/etc/freshclam.conf
+		${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -E 's,^(pkgconfigdir = ).*$$,\1$$(prefix)/libdata/pkgconfig,g' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|0x100000000|0x100000000ULL|g' \
+		${WRKSRC}/libclamav/unrar/unrar.c
+	@${REINPLACE_CMD} ${SED_CONF} \
+		${WRKSRC}/etc/clamd.conf \
+		${WRKSRC}/etc/freshclam.conf
 
 pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 .for c in clamd freshclam
-	@[ -f ${TARGETDIR}/etc/${c}.conf ] || \
-		${CP} ${TARGETDIR}/etc/${c}.conf.default ${TARGETDIR}/etc/${c}.conf
+	@[ -f ${PREFIX}/etc/${c}.conf ] || \
+		${CP} ${PREFIX}/etc/${c}.conf.default ${PREFIX}/etc/${c}.conf
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/html
-	@${INSTALL_DATA} ${INSTALL_WRKSRC}/NEWS ${INSTALL_WRKSRC}/ChangeLog ${DOCSDIR}
-	@${INSTALL_DATA} ${INSTALL_WRKSRC}/docs/html/* ${DOCSDIR}/html
+	@${INSTALL_DATA} ${WRKSRC}/NEWS ${WRKSRC}/ChangeLog ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/html/* ${DOCSDIR}/html
 .endif
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
