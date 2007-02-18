@@ -7,6 +7,7 @@
 
 PORTNAME=	squidclam
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,6 +35,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 			  -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|cl_perror|cl_strerror|g' \
+		${WRKSRC}/squidclam.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
