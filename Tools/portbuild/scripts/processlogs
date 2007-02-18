@@ -1,6 +1,8 @@
 #!/bin/sh
 # echo 'processlogs: at '`date`', begin'
 
+arch=$1
+
 # establish which directory the logfiles live in (leave out for
 # backwards compatibility)
 buildlogdir=$(realpath .)
@@ -19,9 +21,7 @@ errorscript=$scriptdir/processonelog
 
 # Figure out which arch we're building for
 pb=/var/portbuild
-rpb=$(realpath ${pb} | sed -e "s,/$,," )
 
-arch=$(echo ${buildlogdir} | sed -e "s,${rpb}/,," | cut -f 1 -d /)
 . ${pb}/${arch}/portbuild.conf
 
 # create a name for the tempfile
