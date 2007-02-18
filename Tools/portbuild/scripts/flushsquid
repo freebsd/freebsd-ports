@@ -1,6 +1,6 @@
 #!/bin/sh
 
-arch=$(cat /etc/arch)
+arch=$(uname -m)
 pb=/var/portbuild
 . ${pb}/${arch}/portbuild.conf
 
