@@ -145,6 +145,7 @@
     SUBDIR += notification-daemon
     SUBDIR += ontv
     SUBDIR += orage
+    SUBDIR += org-mode.el
     SUBDIR += p5-Data-ICal
     SUBDIR += p5-Goo
     SUBDIR += pal

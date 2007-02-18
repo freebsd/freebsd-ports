@@ -1,0 +1,14 @@
+%%PORTDOCS%%%%DOCSDIR%%/org.html
+%%PORTDOCS%%%%DOCSDIR%%/org.pdf
+%%PORTDOCS%%%%DOCSDIR%%/orgcard.pdf
+%%EMACS_SITE_LISPDIR%%/org-install.el
+%%EMACS_SITE_LISPDIR%%/org-install.elc
+%%EMACS_SITE_LISPDIR%%/org-mouse.el
+%%EMACS_SITE_LISPDIR%%/org-mouse.elc
+%%EMACS_SITE_LISPDIR%%/org-publish.el
+%%EMACS_SITE_LISPDIR%%/org-publish.elc
+%%EMACS_SITE_LISPDIR%%/org.el
+%%EMACS_SITE_LISPDIR%%/org.elc
+%%XEMACS%%%%EMACS_SITE_LISPDIR%%/noutline.el
+%%XEMACS%%%%EMACS_SITE_LISPDIR%%/noutline.elc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
