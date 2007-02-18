@@ -14004,6 +14004,7 @@ slisp		ports/lang/slisp
 slmon		ports/sysutils/slmon
 slnr		ports/news/slnr
 sloccount	ports/misc/sloccount
+slock		ports/x11/slock
 slony1		ports/databases/slony1
 sloth		ports/sysutils/sloth
 slrn		ports/news/slrn
