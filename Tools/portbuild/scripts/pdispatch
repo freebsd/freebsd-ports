@@ -11,14 +11,8 @@ shift
 . ${pb}/${arch}/portbuild.conf
 . ${pb}/scripts/buildenv
 
-# Increase timeout on slow build machines
-if [ "$arch" = "sparc64" ]; then
-	# wait 24 hours maximum
-	timeout=86400
-else
-	# wait 100 hours maximum
-	timeout=360000
-fi
+# wait 100 hours maximum
+timeout=360000
 
 branch=$1
 command=$2
