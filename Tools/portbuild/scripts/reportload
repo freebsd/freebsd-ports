@@ -4,7 +4,7 @@
 
 # configurable variables
 pb=/var/portbuild
-arch=$1
+arch=$(uname -m)
 
 . ${pb}/${arch}/portbuild.conf
 if [ -f ${pb}/${arch}/portbuild.$(hostname) ]; then
