@@ -129,12 +129,12 @@ unset MAKEFLAGS
 unset PORTSDIR
 export SRCBASE=/usr/src
 
-# wait 1 hour before killing build with no output
+# wait 2 hours before killing build with no output
 export TIMEOUT=7200
 
-# to prevent runaway processes -- 300 meg file size limit, one hour CPU limit
-ulimit -f 614400
-ulimit -t 3600
+# to prevent runaway processes -- 400 meg file size limit, 2 hours CPU limit
+ulimit -f 819200
+ulimit -t 7200
 
 # directories to clean
 cleandirs="${LOCALBASE} ${X11BASE} /compat /var/db/pkg"
@@ -311,7 +311,7 @@ if [ "${error}" = 0 ]; then
 
   if [ "${use_jail}" = 1 ]; then
     ifconfig lo0 alias 127.${ip1}.${ip2}.${ip3}/32
-    jail -J ${chroot}/tmp/jail.id ${chroot} jail-${chrootpid} 127.${ip1}.${ip2}.${ip3} /usr/bin/env HTTP_PROXY=${http_proxy} /usr/bin/nice -n $nice /buildscript ${dirname} 2 "$ED" "$PD" "$FD" "$BD" "$RD" > ${chroot}/tmp/${pkgname}.log2 2>&1
+    jail -J ${chroot}/tmp/jail.id ${chroot} jail-${chrootpid} 127.${ip1}.${ip2}.${ip3} /usr/bin/env JAIL_ADDR=127.${ip1}.${ip2}.${ip3} HTTP_PROXY=${http_proxy} /usr/bin/nice -n $nice /buildscript ${dirname} 2 "$ED" "$PD" "$FD" "$BD" "$RD" > ${chroot}/tmp/${pkgname}.log2 2>&1
     ifconfig lo0 delete 127.${ip1}.${ip2}.${ip3}
   else
     chroot ${chroot} /usr/bin/nice -n $nice /buildscript ${dirname} 2 "$ED" "$PD" "$FD" "$BD" "$RD" > ${chroot}/tmp/${pkgname}.log2 2>&1
