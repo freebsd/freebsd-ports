@@ -991,6 +991,7 @@ bsfilter	ports/mail/bsfilter
 bsflite		ports/net-im/bsflite
 bsh		ports/java/bsh
 bsmtp		ports/mail/bsmtp
+bsnmp-regex	ports/net-mgmt/bsnmp-regex
 bsnmpd		ports/net-mgmt/bsnmpd
 bsnmptools	ports/net-mgmt/bsnmptools
 bsp		ports/games/bsp
