@@ -1,0 +1,37 @@
+--- Makefile.orig	Fri Feb 16 00:45:34 2007
++++ Makefile	Fri Feb 16 00:56:08 2007
+@@ -14,13 +14,13 @@
+ EMACS=emacs
+ 
+ # Where local software is found
+-prefix=/usr/local
++PREFIX=/usr/local
+ 
+ # Where local lisp files go.
+-lispdir = $(prefix)/share/emacs/site-lisp
++lispdir = $(PREFIX)/share/emacs/site-lisp
+ 
+ # Where info files go.
+-infodir = $(prefix)/info
++infodir = $(PREFIX)/info
+ 
+ ##----------------------------------------------------------------------
+ ## YOU MAY NEED TO EDIT THESE
+@@ -59,7 +59,7 @@
+ ELCFILES   = $(LISPFILES:.el=.elc)
+ DOCFILES   = org.texi org.pdf org orgcard.tex orgcard.pdf
+ TEXIFILES  = org.texi
+-INFOFILES  = org
++INFOFILES  = org.info
+ HTMLDIR    = /home/dominik/public_html/Tools/org
+ 
+ .SUFFIXES: .el .elc .texi
+@@ -70,7 +70,7 @@
+ 
+ all:	$(ELCFILES)
+ 
+-install: install-lisp
++install: install-lisp install-info
+ 
+ doc: org.html org.pdf orgcard.pdf
+ 
