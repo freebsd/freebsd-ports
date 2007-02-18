@@ -7,6 +7,7 @@
 
 PORTNAME=		instantclient
 PORTVERSION=		${ORACLEVERSION}.${DISTDATE}
+PORTREVISION=		1
 CATEGORIES=		databases
 MASTER_SITES=		#http://www.oracle.com/technology/software/tech/oci/instantclient/
 PKGNAMEPREFIX=		linux-oracle-
@@ -81,5 +82,6 @@ do-install:
 .for i in ${LIBS_LIST}
 			${INSTALL_DATA}   ${WRKSRC}/${i} ${INSTLIBSDIR}/${i}
 .endfor
+			${PREFIX}/sbin/ldconfig
 
 .include <bsd.port.post.mk>
