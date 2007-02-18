@@ -24,6 +24,9 @@ BUILD_DEPENDS=	emacs-dl-${EMACS_VER}:${EMACSDL_DIR} \
 RUN_DEPENDS=	emacs-dl-${EMACS_VER}:${EMACSDL_DIR} \
 		${APEL_DEPENDS}:${PORTSDIR}/editors/apel-emacs20
 
+DEPRECATED=	has deprecated dependency
+EXPIRATION_DATE=	2007-03-01
+
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-canna-includes=${PREFIX}/include \
 		--with-canna-libraries=${PREFIX}/lib \
