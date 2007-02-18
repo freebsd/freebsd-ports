@@ -42,7 +42,7 @@ post-patch:
 		${WRKSRC}/bin/xmwork ${WRKSRC}/bin/xm.cfg
 
 post-build:
-	cd ${WRKSRC} && ${SETENV} PATH=${WRKSRC}/bin ./apisyms-c
+	@cd ${WRKSRC} && ${SETENV} PATH=${WRKSRC}/bin ./apisyms-c
 
 do-install:
 	@${FIND} ${WRKSRC} -type d -exec ${CHMOD} 755 {} \;
@@ -58,5 +58,10 @@ do-install:
 	@${LN} -s ${PREFIX}/${PORTNAME}/bin/${f} ${PREFIX}/bin
 .endfor
 	@${LN} -s ${PREFIX}/${PORTNAME}/bin/h2d ${PREFIX}/bin/${PORTNAME}-h2d
+
+post-install:
+	@${ECHO_CMD}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 
 .include <bsd.port.mk>

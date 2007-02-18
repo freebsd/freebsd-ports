@@ -1,6 +1,6 @@
 --- bin/xmwork.orig	Mon May 18 16:24:50 1998
-+++ bin/xmwork	Sun Jan 28 22:21:14 2007
-@@ -1,11 +1,13 @@
++++ bin/xmwork		Sun Feb 18 21:23:15 2007
+@@ -1,11 +1,12 @@
 +#!/bin/sh
 +
  echo '    creating directory structure...'
@@ -11,8 +11,7 @@
 -echo >>xm.red '*.tem  = $(XDSDIR)/bin'
 -echo >>xm.red '*.a    = $(XDSDIR)/lib/C'
 -echo >>xm.red '*.sym  = $!/sym;$(XDSDIR)/sym/C'
-+echo >xm.red  'xm.msg = %%XDSDIR%%/bin'
-+echo >>xm.red 'xm.cfg = %%XDSDIR%%/bin'
++echo >xm.red  'xm.*   = %%XDSDIR%%/bin'
 +echo >>xm.red '*.tem  = %%XDSDIR%%/bin'
 +echo >>xm.red '*.a    = %%XDSDIR%%/lib/C'
 +echo >>xm.red '*.sym  = $!/sym;%%XDSDIR%%/sym/C'
