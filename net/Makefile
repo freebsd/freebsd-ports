@@ -173,7 +173,6 @@
     SUBDIR += gstreamer-plugins-libmms80
     SUBDIR += gtic
     SUBDIR += gutenfetch
-    SUBDIR += happystats
     SUBDIR += haproxy
     SUBDIR += hawknl
     SUBDIR += hawknl-devel
