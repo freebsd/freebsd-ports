@@ -1,3 +1,4 @@
+../bin/snavigator
 COPYING
 INSTALL.TXT
 README.TXT
@@ -2537,11 +2538,11 @@ share/tk8.3/xmfbox.tcl
 @dirrm share/sdk/parsers/examples
 @dirrm share/sdk/parsers
 @dirrm share/sdk
-@dirrm share/sourcenav/gui
-@dirrm share/sourcenav/packages/eventutils
-@dirrm share/sourcenav/packages/snscenario
-@dirrm share/sourcenav/packages
-@dirrm share/sourcenav
+@dirrm %%DATADIR%%/gui
+@dirrm %%DATADIR%%/packages/eventutils
+@dirrm %%DATADIR%%/packages/snscenario
+@dirrm %%DATADIR%%/packages
+@dirrm %%DATADIR%%
 @dirrm share/tcl8.3/encoding
 @dirrm share/tcl8.3/http1.0
 @dirrm share/tcl8.3/http2.3
