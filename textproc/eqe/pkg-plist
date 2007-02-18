@@ -1,0 +1,6 @@
+bin/eqedit
+bin/eqe
+%%DATADIR%%/template.tt.tex
+%%DATADIR%%/error.png
+%%DATADIR%%/initial_image.png
+@dirrmtry %%DATADIR%%

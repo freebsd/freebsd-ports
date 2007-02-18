@@ -1,0 +1,12 @@
+Eqe is a simple clone of the excellent LaTeX equation editor you can find on
+MacOS X. There's a zone to type LaTeX input, and it generates an image to
+represent it (color, font, and size are customisable). You can drag the
+image to other applications (like OpenOffice.org Impress, Mozilla, the
+Gimp). It also exports to almost any image format, including PNG, JPEG,
+PDF...). It is free software, released under the GPL.
+
+It is composed of two parts: eqedit, which is a command line tool that
+generates images from LaTeX input, and eqe which wraps eqedit into a
+graphical user interface.
+
+WWW: http://rlehy.free.fr/

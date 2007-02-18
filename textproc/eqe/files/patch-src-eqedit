@@ -1,0 +1,25 @@
+--- src/eqedit.orig	Fri Feb 16 21:52:49 2007
++++ src/eqedit	Fri Feb 16 23:54:34 2007
+@@ -364,10 +364,10 @@
+ 
+ sub command
+ {
+-    my @com = @_; #(@_, " >> $options->{log} 2>\&1");
++    my @com = (@_, " >> $options->{log} 2>\&1");
+     my $com = join ' ', @com;
+-    $options->verbose and mywarn "executing $com\n";
+-    redirect_to_log($options->{log}, sub {system @com}) and mydie "command '$com' failed with error code $?";
++    $options->verbose and print "executing $com\n";
++    system $com and mydie "command '$com' failed with error code $?";
+ }
+ 
+ sub find_template
+@@ -506,7 +506,7 @@
+ 
+     if (@transparent or @res or not same_ext($in, $out))
+     {
+-	command 'convert', '-comment', $comment, @res, @transparent, $in, $out;
++	command 'convert', @res, @transparent, $in, $out;
+     }
+     elsif ($in ne $out)
+     {
