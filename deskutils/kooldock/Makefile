@@ -6,10 +6,10 @@
 #
 
 PORTNAME=		kooldock
-PORTVERSION=		0.4.4
+PORTVERSION=		0.4.5
 CATEGORIES=		deskutils
-MASTER_SITES=		http://www.kde-apps.org/content/files/ \
-			http://www.kde-look.org/content/files/ \
+MASTER_SITES=		http://www.kde-apps.org/CONTENT/content-files/ \
+			http://www.kde-look.org/CONTENT/content-files/ \
 			http://freebsd.unixfreunde.de/sources/
 DISTNAME=		${KDELOOKITEM}-${PORTNAME}
 
