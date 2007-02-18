@@ -8,10 +8,11 @@
 PORTNAME=	django-devel
 PORTVERSION=	${SNAPSHOT}
 PORTREVISION=	0
-MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:freebsd/g}
-MASTER_SITE_SUBDIR=	flz/django/:freebsd
-DISTFILES=	Django-${PORTVERSION}.tar.gz:freebsd
-SNAPSHOT=	20060802
+MASTER_SITES=	http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	clsung/django
+DISTFILES=	Django-${PORTVERSION}.tar.gz
+SNAPSHOT=	20070214
 DJANGOVER=	0.95
 
 MAINTAINER=	python@FreeBSD.org
