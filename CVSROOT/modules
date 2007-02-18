@@ -5993,6 +5993,7 @@ latex2rtf	ports/print/latex2rtf
 latex2slides	ports/print/latex2slides
 latexdiff	ports/print/latexdiff
 latexmk		ports/print/latexmk
+latrine		ports/games/latrine
 latte		ports/textproc/latte
 laudio		ports/audio/laudio
 lavaps		ports/sysutils/lavaps
