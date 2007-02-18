@@ -2407,6 +2407,7 @@ epstool		ports/graphics/epstool
 epstools	ports/mail/epstools
 epydoc		ports/devel/epydoc
 epylog		ports/sysutils/epylog
+eqe		ports/textproc/eqe
 erc		ports/irc/erc
 eric		ports/devel/eric
 eris		ports/devel/eris
