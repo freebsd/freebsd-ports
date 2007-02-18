@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	g2ipmsg
-PORTVERSION=	0.8.6
+PORTVERSION=	0.9
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.ipmsg.org/archive/ \
 		${MASTER_SITE_LOCAL} \
@@ -27,6 +27,7 @@ USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--enable-systray
 
 GCONF_SCHEMAS=	g2ipmsg.schemas
 
