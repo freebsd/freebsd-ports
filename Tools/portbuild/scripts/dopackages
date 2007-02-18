@@ -319,6 +319,11 @@ if [ "$skipstart" = 0 ]; then
     makeduds ${pb} ${arch} ${scripts} ${branch}
   fi
 
+  if [ "$noindex" = 0 ]; then
+    makeindex ${pb} ${arch} ${scripts} ${branch}
+  fi
+  checkindex ${pb} ${arch} ${branch}
+
   if [ "$trybroken" = 1 ]; then
     echo "================================================"
     echo "pruning stale entries from the failed ports list"
@@ -326,11 +331,6 @@ if [ "$skipstart" = 0 ]; then
     cp ${pb}/${arch}/${branch}/failure ${pb}/${arch}/${branch}/newfailure ${pb}/${arch}/${branch}/bak
     lockf -k ${pb}/${arch}/${branch}/failure.lock ${scripts}/prunefailure ${arch} ${branch}
   fi
-
-  if [ "$noindex" = 0 ]; then
-    makeindex ${pb} ${arch} ${scripts} ${branch}
-  fi
-  checkindex ${pb} ${arch} ${branch}
 fi
 
 if [ "$nobuild" = 0 -a "$finish" = 0 ]; then
@@ -440,7 +440,7 @@ if [ "$nobuild" = 0 ]; then
   cd ${pb}/${arch}/${branch}
 
   if [ "$cont" = 1 ]; then
-    find errors/ -name \*.log | sed -e 's,\.log$,,' -e 's,^errors/,,' >> duds.errors
+    find errors/ -name \*.log | sed -e 's,\.log$,,' -e 's,^errors/,,' > duds.errors
     cat duds duds.errors | sort -u > duds.new
     mv duds.new duds
   else
