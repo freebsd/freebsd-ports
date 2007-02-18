@@ -2321,7 +2321,6 @@ emacs.app	ports/editors/emacs.app
 emacs19		ports/editors/emacs19
 emacs20		ports/editors/emacs20
 emacs20-dl	ports/editors/emacs20-dl
-emacs20-mule-devel	ports/editors/emacs20-mule-devel
 embassy		ports/biology/embassy
 ember		ports/games/ember
 emboss		ports/biology/emboss

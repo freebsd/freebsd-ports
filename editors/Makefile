@@ -45,7 +45,6 @@
     SUBDIR += emacs19
     SUBDIR += emacs20
     SUBDIR += emacs20-dl
-    SUBDIR += emacs20-mule-devel
     SUBDIR += etoile-typewriter
     SUBDIR += f4l
     SUBDIR += fb
