@@ -858,6 +858,7 @@
     SUBDIR += v6eval
     SUBDIR += vchat
     SUBDIR += vde
+    SUBDIR += vde2
     SUBDIR += versuch
     SUBDIR += vino
     SUBDIR += vls

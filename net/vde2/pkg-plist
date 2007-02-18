@@ -1,8 +1,15 @@
 bin/dpipe
 bin/slirpvde
+bin/unixterm
+bin/vde_cryptcab
 bin/vde_plug
+bin/vde_plug2tap
 bin/vde_switch
 bin/vdeq
 bin/vdeqemu
-bin/vdetap
-lib/libvdetap.so
+bin/wirefilter
+include/libvdeplug.h
+lib/libvdeplug.a
+lib/libvdeplug.la
+lib/libvdeplug.so
+lib/libvdeplug.so.%%SHLIB_MAJOR%%

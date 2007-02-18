@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	craig@yekse.gank.org
 COMMENT=	User-mode virtual ethernet infrastructure
 
+CONFLICTS=	vde2-[0-9]*
+
 USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
 INSTALLS_SHLIB=	yes
