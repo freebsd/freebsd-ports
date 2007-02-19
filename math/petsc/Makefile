@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	petsc
-DISTVERSION=	2.3.2-p6
-PORTREVISION=	2
+DISTVERSION=	2.3.2-p8
 PORTEPOCH=	1
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
@@ -15,7 +14,7 @@ MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable, Extensible Toolkit for Scientific computation
 
-RUN_DEPENDS=	ksh93:${PORTSDIR}/shells/ksh93
+RUN_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh
 
 HAS_CONFIGURE=		yes
 USE_PYTHON=		yes
@@ -253,7 +252,7 @@ pre-configure:
 	@${REINPLACE_CMD} -e "s|AMD/Include|include/AMD|"	\
 			-e "s|AMD/Lib|${LOCALBASE}/lib|"	\
 		${WRKSRC}/python/PETSc/packages/UMFPACK.py
-	@${REINPLACE_CMD} -e "s|/bin/ksh|${LOCALBASE}/bin/ksh93|"	\
+	@${REINPLACE_CMD} -e "s|/bin/ksh|${LOCALBASE}/bin/ksh|"	\
 		${WRKSRC}/bin/popup
 	@${RM} ${WRKSRC}/bin/popup.bak
 .if defined(PACKAGE_BUILDING)
