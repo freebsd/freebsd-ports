@@ -37,4 +37,10 @@ post-patch:
 		${WRKSRC}/UL/GNUmakefile \
 		${WRKSRC}/UL/AdunServer/GNUmakefile
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+IGNORE=		not enough math funtions
+.endif
+
+.include <bsd.port.post.mk>
