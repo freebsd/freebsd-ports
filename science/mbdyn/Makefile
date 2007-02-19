@@ -42,7 +42,6 @@ OPTIONS=	MPI "Enable mpich-support" off \
 
 .include <bsd.port.pre.mk>
 
-WITH_BLAS=	yes
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 .endif
@@ -54,7 +53,7 @@ LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 CONFIGURE_ARGS+=	--with-blas=blas
 .endif
 
-post-patch:
+pre-configure:
 	@${DIRNAME} `${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
 	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+${GCCLIBDIR}+" -e "s+%%FORTRANLIBS%%+${FORTRANLIBS}+" ${WRKSRC}/configure.in
 
