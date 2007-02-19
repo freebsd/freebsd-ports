@@ -1,0 +1,9 @@
+lxml is a Python binding for libxml2 and libxslt. Its aim:
+
+  * Pythonic API.
+  * Documented.
+  * Use Python unicode strings in API.
+  * Safe (no segfaults).
+  * No manual memory management!
+
+WWW: http://codespeak.net/lxml/

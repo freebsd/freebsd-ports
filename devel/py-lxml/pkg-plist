@@ -1,0 +1,62 @@
+%%PYTHON_SITELIBDIR%%/lxml/__init__.py
+%%PYTHON_SITELIBDIR%%/lxml/__init__.pyc
+%%PYTHON_SITELIBDIR%%/lxml/__init__.pyo
+%%PYTHON_SITELIBDIR%%/lxml/_elementpath.py
+%%PYTHON_SITELIBDIR%%/lxml/_elementpath.pyc
+%%PYTHON_SITELIBDIR%%/lxml/_elementpath.pyo
+%%PYTHON_SITELIBDIR%%/lxml/etree.so
+%%PYTHON_SITELIBDIR%%/lxml/objectify.so
+%%PYTHON_SITELIBDIR%%/lxml/sax.py
+%%PYTHON_SITELIBDIR%%/lxml/sax.pyc
+%%PYTHON_SITELIBDIR%%/lxml/sax.pyo
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSES.txt
+%%PORTDOCS%%%%DOCSDIR%%/TODO.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/api.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/build.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/capi.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/compatibility.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/element_classes.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/extensions.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/build.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/capi.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/changes-1.1.2.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/compatibility.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/element_classes.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/intro.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/objectify.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/performance.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/pubkey.asc
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/resolvers.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/sax.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/style.css
+%%PORTDOCS%%%%DOCSDIR%%/doc/intro.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/licenses/BSD.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/licenses/GPL.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/licenses/ZopePublicLicense.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/licenses/elementtree.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/lxml.mgp
+%%PORTDOCS%%%%DOCSDIR%%/doc/main.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/memorymanagement.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/mkhtml.py
+%%PORTDOCS%%%%DOCSDIR%%/doc/objectify.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/performance.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/pubkey.asc
+%%PORTDOCS%%%%DOCSDIR%%/doc/resolvers.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/rest2html.py
+%%PORTDOCS%%%%DOCSDIR%%/doc/sax.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/test.xml
+%%PORTDOCS%%%%DOCSDIR%%/doc/valgrind.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/licenses
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/lxml
