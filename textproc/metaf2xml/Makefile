@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	metaf2xml
-PORTVERSION=	1.20
+PORTVERSION=	1.21
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Parses and decodes aviation routine and stores the components in XML
 
 MAKE_ARGS=	CGI_BIN_DIR=${TARGETDIR}/www/metaf2xml/cgi-bin \
