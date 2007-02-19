@@ -8,8 +8,8 @@
 PORTNAME=	xmysqladmin
 PORTVERSION=	1.0
 CATEGORIES=	databases
-MASTER_SITES=	http://ftp.gwdg.de/pub/misc/mysql/Downloads/Contrib/ \
-		ftp://mysql.secsup.org/pub/software/mysql/Downloads/Contrib/
+MASTER_SITES=	${MASTER_SITE_MYSQL}
+MASTER_SITE_SUBDIR=	Contrib/Old-Versions
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 front end to the mysqladmin command of the MySQL database engine
