@@ -7,6 +7,7 @@
 
 PORTNAME=	portaudit-db
 PORTVERSION=	0.2.3
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 DISTFILES=
 
