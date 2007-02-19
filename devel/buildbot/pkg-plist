@@ -12,6 +12,9 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/buildbot/changes/base.py
 %%PYTHON_SITELIBDIR%%/buildbot/changes/base.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/changes/base.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/changes/bonsaipoller.py
+%%PYTHON_SITELIBDIR%%/buildbot/changes/bonsaipoller.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/changes/bonsaipoller.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/changes/changes.py
 %%PYTHON_SITELIBDIR%%/buildbot/changes/changes.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/changes/changes.pyo
@@ -36,12 +39,18 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/buildbot/changes/maildirtwisted.py
 %%PYTHON_SITELIBDIR%%/buildbot/changes/maildirtwisted.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/changes/maildirtwisted.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/changes/monotone.py
+%%PYTHON_SITELIBDIR%%/buildbot/changes/monotone.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/changes/monotone.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/changes/p4poller.py
 %%PYTHON_SITELIBDIR%%/buildbot/changes/p4poller.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/changes/p4poller.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/changes/pb.py
 %%PYTHON_SITELIBDIR%%/buildbot/changes/pb.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/changes/pb.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/changes/svnpoller.py
+%%PYTHON_SITELIBDIR%%/buildbot/changes/svnpoller.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/changes/svnpoller.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/clients/__init__.py
 %%PYTHON_SITELIBDIR%%/buildbot/clients/__init__.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/clients/__init__.pyo
@@ -67,6 +76,9 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/buildbot/locks.py
 %%PYTHON_SITELIBDIR%%/buildbot/locks.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/locks.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/manhole.py
+%%PYTHON_SITELIBDIR%%/buildbot/manhole.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/manhole.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/master.py
 %%PYTHON_SITELIBDIR%%/buildbot/master.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/master.pyo
@@ -82,6 +94,9 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/buildbot/process/builder.py
 %%PYTHON_SITELIBDIR%%/buildbot/process/builder.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/process/builder.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/process/buildstep.py
+%%PYTHON_SITELIBDIR%%/buildbot/process/buildstep.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/process/buildstep.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/process/factory.py
 %%PYTHON_SITELIBDIR%%/buildbot/process/factory.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/process/factory.pyo
@@ -106,10 +121,19 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/buildbot/scripts/__init__.py
 %%PYTHON_SITELIBDIR%%/buildbot/scripts/__init__.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/scripts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/scripts/logwatcher.py
+%%PYTHON_SITELIBDIR%%/buildbot/scripts/logwatcher.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/scripts/logwatcher.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/scripts/reconfig.py
+%%PYTHON_SITELIBDIR%%/buildbot/scripts/reconfig.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/scripts/reconfig.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/scripts/runner.py
 %%PYTHON_SITELIBDIR%%/buildbot/scripts/runner.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/scripts/runner.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/scripts/sample.cfg
+%%PYTHON_SITELIBDIR%%/buildbot/scripts/startup.py
+%%PYTHON_SITELIBDIR%%/buildbot/scripts/startup.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/scripts/startup.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/scripts/tryclient.py
 %%PYTHON_SITELIBDIR%%/buildbot/scripts/tryclient.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/scripts/tryclient.pyo
@@ -159,21 +183,72 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/buildbot/status/tests.py
 %%PYTHON_SITELIBDIR%%/buildbot/status/tests.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/status/tests.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/status/tinderbox.py
+%%PYTHON_SITELIBDIR%%/buildbot/status/tinderbox.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/status/tinderbox.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/status/words.py
 %%PYTHON_SITELIBDIR%%/buildbot/status/words.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/status/words.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/steps/__init__.py
+%%PYTHON_SITELIBDIR%%/buildbot/steps/__init__.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/steps/__init__.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/steps/dummy.py
+%%PYTHON_SITELIBDIR%%/buildbot/steps/dummy.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/steps/dummy.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/steps/maxq.py
+%%PYTHON_SITELIBDIR%%/buildbot/steps/maxq.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/steps/maxq.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/steps/python.py
+%%PYTHON_SITELIBDIR%%/buildbot/steps/python.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/steps/python.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/steps/python_twisted.py
+%%PYTHON_SITELIBDIR%%/buildbot/steps/python_twisted.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/steps/python_twisted.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/steps/shell.py
+%%PYTHON_SITELIBDIR%%/buildbot/steps/shell.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/steps/shell.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/steps/source.py
+%%PYTHON_SITELIBDIR%%/buildbot/steps/source.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/steps/source.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/steps/transfer.py
+%%PYTHON_SITELIBDIR%%/buildbot/steps/transfer.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/steps/transfer.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/test/__init__.py
 %%PYTHON_SITELIBDIR%%/buildbot/test/__init__.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/__init__.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/test/emit.py
 %%PYTHON_SITELIBDIR%%/buildbot/test/emit.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/emit.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/test/emitlogs.py
+%%PYTHON_SITELIBDIR%%/buildbot/test/emitlogs.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/test/emitlogs.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/test/mail/msg1
+%%PYTHON_SITELIBDIR%%/buildbot/test/mail/msg2
+%%PYTHON_SITELIBDIR%%/buildbot/test/mail/msg3
+%%PYTHON_SITELIBDIR%%/buildbot/test/mail/msg4
+%%PYTHON_SITELIBDIR%%/buildbot/test/mail/msg5
+%%PYTHON_SITELIBDIR%%/buildbot/test/mail/msg6
+%%PYTHON_SITELIBDIR%%/buildbot/test/mail/msg7
+%%PYTHON_SITELIBDIR%%/buildbot/test/mail/msg8
+%%PYTHON_SITELIBDIR%%/buildbot/test/mail/msg9
+%%PYTHON_SITELIBDIR%%/buildbot/test/mail/syncmail.1
+%%PYTHON_SITELIBDIR%%/buildbot/test/mail/syncmail.2
+%%PYTHON_SITELIBDIR%%/buildbot/test/mail/syncmail.3
+%%PYTHON_SITELIBDIR%%/buildbot/test/mail/syncmail.4
+%%PYTHON_SITELIBDIR%%/buildbot/test/mail/syncmail.5
 %%PYTHON_SITELIBDIR%%/buildbot/test/runutils.py
 %%PYTHON_SITELIBDIR%%/buildbot/test/runutils.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/runutils.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/test/sleep.py
 %%PYTHON_SITELIBDIR%%/buildbot/test/sleep.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/sleep.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/test/subdir/emit.py
+%%PYTHON_SITELIBDIR%%/buildbot/test/test__versions.py
+%%PYTHON_SITELIBDIR%%/buildbot/test/test__versions.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/test/test__versions.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_bonsaipoller.py
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_bonsaipoller.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_bonsaipoller.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_buildreq.py
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_buildreq.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_buildreq.pyo
@@ -198,6 +273,9 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_mailparse.py
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_mailparse.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_mailparse.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_p4poller.py
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_p4poller.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_p4poller.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_properties.py
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_properties.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_properties.pyo
@@ -210,6 +288,9 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_scheduler.py
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_scheduler.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_scheduler.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_shell.py
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_shell.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_shell.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_slavecommand.py
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_slavecommand.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_slavecommand.pyo
@@ -222,6 +303,12 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_steps.py
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_steps.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_steps.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_svnpoller.py
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_svnpoller.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_svnpoller.pyo
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_transfer.py
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_transfer.pyc
+%%PYTHON_SITELIBDIR%%/buildbot/test/test_transfer.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_twisted.py
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_twisted.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_twisted.pyo
@@ -229,9 +316,6 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_util.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_util.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_vc.py
-%%PYTHON_SITELIBDIR%%/buildbot/test/test__versions.py
-%%PYTHON_SITELIBDIR%%/buildbot/test/test__versions.pyc
-%%PYTHON_SITELIBDIR%%/buildbot/test/test__versions.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_vc.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_vc.pyo
 %%PYTHON_SITELIBDIR%%/buildbot/test/test_web.py
@@ -243,7 +327,10 @@ bin/buildbot
 %%PYTHON_SITELIBDIR%%/buildbot/util.py
 %%PYTHON_SITELIBDIR%%/buildbot/util.pyc
 %%PYTHON_SITELIBDIR%%/buildbot/util.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%/buildbot/test
+@dirrm %%PYTHON_SITELIBDIR%%/buildbot/test/subdir
+@dirrm %%PYTHON_SITELIBDIR%%/buildbot/test/mail
+@dirrm %%PYTHON_SITELIBDIR%%/buildbot/test
+@dirrm %%PYTHON_SITELIBDIR%%/buildbot/steps
 @dirrm %%PYTHON_SITELIBDIR%%/buildbot/status
 @dirrm %%PYTHON_SITELIBDIR%%/buildbot/slave
 @dirrm %%PYTHON_SITELIBDIR%%/buildbot/scripts
