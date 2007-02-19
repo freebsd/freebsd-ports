@@ -4,7 +4,7 @@ bin/skpp
 include/sketchy.h
 lib/libsketchy.a
 lib/libsketchy.so
-lib/libsketchy.so.30
+lib/libsketchy.so.31
 %%DATADIR%%/LICENSE
 %%DATADIR%%/ext/assp.scm
 %%DATADIR%%/ext/count.scm
@@ -150,6 +150,7 @@ lib/libsketchy.so.30
 %%DATADIR%%/lib/substring.scm
 %%DATADIR%%/lib/succ.scm
 %%DATADIR%%/lib/times.scm
+%%DATADIR%%/lib/vector.scm
 %%DATADIR%%/lib/zerop.scm
 %%DATADIR%%/sketchy.image
 %%DATADIR%%/src/amk.scm
@@ -320,6 +321,7 @@ lib/libsketchy.so.30
 %%DOCSDIR%%/library/times.html
 %%DOCSDIR%%/library/union.html
 %%DOCSDIR%%/library/unique.html
+%%DOCSDIR%%/library/vector.html
 %%DOCSDIR%%/library/zerop.html
 %%DOCSDIR%%/license.html
 %%DOCSDIR%%/ndx2.html
