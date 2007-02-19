@@ -91,8 +91,11 @@ post-install:
 		@ if test -f ${PREFIX}/majordomo/aliases.majordomo; then :; \
 			else ${INSTALL_DATA} ${WRKSRC}/aliases.majordomo \
 			${PREFIX}/majordomo; fi
-		@ for f in test-l test-l-digest test-l.passwd test-l.info; do \
+		@ for f in test-l.passwd test-l.info; do \
 			${INSTALL_DATA} ${FILESDIR}/$$f ${PREFIX}/majordomo/lists; \
+		done
+		@ for f in test-l test-l-digest; do \
+			${TOUCH} ${PREFIX}/majordomo/lists/$$f; \
 		done
 		@ ${LN} -sf test-l.info ${PREFIX}/majordomo/lists/test-l-digest.info
 		@ ${LN} -sf test-l.passwd ${PREFIX}/majordomo/lists/test-l-digest.passwd
