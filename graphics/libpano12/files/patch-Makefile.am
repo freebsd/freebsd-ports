@@ -1,0 +1,36 @@
+--- Makefile.am.orig	Fri Jun 16 13:30:53 2006
++++ Makefile.am	Wed Jan 17 11:45:13 2007
+@@ -70,6 +70,16 @@
+ 
+ endif
+ 
++if HAVE_FREEBSD
++FBSD_SRC =  sys_ansi.c ppm.c
++FBSD_DEFS = -D__Ansi__=1
++FBSD_LDFS = -version-info 0:0:0
++
++install-exec-hook:
++	@true
++
++endif
++
+ if HAVE_DARWIN
+ DAR_SRC =  sys_ansi.c ppm.c
+ DAR_DEFS = -D__Ansi__=1
+@@ -80,13 +90,13 @@
+ 
+ endif
+ 
+-AM_CPPFLAGS = $(JAVA_FLAGS) $(JPEG_FLAGS) $(PNG_FLAGS) $(TIFF_FLAGS) $(ZLIB_FLAGS) $(WIN_DEFS) $(LIN_DEFS) $(DAR_DEFS) $(ENDIAN_FLAG)
++AM_CPPFLAGS = $(JAVA_FLAGS) $(JPEG_FLAGS) $(PNG_FLAGS) $(TIFF_FLAGS) $(ZLIB_FLAGS) $(WIN_DEFS) $(LIN_DEFS) $(FBSD_DEFS) $(DAR_DEFS) $(ENDIAN_FLAG)
+ 
+ lib_LTLIBRARIES = libpano12.la
+ 
+-libpano12_la_SOURCES = $(STD_SRC) $(JAVA_SRC) $(X11_SRC) $(WIN_SRC) $(MAC_SRC) $(LIN_SRC) $(DAR_SRC)
++libpano12_la_SOURCES = $(STD_SRC) $(JAVA_SRC) $(X11_SRC) $(WIN_SRC) $(MAC_SRC) $(LIN_SRC) $(FBSD_SRC) $(DAR_SRC)
+ libpano12_la_LIBADD = $(LIB_JPEG) $(LIB_PNG) $(LIB_TIFF) $(LIB_ZLIB) @PANO_WIN32_RESOURCE@
+-libpano12_la_LDFLAGS = $(LIN_LDFS) $(WIN_LDFS) $(DAR_LDFS)
++libpano12_la_LDFLAGS = $(LIN_LDFS) $(FBSD_LDFS) $(WIN_LDFS) $(DAR_LDFS)
+ libpano12_la_DEPENDENCIES = @PANO_WIN32_RESOURCE@
+ 
+ pkginclude_HEADERS = $(STD_HDR) $(TOOL_HDR)
