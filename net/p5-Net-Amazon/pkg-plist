@@ -16,6 +16,7 @@
 %%SITE_PERL%%/Net/Amazon/Request/Author.pm
 %%SITE_PERL%%/Net/Amazon/Request/Blended.pm
 %%SITE_PERL%%/Net/Amazon/Request/BrowseNode.pm
+%%SITE_PERL%%/Net/Amazon/Request/EAN.pm
 %%SITE_PERL%%/Net/Amazon/Request/Exchange.pm
 %%SITE_PERL%%/Net/Amazon/Request/ISBN.pm
 %%SITE_PERL%%/Net/Amazon/Request/Keyword.pm
@@ -36,6 +37,7 @@
 %%SITE_PERL%%/Net/Amazon/Response/Author.pm
 %%SITE_PERL%%/Net/Amazon/Response/Blended.pm
 %%SITE_PERL%%/Net/Amazon/Response/BrowseNode.pm
+%%SITE_PERL%%/Net/Amazon/Response/EAN.pm
 %%SITE_PERL%%/Net/Amazon/Response/Exchange.pm
 %%SITE_PERL%%/Net/Amazon/Response/ISBN.pm
 %%SITE_PERL%%/Net/Amazon/Response/Keyword.pm
@@ -63,6 +65,7 @@
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/Count.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/DeliveryMethod.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/Director.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/EAN.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/ItemPage.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/Keywords.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/Manufacturer.pm
@@ -74,7 +77,6 @@
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/Publisher.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/Sort.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/Title.pm
-%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/ca/UPC.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Actor.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Artist.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Author.pm
@@ -85,6 +87,7 @@
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Count.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/DeliveryMethod.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Director.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/EAN.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/ItemPage.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Keywords.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/MPAARating.pm
@@ -97,7 +100,6 @@
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Publisher.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Sort.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/Title.pm
-%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/de/UPC.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Actor.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Artist.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/AudienceRating.pm
@@ -110,6 +112,7 @@
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Count.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/DeliveryMethod.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Director.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/EAN.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/ItemPage.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Keywords.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Manufacturer.pm
@@ -121,7 +124,6 @@
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Publisher.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Sort.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/Title.pm
-%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/fr/UPC.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Actor.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Artist.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Author.pm
@@ -131,6 +133,7 @@
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Condition.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Conductor.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Director.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/EAN.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/ItemPage.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Keywords.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Manufacturer.pm
@@ -143,7 +146,6 @@
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Publisher.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Sort.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/Title.pm
-%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/jp/UPC.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Actor.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Artist.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Author.pm
@@ -153,6 +155,7 @@
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Condition.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Conductor.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Director.pm
+%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/EAN.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/ItemPage.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Keywords.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/MPAARating.pm
@@ -166,7 +169,6 @@
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Publisher.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Sort.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/Title.pm
-%%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/uk/UPC.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Actor.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/Artist.pm
 %%SITE_PERL%%/Net/Amazon/Validate/ItemSearch/us/AudienceRating.pm
