@@ -1,0 +1,5 @@
+HTML::Element::Library - HTML::Element convenience functions
+This method provides API calls for common actions on trees when using
+HTML::Tree.
+
+WWW: http://search.cpan.org/dist/HTML-Element-Library/
