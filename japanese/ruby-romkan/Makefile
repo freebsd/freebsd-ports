@@ -38,8 +38,6 @@ do-install:
 
 post-install: doc-install
 
-.include <bsd.port.post.mk>
-
 doc-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}/ja
@@ -54,3 +52,5 @@ doc-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
+
+.include <bsd.port.post.mk>
