@@ -8,7 +8,7 @@
 PORTNAME=	pxtools
 PORTVERSION=	0.0.20
 CATEGORIES=	databases
-MASTER_SITES=	http://jan.kneschke.de/projects/pxtools/download/
+MASTER_SITES=	http://jan.kneschke.de/assets/2007/2/16/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of tools to work with Paradox databases
