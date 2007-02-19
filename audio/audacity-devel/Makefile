@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	audacity
-PORTVERSION=	1.3.0b
+PORTVERSION=	1.3.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,6 +25,9 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
+USE_GCC=	4.1
+
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 
 MAN1=		audacity.1
 MANCOMPRESSED=	yes
@@ -48,6 +51,7 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 MAKE_ENV=	DOC=yes
 .endif
 
+CONFIGURE_ARGS+=	--with-portaudio=v18
 .if !defined(WITHOUT_MAD)
 CONFIGURE_ARGS+=	--with-libmad=system
 LIB_DEPENDS+=		mad.2:${PORTSDIR}/audio/libmad
@@ -68,5 +72,9 @@ LIB_DEPENDS+=		id3tag.0:${PORTSDIR}/audio/libid3tag
 .else
 CONFIGURE_ARGS+=	--without-id3tag
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,^sndfile.c : .*,,' \
+		${WRKSRC}/lib-src/libsndfile/src/Makefile.in
 
 .include <bsd.port.post.mk>

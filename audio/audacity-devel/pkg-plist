@@ -27,6 +27,7 @@ bin/audacity
 %%DATADIR%%/plug-ins/pluck.ny
 %%DATADIR%%/plug-ins/tremolo.ny
 %%DATADIR%%/audacity-1.2-help.htb
+share/locale/af/LC_MESSAGES/audacity.mo
 share/locale/ar/LC_MESSAGES/audacity.mo
 share/locale/bg/LC_MESSAGES/audacity.mo
 share/locale/ca/LC_MESSAGES/audacity.mo
@@ -51,6 +52,7 @@ share/locale/pt/LC_MESSAGES/audacity.mo
 share/locale/ru/LC_MESSAGES/audacity.mo
 share/locale/sl/LC_MESSAGES/audacity.mo
 share/locale/sv/LC_MESSAGES/audacity.mo
+share/locale/tr/LC_MESSAGES/audacity.mo
 share/locale/uk/LC_MESSAGES/audacity.mo
 share/locale/zh/LC_MESSAGES/audacity.mo
 share/locale/zh_TW/LC_MESSAGES/audacity.mo
