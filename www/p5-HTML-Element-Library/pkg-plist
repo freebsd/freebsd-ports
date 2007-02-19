@@ -1,0 +1,9 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Element/Library/.packlist
+%%SITE_PERL%%/HTML/Element/Library.pm
+%%SITE_PERL%%/HTML/Element/Library/Changes.pod
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Element/Library
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Element
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML/Element/Library
+@dirrmtry %%SITE_PERL%%/HTML/Element
+@dirrmtry %%SITE_PERL%%/HTML
