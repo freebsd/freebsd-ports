@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	libticables2
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtktiemu
-DISTNAME=	${PORTNAME}-20061030
+DISTNAME=	${PORTNAME}-20070207
 
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	TI calculator link cables library
@@ -36,14 +36,4 @@ PLIST_SUB=	NLS="@comment "
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"\
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|#include "linux/link_dev.c"||' \
-		${WRKSRC}/src/link_slv.c
-	@${REINPLACE_CMD} -e 's|<stdint\.h>|"stdints1.h"|' \
-		${WRKSRC}/src/linux/ioports.c
-	@${REINPLACE_CMD} -e 's|return usb_probe_devices2|return usb_probe_devices1|' \
-		${WRKSRC}/src/linux/link_slv.c
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
