@@ -1,5 +1,5 @@
 bin/gpgen
-%%CACHE_DIR%%/gem_plugin-0.2.1.gem
+%%GEM_CACHE%%
 %%GEM_DOC_DIR%%/rdoc/classes/GemPlugin.html
 %%GEM_DOC_DIR%%/rdoc/classes/GemPlugin.src/M000001.html
 %%GEM_DOC_DIR%%/rdoc/classes/GemPlugin/Base.html
@@ -63,7 +63,7 @@ bin/gpgen
 %%GEM_LIB_DIR%%/resources/tools/rakehelp.rb
 %%GEM_LIB_DIR%%/test/test_plugins.rb
 %%GEM_LIB_DIR%%/tools/rakehelp.rb
-%%SPEC_DIR%%/gem_plugin-0.2.1.gemspec
+%%GEM_SPEC%%
 @dirrm %%GEM_LIB_DIR%%/tools
 @dirrm %%GEM_LIB_DIR%%/test
 @dirrm %%GEM_LIB_DIR%%/resources/tools
