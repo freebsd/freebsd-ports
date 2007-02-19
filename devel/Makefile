@@ -1222,6 +1222,7 @@
     SUBDIR += p5-List-Group
     SUBDIR += p5-List-Permutor
     SUBDIR += p5-List-PowerSet
+    SUBDIR += p5-List-Rotation-Cycle
     SUBDIR += p5-Locale-Maketext
     SUBDIR += p5-Locale-Maketext-Fuzzy
     SUBDIR += p5-Locale-Maketext-Gettext
