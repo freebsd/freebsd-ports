@@ -9390,6 +9390,7 @@ p5-HTML-Chunks	ports/www/p5-HTML-Chunks
 p5-HTML-Clean	ports/www/p5-HTML-Clean
 p5-HTML-Diff	ports/www/p5-HTML-Diff
 p5-HTML-Element-Extended	ports/www/p5-HTML-Element-Extended
+p5-HTML-Element-Library	ports/www/p5-HTML-Element-Library
 p5-HTML-Embperl	ports/www/p5-HTML-Embperl
 p5-HTML-Encoding	ports/www/p5-HTML-Encoding
 p5-HTML-Entities-Numbered	ports/textproc/p5-HTML-Entities-Numbered
