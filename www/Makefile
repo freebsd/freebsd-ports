@@ -113,7 +113,6 @@
     SUBDIR += drupal-gsitemap
     SUBDIR += drupal-i18n
     SUBDIR += drupal-nice_menus
-    SUBDIR += drupal-pubcookie
     SUBDIR += drupal-taxonomy_access
     SUBDIR += drupal-textile
     SUBDIR += dtse
