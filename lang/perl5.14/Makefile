@@ -146,6 +146,7 @@ pre-fetch:
 	@${ECHO} "				  (affects only 32-bit platforms)."
 	@${ECHO} "	WITH_THREADS=yes	  Build threaded perl."
 	@${ECHO} "	ENABLE_SUIDPERL=yes	  Also build set-user-id suidperl binary."
+	@${ECHO} "      WITHOUT_USE_PERL=yes      Do not rewrite links in /usr/bin"
 	@${ECHO} ""
 
 post-patch:
@@ -187,10 +188,12 @@ post-install:
 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m ${NOBINMODE} \
 		${BSDPAN_WRKSRC}/${files} ${BSDPAN_DEST}/${files}
 .endfor
+.ifndef WITHOUT_USE_PERL
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if ${OSVERSION} < 500036
 	${INSTALL_SCRIPT} ${WRKDIR}/use.perl ${PREFIX}/bin/use.perl
 	@fmt ${PKGMESSAGE}
+.endif
 .endif
 
 rebuild-xs:

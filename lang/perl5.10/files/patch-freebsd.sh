@@ -1,6 +1,6 @@
---- hints/freebsd.sh.orig	Wed Mar 24 21:47:33 2004
-+++ hints/freebsd.sh	Mon Jan 29 00:30:11 2007
-@@ -88,6 +88,8 @@
+--- hints/freebsd.sh.orig	Wed Mar 24 22:47:33 2004
++++ hints/freebsd.sh	Mon Feb 19 20:53:50 2007
+@@ -88,6 +88,8 @@ case "$osvers" in
  	esac
  	libswanted=`echo $libswanted | sed 's/ malloc / /'`
  	libswanted=`echo $libswanted | sed 's/ bind / /'`
@@ -9,7 +9,7 @@
  	# iconv gone in Perl 5.8.1, but if someone compiles 5.8.0 or earlier.
  	libswanted=`echo $libswanted | sed 's/ iconv / /'`
  	d_setregid='define'
-@@ -102,6 +104,10 @@
+@@ -102,6 +104,10 @@ case "$osvers" in
  	        ;;
  	esac
  	libswanted=`echo $libswanted | sed 's/ malloc / /'`
@@ -20,7 +20,7 @@
  	;;
  esac
  
-@@ -116,17 +122,17 @@
+@@ -116,17 +122,17 @@ case "$osvers" in
  
  *)
          objformat=`/usr/bin/objformat`
@@ -35,16 +35,16 @@
                  libpth="/usr/lib/aout /usr/local/lib /usr/lib"
                  glibpth="/usr/lib/aout /usr/local/lib /usr/lib"
              fi
-+        else
              lddlflags='-Bshareable'
++        else
 +            libpth="/usr/lib /usr/local/lib"
 +            glibpth="/usr/lib /usr/local/lib"
-+            ldflags=" -Wl,-E"
++            ldflags="%%PTHREAD_LIBS%% -Wl,-E"
 +            lddlflags="-shared "
          fi
          cccdlflags='-DPIC -fPIC'
          ;;
-@@ -136,7 +142,7 @@
+@@ -136,7 +142,7 @@ case "$osvers" in
  0*|1*|2*|3*) ;;
  
  *)
@@ -53,7 +53,7 @@
  	if /usr/bin/file -L /usr/lib/libc.so | /usr/bin/grep -vq "not stripped" ; then
  	    usenm=false
  	fi
-@@ -183,7 +189,9 @@
+@@ -183,7 +189,9 @@ esac
  
  # This script UU/usethreads.cbu will get 'called-back' by Configure 
  # after it has prompted the user for whether to use threads.
