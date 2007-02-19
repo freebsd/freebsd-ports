@@ -18,6 +18,9 @@ COMMENT=	A small GNOME app that collects stock information from Yahoo!(c) Financ
 
 LIB_DEPENDS=	ghttp.1:${PORTSDIR}/www/libghttp
 
+DEPRECATED=	is unfetchable and has no homepage
+EXPIRATION_DATE=	2007-03-19
+
 WRKSRC=		${WRKDIR}/${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}
 
 USE_X_PREFIX=	yes
