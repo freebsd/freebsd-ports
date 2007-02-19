@@ -563,6 +563,7 @@
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Nicosia.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Oslo.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Paris.rb
+%%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Podgorica.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Prague.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Riga.rb
 %%GEM_LIB_DIR%%/lib/tzinfo/definitions/Europe/Rome.rb
