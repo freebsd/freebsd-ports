@@ -17,6 +17,9 @@ COMMENT=	The fRaBs (Free Abuse) data files for the Abuse game engine
 
 RUN_DEPENDS=	abuse.sdl:${PORTSDIR}/games/abuse_sdl
 
+DEPRECATED=	is unfetchable and homepage disappeared
+EXPIRATION_DATE=	2007-03-19
+
 USE_ZIP=	YES
 NO_BUILD=	YES
 
