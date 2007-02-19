@@ -7,6 +7,7 @@
 
 PORTNAME=	ddclient
 PORTVERSION=	3.7.1
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	SF
 
@@ -35,7 +36,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|/etc/ddclient|${PREFIX}/etc|' \
 		-e 's|/tmp|/var/tmp|' \
-		-e 's|/var/cache/ddclient|/var/tmp/ddclient|' \
+		-e 's|/var/cache/ddclient|/var/tmp|' \
 		-e '/PATH/s|/etc:/usr/local/lib:||' \
 		-e 's|/usr.*perl|${PERL}|g' ${WRKSRC}/ddclient
 
