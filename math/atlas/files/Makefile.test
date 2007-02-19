@@ -14,19 +14,19 @@ ALLTESTS_PT =	xsl3blastst_pt xdl3blastst_pt xcl3blastst_pt xzl3blastst_pt \
 #		xsl2blastst_pt xdl2blastst_pt xcl2blastst_pt xzl2blastst_pt \
 
 test:
-	@for i in ${ALLTESTS} ; do \
+	for i in ${ALLTESTS} ; do \
 		${ECHO_CMD} "Making $${i}" ; \
-		cd ${WRKDIR}/ATLAS/bin/NON_THREADED_PIC/ ; ${GMAKE} ${.MAKEFLAGS} "ARCH=NON_THREADED_PIC" $${i} ; \
+		cd ${WRKDIR}/ATLAS/bin/NON_THREADED_PIC/ ; ${MAKE} ${.MAKEFLAGS} "ARCH=NON_THREADED_PIC" $${i} ; \
 	done
-	@for i in ${ALLTESTS_PT} ; do \
+	for i in ${ALLTESTS_PT} ; do \
 		${ECHO_CMD} "Making $${i}" ; \
-		cd ${WRKDIR}/ATLAS/bin/THREADED_PIC ; ${GMAKE} ${.MAKEFLAGS} "ARCH=THREADED_PIC" $${i} ; \
+		cd ${WRKDIR}/ATLAS/bin/THREADED_PIC ; ${MAKE} ${.MAKEFLAGS} "ARCH=THREADED_PIC" $${i} ; \
 	done
-	@for i in ${ALLTESTS} ; do \
+	for i in ${ALLTESTS} ; do \
 		${ECHO_CMD} "Benchmarking $${i}" ; \
 		cd ${WRKDIR}/ATLAS/bin/NON_THREADED_PIC ; ./$${i} ; \
 	done
-	@for i in ${ALLTESTS_PT} ; do \
+	for i in ${ALLTESTS_PT} ; do \
 		${ECHO_CMD} "Benchmarking $${i}" ; \
 		cd ${WRKDIR}/ATLAS/bin/THREADED_PIC ; ./$${i} ; \
 	done
