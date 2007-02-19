@@ -1,0 +1,9 @@
+Use List::Rotation::Cycle to loop through a list of values. Once you get to
+the end of the list, you go back to the beginning.
+
+List::Rotation::Cycle is implemented as a Singleton Pattern. You always just
+get 1 (the very same) Cycle object even if you use the new method several
+times. This is done by using Memoize on the new method. It returns the same
+object for every use of new that comes with the same List of parameters.
+
+WWW: http://search.cpan.org/dist/List-Rotation-Cycle/
