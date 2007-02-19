@@ -8,7 +8,7 @@
 
 PORTNAME=	mono
 PORTVERSION=	1.2.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/sources/mono/ \
 		${MASTER_SITE_LOCAL}
@@ -31,6 +31,7 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 CONFIGURE_ARGS=	--program-transform-name=\'\' \
 		--with-gc=included \
 		--with-tls=pthread
+MAKE_ARGS=	EXTERNAL_MCS=false
 
 MAN1=		al.1 cert2spc.1 certmgr.1 chktrust.1 cilc.1 disco.1 dtd2xsd.1 \
 		gacutil.1 genxs.1 ilasm.1 jay.1 macpack.1 makecert.1 mcs.1 \
