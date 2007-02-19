@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	libtifiles2
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtktiemu
-DISTNAME=	${PORTNAME}-20061030
+DISTNAME=	${PORTNAME}-20070207
 
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	TI calculator file types library
@@ -21,7 +21,6 @@ WRKSRC=		${WRKDIR}/libtifiles
 
 USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
-USE_GCC=	3.4+
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack pkgconfig
 USE_LDCONFIG=	yes
