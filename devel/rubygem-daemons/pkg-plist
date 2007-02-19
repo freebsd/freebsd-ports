@@ -4,6 +4,7 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Daemonize.src/M000061.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemonize.src/M000062.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemonize.src/M000063.html
+%%GEM_DOC_DIR%%/rdoc/classes/Daemonize.src/M000064.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons.src/M000001.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons.src/M000002.html
@@ -114,6 +115,7 @@
 %%GEM_LIB_DIR%%/examples/run/ctrl_proc.output
 %%GEM_LIB_DIR%%/examples/run/ctrl_proc.rb
 %%GEM_LIB_DIR%%/examples/run/ctrl_proc.rb.output
+%%GEM_LIB_DIR%%/examples/run/ctrl_proc_simple.rb
 %%GEM_LIB_DIR%%/examples/run/myserver.rb
 %%GEM_LIB_DIR%%/examples/run/myserver_crashing.rb
 %%GEM_LIB_DIR%%/examples/run/myserver_crashing.rb.output
