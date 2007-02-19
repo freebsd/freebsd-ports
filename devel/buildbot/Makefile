@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	buildbot
-PORTVERSION=	0.7.3
-CATEGORIES=	devel
+PORTVERSION=	0.7.5
+CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jkoshy@FreeBSD.org
 COMMENT=	Automated system from compile/test cycle to validate code changes
 
-USE_PYTHON=	2.2+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_TWISTED_RUN=	mail web words
-NO_BUILD=	yes
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 ${REINPLACE_CMD} -e \
-		's|/usr/bin/python|${LOCALBASE}/bin/python|g'
+		's|/usr/bin/python|${PYTHON_CMD}|g'
+	@${FIND} ${WRKSRC}/buildbot/test/mail -name \*.bak -delete
 
 .include <bsd.port.mk>
