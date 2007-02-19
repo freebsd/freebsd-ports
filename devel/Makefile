@@ -1782,6 +1782,7 @@
     SUBDIR += py-ll-core
     SUBDIR += py-log4py
     SUBDIR += py-logilab-common
+    SUBDIR += py-lxml
     SUBDIR += py-magic
     SUBDIR += py-mx-experimental
     SUBDIR += py-ncurses
