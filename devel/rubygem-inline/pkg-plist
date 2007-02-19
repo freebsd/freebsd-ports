@@ -1,15 +1,149 @@
-bin/inline_package
 %%GEM_CACHE%%
 %%GEM_SPEC%%
+%%GEM_DOC_DIR%%/rdoc/classes/Array.html
+%%GEM_DOC_DIR%%/rdoc/classes/Array.src/M000059.html
+%%GEM_DOC_DIR%%/rdoc/classes/CompilationError.html
+%%GEM_DOC_DIR%%/rdoc/classes/Dir.html
+%%GEM_DOC_DIR%%/rdoc/classes/Dir.src/M000058.html
+%%GEM_DOC_DIR%%/rdoc/classes/FastMath.html
+%%GEM_DOC_DIR%%/rdoc/classes/FastMath.src/M000067.html
+%%GEM_DOC_DIR%%/rdoc/classes/File.html
+%%GEM_DOC_DIR%%/rdoc/classes/File.src/M000074.html
+%%GEM_DOC_DIR%%/rdoc/classes/Foo.html
+%%GEM_DOC_DIR%%/rdoc/classes/Foo/Bar.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hello.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline.src/M000075.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline.src/M000076.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/C.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000077.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000078.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000079.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000080.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000081.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000082.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000083.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000084.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000085.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000086.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000087.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000088.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000089.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000090.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000091.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000092.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000093.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000094.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000095.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000096.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src/M000097.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/Packager.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/Packager.src/M000098.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/Packager.src/M000099.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/Packager.src/M000100.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/Packager.src/M000101.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/Packager.src/M000102.html
+%%GEM_DOC_DIR%%/rdoc/classes/Inline/Packager.src/M000103.html
+%%GEM_DOC_DIR%%/rdoc/classes/InlineTestCase.html
+%%GEM_DOC_DIR%%/rdoc/classes/InlineTestCase.src/M000071.html
+%%GEM_DOC_DIR%%/rdoc/classes/InlineTestCase.src/M000072.html
+%%GEM_DOC_DIR%%/rdoc/classes/InlineTestCase.src/M000073.html
+%%GEM_DOC_DIR%%/rdoc/classes/Module.html
+%%GEM_DOC_DIR%%/rdoc/classes/Module.src/M000060.html
+%%GEM_DOC_DIR%%/rdoc/classes/MyTest.html
+%%GEM_DOC_DIR%%/rdoc/classes/MyTest.src/M000066.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestDir.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestDir.src/M000068.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestDir.src/M000069.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestDir.src/M000070.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline.src/M000002.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline.src/M000003.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000004.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000005.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000006.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000007.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000008.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000009.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000010.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000011.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000012.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000013.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000014.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000015.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000016.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000017.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000018.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000019.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000020.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000021.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000022.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000023.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000024.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000025.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000026.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000028.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000029.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000030.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000031.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000032.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000033.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000034.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000035.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000036.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000037.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000039.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000040.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000041.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000042.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000043.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000044.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000045.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000046.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src/M000047.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInlinePackager.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInlinePackager.src/M000048.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInlinePackager.src/M000049.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInlinePackager.src/M000050.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInlinePackager.src/M000051.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInlinePackager.src/M000052.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInlinePackager.src/M000053.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInlinePackager.src/M000054.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInlinePackager.src/M000055.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInlinePackager.src/M000056.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestInlinePackager.src/M000057.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestModule.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestModule.src/M000061.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestModule.src/M000062.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestModule.src/M000063.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestModule.src/M000064.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestModule.src/M000065.html
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/files/demo/fastmath_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/demo/hello_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/example2_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/example_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/example_rb.src/M000001.html
+%%GEM_DOC_DIR%%/rdoc/files/inline_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test_inline_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/tutorial/example1_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/tutorial/example2_rb.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
+%%GEM_DOC_DIR%%/rdoc/index.html
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
 %%GEM_LIB_DIR%%/History.txt
-%%GEM_LIB_DIR%%/Makefile
 %%GEM_LIB_DIR%%/Manifest.txt
 %%GEM_LIB_DIR%%/README.txt
+%%GEM_LIB_DIR%%/Rakefile
 %%GEM_LIB_DIR%%/demo/fastmath.rb
 %%GEM_LIB_DIR%%/demo/hello.rb
 %%GEM_LIB_DIR%%/example.rb
 %%GEM_LIB_DIR%%/example2.rb
-%%GEM_LIB_DIR%%/inline.gemspec
 %%GEM_LIB_DIR%%/inline.rb
 %%GEM_LIB_DIR%%/inline_package
 %%GEM_LIB_DIR%%/test_inline.rb
@@ -18,4 +152,28 @@ bin/inline_package
 @dirrm %%GEM_LIB_DIR%%/tutorial
 @dirrm %%GEM_LIB_DIR%%/demo
 @dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/tutorial
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/example_rb.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/demo
+@dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestModule.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestInlinePackager.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestInline/TestC.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestInline.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestInline
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestDir.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/MyTest.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Module.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/InlineTestCase.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Inline/Packager.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Inline/C.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Inline.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Inline
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Foo
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/File.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/FastMath.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Dir.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Array.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
+@dirrm %%GEM_DOC_DIR%%/rdoc
 @dirrm %%GEM_DOC_DIR%%
