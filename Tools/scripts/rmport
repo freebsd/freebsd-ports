@@ -206,7 +206,7 @@ check_dep()
 		echo " * these are false positives" >&2
 		echo " * you want to break something" >&2
 		echo " * your ${PORTSDIR} is out of date, consider setting PORTSDIR in environment" >&2
-		echo "   point to a newer instance of the ports tree" >&2
+		echo "   to point to a newer instance of the ports tree" >&2
 		echo "or you can hit \`n' to repeat the check" >&2
 		answer=`ask "ignore the above issues"`
 		if [ "${answer}" = "y" ] ; then
@@ -410,9 +410,12 @@ diff()
 	echo ${diffout}
 }
 
-# ask for confirmation and commit
+# update, ask for confirmation and commit
 commit()
 {
+	log "running cvs update"
+	${PCVS} up CVSROOT/modules ports 2>&1 |${PAGER:-less}
+
 	answer=`ask "do you want to commit?"`
 
 	if [ "${answer}" = "y" ] ; then
