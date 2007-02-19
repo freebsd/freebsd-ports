@@ -1,4 +1,6 @@
 bin/autooptimiser
+bin/color_correct_tiff
+bin/fulla
 bin/hugin
 bin/nona
 bin/nona_gui
@@ -18,8 +20,6 @@ bin/zhang_undistort
 %%DATADIR%%/xrc/data/CPCursor4.png
 %%DATADIR%%/xrc/data/CPCursor5.png
 %%DATADIR%%/xrc/data/CPCursor6.png
-%%DATADIR%%/xrc/data/FAQ.html
-%%DATADIR%%/xrc/data/FAQ_fr.html
 %%DATADIR%%/xrc/data/about.htm
 %%DATADIR%%/xrc/data/about_fr.htm
 %%DATADIR%%/xrc/data/center_pano.xpm
@@ -40,8 +40,26 @@ bin/zhang_undistort
 %%DATADIR%%/xrc/data/filesaveas.png
 %%DATADIR%%/xrc/data/find.png
 %%DATADIR%%/xrc/data/fit_pano.xpm
+%%DATADIR%%/xrc/data/help_common/horiz-guide.jpg
+%%DATADIR%%/xrc/data/help_common/hugin.png
+%%DATADIR%%/xrc/data/help_common/problem-circle.jpg
+%%DATADIR%%/xrc/data/help_en_EN/FAQ.html
+%%DATADIR%%/xrc/data/help_en_EN/contents.html
+%%DATADIR%%/xrc/data/help_en_EN/hugin.hhc
+%%DATADIR%%/xrc/data/help_en_EN/hugin.hhk
+%%DATADIR%%/xrc/data/help_en_EN/hugin.hhp
+%%DATADIR%%/xrc/data/help_en_EN/keyboard.html
+%%DATADIR%%/xrc/data/help_en_EN/license.html
+%%DATADIR%%/xrc/data/help_en_EN/manual.html
+%%DATADIR%%/xrc/data/help_fr_FR/FAQ.html
+%%DATADIR%%/xrc/data/help_fr_FR/contents.html
+%%DATADIR%%/xrc/data/help_fr_FR/hugin.hhc
+%%DATADIR%%/xrc/data/help_fr_FR/hugin.hhk
+%%DATADIR%%/xrc/data/help_fr_FR/hugin.hhp
+%%DATADIR%%/xrc/data/help_fr_FR/keyboard.html
+%%DATADIR%%/xrc/data/help_fr_FR/license.html
+%%DATADIR%%/xrc/data/help_fr_FR/manual.html
 %%DATADIR%%/xrc/data/hugin.png
-%%DATADIR%%/xrc/data/horiz-guide.jpg
 %%DATADIR%%/xrc/data/icon.ico
 %%DATADIR%%/xrc/data/icon.png
 %%DATADIR%%/xrc/data/icon_128x128.ico
@@ -54,13 +72,10 @@ bin/zhang_undistort
 %%DATADIR%%/xrc/data/icon_72x72.ico
 %%DATADIR%%/xrc/data/icon_96x96.ico
 %%DATADIR%%/xrc/data/info.xpm
-%%DATADIR%%/xrc/data/keyboard.html
-%%DATADIR%%/xrc/data/keyboard_fr.html
 %%DATADIR%%/xrc/data/keyboard_pl.html
 %%DATADIR%%/xrc/data/list.png
 %%DATADIR%%/xrc/data/logo.png
 %%DATADIR%%/xrc/data/manual.html
-%%DATADIR%%/xrc/data/manual_fr.html
 %%DATADIR%%/xrc/data/optimize.png
 %%DATADIR%%/xrc/data/optimize.xpm
 %%DATADIR%%/xrc/data/preview.png
@@ -68,7 +83,6 @@ bin/zhang_undistort
 %%DATADIR%%/xrc/data/preview_show_all.png
 %%DATADIR%%/xrc/data/preview_show_none.png
 %%DATADIR%%/xrc/data/print.xpm
-%%DATADIR%%/xrc/data/problem-circle.jpg
 %%DATADIR%%/xrc/data/redo.png
 %%DATADIR%%/xrc/data/reload.png
 %%DATADIR%%/xrc/data/searchfind.xpm
@@ -101,9 +115,11 @@ bin/zhang_undistort
 %%DATADIR%%/xrc/ptstitcher_panel.xrc
 %%DATADIR%%/xrc/run_optimizer_frame.xrc
 %%DATADIR%%/xrc/run_stitcher_frame.xrc
+%%DATADIR%%/xrc/vig_corr_dlg.xrc
 share/applications/hugin.desktop
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-ptoptimizer-script.png
 %%NLS%%share/locale/ca_ES/LC_MESSAGES/hugin.mo
+%%NLS%%share/locale/cs_CZ/LC_MESSAGES/hugin.mo
 %%NLS%%share/locale/de/LC_MESSAGES/hugin.mo
 %%NLS%%share/locale/de/LC_MESSAGES/nona_gui.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/hugin.mo
@@ -120,20 +136,29 @@ share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-ptoptimizer-script.pn
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/nona_gui.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/hugin.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/nona_gui.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/hugin.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/hugin.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/hugin.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/nona_gui.mo
 share/mime/packages/hugin.xml
 share/pixmaps/hugin.png
-@dirrm share/applications
-@dirrm share/icons/gnome/48x48/mimetypes
-@dirrm share/icons/gnome/48x48
-@dirrm share/icons/gnome
-@dirrm share/icons
-%%NLS%%@dirrm share/locale/ca_ES/LC_MESSAGES
-%%NLS%%@dirrm share/locale/ca_ES
+@dirrmtry share/applications
+@dirrmtry share/icons/gnome/48x48/mimetypes
+@dirrmtry share/icons/gnome/48x48
+@dirrmtry share/icons/gnome
+@dirrmtry share/icons
+%%NLS%%@dirrmtry share/locale/ca_ES/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ca_ES
+%%NLS%%@dirrmtry share/locale/cs_CZ/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs_CZ
+%%NLS%%@dirrmtry share/locale/uk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/uk
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
-@dirrm share/pixmaps
+@dirrmtry share/pixmaps
+@dirrm %%DATADIR%%/xrc/data/help_common
+@dirrm %%DATADIR%%/xrc/data/help_en_EN
+@dirrm %%DATADIR%%/xrc/data/help_fr_FR
 @dirrm %%DATADIR%%/xrc/data
 @dirrm %%DATADIR%%/xrc
 @dirrm %%DATADIR%%
