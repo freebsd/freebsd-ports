@@ -1,4 +1,50 @@
 %%GEM_CACHE%%
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/BogusETag.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/BogusETag/Trav.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Comment.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Comment/Trav.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Container.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Container/Trav.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Context.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Doc.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Doc/Trav.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/DocType.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/DocType/Trav.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Elem.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Elem/Trav.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Elements.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/EncodingError.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Error.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Leaf.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Leaf/Trav.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Name.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Node.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/ProcIns.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/ProcIns/Trav.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Text.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Text/Trav.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Traverse.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/XMLDecl.html
+%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/XMLDecl/Trav.html
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/files/CHANGELOG.html
+%%GEM_DOC_DIR%%/rdoc/files/COPYING.html
+%%GEM_DOC_DIR%%/rdoc/files/README.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/hpricot/elements_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/hpricot/htmlinfo_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/hpricot/inspect_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/hpricot/modules_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/hpricot/parse_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/hpricot/tag_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/hpricot/text_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/hpricot/traverse_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/hpricot_rb.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
+%%GEM_DOC_DIR%%/rdoc/index.html
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
 %%GEM_LIB_DIR%%/CHANGELOG
 %%GEM_LIB_DIR%%/COPYING
 %%GEM_LIB_DIR%%/README
@@ -22,20 +68,44 @@
 %%GEM_LIB_DIR%%/lib/hpricot/text.rb
 %%GEM_LIB_DIR%%/lib/hpricot/traverse.rb
 %%GEM_LIB_DIR%%/lib/hpricot_scan.so
+%%GEM_LIB_DIR%%/test
+%%GEM_LIB_DIR%%/test/files
 %%GEM_LIB_DIR%%/test/files/basic.xhtml
 %%GEM_LIB_DIR%%/test/files/boingboing.html
+%%GEM_LIB_DIR%%/test/files/cy0.html
 %%GEM_LIB_DIR%%/test/files/immob.html
 %%GEM_LIB_DIR%%/test/files/uswebgen.html
+%%GEM_LIB_DIR%%/test/files/utf8.html
+%%GEM_LIB_DIR%%/test/files/week9.html
 %%GEM_LIB_DIR%%/test/load_files.rb
 %%GEM_LIB_DIR%%/test/test_parser.rb
+%%GEM_LIB_DIR%%/test/test_paths.rb
+%%GEM_LIB_DIR%%/test/test_preserved.rb
+%%GEM_LIB_DIR%%/test/test_xml.rb
 %%GEM_SPEC%%
 @dirrm %%GEM_LIB_DIR%%/test/files
 @dirrm %%GEM_LIB_DIR%%/test
+@dirrm %%GEM_LIB_DIR%%/lib/hpricot
+@dirrm %%GEM_LIB_DIR%%/lib
 @dirrm %%GEM_LIB_DIR%%/extras
 @dirrm %%GEM_LIB_DIR%%/ext/hpricot_scan
 @dirrm %%GEM_LIB_DIR%%/ext
-@dirrm %%GEM_LIB_DIR%%/lib/hpricot
-@dirrm %%GEM_LIB_DIR%%/lib
 @dirrm %%GEM_LIB_DIR%%/bin
 @dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/hpricot
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
+@dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Hpricot/XMLDecl
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Text
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Hpricot/ProcIns
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Leaf
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Elem
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Hpricot/DocType
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Doc
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Container
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Comment
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Hpricot/BogusETag
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Hpricot
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
+@dirrm %%GEM_DOC_DIR%%/rdoc
 @dirrm %%GEM_DOC_DIR%%
