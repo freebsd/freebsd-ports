@@ -17,6 +17,9 @@ COMMENT=	Qt extension for creating SDI/MDI user interfaces
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
+DEPRECATED=	is unfetchable, website disappeared
+EXPIRATION_DATE=	2007-03-19
+
 .if defined(WITH_KDE)
 USE_KDELIBS_VER=	3
 PKGNAMESUFFIX=	-kde
