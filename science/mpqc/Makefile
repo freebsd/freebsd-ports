@@ -71,15 +71,18 @@ CONFIGURE_ARGS+=--with-cc=${CC} \
 		--with-coptflags="${CFLAGS}" \
 		--with-cxxoptflags="${CXXFLAGS}" \
 		--with-f77optflags="${FFLAGS}" \
-		--with-include="-I${WRKDIR} -I${LOCALBASE}/include" \
 		--enable-shared
 .if defined(WITH_ICC)
 CONFIGURE_ARGS+=--with-libs="-lsvml"
 .endif
 .if defined(WITH_MPICH)
 CONFIGURE_ARGS+=--with-libdirs="-L${LOCALBASE}/lib -L${LOCALBASE}/mpich2/lib"\
-		--with-include="-I${LOCALBASE}/mpich2/include -I${WRKDIR}" \
 		--enable-always-use-mpi
+.endif
+.if defined(WITH_MPICH)
+CONFIGURE_ARGS+=--with-include="-I${LOCALBASE}/mpich2/include -I${WRKDIR} -I${LOCALBASE}/include"
+.else
+CONFIGURE_ARGS+=--with-include="-I${WRKDIR} -I${LOCALBASE}/include"
 .endif
 
 MPQC_COMMAND=	${PREFIX}/bin/mpqc
