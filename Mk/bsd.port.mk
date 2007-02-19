@@ -1646,7 +1646,7 @@ CFLAGS:=	${CFLAGS:C/${_CPUCFLAGS}//}
 STRIP=	#none
 STRIP_CMD=	#none
 DEBUG_FLAGS?=	-g
-CFLAGS:=		${CFLAGS:N-O*:N-f*} ${DEBUG_FLAGS}
+CFLAGS:=		${CFLAGS:N-O*:N-fno-strict*} ${DEBUG_FLAGS}
 .endif
 
 .if defined(NOPORTDOCS)
