@@ -1,20 +1,19 @@
 bin/PTOptimizer
-include/pano12/PixMap.h
-include/pano12/f2c.h
-include/pano12/fftn.h
+bin/PTblender
+bin/PTmender
+bin/PTtiff2psd
+bin/PTuncrop
+bin/panoinfo
+include/pano12/PTcommon.h
 include/pano12/filter.h
 include/pano12/panorama.h
+include/pano12/panotypes.h
+include/pano12/pt_stdint.h
 include/pano12/pteditor.h
 include/pano12/ptutils.h
 include/pano12/queryfeature.h
-include/pano12/sys_X11.h
-include/pano12/sys_ansi.h
-include/pano12/sys_mac.h
-include/pano12/sys_win.h
 include/pano12/version.h
+lib/libpano12.la
 lib/libpano12.so
-%%DOCSDIR%%/README.linux
-%%DOCSDIR%%/README.mac
-%%DOCSDIR%%/README.windows
+lib/libpano12.so.0
 @dirrm include/pano12
-@dirrm %%DOCSDIR%%

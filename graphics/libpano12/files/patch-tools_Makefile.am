@@ -1,0 +1,35 @@
+--- tools/Makefile.am.orig	Wed Jan 17 10:49:07 2007
++++ tools/Makefile.am	Wed Jan 17 10:51:24 2007
+@@ -24,6 +24,14 @@
+ LIN_DEFS = 
+ endif
+ 
++if HAVE_FREEBSD
++FBSD_SRC = panoinfo_unix.c
++FBSD_DEFS = -D__Ansi__=1
++else
++FBSD_SRC =
++FBSD_DEFS =
++endif
++
+ if HAVE_DARWIN
+ DAR_SRC =  panoinfo_unix.c
+ DAR_DEFS = -D__Ansi__=1
+@@ -32,7 +40,7 @@
+ DAR_DEFS = 
+ endif
+ 
+-AM_CPPFLAGS = $(JAVA_FLAGS) $(LIN_DEFS) $(DAR_DEFS) $(TIFF_FLAGS) $(JPEG_FLAGS)
++AM_CPPFLAGS = $(JAVA_FLAGS) $(LIN_DEFS) $(FBSD_DEFS) $(DAR_DEFS) $(TIFF_FLAGS) $(JPEG_FLAGS)
+ AM_LDFLAGS  = -L${top_builddir}
+ 
+ bin_PROGRAMS = panoinfo PTOptimizer PTmender PTblender PTtiff2psd PTuncrop
+@@ -52,7 +60,7 @@
+ PTOptimizer_SOURCES = PTOptimizer.c
+ PTOptimizer_LDADD   = -lpano12
+ 
+-panoinfo_SOURCES    = $(WIN_SRC) $(LIN_SRC) $(DAR_SRC)
++panoinfo_SOURCES    = $(WIN_SRC) $(LIN_SRC) $(FBSD_SRC) $(DAR_SRC)
+ panoinfo_LDADD      = -lpano12
+ 
+ EXTRA_DIST = makefile.panoinfo.win32 makefile.ptoptimizer.win32 \
