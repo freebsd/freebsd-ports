@@ -24,49 +24,51 @@ bin/rutilize
 %%GEM_DOC_DIR%%/rdoc/files/README.html
 %%GEM_DOC_DIR%%/rdoc/files/TODO.html
 %%GEM_DOC_DIR%%/rdoc/files/CHANGELOG.html
+%%GEM_DOC_DIR%%/rdoc/classes/Date.src/M000006.html
+%%GEM_DOC_DIR%%/rdoc/classes/Date.src/M000007.html
 %%GEM_DOC_DIR%%/rdoc/classes/Time.src/M000005.html
-%%GEM_DOC_DIR%%/rdoc/classes/RuTils.src/M000006.html
-%%GEM_DOC_DIR%%/rdoc/classes/RuTils.src/M000007.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils.src/M000008.html
-%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Transliteration/StringFormatting.src/M000009.html
-%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Transliteration/StringFormatting.src/M000010.html
+%%GEM_DOC_DIR%%/rdoc/classes/RuTils.src/M000009.html
+%%GEM_DOC_DIR%%/rdoc/classes/RuTils.src/M000010.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Transliteration/StringFormatting.src/M000011.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Transliteration/StringFormatting.src/M000012.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Transliteration/StringFormatting.src/M000013.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Transliteration/StringFormatting.src/M000014.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Transliteration/StringFormatting.src/M000015.html
+%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Transliteration/StringFormatting.src/M000016.html
+%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Transliteration/StringFormatting.src/M000017.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Transliteration/BiDi.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Transliteration/StringFormatting.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Transliteration/Simple.html
-%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Pluralization/NumericFormatting.src/M000016.html
-%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Pluralization/NumericFormatting.src/M000017.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Pluralization/NumericFormatting.src/M000018.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Pluralization/NumericFormatting.src/M000019.html
-%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Pluralization/FloatFormatting.src/M000020.html
-%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Pluralization/FloatFormatting.src/M000021.html
+%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Pluralization/NumericFormatting.src/M000020.html
+%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Pluralization/NumericFormatting.src/M000021.html
+%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Pluralization/FloatFormatting.src/M000022.html
+%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Pluralization/FloatFormatting.src/M000023.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Pluralization/NumericFormatting.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Pluralization/FloatFormatting.html
-%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/StringFormatting.src/M000022.html
-%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/StringFormatting.src/M000023.html
-%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/Obsolete.src/M000024.html
-%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/Obsolete.src/M000025.html
-%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/Formatter.src/M000026.html
-%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/Formatter.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/StringFormatting.src/M000024.html
+%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/StringFormatting.src/M000025.html
+%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/Obsolete.src/M000026.html
+%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/Obsolete.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/Formatter.src/M000028.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/Formatter.src/M000029.html
-%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/Formatter.src/M000030.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/Formatter.src/M000031.html
+%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/Formatter.src/M000032.html
+%%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/Formatter.src/M000033.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/StringFormatting.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/Obsolete.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/UnknownSetting.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/Formatter.html
-%%GEM_DOC_DIR%%/rdoc/classes/RuTils/DateTime.src/M000032.html
-%%GEM_DOC_DIR%%/rdoc/classes/RuTils/DateTime.src/M000033.html
+%%GEM_DOC_DIR%%/rdoc/classes/RuTils/DateTime.src/M000034.html
+%%GEM_DOC_DIR%%/rdoc/classes/RuTils/DateTime.src/M000035.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils/DateTime.html
-%%GEM_DOC_DIR%%/rdoc/classes/Object/ActionView/Helpers/DateHelper.src/M000034.html
-%%GEM_DOC_DIR%%/rdoc/classes/Object/ActionView/Helpers/DateHelper.src/M000035.html
 %%GEM_DOC_DIR%%/rdoc/classes/Object/ActionView/Helpers/DateHelper.src/M000036.html
 %%GEM_DOC_DIR%%/rdoc/classes/Object/ActionView/Helpers/DateHelper.src/M000037.html
+%%GEM_DOC_DIR%%/rdoc/classes/Object/ActionView/Helpers/DateHelper.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/Object/ActionView/Helpers/DateHelper.src/M000039.html
 %%GEM_DOC_DIR%%/rdoc/classes/Object/ActionView/Helpers/DateHelper.html
 %%GEM_DOC_DIR%%/rdoc/classes/Object/ActionView/Helpers.html
 %%GEM_DOC_DIR%%/rdoc/classes/Object/ActionView.html
@@ -127,6 +129,7 @@ bin/rutilize
 @dirrmtry %%GEM_DOC_DIR%%/rdoc/files/lib/countries
 @dirrmtry %%GEM_DOC_DIR%%/rdoc/files/lib
 @dirrmtry %%GEM_DOC_DIR%%/rdoc/files
+@dirrmtry %%GEM_DOC_DIR%%/rdoc/classes/Date.src
 @dirrmtry %%GEM_DOC_DIR%%/rdoc/classes/Time.src
 @dirrmtry %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Transliteration/StringFormatting.src
 @dirrmtry %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Transliteration
