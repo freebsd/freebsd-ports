@@ -31,5 +31,10 @@ PLIST_SUB=	VERSION="2.0" API_VERSION="2.0"
 post-patch:
 	@${REINPLACE_CMD} -e "/^SUBDIRS =/s|tests||; \
 		/^SUBDIRS =/s|examples||" ${WRKSRC}/Makefile.in
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e "/^install-data-am:/s/install-libsigc_docDATA//; \
+		s/^\(SUBDIRS =\).*/\1/" \
+		${WRKSRC}/docs/Makefile.in
+.endif
 
 .include <bsd.port.mk>
