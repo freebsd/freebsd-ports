@@ -42,7 +42,7 @@
  	openlog("milter-regex", LOG_PID | LOG_NDELAY, LOG_DAEMON);
  
 -	while ((ch = getopt(argc, argv, "c:dp:u:")) != -1) {
-+	while ((ch = getopt(argc, argv, "c:dpqr:u:")) != -1) {
++	while ((ch = getopt(argc, argv, "c:dp:qr:u:")) != -1) {
  		switch (ch) {
  		case 'c':
  			rule_file_name = optarg;
