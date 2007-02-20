@@ -263,6 +263,8 @@ GoogleEarthLinux-*	astro/google-earth	Not really sure about the redistribution t
 goPod-*			misc/*gopod		Unclear legal status in EU countries
 grande-KXL-*.tar.gz	games/grande		Possible copyright infringement
 graphviz-*		graphics/graphviz	Needs license before fetching
+
+groupoffice-com-*	www/groupoffice		Free for personal use only
 GTL-*			misc/gtl		Non-commercial use only,
 						license forbids redistribution
 hcfmdm/*		comms/hcfmdm		No redistribution allowed
