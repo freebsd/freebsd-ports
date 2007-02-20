@@ -1,25 +1,25 @@
-*** milter-regex.8.orig	Sat Mar 13 12:21:23 2004
---- milter-regex.8	Wed Sep  6 16:15:59 2006
-***************
-*** 37,42 ****
---- 37,43 ----
-  .Nm
-  .Op Fl d
-  .Op Fl c Ar config
-+ .Op Fl r Ar pid-file
-  .Op Fl p Ar pipe
-  .Op Fl u Ar user
-  .Sh DESCRIPTION
-***************
-*** 54,60 ****
---- 54,63 ----
-  output on stdout.
-  .It Fl c Ar config
-  Use the specified configuration file instead of the default,
-  /etc/milter-regex.conf.
-+ .It Fl r Ar pid-file
-+ Use the specified pid file to write to.  Default is: 
-+ /var/spool/milter-regex/milter-regex.pid
-  .It Fl p Ar pipe 
-  Use the specified pipe to interface
-  .Xr sendmail 8 .
+--- milter-regex.8.orig	Sat Mar 13 18:21:23 2004
++++ milter-regex.8	Tue Feb 20 17:31:46 2007
+@@ -37,6 +37,7 @@
+ .Nm
+ .Op Fl d
+ .Op Fl c Ar config
++.Op Fl r Ar pid-file
+ .Op Fl p Ar pipe
+ .Op Fl u Ar user
+ .Sh DESCRIPTION
+@@ -52,9 +53,14 @@
+ .It Fl d
+ Don't detach from controlling terminal and produce verbose debug
+ output on stdout.
++.It Fl q
++Don't send to syslog messages with priority higher than LOG_NOTICE.
+ .It Fl c Ar config
+ Use the specified configuration file instead of the default,
+ /etc/milter-regex.conf.
++.It Fl r Ar pid-file
++Use the specified pid file to write to.  Default is: 
++/var/spool/milter-regex/milter-regex.pid
+ .It Fl p Ar pipe 
+ Use the specified pipe to interface
+ .Xr sendmail 8 .
