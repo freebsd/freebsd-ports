@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	configobj
-PORTVERSION=	4.3.2
+PORTVERSION=	4.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-PKGNAMEPREFIX=	${PYTHONPKGNAMEPREFIX}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Simple but powerful config file reader and writer
@@ -18,6 +18,9 @@ COMMENT=	Simple but powerful config file reader and writer
 USE_ZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+
+# www/py-turbogears requires (and installs) a Python egg for ConfigObj
+CONFLICTS=	py*-TurboGears-[0-9]*
 
 PORTDOCS=	*
 
