@@ -1644,7 +1644,7 @@ CFLAGS:=	${CFLAGS:C/${_CPUCFLAGS}//}
 
 .if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
 STRIP=	#none
-STRIP_CMD=	#none
+STRIP_CMD=	${TRUE}
 DEBUG_FLAGS?=	-g
 CFLAGS:=		${CFLAGS:N-O*:N-fno-strict*} ${DEBUG_FLAGS}
 .endif
