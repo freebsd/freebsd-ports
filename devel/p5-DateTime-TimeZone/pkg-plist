@@ -346,6 +346,9 @@
 %%SITE_PERL%%/DateTime/TimeZone/Indian/Mayotte.pm
 %%SITE_PERL%%/DateTime/TimeZone/Indian/Reunion.pm
 %%SITE_PERL%%/DateTime/TimeZone/Local.pm
+%%SITE_PERL%%/DateTime/TimeZone/Local/Unix.pm
+%%SITE_PERL%%/DateTime/TimeZone/Local/Win32.pm
+%%SITE_PERL%%/DateTime/TimeZone/Local/VMS.pm
 %%SITE_PERL%%/DateTime/TimeZone/MST.pm
 %%SITE_PERL%%/DateTime/TimeZone/MST7MDT.pm
 %%SITE_PERL%%/DateTime/TimeZone/OffsetOnly.pm
@@ -392,6 +395,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/UTC.pm
 %%SITE_PERL%%/DateTime/TimeZoneCatalog.pm
 @dirrm %%SITE_PERL%%/DateTime/TimeZone/Pacific
+@dirrm %%SITE_PERL%%/DateTime/TimeZone/Local
 @dirrm %%SITE_PERL%%/DateTime/TimeZone/Indian
 @dirrm %%SITE_PERL%%/DateTime/TimeZone/Europe
 @dirrm %%SITE_PERL%%/DateTime/TimeZone/Australia
