@@ -16026,6 +16026,7 @@ xmlpull		ports/textproc/xmlpull
 xmlroff		ports/textproc/xmlroff
 xmlrpc++	ports/net/xmlrpc++
 xmlrpc-c	ports/net/xmlrpc-c
+xmlrpc-epi	ports/net/xmlrpc-epi
 xmlsec		ports/security/xmlsec
 xmlsec1		ports/security/xmlsec1
 xmlstarlet	ports/textproc/xmlstarlet
