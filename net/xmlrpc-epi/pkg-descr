@@ -1,0 +1,18 @@
+xmlrpc-epi is an implementation of the xmlrpc protocol in C. It provides an easy
+to use API for developers to serialize RPC requests to and from XML. It does
+*not* include a transport layer, such as HTTP. The API is primarily based upon
+proprietary code written for internal usage at Epinions.com, and was later
+modified to incorporate concepts from the xmlrpc protocol. It passed the xmlrpc
+validation test suite in December 2000.
+
+As of Sept. 27, 2001, experimental support for SOAP v 1.1 has been added to the
+library. This support is implemented transparently to the application such that
+a single API can be used for manipulation of values, yet both SOAP and XML-RPC
+can be read or written.
+
+Various iterations of this code have been/are running at Epinions.com and are
+sufficiently fast for the high traffic volume this site encounters, with several
+xmlrpc type requests generated for each user http request. No specific speed
+claims are made. Your mileage may vary.
+
+WWW: http://xmlrpc-epi.sourceforge.net/
