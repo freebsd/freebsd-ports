@@ -7,7 +7,7 @@
 
 PORTNAME=	CGI-SpeedyCGI
 PORTVERSION=	2.22
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CGI
@@ -35,13 +35,20 @@ post-patch:
 		${WRKSRC}/src/SpeedyMake.pl
 	@${PERL} -pi -e 's,APXS=apxs,APXS=${APXS},;' \
 		${WRKSRC}/mod_speedycgi/Makefile.tmpl
+	${CP} ${FILESDIR}/speedy_dump.c ${WRKSRC}/speedy_dump/
 
 post-configure:
 	@${PERL} -pi -e 's,^PREFIX = /usr$$,PREFIX = ${PREFIX},g;' \
 		${WRKSRC}/Makefile ${WRKSRC}/*/Makefile
 
+post-build:
+	@cd ${WRKSRC}/speedy_dump && ${CC} ${CFLAGS} -o speedy_dump \
+		-I../src speedy_dump.c
+
 post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/speedy/speedy ${PREFIX}/bin/speedy_suidperl
 	@${CHMOD} 4755 ${PREFIX}/bin/speedy_suidperl
+	@${INSTALL_PROGRAM} ${WRKSRC}/speedy_dump/speedy_dump \
+		${PREFIX}/bin/speedy_dump
 
 .include <bsd.port.post.mk>

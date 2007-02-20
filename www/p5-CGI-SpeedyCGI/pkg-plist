@@ -4,6 +4,7 @@
 bin/speedy
 bin/speedy_backend
 bin/speedy_suidperl
+bin/speedy_dump
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/SpeedyCGI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
 @dirrmtry %%SITE_PERL%%/CGI
