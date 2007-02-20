@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cups
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.8
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
 PKGNAMESUFFIX=	-base${PKGNAMESUFFIX2}
@@ -65,6 +65,7 @@ CONFIGURE_ARGS+=	--enable-gnutls --disable-openssl
 LIB_DEPENDS+=		gnutls-openssl.15:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--disable-gnutls --enable-openssl
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 .endif
 
 .if defined(WITH_PHP)
