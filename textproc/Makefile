@@ -394,6 +394,7 @@
     SUBDIR += p5-Lingua-Stem-Snowball-No
     SUBDIR += p5-Lingua-Stem-Snowball-Se
     SUBDIR += p5-Lingua-StopWords
+    SUBDIR += p5-Lucene
     SUBDIR += p5-MARC
     SUBDIR += p5-MARC-Record
     SUBDIR += p5-MKDoc-XML
