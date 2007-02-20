@@ -37,6 +37,10 @@ PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS=--without-gtk --with-gtk-prefix=/nonexistant
 .endif
 
+.if defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=--disable-ipv6
+.endif
+
 post-configure:
 	@${REINPLACE_CMD} -e 's|-lresolv||g' ${WRKSRC}/Makefile
 
