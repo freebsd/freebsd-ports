@@ -6,17 +6,20 @@
 #
 
 PORTNAME=	testdisk
-PORTVERSION=	6.5
+PORTVERSION=	6.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Tool to check and undelete partitions
 
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib"
+CONFIGURE_ARGS=	--without-ewf
 
 MAN1=		testdisk.1 photorec.1
 PLIST_FILES=	sbin/testdisk sbin/photorec
