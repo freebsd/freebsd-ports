@@ -1,31 +1,35 @@
-@unexec if cmp -s %D/%%SAMPDIR%%/server.cfg %D/%%SAMPDIR%%/server.cfg.dist; then rm -f %D/%%SAMPDIR%/server.cfg; fi
-%%SAMPDIR%%/filterscripts/admingivecash.amx
-%%SAMPDIR%%/gamemodes/src/freighter.pwn
-%%SAMPDIR%%/gamemodes/src/rivershell.pwn
-%%SAMPDIR%%/gamemodes/src/lvdm.pwn
-%%SAMPDIR%%/gamemodes/src/lyse.pwn
-%%SAMPDIR%%/gamemodes/src/ls-parachute.pwn
-%%SAMPDIR%%/gamemodes/src/manhunt-lv.pwn
-%%SAMPDIR%%/gamemodes/src/minigunmadness.pwn
-%%SAMPDIR%%/gamemodes/src/area51.pwn
-%%SAMPDIR%%/gamemodes/src/cng.pwn
-%%SAMPDIR%%/gamemodes/src/monster.pwn
-%%SAMPDIR%%/gamemodes/src/sftdm.pwn
-%%SAMPDIR%%/gamemodes/ls-parachute.amx
-%%SAMPDIR%%/gamemodes/sftdm.amx
-%%SAMPDIR%%/gamemodes/lvdm.amx
-%%SAMPDIR%%/gamemodes/monster.amx
-%%SAMPDIR%%/gamemodes/rivershell.amx
-%%SAMPDIR%%/gamemodes/freighter.amx
-%%SAMPDIR%%/gamemodes/manhunt-lv.amx
-%%SAMPDIR%%/gamemodes/area51.amx
-%%SAMPDIR%%/gamemodes/lyse.amx
-%%SAMPDIR%%/gamemodes/minigunmadness.amx
-%%SAMPDIR%%/announce
-%%SAMPDIR%%/README
+@unexec if cmp -s %D/etc/sampsvr.cfg %D/etc/sampsvr.cfg.dist; then rm -f %D/etc/sampsvr.cfg; fi
+etc/sampsvr.cfg.dist
+@exec [ -f %B/sampsvr.cfg ] || cp %B/%f %B/sampsvr.cfg
 %%SAMPDIR%%/sampd
-%%SAMPDIR%%/server.cfg.dist
-@dirrmtry %%SAMPDIR%%/gamemodes/src
-@dirrmtry %%SAMPDIR%%/gamemodes
-@dirrmtry %%SAMPDIR%%/filterscripts
+%%SAMPDIR%%/announce
+%%SAMPDIR%%/server.cfg
+%%SAMPDIR%%/filterscripts
+%%SAMPDIR%%/gamemodes
+%%DATADIR%%/filterscripts/admingivecash.amx
+%%DATADIR%%/gamemodes/src/sftdm.pwn
+%%DATADIR%%/gamemodes/src/rivershell.pwn
+%%DATADIR%%/gamemodes/src/lvdm.pwn
+%%DATADIR%%/gamemodes/src/lyse.pwn
+%%DATADIR%%/gamemodes/src/ls-parachute.pwn
+%%DATADIR%%/gamemodes/src/manhunt-lv.pwn
+%%DATADIR%%/gamemodes/src/minigunmadness.pwn
+%%DATADIR%%/gamemodes/src/area51.pwn
+%%DATADIR%%/gamemodes/src/cng.pwn
+%%DATADIR%%/gamemodes/src/monster.pwn
+%%DATADIR%%/gamemodes/src/freighter.pwn
+%%DATADIR%%/gamemodes/lyse.amx
+%%DATADIR%%/gamemodes/ls-parachute.amx
+%%DATADIR%%/gamemodes/sftdm.amx
+%%DATADIR%%/gamemodes/lvdm.amx
+%%DATADIR%%/gamemodes/monster.amx
+%%DATADIR%%/gamemodes/rivershell.amx
+%%DATADIR%%/gamemodes/freighter.amx
+%%DATADIR%%/gamemodes/manhunt-lv.amx
+%%DATADIR%%/gamemodes/area51.amx
+%%DATADIR%%/gamemodes/minigunmadness.amx
+@dirrmtry %%DATADIR%%/gamemodes/src
+@dirrmtry %%DATADIR%%/gamemodes
+@dirrmtry %%DATADIR%%/filterscripts
+@dirrmtry %%DATADIR%%
 @dirrmtry %%SAMPDIR%%

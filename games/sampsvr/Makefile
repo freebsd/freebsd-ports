@@ -6,32 +6,64 @@
 
 PORTNAME=	sampsvr
 PORTVERSION=	0.1b
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.sa-mp.com/files/ \
-		http://eu.littlewhitey.com/ \
-		http://server.safclan.net/upload/
-DISTNAME=	${SAMPVER}.linux.cpp6
+		http://eu.littlewhitey.com/
+DISTNAME=	${SAMPVER}-cpp6
 
 MAINTAINER=	ports@logvinov.com
 COMMENT=	Rockstar's GTA: San Andreas multiplayer modification dedicated server
 
 USE_LINUX=	yes
 NO_BUILD=	yes
-SAMPVER=	samp01b
+SAMPVER=	samp01b-r2
 USE_RC_SUBR=	sampd
-WRKSRC=		${WRKDIR}/${PORTNAME}
-PLIST_SUB=	SAMPDIR="${PORTNAME}"
+SAMPDIR=	${PREFIX}/lib/${PORTNAME}
+PORTDOCS=	README
+PLIST_SUB=	SAMPDIR="${SAMPDIR:S,^${PREFIX}/,,}"
 SUB_FILES=	pkg-message
-SUB_LIST=	SAMPDIR="${PREFIX}/${PORTNAME}"
+SUB_LIST=	SAMPDIR="${SAMPDIR}"
+.if !defined(NOPORTDOCS)
+SUB_LIST+=	NOTEWORK="Read ${DOCSDIR}/README to configure SA-MP Server"
+.else
+SUB_LIST+=	NOTEWORK=""
+.endif
+
+.include <bsd.port.pre.mk>
 
 post-patch:
-	@${MV} ${WRKSRC}/server.cfg ${WRKSRC}/server.cfg.dist
 	@${MV} ${WRKSRC}/${SAMPVER} ${WRKSRC}/${USE_RC_SUBR}
 
 do-install:
-	@${CP} -Rp ${WRKSRC}/ ${PREFIX}/${PORTNAME}
+	${MKDIR} ${SAMPDIR}
+.for i in ${USE_RC_SUBR} announce
+	${BRANDELF} -t Linux ${WRKSRC}/${i}
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${SAMPDIR}
+.endfor
+	${MKDIR} ${DATADIR}
+	cd ${WRKSRC} && \
+	${FIND} . -type d ! -empty -exec \
+		${MKDIR} "${DATADIR}/{}" \; && \
+	${FIND} filterscripts -type f -exec \
+		${INSTALL_DATA} "{}" "${DATADIR}/{}" \; && \
+	${FIND} gamemodes -type f -exec \
+		${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
+	${LN} -sf ${DATADIR}/filterscripts/ ${SAMPDIR}/filterscripts
+	${LN} -sf ${DATADIR}/gamemodes/ ${SAMPDIR}/gamemodes
+.if !exists(${PREFIX}/etc/${PORTNAME}.cfg)
+	${INSTALL_DATA} ${WRKSRC}/server.cfg ${PREFIX}/etc/${PORTNAME}.cfg
+.endif
+	${INSTALL_DATA} ${WRKSRC}/server.cfg ${PREFIX}/etc/${PORTNAME}.cfg.dist
+	${LN} -sf ${PREFIX}/etc/${PORTNAME}.cfg ${SAMPDIR}/server.cfg
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

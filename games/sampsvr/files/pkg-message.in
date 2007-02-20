@@ -1,5 +1,4 @@
 ***********************************************************************
-# cp %%SAMPDIR%%/server.cfg.dist %%SAMPDIR%%/server.cfg
-
-Read %%SAMPDIR%%/README to configure SA-MP Server
+Edit %%PREFIX%%/etc/sampsvr.cfg before using
+%%NOTEWORK%%
 ***********************************************************************
