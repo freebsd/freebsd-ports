@@ -7,22 +7,38 @@
 
 PORTNAME=	iriverter
 PORTVERSION=	0.16
+PORTREVISION=	2
 CATEGORIES=	multimedia java
 MASTER_SITES=	SOURCEFORGE
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Cross-platform frontend to mencoder
 
-BUILD_DEPENDS=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt31 \
-		${LOCALBASE}/lib/libswt-gnome-gtk-3139.so:${PORTSDIR}/x11-toolkits/swt31
-RUN_DEPENDS=	${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt31 \
-		${LOCALBASE}/lib/libswt-gnome-gtk-3139.so:${PORTSDIR}/x11-toolkits/swt31 \
-		mencoder:${PORTSDIR}/multimedia/mplayer
+RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer
 
 USE_JAVA=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--with-swt="${JAVALIBDIR}/swt.jar"
 
-.include <bsd.port.mk>
+OPTIONS=	SWTDEVEL "Use SWT Development port" off
+
+CONFIGURE_ARGS=	--with-swt="${JAVALIBDIR}/${SWT_JAR}"
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_SWTDEVEL)
+BUILD_DEPENDS+=	\
+		${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
+RUN_DEPENDS+=	\
+		${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel
+SWT_JAR=	swt-devel.jar
+.else
+BUILD_DEPENDS+=	\
+		${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt
+RUN_DEPENDS+=	\
+		${JAVALIBDIR}/swt.jar:${PORTSDIR}/x11-toolkits/swt
+SWT_JAR=	swt.jar
+.endif
+
+.include <bsd.port.post.mk>
