@@ -6,6 +6,7 @@
 %%SITE_PERL%%/Mail/Audit/MimeEntity.pm
 %%SITE_PERL%%/Mail/Audit/PGP.pm
 %%SITE_PERL%%/Mail/Audit/Razor.pm
+%%SITE_PERL%%/Mail/Audit/Util/Tempdir.pm
 %%SITE_PERL%%/Mail/Audit/Vacation.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Audit/.packlist
 %%EXAMPLESDIR%%/popread
@@ -13,5 +14,6 @@
 @dirrm %%EXAMPLESDIR%%/
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Audit
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
+@dirrm %%SITE_PERL%%/Mail/Audit/Util
 @dirrm %%SITE_PERL%%/Mail/Audit
 @dirrmtry %%SITE_PERL%%/Mail
