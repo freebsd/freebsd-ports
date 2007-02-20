@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monit
-PORTVERSION=	4.8.2
+PORTVERSION=	4.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tildeslash.com/monit/dist/
 
