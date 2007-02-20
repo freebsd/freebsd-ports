@@ -10,7 +10,7 @@
 # want fetchmailconf to work, define WITH_X11
 
 PORTNAME=	fetchmail
-PORTVERSION=	6.3.6
+PORTVERSION=	6.3.7
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_BERLIOS}/%SUBDIR%/ \
 		http://home.pages.de/~mandree/%SUBDIR%/ \
@@ -43,7 +43,7 @@ MLINKS=		fetchmail.1 fetchmailconf.1
 
 OPTIONS=	X11	"Python/Tkinter dependencies for fetchmailconf" off \
 		NLS	"National language support (NLS)."		on \
-		NTLM	"Building in support for NTLM/MSN authentication." off \
+		NTLM	"Build in support for NTLM/MSN authentication." off \
 		POP2	"Build pop2 support (obsolete)." off \
 		GSSAPI	"Build GSSAPI support (requires KRB5_HOME to be set)" off
 
