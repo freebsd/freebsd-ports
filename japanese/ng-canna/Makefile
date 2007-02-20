@@ -7,15 +7,13 @@
 
 PKGNAMESUFFIX=	-canna
 
-MASTERDIR=	${.CURDIR}/../ng
-DESCR=		${.CURDIR}/pkg-descr
-
-LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A very lightweight Emacs-clone with Japanese and Canna support
 
-.include "${MASTERDIR}/Makefile"
+MASTERDIR=	${.CURDIR}/../ng
 
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include -DCANNA" \
-		LIBS="-L${LOCALBASE}/lib -lcanna -ltermcap"
+DESCR=		${.CURDIR}/pkg-descr
+
+WITH_CANNA=	yes
+
+.include "${MASTERDIR}/Makefile"
