@@ -14,6 +14,8 @@
 # postfix_procname (command):	Set command that start master. Used to verify if
 #				postfix is running.
 #				Default is "%%PREFIX%%/libexec/postfix/master".
+# postfix_flags (str):		Flags passed to postfix-script on startup.
+#				Default is "".
 #
 
 . %%RC_SUBR%%
@@ -26,6 +28,7 @@ load_rc_config $name
 : ${postfix_enable="NO"}
 : ${postfix_pidfile="/var/spool/postfix/pid/master.pid"}
 : ${postfix_procname="%%PREFIX%%/libexec/postfix/master"}
+: ${postfix_flags=""}
 
 start_cmd=${name}_start
 stop_cmd=${name}_stop
@@ -35,11 +38,11 @@ pidfile=${postfix_pidfile}
 procname=${postfix_procname}
 
 postfix_start() {
-	%%PREFIX%%/sbin/postfix start
+	%%PREFIX%%/sbin/postfix ${postfix_flags} start
 }
 
 postfix_stop() {
-	%%PREFIX%%/sbin/postfix stop
+	%%PREFIX%%/sbin/postfix ${postfix_flags} stop
 }
 
 run_rc_command "$1"
