@@ -3896,6 +3896,7 @@ gromit		ports/x11/gromit
 groovy		ports/lang/groovy
 grouch		ports/net-im/grouch
 groundhog	ports/games/groundhog
+groupoffice	ports/www/groupoffice
 growspd		ports/sysutils/growspd
 grpn		ports/math/grpn
 grpplaylist	ports/multimedia/grpplaylist
