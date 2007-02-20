@@ -22,7 +22,7 @@ load_rc_config $name
 
 command="%%SAMPDIR%%/sampd"
 command_args="&"
-required_files="%%SAMPDIR%%/server.cfg"
+required_files="%%PREFIX%%/etc/sampsvr.cfg"
 start_precmd="sampd_prestart"
 stop_precmd="sampd_prestop"
 
