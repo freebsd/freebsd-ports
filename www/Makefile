@@ -174,6 +174,7 @@
     SUBDIR += google-sitemapgen
     SUBDIR += goose
     SUBDIR += gregarius
+    SUBDIR += groupoffice
     SUBDIR += gstreamer-plugins-neon
     SUBDIR += gtkhtml
     SUBDIR += gtkhtml3
