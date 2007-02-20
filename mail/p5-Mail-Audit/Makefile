@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-Audit
-PORTVERSION=	2.2.14
+PORTVERSION=	2.2.15
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -34,6 +34,7 @@ MAN3=		Mail::Audit.3 \
 		Mail::Audit::MimeEntity.3 \
 		Mail::Audit::PGP.3 \
 		Mail::Audit::Razor.3 \
+    		Mail::Audit::Util::Tempdir.3 \
 		Mail::Audit::Vacation.3
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
