@@ -20,3 +20,4 @@ share/pixmaps/gnono-about.png
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
+@dirrmtry share/pixmaps
