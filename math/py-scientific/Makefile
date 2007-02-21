@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	scientific
-PORTVERSION=	2.4.9
+PORTVERSION=	2.6
 CATEGORIES=	math python
-MASTER_SITES=	http://starship.python.net/crew/hinsen/ScientificPython/ \
-		http://dirac.cnrs-orleans.fr/programs/ScientificPython/
+MASTER_SITES=	http://sourcesup.cru.fr/frs/download.php/1034/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	ScientificPython-${PORTVERSION}
 
