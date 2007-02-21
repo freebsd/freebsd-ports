@@ -8,7 +8,7 @@
 PORTNAME=	maude
 PORTVERSION=	2.2
 CATEGORIES=	lang
-MASTER_SITES=	http://maude.cs.uiuc.edu/download/current/
+MASTER_SITES=	http://maude.cs.uiuc.edu/versions/${PORTVERSION}/
 DISTNAME=	Maude-${PORTVERSION}
 
 MAINTAINER=	rick@wzoeterwoude.net
