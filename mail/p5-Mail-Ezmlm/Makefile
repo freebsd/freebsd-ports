@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-Ezmlm
-PORTVERSION=	0.05.1
+PORTVERSION=	0.07.2
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		ftp://ftp.rucus.ru.ac.za/users/guy/ezmlm/
@@ -19,24 +19,15 @@ COMMENT=	Perl module to allow object methods for ezmlm-idx mailing lists
 
 BUILD_DEPENDS=	${EZMLM_DIR}/bin/ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx
 
-BROKEN=		Incorrect pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2006-12-01
-
-IS_INTERACTIVE=	YES
-
 EZMLM_DIR?=	${LOCALBASE}
-USE_PERL5=	YES
-MAN3=		Mail::Ezmlm.3
 
-# For this version, since it is a bugfix
-WRKSRC=		${WRKDIR}/Ezmlm-0.05
+USE_PERL5=	yes
+PERL_CONFIGURE=	yes
 
-do-configure:
-.if defined(BATCH)
-		@cd ${WRKSRC}; ${SETENV} BSD_BATCH_INSTALL=yes ${PERL5} Makefile.PL
-.else
-		@cd ${WRKSRC}; ${PERL5} Makefile.PL
+.if defined(PACKAGE_BUILDING)
+CONFIGURE_ENV=	BSD_BATCH_INSTALL=yes
 .endif
+
+MAN3=		Mail::Ezmlm.3
 
 .include <bsd.port.mk>
