@@ -1,0 +1,260 @@
+%%DATADIR%%/app/.htaccess
+%%DATADIR%%/app/config/acl.ini.php
+%%DATADIR%%/app/config/bootstrap.php
+%%DATADIR%%/app/config/core.php
+@unexec rm -f %D/%%DATADIR%%/app/config/core.php.orig
+%%DATADIR%%/app/config/database.php.default
+%%DATADIR%%/app/config/inflections.php
+%%DATADIR%%/app/config/routes.php
+%%DATADIR%%/app/config/sql/db_acl.sql
+%%DATADIR%%/app/config/sql/sessions.sql
+%%DATADIR%%/app/index.php
+%%DATADIR%%/app/webroot/.htaccess
+%%DATADIR%%/app/webroot/css.php
+%%DATADIR%%/app/webroot/css/cake.generic.css
+%%DATADIR%%/app/webroot/favicon.ico
+%%DATADIR%%/app/webroot/img/cake.power.png
+%%DATADIR%%/app/webroot/img/w3c_css.png
+%%DATADIR%%/app/webroot/img/w3c_xhtml10.png
+%%DATADIR%%/app/webroot/index.php
+%%DATADIR%%/app/webroot/js/vendors.php
+%%DATADIR%%/cake/LICENSE.txt
+%%DATADIR%%/cake/VERSION.txt
+%%DATADIR%%/cake/app_controller.php
+%%DATADIR%%/cake/app_model.php
+%%DATADIR%%/cake/basics.php
+%%DATADIR%%/cake/bootstrap.php
+%%DATADIR%%/cake/config/config.php
+%%DATADIR%%/cake/config/paths.php
+%%DATADIR%%/cake/dispatcher.php
+%%DATADIR%%/cake/libs/cache.php
+%%DATADIR%%/cake/libs/cake_log.php
+%%DATADIR%%/cake/libs/class_registry.php
+%%DATADIR%%/cake/libs/configure.php
+%%DATADIR%%/cake/libs/controller/component.php
+%%DATADIR%%/cake/libs/controller/components/acl.php
+%%DATADIR%%/cake/libs/controller/components/acl_base.php
+%%DATADIR%%/cake/libs/controller/components/dbacl/db_acl.php
+%%DATADIR%%/cake/libs/controller/components/dbacl/models/aclnode.php
+%%DATADIR%%/cake/libs/controller/components/dbacl/models/aco.php
+%%DATADIR%%/cake/libs/controller/components/dbacl/models/acoaction.php
+%%DATADIR%%/cake/libs/controller/components/dbacl/models/aro.php
+%%DATADIR%%/cake/libs/controller/components/dbacl/models/aros_aco.php
+%%DATADIR%%/cake/libs/controller/components/iniacl/ini_acl.php
+%%DATADIR%%/cake/libs/controller/components/request_handler.php
+%%DATADIR%%/cake/libs/controller/components/security.php
+%%DATADIR%%/cake/libs/controller/components/session.php
+%%DATADIR%%/cake/libs/controller/controller.php
+%%DATADIR%%/cake/libs/controller/pages_controller.php
+%%DATADIR%%/cake/libs/controller/scaffold.php
+%%DATADIR%%/cake/libs/error.php
+%%DATADIR%%/cake/libs/file.php
+%%DATADIR%%/cake/libs/flay.php
+%%DATADIR%%/cake/libs/folder.php
+%%DATADIR%%/cake/libs/inflector.php
+%%DATADIR%%/cake/libs/legacy.php
+%%DATADIR%%/cake/libs/model/connection_manager.php
+%%DATADIR%%/cake/libs/model/datasources/datasource.php
+%%DATADIR%%/cake/libs/model/datasources/dbo_source.php
+%%DATADIR%%/cake/libs/model/dbo/dbo_adodb.php
+%%DATADIR%%/cake/libs/model/dbo/dbo_mssql.php
+%%DATADIR%%/cake/libs/model/dbo/dbo_mysql.php
+%%DATADIR%%/cake/libs/model/dbo/dbo_mysqli.php
+%%DATADIR%%/cake/libs/model/dbo/dbo_odbc.php
+%%DATADIR%%/cake/libs/model/dbo/dbo_pear.php
+%%DATADIR%%/cake/libs/model/dbo/dbo_postgres.php
+%%DATADIR%%/cake/libs/model/dbo/dbo_sqlite.php
+%%DATADIR%%/cake/libs/model/model.php
+%%DATADIR%%/cake/libs/model/model_php4.php
+%%DATADIR%%/cake/libs/model/model_php5.php
+%%DATADIR%%/cake/libs/neat_array.php
+%%DATADIR%%/cake/libs/neat_string.php
+%%DATADIR%%/cake/libs/object.php
+%%DATADIR%%/cake/libs/router.php
+%%DATADIR%%/cake/libs/sanitize.php
+%%DATADIR%%/cake/libs/security.php
+%%DATADIR%%/cake/libs/session.php
+%%DATADIR%%/cake/libs/validators.php
+%%DATADIR%%/cake/libs/view/helper.php
+%%DATADIR%%/cake/libs/view/helpers/ajax.php
+%%DATADIR%%/cake/libs/view/helpers/cache.php
+%%DATADIR%%/cake/libs/view/helpers/form.php
+%%DATADIR%%/cake/libs/view/helpers/html.php
+%%DATADIR%%/cake/libs/view/helpers/javascript.php
+%%DATADIR%%/cake/libs/view/helpers/number.php
+%%DATADIR%%/cake/libs/view/helpers/session.php
+%%DATADIR%%/cake/libs/view/helpers/text.php
+%%DATADIR%%/cake/libs/view/helpers/time.php
+%%DATADIR%%/cake/libs/view/templates/elements/dump.thtml
+%%DATADIR%%/cake/libs/view/templates/errors/error404.thtml
+%%DATADIR%%/cake/libs/view/templates/errors/missing_action.thtml
+%%DATADIR%%/cake/libs/view/templates/errors/missing_component_class.thtml
+%%DATADIR%%/cake/libs/view/templates/errors/missing_component_file.thtml
+%%DATADIR%%/cake/libs/view/templates/errors/missing_connection.thtml
+%%DATADIR%%/cake/libs/view/templates/errors/missing_controller.thtml
+%%DATADIR%%/cake/libs/view/templates/errors/missing_helper_class.thtml
+%%DATADIR%%/cake/libs/view/templates/errors/missing_helper_file.thtml
+%%DATADIR%%/cake/libs/view/templates/errors/missing_layout.thtml
+%%DATADIR%%/cake/libs/view/templates/errors/missing_model.thtml
+%%DATADIR%%/cake/libs/view/templates/errors/missing_scaffolddb.thtml
+%%DATADIR%%/cake/libs/view/templates/errors/missing_table.thtml
+%%DATADIR%%/cake/libs/view/templates/errors/missing_view.thtml
+%%DATADIR%%/cake/libs/view/templates/errors/private_action.thtml
+%%DATADIR%%/cake/libs/view/templates/errors/scaffold_error.thtml
+%%DATADIR%%/cake/libs/view/templates/layouts/ajax.thtml
+%%DATADIR%%/cake/libs/view/templates/layouts/default.thtml
+%%DATADIR%%/cake/libs/view/templates/layouts/flash.thtml
+%%DATADIR%%/cake/libs/view/templates/pages/home.thtml
+%%DATADIR%%/cake/libs/view/templates/scaffolds/add.thtml
+%%DATADIR%%/cake/libs/view/templates/scaffolds/edit.thtml
+%%DATADIR%%/cake/libs/view/templates/scaffolds/index.thtml
+%%DATADIR%%/cake/libs/view/templates/scaffolds/view.thtml
+%%DATADIR%%/cake/libs/view/view.php
+%%DATADIR%%/cake/scripts/acl.php
+%%DATADIR%%/cake/scripts/bake.php
+%%DATADIR%%/cake/scripts/templates/skel/.htaccess
+%%DATADIR%%/cake/scripts/templates/skel/app_controller.php
+%%DATADIR%%/cake/scripts/templates/skel/app_model.php
+%%DATADIR%%/cake/scripts/templates/skel/config/acl.ini.php
+%%DATADIR%%/cake/scripts/templates/skel/config/bootstrap.php
+%%DATADIR%%/cake/scripts/templates/skel/config/core.php
+%%DATADIR%%/cake/scripts/templates/skel/config/database.php.default
+%%DATADIR%%/cake/scripts/templates/skel/config/inflections.php
+%%DATADIR%%/cake/scripts/templates/skel/config/routes.php
+%%DATADIR%%/cake/scripts/templates/skel/config/sql/db_acl.sql
+%%DATADIR%%/cake/scripts/templates/skel/config/sql/sessions.sql
+%%DATADIR%%/cake/scripts/templates/skel/controllers/pages_controller.php
+%%DATADIR%%/cake/scripts/templates/skel/index.php
+%%DATADIR%%/cake/scripts/templates/skel/views/layouts/ajax.thtml
+%%DATADIR%%/cake/scripts/templates/skel/views/layouts/default.thtml
+%%DATADIR%%/cake/scripts/templates/skel/views/layouts/flash.thtml
+%%DATADIR%%/cake/scripts/templates/skel/webroot/.htaccess
+%%DATADIR%%/cake/scripts/templates/skel/webroot/css.php
+%%DATADIR%%/cake/scripts/templates/skel/webroot/css/cake.generic.css
+%%DATADIR%%/cake/scripts/templates/skel/webroot/favicon.ico
+%%DATADIR%%/cake/scripts/templates/skel/webroot/img/cake.power.png
+%%DATADIR%%/cake/scripts/templates/skel/webroot/index.php
+%%DATADIR%%/cake/scripts/templates/skel/webroot/js/vendors.php
+%%DATADIR%%/cake/scripts/templates/views/home.thtml
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.txt
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DATADIR%%/index.php
+%%DATADIR%%/.htaccess
+etc/apache2/Includes/cakephp.conf
+share/nls/POSIX
+share/nls/en_US.US-ASCII
+@exec mkdir -p %D/%%DATADIR%%/vendors
+@exec mkdir -p %D/%%DATADIR%%/cake/scripts/templates/skel/webroot/files
+@exec mkdir -p %D/%%DATADIR%%/cake/scripts/templates/skel/views/pages
+@exec mkdir -p %D/%%DATADIR%%/cake/scripts/templates/skel/views/helpers
+@exec mkdir -p %D/%%DATADIR%%/cake/scripts/templates/skel/views/errors
+@exec mkdir -p %D/%%DATADIR%%/cake/scripts/templates/skel/views/elements
+@exec mkdir -p %D/%%DATADIR%%/cake/scripts/templates/skel/vendors
+@exec mkdir -p %D/%%DATADIR%%/cake/scripts/templates/skel/tmp/tests
+@exec mkdir -p %D/%%DATADIR%%/cake/scripts/templates/skel/tmp/sessions
+@exec mkdir -p %D/%%DATADIR%%/cake/scripts/templates/skel/tmp/logs
+@exec mkdir -p %D/%%DATADIR%%/cake/scripts/templates/skel/tmp/cache/views
+@exec mkdir -p %D/%%DATADIR%%/cake/scripts/templates/skel/tmp/cache/persistent
+@exec mkdir -p %D/%%DATADIR%%/cake/scripts/templates/skel/tmp/cache/models
+@exec mkdir -p %D/%%DATADIR%%/cake/scripts/templates/skel/plugins
+@exec mkdir -p %D/%%DATADIR%%/cake/scripts/templates/skel/models/behaviors
+@exec mkdir -p %D/%%DATADIR%%/cake/scripts/templates/skel/controllers/components
+@exec mkdir -p %D/%%DATADIR%%/app/webroot/files
+@exec mkdir -p %D/%%DATADIR%%/app/views/pages
+@exec mkdir -p %D/%%DATADIR%%/app/views/layouts
+@exec mkdir -p %D/%%DATADIR%%/app/views/helpers
+@exec mkdir -p %D/%%DATADIR%%/app/views/errors
+@exec mkdir -p %D/%%DATADIR%%/app/views/elements
+@exec mkdir -p %D/%%DATADIR%%/app/vendors
+@exec mkdir -p %D/%%DATADIR%%/app/tmp/tests
+@exec mkdir -p %D/%%DATADIR%%/app/tmp/sessions
+@exec mkdir -p %D/%%DATADIR%%/app/tmp/logs
+@exec mkdir -p %D/%%DATADIR%%/app/tmp/cache/views
+@exec mkdir -p %D/%%DATADIR%%/app/tmp/cache/persistent
+@exec mkdir -p %D/%%DATADIR%%/app/tmp/cache/models
+@exec mkdir -p %D/%%DATADIR%%/app/plugins
+@exec mkdir -p %D/%%DATADIR%%/app/models/behaviors
+@exec mkdir -p %D/%%DATADIR%%/app/controllers/components
+@dirrm %%DATADIR%%/vendors
+@dirrm %%DATADIR%%/cake/scripts/templates/views
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/webroot/js
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/webroot/img
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/webroot/files
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/webroot/css
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/webroot
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/views/pages
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/views/layouts
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/views/helpers
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/views/errors
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/views/elements
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/views
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/vendors
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/tmp/tests
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/tmp/sessions
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/tmp/logs
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/tmp/cache/views
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/tmp/cache/persistent
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/tmp/cache/models
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/tmp/cache
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/tmp
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/plugins
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/models/behaviors
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/models
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/controllers/components
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/controllers
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/config/sql
+@dirrm %%DATADIR%%/cake/scripts/templates/skel/config
+@dirrm %%DATADIR%%/cake/scripts/templates/skel
+@dirrm %%DATADIR%%/cake/scripts/templates
+@dirrm %%DATADIR%%/cake/scripts
+@dirrm %%DATADIR%%/cake/libs/view/templates/scaffolds
+@dirrm %%DATADIR%%/cake/libs/view/templates/pages
+@dirrm %%DATADIR%%/cake/libs/view/templates/layouts
+@dirrm %%DATADIR%%/cake/libs/view/templates/errors
+@dirrm %%DATADIR%%/cake/libs/view/templates/elements
+@dirrm %%DATADIR%%/cake/libs/view/templates
+@dirrm %%DATADIR%%/cake/libs/view/helpers
+@dirrm %%DATADIR%%/cake/libs/view
+@dirrm %%DATADIR%%/cake/libs/model/dbo
+@dirrm %%DATADIR%%/cake/libs/model/datasources
+@dirrm %%DATADIR%%/cake/libs/model
+@dirrm %%DATADIR%%/cake/libs/controller/components/iniacl
+@dirrm %%DATADIR%%/cake/libs/controller/components/dbacl/models
+@dirrm %%DATADIR%%/cake/libs/controller/components/dbacl
+@dirrm %%DATADIR%%/cake/libs/controller/components
+@dirrm %%DATADIR%%/cake/libs/controller
+@dirrm %%DATADIR%%/cake/libs
+@dirrm %%DATADIR%%/cake/config
+@dirrm %%DATADIR%%/cake
+@dirrm %%DATADIR%%/app/webroot/js
+@dirrm %%DATADIR%%/app/webroot/img
+@dirrm %%DATADIR%%/app/webroot/files
+@dirrm %%DATADIR%%/app/webroot/css
+@dirrm %%DATADIR%%/app/webroot
+@dirrm %%DATADIR%%/app/views/pages
+@dirrm %%DATADIR%%/app/views/layouts
+@dirrm %%DATADIR%%/app/views/helpers
+@dirrm %%DATADIR%%/app/views/errors
+@dirrm %%DATADIR%%/app/views/elements
+@dirrm %%DATADIR%%/app/views
+@dirrm %%DATADIR%%/app/vendors
+@dirrm %%DATADIR%%/app/tmp/tests
+@dirrm %%DATADIR%%/app/tmp/sessions
+@dirrm %%DATADIR%%/app/tmp/logs
+@dirrm %%DATADIR%%/app/tmp/cache/views
+@dirrm %%DATADIR%%/app/tmp/cache/persistent
+@dirrm %%DATADIR%%/app/tmp/cache/models
+@dirrm %%DATADIR%%/app/tmp/cache
+@dirrm %%DATADIR%%/app/tmp
+@dirrm %%DATADIR%%/app/plugins
+@dirrm %%DATADIR%%/app/models/behaviors
+@dirrm %%DATADIR%%/app/models
+@dirrm %%DATADIR%%/app/controllers/components
+@dirrm %%DATADIR%%/app/controllers
+@dirrm %%DATADIR%%/app/config/sql
+@dirrm %%DATADIR%%/app/config
+@dirrm %%DATADIR%%/app
+@dirrm %%DATADIR%%
