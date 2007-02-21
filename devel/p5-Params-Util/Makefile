@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Params-Util
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/A/AD/ADAMK
+MASTER_SITE_SUBDIR=	Params
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -23,10 +23,6 @@ post-patch:
 	@${PERL} -pi -e '$$_="" if m/Test::More/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools
-.endif
 
 .if ${PERL_LEVEL} < 500805
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
