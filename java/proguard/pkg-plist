@@ -11,6 +11,7 @@ bin/proguard-gui
 %%DATADIR%%/docs/drop1.gif
 %%DATADIR%%/docs/drop2.gif
 %%DATADIR%%/docs/drop3.gif
+%%DATADIR%%/docs/favicon.ico
 %%DATADIR%%/docs/feedback.html
 %%DATADIR%%/docs/index.html
 %%DATADIR%%/docs/license.html
