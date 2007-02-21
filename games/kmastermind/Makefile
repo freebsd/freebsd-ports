@@ -7,7 +7,7 @@
 PORTNAME=	kmastermind
 PORTVERSION=	2.2
 CATEGORIES=	games kde
-MASTER_SITES=	http://www.kde-apps.org/content/files/
+MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
 DISTNAME=	20292-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	arved@FreeBSD.org
