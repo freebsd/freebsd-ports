@@ -59,6 +59,7 @@
     SUBDIR += bugmenot-firefox
     SUBDIR += c-icap
     SUBDIR += cadaver
+    SUBDIR += cakephp
     SUBDIR += calamaris
     SUBDIR += campsite
     SUBDIR += castget
