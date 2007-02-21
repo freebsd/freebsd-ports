@@ -1,16 +1,18 @@
---- keitairc.dist	Mon Dec 26 14:59:24 2005
-+++ keitairc	Mon Dec 26 15:02:49 2005
-@@ -70,7 +70,8 @@
+--- keitairc.dist	Sat Aug 26 14:19:33 2006
++++ keitairc	Wed Feb 21 11:24:06 2007
+@@ -67,8 +67,9 @@
+ my ($message_added);
  
  # irc component
- POE::Component::IRC->new('keitairc');
+-POE::Component::IRC->new('keitairc');
 -POE::Session->new(
++POE::Component::IRC->spawn(alias => 'keitairc');
 +POE::Session->create(
 +	inline_states => {
  		  _start => \&on_irc_start,
  		  irc_join => \&on_irc_join,
  		  irc_part => \&on_irc_part,
-@@ -79,6 +80,7 @@
+@@ -77,6 +78,7 @@
  		  irc_topic => \&on_irc_topic,
  		  irc_332 => \&on_irc_topicraw,
  		  irc_ctcp_action => \&on_irc_ctcp_action,
