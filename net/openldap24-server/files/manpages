@@ -15,13 +15,16 @@ MLINKS+= \
 MAN3+=	lber-decode.3 \
 	lber-encode.3 \
 	lber-memory.3 \
+	lber-sockbuf.3 \
 	lber-types.3 \
 	ldap.3 \
 	ldap_abandon.3 \
 	ldap_add.3 \
 	ldap_bind.3 \
 	ldap_compare.3 \
+	ldap_controls.3 \
 	ldap_delete.3 \
+	ldap_get_option.3 \
 	ldap_error.3 \
 	ldap_extended_operation.3 \
 	ldap_first_attribute.3 \
@@ -30,6 +33,7 @@ MAN3+=	lber-decode.3 \
 	ldap_first_reference.3 \
 	ldap_get_dn.3 \
 	ldap_get_values.3 \
+	ldap_memory.3 \
 	ldap_modify.3 \
 	ldap_modrdn.3 \
 	ldap_open.3 \
@@ -42,6 +46,8 @@ MAN3+=	lber-decode.3 \
 	ldap_schema.3 \
 	ldap_search.3 \
 	ldap_sort.3 \
+	ldap_sync.3 \
+	ldap_tls.3 \
 	ldap_url.3
 MLINKS+= \
 	lber-decode.3 ber_first_element.3 \
@@ -101,6 +107,10 @@ MLINKS+= \
 	ldap_compare.3 ldap_compare_ext.3 \
 	ldap_compare.3 ldap_compare_ext_s.3 \
 	ldap_compare.3 ldap_compare_s.3 \
+	ldap_controls.3 ldap_create_control.3 \
+	ldap_controls.3 ldap_find_control.3 \
+	ldap_controls.3 ldap_control_free.3 \
+	ldap_controls.3 ldap_controls_free.3 \
 	ldap_delete.3 ldap_delete_ext.3 \
 	ldap_delete.3 ldap_delete_ext_s.3 \
 	ldap_delete.3 ldap_delete_s.3 \
@@ -125,11 +135,18 @@ MLINKS+= \
 	ldap_get_dn.3 ldap_explode_dn.3 \
 	ldap_get_dn.3 ldap_explode_rdn.3 \
 	ldap_get_dn.3 ldap_str2dn.3 \
+	ldap_get_option.3 ldap_set_option.3 \
 	ldap_get_values.3 ldap_count_values.3 \
 	ldap_get_values.3 ldap_count_values_len.3 \
 	ldap_get_values.3 ldap_get_values_len.3 \
 	ldap_get_values.3 ldap_value_free.3 \
 	ldap_get_values.3 ldap_value_free_len.3 \
+	ldap_memory.3 ldap_memfree.3 \
+	ldap_memory.3 ldap_memvfree.3 \
+	ldap_memory.3 ldap_memalloc.3 \
+	ldap_memory.3 ldap_memcalloc.3 \
+	ldap_memory.3 ldap_memrealloc.3 \
+	ldap_memory.3 ldap_strdup.3 \
 	ldap_modify.3 ldap_modify_ext.3 \
 	ldap_modify.3 ldap_modify_ext_s.3 \
 	ldap_modify.3 ldap_modify_s.3 \
@@ -169,6 +186,10 @@ MLINKS+= \
 	ldap_sort.3 ldap_sort_entries.3 \
 	ldap_sort.3 ldap_sort_strcasecmp.3 \
 	ldap_sort.3 ldap_sort_values.3 \
+	ldap_tls.3 ldap_start_tls.3 \
+	ldap_tls.3 ldap_start_tls_s.3 \
+	ldap_tls.3 ldap_tls_inplace.3 \
+	ldap_tls.3 ldap_install_tls.3 \
 	ldap_url.3 ldap_free_urldesc.3 \
 	ldap_url.3 ldap_is_ldap_url.3 \
 	ldap_url.3 ldap_url_parse.3
@@ -176,6 +197,7 @@ MLINKS+= \
 MAN5+=	ldap.conf.5 \
 	ldif.5 \
 	slapd-bdb.5 \
+	slapd-config.5 \
 	slapd-dnssrv.5 \
 	slapd-ldap.5 \
 	slapd-ldbm.5 \
@@ -189,7 +211,9 @@ MAN5+=	ldap.conf.5 \
 	slapd-shell.5 \
 	slapd-sql.5 \
 	slapd.access.5 \
+	slapd.backends.5 \
 	slapd.conf.5 \
+	slapd.overlays.5 \
 	slapd.plugin.5 \
 	slapd.replog.5 \
 	slapo-accesslog.5 \
@@ -197,7 +221,6 @@ MAN5+=	ldap.conf.5 \
 	slapo-chain.5 \
 	slapo-dds.5 \
 	slapo-dynlist.5 \
-	slapo-lastmod.5 \
 	slapo-pcache.5 \
 	slapo-ppolicy.5 \
 	slapo-refint.5 \
