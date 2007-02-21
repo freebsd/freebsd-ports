@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	dvipdfmx
-PORTVERSION=	20050831
-PORTREVISION=	2
+PORTVERSION=	20061211
+#PORTREVISION=	0
 CATEGORIES=	print
-MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/current/
+MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/release/
 DIST_SUBDIR=	dvipdfmx
 
 MAINTAINER=	matusita@FreeBSD.org
