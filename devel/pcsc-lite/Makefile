@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.3.3
+PORTVERSION=	1.4.0
 PORTEPOCH=	2
 CATEGORIES=	devel security
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/1869/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/1819/
 DISTNAME=	pcsc-lite-${PORTVERSION:S/.b./-beta/}
 
 MAINTAINER=	arved@FreeBSD.org
@@ -35,7 +35,6 @@ CONFIGURE_ARGS+=--enable-debug \
 USE_GETOPT_LONG=yes
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
-MAN1=		formaticc.1
 MAN5=		reader.conf.5
 MAN8=		pcscd.8 update-reader.conf.8
 
