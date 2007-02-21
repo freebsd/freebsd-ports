@@ -257,6 +257,7 @@
     SUBDIR += xcalib
     SUBDIR += xcb
     SUBDIR += xcb-proto
+    SUBDIR += xclick
     SUBDIR += xclip
     SUBDIR += xcmd
     SUBDIR += xco
