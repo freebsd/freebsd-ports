@@ -67,7 +67,7 @@ MAN3=		Apache::SOAP.3 \
 		XMLRPC::Transport::TCP.3
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/bin/env|${SETENV}|' \
+	@${REINPLACE_CMD} -i '' -e 's|^#!.*perl|#!${PERL}|' \
 		${WRKSRC}/bin/* ${WRKSRC}/t/*
 
 .include <bsd.port.mk>
