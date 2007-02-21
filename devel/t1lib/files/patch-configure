@@ -1,11 +1,11 @@
---- configure.orig	Sun Sep 18 14:01:31 2005
-+++ configure	Sun Sep 18 14:01:37 2005
+--- configure.orig	Sun Dec 17 18:54:49 2006
++++ configure	Tue Feb 20 10:52:30 2007
 @@ -1538,7 +1538,7 @@
  
  
  
 -T1LIB_LT_CURRENT=6
 +T1LIB_LT_CURRENT=5
- T1LIB_LT_REVISION=0
+ T1LIB_LT_REVISION=1
  T1LIB_LT_AGE=1
- T1LIB_IDENTIFIER="5.1.0"
+ T1LIB_IDENTIFIER="5.1.1"
