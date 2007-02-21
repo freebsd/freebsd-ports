@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	PyLucene
-PORTVERSION=	2.0.0
-PORTREVISION=	3
+PORTVERSION=	2.1.0
 CATEGORIES=	textproc devel python
 MASTER_SITES=	http://downloads.osafoundation.org/PyLucene/src/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +21,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/gcj41:${PORTSDIR}/lang/gcc41
 USE_PYTHON=	2.4+
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-PATCHSET=	-8
+PATCHSET=	-1
 
 OPTIONSFILE?=	${PORT_DBDIR}/${PORTNAME}/options
 
