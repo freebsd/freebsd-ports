@@ -17,6 +17,7 @@ COMMENT=	A framework for developing PHP web applications
 USE_BZIP2=	yes
 DISTFILE_SUFFIX=/donation=complete
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${TARGET_DISTFILE}
+TARGET_DISTFILE=${DISTNAME}${EXTRACT_SUFX}
 
 USE_APACHE=	2.0+
 SLAVE_PORT_MODULES=	rewrite
