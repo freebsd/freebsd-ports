@@ -5,43 +5,50 @@ etc/freepops/config.lua.sample
 %%DOCSDIR%%/MANUAL.txt
 %%DATADIR%%/lua/aggregator.lua
 %%DATADIR%%/lua/aol.lua
-%%DATADIR%%/lua/browser.lua
+%%DATADIR%%/lua/browser/browser.lua
+%%DATADIR%%/lua/browser/cookie.lua
 %%DATADIR%%/lua/common.lua
+%%DATADIR%%/lua/compat-5.1.lua
 %%DATADIR%%/lua/config.lua
-%%DATADIR%%/lua/cookie.lua
+%%DATADIR%%/lua/criticalpath.lua
 %%DATADIR%%/lua/davmail.lua
+%%DATADIR%%/lua/fastmail.lua
 %%DATADIR%%/lua/flatnuke.lua
 %%DATADIR%%/lua/foo.lua
 %%DATADIR%%/lua/freepops.lua
 %%DATADIR%%/lua/gmail.lua
 %%DATADIR%%/lua/hotmail.lua
 %%DATADIR%%/lua/httpmail.lua
+%%DATADIR%%/lua/juno.lua
 %%DATADIR%%/lua/kernel.lua
 %%DATADIR%%/lua/libero.lua
+%%DATADIR%%/lua/lxp/lom.lua
 %%DATADIR%%/lua/lycos.lua
+%%DATADIR%%/lua/mail2world.lua
 %%DATADIR%%/lua/mailcom.lua
 %%DATADIR%%/lua/mimer.lua
+%%DATADIR%%/lua/netscape.lua
 %%DATADIR%%/lua/plugins2xml.lua
 %%DATADIR%%/lua/popforward.lua
-%%DATADIR%%/lua/serialize.lua
+%%DATADIR%%/lua/serial.lua
 %%DATADIR%%/lua/skeleton.lua
+%%DATADIR%%/lua/soap/http.lua
+%%DATADIR%%/lua/soap/soap.lua
 %%DATADIR%%/lua/squirrelmail.lua
 %%DATADIR%%/lua/supereva.lua
 %%DATADIR%%/lua/support.lua
 %%DATADIR%%/lua/table2xml.lua
 %%DATADIR%%/lua/tin.lua
 %%DATADIR%%/lua/tre.lua
-%%DATADIR%%/lua/xml2table.lua
-%%DATADIR%%/lua/yahoo.lua
-%%DATADIR%%/lua/xml2tex.lua
-%%DATADIR%%/lua/version_comparer.lua
 %%DATADIR%%/lua/updater.lua
-%%DATADIR%%/lua/netscape.lua
-%%DATADIR%%/lua/mail2world.lua
-%%DATADIR%%/lua/juno.lua
-%%DATADIR%%/lua/fastmail.lua
-%%DATADIR%%/lua/criticalpath.lua
-@dirrm %%DATADIR%%/lua_unofficial
+%%DATADIR%%/lua/version_comparer.lua
+%%DATADIR%%/lua/xml2table.lua
+%%DATADIR%%/lua/xml2tex.lua
+%%DATADIR%%/lua/yahoo.lua
+@dirrmtry %%DATADIR%%/lua_unofficial
+@dirrm %%DATADIR%%/lua/soap
+@dirrm %%DATADIR%%/lua/lxp
+@dirrm %%DATADIR%%/lua/browser
 @dirrm %%DATADIR%%/lua
 @dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%

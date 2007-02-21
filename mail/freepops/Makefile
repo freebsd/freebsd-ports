@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freepops
-PORTVERSION=	0.0.96
-PORTREVISION=	2
+PORTVERSION=	0.0.99
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freepops
@@ -38,7 +37,8 @@ post-patch:
 		's|$$(PREFIX)|${PREFIX}/|; \
 		 s|share/\(man/man1\)|\1|; \
 		 s|$$(DESTDIR)\(/etc/freepops\)|${PREFIX}\1|; \
-		 s|\(cp config\.lua\) .*|\1 ${PREFIX}/etc/freepops/config.lua.sample|' \
+		 s|\(cp config\.lua\) .*|\1 ${PREFIX}/etc/freepops/config.lua.sample|; \
+		 s|for D in modules/include/\*/;|for D in modules/include/*;|' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e \
 		's|-pthread|${PTHREAD_LIBS}|g'\
