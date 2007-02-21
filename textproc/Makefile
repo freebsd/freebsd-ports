@@ -402,6 +402,7 @@
     SUBDIR += p5-MathML-Entities
     SUBDIR += p5-NetAddr-IP-Find
     SUBDIR += p5-Number-Format
+    SUBDIR += p5-Number-Spell
     SUBDIR += p5-PDF-API2
     SUBDIR += p5-PDF-Create
     SUBDIR += p5-PDF-FromHTML
