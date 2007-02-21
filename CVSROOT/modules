@@ -15766,6 +15766,7 @@ xchm		ports/deskutils/xchm
 xchomp		ports/games/xchomp
 xcircuit	ports/cad/xcircuit
 xclasses	ports/x11-toolkits/xclasses
+xclick		ports/x11/xclick
 xclip		ports/x11/xclip
 xcmd		ports/x11/xcmd
 xco		ports/x11/xco
