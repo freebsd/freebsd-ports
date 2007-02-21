@@ -452,6 +452,7 @@
     SUBDIR += p5-GD-SecurityImage
     SUBDIR += p5-GSSAPI
     SUBDIR += p5-GnuPG-Interface
+    SUBDIR += p5-HTML-Email-Obfuscate
     SUBDIR += p5-IO-Socket-SSL
     SUBDIR += p5-MD5
     SUBDIR += p5-Module-Signature
