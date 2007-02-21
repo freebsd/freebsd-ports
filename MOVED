@@ -772,7 +772,6 @@ www/p5-Apache-VMonitor||2004-02-06|Depends on obsolete libgtop
 deskutils/loserjabber|deskutils/logjam2|2004-02-07|Renamed to Logjam
 x11/wmbsdbatt|sysutils/wmbsdbatt|2004-02-09|Moved to more appropriate category
 converters/ktnef|deskutils/kdepim3|2004-02-09|ktnef is now included in kdepim
-lang/g95|lang/gfortran|2004-02-11|change to appropreate name
 www/mozilla-firebird|www/firefox|2004-02-11|Project changed names
 x11-wm/mosfet-liquid||2004-02-13|obsolete
 mail/mozilla-thunderbird|mail/thunderbird|2004-02-14|Name change to fit the project
