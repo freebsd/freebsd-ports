@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	gpgme
 MAINTAINER=	lofi@FreeBSD.org
 COMMENT=	A library to make access to GnuPG easier
 
-BUILD_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1 \
+BUILD_DEPENDS=	gpg2:${PORTSDIR}/security/gnupg \
 		gpgsm:${PORTSDIR}/security/gnupg
 LIB_DEPENDS=	gpg-error.3:${PORTSDIR}/security/libgpg-error
 
@@ -22,7 +22,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-gpg=${LOCALBASE}/bin/gpg \
+CONFIGURE_ARGS=	--with-gpg=${LOCALBASE}/bin/gpg2 \
 		--with-gpgsm=${LOCALBASE}/bin/gpgsm \
 		--includedir=${PREFIX}/include/gpgme
 
