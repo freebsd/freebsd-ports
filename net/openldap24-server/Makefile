@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		openldap
-DISTVERSION=		2.4.3alpha
+DISTVERSION=		2.4.4alpha
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -39,7 +39,7 @@ BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
 PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	1
+PORTREVISION_SERVER=	0
 
 .if !defined(CLIENT_ONLY)
 OPTIONS=	SASL "With (Cyrus) SASL2 support" on \
@@ -162,7 +162,7 @@ CONFIGURE_ARGS+=	--disable-slapd \
 SUB_FILES+=		pkg-message.client
 PKGMESSAGE=		${WRKSRC}/pkg-message.client
 
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 
 .else
 # server specific configuration
@@ -380,7 +380,7 @@ PLIST_SUB+=		RLOOKUPS="@comment "
 .if defined(WITH_SLAPI)
 CONFIGURE_ARGS+=	--enable-slapi
 PLIST_SUB+=		SLAPI=""
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 .else
 PLIST_SUB+=		SLAPI="@comment "
 .endif
