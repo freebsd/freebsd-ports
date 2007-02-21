@@ -6,6 +6,7 @@ bin/re2c
 %%PORTDOCS%%%%EXAMPLESDIR%%/rexx/scanio.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/sample.re
 %%PORTDOCS%%%%EXAMPLESDIR%%/repeater.re
+%%PORTDOCS%%%%EXAMPLESDIR%%/pp-c.re
 %%PORTDOCS%%%%EXAMPLESDIR%%/push.re
 %%PORTDOCS%%%%EXAMPLESDIR%%/modula.re
 %%PORTDOCS%%%%EXAMPLESDIR%%/cunroll.re
