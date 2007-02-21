@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mode-info
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://namazu.org/~tsuchiya/elisp/
 
