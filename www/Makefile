@@ -1090,6 +1090,7 @@
     SUBDIR += trac-accountmanager
     SUBDIR += trac-addcomment
     SUBDIR += trac-ctxtnavadd
+    SUBDIR += trac-down
     SUBDIR += trac-gantt
     SUBDIR += trac-nav
     SUBDIR += trac-pagetopdf
