@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	darts
-PORTVERSION=	0.3
+PORTVERSION=	0.31
 CATEGORIES=	devel
 MASTER_SITES=	http://www.chasen.org/~taku/software/darts/src/
 
