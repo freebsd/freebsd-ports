@@ -18,6 +18,8 @@ MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${X11BASE}/lib" \
 		MANPREFIX="${MANPREFIX}/man"
 PLIST_FILES=	bin/slock
 
+USE_XLIB=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-I/usr/include||;s|-L/usr/lib||;s|= -Os|+=|'\
 		-e 's|-DHAVE_SHADOW_H||' ${WRKSRC}/config.mk
