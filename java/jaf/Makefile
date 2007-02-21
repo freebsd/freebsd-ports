@@ -6,25 +6,25 @@
 #
 
 PORTNAME=	jaf
-PORTVERSION=	1.0.2
-PORTREVISION=	3
+PORTVERSION=	1.1
 CATEGORIES=	java devel
 MASTER_SITES=	#
-DISTNAME=	${PORTNAME}-${PORTVERSION:S,.,_,g}-upd2
+DISTNAME=	${PORTNAME}-${PORTVERSION:S,.,_,g}-fr
 
-MAINTAINER=	java@freebsd.org
+MAINTAINER=	nemoliu@gmail.com
 COMMENT=	JavaBeansTM Activation Framework
 
 USE_ZIP=	YES
 USE_JAVA=	YES
+JAVA_VERSION=	1.4+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
-NO_CDROM=	"See the license"
-DOWNLOAD_URL=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=7017-jaf-1.0.2-oth-JPR&SiteId=JSC&TransactionId=noreg
+NO_CDROM=	See the license
+DOWNLOAD_URL=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=jaf-1.1-fr-oth-JPR&SiteId=JSC&TransactionId=noreg
 
 .if !defined(NOPORTDOCS)
-DOCFILES1=	JAF-1.0.pdf JAF-1.0.ps javadocs
+DOCFILES1=	JAF-1.1.pdf JAF-1.1.ps JAF-1.1-changes.txt javadocs
 DOCFILES2=	LICENSE.txt README.txt RELNOTES.txt
 PORTDOCS=	${DOCFILES1} ${DOCFILES2}
 .endif
@@ -33,7 +33,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/activation.jar
 
 .include <bsd.port.pre.mk>
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
-IGNORE=		You must manually fetch the distribution from ${DOWNLOAD_URL} and place it in ${DISTDIR} then run make again
+IGNORE=		you must manually fetch the distribution from ${DOWNLOAD_URL} and place it in ${DISTDIR} then run make again
 .endif
 
 do-install:
