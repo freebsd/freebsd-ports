@@ -6,28 +6,29 @@
 #
 
 PORTNAME=	javamail
-PORTVERSION=	1.3.3
+PORTVERSION=	1.4
 CATEGORIES=	java mail
 MASTER_SITES=	#
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}_01
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 
-MAINTAINER=	java@freebsd.org
-COMMENT=	A set of abstract Java classes that model a mail system
+MAINTAINER=	nemoliu@gmail.com
+COMMENT=	A Reference Implementation of JSR 919
 
 RUN_DEPENDS=	${JAVALIBDIR}/activation.jar:${PORTSDIR}/java/jaf
 
 USE_ZIP=	YES
 USE_JAVA=	YES
+JAVA_VERSION=	1.4+
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}_01
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
-NO_CDROM=	"See the license"
-DOWNLOAD_URL=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=javamail-1.3.3-fr-oth-JPR&SiteId=JSC&TransactionId=noreg
+NO_CDROM=	See the license
+DOWNLOAD_URL=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=javamail-1.4-oth-JPR&SiteId=JSC&TransactionId=noreg
 
 .if !defined(NOPORTDOCS)
 DOCFILES1=	JavaMail-1.1-changes.txt JavaMail-1.2-changes.txt \
-		JavaMail-1.2.pdf JavaMail-1.2.ps JavaMail-1.3-changes.txt \
-		Providers.pdf Providers.ps javadocs
+		JavaMail-1.4.pdf JavaMail-1.3-changes.txt \
+		JavaMail-1.4-changes.txt Providers.pdf javadocs
 DOCFILES2=	CHANGES.txt LICENSE.txt NOTES.txt README.txt SSLNOTES.txt \
 		distributionREADME.txt
 PORTDOCS=	${DOCFILES1} ${DOCFILES2}
@@ -38,7 +39,7 @@ PLIST_FILES=	${JARFILES:S,^,%%JAVAJARDIR%%/,}
 
 .include <bsd.port.pre.mk>
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
-IGNORE=		You must manually fetch the distribution from ${DOWNLOAD_URL} and place it in ${DISTDIR} then run make again
+IGNORE=		you must manually fetch the distribution from ${DOWNLOAD_URL} and place it in ${DISTDIR} then run make again
 .endif
 
 do-install:
