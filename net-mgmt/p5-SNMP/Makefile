@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	SNMP
-PORTVERSION=	4.2.6
+PORTVERSION=	4.2.7
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	net-snmp
 PKGNAMEPREFIX=	p5-
 DISTNAME=	ucd-snmp-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A perl5 module for interfacing with the CMU SNMP library
 
 LIB_DEPENDS=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
