@@ -11,7 +11,7 @@ CATEGORIES=	graphics databases java
 MASTER_SITES=	http://postgis.refractions.net/download/
 DISTNAME=	postgisdriver-${PORTVERSION}
 
-MAINTAINER=	lawrance@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JUMP support for reading and writing a PostGIS database
 
 RUN_DEPENDS=	jumpgis:${PORTSDIR}/graphics/jumpgis

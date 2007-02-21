@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/geotiff/libgeotiff/ \
 		http://dl1.maptools.org/dl/geotiff/libgeotiff/
 
-MAINTAINER=	lawrance@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for reading and writing GeoTIFF information tags
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

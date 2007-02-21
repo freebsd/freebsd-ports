@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.remotesensing.org/pub/gdal/ \
 		http://www.gdal.org/dl/ \
 		http://dl.maptools.org/dl/gdal/
 
-MAINTAINER=	lawrance@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A translator library for geospatial data formats
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
