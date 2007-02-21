@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	grass
-PORTVERSION=	6.0.2
+PORTVERSION=	6.2.1
 PORTEPOCH=	2
 CATEGORIES=	databases
-MASTER_SITES=	http://grass.itc.it/grass60/source/ \
-		ftp://grass.itc.it/pub/grass/grass60/source/ \
-		http://grass.ibiblio.org/grass60/source/\
-		ftp://www.ibiblio.org/pub/packages/gis/grass/grass60/source/\
-		http://www.geog.uni-hannover.de/grass/grass60/source/\
-		http://grass.meteo.uni.wroc.pl/grass60/source/ \
-		http://grass.ru.ac.za/grass60/source/\
-		http://wgrass.media.osaka-cu.ac.jp/grassh/grass60/source/\
-		http://public.planetmirror.com/pub/grass/grass60/source/\
-		ftp://ftp.planetmirror.com/pub/grass/grass60/source/\
-		http://gulus.usherbrooke.ca/pub/appl/grass/grass60/source/\
-		http://ludique.u-bourgogne.fr/grass/grass60/source/
+MASTER_SITES=	http://grass.itc.it/grass62/source/ \
+		ftp://grass.itc.it/pub/grass/grass62/source/ \
+		http://grass.ibiblio.org/grass62/source/\
+		ftp://www.ibiblio.org/pub/packages/gis/grass/grass62/source/\
+		http://www.geog.uni-hannover.de/grass/grass62/source/\
+		http://grass.meteo.uni.wroc.pl/grass62/source/ \
+		http://grass.ru.ac.za/grass62/source/\
+		http://wgrass.media.osaka-cu.ac.jp/grassh/grass62/source/\
+		http://public.planetmirror.com/pub/grass/grass62/source/\
+		ftp://ftp.planetmirror.com/pub/grass/grass62/source/\
+		http://gulus.usherbrooke.ca/pub/appl/grass/grass62/source/\
+		http://ludique.u-bourgogne.fr/grass/grass62/source/
 
 MAINTAINER=	lrntct@gmail.com
 COMMENT=	An open source Geographical Information System (GIS)
@@ -63,7 +63,8 @@ CONFIGURE_ARGS=	--with-includes=${LOCALBASE}/include \
 		--with-readline \
 		--enable-largefile
 
-PLIST_SUB=	GRASS_INST_DIR=${GRASS_INST_DIR}
+PLIST_SUB=	GRASS_INST_DIR=${GRASS_INST_DIR} \
+		VERSION=${PORTVERSION}
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/%%GRASS_INST_DIR%%/lib
 USE_LDCONFIG=	${PREFIX}/${GRASS_INST_DIR}/lib
