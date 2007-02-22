@@ -28,7 +28,7 @@ share/aclocal/liboptschk.m4
 %%DATADIR%%/fsm-trans.tpl
 %%DATADIR%%/fsm.tpl
 %%DATADIR%%/getopt.tpl
-%%DATADIR%%/libopts-27.5.3.tar.gz
+%%DATADIR%%/libopts-27.6.3.tar.gz
 %%DATADIR%%/optcode.tpl
 %%DATADIR%%/opthead.tpl
 %%DATADIR%%/options.tpl
