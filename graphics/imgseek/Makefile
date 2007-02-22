@@ -6,19 +6,28 @@
 #
 
 PORTNAME=	imgSeek
-PORTVERSION=	0.8.4
-PORTREVISION=	1
+PORTVERSION=	0.8.6
 CATEGORIES=	graphics
 MASTER_SITES=	SFE
 
 MAINTAINER=	alfredoj69@gmail.com
 COMMENT=	A photo manager and viewer with content-based search
 
-BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt \
-		Magick++-config:${PORTSDIR}/graphics/ImageMagick
+BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
+RUN_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		Magick.10:${PORTSDIR}/graphics/ImageMagick
 
 USE_PYDISTUTILS=yes
 USE_PYTHON=	yes
 USE_BZIP2=	yes
+USE_QT_VER=	3
+MAKE_ENV+=	QTDIR="${QT_PREFIX}"
+
+post-patch:
+	${REINPLACE_CMD}\
+		-e '/^include_dirs =/s|\[\]|["${LOCALBASE}/include"]|'\
+		-e '/^library_dirs =/s|\[\]|["${LOCALBASE}/lib"]|'\
+		${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
