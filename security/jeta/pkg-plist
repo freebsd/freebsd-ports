@@ -1,0 +1,60 @@
+%%JETADIR%%/config/.htaccess
+%%JETADIR%%/config/conf.xml
+%%JETADIR%%/config/prefs.php.dist
+%%JETADIR%%/config/conf.xml.beforeJETA
+%%JETADIR%%/index.php
+%%JETADIR%%/jar/jta.conf
+%%JETADIR%%/jar/jta26.jar
+%%JETADIR%%/jar/SSHTermApplet-signed.jar
+%%JETADIR%%/jar/SSHTermApplet-jdk1.3.1-dependencies-signed.jar
+%%JETADIR%%/jar/SSHTermApplet-jdkbug-workaround-signed.jar
+%%JETADIR%%/lib/base.php
+%%JETADIR%%/lib/Applet.php
+%%JETADIR%%/lib/.htaccess
+%%JETADIR%%/lib/Applet/jta.php
+%%JETADIR%%/lib/Applet/sshtools.php
+%%JETADIR%%/lib/version.php
+%%JETADIR%%/locale/cs_CZ/LC_MESSAGES/jeta.mo
+%%JETADIR%%/locale/de_DE/LC_MESSAGES/jeta.mo
+%%JETADIR%%/locale/en_US/help.xml
+%%JETADIR%%/locale/es_ES/LC_MESSAGES/jeta.mo
+%%JETADIR%%/locale/fi_FI/LC_MESSAGES/jeta.mo
+%%JETADIR%%/locale/ro_RO/LC_MESSAGES/jeta.mo
+%%JETADIR%%/locale/zh_TW/LC_MESSAGES/jeta.mo
+%%JETADIR%%/main.php
+%%JETADIR%%/po/README
+%%JETADIR%%/po/jeta.pot
+%%JETADIR%%/po/cs_CZ.po
+%%JETADIR%%/po/de_DE.po
+%%JETADIR%%/po/es_ES.po
+%%JETADIR%%/po/fi_FI.po
+%%JETADIR%%/po/ro_RO.po
+%%JETADIR%%/po/zh_TW.po
+%%JETADIR%%/templates/common-header.inc
+%%JETADIR%%/templates/main.html
+%%JETADIR%%/test.php
+%%JETADIR%%/themes/graphics/favicon.ico
+%%JETADIR%%/themes/graphics/jeta.png
+@dirrm %%JETADIR%%/themes/graphics
+@dirrm %%JETADIR%%/themes
+@dirrm %%JETADIR%%/templates
+@dirrm %%JETADIR%%/po
+@dirrm %%JETADIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%JETADIR%%/locale/zh_TW
+@dirrm %%JETADIR%%/locale/ro_RO/LC_MESSAGES
+@dirrm %%JETADIR%%/locale/ro_RO
+@dirrm %%JETADIR%%/locale/fi_FI/LC_MESSAGES
+@dirrm %%JETADIR%%/locale/fi_FI
+@dirrm %%JETADIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%JETADIR%%/locale/es_ES
+@dirrm %%JETADIR%%/locale/en_US
+@dirrm %%JETADIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%JETADIR%%/locale/de_DE
+@dirrm %%JETADIR%%/locale/cs_CZ/LC_MESSAGES
+@dirrm %%JETADIR%%/locale/cs_CZ
+@dirrm %%JETADIR%%/locale
+@dirrm %%JETADIR%%/lib/Applet
+@dirrm %%JETADIR%%/lib
+@dirrmtry %%JETADIR%%/config
+@dirrmtry %%JETADIR%%/jar
+@dirrmtry %%JETADIR%%
