@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vor
-PORTVERSION=	0.4
-PORTREVISION=	1
+PORTVERSION=	0.5
 CATEGORIES=	games
 MASTER_SITES=	http://qualdan.com/vor/ \
 		http://www.amdmi3.ru/distfiles/
@@ -37,9 +36,9 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vor ${PREFIX}/bin
-.for d in banners fonts icons indicators music sounds sprites
-	${MKDIR} ${DATADIR}/${d}
-	${INSTALL_DATA} ${WRKSRC}/data/${d}/* ${DATADIR}/${d}/
+	${MKDIR} ${DATADIR}
+.for d in *.png *.wav *.mod
+	${INSTALL_DATA} ${WRKSRC}/data/${d} ${DATADIR}/
 .endfor
 
 .if !defined(NOPORTDOCS)
