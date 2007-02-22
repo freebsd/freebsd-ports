@@ -1,0 +1,18 @@
+AsmXml is a very fast XML parser and decoder for x86 platforms.  It
+achieves high speed by using the following features:
+
+  * Support of an XML subset only
+  * Written in pure assembler
+  * Optimized memory accesses
+  * Parsing and decoding at the same time 
+
+This parser is intended for applications that need intensive processing
+of XML.  This project will likely appeal you if XML parsing is a
+bottleneck in your data-flow.  It is expecially designed for bulk loads
+into databases.
+
+This is not an all-purpose library, it is not designed to be used with
+DOM, SAX, XPath and so on.  Here, XML is just considered as an
+interchange format, not as a working format.
+
+WWW: http://mkerbiquet.free.fr/asm-xml/
