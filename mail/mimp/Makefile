@@ -1,6 +1,6 @@
 # Ports collection makefile for:	mimp3
 # Date created:			Mon Feb 05, 2007
-# Whom:				Beech Rintoul (<beech@alaskaparadise.com>)
+# Whom:				Beech Rintoul <beech@alaskaparadise.com>
 #
 # $FreeBSD$
 #
@@ -67,8 +67,7 @@ USE_APACHE=	1.3+	# needed to test APACHE_VERSION
 USE_GETTEXT=	yes
 REINPLACE_ARGS=	-i.beforeMIMP
 
-DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL	\
-		docs/RELEASE_NOTES
+PORTDOCS=	README CHANGES CREDITS INSTALL RELEASE_NOTES
 CONFFILE=	filter.txt header.php menu.php mime_drivers.php motd.php \
 		prefs.php servers.php trailer.txt conf.xml .htaccess
 SUB_DIRS=	config lib locale po templates themes
@@ -115,6 +114,9 @@ HORDE_INC=	${LOCALBASE}/etc/apache${APACHE_VERSION:S/20/2/}/Includes/
 HORDE_INC=	${LOCALBASE}/etc/horde/
 .endif
 
+post-extract:
+	@${MV} ${WRKSRC}/README ${WRKSRC}/docs/
+
 pre-configure:
 	@${REINPLACE_CMD} -e "s:/usr/local:${LOCALBASE}:" ${WRKSRC}/config/conf.xml
 .if !defined(NOCRYPT)
@@ -157,7 +159,7 @@ pre-install:
 .endfor
 
 do-install:
-	@${MKDIR} ${MIMPDIR}
+	@${INSTALL} -d ${MIMPDIR}/
 .for REP in ${SUB_DIRS}
 	@${CP} -Rp ${WRKSRC}/${REP} ${MIMPDIR}/
 .endfor
@@ -168,10 +170,8 @@ do-install:
 	@${CHMOD} -R o-rwx ${CONFDIR}/
 
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for FILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/
-.endfor
+	@${INSTALL} -d ${DOCSDIR}/
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
