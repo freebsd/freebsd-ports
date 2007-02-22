@@ -252,6 +252,7 @@
     SUBDIR += p5-DBIx-Log4perl
     SUBDIR += p5-DBIx-MySQLSequence
     SUBDIR += p5-DBIx-Password
+    SUBDIR += p5-DBIx-Perlish
     SUBDIR += p5-DBIx-Recordset
     SUBDIR += p5-DBIx-SQLEngine
     SUBDIR += p5-DBIx-SearchBuilder
