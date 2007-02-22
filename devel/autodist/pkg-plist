@@ -1,0 +1,6 @@
+bin/autodist
+bin/makedist
+%%DATADIR%%/autodist.conf
+%%DATADIR%%/default
+%%DATADIR%%/COPYING
+@dirrm %%DATADIR%%
