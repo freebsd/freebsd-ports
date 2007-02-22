@@ -5,7 +5,7 @@ number of security features in the code, including:
 
 	1. The code uses a special string library which is resistant to buffer
 	overflows.
-	2. The code, if started as root, mandates running as an unprivledged
+	2. The code, if started as root, mandates running as an unprivileged
 	user in a chroot() jail.
 
 * Open-Source. This DNS server is public-domain code. There are no restrictions
