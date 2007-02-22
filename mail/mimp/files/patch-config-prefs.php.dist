@@ -1,0 +1,11 @@
+--- config/prefs.php.dist.orig	Fri Oct 29 19:04:12 2004
++++ config/prefs.php.dist	Thu Nov 11 21:49:05 2004
+@@ -1071,7 +1071,7 @@
+ // 'value' => "source_one\tsource_two"
+ // refer to turba/config/sources.php for possible source values
+ $_prefs['search_sources'] = array(
+-    'value' => "",
++    'value' => 'localsql',
+     'locked' => false,
+     'shared' => false,
+     'type' => 'implicit');

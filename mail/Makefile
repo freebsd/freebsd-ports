@@ -244,6 +244,7 @@
     SUBDIR += milter-regex
     SUBDIR += milter-skem
     SUBDIR += mimedefang
+    SUBDIR += mimp
     SUBDIR += mini_sendmail
     SUBDIR += minimalist
     SUBDIR += missey
