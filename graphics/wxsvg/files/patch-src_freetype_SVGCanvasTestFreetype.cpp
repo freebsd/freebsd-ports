@@ -1,15 +1,15 @@
---- src/freetype/SVGCanvasTextFreetype.cpp.orig	Thu Sep 21 21:42:35 2006
-+++ src/freetype/SVGCanvasTextFreetype.cpp	Thu Sep 21 21:45:02 2006
-@@ -165,7 +165,7 @@
+--- src/freetype/SVGCanvasTextFreetype.cpp.orig	Thu Jul 20 18:46:14 2006
++++ src/freetype/SVGCanvasTextFreetype.cpp	Thu Feb 22 18:42:55 2007
+@@ -163,7 +163,7 @@
    }
  }
  
--gint moveto(FT_Vector* to, gpointer data)
-+gint moveto(const FT_Vector* to, gpointer data)
+-static gint moveto(FT_Vector* to, gpointer data)
++static gint moveto(const FT_Vector* to, gpointer data)
  {
    wxSVGCanvasTextFreetype* canvasText = (wxSVGCanvasTextFreetype*) data;
    
-@@ -181,7 +181,7 @@
+@@ -179,7 +179,7 @@
    return 0;
  }
  
@@ -18,7 +18,7 @@
  {
    wxSVGCanvasTextFreetype* canvasText = (wxSVGCanvasTextFreetype*) data;
    if (!canvasText->m_endpath)
-@@ -194,7 +194,7 @@
+@@ -192,7 +192,7 @@
    return 0;
  }
  
@@ -27,7 +27,7 @@
  {
    wxSVGCanvasTextFreetype* canvasText = (wxSVGCanvasTextFreetype*) data;
    if (!canvasText->m_endpath)
-@@ -209,8 +209,8 @@
+@@ -207,8 +207,8 @@
    return 0;
  }
  
@@ -38,7 +38,7 @@
  {
    wxSVGCanvasTextFreetype* canvasText = (wxSVGCanvasTextFreetype*) data;
    if (!canvasText->m_endpath)
-@@ -227,7 +227,7 @@
+@@ -225,7 +225,7 @@
    return 0;
  }
  

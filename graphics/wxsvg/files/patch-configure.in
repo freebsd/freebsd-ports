@@ -1,0 +1,11 @@
+--- configure.in.orig	Thu Feb 22 18:29:47 2007
++++ configure.in	Thu Feb 22 18:30:09 2007
+@@ -3,7 +3,7 @@
+ dnl initialization
+ AC_PREREQ(2.57)
+ AC_INIT([wxsvgtest], [1.0], [wx-svg-users@lists.sourceforge.net])
+-AM_INIT_AUTOMAKE
++AM_INIT_AUTOMAKE(wxsvg, 1.0b7)
+ AM_MAINTAINER_MODE
+ 
+ dnl options
