@@ -34,7 +34,7 @@ java_command="	%%LOCALBASE%%/bin/java ${java_options} \
 if [ -f $pidfile ]; then
 	read rc_pid junk < $pidfile
 	if [ ! -z "$rc_pid" ]; then
-		procname=`ps -o ucomm= $rc_pid`
+		procname=`ps -o command= $rc_pid | awk '{print $1 }'`
 	fi
 fi
 

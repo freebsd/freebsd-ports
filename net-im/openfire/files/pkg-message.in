@@ -1,0 +1,12 @@
+WARINING: 
+If you use default self-sined certificates in wildfire 3.1.1 
+version to support SSL, you need to necessarily regenerate them. 
+After the installation please go to the "Server Certificates" menu 
+and generate your certificates. After this you will be able to
+connect through SSL again.
+
+You can find the documentation files for this package in the 
+directory %%PREFIX%%/share/doc/wildfire.
+
+To enable wildfire startup script please add wildfire_enable="YES" 
+in your rc.conf
