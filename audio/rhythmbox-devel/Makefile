@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rhythmbox
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.8
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.9
@@ -35,6 +35,7 @@ USE_GSTREAMER=	flac mad gnomevfs gconf jpeg
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--enable-nautilus-menu --with-playback=gstreamer-0-10
 INSTALLS_ICONS=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LIBS="-lm" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
@@ -83,7 +84,8 @@ PLIST_SUB+=	LIRC="@comment "
 
 .if defined(WITH_DAAP)
 CONFIGURE_ARGS+=	--enable-daap  --with-mdns=avahi
-LIB_DEPENDS+=		 avahi-client:${PORTSDIR}/net/avahi
+LIB_DEPENDS+=		avahi-client:${PORTSDIR}/net/avahi \
+    			gnome-keyring:${PORTSDIR}/security/gnome-keyring
 PLIST_SUB+=		DAAP=""
 .else
 .if exists(${LOCALBASE}/lib/libavahi-client.a)
@@ -118,9 +120,5 @@ PLIST_SUB+=	IPOD=""
 CONFIGURE_ARGS+=--without-ipod
 PLIST_SUB+=	IPOD="@comment "
 .endif
-
-post-patch:
-	@${CP} ${FILESDIR}/audioscrobbler-ui.xml \
-	    	${WRKSRC}/plugins/audioscrobbler
 
 .include <bsd.port.post.mk>

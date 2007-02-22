@@ -1,8 +1,0 @@
-<ui>
-  <popup name="LastfmSourceViewPopup">
-    <menuitem name="DeleteLibraryPopup" action="EditDelete"/>
-  </popup>
-
-  <popup name="LastfmSourcePopup">
-  </popup>
-</ui>

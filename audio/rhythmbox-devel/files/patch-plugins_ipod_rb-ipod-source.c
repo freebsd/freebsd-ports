@@ -1,5 +1,5 @@
---- sources/rb-ipod-source.c.orig	Sun Nov 19 12:12:33 2006
-+++ sources/rb-ipod-source.c	Sun Nov 19 12:28:50 2006
+--- plugins/ipod/rb-ipod-source.c.orig	Sun Nov 19 12:12:33 2006
++++ plugins/ipod/rb-ipod-source.c	Sun Nov 19 12:28:50 2006
 @@ -695,33 +695,36 @@ hal_udi_is_ipod (const char *udi)
  		char *spider_udi;
  		int vnd_id = 0;

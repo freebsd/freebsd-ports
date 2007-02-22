@@ -1,5 +1,5 @@
---- daapsharing/rb-daap-src.c.orig	Fri Jan 27 21:11:13 2006
-+++ daapsharing/rb-daap-src.c	Thu Feb  2 02:07:48 2006
+--- plugins/daap/rb-daap-src.c.orig	Fri Jan 27 21:11:13 2006
++++ plugins/daap/rb-daap-src.c	Thu Feb  2 02:07:48 2006
 @@ -34,6 +34,7 @@
  #include <sys/ioctl.h>
  #include <netdb.h>

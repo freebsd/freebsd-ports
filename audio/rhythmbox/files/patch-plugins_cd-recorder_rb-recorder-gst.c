@@ -1,5 +1,5 @@
---- player/rb-recorder-gst.c.orig	Wed Aug 10 20:06:11 2005
-+++ player/rb-recorder-gst.c	Wed Aug 10 20:06:31 2005
+--- plugins/cd-recorder/rb-recorder-gst.c.orig	Wed Aug 10 20:06:11 2005
++++ plugins/cd-recorder/rb-recorder-gst.c	Wed Aug 10 20:06:31 2005
 @@ -25,7 +25,9 @@
  #include <string.h>
  #include <math.h>
