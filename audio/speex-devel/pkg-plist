@@ -1,6 +1,5 @@
 bin/speexdec
 bin/speexenc
-include/speex/pcm_wrapper.h
 include/speex/speex.h
 include/speex/speex_bits.h
 include/speex/speex_callbacks.h
@@ -14,7 +13,7 @@ include/speex/speex_types.h
 lib/libspeex.a
 lib/libspeex.la
 lib/libspeex.so
-lib/libspeex.so.3
+lib/libspeex.so.1
 libdata/pkgconfig/speex.pc
 share/aclocal/speex.m4
 @dirrm include/speex

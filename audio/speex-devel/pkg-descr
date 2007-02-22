@@ -5,4 +5,7 @@ applications include VoIP, internet audio streaming, archiving of
 speech data (e.g. voice mail), and audio books. In some sense, it is
 meant to be complementary to the Ogg Vorbis codec.
 
+This ports is for the development version of speex, but the file format
+is compatibile with the base (1.0 and 1.1) versions.
+
 WWW: http://www.speex.org/

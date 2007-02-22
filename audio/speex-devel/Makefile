@@ -1,13 +1,13 @@
-# ex:ts=8
 # Ports collection makefile for:	Speex
 # Date created:			Jul 30, 2002
 # Whom:				ijliao
 #
 # $FreeBSD$
 #    $MCom: ports-stable/audio/speex-devel/Makefile,v 1.1 2006/03/04 21:32:25 ahze Exp $
+#
 
 PORTNAME=	speex
-PORTVERSION=	1.1.12
+DISTVERSION=	1.2beta1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.us.xiph.org/releases/speex/
@@ -18,23 +18,20 @@ COMMENT=	An open-source patent-free voice codec
 
 LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
 
-CONFLICTS=	speex-1.0*
+CONFLICTS=	speex-[0-9]*
 
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack gnometarget ltverhack
+USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_GETOPT_LONG=	yes
+USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-ogg-dir=${LOCALBASE}
-INSTALLS_SHLIB=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		speexdec.1 speexenc.1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Does not build on 4.x
-.endif
 
 .if ${MACHINE_CPU:Msse}!=""
 CONFIGURE_ARGS+=	--enable-sse
