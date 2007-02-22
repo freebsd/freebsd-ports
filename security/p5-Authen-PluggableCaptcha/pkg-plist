@@ -1,0 +1,34 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/PluggableCaptcha/.packlist
+%%SITE_PERL%%/Authen/PluggableCaptcha.pm
+%%SITE_PERL%%/Authen/PluggableCaptcha/KeyManager.pm
+%%SITE_PERL%%/Authen/PluggableCaptcha/StandardAttributesObject.pm
+%%SITE_PERL%%/Authen/PluggableCaptcha/Tutorial.pm
+%%SITE_PERL%%/Authen/PluggableCaptcha/ValidityObject.pm
+%%SITE_PERL%%/Authen/PluggableCaptcha/Render.pm
+%%SITE_PERL%%/Authen/PluggableCaptcha/Helpers.pm
+%%SITE_PERL%%/Authen/PluggableCaptcha/Challenge.pm
+%%SITE_PERL%%/Authen/PluggableCaptcha/ErrorLoggingObject.pm
+%%SITE_PERL%%/Authen/PluggableCaptcha/Render/Image.pm
+%%SITE_PERL%%/Authen/PluggableCaptcha/Render/Text.pm
+%%SITE_PERL%%/Authen/PluggableCaptcha/Render/Text/Plain.pm
+%%SITE_PERL%%/Authen/PluggableCaptcha/Render/Text/HTML.pm
+%%SITE_PERL%%/Authen/PluggableCaptcha/Render/Image/Imager.pm
+%%SITE_PERL%%/Authen/PluggableCaptcha/Render/Image/Imager/effects.pm
+%%SITE_PERL%%/Authen/PluggableCaptcha/Render/Image/Imager/layers.pm
+%%SITE_PERL%%/Authen/PluggableCaptcha/Render/Image/Imager/layers/distraction_lines.pm
+%%SITE_PERL%%/Authen/PluggableCaptcha/Render/Image/Imager/layers/bg.pm
+%%SITE_PERL%%/Authen/PluggableCaptcha/Render/Image/Imager/layers/text.pm
+%%SITE_PERL%%/Authen/PluggableCaptcha/Render/Image/Imager/effects/sinewarp.pm
+%%SITE_PERL%%/Authen/PluggableCaptcha/Challenge/TypeString.pm
+%%SITE_PERL%%/Authen/PluggableCaptcha/Challenge/DoMath.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/PluggableCaptcha
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen
+@dirrmtry %%SITE_PERL%%/Authen/PluggableCaptcha/Render/Text
+@dirrmtry %%SITE_PERL%%/Authen/PluggableCaptcha/Render/Image/Imager/layers
+@dirrmtry %%SITE_PERL%%/Authen/PluggableCaptcha/Render/Image/Imager/effects
+@dirrmtry %%SITE_PERL%%/Authen/PluggableCaptcha/Render/Image/Imager
+@dirrmtry %%SITE_PERL%%/Authen/PluggableCaptcha/Render/Image
+@dirrmtry %%SITE_PERL%%/Authen/PluggableCaptcha/Render
+@dirrmtry %%SITE_PERL%%/Authen/PluggableCaptcha/Challenge
+@dirrmtry %%SITE_PERL%%/Authen/PluggableCaptcha
+@dirrmtry %%SITE_PERL%%/Authen

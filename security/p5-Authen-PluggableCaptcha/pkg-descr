@@ -1,0 +1,11 @@
+Authen::PluggableCaptcha is a fully modularized and extensible system for
+making Pluggable Catpcha (Completely Automated Public Turing Test to Tell
+Computers and Humans Apart) tests.
+
+Pluggable? All Captcha objects are instantiated and interfaced via the main
+module, and then manipulated to require various submodules as plug-ins.
+
+Authen::PluggableCaptcha borrows from the functionality in
+Apache::Session::Flex
+
+WWW: http://search.cpan.org/dist/Authen-PluggableCaptcha/
