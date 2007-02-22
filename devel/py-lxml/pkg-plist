@@ -1,19 +1,42 @@
-%%PYTHON_SITELIBDIR%%/lxml/__init__.py
-%%PYTHON_SITELIBDIR%%/lxml/__init__.pyc
-%%PYTHON_SITELIBDIR%%/lxml/__init__.pyo
-%%PYTHON_SITELIBDIR%%/lxml/_elementpath.py
-%%PYTHON_SITELIBDIR%%/lxml/_elementpath.pyc
-%%PYTHON_SITELIBDIR%%/lxml/_elementpath.pyo
-%%PYTHON_SITELIBDIR%%/lxml/etree.so
-%%PYTHON_SITELIBDIR%%/lxml/objectify.so
-%%PYTHON_SITELIBDIR%%/lxml/sax.py
-%%PYTHON_SITELIBDIR%%/lxml/sax.pyc
-%%PYTHON_SITELIBDIR%%/lxml/sax.pyo
+@unexec %%EASY_INSTALL_CMD%% -q -m -S %D/%%PYTHON_SITELIBDIR%% %%PYLXML_EGG_VER%%
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/EGG-INFO/native_libs.txt
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/ElementInclude.py
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/ElementInclude.pyc
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/ElementInclude.pyo
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/_elementpath.py
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/_elementpath.pyc
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/_elementpath.pyo
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/elementlib.py
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/elementlib.pyc
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/elementlib.pyo
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/etree.py
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/etree.pyc
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/etree.pyo
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/etree.so
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/objectify.py
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/objectify.pyc
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/objectify.pyo
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/objectify.so
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/sax.py
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/sax.pyc
+%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/sax.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%
+@exec %%EASY_INSTALL_CMD%% -q -N -S %D/%%PYTHON_SITELIBDIR%% %%PYLXML_EGG_VER%%
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSES.txt
-%%PORTDOCS%%%%DOCSDIR%%/TODO.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/TODO.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/FAQ.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/api.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/build.txt
@@ -25,7 +48,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/build.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/capi.html
-%%PORTDOCS%%%%DOCSDIR%%/doc/html/changes-1.1.2.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/changes-1.2.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/compatibility.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/element_classes.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/extensions.html
@@ -59,4 +82,3 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/lxml
