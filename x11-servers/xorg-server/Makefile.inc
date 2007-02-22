@@ -42,7 +42,8 @@ CF_PATCHES=	${PORTSDIR}/x11-servers/xorg-server/files/patch-FreeBSD.cf \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-X11.tmpl \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-font-FreeType-ftfuncs.c \
                 ${PORTSDIR}/x11-servers/xorg-server/files/patch-font-FreeType-ftfuncs.h \
-                ${PORTSDIR}/x11-servers/xorg-server/files/patch-font-FreeType-ftsystem.c
+                ${PORTSDIR}/x11-servers/xorg-server/files/patch-font-FreeType-ftsystem.c \
+		${PORTSDIR}/x11-servers/xorg-server/files/patch-imake.c
 
 SERVER_PATCHES=	${PORTSDIR}/x11-servers/xorg-server/files/patch-Xserver-Imakefile \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-Xserver-Xext-xvmc.c \
