@@ -12,7 +12,7 @@
 %%EXAMPLESDIR%%/popread
 %%EXAMPLESDIR%%/proc2ma
 @dirrm %%EXAMPLESDIR%%/
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Audit
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Audit
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
 @dirrm %%SITE_PERL%%/Mail/Audit/Util
 @dirrm %%SITE_PERL%%/Mail/Audit
