@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	jmelo@FreeBSD.org
 COMMENT=	Content/Anti-virus Scanner for qmail
 
 MANUAL_PACKAGE_BUILD=	Requires qmail built with non-standard setting
