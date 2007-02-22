@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dovecot
-DISTVERSION=	1.0.rc22
+DISTVERSION=	1.0.rc23
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/
 
@@ -29,9 +29,7 @@ USE_LDCONFIG=	${PREFIX}/lib/dovecot \
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	USE-WIKI-INSTEAD \
-		auth-protocol.txt auth.txt configuration.txt design.txt \
-		index.txt mail-storages.txt multiaccess.txt nfs.txt \
-		securecoding.txt variables.txt
+		auth-protocol.txt securecoding.txt variables.txt
 .else
 CONFIGURE_ARGS+=	--without-docs
 .endif
