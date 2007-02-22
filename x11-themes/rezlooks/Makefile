@@ -9,7 +9,7 @@ PORTNAME=	rezlooks
 PORTVERSION=	0.6
 PORTREVISION=	1
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://www.gnome-look.org/content/files/
+MASTER_SITES=	http://www.gnome-look.org/CONTENT/content-files/
 DISTNAME=	39179-rezlooks-${PORTVERSION}
 
 MAINTAINER=	brandoncash@gmail.com

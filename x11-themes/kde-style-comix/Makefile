@@ -9,7 +9,7 @@ PORTNAME=	comix
 PORTVERSION=	1.3.7
 PORTREVISION=	1
 CATEGORIES=	x11-themes kde
-MASTER_SITES=	http://www.kde-look.org/content/files/
+MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	kde-style-
 DISTNAME=	16028-${PORTNAME}-${PORTVERSION}
 

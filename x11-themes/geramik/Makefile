@@ -9,7 +9,7 @@ PORTNAME=	geramik
 PORTVERSION=	0.27
 PORTREVISION=	1
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://www.kde-look.org/content/files/ \
+MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/ \
 		http://distfiles.towardex.com/
 DISTNAME=	3952-Geramik-${PORTVERSION}
 

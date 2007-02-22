@@ -9,7 +9,7 @@ PORTNAME=	gtk-gray-theme
 PORTVERSION=	1.7
 PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	http://www.gnome-look.org/content/files/
+MASTER_SITES=	http://www.gnome-look.org/CONTENT/content-files/
 DISTNAME=	34132-Gray
 
 MAINTAINER=	farrokhi@FreeBSD.org

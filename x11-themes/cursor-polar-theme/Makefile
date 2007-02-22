@@ -8,7 +8,7 @@
 PORTNAME=	polar-theme
 PORTVERSION=	1.4
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://www.kde-look.org/content/files/
+MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	cursor-
 DISTNAME=	27913-PolarCursorThemes
 
