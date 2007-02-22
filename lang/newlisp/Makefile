@@ -8,7 +8,7 @@
 
 PORTNAME=	newlisp
 PORTVERSION=	9.1.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -101,16 +101,12 @@ post-patch:
 		-e "s,^(bindir=).*,\1${PREFIX}/bin,g" \
 		${WRKSRC}/Makefile
 
-	@${REINPLACE_CMD} -E -e "s,exec wish,exec wish${TK_VER}," \
-		-e "s,/usr/share/newlisp,${DATADIR},g" \
-		-e "s,/usr/bin,${PREFIX}/bin,g" \
-		${WRKSRC}/newlisp-tk/newlisp-tk.tcl
-
 	@${REINPLACE_CMD} -E \
 		-e "s,/usr/bin/newlisp,${PREFIX}/bin/newlisp,g" \
 		-e "s,/usr/share/newlisp,${DATADIR},g" \
 		-e "s,/usr/lib/newlisp.so,${PREFIX}/lib/newlisp.so,g" \
 		-e "s,exec wish,exec wish${TK_VER}," \
+		-e "s,/usr/bin,${PREFIX}/bin,g" \
 		${WRKSRC}/examples/* \
 		${WRKSRC}/doc/* \
 		${WRKSRC}/modules/* \
