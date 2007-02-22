@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	zip
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	archivers
 MASTER_SITES=	http://caml.inria.fr/distrib/bazar-ocaml/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	caml${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	OCaml library to manipulate ZIP/GZIP/JAR archives
 
 #USE_GMAKE=	yes
