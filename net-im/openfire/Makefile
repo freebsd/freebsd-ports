@@ -6,10 +6,9 @@
 #
 
 PORTNAME=       wildfire
-PORTVERSION=    3.1.1
-PORTREVISION=   1
+PORTVERSION=    3.2.2
 CATEGORIES=     net-im java
-MASTER_SITES=   http://www.jivesoftware.org/builds/wildfire/
+MASTER_SITES=   http://www.igniterealtime.org/downloadServlet?filename=wildfire/
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
 
 MAINTAINER=     quetzal@zone3000.net
@@ -23,8 +22,9 @@ JAVA_VERSION=   1.5+
 USE_ANT=        yes
 
 USE_RC_SUBR=	wildfire
-
 ALL_TARGET=     wildfire
+
+SUB_FILES=	pkg-message
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_src
 BUILD_WRKSRC=	${WRKSRC}/build
@@ -76,5 +76,10 @@ post-install:
 	${CHOWN} -R ${PUSER}:${PGROUP} ${VARDB}
 	${CHOWN} -R ${PUSER}:${PGROUP} ${VARLOG}
 	${CHOWN} -R ${PUSER}:${PGROUP} ${DATADIR}
+
+	@${ECHO_CMD} "===> post-installation information for ${PKGNAME}:"
+	@${ECHO_CMD} ""
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD} ""
 
 .include <bsd.port.mk>
