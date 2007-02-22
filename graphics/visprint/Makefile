@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	visprint
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.tastyrabbit.net/visprint/download/
 
