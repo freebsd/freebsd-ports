@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd January 9, 2007
+.Dd February 22, 2007
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -67,6 +67,10 @@
 .Nm
 .Op Fl b [D|d]
 .Fl s
+.Nm
+.Fl --clean-distfiles
+.Nm
+.Fl --clean-distfiles-all
 .Nm
 .Fl h
 .Pp
@@ -216,6 +220,16 @@ the port causes a dependency to no longer be
 necessary.
 .It Fl s
 clean out stale ports that used to be depended on
+.It Fl --clean-distfiles
+recurse through the installed ports to get a list
+of distinfo files,
+then recurse through all files in
+.Pa /usr/ports/distfiles
+to make sure that they are still associated with
+an installed port.
+If not, offer to delete the stale file.
+.It Fl --clean-distfiles-all
+do the same as above, but delete all files without prompting.
 .It Fl h
 display help file
 .El
