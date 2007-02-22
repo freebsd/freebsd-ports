@@ -8,7 +8,7 @@
 PORTNAME=	cursor-jimmac-theme
 PORTVERSION=	0.1
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://www.gnome-look.org/content/files/
+MASTER_SITES=	http://www.gnome-look.org/CONTENT/content-files/
 DISTNAME=	6550-Jimmac
 
 MAINTAINER=	smyru@heron.pl

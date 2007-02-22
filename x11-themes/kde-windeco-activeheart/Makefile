@@ -9,7 +9,7 @@ PORTNAME=	activeheart
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	x11-themes kde
-MASTER_SITES=	http://www.kde-look.org/content/files/
+MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	kde-windeco-
 DISTNAME=	11460-kwin-${PORTNAME}-${PORTVERSION}
 

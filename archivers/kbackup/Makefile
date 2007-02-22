@@ -8,7 +8,7 @@
 PORTNAME=	kbackup
 PORTVERSION=	0.5.1
 CATEGORIES=	archivers kde
-MASTER_SITES=	http://www.kde-apps.org/content/files/
+MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
 DISTNAME=	44998-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	acm@FreeBSD.org

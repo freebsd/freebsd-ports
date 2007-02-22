@@ -7,7 +7,7 @@
 
 PORTNAME=	sky
 PORTVERSION=	0.7.3
-MASTER_SITES=	http://www.kde-look.org/content/files/
+MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 DISTNAME=	3095-${PORTNAME}-${PORTVERSION}dave
 EXTRACT_SUFX=	.tgz
 

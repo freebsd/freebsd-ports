@@ -8,7 +8,7 @@
 PORTNAME=	yakuake
 PORTVERSION=	2.7.5
 CATEGORIES=	x11 kde
-MASTER_SITES=	http://www.kde-look.org/content/files/
+MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 DISTNAME=	29153-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	decept0@gmail.com

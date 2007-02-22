@@ -8,7 +8,7 @@
 PORTNAME=	cursor-neutral-theme
 DISTVERSION=	1.13a
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://www.gnome-look.org/content/files/
+MASTER_SITES=	http://www.gnome-look.org/CONTENT/content-files/
 DISTNAME=	28310-neutral-${DISTVERSION}
 
 MAINTAINER=	farrokhi@FreeBSD.org

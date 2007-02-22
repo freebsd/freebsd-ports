@@ -9,7 +9,7 @@ PORTNAME=	tiblit
 PORTVERSION=	1.2
 PORTREVISION=	3
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://www.kde-look.org/content/files/
+MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	kde-style-
 DISTNAME=	20798-${PORTNAME}-${PORTVERSION}
 
