@@ -1,6 +1,7 @@
 bin/swatch
 etc/rc.d/swatch.sh
 %%SITE_PERL%%/Swatch/Actions.pm
+%%SITE_PERL%%/Swatch/Threshold.pm
 %%SITE_PERL%%/Swatch/Throttle.pm
 %%SITE_PERL%%/auto/Swatch/Actions/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/swatch/.packlist
