@@ -34,6 +34,7 @@ MAKE_ENV=	MIBDIRS="/dev/null"
 USE_LDCONFIG=	yes
 DATADIR=	${PREFIX}/share/${DATADIR_NAME}
 LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-funit-at-a-time
 
 WIRESHARK_LIBS=
 
