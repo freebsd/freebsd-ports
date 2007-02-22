@@ -7,6 +7,7 @@
 
 PORTNAME=	opal
 PORTVERSION=	2.2.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.voxgratia.org/releases/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}-src-
@@ -48,7 +49,7 @@ CONFIGURE_ARGS+=	--enable-h263avcodec=${LOCALBASE}/include/ffmpeg
 .endif
 
 .ifdef (WITH_SPEEX)
-LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex-devel
+LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex-devel
 BUILD_DEPENDS+=	${LOCALBASE}/include/speex/speex_echo.h:${PORTSDIR}/audio/speex-devel
 CONFIGURE_ARGS+=	--enable-localspeex=no
 .else
