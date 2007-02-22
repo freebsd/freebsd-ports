@@ -9,11 +9,10 @@ PORTNAME=	arphicttf
 PORTVERSION=	2.11
 PORTREVISION=	1
 CATEGORIES=	chinese x11-fonts
-MASTER_SITES=	http://ftp.riken.go.jp/pub/FreeBSD/distfiles/ \
-		http://ftp.univie.ac.at/systems/FreeBSD/distfiles/
+MASTER_SITES=	LOCAL/rafan/chinese/
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Four Chinese Big5/GB TrueType fonts made by Arphic Technology
 
 NO_BUILD=	yes

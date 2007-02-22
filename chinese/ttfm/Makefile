@@ -9,9 +9,9 @@ PORTNAME=	ttfm
 PORTVERSION=	0.9.5
 PORTREVISION=	1
 CATEGORIES=	chinese print
-MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/ttfm/
+MASTER_SITES=	LOCAL/rafan/chinese
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	A Big5/GB enhanced TrueType Font Manager
 
 RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
