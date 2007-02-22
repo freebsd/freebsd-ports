@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gd
-PORTVERSION=	2.0.33
-PORTREVISION?=	4
+PORTVERSION=	2.0.34
+PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES+=	graphics
-MASTER_SITES=	http://www.boutell.com/gd/http/ \
-		${MASTER_SITE_RINGSERVER}
+MASTER_SITES=	http://www.libgd.org/releases/
 MASTER_SITE_SUBDIR=	graphics/gd
 PKGNAMESUFFIX?=	${NOX11_SUFFIX}${PKGNAMESUFFIX2}
 
@@ -22,23 +21,42 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
+USE_BZIP2=	yes
+SCRIPTDIR=	${FILESDIR}
 MAKE_ENV=	WRKSRC="${WRKSRC}" CC="${CC}" CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKEFILE=	${FILESDIR}/Makefile.bsd
+CPPFLAGS+=	-DHAVE_ERRNO_H -DHAVE_FT2BUILD_H -DHAVE_LIBFREETYPE -DHAVE_LIBJPEG -DHAVE_LIBPNG \
+		-DHAVE_LIBZ -DHAVE_STDDEF_H -DHAVE_STDINT_H -DHAVE_STDLIB_H
+LDFLAGS2=	-L${PREFIX}/lib -L${LOCALBASE}/lib
+FEATURES=	GD_JPEG GD_FREETYPE GD_PNG GD_GIF GD_GIFANIM GD_OPENPOLYGON
 USE_LDCONFIG=	yes
-SCRIPTDIR=	${FILESDIR}
-CPPFLAGS+=	-DHAVE_FT2BUILD_H
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_XPM) && !defined(WITHOUT_X11)
+.if !defined(WITHOUT_X11)
+
+.if defined(WITH_XPM)
 USE_XPM=	yes
 CPPFLAGS+=	-I${X11BASE}/include/X11 -I${X11BASE}/include -DHAVE_LIBXPM
 LDFLAGS+=	-L${X11BASE}/lib -lXpm -lX11
-LDFLAGS2=	-L${PREFIX}/lib -L${LOCALBASE}/lib -L${X11BASE}/lib
-FEATURES=	GD_XPM GD_JPEG GD_FONTCONFIG GD_FREETYPE GD_GIF GD_PNG
-.else
-LDFLAGS2=	-L${PREFIX}/lib -L${LOCALBASE}/lib
-FEATURES=	GD_JPEG GD_FONTCONFIG GD_FREETYPE GD_GIF GD_PNG
+LDFLAGS2+=	-L${X11BASE}/lib
+FEATURES+=	GD_XPM
+.endif
+
+.if defined(WITH_FONTCONFIG)
+LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+CPPFLAGS+=	-I${X11BASE}/include -DHAVE_LIBFONTCONFIG -DHAVE_PTHREAD ${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
+LDFLAGS2+=	${PTHREAD_LIBS}
+FEATURES+=	GD_FONTCONFIG
+.endif
+
+.endif
+
+.if defined(WITH_ICONV)
+USE_ICONV=	yes
+CPPFLAGS+=	-DHAVE_ICONV -DHAVE_ICONV_H -DHAVE_ICONV_T_DEF
+LDFLAGS+=	-L${LOCALBASE}/lib -liconv
 .endif
 
 .if defined(GD_FONTS)
@@ -46,15 +64,14 @@ USE_PERL5_BUILD=	yes
 SCRIPTS_ENV+=	GD_FONTS="${GD_FONTS}"
 .endif
 
-pre-everything::
+pre-extract::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "gd has the following tunables:"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "	WITH_XPM=yes			Turns on Xpm support"
+	@${ECHO_MSG} "	WITH_FONTCONFIG=yes		Turns on Fontconfig support"
+	@${ECHO_MSG} "	WITH_ICONV=yes			Turns on iconv support"
 	@${ECHO_MSG} ""
-
-post-extract:
-	@${CP} ${FILESDIR}/g* ${WRKSRC}
 
 post-configure:
 	${SED} -e 's|@libdir@|${PREFIX}/lib|' \
@@ -65,6 +82,7 @@ post-configure:
 		-e 's|@GDLIB_REVISION@|${PORTVERSION:C/.*[.]([0-9]*)/\1/1}|' \
 		-e 's|@LDFLAGS@|${LDFLAGS2}|' \
 		-e 's|@LIBS@|-lgd|' \
+		-e 's|@LIBICONV@|${LIBICONV}|' \
 		-e 's|@FEATURES@|${FEATURES}|' \
 		${WRKSRC}/config/gdlib-config.in \
 		> ${WRKDIR}/gdlib-config

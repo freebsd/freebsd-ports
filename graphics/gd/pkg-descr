@@ -5,12 +5,9 @@ or JPEG file. This is particularly useful in World Wide Web applications,
 where PNG, GIF and JPEG are three of the formats accepted for inline
 images by most browsers.
 
-gd does  not provide for every possible desirable graphics operation,
+gd does not provide for every possible desirable graphics operation,
 but version 2.0 does include most frequently requested features,
 including both truecolor and palette images, resampling (smooth
 resizing of truecolor images) and so forth.
 
-WWW: http://www.boutell.com/gd/
-
-- Alex Dupre
-sysadmin@alexdupre.com
+WWW: http://www.libgd.org/

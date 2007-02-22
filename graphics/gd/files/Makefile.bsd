@@ -1,15 +1,13 @@
-PROGS!=	${MAKE} -V BIN_PROGRAMS -f ${WRKSRC}/makefile.sample
-PROGS+=	gd2togif gdcmpgif giftogd2
-PROGS+=	annotate	# new utility, not included in makefile.sample
+# Makefile
+PROGS=	pngtogd pngtogd2 gdtopng gd2topng gd2copypal gdparttopng webpng \
+	gd2togif gdcmpgif giftogd2 annotate
 TESTS=	gdtest gddemo gd2time gdtestft testac fontsizetest fontwheeltest
 SRCS=	gd.c gd_gd.c gd_gd2.c gd_io.c gd_io_dp.c gd_io_file.c \
 	gd_io_ss.c gd_jpeg.c gd_png.c gd_ss.c gd_topal.c \
 	gd_wbmp.c gdcache.c gdfontg.c gdfontl.c gdfontmb.c \
 	gdfonts.c gdfontt.c gdft.c gdfx.c gdhelpers.c gdhelpers.h \
-	gdkanji.c gdtables.c gdxpm.c jisx0208.h \
-	gd_security.c \
-	wbmp.c wbmp.h
-SRCS+=	gd_gif_in.c gd_gif_out.c gd_biggif_out.c gd_lzw_out.c
+	gdkanji.c gdtables.c gdxpm.c gd_security.c \
+	wbmp.c gd_gif_in.c gd_gif_out.c
 MAKEDIR=/usr/share/mk
 LIB=gd
 SHLIB_MAJOR=4
@@ -37,7 +35,7 @@ lib${LIB}.a ${SHLIB_NAME}: ${SRCS}
 		-f ${MAKEDIR}/bsd.lib.mk ${.TARGET}
 
 ${PROGS} ${TESTS}: ${SHLIB_NAME} lib${LIB}.a
-	${MAKE} PROG=${.TARGET} NOMAN=1 LDADD="-L${.CURDIR} -lgd" \
+	${MAKE} PROG=${.TARGET} NO_MAN=1 NOMAN=1 LDADD="-L${.CURDIR} -lgd" \
 		CFLAGS="${CFLAGS}" -ECFLAGS -f ${MAKEDIR}/bsd.prog.mk
 
 install:

@@ -1,8 +1,17 @@
---- gdtest.c.orig	Thu Apr 25 14:16:47 2002
-+++ gdtest.c	Tue Nov  6 15:53:38 2001
-@@ -84,6 +84,35 @@
-   gdImageDestroy (im2);
-   ctx->gd_free (ctx);
+--- gdtest.c.orig	Sat Feb  3 02:41:00 2007
++++ gdtest.c	Sat Feb 17 14:09:35 2007
+@@ -36,6 +36,8 @@
+   gdSink imgsnk;
+   int foreground;
+   int i;
++  gdIOCtx *ctx;
++
+   if (argc != 2)
+     {
+       fprintf (stderr, "Usage: gdtest filename.png\n");
+@@ -58,6 +60,35 @@
+ 
+   CompareImages ("Initial Versions", ref, im);
  
 +        /* */
 +        /* Send to GIF File then Ptr */
@@ -35,47 +44,15 @@
 +	ctx->gd_free(ctx);
  
    /* */
-   /* Send to GD2 File then Ptr */
-@@ -200,7 +229,30 @@
-       gdImageDestroy (im2);
-     };
- 
--  unlink (of);
-+	/*
-+	** Test gdImageCreateFromGifSource
-+	**/
-+
-+	in = fopen(of, "rb");
-+
-+	if (!in)
-+	  {
-+		fprintf (stderr, "GD Source: ERROR - GD Source input file does not exist - Sink may have failed!\n");
-+	  };
-+
-+	imgsrc.source = freadWrapper;
-+	imgsrc.context = in;
-+	im2 = gdImageCreateFromGifSource(&imgsrc);
-+	fclose(in);
-+
-+	if (im2 == NULL) {
-+		printf("GD Source (GIF): ERROR Null returned by gdImageCreateFromGifSource\n");
-+	} else {
-+		CompareImages("GD Source (GIF)", ref, im2);
-+		gdImageDestroy(im2);
-+	};
-+
-+	unlink(of);
- 
-   /* */
-   /*  Test Extraction */
-@@ -266,6 +318,10 @@
+   /* Send to PNG File then Ptr */
+@@ -268,6 +299,10 @@
  
    printf ("[Merged Image has %d colours]\n", im2->colorsTotal);
    CompareImages ("Merged (gdtest.png, gdtest_merge.png)", im2, im3);
 +
 +  out = fopen ("test/gdtest_merge_out.png", "wb");
 +  gdImagePng(im2, out);
-+  close(out);
++  fclose(out);
  
    gdImageDestroy (im2);
    gdImageDestroy (im3);
