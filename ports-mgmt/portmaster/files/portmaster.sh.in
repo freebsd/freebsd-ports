@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Local version: 1.147
+# Local version: 1.151
 # $FreeBSD$
 
 # Copyright (c) 2005-2007 Douglas Barton, All rights reserved
@@ -50,6 +50,9 @@ usage () {
 	echo "${0##*/} [-b D|d] -e <full name of port directory in $pdb>"
 	echo "${0##*/} [-b D|d] -s"
 	echo ''
+	echo "${0##*/} --clean-distfiles"
+	echo "${0##*/} --clean-distfiles-all"
+	echo ''
 	echo "${0##*/} -h"
 	echo ''
 	echo "-C prevents 'make clean' being run in port directory"
@@ -67,7 +70,7 @@ usage () {
 	echo '-d always clean distfiles'
 	echo "-m <arguments for the 'make' command line>"
 	echo ''
-	echo '-o Replace the installed port with a port from a different origin'
+	echo '-o replace the installed port with a port from a different origin'
 	echo '-r rebuild port, and all ports that depend on it'
 	echo '-a check all ports, update as necessary'
 	echo ''
@@ -76,6 +79,9 @@ usage () {
 	echo ''
 	echo '-e expunge a port via pkg_delete, and removing its distfiles'
 	echo '-s clean out stale ports that used to be depended on'
+	echo ''
+	echo '--clean-distfiles offer to delete stale distfiles'
+	echo '--clean-distfiles-all delete stale distfiles without prompting'
 	echo ''
 	echo '-h display this help file'
 	echo ''
@@ -373,9 +379,18 @@ check_for_updates () {
 	fi
 
 	if [ -d "$pd/$upd_port" ]; then
-		cd $pd/$upd_port ||
-		    fail "Cannot cd to port directory: $pd/$upd_port"
+		if ! cd $pd/$upd_port; then
+			if [ -e "$pdb/$1/+IGNOREME" ]; then
+			echo "===>>> Warning: Unable to cd to $pd/$upd_port"
+			echo "===>>> Continuing due to $pdb/$1/+IGNOREME"
+				return 0
+			else
+			    fail "Cannot cd to port directory: $pd/$upd_port"
+			fi
+		fi
 		port_ver=`make $MAKE_ARGS -V PKGNAME`
+
+		[ -z "$port_ver" ] && fail "Is $pd/$upd_port/Makefile missing?"
 
 		if [ "$1" = "$port_ver" ]; then
 			if [ -z "$LIST" -a -z "$LIST_PLUS" ]; then
@@ -799,6 +814,50 @@ fi
 : ${pd:=/usr/ports}
 : ${pdb:=/var/db/pkg}
 
+case "$1" in
+--clean-distfiles)	CLEAN_DISTFILES=yes ;;
+--clean-distfiles-all)	CLEAN_DISTFILES=yes ; ALL=yes ;;
+esac
+
+if [ -n "$CLEAN_DISTFILES" ]; then
+	echo "===>>> Gathering distinfo list for installed ports"
+	for pkg in ${pdb}/*; do
+		[ -d $pkg ] || continue
+		origin=`origin_from_pdb $pkg`
+
+		if [ ! -d "$pd/$origin" ]; then
+			find_moved_port $origin || continue
+			origin=$newportdir
+		fi
+
+		cd $pd/$origin || continue
+		distinfo=`make $MAKE_ARGS -V MD5_FILE`
+		if [ -s "$distinfo" ]; then
+			distinfos="$distinfos $distinfo"
+		fi
+	done
+
+	echo "===>>> Checking for stale distfiles"
+	for df in `find $pd/distfiles -type f`; do
+		f=${df#$pd/distfiles/}
+		if ! grep -q \(${f}\) $distinfos; then
+			if [ -n "$ALL" ]; then
+				echo "===>>> Deleting $f"
+				rm $df
+			else
+				echo -n "===>>> Delete stale file: ${f}? [y] "
+				read DEL_OR_NOT
+				case "$DEL_OR_NOT" in
+				[nN]*)	continue ;;
+				*)	rm $df ;;
+				esac
+			fi
+		fi
+	done
+
+	exit 0
+fi
+
 # Save switches for potential child processes
 while getopts 'BCDGLabde:fghilm:nop:r:stuv' COMMAND_LINE_ARGUMENT ; do
 	case "${COMMAND_LINE_ARGUMENT}" in
@@ -825,7 +884,7 @@ while getopts 'BCDGLabde:fghilm:nop:r:stuv' COMMAND_LINE_ARGUMENT ; do
 		;;
 	n)	NO_ACTION=yes; ARGS="-n $ARGS" ;;
 	o)	REPLACE_ORIGIN=yes ;;
-	p)	portdir="${OPTARG#$pd/}" ;;
+	p)	portdir="${OPTARG#$pd/}" ; portdir=${portdir%/} ;;
 	r)	UPDATE_REQ_BYS=yes; upg_port=$OPTARG ;;
 	s)	CLEAN_STALE=yes ;;
 	t)	RECURSE_THOROUGH=yes; ARGS="-t $ARGS" ;;
@@ -1017,7 +1076,7 @@ if [ "$$" -eq "$PARENT_PID" ]; then
 		export CONFIG_SEEN_LIST CONFIG_ONLY
 	fi
 
-	if [ $# -gt 1 ]; then
+	if [ $# -gt 1 -a -z "$REPLACE_ORIGIN" ]; then
 		if [ -z "$NO_RECURSIVE_CONFIG" ]; then
 			for port in $@; do
 				($0 $ARGS $port) ||
@@ -1110,6 +1169,7 @@ fi
 
 if [ -n "$REPLACE_ORIGIN" ]; then
 	portdir="${1#$pd/}"
+	portdir="${portdir%/}"
 	newportdir=$portdir
 
 	if [ -d "$pdb/$2" ]; then
@@ -1136,8 +1196,15 @@ case "$portdir" in
 	${pd}/*)	portdir="${1#$pd/}" ;;
 	/*)	upg_port="${1##*/}" ;;
 	\.)	portdir="${PWD##*/ports/}" ;;
-	*)	upg_port=$1 ;;
+	*)	if [ -d "${pd}/${1}" ]; then
+			portdir=$1
+		else
+			upg_port=$1
+		fi
+		;;
 	esac
+	portdir=${portdir%/}
+	upg_port=${upg_port%/}
 esac
 
 case "$upg_port" in
@@ -1262,10 +1329,12 @@ dofetch () {
 	if [ -n "$UPDATE_REQ_BYS" ]; then
 		MASTER_RB_LIST=`mktemp -t master_rb_list-${PARENT_PID}`
 		export MASTER_RB_LIST
+		if [ -s "$pdb/$upg_port/+REQUIRED_BY" ]; then
+			old_rb=$pdb/$upg_port/+REQUIRED_BY
+		fi
 		upg_origin=`origin_from_pdb $pdb/$upg_port`
 		grep -l DEPORIGIN:$upg_origin$ $pdb/*/+CONTENTS |
-		    cut -f 5 -d '/' | sort -u - \
-		    $pdb/$upg_port/+REQUIRED_BY > $MASTER_RB_LIST
+		    cut -f 5 -d '/' | sort -u - $old_rb > $MASTER_RB_LIST
 	fi
 fi
 
