@@ -533,6 +533,7 @@ asis-gpl		ports/devel/asis-gpl
 ask		ports/mail/ask
 asl		ports/devel/asl
 aslookup	ports/net/aslookup
+asm-xml		ports/textproc/asm-xml
 asm2html	ports/textproc/asm2html
 asmail		ports/mail/asmail
 asmem		ports/sysutils/asmem
