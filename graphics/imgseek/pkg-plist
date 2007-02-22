@@ -48,9 +48,9 @@ bin/imgSeekCmd
 %%PYTHON_SITELIBDIR%%/imgSeekLib/HTMLAlbum.py
 %%PYTHON_SITELIBDIR%%/imgSeekLib/HTMLAlbum.pyc
 %%PYTHON_SITELIBDIR%%/imgSeekLib/HTMLAlbum.pyo
-%%PYTHON_SITELIBDIR%%/imgSeekLib/ImgDB.py
-%%PYTHON_SITELIBDIR%%/imgSeekLib/ImgDB.pyc
-%%PYTHON_SITELIBDIR%%/imgSeekLib/ImgDB.pyo
+%%PYTHON_SITELIBDIR%%/imgSeekLib/ImageDB.py
+%%PYTHON_SITELIBDIR%%/imgSeekLib/ImageDB.pyc
+%%PYTHON_SITELIBDIR%%/imgSeekLib/ImageDB.pyo
 %%PYTHON_SITELIBDIR%%/imgSeekLib/IptcExtract.py
 %%PYTHON_SITELIBDIR%%/imgSeekLib/IptcExtract.pyc
 %%PYTHON_SITELIBDIR%%/imgSeekLib/IptcExtract.pyo
@@ -106,12 +106,13 @@ bin/imgSeekCmd
 %%PYTHON_SITELIBDIR%%/imgSeekLib/imgSeekApp.pyc
 %%PYTHON_SITELIBDIR%%/imgSeekLib/imgSeekApp.pyo
 %%PYTHON_SITELIBDIR%%/imgSeekLib/imgdb.so
-%%PYTHON_SITELIBDIR%%/imgSeekLib/tdict.py
-%%PYTHON_SITELIBDIR%%/imgSeekLib/tdict.pyc
-%%PYTHON_SITELIBDIR%%/imgSeekLib/tdict.pyo
+%%PYTHON_SITELIBDIR%%/imgSeekLib/sqlitedb.py
+%%PYTHON_SITELIBDIR%%/imgSeekLib/sqlitedb.pyc
+%%PYTHON_SITELIBDIR%%/imgSeekLib/sqlitedb.pyo
 %%DATADIR%%/color.png
 %%DATADIR%%/courB12.pbm
 %%DATADIR%%/courB12.pil
+%%DATADIR%%/imgseek_pt_BR.qm
 %%DATADIR%%/styles/Acqua/bg.png
 %%DATADIR%%/styles/Acqua/coininfd.png
 %%DATADIR%%/styles/Acqua/coininfg.png
@@ -147,5 +148,3 @@ bin/imgSeekCmd
 @dirrm %%DATADIR%%/styles
 @dirrm %%DATADIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/imgSeekLib
-@dirrm %%PYTHON_SITELIBDIR%%
-@dirrm %%PYTHON_LIBDIR%%
