@@ -8961,6 +8961,7 @@ p5-DBIx-Ease	ports/databases/p5-DBIx-Ease
 p5-DBIx-Log4perl	ports/databases/p5-DBIx-Log4perl
 p5-DBIx-MySQLSequence	ports/databases/p5-DBIx-MySQLSequence
 p5-DBIx-Password	ports/databases/p5-DBIx-Password
+p5-DBIx-Perlish	ports/databases/p5-DBIx-Perlish
 p5-DBIx-Recordset	ports/databases/p5-DBIx-Recordset
 p5-DBIx-SQLEngine	ports/databases/p5-DBIx-SQLEngine
 p5-DBIx-SQLite-Simple	ports/databases/p5-DBIx-SQLite-Simple
