@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	irsim
-PORTVERSION=	9.7.41
+PORTVERSION=	9.7.45
 PORTREVISION=	0
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/irsim/archive/
