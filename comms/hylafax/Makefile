@@ -6,22 +6,19 @@
 #
 
 PORTNAME=	hylafax
-PORTVERSION=	4.3.0
+PORTVERSION=	4.3.2
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.hylafax.org/source/
 
 MAINTAINER=	W.J.Zwart@NescioLudens.nl
 COMMENT=	Fax software
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/afm/Courier:${PORTSDIR}/print/afm \
-		gawk:${PORTSDIR}/lang/gawk
+BUILD_DEPENDS=	${LOCALBASE}/lib/afm/Courier:${PORTSDIR}/print/afm
 
 # no dependency on ghostscript because we don't know which
 # version the user prefers
 LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		jpeg:${PORTSDIR}/graphics/jpeg
-
-RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 
 DIST_SUBDIR=	hylafax
 
@@ -31,8 +28,7 @@ CONFIGURE_ARGS=	--with-INSTALL="" \
 		--with-TIFFINC="${LOCALBASE}/include" \
 		--with-GCOPTS=" " --with-GCXXOPTS=" " \
 		--with-REGEX=no --with-LIBREGEX='' --with-REGEXINC=none \
-		--with-DIR_HTML="${DOCSDIR}" \
-		--with-AWK="${LOCALBASE}/bin/gawk"
+		--with-DIR_HTML="${DOCSDIR}"
 
 SUB_FILES=	pkg-message hylafax.sh.sample
 
@@ -47,7 +43,7 @@ CONFIGURE_ARGS+=--disable-pam
 .endif
 
 # Want HTML documentation?
-.if defined(WITH_HTMLDOC)
+.if !defined(NOPORTDOCS)
 CONFIGURE_ARGS+=--with-HTML=yes
 PLIST_SUB+=	PORTDOCS=""
 .else
@@ -56,6 +52,12 @@ PLIST_SUB+=	PORTDOCS="@comment "
 
 .if defined(PACKAGE_BUILDING) || defined(BATCH)
 CONFIGURE_ARGS+=--nointeractive
+.endif
+
+.if defined(WITH_GAWK)
+BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
+RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
+CONFIGURE_ARGS+=--with-AWK="${LOCALBASE}/bin/gawk"
 .endif
 
 MAKE_ARGS+=	OPTIMIZER="" -EOPTIMIZER
