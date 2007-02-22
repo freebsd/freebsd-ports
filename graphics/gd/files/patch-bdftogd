@@ -1,0 +1,57 @@
+--- bdftogd.orig	Fri Feb  2 18:41:00 2007
++++ bdftogd	Tue Feb 13 19:55:02 2007
+@@ -24,6 +24,9 @@
+ my $filename = shift;
+ $filename = 'gd' . $filename unless $filename =~ /^gd/i;
+ 
++my $gdfunc = $gdname;
++$gdfunc =~ s/(.*Font)(.*)/$1Get$2/;
++
+ if (-f "$filename.c") { die "File $filename.c already exists, won't overwrite\n"; }
+ if (-f "$filename.h") { die "File $filename.h already exists, won't overwrite\n"; }
+ 
+@@ -177,28 +180,40 @@
+ 	${gdname}Data
+ };
+ 
+-gdFontPtr ${gdname} = &${gdname}Rep;
++BGD_EXPORT_DATA_IMPL gdFontPtr ${gdname} = &${gdname}Rep;
+ 
+-/* This file has not been truncated. */
++BGD_DECLARE(gdFontPtr)
++$gdfunc (void)
++{
++  return $gdname;
++}
+ 
++/* This file has not been truncated. */
+ EOF
+ 
+ 
+ close FILEC;
+ 
+ print FILEH <<"EOF";
+-
+ #ifndef $capdef
+ #define $capdef 1
+ 
++#ifdef __cplusplus
++extern "C" {
++#endif
++
+ $info
+ 
+ #include "gd.h"
+ 
+-extern gdFontPtr $gdname;
++   BGD_EXPORT_DATA_PROT  gdFontPtr $gdname;
++   BGD_DECLARE(gdFontPtr) $gdfunc(void);
+ 
++#ifdef __cplusplus
++}
+ #endif
+ 
++#endif
+ EOF
+ 
+ 1;
