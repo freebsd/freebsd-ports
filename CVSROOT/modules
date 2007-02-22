@@ -2601,6 +2601,7 @@ farblazer	ports/games/farblazer
 farbot		ports/sysutils/farbot
 fargoal		ports/games/fargoal
 farsifonts	ports/x11-fonts/farsifonts
+fasm		ports/lang/fasm
 fast-user-switch-applet	ports/x11/fast-user-switch-applet
 fasta		ports/biology/fasta
 fasta3		ports/biology/fasta3
