@@ -7155,6 +7155,7 @@ mimedefang	ports/mail/mimedefang
 mimelib		ports/converters/mimelib
 mimetex		ports/www/mimetex
 mimir		ports/devel/mimir
+mimp		ports/mail/mimp
 minc		ports/science/minc
 minc2		ports/science/minc2
 minder		ports/net-p2p/minder
