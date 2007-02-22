@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ExtUtils-MakeMaker
-PORTVERSION=	6.31
-PORTREVISION=	0
+PORTVERSION=	6.32
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	ExtUtils
@@ -33,10 +32,6 @@ MAN3=	ExtUtils::Installed.3 ExtUtils::MM_OS2.3 ExtUtils::MakeMaker.3 \
 	ExtUtils::MM_QNX.3 ExtUtils::MM_AIX.3 ExtUtils::MakeMaker::Config.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
-.endif
 
 .if ${PERL_LEVEL} >= 500800
 .undef MAN1
