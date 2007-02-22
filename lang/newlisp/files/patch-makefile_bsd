@@ -1,23 +1,19 @@
---- makefile_bsd.orig	Wed Sep 13 17:32:12 2006
-+++ makefile_bsd	Wed Sep 13 17:32:35 2006
-@@ -4,16 +4,16 @@
- OBJS = newlisp.o nl-symbol.o nl-math.o nl-list.o nl-liststr.o nl-string.o nl-filesys.o \
- 	nl-sock.o nl-import.o nl-xml.o nl-web.o nl-matrix.o nl-debug.o pcre.o
+--- makefile_bsd.orig	Thu Feb 15 01:59:11 2007
++++ makefile_bsd	Thu Feb 22 03:27:02 2007
+@@ -6,14 +6,12 @@
  
--CFLAGS = -Wall -Wno-uninitialized -O2 -c -g -DREADLINE -D_BSD
-+CFLAGS += -c -DREADLINE -D_BSD
+ # the option -fno-strict-aliasing may not be available on some BSD versions 
+ 
+-CFLAGS = -Wall -Wno-uninitialized -fno-strict-aliasing -O2 -c -g -DREADLINE -D_BSD
++CFLAGS = -c -DREADLINE -D_BSD
  # for netBSD use following line
- #CFLAGS = -Wall -Wno-uninitialized -O2 -c -g -D_BSD
+ #CFLAGS = -Wall -Wno-uninitialized -Wno-strict-aliasing -O2 -c -g -D_BSD
  
 -CC = gcc
-+#CC = gcc
- 
+-
  default: $(OBJS)
 -	$(CC) $(OBJS) -g -lm -lreadline -lncurses -o newlisp
 +	$(CC) $(OBJS) -lm -lreadline -lncurses -o newlisp
  # for netBSD use following line
--#	$(CC) $(OBJS) -g -lm -o newlisp
-+#	$(CC) $(OBJS) -lm -o newlisp
+ #	$(CC) $(OBJS) -g -lm -o newlisp
  	strip newlisp
- 
- .c.o:

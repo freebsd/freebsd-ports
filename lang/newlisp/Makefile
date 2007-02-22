@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	newlisp
-PORTVERSION=	9.0.0
-PORTREVISION=	1
+PORTVERSION=	9.1.0
+PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -20,7 +20,7 @@ COMMENT=	LISP like scripting language
 HAS_CONFIGURE=	yes
 ALL_TARGET=	default
 
-TK_VER=	8.4
+TK_VER=	8.5
 MAN1=	newlisp.1
 
 REINPLACE_ARGS=	-i ""
@@ -35,7 +35,7 @@ COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
 MODULES=	cgi ftp infix odbc pop3 postscript smtp stat unix \
 		xmlrpc-client zlib
 
-PORTDOCS=	CHANGES CodePatterns.html MemoryManagement.html arrays \
+PORTDOCS=	CHANGES CodePatterns.html MemoryManagement.html \
 		keywords.txt manual_frame.html newLISPdoc.html \
 		newlisp_index.html newlisp_manual.html
 

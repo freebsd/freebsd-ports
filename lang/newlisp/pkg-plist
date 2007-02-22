@@ -4,11 +4,12 @@ bin/newlisp
 %%PORTDOCS%%%%EXAMPLESDIR%%/finger
 %%PORTDOCS%%%%EXAMPLESDIR%%/form.cgi
 %%PORTDOCS%%%%EXAMPLESDIR%%/form.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/httpd
+%%PORTDOCS%%%%EXAMPLESDIR%%/httpd-conf.lsp
 %%PORTDOCS%%%%EXAMPLESDIR%%/init.lsp.example
 %%PORTDOCS%%%%EXAMPLESDIR%%/link.lsp
 %%PORTDOCS%%%%EXAMPLESDIR%%/newLISP-Excel-Import.xls
 %%PORTDOCS%%%%EXAMPLESDIR%%/newlispdoc
+%%PORTDOCS%%%%EXAMPLESDIR%%/opengl-demo.lsp
 %%PORTDOCS%%%%EXAMPLESDIR%%/prodcons.lsp
 %%PORTDOCS%%%%EXAMPLESDIR%%/server
 %%PORTDOCS%%%%EXAMPLESDIR%%/sqlite.cgi
@@ -19,7 +20,6 @@ bin/newlisp
 %%PORTDOCS%%%%EXAMPLESDIR%%/udp-server.lsp
 %%PORTDOCS%%%%EXAMPLESDIR%%/upload.cgi
 %%PORTDOCS%%%%EXAMPLESDIR%%/upload.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/xmlrpc-server
 %%PORTDOCS%%%%EXAMPLESDIR%%/xmlrpc.cgi
 %%DATADIR%%/cgi.lsp
 %%DATADIR%%/ftp.lsp
@@ -38,7 +38,6 @@ bin/newlisp
 %%TK%%%%DATADIR%%/newlisp-tk/images.txt
 %%TK%%%%DATADIR%%/newlisp-tk/images/.DS_Store
 %%TK%%%%DATADIR%%/newlisp-tk/images/._.DS_Store
-%%TK%%%%DATADIR%%/newlisp-tk/images/._newlisp.ico
 %%TK%%%%DATADIR%%/newlisp-tk/images/aboutImg.gif
 %%TK%%%%DATADIR%%/newlisp-tk/images/clearImg.gif
 %%TK%%%%DATADIR%%/newlisp-tk/images/consoleImg.gif
