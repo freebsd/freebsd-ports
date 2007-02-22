@@ -18,6 +18,7 @@
     SUBDIR += archmage
     SUBDIR += ascii2pdf
     SUBDIR += asciidoc
+    SUBDIR += asm-xml
     SUBDIR += asm2html
     SUBDIR += aspell
     SUBDIR += aspell-without-dicten
