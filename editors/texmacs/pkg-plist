@@ -1833,8 +1833,14 @@ share/TeXmacs/packages/environment/env-math.ts
 share/TeXmacs/packages/environment/env-theorem.ts
 share/TeXmacs/packages/environment/env.ts
 share/TeXmacs/packages/example/allouche.ts
+share/TeXmacs/packages/example/alt-colors.ts
 share/TeXmacs/packages/example/bpr.ts
+share/TeXmacs/packages/example/framed-envs.ts
 share/TeXmacs/packages/example/vdh.ts
+share/TeXmacs/packages/gui/gui-form.ts
+share/TeXmacs/packages/gui/gui-widget.ts
+share/TeXmacs/packages/gui/gui-layout.ts
+share/TeXmacs/packages/gui/gui.ts
 share/TeXmacs/packages/header/header-article.ts
 share/TeXmacs/packages/header/header-book.ts
 share/TeXmacs/packages/header/header-exam.ts
@@ -1930,6 +1936,7 @@ share/TeXmacs/plugins/maxima/lisp/texmacs-maxima-5.9.0.lisp
 share/TeXmacs/plugins/maxima/lisp/texmacs-maxima-5.9.1.lisp
 share/TeXmacs/plugins/maxima/lisp/texmacs-maxima-5.9.2.lisp
 share/TeXmacs/plugins/maxima/lisp/texmacs-maxima-5.10.0.lisp
+share/TeXmacs/plugins/maxima/lisp/texmacs-maxima-5.11.0.lisp
 share/TeXmacs/plugins/maxima/packages/session/maxima.ts
 share/TeXmacs/plugins/maxima/progs/init-maxima.scm
 share/TeXmacs/plugins/maxima/progs/maxima-kbd.scm
@@ -2079,10 +2086,13 @@ share/TeXmacs/progs/generic/format-menu.scm
 share/TeXmacs/progs/generic/generic-edit.scm
 share/TeXmacs/progs/generic/generic-kbd.scm
 share/TeXmacs/progs/generic/insert-menu.scm
-share/TeXmacs/progs/graphics/graphics-context.scm
 share/TeXmacs/progs/graphics/graphics-edit.scm
-share/TeXmacs/progs/graphics/graphics-menu-functions.scm
+share/TeXmacs/progs/graphics/graphics-env.scm
+share/TeXmacs/progs/graphics/graphics-group.scm
+share/TeXmacs/progs/graphics/graphics-kbd.scm
+share/TeXmacs/progs/graphics/graphics-main.scm
 share/TeXmacs/progs/graphics/graphics-menu.scm
+share/TeXmacs/progs/graphics/graphics-object.scm
 share/TeXmacs/progs/graphics/graphics-utils.scm
 share/TeXmacs/progs/init-buffer.scm
 share/TeXmacs/progs/init-texmacs.scm
@@ -2100,10 +2110,14 @@ share/TeXmacs/progs/kernel/drd/drd-rules.scm
 share/TeXmacs/progs/kernel/drd/drd-test.scm
 share/TeXmacs/progs/kernel/drd/drd-unify.scm
 share/TeXmacs/progs/kernel/gui/kbd-define.scm
+share/TeXmacs/progs/kernel/gui/gui-factory.scm
+share/TeXmacs/progs/kernel/gui/gui-form.scm
+share/TeXmacs/progs/kernel/gui/gui-widget.scm
 share/TeXmacs/progs/kernel/gui/menu-define.scm
 share/TeXmacs/progs/kernel/gui/menu-widget.scm
 share/TeXmacs/progs/kernel/library/base.scm
 share/TeXmacs/progs/kernel/library/content.scm
+share/TeXmacs/progs/kernel/library/iterator.scm
 share/TeXmacs/progs/kernel/library/list.scm
 share/TeXmacs/progs/kernel/library/tree.scm
 share/TeXmacs/progs/kernel/regexp/regexp-match.scm
@@ -2200,6 +2214,8 @@ share/TeXmacs/styles/elsevier/ifac.ts
 share/TeXmacs/styles/exam.ts
 share/TeXmacs/styles/generic.ts
 share/TeXmacs/styles/letter.ts
+share/TeXmacs/styles/lycee/lycee-examen.ts
+share/TeXmacs/styles/lycee/lycee-tp.ts
 share/TeXmacs/styles/mathematics/acmconf.ts
 share/TeXmacs/styles/mathematics/amsart.ts
 share/TeXmacs/styles/obsolete/jsc.ts
@@ -2220,6 +2236,7 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm share/TeXmacs/styles/springer
 @dirrm share/TeXmacs/styles/obsolete
 @dirrm share/TeXmacs/styles/mathematics
+@dirrm share/TeXmacs/styles/lycee
 @dirrm share/TeXmacs/styles/elsevier
 @dirrm share/TeXmacs/styles/documentation
 @dirrm share/TeXmacs/styles
@@ -2370,6 +2387,7 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm share/TeXmacs/packages/section
 @dirrm share/TeXmacs/packages/program
 @dirrm share/TeXmacs/packages/header
+@dirrm share/TeXmacs/packages/gui
 @dirrm share/TeXmacs/packages/example
 @dirrm share/TeXmacs/packages/environment
 @dirrm share/TeXmacs/packages/documentation
