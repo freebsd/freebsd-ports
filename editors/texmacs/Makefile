@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	texmacs
-PORTVERSION=	1.0.6.7
+PORTVERSION=	1.0.6.9
 CATEGORIES=	editors print
 MASTER_SITES=	http://www.texmacs.org/Download/ftp/%SUBDIR%/ \
 		ftp://ftp.texmacs.org/pub/TeXmacs/%SUBDIR%/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.texmacs.org/Download/ftp/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	targz old-targz
 DISTNAME=	TeXmacs-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A free WYSIWYG scientific text editor
 
 BUILD_DEPENDS=	tex:${PORTSDIR}/print/teTeX-base
