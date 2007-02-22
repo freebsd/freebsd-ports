@@ -5389,6 +5389,7 @@ jedit-devel	ports/editors/jedit-devel
 jep		ports/devel/jep
 jerm		ports/comms/jerm
 jesred		ports/www/jesred
+jeta		ports/security/jeta
 jetpack		ports/games/jetpack
 jetspeed	ports/www/jetspeed
 jetty		ports/www/jetty
