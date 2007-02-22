@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	ezmlm-web
-PORTVERSION=	2.1
-PORTREVISION=	3
+PORTVERSION=	3.1.4
 CATEGORIES=	mail www
-MASTER_SITES=	ftp://rucus.ru.ac.za/pub/mail/ezmlm/
+MASTER_SITES=	https://systemausfall.org/toolforge/ezmlm-web/download/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	CGI script that lets you manage ezmlm-idx mailing lists through the web
+MAINTAINER=	hans@nordhaug.priv.no
+COMMENT=	Manage ezmlm-idx mailing lists through the web (using CGI)
 
 RUN_DEPENDS=	ezmlm-idx:${PORTSDIR}/mail/ezmlm-idx \
 		${SITE_PERL}/Mail/Ezmlm.pm:${PORTSDIR}/mail/p5-Mail-Ezmlm \
@@ -28,7 +27,7 @@ USE_PERL5=	YES
 PLIST_SUB=	CGI_BIN=${CGI_BIN}
 
 EXAMPLES=	htaccess.sample webusers.sample index.c
-DOCS=		CHANGES README TODO UPGRADING
+DOCS=		INSTALL INSTALL.clearsilver README TODO UPGRADING changelog copyright
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -o ezmlm-web index.c
