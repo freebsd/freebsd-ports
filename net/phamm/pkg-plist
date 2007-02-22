@@ -1,7 +1,72 @@
 @unexec if cmp -s %D/%%PHAMMDIR%%/config.inc.php %D/%%PHAMMDIR%%/config.inc.php.sample ; then rm -f %D/%%PHAMMDIR%%/config.inc.php ; fi
 %%PHAMMDIR%%/config.inc.php.sample
 @exec [ -f %B/config.inc.php ] || cp -f %B/%f %B/config.inc.php
+%%EXAMPLESDIR%%/CVS/Entries
+%%EXAMPLESDIR%%/CVS/Entries.Log
+%%EXAMPLESDIR%%/CVS/Repository
+%%EXAMPLESDIR%%/CVS/Root
+%%EXAMPLESDIR%%/amavisd.conf
+%%EXAMPLESDIR%%/authldaprc
+%%EXAMPLESDIR%%/dovecot-ldap.conf
+%%EXAMPLESDIR%%/dovecot.conf
+%%EXAMPLESDIR%%/fork/CVS/Entries
+%%EXAMPLESDIR%%/fork/CVS/Repository
+%%EXAMPLESDIR%%/fork/CVS/Root
+%%EXAMPLESDIR%%/fork/fork.pl
+%%EXAMPLESDIR%%/gnarwl.cfg
+%%EXAMPLESDIR%%/main.cf
+%%EXAMPLESDIR%%/main.cf.mxbackup
+%%EXAMPLESDIR%%/main.cf.mxbackup.withoutprimary
+%%EXAMPLESDIR%%/master.cf
+%%EXAMPLESDIR%%/pdns.conf
+%%EXAMPLESDIR%%/pdns.local
+%%EXAMPLESDIR%%/phamm.acl
+%%EXAMPLESDIR%%/phamm.conf
+%%EXAMPLESDIR%%/pureftpd-ldap.conf
+%%EXAMPLESDIR%%/sample-htaccess-apache2
+%%EXAMPLESDIR%%/sample-location-apache2
+%%EXAMPLESDIR%%/sample-mail.ldif
+%%EXAMPLESDIR%%/sample-main.ldif
+%%EXAMPLESDIR%%/sample-pdns.ldif
+%%EXAMPLESDIR%%/sample-pureftpd.ldif
+%%EXAMPLESDIR%%/sample-squid.ldif
+%%EXAMPLESDIR%%/sasl/CVS/Entries
+%%EXAMPLESDIR%%/sasl/CVS/Repository
+%%EXAMPLESDIR%%/sasl/CVS/Root
+%%EXAMPLESDIR%%/sasl/main.cf
+%%EXAMPLESDIR%%/sasl/master.cf
+%%EXAMPLESDIR%%/sasl/saslauthd
+%%EXAMPLESDIR%%/sasl/saslauthd.conf
+%%EXAMPLESDIR%%/sasl/smtpd.conf
+%%EXAMPLESDIR%%/schema/CVS/Entries
+%%EXAMPLESDIR%%/schema/CVS/Repository
+%%EXAMPLESDIR%%/schema/CVS/Root
+%%EXAMPLESDIR%%/schema/ISPEnv2.schema
+%%EXAMPLESDIR%%/schema/amavis.schema
+%%EXAMPLESDIR%%/schema/dnsdomain2.schema
+%%EXAMPLESDIR%%/schema/phamm.schema
+%%EXAMPLESDIR%%/schema/pureftpd.schema
+%%EXAMPLESDIR%%/schema/radius.schema
+%%EXAMPLESDIR%%/schema/samba.schema
+%%EXAMPLESDIR%%/slapd.conf
+%%EXAMPLESDIR%%/sm-plugin/CVS/Entries
+%%EXAMPLESDIR%%/sm-plugin/CVS/Repository
+%%EXAMPLESDIR%%/sm-plugin/CVS/Root
+%%EXAMPLESDIR%%/smbldap-populate.patch
+%%EXAMPLESDIR%%/smbldap-useradd.patch
+%%EXAMPLESDIR%%/smbldap.conf
+%%EXAMPLESDIR%%/squid.conf
+%%PHAMMDIR%%/CVS/Entries
+%%PHAMMDIR%%/CVS/Entries.Log
+%%PHAMMDIR%%/CVS/Repository
+%%PHAMMDIR%%/CVS/Root
+%%PHAMMDIR%%/DTDs/CVS/Entries
+%%PHAMMDIR%%/DTDs/CVS/Repository
+%%PHAMMDIR%%/DTDs/CVS/Root
 %%PHAMMDIR%%/en_GB.php
+%%PHAMMDIR%%/functions/CVS/Entries
+%%PHAMMDIR%%/functions/CVS/Repository
+%%PHAMMDIR%%/functions/CVS/Root
 %%PHAMMDIR%%/functions/add_domain.php
 %%PHAMMDIR%%/functions/checkAuth.php
 %%PHAMMDIR%%/functions/checkLogin.php
@@ -36,7 +101,17 @@
 %%PHAMMDIR%%/functions/true_false_box.php
 %%PHAMMDIR%%/functions/tryBind.php
 %%PHAMMDIR%%/functions/tryLogin.php
+%%PHAMMDIR%%/img/CVS/Entries
+%%PHAMMDIR%%/img/CVS/Repository
+%%PHAMMDIR%%/img/CVS/Root
 %%PHAMMDIR%%/index.php
+%%PHAMMDIR%%/libs/CVS/Entries
+%%PHAMMDIR%%/libs/CVS/Repository
+%%PHAMMDIR%%/libs/CVS/Root
+%%PHAMMDIR%%/locales/CVS/Entries
+%%PHAMMDIR%%/locales/CVS/Entries.Log
+%%PHAMMDIR%%/locales/CVS/Repository
+%%PHAMMDIR%%/locales/CVS/Root
 %%PHAMMDIR%%/locales/README.locales
 %%PHAMMDIR%%/locales/TRANSLATORS
 %%PHAMMDIR%%/locales/check_lang_files.php
@@ -46,16 +121,49 @@
 %%PHAMMDIR%%/locales/hu_HU.php
 %%PHAMMDIR%%/locales/id_ID.php
 %%PHAMMDIR%%/locales/it_IT.php
+%%PHAMMDIR%%/locales/plugins/CVS/Entries
+%%PHAMMDIR%%/locales/plugins/CVS/Entries.Log
+%%PHAMMDIR%%/locales/plugins/CVS/Repository
+%%PHAMMDIR%%/locales/plugins/CVS/Root
+%%PHAMMDIR%%/locales/plugins/mail/CVS/Entries
+%%PHAMMDIR%%/locales/plugins/mail/CVS/Repository
+%%PHAMMDIR%%/locales/plugins/mail/CVS/Root
+%%PHAMMDIR%%/locales/plugins/pdns/CVS/Entries
+%%PHAMMDIR%%/locales/plugins/pdns/CVS/Repository
+%%PHAMMDIR%%/locales/plugins/pdns/CVS/Root
 %%PHAMMDIR%%/locales/plugins/pdns/de_DE.php
 %%PHAMMDIR%%/locales/plugins/pdns/id_ID.php
 %%PHAMMDIR%%/locales/plugins/pdns/it_IT.php
+%%PHAMMDIR%%/locales/plugins/radius/CVS/Entries
+%%PHAMMDIR%%/locales/plugins/radius/CVS/Repository
+%%PHAMMDIR%%/locales/plugins/radius/CVS/Root
 %%PHAMMDIR%%/locales/plugins/radius/en_GB.php
+%%PHAMMDIR%%/locales/plugins/userInfo/CVS/Entries
+%%PHAMMDIR%%/locales/plugins/userInfo/CVS/Repository
+%%PHAMMDIR%%/locales/plugins/userInfo/CVS/Root
+%%PHAMMDIR%%/locales/plugins/vadmin/CVS/Entries
+%%PHAMMDIR%%/locales/plugins/vadmin/CVS/Repository
+%%PHAMMDIR%%/locales/plugins/vadmin/CVS/Root
 %%PHAMMDIR%%/locales/pt_BR.php
 %%PHAMMDIR%%/locales/ru_RU.php
+%%PHAMMDIR%%/plugins/CVS/Entries
+%%PHAMMDIR%%/plugins/CVS/Entries.Log
+%%PHAMMDIR%%/plugins/CVS/Repository
+%%PHAMMDIR%%/plugins/CVS/Root
+%%PHAMMDIR%%/plugins/core/CVS/Entries
+%%PHAMMDIR%%/plugins/core/CVS/Repository
+%%PHAMMDIR%%/plugins/core/CVS/Root
+%%PHAMMDIR%%/plugins/mail/CVS/Entries
+%%PHAMMDIR%%/plugins/mail/CVS/Entries.Log
+%%PHAMMDIR%%/plugins/mail/CVS/Repository
+%%PHAMMDIR%%/plugins/mail/CVS/Root
 %%PHAMMDIR%%/plugins/mail/add_domain.php
 %%PHAMMDIR%%/plugins/mail/config.inc.php
 %%PHAMMDIR%%/plugins/mail/config.inc.php.template
 %%PHAMMDIR%%/plugins/mail/en_GB.php
+%%PHAMMDIR%%/plugins/mail/functions/CVS/Entries
+%%PHAMMDIR%%/plugins/mail/functions/CVS/Repository
+%%PHAMMDIR%%/plugins/mail/functions/CVS/Root
 %%PHAMMDIR%%/plugins/mail/functions/add_alias.php
 %%PHAMMDIR%%/plugins/mail/functions/add_domain_mail.php
 %%PHAMMDIR%%/plugins/mail/functions/add_mail.php
@@ -83,7 +191,14 @@
 %%PHAMMDIR%%/plugins/mail/functions/quota_formatting.php
 %%PHAMMDIR%%/plugins/mail/info.php
 %%PHAMMDIR%%/plugins/mail/main.php
+%%PHAMMDIR%%/plugins/mail/templates/CVS/Entries
+%%PHAMMDIR%%/plugins/mail/templates/CVS/Repository
+%%PHAMMDIR%%/plugins/mail/templates/CVS/Root
 %%PHAMMDIR%%/plugins/mail/welcome_message.txt
+%%PHAMMDIR%%/plugins/pdns/CVS/Entries
+%%PHAMMDIR%%/plugins/pdns/CVS/Entries.Log
+%%PHAMMDIR%%/plugins/pdns/CVS/Repository
+%%PHAMMDIR%%/plugins/pdns/CVS/Root
 %%PHAMMDIR%%/plugins/pdns/TODO
 %%PHAMMDIR%%/plugins/pdns/add_domain.php
 %%PHAMMDIR%%/plugins/pdns/config.inc.php
@@ -92,11 +207,21 @@
 %%PHAMMDIR%%/plugins/pdns/functions.php
 %%PHAMMDIR%%/plugins/pdns/info.php
 %%PHAMMDIR%%/plugins/pdns/main.php
+%%PHAMMDIR%%/plugins/pdns/templates/CVS/Entries
+%%PHAMMDIR%%/plugins/pdns/templates/CVS/Repository
+%%PHAMMDIR%%/plugins/pdns/templates/CVS/Root
 %%PHAMMDIR%%/plugins/pdns/templates/mytemplate.php.template
+%%PHAMMDIR%%/plugins/radius/CVS/Entries
+%%PHAMMDIR%%/plugins/radius/CVS/Entries.Log
+%%PHAMMDIR%%/plugins/radius/CVS/Repository
+%%PHAMMDIR%%/plugins/radius/CVS/Root
 %%PHAMMDIR%%/plugins/radius/README.radius
 %%PHAMMDIR%%/plugins/radius/add_domain.php
 %%PHAMMDIR%%/plugins/radius/config.inc.php.template
 %%PHAMMDIR%%/plugins/radius/en_GB.php
+%%PHAMMDIR%%/plugins/radius/functions/CVS/Entries
+%%PHAMMDIR%%/plugins/radius/functions/CVS/Repository
+%%PHAMMDIR%%/plugins/radius/functions/CVS/Root
 %%PHAMMDIR%%/plugins/radius/functions/account_count.php
 %%PHAMMDIR%%/plugins/radius/functions/account_list.php
 %%PHAMMDIR%%/plugins/radius/functions/account_modify_group.php
@@ -113,28 +238,60 @@
 %%PHAMMDIR%%/plugins/radius/functions/realms_modify_group.php
 %%PHAMMDIR%%/plugins/radius/info.php
 %%PHAMMDIR%%/plugins/radius/main.php
+%%PHAMMDIR%%/plugins/radius_stats/CVS/Entries
+%%PHAMMDIR%%/plugins/radius_stats/CVS/Entries.Log
+%%PHAMMDIR%%/plugins/radius_stats/CVS/Repository
+%%PHAMMDIR%%/plugins/radius_stats/CVS/Root
 %%PHAMMDIR%%/plugins/radius_stats/README.radius_stats
 %%PHAMMDIR%%/plugins/radius_stats/config.inc.php.template
 %%PHAMMDIR%%/plugins/radius_stats/csv_export.php
 %%PHAMMDIR%%/plugins/radius_stats/en_GB.php
+%%PHAMMDIR%%/plugins/radius_stats/functions/CVS/Entries
+%%PHAMMDIR%%/plugins/radius_stats/functions/CVS/Repository
+%%PHAMMDIR%%/plugins/radius_stats/functions/CVS/Root
 %%PHAMMDIR%%/plugins/radius_stats/functions/form_accounting.php
 %%PHAMMDIR%%/plugins/radius_stats/functions/select_accounting.php
 %%PHAMMDIR%%/plugins/radius_stats/info.php
 %%PHAMMDIR%%/plugins/radius_stats/main.php
+%%PHAMMDIR%%/plugins/rates/CVS/Entries
+%%PHAMMDIR%%/plugins/rates/CVS/Repository
+%%PHAMMDIR%%/plugins/rates/CVS/Root
 %%PHAMMDIR%%/plugins/rates/config.inc.php.template
 %%PHAMMDIR%%/plugins/rates/en_GB.php
 %%PHAMMDIR%%/plugins/rates/functions.php
 %%PHAMMDIR%%/plugins/rates/info.php
 %%PHAMMDIR%%/plugins/rates/main.php
+%%PHAMMDIR%%/plugins/whoami/CVS/Entries
+%%PHAMMDIR%%/plugins/whoami/CVS/Repository
+%%PHAMMDIR%%/plugins/whoami/CVS/Root
 %%PHAMMDIR%%/plugins/whoami/functions.php
 %%PHAMMDIR%%/plugins/whoami/info.php
 %%PHAMMDIR%%/plugins/whoami/main.php
+%%PHAMMDIR%%/style/CVS/Entries
+%%PHAMMDIR%%/style/CVS/Entries.Log
+%%PHAMMDIR%%/style/CVS/Repository
+%%PHAMMDIR%%/style/CVS/Root
+%%PHAMMDIR%%/style/phamm/CVS/Entries
+%%PHAMMDIR%%/style/phamm/CVS/Entries.Log
+%%PHAMMDIR%%/style/phamm/CVS/Repository
+%%PHAMMDIR%%/style/phamm/CVS/Root
+%%PHAMMDIR%%/style/phamm/img/CVS/Entries
+%%PHAMMDIR%%/style/phamm/img/CVS/Repository
+%%PHAMMDIR%%/style/phamm/img/CVS/Root
+%%PHAMMDIR%%/templates/CVS/Entries
+%%PHAMMDIR%%/templates/CVS/Repository
+%%PHAMMDIR%%/templates/CVS/Root
+%%PHAMMDIR%%/tools/CVS/Entries
+%%PHAMMDIR%%/tools/CVS/Repository
+%%PHAMMDIR%%/tools/CVS/Root
 %%PHAMMDIR%%/tools/cleaner-for-demosite.sh
 %%PHAMMDIR%%/tools/cleaner.sh
 %%PHAMMDIR%%/tools/config.inc.php.live
 %%PHAMMDIR%%/tools/config.live.diff
 %%PHAMMDIR%%/tools/init-ldif
 %%PHAMMDIR%%/tools/insert-ldap
+%%PHAMMDIR%%/tools/mail-all
+%%PHAMMDIR%%/tools/make-mail.sh
 %%PHAMMDIR%%/tools/make_single_lib.sh
 %%PHAMMDIR%%/tools/migrate.sh
 %%PHAMMDIR%%/tools/mod-ldap
@@ -143,10 +300,18 @@
 %%PHAMMDIR%%/tools/save-phamm-ldap
 %%PHAMMDIR%%/tools/test.sh
 %%PHAMMDIR%%/tools/virtual.sh
-%%PHAMMDIR%%/tools/make-mail.sh
-%%PHAMMDIR%%/tools/mail-all
+%%PHAMMDIR%%/web/CVS/Entries
+%%PHAMMDIR%%/web/CVS/Repository
+%%PHAMMDIR%%/web/CVS/Root
 %%PHAMMDIR%%/web/functions.js
 %%PHAMMDIR%%/web/pngfix.js
+%%PHAMMDIR%%/www-data/CVS/Entries
+%%PHAMMDIR%%/www-data/CVS/Entries.Log
+%%PHAMMDIR%%/www-data/CVS/Repository
+%%PHAMMDIR%%/www-data/CVS/Root
+%%PHAMMDIR%%/www-data/img/CVS/Entries
+%%PHAMMDIR%%/www-data/img/CVS/Repository
+%%PHAMMDIR%%/www-data/img/CVS/Root
 %%PHAMMDIR%%/www-data/img/phamm_100.png
 %%PHAMMDIR%%/www-data/img/phamm_icon.png
 %%PHAMMDIR%%/www-data/index.php
@@ -154,89 +319,102 @@
 %%PHAMMDIR%%/www-data/main.php
 %%PHAMMDIR%%/www-data/robots.txt
 %%PHAMMDIR%%/www-data/setup.php
+%%PHAMMDIR%%/www-data/style/CVS/Entries
+%%PHAMMDIR%%/www-data/style/CVS/Entries.Log
+%%PHAMMDIR%%/www-data/style/CVS/Repository
+%%PHAMMDIR%%/www-data/style/CVS/Root
+%%PHAMMDIR%%/www-data/style/phamm/CVS/Entries
+%%PHAMMDIR%%/www-data/style/phamm/CVS/Entries.Log
+%%PHAMMDIR%%/www-data/style/phamm/CVS/Repository
+%%PHAMMDIR%%/www-data/style/phamm/CVS/Root
 %%PHAMMDIR%%/www-data/style/phamm/footer.html.php
 %%PHAMMDIR%%/www-data/style/phamm/header.html.php
+%%PHAMMDIR%%/www-data/style/phamm/img/CVS/Entries
+%%PHAMMDIR%%/www-data/style/phamm/img/CVS/Repository
+%%PHAMMDIR%%/www-data/style/phamm/img/CVS/Root
 %%PHAMMDIR%%/www-data/style/phamm/img/FALSE.png
 %%PHAMMDIR%%/www-data/style/phamm/img/TRUE.png
 %%PHAMMDIR%%/www-data/style/phamm/img/navigation.png
 %%PHAMMDIR%%/www-data/style/phamm/main.css
-%%EXAMPLESDIR%%/amavisd.conf
-%%EXAMPLESDIR%%/authldaprc
-%%EXAMPLESDIR%%/pdns.local
-%%EXAMPLESDIR%%/dovecot.conf
-%%EXAMPLESDIR%%/dovecot-ldap.conf
-%%EXAMPLESDIR%%/fork/fork.pl
-%%EXAMPLESDIR%%/gnarwl.cfg
-%%EXAMPLESDIR%%/main.cf
-%%EXAMPLESDIR%%/main.cf.mxbackup
-%%EXAMPLESDIR%%/main.cf.mxbackup.withoutprimary
-%%EXAMPLESDIR%%/master.cf
-%%EXAMPLESDIR%%/pdns.conf
-%%EXAMPLESDIR%%/phamm.acl
-%%EXAMPLESDIR%%/phamm.conf
-%%EXAMPLESDIR%%/pureftpd-ldap.conf
-%%EXAMPLESDIR%%/sample-htaccess-apache2
-%%EXAMPLESDIR%%/sample-location-apache2
-%%EXAMPLESDIR%%/sample-mail.ldif
-%%EXAMPLESDIR%%/sample-main.ldif
-%%EXAMPLESDIR%%/sample-pdns.ldif
-%%EXAMPLESDIR%%/sample-pureftpd.ldif
-%%EXAMPLESDIR%%/sample-squid.ldif
-%%EXAMPLESDIR%%/sasl/main.cf
-%%EXAMPLESDIR%%/sasl/master.cf
-%%EXAMPLESDIR%%/sasl/saslauthd
-%%EXAMPLESDIR%%/sasl/saslauthd.conf
-%%EXAMPLESDIR%%/sasl/smtpd.conf
-%%EXAMPLESDIR%%/schema/ISPEnv2.schema
-%%EXAMPLESDIR%%/schema/amavis.schema
-%%EXAMPLESDIR%%/schema/dnsdomain2.schema
-%%EXAMPLESDIR%%/schema/phamm.schema
-%%EXAMPLESDIR%%/schema/pureftpd.schema
-%%EXAMPLESDIR%%/schema/radius.schema
-%%EXAMPLESDIR%%/schema/samba.schema
-%%EXAMPLESDIR%%/slapd.conf
-%%EXAMPLESDIR%%/smbldap-populate.patch
-%%EXAMPLESDIR%%/smbldap-useradd.patch
-%%EXAMPLESDIR%%/smbldap.conf
-%%EXAMPLESDIR%%/squid.conf
-@dirrm %%EXAMPLESDIR%%/schema
-@dirrm %%EXAMPLESDIR%%/sasl
-@dirrm %%EXAMPLESDIR%%/fork
-@dirrm %%EXAMPLESDIR%%/sm-plugin
-@dirrm %%EXAMPLESDIR%%
+@dirrm %%PHAMMDIR%%/www-data/style/phamm/img/CVS
 @dirrm %%PHAMMDIR%%/www-data/style/phamm/img
+@dirrm %%PHAMMDIR%%/www-data/style/phamm/CVS
 @dirrm %%PHAMMDIR%%/www-data/style/phamm
+@dirrm %%PHAMMDIR%%/www-data/style/CVS
 @dirrm %%PHAMMDIR%%/www-data/style
+@dirrm %%PHAMMDIR%%/www-data/img/CVS
 @dirrm %%PHAMMDIR%%/www-data/img
+@dirrm %%PHAMMDIR%%/www-data/CVS
 @dirrm %%PHAMMDIR%%/www-data
+@dirrm %%PHAMMDIR%%/web/CVS
 @dirrm %%PHAMMDIR%%/web
+@dirrm %%PHAMMDIR%%/tools/CVS
 @dirrm %%PHAMMDIR%%/tools
-@dirrm %%PHAMMDIR%%/plugins/whoami
-@dirrm %%PHAMMDIR%%/plugins/rates
-@dirrm %%PHAMMDIR%%/plugins/radius_stats/functions
-@dirrm %%PHAMMDIR%%/plugins/radius_stats
-@dirrm %%PHAMMDIR%%/plugins/radius/functions
-@dirrm %%PHAMMDIR%%/plugins/radius
-@dirrm %%PHAMMDIR%%/plugins/pdns/templates
-@dirrm %%PHAMMDIR%%/plugins/pdns
-@dirrm %%PHAMMDIR%%/plugins/mail/functions
-@dirrm %%PHAMMDIR%%/plugins/mail/templates
-@dirrm %%PHAMMDIR%%/plugins/mail
-@dirrm %%PHAMMDIR%%/libs
-@dirrm %%PHAMMDIR%%/locales/plugins/vadmin
-@dirrm %%PHAMMDIR%%/locales/plugins/userInfo
-@dirrm %%PHAMMDIR%%/locales/plugins/radius
-@dirrm %%PHAMMDIR%%/locales/plugins/pdns
-@dirrm %%PHAMMDIR%%/locales/plugins/mail
-@dirrm %%PHAMMDIR%%/locales/plugins
-@dirrm %%PHAMMDIR%%/locales/
-@dirrm %%PHAMMDIR%%/functions
-@dirrm %%PHAMMDIR%%/style/phamm/img
-@dirrm %%PHAMMDIR%%/style/phamm/
-@dirrm %%PHAMMDIR%%/style/
-@dirrm %%PHAMMDIR%%/img
-@dirrm %%PHAMMDIR%%/DTDs
+@dirrm %%PHAMMDIR%%/templates/CVS
 @dirrm %%PHAMMDIR%%/templates
+@dirrm %%PHAMMDIR%%/style/phamm/img/CVS
+@dirrm %%PHAMMDIR%%/style/phamm/img
+@dirrm %%PHAMMDIR%%/style/phamm/CVS
+@dirrm %%PHAMMDIR%%/style/phamm
+@dirrm %%PHAMMDIR%%/style/CVS
+@dirrm %%PHAMMDIR%%/style
+@dirrm %%PHAMMDIR%%/plugins/whoami/CVS
+@dirrm %%PHAMMDIR%%/plugins/whoami
+@dirrm %%PHAMMDIR%%/plugins/rates/CVS
+@dirrm %%PHAMMDIR%%/plugins/rates
+@dirrm %%PHAMMDIR%%/plugins/radius_stats/functions/CVS
+@dirrm %%PHAMMDIR%%/plugins/radius_stats/functions
+@dirrm %%PHAMMDIR%%/plugins/radius_stats/CVS
+@dirrm %%PHAMMDIR%%/plugins/radius_stats
+@dirrm %%PHAMMDIR%%/plugins/radius/functions/CVS
+@dirrm %%PHAMMDIR%%/plugins/radius/functions
+@dirrm %%PHAMMDIR%%/plugins/radius/CVS
+@dirrm %%PHAMMDIR%%/plugins/radius
+@dirrm %%PHAMMDIR%%/plugins/pdns/templates/CVS
+@dirrm %%PHAMMDIR%%/plugins/pdns/templates
+@dirrm %%PHAMMDIR%%/plugins/pdns/CVS
+@dirrm %%PHAMMDIR%%/plugins/pdns
+@dirrm %%PHAMMDIR%%/plugins/mail/templates/CVS
+@dirrm %%PHAMMDIR%%/plugins/mail/templates
+@dirrm %%PHAMMDIR%%/plugins/mail/functions/CVS
+@dirrm %%PHAMMDIR%%/plugins/mail/functions
+@dirrm %%PHAMMDIR%%/plugins/mail/CVS
+@dirrm %%PHAMMDIR%%/plugins/mail
+@dirrm %%PHAMMDIR%%/plugins/core/CVS
 @dirrm %%PHAMMDIR%%/plugins/core
+@dirrm %%PHAMMDIR%%/plugins/CVS
 @dirrm %%PHAMMDIR%%/plugins
+@dirrm %%PHAMMDIR%%/locales/plugins/vadmin/CVS
+@dirrm %%PHAMMDIR%%/locales/plugins/vadmin
+@dirrm %%PHAMMDIR%%/locales/plugins/userInfo/CVS
+@dirrm %%PHAMMDIR%%/locales/plugins/userInfo
+@dirrm %%PHAMMDIR%%/locales/plugins/radius/CVS
+@dirrm %%PHAMMDIR%%/locales/plugins/radius
+@dirrm %%PHAMMDIR%%/locales/plugins/pdns/CVS
+@dirrm %%PHAMMDIR%%/locales/plugins/pdns
+@dirrm %%PHAMMDIR%%/locales/plugins/mail/CVS
+@dirrm %%PHAMMDIR%%/locales/plugins/mail
+@dirrm %%PHAMMDIR%%/locales/plugins/CVS
+@dirrm %%PHAMMDIR%%/locales/plugins
+@dirrm %%PHAMMDIR%%/locales/CVS
+@dirrm %%PHAMMDIR%%/locales
+@dirrm %%PHAMMDIR%%/libs/CVS
+@dirrm %%PHAMMDIR%%/libs
+@dirrm %%PHAMMDIR%%/img/CVS
+@dirrm %%PHAMMDIR%%/img
+@dirrm %%PHAMMDIR%%/functions/CVS
+@dirrm %%PHAMMDIR%%/functions
+@dirrm %%PHAMMDIR%%/DTDs/CVS
+@dirrm %%PHAMMDIR%%/DTDs
+@dirrm %%PHAMMDIR%%/CVS
 @dirrmtry %%PHAMMDIR%%
+@dirrm %%EXAMPLESDIR%%/sm-plugin/CVS
+@dirrm %%EXAMPLESDIR%%/sm-plugin
+@dirrm %%EXAMPLESDIR%%/schema/CVS
+@dirrm %%EXAMPLESDIR%%/schema
+@dirrm %%EXAMPLESDIR%%/sasl/CVS
+@dirrm %%EXAMPLESDIR%%/sasl
+@dirrm %%EXAMPLESDIR%%/fork/CVS
+@dirrm %%EXAMPLESDIR%%/fork
+@dirrm %%EXAMPLESDIR%%/CVS
+@dirrm %%EXAMPLESDIR%%
