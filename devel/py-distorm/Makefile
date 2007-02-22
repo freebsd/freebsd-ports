@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	distorm
-PORTVERSION=	1.5.17
+PORTVERSION=	1.5.18
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.ragestorm.net/distorm/ \
 		http://www.damogran.de/ports/distorm/
@@ -20,12 +20,6 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 
 WRKSRC=		${WRKDIR}/distorm/build/linux
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Does not build on 4.x
-.endif
 
 .if !defined(NOPORTDOCS)
 DOCSDIR=	${PREFIX}/share/doc/py-distorm
@@ -44,4 +38,4 @@ pre-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
