@@ -302,6 +302,7 @@
     SUBDIR += p5-Email-MIME-Encodings
     SUBDIR += p5-Email-MIME-Modifier
     SUBDIR += p5-Email-MessageID
+    SUBDIR += p5-Email-Reply
     SUBDIR += p5-Email-Send
     SUBDIR += p5-Email-Simple
     SUBDIR += p5-Email-Simple-Creator
