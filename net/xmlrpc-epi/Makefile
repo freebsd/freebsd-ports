@@ -17,7 +17,7 @@ COMMENT=	A general purpose implementation of the xmlrpc specification in C
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"		\
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -liconv"
 CONFIGURE_ARGS=	--program-transform="s|^|xre-|"
