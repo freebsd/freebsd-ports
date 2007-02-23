@@ -7,6 +7,7 @@
 
 PORTNAME=	htmltestcase
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://chriscurvey.com:8080/curveyConsulting/HtmlUnit/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,9 +17,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A python html unit testing
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ClientCookie/__init__.py:${PORTSDIR}/devel/py-clientcookie\
-		${PYTHON_SITELIBDIR}/ClientForm.py:${PORTSDIR}/www/py-clientform
+		${PYTHON_SITELIBDIR}/${PYCLIENTFORM_EGG}:${PORTSDIR}/www/py-clientform
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+PYCLIENTFORM_EGG!=	${MAKE} -f ${PORTSDIR}/www/py-clientform/Makefile -V PYCLIENTFORM_EGG
+
+.include <bsd.port.post.mk>
