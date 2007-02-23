@@ -7,7 +7,7 @@
 
 PORTNAME=	djvulibre
 PORTVERSION=	3.5.18
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	djvu
@@ -83,7 +83,7 @@ post-patch:
 		 s|_PROGRAM} -m|} -m|g'
 
 .if !defined(WITH_ANY2DJVU)
-	@${REINPLACE_CMD} -e 's,any2djbu,,' ${WRKSRC}/tools/Makefile.in
+	@${REINPLACE_CMD} -e 's,any2djvu,,' ${WRKSRC}/tools/Makefile.in
 .endif
 
 post-install:
