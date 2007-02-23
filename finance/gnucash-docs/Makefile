@@ -3,10 +3,10 @@
 # Whom:                Glenn Johnson <glennpj@charter.net>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/finance/gnucash-docs/Makefile,v 1.3 2006/12/24 19:09:22 ahze Exp $
 
 PORTNAME=	gnucash-docs
-PORTVERSION=	1.8.4
+PORTVERSION=	2.0.1
 CATEGORIES=	finance gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.gnucash.org/pub/gnucash/sources/stable/ \
@@ -17,21 +17,18 @@ MASTER_SITE_SUBDIR=	gnucash
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Documentation for gnucash
 
-BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper \
-		${LOCALBASE}/include/db4/db_185.h:${PORTSDIR}/databases/db4
-RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
+BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
+RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper \
+		yelp:${PORTSDIR}/x11/yelp
 
-USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack
+USE_GNOME=	libxml2 gnomehier
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
+		${REINPLACE_CMD} -e 's| $$(datadir)/omf| ${PREFIX}/share/gnome/omf|'
 
-.if ${ARCH} == "alpha"
-BROKEN=	"Causes xsltproc to die with a floating point exception"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
