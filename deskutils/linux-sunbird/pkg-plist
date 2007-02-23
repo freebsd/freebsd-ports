@@ -63,7 +63,6 @@ lib/%%APP_NAME%%/components/dom_range.xpt
 lib/%%APP_NAME%%/components/dom_sidebar.xpt
 lib/%%APP_NAME%%/components/dom_storage.xpt
 lib/%%APP_NAME%%/components/dom_stylesheets.xpt
-lib/%%APP_NAME%%/components/dom_svg.xpt
 lib/%%APP_NAME%%/components/dom_traversal.xpt
 lib/%%APP_NAME%%/components/dom_views.xpt
 lib/%%APP_NAME%%/components/dom_xbl.xpt
@@ -79,7 +78,6 @@ lib/%%APP_NAME%%/components/feeds.xpt
 lib/%%APP_NAME%%/components/filepicker.xpt
 lib/%%APP_NAME%%/components/find.xpt
 lib/%%APP_NAME%%/components/gfx.xpt
-lib/%%APP_NAME%%/components/gksvgrenderer.xpt
 lib/%%APP_NAME%%/components/history.xpt
 lib/%%APP_NAME%%/components/htmlparser.xpt
 lib/%%APP_NAME%%/components/imgicon.xpt
@@ -235,6 +233,7 @@ lib/%%APP_NAME%%/libxpcom.so
 lib/%%APP_NAME%%/libxpcom_core.so
 lib/%%APP_NAME%%/libxpistub.so
 lib/%%APP_NAME%%/mozilla-xremote-client
+lib/%%APP_NAME%%/plugins/.empty
 lib/%%APP_NAME%%/removed-files
 lib/%%APP_NAME%%/res/arrow.gif
 lib/%%APP_NAME%%/res/arrowd.gif
@@ -269,7 +268,6 @@ lib/%%APP_NAME%%/res/language.properties
 lib/%%APP_NAME%%/res/loading-image.gif
 lib/%%APP_NAME%%/res/quirk.css
 lib/%%APP_NAME%%/res/sample.unixpsfonts.properties
-lib/%%APP_NAME%%/res/svg.css
 lib/%%APP_NAME%%/res/ua.css
 lib/%%APP_NAME%%/res/unixcharset.properties
 lib/%%APP_NAME%%/res/viewsource.css
@@ -305,7 +303,5 @@ lib/%%APP_NAME%%/xpicleanup
 @dirrm lib/%%APP_NAME%%/res/fonts
 @dirrm lib/%%APP_NAME%%/res/html
 @dirrm lib/%%APP_NAME%%/res
-@dirrm lib/%%APP_NAME%%/updates/0
-@dirrm lib/%%APP_NAME%%/updates
 @dirrm lib/%%APP_NAME%%
 @dirrmtry share/applications
