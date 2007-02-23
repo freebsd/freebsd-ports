@@ -46,6 +46,7 @@ include/mtl/mtl2lapack.h
 include/mtl/mtl_algo.h
 include/mtl/mtl_complex.h
 include/mtl/mtl_config.h
+include/mtl/mtl_decl.h
 include/mtl/mtl_exception.h
 include/mtl/mtl_iterator.h
 include/mtl/mtl_limits.h
