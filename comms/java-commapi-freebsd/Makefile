@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	java-commapi-freebsd
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	comms java
 MASTER_SITES=	http://www.syncrontech.org/freebsd/
 DISTNAME=	freebsd-commapi-${PORTVERSION}
