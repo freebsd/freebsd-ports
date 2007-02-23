@@ -169,183 +169,30 @@
 %%BACKEND_DIR%%/utils/decode_images.sh
 %%BACKEND_DIR%%/utils/sffingerd.c
 %%BACKEND_DIR%%/utils/include.pl
-%%BACKEND_DIR%%/plugins/tinderbox/debian/tinderbox2.substvars
-%%BACKEND_DIR%%/plugins/tinderbox/debian/changelog
-%%BACKEND_DIR%%/plugins/tinderbox/debian/compat
-%%BACKEND_DIR%%/plugins/tinderbox/debian/config
-%%BACKEND_DIR%%/plugins/tinderbox/debian/control
-%%BACKEND_DIR%%/plugins/tinderbox/debian/copyright
-%%BACKEND_DIR%%/plugins/tinderbox/debian/cron.d
-%%BACKEND_DIR%%/plugins/tinderbox/debian/dirs
-%%BACKEND_DIR%%/plugins/tinderbox/debian/docs
-%%BACKEND_DIR%%/plugins/tinderbox/debian/files
-%%BACKEND_DIR%%/plugins/tinderbox/debian/gifsize.1
-%%BACKEND_DIR%%/plugins/tinderbox/debian/postinst
-%%BACKEND_DIR%%/plugins/tinderbox/debian/postrm
-%%BACKEND_DIR%%/plugins/tinderbox/debian/prerm
-%%BACKEND_DIR%%/plugins/tinderbox/debian/processmail_bugs.1
-%%BACKEND_DIR%%/plugins/tinderbox/debian/processmail_builds.1
-%%BACKEND_DIR%%/plugins/tinderbox/debian/processmail_null.1
-%%BACKEND_DIR%%/plugins/tinderbox/debian/rmlogs.1
-%%BACKEND_DIR%%/plugins/tinderbox/debian/rules
-%%BACKEND_DIR%%/plugins/tinderbox/debian/templates
-%%BACKEND_DIR%%/plugins/tinderbox/debian/tinderbox2.postrm.debhelper
-%%BACKEND_DIR%%/plugins/tinderbox/debian/README.Debian
-%%BACKEND_DIR%%/plugins/tinderbox/src/default_conf/TreeData.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/default_conf/BuildStatus.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/default_conf/Error_Parse.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/default_conf/FileStructure.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/default_conf/ReadMe
-%%BACKEND_DIR%%/plugins/tinderbox/src/default_conf/ReqData.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/default_conf/TinderConfig.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/default_conf/BTData.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/bonsai_pvcs/data/params
-%%BACKEND_DIR%%/plugins/tinderbox/src/bonsai_pvcs/data/treeconfig.pl
-%%BACKEND_DIR%%/plugins/tinderbox/src/bonsai_pvcs/CGI.pl
-%%BACKEND_DIR%%/plugins/tinderbox/src/bonsai_pvcs/cvsqueryform.cgi
-%%BACKEND_DIR%%/plugins/tinderbox/src/bonsai_pvcs/defparams.pl
-%%BACKEND_DIR%%/plugins/tinderbox/src/bonsai_pvcs/get_all_tree_data
-%%BACKEND_DIR%%/plugins/tinderbox/src/bonsai_pvcs/globals.pl
-%%BACKEND_DIR%%/plugins/tinderbox/src/bonsai_pvcs/oracleregexp.cgi
-%%BACKEND_DIR%%/plugins/tinderbox/src/bonsai_pvcs/cvsquery.cgi
-%%BACKEND_DIR%%/plugins/tinderbox/src/bonsai_pvcs/pvcs_query_checkins.pl
-%%BACKEND_DIR%%/plugins/tinderbox/src/clientbin/test_return
-%%BACKEND_DIR%%/plugins/tinderbox/src/clientbin/README
-%%BACKEND_DIR%%/plugins/tinderbox/src/clientbin/binary_runs
-%%BACKEND_DIR%%/plugins/tinderbox/src/clientbin/build_redhat_initrc
-%%BACKEND_DIR%%/plugins/tinderbox/src/clientbin/build_shellscript
-%%BACKEND_DIR%%/plugins/tinderbox/src/clientbin/cull_archive_dirs
-%%BACKEND_DIR%%/plugins/tinderbox/src/clientbin/generic.sample.buildcf
-%%BACKEND_DIR%%/plugins/tinderbox/src/clientbin/ignore_waitstatus
-%%BACKEND_DIR%%/plugins/tinderbox/src/clientbin/mozilla-unix.pl
-%%BACKEND_DIR%%/plugins/tinderbox/src/clientbin/mozilla.unix.buildcf
-%%BACKEND_DIR%%/plugins/tinderbox/src/clientbin/show_env
-%%BACKEND_DIR%%/plugins/tinderbox/src/clientbin/show_time
-%%BACKEND_DIR%%/plugins/tinderbox/src/clientbin/HTTPPost
-%%BACKEND_DIR%%/plugins/tinderbox/src/bin/tinder.cgi
-%%BACKEND_DIR%%/plugins/tinderbox/src/bin/ReadMe
-%%BACKEND_DIR%%/plugins/tinderbox/src/bin/admintree.cgi
-%%BACKEND_DIR%%/plugins/tinderbox/src/bin/bustagestats.cgi
-%%BACKEND_DIR%%/plugins/tinderbox/src/bin/gifsize
-%%BACKEND_DIR%%/plugins/tinderbox/src/bin/gunzip.cgi
-%%BACKEND_DIR%%/plugins/tinderbox/src/bin/processmail_bugs
-%%BACKEND_DIR%%/plugins/tinderbox/src/bin/processmail_builds
-%%BACKEND_DIR%%/plugins/tinderbox/src/bin/processmail_null
-%%BACKEND_DIR%%/plugins/tinderbox/src/bin/regenerate.cgi
-%%BACKEND_DIR%%/plugins/tinderbox/src/bin/rmlogs
-%%BACKEND_DIR%%/plugins/tinderbox/src/bin/addnote.cgi
-%%BACKEND_DIR%%/plugins/tinderbox/src/gif/star4.gif
-%%BACKEND_DIR%%/plugins/tinderbox/src/gif/flames1.gif
-%%BACKEND_DIR%%/plugins/tinderbox/src/gif/flames2.gif
-%%BACKEND_DIR%%/plugins/tinderbox/src/gif/flames3.gif
-%%BACKEND_DIR%%/plugins/tinderbox/src/gif/flames4.gif
-%%BACKEND_DIR%%/plugins/tinderbox/src/gif/flames5.gif
-%%BACKEND_DIR%%/plugins/tinderbox/src/gif/redbutton.gif
-%%BACKEND_DIR%%/plugins/tinderbox/src/gif/star.gif
-%%BACKEND_DIR%%/plugins/tinderbox/src/gif/star1.gif
-%%BACKEND_DIR%%/plugins/tinderbox/src/gif/star2.gif
-%%BACKEND_DIR%%/plugins/tinderbox/src/gif/star3.gif
-%%BACKEND_DIR%%/plugins/tinderbox/src/gif/flames.gif
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/Persistence/Dumper.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/Persistence/Storable.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/HTMLPopUp/MozillaLayers.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/HTMLPopUp/MajorCoolWindow.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/HTMLPopUp/MozillaClick.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/HTMLPopUp/MajorCoolPermanent.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/HTMLPopUp/None.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/HTMLPopUp/OverLib.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/HTMLPopUp/PortableLayers.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/TinderHeader/MOTD.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/TinderHeader/Build.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/TinderHeader/IgnoreBuilds.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/TinderHeader/BasicTxtHeader.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/TinderHeader/TreeState.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/TinderHeader/TreeState_Bonsai.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/TinderHeader/TreeState_Bonsai_Plus.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/TinderDB/VC_Perforce.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/TinderDB/BT_Req.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/TinderDB/BasicTxtDB.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/TinderDB/Build.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/TinderDB/Notice.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/TinderDB/Time.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/TinderDB/Time_Local.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/TinderDB/Time_UTC.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/TinderDB/VC_Bonsai.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/TinderDB/VC_CVS.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/TinderDB/VC_PVCSDimensions.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/TinderDB/BT_Generic.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/VCDisplay/Bonsai.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/VCDisplay/None.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/VCDisplay/Perforce_P4DB.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/VCDisplay/ViewCVS.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/BonsaiData.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/ReadMe
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/Summaries.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/TinderDB.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/TinderHeader.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/Utils.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/VCDisplay.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/PVCSGetData.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/MailProcess.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/HTMLPopUp.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/lib/Persistence.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/test/vcsim/BonsaiData.pm
-%%BACKEND_DIR%%/plugins/tinderbox/src/test/vcsim/ReadMe
-%%BACKEND_DIR%%/plugins/tinderbox/src/test/vcsim/cvs
-%%BACKEND_DIR%%/plugins/tinderbox/src/test/vcsim/p4
-%%BACKEND_DIR%%/plugins/tinderbox/src/test/ReadMe
-%%BACKEND_DIR%%/plugins/tinderbox/src/test/bugzillasample.mail
-%%BACKEND_DIR%%/plugins/tinderbox/src/test/genbugs.tst
-%%BACKEND_DIR%%/plugins/tinderbox/src/test/genbuilds.tst
-%%BACKEND_DIR%%/plugins/tinderbox/src/test/gennotices.tst
-%%BACKEND_DIR%%/plugins/tinderbox/src/test/logsample.html
-%%BACKEND_DIR%%/plugins/tinderbox/src/test/popup.tst
-%%BACKEND_DIR%%/plugins/tinderbox/src/test/timestamp.tst
-%%BACKEND_DIR%%/plugins/tinderbox/src/test/util.tst
-%%BACKEND_DIR%%/plugins/tinderbox/src/test/error.tst
-%%BACKEND_DIR%%/plugins/tinderbox/src/test/vcdisplay.tst
-%%BACKEND_DIR%%/plugins/tinderbox/.cvsignore
-%%BACKEND_DIR%%/plugins/tinderbox/Contact
-%%BACKEND_DIR%%/plugins/tinderbox/Goals
-%%BACKEND_DIR%%/plugins/tinderbox/Install
-%%BACKEND_DIR%%/plugins/tinderbox/Makefile.in
-%%BACKEND_DIR%%/plugins/tinderbox/Overview
-%%BACKEND_DIR%%/plugins/tinderbox/Policies
-%%BACKEND_DIR%%/plugins/tinderbox/ReadMe
-%%BACKEND_DIR%%/plugins/tinderbox/ReadMe.Netscape.Process
-%%BACKEND_DIR%%/plugins/tinderbox/ReadMe.Testing.Ideas
-%%BACKEND_DIR%%/plugins/tinderbox/ReadMe.lounge
-%%BACKEND_DIR%%/plugins/tinderbox/Todo
-%%BACKEND_DIR%%/plugins/tinderbox/build-stamp
-%%BACKEND_DIR%%/plugins/tinderbox/config.guess
-%%BACKEND_DIR%%/plugins/tinderbox/config.sub
-%%BACKEND_DIR%%/plugins/tinderbox/configure
-%%BACKEND_DIR%%/plugins/tinderbox/tinderbox.html
-%%BACKEND_DIR%%/plugins/tinderbox/tinderbox2-local-conf.spec
-%%BACKEND_DIR%%/plugins/tinderbox/tinderbox2.spec
-%%BACKEND_DIR%%/plugins/tinderbox/ChangeLog
-%%BACKEND_DIR%%/plugins/scmsvn/www/styles.css
-%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs.php
-%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs_utils.php
-%%BACKEND_DIR%%/plugins/scmsvn/bin/svn-create.php
-%%BACKEND_DIR%%/plugins/scmsvn/bin/db-upgrade.pl
-%%BACKEND_DIR%%/plugins/scmsvn/bin/install-svn.sh
-%%BACKEND_DIR%%/plugins/scmsvn/bin/install-viewcvs.sh
-%%BACKEND_DIR%%/plugins/scmsvn/bin/svn_dump.pl
-%%BACKEND_DIR%%/plugins/scmsvn/bin/svn_update.pl
-%%BACKEND_DIR%%/plugins/scmsvn/bin/snapshots.sh
-%%BACKEND_DIR%%/plugins/scmsvn/bin/db-delete.pl
-%%BACKEND_DIR%%/plugins/scmsvn/cgi-bin/viewcvs.cgi
-%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/config.php
-%%BACKEND_DIR%%/plugins/scmsvn/include/languages/Base.tab
-%%BACKEND_DIR%%/plugins/scmsvn/include/languages/French.tab
-%%BACKEND_DIR%%/plugins/scmsvn/include/languages/Korean.tab
-%%BACKEND_DIR%%/plugins/scmsvn/include/SVNPlugin.class
-%%BACKEND_DIR%%/plugins/scmsvn/include/scmsvn-init.php
-%%BACKEND_DIR%%/plugins/scmsvn/lib/scmsvn-init.sql
-%%BACKEND_DIR%%/plugins/scmsvn/cronjobs/svn-stats.php
-%%BACKEND_DIR%%/plugins/scmsvn/cronjobs/tarballs.php
-%%BACKEND_DIR%%/plugins/scmsvn/README
+%%BACKEND_DIR%%/plugins/svncommitemail/bin/commit-email.pl
+%%BACKEND_DIR%%/plugins/svncommitemail/include/SVNCommitEmailPlugin.class
+%%BACKEND_DIR%%/plugins/svncommitemail/include/svncommitemail-init.php
+%%BACKEND_DIR%%/plugins/svntracker/AUTHORS
+%%BACKEND_DIR%%/plugins/svntracker/COPYING
+%%BACKEND_DIR%%/plugins/svntracker/README
+%%BACKEND_DIR%%/plugins/svntracker/bin/db-delete.pl
+%%BACKEND_DIR%%/plugins/svntracker/bin/db-upgrade.pl
+%%BACKEND_DIR%%/plugins/svntracker/bin/post.php
+%%BACKEND_DIR%%/plugins/svntracker/bin/update_postcommit.php
+%%BACKEND_DIR%%/plugins/svntracker/etc/plugins/svntracker/config.php
+%%BACKEND_DIR%%/plugins/svntracker/etc/plugins/svntracker/svntracker.conf
+%%BACKEND_DIR%%/plugins/svntracker/httpd.conf
+%%BACKEND_DIR%%/plugins/svntracker/include/Snoopy.class
+%%BACKEND_DIR%%/plugins/svntracker/include/languages/Base.tab
+%%BACKEND_DIR%%/plugins/svntracker/include/languages/French.tab
+%%BACKEND_DIR%%/plugins/svntracker/include/languages/Spanish.tab
+%%BACKEND_DIR%%/plugins/svntracker/include/svntracker-init.php
+%%BACKEND_DIR%%/plugins/svntracker/include/svntrackerPlugin.class
+%%BACKEND_DIR%%/plugins/svntracker/lib/20051011.sql
+%%BACKEND_DIR%%/plugins/svntracker/lib/svntracker-init.sql
+%%BACKEND_DIR%%/plugins/svntracker/postcommit.example
+%%BACKEND_DIR%%/plugins/svntracker/rpm-specific/cron.d/gforge-plugin-svntracker
+%%BACKEND_DIR%%/plugins/svntracker/www/newcommit.php
 %%BACKEND_DIR%%/plugins/scmcvs/bin/syncmail-cvs-1.12
 %%BACKEND_DIR%%/plugins/scmcvs/bin/cvs_dump.pl
 %%BACKEND_DIR%%/plugins/scmcvs/bin/cvs_update.pl
@@ -369,6 +216,7 @@
 %%BACKEND_DIR%%/plugins/scmcvs/etc/httpd.d/31virtualcvs.ssl
 %%BACKEND_DIR%%/plugins/scmcvs/etc/httpd.d/12scm50cvs.ssl
 %%BACKEND_DIR%%/plugins/scmcvs/etc/plugins/scmcvs/config.php
+%%BACKEND_DIR%%/plugins/scmcvs/etc/plugins/scmcvs/config.pl
 %%BACKEND_DIR%%/plugins/scmcvs/etc/plugins/scmcvs/cvsweb.conf
 %%BACKEND_DIR%%/plugins/scmcvs/include/languages/Chinese.tab
 %%BACKEND_DIR%%/plugins/scmcvs/include/languages/Basque.tab
@@ -413,21 +261,142 @@
 %%BACKEND_DIR%%/plugins/cvstracker/bin/post.php
 %%BACKEND_DIR%%/plugins/cvstracker/bin/update_loginfo.php
 %%BACKEND_DIR%%/plugins/cvstracker/etc/plugins/cvstracker/config.php
+%%BACKEND_DIR%%/plugins/cvstracker/etc/plugins/cvstracker/cvstracker.conf
 %%BACKEND_DIR%%/plugins/cvstracker/www/newcommit.php
 %%BACKEND_DIR%%/plugins/cvstracker/httpd.conf
 %%BACKEND_DIR%%/plugins/cvstracker/README
 %%BACKEND_DIR%%/plugins/cvstracker/AUTHORS
 %%BACKEND_DIR%%/plugins/cvstracker/COPYING
 %%BACKEND_DIR%%/plugins/cvstracker/Makefile
-%%BACKEND_DIR%%/plugins/cvssyncmail/bin/syncmail
-%%BACKEND_DIR%%/plugins/cvssyncmail/bin/syncmail-cvs-1.11
-%%BACKEND_DIR%%/plugins/cvssyncmail/bin/syncmail-cvs-1.12
+%%BACKEND_DIR%%/plugins/cvstracker/debian/README.Debian
+%%BACKEND_DIR%%/plugins/cvstracker/debian/changelog
+%%BACKEND_DIR%%/plugins/cvstracker/debian/control
+%%BACKEND_DIR%%/plugins/cvstracker/debian/copyright
+%%BACKEND_DIR%%/plugins/cvstracker/debian/cron.d
+%%BACKEND_DIR%%/plugins/cvstracker/debian/dirs
+%%BACKEND_DIR%%/plugins/cvstracker/debian/postinst
+%%BACKEND_DIR%%/plugins/cvstracker/debian/prerm
+%%BACKEND_DIR%%/plugins/cvstracker/debian/rules
+%%BACKEND_DIR%%/plugins/cvstracker/gforge-plugin-cvstracker.spec
+%%BACKEND_DIR%%/plugins/cvstracker/rpm-specific/cron.d/gforge-plugin-cvstracker
 %%BACKEND_DIR%%/plugins/cvssyncmail/common/languages/Base.tab
 %%BACKEND_DIR%%/plugins/cvssyncmail/common/CVSSyncMailPlugin.class
 %%BACKEND_DIR%%/plugins/cvssyncmail/common/cvssyncmail-init.php
 %%BACKEND_DIR%%/plugins/cvssyncmail/db/cvssyncmail-init.sql
 %%BACKEND_DIR%%/plugins/cvssyncmail/include/cvssyncmail-init.php
 %%BACKEND_DIR%%/plugins/cvssyncmail/INSTALL
+%%BACKEND_DIR%%/plugins/scmcvs/debian/README.Debian
+%%BACKEND_DIR%%/plugins/scmcvs/debian/changelog
+%%BACKEND_DIR%%/plugins/scmcvs/debian/control
+%%BACKEND_DIR%%/plugins/scmcvs/debian/copyright
+%%BACKEND_DIR%%/plugins/scmcvs/debian/cron.d
+%%BACKEND_DIR%%/plugins/scmcvs/debian/dirs
+%%BACKEND_DIR%%/plugins/scmcvs/debian/patches/00list
+%%BACKEND_DIR%%/plugins/scmcvs/debian/patches/01_fix_cvsroot_lockdir.dpatch
+%%BACKEND_DIR%%/plugins/scmcvs/debian/postinst
+%%BACKEND_DIR%%/plugins/scmcvs/debian/prerm
+%%BACKEND_DIR%%/plugins/scmcvs/debian/rules
+%%BACKEND_DIR%%/plugins/scmcvs/gforge-plugin-scmcvs.spec
+%%BACKEND_DIR%%/plugins/scmcvs/rpm-specific/cron.d/gforge-plugin-scmcvs
+%%BACKEND_DIR%%/plugins/scmcvs/rpm-specific/cronjobs/.keepme
+%%BACKEND_DIR%%/plugins/scmcvs/rpm-specific/languages/.keepme
+%%BACKEND_DIR%%/plugins/scmcvs/rpm-specific/patches/gforge-plugin-scmcvs-4.5.14-cvsweb.css.patch
+%%BACKEND_DIR%%/plugins/scmsvn/README
+%%BACKEND_DIR%%/plugins/scmsvn/bin/db-delete.pl
+%%BACKEND_DIR%%/plugins/scmsvn/bin/db-upgrade.pl
+%%BACKEND_DIR%%/plugins/scmsvn/bin/install-svn.sh
+%%BACKEND_DIR%%/plugins/scmsvn/bin/install-viewcvs.sh
+%%BACKEND_DIR%%/plugins/scmsvn/bin/snapshots.sh
+%%BACKEND_DIR%%/plugins/scmsvn/bin/svn-create.php
+%%BACKEND_DIR%%/plugins/scmsvn/bin/svn_dump.pl
+%%BACKEND_DIR%%/plugins/scmsvn/bin/svn_update.pl
+%%BACKEND_DIR%%/plugins/scmsvn/cgi-bin/viewcvs.cgi
+%%BACKEND_DIR%%/plugins/scmsvn/cronjobs/svn-stats.php
+%%BACKEND_DIR%%/plugins/scmsvn/cronjobs/tarballs.php
+%%BACKEND_DIR%%/plugins/scmsvn/debian/README.Debian
+%%BACKEND_DIR%%/plugins/scmsvn/debian/changelog
+%%BACKEND_DIR%%/plugins/scmsvn/debian/control
+%%BACKEND_DIR%%/plugins/scmsvn/debian/copyright
+%%BACKEND_DIR%%/plugins/scmsvn/debian/cron.d
+%%BACKEND_DIR%%/plugins/scmsvn/debian/dirs
+%%BACKEND_DIR%%/plugins/scmsvn/debian/patches/00list
+%%BACKEND_DIR%%/plugins/scmsvn/debian/patches/disable-dav.dpatch
+%%BACKEND_DIR%%/plugins/scmsvn/debian/postinst
+%%BACKEND_DIR%%/plugins/scmsvn/debian/prerm
+%%BACKEND_DIR%%/plugins/scmsvn/debian/rules
+%%BACKEND_DIR%%/plugins/scmsvn/etc/httpd.d/11scm60svn
+%%BACKEND_DIR%%/plugins/scmsvn/etc/httpd.d/12scm60svn.ssl
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/config.php
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/config.pl
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/annotate.ezt
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/diff.ezt
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/dir_alternate.ezt
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/directory.ezt
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/error.ezt
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/graph.ezt
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/include/branch.ezt
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/include/branch_form.ezt
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/include/diff_form.ezt
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/include/dir_footer.ezt
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/include/dir_header.ezt
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/include/footer.ezt
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/include/header.ezt
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/include/paging.ezt
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/include/sort.ezt
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/include/view_tag.ezt
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/log.ezt
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/log_table.ezt
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/markup.ezt
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/query.ezt
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/query_form.ezt
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/query_results.ezt
+%%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/revision.ezt
+%%BACKEND_DIR%%/plugins/scmsvn/gforge-plugin-scmsvn.spec
+%%BACKEND_DIR%%/plugins/scmsvn/include/SVNPlugin.class
+%%BACKEND_DIR%%/plugins/scmsvn/include/languages/Base.tab
+%%BACKEND_DIR%%/plugins/scmsvn/include/languages/French.tab
+%%BACKEND_DIR%%/plugins/scmsvn/include/languages/Korean.tab
+%%BACKEND_DIR%%/plugins/scmsvn/include/scmsvn-init.php
+%%BACKEND_DIR%%/plugins/scmsvn/lib/scmsvn-init.sql
+%%BACKEND_DIR%%/plugins/scmsvn/rpm-specific/cron.d/gforge-plugin-scmsvn
+%%BACKEND_DIR%%/plugins/scmsvn/rpm-specific/languages/.keepme
+%%BACKEND_DIR%%/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-hotbackup.py-path.patch
+%%BACKEND_DIR%%/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-nogroupdircheck.patch
+%%BACKEND_DIR%%/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-styles.css.patch
+%%BACKEND_DIR%%/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-svn-host.patch
+%%BACKEND_DIR%%/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-svn_dav_authz.patch
+%%BACKEND_DIR%%/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-templates.patch
+%%BACKEND_DIR%%/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-viewcvs.cgi.patch
+%%BACKEND_DIR%%/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-viewcvs.php.patch
+%%BACKEND_DIR%%/plugins/scmsvn/rpm-specific/scripts/create_authz_svn.php
+%%BACKEND_DIR%%/plugins/scmsvn/rpm-specific/viewcvs/icons/small/dir.gif
+%%BACKEND_DIR%%/plugins/scmsvn/rpm-specific/viewcvs/icons/small/text.gif
+%%BACKEND_DIR%%/plugins/scmsvn/www/styles.css
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs.php
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs_utils.php
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/contributing.html
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/help_dirview.html
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/help_log.html
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/help_logtable.html
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/help_query.html
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/help_rootview.html
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/icons/back.gif
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/icons/forward.gif
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/icons/small/back.gif
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/icons/small/debian.jpg
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/icons/small/dir.gif
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/icons/small/text.gif
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/images/chalk.jpg
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/images/cvsgraph_16x16.png
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/images/cvsgraph_32x32.png
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/images/down.png
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/images/logo.png
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/images/up.png
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/index.html
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/license-1.html
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/styles.css
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/upgrading.html
+%%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/who.html
 %%DATADIR%%/contrib/rh8_apache20_config/httpd.conf
 %%DATADIR%%/contrib/rh8_apache20_config/local.inc
 %%DATADIR%%/contrib/rh8_apache20_config/php.conf
@@ -590,6 +559,7 @@
 %%DATADIR%%/db/gforge.sql
 %%DATADIR%%/db/20001214.sql
 %%DATADIR%%/db/gforge2.6.sql
+%%DATADIR%%/db/timetracking-init.sql
 %%DATADIR%%/db/20001209.sql
 %%DATADIR%%/db/nss-pgsql.sql
 %%WWW_ROOT%%/gforge/common/pm/import_utils.php
@@ -634,6 +604,7 @@
 %%WWW_ROOT%%/gforge/common/reporting/ReportUserCum.class
 %%WWW_ROOT%%/gforge/common/reporting/ReportUserTime.class
 %%WWW_ROOT%%/gforge/common/reporting/Report.class
+%%WWW_ROOT%%/gforge/common/reporting/TimeEntry.class
 %%WWW_ROOT%%/gforge/common/tracker/artifact_type_definitions.php
 %%WWW_ROOT%%/gforge/common/tracker/ArtifactCanned.class
 %%WWW_ROOT%%/gforge/common/tracker/ArtifactExtraField.class
@@ -965,6 +936,7 @@
 %%WWW_ROOT%%/gforge/www/soap/frs/frs.php
 %%WWW_ROOT%%/gforge/www/soap/index.php
 %%WWW_ROOT%%/gforge/www/soap/nusoap.php
+%%WWW_ROOT%%/gforge/www/soap/reporting/timeentry.php
 %%WWW_ROOT%%/gforge/www/snippet/submit.php
 %%WWW_ROOT%%/gforge/www/snippet/addversion.php
 %%WWW_ROOT%%/gforge/www/snippet/browse.php
@@ -1140,9 +1112,6 @@
 %%WWW_ROOT%%/gforge/www/project/index.php
 %%WWW_ROOT%%/gforge/www/project/memberlist.php
 %%WWW_ROOT%%/gforge/www/project/request.php
-%%WWW_ROOT%%/gforge/www/pro/index.php
-%%WWW_ROOT%%/gforge/www/pro/gfg_button.gif
-%%WWW_ROOT%%/gforge/www/pro/gfgps_banner_small.gif
 %%WWW_ROOT%%/gforge/www/pm/msproject/msp.php
 %%WWW_ROOT%%/gforge/www/pm/msproject/xmlparser.php
 %%WWW_ROOT%%/gforge/www/pm/include/ProjectGroupHTML.class
@@ -1287,32 +1256,47 @@
 @dirrm %%BACKEND_DIR%%/utils/fixscripts
 @dirrm %%BACKEND_DIR%%/utils/ldap
 @dirrm %%BACKEND_DIR%%/utils
-@dirrm %%BACKEND_DIR%%/plugins/tinderbox/debian
-@dirrm %%BACKEND_DIR%%/plugins/tinderbox/src/default_conf
-@dirrm %%BACKEND_DIR%%/plugins/tinderbox/src/bonsai_pvcs/data
-@dirrm %%BACKEND_DIR%%/plugins/tinderbox/src/bonsai_pvcs
-@dirrm %%BACKEND_DIR%%/plugins/tinderbox/src/clientbin
-@dirrm %%BACKEND_DIR%%/plugins/tinderbox/src/bin
-@dirrm %%BACKEND_DIR%%/plugins/tinderbox/src/gif
-@dirrm %%BACKEND_DIR%%/plugins/tinderbox/src/lib/Persistence
-@dirrm %%BACKEND_DIR%%/plugins/tinderbox/src/lib/HTMLPopUp
-@dirrm %%BACKEND_DIR%%/plugins/tinderbox/src/lib/TinderHeader
-@dirrm %%BACKEND_DIR%%/plugins/tinderbox/src/lib/TinderDB
-@dirrm %%BACKEND_DIR%%/plugins/tinderbox/src/lib/VCDisplay
-@dirrm %%BACKEND_DIR%%/plugins/tinderbox/src/lib
-@dirrm %%BACKEND_DIR%%/plugins/tinderbox/src/test/vcsim
-@dirrm %%BACKEND_DIR%%/plugins/tinderbox/src/test
-@dirrm %%BACKEND_DIR%%/plugins/tinderbox/src
-@dirrm %%BACKEND_DIR%%/plugins/tinderbox
+@dirrm %%BACKEND_DIR%%/plugins/svntracker/www
+@dirrm %%BACKEND_DIR%%/plugins/svntracker/rpm-specific/cron.d
+@dirrm %%BACKEND_DIR%%/plugins/svntracker/rpm-specific
+@dirrm %%BACKEND_DIR%%/plugins/svntracker/lib
+@dirrm %%BACKEND_DIR%%/plugins/svntracker/include/languages
+@dirrm %%BACKEND_DIR%%/plugins/svntracker/include
+@dirrm %%BACKEND_DIR%%/plugins/svntracker/etc/plugins/svntracker
+@dirrm %%BACKEND_DIR%%/plugins/svntracker/etc/plugins
+@dirrm %%BACKEND_DIR%%/plugins/svntracker/etc
+@dirrm %%BACKEND_DIR%%/plugins/svntracker/bin
+@dirrm %%BACKEND_DIR%%/plugins/svntracker
+@dirrm %%BACKEND_DIR%%/plugins/svncommitemail/include
+@dirrm %%BACKEND_DIR%%/plugins/svncommitemail/bin
+@dirrm %%BACKEND_DIR%%/plugins/svncommitemail
+@dirrm %%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/images
+@dirrm %%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/icons/small
+@dirrm %%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs/icons
+@dirrm %%BACKEND_DIR%%/plugins/scmsvn/www/viewcvs
 @dirrm %%BACKEND_DIR%%/plugins/scmsvn/www
 @dirrm %%BACKEND_DIR%%/plugins/scmsvn/bin
 @dirrm %%BACKEND_DIR%%/plugins/scmsvn/cgi-bin
+@dirrm %%BACKEND_DIR%%/plugins/scmsvn/rpm-specific/viewcvs/icons/small
+@dirrm %%BACKEND_DIR%%/plugins/scmsvn/rpm-specific/viewcvs/icons
+@dirrm %%BACKEND_DIR%%/plugins/scmsvn/rpm-specific/viewcvs
+@dirrm %%BACKEND_DIR%%/plugins/scmsvn/rpm-specific/scripts
+@dirrm %%BACKEND_DIR%%/plugins/scmsvn/rpm-specific/patches
+@dirrm %%BACKEND_DIR%%/plugins/scmsvn/rpm-specific/languages
+@dirrm %%BACKEND_DIR%%/plugins/scmsvn/rpm-specific/cron.d
+@dirrm %%BACKEND_DIR%%/plugins/scmsvn/rpm-specific
+@dirrm %%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates/include
+@dirrm %%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs/templates
+@dirrm %%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn/viewcvs
 @dirrm %%BACKEND_DIR%%/plugins/scmsvn/etc/plugins/scmsvn
 @dirrm %%BACKEND_DIR%%/plugins/scmsvn/etc/plugins
+@dirrm %%BACKEND_DIR%%/plugins/scmsvn/etc/httpd.d
 @dirrm %%BACKEND_DIR%%/plugins/scmsvn/etc
 @dirrm %%BACKEND_DIR%%/plugins/scmsvn/include/languages
 @dirrm %%BACKEND_DIR%%/plugins/scmsvn/include
 @dirrm %%BACKEND_DIR%%/plugins/scmsvn/lib
+@dirrm %%BACKEND_DIR%%/plugins/scmsvn/debian/patches
+@dirrm %%BACKEND_DIR%%/plugins/scmsvn/debian
 @dirrm %%BACKEND_DIR%%/plugins/scmsvn/cronjobs
 @dirrm %%BACKEND_DIR%%/plugins/scmsvn
 @dirrm %%BACKEND_DIR%%/plugins/scmcvs/bin
@@ -1324,29 +1308,38 @@
 @dirrm %%BACKEND_DIR%%/plugins/scmcvs/lib
 @dirrm %%BACKEND_DIR%%/plugins/scmcvs/cgi-bin
 @dirrm %%BACKEND_DIR%%/plugins/scmcvs/etc/httpd.d
+@dirrm %%BACKEND_DIR%%/plugins/scmcvs/rpm-specific/patches
+@dirrm %%BACKEND_DIR%%/plugins/scmcvs/rpm-specific/languages
+@dirrm %%BACKEND_DIR%%/plugins/scmcvs/rpm-specific/cronjobs
+@dirrm %%BACKEND_DIR%%/plugins/scmcvs/rpm-specific/cron.d
+@dirrm %%BACKEND_DIR%%/plugins/scmcvs/rpm-specific
 @dirrm %%BACKEND_DIR%%/plugins/scmcvs/etc/plugins/scmcvs
 @dirrm %%BACKEND_DIR%%/plugins/scmcvs/etc/plugins
 @dirrm %%BACKEND_DIR%%/plugins/scmcvs/etc
 @dirrm %%BACKEND_DIR%%/plugins/scmcvs/include/languages
 @dirrm %%BACKEND_DIR%%/plugins/scmcvs/include
+@dirrm %%BACKEND_DIR%%/plugins/scmcvs/debian/patches
+@dirrm %%BACKEND_DIR%%/plugins/scmcvs/debian
 @dirrm %%BACKEND_DIR%%/plugins/scmcvs
 @dirrm %%BACKEND_DIR%%/plugins/cvstracker/include/languages
 @dirrm %%BACKEND_DIR%%/plugins/cvstracker/include
 @dirrm %%BACKEND_DIR%%/plugins/cvstracker/www
+@dirrm %%BACKEND_DIR%%/plugins/cvstracker/rpm-specific/cron.d
+@dirrm %%BACKEND_DIR%%/plugins/cvstracker/rpm-specific
 @dirrm %%BACKEND_DIR%%/plugins/cvstracker/lib
-@dirrm %%BACKEND_DIR%%/plugins/cvstracker/bin
 @dirrm %%BACKEND_DIR%%/plugins/cvstracker/etc/plugins/cvstracker
 @dirrm %%BACKEND_DIR%%/plugins/cvstracker/etc/plugins
 @dirrm %%BACKEND_DIR%%/plugins/cvstracker/etc
+@dirrm %%BACKEND_DIR%%/plugins/cvstracker/debian
+@dirrm %%BACKEND_DIR%%/plugins/cvstracker/bin
 @dirrm %%BACKEND_DIR%%/plugins/cvstracker
-@dirrm %%BACKEND_DIR%%/plugins/cvssyncmail/bin
 @dirrm %%BACKEND_DIR%%/plugins/cvssyncmail/common/languages
 @dirrm %%BACKEND_DIR%%/plugins/cvssyncmail/common
 @dirrm %%BACKEND_DIR%%/plugins/cvssyncmail/db
 @dirrm %%BACKEND_DIR%%/plugins/cvssyncmail/include
 @dirrm %%BACKEND_DIR%%/plugins/cvssyncmail
 @dirrm %%BACKEND_DIR%%/plugins
-@dirrm %%BACKEND_DIR%%
+@dirrmtry %%BACKEND_DIR%%
 @dirrm %%WWW_ROOT%%/gforge/common/pm
 @dirrm %%WWW_ROOT%%/gforge/common/survey
 @dirrm %%WWW_ROOT%%/gforge/common/search
@@ -1395,6 +1388,7 @@
 @dirrm %%WWW_ROOT%%/gforge/www/soap/tracker
 @dirrm %%WWW_ROOT%%/gforge/www/soap/pm
 @dirrm %%WWW_ROOT%%/gforge/www/soap/frs
+@dirrm %%WWW_ROOT%%/gforge/www/soap/reporting
 @dirrm %%WWW_ROOT%%/gforge/www/soap
 @dirrm %%WWW_ROOT%%/gforge/www/snippet
 @dirrm %%WWW_ROOT%%/gforge/www/developer
@@ -1413,13 +1407,11 @@
 @dirrm %%WWW_ROOT%%/gforge/www/project/admin
 @dirrm %%WWW_ROOT%%/gforge/www/project/stats
 @dirrm %%WWW_ROOT%%/gforge/www/project
-@dirrm %%WWW_ROOT%%/gforge/www/pro
 @dirrm %%WWW_ROOT%%/gforge/www/pm/msproject
 @dirrm %%WWW_ROOT%%/gforge/www/pm/include
 @dirrm %%WWW_ROOT%%/gforge/www/pm/reporting
 @dirrm %%WWW_ROOT%%/gforge/www/pm/admin
 @dirrm %%WWW_ROOT%%/gforge/www/pm
-@dirrm %%WWW_ROOT%%/gforge/www/plugins
 @dirrm %%WWW_ROOT%%/gforge/www/people/admin
 @dirrm %%WWW_ROOT%%/gforge/www/people
 @dirrm %%WWW_ROOT%%/gforge/www/forum/admin

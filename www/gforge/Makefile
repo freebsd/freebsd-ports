@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	gforge
-PORTVERSION=	4.5.11
+PORTVERSION=	4.5.16
 CATEGORIES=	www devel
-MASTER_SITES=	http://gforge.org/frs/download.php/219/
+MASTER_SITES=	http://gforge.org/frs/download.php/236/
 
 MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	Open Source collaborative software development tool
 
-RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \
-		${LOCALBASE}/share/jpgraph/imgdata_balls.inc:${PORTSDIR}/graphics/jpgraph
+RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
 USE_BZIP2=		YES
 USE_PERL5=		YES
@@ -29,6 +28,12 @@ WANT_PHP_MOD=		YES
 NO_PACKAGE=	The configure process uses hostname
 
 .include <bsd.port.pre.mk>
+
+.if ${PHP_VER} == 4
+RUN_DEPENDS+=	${LOCALBASE}/share/jpgraph/imgdata_balls.inc:${PORTSDIR}/graphics/jpgraph
+.else
+RUN_DEPENDS+=	${LOCALBASE}/share/jpgraph/imgdata_balls.inc:${PORTSDIR}/graphics/jpgraph2
+.endif
 
 .if defined(WITH_JABBER)
 CONFIGURE_ARGS+=	--enable-jabber
