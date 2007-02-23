@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	mtl
-PORTVERSION=	2.1.2.21
+PORTVERSION=	2.1.2.22
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.osl.iu.edu/download/research/mtl/
-DISTNAME=	${PORTNAME}-2.1.2-21
+DISTNAME=	${PORTNAME}-2.1.2-22
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Matrix Template Library
