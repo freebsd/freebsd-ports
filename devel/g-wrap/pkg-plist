@@ -1,47 +1,54 @@
 bin/g-wrap-config
-include/g-wrap/g-wrap-compatibility.h
-include/g-wrap/g-wrap-glib.h
-include/g-wrap/g-wrap-wct.h
-lib/libgw-glib.a
-lib/libgw-glib.la
-lib/libgw-glib.so
-lib/libgw-glib.so.0
-lib/libgw-gtk.a
-lib/libgw-gtk.la
-lib/libgw-gtk.so
-lib/libgw-gtk.so.0
-lib/libgw-standard.a
-lib/libgw-standard.la
-lib/libgw-standard.so
-lib/libgw-standard.so.0
-lib/libgw-wct.a
-lib/libgw-wct.la
-lib/libgw-wct.so
-lib/libgw-wct.so.0
-lib/libgwrap-glib.a
-lib/libgwrap-glib.la
-lib/libgwrap-glib.so
-lib/libgwrap-glib.so.1
-lib/libgwrap-wct.a
-lib/libgwrap-wct.la
-lib/libgwrap-wct.so
-lib/libgwrap-wct.so.1
-share/aclocal/g-wrap.m4
-share/guile/g-wrap.scm
-share/guile/g-wrap/enumeration.scm
-share/guile/g-wrap/g-translate.scm
-share/guile/g-wrap/gtkobj.scm
-share/guile/g-wrap/gw-glib-spec.scm
-share/guile/g-wrap/gw-glib.scm
-share/guile/g-wrap/gw-gtk-spec.scm
-share/guile/g-wrap/gw-gtk.scm
-share/guile/g-wrap/gw-standard-spec.scm
-share/guile/g-wrap/gw-standard.scm
-share/guile/g-wrap/gw-wct-spec.scm
-share/guile/g-wrap/gw-wct.scm
-share/guile/g-wrap/output-file.scm
-share/guile/g-wrap/runtime.scm
-share/guile/g-wrap/simple-type.scm
-share/guile/g-wrap/sorting.scm
-@dirrm share/guile/g-wrap
+include/g-wrap-wct.h
+include/g-wrap/core-runtime.h
+include/g-wrap/ffi-support.h
+include/g-wrap/ffi/ffi.h
+include/g-wrap/ffi/ffitarget.h
+include/g-wrap/guile-compatibility.h
+include/g-wrap/guile-runtime.h
+include/g-wrap/guile-wct.h
+lib/libgw-guile-gw-glib.a
+lib/libgw-guile-gw-glib.la
+lib/libgw-guile-gw-glib.so
+lib/libgw-guile-gw-glib.so.0
+lib/libgw-guile-standard.a
+lib/libgw-guile-standard.la
+lib/libgw-guile-standard.so
+lib/libgw-guile-standard.so.0
+lib/libgwrap-core-runtime.a
+lib/libgwrap-core-runtime.la
+lib/libgwrap-core-runtime.so
+lib/libgwrap-core-runtime.so.0
+lib/libgwrap-guile-runtime.a
+lib/libgwrap-guile-runtime.la
+lib/libgwrap-guile-runtime.so
+lib/libgwrap-guile-runtime.so.0
+libdata/pkgconfig/g-wrap-2.0-guile.pc
+share/guile/site/g-wrap.scm
+share/guile/site/g-wrap/c-types.scm
+share/guile/site/g-wrap/compat.scm
+share/guile/site/g-wrap/enumeration.scm
+share/guile/site/g-wrap/guile.scm
+share/guile/site/g-wrap/guile/ws/standard.scm
+share/guile/site/g-wrap/gw-glib-spec.scm
+share/guile/site/g-wrap/gw-glib.scm
+share/guile/site/g-wrap/gw-standard-spec.scm
+share/guile/site/g-wrap/gw-wct-spec.scm
+share/guile/site/g-wrap/gw-wct.scm
+share/guile/site/g-wrap/gw/standard.scm
+share/guile/site/g-wrap/rti.scm
+share/guile/site/g-wrap/simple-type.scm
+share/guile/site/g-wrap/util.scm
+share/guile/site/g-wrap/ws/standard.scm
+share/guile/site/srfi/srfi-34.scm
+share/guile/site/srfi/srfi-35.scm
+@dirrmtry share/guile/site/srfi
+@dirrmtry share/guile/site/g-wrap/ws
+@dirrmtry share/guile/site/g-wrap/gw
+@dirrmtry share/guile/site/g-wrap/guile/ws
+@dirrmtry share/guile/site/g-wrap/guile
+@dirrmtry share/guile/site/g-wrap
+@dirrmtry share/guile/site
+@dirrmtry share/guile
+@dirrm include/g-wrap/ffi
 @dirrm include/g-wrap
