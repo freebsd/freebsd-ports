@@ -14,7 +14,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	grog@FreeBSD.org
 COMMENT=	MythTV is a homebrew PVR project
-
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser/Expat.pm:${PORTSDIR}/textproc/p5-XML-SAX-Expat
 
@@ -24,10 +23,6 @@ LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 RUN_DEPENDS=	tv_check:${PORTSDIR}/textproc/p5-xmltv \
 		${X11BASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin \
 		wget:${PORTSDIR}/ftp/wget
-
-BROKEN=		Incorrect pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2007-04-10
 
 ONLY_FOR_ARCHS= i386
 USE_BZIP2=	yes
@@ -50,7 +45,7 @@ OPTIONS+=       MYSQL_LOCAL "RUN_DEPEND on selected MySQL server" off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_LIRC)
-LIB_DEPENDS+=  lirc_client.0:${PORTSDIR}/comms/lirc
+LIB_DEPENDS+=  lirc_client.1:${PORTSDIR}/comms/lirc
 # EXTRA_PATCHES= ${FILESDIR}/patchsettings-lirc
 .endif
 
