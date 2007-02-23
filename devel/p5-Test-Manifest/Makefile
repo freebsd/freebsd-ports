@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Manifest
-PORTVERSION=	1.14
+PORTVERSION=	1.17
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -21,12 +21,4 @@ PERL_CONFIGURE=	YES
 
 MAN3=		Test::Manifest.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	${PERL} -pi -e '$$_="" if m{5.006}' ${WRKSRC}/Makefile.PL ${WRKSRC}/lib/Manifest.pm
-	${PERL} -pi -e 's/(my\( )?\$$fh( \))?/FH/' ${WRKSRC}/lib/Manifest.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
