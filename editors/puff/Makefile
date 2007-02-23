@@ -16,10 +16,4 @@ COMMENT=	Simple and efficient text editor
 
 PLIST_FILES=	bin/puff etc/puff.conf.sample
 
-.include <bsd.port.pre.mk>
-
-.if (${OSVERSION} >= 700000)
-BROKEN=		Does not compile on 7.X
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
