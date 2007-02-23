@@ -63,7 +63,7 @@
 
 . %%RC_SUBR%%
 
-name=`basename ${0}`
+name=$(basename "$0")
 rcvar=`set_rcvar`
 
 prefix="%%PREFIX%%"
