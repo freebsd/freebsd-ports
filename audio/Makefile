@@ -579,7 +579,6 @@
     SUBDIR += soundtracker
     SUBDIR += sox
     SUBDIR += speex
-    SUBDIR += speex-devel
     SUBDIR += sphinx
     SUBDIR += spiralloops
     SUBDIR += spiralsynth

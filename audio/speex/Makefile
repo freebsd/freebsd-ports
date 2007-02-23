@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:	Speex
 # Date created:			Jul 30, 2002
 # Whom:				ijliao
@@ -7,14 +6,10 @@
 #
 
 PORTNAME=	speex
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+DISTVERSION=	1.2beta1
 PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		ftp://ftp.osuosl.org/.1/xiph/releases/speex/
-MASTER_SITE_SUBDIR=	ahze
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
+MASTER_SITES=	http://downloads.us.xiph.org/releases/speex/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	An open-source patent-free voice codec
@@ -23,25 +18,30 @@ LIB_DEPENDS=	ogg.5:${PORTSDIR}/audio/libogg
 
 CONFLICTS=	speex-devel-[0-9]*
 
+USE_GNOME=	gnomehack gnometarget ltverhack
+USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	gnomehack
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-ogg-dir=${LOCALBASE}
-INSTALLS_SHLIB=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		speexdec.1 speexenc.1
+
+.include <bsd.port.pre.mk>
+
+.if ${MACHINE_CPU:Msse}!=""
+CONFIGURE_ARGS+=	--enable-sse
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|doc win32|win32|g ; \
-		s|^mandir =.*$$|mandir = ${PREFIX}/man|g'
-	@${REINPLACE_CMD} -e 's|@SPEEX_VERSION@|${PORTVERSION}|' \
-		${WRKSRC}/speex.pc.in
+		s|^mandir =.*$$|mandir = @mandir@|g'
+	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' \
+		${WRKSRC}/*/*.h
 	@${REINPLACE_CMD} -e 's| in -lgnugetopt||g ; \
-		 s|LIBS="-lgnugetopt|LIBS="|g; \
-		 s|SPEEX_LT_CURRENT=4|SPEEX_LT_CURRENT=3|' \
-			 ${WRKSRC}/configure
+		 s|LIBS="-lgnugetopt|LIBS="|g' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

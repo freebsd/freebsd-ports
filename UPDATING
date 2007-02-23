@@ -6,6 +6,24 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070223:
+  AFFECTS: users of audio/speex and any port that depends on it
+  AUTHOR: mezz@FreeBSD.org
+
+  The shared library version has been changed in audio/speex, so you will
+  have to rebuild all ports that depend on speex. You need to do following:
+
+  Portupgrade users:
+
+  	pkgdb -Ff
+  	portupgrade -rf speex\*
+
+  Portmaster users, skip a first step if you don't have audio/speex-devel
+  installed:
+
+  	portmaster -o audio/speex speex-devel\*
+  	portmaster -r speex\*
+
 20070218:
   AFFECTS: users of sysutils/symon
   AUTHOR: uspoerlein@gmail.com
