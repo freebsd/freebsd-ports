@@ -1,0 +1,15 @@
+--- guile/g-wrap-2.0-guile.pc.in.orig	Mon Oct 11 06:32:16 2004
++++ guile/g-wrap-2.0-guile.pc.in	Tue Sep 12 17:10:41 2006
+@@ -5,9 +5,10 @@
+ libdir=@libdir@
+ includedir=@includedir@
+ module_directory=@GUILEMODDIR@
++ffiincludedir= @includedir@/g-wrap/ffi
+ 
+ Name: G-Wrap
+ Description: A Guile wrapper generator
+ Version: @VERSION@
+-Libs: -L${libdir} -lgwrap-guile-runtime -lgwrap-core-runtime @GUILE_LDFLAGS@ @LIBFFI_LIBS_INSTALLED@
+-Cflags: @STD_CFLAGS@ -I${includedir} @GUILE_CFLAGS@ @LIBFFI_CFLAGS_INSTALLED@
++Libs: -L/usr/local/lib/elf -L${libdir} -lgwrap-guile-runtime -lgwrap-core-runtime @GUILE_LDFLAGS@
++Cflags: @STD_CFLAGS@ -I${includedir} -I${ffiincludedir} @GUILE_CFLAGS@ @LIBFFI_CFLAGS_INSTALLED@

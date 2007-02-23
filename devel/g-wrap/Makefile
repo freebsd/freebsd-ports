@@ -4,31 +4,40 @@
 # Whom:			Matthew Condell (mcondell@alum.mit.edu)
 #
 # $FreeBSD$
-#
+#    $MCom: ports/devel/g-wrap/Makefile,v 1.6 2006/12/24 18:45:08 ahze Exp $
 
 PORTNAME=	g-wrap
-PORTVERSION=	1.3.4
-PORTREVISION=	9
+PORTVERSION=	1.9.6
 PORTEPOCH=	1
 CATEGORIES=	devel scheme
-MASTER_SITES=	http://www.gnucash.org/pub/g-wrap/source/ \
-		http://people.freebsd.org/~sobomax/
+MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A tool for exporting C libraries into Scheme interpreters
 
-BUILD_DEPENDS=	${LOCALBASE}/share/guile/1.6/slibcat:${PORTSDIR}/lang/slib-guile
-LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile \
-		guilegtk-1.2.0:${PORTSDIR}/x11-toolkits/guile-gtk
-RUN_DEPENDS=	${LOCALBASE}/share/guile/1.6/slibcat:${PORTSDIR}/lang/slib-guile
+BUILD_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile \
+		slib-guile>0:${PORTSDIR}/lang/slib-guile
+RUN_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile \
+		slib-guile>0:${PORTSDIR}/lang/slib-guile
 
 INFO=		g-wrap
 
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk12
-USE_LDCONFIG=	yes
-CONFIGURE_ENV+=	GW_GLIB_CONFIG="${GLIB_CONFIG}"
-MAKE_ENV+=	GUILE_LOAD_PATH=${WRKSRC}
+USE_GNOME=	glib20 gnomehack
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|"glib"|"glib-2.0"|' \
+		${WRKSRC}/configure
+
+pre-install:
+	@${REINPLACE_CMD} -e 's|libffi||' ${WRKSRC}/${MAKEFILE}
+
+post-install:
+	${MKDIR} ${PREFIX}/include/g-wrap/ffi
+.for f in ffi.h ffitarget.h
+	${INSTALL_DATA} ${WRKSRC}/libffi/include/${f} ${PREFIX}/include/g-wrap/ffi
+.endfor
 
 .include <bsd.port.mk>
