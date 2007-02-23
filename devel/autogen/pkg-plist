@@ -12,7 +12,7 @@ lib/libguileopts.so.0
 lib/libopts.a
 lib/libopts.la
 lib/libopts.so
-lib/libopts.so.27
+lib/libopts.so.28
 libdata/pkgconfig/autoopts.pc
 share/aclocal/autoopts.m4
 share/aclocal/liboptschk.m4
@@ -28,7 +28,7 @@ share/aclocal/liboptschk.m4
 %%DATADIR%%/fsm-trans.tpl
 %%DATADIR%%/fsm.tpl
 %%DATADIR%%/getopt.tpl
-%%DATADIR%%/libopts-27.6.3.tar.gz
+%%DATADIR%%/libopts-28.0.3.tar.gz
 %%DATADIR%%/optcode.tpl
 %%DATADIR%%/opthead.tpl
 %%DATADIR%%/options.tpl
