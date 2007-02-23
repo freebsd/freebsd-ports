@@ -7,39 +7,29 @@
 #
 
 PORTNAME=	imdbpy
-PORTVERSION=	2.8
+PORTVERSION=	2.9
 CATEGORIES=	www python
 MASTER_SITES=	SF
-DISTNAME=	IMDbPY-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	IMDbPY-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Retrieve and manage the data of the IMDb movie database
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-WRKSRC=		${WRKDIR}/IMDbPY-${PORTVERSION}
 
 .if !defined(NOPORTDOCS)
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
-PORTDOCS=	*
 .endif
+EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 post-install:
-	@${FIND} ${PYTHON_SITELIBDIR}/imdb ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PYTHON_SITELIBDIR}/imdb -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/docs/ ${DOCSDIR}
+.endif
 	@${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/bin/ ${EXAMPLESDIR}
-	@${FIND} ${EXAMPLESDIR} ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${EXAMPLESDIR} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-.endif
 
 .include <bsd.port.mk>
