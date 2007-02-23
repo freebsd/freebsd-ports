@@ -76,13 +76,13 @@ bin/iReport
 %%JAVAJARDIR%%/mondrian-2.0.1.jar
 %%JAVAJARDIR%%/nsisant-1.1.jar
 %%JAVAJARDIR%%/png-encoder-1.5.jar
-%%JAVAJARDIR%%/rex.jar
+%%JAVAJARDIR%%/rex-20070125.jar
 %%JAVAJARDIR%%/saaj-api-1.3.jar
 %%JAVAJARDIR%%/servlet.jar
 %%JAVAJARDIR%%/spring-2.0-m2.jar
 %%JAVAJARDIR%%/spring-context-2.0-m2.jar
 %%JAVAJARDIR%%/spring-hibernate3-2.0-m2.jar
-%%JAVAJARDIR%%/sqleonardo-2006.10.jar
+%%JAVAJARDIR%%/sqleonardo-2007.03.jar
 %%JAVAJARDIR%%/toniclf.jar
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/plugins
