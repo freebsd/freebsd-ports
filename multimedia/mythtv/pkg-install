@@ -81,7 +81,8 @@ EOF
 
 cat <<EOF
 
-To set up mythtv, login as user mythtv and run 
+To set up mythtv, first assign a password to user mythtv, then log in
+as mythtv and run
 
     mythtv-setup
 EOF
