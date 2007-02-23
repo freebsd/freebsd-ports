@@ -17,6 +17,8 @@ COMMENT=	The Ultimate Packer for eXecutables
 
 LIB_DEPENDS=	ucl.1:${PORTSDIR}/archivers/ucl
 
+ONLY_FOR_ARCHS=	i386
+
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
