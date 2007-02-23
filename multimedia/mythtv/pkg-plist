@@ -127,17 +127,42 @@ lib/mythtv/filters/libadjust.so
 lib/mythtv/filters/libonefield.so
 lib/mythtv/filters/libbobdeint.so
 lib/mythtv/filters/libivtc.so
-lib/libmythavutil-0.20.so.0.20.0
+lib/libmyth-0.20.so
+lib/libmyth-0.20.so.0
+lib/libmyth-0.20.so.0.20
+lib/libmythavcodec-0.20.so
+lib/libmythavcodec-0.20.so.0
+lib/libmythavcodec-0.20.so.0.20
 lib/libmythavcodec-0.20.so.0.20.0
+lib/libmythavformat-0.20.so
+lib/libmythavformat-0.20.so.0
+lib/libmythavformat-0.20.so.0.20
 lib/libmythavformat-0.20.so.0.20.0
+lib/libmythavutil-0.20.so
+lib/libmythavutil-0.20.so.0
+lib/libmythavutil-0.20.so.0.20
+lib/libmythavutil-0.20.so.0.20.0
 lib/libmythdvdnav-0.20.a
-lib/libmyth-0.20.so.0.20.0
-lib/libmythtv-0.20.so.0.20.0
-lib/libmythui-0.20.so.0.20.0
+lib/libmythfreemheg-0.20.so
+lib/libmythfreemheg-0.20.so.0
+lib/libmythfreemheg-0.20.so.0.20
 lib/libmythfreemheg-0.20.so.0.20.0
-lib/libmythupnp-0.20.so.0.20.0
+lib/libmythlivemedia-0.20.so
+lib/libmythlivemedia-0.20.so.0
+lib/libmythlivemedia-0.20.so.0.20
 lib/libmythlivemedia-0.20.so.0.20.0
-etc/rc.d/mythbackend
+lib/libmythtv-0.20.so
+lib/libmythtv-0.20.so.0
+lib/libmythtv-0.20.so.0.20
+lib/libmythtv-0.20.so.0.20.0
+lib/libmythui-0.20.so
+lib/libmythui-0.20.so.0
+lib/libmythui-0.20.so.0.20
+lib/libmythui-0.20.so.0.20.0
+lib/libmythupnp-0.20.so
+lib/libmythupnp-0.20.so.0
+lib/libmythupnp-0.20.so.0.20
+lib/libmythupnp-0.20.so.0.20.0
 share/mythtv/upnpavcd.xml
 share/mythtv/CDS_scpd.xml
 share/mythtv/CMGR_scpd.xml
@@ -655,6 +680,7 @@ share/mythtv/database/mc.sql
 @dirrm include/mythtv/upnp
 @dirrm include/mythtv
 @dirrm lib/mythtv/filters
+@dirrm lib/mythtv
 @dirrm share/mythtv/database
 @dirrm share/mythtv/i18n
 @dirrm share/mythtv/themes/DVR
