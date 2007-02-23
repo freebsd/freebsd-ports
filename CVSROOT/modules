@@ -13345,6 +13345,7 @@ ruby-dialogs	ports/devel/ruby-dialogs
 ruby-dict	ports/net/ruby-dict
 ruby-diff	ports/textproc/ruby-diff
 ruby-div	ports/www/ruby-div
+ruby-doc-stdlib	ports/lang/ruby-doc-stdlib
 ruby-dump.rb	ports/converters/ruby-dump.rb
 ruby-ecore	ports/devel/ruby-ecore
 ruby-edje	ports/graphics/ruby-edje
