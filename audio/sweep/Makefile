@@ -7,7 +7,7 @@
 
 PORTNAME=	sweep
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ COMMENT=	A sound editor for the GNOME/GTK 2.0 desktop
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
-		speex.3:${PORTSDIR}/audio/speex \
+		speex.1:${PORTSDIR}/audio/speex \
 		mad.2:${PORTSDIR}/audio/mad
 
 USE_BZIP2=	yes

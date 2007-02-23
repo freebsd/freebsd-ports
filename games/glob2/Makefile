@@ -7,7 +7,7 @@
 
 PORTNAME=		glob2
 PORTVERSION=		0.8.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		games
 MASTER_SITES=		http://globulation2.org/releases/${PORTVERSION}/
 
@@ -16,7 +16,7 @@ COMMENT=		Globulation 2 - a free and innovative strategy game
 
 BUILD_DEPENDS=		${LOCALBASE}/include/boost/rational.hpp:${PORTSDIR}/devel/boost
 LIB_DEPENDS=		vorbis.3:${PORTSDIR}/audio/libvorbis	\
-			speex.3:${PORTSDIR}/audio/speex		\
+			speex.1:${PORTSDIR}/audio/speex		\
 			freetype.9:${PORTSDIR}/print/freetype2
 
 USE_SDL=		image net sdl ttf

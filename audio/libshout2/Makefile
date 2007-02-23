@@ -7,7 +7,7 @@
 
 PORTNAME=	libshout2
 PORTVERSION=	2.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://downloads.xiph.org/releases/libshout/
@@ -16,7 +16,7 @@ DISTNAME=	libshout-${PORTVERSION}
 MAINTAINER=	lofi@freebsd.org
 COMMENT=	Routines for connecting and transmitting data to the icecast server
 
-LIB_DEPENDS=	speex.3:${PORTSDIR}/audio/speex \
+LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		theora.2:${PORTSDIR}/multimedia/libtheora \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 

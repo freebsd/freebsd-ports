@@ -24,7 +24,7 @@ EXPIRATION_DATE=2007-01-01
 LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm \
 		jack.0:${PORTSDIR}/audio/jack \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		speex.3:${PORTSDIR}/audio/speex \
+		speex.1:${PORTSDIR}/audio/speex \
 		osip2.3:${PORTSDIR}/net/libosip2
 
 USE_GNOME=	glib20 gnomehack gnometarget intlhack pkgconfig

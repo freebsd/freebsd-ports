@@ -84,7 +84,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -531,7 +531,7 @@ CONFIGURE_ARGS+=	--disable-ladspa
 
 .if !defined(WITHOUT_SPEEX)
 CONFIGURE_ARGS+=	--enable-speex
-LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex
+LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
 .else
 CONFIGURE_ARGS+=	--disable-speex
 .endif
