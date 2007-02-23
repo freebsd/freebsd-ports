@@ -7,6 +7,7 @@
 
 PORTNAME=	ImageMagick
 DISTVERSION=	6.3.2-0
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
@@ -34,7 +35,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15 libltdl:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--enable-shared --mandir=${MANPREFIX}/man
+CONFIGURE_ARGS=	--enable-shared --mandir=${MANPREFIX}/man --without-dps
 USE_LDCONFIG=	yes
 
 MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 Wand-config.1 \
@@ -63,9 +64,9 @@ OPTIONS=	X11				"X11 support" on \
 		IMAGEMAGICK_DOT		"GraphViz dot graphs support" off \
 		IMAGEMAGICK_WMF			"WMF format support" off \
 		IMAGEMAGICK_SVG			"SVG format support" off \
-		IMAGEMAGICK_DPS		"DPS (Display PostScript) support" on \
 		IMAGEMAGICK_PDF			"PDF format support" on \
-		IMAGEMAGICK_MPEG2		"MPEG2 format support" on
+		IMAGEMAGICK_MPEG2		"MPEG2 format support" on \
+		IMAGEMAGICK_GSLIB	"libgs (Postscript SHLIB) support" off
 
 .include <bsd.port.pre.mk>
 
@@ -136,6 +137,14 @@ PLIST_SUB+=		TIFF=""
 .else
 CONFIGURE_ARGS+=	--without-tiff
 PLIST_SUB+=		TIFF="@comment "
+.endif
+
+.if defined(WITH_IMAGEMAGICK_GSLIB)
+CONFIGURE_ARGS+=	--with-gslib
+USE_GHOSTSCRIPT=	yes
+WITH_GHOSTSCRIPT_AFPL=	yes
+.else
+CONFIGURE_ARGS+=	--without-gslib
 .endif
 
 # Produce BZip compressed MIFF images
@@ -238,19 +247,10 @@ CONFIGURE_ENV+=		RSVG_CFLAGS="-I${X11BASE}/include/librsvg-2" \
 CONFIGURE_ARGS+=	--without-rsvg
 .endif
 
-# DPS (Display PostScript) support
-.if !defined(WITHOUT_IMAGEMAGICK_DPS)
-CONFIGURE_ARGS+=	--with-dps
-.else
-CONFIGURE_ARGS+=	--without-dps
-.endif
-
 # PDF (Adobe Portable Document Format) support
 .if !defined(WITHOUT_IMAGEMAGICK_PDF)
-CONFIGURE_ARGS+=	--with-gslib
 USE_GHOSTSCRIPT=	yes
-.else
-CONFIGURE_ARGS+=	--without-gslib
+WITH_GHOSTSCRIPT_AFPL=	yes
 .endif
 
 .if defined(WITHOUT_X11)
