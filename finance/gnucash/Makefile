@@ -3,43 +3,45 @@
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
 # $FreeBSD$
-#   $MCom: ports/finance/gnucash/Makefile,v 1.7 2006/10/13 10:26:39 ahze Exp $
+#   $MCom: ports/finance/gnucash/Makefile,v 1.12 2007/02/23 18:27:51 ahze Exp $
 #
 
 PORTNAME=	gnucash
-PORTVERSION=	1.8.12
-PORTREVISION=	4
+PORTVERSION=	2.0.5
 CATEGORIES=	finance gnome
-MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://www.gnucash.org/pub/gnucash/sources/stable/
 MASTER_SITE_SUBDIR=	gnucash
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Quicken-like money and finance manager
 
-LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile \
-		guppi.16:${PORTSDIR}/math/guppi \
-		popt.0:${PORTSDIR}/devel/popt \
+BUILD_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		ofx.3:${PORTSDIR}/finance/libofx \
-		gw-glib.0:${PORTSDIR}/devel/g-wrap
-RUN_DEPENDS=	${LOCALBASE}/share/guile/1.6/slibcat:${PORTSDIR}/lang/slib-guile \
-		${SITE_PERL}/HTML/Base.pm:${PORTSDIR}/www/p5-HTML \
+		gwrap-core-runtime.0:${PORTSDIR}/devel/g-wrap
+RUN_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile \
+		${LOCALBASE}/share/guile/1.6/slibcat:${PORTSDIR}/lang/slib-guile \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
 		${SITE_PERL}/Finance/Quote.pm:${PORTSDIR}/finance/p5-Finance-Quote \
+		${SITE_PERL}/HTML/TableExtract.pm:${PORTSDIR}/www/p5-HTML-TableExtract \
 		${SITE_PERL}/Finance/QuoteHist.pm:${PORTSDIR}/finance/p5-Finance-QuoteHist \
 		${LOCALBASE}/share/gnome/omf/gnucash-docs/gnucash-guide-C.omf:${PORTSDIR}/finance/gnucash-docs
 
 OPTIONS=	AQBANKING	"AqBanking support (HBCI/OpenHBCI)"	off
 
+USE_BZIP2=	yes
+USE_GETTEXT=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_PERL5=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomeprint libglade gtkhtml libghttp intltool intlhack
+USE_GNOME=	gnomeprefix gtkhtml3 libgsf_gnome libglade2 \
+		libgnomeprint libgnomeprintui
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--with-glib-config=${GLIB_CONFIG} \
+CONFIGURE_ARGS=--with-glib-config=${GLIB_CONFIG} \
 		--enable-ofx \
 		--disable-error-on-warning
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -48,16 +50,22 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 MAN1=		gnc-prices.1 gnucash.1
 INFO=		gnucash-design
 
-.include <bsd.port.pre.mk>
+GCONF_SCHEMAS=	apps_gnucash_dialog_business_common.schemas \
+		apps_gnucash_dialog_commodities.schemas \
+		apps_gnucash_dialog_common.schemas \
+		apps_gnucash_dialog_prices.schemas \
+		apps_gnucash_dialog_print_checks.schemas \
+		apps_gnucash_dialog_reconcile.schemas \
+		apps_gnucash_dialog_scheduled_transctions.schemas \
+		apps_gnucash_dialog_totd.schemas \
+		apps_gnucash_general.schemas \
+		apps_gnucash_history.schemas \
+		apps_gnucash_import_generic_matcher.schemas \
+		apps_gnucash_warnings.schemas \
+		apps_gnucash_window_pages_account_tree.schemas \
+		apps_gnucash_window_pages_register.schemas
 
-.if exists(${LOCALBASE}/include/db41/db_185.h)
-LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
-post-patch:
-	@${REINPLACE_CMD} -e "s|db4/db_185.h|db41/db_185.h|g" \
-		${WRKSRC}/configure
-.else
-LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
-.endif
+.include <bsd.port.pre.mk>
 
 # WITH_OPENHBCI is old synonym for aqbanking option
 .if defined(WITH_AQBANKING) || defined(WITH_OPENHBCI)
@@ -70,7 +78,10 @@ CONFIGURE_ARGS+=--disable-hbci
 PLIST_SUB=	AQBANKING="@comment "
 .endif
 
-post-configure:
-	@${RM} ${WRKSRC}/src/doc/design/gnucash-design.info
+post-patch:
+	@${REINPLACE_CMD} -e 's|$${datarootdir}/info|${PREFIX}/info|' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|$$(datadir)/aclocal|${PREFIX}/share/aclocal|' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
