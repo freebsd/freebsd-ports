@@ -1,14 +1,18 @@
-Gtk2Hs is a GTK2 binding for Haskell. It is a rewrite of gtk+hs with a couple
-of improvements:
+Gtk2Hs is a GUI library for  Haskell based on Gtk. Gtk is an extensive and
+mature multi-platform toolkit for creating graphical user interfaces.
 
-  * Automatic memory management.
-  * Nearly complete coverage of widget functions and their signals, including
-    the new text and list widgets.
-  * The convenience wrapper MoGuL (Monad Gui Library) makes it possible to
-    create and lookup named widgets in a type safe way.
-  * Unicode support.
+Gtk2Hs features:
+
+    * Automatic memory management.
+    * Nearly complete coverage of the Gtk+ API.
+    * Unicode support.
+    * Extensive reference documentation.
+    * Support for several related GtK+ and Gnome modules:
+          o the cairo vector graphics library.
+          o rendering of SVG images using cairo (via librsvg)
+          o the Gtk+ OpenGL extension.
+          o GConf for storing application preferences.
+          o SourceView, an editor widget with syntax highlighting.
+          o the Mozilla browser rendering engine in a Gtk+ widget
 
 WWW: http://haskell.org/gtk2hs/
-
--- Oliver Braun
-obraun@FreeBSD.org

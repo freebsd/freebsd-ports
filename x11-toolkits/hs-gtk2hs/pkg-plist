@@ -3,17 +3,19 @@ lib/gtk2hs/HSgconf.o
 lib/gtk2hs/HSglade.o
 lib/gtk2hs/HSglib.o
 lib/gtk2hs/HSgtk.o
-lib/gtk2hs/HSmogul.o
 lib/gtk2hs/HSmozembed.o
+lib/gtk2hs/HSsoegtk.o
 lib/gtk2hs/HSsourceview.o
+lib/gtk2hs/HSsvgcairo.o
 lib/gtk2hs/cairo.package.conf
 lib/gtk2hs/gconf.package.conf
 lib/gtk2hs/glade.package.conf
 lib/gtk2hs/glib.package.conf
 lib/gtk2hs/gtk.package.conf
-lib/gtk2hs/mogul.package.conf
 lib/gtk2hs/mozembed.package.conf
+lib/gtk2hs/soegtk.package.conf
 lib/gtk2hs/sourceview.package.conf
+lib/gtk2hs/svgcairo.package.conf
 lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo.hi
 lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal.hi
 lib/gtk2hs/imports/cairo/Graphics/Rendering/Cairo/Internal/Drawing/Cairo.hi
@@ -150,12 +152,36 @@ lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Misc/HandleBox.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Misc/SizeGroup.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Misc/Tooltips.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Misc/Viewport.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/CellLayout.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/CellRenderer.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/CellRendererCombo.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/CellRendererPixbuf.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/CellRendererProgress.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/CellRendererText.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/CellRendererToggle.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/CellView.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/ComboBox.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/ComboBoxEntry.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/CustomStore.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/EntryCompletion.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/IconView.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/ListStore.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/Sequence.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/TreeModel.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/TreeModelSort.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/TreeSelection.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/TreeStore.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/TreeView.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/TreeViewColumn.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView/Types.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Multiline/TextBuffer.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Multiline/TextIter.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Multiline/TextMark.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Multiline/TextTag.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Multiline/TextTagTable.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Multiline/TextView.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Multiline/Types.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Ornaments/Frame.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Ornaments/HSeparator.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Ornaments/VSeparator.hi
@@ -204,14 +230,9 @@ lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList/TreeViewColumn.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Types.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Windows/AboutDialog.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Windows/Dialog.hi
+lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Windows/MessageDialog.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Windows/Window.hi
 lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Windows/WindowGroup.hi
-lib/gtk2hs/imports/mogul/Graphics/UI/Gtk/Mogul.hi
-lib/gtk2hs/imports/mogul/Graphics/UI/Gtk/Mogul/GetWidget.hi
-lib/gtk2hs/imports/mogul/Graphics/UI/Gtk/Mogul/MDialog.hi
-lib/gtk2hs/imports/mogul/Graphics/UI/Gtk/Mogul/NewWidget.hi
-lib/gtk2hs/imports/mogul/Graphics/UI/Gtk/Mogul/TreeList.hi
-lib/gtk2hs/imports/mogul/Graphics/UI/Gtk/Mogul/WidgetTable.hi
 lib/gtk2hs/imports/mozembed/Graphics/UI/Gtk/MozEmbed.hi
 lib/gtk2hs/imports/mozembed/Graphics/UI/Gtk/MozEmbed/Types.hi
 lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView.hi
@@ -226,15 +247,25 @@ lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceTagStyle.hi
 lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceTagTable.hi
 lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/SourceView.hi
 lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView/Types.hi
+lib/gtk2hs/imports/svgcairo/Graphics/Rendering/Cairo/SVG.hi
+lib/gtk2hs/imports/soegtk/Graphics/SOE/Gtk.hi
 lib/gtk2hs/include/gtk2hs-config.h
 lib/gtk2hs/libHScairo.a
 lib/gtk2hs/libHSgconf.a
 lib/gtk2hs/libHSglade.a
 lib/gtk2hs/libHSglib.a
 lib/gtk2hs/libHSgtk.a
-lib/gtk2hs/libHSmogul.a
 lib/gtk2hs/libHSmozembed.a
+lib/gtk2hs/libHSsoegtk.a
 lib/gtk2hs/libHSsourceview.a
+lib/gtk2hs/libHSsvgcairo.a
+@dirrm lib/gtk2hs/imports/svgcairo/Graphics/Rendering/Cairo
+@dirrm lib/gtk2hs/imports/svgcairo/Graphics/Rendering
+@dirrm lib/gtk2hs/imports/svgcairo/Graphics
+@dirrm lib/gtk2hs/imports/svgcairo
+@dirrm lib/gtk2hs/imports/soegtk/Graphics/SOE
+@dirrm lib/gtk2hs/imports/soegtk/Graphics
+@dirrm lib/gtk2hs/imports/soegtk
 @dirrm lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk/SourceView
 @dirrm lib/gtk2hs/imports/sourceview/Graphics/UI/Gtk
 @dirrm lib/gtk2hs/imports/sourceview/Graphics/UI
@@ -245,11 +276,6 @@ lib/gtk2hs/libHSsourceview.a
 @dirrm lib/gtk2hs/imports/mozembed/Graphics/UI
 @dirrm lib/gtk2hs/imports/mozembed/Graphics
 @dirrm lib/gtk2hs/imports/mozembed
-@dirrm lib/gtk2hs/imports/mogul/Graphics/UI/Gtk/Mogul
-@dirrm lib/gtk2hs/imports/mogul/Graphics/UI/Gtk
-@dirrm lib/gtk2hs/imports/mogul/Graphics/UI
-@dirrm lib/gtk2hs/imports/mogul/Graphics
-@dirrm lib/gtk2hs/imports/mogul
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Windows
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/TreeList
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Selectors
@@ -257,6 +283,7 @@ lib/gtk2hs/libHSsourceview.a
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Pango
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Ornaments
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Multiline
+@dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/ModelView
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Misc
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/MenuComboToolbar
 @dirrm lib/gtk2hs/imports/gtk/Graphics/UI/Gtk/Layout
