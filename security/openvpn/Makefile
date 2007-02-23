@@ -7,13 +7,13 @@
 
 PORTNAME=	openvpn
 # -----------------------------------------------------
-# DO NOT BOTHER TO SEND NOTICES ABOUT 2.0.8 AS IT FIXES
+# DO NOT BOTHER TO SEND NOTICES ABOUT 2.0.9 AS IT FIXES
 # WINDOWS-ONLY BUGS THAT DON'T AFFECT *BSD AND THUS
 # DOES NOT WARRANT A PORT UPGRADE! AND UPGRADE REQUESTS
-# WILL BE DROPPED.       -- Matthias Andree, 2006-10-01
+# WILL BE DROPPED.
 # -----------------------------------------------------
 PORTVERSION=	2.0.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security net
 # MASTER_SITES points to hosts in distinct data centers,
 # so just one MASTER_SITES entry should be OK.
