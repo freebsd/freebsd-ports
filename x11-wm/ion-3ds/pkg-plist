@@ -4,6 +4,7 @@ etc/ion3/cfg_dock.lua
 etc/ion3/cfg_ion.lua
 etc/ion3/cfg_ioncore.lua
 etc/ion3/cfg_kludges.lua
+etc/ion3/cfg_layouts.lua
 etc/ion3/cfg_menu.lua
 etc/ion3/cfg_modules.lua
 etc/ion3/cfg_pwm.lua

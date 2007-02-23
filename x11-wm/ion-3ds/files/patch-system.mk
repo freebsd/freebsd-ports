@@ -1,5 +1,5 @@
---- system.mk.orig	Thu Nov  2 20:15:51 2006
-+++ system.mk	Thu Nov  2 20:40:45 2006
+--- system.mk.orig	Tue Feb 20 21:06:40 2007
++++ system.mk	Tue Feb 20 21:14:47 2007
 @@ -7,7 +7,7 @@
  ## Installation paths
  ##
@@ -53,26 +53,16 @@
  # SunOS/Solaris
  #X11_PREFIX=/usr/openwin
  
-@@ -82,8 +82,8 @@
- X11_INCLUDES=-I$(X11_PREFIX)/include
+@@ -84,7 +84,7 @@
+ # XFree86 libraries up to 4.3.0 have a bug that will cause Ion to segfault
+ # if Opera is used when i18n support is enabled. The following setting
+ # should work around that situation.
+-DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WORKAROUND
++#DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WORKAROUND
  
- # Change commenting to disable Xinerama support
--XINERAMA_LIBS=-lXinerama
--DEFINES += -DCF_XINERAMA
-+#XINERAMA_LIBS=-lXinerama
-+#DEFINES += -DCF_XINERAMA
- # For Solaris
- #XINERAMA_LIBS=
- #DEFINES += -DCF_SUN_XINERAMA
-@@ -101,7 +101,6 @@
- # on SunOS.
- #DEFINES += -DCF_SUN_F1X_REMAP
- 
--
- ##
- ## libc
- ##
-@@ -110,7 +109,7 @@
+ # Use the Xutf8 routines (XFree86 extension) instead of Xmb routines in
+ # an UTF8 locale.
+@@ -103,7 +103,7 @@
  # asprintf and vasprintf in the c library. (gnu libc has.)
  # If HAS_SYSTEM_ASPRINTF is not defined, an implementation
  # in sprintf_2.2/ is used.
@@ -81,7 +71,7 @@
  
  
  # If you're on an archaic system (such as relatively recent *BSD releases)
-@@ -119,24 +118,24 @@
+@@ -112,24 +112,24 @@
  #DEFINES += -DCF_NO_LOCALE
  
  # On some other systems you may something like this:
@@ -112,7 +102,7 @@
  EXPORT_DYNAMIC=-Xlinker --export-dynamic
  
  # The following options are mainly for development use and can be used
-@@ -150,7 +149,7 @@
+@@ -143,7 +143,7 @@
  #POSIX_SOURCE=-D_POSIX_SOURCE
  
  # Most systems
