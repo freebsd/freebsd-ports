@@ -195,6 +195,7 @@ qtconfig_DEPENDS=	devel/qtconfig
 qtestlib_DEPENDS=	devel/qt4-qtestlib
 qvfb_DEPENDS=		devel/qt4-qvfb
 rcc_DEPENDS=		devel/qt4-rcc
+sql_DEPENDS=		databases/qt4-sql
 svg_DEPENDS=		graphics/qt4-svg
 uic_DEPENDS=		devel/qt4-uic
 uic3_DEPENDS=		devel/qt4-uic3
@@ -213,8 +214,8 @@ IGNORE= cannot install: unknown Qt4 component -- ${ext}
 .endif
 .endfor
 .else
-BUILD_DEPENDS=		qt4>=${QT4_VERSION}:${PORTSDIR}/devel/qt4
-RUN_DEPENDS=		qt4>=${QT4_VERSION}:${PORTSDIR}/devel/qt4
+BUILD_DEPENDS+=		qt4>=${QT4_VERSION}:${PORTSDIR}/devel/qt4
+RUN_DEPENDS+=		qt4>=${QT4_VERSION}:${PORTSDIR}/devel/qt4
 .endif
 
 .else
