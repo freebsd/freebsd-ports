@@ -180,6 +180,7 @@
     SUBDIR += httprint
     SUBDIR += hunch
     SUBDIR += hydra
+    SUBDIR += iaikpkcs11wrapper
     SUBDIR += idea
     SUBDIR += ident2
     SUBDIR += identify
