@@ -479,7 +479,7 @@ USE_GNOME+=	gtk20
 
 # speex
 .if ${GST_PLUGIN}=="speex"
-LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex
+LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
 .endif
 
 # swfdec

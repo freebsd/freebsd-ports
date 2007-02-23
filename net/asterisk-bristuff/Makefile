@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.2.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
@@ -24,7 +24,7 @@ MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
 
 BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
-LIB_DEPENDS=	speex.3:${PORTSDIR}/audio/speex \
+LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		newt.51:${PORTSDIR}/devel/newt \
 		curl.4:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123

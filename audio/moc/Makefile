@@ -7,6 +7,7 @@
 
 PORTNAME=	moc
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.daper.net/pub/soft/moc/stable/
 
@@ -97,7 +98,7 @@ CONFIGURE_ARGS+=	--without-sndfile
 .endif
 
 .if defined(WITH_SPEEX)
-LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex
+LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
 PLIST_FILES+=	lib/moc/decoder_plugins/libspeex_decoder.la \
 		lib/moc/decoder_plugins/libspeex_decoder.so
 .else

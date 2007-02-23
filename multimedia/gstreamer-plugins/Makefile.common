@@ -317,7 +317,7 @@ gst_spc_LIB_DEPENDS+=	OpenSPC.3:${PORTSDIR}/audio/openspc
 gst_spc_DIST=		bad
 
 # speex
-gst_speex_LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex
+gst_speex_LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
 
 # swfdec
 gst_swfdec_LIB_DEPENDS+=swfdec-0.3.0:${PORTSDIR}/graphics/swfdec

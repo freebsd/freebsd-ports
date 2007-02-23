@@ -10,6 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.8.6a
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
@@ -494,7 +495,7 @@ CONFIGURE_ARGS+=--disable-slp
 .endif
 
 .if !defined(WITHOUT_SPEEX)
-LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex
+LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
 CONFIGURE_ARGS+=--enable-speex
 CPPFLAGS+=-I${LOCALBASE}/include/speex
 .else

@@ -7,7 +7,7 @@
 
 PORTNAME=	openh323
 PORTVERSION=	1.18.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.voxgratia.org/releases/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}-src-
@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=	--enable-rfc2190avcodec=${LOCALBASE}/include/ffmpeg
 .endif
 
 .ifdef (WITH_SPEEX)
-LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex
+LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
 CONFIGURE_ARGS+=	--enable-localspeex=no
 .else
 CONFIGURE_ARGS+=	--enable-localspeex=yes

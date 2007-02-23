@@ -7,7 +7,7 @@
 
 PORTNAME=	alephone
 PORTVERSION=	20061202
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	marathon
@@ -17,7 +17,7 @@ MAINTAINER=	ray@cultofray.net
 COMMENT=	The open source version of Bungie's Marathon game
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost
-LIB_DEPENDS=	speex.3:${PORTSDIR}/audio/speex
+LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

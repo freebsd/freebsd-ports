@@ -7,7 +7,7 @@
 
 PORTNAME=	libjingle
 PORTVERSION=	0.3.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ COMMENT=	Google Talk's implementation of Jingle and Jingle-Audio
 BUILD_DEPENDS=	\
 		pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	\
-		speex.3:${PORTSDIR}/audio/speex \
+		speex.1:${PORTSDIR}/audio/speex \
 		ilbc.0:${PORTSDIR}/net/ilbc \
 		ortp.5:${PORTSDIR}/net/ortp \
 		expat.6:${PORTSDIR}/textproc/expat2

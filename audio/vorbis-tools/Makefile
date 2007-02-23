@@ -7,7 +7,7 @@
 
 PORTNAME=	vorbis-tools
 PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/vorbis/
@@ -18,7 +18,7 @@ COMMENT=	Play, encode, and manage Ogg Vorbis files
 LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 		curl.4:${PORTSDIR}/ftp/curl \
 		FLAC.7:${PORTSDIR}/audio/flac \
-		speex.3:${PORTSDIR}/audio/speex \
+		speex.1:${PORTSDIR}/audio/speex \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_GETTEXT=	yes
