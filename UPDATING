@@ -368,7 +368,7 @@ upgrades.
   AFFECTS: users of net/samba3
   AUTHOR: timur@gnu.org
 
-  Version 3.0.23d of net/samba3 finally got ability to conditionaly
+  Version 3.0.23d of net/samba3 finally got ability to conditionally
   link smbd daemon against FAM libraries. If you don't need this
   support make sure that it's not selected in the options menu -
   run 'make config' to verify it. You can remove FAM package if it
@@ -495,7 +495,7 @@ upgrades.
   AFFECTS: Users of mail/dovecot
   AUTHOR: shaun@FreeBSD.org
 
-  Dovecot now requires the mail root to be set explicitly in the the
+  Dovecot now requires the mail root to be set explicitly in the
   default_mail_env variable, where it could previously be omitted.
   Using the old-style syntax may result in dovecot being unable to find
   mailboxes. Installations using the example/default configuration
