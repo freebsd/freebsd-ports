@@ -20,7 +20,7 @@ diff -urN ../fvwm95-2.0.43a-Autoconf.orig/modules/FvwmAudio/Makefile.in ./module
  EXTRA_DEFINES=-DXPM -DSHAPE
  CC=@CC@
 -INCLUDES=-I${top_srcdir}/include ${x_includes}
-+INCLUDES=-I${top_srcdir}/include ${x_includes} ${includedir}
++INCLUDES=-I${top_srcdir}/include ${x_includes} -I${includedir}
  CFLAGS=${INCLUDES} @CFLAGS@ ${EXTRA_DEFINES} 
  MAKEDEPEND=@MAKEDEPEND@
  INSTALL=@INSTALL@
