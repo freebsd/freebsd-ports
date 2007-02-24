@@ -2435,6 +2435,7 @@ esmtp		ports/mail/esmtp
 esniper		ports/misc/esniper
 esound		ports/audio/esound
 espeak		ports/audio/espeak
+esperanza	ports/audio/esperanza
 est		ports/sysutils/est
 estctrl		ports/sysutils/estctrl
 estic		ports/misc/estic
