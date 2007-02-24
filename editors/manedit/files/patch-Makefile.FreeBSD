@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- Makefile.FreeBSD.orig	Wed Mar 13 00:02:34 2002
 +++ Makefile.FreeBSD	Tue Jul  2 14:48:15 2002
 @@ -52,7 +52,7 @@
