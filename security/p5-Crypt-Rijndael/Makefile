@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	skreuzer@f2o.org
 COMMENT=	Perl module that implements the Rijndael cipher
 
 PERL_CONFIGURE=	yes
