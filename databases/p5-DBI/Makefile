@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBI
-PORTVERSION=	1.53
+PORTVERSION=	1.54
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBI
@@ -30,6 +30,16 @@ MAN1=		dbiprof.1 \
 MAN3=		Bundle::DBI.3 \
 		DBD::DBM.3 \
 		DBD::File.3 \
+		DBD::Gofer.3 \
+		DBD::Gofer::Policy::Base.3 \
+		DBD::Gofer::Policy::classic.3 \
+		DBD::Gofer::Policy::pedantic.3 \
+		DBD::Gofer::Policy::rush.3 \
+		DBD::Gofer::Transport::Base.3 \
+		DBD::Gofer::Transport::http.3 \
+		DBD::Gofer::Transport::null.3 \
+		DBD::Gofer::Transport::pipeone.3 \
+		DBD::Gofer::Transport::stream.3 \
 		DBD::Proxy.3 \
 		DBD::Sponge.3 \
 		DBI.3 \
@@ -40,6 +50,13 @@ MAN3=		Bundle::DBI.3 \
 		DBI::DBD.3 \
 		DBI::DBD::Metadata.3 \
 		DBI::FAQ.3 \
+		DBI::Gofer::Execute.3 \
+		DBI::Gofer::Request.3 \
+		DBI::Gofer::Response.3 \
+		DBI::Gofer::Transport::Base.3 \
+		DBI::Gofer::Transport::mod_perl.3 \
+		DBI::Gofer::Transport::pipeone.3 \
+		DBI::Gofer::Transport::stream.3 \
 		DBI::Profile.3 \
 		DBI::ProfileData.3 \
 		DBI::ProfileDumper.3 \
@@ -73,6 +90,12 @@ post-install:
 
 .if ${PERL_LEVEL} < 500600
 IGNORE=		requires newer Perl, but you can use databases/p5-DBI-137 instead
+.endif
+.if ${PERL_LEVEL} < 500800
+EXTRA_DEPENDS=	p5-Time-HiRes>0:${PORTSDIR}/devel/p5-Time-HiRes \
+		p5-Scalar-List-Utils>0:${PORTSDIR}/lang/p5-Scalar-List-Utils
+BUILD_DEPENDS+=	${EXTRA_DEPENDS}
+RUN_DEPENDS+=	${EXTRA_DEPENDS}
 .endif
 
 .include <bsd.port.post.mk>
