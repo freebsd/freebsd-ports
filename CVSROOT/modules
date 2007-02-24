@@ -10110,6 +10110,7 @@ p5-PDFLib	ports/print/p5-PDFLib
 p5-PFProAPI	ports/finance/p5-PFProAPI
 p5-PGP		ports/security/p5-PGP
 p5-PGP-Sign	ports/security/p5-PGP-Sign
+p5-PHP-Serialization	ports/devel/p5-PHP-Serialization
 p5-PHP-Session	ports/www/p5-PHP-Session
 p5-PLP		ports/www/p5-PLP
 p5-POE		ports/devel/p5-POE
