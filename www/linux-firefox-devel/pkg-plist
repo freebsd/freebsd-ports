@@ -70,7 +70,6 @@ lib/%%APP_NAME%%/defaults/profile/chrome/userContent-example.css
 lib/%%APP_NAME%%/defaults/profile/localstore.rdf
 lib/%%APP_NAME%%/defaults/profile/mimeTypes.rdf
 lib/%%APP_NAME%%/defaults/profile/prefs.js
-lib/%%APP_NAME%%/defaults/profile/search.rdf
 lib/%%APP_NAME%%/dictionaries/en-US.aff
 lib/%%APP_NAME%%/dictionaries/en-US.dic
 lib/%%APP_NAME%%/extensions/inspector@mozilla.org/chrome.manifest
@@ -79,10 +78,8 @@ lib/%%APP_NAME%%/extensions/inspector@mozilla.org/components/inspector-cmdline.j
 lib/%%APP_NAME%%/extensions/inspector@mozilla.org/defaults/preferences/inspector.js
 lib/%%APP_NAME%%/extensions/inspector@mozilla.org/install.rdf
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/chrome.manifest
-lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/libqfaservices.so
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/qfaservices.xpt
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/XTalkback.ad
-lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/master.ini
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/talkback
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/talkback.so
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/install.rdf
@@ -124,6 +121,7 @@ lib/%%APP_NAME%%/res/charsetalias.properties
 lib/%%APP_NAME%%/res/cmessage.txt
 lib/%%APP_NAME%%/res/dtd/mathml.dtd
 lib/%%APP_NAME%%/res/dtd/xhtml11.dtd
+lib/%%APP_NAME%%/res/effective_tld_names.dat
 lib/%%APP_NAME%%/res/entityTables/html40Latin1.properties
 lib/%%APP_NAME%%/res/entityTables/html40Special.properties
 lib/%%APP_NAME%%/res/entityTables/html40Symbols.properties
