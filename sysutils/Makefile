@@ -403,6 +403,7 @@
     SUBDIR += namefix
     SUBDIR += nautilus-cd-burner
     SUBDIR += nbosd
+    SUBDIR += ncdu
     SUBDIR += nctop
     SUBDIR += ndir
     SUBDIR += netdump-server
