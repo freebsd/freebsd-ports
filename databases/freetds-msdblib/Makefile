@@ -7,7 +7,7 @@
 
 PKGNAMESUFFIX=	-msdblib
 
-MAINTAINER=	kiesel@schlund.de
+MAINTAINER=	ports@FreeBSD.org
 
 WITH_MSDBLIB=	yes
 
