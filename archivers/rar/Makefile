@@ -7,6 +7,7 @@
 
 PORTNAME=	rar
 PORTVERSION=	3.70b1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://files.rarlab.com/rar/ \
@@ -19,7 +20,6 @@ COMMENT=	File archiver (binary port)
 IA32_BINARY_PORT=	YES
 RESTRICTED=	only unmodified original package can be distributed
 NO_BUILD=	yes
-STRIP=
 WRKSRC=		${WRKDIR}/rar
 PLIST_FILES=	bin/rar lib/default.sfx etc/rarfiles.lst man/cat1/rar.1
 PORTDOCS=	technote.txt license.txt whatsnew.txt order.htm \
@@ -27,12 +27,10 @@ PORTDOCS=	technote.txt license.txt whatsnew.txt order.htm \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 503000
-IGNORE=	is unsupported on versions prior to FreeBSD 5.3
-.endif
-
-.if ${OSVERSION} >= 600000
-LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
+# Does not run on < 5.3 and would require compat6x for -CURRENT,
+# which does not exist yet
+.if (${OSVERSION} < 503000) || (${OSVERSION} >= 700000)
+IGNORE=	does not run on this FreeBSD version
 .endif
 
 do-install:
