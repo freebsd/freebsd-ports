@@ -12521,6 +12521,7 @@ py-paida	ports/science/py-paida
 py-paint	ports/graphics/py-paint
 py-papi		ports/accessibility/py-papi
 py-paramiko	ports/security/py-paramiko
+py-parsedatetime	ports/devel/py-parsedatetime
 py-parsing	ports/devel/py-parsing
 py-paste	ports/www/py-paste
 py-pastedeploy	ports/www/py-pastedeploy
