@@ -111,6 +111,7 @@ lib/%%APP_NAME%%/libxpcom_compat.so
 lib/%%APP_NAME%%/libxpcom_core.so
 lib/%%APP_NAME%%/libxpistub.so
 lib/%%APP_NAME%%/mozilla-xremote-client
+lib/%%APP_NAME%%/old-homepage-default.properties
 lib/%%APP_NAME%%/plugins/libnullplugin.so
 lib/%%APP_NAME%%/readme.txt
 lib/%%APP_NAME%%/removed-files
