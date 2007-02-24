@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	gtk2hs
-PORTVERSION=	0.9.10.6
+PORTVERSION=	0.9.11
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits haskell
-MASTER_SITES=	http://haskell.org/gtk2hs/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -19,7 +20,7 @@ BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		${LOCALBASE}/lib/mozilla/libxpcom.so:${PORTSDIR}/www/mozilla
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_GNOME=	gtk20 libglade2 gtksourceview gconf2
+USE_GNOME=	gtk20 libglade2 gtksourceview gconf2 librsvg2
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 SUB_FILES=	pkg-install
@@ -31,6 +32,6 @@ SUB_LIST+=	GHC_VERSION="${GHC_VERSION}" \
 		PORTVERSION=${PORTVERSION} \
 		PKGS="${PKGS}"
 
-PKGS=		cairo glib gtk glade gconf sourceview mozembed soegtk svgcairo
+PKGS=		glib cairo gtk glade gconf sourceview mozembed soegtk svgcairo
 
 .include <bsd.port.mk>
