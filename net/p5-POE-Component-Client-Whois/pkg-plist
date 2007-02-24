@@ -1,0 +1,13 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/Whois/.packlist
+%%SITE_PERL%%/POE/Component/Client/Whois.pm
+%%SITE_PERL%%/POE/Component/Client/Whois/IPBlks.pm
+%%SITE_PERL%%/POE/Component/Client/Whois/TLDList.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/Whois
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
+@dirrm %%SITE_PERL%%/POE/Component/Client/Whois
+@dirrmtry %%SITE_PERL%%/POE/Component/Client
+@dirrmtry %%SITE_PERL%%/POE/Component
+@dirrmtry %%SITE_PERL%%/POE

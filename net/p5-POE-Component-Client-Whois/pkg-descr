@@ -1,0 +1,9 @@
+POE::Component::Client::Whois provides a lightweight one shot non-blocking
+RFC 812 WHOIS query to other POE sessions and components. The component will
+attempt to guess the appropriate whois server to connect to based on the
+query string passed.
+
+If no guess can be made it will connect to whois.internic.net for domains,
+whois.arin.net for IPv4 addresses and whois.6bone.net for IPv6 addresses.
+
+WWW:	http://search.cpan.org/dist/POE-Component-Client-Whois/

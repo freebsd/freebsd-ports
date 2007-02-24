@@ -517,6 +517,7 @@
     SUBDIR += p5-POE-Component-Client-Ping
     SUBDIR += p5-POE-Component-Client-Telnet
     SUBDIR += p5-POE-Component-Client-Traceroute
+    SUBDIR += p5-POE-Component-Client-Whois
     SUBDIR += p5-POE-Component-ControlPort
     SUBDIR += p5-POE-Component-Generic
     SUBDIR += p5-POE-Component-Jabber
