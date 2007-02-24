@@ -5,11 +5,7 @@ bin/intltool-update
 bin/intltoolize
 share/aclocal/intltool.m4
 %%DATADIR%%/Makefile.in.in
-%%DATADIR%%/XML/Parser/Style/OrigTree.pm
 %%DATADIR%%/intltool-extract.in
 %%DATADIR%%/intltool-merge.in
 %%DATADIR%%/intltool-update.in
-@dirrm %%DATADIR%%/XML/Parser/Style
-@dirrm %%DATADIR%%/XML/Parser
-@dirrm %%DATADIR%%/XML
 @dirrm %%DATADIR%%
