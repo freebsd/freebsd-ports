@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libmatroska
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://dl.matroska.org/downloads/libmatroska/ \
-		http://www.bunkus.org/videotools/mkvtoolnix/sources/old/
+		http://www.bunkus.org/videotools/mkvtoolnix/sources/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Extensible Multimedia Container Format
@@ -20,14 +20,10 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 BUILD_WRKSRC=	${WRKSRC}/make/linux
 INSTALL_WRKSRC=	${WRKSRC}/make/linux
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 # Installs dir with proper permissions
 INSTALL_DATA_DIR=	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755
-
-PLIST_FILES+=	\
-		lib/libmatroska.so \
-		lib/libmatroska.so.0
 
 post-patch:
 # XXX - revise at every port update
@@ -46,13 +42,8 @@ do-configure:
 			s|^(INSTALL)[[:space:]]*=.*$$|\1=|; \
 			s|^(INSTALL_DIR_OPTS)[[:space:]]*=.*$$|\1=${INSTALL_DATA_DIR}|; \
 			s,^(INSTALL_OPTS_LIB|INSTALL_OPTS)[[:space:]]*=.*$$,\1=${INSTALL_DATA},; \
+			/install:/s|install_staticlib||;/all:/s|staticlib||; \
 			s,(-lebml)$$,-L${LOCALBASE}/lib \1,' \
 		${WRKSRC}/make/linux/Makefile
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-CFLAGS+= -DNO_WSTRING -idirafter -I${LOCALBASE}/include
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
