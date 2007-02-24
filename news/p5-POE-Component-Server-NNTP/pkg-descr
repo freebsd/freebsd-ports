@@ -1,0 +1,14 @@
+POE::Component::Server::NNTP is a POE component that implements an RFC 977
+http://www.faqs.org/rfcs/rfc977.html NNTP server. It is the companion component
+to POE::Component::Client::NNTP which implements NNTP client functionality.
+
+You spawn an NNTP server component, create your POE sessions then register
+your session to receive events. Whenever clients connect, disconnect or send
+valid NNTP protocol commands you will receive an event and an unique client ID.
+You then parse and process the commands given and send back applicable NNTP
+responses.
+
+This component doesn't implement the news database and as such is not by itself
+a complete NNTP daemon implementation.
+
+WWW:	http://search.cpan.org/dist/POE-Component-Server-NNTP/
