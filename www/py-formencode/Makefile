@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	formencode
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	www python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/F/FormEncode/ \
+		${MASTER_SITE_LOCAL} \
 		http://dryice.name/computer/FreeBSD/distfiles/
+MASTER_SITE_SUBDIR=	dryice
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	FormEncode-${PORTVERSION}
 
@@ -22,6 +23,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+USE_GETTEXT=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESSDIR=	${PREFIX}/share/examples/py-${PORTNAME}
