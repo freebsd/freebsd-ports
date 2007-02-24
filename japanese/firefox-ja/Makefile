@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${FIREFOX}:${PORTSDIR}/www/firefox
 RUN_DEPENDS=	${FIREFOX}:${PORTSDIR}/www/firefox
 
 BROKEN=		Incomplete pkg-plist
+FORBIDDEN=	http://vuxml.FreeBSD.org/12bd6ecf-c430-11db-95c5-000c6ec775d9.html
 DEPRECATED=	${BROKEN}
 EXPIRATION_DATE=2007-04-10
 
