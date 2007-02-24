@@ -76,13 +76,13 @@ Note:  Please add new entries to the beginning of this file.
 	  privilege of the user running the program.</p>
 	<blockquote cite="http://www.mozilla.org/projects/security/known-vulnerabilities.html#firefox2.0.0.2">
 	  <ul>
-            <li>MFSA 2007-07 Embedded nulls in location.hostname confuse same-domain checks</li>
-            <li>MFSA 2007-06 Mozilla Network Security Services (NSS) SSLv2 buffer overflow</li>
-            <li>MFSA 2007-05 XSS and local file access by opening blocked popups</li>
-            <li>MFSA 2007-04 Spoofing using custom cursor and CSS3 hotspot</li>
-            <li>MFSA 2007-03 Information disclosure through cache collisions</li>
-            <li>MFSA 2007-02 Improvements to help protect against Cross-Site Scripting attacks</li>
-            <li>MFSA 2007-01 Crashes with evidence of memory corruption (rv:1.8.0.10/1.8.1.2)</li>
+	    <li>MFSA 2007-07 Embedded nulls in location.hostname confuse same-domain checks</li>
+	    <li>MFSA 2007-06 Mozilla Network Security Services (NSS) SSLv2 buffer overflow</li>
+	    <li>MFSA 2007-05 XSS and local file access by opening blocked popups</li>
+	    <li>MFSA 2007-04 Spoofing using custom cursor and CSS3 hotspot</li>
+	    <li>MFSA 2007-03 Information disclosure through cache collisions</li>
+	    <li>MFSA 2007-02 Improvements to help protect against Cross-Site Scripting attacks</li>
+	    <li>MFSA 2007-01 Crashes with evidence of memory corruption (rv:1.8.0.10/1.8.1.2)</li>
 	  </ul>
 	</blockquote>
       </body>
