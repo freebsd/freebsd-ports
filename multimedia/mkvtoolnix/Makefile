@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ CSME
 
@@ -55,15 +55,8 @@ IMAGES_DATA=	\
 		textsubtitlestrackoptions.gif \
 		trackselection.gif \
 		videotrackoptions.gif
-PLIST_DIRS+=	\
-		%%DATADIR%%/images \
-		%%DATADIR%%
-.for _file in ${FILES_DATA}
-PLIST_FILES+=	%%DATADIR%%/${_file}
-.endfor
-.for _file in ${IMAGES_DATA}
-PLIST_FILES+=	%%DATADIR%%/images/${_file}
-.endfor
+PLIST_FILES+=	${FILES_DATA:S|^|%%DATADIR%%/|} ${IMAGES_DATA:S|^|%%DATADIR%%/images/|}
+PLIST_DIRS+=	%%DATADIR%%/images %%DATADIR%%
 
 .ifndef(WITHOUT_WXGTK)
 USE_WX=		yes
@@ -71,13 +64,6 @@ WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
 MAN1+=		mmg.1
 PLIST_FILES+=	bin/mmg
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD 4.x
-CFLAGS+=	-DNO_WSTRING
 .endif
 
 pre-configure::
@@ -88,10 +74,7 @@ pre-configure::
 	@${ECHO_MSG} "===>"
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|function check_version|check_version ()|' ${WRKSRC}/configure
-
 pre-install:
 	@${INSTALL} -d ${DATADIR}/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
