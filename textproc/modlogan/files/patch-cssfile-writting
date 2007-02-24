@@ -1,0 +1,69 @@
+Index: src/output/modlogan/generate.c
+===================================================================
+RCS file: /cvsroot/modlogan/modlogan/src/output/modlogan/generate.c,v
+retrieving revision 1.100
+diff -u -u -r1.100 generate.c
+--- src/output/modlogan/generate.c	27 Aug 2004 18:41:37 -0000	1.100
++++ src/output/modlogan/generate.c	12 Aug 2006 21:33:45 -0000
+@@ -515,7 +515,7 @@
+ 				t2 = sl->data->data.brokenlink.timestamp;
+ 
+ 				if ((t2 - t1) >= 60) {
+-					snprintf(str, sizeof(str)-1, "%5ld %s", (t2 - t1) / 60, _("min"));
++					snprintf(str, sizeof(str)-1, "%5ld %s", (t2 - t1) / 60L, _("min"));
+ 				} else {
+ 					snprintf(str, sizeof(str)-1, " < 1 %s", _("min"));
+ 				}
+@@ -1366,23 +1366,44 @@
+ 			strerror(errno));
+ 		return -1;
+ 	}
++	fclose(f2);	/* we don't use it below, so I assume it is used to
++			 * check if it is there... maybe it was used to copy
++			 * by hand in a previous version */
+ 
+ 	/* build destination filename */
+ 	filename = (char *)malloc(strlen(conf->outputdir) + strlen("/modlogan.css") + 1);
+ 	if (!filename) return -1;
+ 	sprintf(filename, "%s/modlogan.css", conf->outputdir);
+ 
+-	(void)unlink(filename);
+-	ret = symlink(conf->cssfile, filename);
+-	free(filename);
++	if (strcmp("modlogan.css", conf->cssfile) == 0 ||
++	    strcmp(filename, conf->cssfile) == 0) {
++		fprintf(stderr, "CSS-definition points to itself (%s -> %s), please change the 'cssfile' config option\n",
++			filename,
++			conf->cssfile);
+ 
+-	if (ret != 0) {
+-		fprintf(stderr, "writing CSS-definition for %s failed: %s\n",
+-			conf->outputdir,
++		/* cleanup */
++		free(filename);
++
++		return -1;
++	}
++
++	ret = unlink(filename);
++	if(ret == 0 || (ret == -1 && errno == ENOENT)) {
++		/* If no error occured or the file didn't existed: link it. */
++
++		ret = symlink(conf->cssfile, filename);
++		if (ret != 0) {
++			fprintf(stderr, "writing CSS-definition for %s failed: %s\n",
++				conf->outputdir,
++				strerror(errno));
++		}
++	} else {
++		fprintf(stderr, "unlinking CSS-definition %s failed: %s\n",
++			filename,
+ 			strerror(errno));
+ 	}
+-	/* Close the css source file */
+-	fclose(f2);
++
++	free(filename);
+ 
+ 	return 0;
+ }
