@@ -1758,6 +1758,7 @@
     SUBDIR += py-durus
     SUBDIR += py-elementtree
     SUBDIR += py-epsilon
+    SUBDIR += py-event
     SUBDIR += py-ezpyinline
     SUBDIR += py-fam
     SUBDIR += py-fileutils
