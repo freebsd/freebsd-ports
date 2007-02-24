@@ -7,6 +7,7 @@
 
 PORTNAME=	fvwm95-i18n
 PORTVERSION=	2.0.43a
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fvwm95
@@ -38,7 +39,7 @@ MAN1=	fvwm95.1 xpmroot.1 FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 \
 	FvwmSave.1 FvwmSaveDesk.1 FvwmScroll.1 FvwmTalk.1 FvwmTaskBar.1 \
 	FvwmWinList.1
 
-SAMPLEDIR=	${PREFIX}/share/examples/fvwm95
+EXAMPLESDIR=	${PREFIX}/share/examples/fvwm95
 KITDIR=		${WRKDIR}/${PKGNAME}-portKit
 
 OPTIONS=	APM "Build APM support (i386 only)" off
@@ -64,10 +65,8 @@ post-patch:
 
 post-install:
 	@(cd ${WRKSRC} ; ${MAKE} install.man)
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${SAMPLEDIR}
-	@${INSTALL_DATA} ${WRKSRC}/example.fvwm95rc  ${SAMPLEDIR}
-.endif
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/example.fvwm95rc  ${EXAMPLESDIR}
 	@${MKDIR} ${PREFIX}/lib/X11/fvwm95/ja_JP.EUC
 	@${INSTALL_DATA} ${KITDIR}/system.fvwm95rc.jp \
 		${PREFIX}/lib/X11/fvwm95/ja_JP.EUC/system.fvwm95rc
