@@ -7,6 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk15.html
@@ -30,6 +31,7 @@ WITHOUT_WEB=	yes
 OPTIONS+=	WEB	"Enable the browser plugin and Java Web Start"	on
 .endif
 OPTIONS+=	POLICY	"Install the Unlimited Strength Policy Files"	off \
+		TZUPDATE "Update the time zone data"			on \
 		JAIL	"Port is being built within a jail"		off
 
 WANT_GNOME=	yes
@@ -48,10 +50,14 @@ SCSL_SRCFILE=	jdk-${JDK_VERSION:S/./_/g}-src-scsl.zip
 SCSL_BINFILE=	jdk-${JDK_VERSION:S/./_/g}-bin-scsl.zip
 PATCHSETFILE=	bsd-jdk15-patches-${JDK_PATCHSET_VERSION}.tar.bz2
 POLICYFILE=	jce_policy-${JDK_VERSION:S/./_/g}.zip
+TZUPDATEFILE=	tzupdater-${TZUPDATE_VERSION:S/./_/g}.zip
 
 JDK_VERSION=	1.5.0
 JDK_PATCHSET_VERSION=	4
 LATEST_LINK=	jdk15
+
+TZUPDATE_VERSION=	1.0.1
+TZUPDATE_TZVERSION=	2007a
 
 SUN_LINUX_JDK_VERSION=	1.4.2
 
@@ -72,6 +78,11 @@ CATEGORIES+=	ipv6
 .if defined(WITH_POLICY)
 DISTFILES+=	${POLICYFILE}
 EXTRACT_ONLY+=	${POLICYFILE}
+.endif
+
+.if defined(WITH_TZUPDATE)
+DISTFILES+=	${TZUPDATEFILE}
+EXTRACT_ONLY+=	${TZUPDATEFILE}
 .endif
 
 # do we have valid native jdk installed?
@@ -164,7 +175,7 @@ X11_FILES=	../../j2se/src/share/classes/com/sun/java/swing/plaf/gtk/GTKLookAndFe
 		../../j2se/src/solaris/native/sun/awt/fontpath.c
 
 # Check for JDK sources and patch file
-.if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${SCSL_SRCFILE}) || !exists(${DISTDIR}/${SCSL_BINFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
+.if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${SCSL_SRCFILE}) || !exists(${DISTDIR}/${SCSL_BINFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})) || (defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
 ECHO_MSG=/usr/bin/printf
 IGNORE=	:\n\
 Due to licensing restrictions, certain files must be fetched manually.\n\n
@@ -184,22 +195,20 @@ IGNORE += and the\n
 IGNORE += SCSL Binaries file, ${SCSL_BINFILE}
 .endif#}
 IGNORE += .\n\n
-.if !exists(${DISTDIR}/${PATCHSETFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE}))#{
-IGNORE += In addition, please
-.endif#}
-.elif !exists(${DISTDIR}/${PATCHSETFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE}))#}{
-IGNORE += Please
 .endif#}
 .if defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})#{
-IGNORE += open http://java.sun.com/javase/downloads/index.jsp\n\
+IGNORE += Please open http://java.sun.com/javase/downloads/index.jsp\n\
 in a web browser and follow the \"Download\" link for\n\
 \"Other Downloads\" to obtain the JCE policy file, ${POLICYFILE}.\n\n
-.if !exists(${DISTDIR}/${PATCHSETFILE})#{
-IGNORE += In addition, please
 .endif#}
+.if defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})#{
+IGNORE += Please open http://java.sun.com/javase/downloads/index.jsp\n\
+in a web browser and follow the \"Download\" link for\n\
+\"JDK US DST Timezone Update Tool - ${TZUPDATE_VERSION}\" to obtain the\n\
+time zone update file, ${TZUPDATEFILE}.\n\n
 .endif#}
 .if !exists(${DISTDIR}/${PATCHSETFILE})#{
-IGNORE += download the patchset, ${PATCHSETFILE}, from\n\
+IGNORE += Please download the patchset, ${PATCHSETFILE}, from\n\
 http://www.eyesbeyond.com/freebsddom/java/jdk15.html.\n\n
 .endif#}
 IGNORE += Please place the downloaded file(s) in ${DISTDIR}
@@ -288,6 +297,11 @@ post-build:
 	@# XXX don't install japanese manpages
 	@${RM} -rf ${JDKIMAGEDIR}/man/ja
 	@${RM} -rf ${JDKIMAGEDIR}/man/ja_JP.eucJP
+.if defined(WITH_TZUPDATE)
+	@# Update time zones
+	@-${JDKIMAGEDIR}/bin/java -jar \
+		${WRKDIR}/tzupdater${TZUPDATE_TZVERSION}/tzupdater.jar -u
+.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}
