@@ -34,6 +34,8 @@ TEXMFMAIN=	${TARGETDIR}/share/texmf
 
 MAN1=		ttf2bdf.1 ttf2tfm.1 ttf2pk.1
 
+PORTSCOUT=	limit:^1\.
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 		${WRKSRC}/configure
