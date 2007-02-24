@@ -10,3 +10,6 @@ SIZE (bsd-jdk15-patches-4.tar.bz2) = 746062
 MD5 (jce_policy-1_5_0.zip) = 169441bba1ca95e84e030e116f258d79
 SHA256 (jce_policy-1_5_0.zip) = 4de78da737c6d66b74eb6caebf6bdb0648825a95e2909e815678a0d306bf6d8b
 SIZE (jce_policy-1_5_0.zip) = 8826
+MD5 (tzupdater-1_0_1.zip) = 0f2a4d1321ccf503ebfa73aa4f06b2b4
+SHA256 (tzupdater-1_0_1.zip) = d0ab27a16df850e5a3c26bea927fa3a9ce3f0b6a43c836d43cfbb6dae95df0fe
+SIZE (tzupdater-1_0_1.zip) = 253959
