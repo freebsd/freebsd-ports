@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	firefox-i18n
-PORTVERSION=	2.0.0.1
+PORTVERSION=	2.0.0.2
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA_EXTENDED/firefox/releases/${PORTVERSION}/linux-i686/xpi \
-		CSME/myports/xpi/firefox-i18n-2.0:alt
+		CSME/myports/xpi/firefox-i18n-2.0.0.2:alt
 PKGNAMEPREFIX=
 DISTFILES=	${FIREFOX_I18N_:S/$/.xpi/:C/.*uk-UA.*/&:alt/}
 DIST_SUBDIR=	xpi/${DISTNAME}
@@ -24,14 +24,15 @@ RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-swit
 NO_BUILD=	yes
 USE_XPI=	*firefox
 
-FIREFOX_I18N_ALL=	ar bg ca cs da de el en-GB es-AR es-ES eu fi fr fy-NL ga-IE gu-IN he hu it \
+FIREFOX_I18N_ALL=	af ar be bg ca cs da de el en-GB es-AR es-ES eu fi fr fy-NL ga-IE gu-IN he hu it \
 			ja ka ko ku lt mk mn nb-NO nl nn-NO pa-IN pl pt-BR pt-PT ru sk sl sv-SE tr \
 			uk-UA zh-CN zh-TW
 .ifdef PACKAGE_BUILDING
 FIREFOX_I18N?=	all
 .else
-FIREFOX_I18N?=	zh-CN de fr ja ru it es-ES
+FIREFOX_I18N?=	zh-CN es-ES ar pt-BR ru ja de fr pa-IN ko it
 .endif
+# http://en.wikipedia.org/wiki/List_of_languages_by_number_of_native_speakers
 
 .if ${FIREFOX_I18N} == all
 FIREFOX_I18N_=	${FIREFOX_I18N_ALL}
