@@ -65,7 +65,7 @@ PLIST_SUB+=		NLS=""
 
 .if defined(WITH_OFA)
 CONFIGURE_ARGS+=	--enable-ofa
-LIB_DEPENDS+=		ofa.0::${PORTSDIR}/audio/libofa
+LIB_DEPENDS+=		ofa.0:${PORTSDIR}/audio/libofa
 .endif
 
 .if defined(WITH_SIDPLAY)
