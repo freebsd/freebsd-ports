@@ -1,0 +1,135 @@
+Index: src/mlocale.c
+===================================================================
+RCS file: /cvsroot/modlogan/modlogan/src/mlocale.c,v
+retrieving revision 1.38
+retrieving revision 1.40
+diff -u -u -r1.38 -r1.40
+--- src/mlocale.c	27 Aug 2004 20:07:37 -0000	1.38
++++ src/mlocale.c	31 Jul 2006 20:24:28 -0000	1.40
+@@ -22,7 +22,7 @@
+     Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA
+ 
+ **
+-** $Id: mlocale.c,v 1.38 2004/08/27 20:07:37 ostborn Exp $
++** $Id: mlocale.c,v 1.40 2006/07/31 20:24:28 erich Exp $
+ */
+ 
+ #include <stdlib.h>
+@@ -116,6 +116,7 @@
+ /* .ac */	case NDX2('a','c'):	return _("Ascension Island");
+ /* .ad */	case NDX2('a','d'): 	return _("Andorra");
+ /* .ae */	case NDX2('a','e'):	return _("United Arab Emirates");
++/* .aero */	case NDX4('a','e','r','o'):	return _("Aviation (.aero)");
+ /* .af */	case NDX2('a','f'):	return _("Afghanistan");
+ /* .ag */	case NDX2('a','g'):	return _("Antigua and Barbuda");
+ /* .ai */	case NDX2('a','i'):	return _("Anguilla");
+@@ -130,6 +131,7 @@
+ /* .at */	case NDX2('a','t'):	return _("Austria");
+ /* .au */	case NDX2('a','u'):	return _("Australia");
+ /* .aw */	case NDX2('a','w'):	return _("Aruba");
++/* .ax */	case NDX2('a','x'):	return _("Aland Islands");
+ /* .az */	case NDX2('a','z'):	return _("Azerbaijan");
+ /* .ba */	case NDX2('b','a'):	return _("Bosnia and Herzegovina");
+ /* .bb */	case NDX2('b','b'):	return _("Barbados");
+@@ -152,6 +154,7 @@
+ /* .by */	case NDX2('b','y'):	return _("Belarus");
+ /* .bz */	case NDX2('b','z'):	return _("Belize");
+ /* .ca */	case NDX2('c','a'):	return _("Canada");
++/* .cat */	case NDX3('c','a','t'):	return _("Catalan linguistic and cultural community");
+ /* .cc */	case NDX2('c','c'):	return _("Cocos (Keeling) Islands");
+ /* .cd */	case NDX2('c','d'):	return _("Congo, Democratic Republic of the");
+ /* .cf */	case NDX2('c','f'):	return _("Central African Republic");
+@@ -172,7 +175,6 @@
+ /* .cx */	case NDX2('c','x'):	return _("Christmas Island");
+ /* .cy */	case NDX2('c','y'):	return _("Cyprus");
+ /* .cz */	case NDX2('c','z'):	return _("Czech Republic");
+-/* .edu */	case NDX3('e','d','u'):	return _("US Educational");
+ /* .de */	case NDX2('d','e'):	return _("Germany");
+ /* .dj */	case NDX2('d','j'):	return _("Djibouti");
+ /* .dk */	case NDX2('d','k'):	return _("Denmark");
+@@ -180,12 +182,14 @@
+ /* .do */	case NDX2('d','o'):	return _("Dominican Republic");
+ /* .dz */	case NDX2('d','z'):	return _("Algeria");
+ /* .ec */	case NDX2('e','c'):	return _("Ecuador");
++/* .edu */	case NDX3('e','d','u'):	return _("US Educational");
+ /* .ee */	case NDX2('e','e'):	return _("Estonia");
+ /* .eg */	case NDX2('e','g'):	return _("Egypt");
+ /* .eh */	case NDX2('e','h'):	return _("Western Sahara");
+ /* .er */	case NDX2('e','r'):	return _("Eritrea");
+ /* .es */	case NDX2('e','s'):	return _("Spain");
+ /* .et */	case NDX2('e','t'):	return _("Ethiopia");
++/* .eu */	case NDX2('e','u'):	return _("European Union");
+ /* .fi */	case NDX2('f','i'):	return _("Finland");
+ /* .fj */	case NDX2('f','j'):	return _("Fiji");
+ /* .fk */	case NDX2('f','k'):	return _("Falkland Islands (Malvinas)");
+@@ -198,6 +202,7 @@
+ /* .gd */	case NDX2('g','d'):	return _("Grenada");
+ /* .ge */	case NDX2('g','e'):	return _("Georgia");
+ /* .gf */	case NDX2('g','f'):	return _("French Guiana");
++/* .gg */	case NDX2('g','g'):	return _("Guernsey");
+ /* .gh */	case NDX2('g','h'):	return _("Ghana");
+ /* .gi */	case NDX2('g','i'):	return _("Gibraltar");
+ /* .gl */	case NDX2('g','l'):	return _("Greenland");
+@@ -225,12 +230,15 @@
+ /* .in */	case NDX2('i','n'):	return _("India");
+ /* .info */	case NDX4('i','n','f','o'):	return _("Informational (info)");
+ /* .int */	case NDX3('i','n','t'):	return _("International (int)");
++/* .io */	case NDX2('i','o'):	return _("British Indian Ocean Territory");
++/* .iq */	case NDX2('i','q'):	return _("Iraq");
+ /* .ir */	case NDX2('i','r'):	return _("Iran");
+ /* .is */	case NDX2('i','s'):	return _("Iceland");
+ /* .it */	case NDX2('i','t'):	return _("Italy");
+ /* .je */	case NDX2('j','e'):	return _("Jersey");
+ /* .jm */	case NDX2('j','m'):	return _("Jamaica");
+ /* .jo */	case NDX2('j','o'):	return _("Jordan");
++/* .jobs */	case NDX4('j','o','b','s'):	return _("Human resource managers");
+ /* .jp */	case NDX2('j','p'):	return _("Japan");
+ /* .ke */	case NDX2('k','e'):	return _("Kenya");
+ /* .kg */	case NDX2('k','g'):	return _("Kyrgyzstan");
+@@ -265,12 +273,14 @@
+ /* .mm */	case NDX2('m','m'):	return _("Myanmar");
+ /* .mn */	case NDX2('m','n'):	return _("Mongolia");
+ /* .mo */	case NDX2('m','o'):	return _("Macau");
++/* .mobi */	case NDX4('m','o','b','i'):	return _("Consumers and providers of mobile products");
+ /* .mp */	case NDX2('m','p'):	return _("Northern Mariana Islands");
+ /* .mq */	case NDX2('m','q'):	return _("Martinique");
+ /* .mr */	case NDX2('m','r'):	return _("Mauritania");
+ /* .ms */	case NDX2('m','s'):	return _("Montserrat");
+ /* .mt */	case NDX2('m','t'):	return _("Malta");
+ /* .mu */	case NDX2('m','u'):	return _("Mauritius");
++/* .museum */	case NDX4('m','u','s','e'):	return _("Museum");
+ /* .mv */	case NDX2('m','v'):	return _("Maldives");
+ /* .mw */	case NDX2('m','w'):	return _("Malawi");
+ /* .mx */	case NDX2('m','x'):	return _("Mexico");
+@@ -304,6 +314,8 @@
+ /* .pm */	case NDX2('p','m'):	return _("St. Pierre and Miquelon");
+ /* .pn */	case NDX2('p','n'):	return _("Pitcairn");
+ /* .pr */	case NDX2('p','r'):	return _("Puerto Rico");
++/* .pro */	case NDX3('p','r','o'):	return _("Credentialed professionals and related entities");
++/* .ps */	case NDX2('p','s'):	return _("Palestinian Territories");
+ /* .pt */	case NDX2('p','t'):	return _("Portugal");
+ /* .pw */	case NDX2('p','w'):	return _("Palau");
+ /* .py */	case NDX2('p','y'):	return _("Paraguay");
+@@ -339,11 +351,13 @@
+ /* .th */	case NDX2('t','h'):	return _("Thailand");
+ /* .tj */	case NDX2('t','j'):	return _("Tajikistan");
+ /* .tk */	case NDX2('t','k'):	return _("Tokelau");
++/* .tl */	case NDX2('t','l'):	return _("Timor-Leste");
+ /* .tm */	case NDX2('t','m'):	return _("Turkmenistan");
+ /* .tn */	case NDX2('t','n'):	return _("Tunisia");
+ /* .to */	case NDX2('t','o'):	return _("Tonga");
+ /* .tp */	case NDX2('t','p'):	return _("East Timor");
+ /* .tr */	case NDX2('t','r'):	return _("Turkey");
++/* .travel */	case NDX4('t','r','a','v'):	return _("Travel");
+ /* .tt */	case NDX2('t','t'):	return _("Trinidad and Tobago");
+ /* .tv */	case NDX2('t','v'):	return _("Tuvalu");
+ /* .tw */	case NDX2('t','w'):	return _("Taiwan");
+@@ -383,7 +397,7 @@
+ 		case M_RESOLV_UNRESOLVED:
+ 			return _("Unresolved");
+ 		default:
+-			printf("unknown country code: %s -> 0x%08llx\n", str, isondx(str));
++			/* printf("unknown country code: %s -> 0x%08llx\n", str, isondx(str)); */
+ 			return _("Unknown country");
+ 	}
+ }

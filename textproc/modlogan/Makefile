@@ -7,9 +7,10 @@
 
 PORTNAME=	modlogan
 PORTVERSION=	0.8.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc www
-MASTER_SITES=	http://jan.kneschke.de/projects/modlogan/download/
+MASTER_SITES=	http://jan.kneschke.de/projects/modlogan/download/ \
+		http://www.mirrorservice.org/sites/www.ibiblio.org/gentoo/distfiles/
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A modular log file analysis program
@@ -62,8 +63,6 @@ post-install:
 .for i in footer.ihtml header.ihtml output.tmpl convert_history_to_07x.pl convert_to_055.pl convert_to_060.pl
 	@${INSTALL_DATA} ${WRKSRC}/doc/${i} ${PREFIX}/share/examples/modlogan/${i}
 .endfor
-	@# remove .la
-	-${RM} ${PREFIX}/lib/libmla_*.la
 .for i in css conf def.conf
 	[ -f ${PREFIX}/etc/modlogan/modlogan.${i} ] || ${INSTALL_DATA} ${PREFIX}/etc/modlogan/modlogan.${i}-dist ${PREFIX}/etc/modlogan/modlogan.${i}
 .endfor

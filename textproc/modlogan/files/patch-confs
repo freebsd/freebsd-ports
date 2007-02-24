@@ -1,0 +1,1134 @@
+Index: doc/group.extension.conf
+===================================================================
+RCS file: /cvsroot/modlogan/modlogan/doc/group.extension.conf,v
+retrieving revision 1.16
+retrieving revision 1.17
+diff -u -u -r1.16 -r1.17
+--- doc/group.extension.conf	23 Oct 2002 13:52:21 -0000	1.16
++++ doc/group.extension.conf	31 Jul 2006 21:00:35 -0000	1.17
+@@ -1,4 +1,4 @@
+-# $Id: group.extension.conf,v 1.16 2002/10/23 13:52:21 ostborn Exp $
++# $Id: group.extension.conf,v 1.17 2006/07/31 21:00:35 erich Exp $
+ 
+ [groupext]
+ groupextension="\.(?i:html\.([a-z]{2}))(?:\?|$)",localized HTML: $1 (text/html)
+@@ -17,6 +17,10 @@
+ groupextension="\.(?i:ico)$",Pictures - ICO
+ groupextension="\.(?i:swf)$",Flash Movies - SWF
+ groupextension="\.(?i:class)$",Java Applets - CLASS
++groupextension="\.(?i:jar)$",Java Archives - JAR
++groupextension="\.(?i:rss)$",RSS Data
++groupextension="\.(?i:bmp)$",Windows Bitmaps
++groupextension="\.(?i:doc)$",Microsoft Word Documents
+ groupextension="\.(?i:pdf)$",PDF Documents
+ groupextension="\.ps(\.gz)?$",Postscript Documents
+ groupextension="\.(?i:ppt)$",PowerPoint Documents
+@@ -24,12 +28,15 @@
+ groupextension="\.tar\.bz2$",Archive - Tar+Bzip 
+ groupextension="\.zip$",Archive - ZIP 
+ groupextension="\.(?i:mpg)$",Videos - MPEG (video/mpeg)
++groupextension="\.(?i:wmv)$",Videos - Windows Media
+ groupextension="\.i386\.rpm$",.rpm - Redhat Package Manager
+ groupextension="\.gz$",compressed (gzip)
+ groupextension="\.bz2$",compressed (bzip2)
+ groupextension="\.(?i:mp3)$",Audio - MPEG Audio Layer 3 (audio/mp3)
+ groupextension="\.(?i:midi?)$",Audio - MIDI (audio/midi)
+ groupextension="\.(?i:wav)$",Audio - WAV
++groupextension="\.(?i:rss)$",Web Feed - RSS
++groupextension="\.(?i:atom)$",Web Feed - Atom
+ 
+ 
+ ## default extensions
+Index: doc/group.host.conf
+===================================================================
+RCS file: /cvsroot/modlogan/modlogan/doc/group.host.conf,v
+retrieving revision 1.10
+retrieving revision 1.11
+diff -u -u -r1.10 -r1.11
+--- doc/group.host.conf	27 Sep 2002 17:15:56 -0000	1.10
++++ doc/group.host.conf	31 Jul 2006 21:00:35 -0000	1.11
+@@ -1,4 +1,4 @@
+-# $Id: group.host.conf,v 1.10 2002/09/27 17:15:56 aleidinger Exp $
++# $Id: group.host.conf,v 1.11 2006/07/31 21:00:35 erich Exp $
+ 
+ ##### Groupings for big providers in Germany for detailed reports (city / region groupings etc.)
+ [grouphosts_germany]
+@@ -31,7 +31,7 @@
+ 
+ ##### Groupings for some providers from Austria
+ [grouphosts_austria]
+-grouphosts = "([^.]*)\.highway\.telekom\.at$",$1.highway.telekom.at
++grouphosts = "([^.]*)\.highway\.telekom\.at$",highway.telekom.at
+ grouphosts = "\.at\.kpnqwest\.net$",at.kpnqwest.net
+ grouphosts = "\.cosy\.sbg\.ac\.at$",cosy.sbg.ac.at
+ grouphosts = "\.digimedia\.co\.at$",digimedia.co.at
+Index: doc/group.os.conf
+===================================================================
+RCS file: /cvsroot/modlogan/modlogan/doc/group.os.conf,v
+retrieving revision 1.8
+retrieving revision 1.10
+diff -u -u -r1.8 -r1.10
+--- doc/group.os.conf	4 Nov 2002 17:40:56 -0000	1.8
++++ doc/group.os.conf	12 Aug 2006 16:41:45 -0000	1.10
+@@ -1,15 +1,17 @@
+ [groupos]
+-groupos = "^Win.*?(XP|2000|ME|NT|9.?)",Windows $1
+-groupos = "^Linux 2\.(\d+)\.?",Linux 2.$1.x
+-groupos = "^Linux i(\d+)",Linux i$1 [unknown version]
+-groupos = "^Linux",Linux [unknown version]
+-groupos = "^FreeBSD .*-CURRENT$",FreeBSD -CURRENT
+-groupos = "^FreeBSD (.?)\.",FreeBSD $1.x
+-groupos = "^NetBSD 1\.(.?)\.",NetBSD 1.$1.x
+-groupos = "^(Free|Net|Open)BSD",$1BSD [unknown version]
+-groupos = "^HP-UX B\.(10|11)\.",HP-UX B.$1.x
+-groupos = "^IRIX(64)? 6\.",IRIX 6.x
+-groupos = "^SunOS 4\.1",SunOS 4.1.x
+-groupos = "^SunOS 5\.([4-6])",Solaris 2.$1.x
+-groupos = "^SunOS 5\.([789])",Solaris $1.x
+-groupos = "^(?:PPC|Mac.+PC)$",Macintosh PPC
++groupos = "Windows NT 5.0",Windows 2000
++groupos = "Windows NT 5.1",Windows XP
++groupos = "Win.*?(XP|2000|ME|NT|9.?)",Windows $1
++groupos = "Linux",Linux
++groupos = "(Free|Net|Open)BSD",$1BSD
++groupos = "HP-UX",HP-UX
++groupos = "IRIX",IRIX
++groupos = "SunOS 4",SunOS
++groupos = "SunOS 5",Solaris
++groupos = "Warp",Warp OS
++groupos = "Mac OS X",Mac OS X
++groupos = "Series[0-9]+",Mobile Phones
++groupos = "(?:PPC|Mac.+PC)$",Mac PPC
++groupos = "http://www\.google\.com",Google Robot
++groupos = "http://[^/]*yahoo\.com",Yahoo Robot
++groupos = "http://[^/]*ask\.com",Ask Jeeves Robot
+Index: doc/group.searchengines.conf
+===================================================================
+RCS file: /cvsroot/modlogan/modlogan/doc/group.searchengines.conf,v
+retrieving revision 1.10
+diff -u -u -r1.10 group.searchengines.conf
+--- doc/group.searchengines.conf	11 Jul 2003 07:58:50 -0000	1.10
++++ doc/group.searchengines.conf	12 Aug 2006 16:56:46 -0000
+@@ -1,372 +1,377 @@
+ [group_searchengines]
+ # H
+ # Keywords
+-groupsearchengine = "goto\.earthlink\.net/d/search/p/earthlink\?(?:.+&|)Keywords=(.+?)(?:&|$)","GoTo.com"
+-groupsearchengine = "go2\.com/d/search/\?(?:.+&|)Keywords=(.+?)(?:&|$)","GoTo.com"
+-groupsearchengine = "overture\.com/d/search[^?]*\?(?:.+&|)Keywords=(.+?)(?:&|$)","Overture.com"
+-groupsearchengine = "goto\.com/d/search[^?]*\?(?:.+&|)Keywords=(.+?)(?:&|$)","GoTo.com"
+-groupsearchengine = "search\.as\.orientation\.com/cgi-bin/gotosearch\.cgi\?(?:.+&|)Keywords=(.+?)(?:&|$)","GoTo.com"
+-groupsearchengine = "webhelp\.com/.*gotoresults\.html\?(?:.+&|)Keywords=(.+?)(?:&|$)","GoTo.com"
+-groupsearchengine = "de\.shopsmart\.com/search\.html\?(?:.+&|)Keywords=(.+?)(?:&|$)","ShopSmart.com"
++groupsearchengine = "goto\.earthlink\.net/d/search/p/earthlink\?(?:.+&)?Keywords=(.+?)(?:&|$)",GoTo.com
++groupsearchengine = "go2\.com/d/search/\?(?:.+&)?Keywords=(.+?)(?:&|$)",GoTo.com
++groupsearchengine = "overture\.com/d/search[^?]*\?(?:.+&)?Keywords=(.+?)(?:&|$)",Overture.com
++groupsearchengine = "goto\.com/d/search[^?]*\?(?:.+&)?Keywords=(.+?)(?:&|$)",GoTo.com
++groupsearchengine = "search\.as\.orientation\.com/cgi-bin/gotosearch\.cgi\?(?:.+&)?Keywords=(.+?)(?:&|$)",GoTo.com
++groupsearchengine = "webhelp\.com/.*gotoresults\.html\?(?:.+&)?Keywords=(.+?)(?:&|$)",GoTo.com
++groupsearchengine = "de\.shopsmart\.com/search\.html\?(?:.+&)?Keywords=(.+?)(?:&|$)",ShopSmart.com
+ # MT
+-groupsearchengine = "hotbot\?(?:.+&|)MT=(.+?)(?:&|$)","Hotbot"
+-groupsearchengine = "hotbot\.lycos\.com/?\?(?:.+&|)MT=(.+?)(?:&|$)","Hotbot"
+-groupsearchengine = "hotbot\.lycos\.com\/text/default\.asp\?(?:.+&|)MT=(.+?)(?:&|$)","Hotbot"
+-groupsearchengine = "search\..*msn\..+/spbasic\.htm\?(?:.+&|)MT=(.+?)(?:&|$)","MSN"
+-groupsearchengine = "search\..*msn\..+/(?:sp)?results\.asp\?(?:.+&|)MT=(.+?)(?:&|$)","MSN"
+-groupsearchengine = "handbag\.ukmax\.com/default\.asp\?(?:.+&|)MT=(.+?)(?:&|$)","UK max"
+-groupsearchengine = "search\.ukmax\.com/default\.asp\?(?:.+&|)MT=(.+?)(?:&|$)","UK max"
+-groupsearchengine = "ukmax\.[a-z.]+/search/default\.asp\?(?:.+&|)MT=(.+?)(?:&|$)","UK max"
+-groupsearchengine = "search\.icq\.com/default\.asp\?(?:.+&|)MT=(.+?)(?:&|$)","ICQ Directory"
+-groupsearchengine = "goo\.ne\.jp/[^?]+\.asp\?(?:.+&|)MT=(.+?)(?:&|$)","Goo Japan"
+-groupsearchengine = "nomade\.(?:tiscali\.)?fr/(?:ink|[_a-zA-Z0-9]*recherche[_a-zA-Z0-9]*)\.asp\?(?:.+&|)MT=(.+?)(?:&|$)","Nomade"
++groupsearchengine = "hotbot\?(?:.+&)?MT=(.+?)(?:&|$)",Hotbot
++groupsearchengine = "hotbot\.lycos\.com/?\?(?:.+&)?MT=(.+?)(?:&|$)",Hotbot
++groupsearchengine = "hotbot\.lycos\.com\/text/default\.asp\?(?:.+&)?MT=(.+?)(?:&|$)",Hotbot
++groupsearchengine = "search\..*msn\..+/spbasic\.htm\?(?:.+&)?MT=(.+?)(?:&|$)",MSN
++groupsearchengine = "search\..*msn\..+/(?:sp)?results\.asp\?(?:.+&)?MT=(.+?)(?:&|$)",MSN
++groupsearchengine = "handbag\.ukmax\.com/default\.asp\?(?:.+&)?MT=(.+?)(?:&|$)",UK max
++groupsearchengine = "search\.ukmax\.com/default\.asp\?(?:.+&)?MT=(.+?)(?:&|$)",UK max
++groupsearchengine = "ukmax\.[a-z.]+/search/default\.asp\?(?:.+&)?MT=(.+?)(?:&|$)",UK max
++groupsearchengine = "search\.icq\.com/default\.asp\?(?:.+&)?MT=(.+?)(?:&|$)",ICQ Directory
++groupsearchengine = "goo\.ne\.jp/[^?]+\.asp\?(?:.+&)?MT=(.+?)(?:&|$)",Goo Japan
++groupsearchengine = "nomade\.(?:tiscali\.)?fr/(?:ink|[_a-zA-Z0-9]*recherche[_a-zA-Z0-9]*)\.asp\?(?:.+&)?MT=(.+?)(?:&|$)",Nomade
+ 
+ # P
+-groupsearchengine = "euroferret\.com/old_version.html\?(?:.+&|)P=(.+?)(?:&|$)","euroferret"
+-groupsearchengine = "euroferret\.com/\?(?:.+&|)P=(.+?)(?:&|$)","euroferret"
+-groupsearchengine = "yahoo\.co\.jp/bin/search\?(?:.+&|)p=(.+?)(?:&|$)","Yahoo Japan"
++groupsearchengine = "euroferret\.com/old_version.html\?(?:.+&)?P=(.+?)(?:&|$)",euroferret
++groupsearchengine = "euroferret\.com/\?(?:.+&)?P=(.+?)(?:&|$)",euroferret
++groupsearchengine = "yahoo\.co\.jp/bin/search\?(?:.+&)?p=(.+?)(?:&|$)",Yahoo Japan
+ 
+ # Q
+-groupsearchengine = "searchalot\.com/texis/open/meta2\?(?:.+&|)Q=(.+?)(?:&|$)","Search A Lot.com"
++groupsearchengine = "searchalot\.com/texis/open/meta2\?(?:.+&)?Q=(.+?)(?:&|$)",Search A Lot.com
+ # QUERY
+-groupsearchengine = "apollo7\.de/cgi-bin/mc\.search\.cgi\?(?:.+&|)QUERY=(.+?)(?:&|$)","Apollo 7"
+-groupsearchengine = "webtop\.com/search/dutch_netscape/results\.htm\?(?:.+&|)QUERY=(.+?)(?:&|$)","Netscape"
+-groupsearchengine = "search\.cnet\.com/Infoseek/\?(?:.+&|)QUERY=(.+?)(?:&|$)","Search.com"
+-groupsearchengine = "search\.com/Infoseek/\?(?:.+&|)QUERY=(.+?)(?:&|$)","Search.com"
++groupsearchengine = "apollo7\.de/cgi-bin/mc\.search\.cgi\?(?:.+&)?QUERY=(.+?)(?:&|$)",Apollo 7
++groupsearchengine = "webtop\.com/search/dutch_netscape/results\.htm\?(?:.+&)?QUERY=(.+?)(?:&|$)",Netscape
++groupsearchengine = "search\.cnet\.com/Infoseek/\?(?:.+&)?QUERY=(.+?)(?:&|$)",Search.com
++groupsearchengine = "search\.com/Infoseek/\?(?:.+&)?QUERY=(.+?)(?:&|$)",Search.com
+ # Suchwort
+ # T
+ # ask
+-groupsearchengine = "(?:askjeeves|aj|ask)\..+/main/meta[aA]nswer\.asp\?(?:.+&|)ask=(.+?)(?:&|$)","Ask Jeeves"
+-groupsearchengine = "(?:askjeeves|aj|ask)\..+/main/[aA]sk[jJ]eeves\.asp\?(?:.+&|)ask=(.+?)(?:&|$)","Ask Jeeves"
+-groupsearchengine = "(?:askjeeves|aj|ask)\..+/main/followup\.asp\?(?:.+&|)ask=(.+?)(?:&|$)","Ask Jeeves"
+-groupsearchengine = "(?:askjeeves|aj|ask)\..+/main/Links\.asp\?(?:.+&|)ask=(.+?)(?:&|$)","Ask Jeeves"
+-groupsearchengine = "(?:askjeeves|aj|ask)\..+/main/moreResults\.asp\?(?:.+&|)ask=(.+?)(?:&|$)","Ask Jeeves"
+-groupsearchengine = "tm\.ask\.com/r\?(?:.+&|)ask=(.+?)(?:&|$)","Ask Jeeves"
+-groupsearchengine = "216\.200\.119\.160/main/metaAnswer\.asp\?(?:.+&|)ask=(.+?)(?:&|$)","Ask Jeeves"
+-groupsearchengine = "ask\.co\.uk/main/followup40\.asp\?(?:.+&|)ask=(.+?)(?:&|$)","Ask Jeeves"
++groupsearchengine = "(?:askjeeves|aj|ask)\..+/main/meta[aA]nswer\.asp\?(?:.+&)?ask=(.+?)(?:&|$)",Ask Jeeves
++groupsearchengine = "(?:askjeeves|aj|ask)\..+/main/[aA]sk[jJ]eeves\.asp\?(?:.+&)?ask=(.+?)(?:&|$)",Ask Jeeves
++groupsearchengine = "(?:askjeeves|aj|ask)\..+/main/followup\.asp\?(?:.+&)?ask=(.+?)(?:&|$)",Ask Jeeves
++groupsearchengine = "(?:askjeeves|aj|ask)\..+/main/Links\.asp\?(?:.+&)?ask=(.+?)(?:&|$)",Ask Jeeves
++groupsearchengine = "(?:askjeeves|aj|ask)\..+/main/moreResults\.asp\?(?:.+&)?ask=(.+?)(?:&|$)",Ask Jeeves
++groupsearchengine = "ask\.com/web\?(?:.+&|)q=(.+?)(?:&|$)","Ask Jeeves"
++groupsearchengine = "tm\.ask\.com/r\?(?:.+&)?ask=(.+?)(?:&|$)",Ask Jeeves
++groupsearchengine = "216\.200\.119\.160/main/metaAnswer\.asp\?(?:.+&)?ask=(.+?)(?:&|$)",Ask Jeeves
++groupsearchengine = "ask\.co\.uk/main/followup40\.asp\?(?:.+&)?ask=(.+?)(?:&|$)",Ask Jeeves
+ # eingabe
+-groupsearchengine = "suchpilot\.de/cgi-bin/(?:dup|pwr)/s\.pl\?(?:.+&|)eingabe=(.+?)(?:&|$)","Suchpilot.de"
++groupsearchengine = "suchpilot\.de/cgi-bin/(?:dup|pwr)/s\.pl\?(?:.+&)?eingabe=(.+?)(?:&|$)",Suchpilot.de
+ # entry
+ # general
+-groupsearchengine = "metacrawler\.com(?:/crawler|)\?(?:.+&|)general=(.+?)(?:&|$)","MetaCrawler"
++groupsearchengine = "metacrawler\.com(?:/crawler|)\?(?:.+&)?general=(.+?)(?:&|$)",MetaCrawler
+ # in
+ # k
+ # key
+-groupsearchengine = "looksmart\.com\?(?:.+&|)key=(.+?)(?:&|$)","Looksmart"
+-groupsearchengine = "looksmart\.(?:co\.uk|com)/r_search\?(?:.+&|)key=(.+?)(?:&|$)","Looksmart"
+-groupsearchengine = "surfy\.com/cgi-bin/search\?(?:.+&|)key=(.+?)(?:&|$)","Looksmart"
+-groupsearchengine = "synd(?:-[a-z]+)?\.looksmart\.co\.uk/synd-[a-z]*/Search[a-z]*\.jsp\?(?:.+&|)key=(.+?)(?:&|$)","Looksmart"
+-groupsearchengine = "zonnet\.nl/zoeken/looksmart\?(?:.+&|)key=(.+?)(?:&|$)","Looksmart"
+-groupsearchengine = "worldonline\.fr/wolsearch_next\.php\?(?:.+&|)key=(.+?)(?:&|$)","WordOnline.fr"
+-groupsearchengine = "looksmart\d+\.club-internet\.fr/(?:r_search|synd-[a-z]+/[Ss]earchResults(?:FT)?\.jsp)\?(?:.+&|)key=(.+?)(?:&|$)","Looksmart @ Club-internet.fr"
++groupsearchengine = "looksmart\.com\?(?:.+&)?key=(.+?)(?:&|$)",Looksmart
++groupsearchengine = "looksmart\.(?:co\.uk|com)/r_search\?(?:.+&)?key=(.+?)(?:&|$)",Looksmart
++groupsearchengine = "surfy\.com/cgi-bin/search\?(?:.+&)?key=(.+?)(?:&|$)",Looksmart
++groupsearchengine = "synd(?:-[a-z]+)?\.looksmart\.co\.uk/synd-[a-z]*/Search[a-z]*\.jsp\?(?:.+&)?key=(.+?)(?:&|$)",Looksmart
++groupsearchengine = "zonnet\.nl/zoeken/looksmart\?(?:.+&)?key=(.+?)(?:&|$)",Looksmart
++groupsearchengine = "worldonline\.fr/wolsearch_next\.php\?(?:.+&)?key=(.+?)(?:&|$)",WordOnline.fr
++groupsearchengine = "looksmart\d+\.club-internet\.fr/(?:r_search|synd-[a-z]+/[Ss]earchResults(?:FT)?\.jsp)\?(?:.+&)?key=(.+?)(?:&|$)",Looksmart @ Club-internet.fr
+ # keys
+ # keyword
+-groupsearchengine = "nbci\.com/search/directory/results/\?(?:.+&|)keyword=(.+?)(?:&|$)","NBCI"
+-groupsearchengine = "netcommander\.nbci\.com\?(?:.+&|)keyword=(.+?)(?:&|$)","NBCI"
+-groupsearchengine = "nbci\.com/search/partner/results/1,61,[a-z]*-0,00\.html\?(?:.+&|)keyword=(.+?)(?:&|$)","NBCI"
+-groupsearchengine = "snap\.com/search/(?:directory/|partner/)?results/\?(?:.+&|)keyword=(.+?)(?:&|$)","Snap.com"
+-groupsearchengine = "snap\.com/main/ie/adv/1,428,home-0,00\.html\?(?:.+&|)keyword=(.+?)(?:&|$)","Snap.com"
+-groupsearchengine = "snap\.com/main/ie/search/1,428,home-0,00\.html\?(?:.+&|)keyword=(.+?)(?:&|$)","Snap.com"
++groupsearchengine = "nbci\.com/search/directory/results/\?(?:.+&)?keyword=(.+?)(?:&|$)",NBCI
++groupsearchengine = "netcommander\.nbci\.com\?(?:.+&)?keyword=(.+?)(?:&|$)",NBCI
++groupsearchengine = "nbci\.com/search/partner/results/1,61,[a-z]*-0,00\.html\?(?:.+&)?keyword=(.+?)(?:&|$)",NBCI
++groupsearchengine = "snap\.com/search/(?:directory/|partner/)?results/\?(?:.+&)?keyword=(.+?)(?:&|$)",Snap.com
++groupsearchengine = "snap\.com/main/ie/adv/1,428,home-0,00\.html\?(?:.+&)?keyword=(.+?)(?:&|$)",Snap.com
++groupsearchengine = "snap\.com/main/ie/search/1,428,home-0,00\.html\?(?:.+&)?keyword=(.+?)(?:&|$)",Snap.com
+ # keywords
+-groupsearchengine = "chello\.[^/]+/utilities/search[^?]*\?(?:.+&|)keywords=(.+?)(?:&|$)","Chello"
++groupsearchengine = "chello\.[^/]+/utilities/search[^?]*\?(?:.+&)?keywords=(.+?)(?:&|$)",Chello
+ # kw
+-groupsearchengine = "voila\.[^/]+/(?:S/)?(?:ns|www|msie_fr|quiquoiou|voilang|voila|search|wanadoo[a-z_]*|r?msie4[a-z_]*)\?(?:.+&|)kw=(.+?)(?:&|$)","Voila"
+-groupsearchengine = "voila\.fr/voila\?(?:.+&|)kw=(.+?)(?:&|$)","Voila"
+-groupsearchengine = "mundial\.sapo\.pt/cgi/google\?(?:.+&|)kw=(.+?)(?:&|$)","Google"
+-groupsearchengine = "voila\.carrefour\.net/voila\?(?:.+&|)kw=(.+?)(?:&|$)","Voila @ Carrefour.net"
+-groupsearchengine = "search\.ke\.wanadoo\.fr/S/wanadoo\?(?:.+&|)kw=(.+?)(?:&|$)","Wanadoo.fr"
++groupsearchengine = "voila\.[^/]+/(?:S/)?(?:ns|www|msie_fr|quiquoiou|voilang|voila|search|wanadoo[a-z_]*|r?msie4[a-z_]*)\?(?:.+&)?kw=(.+?)(?:&|$)",Voila
++groupsearchengine = "voila\.fr/voila\?(?:.+&)?kw=(.+?)(?:&|$)",Voila
++groupsearchengine = "mundial\.sapo\.pt/cgi/google\?(?:.+&)?kw=(.+?)(?:&|$)",Google
++groupsearchengine = "voila\.carrefour\.net/voila\?(?:.+&)?kw=(.+?)(?:&|$)",Voila @ Carrefour.net
++groupsearchengine = "search\.ke\.wanadoo\.fr/S/wanadoo\?(?:.+&)?kw=(.+?)(?:&|$)",Wanadoo.fr
+ # mots
+-groupsearchengine = "voila\.fr/(?:quiquoiou|voilang|voila|search|wanadoo[a-z_]*|r?msie4[a-z_]*)/?\?(?:.+&|)mots=(.+?)(?:&|$)","Voila"
++groupsearchengine = "voila\.fr/(?:quiquoiou|voilang|voila|search|wanadoo[a-z_]*|r?msie4[a-z_]*)/?\?(?:.+&)?mots=(.+?)(?:&|$)",Voila
+ # motscles
+ # p
+-groupsearchengine = "google\.yahoo\.com(?::80)?/bin/query(?:_[a-z]*|[0-9]+)?\?(?:.+&|)p=(.+?)(?:&|$)","Google @ Yahoo"
+-groupsearchengine = "(?:[a-z]+\.)?search\.yahoo\.[^/]+/(?:[a-z]+/)?search/?[^?]*\?(?:.+&|)p=(.+?)(?:&|$)","Yahoo"
+-groupsearchengine = "google\.yahoo\.com/search/\?(?:.+&|)p=(.+?)(?:&|$)","Google @ Yahoo"
+-groupsearchengine = "av\.yahoo\.com/bin/(?:query|key|search)(?:_[a-z]*)?\?(?:.+&|)p=(.+?)(?:&|$)","Altavista @ Yahoo"
+-groupsearchengine = "ink\.(?:asia\.)?yahoo\.[a-z]+/bin/query(?:_[a-z]*)?\?(?:.+&|)p=(.+?)(?:&|$)","Yahoo"
+-groupsearchengine = "ultimatebb\.cgi\?(?:.+&|)p=(.+?)(?:&|$)","Ultimate Bulletin Board"
++groupsearchengine = "google\.yahoo\.com(?::80)?/bin/query(?:_[a-z]*|[0-9]+)?\?(?:.+&)?p=(.+?)(?:&|$)",Google @ Yahoo
++groupsearchengine = "(?:[a-z]+\.)?search\.yahoo\.[^/]+/(?:[a-z]+/)?search/?[^?]*\?(?:.+&)?p=(.+?)(?:&|$)",Yahoo
++groupsearchengine = "google\.yahoo\.com/search/\?(?:.+&)?p=(.+?)(?:&|$)",Google @ Yahoo
++groupsearchengine = "av\.yahoo\.com/bin/(?:query|key|search)(?:_[a-z]*)?\?(?:.+&)?p=(.+?)(?:&|$)",Altavista @ Yahoo
++groupsearchengine = "ink\.(?:asia\.)?yahoo\.[a-z]+/bin/query(?:_[a-z]*)?\?(?:.+&)?p=(.+?)(?:&|$)",Yahoo
++groupsearchengine = "ultimatebb\.cgi\?(?:.+&)?p=(.+?)(?:&|$)",Ultimate Bulletin Board
+ # pattern
+-groupsearchengine = "entry\.de/index.php3\?(?:.+&|)pattern=(.+?)(?:&|$)","Entry.de"
++groupsearchengine = "entry\.de/index.php3\?(?:.+&)?pattern=(.+?)(?:&|$)",Entry.de
+ # pgm
+ # q
+-groupsearchengine = "web\.toile\.com/toile/index\.asp\?(?:.+&|)q=(.+?)(?:&|$)","La Toile du Québec"
+-groupsearchengine = "freshmeat\.net/search/?\?(?:.+&|)q=(.+?)(?:&|$)","Freshmeat"
+-groupsearchengine = "suchen\.abacho\.(?:de|ch|at)/?(?:index.cfm|co/crawler\.cfm|standardsuche\.cfm|)?\?(?:.+&|)q=(.+?)(?:&|$)","Abacho"
+-groupsearchengine = "metasuche\.abacho\.de/metasuche_suchen\.phtml\?(?:.+&|)q=(.+?)(?:&|$)","Abacho"
+-groupsearchengine = "alltheweb\.(?:com|net)/search\?(?:.+&|)q=(.+?)(?:&|$)","Alltheweb"
+-groupsearchengine = "alta-?vista\.+[a-z]+\.?/cgi-bin/(?:query|rns)\?(?:.+&|)q=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "altavista\.com/(?:query|q|)\?(?:.+&|)q=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "av\.com/\?(?:.+&|)q=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "av\.com/cgi-bin/query\?(?:.+&|)q=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "av\.com/sites/search/web\?(?:.+&|)q=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "212\.187\.226\.44/cgi-bin/t*query\?(?:.+&|)q=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "a[ls]tr?ai?[vx]i?s?t?s?a\.com/cgi-bin/query\?(?:.+&|)q=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "a[ls]tr?ai?[vx]i?s?t?s?a\.com/.*search(?:/web|)\?(?:.+&|)q=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "altavista\.com?\.+[a-z]+\.?/cgi-bin/query\?(?:.+&|)q=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "altavista\.digital\.com/cgi-bin/query\?(?:.+&|)q=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "altavista\.com/iepane\?(?:.+&|)q=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "altavista\.yellowpages\.com\.au/results/doSearch\.php\?(?:.+&|)q=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "alta-?vista\.com/sites/search/web\?(?:.+&|)q=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "altavista\.com/sites/search/res_text\?(?:.+&|)q=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "de\.altavista\.com/dir/default\?(?:.+&|)q=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "listings\.altavista\.com/GT_av\?(?:.+&|)q=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "altavista\.com/sites/listings/GT_av\?(?:.+&|)q=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "listings\.altavista\.com/scripts/gt\.dll\?(?:.+&|)q=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "ragingsearch\.altavista\.com/\?(?:.+&|)q=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "se\.altavista\.com/cgi-bin/rns\?(?:.+&|)q=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "altavista\.com/web\?(?:.+&|)q=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "suche\.aol\.de/suche/search.jsp\?(?:.+&|)q=(.+?)(?:&|$)","AOL.de"
+-groupsearchengine = "finden\.averdo\.de/find\.av\?(?:.+&|)q=(.+?)(?:&|$)","Averdo.de"
+-groupsearchengine = "caloweb\.com/de/html/search_result\.php3\?(?:.+&|)q=(.+?)(?:&|$)","CaloWeb.com"
+-groupsearchengine = "caloweb\.de/html/search_result\.php3\?(?:.+&|)q=(.+?)(?:&|$)","CaloWeb.com"
+-groupsearchengine = "compuserve(?:office)*\.de/suche/suche\.jsp\?(?:.+&|)q=(.+?)(?:&|$)","CompuServe"
+-groupsearchengine = "dogpile\.com/texis/search\?(?:.+&|)q=(.+?)(?:&|$)","Dogpile"
+-groupsearchengine = "catalog\.dogpile\.com/texis/catalog\?(?:.+&|)q=(.+?)(?:&|$)","Dogpile"
+-groupsearchengine = "catalog\.dogpile\.com/texis/redir/main\.bin\?(?:.+&|)q=(.+?)(?:&|$)","Dogpile"
+-groupsearchengine = "opendir\.dogpile\.com/texis/dpdir/search\.html\?(?:.+&|)q=(.+?)(?:&|$)","Dogpile"
+-groupsearchengine = "evreka\.passagen\.se/query\?(?:.+&|)q=(.+?)(?:&|$)","Evreka"
+-groupsearchengine = "e[uv]reka\.com\?(?:.+&|)q=(.+?)(?:&|$)","Evreka"
+-groupsearchengine = "\.evreka\.[a-z]+/query\?(?:.+&|)q=(.+?)(?:&|$)","Evreka"
+-groupsearchengine = "fireball\.de/fcgi/query(?:-firehoo)?\.fcg\?(?:.+&|)q=(.+?)(?:&|$)","Fireball"
+-groupsearchengine = "wissen\.fireball\.de/(?:artikelseite|websearch|redirect-search_i)\.jsp\?(?:.+&|)q=(.+?)(?:&|$)","Fireball"
+-groupsearchengine = "google\.co\.uk/custom\?(?:.+&|)q=(.+?)(?:&|$)","Google"
+-groupsearchengine = "groups\.google\.(?:com|fr)/groups\?(?:.+&|)q=(.+?)(?:&|$)","Google"
+-groupsearchengine = "go(?:[ogle]{4})\.[a-z.]+(?::80|)/(?:search|linux|de|ie|url|custom|cobrand|bsd|mac|netscape|uk|redhat|webhp)\?(?:.+&|)q=(.+?)(?:&|$)","Google"
+-groupsearchengine = "google\.com/u/[A-Za-z0-9]*\?(?:.+&|)q=(.+?)(?:&|$)","Google"
+-groupsearchengine = "images\.google\.[a-z]*/images\?(?:.+&|)q=(.+?)(?:&|$)","Google"
+-groupsearchengine = "google\.netscape\.com/(?:netscape|search)\?(?:.+&|)q=(.+?)(?:&|$)","Google"
+-groupsearchengine = "216\.239\.[0-9]+\.100/search\?(?:.+&|)q=(.+?)(?:&|$)","Google"
+-groupsearchengine = "free\.fr/google\.pl\?(?:.+&|)q=(.+?)(?:&|$)","Google @ Free.fr"
+-groupsearchengine = "hotbot\.lycos\.com/director\.asp\?(?:.+&|)q=(.+?)(?:&|$)","Hotbot"
+-groupsearchengine = "hotbot\.lycos\.com/include/nc_frameset_ink_highend\.asp\?(?:.+&|)q=(.+?)(?:&|$)","Hotbot"
+-groupsearchengine = "search\.[a-z.]*msn\.[a-z.]+/(?:sp)?(?:results\.asp|basic\.htm|results\.aspx)\?(?:.+&|)q=(.+?)(?:&|$)","MSN"
+-groupsearchengine = "search\.[a-z.]*msn\.[a-z.]+/autosearch/as_(?:pane)?results\.asp\?(?:.+&|)q=(.+?)(?:&|$)","MSN"
+-groupsearchengine = "netguide\.at/cgi-bin/query\?(?:.+&|)q=(.+?)(?:&|$)","Netguide.at"
+-groupsearchengine = "netguide\.at/query\.php3\?(?:.+&|)q=(.+?)(?:&|$)","Netguide.at"
+-groupsearchengine = "qualigo\.de/cgi-bin/suchtreffer/[A-Za-z]*CGI(?:_suchtreffer)?\?(?:.+&|)q=(.+?)(?:&|$)","Qualigo.de"
+-groupsearchengine = "searchalot\.com/cgi-bin/texis/open/dir/search\.html\?(?:.+&|)q=(.+?)(?:&|$)","Search A Lot.com"
+-groupsearchengine = "searchalot\.com/texis/open/meta\?(?:.+&|)q=(.+?)(?:&|$)","Search A Lot.com"
+-groupsearchengine = "(?:195\.145\.119\.184|brisbane\.t-online\.de)/fast-cgi/tsc\?(?:.+&|)q=(.+?)(?:&|$)","Fast @ T-Online.de"
+-groupsearchengine = "search\.com/search\?(?:.+&|)q=(.+?)(?:&|$)","Search.com"
+-groupsearchengine = "search\.sol\.(?:dk|no)/(?:kvasir|ar)/search\.cgi\?(?:.+&|)q=(.+?)(?:&|$)","Sol.no"
+-groupsearchengine = "search\.bluewindow\.ch/search\?(?:.+&|)q=(.+?)(?:&|$)","dmoz.org"
+-groupsearchengine = "ifind\.freeserve.*/servlet/search\?(?:.+&|)q=(.+?)(?:&|$)","ifind.freeserve.com"
+-groupsearchengine = "aon\.at/cgi-bin/search\.pl\?(?:.+&|)q=(.+?)(?:&|$)","jet2web.net"
+-groupsearchengine = "search\.jet2web\.net/servlet/J2WSE\?(?:.+&|)q=(.+?)(?:&|$)","jet2web.net"
+-groupsearchengine = "altavista\.onet\.pl/query\.html\?(?:.+&|)q=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "startseite\.de/(?:cobrand|search2|searchbar)\?(?:.+&|)q=(.+?)(?:&|$)","Startseite.de"
+-groupsearchengine = "suchen\.com/\?(?:.+&|)q=(.+?)(?:&|$)","Suchen.com"
+-groupsearchengine = "euroseek\.[a-z]+/query\?(?:.+&|)q=(.+?)(?:&|$)","Euroseek"
+-groupsearchengine = "suchen\.com/search/\?(?:.+&|)q=(.+?)(?:&|$)","Suchen.com"
+-groupsearchengine = "aol\.fr/rech\?(?:.+&|)q=(.+?)(?:&|$)","Aol France"
+-groupsearchengine = "search1-2\.free\.fr//?google\.pl\?next=/search\?(?:.+&|)q=(.+?)(?:&|$)","Google @ Free.fr"
+-groupsearchengine = "www\.recherche\.fr/index\.cgi\?(?:.+&|)q=(.+?)(?:&|$)", "Recherche.fr"
+-groupsearchengine = "www\.eniro\.se/query?(?:.+&)q=(.+?)(?:&|$)", "Eniro.se"
++groupsearchengine = "web\.toile\.com/toile/index\.asp\?(?:.+&)?q=(.+?)(?:&|$)",La Toile du Québec
++groupsearchengine = "freshmeat\.net/search/?\?(?:.+&)?q=(.+?)(?:&|$)",Freshmeat
++groupsearchengine = "suchen\.abacho\.(?:de|ch|at)/?(?:index.cfm|co/crawler\.cfm|standardsuche\.cfm|)?\?(?:.+&)?q=(.+?)(?:&|$)",Abacho
++groupsearchengine = "metasuche\.abacho\.de/metasuche_suchen\.phtml\?(?:.+&)?q=(.+?)(?:&|$)",Abacho
++groupsearchengine = "alltheweb\.(?:com|net)/search\?(?:.+&)?q=(.+?)(?:&|$)",Alltheweb
++groupsearchengine = "alta-?vista\.+[a-z]+\.?/cgi-bin/(?:query|rns)\?(?:.+&)?q=(.+?)(?:&|$)",Altavista
++groupsearchengine = "altavista\.com/(?:query|q|)\?(?:.+&)?q=(.+?)(?:&|$)",Altavista
++groupsearchengine = "av\.com/\?(?:.+&)?q=(.+?)(?:&|$)",Altavista
++groupsearchengine = "av\.com/cgi-bin/query\?(?:.+&)?q=(.+?)(?:&|$)",Altavista
++groupsearchengine = "av\.com/sites/search/web\?(?:.+&)?q=(.+?)(?:&|$)",Altavista
++groupsearchengine = "212\.187\.226\.44/cgi-bin/t*query\?(?:.+&)?q=(.+?)(?:&|$)",Altavista
++groupsearchengine = "a[ls]tr?ai?[vx]i?s?t?s?a\.com/cgi-bin/query\?(?:.+&)?q=(.+?)(?:&|$)",Altavista
++groupsearchengine = "a[ls]tr?ai?[vx]i?s?t?s?a\.com/.*search(?:/web|)\?(?:.+&)?q=(.+?)(?:&|$)",Altavista
++groupsearchengine = "altavista\.com?\.+[a-z]+\.?/cgi-bin/query\?(?:.+&)?q=(.+?)(?:&|$)",Altavista
++groupsearchengine = "altavista\.digital\.com/cgi-bin/query\?(?:.+&)?q=(.+?)(?:&|$)",Altavista
++groupsearchengine = "altavista\.com/iepane\?(?:.+&)?q=(.+?)(?:&|$)",Altavista
++groupsearchengine = "altavista\.yellowpages\.com\.au/results/doSearch\.php\?(?:.+&)?q=(.+?)(?:&|$)",Altavista
++groupsearchengine = "alta-?vista\.com/sites/search/web\?(?:.+&)?q=(.+?)(?:&|$)",Altavista
++groupsearchengine = "altavista\.com/sites/search/res_text\?(?:.+&)?q=(.+?)(?:&|$)",Altavista
++groupsearchengine = "de\.altavista\.com/dir/default\?(?:.+&)?q=(.+?)(?:&|$)",Altavista
++groupsearchengine = "listings\.altavista\.com/GT_av\?(?:.+&)?q=(.+?)(?:&|$)",Altavista
++groupsearchengine = "altavista\.com/sites/listings/GT_av\?(?:.+&)?q=(.+?)(?:&|$)",Altavista
++groupsearchengine = "listings\.altavista\.com/scripts/gt\.dll\?(?:.+&)?q=(.+?)(?:&|$)",Altavista
++groupsearchengine = "ragingsearch\.altavista\.com/\?(?:.+&)?q=(.+?)(?:&|$)",Altavista
++groupsearchengine = "se\.altavista\.com/cgi-bin/rns\?(?:.+&)?q=(.+?)(?:&|$)",Altavista
++groupsearchengine = "altavista\.com/web(?:/results)?\?(?:.+&)?q=(.+?)(?:&|$)",Altavista
++groupsearchengine = "suche(?:aol)?\.aol\.de/suche/(?:web/)?search.jsp\?(?:.+&)?q=(.+?)(?:&|$)",AOL.de
++groupsearchengine = "finden\.averdo\.de/find\.av\?(?:.+&)?q=(.+?)(?:&|$)",Averdo.de
++groupsearchengine = "caloweb\.com/de/html/search_result\.php3\?(?:.+&)?q=(.+?)(?:&|$)",CaloWeb.com
++groupsearchengine = "caloweb\.de/html/search_result\.php3\?(?:.+&)?q=(.+?)(?:&|$)",CaloWeb.com
++groupsearchengine = "compuserve(?:office)*\.de/suche/suche\.jsp\?(?:.+&)?q=(.+?)(?:&|$)",CompuServe
++groupsearchengine = "dogpile\.com/texis/search\?(?:.+&)?q=(.+?)(?:&|$)",Dogpile
++groupsearchengine = "catalog\.dogpile\.com/texis/catalog\?(?:.+&)?q=(.+?)(?:&|$)",Dogpile
++groupsearchengine = "catalog\.dogpile\.com/texis/redir/main\.bin\?(?:.+&)?q=(.+?)(?:&|$)",Dogpile
++groupsearchengine = "opendir\.dogpile\.com/texis/dpdir/search\.html\?(?:.+&)?q=(.+?)(?:&|$)",Dogpile
++groupsearchengine = "evreka\.passagen\.se/query\?(?:.+&)?q=(.+?)(?:&|$)",Evreka
++groupsearchengine = "e[uv]reka\.com\?(?:.+&)?q=(.+?)(?:&|$)",Evreka
++groupsearchengine = "\.evreka\.[a-z]+/query\?(?:.+&)?q=(.+?)(?:&|$)",Evreka
++groupsearchengine = "fireball\.de/fcgi/query(?:-firehoo)?\.fcg\?(?:.+&)?q=(.+?)(?:&|$)",Fireball
++groupsearchengine = "wissen\.fireball\.de/(?:artikelseite|websearch|redirect-search_i)\.jsp\?(?:.+&)?q=(.+?)(?:&|$)",Fireball
++groupsearchengine = "google\.co\.uk/custom\?(?:.+&)?q=(?:cache:[^+]+)(.+?)(?:&|$)",Google
++groupsearchengine = "groups\.google\.(?:com|fr)/groups\?(?:.+&)?q=(?:cache:[^+]+)(.+?)(?:&|$)",Google
++groupsearchengine = "go(?:[ogle]{4})\.[a-z.]+(?::80|)/(?:search|linux|de|ie|url|custom|cobrand|bsd|mac|netscape|uk|redhat|webhp)\?(?:.+&)?q=(?:cache:[^+]+)(.+?)(?:&|$)",Google
++groupsearchengine = "google\.com/u/[A-Za-z0-9]*\?(?:.+&)?q=(?:cache:[^+]+)(.+?)(?:&|$)",Google
++groupsearchengine = "images\.google\.[a-z]*/images\?(?:.+&)?q=(?:cache:[^+]+)(.+?)(?:&|$)",Google
++groupsearchengine = "google\.netscape\.com/(?:netscape|search)\?(?:.+&)?q=(?:cache:[^+]+)(.+?)(?:&|$)",Google
++groupsearchengine = "216\.239\.[0-9]+\.100/search\?(?:.+&)?q=(?:cache:[^+]+)(.+?)(?:&|$)",Google
++groupsearchengine = "(66\.(102\.([0-9]|1[0-5])|249\.(6[4-9]|[78][0-9]|9[0-5]))|64\.233\.(1[678][0-9]|19[01])|72\.14\.(19[2-9]|2[0-3][0-9]))\.[0-9]+/search\?(?:.+&|)q=cache:.+:.+\+(.+?)(?:&|$)", "Google Cache"
++groupsearchengine = "free\.fr/google\.pl\?(?:.+&)?q=(?:cache:[^+]+)(.+?)(?:&|$)",Google @ Free.fr
++groupsearchengine = "hotbot\.lycos\.com/director\.asp\?(?:.+&)?q=(.+?)(?:&|$)",Hotbot
++groupsearchengine = "hotbot\.lycos\.com/include/nc_frameset_ink_highend\.asp\?(?:.+&)?q=(.+?)(?:&|$)",Hotbot
++groupsearchengine = "search\.[a-z.]*msn\.[a-z.]+/(?:sp)?(?:results\.asp|basic\.htm|results\.aspx)\?(?:.+&)?q=(.+?)(?:&|$)",MSN
++groupsearchengine = "search\.[a-z.]*msn\.[a-z.]+/autosearch/as_(?:pane)?results\.asp\?(?:.+&)?q=(.+?)(?:&|$)",MSN
++groupsearchengine = "netguide\.at/cgi-bin/query\?(?:.+&)?q=(.+?)(?:&|$)",Netguide.at
++groupsearchengine = "netguide\.at/query\.php3\?(?:.+&)?q=(.+?)(?:&|$)",Netguide.at
++groupsearchengine = "qualigo\.de/cgi-bin/suchtreffer/[A-Za-z]*CGI(?:_suchtreffer)?\?(?:.+&)?q=(.+?)(?:&|$)",Qualigo.de
++groupsearchengine = "searchalot\.com/cgi-bin/texis/open/dir/search\.html\?(?:.+&)?q=(.+?)(?:&|$)",Search A Lot.com
++groupsearchengine = "searchalot\.com/texis/open/meta\?(?:.+&)?q=(.+?)(?:&|$)",Search A Lot.com
++groupsearchengine = "(?:195\.145\.119\.184|(?:suche|brisbane)\.t-online\.de)/fast-cgi/tsc\?(?:.+&)?q=(.+?)(?:&|$)",T-Online.de
++groupsearchengine = "search\.com/search\?(?:.+&)?q=(.+?)(?:&|$)",Search.com
++groupsearchengine = "search\.sol\.(?:dk|no)/(?:kvasir|ar)/search\.cgi\?(?:.+&)?q=(.+?)(?:&|$)",Sol.no
++groupsearchengine = "search\.bluewindow\.ch/search\?(?:.+&)?q=(.+?)(?:&|$)",dmoz.org
++groupsearchengine = "ifind\.freeserve.*/servlet/search\?(?:.+&)?q=(.+?)(?:&|$)",ifind.freeserve.com
++groupsearchengine = "aon\.at/cgi-bin/search\.pl\?(?:.+&)?q=(.+?)(?:&|$)",jet2web.net
++groupsearchengine = "search\.jet2web\.net/servlet/J2WSE\?(?:.+&)?q=(.+?)(?:&|$)",jet2web.net
++groupsearchengine = "altavista\.onet\.pl/query\.html\?(?:.+&)?q=(.+?)(?:&|$)",Altavista
++groupsearchengine = "startseite\.de/(?:cobrand|search2|searchbar)\?(?:.+&)?q=(.+?)(?:&|$)",Startseite.de
++groupsearchengine = "suchen\.com/\?(?:.+&)?q=(.+?)(?:&|$)",Suchen.com
++groupsearchengine = "euroseek\.[a-z]+/query\?(?:.+&)?q=(.+?)(?:&|$)",Euroseek
++groupsearchengine = "suchen\.com/search/\?(?:.+&)?q=(.+?)(?:&|$)",Suchen.com
++groupsearchengine = "aol\.fr/rech\?(?:.+&)?q=(.+?)(?:&|$)",Aol France
++groupsearchengine = "search1-2\.free\.fr//?google\.pl\?next=/search\?(?:.+&)?q=(.+?)(?:&|$)",Google @ Free.fr
++groupsearchengine = "www\.recherche\.fr/index\.cgi\?(?:.+&)?q=(.+?)(?:&|$)",Recherche.fr
++groupsearchengine = "www\.eniro\.se/query?(?:.+&)q=(.+?)(?:&|$)",Eniro.se
+ # qr
+-groupsearchengine = "northernlight\.com/nlquery\.fcg\?(?:.+&|)qr=(.+?)(?:&|$)","Northernlight.com"
++groupsearchengine = "northernlight\.com/nlquery\.fcg\?(?:.+&)?qr=(.+?)(?:&|$)",Northernlight.com
+ # qry
+-groupsearchengine = "directhit\.com/fcgi-bin/RedirURL\.fcg\?(?:.+&|)qry=(.+?)(?:&|$)","DirectHit"
+-groupsearchengine = "directhit\.com/fcgi-bin/DirectHit.*\.fcg\?(?:.+&|)qry=(.+?)(?:&|$)","DirectHit"
+-groupsearchengine = "directhit\.com/fcgi-bin/TopTenDemo\.fcg\?(?:.+&|)qry=(.+?)(?:&|$)","DirectHit"
+-groupsearchengine = "directhit\.com/search\.asp\?(?:.+&|)qry=(.+?)(?:&|$)","DirectHit"
+-groupsearchengine = "msn\.directhit\.com/fcgi-bin/DirectHitMSN\.fcg\?(?:.+&|)qry=(.+?)(?:&|$)","DirectHit"
+-groupsearchengine = "msn\.directhit\.com/msn/searchX?\.php\?(?:.+&|)qry=(.+?)(?:&|$)","DirectHit"
+-groupsearchengine = "\.lycos\.de/fcgi-bin/RedirURL\.fcg\?(?:.+&|)qry=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "216\.15\.192\.226(?::80)*\?(?:.+&|)qry=(.+?)(?:&|$)","Metacrawler.de"
+-groupsearchengine = "216\.15\.219\.(?:4[0-9]|62)(?::1234|:70|:80|:8080)?/\?(?:.+&|)qry=(.+?)(?:&|$)","Metacrawler.de"
+-groupsearchengine = "216\.15\.192\.226/cgi-bin/meta-bin/do/nph-seek(?:profi)*\.cgi\?(?:.+&|)qry=(.+?)(?:&|$)","Metacrawler.de"
+-groupsearchengine = "216\.15\.192\.226(?::8080|:80|)/nph-chatologica\.pl\?(?:.+&|)qry=(.+?)(?:&|$)","Metacrawler.de"
+-groupsearchengine = "metaspinner\.net/cgi-bin/mdsme-II/nph-spinner\.pl\?(?:.+&|)qry=(.+?)(?:&|$)","Metaspinner.net"
+-groupsearchengine = "212\.122\.128\.99/cgi-bin/nph-spinner\.cgi\?(?:.+&|)qry=(.+?)(?:&|$)","Metaspinner.net"
+-groupsearchengine = "212\.122\.129\.130/users/metaspinner/cgi-bin/nph-spinner\.pl\?(?:.+&|)qry=(.+?)(?:&|$)","Metaspinner.net"
+-groupsearchengine = "212\.227\.33\.241/cgi-bin/mdsme-II/nph-spinner\.pl\?(?:.+&|)qry=(.+?)(?:&|$)","Metaspinner.net"
+-groupsearchengine = "212\.227\.33\.241/cgi-bin/mdsme-II/nph-spinnerv42b\.pl\?(?:.+&|)qry=(.+?)(?:&|$)","Metaspinner.net"
+-groupsearchengine = "findall\.de/cgi-bin/.*/nph-Metasuche\.\?(?:.+&|)qry=(.+?)(?:&|$)","Findall.de"
+-groupsearchengine = "search\.icq\.com/default\.asp\?(?:.+&|)qry=(.+?)(?:&|$)","ICQ Directory"
++groupsearchengine = "directhit\.com/fcgi-bin/RedirURL\.fcg\?(?:.+&)?qry=(.+?)(?:&|$)",DirectHit
++groupsearchengine = "directhit\.com/fcgi-bin/DirectHit.*\.fcg\?(?:.+&)?qry=(.+?)(?:&|$)",DirectHit
++groupsearchengine = "directhit\.com/fcgi-bin/TopTenDemo\.fcg\?(?:.+&)?qry=(.+?)(?:&|$)",DirectHit
++groupsearchengine = "directhit\.com/search\.asp\?(?:.+&)?qry=(.+?)(?:&|$)",DirectHit
++groupsearchengine = "msn\.directhit\.com/fcgi-bin/DirectHitMSN\.fcg\?(?:.+&)?qry=(.+?)(?:&|$)",DirectHit
++groupsearchengine = "msn\.directhit\.com/msn/searchX?\.php\?(?:.+&)?qry=(.+?)(?:&|$)",DirectHit
++groupsearchengine = "\.lycos\.de/fcgi-bin/RedirURL\.fcg\?(?:.+&)?qry=(.+?)(?:&|$)",Lycos
++groupsearchengine = "216\.15\.192\.226(?::80)*\?(?:.+&)?qry=(.+?)(?:&|$)",Metacrawler.de
++groupsearchengine = "216\.15\.219\.(?:4[0-9]|62)(?::1234|:70|:80|:8080)?/\?(?:.+&)?qry=(.+?)(?:&|$)",Metacrawler.de
++groupsearchengine = "216\.15\.192\.226/cgi-bin/meta-bin/do/nph-seek(?:profi)*\.cgi\?(?:.+&)?qry=(.+?)(?:&|$)",Metacrawler.de
++groupsearchengine = "216\.15\.192\.226(?::8080|:80|)/nph-chatologica\.pl\?(?:.+&)?qry=(.+?)(?:&|$)",Metacrawler.de
++groupsearchengine = "metaspinner\.net/cgi-bin/mdsme-II/nph-spinner\.pl\?(?:.+&)?qry=(.+?)(?:&|$)",Metaspinner.net
++groupsearchengine = "212\.122\.128\.99/cgi-bin/nph-spinner\.cgi\?(?:.+&)?qry=(.+?)(?:&|$)",Metaspinner.net
++groupsearchengine = "212\.122\.129\.130/users/metaspinner/cgi-bin/nph-spinner\.pl\?(?:.+&)?qry=(.+?)(?:&|$)",Metaspinner.net
++groupsearchengine = "212\.227\.33\.241/cgi-bin/mdsme-II/nph-spinner\.pl\?(?:.+&)?qry=(.+?)(?:&|$)",Metaspinner.net
++groupsearchengine = "212\.227\.33\.241/cgi-bin/mdsme-II/nph-spinnerv42b\.pl\?(?:.+&)?qry=(.+?)(?:&|$)",Metaspinner.net
++groupsearchengine = "findall\.de/cgi-bin/.*/nph-Metasuche\.\?(?:.+&)?qry=(.+?)(?:&|$)",Findall.de
++groupsearchengine = "search\.icq\.com/default\.asp\?(?:.+&)?qry=(.+?)(?:&|$)",ICQ Directory
+ # qs
+ # qt
+-groupsearchengine = "go\.com/Titles\?(?:.+&|)qt=(.+?)(?:&|$)","GO.COM"
+-groupsearchengine = "go\.com\?(?:.+&|)qt=(.+?)(?:&|$)","GO.COM"
+-groupsearchengine = "search\.go\.com/SearchOnly\?(?:.+&|)qt=(.+?)(?:&|$)","GO.COM"
+-groupsearchengine = "(?:beta|www|mypage)\.go\.com/Split\?(?:.+&|)qt=(.+?)(?:&|$)","GO.COM"
+-groupsearchengine = "infoseek\.go\.com/\?(?:.+&|)qt=(.+?)(?:&|$)","Infoseek"
+-groupsearchengine = "infoseek\.go\.com/M6/pagebanner\.html\?(?:.+&|)qt=(.+?)(?:&|$)","Infoseek"
+-groupsearchengine = "infoseek\.go\.com/MSTitles\?(?:.+&|)qt=(.+?)(?:&|$)","Infoseek"
+-groupsearchengine = "go\.com/\?(?:.+&|)qt=(.+?)(?:&|$)","Infoseek"
+-groupsearchengine = "info(?:-seek|seek|sick)\.(?:de|ch)/seek/s\.cgi\?(?:.+&|)qt=(.+?)(?:&|$)","Infoseek"
+-groupsearchengine = "infoseek\.com/Titles\?(?:.+&|)qt=(.+?)(?:&|$)","Infoseek"
+-groupsearchengine = "infoseek\.co\.jp/Titles\?(?:.+&|)qt=(.+?)(?:&|$)","Infoseek"
+-groupsearchengine = "infoseek\.icm\.edu\.pl/query\.html\?(?:.+&|)qt=(.+?)(?:&|$)","Infoseek"
+-groupsearchengine = "infoseek\.go\.com/Titles/\?(?:.+&|)qt=(.+?)(?:&|$)","Infoseek"
+-groupsearchengine = "infoseek\.[a-z]*/seek/s\.cgi\?(?:.+&|)qt=(.+?)(?:&|$)","Infoseek"
+-groupsearchengine = "altavista\.onet\.pl/query\.html\?(?:.+&|)qt=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "websearch\.infinit\.com/infinit/index\.asp\?(?:.+&|)qt=(.+?)(?:&|$)","La Toile du Québec"
++groupsearchengine = "go\.com/Titles\?(?:.+&)?qt=(.+?)(?:&|$)",GO.COM
++groupsearchengine = "go\.com\?(?:.+&)?qt=(.+?)(?:&|$)",GO.COM
++groupsearchengine = "search\.go\.com/SearchOnly\?(?:.+&)?qt=(.+?)(?:&|$)",GO.COM
++groupsearchengine = "(?:beta|www|mypage)\.go\.com/Split\?(?:.+&)?qt=(.+?)(?:&|$)",GO.COM
++groupsearchengine = "infoseek\.go\.com/\?(?:.+&)?qt=(.+?)(?:&|$)",Infoseek
++groupsearchengine = "infoseek\.go\.com/M6/pagebanner\.html\?(?:.+&)?qt=(.+?)(?:&|$)",Infoseek
++groupsearchengine = "infoseek\.go\.com/MSTitles\?(?:.+&)?qt=(.+?)(?:&|$)",Infoseek
++groupsearchengine = "go\.com/\?(?:.+&)?qt=(.+?)(?:&|$)",Infoseek
++groupsearchengine = "info(?:-seek|seek|sick)\.(?:de|ch)/seek/s\.cgi\?(?:.+&)?qt=(.+?)(?:&|$)",Infoseek
++groupsearchengine = "infoseek\.com/Titles\?(?:.+&)?qt=(.+?)(?:&|$)",Infoseek
++groupsearchengine = "infoseek\.co\.jp/Titles\?(?:.+&)?qt=(.+?)(?:&|$)",Infoseek
++groupsearchengine = "infoseek\.icm\.edu\.pl/query\.html\?(?:.+&)?qt=(.+?)(?:&|$)",Infoseek
++groupsearchengine = "infoseek\.go\.com/Titles/\?(?:.+&)?qt=(.+?)(?:&|$)",Infoseek
++groupsearchengine = "infoseek\.[a-z]*/seek/s\.cgi\?(?:.+&)?qt=(.+?)(?:&|$)",Infoseek
++groupsearchengine = "altavista\.onet\.pl/query\.html\?(?:.+&)?qt=(.+?)(?:&|$)",Altavista
++groupsearchengine = "websearch\.infinit\.com/infinit/index\.asp\?(?:.+&)?qt=(.+?)(?:&|$)",La Toile du Québec
+ 
+ # qu
+ # query
+-groupsearchengine = "(?:search|suchen|recherche|aolrecherches)\.aol\.(?:co\.)?[a-z.]+/(?:search|minisearch|itemsearch|results|web|cat|dirsearch|advncd|redirect)(?:_[a-z]+)?\.adp\?(?:.+&|)query=(.+?)(?:&|$)","AOL"
+-groupsearchengine = "uk-nf01\.web\.aol\.com/cgi-bin/pursuit\?(?:.+&|)query=(.+?)(?:&|$)","AOL"
+-groupsearchengine = "netfind\.germany\.aol\.com/cgi-bin/(?:pursuit|nph-pursuit|pursuit2.pl)\?(?:.+&|)query=(.+?)(?:&|$)","AOL"
+-groupsearchengine = "netfind\.aol\.de/cgi-bin/.*pursuit\?(?:.+&|)query=(.+?)(?:&|$)","AOL"
+-groupsearchengine = "americaonline\.com\.br/cgi-bin\?(?:.+&|)query=(.+?)(?:&|$)","AOL"
+-groupsearchengine = "shopping\.aol\.de/scripts/ao/results\.php\?(?:.+&|)query=(.+?)(?:&|$)","AOL"
+-groupsearchengine = "buscador\.americaonline\.com\.ar/resultados\.adp\?(?:.+&|)query=(.+?)(?:&|$)","AOL"
+-groupsearchengine = "busqueda\.americaonline\.com\.mx/results\.adp\?(?:.+&|)query=(.+?)(?:&|$)","AOL"
+-groupsearchengine = "aolrecherche\.aol\.fr/web\.adp\?(?:.+&|)query=(.+?)(?:&|$)","AOL"
+-groupsearchengine = "allt(?:he|eh)web\.(?:net|com)/(?:cgi-bin/|)(?:a|adv|)search\?(?:.+&|)query=(.+?)(?:&|$)","AllTheWeb"
+-groupsearchengine = "search\.compuserve\.co\.uk/results\.adp\?(?:.+&|)query=(.+?)(?:&|$)","CompuServe"
+-groupsearchengine = "crawler\.de/cgi-bin/suche\?(?:.+&|)query=(.+?)(?:&|$)","Crawler.de"
+-groupsearchengine = "dino3\.dino-online\.de/dscgi/suche\?(?:.+&|)query=(.+?)(?:&|$)","Dino Online"
+-groupsearchengine = "suche\.dino-online\.de/cgi-bin/suche(?:/suche)*\?(?:.+&|)query=(.+?)(?:&|$)","Dino Online"
+-groupsearchengine = "suche\.dino-online\.de/suche\?(?:.+&|)query=(.+?)(?:&|$)","Dino Online"
+-groupsearchengine = "suche\.dino-online\.de/perl/show\.pl\?(?:.+&|)query=(.+?)(?:&|$)","Dino Online"
+-groupsearchengine = "heavymetal\.fireball\.de:4080/fcgi/rnsContainer\.fcg\?(?:.+&|)query=(.+?)(?:&|$)","Fireball"
+-groupsearchengine = "suche\.freenet\.de/perl/show\.pl\?(?:.+&|)query=(.+?)(?:&|$)","Freenet.de"
+-groupsearchengine = "suche\.freenet\.de/suche\?(?:.+&|)query=(.+?)(?:&|$)","Freenet.de"
+-groupsearchengine = "google\.com/search\?(?:.+&|)query=(.+?)(?:&|$)","Google"
+-groupsearchengine = "google\.netscape\.com/netscape\?(?:.+&|)query=(.+?)(?:&|$)","Google @ Netscape"
+-groupsearchengine = "google\.com/netscape\?(?:.+&|)query=(.+?)(?:&|$)","Google @ Netscape"
+-groupsearchengine = "hotbot\.[^/]+/(?:director\.asp|result\.html|)\?(?:.+&|)query=(.+?)(?:&|$)","HotBot"
+-groupsearchengine = "infoseek\.de/[a-z]?query\?(?:.+&|)query=(.+?)(?:&|$)","Infoseek"
+-groupsearchengine = "pre\.sympatico\.ca/cgi-bin/search/search\.pl\?(?:.+&|)query=(.+?)(?:&|$)","Sympatico.ca"
+-groupsearchengine = "search\.sli\.sympatico\.ca/(?i)results\.asp\?(?:.+&|)query=(.+?)(?:&|$)","Sympatico.ca"
+-groupsearchengine = "(?:richmedia|multimedia|search)\.lycos\.com/default.asp\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "209\.185\.151\.128:80/director\.asp\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "(?:laicos|laycos|leicos|leikos|licos|lucos|lycus|lykos|lyocs|lyos)\.de/cgi-bin/pursuit\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "lycosuk\.co\.uk/cgi-bin/pursuit\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "lycos\.com(?:\.)*/srch(?:/setup\.html|/more\.html)*\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "lycospro\.lycos\.com/srchpro\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "lycos\.[a-z.]+/cgi-bin/pursuit\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "download\.lycos\.com/swbasic/BasicResults\.asp\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "ftpsearch\.lycos\.com/cgi-bin/search\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "search\.lycos\.com/main(?:/|/default.asp|)\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "shopping\.lycos\.de/scripts/ly/detail\.php\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "spidernow\.lycos\.com/cgi-bin/spidernow-EU\.pl\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "hpartner\.lycos\.de/psearch\.html\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "sg\.lycosasia\.com/srch\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "lycos\.com/srch/\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "lycos\.com/srch/index\.html\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "sg\.lycosasia\.com/srch/index\.html\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "sg\.lycosasia\.com/srch/more\.html\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "stage-1\.lycos\.de:86/cgi-bin/pursuit\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "lycos/cgi-bin/pursuit\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "lycospro\.lycos\.com/srchpro/\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "multimedia\.lycos\.com/cgi-bin/search\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "search\.lycos\.com/main\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "www-english\.lycos\.com/srch/\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "th\.lycosasia\.com/srch/index\.html\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "lycosch\.ch/cgi-bin/pursuit\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "lyco\.de/cgi-bin/pursuit\?(?:.+&|)query=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "204\.152\.166\.42/HotSheet\?(?:.+&|)query=(.+?)(?:&|$)","Mamma"
+-groupsearchengine = "204\.152\.166\.41/Bigeye\?(?:.+&|)query=(.+?)(?:&|$)","Mamma"
+-groupsearchengine = "mamma\.com/Mamma\?(?:.+&|)query=(.+?)(?:&|$)","Mamma"
+-groupsearchengine = "goto\.mamma\.com/UTStarGate\?(?:.+&|)query=(.+?)(?:&|$)","Mamma"
+-groupsearchengine = "hotbar\.mamma\.com/Hotbar\?(?:.+&|)query=(.+?)(?:&|$)","Mamma"
+-groupsearchengine = "mamma[0-9]+\.mamma\.com/Mamma\?(?:.+&|)query=(.+?)(?:&|$)","Mamma"
+-groupsearchengine = "partners\.mamma\.com/(?:Altavista|Askjeeves1|Beaucoup|Botbot|Cb_12c4|HotSheet|Hotbar|Pages)\?(?:.+&|)query=(.+?)(?:&|$)","Mamma"
+-groupsearchengine = "mamma\.com/Mamma_pictures\?(?:.+&|)query=(.+?)(?:&|$)","Mamma"
+-groupsearchengine = "netfind\.co\.uk/web_uk\.adp\?(?:.+&|)query=(.+?)(?:&|$)","Netfind"
+-groupsearchengine = "netfind\.de/cgi-bin/pursuit\?(?:.+&|)query=(.+?)(?:&|$)","Netfind"
+-groupsearchengine = "search\.netscapeonline\.co\.uk/results\.adp\?(?:.+&|)query=(.+?)(?:&|$)","Netscape"
+-groupsearchengine = "208\.48\.102\.141/Searchalot\?(?:.+&|)query=(.+?)(?:&|$)","Seach A Lot.com"
+-groupsearchengine = "search\.searchalot\.com\?(?:.+&|)query=(.+?)(?:&|$)","Search A Lot.com"
+-groupsearchengine = "208\.48\.102\.148/Searchalot\?(?:.+&|)query=(.+?)(?:&|$)","Search A Lot.com"
+-groupsearchengine = "208\.49\.237\.71/Searchalot\?(?:.+&|)query=(.+?)(?:&|$)","Search A Lot.com"
+-groupsearchengine = "204\.152\.166\.[34][0-9]/(?:Searchalot|Crosswinds|Galttech|Locate)\?(?:.+&|)query=(.+?)(?:&|$)","Search A Lot.com"
+-groupsearchengine = "surfeu\.ch/it/search/search\.php\?(?:.+&|)query=(.+?)(?:&|$)","SurfEU"
+-groupsearchengine = "www[0-9]*\.surfeu\.[a-z]+/search/search\.php\?(?:.+&|)query=(.+?)(?:&|$)","SurfEU"
+-groupsearchengine = "allthesites\.com/cgi-bin/(?:a|)search\?(?:.+&|)query=(.+?)(?:&|$)","allthesites"
+-groupsearchengine = "allthesites\.com/php/search\.php\?(?:.+&|)query=(.+?)(?:&|$)","allthesites"
+-groupsearchengine = "allthesites\.com/search/search\.asp\?(?:.+&|)query=(.+?)(?:&|$)","allthesites"
+-groupsearchengine = "sprint\.allthesites\.com/php3/search\.php3\?(?:.+&|)query=(.+?)(?:&|$)","allthesites"
+-groupsearchengine = "search\.allthesites\.com/cgi-bin/search\?(?:.+&|)query=(.+?)(?:&|$)","allthesites"
+-groupsearchengine = "drlook\.allthesites\.net/php/search\.php\?(?:.+&|)query=(.+?)(?:&|$)","allthesites"
+-groupsearchengine = "sprint\.allthesites\.com/search/search\.asp\?(?:.+&|)query=(.+?)(?:&|$)","allthesites"
+-groupsearchengine = "usonline\.allthesites\.net/search/search\.asp\?(?:.+&|)query=(.+?)(?:&|$)","allthesites"
+-groupsearchengine = "search\.allthesites\.com/cgi-bin/search/\?(?:.+&|)query=(.+?)(?:&|$)","allthesites"
+-groupsearchengine = "ixquick\.com/do/metasearch\.pl\?(?:.+&|)query=(.+?)(?:&|$)","ixquick.com"
+-groupsearchengine = "ah-ha\.com/(?:cobrand|sitter)/[a-z]+/search\.ihtml\?(?:.+&|)query=(.+?)(?:&|$)","Ah-Ha.com"
+-groupsearchengine = "ah-ha\.com/partner/[0-9]+\.asp\?(?:.+&|)query=(.+?)(?:&|$)","Ah-Ha.com"
+-groupsearchengine = "search\.icq\.com/cat\.adp\?(?:.+&|)query=(.+?)(?:&|$)","ICQ Directory"
+-groupsearchengine = "search\.icq\.com/dirsearch\.adp\?(?:.+&|)query=(.+?)(?:&|$)","ICQ Directory"
+-groupsearchengine = "surfsaturn\.de/.*/search\.php\?(?:.+&|)query=(.+?)(?:&|$)","SurfSaturn.de"
+-groupsearchengine = "euroseek\.[a-z]+/query\?(?:.+&|)query=(.+?)(?:&|$)","Euroseek"
+-groupsearchengine = "hurra.de/cgi-local/hurra_content_search.cgi\?(?:.+&|)query=(.+?)(?:&|$)","Hurra.de"
+-groupsearchengine = "search.hurra.de/HurraContentSearch\?(?:.+&|)query=(.+?)(?:&|$)","Hurra.de"
+-groupsearchengine = "vivisimo.com/search\?(?:.+&|)query=(.+?)(?:&|$)","Vivisimo"
+-groupsearchengine = "antionline\.com/cgi-bin/search\.cgi\?(?:.+&|)query=(.+?)(?:&|$)","AntiOnline"
+-groupsearchengine = "altavista\.mamma\.com/Altavista\?(?:.+&|)query=(.+?)(?:&|$)","Mamma"
+-groupsearchengine = "linux-directory\.com/cgi-bin/links/search\.cgi\?(?:.+&|)query=(.+?)(?:&|$)","Linux Directory"
+-groupsearchengine = "sympatico\.ca/(?:cgi-bin/chercher/(?:adv)?chercher\.pl|(?:partner/sli/)?asp/results\.asp)\?(?:.+&|)query=(.+?)(?:&|$)","Sympatico.ca"
+-groupsearchengine = "web\.toile\.com/(?:toile|infinit)/index\.asp\?(?:.+&|)query=(.+?)(?:&|$)","La Toile du Québec"
+-groupsearchengine = "worldonline\.fr/(?:search/)?wolsearch\.php\?(?:.+&|)query=(.+?)(?:&|$)","WorldOnline.fr"
++groupsearchengine = "(?:search|suchen|recherche|aolrecherches)\.aol\.(?:co\.)?[a-z.]+/(?:search|minisearch|itemsearch|results|web|cat|dirsearch|advncd|redirect)(?:_[a-z]+)?\.adp\?(?:.+&)?query=(.+?)(?:&|$)",AOL
++groupsearchengine = "uk-nf01\.web\.aol\.com/cgi-bin/pursuit\?(?:.+&)?query=(.+?)(?:&|$)",AOL
++groupsearchengine = "netfind\.germany\.aol\.com/cgi-bin/(?:pursuit|nph-pursuit|pursuit2.pl)\?(?:.+&)?query=(.+?)(?:&|$)",AOL
++groupsearchengine = "netfind\.aol\.de/cgi-bin/.*pursuit\?(?:.+&)?query=(.+?)(?:&|$)",AOL
++groupsearchengine = "americaonline\.com\.br/cgi-bin\?(?:.+&)?query=(.+?)(?:&|$)",AOL
++groupsearchengine = "shopping\.aol\.de/scripts/ao/results\.php\?(?:.+&)?query=(.+?)(?:&|$)",AOL
++groupsearchengine = "buscador\.americaonline\.com\.ar/resultados\.adp\?(?:.+&)?query=(.+?)(?:&|$)",AOL
++groupsearchengine = "busqueda\.americaonline\.com\.mx/results\.adp\?(?:.+&)?query=(.+?)(?:&|$)",AOL
++groupsearchengine = "aolrecherche\.aol\.fr/web\.adp\?(?:.+&)?query=(.+?)(?:&|$)",AOL
++groupsearchengine = "allt(?:he|eh)web\.(?:net|com)/(?:cgi-bin/|)(?:a|adv|)search\?(?:.+&)?query=(.+?)(?:&|$)",AllTheWeb
++groupsearchengine = "search\.compuserve\.co\.uk/results\.adp\?(?:.+&)?query=(.+?)(?:&|$)",CompuServe
++groupsearchengine = "crawler\.de/cgi-bin/suche\?(?:.+&)?query=(.+?)(?:&|$)",Crawler.de
++groupsearchengine = "dino3\.dino-online\.de/dscgi/suche\?(?:.+&)?query=(.+?)(?:&|$)",Dino Online
++groupsearchengine = "suche\.dino-online\.de/cgi-bin/suche(?:/suche)*\?(?:.+&)?query=(.+?)(?:&|$)",Dino Online
++groupsearchengine = "suche\.dino-online\.de/suche\?(?:.+&)?query=(.+?)(?:&|$)",Dino Online
++groupsearchengine = "suche\.dino-online\.de/perl/show\.pl\?(?:.+&)?query=(.+?)(?:&|$)",Dino Online
++groupsearchengine = "heavymetal\.fireball\.de:4080/fcgi/rnsContainer\.fcg\?(?:.+&)?query=(.+?)(?:&|$)",Fireball
++groupsearchengine = "suche\.freenet\.de/perl/show\.pl\?(?:.+&)?query=(.+?)(?:&|$)",Freenet.de
++groupsearchengine = "suche\.freenet\.de/suche\?(?:.+&)?query=(.+?)(?:&|$)",Freenet.de
++groupsearchengine = "google\.com/search\?(?:.+&)?query=(?:cache:[^+]+)(.+?)(?:&|$)",Google
++groupsearchengine = "google\.netscape\.com/netscape\?(?:.+&)?query=(?:cache:[^+]+)(.+?)(?:&|$)",Google @ Netscape
++groupsearchengine = "suche\.netscape\.de/suche/web/search\.jsp\?q=(?:cache:[^+]+)(.+?)(?:&|$)",Google @ Netscape
++groupsearchengine = "google\.com/netscape\?(?:.+&)?query=(?:cache:[^+]+)(.+?)(?:&|$)",Google @ Netscape
++groupsearchengine = "hotbot\.[^/]+/(?:director\.asp|result\.html|)\?(?:.+&)?query=(.+?)(?:&|$)",HotBot
++groupsearchengine = "infoseek\.de/[a-z]?query\?(?:.+&)?query=(.+?)(?:&|$)",Infoseek
++groupsearchengine = "pre\.sympatico\.ca/cgi-bin/search/search\.pl\?(?:.+&)?query=(.+?)(?:&|$)",Sympatico.ca
++groupsearchengine = "search\.sli\.sympatico\.ca/(?i)results\.asp\?(?:.+&)?query=(.+?)(?:&|$)",Sympatico.ca
++groupsearchengine = "(?:richmedia|multimedia|search)\.lycos\.com/default.asp\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "209\.185\.151\.128:80/director\.asp\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "(?:laicos|laycos|leicos|leikos|licos|lucos|lycus|lykos|lyocs|lyos)\.de/cgi-bin/pursuit\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "lycosuk\.co\.uk/cgi-bin/pursuit\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "lycos\.com(?:\.)*/srch(?:/setup\.html|/more\.html)*\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "lycospro\.lycos\.com/srchpro\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "lycos\.[a-z.]+/cgi-bin/pursuit\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "download\.lycos\.com/swbasic/BasicResults\.asp\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "ftpsearch\.lycos\.com/cgi-bin/search\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "search\.lycos\.com/main(?:/|/default.asp|)\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "shopping\.lycos\.de/scripts/ly/detail\.php\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "spidernow\.lycos\.com/cgi-bin/spidernow-EU\.pl\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "hpartner\.lycos\.de/psearch\.html\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "sg\.lycosasia\.com/srch\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "lycos\.com/srch/\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "lycos\.com/srch/index\.html\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "sg\.lycosasia\.com/srch/index\.html\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "sg\.lycosasia\.com/srch/more\.html\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "stage-1\.lycos\.de:86/cgi-bin/pursuit\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "lycos/cgi-bin/pursuit\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "lycospro\.lycos\.com/srchpro/\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "multimedia\.lycos\.com/cgi-bin/search\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "search\.lycos\.com/main\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "www-english\.lycos\.com/srch/\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "th\.lycosasia\.com/srch/index\.html\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "lycosch\.ch/cgi-bin/pursuit\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "lyco\.de/cgi-bin/pursuit\?(?:.+&)?query=(.+?)(?:&|$)",Lycos
++groupsearchengine = "204\.152\.166\.42/HotSheet\?(?:.+&)?query=(.+?)(?:&|$)",Mamma
++groupsearchengine = "204\.152\.166\.41/Bigeye\?(?:.+&)?query=(.+?)(?:&|$)",Mamma
++groupsearchengine = "mamma\.com/Mamma\?(?:.+&)?query=(.+?)(?:&|$)",Mamma
++groupsearchengine = "goto\.mamma\.com/UTStarGate\?(?:.+&)?query=(.+?)(?:&|$)",Mamma
++groupsearchengine = "hotbar\.mamma\.com/Hotbar\?(?:.+&)?query=(.+?)(?:&|$)",Mamma
++groupsearchengine = "mamma[0-9]+\.mamma\.com/Mamma\?(?:.+&)?query=(.+?)(?:&|$)",Mamma
++groupsearchengine = "partners\.mamma\.com/(?:Altavista|Askjeeves1|Beaucoup|Botbot|Cb_12c4|HotSheet|Hotbar|Pages)\?(?:.+&)?query=(.+?)(?:&|$)",Mamma
++groupsearchengine = "mamma\.com/Mamma_pictures\?(?:.+&)?query=(.+?)(?:&|$)",Mamma
++groupsearchengine = "netfind\.co\.uk/web_uk\.adp\?(?:.+&)?query=(.+?)(?:&|$)",Netfind
++groupsearchengine = "netfind\.de/cgi-bin/pursuit\?(?:.+&)?query=(.+?)(?:&|$)",Netfind
++groupsearchengine = "search\.netscapeonline\.co\.uk/results\.adp\?(?:.+&)?query=(.+?)(?:&|$)",Netscape
++groupsearchengine = "208\.48\.102\.141/Searchalot\?(?:.+&)?query=(.+?)(?:&|$)",Seach A Lot.com
++groupsearchengine = "search\.searchalot\.com\?(?:.+&)?query=(.+?)(?:&|$)",Search A Lot.com
++groupsearchengine = "208\.48\.102\.148/Searchalot\?(?:.+&)?query=(.+?)(?:&|$)",Search A Lot.com
++groupsearchengine = "208\.49\.237\.71/Searchalot\?(?:.+&)?query=(.+?)(?:&|$)",Search A Lot.com
++groupsearchengine = "204\.152\.166\.[34][0-9]/(?:Searchalot|Crosswinds|Galttech|Locate)\?(?:.+&)?query=(.+?)(?:&|$)",Search A Lot.com
++groupsearchengine = "surfeu\.ch/it/search/search\.php\?(?:.+&)?query=(.+?)(?:&|$)",SurfEU
++groupsearchengine = "www[0-9]*\.surfeu\.[a-z]+/search/search\.php\?(?:.+&)?query=(.+?)(?:&|$)",SurfEU
++groupsearchengine = "allthesites\.com/cgi-bin/(?:a|)search\?(?:.+&)?query=(.+?)(?:&|$)",allthesites
++groupsearchengine = "allthesites\.com/php/search\.php\?(?:.+&)?query=(.+?)(?:&|$)",allthesites
++groupsearchengine = "allthesites\.com/search/search\.asp\?(?:.+&)?query=(.+?)(?:&|$)",allthesites
++groupsearchengine = "sprint\.allthesites\.com/php3/search\.php3\?(?:.+&)?query=(.+?)(?:&|$)",allthesites
++groupsearchengine = "search\.allthesites\.com/cgi-bin/search\?(?:.+&)?query=(.+?)(?:&|$)",allthesites
++groupsearchengine = "drlook\.allthesites\.net/php/search\.php\?(?:.+&)?query=(.+?)(?:&|$)",allthesites
++groupsearchengine = "sprint\.allthesites\.com/search/search\.asp\?(?:.+&)?query=(.+?)(?:&|$)",allthesites
++groupsearchengine = "usonline\.allthesites\.net/search/search\.asp\?(?:.+&)?query=(.+?)(?:&|$)",allthesites
++groupsearchengine = "search\.allthesites\.com/cgi-bin/search/\?(?:.+&)?query=(.+?)(?:&|$)",allthesites
++groupsearchengine = "ixquick\.com/do/metasearch\.pl\?(?:.+&)?query=(.+?)(?:&|$)",ixquick.com
++groupsearchengine = "ah-ha\.com/(?:cobrand|sitter)/[a-z]+/search\.ihtml\?(?:.+&)?query=(.+?)(?:&|$)",Ah-Ha.com
++groupsearchengine = "ah-ha\.com/partner/[0-9]+\.asp\?(?:.+&)?query=(.+?)(?:&|$)",Ah-Ha.com
++groupsearchengine = "search\.icq\.com/cat\.adp\?(?:.+&)?query=(.+?)(?:&|$)",ICQ Directory
++groupsearchengine = "search\.icq\.com/dirsearch\.adp\?(?:.+&)?query=(.+?)(?:&|$)",ICQ Directory
++groupsearchengine = "surfsaturn\.de/.*/search\.php\?(?:.+&)?query=(.+?)(?:&|$)",SurfSaturn.de
++groupsearchengine = "euroseek\.[a-z]+/query\?(?:.+&)?query=(.+?)(?:&|$)",Euroseek
++groupsearchengine = "hurra.de/cgi-local/hurra_content_search.cgi\?(?:.+&)?query=(.+?)(?:&|$)",Hurra.de
++groupsearchengine = "search.hurra.de/HurraContentSearch\?(?:.+&)?query=(.+?)(?:&|$)",Hurra.de
++groupsearchengine = "vivisimo.com/search\?(?:.+&)?query=(.+?)(?:&|$)",Vivisimo
++groupsearchengine = "antionline\.com/cgi-bin/search\.cgi\?(?:.+&)?query=(.+?)(?:&|$)",AntiOnline
++groupsearchengine = "altavista\.mamma\.com/Altavista\?(?:.+&)?query=(.+?)(?:&|$)",Mamma
++groupsearchengine = "linux-directory\.com/cgi-bin/links/search\.cgi\?(?:.+&)?query=(.+?)(?:&|$)",Linux Directory
++groupsearchengine = "sympatico\.ca/(?:cgi-bin/chercher/(?:adv)?chercher\.pl|(?:partner/sli/)?asp/results\.asp)\?(?:.+&)?query=(.+?)(?:&|$)",Sympatico.ca
++groupsearchengine = "web\.toile\.com/(?:toile|infinit)/index\.asp\?(?:.+&)?query=(.+?)(?:&|$)",La Toile du Québec
++groupsearchengine = "worldonline\.fr/(?:search/)?wolsearch\.php\?(?:.+&)?query=(.+?)(?:&|$)",WorldOnline.fr
+ # query2
+-groupsearchengine = "euroseek\.[a-z]+/query\?(?:.+&|)query2=(.+?)(?:&|$)","Euroseek"
++groupsearchengine = "euroseek\.[a-z]+/query\?(?:.+&)?query2=(.+?)(?:&|$)",Euroseek
+ # queryterm
+ # question
+ # s
+-groupsearchengine = "s4s\.mailutilities\.com/s/altavista-de\.php3\?(?:.+&|)s=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "bestoftheweb\.com/search\?(?:.+&|)s=(.+?)(?:&|$)","Best of The Web"
+-groupsearchengine = "de\.caloweb\.com/html/search_result\.php3\?(?:.+&|)s=(.+?)(?:&|$)","CaloWeb.com"
+-groupsearchengine = "caloweb\.com/de/html/search_result\.php3\?(?:.+&|)s=(.+?)(?:&|$)","CaloWeb.com"
+-groupsearchengine = "excite\.de\.netscape\.com/search\.gw\?(?:.+&|)s=(.+?)(?:&|$)","Excite"
+-groupsearchengine = "excite\.[a-z.]+/search\.gw\?(?:.+&|)s=(.+?)(?:&|$)","Excite"
+-groupsearchengine = "search\.excite\.com\?(?:.+&|)s=(.+?)(?:&|$)","Excite"
+-groupsearchengine = "excite\.[a-z.]+/search\search.dcg\?(?:.+&|)s=(.+?)(?:&|$)","Excite"
+-groupsearchengine = "www-english\.lycos\.com/srch/more\.html\?(?:.+&|)s=(.+?)(?:&|$)","Lycos"
+-groupsearchengine = "club\.lycos\.com/srch/more\.html\?(?:.+&|)s=(.+?)(?:&|$)","Lycox"
+-groupsearchengine = "elcomsoft\.com/s/yahoo\.php3\?(?:.+&|)s=(.+?)(?:&|$)","Yahoo"
+-groupsearchengine = "s3s\.mailutilities\.com/s/yahoo-de\.php3\?(?:.+&|)s=(.+?)(?:&|$)","Yahoo"
+-groupsearchengine = "de\.finance\.yahoo\.com/q\?(?:.+&|)s=(.+?)(?:&|$)","Yahoo"
+-groupsearchengine = "(?:/forum)?/(?:showthread|member|newreply)\.php\?(?:.+&|)s=(.+?)(?:&|$)","web forums"
+-groupsearchengine = "vivisimo\.com/cgi-bin/xml2html\.sh\?(?:.+&|)s=(.+?)(?:&|$)","Vivisimo"
+-groupsearchengine = "216\.205\.122\.155/cgi-bin/vivisimo-1\.1/xml2html\.sh\?(?:.+&|)s=(.+?)(?:&|$)","Vivisimo"
+-groupsearchengine = "ixquick\.com/do/clickthrough\.pl\?(?:.+&|)s=(.+?)(?:&|$)","ixquick.com"
+-groupsearchengine = "vivisimo\.com/cgi-bin/treeHtmlMain\?(?:.+&|)s=(.+?)(?:&|$)","Vivisimo"
+-groupsearchengine = "nomade\.(?:tiscali\.)?fr/(?:[_a-zA-Z0-9]*recherche[_a-zA-Z0-9]*)\.asp\?(?:.+&|)s=(.+?)(?:&|$)","Nomade"
+-groupsearchengine = "rechercher\.libertysurf\.fr/recherche_liberty\.asp\?(?:.+&|)s=(.+?)(?:&|$)","Nomade @ LibertySurf"
+-groupsearchengine = "msn\.[^/]+/[^?]+?default\.asp\?(?:.+&|)s=(.+?)(?:&|$)","MSN"
++groupsearchengine = "s4s\.mailutilities\.com/s/altavista-de\.php3\?(?:.+&)?s=(.+?)(?:&|$)",Altavista
++groupsearchengine = "bestoftheweb\.com/search\?(?:.+&)?s=(.+?)(?:&|$)",Best of The Web
++groupsearchengine = "de\.caloweb\.com/html/search_result\.php3\?(?:.+&)?s=(.+?)(?:&|$)",CaloWeb.com
++groupsearchengine = "caloweb\.com/de/html/search_result\.php3\?(?:.+&)?s=(.+?)(?:&|$)",CaloWeb.com
++groupsearchengine = "excite\.de\.netscape\.com/search\.gw\?(?:.+&)?s=(.+?)(?:&|$)",Excite
++groupsearchengine = "excite\.[a-z.]+/search\.gw\?(?:.+&)?s=(.+?)(?:&|$)",Excite
++groupsearchengine = "search\.excite\.com\?(?:.+&)?s=(.+?)(?:&|$)",Excite
++groupsearchengine = "excite\.[a-z.]+/search\search.dcg\?(?:.+&)?s=(.+?)(?:&|$)",Excite
++groupsearchengine = "www-english\.lycos\.com/srch/more\.html\?(?:.+&)?s=(.+?)(?:&|$)",Lycos
++groupsearchengine = "club\.lycos\.com/srch/more\.html\?(?:.+&)?s=(.+?)(?:&|$)",Lycox
++groupsearchengine = "elcomsoft\.com/s/yahoo\.php3\?(?:.+&)?s=(.+?)(?:&|$)",Yahoo
++groupsearchengine = "s3s\.mailutilities\.com/s/yahoo-de\.php3\?(?:.+&)?s=(.+?)(?:&|$)",Yahoo
++groupsearchengine = "de\.finance\.yahoo\.com/q\?(?:.+&)?s=(.+?)(?:&|$)",Yahoo
++groupsearchengine = "(?:/forum)?/(?:showthread|member|newreply)\.php\?(?:.+&)?s=(.+?)(?:&|$)",web forums
++groupsearchengine = "vivisimo\.com/cgi-bin/xml2html\.sh\?(?:.+&)?s=(.+?)(?:&|$)",Vivisimo
++groupsearchengine = "216\.205\.122\.155/cgi-bin/vivisimo-1\.1/xml2html\.sh\?(?:.+&)?s=(.+?)(?:&|$)",Vivisimo
++groupsearchengine = "ixquick\.com/do/clickthrough\.pl\?(?:.+&)?s=(.+?)(?:&|$)",ixquick.com
++groupsearchengine = "vivisimo\.com/cgi-bin/treeHtmlMain\?(?:.+&)?s=(.+?)(?:&|$)",Vivisimo
++groupsearchengine = "nomade\.(?:tiscali\.)?fr/(?:[_a-zA-Z0-9]*recherche[_a-zA-Z0-9]*)\.asp\?(?:.+&)?s=(.+?)(?:&|$)",Nomade
++groupsearchengine = "rechercher\.libertysurf\.fr/recherche_liberty\.asp\?(?:.+&)?s=(.+?)(?:&|$)",Nomade @ LibertySurf
++groupsearchengine = "msn\.[^/]+/[^?]+?default\.asp\?(?:.+&)?s=(.+?)(?:&|$)",MSN
+ # sTerm
+-groupsearchengine = "cissearch\.compuserve\.com/search/cssearch/cssearch-(?:frameset|results)\.adp\?(?:.+&|)sTerm=(.+?)(?:&|$)","CompuServe"
+-groupsearchengine = "search\.cs\.com/search/cssearch/cssearch-frameset\.adp\?(?:.+&|)sTerm=(.+?)(?:&|$)","CompuServe"
+-groupsearchengine = "websearch\.cs\.com/cs/results/cssearch-(?:banner|frameset)\.adp\?(?:.+&|)sTerm=(.+?)(?:&|$)","CompuServe"
+-groupsearchengine = "websearch\.cs\.com/gateway/results/gateway-(?:cat|frameset|results|banner)\.adp\?(?:.+&|)sTerm=(.+?)(?:&|$)","CompuServe"
++groupsearchengine = "cissearch\.compuserve\.com/search/cssearch/cssearch-(?:frameset|results)\.adp\?(?:.+&)?sTerm=(.+?)(?:&|$)",CompuServe
++groupsearchengine = "search\.cs\.com/search/cssearch/cssearch-frameset\.adp\?(?:.+&)?sTerm=(.+?)(?:&|$)",CompuServe
++groupsearchengine = "websearch\.cs\.com/cs/results/cssearch-(?:banner|frameset)\.adp\?(?:.+&)?sTerm=(.+?)(?:&|$)",CompuServe
++groupsearchengine = "websearch\.cs\.com/gateway/results/gateway-(?:cat|frameset|results|banner)\.adp\?(?:.+&)?sTerm=(.+?)(?:&|$)",CompuServe
+ # sc
+-groupsearchengine = "dir\.altavista\.com/Top\?(?:.+&|)sc=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "looksmart\.altavista\.com/cgi-bin/query\?(?:.+&|)sc=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "partners\.altavista\.com/cgi-bin/query\?(?:.+&|)sc=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "alta-?vista(?:\.com)?\.[a-z]+(?::80)?/cgi-bin/query\?(?:.+&|)sc=(.+?)(?:&|$)","Altavista"
++groupsearchengine = "dir\.altavista\.com/Top\?(?:.+&)?sc=(.+?)(?:&|$)",Altavista
++groupsearchengine = "looksmart\.altavista\.com/cgi-bin/query\?(?:.+&)?sc=(.+?)(?:&|$)",Altavista
++groupsearchengine = "partners\.altavista\.com/cgi-bin/query\?(?:.+&)?sc=(.+?)(?:&|$)",Altavista
++groupsearchengine = "alta-?vista(?:\.com)?\.[a-z]+(?::80)?/cgi-bin/query\?(?:.+&)?sc=(.+?)(?:&|$)",Altavista
+ # search
+-groupsearchengine = "\.excite(?:\.[a-z]+|)\.[a-z]+/[^?]+\?(?:.+&|)search=(.+?)(?:&|$)","Excite"
+-groupsearchengine = "suche[0-9]?\.web\.de/search(?:_ie4|_rn)?/?\?(?:.+&|)search=(.+?)(?:&|$)","web.de"
+-groupsearchengine = "findology\.com/(?:ce/|)search\.pl\?(?:.+&|)search=(.+?)(?:&|$)","Findology"
+-groupsearchengine = "(?:search|search-intl|directory)\.netscape\.com/(?:[a-z]*/)?google\.tmpl\?(?:.+&|)search=(.+?)(?:&|$)","Google @ Netscape"
+-groupsearchengine = "search\.netscape\.com/search.psp\?(?:.+&|)search=(.+?)(?:&|$)","Google @ Netscape"
+-groupsearchengine = "search\.netscape\.com\?(?:.+&|)search=(.+?)(?:&|$)","Google @ Netscape"
+-groupsearchengine = "encarta\.msn\.com/(?:encarta|find)/search\.asp\?(?:.+&|)search=(.+?)(?:&|$)","MSN Encarta"
+-groupsearchengine = "searchalot\.com/cgi-bin/search/search\.cgi\?(?:.+&|)search=(.+?)(?:&|$)","Search A Lot.com"
+-groupsearchengine = "searchalot\.com/cgi-bin/search/remotesearch\.cgi\?(?:.+&|)search=(.+?)(?:&|$)","Search A Lot.com"
+-groupsearchengine = "ragingsearch\.altavista\.com/cgi-bin/query\?(?:.+&|)search=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "altavista\.com/iepane\?(?:.+&|)search=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "altavista\.com/sites/search/res_text\?(?:.+&|)search=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "altavista\.digital\.com/sites/search/web\?(?:.+&|)search=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "search\.dmoz\.org\?(?:.+&|)search=(.+?)(?:&|$)","dmoz.org"
+-groupsearchengine = "directory\.netscape\.com/cgi-bin/search\?(?:.+&|)search=(.+?)(?:&|$)","dmoz.org @ Netscape"
+-groupsearchengine = "directory\.netscape\.com/search\.tmpl\?(?:.+&|)search=(.+?)(?:&|$)","dmoz.org @ Netscape"
+-groupsearchengine = "search-intl\.netscape\.com/(?:de|fr|uk)/search(?:[0-9]|)\.tmpl\?(?:.+&|)search=(.+?)(?:&|$)","dmoz.org @ Netscape"
+-groupsearchengine = "excite\.de\.netscape\.com/search\.gw\?(?:.+&|)search=(.+?)(?:&|$)","Excite @ Netscape"
++groupsearchengine = "www\.gmx\.[a-z]+/[a-z]+/suche/index.html\?(?:.+&)?search=(.+?)(?:&|$)",GMX
++groupsearchengine = "\.excite(?:\.[a-z]+|)\.[a-z]+/[^?]+\?(?:.+&)?search=(.+?)(?:&|$)",Excite
++groupsearchengine = "suche[0-9]?\.web\.de/search(?:_ie4|_rn)?/?\?(?:.+&)?search=(.+?)(?:&|$)",web.de
++groupsearchengine = "findology\.com/(?:ce/|)search\.pl\?(?:.+&)?search=(.+?)(?:&|$)",Findology
++groupsearchengine = "(?:search|search-intl|directory)\.netscape\.com/(?:[a-z]*/)?google\.tmpl\?(?:.+&)?search=(?:cache:[^+]+)(.+?)(?:&|$)",Google @ Netscape
++groupsearchengine = "search\.netscape\.com/search.psp\?(?:.+&)?search=(?:cache:[^+]+)(.+?)(?:&|$)",Google @ Netscape
++groupsearchengine = "search\.netscape\.com\?(?:.+&)?search=(?:cache:[^+]+)(.+?)(?:&|$)",Google @ Netscape
++groupsearchengine = "encarta\.msn\.com/(?:encarta|find)/search\.asp\?(?:.+&)?search=(.+?)(?:&|$)",MSN Encarta
++groupsearchengine = "searchalot\.com/cgi-bin/search/search\.cgi\?(?:.+&)?search=(.+?)(?:&|$)",Search A Lot.com
++groupsearchengine = "searchalot\.com/cgi-bin/search/remotesearch\.cgi\?(?:.+&)?search=(.+?)(?:&|$)",Search A Lot.com
++groupsearchengine = "ragingsearch\.altavista\.com/cgi-bin/query\?(?:.+&)?search=(.+?)(?:&|$)",Altavista
++groupsearchengine = "altavista\.com/iepane\?(?:.+&)?search=(.+?)(?:&|$)",Altavista
++groupsearchengine = "altavista\.com/sites/search/res_text\?(?:.+&)?search=(.+?)(?:&|$)",Altavista
++groupsearchengine = "altavista\.digital\.com/sites/search/web\?(?:.+&)?search=(.+?)(?:&|$)",Altavista
++groupsearchengine = "search\.dmoz\.org\?(?:.+&)?search=(.+?)(?:&|$)",dmoz.org
++groupsearchengine = "directory\.netscape\.com/cgi-bin/search\?(?:.+&)?search=(.+?)(?:&|$)",dmoz.org @ Netscape
++groupsearchengine = "directory\.netscape\.com/search\.tmpl\?(?:.+&)?search=(.+?)(?:&|$)",dmoz.org @ Netscape
++groupsearchengine = "search-intl\.netscape\.com/(?:de|fr|uk)/search(?:[0-9]|)\.tmpl\?(?:.+&)?search=(.+?)(?:&|$)",dmoz.org @ Netscape
++groupsearchengine = "excite\.de\.netscape\.com/search\.gw\?(?:.+&)?search=(.+?)(?:&|$)",Excite @ Netscape
+ # search2
+-groupsearchengine = "directory\.wwwresources\.com/directory.cgi\?(?:.+&|)search2=(.+?)(?:&|$)","dmoz.org"
++groupsearchengine = "directory\.wwwresources\.com/directory.cgi\?(?:.+&)?search2=(.+?)(?:&|$)",dmoz.org
+ # searchText
+-groupsearchengine = "webcrawler.com/cgi-bin/WebQuery\?(?:.+&|)searchText=(.+?)(?:&|$)","webcrawler.com"
++groupsearchengine = "webcrawler.com/cgi-bin/WebQuery\?(?:.+&)?searchText=(.+?)(?:&|$)",webcrawler.com
+ # srch
+ # string
+-groupsearchengine = "spray\.se/sok\?(?:.+&|)string=(.+?)(?:&|$)","Spray.net"
+-groupsearchengine = "spray(?:net)?\.[a-z]+/search\?(?:.+&|)string=(.+?)(?:&|$)","Spray.net"
+-groupsearchengine = "dpsearchno\.spray\.net/index\.jsp\?(?:.+&|)string=(.+?)(?:&|$)","Spray.net"
++groupsearchengine = "spray\.se/sok\?(?:.+&)?string=(.+?)(?:&|$)",Spray.net
++groupsearchengine = "spray(?:net)?\.[a-z]+/search\?(?:.+&)?string=(.+?)(?:&|$)",Spray.net
++groupsearchengine = "dpsearchno\.spray\.net/index\.jsp\?(?:.+&)?string=(.+?)(?:&|$)",Spray.net
+ # su
+-groupsearchengine = "suche[0-9]?\.web\.de/search(?:_ie4|_rn)?/?\?(?:.+&|)su=(.+?)(?:&|$)","web.de"
+-groupsearchengine = "194\.45\.170\.232/search/?\?(?:.+&|)su=(.+?)(?:&|$)","web.de"
++groupsearchengine = "suche[0-9]?\.web\.de/search(?:_ie4|_rn)?/?\?(?:.+&)?su=(.+?)(?:&|$)",web.de
++groupsearchengine = "suche\.web\.de/search/web\?(?:.+&)?su=(.+?)(?:&|$)",web.de
++groupsearchengine = "194\.45\.170\.232/search/?\?(?:.+&)?su=(.+?)(?:&|$)",web.de
+ # such
+ # suche
+ # szukaj
+@@ -375,26 +380,28 @@
+ # tx1
+ # tx2
+ # what
+-groupsearchengine = "[-a-z]+\.altavista\.com/cgi-bin/query\?(?:.+&|)what=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "[-a-z]+\.altavista\.com/q\?(?:.+&|)what=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "ragingsearch\.altavista\.com/query\?(?:.+&|)what=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "altavistacanada\.com/cgi-bin/query\?(?:.+&|)what=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "av-de\.bluewin\.ch/q\?(?:.+&|)what=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "search\.av-de\.bluewin\.ch/cgi-bin/query\?(?:.+&|)what=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "ukstageder\.aveurope\.co\.uk/cgi-bin/query\?(?:.+&|)what=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "altavista\.co\.uk/cgi-bin/query\?(?:.+&|)what=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "altavista\.yellowpages\.com\.au/cgi-bin/query\?(?:.+&|)what=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "altavista\.digital\.com/cgi-bin/query\?(?:.+&|)what=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "altavista\.[a-z]+/cgi-bin/t?query\?(?:.+&|)what=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "altavista\.at\./cgi-bin/query\?(?:.+&|)what=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "altavista\.de:80/cgi-bin/query\?(?:.+&|)what=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "altavista\.de\./cgi-bin/query\?(?:.+&|)what=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "fireball\.de/query-fireball\.fcg\?(?:.+&|)what=(.+?)(?:&|$)","Fireball"
+-groupsearchengine = "(?:www|suche)\.fireball\.de/(?:fcgi/|)query[1a-z_\-]*\.fcg\?(?:.+&|)what=(.+?)(?:&|$)","Fireball"
+-groupsearchengine = "altavista\.magallanes\.net/cgi-bin/query\?(?:.+&|)what=(.+?)(?:&|$)","Altavista"
+-groupsearchengine = "aon\.at/cgi-bin/search\.pl\?(?:.+&|)what=(.+?)(?:&|$)","jet2web.net"
++groupsearchengine = "[-a-z]+\.altavista\.com/cgi-bin/query\?(?:.+&)?what=(.+?)(?:&|$)",Altavista
++groupsearchengine = "[-a-z]+\.altavista\.com/q\?(?:.+&)?what=(.+?)(?:&|$)",Altavista
++groupsearchengine = "ragingsearch\.altavista\.com/query\?(?:.+&)?what=(.+?)(?:&|$)",Altavista
++groupsearchengine = "altavistacanada\.com/cgi-bin/query\?(?:.+&)?what=(.+?)(?:&|$)",Altavista
++groupsearchengine = "av-de\.bluewin\.ch/q\?(?:.+&)?what=(.+?)(?:&|$)",Altavista
++groupsearchengine = "search\.av-de\.bluewin\.ch/cgi-bin/query\?(?:.+&)?what=(.+?)(?:&|$)",Altavista
++groupsearchengine = "ukstageder\.aveurope\.co\.uk/cgi-bin/query\?(?:.+&)?what=(.+?)(?:&|$)",Altavista
++groupsearchengine = "altavista\.co\.uk/cgi-bin/query\?(?:.+&)?what=(.+?)(?:&|$)",Altavista
++groupsearchengine = "altavista\.yellowpages\.com\.au/cgi-bin/query\?(?:.+&)?what=(.+?)(?:&|$)",Altavista
++groupsearchengine = "altavista\.digital\.com/cgi-bin/query\?(?:.+&)?what=(.+?)(?:&|$)",Altavista
++groupsearchengine = "altavista\.[a-z]+/cgi-bin/t?query\?(?:.+&)?what=(.+?)(?:&|$)",Altavista
++groupsearchengine = "altavista\.at\./cgi-bin/query\?(?:.+&)?what=(.+?)(?:&|$)",Altavista
++groupsearchengine = "altavista\.de:80/cgi-bin/query\?(?:.+&)?what=(.+?)(?:&|$)",Altavista
++groupsearchengine = "altavista\.de\./cgi-bin/query\?(?:.+&)?what=(.+?)(?:&|$)",Altavista
++groupsearchengine = "fireball\.de/query-fireball\.fcg\?(?:.+&)?what=(.+?)(?:&|$)",Fireball
++groupsearchengine = "(?:www|suche)\.fireball\.de/(?:fcgi/|)query[1a-z_\-]*\.fcg\?(?:.+&)?what=(.+?)(?:&|$)",Fireball
++groupsearchengine = "(?:www|suche)\.fireball\.de/suche.csp\?(?:.+&)?q=(.+?)(?:&|$)",Fireball
++groupsearchengine = "(?:www|suche)\.fireball\.de/cgi-bin/pursuit\?(?:.+&)?query=(.+?)(?:&|$)",Fireball
++groupsearchengine = "altavista\.magallanes\.net/cgi-bin/query\?(?:.+&)?what=(.+?)(?:&|$)",Altavista
++groupsearchengine = "aon\.at/cgi-bin/search\.pl\?(?:.+&)?what=(.+?)(?:&|$)",jet2web.net
+ # word
+ # words
+-groupsearchengine = "allesklar\.de/(?:iesp|s)\?(?:.+&|)words=(.+?)(?:&|$)","Allesklar.de"
+-groupsearchengine = "voila\.fr/cgi_view\?(?:.+&|)words=(.+?)(?:&|$)","Voila"
++groupsearchengine = "allesklar\.de/(?:iesp|s)\?(?:.+&)?words=(.+?)(?:&|$)",Allesklar.de
++groupsearchengine = "voila\.fr/cgi_view\?(?:.+&)?words=(.+?)(?:&|$)",Voila
+ # wyr
+Index: doc/group.ua.conf
+===================================================================
+RCS file: /cvsroot/modlogan/modlogan/doc/group.ua.conf,v
+retrieving revision 1.11
+retrieving revision 1.13
+diff -u -u -r1.11 -r1.13
+--- doc/group.ua.conf	3 Nov 2002 18:37:28 -0000	1.11
++++ doc/group.ua.conf	12 Aug 2006 16:46:06 -0000	1.13
+@@ -1,17 +1,22 @@
+-# $Id: group.ua.conf,v 1.11 2002/11/03 18:37:28 le_zas Exp $
++# $Id: group.ua.conf,v 1.13 2006/08/12 16:46:06 aleidinger Exp $
+ [groupua]
+ groupua = "^Mozilla (\d+)\.(\d)\d*",Mozilla $1.$2x
++groupua = "^(?:Mozilla )?(Firefox|Firebird|Phoenix)/(\d+)\.(\d)\d*",Firefox $2.$3x
+ groupua = "^Mozilla m",Mozilla milestone x
+ 
+ groupua = "^MSIE 5\.5",Internet Explorer 5.5
+ groupua = "^MSIE (\d+)\.",Internet Explorer $1.x
+ groupua = "^Netscape 4\.7",Netscape 4.7x
+ groupua = "^Netscape (\d+)\.",Netscape $1.x
+-groupua = "^Galeon",Galeon
++groupua = "^(?:Mozilla )?Galeon",Galeon
++groupua = "^(?:Mozilla )?Epiphany",Epiphany
++groupua = "^Safari",Safari
+ groupua = "^Opera (\d+)\.",Opera $1.x
+ 
+-groupua = "^compatible Mozilla/(\d+)\.",compatible Mozilla/$1.x
++#groupua = "^compatible Mozilla/(\d+)\.",compatible Mozilla/$1.x
+ 
++groupua = "^(Googlebot|Seekbot|msnbot|findlinks|Gigabot|Exabot)/([0-9]+(\.[0-9])?)",$1 $2
++groupua = "^(genieBot)",$1
+ groupua = "^(MSIE|Netscape|Opera|FAST-WebCrawler|Googlebot|Konqueror|NetMind-Minder|WWWOFFLE|libwww-perl|DA)\D(\d+)\.?",$1 $2.x
+ groupua = "^Lynx\D(\d+)\.(\d+)",Lynx $1.$2.x
+ groupua = "^[sS]cooter\D(\d+)\.(\d+)",Scooter $1.$2.x
+@@ -25,6 +30,7 @@
+ groupua = "^(Slurp|Wget|Links|w3m|curl|lwp|larbin)",$1
+ groupua = "^SpaceBison/(.?)",SpaceBison $1
+ groupua = "(davesengine\.com|ip3000\.com)$",$1
++groupua = "^OmniExplorer_Bot",OmniExplorer_Bot (http://www.omni-explorer.com)
+ groupua = "sitecheck\.internetseer\.com",sitecheck.internetseer.com
+ 
+ # by Alexander Leidinger - 2001-09-09
+@@ -37,7 +43,11 @@
+ groupua = "^polybot (.?)\.",Polybot $1.x
+ groupua = "^Gulliver/(.?)\.",Gulliver $1.x
+ # end
++groupua = "miragorobot",Mirago Robot
++groupua = "^FAST",FAST Crawler
++groupua = "^Planet.*UniversalFeedParser",PlanetPlanet Blog bot
+ 
++groupua = "^gonzo\d*(\[P\])?",Telekom 'Gonzo'
+ 
+ # UNKNOWN (only spaces, or < 3 chars or starting with unknown..)
+ groupua = "^(?:\s*|..?|[uU]nknown.*)$",(unknown)
+Index: doc/group.url.conf
+===================================================================
+RCS file: /cvsroot/modlogan/modlogan/doc/group.url.conf,v
+retrieving revision 1.3
+retrieving revision 1.4
+diff -u -u -r1.3 -r1.4
+--- doc/group.url.conf	14 Dec 2001 00:11:31 -0000	1.3
++++ doc/group.url.conf	31 Jul 2006 21:00:35 -0000	1.4
+@@ -1,4 +1,4 @@
+-# $Id: group.url.conf,v 1.3 2001/12/14 00:11:31 erich Exp $
++# $Id: group.url.conf,v 1.4 2006/07/31 21:00:35 erich Exp $
+ [groupurl]
+ # Group index pages with directory page
+ groupurl = "^(/.*/)(index|default)\.(html?|shtml|phtml|php[34]?|cgi|pl|jsp|asp)",$1
+@@ -14,4 +14,6 @@
+ groupurl = "^/msadc/\.\.%255c\.\./\.\.%255c\.\./\.\.%255c/\.\.%c1%1c\.\./\.\.%c1%1c\.\./\.\.%c1%1c\.\./winnt/system32/cmd.exe\?/c\+dir",worm attack (W32.Nimda.A@mm)
+ groupurl = "^/[cd]/winnt/system32/cmd.exe\?/c\+dir",worm attack (W32.Nimda.A@mm)
+ groupurl = "^/scripts/\.\.%(.*)\.\./winnt/system32/cmd.exe\?/c\+dir",worm attack (W32.Nimda.A@mm)
++groupurl = "^/MSOffice/ctlreq\.asp",Microsoft Office attack
++groupurl = "^/_vti_bin/owssrv\.dll",Frontpage Server Extensions attack
+ 
+Index: doc/match.searchengines.conf
+===================================================================
+RCS file: /cvsroot/modlogan/modlogan/doc/match.searchengines.conf,v
+retrieving revision 1.15
+retrieving revision 1.16
+diff -u -u -r1.15 -r1.16
+--- doc/match.searchengines.conf	11 Aug 2002 23:24:27 -0000	1.15
++++ doc/match.searchengines.conf	31 Jul 2006 21:00:35 -0000	1.16
+@@ -1,55 +1,55 @@
+ [match_searchengines]
+-matchsearchengine="\?(?:.+&|)H=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)Keywords=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)MT=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)P=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)Q=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)QUERY=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)Suchwort=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)T=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)ask=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)eingabe=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)entry=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)general=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)in=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)k=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)key=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)keys=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)keyword=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)keywords=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)kw=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)mots=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)motscles=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)p=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)pattern=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)pgm=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)q=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)qr=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)qry=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)qs=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)qt=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)qu=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)query=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)query2=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)queryterm=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)question=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)s=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)sTerm=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)sc=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)search=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)search2=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)searchText=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)srch=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)string=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)su=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)such=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)suche=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)szukaj=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)tx=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)tx0=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)tx1=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)tx2=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)what=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)word=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)words=(.+?)(?:&|$)"
+-matchsearchengine="\?(?:.+&|)wyr=(.+?)(?:&|$)"
++matchsearchengine="\?(?:.+&|)H=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)Keywords=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)MT=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)P=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)Q=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)QUERY=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)Suchwort=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)T=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)ask=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)eingabe=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)entry=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)general=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)in=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)k=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)key=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)keys=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)keyword=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)keywords=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)kw=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)mots=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)motscles=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)p=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)pattern=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)pgm=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)q=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)qr=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)qry=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)qs=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)qt=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)qu=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)query=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)query2=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)queryterm=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)question=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)s=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)sTerm=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)sc=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)search=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)search2=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)searchText=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)srch=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)string=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)su=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)such=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)suche=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)szukaj=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)tx=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)tx0=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)tx1=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)tx2=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)what=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)word=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)words=(?:%22)?(.+?)(?:%22)?(?:&|$)"
++matchsearchengine="\?(?:.+&|)wyr=(?:%22)?(.+?)(?:%22)?(?:&|$)"
+Index: doc/match.ua.conf
+===================================================================
+RCS file: /cvsroot/modlogan/modlogan/doc/match.ua.conf,v
+retrieving revision 1.4
+retrieving revision 1.5
+diff -u -u -r1.4 -r1.5
+--- doc/match.ua.conf	31 Oct 2002 12:36:42 -0000	1.4
++++ doc/match.ua.conf	12 Aug 2006 16:47:26 -0000	1.5
+@@ -1,4 +1,4 @@
+-# $Id: match.ua.conf,v 1.4 2002/10/31 12:36:42 le_zas Exp $
++# $Id: match.ua.conf,v 1.5 2006/08/12 16:47:26 aleidinger Exp $
+ [matchua]
+ matchua="^iCab"
+ matchua="^MSIE"
+@@ -10,6 +10,7 @@
+ matchua="^WebCapture"
+ matchua="^Squid"
+ matchua="^Mozilla"
++matchua="^Firefox"
+ matchua="^Konqueror"
+ matchua="^Oregano"
+ matchua="^X11"
+Index: doc/match.useragents.conf
+===================================================================
+RCS file: /cvsroot/modlogan/modlogan/doc/match.useragents.conf,v
+retrieving revision 1.9
+retrieving revision 1.11
+diff -u -u -r1.9 -r1.11
+--- doc/match.useragents.conf	1 Oct 2003 08:03:04 -0000	1.9
++++ doc/match.useragents.conf	12 Aug 2006 16:48:00 -0000	1.11
+@@ -12,11 +12,19 @@
+ # MSIE
+ match_useragent = "^Mozilla/[1-9]\.0 ?\(compatible; MSIE ([1-9]\.[0-9b]+);(?: ?[^;]+;)*? (Mac_[^;)]+|Windows [^;)]+)(?:; [^;]+)*\)",MSIE $1;$2
+ 
+-# Galeon
++# Various Mozilla matches
++match_useragent = "^Mozilla/\d+\.\d+ \([^;]+; [NIU]; ([^;]+); [^;]+; rv:[0-9.]+\) Gecko/\d{8} Gedora/[0-9.]+ ((?:Galeon|Epiphany|Firefox|Firebird)/[0-9.]+)",$3;$1 $2
++match_useragent = "^Mozilla/\d+\.\d+ \([^;]+; [NIU]; ([^;]+); [^;]+; rv:[0-9.]+\) Gecko/\d{8} ((?:Galeon|Epiphany|Firefox|Firebird)/[0-9.]+) \((Debian|Ubuntu)\)",$2;$1 $3
++match_useragent = "^Mozilla/\d+\.\d+ \([^;]+; [NIU]; ([^;]+); [^;]+; rv:[0-9.]+\) Gecko/\d{8} ((?:Galeon|Epiphany|Firefox|Firebird)/[0-9.]+)",$2;$1
++
++# Older Galeon versions
++match_useragent = "^Mozilla/\d+\.\d+ \([^;]+; [NIU]; ([^;]+); [^;]+; rv:[0-9.]+\) Gecko/\d{8} Galeon/[0-9.]+ \((Debian ).*[0-9.-]+\)",Galeon;$2$1
+ match_useragent = "^Mozilla/\d+\.\d+ \([^;]+; [NIU]; ([^;]+); [^;]+; Galeon\) Gecko/\d{8}$",Galeon;$1
+ match_useragent = "^Mozilla/\d+\.\d+ \([^;]+; [NIU]; Galeon; [^;]+; ([^;)]+)\)$",Galeon $1;
+ match_useragent = "^Mozilla/\d+\.\d+ Galeon/([0-9.]+) \(([^;)]+)\) Gecko/\d{8}$",Galeon $1;$2
+ 
++# Older Debian version
++match_useragent = "^Mozilla/\d+\.\d+ \([^;]+; [NIU]; Linux[^;]*; [^;]+; rv:([^;]+)(?:; [^;]+)*\) Gecko/\d{8} Debian/[0-9.-]+",Mozilla $1;Debian Linux
+ # Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.5a) Gecko/20030728 Mozilla Firebird/0.6.1
+ # Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.4) Gecko/20030908 Epiphany/1.0
+ match_useragent = "^Mozilla/\d+\.\d+ \([^;]+; [NIU]; ([^;]+); [^;]+; rv:[^;]+(?:; [^;]+)*\) Gecko/\d{8} ([a-zA-Z ]+/[0-9.b]+)",$2;$1
+@@ -26,6 +34,8 @@
+ match_useragent = "^Mozilla/\d+\.\d+ \([^;]+; [NIU]; ([^;]+); [^;]+; (m\d+)(?:; [^;]+)*\) Gecko/\d{8}$",Mozilla $2;$1
+ match_useragent = "^Mozilla/\d+\.\d+ \([^;]+; [NIU]; ([^;]+)(?:; [^;]+)*\) Mozilla/(.+)$",Mozilla $2;$1
+ 
++match_useragent = "^Firefox/(\d+)\.(\d+)",Firefox $1.$2.x
++
+ # Netscape 4.x
+ match_useragent = "^Mozilla/4\.(\d+)[^(]+\(X11; [NIU] ?; ([^;]+)(?:; [^;]+)*\)",Netscape 4.$1;$2
+ match_useragent = "^Mozilla/4\.(\d+)[^(]+\((OS/2|Linux|Macintosh|Win[^;]*)[;,] [NUI] ?[^)]*\)",Netscape 4.$1;$2
+@@ -52,7 +62,7 @@
+ 
+ # Konqueror
+ match_useragent = "^Konqueror/(\S+)$",Konqueror $1;
+-match_useragent = "^Mozilla/5\.0 \(compatible; Konqueror/([^;]); ([^)]+)\).*$",Konqueror $1;$2
++match_useragent = "^Mozilla/5\.0 \(compatible; Konqueror/([^;]); ([^)]+)\).*(?: (Debian|Ubuntu))$",Konqueror $1;$2 $3
+ 
+ # Lynx
+ match_useragent = "^Lynx/(\S+)",Lynx/$1;
+@@ -63,7 +73,10 @@
+ match_useragent = "^(RMA/1.0) \(compatible; RealMedia\)$",$1;
+ match_useragent = "^antibot\D+([0-9.]+)/(\S+)",antibot $1;$2
+ 
++# blog aggregator
++match_useragent = "UniversalFeedParser/3.3",UniversalFeedParser;
++
+ # generic
+ match_useragent = "^Mozilla/[1-9]\.\d+ \(compatible; ([^;]+); ([^)]+)\)$",$1;$2
+-match_useragent = "^Mozilla/([1-9]\.\d+)",compatible Mozilla/$1;
++#match_useragent = "^Mozilla/([1-9]\.\d+)",compatible Mozilla/$1;
+ match_useragent = "^([^;]+)$",$1;
