@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/NNTP/.packlist
+%%SITE_PERL%%/POE/Component/Server/NNTP.pm
+%%SITE_PERL%%/POE/Component/Server/NNTP/Constants.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/NNTP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
+@dirrm %%SITE_PERL%%/POE/Component/Server/NNTP
+@dirrmtry %%SITE_PERL%%/POE/Component/Server
+@dirrmtry %%SITE_PERL%%/POE/Component
+@dirrmtry %%SITE_PERL%%/POE

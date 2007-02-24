@@ -76,6 +76,7 @@
     SUBDIR += p5-News-Newsrc
     SUBDIR += p5-NewsLib
     SUBDIR += p5-POE-Component-Client-NNTP
+    SUBDIR += p5-POE-Component-Server-NNTP
     SUBDIR += pan
     SUBDIR += papercut
     SUBDIR += pgpmoose
