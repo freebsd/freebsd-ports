@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Cisco-Reconfig
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Cisco
@@ -24,7 +24,7 @@ MAN3=		Cisco::Reconfig.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500703
+.if ${PERL_LEVEL} < 500702
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
 .endif
 
