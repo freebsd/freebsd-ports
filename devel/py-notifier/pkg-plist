@@ -17,6 +17,8 @@
 %%PYTHON_SITELIBDIR%%/notifier/nf_qt.pyc
 %%PYTHON_SITELIBDIR%%/notifier/nf_qt.pyo
 %%PYTHON_SITELIBDIR%%/notifier/nf_wx.py
+%%PYTHON_SITELIBDIR%%/notifier/nf_wx.pyc
+%%PYTHON_SITELIBDIR%%/notifier/nf_wx.pyo
 %%PYTHON_SITELIBDIR%%/notifier/popen.py
 %%PYTHON_SITELIBDIR%%/notifier/popen.pyc
 %%PYTHON_SITELIBDIR%%/notifier/popen.pyo
@@ -41,4 +43,6 @@
 %%EXAMPLESDIR%%/test-qt.py
 %%EXAMPLESDIR%%/test-wx.py
 %%EXAMPLESDIR%%/threads.py
+%%EXAMPLESDIR%%/test-gobject.py
+%%EXAMPLESDIR%%/process3.py
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

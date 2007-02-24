@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	notifier
-PORTVERSION=	0.5.7
+PORTVERSION=	0.5.8
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.bitkipper.net/bytes/pynotifier/source/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,7 @@ WRKSRC=		${WRKDIR}/py${PORTNAME}-${PORTVERSION}
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
-	${CP} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	${CP} ${WRKSRC}/examples/*.py ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
