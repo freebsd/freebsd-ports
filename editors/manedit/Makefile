@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	manedit
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.1
 CATEGORIES=	editors
 MASTER_SITES=	http://wolfpack.twu.net/users/wolfpack/
 
@@ -22,6 +22,11 @@ MAKEFILE=	Makefile.FreeBSD
 MAN1=		manedit.1
 
 pre-configure:
-	${CP} ${FILESDIR}/mntent* ${WRKSRC}
+	@${CP} ${FILESDIR}/mntent* ${WRKSRC}
+
+post-patch:
+	@${REINPLACE_CMD} -E 's,(viewerfio.c),\1 mntent_compat.c,; \
+			      s,(viewerfio.h),\1 mntent.h,' \
+		${WRKSRC}/Makefile.srclist
 
 .include <bsd.port.mk>
