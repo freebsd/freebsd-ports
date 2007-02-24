@@ -121,6 +121,7 @@
     SUBDIR += ermixer
     SUBDIR += esound
     SUBDIR += espeak
+    SUBDIR += esperanza
     SUBDIR += etktab
     SUBDIR += euphoria
     SUBDIR += exaile
