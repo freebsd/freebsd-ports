@@ -9,7 +9,9 @@ PORTNAME=	pcsc-lite
 PORTVERSION=	1.4.0
 PORTEPOCH=	2
 CATEGORIES=	devel security
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/1819/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://alioth.debian.org/frs/download.php/1819/
+MASTER_SITE_SUBDIR=	arved
 DISTNAME=	pcsc-lite-${PORTVERSION:S/.b./-beta/}
 
 MAINTAINER=	arved@FreeBSD.org
