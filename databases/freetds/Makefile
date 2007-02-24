@@ -11,7 +11,7 @@ CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/freetds/stable
 
-MAINTAINER?=	kiesel@schlund.de
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Sybase/Microsoft TDS protocol library
 
 TDS_VER?=	5.0

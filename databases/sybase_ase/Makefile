@@ -12,7 +12,7 @@ MASTER_SITES=   http://download.sybase.com/pub/ase1103_linux/
 DISTNAME=       ${PORTNAME:S/_/-/}-${PORTVERSION:S/./_/g}-FreeBSD-6_i386
 EXTRACT_SUFX=   .tgz
 
-MAINTAINER=     kiesel@schlund.de
+MAINTAINER=     ports@FreeBSD.org
 COMMENT=        Sybase ASE RDBM System 11
 
 RESTRICTED=     "Please see the license"

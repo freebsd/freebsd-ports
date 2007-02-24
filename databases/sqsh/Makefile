@@ -11,7 +11,7 @@ CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=		sqsh
 
-MAINTAINER=	kiesel@schlund.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive tool for querying Sybase database servers
 
 LIB_DEPENDS=	ct.3:${PORTSDIR}/databases/freetds
