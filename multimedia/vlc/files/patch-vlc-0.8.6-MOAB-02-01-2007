@@ -1,0 +1,68 @@
+diff -ru vlc-0.8.6.orig/modules/access/cdda/access.c vlc-0.8.6/modules/access/cdda/access.c
+--- modules/access/cdda/access.c	2007-01-03 10:01:09.000000000 +0100
++++ modules/access/cdda/access.c	2007-01-03 10:02:45.000000000 +0100
+@@ -89,17 +89,17 @@
+   case CDIO_LOG_DEBUG:
+   case CDIO_LOG_INFO:
+     if (p_cdda->i_debug & INPUT_DBG_CDIO)
+-      msg_Dbg( p_cdda_input, message);
++      msg_Dbg( p_cdda_input, "%s", message);
+     break;
+   case CDIO_LOG_WARN:
+-    msg_Warn( p_cdda_input, message);
++    msg_Warn( p_cdda_input, "%s", message);
+     break;
+   case CDIO_LOG_ERROR:
+   case CDIO_LOG_ASSERT:
+-    msg_Err( p_cdda_input, message);
++    msg_Err( p_cdda_input, "%s", message);
+     break;
+   default:
+-    msg_Warn( p_cdda_input, message,
++    msg_Warn( p_cdda_input, "%s\n%s %d", message,
+             "the above message had unknown cdio log level",
+             level);
+   }
+diff -ru vlc-0.8.6.orig/modules/access/vcdx/access.c vlc-0.8.6/modules/access/vcdx/access.c
+--- modules/access/vcdx/access.c	2007-01-03 10:01:10.000000000 +0100
++++ modules/access/vcdx/access.c	2007-01-03 10:01:52.000000000 +0100
+@@ -92,17 +92,17 @@
+   case CDIO_LOG_DEBUG:
+   case CDIO_LOG_INFO:
+     if (p_vcdplayer->i_debug & INPUT_DBG_CDIO)
+-      msg_Dbg( p_vcd_access, message);
++      msg_Dbg( p_vcd_access, "%s", message);
+     break;
+   case CDIO_LOG_WARN:
+-    msg_Warn( p_vcd_access, message);
++    msg_Warn( p_vcd_access, "%s", message);
+     break;
+   case CDIO_LOG_ERROR:
+   case CDIO_LOG_ASSERT:
+-    msg_Err( p_vcd_access, message);
++    msg_Err( p_vcd_access, "%s", message);
+     break;
+   default:
+-    msg_Warn( p_vcd_access, message,
++    msg_Warn( p_vcd_access, "%s\n%s %d", message,
+             _("The above message had unknown log level"),
+             level);
+   }
+@@ -118,14 +118,14 @@
+   case VCD_LOG_DEBUG:
+   case VCD_LOG_INFO:
+     if (p_vcdplayer->i_debug & INPUT_DBG_VCDINFO)
+-      msg_Dbg( p_vcd_access, message);
++      msg_Dbg( p_vcd_access, "%s", message);
+     break;
+   case VCD_LOG_WARN:
+-    msg_Warn( p_vcd_access, message);
++    msg_Warn( p_vcd_access, "%s", message);
+     break;
+   case VCD_LOG_ERROR:
+   case VCD_LOG_ASSERT:
+-    msg_Err( p_vcd_access, message);
++    msg_Err( p_vcd_access, "%s", message);
+     break;
+   default:
+     msg_Warn( p_vcd_access, "%s\n%s %d", message,
