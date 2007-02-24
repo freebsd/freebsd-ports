@@ -1797,6 +1797,7 @@
     SUBDIR += py-omniorb
     SUBDIR += py-optik
     SUBDIR += py-orbit
+    SUBDIR += py-parsedatetime
     SUBDIR += py-parsing
     SUBDIR += py-pefile
     SUBDIR += py-period
