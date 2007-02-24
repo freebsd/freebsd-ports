@@ -195,6 +195,7 @@
     SUBDIR += ifstated
     SUBDIR += ilbc
     SUBDIR += imapproxy
+    SUBDIR += iodine
     SUBDIR += ip6_int
     SUBDIR += ipa_ip6fw
     SUBDIR += ipa_ipfw

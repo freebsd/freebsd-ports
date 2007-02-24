@@ -1,0 +1,19 @@
+
+=== Quick Start ===
+
+Server:
+
+iodined -f -u nobody 10.0.0.1 tunnelhost.example.net
+
+Client:
+
+iodine -f -u nobody 192.168.1.1 tunnelhost.example.net
+
+You need add these lines to the DNS zone file:
+
+tunnelhost	IN	A	192.168.1.1
+tunnel		IN	NS	tunnelhost.example.net
+
+The server side of the tunnel is 10.0.0.1.
+
+Please check README for details.
