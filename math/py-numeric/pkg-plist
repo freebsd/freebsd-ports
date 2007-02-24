@@ -62,7 +62,7 @@
 %%PYTHON_SITELIBDIR%%/Numeric/numeric_version.pyo
 %%PYTHON_SITELIBDIR%%/Numeric/ranlib.so
 %%PYTHON_SITELIBDIR%%/Numeric/umath.so
-%%DOCSDIR%%/numpy.pdf
+%%PORTDOCS%%%%DOCSDIR%%/numpy.pdf
 %%EXAMPLESDIR%%/NumTut/__init__.py
 %%EXAMPLESDIR%%/NumTut/greece.pik
 %%EXAMPLESDIR%%/NumTut/mkpic.py
@@ -73,7 +73,7 @@
 %%EXAMPLESDIR%%/sieve.py
 @dirrm %%EXAMPLESDIR%%/NumTut
 @dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/Numeric/RNG
 @dirrm %%PYTHON_SITELIBDIR%%/Numeric/Numeric_headers
 @dirrm %%PYTHON_SITELIBDIR%%/Numeric/MA
