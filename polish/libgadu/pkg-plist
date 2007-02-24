@@ -1,5 +1,5 @@
-include/libgadu-config.h
 include/libgadu.h
+lib/libgadu.la
 lib/libgadu.so
 lib/libgadu.so.3
 libdata/pkgconfig/libgadu.pc
