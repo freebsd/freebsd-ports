@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	IMDB-Film
-PORTVERSION=	0.22
+PORTVERSION=	0.24
 CATEGORIES=	www perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/S/ST/STEPANOV
 PKGNAMEPREFIX=	p5-
 
@@ -26,10 +26,4 @@ CONFIGURE_ARGS=	</dev/null
 
 MAN3=		IMDB::BaseClass.3 IMDB::Film.3 IMDB::Persons.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600	# Inherited from many ports
-IGNORE=		requires Perl 5.6.0 or newer.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
