@@ -4674,6 +4674,7 @@ intltool	ports/textproc/intltool
 inventor	ports/graphics/inventor
 invitation_to_ruby	ports/devel/invitation_to_ruby
 io		ports/lang/io
+iodine		ports/net/iodine
 iog		ports/net-mgmt/iog
 ion		ports/x11-wm/ion
 ion-2		ports/x11-wm/ion-2
