@@ -12358,6 +12358,7 @@ py-email	ports/mail/py-email
 py-empy		ports/textproc/py-empy
 py-enchant	ports/textproc/py-enchant
 py-epsilon	ports/devel/py-epsilon
+py-event	ports/devel/py-event
 py-excelerator	ports/textproc/py-excelerator
 py-exif		ports/graphics/py-exif
 py-expat	ports/textproc/py-expat
