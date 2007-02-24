@@ -1,7 +1,97 @@
 bin/%%APP_NAME%%
 share/applications/%%APP_NAME%%.desktop
+lib/%%APP_NAME%%/DumpColors
 lib/%%APP_NAME%%/LICENSE
+lib/%%APP_NAME%%/NormalizationTest
+lib/%%APP_NAME%%/OutTestData/doctype.xif
+lib/%%APP_NAME%%/OutTestData/entityxif.out
+lib/%%APP_NAME%%/OutTestData/entityxif.xif
+lib/%%APP_NAME%%/OutTestData/htmltable.html
+lib/%%APP_NAME%%/OutTestData/htmltable.out
+lib/%%APP_NAME%%/OutTestData/mailquote.html
+lib/%%APP_NAME%%/OutTestData/mailquote.out
+lib/%%APP_NAME%%/OutTestData/mischtml.html
+lib/%%APP_NAME%%/OutTestData/mischtml.out
+lib/%%APP_NAME%%/OutTestData/plain.html
+lib/%%APP_NAME%%/OutTestData/plainnowrap.out
+lib/%%APP_NAME%%/OutTestData/plainwrap.out
+lib/%%APP_NAME%%/OutTestData/simple.html
+lib/%%APP_NAME%%/OutTestData/simplecopy.out
+lib/%%APP_NAME%%/OutTestData/simplefmt.out
+lib/%%APP_NAME%%/OutTestData/simplemail.html
+lib/%%APP_NAME%%/OutTestData/simplemail.out
+lib/%%APP_NAME%%/OutTestData/xifdthtml.out
+lib/%%APP_NAME%%/OutTestData/xifdtplain.out
+lib/%%APP_NAME%%/OutTestData/xifstuff.out
+lib/%%APP_NAME%%/OutTestData/xifstuff.xif
+lib/%%APP_NAME%%/ParseCSS
+lib/%%APP_NAME%%/PrimitiveTest
+lib/%%APP_NAME%%/PropertiesTest
 lib/%%APP_NAME%%/README
+lib/%%APP_NAME%%/ReadNTLM
+lib/%%APP_NAME%%/SimpleTypeLib
+lib/%%APP_NAME%%/StringBundleTest
+lib/%%APP_NAME%%/TestArray
+lib/%%APP_NAME%%/TestAtoms
+lib/%%APP_NAME%%/TestAutoLock
+lib/%%APP_NAME%%/TestAutoPtr
+lib/%%APP_NAME%%/TestBlockingSocket
+lib/%%APP_NAME%%/TestCOMPtr
+lib/%%APP_NAME%%/TestCOMPtrEq
+lib/%%APP_NAME%%/TestCRT
+lib/%%APP_NAME%%/TestCSSPropertyLookup
+lib/%%APP_NAME%%/TestCallTemplates
+lib/%%APP_NAME%%/TestCallbacks
+lib/%%APP_NAME%%/TestColorNames
+lib/%%APP_NAME%%/TestCookie
+lib/%%APP_NAME%%/TestDNS
+lib/%%APP_NAME%%/TestDeque
+lib/%%APP_NAME%%/TestFactory
+lib/%%APP_NAME%%/TestHashtables
+lib/%%APP_NAME%%/TestID
+lib/%%APP_NAME%%/TestIDN
+lib/%%APP_NAME%%/TestINIParser
+lib/%%APP_NAME%%/TestIOThreads
+lib/%%APP_NAME%%/TestIncrementalDownload
+lib/%%APP_NAME%%/TestInterfaceInfo
+lib/%%APP_NAME%%/TestLibxpnet
+lib/%%APP_NAME%%/TestLineBreak
+lib/%%APP_NAME%%/TestMinStringAPI
+lib/%%APP_NAME%%/TestObserverService
+lib/%%APP_NAME%%/TestOpen
+lib/%%APP_NAME%%/TestOutSinks.pl
+lib/%%APP_NAME%%/TestOutput
+lib/%%APP_NAME%%/TestPageLoad
+lib/%%APP_NAME%%/TestParser
+lib/%%APP_NAME%%/TestPerf
+lib/%%APP_NAME%%/TestPermanentAtoms
+lib/%%APP_NAME%%/TestPipes
+lib/%%APP_NAME%%/TestProtocols
+lib/%%APP_NAME%%/TestRect
+lib/%%APP_NAME%%/TestServ
+lib/%%APP_NAME%%/TestServMgr
+lib/%%APP_NAME%%/TestSocketTransport
+lib/%%APP_NAME%%/TestStandardURL
+lib/%%APP_NAME%%/TestStorageStream
+lib/%%APP_NAME%%/TestStreamChannel
+lib/%%APP_NAME%%/TestStreamConv
+lib/%%APP_NAME%%/TestStreamLoader
+lib/%%APP_NAME%%/TestStreamPump
+lib/%%APP_NAME%%/TestStreamTransport
+lib/%%APP_NAME%%/TestStrings
+lib/%%APP_NAME%%/TestTArray
+lib/%%APP_NAME%%/TestTXMgr
+lib/%%APP_NAME%%/TestThreadPool
+lib/%%APP_NAME%%/TestThreads
+lib/%%APP_NAME%%/TestURLParser
+lib/%%APP_NAME%%/TestUpload
+lib/%%APP_NAME%%/TestVersionComparator
+lib/%%APP_NAME%%/TestXMLExtras
+lib/%%APP_NAME%%/TestXPC
+lib/%%APP_NAME%%/TestXPIDLString
+lib/%%APP_NAME%%/TestXPTCInvoke
+lib/%%APP_NAME%%/UnicharSelfTest
+lib/%%APP_NAME%%/UniversalChardetTest
 lib/%%APP_NAME%%/chrome.manifest
 lib/%%APP_NAME%%/chrome/chatzilla.jar
 lib/%%APP_NAME%%/chrome/classic.jar
@@ -52,13 +142,15 @@ lib/%%APP_NAME%%/chrome/modern.jar
 lib/%%APP_NAME%%/chrome/overlays.rdf
 lib/%%APP_NAME%%/chrome/pipnss.jar
 lib/%%APP_NAME%%/chrome/pippki.jar
+lib/%%APP_NAME%%/chrome/reftest.jar
+lib/%%APP_NAME%%/chrome/reftest.manifest
 lib/%%APP_NAME%%/chrome/reporter.jar
 lib/%%APP_NAME%%/chrome/reporter.manifest
 lib/%%APP_NAME%%/chrome/sroaming.jar
 lib/%%APP_NAME%%/chrome/stylesheets.rdf
-lib/%%APP_NAME%%/chrome/tasks.jar
 lib/%%APP_NAME%%/chrome/toolkit.jar
 lib/%%APP_NAME%%/chrome/venkman.jar
+lib/%%APP_NAME%%/chrome/xslt-qa.jar
 lib/%%APP_NAME%%/components/accessibility.xpt
 lib/%%APP_NAME%%/components/addrbook.xpt
 lib/%%APP_NAME%%/components/alerts.xpt
@@ -94,6 +186,7 @@ lib/%%APP_NAME%%/components/dom_range.xpt
 lib/%%APP_NAME%%/components/dom_sidebar.xpt
 lib/%%APP_NAME%%/components/dom_storage.xpt
 lib/%%APP_NAME%%/components/dom_stylesheets.xpt
+lib/%%APP_NAME%%/components/dom_svg.xpt
 lib/%%APP_NAME%%/components/dom_traversal.xpt
 lib/%%APP_NAME%%/components/dom_views.xpt
 lib/%%APP_NAME%%/components/dom_xbl.xpt
@@ -109,6 +202,7 @@ lib/%%APP_NAME%%/components/find.xpt
 lib/%%APP_NAME%%/components/gfx.xpt
 lib/%%APP_NAME%%/components/history.xpt
 lib/%%APP_NAME%%/components/htmlparser.xpt
+lib/%%APP_NAME%%/components/imgicon.xpt
 lib/%%APP_NAME%%/components/imglib2.xpt
 lib/%%APP_NAME%%/components/impComm4xMail.xpt
 lib/%%APP_NAME%%/components/import.xpt
@@ -122,6 +216,7 @@ lib/%%APP_NAME%%/components/layout_base.xpt
 lib/%%APP_NAME%%/components/layout_printing.xpt
 lib/%%APP_NAME%%/components/layout_xul.xpt
 lib/%%APP_NAME%%/components/layout_xul_tree.xpt
+lib/%%APP_NAME%%/components/libMyService.so
 lib/%%APP_NAME%%/components/libaccessibility.so
 lib/%%APP_NAME%%/components/libaddrbook.so
 lib/%%APP_NAME%%/components/libappcomps.so
@@ -138,15 +233,13 @@ lib/%%APP_NAME%%/components/libdocshell.so
 lib/%%APP_NAME%%/components/libeditor.so
 lib/%%APP_NAME%%/components/libembedcomponents.so
 lib/%%APP_NAME%%/components/libfileview.so
-lib/%%APP_NAME%%/components/libgfx_gtk.so
-lib/%%APP_NAME%%/components/libgfxps.so
+lib/%%APP_NAME%%/components/libgkgfxthebes.so
 lib/%%APP_NAME%%/components/libgklayout.so
 lib/%%APP_NAME%%/components/libgkplugin.so
 lib/%%APP_NAME%%/components/libhtmlpars.so
 lib/%%APP_NAME%%/components/libi18n.so
+lib/%%APP_NAME%%/components/libimgicon.so
 lib/%%APP_NAME%%/components/libimglib2.so
-lib/%%APP_NAME%%/components/libimpComm4xMail.so
-lib/%%APP_NAME%%/components/libimpText.so
 lib/%%APP_NAME%%/components/libimport.so
 lib/%%APP_NAME%%/components/libintlapp.so
 lib/%%APP_NAME%%/components/libjar50.so
@@ -178,7 +271,6 @@ lib/%%APP_NAME%%/components/libpipnss.so
 lib/%%APP_NAME%%/components/libpippki.so
 lib/%%APP_NAME%%/components/libpref.so
 lib/%%APP_NAME%%/components/libprofile.so
-lib/%%APP_NAME%%/components/libqfaservices.so
 lib/%%APP_NAME%%/components/librdf.so
 lib/%%APP_NAME%%/components/libremoteservice.so
 lib/%%APP_NAME%%/components/libsearchservice.so
@@ -187,6 +279,7 @@ lib/%%APP_NAME%%/components/libsroaming.so
 lib/%%APP_NAME%%/components/libstoragecomps.so
 lib/%%APP_NAME%%/components/libsuitetypeaheadfind.so
 lib/%%APP_NAME%%/components/libsystem-pref.so
+lib/%%APP_NAME%%/components/libtestdynamic.so
 lib/%%APP_NAME%%/components/libtxmgr.so
 lib/%%APP_NAME%%/components/libuconv.so
 lib/%%APP_NAME%%/components/libucvmath.so
@@ -198,10 +291,13 @@ lib/%%APP_NAME%%/components/libwebbrwsr.so
 lib/%%APP_NAME%%/components/libwebsrvcs.so
 lib/%%APP_NAME%%/components/libwidget_gtk2.so
 lib/%%APP_NAME%%/components/libwindowds.so
+lib/%%APP_NAME%%/components/libwsproxytest.so
 lib/%%APP_NAME%%/components/libxmlextras.so
 lib/%%APP_NAME%%/components/libxpautocomplete.so
 lib/%%APP_NAME%%/components/libxpcom_compat_c.so
+lib/%%APP_NAME%%/components/libxpcomsample.so
 lib/%%APP_NAME%%/components/libxpconnect.so
+lib/%%APP_NAME%%/components/libxpctest.so
 lib/%%APP_NAME%%/components/libxpinstall.so
 lib/%%APP_NAME%%/components/libxremoteservice.so
 lib/%%APP_NAME%%/components/locale.xpt
@@ -235,6 +331,7 @@ lib/%%APP_NAME%%/components/necko_socket.xpt
 lib/%%APP_NAME%%/components/necko_strconv.xpt
 lib/%%APP_NAME%%/components/necko_viewsource.xpt
 lib/%%APP_NAME%%/components/nsAbLDAPAttributeMap.js
+lib/%%APP_NAME%%/components/nsAboutAbout.js
 lib/%%APP_NAME%%/components/nsCloseAllWindows.js
 lib/%%APP_NAME%%/components/nsComposerCmdLineHandler.js
 lib/%%APP_NAME%%/components/nsDictionary.js
@@ -247,6 +344,7 @@ lib/%%APP_NAME%%/components/nsLDAPPrefsService.js
 lib/%%APP_NAME%%/components/nsProgressDialog.js
 lib/%%APP_NAME%%/components/nsProxyAutoConfig.js
 lib/%%APP_NAME%%/components/nsResetPref.js
+lib/%%APP_NAME%%/components/nsSample.js
 lib/%%APP_NAME%%/components/nsSidebar.js
 lib/%%APP_NAME%%/components/nsURLFormatter.js
 lib/%%APP_NAME%%/components/nsUpdateNotifier.js
@@ -264,8 +362,10 @@ lib/%%APP_NAME%%/components/prefmigr.xpt
 lib/%%APP_NAME%%/components/profile.xpt
 lib/%%APP_NAME%%/components/progressDlg.xpt
 lib/%%APP_NAME%%/components/proxyObjInst.xpt
+lib/%%APP_NAME%%/components/proxytest.xpt
 lib/%%APP_NAME%%/components/qfaservices.xpt
 lib/%%APP_NAME%%/components/rdf.xpt
+lib/%%APP_NAME%%/components/reftest-cmdline.js
 lib/%%APP_NAME%%/components/related.xpt
 lib/%%APP_NAME%%/components/saxparser.xpt
 lib/%%APP_NAME%%/components/search.xpt
@@ -276,9 +376,9 @@ lib/%%APP_NAME%%/components/spellchecker.xpt
 lib/%%APP_NAME%%/components/storage.xpt
 lib/%%APP_NAME%%/components/suitetypeaheadfind.xpt
 lib/%%APP_NAME%%/components/talkback/XTalkback.ad
-lib/%%APP_NAME%%/components/talkback/master.ini
 lib/%%APP_NAME%%/components/talkback/talkback
 lib/%%APP_NAME%%/components/talkback/talkback.so
+lib/%%APP_NAME%%/components/test_necko.xpt
 lib/%%APP_NAME%%/components/toolkitremote.xpt
 lib/%%APP_NAME%%/components/txEXSLTRegExFunctions.js
 lib/%%APP_NAME%%/components/txmgr.xpt
@@ -298,6 +398,7 @@ lib/%%APP_NAME%%/components/websrvcs.xpt
 lib/%%APP_NAME%%/components/widget.xpt
 lib/%%APP_NAME%%/components/windowds.xpt
 lib/%%APP_NAME%%/components/windowwatcher.xpt
+lib/%%APP_NAME%%/components/wsproxytest.xpt
 lib/%%APP_NAME%%/components/xml-rpc.xpt
 lib/%%APP_NAME%%/components/xpautocomplete.xpt
 lib/%%APP_NAME%%/components/xpcom.xpt
@@ -308,7 +409,9 @@ lib/%%APP_NAME%%/components/xpcom_io.xpt
 lib/%%APP_NAME%%/components/xpcom_obsolete.xpt
 lib/%%APP_NAME%%/components/xpcom_threads.xpt
 lib/%%APP_NAME%%/components/xpcom_xpti.xpt
+lib/%%APP_NAME%%/components/xpcomsample.xpt
 lib/%%APP_NAME%%/components/xpconnect.xpt
+lib/%%APP_NAME%%/components/xpconnect_tests.xpt
 lib/%%APP_NAME%%/components/xpinstall.xpt
 lib/%%APP_NAME%%/components/xremoteservice.xpt
 lib/%%APP_NAME%%/components/xulappinfo.js
@@ -317,12 +420,6 @@ lib/%%APP_NAME%%/components/xuldoc.xpt
 lib/%%APP_NAME%%/components/xultmpl.xpt
 lib/%%APP_NAME%%/defaults/autoconfig/platform.js
 lib/%%APP_NAME%%/defaults/autoconfig/prefcalls.js
-lib/%%APP_NAME%%/defaults/isp/en-US/gmail.rdf
-lib/%%APP_NAME%%/defaults/isp/en-US/movemail.rdf
-lib/%%APP_NAME%%/defaults/isp/gmail.rdf
-lib/%%APP_NAME%%/defaults/isp/movemail.rdf
-lib/%%APP_NAME%%/defaults/messenger/SpamAssassin.sfd
-lib/%%APP_NAME%%/defaults/messenger/SpamPal.sfd
 lib/%%APP_NAME%%/defaults/messenger/en-US/mailViews.dat
 lib/%%APP_NAME%%/defaults/messenger/mailViews.dat
 lib/%%APP_NAME%%/defaults/pref/browser-prefs.js
@@ -356,11 +453,18 @@ lib/%%APP_NAME%%/defaults/wallet/VcardSchema.tbl
 lib/%%APP_NAME%%/dependentlibs.list
 lib/%%APP_NAME%%/dictionaries/en-US.aff
 lib/%%APP_NAME%%/dictionaries/en-US.dic
+lib/%%APP_NAME%%/grabpage
 lib/%%APP_NAME%%/greprefs/all.js
 lib/%%APP_NAME%%/greprefs/security-prefs.js
 lib/%%APP_NAME%%/greprefs/xpinstall.js
+lib/%%APP_NAME%%/htmlrobot
 lib/%%APP_NAME%%/init.d/README
 lib/%%APP_NAME%%/install.rdf
+lib/%%APP_NAME%%/isp/SpamAssassin.sfd
+lib/%%APP_NAME%%/isp/SpamPal.sfd
+lib/%%APP_NAME%%/isp/gmail.rdf
+lib/%%APP_NAME%%/isp/movemail.rdf
+lib/%%APP_NAME%%/libDebugRobot.so
 lib/%%APP_NAME%%/libfreebl3.chk
 lib/%%APP_NAME%%/libfreebl3.so
 lib/%%APP_NAME%%/libgfxpsshar.so
@@ -381,14 +485,21 @@ lib/%%APP_NAME%%/libsmime3.so
 lib/%%APP_NAME%%/libsoftokn3.chk
 lib/%%APP_NAME%%/libsoftokn3.so
 lib/%%APP_NAME%%/libssl3.so
+lib/%%APP_NAME%%/libthebes.so
 lib/%%APP_NAME%%/libxpcom.so
 lib/%%APP_NAME%%/libxpcom_compat.so
 lib/%%APP_NAME%%/libxpcom_core.so
 lib/%%APP_NAME%%/libxpistub.so
 lib/%%APP_NAME%%/mozilla-installer-bin
 lib/%%APP_NAME%%/mozilla-xremote-client
+lib/%%APP_NAME%%/nsIFileEnumerator
+lib/%%APP_NAME%%/nsIFileTest
+lib/%%APP_NAME%%/nsTestSample
 lib/%%APP_NAME%%/plugins/libnullplugin.so
 lib/%%APP_NAME%%/plugins/libunixprintplugin.so
+lib/%%APP_NAME%%/proxytests
+lib/%%APP_NAME%%/rdfcat
+lib/%%APP_NAME%%/rdfpoll
 lib/%%APP_NAME%%/regchrome
 lib/%%APP_NAME%%/regxpcom
 lib/%%APP_NAME%%/regxpcom.log
@@ -402,13 +513,13 @@ lib/%%APP_NAME%%/res/charsetalias.properties
 lib/%%APP_NAME%%/res/cmessage.txt
 lib/%%APP_NAME%%/res/dtd/mathml.dtd
 lib/%%APP_NAME%%/res/dtd/xhtml11.dtd
+lib/%%APP_NAME%%/res/effective_tld_names.dat
 lib/%%APP_NAME%%/res/entityTables/html40Latin1.properties
 lib/%%APP_NAME%%/res/entityTables/html40Special.properties
 lib/%%APP_NAME%%/res/entityTables/html40Symbols.properties
 lib/%%APP_NAME%%/res/entityTables/htmlEntityVersions.properties
 lib/%%APP_NAME%%/res/entityTables/mathml20.properties
 lib/%%APP_NAME%%/res/entityTables/transliterate.properties
-lib/%%APP_NAME%%/res/fonts/fontEncoding.properties
 lib/%%APP_NAME%%/res/fonts/mathfont.properties
 lib/%%APP_NAME%%/res/fonts/mathfontCMEX10.properties
 lib/%%APP_NAME%%/res/fonts/mathfontCMSY10.properties
@@ -418,7 +529,6 @@ lib/%%APP_NAME%%/res/fonts/mathfontMath2.properties
 lib/%%APP_NAME%%/res/fonts/mathfontMath4.properties
 lib/%%APP_NAME%%/res/fonts/mathfontPUA.properties
 lib/%%APP_NAME%%/res/fonts/mathfontSymbol.properties
-lib/%%APP_NAME%%/res/fonts/pangoFontEncoding.properties
 lib/%%APP_NAME%%/res/forms.css
 lib/%%APP_NAME%%/res/grabber.gif
 lib/%%APP_NAME%%/res/hiddenWindow.html
@@ -433,12 +543,18 @@ lib/%%APP_NAME%%/res/html/gopher-sound.gif
 lib/%%APP_NAME%%/res/html/gopher-telnet.gif
 lib/%%APP_NAME%%/res/html/gopher-text.gif
 lib/%%APP_NAME%%/res/html/gopher-unknown.gif
+lib/%%APP_NAME%%/res/jarlist.dat
 lib/%%APP_NAME%%/res/langGroups.properties
 lib/%%APP_NAME%%/res/language.properties
 lib/%%APP_NAME%%/res/loading-image.gif
 lib/%%APP_NAME%%/res/mathml.css
 lib/%%APP_NAME%%/res/quirk.css
-lib/%%APP_NAME%%/res/sample.unixpsfonts.properties
+lib/%%APP_NAME%%/res/strres-test.dtd
+lib/%%APP_NAME%%/res/strres-test.html
+lib/%%APP_NAME%%/res/strres-test.js
+lib/%%APP_NAME%%/res/strres-test.xul
+lib/%%APP_NAME%%/res/strres.properties
+lib/%%APP_NAME%%/res/svg.css
 lib/%%APP_NAME%%/res/table-add-column-after-active.gif
 lib/%%APP_NAME%%/res/table-add-column-after-hover.gif
 lib/%%APP_NAME%%/res/table-add-column-after.gif
@@ -457,8 +573,11 @@ lib/%%APP_NAME%%/res/table-remove-column.gif
 lib/%%APP_NAME%%/res/table-remove-row-active.gif
 lib/%%APP_NAME%%/res/table-remove-row-hover.gif
 lib/%%APP_NAME%%/res/table-remove-row.gif
+lib/%%APP_NAME%%/res/test.properties
 lib/%%APP_NAME%%/res/ua.css
 lib/%%APP_NAME%%/res/unixcharset.properties
+lib/%%APP_NAME%%/res/urlparse.dat
+lib/%%APP_NAME%%/res/urlparse_unx.dat
 lib/%%APP_NAME%%/res/viewsource.css
 lib/%%APP_NAME%%/run-mozilla.sh
 lib/%%APP_NAME%%/seamonkey
@@ -469,6 +588,9 @@ lib/%%APP_NAME%%/searchplugins/google.gif
 lib/%%APP_NAME%%/searchplugins/google.src
 lib/%%APP_NAME%%/searchplugins/jeeves.gif
 lib/%%APP_NAME%%/searchplugins/jeeves.src
+lib/%%APP_NAME%%/teststorage1
+lib/%%APP_NAME%%/triplescat
+lib/%%APP_NAME%%/urltest
 lib/%%APP_NAME%%/xpcshell
 lib/%%APP_NAME%%/xpicleanup
 lib/%%APP_NAME%%/xpidl
@@ -478,14 +600,13 @@ lib/%%APP_NAME%%/xpt_link
 @exec /bin/cp -R %%LOCALBASE%%/lib/xpi/symlinks/%%APP_NAME%%/  %D/lib/%%APP_NAME%%/extensions/ 2>/dev/null || true
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/plugins/  -depth 1 -type l -delete 2>/dev/null || true
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/extensions/  -depth 1 -type l -delete 2>/dev/null || true
+@dirrm lib/%%APP_NAME%%/OutTestData
 @dirrm lib/%%APP_NAME%%/chrome/icons/default
 @dirrm lib/%%APP_NAME%%/chrome/icons
 @dirrm lib/%%APP_NAME%%/chrome
 @dirrm lib/%%APP_NAME%%/components/talkback
 @dirrm lib/%%APP_NAME%%/components
 @dirrm lib/%%APP_NAME%%/defaults/autoconfig
-@dirrm lib/%%APP_NAME%%/defaults/isp/en-US
-@dirrm lib/%%APP_NAME%%/defaults/isp
 @dirrm lib/%%APP_NAME%%/defaults/messenger/en-US
 @dirrm lib/%%APP_NAME%%/defaults/messenger
 @dirrm lib/%%APP_NAME%%/defaults/pref
@@ -498,6 +619,7 @@ lib/%%APP_NAME%%/xpt_link
 @dirrm lib/%%APP_NAME%%/dictionaries
 @dirrm lib/%%APP_NAME%%/greprefs
 @dirrm lib/%%APP_NAME%%/init.d
+@dirrm lib/%%APP_NAME%%/isp
 @dirrm lib/%%APP_NAME%%/plugins
 @dirrm lib/%%APP_NAME%%/res/dtd
 @dirrm lib/%%APP_NAME%%/res/entityTables
