@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	reoback
 EXTRACT_SUFX=	_r3.tar.gz
 
-MAINTAINER=	kiesel@schlund.de
+MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Simple but flexible ftp/nfs backup script
 
 RUN_DEPENDS=	${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
