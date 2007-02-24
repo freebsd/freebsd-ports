@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.freebyte.com/download/ \
 		http://document-root.de/mirror/lxsplit/
 DISTNAME=	lxsplit
 
-MAINTAINER=	kiesel@schlund.de
+MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	Simple program to split or join files
 
 PLIST_FILES=	bin/lxsplit
