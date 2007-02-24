@@ -7725,6 +7725,7 @@ nc		ports/net/nc
 nc6		ports/net/nc6
 ncbi-toolkit	ports/biology/ncbi-toolkit
 ncc		ports/devel/ncc
+ncdu		ports/sysutils/ncdu
 ncftp		ports/ftp/ncftp
 ncftp2		ports/ftp/ncftp2
 ncftp3		ports/ftp/ncftp3
