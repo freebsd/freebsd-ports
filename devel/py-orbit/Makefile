@@ -6,7 +6,7 @@
 #   $MCom: ports/devel/py-orbit2/Makefile,v 1.11 2006/04/13 07:52:34 bland Exp $
 
 PORTNAME=	orbit
-PORTVERSION=	2.14.1
+PORTVERSION=	2.14.2
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/pyorbit/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -25,5 +25,6 @@ USE_GNOME=	gnomehack orbit2
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 ORBIT_CONFIG=	${LOCALBASE}/bin/orbit2-config
+CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 
 .include <bsd.port.mk>
