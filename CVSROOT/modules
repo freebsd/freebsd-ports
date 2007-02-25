@@ -13781,6 +13781,7 @@ sdl_pango	ports/x11-toolkits/sdl_pango
 sdl_sge		ports/devel/sdl_sge
 sdl_sound	ports/audio/sdl_sound
 sdl_ttf		ports/graphics/sdl_ttf
+sdlmame		ports/emulators/sdlmame
 sdlmm		ports/devel/sdlmm
 sdlquake2	ports/games/sdlquake2
 sdlroids	ports/games/sdlroids
