@@ -11882,6 +11882,7 @@ pornview	ports/graphics/pornview
 port-authoring-tools	ports/ports-mgmt/port-authoring-tools
 port-maintenance-tools	ports/ports-mgmt/port-maintenance-tools
 portaudio	ports/audio/portaudio
+portaudio2	ports/audio/portaudio2
 portaudit	ports/ports-mgmt/portaudit
 portaudit-db	ports/ports-mgmt/portaudit-db
 portbrowser	ports/ports-mgmt/portbrowser
