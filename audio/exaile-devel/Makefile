@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	exaile
-DISTVERSION=	0.2.8
+DISTVERSION=	0.2.9b
 CATEGORIES=	audio
-MASTER_SITES=	http://www.exaile.org/files/ CSME
+MASTER_SITES=	http://www.exaile.org/files/ GENTOO/distfiles
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	infofarmer@FreeBSD.org
@@ -24,17 +24,9 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
 USE_GNOME=	pygtk2 pygnomeextras
 USE_GSTREAMER=	python
 USE_PYTHON=	yes
-PLIST_FILES=	share/applications/${PORTNAME}.desktop share/pixmaps/${PORTNAME}.png bin/${PORTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^PREFIX/d' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e '/^PYTHON_DIR/s|=.*|=${PYTHON_INCLUDEDIR}|' ${WRKSRC}/mmkeys/Makefile
-
-create-plist:
-	${FIND} -s ${DATADIR} -not -type d|${SED} -e 's|^${DATADIR}|%%DATADIR%%|' > ${PLIST}
-	${FIND} -ds ${DATADIR} -type d|${SED} -e 's|^${DATADIR}|%%DATADIR%%|' \
-		-e 's|^|@dirrm |' >> ${PLIST}
-	@${ECHO_CMD} '@dirrmtry share/applications' >> ${PLIST}
-	@${ECHO_CMD} '@dirrmtry share/pixmaps' >> ${PLIST}
 
 .include <bsd.port.mk>
