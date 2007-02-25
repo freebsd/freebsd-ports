@@ -7,7 +7,7 @@
 
 PORTNAME=	wsjt
 PORTVERSION=	5.9.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	wsjt
@@ -17,30 +17,27 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Weak signal ham radio communication pakage
 
-BUILD_DEPENDS=	gfortran41:${PORTSDIR}/lang/gfortran \
-		${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy03 \
-		${PYTHON_SITELIBDIR}/f2py2e:${PORTSDIR}/lang/f2py
-#		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSIDR}/x11-toolkits/py-tkinter
+BUILD_DEPENDS=	gfortran42:${PORTSDIR}/lang/gcc42 \
+		${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy \
+		${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2 \
+		${PYNUMPY}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter/ \
+		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate
 
-ONLY_FOR_ARCHS=	i386
-ONLY_FOR_ARCHS_REASON=	WIP for amd64 and perhaps others
-
+WANT_FORTRAN=	yes	#dummy
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	2.4+
-PYNUMERIC=	yes
 USE_AUTOTOOLS=	libtool:15
 
-#
-# This until Joe renames the tarball properly --db
-#
 post-extract:
 	@${MV} ${WRKDIR}/wsjt596r309 ${WRKDIR}/wsjt-5.9.6.r309
 
-pre-configure:
-	@${CP} ${FILESDIR}/portaudio-v19-Makefile ${WRKSRC}/portaudio-v19/Makefile
-	@${CP} ${FILESDIR}/portaudio-v19-config.status ${WRKSRC}/portaudio-v19/config.status
+post-patch:
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+	-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+	${WRKSRC}/configure
 
 do-install:
 	@${MKDIR} ${DATADIR}
