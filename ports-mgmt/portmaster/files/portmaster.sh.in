@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Local version: 1.151
+# Local version: 1.152
 # $FreeBSD$
 
 # Copyright (c) 2005-2007 Douglas Barton, All rights reserved
@@ -1191,20 +1191,19 @@ fi
 
 # Exercised in the common case of not using -p option
 case "$portdir" in
-'')	case "$1" in
+'')	argv=${1%/}
+	case "$argv" in
 	'')	test -z "$UPDATE_REQ_BYS" && usage ;;
-	${pd}/*)	portdir="${1#$pd/}" ;;
-	/*)	upg_port="${1##*/}" ;;
+	${pd}/*)	portdir="${argv#$pd/}" ;;
+	/*)	upg_port="${argv##*/}" ;;
 	\.)	portdir="${PWD##*/ports/}" ;;
-	*)	if [ -d "${pd}/${1}" ]; then
-			portdir=$1
+	*)	if [ -d "${pd}/${argv}" ]; then
+			portdir=$argv
 		else
-			upg_port=$1
+			upg_port=$argv
 		fi
 		;;
 	esac
-	portdir=${portdir%/}
-	upg_port=${upg_port%/}
 esac
 
 case "$upg_port" in
