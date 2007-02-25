@@ -8,7 +8,9 @@
 PORTNAME=	toolbox
 PORTVERSION=	0.8
 CATEGORIES=	deskutils gnustep
-MASTER_SITES=	http://ftp.azc.uam.mx/mirrors/gnu/savannah/files/toolbox/Release.pkg/0.8/
+MASTER_SITES=	http://ftp.azc.uam.mx/mirrors/gnu/savannah/files/toolbox/Release.pkg/0.8/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dinoex
 PKGNAMESUFFIX=	kit${PKGNAMESUFFIX2}
 DISTNAME=	Toolbox-${PORTVERSION}
 
