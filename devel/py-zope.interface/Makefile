@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	zopeInterface
-PORTVERSION=	3.3.0
-PORTREVISION=	1
+PORTVERSION=	3.3.0.1
 CATEGORIES=	devel zope python
-MASTER_SITES=	http://www.zope.org/Products/ZopeInterface/${PORTVERSION}/ \
-		http://cheeseshop.python.org/packages/source/z/zope.interface/
+MASTER_SITES=	http://cheeseshop.python.org/packages/source/z/zope.interface/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	zope.interface-${PORTVERSION}
 
@@ -22,7 +20,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MANUAL_PACKAGE_BUILD=Doesn't build in tinderbox environment
 
-USE_PYTHON=	2.2+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
