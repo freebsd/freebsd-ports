@@ -8,7 +8,6 @@ lib/libmecab.so.1
 libexec/mecab/mecab-cost-train
 libexec/mecab/mecab-dict-gen
 libexec/mecab/mecab-dict-index
-libexec/mecab/mecab-dict-info
 libexec/mecab/mecab-system-eval
 libexec/mecab/mecab-test-gen
 @dirrm libexec/mecab
@@ -26,6 +25,7 @@ etc/mecabrc.dist
 %%PORTDOCS%%%%DOCSDIR%%/learn.html
 %%PORTDOCS%%%%DOCSDIR%%/libmecab.html
 %%PORTDOCS%%%%DOCSDIR%%/mecab.html
+%%PORTDOCS%%%%DOCSDIR%%/partial.html
 %%PORTDOCS%%%%DOCSDIR%%/posid.html
 %%PORTDOCS%%%%DOCSDIR%%/soft.html
 %%PORTDOCS%%%%DOCSDIR%%/unk.html
