@@ -6,14 +6,15 @@
 #
 
 PORTNAME=		kadu
-PORTVERSION=		0.4.3
-PORTREVISION=		2
+PORTVERSION=		0.5.0
 PORTEPOCH=		1
 CATEGORIES=		polish net-im
 MASTER_SITES=		http://www.kadu.net/download/stable/:kadu \
-			http://michal.gov.one.pl/tabs/:tabs \
+			http://www.kadu.net/download/additions/:additions \
+			http://www.kadu.net/download/modules_mirror/:modules \
 			http://scripts.one.pl/spellchecker/stable/${PORTVERSION}/:aspell
 DISTFILES=		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:kadu
+DIST_SUBDIR=		kadu
 EXTRACT_ONLY=		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=		mwisnicki+freebsd@gmail.com
@@ -22,8 +23,11 @@ COMMENT=		QT Gadu-Gadu client
 LIB_DEPENDS=		gadu.3:${PORTSDIR}/polish/libgadu\
 			sndfile.1:${PORTSDIR}/audio/libsndfile
 
-TABS_MOD_DISTFILE=	tabs-kadu-0.4.0.tar.gz
-ASPELL_MOD_DISTFILE=	spellchecker-0.15.tar.gz
+TABS_MOD_DISTFILE=	tabs-20061223.tar.bz2
+ASPELL_MOD_DISTFILE=	spellchecker-0.20.tar.gz
+
+GG6_EMOTS_DISTFILE=	kompatybilne_z_GG6.tar.gz
+GG7_EMOTS_DISTFILE=	dodatkowe_emoty_GG7.tar.gz
 
 USE_BZIP2=		yes
 USE_GMAKE=		yes
@@ -45,6 +49,8 @@ WRKSRC=			${WRKDIR}/${PORTNAME}
 OPTIONS=	ASPELL	"Build spell checking module"	off \
 		ARTS	"Build aRts sound module"	off \
 		ESOUND	"Build Esound module"		off \
+		GG_EMOTS	"Install GG-compatible emoticons"	off \
+		PHEADERS	"Use precompiled headers to speed up build"	on \
 		TABS	"Build tabs module"		off
 
 .include <bsd.port.pre.mk>
@@ -53,6 +59,7 @@ OPTIONS=	ASPELL	"Build spell checking module"	off \
 LIB_DEPENDS+=	pspell.16:${PORTSDIR}/textproc/aspell
 PLIST_SUB+=	ASPELL_MOD=""
 DISTFILES+=	${ASPELL_MOD_DISTFILE}:aspell
+KADU_SHARED_MODULES+=	spellchecker
 .else
 PLIST_SUB+=	ASPELL_MOD="@comment "
 .endif
@@ -60,6 +67,7 @@ PLIST_SUB+=	ASPELL_MOD="@comment "
 .if defined(WITH_ARTS)
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 PLIST_SUB+=	ARTS_MOD=""
+KADU_SHARED_MODULES+=	arts_sound
 .else
 PLIST_SUB+=	ARTS_MOD="@comment "
 .endif
@@ -67,38 +75,57 @@ PLIST_SUB+=	ARTS_MOD="@comment "
 .if defined(WITH_ESOUND)
 USE_GNOME+=	esound
 PLIST_SUB+=	ESOUND_MOD=""
+KADU_SHARED_MODULES+=	esd_sound
 .else
 PLIST_SUB+=	ESOUND_MOD="@comment "
 .endif
 
+.if defined(WITH_GG_EMOTS)
+PLIST_SUB+=	GG_EMOTS=""
+DISTFILES+=	${GG6_EMOTS_DISTFILE}:additions \
+		${GG7_EMOTS_DISTFILE}:additions
+.else
+PLIST_SUB+=	GG_EMOTS="@comment "
+.endif
+
+.if !defined(WITHOUT_PHEADERS)
+CONFIGURE_ARGS+=	--enable-pheaders
+USE_GCC=		3.4+
+.endif
+
 .if defined(WITH_TABS)
 PLIST_SUB+=	TABS_MOD=""
-DISTFILES+=	${TABS_MOD_DISTFILE}:tabs
+DISTFILES+=	${TABS_MOD_DISTFILE}:modules
+KADU_SHARED_MODULES+=	tabs
 .else
 PLIST_SUB+=	TABS_MOD="@comment "
 .endif
 
 post-patch:
-.if ${OSVERSION} < 500000
-	@${ECHO} "MODULE_LDFLAGS=\"-lcrypto\"" >> ${WRKSRC}/modules/encryption/spec
-.endif
+	@${ECHO} "#!/usr/bin/true" > ${WRKSRC}/varia/scripts/autodownload
+
+.for module in ${KADU_SHARED_MODULES}
+	@${REINPLACE_CMD} -e 's|module_${module}=n|module_${module}=m|g' ${WRKSRC}/.config
+.endfor
+
+.for module in ${KADU_STATIC_MODULES}
+	@${REINPLACE_CMD} -e 's|module_${module}=n|module_${module}=y|g' ${WRKSRC}/.config
+.endfor
 
 .if defined(WITH_ASPELL)
-	@${REINPLACE_CMD} -e 's|module_spellchecker=n|module_spellchecker=y|g' ${WRKSRC}/.config
-	@cd ${WRKSRC}/modules && ${TAR} -zxf ${DISTDIR}/${ASPELL_MOD_DISTFILE}
+	@cd ${WRKSRC}/modules && ${TAR} -zxf ${_DISTDIR}/${ASPELL_MOD_DISTFILE}
 .endif
 
-.if defined(WITH_ARTS)
-	@${REINPLACE_CMD} -e 's|module_arts_sound=n|module_arts_sound=y|g' ${WRKSRC}/.config
-.endif
-
-.if defined(WITH_ESOUND)
-	@${REINPLACE_CMD} -e 's|module_esd_sound=n|module_esd_sound=y|g' ${WRKSRC}/.config
+.if defined(WITH_GG_EMOTS)
+	@${REINPLACE_CMD} -e 's|emoticons_gg6_compatible=n|emoticons_gg6_compatible=y|g' ${WRKSRC}/.config
+	@cd ${WRKSRC}/varia/themes/emoticons && \
+	${TAR} -zxf ${_DISTDIR}/${GG6_EMOTS_DISTFILE} && \
+	${MV} kompatybilne_z_GG6 gg6_compatible && \
+	cd gg6_compatible && ${TAR} -zxf ${_DISTDIR}/${GG7_EMOTS_DISTFILE}
 .endif
 
 .if defined(WITH_TABS)
-	@${REINPLACE_CMD} -e 's|module_tabs=n|module_tabs=y|g' ${WRKSRC}/.config
-	@cd ${WRKSRC}/modules && ${TAR} -zxf ${DISTDIR}/${TABS_MOD_DISTFILE}
+	@cd ${WRKSRC}/modules && ${TAR} -zxf ${_DISTDIR}/${TABS_MOD_DISTFILE}
 .endif
 
 post-install:

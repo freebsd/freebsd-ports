@@ -1,38 +1,21 @@
---- kadu/Makefile.in	Tue Oct 11 02:16:57 2005
-+++ kadu/Makefile.in	Tue Oct 18 20:35:30 2005
-@@ -517,35 +517,24 @@
+--- kadu/Makefile.in.orig	Fri Nov 10 20:16:44 2006
++++ kadu/Makefile.in	Fri Feb  9 19:59:29 2007
+@@ -880,7 +880,8 @@
  install-data-local:
- 	$(mkinstalldirs) "$(DESTDIR)/$(includedir)/kadu/"
- 	$(INSTALL_DATA) *.h "$(DESTDIR)/$(includedir)/kadu/"
+ #	$(mkinstalldirs) "$(DESTDIR)/$(includedir)/kadu/"
+ #	$(INSTALL_DATA) *.h "$(DESTDIR)/$(includedir)/kadu/"
 -	@if test -w "$(DESTDIR)$(datadir)"; then \
--		$(mkinstalldirs) "$(DESTDIR)$(datadir)/applnk/Internet/"; \
--		echo "[Desktop Entry]" > "$(DESTDIR)$(datadir)/applnk/Internet/kadu.desktop"; \
--		echo "Type=Application" >> "$(DESTDIR)$(datadir)/applnk/Internet/kadu.desktop"; \
--		echo "Exec=$(bindir)/kadu" >> "$(DESTDIR)$(datadir)/applnk/Internet/kadu.desktop"; \
--		echo "Icon=kadu.png" >> "$(DESTDIR)$(datadir)/applnk/Internet/kadu.desktop"; \
--		echo "MiniIcon=kadu-16.png" >> "$(DESTDIR)$(datadir)/applnk/Internet/kadu.desktop"; \
--		echo "Terminal=0" >> "$(DESTDIR)$(datadir)/applnk/Internet/kadu.desktop"; \
--		echo "Name=Kadu" >> "$(DESTDIR)$(datadir)/applnk/Internet/kadu.desktop"; \
--		$(mkinstalldirs) "$(DESTDIR)$(datadir)/pixmaps/"; \
--		$(INSTALL_DATA) hi48-app-kadu.png "$(DESTDIR)$(datadir)/pixmaps/kadu-48.png"; \
--		$(INSTALL_DATA) hi32-app-kadu.png "$(DESTDIR)$(datadir)/pixmaps/kadu.png"; \
--		$(INSTALL_DATA) hi24-app-kadu.png "$(DESTDIR)$(datadir)/pixmaps/kadu-24.png"; \
--		$(INSTALL_DATA) hi22-app-kadu.png "$(DESTDIR)$(datadir)/pixmaps/kadu-22.png"; \
--		$(INSTALL_DATA) hi16-app-kadu.png "$(DESTDIR)$(datadir)/pixmaps/kadu-16.png"; \
--		echo ""; \
--		echo "Icons installed to $(DESTDIR)$(datadir)/pixmaps"; \
--		echo "Link(kadu.desktop) installed to $(DESTDIR)$(datadir)/applnk/Internet"; \
--		echo ""; \
--	else \
--		echo "";\
--		echo "         *******************************************************************"; \
--		echo "         *                                                                 *"; \
--		echo "         *          You don't have permission to write $(datadir)          *"; \
--		echo "         *          Icons and link(kadu.desktop) won't be installed        *"; \
--		echo "         *                                                                 *"; \
--		echo "         *******************************************************************"; \
--		echo $(DESTDIR)"";\
--	fi;
++	@if false; then \
++	if test -w "$(DESTDIR)$(datadir)"; then \
+ 		$(mkinstalldirs) "$(DESTDIR)$(datadir)/applnk/Internet/"; \
+ 		echo "[Desktop Entry]" > "$(DESTDIR)$(datadir)/applnk/Internet/kadu.desktop"; \
+ 		echo "Type=Application" >> "$(DESTDIR)$(datadir)/applnk/Internet/kadu.desktop"; \
+@@ -911,7 +912,31 @@
+ 		echo "         *                                                                 *"; \
+ 		echo "         *******************************************************************"; \
+ 		echo $(DESTDIR)"";\
++	fi; \
+ 	fi;
 +	echo "[Desktop Entry]" > "$(srcdir)/kadu.desktop"
 +	echo "Encoding=UTF-8" >> "$(srcdir)/kadu.desktop"
 +	echo "Categories=Application;Network;" >> "$(srcdir)/kadu.desktop"
@@ -41,6 +24,10 @@
 +	echo "Icon=kadu.png" >> "$(srcdir)/kadu.desktop"
 +	echo "Terminal=false" >> "$(srcdir)/kadu.desktop"
 +	echo "Name=Kadu" >> "$(srcdir)/kadu.desktop"
++	$(mkinstalldirs) $(DESTDIR)$(datadir)/icons/hicolor/128x128/apps
++	$(INSTALL_DATA) hi128-app-kadu.png "$(DESTDIR)$(datadir)/icons/hicolor/128x128/apps/kadu.png"
++	$(mkinstalldirs) $(DESTDIR)$(datadir)/icons/hicolor/64x64/apps
++	$(INSTALL_DATA) hi64-app-kadu.png "$(DESTDIR)$(datadir)/icons/hicolor/64x64/apps/kadu.png"
 +	$(mkinstalldirs) $(DESTDIR)$(datadir)/icons/hicolor/48x48/apps
 +	$(INSTALL_DATA) hi48-app-kadu.png "$(DESTDIR)$(datadir)/icons/hicolor/48x48/apps/kadu.png"
 +	$(mkinstalldirs) $(DESTDIR)$(datadir)/icons/hicolor/32x32/apps
@@ -51,6 +38,7 @@
 +	$(INSTALL_DATA) hi22-app-kadu.png "$(DESTDIR)$(datadir)/icons/hicolor/22x22/apps/kadu.png"
 +	$(mkinstalldirs) $(DESTDIR)$(datadir)/icons/hicolor/16x16/apps
 +	$(INSTALL_DATA) hi16-app-kadu.png "$(DESTDIR)$(datadir)/icons/hicolor/16x16/apps/kadu.png"
++
  
  uninstall-local:
- 	rm -f "$(DESTDIR)/$(includedir)/kadu"/*.h
+ 	rm -f "$(DESTDIR)$(includedir)/kadu"/*.h

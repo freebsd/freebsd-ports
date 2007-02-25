@@ -1,8 +1,0 @@
---- varia/scripts/autodownload.orig	Fri Nov  3 00:16:11 2006
-+++ varia/scripts/autodownload	Fri Nov  3 00:16:28 2006
-@@ -1,4 +1,5 @@
- #!/bin/sh
-+exit 0
- if test $# != 2; then
- 	echo
- 	echo "Downloads and unpacks Kadu module, icon theme, sound theme or other."
