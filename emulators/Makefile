@@ -78,6 +78,7 @@
     SUBDIR += linux_base-gentoo-stage2
     SUBDIR += linux_base-gentoo-stage3
     SUBDIR += m2000
+    SUBDIR += mame-extras
     SUBDIR += mastergear
     SUBDIR += mednafen
     SUBDIR += minivmac
