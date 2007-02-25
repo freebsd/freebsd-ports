@@ -89,6 +89,7 @@
     SUBDIR += p5-Net-Nslookup
     SUBDIR += p5-Net-RBLClient
     SUBDIR += p5-POE-Component-Client-DNS
+    SUBDIR += p5-POE-Component-Server-DNS
     SUBDIR += p5-Stanford-DNSserver
     SUBDIR += p5-Tie-DNS
     SUBDIR += pdnsd
