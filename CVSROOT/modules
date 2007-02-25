@@ -255,6 +255,7 @@ adtool		ports/sysutils/adtool
 adun		ports/biology/adun
 advancecomp	ports/archivers/advancecomp
 advancemame	ports/emulators/advancemame
+advancemess	ports/emulators/advancemess
 advi		ports/print/advi
 adzap		ports/www/adzap
 aee		ports/editors/aee
