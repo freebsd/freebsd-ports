@@ -7,7 +7,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://audacious-media-player.org/release/
 EXTRACT_SUFX=.tgz
@@ -75,7 +75,7 @@ CONFIGURE_ARGS+=	--disable-sid
 
 .if !defined(WITHOUT_MPC)
 PLIST_SUB+=	MPCPLUGIN=""
-LIB_DEPENDS+=	mpcdec.4:${PORTSDIR}/audio/libmpcdec \
+LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec \
 	tag.5:${PORTSDIR}/audio/taglib
 .else
 PLIST_SUB+=	MPCPLUGIN="@comment "

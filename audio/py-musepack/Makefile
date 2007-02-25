@@ -6,6 +6,7 @@
 
 PORTNAME=	musepack
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	http://www.sacredchao.net/~piman/software/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

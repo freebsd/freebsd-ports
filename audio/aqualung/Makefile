@@ -7,7 +7,7 @@
 
 PORTNAME=	aqualung
 DISTVERSION=	0.9beta7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -23,7 +23,7 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		speex.1:${PORTSDIR}/audio/speex \
 		mad.2:${PORTSDIR}/audio/libmad \
 		modplug.0:${PORTSDIR}/audio/libmodplug \
-		mpcdec.4:${PORTSDIR}/audio/libmpcdec \
+		mpcdec.5:${PORTSDIR}/audio/libmpcdec \
 		mac.2:${PORTSDIR}/audio/mac \
 		tag.5:${PORTSDIR}/audio/taglib \
 		lrdf.2:${PORTSDIR}/textproc/liblrdf \

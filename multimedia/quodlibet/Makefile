@@ -7,7 +7,7 @@
 
 PORTNAME=	quodlibet
 PORTVERSION=	0.24
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio python gnome
 MASTER_SITES=	http://www.sacredchao.net/~piman/software/ \
 		http://www.tortall.net/mirrors/piman-software/
@@ -68,7 +68,7 @@ RUN_DEPENDS+=	${PYCTYPES}
 .endif
 
 .if !defined(WITHOUT_MUSEPACK)
-LIB_DEPENDS+=	mpcdec.4:${PORTSDIR}/audio/libmpcdec
+LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec
 USE_GSTREAMER+=	musepack
 .endif
 
