@@ -18,9 +18,6 @@ COMMENT=	A Ruby library to repair unclosed tags in an HTML document
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/htmlsplit.rb:${PORTSDIR}/textproc/ruby-htmlsplit
 
-DEPRECATED=	distfile and homepage disappeared, deprecated dependency
-EXPIRATION_DATE=	2007-01-01
-
 PLIST_FILES=	%%RUBY_SITELIBDIR%%/htmlrepair.rb
 USE_ZIP=	yes
 USE_RUBY=	yes
