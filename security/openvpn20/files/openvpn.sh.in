@@ -63,7 +63,17 @@
 
 . %%RC_SUBR%%
 
-name=$(basename "$0")
+case "$0" in
+	/etc/rc*)
+	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+	# so get the name of the script from $_file
+	name=$(basename "$_file")
+	;;
+	*)
+	name=$(basename "$0")
+	;;
+esac
+
 rcvar=`set_rcvar`
 
 prefix="%%PREFIX%%"
