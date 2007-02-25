@@ -1,4 +1,3 @@
-# ex:ts=8
 # New ports collection makefile for:	gSculpt
 # Date created:			Oct 10, 2001
 # Whom:				ijliao
@@ -7,32 +6,41 @@
 #
 
 PORTNAME=	gsculpt
-PORTVERSION=	0.3
-PORTREVISION=	4
+PORTVERSION=	0.99.38.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	gSculpt-${PORTVERSION}-src
+DISTNAME=	gSculpt-${PORTVERSION}-alpha-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	An Opensource 3D modelling application
 
-PLIST_FILES=	bin/gsculpt
-WRKSRC=		${WRKDIR}/gSculpt-${PORTVERSION}
-USE_GNOME=	gtk12
-USE_GMAKE=	yes
+LIB_DEPENDS=	boost_python.3:${PORTSDIR}/devel/boost-python
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gtkgl/__init__.py:${PORTSDIR}/x11-toolkits/py-gtkglext \
+		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
+
+SUB_FILES=	SConstruct-install
+SUB_LIST=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} \
+		WRKSRC=${WRKSRC}
+
+WRKSRC=		${WRKDIR}/gSculpt-${PORTVERSION}-alpha
+USE_SCONS=	yes
+USE_PYTHON=	2.4
+USE_XLIB=	yes
+USE_GNOME=	pygtk2
+USE_LDCONFIG=	${PREFIX}/lib/gSculpt
 
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,-O3 -Wall -Werror,${CXXFLAGS},g ; \
-		s,gtk-config,${GTK_CONFIG},g ; \
-		s,/usr/include/glib.h,${LOCALBASE}/include/glib12/glib.h,g ; \
-		s,/usr/include/gtk/,${LOCALBASE}/include/gtk12/gtk/,g ; \
-		s,/usr/include/gdk/,${LOCALBASE}/include/gtk12/gdk/,g" \
-			${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s|/usr/include/python2.4|/usr/local/include/python2.4| ; \
+		s|standardIncPaths = \[\]|standardIncPaths = \['${PREFIX}/include','${X11BASE}/include'\]| ; \
+		s|standardLibPaths = \[\]|standardLibPaths = \['${PREFIX}/lib','${X11BASE}/lib'\]| "\
+			${WRKSRC}/SConstruct
+	@${REINPLACE_CMD} -e "s|gsculpt.py|${PYTHON_SITELIBDIR}/gSculpt/gsculpt.py|" ${WRKSRC}/gsculpt
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/gsculpt ${PREFIX}/bin
+	@cd ${WRKDIR} && \
+	${SCONS_BIN} -f SConstruct-install install
 
 .include <bsd.port.post.mk>
