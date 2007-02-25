@@ -254,6 +254,7 @@
     SUBDIR += libexosip2
     SUBDIR += libgnetwork
     SUBDIR += libmms
+    SUBDIR += libmxp
     SUBDIR += libnet
     SUBDIR += libnet-devel
     SUBDIR += libnet10
