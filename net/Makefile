@@ -231,6 +231,7 @@
     SUBDIR += keepalived
     SUBDIR += kiax
     SUBDIR += kissd
+    SUBDIR += kmuddy
     SUBDIR += knemo
     SUBDIR += kojoney
     SUBDIR += kphone

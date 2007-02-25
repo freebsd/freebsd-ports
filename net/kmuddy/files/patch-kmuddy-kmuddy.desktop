@@ -1,0 +1,7 @@
+--- kmuddy/kmuddy.desktop.orig	Sun Feb 25 18:40:54 2007
++++ kmuddy/kmuddy.desktop	Sun Feb 25 18:41:07 2007
+@@ -11,3 +11,4 @@
+ Terminal=0
+ Name=KMuddy
+ Name[de]=KMuddy
++Categories=Qt;KDE;Network;Games;
