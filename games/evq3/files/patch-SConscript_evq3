@@ -1,0 +1,41 @@
+--- SConscript_evq3.orig	Sun Feb 25 20:25:06 2007
++++ SConscript_evq3	Sun Feb 25 20:27:04 2007
+@@ -208,9 +208,9 @@
+ 
+ # Linux x86 (GCC)
+ if env['arch'] == 'linux-i386':
+-	evq3_env.Append(LIBPATH='/usr/X11R6/lib')
++	evq3_env.Append(LIBPATH='%%X11BASE%%/lib')
+ 	evq3_env.Append(LIBS=['X11', 'Xext', 'Xxf86dga', 'Xxf86vm'])
+-	evq3_env.Append(LIBS=['dl', 'm'])
++	evq3_env.Append(LIBS=['m'])
+ 		
+ 	if env['smp'] == 1:
+ 		evq3_env.Append(CCFLAGS='-DSMP')
+@@ -220,19 +220,19 @@
+ 		evq3_env.ParseConfig('freetype-config --cflags --libs')
+ 		evq3_env.Append(CCFLAGS='-DBUILD_FREETYPE')
+ 
+-	#if env['qvm'] == 1:
+-	linux_src += ['engine/common/vm_x86.c']
+-	#else:
+-	#evq3_env.Append(CCFLAGS='-DDLL_ONLY')
++	if env['qvm'] == 1:
++		linux_src += ['engine/common/vm_x86.c']
++	else:
++		evq3_env.Append(CCFLAGS='-DDLL_ONLY')
+ 	
+ 	if env['sdl'] == 1:
+ 		evq3_env.ParseConfig('sdl-config --cflags --libs')
+ 		evq3_env.Append(CCFLAGS='-DUSE_SDL')
+-		evq3_env.Program('evq3.x86', [evq3_src, libs_src, sdl_src])
++		evq3_env.Program('evq3', [evq3_src, libs_src, sdl_src])
+ 	else:
+-		evq3_env.Program('evq3.x86', [evq3_src, libs_src, linux_src])
++		evq3_env.Program('evq3', [evq3_src, libs_src, linux_src])
+ 		
+-	evq3_env.Install('#build/unix', 'evq3.x86')
++	evq3_env.Install('#build/unix', 'evq3')
+ 
+ # Linux x86_64 (GCC)
+ elif env['arch'] == 'linux-x86_64':

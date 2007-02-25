@@ -177,6 +177,7 @@
     SUBDIR += ensemblist
     SUBDIR += euchre
     SUBDIR += evilfinder
+    SUBDIR += evq3
     SUBDIR += excido
     SUBDIR += exhaust
     SUBDIR += exhaust-doc

@@ -1,0 +1,34 @@
+--- SConstruct.orig	Sun Feb 25 20:22:51 2007
++++ SConstruct	Sun Feb 25 20:23:30 2007
+@@ -16,6 +16,7 @@
+ opts.Add(BoolOption('sdl', 'Set to 1 to compile engine with a SDL backend instead of the native backend', 0))
+ opts.Add(BoolOption('freetype', 'Set to 1 to compile engine with FreeType 2.x support', 0))
+ opts.Add(BoolOption('tools', 'Set to 1 to compile xmap, gtkradiant, and master', 0))
++opts.Add(BoolOption('qvm', 'Set to 1 to enable QVM support', 1))
+ 
+ #
+ # initialize compiler environment base
+@@ -32,7 +33,9 @@
+ #
+ print 'compiling for architecture ', env['arch']
+ 
+-env.Append(CCFLAGS = '-pipe -fsigned-char')
++env['CC'] = '%%CC%%'
++
++env.Append(CCFLAGS = '%%CCFLAGS%% -pipe -fsigned-char')
+ 
+ if env['arch'] == 'xwin32':
+ 	env.Tool('xmingw', ['SCons/Tools'])
+@@ -69,9 +72,9 @@
+ Export('env')
+ SConscript('SConscript_evq3', build_dir='build/scons/evq3', duplicate=0)
+ #SConscript('SConscript_evq3-ded', build_dir='build/scons/evq3-ded', duplicate=0)
+-SConscript('SConscript_cgame', build_dir='build/scons/cgame', duplicate=0)
+-SConscript('SConscript_game', build_dir='build/scons/game', duplicate=0)
+-SConscript('SConscript_ui', build_dir='build/scons/ui', duplicate=0)
++#SConscript('SConscript_cgame', build_dir='build/scons/cgame', duplicate=0)
++#SConscript('SConscript_game', build_dir='build/scons/game', duplicate=0)
++#SConscript('SConscript_ui', build_dir='build/scons/ui', duplicate=0)
+ 
+ #if env['tools'] != '0':
+ 	#SConscript('SConscript_bspc', build_dir='build/scons/bspc', duplicate=0)
