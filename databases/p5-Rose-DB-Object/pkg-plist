@@ -37,8 +37,10 @@
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/DatetimeYearToFraction4.pm
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/DatetimeYearToFraction5.pm
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/DatetimeYearToMinute.pm
+%%SITE_PERL%%/Rose/DB/Object/Metadata/Column/DatetimeYearToMonth.pm
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/DatetimeYearToSecond.pm
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/Decimal.pm
+%%SITE_PERL%%/Rose/DB/Object/Metadata/Column/DoublePrecision.pm
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/Enum.pm
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/Epoch.pm
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Column/Epoch/HiRes.pm
