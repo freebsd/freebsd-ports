@@ -15069,6 +15069,7 @@ ufraw		ports/graphics/ufraw
 ufs_copy	ports/sysutils/ufs_copy
 uhexen		ports/games/uhexen
 uhexen2		ports/games/uhexen2
+uhexen2-extras	ports/games/uhexen2-extras
 uim		ports/textproc/uim
 uim-el		ports/textproc/uim-el
 uim-el-xemacs21-mule	ports/textproc/uim-el-xemacs21-mule
