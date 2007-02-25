@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fldigi
-PORTVERSION=	1.23
+PORTVERSION=	1.24
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/LinuxApps/ \
