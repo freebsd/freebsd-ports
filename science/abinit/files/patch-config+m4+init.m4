@@ -1,13 +1,10 @@
-Apparently this code is not good...abi_cpu_bits must be
-determined by different way.
-
---- config/m4/init.m4~	Tue Nov 28 15:12:04 2006
-+++ config/m4/init.m4	Wed Jan 17 11:49:35 2007
-@@ -142,6 +142,53 @@
+--- config/m4/init.m4.orig	Tue Nov 28 15:12:04 2006
++++ config/m4/init.m4	Sun Feb 25 16:51:02 2007
+@@ -142,6 +142,101 @@
     abi_cpu_bits="64"
     ;;
  
-+   *-*freebsd*)
++   i386-*freebsd*)
 +   dnl Pentium 3 ?
 +   if test "${abi_cpu_model}" = ""; then
 +    abi_cpu_model=`sysctl hw.model | grep 'Pentium III'`
@@ -35,6 +32,16 @@ determined by different way.
 +     abi_cpu_bits="32"
 +    fi
 +   fi
++   dnl Unknown
++   if test "${abi_cpu_model}" = ""; then
++    abi_cpu_model="unknown"
++   fi
++   dnl The processor is anyway 32-bit
++   abi_cpu_64bits="no"
++   abi_cpu_bits="32"
++   ;;
++
++   amd64-*freebsd*)
 +   dnl Opteron ?
 +   if test "${abi_cpu_model}" = ""; then
 +    abi_cpu_model=`sysctl hw.model | grep 'Opteron'`
@@ -53,6 +60,44 @@ determined by different way.
 +     abi_cpu_bits="64"
 +    fi
 +   fi
++   dnl Unknown
++   if test "${abi_cpu_model}" = ""; then
++    abi_cpu_model="unknown"
++   fi
++   dnl The processor is anyway 64-bit
++   abi_cpu_64bits="yes"
++   abi_cpu_bits="64"
++   ;;
++
++  ia64-*freebsd*)
++   dnl Itanium 1 ?
++   if test "${abi_cpu_model}" = ""; then
++    abi_cpu_model=`sysctl hw.model | grep 'Itanium 1'`
++    if test "${abi_cpu_model}" = ""; then
++     abi_cpu_model="itanium1"
++    fi
++   fi
++   dnl Itanium 2 ?
++   if test "${abi_cpu_model}" = ""; then
++    abi_cpu_model=`sysctl hw.model | grep 'Itanium 2'`
++    if test "${abi_cpu_model}" != ""; then
++     abi_cpu_model="itanium2"
++    fi
++   fi
++   dnl Unknown
++   if test "${abi_cpu_model}" = ""; then
++    abi_cpu_model="unknown"
++   fi
++   dnl The processor is anyway 64-bit
++   abi_cpu_64bits="yes"
++   abi_cpu_bits="64"
++   ;;
++
++   sparc64-*freebsd*)
++    abi_cpu_model="unknown"
++    abi_cpu_64bits="yes"
++    abi_cpu_bits="64"
++   ;;
 +
   esac
  
