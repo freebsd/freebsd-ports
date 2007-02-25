@@ -7,7 +7,7 @@
 
 PORTNAME=	libmxp
 PORTVERSION=	0.2.2
-CATEGORIES=	net
+CATEGORIES=	net games textproc
 MASTER_SITES=	http://www.kmuddy.com/libmxp/files/
 
 MAINTAINER=	lofi@freebsd.org
