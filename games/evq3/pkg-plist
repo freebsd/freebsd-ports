@@ -1,0 +1,6 @@
+bin/evq3
+%%LIBDIR%%/baseq3/pak-evq3.pk3
+%%PORTDOCS%%%%DOCSDIR%%/README.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%LIBDIR%%/baseq3
+@dirrm %%LIBDIR%%

@@ -1,0 +1,10 @@
+==============================================================================
+
+Evolution Q3 has been installed.
+
+The program does not support loading QVM files in your architecture, so to
+play it you have to copy the files "game.so", "cgame.so" and "ui.so" installed
+by the "games/quake3" or "games/ioquake3" port from
+"%%PREFIX%%/lib/${PORTNAME}/baseq3" to "%%LIBDIR%%/baseq3".
+
+==============================================================================
