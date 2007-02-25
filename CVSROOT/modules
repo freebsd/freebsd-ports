@@ -15068,6 +15068,7 @@ ufoai-data	ports/games/ufoai-data
 ufraw		ports/graphics/ufraw
 ufs_copy	ports/sysutils/ufs_copy
 uhexen		ports/games/uhexen
+uhexen2		ports/games/uhexen2
 uim		ports/textproc/uim
 uim-el		ports/textproc/uim-el
 uim-el-xemacs21-mule	ports/textproc/uim-el-xemacs21-mule
