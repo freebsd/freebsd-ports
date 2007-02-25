@@ -1,0 +1,28 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ObjectDriver/.packlist
+%%SITE_PERL%%/Data/ObjectDriver.pm
+%%SITE_PERL%%/Data/ObjectDriver/BaseObject.pm
+%%SITE_PERL%%/Data/ObjectDriver/BaseView.pm
+%%SITE_PERL%%/Data/ObjectDriver/Driver/._SimplePartition.pm
+%%SITE_PERL%%/Data/ObjectDriver/Driver/BaseCache.pm
+%%SITE_PERL%%/Data/ObjectDriver/Driver/Cache/Apache.pm
+%%SITE_PERL%%/Data/ObjectDriver/Driver/Cache/Cache.pm
+%%SITE_PERL%%/Data/ObjectDriver/Driver/Cache/Memcached.pm
+%%SITE_PERL%%/Data/ObjectDriver/Driver/Cache/RAM.pm
+%%SITE_PERL%%/Data/ObjectDriver/Driver/DBD.pm
+%%SITE_PERL%%/Data/ObjectDriver/Driver/DBD/Pg.pm
+%%SITE_PERL%%/Data/ObjectDriver/Driver/DBD/SQLite.pm
+%%SITE_PERL%%/Data/ObjectDriver/Driver/DBD/mysql.pm
+%%SITE_PERL%%/Data/ObjectDriver/Driver/DBI.pm
+%%SITE_PERL%%/Data/ObjectDriver/Driver/Partition.pm
+%%SITE_PERL%%/Data/ObjectDriver/Driver/SimplePartition.pm
+%%SITE_PERL%%/Data/ObjectDriver/Errors.pm
+%%SITE_PERL%%/Data/ObjectDriver/Profiler.pm
+%%SITE_PERL%%/Data/ObjectDriver/SQL.pm
+@dirrmtry %%SITE_PERL%%/Data/ObjectDriver/Driver/DBD
+@dirrmtry %%SITE_PERL%%/Data/ObjectDriver/Driver/Cache
+@dirrmtry %%SITE_PERL%%/Data/ObjectDriver/Driver
+@dirrmtry %%SITE_PERL%%/Data/ObjectDriver
+@dirrmtry %%SITE_PERL%%/Data
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/ObjectDriver
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
