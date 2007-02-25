@@ -38,6 +38,7 @@ USE_GNUSTEP_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 USE_XLIB=	yes
 
 EXTRA_PATCHES+=		${FILESDIR}/GNUmakefile.patch
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_FLAGS+=	OPTFLAG="${CFLAGS}"
 BREAKS_IF_PEDANTIC=	yes
 
@@ -47,6 +48,13 @@ PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}
 .if !exists(/proc/curproc)
 IGNORE=		requires procfs mounted to build or run, for details see procfs(5)
 .endif
+.endif
+
+.if defined(WITH_PORTAUDIO2)
+LIB_DEPENDS+=	portaudio:${PORTSDIR}/audio/portaudio2
+CPPFLAGS+=	-I${LOCALBASE}/include/portaudio2 ${PTHREAD_CFLAGS}
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib/portaudio2 ${PTHREAD_LIBS}
 .endif
 
 .if !defined(WITHOUT_CUPS)
