@@ -1,0 +1,10 @@
+To switch the default backend in GNUstep enter on of this lines:
+
+for xlib:
+defaults write NSGlobalDomain GSBackend libgnustep-back
+
+for libart:
+defaults write NSGlobalDomain GSBackend libgnustep-art
+
+for cairo:
+defaults write NSGlobalDomain GSBackend libgnustep-cairo
