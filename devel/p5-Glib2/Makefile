@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Glib2
-PORTVERSION=	1.143
+PORTVERSION=	1.144
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN/Glib SF/gtk2-perl
 PKGNAMEPREFIX=	p5-
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/PkgConfig.pm:${PORTSDIR}/devel/p5-ExtUtils-
 USE_GNOME=	glib20
 PERL_CONFIGURE=	yes
 USE_GMAKE=	yes
+CONFIGURE_ENV+=	FORCE_GMAKE=yes
 WRKSRC=		${WRKDIR}/${PORTNAME:S/2//}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
