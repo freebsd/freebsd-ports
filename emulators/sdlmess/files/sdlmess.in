@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# The executable needs to be run from its data directory, and needs to store
+# configuration in it. We therefore mirror the data directory hierarchy in
+# ~/.cube, and create symlinks to the data files.
+#
+
+if [ -d ~/.sdlmess ]
+then
+	echo "Using existing ~/.sdlmess directory."
+else
+	echo "Creating ~/.sdlmess directory."
+	cd %%DATADIR%% || exit 1
+	find * -type d -exec mkdir -p ~/.sdlmess/{} \;
+	find * -type f -exec ln -s %%DATADIR%%/{} ~/.sdlmess/{} \; 2>/dev/null
+fi
+
+cd ~/.sdlmess || exit 1
+exec %%PREFIX%%/libexec/sdlmess/mess "$@"

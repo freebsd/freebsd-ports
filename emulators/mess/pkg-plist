@@ -1,0 +1,163 @@
+bin/sdlmess
+libexec/chdman
+libexec/file2str
+libexec/imgtool
+libexec/mess
+libexec/messdocs
+libexec/messtest
+%%PORTDOCS%%%%DOCSDIR%%/SDLMESS.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/credits.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/faq.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/images/logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/docs/imgtool.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/mame.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/messnew.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/messroms.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/newvideo.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/style.css
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/choice.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/compile.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/config.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/control.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/guiconf.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/guiuse.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/command.gif
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/frog.gif
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/gui.gif
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/guiaudit.gif
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/iniicon.gif
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/keybcnt.gif
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/newmenu.gif
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/oldmenu.gif
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/prop.gif
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/images/startup.gif
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/install.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/instbios.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/main.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/mgebios.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/osmenu.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/runsw.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/suppsys.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/update.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows/win32cmd.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs/wintoc.xml
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
+%%DATADIR%%/artwork/avigo.zip
+%%DATADIR%%/artwork/dir.txt
+%%DATADIR%%/artwork/floppyr.png
+%%DATADIR%%/artwork/floppyw.png
+%%DATADIR%%/artwork/kim1.zip
+%%DATADIR%%/artwork/ledoff.png
+%%DATADIR%%/artwork/ledon.png
+%%DATADIR%%/artwork/mk1.zip
+%%DATADIR%%/artwork/mk2.zip
+%%DATADIR%%/artwork/mpf1.zip
+%%DATADIR%%/artwork/nes.zip
+%%DATADIR%%/artwork/pc1401.zip
+%%DATADIR%%/artwork/pc1402.zip
+%%DATADIR%%/artwork/pc1403.zip
+%%DATADIR%%/artwork/ssystem3.zip
+%%DATADIR%%/artwork/thomson.lay
+%%DATADIR%%/cfg/dir.txt
+%%DATADIR%%/ctrlr/hotrod.cfg
+%%DATADIR%%/ctrlr/hotrodse.cfg
+%%DATADIR%%/ctrlr/slikstik.cfg
+%%DATADIR%%/ctrlr/standard.cfg
+%%DATADIR%%/ctrlr/xarcade.cfg
+%%DATADIR%%/hash/a2600.hsi
+%%DATADIR%%/hash/a5200.hsi
+%%DATADIR%%/hash/a7800.hsi
+%%DATADIR%%/hash/a800.hsi
+%%DATADIR%%/hash/a800xl.hsi
+%%DATADIR%%/hash/advision.hsi
+%%DATADIR%%/hash/apexc.hsi
+%%DATADIR%%/hash/apple1.hsi
+%%DATADIR%%/hash/apple2.hsi
+%%DATADIR%%/hash/aquarius.hsi
+%%DATADIR%%/hash/arcadia.hsi
+%%DATADIR%%/hash/astrocde.hsi
+%%DATADIR%%/hash/bbca.hsi
+%%DATADIR%%/hash/c128.hsi
+%%DATADIR%%/hash/c16.hsi
+%%DATADIR%%/hash/c64.hsi
+%%DATADIR%%/hash/cbm30.hsi
+%%DATADIR%%/hash/cbm40.hsi
+%%DATADIR%%/hash/cbm610.hsi
+%%DATADIR%%/hash/cbm80.hsi
+%%DATADIR%%/hash/cgenie.hsi
+%%DATADIR%%/hash/channelf.hsi
+%%DATADIR%%/hash/coco.hsi
+%%DATADIR%%/hash/coleco.hsi
+%%DATADIR%%/hash/coupe.hsi
+%%DATADIR%%/hash/cpc464.hsi
+%%DATADIR%%/hash/cpc6128.hsi
+%%DATADIR%%/hash/dragon64.hsi
+%%DATADIR%%/hash/ep128.hsi
+%%DATADIR%%/hash/exidy.hsi
+%%DATADIR%%/hash/gameboy.hsi
+%%DATADIR%%/hash/gamegear.hsi
+%%DATADIR%%/hash/gen_usa.hsi
+%%DATADIR%%/hash/ibmpc.hsi
+%%DATADIR%%/hash/ibmpcjr.hsi
+%%DATADIR%%/hash/intv.hsi
+%%DATADIR%%/hash/jaguar.hsi
+%%DATADIR%%/hash/jupiter.hsi
+%%DATADIR%%/hash/laser210.hsi
+%%DATADIR%%/hash/lisa2.hsi
+%%DATADIR%%/hash/lviv.hsi
+%%DATADIR%%/hash/lynx.hsi
+%%DATADIR%%/hash/max.hsi
+%%DATADIR%%/hash/mc10.hsi
+%%DATADIR%%/hash/microtan.hsi
+%%DATADIR%%/hash/msx.hsi
+%%DATADIR%%/hash/msx2.hsi
+%%DATADIR%%/hash/mtx512.hsi
+%%DATADIR%%/hash/n64.hsi
+%%DATADIR%%/hash/nascom1.hsi
+%%DATADIR%%/hash/nes.hsi
+%%DATADIR%%/hash/odyssey2.hsi
+%%DATADIR%%/hash/oric.hsi
+%%DATADIR%%/hash/p2000t.hsi
+%%DATADIR%%/hash/pce.hsi
+%%DATADIR%%/hash/pdp1.hsi
+%%DATADIR%%/hash/pet.hsi
+%%DATADIR%%/hash/psx.hsi
+%%DATADIR%%/hash/sms.hsi
+%%DATADIR%%/hash/snes.hsi
+%%DATADIR%%/hash/sordm5.hsi
+%%DATADIR%%/hash/spectrum.hsi
+%%DATADIR%%/hash/studio2.hsi
+%%DATADIR%%/hash/svi318.hsi
+%%DATADIR%%/hash/svision.hsi
+%%DATADIR%%/hash/ti99_4a.hsi
+%%DATADIR%%/hash/ts2068.hsi
+%%DATADIR%%/hash/vc4000.hsi
+%%DATADIR%%/hash/vectrex.hsi
+%%DATADIR%%/hash/vic20.hsi
+%%DATADIR%%/hash/wswan.hsi
+%%DATADIR%%/ini/dir.txt
+%%DATADIR%%/memcard/dir.txt
+%%DATADIR%%/nvram/dir.txt
+%%DATADIR%%/snap/dir.txt
+%%DATADIR%%/software/dir.txt
+%%DATADIR%%/sysinfo.dat
+%%DATADIR%%/tools/dir.txt
+@dirrm %%DATADIR%%/tools
+@dirrm %%DATADIR%%/software
+@dirrm %%DATADIR%%/snap
+@dirrm %%DATADIR%%/nvram
+@dirrm %%DATADIR%%/memcard
+@dirrm %%DATADIR%%/ini
+@dirrm %%DATADIR%%/hash
+@dirrm %%DATADIR%%/ctrlr
+@dirrm %%DATADIR%%/cfg
+@dirrm %%DATADIR%%/artwork
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/windows/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/windows
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm libexec/sdlmess

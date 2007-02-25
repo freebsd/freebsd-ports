@@ -1,0 +1,139 @@
+--- ./makefile.sdl.orig	Wed Feb  7 15:35:34 2007
++++ ./makefile.sdl	Fri Feb 23 01:26:06 2007
+@@ -37,7 +37,7 @@
+ #
+ # for SDLMESS, set this to linux or macosx (lowercase is important!)
+ #
+-SUBARCH = linux
++SUBARCH = freebsd
+ 
+ 
+ #-------------------------------------------------
+@@ -48,11 +48,13 @@
+ # uncomment next line to include the debugger
+ # DEBUG = 1
+ 
++ifeq ($(ARCH),i386)
+ # uncomment next line to use DRC MIPS3 engine
+ X86_MIPS3_DRC = 1
+ 
+ # uncomment next line to use DRC PowerPC engine
+ X86_PPC_DRC = 1
++endif
+ 
+ #-------------------------------------------------
+ # specify build options; see each option below 
+@@ -155,8 +157,8 @@
+ 
+ # compiler, linker and utilities
+ AR = @ar
+-CC = @gcc
+-LD = gcc
++CC := @$(CC)
++LD = $(CC)
+ MD = -mkdir
+ RM = @rm -f
+ 
+@@ -167,49 +169,8 @@
+ #-------------------------------------------------
+ 
+ # by default, don't compile for a specific target CPU
+-NAME = sdl$(PREFIX)$(TARGET)
+-ARCH = 
+-
+-# architecture-specific builds get extra options
+-ifdef ATHLON
+-NAME = $(PREFIX)$(TARGET)at
+-ARCH = -march=athlon
+-endif
+-
+-ifdef I686
+-NAME = $(PREFIX)$(TARGET)pp
+-ARCH = -march=pentiumpro
+-endif
+-
+-ifdef P4
+-NAME = $(PREFIX)$(TARGET)p4
+-ARCH = -march=pentium4
+-endif
+-
+-ifdef AMD64
+-NAME = $(PREFIX)$(TARGET)64
+-ARCH = -march=athlon64
+-endif
+-
+-ifdef PM
+-NAME = $(PREFIX)$(TARGET)pm
+-ARCH = -march=pentium3 -msse2
+-endif
+-
+-ifdef G4
+-NAME = $(PREFIX)$(TARGET)g4
+-ARCH = -mcpu=G4
+-endif
+-
+-ifdef G5
+-NAME = $(PREFIX)$(TARGET)g5
+-ARCH = -mcpu=G5
+-endif
+-
+-ifdef CELL
+-NAME = $(PREFIX)$(TARGET)cbe
++NAME = sdl$(TARGET)
+ ARCH = 
+-endif
+ 
+ # debug builds just get the 'd' suffix and nothing more
+ ifdef DEBUG
+@@ -255,7 +216,7 @@
+ MESSTEST = messtest$(EXE)
+ MESSDOCS = messdocs$(EXE)
+ 
+-CFLAGS = $(OPT_FLAGS) -std=gnu89 -Imess -Isrc -Isrc/includes -Isrc/$(MAMEOS) -I$(OBJ)/mess/layout -I$(OBJ)/layout -Imess/$(MAMEOS)
++CFLAGS += $(OPT_FLAGS) -std=gnu89 -Imess -Isrc -Isrc/includes -Isrc/$(MAMEOS) -I$(OBJ)/mess/layout -I$(OBJ)/layout -Imess/$(MAMEOS) -I$(LOCALBASE)/include -I$(X11BASE)/include
+ 
+ ifdef SYMBOLS
+ ifdef PPC
+@@ -267,7 +228,7 @@
+ endif	# PPC
+ endif	# SYMBOLS
+ 
+-CFLAGS += $(ARCH) \
++CFLAGS += \
+ 	-Wall \
+ 	-Wpointer-arith \
+ 	-Wbad-function-cast \
+@@ -279,7 +240,7 @@
+ 	-Wdeclaration-after-statement
+ 
+ ifneq ($(OPTIMIZE),0)
+-CFLAGS += -DNDEBUG $(ARCH) -fno-strict-aliasing
++CFLAGS += -DNDEBUG -fno-strict-aliasing
+ endif
+ 
+ CFLAGS += -O$(OPTIMIZE)
+@@ -287,11 +248,9 @@
+ # extra options needed *only* for the osd files
+ CFLAGSOSDEPEND = $(CFLAGS)
+ 
+-LDFLAGS = -WO
++LDFLAGS += -WO -L$(LOCALBASE)/lib -L$(X11BASE)/lib
+ 
+-ifdef SYMBOLS
+-LDFLAGS =
+-else
++ifndef SYMBOLS
+ LDFLAGS += -s
+ endif
+ 
+@@ -404,6 +363,10 @@
+ # add SDLMAME subarch definitions
+ ifeq ($(SUBARCH),linux)
+ CFLAGS += -DSDLMAME_LINUX
++endif
++
++ifeq ($(SUBARCH),freebsd)
++CFLAGS += -DSDLMAME_FREEBSD -DSDLMAME_NO64BITIO
+ endif
+ 
+ ifeq ($(SUBARCH),macosx)

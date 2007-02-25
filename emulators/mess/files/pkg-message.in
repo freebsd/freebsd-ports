@@ -1,0 +1,13 @@
+==============================================================================
+
+SDLMESS has been installed.
+
+The MESS tools are installed in "%%PREFIX%%/libexec/sdlmess"
+to avoid conflicting with other MESS ports.
+
+A wrapper script "sdlmess" has been installed. It creates a "~/.sdlmess"
+directory mirroring the directory tree under "%%DATADIR%%"
+when you run it for the first time, and starts the program from there. So
+place all MESS files (e.g. ROMs, cheats, etc.) in "~/.sdlmess".
+
+==============================================================================
