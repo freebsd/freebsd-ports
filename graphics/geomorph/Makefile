@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geomorph
-PORTVERSION=	0.31
+PORTVERSION=	0.40
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,7 +34,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|libpng|libpng12|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/local/share/geomorph|${DATADIR}|' ${WRKSRC}/install-step* ${WRKSRC}/install-user ${WRKSRC}/src/app/app.c
 	@${REINPLACE_CMD} -e 's|\$$HOME/geomorph|\$$HOME/.geomorph|' ${WRKSRC}/install-step* ${WRKSRC}/install-user
-	@${REINPLACE_CMD} -e 's|>&|>|' ${WRKSRC}/install-step2-rcfile
 	@${REINPLACE_CMD} -e '/DEFAULT_DIR/ s|geomorph|.geomorph|' ${WRKSRC}/src/app/globals.h ${WRKSRC}/src/hf/globals.h
 	@${RM} ${WRKSRC}/install-step*.bak ${WRKSRC}/install-user*.bak
 
