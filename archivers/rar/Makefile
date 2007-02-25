@@ -7,7 +7,7 @@
 
 PORTNAME=	rar
 PORTVERSION=	3.70b1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://files.rarlab.com/rar/ \
@@ -25,20 +25,8 @@ PLIST_FILES=	bin/rar lib/default.sfx etc/rarfiles.lst man/cat1/rar.1
 PORTDOCS=	technote.txt license.txt whatsnew.txt order.htm \
 		readme.txt file_id.diz
 
-.include <bsd.port.pre.mk>
-
-# Does not run on < 5.3 and would require compat6x for -CURRENT,
-# which does not exist yet
-.if (${OSVERSION} < 503000) || (${OSVERSION} >= 700000)
-IGNORE=	does not run on this FreeBSD version
-.endif
-
 do-install:
-.if !defined(WITH_STATIC)
-	${INSTALL_PROGRAM} ${WRKSRC}/rar ${PREFIX}/bin/rar
-.else
 	${INSTALL_PROGRAM} ${WRKSRC}/rar_static ${PREFIX}/bin/rar
-.endif
 	${INSTALL_MAN} ${WRKSRC}/rar.txt ${PREFIX}/man/cat1/rar.1
 	${INSTALL_DATA} ${WRKSRC}/rarfiles.lst ${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/default.sfx ${PREFIX}/lib
@@ -51,4 +39,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
