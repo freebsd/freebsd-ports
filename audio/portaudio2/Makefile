@@ -10,6 +10,7 @@ PORTVERSION=	19.b${SNAPREV}
 CATEGORIES=	audio
 MASTER_SITES=	CSME
 # svn export -rSNAPREV https://www.portaudio.com/repos/portaudio/branches/v19-devel
+LATEST_LINK=	${PORTNAME}2
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Portable cross-platform Audio API
