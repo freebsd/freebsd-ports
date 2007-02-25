@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	libmpcdec
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.5
 CATEGORIES=	audio
-MASTER_SITES=	http://files2.musepack.net/source/ \
-		${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=	distfiles
+MASTER_SITES=	http://files.musepack.net/source/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	High quality audio compression format

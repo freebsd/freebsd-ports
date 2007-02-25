@@ -9,5 +9,5 @@ include/mpcdec/streaminfo.h
 lib/libmpcdec.a
 lib/libmpcdec.la
 lib/libmpcdec.so
-lib/libmpcdec.so.4
+lib/libmpcdec.so.5
 @dirrm include/mpcdec
