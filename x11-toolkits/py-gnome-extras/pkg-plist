@@ -40,6 +40,8 @@ libdata/pkgconfig/pygda-1.2.pc
 %%PORTDOCS%%share/examples/py-gnome/egg/recent/gtk-view.py
 %%PORTDOCS%%share/examples/py-gnome/egg/recent/populate-recent.py
 %%PORTDOCS%%share/examples/py-gnome/egg/trayicon.py
+%%PORTDOCS%%share/examples/py-gnome/gdl/gdl_combo_button.py
+%%PORTDOCS%%share/examples/py-gnome/gdl/gdl_dock.py
 %%PORTDOCS%%share/examples/py-gnome/gdl/gdl_test.py
 %%PORTDOCS%%share/examples/py-gnome/gtkhtml2/simple-browser.py
 %%PORTDOCS%%share/examples/py-gnome/gtkspell/gtkspell.py
