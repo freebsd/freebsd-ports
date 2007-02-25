@@ -6,7 +6,7 @@
 #	$MCom: ports/deskutils/lightning-xpi/Makefile,v 1.4 2006/10/14 00:16:08 ahze Exp $
 
 PORTNAME=	lightning
-PORTVERSION=	0.3
+PORTVERSION=	${ARCH_PORTVERSION}
 PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -32,6 +32,12 @@ USE_GECKO=	thunderbird
 
 .if ${OSVERSION} < 600000
 IGNORE=	precompiled binaries for 6.x
+.endif
+
+.if ${ARCH}=="i386"
+ARCH_PORTVERSION=	0.3.1
+.elif ${ARCH}=="sparc64"
+ARCH_PORTVERSION=	0.3
 .endif
 
 pre-install:
