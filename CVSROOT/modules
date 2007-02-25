@@ -6958,6 +6958,7 @@ makeztxt	ports/palm/makeztxt
 malint		ports/audio/malint
 malsync		ports/palm/malsync
 mambo		ports/www/mambo
+mame-extras	ports/emulators/mame-extras
 man.el		ports/misc/man.el
 man2html	ports/textproc/man2html
 man2web		ports/www/man2web
