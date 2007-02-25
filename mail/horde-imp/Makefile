@@ -67,7 +67,7 @@ USE_PHP=	imap
 . if !defined(WITHOUT_LDAP)
 USE_PHP+=	ldap
 . endif
-RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde-base
 .else
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/turba/minisearch.php:${PORTSDIR}/mail/turba
 .endif
