@@ -7,108 +7,6 @@
 -
  ifndef MOZ_NATIVE_JPEG
  tier_1_dirs	+= jpeg
---- security/manager/Makefile.in	Mon Mar 28 19:56:36 2005
-+++ security/manager/Makefile.in	Tue Aug  2 09:02:50 2005
-@@ -37,16 +37,7 @@
- 	SOFTOKEN3_LIB \
- 	SOFTOKEN3_CHK \
--	LOADABLE_ROOT_MODULE \
- 	HAVE_FREEBL_MODULES \
- 	$(NULL)
- 
--LOADABLE_ROOT_MODULE = $(DLL_PREFIX)nssckbi$(DLL_SUFFIX)
--
--NSS3_LIB = $(DLL_PREFIX)nss3$(DLL_SUFFIX)
--SMIME3_LIB = $(DLL_PREFIX)smime3$(DLL_SUFFIX)
--SSL3_LIB =  $(DLL_PREFIX)ssl3$(DLL_SUFFIX)
--SOFTOKEN3_LIB = $(DLL_PREFIX)softokn3$(DLL_SUFFIX)
--SOFTOKEN3_CHK = $(DLL_PREFIX)softokn3.chk
--
- ifneq (,$(filter SunOS HP-UX,$(OS_ARCH)))
- ifeq (,$(filter i86pc ia64,$(OS_TEST)))
-@@ -132,9 +123,4 @@
- .nss.cleaned: .nss.checkout
- 	$(MAKE) -C $(topsrcdir)/security/coreconf $(DEFAULT_GMAKE_FLAGS) clean
--	$(MAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS) clean
--ifndef SKIP_CHK
--	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS) clean
--	$(MAKE) -C $(topsrcdir)/security/nss/cmd/shlibsign $(DEFAULT_GMAKE_FLAGS) clean
--endif
- 	touch $@
- 
-@@ -153,43 +139,4 @@
- ifeq ($(OS_ARCH),WINNT)
- 	cd $(DIST)/lib; cp -f $(LIB_PREFIX)dbm$(MOZ_BITS).$(LIB_SUFFIX) $(LIB_PREFIX)dbm.$(LIB_SUFFIX)
--else
--	cd $(DIST)/lib; cp -f $(LIB_PREFIX)mozdbm_s.$(LIB_SUFFIX) $(LIB_PREFIX)dbm.$(LIB_SUFFIX); $(RANLIB) $(LIB_PREFIX)dbm.$(LIB_SUFFIX)
--endif
--	$(MAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS)
--ifndef SKIP_CHK
--	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS)
--	$(MAKE) -C $(topsrcdir)/security/nss/cmd/shlibsign $(DEFAULT_GMAKE_FLAGS)
--endif
--ifndef DISABLE_DIST_GRE
--	$(INSTALL) -m 755 $(DIST)/lib/$(LOADABLE_ROOT_MODULE) $(GRE_DIST)
--ifndef SKIP_CHK
--	$(INSTALL) -m 644 $(DIST)/lib/$(SOFTOKEN3_CHK) $(GRE_DIST)
--endif
--	$(INSTALL) -m 755 $(DIST)/lib/$(SOFTOKEN3_LIB) $(GRE_DIST)
--	$(INSTALL) -m 755 $(DIST)/lib/$(NSS3_LIB) $(GRE_DIST)
--	$(INSTALL) -m 755 $(DIST)/lib/$(SSL3_LIB) $(GRE_DIST)
--	$(INSTALL) -m 755 $(DIST)/lib/$(SMIME3_LIB) $(GRE_DIST)
--ifdef HAVE_FREEBL_MODULES
--	$(INSTALL) -m 644 $(DIST)/lib/$(FREEBL_PURE32_CHK) $(GRE_DIST)
--	$(INSTALL) -m 755 $(DIST)/lib/$(FREEBL_PURE32_MODULE) $(GRE_DIST)
--	$(INSTALL) -m 644 $(DIST)/lib/$(FREEBL_HYBRID_CHK) $(GRE_DIST)
--	$(INSTALL) -m 755 $(DIST)/lib/$(FREEBL_HYBRID_MODULE) $(GRE_DIST)
--endif
--endif
--ifndef _SKIP_OLD_GRE_INSTALL
--	$(INSTALL) -m 755 $(DIST)/lib/$(LOADABLE_ROOT_MODULE) $(DIST)/bin
--ifndef SKIP_CHK
--	$(INSTALL) -m 644 $(DIST)/lib/$(SOFTOKEN3_CHK) $(DIST)/bin
--endif
--	$(INSTALL) -m 755 $(DIST)/lib/$(SOFTOKEN3_LIB) $(DIST)/bin
--	$(INSTALL) -m 755 $(DIST)/lib/$(NSS3_LIB) $(DIST)/bin
--	$(INSTALL) -m 755 $(DIST)/lib/$(SSL3_LIB) $(DIST)/bin
--	$(INSTALL) -m 755 $(DIST)/lib/$(SMIME3_LIB) $(DIST)/bin
--ifdef HAVE_FREEBL_MODULES
--	$(INSTALL) -m 644 $(DIST)/lib/$(FREEBL_PURE32_CHK) $(DIST)/bin
--	$(INSTALL) -m 755 $(DIST)/lib/$(FREEBL_PURE32_MODULE) $(DIST)/bin
--	$(INSTALL) -m 644 $(DIST)/lib/$(FREEBL_HYBRID_CHK) $(DIST)/bin
--	$(INSTALL) -m 755 $(DIST)/lib/$(FREEBL_HYBRID_MODULE) $(DIST)/bin
--endif
- endif
- 	$(MAKE) -C boot $@
-@@ -200,18 +147,4 @@
- 
- install::
--	$(SYSINSTALL) -m 755 $(DIST)/lib/$(LOADABLE_ROOT_MODULE) $(DESTDIR)$(mozappdir)
--ifndef SKIP_CHK
--	$(SYSINSTALL) -m 644 $(DIST)/lib/$(SOFTOKEN3_CHK) $(DESTDIR)$(mozappdir)
--endif
--	$(SYSINSTALL) -m 755 $(DIST)/lib/$(SOFTOKEN3_LIB) $(DESTDIR)$(mozappdir)
--	$(SYSINSTALL) -m 755 $(DIST)/lib/$(NSS3_LIB) $(DESTDIR)$(mozappdir)
--	$(SYSINSTALL) -m 755 $(DIST)/lib/$(SSL3_LIB) $(DESTDIR)$(mozappdir)
--	$(SYSINSTALL) -m 755 $(DIST)/lib/$(SMIME3_LIB) $(DESTDIR)$(mozappdir)
--ifdef HAVE_FREEBL_MODULES
--	$(SYSINSTALL) -m 644 $(DIST)/lib/$(FREEBL_PURE32_CHK) $(DESTDIR)$(mozappdir)
--	$(SYSINSTALL) -m 755 $(DIST)/lib/$(FREEBL_PURE32_MODULE) $(DESTDIR)$(mozappdir)
--	$(SYSINSTALL) -m 644 $(DIST)/lib/$(FREEBL_HYBRID_CHK) $(DESTDIR)$(mozappdir)
--	$(SYSINSTALL) -m 755 $(DIST)/lib/$(FREEBL_HYBRID_MODULE) $(DESTDIR)$(mozappdir)
--endif
- 	$(MAKE) -C boot $@
- 	$(MAKE) -C ssl $@
-@@ -227,9 +160,4 @@
- endif
- 	$(MAKE) -C $(topsrcdir)/security/coreconf $(DEFAULT_GMAKE_FLAGS) clean
--	$(MAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS) clean
--ifndef SKIP_CHK
--	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS) clean
--	$(MAKE) -C $(topsrcdir)/security/nss/cmd/shlibsign $(DEFAULT_GMAKE_FLAGS) clean
--endif
- 
- echo-requires-recursive::
 --- security/manager/ssl/src/Makefile.in	Wed Jan  7 08:36:51 2004
 +++ security/manager/ssl/src/Makefile.in	Tue Aug  2 09:13:07 2005
 @@ -117,5 +117,5 @@
@@ -176,3 +74,184 @@
 +      }
        /* If a module exists with the same name, delete it. */
        NS_ConvertUCS2toUTF8 modNameUTF8(modName);
+--- security/manager/Makefile.in.orig	Tue Dec 19 17:07:37 2006
++++ security/manager/Makefile.in	Sat Feb 24 17:28:01 2007
+@@ -52,21 +52,12 @@ PACKAGE_VARS += \
+ 	SSL3_LIB \
+ 	SOFTOKEN3_LIB \
+ 	SOFTOKEN3_CHK \
+-	LOADABLE_ROOT_MODULE \
+ 	HAVE_FREEBL_LIBS \
+ 	HAVE_FREEBL_LIBS_32 \
+ 	HAVE_FREEBL_LIBS_32INT64 \
+ 	HAVE_FREEBL_LIBS_64 \
+ 	$(NULL)
+ 
+-LOADABLE_ROOT_MODULE = $(DLL_PREFIX)nssckbi$(DLL_SUFFIX)
+-
+-NSS3_LIB = $(DLL_PREFIX)nss3$(DLL_SUFFIX)
+-SMIME3_LIB = $(DLL_PREFIX)smime3$(DLL_SUFFIX)
+-SSL3_LIB =  $(DLL_PREFIX)ssl3$(DLL_SUFFIX)
+-SOFTOKEN3_LIB = $(DLL_PREFIX)softokn3$(DLL_SUFFIX)
+-SOFTOKEN3_CHK = $(DLL_PREFIX)softokn3.chk
+-
+ # Default
+ HAVE_FREEBL_LIBS = 1
+ 
+@@ -190,11 +181,6 @@ export:: .nss.cleaned
+ 
+ .nss.cleaned: .nss.checkout
+ 	$(MAKE) -C $(topsrcdir)/security/coreconf $(DEFAULT_GMAKE_FLAGS) clean
+-	$(MAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS) clean
+-ifndef SKIP_CHK
+-	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS) clean
+-	$(MAKE) -C $(topsrcdir)/security/nss/cmd/shlibsign $(DEFAULT_GMAKE_FLAGS) clean
+-endif
+ 	touch $@
+ 
+ .nss.checkout:
+@@ -212,89 +198,6 @@ libs::
+ 	$(MAKE) -C $(topsrcdir)/security/coreconf $(DEFAULT_GMAKE_FLAGS)
+ ifeq ($(OS_ARCH),WINNT)
+ 	cd $(DIST)/lib; cp -f $(LIB_PREFIX)dbm$(MOZ_BITS).$(LIB_SUFFIX) $(LIB_PREFIX)dbm.$(LIB_SUFFIX)
+-else
+-	cd $(DIST)/lib; cp -f $(LIB_PREFIX)mozdbm_s.$(LIB_SUFFIX) $(LIB_PREFIX)dbm.$(LIB_SUFFIX); $(RANLIB) $(LIB_PREFIX)dbm.$(LIB_SUFFIX)
+-endif
+-	$(MAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS)
+-ifndef SKIP_CHK
+-	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS)
+-	$(MAKE) -C $(topsrcdir)/security/nss/cmd/shlibsign $(DEFAULT_GMAKE_FLAGS)
+-endif
+-ifndef DISABLE_DIST_GRE
+-	$(INSTALL) -m 755 $(DIST)/lib/$(LOADABLE_ROOT_MODULE) $(GRE_DIST)
+-ifndef SKIP_CHK
+-	$(INSTALL) -m 644 $(DIST)/lib/$(SOFTOKEN3_CHK) $(GRE_DIST)
+-endif
+-	$(INSTALL) -m 755 $(DIST)/lib/$(SOFTOKEN3_LIB) $(GRE_DIST)
+-	$(INSTALL) -m 755 $(DIST)/lib/$(NSS3_LIB) $(GRE_DIST)
+-	$(INSTALL) -m 755 $(DIST)/lib/$(SSL3_LIB) $(GRE_DIST)
+-	$(INSTALL) -m 755 $(DIST)/lib/$(SMIME3_LIB) $(GRE_DIST)
+-ifdef HAVE_FREEBL_LIBS
+-ifndef SKIP_CHK
+-	$(INSTALL) -m 644 $(DIST)/lib/$(FREEBL_CHK) $(GRE_DIST)
+-endif
+-	$(INSTALL) -m 755 $(DIST)/lib/$(FREEBL_LIB) $(GRE_DIST)
+-endif
+-ifdef HAVE_FREEBL_LIBS_32
+-ifndef SKIP_CHK
+-	$(INSTALL) -m 644 $(DIST)/lib/$(FREEBL_32INT_CHK) $(GRE_DIST)
+-	$(INSTALL) -m 644 $(DIST)/lib/$(FREEBL_32FPU_CHK) $(GRE_DIST)
+-endif
+-	$(INSTALL) -m 755 $(DIST)/lib/$(FREEBL_32INT_LIB) $(GRE_DIST)
+-	$(INSTALL) -m 755 $(DIST)/lib/$(FREEBL_32FPU_LIB) $(GRE_DIST)
+-endif
+-ifdef HAVE_FREEBL_LIBS_32INT64
+-ifndef SKIP_CHK
+-	$(INSTALL) -m 644 $(DIST)/lib/$(FREEBL_32INT64_CHK) $(GRE_DIST)
+-endif
+-	$(INSTALL) -m 755 $(DIST)/lib/$(FREEBL_32INT64_LIB) $(GRE_DIST)
+-endif
+-ifdef HAVE_FREEBL_LIBS_64
+-ifndef SKIP_CHK
+-	$(INSTALL) -m 644 $(DIST)/lib/$(FREEBL_64INT_CHK) $(GRE_DIST)
+-	$(INSTALL) -m 644 $(DIST)/lib/$(FREEBL_64FPU_CHK) $(GRE_DIST)
+-endif
+-	$(INSTALL) -m 755 $(DIST)/lib/$(FREEBL_64INT_LIB) $(GRE_DIST)
+-	$(INSTALL) -m 755 $(DIST)/lib/$(FREEBL_64FPU_LIB) $(GRE_DIST)
+-endif
+-endif
+-ifndef _SKIP_OLD_GRE_INSTALL
+-	$(INSTALL) -m 755 $(DIST)/lib/$(LOADABLE_ROOT_MODULE) $(DIST)/bin
+-ifndef SKIP_CHK
+-	$(INSTALL) -m 644 $(DIST)/lib/$(SOFTOKEN3_CHK) $(DIST)/bin
+-endif
+-	$(INSTALL) -m 755 $(DIST)/lib/$(SOFTOKEN3_LIB) $(DIST)/bin
+-	$(INSTALL) -m 755 $(DIST)/lib/$(NSS3_LIB) $(DIST)/bin
+-	$(INSTALL) -m 755 $(DIST)/lib/$(SSL3_LIB) $(DIST)/bin
+-	$(INSTALL) -m 755 $(DIST)/lib/$(SMIME3_LIB) $(DIST)/bin
+-ifdef HAVE_FREEBL_LIBS
+-ifndef SKIP_CHK
+-	$(INSTALL) -m 644 $(DIST)/lib/$(FREEBL_CHK) $(DIST)/bin
+-endif
+-	$(INSTALL) -m 755 $(DIST)/lib/$(FREEBL_LIB) $(DIST)/bin
+-endif
+-ifdef HAVE_FREEBL_LIBS_32
+-ifndef SKIP_CHK
+-	$(INSTALL) -m 644 $(DIST)/lib/$(FREEBL_32INT_CHK) $(DIST)/bin
+-	$(INSTALL) -m 644 $(DIST)/lib/$(FREEBL_32FPU_CHK) $(DIST)/bin
+-endif
+-	$(INSTALL) -m 755 $(DIST)/lib/$(FREEBL_32INT_LIB) $(DIST)/bin
+-	$(INSTALL) -m 755 $(DIST)/lib/$(FREEBL_32FPU_LIB) $(DIST)/bin
+-endif
+-ifdef HAVE_FREEBL_LIBS_32INT64
+-ifndef SKIP_CHK
+-	$(INSTALL) -m 644 $(DIST)/lib/$(FREEBL_32INT64_CHK) $(DIST)/bin
+-endif
+-	$(INSTALL) -m 755 $(DIST)/lib/$(FREEBL_32INT64_LIB) $(DIST)/bin
+-endif
+-ifdef HAVE_FREEBL_LIBS_64
+-ifndef SKIP_CHK
+-	$(INSTALL) -m 644 $(DIST)/lib/$(FREEBL_64INT_CHK) $(DIST)/bin
+-	$(INSTALL) -m 644 $(DIST)/lib/$(FREEBL_64FPU_CHK) $(DIST)/bin
+-endif
+-	$(INSTALL) -m 755 $(DIST)/lib/$(FREEBL_64INT_LIB) $(DIST)/bin
+-	$(INSTALL) -m 755 $(DIST)/lib/$(FREEBL_64FPU_LIB) $(DIST)/bin
+-endif
+ endif
+ 	$(MAKE) -C boot $@
+ 	$(MAKE) -C ssl $@
+@@ -304,42 +207,6 @@ ifdef MOZ_XUL
+ endif
+ 
+ install::
+-	$(SYSINSTALL) -m 755 $(DIST)/lib/$(LOADABLE_ROOT_MODULE) $(DESTDIR)$(mozappdir)
+-ifndef SKIP_CHK
+-	$(SYSINSTALL) -m 644 $(DIST)/lib/$(SOFTOKEN3_CHK) $(DESTDIR)$(mozappdir)
+-endif
+-	$(SYSINSTALL) -m 755 $(DIST)/lib/$(SOFTOKEN3_LIB) $(DESTDIR)$(mozappdir)
+-	$(SYSINSTALL) -m 755 $(DIST)/lib/$(NSS3_LIB) $(DESTDIR)$(mozappdir)
+-	$(SYSINSTALL) -m 755 $(DIST)/lib/$(SSL3_LIB) $(DESTDIR)$(mozappdir)
+-	$(SYSINSTALL) -m 755 $(DIST)/lib/$(SMIME3_LIB) $(DESTDIR)$(mozappdir)
+-ifdef HAVE_FREEBL_LIBS
+-ifndef SKIP_CHK
+-	$(SYSINSTALL) -m 644 $(DIST)/lib/$(FREEBL_CHK) $(DESTDIR)$(mozappdir)
+-endif
+-	$(SYSINSTALL) -m 755 $(DIST)/lib/$(FREEBL_LIB) $(DESTDIR)$(mozappdir)
+-endif
+-ifdef HAVE_FREEBL_LIBS_32
+-ifndef SKIP_CHK
+-	$(SYSINSTALL) -m 644 $(DIST)/lib/$(FREEBL_32INT_CHK) $(DESTDIR)$(mozappdir)
+-	$(SYSINSTALL) -m 644 $(DIST)/lib/$(FREEBL_32FPU_CHK) $(DESTDIR)$(mozappdir)
+-endif
+-	$(SYSINSTALL) -m 755 $(DIST)/lib/$(FREEBL_32INT_LIB) $(DESTDIR)$(mozappdir)
+-	$(SYSINSTALL) -m 755 $(DIST)/lib/$(FREEBL_32FPU_LIB) $(DESTDIR)$(mozappdir)
+-endif
+-ifdef HAVE_FREEBL_LIBS_32INT64
+-ifndef SKIP_CHK
+-	$(SYSINSTALL) -m 644 $(DIST)/lib/$(FREEBL_32INT64_CHK) $(DESTDIR)$(mozappdir)
+-endif
+-	$(SYSINSTALL) -m 755 $(DIST)/lib/$(FREEBL_32INT64_LIB) $(DESTDIR)$(mozappdir)
+-endif
+-ifdef HAVE_FREEBL_LIBS_64
+-ifndef SKIP_CHK
+-	$(SYSINSTALL) -m 644 $(DIST)/lib/$(FREEBL_64INT_CHK) $(DESTDIR)$(mozappdir)
+-	$(SYSINSTALL) -m 644 $(DIST)/lib/$(FREEBL_64FPU_CHK) $(DESTDIR)$(mozappdir)
+-endif
+-	$(SYSINSTALL) -m 755 $(DIST)/lib/$(FREEBL_64INT_LIB) $(DESTDIR)$(mozappdir)
+-	$(SYSINSTALL) -m 755 $(DIST)/lib/$(FREEBL_64FPU_LIB) $(DESTDIR)$(mozappdir)
+-endif
+ 	$(MAKE) -C boot $@
+ 	$(MAKE) -C ssl $@
+ 	$(MAKE) -C locales $@
+@@ -355,11 +222,6 @@ ifdef MOZ_XUL
+ 	$(MAKE) -C pki $@
+ endif
+ 	$(MAKE) -C $(topsrcdir)/security/coreconf $(DEFAULT_GMAKE_FLAGS) clean
+-	$(MAKE) -C $(topsrcdir)/security/nss/lib $(DEFAULT_GMAKE_FLAGS) clean
+-ifndef SKIP_CHK
+-	$(MAKE) -C $(topsrcdir)/security/nss/cmd/lib $(DEFAULT_GMAKE_FLAGS) clean
+-	$(MAKE) -C $(topsrcdir)/security/nss/cmd/shlibsign $(DEFAULT_GMAKE_FLAGS) clean
+-endif
+ 
+ echo-requires-recursive::
+ 	$(MAKE) -C boot $@
