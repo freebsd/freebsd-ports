@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bitflu
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://bitflu.workaround.ch/bitflu/ CSME
 EXTRACT_SUFX=	.tgz
