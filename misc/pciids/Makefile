@@ -6,7 +6,7 @@
 #    $MCom: ports/misc/pciids/Makefile,v 1.8 2006/10/26 16:14:10 ahze Exp $
 
 PORTNAME=	pciids
-PORTVERSION=	20070123
+PORTVERSION=	20070225
 CATEGORIES=	misc
 MASTER_SITES=	http://www.ahze.net/~ahze/distfiles/ \
 		${MASTER_SITE_LOCAL}
