@@ -6,8 +6,7 @@
 #   $MCom: ports/mail/lightning/Makefile,v 1.1 2006/10/14 03:49:20 ahze Exp $
 
 PORTNAME=	lightning
-PORTVERSION=	0.3
-PORTREVISION=	2
+PORTVERSION=	0.3.1
 CATEGORIES=	mail deskutils
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	calendar/${PORTNAME}/releases/${DISTVERSION}/source
@@ -20,7 +19,6 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 LATEST_LINK=	thunderbird-${PORTNAME}
 CONFLICTS=	thunderbird-[0-9]* lightning-xpi-0.[0-9]*
-USE_GCC=	3.4+
 ALL_TARGET=	default
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 HAS_CONFIGURE=	yes
@@ -33,6 +31,7 @@ MOZILLA_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/icons/default.xpm
 MOZILLA_ICON=		${MOZILLA}.xpm
 PKGCONFIG_FILES?=	${MOZILLA}-js \
 			${MOZILLA}-xpcom ${MOZILLA}-plugin
+MOZ_PKGCONFIG_FILES=	${PKGCONFIG_FILES}
 MOZ_OPTIONS=	--enable-application=mail \
 		--enable-system-cairo \
 		--with-system-nss \
@@ -44,10 +43,6 @@ MOZ_MK_OPTIONS=	MOZ_CO_PROJECT=mail,calendar
 .include <bsd.port.pre.mk>
 
 GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 pthread | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
-
-.if ${OSVERSION} < 500000
-IGNORE=	does not build
-.endif
 
 .if ${ARCH}=="ia64"
 IGNORE=	does not build
