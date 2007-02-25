@@ -6,6 +6,7 @@
 
 PORTNAME=	apt
 PORTVERSION=	0.6.46.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	apt_${PORTVERSION}
@@ -17,7 +18,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/lib/libpub.a:${PORTSDIR}/devel/publib
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		dpkg:${PORTSDIR}/archivers/dpkg \
-		gpg:${PORTSDIR}/security/gnupg
+		gpg:${PORTSDIR}/security/gnupg1
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
