@@ -1,0 +1,24 @@
+KMuddy is a MUD client for KDE desktop environment.
+
+Features:
+MUD output displayer with ANSI color support, 
+MCCP v1/v2 (compression protocol), MSP (sound protocol),
+multiple connections within one instance, configurable colors, short-cuts,
+split screen when viewing output history, command history, connection profiles,
+quick connect, auto-connect on startup, configurable login sequence,
+multi-line input, word wrapping and indentation, aliases (with regex support),
+triggers (with regex support), color triggers,
+special-purpose triggers (sound, notification, ...), prompt-detection triggers,
+gagging, test area for aliases and triggers, alias/trigger groups
+profile settings, session transcript, speed-walking, action toolbar,
+external scripting support, timers, macro keys, variables,
+variable support in external scripts, 
+triggers that redirect text to another window, 
+remembering positions of those windows between sessions,
+triggers hooked to variables (executed when value changes),
+TAB-expansion of last words, MXP (extension protocol) partial support,
+internal scripting, conditional triggers, Plug-in support, full color support,
+rewrite triggers, status variables, support for gauges,
+functions for string manipulation
+
+WWW:	http://www.kmuddy.com/
