@@ -8,7 +8,7 @@
 
 PORTNAME=	mono
 PORTVERSION=	1.2.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/sources/mono/ \
 		${MASTER_SITE_LOCAL}
@@ -33,6 +33,19 @@ CONFIGURE_ARGS=	--program-transform-name=\'\' \
 		--with-tls=pthread
 MAKE_ARGS=	EXTERNAL_MCS=false
 
+# Set location for .wapi creation.
+MONO_SHARED_DIR=${WRKDIR}
+
+# LC_ALL is set in order to work around issues people are having when using
+# other languages.  This has shown itself in build fails and possibly other
+# strange crashes.
+MAKE_ENV=	MONO_SHARED_DIR="${MONO_SHARED_DIR}" \
+		LC_ALL=C
+
+# Removed amd64 arch because builds are exhibiting semaphore problems on
+# pointyhat runs causing failure to build.
+ONLY_FOR_ARCHS= i386 #amd64
+
 MAN1=		al.1 cert2spc.1 certmgr.1 chktrust.1 cilc.1 disco.1 dtd2xsd.1 \
 		gacutil.1 genxs.1 ilasm.1 jay.1 macpack.1 makecert.1 mcs.1 \
 		mint.1 mkbundle.1 mono-service.1 mono-shlib-cop.1 mono.1 \
@@ -40,14 +53,6 @@ MAN1=		al.1 cert2spc.1 certmgr.1 chktrust.1 cilc.1 disco.1 dtd2xsd.1 \
 		permview.1 prj2make.1 secutil.1 setreg.1 signcode.1 sn.1 \
 		soapsuds.1 sqlsharp.1 wsdl.1 xsd.1 mono-xmltool.1 sgen.1
 MAN5=		mono-config.5
-
-# Removed amd64 arch because builds are exhibiting semaphore problems on
-# pointyhat runs causing failure to build.
-ONLY_FOR_ARCHS=	i386 #amd64
-
-MONO_SHARED_DIR=${WRKDIR}
-
-MAKE_ENV=MONO_SHARED_DIR=${MONO_SHARED_DIR}
 
 .include <bsd.port.pre.mk>
 
