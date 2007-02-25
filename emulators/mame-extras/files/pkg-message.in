@@ -1,0 +1,11 @@
+==============================================================================
+
+The additional MAME files have been installed.
+
+To use them in an emulator you have to make symlinks.
+
+For example, to use the cheats in XMAME (user installation):
+
+$ ln -s %%DATADIR%%/cheat.dat ~/.xmame
+
+==============================================================================
