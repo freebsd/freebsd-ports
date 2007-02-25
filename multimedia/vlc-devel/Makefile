@@ -10,7 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.8.6a
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
@@ -438,7 +438,7 @@ CONFIGURE_ARGS+=--disable-mod
 .endif
 
 .if !defined(WITHOUT_MPCDEMUX)
-LIB_DEPENDS+=	mpcdec.4:${PORTSDIR}/audio/libmpcdec
+LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec
 CONFIGURE_ARGS+=--enable-mpc
 .else
 CONFIGURE_ARGS+=--disable-mpc
