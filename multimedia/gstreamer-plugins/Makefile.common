@@ -181,6 +181,7 @@ gst_faac_LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
 gst_faac_DIST=	bad
 
 # faad
+gst_faad_USE_GSTREAMER+=	bad
 gst_faad_LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
 gst_faad_DIST=	bad
 
