@@ -1,0 +1,25 @@
+@exec for i in artwork cfg comments diff ini nvram roms; do mkdir -p %D/%%DATADIR%%/${i}; done
+bin/sdlmame
+libexec/sdlmame/chdman
+libexec/sdlmame/file2str
+libexec/sdlmame/jedutil
+libexec/sdlmame/mame
+libexec/sdlmame/romcmp
+%%PORTDOCS%%%%DOCSDIR%%/SDLMAME.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/mame.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/newvideo.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/windows.txt
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
+%%DATADIR%%/ui.bdf
+@dirrm %%DATADIR%%/roms
+@dirrm %%DATADIR%%/nvram
+@dirrm %%DATADIR%%/ini
+@dirrm %%DATADIR%%/diff
+@dirrm %%DATADIR%%/comments
+@dirrm %%DATADIR%%/cfg
+@dirrm %%DATADIR%%/artwork
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm libexec/sdlmame

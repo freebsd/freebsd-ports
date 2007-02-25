@@ -110,6 +110,7 @@
     SUBDIR += quasi88
     SUBDIR += raine
     SUBDIR += rtc
+    SUBDIR += sdlmame
     SUBDIR += sim
     SUBDIR += sim6811
     SUBDIR += ski
