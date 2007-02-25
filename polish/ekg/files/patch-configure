@@ -1,6 +1,6 @@
---- configure.orig	Sun Jul  2 17:24:39 2006
-+++ configure	Sun Jul  2 17:25:50 2006
-@@ -3813,12 +3813,6 @@
+--- configure.orig	Sat Feb 24 16:28:42 2007
++++ configure	Sat Feb 24 16:29:20 2007
+@@ -3821,12 +3821,6 @@
  	lib_static_enabled=no
  fi
  
@@ -13,11 +13,19 @@
  # Check whether --enable-dynamic or --disable-dynamic was given.
  if test "${enable_dynamic+set}" = set; then
    enableval="$enable_dynamic"
-@@ -4770,7 +4764,6 @@
- 	LIBS_LIBGADU="$LIBS_LIBGADU $OPENSSL_LIBS"
- 	CFLAGS="$CFLAGS $OPENSSL_INCLUDES"
- 	CFLAGS_LIBGADU="$CFLAGS_LIBGADU $OPENSSL_INCLUDES"
--	PC_REQUIRES="$PC_REQUIRES openssl"
+@@ -3834,7 +3828,6 @@
+ fi;
+ 
+ 
+-
+ # Check whether --with-c99-vsnprintf or --without-c99-vsnprintf was given.
+ if test "${with_c99_vsnprintf+set}" = set; then
+   withval="$with_c99_vsnprintf"
+@@ -4786,7 +4779,6 @@
+ 	if test "x$enable_libgadu_openssl" != "xno"; then
+ 		LIBS_LIBGADU="$LIBS_LIBGADU $OPENSSL_LIBS"
+ 		CFLAGS_LIBGADU="$CFLAGS_LIBGADU $OPENSSL_INCLUDES"
+-		PC_REQUIRES="$PC_REQUIRES openssl"
  
  	sed 's/#undef __GG_LIBGADU_HAVE_OPENSSL/#define __GG_LIBGADU_HAVE_OPENSSL/' < lib/libgadu-config.h > lib/libgadu-config.h-
  	mv -f lib/libgadu-config.h- lib/libgadu-config.h
