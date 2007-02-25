@@ -484,6 +484,7 @@
     SUBDIR += playmidi
     SUBDIR += polypaudio
     SUBDIR += portaudio
+    SUBDIR += portaudio2
     SUBDIR += praat
     SUBDIR += prokyon3
     SUBDIR += pulseaudio
