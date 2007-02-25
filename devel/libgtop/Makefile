@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libgtop
-PORTVERSION=	2.14.6
+PORTVERSION=	2.14.8
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -37,14 +37,7 @@ INFO=		libgtop2
 
 .if ${OSVERSION} >= 600000
 PKGMESSAGE=	${FILESDIR}/pkg-message
-EXTRA_PATCHES+=	${FILESDIR}/extra-67-patch-sysdeps_freebsd_Makefile.in
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|int64_t|gint64|g' \
-		${WRKSRC}/include/glibtop/command.h \
-		${WRKSRC}/include/glibtop/proclist.h \
-		${WRKSRC}/lib/lib.pl
 
 post-install:
 	@${CHGRP} kmem ${PREFIX}/bin/libgtop_server2
