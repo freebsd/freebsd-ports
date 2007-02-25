@@ -1,0 +1,10 @@
+POE::Component::Server::DNS is a POE component that implements a DNS server.
+
+It uses POE::Component::Client::DNS to handle resolving when configured as
+'forward_only' and Net::DNS::Resolver::Recurse wrapped by
+POE::Component::Generic to perform recursion.
+
+One may add handlers to massage and manipulate responses to particular queries
+which is vaguely modelled after Net::DNS::Nameserver.
+
+WWW:	http://search.cpan.org/dist/POE-Component-Server-DNS/
