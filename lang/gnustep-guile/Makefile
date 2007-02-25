@@ -48,6 +48,10 @@ CONFLICTS?=		gnustep-guile-nox11-1.*
 
 GUILE_VER!=	(cd ${PORTSDIR}/lang/guile && make -V GUILE_VER)
 
+post-patch:
+	${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
+		${WRKSRC}/Greg/configure
+
 pre-configure:
 	${TOUCH} ${WRKSRC}/Greg/ac_nonexistent.h
 
