@@ -1,0 +1,12 @@
+==============================================================================
+
+Hexen II: Hammer of Thyrion has been installed.
+
+To complete the installation of this port you have to copy the original
+"data1/pak0.pak" and "data1/pak1.pak" files from your original distribution to
+"%%DATADIR%%/data1" in lower-case form.
+
+Then see the documentation about patching the data files in
+"%%DOCSDIR%%". The update files are installed.
+
+==============================================================================

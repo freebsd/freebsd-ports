@@ -1,0 +1,59 @@
+%%HEXEN2%%bin/glhexen2
+%%HW%%bin/glhwcl
+%%LAUNCHER_GTK2%%bin/h2launcher
+%%LAUNCHER_GTK1%%bin/h2launcher.gtk1
+%%X86_ASM%%%%HEXEN2%%bin/hexen2
+%%X86_ASM%%%%HW%%bin/hwcl
+%%HW%%bin/hwmaster
+%%HW%%bin/hwsv
+%%PORTDOCS%%%%DOCSDIR%%/ABOUT
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COMPILE
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/Features
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NOTES.porting
+%%PORTDOCS%%%%DOCSDIR%%/NonIntel.log
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.3dfx
+%%PORTDOCS%%%%DOCSDIR%%/README.AoT
+%%PORTDOCS%%%%DOCSDIR%%/README.demo
+%%PORTDOCS%%%%DOCSDIR%%/README.hwcl
+%%PORTDOCS%%%%DOCSDIR%%/README.hwmaster
+%%PORTDOCS%%%%DOCSDIR%%/README.hwsv
+%%PORTDOCS%%%%DOCSDIR%%/README.launcher
+%%PORTDOCS%%%%DOCSDIR%%/README.win32
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes-1.2.3
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes-1.2.4a
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes-1.3.0
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes-1.4.0
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes-1.4.1
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%DATADIR%%/data1/default.cfg
+%%DATADIR%%/data1/hexen.rc
+%%DEMO%%%%DATADIR%%/data1/pak0.pak
+%%FULL%%%%DATADIR%%/data1/data1pak0.xd
+%%FULL%%%%DATADIR%%/data1/data1pak1.xd
+%%DATADIR%%/data1/progs.dat
+%%FULL%%%%DATADIR%%/data1/progs2.dat
+%%FULL%%%%DATADIR%%/data1/strings.txt
+%%HW%%%%DATADIR%%/hw/default.cfg
+%%HW%%%%DATADIR%%/hw/hwprogs.dat
+%%HW%%%%DATADIR%%/hw/pak4.pak
+%%HW%%%%DATADIR%%/hw/strings.txt
+%%FULL%%%%DATADIR%%/portals/default.cfg
+%%FULL%%%%DATADIR%%/portals/hexen.rc
+%%FULL%%%%DATADIR%%/portals/infolist.txt
+%%FULL%%%%DATADIR%%/portals/maplist.txt
+%%FULL%%%%DATADIR%%/portals/progs.dat
+%%FULL%%%%DATADIR%%/portals/puzzles.txt
+%%FULL%%%%DATADIR%%/portals/strings.txt
+%%FULL%%%%DATADIR%%/update_loki.dat
+%%FULL%%%%DATADIR%%/update_loki.sh
+%%FULL%%%%DATADIR%%/update_xdelta.sh
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%FULL%%@dirrm %%DATADIR%%/portals
+%%HW%%@dirrm %%DATADIR%%/hw
+@dirrm %%DATADIR%%/data1
+@dirrm %%DATADIR%%

@@ -1,0 +1,18 @@
+--- ./hexenworld/Master/Makefile.orig	Fri Oct  6 13:43:35 2006
++++ ./hexenworld/Master/Makefile	Tue Jan  9 16:56:32 2007
+@@ -24,14 +24,11 @@
+ # Compiler flags
+ 
+ # Overrides for the default CPUFLAGS
+-ifeq ($(MACH_TYPE),x86)
+-CPUFLAGS:=-march=i386
+-endif
+ # Overrides for the default ARCHFLAGS
+ #ARCHFLAGS:=
+ 
+ ifndef DEBUG
+-CFLAGS := $(CPUFLAGS) -O2 -Wall
++CFLAGS := $(CFLAGS) $(CPUFLAGS) -O2 -Wall
+ endif
+ 
+ # Other build flags

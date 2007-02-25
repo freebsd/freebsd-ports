@@ -758,6 +758,7 @@
     SUBDIR += ufoai
     SUBDIR += ufoai-data
     SUBDIR += uhexen
+    SUBDIR += uhexen2
     SUBDIR += umark
     SUBDIR += untahris
     SUBDIR += uox3
