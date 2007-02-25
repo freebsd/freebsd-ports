@@ -1,5 +1,20 @@
-gSculpt is a 3D modelling program that allows models to be built by
-performing sweeps on polylines. These models can then be transformed
-using a variety of tools. Aimed at hobbyists, and demo coders.
+gSculpt is an open source, procedural subdivision modeller. It has a
+comprehensive set of polygon modelling tools, including most of those
+found in Wings 3D, and more.
+
+Workflow and speed of use are important design goals in the
+development of gSculpt. Pre-selection highlighting throughout the
+program, and keyboard short cuts ensure that the workflow is fast and
+efficient, while providing access to a powerful procedural system
+which allows mistakes to be rectified easily.
+
+Its procedural modelling system makes it an excellent choice for
+making modelling tutorials, as the steps required to build the model
+from the beginning are displayed to the user in a list. This list can
+be navigated easily, allowing a user to view the process one step at a
+time, at their own pace, while being able too look at the model from
+all angles as they go.
+
+gSculpt can import and export Wavefront Object (.obj) model files.
 
 WWW: http://gsculpt.sourceforge.net/

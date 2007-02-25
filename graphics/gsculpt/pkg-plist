@@ -1,0 +1,480 @@
+bin/gsculpt
+%%PYTHON_SITELIBDIR%%/gSculpt/Cache/GSCache.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Cache/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/CommandHistory/CommandHistory.py
+%%PYTHON_SITELIBDIR%%/gSculpt/CommandHistory/CommandTracker.py
+%%PYTHON_SITELIBDIR%%/gSculpt/CommandHistory/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Config/GSConfig.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Config/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Editor/EditorSettings.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Editor/SnapSettings.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Editor/SnapSettingsPopup.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Editor/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Event/QueuedEvent.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Event/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/FileIO/IOXml.py
+%%PYTHON_SITELIBDIR%%/gSculpt/FileIO/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/GSGraph/GSGraph.py
+%%PYTHON_SITELIBDIR%%/gSculpt/GSGraph/GSGraphCommandTracker.py
+%%PYTHON_SITELIBDIR%%/gSculpt/GSGraph/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/GraphView/GraphView.py
+%%PYTHON_SITELIBDIR%%/gSculpt/GraphView/GraphViewHelper.so
+%%PYTHON_SITELIBDIR%%/gSculpt/GraphView/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Graphics/BackfaceCullField.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Graphics/GLUploadImage.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Graphics/Graphics.so
+%%PYTHON_SITELIBDIR%%/gSculpt/Graphics/Region3dField.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Graphics/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/I18n/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/I18n/i18n.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ImportExportFilter/ObjExport.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ImportExportFilter/ObjImport.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ImportExportFilter/ToolImportedModel.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ImportExportFilter/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/CachedObjectSource.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/ColumnEditors.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/DB.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/DBCommandTracker.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/DBEdit.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/DBEditorTool.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/Enum.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/KMeta.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/ObjectSource.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/ObjectSourceProxy.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/RTType.so
+%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/Variable.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Kernel/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/LogGrid/LogGrid.so
+%%PYTHON_SITELIBDIR%%/gSculpt/LogGrid/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MainApp/CreateMenu.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MainApp/GeneralActions.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MainApp/MainApp.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MainApp/NewNodeMenu.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MainApp/Shortcuts/Shortcut.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MainApp/Shortcuts/ShortcutEditor.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MainApp/Shortcuts/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MainApp/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/ColumnManipulators.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/Handle.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/Handle3d.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/HandleScreen.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/Manipulator.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/ManipulatorSnapping.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/ManipulatorSwitch.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/Point3Manipulator.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/RealManipulator.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/RotationHandle.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/RotationManipulator.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/ScaleHandle3d.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/ScaleManipulator3d.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/ScreenSpaceHandle.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/ScrollManipulator.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/TranslationHandle3d.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/TranslationManipulator3d.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Manipulator/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MarkTools/CircularMarkRegionManipulator.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MarkTools/MarkRegionManipulator.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MarkTools/RectangularMarkRegionManipulator.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MarkTools/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Math/Math.so
+%%PYTHON_SITELIBDIR%%/gSculpt/Math/MathField.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Math/MathVariable.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Math/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Mesh/GSSceneNodeMeshViewSettings.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Mesh/Mesh.so
+%%PYTHON_SITELIBDIR%%/gSculpt/Mesh/MeshLiveSubdWireframeModeColumnEditor.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Mesh/MeshLiveSubdWireframeModeVar.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Mesh/MeshLiveSubdWireframeModeVarEditor.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Mesh/MeshManipulatorHelper.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Mesh/MeshPickHelper.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Mesh/MeshPreserveNormalSharpnessColumnEditor.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Mesh/MeshPreserveNormalSharpnessVar.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Mesh/MeshPreserveNormalSharpnessVarEditor.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Mesh/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshMarkCircular.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshMarkPick.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshMarkPickEdgeBoundaries.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshMarkPickEdgeLoops.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshMarkPickEdgeRings.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshMarkPickEdges.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshMarkPickFaces.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshMarkPickVertices.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshMarkRectangular.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshMarkRegion.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshPickEdgeLoopPath.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/ToolMeshPickEdgeRingPath.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Body/ToolMeshFlip.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Body/ToolMeshKnife.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Body/ToolMeshMirror.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Body/ToolMeshSubdivide.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Body/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshBevelEdges.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshBridge.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshCollapseEdges.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshConnectEdges.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshDissolveEdges.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshExpandEdges.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshExtrudeEdges.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshFillEdges.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshFlattenEdges.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshGrowEdgeSelection.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshMarkEdges.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshMoveEdges.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshMoveEdgesNormal.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshNConnectEdges.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshNSplitEdges.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshRewireEdges.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshRiftEdges.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshRotateEdges.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshScaleEdges.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshSelectEdgeBoundary.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshSelectEdgeLoop.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshSelectEdgeRing.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshShrinkEdgeSelection.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshSlideEdges.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshSpinEdges.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshSplitEdges.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/ToolMeshWeldEdges.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshBevelFaces.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshCollapseFaces.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshDeleteFaces.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshDissolveFaces.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshExpandFaces.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshExtrudeFaces.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshFlattenFaces.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshFreeExtrudeFaces.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshGrowFaceSelection.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshInsetFaces.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshMarkFaces.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshMoveFaces.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshMoveFacesNormal.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshRotateFaces.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshScaleFaces.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshShrinkFaceSelection.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshTunnel.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshWeldFaces.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/MeshCutTarget.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/MeshInsetFacesStyle.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/MeshWeldStyle.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/ToolMeshBandsaw.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/ToolMeshCut.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/ToolMeshDrawFace.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/ToolMeshDrawQuads.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/ToolMeshEditMove.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/ToolMeshEditRotate.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/ToolMeshEditScale.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/ToolMeshNBandsaw.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/ToolMeshNCut.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/ToolMeshSurfaceTweakComponents.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/ToolMeshTweakComponents.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshBevelVertices.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshConnectVertices.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshDissolveVertices.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshExpandVertices.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshFlattenVertices.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshGrowVertexSelection.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshMarkVertices.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshMoveVertices.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshMoveVerticesNormal.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshRotateVertices.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshScaleVertices.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshShrinkVertexSelection.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshTargetWeldVertices.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshTemplateTweakVertices.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/ToolMeshWeldVertices.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEditBodyToolGroup.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEditBodyToolset.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEditComponent.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEditEdgeToolGroup.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEditEdgeToolset.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEditFaceToolGroup.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEditFaceToolset.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEditToolkit.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEditVertexToolGroup.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEditVertexToolset.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshToolbox.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshToolsetWithPicking.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Model/MarkPredicateColumnEditor.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Model/MarkPredicateVar.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Model/MarkPredicateVarEditor.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Model/Model.so
+%%PYTHON_SITELIBDIR%%/gSculpt/Model/ModelDraw.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Model/Pick.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Model/Pick3d.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Model/TargetList.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Model/TargetListColumnEditor.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Model/TargetListVarEditor.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Model/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ModelTools/ModelVirtualMirrorToolGroup.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ModelTools/ToolVirtualMirror.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ModelTools/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Painter/Painter.so
+%%PYTHON_SITELIBDIR%%/gSculpt/Painter/RequestPainter.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Painter/RequestViewportPainter.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Painter/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/PolyBlend/PolyBlend.so
+%%PYTHON_SITELIBDIR%%/gSculpt/PolyBlend/PolyBlendComponent.py
+%%PYTHON_SITELIBDIR%%/gSculpt/PolyBlend/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/MeshPrimitiveToolGroup.py
+%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/MeshPrimitiveToolset.py
+%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/PrimitiveToolbox.py
+%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/PrimitiveToolkit.py
+%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/ToolBoxPrimitive.py
+%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/ToolConePrimitive.py
+%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/ToolCylinderPrimitive.py
+%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/ToolPlanePrimitive.py
+%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/ToolSpherePrimitive.py
+%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/ToolTorusPrimitive.py
+%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/ToolTubePrimitive.py
+%%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSFunction.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSFunctionCommandTracker.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSFunctionGraph.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSFunctionGraphCommandTracker.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSPlan.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSPlanCommandTracker.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSProcedure.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSProcedureCommandTracker.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSScene.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSSceneCommandTracker.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSSceneNode.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSSceneNodeCommandTracker.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/GSSceneNodeViewSettings.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/Product.so
+%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralTool/GSFunctionAdjustableInvoker.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralTool/GSFunctionTool.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralTool/GSProcedureAdjustableInvoker.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralTool/GSProcedureTool.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralTool/GSSceneNodeTool.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralTool/GSSceneNodeToolbox.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralTool/ProcToolGroup.py
+%%PYTHON_SITELIBDIR%%/gSculpt/ProceduralTool/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Project/GSProject.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Project/GSProjectCommandTracker.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Project/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/SceneEdit/NodeEditor.py
+%%PYTHON_SITELIBDIR%%/gSculpt/SceneEdit/NodePlanAdapter.py
+%%PYTHON_SITELIBDIR%%/gSculpt/SceneEdit/NodePlanViewList.py
+%%PYTHON_SITELIBDIR%%/gSculpt/SceneEdit/SceneEditorTools.py
+%%PYTHON_SITELIBDIR%%/gSculpt/SceneEdit/SelectNodeTool.py
+%%PYTHON_SITELIBDIR%%/gSculpt/SceneEdit/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/SceneNodes/SceneModelNode.py
+%%PYTHON_SITELIBDIR%%/gSculpt/SceneNodes/SceneProcedureNode.py
+%%PYTHON_SITELIBDIR%%/gSculpt/SceneNodes/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Texture/Texture.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Texture/TextureChooser.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Texture/TextureRef.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Texture/TextureRefColumnEditor.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Texture/TextureRefVar.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Texture/TextureTable.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Texture/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Tool/Tool.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Tool/ToolGroup.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Tool/ToolPanel.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Tool/Toolbox.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Tool/Toolkit.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Tool/Toolset.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Tool/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Transformation/Transformation.so
+%%PYTHON_SITELIBDIR%%/gSculpt/Transformation/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolRotatedTransformation.py
+%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformation.py
+%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformationBase.py
+%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformationBend.py
+%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformationDent.py
+%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformationLinearTwist.py
+%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformationMove.py
+%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformationRadialTwist.py
+%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformationRotate.py
+%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformationScale.py
+%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformationShear.py
+%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformationShrink.py
+%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/ToolTransformationTaper.py
+%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/TransformationToolActions.py
+%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/TransformationToolGroup.py
+%%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/UI/Accelerator.py
+%%PYTHON_SITELIBDIR%%/gSculpt/UI/AcceleratorGroup.py
+%%PYTHON_SITELIBDIR%%/gSculpt/UI/AcceleratorManager.py
+%%PYTHON_SITELIBDIR%%/gSculpt/UI/ButtonPopupMenu.py
+%%PYTHON_SITELIBDIR%%/gSculpt/UI/ComboBox.py
+%%PYTHON_SITELIBDIR%%/gSculpt/UI/ConfirmDialog.py
+%%PYTHON_SITELIBDIR%%/gSculpt/UI/ConfirmOverwriteFileDialog.py
+%%PYTHON_SITELIBDIR%%/gSculpt/UI/FormLayout.py
+%%PYTHON_SITELIBDIR%%/gSculpt/UI/GSContextMenu.py
+%%PYTHON_SITELIBDIR%%/gSculpt/UI/GSImage.py
+%%PYTHON_SITELIBDIR%%/gSculpt/UI/GtkAccelEntry.py
+%%PYTHON_SITELIBDIR%%/gSculpt/UI/LayoutFactory.py
+%%PYTHON_SITELIBDIR%%/gSculpt/UI/MessageDialog.py
+%%PYTHON_SITELIBDIR%%/gSculpt/UI/NameDialog.py
+%%PYTHON_SITELIBDIR%%/gSculpt/UI/OptionList.py
+%%PYTHON_SITELIBDIR%%/gSculpt/UI/PopupWindow.py
+%%PYTHON_SITELIBDIR%%/gSculpt/UI/RadioGroup.py
+%%PYTHON_SITELIBDIR%%/gSculpt/UI/ToggleButton.py
+%%PYTHON_SITELIBDIR%%/gSculpt/UI/ToggleGroup.py
+%%PYTHON_SITELIBDIR%%/gSculpt/UI/UIAction.py
+%%PYTHON_SITELIBDIR%%/gSculpt/UI/UIController.py
+%%PYTHON_SITELIBDIR%%/gSculpt/UI/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Util/CoEventHandler.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Util/LinkedList.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Util/PriorityList.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Util/SignalSlot.py
+%%PYTHON_SITELIBDIR%%/gSculpt/Util/Util.so
+%%PYTHON_SITELIBDIR%%/gSculpt/Util/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/VarEdit/VarEdit.py
+%%PYTHON_SITELIBDIR%%/gSculpt/VarEdit/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/View/BackgroundImage.py
+%%PYTHON_SITELIBDIR%%/gSculpt/View/BackgroundImageCommandTracker.py
+%%PYTHON_SITELIBDIR%%/gSculpt/View/BackgroundImageTool.py
+%%PYTHON_SITELIBDIR%%/gSculpt/View/DrawingPlane.py
+%%PYTHON_SITELIBDIR%%/gSculpt/View/DrawingTemplate.py
+%%PYTHON_SITELIBDIR%%/gSculpt/View/FocusTool.py
+%%PYTHON_SITELIBDIR%%/gSculpt/View/ModelLayer.py
+%%PYTHON_SITELIBDIR%%/gSculpt/View/ModelLayerBackgroundPainter.py
+%%PYTHON_SITELIBDIR%%/gSculpt/View/ModelLayerCommandTracker.py
+%%PYTHON_SITELIBDIR%%/gSculpt/View/ModelLayerEditor.py
+%%PYTHON_SITELIBDIR%%/gSculpt/View/View.so
+%%PYTHON_SITELIBDIR%%/gSculpt/View/ViewDrawingSettings.py
+%%PYTHON_SITELIBDIR%%/gSculpt/View/ViewDrawingSettingsEditor.py
+%%PYTHON_SITELIBDIR%%/gSculpt/View/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/WorkArea/DrawingArea.py
+%%PYTHON_SITELIBDIR%%/gSculpt/WorkArea/GLResourceGuard.py
+%%PYTHON_SITELIBDIR%%/gSculpt/WorkArea/ModellerView.py
+%%PYTHON_SITELIBDIR%%/gSculpt/WorkArea/PointerStatus.py
+%%PYTHON_SITELIBDIR%%/gSculpt/WorkArea/ViewLayout.py
+%%PYTHON_SITELIBDIR%%/gSculpt/WorkArea/ViewLayoutNotebook.py
+%%PYTHON_SITELIBDIR%%/gSculpt/WorkArea/ViewLayoutQuad.py
+%%PYTHON_SITELIBDIR%%/gSculpt/WorkArea/ViewLayoutSingle.py
+%%PYTHON_SITELIBDIR%%/gSculpt/WorkArea/Viewport.py
+%%PYTHON_SITELIBDIR%%/gSculpt/WorkArea/Viewport3d.py
+%%PYTHON_SITELIBDIR%%/gSculpt/WorkArea/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/bugworkarounds/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/bugworkarounds/bugworkarounds.so
+%%PYTHON_SITELIBDIR%%/gSculpt/extlibs/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/extlibs/greenlet/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/extlibs/greenlet/greenlet.so
+%%PYTHON_SITELIBDIR%%/gSculpt/extlibs/pyconsole/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/extlibs/pyconsole/pyconsole.py
+%%PYTHON_SITELIBDIR%%/gSculpt/gSculptConfig/__init__.py
+%%PYTHON_SITELIBDIR%%/gSculpt/gSculptConfig/gSculptConfig.py
+%%PYTHON_SITELIBDIR%%/gSculpt/gSculptConfig/gSculptUserConfig.py
+%%PYTHON_SITELIBDIR%%/gSculpt/gsculpt.py
+lib/gSculpt/libCompGeometry.so
+lib/gSculpt/libFileIO.so
+lib/gSculpt/libGraphViewHelper.so
+lib/gSculpt/libGraphics.so
+lib/gSculpt/libLogGrid.so
+lib/gSculpt/libMath.so
+lib/gSculpt/libMesh.so
+lib/gSculpt/libModel.so
+lib/gSculpt/libPainter.so
+lib/gSculpt/libPolyBlend.so
+lib/gSculpt/libPolyline.so
+lib/gSculpt/libProduct.so
+lib/gSculpt/libRTType.so
+lib/gSculpt/libTransformation.so
+lib/gSculpt/libUVMap.so
+lib/gSculpt/libUtil.so
+lib/gSculpt/libView.so
+share/gSculpt/gsimages/background_images.png
+share/gSculpt/gsimages/draw_backg_transparent.png
+share/gSculpt/gsimages/draw_backgroundimages.png
+share/gSculpt/gsimages/draw_markedfaces.png
+share/gSculpt/gsimages/draw_smooth.png
+share/gSculpt/gsimages/draw_solid.png
+share/gSculpt/gsimages/draw_textured.png
+share/gSculpt/gsimages/draw_vertices.png
+share/gSculpt/gsimages/draw_wireframe.png
+share/gSculpt/gsimages/drawing_plane.png
+share/gSculpt/gsimages/drawing_template.png
+share/gSculpt/gsimages/focus_tool.png
+share/gSculpt/gsimages/gSculpt_Glass_Master_by_Gary_Rose.png
+share/gSculpt/gsimages/gSculpt_splash_screen_by_Gary_Rose.png
+share/gSculpt/gsimages/gSculpt_splash_screen_mouse_over_by_Gary_Rose.png
+share/gSculpt/gsimages/graphview_1to1.png
+share/gSculpt/gsimages/graphview_origin.png
+share/gSculpt/gsimages/graphview_zoom.png
+share/gSculpt/gsimages/graphview_zoomextentsall.png
+share/gSculpt/gsimages/graphview_zoomextentsselected.png
+share/gSculpt/gsimages/grid_toggle.png
+share/gSculpt/gsimages/grida.png
+share/gSculpt/gsimages/gridx.png
+share/gSculpt/gsimages/gridy.png
+share/gSculpt/gsimages/gridz.png
+share/gSculpt/gsimages/layers.png
+share/gSculpt/gsimages/mesh_primitives.png
+share/gSculpt/gsimages/meshedit_body.png
+share/gSculpt/gsimages/meshedit_edges.png
+share/gSculpt/gsimages/meshedit_faces.png
+share/gSculpt/gsimages/meshedit_mesh.png
+share/gSculpt/gsimages/meshedit_vertices.png
+share/gSculpt/gsimages/node_view_settings.png
+share/gSculpt/gsimages/red_x.png
+share/gSculpt/gsimages/rendering_small.png
+share/gSculpt/gsimages/snap_settings.png
+share/gSculpt/gsimages/vp_notebook.png
+share/gSculpt/gsimages/vp_notebook_newvp.png
+share/gSculpt/gsimages/vp_quad.png
+share/gSculpt/gsimages/vp_single.png
+@dirrm share/gSculpt/gsimages
+@dirrm share/gSculpt
+@dirrm lib/gSculpt
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Cache
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/CommandHistory
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Config
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Editor
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Event
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/FileIO
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/GSGraph
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/GraphView
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Graphics
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/I18n
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/ImportExportFilter
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Kernel
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/LogGrid
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/MainApp/Shortcuts
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/MainApp
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Manipulator
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/MarkTools
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Math
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Mesh
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/Mark
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Body
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Edge
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Vertex
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/MeshTools
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Model
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/ModelTools
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Painter
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/PolyBlend
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/PrimitiveTools
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/ProceduralCore
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/ProceduralTool
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Project
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/SceneEdit
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/SceneNodes
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Texture
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Tool
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Transformation
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/TransformationTools
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/UI
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/Util
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/VarEdit
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/View
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/WorkArea
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/bugworkarounds
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/extlibs/greenlet
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/extlibs/pyconsole
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/extlibs
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt/gSculptConfig
+@dirrm %%PYTHON_SITELIBDIR%%/gSculpt
