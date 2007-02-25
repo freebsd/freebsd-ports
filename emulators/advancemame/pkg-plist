@@ -1,0 +1,62 @@
+@exec for i in artwork crc image rom sample; do mkdir -p %D/%%DATADIR%%/${i}; done
+bin/advj
+bin/advk
+bin/advm
+bin/advmame
+bin/advs
+%%DATADIR%%/event.dat
+%%DATADIR%%/hiscore.dat
+%%DATADIR%%/history.dat
+%%PORTDOCS%%%%DOCSDIR%%/advcfg.html
+%%PORTDOCS%%%%DOCSDIR%%/advcfg.txt
+%%PORTDOCS%%%%DOCSDIR%%/advdev.html
+%%PORTDOCS%%%%DOCSDIR%%/advdev.txt
+%%PORTDOCS%%%%DOCSDIR%%/advj.html
+%%PORTDOCS%%%%DOCSDIR%%/advj.txt
+%%PORTDOCS%%%%DOCSDIR%%/advk.html
+%%PORTDOCS%%%%DOCSDIR%%/advk.txt
+%%PORTDOCS%%%%DOCSDIR%%/advline.html
+%%PORTDOCS%%%%DOCSDIR%%/advline.txt
+%%PORTDOCS%%%%DOCSDIR%%/advm.html
+%%PORTDOCS%%%%DOCSDIR%%/advm.txt
+%%PORTDOCS%%%%DOCSDIR%%/advmame.html
+%%PORTDOCS%%%%DOCSDIR%%/advmame.txt
+%%PORTDOCS%%%%DOCSDIR%%/advs.html
+%%PORTDOCS%%%%DOCSDIR%%/advs.txt
+%%PORTDOCS%%%%DOCSDIR%%/advv.html
+%%PORTDOCS%%%%DOCSDIR%%/advv.txt
+%%PORTDOCS%%%%DOCSDIR%%/authors.html
+%%PORTDOCS%%%%DOCSDIR%%/authors.txt
+%%PORTDOCS%%%%DOCSDIR%%/build.html
+%%PORTDOCS%%%%DOCSDIR%%/build.txt
+%%PORTDOCS%%%%DOCSDIR%%/carddos.html
+%%PORTDOCS%%%%DOCSDIR%%/carddos.txt
+%%PORTDOCS%%%%DOCSDIR%%/cardlinx.html
+%%PORTDOCS%%%%DOCSDIR%%/cardlinx.txt
+%%PORTDOCS%%%%DOCSDIR%%/cardwin.html
+%%PORTDOCS%%%%DOCSDIR%%/cardwin.txt
+%%PORTDOCS%%%%DOCSDIR%%/cost.html
+%%PORTDOCS%%%%DOCSDIR%%/cost.txt
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.txt
+%%PORTDOCS%%%%DOCSDIR%%/histemu.html
+%%PORTDOCS%%%%DOCSDIR%%/histemu.txt
+%%PORTDOCS%%%%DOCSDIR%%/install.html
+%%PORTDOCS%%%%DOCSDIR%%/install.txt
+%%PORTDOCS%%%%DOCSDIR%%/license.html
+%%PORTDOCS%%%%DOCSDIR%%/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/reademu.html
+%%PORTDOCS%%%%DOCSDIR%%/reademu.txt
+%%PORTDOCS%%%%DOCSDIR%%/releemu.html
+%%PORTDOCS%%%%DOCSDIR%%/releemu.txt
+%%PORTDOCS%%%%DOCSDIR%%/script.html
+%%PORTDOCS%%%%DOCSDIR%%/script.txt
+%%PORTDOCS%%%%DOCSDIR%%/svgawin.html
+%%PORTDOCS%%%%DOCSDIR%%/svgawin.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/sample
+@dirrm %%DATADIR%%/rom
+@dirrm %%DATADIR%%/image
+@dirrm %%DATADIR%%/crc
+@dirrm %%DATADIR%%/artwork
+@dirrm %%DATADIR%%

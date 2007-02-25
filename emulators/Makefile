@@ -5,6 +5,7 @@
 
     SUBDIR += adamem
     SUBDIR += advancemame
+    SUBDIR += advancemess
     SUBDIR += aftp
     SUBDIR += atari800
     SUBDIR += basiliskII
