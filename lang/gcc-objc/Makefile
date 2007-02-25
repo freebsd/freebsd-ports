@@ -14,6 +14,9 @@ COMMENT=	GNU Compiler Collection ${COMMENT2} with threads and shared libs
 
 WITHOUT_JAVA=		yes
 
+DEPRECATED=	please use objc from lang/gcc41
+EXPIRATION_DATE=	2007-03-30
+
 .if !defined(GNUSTEP_WITH_GCC32) && !defined(GNUSTEP_WITH_GCC33) && !defined(GNUSTEP_WITH_GCC34)
 GNUSTEP_WITH_GCC32=	yes
 .endif
