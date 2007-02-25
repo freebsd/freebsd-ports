@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	sunbird
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.3.1
 PORTEPOCH=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
@@ -30,8 +29,8 @@ SUNBIRD=	${PORTNAME}
 SUNBIRD_ICON_SRC=	${PREFIX}/lib/sunbird/icons/default.xpm
 SUNBIRD_ICON=		${PORTNAME}.xpm
 LIBS=		-Wl,-Bsymbolic -lc
-PKGCONFIG_FILES?=	${MOZILLA}-js \
-			${MOZILLA}-xpcom ${MOZILLA}-plugin
+MOZ_PKGCONFIG_FILES=	${PORTNAME}-js ${PORTNAME}-xpcom ${PORTNAME}-plugin
+PKGCONFIG_FILES=	${MOZ_PKG_CONFIG_FILES}
 MOZ_OPTIONS=	--enable-application=calendar \
 		--enable-system-cairo \
 		--with-system-nss \
@@ -64,6 +63,8 @@ pre-install:
 	${ECHO_CMD} 'share/pixmaps/${SUNBIRD_ICON}' >> ${PLIST}
 	${ECHO_CMD} "@dirrmtry share/pixmaps" >> ${PLIST}
 	${ECHO_CMD} '@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}' >> ${PLIST}
+	${ECHO_CMD} '@dirrmtry lib/sunbird/plugins' >> ${PLIST}
+	${ECHO_CMD} '@dirrmtry lib/sunbird' >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/share/applications ${PREFIX}/share/pixmaps
