@@ -52,7 +52,7 @@ USE_PHP=	imap
 USE_PHP+=	ldap
 . endif
 
-RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde-base
 
 .if !defined(WITHOUT_SMIME)
 USE_PHP+=	openssl

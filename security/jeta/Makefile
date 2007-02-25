@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	Horde wrapper around various Java SSH applets
 
-RUN_DEPENDS=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde
+RUN_DEPENDS=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde-base
 
 NO_BUILD=	yes
 USE_APACHE=	1.3+	# needed to test APACHE_VERSION
