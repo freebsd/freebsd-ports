@@ -1,0 +1,46 @@
+--- libltdl/configure.orig	Thu Feb 22 14:24:59 2007
++++ libltdl/configure	Thu Feb 22 14:24:59 2007
+@@ -8189,8 +8189,8 @@
+   ;;
+ 
+ freebsd*)
+-  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+-  version_type=freebsd-$objformat
++#  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++  version_type=freebsd-elf
+   case $version_type in
+     freebsd-elf*)
+       library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
+@@ -11897,8 +11897,8 @@
+   ;;
+ 
+ freebsd*)
+-  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+-  version_type=freebsd-$objformat
++#  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++  version_type=freebsd-elf
+   case $version_type in
+     freebsd-elf*)
+       library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
+@@ -15050,8 +15050,8 @@
+   ;;
+ 
+ freebsd*)
+-  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+-  version_type=freebsd-$objformat
++#  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++  version_type=freebsd-elf
+   case $version_type in
+     freebsd-elf*)
+       library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
+@@ -17412,8 +17412,8 @@
+   ;;
+ 
+ freebsd*)
+-  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+-  version_type=freebsd-$objformat
++#  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++  version_type=freebsd-elf
+   case $version_type in
+     freebsd-elf*)
+       library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext} $libname${shared_ext}'
