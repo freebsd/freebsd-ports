@@ -254,6 +254,7 @@ adstudio	ports/databases/adstudio
 adtool		ports/sysutils/adtool
 adun		ports/biology/adun
 advancecomp	ports/archivers/advancecomp
+advancemame	ports/emulators/advancemame
 advi		ports/print/advi
 adzap		ports/www/adzap
 aee		ports/editors/aee
