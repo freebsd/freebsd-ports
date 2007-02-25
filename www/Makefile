@@ -186,7 +186,7 @@
     SUBDIR += havp
     SUBDIR += hiawatha
     SUBDIR += hinventory-client
-    SUBDIR += horde
+    SUBDIR += horde-base
     SUBDIR += horde-passwd
     SUBDIR += hotjava
     SUBDIR += htdump
