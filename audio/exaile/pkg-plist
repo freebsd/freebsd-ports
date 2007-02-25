@@ -1,3 +1,5 @@
+bin/exaile
+share/applications/exaile.desktop
 %%DATADIR%%/exaile.glade
 %%DATADIR%%/exaile.py
 %%DATADIR%%/images/artist.png
@@ -29,17 +31,25 @@
 %%DATADIR%%/images/nocover.png
 %%DATADIR%%/images/playlist.png
 %%DATADIR%%/images/splash.png
+%%DATADIR%%/images/star.svg
 %%DATADIR%%/images/track.png
 %%DATADIR%%/images/trayicon.png
 %%DATADIR%%/mmkeys.so
 %%DATADIR%%/plugins/__init__.py
 %%DATADIR%%/plugins/alarmclock.py
+%%DATADIR%%/plugins/console.py
 %%DATADIR%%/plugins/desktopcover.py
 %%DATADIR%%/plugins/exailenotify.py
+%%DATADIR%%/plugins/gajim_status.py
+%%DATADIR%%/plugins/gossip_status.py
 %%DATADIR%%/plugins/gui.py
+%%DATADIR%%/plugins/ipoddriver.py
 %%DATADIR%%/plugins/manager.py
+%%DATADIR%%/plugins/massstoragedriver.py
 %%DATADIR%%/plugins/minimode.py
+%%DATADIR%%/plugins/notaskbarentry.py
 %%DATADIR%%/plugins/plugins.glade
+%%DATADIR%%/plugins/resume.py
 %%DATADIR%%/plugins/serp.py
 %%DATADIR%%/plugins/streamripper.py
 %%DATADIR%%/po/ca.po
@@ -47,31 +57,42 @@
 %%DATADIR%%/po/en_GB.po
 %%DATADIR%%/po/es_ES.po
 %%DATADIR%%/po/pl.po
+%%DATADIR%%/po/pt_BR.po
 %%DATADIR%%/po/ru.po
 %%DATADIR%%/po/sv.po
 %%DATADIR%%/po/zh_CN.po
+%%DATADIR%%/sql/changes0001.sql
 %%DATADIR%%/sql/db.sql
 %%DATADIR%%/xl/__init__.py
 %%DATADIR%%/xl/audioscrobbler.py
 %%DATADIR%%/xl/common.py
 %%DATADIR%%/xl/config.py
+%%DATADIR%%/xl/config_convert.py
 %%DATADIR%%/xl/covers.py
 %%DATADIR%%/xl/db.py
 %%DATADIR%%/xl/dbusinterface.py
 %%DATADIR%%/xl/filtergui.py
-%%DATADIR%%/xl/media.py
+%%DATADIR%%/xl/media/__init__.py
+%%DATADIR%%/xl/media/flac.py
+%%DATADIR%%/xl/media/m4a.py
+%%DATADIR%%/xl/media/mp3.py
+%%DATADIR%%/xl/media/ogg.py
+%%DATADIR%%/xl/media/wma.py
 %%DATADIR%%/xl/panels.py
+%%DATADIR%%/xl/player.py
 %%DATADIR%%/xl/prefs.py
 %%DATADIR%%/xl/shoutcast.py
 %%DATADIR%%/xl/track.py
 %%DATADIR%%/xl/tracks.py
 %%DATADIR%%/xl/trackslist.py
 %%DATADIR%%/xl/xlmisc.py
+share/pixmaps/exaile.png
 @dirrm %%DATADIR%%/images/default_theme
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/po
 @dirrm %%DATADIR%%/sql
+@dirrm %%DATADIR%%/xl/media
 @dirrm %%DATADIR%%/xl
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
