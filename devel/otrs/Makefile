@@ -7,6 +7,7 @@
 
 PORTNAME=	otrs
 PORTVERSION=	2.1.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -99,7 +100,7 @@ RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 .endif
 
 .ifdef WITH_GNUPG
-RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
+RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg1
 .endif
 
 do-build:
