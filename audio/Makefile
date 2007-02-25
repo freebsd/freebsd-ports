@@ -228,6 +228,7 @@
     SUBDIR += gstreamer-plugins-faad80
     SUBDIR += gstreamer-plugins-flac
     SUBDIR += gstreamer-plugins-flac80
+    SUBDIR += gstreamer-plugins-fluendo-mp3
     SUBDIR += gstreamer-plugins-gsm
     SUBDIR += gstreamer-plugins-gsm80
     SUBDIR += gstreamer-plugins-ivorbis
