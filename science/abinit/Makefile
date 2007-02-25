@@ -13,6 +13,10 @@ MASTER_SITES=	ftp://ftp.abinit.org/pub/abinitio/ABINIT_v${PORTVERSION}/
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Abinit calculates electronic structure of systems
 
+FETCH_DEPENDS=  ${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
+
+FETCH_CMD=      ${LOCALBASE}/bin/wget
+
 WANT_FORTRAN=	yes #dummy but future use
 BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
 FC=		gfortran42
