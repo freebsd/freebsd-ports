@@ -4371,7 +4371,7 @@ holyshout	ports/audio/holyshout
 homebank	ports/finance/homebank
 honeyd		ports/net/honeyd
 hope		ports/lang/hope
-horde		ports/www/horde
+horde-base	ports/www/horde-base
 horde-passwd	ports/www/horde-passwd
 hostsentry	ports/security/hostsentry
 hot-babe	ports/deskutils/hot-babe

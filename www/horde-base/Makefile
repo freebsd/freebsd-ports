@@ -1,14 +1,16 @@
-# Ports collection makefile for:  horde2
+# Ports collection makefile for:  horde3
 # Date created:			  Sun Oct 07, 2001
 # Whom:				  Thierry Thomas (<thierry@thomas.as>)
 #
 # $FreeBSD$
 #
 
-PORTNAME=	horde
+PORTNAME=	base
 PORTVERSION=	3.1.3
 CATEGORIES=	www
 MASTER_SITES=	HORDE
+PKGNAMEPREFIX=	horde-
+DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
 
 MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	A common code-base used by Horde applications, written in PHP
