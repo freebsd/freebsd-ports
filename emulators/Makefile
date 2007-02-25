@@ -111,6 +111,7 @@
     SUBDIR += raine
     SUBDIR += rtc
     SUBDIR += sdlmame
+    SUBDIR += sdlmess
     SUBDIR += sim
     SUBDIR += sim6811
     SUBDIR += ski
