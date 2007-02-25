@@ -7,7 +7,7 @@
 
 PORTNAME=	Thunar
 PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	${MASTER_SITES_XFCE}
 DIST_SUBDIR=	xfce4
@@ -134,7 +134,7 @@ post-patch:
 		${WRKSRC}/docs/Makefile.in
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 .if !defined(WITH_FAM)
-	@${REINPLACE_CMD} -e 's|gamin|no-gamin|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|gamin|no-gamin|g; s|fam|no-fam|g' ${WRKSRC}/configure
 .endif
 .if !defined(WITH_HAL)
 	@${REINPLACE_CMD} -e 's|hal-storage|no-hal-storage|g' ${WRKSRC}/configure
