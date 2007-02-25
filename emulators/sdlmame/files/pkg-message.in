@@ -1,0 +1,13 @@
+==============================================================================
+
+SDLMAME has been installed.
+
+The MAME tools are installed in "%%PREFIX%%/libexec/sdlmame"
+to avoid conflicting with other MAME ports.
+
+A wrapper script "sdlmame" has been installed. It creates a "~/.sdlmame"
+directory mirroring the directory tree under "%%DATADIR%%"
+when you run it for the first time, and starts the program from there. So
+place all MAME files (e.g. ROMs, cheats, etc.) in "~/.sdlmame".
+
+==============================================================================
