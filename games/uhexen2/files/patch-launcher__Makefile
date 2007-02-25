@@ -1,0 +1,31 @@
+--- ./launcher/Makefile.orig	Fri Oct  6 13:43:36 2006
++++ ./launcher/Makefile	Tue Jan  9 16:56:32 2007
+@@ -11,27 +11,11 @@
+ 
+ HOST_OS:=$(shell uname)
+ 
+-CC_DEFAULT:=gcc
+-ifeq ($(origin CC),environment)
+-CC_OVERRIDE:=1
+-ifeq ($(CC),)
+-CC_OVERRIDE:=
+-endif
+-endif
+-ifeq ($(origin CC),command line)
+-CC_OVERRIDE:=1
+-endif
+-ifeq ($(CC_OVERRIDE),)
+-CC := $(CC_DEFAULT)
+-endif
++CC ?= gcc
+ 
+ LINKER:= $(CC)
+ 
+-ifdef DEMO
+-TMPNAME:= h2demo
+-else
+ TMPNAME:= h2launcher
+-endif
+ 
+ ifdef GTK1
+ H2LAUNCH:= $(TMPNAME).gtk1

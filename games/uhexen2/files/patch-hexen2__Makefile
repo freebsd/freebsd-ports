@@ -1,0 +1,35 @@
+--- ./hexen2/Makefile.orig	Fri Oct  6 13:43:32 2006
++++ ./hexen2/Makefile	Tue Jan  9 16:56:32 2007
+@@ -89,11 +89,11 @@
+ USE_SDLAUDIO=yes
+ USE_MIDI=yes
+ USE_CDAUDIO=yes
+-USE_SDLCD=no
++USE_SDLCD=yes
+ WITH_SPLASHES=yes
+ OPT_EXTRA=yes
+ LINK_GL_LIBS=no
+-USE_X86_ASM=yes
++USE_X86_ASM?=no
+ 
+ # build environment sanity checks
+ ifeq ($(USE_X86_ASM),yes)
+@@ -125,7 +125,7 @@
+ #ARCHFLAGS:=
+ 
+ ifndef DEBUG
+-CFLAGS := $(CPUFLAGS) -O2 -Wall -ffast-math -fexpensive-optimizations
++CFLAGS := $(CFLAGS) $(CPUFLAGS) -O2 -Wall -ffast-math -fexpensive-optimizations
+ 
+ HAVE_GCC_4_0:=$(shell sh $(UHEXEN2_TOP)/scripts/gcc40check.sh $(CC))
+ DISABLE_UNIT_AT_A_TIME ?=$(HAVE_GCC_4_0)
+@@ -141,7 +141,9 @@
+ 
+ ifeq ($(OPT_EXTRA),yes)
+ # Note: re-check these flags for non-ia32 machines
++ifeq ($(MACH_TYPE),x86)
+ CFLAGS := $(CFLAGS) $(call check_gcc,-falign-loops=2 -falign-jumps=2 -falign-functions=2,-malign-loops=2 -malign-jumps=2 -malign-functions=2)
++endif
+ CFLAGS := $(CFLAGS) -fomit-frame-pointer
+ endif
+ endif
