@@ -9,21 +9,12 @@ PORTNAME?=	xmame
 PORTVERSION?=	0.106
 PORTREVISION?=	1
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.franksworld.org/dist/xmame/:xmame \
-		http://x.mame.net/download/:xmame \
-		http://www.energyhq.es.eu.org/files/:xmame \
-		http://www.energyhq.be/files/:xmame \
-		http://www.pkix.net/mirror/x.mame.net/:xmame \
-		http://www.franksworld.org/dist/xmame/:history \
-		http://www.arcade-history.com/download/:history \
-		http://www.energyhq.es.eu.org/files/:history \
-		http://www.franksworld.org/dist/xmame/:highscore \
-		http://www.mameworld.net/highscore/:highscore \
-		http://www.franksworld.org/dist/xmame/:cheat \
-		http://cheat.retrogames.com/:cheat
+MASTER_SITES=	http://www.franksworld.org/dist/xmame/ \
+		http://x.mame.net/download/ \
+		http://www.energyhq.es.eu.org/files/ \
+		http://www.energyhq.be/files/ \
+		http://www.pkix.net/mirror/x.mame.net/ \
 DISTNAME=	xmame-${XMAMEVERSION:S/.r/-rc/}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:xmame
-DIST_SUBDIR=	xmame
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	UNIX/X11 port of the Multi Arcade Machine Emulator (MAME)
@@ -54,7 +45,6 @@ OPTIONS=	SDL		"Use the SDL driver" on \
 		ASM68K		"Enable the speedier but buggy 68k emulator" off \
 		OPTIMIZATION	"Enable maximum C compiler optimization" off \
 		ESOUND		"Enable esound support" off \
-		DATFILES	"Installs additional information files" on \
 		NETWORK		"Include support for network play (**BROKEN**)" off
 
 XMAMEVERSION?=	${PORTVERSION}
@@ -126,38 +116,6 @@ BROKEN=		internal gcc error on FreeBSD < 6.x
 
 .if (${MAMEMESS} == "mess" && ${OSVERSION} >= 500000)
 USE_GCC=	3.4+
-.endif
-
-# Option WITH_DATFILES
-.if ${MAMEMESS} == "mame"
-
-.if defined(WITH_DATFILES)
-PLIST_SUB+=	DATFILES=""
-
-EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-
-HIVER=		0100
-HISTVER=	1_06a
-
-DISTFILES+=	uhsdat${HIVER}.zip:highscore \
-		history${HISTVER}.zip:history \
-		cheat.zip:cheat
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-
-post-extract:
-	cd ${WRKDIR} && \
-		${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/uhsdat${HIVER}.zip \
-			hiscore.dat
-	cd ${WRKDIR} && \
-		${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/history${HISTVER}.zip \
-			history.dat
-	cd ${WRKDIR} && \
-		${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/cheat.zip cheat.dat
-.else
-PLIST_SUB+=	DATFILES="@comment "
-.endif
-.else # xmess
-PLIST_SUB+=	DATFILES="@comment "
 .endif
 
 .if defined(WITH_ASM68K)
@@ -310,10 +268,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/mess/sysinfo.dat \
 				${DATADIR}/history.dat
 .endif
-.if ${MAMEMESS} == "mame" && defined(WITH_DATFILES)
-	${INSTALL_DATA} ${WRKDIR}/hiscore.dat ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/history.dat ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/cheat.dat ${DATADIR}
+.if ${MAMEMESS} == "mame"
+	@${ECHO_CMD}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 .endif
 
 .include <bsd.port.post.mk>

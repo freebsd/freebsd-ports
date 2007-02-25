@@ -52,9 +52,6 @@ etc/%%MAMEMESS%%rc.sample
 %%OPENGL%%%%DATADIR%%/cab/trans/trans.cab
 %%OPENGL%%@dirrm %%DATADIR%%/cab/trans
 %%OPENGL%%@dirrm %%DATADIR%%/cab
-%%DATFILES%%%%DATADIR%%/hiscore.dat
-%%DATFILES%%%%DATADIR%%/history.dat
-%%DATFILES%%%%DATADIR%%/cheat.dat
 @exec mkdir -p %D/%%DATADIR%%/roms || true
 @dirrm %%DATADIR%%/roms
 @dirrm %%DATADIR%%
