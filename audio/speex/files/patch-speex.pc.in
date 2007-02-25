@@ -1,0 +1,8 @@
+--- speex.pc.in.orig	Sun Feb 25 15:42:09 2007
++++ speex.pc.in	Sun Feb 25 15:43:14 2007
+@@ -11,4 +11,4 @@
+ Requires:
+ Conflicts:
+ Libs: -L${libdir} -lspeex
+-Cflags: -I${includedir}
++Cflags: -I${includedir} -I${includedir}/speex
