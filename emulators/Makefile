@@ -4,6 +4,7 @@
     COMMENT = Emulators for other operating systems
 
     SUBDIR += adamem
+    SUBDIR += advancemame
     SUBDIR += aftp
     SUBDIR += atari800
     SUBDIR += basiliskII
