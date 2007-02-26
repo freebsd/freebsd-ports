@@ -11,6 +11,7 @@ bin/perlbal
 %%SITE_PERL%%/Perlbal/HTTPHeaders.pm
 %%SITE_PERL%%/Perlbal/ManageCommand.pm
 %%SITE_PERL%%/Perlbal/Plugin/AccessControl.pm
+%%SITE_PERL%%/Perlbal/ChunkedUploadState.pm
 %%SITE_PERL%%/Perlbal/Plugin/EchoService.pm
 %%SITE_PERL%%/Perlbal/Plugin/Highpri.pm
 %%SITE_PERL%%/Perlbal/Plugin/Palimg.pm
