@@ -209,6 +209,8 @@
 %%IPPLANDIR%%/contrib/dumproute.sh
 %%IPPLANDIR%%/contrib/dumproute.txt
 %%IPPLANDIR%%/contrib/ipplan-poller.php
+%%IPPLANDIR%%/contrib/isc_dhcp1.xsl
+%%IPPLANDIR%%/contrib/isc_dhcp2.xsl
 %%IPPLANDIR%%/contrib/process-exports.pl
 %%IPPLANDIR%%/contrib/process-exports.txt
 %%IPPLANDIR%%/cookies.js
@@ -459,8 +461,8 @@
 %%IPPLANDIR%%/phpmailer.lang-en.php
 %%IPPLANDIR%%/phpserializer.js
 %%IPPLANDIR%%/schema.php
+%%IPPLANDIR%%/templates/display/basetemplate-dhcp.xml
 %%IPPLANDIR%%/templates/display/basetemplate.xml
-%%IPPLANDIR%%/templates/display/basetemplate.xml.dhcp
 %%IPPLANDIR%%/templates/display/custtemplate-ripe.xml
 %%IPPLANDIR%%/templates/display/custtemplate.xml
 %%IPPLANDIR%%/templates/display/fwdzonetemplate.xml
