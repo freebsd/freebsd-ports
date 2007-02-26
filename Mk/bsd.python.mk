@@ -386,6 +386,9 @@ PYDISTUTILS_CONFIGUREARGS?=
 PYDISTUTILS_BUILDARGS?=
 PYDISTUTILS_INSTALLARGS?=	-c -O1 --prefix=${PREFIX}
 
+# Fix for programs that build python from a GNU auto* enviornment
+CONFIGURE_ENV+=	PYTHON="${PYTHON_CMD}"
+
 # Zope-related variables
 .if defined(USE_ZOPE)
 .if ${ZOPE_VERSION} == "3.2"
