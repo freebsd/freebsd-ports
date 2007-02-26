@@ -3988,6 +3988,7 @@ gstreamer-plugins-faad80	ports/audio/gstreamer-plugins-faad80
 gstreamer-plugins-flac		ports/audio/gstreamer-plugins-flac
 gstreamer-plugins-flac80	ports/audio/gstreamer-plugins-flac80
 gstreamer-plugins-fluendo-mp3	ports/audio/gstreamer-plugins-fluendo-mp3
+gstreamer-plugins-fluendo-mpegdemux	ports/multimedia/gstreamer-plugins-fluendo-mpegdemux
 gstreamer-plugins-gconf		ports/devel/gstreamer-plugins-gconf
 gstreamer-plugins-gconf80	ports/devel/gstreamer-plugins-gconf80
 gstreamer-plugins-gdkpixbuf80	ports/graphics/gstreamer-plugins-gdkpixbuf80
