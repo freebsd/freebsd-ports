@@ -1,24 +1,24 @@
---- configure.orig	Sun Nov  5 05:57:07 2006
-+++ configure	Sun Nov  5 18:57:50 2006
-@@ -19366,7 +19366,7 @@
+--- configure.orig	Fri Feb 16 05:10:48 2007
++++ configure	Mon Feb 26 14:33:53 2007
+@@ -19459,7 +19459,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
-+LIBS="-pthread $LIBS"
++LIBS="%%PTHREAD_LIBS%%  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -19429,7 +19429,7 @@
+@@ -19522,7 +19522,7 @@
  #define HAVE_LIBPTHREAD 1
  _ACEOF
  
 -  LIBS="-lpthread $LIBS"
-+  LIBS="-pthread $LIBS"
++  LIBS="%%PTHREAD_LIBS%% $LIBS"
  
  else
    { { echo "$as_me:$LINENO: error: POSIX thread library is required" >&5
-@@ -19455,8 +19455,8 @@
+@@ -19548,8 +19548,8 @@
          else
                  svd_LDFLAGS=$LDFLAGS
                  svd_CPPFLAGS=$CPPFLAGS
@@ -29,7 +29,7 @@
  
  for ac_header in mysql.h
  do
-@@ -19604,9 +19604,9 @@
+@@ -19697,9 +19697,9 @@
  _ACEOF
  
                          mysql="yes"
