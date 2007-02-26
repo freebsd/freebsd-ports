@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.ahze.net/~ahze/distfiles/ \
 MASTER_SITE_SUBDIR=	ahze
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Pci.ids database from pciutils
+COMMENT=	Database of all known ID's used in PCI devices
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
