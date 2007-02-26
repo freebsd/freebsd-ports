@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Radiator
-PORTVERSION=	3.11
+PORTVERSION=	3.16
 CATEGORIES=	net
 MASTER_SITES=	# fetch manually
 EXTRACT_SUFX=	.tgz
@@ -14,6 +14,8 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	shanali@yahoo.com
 COMMENT=	Radiator Radius Server by Open System Consultants
+
+OPTIONS=        MYSQL "MySQL Support" off
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -32,6 +34,10 @@ IGNORE=		will not be automatically fetched due to licensing\
 		${DISTDIR}/${DIST_SUBDIR} and then restart this build. \
 		(optionally download patches-${PORTVERSION}.tar.gz to the \
 		same directory as well)
+.endif
+
+.if defined(WITH_MYSQL)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 pre-configure:
