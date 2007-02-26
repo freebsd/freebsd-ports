@@ -12,32 +12,41 @@ CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
 PKGNAMESUFFIX=	-xpi
-DISTNAME=	${PORTNAME}-${PORTVERSION}-tb-FreeBSD-${ARCH}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-tb-FreeBSD${OS_VER}-${ARCH}
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An integrated calendar for Thunderbird
 
 CONFLICTS=	lightning-0.[0-9]*
-ONLY_FOR_ARCHS=	i386 sparc64
 NO_BUILD=	yes
 USE_ZIP=	yes
 EXTRACT_AFTER_ARGS=	 -d ${WRKSRC}
 PLIST?=		${WRKDIR}/plist
 LIGHTNING_DIR=	lib/thunderbird/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}
 USE_GECKO=	thunderbird
+_IGNORE_MSG=	precompiled binaries, contact ahze@FreeBSD.org for build information
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 
-.if ${OSVERSION} < 600000
-IGNORE=	precompiled binaries for 6.x
-.endif
-
 .if ${ARCH}=="i386"
-ARCH_PORTVERSION=	0.3.1
+. if ${OSVERSION} < 600000 && ${OSVERSION} > 500000
+OS_VER=	5
+ARCH_PORTVERSION=0.3.1
+. elif ${OSVERSION} > 600000
+OS_VER=	6
+ARCH_PORTVERSION=0.3.1
+. else
+IGNORE=	${_IGNORE_MSG}
+. endif
 .elif ${ARCH}=="sparc64"
-ARCH_PORTVERSION=	0.3
+. if ${OSVERSION} > 600000
+OS_VER=	6
+ARCH_PORTVERSION=0.3
+. else
+IGNORE=	${_IGNORE_MSG}
+. endif
 .endif
 
 pre-install:
@@ -52,12 +61,5 @@ do-install:
 	${MKDIR} ${PREFIX}/${LIGHTNING_DIR}
 	${CHMOD} 0755 ${PREFIX}/${LIGHTNING_DIR}
 	@(cd ${WRKSRC} && ${PAX} -U ${LIBOWN} -G ${LIBGRP} -vrw . ${PREFIX}/${LIGHTNING_DIR})
-
-.if defined(MAKESUM)
-.undef DISTNAME
-.for arch in ${ONLY_FOR_ARCHS}
-DISTFILES+=	${PORTNAME}-${PORTVERSION}-tb-FreeBSD-${arch}${EXTRACT_SUFX}
-.endfor
-.endif
 
 .include <bsd.port.post.mk>
