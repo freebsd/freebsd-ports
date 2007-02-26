@@ -7,6 +7,7 @@
 
 PORTNAME?=	openacs
 PORTVERSION?=	5.3.0
+PORTREVISION?=	1
 CATEGORIES=	www
 MASTER_SITES?=	http://openacs.org/projects/openacs/download/download/
 EXTRACT_SUFX?=	.tgz?revision_id=583060
@@ -24,9 +25,9 @@ RUN_DEPENDS=	${AOLSERVERBASE}/bin/nscache.so:${PORTSDIR}/www/aolserver-nscache \
 USE_RC_SUBR?=	${PORTNAME}
 NO_BUILD=	yes
 
-OPENACS_USER?=  ${PORTNAME}
+OPENACS_USER?=	${PORTNAME}
 OPENACS_DB?=	${PORTNAME}
-OPENACS_GROUP?= www
+OPENACS_GROUP?=	www
 PGUSER?=	pgsql
 OPENACSBASE?=	${TARGETDIR}/openacs
 OPENACSNAME?=	OpenACS
@@ -44,7 +45,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=       ChangeLog readme.txt license.txt
+PORTDOCS=	ChangeLog readme.txt license.txt
 .endif
 
 OPTIONS=	EXAMPLES "Install various example files" on
