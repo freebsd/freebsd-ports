@@ -90,6 +90,7 @@
     SUBDIR += cog
     SUBDIR += colorize
     SUBDIR += comconsole
+    SUBDIR += comiccron
     SUBDIR += conky
     SUBDIR += consolehm
     SUBDIR += contool
