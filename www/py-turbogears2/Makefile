@@ -23,7 +23,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 # ${PYTHON_PKGNAMEPREFIX} is safe here, because we USE_PYTHON 2.4
 RUN_DEPENDS+=	kid:${PORTSDIR}/devel/py-kid \
 		paster:${PORTSDIR}/www/py-pastescript \
-		${PYTHON_SITELIBDIR}/simplejson-1.4-py2.4.egg:${PORTSDIR}/devel/py-simplejson \
+		${PYTHON_PKGNAMEPREFIX}simplejson>=1.4:${PORTSDIR}/devel/py-simplejson \
 		${PYTHON_PKGNAMEPREFIX}cheetah>=2.0.r7:${PORTSDIR}/devel/py-cheetah \
 		${PYTHON_PKGNAMEPREFIX}formencode>=0.6_1:${PORTSDIR}/www/py-formencode \
 		${PYTHON_PKGNAMEPREFIX}Paste>=1.1.1:${PORTSDIR}/www/py-paste \
