@@ -16,7 +16,7 @@ AWK=/usr/bin/awk
 CREATEUSERFLAGS="-A -d"
 
 # Check if PostgreSQL version is >= 8.1.0
-${LOCALBASE}/bin/postmaster -V | ${AWK} -F '[ .]' '{if ($3=8 && $4>=1) {exit 0} else {exit 1}}' && {
+${LOCALBASE}/bin/postmaster -V | ${AWK} -F '[ .]' '{if ($3==8 && $4>=1) {exit 0} else {exit 1}}' && {
 POSTGRESQL81=YES
 CREATEUSERFLAGS="-S -R -d"
 }
@@ -40,6 +40,6 @@ echo "**************************** NOTICE ****************************"
 echo "You have PostgreSQL 8.1 or greater installed."
 echo "Your may need to alter your PostgreSQL configuration."
 echo "Please read the instructions under the following URL:"
-echo "http://openacs.org/xowiki/en/How_to_install_in_Postgres_8.1.x"
+echo "http://openacs.org/xowiki/How_to_install_in_Postgres_8.x"
 echo "****************************************************************"
 }
