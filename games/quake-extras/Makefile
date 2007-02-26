@@ -8,8 +8,7 @@
 PORTNAME=	extras
 PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	http://www.fuhquake.net/files/extras/:fq \
-		http://gamefiles.blueyonder.co.uk/blueyondergames/quake/quakeworld/clients/fuhquake/addons/:fq \
+MASTER_SITES=	http://gamefiles.virginmedia.com/blueyondergames/quake/quakeworld/clients/fuhquake/addons/:fq \
 		http://facelift.quakedev.com/download/:rev
 PKGNAMEPREFIX=	${Q1PKGNAMEPREFIX}
 DISTFILES=	#
