@@ -1,26 +1,33 @@
---- configure	Sat Jun 10 15:25:54 2006
-+++ configure	Sun Jun 11 20:21:07 2006
-@@ -522,5 +522,5 @@
+--- configure.orig	Sat Oct 28 18:20:11 2006
++++ configure	Sun Feb 25 15:23:52 2007
+@@ -525,7 +525,7 @@
+ EOF
  fi
  
--f_inmakefiles="Makefile.in qtools/Makefile.in src/Makefile.in examples/Makefile.in doc/Makefile.in addon/doxywizard/Makefile.in addon/doxmlparser/src/Makefile.in addon/doxmlparser/test/Makefile.in addon/doxmlparser/examples/metrics/Makefile.in libpng/Makefile.in libmd5/Makefile.in"
-+f_inmakefiles="Makefile.in qtools/Makefile.in src/Makefile.in examples/Makefile.in doc/Makefile.in addon/doxywizard/Makefile.in addon/doxmlparser/src/Makefile.in addon/doxmlparser/test/Makefile.in addon/doxmlparser/examples/metrics/Makefile.in"
+-f_inmakefiles="Makefile.in qtools/Makefile.in src/Makefile.in examples/Makefile.in doc/Makefile.in addon/doxywizard/Makefile.in addon/doxmlparser/src/Makefile.in addon/doxmlparser/test/Makefile.in addon/doxmlparser/examples/metrics/Makefile.in libpng/Makefile.in libmd5/Makefile.in addon/doxyapp/Makefile.in"
++f_inmakefiles="Makefile.in qtools/Makefile.in src/Makefile.in examples/Makefile.in doc/Makefile.in addon/doxywizard/Makefile.in addon/doxmlparser/src/Makefile.in addon/doxmlparser/test/Makefile.in addon/doxmlparser/examples/metrics/Makefile.in addon/doxyapp/Makefile.in"
  
  for i in $f_inmakefiles ; do
-@@ -538,7 +538,5 @@
+      SRC=$i
+@@ -541,10 +541,8 @@
+      if test $i = Makefile.in; then
         echo "" >> $DST
         echo "all: src/version.cpp " >> $DST
 -       echo "	\$(MAKE) -C qtools" >> $DST
-+       echo "	\$(MAKE) -j2 -C qtools" >> $DST
 -       echo "	\$(MAKE) -C libpng" >> $DST
 -       echo "	\$(MAKE) -C libmd5" >> $DST
 -       echo "	\$(MAKE) -C src" >> $DST
++       echo "	\$(MAKE) -j2 -C qtools" >> $DST
 +       echo "	\$(MAKE) -j2 -C src" >> $DST
         if test $f_wizard = YES; then
-@@ -556,5 +553,5 @@
+          echo "	\$(MAKE) -C addon/doxywizard" >> $DST
+        fi
+@@ -562,7 +560,7 @@
+      echo "  Created $DST from $SRC..."
  done
  
--f_inprofiles="qtools/qtools.pro.in src/libdoxygen.pro.in src/libdoxycfg.pro.in src/doxygen.pro.in src/doxytag.pro.in addon/doxywizard/doxywizard.pro.in addon/doxmlparser/src/doxmlparser.pro.in addon/doxmlparser/test/xmlparse.pro.in addon/doxmlparser/examples/metrics/metrics.pro.in libpng/libpng.pro.in libmd5/libmd5.pro.in" 
-+f_inprofiles="qtools/qtools.pro.in src/libdoxygen.pro.in src/libdoxycfg.pro.in src/doxygen.pro.in src/doxytag.pro.in addon/doxywizard/doxywizard.pro.in addon/doxmlparser/src/doxmlparser.pro.in addon/doxmlparser/test/xmlparse.pro.in addon/doxmlparser/examples/metrics/metrics.pro.in" 
+-f_inprofiles="qtools/qtools.pro.in src/libdoxygen.pro.in src/libdoxycfg.pro.in src/doxygen.pro.in src/doxytag.pro.in addon/doxywizard/doxywizard.pro.in addon/doxmlparser/src/doxmlparser.pro.in addon/doxmlparser/test/xmlparse.pro.in addon/doxmlparser/examples/metrics/metrics.pro.in libpng/libpng.pro.in libmd5/libmd5.pro.in addon/doxyapp/doxyapp.pro.in" 
++f_inprofiles="qtools/qtools.pro.in src/libdoxygen.pro.in src/libdoxycfg.pro.in src/doxygen.pro.in src/doxytag.pro.in addon/doxywizard/doxywizard.pro.in addon/doxmlparser/src/doxmlparser.pro.in addon/doxmlparser/test/xmlparse.pro.in addon/doxmlparser/examples/metrics/metrics.pro.in addon/doxyapp/doxyapp.pro.in" 
  
  for i in $f_inprofiles ; do
+      SRC=$i
