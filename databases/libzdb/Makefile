@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libzdb
-PORTVERSION=	1.1.3
+PORTVERSION=	2.0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.tildeslash.com/libzdb/dist/
 
@@ -26,6 +26,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 OPTIONS=	MYSQL "Add MySQL support" on \
 		SQLITE " Add Sqlite support" on \
 		PGSQL "Add PgSQL support" on
+
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
