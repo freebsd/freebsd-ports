@@ -70,6 +70,7 @@
     SUBDIR += gstreamer-plugins-dv80
     SUBDIR += gstreamer-plugins-dvd
     SUBDIR += gstreamer-plugins-dvd80
+    SUBDIR += gstreamer-plugins-fluendo-mpegdemux
     SUBDIR += gstreamer-plugins-gnonlin
     SUBDIR += gstreamer-plugins-good
     SUBDIR += gstreamer-plugins-libfame80
