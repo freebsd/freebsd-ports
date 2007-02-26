@@ -1,0 +1,9 @@
+A sample configuration file has been installed in
+
+	%%PREFIX%%/etc/usogres.sample
+
+This file should be copied to
+
+	%%PREFIX%%/etc/usogres
+
+and edited to suit your desired setup.
