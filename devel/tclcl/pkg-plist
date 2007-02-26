@@ -1,13 +1,15 @@
 bin/otcldoc
 bin/tcl2c++
-include/idlecallback.h
-include/iohandler.h
-include/rate-variable.h
-include/tclcl-config.h
-include/tclcl-internal.h
-include/tclcl-mappings.h
-include/tclcl.h
-include/timer.h
-include/tracedvar.h
+include/tclcl/config.h
+include/tclcl/idlecallback.h
+include/tclcl/iohandler.h
+include/tclcl/rate-variable.h
+include/tclcl/tclcl-config.h
+include/tclcl/tclcl-internal.h
+include/tclcl/tclcl-mappings.h
+include/tclcl/tclcl.h
+include/tclcl/timer.h
+include/tclcl/tracedvar.h
 lib/libTcl.a
 lib/libtclcl.a
+@dirrm include/tclcl
