@@ -37,6 +37,53 @@ bin/freedroidRPG
 %%DATADIR%%/dialogs/StandardOldTownGateGuard.dialog
 %%DATADIR%%/dialogs/Stone.dialog
 %%DATADIR%%/dialogs/Tybalt.dialog
+%%DATADIR%%/dialogs/de/614.dialog
+%%DATADIR%%/dialogs/de/Bender.dialog
+%%DATADIR%%/dialogs/de/Benjamin.dialog
+%%DATADIR%%/dialogs/de/Bruce.dialog
+%%DATADIR%%/dialogs/de/Butch.dialog
+%%DATADIR%%/dialogs/de/Chandra.dialog
+%%DATADIR%%/dialogs/de/Darwin.dialog
+%%DATADIR%%/dialogs/de/Dixon.dialog
+%%DATADIR%%/dialogs/de/DocMoore.dialog
+%%DATADIR%%/dialogs/de/Duncan.dialog
+%%DATADIR%%/dialogs/de/Ernie.dialog
+%%DATADIR%%/dialogs/de/Ewald.dialog
+%%DATADIR%%/dialogs/de/Francis.dialog
+%%DATADIR%%/dialogs/de/Jack.dialog
+%%DATADIR%%/dialogs/de/Jasmine.dialog
+%%DATADIR%%/dialogs/de/Julie.dialog
+%%DATADIR%%/dialogs/de/Kevin.dialog
+%%DATADIR%%/dialogs/de/KevinGuard.dialog
+%%DATADIR%%/dialogs/de/Lukas.dialog
+%%DATADIR%%/dialogs/de/MER.dialog
+%%DATADIR%%/dialogs/de/MSFacilityGateGuardLeader.dialog
+%%DATADIR%%/dialogs/de/Melfis.dialog
+%%DATADIR%%/dialogs/de/Michelangelo.dialog
+%%DATADIR%%/dialogs/de/OldTownGateGuardLeader.dialog
+%%DATADIR%%/dialogs/de/Pendragon.dialog
+%%DATADIR%%/dialogs/de/RMS.dialog
+%%DATADIR%%/dialogs/de/Skippy.dialog
+%%DATADIR%%/dialogs/de/Sorenson.dialog
+%%DATADIR%%/dialogs/de/Spencer.dialog
+%%DATADIR%%/dialogs/de/Spencer1.dialog
+%%DATADIR%%/dialogs/de/StandardBotAfterTakeover.dialog
+%%DATADIR%%/dialogs/de/StandardMSFacilityGateGuard.dialog
+%%DATADIR%%/dialogs/de/StandardNewTownGateGuard.dialog
+%%DATADIR%%/dialogs/de/StandardOldTownGateGuard.dialog
+%%DATADIR%%/dialogs/de/Stone.dialog
+%%DATADIR%%/dialogs/de/Tybalt.dialog
+%%DATADIR%%/dialogs/de/subdlg_Benjamin.dialog
+%%DATADIR%%/dialogs/de/subdlg_Benjamin_bribe.dialog
+%%DATADIR%%/dialogs/de/subdlg_Butch.dialog
+%%DATADIR%%/dialogs/de/subdlg_Darwin.dialog
+%%DATADIR%%/dialogs/de/subdlg_Kevin.dialog
+%%DATADIR%%/dialogs/de/subdlg_Pendragon.dialog
+%%DATADIR%%/dialogs/de/subdlg_Sorenson.dialog
+%%DATADIR%%/dialogs/de/subdlg_Spencer_eval.dialog
+%%DATADIR%%/dialogs/de/subdlg_Spencer_funeral.dialog
+%%DATADIR%%/dialogs/de/subdlg_Stone.dialog
+%%DATADIR%%/dialogs/de/subdlg_kevin_reward1.dialog
 %%DATADIR%%/dialogs/subdlg_Benjamin.dialog
 %%DATADIR%%/dialogs/subdlg_Benjamin_bribe.dialog
 %%DATADIR%%/dialogs/subdlg_Butch.dialog
@@ -44,6 +91,7 @@ bin/freedroidRPG
 %%DATADIR%%/dialogs/subdlg_Kevin.dialog
 %%DATADIR%%/dialogs/subdlg_Pendragon.dialog
 %%DATADIR%%/dialogs/subdlg_Sorenson.dialog
+%%DATADIR%%/dialogs/subdlg_Spencer_eval.dialog
 %%DATADIR%%/dialogs/subdlg_Stone.dialog
 %%DATADIR%%/dialogs/subdlg_kevin_reward1.dialog
 %%DATADIR%%/graphics/backgrounds/LevelEditorBanner.png
@@ -61,6 +109,7 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/backgrounds/SkillExplanationScreen.png
 %%DATADIR%%/graphics/backgrounds/SkillScreen.png
 %%DATADIR%%/graphics/backgrounds/TransparentBluePlate.png
+%%DATADIR%%/graphics/backgrounds/TransparentGreyPlate.png
 %%DATADIR%%/graphics/backgrounds/TransparentPlate.png
 %%DATADIR%%/graphics/backgrounds/TransparentRedPlate.png
 %%DATADIR%%/graphics/backgrounds/character.png
@@ -5353,17 +5402,22 @@ bin/freedroidRPG
 %%DATADIR%%/graphics/tux_motion_parts/sword_motion/shield_items/iso_small_shield.tux_image_archive
 %%DATADIR%%/graphics/tux_motion_parts/sword_motion/shield_items/iso_standard_shield.tux_image_archive
 %%DATADIR%%/map/Asteroid.maps
-%%DATADIR%%/map/EndOfGame.title
 %%DATADIR%%/map/EventsAndEventTriggers
 %%DATADIR%%/map/QuestList
 %%DATADIR%%/map/ReturnOfTux.droids
-%%DATADIR%%/map/StartOfGame.title
-%%DATADIR%%/map/TakeoverInstructions.title
 %%DATADIR%%/map/freedroid.bullet_archetypes
 %%DATADIR%%/map/freedroid.droid_archetypes
 %%DATADIR%%/map/freedroid.item_archetypes
+%%DATADIR%%/map/freedroid.prefix_archetypes
 %%DATADIR%%/map/freedroid.ruleset
-%%DATADIR%%/map/level_editor_help.title
+%%DATADIR%%/map/titles/EndOfGame.title
+%%DATADIR%%/map/titles/StartOfGame.title
+%%DATADIR%%/map/titles/TakeoverInstructions.title
+%%DATADIR%%/map/titles/de/EndOfGame.title
+%%DATADIR%%/map/titles/de/StartOfGame.title
+%%DATADIR%%/map/titles/de/TakeoverInstructions.title
+%%DATADIR%%/map/titles/de/level_editor_help.title
+%%DATADIR%%/map/titles/level_editor_help.title
 %%DATADIR%%/sound/effects/Blast_Sound_0.wav
 %%DATADIR%%/sound/effects/Bullet_Reflected_Sound_0.wav
 %%DATADIR%%/sound/effects/CameraTakesPicture.wav
@@ -5511,249 +5565,6 @@ bin/freedroidRPG
 %%DATADIR%%/sound/music/temple.ogg
 %%DATADIR%%/sound/music/town.ogg
 %%DATADIR%%/sound/music/underground.ogg
-%%DATADIR%%/sound/speeches/Chandra/Tux_do_you_think.ogg
-%%DATADIR%%/sound/speeches/Chandra/Tux_hi_im_new.ogg
-%%DATADIR%%/sound/speeches/Chandra/Tux_i_got_to.ogg
-%%DATADIR%%/sound/speeches/Chandra/Tux_i_want_to.ogg
-%%DATADIR%%/sound/speeches/Chandra/Tux_no_i_meant.ogg
-%%DATADIR%%/sound/speeches/Chandra/Tux_so_whats_so.ogg
-%%DATADIR%%/sound/speeches/Chandra/Tux_what_can_you.ogg
-%%DATADIR%%/sound/speeches/Chandra/Tux_what_do_you.ogg
-%%DATADIR%%/sound/speeches/Chandra/Tux_where_can_i.ogg
-%%DATADIR%%/sound/speeches/Darwin/DAR_Cantfail2.ogg
-%%DATADIR%%/sound/speeches/Darwin/DAR_Collect_More2.ogg
-%%DATADIR%%/sound/speeches/Darwin/DAR_Combat2.ogg
-%%DATADIR%%/sound/speeches/Darwin/DAR_Droid2.ogg
-%%DATADIR%%/sound/speeches/Darwin/DAR_Entropy2.ogg
-%%DATADIR%%/sound/speeches/Darwin/DAR_Exp2.ogg
-%%DATADIR%%/sound/speeches/Darwin/DAR_Extract2.ogg
-%%DATADIR%%/sound/speeches/Darwin/DAR_Fee2.ogg
-%%DATADIR%%/sound/speeches/Darwin/DAR_Hello2.ogg
-%%DATADIR%%/sound/speeches/Darwin/DAR_Hunting2.ogg
-%%DATADIR%%/sound/speeches/Darwin/DAR_Luck2.ogg
-%%DATADIR%%/sound/speeches/Darwin/DAR_Matter_Anti2.ogg
-%%DATADIR%%/sound/speeches/Darwin/DAR_Money2.ogg
-%%DATADIR%%/sound/speeches/Darwin/DAR_Most_Important2.ogg
-%%DATADIR%%/sound/speeches/Darwin/DAR_Plasma2.ogg
-%%DATADIR%%/sound/speeches/Darwin/DAR_Sketch2.ogg
-%%DATADIR%%/sound/speeches/Darwin/DAR_Superconduct2.ogg
-%%DATADIR%%/sound/speeches/Darwin/DAR_Tachyon2.ogg
-%%DATADIR%%/sound/speeches/Darwin/Tux_Id_like_to_learn_more.ogg
-%%DATADIR%%/sound/speeches/Darwin/Tux_can_you_teach.ogg
-%%DATADIR%%/sound/speeches/Darwin/Tux_hi_im_new.ogg
-%%DATADIR%%/sound/speeches/Darwin/Tux_ill_be_going.ogg
-%%DATADIR%%/sound/speeches/Darwin/Tux_what_are_you.ogg
-%%DATADIR%%/sound/speeches/Dixon/DIX_are_you_sure.ogg
-%%DATADIR%%/sound/speeches/Dixon/DIX_basically_the_teleporter.ogg
-%%DATADIR%%/sound/speeches/Dixon/DIX_but_its_still.ogg
-%%DATADIR%%/sound/speeches/Dixon/DIX_great_i_appreciate.ogg
-%%DATADIR%%/sound/speeches/Dixon/DIX_have_you_found.ogg
-%%DATADIR%%/sound/speeches/Dixon/DIX_hello_and_welcome.ogg
-%%DATADIR%%/sound/speeches/Dixon/DIX_here_take_these.ogg
-%%DATADIR%%/sound/speeches/Dixon/DIX_i_must_have.ogg
-%%DATADIR%%/sound/speeches/Dixon/DIX_im_pretty_sure.ogg
-%%DATADIR%%/sound/speeches/Dixon/DIX_it_all_happend.ogg
-%%DATADIR%%/sound/speeches/Dixon/DIX_its_a_pitty.ogg
-%%DATADIR%%/sound/speeches/Dixon/DIX_keep_searching_i.ogg
-%%DATADIR%%/sound/speeches/Dixon/DIX_maybe_its_better.ogg
-%%DATADIR%%/sound/speeches/Dixon/DIX_oh_great_how.ogg
-%%DATADIR%%/sound/speeches/Dixon/DIX_on_the_contrary.ogg
-%%DATADIR%%/sound/speeches/Dixon/DIX_perhaps_later_when.ogg
-%%DATADIR%%/sound/speeches/Dixon/DIX_someone_needs_to.ogg
-%%DATADIR%%/sound/speeches/Dixon/DIX_the_person_responsible.ogg
-%%DATADIR%%/sound/speeches/Dixon/DIX_well_maybe_you.ogg
-%%DATADIR%%/sound/speeches/Dixon/DIX_with_this_ill.ogg
-%%DATADIR%%/sound/speeches/Dixon/DIX_you_know_just.ogg
-%%DATADIR%%/sound/speeches/Dixon/DIX_you_would_have.ogg
-%%DATADIR%%/sound/speeches/Dixon/Tux_about_this_toolset.ogg
-%%DATADIR%%/sound/speeches/Dixon/Tux_hi_im_new.ogg
-%%DATADIR%%/sound/speeches/Dixon/Tux_i_have_found.ogg
-%%DATADIR%%/sound/speeches/Dixon/Tux_ill_go_give.ogg
-%%DATADIR%%/sound/speeches/Dixon/Tux_is_everything_alright.ogg
-%%DATADIR%%/sound/speeches/Dixon/Tux_maybe_i_can.ogg
-%%DATADIR%%/sound/speeches/Dixon/Tux_no_i_havent.ogg
-%%DATADIR%%/sound/speeches/Dixon/Tux_see_you_later.ogg
-%%DATADIR%%/sound/speeches/Dixon/Tux_sorry_this_does.ogg
-%%DATADIR%%/sound/speeches/DocMoore/DocMoore_But_If_You_Should.ogg
-%%DATADIR%%/sound/speeches/DocMoore/DocMoore_But_Remember.ogg
-%%DATADIR%%/sound/speeches/DocMoore/DocMoore_He_Took_Them_Again.ogg
-%%DATADIR%%/sound/speeches/DocMoore/DocMoore_He_Took_These_Stupid.ogg
-%%DATADIR%%/sound/speeches/DocMoore/DocMoore_He_Wont_Get_Anything.ogg
-%%DATADIR%%/sound/speeches/DocMoore/DocMoore_Hi_Im_Doc_Moore.ogg
-%%DATADIR%%/sound/speeches/DocMoore/DocMoore_However_Self_Inflicted.ogg
-%%DATADIR%%/sound/speeches/DocMoore/DocMoore_If_You_Poison_Yourself_Again.ogg
-%%DATADIR%%/sound/speeches/DocMoore/DocMoore_Now_Here_Take.ogg
-%%DATADIR%%/sound/speeches/DocMoore/DocMoore_Now_You_See_That_Idiotic.ogg
-%%DATADIR%%/sound/speeches/DocMoore/DocMoore_Oh_No_Not_Another_One.ogg
-%%DATADIR%%/sound/speeches/DocMoore/DocMoore_See_You_Later.ogg
-%%DATADIR%%/sound/speeches/DocMoore/DocMoore_Should_You_Take.ogg
-%%DATADIR%%/sound/speeches/DocMoore/DocMoore_Since_This_Invention.ogg
-%%DATADIR%%/sound/speeches/DocMoore/DocMoore_Sorry_But_Ive_Already.ogg
-%%DATADIR%%/sound/speeches/DocMoore/DocMoore_Strength_Pills_Are_Only.ogg
-%%DATADIR%%/sound/speeches/DocMoore/DocMoore_Sure_As_The_Only_Doctor.ogg
-%%DATADIR%%/sound/speeches/DocMoore/DocMoore_Sure_Heres_What_I_Can_Offer.ogg
-%%DATADIR%%/sound/speeches/DocMoore/DocMoore_Taking_This_Stuff.ogg
-%%DATADIR%%/sound/speeches/DocMoore/DocMoore_The_Machines_Connect.ogg
-%%DATADIR%%/sound/speeches/DocMoore/DocMoore_There_Its_Done.ogg
-%%DATADIR%%/sound/speeches/DocMoore/DocMoore_These_Pills_Work.ogg
-%%DATADIR%%/sound/speeches/DocMoore/DocMoore_Three_Kinds.ogg
-%%DATADIR%%/sound/speeches/DocMoore/Tux_Do_You_Also_Trade_In_Medical_Equippment.ogg
-%%DATADIR%%/sound/speeches/DocMoore/Tux_Hello.ogg
-%%DATADIR%%/sound/speeches/DocMoore/Tux_I_Took_Some_Of_Those_Brain_Enlargement_Pills.ogg
-%%DATADIR%%/sound/speeches/DocMoore/Tux_What_Can_You_Tell_Me_About_Strength_Pills.ogg
-%%DATADIR%%/sound/speeches/DocMoore/Tux_can_you_fix.ogg
-%%DATADIR%%/sound/speeches/Francis/Tux_how_could_the.ogg
-%%DATADIR%%/sound/speeches/Francis/Tux_i_want_to.ogg
-%%DATADIR%%/sound/speeches/Francis/Tux_thanks_for_the_help.ogg
-%%DATADIR%%/sound/speeches/Francis/Tux_what_became_of.ogg
-%%DATADIR%%/sound/speeches/Francis/Tux_what_has_happened.ogg
-%%DATADIR%%/sound/speeches/Francis/Tux_what_is_your.ogg
-%%DATADIR%%/sound/speeches/Francis/Tux_where_am_i.ogg
-%%DATADIR%%/sound/speeches/Francis/Tux_where_can_i.ogg
-%%DATADIR%%/sound/speeches/Francis/Tux_why_are_you.ogg
-%%DATADIR%%/sound/speeches/Guards/Tux_Id_like_to_get_into_town.ogg
-%%DATADIR%%/sound/speeches/Guards/Tux_Ill_be_going_then.ogg
-%%DATADIR%%/sound/speeches/Guards/Tux_Im_here_to_assassinate.ogg
-%%DATADIR%%/sound/speeches/Guards/Tux_just_taking_a_look_around.ogg
-%%DATADIR%%/sound/speeches/Kevin/Tux_about_that_project.ogg
-%%DATADIR%%/sound/speeches/Kevin/Tux_hi_im_new.ogg
-%%DATADIR%%/sound/speeches/Kevin/Tux_how_about_some.ogg
-%%DATADIR%%/sound/speeches/Kevin/Tux_ill_be_off.ogg
-%%DATADIR%%/sound/speeches/Kevin/Tux_ill_see_after.ogg
-%%DATADIR%%/sound/speeches/Kevin/Tux_im_sorry_but.ogg
-%%DATADIR%%/sound/speeches/Kevin/Tux_maybe_i_can.ogg
-%%DATADIR%%/sound/speeches/Kevin/Tux_what_can_you.ogg
-%%DATADIR%%/sound/speeches/Melfis/Tux_cant_i_somehow.ogg
-%%DATADIR%%/sound/speeches/Melfis/Tux_hi_im_new.ogg
-%%DATADIR%%/sound/speeches/Melfis/Tux_i_need_to.ogg
-%%DATADIR%%/sound/speeches/Melfis/Tux_what_are_you.ogg
-%%DATADIR%%/sound/speeches/Michelangelo/Tux_about_those_energy.ogg
-%%DATADIR%%/sound/speeches/Michelangelo/Tux_hi_im_new.ogg
-%%DATADIR%%/sound/speeches/Michelangelo/Tux_how_is_it.ogg
-%%DATADIR%%/sound/speeches/Michelangelo/Tux_ill_be_going.ogg
-%%DATADIR%%/sound/speeches/Michelangelo/Tux_ill_go_fetch.ogg
-%%DATADIR%%/sound/speeches/Michelangelo/Tux_ive_got_some.ogg
-%%DATADIR%%/sound/speeches/Michelangelo/Tux_maybe_i_can.ogg
-%%DATADIR%%/sound/speeches/Michelangelo/Tux_now_about_that.ogg
-%%DATADIR%%/sound/speeches/Michelangelo/Tux_sorry_no_time.ogg
-%%DATADIR%%/sound/speeches/Michelangelo/Tux_why_didnt_you.ogg
-%%DATADIR%%/sound/speeches/OldTown614Guard/614_but_dont_worry.ogg
-%%DATADIR%%/sound/speeches/OldTown614Guard/614_dont_forget_to.ogg
-%%DATADIR%%/sound/speeches/OldTown614Guard/614_even_though_discontinued.ogg
-%%DATADIR%%/sound/speeches/OldTown614Guard/614_i_am_a.ogg
-%%DATADIR%%/sound/speeches/OldTown614Guard/614_i_belong_to.ogg
-%%DATADIR%%/sound/speeches/OldTown614Guard/614_i_belong_to2.ogg
-%%DATADIR%%/sound/speeches/OldTown614Guard/614_it_is_considered.ogg
-%%DATADIR%%/sound/speeches/OldTown614Guard/614_it_is_mainly.ogg
-%%DATADIR%%/sound/speeches/OldTown614Guard/614_mostly_the_rms.ogg
-%%DATADIR%%/sound/speeches/OldTown614Guard/614_my_orders_are.ogg
-%%DATADIR%%/sound/speeches/OldTown614Guard/614_no_the_ms.ogg
-%%DATADIR%%/sound/speeches/OldTown614Guard/614_none_of_the.ogg
-%%DATADIR%%/sound/speeches/OldTown614Guard/614_the_official_manual.ogg
-%%DATADIR%%/sound/speeches/OldTown614Guard/614_this_has_top.ogg
-%%DATADIR%%/sound/speeches/OldTown614Guard/614_this_is_because.ogg
-%%DATADIR%%/sound/speeches/OldTown614Guard/614_today_it_is.ogg
-%%DATADIR%%/sound/speeches/OldTown614Guard/Tux_have_you_detected.ogg
-%%DATADIR%%/sound/speeches/OldTown614Guard/Tux_see_you_later.ogg
-%%DATADIR%%/sound/speeches/OldTown614Guard/Tux_what_are_your.ogg
-%%DATADIR%%/sound/speeches/OldTown614Guard/Tux_what_can_you.ogg
-%%DATADIR%%/sound/speeches/OldTown614Guard/Tux_who_are_you.ogg
-%%DATADIR%%/sound/speeches/OldTown614Guard/Tux_who_is_working.ogg
-%%DATADIR%%/sound/speeches/OldTown614Guard/Tux_why_are_you.ogg
-%%DATADIR%%/sound/speeches/PEN_First_Collect_More_0.ogg
-%%DATADIR%%/sound/speeches/PEN_Good_Decision_0.ogg
-%%DATADIR%%/sound/speeches/PEN_Haha_0.ogg
-%%DATADIR%%/sound/speeches/PEN_Hold_It_Too_0.ogg
-%%DATADIR%%/sound/speeches/PEN_Im_Not_Entitled_0.ogg
-%%DATADIR%%/sound/speeches/PEN_Normally_Im_A_0.ogg
-%%DATADIR%%/sound/speeches/PEN_Now_Youve_Already_0.ogg
-%%DATADIR%%/sound/speeches/PEN_Really_Im_Not_0.ogg
-%%DATADIR%%/sound/speeches/PEN_The_Most_Important_0.ogg
-%%DATADIR%%/sound/speeches/PEN_To_Become_More_0.ogg
-%%DATADIR%%/sound/speeches/PEN_Well_I_Dont_0.ogg
-%%DATADIR%%/sound/speeches/PEN_When_He_Says_0.ogg
-%%DATADIR%%/sound/speeches/PEN_You_Already_Know_0.ogg
-%%DATADIR%%/sound/speeches/PEN_You_Dont_Have_0.ogg
-%%DATADIR%%/sound/speeches/PEN_You_Dont_Money_0.ogg
-%%DATADIR%%/sound/speeches/PEN_You_Should_First_0.ogg
-%%DATADIR%%/sound/speeches/PEN_Youre_Very_Ambitious_0.ogg
-%%DATADIR%%/sound/speeches/RMS_Alas_That_Time_0.ogg
-%%DATADIR%%/sound/speeches/RMS_And_Now_They_0.ogg
-%%DATADIR%%/sound/speeches/RMS_And_Particularly_Free_0.ogg
-%%DATADIR%%/sound/speeches/RMS_One_Of_The_0.ogg
-%%DATADIR%%/sound/speeches/RMS_Some_Local_Copies_0.ogg
-%%DATADIR%%/sound/speeches/RMS_This_Monopoly_They_0.ogg
-%%DATADIR%%/sound/speeches/RMS_Welcome_Then_Im_0.ogg
-%%DATADIR%%/sound/speeches/SOR_First_Collect_More_0.ogg
-%%DATADIR%%/sound/speeches/SOR_I_Could_Also_0.ogg
-%%DATADIR%%/sound/speeches/SOR_I_Could_Help_0.ogg
-%%DATADIR%%/sound/speeches/SOR_I_Hope_You_0.ogg
-%%DATADIR%%/sound/speeches/SOR_Just_A_Moment_0.ogg
-%%DATADIR%%/sound/speeches/SOR_Now_What_Will_0.ogg
-%%DATADIR%%/sound/speeches/SOR_That_Depends_What_0.ogg
-%%DATADIR%%/sound/speeches/SOR_The_Ability_To_0.ogg
-%%DATADIR%%/sound/speeches/SOR_The_ForceCapacity_Of_0.ogg
-%%DATADIR%%/sound/speeches/SOR_Welcome_Then_To_0.ogg
-%%DATADIR%%/sound/speeches/SOR_You_Dont_Have_0.ogg
-%%DATADIR%%/sound/speeches/SOR_You_Dont_Money_0.ogg
-%%DATADIR%%/sound/speeches/SOR_Your_Spellcasting_Ability_0.ogg
-%%DATADIR%%/sound/speeches/STO_Good_Here_Is_0.ogg
-%%DATADIR%%/sound/speeches/STO_Good_Lets_See_0.ogg
-%%DATADIR%%/sound/speeches/STO_Goodbye_Love_0.ogg
-%%DATADIR%%/sound/speeches/STO_Sorry_But_Repair_0.ogg
-%%DATADIR%%/sound/speeches/STO_Sorry_But_You_0.ogg
-%%DATADIR%%/sound/speeches/STO_Sure_But_This_0.ogg
-%%DATADIR%%/sound/speeches/STO_Welcome_To_This_0.ogg
-%%DATADIR%%/sound/speeches/STO_Which_Of_Repair_0.ogg
-%%DATADIR%%/sound/speeches/STO_Which_Of_Your_0.ogg
-%%DATADIR%%/sound/speeches/STO_You_Cant_Buy_0.ogg
-%%DATADIR%%/sound/speeches/STO_You_Cant_Identified_0.ogg
-%%DATADIR%%/sound/speeches/STO_You_Cant_Repaired_0.ogg
-%%DATADIR%%/sound/speeches/STO_You_Dont_Have_0.ogg
-%%DATADIR%%/sound/speeches/STO_You_Must_First_0.ogg
-%%DATADIR%%/sound/speeches/Spencer/Tux_have_i_done.ogg
-%%DATADIR%%/sound/speeches/Spencer/Tux_hi_im_new.ogg
-%%DATADIR%%/sound/speeches/Spencer/Tux_how_is_it.ogg
-%%DATADIR%%/sound/speeches/Spencer/Tux_i_dont_feel.ogg
-%%DATADIR%%/sound/speeches/Spencer/Tux_i_need_to.ogg
-%%DATADIR%%/sound/speeches/Spencer/Tux_id_like_to.ogg
-%%DATADIR%%/sound/speeches/Spencer/Tux_ill_be_going.ogg
-%%DATADIR%%/sound/speeches/Spencer/Tux_ive_heard_richard.ogg
-%%DATADIR%%/sound/speeches/Spencer/Tux_maybe_i_could.ogg
-%%DATADIR%%/sound/speeches/Spencer/Tux_ok_ill_be.ogg
-%%DATADIR%%/sound/speeches/Spencer/Tux_what_about_some.ogg
-%%DATADIR%%/sound/speeches/Spencer/Tux_what_must_i.ogg
-%%DATADIR%%/sound/speeches/Tux_Goodbye_0.ogg
-%%DATADIR%%/sound/speeches/Tux_Hi_Im_New_0.ogg
-%%DATADIR%%/sound/speeches/Tux_Hold_On_I_0.ogg
-%%DATADIR%%/sound/speeches/Tux_Ill_Be_Back_0.ogg
-%%DATADIR%%/sound/speeches/Tux_PEN_Do_You_Also_0.ogg
-%%DATADIR%%/sound/speeches/Tux_PEN_I_Want_Master_0.ogg
-%%DATADIR%%/sound/speeches/Tux_PEN_I_Want_To_0.ogg
-%%DATADIR%%/sound/speeches/Tux_RMS_So_0.ogg
-%%DATADIR%%/sound/speeches/Tux_RMS_What_Are_These_0.ogg
-%%DATADIR%%/sound/speeches/Tux_RMS_Why_Did_The_0.ogg
-%%DATADIR%%/sound/speeches/Tux_SOR_I_Want_Learn_0.ogg
-%%DATADIR%%/sound/speeches/Tux_SOR_What_Can_You_0.ogg
-%%DATADIR%%/sound/speeches/Tux_STO_Can_You_Identify_0.ogg
-%%DATADIR%%/sound/speeches/Tux_STO_Do_You_Also_0.ogg
-%%DATADIR%%/sound/speeches/Tux_STO_I_Would_Like_0.ogg
-%%DATADIR%%/sound/speeches/Tux_STO_I_Would_Rid_0.ogg
-%%DATADIR%%/sound/speeches/Tux_STO_Some_Of_My_0.ogg
-%%DATADIR%%/sound/speeches/Tux_See_You_Later_0.ogg
-%%DATADIR%%/sound/speeches/Tux_Why_Did_I_0.ogg
-@dirrm %%DATADIR%%/sound/speeches/Spencer
-@dirrm %%DATADIR%%/sound/speeches/OldTown614Guard
-@dirrm %%DATADIR%%/sound/speeches/Michelangelo
-@dirrm %%DATADIR%%/sound/speeches/Melfis
-@dirrm %%DATADIR%%/sound/speeches/Kevin
-@dirrm %%DATADIR%%/sound/speeches/Guards
-@dirrm %%DATADIR%%/sound/speeches/Francis
-@dirrm %%DATADIR%%/sound/speeches/DocMoore
-@dirrm %%DATADIR%%/sound/speeches/Dixon
-@dirrm %%DATADIR%%/sound/speeches/Darwin
-@dirrm %%DATADIR%%/sound/speeches/Chandra
-@dirrm %%DATADIR%%/sound/speeches
 @dirrm %%DATADIR%%/sound/music
 @dirrm %%DATADIR%%/sound/effects/tux_ingame_comments
 @dirrm %%DATADIR%%/sound/effects/item_sounds
@@ -5761,8 +5572,9 @@ bin/freedroidRPG
 @dirrm %%DATADIR%%/sound/effects/bot_sounds
 @dirrm %%DATADIR%%/sound/effects
 @dirrm %%DATADIR%%/sound
+@dirrm %%DATADIR%%/map/titles/de
+@dirrm %%DATADIR%%/map/titles
 @dirrm %%DATADIR%%/map
-@dirrm %%DATADIR%%/graphics/wm_icon
 @dirrm %%DATADIR%%/graphics/tux_motion_parts/sword_motion/shield_items
 @dirrm %%DATADIR%%/graphics/tux_motion_parts/sword_motion
 @dirrm %%DATADIR%%/graphics/tux_motion_parts/gun_motion/shield_items
@@ -5770,18 +5582,9 @@ bin/freedroidRPG
 @dirrm %%DATADIR%%/graphics/tux_motion_parts
 @dirrm %%DATADIR%%/graphics/tux_flags
 @dirrm %%DATADIR%%/graphics/skill_icons
-@dirrm %%DATADIR%%/graphics/rotation_models/portraits
-@dirrm %%DATADIR%%/graphics/rotation_models/items/item_blender_sources
-@dirrm %%DATADIR%%/graphics/rotation_models/items
-@dirrm %%DATADIR%%/graphics/rotation_models
-@dirrm %%DATADIR%%/graphics/portraits
-@dirrm %%DATADIR%%/graphics/para90_theme
 @dirrm %%DATADIR%%/graphics/obstacles
 @dirrm %%DATADIR%%/graphics/mouse_buttons
-@dirrm %%DATADIR%%/graphics/map_inserts/BlenderSources
-@dirrm %%DATADIR%%/graphics/map_inserts
 @dirrm %%DATADIR%%/graphics/light_radius_chunks
-@dirrm %%DATADIR%%/graphics/lanzz_theme/single_map_tiles
 @dirrm %%DATADIR%%/graphics/lanzz_theme
 @dirrm %%DATADIR%%/graphics/items/wheel_drive
 @dirrm %%DATADIR%%/graphics/items/warrior_wristband
@@ -5807,9 +5610,6 @@ bin/freedroidRPG
 @dirrm %%DATADIR%%/graphics/items/monkey_wrench
 @dirrm %%DATADIR%%/graphics/items/map_maker
 @dirrm %%DATADIR%%/graphics/items/mace
-@dirrm %%DATADIR%%/graphics/items/light_sabre_yellow
-@dirrm %%DATADIR%%/graphics/items/light_sabre_red
-@dirrm %%DATADIR%%/graphics/items/light_sabre_green
 @dirrm %%DATADIR%%/graphics/items/laser_sword_yellow
 @dirrm %%DATADIR%%/graphics/items/laser_sword_red
 @dirrm %%DATADIR%%/graphics/items/laser_sword_green
@@ -5854,7 +5654,6 @@ bin/freedroidRPG
 @dirrm %%DATADIR%%/graphics/items
 @dirrm %%DATADIR%%/graphics/font
 @dirrm %%DATADIR%%/graphics/floor_tiles
-@dirrm %%DATADIR%%/graphics/floor
 @dirrm %%DATADIR%%/graphics/droids/red_guard
 @dirrm %%DATADIR%%/graphics/droids/professor
 @dirrm %%DATADIR%%/graphics/droids/kevin
@@ -5890,14 +5689,12 @@ bin/freedroidRPG
 @dirrm %%DATADIR%%/graphics/droids/247
 @dirrm %%DATADIR%%/graphics/droids/139
 @dirrm %%DATADIR%%/graphics/droids/123
-@dirrm %%DATADIR%%/graphics/droids/001
 @dirrm %%DATADIR%%/graphics/droids
-@dirrm %%DATADIR%%/graphics/default_theme
-@dirrm %%DATADIR%%/graphics/classic_theme
 @dirrm %%DATADIR%%/graphics/bullets
 @dirrm %%DATADIR%%/graphics/blender_sources
 @dirrm %%DATADIR%%/graphics/blasts
 @dirrm %%DATADIR%%/graphics/backgrounds
 @dirrm %%DATADIR%%/graphics
+@dirrm %%DATADIR%%/dialogs/de
 @dirrm %%DATADIR%%/dialogs
 @dirrm %%DATADIR%%

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freedroidrpg
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freedroid
@@ -29,10 +29,6 @@ OPTIONS=	BACKTRACE "Use backtrace() to generate nice bug reports" on \
 		OPENGL "Enable the OpenGL support (highly recommended!)" on
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		does not compile on FreeBSD < 5.X (missing fenv.h)
-.endif
 
 .if !defined(WITHOUT_BACKTRACE)
 LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
