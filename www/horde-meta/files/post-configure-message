@@ -1,0 +1,6 @@
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Configuration step finished. Run 'make install' to install the rest of the
+modules you selected. Run 'make clean && make config' to re-enter the
+configuration. Please note that you CANNOT REMOVE modules through this menu
+system, use pkg_delete instead.
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

@@ -187,6 +187,7 @@
     SUBDIR += hiawatha
     SUBDIR += hinventory-client
     SUBDIR += horde-base
+    SUBDIR += horde-meta
     SUBDIR += horde-passwd
     SUBDIR += hotjava
     SUBDIR += htdump
