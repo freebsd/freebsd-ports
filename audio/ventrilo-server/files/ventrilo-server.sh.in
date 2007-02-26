@@ -1,8 +1,10 @@
 #!/bin/sh
 
+# $FreeBSD$
+
 # PROVIDE: ventrilo
 # REQUIRE: NETWORKING
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 [ -z "${ventrilo_enable}" ] && ventrilo_enable="NO"
 [ -z "${ventrilo_port}" ] && ventrilo_port="3784"

@@ -1,14 +1,15 @@
 #!/bin/sh
-# 
+
+# $FreeBSD$
 
 # PROVIDE: sensor_agent
 # REQUIRE: DAEMON
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 # Add the following lines to /etc/rc.conf to enable sensor_agent:
 # sensor_agent_enable (bool):	Set to YES to enable sensor_agent
 # 				Default: NO
-# sensor_agent_flags (str):         Extra flags passed to sensor_agent
+# sensor_agent_flags (str):     Extra flags passed to sensor_agent
 #                               Default: -D
 # sensor_agent_conf (str):	Sensor_agent configuration file
 #				Default: %%PREFIX%%/etc/sensor_agent.conf
