@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	noip
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.4
 CATEGORIES=	dns
 MASTER_SITES=	http://www.no-ip.com/client/linux/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
