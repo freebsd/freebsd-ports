@@ -42,17 +42,11 @@ lib/%%PYTHON_VERSION%%/site-packages/validate.pyo
 %%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image013.gif
 %%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image014.gif
 %%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image015.gif
-%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image015.jpg
 %%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image016.gif
-%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image016.jpg
 %%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image017.gif
-%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image017.jpg
 %%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image018.gif
-%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image018.jpg
 %%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image019.gif
-%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image019.jpg
 %%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image020.gif
-%%PORTDOCS%%%%DOCSDIR%%/tutorial_files/image020.jpg
 %%PORTDOCS%%%%DOCSDIR%%/tutorial.htm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tutorial_files
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
