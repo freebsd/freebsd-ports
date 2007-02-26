@@ -7,20 +7,18 @@
 
 PORTNAME=	usogres
 PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://usogres.good-day.net/download/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Real-time backup utility for PostgreSQL
 
-BROKEN=		Leaves behind config file on deinstall
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2007-04-10
-
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 # To avoid syslogd load, add this parameter.
 #MAKE_ARGS=	NDEBUG=yes
@@ -29,7 +27,6 @@ post-patch:
 	cd ${WRKSRC}; ${CP} usogresrc usogresrc.sample
 
 post-install:
-	[ -f ${PREFIX}/etc/usogresrc ] || \
-		${INSTALL_DATA} ${WRKSRC}/usogresrc ${PREFIX}/etc
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
