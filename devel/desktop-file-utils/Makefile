@@ -18,9 +18,9 @@ LIB_DEPENDS=		popt:${PORTSDIR}/devel/popt
 USE_GNOME=		glib20
 WANT_GNOME=		yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=		--with-lispdir=${PREFIX}/share/emacs/site-lisp
+CONFIGURE_ARGS=		--without-lispdir
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" EMACS="no"
 
 PKGINSTALL=		${WRKDIR}/pkg-install
 PKGDEINSTALL=		${WRKDIR}/pkg-deinstall
