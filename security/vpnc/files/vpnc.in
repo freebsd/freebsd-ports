@@ -1,0 +1,95 @@
+#!/bin/sh
+#
+# Author:	kamikaze
+# Contact:	LoN_Kamikaze@gmx.de
+#
+# If vpnc_conf is defined, it will be treated as a list of configuration files
+# in vpnc_conf_dir. This managed mode is useful where where vpnc tunnels have
+# to be established through other vpnc tunnels.
+#
+
+# PROVIDE: vpnc
+# REQUIRE: NETWORKING
+# KEYWORD: FreeBSD shutdown
+
+# Default settings - don't change this.
+: ${vpnc_enable="NO"}
+: ${vpnc_conf=""}
+: ${vpnc_pid_dir="/var/run"}
+: ${vpnc_conf_dir="%%PREFIX%%/etc"}
+: ${vpnc_flags=""}
+: ${vpnc_record="$vpnc_pid_dir/vpnc.record"}
+
+. /etc/rc.subr
+
+name="vpnc"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/$name"
+
+vpnc_start() {
+	if [ "$vpnc_conf" ]; then
+		# A list of configurations is present. Connect managing
+		# what is required for a clean shutdown later.
+		for config in $vpnc_conf; {
+			# The current configuration file.
+			current="$vpnc_conf_dir/$config"
+			# Start vpnc.
+			$command $current $vpnc_flags
+
+			# Give up on errors.
+			status=$?
+			if [ $status -ne 0 ]; then
+				echo "Running 'vpnc $current $vpnc_flags' failed."
+				return $status
+			fi
+
+			# Move files to allow a clean shutdown
+			# of multiple connections.
+			/bin/mv "$vpnc_pid_dir/vpnc.pid" "$vpnc_pid_dir/vpnc.$config.pid"
+			/bin/mv "$vpnc_pid_dir/vpnc.defaultroute" "$vpnc_pid_dir/vpnc.$config.defaultroute" 2> /dev/null
+			/bin/mv "$vpnc_pid_dir/vpnc.resolv.conf-backup" "$vpnc_pid_dir/vpnc.$config.resolv.conf-backup" 2> /dev/null
+			echo "$config" >> "$vpnc_record"
+
+			# Wait for the system to catch up.
+			/bin/sleep 1
+		}
+	else
+		# No configuration files given, run unmanaged.
+		$command $vpnc_flags
+		return $?
+	fi
+}
+
+vpnc_stop() {
+	if [ -e "$vpnc_record" ]; then
+		# A record of vpnc connections is present. Attempt a
+		# managed shutdown.
+		for config in `/usr/bin/tail -r "$vpnc_record"`; {
+			# Wait to give the system a chance to catch up with
+			# recent changes.
+			/bin/sleep 1
+
+			# Move the vpnc files back into position.
+			/bin/mv "$vpnc_pid_dir/vpnc.$config.pid" "$vpnc_pid_dir/vpnc.pid"
+			/bin/mv "$vpnc_pid_dir/vpnc.$config.defaultroute" "$vpnc_pid_dir/vpnc.defaultroute" 2> /dev/null
+			/bin/mv "$vpnc_pid_dir/vpnc.$config.resolv.conf-backup" "$vpnc_pid_dir/vpnc.resolv.conf-backup" 2> /dev/null
+
+			# Run the disconnect command.
+			$command-disconnect
+		}
+		# Remove the connection record.
+		/bin/rm "$vpnc_record"
+	else
+		/bin/sleep 1
+		# There's no record of connections, asume unmanaged shutdown.
+		$command-disconnect
+		return $?
+	fi
+}
+
+start_cmd=vpnc_start
+stop_cmd=vpnc_stop
+
+load_rc_config $name
+run_rc_command "$1"
