@@ -35,7 +35,7 @@ cvsd_config()
 cvsd_prestart()
 {
 	cvsd_config
-	if [ $osreldate -gt 500000 ]; then
+	if [ $osreldate -gt 500000 ] && [ "$chrootjail" != "none" ]; then
 		mount -t devfs devfs $chrootjail/dev
 		devfs -m $chrootjail/dev rule apply hide
 		devfs -m $chrootjail/dev rule apply path null unhide
@@ -46,7 +46,7 @@ cvsd_prestart()
 
 cvsd_poststop()
 {
-	if [ $osreldate -gt 500000 ]; then
+	if [ $osreldate -gt 500000 ] && [ "$chrootjail" != "none" ]; then
 		umount -t devfs $chrootjail/dev
 	fi
 }
