@@ -177,6 +177,7 @@
     SUBDIR += ocaml-examples
     SUBDIR += ocaml-mode.el
     SUBDIR += ocaml-nox11
+    SUBDIR += ocamlduce
     SUBDIR += ofc
     SUBDIR += ohugs
     SUBDIR += onyx
