@@ -8,7 +8,8 @@
 PORTNAME=	pycount
 PORTVERSION=	0.0.6
 CATEGORIES=	devel python
-MASTER_SITES=	http://python.net/crew/gherman/playground/pycount/
+MASTER_SITES=	http://python.net/crew/gherman/playground/pycount/ \
+		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}.py
 EXTRACT_SUFX=	#
