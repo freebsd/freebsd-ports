@@ -8,7 +8,8 @@
 PORTNAME=	xfce4-mailwatch-plugin
 PORTVERSION=	1.0.1
 CATEGORIES=	mail xfce
-MASTER_SITES=	http://spuriousinterrupt.org/files/mailwatch/
+MASTER_SITES=	http://spuriousinterrupt.org/files/mailwatch/ \
+		http://freebsd.unixfreunde.de/sources/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	miwi@FreeBSD.org
