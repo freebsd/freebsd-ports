@@ -5,21 +5,23 @@
 # $FreeBSD$
 #
 
-PORTNAME=	squirrelmail-${SQUIRREL_PLUGIN_NAME}-plugin
+PORTNAME=	newuser_wiz
 PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.squirrelmail.org/plugins/
-DISTNAME=	${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}
+PKGNAMEPREFIX=	squirrelmail-
+PKGNAMESUFFIX=	-plugin
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	squirrelmail
 
 MAINTAINER=	thomas@goodking.ca
 COMMENT=	Force user to enter Full name and Email address at initial logon
 
 RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail \
-		${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail-compatibility-plugin
+		${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail-compatibility-plugin1
 
-SQUIRREL_PLUGIN_NAME=	newuser_wiz
+SQUIRREL_PLUGIN_NAME=	${PORTNAME}
 
 .ifdef SQUIRRELDIR
 PLIST_SUB+=	SQUIRRELDIR=${SQUIRRELDIR}
@@ -35,12 +37,19 @@ PLIST_SUB+=	SQUIRRELDIR=squirrelmail
 SUB_LIST+=	"SQUIRRELDIR=squirrelmail"
 .endif
 .endif
+PLIST_SUB+=	SQUIRREL_PLUGIN_NAME=${SQUIRREL_PLUGIN_NAME}
 
 NO_BUILD=		yes
 NO_WRKSUBDIR=		yes
 USE_PERL5_BUILD=	yes
 USE_PHP=		yes
 WANT_PHP_WEB=		yes
+
+.include <bsd.port.pre.mk>
+
+.if exists(${SQUIRRELDIR}/plugins/compatibility/getpot)
+IGNORE='compatibility2 plugin is incompatible with this plugin, install mail/squirrelmail-compatibility-plugin1. WARNING compatibility-plugin1 could break other squirrelmail plugins'
+.endif
 
 pre-everything::
 	@${ECHO} ""
@@ -70,4 +79,4 @@ post-install:
 	@${ECHO} "${SQUIRRELDIR}/config/conf.pl --install-plugin ${SQUIRREL_PLUGIN_NAME}"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
