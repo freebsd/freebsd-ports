@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ZendFramework
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	www
 MASTER_SITES=	http://framework.zend.com/releases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
