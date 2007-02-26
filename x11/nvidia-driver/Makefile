@@ -94,6 +94,9 @@ post-patch: .SILENT
 .if ${OSVERSION} > 600028
 	${REINPLACE_CMD} '/bus_memio\.h/d' ${WRKSRC}/src/nv-freebsd.h
 .endif
+.if ${OSVERSION} > 700030
+	${REINPLACE_CMD} -e 's/nvidia_intr/NULL, &/' ${WRKSRC}/src/nvidia_pci.c
+.endif
 .if defined(WITH_FREEBSD_AGP)
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
 		${WRKSRC}/src/nv-freebsd.h
