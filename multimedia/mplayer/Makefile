@@ -84,7 +84,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -512,7 +512,7 @@ CONFIGURE_ARGS+=	--disable-libdts
 .endif
 
 .if defined(WITH_LIBMPCDEC)
-LIB_DEPENDS+=	mpcdec.4:${PORTSDIR}/audio/libmpcdec
+LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec
 .else
 CONFIGURE_ARGS+=	--disable-musepack
 .endif
