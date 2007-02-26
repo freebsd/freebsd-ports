@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	upnp
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -17,12 +17,9 @@ MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Universal Plug and Play Software Development Kit
 
 CONFLICTS=	upnp-1.0.*
+USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD 4.X
-.endif
 
 NOT_FOR_ARCH=	amd64 sparc64
 GNU_CONFIGURE=	yes
