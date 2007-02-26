@@ -12,6 +12,7 @@
     SUBDIR += es
     SUBDIR += esh
     SUBDIR += fd
+    SUBDIR += fish
     SUBDIR += flash
     SUBDIR += gscommander
     SUBDIR += ibsh
