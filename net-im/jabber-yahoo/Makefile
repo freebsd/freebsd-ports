@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	jabber-
 DISTNAME=	yahoo-transport-${PORTVERSION}
 DIST_SUBDIR=	jabber
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	martin@matuska.org
 COMMENT=	Jabber Yahoo Transport module
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net-im/jabber
