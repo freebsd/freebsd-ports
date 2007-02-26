@@ -39,6 +39,7 @@ include/gsk-1.0/gsk/gsknetworkinterface.h
 include/gsk-1.0/gsk/gskpacket.h
 include/gsk-1.0/gsk/gskpacketqueue.h
 include/gsk-1.0/gsk/gskpacketqueuefd.h
+include/gsk-1.0/gsk/gskpassfd.h
 include/gsk-1.0/gsk/gskpersistentconnection.h
 include/gsk-1.0/gsk/gskprocessinfo.h
 include/gsk-1.0/gsk/gskqsortmacro.h
