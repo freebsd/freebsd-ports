@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vtun
-PORTVERSION=	2.6
-PORTREVISION=	2
+PORTVERSION=	3.0.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,38 +21,32 @@ MAN8=		vtund.8
 MLINKS=		vtund.8 vtun.8
 
 USE_OPENSSL=	yes
-USE_AUTOTOOLS=	autoconf:213
+USE_AUTOTOOLS=	autoconf:259
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-ssl-headers=${OPENSSLBASE}/include/openssl \
 		--with-ssl-lib=${OPENSSLBASE}/lib \
 		--with-lzo-headers=${LOCALBASE}/include \
 		--with-lzo-lib=${LOCALBASE}/lib
 CONFIGURE_ENV=	YACC=${YACC}
-USE_RC_SUBR=	yes
-
-WRKSRC=		${WRKDIR}/vtun
+USE_RC_SUBR=	vtunclient vtund
 
 ALL_TARGET=	vtund
-RC_SCRIPT_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+
+DOCS=		ChangeLog Credits FAQ README README.LZO README.Setup \
+		README.Shaper TODO
 
 .if defined(VTUN_EXTENDED_MODE)
 # Obtained from http://home.jp.FreeBSD.org/~simokawa/vtun-v6.html
 EXTRA_PATCHES=	${FILESDIR}/extra-tun_dev.c
 .endif
 
-post-build:
-	@${SED} ${RC_SCRIPT_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		<${FILESDIR}/vtund.sh >${WRKDIR}/vtund.sh
-	@${SED} ${RC_SCRIPT_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		<${FILESDIR}/vtunclient.sh >${WRKDIR}/vtunclient.sh
-
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/vtund.conf ${PREFIX}/etc/vtund.conf.example
-	@${MKDIR} ${PREFIX}/share/doc/vtund
-.for doc in FAQ README README.Setup README.Shaper
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${PREFIX}/share/doc/vtund
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for doc in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
-	@${INSTALL_SCRIPT} ${WRKDIR}/vtund.sh ${PREFIX}/etc/rc.d
-	@${INSTALL_SCRIPT} ${WRKDIR}/vtunclient.sh ${PREFIX}/etc/rc.d
+.endif
 
 .include <bsd.port.mk>
