@@ -8489,6 +8489,7 @@ p5-AxKit-XSP-Sendmail	ports/www/p5-AxKit-XSP-Sendmail
 p5-AxKit-XSP-Util	ports/www/p5-AxKit-XSP-Util
 p5-AxKit-XSP-WebUtils	ports/www/p5-AxKit-XSP-WebUtils
 p5-B-Deobfuscate	ports/devel/p5-B-Deobfuscate
+p5-B-Generate	ports/devel/p5-B-Generate
 p5-B-Graph	ports/devel/p5-B-Graph
 p5-B-Keywords	ports/devel/p5-B-Keywords
 p5-B-LexInfo	ports/www/p5-B-LexInfo
