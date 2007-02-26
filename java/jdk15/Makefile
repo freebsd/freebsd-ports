@@ -31,7 +31,7 @@ WITHOUT_WEB=	yes
 OPTIONS+=	WEB	"Enable the browser plugin and Java Web Start"	on
 .endif
 OPTIONS+=	POLICY	"Install the Unlimited Strength Policy Files"	off \
-		TZUPDATE "Update the time zone data"			on \
+		TZUPDATE	"Update the time zone data"		on \
 		JAIL	"Port is being built within a jail"		off
 
 WANT_GNOME=	yes
