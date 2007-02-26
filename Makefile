@@ -72,11 +72,11 @@ index:
 	@rm -f ${INDEXDIR}/${INDEXFILE}
 	@cd ${.CURDIR} && make ${INDEXDIR}/${INDEXFILE}
 
-fetchindex: ${INDEXDIR}/{INDEXFILE}.bz2
+fetchindex: ${INDEXDIR}/${INDEXFILE}.bz2
 	@bunzip2 < ${INDEXDIR}/${INDEXFILE}.bz2 > ${INDEXDIR}/${INDEXFILE} && \
 	chmod a+r ${INDEXDIR}/${INDEXFILE}
 
-${INDEXDIR}/{INDEXFILE}.bz2: .PHONY
+${INDEXDIR}/${INDEXFILE}.bz2: .PHONY
 	@${FETCHINDEX} ${INDEXDIR}/${INDEXFILE}.bz2 ${MASTER_SITE_INDEX}${INDEXFILE}.bz2
 
 MASTER_SITE_INDEX?=	http://www.FreeBSD.org/ports/
