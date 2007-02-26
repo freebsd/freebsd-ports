@@ -835,6 +835,7 @@
     SUBDIR += p5-Attribute-Persistent
     SUBDIR += p5-AutoLoader
     SUBDIR += p5-B-Deobfuscate
+    SUBDIR += p5-B-Generate
     SUBDIR += p5-B-Graph
     SUBDIR += p5-B-Keywords
     SUBDIR += p5-B-Size

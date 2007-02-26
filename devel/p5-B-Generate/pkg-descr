@@ -1,0 +1,8 @@
+Malcolm Beattie's B module allows you to examine the Perl op tree at
+runtime, in Perl space; it's the basis of the Perl compiler. But what it
+doesn't let you do is manipulate that op tree: it won't let you create
+new ops, or modify old ones. Now you can.
+
+Well, if you're intimately familiar with Perl's internals, you can.
+
+WWW: http://search.cpan.org/dist/B-Generate/
