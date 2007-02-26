@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	mftrace
-PORTVERSION=	1.1.8
-PORTREVISION=	1
+PORTVERSION=	1.2.14
 CATEGORIES=	print
-MASTER_SITES=	http://www.xs4all.nl/~hanwen/mftrace/
+MASTER_SITES=	LOCAL/chinsan \
+		http://lilypond.org/download/sources/mftrace/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Scalable PostScript (Type1) Fonts for MetaFont
@@ -20,8 +20,10 @@ RUN_DEPENDS=	mktextfm:${PORTSDIR}/print/teTeX \
 		fontforge:${PORTSDIR}/print/fontforge
 
 .if defined(WITH_POTRACE)
+BUILD_DEPENDS+=	potrace:${PORTSDIR}/graphics/potrace
 RUN_DEPENDS+=	potrace:${PORTSDIR}/graphics/potrace
 .else
+BUILD_DEPENDS+=	autotrace:${PORTSDIR}/graphics/autotrace
 RUN_DEPENDS+=	autotrace:${PORTSDIR}/graphics/autotrace
 .endif
 
