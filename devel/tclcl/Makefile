@@ -6,28 +6,47 @@
 #
 
 PORTNAME=	tclcl
-PORTVERSION=	1.16
+PORTVERSION=	1.18
+DISTVERSIONPREFIX=	src-
 CATEGORIES=	devel tcl84 tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	otcl-tclcl
-DISTFILES=	tclcl-src-${PORTVERSION}.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	martin@matuska.org
 COMMENT=	Tcl/C++ interface used by ns and nam
 
-LIB_DEPENDS=	tk84:${PORTSDIR}/x11-toolkits/tk84 \
-		otcl:${PORTSDIR}/lang/otcl
+LIB_DEPENDS=	otcl:${PORTSDIR}/lang/otcl
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+USE_TK=		yes
+USE_TK_BUILD=	yes
+USE_AUTOTOOLS=	autoconf:259
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4 \
-		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	CHANGES.html
+.endif
 
 .include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS=	--with-tcl-ver=${TCL_VER} --with-tk-ver=${TK_VER} \
+		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcl2c++ ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/otcldoc ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include
+	${MKDIR} ${PREFIX}/include/tclcl
+	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/tclcl
 	${INSTALL_DATA} ${WRKSRC}/libtclcl.a ${PREFIX}/lib
 	@${LN} -sf ${PREFIX}/lib/libtclcl.a ${PREFIX}/lib/libTcl.a
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for FILE in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+.endfor
+.endif
+
 .include <bsd.port.post.mk>
