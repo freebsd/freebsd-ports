@@ -8089,6 +8089,7 @@ ocaml-xstrp4	ports/devel/ocaml-xstrp4
 ocaml-yaxi	ports/textproc/ocaml-yaxi
 ocaml-yaxpo	ports/textproc/ocaml-yaxpo
 ocaml-zip	ports/archivers/ocaml-zip
+ocamlduce	ports/lang/ocamlduce
 ocamlweb	ports/devel/ocamlweb
 ocp		ports/audio/ocp
 ocrad		ports/graphics/ocrad
