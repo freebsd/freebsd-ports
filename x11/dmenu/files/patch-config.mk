@@ -1,12 +1,12 @@
---- config.mk.orig	Tue Aug 29 20:32:42 2006
-+++ config.mk	Tue Aug 29 20:33:56 2006
-@@ -4,21 +4,21 @@
+--- config.mk.orig	Wed Feb 21 22:21:27 2007
++++ config.mk	Wed Feb 21 22:21:26 2007
+@@ -4,18 +4,18 @@
  # Customize below to fit your system
  
  # paths
 -PREFIX = /usr/local
 -MANPREFIX = ${PREFIX}/share/man
-+PREFIX ?= /usr/local
++PREFIX?= /usr/local
 +MANPREFIX = ${PREFIX}/man
  
 -X11INC = /usr/X11R6/include
@@ -24,6 +24,8 @@
  LDFLAGS = ${LIBS}
  #CFLAGS = -g -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\"
  #LDFLAGS = -g ${LIBS}
+@@ -26,4 +26,4 @@
+ #CFLAGS += -xtarget=ultra
  
  # compiler and linker
 -CC = cc
