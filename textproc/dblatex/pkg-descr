@@ -1,0 +1,16 @@
+Dblatex started as a DB2LaTeX clone. So, why this project? The purpose
+is a bit different on these points:
+
+(1) The project is end-user oriented, that is, it tries to hide as much
+as possible the latex compiling stuff by providing a single clean
+script to produce directly DVI, PostScript and PDF output.
+
+(2) The actual output rendering is done not only by the XSL stylesheets
+transformation, but also by a dedicated LaTeX package. The purpose is
+to allow a deep LaTeX customisation without changing the XSL
+stylesheets.
+
+(3) Post-processing is done by Python, to make publication faster,
+convert the images if needed, and do the whole compilation.
+
+WWW:	http://dblatex.sourceforge.net/
