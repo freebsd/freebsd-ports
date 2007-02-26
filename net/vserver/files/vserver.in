@@ -1,13 +1,12 @@
 #!/bin/sh
 
-#
-# $Id: startup-freebsd.sh,v 1.2 2006/06/03 17:18:59 mickey Exp $
+# $FreeBSD$
 #
 # FreeBSD boot time start up script for vserver(8).
 #
 # PROVIDE: vserver
 # REQUIRE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 #
 # Add the following line to /etc/rc.conf to enable vserver:

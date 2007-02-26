@@ -1,15 +1,18 @@
 #!/bin/sh
 
+# $FreeBSD$
+
 # Start or stop milterregex
 
 # PROVIDE: milterregex
 # REQUIRE: DAEMON
 # BEFORE: mail
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 #
-# NOTE for FreeBSD 5.0+:
+# NOTE for FreeBSD 5.0 through 6.0:
 # If you want this script to start with the base rc scripts
 # move milterregex to /etc/rc.d/milterregex
+# Not necessary for 6.1+
 
 prefix=%%PREFIX%%
 spooldir=%%SPOOLDIR%%

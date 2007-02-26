@@ -4,7 +4,6 @@
 # PROVIDE: amavis_p0fanalyzer
 # REQUIRE: DAEMON
 # BEFORE: amavisd
-# KEYWORD: FreeBSD
 
 amavis_p0fanalyzer_enable="${amavis_p0fanalyzer_enable-NO}"
 amavis_p0fanalyzer_p0f_filter="${amavis_p0fanalyzer_p0f_filter-"tcp dst port 25"}"

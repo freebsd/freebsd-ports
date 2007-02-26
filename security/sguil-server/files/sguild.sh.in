@@ -1,8 +1,10 @@
 #!/bin/sh
 
+# $FreeBSD$
+
 # PROVIDE: sguild
 # REQUIRE: DAEMON
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 # Add the following lines to /etc/rc.conf to enable sguild:
 # sguild_enable (bool):		Set to YES to enable sguild

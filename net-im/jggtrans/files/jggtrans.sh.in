@@ -1,9 +1,11 @@
 #!/bin/sh
+
+# $FreeBSD$
 #
 # PROVIDE: jggtrans
 # REQUIRE: DAEMON %%JABBER_USER%%
 # BEFORE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 # SET THEM IN THE /etc/rc.conf 
