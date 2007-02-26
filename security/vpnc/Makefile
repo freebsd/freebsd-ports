@@ -7,7 +7,7 @@
 
 PORTNAME=	vpnc
 PORTVERSION=	0.3.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/
 
@@ -19,11 +19,12 @@ LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt
 USE_GMAKE=	yes
 ALL_TARGET=	vpnc
 
+USE_RC_SUBR=	vpnc
+
 PLIST_FILES=	sbin/vpnc \
 		sbin/vpnc-script \
 		sbin/vpnc-disconnect \
-		etc/vpnc.conf.sample \
-		etc/rc.d/vpnc.sh.sample
+		etc/vpnc.conf.sample
 
 PORTDOCS=	README ChangeLog TODO
 MAN8=		vpnc.8
@@ -41,9 +42,6 @@ do-install:
 	@${INSTALL_PROGRAM} -m 751 ${WRKSRC}/vpnc ${PREFIX}/sbin/vpnc
 	@${INSTALL_SCRIPT} -m 751 ${WRKSRC}/vpnc-script ${PREFIX}/sbin/vpnc-script
 	@${INSTALL_SCRIPT} -m 751 ${WRKSRC}/vpnc-disconnect ${PREFIX}/sbin/vpnc-disconnect
-	@${INSTALL_SCRIPT} ${FILESDIR}/vpnc.sh ${WRKDIR}
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKDIR}/vpnc.sh
-	@${INSTALL_SCRIPT} -m 755 ${WRKDIR}/vpnc.sh ${PREFIX}/etc/rc.d/vpnc.sh.sample
 	@${INSTALL_DATA} -m 600 ${WRKSRC}/vpnc.conf ${PREFIX}/etc/vpnc.conf.sample
 .if !defined(NO_INSTALL_MANPAGES)
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/vpnc.8
