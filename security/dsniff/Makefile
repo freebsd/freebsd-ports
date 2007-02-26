@@ -34,7 +34,7 @@ LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 # the corresponding library and additional linker flags.
 LIBNIDS_GLIB2?=
 .if exists(${LOCALBASE}/lib/libnids.a)
-LIBNIDS_GLIB2!=	nm -u ${LOCALBASE}/lib/libnids.a | ${GREP} g_thread_init
+LIBNIDS_GLIB2!=	nm -u ${LOCALBASE}/lib/libnids.a | ${GREP} g_thread_init || ${TRUE}
 .endif
 
 .if !empty(LIBNIDS_GLIB2)
