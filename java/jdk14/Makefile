@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk14.html
@@ -15,6 +15,7 @@ SCSL_SRCFILE=	j2sdk-${JDK_VERSION:S/./_/g}-src-scsl.zip
 SCSL_BINFILE=	j2sdk-${JDK_VERSION:S/./_/g}-bin-scsl.zip
 PATCHSETFILE=	bsd-jdk14-patches-${JDK_PATCHSET_VERSION}.tar.gz
 POLICYFILE=	jce_policy-${JDK_VERSION:S/./_/g}.zip
+TZUPDATEFILE=	tzupdater-${TZUPDATE_VERSION:S/./_/g}.zip
 DISTFILES=	${SCSL_SRCFILE} ${SCSL_BINFILE} ${PATCHSETFILE}
 
 MAINTAINER=	glewis@FreeBSD.org
@@ -30,6 +31,7 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 OPTIONS=	DEBUG	"Enable debugging support"	off \
 		IPV6	"Enable IPv6 support"		off \
 		POLICY	"Install the Unlimited Strength Policy Files"	off \
+		TZUPDATE	"Update the time zone data"		on \
 		WEB	"Enable the browser plugin and Java Web Start"	on
 
 .if defined(WITH_OPENMOTIF_JDK)
@@ -51,6 +53,9 @@ JDK_VERSION=	1.4.2
 JDK_PATCHSET_VERSION=	8
 LATEST_LINK=	jdk14
 
+TZUPDATE_VERSION=	1.0.1
+TZUPDATE_TZVERSION=	2007a
+
 SUN_LINUX_JDK_VERSION=  1.4.2
 
 .if !defined(WITH_LINUX_BOOTSTRAP)
@@ -68,6 +73,11 @@ CATEGORIES+=	ipv6
 .if defined(WITH_POLICY)
 DISTFILES+=	${POLICYFILE}
 EXTRACT_ONLY+=	${POLICYFILE}
+.endif
+
+.if defined(WITH_TZUPDATE)
+DISTFILES+=	${TZUPDATEFILE}
+EXTRACT_ONLY+=	${TZUPDATEFILE}
 .endif
 
 .if defined(WITH_WEB)
@@ -157,7 +167,7 @@ PTHREAD_FILES=	../../hotspot/build/bsd/makefiles/vm.make \
 X11_FILES=	../../j2se/src/solaris/native/sun/awt/fontpath.c
 
 # Check for JDK sources and patch file
-.if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${SCSL_SRCFILE}) || !exists(${DISTDIR}/${SCSL_BINFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
+.if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${SCSL_SRCFILE}) || !exists(${DISTDIR}/${SCSL_BINFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})) || (defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
 ECHO_MSG=/usr/bin/printf
 IGNORE= :\n\
 Due to licensing restrictions, certain files must be fetched manually.\n\n
@@ -177,23 +187,21 @@ IGNORE += and the\n
 IGNORE += SCSL Binaries file, ${SCSL_BINFILE}
 .endif#}
 IGNORE += .\n\n
-.if !exists(${DISTDIR}/${PATCHSETFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE}))#{
-IGNORE += In addition, please
-.endif#}
-.elif !exists(${DISTDIR}/${PATCHSETFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE}))#}{
-IGNORE += Please
 .endif#}
 .if defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})#{
-IGNORE += open http://java.sun.com/products/jce/index-14.html\n\
+IGNORE += Please open http://java.sun.com/products/jce/index-14.html\n\
 in a web browser and follow the \"Download JCE Unlimited Strength\n\
 Jurisdiction Policy Files\" link for \"Other Downloads\" to obtain the\n\
 JCE policy file, ${POLICYFILE}.\n\n
-.if !exists(${DISTDIR}/${PATCHSETFILE})#{
-IGNORE += In addition, please
 .endif#}
+.if defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})#{
+IGNORE += Please open http://java.sun.com/javase/downloads/index.jsp\n\
+in a web browser and follow the \"Download\" link for\n\
+\"JDK US DST Timezone Update Tool - ${TZUPDATE_VERSION}\" to obtain the\n\
+time zone update file, ${TZUPDATEFILE}.\n\n
 .endif#}
 .if !exists(${DISTDIR}/${PATCHSETFILE})#{
-IGNORE += download the patchset, ${PATCHSETFILE}, from\n\
+IGNORE += Please download the patchset, ${PATCHSETFILE}, from\n\
 http://www.eyesbeyond.com/freebsddom/java/jdk14.html.\n\n
 .endif#}
 IGNORE += Please place the downloaded file(s) in ${DISTDIR}
@@ -312,6 +320,11 @@ post-build:
 	@# XXX don't install japanese manpages
 	@${RM} -rf ${JDKIMAGEDIR}/man/ja
 	@${RM} -rf ${JDKIMAGEDIR}/man/ja_JP.eucJP
+.if defined(WITH_TZUPDATE)
+	@# Update time zones
+	@-${JDKIMAGEDIR}/bin/java -jar \
+		${WRKDIR}/tzupdater${TZUPDATE_TZVERSION}/tzupdater.jar -u
+.endif
 
 pre-install:
 .if defined(WITHOUT_WEB)
