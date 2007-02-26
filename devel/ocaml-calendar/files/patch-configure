@@ -1,0 +1,11 @@
+--- configure.orig	Fri Jul  7 15:49:01 2006
++++ configure	Mon Feb 26 14:08:55 2007
+@@ -1267,7 +1267,7 @@
+ OCAMLLIB=`$OCAMLC -v | tail -1 | cut -f 4 -d " "`
+ echo "ocaml library path is $OCAMLLIB"
+ 
+-if [[ "$OCAMLVERSION" < "3.06" ]]; then
++if [ $OCAMLVERSION \< "3.06" ]; then
+ 	{ { echo "$as_me:$LINENO: error: calendar needs ocaml version 3.06" >&5
+ echo "$as_me: error: calendar needs ocaml version 3.06" >&2;}
+    { (exit 1); exit 1; }; }

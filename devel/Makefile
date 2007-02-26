@@ -740,6 +740,7 @@
     SUBDIR += objcunit
     SUBDIR += objectivelib
     SUBDIR += ocaml-annexlib
+    SUBDIR += ocaml-calendar
     SUBDIR += ocaml-camljava
     SUBDIR += ocaml-camomile
     SUBDIR += ocaml-camomile-examples
