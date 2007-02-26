@@ -1,11 +1,6 @@
---- src/SConscript.orig	Tue Jun 28 04:53:44 2005
-+++ src/SConscript	Wed Jul 26 20:37:54 2006
-@@ -37,20 +37,15 @@
-     pkg_config_cmd = 'pkg-config'
- pkg_config_cmd += ' --cflags --libs '
- 
--sdl_pkg_config_cmd = 'sdl-config --cflags --libs'
-+sdl_pkg_config_cmd = 'sdl-config --cflags --libs'
+--- src/SConscript.orig	Tue Jun 28 09:53:44 2005
++++ src/SConscript	Sat Feb 17 14:10:33 2007
+@@ -41,16 +41,11 @@
  
  build_env.Append (CPPPATH = ['.'])
  build_env.Append (CPPPATH = ['#/build/common'])  # generated includes
@@ -24,11 +19,10 @@
      build_env.Append (CCFLAGS = ['-mms-bitfields'])
      build_env.Append (CPPPATH = ['/usr/local/gtkwin/include'])  # libpng
      build_env.Append (CPPPATH = ['/usr/local/gtkwin/SDL-1.2.8/include'])
-@@ -189,46 +184,6 @@
-     native_env.Append (BUILDERS = { 'Assemble': Assemble },
+@@ -190,46 +185,6 @@
                         UASM = uasm,
                         UASMCOM = "$UASM $UASMFLAGS $SOURCE -o $TARGET -l ${TARGETS[1]}")
--
+ 
 -
 -#-----------------------------------------------------------------------------
 -# prepare graphics
@@ -68,6 +62,16 @@
 -
 -    native_env.PNG2C (target = '#build/common/lgoose_png.c',
 -                      source = 'lgoose.png')
- 
+-
  #-----------------------------------------------------------------------------
  # prepare sounds
+ #-----------------------------------------------------------------------------
+@@ -294,7 +249,7 @@
+ 
+ csim_env = nonpareil_env.Copy ()
+ if not ming:
+-    csim_env.Append (CPPDEFINES = {'DEFAULT_PATH': build_env ['libdir']})
++    csim_env.Append (CPPDEFINES = ['DEFAULT_PATH=' + build_env ['libdir']])
+ 
+ if build_env ['target'] == 'win32':
+     csim_env.Append (CPPDEFINES = {'SHAPE_DEFAULT': "false"})
