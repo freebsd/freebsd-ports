@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Gtk2
-PORTVERSION=	1.142
+PORTVERSION=	1.143
 CATEGORIES=	x11-toolkits lang perl5
 MASTER_SITES=	CPAN SF/gtk2-perl
 PKGNAMEPREFIX=	p5-
@@ -23,6 +23,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2
 USE_GNOME=	gtk20 pango
 PERL_CONFIGURE=	yes
 USE_GMAKE=	yes
+CONFIGURE_ENV+=	FORCE_GMAKE=yes
 
 .include <bsd.port.pre.mk>
 
