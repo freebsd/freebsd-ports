@@ -13,14 +13,13 @@ MASTER_SITES=	http://wwwsearch.sourceforge.net/mechanize/src/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Stateful programmatic web browsing in Python
 
 BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools \
-		${PYTHON_SITELIBDIR}/ClientCookie/__init__.py:${PORTSDIR}/devel/py-clientcookie \
-		${PYTHON_SITELIBDIR}/${PYCLIENTFORM_EGG}:${PORTSDIR}/www/py-clientform \
-		${PYTHON_SITELIBDIR}/pullparser.py:${PORTSDIR}/www/py-pullparser
-RUN_DEPENDS=	${BUILD_DEPENDS}
+		${PYTHON_SITELIBDIR}/${PYCLIENTFORM_EGG}:${PORTSDIR}/www/py-clientform
+RUN_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools \
+		${PYTHON_SITELIBDIR}/${PYCLIENTFORM_EGG}:${PORTSDIR}/www/py-clientform
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -34,7 +33,7 @@ PLIST_SUB+=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
 		PYMECHANIZE_EGG=${PYMECHANIZE_EGG} \
 		PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION}
 
-PYMECHANIZE_EGG=	${DISTNAME}-py${PYTHON_VER}.egg	
+PYMECHANIZE_EGG=	${DISTNAME}-py${PYTHON_VER}.egg
 
 .include <bsd.port.pre.mk>
 
