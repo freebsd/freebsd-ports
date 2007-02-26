@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	wormux
-DISTVERSION=	0.7.4
-PORTREVISION=	1
+DISTVERSION=	0.7.9
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/wormux/
 
 MAINTAINER=	toha@toha.org.ua
 COMMENT=	Wormux game
 
-LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26
+LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26 \
+		curl:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl image mixer ttf gfx net
 
-CONFIGURE_ARGS=	--with-datadir-name=${DATADIR} --program-prefix=""
+CONFIGURE_ARGS=	--with-datadir-name=${DATADIR} --program-prefix="" \
+		--mandir=${MANPREFIX}/man
 
 MAN6=	wormux.6
 
