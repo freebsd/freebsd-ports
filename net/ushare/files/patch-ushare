@@ -1,5 +1,5 @@
---- scripts/ushare.orig	Sat Dec  9 13:55:38 2006
-+++ scripts/ushare	Thu Dec 14 09:24:40 2006
+--- scripts/ushare.orig	Sun Feb 25 16:43:51 2007
++++ scripts/ushare	Sun Feb 25 20:34:06 2007
 @@ -1,74 +1,29 @@
 -#!/bin/sh -e
 -### BEGIN INIT INFO
@@ -65,7 +65,7 @@
 -  ;;
 -  restart)
 -    $0 stop
--    $1 start
+-    $0 start
 -  ;;
 -  *)
 -    N=/etc/init.d/$NAME
@@ -75,7 +75,7 @@
 -esac
 +#!/bin/sh
 +#
-+# ushare.sh for rc.d usage (c) 2006 Volker Theile.
++# ushare.sh for rc.d usage (c) 2007 Volker Theile <votdev@gmx.de>.
 +#
 +
 +# PROVIDE: ushare
