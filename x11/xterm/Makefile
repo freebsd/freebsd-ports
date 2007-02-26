@@ -25,6 +25,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 CONFIGURE_ARGS+=--enable-wide-chars --enable-luit --with-utempter \
 		--enable-narrowproto
 
+.if defined(WITH_256_COLOR)
+CONFIGURE_ARGS+=	--enable-256-color
+.endif
+
 MAN1=		resize.1 xterm.1
 
 post-install:
