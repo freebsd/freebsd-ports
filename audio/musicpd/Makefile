@@ -7,6 +7,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.12.1
+PORTREVISION=	1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://musicpd.org/uploads/files/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -59,7 +60,7 @@ CONFIGURE_ARGS+=--disable-aac
 .endif
 
 .ifdef(WITH_MUSEPACK)
-LIB_DEPENDS+=	mpcdec.4:${PORTSDIR}/audio/libmpcdec
+LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec
 .else
 CONFIGURE_ARGS+=--disable-mpc
 .endif
