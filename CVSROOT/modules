@@ -1714,6 +1714,7 @@ dbf		ports/databases/dbf
 dbf2mysql	ports/databases/dbf2mysql
 dbh		ports/databases/dbh
 dbh10		ports/databases/dbh10
+dblatex		ports/textproc/dblatex
 dbmail		ports/mail/dbmail
 dbmail20	ports/mail/dbmail20
 dbmail21	ports/mail/dbmail21
