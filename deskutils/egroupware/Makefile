@@ -57,7 +57,7 @@ USE_PHP+=	ldap
 
 .include "${PORTSDIR}/Mk/bsd.php.mk"
 
-extract:
+do-extract:
 	${MKDIR} ${WRKDIR}
 
 do-install:
