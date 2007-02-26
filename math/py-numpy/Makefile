@@ -25,6 +25,7 @@ CONFLICTS=	f2py-*
 
 OPTIONS=	ATLAS "Use optimized blas library" Off
 
+WANT_FORTRAN=   yes #dummy
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 MAN1=		f2py.1
