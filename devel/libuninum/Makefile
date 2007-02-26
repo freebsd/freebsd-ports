@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libuninum
-PORTVERSION=	1.3
+PORTVERSION=	2.1
 CATEGORIES=	devel
 MASTER_SITES=	http://billposer.org/Software/Downloads/
 
@@ -15,15 +15,14 @@ COMMENT=	Library for converting Unicode strings to numbers
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
-BROKEN=		Unfetchable
-
 USE_GCC=	3.2+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 MAKE_ENV+=	INCLUDES="-I${LOCALBASE}/include"
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+MAN1=		numconv.1
 
 post-patch:
 	${REINPLACE_CMD} -e 's|uninum/||' ${WRKSRC}/uninum.c ${WRKSRC}/numconv.c
