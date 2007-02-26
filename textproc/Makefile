@@ -70,6 +70,7 @@
     SUBDIR += dadadodo
     SUBDIR += db2latex
     SUBDIR += dbacl
+    SUBDIR += dblatex
     SUBDIR += denature
     SUBDIR += dict
     SUBDIR += dictem
