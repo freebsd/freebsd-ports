@@ -47,6 +47,8 @@ ARCH_PORTVERSION=0.3
 . else
 IGNORE=	${_IGNORE_MSG}
 . endif
+.else
+IGNORE=	${_IGNORE_MSG}
 .endif
 
 pre-install:
