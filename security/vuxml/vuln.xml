@@ -34,6 +34,69 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0f37d765-c5d4-11db-9f82-000e0c2e438a">
+    <topic>OpenSSL -- Multiple problems in crypto(3)</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>6.1</gt><lt>6.1_9</lt></range>
+	<range><gt>6.0</gt><lt>6.0_14</lt></range>
+	<range><gt>5.5</gt><lt>5.5_7</lt></range>
+	<range><gt>5.4</gt><lt>5.4_21</lt></range>
+	<range><gt>5.3</gt><lt>5.3_36</lt></range>
+	<range><gt>4.11</gt><lt>4.11_24</lt></range>
+      </system>
+      <package>
+	<name>openssl</name>
+	<range><lt>0.9.7l_0</lt></range>
+	<range><gt>0.9.8</gt><lt>0.9.8d_0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>Several problems have been found in OpenSSL:</p>
+	<ul>
+	  <li>During the parsing of certain invalid ASN1 structures an
+	    error condition is mishandled, possibly resulting in an
+	    infinite loop.</li>
+	  <li>A buffer overflow exists in the SSL_get_shared_ciphers
+	    function.</li>
+	  <li>A NULL pointer may be dereferenced in the SSL version 2
+	    client code.</li>
+	</ul>
+	<p>In addition, many applications using OpenSSL do not perform
+	  any validation of the lengths of public keys being used.</p> 
+	<h1>Impact:</h1>
+	<p>Servers which parse ASN1 data from untrusted sources may be
+	  vulnerable to a denial of service attack.</p>
+	<p>An attacker accessing a server which uses SSL version 2 may
+	  be able to execute arbitrary code with the privileges of that
+	  server.</p>
+	<p>A malicious SSL server can cause clients connecting using
+	  SSL version 2 to crash.</p>
+	<p>Applications which perform public key operations using
+	  untrusted keys may be vulnerable to a denial of service
+	  attack.</p>
+	<h1>Workaround:</h1>
+	<p>No workaround is available, but not all of the
+	  vulnerabilities mentioned affect all applications.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-2937</cvename>
+      <cvename>CVE-2006-2938</cvename>
+      <cvename>CVE-2006-2940</cvename>
+      <cvename>CVE-2006-3738</cvename>
+      <cvename>CVE-2006-4343</cvename>
+      <freebsdsa>SA-06:23.openssl</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2006-09-28</discovery>
+      <entry>2007-02-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="12bd6ecf-c430-11db-95c5-000c6ec775d9">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
