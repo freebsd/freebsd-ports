@@ -22,10 +22,6 @@ RUN_DEPENDS=	mpg321:${PORTSDIR}/audio/mpg321 \
 		faad:${PORTSDIR}/audio/faad \
 		flac:${PORTSDIR}/audio/flac
 
-BROKEN=		Incomplete pkg-plist and missing CONFLICTS
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2007-04-10
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 USE_GMAKE=	yes
