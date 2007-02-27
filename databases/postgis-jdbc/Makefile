@@ -16,6 +16,8 @@ COMMENT=	PostGIS spatial data structures for JDBC
 
 BUILD_DEPENDS=	${JAVALIBDIR}/postgresql.jar:${PORTSDIR}/databases/postgresql-jdbc
 
+BROKEN=		Does not build
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGBASE}
