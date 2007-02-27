@@ -5,17 +5,14 @@
 # $FreeBSD$
 #
 
-# Bloom::Filter.pm is not part of the standard
-# MASTER_SITES tree due to unresolved namespace
-# issues
-
 PORTNAME=	Bloom-Filter
-PORTVERSION=	0.03
+PORTVERSION=	1.0
 CATEGORIES=	textproc perl5
-MASTER_SITES=	http://www.cpan.org/authors/id/M/MC/MCEGLOWS/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	../by-authors/id/M/MC/MCEGLOWS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A probabilistic algorithm for doing existence tests
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
@@ -25,10 +22,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Bloom::Filter.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		"requires Perl 5.6 or above"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
