@@ -9,12 +9,12 @@ and add the following line to /etc/rc.conf:
   musicpd_enable="YES"
 
 Then start the server with
-  %%PREFIX%%/etc/rc.d/musicpd.sh start
+  %%PREFIX%%/etc/rc.d/musicpd start
 or reboot.
 
 NOTE: The musicpd server is pretty useless without a
       client. You might want to install one of the following
-      ports, too: mpc, glurp, gmpc or kmp
+      ports, too: mpc, glurp, gmpc, kmp or phpmp
 
 ************************************************************
 
