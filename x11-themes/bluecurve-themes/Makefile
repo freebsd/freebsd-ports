@@ -39,6 +39,8 @@ MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX:S|$|:fedora|} ${MASTER_SITE_LOCAL:S|$|:
 MASTER_SITE_SUBDIR=	development/SRPMS/:fedora jylefort/:local
 DISTFILES=	redhat-artwork-${PORTVERSION}-${RPMREVISION}.src.rpm:fedora,local
 
+BROKEN=		Size mismatch
+
 EXTRACT_DEPENDS+=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
 WRKSRC=		${WRKDIR}/redhat-artwork-${PORTVERSION}
