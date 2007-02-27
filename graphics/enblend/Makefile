@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	cartola@openit.com.br
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image Blending with Multiresolution Splines. For panorama images, etc
 
 LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
@@ -26,10 +26,4 @@ USE_GETOPT_LONG=yes
 PLIST_FILES=	bin/enblend
 MAN1=		enblend.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
