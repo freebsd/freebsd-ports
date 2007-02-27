@@ -6,23 +6,17 @@
 #
 
 PORTNAME=	Math-Polynomial-Solve
-PORTVERSION=	2.10
+PORTVERSION=	2.11
 CATEGORIES=	math
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Math
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Find the roots of polynomial equations
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Math::Polynomial::Solve.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6.0 or newer. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
