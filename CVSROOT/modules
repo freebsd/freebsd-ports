@@ -220,6 +220,7 @@ acroread-zhcn	ports/chinese/acroread-zh_CN
 acroread-zhtw	ports/chinese/acroread-zh_TW
 acroread7	ports/print/acroread7
 acroreadwrapper	ports/print/acroreadwrapper
+actioncube	ports/games/actioncube
 activitymail	ports/devel/activitymail
 actx		ports/games/actx
 acx100		ports/net/acx100
