@@ -1,0 +1,11 @@
+share/locale/de/LC_MESSAGES/audacious-docklet.mo
+share/locale/fr/LC_MESSAGES/audacious-docklet.mo
+share/locale/hu/LC_MESSAGES/audacious-docklet.mo
+share/locale/it/LC_MESSAGES/audacious-docklet.mo
+share/locale/ja/LC_MESSAGES/audacious-docklet.mo
+share/locale/pl/LC_MESSAGES/audacious-docklet.mo
+lib/audacious/General/libdocklet.so
+lib/audacious/General/libdocklet.la
+lib/audacious/General/libdocklet.a
+@dirrm lib/audacious/General/
+@dirrm lib/audacious
