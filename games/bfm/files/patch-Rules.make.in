@@ -1,0 +1,48 @@
+--- ./Rules.make.in.orig	Thu Apr 14 12:09:25 2005
++++ ./Rules.make.in	Mon Feb 26 16:50:51 2007
+@@ -10,10 +10,10 @@
+ ##
+ 
+ # Compile commands
+-CC=gcc
+-CCLD=gcc
++CC?=gcc
++CCLD=$(CC)
+ RM=rm -f
+-MAKE=make
++MAKE?=make
+ 
+ OUTPUTFILE = bfm
+ 
+@@ -37,12 +37,12 @@
+ VERSION=	'-DVERSION="2.0"'
+ DATADIR=	"-DSTRATAGUS_LIB_PATH=\"@datadir@/$(OUTPUTFILE)\""
+ 
+-TOOLLIBS=$(XLDFLAGS) -lpng -lz -lm @THREAD_LIBS@ -L/usr/local/lib @STATIC_LDFLAGS@
++TOOLLIBS=$(XLDFLAGS) -lpng -lz -lm @THREAD_LIBS@ @STATIC_LDFLAGS@ -L$(LOCALBASE)/lib
+ 
+ STRATAGUS_LIBS= -lpng -lz -lm \
+-	@VIDEO_LIBS@ @THREAD_LIBS@ $(CCLLIB) $(COMP_LIBS) \
++	@LDFLAGS@ @VIDEO_LIBS@ @THREAD_LIBS@ $(CCLLIB) $(COMP_LIBS) \
+ 	$(ARTSCLIB) @FLAC_LIBS@ @OGG_LIBS@ @MAD_LIBS@ @CDAUDIO_LIBS@ \
+-	@LUA_LIBS@ @STATIC_LDFLAGS@ -lz -lm -L/usr/local/lib
++	@LUA_LIBS@ @STATIC_LDFLAGS@ -lz -lm -L$(LOCALBASE)/lib
+ 
+ DISTLIST=$(TOPDIR)/distlist
+ TAGS=$(TOPDIR)/src/tags
+@@ -56,13 +56,12 @@
+ 
+ IFLAGS=	-I$(TOPDIR)/src/include $(XIFLAGS) -I$(TOPDIR)/src/movie/vp31/include
+ 
+-CFLAGS=@PROFILE_CFLAGS@ @DEBUG_CFLAGS@ $(IFLAGS) \
++CFLAGS=@CPPFLAGS@ @PROFILE_CFLAGS@ @DEBUG_CFLAGS@ $(IFLAGS) \
+     -DUSE_LIBMODPLUG -DUSE_HP_FOR_XP -DMAP_REGIONS \
+     @PROFILE_CFLAGS@ @DEBUG_CFLAGS@ @VIDEO_CFLAGS@ @BZ2_CFLAGS@ \
+     @OGG_CFLAGS@ @MAD_CFLAGS@ @FLAC_CFLAGS@ @CDAUDIO_CFLAGS@ \
+ 	@LUA_CFLAGS@ $(CCL) $(VERSION) $(COMP_CFLAGS) @SOUND_CFLAGS@ @PLATFORM@ \
+-	$(DATADIR) \
+-    -I/usr/local/include $(ARTSC)
++	$(DATADIR) $(ARTSC) -I$(LOCALBASE)/include -I$(X11BASE)/include
+ 
+ CTAGSFLAGS=-i defptvS -a -f 
+ 

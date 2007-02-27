@@ -1,0 +1,579 @@
+bin/bfm
+libexec/bfm
+%%DATADIR%%/campaigns/dwarves/01.cm
+%%DATADIR%%/campaigns/dwarves/01/background.png
+%%DATADIR%%/campaigns/dwarves/01/map.pud.gz
+%%DATADIR%%/campaigns/dwarves/01/mission.txt
+%%DATADIR%%/campaigns/dwarves/02.cm
+%%DATADIR%%/campaigns/dwarves/02/background.png
+%%DATADIR%%/campaigns/dwarves/02/map.pud.gz
+%%DATADIR%%/campaigns/dwarves/02/mission.txt
+%%DATADIR%%/campaigns/dwarves/screen1.png
+%%DATADIR%%/campaigns/dwarves/screen2.png
+%%DATADIR%%/campaigns/dwarves/screen3.png
+%%DATADIR%%/campaigns/dwarves/screen4.png
+%%DATADIR%%/graphics/cartoonish/dwarves/buildings/barracks.png
+%%DATADIR%%/graphics/cartoonish/dwarves/buildings/blacksmith.png
+%%DATADIR%%/graphics/cartoonish/dwarves/buildings/city-hall.png
+%%DATADIR%%/graphics/cartoonish/dwarves/buildings/lumber-mill.png
+%%DATADIR%%/graphics/cartoonish/dwarves/buildings/market.png
+%%DATADIR%%/graphics/cartoonish/dwarves/buildings/shipyard.png
+%%DATADIR%%/graphics/cartoonish/dwarves/buildings/town-center.png
+%%DATADIR%%/graphics/cartoonish/dwarves/buildings/town-hall.png
+%%DATADIR%%/graphics/cartoonish/dwarves/units/dwarves-boat.png
+%%DATADIR%%/graphics/cartoonish/dwarves/units/transporter.png
+%%DATADIR%%/graphics/darkness/buildings/blacksmith.png
+%%DATADIR%%/graphics/darkness/buildings/camp.png
+%%DATADIR%%/graphics/darkness/buildings/farm.png
+%%DATADIR%%/graphics/darkness/buildings/garrison.png
+%%DATADIR%%/graphics/darkness/buildings/lumber-storage.png
+%%DATADIR%%/graphics/darkness/o_startpoint.png
+%%DATADIR%%/graphics/darkness/units/bowman.png
+%%DATADIR%%/graphics/darkness/units/catapult.png
+%%DATADIR%%/graphics/darkness/units/darkness-spearman.png
+%%DATADIR%%/graphics/darkness/units/darkness-warrior.png
+%%DATADIR%%/graphics/darkness/units/wolf.png
+%%DATADIR%%/graphics/darkness/units/worker.png
+%%DATADIR%%/graphics/darkness/units/worker_with_gold.png
+%%DATADIR%%/graphics/darkness/units/worker_with_wood.png
+%%DATADIR%%/graphics/dwarves/buildings/barracks.png
+%%DATADIR%%/graphics/dwarves/buildings/blacksmith.png
+%%DATADIR%%/graphics/dwarves/buildings/bunker.png
+%%DATADIR%%/graphics/dwarves/buildings/city-hall.png
+%%DATADIR%%/graphics/dwarves/buildings/cottage.png
+%%DATADIR%%/graphics/dwarves/buildings/farm.png
+%%DATADIR%%/graphics/dwarves/buildings/guard-tower.png
+%%DATADIR%%/graphics/dwarves/buildings/heros-guild.png
+%%DATADIR%%/graphics/dwarves/buildings/lumber-mill.png
+%%DATADIR%%/graphics/dwarves/buildings/market.png
+%%DATADIR%%/graphics/dwarves/buildings/mining-post.png
+%%DATADIR%%/graphics/dwarves/buildings/shipyard.png
+%%DATADIR%%/graphics/dwarves/buildings/temple.png
+%%DATADIR%%/graphics/dwarves/buildings/town-center.png
+%%DATADIR%%/graphics/dwarves/buildings/town-hall.png
+%%DATADIR%%/graphics/dwarves/buildings/wall.png
+%%DATADIR%%/graphics/dwarves/units/advanced-warrior.png
+%%DATADIR%%/graphics/dwarves/units/ballista.png
+%%DATADIR%%/graphics/dwarves/units/bowman-hero.png
+%%DATADIR%%/graphics/dwarves/units/crossbowman-hero.png
+%%DATADIR%%/graphics/dwarves/units/crossbowman.png
+%%DATADIR%%/graphics/dwarves/units/dwarves-boat.png
+%%DATADIR%%/graphics/dwarves/units/dwarves-bowman.png
+%%DATADIR%%/graphics/dwarves/units/dwarves-healer-hero.png
+%%DATADIR%%/graphics/dwarves/units/dwarves-healer.png
+%%DATADIR%%/graphics/dwarves/units/dwarves-scout-hero.png
+%%DATADIR%%/graphics/dwarves/units/dwarves-scout.png
+%%DATADIR%%/graphics/dwarves/units/dwarves-warrior.png
+%%DATADIR%%/graphics/dwarves/units/dwarves-worker.png
+%%DATADIR%%/graphics/dwarves/units/dwarves-worker_with_gold.png
+%%DATADIR%%/graphics/dwarves/units/dwarves-worker_with_iron.png
+%%DATADIR%%/graphics/dwarves/units/dwarves-worker_with_stone.png
+%%DATADIR%%/graphics/dwarves/units/dwarves-worker_with_titanium.png
+%%DATADIR%%/graphics/dwarves/units/dwarves-worker_with_wood.png
+%%DATADIR%%/graphics/dwarves/units/lord.png
+%%DATADIR%%/graphics/dwarves/units/raven.png
+%%DATADIR%%/graphics/dwarves/units/spearman-hero.png
+%%DATADIR%%/graphics/dwarves/units/spearman.png
+%%DATADIR%%/graphics/dwarves/units/swordman.png
+%%DATADIR%%/graphics/dwarves/units/transporter.png
+%%DATADIR%%/graphics/dwarves/units/warrior-hero.png
+%%DATADIR%%/graphics/dwarves/x_startpoint.png
+%%DATADIR%%/graphics/icons/commands.png
+%%DATADIR%%/graphics/icons/darkness-icons.png
+%%DATADIR%%/graphics/icons/dwarves-icons.png
+%%DATADIR%%/graphics/icons/neutral-icons.png
+%%DATADIR%%/graphics/jokes/demogorgon.png
+%%DATADIR%%/graphics/jokes/kimmo.png
+%%DATADIR%%/graphics/jokes/mikko.png
+%%DATADIR%%/graphics/jokes/tux.png
+%%DATADIR%%/graphics/jokes/wizard-of-yendor.png
+%%DATADIR%%/graphics/jokes/youngdragon.png
+%%DATADIR%%/graphics/missiles/arrow.png
+%%DATADIR%%/graphics/missiles/ballista-catapult_impact.png
+%%DATADIR%%/graphics/missiles/ballista.png
+%%DATADIR%%/graphics/missiles/big_fire.png
+%%DATADIR%%/graphics/missiles/cannon_explosion.png
+%%DATADIR%%/graphics/missiles/catapult_rock.png
+%%DATADIR%%/graphics/missiles/death-ray.png
+%%DATADIR%%/graphics/missiles/dragon_fire_big.png
+%%DATADIR%%/graphics/missiles/dragon_fire_small.png
+%%DATADIR%%/graphics/missiles/explosion.png
+%%DATADIR%%/graphics/missiles/green_cross.png
+%%DATADIR%%/graphics/missiles/healing.png
+%%DATADIR%%/graphics/missiles/normal_spell.png
+%%DATADIR%%/graphics/missiles/red_cross.png
+%%DATADIR%%/graphics/missiles/small_fire.png
+%%DATADIR%%/graphics/missiles/spear.png
+%%DATADIR%%/graphics/missiles/tux.png
+%%DATADIR%%/graphics/missiles/unit_shadow.png
+%%DATADIR%%/graphics/neutral/buildings/1xstone.png
+%%DATADIR%%/graphics/neutral/buildings/2xstone.png
+%%DATADIR%%/graphics/neutral/buildings/destroyed_site.png
+%%DATADIR%%/graphics/neutral/buildings/destroyed_site128.png
+%%DATADIR%%/graphics/neutral/buildings/destroyed_site160.png
+%%DATADIR%%/graphics/neutral/buildings/destroyed_site192.png
+%%DATADIR%%/graphics/neutral/buildings/destroyed_site224.png
+%%DATADIR%%/graphics/neutral/buildings/destroyed_site256.png
+%%DATADIR%%/graphics/neutral/buildings/destroyed_site512.png
+%%DATADIR%%/graphics/neutral/buildings/destroyed_site96.png
+%%DATADIR%%/graphics/neutral/buildings/fortress.png
+%%DATADIR%%/graphics/neutral/buildings/gold_mine.png
+%%DATADIR%%/graphics/neutral/buildings/grumbuduts.png
+%%DATADIR%%/graphics/neutral/buildings/iron_mine.png
+%%DATADIR%%/graphics/neutral/buildings/land_construction_site.png
+%%DATADIR%%/graphics/neutral/buildings/mountain1.png
+%%DATADIR%%/graphics/neutral/buildings/oil_patch.png
+%%DATADIR%%/graphics/neutral/buildings/sardor.png
+%%DATADIR%%/graphics/neutral/buildings/small_destroyed_site.png
+%%DATADIR%%/graphics/neutral/buildings/stone_mine.png
+%%DATADIR%%/graphics/neutral/buildings/titanium_mine.png
+%%DATADIR%%/graphics/neutral/buildings/tree1.png
+%%DATADIR%%/graphics/neutral/buildings/tree2.png
+%%DATADIR%%/graphics/neutral/buildings/tree3.png
+%%DATADIR%%/graphics/neutral/buildings/wall.png
+%%DATADIR%%/graphics/neutral/buildings/wall_construction_site.png
+%%DATADIR%%/graphics/neutral/buildings/whirl.png
+%%DATADIR%%/graphics/neutral/trap.png
+%%DATADIR%%/graphics/neutral/units/corpses.png
+%%DATADIR%%/graphics/neutral/units/titanium-dwarf.png
+%%DATADIR%%/graphics/tilesets/beach.png
+%%DATADIR%%/graphics/tilesets/desert.png
+%%DATADIR%%/graphics/tilesets/forest.png
+%%DATADIR%%/graphics/tilesets/mountains.png
+%%DATADIR%%/graphics/tilesets/night.png
+%%DATADIR%%/graphics/tilesets/summer.png
+%%DATADIR%%/graphics/tilesets/windy.png
+%%DATADIR%%/graphics/tilesets/winter.png
+%%DATADIR%%/graphics/ui/bloodlust,haste,slow,invisible,shield.png
+%%DATADIR%%/graphics/ui/buttons_1.png
+%%DATADIR%%/graphics/ui/buttons_2.png
+%%DATADIR%%/graphics/ui/cd-icon.png
+%%DATADIR%%/graphics/ui/copyright_screen.png
+%%DATADIR%%/graphics/ui/credits.png
+%%DATADIR%%/graphics/ui/cursors/arrow_E.png
+%%DATADIR%%/graphics/ui/cursors/arrow_N.png
+%%DATADIR%%/graphics/ui/cursors/arrow_NE.png
+%%DATADIR%%/graphics/ui/cursors/arrow_NW.png
+%%DATADIR%%/graphics/ui/cursors/arrow_S.png
+%%DATADIR%%/graphics/ui/cursors/arrow_SE.png
+%%DATADIR%%/graphics/ui/cursors/arrow_SW.png
+%%DATADIR%%/graphics/ui/cursors/arrow_W.png
+%%DATADIR%%/graphics/ui/cursors/claw.png
+%%DATADIR%%/graphics/ui/cursors/cross.png
+%%DATADIR%%/graphics/ui/cursors/green_eagle.png
+%%DATADIR%%/graphics/ui/cursors/magnifying_glass.png
+%%DATADIR%%/graphics/ui/cursors/red_eagle.png
+%%DATADIR%%/graphics/ui/cursors/small_green_cross.png
+%%DATADIR%%/graphics/ui/cursors/yellow_eagle.png
+%%DATADIR%%/graphics/ui/defeat.png
+%%DATADIR%%/graphics/ui/fonts/game.png
+%%DATADIR%%/graphics/ui/fonts/large.png
+%%DATADIR%%/graphics/ui/fonts/small.png
+%%DATADIR%%/graphics/ui/fonts/very_big.png
+%%DATADIR%%/graphics/ui/health.png
+%%DATADIR%%/graphics/ui/health2.png
+%%DATADIR%%/graphics/ui/mana.png
+%%DATADIR%%/graphics/ui/mana2.png
+%%DATADIR%%/graphics/ui/menu-background.png
+%%DATADIR%%/graphics/ui/panels/1024x768/buttonpanel.png
+%%DATADIR%%/graphics/ui/panels/1024x768/filler-right.png
+%%DATADIR%%/graphics/ui/panels/1024x768/filler1.png
+%%DATADIR%%/graphics/ui/panels/1024x768/resource.png
+%%DATADIR%%/graphics/ui/panels/1024x768/statusline.png
+%%DATADIR%%/graphics/ui/panels/1280x960/buttonpanel.png
+%%DATADIR%%/graphics/ui/panels/1280x960/filler-right.png
+%%DATADIR%%/graphics/ui/panels/1280x960/filler1.png
+%%DATADIR%%/graphics/ui/panels/1280x960/resource.png
+%%DATADIR%%/graphics/ui/panels/1280x960/statusline.png
+%%DATADIR%%/graphics/ui/panels/1600x1200/buttonpanel.png
+%%DATADIR%%/graphics/ui/panels/1600x1200/filler-right.png
+%%DATADIR%%/graphics/ui/panels/1600x1200/filler1.png
+%%DATADIR%%/graphics/ui/panels/1600x1200/resource.png
+%%DATADIR%%/graphics/ui/panels/1600x1200/statusline.png
+%%DATADIR%%/graphics/ui/panels/640x480/buttonpanel.png
+%%DATADIR%%/graphics/ui/panels/640x480/filler-right.png
+%%DATADIR%%/graphics/ui/panels/640x480/filler1.png
+%%DATADIR%%/graphics/ui/panels/640x480/resource.png
+%%DATADIR%%/graphics/ui/panels/640x480/statusline.png
+%%DATADIR%%/graphics/ui/panels/800x600/buttonpanel.png
+%%DATADIR%%/graphics/ui/panels/800x600/filler-right.png
+%%DATADIR%%/graphics/ui/panels/800x600/filler1.png
+%%DATADIR%%/graphics/ui/panels/800x600/resource.png
+%%DATADIR%%/graphics/ui/panels/800x600/statusline.png
+%%DATADIR%%/graphics/ui/panels/infopanel.png
+%%DATADIR%%/graphics/ui/panels/menubutton.png
+%%DATADIR%%/graphics/ui/panels/minimap.png
+%%DATADIR%%/graphics/ui/panels/panel_1.png
+%%DATADIR%%/graphics/ui/panels/panel_2.png
+%%DATADIR%%/graphics/ui/panels/panel_3.png
+%%DATADIR%%/graphics/ui/panels/panel_4.png
+%%DATADIR%%/graphics/ui/panels/panel_5.png
+%%DATADIR%%/graphics/ui/resources.png
+%%DATADIR%%/graphics/ui/stratagus.png
+%%DATADIR%%/graphics/ui/title_screen.png
+%%DATADIR%%/graphics/ui/title_screen2.png
+%%DATADIR%%/graphics/ui/victory.png
+%%DATADIR%%/icon.png
+%%DATADIR%%/maps/Battle/Easy/Small battle.pud.gz
+%%DATADIR%%/maps/Battle/Easy/dwarves.pud.gz
+%%DATADIR%%/maps/Battle/Easy/fortress1.pud.gz
+%%DATADIR%%/maps/Battle/Easy/fortress2.pud.gz
+%%DATADIR%%/maps/Battle/For beginners/Small battle.pud.gz
+%%DATADIR%%/maps/Battle/For beginners/dwarves.pud.gz
+%%DATADIR%%/maps/Battle/For beginners/fortress1.pud.gz
+%%DATADIR%%/maps/Battle/For beginners/fortress2.pud.gz
+%%DATADIR%%/maps/Battle/Hard/Small battle.pud.gz
+%%DATADIR%%/maps/Battle/Hard/dwarves.pud.gz
+%%DATADIR%%/maps/Battle/Hard/fortress1.pud.gz
+%%DATADIR%%/maps/Battle/Hard/fortress2.pud.gz
+%%DATADIR%%/maps/Battle/Normal/Small battle.pud.gz
+%%DATADIR%%/maps/Battle/Normal/dwarves.pud.gz
+%%DATADIR%%/maps/Battle/Normal/fortress1.pud.gz
+%%DATADIR%%/maps/Battle/Normal/fortress2.pud.gz
+%%DATADIR%%/maps/Battle/Really hard/Small battle.pud.gz
+%%DATADIR%%/maps/Battle/Really hard/dwarves.pud.gz
+%%DATADIR%%/maps/Battle/Really hard/fortress1.pud.gz
+%%DATADIR%%/maps/Battle/Really hard/fortress2.pud.gz
+%%DATADIR%%/maps/Multiplayer/2 players/(2) 2 player map.pud.gz
+%%DATADIR%%/maps/Multiplayer/2 players/Battle against AI.pud.gz
+%%DATADIR%%/maps/Multiplayer/2 players/River between us.pud.gz
+%%DATADIR%%/maps/Multiplayer/2 players/Siege.pud.gz
+%%DATADIR%%/maps/Multiplayer/2 players/Towns.pud.gz
+%%DATADIR%%/maps/Multiplayer/2 players/battle.pud.gz
+%%DATADIR%%/maps/Multiplayer/2 players/water and forest.pud.gz
+%%DATADIR%%/maps/Multiplayer/3 players/Battle against darkness.pud.gz
+%%DATADIR%%/maps/Multiplayer/3 players/Desert.pud.gz
+%%DATADIR%%/maps/Multiplayer/3 players/Finland.pud.gz
+%%DATADIR%%/maps/Multiplayer/3 players/River towns.pud.gz
+%%DATADIR%%/maps/Multiplayer/3 players/Three player battle.pud.gz
+%%DATADIR%%/maps/Multiplayer/3 players/Three towns.pud.gz
+%%DATADIR%%/maps/Multiplayer/4 players/(4)Cross.pud.gz
+%%DATADIR%%/maps/Multiplayer/4 players/(4)Mountains and lakes.pud.gz
+%%DATADIR%%/maps/Multiplayer/4 players/(4)Tux.pud.gz
+%%DATADIR%%/maps/Multiplayer/4 players/Eye on the grass.pud.gz
+%%DATADIR%%/maps/Multiplayer/4 players/Four islands.pud.gz
+%%DATADIR%%/maps/Multiplayer/6 players/Land battles.pud.gz
+%%DATADIR%%/maps/Multiplayer/7 players/7 The Riftes islands.pud.gz
+%%DATADIR%%/maps/Multiplayer/8 players/(8) Forest battle.pud.gz
+%%DATADIR%%/maps/Multiplayer/8 players/(8) little armies.pud.gz
+%%DATADIR%%/maps/Multiplayer/8 players/8 players and computer.pud.gz
+%%DATADIR%%/maps/Multiplayer/Over 8 players/15 player map.pud.gz
+%%DATADIR%%/maps/Single/Easy/Battle in the Misty forest.pud.gz
+%%DATADIR%%/maps/Single/Easy/Battle of Mandicor.pud.gz
+%%DATADIR%%/maps/Single/Easy/Central Mandicor.pud.gz
+%%DATADIR%%/maps/Single/Easy/Defeat Demogorgon.pud.gz
+%%DATADIR%%/maps/Single/Easy/Forest of fear.pud.gz
+%%DATADIR%%/maps/Single/Easy/Great desert.pud.gz
+%%DATADIR%%/maps/Single/Easy/Heteuk's siege.pud.gz
+%%DATADIR%%/maps/Single/Easy/In the Iron mountains.pud.gz
+%%DATADIR%%/maps/Single/Easy/Northeastern Mandicor.pud.gz
+%%DATADIR%%/maps/Single/Easy/Southern Mandicor.pud.gz
+%%DATADIR%%/maps/Single/Easy/Testing map.pud.gz
+%%DATADIR%%/maps/Single/Easy/default-darkness.pud.gz
+%%DATADIR%%/maps/Single/Easy/default.pud.gz
+%%DATADIR%%/maps/Single/For beginners/Battle in the Misty forest.pud.gz
+%%DATADIR%%/maps/Single/For beginners/Battle of Mandicor.pud.gz
+%%DATADIR%%/maps/Single/For beginners/Central Mandicor.pud.gz
+%%DATADIR%%/maps/Single/For beginners/Defeat Demogorgon.pud.gz
+%%DATADIR%%/maps/Single/For beginners/Forest of fear.pud.gz
+%%DATADIR%%/maps/Single/For beginners/Great desert.pud.gz
+%%DATADIR%%/maps/Single/For beginners/Heteuk's siege.pud.gz
+%%DATADIR%%/maps/Single/For beginners/In the Iron mountains.pud.gz
+%%DATADIR%%/maps/Single/For beginners/Northeastern Mandicor.pud.gz
+%%DATADIR%%/maps/Single/For beginners/Southern Mandicor.pud.gz
+%%DATADIR%%/maps/Single/For beginners/Testing map.pud.gz
+%%DATADIR%%/maps/Single/For beginners/default-darkness.pud.gz
+%%DATADIR%%/maps/Single/For beginners/default.pud.gz
+%%DATADIR%%/maps/Single/Hard/Battle in the Misty forest.pud.gz
+%%DATADIR%%/maps/Single/Hard/Battle of Mandicor.pud.gz
+%%DATADIR%%/maps/Single/Hard/Central Mandicor.pud.gz
+%%DATADIR%%/maps/Single/Hard/Defeat Demogorgon.pud.gz
+%%DATADIR%%/maps/Single/Hard/Forest of fear.pud.gz
+%%DATADIR%%/maps/Single/Hard/Great desert.pud.gz
+%%DATADIR%%/maps/Single/Hard/Heteuk's siege.pud.gz
+%%DATADIR%%/maps/Single/Hard/In the Iron mountains.pud.gz
+%%DATADIR%%/maps/Single/Hard/Northeastern Mandicor.pud.gz
+%%DATADIR%%/maps/Single/Hard/Southern Mandicor.pud.gz
+%%DATADIR%%/maps/Single/Hard/Testing map.pud.gz
+%%DATADIR%%/maps/Single/Hard/default-darkness.pud.gz
+%%DATADIR%%/maps/Single/Hard/default.pud.gz
+%%DATADIR%%/maps/Single/Normal/Battle in the Misty forest.pud.gz
+%%DATADIR%%/maps/Single/Normal/Battle of Mandicor.pud.gz
+%%DATADIR%%/maps/Single/Normal/Central Mandicor.pud.gz
+%%DATADIR%%/maps/Single/Normal/Defeat Demogorgon.pud.gz
+%%DATADIR%%/maps/Single/Normal/Forest of fear.pud.gz
+%%DATADIR%%/maps/Single/Normal/Great desert.pud.gz
+%%DATADIR%%/maps/Single/Normal/Heteuk's siege.pud.gz
+%%DATADIR%%/maps/Single/Normal/In the Iron mountains.pud.gz
+%%DATADIR%%/maps/Single/Normal/Islands.pud.gz
+%%DATADIR%%/maps/Single/Normal/Northeastern Mandicor.pud.gz
+%%DATADIR%%/maps/Single/Normal/Southern Mandicor.pud.gz
+%%DATADIR%%/maps/Single/Normal/Testing map.pud.gz
+%%DATADIR%%/maps/Single/Normal/default-darkness.pud.gz
+%%DATADIR%%/maps/Single/Normal/default.pud.gz
+%%DATADIR%%/maps/Single/Really hard/Battle in the Misty forest.pud.gz
+%%DATADIR%%/maps/Single/Really hard/Battle of Mandicor.pud.gz
+%%DATADIR%%/maps/Single/Really hard/Central Mandicor.pud.gz
+%%DATADIR%%/maps/Single/Really hard/Defeat Demogorgon.pud.gz
+%%DATADIR%%/maps/Single/Really hard/Forest of fear.pud.gz
+%%DATADIR%%/maps/Single/Really hard/Great desert.pud.gz
+%%DATADIR%%/maps/Single/Really hard/Heteuk's siege.pud.gz
+%%DATADIR%%/maps/Single/Really hard/In the Iron mountains.pud.gz
+%%DATADIR%%/maps/Single/Really hard/Northeastern Mandicor.pud.gz
+%%DATADIR%%/maps/Single/Really hard/Southern Mandicor.pud.gz
+%%DATADIR%%/maps/Single/Really hard/Testing map.pud.gz
+%%DATADIR%%/maps/Single/Really hard/Three enemies.pud.gz
+%%DATADIR%%/maps/Single/Really hard/Two enemies.pud.gz
+%%DATADIR%%/maps/Single/Really hard/default-darkness.pud.gz
+%%DATADIR%%/maps/Single/Really hard/default.pud.gz
+%%DATADIR%%/scripts/ai.lua
+%%DATADIR%%/scripts/ai/air_attack-darkness.lua
+%%DATADIR%%/scripts/ai/air_attack-dwarves.lua
+%%DATADIR%%/scripts/ai/land_attack-darkness.lua
+%%DATADIR%%/scripts/ai/land_attack-dwarves.lua
+%%DATADIR%%/scripts/ai/passive.lua
+%%DATADIR%%/scripts/ai/sea_attack-darkness.lua
+%%DATADIR%%/scripts/ai/sea_attack-dwarves.lua
+%%DATADIR%%/scripts/anim.lua
+%%DATADIR%%/scripts/bfm.lua
+%%DATADIR%%/scripts/buttons.lua
+%%DATADIR%%/scripts/campaigns.lua
+%%DATADIR%%/scripts/cheats.lua
+%%DATADIR%%/scripts/constructions.lua
+%%DATADIR%%/scripts/credits.lua
+%%DATADIR%%/scripts/darkness/buttons.lua
+%%DATADIR%%/scripts/darkness/constructions.lua
+%%DATADIR%%/scripts/darkness/ui.lua
+%%DATADIR%%/scripts/darkness/units.lua
+%%DATADIR%%/scripts/darkness/upgrade.lua
+%%DATADIR%%/scripts/dwarves/buttons.lua
+%%DATADIR%%/scripts/dwarves/campaign1.lua
+%%DATADIR%%/scripts/dwarves/constructions.lua
+%%DATADIR%%/scripts/dwarves/ui.lua
+%%DATADIR%%/scripts/dwarves/units.lua
+%%DATADIR%%/scripts/dwarves/upgrade.lua
+%%DATADIR%%/scripts/editor.lua
+%%DATADIR%%/scripts/fonts.lua
+%%DATADIR%%/scripts/icons.lua
+%%DATADIR%%/scripts/jokes.lua
+%%DATADIR%%/scripts/keystrokes.lua
+%%DATADIR%%/scripts/menus.lua
+%%DATADIR%%/scripts/missiles.lua
+%%DATADIR%%/scripts/music.lua
+%%DATADIR%%/scripts/ranks.lua
+%%DATADIR%%/scripts/sound.lua
+%%DATADIR%%/scripts/spells.lua
+%%DATADIR%%/scripts/stratagus.lua
+%%DATADIR%%/scripts/tilesets.lua
+%%DATADIR%%/scripts/tilesets/beach.lua
+%%DATADIR%%/scripts/tilesets/desert.lua
+%%DATADIR%%/scripts/tilesets/forest.lua
+%%DATADIR%%/scripts/tilesets/mountains.lua
+%%DATADIR%%/scripts/tilesets/night.lua
+%%DATADIR%%/scripts/tilesets/summer.lua
+%%DATADIR%%/scripts/tilesets/winter.lua
+%%DATADIR%%/scripts/tips.lua
+%%DATADIR%%/scripts/ui.lua
+%%DATADIR%%/scripts/units.lua
+%%DATADIR%%/scripts/upgrade.lua
+%%DATADIR%%/sounds/dwarves/basic_voices/die/die1.wav.gz
+%%DATADIR%%/sounds/dwarves/basic_voices/die/die2.wav.gz
+%%DATADIR%%/sounds/dwarves/basic_voices/die/die3.wav.gz
+%%DATADIR%%/sounds/dwarves/basic_voices/die/die4.wav.gz
+%%DATADIR%%/sounds/dwarves/buildings/selected/barracks.wav.gz
+%%DATADIR%%/sounds/dwarves/buildings/selected/blacksmith.wav.gz
+%%DATADIR%%/sounds/dwarves/buildings/selected/market.wav.gz
+%%DATADIR%%/sounds/dwarves/buildings/selected/shipyard.wav.gz
+%%DATADIR%%/sounds/dwarves/buildings/selected/temple.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-advanced-warrior/acknowledgement/1.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-advanced-warrior/acknowledgement/2.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-advanced-warrior/acknowledgement/3.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-advanced-warrior/acknowledgement/4.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-advanced-warrior/annoyed/1.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-advanced-warrior/annoyed/2.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-advanced-warrior/annoyed/3.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-advanced-warrior/annoyed/4.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-advanced-warrior/annoyed/5.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-advanced-warrior/annoyed/6.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-advanced-warrior/annoyed/7.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-advanced-warrior/selected/1.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-advanced-warrior/selected/2.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-advanced-warrior/selected/3.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-advanced-warrior/selected/4.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-bowman/acknowledgement/1.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-bowman/acknowledgement/2.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-bowman/acknowledgement/3.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-bowman/acknowledgement/4.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-bowman/annoyed/1.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-bowman/annoyed/2.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-bowman/annoyed/3.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-bowman/annoyed/4.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-bowman/annoyed/5.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-bowman/annoyed/6.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-bowman/annoyed/7.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-bowman/selected/1.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-bowman/selected/2.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-bowman/selected/3.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-bowman/selected/4.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-scout/acknowledgement/1.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-scout/acknowledgement/2.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-scout/acknowledgement/3.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-scout/acknowledgement/4.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-scout/annoyed/1.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-scout/annoyed/2.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-scout/annoyed/3.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-scout/annoyed/4.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-scout/annoyed/5.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-scout/annoyed/6.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-scout/annoyed/7.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-scout/selected/1.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-scout/selected/2.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-scout/selected/3.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-scout/selected/4.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-warrior/acknowledgement/1.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-warrior/acknowledgement/2.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-warrior/acknowledgement/3.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-warrior/acknowledgement/4.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-warrior/annoyed/1.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-warrior/annoyed/2.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-warrior/annoyed/3.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-warrior/annoyed/4.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-warrior/annoyed/5.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-warrior/annoyed/6.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-warrior/annoyed/7.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-warrior/selected/1.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-warrior/selected/2.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-warrior/selected/3.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-worker/acknowledgement/1.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-worker/acknowledgement/2.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-worker/acknowledgement/3.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-worker/acknowledgement/4.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-worker/annoyed/1.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-worker/annoyed/2.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-worker/annoyed/3.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-worker/annoyed/4.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-worker/annoyed/5.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-worker/annoyed/6.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-worker/selected/1.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-worker/selected/2.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-worker/selected/3.wav.gz
+%%DATADIR%%/sounds/dwarves/units/dwarves-worker/selected/4.wav.gz
+%%DATADIR%%/sounds/jokes/kimmo.wav.gz
+%%DATADIR%%/sounds/misc/building_construction.wav.gz
+%%DATADIR%%/sounds/misc/building_explosion/1.wav.gz
+%%DATADIR%%/sounds/misc/building_explosion/2.wav.gz
+%%DATADIR%%/sounds/misc/building_explosion/3.wav.gz
+%%DATADIR%%/sounds/misc/burning.wav.gz
+%%DATADIR%%/sounds/misc/tree_chopping/1.wav.gz
+%%DATADIR%%/sounds/misc/tree_chopping/2.wav.gz
+%%DATADIR%%/sounds/misc/tree_chopping/3.wav.gz
+%%DATADIR%%/sounds/misc/tree_chopping/4.wav.gz
+%%DATADIR%%/sounds/missiles/sword_attack/1.wav.gz
+%%DATADIR%%/sounds/missiles/sword_attack/2.wav.gz
+%%DATADIR%%/sounds/missiles/sword_attack/3.wav.gz
+%%DATADIR%%/sounds/music/battleformandicor.ogg
+%%DATADIR%%/sounds/music/bussi.ogg
+%%DATADIR%%/sounds/music/nomic_-_hope.ogg
+%%DATADIR%%/sounds/music/valmistakauraa.ogg
+%%DATADIR%%/sounds/ui/click.wav.gz
+%%DATADIR%%/sounds/ui/placement_error.wav.gz
+%%DATADIR%%/sounds/ui/placement_success.wav.gz
+%%DATADIR%%/sounds/ui/statsthump.wav.gz
+%%DATADIR%%/sounds/unused.wav.gz
+%%PORTDOCS%%%%DOCSDIR%%/CHEATS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELASE-NOTES
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/sounds/ui
+@dirrm %%DATADIR%%/sounds/music
+@dirrm %%DATADIR%%/sounds/missiles/sword_attack
+@dirrm %%DATADIR%%/sounds/missiles
+@dirrm %%DATADIR%%/sounds/misc/tree_chopping
+@dirrm %%DATADIR%%/sounds/misc/building_explosion
+@dirrm %%DATADIR%%/sounds/misc
+@dirrm %%DATADIR%%/sounds/jokes
+@dirrm %%DATADIR%%/sounds/dwarves/units/dwarves-worker/selected
+@dirrm %%DATADIR%%/sounds/dwarves/units/dwarves-worker/annoyed
+@dirrm %%DATADIR%%/sounds/dwarves/units/dwarves-worker/acknowledgement
+@dirrm %%DATADIR%%/sounds/dwarves/units/dwarves-worker
+@dirrm %%DATADIR%%/sounds/dwarves/units/dwarves-warrior/selected
+@dirrm %%DATADIR%%/sounds/dwarves/units/dwarves-warrior/annoyed
+@dirrm %%DATADIR%%/sounds/dwarves/units/dwarves-warrior/acknowledgement
+@dirrm %%DATADIR%%/sounds/dwarves/units/dwarves-warrior
+@dirrm %%DATADIR%%/sounds/dwarves/units/dwarves-scout/selected
+@dirrm %%DATADIR%%/sounds/dwarves/units/dwarves-scout/annoyed
+@dirrm %%DATADIR%%/sounds/dwarves/units/dwarves-scout/acknowledgement
+@dirrm %%DATADIR%%/sounds/dwarves/units/dwarves-scout
+@dirrm %%DATADIR%%/sounds/dwarves/units/dwarves-bowman/selected
+@dirrm %%DATADIR%%/sounds/dwarves/units/dwarves-bowman/annoyed
+@dirrm %%DATADIR%%/sounds/dwarves/units/dwarves-bowman/acknowledgement
+@dirrm %%DATADIR%%/sounds/dwarves/units/dwarves-bowman
+@dirrm %%DATADIR%%/sounds/dwarves/units/dwarves-advanced-warrior/selected
+@dirrm %%DATADIR%%/sounds/dwarves/units/dwarves-advanced-warrior/annoyed
+@dirrm %%DATADIR%%/sounds/dwarves/units/dwarves-advanced-warrior/acknowledgement
+@dirrm %%DATADIR%%/sounds/dwarves/units/dwarves-advanced-warrior
+@dirrm %%DATADIR%%/sounds/dwarves/units
+@dirrm %%DATADIR%%/sounds/dwarves/buildings/selected
+@dirrm %%DATADIR%%/sounds/dwarves/buildings
+@dirrm %%DATADIR%%/sounds/dwarves/basic_voices/die
+@dirrm %%DATADIR%%/sounds/dwarves/basic_voices
+@dirrm %%DATADIR%%/sounds/dwarves
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/scripts/tilesets
+@dirrm %%DATADIR%%/scripts/dwarves
+@dirrm %%DATADIR%%/scripts/darkness
+@dirrm %%DATADIR%%/scripts/ai
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/maps/Single/Really hard
+@dirrm %%DATADIR%%/maps/Single/Normal
+@dirrm %%DATADIR%%/maps/Single/Hard
+@dirrm %%DATADIR%%/maps/Single/For beginners
+@dirrm %%DATADIR%%/maps/Single/Easy
+@dirrm %%DATADIR%%/maps/Single
+@dirrm %%DATADIR%%/maps/Multiplayer/Over 8 players
+@dirrm %%DATADIR%%/maps/Multiplayer/8 players
+@dirrm %%DATADIR%%/maps/Multiplayer/7 players
+@dirrm %%DATADIR%%/maps/Multiplayer/6 players
+@dirrm %%DATADIR%%/maps/Multiplayer/4 players
+@dirrm %%DATADIR%%/maps/Multiplayer/3 players
+@dirrm %%DATADIR%%/maps/Multiplayer/2 players
+@dirrm %%DATADIR%%/maps/Multiplayer
+@dirrm %%DATADIR%%/maps/Battle/Really hard
+@dirrm %%DATADIR%%/maps/Battle/Normal
+@dirrm %%DATADIR%%/maps/Battle/Hard
+@dirrm %%DATADIR%%/maps/Battle/For beginners
+@dirrm %%DATADIR%%/maps/Battle/Easy
+@dirrm %%DATADIR%%/maps/Battle
+@dirrm %%DATADIR%%/maps
+@dirrm %%DATADIR%%/graphics/ui/panels/800x600
+@dirrm %%DATADIR%%/graphics/ui/panels/640x480
+@dirrm %%DATADIR%%/graphics/ui/panels/1600x1200
+@dirrm %%DATADIR%%/graphics/ui/panels/1280x960
+@dirrm %%DATADIR%%/graphics/ui/panels/1024x768
+@dirrm %%DATADIR%%/graphics/ui/panels
+@dirrm %%DATADIR%%/graphics/ui/fonts
+@dirrm %%DATADIR%%/graphics/ui/cursors
+@dirrm %%DATADIR%%/graphics/ui
+@dirrm %%DATADIR%%/graphics/tilesets
+@dirrm %%DATADIR%%/graphics/neutral/units
+@dirrm %%DATADIR%%/graphics/neutral/buildings
+@dirrm %%DATADIR%%/graphics/neutral
+@dirrm %%DATADIR%%/graphics/missiles
+@dirrm %%DATADIR%%/graphics/jokes
+@dirrm %%DATADIR%%/graphics/icons
+@dirrm %%DATADIR%%/graphics/dwarves/units
+@dirrm %%DATADIR%%/graphics/dwarves/buildings
+@dirrm %%DATADIR%%/graphics/dwarves
+@dirrm %%DATADIR%%/graphics/darkness/units
+@dirrm %%DATADIR%%/graphics/darkness/buildings
+@dirrm %%DATADIR%%/graphics/darkness
+@dirrm %%DATADIR%%/graphics/cartoonish/dwarves/units
+@dirrm %%DATADIR%%/graphics/cartoonish/dwarves/buildings
+@dirrm %%DATADIR%%/graphics/cartoonish/dwarves
+@dirrm %%DATADIR%%/graphics/cartoonish
+@dirrm %%DATADIR%%/graphics
+@dirrm %%DATADIR%%/campaigns/dwarves/02
+@dirrm %%DATADIR%%/campaigns/dwarves/01
+@dirrm %%DATADIR%%/campaigns/dwarves
+@dirrm %%DATADIR%%/campaigns
+@dirrm %%DATADIR%%
