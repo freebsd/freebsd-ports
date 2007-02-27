@@ -1,0 +1,26 @@
+--- dbmail-message.c
++++ dbmail-message.c
+@@ -885,9 +885,13 @@ static int _header_get_id(const struct D
+ 	u64_t tmp;
+ 	gpointer cacheid;
+ 	gchar *safe_header;
++	gchar *tmpheader;
+ 
+-	if (! (safe_header = dm_strnesc(header,CACHE_WIDTH_NAME)))
++	// rfc822 headernames are case-insensitive
++	if (! (tmpheader = dm_strnesc(header,CACHE_WIDTH_NAME)))
+ 		return -1;
++	safe_header = g_ascii_strdown(tmpheader,-1);
++	g_free(tmpheader);
+ 
+ 	cacheid = g_hash_table_lookup(self->header_dict, (gconstpointer)safe_header);
+ 	if (cacheid) {
+@@ -897,7 +901,7 @@ static int _header_get_id(const struct D
+ 	}
+ 		
+ 	GString *q = g_string_new("");
+-	g_string_printf(q, "SELECT id FROM %sheadername WHERE headername='%s'", DBPFX, safe_header);
++	g_string_printf(q, "SELECT id FROM %sheadername WHERE lower(headername)='%s'", DBPFX, safe_header);
+ 	if (db_query(q->str) == -1) {
+ 		g_string_free(q,TRUE);
+ 		g_free(safe_header);
