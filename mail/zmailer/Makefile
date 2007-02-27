@@ -34,10 +34,6 @@ IGNORE=		requires perl 5.006 or better
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-EAI_NODATA
 .endif
 
-.if ${OSVERSION} >= 700019
-BROKEN=		does not compile with OpenSSL 0.9.8b
-.endif
-
 CONFIGURE_ARGS+=--prefix=${PREFIX}/ \
 		--with-mailbin=${PREFIX}/sbin \
 		--with-mailbox=/var/mail \
