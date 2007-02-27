@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	CalculiX
-PORTVERSION=	1.5
-PORTREVISION=	2
+PORTVERSION=	1.6
 CATEGORIES=	cad
 MASTER_SITES=	http://www.dhondt.de/
 DISTFILES=	${DIST_SOURCES}
@@ -34,17 +33,6 @@ LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut \
 		spooles.1:${PORTSDIR}/math/spooles \
 		metis.1:${PORTSDIR}/math/metis	\
 		taucs.1:${PORTSDIR}/math/taucs
-.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
-WITH_ATLAS=             yes
-.endif
-.if defined(WITH_ATLAS)
-LIB_DEPENDS+=		atlas.2:${PORTSDIR}/math/atlas
-BLAS_LIBS?=		-lf77blas -latlas
-.else
-LIB_DEPENDS+=		blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=		lapack.4:${PORTSDIR}/math/lapack
-BLAS_LIBS=		-lblas
-.endif
 
 USE_BZIP2=	yes
 
@@ -65,6 +53,20 @@ BROWSER?=	mozilla
 PSVIEWER?=	gv
 
 .include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=             yes
+.endif
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=		atlas.2:${PORTSDIR}/math/atlas
+BLAS_LIBS=		-lf77blas -latlas
+LAPACK_LIBS=		-lalapack -lcblas
+.else
+LIB_DEPENDS+=		blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=		lapack.4:${PORTSDIR}/math/lapack
+BLAS_LIBS=		-lblas
+LAPACK_LIBS=		-llapack
+.endif
 
 WANT_FORTRAN=	yes #dummy but future use
 BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
@@ -95,6 +97,7 @@ pre-build:
 	s+%%PTHREAD_CFLAGS%%+-DUSE_MT ${PTHREAD_CFLAGS}+g; \
 	s+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g; \
 	s+%%BLAS_LIBS%%+${BLAS_LIBS}+ ; \
+	s+%%LAPACK_LIBS%%+${LAPACK_LIBS}+ ; \
 	s+%%LOCALBASE%%+${LOCALBASE}+g;' \
 		${WRKSRC}/ccx_${PORTVERSION}/src/Makefile
 	@${REINPLACE_CMD} -e 's+%%X11BASE%%+${X11BASE}+g; \

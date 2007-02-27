@@ -1,5 +1,5 @@
---- cgx_1.5/src/Makefile.orig	Sun Feb 19 22:13:12 2006
-+++ cgx_1.5/src/Makefile	Sun Feb 19 22:20:42 2006
+--- cgx_1.6/src/Makefile.orig	Sun Feb 19 22:13:12 2006
++++ cgx_1.6/src/Makefile	Sun Feb 19 22:20:42 2006
 @@ -1,13 +1,13 @@
 -CFLAGS = -O2 -Wall \
 +CFLAGS += -O2 -Wall \
