@@ -1,0 +1,10 @@
+--- Makefile.orig	Wed Feb 21 15:47:45 2007
++++ Makefile	Wed Feb 21 15:47:50 2007
+@@ -1,7 +1,3 @@
+-include ../platform-settings
+-
+-CFLAGS=$(CCFLAGS) -I../jabberd
+-
+ jud_OBJECTS=jud.o jud_reg.o jud_search.o
+ 
+ all: jud
