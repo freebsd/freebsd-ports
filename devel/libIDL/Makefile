@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libIDL
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.8
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
@@ -22,7 +22,8 @@ USE_BISON=	yes
 USE_GNOME=	gnomehack glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
+CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
+		--infodir=${PREFIX}/info
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
