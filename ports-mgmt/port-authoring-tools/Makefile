@@ -17,7 +17,6 @@ COMMENT=	"meta-port" for tools to test and submit changes to ports
 
 # note: portlint is brought in by porttools
 RUN_DEPENDS=	\
-		${LOCALBASE}/bin/cvsup:${PORTSDIR}/net/cvsup-without-gui \
 		${LOCALBASE}/bin/fastest_cvsup:${PORTSDIR}/sysutils/fastest_cvsup \
 		${LOCALBASE}/sbin/libchk:${PORTSDIR}/sysutils/libchk \
 		${LOCALBASE}/bin/port:${PORTSDIR}/ports-mgmt/porttools
