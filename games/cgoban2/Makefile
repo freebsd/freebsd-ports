@@ -12,7 +12,7 @@ CATEGORIES=	games java
 MASTER_SITES=	http://kgs.kiseido.com/
 DISTNAME=	cgoban-unix-${PORTVERSION}
 
-MAINTAINER=	phil@brassy.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet Go Server client and game editor
 
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
