@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	linrad
-PORTVERSION=	2.20
+PORTVERSION=	2.23
 CATEGORIES=	comms
 MASTER_SITES=	http://www.nitehawk.com/sm5bsz/linuxdsp/archive/\
 		http://g7rau.demon.co.uk/sm5bsz/linuxdsp/archive/\
 		http://www.sm5bsz.com/linuxdsp/archive/
-DISTNAME=	lir02-20
+DISTNAME=	lir02-23
 EXTRACT_SUFX=	.tbz
 DIST_SUBDIR=	${PORTNAME}
 
@@ -20,7 +20,7 @@ COMMENT=	Amateur Radio DSP utility (SDR)
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-02.20
+WRKSRC=		${WRKDIR}/${PORTNAME}-02.23
 
 USE_AUTOTOOLS=	autoconf:253
 GNU_CONFIGURE=	yes
@@ -30,8 +30,14 @@ ALL_TARGET=	xlinrad
 USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386
 X11_PATCHFILES=	Makefile.in help.c xmain.c
+LINRAD_DOCFILES=	z_APM.txt z_BUFFERS.txt z_CALIBRATE.txt \
+			z_COPYRIGHT.txt z_GIFINFO.txt \
+			z_MOUSE.txt z_NETWORK.txt \
+			z_PARALLEL_PORT.txt z_SETTINGS.txt \
+			z_USERS_EXTRA.txt z_USERS_HWARE.txt
 
 .include <bsd.port.pre.mk>
+
 .if ${OSVERSION} < 500000
 BROKEN=		Does not compile on FreeBSD 4.x
 .endif
@@ -55,17 +61,9 @@ do-install:
 	${INSTALL_PROGRAM} -m04555 ${WRKSRC}/x${PORTNAME} ${PREFIX}/bin/x${PORTNAME}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/z_APM.txt ${DOCSDIR}/z_APM.txt
-	${INSTALL_DATA} ${WRKSRC}/z_BUFFERS.txt ${DOCSDIR}/z_BUFFERS.txt
-	${INSTALL_DATA} ${WRKSRC}/z_CALIBRATE.txt ${DOCSDIR}/z_CALIBRATE.txt
-	${INSTALL_DATA} ${WRKSRC}/z_COPYRIGHT.txt ${DOCSDIR}/z_COPYRIGHT.txt
-	${INSTALL_DATA} ${WRKSRC}/z_GIFINFO.txt ${DOCSDIR}/z_GIFINFO.txt
-	${INSTALL_DATA} ${WRKSRC}/z_MOUSE.txt ${DOCSDIR}/z_MOUSE.txt
-	${INSTALL_DATA} ${WRKSRC}/z_MOUSE.txt ${DOCSDIR}/z_PARALLEL_PORT.txt
-	${INSTALL_DATA} ${WRKSRC}/z_MOUSE.txt ${DOCSDIR}/z_SETTINGS.txt
-	${INSTALL_DATA} ${WRKSRC}/z_MOUSE.txt ${DOCSDIR}/z_USERS_EXTRA.txt
-	${INSTALL_DATA} ${WRKSRC}/z_MOUSE.txt ${DOCSDIR}/z_USERS_HWARE.txt
-	${INSTALL_DATA} ${WRKSRC}/z_USLEEP.txt ${DOCSDIR}/z_USLEEP.txt
+.for f in ${LINRAD_DOCFILES}
+	@${INSTALL_DATA}  ${WRKSRC}/$f ${DOCSDIR}/$f
+.endfor
 	@${ECHO} ""
 	@${ECHO} "linrad docs installed in ${DOCSDIR}"
 	@${ECHO} ""

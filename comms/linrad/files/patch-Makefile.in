@@ -1,11 +1,11 @@
---- Makefile.in.orig	Tue Nov  7 13:45:32 2006
-+++ Makefile.in	Sun Dec  3 15:06:40 2006
+--- Makefile.in.orig	Wed Feb 14 04:37:46 2007
++++ Makefile.in	Thu Feb 22 19:52:33 2007
 @@ -4,17 +4,14 @@
  # Name the output files *.ol instead of *.o 
  # so we definitely know it is for Linux. 
  # (*.o files can be present by mistake) 
 -LCC	= gcc
-+LCC	= ${CC}
++LCC	= $(CC)
  # Use the mingw cross compiler for Windows
  # Name the output files *.ow instead of *.o 
  # so we definitely know it is for Windows.
@@ -13,28 +13,28 @@
  WCC	= /usr/bin/i586-mingw32msvc-gcc
  # Always use the same flags.
 -CFL	= -g -O -DOSNUM=1 -W -Wimplicit -Wreturn-type -Wformat \
---Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
+--m32 -Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
 --Wparentheses -Wstrict-prototypes -Werror -ffast-math \
 --fomit-frame-pointer -c -o
-+CFL	= ${CFLAGS} -I/usr/local/include -I/usr/X11R6/include -L/usr/local/lib -L/usr/X11R6/lib -DOSNUM=1 -ffast-math -fomit-frame-pointer -c -o 
++CFL	= ${CFLAGS} -I/usr/X11R6/include -DOSNUM=1 -c -o
  CFW	= -g -O -DOSNUM=2 -W -Wimplicit -Wreturn-type -Wformat \
  -Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
  -Wparentheses -Wstrict-prototypes -Werror -ffast-math \
-@@ -386,7 +383,7 @@
+@@ -387,7 +384,7 @@
  meter_graph.ol fonts.ol screensub.ol membeg.ol lxsys.ol memend.ol
  
  
 -	gcc -olinrad -lvgagl -lvga -lpthread -lm \
-+	gcc -olinrad -lvgagl -lvga -pthread -lm \
++	$(CC) -olinrad -lvgagl -lvga -pthread -lm \
  -Wl,-Map,linrad.lmap,-warn-common \
- 	membeg.ol lmain.ol linvar.ol ui.ol lsetad.ol fft1.ol buf.ol \
+ 	membeg.ol lmain.ol lvar.ol ui.ol lsetad.ol fft1.ol buf.ol \
  mouse.ol wide_graph.ol getiq.ol fft0.ol adtest.ol hires_graph.ol \
-@@ -432,7 +429,7 @@
+@@ -434,7 +431,7 @@
  
  
  
 -	gcc -oxlinrad -L/usr/X11R6/lib -lX11 -lpthread -lm \
-+	gcc -oxlinrad -L/usr/X11R6/lib -lX11 -pthread -lm \
++	$(CC) -oxlinrad -L/usr/X11R6/lib -lX11 -pthread -lm \
  -Wl,-Map,linrad.xmap,-warn-common \
- membeg.ol xmain.ol xvar.ol ui.ol lsetad.ol fft1.ol buf.ol \
+ membeg.ol xmain.ol xvar.ol ui.ol lsetad.ol fft1.ol buf.ol lvar.ol \
  mouse.ol wide_graph.ol getiq.ol fft0.ol adtest.ol hires_graph.ol \

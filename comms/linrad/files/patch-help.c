@@ -1,5 +1,5 @@
---- help.c.orig	Tue Nov  7 13:45:32 2006
-+++ help.c	Fri Nov 24 18:02:31 2006
+--- help.c.orig	Wed Feb 14 04:37:46 2007
++++ help.c	Thu Feb 22 18:44:17 2007
 @@ -352,7 +352,7 @@
    printf("\n%s",s);
    DEB"\n%s",s);
