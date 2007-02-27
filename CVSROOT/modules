@@ -6810,6 +6810,7 @@ localize	ports/textproc/localize
 locator		ports/comms/locator
 lockdown	ports/security/lockdown
 lodju		ports/graphics/lodju
+loemu		ports/emulators/loemu
 log4c		ports/devel/log4c
 log4cplus	ports/devel/log4cplus
 log4cpp		ports/devel/log4cpp
