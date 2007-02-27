@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Locale
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gioria@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for systems to support the XPG4 message catalog functions
 
 MAN3=		Locale::Msgcat.3
