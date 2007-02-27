@@ -909,6 +909,7 @@
     SUBDIR += phpadsnew
     SUBDIR += phpbb
     SUBDIR += phpgedview
+    SUBDIR += phpmp
     SUBDIR += phpmyfaq
     SUBDIR += phproxy
     SUBDIR += phpsurveyor
