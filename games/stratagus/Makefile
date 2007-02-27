@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	stratagus
-PORTVERSION=	2.1
-PORTREVISION=	3
+PORTVERSION=	2.2.2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+MASTER_SITES=	SF
+EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	tlp@liquidx.org
 COMMENT=	Free cross-platform real-time strategy gaming engine
@@ -20,14 +18,11 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes
 USE_LUA=	5.0
-USE_SDL=	yes
+USE_SDL=	sdl
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CFLAGS=		-I${LUA_INCDIR}
-LDFLAGS=	-L${LUA_LIBDIR}
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
-		EXTRA_CFLAGS="${CFLAGS}" EXTRA_LIBS="${LDFLAGS}"
-WRKSRC=		${WRKDIR}/stratagus-040702
+CFLAGS+=	-I${LUA_INCDIR}
+CONFIGURE_ENV=	LDFLAGS="-L${LUA_LIBDIR} -lm"
 
 OPTIONS=	OPENGL "Enable OpenGL support" on \
 		MIKMOD "Enable Mikmod support" off \
@@ -36,10 +31,6 @@ OPTIONS=	OPENGL "Enable OpenGL support" on \
 PLIST_FILES=	bin/stratagus
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		does not run properly on FreeBSD 4.x
-.endif
 
 .if defined(WITH_OPENGL)
 CONFIGURE_ARGS+=--with-opengl
@@ -57,7 +48,13 @@ LIB_DEPENDS+=	vorbisfile.4:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--without-ogg
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-ldl||; s|gcc|${CC}|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+
 post-install:
+	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 
 .include <bsd.port.post.mk>
