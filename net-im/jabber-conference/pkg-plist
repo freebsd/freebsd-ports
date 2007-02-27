@@ -1,0 +1,3 @@
+lib/jabber/conference.so
+%%PORTDOCS%%%%DOCSDIR%%/README.jabberd14
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
