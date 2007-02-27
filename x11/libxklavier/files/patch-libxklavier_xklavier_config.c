@@ -1,5 +1,14 @@
---- libxklavier/xklavier_config.c	2006-04-15 22:04:38.000000000 -0400
-+++ libxklavier/xklavier_config.c	2006-07-08 10:15:17.000000000 -0400
+--- libxklavier/xklavier_config.c.orig	Sat Apr 15 21:04:38 2006
++++ libxklavier/xklavier_config.c	Tue Feb 27 14:57:27 2007
+@@ -243,7 +243,7 @@
+ 		return FALSE;
+ 
+ 	nodes = xpath_obj->nodesetval;
+-	if (nodes != NULL && nodes->nodeTab != NULL) {
++	if (nodes != NULL && nodes->nodeTab != NULL && nodes->nodeNr > 0) {
+ 		rv = xkl_read_config_item(*nodes->nodeTab, pitem);
+ 		if (pnode != NULL) {
+ 			*pnode = *nodes->nodeTab;
 @@ -275,7 +275,11 @@
  gchar *
  xkl_strings_concat_comma_separated(gchar ** array)
