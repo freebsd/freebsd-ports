@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.powertrip.co.za/distfiles/pdmenu/ \
 				${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	pdmenu_${PORTVERSION}
 
-MAINTAINER=	jacques@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple console menu program
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang

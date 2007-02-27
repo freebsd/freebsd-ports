@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.danga.com/dist/Perlbal/ \
 		http://www.powertrip.co.za/distfiles/danga/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jacques@php.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reverse-proxy load balancer and webserver
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
