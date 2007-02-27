@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freemind
 DISTNAME=	${PORTNAME}-bin-max-${PORTVERSION:S/./_/g}
 
-MAINTAINER=	cartola@openit.com.br
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free mind-mapping software written in Java
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
