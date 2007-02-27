@@ -1,0 +1,3 @@
+lib/jabber/jud.so
+%%PORTDOCS%%%%DOCSDIR%%/README.jabberd14
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,38 @@
+The sample configuration file for jabberd14 may be located in:
+%%TARGETDIR%%/etc/jabber.xml.sample
+
+Please make all necessary changes to your configuration file which may be:
+%%TARGETDIR%%/etc/jabber.xml
+
+To activate JUD for your Jabber server, add the following to your configuration file
+(around line 921 in the sample configuration file):
+-------------------------------------------------------------------------------
+
+  <!--
+  If you want this service to be accessible from other servers,
+  change 'jud.localhost' to the server's fully qualified domain name!
+  -->
+  <service id="jud">
+    <host>jud.localhost</host>
+    <load><jud>%%TARGETDIR%%/lib/jabber/jud.so</jud></load>
+    <jud xmlns="jabber:config:jud">
+      <vCard>
+        <FN>Local Organization's User Directory</FN>
+        <DESC>This service provides a simple user directory service.</DESC>
+        <URL>http://foo.bar/</URL>
+      </vCard>                    
+    </jud>   
+  </service>
+
+-------------------------------------------------------------------------------
+Add this section to the browse area of the jsm service to advertise it to
+your users (around line 382 of the sample config):
+-------------------------------------------------------------------------------
+
+	<item category="directory" type="user" jid="jud.localhost" name="My Organization's User Directory">
+	  <ns>jabber:iq:search</ns>
+	  <ns>jabber:iq:register</ns>
+	</item>
+
+-------------------------------------------------------------------------------
+Be sure to restart your server after reconfiguring.
