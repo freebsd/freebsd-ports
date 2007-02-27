@@ -798,6 +798,7 @@
     SUBDIR += wordplay
     SUBDIR += wormux
     SUBDIR += wormux-devel
+    SUBDIR += wrogue
     SUBDIR += wtf
     SUBDIR += xabacus
     SUBDIR += xarchon
