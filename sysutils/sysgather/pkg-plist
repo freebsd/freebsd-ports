@@ -4,4 +4,5 @@ etc/sysgather.conf.default
 @exec [ -f %B/sysgather.conf ] || cp %B/%f %B/sysgather.conf
 %%EXAMPLESDIR%%/debian.conf
 %%EXAMPLESDIR%%/freebsd.conf
+%%EXAMPLESDIR%%/slackware.conf
 @dirrm %%EXAMPLESDIR%%
