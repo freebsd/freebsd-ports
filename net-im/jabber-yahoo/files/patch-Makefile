@@ -1,16 +1,14 @@
---- Makefile.orig	Mon Sep 29 02:40:44 2003
-+++ Makefile	Sat Jan  3 20:23:13 2004
-@@ -1,10 +1,10 @@
+--- Makefile.orig	Fri Jun 25 18:33:56 2004
++++ Makefile	Wed Feb 21 15:09:38 2007
+@@ -1,11 +1,6 @@
  
- #  $Id: Makefile,v 1.5 2003/09/29 00:40:44 pcurtis Exp $
+ #  $Id: Makefile,v 1.7 2004/06/25 18:33:56 pcurtis Exp $
  
 -include ../platform-settings
-+include ${PREFIX}/include/jabber/platform-settings
- 
+-
 -CFLAGS:=$(CFLAGS) -I../jabberd  `glib-config --cflags`
 -LIBS:=$(LIBS) `glib-config --libs glib`
-+CFLAGS:=$(CFLAGS) -I${PREFIX}/include -I${PREFIX}/include/jabber `glib12-config --cflags`
-+LIBS:=$(LIBS) `glib12-config --libs glib` -liconv
- 
+-
  YAHOO_OBJECTS=yahoo-transport.o yahoo-session.o yahoo-phandler.o yahoo.o \
  	crypt.o gaim-sha.o yahoo-presence.o yahoo-server.o md5.o yahoo-message.o \
+ 	yahoo-stats.o yahoo-composing.o yahoo-mail.o yahoo-auth.o
