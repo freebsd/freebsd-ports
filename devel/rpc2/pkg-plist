@@ -1,19 +1,12 @@
-bin/filcon
 bin/rp2gen
 include/rpc2/errors.h
 include/rpc2/errorsdefs.h
-include/rpc2/fail.h
-include/rpc2/fcon.h
 include/rpc2/multi.h
 include/rpc2/rpc2.h
 include/rpc2/rpc2_addrinfo.h
 include/rpc2/se.h
 include/rpc2/secure.h
 include/rpc2/sftp.h
-lib/libfail.a
-lib/libfail.la
-lib/libfail.so
-lib/libfail.so.8
 lib/librpc2.a
 lib/librpc2.la
 lib/librpc2.so
@@ -23,3 +16,4 @@ lib/libse.la
 lib/libse.so
 lib/libse.so.8
 @dirrm include/rpc2
+@dirrmtry share/rpc2
