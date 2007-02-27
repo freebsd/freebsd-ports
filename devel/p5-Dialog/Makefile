@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Perl interface to dialog(3)
 
+BROKEN=		Does not compile
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Dialog.3

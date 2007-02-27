@@ -17,6 +17,8 @@ COMMENT=	Simulator for many HP calculators
 BUILD_DEPENDS=	pnmtopng:${PORTSDIR}/graphics/netpbm \
 		bison2:${PORTSDIR}/devel/bison2
 
+BROKEN=		Does not compile
+
 USE_SCONS=	yes
 USE_GNOME=	gtk20 libxml2
 USE_SDL=	mixer
