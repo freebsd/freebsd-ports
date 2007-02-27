@@ -7,7 +7,7 @@
 
 PORTNAME=	xemacs
 PORTVERSION=	${XEMACS_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
@@ -62,6 +62,13 @@ USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=	--with-ldap
 .else
 CONFIGURE_ARGS+=	--with-ldap=no
+.endif
+
+.if defined(WITH_POSTGRES)
+CONFIGURE_ARGS+=	--with-postgresql
+LIB_DEPENDS+=	pq:${PORTSDIR}databases/postgresql${DEFAULT_PGSQL_VER}-client
+.else
+CONFIGURE_ARGS+=	--without-postgresql
 .endif
 
 .if !defined(WITHOUT_XEMACS_PACKAGES)
