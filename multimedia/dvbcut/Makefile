@@ -21,6 +21,8 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 LIB_DEPENDS=	avutil.1:${PORTSDIR}/multimedia/ffmpeg-devel \
 		ao.3:${PORTSDIR}/audio/libao
 
+BROKEN=		Does not build
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
