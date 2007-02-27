@@ -34,6 +34,66 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="46b922a8-c69c-11db-9f82-000e0c2e438a">
+    <topic>FreeBSD -- Jail rc.d script privilege escalation</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>6.1</gt><lt>6.1_12</lt></range>
+	<range><gt>6.0</gt><lt>6.0_17</lt></range>
+	<range><gt>5.5</gt><lt>5.5_10</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>In multiple situations the host's jail rc.d(8) script does
+	  not check if a path inside the jail file system structure is
+	  a symbolic link before using the path.  In particular this is
+	  the case when writing the output from the jail start-up to
+	  /var/log/console.log and when mounting and unmounting file
+	  systems inside the jail directory structure.</p>
+	<h1>Impact:</h1>
+	<p>Due to the lack of handling of potential symbolic links the
+	  host's jail rc.d(8) script is vulnerable to "symlink
+	  attacks".  By replacing /var/log/console.log inside the jail
+	  with a symbolic link it is possible for the superuser (root)
+	  inside the jail to overwrite files on the host system outside
+	  the jail with arbitrary content.  This in turn can be used to
+	  execute arbitrary commands with non-jailed superuser
+	  privileges.</p>
+	<p>Similarly, by changing directory mount points inside the
+	  jail file system structure into symbolic links, it may be
+	  possible for a jailed attacker to mount file systems which
+	  were meant to be mounted inside the jail at arbitrary points
+	  in the host file system structure, or to unmount arbitrary
+	  file systems on the host system.</p>
+	<p>NOTE WELL: The above vulnerabilities occur only when a jail
+	  is being started or stopped using the host's jail rc.d(8)
+	  script; once started (and until stopped), running jails
+	  cannot exploit this.</p>
+	<h1>Workaround:</h1>
+	<p>If the sysctl(8) variable security.jail.chflags_allowed is
+	  set to 0 (the default), setting the "sunlnk" system flag on
+	  /var, /var/log, /var/log/console.log, and all file system
+	  mount points and their parent directories inside the jail(s)
+	  will ensure that the console log file and mount points are
+	  not replaced by symbolic links.  If this is done while jails
+	  are running, the administrator must check that an attacker
+	  has not replaced any directories with symlinks after setting
+	  the "sunlnk" flag.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-0166</cvename>
+      <freebsdsa>SA-07:01.jail</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2007-01-11</discovery>
+      <entry>2007-02-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="44449bf7-c69b-11db-9f82-000e0c2e438a">
     <topic>gtar -- name mangling symlink vulnerability</topic>
     <affects>
