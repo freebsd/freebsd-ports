@@ -12,7 +12,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.jp/efont/dist/Kochi-CID/${PORTVERSION}/
 DISTNAME=	Kochi-CID-${PORTVERSION}
 
-MAINTAINER=	kanou@khdd.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Japanese CID-keyed fonts named 'Kochi'
 
 USE_BZIP2=	yes

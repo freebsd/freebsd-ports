@@ -17,7 +17,7 @@ FREETYPE_VERSION=	2.1.10
 EXTRACT_ONLY+=	freetype-${FREETYPE_VERSION}.tar.bz2
 .endif
 
-MAINTAINER=	kanou@khdd.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Type 1/TrueType/OpenType/bitmap font editor
 
 LIB_DEPENDS=	uninameslist.0:${PORTSDIR}/textproc/libuninameslist \

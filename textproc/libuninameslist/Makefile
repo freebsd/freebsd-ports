@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	libuninameslist
 DISTNAME=	${PORTNAME}_src-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	kanou@khdd.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library of Unicode annotation data
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

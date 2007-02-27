@@ -12,7 +12,7 @@ MASTER_SITES=	http://downloads.sourceforge.jp/efont/5411/ \
 		${MASTER_SITE_PORTS_JP}
 DISTFILES=	kochi-substitute-${PORTVERSION}.tar.bz2
 
-MAINTAINER=	kanou@khdd.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Japanese TrueType fonts named 'Kochi'
 
 USE_X_PREFIX=	yes

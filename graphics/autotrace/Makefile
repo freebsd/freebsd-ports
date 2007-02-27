@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	kanou@khdd.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert bitmap to vector graphics
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
