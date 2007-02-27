@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/f/fakeroot
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	Meno.Abels@Adviser.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simulate the root user behaviour
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/po4a:${PORTSDIR}/textproc/po4a

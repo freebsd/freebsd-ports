@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/p/po4a
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	Meno.Abels@Adviser.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Documentation gettext tools
 
 BUILD_DEPENDS=	${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build \

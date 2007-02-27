@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/libt/libtext-wrapi18n-perl
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	Meno.Abels@Adviser.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Documentation gettext tools
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/CharWidth.pm:${PORTSDIR}/textproc/libtext-charwidth-perl

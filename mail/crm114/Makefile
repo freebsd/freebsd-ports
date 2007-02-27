@@ -18,7 +18,7 @@ MASTER_SITE_SUBDIR=	crm114
 # .css extention.
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${CRM114RELEASENAME}.src
 
-MAINTAINER=	Meno.Abels@Adviser.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Markov based SpamFilter
 
 LIB_DEPENDS=	tre.6:${PORTSDIR}/textproc/libtre

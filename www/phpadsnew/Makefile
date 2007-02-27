@@ -11,8 +11,8 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpadsnew
 
-MAINTAINER=	meno.abels@adviser.com
-COMMENT=	The phpAdsNew is an open-source ad server
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An open-source ad server
 
 NO_BUILD=	yes
 USE_PHP=	mysql pcre zlib
