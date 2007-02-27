@@ -12,7 +12,7 @@ MASTER_SITES=	http://oss.netfarm.it/guides/ \
 		http://freebsd.komi.mtsnet.ru/ports/distfiles/
 DISTNAME=	ris-linux
 
-MAINTAINER=	tiamat@komi.mts.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenSource alternative to Microsoft Windows RIS
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/in.tftpd:${PORTSDIR}/ftp/tftp-hpa

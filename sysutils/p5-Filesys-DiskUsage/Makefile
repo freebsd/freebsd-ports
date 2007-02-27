@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Filesys
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tiamat@komi.mts.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl equivalent of du(1)
 
 PERL_CONFIGURE=	yes
