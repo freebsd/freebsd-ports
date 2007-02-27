@@ -1,0 +1,10 @@
+lib/jabber/yahoo-transport.so
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.jabberd14
+%%PORTDOCS%%%%DOCSDIR%%/jabber.xml
+%%PORTDOCS%%%%DOCSDIR%%/yahoo-jabber.xml
+%%PORTDOCS%%%%DOCSDIR%%/yahoo-jcr.xml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
