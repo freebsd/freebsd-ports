@@ -13,15 +13,19 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scipy
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	Scientific tools for Python
 
-BUILD_DEPENDS=	${PYNUMPY} \
+BUILD_DEPENDS+=	${PYNUMPY} \
 		${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
 LATEST_LINK=	py-${PORTNAME}
 OPTIONSFILE=	${PORT_DBDIR}/py-numpy/options
+
+WANT_FORTRAN=	yes #dummy
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+RUN_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
@@ -35,10 +39,14 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64" && ${OSVERSION} < 602101
+BROKEN=	ldexpf is missing See http://lists.freebsd.org/pipermail/freebsd-amd64/2006-December/009263.html for details
+.endif
+
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 .if !exists(${LOCALBASE}/lib/libalapack.a)
-IGNORE=		Atlas needs to be built with WITH_STATICLIB for scipy to function properly
+IGNORE=		atlas needs to be built with WITH_STATICLIB for scipy to function properly
 .endif
 .else
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack \
