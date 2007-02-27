@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	fem
-PORTVERSION=	5.2.0
-PORTREVISION=	2
+PORTVERSION=	5.3.1
 CATEGORIES=	science tk84
-MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/
+MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/physics/elmer/src/
 PKGNAMEPREFIX=	elmer-
 
 MAINTAINER=	ports@FreeBSD.org
