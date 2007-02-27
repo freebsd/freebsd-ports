@@ -1,21 +1,28 @@
 %%RUBY_SITEARCHLIBDIR%%/rb_gsl.so
 %%RUBY_SITELIBDIR%%/gsl.rb
+%%RUBY_SITELIBDIR%%/rbgsl.rb
 %%RUBY_SITELIBDIR%%/gsl/oper.rb
 @dirrm %%RUBY_SITELIBDIR%%/gsl
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/blas/blas.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/blas/dnrm2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/blas/level1.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/blas/level2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/blas/level3.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cheb/cheb.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cheb/cheb2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cdf.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cheb.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/combination.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/complex/RC-lpf.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/complex/add.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/complex/coerce.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/complex/complex.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/complex/fpmi.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/complex/functions.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/complex/michelson.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/complex/mul.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/complex/oscillator.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/complex/set.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/const.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/const/physconst.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/const/travel.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/deriv/demo.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/deriv/deriv.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/deriv/diff.rb
@@ -23,17 +30,41 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dirac.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/eigen/eigen.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/eigen/herm.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/eigen/narray.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/eigen/qhoscillator.gp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/eigen/qhoscillator.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fft/fft.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fft/fft2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fft/forward.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fft/forward2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fft/radix2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fft/real-halfcomplex.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fft/real-halfcomplex2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fft/realradix2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fft/sunspot.dat
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fft/sunspot.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/data.dat
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/expfit.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/fit.dat
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/gaussfit.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/gaussian_2peaks.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/hi.dat
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/hillfit.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/lo.dat
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/lognormal.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/lorentzfit.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/multifit.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/nonlinearfit.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/polyfit.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/powerfit.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/sigmoidfit.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/sinfit.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/fit/wlinear.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/function/function.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/function/log.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/function/min.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/function/sin.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/function/synchrotron.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gallery/butterfly.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gallery/cayley.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gallery/cornu.rb
@@ -42,6 +73,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gallery/lemniscate.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gallery/polar.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gallery/rgplot/cossin.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gallery/rgplot/rgplot.replaced
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gallery/rgplot/roesller.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gallery/roesller.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gallery/scarabaeus.rb
@@ -77,21 +109,31 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/integration/qawo.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/integration/qaws.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/integration/qng.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/integration/tmp.eps
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/interp/demo.gp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/interp/demo.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/interp/interp.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/interp/points
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/interp/spline-compare.gp
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/interp/spline-compare.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/interp/spline.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/HH.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/HH_narray.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/LQ_solve.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/LU.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/LU2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/LU_narray.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/PTLQ.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/QR.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/QRPT.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/QR_solve.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/QR_solve_narray.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/SV.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/SV_narray.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/SV_solve.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/chol.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/chol_narray.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/complex.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/invert_narray.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/linalg/linalg.replaced
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/math/const.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/math/elementary.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/math/functions.rb
@@ -99,7 +141,10 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/math/minmax.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/math/power.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/math/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/a.dat
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/a.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/add.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/b.dat
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/complex.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/det.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/matrix/diagonal.rb
@@ -125,24 +170,25 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/multiroot/fsolver.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/multiroot/fsolver2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/multiroot/fsolver3.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/narray/histogram.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/narray/narray.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/narray/narray2.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/nonlinearfit.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/narray/sf.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ntuple/create.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ntuple/project.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/odeiv/binarysystem.gp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/odeiv/binarysystem.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/odeiv/demo.gp
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/odeiv/demo.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/odeiv/demo2.gp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/odeiv/duffing.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/odeiv/frei1.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/odeiv/frei2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/odeiv/legendre.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/odeiv/odeiv-compare.gp
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/odeiv/odeiv-compare.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/odeiv/odeiv.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/odeiv/odeiv2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/odeiv/oscillator.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/odeiv/sedov.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/odeiv/tmp_binary.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/odeiv/whitedwarf.gp
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/odeiv/whitedwarf.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pdf/bernoulli.rb
@@ -167,6 +213,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pdf/lognormal.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pdf/neg-binomiral.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pdf/pareto.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pdf/pareto.rb.bak
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pdf/pascal.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pdf/poisson.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pdf/rayleigh-tail.rb
@@ -181,6 +228,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/poly/cheb_II.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/poly/cubic.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/poly/demo.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/poly/fit.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/poly/hermite.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/poly/poly.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/poly/quadratic.rb
@@ -189,7 +237,6 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/generator.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/poisson.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/qrng.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/randist.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/randomwalk.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/randomwalk2d.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/random/rng.rb
@@ -233,14 +280,28 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sort/heapsort_vector_complex.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sort/sort.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sort/sort2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/stats/mean.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/stats/statistics.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/stats/test.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sum.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tamu_anova.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/a.dat
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/add.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/b.dat
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/c.dat
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/collect.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/compare.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/complex.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/connect.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/decimate.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/diff.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/filescan.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/floor.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/graph.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/histogram.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/linspace.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/log.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/logic.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/logspace.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/minmax.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/mul.rb
@@ -248,8 +309,11 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/read.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/set.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/smpv.dat
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/test.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/test_gslblock.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/vector.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/view.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/where.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/vector/write.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/wavelet/ecg.dat
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/wavelet/wavelet1.rb
@@ -282,8 +346,8 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/fft
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/eigen
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/deriv
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/const
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/complex
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cheb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/blas
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/AUTHORS
@@ -319,6 +383,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/monte.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/multimin.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/multiroot.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/narray.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/nonlinearfit.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/ntuple.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/odeiv.html
@@ -341,6 +406,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/tut.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/use.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/vector.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/vector_complex.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/wavelet.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/blas.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/cheb.rd
@@ -370,6 +436,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/monte.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/multimin.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/multiroot.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/narray.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/nonlinearfit.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/ntuple.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/odeiv.rd
@@ -392,8 +459,9 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/tut.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/use.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/vector.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/vector_complex.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/wavelet.rd
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rd
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html/.xvpics
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rd
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
