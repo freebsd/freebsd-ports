@@ -11,10 +11,10 @@ PORTVERSION=	0.9.8
 PORTREVISION!=	date -v-1d +%Y%m%d
 .else
 .if !defined(WITH_OPENSSL_BETA) && ( defined(WITH_OPENSSL_097) || defined(WITH_OPENSSL_STABLE) )
-PORTVERSION=	0.9.7l
+PORTVERSION=	0.9.7m
 PORTREVISION?=	0
 .else
-PORTVERSION=	0.9.8d
+PORTVERSION=	0.9.8e
 PORTREVISION?=	0
 .endif
 .endif
@@ -878,7 +878,9 @@ MLINKS+=	\
 	BN_BLINDING_new.3 BN_BLINDING_get_flags.3 \
 	BN_BLINDING_new.3 BN_BLINDING_set_flags.3 \
 	BN_BLINDING_new.3 BN_BLINDING_create_param.3 \
-	ERR_set_mark.3 ERR_pop_to_mark.3
+	CONF_modules_free.3 CONF_modules_finish.3 \
+	ERR_set_mark.3 ERR_pop_to_mark.3 \
+	SSL_SESSION_get_time.3 SSL_SESSION_set_timeout.3
 .endif
 
 .include <bsd.port.pre.mk>
