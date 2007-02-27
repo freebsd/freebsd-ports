@@ -11630,6 +11630,7 @@ phpip		ports/www/phpip
 phpldapadmin	ports/net/phpldapadmin
 phpldapadmin098	ports/net/phpldapadmin098
 phplot		ports/graphics/phplot
+phpmp		ports/www/phpmp
 phpmyadmin	ports/databases/phpmyadmin
 phpmyfaq	ports/www/phpmyfaq
 phpmyid		ports/security/phpmyid
