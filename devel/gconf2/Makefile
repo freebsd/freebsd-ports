@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gconf2
-PORTVERSION=	2.16.0
+PORTVERSION=	2.16.1
 PORTREVISION?=	0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -32,7 +32,8 @@ USE_GNOME=	gnomehier gnomehack orbit2 gtk20 libxml2 linc ltverhack \
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
-		--disable-gtk-doc
+		--disable-gtk-doc \
+		--mandir=${PREFIX}/man
 #		--enable-gconf-source=${PREFIX}/etc/gconf/schemas \
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
