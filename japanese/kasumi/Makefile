@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/22902
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	A dictionary management tool for anthy
 
+BROKEN=		Incomplete pkg-plist
+
 USE_GMAKE=	yes
 USE_GNOME=	gnomehier gtk20
 USE_GETOPT_LONG=	yes

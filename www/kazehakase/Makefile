@@ -17,6 +17,8 @@ COMMENT=	Kazehakase is a browser with gecko engine like Epiphany or Galeon
 
 LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls
 
+BROKEN=		Incomplete pkg-plist
+
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gtk20
 USE_GMAKE=	yes
