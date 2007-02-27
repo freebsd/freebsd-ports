@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/x/xtrlock/
 DISTNAME=	${PORTNAME}_2.0-${PORTVERSION:E}
 
-MAINTAINER=	karma@ez.pereslavl.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Transparent Lock
 
 USE_X_PREFIX=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/s/${PORTNAME}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	karma@ez.pereslavl.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Themes for Sawfish window manager
 
 RUN_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
