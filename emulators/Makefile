@@ -77,6 +77,7 @@
     SUBDIR += linux_base-gentoo-stage1
     SUBDIR += linux_base-gentoo-stage2
     SUBDIR += linux_base-gentoo-stage3
+    SUBDIR += loemu
     SUBDIR += m2000
     SUBDIR += mame-extras
     SUBDIR += mastergear

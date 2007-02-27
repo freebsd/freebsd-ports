@@ -1,0 +1,35 @@
+bin/loemu
+bin/loemu-builder
+%%PYTHON_SITELIBDIR%%/loemu/Config.py
+%%PYTHON_SITELIBDIR%%/loemu/Gamelist.py
+%%PYTHON_SITELIBDIR%%/loemu/Loemu.py
+%%PYTHON_SITELIBDIR%%/loemu/Preferences.py
+%%PYTHON_SITELIBDIR%%/loemu/SimpleGladeApp.py
+%%PYTHON_SITELIBDIR%%/loemu/__init__.py
+%%PYTHON_SITELIBDIR%%/loemu/Config.pyc
+%%PYTHON_SITELIBDIR%%/loemu/Gamelist.pyc
+%%PYTHON_SITELIBDIR%%/loemu/Loemu.pyc
+%%PYTHON_SITELIBDIR%%/loemu/Preferences.pyc
+%%PYTHON_SITELIBDIR%%/loemu/SimpleGladeApp.pyc
+%%PYTHON_SITELIBDIR%%/loemu/__init__.pyc
+%%PYTHON_SITELIBDIR%%/loemu/Config.pyo
+%%PYTHON_SITELIBDIR%%/loemu/Gamelist.pyo
+%%PYTHON_SITELIBDIR%%/loemu/Loemu.pyo
+%%PYTHON_SITELIBDIR%%/loemu/Preferences.pyo
+%%PYTHON_SITELIBDIR%%/loemu/SimpleGladeApp.pyo
+%%PYTHON_SITELIBDIR%%/loemu/__init__.pyo
+%%DATADIR%%/config/general
+%%DATADIR%%/config/mame.xsl
+%%DATADIR%%/config/sdlmame.conf
+%%DATADIR%%/config/snes9x.conf
+%%DATADIR%%/config/xmame.conf
+%%DATADIR%%/glade/Loemu.glade
+%%DATADIR%%/glade/Preferences.glade
+%%DATADIR%%/glade/penguin-revolt-128.png
+@dirrm %%DATADIR%%/snaps
+@dirrm %%DATADIR%%/roms
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/flyers
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/loemu
