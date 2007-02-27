@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	boinc-client
-PORTVERSION=	5.8.11
+PORTVERSION=	5.8.15
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.oook.cz/bsd/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav
 
 MAINTAINER=	pav@FreeBSD.org
