@@ -19,7 +19,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.path.unimelb.edu.au/~dersch/
 DISTNAME=	PanoTools
 
-MAINTAINER=	cartola@openit.com.br
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software to View, Create, Edit and Remap Panoramic Images
 
 RUN_DEPENDS=	${LINUXBASE}/usr/bin/jpegtran:${PORTSDIR}/graphics/linux-jpeg \

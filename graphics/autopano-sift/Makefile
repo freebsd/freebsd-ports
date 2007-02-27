@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://user.cs.tu-berlin.de/~nowozin/autopano-sift/
 
-MAINTAINER=	cartola@openit.com.br
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatic panorama control point generation tool
 
 RESTRICTED=	May be covered by patents
