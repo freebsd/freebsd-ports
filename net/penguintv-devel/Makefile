@@ -24,6 +24,8 @@ BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT} \
 .endif
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Incomplete pkg-plist
+
 OPTIONS=	MOZILLA	"Use Mozilla rendered (experimental)" OFF \
 		PYLUCENE "Use Lucene search engine" ON \
 		GSTREAMER "Use GStreamer engine" ON
