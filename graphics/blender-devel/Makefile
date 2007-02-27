@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.42a
+PORTVERSION=	2.43
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		ftp://ftp.cs.umn.edu/pub/blender.org/source/ \
@@ -23,18 +23,16 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		SDL.11:${PORTSDIR}/devel/sdl12 \
 		Half.2:${PORTSDIR}/graphics/OpenEXR \
 		gettextpo.1:${PORTSDIR}/devel/gettext \
+		openal.0:${PORTSDIR}/audio/openal \
+		alut.1:${PORTSDIR}/audio/freealut \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg-devel
-
-BROKEN=		Does not build
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2007-04-10
 
 PLIST_FILES=	bin/blender
 USE_X_PREFIX=	yes
-USE_PYTHON=	2.3
-USE_SCONS=	yes
+USE_PYTHON=	2.4+
 USE_SDL=	sdl
 USE_GL=		yes
+USE_GMAKE=	yes
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math
@@ -42,9 +40,7 @@ CFLAGS+=	-O3 -ffast-math
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
+ONLY_FOR_ARCHS=	i386
 
 pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
@@ -52,7 +48,30 @@ pre-everything::
 	@${ECHO_MSG} "by defining WITH_OPTIMIZED_CFLAGS"
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|sdl11-config|${SDL_CONFIG}|; \
+		s|2.3|${PYTHON_VER}|' \
+		${WRKSRC}/source/nan_definitions.mk
+
+	@${REINPLACE_CMD} -e \
+		's|gcc|${CC}|; \
+		s|g++|${CXX}|; \
+		s|-O2|${CFLAGS}|; \
+		s|-DGAMEBLENDER=1||; \
+		s|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|' \
+		${WRKSRC}/source/nan_compile.mk
+
+	@${REINPLACE_CMD} -e \
+		's|-lc_r||; \
+		s|-pthread|${PTHREAD_LIBS}|' \
+		${WRKSRC}/source/nan_link.mk
+
+	@${REINPLACE_CMD} -e \
+		's|-FIX_NAN_WARN||' \
+		${WRKSRC}/source/nan_warn.mk
+
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/../install/freebsd/blender ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/obj/freebsd/bin/blender ${PREFIX}/bin
 
 .include <bsd.port.post.mk>
