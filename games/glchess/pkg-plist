@@ -20,9 +20,6 @@ bin/glchess
 %%PYTHON_SITELIBDIR%%/glchess/chess/board.py
 %%PYTHON_SITELIBDIR%%/glchess/chess/board.pyc
 %%PYTHON_SITELIBDIR%%/glchess/chess/board.pyo
-%%PYTHON_SITELIBDIR%%/glchess/chess/fics.py
-%%PYTHON_SITELIBDIR%%/glchess/chess/fics.pyc
-%%PYTHON_SITELIBDIR%%/glchess/chess/fics.pyo
 %%PYTHON_SITELIBDIR%%/glchess/chess/lan.py
 %%PYTHON_SITELIBDIR%%/glchess/chess/lan.pyc
 %%PYTHON_SITELIBDIR%%/glchess/chess/lan.pyo
@@ -32,9 +29,21 @@ bin/glchess
 %%PYTHON_SITELIBDIR%%/glchess/chess/san.py
 %%PYTHON_SITELIBDIR%%/glchess/chess/san.pyc
 %%PYTHON_SITELIBDIR%%/glchess/chess/san.pyo
-%%PYTHON_SITELIBDIR%%/glchess/chess/style12.py
-%%PYTHON_SITELIBDIR%%/glchess/chess/style12.pyc
-%%PYTHON_SITELIBDIR%%/glchess/chess/style12.pyo
+%%PYTHON_SITELIBDIR%%/glchess/chess/fics/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/chess/fics/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/chess/fics/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/chess/fics/client.py
+%%PYTHON_SITELIBDIR%%/glchess/chess/fics/client.pyc
+%%PYTHON_SITELIBDIR%%/glchess/chess/fics/client.pyo
+%%PYTHON_SITELIBDIR%%/glchess/chess/fics/server.py
+%%PYTHON_SITELIBDIR%%/glchess/chess/fics/server.pyc
+%%PYTHON_SITELIBDIR%%/glchess/chess/fics/server.pyo
+%%PYTHON_SITELIBDIR%%/glchess/chess/fics/style12.py
+%%PYTHON_SITELIBDIR%%/glchess/chess/fics/style12.pyc
+%%PYTHON_SITELIBDIR%%/glchess/chess/fics/style12.pyo
+%%PYTHON_SITELIBDIR%%/glchess/chess/fics/telnet.py
+%%PYTHON_SITELIBDIR%%/glchess/chess/fics/telnet.pyc
+%%PYTHON_SITELIBDIR%%/glchess/chess/fics/telnet.pyo
 %%PYTHON_SITELIBDIR%%/glchess/defaults.py
 %%PYTHON_SITELIBDIR%%/glchess/defaults.pyc
 %%PYTHON_SITELIBDIR%%/glchess/defaults.pyo
@@ -50,18 +59,12 @@ bin/glchess
 %%PYTHON_SITELIBDIR%%/glchess/gtkui/gtkui.py
 %%PYTHON_SITELIBDIR%%/glchess/gtkui/gtkui.pyc
 %%PYTHON_SITELIBDIR%%/glchess/gtkui/gtkui.pyo
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/chessview.py
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/chessview.pyc
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/chessview.pyo
 %%PYTHON_SITELIBDIR%%/glchess/main.py
 %%PYTHON_SITELIBDIR%%/glchess/main.pyc
 %%PYTHON_SITELIBDIR%%/glchess/main.pyo
-%%PYTHON_SITELIBDIR%%/glchess/network/__init__.py
-%%PYTHON_SITELIBDIR%%/glchess/network/__init__.pyc
-%%PYTHON_SITELIBDIR%%/glchess/network/__init__.pyo
-%%PYTHON_SITELIBDIR%%/glchess/network/announce.py
-%%PYTHON_SITELIBDIR%%/glchess/network/announce.pyc
-%%PYTHON_SITELIBDIR%%/glchess/network/announce.pyo
-%%PYTHON_SITELIBDIR%%/glchess/network/protocol.py
-%%PYTHON_SITELIBDIR%%/glchess/network/protocol.pyc
-%%PYTHON_SITELIBDIR%%/glchess/network/protocol.pyo
 %%PYTHON_SITELIBDIR%%/glchess/ntest.py
 %%PYTHON_SITELIBDIR%%/glchess/ntest.pyc
 %%PYTHON_SITELIBDIR%%/glchess/ntest.pyo
@@ -110,8 +113,8 @@ share/applications/glchess.desktop
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%DATADIR%%/ai.xml
 %%DATADIR%%/gui/ai.glade
+%%DATADIR%%/gui/network_game.glade
 %%DATADIR%%/gui/chess_view.glade
-%%DATADIR%%/gui/error_dialog.glade
 %%DATADIR%%/gui/glchess.glade
 %%DATADIR%%/gui/glchess.svg
 %%DATADIR%%/gui/load_game.glade
@@ -162,6 +165,7 @@ share/locale/ml/LC_MESSAGES/glchess.mo
 share/locale/mn/LC_MESSAGES/glchess.mo
 share/locale/mr/LC_MESSAGES/glchess.mo
 share/locale/ms/LC_MESSAGES/glchess.mo
+share/locale/mg/LC_MESSAGES/glchess.mo
 share/locale/nb/LC_MESSAGES/glchess.mo
 share/locale/ne/LC_MESSAGES/glchess.mo
 share/locale/nl/LC_MESSAGES/glchess.mo
@@ -196,14 +200,16 @@ share/pixmaps/glchess.svg
 @dirrm %%DATADIR%%/textures
 @dirrm %%DATADIR%%/gui
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg/
 @dirrmtry share/applications
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/ui
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/scene/opengl
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/scene/cairo
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/scene
-@dirrm %%PYTHON_SITELIBDIR%%/glchess/network
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/gtkui
+@dirrm %%PYTHON_SITELIBDIR%%/glchess/chess/fics
 @dirrm %%PYTHON_SITELIBDIR%%/glchess/chess
 @dirrm %%PYTHON_SITELIBDIR%%/glchess
 @exec %%LOCALBASE%%/bin/update-mime-database %%LOCALBASE%%/share/mime
