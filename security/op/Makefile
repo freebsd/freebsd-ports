@@ -9,13 +9,13 @@ PORTNAME=	op
 PORTVERSION=	1.11
 PORTREVISION=	4
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/%SUBDIR%/ \
-		ftp://ftp.hacktic.nl/pub/security/coast.cs.purdue.edu/%SUBDIR%/ \
-		ftp://ftp.nask.pl/pub/mirror/coast.cs.purdue.edu/%SUBDIR%/
-MASTER_SITE_SUBDIR=	unix/sysutils/${PORTNAME}
+MASTER_SITES=	# disappeared
 
-MAINTAINER=	scs@umich.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allow others to run commands as root (like sudo but different)
+
+DEPRECATED=		no longer available from any mastersite
+EXPIRATION_DATE=	2007-04-27
 
 # Global variables
 #
