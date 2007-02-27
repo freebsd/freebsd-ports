@@ -14,6 +14,9 @@ MASTER_SITE_SUBDIR=	kmamerun
 MAINTAINER=	smoberly@karamazov.org
 COMMENT=	KDE frontend for M.A.M.E. (Multiple Arcade Machine Emulator)
 
+DEPRECATED=	Project was abandoned 4 years ago and expects an old version of XMAME, please use other frontends instead (like gxmame)
+EXPIRATION_DATE=2007-03-27
+
 RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
 
 USE_KDELIBS_VER=3
