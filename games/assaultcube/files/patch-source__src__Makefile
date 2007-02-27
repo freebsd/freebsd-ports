@@ -1,0 +1,16 @@
+--- ./source/src/Makefile.orig	Tue Nov 14 13:17:07 2006
++++ ./source/src/Makefile	Sun Feb 25 22:57:28 2007
+@@ -1,9 +1,9 @@
+-CXX=g++
+-CXXOPTFLAGS=-O3 -fomit-frame-pointer
+-CXXFLAGS=$(CXXOPTFLAGS) -I../enet/include `sdl-config --cflags` -fsigned-char -Wall -Wno-deprecated
++CXX?=g++
++CXXOPTFLAGS?=-O3 -fomit-frame-pointer
++CXXFLAGS+=$(CXXOPTFLAGS) -I../enet/include `$(SDL_CONFIG) --cflags` -I$(X11BASE)/include -fsigned-char -Wall -Wno-deprecated
+ PLATFORM_PREFIX=native
+ 
+-CLIENT_LIBS=-L../enet -lenet `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL -lGLU 
++CLIENT_LIBS=-L../enet -lenet `$(SDL_CONFIG) --libs` -lSDL_image -lSDL_mixer -lz -L$(X11BASE)/lib -lGL -lGLU
+ CLIENT_OBJS= \
+ 	client.o \
+ 	clientextras.o \

@@ -1,0 +1,844 @@
+%%CLIENT%%bin/actioncube_client
+%%DEDICATED%%bin/actioncube_server
+%%CLIENT%%libexec/actioncube_client
+%%DEDICATED%%libexec/actioncube_server
+%%DATADIR%%/bot/bot_names.txt
+%%DATADIR%%/bot/bot_skill.cfg
+%%DATADIR%%/bot/bot_teams.txt
+%%DATADIR%%/bot/waypoints/ac_complex.wpt
+%%DATADIR%%/bot/waypoints/ac_depot.wpt
+%%DATADIR%%/bot/waypoints/ac_desert.wpt
+%%DATADIR%%/bot/waypoints/ac_desert2.wpt
+%%DATADIR%%/bot/waypoints/ac_mines.wpt
+%%DATADIR%%/config/autoexec.cfg
+%%DATADIR%%/config/default_map_settings.cfg
+%%DATADIR%%/config/defaults.cfg
+%%DATADIR%%/config/keymap.cfg
+%%DATADIR%%/config/maprot.cfg
+%%DATADIR%%/config/menus.cfg
+%%DATADIR%%/config/prefabs.cfg
+%%DATADIR%%/config/sounds.cfg
+%%DATADIR%%/packages/audio/songs/ac.ogg
+%%DATADIR%%/packages/audio/songs/readme.txt
+%%DATADIR%%/packages/audio/sounds/ctf/flagdrop.wav
+%%DATADIR%%/packages/audio/sounds/ctf/flagpickup.wav
+%%DATADIR%%/packages/audio/sounds/ctf/flagreturn.wav
+%%DATADIR%%/packages/audio/sounds/ctf/flagscore.wav
+%%DATADIR%%/packages/audio/sounds/misc/change_gun.wav
+%%DATADIR%%/packages/audio/sounds/misc/headshot.wav
+%%DATADIR%%/packages/audio/sounds/misc/match_end.wav
+%%DATADIR%%/packages/audio/sounds/misc/menu_click1.wav
+%%DATADIR%%/packages/audio/sounds/misc/menu_click2.wav
+%%DATADIR%%/packages/audio/sounds/misc/pickup_ammo_clip.wav
+%%DATADIR%%/packages/audio/sounds/misc/pickup_armour.wav
+%%DATADIR%%/packages/audio/sounds/misc/pickup_health.wav
+%%DATADIR%%/packages/audio/sounds/misc/tick11.wav
+%%DATADIR%%/packages/audio/sounds/misc/tick9.wav
+%%DATADIR%%/packages/audio/sounds/player/die1.wav
+%%DATADIR%%/packages/audio/sounds/player/die2.wav
+%%DATADIR%%/packages/audio/sounds/player/footsteps.wav
+%%DATADIR%%/packages/audio/sounds/player/gib-wav.txt
+%%DATADIR%%/packages/audio/sounds/player/gib.wav
+%%DATADIR%%/packages/audio/sounds/player/jump.wav
+%%DATADIR%%/packages/audio/sounds/player/land.wav
+%%DATADIR%%/packages/audio/sounds/player/pain1.wav
+%%DATADIR%%/packages/audio/sounds/player/pain2.wav
+%%DATADIR%%/packages/audio/sounds/player/pain3.wav
+%%DATADIR%%/packages/audio/sounds/player/pain4.wav
+%%DATADIR%%/packages/audio/sounds/player/pain5.wav
+%%DATADIR%%/packages/audio/sounds/player/pain6.wav
+%%DATADIR%%/packages/audio/sounds/player/splash1.wav
+%%DATADIR%%/packages/audio/sounds/player/splash2.wav
+%%DATADIR%%/packages/audio/sounds/weapon/auto.wav
+%%DATADIR%%/packages/audio/sounds/weapon/auto_reload.wav
+%%DATADIR%%/packages/audio/sounds/weapon/clip_empty.wav
+%%DATADIR%%/packages/audio/sounds/weapon/grenade_bounce2.wav
+%%DATADIR%%/packages/audio/sounds/weapon/grenade_exp.wav
+%%DATADIR%%/packages/audio/sounds/weapon/grenade_pull.wav
+%%DATADIR%%/packages/audio/sounds/weapon/grenade_throw.wav
+%%DATADIR%%/packages/audio/sounds/weapon/grenadebounce1.wav
+%%DATADIR%%/packages/audio/sounds/weapon/knife.wav
+%%DATADIR%%/packages/audio/sounds/weapon/pistol_akreload.wav
+%%DATADIR%%/packages/audio/sounds/weapon/pistol_reload.wav
+%%DATADIR%%/packages/audio/sounds/weapon/shotgun.wav
+%%DATADIR%%/packages/audio/sounds/weapon/shotgun_reload.wav
+%%DATADIR%%/packages/audio/sounds/weapon/sniper.wav
+%%DATADIR%%/packages/audio/sounds/weapon/sniper_reload.wav
+%%DATADIR%%/packages/audio/sounds/weapon/sub.wav
+%%DATADIR%%/packages/audio/sounds/weapon/sub_reload.wav
+%%DATADIR%%/packages/audio/sounds/weapon/usp.wav
+%%DATADIR%%/packages/maps/ac_complex.cfg
+%%DATADIR%%/packages/maps/ac_complex.cgz
+%%DATADIR%%/packages/maps/ac_depot.cfg
+%%DATADIR%%/packages/maps/ac_depot.cgz
+%%DATADIR%%/packages/maps/ac_desert.cfg
+%%DATADIR%%/packages/maps/ac_desert.cgz
+%%DATADIR%%/packages/maps/ac_desert2.cfg
+%%DATADIR%%/packages/maps/ac_desert2.cgz
+%%DATADIR%%/packages/maps/ac_mines.cfg
+%%DATADIR%%/packages/maps/ac_mines.cgz
+%%DATADIR%%/packages/misc/base.png
+%%DATADIR%%/packages/misc/crosshairs/cube.png
+%%DATADIR%%/packages/misc/crosshairs/default.png
+%%DATADIR%%/packages/misc/crosshairs/dot.png
+%%DATADIR%%/packages/misc/crosshairs/dot_wide.png
+%%DATADIR%%/packages/misc/crosshairs/o.png
+%%DATADIR%%/packages/misc/crosshairs/o_dot.png
+%%DATADIR%%/packages/misc/crosshairs/o_x.png
+%%DATADIR%%/packages/misc/crosshairs/readme.txt
+%%DATADIR%%/packages/misc/crosshairs/star.png
+%%DATADIR%%/packages/misc/crosshairs/wide.png
+%%DATADIR%%/packages/misc/crosshairs/x-dot.png
+%%DATADIR%%/packages/misc/explosion.jpg
+%%DATADIR%%/packages/misc/flag_icons.png
+%%DATADIR%%/packages/misc/full_logo.png
+%%DATADIR%%/packages/misc/hole.png
+%%DATADIR%%/packages/misc/items.png
+%%DATADIR%%/packages/misc/newchars.png
+%%DATADIR%%/packages/misc/readme.txt
+%%DATADIR%%/packages/misc/scope.png
+%%DATADIR%%/packages/misc/smoke.png
+%%DATADIR%%/packages/misc/teammate.png
+%%DATADIR%%/packages/misc/teams.png
+%%DATADIR%%/packages/models/mapmodels/aard/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/aard/tris.md2
+%%DATADIR%%/packages/models/mapmodels/barrel/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/barrel/tris.md2
+%%DATADIR%%/packages/models/mapmodels/barrel2/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/barrel2/tris.md2
+%%DATADIR%%/packages/models/mapmodels/bench/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/bench/tris.md2
+%%DATADIR%%/packages/models/mapmodels/bulb/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/bulb/tris.md2
+%%DATADIR%%/packages/models/mapmodels/can/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/can/tris.md2
+%%DATADIR%%/packages/models/mapmodels/can2/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/can2/tris.md2
+%%DATADIR%%/packages/models/mapmodels/chair1/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/chair1/tris.md2
+%%DATADIR%%/packages/models/mapmodels/coffeemug/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/coffeemug/tris.md2
+%%DATADIR%%/packages/models/mapmodels/comp_bridge/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/comp_bridge/tris.md2
+%%DATADIR%%/packages/models/mapmodels/dumpster/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/dumpster/tris.md2
+%%DATADIR%%/packages/models/mapmodels/elektro/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/elektro/tris.md2
+%%DATADIR%%/packages/models/mapmodels/europalette/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/europalette/tris.md2
+%%DATADIR%%/packages/models/mapmodels/fag/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/fag/tris.md2
+%%DATADIR%%/packages/models/mapmodels/fence/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/fence/tris.md2
+%%DATADIR%%/packages/models/mapmodels/fencegate_closed/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/fencegate_closed/tris.md2
+%%DATADIR%%/packages/models/mapmodels/fencegate_open/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/fencegate_open/tris.md2
+%%DATADIR%%/packages/models/mapmodels/fencepost/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/fencepost/tris.md2
+%%DATADIR%%/packages/models/mapmodels/flyer/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/flyer/tris.md2
+%%DATADIR%%/packages/models/mapmodels/gastank/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/gastank/tris.md2
+%%DATADIR%%/packages/models/mapmodels/gastank/usage.txt
+%%DATADIR%%/packages/models/mapmodels/grass01/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/grass01/tris.md2
+%%DATADIR%%/packages/models/mapmodels/grass01_d/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/grass01_d/tris.md2
+%%DATADIR%%/packages/models/mapmodels/grass01_s/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/grass01_s/tris.md2
+%%DATADIR%%/packages/models/mapmodels/grass02/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/grass02/tris.md2
+%%DATADIR%%/packages/models/mapmodels/grass02_d/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/grass02_d/tris.md2
+%%DATADIR%%/packages/models/mapmodels/grass02_s/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/grass02_s/tris.md2
+%%DATADIR%%/packages/models/mapmodels/gutter_h/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/gutter_h/tris.md2
+%%DATADIR%%/packages/models/mapmodels/gutter_v/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/gutter_v/tris.md2
+%%DATADIR%%/packages/models/mapmodels/hook/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/hook/tris.md2
+%%DATADIR%%/packages/models/mapmodels/ladder_10x/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/ladder_10x/tris.md2
+%%DATADIR%%/packages/models/mapmodels/ladder_11x/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/ladder_11x/tris.md2
+%%DATADIR%%/packages/models/mapmodels/ladder_15x/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/ladder_15x/tris.md2
+%%DATADIR%%/packages/models/mapmodels/ladder_7x/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/ladder_7x/tris.md2
+%%DATADIR%%/packages/models/mapmodels/ladder_8x/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/ladder_8x/tris.md2
+%%DATADIR%%/packages/models/mapmodels/ladderx15_center3/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/ladderx15_center3/tris.md2
+%%DATADIR%%/packages/models/mapmodels/laptop1/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/laptop1/tris.md2
+%%DATADIR%%/packages/models/mapmodels/licenses.txt
+%%DATADIR%%/packages/models/mapmodels/light01/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/light01/tris.md2
+%%DATADIR%%/packages/models/mapmodels/locker/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/locker/tris.md2
+%%DATADIR%%/packages/models/mapmodels/minelift/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/minelift/tris.md2
+%%DATADIR%%/packages/models/mapmodels/nothing/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/nothing/tris.md2
+%%DATADIR%%/packages/models/mapmodels/nothing_depot/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/nothing_depot/tris.md2
+%%DATADIR%%/packages/models/mapmodels/picture1/blanco_skin.jpg
+%%DATADIR%%/packages/models/mapmodels/picture1/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/picture1/tris.md2
+%%DATADIR%%/packages/models/mapmodels/plant01/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/plant01/tris.md2
+%%DATADIR%%/packages/models/mapmodels/plant01_d/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/plant01_d/tris.md2
+%%DATADIR%%/packages/models/mapmodels/plant01_s/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/plant01_s/tris.md2
+%%DATADIR%%/packages/models/mapmodels/poster/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/poster/tris.md2
+%%DATADIR%%/packages/models/mapmodels/roadblock01/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/roadblock01/tris.md2
+%%DATADIR%%/packages/models/mapmodels/roadblock02/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/roadblock02/tris.md2
+%%DATADIR%%/packages/models/mapmodels/sail/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/sail/tris.md2
+%%DATADIR%%/packages/models/mapmodels/screw/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/screw/tris.md2
+%%DATADIR%%/packages/models/mapmodels/signs/arab/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/signs/arab/tris.md2
+%%DATADIR%%/packages/models/mapmodels/signs/biohazard/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/signs/biohazard/tris.md2
+%%DATADIR%%/packages/models/mapmodels/signs/caution/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/signs/caution/tris.md2
+%%DATADIR%%/packages/models/mapmodels/signs/flammable/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/signs/flammable/tris.md2
+%%DATADIR%%/packages/models/mapmodels/signs/maint/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/signs/maint/tris.md2
+%%DATADIR%%/packages/models/mapmodels/signs/speed/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/signs/speed/tris.md2
+%%DATADIR%%/packages/models/mapmodels/strahler/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/strahler/tris.md2
+%%DATADIR%%/packages/models/mapmodels/streetlamp/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/streetlamp/tris.md2
+%%DATADIR%%/packages/models/mapmodels/tree01/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/tree01/tris.md2
+%%DATADIR%%/packages/models/mapmodels/wood01/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/wood01/tris.md2
+%%DATADIR%%/packages/models/mapmodels/wrench/skin.jpg
+%%DATADIR%%/packages/models/mapmodels/wrench/tris.md2
+%%DATADIR%%/packages/models/misc/debris/skin.jpg
+%%DATADIR%%/packages/models/misc/debris/tris.md2
+%%DATADIR%%/packages/models/misc/gib01/md2.cfg
+%%DATADIR%%/packages/models/misc/gib01/skin.jpg
+%%DATADIR%%/packages/models/misc/gib01/tris.md2
+%%DATADIR%%/packages/models/misc/gib02/md2.cfg
+%%DATADIR%%/packages/models/misc/gib02/skin.jpg
+%%DATADIR%%/packages/models/misc/gib02/tris.md2
+%%DATADIR%%/packages/models/misc/gib03/md2.cfg
+%%DATADIR%%/packages/models/misc/gib03/skin.jpg
+%%DATADIR%%/packages/models/misc/gib03/tris.md2
+%%DATADIR%%/packages/models/misc/license.txt
+%%DATADIR%%/packages/models/misc/md2.cfg
+%%DATADIR%%/packages/models/pickups/akimbo/skin.jpg
+%%DATADIR%%/packages/models/pickups/akimbo/tris.md2
+%%DATADIR%%/packages/models/pickups/ammobox/skin.jpg
+%%DATADIR%%/packages/models/pickups/ammobox/tris.md2
+%%DATADIR%%/packages/models/pickups/flags/CLA/md3.cfg
+%%DATADIR%%/packages/models/pickups/flags/CLA/skin.jpg
+%%DATADIR%%/packages/models/pickups/flags/CLA/tris.md3
+%%DATADIR%%/packages/models/pickups/flags/RVSF/md3.cfg
+%%DATADIR%%/packages/models/pickups/flags/RVSF/skin.jpg
+%%DATADIR%%/packages/models/pickups/flags/RVSF/tris.md3
+%%DATADIR%%/packages/models/pickups/flags/small_CLA/md2.cfg
+%%DATADIR%%/packages/models/pickups/flags/small_CLA/skin.jpg
+%%DATADIR%%/packages/models/pickups/flags/small_CLA/tris.md2
+%%DATADIR%%/packages/models/pickups/flags/small_RVSF/md2.cfg
+%%DATADIR%%/packages/models/pickups/flags/small_RVSF/skin.jpg
+%%DATADIR%%/packages/models/pickups/flags/small_RVSF/tris.md2
+%%DATADIR%%/packages/models/pickups/health/skin.jpg
+%%DATADIR%%/packages/models/pickups/health/tris.md2
+%%DATADIR%%/packages/models/pickups/kevlar/skin.jpg
+%%DATADIR%%/packages/models/pickups/kevlar/tris.md2
+%%DATADIR%%/packages/models/pickups/license.txt
+%%DATADIR%%/packages/models/pickups/nades/skin.jpg
+%%DATADIR%%/packages/models/pickups/nades/tris.md2
+%%DATADIR%%/packages/models/pickups/pistolclips/skin.jpg
+%%DATADIR%%/packages/models/pickups/pistolclips/tris.md2
+%%DATADIR%%/packages/models/playermodels/counterterrorist/01/skin.jpg
+%%DATADIR%%/packages/models/playermodels/counterterrorist/02/skin.jpg
+%%DATADIR%%/packages/models/playermodels/counterterrorist/03/skin.jpg
+%%DATADIR%%/packages/models/playermodels/counterterrorist/04/skin.jpg
+%%DATADIR%%/packages/models/playermodels/counterterrorist/05/skin.jpg
+%%DATADIR%%/packages/models/playermodels/counterterrorist/06/skin.jpg
+%%DATADIR%%/packages/models/playermodels/counterterrorist/md2.cfg
+%%DATADIR%%/packages/models/playermodels/counterterrorist/skin.jpg
+%%DATADIR%%/packages/models/playermodels/counterterrorist/tris.md2
+%%DATADIR%%/packages/models/playermodels/readme.txt
+%%DATADIR%%/packages/models/playermodels/terrorist/01/skin.jpg
+%%DATADIR%%/packages/models/playermodels/terrorist/02/skin.jpg
+%%DATADIR%%/packages/models/playermodels/terrorist/03/skin.jpg
+%%DATADIR%%/packages/models/playermodels/terrorist/04/skin.jpg
+%%DATADIR%%/packages/models/playermodels/terrorist/md2.cfg
+%%DATADIR%%/packages/models/playermodels/terrorist/skin.jpg
+%%DATADIR%%/packages/models/playermodels/terrorist/tris.md2
+%%DATADIR%%/packages/models/weapons/assault/md3.cfg
+%%DATADIR%%/packages/models/weapons/assault/menu/skin.jpg
+%%DATADIR%%/packages/models/weapons/assault/menu/tris.md2
+%%DATADIR%%/packages/models/weapons/assault/skin_hands.jpg
+%%DATADIR%%/packages/models/weapons/assault/skin_weapon.jpg
+%%DATADIR%%/packages/models/weapons/assault/tris_high.md3
+%%DATADIR%%/packages/models/weapons/assault/world/md2.cfg
+%%DATADIR%%/packages/models/weapons/assault/world/skin.jpg
+%%DATADIR%%/packages/models/weapons/assault/world/tris.md2
+%%DATADIR%%/packages/models/weapons/grenade/md3.cfg
+%%DATADIR%%/packages/models/weapons/grenade/skin_hands.jpg
+%%DATADIR%%/packages/models/weapons/grenade/skin_weapon.jpg
+%%DATADIR%%/packages/models/weapons/grenade/static/md2.cfg
+%%DATADIR%%/packages/models/weapons/grenade/static/skin.jpg
+%%DATADIR%%/packages/models/weapons/grenade/static/tris.md2
+%%DATADIR%%/packages/models/weapons/grenade/tris_high.md3
+%%DATADIR%%/packages/models/weapons/grenade/world/md2.cfg
+%%DATADIR%%/packages/models/weapons/grenade/world/skin.jpg
+%%DATADIR%%/packages/models/weapons/grenade/world/tris.md2
+%%DATADIR%%/packages/models/weapons/knife/md3.cfg
+%%DATADIR%%/packages/models/weapons/knife/skin_hands.jpg
+%%DATADIR%%/packages/models/weapons/knife/skin_weapon.jpg
+%%DATADIR%%/packages/models/weapons/knife/tris_high.md3
+%%DATADIR%%/packages/models/weapons/knife/world/md2.cfg
+%%DATADIR%%/packages/models/weapons/knife/world/skin.jpg
+%%DATADIR%%/packages/models/weapons/knife/world/tris.md2
+%%DATADIR%%/packages/models/weapons/license.txt
+%%DATADIR%%/packages/models/weapons/pistol/md3.cfg
+%%DATADIR%%/packages/models/weapons/pistol/skin_hands.jpg
+%%DATADIR%%/packages/models/weapons/pistol/skin_weapon.jpg
+%%DATADIR%%/packages/models/weapons/pistol/tris_high.md3
+%%DATADIR%%/packages/models/weapons/pistol/world/md2.cfg
+%%DATADIR%%/packages/models/weapons/pistol/world/skin.jpg
+%%DATADIR%%/packages/models/weapons/pistol/world/tris.md2
+%%DATADIR%%/packages/models/weapons/shotgun/md3.cfg
+%%DATADIR%%/packages/models/weapons/shotgun/menu/skin.jpg
+%%DATADIR%%/packages/models/weapons/shotgun/menu/tris.md2
+%%DATADIR%%/packages/models/weapons/shotgun/skin_hands.jpg
+%%DATADIR%%/packages/models/weapons/shotgun/skin_weapon.jpg
+%%DATADIR%%/packages/models/weapons/shotgun/tris_high.md3
+%%DATADIR%%/packages/models/weapons/shotgun/world/md2.cfg
+%%DATADIR%%/packages/models/weapons/shotgun/world/skin.jpg
+%%DATADIR%%/packages/models/weapons/shotgun/world/tris.md2
+%%DATADIR%%/packages/models/weapons/sniper/md3.cfg
+%%DATADIR%%/packages/models/weapons/sniper/menu/skin.jpg
+%%DATADIR%%/packages/models/weapons/sniper/menu/tris.md2
+%%DATADIR%%/packages/models/weapons/sniper/skin_hands.jpg
+%%DATADIR%%/packages/models/weapons/sniper/skin_weapon.jpg
+%%DATADIR%%/packages/models/weapons/sniper/tris_high.md3
+%%DATADIR%%/packages/models/weapons/sniper/world/md2.cfg
+%%DATADIR%%/packages/models/weapons/sniper/world/skin.jpg
+%%DATADIR%%/packages/models/weapons/sniper/world/tris.md2
+%%DATADIR%%/packages/models/weapons/subgun/md3.cfg
+%%DATADIR%%/packages/models/weapons/subgun/menu/skin.jpg
+%%DATADIR%%/packages/models/weapons/subgun/menu/tris.md2
+%%DATADIR%%/packages/models/weapons/subgun/skin_hands.jpg
+%%DATADIR%%/packages/models/weapons/subgun/skin_weapon.jpg
+%%DATADIR%%/packages/models/weapons/subgun/tris_high.md3
+%%DATADIR%%/packages/models/weapons/subgun/world/md2.cfg
+%%DATADIR%%/packages/models/weapons/subgun/world/skin.jpg
+%%DATADIR%%/packages/models/weapons/subgun/world/tris.md2
+%%DATADIR%%/packages/textures/DigitalFlux/dirt_pebbles_01.jpg
+%%DATADIR%%/packages/textures/DigitalFlux/dirty_asphalt_02.jpg
+%%DATADIR%%/packages/textures/DigitalFlux/dirty_asphalt_03.jpg
+%%DATADIR%%/packages/textures/DigitalFlux/gray_bricks_01.jpg
+%%DATADIR%%/packages/textures/DigitalFlux/gray_bricks_02.jpg
+%%DATADIR%%/packages/textures/DigitalFlux/light_brown_dirt_01.jpg
+%%DATADIR%%/packages/textures/DigitalFlux/light_brown_dirt_02.jpg
+%%DATADIR%%/packages/textures/DigitalFlux/readme.txt
+%%DATADIR%%/packages/textures/DigitalFlux/reddish_brown_dirt_01.jpg
+%%DATADIR%%/packages/textures/DigitalFlux/reddish_brown_dirt_02.jpg
+%%DATADIR%%/packages/textures/arcitool/Blockbohlen-natur.jpg
+%%DATADIR%%/packages/textures/arcitool/Cotta1-grau.jpg
+%%DATADIR%%/packages/textures/arcitool/Cotta1-graubraun.jpg
+%%DATADIR%%/packages/textures/arcitool/Cotta1-graubraunhell.jpg
+%%DATADIR%%/packages/textures/arcitool/Cotta1-hell.jpg
+%%DATADIR%%/packages/textures/arcitool/Cotta2-beige.jpg
+%%DATADIR%%/packages/textures/arcitool/Cotta2-dunkel.jpg
+%%DATADIR%%/packages/textures/arcitool/Cotta2-grau.jpg
+%%DATADIR%%/packages/textures/arcitool/Cotta2-satt.jpg
+%%DATADIR%%/packages/textures/arcitool/Glasbausteine.jpg
+%%DATADIR%%/packages/textures/arcitool/Rundholz.jpg
+%%DATADIR%%/packages/textures/arcitool/Wellblech1-1.jpg
+%%DATADIR%%/packages/textures/arcitool/Wiese3.jpg
+%%DATADIR%%/packages/textures/arcitool/Wiese6.jpg
+%%DATADIR%%/packages/textures/arcitool/Zaun.jpg
+%%DATADIR%%/packages/textures/arcitool/archibrick01.jpg
+%%DATADIR%%/packages/textures/arcitool/archibrick02.jpg
+%%DATADIR%%/packages/textures/arcitool/archibrick03.jpg
+%%DATADIR%%/packages/textures/arcitool/archibrick04.jpg
+%%DATADIR%%/packages/textures/arcitool/archibrick05.jpg
+%%DATADIR%%/packages/textures/arcitool/archibrick06.jpg
+%%DATADIR%%/packages/textures/arcitool/archibrick07.jpg
+%%DATADIR%%/packages/textures/arcitool/asbest-raute.jpg
+%%DATADIR%%/packages/textures/arcitool/db_pf8104t1.jpg
+%%DATADIR%%/packages/textures/arcitool/gittersteine2.jpg
+%%DATADIR%%/packages/textures/arcitool/n_f-natur2.jpg
+%%DATADIR%%/packages/textures/arcitool/pflaster2.jpg
+%%DATADIR%%/packages/textures/arcitool/readme.txt
+%%DATADIR%%/packages/textures/arcitool/rohbaubims.jpg
+%%DATADIR%%/packages/textures/arcitool/schotter1.jpg
+%%DATADIR%%/packages/textures/arcitool/schotter2.jpg
+%%DATADIR%%/packages/textures/arcitool/sichtbeton1.jpg
+%%DATADIR%%/packages/textures/arcitool/sichtbeton2.jpg
+%%DATADIR%%/packages/textures/arcitool/sisal21.jpg
+%%DATADIR%%/packages/textures/boeck/aircon2.jpg
+%%DATADIR%%/packages/textures/boeck/gully.jpg
+%%DATADIR%%/packages/textures/boeck/metal_019.jpg
+%%DATADIR%%/packages/textures/boeck/metal_019_b.jpg
+%%DATADIR%%/packages/textures/boeck/readme.txt
+%%DATADIR%%/packages/textures/boeck/rolltor.jpg
+%%DATADIR%%/packages/textures/boeck/stone_013.jpg
+%%DATADIR%%/packages/textures/boeck/stone_014.jpg
+%%DATADIR%%/packages/textures/boeck/stone_022.jpg
+%%DATADIR%%/packages/textures/boeck/wood_009.jpg
+%%DATADIR%%/packages/textures/boeck/wood_010.jpg
+%%DATADIR%%/packages/textures/boeck/wood_017.jpg
+%%DATADIR%%/packages/textures/craig_fortune/crates/light.jpg
+%%DATADIR%%/packages/textures/craig_fortune/crates/light_weathered.jpg
+%%DATADIR%%/packages/textures/craig_fortune/readme.txt
+%%DATADIR%%/packages/textures/craig_fortune/terrain/Grass_lush.jpg
+%%DATADIR%%/packages/textures/craig_fortune/terrain/Grass_mossy.jpg
+%%DATADIR%%/packages/textures/craig_fortune/terrain/Grass_parched.jpg
+%%DATADIR%%/packages/textures/craig_fortune/terrain/Mud_thick.jpg
+%%DATADIR%%/packages/textures/craig_fortune/terrain/Rock_cracked.jpg
+%%DATADIR%%/packages/textures/craig_fortune/terrain/Rock_rubble.jpg
+%%DATADIR%%/packages/textures/craig_fortune/terrain/grass_lush1.jpg
+%%DATADIR%%/packages/textures/craig_fortune/terrain/mud.jpg
+%%DATADIR%%/packages/textures/craig_fortune/terrain/rubble.jpg
+%%DATADIR%%/packages/textures/craig_fortune/terrain/sand_bleached.jpg
+%%DATADIR%%/packages/textures/jcdpc/Burlapblood.jpg
+%%DATADIR%%/packages/textures/jcdpc/readme.txt
+%%DATADIR%%/packages/textures/jcdpc/stone.jpg
+%%DATADIR%%/packages/textures/kurt/klite1.jpg
+%%DATADIR%%/packages/textures/kurt/readme.txt
+%%DATADIR%%/packages/textures/makke/01-CMU.jpg
+%%DATADIR%%/packages/textures/makke/11-Brick.jpg
+%%DATADIR%%/packages/textures/makke/aircon.jpg
+%%DATADIR%%/packages/textures/makke/aircon_sm.jpg
+%%DATADIR%%/packages/textures/makke/asph_01.jpg
+%%DATADIR%%/packages/textures/makke/black.jpg
+%%DATADIR%%/packages/textures/makke/box_2.jpg
+%%DATADIR%%/packages/textures/makke/box_3.jpg
+%%DATADIR%%/packages/textures/makke/box_4.jpg
+%%DATADIR%%/packages/textures/makke/br_tiles.jpg
+%%DATADIR%%/packages/textures/makke/bricks_2.jpg
+%%DATADIR%%/packages/textures/makke/bricks_3.jpg
+%%DATADIR%%/packages/textures/makke/brickwall.jpg
+%%DATADIR%%/packages/textures/makke/bricky.jpg
+%%DATADIR%%/packages/textures/makke/c_tile.jpg
+%%DATADIR%%/packages/textures/makke/concrete.jpg
+%%DATADIR%%/packages/textures/makke/concrete_trim.jpg
+%%DATADIR%%/packages/textures/makke/concrete_trim_small.jpg
+%%DATADIR%%/packages/textures/makke/cracked_mud.jpg
+%%DATADIR%%/packages/textures/makke/d_brick.jpg
+%%DATADIR%%/packages/textures/makke/dirt_01.jpg
+%%DATADIR%%/packages/textures/makke/door.jpg
+%%DATADIR%%/packages/textures/makke/klappe.jpg
+%%DATADIR%%/packages/textures/makke/klappe2.jpg
+%%DATADIR%%/packages/textures/makke/klappe3.jpg
+%%DATADIR%%/packages/textures/makke/lampe.jpg
+%%DATADIR%%/packages/textures/makke/lampe_tile.jpg
+%%DATADIR%%/packages/textures/makke/lampe_tile2.jpg
+%%DATADIR%%/packages/textures/makke/lampe_tile2_a.jpg
+%%DATADIR%%/packages/textures/makke/lampe_tile_a.jpg
+%%DATADIR%%/packages/textures/makke/mauer1.jpg
+%%DATADIR%%/packages/textures/makke/mauer2.jpg
+%%DATADIR%%/packages/textures/makke/menu.jpg
+%%DATADIR%%/packages/textures/makke/metalstair1.jpg
+%%DATADIR%%/packages/textures/makke/metalstair2.jpg
+%%DATADIR%%/packages/textures/makke/muddywater.jpg
+%%DATADIR%%/packages/textures/makke/neuklappe.jpg
+%%DATADIR%%/packages/textures/makke/panel.jpg
+%%DATADIR%%/packages/textures/makke/pebbles_01.jpg
+%%DATADIR%%/packages/textures/makke/platten.jpg
+%%DATADIR%%/packages/textures/makke/rock.jpg
+%%DATADIR%%/packages/textures/makke/snow.jpg
+%%DATADIR%%/packages/textures/makke/special_stone15.jpg
+%%DATADIR%%/packages/textures/makke/stairtrim.jpg
+%%DATADIR%%/packages/textures/makke/stein.jpg
+%%DATADIR%%/packages/textures/makke/stuck1.jpg
+%%DATADIR%%/packages/textures/makke/tiles.jpg
+%%DATADIR%%/packages/textures/makke/window.jpg
+%%DATADIR%%/packages/textures/makke/windows.jpg
+%%DATADIR%%/packages/textures/makke/wood_01.jpg
+%%DATADIR%%/packages/textures/makke/wood_01_b.jpg
+%%DATADIR%%/packages/textures/mitaman/3dcafe/door07.jpg
+%%DATADIR%%/packages/textures/mitaman/3dcafe/door10.jpg
+%%DATADIR%%/packages/textures/mitaman/3dcafe/door12.jpg
+%%DATADIR%%/packages/textures/mitaman/3dcafe/door15.jpg
+%%DATADIR%%/packages/textures/mitaman/3dcafe/objects08.jpg
+%%DATADIR%%/packages/textures/mitaman/3dcafe/objects09_a.jpg
+%%DATADIR%%/packages/textures/mitaman/3dcafe/readme.txt
+%%DATADIR%%/packages/textures/mitaman/3dcafe/stone18.jpg
+%%DATADIR%%/packages/textures/mitaman/golgotha/elecpanelstwo.jpg
+%%DATADIR%%/packages/textures/mitaman/golgotha/hhroofgray.jpg
+%%DATADIR%%/packages/textures/mitaman/golgotha/metal_bumps2.jpg
+%%DATADIR%%/packages/textures/mitaman/golgotha/metal_bumps3.jpg
+%%DATADIR%%/packages/textures/mitaman/golgotha/readme.txt
+%%DATADIR%%/packages/textures/mitaman/golgotha/tunnel_ceiling.jpg
+%%DATADIR%%/packages/textures/mitaman/golgotha/tunnel_ceiling_b.jpg
+%%DATADIR%%/packages/textures/mitaman/grsites/brick051.jpg
+%%DATADIR%%/packages/textures/mitaman/grsites/brick065.jpg
+%%DATADIR%%/packages/textures/mitaman/grsites/readme.txt
+%%DATADIR%%/packages/textures/mitaman/grsites/wood060.jpg
+%%DATADIR%%/packages/textures/mitaman/various/006metal.jpg
+%%DATADIR%%/packages/textures/mitaman/various/027metal.jpg
+%%DATADIR%%/packages/textures/mitaman/various/036metal.jpg
+%%DATADIR%%/packages/textures/mitaman/various/063bois.jpg
+%%DATADIR%%/packages/textures/mitaman/various/063bois_b.jpg
+%%DATADIR%%/packages/textures/mitaman/various/5sqtunnelroad.jpg
+%%DATADIR%%/packages/textures/mitaman/various/large_plate.jpg
+%%DATADIR%%/packages/textures/mitaman/various/metal020.jpg
+%%DATADIR%%/packages/textures/mitaman/various/metal026.jpg
+%%DATADIR%%/packages/textures/mitaman/various/metal_trim_4_h.jpg
+%%DATADIR%%/packages/textures/mitaman/various/metal_trim_4_v.jpg
+%%DATADIR%%/packages/textures/mitaman/various/readme.txt
+%%DATADIR%%/packages/textures/mitaman/various/rgrates0006.jpg
+%%DATADIR%%/packages/textures/mitaman/various/sub_doors256nf_01.jpg
+%%DATADIR%%/packages/textures/mitaman/various/sub_window23.jpg
+%%DATADIR%%/packages/textures/mitaman/various/sub_window38.jpg
+%%DATADIR%%/packages/textures/mitaman/various/vent_cap.jpg
+%%DATADIR%%/packages/textures/mitaman/zastrow/metal_overlaps.jpg
+%%DATADIR%%/packages/textures/mitaman/zastrow/metal_plate_fill.jpg
+%%DATADIR%%/packages/textures/mitaman/zastrow/metal_siding_kinks.jpg
+%%DATADIR%%/packages/textures/mitaman/zastrow/metal_siding_kinksb.jpg
+%%DATADIR%%/packages/textures/mitaman/zastrow/readme.txt
+%%DATADIR%%/packages/textures/mitaman/zastrow/sub_doors512A10.jpg
+%%DATADIR%%/packages/textures/mitaman/zastrow/sub_doors512A16.jpg
+%%DATADIR%%/packages/textures/mitaman/zastrow/sub_doors512B05.jpg
+%%DATADIR%%/packages/textures/mitaman/zastrow/sub_window31.jpg
+%%DATADIR%%/packages/textures/mitaman/zastrow/sub_window33.jpg
+%%DATADIR%%/packages/textures/noctua/ground/asph01.jpg
+%%DATADIR%%/packages/textures/noctua/ground/asph02.jpg
+%%DATADIR%%/packages/textures/noctua/ground/asph03.jpg
+%%DATADIR%%/packages/textures/noctua/ground/cobbles01.jpg
+%%DATADIR%%/packages/textures/noctua/ground/ground02.jpg
+%%DATADIR%%/packages/textures/noctua/ground/ground06.jpg
+%%DATADIR%%/packages/textures/noctua/ground/mud01.jpg
+%%DATADIR%%/packages/textures/noctua/ground/pebble01.jpg
+%%DATADIR%%/packages/textures/noctua/ground/snowy01.jpg
+%%DATADIR%%/packages/textures/noctua/ground/snowy02.jpg
+%%DATADIR%%/packages/textures/noctua/ground/snowy03.jpg
+%%DATADIR%%/packages/textures/noctua/ground/snowy04.jpg
+%%DATADIR%%/packages/textures/noctua/ground/snowy05.jpg
+%%DATADIR%%/packages/textures/noctua/metal/brass01.jpg
+%%DATADIR%%/packages/textures/noctua/metal/copper01.jpg
+%%DATADIR%%/packages/textures/noctua/metal/copper02.jpg
+%%DATADIR%%/packages/textures/noctua/metal/iron01.jpg
+%%DATADIR%%/packages/textures/noctua/metal/iron02.jpg
+%%DATADIR%%/packages/textures/noctua/metal/iron03.jpg
+%%DATADIR%%/packages/textures/noctua/metal/iron04.jpg
+%%DATADIR%%/packages/textures/noctua/metal/iron05.jpg
+%%DATADIR%%/packages/textures/noctua/metal/iron05_b.jpg
+%%DATADIR%%/packages/textures/noctua/metal/metbgr01.jpg
+%%DATADIR%%/packages/textures/noctua/metal/metbgr02.jpg
+%%DATADIR%%/packages/textures/noctua/metal/metbgr03.jpg
+%%DATADIR%%/packages/textures/noctua/metal/metbgr04.jpg
+%%DATADIR%%/packages/textures/noctua/metal/verdig01.jpg
+%%DATADIR%%/packages/textures/noctua/metal/zinc01.jpg
+%%DATADIR%%/packages/textures/noctua/metal/zinc02.jpg
+%%DATADIR%%/packages/textures/noctua/metal/zinc03.jpg
+%%DATADIR%%/packages/textures/noctua/readme.txt
+%%DATADIR%%/packages/textures/noctua/stone/marmor01.jpg
+%%DATADIR%%/packages/textures/noctua/stone/stone02.jpg
+%%DATADIR%%/packages/textures/noctua/stone/stone03.jpg
+%%DATADIR%%/packages/textures/noctua/stone/stone04.jpg
+%%DATADIR%%/packages/textures/noctua/stone/stone05.jpg
+%%DATADIR%%/packages/textures/noctua/stone/stone06.jpg
+%%DATADIR%%/packages/textures/noctua/stone/stone07.jpg
+%%DATADIR%%/packages/textures/noctua/stone/stone08.jpg
+%%DATADIR%%/packages/textures/noctua/stone/stone09.jpg
+%%DATADIR%%/packages/textures/noctua/stone/stone12.jpg
+%%DATADIR%%/packages/textures/noctua/stone/stone13.jpg
+%%DATADIR%%/packages/textures/noctua/stone/stone15.jpg
+%%DATADIR%%/packages/textures/noctua/stone/stone16.jpg
+%%DATADIR%%/packages/textures/noctua/stone/stone17.jpg
+%%DATADIR%%/packages/textures/noctua/stone/stone18.jpg
+%%DATADIR%%/packages/textures/noctua/stone/stone19.jpg
+%%DATADIR%%/packages/textures/noctua/textile/burlap01.jpg
+%%DATADIR%%/packages/textures/noctua/textile/carpet01.jpg
+%%DATADIR%%/packages/textures/noctua/textile/carpet02.jpg
+%%DATADIR%%/packages/textures/noctua/textile/carpet03.jpg
+%%DATADIR%%/packages/textures/noctua/textile/carpet04.jpg
+%%DATADIR%%/packages/textures/noctua/textile/carpet05.jpg
+%%DATADIR%%/packages/textures/noctua/tiles/16tile07.jpg
+%%DATADIR%%/packages/textures/noctua/tiles/16tile09.jpg
+%%DATADIR%%/packages/textures/noctua/tiles/16tile10.jpg
+%%DATADIR%%/packages/textures/noctua/tiles/16tile11.jpg
+%%DATADIR%%/packages/textures/noctua/tiles/16tile12.jpg
+%%DATADIR%%/packages/textures/noctua/wall/brick02.jpg
+%%DATADIR%%/packages/textures/noctua/wall/conc01.jpg
+%%DATADIR%%/packages/textures/noctua/wall/conc02.jpg
+%%DATADIR%%/packages/textures/noctua/wall/conc03.jpg
+%%DATADIR%%/packages/textures/noctua/wall/conc04.jpg
+%%DATADIR%%/packages/textures/noctua/wall/conc05.jpg
+%%DATADIR%%/packages/textures/noctua/wall/d_wall01.jpg
+%%DATADIR%%/packages/textures/noctua/wall/plast01.jpg
+%%DATADIR%%/packages/textures/noctua/wall/plast02.jpg
+%%DATADIR%%/packages/textures/noctua/wall/plast03.jpg
+%%DATADIR%%/packages/textures/noctua/wall/plast04.jpg
+%%DATADIR%%/packages/textures/noctua/wall/wall01.jpg
+%%DATADIR%%/packages/textures/noctua/wall/wall02.jpg
+%%DATADIR%%/packages/textures/noctua/water/snow01.jpg
+%%DATADIR%%/packages/textures/noctua/water/water01.jpg
+%%DATADIR%%/packages/textures/noctua/water/water04.jpg
+%%DATADIR%%/packages/textures/noctua/water/water05.jpg
+%%DATADIR%%/packages/textures/noctua/wood/bark01.jpg
+%%DATADIR%%/packages/textures/noctua/wood/blinds01.jpg
+%%DATADIR%%/packages/textures/noctua/wood/fb_board.jpg
+%%DATADIR%%/packages/textures/noctua/wood/planks01.jpg
+%%DATADIR%%/packages/textures/noctua/wood/planks01_b.jpg
+%%DATADIR%%/packages/textures/noctua/wood/planks02.jpg
+%%DATADIR%%/packages/textures/noctua/wood/planks02_hor.jpg
+%%DATADIR%%/packages/textures/noctua/wood/planks02_trim.jpg
+%%DATADIR%%/packages/textures/noctua/wood/wood02.jpg
+%%DATADIR%%/packages/textures/noctua/wood/wood03.jpg
+%%DATADIR%%/packages/textures/noctua/wood/wood04.jpg
+%%DATADIR%%/packages/textures/skymaps/makke/mountain_bk.jpg
+%%DATADIR%%/packages/textures/skymaps/makke/mountain_dn.jpg
+%%DATADIR%%/packages/textures/skymaps/makke/mountain_ft.jpg
+%%DATADIR%%/packages/textures/skymaps/makke/mountain_lf.jpg
+%%DATADIR%%/packages/textures/skymaps/makke/mountain_rt.jpg
+%%DATADIR%%/packages/textures/skymaps/makke/mountain_up.jpg
+%%DATADIR%%/packages/textures/skymaps/makke/rocky_bk.jpg
+%%DATADIR%%/packages/textures/skymaps/makke/rocky_dn.jpg
+%%DATADIR%%/packages/textures/skymaps/makke/rocky_ft.jpg
+%%DATADIR%%/packages/textures/skymaps/makke/rocky_lf.jpg
+%%DATADIR%%/packages/textures/skymaps/makke/rocky_rt.jpg
+%%DATADIR%%/packages/textures/skymaps/makke/rocky_up.jpg
+%%DATADIR%%/packages/textures/skymaps/makke/sand_bk.jpg
+%%DATADIR%%/packages/textures/skymaps/makke/sand_dn.jpg
+%%DATADIR%%/packages/textures/skymaps/makke/sand_ft.jpg
+%%DATADIR%%/packages/textures/skymaps/makke/sand_lf.jpg
+%%DATADIR%%/packages/textures/skymaps/makke/sand_rt.jpg
+%%DATADIR%%/packages/textures/skymaps/makke/sand_up.jpg
+%%DATADIR%%/packages/textures/skymaps/steini/steini2_bk.jpg
+%%DATADIR%%/packages/textures/skymaps/steini/steini2_dn.jpg
+%%DATADIR%%/packages/textures/skymaps/steini/steini2_ft.jpg
+%%DATADIR%%/packages/textures/skymaps/steini/steini2_lf.jpg
+%%DATADIR%%/packages/textures/skymaps/steini/steini2_rt.jpg
+%%DATADIR%%/packages/textures/skymaps/steini/steini2_up.jpg
+%%DATADIR%%/packages/textures/skymaps/steini/steini3_bk.jpg
+%%DATADIR%%/packages/textures/skymaps/steini/steini3_dn.jpg
+%%DATADIR%%/packages/textures/skymaps/steini/steini3_ft.jpg
+%%DATADIR%%/packages/textures/skymaps/steini/steini3_lf.jpg
+%%DATADIR%%/packages/textures/skymaps/steini/steini3_rt.jpg
+%%DATADIR%%/packages/textures/skymaps/steini/steini3_up.jpg
+%%DATADIR%%/packages/textures/skymaps/steini/steini4_bk.jpg
+%%DATADIR%%/packages/textures/skymaps/steini/steini4_dn.jpg
+%%DATADIR%%/packages/textures/skymaps/steini/steini4_ft.jpg
+%%DATADIR%%/packages/textures/skymaps/steini/steini4_lf.jpg
+%%DATADIR%%/packages/textures/skymaps/steini/steini4_rt.jpg
+%%DATADIR%%/packages/textures/skymaps/steini/steini4_up.jpg
+%%DATADIR%%/packages/textures/sub/brick_wall_08.jpg
+%%DATADIR%%/packages/textures/sub/brick_wall_09.jpg
+%%DATADIR%%/packages/textures/sub/readme.txt
+%%DATADIR%%/packages/textures/sub/sub_sand.jpg
+%%DATADIR%%/packages/textures/zastrow/2wood_crate_02.jpg
+%%DATADIR%%/packages/textures/zastrow/2wood_crate_03.jpg
+%%DATADIR%%/packages/textures/zastrow/2wood_crate_10.jpg
+%%DATADIR%%/packages/textures/zastrow/2wood_crate_12.jpg
+%%DATADIR%%/packages/textures/zastrow/3wood_crate_02.jpg
+%%DATADIR%%/packages/textures/zastrow/3wood_crate_03.jpg
+%%DATADIR%%/packages/textures/zastrow/3wood_crate_10.jpg
+%%DATADIR%%/packages/textures/zastrow/3wood_crate_12.jpg
+%%DATADIR%%/packages/textures/zastrow/readme.txt
+%%DATADIR%%/packages/textures/zastrow/wood_crate_02.jpg
+%%DATADIR%%/packages/textures/zastrow/wood_crate_03.jpg
+%%DATADIR%%/packages/textures/zastrow/wood_crate_10.jpg
+%%DATADIR%%/packages/textures/zastrow/wood_crate_12.jpg
+%%PORTDOCS%%%%DOCSDIR%%/README.html
+%%PORTDOCS%%%%DOCSDIR%%/config.html
+%%PORTDOCS%%%%DOCSDIR%%/docs.css
+%%PORTDOCS%%%%DOCSDIR%%/editref.html
+%%PORTDOCS%%%%DOCSDIR%%/game.html
+%%PORTDOCS%%%%DOCSDIR%%/gamecommands.html
+%%PORTDOCS%%%%DOCSDIR%%/getstarted.html
+%%PORTDOCS%%%%DOCSDIR%%/history.html
+%%PORTDOCS%%%%DOCSDIR%%/known_issues.txt
+%%PORTDOCS%%%%DOCSDIR%%/mappers_readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/misc.html
+%%PORTDOCS%%%%DOCSDIR%%/package_copyrights.txt
+%%PORTDOCS%%%%DOCSDIR%%/pics/ctf-hud.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pics/flag_cla.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pics/flag_rvsf.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pics/item_akimbo.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pics/item_ammobox.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pics/item_grenade.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pics/item_health.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pics/item_kevlar.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pics/item_pistolclips.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pics/weapon_assault.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pics/weapon_grenade.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pics/weapon_knife.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pics/weapon_pistol.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pics/weapon_shotgun.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pics/weapon_sniper.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pics/weapon_subgun.jpg
+%%PORTDOCS%%%%DOCSDIR%%/server.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pics
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/packages/textures/zastrow
+@dirrm %%DATADIR%%/packages/textures/sub
+@dirrm %%DATADIR%%/packages/textures/skymaps/steini
+@dirrm %%DATADIR%%/packages/textures/skymaps/makke
+@dirrm %%DATADIR%%/packages/textures/skymaps
+@dirrm %%DATADIR%%/packages/textures/noctua/wood
+@dirrm %%DATADIR%%/packages/textures/noctua/water
+@dirrm %%DATADIR%%/packages/textures/noctua/wall
+@dirrm %%DATADIR%%/packages/textures/noctua/tiles
+@dirrm %%DATADIR%%/packages/textures/noctua/textile
+@dirrm %%DATADIR%%/packages/textures/noctua/stone
+@dirrm %%DATADIR%%/packages/textures/noctua/metal
+@dirrm %%DATADIR%%/packages/textures/noctua/ground
+@dirrm %%DATADIR%%/packages/textures/noctua
+@dirrm %%DATADIR%%/packages/textures/mitaman/zastrow
+@dirrm %%DATADIR%%/packages/textures/mitaman/various
+@dirrm %%DATADIR%%/packages/textures/mitaman/grsites
+@dirrm %%DATADIR%%/packages/textures/mitaman/golgotha
+@dirrm %%DATADIR%%/packages/textures/mitaman/3dcafe
+@dirrm %%DATADIR%%/packages/textures/mitaman
+@dirrm %%DATADIR%%/packages/textures/makke
+@dirrm %%DATADIR%%/packages/textures/kurt
+@dirrm %%DATADIR%%/packages/textures/jcdpc
+@dirrm %%DATADIR%%/packages/textures/craig_fortune/terrain
+@dirrm %%DATADIR%%/packages/textures/craig_fortune/crates
+@dirrm %%DATADIR%%/packages/textures/craig_fortune
+@dirrm %%DATADIR%%/packages/textures/boeck
+@dirrm %%DATADIR%%/packages/textures/arcitool
+@dirrm %%DATADIR%%/packages/textures/DigitalFlux
+@dirrm %%DATADIR%%/packages/textures
+@dirrm %%DATADIR%%/packages/models/weapons/subgun/world
+@dirrm %%DATADIR%%/packages/models/weapons/subgun/menu
+@dirrm %%DATADIR%%/packages/models/weapons/subgun
+@dirrm %%DATADIR%%/packages/models/weapons/sniper/world
+@dirrm %%DATADIR%%/packages/models/weapons/sniper/menu
+@dirrm %%DATADIR%%/packages/models/weapons/sniper
+@dirrm %%DATADIR%%/packages/models/weapons/shotgun/world
+@dirrm %%DATADIR%%/packages/models/weapons/shotgun/menu
+@dirrm %%DATADIR%%/packages/models/weapons/shotgun
+@dirrm %%DATADIR%%/packages/models/weapons/pistol/world
+@dirrm %%DATADIR%%/packages/models/weapons/pistol
+@dirrm %%DATADIR%%/packages/models/weapons/knife/world
+@dirrm %%DATADIR%%/packages/models/weapons/knife
+@dirrm %%DATADIR%%/packages/models/weapons/grenade/world
+@dirrm %%DATADIR%%/packages/models/weapons/grenade/static
+@dirrm %%DATADIR%%/packages/models/weapons/grenade
+@dirrm %%DATADIR%%/packages/models/weapons/assault/world
+@dirrm %%DATADIR%%/packages/models/weapons/assault/menu
+@dirrm %%DATADIR%%/packages/models/weapons/assault
+@dirrm %%DATADIR%%/packages/models/weapons
+@dirrm %%DATADIR%%/packages/models/playermodels/terrorist/04
+@dirrm %%DATADIR%%/packages/models/playermodels/terrorist/03
+@dirrm %%DATADIR%%/packages/models/playermodels/terrorist/02
+@dirrm %%DATADIR%%/packages/models/playermodels/terrorist/01
+@dirrm %%DATADIR%%/packages/models/playermodels/terrorist
+@dirrm %%DATADIR%%/packages/models/playermodels/counterterrorist/06
+@dirrm %%DATADIR%%/packages/models/playermodels/counterterrorist/05
+@dirrm %%DATADIR%%/packages/models/playermodels/counterterrorist/04
+@dirrm %%DATADIR%%/packages/models/playermodels/counterterrorist/03
+@dirrm %%DATADIR%%/packages/models/playermodels/counterterrorist/02
+@dirrm %%DATADIR%%/packages/models/playermodels/counterterrorist/01
+@dirrm %%DATADIR%%/packages/models/playermodels/counterterrorist
+@dirrm %%DATADIR%%/packages/models/playermodels
+@dirrm %%DATADIR%%/packages/models/pickups/pistolclips
+@dirrm %%DATADIR%%/packages/models/pickups/nades
+@dirrm %%DATADIR%%/packages/models/pickups/kevlar
+@dirrm %%DATADIR%%/packages/models/pickups/health
+@dirrm %%DATADIR%%/packages/models/pickups/flags/small_RVSF
+@dirrm %%DATADIR%%/packages/models/pickups/flags/small_CLA
+@dirrm %%DATADIR%%/packages/models/pickups/flags/RVSF
+@dirrm %%DATADIR%%/packages/models/pickups/flags/CLA
+@dirrm %%DATADIR%%/packages/models/pickups/flags
+@dirrm %%DATADIR%%/packages/models/pickups/ammobox
+@dirrm %%DATADIR%%/packages/models/pickups/akimbo
+@dirrm %%DATADIR%%/packages/models/pickups
+@dirrm %%DATADIR%%/packages/models/misc/gib03
+@dirrm %%DATADIR%%/packages/models/misc/gib02
+@dirrm %%DATADIR%%/packages/models/misc/gib01
+@dirrm %%DATADIR%%/packages/models/misc/debris
+@dirrm %%DATADIR%%/packages/models/misc
+@dirrm %%DATADIR%%/packages/models/mapmodels/wrench
+@dirrm %%DATADIR%%/packages/models/mapmodels/wood01
+@dirrm %%DATADIR%%/packages/models/mapmodels/tree01
+@dirrm %%DATADIR%%/packages/models/mapmodels/streetlamp
+@dirrm %%DATADIR%%/packages/models/mapmodels/strahler
+@dirrm %%DATADIR%%/packages/models/mapmodels/signs/speed
+@dirrm %%DATADIR%%/packages/models/mapmodels/signs/maint
+@dirrm %%DATADIR%%/packages/models/mapmodels/signs/flammable
+@dirrm %%DATADIR%%/packages/models/mapmodels/signs/caution
+@dirrm %%DATADIR%%/packages/models/mapmodels/signs/biohazard
+@dirrm %%DATADIR%%/packages/models/mapmodels/signs/arab
+@dirrm %%DATADIR%%/packages/models/mapmodels/signs
+@dirrm %%DATADIR%%/packages/models/mapmodels/screw
+@dirrm %%DATADIR%%/packages/models/mapmodels/sail
+@dirrm %%DATADIR%%/packages/models/mapmodels/roadblock02
+@dirrm %%DATADIR%%/packages/models/mapmodels/roadblock01
+@dirrm %%DATADIR%%/packages/models/mapmodels/poster
+@dirrm %%DATADIR%%/packages/models/mapmodels/plant01_s
+@dirrm %%DATADIR%%/packages/models/mapmodels/plant01_d
+@dirrm %%DATADIR%%/packages/models/mapmodels/plant01
+@dirrm %%DATADIR%%/packages/models/mapmodels/picture1
+@dirrm %%DATADIR%%/packages/models/mapmodels/nothing_depot
+@dirrm %%DATADIR%%/packages/models/mapmodels/nothing
+@dirrm %%DATADIR%%/packages/models/mapmodels/minelift
+@dirrm %%DATADIR%%/packages/models/mapmodels/locker
+@dirrm %%DATADIR%%/packages/models/mapmodels/light01
+@dirrm %%DATADIR%%/packages/models/mapmodels/laptop1
+@dirrm %%DATADIR%%/packages/models/mapmodels/ladderx15_center3
+@dirrm %%DATADIR%%/packages/models/mapmodels/ladder_8x
+@dirrm %%DATADIR%%/packages/models/mapmodels/ladder_7x
+@dirrm %%DATADIR%%/packages/models/mapmodels/ladder_15x
+@dirrm %%DATADIR%%/packages/models/mapmodels/ladder_11x
+@dirrm %%DATADIR%%/packages/models/mapmodels/ladder_10x
+@dirrm %%DATADIR%%/packages/models/mapmodels/hook
+@dirrm %%DATADIR%%/packages/models/mapmodels/gutter_v
+@dirrm %%DATADIR%%/packages/models/mapmodels/gutter_h
+@dirrm %%DATADIR%%/packages/models/mapmodels/grass02_s
+@dirrm %%DATADIR%%/packages/models/mapmodels/grass02_d
+@dirrm %%DATADIR%%/packages/models/mapmodels/grass02
+@dirrm %%DATADIR%%/packages/models/mapmodels/grass01_s
+@dirrm %%DATADIR%%/packages/models/mapmodels/grass01_d
+@dirrm %%DATADIR%%/packages/models/mapmodels/grass01
+@dirrm %%DATADIR%%/packages/models/mapmodels/gastank
+@dirrm %%DATADIR%%/packages/models/mapmodels/flyer
+@dirrm %%DATADIR%%/packages/models/mapmodels/fencepost
+@dirrm %%DATADIR%%/packages/models/mapmodels/fencegate_open
+@dirrm %%DATADIR%%/packages/models/mapmodels/fencegate_closed
+@dirrm %%DATADIR%%/packages/models/mapmodels/fence
+@dirrm %%DATADIR%%/packages/models/mapmodels/fag
+@dirrm %%DATADIR%%/packages/models/mapmodels/europalette
+@dirrm %%DATADIR%%/packages/models/mapmodels/elektro
+@dirrm %%DATADIR%%/packages/models/mapmodels/dumpster
+@dirrm %%DATADIR%%/packages/models/mapmodels/comp_bridge
+@dirrm %%DATADIR%%/packages/models/mapmodels/coffeemug
+@dirrm %%DATADIR%%/packages/models/mapmodels/chair1
+@dirrm %%DATADIR%%/packages/models/mapmodels/can2
+@dirrm %%DATADIR%%/packages/models/mapmodels/can
+@dirrm %%DATADIR%%/packages/models/mapmodels/bulb
+@dirrm %%DATADIR%%/packages/models/mapmodels/bench
+@dirrm %%DATADIR%%/packages/models/mapmodels/barrel2
+@dirrm %%DATADIR%%/packages/models/mapmodels/barrel
+@dirrm %%DATADIR%%/packages/models/mapmodels/aard
+@dirrm %%DATADIR%%/packages/models/mapmodels
+@dirrm %%DATADIR%%/packages/models
+@dirrm %%DATADIR%%/packages/misc/crosshairs
+@dirrm %%DATADIR%%/packages/misc
+@dirrm %%DATADIR%%/packages/maps
+@dirrm %%DATADIR%%/packages/audio/sounds/weapon
+@dirrm %%DATADIR%%/packages/audio/sounds/player
+@dirrm %%DATADIR%%/packages/audio/sounds/misc
+@dirrm %%DATADIR%%/packages/audio/sounds/ctf
+@dirrm %%DATADIR%%/packages/audio/sounds
+@dirrm %%DATADIR%%/packages/audio/songs
+@dirrm %%DATADIR%%/packages/audio
+@dirrm %%DATADIR%%/packages
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%/bot/waypoints
+@dirrm %%DATADIR%%/bot
+@dirrm %%DATADIR%%
+@dirrm libexec/actioncube
