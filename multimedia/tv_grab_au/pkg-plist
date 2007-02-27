@@ -1,0 +1,4 @@
+bin/tv_grab_au
+share/p5-xmltv/tv_grab_au/channel_ids
+@dirrm share/p5-xmltv/tv_grab_au
+

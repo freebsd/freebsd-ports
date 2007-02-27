@@ -1,0 +1,8 @@
+tv_grab_au is an XMLTV grabber for Australian TV programmes.
+
+Unlike other grabbers, tv_grab_au runs interactively from a terminal.
+If you're using it in conjunction with programs like mythtv-setup,
+you'll have to go back to the terminal from which mythtv-setup was
+started.
+
+WWW: http://www.onlinetractorparts.com.au/rohbags/xmltvau/

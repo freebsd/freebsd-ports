@@ -225,6 +225,7 @@
     SUBDIR += toxine
     SUBDIR += transcode
     SUBDIR += tunapie
+    SUBDIR += tv_grab_au
     SUBDIR += umr
     SUBDIR += v4l_compat
     SUBDIR += vamps

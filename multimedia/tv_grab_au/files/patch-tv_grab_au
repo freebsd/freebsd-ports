@@ -1,0 +1,20 @@
+--- tv_grab_au~	Tue May 31 15:59:17 2005
++++ tv_grab_au	Tue Feb 27 17:05:10 2007
+@@ -68,7 +68,7 @@
+ B<--debug> Output debugging info.
+ 
+ B<--share> Specify alternate directory for channel_ids file, usally found
+-in /usr/share/xmltv/tv_grab_au/.
++in /usr/local/share/p5-xmltv/tv_grab_au/.
+ 
+ =head1 SEE ALSO
+ 
+@@ -218,7 +218,7 @@
+ 
+ # share/ directory for storing region-to-channel mapping files.
+ # The directory can be overridden with the --share option.
+-my $SHARE_DIR='/usr/share/xmltv';
++my $SHARE_DIR='/usr/local/share/p5-xmltv';
+ $SHARE_DIR = $opt_share if defined $opt_share;
+ my $OUR_SHARE_DIR = (defined $SHARE_DIR) ? "$SHARE_DIR/tv_grab_au" : '.';
+ my $channel_ids_file = "$OUR_SHARE_DIR/channel_ids";
