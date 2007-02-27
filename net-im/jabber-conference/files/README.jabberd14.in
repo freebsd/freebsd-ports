@@ -1,3 +1,9 @@
+The sample configuration file for jabberd14 may be located in:
+%%TARGETDIR%%/etc/jabber.xml.sample
+
+Please make necessary changes to your configuration file which may be:
+%%TARGETDIR%%/etc/jabber.xml
+
 NOTE: if you want this service to be accessible from other servers,
  change any 'conference.localhost' or 'private.localhost' listed below
  to a fully qualified domain name!  Please make sure that your directives
@@ -5,11 +11,12 @@ NOTE: if you want this service to be accessible from other servers,
 
 Conference can be configured as a private conferencing server (no browse,
 all rooms locked up).  Add the following to make a private conferencing
-server (around line 446 in the sample configuration file):
+server (around line 921 in the sample configuration file):
+-------------------------------------------------------------------------------
 
   <service id='private.localhost'>
-    <load><conference>${PREFIX}/lib/jabber/conference.so</conference></load>
-    <conference xmlns="jabberd:config:conference">
+    <load><conference>%%TARGETDIR%%/lib/jabber/conference.so</conference></load>
+    <conference xmlns="jabber:config:conference">
       <private/>
       <history>30</history>
       <vCard>
@@ -25,20 +32,23 @@ server (around line 446 in the sample configuration file):
     </conference>
   </service>
 
+-------------------------------------------------------------------------------
 Add this section to the browse area of the jsm service to advertise it
-to your users (around line 246 of the sample config file):
+to your users (around line 382 of the sample config file):
+-------------------------------------------------------------------------------
 
-    <conference type="private" jid="private.localhost" name="Private Conferencing"/>
+	<item category="conference" type="text" jid="private.localhost" name="Private Conferencing"/>
 
-
-Conference can ALSO be configured as a public chatroom server (add this
-around line 446 in the sample config file):
+-------------------------------------------------------------------------------
+Conference can ALSO be configured as a public chatroom server 
+(add this around line 921 in the sample config file):
 
 (NOTE: don't forget to change the secret and note that this is transmitted
   in plain text.)
+-------------------------------------------------------------------------------
 
   <service id='conference.localhost'>
-    <load><conference>${PREFIX}/lib/jabber/conference.so</conference></load>
+    <load><conference>%%TARGETDIR%%/lib/jabber/conference.so</conference></load>
     <conference xmlns="jabber:config:conference">
       <public/>
       <vCard>
@@ -68,8 +78,12 @@ around line 446 in the sample config file):
     </conference>
   </service>
 
-Add this section to the browse area of the jsm service to advertise it
+-------------------------------------------------------------------------------
+Add this section to the browse area of the jsm service to advertise it 
 to your users (around line 246 of the sample configuration file):
+-------------------------------------------------------------------------------
 
-    <conference type="public" jid="conference.localhost" name="Public Chatrooms"/>
+	<item category="conference" type="text" jid="conference.localhost" name="Public Chatrooms"/>
 
+-------------------------------------------------------------------------------
+Be sure to restart your server after reconfiguring.

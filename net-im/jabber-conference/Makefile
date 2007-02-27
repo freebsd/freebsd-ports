@@ -6,29 +6,46 @@
 
 PORTNAME=	conference
 PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	jabber-
 DIST_SUBDIR=	jabber
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	martin@matuska.org
 COMMENT=	Jabber Conferencing module
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net-im/jabber
+LIB_DEPENDS=	jabberd.1:${PORTSDIR}/net-im/jabber
 
-PLIST_FILES=	lib/jabber/conference.so
 USE_GMAKE=	yes
 
-CONFIGURE_ARGS+=	--with-jabberd=${PREFIX}/include/jabber
+CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/jabber \
+		-I${LOCALBASE}/include/pth
 
-post-patch:
-	@echo "${PREFIX}" > ${WRKSRC}/.prefix-freebsd
+MAKE_ARGS+=	MCFLAGS="-shared" \
+		LDFLAGS="-L${LOCALBASE}/lib/pth -L${LOCALBASE}/lib/jabber"
+
+SUB_FILES+=	pkg-message README.jabberd14
+DOCSDIR=	${TARGETDIR}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+
+.if !defined(NOPORTDOCS)
+PKGMESSAGE=	${WRKDIR}/pkg-message
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fPIC
+.endif
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/conference.so ${PREFIX}/lib/jabber/
+	${INSTALL_PROGRAM} ${WRKSRC}/conference.so ${TARGETDIR}/lib/jabber/
 
 post-install:
-	@cat pkg-message
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKDIR}/README.jabberd14 ${DOCSDIR}
+	@${CAT} ${PKGMESSAGE}
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

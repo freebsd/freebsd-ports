@@ -1,0 +1,10 @@
+--- Makefile.orig	Wed Feb 21 15:43:41 2007
++++ Makefile	Wed Feb 21 15:44:15 2007
+@@ -1,7 +1,3 @@
+-include ../platform-settings
+-
+-CFLAGS:=$(CFLAGS) -I../jabberd
+-
+ conference_OBJECTS=conference.o conference_room.o conference_user.o
+ 
+ all: conference
