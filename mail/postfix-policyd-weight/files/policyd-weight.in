@@ -16,6 +16,7 @@
 name="policyd-weight"
 rcvar=policyd_weight_enable
 
+start_cmd=policyd_weight_start
 stop_cmd=policyd_weight_stop
 
 # defaults
@@ -28,13 +29,16 @@ case "$policyd_weight_enable" in
     *) echo "To make use of $name set $rcvar=\"YES\" in /etc/rc.conf" ;;
 esac
 
-policyd_weight_progname="/usr/local/libexec/postfix/policyd-weight"
-command=/usr/local/libexec/postfix/policyd-weight
+command="/usr/local/libexec/postfix/policyd-weight"
 pidfile=/var/run/policyd-weight.pid
+
+policyd_weight_start() {
+    /usr/local/libexec/postfix/policyd-weight start
+}
 
 policyd_weight_stop() {
     echo "Stopping $name"
-    $policyd_weight_progname stop
+    /usr/local/libexec/postfix/policyd-weight stop
 }
 
 run_rc_command "$1"
