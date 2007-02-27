@@ -14,7 +14,8 @@ MASTER_SITES=	http://www.franksworld.org/dist/xmame/ \
 		http://www.energyhq.es.eu.org/files/ \
 		http://www.energyhq.be/files/ \
 		http://www.pkix.net/mirror/x.mame.net/ \
-DISTNAME=	xmame-${XMAMEVERSION:S/.r/-rc/}
+DISTNAME=	xmame-${XMAMEVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	UNIX/X11 port of the Multi Arcade Machine Emulator (MAME)
@@ -36,6 +37,7 @@ NOT_FOR_ARCHS=	ia64
 # Are we building MAME or MESS? (also set by slave ports)
 MAMEMESS?=	mame
 
+SUB_FILES=	pkg-message
 MAN6=		x${MAMEMESS}.6
 
 OPTIONS=	SDL		"Use the SDL driver" on \
