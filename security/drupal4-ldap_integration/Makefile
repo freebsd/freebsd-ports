@@ -15,6 +15,8 @@ COMMENT=	LDAP user authentication for the Drupal CMS
 
 USE_PHP=	ldap
 
+BROKEN=		Install fails
+
 DRUPAL_MODULE=	yes
 MODULE_FILES=	ldap_integration.module \
 		ldap_integration/LDAPInterface.php \
