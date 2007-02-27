@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	LEGO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kbyanc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for communicating with the Lego RCX brick via the IR tower
 
 PERL_CONFIGURE=	yes
