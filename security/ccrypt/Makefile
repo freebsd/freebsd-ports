@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://quasar.mathstat.uottawa.ca/~selinger/ccrypt/download/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	jim@corebsd.or.id
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command-line utility for encrypting and decrypting files and streams
 
 USE_GETOPT_LONG=yes
