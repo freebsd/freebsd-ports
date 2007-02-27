@@ -1,0 +1,52 @@
+#!/bin/sh
+
+if [ "$2" != "POST-INSTALL" ]; then
+    exit 0
+fi
+
+USER=%%JABBER_USER%%
+GROUP=%%JABBER_GROUP%%
+UID=%%JABBER_UID%%
+GID=%%JABBER_GID%%
+ETCDIR=%%JABBER_ETCDIR%%
+RUNDIR=%%JABBER_RUNDIR%%
+SPOOLDIR=%%JABBER_SPOOLDIR%%
+
+if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
+	if pw groupadd ${GROUP} -g ${GID}; then
+		echo "Added group \"${GROUP}\"."
+	else
+		echo "Adding group \"${GROUP}\" failed..."
+		exit 1
+	fi
+fi
+
+if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
+	if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+		-s "/sbin/nologin" -d "/nonexistent" \
+		-c "Jabber Daemon"; \
+	then
+		echo "Added user \"${USER}\"."
+	else
+		echo "Adding user \"${USER}\" failed..."
+		exit 1
+	fi
+fi
+
+if [ ! -d ${RUNDIR} ]; then
+	echo "Creating \"${RUNDIR}\"."
+	mkdir -p ${RUNDIR}
+fi
+
+echo "Fixing ownerships and modes in \"${RUNDIR}\"."
+chown -R ${USER}:${GROUP} ${RUNDIR}
+chmod -R go= ${RUNDIR}
+
+if [ ! -d ${SPOOLDIR} ]; then
+	echo "Creating \"${SPOOLDIR}\"."
+	mkdir -p ${SPOOLDIR}
+fi
+
+echo "Fixing ownerships and modes in \"${SPOOLDIR}\"."
+chown -R ${USER}:${GROUP} ${SPOOLDIR}
+chmod -R go= ${SPOOLDIR}

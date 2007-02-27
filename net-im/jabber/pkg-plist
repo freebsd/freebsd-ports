@@ -1,39 +1,56 @@
-bin/jabberd
+bin/jabberd14
 bin/xdbfiletool
-@unexec if cmp -s %D/etc/jabber.xml.dist %D/etc/jabber.xml; then rm -f %D/etc/jabber.xml; fi
-etc/jabber.xml.dist
-include/jabberd.h
-include/jabberdlib.h
-lib/libjabberd.a
-lib/libjabberd.la
-lib/libjabberd.so
-lib/libjabberd.so.0
-lib/libjabberddialback.a
-lib/libjabberddialback.la
-lib/libjabberddialback.so
-lib/libjabberddialback.so.0
-lib/libjabberddnsrv.a
-lib/libjabberddnsrv.la
-lib/libjabberddnsrv.so
-lib/libjabberddnsrv.so.0
-lib/libjabberdpthsock.a
-lib/libjabberdpthsock.la
-lib/libjabberdpthsock.so
-lib/libjabberdpthsock.so.0
-lib/libjabberdsm.a
-lib/libjabberdsm.la
-lib/libjabberdsm.so
-lib/libjabberdsm.so.0
-lib/libjabberdxdbfile.a
-lib/libjabberdxdbfile.la
-lib/libjabberdxdbfile.so
-lib/libjabberdxdbfile.so.0
-lib/libjabberdxdbsql.a
-lib/libjabberdxdbsql.la
-lib/libjabberdxdbsql.so
-lib/libjabberdxdbsql.so.0
-@unexec if test ! -s /var/log/jabberd/error.log; then rm -f /var/log/jabberd/error.log; fi
-@unexec if test ! -s /var/log/jabberd/record.log; then rm -f /var/log/jabberd/record.log; fi
-@unexec rmdir /var/spool/jabberd 2>/dev/null || true
-@unexec rmdir /var/run/jabberd 2>/dev/null || true
-@unexec rmdir /var/log/jabberd 2>/dev/null || true
+etc/jabber.xml.sample
+include/jabber/jabberd.h
+include/jabber/jabberdlib.h
+include/jabber/platform-settings
+lib/jabber/libjabberd.a
+lib/jabber/libjabberd.la
+lib/jabber/libjabberd.so
+lib/jabber/libjabberd.so.1
+lib/jabber/libjabberddialback.a
+lib/jabber/libjabberddialback.la
+lib/jabber/libjabberddialback.so
+lib/jabber/libjabberddialback.so.1
+lib/jabber/libjabberddnsrv.a
+lib/jabber/libjabberddnsrv.la
+lib/jabber/libjabberddnsrv.so
+lib/jabber/libjabberddnsrv.so.1
+lib/jabber/libjabberdpthsock.a
+lib/jabber/libjabberdpthsock.la
+lib/jabber/libjabberdpthsock.so
+lib/jabber/libjabberdpthsock.so.1
+lib/jabber/libjabberdsm.a
+lib/jabber/libjabberdsm.la
+lib/jabber/libjabberdsm.so
+lib/jabber/libjabberdsm.so.1
+lib/jabber/libjabberdxdbfile.a
+lib/jabber/libjabberdxdbfile.la
+lib/jabber/libjabberdxdbfile.so
+lib/jabber/libjabberdxdbfile.so.1
+lib/jabber/libjabberdxdbsql.a
+lib/jabber/libjabberdxdbsql.la
+lib/jabber/libjabberdxdbsql.so
+lib/jabber/libjabberdxdbsql.so.1
+share/locale/de/LC_MESSAGES/jabberd14.mo
+share/locale/fr/LC_MESSAGES/jabberd14.mo
+share/locale/hu/LC_MESSAGES/jabberd14.mo
+share/locale/it/LC_MESSAGES/jabberd14.mo
+share/locale/nl/LC_MESSAGES/jabberd14.mo
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.SQL
+%%PORTDOCS%%%%DOCSDIR%%/README.config
+%%PORTDOCS%%%%DOCSDIR%%/README.filespool
+%%PORTDOCS%%%%DOCSDIR%%/README.karma
+%%PORTDOCS%%%%DOCSDIR%%/README.protocols
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADE
+%%PORTDOCS%%%%DOCSDIR%%/mysql.sql
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry lib/jabber
+@dirrmtry include/jabber

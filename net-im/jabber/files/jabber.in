@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: jabber
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable rsyncd:
+#
+# jabber_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name="jabber"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+required_files=%%JABBER_ETCDIR%%/jabber.xml
+
+: ${jabber_enable="NO"}
+: ${jabber_pidfile="%%JABBER_RUNDIR%%/jabber.pid"}
+: ${jabber_flags="-B -c ${required_files}"}
+: ${jabber_user="%%JABBER_USER%%"}
+: ${jabber_group="%%JABBER_GROUP%%"}
+
+command=%%PREFIX%%/bin/jabberd14
+command_args="${jabberd_flags}"
+pidfile=${jabberd_pidfile}
+extra_commands="reload"
+
+run_rc_command "$1"

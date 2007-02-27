@@ -4,17 +4,21 @@ if [ "$2" != "POST-DEINSTALL" ]; then
     exit 0
 fi
 
-USER=jabber
+USER=%%JABBER_USER%%
+GROUP=%%JABBER_GROUP%%
+RUNDIR="%%JABBER_RUNDIR%%"
+SPOOLDIR="%%JABBER_SPOOLDIR%%"
 
 if pw usershow "${USER}" 2>/dev/null 1>&2; then
 	echo "To delete Jabber user permanently, use 'pw userdel ${USER}'"
 fi
 
-if pw groupshow "${USER}" 2>/dev/null 1>&2; then
+if pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
 	echo "To delete Jabber group permanently, use 'pw groupdel ${USER}'"
 fi
 
-echo "If you wish to delete jabber data files, remove '/var/spool/jabberd' directory."
-echo "If you wish to delete jabber log files, remove '/var/log/jabberd' directory."
+echo "You may want to delete the following directories:"
+echo "${RUNDIR}"
+echo "${SPOOLDIR}" 
 
 exit 0
