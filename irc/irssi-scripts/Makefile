@@ -11,7 +11,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/i/${PORTNAME}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	karma@ez.pereslavl.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of useful scripts for the irssi IRC-client
 
 RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi

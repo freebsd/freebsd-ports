@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/t/trayer
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	karma@ez.pereslavl.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight GTK2-based systray for UNIX desktop
 
 USE_GNOME=	gtk20 glib20 pango atk

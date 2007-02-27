@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	erc
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	karma@ez.pereslavl.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ERC is an Emacs InternetRelayChat client
 
 USE_EMACS=	yes
