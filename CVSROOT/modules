@@ -2758,7 +2758,7 @@ firestring	ports/misc/firestring
 firetalk	ports/net-im/firetalk
 firewalk	ports/security/firewalk
 fisg		ports/irc/fisg
-fish		ports/shells/fish
+ports_fish		ports/shells/fish
 fishsupper	ports/games/fishsupper
 fist		ports/textproc/fist
 fistgen		ports/devel/fistgen
