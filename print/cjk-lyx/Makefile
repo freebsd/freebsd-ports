@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTVERSION=	1.4.4
 CATEGORIES=	print chinese japanese korean
 MASTER_SITES=	ftp://cellular.phys.pusan.ac.kr/CJK-LyX/qt/ \
 		ftp://ftp.u-aizu.ac.jp/pub/tex/cjk-lyx/qt/ \
@@ -15,8 +14,7 @@ MASTER_SITES=	ftp://cellular.phys.pusan.ac.kr/CJK-LyX/qt/ \
 PKGNAMEPREFIX=	cjk-
 DISTNAME=	CJK-LyX-qt-${PORTVERSION}
 DISTFILES=	${DISTNAME}-1.src${EXTRACT_SUFX} \
-		lyx-platex-${PORTVERSION}.tar.gz:JPN \
-		lyx-1.4_2.mo:JPN
+		lyx-platex-${PORTVERSION}.tar.gz:JPN
 DIST_SUBDIR=	CJK-LyX
 EXTRACT_ONLY=	${DISTNAME}-1.src${EXTRACT_SUFX} \
 		lyx-platex-${PORTVERSION}.tar.gz
@@ -31,9 +29,6 @@ LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost \
 		qt-mt:${PORTSDIR}/x11-toolkits/qt33
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/texcm-ttf/cmex10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf
 
-BROKEN=		Does not build
-
-CONFLICTS=	lyx-*
 OPTIONS=	ASPELL	"Utilize ASPELL library"	on \
 		ISPELL	"Depend on ISPELL as well"	off
 .if defined(LANG) && ${LANG:C/_.*//} == "ja"
@@ -53,15 +48,21 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xf - --exclude ${PORTNAME}-${PORTVERSION}/intl/*.[c
 CONFIGURE_ARGS=	--with-extra-lib="${LOCALBASE}/lib" \
 		--without-included-boost \
 		--with-extra-inc="${LOCALBASE}/include" \
-		--with-frontend=qt
+		--with-frontend=qt \
+		--program-prefix="${PKGNAMEPREFIX}"
 CONFIGURE_ENV+=	LDFLAGS=${PTHREAD_LIBS}
 CFLAGS=		${PTHREAD_CFLAGS}
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
-MAN1=		lyx.1 tex2lyx.1 lyxclient.1
+MAN1=		${PKGNAMEPREFIX}lyx.1 ${PKGNAMEPREFIX}tex2lyx.1 ${PKGNAMEPREFIX}lyxclient.1
+
+DATADIR=	${TARGETDIR}/share/${PKGNAMEPREFIX}${PORTNAME}
 
 # Make uic stay off the lawn
 MAKE_ENV=	TMPDIR=/tmp
+
+post-extract:
+	${MV} ${WRKSRC}/po/lyx.pot ${WRKSRC}/po/${PKGNAMEPREFIX}lyx.pot
 
 post-patch:
 	# Removing mention of the bundled boost
@@ -78,19 +79,15 @@ post-configure:
 	# Removing explicit linking with -lc
 	${REINPLACE_CMD} -e 's,-lc ,,' ${WRKSRC}/*/Makefile
 
-post-build:
+post-install:
 	@${ECHO_MSG}
-	@${ECHO_MSG} "Fixing up the Japanese message file..."
+	@${ECHO_MSG} "Type \"${PKGNAMEPREFIX}lyx\" to execute the program."
 	@${ECHO_MSG}
-	@${CP} -f ${DISTDIR}/${DIST_SUBDIR}/lyx-1.4_1.mo ${WRKSRC}/po/ja.gmo
-
+	@${ECHO_MSG} "User setting folder will be created under ~/.${PKGNAMEPREFIX}lyx when ${PKGNAMEPREFIX}lyx is run for the first time."
+	@${ECHO_MSG}
 .include <bsd.port.pre.mk>
 
-.if exists(${X11BASE}/bin/makepsres)
-PLIST_SUB+=	PSRES=
-.else
-PLIST_SUB+=	PSRES='@comment '
-.endif
+PLIST_SUB=	PKGNAMEPREFIX=${PKGNAMEPREFIX}
 
 .if defined(WITH_ASPELL)
 LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
