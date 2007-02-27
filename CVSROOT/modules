@@ -640,6 +640,7 @@ avahi		ports/net/avahi
 avahi-sharp	ports/net/avahi-sharp
 avalon-framework	ports/devel/avalon-framework
 avalon-logkit	ports/java/avalon-logkit
+avanor		ports/games/avanor
 avarice		ports/devel/avarice
 avcheck		ports/security/avcheck
 avenger		ports/mail/avenger
