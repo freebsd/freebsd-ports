@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PACKETSTORM} \
 		http://konst.org.ua/download/
 MASTER_SITE_SUBDIR=	sniffers
 
-MAINTAINER=	jim@corebsd.or.id
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight network password sniffer
 
 USE_PERL5_RUN=	yes

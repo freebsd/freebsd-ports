@@ -10,7 +10,7 @@ PORTVERSION=	1.21
 CATEGORIES=	security net
 MASTER_SITES=	http://crypto.stanford.edu/~eujin/sslsniffer/
 
-MAINTAINER=	jim@corebsd.or.id
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SSLv3/TLS and SSLv2 sniffer
 
 USE_OPENSSL=	Yes

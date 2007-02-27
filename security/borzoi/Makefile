@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://dragongate-technologies.com/borzoi/
 DISTNAME=	borZoi-${PORTVERSION}
 
-MAINTAINER=	jim@corebsd.or.id
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Elliptic Curve Cryptography Library
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libntl.a:${PORTSDIR}/math/ntl

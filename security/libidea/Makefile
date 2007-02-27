@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/mirrors/ftp.psy.uq.oz.au/libeay/ \
 		ftp://ftp.ntnu.no/pub/unix/security/ \
 		ftp://ftp.sunsite.org.uk/Mirrors/ftp.psy.uq.oz.au/pub/Crypto/libeay/
 
-MAINTAINER=	jim@corebsd.or.id
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IDEA block cipher library
 
 RESTRICTED=	"Crypto; IDEA is a patented algorithm that requires proper licensing"
