@@ -34,6 +34,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="44449bf7-c69b-11db-9f82-000e0c2e438a">
+    <topic>gtar -- name mangling symlink vulnerability</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><gt>5.5</gt><lt>5.5_9</lt></range>
+	<range><gt>4.11</gt><lt>4.11_26</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	<p>Symlinks created using the "GNUTYPE_NAMES" tar extension can
+	  be absolute due to lack of proper sanity checks.</p>
+	<h1>Impact:</h1>
+	<p>If an attacker can get a user to extract a specially crafted
+	  tar archive the attacker can overwrite arbitrary files with
+	  the permissions of the user running gtar.  If file system
+	  permissions allow it, this may allow the attacker to overwrite
+	  important system file (if gtar is being run as root), or
+	  important user configuration files such as .tcshrc or .bashrc,
+	  which would allow the attacker to run arbitrary commands.</p>
+	<h1>Workaround:</h1>
+	<p>Use "bsdtar", which is the default tar implementation in
+	  FreeBSD 5.3 and higher.  For FreeBSD 4.x, bsdtar is available
+	  in the FreeBSD Ports Collection as
+	  ports/archivers/libarchive.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2006-6097</cvename>
+      <freebsdsa>SA-06:26.gtar</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2006-12-06</discovery>
+      <entry>2007-02-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5c554c0f-c69a-11db-9f82-000e0c2e438a">
     <topic>FreeBSD -- Kernel memory disclosure in firewire(4)</topic>
     <affects>
