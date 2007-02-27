@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	claws-mail
-PORTVERSION=	2.7.2
+PORTVERSION=	2.8.0
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -195,14 +195,16 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/tools/README ${DOCSDIR}/README.tools
 .endif
 	@${MKDIR} ${DATADIR}
-	@cd ${WRKSRC}/tools && \
+	cd ${WRKSRC}/tools && \
 		${INSTALL_SCRIPT} OOo2claws-mail.pl acroread2claws-mail.pl \
 		calypso_convert.pl convert_mbox.pl eud2gc.py filter_conv.pl \
-		freshmeat_search.pl gif2xface.pl google_msgid.pl \
-		google_search.pl kmail2claws-mail.pl kmail2claws-mail_v2.pl \
-		maildir2claws-mail.pl multiwebsearch.conf multiwebsearch.pl \
+		filter_conv_new.pl fix_date.sh freshmeat_search.pl \
+		gif2xface.pl google_msgid.pl google_search.pl \
+		kmail-mailbox2claws-mail.pl kmail2claws-mail.pl \
+		kmail2claws-mail_v2.pl multiwebsearch.conf multiwebsearch.pl \
 		nautilus2claws-mail.sh outlook2claws-mail.pl tb2claws-mail \
-		textviewer.sh update-po uudec vcard2xml.py \
+		tbird2claws.py textviewer.pl textviewer.sh \
+		thunderbird-filters-convertor.pl uudec uuooffice vcard2xml.py \
 		${DATADIR}
 	@${MKDIR} ${PREFIX}/share/applications
 	@${INSTALL_DATA} ${WRKSRC}/claws-mail.desktop ${PREFIX}/share/applications/

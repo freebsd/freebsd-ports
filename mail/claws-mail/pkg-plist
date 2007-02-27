@@ -47,6 +47,7 @@ include/claws-mail/common/template.h
 include/claws-mail/common/timing.h
 include/claws-mail/common/utils.h
 include/claws-mail/common/uuencode.h
+include/claws-mail/common/valgrind.h
 include/claws-mail/common/version.h
 include/claws-mail/common/xml.h
 include/claws-mail/common/xmlprops.h
@@ -64,7 +65,6 @@ include/claws-mail/editldap_basedn.h
 include/claws-mail/editvcard.h
 include/claws-mail/enriched.h
 include/claws-mail/etpan/etpan-errors.h
-include/claws-mail/etpan/etpan-log.h
 include/claws-mail/etpan/etpan-thread-manager-types.h
 include/claws-mail/etpan/etpan-thread-manager.h
 include/claws-mail/etpan/imap-thread.h
@@ -201,6 +201,7 @@ include/claws-mail/textview.h
 include/claws-mail/toolbar.h
 include/claws-mail/undo.h
 include/claws-mail/unmime.h
+include/claws-mail/uri_opener.h
 include/claws-mail/vcard.h
 include/claws-mail/wizard.h
 lib/claws-mail/plugins/bogofilter.a
@@ -287,19 +288,27 @@ share/pixmaps/claws-mail.png
 %%DATADIR%%/convert_mbox.pl
 %%DATADIR%%/eud2gc.py
 %%DATADIR%%/filter_conv.pl
+%%DATADIR%%/filter_conv_new.pl
+%%DATADIR%%/fix_date.sh
 %%DATADIR%%/freshmeat_search.pl
 %%DATADIR%%/gif2xface.pl
 %%DATADIR%%/google_msgid.pl
 %%DATADIR%%/google_search.pl
+%%DATADIR%%/kmail-mailbox2claws-mail.pl
 %%DATADIR%%/kmail2claws-mail.pl
 %%DATADIR%%/kmail2claws-mail_v2.pl
-%%DATADIR%%/maildir2claws-mail.pl
 %%DATADIR%%/multiwebsearch.conf
 %%DATADIR%%/multiwebsearch.pl
 %%DATADIR%%/nautilus2claws-mail.sh
 %%DATADIR%%/outlook2claws-mail.pl
 %%DATADIR%%/tb2claws-mail
+%%DATADIR%%/tbird2claws.py
+%%DATADIR%%/textviewer.pl
 %%DATADIR%%/textviewer.sh
+%%DATADIR%%/thunderbird-filters-convertor.pl
+%%DATADIR%%/uudec
+%%DATADIR%%/uuooffice
+%%DATADIR%%/vcard2xml.py
 %%THEMES%%%%DATADIR%%/themes/Crystal/.claws_themeinfo
 %%THEMES%%%%DATADIR%%/themes/Crystal/.sylpheed_themeinfo
 %%THEMES%%%%DATADIR%%/themes/Crystal/close.xpm
@@ -2616,9 +2625,6 @@ share/pixmaps/claws-mail.png
 %%THEMES%%%%DATADIR%%/themes/tom_2.1.1/vcard.xpm
 %%THEMES%%%%DATADIR%%/themes/tom_2.1.1/work_offline.xpm
 %%THEMES%%%%DATADIR%%/themes/tom_2.1.1/work_online.xpm
-%%DATADIR%%/update-po
-%%DATADIR%%/uudec
-%%DATADIR%%/vcard2xml.py
 %%THEMES%%@dirrm %%DATADIR%%/themes/tom_2.1.1
 %%THEMES%%@dirrm %%DATADIR%%/themes/tml02c
 %%THEMES%%@dirrm %%DATADIR%%/themes/stw

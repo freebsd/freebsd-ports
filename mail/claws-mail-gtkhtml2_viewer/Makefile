@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkhtml2_viewer
 PORTVERSION=	0.14.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
