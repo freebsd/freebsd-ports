@@ -15,6 +15,11 @@ share/gnome/solfege/example-lesson-files/learn-min-major-3
 share/gnome/solfege/example-lesson-files/sing-chord
 share/gnome/solfege/example-lesson-files/very-easy-scale
 share/gnome/solfege/example-lesson-files/very-easy-scale2
+share/gnome/solfege/lesson-files/rhythmtapping2-self-config-binary
+share/gnome/solfege/lesson-files/rhythmtapping2-self-config-ternary
+share/gnome/solfege/lesson-files/tapping-all
+share/gnome/solfege/lesson-files/tapping-easy
+share/gnome/solfege/lesson-files/tapping-mid
 share/gnome/solfege/feta/feta20-accidentals--1.xpm
 share/gnome/solfege/feta/feta20-accidentals--2.xpm
 share/gnome/solfege/feta/feta20-accidentals-0.xpm
@@ -132,6 +137,9 @@ share/gnome/solfege/graphics/solfege.svg
 share/gnome/solfege/graphics/solfege.xpm
 share/gnome/solfege/graphics/test-sound.png
 share/gnome/solfege/graphics/twelve-tone.png
+share/gnome/solfege/help/C/rhythmtapping-module.html
+share/gnome/solfege/help/C/rhythmtapping2-module.html
+share/gnome/solfege/help/C/rhythmtapping2.html
 share/gnome/solfege/help/C/apb.html
 share/gnome/solfege/help/C/bug-reporting.html
 share/gnome/solfege/help/C/chord-module.html
@@ -271,7 +279,13 @@ share/gnome/solfege/help/fr/solfege-intro.html
 share/gnome/solfege/help/fr/theory-intervals.html
 share/gnome/solfege/help/fr/twelvetone.html
 share/gnome/solfege/help/fr/welcome.html
+share/gnome/solfege/help/fr/rhythmtapping2.html
+share/gnome/solfege/help/fr/rhythmtapping-module.html
+share/gnome/solfege/help/fr/rhythmtapping2-module.html
+share/gnome/solfege/help/no/rhythmtapping-module.html
+share/gnome/solfege/help/no/rhythmtapping2-module.html
 share/gnome/solfege/help/no/apb.html
+share/gnome/solfege/help/no/rhythmtapping2.html
 share/gnome/solfege/help/no/bug-reporting.html
 share/gnome/solfege/help/no/chord-module.html
 share/gnome/solfege/help/no/chord.html
@@ -334,6 +348,9 @@ share/gnome/solfege/help/no/theory-intervals.html
 share/gnome/solfege/help/no/twelvetone.html
 share/gnome/solfege/help/no/welcome.html
 share/gnome/solfege/help/tr/apb.html
+share/gnome/solfege/help/tr/rhythmtapping-module.html
+share/gnome/solfege/help/tr/rhythmtapping2-module.html
+share/gnome/solfege/help/tr/rhythmtapping2.html
 share/gnome/solfege/help/tr/bug-reporting.html
 share/gnome/solfege/help/tr/chord-module.html
 share/gnome/solfege/help/tr/chord.html
@@ -712,6 +729,9 @@ share/gnome/solfege/soundcard/solfege_c_midi.py
 share/gnome/solfege/soundcard/soundcardexceptions.py
 share/gnome/solfege/soundcard/track.py
 share/gnome/solfege/soundcard/winsynth.py
+share/gnome/solfege/soundcard/testsetup.py
+share/gnome/solfege/src/rhythmtapping.py
+share/gnome/solfege/src/rhythmtapping2.py
 share/gnome/solfege/src/__init__.py
 share/gnome/solfege/src/abstract.py
 share/gnome/solfege/src/app.py
