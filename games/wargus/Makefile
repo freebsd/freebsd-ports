@@ -6,76 +6,36 @@
 #
 
 PORTNAME=	wargus
-PORTVERSION=	2.1
-PORTREVISION=	3
+PORTVERSION=	2.2.2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+MASTER_SITES=	SF
+EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	tlp@liquidx.org
 COMMENT=	Warcraft 2 mod that allows you to play Warcraft 2 with Stratagus
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
-RUN_DEPENDS=	${LOCALBASE}/bin/stratagus:${PORTSDIR}/games/stratagus
+RUN_DEPENDS=	stratagus:${PORTSDIR}/games/stratagus
 
+NOT_FOR_ARCHS=	sparc64
 USE_GMAKE=	yes
-
-PKGMESSAGE=	${WRKDIR}/pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|^\(CC\)|#\1|; \
-		s|^\(CFLAGS =\)|\1 ${CFLAGS}|; \
-		s|\/usr\/local\(\/cross\)|${PREFIX}\1|; \
-		s|\(-I\)\/usr\/local|\1${LOCALBASE}|; \
-		s|\(-L\)\/usr\/local|\1${LOCALBASE}|; \
-		s|-static||' \
-		${WRKSRC}/Makefile
+SUB_FILES=	${PORTNAME} pkg-message
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${MKDIR} ${DATADIR}/campaigns
-	${MKDIR} ${DATADIR}/campaigns/human
-	${MKDIR} ${DATADIR}/campaigns/human-exp
-	${MKDIR} ${DATADIR}/campaigns/orc
-	${MKDIR} ${DATADIR}/campaigns/orc-exp
-	${MKDIR} ${DATADIR}/contrib
-	${MKDIR} ${DATADIR}/maps
-	${MKDIR} ${DATADIR}/maps/multi
-	${MKDIR} ${DATADIR}/scripts
-	${MKDIR} ${DATADIR}/scripts/ai
-	${MKDIR} ${DATADIR}/scripts/human
-	${MKDIR} ${DATADIR}/scripts/orc
-	${MKDIR} ${DATADIR}/scripts/tilesets
-	${INSTALL_DATA} ${WRKSRC}/campaigns/human/* ${DATADIR}/campaigns/human
-	${INSTALL_DATA} ${WRKSRC}/campaigns/human-exp/* ${DATADIR}/campaigns/human-exp
-	${INSTALL_DATA} ${WRKSRC}/campaigns/orc/* ${DATADIR}/campaigns/orc
-	${INSTALL_DATA} ${WRKSRC}/campaigns/orc-exp/* ${DATADIR}/campaigns/orc-exp
-	${INSTALL_DATA} ${WRKSRC}/contrib/* ${DATADIR}/contrib
-	${INSTALL_DATA} ${WRKSRC}/maps/multi/* ${DATADIR}/maps/multi
-	${INSTALL_DATA} ${WRKSRC}/scripts/*.lua ${DATADIR}/scripts
-	${INSTALL_DATA} ${WRKSRC}/scripts/ai/* ${DATADIR}/scripts/ai
-	${INSTALL_DATA} ${WRKSRC}/scripts/human/* ${DATADIR}/scripts/human
-	${INSTALL_DATA} ${WRKSRC}/scripts/orc/* ${DATADIR}/scripts/orc
-	${INSTALL_DATA} ${WRKSRC}/scripts/tilesets/* ${DATADIR}/scripts/tilesets
-	${INSTALL_SCRIPT} ${WRKSRC}/build.sh ${DATADIR}/build.sh
-	${INSTALL_PROGRAM} ${WRKSRC}/wartool ${DATADIR}/wartool
-	${INSTALL_SCRIPT} ${WRKDIR}/wargus ${PREFIX}/bin/wargus
-
-post-build:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile
-	@(cp ${FILESDIR}/wargus.in ${WRKDIR}/wargus)
-	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKDIR}/wargus
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+	cd ${WRKSRC} && \
+		${FIND} campaigns contrib maps scripts -type d \
+		-exec ${MKDIR} "${DATADIR}/{}" \; && \
+		${FIND} campaigns contrib maps scripts -type f \
+		-exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
+	${INSTALL_PROGRAM} ${WRKSRC}/wartool ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/build.sh ${DATADIR}
 
 post-install:
+	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
