@@ -2000,6 +2000,7 @@ dokuwiki	ports/www/dokuwiki
 dokuwiki-devel	ports/www/dokuwiki-devel
 dolly		ports/sysutils/dolly
 dolly+		ports/sysutils/dolly+
+dolphin		ports/x11-fm/dolphin
 dom4j		ports/textproc/dom4j
 domc		ports/textproc/domc
 domtools	ports/dns/domtools
