@@ -34,7 +34,11 @@ bin/flamerobin
 %%DATADIR%%/html-templates/ok2.png
 %%DATADIR%%/html-templates/redx.png
 %%DATADIR%%/html-templates/view.png
+share/applications/flamerobin.desktop
+share/pixmaps/flamerobin.png
 @dirrm %%DATADIR%%/html-templates
 @dirrm %%DATADIR%%/docs
 @dirrm %%DATADIR%%/conf-defs
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrmtry share/pixmaps
