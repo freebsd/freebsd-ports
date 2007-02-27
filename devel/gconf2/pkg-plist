@@ -67,6 +67,7 @@ share/locale/ko/LC_MESSAGES/GConf2.mo
 share/locale/ku/LC_MESSAGES/GConf2.mo
 share/locale/lt/LC_MESSAGES/GConf2.mo
 share/locale/lv/LC_MESSAGES/GConf2.mo
+share/locale/mg/LC_MESSAGES/GConf2.mo
 share/locale/mk/LC_MESSAGES/GConf2.mo
 share/locale/ml/LC_MESSAGES/GConf2.mo
 share/locale/mn/LC_MESSAGES/GConf2.mo
@@ -137,6 +138,8 @@ share/sgml/gconf/gconf-1.0.dtd
 @dirrmtry share/locale/nn
 @dirrmtry share/locale/ne/LC_MESSAGES
 @dirrmtry share/locale/ne
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/ko/LC_MESSAGES
