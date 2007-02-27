@@ -16,7 +16,7 @@ DISTFILES=	${PORTNAME}_viewer-${PORTVERSION}.tar.bz2 \
 		${PORTNAME}_parser-${PORTVERSION}.tar.bz2 \
 		${PORTNAME}_docs-${PORTVERSION}.tar.bz2
 
-MAINTAINER=	mt@primats.org.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An offline HTML viewer for PalmOS devices
 
 BUILD_DEPENDS=	ppmtoTbmp:${PORTSDIR}/palm/ppmtoTbmp \
