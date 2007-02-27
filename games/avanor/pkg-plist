@@ -1,0 +1,17 @@
+bin/avanor
+%%DATADIR%%/manual/basic.html
+%%DATADIR%%/manual/credits.html
+%%DATADIR%%/manual/equipment.html
+%%DATADIR%%/manual/index.html
+%%DATADIR%%/manual/intro.html
+%%DATADIR%%/manual/kblayout.html
+%%DATADIR%%/manual/magic.html
+%%DATADIR%%/manual/manual.css
+%%DATADIR%%/manual/misc.html
+%%DATADIR%%/manual/qstart.html
+%%DATADIR%%/manual/skills.html
+%%DATADIR%%/manual/tactics.html
+%%DATADIR%%/manual/testmode.html
+%%DATADIR%%/manual/wskills.html
+@dirrm %%DATADIR%%/manual
+@dirrm %%DATADIR%%
