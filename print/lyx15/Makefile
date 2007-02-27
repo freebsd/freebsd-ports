@@ -24,8 +24,6 @@ BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost
 
-CONFLICTS=	cjk-lyx-*
-
 OPTIONS=	QT	"Use Qt (instead of XForms)"	${QT_PRESENT}	\
 		ASPELL	"Utilize ASPELL library"	on	\
 		ISPELL	"Depend on ISPELL as well"	off
