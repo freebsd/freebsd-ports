@@ -17,7 +17,7 @@ MAINTAINER=	simon@olofsson.de
 COMMENT=	Locate and remove duplicated music files
 
 DEPRECATED=	Development has been ceased, successor is shareware.
-EXPIRATION_DATE=	2007-03-01
+EXPIRATION_DATE=	2007-06-01
 
 USE_ZIP=	yes
 USE_JAVA=	yes
