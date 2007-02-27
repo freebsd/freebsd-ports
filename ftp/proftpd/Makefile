@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.1rc2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -32,8 +32,8 @@ PORTDOCS=	${PORTDOCSdoc} ${PORTDOCScontrib}
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE=AUTOTOOLS=	autoconf:259
-GNU_CONFIGURE=yes
+USE_AUTOTOOLS=	autoconf:259
+GNU_CONFIGURE=	yes
 
 USE_RC_SUBR=	proftpd.sh
 
@@ -59,18 +59,15 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		RADIUS "Include mod_radius" off \
 		QUOTATAB_RADIUS "include mod_quotatab_radius" off \
 		BAN "include mod_ban (Requires CTRLS)" off \
-		NLS "Use nls (builds mod_lang)" off
+		NLS "Use nls (builds mod_lang)" off \
+		CYRFIX "Use patch for fix cyrillic encoding" off \
+		CODECONV "Use charset conversion (mod_codeconv)" off
 
 MODULES?=
 LIBDIRS?=
 INCLUDEDIRS?=
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-CONFIGURE_ARGS+=	--without-getopt
-USE_AUTOTOOLS=	autoconf:259
-.endif
 
 .if !defined(WITHOUT_RATIO)
 MODULES:=${MODULES}:mod_ratio
@@ -139,6 +136,10 @@ PROFTPD_LIBS+=	-lintl -L${LOCALBASE}/lib
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-nls-Makefile.in
 .endif
 
+.if defined (WITH_CYRFIX)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-cyrillic-fix-netio.c
+.endif
+
 #allow user to override
 MODULES?=	mod_ratio:mod_readme:mod_rewrite:mod_wrap2:mod_ifsession
 
@@ -195,6 +196,12 @@ MODULES:=${MODULES}:mod_quotatab_ldap
 .if defined(WITH_POSTGRESQL) || defined(WITH_MYSQL)
 MODULES:=${MODULES}:mod_quotatab_sql
 .endif
+.endif
+
+.if defined(WITH_CODECONV)
+MODULES:=${MODULES}:mod_codeconv
+PROFTPD_LIBS+=	-liconv -L${LOCALBASE}/lib
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mod-codeconv
 .endif
 
 # mod_ifsession should be the last item in the modules list
