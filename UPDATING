@@ -6,6 +6,24 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070227:
+  AFFECTS: users of net-im/jabber*
+  AUTHOR: martin@matuska.org
+
+  With update to version 1.6.0 the name of the jabber daemon has been
+  changed to bin/jabberd14 to avoid conflicts with other jabber daemons.
+  The port now supports WITH_MYSQL and WITH_POSTGRESQL knobs.
+
+  If you are using one of the following ports please recompile it due
+  to changes in the library.
+
+  net-im/jabber-conference
+  net-im/jabber-jud
+  net-im/jabber-yahoo
+
+  Some configuration directives have changed, too. Please see example
+  configuration files and README.jabberd14 files in the ports above.
+
 20070223:
   AFFECTS: users of audio/speex and any port that depends on it
   AUTHOR: mezz@FreeBSD.org
