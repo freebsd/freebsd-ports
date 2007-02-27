@@ -21,6 +21,8 @@ BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
 		scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 
+BROKEN=		Does not compile
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:19:env autoconf:259:env
