@@ -8,6 +8,7 @@
 PORTNAME=	taxonomy_access
 DISTVERSION=	4.7.x-1.x-dev
 PORTREVISION=	20070205
+PORTEPOCH=	1
 CATEGORIES=	www security
 MASTER_SITE_SUBDIR=	pav/drupal
 
