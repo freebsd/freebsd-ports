@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://people.freebsd.org/~kbyanc/ \
 		http://www.posi.net/software/libpperl/
 
-MAINTAINER=	kbyanc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library easing embedding perl interpreters into C programs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

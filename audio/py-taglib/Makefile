@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.berlios.de/namingmuse/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-taglib-${PORTVERSION}
 
-MAINTAINER=	kbyanc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for the taglib audio file tagging library
 
 LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib
