@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	policyd-weight
-PORTVERSION=	0.1.14
+PORTVERSION=	0.1.14.3
+
 CATEGORIES=	mail
 MASTER_SITES=	http://www.policyd-weight.org/releases/
 PKGNAMEPREFIX=	postfix-
