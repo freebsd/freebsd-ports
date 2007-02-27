@@ -4,7 +4,7 @@
  
  libName = libSNL.so.0.2
  
--export cflags = -Wall -g
+-export cflags = -Wall -fPIC -O3 
 -export cname = g++
 +export cflags = -fPIC -Wall -g
 +export cname = c++
