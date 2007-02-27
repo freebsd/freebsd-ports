@@ -774,6 +774,7 @@ bfbtester	ports/security/bfbtester
 bfe		ports/emulators/bfe
 bfhist		ports/comms/bfhist
 bfilter		ports/net/bfilter
+bfm		ports/games/bfm
 bforce		ports/comms/bforce
 bforce-kst	ports/comms/bforce-kst
 bftpd		ports/ftp/bftpd
