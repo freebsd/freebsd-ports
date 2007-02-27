@@ -10,7 +10,7 @@ PORTVERSION=	1.0.4
 CATEGORIES=	www net
 MASTER_SITES=	http://www.lethargy.org/mod_log_spread/
 
-MAINTAINER=	meno.abels@adviser.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Apache module interfacing with spread
 
 LIB_DEPENDS=	spread.1:${PORTSDIR}/net/spread

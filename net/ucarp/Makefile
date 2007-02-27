@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ucarp.org/pub/ucarp/
 
-MAINTAINER=	meno.abels@adviser.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Userlevel Common Address Redundancy Protocol
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

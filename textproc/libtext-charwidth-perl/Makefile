@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/libt/libtext-charwidth-perl
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	Meno.Abels@Adviser.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Documentation gettext tools
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
