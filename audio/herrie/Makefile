@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	herrie
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	audio
 MASTER_SITES=	http://g-rave.nl/projects/herrie/distfiles/ \
 		http://www.il.fontys.nl/~ed/projects/herrie/distfiles/ \
@@ -27,11 +27,13 @@ USE_GETTEXT=	yes
 OPTIONS=	MAD "MAD MP3 support" on \
 		VORBIS "Ogg Vorbis support" on \
 		SNDFILE "libsndfile support" on \
+		MODPLUG "libmodplug support" off \
 		LIBAO "LibAO support (breaks chroot)" off \
 		XCURSES "Build XCurses version" off
 
 PLIST_FILES=	bin/herrie \
-		share/locale/nl/LC_MESSAGES/herrie.mo
+		share/locale/nl/LC_MESSAGES/herrie.mo \
+		share/locale/tr/LC_MESSAGES/herrie.mo
 MAN1=		herrie.1
 MANCOMPRESSED=	yes
 
@@ -52,6 +54,11 @@ CONFIGURE_ARGS+=no_vorbis
 LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
 .else
 CONFIGURE_ARGS+=no_sndfile
+.endif
+.if !defined(WITHOUT_MODPLUG)
+LIB_DEPENDS+=	modplug:${PORTSDIR}/audio/libmodplug
+.else
+CONFIGURE_ARGS+=no_modplug
 .endif
 .if !defined(WITHOUT_LIBAO)
 LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao
