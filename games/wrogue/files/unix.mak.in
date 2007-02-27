@@ -1,0 +1,56 @@
+INSTALL_DATA=/usr/bin/install -o root -g wheel -m 444
+INSTALL_PROGRAM=/usr/bin/install -o root -g wheel -m 555
+WRKSRC=%%WRKSRC%%
+DATADIR=%%DATADIR%%
+PREFIX=%%PREFIX%%
+
+install:
+	mkdir -p ${DATADIR} ${DATADIR}/charact ${DATADIR}/config ${DATADIR}/graphics \
+	  ${DATADIR}/terrain ${DATADIR}/objects ${DATADIR}/text ${DATADIR}/user
+
+	${INSTALL_PROGRAM} ${WRKSRC}/wrogue ${PREFIX}/bin/wrogue
+
+	${INSTALL_DATA} ${WRKSRC}/data/charact/a_career.rdb ${DATADIR}/charact/a_career.rdb
+	${INSTALL_DATA} ${WRKSRC}/data/charact/aliens.rdb ${DATADIR}/charact/aliens.rdb
+	${INSTALL_DATA} ${WRKSRC}/data/charact/b_career.rdb ${DATADIR}/charact/b_career.rdb
+	${INSTALL_DATA} ${WRKSRC}/data/charact/beasts.rdb ${DATADIR}/charact/beasts.rdb
+	${INSTALL_DATA} ${WRKSRC}/data/charact/chaos.rdb ${DATADIR}/charact/chaos.rdb
+	${INSTALL_DATA} ${WRKSRC}/data/charact/human_f.nam ${DATADIR}/charact/human_f.nam
+	${INSTALL_DATA} ${WRKSRC}/data/charact/human_m.nam ${DATADIR}/charact/human_m.nam
+	${INSTALL_DATA} ${WRKSRC}/data/charact/imperium.rdb ${DATADIR}/charact/imperium.rdb
+	${INSTALL_DATA} ${WRKSRC}/data/charact/rebels.rdb ${DATADIR}/charact/rebels.rdb
+	${INSTALL_DATA} ${WRKSRC}/data/charact/spawn.rdb ${DATADIR}/charact/spawn.rdb
+	${INSTALL_DATA} ${WRKSRC}/data/config/keys.rdb ${DATADIR}/config/keys.rdb
+	${INSTALL_DATA} ${WRKSRC}/data/config/options.rdb ${DATADIR}/config/options.rdb
+	${INSTALL_DATA} ${WRKSRC}/data/graphics/back.bmp ${DATADIR}/graphics/back.bmp
+	${INSTALL_DATA} ${WRKSRC}/data/graphics/cursor.bmp ${DATADIR}/graphics/cursor.bmp
+	${INSTALL_DATA} ${WRKSRC}/data/graphics/icon.bmp ${DATADIR}/graphics/icon.bmp
+	${INSTALL_DATA} ${WRKSRC}/data/graphics/logo.bmp ${DATADIR}/graphics/logo.bmp
+	${INSTALL_DATA} ${WRKSRC}/data/graphics/symbols.bmp ${DATADIR}/graphics/symbols.bmp
+	${INSTALL_DATA} ${WRKSRC}/data/objects/armours.rdb ${DATADIR}/objects/armours.rdb
+	${INSTALL_DATA} ${WRKSRC}/data/objects/ccw.rdb ${DATADIR}/objects/ccw.rdb
+	${INSTALL_DATA} ${WRKSRC}/data/objects/drugs.rdb ${DATADIR}/objects/drugs.rdb
+	${INSTALL_DATA} ${WRKSRC}/data/objects/env.rdb ${DATADIR}/objects/env.rdb
+	${INSTALL_DATA} ${WRKSRC}/data/objects/misc.rdb ${DATADIR}/objects/misc.rdb
+	${INSTALL_DATA} ${WRKSRC}/data/objects/psybolts.rdb ${DATADIR}/objects/psybolts.rdb
+	${INSTALL_DATA} ${WRKSRC}/data/objects/rcw.rdb ${DATADIR}/objects/rcw.rdb
+	${INSTALL_DATA} ${WRKSRC}/data/terrain/terrain.rdb ${DATADIR}/terrain/terrain.rdb
+	${INSTALL_DATA} ${WRKSRC}/data/text/advance.txt ${DATADIR}/text/advance.txt
+	${INSTALL_DATA} ${WRKSRC}/data/text/combat.txt ${DATADIR}/text/combat.txt
+	${INSTALL_DATA} ${WRKSRC}/data/text/credits.txt ${DATADIR}/text/credits.txt
+	${INSTALL_DATA} ${WRKSRC}/data/text/evoke.txt ${DATADIR}/text/evoke.txt
+	${INSTALL_DATA} ${WRKSRC}/data/text/hints.txt ${DATADIR}/text/hints.txt
+	${INSTALL_DATA} ${WRKSRC}/data/text/intro.txt ${DATADIR}/text/intro.txt
+	${INSTALL_DATA} ${WRKSRC}/data/text/macro.txt ${DATADIR}/text/macro.txt
+	${INSTALL_DATA} ${WRKSRC}/data/text/modes.txt ${DATADIR}/text/modes.txt
+	${INSTALL_DATA} ${WRKSRC}/data/text/movement.txt ${DATADIR}/text/movement.txt
+	${INSTALL_DATA} ${WRKSRC}/data/text/objects.txt ${DATADIR}/text/objects.txt
+	${INSTALL_DATA} ${WRKSRC}/data/text/parties.txt ${DATADIR}/text/parties.txt
+	${INSTALL_DATA} ${WRKSRC}/data/text/perks.txt ${DATADIR}/text/perks.txt
+	${INSTALL_DATA} ${WRKSRC}/data/text/powers.txt ${DATADIR}/text/powers.txt
+	${INSTALL_DATA} ${WRKSRC}/data/text/stats.txt ${DATADIR}/text/stats.txt
+	${INSTALL_DATA} ${WRKSRC}/data/text/status.txt ${DATADIR}/text/status.txt
+	${INSTALL_DATA} ${WRKSRC}/data/text/tactics.txt ${DATADIR}/text/tactics.txt
+	${INSTALL_DATA} ${WRKSRC}/data/text/terrain.txt ${DATADIR}/text/terrain.txt
+	${INSTALL_DATA} ${WRKSRC}/data/text/timing.txt ${DATADIR}/text/timing.txt
+	${INSTALL_DATA} ${WRKSRC}/data/user/keep.me ${DATADIR}/user/keep.me

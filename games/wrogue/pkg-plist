@@ -1,0 +1,53 @@
+bin/wrogue
+%%DATADIR%%/charact/a_career.rdb
+%%DATADIR%%/charact/aliens.rdb
+%%DATADIR%%/charact/b_career.rdb
+%%DATADIR%%/charact/beasts.rdb
+%%DATADIR%%/charact/chaos.rdb
+%%DATADIR%%/charact/human_f.nam
+%%DATADIR%%/charact/human_m.nam
+%%DATADIR%%/charact/imperium.rdb
+%%DATADIR%%/charact/rebels.rdb
+%%DATADIR%%/charact/spawn.rdb
+%%DATADIR%%/config/keys.rdb
+%%DATADIR%%/config/options.rdb
+%%DATADIR%%/graphics/back.bmp
+%%DATADIR%%/graphics/cursor.bmp
+%%DATADIR%%/graphics/icon.bmp
+%%DATADIR%%/graphics/logo.bmp
+%%DATADIR%%/graphics/symbols.bmp
+%%DATADIR%%/objects/armours.rdb
+%%DATADIR%%/objects/ccw.rdb
+%%DATADIR%%/objects/drugs.rdb
+%%DATADIR%%/objects/env.rdb
+%%DATADIR%%/objects/misc.rdb
+%%DATADIR%%/objects/psybolts.rdb
+%%DATADIR%%/objects/rcw.rdb
+%%DATADIR%%/terrain/terrain.rdb
+%%DATADIR%%/text/advance.txt
+%%DATADIR%%/text/combat.txt
+%%DATADIR%%/text/credits.txt
+%%DATADIR%%/text/evoke.txt
+%%DATADIR%%/text/hints.txt
+%%DATADIR%%/text/intro.txt
+%%DATADIR%%/text/macro.txt
+%%DATADIR%%/text/modes.txt
+%%DATADIR%%/text/movement.txt
+%%DATADIR%%/text/objects.txt
+%%DATADIR%%/text/parties.txt
+%%DATADIR%%/text/perks.txt
+%%DATADIR%%/text/powers.txt
+%%DATADIR%%/text/stats.txt
+%%DATADIR%%/text/status.txt
+%%DATADIR%%/text/tactics.txt
+%%DATADIR%%/text/terrain.txt
+%%DATADIR%%/text/timing.txt
+%%DATADIR%%/user/keep.me
+@dirrm %%DATADIR%%/charact
+@dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%/graphics
+@dirrm %%DATADIR%%/objects
+@dirrm %%DATADIR%%/terrain
+@dirrm %%DATADIR%%/text
+@dirrm %%DATADIR%%/user
+@dirrm %%DATADIR%%
