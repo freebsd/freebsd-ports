@@ -1,0 +1,22 @@
+--- ./Makefile.orig	Sun Jan 14 21:40:52 2007
++++ ./Makefile	Mon Feb 26 14:31:39 2007
+@@ -1,11 +1,11 @@
+ 
+-CC = gcc
++CC ?= gcc
+ 
+ CROSSDIR = /usr/local/cross
+ STRATAGUSPATH = ../stratagus/
+ 
+-CFLAGS = -I/usr/local/include -Wall -Wsign-compare
+-LDFLAGS = -lz -lpng -lm -L/usr/local/lib
++CFLAGS += -I$(LOCALBASE)/include -Wall -Wsign-compare
++LDFLAGS += -lz -lpng -lm -L$(LOCALBASE)/lib
+ 
+ all: wartool pudconvert
+ 
+@@ -47,3 +47,4 @@
+ 	for i in `cat .list`; do echo $$i; done | cpio -pdml --quiet wargus-$(ver);\
+ 	tar -zcf wargus-$(ver)-linux.tar.gz wargus-$(ver); \
+ 	rm -rf wargus-$(ver) .list stratagus;
++

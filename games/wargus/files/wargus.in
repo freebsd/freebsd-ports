@@ -6,46 +6,17 @@
 #
 # 2004 Travis Poppe <tlp@LiquidX.org>
 
-DATADIR=%%PREFIX%%/share/wargus/data.wc2
-
-if [ ! -d $DATADIR ]; then
-	echo "Warcraft 2 data not found in $DATADIR/"
-	echo ""
-	echo "Did you run build.sh yet?"
-	echo ""
-	echo "Giving you instructions in 5 seconds..."
-	sleep 5
-	echo ""
-	echo "The Wargus tool has been installed to %%PREFIX%%/share/wargus/"
-	echo ""
-	echo "You can now use this tool to extract Warcraft 2 data for use with the"
-	echo "Stratagus engine from the following CDs:"
-	echo ""
-	echo "* US Expansion (both MAC/DOS)"
-	echo "* US Original (both MAC/DOS)"
-	echo "* UK/Australian Original"
-	echo "* UK/Australian Expansion"
-	echo "* German Original"
-	echo "* German Expansion"
-	echo "* Spanish Original"
-	echo ""
-	echo "If you have one of the above CDs mounted on /cdrom, su to root and change to"
-	echo "the %%PREFIX%%/share/wargus/ directory and try executing:"
-	echo ""
-	echo "./build.sh -p /cdrom"
- 	echo ""
-	echo "After your Warcraft 2 data has been successfully extracted, run 'wargus' as the"
-	echo "user you intend to play the game with."
- 	echo ""
-	echo "For more information, please visit: http://wargus.sourceforge.net"
-	exit
-fi
+DATADIR="%%DATADIR%%/data.wc2"
 
 if [ -d $DATADIR ]; then
-	echo "Warcraft 2 data found in $DATADIR/"
+	echo "Running Stratagus with Warcraft 2 data found in \"$DATADIR\"."
 	echo ""
-	echo "Attempting to run Stratagus with Warcraft 2 data"
+	exec stratagus -d $DATADIR "$@"
+else
+	echo "ERROR: Warcraft 2 data not found in \"$DATADIR\"."
 	echo ""
-	stratagus -d $DATADIR $*
-	exit
+	echo "Please follow the instructions from the installation message:"
+	echo ""
+	pkg_info -D "wargus-[0-9]*"
+	exit 1
 fi
