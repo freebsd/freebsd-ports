@@ -44,6 +44,9 @@
 %%PYTHON_SITELIBDIR%%/FreeImagePy/library.pyc
 %%PYTHON_SITELIBDIR%%/FreeImagePy/buffer.pyo
 %%PYTHON_SITELIBDIR%%/FreeImagePy/library.pyo
+%%PYTHON_SITELIBDIR%%/FreeImagePy/funct_list.py
+%%PYTHON_SITELIBDIR%%/FreeImagePy/funct_list.pyc
+%%PYTHON_SITELIBDIR%%/FreeImagePy/funct_list.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/FreeImagePy/tools
 @dirrm %%PYTHON_SITELIBDIR%%/FreeImagePy/test
 @dirrm %%PYTHON_SITELIBDIR%%/FreeImagePy
