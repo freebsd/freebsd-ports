@@ -21,6 +21,8 @@ RUN_DEPENDS=	${LINUXBASE}/lib/libasound.so.2:${PORTSDIR}/audio/linux-alsa-lib \
 		${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12 \
 		${LINUXBASE}/usr/lib/libvorbis.so.0:${PORTSDIR}/audio/linux-libvorbis
 
+BROKEN=		Unfetchable
+
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	4
