@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sharutils
-PORTVERSION=	4.3.81
+PORTVERSION=	4.6.3
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}/REL-${PORTVERSION}
@@ -18,7 +18,7 @@ USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g --disable-uucode
 INSTALL_TARGET=	install install-man
-MAN1=		gshar.1 gunshar.1
+MAN1=		gshar.1 gunshar.1 gcompress-dummy.1
 INFO=		sharutils
 
 .if defined(WITHOUT_NLS)
