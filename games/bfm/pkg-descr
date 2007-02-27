@@ -1,0 +1,14 @@
+Battle for Mandicor is a free (as in freedom) real time strategy game using
+the Stratagus game engine. Stratagus is a free cross-platform RTS (Real Time
+Strategy) game engine written in C, and scripted with Lua. Stratagus has been
+used for many games, Battle for Mandicor being one of them.
+
+The fantasy world called Mandicor is much like Tolkien's Middle-Earth and has
+a long history. Though not yet finished, a player can control four races in
+game; dwarves, gnomes, humans, and goblins. Each has advantages and
+disadvantages within the game. While playing, you need to collect resources,
+train large armies, and research items in order to create a more powerful
+society and defeat the enemy. Campaigns, yet to be finished, will be based
+upon a long and interesting history.
+
+WWW: http://www.mandicor.org/

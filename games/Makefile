@@ -63,6 +63,7 @@
     SUBDIR += bastet
     SUBDIR += battalion
     SUBDIR += battleball
+    SUBDIR += bfm
     SUBDIR += biloba
     SUBDIR += biorythm
     SUBDIR += bitefusion
