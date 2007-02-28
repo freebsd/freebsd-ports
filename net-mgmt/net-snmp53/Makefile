@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	snmp
-PORTVERSION=	5.2.3
-PORTREVISION=	4
+PORTVERSION=	5.3.1
+PORTREVISION=	0
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	net-snmp
@@ -81,7 +81,7 @@ PLIST_SUB+=	WITH_IPV6=""
 PLIST_SUB+=	WITH_IPV6="@comment "
 .endif
 
-SHLIB_VERSION=	9
+SHLIB_VERSION=	10
 PLIST_SUB+=	SHLIB_VERSION=${SHLIB_VERSION}
 SCRIPTS_SUB=	PREFIX=${PREFIX} PERL=${PERL}
 
@@ -160,10 +160,11 @@ _MANPAGES+=	${MAN3PERL:S%^%${MAN3PERLPREFIX}/man/man3/%}
 .endif
 
 MAN5=		mib2c.conf.5 snmp.conf.5 snmp_config.5 snmpd.conf.5 \
+		snmpd.examples.5 snmpd.internal.5 \
 		snmptrapd.conf.5 variables.5
 MAN8=		snmpd.8 snmptrapd.8
 
-BIN_FILES=	snmpbulkwalk snmpget snmpgetnext snmpnetstat53 snmpset \
+BIN_FILES=	snmpbulkwalk snmpget snmpgetnext snmpset \
 		snmpstatus snmptest snmptranslate snmptrap snmpwalk
 SBIN_FILES=	snmpd snmptrapd
 STARTUP_DIR=	${PREFIX}/etc/rc.d
@@ -177,6 +178,7 @@ DOC_FILES=	AGENT.txt COPYING FAQ NEWS README \
 		agent/mibgroup/README.smux
 
 PS_CMD?=	/bin/ps
+CONFLICTS=	net-snmp-4.*
 
 pre-everything::
 	@${ECHO_MSG}
@@ -258,6 +260,6 @@ display-message:
 
 # Maintainer's note:
 #   Don't forget to bump library version in these ports.
-#   french/plgrenouille,graphics/hpoj,lang/php4,lang/php5,mail/cyrus-imapd22,misc/kdeutils3,net-mgmt/braa,net-mgmt/docsis,net-mgmt/mbrowse,net-mgmt/nagios-snmp-plugins,net-mgmt/p5-SNMP-Info,net-mgmt/py-yapsnmp,net-mgmt/sdig,net-mgmt/zabbix,net/cactid,net/ethereal,net/ifstat,net/quagga,net/rtg,net/tethereal,security/libfwbuilder,sysutils/apcupsd,sysutils/jailadmin,sysutils/nut
+#   french/plgrenouille,graphics/hpoj,lang/php4,lang/php5,mail/cyrus-imapd22,mail/cyrus-imapd23,misc/kdeutils3,net-mgmt/braa,net-mgmt/docsis,net-mgmt/mbrowse,net-mgmt/nagios-snmp-plugins,net-mgmt/p5-SNMP-Info,net-mgmt/py-yapsnmp,net-mgmt/sdig,net-mgmt/zabbix,net/cactid,net/wireshark,net/ifstat,net/quagga,net/rtg,print/hplip,security/libfwbuilder,sysutils/apcupsd,sysutils/jailadmin,sysutils/nut
 
 .include <bsd.port.post.mk>
