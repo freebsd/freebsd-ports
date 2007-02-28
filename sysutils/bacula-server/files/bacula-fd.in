@@ -18,14 +18,14 @@
 
 name="bacula_fd"
 rcvar=${name}_enable
-command=/usr/local/sbin/bacula-fd
+command=%%PREFIX%%sbin/bacula-fd
 
 load_rc_config $name
 
 pidfile="${bacula_fd_pidfile}"
 
 : ${bacula_fd_enable="NO"}
-: ${bacula_fd_flags=" -u root -g wheel -v -c /usr/local/etc/bacula-fd.conf"}
+: ${bacula_fd_flags=" -u root -g wheel -v -c %%PREFIX%%/etc/bacula-fd.conf"}
 : ${bacula_fd_pidfile="/var/run/bacula-fd.9102.pid"}
 
 run_rc_command "$1"
