@@ -1,0 +1,127 @@
+bin/qmc2
+@unexec cmp -s %D/etc/qmc2/qmc2.ini %D/etc/qmc2/qmc2.ini.sample && rm -f %D/etc/qmc2/qmc2.ini
+etc/qmc2/qmc2.ini.sample
+@exec test -f %D/etc/qmc2/qmc2.ini || cp %D/etc/qmc2/qmc2.ini.sample %D/etc/qmc2/qmc2.ini
+%%DATADIR%%/doc/html/de/changes.html
+%%DATADIR%%/doc/html/de/copying.html
+%%DATADIR%%/doc/html/de/credits.html
+%%DATADIR%%/doc/html/de/faq.html
+%%DATADIR%%/doc/html/de/img/balu.gif
+%%DATADIR%%/doc/html/de/img/jonas.gif
+%%DATADIR%%/doc/html/de/img/rene.gif
+%%DATADIR%%/doc/html/de/img/robert.gif
+%%DATADIR%%/doc/html/de/img/sammy.gif
+%%DATADIR%%/doc/html/de/img/sphere_blue.png
+%%DATADIR%%/doc/html/de/img/sphere_green.png
+%%DATADIR%%/doc/html/de/img/sphere_grey.png
+%%DATADIR%%/doc/html/de/img/sphere_red.png
+%%DATADIR%%/doc/html/de/img/sphere_yellowgreen.png
+%%DATADIR%%/doc/html/de/img/teddy.gif
+%%DATADIR%%/doc/html/de/index.html
+%%DATADIR%%/doc/html/de/readme.html
+%%DATADIR%%/doc/html/de/todo.html
+%%DATADIR%%/doc/html/us/changes.html
+%%DATADIR%%/doc/html/us/copying.html
+%%DATADIR%%/doc/html/us/credits.html
+%%DATADIR%%/doc/html/us/faq.html
+%%DATADIR%%/doc/html/us/img/balu.gif
+%%DATADIR%%/doc/html/us/img/jonas.gif
+%%DATADIR%%/doc/html/us/img/rene.gif
+%%DATADIR%%/doc/html/us/img/robert.gif
+%%DATADIR%%/doc/html/us/img/sammy.gif
+%%DATADIR%%/doc/html/us/img/sphere_blue.png
+%%DATADIR%%/doc/html/us/img/sphere_green.png
+%%DATADIR%%/doc/html/us/img/sphere_grey.png
+%%DATADIR%%/doc/html/us/img/sphere_red.png
+%%DATADIR%%/doc/html/us/img/sphere_yellowgreen.png
+%%DATADIR%%/doc/html/us/img/teddy.gif
+%%DATADIR%%/doc/html/us/index.html
+%%DATADIR%%/doc/html/us/readme.html
+%%DATADIR%%/doc/html/us/todo.html
+%%DATADIR%%/img/back.png
+%%DATADIR%%/img/camera.png
+%%DATADIR%%/img/cd.png
+%%DATADIR%%/img/clock.png
+%%DATADIR%%/img/colors.png
+%%DATADIR%%/img/configure.png
+%%DATADIR%%/img/controller.png
+%%DATADIR%%/img/down.png
+%%DATADIR%%/img/edit.png
+%%DATADIR%%/img/editcopy.png
+%%DATADIR%%/img/editcut.png
+%%DATADIR%%/img/editdelete.png
+%%DATADIR%%/img/editpaste.png
+%%DATADIR%%/img/edittrash.png
+%%DATADIR%%/img/exit.png
+%%DATADIR%%/img/favorites.png
+%%DATADIR%%/img/fileclose.png
+%%DATADIR%%/img/filefind.png
+%%DATADIR%%/img/filenew.png
+%%DATADIR%%/img/fileopen.png
+%%DATADIR%%/img/fileprint.png
+%%DATADIR%%/img/filesave.png
+%%DATADIR%%/img/filesaveas.png
+%%DATADIR%%/img/find.png
+%%DATADIR%%/img/fonts.png
+%%DATADIR%%/img/forward.png
+%%DATADIR%%/img/ghost.png
+%%DATADIR%%/img/help.png
+%%DATADIR%%/img/hint.png
+%%DATADIR%%/img/hint_small.png
+%%DATADIR%%/img/home.png
+%%DATADIR%%/img/info.png
+%%DATADIR%%/img/kill.png
+%%DATADIR%%/img/launch.png
+%%DATADIR%%/img/locale.png
+%%DATADIR%%/img/lock.png
+%%DATADIR%%/img/next-sail.png
+%%DATADIR%%/img/next.png
+%%DATADIR%%/img/no.png
+%%DATADIR%%/img/pencils.png
+%%DATADIR%%/img/previos-sail.png
+%%DATADIR%%/img/previous.png
+%%DATADIR%%/img/redo.png
+%%DATADIR%%/img/reload.png
+%%DATADIR%%/img/rom.png
+%%DATADIR%%/img/search.png
+%%DATADIR%%/img/sound.png
+%%DATADIR%%/img/sphere_blue.png
+%%DATADIR%%/img/sphere_green.png
+%%DATADIR%%/img/sphere_grey.png
+%%DATADIR%%/img/sphere_red.png
+%%DATADIR%%/img/sphere_yellowgreen.png
+%%DATADIR%%/img/stop.png
+%%DATADIR%%/img/terminate.png
+%%DATADIR%%/img/thumbnail.png
+%%DATADIR%%/img/time.png
+%%DATADIR%%/img/undo.png
+%%DATADIR%%/img/unlock.png
+%%DATADIR%%/img/up.png
+%%DATADIR%%/img/viewmag+.png
+%%DATADIR%%/img/viewmag-.png
+%%DATADIR%%/img/viewmagfit.png
+%%DATADIR%%/img/work.png
+%%DATADIR%%/img/yes.png
+%%DATADIR%%/lng/qmc2_de.qm
+%%DATADIR%%/lng/qt_de.qm
+%%DATADIR%%/opt/SDLMAME/template.xml
+%%DATADIR%%/opt/XMAME/template-SDL.xml
+%%DATADIR%%/opt/XMAME/template-X11-XV-OpenGL.xml
+%%DATADIR%%/opt/XMAME/template-all.xml
+%%DATADIR%%/opt/XMAME/template.xml
+%%DATADIR%%/opt/template.xml
+@dirrm %%DATADIR%%/prv
+@dirrm %%DATADIR%%/opt/XMAME
+@dirrm %%DATADIR%%/opt/SDLMAME
+@dirrm %%DATADIR%%/opt
+@dirrm %%DATADIR%%/lng
+@dirrm %%DATADIR%%/img
+@dirrm %%DATADIR%%/fly
+@dirrm %%DATADIR%%/doc/html/us/img
+@dirrm %%DATADIR%%/doc/html/us
+@dirrm %%DATADIR%%/doc/html/de/img
+@dirrm %%DATADIR%%/doc/html/de
+@dirrm %%DATADIR%%/doc/html
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%
+@dirrmtry etc/qmc2
