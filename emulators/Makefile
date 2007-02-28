@@ -108,6 +108,7 @@
     SUBDIR += pyxmame
     SUBDIR += qemu
     SUBDIR += qemu-launcher
+    SUBDIR += qmc2
     SUBDIR += quasi88
     SUBDIR += raine
     SUBDIR += rtc

@@ -1,0 +1,40 @@
+--- ./Makefile.orig	Fri Feb  2 10:19:00 2007
++++ ./Makefile	Sun Feb 25 18:58:18 2007
+@@ -37,9 +37,6 @@
+ # you want to test-compile a specific target's code branch or if the "uname"
+ # command doesn't tell the correct OS-type of your system (see also OSREL and
+ # MACHINE)
+-ifndef ARCH
+-ARCH = $(shell uname)
+-endif
+ 
+ # OSREL: target system's OS-release - please only change this if you know what
+ # you are doing :).
+@@ -66,7 +63,7 @@
+ # END OF MAKE OPTIONS
+ 
+ # commands are platform-specific
+-include arch/$(ARCH).cfg
++include arch/FreeBSD.cfg
+ 
+ # QMAKEV: qmake version (major release)
+ ifndef QMAKEV
+@@ -183,7 +180,7 @@
+ 
+ install: bin lang
+ 	@echo "Installing QMC2 build v$(VERSION). Please wait..."
+-	@$(MKDIR) $(DESTDIR)/$(PREFIX)/bin $(DESTDIR)/$(PREFIX)/share/$(PROJECT) $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)
++	@$(MKDIR) $(DESTDIR)/$(PREFIX)/bin $(DESTDIR)/$(PREFIX)/share/$(PROJECT) $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT) $(DESTDIR)/$(PREFIX)/share/$(PROJECT)/lng
+ 	@$(RSYNC) ./$(PROJECT) $(DESTDIR)/$(PREFIX)/bin
+ 	@$(RSYNC) ./data/lng/*.qm $(DESTDIR)/$(DATADIR)/$(PROJECT)/lng/
+ 	@$(RSYNC) ./data/opt $(DESTDIR)/$(DATADIR)/$(PROJECT)/
+@@ -191,7 +188,8 @@
+ 	@$(RSYNC) ./data/doc $(DESTDIR)/$(DATADIR)/$(PROJECT)/
+ 	@$(RSYNC) ./data/prv $(DESTDIR)/$(DATADIR)/$(PROJECT)/
+ 	@$(RSYNC) ./data/fly $(DESTDIR)/$(DATADIR)/$(PROJECT)/
+-	@$(SED) -e "s_DATADIR_$(DATADIR)_" < ./inst/$(PROJECT).ini.template > $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)/$(PROJECT).ini
++	@$(SED) -e "s_DATADIR_$(DATADIR)_" < ./inst/$(PROJECT).ini.template > $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)/$(PROJECT).ini.sample
++	@test -f $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)/$(PROJECT).ini || $(CP) $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)/$(PROJECT).ini.sample $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)/$(PROJECT).ini
+ 	@echo "Installation complete."
+ 
+ clean: Makefile.qmake
