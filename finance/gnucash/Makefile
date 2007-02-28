@@ -8,6 +8,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	2.0.5
+PORTREVISION=	1
 CATEGORIES=	finance gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.gnucash.org/pub/gnucash/sources/stable/
