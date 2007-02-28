@@ -1,0 +1,83 @@
+bin/djabberd
+%%SITE_PERL%%/DJabberd.pm
+%%SITE_PERL%%/DJabberd/Agent.pm
+%%SITE_PERL%%/DJabberd/Agent/Node.pm
+%%SITE_PERL%%/DJabberd/Authen.pm
+%%SITE_PERL%%/DJabberd/Authen/AllowedUsers.pm
+%%SITE_PERL%%/DJabberd/Authen/InMemoryOnly.pm
+%%SITE_PERL%%/DJabberd/Authen/StaticPassword.pm
+%%SITE_PERL%%/DJabberd/Bot.pm
+%%SITE_PERL%%/DJabberd/Bot/Admin.pm
+%%SITE_PERL%%/DJabberd/BotContext.pm
+%%SITE_PERL%%/DJabberd/Callback.pm
+%%SITE_PERL%%/DJabberd/Cluster.pm
+%%SITE_PERL%%/DJabberd/ClusterMessage.pm
+%%SITE_PERL%%/DJabberd/ClusterMessage/DeliverStanza.pm
+%%SITE_PERL%%/DJabberd/Component.pm
+%%SITE_PERL%%/DJabberd/Component/Example.pm
+%%SITE_PERL%%/DJabberd/Component/External.pm
+%%SITE_PERL%%/DJabberd/Component/External/Connection.pm
+%%SITE_PERL%%/DJabberd/Component/Node.pm
+%%SITE_PERL%%/DJabberd/Connection.pm
+%%SITE_PERL%%/DJabberd/Connection/Admin.pm
+%%SITE_PERL%%/DJabberd/Connection/ClientIn.pm
+%%SITE_PERL%%/DJabberd/Connection/ClusterIn.pm
+%%SITE_PERL%%/DJabberd/Connection/ClusterOut.pm
+%%SITE_PERL%%/DJabberd/Connection/DialbackVerify.pm
+%%SITE_PERL%%/DJabberd/Connection/OldSSLClientIn.pm
+%%SITE_PERL%%/DJabberd/Connection/ServerIn.pm
+%%SITE_PERL%%/DJabberd/Connection/ServerOut.pm
+%%SITE_PERL%%/DJabberd/Connection/SimpleIn.pm
+%%SITE_PERL%%/DJabberd/DNS.pm
+%%SITE_PERL%%/DJabberd/Delivery.pm
+%%SITE_PERL%%/DJabberd/Delivery/Local.pm
+%%SITE_PERL%%/DJabberd/Delivery/LocalVHosts.pm
+%%SITE_PERL%%/DJabberd/Delivery/S2S.pm
+%%SITE_PERL%%/DJabberd/DialbackParams.pm
+%%SITE_PERL%%/DJabberd/HookDocs.pm
+%%SITE_PERL%%/DJabberd/IQ.pm
+%%SITE_PERL%%/DJabberd/JID.pm
+%%SITE_PERL%%/DJabberd/Log.pm
+%%SITE_PERL%%/DJabberd/Message.pm
+%%SITE_PERL%%/DJabberd/Plugin.pm
+%%SITE_PERL%%/DJabberd/Presence.pm
+%%SITE_PERL%%/DJabberd/PresenceChecker.pm
+%%SITE_PERL%%/DJabberd/PresenceChecker/Dummy.pm
+%%SITE_PERL%%/DJabberd/PresenceChecker/Local.pm
+%%SITE_PERL%%/DJabberd/Queue.pm
+%%SITE_PERL%%/DJabberd/Queue/ClusterOut.pm
+%%SITE_PERL%%/DJabberd/Queue/ServerOut.pm
+%%SITE_PERL%%/DJabberd/Roster.pm
+%%SITE_PERL%%/DJabberd/RosterItem.pm
+%%SITE_PERL%%/DJabberd/RosterStorage.pm
+%%SITE_PERL%%/DJabberd/RosterStorage/InMemoryOnly.pm
+%%SITE_PERL%%/DJabberd/SAXHandler.pm
+%%SITE_PERL%%/DJabberd/Stanza.pm
+%%SITE_PERL%%/DJabberd/Stanza/DialbackResult.pm
+%%SITE_PERL%%/DJabberd/Stanza/DialbackVerify.pm
+%%SITE_PERL%%/DJabberd/Stanza/StartTLS.pm
+%%SITE_PERL%%/DJabberd/Stanza/StreamFeatures.pm
+%%SITE_PERL%%/DJabberd/Stats.pm
+%%SITE_PERL%%/DJabberd/StreamStart.pm
+%%SITE_PERL%%/DJabberd/StreamVersion.pm
+%%SITE_PERL%%/DJabberd/Subscription.pm
+%%SITE_PERL%%/DJabberd/TestSAXHandler.pm
+%%SITE_PERL%%/DJabberd/Util.pm
+%%SITE_PERL%%/DJabberd/VHost.pm
+%%SITE_PERL%%/DJabberd/XMLElement.pm
+%%SITE_PERL%%/DJabberd/XMLParser.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DJabberd/.packlist
+@dirrm %%SITE_PERL%%/DJabberd/Agent
+@dirrm %%SITE_PERL%%/DJabberd/Authen
+@dirrm %%SITE_PERL%%/DJabberd/Bot
+@dirrm %%SITE_PERL%%/DJabberd/ClusterMessage
+@dirrm %%SITE_PERL%%/DJabberd/Component/External
+@dirrm %%SITE_PERL%%/DJabberd/Component
+@dirrm %%SITE_PERL%%/DJabberd/Connection
+@dirrm %%SITE_PERL%%/DJabberd/Delivery
+@dirrm %%SITE_PERL%%/DJabberd/PresenceChecker
+@dirrm %%SITE_PERL%%/DJabberd/Queue
+@dirrm %%SITE_PERL%%/DJabberd/RosterStorage
+@dirrm %%SITE_PERL%%/DJabberd/Stanza
+@dirrm %%SITE_PERL%%/DJabberd
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DJabberd
