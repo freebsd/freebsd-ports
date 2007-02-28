@@ -416,6 +416,8 @@ _PORTSEARCH=	\
 	    } \
 	  } \
 	  { \
+	    if (match($$2, "^/usr/ports/[^/]*/[^/]*$$") > 0) \
+	      sub("^/usr/ports", "${PORTSDIR}", $$2); \
 	    if (substr($$2, 1, therelen) != there) \
 	      next; \
 	    for (i in parms) \
