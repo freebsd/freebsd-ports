@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	iptrack
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	IP address management and tracking
 
 RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
