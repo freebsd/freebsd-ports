@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinderbox
-PORTVERSION=	2.3.4
-PORTREVISION=	3
+PORTVERSION=	2.3.5
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://tinderbox.marcuscom.com/
 

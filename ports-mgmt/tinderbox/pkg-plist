@@ -50,10 +50,12 @@ tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.1.1_to_2.2.0.sql
 tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.2.0_to_2.3.0.sql
 tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.3.0_to_2.3.1.sql
 tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.3.1_to_2.3.2.sql
+tinderbox/scripts/upgrade/mig_mysql_tinderbox-2.3.2_to_2.3.3.sql
 tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.1.1_to_2.2.0.sql
 tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.2.0_to_2.3.0.sql
 tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.3.0_to_2.3.1.sql
 tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.3.1_to_2.3.2.sql
+tinderbox/scripts/upgrade/mig_pgsql_tinderbox-2.3.2_to_2.3.3.sql
 tinderbox/scripts/upgrade/mig_shlib.sh
 %%WEB_EXP%%tinderbox/scripts/www-exp/core/Build.php
 %%WEB_EXP%%tinderbox/scripts/www-exp/core/BuildPortsQueue.php
