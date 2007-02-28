@@ -157,6 +157,7 @@
     SUBDIR += xgs
     SUBDIR += xhomer
     SUBDIR += xmame
+    SUBDIR += xmamegui
     SUBDIR += xmess
     SUBDIR += xsystem35
     SUBDIR += xzx

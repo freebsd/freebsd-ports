@@ -1,0 +1,11 @@
+XMAME GUI is an SDLMAME frontend that has been written using Java.
+
+It has the following features:
+
+- Preview Screenshot.
+- Game List built from available ROMs.
+- ROM status verification.
+- Capture window for XMAME output detail.
+- Random Game feature to start a random (working) game.
+
+WWW: http://www.parallelrealities.co.uk/xmamegui.php

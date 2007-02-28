@@ -1,0 +1,8 @@
+bin/xmamegui
+%%DATADIR%%/lib/xalan.jar
+%%DATADIR%%/lib/xerces.jar
+%%DATADIR%%/lib/xercesImpl.jar
+%%DATADIR%%/lib/xml-apis.jar
+%%DATADIR%%/xmamegui.jar
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%
