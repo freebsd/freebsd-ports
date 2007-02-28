@@ -7,13 +7,14 @@
 
 PORTNAME=	braa
 PORTVERSION=	0.81
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://s-tech.elsat.net.pl/braa/
 
 MAINTAINER=	ssedov@mbsd.msk.ru
 COMMENT=	Tool for making SNMP queries
 
-LIB_DEPENDS=	netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
 
 USE_GMAKE=	yes
 LDFLAGS+=	-lcompat

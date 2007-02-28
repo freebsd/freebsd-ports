@@ -586,7 +586,7 @@ LIB_DEPENDS+=	ct.3:${PORTSDIR}/databases/freetds
 .	if defined(WITH_SNMP4) || exists(${LOCALBASE}/lib/libsnmp.so.4)
 LIB_DEPENDS+=   snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
 .	else
-LIB_DEPENDS+=   netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=   netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
 .	endif
 .endif
 
