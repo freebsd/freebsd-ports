@@ -1,19 +1,5 @@
 %%HORDE_INC%%/httpd-horde.conf
 %%HORDESBIN%%/horde_set_perms.sh
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/CODING_STANDARDS
-%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/HACKING
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/PERFORMANCE
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
-%%PORTDOCS%%%%DOCSDIR%%/SECURITY
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/TRANSLATIONS
-%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
 %%HORDEDIR%%/admin/cmdshell.php
 %%HORDEDIR%%/admin/datatree.php
 %%HORDEDIR%%/admin/groups.php
@@ -110,11 +96,11 @@
 %%HORDEDIR%%/lib/Horde/Auth/mcal.php
 %%HORDEDIR%%/lib/Horde/Auth/pam.php
 %%HORDEDIR%%/lib/Horde/Auth/passwd.php
+%%HORDEDIR%%/lib/Horde/Auth/peclsasl.php
 %%HORDEDIR%%/lib/Horde/Auth/radius.php
-%%HORDEDIR%%/lib/Horde/Auth/sasl.php
 %%HORDEDIR%%/lib/Horde/Auth/smb.php
+%%HORDEDIR%%/lib/Horde/Auth/smbclient.php
 %%HORDEDIR%%/lib/Horde/Auth/sql.php
-%%HORDEDIR%%/lib/Horde/Auth/yahoo.php
 %%HORDEDIR%%/lib/Horde/Block.php
 %%HORDEDIR%%/lib/Horde/Block/Collection.php
 %%HORDEDIR%%/lib/Horde/Block/Layout/Manager.php
@@ -293,7 +279,6 @@
 %%HORDEDIR%%/lib/Horde/RPC/xmlrpc.php
 %%HORDEDIR%%/lib/Horde/Registry.php
 %%HORDEDIR%%/lib/Horde/SQL.php
-%%HORDEDIR%%/lib/Horde/SQL/Attributes.php
 %%HORDEDIR%%/lib/Horde/SQL/Keywords.php
 %%HORDEDIR%%/lib/Horde/Scheduler.php
 %%HORDEDIR%%/lib/Horde/Scheduler/cron.php
@@ -446,6 +431,7 @@
 %%HORDEDIR%%/locale/bg_BG/help.xml
 %%HORDEDIR%%/locale/bs_BA/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/ca_ES/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/ca_ES/help.xml
 %%HORDEDIR%%/locale/cs_CZ/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/cs_CZ/help.xml
 %%HORDEDIR%%/locale/da_DK/LC_MESSAGES/horde.mo
@@ -562,14 +548,11 @@
 %%HORDEDIR%%/scripts/cookie_login.php
 %%HORDEDIR%%/scripts/count_sessions.php
 %%HORDEDIR%%/scripts/create-symlinks.php
-%%HORDEDIR%%/scripts/crond
 %%HORDEDIR%%/scripts/get_login.php
 %%HORDEDIR%%/scripts/http_login_refer.php
 %%HORDEDIR%%/scripts/ldap/horde.schema
-%%HORDEDIR%%/scripts/migrate_user_categories.php
 %%HORDEDIR%%/scripts/remove_prefs.php
 %%HORDEDIR%%/scripts/set_perms.sh
-%%HORDEDIR%%/scripts/setup.php
 %%HORDEDIR%%/scripts/sql/README
 %%HORDEDIR%%/scripts/sql/README.OCI8
 %%HORDEDIR%%/scripts/sql/create.sql
@@ -604,7 +587,6 @@
 %%HORDEDIR%%/scripts/sql/horde_vfs.sql
 %%HORDEDIR%%/scripts/sql/script.initial_horde_user.sql
 %%HORDEDIR%%/scripts/temp-cleanup.cron
-%%HORDEDIR%%/scripts/themes_check.php
 %%HORDEDIR%%/scripts/upgrades/2006-06-29_horde_prefs_indexes.sql
 %%HORDEDIR%%/scripts/upgrades/2.2_to_3.0.mysql.sql
 %%HORDEDIR%%/scripts/upgrades/2.2_to_3.0.oci8.sql
@@ -613,6 +595,7 @@
 %%HORDEDIR%%/scripts/upgrades/3.0_to_3.1.sql
 %%HORDEDIR%%/scripts/upgrades/3.0_to_3.1.mysql.sql
 %%HORDEDIR%%/scripts/upgrades/3.0_to_3.1.oci8.sql
+%%HORDEDIR%%/scripts/upgrades/migrate_user_categories.php
 %%HORDEDIR%%/scripts/upgrades/move_history_out_of_datatree.php
 %%HORDEDIR%%/services/cacheview.php
 %%HORDEDIR%%/services/changepassword.php
@@ -714,8 +697,8 @@
 %%HORDEDIR%%/services/portal/mobile.php
 %%HORDEDIR%%/services/portal/rpcsum.php
 %%HORDEDIR%%/services/portal/sidebar.php
-%%HORDEDIR%%/services/portal/syncml.php
 %%HORDEDIR%%/services/prefs.php
+%%HORDEDIR%%/services/prefs/index.php
 %%HORDEDIR%%/services/problem.php
 %%HORDEDIR%%/services/resetpassword.php
 %%HORDEDIR%%/services/shares/edit.php
@@ -1448,6 +1431,7 @@
 @exec mkdir -p %D/%%HORDEDIR%%/lib/File/tests
 @exec mkdir -p %D/%%HORDEDIR%%/lib/Horde/Text/tests
 @exec mkdir -p %D/%%HORDEDIR%%/lib/Horde/docs/examples
+@exec mkdir -p %D/%%HORDEDIR%%/lib/Horde/scripts
 @exec mkdir -p %D/%%HORDEDIR%%/lib/Horde/tests
 @exec mkdir -p %D/%%HORDEDIR%%/lib/Text/docs/examples
 @exec mkdir -p %D/%%HORDEDIR%%/lib/Text/tests
@@ -1527,6 +1511,7 @@
 @dirrm %%HORDEDIR%%/templates/admin
 @dirrm %%HORDEDIR%%/templates
 @dirrm %%HORDEDIR%%/services/shares
+@dirrm %%HORDEDIR%%/services/prefs
 @dirrm %%HORDEDIR%%/services/portal
 @dirrm %%HORDEDIR%%/services/obrowser
 @dirrm %%HORDEDIR%%/services/images
@@ -1663,6 +1648,7 @@
 @dirrm %%HORDEDIR%%/lib/Net/IMSP
 @dirrm %%HORDEDIR%%/lib/Net
 @dirrm %%HORDEDIR%%/lib/Horde/tests
+@dirrm %%HORDEDIR%%/lib/Horde/scripts
 @dirrm %%HORDEDIR%%/lib/Horde/iCalendar
 @dirrm %%HORDEDIR%%/lib/Horde/docs/examples
 @dirrm %%HORDEDIR%%/lib/Horde/docs
@@ -1728,5 +1714,4 @@
 @dirrm %%HORDEDIR%%/admin/locale
 @dirrm %%HORDEDIR%%/admin
 @dirrmtry %%HORDEDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%RMDIRINC%%@dirrmtry %%HORDE_INC%%
