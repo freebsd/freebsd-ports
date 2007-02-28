@@ -6,7 +6,7 @@
 
 PORTNAME=	yapsnmp
 PORTVERSION=	0.7.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	yapsnmp
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Python SNMP module based on net-snmp
 
-LIB_DEPENDS=	netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
 
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes

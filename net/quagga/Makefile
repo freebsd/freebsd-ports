@@ -7,7 +7,7 @@
 
 PORTNAME=	quagga
 PORTVERSION=	0.99.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/ \
 		http://www.ru.quagga.net/download/ \
@@ -111,7 +111,7 @@ CONFIGURE_ARGS+=--enable-rtadv
 
 .if defined(WITH_SNMP)
 CONFIGURE_ARGS+=--enable-snmp
-LIB_DEPENDS+=netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 
 .if defined(WITH_TCPMD5)

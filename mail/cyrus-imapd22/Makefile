@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION=	2.2.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		http://www.transit.hanse.de/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -196,7 +196,7 @@ BROKEN=		Multiple net-snmp versions selected.  Run 'make config' again!
 .if defined(WITH_SNMP_4)
 LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
 .elif defined(WITH_SNMP_5)
-LIB_DEPENDS+=	netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 .if defined(WITH_SNMP_4) || defined(WITH_SNMP_5)
 CONFIGURE_ARGS+=--with-snmp=${LOCALBASE}

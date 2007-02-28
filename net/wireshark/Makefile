@@ -7,7 +7,7 @@
 
 PORTNAME?=	wireshark
 PORTVERSION=	0.99.5
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/
 DISTNAME=	${DATADIR_NAME}-${PORTVERSION}
@@ -129,7 +129,7 @@ CONFIGURE_ARGS+=--without-portaudio
 .endif
 
 .if !defined(WITHOUT_SNMP) && !defined(LITE)
-LIB_DEPENDS+=	netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--with-net-snmp=${LOCALBASE}/bin/net-snmp-config \
 			--without-ucd-snmp
 .else

@@ -8,6 +8,7 @@
 
 PORTNAME=	apcupsd
 PORTVERSION=	3.12.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:src_sf/g} \
 		http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/:src_bk \
@@ -67,7 +68,7 @@ CONFIGURE_ARGS+=	--enable-usb
 .endif
 
 .if !defined(WITHOUT_SNMP)
-LIB_DEPENDS+=		netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=		netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--enable-snmp
 .endif
 

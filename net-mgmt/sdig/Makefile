@@ -7,7 +7,7 @@
 
 PORTNAME=	sdig
 PORTVERSION=	0.43
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	raj@cserv62.csub.edu
 COMMENT=	Translate IP/DNS/WINS/MAC address into port description
 
-LIB_DEPENDS=	netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	zabbix
 PORTVERSION=	1.1.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
@@ -33,7 +34,7 @@ PLIST=		""
 .else # ZABBIX_AGENT_ONLY
 CONFIGURE_ARGS+=--enable-server
 # TODO add snmp knob
-LIB_DEPENDS=	netsnmp.9:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
 USE_PHP=	gd snmp sockets pcre
 SUB_FILES=	pkg-message
 .endif # ZABBIX_AGENT_ONLY
