@@ -23,7 +23,7 @@ COMMENT=	Library for terminal-independent, full-screen output (development versi
 CONFLICTS=	ncurses-[0-9]*
 
 PATCHES=	20061223 20061230 20070106 20070113 20070120 20070127 20070128 \
-		20070203 20070210
+		20070203 20070210 20070217 20070224
 
 RELEASE=	5.6
 
@@ -93,10 +93,6 @@ EXAMPLES_CPP=	Makefile NEWS PROBLEMS README-first cursesapp.cc \
 .include <bsd.port.pre.mk>
 
 MAN3!=	${CAT} ${FILESDIR}/man3
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
-.endif
 
 .if ${OSVERSION} < 503000
 WITHOUT_WIDEC=	yes
