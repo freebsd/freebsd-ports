@@ -7,6 +7,7 @@
 
 PORTNAME=	soundtouch
 DISTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.surina.net/soundtouch/
 
@@ -15,6 +16,8 @@ COMMENT=	An open-source audio processing library
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+CONFIGURE_ARGS=	--enable-shared=yes
+USE_LDCONFIG=	yes
 
 # For some reason this library contains config/ directory with
 # lots of broken symlinks.  Remove them here and add new one using
