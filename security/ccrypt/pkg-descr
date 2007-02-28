@@ -19,4 +19,4 @@ are significant (although ccrypt internally hashes the key to 256 bits).
 Longer keywords provide better security than short ones, since they are less
 likely to be discovered by exhaustive search.
 
-WWW: http://quasar.mathstat.uottawa.ca/~selinger/ccrypt/
+WWW: http://ccrypt.sourceforge.net/
