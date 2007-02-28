@@ -7,7 +7,7 @@
 
 PORTNAME=	quagga
 PORTVERSION=	0.99.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/ \
 		http://www.ru.quagga.net/download/ \
@@ -34,6 +34,7 @@ LIBTOOLFILES=		configure
 
 MAN1=		vtysh.1
 MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
+INFO=		quagga
 
 OPTIONS=	ISISD		"Enable experimental ISIS daemon"	off \
 		PAM		"PAM authentication for vtysh"	off \
@@ -120,6 +121,11 @@ BROKEN=		This version of FreeBSD does not have TCP MD5 signature support
 .endif
 EXTRA_PATCHES+=${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgp_network.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgp_vty.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgpd.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd-bgpd.h ${PATCHDIR}/extra-tcpmd5-patch-lib-sockopt.c ${PATCHDIR}/extra-tcpmd5-patch-lib-sockopt.h ${PATCHDIR}/extra-tcpmd5-patch-vtysh-extract.pl.in
 CFLAGS+=	-DQUAGGA_TCP_MD5SIG
+.endif
+
+.if ${OSVERSION} < 600000
+BUILD_DEPENDS+=${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
+CONFIGURE_ENV+=MAKEINFO=${LOCALBASE}/bin/makeinfo
 .endif
 
 USE_RC_SUBR=	watchquagga.sh
