@@ -7,6 +7,7 @@
 
 PORTNAME=	visual
 PORTVERSION=	3.2.9
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://www.vpython.org/download/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -21,6 +22,7 @@ BUILD_DEPENDS=	${PYNUMERIC} \
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 RUN_DEPENDS=	${PYNUMERIC}
 
+USE_AUTOTOOLS=	autoconf:259 libtool:15
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
