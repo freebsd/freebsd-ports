@@ -5,12 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	base
-PORTVERSION=	3.1.3
+PORTNAME=	horde
+DISTVERSION=	3.1.4-rc1
 CATEGORIES=	www
 MASTER_SITES=	HORDE
-PKGNAMEPREFIX=	horde-
-DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
+PKGNAMESUFFIX=	-base
 
 MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	A common code-base used by Horde applications, written in PHP
@@ -199,10 +198,8 @@ RUN_DEPENDS+=	${LOCALBASE}/share/GeoIP/GeoIP.dat:${PORTSDIR}/net/GeoIP
 .endif
 
 REINPLACE_ARGS=	-i.beforeHorde
-DOCS=		COPYING README docs/CHANGES docs/CODING_STANDARDS \
-		docs/CONTRIBUTING docs/CREDITS docs/HACKING docs/INSTALL \
-		docs/PERFORMANCE docs/RELEASE_NOTES docs/SECURITY docs/TODO \
-		docs/TRANSLATIONS docs/UPGRADING
+PORTDOCS=	README CHANGES CODING_STANDARDS CONTRIBUTING CREDITS HACKING INSTALL \
+		PERFORMANCE RELEASE_NOTES SECURITY TODO TRANSLATIONS UPGRADING
 CONFFILE=	conf.php hooks.php mime_drivers.php motd.php nls.php prefs.php registry.php
 SUB_DIRS=	admin config js lib locale po scripts services templates themes util
 
@@ -251,6 +248,9 @@ HORDE_INC=	${PREFIX}/etc/horde
 LHORDE_INC=	${HORDE_INC:S|^${PREFIX}/||}
 PLIST_SUB+=	RMDIRINC=""
 .endif
+
+post-extract:
+	@${MV} ${WRKSRC}/README ${WRKSRC}/docs/
 
 pre-configure:
 	@${RM} ${PATCHES2RM:S|^|${WRKSRC}/|:S|$|.orig|}
@@ -363,10 +363,8 @@ do-install:
 	@${TOUCH} ${LOG_FILE}
 	@${CHOWN} ${WWWOWN}:${WWWGRP} ${LOG_FILE}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for FILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.endfor
+	@${INSTALL} -d ${DOCSDIR}/
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
