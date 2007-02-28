@@ -1,0 +1,8 @@
+DJabberd is a high-performance, scalable, extensible Jabber/XMPP server
+framework.  While it comes with an example server, it's really a set of
+classes for you to build your own Jabber server without understanding
+Jabber.  Instead of working with XML and protocol-specific details, you
+subclass parts and work with sane objects and data structures and let
+DJabberd do all the ugly work.
+
+WWW: http://search.cpan.org/dist/DJabberd/
