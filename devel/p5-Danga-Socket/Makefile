@@ -12,10 +12,14 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Danga
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Event loop and event-driven async socket base class
 
-BUILD_DEPENDS=	${SITE_PERL}/Sys/Syscall.pm:${PORTSDIR}/devel/p5-Sys-Syscall
+BUILD_DEPENDS=	${SITE_PERL}/Sys/Syscall.pm:${PORTSDIR}/devel/p5-Sys-Syscall \
+		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
+		${SITE_PERL}/${PERL_ARCH}/IO/KQueue.pm:${PORTSDIR}/devel/p5-IO-KQueue \
+		${SITE_PERL}/${PERL_ARCH}/BSD/Resource.pm:${PORTSDIR}/devel/p5-BSD-Resource
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 

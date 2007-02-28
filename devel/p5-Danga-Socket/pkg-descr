@@ -6,3 +6,5 @@ and an event loop.
 Callers subclass Danga::Socket.  Danga::Socket's constructor registers
 itself with the Danga::Socket event loop, and invokes callbacks on the
 object for readability, writability, errors, and other conditions.
+
+WWW: http://search.cpan.org/dist/Danga-Socket/
