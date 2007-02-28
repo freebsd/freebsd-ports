@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	leafnode
-PORTVERSION=	1.11.5
+DISTVERSION=	1.11.6.rc1
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED:S/$/:sourceforge/} \
 		http://osdn.dl.sourceforge.net/sourceforge/${PORTNAME}/:sourceforge \
@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED:S/$/:sourceforge/} \
 MASTER_SITE_SUBDIR=	${PORTNAME}/:sourceforge \
 			./:DEFAULT \
 			system/news/transport/:sunsite
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sourceforge,sunsite,DEFAULT
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT,sourceforge,sunsite
 
 MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	NNTP package for offline news caching and reading
@@ -36,7 +36,8 @@ LEAFNODE_SPOOLDIR?=/var/spool/leafnode
 PLIST_SUB=	SPOOLDIR=${LEAFNODE_SPOOLDIR}
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/leafnode \
-		--with-spooldir=${LEAFNODE_SPOOLDIR} --with-ipv6
+		--with-spooldir=${LEAFNODE_SPOOLDIR} --with-ipv6 \
+		--exec-prefix=${PREFIX} --mandir=${MANPREFIX}/man
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 SUB_FILES=	pkg-message pkg-install
 SUB_LIST=	SPOOLDIR=${LEAFNODE_SPOOLDIR}
