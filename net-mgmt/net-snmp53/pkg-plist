@@ -14,7 +14,6 @@ bin/snmpget
 bin/snmpgetnext
 bin/snmpinform
 bin/snmpnetstat
-bin/snmpnetstat53
 bin/snmpset
 bin/snmpstatus
 bin/snmptable
@@ -65,6 +64,7 @@ include/net-snmp/agent/table_container.h
 include/net-snmp/agent/table_data.h
 include/net-snmp/agent/table_dataset.h
 include/net-snmp/agent/table_iterator.h
+include/net-snmp/agent/table_tdata.h
 include/net-snmp/agent/util_funcs.h
 include/net-snmp/agent/var_struct.h
 include/net-snmp/agent/watcher.h
@@ -83,6 +83,8 @@ include/net-snmp/library/container_null.h
 include/net-snmp/library/data_list.h
 include/net-snmp/library/default_store.h
 include/net-snmp/library/factory.h
+include/net-snmp/library/fd_event_manager.h
+include/net-snmp/library/file_utils.h
 include/net-snmp/library/getopt.h
 include/net-snmp/library/int64.h
 include/net-snmp/library/keytools.h
@@ -109,7 +111,6 @@ include/net-snmp/library/snmp_client.h
 include/net-snmp/library/snmp_debug.h
 include/net-snmp/library/snmp_enum.h
 include/net-snmp/library/snmp_impl.h
-include/net-snmp/library/snmp_locking.h
 include/net-snmp/library/snmp_logging.h
 include/net-snmp/library/snmp_parse_args.h
 include/net-snmp/library/snmp_secmod.h
@@ -118,6 +119,7 @@ include/net-snmp/library/snmpusm.h
 include/net-snmp/library/snmpv3-security-includes.h
 include/net-snmp/library/snmpv3.h
 include/net-snmp/library/system.h
+include/net-snmp/library/text_utils.h
 include/net-snmp/library/tools.h
 include/net-snmp/library/transform_oids.h
 include/net-snmp/library/ucd_compat.h
@@ -293,6 +295,7 @@ sbin/snmptrapd
 %%DATADIR%%/mib2c-data/m2c_setup_enum.m2i
 %%DATADIR%%/mib2c-data/m2c_setup_node.m2i
 %%DATADIR%%/mib2c-data/m2c_setup_table.m2i
+%%DATADIR%%/mib2c-data/m2c_table_save_defaults.m2i
 %%DATADIR%%/mib2c-data/mfd-access-container-cached-defines.m2i
 %%DATADIR%%/mib2c-data/mfd-access-unsorted-external-defines.m2i
 %%DATADIR%%/mib2c-data/mfd-data-access.m2c
@@ -302,11 +305,13 @@ sbin/snmptrapd
 %%DATADIR%%/mib2c-data/mfd-interactive-setup.m2c
 %%DATADIR%%/mib2c-data/mfd-interface.m2c
 %%DATADIR%%/mib2c-data/mfd-makefile.m2m
+%%DATADIR%%/mib2c-data/mfd-persistence.m2i
 %%DATADIR%%/mib2c-data/mfd-readme.m2c
 %%DATADIR%%/mib2c-data/mfd-top.m2c
 %%DATADIR%%/mib2c-data/node-get.m2i
 %%DATADIR%%/mib2c-data/node-set.m2i
 %%DATADIR%%/mib2c-data/node-storage.m2i
+%%DATADIR%%/mib2c-data/node-validate.m2i
 %%DATADIR%%/mib2c-data/node-varbind-validate.m2i
 %%DATADIR%%/mib2c-data/parent-dependencies.m2i
 %%DATADIR%%/mib2c-data/parent-set.m2i

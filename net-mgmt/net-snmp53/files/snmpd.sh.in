@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net-mgmt/net-snmp53/files/Attic/snmpd.sh.in,v 1.4 2006-09-23 15:03:36 nork Exp $
+# $FreeBSD: /tmp/pcvs/ports/net-mgmt/net-snmp53/files/Attic/snmpd.sh.in,v 1.5 2007-02-28 01:17:16 kuriyama Exp $
 #
 # PROVIDE: snmpd
 # REQUIRE: DAEMON
@@ -14,6 +14,7 @@ snmpd_enable=${snmpd_enable-"NO"}
 snmpd_flags=${snmpd_flags-""}
 snmpd_pidfile=${snmpd_pidfile-"/var/run/snmpd.pid"}
 snmpd_conffile=${snmpd_conffile-""}
+snmpd_flush_cache=${snmpd_flush_cache-"NO"}
 
 . %%RC_SUBR%%
 
@@ -32,8 +33,15 @@ rcvar=`set_rcvar`
 command=%%PREFIX%%/sbin/${name}
 pidfile=${snmpd_pidfile}
 sig_stop=KILL
+start_precmd=snmpd_precmd
 
 load_rc_config ${name}
+
+snmpd_precmd () {
+    if checkyesno snmpd_flush_cache; then
+	rm -vf /var/net-snmp/.snmp-exec-cache
+    fi
+}
 
 case "${snmpd_flags}" in
 *-p\ *)
