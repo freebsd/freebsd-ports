@@ -54,4 +54,8 @@ CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE}
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC"
 .endif
 
+.if exists(${LOCALBASE}/include/mapi.h)
+IGNORE=	does not build with ${LOCALBASE}/include/mapi.h exists in system, run pkg_info -W ${LOCALBASE}/include/mapi.h to find the offending port and uninstall it, then install ${PORTNAME} and reinstall port
+.endif
+
 .include <bsd.port.post.mk>
