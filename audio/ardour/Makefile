@@ -7,6 +7,7 @@
 
 PORTNAME=	ardour
 DISTVERSION=	2.0beta11.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ardour.org/files/releases/
 
