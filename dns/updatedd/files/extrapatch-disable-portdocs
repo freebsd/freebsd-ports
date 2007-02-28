@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Sep 15 10:19:08 2006
++++ Makefile.in	Sun Feb 18 15:06:01 2007
+@@ -189,7 +189,7 @@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+ @COND_PERL_TRUE@MAYBE_PERL = updatedd-wrapper scripts
+-SUBDIRS = libupdatedd-exception src src/plugins include $(MAYBE_PERL) Documentation
++SUBDIRS = libupdatedd-exception src src/plugins include $(MAYBE_PERL)
+ 
+ #distdir = ../$(PACKAGE)-$(VERSION)
+ EXTRA_DIST = debian/compat debian/control debian/copyright debian/postinst debian/rules \
