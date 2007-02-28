@@ -6340,6 +6340,7 @@ libmatroska	ports/multimedia/libmatroska
 libmba		ports/devel/libmba
 libmcal		ports/misc/libmcal
 libmcrypt	ports/security/libmcrypt
+libmcs		ports/devel/libmcs
 libmcve		ports/devel/libmcve
 libmemcache	ports/databases/libmemcache
 libmicro	ports/benchmarks/libmicro
