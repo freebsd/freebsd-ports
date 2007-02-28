@@ -569,6 +569,7 @@
     SUBDIR += libltdl15
     SUBDIR += libmatheval
     SUBDIR += libmba
+    SUBDIR += libmcs
     SUBDIR += libmcve
     SUBDIR += libmimedir
     SUBDIR += libmpcbdm

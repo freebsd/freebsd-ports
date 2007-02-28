@@ -1,0 +1,13 @@
+bin/mcs-getconfval
+bin/mcs-info
+bin/mcs-query-backends
+bin/mcs-setconfval
+include/libmcs/mcs.h
+include/libmcs/mcs_config.h
+lib/libmcs.so
+lib/libmcs.so.1
+lib/libmcs.so.1.0.0
+lib/mcs/libkeyfile.so
+libdata/pkgconfig/libmcs.pc
+@dirrm include/libmcs
+@dirrm lib/mcs
