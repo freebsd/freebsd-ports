@@ -16033,6 +16033,7 @@ xmailwatcher	ports/mail/xmailwatcher
 xmake		ports/devel/xmake
 xmakemol	ports/science/xmakemol
 xmame		ports/emulators/xmame
+xmamegui	ports/emulators/xmamegui
 xmandel		ports/graphics/xmandel
 xmangekyou	ports/x11/xmangekyou
 xmascot		ports/x11/xmascot
