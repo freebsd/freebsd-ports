@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fdm
-PORTVERSION=	0.9.0.1
-DISTVERSION=	0.9a
+PORTVERSION=	1.0
 CATEGORIES=	mail
 MASTER_SITES=	SFE
 
@@ -17,7 +16,7 @@ COMMENT=	Fetches and delivers mail
 PLIST_FILES=	bin/fdm etc/fdm.conf.sample %%EXAMPLESDIR%%/n-marriott.conf \
 		%%EXAMPLESDIR%%/w-maier.conf
 PLIST_DIRS=	%%EXAMPLESDIR%%
-PORTDOCS=	README MANUAL
+PORTDOCS=	CHANGES README MANUAL
 
 CFLAGS=	-I/usr/include/openssl
 
