@@ -101,10 +101,6 @@ MAN1=		vlc.1 \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		Does not compile on ${ARCH}
-.endif
-
 .if ${PERL_LEVEL} < 500800
 BROKEN=	Does not compile with perl ${PERL_VERSION}
 .endif
