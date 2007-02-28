@@ -1,0 +1,10 @@
+==============================================================================
+
+XMAMEGUI has been installed.
+
+When you start it and asks for the "Screenshot Path" directory make sure it is
+writable by you, since by default it will automatically download game preview
+images to there. For example "~/.parallelrealities/xmamegui/prv" could be used
+(note that it has to be created manually).
+
+==============================================================================
