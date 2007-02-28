@@ -15027,6 +15027,7 @@ tvmet		ports/math/tvmet
 tvp		ports/games/tvp
 tvrss		ports/net-p2p/tvrss
 tvtwm		ports/x11-wm/tvtwm
+tv_grab_au	ports/multimedia/tv_grab_au
 tw_cli		ports/sysutils/tw_cli
 twander		ports/x11-fm/twander
 twelf		ports/lang/twelf
