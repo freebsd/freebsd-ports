@@ -10,7 +10,7 @@ PORTVERSION=	1.0.6.1
 CATEGORIES=	chinese www
 MASTER_SITES=	LOCAL/chinsan
 
-MAINTAINER=	chinsan@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cute and easy blog tool with Traditional-Chinese(zh_TW.UTF-8)
 
 BROKEN=		Incorrect pkg-plist
