@@ -7,7 +7,7 @@
 
 PORTNAME=	nonpareil
 PORTVERSION=	0.77
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://nonpareil.brouhaha.com/download/
 
@@ -16,8 +16,6 @@ COMMENT=	Simulator for many HP calculators
 
 BUILD_DEPENDS=	pnmtopng:${PORTSDIR}/graphics/netpbm \
 		bison2:${PORTSDIR}/devel/bison2
-
-BROKEN=		Does not compile
 
 USE_SCONS=	yes
 USE_GNOME=	gtk20 libxml2
@@ -62,10 +60,6 @@ PLIST_DIRS=	lib/nonpareil
 PORTDOCS=	CREDITS DEBUGGING README TODO
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Doesn't build on 4.x
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%CFLAGS%%,${CFLAGS},' \
