@@ -1,0 +1,8 @@
+--- libltdl/configure.orig	Sun Dec 18 14:13:59 2005
++++ libltdl/configure	Tue Feb 27 12:41:55 2007
+@@ -21123,2 +21123,5 @@
+     ;;
++  freebsd*)
++    libltdl_cv_sys_dlopen_deplibs=yes
++    ;;
+   gnu* | linux* | kfreebsd*-gnu | knetbsd*-gnu)
