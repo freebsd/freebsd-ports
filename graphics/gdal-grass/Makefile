@@ -7,6 +7,7 @@
 
 PORTNAME=	gdal-grass
 PORTVERSION=	1.3.1.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.gdal.org/dl/ \
 		ftp://ftp.remotesensing.org/gdal/ \
@@ -16,8 +17,8 @@ MAINTAINER=	lrntct@gmail.org
 COMMENT=	GDAL drivers for GRASS raster and vector files
 
 LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal
-BUILD_DEPENDS=	grass60:${PORTSDIR}/databases/grass
-RUN_DEPENDS=	grass60:${PORTSDIR}/databases/grass
+BUILD_DEPENDS=	grass>=0:${PORTSDIR}/databases/grass
+RUN_DEPENDS=	grass>=0:${PORTSDIR}/databases/grass
 
 GRASS_INST_DIR=	grass
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.3.1
