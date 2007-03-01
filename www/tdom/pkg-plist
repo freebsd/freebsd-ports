@@ -3,4 +3,20 @@ lib/tdom%%PORTVERSION%%/libtdomstub%%PORTVERSION%%.a
 lib/tdom%%PORTVERSION%%/pkgIndex.tcl
 lib/tdom%%PORTVERSION%%/tdom.tcl
 lib/tdomConfig.sh
+%%PORTDOCS%%%%DOCSDIR%%/html/category-index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/dom.html
+%%PORTDOCS%%%%DOCSDIR%%/html/domDoc.html
+%%PORTDOCS%%%%DOCSDIR%%/html/domNode.html
+%%PORTDOCS%%%%DOCSDIR%%/html/expat.html
+%%PORTDOCS%%%%DOCSDIR%%/html/expatapi.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/keyword-index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/tdomcmd.html
+%%PORTDOCS%%%%DOCSDIR%%/html/tnc.html
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.AOL
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/tdom%%PORTVERSION%%
