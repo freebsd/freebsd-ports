@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openttd
-PORTVERSION=	0.4.8
-PORTREVISION=	2
+PORTVERSION=	0.5.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,11 +18,13 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_GMAKE=	yes
 
+DISTVERSIONSUFFIX=	-source
+
 .if defined(WITH_MIDI_PLAYER)
 MAKE_ARGS+=	MIDI=${WITH_MIDI_PLAYER}
 .endif
 .if defined(WITH_DEDICATED_SERVER_ONLY)
-MAKE_ARGS+=	DEDICATED=1
+MAKE_ARGS+=	DEDICATED=1 PTHREAD_LIBS="${PTHREAD_LIBS}"
 .else
 USE_SDL=	sdl
 .endif
@@ -31,14 +32,16 @@ USE_SDL=	sdl
 MAKE_ARGS+=	RELEASE=${PORTVERSION} DATA_DIR="share/openttd" \
 		USE_HOMEDIR=1 PERSONAL_DIR=.openttd INSTALL=1 VERBOSE=1
 
-DISTVERSIONSUFFIX=	-source
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 SUB_FILES=	pkg-message
 
 MAN6=		openttd.6
 
 DESKTOP_ENTRIES="OpenTTD" "${COMMENT}" "" "openttd" "" false
+
+DOCS=		HOWTO_compile_lang_files.txt Howto_compile_lng_files_from_CLI.txt \
+		Manual.txt elrail.svg elrail_tile.png elrail_track.png \
+		landscape.html landscape_grid.html multiplayer.txt \
+		ottd-colour-palette.gif ottd-colourtext-palette.png tileh.png
 
 pre-everything::
 .if !defined(WITH_MIDI_PLAYER)
@@ -61,9 +64,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/${MAN6} ${MANPREFIX}/man/man6
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-. for f in Howto_compile_lng_files_from_CLI.txt Manual.txt console.txt \
-	landscape.html landscape_grid.html multiplayer.txt \
-	ottd-colour-palette.gif ottd-colourtext-palette.png tileh.png
+. for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${DOCSDIR}
 . endfor
 .endif
