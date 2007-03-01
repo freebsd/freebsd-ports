@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-Pngslimmer
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Image
@@ -15,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Slims (dynamically created) PNGs
 
-RUN_DEPENDS=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
+RUN_DEPENDS=	p5-Compress-Zlib>=2.003:${PORTSDIR}/archivers/p5-Compress-Zlib \
+		p5-Compress-Raw-Zlib>=2.003:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
