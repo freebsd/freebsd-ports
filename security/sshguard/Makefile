@@ -7,6 +7,7 @@
 
 PORTNAME=	sshguard
 PORTVERSION=	0.91
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,20 +17,25 @@ COMMENT=	Protect networked hosts from brute force attacks against ssh
 
 PLIST_FILES=	sbin/sshguard
 
+IS_INTERACTIVE=	yes
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 
-OPTIONS=	PF	"Use PF as firewall backend"	on \
+OPTIONS=	PF	"Use PF as firewall backend"	off \
 		IPFW	"Use IPFW as firewall backend"	off
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_PF) && defined(WITH_IPFW)
-# compile with IPFW support
-CONFIGURE_ARGS+=	--with-firewall=ipfw
-.else
+.if ! ( (defined(WITH_PF) && !defined(WITH_IPFW)) || !defined(WITH_PF))
+# some error occurred. Configure will handle this.
+.endif
+
+.if defined(WITH_PF)
 # compile with PF support
 CONFIGURE_ARGS+=	--with-firewall=pf
+.elif defined(WITH_IPFW)
+# compile with IPFW support
+CONFIGURE_ARGS+=	--with-firewall=ipfw
 .endif
 
 post-install:
