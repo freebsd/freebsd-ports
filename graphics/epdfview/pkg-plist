@@ -1,9 +1,13 @@
 bin/epdfview
 %%NLS%%share/locale/ca/LC_MESSAGES/epdfview.mo
 %%NLS%%share/locale/de/LC_MESSAGES/epdfview.mo
+%%NLS%%share/locale/el/LC_MESSAGES/epdfview.mo
 %%NLS%%share/locale/es/LC_MESSAGES/epdfview.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/epdfview.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/epdfview.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/epdfview.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/epdfview.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/epdfview.mo
 share/applications/epdfview.desktop
 %%DATADIR%%/pixmaps/icon_epdfview-24.png
 %%DATADIR%%/pixmaps/icon_epdfview-32.png
