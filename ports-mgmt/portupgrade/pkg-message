@@ -1,0 +1,12 @@
+-----------------------------------------------------------------------
+NOTE: If you upgrade, it's recomended to run pkgdb -L to restore lost
+      dependencies.
+
+      Fill ALT_PKGDEP section in pkgtools.conf file for portupgrade
+      be aware of alternative dependencies you use.
+      E.g.
+      ALT_PKGDEP = {
+      	'www/apache13' => 'www/apache13-modssl',
+	'print/ghostscript-afpl' => 'print/ghostscript-gnu',	
+      }
+-----------------------------------------------------------------------

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	2.2.2
-PORTREVISION=	4
+PORTVERSION=	2.2.6
 PORTEPOCH=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -91,5 +90,6 @@ post-install: install-ldconfig-file
 		${CP} -p ${PREFIX}/etc/pkgtools.conf.sample ${PREFIX}/etc/pkgtools.conf; \
 	fi
 	${MKDIR} ${PREFIX}/lib/compat/pkg
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
