@@ -412,6 +412,7 @@ aolserver-nsopenssl	ports/security/aolserver-nsopenssl
 aolserver-nspostgres	ports/databases/aolserver-nspostgres
 aolserver-nssha1	ports/security/aolserver-nssha1
 aolserver-nszlib	ports/archivers/aolserver-nszlib
+aolserver-xotcl	ports/www/aolserver-xotcl
 aop		ports/games/aop
 ap-utils	ports/net-mgmt/ap-utils
 apache-ant	ports/devel/apache-ant
