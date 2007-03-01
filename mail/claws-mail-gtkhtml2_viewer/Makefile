@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtkhtml2_viewer
-PORTVERSION=	0.14.1
-PORTREVISION=	2
+PORTVERSION=	0.14.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -40,6 +39,8 @@ PLIST_FILES=	lib/claws-mail/plugins/gtkhtml2_viewer.a \
 	share/locale/es/LC_MESSAGES/gtkhtml2_viewer.mo \
 	share/locale/fr/LC_MESSAGES/gtkhtml2_viewer.mo \
 	share/locale/pl/LC_MESSAGES/gtkhtml2_viewer.mo \
-	share/locale/pt_BR/LC_MESSAGES/gtkhtml2_viewer.mo
+	share/locale/pt_BR/LC_MESSAGES/gtkhtml2_viewer.mo \
+	share/locale/hu/LC_MESSAGES/gtkhtml2_viewer.mo \
+	share/locale/ca/LC_MESSAGES/gtkhtml2_viewer.mo
 
 .include <bsd.port.mk>
