@@ -18,7 +18,7 @@
 
 name="bacula_fd"
 rcvar=${name}_enable
-command=%%PREFIX%%sbin/bacula-fd
+command=%%PREFIX%%/sbin/bacula-fd
 
 load_rc_config $name
 
