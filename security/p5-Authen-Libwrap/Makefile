@@ -7,6 +7,7 @@
 
 PORTNAME=	Authen-Libwrap
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Authen
@@ -21,8 +22,9 @@ MAN3=	Authen::Libwrap.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
 post-patch:
+	@${PERL} -pi -e 's/\s(0\.20);/ q($$1);/' ${WRKSRC}/lib/Authen/Libwrap.pm
+.if ${PERL_LEVEL} < 500600
 	@${PERL} -pi -e 'undef $$_ if /^\s*(?:no|use) warnings/o' ${WRKSRC}/Build.PL ${WRKSRC}/lib/Authen/Libwrap.pm
 .endif
 
