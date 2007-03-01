@@ -14253,6 +14253,7 @@ spreadlogd	ports/www/spreadlogd
 springgraph	ports/graphics/springgraph
 spruce		ports/mail/spruce
 sql-ledger	ports/finance/sql-ledger
+sqlcached	ports/databases/sqlcached
 sqlclient	ports/databases/sqlclient
 sqldjbdns	ports/dns/sqldjbdns
 sqlgrey		ports/mail/sqlgrey
