@@ -1,0 +1,11 @@
+--- configure.orig	Mon Feb 26 21:08:32 2007
++++ configure	Mon Feb 26 21:08:48 2007
+@@ -19750,7 +19750,7 @@
+ 
+ 
+ # version 2.5 of fuse
+-CFLAGS="$CFLAGS -D_FILE_OFFSET_BITS=64 -DFUSE_USE_VERSION=25 -DHAVE_SETXATTR"
++CFLAGS="$CFLAGS -D_FILE_OFFSET_BITS=64 -DFUSE_USE_VERSION=25"
+ 
+ # version 2.3 or 2.4 of fuse used don't forget to modify Makefile.am to add compat/fuse_opt.c
+ #CFLAGS="$CFLAGS -D_FILE_OFFSET_BITS=64 -DFUSE_USE_VERSION=22 -DHAVE_SETXATTR"
