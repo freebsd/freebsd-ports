@@ -1,54 +1,61 @@
 bin/cap
-%%CACHE_DIR%%/capistrano-%%PORTVERSION%%.gem
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/bin/cap
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/examples/sample.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/actor.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/cli.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/command.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/configuration.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/extensions.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/gateway.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/generators/rails/deployment/deployment_generator.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/generators/rails/deployment/templates/deploy.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/generators/rails/deployment/templates/capistrano.rake
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/generators/rails/loader.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/logger.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/recipes/standard.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/recipes/templates/maintenance.rhtml
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/scm/base.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/scm/baz.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/scm/bzr.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/scm/cvs.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/scm/darcs.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/scm/perforce.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/scm/subversion.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/ssh.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/transfer.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/utils.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/version.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test/actor_test.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test/command_test.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test/configuration_test.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test/fixtures/config.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test/fixtures/custom.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test/scm/cvs_test.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test/scm/subversion_test.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test/ssh_test.rb
-%%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test/utils.rb
-%%SPEC_DIR%%/capistrano-%%PORTVERSION%%.gemspec
-@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test/scm
-@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test/fixtures
-@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/test
-@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/scm
-@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/recipes/templates
-@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/recipes
-@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/generators/rails/deployment/templates
-@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/generators/rails/deployment
-@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/generators/rails
-@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano/generators
-@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib/capistrano
-@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/lib
-@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/examples
-@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%/bin
-@dirrm %%GEMS_DIR%%/capistrano-%%PORTVERSION%%
+%%GEM_CACHE%%
+%%GEM_SPEC%%
+%%GEM_LIB_DIR%%/bin/cap
+%%GEM_LIB_DIR%%/lib/capistrano.rb
+%%GEM_LIB_DIR%%/lib/capistrano/actor.rb
+%%GEM_LIB_DIR%%/lib/capistrano/cli.rb
+%%GEM_LIB_DIR%%/lib/capistrano/command.rb
+%%GEM_LIB_DIR%%/lib/capistrano/configuration.rb
+%%GEM_LIB_DIR%%/lib/capistrano/extensions.rb
+%%GEM_LIB_DIR%%/lib/capistrano/gateway.rb
+%%GEM_LIB_DIR%%/lib/capistrano/logger.rb
+%%GEM_LIB_DIR%%/lib/capistrano/shell.rb
+%%GEM_LIB_DIR%%/lib/capistrano/ssh.rb
+%%GEM_LIB_DIR%%/lib/capistrano/transfer.rb
+%%GEM_LIB_DIR%%/lib/capistrano/utils.rb
+%%GEM_LIB_DIR%%/lib/capistrano/version.rb
+%%GEM_LIB_DIR%%/lib/capistrano/generators/rails/loader.rb
+%%GEM_LIB_DIR%%/lib/capistrano/generators/rails/deployment/deployment_generator.rb
+%%GEM_LIB_DIR%%/lib/capistrano/generators/rails/deployment/templates/capistrano.rake
+%%GEM_LIB_DIR%%/lib/capistrano/generators/rails/deployment/templates/deploy.rb
+%%GEM_LIB_DIR%%/lib/capistrano/recipes/standard.rb
+%%GEM_LIB_DIR%%/lib/capistrano/recipes/templates/maintenance.rhtml
+%%GEM_LIB_DIR%%/lib/capistrano/scm/base.rb
+%%GEM_LIB_DIR%%/lib/capistrano/scm/baz.rb
+%%GEM_LIB_DIR%%/lib/capistrano/scm/bzr.rb
+%%GEM_LIB_DIR%%/lib/capistrano/scm/cvs.rb
+%%GEM_LIB_DIR%%/lib/capistrano/scm/darcs.rb
+%%GEM_LIB_DIR%%/lib/capistrano/scm/mercurial.rb
+%%GEM_LIB_DIR%%/lib/capistrano/scm/perforce.rb
+%%GEM_LIB_DIR%%/lib/capistrano/scm/subversion.rb
+%%GEM_LIB_DIR%%/examples/sample.rb
+%%GEM_LIB_DIR%%/test/actor_test.rb
+%%GEM_LIB_DIR%%/test/command_test.rb
+%%GEM_LIB_DIR%%/test/configuration_test.rb
+%%GEM_LIB_DIR%%/test/ssh_test.rb
+%%GEM_LIB_DIR%%/test/utils.rb
+%%GEM_LIB_DIR%%/test/fixtures/config.rb
+%%GEM_LIB_DIR%%/test/fixtures/custom.rb
+%%GEM_LIB_DIR%%/test/scm/cvs_test.rb
+%%GEM_LIB_DIR%%/test/scm/subversion_test.rb
+%%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/MIT-LICENSE
+%%GEM_LIB_DIR%%/CHANGELOG
+%%GEM_LIB_DIR%%/THANKS
+@dirrm %%GEM_LIB_DIR%%/test/scm
+@dirrm %%GEM_LIB_DIR%%/test/fixtures
+@dirrm %%GEM_LIB_DIR%%/test
+@dirrm %%GEM_LIB_DIR%%/examples
+@dirrm %%GEM_LIB_DIR%%/lib/capistrano/scm
+@dirrm %%GEM_LIB_DIR%%/lib/capistrano/recipes/templates
+@dirrm %%GEM_LIB_DIR%%/lib/capistrano/recipes
+@dirrm %%GEM_LIB_DIR%%/lib/capistrano/generators/rails/deployment/templates
+@dirrm %%GEM_LIB_DIR%%/lib/capistrano/generators/rails/deployment
+@dirrm %%GEM_LIB_DIR%%/lib/capistrano/generators/rails
+@dirrm %%GEM_LIB_DIR%%/lib/capistrano/generators
+@dirrm %%GEM_LIB_DIR%%/lib/capistrano
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%/bin
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%

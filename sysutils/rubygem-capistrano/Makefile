@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	capistrano
-PORTVERSION=	1.1.0
+PORTVERSION=	1.4.1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,11 +14,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	r.s.a.vandomburg@student.utwente.nl
 COMMENT=	A utility for executing commands in parallel on multiple machines
 
-RUN_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/net-sftp-1.1.0.gemspec:${PORTSDIR}/security/rubygem-net-sftp
-
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2007-04-10
+BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake \
+		${LOCALBASE}/${SPEC_DIR}/net-sftp-1.1.0.gemspec:${PORTSDIR}/security/rubygem-net-sftp
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 post-install:
 	@${ECHO_MSG} "======================================================================"
