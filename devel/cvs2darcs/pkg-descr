@@ -1,0 +1,4 @@
+cvs2darcs is a script to check out a CVS repository module and convert it to
+use the Darcs version control system.
+
+WWW: http://ab-initio.mit.edu/cvs2darcs/
