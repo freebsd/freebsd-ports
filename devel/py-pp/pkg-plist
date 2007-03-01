@@ -1,0 +1,13 @@
+bin/ppserver.py
+%%PYTHON_SITELIBDIR%%/pp.py
+%%PYTHON_SITELIBDIR%%/pp.pyc
+%%PYTHON_SITELIBDIR%%/pp.pyo
+%%PYTHON_SITELIBDIR%%/ppserver.py
+%%PYTHON_SITELIBDIR%%/ppserver.pyc
+%%PYTHON_SITELIBDIR%%/ppserver.pyo
+%%PYTHON_SITELIBDIR%%/pptransport.py
+%%PYTHON_SITELIBDIR%%/pptransport.pyc
+%%PYTHON_SITELIBDIR%%/pptransport.pyo
+%%PYTHON_SITELIBDIR%%/ppworker.py
+%%PYTHON_SITELIBDIR%%/ppworker.pyc
+%%PYTHON_SITELIBDIR%%/ppworker.pyo

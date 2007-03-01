@@ -1809,6 +1809,7 @@
     SUBDIR += py-plex
     SUBDIR += py-ply
     SUBDIR += py-pmock
+    SUBDIR += py-pp
     SUBDIR += py-pqueue
     SUBDIR += py-protocols
     SUBDIR += py-protocols-devel
