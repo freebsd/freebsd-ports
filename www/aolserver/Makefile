@@ -7,11 +7,12 @@
 
 PORTNAME=	aolserver
 PORTVERSION=	4.5.0
-DISTVERSIONSUFFIX=	-src
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	aolserver
 DIST_SUBDIR=	aolserver
+DISTVERSIONSUFFIX=	-src
 
 MAINTAINER=	martin@matuska.org
 COMMENT=	A multithreaded web server with embedded TCL interpreter
@@ -36,13 +37,30 @@ SUB_VARS=	AOLSERVERUSER=${AOLSERVERUSER} \
 SUB_LIST+=	${SUB_VARS} AOLSERVERBASE=${AOLSERVERBASE}
 PLIST_SUB+=	${SUB_VARS} AOLSERVERBASE=${AOLSERVERBASE:S/${TARGETDIR}\///}
 
-USE_TCL=	84-thread
-USE_TCL_BUILD=	84-thread
+USE_TCL_VER?=	84
+
+.if ${USE_TCL_VER} != 84 && ${USE_TCL_VER} != 85
+IGNORE=		supported values for USE_TCL_VER are only 84 and 85
+.endif
+
+USE_TCL=	${USE_TCL_VER}-thread
+USE_TCL_BUILD=	${USE_TCL_VER}-thread
 
 OPTIONS=	HTMLDOCS "Install HTML documentation" off \
 		TESTS "Install tests in examples directory" off
 
 .include <bsd.port.pre.mk>
+
+.if (${ARCH} == "ia64")
+BROKEN=		does not compile on ia64
+.endif
+
+. if exists(${TCLSH})
+_TCL_IS_THREADED!=	${ECHO_CMD} 'puts [array names tcl_platform -exact threaded]' | ${TCLSH} || return 0
+.  if empty(_TCL_IS_THREADED)
+IGNORE=	Tcl with threads is required. Please install Tcl with WITH_THREADS defined or from lang/tcl${USE_TCL} port and try again
+.  endif
+. endif
 
 CONFIGURE_ENV+=		TCLSH=${TCLSH}
 CONFIGURE_ARGS+=	--prefix=${AOLSERVERBASE} \
