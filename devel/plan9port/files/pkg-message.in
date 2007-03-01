@@ -21,3 +21,4 @@ I suggest you to unset $PLAN9 before building any other ports
 if you don't want to fall into these problems and reset it after.
 
 - venti/fmt* commands work only with normal files.
+
