@@ -1,11 +1,13 @@
 bin/mkcache
-bin/gmap2cache
 bin/check-files
-etc/gofish.conf
-etc/gofish-www.conf
+@unexec if cmp -s %D/etc/gofish.conf.sample %D/etc/gofish.conf; then rm -f %D/etc/gofish.conf; fi
+etc/gofish.conf.sample
+@exec if [ ! -f %D/etc/gofish.conf ] ; then cp -p %D/%F %B/gofish.conf; fi
+@unexec if cmp -s %D/etc/gofish-www.conf.sample %D/etc/gofish-www.conf; then rm -f %D/etc/gofish-www.conf; fi
+etc/gofish-www.conf.sample
+@exec if [ ! -f %D/etc/gofish-www.conf ] ; then cp -p %D/%F %B/gofish-www.conf; fi
 sbin/gofish
-@exec ln -sf %D/sbin/gofish %D/sbin/gopherd
-@unexec rm -f %D/sbin/gofish %D/sbin/gopherd
+sbin/gopherd
 gopher/Configure_GoFish
 gopher/.cache
 gopher/.gopher+
