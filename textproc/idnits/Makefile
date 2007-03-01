@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	idnits
-PORTVERSION=	1.120
+PORTVERSION=	2.03.9
 CATEGORIES=	textproc
 MASTER_SITES=	http://tools.ietf.org/tools/idnits/
 EXTRACT_SUFX=	.tgz
