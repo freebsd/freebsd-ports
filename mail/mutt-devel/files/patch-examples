@@ -77,27 +77,27 @@
  
  into your system's global Muttrc, which normally resides in /etc or
  /usr/local/etc.
---- doc/manual.txt.orig	Mon Aug 14 16:10:04 2006
-+++ doc/manual.txt	Wed Aug 30 14:34:46 2006
-@@ -5971,8 +5971,8 @@
+--- doc/manual.txt.orig	Fri Feb 23 18:15:51 2007
++++ doc/manual.txt	Wed Feb 28 14:30:48 2007
+@@ -6219,8 +6219,8 @@
  
-    For examples on how to configure these formats for the various versions of
-    PGP which are floating around, see the pgp*.rc and gpg.rc files in the
--   samples/ subdirectory which has been installed on your system alongside the
--   documentation. (PGP only)
-+   share/examples/mutt/ subdirectory which has been installed on your system
-+   alongside the documentation. (PGP only)
+    For examples on how to configure these formats for the various
+    versions of PGP which are floating around, see the pgp*.rc and gpg.rc
+-   files in the samples/ subdirectory which has been installed on your
+-   system alongside the documentation. (PGP only)
++   files in the share/examples/mutt/ subdirectory which has been installed
++   on your system alongside the documentation. (PGP only)
  
  3.163. pgp_getkeys_command
  
-@@ -6164,8 +6164,8 @@
-           "-CAfile $smime_ca_location".
+@@ -6418,8 +6418,8 @@
+           $$ssmmiimmee__ccaa__llooccaattiioonn" or "-CAfile $$ssmmiimmee__ccaa__llooccaattiioonn".
  
-    For examples on how to configure these formats, see the smime.rc in the
--   samples/ subdirectory which has been installed on your system alongside the
--   documentation. (S/MIME only)
-+   share/examples/mutt/ subdirectory which has been installed on your system
-+   alongside the documentation. (S/MIME only)
+    For examples on how to configure these formats, see the smime.rc in
+-   the samples/ subdirectory which has been installed on your system
+-   alongside the documentation. (S/MIME only)
++   the share/examples/mutt/ subdirectory which has been installed on your
++   system alongside the documentation. (S/MIME only)
  
  3.182. smime_verify_command
  
