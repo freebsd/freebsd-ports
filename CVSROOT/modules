@@ -12567,6 +12567,7 @@ py-pmock	ports/devel/py-pmock
 py-poker-eval	ports/games/py-poker-eval
 py-posix1e	ports/security/py-posix1e
 py-pow		ports/security/py-pow
+py-pp		ports/devel/py-pp
 py-pqueue	ports/devel/py-pqueue
 py-prewikka	ports/www/py-prewikka
 py-probstat	ports/math/py-probstat
