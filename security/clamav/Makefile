@@ -137,7 +137,7 @@ CONFIGURE_ARGS+=	--enable-experimental
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread -lc_r|${PTHREAD_LIBS}|g' \
+	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -E 's,^(pkgconfigdir = ).*$$,\1$$(prefix)/libdata/pkgconfig,g' \
 		${WRKSRC}/Makefile.in

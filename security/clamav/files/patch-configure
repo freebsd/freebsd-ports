@@ -1,6 +1,6 @@
---- configure.orig	Thu Jun 23 23:12:00 2005
-+++ configure	Tue Jun 28 20:53:10 2005
-@@ -11195,19 +11201,25 @@
+--- configure.orig	Mon Feb 12 23:11:56 2007
++++ configure	Thu Mar  1 13:00:28 2007
+@@ -22426,19 +22426,25 @@
      sendmailver_c=`echo $sendmailver | awk -F. '{printf $3}'`
  
  
@@ -26,3 +26,12 @@
  
    fi
  fi
+@@ -23082,7 +23088,7 @@
+     ;;
+ freebsd*)
+     if test "$have_pthreads" = "yes"; then
+-	THREAD_LIBS="-lpthread -lc_r"
++	THREAD_LIBS="%%PTHREAD_LIBS%%"
+ 	TH_SAFE="-thread-safe"
+ 
+ cat >>confdefs.h <<\_ACEOF
