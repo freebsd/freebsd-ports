@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070301:
+  AFFECTS: users of ports-mgmt/portupgrade*
+  AUTHOR: sem@FreeBSD.org
+
+  Because of a bug in previous version, it's recomended you fill ALT_PKGDEP
+  section in pkgtools.conf file for portupgrade be aware of alternative
+  dependencies you use, and run pkgdb -L to restore dependencies that was
+  lost.
+
+  Example of ALT_PKGDEP section:
+  ALT_PKGDEP = {
+    'www/apache13' => 'www/apache13-modssl',
+    'print/ghostscript-afpl' => 'print/ghostscript-gnu',
+  }
+
 20070227:
   AFFECTS: users of net-im/jabber*
   AUTHOR: martin@matuska.org
