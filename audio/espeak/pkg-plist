@@ -3,7 +3,7 @@ bin/espeak
 include/espeak/speak_lib.h
 lib/libespeak.so
 lib/libespeak.so.1
-lib/libespeak.so.1.1.20
+lib/libespeak.so.1.1.21
 %%PORTDOCS%%%%DOCSDIR%%/add_language.html
 %%PORTDOCS%%%%DOCSDIR%%/analyse.html
 %%PORTDOCS%%%%DOCSDIR%%/commands.html
@@ -31,6 +31,7 @@ lib/libespeak.so.1.1.20
 %%DATADIR%%/espeak-data/fi_dict
 %%DATADIR%%/espeak-data/fr_dict
 %%DATADIR%%/espeak-data/hi_dict
+%%DATADIR%%/espeak-data/hu_dict
 %%DATADIR%%/espeak-data/it_dict
 %%DATADIR%%/espeak-data/nl_dict
 %%DATADIR%%/espeak-data/no_dict
@@ -42,6 +43,7 @@ lib/libespeak.so.1.1.20
 %%DATADIR%%/espeak-data/ro_dict
 %%DATADIR%%/espeak-data/ru_dict
 %%DATADIR%%/espeak-data/sv_dict
+%%DATADIR%%/espeak-data/sw_dict
 %%DATADIR%%/espeak-data/vi_dict
 %%DATADIR%%/espeak-data/voices/!v/!variant1
 %%DATADIR%%/espeak-data/voices/!v/!variant11
@@ -68,6 +70,7 @@ lib/libespeak.so.1.1.20
 %%DATADIR%%/espeak-data/voices/fi
 %%DATADIR%%/espeak-data/voices/fr
 %%DATADIR%%/espeak-data/voices/hi
+%%DATADIR%%/espeak-data/voices/hu
 %%DATADIR%%/espeak-data/voices/it
 %%DATADIR%%/espeak-data/voices/nl
 %%DATADIR%%/espeak-data/voices/no
@@ -76,6 +79,7 @@ lib/libespeak.so.1.1.20
 %%DATADIR%%/espeak-data/voices/ro
 %%DATADIR%%/espeak-data/voices/ru
 %%DATADIR%%/espeak-data/voices/sv
+%%DATADIR%%/espeak-data/voices/sw
 %%DATADIR%%/espeak-data/voices/vi
 @dirrm include/espeak
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
