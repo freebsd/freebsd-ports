@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pound
-PORTVERSION=	2.1.3
+PORTVERSION=	2.2
 CATEGORIES=	www net
 MASTER_SITES=	http://www.apsis.ch/pound/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -26,7 +26,7 @@ CONFIGURE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAKE_ARGS+=	F_CONF=${PREFIX}/etc/pound.cfg
 
-MAN8=	pound.8
+MAN8=	pound.8 poundctl.8
 
 OPTIONS=	DAEMON		"Running as a daemon" on \
 		LOG		"With Syslog support" on \
