@@ -72,7 +72,6 @@
 %%ACTIWEB%%lib/xotclsdbm1.2/pkgIndex.tcl
 %%ACTIWEB%%lib/xotclgdbm1.2/libxotclgdbm1.2.so
 %%ACTIWEB%%lib/xotclgdbm1.2/pkgIndex.tcl
-%%AOLSERVER%%aolserver/modules/tcl/xotcl.tcl
 bin/xotclsh
 include/xotcl%%PORTVERSION%%/xotcl.h
 include/xotcl%%PORTVERSION%%/xotclDecls.h
