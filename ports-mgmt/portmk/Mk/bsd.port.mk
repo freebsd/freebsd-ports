@@ -2035,7 +2035,11 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .endif
 
 .if defined(USE_PHP)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.php.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.php.mk"
+.else
 .include "${PORTSDIR}/Mk/bsd.php.mk"
+.endif
 .endif
 
 .if defined(USE_PYTHON)
