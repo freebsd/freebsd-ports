@@ -6,27 +6,24 @@
 #
 
 PORTNAME=	funionfs
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://funionfs.apiou.org/file/
 PKGNAMEPREFIX=	fusefs-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Union filesystem for the FUSE driver
 
-RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
+RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
+CONFIGURE_ENV=	CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+GNU_CONFIGURE=	yes
+
+MAN1=		funionfs.1
 PLIST_FILES=	bin/funionfs
-
-do-build:
-	(cd ${WRKSRC} && ${CC} ${CFLAGS} -DFUSE_USE_VERSION=25 \
-	 -D_FILE_OFFSET_BITS=64 -I${LOCALBASE}/include/fuse \
-	 -o funionfs main.c \
-	 -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lfuse)
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/funionfs ${TARGETDIR}/bin
 
 .include <bsd.port.pre.mk>
 
