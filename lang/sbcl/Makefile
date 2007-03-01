@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	lang lisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sbcl
@@ -35,7 +35,7 @@ INFODIR=	${PREFIX}/${INFO_PATH}
 LISP_CMD=	""
 .else
 BOOT_VERSION=	1.0.1
-.if ${.TARGETS} == makesum
+.if make(makesum)
 BOOT_ARCH_OS_LIST=	x86-freebsd4 x86-64-freebsd5
 .elif ${ARCH} == i386
 BOOT_ARCH_OS_LIST=	x86-freebsd4
