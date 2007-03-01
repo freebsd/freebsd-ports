@@ -1,10 +1,10 @@
---- Makefile.am.orig2	Fri Sep  1 14:27:36 2006
-+++ Makefile.am	Fri Sep  1 14:28:47 2006
-@@ -145,16 +145,12 @@
+--- Makefile.am.orig	Wed Feb 28 14:24:22 2007
++++ Makefile.am	Wed Feb 28 14:26:20 2007
+@@ -146,16 +146,12 @@
  install-data-local: Muttrc
  	$(srcdir)/mkinstalldirs $(DESTDIR)$(sysconfdir)
- 	$(INSTALL) -m644 Muttrc $(DESTDIR)$(sysconfdir)/Muttrc.dist
--	$(INSTALL) -m644 $(srcdir)/mime.types $(DESTDIR)$(sysconfdir)/mime.types.dist
+ 	$(INSTALL) -m 644 Muttrc $(DESTDIR)$(sysconfdir)/Muttrc.dist
+-	$(INSTALL) -m 644 $(srcdir)/mime.types $(DESTDIR)$(sysconfdir)/mime.types.dist
  	-if [ -f $(DESTDIR)$(pkgdatadir)/Muttrc ] ; then \
  		mv $(DESTDIR)$(pkgdatadir)/Muttrc* $(DESTDIR)$(sysconfdir) ; \
  	elif [ -f $(DESTDIR)$(pkgdatadir)/../Muttrc ] ; then \

@@ -109,8 +109,8 @@
 #
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.5.13
-PORTREVISION?=	1
+PORTVERSION=	1.5.14
+PORTREVISION?=	0
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -436,7 +436,7 @@ pre-patch::
 PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
-SIDEBAR_PATCH=	patch-1.5.13.sidebar.20060828.txt
+SIDEBAR_PATCH=	patch-1.5.14.sidebar.20070223.txt
 DISTFILES+=	${SIDEBAR_PATCH}:tchan
 XML_NEEDED=	yes
 pre-patch::
