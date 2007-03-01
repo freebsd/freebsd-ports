@@ -192,6 +192,7 @@
     SUBDIR += cutils
     SUBDIR += cvs+ipv6
     SUBDIR += cvs2cl
+    SUBDIR += cvs2darcs
     SUBDIR += cvs2html
     SUBDIR += cvs2p4
     SUBDIR += cvs2svn
