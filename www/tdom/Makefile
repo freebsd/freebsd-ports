@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.tdom.org/files/
 PKGNAMESUFFIX?=	-threads
 
-MAINTAINER=	aldert@nooitgedagt.net
+MAINTAINER=	martin@matuska.org
 COMMENT=	High performance XML data processing with Tcl (ARGS for OpenACS)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/unix
