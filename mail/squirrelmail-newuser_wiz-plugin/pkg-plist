@@ -1,4 +1,4 @@
-@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin newuser_wiz; fi
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
 %%SQUIRRELDIR%%/plugins/newuser_wiz/functions.php
 %%SQUIRRELDIR%%/plugins/newuser_wiz/setup.php
 %%SQUIRRELDIR%%/plugins/newuser_wiz/README
@@ -10,4 +10,4 @@
 %%SQUIRRELDIR%%/plugins/newuser_wiz/newuser_wiz_sample.po
 %%SQUIRRELDIR%%/plugins/newuser_wiz/newuser_wiz.pot
 @dirrm %%SQUIRRELDIR%%/plugins/newuser_wiz
-@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin newuser_wiz; fi
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
