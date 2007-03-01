@@ -349,7 +349,7 @@ Note:  Please add new entries to the beginning of this file.
 	<name>seamonkey</name>
 	<name>linux-seamonkey</name>
 	<range><lt>1.0.8</lt></range>
-	<range><ge>1.1</ge></range>
+	<range><ge>1.1</ge><lt>1.1.1</lt></range>
       </package>
       <package>
 	<name>thunderbird</name>
@@ -375,6 +375,7 @@ Note:  Please add new entries to the beginning of this file.
 	  privilege of the user running the program.</p>
 	<blockquote cite="http://www.mozilla.org/projects/security/known-vulnerabilities.html#firefox2.0.0.2">
 	  <ul>
+	    <li>MFSA 2007-08 onUnload + document.write() memory corruption</li>
 	    <li>MFSA 2007-07 Embedded nulls in location.hostname confuse same-domain checks</li>
 	    <li>MFSA 2007-06 Mozilla Network Security Services (NSS) SSLv2 buffer overflow</li>
 	    <li>MFSA 2007-05 XSS and local file access by opening blocked popups</li>
@@ -399,6 +400,7 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2007-0800</cvename>
       <cvename>CVE-2007-0981</cvename>
       <cvename>CVE-2007-0995</cvename>
+      <cvename>CVE-2007-1092</cvename>
       <url>http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=482</url>
       <url>http://labs.idefense.com/intelligence/vulnerabilities/display.php?id=483</url>
       <url>http://www.mozilla.org/security/announce/2007/mfsa2007-01.html</url>
@@ -408,11 +410,12 @@ Note:  Please add new entries to the beginning of this file.
       <url>http://www.mozilla.org/security/announce/2007/mfsa2007-05.html</url>
       <url>http://www.mozilla.org/security/announce/2007/mfsa2007-06.html</url>
       <url>http://www.mozilla.org/security/announce/2007/mfsa2007-07.html</url>
+      <url>http://www.mozilla.org/security/announce/2007/mfsa2007-08.html</url>
     </references>
     <dates>
       <discovery>2007-02-23</discovery>
       <entry>2007-02-24</entry>
-      <modified>2007-02-25</modified>
+      <modified>2007-03-01</modified>
     </dates>
   </vuln>
 
