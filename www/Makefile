@@ -13,6 +13,7 @@
     SUBDIR += analog
     SUBDIR += aolserver
     SUBDIR += aolserver-nscache
+    SUBDIR += aolserver-xotcl
     SUBDIR += apache-contrib
     SUBDIR += apache-forrest
     SUBDIR += apache-jserv
