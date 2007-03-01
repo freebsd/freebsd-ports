@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plan9port
-PORTVERSION=	20060629
+PORTVERSION=	20070223
 CATEGORIES=	devel plan9
 MASTER_SITES=	http://swtch.com/plan9port/ \
 		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
@@ -43,7 +43,7 @@ MAN1=		9term.1 acmeevent.1 ascii.1 acme.1 9p.1 basename.1 cal.1 \
 		web.1 wintext.1 ndb.1 passwd.1 secstored.1 tar.1 pem.1 \
 		readcons.1 rsa.1 ssh-agent.1 netfiles.1 sftpcache.1 \
 		hist.1 venti.1 yesterday.1 hget.1 snarfer.1 htmlroff.1 \
-		resample.1 devdraw.1
+		resample.1 devdraw.1 mount.1
 
 MAN3=		ioproc.3 bio.3 fmtinstall.3 isalpharune.3 print.3 rune.3 \
 		runestrcat.3 thread.3 9p.3 matrix.3 arith3.3 ctime.3 \
@@ -71,7 +71,7 @@ MAN3=		ioproc.3 bio.3 fmtinstall.3 isalpharune.3 print.3 rune.3 \
 		acme.3 drawfcall.3
 
 MAN4=		0intro.4 9pserve.4 acme.4 import.4 plumber.4 ramfs.4 \
-		vacfs.4 factotum.4 srv.4
+		vacfs.4 factotum.4 srv.4 9pfuse.4
 
 MAN7=		utf.7 regexp.7 0intro.7 color.7 face.7 font.7 image.7 \
 		man.7 map.7 ms.7 plot.7 plumb.7 thumbprint.7 ndb.7 \
@@ -89,6 +89,8 @@ EMPTY_DIRS=	plan9/log \
 		plan9/9pm/Plan9/386/lib \
 		plan9/dist/debian \
 		plan9/dist/pkg
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${FIND} ${WRKSRC}/man -type f -regex ".*\.[0-9?]$\" \
@@ -127,4 +129,4 @@ install-user:
 	@${MKDIR} ${HOME}/lib
 	${INSTALL_DATA} ${PLAN9}/plumb/initial.plumbing ${HOME}/lib/plumbing
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
