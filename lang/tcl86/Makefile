@@ -37,9 +37,15 @@ OPTIONS=	NO_TCL85_MAN "Do not install tcl85 manpages" off
 .include <bsd.port.pre.mk>
 
 .if defined(TCL_WITH_THREADS) || defined(WITH_THREADS)
+. if (${ARCH} == "ia64")
+BROKEN=	does not compile with threads on ia64
+. endif
+CONFLICTS=	tcl-8.5*
 THREADS_SUFFIX=		-threads
 CONFIGURE_ARGS+=	--enable-threads
 CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
+.else
+CONFLICTS=	tcl-threads-8.5*
 .endif
 
 LATEST_LINK=	tcl85${THREADS_SUFFIX}
