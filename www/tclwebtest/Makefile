@@ -7,26 +7,49 @@
 
 PORTNAME=	tclwebtest
 PORTVERSION=	1.0
-CATEGORIES=	www
+PORTREVISION=	1
+CATEGORIES=	www tcl84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	aldert@nooitgedagt.net
+MAINTAINER=	martin@matuska.org
 COMMENT=	Tool for issuing HTTP requests and dealing with the result
 
-LIB_DEPENDS+=	tcl84.1:${PORTSDIR}/lang/tcl84-thread
+USE_TCL_VER?=	84
+
+.if ${USE_TCL_VER} != 84 && ${USE_TCL_VER} != 85
+IGNORE=		supported values for USE_TCL_VER are only 84 and 85
+.endif
+
+# by default we want tcl with threads as dependency (www/openacs)
+USE_TCL=	${USE_TCL_VER}-thread
 
 NO_BUILD=	YES
 
-TCLVERSION=	8.4
 TWTBASE=	${PREFIX}/tclwebtest-${PORTVERSION}
 TWTBASEL=	${PREFIX}/tclwebtest
 
-PLIST_SUB+=	TWTDIR=tclwebtest-${PORTVERSION} TCLLIB=lib/tcl${TCLVERSION}
+.include <bsd.port.pre.mk>
+
+.if exists(${TCLSH})
+_TCL_IS_THREADED!=	${ECHO_CMD} 'puts [array names tcl_platform -exact threaded]' | ${TCLSH} || return 0
+. if empty(_TCL_IS_THREADED)
+# Check if a threaded build is forced
+.  if defined(TCL_WITH_THREADS) || defined(WITH_THREADS)
+IGNORE=	tcl with threads is required. Please install tcl with WITH_THREADS defined or from lang/tcl${USE_TCL} port and try again
+.  else
+# Installed tcl is not threaded, so set correct dependencies
+USE_TCL=${USE_TCL_VER}
+.include "${PORTSDIR}/Mk/bsd.tcl.mk"
+.  endif
+. endif
+.endif
+
+PLIST_SUB+=	TWTDIR=tclwebtest-${PORTVERSION} TCLLIB=${TCL_LIBDIR:S/${LOCALBASE}\///g}
 
 post-extract:
 	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -rf
-	@${SED}	-i "" -e "s| tclsh | tclsh${TCLVERSION} |g" ${WRKSRC}/tclwebtest
+	@${SED}	-i "" -e "s| tclsh | ${TCLSH} |g" ${WRKSRC}/tclwebtest
 
 do-install:
 	@${TEST} -d ${TWTBASE} || ( ${MKDIR} ${TWTBASE} && \
@@ -45,7 +68,7 @@ do-install:
 
 post-install:
 	@${TEST} -L ${TWTBASEL} || ${LN} -s ${TWTBASE} ${TWTBASEL}
-	@${TEST} -L ${LOCALBASE}/lib/tcl${TCLVERSION}/tclwebtest || ${LN} -s ${TWTBASEL}/lib ${LOCALBASE}/lib/tcl${TCLVERSION}/tclwebtest
+	@${TEST} -L ${TCL_LIBDIR}/tclwebtest || ${LN} -s ${TWTBASEL}/lib ${TCL_LIBDIR}/tclwebtest
 	@${TEST} -L ${PREFIX}/bin/tclwebtest || ${LN} -s ${TWTBASEL}/tclwebtest ${PREFIX}/bin
 
 	@${ECHO_CMD} "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
@@ -53,4 +76,4 @@ post-install:
 	@${ECHO_CMD} " Set it to ${TWTBASEL} if tclwebtest barks at you. "
 	@${ECHO_CMD} "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

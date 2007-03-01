@@ -1,4 +1,5 @@
 bin/tclwebtest
+%%TCLLIB%%/tclwebtest
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/README
 %%DOCSDIR%%/TODO
@@ -96,5 +97,3 @@ tclwebtest
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%DOCSDIR%%/doc
 @dirrm %%DOCSDIR%%
-@cwd %%LOCALBASE%%
-%%TCLLIB%%/tclwebtest
