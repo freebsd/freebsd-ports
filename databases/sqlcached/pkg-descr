@@ -1,0 +1,5 @@
+SQLCacheD is a memory-based SQL database intended for use as a memory cache
+engine. In purpose, it.s similar to (and inspired by) memcached but allows
+fine-grained data manipulation using SQL.
+
+WWW: http://sqlcached.sourceforge.net/
