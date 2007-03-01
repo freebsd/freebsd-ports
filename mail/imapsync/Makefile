@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	imapsync
-PORTVERSION=	1.182
+PORTVERSION=	1.213
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://www.linux-france.org/prj/imapsync/dist/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@christianserving.org
 COMMENT=	IMAP synchronization copy or migration tool
 
 BUILD_DEPENDS=	${SITE_PERL}/Mail/IMAPClient.pm:${PORTSDIR}/mail/p5-Mail-IMAPClient \
