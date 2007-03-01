@@ -18,8 +18,7 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-attrib.c \
 
 MASTERDIR=	${.CURDIR}/../../news/tin
 
+WITH_TIN_SCREEN=termcap
 CONFIGURE_ARGS=	--disable-locale
 
 .include "${MASTERDIR}/Makefile"
-
-CONFIGURE_ARGS+=--with-screen=termcap --with-mime-default-charset=Big5
