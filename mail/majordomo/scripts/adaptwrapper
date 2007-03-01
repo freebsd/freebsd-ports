@@ -5,7 +5,15 @@ if [ -z "$1" ]
 then
 	prefix=/usr/local/majordomo
 else
-	prefix=$1/majordomo
+	if [ -d "$1/majordomo" ]
+	then
+		prefix=$1/majordomo
+	else
+		echo "Could not find the majordomo dir."
+		echo
+		echo "Usage: $0 <install prefix>"
+		exit 1
+	fi
 fi
 tempfile=`/usr/bin/mktemp -t radiolist`
 

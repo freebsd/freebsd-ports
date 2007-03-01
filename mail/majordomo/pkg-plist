@@ -1,3 +1,4 @@
+majordomo/aliases.majordomo-sample
 majordomo/archive
 majordomo/archive2.pl
 majordomo/bin/approve
@@ -49,6 +50,6 @@ majordomo/doc/post-install-notes
 @dirrm majordomo/lists/test-l-digest.archive
 @dirrm majordomo/lists/test-l.archive
 @dirrmtry majordomo/lists
-@dirrm majordomo/tmp
+@dirrmtry majordomo/tmp
 @dirrm majordomo/Tools
 @dirrmtry majordomo
