@@ -1,0 +1,18 @@
+--- Makefile.am.orig	Sun Feb 18 18:07:19 2007
++++ Makefile.am		Mon Feb 26 12:53:39 2007
+@@ -3,12 +3,13 @@
+ # Copyright (c) 2006 by Peter Simons <simons@cryp.to>
+ # Licensed under the terms of the GNU General Public License.
+ 
+-dist_pkgdata_DATA       = AUTHORS COPYING README
++dist_doc_DATA		= AUTHORS COPYING README
+ CLEANFILES              = $(DIST_ARCHIVES)
+ MAINTAINERCLEANFILES    = missing install-sh configure Makefile.in aclocal.m4
+ 
+ aclocaldir              = $(datadir)/aclocal
+ dist_aclocal_DATA       = $(M4SOURCE)
+ 
+-htmldir                 = $(pkgdatadir)/html
++docdir			= $(datadir)/doc/$(PACKAGE)
++htmldir                 = $(docdir)/html
+ dist_html_DATA          = $(HTMLDOC)
