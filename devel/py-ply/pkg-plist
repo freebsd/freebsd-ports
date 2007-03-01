@@ -10,7 +10,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/ply.html
 %%PORTDOCS%%%%EXAMPLESDIR%%/ansic/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/ansic/lextab.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/ansic/clex.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/ansic/cparse.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/calc/calc.py
