@@ -1,3 +1,6 @@
 MD5 (courier-imap-4.1.2.tar.bz2) = e4a1c75992cc85ba10f719e98f6df0ff
 SHA256 (courier-imap-4.1.2.tar.bz2) = 37c3530b31e0b9b5a5bcd639ac3db4862f12e77ec39d8d67f19e630d76853d71
 SIZE (courier-imap-4.1.2.tar.bz2) = 3257311
+MD5 (courier-imap-4.1.0-drac.patch) = 62d84c091eec8b8c49ea605d3d6eb080
+SHA256 (courier-imap-4.1.0-drac.patch) = 01363ee12c52b1e4d01082d9dd2b374b17b1985daf108ddd4596064131ca0940
+SIZE (courier-imap-4.1.0-drac.patch) = 8355
