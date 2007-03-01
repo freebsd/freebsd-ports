@@ -1,6 +1,6 @@
 --- Makefile.orig	Mon Mar 27 02:32:00 2006
 +++ Makefile	Fri Jun 16 04:30:11 2006
-@@ -240,7 +240,7 @@
+@@ -213,7 +213,7 @@
  ifndef WIN32
  	ifndef MORPHOS
  		ifndef OSX
@@ -9,16 +9,16 @@
  		endif
  	endif
  endif
-@@ -297,7 +297,7 @@
+@@ -319,7 +319,7 @@
  # GNU make can only test for (in)equality
  # this is a workaround to test for >=
  ifeq ($(shell expr $(CC_VERSION) \>= 29), 1)
--  CFLAGS += -O -Wall -Wno-multichar -Wsign-compare -Wstrict-prototypes -Wundef
-+  CFLAGS += -Wall -Wno-multichar -Wsign-compare -Wstrict-prototypes -Wundef
+-  CFLAGS += -O -Wall -Wno-multichar -Wsign-compare -Wundef
++  CFLAGS += -Wall -Wno-multichar -Wsign-compare -Wundef
+   CC_CFLAGS += -Wstrict-prototypes
    CFLAGS += -Wwrite-strings -Wpointer-arith
  endif
- ifeq ($(shell expr $(CC_VERSION) \>= 30), 1)
-@@ -350,8 +350,6 @@
+@@ -377,8 +377,6 @@
  ifdef MORPHOS
  BASECFLAGS += -I/gg/os-include -O2 -noixemul -fstrict-aliasing -fexpensive-optimizations
  BASECFLAGS += -mcpu=604 -fno-inline -mstring -mmultiple

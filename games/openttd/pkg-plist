@@ -1,7 +1,10 @@
 bin/openttd
+%%DATADIR%%/data/2ccmap.grf
+%%DATADIR%%/data/airports.grf
 %%DATADIR%%/data/autorail.grf
 %%DATADIR%%/data/canalsw.grf
 %%DATADIR%%/data/dosdummy.grf
+%%DATADIR%%/data/elrailsw.grf
 %%DATADIR%%/data/nsignalsw.grf
 %%DATADIR%%/data/openttd.grf
 %%DATADIR%%/data/opntitle.dat
@@ -9,11 +12,13 @@ bin/openttd
 @dirrm %%DATADIR%%/data
 %%DATADIR%%/lang/american.lng
 %%DATADIR%%/lang/brazilian_portuguese.lng
+%%DATADIR%%/lang/bulgarian.lng
 %%DATADIR%%/lang/catalan.lng
 %%DATADIR%%/lang/czech.lng
 %%DATADIR%%/lang/danish.lng
 %%DATADIR%%/lang/dutch.lng
 %%DATADIR%%/lang/english.lng
+%%DATADIR%%/lang/esperanto.lng
 %%DATADIR%%/lang/estonian.lng
 %%DATADIR%%/lang/finnish.lng
 %%DATADIR%%/lang/french.lng
@@ -22,20 +27,32 @@ bin/openttd
 %%DATADIR%%/lang/hungarian.lng
 %%DATADIR%%/lang/icelandic.lng
 %%DATADIR%%/lang/italian.lng
-%%DATADIR%%/lang/norwegian.lng
+%%DATADIR%%/lang/japanese.lng
+%%DATADIR%%/lang/korean.lng
+%%DATADIR%%/lang/lithuanian.lng
+%%DATADIR%%/lang/norwegian_bokmal.lng
+%%DATADIR%%/lang/norwegian_nynorsk.lng
 %%DATADIR%%/lang/origveh.lng
 %%DATADIR%%/lang/polish.lng
 %%DATADIR%%/lang/portuguese.lng
 %%DATADIR%%/lang/romanian.lng
+%%DATADIR%%/lang/russian.lng
+%%DATADIR%%/lang/simplified_chinese.lng
 %%DATADIR%%/lang/slovak.lng
+%%DATADIR%%/lang/slovenian.lng
 %%DATADIR%%/lang/spanish.lng
 %%DATADIR%%/lang/swedish.lng
+%%DATADIR%%/lang/traditional_chinese.lng
 %%DATADIR%%/lang/turkish.lng
+%%DATADIR%%/lang/ukrainian.lng
 @dirrm %%DATADIR%%/lang
 @dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/HOWTO_compile_lang_files.txt
 %%PORTDOCS%%%%DOCSDIR%%/Howto_compile_lng_files_from_CLI.txt
 %%PORTDOCS%%%%DOCSDIR%%/Manual.txt
-%%PORTDOCS%%%%DOCSDIR%%/console.txt
+%%PORTDOCS%%%%DOCSDIR%%/elrail.svg
+%%PORTDOCS%%%%DOCSDIR%%/elrail_tile.png
+%%PORTDOCS%%%%DOCSDIR%%/elrail_track.png
 %%PORTDOCS%%%%DOCSDIR%%/landscape.html
 %%PORTDOCS%%%%DOCSDIR%%/landscape_grid.html
 %%PORTDOCS%%%%DOCSDIR%%/multiplayer.txt
