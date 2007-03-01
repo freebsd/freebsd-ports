@@ -11,7 +11,7 @@ CATEGORIES=	java devel net-mgmt
 MASTER_SITES=	http://snmp.westhawk.co.uk/
 DISTNAME=	${PORTNAME:S/westhawk//}${PORTVERSION:S/./_/}
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight SNMP stack for Java
 
 NO_BUILD=	yes
