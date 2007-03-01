@@ -35,6 +35,7 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 WITH_TIN_EDITOR?=	/usr/bin/ee
+WITH_TIN_SCREEN?=	ncurses
 
 # --with-mime-default-charset=US-ASCII needed to build tin in the non-ascii
 # national environment.
@@ -45,7 +46,7 @@ CONFIGURE_ARGS+=--with-nntp-default-server=news \
 		--with-editor=${WITH_TIN_EDITOR} \
 		--enable-nls \
 		--with-pcre=yes \
-		--with-screen=ncurses \
+		--with-screen=${WITH_TIN_SCREEN} \
 		--enable-break-long-lines \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-mime-default-charset=US-ASCII \
