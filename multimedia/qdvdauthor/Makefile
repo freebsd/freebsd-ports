@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qdvdauthor
-PORTVERSION=	0.1.4
-PORTREVISION=	1
+PORTVERSION=	0.1.5
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,9 +24,16 @@ RUN_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		dvd-slideshow:${PORTSDIR}/multimedia/dvd-slideshow \
 		bash:${PORTSDIR}/shells/bash
 
+DATA_FILES=	silence.mp2 html/en/audio_streams.html html/en/system_register.html \
+		qdvdauthor_de.qm qdvdauthor_es.qm qdvdauthor_fr.qm qdvdauthor_pl.qm \
+		qplayer_de.qm qplayer_es.qm qplayer_fr.qm qslideshow_de.qm \
+		qslideshow_es.qm qslideshow_fr.qm
+
 PLIST_FILES=	bin/qdvdauthor \
 		bin/qslideshow \
-		bin/qplayer
+		bin/qplayer \
+		${DATA_FILES:S,^,%%DATADIR%%/,}
+PLIST_DIRS=	%%DATADIR%%/html/en %%DATADIR%%/html %%DATADIR%%
 
 HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes
@@ -109,4 +115,16 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/qslideshow ${PREFIX}/bin/qslideshow
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/qplayer    ${PREFIX}/bin/qplayer
 
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/silence.mp2    ${DATADIR}
+
+	${MKDIR} ${DATADIR}/html/en
+	${INSTALL_DATA} ${WRKSRC}/doc/html/en/audio_streams.html   ${DATADIR}/html/en
+	${INSTALL_DATA} ${WRKSRC}/doc/html/en/system_register.html ${DATADIR}/html/en
+.for locale in de es fr
+	${INSTALL_DATA} ${WRKSRC}/qdvdauthor/i18n/qdvdauthor_${locale}.qm  ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/qdvdauthor/i18n/qplayer_${locale}.qm     ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/qdvdauthor/i18n/qslideshow_${locale}.qm  ${DATADIR}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/qdvdauthor/i18n/qdvdauthor_pl.qm  ${DATADIR}
 .include <bsd.port.post.mk>
