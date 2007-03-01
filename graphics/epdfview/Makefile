@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	epdfview
-PORTVERSION=	0.1.5
-PORTREVISION=	2
+PORTVERSION=	0.1.6
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	http://trac.emma-soft.com/epdfview/chrome/site/releases/ \
 		LOCAL/chinsan
@@ -22,7 +21,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_ICONV=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 intlhack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -39,11 +38,8 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e '273 s,OPEN,SAVE,' ${WRKSRC}/src/gtk/MainView.cxx
-
 post-install:
-	${MKDIR} ${PREFIX}/share/applications ${PREFIX}/share/pixmaps
+	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/data/${PORTNAME}.desktop ${PREFIX}/share/applications/
 	@-update-desktop-database
 
