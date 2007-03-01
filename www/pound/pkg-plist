@@ -1,4 +1,5 @@
 sbin/pound
+sbin/poundctl
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
