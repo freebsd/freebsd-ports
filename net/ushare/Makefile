@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ushare
-PORTVERSION=	0.9.9
+PORTVERSION=	0.9.10
 CATEGORIES=	net
 MASTER_SITES=	http://ushare.geexbox.org/releases/
 
@@ -23,6 +23,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}/lib --with-libintl-prefix=${LOCALBASE}/lib --mandir=${LOCALBASE}/man
 USE_GNOME=	pkgconfig
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
 	${CP} ${WRKSRC}/scripts/${PORTNAME}.conf ${PREFIX}/etc/${PORTNAME}.conf.sample
