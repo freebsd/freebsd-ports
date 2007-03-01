@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vcalendar
-PORTVERSION=	1.93
-PORTREVISION=	2
+PORTVERSION=	1.94
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/ \
 		${MASTER_SITE_LOCAL}
@@ -30,10 +29,4 @@ USE_AUTOTOOLS=	autoconf:261
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 	--with-libintl-prefix=${LOCALBASE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	doens't buid
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
