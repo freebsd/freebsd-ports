@@ -7,7 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.90
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -137,7 +137,7 @@ CONFIGURE_ARGS+=	--enable-experimental
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-pthread -lc_r|${PTHREAD_LIBS}|g' \
+	@${REINPLACE_CMD} -e 's|-lpthread -lc_r|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -E 's,^(pkgconfigdir = ).*$$,\1$$(prefix)/libdata/pkgconfig,g' \
 		${WRKSRC}/Makefile.in
