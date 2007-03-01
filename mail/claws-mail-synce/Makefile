@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	synce
-PORTVERSION=	0.6.6
-PORTREVISION=	3
+PORTVERSION=	0.7
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -22,7 +21,7 @@ RUN_DEPENDS=	claws-mail>=2.6:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_XLIB=	yes
-USE_AUTOTOOLS=	autoconf:259
+USE_AUTOTOOLS=	autoconf:261
 
 CONFIGURE_ARGS=	--with-libsynce=${LOCALBASE} \
 	--with-librapi2=${LOCALBASE}
