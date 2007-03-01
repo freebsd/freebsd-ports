@@ -10,7 +10,7 @@ PORTVERSION=	1.3
 CATEGORIES=	mail
 MASTER_SITES=	http://smtptrapd.inodes.org/
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RFC 2821 compliant SMTP service that always returns a 4xx soft error
 
 USE_RC_SUBR=	smtptrapd.sh

@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://vpnd.dotsrc.org/archive/ \
 		http://atreides.freenix.no/~anders/
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VPN daemon offering transparent blowfish encryption between networks
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
