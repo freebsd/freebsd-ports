@@ -7,7 +7,7 @@
 
 PORTNAME=	libglade
 PORTVERSION=	0.17
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/libglade/0.17
@@ -15,12 +15,13 @@ MASTER_SITE_SUBDIR=	sources/libglade/0.17
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME glade library
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier gnomedb
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	libtool:15
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-bonobo --enable-gnomedb
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
