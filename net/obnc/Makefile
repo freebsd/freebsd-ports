@@ -47,6 +47,12 @@ CVS_SITES?=	anoncvs@anoncvs3.usa.openbsd.org:/cvs \
 		anoncvs@anoncvs1.ca.openbsd.org:/cvs
 CVS_MODULE=	src/usr.bin/nc
 
+.if ${OSVERSION} > 600010 || ( ${OSVERSION} > 503102 && ${OSVERSION} < 600000 )
+IGNORE=		is now contained in the base system
+.endif
+
+DEPRECATED=	A new version of this port is available from base system.
+
 #
 # CVS checkout stuff mostly stolen from security/openssh-askpass port by
 # kris@freebsd.org
