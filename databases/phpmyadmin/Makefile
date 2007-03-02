@@ -7,6 +7,7 @@
 
 PORTNAME=	phpMyAdmin
 DISTVERSION=	2.10.0.1
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpmyadmin
@@ -18,7 +19,7 @@ COMMENT=	A set of PHP-scripts to manage MySQL over the web
 USE_BZIP2=	yes
 NO_BUILD=	yes
 .if !defined(WITHOUT_PHP_DEPENDS)
-USE_PHP=	mysql pcre session
+USE_PHP=	ctype mysql pcre session
 .endif
 
 SUB_LIST+=	"MYADMDIR=${MYADMDIR}" \
