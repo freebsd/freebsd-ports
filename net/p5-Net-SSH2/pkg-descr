@@ -1,0 +1,12 @@
+Net::SSH2 is a perl interface to the libssh2 (http://www.libssh2.org) library.
+It supports the SSH2 protocol (there is no support for SSH1) with all of the
+key exchanges, ciphers, and compression of libssh2.
+
+Unless otherwise indicated, methods return a true value on success and false
+on failure; use the error method to get extended error information.
+
+The typical order is to create the SSH2 object, set up the connection methods
+you want to use, call connect, authenticate with one of the auth methods, then
+create channels on the connection to perform commands.
+
+WWW:	http://search.cpan.org/dist/Net-SSH2/
