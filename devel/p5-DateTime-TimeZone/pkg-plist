@@ -116,6 +116,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Indiana/Petersburg.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Indiana/Vevay.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Indiana/Vincennes.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Indiana/Winamac.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Inuvik.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Iqaluit.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Jamaica.pm
