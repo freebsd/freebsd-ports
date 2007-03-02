@@ -9,4 +9,9 @@ NOTE: If you upgrade, it's recomended to run pkgdb -L to restore lost
       	'www/apache13' => 'www/apache13-modssl',
 	'print/ghostscript-afpl' => 'print/ghostscript-gnu',	
       }
+
+      Note also, portupgrade knows nothing how to handle ports with different
+      suffixes (E.g. -nox11). So you should explicitly define variables
+      (E.g. WITHOUT_X11=yes) for the ports in /etc/make.conf or pkgtools.conf
+      (MAKE_ARGS section) files.
 -----------------------------------------------------------------------
