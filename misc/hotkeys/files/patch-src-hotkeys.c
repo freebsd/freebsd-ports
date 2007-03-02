@@ -1,5 +1,5 @@
---- src/hotkeys.c.orig	Tue Dec  3 14:26:32 2002
-+++ src/hotkeys.c	Wed Jun 11 23:54:54 2003
+--- src/hotkeys.c.orig	Wed Dec  4 03:26:32 2002
++++ src/hotkeys.c	Fri Mar  2 19:27:17 2007
 @@ -54,7 +54,7 @@
  #include <fcntl.h>
  #include <sys/ioctl.h>
@@ -260,15 +260,34 @@
                  }
  #endif
                  break;  /* break the for loop */
-@@ -1444,6 +1459,7 @@
-                         3       /* shadow offset */,
-                         3       /* number_lines */ 
-                         );
+@@ -1435,15 +1450,17 @@
+ #ifdef HAVE_LIBXOSD
+     if ( osd )
+     {
+-        osd = xosd_init(xstrdup(getConfig("osd_font")),
+-                        /* I dunno why, but you must call strdup here... */
+-                        xstrdup(getConfig("osd_color")),
+-                        atoi(getConfig("osd_timeout")),
+-                        strncmp(getConfig("osd_position"),"top",3)?XOSD_bottom:XOSD_top,
+-                        atoi(getConfig("osd_offset")), 
+-                        3       /* shadow offset */,
+-                        3       /* number_lines */ 
+-                        );
++	osd = xosd_create(3);
++	xosd_set_pos(osd, strncmp(getConfig("osd_position"),"top",3)?XOSD_bottom:XOSD_top);
++	xosd_set_bar_length(osd, atoi(getConfig("osd_bar_length")));
++	xosd_set_colour(osd, xstrdup(getConfig("osd_color")));
++	xosd_set_shadow_colour(osd, xstrdup(getConfig("osd_shadow_color")));
++	xosd_set_shadow_offset(osd, atoi(getConfig("osd_shadow_offset")));
++	xosd_set_horizontal_offset(osd, atoi(getConfig("osd_hoffset")));
++	xosd_set_vertical_offset(osd, atoi(getConfig("osd_voffset")));
++	xosd_set_font(osd, xstrdup(getConfig("osd_font")));
++        xosd_set_align(osd, strncmp(getConfig("osd_align"),"left",4)?((!strncmp(getConfig("osd_align"),"center",6))?XOSD_center:XOSD_right):XOSD_left);
 +        xosd_set_align(osd, XOSD_center);
      }
  #endif
  }
-@@ -1592,6 +1608,7 @@
+@@ -1592,6 +1609,7 @@
                  doMute();
              } else
              /* APM stuffs */
@@ -276,7 +295,7 @@
              if ( ev.message.keycode == (kbd.defCmds)[sleepKey].key ||
                   ev.message.keycode == (kbd.defCmds)[wakeupKey].key ) {
                  sleepState(STANDBY);
-@@ -1601,8 +1618,9 @@
+@@ -1601,8 +1619,9 @@
              }
              else
              {

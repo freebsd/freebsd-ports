@@ -1,5 +1,5 @@
---- src/conf.c.orig	Wed Nov 27 14:30:08 2002
-+++ src/conf.c	Sun May 11 16:01:17 2003
+--- src/conf.c.orig	Thu Nov 28 03:30:08 2002
++++ src/conf.c	Fri Mar  2 19:26:23 2007
 @@ -25,7 +25,7 @@
  #include "common.h"
  
@@ -19,3 +19,19 @@
  /*
      "Screendump",      "xwd -root",
  */
+@@ -75,9 +78,14 @@
+ //    "osd_font",        "-*-lucidatypewriter-bold-r-normal-*-*-250-*-*-*-*-*-*",
+     "osd_font",        "lucidasanstypewriter-bold-24",
+     "osd_color",       "LawnGreen",
++    "osd_shadow_color",	"Black",
++    "osd_shadow_offset",	"3",
+     "osd_timeout",     "3",
+     "osd_position",    "bottom",
+-    "osd_offset",      "25",
++    "osd_align",	"center",
++    "osd_hoffset",      "25",
++    "osd_voffset",      "25",
++    "osd_bar_length",	"25",
+     NULL,              NULL
+ };
+ 
