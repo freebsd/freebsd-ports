@@ -13,8 +13,7 @@
 ## base system, building this port may fail.
 
 PORTNAME=	dkim-milter
-PORTVERSION=	0.5.2
-PORTREVISION=	2
+PORTVERSION=	0.6.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -99,7 +98,7 @@ post-patch:
 .if defined(WITH_VERIFY_DOMAINKEYS) && !defined(WITHOUT_VERIFY_DOMAINKEYS)
 	@${REINPLACE_CMD} -e "/bldPUSH_SMLIB(\`dk')/s|^dnl ||" \
 		-e "/-I\.\.\/libdk\//s|^dnl ||" \
-		-e '/-D_FFR_VERIFY_DOMAINKEYS/s|^dnl ||' \
+		-e '/-D_VERIFY_DOMAINKEYS/s|^dnl ||' \
 		${WRKSRC}/dkim-filter/Makefile.m4
 	${LN} -s ${LIBDK_PATH} ${WRKSRC}/
 .endif
