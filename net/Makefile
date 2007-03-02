@@ -482,6 +482,7 @@
     SUBDIR += p5-Net-SDP
     SUBDIR += p5-Net-SFTP
     SUBDIR += p5-Net-SFTP-Foreign
+    SUBDIR += p5-Net-SIP
     SUBDIR += p5-Net-SMPP
     SUBDIR += p5-Net-SNPP
     SUBDIR += p5-Net-SSH
