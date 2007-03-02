@@ -1,8 +1,10 @@
-###
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
 Make sure you have the following lines in your PAM configuration file
 so that ProFTPd's PAM module can authenticate users correctly.
 
 ftpd auth    required    pam_unix.so         try_first_pass
 ftpd account required    pam_unix.so         try_first_pass
 ftpd session required    pam_permit.so
-###
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
