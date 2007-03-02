@@ -6,7 +6,7 @@
  if test "$PHP_GTK_SCINTILLA" != "no"; then
 -  for x in /usr /usr/local; do
 -	  if test -f $x/include/gtkscintilla.h; then
-+  for x in /usr/include /usr/local/include /usr/X11R6/include/scintilla; do
++  for x in /usr/include /usr/local/include /usr/local/include/scintilla /usr/X11R6/include/scintilla; do
 +	  if test -f $x/gtkscintilla.h; then
  		  SCINTILLA_DIR=$x
 -		  SCINTILLA_INCDIR=$x/include

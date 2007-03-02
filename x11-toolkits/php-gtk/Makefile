@@ -7,7 +7,7 @@
 
 PORTNAME=	php-gtk
 PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://gtk.php.net/distributions/ \
 		http://document-root.de/mirror/php-gtk/
@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=	--disable-libglade
 .endif
 
 .if !defined(WITHOUT_SCINTILLA)
-BUILD_DEPENDS+=	${X11BASE}/include/scintilla/gtkscintilla.h:${PORTSDIR}/x11-toolkits/gtkscintilla
+BUILD_DEPENDS+=	${LOCALBASE}/include/scintilla/gtkscintilla.h:${PORTSDIR}/x11-toolkits/gtkscintilla
 LIB_DEPENDS+=	gtkscintilla.0:${PORTSDIR}/x11-toolkits/gtkscintilla
 ENVSCE+=	-DHAVE_SCINTILLA=1 # -DPHP_GTK_COMPILE_DL_SCINTILLA=1
 CONFIGURE_ARGS+=	--enable-scintilla
@@ -68,7 +68,7 @@ PLIST_SUB+=	GDKPIXBUF="@comment "
 .if !defined(WITHOUT_GTKHTML)
 USE_GNOME+=	gtkhtml
 CONFIGURE_ARGS+=	--enable-gtkhtml
-ENVSCE+=	-DHAVE_HTML=1 -I${X11BASE}/include/gal-1.0 # -DPHP_GTK_COMPILE_DL_GTKHTML=1 -DGTKHTML_HAVE_GCONF=1 -I${X11BASE}/include/gal-1.0
+ENVSCE+=	-DHAVE_HTML=1 -I${LOCALBASE}/include/gal-1.0 # -DPHP_GTK_COMPILE_DL_GTKHTML=1 -DGTKHTML_HAVE_GCONF=1 -I${X11BASE}/include/gal-1.0
 PLIST_SUB+=	GTKHTML=""
 .else
 PLIST_SUB+=	GTKHTML="@comment "
