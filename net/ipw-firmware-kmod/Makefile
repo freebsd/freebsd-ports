@@ -34,9 +34,16 @@ CFLAGS+=	-D_KERNEL
 NO_PACKAGE=	"this is a modified version of a restricted firmware"
 
 MIN6OSVERSION?=	999999
+MAX6OSVERSION=	999999
 MIN7OSVERSION?=	700015
+MAX7OSVERSION=	700032
 
 .include <bsd.port.pre.mk>
+
+.if ( ${OSVERSION} >= ${MAX7OSVERSION} || \
+	( ${OSVERSION} < 700000 && ${OSVERSION} >= ${MAX6OSVERSION} ) )
+IGNORE=		is already included in base system
+.endif
 
 .if !( ${OSVERSION} > ${MIN7OSVERSION} || \
 	( ${OSVERSION} < 700000 && ${OSVERSION} >= ${MIN6OSVERSION} ) )
