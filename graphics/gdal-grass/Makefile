@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.gdal.org/dl/ \
 		ftp://ftp.remotesensing.org/gdal/ \
 		http://gdal.maptools.org/dl/
 
-MAINTAINER=	lrntct@gmail.org
+MAINTAINER=	lrntct@gmail.com
 COMMENT=	GDAL drivers for GRASS raster and vector files
 
 LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal
