@@ -3,6 +3,10 @@ overlay	chrome://navigator/content/navigator.xul	chrome://stumbleupon/content/st
 overlay	chrome://browser/content/browser.xul	chrome://stumbleupon/content/stumbleuponOverlay.xul
 content	stumbleupon	jar:chrome/stumbleupon.jar!/content/
 
+skin	stumbleupon	classic/1.0	jar:chrome/stumbleupon.jar!/content/skin/
+style	chrome://browser/content/browser.xul	chrome://stumbleupon/skin/stumbleuponOverlay.css
+style	chrome://global/content/customizeToolbar.xul	chrome://stumbleupon/skin/stumbleuponOverlay.css
+
 locale	stumbleupon	en-US	jar:chrome/stumbleupon.jar!/locale/en-US/
 
 locale	stumbleupon	fr-FR	jar:chrome/stumbleupon.jar!/locale/fr-FR/
