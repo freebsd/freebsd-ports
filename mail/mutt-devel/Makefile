@@ -206,11 +206,6 @@ IGNORE=	cannot install: the WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_NNTP are not c
 IGNORE=	cannot install: the WITH_MUTT_ASSUMED_CHARSET_PATCH and WITH_MUTT_NNTP are not compatible
 .endif
 .endif
-.if defined(WITH_MUTT_GREETING_PATCH)
-.if defined(WITH_MUTT_NNTP)
-IGNORE=	cannot install: the WITH_MUTT_GREETING_PATCH and WITH_MUTT_NNTP are not compatible
-.endif
-.endif
 
 .if defined (MUTT_LITE)
 WITHOUT_MUTT_XML=			yes
