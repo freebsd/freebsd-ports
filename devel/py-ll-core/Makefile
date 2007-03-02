@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ll-core
-PORTVERSION=	1.7.2
+PORTVERSION=	1.7.3
 CATEGORIES=	devel python
 MASTER_SITES=	http://ftp.livinglogic.de/core/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	quakelee@cn.freebsd.org
 COMMENT=	Utility functions and classes used by the other LivingLogic packages
 
 USE_PYTHON=	2.4+
