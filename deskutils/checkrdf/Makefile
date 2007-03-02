@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	checkrdf
-PORTVERSION=	39.125
-PORTREVISION=	1
+PORTVERSION=	39.4444
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	checkrdf
@@ -22,6 +21,9 @@ MAKE_ENV=	PREFIX=${PREFIX}
 
 MAN1=		checkrdf.1
 MANCOMPRESSED=	yes
+
+PLIST_FILES=	bin/checkrdf bin/checkrdf.bin etc/checkrdf.rc
+PORTDOCS=	README NEWS blog.news.css bluegreek.css myrdf.css
 
 .if defined(NOPORTDOCS)
 INSTALL_TARGET=install-bin install-rc install-man
