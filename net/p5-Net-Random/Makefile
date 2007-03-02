@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Random
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -21,10 +21,4 @@ PERL_CONFIGURE=	YES
 
 MAN3=		Net::Random.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
