@@ -1,16 +1,70 @@
+@comment === EXECUTABLE ===
 bin/quetoo
+@comment === GAME FILES ===
 %%GAME%%%%LIBDIR%%/baseq2/game.so
 %%CTF%%%%LIBDIR%%/ctf/game.so
 %%QMASS%%%%LIBDIR%%/qmass/game.so
-%%LIBDIR%%/vid_glsdl.so
-%%LIBDIR%%/vid_glx.so
-%%LIBDIR%%/vid_softsdl.so
-%%LIBDIR%%/vid_softx.so
-%%LIBDIR%%/snd_sdl.so
+%%QMASS%%%%DATADIR%%/qmass/sound/qmass.wav
+%%VANCTF%%%%LIBDIR%%/vanctf/game.so
+%%VANCTF%%%%DATADIR%%/vanctf/maps/base1.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/base2.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/base3.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/biggun.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/boss1.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/boss2.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/bunk1.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/city1.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/city2.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/command.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/cool1.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/fact1.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/fact2.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/fact3.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/jail1.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/jail2.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/jail3.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/jail4.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/jail5.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/mine1.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/mine2.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/mine3.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/mine4.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/mintro.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/power1.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/power2.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/q2dm1.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/q2dm2.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/q2dm3.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/q2dm4.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/q2dm5.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/q2dm6.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/q2dm7.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/q2dm8.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/security.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/strike.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/train.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/ware1.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/ware2.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/waste1.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/waste2.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps/waste3.ent
+%%VANCTF%%%%DATADIR%%/vanctf/maps.lst
+@comment === DOCUMENTATION ===
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%QMASS%%%%PORTDOCS%%%%DOCSDIR%%/qmass-README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%QMASS%%%%PORTDOCS%%%%DOCSDIR%%/qmass/README
+%%VANCTF%%%%PORTDOCS%%%%DOCSDIR%%/vanctf/NOTES
+%%VANCTF%%%%PORTDOCS%%%%DOCSDIR%%/vanctf/README
+@comment === CLEANUP ===
 %%GAME%%@dirrm %%LIBDIR%%/baseq2
 %%CTF%%@dirrm %%LIBDIR%%/ctf
 %%QMASS%%@dirrm %%LIBDIR%%/qmass
-@dirrm %%LIBDIR%%
+%%QMASS%%@dirrm %%DATADIR%%/qmass/sound
+%%QMASS%%@dirrm %%DATADIR%%/qmass
+%%VANCTF%%@dirrm %%LIBDIR%%/vanctf
+%%VANCTF%%@dirrm %%DATADIR%%/vanctf/maps
+%%VANCTF%%@dirrm %%DATADIR%%/vanctf
+%%QMASS%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/qmass
+%%VANCTF%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/vanctf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%LIBDIR%%
+@dirrmtry %%DATADIR%%
