@@ -1,0 +1,52 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SIP/.packlist
+%%SITE_PERL%%/Net/SIP.pm
+%%SITE_PERL%%/Net/SIP.pod
+%%SITE_PERL%%/Net/SIP/Debug.pm
+%%SITE_PERL%%/Net/SIP/Debug.pod
+%%SITE_PERL%%/Net/SIP/Dispatcher.pm
+%%SITE_PERL%%/Net/SIP/Dispatcher.pod
+%%SITE_PERL%%/Net/SIP/Dispatcher/Eventloop.pm
+%%SITE_PERL%%/Net/SIP/Dispatcher/Eventloop.pod
+%%SITE_PERL%%/Net/SIP/Endpoint.pm
+%%SITE_PERL%%/Net/SIP/Endpoint.pod
+%%SITE_PERL%%/Net/SIP/Endpoint/Context.pm
+%%SITE_PERL%%/Net/SIP/Endpoint/Context.pod
+%%SITE_PERL%%/Net/SIP/Leg.pm
+%%SITE_PERL%%/Net/SIP/Leg.pod
+%%SITE_PERL%%/Net/SIP/NATHelper/Base.pm
+%%SITE_PERL%%/Net/SIP/NATHelper/Base.pod
+%%SITE_PERL%%/Net/SIP/NATHelper/Client.pm
+%%SITE_PERL%%/Net/SIP/NATHelper/Client.pod
+%%SITE_PERL%%/Net/SIP/NATHelper/Local.pm
+%%SITE_PERL%%/Net/SIP/NATHelper/Local.pod
+%%SITE_PERL%%/Net/SIP/NATHelper/Server.pm
+%%SITE_PERL%%/Net/SIP/NATHelper/Server.pod
+%%SITE_PERL%%/Net/SIP/Packet.pm
+%%SITE_PERL%%/Net/SIP/Packet.pod
+%%SITE_PERL%%/Net/SIP/Registrar.pm
+%%SITE_PERL%%/Net/SIP/Registrar.pod
+%%SITE_PERL%%/Net/SIP/Request.pm
+%%SITE_PERL%%/Net/SIP/Request.pod
+%%SITE_PERL%%/Net/SIP/Response.pm
+%%SITE_PERL%%/Net/SIP/Response.pod
+%%SITE_PERL%%/Net/SIP/SDP.pm
+%%SITE_PERL%%/Net/SIP/SDP.pod
+%%SITE_PERL%%/Net/SIP/Simple.pm
+%%SITE_PERL%%/Net/SIP/Simple.pod
+%%SITE_PERL%%/Net/SIP/Simple/Call.pm
+%%SITE_PERL%%/Net/SIP/Simple/Call.pod
+%%SITE_PERL%%/Net/SIP/Simple/RTP.pm
+%%SITE_PERL%%/Net/SIP/Simple/RTP.pod
+%%SITE_PERL%%/Net/SIP/StatelessProxy.pm
+%%SITE_PERL%%/Net/SIP/StatelessProxy.pod
+%%SITE_PERL%%/Net/SIP/Util.pm
+%%SITE_PERL%%/Net/SIP/Util.pod
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SIP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrm %%SITE_PERL%%/Net/SIP/Dispatcher
+@dirrm %%SITE_PERL%%/Net/SIP/Endpoint
+@dirrm %%SITE_PERL%%/Net/SIP/NATHelper
+@dirrm %%SITE_PERL%%/Net/SIP/Simple
+@dirrmtry %%SITE_PERL%%/Net/SIP
+@dirrmtry %%SITE_PERL%%/Net
