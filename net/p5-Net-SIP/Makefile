@@ -31,4 +31,10 @@ MAN3=		Net::SIP.3 Net::SIP::Debug.3 \
 		Net::SIP::Simple::RTP.3 Net::SIP::StatelessProxy.3 \
 		Net::SIP::Util.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500801
+IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
+.endif
+
+.include <bsd.port.post.mk>
