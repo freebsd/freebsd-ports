@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	POE-Component-Generic
-PORTVERSION=	0.09.10
+PORTVERSION=	0.09.11
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
-MAINTAINER=	tjs@cdpa.nsysu.edu.tw
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides non-blocking access to a blocking object
 
 RUN_DEPENDS=	p5-POE>=0.31:${PORTSDIR}/devel/p5-POE \
-		${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump
-BUILD_DEPENDS=	${RUN_DEPENDS}
+		${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump \
+		${SITE_PERL}/${PERL_ARCH}/Net/SSH2.pm:${PORTSDIR}/net/p5-Net-SSH2
 
 PERL_CONFIGURE=	yes
 
-MAN3=	POE::Component::Generic.3 \
+MAN3=		POE::Component::Generic.3 \
 		POE::Component::Generic::Child.3 \
 		POE::Component::Generic::Net::SSH2.3 \
 		POE::Component::Generic::Object.3
