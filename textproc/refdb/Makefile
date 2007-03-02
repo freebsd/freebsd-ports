@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	refdb
-PORTVERSION=	0.9.6
-PORTREVISION=	2
+PORTVERSION=	0.9.8
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
-MAINTAINER=	paulh@logicsquad.net
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Bibliographic reference database
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
@@ -28,6 +28,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--with-expat-lib=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-classpath-root=${PREFIX}/share/java/classes
 CONFIGURE_ARGS+=	--with-refdb-url=http://localhost/refdb
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}-1
 
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 
@@ -36,12 +37,13 @@ OPTIONS=	MYSQL	"Use MySQL" on \
 		SQLITE	"Use SQLite" off \
 		CATALOG	"Install SGML catalog" off
 
-MAN1=	bib2ris.1 db2ris.1 eenc.1 en2ris.1 marc2ris.1 med2ris.1 \
-	refdb-backup.1 refdb-ms.1 refdb-restore.1 refdba.1 \
+MAN1=	bib2ris.1 bib2ris-utf8.1 db2ris.1 eenc.1 en2ris.1 marc2ris.1 med2ris.1 \
+	refdb-backup.1 refdb-bug.1 refdb-ms.1 refdb-restore.1 \
+	refdb_dos2unix.1 refdb_latex2utf8txt.1 refdba.1 \
 	refdbc.1 refdbctl.1 refdbd.1 refdbib.1 refdbjade.1 \
 	refdbnd.1 refdbxml.1 refdbxp.1 runbib.1
-MAN7=	RefDB.7
-MAN8=	refdb.8 refdb.sh.8
+#MAN7=	RefDB.7
+MAN8=	refdb.8 refdb.sh.8 refdb-init.8
 
 .include <bsd.port.pre.mk>
 
@@ -70,7 +72,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers
 CONFIGURE_ARGS+=	--with-db-server=pgsql
 
 .elif defined(WITH_SQLITE)
-LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite2
+LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 # If libdbi-drivers has been built without SQLite driver, abort
 .if exists(${LOCALBASE}/lib/dbd) && !exists(${LOCALBASE}/lib/dbd/libsqlite.so)
 IGNORE=		rebuild databases/libdbi-drivers with SQLite support
