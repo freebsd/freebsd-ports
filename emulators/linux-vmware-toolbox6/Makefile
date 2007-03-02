@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	VMwareTools-${VMWARE_VER}-${BUILD_VER}
 
 MAINTAINER=	matusita@FreeBSD.org
-COMMENT=VMware toolbox for guest OS (VMware Workstation 5.x, Linux version)
+COMMENT=VMware toolbox for guest OS (VMware Workstation 6.x, Linux version)
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
@@ -34,8 +34,8 @@ IS_INTERACTIVE=	yes
 RESTRICTED=	"Not sure if we can redistribute this."
 NO_PACKAGE=	${RESTRICTED}
 
-VMWARE_VER=	5.5.1
-BUILD_VER=	19175
+VMWARE_VER=	6.0.0
+BUILD_VER=	39849
 
 .include <bsd.port.pre.mk>
 
