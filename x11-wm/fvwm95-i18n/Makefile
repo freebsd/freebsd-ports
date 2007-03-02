@@ -25,7 +25,7 @@ COMMENT=	Win95 lookalike fvwm2 window manager with an I18N patch
 LIB_DEPENDS=	rplay.1:${PORTSDIR}/audio/rplay
 RUN_DEPENDS=	${X11BASE}/icons/chuck.xpm:${PORTSDIR}/x11/fbsd-icons
 
-EXTRACT_ONLY=	${DISTNAME}.tgz ${PKGNAME}-portKit-19981123.tgz
+EXTRACT_ONLY=	${DISTNAME}.tgz ${PORTNAME}-${PORTVERSION}-portKit-19981123.tgz
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
@@ -40,7 +40,7 @@ MAN1=	fvwm95.1 xpmroot.1 FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 \
 	FvwmWinList.1
 
 EXAMPLESDIR=	${PREFIX}/share/examples/fvwm95
-KITDIR=		${WRKDIR}/${PKGNAME}-portKit
+KITDIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-portKit
 
 OPTIONS=	APM "Build APM support (i386 only)" off
 
