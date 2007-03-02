@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	Digest
 PKGNAMEPREFIX=	p5-
 DISTNAME=	SHA256-${PORTVERSION}
 
-MAINTAINER=	apeiron+ports@coitusmentis.info
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 interface to the SHA256 algorithm
 
 WRKSRC=		${WRKDIR}/SHA256-0.01
