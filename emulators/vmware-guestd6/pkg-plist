@@ -1,10 +1,10 @@
 @stopdaemon vmware-guestd
 sbin/vmware-checkvm
 sbin/vmware-guestd
-%%VMWARE_VMMEMCTL:%%lib/vmware-tools/modules/vmmemctl.ko
-%%VMWARE_VMXNET:%%lib/vmware-tools/modules/vmxnet.ko
-%%VMWARE_KMODDIR:%%@dirrmtry lib/vmware-tools/modules
-%%VMWARE_KMODDIR:%%@dirrmtry lib/vmware-tools
+%%VMWARE_VMMEMCTL%%lib/vmware-tools/modules/vmmemctl.ko
+%%VMWARE_VMXNET%%lib/vmware-tools/modules/vmxnet.ko
+%%VMWARE_KMODDIR%%@dirrmtry lib/vmware-tools/modules
+%%VMWARE_KMODDIR%%@dirrmtry lib/vmware-tools
 share/vmware-tools/poweroff-vm-default
 share/vmware-tools/poweron-vm-default
 share/vmware-tools/resume-vm-default

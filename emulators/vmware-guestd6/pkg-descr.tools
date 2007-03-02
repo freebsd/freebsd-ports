@@ -8,7 +8,7 @@ since it requires to modify /etc files.
 
 This ports will install vmware-toolbox to your computer.  You may use 'vmware'
 driver for X server.  Vmware-guestd is installed as a separate port,
-ports/emulators/vmware-guestd4, but this port install guestd automatically.
+ports/emulators/vmware-guestd6, but this port install guestd automatically.
 
 This port assumes that a) users want only "must-have" binaries and
 b) guest OS runs on a certain architecture and never be changed.  For

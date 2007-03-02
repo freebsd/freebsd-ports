@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	vmware
-PORTREVISION?=	2
+#PORTREVISION?=	0
 MASTER_SITES=	# bundled with VMware Workstation
 PKGNAMESUFFIX?=	-tools
 
-COMMENT=VMware Tools for guest OS (VMware Workstation 5.x, FreeBSD version)
+COMMENT=VMware Tools for guest OS (VMware Workstation 6.x, FreeBSD version)
 
-MASTERDIR=	${.CURDIR}/../vmware-guestd5
+MASTERDIR=	${.CURDIR}/../vmware-guestd6
 DESCR=		${PKGDIR}/pkg-descr.tools
 PLIST=		${PKGDIR}/pkg-plist.tools
 

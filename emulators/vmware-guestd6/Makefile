@@ -7,14 +7,14 @@
 
 PORTNAME=	vmware
 PORTVERSION=	${VMWARE_VER}.${BUILD_VER}
-PORTREVISION?=	2
+#PORTREVISION?=	0
 CATEGORIES=	emulators
 MASTER_SITES=	# bundled with VMware Workstation
 PKGNAMESUFFIX?=	-guestd
 DISTNAME=	vmware-freebsd-tools
 
 MAINTAINER=	matusita@FreeBSD.org
-COMMENT?=VMware guest OS supporting daemon (VMware Workstation 5.x, FreeBSD version)
+COMMENT?=VMware guest OS supporting daemon (VMware Workstation 6.x, FreeBSD version)
 
 .if defined(VMWARE_X_PORTS)
 RUN_DEPENDS=	${LOCALBASE}/sbin/vmware-guestd:${PORTSDIR}/emulators/vmware-guestd5
@@ -32,14 +32,12 @@ IS_INTERACTIVE=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 .if defined(WITH_VMWARE_GTK)
-PLIST_SUB+=	INSTALLXGTKTOOL:=""
+PLIST_SUB+=	INSTALLXGTKTOOL=""
 USE_ICONV=	yes
 USE_GETTEXT=	yes
-USE_XLIB=	yes
 USE_GNOME=	glib12 gtk12
-LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
 .else
-PLIST_SUB+=	INSTALLXGTKTOOL:="@comment "
+PLIST_SUB+=	INSTALLXGTKTOOL="@comment "
 .endif
 .else
 USE_RC_SUBR=	vmware-guestd.sh
@@ -48,10 +46,15 @@ USE_RC_SUBR=	vmware-guestd.sh
 RESTRICTED=	"Not sure if we can redistribute this."
 NO_PACKAGE=	${RESTRICTED}
 
-VMWARE_VER=	5.5.1
-BUILD_VER=	19175
+VMWARE_VER=	6.0.0
+BUILD_VER=	39849
 
 .include <bsd.port.pre.mk>
+
+.if (${OSVERSION} >= 700000) && (!exists(/lib/libc.so.6))
+IGNORE= requires libc.so.6
+#LIB_DEPENDS+=	c.6:${PORTSDIR}/misc/compat6x
+.endif
 
 .if ${OSVERSION} < 500000
 MOUNT_DEV?=	/dev/acd0c
@@ -67,13 +70,18 @@ BITS?=		32
 .else # ${ARCH} == amd64
 BITS?=		64
 .endif
+.if ${OSVERSION} < 600000
+OSSFX?=
+.else # ${OSVERSION >= 600000
+OSSFX?=		-6
+.endif
 
 .if defined(VMWARE_X_PORTS)
 
 .if ${X_WINDOW_SYSTEM:L} == xfree86-4
-PLIST_SUB+=	INSTALLXSERVER4:=""
+PLIST_SUB+=	INSTALLXSERVER4=""
 .else
-PLIST_SUB+=	INSTALLXSERVER4:="@comment "
+PLIST_SUB+=	INSTALLXSERVER4="@comment "
 .endif
 
 .else
@@ -88,35 +96,48 @@ WITH_VMWARE_VMXNET=YES
 .endif
 
 .if defined(WITH_VMWARE_VMMEMCTL)
-PLIST_SUB+=	VMWARE_VMMEMCTL:=""
+PLIST_SUB+=	VMWARE_VMMEMCTL=""
 .else
-PLIST_SUB+=	VMWARE_VMMEMCTL:="@comment "
+PLIST_SUB+=	VMWARE_VMMEMCTL="@comment "
 .endif
 
 .if defined(WITH_VMWARE_VMXNET)
-.if (${OSVERSION} >= 480000) && (${OSVERSION} < 500000) && (${BITS} == 32)
-PLIST_SUB+=	VMWARE_VMXNET:=""
+.if (${OSVERSION} >= 300000) && (${OSVERSION} < 400000) && (${BITS} == 32)
+PLIST_SUB+=	VMWARE_VMXNET=""
+VMWARE_VMXNET_PATH=	3.2/vmxnet.ko
+.elif (${OSVERSION} >= 400000) && (${OSVERSION} < 480000) && (${BITS} == 32)
+PLIST_SUB+=	VMWARE_VMXNET=""
+VMWARE_VMXNET_PATH=	4.0/vmxnet.ko
+.elif (${OSVERSION} >= 480000) && (${OSVERSION} < 500000) && (${BITS} == 32)
+PLIST_SUB+=	VMWARE_VMXNET=""
 VMWARE_VMXNET_PATH=	4.9/vmxnet.ko
 .elif (${OSVERSION} >= 500000) && (${OSVERSION} < 600000)
-PLIST_SUB+=	VMWARE_VMXNET:=""
+PLIST_SUB+=	VMWARE_VMXNET=""
 .if ${BITS} == 32
 VMWARE_VMXNET_PATH=	5.3-i386/vmxnet.ko
 .else
 VMWARE_VMXNET_PATH=	5.3-amd64/vmxnet.ko
 .endif
+.elif (${OSVERSION} >= 600000) && (${OSVERSION} < 700000)
+PLIST_SUB+=	VMWARE_VMXNET=""
+.if ${BITS} == 32
+VMWARE_VMXNET_PATH=	6.0-i386/vmxnet.ko
+.else
+VMWARE_VMXNET_PATH=	6.0-amd64/vmxnet.ko
+.endif
 .else
 # VMware doesn't provide vmxnet.ko for other versions
 .undef WITH_VMWARE_VMXNET
-PLIST_SUB+=	VMWARE_VMXNET:="@comment "
+PLIST_SUB+=	VMWARE_VMXNET="@comment "
 .endif
 .else
-PLIST_SUB+=	VMWARE_VMXNET:="@comment "
+PLIST_SUB+=	VMWARE_VMXNET="@comment "
 .endif
 
 .if defined(WITH_VMWARE_VMMEMCTL) || defined(WITH_VMWARE_VMXNET)
-PLIST_SUB+=	VMWARE_KMODDIR:=""
+PLIST_SUB+=	VMWARE_KMODDIR=""
 .else
-PLIST_SUB+=	VMWARE_KMODDIR:="@comment "
+PLIST_SUB+=	VMWARE_KMODDIR="@comment "
 .endif
 
 .endif
@@ -158,19 +179,19 @@ post-extract:
 .if defined(VMWARE_X_PORTS)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/bin${BITS}/vmware-toolbox-tcl ${X11BASE}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/bin${BITS}${OSSFX}/vmware-toolbox-tcl ${X11BASE}/bin
 	${LN} -sfh vmware-toolbox-tcl ${X11BASE}/bin/vmware-toolbox
 .if defined(WITH_VMWARE_GTK)
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/bin${BITS}/vmware-toolbox-gtk ${X11BASE}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/bin${BITS}${OSSFX}/vmware-toolbox-gtk ${X11BASE}/bin
 .endif
 	if [ ! -d ${X11BASE}/lib/modules/input ] ; then \
 		${MKDIR} ${X11BASE}/lib/modules/input ; \
 	fi
-.if ${X_WINDOW_SYSTEM:L} == xfree86-4
-	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/XF86Config-4 ${X11BASE}/etc/XF86Config-4_VMware
 	if [ ! -d ${X11BASE}/lib/modules/drivers ] ; then \
 		${MKDIR} ${X11BASE}/lib/modules/drivers ; \
 	fi
+.if ${X_WINDOW_SYSTEM:L} == xfree86-4
+	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/XF86Config-4 ${X11BASE}/etc/XF86Config-4_VMware
 .if ${BITS} == 32
 	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/4.3.x/vmware_drv.o ${X11BASE}/lib/modules/drivers/vmware_drv.o_VMware
 	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/4.2.x/vmmouse_drv.o ${X11BASE}/lib/modules/input/vmmouse_drv.o_VMware
@@ -180,18 +201,20 @@ do-install:
 .endif
 .else
 .if ${BITS} == 32
+	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XOrg/6.8.x/vmware_drv.o ${X11BASE}/lib/modules/drivers/vmware_drv.o_VMware
 	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XOrg/6.8.x/vmmouse_drv.o ${X11BASE}/lib/modules/input/vmmouse_drv.o_VMware
 .else
+	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XOrg/6.8.x_64/vmware_drv.o ${X11BASE}/lib/modules/drivers/vmware_drv.o_VMware
 	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XOrg/6.8.x_64/vmmouse_drv.o ${X11BASE}/lib/modules/input/vmmouse_drv.o_VMware
 .endif
 .endif
-	-${WRKSRC}/lib/sbin${BITS}/vmware-guestd --cmd toolinstall.end
+	-${WRKSRC}/lib/sbin${BITS}${OSSFX}/vmware-guestd --cmd toolinstall.end 2>&1
 
 .else
 
 post-patch:
 	LC_CTYPE=C ${REINPLACE_CMD} "`${PRINTF} 's|\0152\013\0350|\0152\\\n\0350|g'`" \
-		${WRKSRC}/lib/sbin${BITS}/vmware-checkvm
+		${WRKSRC}/lib/sbin${BITS}${OSSFX}/vmware-checkvm
 
 do-build:
 .if defined(WITH_VMWARE_VMMEMCTL)
@@ -203,8 +226,8 @@ do-install:
 		${ECHO_CMD} "Remove old ${PREFIX}/etc/rc.d/${USE_RC_SUBR} before install."; \
 		exit 1; \
 	fi
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/sbin${BITS}/vmware-guestd ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/sbin${BITS}/vmware-checkvm ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/sbin${BITS}${OSSFX}/vmware-guestd ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/sbin${BITS}${OSSFX}/vmware-checkvm ${PREFIX}/sbin
 .if defined(WITH_VMWARE_VMMEMCTL)
 	${MKDIR} ${VMWARE_KMODDIR}
 	${INSTALL_PROGRAM} ${WRKDIR}/vmmemctl-only/vmmemctl.ko ${VMWARE_KMODDIR}
@@ -213,7 +236,7 @@ do-install:
 	${MKDIR} ${VMWARE_KMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/modules/binary/FreeBSD${VMWARE_VMXNET_PATH} ${VMWARE_KMODDIR}
 .endif
-	-${WRKSRC}/lib/sbin${BITS}/vmware-guestd --cmd toolinstall.end
+	-${WRKSRC}/lib/sbin${BITS}${OSSFX}/vmware-guestd --cmd toolinstall.end 2>&1
 	${MKDIR} ${PREFIX}/share/vmware-tools
 	${LN} -sfh /usr/bin/true ${PREFIX}/share/vmware-tools/poweroff-vm-default
 	${LN} -sfh /usr/bin/true ${PREFIX}/share/vmware-tools/poweron-vm-default
