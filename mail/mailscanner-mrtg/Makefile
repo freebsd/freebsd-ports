@@ -7,6 +7,7 @@
 
 PORTNAME=	mailscanner-mrtg
 PORTVERSION=	0.11.00
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mailscannermrtg
@@ -48,7 +49,7 @@ do-build:
 
 	${PERL} -pi -e \
 	's,/usr/lib/MailScanner-MRTG,${PREFIX}/lib/MailScanner-MRTG,g; \
-	s,/etc/MailScanner/mailscanner-mrtg.conf,${PREFIX}/etc/mailscanner-mrtg/mailscanner-mrtg.conf,g;' \
+	s,/etc/MailScanner/mailscanner-mrtg.(conf|thresholds),${PREFIX}/etc/mailscanner-mrtg/mailscanner-mrtg.$$1,g;' \
 	${WRKSRC}/mailscanner-mrtg
 
 do-install:
