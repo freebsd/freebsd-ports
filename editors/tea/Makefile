@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tea
-DISTVERSION=	15.0.1
+DISTVERSION=	16.0.4
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tea-editor
@@ -42,7 +42,7 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e 's|/tea/doc/|/doc/tea/|' \
 		${WRKSRC}/src/tea_defs.h
 	# Fix FINK-related defines
-	${REINPLACE_CMD} -e '5212d; 5215,5218d' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e '5215d; 5218,5221d' ${WRKSRC}/configure
 	# Do not install yet another copy of GPL
 	${REINPLACE_CMD} -e '627d' ${WRKSRC}/Makefile.in
 
