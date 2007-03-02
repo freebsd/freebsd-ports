@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gsculpt
-PORTVERSION=	0.99.38.2
+PORTVERSION=	0.99.39
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,11 +20,13 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/gtkgl/__init__.py:${PORTSDIR}/x11-
 		${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
 
 SUB_FILES=	SConstruct-install
-SUB_LIST=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} \
+SUB_LIST=	PYTHONPREFIX_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR} \
 		WRKSRC=${WRKSRC}
 
 WRKSRC=		${WRKDIR}/gSculpt-${PORTVERSION}-alpha
+USE_DOS2UNIX=	SConstruct
 USE_SCONS=	yes
+SCONS_BUILDENV=	${SCONS_ENV}
 USE_PYTHON=	2.4
 USE_XLIB=	yes
 USE_GNOME=	pygtk2
@@ -33,14 +35,12 @@ USE_LDCONFIG=	${PREFIX}/lib/gSculpt
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/include/python2.4|/usr/local/include/python2.4| ; \
-		s|standardIncPaths = \[\]|standardIncPaths = \['${PREFIX}/include','${X11BASE}/include'\]| ; \
-		s|standardLibPaths = \[\]|standardLibPaths = \['${PREFIX}/lib','${X11BASE}/lib'\]| "\
-			${WRKSRC}/SConstruct
-	@${REINPLACE_CMD} -e "s|gsculpt.py|${PYTHON_SITELIBDIR}/gSculpt/gsculpt.py|" ${WRKSRC}/gsculpt
-
+	@${REINPLACE_CMD} -e "s|/usr/include/python2.4|/usr/local/include/python2.4|" \
+		${WRKSRC}/SConstruct
+	@${REINPLACE_CMD} -e "s|gsculpt.py|${PYTHONPREFIX_SITELIBDIR}/gSculpt/gsculpt.py|" \
+		${WRKSRC}/gsculpt
 do-install:
 	@cd ${WRKDIR} && \
-	${SCONS_BIN} -f SConstruct-install install
+	${SCONS_BIN} -f SConstruct-install ${PREFIX} ${PYTHONPREFIX_SITELIBDIR}
 
 .include <bsd.port.post.mk>

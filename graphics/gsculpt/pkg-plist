@@ -141,6 +141,7 @@ bin/gsculpt
 %%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshCollapseFaces.py
 %%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshDeleteFaces.py
 %%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshDissolveFaces.py
+%%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshDuplicateFaces.py
 %%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshExpandFaces.py
 %%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshExtrudeFaces.py
 %%PYTHON_SITELIBDIR%%/gSculpt/MeshTools/MeshEdit/Face/ToolMeshFlattenFaces.py
