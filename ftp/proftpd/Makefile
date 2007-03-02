@@ -133,7 +133,6 @@ LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--enable-nls
 USE_GETTEXT=yes
 PROFTPD_LIBS+=	-lintl -L${LOCALBASE}/lib
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-nls-Makefile.in
 .endif
 
 .if defined (WITH_CYRFIX)
@@ -225,6 +224,11 @@ CONFIGURE_ARGS+=	--with-libraries=${LIBDIRS}
 .endif
 
 MODULES!=${ECHO} ${MODULES} | ${SED} -e 's,^:,,' -e 's,:$$,,'
+
+post-patch:
+.if defined(WITH_NLS)
+	${REINPLACE_CMD} -e 's|-lsupp|-lsupp -lintl|g' ${WRKSRC}/Makefile.in
+.endif
 
 pre-configure:
 	@${ECHO_MSG} "==> Configuring with ${MODULES}"
