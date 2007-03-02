@@ -1,5 +1,5 @@
---- globals.h.orig	2006-08-11 12:07:12.000000000 +0300
-+++ globals.h	2006-12-14 12:26:14.000000000 +0200
+--- globals.h	2007-01-30 21:49:02.000000000 +0200
++++ globals.h	2007-03-01 14:14:45.000000000 +0200
 @@ -50,6 +50,7 @@
  WHERE char *FolderFormat;
  WHERE char *ForwFmt;
@@ -8,8 +8,8 @@
  WHERE char *HdrFmt;
  WHERE char *Homedir;
  WHERE char *Hostname;
---- hdrline.c.orig	2006-04-28 22:43:51.000000000 +0300
-+++ hdrline.c	2006-12-14 16:47:16.000000000 +0200
+--- hdrline.c	2006-04-29 22:10:52.000000000 +0300
++++ hdrline.c	2007-03-01 14:14:45.000000000 +0200
 @@ -730,3 +730,61 @@
  
    mutt_FormatString (dest, destlen, s, hdr_format_str, (unsigned long) &hfi, flags);
@@ -72,11 +72,11 @@
 +
 +  return(src);
 +}
---- init.h.orig	2006-08-11 12:04:04.000000000 +0300
-+++ init.h	2006-12-14 16:49:16.000000000 +0200
-@@ -710,6 +710,22 @@
-   ** a regular expression that will match the whole name so mutt will expand
-   ** "Franklin" to "Franklin, Steve".
+--- init.h	2006-11-20 19:49:08.000000000 +0200
++++ init.h	2007-03-01 14:14:45.000000000 +0200
+@@ -695,6 +695,22 @@
+   ** .pp
+   ** Defaults to the contents of the environment variable EMAIL.
    */
 +  { "greeting",		DT_STR,	 R_NONE, UL &Greeting, UL "" },
 +  /*
@@ -94,24 +94,24 @@
 +  ** .dt %v .dd first name of recipient
 +  ** .de
 +  */
-   { "hdr_format",	DT_SYN,  R_NONE, UL "index_format", 0 },
+   { "gecos_mask",	DT_RX,	 R_NONE, UL &GecosMask, UL "^[^,]*" },
    /*
-   */
---- PATCHES.orig	2006-08-11 13:55:43.000000000 +0300
-+++ PATCHES	2006-12-14 15:59:14.000000000 +0200
+   ** .pp
+--- PATCHES	2006-10-30 04:30:55.000000000 +0200
++++ PATCHES	2007-03-01 14:14:45.000000000 +0200
 @@ -0,0 +1 @@
 +vc.greeting
---- protos.h.orig	2006-07-12 02:32:28.000000000 +0300
-+++ protos.h	2006-12-14 15:43:09.000000000 +0200
-@@ -509,4 +509,5 @@
+--- protos.h	2007-01-30 21:49:03.000000000 +0200
++++ protos.h	2007-03-01 14:14:45.000000000 +0200
+@@ -504,4 +504,5 @@
  void ci_bounce_message (HEADER *, int *);
  int ci_send_message (int, HEADER *, char *, CONTEXT *, HEADER *);
  
 -
 +const char *greeting_string (char *, size_t, char, const char *, const char *,
 +		const char *, const char *, unsigned long, format_flag);
---- send.c.orig	2006-03-03 12:12:34.000000000 +0200
-+++ send.c	2006-12-14 15:57:36.000000000 +0200
+--- send.c	2006-10-03 05:48:58.000000000 +0300
++++ send.c	2007-03-01 14:14:45.000000000 +0200
 @@ -395,6 +395,18 @@
    }
  }
@@ -131,7 +131,7 @@
  void mutt_make_post_indent (CONTEXT *ctx, HEADER *cur, FILE *out)
  {
    char buffer[STRING];
-@@ -1268,6 +1280,7 @@
+@@ -1269,6 +1281,7 @@
      if (option (OPTHDRS))
        process_user_header (msg->env);
  
