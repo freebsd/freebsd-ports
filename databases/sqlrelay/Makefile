@@ -105,7 +105,7 @@ IF_ODBC=	"@comment "
 .endif
 
 .if defined(WITH_FREETDS) && ${WITH_FREETDS:L} != no
-LIB_DEPENDS+=		tds.4:${PORTSDIR}/databases/freetds
+LIB_DEPENDS+=		tds.5:${PORTSDIR}/databases/freetds
 CONFIGURE_ARGS+=	--with-freetds-prefix="${LOCALBASE}"
 IF_FREETDS=	""
 .else

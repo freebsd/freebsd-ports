@@ -6,7 +6,7 @@
 
 PORTNAME=	sybase
 PORTVERSION=	0.37
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases python
 MASTER_SITES=	http://object-craft.com.au/projects/sybase/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}-html${EXTRACT_SUFX}
 MAINTAINER=	gnb@itga.com.au
 COMMENT=	A Python Database API interface to the Sybase RDBMS
 
-LIB_DEPENDS=	tds.4:${PORTSDIR}/databases/freetds
+LIB_DEPENDS=	tds.5:${PORTSDIR}/databases/freetds
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

@@ -399,7 +399,7 @@ OPTIONS=	UTF8 "Enable UTF-8 support" off
 .endif
 
 .if ${PHP_MODNAME} == "sybase_ct"
-LIB_DEPENDS+=	ct.3:${PORTSDIR}/databases/freetds
+LIB_DEPENDS+=	ct.4:${PORTSDIR}/databases/freetds
 
 CONFIGURE_ARGS+=--with-sybase-ct=${LOCALBASE}
 .endif

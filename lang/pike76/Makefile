@@ -202,7 +202,7 @@ CONFIGURE_ARGS+=	--without-svg
 .endif
 
 .if defined(WITH_TDS)
-LIB_DEPENDS+=	ct.1:${PORTSDIR}/databases/freetds
+LIB_DEPENDS+=	ct.4:${PORTSDIR}/databases/freetds
 CONFIGURE_ARGS+=	--with-sybase
 PLIST_SUB+=	SYBASE:=""
 .else

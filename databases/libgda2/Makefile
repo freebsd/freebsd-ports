@@ -122,7 +122,7 @@ PLIST_SUB+=		FIREBIRD:="@comment "
 .endif
 
 .if !defined(WITHOUT_FREETDS) && defined(WITH_FREETDS)
-LIB_DEPENDS+=		tds.2:${PORTSDIR}/databases/freetds
+LIB_DEPENDS+=		tds.5:${PORTSDIR}/databases/freetds
 CONFIGURE_ARGS+=	--with-tds=${LOCALBASE}
 PLIST_SUB+=		FREETDS:=""
 .else
@@ -131,7 +131,7 @@ PLIST_SUB+=		FREETDS:="@comment "
 .endif
 
 .if !defined(WITHOUT_SYBASE) && defined(WITH_SYBASE)
-LIB_DEPENDS+=		sybdb.3:${PORTSDIR}/databases/freetds
+LIB_DEPENDS+=		sybdb.5:${PORTSDIR}/databases/freetds
 CONFIGURE_ARGS+=	--with-sybase=${LOCALBASE}
 PLIST_SUB+=		SYBASE:=""
 .else

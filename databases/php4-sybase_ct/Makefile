@@ -11,4 +11,6 @@ MASTERDIR=	${.CURDIR}/../../lang/php4
 
 PKGNAMESUFFIX=	-sybase_ct
 
+PORTREVISION=	2
+
 .include "${MASTERDIR}/Makefile"
