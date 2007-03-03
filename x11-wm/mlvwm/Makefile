@@ -25,10 +25,6 @@ MLVWMLIBDIR=	${PREFIX}/lib/X11/mlvwm
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 601104
-BROKEN=		Does not build on FreeBSD >= 6.x
-.endif
-
 post-extract:
 	@${TAR} -C ${WRKSRC}/pixmap -xzf ${DISTDIR}/mini-icons.tar.gz
 
