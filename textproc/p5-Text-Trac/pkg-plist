@@ -1,31 +1,35 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Trac/.packlist
 %%SITE_PERL%%/Text/Trac.pm
-%%SITE_PERL%%/Text/Trac/AutoLinkHttp.pm
 %%SITE_PERL%%/Text/Trac/BlockNode.pm
 %%SITE_PERL%%/Text/Trac/Blockquote.pm
-%%SITE_PERL%%/Text/Trac/Bold.pm
-%%SITE_PERL%%/Text/Trac/BoldItalic.pm
-%%SITE_PERL%%/Text/Trac/Br.pm
 %%SITE_PERL%%/Text/Trac/Context.pm
 %%SITE_PERL%%/Text/Trac/Dl.pm
 %%SITE_PERL%%/Text/Trac/Heading.pm
 %%SITE_PERL%%/Text/Trac/Hr.pm
 %%SITE_PERL%%/Text/Trac/InlineNode.pm
-%%SITE_PERL%%/Text/Trac/Italic.pm
-%%SITE_PERL%%/Text/Trac/Monospace.pm
+%%SITE_PERL%%/Text/Trac/LinkResolver.pm
+%%SITE_PERL%%/Text/Trac/LinkResolver/Attachment.pm
+%%SITE_PERL%%/Text/Trac/LinkResolver/Changeset.pm
+%%SITE_PERL%%/Text/Trac/LinkResolver/Log.pm
+%%SITE_PERL%%/Text/Trac/LinkResolver/Milestone.pm
+%%SITE_PERL%%/Text/Trac/LinkResolver/Report.pm
+%%SITE_PERL%%/Text/Trac/LinkResolver/Source.pm
+%%SITE_PERL%%/Text/Trac/LinkResolver/Ticket.pm
+%%SITE_PERL%%/Text/Trac/LinkResolver/Wiki.pm
+%%SITE_PERL%%/Text/Trac/Macro.pm
+%%SITE_PERL%%/Text/Trac/Macro/HelloWorld.pm
+%%SITE_PERL%%/Text/Trac/Macro/Timestamp.pm
 %%SITE_PERL%%/Text/Trac/Node.pm
 %%SITE_PERL%%/Text/Trac/Ol.pm
 %%SITE_PERL%%/Text/Trac/P.pm
 %%SITE_PERL%%/Text/Trac/Pre.pm
-%%SITE_PERL%%/Text/Trac/Strike.pm
-%%SITE_PERL%%/Text/Trac/Sub.pm
-%%SITE_PERL%%/Text/Trac/Sup.pm
 %%SITE_PERL%%/Text/Trac/Table.pm
 %%SITE_PERL%%/Text/Trac/Text.pm
 %%SITE_PERL%%/Text/Trac/Ul.pm
-%%SITE_PERL%%/Text/Trac/Underline.pm
-@dirrmtry %%SITE_PERL%%/Text/Trac
+@dirrm %%SITE_PERL%%/Text/Trac/LinkResolver
+@dirrm %%SITE_PERL%%/Text/Trac/Macro
+@dirrm %%SITE_PERL%%/Text/Trac
 @dirrmtry %%SITE_PERL%%/Text
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Trac
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Trac
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
