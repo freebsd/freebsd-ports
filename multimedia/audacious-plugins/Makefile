@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	1.2.5
-PORTREVISION=	2
+PORTVERSION=	1.3.0
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://audacious-media-player.org/release/
-EXTRACT_SUFX=.tgz
+MASTER_SITES=	http://static.audacious-media-player.org/release/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Plugins needed for audacious
@@ -20,70 +19,58 @@ LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile  \
 		curl.4:${PORTSDIR}/ftp/curl \
 		tag.5:${PORTSDIR}/audio/taglib
 
-USE_GNOME=	gtk20 libglade2
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CFLAGS="-I${LOCALBASE}/include"
-CONFIGURE_ARGS=	--disable-jack --disable-adplug --disable-lirc \
-		--disable-alsa --disable-amidiplug --disable-arts --disable-wma
+CONFIGURE_ARGS=	--disable-evdevplug --disable-alsa --disable-amidiplug \
+		--disable-pulse --disable-coreaudio --disable-projectm \
+		--disable-flac
+WANT_GNOME=	yes
+WANT_SDL=	yes
 
 PORTDOCS=	AUTHORS ChangeLog NEWS
 
-OPTIONS=	VORBIS	"Enable Ogg Vorbis input" on \
-		MODPLUG	"Enable modplug input" off \
-		FLAC	"Enable FLAC input" off \
-		SID	"Enable sid input" off \
-		MPC	"Enable mpc input" off \
-		ESOUND	"Enable Esound output"  off \
-		GNOME   "Build with gnomevfs/gconf support" off
+# no ports for:
+#		PULSE		"Enable PulseAudio output plugin"	off \
+#		COREAUDIO	"Enable CoreAudio output plugin"	off \
+#		PROJECTM	"Enable projectM vis plugin"		off \
+# to old ports:
+#		FLAC		"Enable flac input plugin"		off \
+
+OPTIONS=	ESOUND		"Enable Esound output output"		off \
+		MP3		"Enable mp3 plugin"			on  \
+		ROCKLIGHT	"Enable Rocklight vis plugin"		on  \
+		LIRC		"Enable LIRC plugin"			off \
+		STATUSICON	"Enable X11 Status Icon plugin"		on  \
+		AOSD		"Enable X11 Audacious OSD plugin"	on  \
+		ADPLUG		"Enable AdPlug plugin"			off \
+		VORBIS		"Enable Ogg Vorbis input plugin"	off \
+		WAVPACK 	"Enable WavPack input plugin"		off \
+		AAC		"Enable aac plugin"			on  \
+		SNDFILE 	"Enable sndfile extensions"		off \
+		MODPLUG 	"Enable ModPlug plugin"			off \
+		MPC		"Enable musepack input plugin"		off \
+		WMA		"Enable wma plugin"			on  \
+		JACK		"Enable jack output plugin"		off \
+		ARTS		"Enable arts output plugin"		off \
+		SID		"Enable sid input plugin"		off \
+		OSS		"Enable OSS output plugin"		on  \
+		TIMIDITY	"Enable timidity plugin"		on  \
+		MMS		"Enable mms support"			off \
+		PARANORMAL	"Enable paranormal vis plugin"		on \
+		XSPF		"Enable XSPF support"			off \
+		TTA		"Enable TrueAudio plugin"		on  \
+		LAME		"Enable liblame plugin"			off \
+		GNOME		"Build with gnomevfs/gconf support"	off \
+		NLS		"Native Language Support"		on
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_VORBIS)
-LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
-PLIST_SUB+=	VORBISPLUGIN=""
-.else
-CONFIGURE_ARGS+=	--disable-vorbis
-PLIST_SUB+=	VORBISPLUGIN="@comment "
-.endif
-
-.if !defined(WITHOUT_MODPLUG)
-PLIST_SUB+=	MODPLUG=""
-LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
-.else
-PLIST_SUB+=	MODPLUG="@comment "
-CONFIGURE_ARGS+=	--disable-modplug
-.endif
-
-.if defined(WITH_FLAC)
-PLIST_SUB+=	FLACPLUGIN=""
-LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
-.else
-PLIST_SUB+=	FLACPLUGIN="@comment "
-CONFIGURE_ARGS+=	--disable-flac
-.endif
-
-.if !defined(WITHOUT_SID)
-PLIST_SUB+=	SIDPLUGIN=""
-LIB_DEPENDS+=	sidplay.1:${PORTSDIR}/audio/libsidplay
-.else
-PLIST_SUB+=	SIDPLUGIN="@comment "
-CONFIGURE_ARGS+=	--disable-sid
-.endif
-
-.if !defined(WITHOUT_MPC)
-PLIST_SUB+=	MPCPLUGIN=""
-LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec \
-	tag.5:${PORTSDIR}/audio/taglib
-.else
-PLIST_SUB+=	MPCPLUGIN="@comment "
-CONFIGURE_ARGS+=	--disable-musepack
-.endif
-
 .if defined(WITH_ESOUND)
 USE_GNOME+=	esound
+CONFIGURE_ARGS+=--enable-esd
 PLIST_SUB+=	ESDPLUGIN=""
 .if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-esound
@@ -91,24 +78,232 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-esound
 PKGNAMESUFFIX=	-esound
 .endif
 .else
-CONFIGURE_ARGS+=	--disable-esd
+CONFIGURE_ARGS+=--disable-esd
 PLIST_SUB+=	ESDPLUGIN="@comment "
+.endif
+
+.if !defined(WITHOUT_MP3)
+LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
+CONFIGURE_ARGS+=--enable-mad
+PLIST_SUB+=	MP3PLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-mad
+PLIST_SUB+=	MP3PLUGIN="@comment "
+.endif
+
+.if !defined(WITHOUT_ROCKLIGHT)
+PLIST_SUB+=	ROCKLIGHTPLUGIN=""
+CONFIGURE_ARGS+=--enable-rocklight
+.else
+CONFIGURE_ARGS+=--disable-rocklight
+PLIST_SUB+=	ROCKLIGHTPLUGIN="@comment "
+.endif
+
+.if !defined(WITHOUT_LIRC)
+LIB_DEPENDS+=	lirc_client.1:${PORTSDIR}/comms/lirc
+CONFIGURE_ARGS+=--enable-lirc
+PLIST_SUB+=	LIRCPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-lirc
+PLIST_SUB+=	LIRCPLUGIN="@comment "
+.endif
+
+.if !defined(WITHOUT_STATUSICON)
+USE_GNOME+=	gtk20
+CONFIGURE_ARGS+=--enable-statusicon
+PLIST_SUB+=	STATUSICONPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-statusicon
+PLIST_SUB+=	STATUSICONPLUGIN="@comment "
+.endif
+
+.if !defined(WITHOUT_AOSD)
+USE_GNOME+=	pango
+CONFIGURE_ARGS+=--enable-aosd
+PLIST_SUB+=	AOSDPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-aosd
+PLIST_SUB+=	AOSDPLUGIN="@comment "
+.endif
+
+.if !defined(WITHOUT_ADPLUG)
+LIB_DEPENDS+=	binio.1:${PORTSDIR}/devel/libbinio
+CONFIGURE_ARGS+=--enable-adplug
+PLIST_SUB+=	ADPLUGPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-adplug
+PLIST_SUB+=	ADPLUGPLUGIN="@comment "
+.endif
+
+.if !defined(WITHOUT_VORBIS)
+LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+PLIST_SUB+=	VORBISPLUGIN=""
+#.if !defined(WITHOUT_FLAC)
+#LIB_DEPENDS+=   FLAC.7:${PORTSDIR}/audio/flac
+#CONFIGURE_ARGS+=--enable-flac
+#PLIST_SUB+=	FLACPLUGIN=""
+#.else
+#CONFIGURE_ARGS+=--disable-flac
+#PLIST_SUB+=	FLACPLUGIN="@comment "
+#.endif
+.else
+CONFIGURE_ARGS+=--disable-vorbis #--disable-flac
+PLIST_SUB+=	VORBISPLUGIN="@comment " #FLACPLUGIN="@comment "
+.endif
+
+.if !defined(WITHOUT_WAVPACK)
+LIB_DEPENDS+=	wavpack.1:${PORTSDIR}/audio/wavpack
+CONFIGURE_ARGS+=--enable-wavpack
+PLIST_SUB+=	WAVPACKPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-wavpack
+PLIST_SUB+=	WAVPACKPLUGIN="@comment "
+.endif
+
+.if !defined(WITHOUT_AAC)
+CONFIGURE_ARGS+=--enable-aac
+PLIST_SUB+=	AACPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-aac
+PLIST_SUB+=	AACPLUGIN="@comment "
+.endif
+
+.if !defined(WITHOUT_SNDFILE)
+LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
+CONFIGURE_ARGS+=--enable-sndfile
+PLIST_SUB+=	SNDFILEPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-sndfile
+PLIST_SUB+=	SNDFILEPLUGIN="@comment "
+.endif
+
+.if !defined(WITHOUT_MODPLUG)
+LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
+PLIST_SUB+=	MODPLUG=""
+CONFIGURE_ARGS+=--enable-modplug
+.else
+PLIST_SUB+=	MODPLUG="@comment "
+CONFIGURE_ARGS+=--disable-modplug
+.endif
+
+.if !defined(WITHOUT_MPC)
+LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec \
+		tag.5:${PORTSDIR}/audio/taglib
+PLIST_SUB+=	MPCPLUGIN=""
+CONFIGURE_ARGS+=--enable-musepack
+.else
+PLIST_SUB+=	MPCPLUGIN="@comment "
+CONFIGURE_ARGS+=--disable-musepack
+.endif
+
+.if !defined(WITHOUT_WMA)
+CONFIGURE_ARGS+=--enable-wma
+PLIST_SUB+=	WMAPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-wma
+PLIST_SUB+=	WMAPLUGIN="@comment "
+.endif
+
+.if !defined(WITHOUT_JACK)
+LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+CONFIGURE_ARGS+=--enable-jack
+PLIST_SUB+=	JACKPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-jack
+PLIST_SUB+=	JACKPLUGIN="@comment "
+.endif
+
+.if !defined(WITHOUT_ARTS)
+LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
+CONFIGURE_ARGS+=--enable-arts
+PLIST_SUB+=	ARTSPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-arts
+PLIST_SUB+=	ARTSPLUGIN="@comment "
+.endif
+
+.if !defined(WITHOUT_OSS)
+PLIST_SUB+=	OSSPLUGIN=""
+CONFIGURE_ARGS+=--enable-oss
+.else
+PLIST_SUB+=	OSSPLUGIN="@comment "
+CONFIGURE_ARGS+=--disable-oss
+.endif
+
+.if !defined(WITHOUT_SID)
+LIB_DEPENDS+=	sidplay.1:${PORTSDIR}/audio/libsidplay
+PLIST_SUB+=	SIDPLUGIN=""
+CONFIGURE_ARGS+=--enable-sid
+.else
+PLIST_SUB+=	SIDPLUGIN="@comment "
+CONFIGURE_ARGS+=--disable-sid
+.endif
+
+.if !defined(WITHOUT_TIMIDITY)
+CONFIGURE_ARGS+=--enable-timidity
+PLIST_SUB+=	TIMIDITYPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-timidity
+PLIST_SUB+=	TIMIDITYPLUGIN="@comment "
+.endif
+
+.if !defined(WITHOUT_PARANORMAL)
+CONFIGURE_ARGS+=--enable-paranormal --disable-mms
+PLIST_SUB+=	PARANORMALPLUGIN="" MMSPLUGIN="@comment "
+USE_SDL=	sdl
+.else
+CONFIGURE_ARGS+=--disable-paranormal
+PLIST_SUB+=	PARANORMALPLUGIN="@comment "
+.if !defined(WITHOUT_MMS)
+LIB_DEPENDS+=	mms.0:${PORTSDIR}/net/libmms
+CONFIGURE_ARGS+=--enable-mms
+PLIST_SUB+=	MMSPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-mms
+PLIST_SUB+=	MMSPLUGIN="@comment "
+.endif
+.endif
+
+.if !defined(WITHOUT_XSPF)
+USE_GNOME+=	libxml2
+CONFIGURE_ARGS+=--enable-xspf
+PLIST_SUB+=	XSPFPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-xspf
+PLIST_SUB+=	XSPFPLUGIN="@comment "
+.endif
+
+.if !defined(WITHOUT_TTA)
+CONFIGURE_ARGS+=--enable-tta
+PLIST_SUB+=	TTAPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-tta
+PLIST_SUB+=	TTAPLUGIN="@comment "
+.endif
+
+.if !defined(WITHOUT_LAME)
+LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/liblame
+CONFIGURE_ARGS+=--enable-lame
+PLIST_SUB+=	LAMEPLUGIN=""
+.else
+CONFIGURE_ARGS+=--disable-lame
+PLIST_SUB+=	LAMEPLUGIN="@comment "
 .endif
 
 .if defined(WITH_GNOME)
 USE_GNOME+=	gnomevfs2 gconf2
-CONFIGURE_ARGS+=	--enable-gnome-vfs --enable-gconf
+CONFIGURE_ARGS+=--enable-gnome-vfs --enable-gconf
 .endif
 
-.if ${OSVERSION} < 500000
-post-patch:
-	@${REINPLACE_CMD} -e 's|-Wno-nonnull ||g' ${WRKSRC}/src/sexypsf/Makefile
-	@${REINPLACE_CMD} -e 's|stdint\.h|inttypes\.h|g' \
-		${WRKSRC}/src/alac/plugin.c ${WRKSRC}/src/alac/alac.c \
-		${WRKSRC}/src/alac/stream.h ${WRKSRC}/src/alac/demux.c \
-		${WRKSRC}/src/alac/demux.h ${WRKSRC}/src/alac/stream.c \
-		${WRKSRC}/src/aac/mp4ff/mp4ff_int_types.h
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=--enable-nls
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
+
 
 post-install:
 .if defined(WITH_GNOME)

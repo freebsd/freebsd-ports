@@ -1,35 +1,59 @@
+%%ARTSPLUGIN%%bin/audacious-arts-helper
 lib/audacious/Container/libm3u.so
 lib/audacious/Container/libpls.so
-lib/audacious/Container/libxspf.so
+lib/audacious/Container/libstdio.so
+%%XSPFPLUGIN%%lib/audacious/Container/libxspf.so
 lib/audacious/Effect/libaudiocompress.so
 lib/audacious/Effect/libladspa.so
 lib/audacious/Effect/libecho.so
 lib/audacious/Effect/libstereo.so
 lib/audacious/Effect/libvoice_removal.so
 lib/audacious/General/libalarm.so
+%%AOSDPLUGIN%%lib/audacious/General/libaosd.so
+lib/audacious/General/libcurl.so
+%%LIRCPLUGIN%%lib/audacious/General/liblirc.so
 lib/audacious/General/libsong_change.so
 lib/audacious/General/libscrobbler.so
-lib/audacious/Input/libcuesheet.so
+lib/audacious/General/libstatusicon.so
+%%AACPLUGIN%%lib/audacious/Input/libaac.so
+%%ADPLUGPLUGIN%%lib/audacious/Input/libadplug.so
 lib/audacious/Input/libalac.so
 lib/audacious/Input/libcdaudio.so
 lib/audacious/Input/libconsole.so
-lib/audacious/Input/libmpg123.so
-lib/audacious/Input/libsexypsf.so
-lib/audacious/Input/libtonegen.so
-lib/audacious/Input/libaac.so
-lib/audacious/Input/libtimidity.so
-%%VORBISPLUGIN%%lib/audacious/Input/libvorbis.so
+lib/audacious/Input/libcuesheet.so
+@comment %%FLACPLUGIN%%lib/audacious/Input/libflac.so
+%%MP3PLUGIN%%lib/audacious/Input/libmadplug.so
+lib/audacious/Input/libmetronom.so
 %%MODPLUG%%lib/audacious/Input/libmodplug.so
-%%FLACPLUGIN%%lib/audacious/Input/libflac.so
 %%MPCPLUGIN%%lib/audacious/Input/libmpc.so
+lib/audacious/Input/libsexypsf.so
 %%SIDPLUGIN%%lib/audacious/Input/libsid.so
+%%TIMIDITYPLUGIN%%lib/audacious/Input/libtimidity.so
+lib/audacious/Input/libtonegen.so
+%%TTAPLUGIN%%lib/audacious/Input/libtta.so
+%%VORBISPLUGIN%%lib/audacious/Input/libvorbis.so
+lib/audacious/Input/libvtx.so
 lib/audacious/Input/libwav.so
-lib/audacious/Output/libOSS.so
+%%WAVPACKPLUGIN%%lib/audacious/Input/libwavpack.so
+%%WMAPLUGIN%%lib/audacious/Input/libwma.so
+%%OSSPLUGIN%%lib/audacious/Output/libOSS.so
 %%ESDPLUGIN%%lib/audacious/Output/libESD.so
+%%ARTSPLUGIN%%lib/audacious/Output/libarts.so
 lib/audacious/Output/libdisk_writer.so
+%%LAMEPLUGIN%%lib/audacious/Output/liblame.so
 lib/audacious/Output/libnull.so
 lib/audacious/Visualization/libbscope.so
+%%PARANORMALPLUGIN%%lib/audacious/Visualization/libparanormal.so
+%%ROCKLIGHTPLUGIN%%lib/audacious/Visualization/librocklight.so
+%%PARANORMALPLUGIN%%lib/audacious/Visualization/librovascope.so
 lib/audacious/Visualization/libspectrum.so
+%%NLS%%share/locale/ca/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/de/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/audacious-plugins.mo
 share/audacious/images/audioscrobbler.png
 share/audacious/images/audioscrobbler_badge.png
 @dirrm include/audacious-plugins
@@ -39,4 +63,4 @@ share/audacious/images/audioscrobbler_badge.png
 @dirrm lib/audacious/Input
 @dirrm lib/audacious/General
 @dirrm lib/audacious/Effect
-@dirrm lib/audacious
+@dirrmtry lib/audacious
