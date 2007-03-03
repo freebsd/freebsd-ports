@@ -41,10 +41,6 @@ ENABLE_IPv6=	--enable-ipv6
 EXTRA_PATCHES=	${FILESDIR}/timet.patch
 .endif
 
-.if ${ARCH} != "i386"
-BROKEN=		Does not compile on !i386
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e "s,-Werror,," ${WRKSRC}/common/configure.in \
 		${WRKSRC}/rat/configure.in

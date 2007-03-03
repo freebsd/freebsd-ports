@@ -35,10 +35,6 @@ MAN1=		BasiliskII.1
 CFLAGS+=	-fpermissive
 .endif
 
-.if ${ARCH} == amd64
-BROKEN=	does not compile on AMD64 architectures
-.endif
-
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
