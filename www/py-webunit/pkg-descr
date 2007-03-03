@@ -1,0 +1,16 @@
+Webunit is a framework for unit testing websites:
+
+Features in a nutshell:
+
+1. Browser-like page fetching including fetching the images and stylesheets
+   needed for a page and following redirects
+2. Cookies stored and trackable (all automatically handled)
+3. HTTP, HTTPS, GET, POST, basic auth all handled, control over expected status
+   codes, ...
+4. DOM parsing of pages to retrieve and analyse structure, including simple
+   form re-posting
+5. Two-line page-fetch followed by form-submit possible, with error checking
+6. Ability to register error page content across multiple tests
+7. Uses python's standard unittest module as the underlying framework
+
+WWW:	http://www.python.org/pypi/webunit
