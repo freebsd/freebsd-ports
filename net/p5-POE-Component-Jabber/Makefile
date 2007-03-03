@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	POE-Component-Jabber
-PORTVERSION=	1.21
+PORTVERSION=	2.01
 CATEGORIES=	net devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
@@ -26,13 +26,14 @@ BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
+CONFIGURE_ARGS=	</dev/null
 
-MAN3=		POE::Component::Jabber.3 \
-		POE::Component::Jabber::Client::Component.3 \
-		POE::Component::Jabber::Client::J2.3 \
-		POE::Component::Jabber::Client::Legacy.3 \
-		POE::Component::Jabber::Client::XMPP.3 \
-		POE::Component::Jabber::Error.3
+MAN3=		POE::Component::Jabber.3 POE::Component::Jabber::Error.3 \
+		POE::Component::Jabber::J14.3 POE::Component::Jabber::J2.3 \
+		POE::Component::Jabber::Legacy.3 \
+		POE::Component::Jabber::Protocol.3 \
+		POE::Component::Jabber::ProtocolFactory.3 \
+		POE::Component::Jabber::Status.3 POE::Component::Jabber::XMPP.3
 
 post-install:
 .ifndef(NOPORTDOCS)
@@ -43,8 +44,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500801 # required by vendor
-IGNORE=	requires at least Perl 5.8.1.  Please install lang/perl5.8 and try again
+.if ${PERL_LEVEL} < 500808 # required by vendor
+IGNORE=	requires at least Perl 5.8.8.  Please install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
