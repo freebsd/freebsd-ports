@@ -111,6 +111,7 @@ MAN5=	mh-alias.5 mh-draft.5 mh-format.5 mh-mail.5 mh-profile.5 \
 MLINKS=	mh-profile.5 mh_profile.5
 
 MAN8=	ap.8 conflict.8 dp.8 fmtdump.8 mh-mts.8 post.8
+CONFLICTS=	ja-mh-[0-9]*
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|autoconf|${AUTOCONF}|;\
