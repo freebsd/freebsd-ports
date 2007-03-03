@@ -12755,6 +12755,7 @@ py-zsi		ports/net/py-zsi
 py-zsi-devel	ports/net/py-zsi-devel
 py2html		ports/textproc/py2html
 py_otp_interface	ports/devel/py_otp_interface
+pybaz		ports/devel/pybaz
 pybench		ports/benchmarks/pybench
 pybliographer	ports/misc/pybliographer
 pyblosxom	ports/www/pyblosxom
