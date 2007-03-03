@@ -588,6 +588,7 @@
 %%RCUBEDIR%%/skins/default/templates/showcontact.html
 %%RCUBEDIR%%/skins/default/watermark.html
 %%RCUBEDIR%%/temp/.htaccess
+%%SPELLCHECK%%%%RCUBEDIR%%/spellchecker.php
 @dirrm %%RCUBEDIR%%/skins/default/templates
 @dirrm %%RCUBEDIR%%/skins/default/includes
 @dirrm %%RCUBEDIR%%/skins/default/images/icons
