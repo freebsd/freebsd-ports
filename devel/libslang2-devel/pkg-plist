@@ -50,6 +50,8 @@ lib/slang/v2/modules/varray-module.so
 %%DATADIR%%/print.sl
 %%DATADIR%%/profile.sl
 %%DATADIR%%/require.sl
+%%DATADIR%%/rline/complete.sl
+%%DATADIR%%/rline/slrline.rc
 %%DATADIR%%/scripts/jpegsize
 %%DATADIR%%/scripts/lsrpm
 %%DATADIR%%/scripts/sldb
@@ -58,14 +60,17 @@ lib/slang/v2/modules/varray-module.so
 %%DATADIR%%/select.sl
 %%DATADIR%%/sldb.sl
 %%DATADIR%%/sldbcore.sl
+%%DATADIR%%/sldbsock.sl
 %%DATADIR%%/slshrl.sl
 %%DATADIR%%/slsmg.sl
+%%DATADIR%%/slshhelp.sl
 %%DATADIR%%/socket.sl
 %%DATADIR%%/stkcheck.sl
 %%DATADIR%%/structfuns.sl
 %%DATADIR%%/termios.sl
 %%DATADIR%%/varray.sl
 @dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/rline
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%/cmaps
 @dirrmtry %%DATADIR%%/local-packages

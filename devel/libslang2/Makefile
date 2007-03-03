@@ -22,7 +22,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-CONFLICTS=	libslang-1.*
+CONFLICTS=	libslang-[0-9]* libslang2-devel-[0-9]*
 
 ALL_TARGET=	all elf
 INSTALL_TARGET=	install install-elf
