@@ -25,6 +25,10 @@ PLIST_FILES=	bin/ppmcaption
 BROKEN=		"Does not compile on ia64"
 .endif
 
+.if ${ARCH} == "amd64" && ${OSVERSION} < 600000
+BROKEN=		"Does not compile on amd64 5.x"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s,-lang-c89,," ${WRKSRC}/configure
 
