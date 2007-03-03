@@ -17,7 +17,6 @@ COMMENT=	A playlist for Noatun
 
 LIB_DEPENDS=	noatun:${PORTSDIR}/multimedia/kdemultimedia3
 
-USE_AUTOTOOLS=	libtool:15
 USE_KDEBASE_VER=3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

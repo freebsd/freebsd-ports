@@ -17,7 +17,6 @@ COMMENT=	Set of plugins for the libvisual framework
 
 LIB_DEPENDS=	visual.0:${PORTSDIR}/graphics/libvisual
 
-USE_AUTOTOOLS=	libtool:15
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget pkgconfig
 USE_XLIB=	yes
