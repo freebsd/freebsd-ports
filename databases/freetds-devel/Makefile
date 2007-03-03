@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	freetds
-PORTVERSION=	0.63
-PORTREVISION=	1
+PORTVERSION=	0.64
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/freetds/stable
@@ -25,8 +24,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--with-tdsver=${TDS_VER}
 INSTALLS_SHLIB=	yes
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-0.63
-MAN1=		freebcp.1 tsql.1 bsqldb.1 defncopy.1
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
+MAN1=		datacopy.1 freebcp.1 tsql.1 bsqldb.1 defncopy.1
 
 .if defined(WITH_IODBC)
 LIB_DEPENDS+=	iodbc:${PORTSDIR}/databases/libiodbc
