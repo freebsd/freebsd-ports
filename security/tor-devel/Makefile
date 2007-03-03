@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	tor
-PORTVERSION=	0.1.2.7
+PORTVERSION=	0.1.2.9
 CATEGORIES=	security net
 MASTER_SITES=	http://tor.eff.org/dist/ \
 		http://mirror.onionland.org/dist/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha
+DISTNAME=	${PORTNAME}-${PORTVERSION}-rc
 
 MAINTAINER=	peter.thoenen@yahoo.com
 COMMENT=	An anonymizing overlay network for TCP
@@ -47,12 +47,12 @@ pre-su-install:
 		${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@${MKDIR} /var/run/tor
-	@${CHOWN} _tor:_tor /var/run/tor
-	@${TOUCH} /var/log/tor
-	@${CHOWN} _tor:_tor /var/log/tor
-	@${MKDIR} /var/db/tor/data
-	@${CHOWN} _tor:_tor /var/db/tor
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} /var/run/tor
+	${CHOWN} _tor:_tor /var/run/tor
+	${TOUCH} /var/log/tor
+	${CHOWN} _tor:_tor /var/log/tor
+	${MKDIR} /var/db/tor/data
+	${CHOWN} _tor:_tor /var/db/tor
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
