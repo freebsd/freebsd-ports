@@ -1,27 +1,17 @@
 %%SITE_PERL%%/POE/Component/Jabber.pm
-%%SITE_PERL%%/POE/Component/Jabber/Client/Component.pm
-%%SITE_PERL%%/POE/Component/Jabber/Client/J2.pm
-%%SITE_PERL%%/POE/Component/Jabber/Client/Legacy.pm
-%%SITE_PERL%%/POE/Component/Jabber/Client/XMPP.pm
+%%SITE_PERL%%/POE/Component/Jabber/J14.pm
+%%SITE_PERL%%/POE/Component/Jabber/J2.pm
+%%SITE_PERL%%/POE/Component/Jabber/Legacy.pm
+%%SITE_PERL%%/POE/Component/Jabber/Protocol.pm
+%%SITE_PERL%%/POE/Component/Jabber/ProtocolFactory.pm
+%%SITE_PERL%%/POE/Component/Jabber/Status.pm
+%%SITE_PERL%%/POE/Component/Jabber/XMPP.pm
 %%SITE_PERL%%/POE/Component/Jabber/Error.pm
-%%SITE_PERL%%/POE/Component/Jabber/Server.pm
-%%SITE_PERL%%/POE/Component/Jabber/Server/InputHandler.pm
-%%SITE_PERL%%/POE/Component/Jabber/Server/PresenceManager.pm
-%%SITE_PERL%%/POE/Component/Jabber/Server/RosterTable.pm
-%%SITE_PERL%%/POE/Component/Jabber/Server/RouteProcessor.pm
-%%SITE_PERL%%/POE/Component/Jabber/Server/RouteTable.pm
-%%SITE_PERL%%/POE/Component/Jabber/Server/SelfRouter.pm
-%%SITE_PERL%%/POE/Component/Jabber/Server/Socket.pm
-%%SITE_PERL%%/POE/Component/Jabber/Server/SocketServer.pm
-%%PORTDOCS%%%%EXAMPLESDIR%%/COMPTester.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/J2Tester.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/LEGACYTester.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/SERVERTester.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/XMPPSimpleTester.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/XMPPTester.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/J14Component
+%%PORTDOCS%%%%EXAMPLESDIR%%/J2Component
+%%PORTDOCS%%%%EXAMPLESDIR%%/LegacyClient
+%%PORTDOCS%%%%EXAMPLESDIR%%/XMPPClient
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/POE/Component/Jabber/Server
-@dirrm %%SITE_PERL%%/POE/Component/Jabber/Client
 @dirrm %%SITE_PERL%%/POE/Component/Jabber
 @dirrmtry %%SITE_PERL%%/POE/Component
 @dirrmtry %%SITE_PERL%%/POE
