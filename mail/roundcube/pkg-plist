@@ -175,6 +175,7 @@
 %%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/close.gif
 %%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/code.gif
 %%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/color.gif
+%%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/colors.jpg
 %%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/copy.gif
 %%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/custom_1.gif
 %%RCUBEDIR%%/program/js/tiny_mce/themes/advanced/images/cut.gif
@@ -373,8 +374,10 @@
 %%RCUBEDIR%%/program/localization/si/messages.inc
 %%RCUBEDIR%%/program/localization/sk/labels.inc
 %%RCUBEDIR%%/program/localization/sk/messages.inc
-%%RCUBEDIR%%/program/localization/sr/labels.inc
-%%RCUBEDIR%%/program/localization/sr/messages.inc
+%%RCUBEDIR%%/program/localization/sr_cyrillic/labels.inc
+%%RCUBEDIR%%/program/localization/sr_cyrillic/messages.inc
+%%RCUBEDIR%%/program/localization/sr_latin/labels.inc
+%%RCUBEDIR%%/program/localization/sr_latin/messages.inc
 %%RCUBEDIR%%/program/localization/th/labels.inc
 %%RCUBEDIR%%/program/localization/th/messages.inc
 %%RCUBEDIR%%/program/localization/tr/labels.inc
@@ -420,6 +423,7 @@
 %%RCUBEDIR%%/program/steps/settings/save_identity.inc
 %%RCUBEDIR%%/program/steps/settings/save_prefs.inc
 %%RCUBEDIR%%/skins/default/addresses.css
+%%RCUBEDIR%%/skins/default/colorpicker.css
 %%RCUBEDIR%%/skins/default/common.css
 %%RCUBEDIR%%/skins/default/editor_content.css
 %%RCUBEDIR%%/skins/default/editor_popup.css
@@ -583,7 +587,6 @@
 %%RCUBEDIR%%/skins/default/templates/settings.html
 %%RCUBEDIR%%/skins/default/templates/showcontact.html
 %%RCUBEDIR%%/skins/default/watermark.html
-%%SPELLCHECK%%%%RCUBEDIR%%/spellchecker.php
 %%RCUBEDIR%%/temp/.htaccess
 @dirrm %%RCUBEDIR%%/skins/default/templates
 @dirrm %%RCUBEDIR%%/skins/default/includes
@@ -603,7 +606,8 @@
 @dirrm %%RCUBEDIR%%/program/localization/tw
 @dirrm %%RCUBEDIR%%/program/localization/tr
 @dirrm %%RCUBEDIR%%/program/localization/th
-@dirrm %%RCUBEDIR%%/program/localization/sr
+@dirrm %%RCUBEDIR%%/program/localization/sr_latin
+@dirrm %%RCUBEDIR%%/program/localization/sr_cyrillic
 @dirrm %%RCUBEDIR%%/program/localization/sk
 @dirrm %%RCUBEDIR%%/program/localization/si
 @dirrm %%RCUBEDIR%%/program/localization/se
@@ -631,7 +635,6 @@
 @dirrm %%RCUBEDIR%%/program/localization/en_US
 @dirrm %%RCUBEDIR%%/program/localization/en_GB
 @dirrm %%RCUBEDIR%%/program/localization/el
-@dirrm %%RCUBEDIR%%/program/localization/ee
 @dirrm %%RCUBEDIR%%/program/localization/de_DE
 @dirrm %%RCUBEDIR%%/program/localization/de_CH
 @dirrm %%RCUBEDIR%%/program/localization/da
