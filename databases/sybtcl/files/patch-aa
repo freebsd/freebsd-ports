@@ -43,6 +43,17 @@
 +#endif /* POLLED_EVENTS } */
  
  
+@@ -1167,9 +1178,9 @@
+  */
+ 
++CALLBACK_SCOPE Tcl_ChannelProc callback_handler;
+ static void
+ remove_handler (hand)
+     int hand;
+ {
+-    CALLBACK_SCOPE Tcl_ChannelProc callback_handler;
+     if (SybProcs[hand].callBackScript != NULL) {
+         Tcl_DecrRefCount(SybProcs[hand].callBackScript);
 @@ -1669,6 +1680,8 @@
  
  
