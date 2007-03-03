@@ -1,10 +1,10 @@
 bin/tkp4
-%%SCRIPTS%%/combobox.tcl
-%%SCRIPTS%%/mclistbox.tcl
-%%SCRIPTS%%/tkp4.tcl
-%%SCRIPTS%%/tree.tcl
-@dirrm %%SCRIPTS%%
-%%DOCS%%/CHANGES
-%%DOCS%%/P4WINdifferences
-%%DOCS%%/UsingTkP4
-@dirrm %%DOCS%%
+%%DATADIR%%/combobox.tcl
+%%DATADIR%%/mclistbox.tcl
+%%DATADIR%%/tkp4.tcl
+%%DATADIR%%/tree.tcl
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/P4WINdifferences
+%%PORTDOCS%%%%DOCSDIR%%/UsingTkP4
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
