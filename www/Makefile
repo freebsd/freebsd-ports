@@ -962,6 +962,7 @@
     SUBDIR += py-pastescript
     SUBDIR += py-prewikka
     SUBDIR += py-pullparser
+    SUBDIR += py-pysearch
     SUBDIR += py-qp
     SUBDIR += py-qpy
     SUBDIR += py-scgi
