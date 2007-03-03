@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	pankov_p@mail.ru
 COMMENT=	A command-line based Direct Connect client
 
+DEPRECATED=	microdc is no longer in development. Consider using net-p2p/microdc2 instead
+EXPIRATION_DATE=2007-05-03
+
 USE_GCC=	3.2+
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
