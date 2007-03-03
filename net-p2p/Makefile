@@ -23,6 +23,7 @@
     SUBDIR += edonkey-gui-gtk
     SUBDIR += edonkey-gui-gtk-urlslave
     SUBDIR += edonkey-tool-hash
+    SUBDIR += deluge
     SUBDIR += ed2k
     SUBDIR += fcptools
     SUBDIR += fidelio

@@ -1,0 +1,65 @@
+bin/deluge
+%%PYTHON_SITELIBDIR%%/deluge/__init__.py
+%%PYTHON_SITELIBDIR%%/deluge/__init__.pyc
+%%PYTHON_SITELIBDIR%%/deluge/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deluge/dcommon.py
+%%PYTHON_SITELIBDIR%%/deluge/dcommon.pyc
+%%PYTHON_SITELIBDIR%%/deluge/dcommon.pyo
+%%PYTHON_SITELIBDIR%%/deluge/deluge.py
+%%PYTHON_SITELIBDIR%%/deluge/deluge.pyc
+%%PYTHON_SITELIBDIR%%/deluge/deluge.pyo
+%%PYTHON_SITELIBDIR%%/deluge/deluge_core.so
+%%PYTHON_SITELIBDIR%%/deluge/deluge_stats.py
+%%PYTHON_SITELIBDIR%%/deluge/deluge_stats.pyc
+%%PYTHON_SITELIBDIR%%/deluge/deluge_stats.pyo
+%%PYTHON_SITELIBDIR%%/deluge/delugegtk.py
+%%PYTHON_SITELIBDIR%%/deluge/delugegtk.pyc
+%%PYTHON_SITELIBDIR%%/deluge/delugegtk.pyo
+%%PYTHON_SITELIBDIR%%/deluge/delugeplugins.py
+%%PYTHON_SITELIBDIR%%/deluge/delugeplugins.pyc
+%%PYTHON_SITELIBDIR%%/deluge/delugeplugins.pyo
+%%PYTHON_SITELIBDIR%%/deluge/dgtk.py
+%%PYTHON_SITELIBDIR%%/deluge/dgtk.pyc
+%%PYTHON_SITELIBDIR%%/deluge/dgtk.pyo
+%%PYTHON_SITELIBDIR%%/deluge/ipc_manager.py
+%%PYTHON_SITELIBDIR%%/deluge/ipc_manager.pyc
+%%PYTHON_SITELIBDIR%%/deluge/ipc_manager.pyo
+%%PYTHON_SITELIBDIR%%/deluge/pref.py
+%%PYTHON_SITELIBDIR%%/deluge/pref.pyc
+%%PYTHON_SITELIBDIR%%/deluge/pref.pyo
+share/applications/deluge.desktop
+%%DATADIR%%/glade/aboutdialog.glade
+%%DATADIR%%/glade/delugegtk.glade
+%%DATADIR%%/glade/dgtkpopups.glade
+%%DATADIR%%/glade/dgtkpref.glade
+%%DATADIR%%/glade/torrent_menu.glade
+%%DATADIR%%/pixmaps/deluge-about.png
+%%DATADIR%%/pixmaps/deluge128.png
+%%DATADIR%%/pixmaps/deluge192.png
+%%DATADIR%%/pixmaps/deluge22.png
+%%DATADIR%%/pixmaps/deluge256.png
+%%DATADIR%%/pixmaps/deluge32.png
+%%DATADIR%%/plugins/ExamplePlugin/example-plugin.png
+%%DATADIR%%/plugins/ExamplePlugin/example.glade
+%%DATADIR%%/plugins/ExamplePlugin/plugin.py
+%%DATADIR%%/plugins/HelloWorld/plugin.py
+%%DATADIR%%/plugins/NetworkGraph/plugin.py
+%%DATADIR%%/plugins/NetworkHealth/plugin.py
+%%DATADIR%%/plugins/TorrentSearch/plugin.py
+%%DATADIR%%/plugins/TorrentSearch/searchdlg.glade
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+share/pixmaps/deluge.xpm
+@dirrmtry share/pixmaps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/plugins/TorrentSearch
+@dirrm %%DATADIR%%/plugins/NetworkHealth
+@dirrm %%DATADIR%%/plugins/NetworkGraph
+@dirrm %%DATADIR%%/plugins/HelloWorld
+@dirrm %%DATADIR%%/plugins/ExamplePlugin
+@dirrmtry %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrm %%PYTHON_SITELIBDIR%%/deluge
