@@ -1,0 +1,137 @@
+bin/griffith
+share/applications/griffith.desktop
+%%DATADIR%%/export_templates/csv/config.xml
+%%DATADIR%%/export_templates/csv/page.tpl
+%%DATADIR%%/export_templates/html_table/blue.css
+%%DATADIR%%/export_templates/html_table/blue.jpg
+%%DATADIR%%/export_templates/html_table/config.xml
+%%DATADIR%%/export_templates/html_table/gray.css
+%%DATADIR%%/export_templates/html_table/gray.jpg
+%%DATADIR%%/export_templates/html_table/page.tpl
+%%DATADIR%%/export_templates/html_table/simple.css
+%%DATADIR%%/export_templates/html_table/simple.gif
+%%DATADIR%%/export_templates/html_tables/blue.css
+%%DATADIR%%/export_templates/html_tables/blue.jpg
+%%DATADIR%%/export_templates/html_tables/config.xml
+%%DATADIR%%/export_templates/html_tables/gray.css
+%%DATADIR%%/export_templates/html_tables/gray.jpg
+%%DATADIR%%/export_templates/html_tables/green.css
+%%DATADIR%%/export_templates/html_tables/green.jpg
+%%DATADIR%%/export_templates/html_tables/lgreen.css
+%%DATADIR%%/export_templates/html_tables/lgreen.jpg
+%%DATADIR%%/export_templates/html_tables/page.tpl
+%%DATADIR%%/export_templates/latex/config.xml
+%%DATADIR%%/export_templates/latex/page.tpl
+%%DATADIR%%/export_templates/xml/config.xml
+%%DATADIR%%/export_templates/xml/page.tpl
+%%DATADIR%%/glade/exporthtml.glade
+%%DATADIR%%/glade/griffith.glade
+%%DATADIR%%/glade/griffith.png
+%%DATADIR%%/glade/import.glade
+%%DATADIR%%/glade/importcsv.glade
+%%DATADIR%%/glade/nill.png
+%%DATADIR%%/images/00.png
+%%DATADIR%%/images/01.png
+%%DATADIR%%/images/010.png
+%%DATADIR%%/images/02.png
+%%DATADIR%%/images/03.png
+%%DATADIR%%/images/04.png
+%%DATADIR%%/images/05.png
+%%DATADIR%%/images/06.png
+%%DATADIR%%/images/07.png
+%%DATADIR%%/images/08.png
+%%DATADIR%%/images/09.png
+%%DATADIR%%/images/default.png
+%%DATADIR%%/images/default_thumbnail.png
+%%DATADIR%%/images/griffith.png
+%%DATADIR%%/images/meter00.png
+%%DATADIR%%/images/meter01.png
+%%DATADIR%%/images/meter010.png
+%%DATADIR%%/images/meter02.png
+%%DATADIR%%/images/meter03.png
+%%DATADIR%%/images/meter04.png
+%%DATADIR%%/images/meter05.png
+%%DATADIR%%/images/meter06.png
+%%DATADIR%%/images/meter07.png
+%%DATADIR%%/images/meter08.png
+%%DATADIR%%/images/meter09.png
+%%DATADIR%%/images/nill.png
+%%DATADIR%%/images/seen.png
+%%DATADIR%%/images/unseen.png
+%%DATADIR%%/lib/__init__.py
+%%DATADIR%%/lib/about.py
+%%DATADIR%%/lib/add.py
+%%DATADIR%%/lib/amazon.py
+%%DATADIR%%/lib/backup.py
+%%DATADIR%%/lib/config.py
+%%DATADIR%%/lib/cover.py
+%%DATADIR%%/lib/dbupgrade.py
+%%DATADIR%%/lib/delete.py
+%%DATADIR%%/lib/edit.py
+%%DATADIR%%/lib/gconsole.py
+%%DATADIR%%/lib/gdebug.py
+%%DATADIR%%/lib/gemail.py
+%%DATADIR%%/lib/griffith
+%%DATADIR%%/lib/gutils.py
+%%DATADIR%%/lib/initialize.py
+%%DATADIR%%/lib/loan.py
+%%DATADIR%%/lib/main_treeview.py
+%%DATADIR%%/lib/movie.py
+%%DATADIR%%/lib/people.py
+%%DATADIR%%/lib/plugins/__init__.py
+%%DATADIR%%/lib/plugins/export/PluginExportCSV.py
+%%DATADIR%%/lib/plugins/export/PluginExportHTML.py
+%%DATADIR%%/lib/plugins/export/PluginExportPDF.py
+%%DATADIR%%/lib/plugins/export/PluginExportXML.py
+%%DATADIR%%/lib/plugins/export/__init__.py
+%%DATADIR%%/lib/plugins/imp/CSV.py
+%%DATADIR%%/lib/plugins/imp/__init__.py
+%%DATADIR%%/lib/plugins/movie/PluginMovie7arte.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieAllocine.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieAniDB.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieCSFD.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieCineMovies.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieCinematografo.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieCineteka.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieCulturalia.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieDVDEmpire.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieE-Pipoca.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieFDb.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieFilmAffinity.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieFilmeVonAZ.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieFilmweb.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieIMDB-es.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieIMDB.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieKinoDe.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieMediadis.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieMoviefone.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieOFDb.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieOnet.py
+%%DATADIR%%/lib/plugins/movie/PluginMoviePTGate.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieStopklatka.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieTanukiAnime.py
+%%DATADIR%%/lib/plugins/movie/PluginMovieWP.py
+%%DATADIR%%/lib/plugins/movie/__init__.py
+%%DATADIR%%/lib/preferences.py
+%%DATADIR%%/lib/quick_filter.py
+%%DATADIR%%/lib/sql.py
+%%DATADIR%%/lib/update.py
+%%DATADIR%%/lib/version.py
+%%DATADIR%%/lib/view.py
+%%DATADIR%%/lib/widgets.py
+share/pixmaps/griffith.png
+share/pixmaps/griffith.xpm
+@dirrm %%DATADIR%%/export_templates/csv
+@dirrm %%DATADIR%%/export_templates/html_table
+@dirrm %%DATADIR%%/export_templates/html_tables
+@dirrm %%DATADIR%%/export_templates/latex
+@dirrm %%DATADIR%%/export_templates/xml
+@dirrm %%DATADIR%%/export_templates
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/lib/plugins/export
+@dirrm %%DATADIR%%/lib/plugins/imp
+@dirrm %%DATADIR%%/lib/plugins/movie
+@dirrm %%DATADIR%%/lib/plugins
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%

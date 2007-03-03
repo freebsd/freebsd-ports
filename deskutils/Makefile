@@ -79,6 +79,7 @@
     SUBDIR += gnustep-wrapper
     SUBDIR += gnuwash
     SUBDIR += gourmet
+    SUBDIR += griffith
     SUBDIR += gruler
     SUBDIR += gtimer
     SUBDIR += gtkjournal
