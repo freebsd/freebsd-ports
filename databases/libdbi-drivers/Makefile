@@ -89,7 +89,7 @@ PLIST_SUB+=	FIREBIRD="@comment "
 .endif
 
 .if defined(WITH_FREETDS)
-LIB_DEPENDS+=	tds.4:${PORTSDIR}/databases/freetds
+LIB_DEPENDS+=	tds.5:${PORTSDIR}/databases/freetds
 CONFIGURE_ARGS+=	--with-freetds
 PLIST_SUB+=	FREETDS=""
 .else

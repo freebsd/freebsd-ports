@@ -6,7 +6,7 @@
 
 PORTNAME=	sqsh
 PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=		sqsh
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=		sqsh
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive tool for querying Sybase database servers
 
-LIB_DEPENDS=	ct.3:${PORTSDIR}/databases/freetds
+LIB_DEPENDS=	ct.4:${PORTSDIR}/databases/freetds
 
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
