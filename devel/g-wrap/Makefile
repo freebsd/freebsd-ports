@@ -5,6 +5,7 @@
 #
 # $FreeBSD$
 #    $MCom: ports/devel/g-wrap/Makefile,v 1.6 2006/12/24 18:45:08 ahze Exp $
+#
 
 PORTNAME=	g-wrap
 PORTVERSION=	1.9.6
@@ -31,6 +32,8 @@ USE_GNOME=	glib20 gnomehack
 post-patch:
 	@${REINPLACE_CMD} -e 's|"glib"|"glib-2.0"|' \
 		${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|(GUILE_CFLAGS) $$(LIBFFI_CFLAGS)|(LIBFFI_CFLAGS) $$(GUILE_CFLAGS)|g'
 
 pre-install:
 	@${REINPLACE_CMD} -e 's|libffi||' ${WRKSRC}/${MAKEFILE}
@@ -38,7 +41,8 @@ pre-install:
 post-install:
 	${MKDIR} ${PREFIX}/include/g-wrap/ffi
 .for f in ffi.h ffitarget.h
-	${INSTALL_DATA} ${WRKSRC}/libffi/include/${f} ${PREFIX}/include/g-wrap/ffi
+	${INSTALL_DATA} ${WRKSRC}/libffi/include/${f} \
+		${PREFIX}/include/g-wrap/ffi
 .endfor
 
 .include <bsd.port.mk>
