@@ -23,6 +23,6 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-codepage.inc \
 pre-configure:
 	cd ${WRKSRC}/intl && ./synclang
 
-BROKEN=		does not work at runtime
+IGNORE=		does not work at runtime
 
 .include "${MASTERDIR}/Makefile"
