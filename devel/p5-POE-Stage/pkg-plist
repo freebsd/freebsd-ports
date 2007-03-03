@@ -1,7 +1,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Stage/.packlist
-%%SITE_PERL%%/POE/Attribute/Request/Array.pm
-%%SITE_PERL%%/POE/Attribute/Request/Hash.pm
-%%SITE_PERL%%/POE/Attribute/Request/Scalar.pm
 %%SITE_PERL%%/POE/Request.pm
 %%SITE_PERL%%/POE/Request/Emit.pm
 %%SITE_PERL%%/POE/Request/Recall.pm
@@ -19,8 +16,6 @@
 @dirrm %%SITE_PERL%%/POE/Watcher
 @dirrm %%SITE_PERL%%/POE/Stage
 @dirrm %%SITE_PERL%%/POE/Request
-@dirrm %%SITE_PERL%%/POE/Attribute/Request
-@dirrm %%SITE_PERL%%/POE/Attribute
 @dirrmtry %%SITE_PERL%%/POE
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Stage
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
