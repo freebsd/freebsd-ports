@@ -8,7 +8,7 @@
 
 CATEGORIES=     chinese www
 
-MAINTAINER=     eric@fractal.csie.org
+MAINTAINER=     ports@FreeBSD.org
 COMMENT=	Links WWW browser with Chinese language support
 
 MASTERDIR=	${.CURDIR}/../../www/links
