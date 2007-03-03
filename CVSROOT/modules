@@ -1807,6 +1807,7 @@ delay		ports/misc/delay
 delegate	ports/net/delegate
 deleted		ports/sysutils/deleted
 deltup		ports/sysutils/deltup
+deluge		ports/net-p2p/deluge
 demeter		ports/graphics/demeter
 demime		ports/mail/demime
 demoniac	ports/misc/demoniac
