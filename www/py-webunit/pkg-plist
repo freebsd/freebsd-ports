@@ -1,0 +1,31 @@
+%%PYTHON_SITELIBDIR%%/webunit/HTMLParser.py
+%%PYTHON_SITELIBDIR%%/webunit/HTMLParser.pyc
+%%PYTHON_SITELIBDIR%%/webunit/HTMLParser.pyo
+%%PYTHON_SITELIBDIR%%/webunit/IMGSucker.py
+%%PYTHON_SITELIBDIR%%/webunit/IMGSucker.pyc
+%%PYTHON_SITELIBDIR%%/webunit/IMGSucker.pyo
+%%PYTHON_SITELIBDIR%%/webunit/SimpleDOM.py
+%%PYTHON_SITELIBDIR%%/webunit/SimpleDOM.pyc
+%%PYTHON_SITELIBDIR%%/webunit/SimpleDOM.pyo
+%%PYTHON_SITELIBDIR%%/webunit/__init__.py
+%%PYTHON_SITELIBDIR%%/webunit/__init__.pyc
+%%PYTHON_SITELIBDIR%%/webunit/__init__.pyo
+%%PYTHON_SITELIBDIR%%/webunit/config.py
+%%PYTHON_SITELIBDIR%%/webunit/config.pyc
+%%PYTHON_SITELIBDIR%%/webunit/config.pyo
+%%PYTHON_SITELIBDIR%%/webunit/cookie.py
+%%PYTHON_SITELIBDIR%%/webunit/cookie.pyc
+%%PYTHON_SITELIBDIR%%/webunit/cookie.pyo
+%%PYTHON_SITELIBDIR%%/webunit/utility.py
+%%PYTHON_SITELIBDIR%%/webunit/utility.pyc
+%%PYTHON_SITELIBDIR%%/webunit/utility.pyo
+%%PYTHON_SITELIBDIR%%/webunit/webunittest.py
+%%PYTHON_SITELIBDIR%%/webunit/webunittest.pyc
+%%PYTHON_SITELIBDIR%%/webunit/webunittest.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/webunit
+%%EXAMPLESDIR%%/run_tests
+%%EXAMPLESDIR%%/demo/__init__.py
+%%EXAMPLESDIR%%/demo/google.py
+%%EXAMPLESDIR%%/demo/python_org.py
+@dirrm %%EXAMPLESDIR%%/demo
+@dirrm %%EXAMPLESDIR%%
