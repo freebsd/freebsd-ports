@@ -1,18 +1,17 @@
-# New ports collection makefile for:	libslang2
-# Date created:		2005-05-16
-# Whom:			Renato Botelho <freebsd@galle.com.br>
+# New ports collection makefile for:	libslang2-devel
+# Date created:		2007-02-24
+# Whom:			garga
 #
 # $FreeBSD$
 #
 
 PORTNAME=	libslang2
-PORTVERSION=	2.0.7
+PORTVERSION=	20070224
 CATEGORIES=	devel
-MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v2.0/ \
-		ftp://ftp.fu-berlin.de/pub/unix/misc/slang/v2.0/ \
-		ftp://ftp.ntua.gr/pub/lang/slang/slang/v2.0/ \
-		ftp://ftp.plig.org/pub/slang/v2.0/
-DISTNAME=	slang-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	garga/slang
+PKGNAMESUFFIX=	-devel
+DISTNAME=	slang2${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Routines for rapid alpha-numeric terminal applications development
