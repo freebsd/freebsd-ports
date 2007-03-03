@@ -282,7 +282,7 @@ PLIST_SUB+=	TTAPLUGIN="@comment "
 .endif
 
 .if !defined(WITHOUT_LAME)
-LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/liblame
+LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
 CONFIGURE_ARGS+=--enable-lame
 PLIST_SUB+=	LAMEPLUGIN=""
 .else
