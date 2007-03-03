@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	pytz
-PORTVERSION=	2006p
+PORTVERSION=	2007c
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://cheeseshop.python.org/packages/source/p/pytz/
 MASTER_SITE_SUBDIR=	pytz
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	kaeru@inigo-tech.com
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	World Timezone Definitions for Python
 
 BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
