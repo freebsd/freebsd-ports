@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	serendipity
-PORTVERSION=	1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	php-blog
@@ -23,6 +23,7 @@ PLIST_SUB+=	SERENDIPITY=${SERENDIPITY}
 USE_PHP=	session pcre gd openssl mbstring iconv zlib xml
 SUB_LIST+=	SERENDIPITY=${SERENDIPITY}
 SUB_FILES=	pkg-message
+USE_BZIP2=	YES
 
 LOCALBASE?=	/usr/local
 
