@@ -28,10 +28,6 @@ PLIST_FILES=	bin/ht
 BROKEN=	does not build on ia64
 .endif
 
-.if ${ARCH} == "amd64" && ${OSVERSION} > 700000
-BROKEN=	does not build on 7.x for amd64
-.endif
-
 .if ${OSVERSION} < 400000
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
