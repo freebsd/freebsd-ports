@@ -463,15 +463,11 @@ include/xercesc/validators/schema/identity/XPathMatcherStack.hpp
 include/xercesc/validators/schema/identity/XPathSymbols.hpp
 include/xercesc/validators/schema/identity/XercesXPath.hpp
 lib/%%XERCESC_LIB%%
-@exec ln -sf %%XERCESC_LIB%% %D/lib/libxerces-c.so
-@exec ln -sf %%XERCESC_LIB%% %D/lib/libxerces-c.so.%%XERCESC_LIB_VERSION%%
-@unexec if test ! -r %D/lib/libxerces-c.so; then rm -f %D/lib/libxerces-c.so; fi
-@unexec if test ! -r %D/lib/libxerces-c.so.%%XERCESC_LIB_VERSION%%; then rm -f %D/lib/libxerces-c.so.%%XERCESC_LIB_VERSION%%; fi
+lib/libxerces-c.so
+lib/libxerces-c.so.%%XERCESC_LIB_VERSION%%
 lib/%%XERCESC_DEPDOM_LIB%%
-@exec ln -sf %%XERCESC_DEPDOM_LIB%% %D/lib/libxerces-depdom.so
-@exec ln -sf %%XERCESC_DEPDOM_LIB%% %D/lib/libxerces-depdom.so.%%XERCESC_LIB_VERSION%%
-@unexec if test ! -r %D/lib/libxerces-depdom.so; then rm -f %D/lib/libxerces-depdom.so; fi
-@unexec if test ! -r %D/lib/libxerces-depdom.so.%%XERCESC_LIB_VERSION%%; then rm -f %D/lib/libxerces-depdom.so.%%XERCESC_LIB_VERSION%%; fi
+lib/libxerces-depdom.so
+lib/libxerces-depdom.so.%%XERCESC_LIB_VERSION%%
 @dirrm include/xercesc/validators/schema/identity
 @dirrm include/xercesc/validators/schema
 @dirrm include/xercesc/validators/datatype
