@@ -9,4 +9,4 @@ Currently the only XSL-T processor supported is xsltproc (textproc/libxslt).
 For DVI, PDF and PostScript output, PassiveTeX (print/passivetex) is required.
 
 Author:	Tim Waugh <tim@cyberelk.net>
-WWW:	http://cyberelk.net/tim/xmlto/
+WWW:	http://cyberelk.net/tim/software/xmlto/
