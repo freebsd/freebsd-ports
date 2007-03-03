@@ -8,7 +8,7 @@
 PORTNAME=	mobileimap
 PORTVERSION=	2.7
 CATEGORIES=	japanese mail
-MASTER_SITES=	http://namazu.org/~satoru/mobileimap/
+MASTER_SITES=	http://0xcc.net/mobileimap/
 
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	An IMAP-based webmail system for mobile-phones
