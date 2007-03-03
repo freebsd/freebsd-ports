@@ -1860,6 +1860,7 @@
     SUBDIR += py-zconfig
     SUBDIR += py-zopeInterface
     SUBDIR += py_otp_interface
+    SUBDIR += pybaz
     SUBDIR += pychecker
     SUBDIR += pycount
     SUBDIR += pylint
