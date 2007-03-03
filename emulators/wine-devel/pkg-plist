@@ -747,6 +747,7 @@ lib/wine/rsabase.dll.so
 lib/wine/rsaenh.dll.so
 lib/wine/rundll32.exe.so
 lib/wine/sane.ds.so
+lib/wine/schannel.dll.so
 lib/wine/secur32.dll.so
 lib/wine/security.dll.so
 lib/wine/sensapi.dll.so
@@ -828,6 +829,7 @@ lib/wine/wineps16.drv16
 lib/wine/winevdm.exe.so
 lib/wine/winex11.drv.so
 lib/wine/wing.dll16
+lib/wine/wing32.dll.so
 lib/wine/winhelp.exe.so
 lib/wine/wininet.dll.so
 lib/wine/winmm.dll.so
