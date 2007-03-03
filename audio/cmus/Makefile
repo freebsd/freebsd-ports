@@ -7,12 +7,15 @@
 
 PORTNAME=	cmus
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://onion.dynserv.net/~timo/files/ \
 		http://mirror.greaterscope.net/cmus/
 
 MAINTAINER=	simon@olofsson.de
 COMMENT=	Console-based music player with really cool features
+
+LIB_DEPENDS=	ncursesw.5:${PORTSDIR}/devel/ncurses
 
 USE_BZIP2=	yes
 USE_GCC=	3.2+
@@ -138,10 +141,9 @@ PLIST_SUB+=	ARTS="@comment "
 
 MAN1=	cmus.1 cmus-remote.1
 
-post-extract:
-	@${REINPLACE_CMD} -e 's,-lncursesw,-lncurses,g' ${WRKSRC}/configure
+post-patch:
 	@${REINPLACE_CMD} -e 's,doc/cmus/examples,examples/cmus,g' \
-	${WRKSRC}/Makefile ${WRKSRC}/Doc/cmus.txt
-	@${REINPLACE_CMD} -e 's,\/usr,${PREFIX},g' ${WRKSRC}/Doc/cmus.txt
+		${WRKSRC}/Makefile ${WRKSRC}/Doc/cmus.txt
+	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},g' ${WRKSRC}/Doc/cmus.txt
 
 .include <bsd.port.post.mk>
