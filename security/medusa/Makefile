@@ -28,8 +28,6 @@ MAN1=		medusa.1
 
 .if ${ARCH} == "ia64"
 BROKEN=		Does not build on ia64
-.elif ${ARCH} == "amd64"
-BROKEN=		Does not build on amd64
 .endif
 
 .if ${OSVERSION} < 500000
