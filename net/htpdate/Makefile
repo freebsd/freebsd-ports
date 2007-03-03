@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	htpdate
-PORTVERSION=	0.9.3
+PORTVERSION=	1.0.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.clevervest.com/htp/archive/c/
 
