@@ -121,6 +121,11 @@ MAN3PREFIX=	${TARGETDIR}/lib/perl5/${JPERL_VERSION}/
 test:
 	@(cd ${WRKSRC}; make test)
 
+post-patch:
+.for f in Makefile.SH hints/freebsd.sh
+	@${REINPLACE_CMD} -e "s:objformat=`/usr/bin/objformat`:objformat='elf':" ${WRKSRC}/${f}
+.endfor
+
 post-install:
 	@strip ${TARGETDIR}/bin/perl${JPERL_VERSION}
 	@strip ${TARGETDIR}/bin/sperl${JPERL_VERSION}
