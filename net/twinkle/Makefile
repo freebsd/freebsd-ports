@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	twinkle
-PORTVERSION=	0.9
-PORTREVISION=	2
+PORTVERSION=	1.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.xs4all.nl/~mfnboer/twinkle/download/
 
@@ -19,7 +18,7 @@ LIB_DEPENDS=	ccgnu2-1.5.0:${PORTSDIR}/devel/commoncpp \
 		ccrtp1-1.5.0:${PORTSDIR}/devel/ccrtp \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		boost_regex.3:${PORTSDIR}/devel/boost \
-		speex.1:${PORTSDIR}/audio/speex \
+		speex.3:${PORTSDIR}/audio/speex \
 		ilbc.0:${PORTSDIR}/net/ilbc \
 		zrtpcpp-0.9.0:${PORTSDIR}/devel/libzrtpcpp
 
@@ -41,9 +40,8 @@ QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile
-.endif
+post-patch:
+	${REINPLACE_CMD} -e 's|-lresolv||g' -e 's|-lbind||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-configure:
 	${REINPLACE_CMD} -e 's|-lresolv||g' ${WRKSRC}/src/gui/${MAKEFILE}
