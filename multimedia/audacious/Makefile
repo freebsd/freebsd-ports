@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	audacious
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.0
 CATEGORIES=	multimedia audio
-MASTER_SITES=	http://audacious-media-player.org/release/
+MASTER_SITES=	http://static.audacious-media-player.org/release/
 EXTRACT_SUFX=.tgz
 
 MAINTAINER=	oliver@FreeBSD.org
@@ -20,14 +20,18 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2
 USE_LDCONFIG=	yes
 USE_XLIB=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
 MAN1=		audacious.1 audtool.1
+
+LIB_DEPENDS=	mcs.1:${PORTSDIR}/devel/libmcs
 
 PORTDOCS=	README AUTHORS ChangeLog NEWS
 
 OPTIONS=	CHARSET	"Build with automatic charset detection" off \
 		GNOME	"Build with gconf support" off \
-		NLS	"Native Language Support" on
+		NLS	"Native Language Support" on \
+		XML	"Build with xml support" on
 
 .include <bsd.port.pre.mk>
 
@@ -49,13 +53,17 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-post-patch:
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|intl \\|intl|; /-Wno-strict-aliasing/d' \
-		${WRKSRC}/audacious/widgets/Makefile
+.if !defined(WITHOUT_XML)
+LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
+.else
+CONFIGURE_ARGS+=--with-xml-prefix=/
 .endif
+
+post-patch:
 	@${REINPLACE_CMD} -e 's|(LIBDIR)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|datarootdir}/man|prefix}/man|g' \
+		${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)

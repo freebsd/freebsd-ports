@@ -2,28 +2,49 @@ bin/audacious
 bin/audtool
 include/audacious/beepctrl.h
 include/audacious/configdb.h
-include/audacious/dirbrowser.h
 include/audacious/formatter.h
-include/audacious/plugin.h
-include/audacious/rcfile.h
-include/audacious/titlestring.h
-include/audacious/util.h
-include/audacious/vfs.h
+include/audacious/hook.h
+include/audacious/i18n.h
+include/audacious/id3tag.h
 include/audacious/input.h
-include/audacious/output.h
-include/audacious/xml_document.h
-include/audacious/prefswin.h
-include/audacious/xentry.h
-include/audacious/xconvert.h
 include/audacious/main.h
+include/audacious/output.h
 include/audacious/playlist.h
 include/audacious/playlist_container.h
+include/audacious/plugin.h
+include/audacious/rcfile.h
+include/audacious/strings.h
+include/audacious/titlestring.h
+include/audacious/ui_fileinfopopup.h
+include/audacious/ui_preferences.h
+include/audacious/util.h
+include/audacious/vfs.h
+include/audacious/vfs_buffer.h
+include/audacious/vfs_buffered_file.h
+include/audacious/xconvert.h
+lib/audacious/libaudid3tag.so
 lib/libaudacious.so
-lib/libaudacious.so.4
-lib/libaudacious.so.4.0.0
+lib/libaudacious.so.5
+lib/libaudacious.so.5.0.0
 libdata/pkgconfig/audacious.pc
 share/applications/audacious.desktop
-share/pixmaps/audacious.png
+%%DATADIR%%/Skins/Classic/balance.png
+%%DATADIR%%/Skins/Classic/cbuttons.png
+%%DATADIR%%/Skins/Classic/eq_ex.png
+%%DATADIR%%/Skins/Classic/eqmain.png
+%%DATADIR%%/Skins/Classic/main.png
+%%DATADIR%%/Skins/Classic/monoster.png
+%%DATADIR%%/Skins/Classic/nums_ex.png
+%%DATADIR%%/Skins/Classic/playpaus.png
+%%DATADIR%%/Skins/Classic/pledit.png
+%%DATADIR%%/Skins/Classic/pledit.txt
+%%DATADIR%%/Skins/Classic/posbar.png
+%%DATADIR%%/Skins/Classic/shufrep.png
+%%DATADIR%%/Skins/Classic/skin.hints
+%%DATADIR%%/Skins/Classic/text.png
+%%DATADIR%%/Skins/Classic/titlebar.png
+%%DATADIR%%/Skins/Classic/viscolor.txt
+%%DATADIR%%/Skins/Classic/volume.png
 %%DATADIR%%/Skins/Default/balance.png
 %%DATADIR%%/Skins/Default/cbuttons.png
 %%DATADIR%%/Skins/Default/eq_ex.png
@@ -41,57 +62,6 @@ share/pixmaps/audacious.png
 %%DATADIR%%/Skins/Default/titlebar.png
 %%DATADIR%%/Skins/Default/viscolor.txt
 %%DATADIR%%/Skins/Default/volume.png
-%%DATADIR%%/Skins/Classic/balance.png
-%%DATADIR%%/Skins/Classic/cbuttons.png
-%%DATADIR%%/Skins/Classic/eq_ex.png
-%%DATADIR%%/Skins/Classic/eqmain.png
-%%DATADIR%%/Skins/Classic/main.png
-%%DATADIR%%/Skins/Classic/monoster.png
-%%DATADIR%%/Skins/Classic/nums_ex.png
-%%DATADIR%%/Skins/Classic/playpaus.png
-%%DATADIR%%/Skins/Classic/pledit.png
-%%DATADIR%%/Skins/Classic/posbar.png
-%%DATADIR%%/Skins/Classic/shufrep.png
-%%DATADIR%%/Skins/Classic/text.png
-%%DATADIR%%/Skins/Classic/titlebar.png
-%%DATADIR%%/Skins/Classic/volume.png
-%%DATADIR%%/Skins/Classic/pledit.txt
-%%DATADIR%%/Skins/Classic/viscolor.txt
-%%DATADIR%%/Skins/Classic/skin.hints
-%%DATADIR%%/Skins/TinyPlayer/balance.png
-%%DATADIR%%/Skins/TinyPlayer/cbuttons.png
-%%DATADIR%%/Skins/TinyPlayer/eq_ex.png
-%%DATADIR%%/Skins/TinyPlayer/eqmain.png
-%%DATADIR%%/Skins/TinyPlayer/main.png
-%%DATADIR%%/Skins/TinyPlayer/monoster.png
-%%DATADIR%%/Skins/TinyPlayer/nums_ex.png
-%%DATADIR%%/Skins/TinyPlayer/playpaus.png
-%%DATADIR%%/Skins/TinyPlayer/pledit.png
-%%DATADIR%%/Skins/TinyPlayer/posbar.png
-%%DATADIR%%/Skins/TinyPlayer/shufrep.png
-%%DATADIR%%/Skins/TinyPlayer/text.png
-%%DATADIR%%/Skins/TinyPlayer/titlebar.png
-%%DATADIR%%/Skins/TinyPlayer/volume.png
-%%DATADIR%%/Skins/TinyPlayer/pledit.txt
-%%DATADIR%%/Skins/TinyPlayer/viscolor.txt
-%%DATADIR%%/Skins/TinyPlayer/skin.hints
-%%DATADIR%%/Skins/Osmosis/balance.png
-%%DATADIR%%/Skins/Osmosis/cbuttons.png
-%%DATADIR%%/Skins/Osmosis/eq_ex.png
-%%DATADIR%%/Skins/Osmosis/eqmain.png
-%%DATADIR%%/Skins/Osmosis/main.png
-%%DATADIR%%/Skins/Osmosis/monoster.png
-%%DATADIR%%/Skins/Osmosis/nums_ex.png
-%%DATADIR%%/Skins/Osmosis/playpaus.png
-%%DATADIR%%/Skins/Osmosis/pledit.png
-%%DATADIR%%/Skins/Osmosis/posbar.png
-%%DATADIR%%/Skins/Osmosis/shufrep.png
-%%DATADIR%%/Skins/Osmosis/text.png
-%%DATADIR%%/Skins/Osmosis/titlebar.png
-%%DATADIR%%/Skins/Osmosis/volume.png
-%%DATADIR%%/Skins/Osmosis/pledit.txt
-%%DATADIR%%/Skins/Osmosis/viscolor.txt
-%%DATADIR%%/Skins/Osmosis/skin.hints
 %%DATADIR%%/Skins/Ivory/balance.png
 %%DATADIR%%/Skins/Ivory/cbuttons.png
 %%DATADIR%%/Skins/Ivory/eq_ex.png
@@ -101,28 +71,65 @@ share/pixmaps/audacious.png
 %%DATADIR%%/Skins/Ivory/nums_ex.png
 %%DATADIR%%/Skins/Ivory/playpaus.png
 %%DATADIR%%/Skins/Ivory/pledit.png
+%%DATADIR%%/Skins/Ivory/pledit.txt
 %%DATADIR%%/Skins/Ivory/posbar.png
 %%DATADIR%%/Skins/Ivory/shufrep.png
+%%DATADIR%%/Skins/Ivory/skin.hints
 %%DATADIR%%/Skins/Ivory/text.png
 %%DATADIR%%/Skins/Ivory/titlebar.png
-%%DATADIR%%/Skins/Ivory/volume.png
-%%DATADIR%%/Skins/Ivory/pledit.txt
 %%DATADIR%%/Skins/Ivory/viscolor.txt
-%%DATADIR%%/Skins/Ivory/skin.hints
-%%DATADIR%%/glade/addfiles.glade
-%%DATADIR%%/glade/prefswin.glade
+%%DATADIR%%/Skins/Ivory/volume.png
+%%DATADIR%%/Skins/Osmosis/balance.png
+%%DATADIR%%/Skins/Osmosis/cbuttons.png
+%%DATADIR%%/Skins/Osmosis/eq_ex.png
+%%DATADIR%%/Skins/Osmosis/eqmain.png
+%%DATADIR%%/Skins/Osmosis/main.png
+%%DATADIR%%/Skins/Osmosis/monoster.png
+%%DATADIR%%/Skins/Osmosis/nums_ex.png
+%%DATADIR%%/Skins/Osmosis/playpaus.png
+%%DATADIR%%/Skins/Osmosis/pledit.png
+%%DATADIR%%/Skins/Osmosis/pledit.txt
+%%DATADIR%%/Skins/Osmosis/posbar.png
+%%DATADIR%%/Skins/Osmosis/shufrep.png
+%%DATADIR%%/Skins/Osmosis/skin.hints
+%%DATADIR%%/Skins/Osmosis/text.png
+%%DATADIR%%/Skins/Osmosis/titlebar.png
+%%DATADIR%%/Skins/Osmosis/viscolor.txt
+%%DATADIR%%/Skins/Osmosis/volume.png
+%%DATADIR%%/Skins/TinyPlayer/balance.png
+%%DATADIR%%/Skins/TinyPlayer/cbuttons.png
+%%DATADIR%%/Skins/TinyPlayer/eq_ex.png
+%%DATADIR%%/Skins/TinyPlayer/eqmain.png
+%%DATADIR%%/Skins/TinyPlayer/main.png
+%%DATADIR%%/Skins/TinyPlayer/monoster.png
+%%DATADIR%%/Skins/TinyPlayer/nums_ex.png
+%%DATADIR%%/Skins/TinyPlayer/playpaus.png
+%%DATADIR%%/Skins/TinyPlayer/pledit.png
+%%DATADIR%%/Skins/TinyPlayer/pledit.txt
+%%DATADIR%%/Skins/TinyPlayer/posbar.png
+%%DATADIR%%/Skins/TinyPlayer/shufrep.png
+%%DATADIR%%/Skins/TinyPlayer/skin.hints
+%%DATADIR%%/Skins/TinyPlayer/text.png
+%%DATADIR%%/Skins/TinyPlayer/titlebar.png
+%%DATADIR%%/Skins/TinyPlayer/viscolor.txt
+%%DATADIR%%/Skins/TinyPlayer/volume.png
 %%DATADIR%%/glade/fileinfo.glade
-%%DATADIR%%/glade/fileinfo_popup.glade
+%%DATADIR%%/glade/prefswin.glade
 %%DATADIR%%/images/about-logo.png
 %%DATADIR%%/images/appearance.png
+%%DATADIR%%/images/audacious_player.xpm
+%%DATADIR%%/images/audio.png
+%%DATADIR%%/images/connectivity.png
 %%DATADIR%%/images/eq.png
 %%DATADIR%%/images/mouse.png
 %%DATADIR%%/images/playlist.png
 %%DATADIR%%/images/plugins.png
-%%DATADIR%%/images/audio.png
-%%DATADIR%%/images/connectivity.png
-%%DATADIR%%/images/audacious_player.xpm
+%%DATADIR%%/ui/equalizer.ui
+%%DATADIR%%/ui/mainwin.ui
+%%DATADIR%%/ui/playlist.ui
+%%NLS%%share/locale/bg/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/br/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/cy/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/de/LC_MESSAGES/audacious.mo
@@ -131,6 +138,7 @@ share/pixmaps/audacious.png
 %%NLS%%share/locale/fi/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/hi/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/it/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/audacious.mo
@@ -144,21 +152,27 @@ share/pixmaps/audacious.png
 %%NLS%%share/locale/ro/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/sr@Latn/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/audacious.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/audacious.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/audacious.mo
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/glade
+share/pixmaps/audacious.png
 @dirrm %%DATADIR%%/Skins/Classic
 @dirrm %%DATADIR%%/Skins/Default
-@dirrm %%DATADIR%%/Skins/TinyPlayer
-@dirrm %%DATADIR%%/Skins/Osmosis
 @dirrm %%DATADIR%%/Skins/Ivory
+@dirrm %%DATADIR%%/Skins/Osmosis
+@dirrm %%DATADIR%%/Skins/TinyPlayer
 @dirrm %%DATADIR%%/Skins
-@dirrm %%DATADIR%%
+@dirrm %%DATADIR%%/glade
+@dirrmtry %%DATADIR%%/images
+@dirrm %%DATADIR%%/ui
+@dirrmtry %%DATADIR%%
 @dirrm include/audacious
+@dirrmtry lib/audacious
 @dirrmtry share/applications
-%%NLS%%@dirrmtry share/locale/br/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/br
+%%NLS%%@dirrmtry share/locale/sr@Latn/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sr@Latn
 @dirrmtry share/pixmaps
