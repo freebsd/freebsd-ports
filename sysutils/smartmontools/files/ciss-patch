@@ -1,0 +1,172 @@
+--- os_freebsd.cpp	Sat Sep 16 23:17:53 2006
++++ os_freebsd.cpp	Sat Mar  3 05:00:36 2007
+@@ -38,4 +39,5 @@
+ #include "utility.h"
+ #include "os_freebsd.h"
++#include "extern.h"
+ 
+ static const char *filenameandversion="$Id: os_freebsd.cpp,v 1.51 2006/09/17 03:17:53 dpgilbert Exp $";
+@@ -47,4 +49,7 @@
+ extern int exitstatus;
+ 
++/* for passing global control variables */
++extern smartmonctrl *con;
++
+ // Private table of open devices: guaranteed zero on startup since
+ // part of static data.
+@@ -86,8 +91,11 @@
+ 
+ // Like open().  Return positive integer handle, used by functions below only.  mode=="ATA" or "SCSI".
+-int deviceopen (const char* dev, char* mode __unused) {
++int deviceopen (const char* dev, char* mode) {
+   struct freebsd_dev_channel *fdchan;
+   int parse_ok, i;
+ 
++  if (strcasecmp(mode, "CCISS") == 0)
++    return open(dev, O_RDONLY);
++
+   // Search table for a free entry
+   for (i=0; i<FREEBSD_MAXDEV; i++)
+@@ -440,5 +453,6 @@
+ 
+ // Interface to SCSI devices.  See os_linux.c
+-int do_scsi_cmnd_io(int fd, struct scsi_cmnd_io * iop, int report)
++static int
++do_normal_scsi_cmnd_io(int fd, struct scsi_cmnd_io * iop, int report)
+ {
+   struct freebsd_dev_channel* con = NULL;
+@@ -541,4 +555,21 @@
+ }
+ 
++#include "ciss_common.c"
++
++int do_scsi_cmnd_io(int dev_fd, struct scsi_cmnd_io * iop, int report)
++{
++     switch(con->controller_type)
++     {
++         case CONTROLLER_CCISS:
++             return cciss_io_interface(dev_fd, con->controller_port-1, iop, report);
++             // not reached
++             break;
++         default:
++             return do_normal_scsi_cmnd_io(dev_fd, iop, report);
++             // not reached
++             break;
++     }
++}
++
+ // Interface to ATA devices behind 3ware escalade RAID controller cards.  See os_linux.c
+ 
+@@ -871,16 +902,17 @@
+ // specific) SCSI device name in FreeBSD can be sd, sr, scd, st, nst,
+ // osst, nosst and sg.
+-static const char * fbsd_dev_prefix = "/dev/";
+-static const char * fbsd_dev_ata_disk_prefix = "ad";
+-static const char * fbsd_dev_scsi_disk_plus = "da";
+-static const char * fbsd_dev_scsi_tape1 = "sa";
+-static const char * fbsd_dev_scsi_tape2 = "nsa";
+-static const char * fbsd_dev_scsi_tape3 = "esa";
+-static const char * fbsd_dev_twe_ctrl = "twe";
+-static const char * fbsd_dev_twa_ctrl = "twa";
++static const char fbsd_dev_prefix[] = "/dev/";
++static const char fbsd_dev_ata_disk_prefix[] = "ad";
++static const char fbsd_dev_scsi_disk_plus[] = "da";
++static const char fbsd_dev_scsi_tape1[] = "sa";
++static const char fbsd_dev_scsi_tape2[] = "nsa";
++static const char fbsd_dev_scsi_tape3[] = "esa";
++static const char fbsd_dev_twe_ctrl[] = "twe";
++static const char fbsd_dev_twa_ctrl[] = "twa";
++static const char fbsd_dev_ciss_ctrl[] = "ciss";
+ 
+ static int parse_ata_chan_dev(const char * dev_name, struct freebsd_dev_channel *chan) {
+   int len;
+-  int dev_prefix_len = strlen(fbsd_dev_prefix);
++  int dev_prefix_len = sizeof fbsd_dev_prefix - 1;
+   
+   // if dev_name null, or string length zero
+@@ -898,5 +930,5 @@
+   // form /dev/ad* or ad*
+   if (!strncmp(fbsd_dev_ata_disk_prefix, dev_name,
+-               strlen(fbsd_dev_ata_disk_prefix))) {
++               sizeof fbsd_dev_ata_disk_prefix - 1)) {
+ #ifndef IOCATAREQUEST
+     if (chan != NULL) {
+@@ -911,24 +943,24 @@
+   // form /dev/da* or da*
+   if (!strncmp(fbsd_dev_scsi_disk_plus, dev_name,
+-               strlen(fbsd_dev_scsi_disk_plus)))
++               sizeof fbsd_dev_scsi_disk_plus - 1))
+     goto handlescsi;
+ 
+   // form /dev/sa* or sa*
+   if (!strncmp(fbsd_dev_scsi_tape1, dev_name,
+-              strlen(fbsd_dev_scsi_tape1)))
++              sizeof fbsd_dev_scsi_tape1 - 1))
+     goto handlescsi;
+ 
+   // form /dev/nsa* or nsa*
+   if (!strncmp(fbsd_dev_scsi_tape2, dev_name,
+-              strlen(fbsd_dev_scsi_tape2)))
++              sizeof fbsd_dev_scsi_tape2 - 1))
+     goto handlescsi;
+ 
+   // form /dev/esa* or esa*
+   if (!strncmp(fbsd_dev_scsi_tape3, dev_name,
+-              strlen(fbsd_dev_scsi_tape3)))
++              sizeof fbsd_dev_scsi_tape3 - 1))
+     goto handlescsi;
+   
+   if (!strncmp(fbsd_dev_twa_ctrl,dev_name,
+-	       strlen(fbsd_dev_twa_ctrl))) {
++	       sizeof fbsd_dev_twa_ctrl - 1)) {
+     if (chan != NULL) {
+       if (get_tw_channel_unit(dev_name,&(chan->channel),&(chan->device))<0) {
+@@ -943,5 +975,5 @@
+ 
+   if (!strncmp(fbsd_dev_twe_ctrl,dev_name,
+-	       strlen(fbsd_dev_twe_ctrl))) {
++	       sizeof fbsd_dev_twe_ctrl - 1)) {
+     if (chan != NULL) {
+       if (get_tw_channel_unit(dev_name,&(chan->channel),&(chan->device))<0) {
+@@ -953,4 +985,13 @@
+     }
+     return CONTROLLER_3WARE_678K_CHAR;
++  }
++  // form /dev/esa* or esa*
++  if (!strncmp(fbsd_dev_ciss_ctrl, dev_name,
++	       sizeof fbsd_dev_ciss_ctrl - 1)) {
++  // This is of dubious value, as the desired disk's (unit's) number
++  // still must be specified explicitly with the `-d' option
++	warnx("Use the `-d' option to access drives behind %s. "
++	    "See smartctl(8) manual page.", dev_name);
++	return CONTROLLER_CCISS;
+   }
+ 
+--- smartctl.8.in	Wed Dec 20 02:30:43 2006
++++ smartctl.8.in	Sat Mar  3 05:22:28 2007
+@@ -303,5 +303,5 @@
+ .B HighPoint RocketRAID controllers are currently ONLY supported under Linux.
+ 
+-.B cciss controllers are currently ONLY supported under Linux.
++.B cciss controllers are currently ONLY supported under Linux and FreeBSD.
+ 
+ .TP
+@@ -1257,7 +1257,7 @@
+ .PP
+ .nf
+-.B smartctl \-a \-d cciss,0 /dev/cciss/c0d0
++.B smartctl \-a \-d cciss,0 /dev/ciss0
+ .fi
+-Examine all SMART data for the first SCSI disk connected to a cciss
++Examine all SMART data for the first SCSI disk connected to the first ciss
+ RAID controller card.
+ .PP
+--- smartd.8.in	Wed Dec 20 02:30:43 2006
++++ smartd.8.in	Sat Mar  3 05:24:51 2007
+@@ -717,5 +717,5 @@
+ with XX in the range from 00 to 15 inclusive.
+ 
+-.B 3ware and cciss controllers are currently ONLY supported under Linux.
++.B 3ware and cciss controllers are currently ONLY supported under Linux and FreeBSD.
+ 
+ .I hpt,L/M/N
