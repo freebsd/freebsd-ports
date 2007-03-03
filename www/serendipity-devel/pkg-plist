@@ -523,6 +523,7 @@
 %%SERENDIPITY%%/include/db/db.inc.php
 %%SERENDIPITY%%/include/db/mysql.inc.php
 %%SERENDIPITY%%/include/db/mysqli.inc.php
+%%SERENDIPITY%%/include/db/pdo-postgres.inc.php
 %%SERENDIPITY%%/include/db/postgres.inc.php
 %%SERENDIPITY%%/include/db/sqlite.inc.php
 %%SERENDIPITY%%/include/functions.inc.php
