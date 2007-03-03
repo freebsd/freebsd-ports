@@ -19,16 +19,10 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		xaric.1
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		Does not compile on ${ARCH}
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xaric ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xaric.1 ${MANPREFIX}/man/man1
 	@${MKDIR} ${DATADIR}/help
 	${INSTALL_DATA} ${WRKSRC}/help/* ${DATADIR}/help
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
