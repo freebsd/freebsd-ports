@@ -3904,6 +3904,7 @@ gri		ports/math/gri
 gribouy		ports/print/gribouy
 gridlock	ports/games/gridlock
 gridpix		ports/graphics/gridpix
+griffith	ports/deskutils/griffith
 grig		ports/comms/grig
 gringotts	ports/security/gringotts
 grip		ports/audio/grip
