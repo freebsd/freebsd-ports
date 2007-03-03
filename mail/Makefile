@@ -41,6 +41,7 @@
     SUBDIR += clamfilter
     SUBDIR += claws-mail
     SUBDIR += claws-mail-att_remover
+    SUBDIR += claws-mail-attach_warner
     SUBDIR += claws-mail-cachesaver
     SUBDIR += claws-mail-etpan_privacy
     SUBDIR += claws-mail-fetchinfo

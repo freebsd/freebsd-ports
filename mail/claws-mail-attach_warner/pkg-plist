@@ -1,0 +1,13 @@
+lib/claws-mail/plugins/attachwarner.so
+lib/claws-mail/plugins/attachwarner.la
+lib/claws-mail/plugins/attachwarner.a
+share/locale/de/LC_MESSAGES/attachwarner.mo
+share/locale/es/LC_MESSAGES/attachwarner.mo
+share/locale/fr/LC_MESSAGES/attachwarner.mo
+share/locale/hu/LC_MESSAGES/attachwarner.mo
+share/locale/it/LC_MESSAGES/attachwarner.mo
+share/locale/pt_BR/LC_MESSAGES/attachwarner.mo
+share/locale/ca/LC_MESSAGES/attachwarner.mo
+share/locale/fi/LC_MESSAGES/attachwarner.mo
+share/locale/pl/LC_MESSAGES/attachwarner.mo
+share/locale/sk/LC_MESSAGES/attachwarner.mo
