@@ -19,6 +19,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk12 gnometarget
 CONFIGURE_ARGS+=	--disable-shared
 MAKE_ENV=	LANG=C
+USE_XLIB=	yes
 
 post-patch:
 		${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/libtme/module.c
