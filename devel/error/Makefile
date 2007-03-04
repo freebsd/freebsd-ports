@@ -8,11 +8,10 @@
 PORTNAME=	error
 PORTVERSION=	20010616
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.unixfreak.org/~dima/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dd
 
-MAINTAINER=	dd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analyze diagnostic error output from compilers and other processors
 
 MANSECTS=	1

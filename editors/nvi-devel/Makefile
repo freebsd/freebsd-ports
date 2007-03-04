@@ -9,11 +9,11 @@ PORTNAME=	nvi
 PORTVERSION=	1.81.5
 PORTREVISION=	3
 CATEGORIES=	editors
-MASTER_SITES=	http://www.kotnet.org/~skimo/nvi/devel/ \
+MASTER_SITES=	http://193.190.253.81/~skimo/nvi/devel/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dd
 
-MAINTAINER=	dd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Development snapshot of the world-renown nvi editor
 
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
