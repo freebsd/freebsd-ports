@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Hash-AsObject
-PORTVERSION=	0.05
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +17,6 @@ COMMENT=	Hashes with accessors/mutators
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Hash::AsObject.3
+MAN3=		Hash::AsObject.3
 
 .include <bsd.port.mk>
