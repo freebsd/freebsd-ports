@@ -1,11 +1,11 @@
---- Makefile.in.orig	Mon Apr 29 23:36:46 2002
-+++ Makefile.in	Mon May 20 21:04:00 2002
-@@ -761,7 +761,7 @@
- 	cd $(DESTDIR)$(bindir); \
- 	$(LN) gawk $$fullname ; \
- 	$(LN) pgawk p$$fullname ; \
--	if [ ! -f awk ]; \
+--- Makefile.in.orig	Sun Mar  4 10:18:08 2007
++++ Makefile.in	Sun Mar  4 10:19:23 2007
+@@ -936,7 +936,7 @@
+ 	(cd $(DESTDIR)$(bindir); \
+ 	$(LN) gawk$(EXEEXT) gawk-$(VERSION)$(EXEEXT) 2>/dev/null ; \
+ 	$(LN) pgawk$(EXEEXT) pgawk-$(VERSION)$(EXEEXT) 2>/dev/null ; \
+-	if [ ! -f awk$(EXEEXT) ]; \
 +	if ! /usr/bin/which -s awk; \
- 	then	$(LN_S) gawk awk; \
+ 	then	$(LN_S) gawk$(EXEEXT) awk$(EXEEXT); \
  	fi; exit 0)
  

@@ -1,3 +1,5 @@
 This is GNU Awk. It should be upwardly compatible with the Bell
 Labs research version of awk.  It is almost completely compliant with
 the 1993 POSIX 1003.2 standard for awk.
+
+WWW: http://www.gnu.org/software/gawk/gawk.html

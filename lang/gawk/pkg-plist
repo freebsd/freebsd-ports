@@ -22,12 +22,34 @@ share/awk/passwd.awk
 share/awk/readable.awk
 share/awk/rewind.awk
 share/awk/round.awk
+share/awk/strtonum.awk
+share/awk/zerofile.awk
+%%NLS%%share/locale/ca/LC_MESSAGES/gawk.mo
+%%NLS%%share/locale/da/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gawk.mo
+%%NLS%%share/locale/ga/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/he/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gawk.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/gawk.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/gawk.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/gawk.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/gawk.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/gawk.mo
+%%NLS%%share/locale/rw/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/gawk.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/gawk.mo
 @dirrm share/awk
 @dirrm libexec/awk
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/vi/LC_MESSAGES
+@dirrmtry share/locale/vi
