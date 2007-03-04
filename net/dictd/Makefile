@@ -12,7 +12,7 @@ CATEGORIES+=	net textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=		dict
 
-MAINTAINER?=	dd@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Dict protocol (RFC 2229) server
 
 MAN1=		dictzip.1

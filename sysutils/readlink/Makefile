@@ -8,11 +8,9 @@
 PORTNAME=	readlink
 PORTVERSION=	20010616
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.unixfreak.org/~dima/distfiles/
-MASTER_SITE_SUBDIR=	dd
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 
-MAINTAINER=	dd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dereference a symbolic link and print the name of the target
 
 MANSECTS=	1

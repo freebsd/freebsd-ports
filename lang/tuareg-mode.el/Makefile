@@ -10,7 +10,7 @@ PORTVERSION=	1.46.0
 CATEGORIES=	lang elisp
 MASTER_SITES=	http://www-rocq.inria.fr/~acohen/tuareg/mode/
 
-MAINTAINER=	dd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs major mode for editing Caml code
 
 USE_EMACS=	yes

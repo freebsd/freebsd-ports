@@ -10,7 +10,7 @@ PORTREVISION=	0
 CATEGORIES=	databases python
 PKGNAMESUFFIX=	-plpython
 
-MAINTAINER=	dd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A module for using Python to write SQL functions
 
 RUN_DEPENDS=	postgres:${PORTSDIR}/${POSTGRESQL_PORT}

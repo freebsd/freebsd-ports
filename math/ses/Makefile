@@ -12,7 +12,7 @@ MASTER_SITES=	http://home.comcast.net/~jyavner/ses/
 DISTNAME=	ses21-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Emacs Spreadsheet
 
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs

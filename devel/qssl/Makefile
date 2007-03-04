@@ -11,7 +11,7 @@ CATEGORIES=	devel security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	psi
 
-MAINTAINER=	dd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QSSL is a Qt plugin that helps applications use OpenSSL
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
