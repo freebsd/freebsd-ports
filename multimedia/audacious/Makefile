@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2
 USE_LDCONFIG=	yes
 USE_XLIB=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
 
 MAN1=		audacious.1 audtool.1
 
