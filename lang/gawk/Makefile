@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gawk
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	The GNU version of Awk
 
 INFO=		gawk gawkinet
