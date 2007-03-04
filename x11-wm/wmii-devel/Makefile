@@ -8,7 +8,7 @@
 PORTNAME=	wmii
 DISTVERSION=	3.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://wmii.de/download/
+MASTER_SITES=	http://www.suckless.org/download/ CSME
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A dynamic, minimalist window manager for X11
