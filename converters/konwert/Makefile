@@ -18,7 +18,7 @@ PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
 PATCHLEVEL=	11
 PATCHFILES=	${PORTNAME}_${PORTVERSION}-${PATCHLEVEL}.diff.gz
 
-MAINTAINER=	alexs@snark.rinet.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular converter between charsets and filter
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
