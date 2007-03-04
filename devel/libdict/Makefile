@@ -8,13 +8,12 @@
 PORTNAME=	libdict
 PORTVERSION=	0.2.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.crazycoder.org/libdict/:source \
-		http://www.crazycoder.org/libdict/algorithms/:doc
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source treap_insert.pdf:doc \
 		avl_insert.pdf:doc empty.pdf:doc
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	alexs@snark.rinet.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library providing access to ``dictionary'' data structures
 
 USE_GMAKE=	yes
