@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dd
 DISTFILES=	sol.pl sol-test.txt
 
-MAINTAINER=	sanity@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The reference implementation of the Solitaire encryption algorithm
 
 NO_BUILD=	yes
