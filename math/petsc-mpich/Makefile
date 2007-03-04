@@ -9,4 +9,8 @@ MASTERDIR=		${.CURDIR}/../petsc
 
 WITH_MPI=		yes
 
+BROKEN=			does not configure
+DEPRECATED=		${BROKEN}
+EXPIRATION_DATE=	2007-05-04
+
 .include "${MASTERDIR}/Makefile"
