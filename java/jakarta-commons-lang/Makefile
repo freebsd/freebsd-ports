@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	commons-lang
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	commons/lang/source
@@ -37,11 +37,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${DESTJARFILE}
 JDK_API!=	(${FIND} -s ${LOCALBASE}/share/doc/jdk1.? -maxdepth 1 -name api -type d 2>/dev/null || ${TRUE}) | ${TAIL} -n 1
 
 .if ${JDK_API} != ""
-MAKE_ARGS+=	-Djdk.api=${JDK_API}
-
-do-configure:
-	${REINPLACE_CMD} -e 's|\(</javadoc>\)|<link offline="true" packagelistLoc="$${jdk.api}"/>\1|' \
-	  ${WRKSRC}/build.xml
+MAKE_ARGS+=	-Djdk.javadoc=${JDK_API}
 
 .endif
 
