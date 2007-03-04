@@ -1,0 +1,69 @@
+diff -ru ifd-test-1.0/ifdtest.c ifd-test-1.0.new/ifdtest.c
+--- ifd-test-1.0/ifdtest.c	2001-04-17 18:49:02.000000000 +0200
++++ ifdtest.c	2007-03-02 16:24:40.000000000 +0100
+@@ -110,7 +110,7 @@
+ }
+ if( outfile != NULL) fp = fopen(outfile,"w");
+ else fp=NULL;
+-	rv = SCardEstablishContext( SCARD_SCOPE_GLOBAL, pcHost, NULL, &hContext );
++	rv = SCardEstablishContext( SCARD_SCOPE_SYSTEM, pcHost, NULL, &hContext );
+ 	if ( rv != SCARD_S_SUCCESS ) {
+ 			myprintf("ERROR :: Resource Manager not running \n");
+ 			myprintf("Please start the resource manager and try again \n");
+diff -ru ifd-test-1.0/testGD.c ifd-test-1.0.new/testGD.c
+--- ifd-test-1.0/testGD.c	2001-04-17 18:49:01.000000000 +0200
++++ testGD.c	2007-03-02 16:23:52.000000000 +0100
+@@ -12,12 +12,12 @@
+ 	//checkATR(atr);
+ 	/* Try to set T=0 protocol */
+ 	printit("Try to set protocol T0 | T1");
+-	rv = SCardReconnect(hCard,SCARD_SHARE_SHARED,SCARD_PROTOCOL_T0,SCARD_RESET,&protocol);
++	rv = SCardReconnect(hCard,SCARD_SHARE_SHARED,SCARD_PROTOCOL_T0,SCARD_RESET_CARD,&protocol);
+ 	if( rv != SCARD_S_SUCCESS ) { 
+ 		myprintf("Failed\n");
+ 		return -1;
+     }          
+-	rv = SCardReconnect(hCard,SCARD_SHARE_SHARED,SCARD_PROTOCOL_T1,SCARD_RESET,&protocol);
++rv = SCardReconnect(hCard,SCARD_SHARE_SHARED,SCARD_PROTOCOL_T1,SCARD_RESET_CARD,&protocol);
+ 	if( rv != SCARD_S_SUCCESS ) { 
+ 		myprintf("Failed\n");
+ 		return -1;
+@@ -25,7 +25,7 @@
+ 	myprintf("Passed\n");
+ 	myprintf("Test No. 1 \n");
+ 	printit("Cold reset");
+-	rv = SCardReconnect(hCard,SCARD_SHARE_SHARED,SCARD_PROTOCOL_T0,SCARD_RESET,&protocol);
++	rv = SCardReconnect(hCard,SCARD_SHARE_SHARED,SCARD_PROTOCOL_T0,SCARD_RESET_CARD,&protocol);
+     if( rv!= SCARD_S_SUCCESS ) {
+ 		myprintf("Failed\n");
+ 		return -1;
+@@ -51,7 +51,7 @@
+ 		DO_TRANSMIT(SCARD_PCI_T0,0);
+ 	}
+ 	printit("Cold reset");
+-    rv = SCardReconnect(hCard,SCARD_SHARE_SHARED,SCARD_PROTOCOL_T1,SCARD_RESET,&protocol);
++    rv = SCardReconnect(hCard,SCARD_SHARE_SHARED,SCARD_PROTOCOL_T1,SCARD_RESET_CARD,&protocol);
+     if( rv != SCARD_S_SUCCESS ) {
+ 		myprintf("Failed\n");
+ 		return -1;
+diff -ru ifd-test-1.0/testSIEMENS.c ifd-test-1.0.new/testSIEMENS.c
+--- ifd-test-1.0/testSIEMENS.c	2001-04-17 18:49:02.000000000 +0200
++++ testSIEMENS.c	2007-03-02 16:24:05.000000000 +0100
+@@ -14,7 +14,7 @@
+ 	//checkATR(atr);
+ 	/* Try to set T=0 protocol */
+ 	printit("Try to set protocol T0");
+-	rv = SCardReconnect(hCard,SCARD_SHARE_SHARED,SCARD_PROTOCOL_T0,SCARD_RESET,&protocol);
++	rv = SCardReconnect(hCard,SCARD_SHARE_SHARED,SCARD_PROTOCOL_T0,SCARD_RESET_CARD,&protocol);
+ 	fflush(stdout);
+ 	fflush(stderr);
+ 	if( rv!= SCARD_S_SUCCESS ) { 
+@@ -28,7 +28,7 @@
+ 		myprintf("Failed\n");
+ 	}
+ 	printit("Set Protocol T=1");
+-	rv = SCardReconnect(hCard,SCARD_SHARE_SHARED,SCARD_PROTOCOL_T1,SCARD_RESET,&protocol);
++	rv = SCardReconnect(hCard,SCARD_SHARE_SHARED,SCARD_PROTOCOL_T1,SCARD_RESET_CARD,&protocol);
+ 	if( rv!= SCARD_S_SUCCESS ) { 
+ 		myprintf("Failed\n");
+ 		return -1;
