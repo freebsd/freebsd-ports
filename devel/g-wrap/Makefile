@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:	g-wrap
 # Date created:		Jun 29, 2000
 # Whom:			Matthew Condell (mcondell@alum.mit.edu)
@@ -9,7 +8,7 @@
 
 PORTNAME=	g-wrap
 PORTVERSION=	1.9.6
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	devel scheme
 MASTER_SITES=	SAVANNAH
@@ -29,9 +28,19 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CONFIGURE_TARGET=	--build=x86_64-portbld-freebsd${OSREL}
+CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -fPIC"
+.else
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|"glib"|"glib-2.0"|' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|"glib"|"glib-2.0"|g ; \
+		s|SRFI_34=yes|SRFI_34=no|g ; s|SRFI_35=yes|SRFI_35=no|g' \
+			${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|(GUILE_CFLAGS) $$(LIBFFI_CFLAGS)|(LIBFFI_CFLAGS) $$(GUILE_CFLAGS)|g'
 
@@ -45,4 +54,4 @@ post-install:
 		${PREFIX}/include/g-wrap/ffi
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

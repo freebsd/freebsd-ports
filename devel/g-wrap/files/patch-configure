@@ -1,0 +1,55 @@
+--- configure.orig	Thu Mar  1 11:20:23 2007
++++ configure	Thu Mar  1 11:23:45 2007
+@@ -3860,6 +3860,52 @@
+   rm -rf conftest*
+   ;;
+ 
++x86_64-*freebsd*|ppc*-*freebsd*|powerpc*-*freebsd*|s390*-*freebsd*|sparc*-*freebsd*)
++  # Find out which ABI we are using.
++  echo 'int i;' > conftest.$ac_ext
++  if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
++  (eval $ac_compile) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; then
++    case "`/usr/bin/file conftest.o`" in
++    *32-bit*)
++      case $host in
++        x86_64-*freebsd*)
++          LD="${LD-ld} -m elf_i386_fbsd"
++          ;;
++        ppc64-*freebsd*|powerpc64-*freebsd*)
++          LD="${LD-ld} -m elf32ppc_fbsd"
++          ;;
++        s390x-*freebsd*)
++          LD="${LD-ld} -m elf_s390"
++          ;;
++        sparc64-*freebsd*)
++          LD="${LD-ld} -m elf32_sparc"
++          ;;
++      esac
++      ;;
++    *64-bit*)
++      case $host in
++        x86_64-*freebsd*)
++          LD="${LD-ld} -m elf_x86_64_fbsd"
++          ;;
++        ppc*-*freebsd*|powerpc*-*freebsd*)
++          LD="${LD-ld} -m elf64ppc"
++          ;;
++        s390*-*freebsd*)
++          LD="${LD-ld} -m elf64_s390"
++          ;;
++        sparc*-*freebsd*)
++          LD="${LD-ld} -m elf64_sparc_fbsd"
++          ;;
++      esac
++      ;;
++    esac
++  fi
++  rm -rf conftest*
++  ;;
++
+ x86_64-*linux*|ppc*-*linux*|powerpc*-*linux*|s390*-*linux*|sparc*-*linux*)
+   # Find out which ABI we are using.
+   echo 'int i;' > conftest.$ac_ext
