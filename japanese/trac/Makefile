@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	trac
-PORTVERSION=	0.9.6
-PORTREVISION=	3
+PORTVERSION=	0.10.3
 CATEGORIES=	japanese www devel python
 MASTER_SITES=	http://dist.bsdlab.org/ \
 		http://www.i-act.co.jp/project/products/downloads/
@@ -23,8 +22,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	SILVERCITY "Use Silvercity for syntax highlighting" On \
-		DOCUTILS   "Allow additional text markup" On \
-		LOCALTZ    "Use local TZ in notify mail Date: header" Off
+		DOCUTILS   "Allow additional text markup" On
 CONFLICTS=	trac-0.*
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-ja-1
 
@@ -32,7 +30,7 @@ USE_ZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-MAN1=		trac-admin.1 tracd.1 tracdb2env.1
+MAN1=		trac-admin.1 tracd.1
 
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:
@@ -44,9 +42,6 @@ x-generate-plist:
 		;s,share/trac,%%DATADIR%%,g \
 		;s,@dirrm (%%PYTHON_SITELIBDIR%%|${PYTHON_LIBDIR:S,${PYTHONBASE}/,,})$$,,g \
 		' | ${TR} -s '\n') > temp-pkg-plist
-
-post-patch:
-	@${FIND} ${WRKSRC} -name '*.orig' | ${XARGS} ${RM}
 
 post-install:
 	@${ECHO_CMD}
@@ -61,10 +56,6 @@ RUN_DEPENDS+=	${PREFIX}/bin/source2html.py:${PORTSDIR}/textproc/silvercity
 
 .if defined(WITH_DOCUTILS)
 RUN_DEPENDS+=	${PREFIX}/bin/rst2html:${PORTSDIR}/textproc/py-docutils
-.endif
-
-.if defined(WITH_LOCALTZ)
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-Notify.py
 .endif
 
 .include <bsd.port.post.mk>
