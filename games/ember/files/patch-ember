@@ -1,5 +1,5 @@
---- ember.in.orig	Mon Jul 10 22:21:36 2006
-+++ ember.in	Fri Jul 14 06:21:41 2006
+--- ember.in.orig	Tue Feb 27 00:56:03 2007
++++ ember.in	Sat Mar  3 19:27:32 2007
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -18,7 +18,16 @@
  #if [ "$fullpath" = "" ]; then
  if [ "$test" = "." ]; then
  	path=${PWD}
-@@ -99,5 +100,6 @@
+@@ -99,7 +100,7 @@
+ 
+ if [ ! -d $media_dir ] ; then
+ 	echo "Copying dynamic data to user directory"
+-	cp -dpR $media_user_dir $media_dir
++	cp -pR $media_user_dir $media_dir
+ fi
+ 
+ #Let's write the version number so that we can do some useful thing with it in the future. (Like remove old media dirs.)
+@@ -133,5 +134,6 @@
  # Execute real ember binary
  echo "Starting Ember...."
  #we have to do the LD_PRELOAD thing, because else at least I get an error: libnvidia-tls.so.1: cannot handle TLS data /ehj
