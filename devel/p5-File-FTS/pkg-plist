@@ -1,5 +1,2 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/FTS/.packlist
 %%SITE_PERL%%/File/FTS.pm
 @dirrmtry %%SITE_PERL%%/File
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/FTS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
