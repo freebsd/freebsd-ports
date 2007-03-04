@@ -8,21 +8,18 @@
 PORTNAME=	rmime
 PORTVERSION=	1.2
 CATEGORIES=	mail
-MASTER_SITES=	http://www.cinti.net/~rmoody/rmime/ \
-		${MASTER_SITE_LOCAL} \
-		http://www.unixfreak.org/~dima/distfiles/
-MASTER_SITE_SUBDIR=	dd
+MASTER_SITES=	http://www.subterrain.net/code/
 DISTNAME=	rmime.el
 EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	dd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Decode MIME messages inside Emacs (works with RMAIL, VM, and mh-e)
+
+RUN_DEPENDS=	metamail:${PORTSDIR}/mail/metamail
 
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs20
-RUN_DEPENDS=	metamail:${PORTSDIR}/mail/metamail
-
 NO_WRKSUBDIR=	yes
 STRIP=		# empty
 
