@@ -11,7 +11,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dd
 
-MAINTAINER=	dd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenBSD's netcat: cleaner code, familiar interface, IPv6 support
 
 MANSECTS=	1

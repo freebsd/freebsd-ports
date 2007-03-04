@@ -11,7 +11,7 @@ CATEGORIES=	net www
 MASTER_SITES=	http://www.acme.com/software/${PORTNAME}/
 DISTNAME=	${PORTNAME}_29jun2005
 
-MAINTAINER=	dd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sends HTTP requests every few seconds and times how long they take
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

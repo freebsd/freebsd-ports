@@ -11,7 +11,7 @@ CATEGORIES=	textproc devel
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	dd@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Syck is an extension for reading and writing YAML swiftly
 
 GNU_CONFIGURE=	yes
