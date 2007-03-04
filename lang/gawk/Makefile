@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gawk
-PORTVERSION=	3.1.1
-PORTREVISION=	1
+PORTVERSION=	3.1.5
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gawk
@@ -23,9 +22,11 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nowchar
 .endif
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE}
-MAN1=		gawk.1 igawk.1
+
+MAN1=		gawk.1 igawk.1 pgawk.1
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
