@@ -41,7 +41,8 @@ IGNORE=	does not compile on FreeBSD 4.x, missing library function isfinite
 
 post-patch:
 	@${REINPLACE_CMD} -Ee 's|$${libdir}/ladspa|${LOCALBASE}/lib/ladspa|; \
-		/FLAGS=/ s/(-g|-ggdb3|-pipe|-O2|-ftracer|-finline-functions|-fno-keep-static-consts)//' \
+		/FLAGS=/ s/(-g|-ggdb3|-pipe|-O2|-ftracer|-finline-functions|-fno-keep-static-consts)//; \
+		s|echo aout|echo elf|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/bse/Makefile.in \
