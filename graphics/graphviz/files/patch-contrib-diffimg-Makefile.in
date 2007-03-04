@@ -1,0 +1,26 @@
+--- contrib/diffimg/Makefile.in.orig	Mon Feb 26 16:39:29 2007
++++ contrib/diffimg/Makefile.in	Mon Feb 26 16:41:47 2007
+@@ -54,8 +54,8 @@
+ PROGRAMS = $(noinst_PROGRAMS)
+ am_diffimg_OBJECTS = diffimg.$(OBJEXT)
+ diffimg_OBJECTS = $(am_diffimg_OBJECTS)
+-@WITH_LIBGD_TRUE@diffimg_DEPENDENCIES =  \
+-@WITH_LIBGD_TRUE@	$(top_builddir)/lib/gd/libgvgd_C.la
++@WITH_MYLIBGD_TRUE@diffimg_DEPENDENCIES =  \
++@WITH_MYLIBGD_TRUE@	$(top_builddir)/lib/gd/libgvgd_C.la
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/config/depcomp
+ am__depfiles_maybe = depfiles
+@@ -367,9 +367,9 @@
+ target_alias = @target_alias@
+ AM_CPPFLAGS = @GD_INCLUDES@
+ diffimg_SOURCES = diffimg.c
+-@WITH_LIBGD_FALSE@diffimg_LDADD = @GD_LIBS@
+-@WITH_LIBGD_TRUE@diffimg_LDADD = $(top_builddir)/lib/gd/libgvgd_C.la \
+-@WITH_LIBGD_TRUE@	@FC_LIBS@ @FT_LIBS@ @JPEG_LIBS@ @PNG_LIBS@ @Z_LIBS@ @MATH_LIBS@
++@WITH_LIBGD_TRUE@diffimg_LDADD = @GD_LIBS@
++@WITH_MYLIBGD_TRUE@diffimg_LDADD = $(top_builddir)/lib/gd/libgvgd_C.la \
++@WITH_MYLIBGD_TRUE@	@FC_LIBS@ @FT_LIBS@ @JPEG_LIBS@ @PNG_LIBS@ @Z_LIBS@ @MATH_LIBS@
+ 
+ GRAPH = "digraph G { hello -> world }"
+ CLEANFILES = *.png
