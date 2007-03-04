@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.porcupine.org/pub/security/ \
 		ftp://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/chrootuid/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	truckman@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple wrapper that combines chroot(8) and su(1) into  one  program
 
 MAN8=		chrootuid.8
