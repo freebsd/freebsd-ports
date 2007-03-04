@@ -29,6 +29,7 @@ pre-patch:
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
 
 post-patch: .SILENT
+	${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|; s|$$(prefix)/doc|$$(datadir)/doc|' \
 		${WRKSRC}/source/example/bpm/Makefile.in \
 		${WRKSRC}/source/example/SoundStretch/Makefile.in \
