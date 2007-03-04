@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	alexs@snark.rinet.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General knowledge base and commonsense reasoning engine
 
 USE_LINUX=	yes
