@@ -9,10 +9,11 @@ PORTNAME=	chmview
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	converters textproc
-MASTER_SITES=	http://trexinc.narod.ru/myprogs/files/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	trexinc
 DISTNAME=	chmview
 
-MAINTAINER=	alexs@snark.rinet.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extractor from .chm files
 
 USE_ZIP=	yes
