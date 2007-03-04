@@ -8,13 +8,11 @@
 PORTNAME=	solitaire
 PORTVERSION=	19980817
 CATEGORIES=	math
-MASTER_SITES=	http://www.counterpane.com/ \
-		${MASTER_SITE_LOCAL} \
-		http://www.unixfreak.org/~dima/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dd
 DISTFILES=	sol.pl sol-test.txt
 
-MAINTAINER=	dd@FreeBSD.org
+MAINTAINER=	sanity@FreeBSD.org
 COMMENT=	The reference implementation of the Solitaire encryption algorithm
 
 NO_BUILD=	yes
