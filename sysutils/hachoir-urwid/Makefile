@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hachoir-urwid
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/h/${PORTNAME}/ CSME
 

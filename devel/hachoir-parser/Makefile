@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hachoir-parser
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/h/${PORTNAME}/ CSME
 
