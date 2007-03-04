@@ -28,6 +28,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}+cvs.2004.02.07
 # tests need CppUnit
 post-patch:
 	@${REINPLACE_CMD} -e 's| tests||' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 
 pre-configure:
 .for i in install-sh missing depcomp mkinstalldirs
