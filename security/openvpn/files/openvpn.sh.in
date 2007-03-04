@@ -2,10 +2,10 @@
 #
 # openvpn.sh - load tun/tap driver and start OpenVPN daemon
 #
-# (C) Copyright 2005 by Matthias Andree
+# (C) Copyright 2005 - 2007 by Matthias Andree
 # based on suggestions by Matthias Grimm and Dirk Gouders
-#
-# Made in Northrhine-Westphalia, Germany
+# with multi-instance contribution from Denis Shaposhnikov, Gleb Kozyrev
+# and Vasil Dimov
 #
 # $FreeBSD$
 # 
@@ -64,17 +64,17 @@
 . %%RC_SUBR%%
 
 case "$0" in
-	/etc/rc*)
+/etc/rc*)
 	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
 	# so get the name of the script from $_file
-	name=$(basename "$_file")
+	name=$(basename "$_file" .sh)
 	;;
-	*)
-	name=$(basename "$0")
+*)
+	name=$(basename "$0" .sh)
 	;;
 esac
 
-rcvar=`set_rcvar`
+rcvar=$(set_rcvar)
 
 prefix="%%PREFIX%%"
 
@@ -122,9 +122,9 @@ eval ": \${${name}_if:=\"\"}"
 eval ": \${${name}_configfile:=\"${prefix}/etc/openvpn/${name}.conf\"}"
 eval ": \${${name}_dir:=\"${prefix}/etc/openvpn\"}"
 
-configfile="`eval echo \\${${name}_configfile}`"
-dir="`eval echo \\${${name}_dir}`"
-interfaces="`eval echo \\${${name}_if}`"
+configfile="$(eval echo \${${name}_configfile})"
+dir="$(eval echo \${${name}_dir})"
+interfaces="$(eval echo \${${name}_if})"
 
 required_files=${configfile}
 command_args="--cd ${dir} --daemon --config ${configfile} --writepid ${pidfile}"
