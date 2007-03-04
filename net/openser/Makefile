@@ -45,6 +45,8 @@ RC_FILES=	acc/radiusclient.conf \
 		openser.cfg
 RC_DIRS=	acc
 
+ONLY_FOR_ARCHS=	i386
+
 MAN5=		openser.cfg.5
 MAN8=		openser.8 \
 		openserctl.8 \
