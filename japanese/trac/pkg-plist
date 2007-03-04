@@ -1,12 +1,8 @@
 bin/trac-admin
 bin/tracd
-bin/tracdb2env
 %%PYTHON_SITELIBDIR%%/trac/About.py
 %%PYTHON_SITELIBDIR%%/trac/About.pyc
 %%PYTHON_SITELIBDIR%%/trac/About.pyo
-%%PYTHON_SITELIBDIR%%/trac/Notify.py
-%%PYTHON_SITELIBDIR%%/trac/Notify.pyc
-%%PYTHON_SITELIBDIR%%/trac/Notify.pyo
 %%PYTHON_SITELIBDIR%%/trac/Search.py
 %%PYTHON_SITELIBDIR%%/trac/Search.pyc
 %%PYTHON_SITELIBDIR%%/trac/Search.pyo
@@ -28,12 +24,33 @@ bin/tracdb2env
 %%PYTHON_SITELIBDIR%%/trac/core.py
 %%PYTHON_SITELIBDIR%%/trac/core.pyc
 %%PYTHON_SITELIBDIR%%/trac/core.pyo
-%%PYTHON_SITELIBDIR%%/trac/db.py
-%%PYTHON_SITELIBDIR%%/trac/db.pyc
-%%PYTHON_SITELIBDIR%%/trac/db.pyo
 %%PYTHON_SITELIBDIR%%/trac/db_default.py
 %%PYTHON_SITELIBDIR%%/trac/db_default.pyc
 %%PYTHON_SITELIBDIR%%/trac/db_default.pyo
+%%PYTHON_SITELIBDIR%%/trac/db/__init__.py
+%%PYTHON_SITELIBDIR%%/trac/db/__init__.pyc
+%%PYTHON_SITELIBDIR%%/trac/db/__init__.pyo
+%%PYTHON_SITELIBDIR%%/trac/db/api.py
+%%PYTHON_SITELIBDIR%%/trac/db/api.pyc
+%%PYTHON_SITELIBDIR%%/trac/db/api.pyo
+%%PYTHON_SITELIBDIR%%/trac/db/mysql_backend.py
+%%PYTHON_SITELIBDIR%%/trac/db/mysql_backend.pyc
+%%PYTHON_SITELIBDIR%%/trac/db/mysql_backend.pyo
+%%PYTHON_SITELIBDIR%%/trac/db/pool.py
+%%PYTHON_SITELIBDIR%%/trac/db/pool.pyc
+%%PYTHON_SITELIBDIR%%/trac/db/pool.pyo
+%%PYTHON_SITELIBDIR%%/trac/db/postgres_backend.py
+%%PYTHON_SITELIBDIR%%/trac/db/postgres_backend.pyc
+%%PYTHON_SITELIBDIR%%/trac/db/postgres_backend.pyo
+%%PYTHON_SITELIBDIR%%/trac/db/schema.py
+%%PYTHON_SITELIBDIR%%/trac/db/schema.pyc
+%%PYTHON_SITELIBDIR%%/trac/db/schema.pyo
+%%PYTHON_SITELIBDIR%%/trac/db/sqlite_backend.py
+%%PYTHON_SITELIBDIR%%/trac/db/sqlite_backend.pyc
+%%PYTHON_SITELIBDIR%%/trac/db/sqlite_backend.pyo
+%%PYTHON_SITELIBDIR%%/trac/db/util.py
+%%PYTHON_SITELIBDIR%%/trac/db/util.pyc
+%%PYTHON_SITELIBDIR%%/trac/db/util.pyo
 %%PYTHON_SITELIBDIR%%/trac/env.py
 %%PYTHON_SITELIBDIR%%/trac/env.pyc
 %%PYTHON_SITELIBDIR%%/trac/env.pyo
@@ -67,6 +84,9 @@ bin/tracdb2env
 %%PYTHON_SITELIBDIR%%/trac/mimeview/txtl.py
 %%PYTHON_SITELIBDIR%%/trac/mimeview/txtl.pyc
 %%PYTHON_SITELIBDIR%%/trac/mimeview/txtl.pyo
+%%PYTHON_SITELIBDIR%%/trac/notification.py
+%%PYTHON_SITELIBDIR%%/trac/notification.pyc
+%%PYTHON_SITELIBDIR%%/trac/notification.pyo
 %%PYTHON_SITELIBDIR%%/trac/perm.py
 %%PYTHON_SITELIBDIR%%/trac/perm.pyc
 %%PYTHON_SITELIBDIR%%/trac/perm.pyo
@@ -91,6 +111,9 @@ bin/tracdb2env
 %%PYTHON_SITELIBDIR%%/trac/ticket/model.py
 %%PYTHON_SITELIBDIR%%/trac/ticket/model.pyc
 %%PYTHON_SITELIBDIR%%/trac/ticket/model.pyo
+%%PYTHON_SITELIBDIR%%/trac/ticket/notification.py
+%%PYTHON_SITELIBDIR%%/trac/ticket/notification.pyc
+%%PYTHON_SITELIBDIR%%/trac/ticket/notification.pyo
 %%PYTHON_SITELIBDIR%%/trac/ticket/query.py
 %%PYTHON_SITELIBDIR%%/trac/ticket/query.pyc
 %%PYTHON_SITELIBDIR%%/trac/ticket/query.pyo
@@ -127,6 +150,15 @@ bin/tracdb2env
 %%PYTHON_SITELIBDIR%%/trac/upgrades/db16.py
 %%PYTHON_SITELIBDIR%%/trac/upgrades/db16.pyc
 %%PYTHON_SITELIBDIR%%/trac/upgrades/db16.pyo
+%%PYTHON_SITELIBDIR%%/trac/upgrades/db17.py
+%%PYTHON_SITELIBDIR%%/trac/upgrades/db17.pyc
+%%PYTHON_SITELIBDIR%%/trac/upgrades/db17.pyo
+%%PYTHON_SITELIBDIR%%/trac/upgrades/db18.py
+%%PYTHON_SITELIBDIR%%/trac/upgrades/db18.pyc
+%%PYTHON_SITELIBDIR%%/trac/upgrades/db18.pyo
+%%PYTHON_SITELIBDIR%%/trac/upgrades/db19.py
+%%PYTHON_SITELIBDIR%%/trac/upgrades/db19.pyc
+%%PYTHON_SITELIBDIR%%/trac/upgrades/db19.pyo
 %%PYTHON_SITELIBDIR%%/trac/upgrades/db3.py
 %%PYTHON_SITELIBDIR%%/trac/upgrades/db3.pyc
 %%PYTHON_SITELIBDIR%%/trac/upgrades/db3.pyo
@@ -148,9 +180,24 @@ bin/tracdb2env
 %%PYTHON_SITELIBDIR%%/trac/upgrades/db9.py
 %%PYTHON_SITELIBDIR%%/trac/upgrades/db9.pyc
 %%PYTHON_SITELIBDIR%%/trac/upgrades/db9.pyo
-%%PYTHON_SITELIBDIR%%/trac/util.py
-%%PYTHON_SITELIBDIR%%/trac/util.pyc
-%%PYTHON_SITELIBDIR%%/trac/util.pyo
+%%PYTHON_SITELIBDIR%%/trac/util/__init__.py
+%%PYTHON_SITELIBDIR%%/trac/util/__init__.pyc
+%%PYTHON_SITELIBDIR%%/trac/util/__init__.pyo
+%%PYTHON_SITELIBDIR%%/trac/util/autoreload.py
+%%PYTHON_SITELIBDIR%%/trac/util/autoreload.pyc
+%%PYTHON_SITELIBDIR%%/trac/util/autoreload.pyo
+%%PYTHON_SITELIBDIR%%/trac/util/daemon.py
+%%PYTHON_SITELIBDIR%%/trac/util/daemon.pyc
+%%PYTHON_SITELIBDIR%%/trac/util/daemon.pyo
+%%PYTHON_SITELIBDIR%%/trac/util/datefmt.py
+%%PYTHON_SITELIBDIR%%/trac/util/datefmt.pyc
+%%PYTHON_SITELIBDIR%%/trac/util/datefmt.pyo
+%%PYTHON_SITELIBDIR%%/trac/util/html.py
+%%PYTHON_SITELIBDIR%%/trac/util/html.pyc
+%%PYTHON_SITELIBDIR%%/trac/util/html.pyo
+%%PYTHON_SITELIBDIR%%/trac/util/text.py
+%%PYTHON_SITELIBDIR%%/trac/util/text.pyc
+%%PYTHON_SITELIBDIR%%/trac/util/text.pyo
 %%PYTHON_SITELIBDIR%%/trac/versioncontrol/__init__.py
 %%PYTHON_SITELIBDIR%%/trac/versioncontrol/__init__.pyc
 %%PYTHON_SITELIBDIR%%/trac/versioncontrol/__init__.pyo
@@ -223,6 +270,15 @@ bin/tracdb2env
 %%PYTHON_SITELIBDIR%%/trac/web/standalone.py
 %%PYTHON_SITELIBDIR%%/trac/web/standalone.pyc
 %%PYTHON_SITELIBDIR%%/trac/web/standalone.pyo
+%%PYTHON_SITELIBDIR%%/trac/web/wsgi.py
+%%PYTHON_SITELIBDIR%%/trac/web/wsgi.pyc
+%%PYTHON_SITELIBDIR%%/trac/web/wsgi.pyo
+%%PYTHON_SITELIBDIR%%/trac/wiki/intertrac.py
+%%PYTHON_SITELIBDIR%%/trac/wiki/intertrac.pyc
+%%PYTHON_SITELIBDIR%%/trac/wiki/intertrac.pyo
+%%PYTHON_SITELIBDIR%%/trac/wiki/interwiki.py
+%%PYTHON_SITELIBDIR%%/trac/wiki/interwiki.pyc
+%%PYTHON_SITELIBDIR%%/trac/wiki/interwiki.pyo
 %%PYTHON_SITELIBDIR%%/trac/wiki/__init__.py
 %%PYTHON_SITELIBDIR%%/trac/wiki/__init__.pyc
 %%PYTHON_SITELIBDIR%%/trac/wiki/__init__.pyo
@@ -245,6 +301,7 @@ bin/tracdb2env
 %%DATADIR%%/cgi-bin/trac.fcgi
 %%DATADIR%%/htdocs/README
 %%DATADIR%%/htdocs/asc.png
+%%DATADIR%%/htdocs/attachment.png
 %%DATADIR%%/htdocs/changeset.png
 %%DATADIR%%/htdocs/closedticket.png
 %%DATADIR%%/htdocs/css/about.css
@@ -262,14 +319,11 @@ bin/tracdb2env
 %%DATADIR%%/htdocs/desc.png
 %%DATADIR%%/htdocs/dots.gif
 %%DATADIR%%/htdocs/draft.png
-%%DATADIR%%/htdocs/edgewall.png
 %%DATADIR%%/htdocs/edit_toolbar.png
 %%DATADIR%%/htdocs/editedticket.png
 %%DATADIR%%/htdocs/extlink.gif
 %%DATADIR%%/htdocs/file.png
-%%DATADIR%%/htdocs/filedeny.png
 %%DATADIR%%/htdocs/folder.png
-%%DATADIR%%/htdocs/folderdeny.png
 %%DATADIR%%/htdocs/ics.png
 %%DATADIR%%/htdocs/imggrid.png
 %%DATADIR%%/htdocs/js/query.js
@@ -278,6 +332,7 @@ bin/tracdb2env
 %%DATADIR%%/htdocs/milestone.png
 %%DATADIR%%/htdocs/newticket.png
 %%DATADIR%%/htdocs/parent.png
+%%DATADIR%%/htdocs/python.png
 %%DATADIR%%/htdocs/topbar_gradient.png
 %%DATADIR%%/htdocs/topbar_gradient2.png
 %%DATADIR%%/htdocs/trac.ico
@@ -286,12 +341,15 @@ bin/tracdb2env
 %%DATADIR%%/htdocs/wiki.png
 %%DATADIR%%/htdocs/xml.png
 %%DATADIR%%/templates/README
+%%DATADIR%%/templates/about.cs
+%%DATADIR%%/templates/anydiff.cs
 %%DATADIR%%/templates/attachment.cs
 %%DATADIR%%/templates/browser.cs
 %%DATADIR%%/templates/changeset.cs
 %%DATADIR%%/templates/error.cs
 %%DATADIR%%/templates/footer.cs
 %%DATADIR%%/templates/header.cs
+%%DATADIR%%/templates/index.cs
 %%DATADIR%%/templates/log.cs
 %%DATADIR%%/templates/log_changelog.cs
 %%DATADIR%%/templates/log_rss.cs
@@ -307,10 +365,14 @@ bin/tracdb2env
 %%DATADIR%%/templates/settings.cs
 %%DATADIR%%/templates/ticket.cs
 %%DATADIR%%/templates/ticket_notify_email.cs
+%%DATADIR%%/templates/ticket_rss.cs
 %%DATADIR%%/templates/timeline.cs
 %%DATADIR%%/templates/timeline_rss.cs
 %%DATADIR%%/templates/wiki.cs
 %%DATADIR%%/wiki-default/CamelCase
+%%DATADIR%%/wiki-default/InterMapTxt
+%%DATADIR%%/wiki-default/InterTrac
+%%DATADIR%%/wiki-default/InterWiki
 %%DATADIR%%/wiki-default/RecentChanges
 %%DATADIR%%/wiki-default/SandBox
 %%DATADIR%%/wiki-default/TitleIndex
@@ -336,6 +398,7 @@ bin/tracdb2env
 %%DATADIR%%/wiki-default/TracPlugins
 %%DATADIR%%/wiki-default/TracQuery
 %%DATADIR%%/wiki-default/TracReports
+%%DATADIR%%/wiki-default/TracRevisionLog
 %%DATADIR%%/wiki-default/TracRoadmap
 %%DATADIR%%/wiki-default/TracRss
 %%DATADIR%%/wiki-default/TracSearch
@@ -365,17 +428,23 @@ bin/tracdb2env
 @dirrm %%DATADIR%%/wiki-macros
 @dirrm %%DATADIR%%/wiki-default
 @dirrm %%DATADIR%%/templates
+@exec mkdir %D/%%DATADIR%%/plugins
+@dirrmtry %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/htdocs/js
 @dirrm %%DATADIR%%/htdocs/css
 @dirrm %%DATADIR%%/htdocs
+@exec mkdir %D/%%DATADIR%%/conf
+@dirrmtry %%DATADIR%%/conf
 @dirrm %%DATADIR%%/cgi-bin
 @dirrm %%DATADIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/trac/wiki
 @dirrm %%PYTHON_SITELIBDIR%%/trac/web
 @dirrm %%PYTHON_SITELIBDIR%%/trac/versioncontrol/web_ui
 @dirrm %%PYTHON_SITELIBDIR%%/trac/versioncontrol
+@dirrm %%PYTHON_SITELIBDIR%%/trac/util
 @dirrm %%PYTHON_SITELIBDIR%%/trac/upgrades
 @dirrm %%PYTHON_SITELIBDIR%%/trac/ticket
 @dirrm %%PYTHON_SITELIBDIR%%/trac/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/trac/mimeview
+@dirrm %%PYTHON_SITELIBDIR%%/trac/db
 @dirrm %%PYTHON_SITELIBDIR%%/trac
