@@ -11,7 +11,7 @@ CATEGORIES=	graphics tk84
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graph Visualization Software from AT&T and Bell Labs
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg		\
@@ -37,6 +37,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${TCL_INC
 		MISSING=${TRUE}
 CONFIGURE_ARGS=	--program-transform-name="s/x/x/"		\
 		--enable-dependency-tracking			\
+		--with-mylibgd					\
 		--with-iconvlibdir=${LOCALBASE}/lib		\
 		--with-tclsh=${TCLSH}				\
 		--with-wish=${WISH}				\
