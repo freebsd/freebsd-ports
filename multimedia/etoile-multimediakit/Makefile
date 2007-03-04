@@ -30,6 +30,8 @@ USE_XLIB=	yes
 SNAPSHOT=	20061221
 WRKSRC=	${WRKDIR}/Etoile/
 USE_GNUSTEP_MAKE_DIRS+=	Frameworks/MultimediaKit
+ADDITIONAL_OBJCFLAGS+=	-I${X11BASE}/include
+ADDITIONAL_LDFLAGS+=	-L${X11BASE}/lib
 
 GNUSTEP_MPLAYER_PORT?=	multimedia/gnustep-mplayer
 
