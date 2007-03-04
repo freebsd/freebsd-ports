@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	2.8
+PORTVERSION=	2.12
 CATEGORIES=	graphics tk84
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -14,15 +14,13 @@ MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graph Visualization Software from AT&T and Bell Labs
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg		\
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg		\
 		png.5:${PORTSDIR}/graphics/png			\
 		freetype.9:${PORTSDIR}/print/freetype2		\
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig	\
-		tk84.1:${PORTSDIR}/x11-toolkits/tk84		\
 		expat.6:${PORTSDIR}/textproc/expat2		\
 		gd.4:${PORTSDIR}/graphics/gd
 
-USE_TCL=	84
 USE_TK=		84
 USE_BISON=	yes
 USE_GMAKE=	yes
@@ -30,29 +28,15 @@ USE_ICONV=	yes
 USE_XPM=	yes
 USE_AUTOTOOLS=	libltdl:15 libtool:15
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"	\
-		TCLCONFIG=${TCL_LIBDIR}/tclConfig.sh		\
-		TKCONFIG=${TK_LIBDIR}/tkConfig.sh		\
-		MISSING=${TRUE}
-CONFIGURE_ARGS=	--program-transform-name="s/x/x/"		\
-		--enable-dependency-tracking			\
-		--with-mylibgd					\
-		--with-iconvlibdir=${LOCALBASE}/lib		\
-		--with-tclsh=${TCLSH}				\
-		--with-wish=${WISH}				\
-		--with-fontconfigincludedir=${X11BASE}/include	\
-		--with-fontconfiglibdir=${X11BASE}/lib		\
-		--disable-swig --disable-sharp --disable-guile	\
-		--disable-io --disable-lua --disable-ocaml	\
-		--disable-perl --disable-php --disable-python	\
-		--disable-ruby
+LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+CPPFLAGS+=	-I${X11BASE}/include -I${LOCALBASE}/include -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}
+
 MAKE_ENV=	EXPR_COMPAT=yes MISSING=${TRUE}
 
 MAN1=		acyclic.1 bcomps.1 ccomps.1 dijkstra.1 dot.1		 \
 		dotty.1 gc.1 gvcolor.1 gvpack.1 gvpr.1 gxl2dot.1 lefty.1 \
 		lneato.1 nop.1 prune.1 sccmap.1 tred.1 unflatten.1
-MAN3=		agraph.3 cdt.3 expr.3 graph.3 pack.3 pathplan.3
+MAN3=		agraph.3 cdt.3 expr.3 graph.3 gvc.3 pathplan.3
 MANN=		gdtclft.n tcldot.n tkspline.n
 MLINKS=		dot.1 circo.1		\
 		gxl2dot.1 dot2gxl.1	\
@@ -68,12 +52,126 @@ PDOCS_TXT=	AUTHORS NEWS ChangeLog cpl1.0.txt doc/Dot.ref doc/latex_suggestions.t
 PDOCS_PDF=	doc/*.pdf */*/*.pdf
 PDOCS_HTML=	doc/*.html doc/info/*.html doc/info/*.gif
 
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/${PORTNAME}
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
+OPTIONS=	PANGOCAIRO "build with pangocairo support (gtk)" off \
+		PERL "Perl bindings (swig)" off \
+		PHP "PHP bindings (swig)" off \
+		PYTHON "Python bindings (swig)" off \
+		RUBY "Ruby bindings (swig)" off \
+		LUA "Lua bindings (swig)" off \
+		TCL "TCL bindings (swig)" off \
+		GUILE "Guile bindings (swig)" off
+
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
+
+CONFIGURE_ARGS=	--program-transform-name="s/x/x/"		\
+		--enable-dependency-tracking			\
+		--with-iconvlibdir=${LOCALBASE}/lib		\
+		--with-libgd					\
+		--with-tclsh=${TCLSH}				\
+		--with-wish=${WISH}				\
+		--with-fontconfigincludedir=${X11BASE}/include	\
+		--with-fontconfiglibdir=${X11BASE}/lib 		\
+		--disable-io --disable-ocaml --disable-java	\
+		--disable-sharp
+
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}"			\
+		CPPFLAGS="${CPPFLAGS}"	 		\
+		LDFLAGS="${LDFLAGS}"			\
+		TCLCONFIG="${TCL_LIBDIR}/tclConfig.sh"	\
+		TKCONFIG="${TK_LIBDIR}/tkConfig.sh"	\
+		MISSING=${TRUE}
+
+.if !defined(WITH_PANGOCAIRO)
+CONFIGURE_ARGS+=	--with-pangocairo=no
+PLIST_SUB+=		WITH_PANGOCAIRO="@comment "
+.else
+CONFIGURE_ARGS+=	--with-gtk --with-pangocairo
+PLIST_SUB+=		WITH_PANGOCAIRO=""
+USE_GNOME=	gtk20 pango
+.include "${PORTSDIR}/Mk/bsd.gnome.mk"
+.endif
+
+.if defined(WITH_PERL) || defined(WITH_PHP) || defined(WITH_PYTHON) || \
+    defined(WITH_RUBY) || defined(WITH_LUA) || defined(WITH_TCL) || defined(WITH_GUILE)
+BUILD_DEPENDS+=		swig1.3:${PORTSDIR}/devel/swig13
+RUN_DEPENDS+=		swig1.3:${PORTSDIR}/devel/swig13
+CONFIGURE_ARGS+= 	--enable-swig
+CONFIGURE_ENV+=		SWIG="${LOCALBASE}/bin/swig1.3"
+.else
+CONFIGURE_ARGS+=	--disable-swig
+.endif
+
+. if !defined(WITH_PERL)
+CONFIGURE_ARGS+=	--disable-perl
+PLIST_SUB+=		WITH_PERL="@comment "
+. else
+CONFIGURE_ARGS+=	--enable-perl
+PLIST_SUB+=		WITH_PERL=""
+USE_PERL5=	yes
+. endif
+
+. if !defined(WITH_PHP)
+CONFIGURE_ARGS+=	--disable-php
+PLIST_SUB+=		WITH_PHP="@comment "
+. else
+CONFIGURE_ARGS+=	--enable-php
+PLIST_SUB+=		WITH_PHP=""
+USE_PHP_BUILD=	yes
+CPPFLAGS+=		-I${LOCALBASE}/include/php/Zend
+. endif
+
+. if !defined(WITH_PYTHON)
+CONFIGURE_ARGS+=	--disable-python
+PLIST_SUB+=		WITH_PYTHON="@comment "
+. else
+CONFIGURE_ARGS+=	--enable-python
+PLIST_SUB+=		WITH_PYTHON=""
+USE_PYTHON_BUILD=	yes
+.include "${PORTSDIR}/Mk/bsd.python.mk"
+LDFLAGS+=		"-L${PYTHON_LIBDIR}"
+. endif
+
+. if !defined(WITH_RUBY)
+CONFIGURE_ARGS+=	--disable-ruby
+PLIST_SUB+=		WITH_RUBY="@comment "
+. else
+CONFIGURE_ARGS+=	--enable-ruby
+PLIST_SUB+=		WITH_RUBY=""
+USE_RUBY=	yes
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+. endif
+
+. if !defined(WITH_LUA)
+CONFIGURE_ARGS+=	--disable-lua
+PLIST_SUB+=		WITH_LUA="@comment "
+. else
+CONFIGURE_ARGS+=	--enable-lua
+PLIST_SUB+=		WITH_LUA=""
+USE_LUA=		yes
+.include "${PORTSDIR}/Mk/bsd.lua.mk"
+CPPFLAGS+=		-I${LUA_INCDIR}
+LDFLAGS+=		-L${LUA_LIBDIR}
+CONFIGURE_ENV+=		LUA="${LUA_BINDIR}/lua"
+. endif
+
+. if !defined(WITH_TCL)
+CONFIGURE_ARGS+=	--disable-tcl
+PLIST_SUB+=		WITH_TCL="@comment "
+. else
+CONFIGURE_ARGS+=	--enable-tcl
+PLIST_SUB+=		WITH_TCL=""
+. endif
+
+. if !defined(WITH_GUILE)
+CONFIGURE_ARGS+=	--disable-guile
+PLIST_SUB+=		WITH_GUILE="@comment "
+. else
+CONFIGURE_ARGS+=	--enable-guile
+PLIST_SUB+=		WITH_GUILE=""
+LIB_DEPENDS+=		guile.15:${PORTSDIR}/lang/guile
+. endif
 
 pre-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS}					\
@@ -90,9 +188,11 @@ pre-patch:
 	                  ${WRKSRC}/cmd/tools/Makefile.in			\
 	                  ${WRKSRC}/cmd/gvpr/Makefile.in
 
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} 's|-Wno-unused-parameter||g' ${WRKSRC}/configure
-.endif
+	@${FIND} ${WRKSRC}/lib -name 'Makefile.in' | ${XARGS}				\
+	  ${REINPLACE_CMD} -e 's|libdir = @libdir@|libdir = @libdir@/graphviz|g';
+
+	@${REINPLACE_CMD} -e "s|/usr/include/php|${LOCALBASE}/include/php|g" \
+		-e "s|-lruby|-lruby${RUBY_SUFFIX}|g" ${WRKSRC}/configure
 
 post-install-script:
 	${INSTALL_MAN} ${WRKSRC}/tclpkg/gdtclft/gdtclft.n   ${MANNPREFIX}/man/mann
