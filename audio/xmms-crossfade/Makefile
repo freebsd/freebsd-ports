@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	crossfade
-PORTVERSION=	0.3.11
+PORTVERSION=	0.3.12
 CATEGORIES=	audio
 MASTER_SITES=	http://www.eisenlohr.org/xmms-crossfade/ CSME
 PKGNAMEPREFIX=	${APP}-
@@ -37,10 +37,13 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--enable-samplerate
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e '/objformat=/s|aout|elf|' ${WRKSRC}/configure
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/.libs/libcrossfade.so ${PREFIX}/${PLUGDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/.libs/libcrossfade.so ${PREFIX}/${PLUGDIR}/
 .ifndef NOPORTDOCS
-	${INSTALL_DATA} -d -m 555 ${DOCSDIR}
+	${INSTALL_DATA} -d -m 555 ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 .endif
 
