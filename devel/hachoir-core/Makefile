@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hachoir-core
-PORTVERSION=	0.7.2
+PORTVERSION=	0.8.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/h/${PORTNAME}/ CSME
 

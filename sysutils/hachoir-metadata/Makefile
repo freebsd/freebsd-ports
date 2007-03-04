@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hachoir-metadata
-PORTVERSION=	0.8.2
+PORTVERSION=	0.9.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/h/${PORTNAME}/ CSME
 
