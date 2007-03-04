@@ -1,0 +1,8 @@
+This is a port of various original plan9 tools to Unix based on
+plan9ports [1], mk-with-libs.tgz [2] and wmii [3].
+
+[1] http://www.swtch.com/plan9port/
+[2] http://swtch.com/plan9port/unix/
+[3] http://www.suckless.org/wiki/wmii
+
+WWW: http://www.suckless.org/wiki/wmii/download
