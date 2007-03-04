@@ -3,6 +3,7 @@
 
     COMMENT = Development utilities
 
+    SUBDIR += 9base
     SUBDIR += ElectricFence
     SUBDIR += ORBit
     SUBDIR += ORBit2

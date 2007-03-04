@@ -1,0 +1,8 @@
+======================================================
+
+Some of 9base tools require fdescfs to be mounted.
+Place "fdescfs /dev/fd fdescfs rw 0 0" into your
+fstab(5) file and run "mount /dev/fd". See fdescfs(5)
+for more.
+
+======================================================
