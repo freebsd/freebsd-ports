@@ -1,0 +1,51 @@
+Index: bin/portupgrade
+===================================================================
+RCS file: /cvsroot/portupgrade/pkgtools/bin/portupgrade,v
+retrieving revision 1.30
+diff -u -r1.30 portupgrade
+--- portupgrade	26 Feb 2007 16:00:26 -0000	1.30
++++ portupgrade	4 Mar 2007 12:49:16 -0000
+@@ -616,7 +616,8 @@
+ 
+ 	  # Track unistalled ports is appeared after updating
+ 	  upgrade_tasks.each do |task|
+-	    install_tasks |= get_uninstalled_depends($pkgdb.origin(task))
++	    o = $pkgdb.origin(task)
++	    install_tasks |= get_uninstalled_depends(o) if !o.nil?
+ 	  end
+ 	}
+ 
+@@ -701,7 +702,6 @@
+ 
+ 	  if $upward_recursive
+ 	    get_all_depends(origin).each do |o|
+-	      puts "*>#{o}"
+ 	      make_args = get_make_args(o)
+ 
+ 	      if pkgnames = $pkgdb.deorigin(o)
+@@ -714,7 +714,6 @@
+ 		  } unless $task_options.include?(p)
+ 		end
+ 	      else
+-		puts "*->#{o}"
+ 		install_tasks << o
+ 		$task_options[o] = {
+ 		  :make_args => make_args,
+@@ -831,7 +830,7 @@
+ 
+     children_deps = Set.new
+     depends.each do |dep|
+-      children_deps.merge(get_all_depends(dep, parents_list))
++      children_deps.merge(get_all_depends(dep, parents_list)) if !dep.nil?
+     end
+     if children_deps.nil?
+       next
+@@ -840,7 +839,7 @@
+     end
+ 
+     STDERR.puts ' done]' if first
+-    $depends[origin] = depends
++    $depends[origin] = depends.compact
+   else
+     $depends[origin]
+   end
