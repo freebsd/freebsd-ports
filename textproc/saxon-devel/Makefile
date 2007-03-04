@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	saxon
-PORTVERSION=	8.7
+PORTVERSION=	8.9.0.2
 PORTEPOCH=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	saxon
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}b${PORTVERSION:S,.,-,g}j.zip \
-		${PORTNAME}-resources${PORTVERSION:S,.,-,g}
+		${PORTNAME}-resources8-9
 
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	An XSLT 2.0 / XPath 2.0 / XQuery 1.0 processor for Java
