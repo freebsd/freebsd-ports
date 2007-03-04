@@ -1,7 +1,9 @@
 include/Connection.h
 include/ConnectionPool.h
+include/Exception.h
 include/PreparedStatement.h
 include/ResultSet.h
+include/SQLException.h
 include/URL.h
 lib/libzdb.a
 lib/libzdb.la
