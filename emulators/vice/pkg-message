@@ -1,0 +1,10 @@
+The VICE port can use /dev/joy* for joystick support for video games. To enable
+the joystick port, add 
+
+joy_load="YES" to /boot/loader.conf 
+
+and the following lines to /etc/devfs.conf (for additional joysticks use
+/dev/joy1, /dev/joy2 etc.) :
+
+own	/dev/joy0 root:wheel
+perm 	/dev/joy0 0666

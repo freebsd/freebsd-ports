@@ -6,7 +6,7 @@
 
 PORTNAME=	vice
 PORTVERSION=	1.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
 		http://fresh.t-systems-sfr.com/linux/src/ \
@@ -101,6 +101,8 @@ post-extract:
 post-patch:
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/man/vice.1
+	${REINPLACE_CMD} -e "s|machine/joystick.h|sys/joystick.h|g" \
+		${WRKSRC}/configure
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's| doc||' ${WRKSRC}/Makefile.in
 .endif
