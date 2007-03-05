@@ -1,5 +1,14 @@
---- ./code/qcommon/files.c.orig	Wed May 31 18:55:11 2006
-+++ ./code/qcommon/files.c	Wed May 31 18:55:13 2006
+--- code/qcommon/files.c.orig	Fri Jan 26 19:58:26 2007
++++ code/qcommon/files.c	Fri Jan 26 20:07:18 2007
+@@ -2503,7 +2503,7 @@
+ 		sorted[i] = pakfiles[i];
+ 	}
+ 
+-	qsort( sorted, numfiles, 4, paksort );
++	qsort( sorted, numfiles, sizeof(sorted[0]), paksort );
+ 
+ 	for ( i = 0 ; i < numfiles ; i++ ) {
+ 		pakfile = FS_BuildOSPath( path, dir, sorted[i] );
 @@ -2763,6 +2763,7 @@
  	if (fs_basepath->string[0]) {
  		FS_AddGameDirectory( fs_basepath->string, gameName );
