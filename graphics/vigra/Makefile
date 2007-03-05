@@ -15,7 +15,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://kogs-www.informatik.uni-hamburg.de/~koethe/vigra/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vd@FreeBSD.org
 COMMENT=	VIGRA stands for "Vision with Generic Algorithms"
 
 USE_AUTOTOOLS=	libtool:15

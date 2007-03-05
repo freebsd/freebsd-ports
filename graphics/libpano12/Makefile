@@ -14,7 +14,7 @@ CATEGORIES=	graphics java
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	panotools
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Panorama Tools to make panorama pictures
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gimp-2.0/libgimp/gimp.h:${PORTSDIR}/graphics/gimp
