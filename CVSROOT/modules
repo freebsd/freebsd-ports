@@ -1318,6 +1318,7 @@ claws-mail-maildir	ports/mail/claws-mail-maildir
 claws-mail-mailmbox	ports/mail/claws-mail-mailmbox
 claws-mail-newmail	ports/mail/claws-mail-newmail
 claws-mail-notification	ports/mail/claws-mail-notification
+claws-mail-pdf_viewer	ports/mail/claws-mail-pdf_viewer
 claws-mail-perl	ports/mail/claws-mail-perl
 claws-mail-rssyl	ports/mail/claws-mail-rssyl
 claws-mail-smime	ports/mail/claws-mail-smime
