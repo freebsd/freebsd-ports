@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mugshot
-PORTVERSION=	1.1.33
+PORTVERSION=	1.1.37
 CATEGORIES=	net
 MASTER_SITES=	http://download.mugshot.org/client/sources/linux/
 
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${PKGCONFIG_LOCAL_BASE}/dbus-1.pc:${PORTSDIR}/devel/dbus:install 
 		${PKGCONFIG_LOCAL_BASE}/cairo.pc:${PORTSDIR}/graphics/cairo:install \
 		${PKGCONFIG_LOCAL_BASE}/libcurl.pc:${PORTSDIR}/ftp/curl:install \
 		${LOCALBASE}/include/firefox/caps/nsIScriptSecurityManager.h:${PORTSDIR}/www/firefox:install \
+		${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre:install \
 		${LOCALBASE}/lib/firefox/xpidl:${PORTSDIR}/www/firefox:install \
 		${X11BASE}/include/X11/extensions/scrnsaver.h:${PORTSDIR}/x11/xorg-libraries:install
 
