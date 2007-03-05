@@ -9,8 +9,7 @@
 # but the final step that generates the panorama images make use of the
 # external program PTStitcher, installed by this port.
 # This port, as a dependence, does not install the complete linux
-# panorama tools, just the few things necessary to hugin. If someone
-# wants the rest just tell me.
+# panorama tools, just the few things necessary to hugin.
 
 PORTNAME=	linux-panorama-tools
 PORTVERSION=	2.6b1
@@ -19,7 +18,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.path.unimelb.edu.au/~dersch/
 DISTNAME=	PanoTools
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Software to View, Create, Edit and Remap Panoramic Images
 
 RUN_DEPENDS=	${LINUXBASE}/usr/bin/jpegtran:${PORTSDIR}/graphics/linux-jpeg \
