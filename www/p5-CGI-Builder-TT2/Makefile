@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/L/LA/LARSEN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	daniel@itxl.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CGI::Builder and Template Toolkit 2 integration
 
 BUILD_DEPENDS=	${SITE_PERL}/CGI/Builder.pm:${PORTSDIR}/www/p5-CGI-Builder \
