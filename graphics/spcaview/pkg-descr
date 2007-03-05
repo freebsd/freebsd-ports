@@ -13,6 +13,7 @@ USB Cameras based SPCA5xx Utilities for NetBSD
 	0x041e	0x403a	Creative webcam nx pro
 	0x046d	0x0928	Logitech QuickCam Express II
 	0x046d	0x092c	Logitech QuickCam chat
+	0x046d	0x092e	Logitech QuickCam chat
 	0x0572	0x0041	Creative webcam notebook PD1170
 	0x060b	0xa001	Maxell CompactPC Camera PM3
 	0x0733	0x0401	Intel CS330
@@ -21,6 +22,7 @@ USB Cameras based SPCA5xx Utilities for NetBSD
 	0x0923	0x010f	PC CAM CP03(global sources)
 	0x0923	0x010f	WEB Camera PBC0006(persol)
 	0x093a	0x2468	Generic webcam based PAC207
+	0x093a	0x2468	Easy Snap Snake Eye Webcam
 	0x0ac8	0x301b	LOAS MCM-H06SL
 	0x0ac8	0x301b	Sandberg Nightvision
 	0x0c45	0x6005	Generic webcam based SN9C101
