@@ -17,6 +17,8 @@ DISTNAME=	tomcat-connectors-${PORTVERSION}-src
 MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	Apache JK module for connecting to Tomcat using AJP1X
 
+FORBIDDEN=	Remote arbitrary code execution: http://vuxml.FreeBSD.org/cf86c644-cb6c-11db-8e9d-000c6ec775d9.html
+
 USE_APACHE?=	1.3+
 
 .include <bsd.port.pre.mk>
