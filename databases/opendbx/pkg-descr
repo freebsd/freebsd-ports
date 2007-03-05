@@ -1,10 +1,11 @@
 OpenDBX is an extremely lightweight but extensible C library for 
 accessing databases with a single API. It provides a clean and simple
 interface across all supported databases that leads to an elegant
-code design automatically. Currently MySQL, PostgreSQL and SQLite are
-supported and backends for more native database APIs can be written
-easily. If you want your application to support different databases
-with little effort, this is definitively the right thing for you!
+code design automatically. Currently MySQL, PostgreSQL, SQLite
+(v2 & 3), MSSQL and Sybase are supported and backends for more native
+database APIs can be written easily. If you want your application to
+support different databases with little effort, this is definitively
+the right thing for you!
 
 License: LGPL
 
