@@ -10,7 +10,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	klaus.goger@reflex.at
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Puzzle Bobble clone for Unix/X11 platforms
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png

@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 
-MAINTAINER=	klaus.goger@reflex.at
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK+ printer setup and maintaining tool
 
 PLIST_FILES=	bin/pup
