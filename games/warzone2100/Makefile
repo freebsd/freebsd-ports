@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	warzone2100
-DISTVERSION=	2.0.5_rc1
+PORTVERSION=	2.0.5
 CATEGORIES=	games
 MASTER_SITES=	http://download.gna.org/warzone/releases/2.0/
 
@@ -22,35 +22,30 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
+USE_AUTOTOOLS=	autoconf:259 automake:19
 USE_BZIP2=	yes
 USE_BISON=	yes
 USE_GL=		yes
 USE_SDL=	net sdl
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=""
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
-WRKSRC=		${WRKDIR}/warzone-${DISTVERSION}
-
-.include <bsd.port.pre.mk>
 
 post-patch:
-.if ${OSVERSION} < 5000000
-	@${REINPLACE_CMD} -e 's|<stdint\.h>|<inttypes.h>|' \
-		${WRKSRC}/lib/framework/types.h
-.endif
-	@${REINPLACE_CMD} -e \
-		's|-m32||; \
-		 s|/usr/local|${LOCALBASE}|; \
-		 s|/usr/X11R6|${X11BASE}|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|-m32||' ${WRKSRC}/configure.ac
+
+pre-configure:
+	@cd ${WRKSRC} && ${TOUCH} NEWS && ${CAT} m4/*.m4 > acinclude.m4
+
+run-autotools:
+	@cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_VARS} ${AUTORECONF} -is
 
 .if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog README ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog README ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

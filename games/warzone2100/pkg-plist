@@ -3,5 +3,9 @@ bin/warzone2100
 %%DATADIR%%/warzone.wz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
+share/icons/warzone2100.png
+share/applications/warzone2100.desktop
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/applications
+@dirrmtry share/icons
