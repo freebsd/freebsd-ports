@@ -1662,6 +1662,7 @@
     SUBDIR += pear-apd
     SUBDIR += pecl-bcompiler
     SUBDIR += pecl-expect
+    SUBDIR += pecl-hidef
     SUBDIR += pecl-json
     SUBDIR += pecl-operator
     SUBDIR += pecl-runkit
