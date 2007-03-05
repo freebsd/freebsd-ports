@@ -86,7 +86,7 @@ do-build:
 .for f in ${PROGS}
 	@(${ECHO_CMD} "#!${SH}"; \
 		${ECHO_CMD} "cd ${DATADIR} || exit 1"; \
-		${ECHO_CMD} "exec ${LIBDIR}/${f:R} \"$$@\"") > ${WRKDIR}/${f:R}
+		${ECHO_CMD} 'exec ${LIBDIR}/${f:R} "$$@"') > ${WRKDIR}/${f:R}
 .endfor
 
 do-install:
