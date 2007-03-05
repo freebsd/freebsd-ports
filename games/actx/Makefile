@@ -10,7 +10,7 @@ PORTVERSION=	1.23
 CATEGORIES=	games
 MASTER_SITES=	http://rosegray.sakura.ne.jp/ActX/
 
-MAINTAINER=	esu@yk.rim.or.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window sitter for X11
 
 NO_CDROM=	'contains commercial character data'

@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-gtk1
 .endif
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${RESTRICTED_FILES}
 
-MAINTAINER=	esu@yk.rim.or.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window sitter for X11
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
