@@ -15,13 +15,13 @@ PORTREVISION=	${REVISEDATE}
 # XXX: Currently PORTREVISION assignment is not perfect. It needs to
 # inherit its master port's PORTREVISION and be appended.
 
-MAINTAINER=	clive@FreeBSD.org
+MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	The Mongrel of Mail User Agents with Chinese support
 
-PATCH_SITES=	http://wood.ite.ntnu.edu.tw/~clive/dist/mutt15/ \
-		ftp://freebsd.sinica.edu.tw/pub/clive/mutt15/ \
-		http://bsdchat.com/dist/mutt15/
-PATCHFILES=	${PKGNAMEPREFIX}mutt-${PORTVERSION}-${REVISEDATE}.diff.gz
+PATCH_SITES=	${MASTER_SITE_LOCAL:S/$/:tw/}
+PATCH_SITE_SUBDIR=	rafan/chinese/:tw
+TW_PATCH_VERSION=	1.5.14-${REVISEDATE}
+PATCHFILES=	${PKGNAMEPREFIX}mutt-${TW_PATCH_VERSION}.diff.gz:tw
 
 LIB_DEPENDS+=	hz.0:${PORTSDIR}/chinese/autoconvert
 
