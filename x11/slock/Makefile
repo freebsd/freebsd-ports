@@ -6,7 +6,7 @@
 #
 
 PORTNAME=       slock
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	x11
 MASTER_SITES=	http://www.suckless.org/download/ CSME
 
