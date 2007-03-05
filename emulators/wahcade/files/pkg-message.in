@@ -1,0 +1,14 @@
+==============================================================================
+
+Wah!Cade has been successfully installed!
+
+The default config files are stored in
+"%%DATADIR%%/config.dist".
+
+When Wah!Cade is first run these files are copied into the user's
+"~/.wahcade" directory.
+
+Please read the README file for information on initial setup & configuration
+in "%%DOCSDIR%%".
+
+==============================================================================
