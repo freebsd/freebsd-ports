@@ -1,5 +1,5 @@
 --- Makefile.orig	Sat Sep 23 05:26:01 2006
-+++ Makefile	Tue Jan  2 10:42:43 2007
++++ Makefile	Mon Mar  5 19:53:43 2007
 @@ -15,7 +15,7 @@
  
  # Set this to "emacs" or "xemacs" according to your version of Emacs.
@@ -85,8 +85,9 @@
 +	fi
 +
  # backwards compatibility with old linuxes
- 	mkdir -p ${DESKTOP}/application-registry
+-	mkdir -p ${DESKTOP}/application-registry
 -	cp etc/desktop/application-registry/proofgeneral.applications ${DESKTOP}/application-registry
++	mkdir -p ${DESKTOP}/gnome/application-registry
 +	cp etc/desktop/application-registry/proofgeneral.applications ${DESKTOP}/gnome/application-registry
  
  # NB: .el files are not strictly necessary, but we package/install them

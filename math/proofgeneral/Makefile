@@ -20,8 +20,6 @@ PKGNAMESUFFIX+=	-${EMACS_NAME}
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
-BROKEN=		Incomplete pkg-plist
-
 #
 # Unless EMACS_PORT_NAME is overriden by the user,
 # use any installed version of [X]Emacs.
