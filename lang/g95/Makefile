@@ -37,8 +37,6 @@ CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
-PLIST_SUB=	TRIPLET=${CONFIGURE_TARGET:Q} \
-		GCC_VER=${GCC_VER}
 
 GCC_VER=	4.0.3
 GCC_DIR=	${WRKDIR}/gcc-${GCC_VER}
@@ -67,5 +65,11 @@ post-install:
 	cd ${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET:Q}/${GCC_VER} && \
 		${RM} -f ./${CONFIGURE_TARGET:Q} && \
 		${LN} -s -f . ./${CONFIGURE_TARGET:Q}
+	${ECHO_CMD} "bin/${CONFIGURE_TARGET:Q}-g95" >> ${TMPPLIST}
+	cd ${PREFIX} ; ${FIND} -s lib/gcc-lib/${CONFIGURE_TARGET:Q}/${GCC_VER} -type f  >> ${TMPPLIST}
+	cd ${PREFIX} ; ${FIND} -s lib/gcc-lib/${CONFIGURE_TARGET:Q}/${GCC_VER} -type l  >> ${TMPPLIST}
+	${ECHO_CMD} "@dirrm lib/gcc-lib/${CONFIGURE_TARGET:Q}/${GCC_VER}" >> ${TMPPLIST}
+	${ECHO_CMD} "@dirrm lib/gcc-lib/${CONFIGURE_TARGET:Q}"            >> ${TMPPLIST}
+	${ECHO_CMD} "@dirrm lib/gcc-lib"                                  >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
