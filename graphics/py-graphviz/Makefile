@@ -5,14 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	graphviz
-PORTVERSION=	0.22
+PORTVERSION=	0.33
 CATEGORIES=	graphics python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	networkx
+MASTER_SITES=	https://networkx.lanl.gov/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pygraphviz-${PORTVERSION}
 
-MAINTAINER=	xride@FreeBSD.org
+MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Python interface to GraphViz agraph
 
 BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
@@ -23,6 +22,7 @@ USE_PYDISTUTILS=yes
 PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+; \
+		s+^docdirbase.*=.*+docdirbase = "${DOCSDIR:S/${PREFIX}\///}"+' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
