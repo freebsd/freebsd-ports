@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	ws/soap/version-${PORTVERSION}
 DISTNAME=	soap-bin-${PORTVERSION}
 
-MAINTAINER=	brian@quynh-and-brian.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Apache SOAP implementation in Java
 
 RUN_DEPENDS=	${JAVALIBDIR}/mail.jar:${PORTSDIR}/java/javamail

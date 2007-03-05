@@ -13,7 +13,7 @@ MASTER_SITES=		${MASTER_SITE_PERL_CPAN} \
 MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		brian@quynh-and-brian.org
+MAINTAINER=		perl@FreeBSD.org
 COMMENT=		Add hooks on methods from other classes
 
 BUILD_DEPENDS=		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
