@@ -50,6 +50,7 @@
     SUBDIR += claws-mail-mailmbox
     SUBDIR += claws-mail-newmail
     SUBDIR += claws-mail-notification
+    SUBDIR += claws-mail-pdf_viewer
     SUBDIR += claws-mail-perl
     SUBDIR += claws-mail-rssyl
     SUBDIR += claws-mail-smime
