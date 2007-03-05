@@ -6,7 +6,7 @@
 #    $MCom: ports-stable/databases/qdbm/Makefile,v 1.4 2006/03/04 21:25:54 ahze Exp $
 
 PORTNAME=	qdbm
-PORTVERSION=	1.8.74
+PORTVERSION=	1.8.75
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://qdbm.sourceforge.net/
@@ -78,12 +78,6 @@ CONFIGURE_ARGS+=	--enable-debug
 .if defined(WITH_PTHREAD)
 CONFIGURE_ARGS+=	--enable-pthread
 CFLAGS+=		${PTHREAD_CFLAGS}
-.endif
-.endif
-
-.if defined(SLAVEPORT) && ${SLAVEPORT}=="perl"
-.if ${PERL_LEVEL} < 500600
-IGNORE=	this port requires perl 5.6.0 or later, Install lang/perl5 then try again
 .endif
 .endif
 
