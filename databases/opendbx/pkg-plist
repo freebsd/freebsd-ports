@@ -24,4 +24,8 @@ libdata/pkgconfig/opendbx.pc
 %%WITHMSSQL%%lib/opendbx/libmssqlbackend.la
 %%WITHMSSQL%%lib/opendbx/libmssqlbackend.so
 %%WITHMSSQL%%lib/opendbx/libmssqlbackend.so.2
+%%WITHSYBASE%%lib/opendbx/libsybasebackend.a
+%%WITHSYBASE%%lib/opendbx/libsybasebackend.la
+%%WITHSYBASE%%lib/opendbx/libsybasebackend.so
+%%WITHSYBASE%%lib/opendbx/libsybasebackend.so.2
 @dirrm lib/opendbx

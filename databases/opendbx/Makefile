@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opendbx
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.linuxnetworks.de/opendbx/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -30,6 +30,7 @@ OPTIONS=	MYSQL	"Support for the MySQL database" on \
 		SQLITE	"Support for the SQLite 2 database" off \
 		SQLITE3	"Support for the SQLite 3 database" off \
 		MSSQL	"Support for the MSSQL database" off \
+		SYBASE	"Support for the Sybase database" off \
 		GETTEXT	"Support for the gettext library" off
 
 .include <bsd.port.pre.mk>
@@ -85,6 +86,14 @@ CONFIGURE_MODULES+=	"mssql"
 PLIST_SUB+=		WITHMSSQL=""
 .else
 PLIST_SUB+=		WITHMSSQL="@comment "
+.endif
+
+.if defined(WITH_SYBASE)
+LIB_DEPENDS+=		ct.4:${PORTSDIR}/databases/freetds
+CONFIGURE_MODULES+=	"sybase"
+PLIST_SUB+=		WITHSYBASE=""
+.else
+PLIST_SUB+=		WITHSYBASE="@comment "
 .endif
 
 .if defined(WITH_GETTEXT)
