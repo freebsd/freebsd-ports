@@ -20,7 +20,7 @@ CATEGORIES=	math graphics
 MASTER_SITES=	http://ovt.irfu.se/vtk/files/
 DISTFILES?=	VTK-${PORTVERSION}-LatestRelease.tar.gz
 
-MAINTAINER=	ko@irfu.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	The Visualization Toolkit shared libs
 
 LIBVER=		1
