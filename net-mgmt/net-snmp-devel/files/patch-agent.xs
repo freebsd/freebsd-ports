@@ -1,5 +1,18 @@
---- perl/agent/agent.xs.old	2006/09/01 21:05:50	5.15.2.3
-+++ perl/agent/agent.xs	2007/01/06 00:35:12	5.15.2.4
+--- perl/agent/agent.xs.old	Fri May 26 15:16:45 2006
++++ perl/agent/agent.xs	Mon Mar  5 13:42:35 2007
+@@ -18,9 +18,9 @@
+ } handler_cb_data;
+ 
+ typedef struct netsnmp_oid_s {
+-    unsigned int        *name;
+-    unsigned int         len;
+-    unsigned int         namebuf[ MAX_OID_LEN ];
++    oid                 *name;
++    size_t               len;
++    oid                  namebuf[ MAX_OID_LEN ];
+ } netsnmp_oid;
+ 
+ static int have_done_agent = 0;
 @@ -569,7 +569,7 @@
          arg = newSVrv(rarg, "netsnmp_oidPtr");
          sv_setiv(arg, (IV) o);
