@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	java-
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	dave@glowacki.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java style checker
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
