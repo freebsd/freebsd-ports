@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Algorithm-Cluster
-PORTVERSION=	1.33
+PORTVERSION=	1.35
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Algorithm
@@ -23,10 +23,4 @@ post-patch:
 		@${REINPLACE_CMD} -e  \
 		"s|${PORTNAME}|Algorithm::Cluster|" ${WRKSRC}/Makefile.PL
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
