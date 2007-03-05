@@ -135,6 +135,7 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/reference/group__cimg__displays.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/group__cimg__drawing.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/group__cimg__environment.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/group__cimg__faq.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/group__cimg__files__io.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/group__cimg__loops.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/group__cimg__options.html

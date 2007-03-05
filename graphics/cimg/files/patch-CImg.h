@@ -1,6 +1,15 @@
---- CImg.h.orig	Mon Nov  6 15:26:08 2006
-+++ CImg.h	Mon Nov  6 19:33:58 2006
-@@ -20255,10 +20255,10 @@
+--- CImg.h.orig	Mon Mar  5 18:56:32 2007
++++ CImg.h	Mon Mar  5 20:47:05 2007
+@@ -3778,7 +3778,7 @@
+    */
+   //! Class used to compute basic statistics on pixel values of a \ref CImg image.
+   /**
+-      Constructing a CImgStats instance from an image CImg<T> or a list CImgList<T>
++      Constructing a CImgStats instance from an image CImg&lt;T&gt; or a list CImgList&lt;T&gt;
+       will compute the minimum, maximum and average pixel values of the input object.
+       Optionally, the variance of the pixel values can be computed.
+       Coordinates of the pixels whose values are minimum and maximum are also stored.
+@@ -21622,10 +21622,10 @@
    \ref cimg_library::cimg namespace as a default namespace, since it contains functions whose names are already
    defined in the standard C/C++ library.
  
@@ -13,30 +22,7 @@
    to store different frames of an image sequence.
  
    - The class \ref cimg_library::CImgDisplay is able to display images or image lists into graphical display windows.
-@@ -20411,16 +20411,16 @@
-   compressed image format (GIF,PNG,...).
-   See also cimg_library::CImg::get_load_convert() and cimg_library::CImg::save_convert() for more informations.
- 
--  - \b \c cimg_plugin : This variable tells the library to use a plugin file to add features to the CImg<T> class.
--  Define it with the path of your plugin file, if you want to add member functions to the CImg<T> class,
--  without having to modify directly the \c "CImg.h" file. An include of the plugin file is performed in the CImg<T>
-+  - \b \c cimg_plugin : This variable tells the library to use a plugin file to add features to the CImg&lt;T&gt; class.
-+  Define it with the path of your plugin file, if you want to add member functions to the CImg&lt;T&gt; class,
-+  without having to modify directly the \c "CImg.h" file. An include of the plugin file is performed in the CImg&lt;T&gt;
-   class. If \c cimg_plugin if not specified (default), no include is done.
-   
--  - \b \c cimglist_plugin : Same as \c cimg_plugin, but to add features to the CImgList<T> class.
-+  - \b \c cimglist_plugin : Same as \c cimg_plugin, but to add features to the CImgList&lt;T&gt; class.
-   
--  - \b \c cimgdisplay_plugin : Same as \c cimg_plugin, but to add features to the CImgDisplay<T> class.
-+  - \b \c cimgdisplay_plugin : Same as \c cimg_plugin, but to add features to the CImgDisplay&lt;T&gt; class.
- 
--  - \b \c cimgstats_plugin : Same as \c cimg_plugin, but to add features to the CImgStats<T> class.
-+  - \b \c cimgstats_plugin : Same as \c cimg_plugin, but to add features to the CImgStats&lt;T&gt; class.
- 
-   All these compilation variables can be checked, using the function cimg_library::cimg::info(), which
-   displays a list of the different configuration variables and their values on the standard error output.
-@@ -20587,7 +20587,7 @@
+@@ -21966,7 +21966,7 @@
    This macro loops over the pixel data buffer of the image \c img, using an offset \c ,
    starting from the beginning of the buffer (first pixel, \c off=0)
    till the end of the buffer (last pixel value, <tt>off = img.size()-1</tt>).
@@ -45,7 +31,7 @@
        - \c off is an inner-loop variable, only defined inside the scope of the loop.
  
    Here is an example of use :
-@@ -20683,7 +20683,7 @@
+@@ -22062,7 +22062,7 @@
  
    For all these loops, \c x and \c y are inner-defined variables only visible inside the scope of the loop.
    They don't have to be defined before the call of the macro.
@@ -54,7 +40,7 @@
    vector channel the loop must apply (usually both 0 for grayscale 2D images).
    Finally, \c I is the 2x2, 3x3, 4x4 or 5x5 neighborhood that will be updated with the correct pixel values
    during the loop (see \ref lo9).
-@@ -20697,7 +20697,7 @@
+@@ -22076,7 +22076,7 @@
  
    For all these loops, \c x, \c y and \c z are inner-defined variables only visible inside the scope of the loop.
    They don't have to be defined before the call of the macro.
@@ -63,7 +49,7 @@
    the loop must apply (usually 0 for grayscale 3D images).
    Finally, \c I is the 2x2x2 or 3x3x3 neighborhood that will be updated with the correct pixel values
    during the loop (see \ref lo9).
-@@ -20741,7 +20741,7 @@
+@@ -22120,7 +22120,7 @@
    values than the nearest valid pixel in the image (this is also called the \e Neumann \e border \e condition).
  
    \subsection lo10 Neighborhood as a reference
@@ -72,7 +58,7 @@
    allocating new variables. This is done by adding \c _ref to the macro names used for the neighborhood definition :
  
    - \b CImg_2x2x1_ref(I,type,tab) : Define a 2x2 neighborhood named \c I, of type \c type, as a reference to \c tab.
-@@ -20751,7 +20751,7 @@
+@@ -22130,7 +22130,7 @@
    - \b CImg_2x2x2_ref(I,type,tab) : Define a 2x2x2 neighborhood named \c I, of type \c type, as a reference to \c tab.
    - \b CImg_3x3x3_ref(I,type,tab) : Define a 3x3x3 neighborhood named \c I, of type \c type, as a reference to \c tab.
  
