@@ -12777,6 +12777,7 @@ pycount		ports/devel/pycount
 pydance		ports/games/pydance
 pydbdesigner	ports/databases/pydbdesigner
 pydbx		ports/databases/pydbx
+pyephem		ports/astro/pyephem
 pygmy		ports/mail/pygmy
 pygopherd	ports/net/pygopherd
 pykawari	ports/games/pykawari
