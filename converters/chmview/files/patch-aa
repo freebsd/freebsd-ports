@@ -1,9 +1,180 @@
-diff -r -u ../src/chmlib.h ./chmlib.h
---- ../src/chmlib.h	Sun Dec  1 01:26:02 2002
-+++ ./chmlib.h	Fri Mar 28 17:40:39 2003
-@@ -129,3 +129,5 @@
- chmfile *chm_openfile(char *fname);
+--- ../src/chmview.c
++++ chmview.c.new
+@@ -17,16 +17,30 @@
+     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
  
- void chm_close(chmfile *l);
++#ifndef UNIX
+ #include <windows.h>
++#endif
 +
-+#define MODE 0755
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <limits.h>
++
++#ifdef UNIX
++#include <errno.h>
++#include <locale.h>
++#else
+ #include <dir.h>
++#endif
+ 
+ #include "chm_lib.h"
+ #include "utf8.h"
+ 
++#ifdef UNIX
++#define _strnicmp strncasecmp
++#define MODE 755
++#endif
++
+ struct cb_data
+ {
+   int extractwithoutpath;
+@@ -44,6 +58,7 @@
+   return p;
+ }
+ 
++#ifndef UNIX
+ int makedir(char *path)
+ {
+   char *end;
+@@ -75,6 +90,39 @@
+   }
+   return 1;
+ }
++#else
++static int makedir(char *path)
++{
++  char *slash;
++  int  was_error, done, err;
++
++  slash = path;
++  done = 0;
++  was_error = 0;
++
++  do {
++    slash = index(slash + 1, '/');
++    if (slash)
++    {
++      *slash = 0;
++      if (mkdir(path, MODE) == -1 && EEXIST != errno)
++		was_error = 1;
++      *slash = '/';
++    }
++    else
++       done = 1;
++  } while (! done && ! was_error);
++
++  if (was_error)
++  {
++    perror("mkdir");
++	exit(1);
++    /* return 0; */
++  }
++
++  return 1;
++}
++#endif
+ 
+ const char ILLEGAL_SYMB[] = "<>:|?*\"";
+ const char ILLEGAL_REPL[] = "()_!__'";
+@@ -103,6 +151,9 @@
+   char fullpath[CHM_MAX_PATHLEN*2+1];
+   char target[CHM_MAX_PATHLEN*2+1];
+   wchar_t temp[CHM_MAX_PATHLEN+1];
++#ifdef UNIX
++  size_t pathlen;
++#endif
+ 
+   if (ui->length)
+   {
+@@ -116,13 +167,32 @@
+       return -1;
+     }
+   }
++#ifndef UNIX
+   GetCurrentDirectory(sizeof(fullpath)-1,fullpath);
+   while ((p = strstr(fullpath,"\\")) != NULL)
+     *p = '/';
+   if (fullpath[strlen(fullpath)-1] != '/')
+     strcat(fullpath,"/");
++#else
++  getcwd(fullpath, sizeof(fullpath)-1);
++  pathlen = strlen(fullpath);
++  if (pathlen == 0)
++	return -1;	/* impossible but... defensive programming */
++  if (fullpath[pathlen - 1] != '/')
++  {
++    if (pathlen == PATH_MAX)
++		return -1;
++    else
++		fullpath[pathlen] = '/';
++	fullpath[pathlen+1] = 0;
++  }
++#endif
+   decode_UTF8(temp,ui->path);
++#ifndef UNIX
+   WideCharToMultiByte(CP_ACP,0,temp,-1,target,sizeof(target),NULL,NULL);
++#else
++  wcstombs(target, temp, sizeof(target));
++#endif
+   ReplaceIllegalChars(target);
+   strcat(fullpath,extractwithoutpath?pointtoname(target):(target[0]=='/'?target+1:target));
+   if (!extractwithoutpath)
+@@ -153,15 +223,19 @@
+   wchar_t temp[CHM_MAX_PATHLEN+1];
+ 
+   decode_UTF8(temp,ui->path);
++#ifndef UNIX
+   WideCharToMultiByte(CP_OEMCP,0,temp,-1,target,sizeof(target),NULL,NULL);
++#else
++  wcstombs(target, temp, sizeof(target));
++#endif
+   printf("Extracting %s ",target);
+   if (savetofile(c, ui, extractwithoutpath))
+   {
+     printf("Error\n");
+     error=1;
+     //return CHM_ENUMERATOR_FAILURE;
+-  }
+-  printf("OK\n");
++  } else
++		printf("OK\n");
+ }
+ 
+ int _extract_callback_all(struct chmFile *c, struct chmUnitInfo *ui, void *context)
+@@ -193,7 +267,11 @@
+   wchar_t temp[CHM_MAX_PATHLEN+1];
+ 
+   decode_UTF8(temp,ui->path);
++#ifndef UNIX
+   WideCharToMultiByte(CP_OEMCP,0,temp,-1,target,sizeof(target),NULL,NULL);
++#else
++  wcstombs(target, temp, sizeof(target));
++#endif
+ 
+   if ((target)[0] == '/')
+   {
+@@ -243,6 +321,9 @@
+ 
+   infname = argv[2];
+ 
++#ifdef UNIX
++  setlocale(LC_ALL,"");
++#endif
+   c = chm_open(infname);
+   if (!c)
+     exit(-1);
+@@ -305,7 +386,11 @@
+             strcat(target,name+1);
+           else
+             strcat(target,name);
++#ifndef UNIX 
+           MultiByteToWideChar(CP_ACP,0,target,-1,temp,sizeof(temp));
++#else
++		  mbstowcs(temp, target, sizeof(target));
++#endif
+           encode_UTF8(target,temp);
+           status = chm_resolve_object(c,target,&ui);
+           if (status==CHM_RESOLVE_SUCCESS && ui.path[strlen(ui.path)-1]!='/')

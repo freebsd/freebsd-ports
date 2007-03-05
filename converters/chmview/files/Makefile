@@ -5,18 +5,19 @@ OBJDIR = .
 EXEDIR = .
 EXENAME = $(EXEDIR)/chmview
 
-CFLAGS += -g
-LFLAGS += -g
+CFLAGS += -DUNIX
 
 all: $(EXENAME)
 
 OBJS = $(OBJDIR)/chmview.o \
-       $(OBJDIR)/chmlib.o \
-       $(OBJDIR)/lzx.o
+       $(OBJDIR)/chm_lib.o \
+       $(OBJDIR)/lzx.o \
+       $(OBJDIR)/utf8.o
 
-$(OBJDIR)/chmview.o: chmview.c chmlib.h
-$(OBJDIR)/chmlib.o: chmlib.c chmlib.h fixendian.h lzx.h
-$(OBJDIR)/lzx.o: lzx.c lzx.h lzx_int.h
+$(OBJDIR)/chmview.o: chmview.c chm_lib.h
+$(OBJDIR)/chm_lib.o: chm_lib.c chm_lib.h lzx.h
+$(OBJDIR)/utf8.o: utf8.c utf8.h
+$(OBJDIR)/lzx.o: lzx.c lzx.h
 
 .c.o:
 	$(CC) $(CFLAGS) -c ${.IMPSRC}
