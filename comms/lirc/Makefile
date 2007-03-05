@@ -40,9 +40,9 @@ PLIST_SUB+=	SMODE2="@comment "
 
 .if defined(WITH_IRMAN)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libirman.a:${PORTSDIR}/comms/libirman
-CONFIGURE_ARGS+=	--with-driver=irman
+CONFIGURE_ARGS+=	--with-driver=irman --with-driver=dvico
 .else
-CONFIGURE_ARGS+=	--with-driver=any
+CONFIGURE_ARGS+=	--with-driver=any --with-driver=dvico
 .endif
 
 .if ${OSVERSION} >= 500041
