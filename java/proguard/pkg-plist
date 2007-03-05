@@ -54,7 +54,6 @@ bin/proguard-gui
 %%DATADIR%%/docs/testimonials.html
 %%DATADIR%%/docs/title.gif
 %%DATADIR%%/docs/title.html
-%%DATADIR%%/docs/vtitle.gif
 %%DATADIR%%/examples/ant/applets.xml
 %%DATADIR%%/examples/ant/applications1.xml
 %%DATADIR%%/examples/ant/applications2.xml
