@@ -80,7 +80,7 @@ ECHO_MSG=/usr/bin/printf
 IGNORE=	:\n\
 Because of licensing restrictions, you must fetch the distribution\n\
 manually.\n
-.if (!exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) 
+.if (!exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}))
 IGNORE += Please access\n\
 \n\
   ${DOWNLOAD_URL}\n\
