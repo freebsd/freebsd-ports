@@ -7,10 +7,10 @@
 
 PORTNAME=	cvschangelogbuilder
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://cvschangelogb.sourceforge.net/files/ \
-		http://mirror.spingen.com/cvschangelogbuilder/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	cvschangelogb
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to generate changelogs and reports from a CVS repository
