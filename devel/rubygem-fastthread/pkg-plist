@@ -1,0 +1,22 @@
+%%GEM_CACHE%%
+%%GEM_SPEC%%
+%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/setup.rb
+%%GEM_LIB_DIR%%/test/test_condvar.rb
+%%GEM_LIB_DIR%%/test/test_mutex.rb
+%%GEM_LIB_DIR%%/test/test_all.rb
+%%GEM_LIB_DIR%%/test/test_queue.rb
+%%GEM_LIB_DIR%%/ext/fastthread/fastthread.c
+%%GEM_LIB_DIR%%/ext/fastthread/extconf.rb
+%%GEM_LIB_DIR%%/ext/fastthread/Makefile
+%%GEM_LIB_DIR%%/ext/fastthread/fastthread.o
+%%GEM_LIB_DIR%%/ext/fastthread/fastthread.so
+%%GEM_LIB_DIR%%/tools/rakehelp.rb
+%%GEM_LIB_DIR%%/lib/fastthread.so
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%/tools
+@dirrm %%GEM_LIB_DIR%%/ext/fastthread
+@dirrm %%GEM_LIB_DIR%%/ext
+@dirrm %%GEM_LIB_DIR%%/test
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%
