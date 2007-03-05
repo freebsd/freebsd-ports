@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://invisible-island.net/dialog/
 DISTNAME=	${PORTNAME:S|^c||}-${PORTVERSION:R}-${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sylvioc@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An enhanced version of 'dialog' to work with ncurses
 
 USE_GMAKE=	yes

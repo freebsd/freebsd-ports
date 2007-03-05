@@ -12,7 +12,7 @@ MASTER_SITES=	http://lincvs.com/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-0-generic-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sylvioc@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical CVS front-end using QT
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

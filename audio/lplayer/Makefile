@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	sylvioc@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A QT program to queue lots of MP3s for random XMMS play
 
 LIB_DEPENDS=	db_cxx-4.3.0:${PORTSDIR}/databases/db43 \

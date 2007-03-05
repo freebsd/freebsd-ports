@@ -9,7 +9,7 @@ PORTVERSION=	4.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.wirlab.net/kphone/
 
-MAINTAINER=	sylvioc@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A voice over internet phone
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
