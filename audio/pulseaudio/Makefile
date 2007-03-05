@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	pulseaudio
-PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTVERSION=	0.9.4
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
@@ -34,10 +33,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 CONFIGURE_ARGS+=	--disable-lirc # untested
 
+OPTIONS=	JACK "JACK audio support" Off
+
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=	does not build on 4.X
+.if defined(WITH_JACK) || exists(${LOCALBASE}/lib/libjack.la)
+LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+PLIST_SUB+=	JACK=""
+.else
+PLIST_SUB+=	JACK="@comment "
 .endif
 
 .if (exists(${LOCALBASE}/lib/libavahi-core.a) || defined(PACKAGE_BUILDING) \
