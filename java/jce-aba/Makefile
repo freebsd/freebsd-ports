@@ -11,7 +11,7 @@ CATEGORIES=	java security
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	znerd
 
-MAINTAINER=	greg@greg.rim.or.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clean room implementation of the Java Cryptograph Extension (JCE) API
 
 USE_JAVA=	yes
