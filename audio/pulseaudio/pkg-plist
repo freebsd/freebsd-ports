@@ -141,6 +141,10 @@ lib/pulse-0.9/modules/libioline.la
 lib/pulse-0.9/modules/libioline.so
 lib/pulse-0.9/modules/libipacl.la
 lib/pulse-0.9/modules/libipacl.so
+%%JACK%%lib/pulse-0.9/modules/module-jack-sink.la
+%%JACK%%lib/pulse-0.9/modules/module-jack-sink.so
+%%JACK%%lib/pulse-0.9/modules/module-jack-source.la
+%%JACK%%lib/pulse-0.9/modules/module-jack-source.so
 lib/pulse-0.9/modules/liboss-util.la
 lib/pulse-0.9/modules/liboss-util.so
 lib/pulse-0.9/modules/libpacket.la
