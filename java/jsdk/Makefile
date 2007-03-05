@@ -13,7 +13,7 @@ MASTER_SITES=	#
 DISTNAME=	jsdk20-solaris2-sparc
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	greg@greg.rim.or.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sun\'s Java Servlet Developers Kit
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
@@ -26,7 +26,7 @@ RESTRICTED=	"Sun has a funky license for this software; no commercial use"
 WRKSRC=		${WRKDIR}/JSDK2.0
 
 .if defined(BATCH)
-IGNORE=		"Should be fetched manually"
+IGNORE=		Should be fetched manually
 .endif
 
 PLIST_FILES=	%%JAVAJARDIR%%/jsdk.jar bin/servletrunner
