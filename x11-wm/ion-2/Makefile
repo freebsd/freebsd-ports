@@ -12,8 +12,8 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://modeemi.fi/~tuomov/dl/
 
-MAINTAINER=	anthony.ginepro@laposte.net
-COMMENT=	Ion is a tiling tabbed window manager
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A tiling tabbed window manager
 
 CONFLICTS=	ion-2002* ion-devel-* pwm-*
 
