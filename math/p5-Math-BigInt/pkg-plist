@@ -2,7 +2,8 @@
 %%SITE_PERL%%/Math/BigInt.pm
 %%SITE_PERL%%/Math/BigInt/Calc.pm
 %%SITE_PERL%%/Math/BigInt/CalcEmu.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math-BigInt/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math-BigInt
-@dirrm %%SITE_PERL%%/Math/BigInt
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/BigInt/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/BigInt
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
+@dirrmtry %%SITE_PERL%%/Math/BigInt
 @dirrmtry %%SITE_PERL%%/Math
