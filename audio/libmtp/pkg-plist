@@ -1,5 +1,9 @@
+bin/mtp-albumart
+bin/mtp-albums
+bin/mtp-connect
 bin/mtp-delfile
 bin/mtp-detect
+bin/mtp-emptyfolders
 bin/mtp-files
 bin/mtp-folders
 bin/mtp-format
@@ -7,14 +11,16 @@ bin/mtp-getfile
 bin/mtp-getplaylist
 bin/mtp-hotplug
 bin/mtp-newfolder
+bin/mtp-newplaylist
 bin/mtp-playlists
 bin/mtp-sendfile
 bin/mtp-sendtr
+bin/mtp-thumb
 bin/mtp-tracks
 bin/mtp-trexist
 include/libmtp.h
 lib/libmtp.a
 lib/libmtp.la
 lib/libmtp.so
-lib/libmtp.so.3
+lib/libmtp.so.6
 libdata/pkgconfig/libmtp.pc
