@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	najitool
 
-MAINTAINER=	cokyazici@yahoo.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library that generates, converts, and filters files
 
 MAKEFILE=	makefile

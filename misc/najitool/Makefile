@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	najitool
 
-MAINTAINER=	cokyazici@yahoo.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool that generates, converts, and filters files
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnaji.a:${PORTSDIR}/devel/libnaji
