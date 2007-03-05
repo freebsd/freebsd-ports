@@ -12,7 +12,7 @@ MASTER_SITES=	http://noc.sixxs.net/archive/sixxs/aiccu/unix/
 PKGNAMEPREFIX=	sixxs-
 DISTNAME=	aiccu_20070115
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SixXS IPv6 TIC+ tunnel broker heartbeat client
 
 USE_RC_SUBR=	sixxs-aiccu
