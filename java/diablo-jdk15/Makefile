@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${RELEASE_VERSION}.${BUILD_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	diablo-
@@ -35,6 +35,8 @@ LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}15
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}jdk${JDK_VERSION}_${RELEASE_VERSION}
 NO_BUILD=	yes
 
+OPTIONS=	TZUPDATE	"Update the time zone data"	on
+
 SUB_FILES+=	pkg-install \
 		pkg-deinstall
 PKG_IGNORE_DEPENDS=	'^[^x|^j]'
@@ -51,6 +53,20 @@ JDK_OSREL=freebsd5
 IGNORE=		Only available for FreeBSD 5.x/i386 and FreeBSD 6.x/amd64 and later
 .endif
 
+.if defined(WITH_TZUPDATE)
+EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+TZUPDATE_VERSION=	1.0.1
+TZUPDATE_TZVERSION=	2007a
+TZUPDATEFILE=		tzupdater-${TZUPDATE_VERSION:S/./_/g}.zip
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX} ${TZUPDATEFILE}
+EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
+PLIST_SUB+=		TZORIGINAL="@comment "
+PLIST_SUB+=		TZUPDATE=""
+.else
+PLIST_SUB+=		TZORIGINAL=""
+PLIST_SUB+=		TZUPDATE="@comment "
+.endif
+
 .if ${ARCH} == "i386"
 PLIST_SUB+=	WEB=""
 PLIST_SUB+=	CLIENTVM=""
@@ -59,17 +75,36 @@ PLIST_SUB+=	WEB="@comment "
 PLIST_SUB+=	CLIENTVM="@comment "
 .endif
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING) && defined(JDK_OSREL)
+.if (!exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) || (defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE}))) && !defined(PACKAGE_BUILDING) && defined(JDK_OSREL)
 ECHO_MSG=/usr/bin/printf
 IGNORE=	:\n\
 Because of licensing restrictions, you must fetch the distribution\n\
-manually.  Please access\n\
+manually.\n\n
+.if (!exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) 
+IGNORE += Please access\n\
 \n\
   ${DOWNLOAD_URL}\n\
 \n\
 with a web browser and \"Accept\" the End User License Agreement for\n\
 \"Caffe Diablo ${JDK_VERSION}\".  Please place the downloaded\n\
-${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}.\n
+${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}.\n\n
+.endif
+.if defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})
+IGNORE += Please open http://java.sun.com/javase/downloads/index.jsp\n\
+in a web browser and follow the \"Download\" link for\n\
+\"JDK US DST Timezone Update Tool - ${TZUPDATE_VERSION}\" to obtain the\n\
+time zone update file, ${TZUPDATEFILE}.\n\n
+.endif
+.endif
+
+
+.if defined(WITH_TZUPDATE)
+post-extract:
+	@${UNZIP_CMD} -qo ${DISTDIR}/${TZUPDATEFILE} -d ${WRKDIR}
+	@# Update time zones
+	@-${WRKSRC}/bin/java -jar \
+		${WRKDIR}/tzupdater${TZUPDATE_TZVERSION}/tzupdater.jar -u
+	@-${RM} -rf ${WRKSRC}/jre/lib/zi.tzdata2005n
 .endif
 
 do-install:
