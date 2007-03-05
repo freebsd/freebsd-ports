@@ -13616,6 +13616,7 @@ rubygem-capistrano	ports/sysutils/rubygem-capistrano
 rubygem-colortools	ports/print/rubygem-colortools
 rubygem-daemons	ports/devel/rubygem-daemons
 rubygem-fastercsv	ports/devel/rubygem-fastercsv
+rubygem-fastthread	ports/devel/rubygem-fastthread
 rubygem-ferret	ports/textproc/rubygem-ferret
 rubygem-gem_plugin	ports/devel/rubygem-gem_plugin
 rubygem-gruff	ports/graphics/rubygem-gruff
