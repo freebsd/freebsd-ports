@@ -1974,6 +1974,7 @@
     SUBDIR += rubygem-builder
     SUBDIR += rubygem-daemons
     SUBDIR += rubygem-fastercsv
+    SUBDIR += rubygem-fastthread
     SUBDIR += rubygem-gem_plugin
     SUBDIR += rubygem-hoe
     SUBDIR += rubygem-inline
