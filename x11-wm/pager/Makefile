@@ -13,7 +13,7 @@ MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://mirror2.unixfreunde.de/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ebert@informatik.unibw-muenchen.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pager for sawfish without GNOME
 
 BUILD_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
