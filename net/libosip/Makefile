@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 MASTER_SITE_SUBDIR=	osip
 DISTNAME=	${PORTNAME}2-${PORTVERSION}
 
-MAINTAINER=	xride@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A low layer of SIP implementation
 
 CONFLICTS=	libosip2-2*

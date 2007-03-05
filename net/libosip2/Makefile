@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.antisip.com/download/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	osip
 
-MAINTAINER=	xride@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A low layer of SIP implementation
 
 CONFLICTS=	libosip-3*
