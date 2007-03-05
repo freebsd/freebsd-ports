@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.tim-mann.org/xboard/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	xboard
 
-MAINTAINER=	xaa+ports@timewasters.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X frontend for Crafty, GNUChess, Chess Servers, or e-mail chess
 
 BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html

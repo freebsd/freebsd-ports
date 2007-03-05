@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.coker.com.au/logtools/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	xaa+ports@timewasters.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Useful tools to deal with CLF files (Common Log File format)
 
 GNU_CONFIGURE=	yes
