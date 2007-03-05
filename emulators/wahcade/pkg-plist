@@ -1,24 +1,29 @@
 bin/wahcade
-%%DOCSDIR%%/CHANGELOG
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/INI_FILES
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/KEYS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/fav_format.txt
-%%DOCSDIR%%/filter_format.txt
-%%DOCSDIR%%/gamelist_format.txt
-%%DOCSDIR%%/layout_format.txt
-%%DOCSDIR%%/xmame-x11rc
-%%DOCSDIR%%/xmame-x11rc.pre88
-%%DOCSDIR%%/xmame_options.pre88.txt
-%%DOCSDIR%%/xmame_options.txt
-%%DOCSDIR%%/xmamerc
-%%DOCSDIR%%/xmamerc.pre88
+share/applications/wahcade.desktop
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INI_FILES
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/KEYS
+%%PORTDOCS%%%%DOCSDIR%%/LAYOUT_EDITOR
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/SETUP_EDITOR
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/file_formats/fav_format.txt
+%%PORTDOCS%%%%DOCSDIR%%/file_formats/filter_format.txt
+%%PORTDOCS%%%%DOCSDIR%%/file_formats/gamelist_format.txt
+%%PORTDOCS%%%%DOCSDIR%%/file_formats/layout_format.txt
+%%PORTDOCS%%%%DOCSDIR%%/xmame/xmame-x11rc
+%%PORTDOCS%%%%DOCSDIR%%/xmame/xmame-x11rc.pre88
+%%PORTDOCS%%%%DOCSDIR%%/xmame/xmamerc
+%%PORTDOCS%%%%DOCSDIR%%/xmame/xmamerc.post105
+%%PORTDOCS%%%%DOCSDIR%%/xmame/xmamerc.pre88
 %%DATADIR%%/config.dist/cpviewer.ini
+%%DATADIR%%/config.dist/ctrlr/.dir
 %%DATADIR%%/config.dist/ctrlr/default.ini
+%%DATADIR%%/config.dist/files/.dir
 %%DATADIR%%/config.dist/histview.ini
+%%DATADIR%%/config.dist/ini/.dir
 %%DATADIR%%/config.dist/ini/genesis-0.ini
 %%DATADIR%%/config.dist/ini/genesis.ini
 %%DATADIR%%/config.dist/ini/mame-0.ini
@@ -26,53 +31,74 @@ bin/wahcade
 %%DATADIR%%/config.dist/ini/mame.ini
 %%DATADIR%%/config.dist/ini/zsnes-0.ini
 %%DATADIR%%/config.dist/ini/zsnes.ini
-%%DATADIR%%/config.dist/layouts/classic 1024x768/layout.lay
-%%DATADIR%%/config.dist/layouts/classic 640x480/layout.lay
-%%DATADIR%%/config.dist/layouts/classic 800x600/layout.lay
+%%DATADIR%%/config.dist/layouts/.dir
+%%DATADIR%%/config.dist/layouts/classic_1024x768/layout.lay
+%%DATADIR%%/config.dist/layouts/classic_640x480/layout.lay
+%%DATADIR%%/config.dist/layouts/classic_800x600/layout.lay
 %%DATADIR%%/config.dist/layouts/cpviewer/example.jpg
 %%DATADIR%%/config.dist/layouts/cpviewer/example.lay
-%%DATADIR%%/config.dist/layouts/cpviewer/wahcade.glade
+%%DATADIR%%/config.dist/layouts/histview/example.lay
 %%DATADIR%%/config.dist/wahcade.ini
 %%DATADIR%%/constants.py
-%%DATADIR%%/constants.pyc
 %%DATADIR%%/filters.py
-%%DATADIR%%/filters.pyc
+%%DATADIR%%/glade/layout_editor.glade
+%%DATADIR%%/glade/wahcade_setup.glade
+%%DATADIR%%/glade/win_cpviewer.png
+%%DATADIR%%/glade/win_main.png
+%%DATADIR%%/glade/win_msg.png
+%%DATADIR%%/glade/win_options.png
+%%DATADIR%%/glade/win_scrsave.png
+%%DATADIR%%/glade2.py
 %%DATADIR%%/key_consts.py
-%%DATADIR%%/key_consts.pyc
+%%DATADIR%%/layout_editor.py
+%%DATADIR%%/layout_props.py
+%%DATADIR%%/layout_scr_props.py
+%%DATADIR%%/locale/en_GB/LC_MESSAGES/wahcade.mo
 %%DATADIR%%/mamewah_ini.py
-%%DATADIR%%/mamewah_ini.pyc
 %%DATADIR%%/mplayer.py
-%%DATADIR%%/mplayer.pyc
 %%DATADIR%%/pixmaps/empty.png
+%%DATADIR%%/pixmaps/wahcade-logo.png
+%%DATADIR%%/pixmaps/wahcade.ico
 %%DATADIR%%/pixmaps/wahcade.png
+%%DATADIR%%/pixmaps/win_cpviewer.png
+%%DATADIR%%/pixmaps/win_main.png
+%%DATADIR%%/pixmaps/win_msg.png
+%%DATADIR%%/pixmaps/win_options.png
+%%DATADIR%%/pixmaps/win_scrsave.png
 %%DATADIR%%/scrolled_list.py
-%%DATADIR%%/scrolled_list.pyc
 %%DATADIR%%/setup.py
-%%DATADIR%%/setup.pyc
-%%DATADIR%%/wahcade
+%%DATADIR%%/templates/new_emulator-0.ini
+%%DATADIR%%/templates/new_emulator-1.ini
+%%DATADIR%%/templates/new_emulator.ini
+%%DATADIR%%/wahcade-layout-editor.py
+%%DATADIR%%/wahcade-setup.py
+%%DATADIR%%/wahcade.py
 %%DATADIR%%/wc_common.py
-%%DATADIR%%/wc_common.pyc
+%%DATADIR%%/wc_setup.py
 %%DATADIR%%/win_cpviewer.py
-%%DATADIR%%/win_cpviewer.pyc
 %%DATADIR%%/win_history.py
-%%DATADIR%%/win_history.pyc
 %%DATADIR%%/win_main.py
-%%DATADIR%%/win_main.pyc
 %%DATADIR%%/win_message.py
-%%DATADIR%%/win_message.pyc
 %%DATADIR%%/win_options.py
-%%DATADIR%%/win_options.pyc
 %%DATADIR%%/win_scrsaver.py
-%%DATADIR%%/win_scrsaver.pyc
+@dirrmtry share/applications
+@dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/locale/en_GB/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/en_GB
+@dirrm %%DATADIR%%/locale
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/config.dist/layouts/histview
 @dirrm %%DATADIR%%/config.dist/layouts/cpviewer
-@dirrm %%DATADIR%%/config.dist/layouts/classic 800x600
-@dirrm %%DATADIR%%/config.dist/layouts/classic 640x480
-@dirrm %%DATADIR%%/config.dist/layouts/classic 1024x768
+@dirrm %%DATADIR%%/config.dist/layouts/classic_800x600
+@dirrm %%DATADIR%%/config.dist/layouts/classic_640x480
+@dirrm %%DATADIR%%/config.dist/layouts/classic_1024x768
 @dirrm %%DATADIR%%/config.dist/layouts
 @dirrm %%DATADIR%%/config.dist/ini
 @dirrm %%DATADIR%%/config.dist/files
 @dirrm %%DATADIR%%/config.dist/ctrlr
 @dirrm %%DATADIR%%/config.dist
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/xmame
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/file_formats
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
