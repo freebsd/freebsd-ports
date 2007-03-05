@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	File-Copy-Recursive
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
@@ -20,13 +20,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		File::Copy::Recursive.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	${PERL} -pi -e 's/(mkdir \S+)/$$1, 0755/g' ${WRKSRC}/Recursive.pm
-	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' ${WRKSRC}/Recursive.pm
-	${REINPLACE_CMD} -e '/warnings/d' ${WRKSRC}/Recursive.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
