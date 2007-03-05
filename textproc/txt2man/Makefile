@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	txt2man
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://mvertes.free.fr/download/
 
