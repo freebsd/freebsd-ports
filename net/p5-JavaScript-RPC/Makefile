@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	JavaScript
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tshadwick@oss-solutions.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Remote procedure calls from JavaScript
 
 PERL_CONFIGURE=	yes

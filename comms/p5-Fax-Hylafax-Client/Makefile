@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Fax
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tshadwick@oss-solutions.com
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A simple Perl client for the HylaFAX fax server
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net
