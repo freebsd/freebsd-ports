@@ -44,4 +44,7 @@ PLIST_SUB+=	OFX="@comment "
 LIB_DEPENDS+=	ktoblzcheck.4:${PORTSDIR}/finance/ktoblzcheck
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e "s|echo aout|echo elf|g" ${WRKSRC}/configure
+
 .include <bsd.port.post.mk>
