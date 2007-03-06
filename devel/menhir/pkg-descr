@@ -1,0 +1,7 @@
+Menhir is a LR(1) parser generator for the OCaml programming language.
+It is 90% compatible to ocamlyacc (included with the OCaml distribution), and
+it has some advantages over ocamlyacc, such as limited EBNF support, LR(1)
+generation instead of LALR(1), better conflict explanation and production of
+reentrant parsers (amongst others).
+
+WWW: http://cristal.inria.fr/~fpottier/menhir

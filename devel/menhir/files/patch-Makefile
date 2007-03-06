@@ -1,0 +1,24 @@
+--- Makefile.orig	Thu Feb 15 11:03:08 2007
++++ Makefile	Mon Mar  5 12:25:21 2007
+@@ -50,9 +50,9 @@
+ 
+ EXECUTABLE      := menhir
+ bindir          := ${PREFIX}/bin
+-docdir		:= ${PREFIX}/share/doc/$(EXECUTABLE)
+-libdir	        := ${PREFIX}/share/$(EXECUTABLE)
+-mandir          := ${PREFIX}/share/man/man1
++docdir		:= ${DOCSDIR}
++libdir	        := ${OCAML_SITELIBDIR}/${EXECUTABLE}
++mandir          := ${PREFIX}/man/man1
+ MANS            := menhir.1
+ DOCS            := manual.pdf demos
+ LIBS            := standard.mly
+@@ -75,7 +75,7 @@
+ # during bootstrap stage one.
+ 
+ stdlib.ml:
+-	echo "let path = \"${PREFIX}/share/menhir\"" > stdlib.ml
++	echo "let path = \"${OCAML_SITELIBDIR}/menhir\"" > stdlib.ml
+ 
+ # ----------------------------------------------------------------------------
+ # Installation.

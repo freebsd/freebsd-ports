@@ -683,6 +683,7 @@
     SUBDIR += maven
     SUBDIR += maven2
     SUBDIR += memcheck
+    SUBDIR += menhir
     SUBDIR += mercator
     SUBDIR += mercurial
     SUBDIR += meta-cvs
