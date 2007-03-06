@@ -2,6 +2,7 @@ bin/pysnmpbulkwalk
 bin/pysnmpget
 bin/pysnmpset
 bin/pysnmpwalk
+bin/pysnmptranslate
 %%PYTHON_SITELIBDIR%%/pysnmp_apps/__init__.py
 %%PYTHON_SITELIBDIR%%/pysnmp_apps/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp_apps/__init__.pyo
