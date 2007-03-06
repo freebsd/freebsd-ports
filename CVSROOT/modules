@@ -11395,6 +11395,7 @@ pecl-svn	ports/devel/pecl-svn
 pecl-tcpwrap	ports/security/pecl-tcpwrap
 pecl-tidy	ports/www/pecl-tidy
 pecl-timezonedb	ports/misc/pecl-timezonedb
+pecl-vld	ports/devel/pecl-vld
 pecl-xdiff	ports/textproc/pecl-xdiff
 pecl-yaz	ports/net/pecl-yaz
 pecl-zip	ports/archivers/pecl-zip
