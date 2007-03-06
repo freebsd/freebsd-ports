@@ -30,8 +30,16 @@ nessusd_flags="-D"				# Flags to nessusd program
 name="nessusd"
 rcvar=`set_rcvar`
 command="${prefix}/sbin/nessusd"
-pidfile="/usr/local/var/nessus/nessusd.pid"
+pidfile="${prefix}/var/nessus/nessusd.pid"
 required_files="${prefix}/etc/nessus/nessusd.conf"
+start_precmd="nessus_check_certificate"
+
+nessus_check_certificate()
+{
+	if [ ! -f ${prefix}/var/CA/serverkey.pem ]; then
+		 ${prefix}/sbin/nessus-mkcert
+	fi
+}
 
 load_rc_config $name
 run_rc_command "$1"
