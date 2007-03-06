@@ -36,6 +36,9 @@ bin/libsmi2pysnmp
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/carrier/error.py
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/carrier/error.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/carrier/error.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/debug.py
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/debug.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/debug.pyo
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/entity/__init__.py
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/entity/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/entity/__init__.pyo
@@ -261,33 +264,41 @@ bin/libsmi2pysnmp
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/__init__.py
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/__init__.pyo
-%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/PYSNMP-USM-MIB.py
-%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/PYSNMP-USM-MIB.pyc
-%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/PYSNMP-USM-MIB.pyo
-%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/SNMP-FRAMEWORK-MIB.py
-%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/SNMP-FRAMEWORK-MIB.pyc
-%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/SNMP-FRAMEWORK-MIB.pyo
-%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/SNMP-MPD-MIB.py
-%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/SNMP-MPD-MIB.pyc
-%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/SNMP-MPD-MIB.pyo
-%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/SNMP-TARGET-MIB.py
-%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/SNMP-TARGET-MIB.pyc
-%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/SNMP-TARGET-MIB.pyo
-%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/SNMP-USER-BASED-SM-MIB.py
-%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/SNMP-USER-BASED-SM-MIB.pyc
-%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/SNMP-USER-BASED-SM-MIB.pyo
-%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/SNMP-VIEW-BASED-ACM-MIB.py
-%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/SNMP-VIEW-BASED-ACM-MIB.pyc
-%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/SNMP-VIEW-BASED-ACM-MIB.pyo
-%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/SNMPv2-MIB.py
-%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/SNMPv2-MIB.pyc
-%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/SNMPv2-MIB.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__PYSNMP-USM-MIB.py
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__PYSNMP-USM-MIB.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__PYSNMP-USM-MIB.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__SNMP-FRAMEWORK-MIB.py
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__SNMP-FRAMEWORK-MIB.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__SNMP-FRAMEWORK-MIB.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__SNMP-MPD-MIB.py
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__SNMP-MPD-MIB.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__SNMP-MPD-MIB.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__SNMP-TARGET-MIB.py
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__SNMP-TARGET-MIB.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__SNMP-TARGET-MIB.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__SNMP-USER-BASED-SM-MIB.py
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__SNMP-USER-BASED-SM-MIB.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__SNMP-USER-BASED-SM-MIB.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__SNMP-VIEW-BASED-ACM-MIB.py
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__SNMP-VIEW-BASED-ACM-MIB.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__SNMP-VIEW-BASED-ACM-MIB.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__SNMPv2-MIB.py
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__SNMPv2-MIB.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__SNMPv2-MIB.pyo
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__init__.py
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances/__init__.pyo
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/view.py
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/view.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/view.pyo
+%%DOCSDIR%%/CHANGES
+%%DOCSDIR%%/LICENSE
+%%DOCSDIR%%/README
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/mibs/PYSNMP-MIB.txt
+%%DOCSDIR%%/mibs/PYSNMP-USM-MIB.txt
+%%DOCSDIR%%/pysnmp-arch.gif
+%%DOCSDIR%%/pysnmp-tutorial.html
 %%EXAMPLESDIR%%/build-pysnmp-mib
 %%EXAMPLESDIR%%/libsmi2pysnmp
 %%EXAMPLESDIR%%/smi/backend.py
@@ -313,7 +324,6 @@ bin/libsmi2pysnmp
 %%EXAMPLESDIR%%/v3arch/oneliner/manager/setgen.py
 %%EXAMPLESDIR%%/v3arch/oneliner/manager/withmib/nextgen.py
 %%EXAMPLESDIR%%/v3arch/oneliner/manager/withmib/setgen.py
-@dirrm %%EXAMPLESDIR%%/smi
 @dirrm %%EXAMPLESDIR%%/v3arch/oneliner/manager/withmib
 @dirrm %%EXAMPLESDIR%%/v3arch/oneliner/manager
 @dirrm %%EXAMPLESDIR%%/v3arch/oneliner/agent
@@ -321,21 +331,24 @@ bin/libsmi2pysnmp
 @dirrm %%EXAMPLESDIR%%/v3arch/manager
 @dirrm %%EXAMPLESDIR%%/v3arch/agent
 @dirrm %%EXAMPLESDIR%%/v3arch
-@dirrm %%EXAMPLESDIR%%/v1arch/agent
 @dirrm %%EXAMPLESDIR%%/v1arch/manager
+@dirrm %%EXAMPLESDIR%%/v1arch/agent
 @dirrm %%EXAMPLESDIR%%/v1arch
+@dirrm %%EXAMPLESDIR%%/smi
 @dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%/mibs
+@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs/instances
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi/mibs
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/smi
-@dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/acmod
-@dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/api
-@dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/mpmod
-@dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/proxy
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/secmod/rfc3414/priv
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/secmod/rfc3414/auth
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/secmod/rfc3414
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/secmod
+@dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/proxy
+@dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/mpmod
+@dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/api
+@dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto/acmod
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/proto
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/entity/rfc3413/oneliner
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/v4/entity/rfc3413
