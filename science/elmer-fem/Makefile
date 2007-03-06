@@ -18,7 +18,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libmatc.a:${PORTSDIR}/science/elmer-matc	\
 		${LOCALBASE}/lib/libeiof.a:${PORTSDIR}/science/elmer-eio        \
 		${LOCALBASE}/lib/libhuti.a:${PORTSDIR}/science/elmer-hutiter \
 		${LOCALBASE}/lib/libumfpack_elmer.a:${PORTSDIR}/math/elmer-umfpack
-
 RUN_DEPENDS=	ElmerGrid:${PORTSDIR}/science/elmergrid		\
 		Mesh2D:${PORTSDIR}/science/elmer-meshgen2d
 
@@ -62,12 +61,17 @@ CFLAGS+=	-fPIC
 FCFLAGS+=	-fPIC
 FFLAGS+=	-fPIC ${FCFLAGS}
 .endif
-CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FCFLAGS="${FCFLAGS}"
-CONFIGURE_ARGS+=	--with-umfpack="-L${LOCALBASE}/lib -lumfpack_elmer" \
-			--with-blas="-L${LOCALBASE}/lib ${BLAS}" \
-			--with-lapack="-L${LOCALBASE}/lib ${LAPACK}" \
-			--with-eiof="-L${LOCALBASE}/lib -leiof"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
+CXXFLAGS+=	-I${LOCALBASE}/include
 
+CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FCFLAGS="${FCFLAGS}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}" CXXFLAGS="${CXXFLAGS}" CFLAGS="${CFLAGS}"
+CONFIGURE_ARGS+=	--with-umfpack="-lumfpack_elmer" \
+			--with-blas="${BLAS}" \
+			--with-lapack="${LAPACK}" \
+			--with-eiof="-leiof" \
+			--with-matc="-lmatc -lm"
 pre-configure:
 	${REINPLACE_CMD} -e 's|make|${GMAKE}|g' ${WRKSRC}/tests/runtests.in
 

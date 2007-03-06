@@ -1,11 +1,11 @@
 --- configure.in.orig	Wed Feb 15 18:56:07 2006
 +++ configure.in	Wed Feb 15 18:56:45 2006
-@@ -68,7 +68,7 @@
- FCFLAGS="$FCFLAGS -I."
- FFLAGS="$FCFLAGS -I."
+@@ -69,7 +69,7 @@
+ FCFLAGS="$FCFLAGS -I. ${INCLUDE_MODULE_FLAG}binio"
+ FFLAGS="$FFLAGS -I."
  ELMER_HOME="$prefix"
 -FCPPFLAGS="-P $TRADITIONAL_CPP_FLAGS -I. -I$prefix/include -DFULL_INDUCTION -DUSE_ARPACK"
-+FCPPFLAGS="-P -traditional -I. -I$prefix/include -DFULL_INDUCTION -DUSE_ARPACK"
++FCPPFLAGS="-P -traditional -I. $CPPFLAGS -I$prefix/include -DFULL_INDUCTION -DUSE_ARPACK"
  TESTS_FCFLAGS=""
  
  ELMER_LIBERRORMSG="wasn't found, make sure it is in the prefix, or CFLAGS and LIBS are correct if they are somewhere else."
