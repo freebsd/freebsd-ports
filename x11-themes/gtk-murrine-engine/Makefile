@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk-murrine-engine
-PORTVERSION=	0.40.1
+PORTVERSION=	0.51
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://cimi.netsons.org/media/download_gallery/murrie/
 DISTNAME=	murrine-${PORTVERSION}
