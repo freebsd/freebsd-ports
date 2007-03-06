@@ -1,0 +1,17 @@
+# This is a sample configuration file for tcltk.conf
+# Targets for "tclsh" and "wish" shell wrappers are configured here.
+# Please copy this file to: %%TCLTK_CONF%%
+#
+# You require tcl installed to use the "tclsh" wrapper
+# Recommended tcl ports: lang/tcl84 lang/tcl85
+#
+# You require tk installed to use the "wish" wrapper
+# Recommended tk ports: x11-toolkits/tk84 x11-toolkits/tk85
+
+# TCLSH= full path to your tclsh shell
+#TCLSH=%%PREFIX%%/bin/tclsh8.4
+#TCLSH=%%PREFIX%%/bin/tclsh8.5
+
+# WISH= full path to your wish shell
+#WISH=%%PREFIX%%/bin/wish8.4
+#WISH=%%PREFIX%%/bin/wish8.5

@@ -1,0 +1,13 @@
+*******************************************************************
+Tcl is required to use the "tclsh" wrapper.
+Recommended ports: lang/tcl84 lang/tcl85
+
+Tk is required to use the "wish" wrapper.
+Recommended ports: x11-toolkits/tk84 x11-toolkits/tk85
+
+You may wish to create or modify the configuration file:
+%%TCLTK_CONF%%
+
+Sample configuration file is located at:
+%%PREFIX%%/etc/tcltk.conf.sample
+*******************************************************************

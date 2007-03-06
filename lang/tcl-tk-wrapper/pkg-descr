@@ -1,0 +1,12 @@
+Tcl-tk-wrapper installs shell wrappers for "tclsh" and "wish" commands that
+come with different versions of tcl and tk. Users can define which version 
+of the tcl and tk shells should be called.
+
+To make use of the "tclsh" wrapper, users need to install tcl.
+Recommended tcl ports: lang/tcl84 lang/tcl85
+
+To make use of the "wish" wrapper, users need to install tk.
+Recommended tk ports: x11-toolkits/tk84 x11-toolkits/tk85
+
+- Martin Matuska
+martin@matuska.org
