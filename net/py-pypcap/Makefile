@@ -9,7 +9,7 @@ PORTNAME=	pypcap
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	net python
-MASTER_SITES=	http://monkey.org/~dugsong/pypcap/
+MASTER_SITES=	http://pypcap.googlecode.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gnn@freebsd.org
