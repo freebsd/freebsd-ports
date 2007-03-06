@@ -15,10 +15,8 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Plugins needed for audacious
 
 BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
-LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile  \
-		curl.4:${PORTSDIR}/ftp/curl \
-		tag.5:${PORTSDIR}/audio/taglib
-
+LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
+		
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
@@ -59,8 +57,8 @@ OPTIONS=	ESOUND		"Enable Esound output output"		off \
 		OSS		"Enable OSS output plugin"		on  \
 		TIMIDITY	"Enable timidity plugin"		on  \
 		MMS		"Enable mms support"			off \
-		PARANORMAL	"Enable paranormal vis plugin"		on \
-		XSPF		"Enable XSPF support"			on \
+		PARANORMAL	"Enable paranormal vis plugin"		on  \
+		XSPF		"Enable XSPF support"			on  \
 		TTA		"Enable TrueAudio plugin"		on  \
 		LAME		"Enable liblame plugin"			off \
 		GNOME		"Build with gnomevfs/gconf support"	off \

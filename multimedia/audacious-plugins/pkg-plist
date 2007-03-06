@@ -47,6 +47,40 @@ lib/audacious/Visualization/libbscope.so
 %%ROCKLIGHTPLUGIN%%lib/audacious/Visualization/librocklight.so
 %%PARANORMALPLUGIN%%lib/audacious/Visualization/librovascope.so
 lib/audacious/Visualization/libspectrum.so
+%%PARANORMALPLUGIN%%share/audacious-plugins/paranormal/Presets/aerdan_-_bloody_vortex.pnv
+share/audacious-plugins/paranormal/Presets/aerdan_-_cloudscape.pnv
+share/audacious-plugins/paranormal/Presets/aerdan_-_cloudscape2.pnv
+share/audacious-plugins/paranormal/Presets/aerdan_-_dancing_snow.pnv
+share/audacious-plugins/paranormal/Presets/aerdan_-_portal_to_hell.pnv
+share/audacious-plugins/paranormal/Presets/aerdan_-_telestatic.pnv
+share/audacious-plugins/paranormal/Presets/nazca_-_smoke_on_the_water.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_3d_wave.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_aquamarine_dream.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_beatscope.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_branchscope.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_bumblebees.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_cubism.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_flying_into_pastels.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_interlaced.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_kaliedoscope.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_phosphor_flame.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_psuedo_starfield.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_purple_flower.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_quakingscope.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_quasar.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_retroscope.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_rush.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_scopefun.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_simple_yet_pretty.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_smoke.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_swarm.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_technicolour_nightmare.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_transform_fun.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_trapped.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_tunnel_vision.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_value_replace_fun.pnv
+share/audacious-plugins/paranormal/Presets/nenolod_-_worms.pnv
+share/audacious-plugins/paranormal/Presets/ticpu_-_colored_beat-o-scope.pnv
 %%NLS%%share/locale/ca/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/cy/LC_MESSAGES/audacious-plugins.mo
@@ -64,3 +98,6 @@ share/audacious/images/audioscrobbler_badge.png
 @dirrm lib/audacious/General
 @dirrm lib/audacious/Effect
 @dirrmtry lib/audacious
+%%PARANORMALPLUGIN%%@dirrm share/audacious-plugins/paranormal/Presets
+%%PARANORMALPLUGIN%%@dirrm share/audacious-plugins/paranormal
+%%PARANORMALPLUGIN%%@dirrm share/audacious-plugins
