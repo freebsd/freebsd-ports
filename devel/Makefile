@@ -1662,6 +1662,7 @@
     SUBDIR += pecl-bcompiler
     SUBDIR += pecl-expect
     SUBDIR += pecl-hidef
+    SUBDIR += pecl-htscanner
     SUBDIR += pecl-json
     SUBDIR += pecl-operator
     SUBDIR += pecl-runkit
