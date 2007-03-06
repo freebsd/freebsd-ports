@@ -1,0 +1,10 @@
+--- configure.orig	Tue Feb  6 23:13:49 2007
++++ configure	Tue Mar  6 13:02:40 2007
+@@ -6276,6 +6276,7 @@
+ 
+ # print build summary
+ 
++config_error=no
+ 
+ # are we good to go?
+ 

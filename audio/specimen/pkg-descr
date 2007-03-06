@@ -1,0 +1,12 @@
+Specimen is an open source, MIDI controllable audio sampler. Features include:
+
+ - Up to 64 patches with 8 notes of polyphony each
+ - Fast, high quality pitch scaling
+ - Linear ADSR volume envelopes
+ - MIDI/jack-transport syncable LFOs
+ - Low pass filter with resonance
+ - A variety of direction-independent playback modes
+ - A zoomable sample editor for loop and play points
+ - Portamento
+
+WWW:	http://zhevny.com/specimen/
