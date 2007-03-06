@@ -125,18 +125,18 @@ lib/graphviz/libgvplugin_pango.a
 %%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_xlib.la
 %%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_xlib.so
 %%WITH_PANGOCAIRO%%lib/graphviz/libgvplugin_xlib.so.3
-%%WITH_GUILE%%/lib/graphviz/guile/gv_guile.man
-%%WITH_GUILE%%/lib/graphviz/guile/libgv_guile.a
-%%WITH_GUILE%%/lib/graphviz/guile/libgv_guile.la
-%%WITH_GUILE%%/lib/graphviz/guile/libgv_guile.so
-%%WITH_GUILE%%/lib/graphviz/guile/libgv_guile.so.0
-%%WITH_PHP%%/lib/graphviz/php/gv.php
-%%WITH_PHP%%/lib/graphviz/php/gv_php.man
-%%WITH_PHP%%/lib/graphviz/php/libgv_php.a
-%%WITH_PHP%%/lib/graphviz/php/libgv_php.la
-%%WITH_PHP%%/lib/graphviz/php/libgv_php.so
-%%WITH_PHP%%/lib/graphviz/php/libgv_php.so.0
-%%WITH_PHP%%/lib/graphviz/php/php_gv.h
+%%WITH_GUILE%%lib/graphviz/guile/gv_guile.man
+%%WITH_GUILE%%lib/graphviz/guile/libgv_guile.a
+%%WITH_GUILE%%lib/graphviz/guile/libgv_guile.la
+%%WITH_GUILE%%lib/graphviz/guile/libgv_guile.so
+%%WITH_GUILE%%lib/graphviz/guile/libgv_guile.so.0
+%%WITH_PHP%%lib/graphviz/php/gv.php
+%%WITH_PHP%%lib/graphviz/php/gv_php.man
+%%WITH_PHP%%lib/graphviz/php/libgv_php.a
+%%WITH_PHP%%lib/graphviz/php/libgv_php.la
+%%WITH_PHP%%lib/graphviz/php/libgv_php.so
+%%WITH_PHP%%lib/graphviz/php/libgv_php.so.0
+%%WITH_PHP%%lib/graphviz/php/php_gv.h
 lib/graphviz/tcl/gv.so
 %%WITH_TCL%%lib/graphviz/tcl/gv_tcl.man
 %%WITH_TCL%%lib/graphviz/tcl/libgdtclft.a
@@ -164,11 +164,11 @@ lib/graphviz/tcl/gv.so
 %%WITH_TCL%%lib/graphviz/tcl/libtkspline.so
 %%WITH_TCL%%lib/graphviz/tcl/libtkspline.so.0
 lib/graphviz/lua/gv.so
-%%WITH_LUA%%/lib/graphviz/lua/gv_lua.man
-%%WITH_LUA%%/lib/graphviz/lua/libgv_lua.a
-%%WITH_LUA%%/lib/graphviz/lua/libgv_lua.la
-%%WITH_LUA%%/lib/graphviz/lua/libgv_lua.so
-%%WITH_LUA%%/lib/graphviz/lua/libgv_lua.so.0
+%%WITH_LUA%%lib/graphviz/lua/gv_lua.man
+%%WITH_LUA%%lib/graphviz/lua/libgv_lua.a
+%%WITH_LUA%%lib/graphviz/lua/libgv_lua.la
+%%WITH_LUA%%lib/graphviz/lua/libgv_lua.so
+%%WITH_LUA%%lib/graphviz/lua/libgv_lua.so.0
 lib/graphviz/perl/gv.so
 %%WITH_PERL%%lib/graphviz/perl/gv.pm
 %%WITH_PERL%%lib/graphviz/perl/gv_perl.man
@@ -441,8 +441,8 @@ libdata/pkgconfig/libexpr.pc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/pathplan_data
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%EXAMPLESDIR%%/pathplan_data
+@dirrm %%EXAMPLESDIR%%
 @exec mkdir -p %D/lib/graphviz/guile
 @exec mkdir -p %D/lib/graphviz/java
 @exec mkdir -p %D/lib/graphviz/ocaml
