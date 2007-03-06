@@ -1,13 +1,13 @@
 $FreeBSD$
 
---- parse.c.orig	Thu May  5 08:24:55 2005
-+++ parse.c	Mon May  9 19:26:43 2005
-@@ -2126,7 +2126,7 @@
+--- parse.c.orig	Fri Feb 16 03:24:27 2007
++++ parse.c	Sun Mar  4 18:36:18 2007
+@@ -2128,7 +2128,7 @@
                  dup2(fids[1], 1);       /* stdout = pipe to parent */
                  /* get_defs("m4", dpy, display_name) */
                  tmp_file = m4_defs(dpy, display_name);
--                execlp("m4", "m4", "-s", tmp_file, "-", NULL);
-+                execl(M4PROG, M4PROGNAME, "-s", tmp_file, "-", NULL);
-                 /* If we get here we are screwed... */
-                 perror("Can't execlp() m4");
-                 exit(124);
+-                execlp("m4", "m4",
++                execlp(M4PROG, M4PROGNAME,
+ #if !defined(__NetBSD__)
+ 			"-s",
+ #endif
