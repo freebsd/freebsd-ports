@@ -16,7 +16,8 @@ MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Slims (dynamically created) PNGs
 
 RUN_DEPENDS=	p5-Compress-Zlib>=2.003:${PORTSDIR}/archivers/p5-Compress-Zlib \
-		p5-Compress-Raw-Zlib>=2.003:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib
+		p5-Compress-Raw-Zlib>=2.003:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib \
+		p5-Math-NumberCruncher>=0:${PORTSDIR}/math/p5-Math-NumberCruncher
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
