@@ -26,6 +26,7 @@ libexec/gnupg/gpgkeys_hkp
 %%NLS%%share/locale/it/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/gnupg.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gnupg.mo
