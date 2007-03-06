@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	postfix
-DISTVERSION=	2.4-20070221
-PORTEPOCH=	3
+DISTVERSION=	2.4.0-RC3
+PORTEPOCH=	4
 CATEGORIES=	mail ipv6
-MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
-		ftp://postfix.mirrors.pair.com/experimental/ \
-		ftp://ftp.tux.org/pub/net/postfix/experimental/ \
-		http://mirrors.rootservices.net/postfix/experimental/ \
-		ftp://ftp.samurai.com/pub/postfix/experimental/
+MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
+		ftp://postfix.mirrors.pair.com/official/ \
+		ftp://ftp.tux.org/pub/net/postfix/official/ \
+		http://mirrors.rootservices.net/postfix/official/ \
+		ftp://ftp.samurai.com/pub/postfix/official/
 PKGNAMESUFFIX=	-current
 DISTNAME=	postfix-${DISTVERSION}
 DIST_SUBDIR=	${PORTNAME}
