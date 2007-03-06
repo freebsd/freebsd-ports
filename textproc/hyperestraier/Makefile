@@ -6,8 +6,7 @@
 #    $MCom: ports-stable/textproc/hyperestraier/Makefile,v 1.3 2006/10/17 11:45:45 ahze Exp $
 
 PORTNAME=	hyperestraier
-PORTVERSION=	1.4.9
-PORTREVISION=	1
+PORTVERSION=	1.4.10
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A full-text search system
 
-BUILD_DEPENDS=	qdbm>=1.8.74:${PORTSDIR}/databases/qdbm
+BUILD_DEPENDS=	qdbm>=1.8.75:${PORTSDIR}/databases/qdbm
 # check configure for min version of qdbm.
 LIB_DEPENDS=	qdbm.14:${PORTSDIR}/databases/qdbm
 
