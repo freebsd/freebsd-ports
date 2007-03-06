@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	msort
-PORTVERSION=	8.35
-PORTREVISION=	1
+PORTVERSION=	8.38
 CATEGORIES=	textproc
 MASTER_SITES=	http://billposer.org/Software/Downloads/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Sorting files in sophisticated ways
