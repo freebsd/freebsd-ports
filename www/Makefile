@@ -895,6 +895,7 @@
     SUBDIR += pecl-amfext
     SUBDIR += pecl-mnogosearch
     SUBDIR += pecl-pecl_http
+    SUBDIR += pecl-swish
     SUBDIR += pecl-tidy
     SUBDIR += perlbal
     SUBDIR += pglogd
