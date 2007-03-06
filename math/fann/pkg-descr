@@ -1,0 +1,11 @@
+Fast Artificial Neural Network Library is a free open source neural network
+library, which implements multilayer artificial neural networks in C with
+support for both fully connected and sparsely connected networks.
+Cross-platform execution in both fixed and floating point are supported. It
+includes a framework for easy handling of training data sets. It is easy to
+use, versatile, well documented, and fast. PHP, C++, .NET, Ada, Python, Delphi,
+Octave, Ruby, Pure Data and Mathematica bindings are available. A reference
+manual accompanies the library with examples and recommendations on how to use
+the library. A graphical user interface is also available for the library.
+
+WWW:	http://leenissen.dk/fann/
