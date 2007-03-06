@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	GiNaC
-PORTVERSION=	1.3.5
+PORTVERSION=	1.3.6
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 		http://www.ginac.de/
@@ -18,12 +18,11 @@ COMMENT=	A C++ library for symbolic mathematical calculations
 
 LIB_DEPENDS=	cln.4:${PORTSDIR}/math/cln
 
-USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GCC=	3.4+
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		MAKEINFO="makeinfo --no-split"
 USE_LDCONFIG=	yes
