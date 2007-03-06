@@ -104,7 +104,6 @@
     SUBDIR += bonobo
     SUBDIR += bonobo-conf
     SUBDIR += boost
-    SUBDIR += boost-gcc3
     SUBDIR += boost-python
     SUBDIR += bouml
     SUBDIR += bug-buddy

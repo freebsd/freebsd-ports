@@ -2703,208 +2703,192 @@ include/boost/signals/slot.hpp
 include/boost/signals/trackable.hpp
 include/boost/smart_cast.hpp
 include/boost/smart_ptr.hpp
-%%BOOST_SPIRIT_1.6%%include/boost/spirit/core/basics.hpp
-%%BOOST_SPIRIT_1.6%%include/boost/spirit/core/composite/impl/composite.ipp
-%%BOOST_SPIRIT_1.6%%include/boost/spirit/core/composite/impl/operators.ipp
-%%BOOST_SPIRIT_1.6%%include/boost/spirit/core/impl/borland.hpp
-%%BOOST_SPIRIT_1.6%%include/boost/spirit/core/impl/msvc.hpp
-%%BOOST_SPIRIT_1.6%%include/boost/spirit/core/meta/fundamental.hpp
-%%BOOST_SPIRIT_1.6%%include/boost/spirit/core/meta/impl/fundamental.ipp
-%%BOOST_SPIRIT_1.6%%include/boost/spirit/core/meta/impl/parser_traits.ipp
-%%BOOST_SPIRIT_1.6%%include/boost/spirit/core/meta/impl/parser_type.hpp
-%%BOOST_SPIRIT_1.6%%include/boost/spirit/core/meta/impl/traverse.ipp
-%%BOOST_SPIRIT_1.6%%include/boost/spirit/core/meta/parser_traits.hpp
-%%BOOST_SPIRIT_1.6%%include/boost/spirit/core/meta/traverse.hpp
-%%BOOST_SPIRIT_1.6%%include/boost/spirit/tree/msvc/common.hpp
-%%BOOST_SPIRIT_1.6%%include/boost/spirit/tree/tree_iterator.hpp
-%%BOOST_SPIRIT_1.6%%include/boost/spirit/utility/impl/refactoring.ipp
-%%BOOST_SPIRIT_1.6%%include/boost/spirit/utility/refactoring.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/actor.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/actor/assign_actor.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/actor/assign_key_actor.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/actor/clear_actor.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/actor/decrement_actor.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/actor/erase_actor.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/actor/increment_actor.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/actor/insert_at_actor.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/actor/insert_key_actor.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/actor/push_back_actor.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/actor/push_front_actor.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/actor/ref_actor.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/actor/ref_const_ref_actor.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/actor/ref_const_ref_const_ref_a.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/actor/ref_const_ref_value_actor.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/actor/ref_value_actor.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/actor/swap_actor.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/composite/alternative.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/composite/difference.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/composite/exclusive_or.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/composite/impl/alternative.ipp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/composite/impl/difference.ipp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/composite/impl/exclusive_or.ipp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/composite/impl/intersection.ipp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/composite/impl/kleene_star.ipp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/composite/impl/list.ipp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/composite/impl/optional.ipp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/composite/impl/positive.ipp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/composite/impl/sequence.ipp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/composite/impl/sequential_and.ipp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/composite/impl/sequential_or.ipp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/composite/intersection.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/composite/kleene_star.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/composite/list.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/composite/no_actions.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/composite/optional.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/composite/positive.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/composite/sequence.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/composite/sequential_and.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/composite/sequential_or.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/config.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/impl/match_attr_traits.ipp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/nil.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/core/safe_bool.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/dynamic/impl/select.ipp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/dynamic/lazy.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/dynamic/rule_alias.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/dynamic/select.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/dynamic/stored_rule.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/algorithm/any.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/algorithm/detail/any.ipp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/algorithm/detail/find_if.ipp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/algorithm/detail/fold.ipp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/algorithm/detail/for_each.ipp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/algorithm/erase.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/algorithm/filter.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/algorithm/find.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/algorithm/find_if.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/algorithm/fold.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/algorithm/for_each.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/algorithm/insert.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/algorithm/push_back.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/algorithm/push_front.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/algorithm/remove.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/algorithm/remove_if.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/algorithm/replace.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/algorithm/transform.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/detail/access.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/detail/config.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/as_fusion_iterator.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/cons_iterator.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/deref.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/adapt_deref_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/adapt_value_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/cons_iterator/deref_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/cons_iterator/next_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/cons_iterator/value_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/filter_view_iterator/deref_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/filter_view_iterator/next_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/filter_view_iterator/value_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/iterator_base.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/joint_view_iterator/deref_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/joint_view_iterator/next_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/joint_view_iterator/value_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/single_view_iterator/deref_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/single_view_iterator/next_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/single_view_iterator/value_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/transform_view_iterator/deref_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/transform_view_iterator/next_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/transform_view_iterator/value_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/tuple_iterator/deref_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/tuple_iterator/equal_to_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/tuple_iterator/next_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/tuple_iterator/prior_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/tuple_iterator/value_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/type_sequence_iterator/deref_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/type_sequence_iterator/next_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/detail/type_sequence_iterator/value_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/equal_to.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/filter_view_iterator.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/is_iterator.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/joint_view_iterator.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/next.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/prior.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/single_view_iterator.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/transform_view_iterator.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/tuple_iterator.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/type_sequence_iterator.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/iterator/value_of.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/append_view.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/as_fusion_sequence.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/at.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/begin.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/cons.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/as_tuple_element.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/cons_begin_end_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/filter_view_begin_end_trts.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/generate.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/io.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/joint_view_begin_end_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/manip.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/range_begin_end_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/sequence_base.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/sequence_equal_to.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/sequence_greater.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/sequence_greater_equal.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/sequence_less.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/sequence_less_equal.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/sequence_not_equal_to.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/single_view_begin_end_trts.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/trsfrm_view_begin_end_trts.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/tuple10.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/tuple_access_result.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/tuple_at_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/tuple_begin_end_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/tuple_body.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/tuple_builder.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/tuple_macro.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/tuple_size_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/tuple_value_at_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/detail/type_seq_begin_end_trts.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/end.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/equal_to.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/filter_view.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/generate.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/get.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/greater.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/greater_equal.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/io.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/is_sequence.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/joint_view.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/less.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/less_equal.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/limits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/make_tuple.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/not_equal_to.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/prepend_view.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/range.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/single_view.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/size.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/tie.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/transform_view.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/tuple.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/tuple10.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/tuple20.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/tuple30.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/tuple40.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/tuple50.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/tuple_element.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/tuple_forward.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/tuple_size.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/type_sequence.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/fusion/sequence/value_at.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/meta.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/meta/as_parser.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/meta/fundamental.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/meta/impl/fundamental.ipp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/meta/impl/parser_traits.ipp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/meta/impl/refactoring.ipp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/meta/impl/traverse.ipp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/meta/parser_traits.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/meta/refactoring.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/meta/traverse.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/phoenix.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/utility/distinct.hpp
-%%BOOST_SPIRIT_1.8%%include/boost/spirit/utility/grammar_def.hpp
+include/boost/spirit/actor.hpp
+include/boost/spirit/actor/assign_actor.hpp
+include/boost/spirit/actor/assign_key_actor.hpp
+include/boost/spirit/actor/clear_actor.hpp
+include/boost/spirit/actor/decrement_actor.hpp
+include/boost/spirit/actor/erase_actor.hpp
+include/boost/spirit/actor/increment_actor.hpp
+include/boost/spirit/actor/insert_at_actor.hpp
+include/boost/spirit/actor/insert_key_actor.hpp
+include/boost/spirit/actor/push_back_actor.hpp
+include/boost/spirit/actor/push_front_actor.hpp
+include/boost/spirit/actor/ref_actor.hpp
+include/boost/spirit/actor/ref_const_ref_actor.hpp
+include/boost/spirit/actor/ref_const_ref_const_ref_a.hpp
+include/boost/spirit/actor/ref_const_ref_value_actor.hpp
+include/boost/spirit/actor/ref_value_actor.hpp
+include/boost/spirit/actor/swap_actor.hpp
+include/boost/spirit/core/composite/alternative.hpp
+include/boost/spirit/core/composite/difference.hpp
+include/boost/spirit/core/composite/exclusive_or.hpp
+include/boost/spirit/core/composite/impl/alternative.ipp
+include/boost/spirit/core/composite/impl/difference.ipp
+include/boost/spirit/core/composite/impl/exclusive_or.ipp
+include/boost/spirit/core/composite/impl/intersection.ipp
+include/boost/spirit/core/composite/impl/kleene_star.ipp
+include/boost/spirit/core/composite/impl/list.ipp
+include/boost/spirit/core/composite/impl/optional.ipp
+include/boost/spirit/core/composite/impl/positive.ipp
+include/boost/spirit/core/composite/impl/sequence.ipp
+include/boost/spirit/core/composite/impl/sequential_and.ipp
+include/boost/spirit/core/composite/impl/sequential_or.ipp
+include/boost/spirit/core/composite/intersection.hpp
+include/boost/spirit/core/composite/kleene_star.hpp
+include/boost/spirit/core/composite/list.hpp
+include/boost/spirit/core/composite/no_actions.hpp
+include/boost/spirit/core/composite/optional.hpp
+include/boost/spirit/core/composite/positive.hpp
+include/boost/spirit/core/composite/sequence.hpp
+include/boost/spirit/core/composite/sequential_and.hpp
+include/boost/spirit/core/composite/sequential_or.hpp
+include/boost/spirit/core/config.hpp
+include/boost/spirit/core/impl/match_attr_traits.ipp
+include/boost/spirit/core/nil.hpp
+include/boost/spirit/core/safe_bool.hpp
+include/boost/spirit/dynamic/impl/select.ipp
+include/boost/spirit/dynamic/lazy.hpp
+include/boost/spirit/dynamic/rule_alias.hpp
+include/boost/spirit/dynamic/select.hpp
+include/boost/spirit/dynamic/stored_rule.hpp
+include/boost/spirit/fusion/algorithm/any.hpp
+include/boost/spirit/fusion/algorithm/detail/any.ipp
+include/boost/spirit/fusion/algorithm/detail/find_if.ipp
+include/boost/spirit/fusion/algorithm/detail/fold.ipp
+include/boost/spirit/fusion/algorithm/detail/for_each.ipp
+include/boost/spirit/fusion/algorithm/erase.hpp
+include/boost/spirit/fusion/algorithm/filter.hpp
+include/boost/spirit/fusion/algorithm/find.hpp
+include/boost/spirit/fusion/algorithm/find_if.hpp
+include/boost/spirit/fusion/algorithm/fold.hpp
+include/boost/spirit/fusion/algorithm/for_each.hpp
+include/boost/spirit/fusion/algorithm/insert.hpp
+include/boost/spirit/fusion/algorithm/push_back.hpp
+include/boost/spirit/fusion/algorithm/push_front.hpp
+include/boost/spirit/fusion/algorithm/remove.hpp
+include/boost/spirit/fusion/algorithm/remove_if.hpp
+include/boost/spirit/fusion/algorithm/replace.hpp
+include/boost/spirit/fusion/algorithm/transform.hpp
+include/boost/spirit/fusion/detail/access.hpp
+include/boost/spirit/fusion/detail/config.hpp
+include/boost/spirit/fusion/iterator/as_fusion_iterator.hpp
+include/boost/spirit/fusion/iterator/cons_iterator.hpp
+include/boost/spirit/fusion/iterator/deref.hpp
+include/boost/spirit/fusion/iterator/detail/adapt_deref_traits.hpp
+include/boost/spirit/fusion/iterator/detail/adapt_value_traits.hpp
+include/boost/spirit/fusion/iterator/detail/cons_iterator/deref_traits.hpp
+include/boost/spirit/fusion/iterator/detail/cons_iterator/next_traits.hpp
+include/boost/spirit/fusion/iterator/detail/cons_iterator/value_traits.hpp
+include/boost/spirit/fusion/iterator/detail/filter_view_iterator/deref_traits.hpp
+include/boost/spirit/fusion/iterator/detail/filter_view_iterator/next_traits.hpp
+include/boost/spirit/fusion/iterator/detail/filter_view_iterator/value_traits.hpp
+include/boost/spirit/fusion/iterator/detail/iterator_base.hpp
+include/boost/spirit/fusion/iterator/detail/joint_view_iterator/deref_traits.hpp
+include/boost/spirit/fusion/iterator/detail/joint_view_iterator/next_traits.hpp
+include/boost/spirit/fusion/iterator/detail/joint_view_iterator/value_traits.hpp
+include/boost/spirit/fusion/iterator/detail/single_view_iterator/deref_traits.hpp
+include/boost/spirit/fusion/iterator/detail/single_view_iterator/next_traits.hpp
+include/boost/spirit/fusion/iterator/detail/single_view_iterator/value_traits.hpp
+include/boost/spirit/fusion/iterator/detail/transform_view_iterator/deref_traits.hpp
+include/boost/spirit/fusion/iterator/detail/transform_view_iterator/next_traits.hpp
+include/boost/spirit/fusion/iterator/detail/transform_view_iterator/value_traits.hpp
+include/boost/spirit/fusion/iterator/detail/tuple_iterator/deref_traits.hpp
+include/boost/spirit/fusion/iterator/detail/tuple_iterator/equal_to_traits.hpp
+include/boost/spirit/fusion/iterator/detail/tuple_iterator/next_traits.hpp
+include/boost/spirit/fusion/iterator/detail/tuple_iterator/prior_traits.hpp
+include/boost/spirit/fusion/iterator/detail/tuple_iterator/value_traits.hpp
+include/boost/spirit/fusion/iterator/detail/type_sequence_iterator/deref_traits.hpp
+include/boost/spirit/fusion/iterator/detail/type_sequence_iterator/next_traits.hpp
+include/boost/spirit/fusion/iterator/detail/type_sequence_iterator/value_traits.hpp
+include/boost/spirit/fusion/iterator/equal_to.hpp
+include/boost/spirit/fusion/iterator/filter_view_iterator.hpp
+include/boost/spirit/fusion/iterator/is_iterator.hpp
+include/boost/spirit/fusion/iterator/joint_view_iterator.hpp
+include/boost/spirit/fusion/iterator/next.hpp
+include/boost/spirit/fusion/iterator/prior.hpp
+include/boost/spirit/fusion/iterator/single_view_iterator.hpp
+include/boost/spirit/fusion/iterator/transform_view_iterator.hpp
+include/boost/spirit/fusion/iterator/tuple_iterator.hpp
+include/boost/spirit/fusion/iterator/type_sequence_iterator.hpp
+include/boost/spirit/fusion/iterator/value_of.hpp
+include/boost/spirit/fusion/sequence/append_view.hpp
+include/boost/spirit/fusion/sequence/as_fusion_sequence.hpp
+include/boost/spirit/fusion/sequence/at.hpp
+include/boost/spirit/fusion/sequence/begin.hpp
+include/boost/spirit/fusion/sequence/cons.hpp
+include/boost/spirit/fusion/sequence/detail/as_tuple_element.hpp
+include/boost/spirit/fusion/sequence/detail/cons_begin_end_traits.hpp
+include/boost/spirit/fusion/sequence/detail/filter_view_begin_end_trts.hpp
+include/boost/spirit/fusion/sequence/detail/generate.hpp
+include/boost/spirit/fusion/sequence/detail/io.hpp
+include/boost/spirit/fusion/sequence/detail/joint_view_begin_end_traits.hpp
+include/boost/spirit/fusion/sequence/detail/manip.hpp
+include/boost/spirit/fusion/sequence/detail/range_begin_end_traits.hpp
+include/boost/spirit/fusion/sequence/detail/sequence_base.hpp
+include/boost/spirit/fusion/sequence/detail/sequence_equal_to.hpp
+include/boost/spirit/fusion/sequence/detail/sequence_greater.hpp
+include/boost/spirit/fusion/sequence/detail/sequence_greater_equal.hpp
+include/boost/spirit/fusion/sequence/detail/sequence_less.hpp
+include/boost/spirit/fusion/sequence/detail/sequence_less_equal.hpp
+include/boost/spirit/fusion/sequence/detail/sequence_not_equal_to.hpp
+include/boost/spirit/fusion/sequence/detail/single_view_begin_end_trts.hpp
+include/boost/spirit/fusion/sequence/detail/trsfrm_view_begin_end_trts.hpp
+include/boost/spirit/fusion/sequence/detail/tuple10.hpp
+include/boost/spirit/fusion/sequence/detail/tuple_access_result.hpp
+include/boost/spirit/fusion/sequence/detail/tuple_at_traits.hpp
+include/boost/spirit/fusion/sequence/detail/tuple_begin_end_traits.hpp
+include/boost/spirit/fusion/sequence/detail/tuple_body.hpp
+include/boost/spirit/fusion/sequence/detail/tuple_builder.hpp
+include/boost/spirit/fusion/sequence/detail/tuple_macro.hpp
+include/boost/spirit/fusion/sequence/detail/tuple_size_traits.hpp
+include/boost/spirit/fusion/sequence/detail/tuple_value_at_traits.hpp
+include/boost/spirit/fusion/sequence/detail/type_seq_begin_end_trts.hpp
+include/boost/spirit/fusion/sequence/end.hpp
+include/boost/spirit/fusion/sequence/equal_to.hpp
+include/boost/spirit/fusion/sequence/filter_view.hpp
+include/boost/spirit/fusion/sequence/generate.hpp
+include/boost/spirit/fusion/sequence/get.hpp
+include/boost/spirit/fusion/sequence/greater.hpp
+include/boost/spirit/fusion/sequence/greater_equal.hpp
+include/boost/spirit/fusion/sequence/io.hpp
+include/boost/spirit/fusion/sequence/is_sequence.hpp
+include/boost/spirit/fusion/sequence/joint_view.hpp
+include/boost/spirit/fusion/sequence/less.hpp
+include/boost/spirit/fusion/sequence/less_equal.hpp
+include/boost/spirit/fusion/sequence/limits.hpp
+include/boost/spirit/fusion/sequence/make_tuple.hpp
+include/boost/spirit/fusion/sequence/not_equal_to.hpp
+include/boost/spirit/fusion/sequence/prepend_view.hpp
+include/boost/spirit/fusion/sequence/range.hpp
+include/boost/spirit/fusion/sequence/single_view.hpp
+include/boost/spirit/fusion/sequence/size.hpp
+include/boost/spirit/fusion/sequence/tie.hpp
+include/boost/spirit/fusion/sequence/transform_view.hpp
+include/boost/spirit/fusion/sequence/tuple.hpp
+include/boost/spirit/fusion/sequence/tuple10.hpp
+include/boost/spirit/fusion/sequence/tuple20.hpp
+include/boost/spirit/fusion/sequence/tuple30.hpp
+include/boost/spirit/fusion/sequence/tuple40.hpp
+include/boost/spirit/fusion/sequence/tuple50.hpp
+include/boost/spirit/fusion/sequence/tuple_element.hpp
+include/boost/spirit/fusion/sequence/tuple_forward.hpp
+include/boost/spirit/fusion/sequence/tuple_size.hpp
+include/boost/spirit/fusion/sequence/type_sequence.hpp
+include/boost/spirit/fusion/sequence/value_at.hpp
+include/boost/spirit/meta.hpp
+include/boost/spirit/meta/as_parser.hpp
+include/boost/spirit/meta/fundamental.hpp
+include/boost/spirit/meta/impl/fundamental.ipp
+include/boost/spirit/meta/impl/parser_traits.ipp
+include/boost/spirit/meta/impl/refactoring.ipp
+include/boost/spirit/meta/impl/traverse.ipp
+include/boost/spirit/meta/parser_traits.hpp
+include/boost/spirit/meta/refactoring.hpp
+include/boost/spirit/meta/traverse.hpp
+include/boost/spirit/phoenix.hpp
+include/boost/spirit/utility/distinct.hpp
+include/boost/spirit/utility/grammar_def.hpp
 include/boost/spirit.hpp
 include/boost/spirit/attribute.hpp
 include/boost/spirit/attribute/closure.hpp
@@ -3307,66 +3291,66 @@ include/boost/variant/visitor_ptr.hpp
 include/boost/vector_property_map.hpp
 include/boost/version.hpp
 include/boost/visit_each.hpp
-%%BOOST_WAVE%%include/boost/wave.hpp
+include/boost/wave.hpp
 include/boost/weak_ptr.hpp
-%%BOOST_WAVE%%include/boost/wave/cpp_context.hpp
-%%BOOST_WAVE%%include/boost/wave/cpp_exceptions.hpp
-%%BOOST_WAVE%%include/boost/wave/cpp_iteration_context.hpp
-%%BOOST_WAVE%%include/boost/wave/cpplexer/re2clex/cpp_re.hpp
-%%BOOST_WAVE%%include/boost/wave/cpplexer/re2clex/aq.hpp
-%%BOOST_WAVE%%include/boost/wave/cpplexer/re2clex/cpp_re2c_lexer.hpp
-%%BOOST_WAVE%%include/boost/wave/cpplexer/re2clex/scanner.hpp
-%%BOOST_WAVE%%include/boost/wave/cpplexer/convert_trigraphs.hpp
-%%BOOST_WAVE%%include/boost/wave/cpplexer/cpp_lex_interface.hpp
-%%BOOST_WAVE%%include/boost/wave/cpplexer/cpp_lex_iterator.hpp
-%%BOOST_WAVE%%include/boost/wave/cpplexer/cpp_lex_token.hpp
-%%BOOST_WAVE%%include/boost/wave/cpplexer/cpplexer_exceptions.hpp
-%%BOOST_WAVE%%include/boost/wave/cpplexer/token_cache.hpp
-%%BOOST_WAVE%%include/boost/wave/cpplexer/validate_universal_char.hpp
-%%BOOST_WAVE%%include/boost/wave/grammars/cpp_chlit_grammar.hpp
-%%BOOST_WAVE%%include/boost/wave/grammars/cpp_defined_grammar.hpp
-%%BOOST_WAVE%%include/boost/wave/grammars/cpp_defined_grammar_gen.hpp
-%%BOOST_WAVE%%include/boost/wave/grammars/cpp_expression_grammar.hpp
-%%BOOST_WAVE%%include/boost/wave/grammars/cpp_expression_grammar_gen.hpp
-%%BOOST_WAVE%%include/boost/wave/grammars/cpp_expression_value.hpp
-%%BOOST_WAVE%%include/boost/wave/grammars/cpp_grammar.hpp
-%%BOOST_WAVE%%include/boost/wave/grammars/cpp_grammar_gen.hpp
-%%BOOST_WAVE%%include/boost/wave/grammars/cpp_intlit_grammar.hpp
-%%BOOST_WAVE%%include/boost/wave/grammars/cpp_literal_grammar_gen.hpp
-%%BOOST_WAVE%%include/boost/wave/grammars/cpp_predef_macros_gen.hpp
-%%BOOST_WAVE%%include/boost/wave/grammars/cpp_predef_macros_grammar.hpp
-%%BOOST_WAVE%%include/boost/wave/language_support.hpp
-%%BOOST_WAVE%%include/boost/wave/preprocessing_hooks.hpp
-%%BOOST_WAVE%%include/boost/wave/token_ids.hpp
-%%BOOST_WAVE%%include/boost/wave/util/cpp_ifblock.hpp
-%%BOOST_WAVE%%include/boost/wave/util/cpp_include_paths.hpp
-%%BOOST_WAVE%%include/boost/wave/util/cpp_iterator.hpp
-%%BOOST_WAVE%%include/boost/wave/util/cpp_macromap.hpp
-%%BOOST_WAVE%%include/boost/wave/util/cpp_macromap_predef.hpp
-%%BOOST_WAVE%%include/boost/wave/util/cpp_macromap_utils.hpp
-%%BOOST_WAVE%%include/boost/wave/util/eat_whitespace.hpp
-%%BOOST_WAVE%%include/boost/wave/util/file_position.hpp
-%%BOOST_WAVE%%include/boost/wave/util/flex_string.hpp
-%%BOOST_WAVE%%include/boost/wave/util/functor_input.hpp
-%%BOOST_WAVE%%include/boost/wave/util/insert_whitespace_detection.hpp
-%%BOOST_WAVE%%include/boost/wave/util/interpret_pragma.hpp
-%%BOOST_WAVE%%include/boost/wave/util/iteration_context.hpp
-%%BOOST_WAVE%%include/boost/wave/util/macro_definition.hpp
-%%BOOST_WAVE%%include/boost/wave/util/macro_helpers.hpp
-%%BOOST_WAVE%%include/boost/wave/util/pattern_parser.hpp
-%%BOOST_WAVE%%include/boost/wave/util/symbol_table.hpp
-%%BOOST_WAVE%%include/boost/wave/util/time_conversion_helper.hpp
-%%BOOST_WAVE%%include/boost/wave/util/transform_iterator.hpp
-%%BOOST_WAVE%%include/boost/wave/util/unput_queue_iterator.hpp
-%%BOOST_WAVE%%include/boost/wave/wave_config.hpp
-%%BOOST_WAVE%%include/boost/wave/wave_version.hpp
+include/boost/wave/cpp_context.hpp
+include/boost/wave/cpp_exceptions.hpp
+include/boost/wave/cpp_iteration_context.hpp
+include/boost/wave/cpplexer/re2clex/cpp_re.hpp
+include/boost/wave/cpplexer/re2clex/aq.hpp
+include/boost/wave/cpplexer/re2clex/cpp_re2c_lexer.hpp
+include/boost/wave/cpplexer/re2clex/scanner.hpp
+include/boost/wave/cpplexer/convert_trigraphs.hpp
+include/boost/wave/cpplexer/cpp_lex_interface.hpp
+include/boost/wave/cpplexer/cpp_lex_iterator.hpp
+include/boost/wave/cpplexer/cpp_lex_token.hpp
+include/boost/wave/cpplexer/cpplexer_exceptions.hpp
+include/boost/wave/cpplexer/token_cache.hpp
+include/boost/wave/cpplexer/validate_universal_char.hpp
+include/boost/wave/grammars/cpp_chlit_grammar.hpp
+include/boost/wave/grammars/cpp_defined_grammar.hpp
+include/boost/wave/grammars/cpp_defined_grammar_gen.hpp
+include/boost/wave/grammars/cpp_expression_grammar.hpp
+include/boost/wave/grammars/cpp_expression_grammar_gen.hpp
+include/boost/wave/grammars/cpp_expression_value.hpp
+include/boost/wave/grammars/cpp_grammar.hpp
+include/boost/wave/grammars/cpp_grammar_gen.hpp
+include/boost/wave/grammars/cpp_intlit_grammar.hpp
+include/boost/wave/grammars/cpp_literal_grammar_gen.hpp
+include/boost/wave/grammars/cpp_predef_macros_gen.hpp
+include/boost/wave/grammars/cpp_predef_macros_grammar.hpp
+include/boost/wave/language_support.hpp
+include/boost/wave/preprocessing_hooks.hpp
+include/boost/wave/token_ids.hpp
+include/boost/wave/util/cpp_ifblock.hpp
+include/boost/wave/util/cpp_include_paths.hpp
+include/boost/wave/util/cpp_iterator.hpp
+include/boost/wave/util/cpp_macromap.hpp
+include/boost/wave/util/cpp_macromap_predef.hpp
+include/boost/wave/util/cpp_macromap_utils.hpp
+include/boost/wave/util/eat_whitespace.hpp
+include/boost/wave/util/file_position.hpp
+include/boost/wave/util/flex_string.hpp
+include/boost/wave/util/functor_input.hpp
+include/boost/wave/util/insert_whitespace_detection.hpp
+include/boost/wave/util/interpret_pragma.hpp
+include/boost/wave/util/iteration_context.hpp
+include/boost/wave/util/macro_definition.hpp
+include/boost/wave/util/macro_helpers.hpp
+include/boost/wave/util/pattern_parser.hpp
+include/boost/wave/util/symbol_table.hpp
+include/boost/wave/util/time_conversion_helper.hpp
+include/boost/wave/util/transform_iterator.hpp
+include/boost/wave/util/unput_queue_iterator.hpp
+include/boost/wave/wave_config.hpp
+include/boost/wave/wave_version.hpp
 lib/libboost_date_time.a
 lib/libboost_date_time.so
 lib/libboost_date_time.so.3
 lib/libboost_filesystem.a
 lib/libboost_filesystem.so
 lib/libboost_filesystem.so.3
-%%BOOST_SPIRIT_1.8%%lib/libbgl-viz.a
+lib/libbgl-viz.a
 lib/libboost_prg_exec_monitor.a
 lib/libboost_prg_exec_monitor.so
 lib/libboost_prg_exec_monitor.so.3
@@ -3398,10 +3382,10 @@ lib/libboost_test_exec_monitor.so.3
 lib/libboost_unit_test_framework.a
 lib/libboost_unit_test_framework.so
 lib/libboost_unit_test_framework.so.3
-%%BOOST_WAVE%%lib/libboost_wave.a
-%%BOOST_WCHAR%%lib/libboost_wserialization.a
-%%BOOST_WCHAR%%lib/libboost_wserialization.so
-%%BOOST_WCHAR%%lib/libboost_wserialization.so.3
+lib/libboost_wave.a
+lib/libboost_wserialization.a
+lib/libboost_wserialization.so
+lib/libboost_wserialization.so.3
 %%BOOST_PYSTE%%%%PYTHON_SITELIBDIR%%/Pyste/ClassExporter.py
 %%BOOST_PYSTE%%%%PYTHON_SITELIBDIR%%/Pyste/CodeExporter.py
 %%BOOST_PYSTE%%%%PYTHON_SITELIBDIR%%/Pyste/CppParser.py
@@ -6626,214 +6610,57 @@ lib/libboost_unit_test_framework.so.3
 %%PORTDOCS%%%%DOCSDIR%%/libs/smart_ptr/smarttests.htm
 %%PORTDOCS%%%%DOCSDIR%%/libs/smart_ptr/sp_techniques.html
 %%PORTDOCS%%%%DOCSDIR%%/libs/smart_ptr/weak_ptr.htm
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/calc_plain.cpp.html
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/number_list.cpp.html
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/predefined_actions.html
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/subrule_calc.cpp.html
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/c/c_grammar.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/c/readme.txt
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/c/test_files/Ackermann.c
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/c/test_files/ArrayAccess3.c
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/c/test_files/CountLinesWordsChars.c
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/c/test_files/Fibonacci.c
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/c/test_files/HashAccess.c
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/c/test_files/HashAccess2.c
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/c/test_files/HeapSort.c
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/c/test_files/HelloWorld.c
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/c/test_files/Moments.c
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/c/test_files/MultiplyMatrices.c
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/c/test_files/NestedLoops.c
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/c/test_files/RandomGenerator.c
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/c/test_files/ReverseFile.c
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/c/test_files/Sieve.c
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/c/test_files/StringConcat.c
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/c/test_files/SumCol.c
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/cpp_lexer/cpp_lexer.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/cpp_lexer/cpp_lexer.hpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/cpp_lexer/cpp_lexer_simple_test.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/cpp_lexer/cpp_lexer_test.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/cpp_lexer/cpp_lexer_token.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/cpp_lexer/cpp_lexer_token.hpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/cpp_lexer/lexer_base.hpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/cpp_lexer/lexer_token_base.hpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/cpp_to_html/cpp_to_html.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/cpp_to_html/cpp_to_html_vc6_7.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/cpp_to_html/readme.txt
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/cpp_to_html/style.css
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/pascal/readme.txt
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/pascal/sg_pascal.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/pascal/test_files/t1.pas
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/pascal/test_files/t2.pas
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/pascal/test_files/t3.pas
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/pascal/test_files/t4.pas
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/pascal/test_files/t5.pas
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/pascal/test_files/t6.pas
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/pascal/test_files/t7.pas
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/pascal/test_files/t8.pas
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/doc/grammar.html
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/doc/introduction.html
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/doc/quickdoc.txt
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/doc/syntax_summary.html
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/doc/theme/alert.gif
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/doc/theme/arrow.gif
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/doc/theme/bkd.gif
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/doc/theme/bkd2.gif
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/doc/theme/bulb.gif
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/doc/theme/bullet.gif
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/doc/theme/l_arr.gif
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/doc/theme/l_arr_disabled.gif
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/doc/theme/lens.gif
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/doc/theme/note.gif
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/doc/theme/r_arr.gif
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/doc/theme/r_arr_disabled.gif
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/doc/theme/smiley.gif
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/doc/theme/spirit.gif
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/doc/theme/style.css
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/doc/theme/u_arr.gif
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/index.html
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/quickdoc.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/quickdoc.hpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/quickdoc/quickdoc.txt
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/rfcdate/mystyle.xls
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/rfcdate/peti.css
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/rfcdate/peti.dsl
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/rfcdate/rfc-skipper.hpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/rfcdate/rfcdate-compile-test.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/rfcdate/rfcdate-compile-test.obj
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/rfcdate/rfcdate-parser.hpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/rfcdate/rfcdate-test.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/rfcdate/rfcdate-test.obj
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/rfcdate/rfcskipper-compile-test.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/rfcdate/rfcskipper-compile-test.obj
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/rfcdate/skipper-test.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/rfcdate/skipper-test.obj
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/rfcdate/timestamp-compile-test.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/rfcdate/timestamp-compile-test.obj
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/rfcdate/timestamp.hpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/rfcdate/tutorial.html
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/rfcdate/tutorial.pdf
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/rfcdate/tutorial.xml
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/README
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/callback.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/lexer.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/lexer.hpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/lexer.output
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/lextest.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test1-1.in
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test1-1.out
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test1-2.in
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test1-2.out
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test1.lex
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test2.lex
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test3-1.in
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test3-1.out
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test3-2.in
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test3-2.out
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test3.lex
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test4-1.in
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test4-1.out
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test4.lex
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test5-1.in
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test5-1.out
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test5.lex
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test6-1.in
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test6-1.out
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test6.lex
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test7-1.in
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test7-1.out
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test7.lex
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test8-1.in
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test8-1.out
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/slex/testfiles/test8.lex
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/xml/ast_xml.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/xml/goodtest/REC-xml-19980210.xml
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/xml/goodtest/dia.xml
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/xml/goodtest/rss.xml
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/xml/goodtest/xhtml1.xhtml
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/xml/goodtest/xlink.xml
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/xml/iso8859_xml_grammar.hpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/xml/simplexml.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/xml/simplexml.txt
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/xml/test1.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/xml/test2.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/xml/test3.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/xml/test4.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/xml/test5.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/xml/xml.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/application/xml/xml_grammar.hpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/calc/ast_calc.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/calc/ast_calc2.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/calc/calc_plain.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/calc/calc_with_variables.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/calc/full_calc.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/calc/parse_tree_calc1.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/calc/phoenix_calc.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/calc/phoenix_subrule_calc.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/calc/primitive_calc.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/calc/rpn_calc.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/calc/subrule_calc.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/calc/tree_calc_grammar.hpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/calc/vmachine_calc.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/dynamic_parser.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/parameters.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/polynomial.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/position_iterator/position_iterator.obj
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/regex_convert.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/rfc821.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/spirit_bind.cpp
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/phoenix/doc/lazy_construction_and_conversions.html
-
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/change_log.html
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/distinct.html
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/epsilon.html
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/includes.html
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/phoenix.html
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/predefined_actors.html
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/quickref.html
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/select_parser.html
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/stored_rule.html
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/switch_parser.html
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/techniques.html
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/the_lazy_parser.html
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/ast_calc.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/bind.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/calc_debug.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/calc_plain.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/distinct/distinct_parser.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/distinct/distinct_parser_dynamic.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/error_handling.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/error_reporting.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/full_calc.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/more_calculators/ast_calc2.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/more_calculators/calc_with_variables.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/more_calculators/phoenix_subrule_calc.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/more_calculators/primitive_calc.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/more_calculators/rpn_calc.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/more_calculators/vmachine_calc.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/no_actions.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/parse_tree_calc1.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/parser_context.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/phoenix_calc.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/stuff_vector.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/stuff_vector2.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/subrule_calc.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/thousand_separated.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/tree_calc_grammar.hpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/intermediate/ipv4.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/intermediate/ipv4_opt.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/intermediate/lazy_parser.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/intermediate/parameters.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/intermediate/regex_convert.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/techniques/dynamic_rule.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/techniques/epsilon.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/techniques/multiple_scanners.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/techniques/nabialek.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/techniques/no_rules/no_rule1.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/techniques/no_rules/no_rule2.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/techniques/no_rules/no_rule3.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/techniques/right_recursion.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/techniques/typeof.cpp
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/phoenix/doc/lazy_construction.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/change_log.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/distinct.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/epsilon.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/includes.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/phoenix.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/predefined_actors.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/quickref.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/select_parser.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/stored_rule.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/switch_parser.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/techniques.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/the_lazy_parser.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/ast_calc.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/bind.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/calc_debug.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/calc_plain.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/distinct/distinct_parser.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/distinct/distinct_parser_dynamic.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/error_handling.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/error_reporting.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/full_calc.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/more_calculators/ast_calc2.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/more_calculators/calc_with_variables.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/more_calculators/phoenix_subrule_calc.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/more_calculators/primitive_calc.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/more_calculators/rpn_calc.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/more_calculators/vmachine_calc.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/no_actions.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/parse_tree_calc1.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/parser_context.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/phoenix_calc.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/stuff_vector.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/stuff_vector2.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/subrule_calc.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/thousand_separated.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/fundamental/tree_calc_grammar.hpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/intermediate/ipv4.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/intermediate/ipv4_opt.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/intermediate/lazy_parser.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/intermediate/parameters.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/intermediate/regex_convert.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/techniques/dynamic_rule.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/techniques/epsilon.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/techniques/multiple_scanners.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/techniques/nabialek.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/techniques/no_rules/no_rule1.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/techniques/no_rules/no_rule2.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/techniques/no_rules/no_rule3.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/techniques/right_recursion.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/example/techniques/typeof.cpp
+%%PORTDOCS%%%%DOCSDIR%%/libs/spirit/phoenix/doc/lazy_construction.html
 %%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/acknowledgments.html
 %%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/basic_concepts.html
 %%PORTDOCS%%%%DOCSDIR%%/libs/spirit/doc/character_sets.html
@@ -7255,37 +7082,37 @@ lib/libboost_unit_test_framework.so.3
 %%PORTDOCS%%%%DOCSDIR%%/libs/utility/utility.htm
 %%PORTDOCS%%%%DOCSDIR%%/libs/utility/value_init.htm
 %%PORTDOCS%%%%DOCSDIR%%/libs/variant/index.html
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/acknowledgements.html
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/class_reference_context.html
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/class_reference_ctxpolicy.html
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/class_reference_filepos.html
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/class_reference_inptpolcy.html
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/class_reference_lexer.html
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/class_reference_tokentype.html
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/compiletime_config.html
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/introduction.html
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/macro_expansion_process.html
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/predefined_macros.html
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/preface.html
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/quickstart.html
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/references.html
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/samples.html
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/supported_pragmas.html
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/theme/bkd.gif
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/theme/bkd2.gif
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/theme/bullet.gif
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/theme/l_arr.gif
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/theme/l_arr_disabled.gif
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/theme/r_arr.gif
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/theme/r_arr_disabled.gif
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/theme/style.css
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/theme/u_arr.gif
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/theme/uc.gif
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/theme/wave.gif
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/token_ids.html
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/tracing_facility.html
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/wave_driver.html
-%%BOOST_WAVE%%%%PORTDOCS%%%%DOCSDIR%%/libs/wave/index.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/acknowledgements.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/class_reference_context.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/class_reference_ctxpolicy.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/class_reference_filepos.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/class_reference_inptpolcy.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/class_reference_lexer.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/class_reference_tokentype.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/compiletime_config.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/introduction.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/macro_expansion_process.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/predefined_macros.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/preface.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/quickstart.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/references.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/samples.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/supported_pragmas.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/theme/bkd.gif
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/theme/bkd2.gif
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/theme/bullet.gif
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/theme/l_arr.gif
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/theme/l_arr_disabled.gif
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/theme/r_arr.gif
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/theme/r_arr_disabled.gif
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/theme/style.css
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/theme/u_arr.gif
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/theme/uc.gif
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/theme/wave.gif
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/token_ids.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/tracing_facility.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/doc/wave_driver.html
+%%PORTDOCS%%%%DOCSDIR%%/libs/wave/index.html
 %%PORTDOCS%%%%DOCSDIR%%/more/background.html
 %%PORTDOCS%%%%DOCSDIR%%/more/bibliography.html
 %%PORTDOCS%%%%DOCSDIR%%/more/boost_1_33_0.jpg
@@ -7660,30 +7487,28 @@ lib/libboost_unit_test_framework.so.3
 @dirrm include/boost/serialization
 @dirrm include/boost/signals/detail
 @dirrm include/boost/signals
-%%BOOST_SPIRIT_1.8%%@dirrm include/boost/spirit/actor
-%%BOOST_SPIRIT_1.8%%@dirrm include/boost/spirit/fusion/algorithm/detail
-%%BOOST_SPIRIT_1.8%%@dirrm include/boost/spirit/fusion/algorithm
-%%BOOST_SPIRIT_1.8%%@dirrm include/boost/spirit/fusion/detail
-%%BOOST_SPIRIT_1.8%%@dirrm include/boost/spirit/fusion/iterator/detail/cons_iterator
-%%BOOST_SPIRIT_1.8%%@dirrm include/boost/spirit/fusion/iterator/detail/filter_view_iterator
-%%BOOST_SPIRIT_1.8%%@dirrm include/boost/spirit/fusion/iterator/detail/joint_view_iterator
-%%BOOST_SPIRIT_1.8%%@dirrm include/boost/spirit/fusion/iterator/detail/single_view_iterator
-%%BOOST_SPIRIT_1.8%%@dirrm include/boost/spirit/fusion/iterator/detail/transform_view_iterator
-%%BOOST_SPIRIT_1.8%%@dirrm include/boost/spirit/fusion/iterator/detail/tuple_iterator
-%%BOOST_SPIRIT_1.8%%@dirrm include/boost/spirit/fusion/iterator/detail/type_sequence_iterator
-%%BOOST_SPIRIT_1.8%%@dirrm include/boost/spirit/fusion/iterator/detail
-%%BOOST_SPIRIT_1.8%%@dirrm include/boost/spirit/fusion/iterator
-%%BOOST_SPIRIT_1.8%%@dirrm include/boost/spirit/fusion/sequence/detail
-%%BOOST_SPIRIT_1.8%%@dirrm include/boost/spirit/fusion/sequence
-%%BOOST_SPIRIT_1.8%%@dirrm include/boost/spirit/fusion
-%%BOOST_SPIRIT_1.8%%@dirrm include/boost/spirit/meta/impl
-%%BOOST_SPIRIT_1.8%%@dirrm include/boost/spirit/meta
+@dirrm include/boost/spirit/actor
+@dirrm include/boost/spirit/fusion/algorithm/detail
+@dirrm include/boost/spirit/fusion/algorithm
+@dirrm include/boost/spirit/fusion/detail
+@dirrm include/boost/spirit/fusion/iterator/detail/cons_iterator
+@dirrm include/boost/spirit/fusion/iterator/detail/filter_view_iterator
+@dirrm include/boost/spirit/fusion/iterator/detail/joint_view_iterator
+@dirrm include/boost/spirit/fusion/iterator/detail/single_view_iterator
+@dirrm include/boost/spirit/fusion/iterator/detail/transform_view_iterator
+@dirrm include/boost/spirit/fusion/iterator/detail/tuple_iterator
+@dirrm include/boost/spirit/fusion/iterator/detail/type_sequence_iterator
+@dirrm include/boost/spirit/fusion/iterator/detail
+@dirrm include/boost/spirit/fusion/iterator
+@dirrm include/boost/spirit/fusion/sequence/detail
+@dirrm include/boost/spirit/fusion/sequence
+@dirrm include/boost/spirit/fusion
+@dirrm include/boost/spirit/meta/impl
+@dirrm include/boost/spirit/meta
 @dirrm include/boost/spirit/attribute
 @dirrm include/boost/spirit/core/composite/impl
 @dirrm include/boost/spirit/core/composite
 @dirrm include/boost/spirit/core/impl
-%%BOOST_SPIRIT_1.6%%@dirrm include/boost/spirit/core/meta/impl
-%%BOOST_SPIRIT_1.6%%@dirrm include/boost/spirit/core/meta
 @dirrm include/boost/spirit/core/non_terminal/impl
 @dirrm include/boost/spirit/core/non_terminal
 @dirrm include/boost/spirit/core/primitives/impl
@@ -7703,7 +7528,6 @@ lib/libboost_unit_test_framework.so.3
 @dirrm include/boost/spirit/symbols/impl
 @dirrm include/boost/spirit/symbols
 @dirrm include/boost/spirit/tree/impl
-%%BOOST_SPIRIT_1.6%%@dirrm include/boost/spirit/tree/msvc
 @dirrm include/boost/spirit/tree
 @dirrm include/boost/spirit/utility/impl/chset
 @dirrm include/boost/spirit/utility/impl
@@ -7733,11 +7557,11 @@ lib/libboost_unit_test_framework.so.3
 @dirrm include/boost/utility
 @dirrm include/boost/variant/detail
 @dirrm include/boost/variant
-%%BOOST_WAVE%%@dirrm include/boost/wave/cpplexer/re2clex
-%%BOOST_WAVE%%@dirrm include/boost/wave/cpplexer
-%%BOOST_WAVE%%@dirrm include/boost/wave/grammars
-%%BOOST_WAVE%%@dirrm include/boost/wave/util
-%%BOOST_WAVE%%@dirrm include/boost/wave
+@dirrm include/boost/wave/cpplexer/re2clex
+@dirrm include/boost/wave/cpplexer
+@dirrm include/boost/wave/grammars
+@dirrm include/boost/wave/util
+@dirrm include/boost/wave
 @dirrm include/boost
 %%BOOST_PYSTE%%@dirrm %%PYTHON_SITELIBDIR%%/Pyste
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/html/any
@@ -7955,29 +7779,13 @@ lib/libboost_unit_test_framework.so.3
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/serialization
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/smart_ptr/example
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/smart_ptr
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/techniques/no_rules
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/techniques
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/intermediate
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/fundamental/more_calculators
-%%BOOST_SPIRIT_1.8%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/fundamental/distinct
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/techniques/no_rules
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/techniques
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/intermediate
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/fundamental/more_calculators
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/fundamental/distinct
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/doc/theme
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/doc
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/application/c/test_files
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/application/c
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/application/cpp_lexer
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/application/cpp_to_html
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/application/pascal/test_files
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/application/pascal
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/application/quickdoc/doc/theme
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/application/quickdoc/doc
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/application/quickdoc
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/application/rfcdate
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/application/slex/testfiles
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/application/slex
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/application/xml/goodtest
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/application/xml
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/application
-%%BOOST_SPIRIT_1.6%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/fundamental/calc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/fundamental/position_iterator
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example/fundamental
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/spirit/example
@@ -8026,9 +7834,9 @@ lib/libboost_unit_test_framework.so.3
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/type_traits
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/utility
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/variant
-%%BOOST_WAVE%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/wave/doc/theme
-%%BOOST_WAVE%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/wave/doc
-%%BOOST_WAVE%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/wave
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/wave/doc/theme
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/wave/doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/libs/wave
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/libs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/more/css_0
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/more/writingdoc/template
