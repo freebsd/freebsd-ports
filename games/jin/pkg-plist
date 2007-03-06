@@ -1,0 +1,98 @@
+@comment $FreeBSD$
+bin/jin
+%%DATADIR%%/actions/askquestion.jar
+%%DATADIR%%/actions/getserverhelp.jar
+%%DATADIR%%/actions/seek.jar
+%%DATADIR%%/chess.jar
+%%DATADIR%%/copyright.txt
+%%DATADIR%%/icon.png
+%%DATADIR%%/jin.jar
+%%DATADIR%%/libs/board.jar
+%%DATADIR%%/libs/bsh-core-1.2b7.jar
+%%DATADIR%%/libs/console.jar
+%%DATADIR%%/libs/fics/timesealing.jar
+%%DATADIR%%/libs/icc/timestamping.jar
+%%DATADIR%%/libs/scripter.jar
+%%DATADIR%%/libs/seek.jar
+%%DATADIR%%/libs/sound.jar
+%%DATADIR%%/lnfs/jgoodies-plastic.jar
+%%DATADIR%%/lnfs/kunststoff.jar
+%%DATADIR%%/lnfs/liquid.jar
+%%DATADIR%%/lnfs/metouia.jar
+%%DATADIR%%/plugins/actions.jar
+%%DATADIR%%/plugins/fics/board.jar
+%%DATADIR%%/plugins/fics/console.jar
+%%DATADIR%%/plugins/fics/scripter.jar
+%%DATADIR%%/plugins/fics/seek.jar
+%%DATADIR%%/plugins/fics/sound.jar
+%%DATADIR%%/plugins/gamelogger.jar
+%%DATADIR%%/plugins/icc/board.jar
+%%DATADIR%%/plugins/icc/console.jar
+%%DATADIR%%/plugins/icc/scripter.jar
+%%DATADIR%%/plugins/icc/seek.jar
+%%DATADIR%%/plugins/icc/sound.jar
+%%DATADIR%%/resources/boards/cold-marble.zip
+%%DATADIR%%/resources/boards/crampled-paper.zip
+%%DATADIR%%/resources/boards/gray-tiles.zip
+%%DATADIR%%/resources/boards/green-marble.zip
+%%DATADIR%%/resources/boards/icc/wooden-light.zip
+%%DATADIR%%/resources/boards/pale-wood.zip
+%%DATADIR%%/resources/boards/plain.zip
+%%DATADIR%%/resources/boards/red-marble.zip
+%%DATADIR%%/resources/boards/slate.zip
+%%DATADIR%%/resources/boards/winter.zip
+%%DATADIR%%/resources/boards/wooden-dark.zip
+%%DATADIR%%/resources/pieces/adventure.zip
+%%DATADIR%%/resources/pieces/alfonso-x.zip
+%%DATADIR%%/resources/pieces/alpha.zip
+%%DATADIR%%/resources/pieces/berlin.zip
+%%DATADIR%%/resources/pieces/condal.zip
+%%DATADIR%%/resources/pieces/eyes.zip
+%%DATADIR%%/resources/pieces/fantasy.zip
+%%DATADIR%%/resources/pieces/fics/eboard.zip
+%%DATADIR%%/resources/pieces/freak.zip
+%%DATADIR%%/resources/pieces/harlequin.zip
+%%DATADIR%%/resources/pieces/icc/blitzin.zip
+%%DATADIR%%/resources/pieces/icc/bookup.zip
+%%DATADIR%%/resources/pieces/icc/dyche1.zip
+%%DATADIR%%/resources/pieces/icc/dyche2.zip
+%%DATADIR%%/resources/pieces/icc/dyche3.zip
+%%DATADIR%%/resources/pieces/kingdom.zip
+%%DATADIR%%/resources/pieces/leipzig.zip
+%%DATADIR%%/resources/pieces/line.zip
+%%DATADIR%%/resources/pieces/lucena.zip
+%%DATADIR%%/resources/pieces/magnetic.zip
+%%DATADIR%%/resources/pieces/mark.zip
+%%DATADIR%%/resources/pieces/marroquin.zip
+%%DATADIR%%/resources/pieces/maya.zip
+%%DATADIR%%/resources/pieces/medieval.zip
+%%DATADIR%%/resources/pieces/merida.zip
+%%DATADIR%%/resources/pieces/motif.zip
+%%DATADIR%%/resources/pieces/prmi.zip
+%%DATADIR%%/resources/pieces/skulls.zip
+%%DATADIR%%/resources/pieces/smart.zip
+%%DATADIR%%/resources/pieces/spatial.zip
+%%DATADIR%%/resources/pieces/usual.zip
+%%DATADIR%%/resources/pieces/utrecht.zip
+%%DATADIR%%/resources/pieces/xboard.zip
+%%DATADIR%%/servers/chessclub.jar
+%%DATADIR%%/servers/freechess.jar
+%%DATADIR%%/util.jar
+@dirrm %%DATADIR%%/actions/fics
+@dirrm %%DATADIR%%/actions/icc
+@dirrm %%DATADIR%%/actions
+@dirrm %%DATADIR%%/libs/fics
+@dirrm %%DATADIR%%/libs/icc
+@dirrm %%DATADIR%%/libs
+@dirrm %%DATADIR%%/lnfs
+@dirrm %%DATADIR%%/plugins/fics
+@dirrm %%DATADIR%%/plugins/icc
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/resources/boards/icc
+@dirrm %%DATADIR%%/resources/boards
+@dirrm %%DATADIR%%/resources/pieces/fics
+@dirrm %%DATADIR%%/resources/pieces/icc
+@dirrm %%DATADIR%%/resources/pieces
+@dirrm %%DATADIR%%/resources
+@dirrm %%DATADIR%%/servers
+@dirrm %%DATADIR%%
