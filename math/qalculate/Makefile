@@ -6,24 +6,23 @@
 #
 
 PORTNAME=	qalculate
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.5
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-gtk-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Very powerful GUI calculator for GNOME
+COMMENT=	A multi-purpose desktop calculator (Gnome frontend)
 
-LIB_DEPENDS=	qalculate.2:${PORTSDIR}/math/libqalculate
+LIB_DEPENDS=	qalculate.4:${PORTSDIR}/math/libqalculate
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		wget:${PORTSDIR}/ftp/wget
 
-USE_X_PREFIX=	yes
-USE_GMAKE=	yes
+USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libglade2 libgnome
 USE_GETTEXT=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libglade2 libgnome
 INSTALLS_OMF=	yes
 
 .include <bsd.port.mk>
