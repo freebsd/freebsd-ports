@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	cgkit
-PORTVERSION=	2.0.0a6
+PORTVERSION=	2.0.0a7
 CATEGORIES=	graphics python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/a/alpha/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	quakelee@cn.freebsd.org
 COMMENT=	Python Computer Graphics Kit
 
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-python scons:${PORTSDIR}/devel/scons
