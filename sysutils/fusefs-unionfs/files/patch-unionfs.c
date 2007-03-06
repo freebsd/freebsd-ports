@@ -1,16 +1,14 @@
---- unionfs.c.orig	Mon Aug  7 07:20:13 2006
-+++ unionfs.c	Tue Aug  8 13:53:17 2006
-@@ -188,12 +188,7 @@
+--- unionfs.c.orig	Tue Mar  6 10:40:41 2007
++++ unionfs.c	Tue Mar  6 10:46:09 2007
+@@ -192,11 +192,7 @@
  
- 	if (stats_enabled && strcmp(path, STATS_FILENAME) == 0) return 0;
- 
--	int res;
--	if (isdatasync) {
+ 	int res;
+ 	if (isdatasync) {
+-#ifdef _POSIX_SYNCHRONIZED_IO
 -		res = fdatasync(fi->fh);
--	} else {
--		res = fsync(fi->fh);
--	}
-+	int res = fsync(fi->fh);
- 
- 	if (res == -1) return -errno;
- 
+-#else
+ 		res = fsync(fi->fh);
+-#endif
+ 	} else {
+ 		res = fsync(fi->fh);
+ 	}
