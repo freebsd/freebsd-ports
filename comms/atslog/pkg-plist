@@ -2,14 +2,13 @@
 %%WWW%%@unexec if cmp -s %D/www/atslog/include/config.inc.php %D/www/atslog/include/config.inc.php.default; then rm -f %D/www/atslog/include/config.inc.php; fi
 bin/atslogcleardb.pl
 bin/atslogd
-bin/atslogdaily
 bin/atslogdb.pl
 bin/atslogmaster
-bin/atslogrotate
 etc/atslog.conf.default
 @exec [ -f %B/atslog.conf ] || cp %B/%f %B/atslog.conf
 etc/atslog.conf.default.rus
 libexec/atslog/4200e.lib
+libexec/atslog/bp-250.lib
 libexec/atslog/gd-320.lib
 libexec/atslog/gdk-100.lib
 libexec/atslog/genindex.sh
@@ -61,6 +60,7 @@ libexec/atslog/skp-816.lib
 %%EXAMPLESDIR%%/textlogs/Multicom MAXICOM MP80.TXT
 %%EXAMPLESDIR%%/textlogs/Multicom Maxicom MXM300.txt
 %%EXAMPLESDIR%%/textlogs/NEC NEAX2000 IPS.txt
+%%EXAMPLESDIR%%/textlogs/NEC NEAX7400 ICS m100.txt
 %%EXAMPLESDIR%%/textlogs/Panasonic 816.txt
 %%EXAMPLESDIR%%/textlogs/Panasonic DBS-90.txt
 %%EXAMPLESDIR%%/textlogs/Panasonic KX-T1232-RU.txt
@@ -83,6 +83,7 @@ libexec/atslog/skp-816.lib
 %%EXAMPLESDIR%%/textlogs/Panasonic KX-TDA100 A.txt
 %%EXAMPLESDIR%%/textlogs/Panasonic KX-TDA100 B.txt
 %%EXAMPLESDIR%%/textlogs/Panasonic KX-TDA100 C.txt
+%%EXAMPLESDIR%%/textlogs/Panasonic KX-TDA600.txt
 %%EXAMPLESDIR%%/textlogs/Panasonic KX-TEM824.txt
 %%EXAMPLESDIR%%/textlogs/Samsung DCS Compact II.txt
 %%EXAMPLESDIR%%/textlogs/Samsung DCS.txt

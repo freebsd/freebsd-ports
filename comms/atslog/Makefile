@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	atslog
-PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTVERSION=	2.1.1
 CATEGORIES=	comms
 MASTER_SITES=	BERLIOS
 
@@ -49,7 +48,6 @@ USE_PHP+=	mysql
 .if defined(WITH_PGSQL)
 USE_PHP+=	pgsql
 .endif
-.include "${PORTSDIR}/Mk/bsd.php.mk"
 .else
 PLIST_SUB+=	WWW="@comment "
 .endif
@@ -92,7 +90,7 @@ do-install:
 .for i in ${CONFIGS}
 	${INSTALL_DATA} ${WRKSRC}/include/${i} ${PREFIX}/etc/
 .endfor
-.for i in atslogcleardb.pl atslogdaily atslogdb.pl atslogmaster atslogrotate
+.for i in atslogcleardb.pl atslogdb.pl atslogmaster
 	${INSTALL_SCRIPT} ${WRKSRC}/include/${i} ${PREFIX}/bin
 .endfor
 	${MKDIR} ${DATADIR}/lang
