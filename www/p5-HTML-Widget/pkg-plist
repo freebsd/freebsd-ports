@@ -7,6 +7,7 @@
 %%SITE_PERL%%/HTML/Widget/Constraint/All.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/AllOrNone.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Any.pm
+%%SITE_PERL%%/HTML/Widget/Constraint/Boll.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Callback.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/CallbackOnce.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Date.pm
@@ -23,6 +24,7 @@
 %%SITE_PERL%%/HTML/Widget/Constraint/Printable.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Range.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Regex.pm
+%%SITE_PERL%%/HTML/Widget/Constraint/SingleValue.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/String.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Time.pm
 %%SITE_PERL%%/HTML/Widget/Container.pm

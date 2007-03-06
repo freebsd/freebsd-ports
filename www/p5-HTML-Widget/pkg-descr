@@ -7,4 +7,7 @@ The API was designed similar to other popular modules like Data::Form-
 Validator and FormValidator::Simple, HTML::FillInForm is also built in
 (and much faster).
 
+NOTE: HTML::Widget is no longer under active development and the current 
+maintainers are instead pursuing an intended replacement 
+
 WWW: http://search.cpan.org/dist/HTML-Widget/

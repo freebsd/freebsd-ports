@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Widget
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	HTML Widget And Validation Framework
 
-RUN_DEPENDS=	p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
+RUN_DEPENDS=	p5-HTML-Tree>=3.22:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-Chained \
 		p5-Class-Data-Accessor>=0:${PORTSDIR}/devel/p5-Class-Data-Accessor \
@@ -36,6 +36,7 @@ MAN3=	HTML::Widget.3 \
 	HTML::Widget::Constraint::All.3 \
 	HTML::Widget::Constraint::AllOrNone.3 \
 	HTML::Widget::Constraint::Any.3 \
+	HTML::Widget::Constraint::Bool.3 \
 	HTML::Widget::Constraint::Callback.3 \
 	HTML::Widget::Constraint::CallbackOnce.3 \
 	HTML::Widget::Constraint::Date.3 \
@@ -52,6 +53,7 @@ MAN3=	HTML::Widget.3 \
 	HTML::Widget::Constraint::Printable.3 \
 	HTML::Widget::Constraint::Range.3 \
 	HTML::Widget::Constraint::Regex.3 \
+	HTML::Widget::Constraint::SingleValue.3 \
 	HTML::Widget::Constraint::String.3 \
 	HTML::Widget::Constraint::Time.3 \
 	HTML::Widget::Container.3 \
