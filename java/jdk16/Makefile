@@ -301,6 +301,7 @@ post-build:
 	@# Update time zones
 	@-${JDKIMAGEDIR}/bin/java -jar \
 		${WRKDIR}/tzupdater${TZUPDATE_TZVERSION}/tzupdater.jar -u
+	@-${RM} -rf ${JDKIMAGEDIR}/jre/lib/zi.tzdata*
 .endif
 
 do-install:
