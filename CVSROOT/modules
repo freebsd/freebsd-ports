@@ -11479,6 +11479,7 @@ phamm		ports/net/phamm
 phantom		ports/sysutils/phantom
 pharmacy	ports/devel/pharmacy
 phase		ports/x11-themes/phase
+phat		ports/x11-toolkits/phat
 phatbeat	ports/audio/phatbeat
 phc		ports/lang/phc
 phex		ports/net-p2p/phex
