@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.cul.de/data/\
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	fehlner@gmx.de
-COMMENT=	Script for maintining ports
+COMMENT=	Script for maintaining ports
 # Any ideas for a better comment?
 
 EXTRACT_AFTER_ARGS=	${DISTDIR}/${DISTFILES} > ${WRKSRC}/${PORTNAME}
