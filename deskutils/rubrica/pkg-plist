@@ -124,6 +124,7 @@ share/locale/ja/LC_MESSAGES/rubrica.mo
 share/locale/pt_BR/LC_MESSAGES/rubrica.mo
 share/locale/ru/LC_MESSAGES/rubrica.mo
 share/locale/sk/LC_MESSAGES/rubrica.mo
+share/locale/uk/LC_MESSAGES/rubrica.mo
 @dirrm share/gnome/rubrica/stylesheet
 @dirrm share/gnome/rubrica/script
 @dirrm share/gnome/rubrica/nautilus-script
