@@ -5435,6 +5435,7 @@ jhead		ports/graphics/jhead
 jid3lib		ports/audio/jid3lib
 jigdo		ports/net-p2p/jigdo
 jikes		ports/java/jikes
+jin		ports/games/jin
 jing		ports/textproc/jing
 jit		ports/net-im/jit
 jive		ports/misc/jive
