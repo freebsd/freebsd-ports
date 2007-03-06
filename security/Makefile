@@ -736,5 +736,6 @@
     SUBDIR += yersinia
     SUBDIR += zebedee
     SUBDIR += zombiezapper
+    SUBDIR += zzuf
 
 .include <bsd.port.subdir.mk>
