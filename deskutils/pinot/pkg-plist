@@ -3,6 +3,7 @@ bin/pinot-collect
 bin/pinot-dbus-daemon
 bin/pinot-index
 bin/pinot-search
+etc/pinot/external-filters.xml
 etc/pinot/globalconfig.xml
 etc/pinot/textcat3_conf.txt
 etc/pinot/textcat_conf.txt
@@ -10,31 +11,22 @@ etc/xdg/autostart/pinot-dbus-daemon.desktop
 lib/deskbar-applet/handlers/pinot-live.py
 lib/deskbar-applet/handlers/pinot-live.pyc
 lib/deskbar-applet/handlers/pinot-live.pyo
-lib/pinot/tokenizers/libopendocumenttokenizer.so
-lib/pinot/tokenizers/libopendocumenttokenizer.so.0
-lib/pinot/tokenizers/libpdftokenizer.so
-lib/pinot/tokenizers/libpdftokenizer.so.0
-lib/pinot/tokenizers/librtftokenizer.so
-lib/pinot/tokenizers/librtftokenizer.so.0
-lib/pinot/tokenizers/libtaglibtokenizer.so
-lib/pinot/tokenizers/libtaglibtokenizer.so.0
-lib/pinot/tokenizers/libwordtokenizer.so
-lib/pinot/tokenizers/libwordtokenizer.so.0
+lib/pinot/filters/libexternalfilter.so
+lib/pinot/filters/libexternalfilter.so.0
+lib/pinot/filters/libmboxfilter.so
+lib/pinot/filters/libmboxfilter.so.0
+lib/pinot/filters/libtaglibfilter.so
+lib/pinot/filters/libtaglibfilter.so.0
 share/applications/pinot.desktop
 share/dbus-1/services/de.berlios.Pinot.service
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
 share/icons/hicolor/48x48/apps/pinot.png
 share/locale/es/LC_MESSAGES/pinot.mo
 share/locale/fr/LC_MESSAGES/pinot.mo
 share/locale/nl/LC_MESSAGES/pinot.mo
+share/locale/pt_BR/LC_MESSAGES/pinot.mo
+share/locale/ru/LC_MESSAGES/pinot.mo
 share/locale/sv/LC_MESSAGES/pinot.mo
 %%DATADIR%%/AmazonAPI.src
-%%DATADIR%%/engines
 %%DATADIR%%/engines/A9.src
 %%DATADIR%%/engines/Accoona.src
 %%DATADIR%%/engines/Ask.src
@@ -59,7 +51,6 @@ share/locale/sv/LC_MESSAGES/pinot.mo
 %%DATADIR%%/metase-gtk2.gladep
 %%DATADIR%%/pinot-dbus-daemon.xml
 %%DATADIR%%/xapian-powered.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/engines
 @dirrm %%DATADIR%%
 @dirrmtry share/icons/hicolor/48x48/apps
@@ -67,7 +58,7 @@ share/locale/sv/LC_MESSAGES/pinot.mo
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrmtry share/applications
-@dirrm lib/pinot/tokenizers
+@dirrm lib/pinot/filters
 @dirrm lib/pinot
 @dirrmtry lib/deskbar-applet/handlers
 @dirrmtry lib/deskbar-applet
