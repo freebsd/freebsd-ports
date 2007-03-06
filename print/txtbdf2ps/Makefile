@@ -11,11 +11,10 @@ PORTVERSION=	0.7.1
 CATEGORIES=	print
 MASTER_SITES=	http://www.geocities.com/CapeCanaveral/Lab/5735/1/ \
 		http://oldrus-ispell.sourceforge.net/ \
-		http://members.fortunecity.com/brodsky/TL/LS/ \
-		http://sawsoft.newmail.ru/LS/
+		http://members.fortunecity.com/brodsky/TL/LS/
 EXTRACT_SUFX=	.txt
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	spam@rm-rf.kiev.ua
 COMMENT=	Translator TXT + BDF to PS
 
 PLIST_FILES=	bin/txtbdf2ps
