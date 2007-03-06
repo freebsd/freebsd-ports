@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-DKIM
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://jason.long.name/dkimproxy/
