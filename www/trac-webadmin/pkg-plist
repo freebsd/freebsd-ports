@@ -1,1 +1,52 @@
-%%PYTHON_SITELIBDIR%%/TracWebAdmin-%%VERSION%%.egg
+@unexec %%EASY_INSTALL_CMD%% -q -m -S %D/%%PYTHON_SITELIBDIR%% %%TRACWEBADMIN_EGG_VER%%
+@unexec rm -f %D/%%PYTHON_SITELIBDIR%%/webadmin
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/__init__.py
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/basics.py
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/basics.pyc
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/basics.pyo
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/htdocs/css/admin.css
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/htdocs/img/collapsed.png
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/htdocs/img/expanded.png
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/htdocs/js/admin.js
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/logging.py
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/logging.pyc
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/logging.pyo
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/perm.py
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/perm.pyc
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/perm.pyo
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/plugin.py
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/plugin.pyc
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/plugin.pyo
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/templates/admin.cs
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/templates/admin_basics.cs
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/templates/admin_component.cs
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/templates/admin_enum.cs
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/templates/admin_log.cs
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/templates/admin_milestone.cs
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/templates/admin_perm.cs
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/templates/admin_plugin.cs
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/templates/admin_version.cs
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/ticket.py
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/ticket.pyc
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/ticket.pyo
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/web_ui.py
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/web_ui.pyc
+%%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/web_ui.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/htdocs/js
+@dirrm %%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/htdocs/img
+@dirrm %%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/htdocs/css
+@dirrm %%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin/htdocs
+@dirrm %%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/webadmin
+@dirrm %%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%TRACWEBADMIN_EGG%%
+@exec ln -s %%TRACWEBADMIN_EGG%% %D/%%PYTHON_SITELIBDIR%%/webadmin
+@exec %%EASY_INSTALL_CMD%% -q -N -S %D/%%PYTHON_SITELIBDIR%% %%TRACWEBADMIN_EGG_VER%%
