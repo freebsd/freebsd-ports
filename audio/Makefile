@@ -581,6 +581,7 @@
     SUBDIR += soundtouch
     SUBDIR += soundtracker
     SUBDIR += sox
+    SUBDIR += specimen
     SUBDIR += speex
     SUBDIR += sphinx
     SUBDIR += spiralloops

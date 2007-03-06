@@ -1,0 +1,40 @@
+--- src/Makefile.in.orig	Tue Feb  6 23:13:50 2007
++++ src/Makefile.in	Tue Mar  6 13:07:39 2007
+@@ -51,9 +51,9 @@
+ am__installdirs = "$(DESTDIR)$(bindir)"
+ binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ PROGRAMS = $(bin_PROGRAMS)
+-am_specimen_OBJECTS = alsadriver.$(OBJEXT) jackdriver.$(OBJEXT) \
++am_specimen_OBJECTS = jackdriver.$(OBJEXT) \
+ 	mixer.$(OBJEXT) sample.$(OBJEXT) driver.$(OBJEXT) \
+-	midi.$(OBJEXT) patch.$(OBJEXT) specimen.$(OBJEXT) \
++	patch.$(OBJEXT) specimen.$(OBJEXT) \
+ 	beef.$(OBJEXT) maths.$(OBJEXT) ticks.$(OBJEXT) adsr.$(OBJEXT) \
+ 	lfo.$(OBJEXT) sync.$(OBJEXT) lashdriver.$(OBJEXT)
+ specimen_OBJECTS = $(am_specimen_OBJECTS)
+@@ -189,8 +189,8 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ SUBDIRS = gui
+-specimen_SOURCES = alsadriver.c jackdriver.c mixer.c mixer.h sample.c	\
+-sample.h driver.c driver.h midi.c midi.h patch.c patch.h specimen.c	\
++specimen_SOURCES = jackdriver.c mixer.c mixer.h sample.c	\
++sample.h driver.c driver.h midi.h patch.c patch.h specimen.c	\
+ specimen.h beef.c beef.h maths.c maths.h ticks.c ticks.h adsr.c adsr.h	\
+ lfo.c lfo.h sync.c sync.h control.h lashdriver.h lashdriver.c
+ 
+@@ -301,14 +301,12 @@
+ 	-rm -f *.tab.c
+ 
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/adsr.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/alsadriver.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/beef.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/driver.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/jackdriver.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lashdriver.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lfo.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/maths.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/midi.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mixer.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/patch.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sample.Po@am__quote@

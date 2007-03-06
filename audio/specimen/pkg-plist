@@ -1,0 +1,9 @@
+bin/specimen
+%%DATADIR%%/pixmaps/open.png
+%%DATADIR%%/pixmaps/play.png
+%%DATADIR%%/pixmaps/stop.png
+%%DATADIR%%/pixmaps/panic.png
+%%DATADIR%%/pixmaps/specimen.png
+%%DATADIR%%/pixmaps/specimen_small.png
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
