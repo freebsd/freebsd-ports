@@ -60,7 +60,7 @@ OPTIONS=	ESOUND		"Enable Esound output output"		off \
 		TIMIDITY	"Enable timidity plugin"		on  \
 		MMS		"Enable mms support"			off \
 		PARANORMAL	"Enable paranormal vis plugin"		on \
-		XSPF		"Enable XSPF support"			off \
+		XSPF		"Enable XSPF support"			on \
 		TTA		"Enable TrueAudio plugin"		on  \
 		LAME		"Enable liblame plugin"			off \
 		GNOME		"Build with gnomevfs/gconf support"	off \
