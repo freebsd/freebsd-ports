@@ -949,7 +949,6 @@ bonobo-conf	ports/devel/bonobo-conf
 boodler		ports/audio/boodler
 bookmarkbridge	ports/www/bookmarkbridge
 boost		ports/devel/boost
-boost-gcc3	ports/devel/boost-gcc3
 boost-python		ports/devel/boost-python
 bopm		ports/irc/bopm
 borzoi		ports/security/borzoi
