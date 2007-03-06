@@ -2,8 +2,8 @@ sbin/bruteblock
 sbin/bruteblockd
 @unexec if cmp -s %D/etc/bruteblock/proftpd.conf.dist %D/etc/bruteblock/proftpd.conf; then rm -f %D/etc/bruteblock/proftpd.conf; fi
 etc/bruteblock/proftpd.conf.dist
-@exec if [ ! -f %D/etc/bruteblock/proftpd.conf ]; then cp -p %D/%F %B/bruteblock/proftpd.conf; fi
+@exec if [ ! -f %B/proftpd.conf ]; then cp -p %D/%F %B/proftpd.conf; fi
 @unexec if cmp -s %D/etc/bruteblock/ssh.conf.dist %D/etc/bruteblock/ssh.conf; then rm -f %D/etc/bruteblock/ssh.conf; fi
 etc/bruteblock/ssh.conf.dist
-@exec if [ ! -f %D/etc/bruteblock/ssh.conf ]; then cp -p %D/%F %B/bruteblock/ssh.conf; fi
+@exec if [ ! -f %B/ssh.conf ]; then cp -p %D/%F %B/ssh.conf; fi
 @dirrmtry etc/bruteblock
