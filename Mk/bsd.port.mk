@@ -310,10 +310,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Default: gmake
 ##
 # USE_GETOPT_LONG
-#				- If set, this port uses getopt_long. If OSVERSION
-#				  less than 500041, automatically adds devel/libgnugeopt
-#				  to LIB_DEPENDS, and pass adjusted values of
-#				  CPPFLAGS and LDFLAGS in CONFIGURE_ENV.
+#				- If set, this port uses getopt_long.  May be obsolete.
 ##
 # USE_ICONV		- If set, this port uses libiconv.
 # USE_GETTEXT	- If set, this port uses GNU gettext (libintl).
@@ -1298,15 +1295,6 @@ check-makefile::
 
 _PREMKINCLUDED=	yes
 
-# check for old, crufty, makefile types, part 1:
-.if !defined(PORTNAME) || !( defined(PORTVERSION) || defined (DISTVERSION) ) || defined(PKGNAME)
-check-makefile::
-	@${ECHO_CMD} "Makefile error: you need to define PORTNAME and PORTVERSION instead of PKGNAME."
-	@${ECHO_CMD} "(This port is too old for your bsd.port.mk, please update it to match"
-	@${ECHO_CMD} " your bsd.port.mk.)"
-	@${FALSE}
-.endif
-
 .if defined(PORTVERSION)
 .if ${PORTVERSION:M*[-_,]*}x != x
 IGNORE=			PORTVERSION ${PORTVERSION} may not contain '-' '_' or ','
@@ -1326,14 +1314,8 @@ PORTEPOCH?=		0
 _SUF2=	,${PORTEPOCH}
 .endif
 
-# check for old, crufty, makefile types, part 2.  The "else" case
-# should have been handled in part 1, above.
-.if !defined(PKGVERSION)
 PKGVERSION=	${PORTVERSION:C/[-_,]/./g}${_SUF1}${_SUF2}
-.endif
-.if !defined(PKGNAME)
 PKGNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PKGVERSION}
-.endif
 DISTNAME?=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSIONSUFFIX}
 
 # These need to be absolute since we don't know how deep in the ports
@@ -1352,11 +1334,7 @@ LINUXBASE:=		${DESTDIR}${LINUXBASE_REL}
 DISTDIR?=		${PORTSDIR}/distfiles
 _DISTDIR?=		${DISTDIR}/${DIST_SUBDIR}
 INDEXDIR?=		${PORTSDIR}
-.if ${OSVERSION} >= 500036
 INDEXFILE?=		INDEX-${OSVERSION:C/([0-9]).*/\1/}
-.else
-INDEXFILE?=		INDEX
-.endif
 
 TARGETDIR:=		${DESTDIR}${PREFIX}
 
@@ -1374,12 +1352,6 @@ EXTRACT_SUFX?=			.tar.gz
 PACKAGES?=		${PORTSDIR}/packages
 TEMPLATES?=		${PORTSDIR}/Templates
 
-.if (!defined(PKGDIR) && exists(${MASTERDIR}/pkg/DESCR)) || \
-	(!defined(MD5_FILE) && exists(${MASTERDIR}/files/md5))
-check-makefile::
-	@${ECHO_CMD} "Makefile error: your port uses an old layout.  Please update it to match this bsd.port.mk.  If you have updated your ports collection via cvsup and are still getting this error, see Q12 and Q13 in the cvsup FAQ on http://www.polstra.com for further information."
-	@${FALSE}
-.endif
 PATCHDIR?=		${MASTERDIR}/files
 FILESDIR?=		${MASTERDIR}/files
 SCRIPTDIR?=		${MASTERDIR}/scripts
@@ -1426,23 +1398,8 @@ LDCONFIG_PLIST_UNEXEC_CMD?=	${LDCONFIG} -R
 
 PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
-.if ${OSVERSION} >= 500036
 PERL_VERSION?=	5.8.8
 PERL_VER?=	5.8.8
-.else
-.if ${OSVERSION} >= 500032
-PERL_VERSION?=	5.6.1
-PERL_VER?=		5.6.1
-.else
-.if ${OSVERSION} >= 500007
-PERL_VERSION?=	5.6.0
-PERL_VER?=		5.6.0
-.else
-PERL_VERSION?=	5.00503
-PERL_VER?=		5.005
-.endif
-.endif
-.endif
 
 .if !defined(PERL_LEVEL) && defined(PERL_VERSION)
 perl_major=		${PERL_VERSION:C|^([1-9]+).*|\1|}
@@ -1460,11 +1417,7 @@ PERL_LEVEL=	${perl_major}${perl_minor}${perl_patch}
 PERL_LEVEL=0
 .endif # !defined(PERL_LEVEL) && defined(PERL_VERSION)
 
-.if ${PERL_LEVEL} >= 500600
 PERL_ARCH?=		mach
-.else
-PERL_ARCH?=		${ARCH}-freebsd
-.endif
 
 .if ${PERL_LEVEL} >= 500800
 PERL_PORT?=	perl5.8
@@ -1475,13 +1428,8 @@ PERL_PORT?=	perl5
 SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VER}
 SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
 
-.if ${PERL_LEVEL} < 500600
-PERL5=		${DESTDIR}/usr/bin/perl${PERL_VERSION}
-PERL=		${DESTDIR}/usr/bin/perl
-.else
 PERL5=		${LOCALBASE}/bin/perl${PERL_VERSION}
 PERL=		${LOCALBASE}/bin/perl
-.endif
 
 .if defined(USE_LOCAL_MK)
 .include "${PORTSDIR}/Mk/bsd.local.mk"
@@ -1583,11 +1531,7 @@ PERL=		${LOCALBASE}/bin/perl
 .endif
 .endif
 
-.if ${OSVERSION} >= 502123
 X_WINDOW_SYSTEM ?= xorg
-.else
-X_WINDOW_SYSTEM ?= xfree86-4
-.endif
 
 # Location of mounted CDROM(s) to search for files
 CD_MOUNTPTS?=	/cdrom ${CD_MOUNTPT}
@@ -1756,22 +1700,8 @@ IGNORE=			unknown FAM system: ${FAM_SYSTEM}
 .endif
 .endif # USE_FAM
 
-.if defined(USE_GETOPT_LONG)
-.if ${OSVERSION} < 500041
-LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-CPPFLAGS+=		-I${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib -lgnugetopt
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-.endif
-.endif
-
 .if defined(USE_RC_SUBR) || defined(USE_RCORDER)
-.if ${OSVERSION} < 500037
-RUN_DEPENDS+=	${LOCALBASE}/etc/rc.subr:${PORTSDIR}/sysutils/rc_subr
-RC_SUBR=	${LOCALBASE}/etc/rc.subr
-.else
 RC_SUBR=	/etc/rc.subr
-.endif
 SUB_LIST+=	RC_SUBR=${RC_SUBR}
 .if defined(USE_RC_SUBR) && ${USE_RC_SUBR:U} != "YES"
 SUB_FILES+=	${USE_RC_SUBR}
@@ -1797,7 +1727,7 @@ NO_LDCONFIG_MTREE=	yes
 USE_LDCONFIG=	${PREFIX}/lib
 .endif
 .if defined(USE_LDCONFIG32) && ${USE_LDCONFIG32:L} == "yes"
-IGNORE=			has USE_LDCONFIG set to yes, which is not correct
+IGNORE=			has USE_LDCONFIG32 set to yes, which is not correct
 .endif
 .endif
 
@@ -1957,7 +1887,6 @@ CONFIGURE_ENV+=	PERL_MM_USE_DEFAULT="YES"
 .endif
 .endif
 
-.if ${PERL_LEVEL} >= 500600
 .if defined(USE_PERL5) || defined(USE_PERL5_BUILD)
 EXTRACT_DEPENDS+=${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 PATCH_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
@@ -1965,7 +1894,6 @@ BUILD_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .endif
 .if defined(USE_PERL5) || defined(USE_PERL5_RUN)
 RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
-.endif
 .endif
 
 .if defined(USE_LOCAL_MK)
@@ -1996,6 +1924,10 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 
 .if defined(USE_SDL) || defined(WANT_SDL)
 .include "${PORTSDIR}/Mk/bsd.sdl.mk"
+.endif
+
+.if defined(USE_PHP)
+.include "${PORTSDIR}/Mk/bsd.php.mk"
 .endif
 
 .if defined(USE_PYTHON)
@@ -2129,22 +2061,13 @@ MAKE_ENV+=		TARGETDIR=${TARGETDIR} DESTDIR=${DESTDIR} PREFIX=${PREFIX} \
 			MOTIFLIB="${MOTIFLIB}" LIBDIR="${LIBDIR}" CFLAGS="${CFLAGS}" \
 			CXXFLAGS="${CXXFLAGS}" MANPREFIX="${MANPREFIX}"
 
-.if ${OSVERSION} < 500016
-PTHREAD_CFLAGS?=	-D_THREAD_SAFE
-PTHREAD_LIBS?=		-pthread
-.elif ${OSVERSION} < 502102
-PTHREAD_CFLAGS?=	-D_THREAD_SAFE
-PTHREAD_LIBS?=		-lc_r
-.else
 PTHREAD_CFLAGS?=
 PTHREAD_LIBS?=		-pthread
-.endif
 
 .if exists(/usr/bin/fetch)
 FETCH_CMD?=		/usr/bin/fetch -ApRr
 FETCH_REGET?=	1
-.if ${OSVERSION} >= 480000 && !defined(DISABLE_SIZE)
-# Avoid -S for 4.7 and earlier since it causes fetch errors
+.if !defined(DISABLE_SIZE)
 FETCH_BEFORE_ARGS+=	$${CKSIZE:+-S $$CKSIZE}
 .endif
 .else
@@ -2156,11 +2079,7 @@ FETCH_REGET?=	0
 .if exists(/usr/games/random)
 RANDOM_CMD?=	/usr/games/random
 RANDOM_ARGS?=	"-w -f -"
-.if ( ${OSVERSION} > 480000 && ${OSVERSION} < 500000 ) || ${OSVERSION} > 500100
 _RANDOMIZE_SITES=	" |${RANDOM_CMD} ${RANDOM_ARGS}"
-.else
-_RANDOMIZE_SITES=	''
-.endif
 .endif
 .endif
 
@@ -2348,11 +2267,7 @@ PKG_ARGS+=		-C "${CONFLICTS}"
 .if defined(PKG_NOCOMPRESS)
 PKG_SUFX?=		.tar
 .else
-.if ${OSVERSION} >= 500039
 PKG_SUFX?=		.tbz
-.else
-PKG_SUFX?=		.tgz
-.endif
 .endif
 # where pkg_add records its dirty deeds.
 PKG_DBDIR?=		${DESTDIR}/var/db/pkg
@@ -2361,25 +2276,6 @@ MOTIFLIB?=	-L${X11BASE}/lib -lXm -lXp
 
 ALL_TARGET?=		all
 INSTALL_TARGET?=	install
-
-# This is a mid-term solution patch while pkg-comment files are
-# phased out.
-# The final simpler patch will come afterwards
-.if !defined(COMMENT)
-check-makevars::
-		@${ECHO_CMD} 'Makefile error: there is no COMMENT variable defined'
-		@${ECHO_CMD} 'for this port. Please, rectify this.'
-		@${FALSE}
-.else
-.if exists(${COMMENTFILE})
-check-makevars::
-		@${ECHO_CMD} 'Makefile error: There is a COMMENTFILE in this port.'
-		@${ECHO_CMD} 'COMMENTFILEs have been deprecated in'
-		@${ECHO_CMD} 'favor of COMMENT variables.'
-		@${ECHO_CMD} 'Please, rectify this.'
-		@${FALSE}
-.endif
-.endif
 
 # Popular master sites
 .include "bsd.sites.mk"
@@ -3609,10 +3505,6 @@ do-configure:
 .if !defined(PERL_MODBUILD)
 	@cd ${CONFIGURE_WRKSRC} && \
 		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
-.if ${PERL_LEVEL} <= 500503
-	@cd ${CONFIGURE_WRKSRC} && \
-		${PERL5} -pi -e 's/^(INSTALLSITELIB|INSTALLSITEARCH|SITELIBEXP|SITEARCHEXP|INSTALLMAN1DIR|INSTALLMAN3DIR) = \/usr\/local/$$1 = \$$(PREFIX)/' Makefile
-.endif
 .endif
 .endif
 .if defined(USE_IMAKE)

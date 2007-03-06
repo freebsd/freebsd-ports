@@ -31,7 +31,11 @@
 # Don't specify any WANT_PHP_* knob if your port will work with every PHP SAPI.
 #
 
+.if !defined(_PHPMKINCLUDED)
+
 PHP_Include_MAINTAINER=	ale@FreeBSD.org
+
+_PHPMKINCLUDED=	yes
 
 .if exists(${LOCALBASE}/etc/php.conf)
 .include "${LOCALBASE}/etc/php.conf"
@@ -224,8 +228,10 @@ php-ini:
 	@${ECHO_CMD} "****************************************************************************"
 .endif
 
+.endif
+
 # Extensions
-.if ${USE_PHP:L} != "yes"
+.if defined(_POSTMKINCLUDED) && ${USE_PHP:L} != "yes"
 # non-version specific components
 _USE_PHP_ALL=	bcmath bz2 calendar ctype curl dba dbase \
 		exif fileinfo fribidi ftp gd gettext gmp \

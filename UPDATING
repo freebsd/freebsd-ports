@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070205:
+  AFFECTS: all users of FreeBSD 4.X
+  AUTHOR: portmgr@FreeBSD.org
+
+  The remnants of FreeBSD 4.X support have been removed from bsd.port.mk.
+  Any remaining users should _not_ get this or any subsequent updates.
+
 20070301:
   AFFECTS: users of ports-mgmt/portupgrade*
   AUTHOR: sem@FreeBSD.org
