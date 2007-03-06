@@ -1,13 +1,16 @@
 bin/kluje
+share/applnk/Utilities/kluje.desktop
 share/apps/kluje/klujeui.rc
-share/applnk/Internet/kluje.desktop
-share/icons/locolor/32x32/apps/kluje.png
-share/icons/hicolor/32x32/apps/kluje.png
-share/icons/locolor/16x16/apps/kluje.png
+share/doc/kde/HTML/en/kluje/common
+share/doc/kde/HTML/en/kluje/index.cache.bz2
+share/doc/kde/HTML/en/kluje/index.docbook
 share/icons/hicolor/16x16/apps/kluje.png
 share/icons/hicolor/16x16/apps/kluje_blink.png
-share/doc/HTML/en/kluje/index.docbook
-share/doc/HTML/en/kluje/index.cache.bz2
-share/doc/HTML/en/kluje/common
-@dirrm share/apps/kluje
-@dirrm share/doc/HTML/en/kluje
+share/icons/hicolor/32x32/apps/kluje.png
+share/icons/locolor/16x16/apps/kluje.png
+share/icons/locolor/32x32/apps/kluje.png
+@dirrm share/doc/kde/HTML/en/kluje
+@dirrmtry share/doc/kde/HTML/en
+@dirrmtry share/doc/kde/HTML
+@dirrmtry share/doc/kde
+@dirrmtry share/apps/kluje
