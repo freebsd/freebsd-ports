@@ -6,24 +6,28 @@
 #
 
 PORTNAME=	HTML_Template_IT
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	PEAR template API
+MAINTAINER=	chinsan@FreeBSD.org
+COMMENT=	PEAR Integrated template API
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	HTML/Template
 FILES=		IT.php ITX.php IT_Error.php
-EXAMPLES=	sample_it.php templates/main.tpl.htm
-TESTS=		templates/addblock.html templates/blockiteration.html \
-		templates/blocks.html templates/globals.html templates/__include.html \
+EXAMPLES=	sample_it.php sample_itx_addblockfile.php \
+		templates/addblockfile_list.tpl.htm \
+		templates/addblockfile_main.tpl.htm \
+		templates/main.tpl.htm
+TESTS=		Console_TestListener.php ITX_api_testcase.php \
+		ITX_usage_testcase.php IT_api_testcase.php \
+		IT_usage_testcase.php templates/__include.html \
+		templates/addblock.html templates/blockiteration.html \
+		templates/blocks.html templates/globals.html \
 		templates/include.html templates/loadtemplatefile.html \
-		templates/replaceblock.html Console_TestListener.php IT_api_testcase.php \
-		IT_usage_testcase.php ITX_api_testcase.php ITX_usage_testcase.php test.php
+		templates/replaceblock.html test.php
 
 do-install-tests-msg: .USE
 	@${ECHO_MSG} "     (These tests require PHPUnit - see"
