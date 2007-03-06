@@ -198,7 +198,9 @@ MODULES:=${MODULES}:mod_quotatab_sql
 .endif
 
 .if defined(WITH_CODECONV)
+USE_ICONV=	YES
 MODULES:=${MODULES}:mod_codeconv
+INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 PROFTPD_LIBS+=	-liconv -L${LOCALBASE}/lib
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mod-codeconv
 .endif
