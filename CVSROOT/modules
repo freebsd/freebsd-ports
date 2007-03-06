@@ -6989,6 +6989,7 @@ managepkg	ports/ports-mgmt/managepkg
 manck		ports/sysutils/manck
 mandvd		ports/multimedia/mandvd
 manedit		ports/editors/manedit
+manencode	ports/multimedia/manencode
 mangband	ports/games/mangband
 mango		ports/misc/mango
 manipulate_data	ports/security/manipulate_data
