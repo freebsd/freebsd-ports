@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+bin/facter
+%%RUBY_SITELIBDIR%%/facter.rb
+%%RUBY_SITELIBDIR%%/facter/processor.rb
+%%RUBY_SITELIBDIR%%/facter/memory.rb
+@dirrmtry %%RUBY_SITELIBDIR%%/facter
