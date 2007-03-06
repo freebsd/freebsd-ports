@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Mar  2 14:08:50 2007
++++ Makefile.in	Fri Mar  2 14:08:43 2007
+@@ -16,7 +16,7 @@
+ 
+ TESTEXE=ex-test
+ BASEOBJS=userlist.o thread.o results.o address.o tcp.o cmd5.o mutex.o logit.o expand.o @extra_objs@
+-LFLAGS=-lstdc++ @extra_ldflags@
++LFLAGS=$(LDFLAGS) -lstdc++ @extra_ldflags@
+ 
+ 
+ ALLOBJS=$(BASEOBJS) smtp.o client.o basictcp.o bhmusers.o smtpserver.o
