@@ -48,91 +48,6 @@ share/pixmaps/tmw.png
 %%DATADIR%%/data/graphics/images/ambient/night.png
 %%DATADIR%%/data/graphics/images/ambient/sandstorm.png
 %%DATADIR%%/data/graphics/images/ambient/spotlight.png
-%%DATADIR%%/data/graphics/sprites/chest-cotton-male.xml
-%%DATADIR%%/data/graphics/sprites/chest-cotton-male.png
-%%DATADIR%%/data/graphics/sprites/chest-cotton-female.xml
-%%DATADIR%%/data/graphics/sprites/chest-cotton-female.png
-%%DATADIR%%/data/graphics/sprites/chest-leather-male.png
-%%DATADIR%%/data/graphics/sprites/chest-leather-male.xml
-%%DATADIR%%/data/graphics/sprites/chest-leather-female.png
-%%DATADIR%%/data/graphics/sprites/chest-leather-female.xml
-%%DATADIR%%/data/graphics/sprites/chest-tnecksweater-male.png
-%%DATADIR%%/data/graphics/sprites/chest-tnecksweater-male.xml
-%%DATADIR%%/data/graphics/sprites/chest-tnecksweater-female.png
-%%DATADIR%%/data/graphics/sprites/chest-tnecksweater-female.xml
-%%DATADIR%%/data/graphics/sprites/chest-vnecksweater-male.png
-%%DATADIR%%/data/graphics/sprites/chest-vnecksweater-male.xml
-%%DATADIR%%/data/graphics/sprites/chest-vnecksweater-female.png
-%%DATADIR%%/data/graphics/sprites/chest-vnecksweater-female.xml
-%%DATADIR%%/data/graphics/sprites/emotions.png
-%%DATADIR%%/data/graphics/sprites/error.xml
-%%DATADIR%%/data/graphics/sprites/hairstyle1.png
-%%DATADIR%%/data/graphics/sprites/hairstyle1.xml
-%%DATADIR%%/data/graphics/sprites/hairstyle2.png
-%%DATADIR%%/data/graphics/sprites/hairstyle2.xml
-%%DATADIR%%/data/graphics/sprites/hairstyle3.png
-%%DATADIR%%/data/graphics/sprites/hairstyle3.xml
-%%DATADIR%%/data/graphics/sprites/hairstyle4.png
-%%DATADIR%%/data/graphics/sprites/hairstyle4.xml
-%%DATADIR%%/data/graphics/sprites/hairstyle5.png
-%%DATADIR%%/data/graphics/sprites/hairstyle5.xml
-%%DATADIR%%/data/graphics/sprites/hairstyle6.png
-%%DATADIR%%/data/graphics/sprites/hairstyle6.xml
-%%DATADIR%%/data/graphics/sprites/hairstyle7.png
-%%DATADIR%%/data/graphics/sprites/hairstyle7.xml
-%%DATADIR%%/data/graphics/sprites/head-antlerhat.png
-%%DATADIR%%/data/graphics/sprites/head-antlerhat.xml
-%%DATADIR%%/data/graphics/sprites/head-christmastree.xml
-%%DATADIR%%/data/graphics/sprites/head-christmastreehat.png
-%%DATADIR%%/data/graphics/sprites/head-rangerhat.png
-%%DATADIR%%/data/graphics/sprites/head-rangerhat.xml
-%%DATADIR%%/data/graphics/sprites/head-santabeardhat.png
-%%DATADIR%%/data/graphics/sprites/head-santabeardhat.xml
-%%DATADIR%%/data/graphics/sprites/item002.png
-%%DATADIR%%/data/graphics/sprites/item002.xml
-%%DATADIR%%/data/graphics/sprites/item004.png
-%%DATADIR%%/data/graphics/sprites/item004.xml
-%%DATADIR%%/data/graphics/sprites/item005.png
-%%DATADIR%%/data/graphics/sprites/item005.xml
-%%DATADIR%%/data/graphics/sprites/item006.png
-%%DATADIR%%/data/graphics/sprites/item006.xml
-%%DATADIR%%/data/graphics/sprites/item007.png
-%%DATADIR%%/data/graphics/sprites/item007.xml
-%%DATADIR%%/data/graphics/sprites/item008.png
-%%DATADIR%%/data/graphics/sprites/item008.xml
-%%DATADIR%%/data/graphics/sprites/item009.png
-%%DATADIR%%/data/graphics/sprites/item009.xml
-%%DATADIR%%/data/graphics/sprites/item010.png
-%%DATADIR%%/data/graphics/sprites/item010.xml
-%%DATADIR%%/data/graphics/sprites/item011.png
-%%DATADIR%%/data/graphics/sprites/item011.xml
-%%DATADIR%%/data/graphics/sprites/item012.png
-%%DATADIR%%/data/graphics/sprites/item012.xml
-%%DATADIR%%/data/graphics/sprites/item013.png
-%%DATADIR%%/data/graphics/sprites/item013.xml
-%%DATADIR%%/data/graphics/sprites/item014.png
-%%DATADIR%%/data/graphics/sprites/item014.xml
-%%DATADIR%%/data/graphics/sprites/item015.png
-%%DATADIR%%/data/graphics/sprites/item015.xml
-%%DATADIR%%/data/graphics/sprites/item016.png
-%%DATADIR%%/data/graphics/sprites/item016.xml
-%%DATADIR%%/data/graphics/sprites/item017.png
-%%DATADIR%%/data/graphics/sprites/item017.xml
-%%DATADIR%%/data/graphics/sprites/item018.png
-%%DATADIR%%/data/graphics/sprites/item018.xml
-%%DATADIR%%/data/graphics/sprites/npcs.png
-%%DATADIR%%/data/graphics/sprites/npc.xml
-%%DATADIR%%/data/graphics/sprites/player_female_base.png
-%%DATADIR%%/data/graphics/sprites/player_female_base.xml
-%%DATADIR%%/data/graphics/sprites/player_male_base.xml
-%%DATADIR%%/data/graphics/sprites/player_male_base.png
-%%DATADIR%%/data/graphics/sprites/weapon0.png
-%%DATADIR%%/data/graphics/sprites/weapon1.png
-%%DATADIR%%/data/graphics/sprites/weapon2.png
-%%DATADIR%%/data/graphics/sprites/weapon-bow.xml
-%%DATADIR%%/data/graphics/sprites/weapon-fist.xml
-%%DATADIR%%/data/graphics/sprites/weapon-dagger.xml
-%%DATADIR%%/data/graphics/sprites/weapon-scythe.xml
 %%DATADIR%%/data/graphics/tiles/Woodland_ground.png
 %%DATADIR%%/data/graphics/tiles/Woodland_village.png
 %%DATADIR%%/data/graphics/tiles/Woodland_village_x2.png
@@ -164,10 +79,16 @@ share/pixmaps/tmw.png
 %%DATADIR%%/data/icons/tmw-icon.ico
 %%DATADIR%%/data/icons/tmw-icon.png
 %%DATADIR%%/data/icons/tmw-icon.xpm
+%%MUSICADDON%%%%DATADIR%%/data/music/Faith.ogg
+%%MUSICADDON%%%%DATADIR%%/data/music/Magick - Casino.ogg
+%%MUSICADDON%%%%DATADIR%%/data/music/Magick - Real.ogg
+%%MUSICADDON%%%%DATADIR%%/data/music/Magick - Small grass.ogg
+%%MUSICADDON%%%%DATADIR%%/data/music/Magick - Snow.ogg
+%%MUSICADDON%%%%DATADIR%%/data/music/finalman_and_yakslem-cavesong.ogg
+%%MUSICADDON%%@dirrm %%DATADIR%%/data/music
 @dirrm %%DATADIR%%/data/icons
 @dirrm %%DATADIR%%/data/help
 @dirrm %%DATADIR%%/data/graphics/tiles
-@dirrm %%DATADIR%%/data/graphics/sprites
 @dirrm %%DATADIR%%/data/graphics/images/ambient
 @dirrm %%DATADIR%%/data/graphics/images
 @dirrm %%DATADIR%%/data/graphics/gui

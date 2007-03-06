@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	tmw
-PORTVERSION=	0.0.22.1
+PORTVERSION=	0.0.22.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	themanaworld
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	mva@sysfault.org
 COMMENT=	A free open source 2D MMORPG in development
@@ -31,9 +32,28 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `${SDL_CONFIG} --cflags` -I${X11
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
+OPTIONS=	MUSIC	"Install additional music" On
+
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_MUSIC)
+MUSICNAME=	tmwmusic-0.0.20
+MUSICSUBDIR=	data/music
+DISTFILES+=	${MUSICNAME}.tar.gz
+MUSICDIR=	${WRKDIR}/${MUSICNAME}/${MUSICSUBDIR}
+PLIST_SUB+=	MUSICADDON=""
+.else
+PLIST_SUB+=	MUSICADDON="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+
+post-install:
+.if !defined(WITHOUT_MUSIC)
+	${MKDIR} ${DATADIR}/data/music
+	${FIND} -E ${MUSICDIR} -type f -iregex ".*\.ogg" \
+		-exec ${INSTALL_DATA} "{}" "${DATADIR}/${MUSICSUBDIR}" \;
+.endif
 
 .include <bsd.port.post.mk>
