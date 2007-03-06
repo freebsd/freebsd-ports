@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	swftools
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.8.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.swftools.org/
 
