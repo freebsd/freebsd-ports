@@ -9,18 +9,15 @@ PORTNAME=	boost
 PORTVERSION=	1.33.1
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:boost_site,spirit_site/}
-MASTER_SITE_SUBDIR=boost/:boost_site
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:boost_site
-
-WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	barner@FreeBSD.org
 COMMENT=	Free peer-reviewed portable C++ source libraries
 
 USE_BZIP2=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/./_/g}
 
 MAKE_ENV+=	GCC="${CC} ${CFLAGS}"\
 		GXX="${CXX} ${CXXFLAGS}"\
@@ -34,23 +31,17 @@ OPTIONS=	VERBOSE_BUILD	"Show compiler messages"	off \
 		DEBUG		"Build debugging symbols"	off \
 		THREADS		"Thread support"		on  \
 		ICU		"Boost.Regex with ICU unicode support" off \
-		OPTIMIZED_CFLAGS "Enable -O3 optimization"	off \
-		GCC34		"Use GCC 3.4 (for FreeBSD 4.x only)" off
+		OPTIMIZED_CFLAGS "Enable -O3 optimization"	off
 
 UNIQ=		/usr/bin/uniq
 BOOST_LIBS=	date_time filesystem iostreams prg_exec_monitor\
 		program_options regex serialization signals\
-		test_exec_monitor unit_test_framework
+		test_exec_monitor unit_test_framework wserialization
 BOOST_SHARED_LIB_VER=	3
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
-
-# Check if our origin is devel/boost-gcc3 and stop for FreeBSD >= 5
-.if defined (BOOST_GCC3_PORT) && (${OSVERSION} >= 500000)
-IGNORE=		from devel/boost-gcc3 is intended for FreeBSD 4.x only. Please use devel/boost instead
-.endif
 
 .if !defined(WITH_PYTHON) && defined(WITH_PYSTE)
 WITH_PYTHON=	IMPLIED_BY_PYSTE
@@ -68,11 +59,7 @@ WITH_PYTHON=	IMPLIED_BY_PYSTE
 # (this implies -DWITH_PYTHON).
 #
 .if defined(WITH_PYTHON)
-.if !defined(BOOST_GCC3_PORT)
 PKGNAMESUFFIX=	-python
-.else
-PKGNAMESUFFIX=  -python-gcc3
-.endif
 PLIST_SUB+=	BOOST_PYTHON=""
 MAKE_ENV+=	PYTHON_ROOT="${LOCALBASE}"\
 		PYTHON_VERSION="${PYTHON_VERSION}"\
@@ -92,68 +79,7 @@ PLIST_SUB+=	BOOST_PYTHON="@comment "
 PLIST_SUB+=	BOOST_PYSTE="@comment "
 .endif
 
-SPIRIT_VERSION=	1.6.2
-
-# FreeBSD 4:
-# WITHOUT_GCC34:
-# - no wchar support
-# - needs stlport
-# - spirit 1.6.x
-# - don't build wave
-# - don't build libbgl-wiz (needs spirit 1.8)
-# WITH_GCC34:
-# - no wchar support
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${FILESDIR}/FBSD4-patch-boost_detail_utf8_codecvt_facet.hpp \
-		${FILESDIR}/FBSD4-patch-libs_serialization_src_stl_port.cpp \
-		${FILESDIR}/FBSD4-patch-libs::serialization::build::Jamfile \
-		${FILESDIR}/FBSD4-patch-boost_test_impl_test_tools.ipp \
-		${FILESDIR}/FBSD4-patch-boost_archive_detail_oserializer.hpp
-
-.if !defined(WITH_GCC34)
-USE_ZIP=	yes
-DISTFILES+=	spirit-only-${SPIRIT_VERSION}.zip:spirit_site
-MASTER_SITE_SUBDIR+=spirit/:spirit_site
-BJAM_BUILD+=	<stlport-iostream>on
-BOOST_TOOLS=	gcc-stlport
-
-PLIST_SUB+=	BOOST_WCHAR="@comment "\
-		BOOST_SPIRIT_1.6=""\
-		BOOST_SPIRIT_1.8="@comment "\
-		BOOST_WAVE="@comment "
-
-BOOST_STL_OPTS=	"-sSTLPORT_INCLUDE_DIRECTORY=${LOCALBASE}/include/stlport"\
-		"-sSTLPORT_LIB_DIRECTORY=${LOCALBASE}/lib"
-
-RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-.else
-USE_GCC=3.4+
 BOOST_TOOLS=	gcc
-
-PLIST_SUB+=	BOOST_WCHAR="@comment "\
-		BOOST_SPIRIT_1.6="@comment "\
-		BOOST_SPIRIT_1.8=""\
-		BOOST_WAVE=""
-.endif
-
-BUILD_DEPENDS+=	${RUN_DEPENDS}
-
-# FreeBSD 5 and above
-# - wchar support
-# - spirit 1.8.x
-# - wave 1.2
-# - build libbgl-wiz
-.else
-BOOST_TOOLS=	gcc
-EXTRA_PATCHES=	${FILESDIR}/FBSD5-patch-boost::python::detail::config.hpp
-
-PLIST_SUB+=	BOOST_WCHAR=""\
-		BOOST_SPIRIT_1.6="@comment "\
-		BOOST_SPIRIT_1.8=""\
-		BOOST_WAVE=""
-
-BOOST_LIBS+=	wserialization
-.endif
 
 .if defined (WITH_VERBOSE_BUILD)
 BJAM_OPTIONS=	-d2
@@ -231,28 +157,6 @@ pre-everything::
 .endif
 .endif
 
-do-extract:
-	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR} && ${TAR} -xjpof ${DISTDIR}/${DISTNAME}.tar.bz2
-
-# boost 1.33.0's spirit 1.8.x cannot be built with GCC 2.95.4,
-# so we use spirit 1.6.x
-.if ${OSVERSION} < 500000 && !defined(WITH_GCC34)
-	@cd ${WRKDIR} && ${UNZIP_CMD} ${DISTDIR}/spirit-only-${SPIRIT_VERSION}.zip > /dev/null
-
-# remove CRLF
-	@${FIND} ${WRKDIR}/spirit_${SPIRIT_VERSION:S/./_/g} -type f -exec \
-		${REINPLACE_CMD} -i '' -e "s|"`printf '\015'`"||g" {} \;
-
-# replace spirit v1.8 with v1.6
-	@${RM} -rf ${WRKSRC}/boost/spirit* ${WRKSRC}/libs/spirit
-	@${MV} ${WRKDIR}/spirit_${SPIRIT_VERSION:S/./_/g}/boost/* ${WRKSRC}/boost
-	@${MV} ${WRKDIR}/spirit_${SPIRIT_VERSION:S/./_/g}/libs/spirit ${WRKSRC}/libs
-
-# remove wave
-	@${RM} -rf ${WRKSRC}/boost/wave* ${WRKSRC}/libs/wave
-.endif
-
 post-patch:
 # If necessary, remove Boost.Python
 .if !defined(WITH_PYTHON)
@@ -285,13 +189,11 @@ do-build:
 		"-sTOOLS=${BOOST_TOOLS}" "-sBUILD=${BJAM_BUILD}"\
 		${BOOST_STL_OPTS} ${BOOST_ICU_OPTS}
 
-.if ${OSVERSION} >= 500000 || defined(WITH_GCC34)
 # build bgl-viz library
 	cd ${WRKSRC}/libs/graph/build && \
 		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_OPTIONS} --prefix=${PREFIX}\
-                "-sTOOLS=${BOOST_TOOLS}" "-sBUILD=${BJAM_BUILD}"\
-                ${BOOST_STL_OPTS} ${BOOST_ICU_OPTS}
-.endif
+		"-sTOOLS=${BOOST_TOOLS}" "-sBUILD=${BJAM_BUILD}"\
+		${BOOST_STL_OPTS} ${BOOST_ICU_OPTS}
 
 # build random device code
 	cd ${WRKSRC}/libs/random && \
@@ -369,11 +271,6 @@ do-install:
 # display pkg-message
 post-install:
 	@${TOUCH} ${PKGMESSAGE}
-
-.if ${OSVERSION} < 500000 && !defined(WITH_GCC34)
-	@${CAT} ${.CURDIR}/../boost/pkg-message.stlport >> ${PKGMESSAGE}
-	@${ECHO_CMD} >> ${PKGMESSAGE}
-.endif
 
 .if defined (WITH_THREADS)
 	@${CAT} ${.CURDIR}/../boost/pkg-message.threads >> ${PKGMESSAGE}
