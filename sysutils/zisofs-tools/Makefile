@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zisofs-tools
-PORTVERSION=	1.0.6
-PORTREVISION=	0
+PORTVERSION=	1.0.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.kernel.org/pub/linux/utils/fs/zisofs/
 
