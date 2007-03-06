@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	postal
-PORTVERSION=	0.65
+PORTVERSION=	0.66
 CATEGORIES=	benchmarks mail
 MASTER_SITES=	http://www.coker.com.au/postal/
 EXTRACT_SUFX=	.tgz
@@ -24,9 +24,11 @@ PLIST_FILES=	sbin/bhm sbin/postal bin/postal-list sbin/rabid
 MAN1=	postal-list.1
 MAN8=	bhm.8 postal.8 rabid.8
 
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
+.include <bsd.port.pre.mk>
 
-post-patch:
-	@${REINPLACE_CMD} -e "s,-pthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man --disable-gnutls
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
