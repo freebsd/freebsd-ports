@@ -1,0 +1,32 @@
+bin/menhir
+%%OCAML_SITELIBDIR%%/menhir/standard.mly
+%%DOCSDIR%%/manual.pdf
+%%DOCSDIR%%/demos/Makefile
+%%DOCSDIR%%/demos/Makefile.auto
+%%DOCSDIR%%/demos/Makefile.shared
+%%DOCSDIR%%/demos/OMakefile.shared
+%%DOCSDIR%%/demos/calc/Makefile
+%%DOCSDIR%%/demos/calc/OMakefile
+%%DOCSDIR%%/demos/calc/OMakeroot
+%%DOCSDIR%%/demos/calc/README
+%%DOCSDIR%%/demos/calc/calc.ml
+%%DOCSDIR%%/demos/calc/lexer.mll
+%%DOCSDIR%%/demos/calc/parser.mly
+%%DOCSDIR%%/demos/calc-two/Makefile
+%%DOCSDIR%%/demos/calc-two/OMakefile
+%%DOCSDIR%%/demos/calc-two/OMakeroot
+%%DOCSDIR%%/demos/calc-two/README
+%%DOCSDIR%%/demos/calc-two/algebraic.mly
+%%DOCSDIR%%/demos/calc-two/calc.ml
+%%DOCSDIR%%/demos/calc-two/lexer.mll
+%%DOCSDIR%%/demos/calc-two/reverse.mly
+%%DOCSDIR%%/demos/calc-two/tokens.mly
+%%DOCSDIR%%/demos/ocamldep.wrapper
+@dirrm %%OCAML_SITELIBDIR%%/menhir
+@dirrm %%DOCSDIR%%/demos/calc
+@dirrm %%DOCSDIR%%/demos/calc-two
+@dirrm %%DOCSDIR%%/demos
+@dirrm %%DOCSDIR%%
+@dirrmtry share/doc/ocaml
+@dirrmtry lib/ocaml/site-lib
+@dirrmtry lib/ocaml
