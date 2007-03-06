@@ -2135,5 +2135,6 @@
     SUBDIR += ztcl
     SUBDIR += zthread
     SUBDIR += zziplib
+    SUBDIR += zzuf
 
 .include <bsd.port.subdir.mk>
