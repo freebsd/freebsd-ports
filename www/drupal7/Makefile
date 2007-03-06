@@ -31,9 +31,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MYSQL)
-# XXX: should be "USE_PHP+=mysql", but the depends are added too early
-# by bsd.php.mk
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/mysql.so:${PORTSDIR}/${mysql_DEPENDS}
+USE_PHP+=	mysql
 .endif
 .if defined(WITH_PGSQL)
 RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB

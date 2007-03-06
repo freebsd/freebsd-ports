@@ -87,9 +87,6 @@ IGNORE=		please choose database backend by running 'make config'
 USE_PHP+=	ldap
 .endif
 
-# Fix USE_PHP after bsd.port.pre.mk
-.include "${PORTSDIR}/Mk/bsd.php.mk"
-
 pre-install:
 	cd ${WRKSRC} && ${FIND} -s * -type f | \
 		${SED} -e 's|^|${WCDIR}/|' > ${PLIST} \

@@ -18,6 +18,7 @@ COMMENT=	Bacula-web provides a summarized output of Bacula jobs
 RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 
 NO_BUILD=	yes
+USE_PHP=	yes
 WANT_PHP_WEB=	yes
 
 OPTIONS=	POSTGRESQL "Use PostgreSQL database instead of MySQL" on
@@ -30,15 +31,13 @@ SUB_FILES=	pkg-message
 USE_PGSQL=		yes
 CONFIGURE_ARGS+=	--with-postgresql=yes
 SUB_LIST+=		REQ_PGSQL=postgresql
-USE_PHP=		pgsql
+USE_PHP+=		pgsql
 .else
 CONFIGURE_ARGS+=	--with-mysql=yes
 USE_MYSQL=		yes
 SUB_LIST+=		REQ_MYSQL=mysql
-USE_PHP=		mysql
+USE_PHP+=		mysql
 .endif
-
-.include "${PORTSDIR}/Mk/bsd.php.mk"
 
 do-install:
 	@${ECHO} "Installing in ${PREFIX}/www/bacula-web"

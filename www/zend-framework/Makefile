@@ -17,6 +17,7 @@ COMMENT=	A framework for developing PHP web applications
 NO_BUILD=	yes
 USE_PHP=	pcre
 WANT_PHP_WEB=	yes
+IGNORE_WITH_PHP=4
 
 USE_GETTEXT=	yes
 
@@ -33,9 +34,6 @@ OPTIONS=	MYSQL "Install MySQL PDO support" Off \
 		SQLITE "Install SQLite v3 PDO support" Off
 
 .include <bsd.port.pre.mk>
-
-DEFAULT_PHP_VER=5
-IGNORE_WITH_PHP=4
 
 DB_DEFINED=	no
 
@@ -70,12 +68,9 @@ DB_DEFINED=	yes
 .endif
 
 .if ${DB_DEFINED} == "yes"
-RUN_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/pdo.so:${PORTSDIR}/databases/php5-pdo \
-		${DB_DEPENDS}
+USE_PHP+=	pdo
+RUN_DEPENDS+=	${DB_DEPENDS}
 .endif
-
-# Fix USE_PHP after bsd.port.pre.mk
-.include "${PORTSDIR}/Mk/bsd.php.mk"
 
 do-install:
 	@${MKDIR} ${DATADIR}

@@ -42,9 +42,6 @@ USE_PHP+=	pgsql
 RUN_DEPENDS+=	${LOCALBASE}/share/fpdf/fpdf.php:${PORTSDIR}/print/fpdf
 .endif
 
-# we need this because we USE_PHP after bsd.port.pre.mk is included
-.include "${PORTSDIR}/Mk/bsd.php.mk"
-
 do-build:
 	@${REINPLACE_CMD} -e 's,DBlib_path = "",DBlib_path = "${ADODB_DIR}",' \
 		${WRKSRC}/base_conf.php.dist

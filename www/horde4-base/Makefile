@@ -235,8 +235,6 @@ USE_PHP+=	mcal
 . endif
 .endif
 
-.include "${PORTSDIR}/Mk/bsd.php.mk"
-
 .if ${APACHE_VERSION} >= 20
 APACHE_CNFDIR=	${LOCALBASE}/etc/apache${APACHE_VERSION:S/20/2/}
 HORDE_INC=	${APACHE_CNFDIR}/Includes

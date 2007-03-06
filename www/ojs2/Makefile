@@ -39,8 +39,6 @@ USE_PHP+=	mysql
 USE_PHP+=	pgsql
 .endif
 
-.include "${PORTSDIR}/Mk/bsd.php.mk"
-
 do-install:
 	@${INSTALL_DATA} -d ${PREFIX}/${OJSDIR}
 	@${CP} -Rn ${WRKSRC}/* ${PREFIX}/${OJSDIR}
