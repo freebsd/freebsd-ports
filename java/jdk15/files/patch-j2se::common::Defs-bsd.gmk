@@ -1,7 +1,7 @@
 $FreeBSD$
 
---- ../../j2se/make/common/Defs-bsd.gmk.orig	Sun Dec 10 11:49:52 2006
-+++ ../../j2se/make/common/Defs-bsd.gmk	Sun Dec 10 21:48:51 2006
+--- ../../j2se/make/common/Defs-bsd.gmk.orig	Sun Mar  4 21:27:49 2007
++++ ../../j2se/make/common/Defs-bsd.gmk	Sun Mar  4 21:29:16 2007
 @@ -180,7 +180,7 @@
  ifeq ($(TRUE_PLATFORM), NetBSD)
  DEVTOOLS_PATH = /usr/pkg/bin/
@@ -11,7 +11,7 @@ $FreeBSD$
  endif
  # Allow the user to override the default value...
  ifdef ALT_DEVTOOLS_PATH
-@@ -434,7 +434,7 @@
+@@ -432,7 +432,7 @@
  override LIBTHREAD               =
  override MOOT_PRIORITIES         = true
  override NO_INTERRUPTIBLE_IO     = false
@@ -20,3 +20,17 @@ $FreeBSD$
  override OPENWIN_LIB             = $(OPENWIN_HOME)/lib
  override OTHER_M4FLAGS           = -DGNU_ASSEMBLER
  override SUN_CMM_SUBDIR          =
+@@ -463,10 +463,10 @@
+ # Motif settings
+ #
+ # XXX: OpenBSD confirm static motif still causes issues - truk
+-ifeq ($(TRUE_PLATFORM), OpenBSD)
+-STATIC_MOTIF=false
+-else
++ifeq ($(TRUE_PLATFORM), NetBSD)
+ STATIC_MOTIF=true
++else
++STATIC_MOTIF=false
+ endif
+ LIBM=-lm
+ 
