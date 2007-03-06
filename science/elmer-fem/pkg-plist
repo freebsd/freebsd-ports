@@ -4,6 +4,7 @@ bin/GebhardtFactors
 bin/ViewFactors
 bin/elmerf90
 lib/libelmersolver.so
+include/binio.mod
 %%DATADIR%%/include/adaptive.mod
 %%DATADIR%%/include/bandmatrix.mod
 %%DATADIR%%/include/bandwidthoptimize.mod
@@ -56,6 +57,10 @@ lib/libelmersolver.so
 %%DATADIR%%/include/timeintegrate.mod
 %%DATADIR%%/include/types.mod
 %%DATADIR%%/include/viewfactorglobals.mod
+%%DATADIR%%/include/dxfile.mod
+%%DATADIR%%/include/exchangecorrelations.mod
+%%DATADIR%%/include/harmonicsolve.mod
+%%DATADIR%%/include/vtklegacyfile.mod
 %%DATADIR%%/lib/AdvectionDiffusion.so
 %%DATADIR%%/lib/ArteryOutlet.so
 %%DATADIR%%/lib/ArtificialCompressibility.so
@@ -95,6 +100,11 @@ lib/libelmersolver.so
 %%DATADIR%%/lib/TransportEquation.so
 %%DATADIR%%/lib/elements.def
 %%DATADIR%%/lib/libelmersolver.so
+%%DATADIR%%/lib/DFTSolver.so
+%%DATADIR%%/lib/FlowSolve.so
+%%DATADIR%%/lib/HeatSolve.so
+%%DATADIR%%/lib/MeshSolve.so
+%%DATADIR%%/lib/ShellSolve.so
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/include
 @dirrm %%DATADIR%%
