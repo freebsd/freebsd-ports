@@ -1,0 +1,13 @@
+=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Threading issues may cause the daemon to crash unexpectedly.
+A fix is to add the following lines to /etc/libmap.conf (which may not exist):
+
+[%%PREFIX%%/bin/pinot]
+libpthread.so.2         libc_r.so.6
+libpthread.so           libc_r.so
+[%%PREFIX%%/bin/pinot-dbus-daemon]
+libpthread.so.2         libc_r.so.6
+libpthread.so           libc_r.so
+
+Refer to the libmap.conf(5) man page for details.
+=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-

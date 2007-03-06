@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pinot
-PORTVERSION=	0.65
+PORTVERSION=	0.70
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 #		http://www.chez.com/colinf/pinot/	\
@@ -27,6 +27,7 @@ LIB_DEPENDS=	xapian.13:${PORTSDIR}/databases/xapian-core	\
 		curl.4:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info	\
 		antiword:${PORTSDIR}/textproc/antiword			\
+		xdg-open:${PORTSDIR}/devel/xdg-utils			\
 		pdftotext:${PORTSDIR}/graphics/xpdf			\
 		unzip:${PORTSDIR}/archivers/unzip			\
 		unrtf:${PORTSDIR}/textproc/unrtf
@@ -45,8 +46,16 @@ USE_GETTEXT=	yes
 USE_XLIB=	yes
 USE_SQLITE=	3
 USE_PYTHON=	yes
+USE_LDCONFIG=	${PREFIX}/lib/pinot/filters
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug=yes
+.endif
 
 INSTALLS_ICONS=	yes
+
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN1=		pinot-collect.1 pinot-dbus-daemon.1 pinot-index.1	\
 		pinot-search.1 pinot.1
@@ -75,5 +84,8 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
+	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
