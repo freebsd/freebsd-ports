@@ -1,5 +1,5 @@
---- /work/a/ports/misc/tpp/work/tpp-1.3/Makefile.orig	Tue Nov 15 06:41:52 2005
-+++ /work/a/ports/misc/tpp/work/tpp-1.3/Makefile	Tue Nov 15 06:42:17 2005
+--- Makefile.orig	Tue Nov 15 06:41:52 2005
++++ Makefile	Tue Nov 15 06:42:17 2005
 @@ -6,7 +6,7 @@
  prefix=/usr/local
  INSPATH= $(prefix)/bin/

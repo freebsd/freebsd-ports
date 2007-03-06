@@ -9,7 +9,7 @@ PORTVERSION=	1.3
 CATEGORIES=	misc
 MASTER_SITES=	http://synflood.at/tpp/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gogo@cs.uni-sb.de
 COMMENT=	Text presentation program
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/ncurses.rb:${PORTSDIR}/devel/ruby-ncurses \
