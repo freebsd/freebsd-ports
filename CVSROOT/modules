@@ -12291,6 +12291,7 @@ pugs		ports/lang/pugs
 pulseaudio	ports/audio/pulseaudio
 punbb		ports/www/punbb
 pup		ports/print/pup
+puppet		ports/sysutils/puppet
 pure-emacs20	ports/irc/pure-emacs20
 pure-emacs21	ports/irc/pure-emacs21
 pure-ftpd	ports/ftp/pure-ftpd
