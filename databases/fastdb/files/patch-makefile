@@ -1,22 +1,17 @@
---- makefile.orig	Tue Jul 11 12:39:16 2006
-+++ makefile	Tue Jul 11 12:45:31 2006
-@@ -33,11 +33,11 @@
+--- makefile.orig	Sat Oct 21 20:41:50 2006
++++ makefile	Tue Mar  6 09:00:42 2007
+@@ -32,8 +32,8 @@
+ THRLIBS=
  SUFF=
  else
- ifneq (,$(findstring FreeBSD,$(OSTYPE)))
 -TFLAGS=-pthread
--THRLIBS=
+-THRLIBS=-pthread
 +TFLAGS=-D_REENTRANT ${PTHREAD_CFLAGS}
 +THRLIBS=${PTHREAD_LIBS}
- else 
--TFLAGS=-D_REENTRANT -D_THREAD_SAFE
--THRLIBS=-lpthread
-+TFLAGS=-D_REENTRANT ${PTHREAD_CFLAGS}
-+THRLIBS=${PTHREAD_LIBS}
- endif
  SUFF=_r
  endif
-@@ -67,21 +67,22 @@
+ 
+@@ -62,21 +62,22 @@
  
  WEB_EXAMPLES = cgistub bugdb clidb
  
@@ -43,7 +38,7 @@
  
  AR = ar
  ARFLAGS = -cru
-@@ -367,24 +368,20 @@
+@@ -386,24 +387,20 @@
  
  install: subsql cleanupsem installlib
  	mkdir -p $(BINSPATH)
