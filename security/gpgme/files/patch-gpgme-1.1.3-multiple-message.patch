@@ -1,0 +1,65 @@
+Index: gpgme/verify.c
+===================================================================
+--- gpgme/verify.c	(revision 1208)
++++ gpgme/verify.c	(working copy)
+@@ -40,6 +40,7 @@
+   gpgme_signature_t current_sig;
+   int did_prepare_new_sig;
+   int only_newsig_seen;
++  int plaintext_seen;
+ } *op_data_t;
+ 
+ 
+@@ -549,8 +550,11 @@
+ }
+ 
+ 
++/* Parse an error status line and if SET_STATUS is true update the
++   result status as appropriate.  With SET_STATUS being false, only
++   check for an error.  */
+ static gpgme_error_t
+-parse_error (gpgme_signature_t sig, char *args)
++parse_error (gpgme_signature_t sig, char *args, int set_status)
+ {
+   gpgme_error_t err;
+   char *where = strchr (args, ' ');
+@@ -572,7 +576,16 @@
+ 
+   err = _gpgme_map_gnupg_error (which);
+ 
+-  if (!strcmp (where, "verify.findkey"))
++  if (!strcmp (where, "proc_pkt.plaintext")
++      && gpg_err_code (err) == GPG_ERR_BAD_DATA)
++    {
++      /* This indicates a double plaintext.  The only solid way to
++         handle this is by failing the oepration.  */
++      return gpg_error (GPG_ERR_BAD_DATA);
++    }
++  else if (!set_status)
++    ;
++  else if (!strcmp (where, "verify.findkey"))
+     sig->status = err;
+   else if (!strcmp (where, "verify.keyusage")
+ 	   && gpg_err_code (err) == GPG_ERR_WRONG_KEY_USAGE)
+@@ -670,9 +683,9 @@
+ 
+     case GPGME_STATUS_ERROR:
+       opd->only_newsig_seen = 0;
+-      /* The error status is informational, so we don't return an
+-         error code if we are not ready to process this status. */
+-      return sig ? parse_error (sig, args) : 0;
++      /* Some  error stati are informational, so we don't return an
++         error code if we are not ready to process this status.  */
++      return parse_error (sig, args, !!sig );
+ 
+     case GPGME_STATUS_EOF:
+       if (sig && !opd->did_prepare_new_sig)
+@@ -703,6 +716,8 @@
+       break;
+ 
+     case GPGME_STATUS_PLAINTEXT:
++      if (++opd->plaintext_seen > 1)
++        return gpg_error (GPG_ERR_BAD_DATA);
+       err = _gpgme_parse_plaintext (args, &opd->result.file_name);
+       if (err)
+ 	return err;
