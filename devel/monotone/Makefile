@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	monotone
-PORTVERSION=	0.32
+PORTVERSION=	0.33
 CATEGORIES=	devel
-MASTER_SITES=	http://www.venge.net/monotone/downloads/
+MASTER_SITES=	http://monotone.ca/downloads/${PORTVERSION}/
 
 MAINTAINER=	lapo@lapo.it
 COMMENT=	A distributed version control system with digital signatures
@@ -29,7 +29,6 @@ PLIST_FILES=	bin/mtn share/zsh/site-functions/_mtn \
 		"@unexec [ -f %D/bin/zsh ] || rmdir %D/share/zsh/site-functions 2>/dev/null || true" \
 		"@dirrmtry share/zsh"
 INFO=		monotone
-MAN1=		mtn.1
 PORTDOCS=	NEWS UPGRADE monotone.html
 
 .include <bsd.port.pre.mk>
