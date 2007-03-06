@@ -68,6 +68,7 @@
     SUBDIR += cam
     SUBDIR += cantus
     SUBDIR += cantus_3
+    SUBDIR += caps-plugins
     SUBDIR += ccaudio
     SUBDIR += cd-console
     SUBDIR += cd-discid
