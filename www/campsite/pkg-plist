@@ -45,6 +45,9 @@ campsite/instance/database/upgrade/2.6.1/upgrade_phorum_users.php
 campsite/instance/database/upgrade/2.6.2/data-required.sql
 campsite/instance/database/upgrade/2.6.2/upgrade_phorum_users.php
 campsite/instance/database/upgrade/2.6.3/data-required.sql
+campsite/instance/database/upgrade/2.6.4/data-required.sql
+campsite/instance/database/upgrade/2.6.4/sync_phorum_users.php
+campsite/instance/database/upgrade/2.6.4/upgrade_user_perms.php
 campsite/sbin/campsite_autopublish
 campsite/sbin/campsite_autopublish.php
 campsite/sbin/campsite_config
@@ -182,6 +185,7 @@ campsite/www-common/html/css/search_order_direction_up.png
 campsite/www-common/html/css/sign_big.gif
 campsite/www-common/html/css/sign_big3.gif
 campsite/www-common/html/css/submit.png
+campsite/www-common/html/css/sync_users.png
 campsite/www-common/html/css/templates.png
 campsite/www-common/html/css/tol.gif
 campsite/www-common/html/css/topics.png
@@ -2476,6 +2480,7 @@ campsite/www-common/html/priv/users/subscriptions/sections/do_change.php
 campsite/www-common/html/priv/users/subscriptions/sections/do_del.php
 campsite/www-common/html/priv/users/subscriptions/sections/index.php
 campsite/www-common/html/priv/users/subscriptions/topay.php
+campsite/www-common/html/priv/users/sync_phorum_users.php
 campsite/www-common/html/priv/users/users_common.php
 @dirrm campsite/www-common/html/priv/users/subscriptions/sections
 @dirrm campsite/www-common/html/priv/users/subscriptions
@@ -2789,6 +2794,7 @@ campsite/www-common/html/priv/users/users_common.php
 @dirrm campsite/www-common
 @dirrm campsite/www
 @dirrm campsite/sbin
+@dirrm campsite/instance/database/upgrade/2.6.4
 @dirrm campsite/instance/database/upgrade/2.6.3
 @dirrm campsite/instance/database/upgrade/2.6.2
 @dirrm campsite/instance/database/upgrade/2.6.1
