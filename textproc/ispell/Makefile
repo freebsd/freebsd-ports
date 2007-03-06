@@ -7,7 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.2.06
-PORTREVISION?=	16
+PORTREVISION?=	17
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/ \
 		http://distfiles.opendarwin.org/
@@ -37,7 +37,7 @@ MUNCHLIST=	${WRKSRC}/munchlist
 DATADIR=	${PREFIX}/share/ispell
 ISPELL=		${WRKSRC}/ispell
 
-.if (!defined(ISPELL_IT) && !defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DA) && !defined(ISPELL_AF) && !defined(ISPELL_FI) && !defined(ISPELL_PL) && !defined(ISPELL_BG) && !defined(ISPELL_SK))
+.if (!defined(ISPELL_IT) && !defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DA) && !defined(ISPELL_AF) && !defined(ISPELL_FI) && !defined(ISPELL_PL) && !defined(ISPELL_BG) && !defined(ISPELL_SK) && !defined(ISPELL_CS))
 pre-everything::
 	@${ECHO_MSG} '*********************************************************'
 	@${ECHO_MSG} '* You can add further dictionaries:                     *'
@@ -48,6 +48,7 @@ pre-everything::
 	@${ECHO_MSG} '*     ISPELL_INCLAMERICAN=yes to have both)             *'
 	@${ECHO_MSG} '*  - Brazilian Portuguese      ISPELL_BR=yes            *'
 	@${ECHO_MSG} '*  - Bulgarian                 ISPELL_BG=yes            *'
+	@${ECHO_MSG} '*  - Czech                     ISPELL_CS=yes            *'
 	@${ECHO_MSG} '*  - Dutch                     ISPELL_NL=yes            *'
 	@${ECHO_MSG} '*  - Danish                    ISPELL_DA=yes            *'
 	@${ECHO_MSG} '*  - Finnish                   ISPELL_FI=yes            *'
@@ -162,6 +163,12 @@ SKDISTFILE=	ispell-sk-0.3.2.tar.gz
 MASTER_SITES+=	http://sk-spell.sk.cx/files/:sk
 EXTRA_DICT+=	${SKDISTFILE}:sk
 EXTRACT_ONLY+=	${SKDISTFILE}
+.endif
+.if defined(ISPELL_CS)
+CSDISTFILE=	ispell-czech-20040229.tar.gz
+MASTER_SITES+=	ftp://ftp.vslib.cz/pub/unix/ispell/:cs
+EXTRA_DICT+=	${CSDISTFILE}:cs
+EXTRACT_ONLY+=	${CSDISTFILE}
 .endif
 .endif
 
@@ -301,6 +308,11 @@ post-build:
 	@cd ${WRKDIR}/${SKDISTFILE:S=.tar.gz==} && \
 		${BUILDHASH} slovak.words slovak.aff slovak.hash
 .endif
+.if defined(ISPELL_CS)
+	@cd ${WRKDIR}/ispell-czech && \
+		${MAKE} czech.a-z && \
+		${BUILDHASH} czech.a-z czech.aff czech.hash
+.endif
 
 pre-su-install:
 	@if [ ! -d ${DATADIR} ]; then ${MKDIR} ${DATADIR}; fi
@@ -362,6 +374,9 @@ post-install:
 .endif
 .if defined(ISPELL_SK)
 	@${CAT} ${MASTERDIR}/pkg-plist.sk >> ${TMPPLIST}
+.endif
+.if defined(ISPELL_CS)
+	@${CAT} ${MASTERDIR}/pkg-plist.cs >> ${TMPPLIST}
 .endif
 	@${ECHO_CMD} "@dirrm share/ispell" >> ${TMPPLIST}
 
