@@ -1,8 +1,0 @@
-zzuf is a transparent application input fuzzer. Its purpose is to
-find bugs in applications by corrupting their user-contributed data
-(which more than often comes from untrusted sources on the Internet).
-It works by intercepting file and network operations and changing
-random bits in the program's input. zzuf's behaviour is
-deterministic, making it easier to reproduce bugs.
-
-WWW:	http://sam.zoy.org/zzuf/
