@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cups-pdf
-PORTVERSION=	2.4.4
+PORTVERSION=	2.4.5
 CATEGORIES=	print
 MASTER_SITES=	http://www.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/src/ \
 		http://olofsson.de/mirror/distfiles/
