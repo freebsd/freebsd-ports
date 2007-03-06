@@ -90,6 +90,7 @@
     SUBDIR += pureadmin
     SUBDIR += py-curl
     SUBDIR += py-ftputil
+    SUBDIR += py-pyftpdlib
     SUBDIR += quftp
     SUBDIR += rexx-curl
     SUBDIR += smbftpd

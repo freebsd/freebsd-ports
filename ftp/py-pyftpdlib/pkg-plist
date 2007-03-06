@@ -1,0 +1,15 @@
+%%PYTHON_SITELIBDIR%%/pyftpdlib/FTPServer.py
+%%PYTHON_SITELIBDIR%%/pyftpdlib/FTPServer.pyc
+%%PYTHON_SITELIBDIR%%/pyftpdlib/FTPServer.pyo
+%%PYTHON_SITELIBDIR%%/pyftpdlib/__init__.py
+%%PYTHON_SITELIBDIR%%/pyftpdlib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyftpdlib/__init__.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/pyftpdlib
+%%EXAMPLESDIR%%/unix_ftpd.py
+%%EXAMPLESDIR%%/md5_ftpd.py
+%%EXAMPLESDIR%%/basic_ftpd.py
+%%EXAMPLESDIR%%/winNT_ftpd.py
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/pyftpdlib.css
+%%PORTDOCS%%%%DOCSDIR%%/pyftpdlib.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
