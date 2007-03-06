@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	biosfont
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://home.tiscali.nl/rladan/biosfont/
 
@@ -24,14 +23,7 @@ KMODDIR?=	/boot/modules
 PLIST_SUB=	KMODDIR=${KMODDIR}
 MAKE_ENV+=	KMODDIR=${KMODDIR}
 
-SUB_FILES=	pkg-message
-
 .include <bsd.port.pre.mk>
-
-# patches for earlier versions are welcome
-.if ${OSVERSION} < 502117
-IGNORE=		requires FreeBSD 5.3 or higher
-.endif
 
 .if !exists(/usr/src/sys/Makefile)
 IGNORE=		requires kernel source files
