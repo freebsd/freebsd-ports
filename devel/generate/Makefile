@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	generate
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.druid.net/pub/distrib/
 EXTRACT_SUFX=	.tgz
