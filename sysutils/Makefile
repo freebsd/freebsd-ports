@@ -504,6 +504,7 @@
     SUBDIR += psmisc
     SUBDIR += pstack
     SUBDIR += pstree
+    SUBDIR += puppet
     SUBDIR += pv
     SUBDIR += pwd_unmkdb
     SUBDIR += pwg
