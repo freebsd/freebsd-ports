@@ -71,8 +71,8 @@ CONFIGURE_ARGS+=	--disable-gnutls --enable-openssl
 .if defined(WITH_PHP)
 CONFIGURE_ARGS+=	--with-php
 USE_PHP=		yes
+USE_PHP_BUILD=		yes
 PLIST_SUB+=		PHP=""
-.include "${PORTSDIR}/Mk/bsd.php.mk"
 .else
 CONFIGURE_ARGS+=	--without-php
 PLIST_SUB+=		PHP="@comment "

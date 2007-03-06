@@ -89,10 +89,6 @@ USE_APACHE=	1.3+
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 .endif
 
-.if defined(WITH_WEB) || !defined(WITHOUT_WEB_EXP)
-.include "${PORTSDIR}/Mk/bsd.php.mk"
-.endif
-
 pre-everything::
 .if (!defined(WITHOUT_APACHE) || defined(WITH_LIGHTTPD)) && !(defined(WITH_WEB) || !defined(WITHOUT_WEB_EXP))
 	@${ECHO_CMD} "It doesn't make sense to depend on Apache or LightHTTPD if not using either web interface."

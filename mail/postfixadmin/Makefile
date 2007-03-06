@@ -44,8 +44,6 @@ USE_PHP+=	pgsql
 IGNORE=	needs at least one database back-end
 .endif
 
-.include "${PORTSDIR}/Mk/bsd.php.mk"
-
 post-patch:
 		${FIND} ${WRKSRC} -name '*.orig' -delete
 

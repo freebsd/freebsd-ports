@@ -41,9 +41,6 @@ USE_PHP+=	gd
 USE_PHP+=	zlib
 .endif
 
-# Include bsd.php.mk because use USE_PHP after bsd.port.pre.mk
-.include "${PORTSDIR}/Mk/bsd.php.mk"
-
 .if defined(WITH_IMAGICK)
 LIB_DEPENDS+=	Magick.10:${PORTSDIR}/graphics/ImageMagick
 .endif

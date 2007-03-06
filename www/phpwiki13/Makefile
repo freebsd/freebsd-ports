@@ -32,23 +32,10 @@ DOCFILES=	INSTALL LICENSE README TODO UPGRADING
 
 OPTIONS=	MYSQL "Use MySQL backend" on \
 		PGSQL "Use PostgreSQL backend" off \
-		DB4   "Use Berkeley DB4 backend" off
+		DB4   "Use Berkeley DB4 backend" off \
+		SQLITE "Use SQLite backend (php5 only)" off
 
-.if exists(${LOCALBASE}/etc/php.conf)
-.include "${LOCALBASE}/etc/php.conf"
-.endif
-
-.if defined(PHP_VER) && ${PHP_VER} == 5
-OPTIONS+=	SQLITE "Use SQLite backend" off
-.endif
-
-PORT_DBDIR?=	/var/db/ports
-LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
-OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
-
-.if exists(${OPTIONSFILE})
-.include "${OPTIONSFILE}"
-.endif
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_DB4)
 USE_PHP+=	dba
@@ -84,4 +71,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

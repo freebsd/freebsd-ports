@@ -26,30 +26,13 @@ SUB_LIST+=	SERENDIPITY=${SERENDIPITY}
 SUB_FILES=	pkg-message
 
 CONFLICTS=	serendipity-1.*
-LATEST_LINK=	serendipity-devel
-
-LOCALBASE?=	/usr/local
 
 OPTIONS=	MYSQL "Use MySQL backend" on \
-		PGSQL "Use PostgreSQL backend" off
+		PGSQL "Use PostgreSQL backend" off \
+		SQLITE "Use SQLite backend (php5 only)" off \
+		MAGICK "Use ImageMagick Library" on
 
-.if exists(${LOCALBASE}/etc/php.conf)
-.include "${LOCALBASE}/etc/php.conf"
-.endif
-
-.if defined(PHP_VER) && ${PHP_VER} == 5
-OPTIONS+=	SQLITE "Use SQLite backend" off
-.endif
-
-OPTIONS+=	MAGICK "Use ImageMagick Library" on
-
-PORT_DBDIR?=	/var/db/ports
-LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
-OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
-
-.if exists(${OPTIONSFILE})
-.include "${OPTIONSFILE}"
-.endif
+.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_MYSQL)
 USE_PHP+=	mysql
@@ -76,4 +59,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

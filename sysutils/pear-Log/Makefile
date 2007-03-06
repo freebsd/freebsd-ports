@@ -37,15 +37,8 @@ _SQLSDIR=	misc
 
 LATEST_LINK=	pear-Log
 OPTIONS=	PEAR_DB "PEAR::DB support" off \
-		PEAR_MDB2 "PEAR::MDB2 support" off
-
-.if exists(${LOCALBASE}/etc/php.conf)
-.include "${LOCALBASE}/etc/php.conf"
-.endif
-
-.if defined(PHP_VER) && ${PHP_VER} == 5
-OPTIONS+=	PHP_SQLITE "PHP sqlite support" off
-.endif
+		PEAR_MDB2 "PEAR::MDB2 support" off \
+		PHP_SQLITE "PHP sqlite support (php5 only)" off
 
 .include <bsd.port.pre.mk>
 
@@ -58,7 +51,7 @@ BUILD_DEPENDS+=	${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
 .endif
 
 .if defined(WITH_PHP_SQLITE)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/sqlite.so:${PORTSDIR}/databases/php5-sqlite
+USE_PHP+=	sqlite
 .endif
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
