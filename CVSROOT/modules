@@ -1101,6 +1101,7 @@ camserv		ports/multimedia/camserv
 cantus		ports/audio/cantus
 cantus_3	ports/audio/cantus_3
 cap		ports/net/cap
+caps-plugins	ports/audio/caps-plugins
 cardpics	ports/games/cardpics
 carthage	ports/textproc/carthage
 cartotheque	ports/deskutils/cartotheque
