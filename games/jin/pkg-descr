@@ -1,0 +1,21 @@
+Jin is an open source, cross platform, graphical client (interface)
+for chess servers. It currently supports these servers:
+
+    * The Internet Chess Club (aka ICC)
+    * The Free Internet Chess Server (aka FICS)
+
+A short list of Jin's main features:
+
+    * Graphical chess board with many board patterns and piece sets
+      to choose from. You can also create your own
+    * Chat/Command console with (customizable) color-coding for
+      different types of chat/text
+    * A seek graph, showing the currently sought games in a visual manner
+    * Flexible game logger, which saves your finished games to your
+      hard disk (doesn't work in JinApplet)
+    * A scripter, which allows you to define automatic responses
+      to certain events
+    * A list of common actions, which can be quickly executed
+      at the press of a button
+
+WWW:	http://www.jinchess.com/

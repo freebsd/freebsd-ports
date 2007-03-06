@@ -357,6 +357,7 @@
     SUBDIR += jetpack
     SUBDIR += jfduke3d
     SUBDIR += jfk
+    SUBDIR += jin
     SUBDIR += joequake
     SUBDIR += jools
     SUBDIR += jtans
