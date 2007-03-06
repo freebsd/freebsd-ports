@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rubrica
-PORTVERSION=	1.0.16
+PORTVERSION=	1.0.17
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An addressbook for the GNOME 2 desktop
 
+USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
