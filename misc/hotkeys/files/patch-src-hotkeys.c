@@ -1,5 +1,5 @@
 --- src/hotkeys.c.orig	Wed Dec  4 03:26:32 2002
-+++ src/hotkeys.c	Fri Mar  2 19:27:17 2007
++++ src/hotkeys.c	Mon Mar  5 20:33:39 2007
 @@ -54,7 +54,7 @@
  #include <fcntl.h>
  #include <sys/ioctl.h>
@@ -260,7 +260,7 @@
                  }
  #endif
                  break;  /* break the for loop */
-@@ -1435,15 +1450,17 @@
+@@ -1435,15 +1450,16 @@
  #ifdef HAVE_LIBXOSD
      if ( osd )
      {
@@ -283,11 +283,10 @@
 +	xosd_set_vertical_offset(osd, atoi(getConfig("osd_voffset")));
 +	xosd_set_font(osd, xstrdup(getConfig("osd_font")));
 +        xosd_set_align(osd, strncmp(getConfig("osd_align"),"left",4)?((!strncmp(getConfig("osd_align"),"center",6))?XOSD_center:XOSD_right):XOSD_left);
-+        xosd_set_align(osd, XOSD_center);
      }
  #endif
  }
-@@ -1592,6 +1609,7 @@
+@@ -1592,6 +1608,7 @@
                  doMute();
              } else
              /* APM stuffs */
@@ -295,7 +294,7 @@
              if ( ev.message.keycode == (kbd.defCmds)[sleepKey].key ||
                   ev.message.keycode == (kbd.defCmds)[wakeupKey].key ) {
                  sleepState(STANDBY);
-@@ -1601,8 +1619,9 @@
+@@ -1601,14 +1618,15 @@
              }
              else
              {
@@ -306,3 +305,10 @@
          }
      }
  
+ #ifdef HAVE_LIBXOSD
+     if (osd)
+-        xosd_uninit(osd);
++        xosd_destroy(osd);
+ #endif
+     XCloseDisplay(dpy);
+     closelog();

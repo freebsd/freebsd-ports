@@ -1,5 +1,5 @@
---- configure.orig	Sun Dec  8 09:34:24 2002
-+++ configure	Sun May 11 22:17:53 2003
+--- configure.orig	Sun Dec  8 22:34:24 2002
++++ configure	Fri Mar  2 22:30:45 2007
 @@ -251,6 +251,7 @@
  # Initializations.
  #
@@ -30,7 +30,30 @@
  if test -n "$ac_prev"; then
    ac_option=--`echo $ac_prev | sed 's/_/-/g'`
    { echo "$as_me: error: missing argument to $ac_option" >&2
-@@ -4353,13 +4369,13 @@
+@@ -859,6 +875,7 @@
+   --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
+   --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)
+   --with-xml-prefix=PFX   Prefix where GNOME XML library is installed
++  --with-db-name=NAME     set the library name of Berkeley DB
+   --with-db3-inc=DIR      Set the include directory of Berkeley DB3
+   --with-db3-lib=DIR      Set the library directory of Berkeley DB3
+   --with-gtk              Use GTK interface (incl. splash screen, default is
+@@ -2827,6 +2844,14 @@
+   enable_xmltest=yes
+ fi;
+ 
++# Check whether --with-db_name or --without-db_name was given.
++if test "${with_db_name+set}" = set; then
++  withval="$with_db_name"
++    test x$withval != x && with_db_name="$withval"
++else
++    with_db_name='db'
++fi;
++
+ 
+ # Check whether --with-db3-inc or --without-db3-inc was given.
+ if test "${with_db3_inc+set}" = set; then
+@@ -4353,13 +4378,13 @@
  fi
  
  
@@ -47,7 +70,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -4412,7 +4428,7 @@
+@@ -4412,7 +4437,7 @@
  #define HAVE_LIBPTHREAD 1
  _ACEOF
  
@@ -56,3 +79,48 @@
  
  fi
  
+@@ -4435,7 +4460,11 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldb3  $LIBS"
++LIBS="-l$with_db_name  $LIBS"
++__db_create="db_create"
++if [ "$with_db_name" = "db-4.2" ]; then
++  __db_create="db_create_4002"
++fi
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -4450,11 +4479,11 @@
+ #endif
+ /* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+-char db_create ();
++char $__db_create ();
+ int
+ main ()
+ {
+-db_create ();
++$__db_create ();
+   ;
+   return 0;
+ }
+@@ -4488,7 +4517,7 @@
+ #define HAVE_LIBDB3 1
+ _ACEOF
+ 
+-  LIBS="-ldb3 $LIBS"
++  LIBS="-l$with_db_name $LIBS"
+ 
+ else
+    nodb=yes
+@@ -4590,7 +4619,7 @@
+     {
+         int major=0, minor=0, patch=0;
+         db_version(&major, &minor, &patch);
+-        if ( major==3 && ((minor==2 && patch>=9) || minor>2) )
++        if ( major > 3 || (major==3 && ((minor==2 && patch>=9) || minor>2)) )
+             exit(0);
+         else
+             exit(1);
