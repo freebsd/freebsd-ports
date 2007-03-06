@@ -1,1470 +1,1490 @@
 bin/holotz-castle
 bin/holotz-castle-editor
-share/holotz-castle/editor/EnemyMenu/0.tga
-share/holotz-castle/editor/EnemyMenu/0_hi.tga
-share/holotz-castle/editor/EnemyMenu/1.tga
-share/holotz-castle/editor/EnemyMenu/1_hi.tga
-share/holotz-castle/editor/EnemyMenu/2.tga
-share/holotz-castle/editor/EnemyMenu/2_hi.tga
-share/holotz-castle/editor/EnemyMenu/3.tga
-share/holotz-castle/editor/EnemyMenu/3_hi.tga
-share/holotz-castle/editor/EnemyMenu/4.tga
-share/holotz-castle/editor/EnemyMenu/4_hi.tga
-share/holotz-castle/editor/MainMenu/0.tga
-share/holotz-castle/editor/MainMenu/0_hi.tga
-share/holotz-castle/editor/MainMenu/1.tga
-share/holotz-castle/editor/MainMenu/10.tga
-share/holotz-castle/editor/MainMenu/10_hi.tga
-share/holotz-castle/editor/MainMenu/11.tga
-share/holotz-castle/editor/MainMenu/11_hi.tga
-share/holotz-castle/editor/MainMenu/12.tga
-share/holotz-castle/editor/MainMenu/12_hi.tga
-share/holotz-castle/editor/MainMenu/1_hi.tga
-share/holotz-castle/editor/MainMenu/2.tga
-share/holotz-castle/editor/MainMenu/2_hi.tga
-share/holotz-castle/editor/MainMenu/3.tga
-share/holotz-castle/editor/MainMenu/3_hi.tga
-share/holotz-castle/editor/MainMenu/4.tga
-share/holotz-castle/editor/MainMenu/4_hi.tga
-share/holotz-castle/editor/MainMenu/5.tga
-share/holotz-castle/editor/MainMenu/5_hi.tga
-share/holotz-castle/editor/MainMenu/6.tga
-share/holotz-castle/editor/MainMenu/6_hi.tga
-share/holotz-castle/editor/MainMenu/7.tga
-share/holotz-castle/editor/MainMenu/7_hi.tga
-share/holotz-castle/editor/MainMenu/8.tga
-share/holotz-castle/editor/MainMenu/8_hi.tga
-share/holotz-castle/editor/MainMenu/9.tga
-share/holotz-castle/editor/MainMenu/9_hi.tga
-share/holotz-castle/game/README.txt
-share/holotz-castle/game/credits/animation0.tga
-share/holotz-castle/game/credits/animation1.tga
-share/holotz-castle/game/credits/animation2.tga
-share/holotz-castle/game/credits/animation3.tga
-share/holotz-castle/game/credits/drawing0.tga
-share/holotz-castle/game/credits/drawing1.tga
-share/holotz-castle/game/credits/drawing2.tga
-share/holotz-castle/game/credits/music.tga
-share/holotz-castle/game/credits/programming.tga
-share/holotz-castle/game/credits/story.tga
-share/holotz-castle/game/font/font.ttf
-share/holotz-castle/game/help/cs/help.txt
-share/holotz-castle/game/help/de/help.txt
-share/holotz-castle/game/help/en/help.txt
-share/holotz-castle/game/help/es/help.txt
-share/holotz-castle/game/help/eu/help.txt
-share/holotz-castle/game/help/fr/help.txt
-share/holotz-castle/game/help/ru/help.txt
-share/holotz-castle/game/help/ua/help.txt
-share/holotz-castle/game/icon/icon.bmp
-share/holotz-castle/game/intro/cs/intro.txt
-share/holotz-castle/game/intro/de/intro.txt
-share/holotz-castle/game/intro/en/intro.txt
-share/holotz-castle/game/intro/es/intro.txt
-share/holotz-castle/game/intro/eu/intro.txt
-share/holotz-castle/game/intro/fr/intro.txt
-share/holotz-castle/game/intro/intro.tga
-share/holotz-castle/game/intro/ru/intro.txt
-share/holotz-castle/game/intro/ua/intro.txt
-share/holotz-castle/game/languages.txt
-share/holotz-castle/game/main/main.tga
-share/holotz-castle/game/main/readme
-share/holotz-castle/game/menu/cs/menu.txt
-share/holotz-castle/game/menu/de/menu.txt
-share/holotz-castle/game/menu/en/menu.txt
-share/holotz-castle/game/menu/es/menu.txt
-share/holotz-castle/game/menu/eu/menu.txt
-share/holotz-castle/game/menu/fr/menu.txt
-share/holotz-castle/game/menu/ru/menu.txt
-share/holotz-castle/game/menu/ua/menu.txt
-share/holotz-castle/game/messages/cs/messages.txt
-share/holotz-castle/game/messages/de/messages.txt
-share/holotz-castle/game/messages/en/messages.txt
-share/holotz-castle/game/messages/es/messages.txt
-share/holotz-castle/game/messages/eu/messages.txt
-share/holotz-castle/game/messages/fr/messages.txt
-share/holotz-castle/game/messages/ru/messages.txt
-share/holotz-castle/game/messages/ua/messages.txt
-share/holotz-castle/game/playlist.txt
-share/holotz-castle/game/savedata/empty.txt
-share/holotz-castle/game/sound/HCBeginLevel.wav
-share/holotz-castle/game/sound/HCCredits.wav
-share/holotz-castle/game/sound/HCCredits_Slow.wav
-share/holotz-castle/game/sound/HCEndLevel.wav
-share/holotz-castle/game/sound/HCExitUnlocked.wav
-share/holotz-castle/game/sound/HCGameOver.wav
-share/holotz-castle/game/sound/HCMainTitle.wav
-share/holotz-castle/game/sound/HCMainTitle_Fast.wav
-share/holotz-castle/game/sound/HCMainTitle_Slow.wav
-share/holotz-castle/game/sound/HCMainTitle_UltraSlow.wav
-share/holotz-castle/game/sound/HCObjectAcquired.wav
-share/holotz-castle/game/stories/holotzcastle/level001.hlv
-share/holotz-castle/game/stories/holotzcastle/level001.hlv.tga
-share/holotz-castle/game/stories/holotzcastle/level002.hlv
-share/holotz-castle/game/stories/holotzcastle/level002.hlv.tga
-share/holotz-castle/game/stories/holotzcastle/level003.hlv
-share/holotz-castle/game/stories/holotzcastle/level003.hlv.tga
-share/holotz-castle/game/stories/holotzcastle/level004.hlv
-share/holotz-castle/game/stories/holotzcastle/level005.hlv
-share/holotz-castle/game/stories/holotzcastle/level006.hlv
-share/holotz-castle/game/stories/holotzcastle/level007.hlv
-share/holotz-castle/game/stories/holotzcastle/level007.hlv.tga
-share/holotz-castle/game/stories/holotzcastle/level008.hlv
-share/holotz-castle/game/stories/holotzcastle/level008.hlv.tga
-share/holotz-castle/game/stories/holotzcastle/level009.hlv
-share/holotz-castle/game/stories/holotzcastle/level010.hlv
-share/holotz-castle/game/stories/holotzcastle/level011.hlv
-share/holotz-castle/game/stories/holotzcastle/level012.hlv
-share/holotz-castle/game/stories/holotzcastle/level013.hlv
-share/holotz-castle/game/stories/holotzcastle/level014.hlv
-share/holotz-castle/game/stories/holotzcastle/level014.hlv.tga
-share/holotz-castle/game/stories/holotzcastle/level015.hlv
-share/holotz-castle/game/stories/holotzcastle/level016.hlv
-share/holotz-castle/game/stories/holotzcastle/level016.hlv.tga
-share/holotz-castle/game/stories/holotzcastle/level017.hlv
-share/holotz-castle/game/stories/holotzcastle/level017.hlv.tga
-share/holotz-castle/game/stories/holotzcastle/level018.hlv
-share/holotz-castle/game/stories/holotzcastle/level019.hlv
-share/holotz-castle/game/stories/holotzcastle/level020.hlv
-share/holotz-castle/game/stories/holotzcastle/level021.hlv
-share/holotz-castle/game/stories/holotzcastle/level022.hlv
-share/holotz-castle/game/stories/holotzcastle/level023.hlv
-share/holotz-castle/game/stories/holotzcastle/level024.hlv
-share/holotz-castle/game/stories/holotzcastle/level025.hlv
-share/holotz-castle/game/stories/holotzcastle/level025.hlv.tga
-share/holotz-castle/game/stories/holotzcastle/level026.hlv
-share/holotz-castle/game/stories/holotzcastle/level027.hlv
-share/holotz-castle/game/stories/holotzcastle/level028.hlv
-share/holotz-castle/game/stories/holotzcastle/level029.hlv
-share/holotz-castle/game/stories/holotzcastle/level030.hlv
-share/holotz-castle/game/stories/holotzcastle/level031.hlv
-share/holotz-castle/game/stories/holotzcastle/level032.hlv
-share/holotz-castle/game/stories/holotzcastle/level032.hlv.tga
-share/holotz-castle/game/stories/holotzcastle/level033.hlv
-share/holotz-castle/game/stories/holotzcastle/script/cs/level001.hcs
-share/holotz-castle/game/stories/holotzcastle/script/cs/level002.hcs
-share/holotz-castle/game/stories/holotzcastle/script/cs/level007.hcs
-share/holotz-castle/game/stories/holotzcastle/script/cs/level014.hcs
-share/holotz-castle/game/stories/holotzcastle/script/cs/level016.hcs
-share/holotz-castle/game/stories/holotzcastle/script/cs/level019.hcs
-share/holotz-castle/game/stories/holotzcastle/script/cs/level020.hcs
-share/holotz-castle/game/stories/holotzcastle/script/cs/level025.hcs
-share/holotz-castle/game/stories/holotzcastle/script/cs/level030.hcs
-share/holotz-castle/game/stories/holotzcastle/script/cs/level032.hcs
-share/holotz-castle/game/stories/holotzcastle/script/cs/level033.hcs
-share/holotz-castle/game/stories/holotzcastle/script/de/level001.hcs
-share/holotz-castle/game/stories/holotzcastle/script/de/level002.hcs
-share/holotz-castle/game/stories/holotzcastle/script/de/level007.hcs
-share/holotz-castle/game/stories/holotzcastle/script/de/level014.hcs
-share/holotz-castle/game/stories/holotzcastle/script/de/level016.hcs
-share/holotz-castle/game/stories/holotzcastle/script/de/level019.hcs
-share/holotz-castle/game/stories/holotzcastle/script/de/level020.hcs
-share/holotz-castle/game/stories/holotzcastle/script/de/level025.hcs
-share/holotz-castle/game/stories/holotzcastle/script/de/level030.hcs
-share/holotz-castle/game/stories/holotzcastle/script/de/level032.hcs
-share/holotz-castle/game/stories/holotzcastle/script/de/level033.hcs
-share/holotz-castle/game/stories/holotzcastle/script/en/level001.hcs
-share/holotz-castle/game/stories/holotzcastle/script/en/level002.hcs
-share/holotz-castle/game/stories/holotzcastle/script/en/level007.hcs
-share/holotz-castle/game/stories/holotzcastle/script/en/level014.hcs
-share/holotz-castle/game/stories/holotzcastle/script/en/level016.hcs
-share/holotz-castle/game/stories/holotzcastle/script/en/level019.hcs
-share/holotz-castle/game/stories/holotzcastle/script/en/level020.hcs
-share/holotz-castle/game/stories/holotzcastle/script/en/level025.hcs
-share/holotz-castle/game/stories/holotzcastle/script/en/level030.hcs
-share/holotz-castle/game/stories/holotzcastle/script/en/level032.hcs
-share/holotz-castle/game/stories/holotzcastle/script/en/level033.hcs
-share/holotz-castle/game/stories/holotzcastle/script/es/level001.hcs
-share/holotz-castle/game/stories/holotzcastle/script/es/level002.hcs
-share/holotz-castle/game/stories/holotzcastle/script/es/level007.hcs
-share/holotz-castle/game/stories/holotzcastle/script/es/level014.hcs
-share/holotz-castle/game/stories/holotzcastle/script/es/level016.hcs
-share/holotz-castle/game/stories/holotzcastle/script/es/level019.hcs
-share/holotz-castle/game/stories/holotzcastle/script/es/level020.hcs
-share/holotz-castle/game/stories/holotzcastle/script/es/level025.hcs
-share/holotz-castle/game/stories/holotzcastle/script/es/level030.hcs
-share/holotz-castle/game/stories/holotzcastle/script/es/level032.hcs
-share/holotz-castle/game/stories/holotzcastle/script/es/level033.hcs
-share/holotz-castle/game/stories/holotzcastle/script/eu/level001.hcs
-share/holotz-castle/game/stories/holotzcastle/script/eu/level002.hcs
-share/holotz-castle/game/stories/holotzcastle/script/eu/level007.hcs
-share/holotz-castle/game/stories/holotzcastle/script/eu/level014.hcs
-share/holotz-castle/game/stories/holotzcastle/script/eu/level016.hcs
-share/holotz-castle/game/stories/holotzcastle/script/eu/level019.hcs
-share/holotz-castle/game/stories/holotzcastle/script/eu/level020.hcs
-share/holotz-castle/game/stories/holotzcastle/script/eu/level025.hcs
-share/holotz-castle/game/stories/holotzcastle/script/eu/level030.hcs
-share/holotz-castle/game/stories/holotzcastle/script/eu/level032.hcs
-share/holotz-castle/game/stories/holotzcastle/script/eu/level033.hcs
-share/holotz-castle/game/stories/holotzcastle/script/fr/level001.hcs
-share/holotz-castle/game/stories/holotzcastle/script/fr/level002.hcs
-share/holotz-castle/game/stories/holotzcastle/script/fr/level007.hcs
-share/holotz-castle/game/stories/holotzcastle/script/fr/level014.hcs
-share/holotz-castle/game/stories/holotzcastle/script/fr/level016.hcs
-share/holotz-castle/game/stories/holotzcastle/script/fr/level019.hcs
-share/holotz-castle/game/stories/holotzcastle/script/fr/level020.hcs
-share/holotz-castle/game/stories/holotzcastle/script/fr/level025.hcs
-share/holotz-castle/game/stories/holotzcastle/script/fr/level030.hcs
-share/holotz-castle/game/stories/holotzcastle/script/fr/level032.hcs
-share/holotz-castle/game/stories/holotzcastle/script/fr/level033.hcs
-share/holotz-castle/game/stories/holotzcastle/script/ru/level001.hcs
-share/holotz-castle/game/stories/holotzcastle/script/ru/level002.hcs
-share/holotz-castle/game/stories/holotzcastle/script/ru/level007.hcs
-share/holotz-castle/game/stories/holotzcastle/script/ru/level014.hcs
-share/holotz-castle/game/stories/holotzcastle/script/ru/level016.hcs
-share/holotz-castle/game/stories/holotzcastle/script/ru/level019.hcs
-share/holotz-castle/game/stories/holotzcastle/script/ru/level020.hcs
-share/holotz-castle/game/stories/holotzcastle/script/ru/level025.hcs
-share/holotz-castle/game/stories/holotzcastle/script/ru/level030.hcs
-share/holotz-castle/game/stories/holotzcastle/script/ru/level032.hcs
-share/holotz-castle/game/stories/holotzcastle/script/ru/level033.hcs
-share/holotz-castle/game/stories/holotzcastle/script/ua/level001.hcs
-share/holotz-castle/game/stories/holotzcastle/script/ua/level002.hcs
-share/holotz-castle/game/stories/holotzcastle/script/ua/level007.hcs
-share/holotz-castle/game/stories/holotzcastle/script/ua/level014.hcs
-share/holotz-castle/game/stories/holotzcastle/script/ua/level016.hcs
-share/holotz-castle/game/stories/holotzcastle/script/ua/level019.hcs
-share/holotz-castle/game/stories/holotzcastle/script/ua/level020.hcs
-share/holotz-castle/game/stories/holotzcastle/script/ua/level025.hcs
-share/holotz-castle/game/stories/holotzcastle/script/ua/level030.hcs
-share/holotz-castle/game/stories/holotzcastle/script/ua/level032.hcs
-share/holotz-castle/game/stories/holotzcastle/script/ua/level033.hcs
-share/holotz-castle/game/theme/default/bar/1/bar.tga
-share/holotz-castle/game/theme/default/bar/2/bar.tga
-share/holotz-castle/game/theme/default/bar/3/bar.tga
-share/holotz-castle/game/theme/default/bar/4/bar.tga
-share/holotz-castle/game/theme/default/bar/5/bar.tga
-share/holotz-castle/game/theme/default/bar/6/bar.tga
-share/holotz-castle/game/theme/default/bar/7/bar.tga
-share/holotz-castle/game/theme/default/break/1/breaking.spr
-share/holotz-castle/game/theme/default/break/1/broken.spr
-share/holotz-castle/game/theme/default/break/1/normal.spr
-share/holotz-castle/game/theme/default/break/2/breaking.spr
-share/holotz-castle/game/theme/default/break/2/broken.spr
-share/holotz-castle/game/theme/default/break/2/normal.spr
-share/holotz-castle/game/theme/default/break/3/breaking.spr
-share/holotz-castle/game/theme/default/break/3/broken.spr
-share/holotz-castle/game/theme/default/break/3/normal.spr
-share/holotz-castle/game/theme/default/break/4/breaking.spr
-share/holotz-castle/game/theme/default/break/4/broken.spr
-share/holotz-castle/game/theme/default/break/4/normal.spr
-share/holotz-castle/game/theme/default/break/5/breaking.spr
-share/holotz-castle/game/theme/default/break/5/broken.spr
-share/holotz-castle/game/theme/default/break/5/normal.spr
-share/holotz-castle/game/theme/default/char/ball/1/dead.spr
-share/holotz-castle/game/theme/default/char/ball/1/down.spr
-share/holotz-castle/game/theme/default/char/ball/1/fall.spr
-share/holotz-castle/game/theme/default/char/ball/1/hang.spr
-share/holotz-castle/game/theme/default/char/ball/1/jump.spr
-share/holotz-castle/game/theme/default/char/ball/1/jumpleft.spr
-share/holotz-castle/game/theme/default/char/ball/1/jumpright.spr
-share/holotz-castle/game/theme/default/char/ball/1/left.spr
-share/holotz-castle/game/theme/default/char/ball/1/right.spr
-share/holotz-castle/game/theme/default/char/ball/1/slide.spr
-share/holotz-castle/game/theme/default/char/ball/1/stop.spr
-share/holotz-castle/game/theme/default/char/ball/1/up.spr
-share/holotz-castle/game/theme/default/char/ball/2/dead.spr
-share/holotz-castle/game/theme/default/char/ball/2/down.spr
-share/holotz-castle/game/theme/default/char/ball/2/fall.spr
-share/holotz-castle/game/theme/default/char/ball/2/hang.spr
-share/holotz-castle/game/theme/default/char/ball/2/jump.spr
-share/holotz-castle/game/theme/default/char/ball/2/jumpleft.spr
-share/holotz-castle/game/theme/default/char/ball/2/jumpright.spr
-share/holotz-castle/game/theme/default/char/ball/2/left.spr
-share/holotz-castle/game/theme/default/char/ball/2/right.spr
-share/holotz-castle/game/theme/default/char/ball/2/slide.spr
-share/holotz-castle/game/theme/default/char/ball/2/stop.spr
-share/holotz-castle/game/theme/default/char/ball/2/up.spr
-share/holotz-castle/game/theme/default/char/ball/3/dead.spr
-share/holotz-castle/game/theme/default/char/ball/3/down.spr
-share/holotz-castle/game/theme/default/char/ball/3/fall.spr
-share/holotz-castle/game/theme/default/char/ball/3/hang.spr
-share/holotz-castle/game/theme/default/char/ball/3/jump.spr
-share/holotz-castle/game/theme/default/char/ball/3/jumpleft.spr
-share/holotz-castle/game/theme/default/char/ball/3/jumpright.spr
-share/holotz-castle/game/theme/default/char/ball/3/left.spr
-share/holotz-castle/game/theme/default/char/ball/3/right.spr
-share/holotz-castle/game/theme/default/char/ball/3/slide.spr
-share/holotz-castle/game/theme/default/char/ball/3/stop.spr
-share/holotz-castle/game/theme/default/char/ball/3/up.spr
-share/holotz-castle/game/theme/default/char/ball/4/dead.spr
-share/holotz-castle/game/theme/default/char/ball/4/down.spr
-share/holotz-castle/game/theme/default/char/ball/4/fall.spr
-share/holotz-castle/game/theme/default/char/ball/4/hang.spr
-share/holotz-castle/game/theme/default/char/ball/4/jump.spr
-share/holotz-castle/game/theme/default/char/ball/4/jumpleft.spr
-share/holotz-castle/game/theme/default/char/ball/4/jumpright.spr
-share/holotz-castle/game/theme/default/char/ball/4/left.spr
-share/holotz-castle/game/theme/default/char/ball/4/right.spr
-share/holotz-castle/game/theme/default/char/ball/4/slide.spr
-share/holotz-castle/game/theme/default/char/ball/4/stop.spr
-share/holotz-castle/game/theme/default/char/ball/4/up.spr
-share/holotz-castle/game/theme/default/char/chaser/1/dead.spr
-share/holotz-castle/game/theme/default/char/chaser/1/down.spr
-share/holotz-castle/game/theme/default/char/chaser/1/fall.spr
-share/holotz-castle/game/theme/default/char/chaser/1/hang.spr
-share/holotz-castle/game/theme/default/char/chaser/1/jump.spr
-share/holotz-castle/game/theme/default/char/chaser/1/jumpleft.spr
-share/holotz-castle/game/theme/default/char/chaser/1/jumpright.spr
-share/holotz-castle/game/theme/default/char/chaser/1/left.spr
-share/holotz-castle/game/theme/default/char/chaser/1/right.spr
-share/holotz-castle/game/theme/default/char/chaser/1/slide.spr
-share/holotz-castle/game/theme/default/char/chaser/1/stop.spr
-share/holotz-castle/game/theme/default/char/chaser/1/up.spr
-share/holotz-castle/game/theme/default/char/dummy/dead.spr
-share/holotz-castle/game/theme/default/char/dummy/down.spr
-share/holotz-castle/game/theme/default/char/dummy/fall.spr
-share/holotz-castle/game/theme/default/char/dummy/hang.spr
-share/holotz-castle/game/theme/default/char/dummy/jump.spr
-share/holotz-castle/game/theme/default/char/dummy/jumpleft.spr
-share/holotz-castle/game/theme/default/char/dummy/jumpright.spr
-share/holotz-castle/game/theme/default/char/dummy/left.spr
-share/holotz-castle/game/theme/default/char/dummy/right.spr
-share/holotz-castle/game/theme/default/char/dummy/slide.spr
-share/holotz-castle/game/theme/default/char/dummy/stop.spr
-share/holotz-castle/game/theme/default/char/dummy/up.spr
-share/holotz-castle/game/theme/default/char/guest/1/dead.spr
-share/holotz-castle/game/theme/default/char/guest/1/down.spr
-share/holotz-castle/game/theme/default/char/guest/1/fall.spr
-share/holotz-castle/game/theme/default/char/guest/1/hang.spr
-share/holotz-castle/game/theme/default/char/guest/1/jump.spr
-share/holotz-castle/game/theme/default/char/guest/1/jumpleft.spr
-share/holotz-castle/game/theme/default/char/guest/1/jumpright.spr
-share/holotz-castle/game/theme/default/char/guest/1/left.spr
-share/holotz-castle/game/theme/default/char/guest/1/right.spr
-share/holotz-castle/game/theme/default/char/guest/1/slide.spr
-share/holotz-castle/game/theme/default/char/guest/1/stop.spr
-share/holotz-castle/game/theme/default/char/guest/1/up.spr
-share/holotz-castle/game/theme/default/char/main/1/dead.spr
-share/holotz-castle/game/theme/default/char/main/1/down.spr
-share/holotz-castle/game/theme/default/char/main/1/fall.spr
-share/holotz-castle/game/theme/default/char/main/1/hang.spr
-share/holotz-castle/game/theme/default/char/main/1/jump.spr
-share/holotz-castle/game/theme/default/char/main/1/jumpleft.spr
-share/holotz-castle/game/theme/default/char/main/1/jumpright.spr
-share/holotz-castle/game/theme/default/char/main/1/left.spr
-share/holotz-castle/game/theme/default/char/main/1/right.spr
-share/holotz-castle/game/theme/default/char/main/1/slide.spr
-share/holotz-castle/game/theme/default/char/main/1/stop.spr
-share/holotz-castle/game/theme/default/char/main/1/up.spr
-share/holotz-castle/game/theme/default/char/main/2/dead.spr
-share/holotz-castle/game/theme/default/char/main/2/down.spr
-share/holotz-castle/game/theme/default/char/main/2/fall.spr
-share/holotz-castle/game/theme/default/char/main/2/hang.spr
-share/holotz-castle/game/theme/default/char/main/2/jump.spr
-share/holotz-castle/game/theme/default/char/main/2/jumpleft.spr
-share/holotz-castle/game/theme/default/char/main/2/jumpright.spr
-share/holotz-castle/game/theme/default/char/main/2/jumright.spr
-share/holotz-castle/game/theme/default/char/main/2/left.spr
-share/holotz-castle/game/theme/default/char/main/2/right.spr
-share/holotz-castle/game/theme/default/char/main/2/slide.spr
-share/holotz-castle/game/theme/default/char/main/2/stop.spr
-share/holotz-castle/game/theme/default/char/main/2/up.spr
-share/holotz-castle/game/theme/default/char/main/3/dead.spr
-share/holotz-castle/game/theme/default/char/main/3/down.spr
-share/holotz-castle/game/theme/default/char/main/3/fall.spr
-share/holotz-castle/game/theme/default/char/main/3/hang.spr
-share/holotz-castle/game/theme/default/char/main/3/jump.spr
-share/holotz-castle/game/theme/default/char/main/3/jumpleft.spr
-share/holotz-castle/game/theme/default/char/main/3/jumpright.spr
-share/holotz-castle/game/theme/default/char/main/3/jumright.spr
-share/holotz-castle/game/theme/default/char/main/3/left.spr
-share/holotz-castle/game/theme/default/char/main/3/right.spr
-share/holotz-castle/game/theme/default/char/main/3/slide.spr
-share/holotz-castle/game/theme/default/char/main/3/stop.spr
-share/holotz-castle/game/theme/default/char/main/3/up.spr
-share/holotz-castle/game/theme/default/char/main/4/dead.spr
-share/holotz-castle/game/theme/default/char/main/4/down.spr
-share/holotz-castle/game/theme/default/char/main/4/fall.spr
-share/holotz-castle/game/theme/default/char/main/4/hang.spr
-share/holotz-castle/game/theme/default/char/main/4/jump.spr
-share/holotz-castle/game/theme/default/char/main/4/jumpleft.spr
-share/holotz-castle/game/theme/default/char/main/4/jumpright.spr
-share/holotz-castle/game/theme/default/char/main/4/left.spr
-share/holotz-castle/game/theme/default/char/main/4/right.spr
-share/holotz-castle/game/theme/default/char/main/4/slide.spr
-share/holotz-castle/game/theme/default/char/main/4/stop.spr
-share/holotz-castle/game/theme/default/char/main/4/up.spr
-share/holotz-castle/game/theme/default/char/main/5/dead.spr
-share/holotz-castle/game/theme/default/char/main/5/down.spr
-share/holotz-castle/game/theme/default/char/main/5/fall.spr
-share/holotz-castle/game/theme/default/char/main/5/hang.spr
-share/holotz-castle/game/theme/default/char/main/5/jump.spr
-share/holotz-castle/game/theme/default/char/main/5/jumpleft.spr
-share/holotz-castle/game/theme/default/char/main/5/jumpright.spr
-share/holotz-castle/game/theme/default/char/main/5/left.spr
-share/holotz-castle/game/theme/default/char/main/5/right.spr
-share/holotz-castle/game/theme/default/char/main/5/slide.spr
-share/holotz-castle/game/theme/default/char/main/5/stop.spr
-share/holotz-castle/game/theme/default/char/main/5/up.spr
-share/holotz-castle/game/theme/default/char/main/6/dead.spr
-share/holotz-castle/game/theme/default/char/main/6/down.spr
-share/holotz-castle/game/theme/default/char/main/6/fall.spr
-share/holotz-castle/game/theme/default/char/main/6/hang.spr
-share/holotz-castle/game/theme/default/char/main/6/jump.spr
-share/holotz-castle/game/theme/default/char/main/6/jumpleft.spr
-share/holotz-castle/game/theme/default/char/main/6/jumpright.spr
-share/holotz-castle/game/theme/default/char/main/6/left.spr
-share/holotz-castle/game/theme/default/char/main/6/right.spr
-share/holotz-castle/game/theme/default/char/main/6/slide.spr
-share/holotz-castle/game/theme/default/char/main/6/stop.spr
-share/holotz-castle/game/theme/default/char/main/6/up.spr
-share/holotz-castle/game/theme/default/char/maker/1/dead.spr
-share/holotz-castle/game/theme/default/char/maker/1/down.spr
-share/holotz-castle/game/theme/default/char/maker/1/fall.spr
-share/holotz-castle/game/theme/default/char/maker/1/hang.spr
-share/holotz-castle/game/theme/default/char/maker/1/jump.spr
-share/holotz-castle/game/theme/default/char/maker/1/jumpleft.spr
-share/holotz-castle/game/theme/default/char/maker/1/jumpright.spr
-share/holotz-castle/game/theme/default/char/maker/1/left.spr
-share/holotz-castle/game/theme/default/char/maker/1/right.spr
-share/holotz-castle/game/theme/default/char/maker/1/slide.spr
-share/holotz-castle/game/theme/default/char/maker/1/stop.spr
-share/holotz-castle/game/theme/default/char/maker/1/up.spr
-share/holotz-castle/game/theme/default/char/random/1/dead.spr
-share/holotz-castle/game/theme/default/char/random/1/down.spr
-share/holotz-castle/game/theme/default/char/random/1/fall.spr
-share/holotz-castle/game/theme/default/char/random/1/hang.spr
-share/holotz-castle/game/theme/default/char/random/1/jump.spr
-share/holotz-castle/game/theme/default/char/random/1/jumpleft.spr
-share/holotz-castle/game/theme/default/char/random/1/jumpright.spr
-share/holotz-castle/game/theme/default/char/random/1/left.spr
-share/holotz-castle/game/theme/default/char/random/1/right.spr
-share/holotz-castle/game/theme/default/char/random/1/slide.spr
-share/holotz-castle/game/theme/default/char/random/1/stop.spr
-share/holotz-castle/game/theme/default/char/random/1/up.spr
-share/holotz-castle/game/theme/default/char/random/2/dead.spr
-share/holotz-castle/game/theme/default/char/random/2/down.spr
-share/holotz-castle/game/theme/default/char/random/2/fall.spr
-share/holotz-castle/game/theme/default/char/random/2/hang.spr
-share/holotz-castle/game/theme/default/char/random/2/jump.spr
-share/holotz-castle/game/theme/default/char/random/2/jumpleft.spr
-share/holotz-castle/game/theme/default/char/random/2/jumpright.spr
-share/holotz-castle/game/theme/default/char/random/2/left.spr
-share/holotz-castle/game/theme/default/char/random/2/right.spr
-share/holotz-castle/game/theme/default/char/random/2/slide.spr
-share/holotz-castle/game/theme/default/char/random/2/stop.spr
-share/holotz-castle/game/theme/default/char/random/2/up.spr
-share/holotz-castle/game/theme/default/char/random/3/dead.spr
-share/holotz-castle/game/theme/default/char/random/3/down.spr
-share/holotz-castle/game/theme/default/char/random/3/fall.spr
-share/holotz-castle/game/theme/default/char/random/3/hang.spr
-share/holotz-castle/game/theme/default/char/random/3/jump.spr
-share/holotz-castle/game/theme/default/char/random/3/jumpleft.spr
-share/holotz-castle/game/theme/default/char/random/3/jumpright.spr
-share/holotz-castle/game/theme/default/char/random/3/left.spr
-share/holotz-castle/game/theme/default/char/random/3/right.spr
-share/holotz-castle/game/theme/default/char/random/3/slide.spr
-share/holotz-castle/game/theme/default/char/random/3/stop.spr
-share/holotz-castle/game/theme/default/char/random/3/up.spr
-share/holotz-castle/game/theme/default/char/random/4/dead.spr
-share/holotz-castle/game/theme/default/char/random/4/down.spr
-share/holotz-castle/game/theme/default/char/random/4/fall.spr
-share/holotz-castle/game/theme/default/char/random/4/hang.spr
-share/holotz-castle/game/theme/default/char/random/4/jump.spr
-share/holotz-castle/game/theme/default/char/random/4/jumpleft.spr
-share/holotz-castle/game/theme/default/char/random/4/jumpright.spr
-share/holotz-castle/game/theme/default/char/random/4/left.spr
-share/holotz-castle/game/theme/default/char/random/4/right.spr
-share/holotz-castle/game/theme/default/char/random/4/slide.spr
-share/holotz-castle/game/theme/default/char/random/4/stop.spr
-share/holotz-castle/game/theme/default/char/random/4/up.spr
-share/holotz-castle/game/theme/default/char/random/5/dead.spr
-share/holotz-castle/game/theme/default/char/random/5/down.spr
-share/holotz-castle/game/theme/default/char/random/5/fall.spr
-share/holotz-castle/game/theme/default/char/random/5/hang.spr
-share/holotz-castle/game/theme/default/char/random/5/jump.spr
-share/holotz-castle/game/theme/default/char/random/5/jumpleft.spr
-share/holotz-castle/game/theme/default/char/random/5/jumpright.spr
-share/holotz-castle/game/theme/default/char/random/5/left.spr
-share/holotz-castle/game/theme/default/char/random/5/right.spr
-share/holotz-castle/game/theme/default/char/random/5/slide.spr
-share/holotz-castle/game/theme/default/char/random/5/stop.spr
-share/holotz-castle/game/theme/default/char/random/5/up.spr
-share/holotz-castle/game/theme/default/char/random/6/dead.spr
-share/holotz-castle/game/theme/default/char/random/6/down.spr
-share/holotz-castle/game/theme/default/char/random/6/fall.spr
-share/holotz-castle/game/theme/default/char/random/6/hang.spr
-share/holotz-castle/game/theme/default/char/random/6/jump.spr
-share/holotz-castle/game/theme/default/char/random/6/jumpleft.spr
-share/holotz-castle/game/theme/default/char/random/6/jumpright.spr
-share/holotz-castle/game/theme/default/char/random/6/left.spr
-share/holotz-castle/game/theme/default/char/random/6/right.spr
-share/holotz-castle/game/theme/default/char/random/6/slide.spr
-share/holotz-castle/game/theme/default/char/random/6/stop.spr
-share/holotz-castle/game/theme/default/char/random/6/up.spr
-share/holotz-castle/game/theme/default/char/random/7/dead.spr
-share/holotz-castle/game/theme/default/char/random/7/down.spr
-share/holotz-castle/game/theme/default/char/random/7/fall.spr
-share/holotz-castle/game/theme/default/char/random/7/hang.spr
-share/holotz-castle/game/theme/default/char/random/7/jump.spr
-share/holotz-castle/game/theme/default/char/random/7/jumpleft.spr
-share/holotz-castle/game/theme/default/char/random/7/jumpright.spr
-share/holotz-castle/game/theme/default/char/random/7/left.spr
-share/holotz-castle/game/theme/default/char/random/7/right.spr
-share/holotz-castle/game/theme/default/char/random/7/slide.spr
-share/holotz-castle/game/theme/default/char/random/7/stop.spr
-share/holotz-castle/game/theme/default/char/random/7/up.spr
-share/holotz-castle/game/theme/default/char/static/1/dead.spr
-share/holotz-castle/game/theme/default/char/static/1/down.spr
-share/holotz-castle/game/theme/default/char/static/1/fall.spr
-share/holotz-castle/game/theme/default/char/static/1/hang.spr
-share/holotz-castle/game/theme/default/char/static/1/jump.spr
-share/holotz-castle/game/theme/default/char/static/1/jumpleft.spr
-share/holotz-castle/game/theme/default/char/static/1/jumpright.spr
-share/holotz-castle/game/theme/default/char/static/1/left.spr
-share/holotz-castle/game/theme/default/char/static/1/right.spr
-share/holotz-castle/game/theme/default/char/static/1/slide.spr
-share/holotz-castle/game/theme/default/char/static/1/stop.spr
-share/holotz-castle/game/theme/default/char/static/1/up.spr
-share/holotz-castle/game/theme/default/char/static/2/dead.spr
-share/holotz-castle/game/theme/default/char/static/2/down.spr
-share/holotz-castle/game/theme/default/char/static/2/fall.spr
-share/holotz-castle/game/theme/default/char/static/2/hang.spr
-share/holotz-castle/game/theme/default/char/static/2/jump.spr
-share/holotz-castle/game/theme/default/char/static/2/jumpleft.spr
-share/holotz-castle/game/theme/default/char/static/2/jumpright.spr
-share/holotz-castle/game/theme/default/char/static/2/left.spr
-share/holotz-castle/game/theme/default/char/static/2/right.spr
-share/holotz-castle/game/theme/default/char/static/2/slide.spr
-share/holotz-castle/game/theme/default/char/static/2/stop.spr
-share/holotz-castle/game/theme/default/char/static/2/up.spr
-share/holotz-castle/game/theme/default/char/static/3/dead.spr
-share/holotz-castle/game/theme/default/char/static/3/down.spr
-share/holotz-castle/game/theme/default/char/static/3/fall.spr
-share/holotz-castle/game/theme/default/char/static/3/hang.spr
-share/holotz-castle/game/theme/default/char/static/3/jump.spr
-share/holotz-castle/game/theme/default/char/static/3/jumpleft.spr
-share/holotz-castle/game/theme/default/char/static/3/jumpright.spr
-share/holotz-castle/game/theme/default/char/static/3/left.spr
-share/holotz-castle/game/theme/default/char/static/3/right.spr
-share/holotz-castle/game/theme/default/char/static/3/slide.spr
-share/holotz-castle/game/theme/default/char/static/3/stop.spr
-share/holotz-castle/game/theme/default/char/static/3/up.spr
-share/holotz-castle/game/theme/default/char/static/4/dead.spr
-share/holotz-castle/game/theme/default/char/static/4/down.spr
-share/holotz-castle/game/theme/default/char/static/4/fall.spr
-share/holotz-castle/game/theme/default/char/static/4/hang.spr
-share/holotz-castle/game/theme/default/char/static/4/jump.spr
-share/holotz-castle/game/theme/default/char/static/4/jumpleft.spr
-share/holotz-castle/game/theme/default/char/static/4/jumpright.spr
-share/holotz-castle/game/theme/default/char/static/4/left.spr
-share/holotz-castle/game/theme/default/char/static/4/right.spr
-share/holotz-castle/game/theme/default/char/static/4/slide.spr
-share/holotz-castle/game/theme/default/char/static/4/stop.spr
-share/holotz-castle/game/theme/default/char/static/4/up.spr
-share/holotz-castle/game/theme/default/char/static/5/dead.spr
-share/holotz-castle/game/theme/default/char/static/5/down.spr
-share/holotz-castle/game/theme/default/char/static/5/fall.spr
-share/holotz-castle/game/theme/default/char/static/5/hang.spr
-share/holotz-castle/game/theme/default/char/static/5/jump.spr
-share/holotz-castle/game/theme/default/char/static/5/jumpleft.spr
-share/holotz-castle/game/theme/default/char/static/5/jumpright.spr
-share/holotz-castle/game/theme/default/char/static/5/left.spr
-share/holotz-castle/game/theme/default/char/static/5/right.spr
-share/holotz-castle/game/theme/default/char/static/5/slide.spr
-share/holotz-castle/game/theme/default/char/static/5/stop.spr
-share/holotz-castle/game/theme/default/char/static/5/up.spr
-share/holotz-castle/game/theme/default/char/static/6/dead.spr
-share/holotz-castle/game/theme/default/char/static/6/down.spr
-share/holotz-castle/game/theme/default/char/static/6/fall.spr
-share/holotz-castle/game/theme/default/char/static/6/hang.spr
-share/holotz-castle/game/theme/default/char/static/6/jump.spr
-share/holotz-castle/game/theme/default/char/static/6/jumpleft.spr
-share/holotz-castle/game/theme/default/char/static/6/jumpright.spr
-share/holotz-castle/game/theme/default/char/static/6/left.spr
-share/holotz-castle/game/theme/default/char/static/6/right.spr
-share/holotz-castle/game/theme/default/char/static/6/slide.spr
-share/holotz-castle/game/theme/default/char/static/6/stop.spr
-share/holotz-castle/game/theme/default/char/static/6/up.spr
-share/holotz-castle/game/theme/default/char/static/7/dead.spr
-share/holotz-castle/game/theme/default/char/static/7/down.spr
-share/holotz-castle/game/theme/default/char/static/7/fall.spr
-share/holotz-castle/game/theme/default/char/static/7/hang.spr
-share/holotz-castle/game/theme/default/char/static/7/jump.spr
-share/holotz-castle/game/theme/default/char/static/7/jumpleft.spr
-share/holotz-castle/game/theme/default/char/static/7/jumpright.spr
-share/holotz-castle/game/theme/default/char/static/7/left.spr
-share/holotz-castle/game/theme/default/char/static/7/right.spr
-share/holotz-castle/game/theme/default/char/static/7/slide.spr
-share/holotz-castle/game/theme/default/char/static/7/stop.spr
-share/holotz-castle/game/theme/default/char/static/7/up.spr
-share/holotz-castle/game/theme/default/char/static/8/dead.spr
-share/holotz-castle/game/theme/default/char/static/8/down.spr
-share/holotz-castle/game/theme/default/char/static/8/fall.spr
-share/holotz-castle/game/theme/default/char/static/8/hang.spr
-share/holotz-castle/game/theme/default/char/static/8/jump.spr
-share/holotz-castle/game/theme/default/char/static/8/jumpleft.spr
-share/holotz-castle/game/theme/default/char/static/8/jumpright.spr
-share/holotz-castle/game/theme/default/char/static/8/left.spr
-share/holotz-castle/game/theme/default/char/static/8/right.spr
-share/holotz-castle/game/theme/default/char/static/8/slide.spr
-share/holotz-castle/game/theme/default/char/static/8/stop.spr
-share/holotz-castle/game/theme/default/char/static/8/up.spr
-share/holotz-castle/game/theme/default/char/static/9/dead.spr
-share/holotz-castle/game/theme/default/char/static/9/down.spr
-share/holotz-castle/game/theme/default/char/static/9/fall.spr
-share/holotz-castle/game/theme/default/char/static/9/hang.spr
-share/holotz-castle/game/theme/default/char/static/9/jump.spr
-share/holotz-castle/game/theme/default/char/static/9/jumpleft.spr
-share/holotz-castle/game/theme/default/char/static/9/jumpright.spr
-share/holotz-castle/game/theme/default/char/static/9/left.spr
-share/holotz-castle/game/theme/default/char/static/9/right.spr
-share/holotz-castle/game/theme/default/char/static/9/slide.spr
-share/holotz-castle/game/theme/default/char/static/9/stop.spr
-share/holotz-castle/game/theme/default/char/static/9/up.spr
-share/holotz-castle/game/theme/default/contfloor/1/c.tga
-share/holotz-castle/game/theme/default/contfloor/1/c1.tga
-share/holotz-castle/game/theme/default/contfloor/1/c3.tga
-share/holotz-castle/game/theme/default/contfloor/1/c7.tga
-share/holotz-castle/game/theme/default/contfloor/1/c9.tga
-share/holotz-castle/game/theme/default/contfloor/1/cd.tga
-share/holotz-castle/game/theme/default/contfloor/1/cdl.tga
-share/holotz-castle/game/theme/default/contfloor/1/cdr.tga
-share/holotz-castle/game/theme/default/contfloor/1/cl.tga
-share/holotz-castle/game/theme/default/contfloor/1/cr.tga
-share/holotz-castle/game/theme/default/contfloor/1/cu.tga
-share/holotz-castle/game/theme/default/contfloor/1/cul.tga
-share/holotz-castle/game/theme/default/contfloor/1/cur.tga
-share/holotz-castle/game/theme/default/contfloor/1/i.tga
-share/holotz-castle/game/theme/default/contfloor/1/s2.tga
-share/holotz-castle/game/theme/default/contfloor/1/s4.tga
-share/holotz-castle/game/theme/default/contfloor/1/s6.tga
-share/holotz-castle/game/theme/default/contfloor/1/s8.tga
-share/holotz-castle/game/theme/default/contfloor/1/sh.tga
-share/holotz-castle/game/theme/default/contfloor/1/sv.tga
-share/holotz-castle/game/theme/default/contfloor/2/c.tga
-share/holotz-castle/game/theme/default/contfloor/2/c1.tga
-share/holotz-castle/game/theme/default/contfloor/2/c3.tga
-share/holotz-castle/game/theme/default/contfloor/2/c7.tga
-share/holotz-castle/game/theme/default/contfloor/2/c9.tga
-share/holotz-castle/game/theme/default/contfloor/2/cd.tga
-share/holotz-castle/game/theme/default/contfloor/2/cdl.tga
-share/holotz-castle/game/theme/default/contfloor/2/cdr.tga
-share/holotz-castle/game/theme/default/contfloor/2/cl.tga
-share/holotz-castle/game/theme/default/contfloor/2/cr.tga
-share/holotz-castle/game/theme/default/contfloor/2/cu.tga
-share/holotz-castle/game/theme/default/contfloor/2/cul.tga
-share/holotz-castle/game/theme/default/contfloor/2/cur.tga
-share/holotz-castle/game/theme/default/contfloor/2/i.tga
-share/holotz-castle/game/theme/default/contfloor/2/s2.tga
-share/holotz-castle/game/theme/default/contfloor/2/s4.tga
-share/holotz-castle/game/theme/default/contfloor/2/s6.tga
-share/holotz-castle/game/theme/default/contfloor/2/s8.tga
-share/holotz-castle/game/theme/default/contfloor/2/sh.tga
-share/holotz-castle/game/theme/default/contfloor/2/sv.tga
-share/holotz-castle/game/theme/default/contfloor/3/c.tga
-share/holotz-castle/game/theme/default/contfloor/3/c1.tga
-share/holotz-castle/game/theme/default/contfloor/3/c3.tga
-share/holotz-castle/game/theme/default/contfloor/3/c7.tga
-share/holotz-castle/game/theme/default/contfloor/3/c9.tga
-share/holotz-castle/game/theme/default/contfloor/3/cd.tga
-share/holotz-castle/game/theme/default/contfloor/3/cdl.tga
-share/holotz-castle/game/theme/default/contfloor/3/cdr.tga
-share/holotz-castle/game/theme/default/contfloor/3/cl.tga
-share/holotz-castle/game/theme/default/contfloor/3/cr.tga
-share/holotz-castle/game/theme/default/contfloor/3/cu.tga
-share/holotz-castle/game/theme/default/contfloor/3/cul.tga
-share/holotz-castle/game/theme/default/contfloor/3/cur.tga
-share/holotz-castle/game/theme/default/contfloor/3/i.tga
-share/holotz-castle/game/theme/default/contfloor/3/s2.tga
-share/holotz-castle/game/theme/default/contfloor/3/s4.tga
-share/holotz-castle/game/theme/default/contfloor/3/s6.tga
-share/holotz-castle/game/theme/default/contfloor/3/s8.tga
-share/holotz-castle/game/theme/default/contfloor/3/sh.tga
-share/holotz-castle/game/theme/default/contfloor/3/sv.tga
-share/holotz-castle/game/theme/default/dialog/1/1.tga
-share/holotz-castle/game/theme/default/dialog/1/2.tga
-share/holotz-castle/game/theme/default/dialog/1/3.tga
-share/holotz-castle/game/theme/default/dialog/1/4.tga
-share/holotz-castle/game/theme/default/dialog/1/5.tga
-share/holotz-castle/game/theme/default/dialog/1/6.tga
-share/holotz-castle/game/theme/default/dialog/1/7.tga
-share/holotz-castle/game/theme/default/dialog/1/8.tga
-share/holotz-castle/game/theme/default/dialog/1/9.tga
-share/holotz-castle/game/theme/default/dialog/1/left.tga
-share/holotz-castle/game/theme/default/dialog/1/right.tga
-share/holotz-castle/game/theme/default/dialog/2/1.tga
-share/holotz-castle/game/theme/default/dialog/2/2.tga
-share/holotz-castle/game/theme/default/dialog/2/3.tga
-share/holotz-castle/game/theme/default/dialog/2/4.tga
-share/holotz-castle/game/theme/default/dialog/2/5.tga
-share/holotz-castle/game/theme/default/dialog/2/6.tga
-share/holotz-castle/game/theme/default/dialog/2/7.tga
-share/holotz-castle/game/theme/default/dialog/2/8.tga
-share/holotz-castle/game/theme/default/dialog/2/9.tga
-share/holotz-castle/game/theme/default/dialog/2/left.tga
-share/holotz-castle/game/theme/default/dialog/2/right.tga
-share/holotz-castle/game/theme/default/floor/1/floor.tga
-share/holotz-castle/game/theme/default/floor/10/floor.tga
-share/holotz-castle/game/theme/default/floor/11/floor.tga
-share/holotz-castle/game/theme/default/floor/12/floor.tga
-share/holotz-castle/game/theme/default/floor/13/floor.tga
-share/holotz-castle/game/theme/default/floor/14/floor.tga
-share/holotz-castle/game/theme/default/floor/15/floor.tga
-share/holotz-castle/game/theme/default/floor/16/floor.tga
-share/holotz-castle/game/theme/default/floor/2/floor.tga
-share/holotz-castle/game/theme/default/floor/3/floor.tga
-share/holotz-castle/game/theme/default/floor/4/floor.tga
-share/holotz-castle/game/theme/default/floor/5/floor.tga
-share/holotz-castle/game/theme/default/floor/6/floor.tga
-share/holotz-castle/game/theme/default/floor/7/floor.tga
-share/holotz-castle/game/theme/default/floor/8/floor.tga
-share/holotz-castle/game/theme/default/floor/9/floor.tga
-share/holotz-castle/game/theme/default/ladder/1/ladder.tga
-share/holotz-castle/game/theme/default/ladder/2/ladder.tga
-share/holotz-castle/game/theme/default/ladder/3/ladder.tga
-share/holotz-castle/game/theme/default/narrative/1/1.tga
-share/holotz-castle/game/theme/default/narrative/1/2.tga
-share/holotz-castle/game/theme/default/narrative/1/3.tga
-share/holotz-castle/game/theme/default/narrative/1/4.tga
-share/holotz-castle/game/theme/default/narrative/1/5.tga
-share/holotz-castle/game/theme/default/narrative/1/6.tga
-share/holotz-castle/game/theme/default/narrative/1/7.tga
-share/holotz-castle/game/theme/default/narrative/1/8.tga
-share/holotz-castle/game/theme/default/narrative/1/9.tga
-share/holotz-castle/game/theme/default/object/1/acquired.spr
-share/holotz-castle/game/theme/default/object/1/normal.spr
-share/holotz-castle/game/theme/default/object/2/acquired.spr
-share/holotz-castle/game/theme/default/object/2/normal.spr
-share/holotz-castle/game/theme/default/object/3/acquired.spr
-share/holotz-castle/game/theme/default/object/3/normal.spr
-share/holotz-castle/game/theme/default/rope/1/edge.tga
-share/holotz-castle/game/theme/default/rope/1/middle.tga
-share/holotz-castle/game/theme/default/rope/1/top.tga
-share/holotz-castle/game/theme/default/rope/2/edge.tga
-share/holotz-castle/game/theme/default/rope/2/middle.tga
-share/holotz-castle/game/theme/default/rope/2/top.tga
-share/holotz-castle/game/theme/dungeons/bar/1/bar.tga
-share/holotz-castle/game/theme/dungeons/bar/2/bar.tga
-share/holotz-castle/game/theme/dungeons/bar/3/bar.tga
-share/holotz-castle/game/theme/dungeons/bar/4/bar.tga
-share/holotz-castle/game/theme/dungeons/bar/5/bar.tga
-share/holotz-castle/game/theme/dungeons/bar/6/bar.tga
-share/holotz-castle/game/theme/dungeons/bar/7/bar.tga
-share/holotz-castle/game/theme/dungeons/break/1/breaking.spr
-share/holotz-castle/game/theme/dungeons/break/1/broken.spr
-share/holotz-castle/game/theme/dungeons/break/1/normal.spr
-share/holotz-castle/game/theme/dungeons/break/2/breaking.spr
-share/holotz-castle/game/theme/dungeons/break/2/broken.spr
-share/holotz-castle/game/theme/dungeons/break/2/normal.spr
-share/holotz-castle/game/theme/dungeons/break/3/breaking.spr
-share/holotz-castle/game/theme/dungeons/break/3/broken.spr
-share/holotz-castle/game/theme/dungeons/break/3/normal.spr
-share/holotz-castle/game/theme/dungeons/break/4/breaking.spr
-share/holotz-castle/game/theme/dungeons/break/4/broken.spr
-share/holotz-castle/game/theme/dungeons/break/4/normal.spr
-share/holotz-castle/game/theme/dungeons/break/5/breaking.spr
-share/holotz-castle/game/theme/dungeons/break/5/broken.spr
-share/holotz-castle/game/theme/dungeons/break/5/normal.spr
-share/holotz-castle/game/theme/dungeons/char/ball/1/dead.spr
-share/holotz-castle/game/theme/dungeons/char/ball/1/down.spr
-share/holotz-castle/game/theme/dungeons/char/ball/1/fall.spr
-share/holotz-castle/game/theme/dungeons/char/ball/1/hang.spr
-share/holotz-castle/game/theme/dungeons/char/ball/1/jump.spr
-share/holotz-castle/game/theme/dungeons/char/ball/1/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/ball/1/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/ball/1/left.spr
-share/holotz-castle/game/theme/dungeons/char/ball/1/right.spr
-share/holotz-castle/game/theme/dungeons/char/ball/1/slide.spr
-share/holotz-castle/game/theme/dungeons/char/ball/1/stop.spr
-share/holotz-castle/game/theme/dungeons/char/ball/1/up.spr
-share/holotz-castle/game/theme/dungeons/char/ball/2/dead.spr
-share/holotz-castle/game/theme/dungeons/char/ball/2/down.spr
-share/holotz-castle/game/theme/dungeons/char/ball/2/fall.spr
-share/holotz-castle/game/theme/dungeons/char/ball/2/hang.spr
-share/holotz-castle/game/theme/dungeons/char/ball/2/jump.spr
-share/holotz-castle/game/theme/dungeons/char/ball/2/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/ball/2/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/ball/2/left.spr
-share/holotz-castle/game/theme/dungeons/char/ball/2/right.spr
-share/holotz-castle/game/theme/dungeons/char/ball/2/slide.spr
-share/holotz-castle/game/theme/dungeons/char/ball/2/stop.spr
-share/holotz-castle/game/theme/dungeons/char/ball/2/up.spr
-share/holotz-castle/game/theme/dungeons/char/ball/3/dead.spr
-share/holotz-castle/game/theme/dungeons/char/ball/3/down.spr
-share/holotz-castle/game/theme/dungeons/char/ball/3/fall.spr
-share/holotz-castle/game/theme/dungeons/char/ball/3/hang.spr
-share/holotz-castle/game/theme/dungeons/char/ball/3/jump.spr
-share/holotz-castle/game/theme/dungeons/char/ball/3/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/ball/3/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/ball/3/left.spr
-share/holotz-castle/game/theme/dungeons/char/ball/3/right.spr
-share/holotz-castle/game/theme/dungeons/char/ball/3/slide.spr
-share/holotz-castle/game/theme/dungeons/char/ball/3/stop.spr
-share/holotz-castle/game/theme/dungeons/char/ball/3/up.spr
-share/holotz-castle/game/theme/dungeons/char/ball/4/dead.spr
-share/holotz-castle/game/theme/dungeons/char/ball/4/down.spr
-share/holotz-castle/game/theme/dungeons/char/ball/4/fall.spr
-share/holotz-castle/game/theme/dungeons/char/ball/4/hang.spr
-share/holotz-castle/game/theme/dungeons/char/ball/4/jump.spr
-share/holotz-castle/game/theme/dungeons/char/ball/4/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/ball/4/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/ball/4/left.spr
-share/holotz-castle/game/theme/dungeons/char/ball/4/right.spr
-share/holotz-castle/game/theme/dungeons/char/ball/4/slide.spr
-share/holotz-castle/game/theme/dungeons/char/ball/4/stop.spr
-share/holotz-castle/game/theme/dungeons/char/ball/4/up.spr
-share/holotz-castle/game/theme/dungeons/char/chaser/1/dead.spr
-share/holotz-castle/game/theme/dungeons/char/chaser/1/down.spr
-share/holotz-castle/game/theme/dungeons/char/chaser/1/fall.spr
-share/holotz-castle/game/theme/dungeons/char/chaser/1/hang.spr
-share/holotz-castle/game/theme/dungeons/char/chaser/1/jump.spr
-share/holotz-castle/game/theme/dungeons/char/chaser/1/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/chaser/1/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/chaser/1/left.spr
-share/holotz-castle/game/theme/dungeons/char/chaser/1/right.spr
-share/holotz-castle/game/theme/dungeons/char/chaser/1/slide.spr
-share/holotz-castle/game/theme/dungeons/char/chaser/1/stop.spr
-share/holotz-castle/game/theme/dungeons/char/chaser/1/up.spr
-share/holotz-castle/game/theme/dungeons/char/dummy/dead.spr
-share/holotz-castle/game/theme/dungeons/char/dummy/down.spr
-share/holotz-castle/game/theme/dungeons/char/dummy/fall.spr
-share/holotz-castle/game/theme/dungeons/char/dummy/hang.spr
-share/holotz-castle/game/theme/dungeons/char/dummy/jump.spr
-share/holotz-castle/game/theme/dungeons/char/dummy/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/dummy/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/dummy/left.spr
-share/holotz-castle/game/theme/dungeons/char/dummy/right.spr
-share/holotz-castle/game/theme/dungeons/char/dummy/slide.spr
-share/holotz-castle/game/theme/dungeons/char/dummy/stop.spr
-share/holotz-castle/game/theme/dungeons/char/dummy/up.spr
-share/holotz-castle/game/theme/dungeons/char/guest/1/dead.spr
-share/holotz-castle/game/theme/dungeons/char/guest/1/down.spr
-share/holotz-castle/game/theme/dungeons/char/guest/1/fall.spr
-share/holotz-castle/game/theme/dungeons/char/guest/1/hang.spr
-share/holotz-castle/game/theme/dungeons/char/guest/1/jump.spr
-share/holotz-castle/game/theme/dungeons/char/guest/1/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/guest/1/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/guest/1/left.spr
-share/holotz-castle/game/theme/dungeons/char/guest/1/right.spr
-share/holotz-castle/game/theme/dungeons/char/guest/1/slide.spr
-share/holotz-castle/game/theme/dungeons/char/guest/1/stop.spr
-share/holotz-castle/game/theme/dungeons/char/guest/1/up.spr
-share/holotz-castle/game/theme/dungeons/char/main/1/dead.spr
-share/holotz-castle/game/theme/dungeons/char/main/1/down.spr
-share/holotz-castle/game/theme/dungeons/char/main/1/fall.spr
-share/holotz-castle/game/theme/dungeons/char/main/1/hang.spr
-share/holotz-castle/game/theme/dungeons/char/main/1/jump.spr
-share/holotz-castle/game/theme/dungeons/char/main/1/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/main/1/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/main/1/left.spr
-share/holotz-castle/game/theme/dungeons/char/main/1/right.spr
-share/holotz-castle/game/theme/dungeons/char/main/1/slide.spr
-share/holotz-castle/game/theme/dungeons/char/main/1/stop.spr
-share/holotz-castle/game/theme/dungeons/char/main/1/up.spr
-share/holotz-castle/game/theme/dungeons/char/main/2/dead.spr
-share/holotz-castle/game/theme/dungeons/char/main/2/down.spr
-share/holotz-castle/game/theme/dungeons/char/main/2/fall.spr
-share/holotz-castle/game/theme/dungeons/char/main/2/hang.spr
-share/holotz-castle/game/theme/dungeons/char/main/2/jump.spr
-share/holotz-castle/game/theme/dungeons/char/main/2/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/main/2/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/main/2/jumright.spr
-share/holotz-castle/game/theme/dungeons/char/main/2/left.spr
-share/holotz-castle/game/theme/dungeons/char/main/2/right.spr
-share/holotz-castle/game/theme/dungeons/char/main/2/slide.spr
-share/holotz-castle/game/theme/dungeons/char/main/2/stop.spr
-share/holotz-castle/game/theme/dungeons/char/main/2/up.spr
-share/holotz-castle/game/theme/dungeons/char/main/3/dead.spr
-share/holotz-castle/game/theme/dungeons/char/main/3/down.spr
-share/holotz-castle/game/theme/dungeons/char/main/3/fall.spr
-share/holotz-castle/game/theme/dungeons/char/main/3/hang.spr
-share/holotz-castle/game/theme/dungeons/char/main/3/jump.spr
-share/holotz-castle/game/theme/dungeons/char/main/3/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/main/3/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/main/3/jumright.spr
-share/holotz-castle/game/theme/dungeons/char/main/3/left.spr
-share/holotz-castle/game/theme/dungeons/char/main/3/right.spr
-share/holotz-castle/game/theme/dungeons/char/main/3/slide.spr
-share/holotz-castle/game/theme/dungeons/char/main/3/stop.spr
-share/holotz-castle/game/theme/dungeons/char/main/3/up.spr
-share/holotz-castle/game/theme/dungeons/char/main/4/dead.spr
-share/holotz-castle/game/theme/dungeons/char/main/4/down.spr
-share/holotz-castle/game/theme/dungeons/char/main/4/fall.spr
-share/holotz-castle/game/theme/dungeons/char/main/4/hang.spr
-share/holotz-castle/game/theme/dungeons/char/main/4/jump.spr
-share/holotz-castle/game/theme/dungeons/char/main/4/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/main/4/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/main/4/left.spr
-share/holotz-castle/game/theme/dungeons/char/main/4/right.spr
-share/holotz-castle/game/theme/dungeons/char/main/4/slide.spr
-share/holotz-castle/game/theme/dungeons/char/main/4/stop.spr
-share/holotz-castle/game/theme/dungeons/char/main/4/up.spr
-share/holotz-castle/game/theme/dungeons/char/main/5/dead.spr
-share/holotz-castle/game/theme/dungeons/char/main/5/down.spr
-share/holotz-castle/game/theme/dungeons/char/main/5/fall.spr
-share/holotz-castle/game/theme/dungeons/char/main/5/hang.spr
-share/holotz-castle/game/theme/dungeons/char/main/5/jump.spr
-share/holotz-castle/game/theme/dungeons/char/main/5/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/main/5/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/main/5/left.spr
-share/holotz-castle/game/theme/dungeons/char/main/5/right.spr
-share/holotz-castle/game/theme/dungeons/char/main/5/slide.spr
-share/holotz-castle/game/theme/dungeons/char/main/5/stop.spr
-share/holotz-castle/game/theme/dungeons/char/main/5/up.spr
-share/holotz-castle/game/theme/dungeons/char/main/6/dead.spr
-share/holotz-castle/game/theme/dungeons/char/main/6/down.spr
-share/holotz-castle/game/theme/dungeons/char/main/6/fall.spr
-share/holotz-castle/game/theme/dungeons/char/main/6/hang.spr
-share/holotz-castle/game/theme/dungeons/char/main/6/jump.spr
-share/holotz-castle/game/theme/dungeons/char/main/6/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/main/6/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/main/6/left.spr
-share/holotz-castle/game/theme/dungeons/char/main/6/right.spr
-share/holotz-castle/game/theme/dungeons/char/main/6/slide.spr
-share/holotz-castle/game/theme/dungeons/char/main/6/stop.spr
-share/holotz-castle/game/theme/dungeons/char/main/6/up.spr
-share/holotz-castle/game/theme/dungeons/char/maker/1/dead.spr
-share/holotz-castle/game/theme/dungeons/char/maker/1/down.spr
-share/holotz-castle/game/theme/dungeons/char/maker/1/fall.spr
-share/holotz-castle/game/theme/dungeons/char/maker/1/hang.spr
-share/holotz-castle/game/theme/dungeons/char/maker/1/jump.spr
-share/holotz-castle/game/theme/dungeons/char/maker/1/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/maker/1/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/maker/1/left.spr
-share/holotz-castle/game/theme/dungeons/char/maker/1/right.spr
-share/holotz-castle/game/theme/dungeons/char/maker/1/slide.spr
-share/holotz-castle/game/theme/dungeons/char/maker/1/stop.spr
-share/holotz-castle/game/theme/dungeons/char/maker/1/up.spr
-share/holotz-castle/game/theme/dungeons/char/random/1/dead.spr
-share/holotz-castle/game/theme/dungeons/char/random/1/down.spr
-share/holotz-castle/game/theme/dungeons/char/random/1/fall.spr
-share/holotz-castle/game/theme/dungeons/char/random/1/hang.spr
-share/holotz-castle/game/theme/dungeons/char/random/1/jump.spr
-share/holotz-castle/game/theme/dungeons/char/random/1/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/random/1/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/random/1/left.spr
-share/holotz-castle/game/theme/dungeons/char/random/1/right.spr
-share/holotz-castle/game/theme/dungeons/char/random/1/slide.spr
-share/holotz-castle/game/theme/dungeons/char/random/1/stop.spr
-share/holotz-castle/game/theme/dungeons/char/random/1/up.spr
-share/holotz-castle/game/theme/dungeons/char/random/2/dead.spr
-share/holotz-castle/game/theme/dungeons/char/random/2/down.spr
-share/holotz-castle/game/theme/dungeons/char/random/2/fall.spr
-share/holotz-castle/game/theme/dungeons/char/random/2/hang.spr
-share/holotz-castle/game/theme/dungeons/char/random/2/jump.spr
-share/holotz-castle/game/theme/dungeons/char/random/2/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/random/2/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/random/2/left.spr
-share/holotz-castle/game/theme/dungeons/char/random/2/right.spr
-share/holotz-castle/game/theme/dungeons/char/random/2/slide.spr
-share/holotz-castle/game/theme/dungeons/char/random/2/stop.spr
-share/holotz-castle/game/theme/dungeons/char/random/2/up.spr
-share/holotz-castle/game/theme/dungeons/char/random/3/dead.spr
-share/holotz-castle/game/theme/dungeons/char/random/3/down.spr
-share/holotz-castle/game/theme/dungeons/char/random/3/fall.spr
-share/holotz-castle/game/theme/dungeons/char/random/3/hang.spr
-share/holotz-castle/game/theme/dungeons/char/random/3/jump.spr
-share/holotz-castle/game/theme/dungeons/char/random/3/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/random/3/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/random/3/left.spr
-share/holotz-castle/game/theme/dungeons/char/random/3/right.spr
-share/holotz-castle/game/theme/dungeons/char/random/3/slide.spr
-share/holotz-castle/game/theme/dungeons/char/random/3/stop.spr
-share/holotz-castle/game/theme/dungeons/char/random/3/up.spr
-share/holotz-castle/game/theme/dungeons/char/random/4/dead.spr
-share/holotz-castle/game/theme/dungeons/char/random/4/down.spr
-share/holotz-castle/game/theme/dungeons/char/random/4/fall.spr
-share/holotz-castle/game/theme/dungeons/char/random/4/hang.spr
-share/holotz-castle/game/theme/dungeons/char/random/4/jump.spr
-share/holotz-castle/game/theme/dungeons/char/random/4/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/random/4/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/random/4/left.spr
-share/holotz-castle/game/theme/dungeons/char/random/4/right.spr
-share/holotz-castle/game/theme/dungeons/char/random/4/slide.spr
-share/holotz-castle/game/theme/dungeons/char/random/4/stop.spr
-share/holotz-castle/game/theme/dungeons/char/random/4/up.spr
-share/holotz-castle/game/theme/dungeons/char/random/5/dead.spr
-share/holotz-castle/game/theme/dungeons/char/random/5/down.spr
-share/holotz-castle/game/theme/dungeons/char/random/5/fall.spr
-share/holotz-castle/game/theme/dungeons/char/random/5/hang.spr
-share/holotz-castle/game/theme/dungeons/char/random/5/jump.spr
-share/holotz-castle/game/theme/dungeons/char/random/5/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/random/5/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/random/5/left.spr
-share/holotz-castle/game/theme/dungeons/char/random/5/right.spr
-share/holotz-castle/game/theme/dungeons/char/random/5/slide.spr
-share/holotz-castle/game/theme/dungeons/char/random/5/stop.spr
-share/holotz-castle/game/theme/dungeons/char/random/5/up.spr
-share/holotz-castle/game/theme/dungeons/char/random/6/dead.spr
-share/holotz-castle/game/theme/dungeons/char/random/6/down.spr
-share/holotz-castle/game/theme/dungeons/char/random/6/fall.spr
-share/holotz-castle/game/theme/dungeons/char/random/6/hang.spr
-share/holotz-castle/game/theme/dungeons/char/random/6/jump.spr
-share/holotz-castle/game/theme/dungeons/char/random/6/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/random/6/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/random/6/left.spr
-share/holotz-castle/game/theme/dungeons/char/random/6/right.spr
-share/holotz-castle/game/theme/dungeons/char/random/6/slide.spr
-share/holotz-castle/game/theme/dungeons/char/random/6/stop.spr
-share/holotz-castle/game/theme/dungeons/char/random/6/up.spr
-share/holotz-castle/game/theme/dungeons/char/random/7/dead.spr
-share/holotz-castle/game/theme/dungeons/char/random/7/down.spr
-share/holotz-castle/game/theme/dungeons/char/random/7/fall.spr
-share/holotz-castle/game/theme/dungeons/char/random/7/hang.spr
-share/holotz-castle/game/theme/dungeons/char/random/7/jump.spr
-share/holotz-castle/game/theme/dungeons/char/random/7/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/random/7/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/random/7/left.spr
-share/holotz-castle/game/theme/dungeons/char/random/7/right.spr
-share/holotz-castle/game/theme/dungeons/char/random/7/slide.spr
-share/holotz-castle/game/theme/dungeons/char/random/7/stop.spr
-share/holotz-castle/game/theme/dungeons/char/random/7/up.spr
-share/holotz-castle/game/theme/dungeons/char/static/1/dead.spr
-share/holotz-castle/game/theme/dungeons/char/static/1/down.spr
-share/holotz-castle/game/theme/dungeons/char/static/1/fall.spr
-share/holotz-castle/game/theme/dungeons/char/static/1/hang.spr
-share/holotz-castle/game/theme/dungeons/char/static/1/jump.spr
-share/holotz-castle/game/theme/dungeons/char/static/1/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/static/1/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/static/1/left.spr
-share/holotz-castle/game/theme/dungeons/char/static/1/right.spr
-share/holotz-castle/game/theme/dungeons/char/static/1/slide.spr
-share/holotz-castle/game/theme/dungeons/char/static/1/stop.spr
-share/holotz-castle/game/theme/dungeons/char/static/1/up.spr
-share/holotz-castle/game/theme/dungeons/char/static/2/dead.spr
-share/holotz-castle/game/theme/dungeons/char/static/2/down.spr
-share/holotz-castle/game/theme/dungeons/char/static/2/fall.spr
-share/holotz-castle/game/theme/dungeons/char/static/2/hang.spr
-share/holotz-castle/game/theme/dungeons/char/static/2/jump.spr
-share/holotz-castle/game/theme/dungeons/char/static/2/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/static/2/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/static/2/left.spr
-share/holotz-castle/game/theme/dungeons/char/static/2/right.spr
-share/holotz-castle/game/theme/dungeons/char/static/2/slide.spr
-share/holotz-castle/game/theme/dungeons/char/static/2/stop.spr
-share/holotz-castle/game/theme/dungeons/char/static/2/up.spr
-share/holotz-castle/game/theme/dungeons/char/static/3/dead.spr
-share/holotz-castle/game/theme/dungeons/char/static/3/down.spr
-share/holotz-castle/game/theme/dungeons/char/static/3/fall.spr
-share/holotz-castle/game/theme/dungeons/char/static/3/hang.spr
-share/holotz-castle/game/theme/dungeons/char/static/3/jump.spr
-share/holotz-castle/game/theme/dungeons/char/static/3/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/static/3/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/static/3/left.spr
-share/holotz-castle/game/theme/dungeons/char/static/3/right.spr
-share/holotz-castle/game/theme/dungeons/char/static/3/slide.spr
-share/holotz-castle/game/theme/dungeons/char/static/3/stop.spr
-share/holotz-castle/game/theme/dungeons/char/static/3/up.spr
-share/holotz-castle/game/theme/dungeons/char/static/4/dead.spr
-share/holotz-castle/game/theme/dungeons/char/static/4/down.spr
-share/holotz-castle/game/theme/dungeons/char/static/4/fall.spr
-share/holotz-castle/game/theme/dungeons/char/static/4/hang.spr
-share/holotz-castle/game/theme/dungeons/char/static/4/jump.spr
-share/holotz-castle/game/theme/dungeons/char/static/4/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/static/4/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/static/4/left.spr
-share/holotz-castle/game/theme/dungeons/char/static/4/right.spr
-share/holotz-castle/game/theme/dungeons/char/static/4/slide.spr
-share/holotz-castle/game/theme/dungeons/char/static/4/stop.spr
-share/holotz-castle/game/theme/dungeons/char/static/4/up.spr
-share/holotz-castle/game/theme/dungeons/char/static/5/dead.spr
-share/holotz-castle/game/theme/dungeons/char/static/5/down.spr
-share/holotz-castle/game/theme/dungeons/char/static/5/fall.spr
-share/holotz-castle/game/theme/dungeons/char/static/5/hang.spr
-share/holotz-castle/game/theme/dungeons/char/static/5/jump.spr
-share/holotz-castle/game/theme/dungeons/char/static/5/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/static/5/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/static/5/left.spr
-share/holotz-castle/game/theme/dungeons/char/static/5/right.spr
-share/holotz-castle/game/theme/dungeons/char/static/5/slide.spr
-share/holotz-castle/game/theme/dungeons/char/static/5/stop.spr
-share/holotz-castle/game/theme/dungeons/char/static/5/up.spr
-share/holotz-castle/game/theme/dungeons/char/static/6/dead.spr
-share/holotz-castle/game/theme/dungeons/char/static/6/down.spr
-share/holotz-castle/game/theme/dungeons/char/static/6/fall.spr
-share/holotz-castle/game/theme/dungeons/char/static/6/hang.spr
-share/holotz-castle/game/theme/dungeons/char/static/6/jump.spr
-share/holotz-castle/game/theme/dungeons/char/static/6/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/static/6/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/static/6/left.spr
-share/holotz-castle/game/theme/dungeons/char/static/6/right.spr
-share/holotz-castle/game/theme/dungeons/char/static/6/slide.spr
-share/holotz-castle/game/theme/dungeons/char/static/6/stop.spr
-share/holotz-castle/game/theme/dungeons/char/static/6/up.spr
-share/holotz-castle/game/theme/dungeons/char/static/7/dead.spr
-share/holotz-castle/game/theme/dungeons/char/static/7/down.spr
-share/holotz-castle/game/theme/dungeons/char/static/7/fall.spr
-share/holotz-castle/game/theme/dungeons/char/static/7/hang.spr
-share/holotz-castle/game/theme/dungeons/char/static/7/jump.spr
-share/holotz-castle/game/theme/dungeons/char/static/7/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/static/7/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/static/7/left.spr
-share/holotz-castle/game/theme/dungeons/char/static/7/right.spr
-share/holotz-castle/game/theme/dungeons/char/static/7/slide.spr
-share/holotz-castle/game/theme/dungeons/char/static/7/stop.spr
-share/holotz-castle/game/theme/dungeons/char/static/7/up.spr
-share/holotz-castle/game/theme/dungeons/char/static/8/dead.spr
-share/holotz-castle/game/theme/dungeons/char/static/8/down.spr
-share/holotz-castle/game/theme/dungeons/char/static/8/fall.spr
-share/holotz-castle/game/theme/dungeons/char/static/8/hang.spr
-share/holotz-castle/game/theme/dungeons/char/static/8/jump.spr
-share/holotz-castle/game/theme/dungeons/char/static/8/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/static/8/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/static/8/left.spr
-share/holotz-castle/game/theme/dungeons/char/static/8/right.spr
-share/holotz-castle/game/theme/dungeons/char/static/8/slide.spr
-share/holotz-castle/game/theme/dungeons/char/static/8/stop.spr
-share/holotz-castle/game/theme/dungeons/char/static/8/up.spr
-share/holotz-castle/game/theme/dungeons/char/static/9/dead.spr
-share/holotz-castle/game/theme/dungeons/char/static/9/down.spr
-share/holotz-castle/game/theme/dungeons/char/static/9/fall.spr
-share/holotz-castle/game/theme/dungeons/char/static/9/hang.spr
-share/holotz-castle/game/theme/dungeons/char/static/9/jump.spr
-share/holotz-castle/game/theme/dungeons/char/static/9/jumpleft.spr
-share/holotz-castle/game/theme/dungeons/char/static/9/jumpright.spr
-share/holotz-castle/game/theme/dungeons/char/static/9/left.spr
-share/holotz-castle/game/theme/dungeons/char/static/9/right.spr
-share/holotz-castle/game/theme/dungeons/char/static/9/slide.spr
-share/holotz-castle/game/theme/dungeons/char/static/9/stop.spr
-share/holotz-castle/game/theme/dungeons/char/static/9/up.spr
-share/holotz-castle/game/theme/dungeons/contfloor/1/c.tga
-share/holotz-castle/game/theme/dungeons/contfloor/1/c1.tga
-share/holotz-castle/game/theme/dungeons/contfloor/1/c3.tga
-share/holotz-castle/game/theme/dungeons/contfloor/1/c7.tga
-share/holotz-castle/game/theme/dungeons/contfloor/1/c9.tga
-share/holotz-castle/game/theme/dungeons/contfloor/1/cd.tga
-share/holotz-castle/game/theme/dungeons/contfloor/1/cdl.tga
-share/holotz-castle/game/theme/dungeons/contfloor/1/cdr.tga
-share/holotz-castle/game/theme/dungeons/contfloor/1/cl.tga
-share/holotz-castle/game/theme/dungeons/contfloor/1/cr.tga
-share/holotz-castle/game/theme/dungeons/contfloor/1/cu.tga
-share/holotz-castle/game/theme/dungeons/contfloor/1/cul.tga
-share/holotz-castle/game/theme/dungeons/contfloor/1/cur.tga
-share/holotz-castle/game/theme/dungeons/contfloor/1/i.tga
-share/holotz-castle/game/theme/dungeons/contfloor/1/s2.tga
-share/holotz-castle/game/theme/dungeons/contfloor/1/s4.tga
-share/holotz-castle/game/theme/dungeons/contfloor/1/s6.tga
-share/holotz-castle/game/theme/dungeons/contfloor/1/s8.tga
-share/holotz-castle/game/theme/dungeons/contfloor/1/sh.tga
-share/holotz-castle/game/theme/dungeons/contfloor/1/sv.tga
-share/holotz-castle/game/theme/dungeons/contfloor/2/c.tga
-share/holotz-castle/game/theme/dungeons/contfloor/2/c1.tga
-share/holotz-castle/game/theme/dungeons/contfloor/2/c3.tga
-share/holotz-castle/game/theme/dungeons/contfloor/2/c7.tga
-share/holotz-castle/game/theme/dungeons/contfloor/2/c9.tga
-share/holotz-castle/game/theme/dungeons/contfloor/2/cd.tga
-share/holotz-castle/game/theme/dungeons/contfloor/2/cdl.tga
-share/holotz-castle/game/theme/dungeons/contfloor/2/cdr.tga
-share/holotz-castle/game/theme/dungeons/contfloor/2/cl.tga
-share/holotz-castle/game/theme/dungeons/contfloor/2/cr.tga
-share/holotz-castle/game/theme/dungeons/contfloor/2/cu.tga
-share/holotz-castle/game/theme/dungeons/contfloor/2/cul.tga
-share/holotz-castle/game/theme/dungeons/contfloor/2/cur.tga
-share/holotz-castle/game/theme/dungeons/contfloor/2/i.tga
-share/holotz-castle/game/theme/dungeons/contfloor/2/s2.tga
-share/holotz-castle/game/theme/dungeons/contfloor/2/s4.tga
-share/holotz-castle/game/theme/dungeons/contfloor/2/s6.tga
-share/holotz-castle/game/theme/dungeons/contfloor/2/s8.tga
-share/holotz-castle/game/theme/dungeons/contfloor/2/sh.tga
-share/holotz-castle/game/theme/dungeons/contfloor/2/sv.tga
-share/holotz-castle/game/theme/dungeons/contfloor/3/c.tga
-share/holotz-castle/game/theme/dungeons/contfloor/3/c1.tga
-share/holotz-castle/game/theme/dungeons/contfloor/3/c3.tga
-share/holotz-castle/game/theme/dungeons/contfloor/3/c7.tga
-share/holotz-castle/game/theme/dungeons/contfloor/3/c9.tga
-share/holotz-castle/game/theme/dungeons/contfloor/3/cd.tga
-share/holotz-castle/game/theme/dungeons/contfloor/3/cdl.tga
-share/holotz-castle/game/theme/dungeons/contfloor/3/cdr.tga
-share/holotz-castle/game/theme/dungeons/contfloor/3/cl.tga
-share/holotz-castle/game/theme/dungeons/contfloor/3/cr.tga
-share/holotz-castle/game/theme/dungeons/contfloor/3/cu.tga
-share/holotz-castle/game/theme/dungeons/contfloor/3/cul.tga
-share/holotz-castle/game/theme/dungeons/contfloor/3/cur.tga
-share/holotz-castle/game/theme/dungeons/contfloor/3/i.tga
-share/holotz-castle/game/theme/dungeons/contfloor/3/s2.tga
-share/holotz-castle/game/theme/dungeons/contfloor/3/s4.tga
-share/holotz-castle/game/theme/dungeons/contfloor/3/s6.tga
-share/holotz-castle/game/theme/dungeons/contfloor/3/s8.tga
-share/holotz-castle/game/theme/dungeons/contfloor/3/sh.tga
-share/holotz-castle/game/theme/dungeons/contfloor/3/sv.tga
-share/holotz-castle/game/theme/dungeons/dialog/1/1.tga
-share/holotz-castle/game/theme/dungeons/dialog/1/2.tga
-share/holotz-castle/game/theme/dungeons/dialog/1/3.tga
-share/holotz-castle/game/theme/dungeons/dialog/1/4.tga
-share/holotz-castle/game/theme/dungeons/dialog/1/5.tga
-share/holotz-castle/game/theme/dungeons/dialog/1/6.tga
-share/holotz-castle/game/theme/dungeons/dialog/1/7.tga
-share/holotz-castle/game/theme/dungeons/dialog/1/8.tga
-share/holotz-castle/game/theme/dungeons/dialog/1/9.tga
-share/holotz-castle/game/theme/dungeons/dialog/1/left.tga
-share/holotz-castle/game/theme/dungeons/dialog/1/right.tga
-share/holotz-castle/game/theme/dungeons/dialog/2/1.tga
-share/holotz-castle/game/theme/dungeons/dialog/2/2.tga
-share/holotz-castle/game/theme/dungeons/dialog/2/3.tga
-share/holotz-castle/game/theme/dungeons/dialog/2/4.tga
-share/holotz-castle/game/theme/dungeons/dialog/2/5.tga
-share/holotz-castle/game/theme/dungeons/dialog/2/6.tga
-share/holotz-castle/game/theme/dungeons/dialog/2/7.tga
-share/holotz-castle/game/theme/dungeons/dialog/2/8.tga
-share/holotz-castle/game/theme/dungeons/dialog/2/9.tga
-share/holotz-castle/game/theme/dungeons/dialog/2/left.tga
-share/holotz-castle/game/theme/dungeons/dialog/2/right.tga
-share/holotz-castle/game/theme/dungeons/floor/1/floor.tga
-share/holotz-castle/game/theme/dungeons/floor/10/floor.tga
-share/holotz-castle/game/theme/dungeons/floor/2/floor.tga
-share/holotz-castle/game/theme/dungeons/floor/3/floor.tga
-share/holotz-castle/game/theme/dungeons/floor/4/floor.tga
-share/holotz-castle/game/theme/dungeons/floor/5/floor.tga
-share/holotz-castle/game/theme/dungeons/floor/6/floor.tga
-share/holotz-castle/game/theme/dungeons/floor/7/floor.tga
-share/holotz-castle/game/theme/dungeons/floor/8/floor.tga
-share/holotz-castle/game/theme/dungeons/floor/9/floor.tga
-share/holotz-castle/game/theme/dungeons/ladder/1/ladder.tga
-share/holotz-castle/game/theme/dungeons/ladder/2/ladder.tga
-share/holotz-castle/game/theme/dungeons/ladder/3/ladder.tga
-share/holotz-castle/game/theme/dungeons/narrative/1/1.tga
-share/holotz-castle/game/theme/dungeons/narrative/1/2.tga
-share/holotz-castle/game/theme/dungeons/narrative/1/3.tga
-share/holotz-castle/game/theme/dungeons/narrative/1/4.tga
-share/holotz-castle/game/theme/dungeons/narrative/1/5.tga
-share/holotz-castle/game/theme/dungeons/narrative/1/6.tga
-share/holotz-castle/game/theme/dungeons/narrative/1/7.tga
-share/holotz-castle/game/theme/dungeons/narrative/1/8.tga
-share/holotz-castle/game/theme/dungeons/narrative/1/9.tga
-share/holotz-castle/game/theme/dungeons/object/1/acquired.spr
-share/holotz-castle/game/theme/dungeons/object/1/normal.spr
-share/holotz-castle/game/theme/dungeons/object/2/acquired.spr
-share/holotz-castle/game/theme/dungeons/object/2/normal.spr
-share/holotz-castle/game/theme/dungeons/object/3/acquired.spr
-share/holotz-castle/game/theme/dungeons/object/3/normal.spr
-share/holotz-castle/game/theme/dungeons/rope/1/edge.tga
-share/holotz-castle/game/theme/dungeons/rope/1/middle.tga
-share/holotz-castle/game/theme/dungeons/rope/1/top.tga
-share/holotz-castle/game/theme/dungeons/rope/2/edge.tga
-share/holotz-castle/game/theme/dungeons/rope/2/middle.tga
-share/holotz-castle/game/theme/dungeons/rope/2/top.tga
-@dirrm share/holotz-castle/game/theme/dungeons/rope/2
-@dirrm share/holotz-castle/game/theme/dungeons/rope/1
-@dirrm share/holotz-castle/game/theme/dungeons/rope
-@dirrm share/holotz-castle/game/theme/dungeons/object/3
-@dirrm share/holotz-castle/game/theme/dungeons/object/2
-@dirrm share/holotz-castle/game/theme/dungeons/object/1
-@dirrm share/holotz-castle/game/theme/dungeons/object
-@dirrm share/holotz-castle/game/theme/dungeons/narrative/1
-@dirrm share/holotz-castle/game/theme/dungeons/narrative
-@dirrm share/holotz-castle/game/theme/dungeons/ladder/3
-@dirrm share/holotz-castle/game/theme/dungeons/ladder/2
-@dirrm share/holotz-castle/game/theme/dungeons/ladder/1
-@dirrm share/holotz-castle/game/theme/dungeons/ladder
-@dirrm share/holotz-castle/game/theme/dungeons/floor/9
-@dirrm share/holotz-castle/game/theme/dungeons/floor/8
-@dirrm share/holotz-castle/game/theme/dungeons/floor/7
-@dirrm share/holotz-castle/game/theme/dungeons/floor/6
-@dirrm share/holotz-castle/game/theme/dungeons/floor/5
-@dirrm share/holotz-castle/game/theme/dungeons/floor/4
-@dirrm share/holotz-castle/game/theme/dungeons/floor/3
-@dirrm share/holotz-castle/game/theme/dungeons/floor/2
-@dirrm share/holotz-castle/game/theme/dungeons/floor/10
-@dirrm share/holotz-castle/game/theme/dungeons/floor/1
-@dirrm share/holotz-castle/game/theme/dungeons/floor
-@dirrm share/holotz-castle/game/theme/dungeons/dialog/2
-@dirrm share/holotz-castle/game/theme/dungeons/dialog/1
-@dirrm share/holotz-castle/game/theme/dungeons/dialog
-@dirrm share/holotz-castle/game/theme/dungeons/contfloor/3
-@dirrm share/holotz-castle/game/theme/dungeons/contfloor/2
-@dirrm share/holotz-castle/game/theme/dungeons/contfloor/1
-@dirrm share/holotz-castle/game/theme/dungeons/contfloor
-@dirrm share/holotz-castle/game/theme/dungeons/char/static/9
-@dirrm share/holotz-castle/game/theme/dungeons/char/static/8
-@dirrm share/holotz-castle/game/theme/dungeons/char/static/7
-@dirrm share/holotz-castle/game/theme/dungeons/char/static/6
-@dirrm share/holotz-castle/game/theme/dungeons/char/static/5
-@dirrm share/holotz-castle/game/theme/dungeons/char/static/4
-@dirrm share/holotz-castle/game/theme/dungeons/char/static/3
-@dirrm share/holotz-castle/game/theme/dungeons/char/static/2
-@dirrm share/holotz-castle/game/theme/dungeons/char/static/1
-@dirrm share/holotz-castle/game/theme/dungeons/char/static
-@dirrm share/holotz-castle/game/theme/dungeons/char/random/7
-@dirrm share/holotz-castle/game/theme/dungeons/char/random/6
-@dirrm share/holotz-castle/game/theme/dungeons/char/random/5
-@dirrm share/holotz-castle/game/theme/dungeons/char/random/4
-@dirrm share/holotz-castle/game/theme/dungeons/char/random/3
-@dirrm share/holotz-castle/game/theme/dungeons/char/random/2
-@dirrm share/holotz-castle/game/theme/dungeons/char/random/1
-@dirrm share/holotz-castle/game/theme/dungeons/char/random
-@dirrm share/holotz-castle/game/theme/dungeons/char/maker/1
-@dirrm share/holotz-castle/game/theme/dungeons/char/maker
-@dirrm share/holotz-castle/game/theme/dungeons/char/main/6
-@dirrm share/holotz-castle/game/theme/dungeons/char/main/5
-@dirrm share/holotz-castle/game/theme/dungeons/char/main/4
-@dirrm share/holotz-castle/game/theme/dungeons/char/main/3
-@dirrm share/holotz-castle/game/theme/dungeons/char/main/2
-@dirrm share/holotz-castle/game/theme/dungeons/char/main/1
-@dirrm share/holotz-castle/game/theme/dungeons/char/main
-@dirrm share/holotz-castle/game/theme/dungeons/char/guest/1
-@dirrm share/holotz-castle/game/theme/dungeons/char/guest
-@dirrm share/holotz-castle/game/theme/dungeons/char/dummy
-@dirrm share/holotz-castle/game/theme/dungeons/char/chaser/1
-@dirrm share/holotz-castle/game/theme/dungeons/char/chaser
-@dirrm share/holotz-castle/game/theme/dungeons/char/ball/4
-@dirrm share/holotz-castle/game/theme/dungeons/char/ball/3
-@dirrm share/holotz-castle/game/theme/dungeons/char/ball/2
-@dirrm share/holotz-castle/game/theme/dungeons/char/ball/1
-@dirrm share/holotz-castle/game/theme/dungeons/char/ball
-@dirrm share/holotz-castle/game/theme/dungeons/char
-@dirrm share/holotz-castle/game/theme/dungeons/break/5
-@dirrm share/holotz-castle/game/theme/dungeons/break/4
-@dirrm share/holotz-castle/game/theme/dungeons/break/3
-@dirrm share/holotz-castle/game/theme/dungeons/break/2
-@dirrm share/holotz-castle/game/theme/dungeons/break/1
-@dirrm share/holotz-castle/game/theme/dungeons/break
-@dirrm share/holotz-castle/game/theme/dungeons/bar/7
-@dirrm share/holotz-castle/game/theme/dungeons/bar/6
-@dirrm share/holotz-castle/game/theme/dungeons/bar/5
-@dirrm share/holotz-castle/game/theme/dungeons/bar/4
-@dirrm share/holotz-castle/game/theme/dungeons/bar/3
-@dirrm share/holotz-castle/game/theme/dungeons/bar/2
-@dirrm share/holotz-castle/game/theme/dungeons/bar/1
-@dirrm share/holotz-castle/game/theme/dungeons/bar
-@dirrm share/holotz-castle/game/theme/dungeons
-@dirrm share/holotz-castle/game/theme/default/rope/2
-@dirrm share/holotz-castle/game/theme/default/rope/1
-@dirrm share/holotz-castle/game/theme/default/rope
-@dirrm share/holotz-castle/game/theme/default/object/3
-@dirrm share/holotz-castle/game/theme/default/object/2
-@dirrm share/holotz-castle/game/theme/default/object/1
-@dirrm share/holotz-castle/game/theme/default/object
-@dirrm share/holotz-castle/game/theme/default/narrative/1
-@dirrm share/holotz-castle/game/theme/default/narrative
-@dirrm share/holotz-castle/game/theme/default/ladder/3
-@dirrm share/holotz-castle/game/theme/default/ladder/2
-@dirrm share/holotz-castle/game/theme/default/ladder/1
-@dirrm share/holotz-castle/game/theme/default/ladder
-@dirrm share/holotz-castle/game/theme/default/floor/9
-@dirrm share/holotz-castle/game/theme/default/floor/8
-@dirrm share/holotz-castle/game/theme/default/floor/7
-@dirrm share/holotz-castle/game/theme/default/floor/6
-@dirrm share/holotz-castle/game/theme/default/floor/5
-@dirrm share/holotz-castle/game/theme/default/floor/4
-@dirrm share/holotz-castle/game/theme/default/floor/3
-@dirrm share/holotz-castle/game/theme/default/floor/2
-@dirrm share/holotz-castle/game/theme/default/floor/16
-@dirrm share/holotz-castle/game/theme/default/floor/15
-@dirrm share/holotz-castle/game/theme/default/floor/14
-@dirrm share/holotz-castle/game/theme/default/floor/13
-@dirrm share/holotz-castle/game/theme/default/floor/12
-@dirrm share/holotz-castle/game/theme/default/floor/11
-@dirrm share/holotz-castle/game/theme/default/floor/10
-@dirrm share/holotz-castle/game/theme/default/floor/1
-@dirrm share/holotz-castle/game/theme/default/floor
-@dirrm share/holotz-castle/game/theme/default/dialog/2
-@dirrm share/holotz-castle/game/theme/default/dialog/1
-@dirrm share/holotz-castle/game/theme/default/dialog
-@dirrm share/holotz-castle/game/theme/default/contfloor/3
-@dirrm share/holotz-castle/game/theme/default/contfloor/2
-@dirrm share/holotz-castle/game/theme/default/contfloor/1
-@dirrm share/holotz-castle/game/theme/default/contfloor
-@dirrm share/holotz-castle/game/theme/default/char/static/9
-@dirrm share/holotz-castle/game/theme/default/char/static/8
-@dirrm share/holotz-castle/game/theme/default/char/static/7
-@dirrm share/holotz-castle/game/theme/default/char/static/6
-@dirrm share/holotz-castle/game/theme/default/char/static/5
-@dirrm share/holotz-castle/game/theme/default/char/static/4
-@dirrm share/holotz-castle/game/theme/default/char/static/3
-@dirrm share/holotz-castle/game/theme/default/char/static/2
-@dirrm share/holotz-castle/game/theme/default/char/static/1
-@dirrm share/holotz-castle/game/theme/default/char/static
-@dirrm share/holotz-castle/game/theme/default/char/random/7
-@dirrm share/holotz-castle/game/theme/default/char/random/6
-@dirrm share/holotz-castle/game/theme/default/char/random/5
-@dirrm share/holotz-castle/game/theme/default/char/random/4
-@dirrm share/holotz-castle/game/theme/default/char/random/3
-@dirrm share/holotz-castle/game/theme/default/char/random/2
-@dirrm share/holotz-castle/game/theme/default/char/random/1
-@dirrm share/holotz-castle/game/theme/default/char/random
-@dirrm share/holotz-castle/game/theme/default/char/maker/1
-@dirrm share/holotz-castle/game/theme/default/char/maker
-@dirrm share/holotz-castle/game/theme/default/char/main/6
-@dirrm share/holotz-castle/game/theme/default/char/main/5
-@dirrm share/holotz-castle/game/theme/default/char/main/4
-@dirrm share/holotz-castle/game/theme/default/char/main/3
-@dirrm share/holotz-castle/game/theme/default/char/main/2
-@dirrm share/holotz-castle/game/theme/default/char/main/1
-@dirrm share/holotz-castle/game/theme/default/char/main
-@dirrm share/holotz-castle/game/theme/default/char/guest/1
-@dirrm share/holotz-castle/game/theme/default/char/guest
-@dirrm share/holotz-castle/game/theme/default/char/dummy
-@dirrm share/holotz-castle/game/theme/default/char/chaser/1
-@dirrm share/holotz-castle/game/theme/default/char/chaser
-@dirrm share/holotz-castle/game/theme/default/char/ball/4
-@dirrm share/holotz-castle/game/theme/default/char/ball/3
-@dirrm share/holotz-castle/game/theme/default/char/ball/2
-@dirrm share/holotz-castle/game/theme/default/char/ball/1
-@dirrm share/holotz-castle/game/theme/default/char/ball
-@dirrm share/holotz-castle/game/theme/default/char
-@dirrm share/holotz-castle/game/theme/default/break/5
-@dirrm share/holotz-castle/game/theme/default/break/4
-@dirrm share/holotz-castle/game/theme/default/break/3
-@dirrm share/holotz-castle/game/theme/default/break/2
-@dirrm share/holotz-castle/game/theme/default/break/1
-@dirrm share/holotz-castle/game/theme/default/break
-@dirrm share/holotz-castle/game/theme/default/bar/7
-@dirrm share/holotz-castle/game/theme/default/bar/6
-@dirrm share/holotz-castle/game/theme/default/bar/5
-@dirrm share/holotz-castle/game/theme/default/bar/4
-@dirrm share/holotz-castle/game/theme/default/bar/3
-@dirrm share/holotz-castle/game/theme/default/bar/2
-@dirrm share/holotz-castle/game/theme/default/bar/1
-@dirrm share/holotz-castle/game/theme/default/bar
-@dirrm share/holotz-castle/game/theme/default
-@dirrm share/holotz-castle/game/theme
-@dirrm share/holotz-castle/game/stories/holotzcastle/script/ua
-@dirrm share/holotz-castle/game/stories/holotzcastle/script/ru
-@dirrm share/holotz-castle/game/stories/holotzcastle/script/fr
-@dirrm share/holotz-castle/game/stories/holotzcastle/script/eu
-@dirrm share/holotz-castle/game/stories/holotzcastle/script/es
-@dirrm share/holotz-castle/game/stories/holotzcastle/script/en
-@dirrm share/holotz-castle/game/stories/holotzcastle/script/de
-@dirrm share/holotz-castle/game/stories/holotzcastle/script/cs
-@dirrm share/holotz-castle/game/stories/holotzcastle/script
-@dirrm share/holotz-castle/game/stories/holotzcastle
-@dirrm share/holotz-castle/game/stories
-@dirrm share/holotz-castle/game/sound
-@dirrm share/holotz-castle/game/savedata
-@dirrm share/holotz-castle/game/messages/ua
-@dirrm share/holotz-castle/game/messages/ru
-@dirrm share/holotz-castle/game/messages/fr
-@dirrm share/holotz-castle/game/messages/eu
-@dirrm share/holotz-castle/game/messages/es
-@dirrm share/holotz-castle/game/messages/en
-@dirrm share/holotz-castle/game/messages/de
-@dirrm share/holotz-castle/game/messages/cs
-@dirrm share/holotz-castle/game/messages
-@dirrm share/holotz-castle/game/menu/ua
-@dirrm share/holotz-castle/game/menu/ru
-@dirrm share/holotz-castle/game/menu/fr
-@dirrm share/holotz-castle/game/menu/eu
-@dirrm share/holotz-castle/game/menu/es
-@dirrm share/holotz-castle/game/menu/en
-@dirrm share/holotz-castle/game/menu/de
-@dirrm share/holotz-castle/game/menu/cs
-@dirrm share/holotz-castle/game/menu
-@dirrm share/holotz-castle/game/main
-@dirrm share/holotz-castle/game/intro/ua
-@dirrm share/holotz-castle/game/intro/ru
-@dirrm share/holotz-castle/game/intro/fr
-@dirrm share/holotz-castle/game/intro/eu
-@dirrm share/holotz-castle/game/intro/es
-@dirrm share/holotz-castle/game/intro/en
-@dirrm share/holotz-castle/game/intro/de
-@dirrm share/holotz-castle/game/intro/cs
-@dirrm share/holotz-castle/game/intro
-@dirrm share/holotz-castle/game/icon
-@dirrm share/holotz-castle/game/help/ua
-@dirrm share/holotz-castle/game/help/ru
-@dirrm share/holotz-castle/game/help/fr
-@dirrm share/holotz-castle/game/help/eu
-@dirrm share/holotz-castle/game/help/es
-@dirrm share/holotz-castle/game/help/en
-@dirrm share/holotz-castle/game/help/de
-@dirrm share/holotz-castle/game/help/cs
-@dirrm share/holotz-castle/game/help
-@dirrm share/holotz-castle/game/font
-@dirrm share/holotz-castle/game/credits
-@dirrm share/holotz-castle/game
-@dirrm share/holotz-castle/editor/MainMenu
-@dirrm share/holotz-castle/editor/EnemyMenu
-@dirrm share/holotz-castle/editor
-@dirrm share/holotz-castle
+%%DATADIR%%/editor/EnemyMenu/0.tga
+%%DATADIR%%/editor/EnemyMenu/0_hi.tga
+%%DATADIR%%/editor/EnemyMenu/1.tga
+%%DATADIR%%/editor/EnemyMenu/1_hi.tga
+%%DATADIR%%/editor/EnemyMenu/2.tga
+%%DATADIR%%/editor/EnemyMenu/2_hi.tga
+%%DATADIR%%/editor/EnemyMenu/3.tga
+%%DATADIR%%/editor/EnemyMenu/3_hi.tga
+%%DATADIR%%/editor/EnemyMenu/4.tga
+%%DATADIR%%/editor/EnemyMenu/4_hi.tga
+%%DATADIR%%/editor/MainMenu/0.tga
+%%DATADIR%%/editor/MainMenu/0_hi.tga
+%%DATADIR%%/editor/MainMenu/1.tga
+%%DATADIR%%/editor/MainMenu/10.tga
+%%DATADIR%%/editor/MainMenu/10_hi.tga
+%%DATADIR%%/editor/MainMenu/11.tga
+%%DATADIR%%/editor/MainMenu/11_hi.tga
+%%DATADIR%%/editor/MainMenu/12.tga
+%%DATADIR%%/editor/MainMenu/12_hi.tga
+%%DATADIR%%/editor/MainMenu/1_hi.tga
+%%DATADIR%%/editor/MainMenu/2.tga
+%%DATADIR%%/editor/MainMenu/2_hi.tga
+%%DATADIR%%/editor/MainMenu/3.tga
+%%DATADIR%%/editor/MainMenu/3_hi.tga
+%%DATADIR%%/editor/MainMenu/4.tga
+%%DATADIR%%/editor/MainMenu/4_hi.tga
+%%DATADIR%%/editor/MainMenu/5.tga
+%%DATADIR%%/editor/MainMenu/5_hi.tga
+%%DATADIR%%/editor/MainMenu/6.tga
+%%DATADIR%%/editor/MainMenu/6_hi.tga
+%%DATADIR%%/editor/MainMenu/7.tga
+%%DATADIR%%/editor/MainMenu/7_hi.tga
+%%DATADIR%%/editor/MainMenu/8.tga
+%%DATADIR%%/editor/MainMenu/8_hi.tga
+%%DATADIR%%/editor/MainMenu/9.tga
+%%DATADIR%%/editor/MainMenu/9_hi.tga
+%%DATADIR%%/game/README.txt
+%%DATADIR%%/game/credits/animation0.tga
+%%DATADIR%%/game/credits/animation1.tga
+%%DATADIR%%/game/credits/animation2.tga
+%%DATADIR%%/game/credits/animation3.tga
+%%DATADIR%%/game/credits/drawing0.tga
+%%DATADIR%%/game/credits/drawing1.tga
+%%DATADIR%%/game/credits/drawing2.tga
+%%DATADIR%%/game/credits/music.tga
+%%DATADIR%%/game/credits/programming.tga
+%%DATADIR%%/game/credits/story.tga
+%%DATADIR%%/game/font/font.ttf
+%%DATADIR%%/game/help/cs/help.txt
+%%DATADIR%%/game/help/de/help.txt
+%%DATADIR%%/game/help/en/help.txt
+%%DATADIR%%/game/help/es/help.txt
+%%DATADIR%%/game/help/eu/help.txt
+%%DATADIR%%/game/help/fr/help.txt
+%%DATADIR%%/game/help/pt/help.txt
+%%DATADIR%%/game/help/ru/help.txt
+%%DATADIR%%/game/help/ua/help.txt
+%%DATADIR%%/game/icon/icon.bmp
+%%DATADIR%%/game/intro/cs/intro.txt
+%%DATADIR%%/game/intro/de/intro.txt
+%%DATADIR%%/game/intro/en/intro.txt
+%%DATADIR%%/game/intro/es/intro.txt
+%%DATADIR%%/game/intro/eu/intro.txt
+%%DATADIR%%/game/intro/fr/intro.txt
+%%DATADIR%%/game/intro/intro.tga
+%%DATADIR%%/game/intro/pt/intro.txt
+%%DATADIR%%/game/intro/ru/intro.txt
+%%DATADIR%%/game/intro/ua/intro.txt
+%%DATADIR%%/game/languages.txt
+%%DATADIR%%/game/main/main.tga
+%%DATADIR%%/game/main/readme
+%%DATADIR%%/game/menu/cs/menu.txt
+%%DATADIR%%/game/menu/de/menu.txt
+%%DATADIR%%/game/menu/en/menu.txt
+%%DATADIR%%/game/menu/es/menu.txt
+%%DATADIR%%/game/menu/eu/menu.txt
+%%DATADIR%%/game/menu/fr/menu.txt
+%%DATADIR%%/game/menu/pt/menu.txt
+%%DATADIR%%/game/menu/ru/menu.txt
+%%DATADIR%%/game/menu/ua/menu.txt
+%%DATADIR%%/game/messages/cs/messages.txt
+%%DATADIR%%/game/messages/de/messages.txt
+%%DATADIR%%/game/messages/en/messages.txt
+%%DATADIR%%/game/messages/es/messages.txt
+%%DATADIR%%/game/messages/eu/messages.txt
+%%DATADIR%%/game/messages/fr/messages.txt
+%%DATADIR%%/game/messages/pt/messages.txt
+%%DATADIR%%/game/messages/ru/messages.txt
+%%DATADIR%%/game/messages/ua/messages.txt
+%%DATADIR%%/game/playlist.txt
+%%DATADIR%%/game/savedata/empty.txt
+%%DATADIR%%/game/sound/HCBeginLevel.wav
+%%DATADIR%%/game/sound/HCCredits.wav
+%%DATADIR%%/game/sound/HCCredits_Slow.wav
+%%DATADIR%%/game/sound/HCEndLevel.wav
+%%DATADIR%%/game/sound/HCExitUnlocked.wav
+%%DATADIR%%/game/sound/HCGameOver.wav
+%%DATADIR%%/game/sound/HCMainTitle.wav
+%%DATADIR%%/game/sound/HCMainTitle_Fast.wav
+%%DATADIR%%/game/sound/HCMainTitle_Slow.wav
+%%DATADIR%%/game/sound/HCMainTitle_UltraSlow.wav
+%%DATADIR%%/game/sound/HCObjectAcquired.wav
+%%DATADIR%%/game/stories/holotzcastle/level001.hlv
+%%DATADIR%%/game/stories/holotzcastle/level001.hlv.tga
+%%DATADIR%%/game/stories/holotzcastle/level002.hlv
+%%DATADIR%%/game/stories/holotzcastle/level002.hlv.tga
+%%DATADIR%%/game/stories/holotzcastle/level003.hlv
+%%DATADIR%%/game/stories/holotzcastle/level003.hlv.tga
+%%DATADIR%%/game/stories/holotzcastle/level004.hlv
+%%DATADIR%%/game/stories/holotzcastle/level005.hlv
+%%DATADIR%%/game/stories/holotzcastle/level006.hlv
+%%DATADIR%%/game/stories/holotzcastle/level007.hlv
+%%DATADIR%%/game/stories/holotzcastle/level007.hlv.tga
+%%DATADIR%%/game/stories/holotzcastle/level008.hlv
+%%DATADIR%%/game/stories/holotzcastle/level008.hlv.tga
+%%DATADIR%%/game/stories/holotzcastle/level009.hlv
+%%DATADIR%%/game/stories/holotzcastle/level010.hlv
+%%DATADIR%%/game/stories/holotzcastle/level011.hlv
+%%DATADIR%%/game/stories/holotzcastle/level012.hlv
+%%DATADIR%%/game/stories/holotzcastle/level013.hlv
+%%DATADIR%%/game/stories/holotzcastle/level014.hlv
+%%DATADIR%%/game/stories/holotzcastle/level014.hlv.tga
+%%DATADIR%%/game/stories/holotzcastle/level015.hlv
+%%DATADIR%%/game/stories/holotzcastle/level016.hlv
+%%DATADIR%%/game/stories/holotzcastle/level016.hlv.tga
+%%DATADIR%%/game/stories/holotzcastle/level017.hlv
+%%DATADIR%%/game/stories/holotzcastle/level017.hlv.tga
+%%DATADIR%%/game/stories/holotzcastle/level018.hlv
+%%DATADIR%%/game/stories/holotzcastle/level019.hlv
+%%DATADIR%%/game/stories/holotzcastle/level020.hlv
+%%DATADIR%%/game/stories/holotzcastle/level021.hlv
+%%DATADIR%%/game/stories/holotzcastle/level022.hlv
+%%DATADIR%%/game/stories/holotzcastle/level023.hlv
+%%DATADIR%%/game/stories/holotzcastle/level024.hlv
+%%DATADIR%%/game/stories/holotzcastle/level025.hlv
+%%DATADIR%%/game/stories/holotzcastle/level025.hlv.tga
+%%DATADIR%%/game/stories/holotzcastle/level026.hlv
+%%DATADIR%%/game/stories/holotzcastle/level027.hlv
+%%DATADIR%%/game/stories/holotzcastle/level028.hlv
+%%DATADIR%%/game/stories/holotzcastle/level029.hlv
+%%DATADIR%%/game/stories/holotzcastle/level030.hlv
+%%DATADIR%%/game/stories/holotzcastle/level031.hlv
+%%DATADIR%%/game/stories/holotzcastle/level032.hlv
+%%DATADIR%%/game/stories/holotzcastle/level032.hlv.tga
+%%DATADIR%%/game/stories/holotzcastle/level033.hlv
+%%DATADIR%%/game/stories/holotzcastle/script/cs/level001.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/cs/level002.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/cs/level007.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/cs/level014.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/cs/level016.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/cs/level019.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/cs/level020.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/cs/level025.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/cs/level030.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/cs/level032.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/cs/level033.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/de/level001.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/de/level002.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/de/level007.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/de/level014.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/de/level016.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/de/level019.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/de/level020.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/de/level025.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/de/level030.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/de/level032.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/de/level033.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/en/level001.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/en/level002.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/en/level007.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/en/level014.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/en/level016.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/en/level019.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/en/level020.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/en/level025.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/en/level030.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/en/level032.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/en/level033.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/es/level001.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/es/level002.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/es/level007.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/es/level014.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/es/level016.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/es/level019.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/es/level020.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/es/level025.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/es/level030.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/es/level032.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/es/level033.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/eu/level001.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/eu/level002.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/eu/level007.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/eu/level014.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/eu/level016.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/eu/level019.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/eu/level020.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/eu/level025.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/eu/level030.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/eu/level032.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/eu/level033.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/fr/level001.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/fr/level002.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/fr/level007.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/fr/level014.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/fr/level016.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/fr/level019.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/fr/level020.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/fr/level025.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/fr/level030.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/fr/level032.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/fr/level033.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/pt/level001.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/pt/level002.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/pt/level007.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/pt/level014.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/pt/level016.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/pt/level019.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/pt/level020.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/pt/level025.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/pt/level030.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/pt/level032.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/pt/level033.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/ru/level001.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/ru/level002.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/ru/level007.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/ru/level014.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/ru/level016.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/ru/level019.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/ru/level020.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/ru/level025.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/ru/level030.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/ru/level032.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/ru/level033.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/ua/level001.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/ua/level002.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/ua/level007.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/ua/level014.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/ua/level016.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/ua/level019.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/ua/level020.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/ua/level025.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/ua/level030.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/ua/level032.hcs
+%%DATADIR%%/game/stories/holotzcastle/script/ua/level033.hcs
+%%DATADIR%%/game/theme/default/bar/1/bar.tga
+%%DATADIR%%/game/theme/default/bar/2/bar.tga
+%%DATADIR%%/game/theme/default/bar/3/bar.tga
+%%DATADIR%%/game/theme/default/bar/4/bar.tga
+%%DATADIR%%/game/theme/default/bar/5/bar.tga
+%%DATADIR%%/game/theme/default/bar/6/bar.tga
+%%DATADIR%%/game/theme/default/bar/7/bar.tga
+%%DATADIR%%/game/theme/default/break/1/breaking.spr
+%%DATADIR%%/game/theme/default/break/1/broken.spr
+%%DATADIR%%/game/theme/default/break/1/normal.spr
+%%DATADIR%%/game/theme/default/break/2/breaking.spr
+%%DATADIR%%/game/theme/default/break/2/broken.spr
+%%DATADIR%%/game/theme/default/break/2/normal.spr
+%%DATADIR%%/game/theme/default/break/3/breaking.spr
+%%DATADIR%%/game/theme/default/break/3/broken.spr
+%%DATADIR%%/game/theme/default/break/3/normal.spr
+%%DATADIR%%/game/theme/default/break/4/breaking.spr
+%%DATADIR%%/game/theme/default/break/4/broken.spr
+%%DATADIR%%/game/theme/default/break/4/normal.spr
+%%DATADIR%%/game/theme/default/break/5/breaking.spr
+%%DATADIR%%/game/theme/default/break/5/broken.spr
+%%DATADIR%%/game/theme/default/break/5/normal.spr
+%%DATADIR%%/game/theme/default/char/ball/1/dead.spr
+%%DATADIR%%/game/theme/default/char/ball/1/down.spr
+%%DATADIR%%/game/theme/default/char/ball/1/fall.spr
+%%DATADIR%%/game/theme/default/char/ball/1/hang.spr
+%%DATADIR%%/game/theme/default/char/ball/1/jump.spr
+%%DATADIR%%/game/theme/default/char/ball/1/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/ball/1/jumpright.spr
+%%DATADIR%%/game/theme/default/char/ball/1/left.spr
+%%DATADIR%%/game/theme/default/char/ball/1/right.spr
+%%DATADIR%%/game/theme/default/char/ball/1/slide.spr
+%%DATADIR%%/game/theme/default/char/ball/1/stop.spr
+%%DATADIR%%/game/theme/default/char/ball/1/up.spr
+%%DATADIR%%/game/theme/default/char/ball/2/dead.spr
+%%DATADIR%%/game/theme/default/char/ball/2/down.spr
+%%DATADIR%%/game/theme/default/char/ball/2/fall.spr
+%%DATADIR%%/game/theme/default/char/ball/2/hang.spr
+%%DATADIR%%/game/theme/default/char/ball/2/jump.spr
+%%DATADIR%%/game/theme/default/char/ball/2/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/ball/2/jumpright.spr
+%%DATADIR%%/game/theme/default/char/ball/2/left.spr
+%%DATADIR%%/game/theme/default/char/ball/2/right.spr
+%%DATADIR%%/game/theme/default/char/ball/2/slide.spr
+%%DATADIR%%/game/theme/default/char/ball/2/stop.spr
+%%DATADIR%%/game/theme/default/char/ball/2/up.spr
+%%DATADIR%%/game/theme/default/char/ball/3/dead.spr
+%%DATADIR%%/game/theme/default/char/ball/3/down.spr
+%%DATADIR%%/game/theme/default/char/ball/3/fall.spr
+%%DATADIR%%/game/theme/default/char/ball/3/hang.spr
+%%DATADIR%%/game/theme/default/char/ball/3/jump.spr
+%%DATADIR%%/game/theme/default/char/ball/3/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/ball/3/jumpright.spr
+%%DATADIR%%/game/theme/default/char/ball/3/left.spr
+%%DATADIR%%/game/theme/default/char/ball/3/right.spr
+%%DATADIR%%/game/theme/default/char/ball/3/slide.spr
+%%DATADIR%%/game/theme/default/char/ball/3/stop.spr
+%%DATADIR%%/game/theme/default/char/ball/3/up.spr
+%%DATADIR%%/game/theme/default/char/ball/4/dead.spr
+%%DATADIR%%/game/theme/default/char/ball/4/down.spr
+%%DATADIR%%/game/theme/default/char/ball/4/fall.spr
+%%DATADIR%%/game/theme/default/char/ball/4/hang.spr
+%%DATADIR%%/game/theme/default/char/ball/4/jump.spr
+%%DATADIR%%/game/theme/default/char/ball/4/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/ball/4/jumpright.spr
+%%DATADIR%%/game/theme/default/char/ball/4/left.spr
+%%DATADIR%%/game/theme/default/char/ball/4/right.spr
+%%DATADIR%%/game/theme/default/char/ball/4/slide.spr
+%%DATADIR%%/game/theme/default/char/ball/4/stop.spr
+%%DATADIR%%/game/theme/default/char/ball/4/up.spr
+%%DATADIR%%/game/theme/default/char/chaser/1/dead.spr
+%%DATADIR%%/game/theme/default/char/chaser/1/down.spr
+%%DATADIR%%/game/theme/default/char/chaser/1/fall.spr
+%%DATADIR%%/game/theme/default/char/chaser/1/hang.spr
+%%DATADIR%%/game/theme/default/char/chaser/1/jump.spr
+%%DATADIR%%/game/theme/default/char/chaser/1/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/chaser/1/jumpright.spr
+%%DATADIR%%/game/theme/default/char/chaser/1/left.spr
+%%DATADIR%%/game/theme/default/char/chaser/1/right.spr
+%%DATADIR%%/game/theme/default/char/chaser/1/slide.spr
+%%DATADIR%%/game/theme/default/char/chaser/1/stop.spr
+%%DATADIR%%/game/theme/default/char/chaser/1/up.spr
+%%DATADIR%%/game/theme/default/char/dummy/dead.spr
+%%DATADIR%%/game/theme/default/char/dummy/down.spr
+%%DATADIR%%/game/theme/default/char/dummy/fall.spr
+%%DATADIR%%/game/theme/default/char/dummy/hang.spr
+%%DATADIR%%/game/theme/default/char/dummy/jump.spr
+%%DATADIR%%/game/theme/default/char/dummy/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/dummy/jumpright.spr
+%%DATADIR%%/game/theme/default/char/dummy/left.spr
+%%DATADIR%%/game/theme/default/char/dummy/right.spr
+%%DATADIR%%/game/theme/default/char/dummy/slide.spr
+%%DATADIR%%/game/theme/default/char/dummy/stop.spr
+%%DATADIR%%/game/theme/default/char/dummy/up.spr
+%%DATADIR%%/game/theme/default/char/guest/1/dead.spr
+%%DATADIR%%/game/theme/default/char/guest/1/down.spr
+%%DATADIR%%/game/theme/default/char/guest/1/fall.spr
+%%DATADIR%%/game/theme/default/char/guest/1/hang.spr
+%%DATADIR%%/game/theme/default/char/guest/1/jump.spr
+%%DATADIR%%/game/theme/default/char/guest/1/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/guest/1/jumpright.spr
+%%DATADIR%%/game/theme/default/char/guest/1/left.spr
+%%DATADIR%%/game/theme/default/char/guest/1/right.spr
+%%DATADIR%%/game/theme/default/char/guest/1/slide.spr
+%%DATADIR%%/game/theme/default/char/guest/1/stop.spr
+%%DATADIR%%/game/theme/default/char/guest/1/up.spr
+%%DATADIR%%/game/theme/default/char/main/1/dead.spr
+%%DATADIR%%/game/theme/default/char/main/1/down.spr
+%%DATADIR%%/game/theme/default/char/main/1/fall.spr
+%%DATADIR%%/game/theme/default/char/main/1/hang.spr
+%%DATADIR%%/game/theme/default/char/main/1/jump.spr
+%%DATADIR%%/game/theme/default/char/main/1/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/main/1/jumpright.spr
+%%DATADIR%%/game/theme/default/char/main/1/left.spr
+%%DATADIR%%/game/theme/default/char/main/1/right.spr
+%%DATADIR%%/game/theme/default/char/main/1/slide.spr
+%%DATADIR%%/game/theme/default/char/main/1/stop.spr
+%%DATADIR%%/game/theme/default/char/main/1/up.spr
+%%DATADIR%%/game/theme/default/char/main/2/dead.spr
+%%DATADIR%%/game/theme/default/char/main/2/down.spr
+%%DATADIR%%/game/theme/default/char/main/2/fall.spr
+%%DATADIR%%/game/theme/default/char/main/2/hang.spr
+%%DATADIR%%/game/theme/default/char/main/2/jump.spr
+%%DATADIR%%/game/theme/default/char/main/2/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/main/2/jumpright.spr
+%%DATADIR%%/game/theme/default/char/main/2/jumright.spr
+%%DATADIR%%/game/theme/default/char/main/2/left.spr
+%%DATADIR%%/game/theme/default/char/main/2/right.spr
+%%DATADIR%%/game/theme/default/char/main/2/slide.spr
+%%DATADIR%%/game/theme/default/char/main/2/stop.spr
+%%DATADIR%%/game/theme/default/char/main/2/up.spr
+%%DATADIR%%/game/theme/default/char/main/3/dead.spr
+%%DATADIR%%/game/theme/default/char/main/3/down.spr
+%%DATADIR%%/game/theme/default/char/main/3/fall.spr
+%%DATADIR%%/game/theme/default/char/main/3/hang.spr
+%%DATADIR%%/game/theme/default/char/main/3/jump.spr
+%%DATADIR%%/game/theme/default/char/main/3/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/main/3/jumpright.spr
+%%DATADIR%%/game/theme/default/char/main/3/jumright.spr
+%%DATADIR%%/game/theme/default/char/main/3/left.spr
+%%DATADIR%%/game/theme/default/char/main/3/right.spr
+%%DATADIR%%/game/theme/default/char/main/3/slide.spr
+%%DATADIR%%/game/theme/default/char/main/3/stop.spr
+%%DATADIR%%/game/theme/default/char/main/3/up.spr
+%%DATADIR%%/game/theme/default/char/main/4/dead.spr
+%%DATADIR%%/game/theme/default/char/main/4/down.spr
+%%DATADIR%%/game/theme/default/char/main/4/fall.spr
+%%DATADIR%%/game/theme/default/char/main/4/hang.spr
+%%DATADIR%%/game/theme/default/char/main/4/jump.spr
+%%DATADIR%%/game/theme/default/char/main/4/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/main/4/jumpright.spr
+%%DATADIR%%/game/theme/default/char/main/4/left.spr
+%%DATADIR%%/game/theme/default/char/main/4/right.spr
+%%DATADIR%%/game/theme/default/char/main/4/slide.spr
+%%DATADIR%%/game/theme/default/char/main/4/stop.spr
+%%DATADIR%%/game/theme/default/char/main/4/up.spr
+%%DATADIR%%/game/theme/default/char/main/5/dead.spr
+%%DATADIR%%/game/theme/default/char/main/5/down.spr
+%%DATADIR%%/game/theme/default/char/main/5/fall.spr
+%%DATADIR%%/game/theme/default/char/main/5/hang.spr
+%%DATADIR%%/game/theme/default/char/main/5/jump.spr
+%%DATADIR%%/game/theme/default/char/main/5/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/main/5/jumpright.spr
+%%DATADIR%%/game/theme/default/char/main/5/left.spr
+%%DATADIR%%/game/theme/default/char/main/5/right.spr
+%%DATADIR%%/game/theme/default/char/main/5/slide.spr
+%%DATADIR%%/game/theme/default/char/main/5/stop.spr
+%%DATADIR%%/game/theme/default/char/main/5/up.spr
+%%DATADIR%%/game/theme/default/char/main/6/dead.spr
+%%DATADIR%%/game/theme/default/char/main/6/down.spr
+%%DATADIR%%/game/theme/default/char/main/6/fall.spr
+%%DATADIR%%/game/theme/default/char/main/6/hang.spr
+%%DATADIR%%/game/theme/default/char/main/6/jump.spr
+%%DATADIR%%/game/theme/default/char/main/6/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/main/6/jumpright.spr
+%%DATADIR%%/game/theme/default/char/main/6/left.spr
+%%DATADIR%%/game/theme/default/char/main/6/right.spr
+%%DATADIR%%/game/theme/default/char/main/6/slide.spr
+%%DATADIR%%/game/theme/default/char/main/6/stop.spr
+%%DATADIR%%/game/theme/default/char/main/6/up.spr
+%%DATADIR%%/game/theme/default/char/maker/1/dead.spr
+%%DATADIR%%/game/theme/default/char/maker/1/down.spr
+%%DATADIR%%/game/theme/default/char/maker/1/fall.spr
+%%DATADIR%%/game/theme/default/char/maker/1/hang.spr
+%%DATADIR%%/game/theme/default/char/maker/1/jump.spr
+%%DATADIR%%/game/theme/default/char/maker/1/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/maker/1/jumpright.spr
+%%DATADIR%%/game/theme/default/char/maker/1/left.spr
+%%DATADIR%%/game/theme/default/char/maker/1/right.spr
+%%DATADIR%%/game/theme/default/char/maker/1/slide.spr
+%%DATADIR%%/game/theme/default/char/maker/1/stop.spr
+%%DATADIR%%/game/theme/default/char/maker/1/up.spr
+%%DATADIR%%/game/theme/default/char/random/1/dead.spr
+%%DATADIR%%/game/theme/default/char/random/1/down.spr
+%%DATADIR%%/game/theme/default/char/random/1/fall.spr
+%%DATADIR%%/game/theme/default/char/random/1/hang.spr
+%%DATADIR%%/game/theme/default/char/random/1/jump.spr
+%%DATADIR%%/game/theme/default/char/random/1/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/random/1/jumpright.spr
+%%DATADIR%%/game/theme/default/char/random/1/left.spr
+%%DATADIR%%/game/theme/default/char/random/1/right.spr
+%%DATADIR%%/game/theme/default/char/random/1/slide.spr
+%%DATADIR%%/game/theme/default/char/random/1/stop.spr
+%%DATADIR%%/game/theme/default/char/random/1/up.spr
+%%DATADIR%%/game/theme/default/char/random/2/dead.spr
+%%DATADIR%%/game/theme/default/char/random/2/down.spr
+%%DATADIR%%/game/theme/default/char/random/2/fall.spr
+%%DATADIR%%/game/theme/default/char/random/2/hang.spr
+%%DATADIR%%/game/theme/default/char/random/2/jump.spr
+%%DATADIR%%/game/theme/default/char/random/2/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/random/2/jumpright.spr
+%%DATADIR%%/game/theme/default/char/random/2/left.spr
+%%DATADIR%%/game/theme/default/char/random/2/right.spr
+%%DATADIR%%/game/theme/default/char/random/2/slide.spr
+%%DATADIR%%/game/theme/default/char/random/2/stop.spr
+%%DATADIR%%/game/theme/default/char/random/2/up.spr
+%%DATADIR%%/game/theme/default/char/random/3/dead.spr
+%%DATADIR%%/game/theme/default/char/random/3/down.spr
+%%DATADIR%%/game/theme/default/char/random/3/fall.spr
+%%DATADIR%%/game/theme/default/char/random/3/hang.spr
+%%DATADIR%%/game/theme/default/char/random/3/jump.spr
+%%DATADIR%%/game/theme/default/char/random/3/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/random/3/jumpright.spr
+%%DATADIR%%/game/theme/default/char/random/3/left.spr
+%%DATADIR%%/game/theme/default/char/random/3/right.spr
+%%DATADIR%%/game/theme/default/char/random/3/slide.spr
+%%DATADIR%%/game/theme/default/char/random/3/stop.spr
+%%DATADIR%%/game/theme/default/char/random/3/up.spr
+%%DATADIR%%/game/theme/default/char/random/4/dead.spr
+%%DATADIR%%/game/theme/default/char/random/4/down.spr
+%%DATADIR%%/game/theme/default/char/random/4/fall.spr
+%%DATADIR%%/game/theme/default/char/random/4/hang.spr
+%%DATADIR%%/game/theme/default/char/random/4/jump.spr
+%%DATADIR%%/game/theme/default/char/random/4/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/random/4/jumpright.spr
+%%DATADIR%%/game/theme/default/char/random/4/left.spr
+%%DATADIR%%/game/theme/default/char/random/4/right.spr
+%%DATADIR%%/game/theme/default/char/random/4/slide.spr
+%%DATADIR%%/game/theme/default/char/random/4/stop.spr
+%%DATADIR%%/game/theme/default/char/random/4/up.spr
+%%DATADIR%%/game/theme/default/char/random/5/dead.spr
+%%DATADIR%%/game/theme/default/char/random/5/down.spr
+%%DATADIR%%/game/theme/default/char/random/5/fall.spr
+%%DATADIR%%/game/theme/default/char/random/5/hang.spr
+%%DATADIR%%/game/theme/default/char/random/5/jump.spr
+%%DATADIR%%/game/theme/default/char/random/5/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/random/5/jumpright.spr
+%%DATADIR%%/game/theme/default/char/random/5/left.spr
+%%DATADIR%%/game/theme/default/char/random/5/right.spr
+%%DATADIR%%/game/theme/default/char/random/5/slide.spr
+%%DATADIR%%/game/theme/default/char/random/5/stop.spr
+%%DATADIR%%/game/theme/default/char/random/5/up.spr
+%%DATADIR%%/game/theme/default/char/random/6/dead.spr
+%%DATADIR%%/game/theme/default/char/random/6/down.spr
+%%DATADIR%%/game/theme/default/char/random/6/fall.spr
+%%DATADIR%%/game/theme/default/char/random/6/hang.spr
+%%DATADIR%%/game/theme/default/char/random/6/jump.spr
+%%DATADIR%%/game/theme/default/char/random/6/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/random/6/jumpright.spr
+%%DATADIR%%/game/theme/default/char/random/6/left.spr
+%%DATADIR%%/game/theme/default/char/random/6/right.spr
+%%DATADIR%%/game/theme/default/char/random/6/slide.spr
+%%DATADIR%%/game/theme/default/char/random/6/stop.spr
+%%DATADIR%%/game/theme/default/char/random/6/up.spr
+%%DATADIR%%/game/theme/default/char/random/7/dead.spr
+%%DATADIR%%/game/theme/default/char/random/7/down.spr
+%%DATADIR%%/game/theme/default/char/random/7/fall.spr
+%%DATADIR%%/game/theme/default/char/random/7/hang.spr
+%%DATADIR%%/game/theme/default/char/random/7/jump.spr
+%%DATADIR%%/game/theme/default/char/random/7/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/random/7/jumpright.spr
+%%DATADIR%%/game/theme/default/char/random/7/left.spr
+%%DATADIR%%/game/theme/default/char/random/7/right.spr
+%%DATADIR%%/game/theme/default/char/random/7/slide.spr
+%%DATADIR%%/game/theme/default/char/random/7/stop.spr
+%%DATADIR%%/game/theme/default/char/random/7/up.spr
+%%DATADIR%%/game/theme/default/char/static/1/dead.spr
+%%DATADIR%%/game/theme/default/char/static/1/down.spr
+%%DATADIR%%/game/theme/default/char/static/1/fall.spr
+%%DATADIR%%/game/theme/default/char/static/1/hang.spr
+%%DATADIR%%/game/theme/default/char/static/1/jump.spr
+%%DATADIR%%/game/theme/default/char/static/1/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/static/1/jumpright.spr
+%%DATADIR%%/game/theme/default/char/static/1/left.spr
+%%DATADIR%%/game/theme/default/char/static/1/right.spr
+%%DATADIR%%/game/theme/default/char/static/1/slide.spr
+%%DATADIR%%/game/theme/default/char/static/1/stop.spr
+%%DATADIR%%/game/theme/default/char/static/1/up.spr
+%%DATADIR%%/game/theme/default/char/static/2/dead.spr
+%%DATADIR%%/game/theme/default/char/static/2/down.spr
+%%DATADIR%%/game/theme/default/char/static/2/fall.spr
+%%DATADIR%%/game/theme/default/char/static/2/hang.spr
+%%DATADIR%%/game/theme/default/char/static/2/jump.spr
+%%DATADIR%%/game/theme/default/char/static/2/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/static/2/jumpright.spr
+%%DATADIR%%/game/theme/default/char/static/2/left.spr
+%%DATADIR%%/game/theme/default/char/static/2/right.spr
+%%DATADIR%%/game/theme/default/char/static/2/slide.spr
+%%DATADIR%%/game/theme/default/char/static/2/stop.spr
+%%DATADIR%%/game/theme/default/char/static/2/up.spr
+%%DATADIR%%/game/theme/default/char/static/3/dead.spr
+%%DATADIR%%/game/theme/default/char/static/3/down.spr
+%%DATADIR%%/game/theme/default/char/static/3/fall.spr
+%%DATADIR%%/game/theme/default/char/static/3/hang.spr
+%%DATADIR%%/game/theme/default/char/static/3/jump.spr
+%%DATADIR%%/game/theme/default/char/static/3/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/static/3/jumpright.spr
+%%DATADIR%%/game/theme/default/char/static/3/left.spr
+%%DATADIR%%/game/theme/default/char/static/3/right.spr
+%%DATADIR%%/game/theme/default/char/static/3/slide.spr
+%%DATADIR%%/game/theme/default/char/static/3/stop.spr
+%%DATADIR%%/game/theme/default/char/static/3/up.spr
+%%DATADIR%%/game/theme/default/char/static/4/dead.spr
+%%DATADIR%%/game/theme/default/char/static/4/down.spr
+%%DATADIR%%/game/theme/default/char/static/4/fall.spr
+%%DATADIR%%/game/theme/default/char/static/4/hang.spr
+%%DATADIR%%/game/theme/default/char/static/4/jump.spr
+%%DATADIR%%/game/theme/default/char/static/4/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/static/4/jumpright.spr
+%%DATADIR%%/game/theme/default/char/static/4/left.spr
+%%DATADIR%%/game/theme/default/char/static/4/right.spr
+%%DATADIR%%/game/theme/default/char/static/4/slide.spr
+%%DATADIR%%/game/theme/default/char/static/4/stop.spr
+%%DATADIR%%/game/theme/default/char/static/4/up.spr
+%%DATADIR%%/game/theme/default/char/static/5/dead.spr
+%%DATADIR%%/game/theme/default/char/static/5/down.spr
+%%DATADIR%%/game/theme/default/char/static/5/fall.spr
+%%DATADIR%%/game/theme/default/char/static/5/hang.spr
+%%DATADIR%%/game/theme/default/char/static/5/jump.spr
+%%DATADIR%%/game/theme/default/char/static/5/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/static/5/jumpright.spr
+%%DATADIR%%/game/theme/default/char/static/5/left.spr
+%%DATADIR%%/game/theme/default/char/static/5/right.spr
+%%DATADIR%%/game/theme/default/char/static/5/slide.spr
+%%DATADIR%%/game/theme/default/char/static/5/stop.spr
+%%DATADIR%%/game/theme/default/char/static/5/up.spr
+%%DATADIR%%/game/theme/default/char/static/6/dead.spr
+%%DATADIR%%/game/theme/default/char/static/6/down.spr
+%%DATADIR%%/game/theme/default/char/static/6/fall.spr
+%%DATADIR%%/game/theme/default/char/static/6/hang.spr
+%%DATADIR%%/game/theme/default/char/static/6/jump.spr
+%%DATADIR%%/game/theme/default/char/static/6/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/static/6/jumpright.spr
+%%DATADIR%%/game/theme/default/char/static/6/left.spr
+%%DATADIR%%/game/theme/default/char/static/6/right.spr
+%%DATADIR%%/game/theme/default/char/static/6/slide.spr
+%%DATADIR%%/game/theme/default/char/static/6/stop.spr
+%%DATADIR%%/game/theme/default/char/static/6/up.spr
+%%DATADIR%%/game/theme/default/char/static/7/dead.spr
+%%DATADIR%%/game/theme/default/char/static/7/down.spr
+%%DATADIR%%/game/theme/default/char/static/7/fall.spr
+%%DATADIR%%/game/theme/default/char/static/7/hang.spr
+%%DATADIR%%/game/theme/default/char/static/7/jump.spr
+%%DATADIR%%/game/theme/default/char/static/7/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/static/7/jumpright.spr
+%%DATADIR%%/game/theme/default/char/static/7/left.spr
+%%DATADIR%%/game/theme/default/char/static/7/right.spr
+%%DATADIR%%/game/theme/default/char/static/7/slide.spr
+%%DATADIR%%/game/theme/default/char/static/7/stop.spr
+%%DATADIR%%/game/theme/default/char/static/7/up.spr
+%%DATADIR%%/game/theme/default/char/static/8/dead.spr
+%%DATADIR%%/game/theme/default/char/static/8/down.spr
+%%DATADIR%%/game/theme/default/char/static/8/fall.spr
+%%DATADIR%%/game/theme/default/char/static/8/hang.spr
+%%DATADIR%%/game/theme/default/char/static/8/jump.spr
+%%DATADIR%%/game/theme/default/char/static/8/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/static/8/jumpright.spr
+%%DATADIR%%/game/theme/default/char/static/8/left.spr
+%%DATADIR%%/game/theme/default/char/static/8/right.spr
+%%DATADIR%%/game/theme/default/char/static/8/slide.spr
+%%DATADIR%%/game/theme/default/char/static/8/stop.spr
+%%DATADIR%%/game/theme/default/char/static/8/up.spr
+%%DATADIR%%/game/theme/default/char/static/9/dead.spr
+%%DATADIR%%/game/theme/default/char/static/9/down.spr
+%%DATADIR%%/game/theme/default/char/static/9/fall.spr
+%%DATADIR%%/game/theme/default/char/static/9/hang.spr
+%%DATADIR%%/game/theme/default/char/static/9/jump.spr
+%%DATADIR%%/game/theme/default/char/static/9/jumpleft.spr
+%%DATADIR%%/game/theme/default/char/static/9/jumpright.spr
+%%DATADIR%%/game/theme/default/char/static/9/left.spr
+%%DATADIR%%/game/theme/default/char/static/9/right.spr
+%%DATADIR%%/game/theme/default/char/static/9/slide.spr
+%%DATADIR%%/game/theme/default/char/static/9/stop.spr
+%%DATADIR%%/game/theme/default/char/static/9/up.spr
+%%DATADIR%%/game/theme/default/contfloor/1/c.tga
+%%DATADIR%%/game/theme/default/contfloor/1/c1.tga
+%%DATADIR%%/game/theme/default/contfloor/1/c3.tga
+%%DATADIR%%/game/theme/default/contfloor/1/c7.tga
+%%DATADIR%%/game/theme/default/contfloor/1/c9.tga
+%%DATADIR%%/game/theme/default/contfloor/1/cd.tga
+%%DATADIR%%/game/theme/default/contfloor/1/cdl.tga
+%%DATADIR%%/game/theme/default/contfloor/1/cdr.tga
+%%DATADIR%%/game/theme/default/contfloor/1/cl.tga
+%%DATADIR%%/game/theme/default/contfloor/1/cr.tga
+%%DATADIR%%/game/theme/default/contfloor/1/cu.tga
+%%DATADIR%%/game/theme/default/contfloor/1/cul.tga
+%%DATADIR%%/game/theme/default/contfloor/1/cur.tga
+%%DATADIR%%/game/theme/default/contfloor/1/i.tga
+%%DATADIR%%/game/theme/default/contfloor/1/s2.tga
+%%DATADIR%%/game/theme/default/contfloor/1/s4.tga
+%%DATADIR%%/game/theme/default/contfloor/1/s6.tga
+%%DATADIR%%/game/theme/default/contfloor/1/s8.tga
+%%DATADIR%%/game/theme/default/contfloor/1/sh.tga
+%%DATADIR%%/game/theme/default/contfloor/1/sv.tga
+%%DATADIR%%/game/theme/default/contfloor/2/c.tga
+%%DATADIR%%/game/theme/default/contfloor/2/c1.tga
+%%DATADIR%%/game/theme/default/contfloor/2/c3.tga
+%%DATADIR%%/game/theme/default/contfloor/2/c7.tga
+%%DATADIR%%/game/theme/default/contfloor/2/c9.tga
+%%DATADIR%%/game/theme/default/contfloor/2/cd.tga
+%%DATADIR%%/game/theme/default/contfloor/2/cdl.tga
+%%DATADIR%%/game/theme/default/contfloor/2/cdr.tga
+%%DATADIR%%/game/theme/default/contfloor/2/cl.tga
+%%DATADIR%%/game/theme/default/contfloor/2/cr.tga
+%%DATADIR%%/game/theme/default/contfloor/2/cu.tga
+%%DATADIR%%/game/theme/default/contfloor/2/cul.tga
+%%DATADIR%%/game/theme/default/contfloor/2/cur.tga
+%%DATADIR%%/game/theme/default/contfloor/2/i.tga
+%%DATADIR%%/game/theme/default/contfloor/2/s2.tga
+%%DATADIR%%/game/theme/default/contfloor/2/s4.tga
+%%DATADIR%%/game/theme/default/contfloor/2/s6.tga
+%%DATADIR%%/game/theme/default/contfloor/2/s8.tga
+%%DATADIR%%/game/theme/default/contfloor/2/sh.tga
+%%DATADIR%%/game/theme/default/contfloor/2/sv.tga
+%%DATADIR%%/game/theme/default/contfloor/3/c.tga
+%%DATADIR%%/game/theme/default/contfloor/3/c1.tga
+%%DATADIR%%/game/theme/default/contfloor/3/c3.tga
+%%DATADIR%%/game/theme/default/contfloor/3/c7.tga
+%%DATADIR%%/game/theme/default/contfloor/3/c9.tga
+%%DATADIR%%/game/theme/default/contfloor/3/cd.tga
+%%DATADIR%%/game/theme/default/contfloor/3/cdl.tga
+%%DATADIR%%/game/theme/default/contfloor/3/cdr.tga
+%%DATADIR%%/game/theme/default/contfloor/3/cl.tga
+%%DATADIR%%/game/theme/default/contfloor/3/cr.tga
+%%DATADIR%%/game/theme/default/contfloor/3/cu.tga
+%%DATADIR%%/game/theme/default/contfloor/3/cul.tga
+%%DATADIR%%/game/theme/default/contfloor/3/cur.tga
+%%DATADIR%%/game/theme/default/contfloor/3/i.tga
+%%DATADIR%%/game/theme/default/contfloor/3/s2.tga
+%%DATADIR%%/game/theme/default/contfloor/3/s4.tga
+%%DATADIR%%/game/theme/default/contfloor/3/s6.tga
+%%DATADIR%%/game/theme/default/contfloor/3/s8.tga
+%%DATADIR%%/game/theme/default/contfloor/3/sh.tga
+%%DATADIR%%/game/theme/default/contfloor/3/sv.tga
+%%DATADIR%%/game/theme/default/dialog/1/1.tga
+%%DATADIR%%/game/theme/default/dialog/1/2.tga
+%%DATADIR%%/game/theme/default/dialog/1/3.tga
+%%DATADIR%%/game/theme/default/dialog/1/4.tga
+%%DATADIR%%/game/theme/default/dialog/1/5.tga
+%%DATADIR%%/game/theme/default/dialog/1/6.tga
+%%DATADIR%%/game/theme/default/dialog/1/7.tga
+%%DATADIR%%/game/theme/default/dialog/1/8.tga
+%%DATADIR%%/game/theme/default/dialog/1/9.tga
+%%DATADIR%%/game/theme/default/dialog/1/left.tga
+%%DATADIR%%/game/theme/default/dialog/1/right.tga
+%%DATADIR%%/game/theme/default/dialog/2/1.tga
+%%DATADIR%%/game/theme/default/dialog/2/2.tga
+%%DATADIR%%/game/theme/default/dialog/2/3.tga
+%%DATADIR%%/game/theme/default/dialog/2/4.tga
+%%DATADIR%%/game/theme/default/dialog/2/5.tga
+%%DATADIR%%/game/theme/default/dialog/2/6.tga
+%%DATADIR%%/game/theme/default/dialog/2/7.tga
+%%DATADIR%%/game/theme/default/dialog/2/8.tga
+%%DATADIR%%/game/theme/default/dialog/2/9.tga
+%%DATADIR%%/game/theme/default/dialog/2/left.tga
+%%DATADIR%%/game/theme/default/dialog/2/right.tga
+%%DATADIR%%/game/theme/default/floor/1/floor.tga
+%%DATADIR%%/game/theme/default/floor/10/floor.tga
+%%DATADIR%%/game/theme/default/floor/11/floor.tga
+%%DATADIR%%/game/theme/default/floor/12/floor.tga
+%%DATADIR%%/game/theme/default/floor/13/floor.tga
+%%DATADIR%%/game/theme/default/floor/14/floor.tga
+%%DATADIR%%/game/theme/default/floor/15/floor.tga
+%%DATADIR%%/game/theme/default/floor/16/floor.tga
+%%DATADIR%%/game/theme/default/floor/2/floor.tga
+%%DATADIR%%/game/theme/default/floor/3/floor.tga
+%%DATADIR%%/game/theme/default/floor/4/floor.tga
+%%DATADIR%%/game/theme/default/floor/5/floor.tga
+%%DATADIR%%/game/theme/default/floor/6/floor.tga
+%%DATADIR%%/game/theme/default/floor/7/floor.tga
+%%DATADIR%%/game/theme/default/floor/8/floor.tga
+%%DATADIR%%/game/theme/default/floor/9/floor.tga
+%%DATADIR%%/game/theme/default/ladder/1/ladder.tga
+%%DATADIR%%/game/theme/default/ladder/2/ladder.tga
+%%DATADIR%%/game/theme/default/ladder/3/ladder.tga
+%%DATADIR%%/game/theme/default/narrative/1/1.tga
+%%DATADIR%%/game/theme/default/narrative/1/2.tga
+%%DATADIR%%/game/theme/default/narrative/1/3.tga
+%%DATADIR%%/game/theme/default/narrative/1/4.tga
+%%DATADIR%%/game/theme/default/narrative/1/5.tga
+%%DATADIR%%/game/theme/default/narrative/1/6.tga
+%%DATADIR%%/game/theme/default/narrative/1/7.tga
+%%DATADIR%%/game/theme/default/narrative/1/8.tga
+%%DATADIR%%/game/theme/default/narrative/1/9.tga
+%%DATADIR%%/game/theme/default/object/1/acquired.spr
+%%DATADIR%%/game/theme/default/object/1/normal.spr
+%%DATADIR%%/game/theme/default/object/2/acquired.spr
+%%DATADIR%%/game/theme/default/object/2/normal.spr
+%%DATADIR%%/game/theme/default/object/3/acquired.spr
+%%DATADIR%%/game/theme/default/object/3/normal.spr
+%%DATADIR%%/game/theme/default/rope/1/edge.tga
+%%DATADIR%%/game/theme/default/rope/1/middle.tga
+%%DATADIR%%/game/theme/default/rope/1/top.tga
+%%DATADIR%%/game/theme/default/rope/2/edge.tga
+%%DATADIR%%/game/theme/default/rope/2/middle.tga
+%%DATADIR%%/game/theme/default/rope/2/top.tga
+%%DATADIR%%/game/theme/dungeons/bar/1/bar.tga
+%%DATADIR%%/game/theme/dungeons/bar/2/bar.tga
+%%DATADIR%%/game/theme/dungeons/bar/3/bar.tga
+%%DATADIR%%/game/theme/dungeons/bar/4/bar.tga
+%%DATADIR%%/game/theme/dungeons/bar/5/bar.tga
+%%DATADIR%%/game/theme/dungeons/bar/6/bar.tga
+%%DATADIR%%/game/theme/dungeons/bar/7/bar.tga
+%%DATADIR%%/game/theme/dungeons/break/1/breaking.spr
+%%DATADIR%%/game/theme/dungeons/break/1/broken.spr
+%%DATADIR%%/game/theme/dungeons/break/1/normal.spr
+%%DATADIR%%/game/theme/dungeons/break/2/breaking.spr
+%%DATADIR%%/game/theme/dungeons/break/2/broken.spr
+%%DATADIR%%/game/theme/dungeons/break/2/normal.spr
+%%DATADIR%%/game/theme/dungeons/break/3/breaking.spr
+%%DATADIR%%/game/theme/dungeons/break/3/broken.spr
+%%DATADIR%%/game/theme/dungeons/break/3/normal.spr
+%%DATADIR%%/game/theme/dungeons/break/4/breaking.spr
+%%DATADIR%%/game/theme/dungeons/break/4/broken.spr
+%%DATADIR%%/game/theme/dungeons/break/4/normal.spr
+%%DATADIR%%/game/theme/dungeons/break/5/breaking.spr
+%%DATADIR%%/game/theme/dungeons/break/5/broken.spr
+%%DATADIR%%/game/theme/dungeons/break/5/normal.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/1/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/1/down.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/1/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/1/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/1/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/1/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/1/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/1/left.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/1/right.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/1/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/1/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/1/up.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/2/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/2/down.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/2/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/2/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/2/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/2/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/2/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/2/left.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/2/right.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/2/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/2/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/2/up.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/3/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/3/down.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/3/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/3/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/3/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/3/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/3/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/3/left.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/3/right.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/3/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/3/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/3/up.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/4/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/4/down.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/4/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/4/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/4/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/4/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/4/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/4/left.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/4/right.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/4/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/4/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/ball/4/up.spr
+%%DATADIR%%/game/theme/dungeons/char/chaser/1/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/chaser/1/down.spr
+%%DATADIR%%/game/theme/dungeons/char/chaser/1/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/chaser/1/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/chaser/1/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/chaser/1/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/chaser/1/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/chaser/1/left.spr
+%%DATADIR%%/game/theme/dungeons/char/chaser/1/right.spr
+%%DATADIR%%/game/theme/dungeons/char/chaser/1/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/chaser/1/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/chaser/1/up.spr
+%%DATADIR%%/game/theme/dungeons/char/dummy/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/dummy/down.spr
+%%DATADIR%%/game/theme/dungeons/char/dummy/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/dummy/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/dummy/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/dummy/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/dummy/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/dummy/left.spr
+%%DATADIR%%/game/theme/dungeons/char/dummy/right.spr
+%%DATADIR%%/game/theme/dungeons/char/dummy/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/dummy/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/dummy/up.spr
+%%DATADIR%%/game/theme/dungeons/char/guest/1/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/guest/1/down.spr
+%%DATADIR%%/game/theme/dungeons/char/guest/1/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/guest/1/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/guest/1/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/guest/1/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/guest/1/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/guest/1/left.spr
+%%DATADIR%%/game/theme/dungeons/char/guest/1/right.spr
+%%DATADIR%%/game/theme/dungeons/char/guest/1/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/guest/1/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/guest/1/up.spr
+%%DATADIR%%/game/theme/dungeons/char/main/1/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/main/1/down.spr
+%%DATADIR%%/game/theme/dungeons/char/main/1/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/main/1/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/main/1/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/main/1/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/main/1/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/main/1/left.spr
+%%DATADIR%%/game/theme/dungeons/char/main/1/right.spr
+%%DATADIR%%/game/theme/dungeons/char/main/1/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/main/1/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/main/1/up.spr
+%%DATADIR%%/game/theme/dungeons/char/main/2/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/main/2/down.spr
+%%DATADIR%%/game/theme/dungeons/char/main/2/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/main/2/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/main/2/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/main/2/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/main/2/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/main/2/jumright.spr
+%%DATADIR%%/game/theme/dungeons/char/main/2/left.spr
+%%DATADIR%%/game/theme/dungeons/char/main/2/right.spr
+%%DATADIR%%/game/theme/dungeons/char/main/2/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/main/2/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/main/2/up.spr
+%%DATADIR%%/game/theme/dungeons/char/main/3/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/main/3/down.spr
+%%DATADIR%%/game/theme/dungeons/char/main/3/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/main/3/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/main/3/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/main/3/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/main/3/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/main/3/jumright.spr
+%%DATADIR%%/game/theme/dungeons/char/main/3/left.spr
+%%DATADIR%%/game/theme/dungeons/char/main/3/right.spr
+%%DATADIR%%/game/theme/dungeons/char/main/3/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/main/3/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/main/3/up.spr
+%%DATADIR%%/game/theme/dungeons/char/main/4/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/main/4/down.spr
+%%DATADIR%%/game/theme/dungeons/char/main/4/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/main/4/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/main/4/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/main/4/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/main/4/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/main/4/left.spr
+%%DATADIR%%/game/theme/dungeons/char/main/4/right.spr
+%%DATADIR%%/game/theme/dungeons/char/main/4/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/main/4/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/main/4/up.spr
+%%DATADIR%%/game/theme/dungeons/char/main/5/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/main/5/down.spr
+%%DATADIR%%/game/theme/dungeons/char/main/5/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/main/5/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/main/5/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/main/5/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/main/5/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/main/5/left.spr
+%%DATADIR%%/game/theme/dungeons/char/main/5/right.spr
+%%DATADIR%%/game/theme/dungeons/char/main/5/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/main/5/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/main/5/up.spr
+%%DATADIR%%/game/theme/dungeons/char/main/6/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/main/6/down.spr
+%%DATADIR%%/game/theme/dungeons/char/main/6/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/main/6/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/main/6/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/main/6/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/main/6/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/main/6/left.spr
+%%DATADIR%%/game/theme/dungeons/char/main/6/right.spr
+%%DATADIR%%/game/theme/dungeons/char/main/6/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/main/6/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/main/6/up.spr
+%%DATADIR%%/game/theme/dungeons/char/maker/1/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/maker/1/down.spr
+%%DATADIR%%/game/theme/dungeons/char/maker/1/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/maker/1/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/maker/1/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/maker/1/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/maker/1/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/maker/1/left.spr
+%%DATADIR%%/game/theme/dungeons/char/maker/1/right.spr
+%%DATADIR%%/game/theme/dungeons/char/maker/1/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/maker/1/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/maker/1/up.spr
+%%DATADIR%%/game/theme/dungeons/char/random/1/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/random/1/down.spr
+%%DATADIR%%/game/theme/dungeons/char/random/1/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/random/1/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/random/1/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/random/1/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/random/1/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/random/1/left.spr
+%%DATADIR%%/game/theme/dungeons/char/random/1/right.spr
+%%DATADIR%%/game/theme/dungeons/char/random/1/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/random/1/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/random/1/up.spr
+%%DATADIR%%/game/theme/dungeons/char/random/2/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/random/2/down.spr
+%%DATADIR%%/game/theme/dungeons/char/random/2/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/random/2/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/random/2/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/random/2/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/random/2/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/random/2/left.spr
+%%DATADIR%%/game/theme/dungeons/char/random/2/right.spr
+%%DATADIR%%/game/theme/dungeons/char/random/2/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/random/2/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/random/2/up.spr
+%%DATADIR%%/game/theme/dungeons/char/random/3/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/random/3/down.spr
+%%DATADIR%%/game/theme/dungeons/char/random/3/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/random/3/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/random/3/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/random/3/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/random/3/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/random/3/left.spr
+%%DATADIR%%/game/theme/dungeons/char/random/3/right.spr
+%%DATADIR%%/game/theme/dungeons/char/random/3/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/random/3/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/random/3/up.spr
+%%DATADIR%%/game/theme/dungeons/char/random/4/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/random/4/down.spr
+%%DATADIR%%/game/theme/dungeons/char/random/4/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/random/4/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/random/4/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/random/4/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/random/4/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/random/4/left.spr
+%%DATADIR%%/game/theme/dungeons/char/random/4/right.spr
+%%DATADIR%%/game/theme/dungeons/char/random/4/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/random/4/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/random/4/up.spr
+%%DATADIR%%/game/theme/dungeons/char/random/5/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/random/5/down.spr
+%%DATADIR%%/game/theme/dungeons/char/random/5/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/random/5/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/random/5/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/random/5/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/random/5/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/random/5/left.spr
+%%DATADIR%%/game/theme/dungeons/char/random/5/right.spr
+%%DATADIR%%/game/theme/dungeons/char/random/5/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/random/5/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/random/5/up.spr
+%%DATADIR%%/game/theme/dungeons/char/random/6/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/random/6/down.spr
+%%DATADIR%%/game/theme/dungeons/char/random/6/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/random/6/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/random/6/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/random/6/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/random/6/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/random/6/left.spr
+%%DATADIR%%/game/theme/dungeons/char/random/6/right.spr
+%%DATADIR%%/game/theme/dungeons/char/random/6/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/random/6/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/random/6/up.spr
+%%DATADIR%%/game/theme/dungeons/char/random/7/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/random/7/down.spr
+%%DATADIR%%/game/theme/dungeons/char/random/7/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/random/7/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/random/7/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/random/7/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/random/7/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/random/7/left.spr
+%%DATADIR%%/game/theme/dungeons/char/random/7/right.spr
+%%DATADIR%%/game/theme/dungeons/char/random/7/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/random/7/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/random/7/up.spr
+%%DATADIR%%/game/theme/dungeons/char/static/1/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/static/1/down.spr
+%%DATADIR%%/game/theme/dungeons/char/static/1/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/static/1/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/static/1/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/static/1/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/static/1/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/static/1/left.spr
+%%DATADIR%%/game/theme/dungeons/char/static/1/right.spr
+%%DATADIR%%/game/theme/dungeons/char/static/1/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/static/1/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/static/1/up.spr
+%%DATADIR%%/game/theme/dungeons/char/static/2/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/static/2/down.spr
+%%DATADIR%%/game/theme/dungeons/char/static/2/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/static/2/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/static/2/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/static/2/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/static/2/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/static/2/left.spr
+%%DATADIR%%/game/theme/dungeons/char/static/2/right.spr
+%%DATADIR%%/game/theme/dungeons/char/static/2/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/static/2/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/static/2/up.spr
+%%DATADIR%%/game/theme/dungeons/char/static/3/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/static/3/down.spr
+%%DATADIR%%/game/theme/dungeons/char/static/3/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/static/3/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/static/3/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/static/3/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/static/3/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/static/3/left.spr
+%%DATADIR%%/game/theme/dungeons/char/static/3/right.spr
+%%DATADIR%%/game/theme/dungeons/char/static/3/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/static/3/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/static/3/up.spr
+%%DATADIR%%/game/theme/dungeons/char/static/4/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/static/4/down.spr
+%%DATADIR%%/game/theme/dungeons/char/static/4/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/static/4/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/static/4/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/static/4/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/static/4/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/static/4/left.spr
+%%DATADIR%%/game/theme/dungeons/char/static/4/right.spr
+%%DATADIR%%/game/theme/dungeons/char/static/4/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/static/4/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/static/4/up.spr
+%%DATADIR%%/game/theme/dungeons/char/static/5/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/static/5/down.spr
+%%DATADIR%%/game/theme/dungeons/char/static/5/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/static/5/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/static/5/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/static/5/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/static/5/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/static/5/left.spr
+%%DATADIR%%/game/theme/dungeons/char/static/5/right.spr
+%%DATADIR%%/game/theme/dungeons/char/static/5/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/static/5/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/static/5/up.spr
+%%DATADIR%%/game/theme/dungeons/char/static/6/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/static/6/down.spr
+%%DATADIR%%/game/theme/dungeons/char/static/6/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/static/6/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/static/6/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/static/6/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/static/6/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/static/6/left.spr
+%%DATADIR%%/game/theme/dungeons/char/static/6/right.spr
+%%DATADIR%%/game/theme/dungeons/char/static/6/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/static/6/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/static/6/up.spr
+%%DATADIR%%/game/theme/dungeons/char/static/7/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/static/7/down.spr
+%%DATADIR%%/game/theme/dungeons/char/static/7/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/static/7/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/static/7/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/static/7/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/static/7/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/static/7/left.spr
+%%DATADIR%%/game/theme/dungeons/char/static/7/right.spr
+%%DATADIR%%/game/theme/dungeons/char/static/7/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/static/7/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/static/7/up.spr
+%%DATADIR%%/game/theme/dungeons/char/static/8/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/static/8/down.spr
+%%DATADIR%%/game/theme/dungeons/char/static/8/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/static/8/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/static/8/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/static/8/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/static/8/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/static/8/left.spr
+%%DATADIR%%/game/theme/dungeons/char/static/8/right.spr
+%%DATADIR%%/game/theme/dungeons/char/static/8/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/static/8/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/static/8/up.spr
+%%DATADIR%%/game/theme/dungeons/char/static/9/dead.spr
+%%DATADIR%%/game/theme/dungeons/char/static/9/down.spr
+%%DATADIR%%/game/theme/dungeons/char/static/9/fall.spr
+%%DATADIR%%/game/theme/dungeons/char/static/9/hang.spr
+%%DATADIR%%/game/theme/dungeons/char/static/9/jump.spr
+%%DATADIR%%/game/theme/dungeons/char/static/9/jumpleft.spr
+%%DATADIR%%/game/theme/dungeons/char/static/9/jumpright.spr
+%%DATADIR%%/game/theme/dungeons/char/static/9/left.spr
+%%DATADIR%%/game/theme/dungeons/char/static/9/right.spr
+%%DATADIR%%/game/theme/dungeons/char/static/9/slide.spr
+%%DATADIR%%/game/theme/dungeons/char/static/9/stop.spr
+%%DATADIR%%/game/theme/dungeons/char/static/9/up.spr
+%%DATADIR%%/game/theme/dungeons/contfloor/1/c.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/1/c1.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/1/c3.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/1/c7.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/1/c9.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/1/cd.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/1/cdl.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/1/cdr.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/1/cl.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/1/cr.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/1/cu.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/1/cul.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/1/cur.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/1/i.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/1/s2.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/1/s4.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/1/s6.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/1/s8.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/1/sh.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/1/sv.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/2/c.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/2/c1.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/2/c3.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/2/c7.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/2/c9.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/2/cd.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/2/cdl.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/2/cdr.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/2/cl.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/2/cr.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/2/cu.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/2/cul.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/2/cur.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/2/i.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/2/s2.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/2/s4.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/2/s6.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/2/s8.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/2/sh.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/2/sv.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/3/c.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/3/c1.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/3/c3.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/3/c7.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/3/c9.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/3/cd.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/3/cdl.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/3/cdr.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/3/cl.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/3/cr.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/3/cu.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/3/cul.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/3/cur.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/3/i.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/3/s2.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/3/s4.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/3/s6.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/3/s8.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/3/sh.tga
+%%DATADIR%%/game/theme/dungeons/contfloor/3/sv.tga
+%%DATADIR%%/game/theme/dungeons/dialog/1/1.tga
+%%DATADIR%%/game/theme/dungeons/dialog/1/2.tga
+%%DATADIR%%/game/theme/dungeons/dialog/1/3.tga
+%%DATADIR%%/game/theme/dungeons/dialog/1/4.tga
+%%DATADIR%%/game/theme/dungeons/dialog/1/5.tga
+%%DATADIR%%/game/theme/dungeons/dialog/1/6.tga
+%%DATADIR%%/game/theme/dungeons/dialog/1/7.tga
+%%DATADIR%%/game/theme/dungeons/dialog/1/8.tga
+%%DATADIR%%/game/theme/dungeons/dialog/1/9.tga
+%%DATADIR%%/game/theme/dungeons/dialog/1/left.tga
+%%DATADIR%%/game/theme/dungeons/dialog/1/right.tga
+%%DATADIR%%/game/theme/dungeons/dialog/2/1.tga
+%%DATADIR%%/game/theme/dungeons/dialog/2/2.tga
+%%DATADIR%%/game/theme/dungeons/dialog/2/3.tga
+%%DATADIR%%/game/theme/dungeons/dialog/2/4.tga
+%%DATADIR%%/game/theme/dungeons/dialog/2/5.tga
+%%DATADIR%%/game/theme/dungeons/dialog/2/6.tga
+%%DATADIR%%/game/theme/dungeons/dialog/2/7.tga
+%%DATADIR%%/game/theme/dungeons/dialog/2/8.tga
+%%DATADIR%%/game/theme/dungeons/dialog/2/9.tga
+%%DATADIR%%/game/theme/dungeons/dialog/2/left.tga
+%%DATADIR%%/game/theme/dungeons/dialog/2/right.tga
+%%DATADIR%%/game/theme/dungeons/floor/1/floor.tga
+%%DATADIR%%/game/theme/dungeons/floor/10/floor.tga
+%%DATADIR%%/game/theme/dungeons/floor/2/floor.tga
+%%DATADIR%%/game/theme/dungeons/floor/3/floor.tga
+%%DATADIR%%/game/theme/dungeons/floor/4/floor.tga
+%%DATADIR%%/game/theme/dungeons/floor/5/floor.tga
+%%DATADIR%%/game/theme/dungeons/floor/6/floor.tga
+%%DATADIR%%/game/theme/dungeons/floor/7/floor.tga
+%%DATADIR%%/game/theme/dungeons/floor/8/floor.tga
+%%DATADIR%%/game/theme/dungeons/floor/9/floor.tga
+%%DATADIR%%/game/theme/dungeons/ladder/1/ladder.tga
+%%DATADIR%%/game/theme/dungeons/ladder/2/ladder.tga
+%%DATADIR%%/game/theme/dungeons/ladder/3/ladder.tga
+%%DATADIR%%/game/theme/dungeons/narrative/1/1.tga
+%%DATADIR%%/game/theme/dungeons/narrative/1/2.tga
+%%DATADIR%%/game/theme/dungeons/narrative/1/3.tga
+%%DATADIR%%/game/theme/dungeons/narrative/1/4.tga
+%%DATADIR%%/game/theme/dungeons/narrative/1/5.tga
+%%DATADIR%%/game/theme/dungeons/narrative/1/6.tga
+%%DATADIR%%/game/theme/dungeons/narrative/1/7.tga
+%%DATADIR%%/game/theme/dungeons/narrative/1/8.tga
+%%DATADIR%%/game/theme/dungeons/narrative/1/9.tga
+%%DATADIR%%/game/theme/dungeons/object/1/acquired.spr
+%%DATADIR%%/game/theme/dungeons/object/1/normal.spr
+%%DATADIR%%/game/theme/dungeons/object/2/acquired.spr
+%%DATADIR%%/game/theme/dungeons/object/2/normal.spr
+%%DATADIR%%/game/theme/dungeons/object/3/acquired.spr
+%%DATADIR%%/game/theme/dungeons/object/3/normal.spr
+%%DATADIR%%/game/theme/dungeons/rope/1/edge.tga
+%%DATADIR%%/game/theme/dungeons/rope/1/middle.tga
+%%DATADIR%%/game/theme/dungeons/rope/1/top.tga
+%%DATADIR%%/game/theme/dungeons/rope/2/edge.tga
+%%DATADIR%%/game/theme/dungeons/rope/2/middle.tga
+%%DATADIR%%/game/theme/dungeons/rope/2/top.tga
+@dirrm %%DATADIR%%/game/theme/dungeons/rope/2
+@dirrm %%DATADIR%%/game/theme/dungeons/rope/1
+@dirrm %%DATADIR%%/game/theme/dungeons/rope
+@dirrm %%DATADIR%%/game/theme/dungeons/object/3
+@dirrm %%DATADIR%%/game/theme/dungeons/object/2
+@dirrm %%DATADIR%%/game/theme/dungeons/object/1
+@dirrm %%DATADIR%%/game/theme/dungeons/object
+@dirrm %%DATADIR%%/game/theme/dungeons/narrative/1
+@dirrm %%DATADIR%%/game/theme/dungeons/narrative
+@dirrm %%DATADIR%%/game/theme/dungeons/ladder/3
+@dirrm %%DATADIR%%/game/theme/dungeons/ladder/2
+@dirrm %%DATADIR%%/game/theme/dungeons/ladder/1
+@dirrm %%DATADIR%%/game/theme/dungeons/ladder
+@dirrm %%DATADIR%%/game/theme/dungeons/floor/9
+@dirrm %%DATADIR%%/game/theme/dungeons/floor/8
+@dirrm %%DATADIR%%/game/theme/dungeons/floor/7
+@dirrm %%DATADIR%%/game/theme/dungeons/floor/6
+@dirrm %%DATADIR%%/game/theme/dungeons/floor/5
+@dirrm %%DATADIR%%/game/theme/dungeons/floor/4
+@dirrm %%DATADIR%%/game/theme/dungeons/floor/3
+@dirrm %%DATADIR%%/game/theme/dungeons/floor/2
+@dirrm %%DATADIR%%/game/theme/dungeons/floor/10
+@dirrm %%DATADIR%%/game/theme/dungeons/floor/1
+@dirrm %%DATADIR%%/game/theme/dungeons/floor
+@dirrm %%DATADIR%%/game/theme/dungeons/dialog/2
+@dirrm %%DATADIR%%/game/theme/dungeons/dialog/1
+@dirrm %%DATADIR%%/game/theme/dungeons/dialog
+@dirrm %%DATADIR%%/game/theme/dungeons/contfloor/3
+@dirrm %%DATADIR%%/game/theme/dungeons/contfloor/2
+@dirrm %%DATADIR%%/game/theme/dungeons/contfloor/1
+@dirrm %%DATADIR%%/game/theme/dungeons/contfloor
+@dirrm %%DATADIR%%/game/theme/dungeons/char/static/9
+@dirrm %%DATADIR%%/game/theme/dungeons/char/static/8
+@dirrm %%DATADIR%%/game/theme/dungeons/char/static/7
+@dirrm %%DATADIR%%/game/theme/dungeons/char/static/6
+@dirrm %%DATADIR%%/game/theme/dungeons/char/static/5
+@dirrm %%DATADIR%%/game/theme/dungeons/char/static/4
+@dirrm %%DATADIR%%/game/theme/dungeons/char/static/3
+@dirrm %%DATADIR%%/game/theme/dungeons/char/static/2
+@dirrm %%DATADIR%%/game/theme/dungeons/char/static/1
+@dirrm %%DATADIR%%/game/theme/dungeons/char/static
+@dirrm %%DATADIR%%/game/theme/dungeons/char/random/7
+@dirrm %%DATADIR%%/game/theme/dungeons/char/random/6
+@dirrm %%DATADIR%%/game/theme/dungeons/char/random/5
+@dirrm %%DATADIR%%/game/theme/dungeons/char/random/4
+@dirrm %%DATADIR%%/game/theme/dungeons/char/random/3
+@dirrm %%DATADIR%%/game/theme/dungeons/char/random/2
+@dirrm %%DATADIR%%/game/theme/dungeons/char/random/1
+@dirrm %%DATADIR%%/game/theme/dungeons/char/random
+@dirrm %%DATADIR%%/game/theme/dungeons/char/maker/1
+@dirrm %%DATADIR%%/game/theme/dungeons/char/maker
+@dirrm %%DATADIR%%/game/theme/dungeons/char/main/6
+@dirrm %%DATADIR%%/game/theme/dungeons/char/main/5
+@dirrm %%DATADIR%%/game/theme/dungeons/char/main/4
+@dirrm %%DATADIR%%/game/theme/dungeons/char/main/3
+@dirrm %%DATADIR%%/game/theme/dungeons/char/main/2
+@dirrm %%DATADIR%%/game/theme/dungeons/char/main/1
+@dirrm %%DATADIR%%/game/theme/dungeons/char/main
+@dirrm %%DATADIR%%/game/theme/dungeons/char/guest/1
+@dirrm %%DATADIR%%/game/theme/dungeons/char/guest
+@dirrm %%DATADIR%%/game/theme/dungeons/char/dummy
+@dirrm %%DATADIR%%/game/theme/dungeons/char/chaser/1
+@dirrm %%DATADIR%%/game/theme/dungeons/char/chaser
+@dirrm %%DATADIR%%/game/theme/dungeons/char/ball/4
+@dirrm %%DATADIR%%/game/theme/dungeons/char/ball/3
+@dirrm %%DATADIR%%/game/theme/dungeons/char/ball/2
+@dirrm %%DATADIR%%/game/theme/dungeons/char/ball/1
+@dirrm %%DATADIR%%/game/theme/dungeons/char/ball
+@dirrm %%DATADIR%%/game/theme/dungeons/char
+@dirrm %%DATADIR%%/game/theme/dungeons/break/5
+@dirrm %%DATADIR%%/game/theme/dungeons/break/4
+@dirrm %%DATADIR%%/game/theme/dungeons/break/3
+@dirrm %%DATADIR%%/game/theme/dungeons/break/2
+@dirrm %%DATADIR%%/game/theme/dungeons/break/1
+@dirrm %%DATADIR%%/game/theme/dungeons/break
+@dirrm %%DATADIR%%/game/theme/dungeons/bar/7
+@dirrm %%DATADIR%%/game/theme/dungeons/bar/6
+@dirrm %%DATADIR%%/game/theme/dungeons/bar/5
+@dirrm %%DATADIR%%/game/theme/dungeons/bar/4
+@dirrm %%DATADIR%%/game/theme/dungeons/bar/3
+@dirrm %%DATADIR%%/game/theme/dungeons/bar/2
+@dirrm %%DATADIR%%/game/theme/dungeons/bar/1
+@dirrm %%DATADIR%%/game/theme/dungeons/bar
+@dirrm %%DATADIR%%/game/theme/dungeons
+@dirrm %%DATADIR%%/game/theme/default/rope/2
+@dirrm %%DATADIR%%/game/theme/default/rope/1
+@dirrm %%DATADIR%%/game/theme/default/rope
+@dirrm %%DATADIR%%/game/theme/default/object/3
+@dirrm %%DATADIR%%/game/theme/default/object/2
+@dirrm %%DATADIR%%/game/theme/default/object/1
+@dirrm %%DATADIR%%/game/theme/default/object
+@dirrm %%DATADIR%%/game/theme/default/narrative/1
+@dirrm %%DATADIR%%/game/theme/default/narrative
+@dirrm %%DATADIR%%/game/theme/default/ladder/3
+@dirrm %%DATADIR%%/game/theme/default/ladder/2
+@dirrm %%DATADIR%%/game/theme/default/ladder/1
+@dirrm %%DATADIR%%/game/theme/default/ladder
+@dirrm %%DATADIR%%/game/theme/default/floor/9
+@dirrm %%DATADIR%%/game/theme/default/floor/8
+@dirrm %%DATADIR%%/game/theme/default/floor/7
+@dirrm %%DATADIR%%/game/theme/default/floor/6
+@dirrm %%DATADIR%%/game/theme/default/floor/5
+@dirrm %%DATADIR%%/game/theme/default/floor/4
+@dirrm %%DATADIR%%/game/theme/default/floor/3
+@dirrm %%DATADIR%%/game/theme/default/floor/2
+@dirrm %%DATADIR%%/game/theme/default/floor/16
+@dirrm %%DATADIR%%/game/theme/default/floor/15
+@dirrm %%DATADIR%%/game/theme/default/floor/14
+@dirrm %%DATADIR%%/game/theme/default/floor/13
+@dirrm %%DATADIR%%/game/theme/default/floor/12
+@dirrm %%DATADIR%%/game/theme/default/floor/11
+@dirrm %%DATADIR%%/game/theme/default/floor/10
+@dirrm %%DATADIR%%/game/theme/default/floor/1
+@dirrm %%DATADIR%%/game/theme/default/floor
+@dirrm %%DATADIR%%/game/theme/default/dialog/2
+@dirrm %%DATADIR%%/game/theme/default/dialog/1
+@dirrm %%DATADIR%%/game/theme/default/dialog
+@dirrm %%DATADIR%%/game/theme/default/contfloor/3
+@dirrm %%DATADIR%%/game/theme/default/contfloor/2
+@dirrm %%DATADIR%%/game/theme/default/contfloor/1
+@dirrm %%DATADIR%%/game/theme/default/contfloor
+@dirrm %%DATADIR%%/game/theme/default/char/static/9
+@dirrm %%DATADIR%%/game/theme/default/char/static/8
+@dirrm %%DATADIR%%/game/theme/default/char/static/7
+@dirrm %%DATADIR%%/game/theme/default/char/static/6
+@dirrm %%DATADIR%%/game/theme/default/char/static/5
+@dirrm %%DATADIR%%/game/theme/default/char/static/4
+@dirrm %%DATADIR%%/game/theme/default/char/static/3
+@dirrm %%DATADIR%%/game/theme/default/char/static/2
+@dirrm %%DATADIR%%/game/theme/default/char/static/1
+@dirrm %%DATADIR%%/game/theme/default/char/static
+@dirrm %%DATADIR%%/game/theme/default/char/random/7
+@dirrm %%DATADIR%%/game/theme/default/char/random/6
+@dirrm %%DATADIR%%/game/theme/default/char/random/5
+@dirrm %%DATADIR%%/game/theme/default/char/random/4
+@dirrm %%DATADIR%%/game/theme/default/char/random/3
+@dirrm %%DATADIR%%/game/theme/default/char/random/2
+@dirrm %%DATADIR%%/game/theme/default/char/random/1
+@dirrm %%DATADIR%%/game/theme/default/char/random
+@dirrm %%DATADIR%%/game/theme/default/char/maker/1
+@dirrm %%DATADIR%%/game/theme/default/char/maker
+@dirrm %%DATADIR%%/game/theme/default/char/main/6
+@dirrm %%DATADIR%%/game/theme/default/char/main/5
+@dirrm %%DATADIR%%/game/theme/default/char/main/4
+@dirrm %%DATADIR%%/game/theme/default/char/main/3
+@dirrm %%DATADIR%%/game/theme/default/char/main/2
+@dirrm %%DATADIR%%/game/theme/default/char/main/1
+@dirrm %%DATADIR%%/game/theme/default/char/main
+@dirrm %%DATADIR%%/game/theme/default/char/guest/1
+@dirrm %%DATADIR%%/game/theme/default/char/guest
+@dirrm %%DATADIR%%/game/theme/default/char/dummy
+@dirrm %%DATADIR%%/game/theme/default/char/chaser/1
+@dirrm %%DATADIR%%/game/theme/default/char/chaser
+@dirrm %%DATADIR%%/game/theme/default/char/ball/4
+@dirrm %%DATADIR%%/game/theme/default/char/ball/3
+@dirrm %%DATADIR%%/game/theme/default/char/ball/2
+@dirrm %%DATADIR%%/game/theme/default/char/ball/1
+@dirrm %%DATADIR%%/game/theme/default/char/ball
+@dirrm %%DATADIR%%/game/theme/default/char
+@dirrm %%DATADIR%%/game/theme/default/break/5
+@dirrm %%DATADIR%%/game/theme/default/break/4
+@dirrm %%DATADIR%%/game/theme/default/break/3
+@dirrm %%DATADIR%%/game/theme/default/break/2
+@dirrm %%DATADIR%%/game/theme/default/break/1
+@dirrm %%DATADIR%%/game/theme/default/break
+@dirrm %%DATADIR%%/game/theme/default/bar/7
+@dirrm %%DATADIR%%/game/theme/default/bar/6
+@dirrm %%DATADIR%%/game/theme/default/bar/5
+@dirrm %%DATADIR%%/game/theme/default/bar/4
+@dirrm %%DATADIR%%/game/theme/default/bar/3
+@dirrm %%DATADIR%%/game/theme/default/bar/2
+@dirrm %%DATADIR%%/game/theme/default/bar/1
+@dirrm %%DATADIR%%/game/theme/default/bar
+@dirrm %%DATADIR%%/game/theme/default
+@dirrm %%DATADIR%%/game/theme
+@dirrm %%DATADIR%%/game/stories/holotzcastle/script/ua
+@dirrm %%DATADIR%%/game/stories/holotzcastle/script/ru
+@dirrm %%DATADIR%%/game/stories/holotzcastle/script/pt
+@dirrm %%DATADIR%%/game/stories/holotzcastle/script/fr
+@dirrm %%DATADIR%%/game/stories/holotzcastle/script/eu
+@dirrm %%DATADIR%%/game/stories/holotzcastle/script/es
+@dirrm %%DATADIR%%/game/stories/holotzcastle/script/en
+@dirrm %%DATADIR%%/game/stories/holotzcastle/script/de
+@dirrm %%DATADIR%%/game/stories/holotzcastle/script/cs
+@dirrm %%DATADIR%%/game/stories/holotzcastle/script
+@dirrm %%DATADIR%%/game/stories/holotzcastle
+@dirrm %%DATADIR%%/game/stories
+@dirrm %%DATADIR%%/game/sound
+@dirrm %%DATADIR%%/game/savedata
+@dirrm %%DATADIR%%/game/messages/ua
+@dirrm %%DATADIR%%/game/messages/ru
+@dirrm %%DATADIR%%/game/messages/pt
+@dirrm %%DATADIR%%/game/messages/fr
+@dirrm %%DATADIR%%/game/messages/eu
+@dirrm %%DATADIR%%/game/messages/es
+@dirrm %%DATADIR%%/game/messages/en
+@dirrm %%DATADIR%%/game/messages/de
+@dirrm %%DATADIR%%/game/messages/cs
+@dirrm %%DATADIR%%/game/messages
+@dirrm %%DATADIR%%/game/menu/ua
+@dirrm %%DATADIR%%/game/menu/ru
+@dirrm %%DATADIR%%/game/menu/pt
+@dirrm %%DATADIR%%/game/menu/fr
+@dirrm %%DATADIR%%/game/menu/eu
+@dirrm %%DATADIR%%/game/menu/es
+@dirrm %%DATADIR%%/game/menu/en
+@dirrm %%DATADIR%%/game/menu/de
+@dirrm %%DATADIR%%/game/menu/cs
+@dirrm %%DATADIR%%/game/menu
+@dirrm %%DATADIR%%/game/main
+@dirrm %%DATADIR%%/game/intro/ua
+@dirrm %%DATADIR%%/game/intro/ru
+@dirrm %%DATADIR%%/game/intro/pt
+@dirrm %%DATADIR%%/game/intro/fr
+@dirrm %%DATADIR%%/game/intro/eu
+@dirrm %%DATADIR%%/game/intro/es
+@dirrm %%DATADIR%%/game/intro/en
+@dirrm %%DATADIR%%/game/intro/de
+@dirrm %%DATADIR%%/game/intro/cs
+@dirrm %%DATADIR%%/game/intro
+@dirrm %%DATADIR%%/game/icon
+@dirrm %%DATADIR%%/game/help/ua
+@dirrm %%DATADIR%%/game/help/ru
+@dirrm %%DATADIR%%/game/help/pt
+@dirrm %%DATADIR%%/game/help/fr
+@dirrm %%DATADIR%%/game/help/eu
+@dirrm %%DATADIR%%/game/help/es
+@dirrm %%DATADIR%%/game/help/en
+@dirrm %%DATADIR%%/game/help/de
+@dirrm %%DATADIR%%/game/help/cs
+@dirrm %%DATADIR%%/game/help
+@dirrm %%DATADIR%%/game/font
+@dirrm %%DATADIR%%/game/credits
+@dirrm %%DATADIR%%/game
+@dirrm %%DATADIR%%/editor/MainMenu
+@dirrm %%DATADIR%%/editor/EnemyMenu
+@dirrm %%DATADIR%%/editor
+@dirrm %%DATADIR%%
