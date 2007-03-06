@@ -24,12 +24,14 @@ share/gnome/help/qalculate-gtk/C/figures/mainwindow-screen.png
 share/gnome/help/qalculate-gtk/C/figures/mainwindow.png
 share/gnome/help/qalculate-gtk/C/figures/plot-data.png
 share/gnome/help/qalculate-gtk/C/figures/plot-settings.png
+share/gnome/help/qalculate-gtk/C/figures/rpn-mode.png
 share/gnome/help/qalculate-gtk/C/figures/store-variable.png
 share/gnome/help/qalculate-gtk/C/figures/unit-manager.png
 share/gnome/help/qalculate-gtk/C/figures/variable-manager.png
 share/gnome/help/qalculate-gtk/C/legal.xml
 share/gnome/help/qalculate-gtk/C/qalculate-gtk.xml
 share/gnome/omf/qalculate-gtk/qalculate-gtk-C.omf
+share/gnome/pixmaps/qalculate.png
 share/gnome/qalculate-gtk/glade/about.glade
 share/gnome/qalculate-gtk/glade/argumentrules.glade
 share/gnome/qalculate-gtk/glade/csvexport.glade
@@ -40,20 +42,22 @@ share/gnome/qalculate-gtk/glade/decimals.glade
 share/gnome/qalculate-gtk/glade/functionedit.glade
 share/gnome/qalculate-gtk/glade/functions.glade
 share/gnome/qalculate-gtk/glade/main.glade
+share/gnome/qalculate-gtk/glade/matrix.glade
 share/gnome/qalculate-gtk/glade/matrixedit.glade
 share/gnome/qalculate-gtk/glade/namesedit.glade
 share/gnome/qalculate-gtk/glade/nbases.glade
-share/gnome/qalculate-gtk/glade/nbexpression.glade
 share/gnome/qalculate-gtk/glade/periodictable.glade
 share/gnome/qalculate-gtk/glade/plot.glade
 share/gnome/qalculate-gtk/glade/precision.glade
 share/gnome/qalculate-gtk/glade/preferences.glade
+share/gnome/qalculate-gtk/glade/setbase.glade
 share/gnome/qalculate-gtk/glade/unit.glade
 share/gnome/qalculate-gtk/glade/unitedit.glade
 share/gnome/qalculate-gtk/glade/units.glade
 share/gnome/qalculate-gtk/glade/unknownedit.glade
 share/gnome/qalculate-gtk/glade/variableedit.glade
 share/gnome/qalculate-gtk/glade/variables.glade
+share/locale/nl/LC_MESSAGES/qalculate-gtk.mo
 share/locale/sv/LC_MESSAGES/qalculate-gtk.mo
 @dirrm share/gnome/qalculate-gtk/glade
 @dirrm share/gnome/qalculate-gtk
