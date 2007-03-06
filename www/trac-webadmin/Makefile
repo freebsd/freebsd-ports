@@ -6,31 +6,38 @@
 #
 
 PORTNAME=	webadmin
-PORTVERSION=	0.1.1.2765
-PORTREVISION=	1
+PORTVERSION=	0.1.2.4429
 CATEGORIES=	www devel python
-#MASTER_SITES=	http://projects.edgewall.com/trac/attachment/wiki/WebAdmin/TracWebAdmin-0.1.1dev_r2765-py2.4.egg.zip?format=raw
+#MASTER_SITES=	http://trac.edgewall.org/browser/sandbox/webadmin
 MASTER_SITES=	http://dist.bsdlab.org/
 PKGNAMEPREFIX=	trac-
-DISTNAME=	TracWebAdmin-${VERSION_ID}.egg
+DISTNAME=	TracWebAdmin-${PORTVERSION}
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Web Administering plugin for trac
 
-RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac \
-		easy_install:${PORTSDIR}/devel/py-setuptools
+BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools \
+		tracd:${PORTSDIR}/www/trac
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_ZIP=	yes
-USE_PYTHON=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
-PLIST_SUB=	VERSION=${VERSION_ID}
-NO_BUILD=	yes
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+WRKSRC=			${WRKDIR}/${PORTNAME}
 
-VERSION_ID=	0.1.1dev_r2765-py2.4
+EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
 
-do-install:
-	${INSTALL_DATA} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
-		${PYTHON_SITELIBDIR}/${DISTNAME}
+PYDISTUTILS_BUILD_TARGET=	bdist_egg
+PYDISTUTILS_INSTALL_TARGET=	easy_install
+PYDISTUTILS_INSTALLARGS=	-O 1 -N -S ${PYTHON_SITELIBDIR} ${WRKSRC}/dist/${TRACWEBADMIN_EGG}
+
+TRACWEBADMIN_EGG=	TracWebAdmin-${PORTVERSION:R}dev-py${PYTHON_VER}.egg
+
+PLIST_SUB+=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
+		TRACWEBADMIN_EGG=${TRACWEBADMIN_EGG} \
+		TRACWEBADMIN_EGG_VER="TracWebAdmin==${PORTVERSION:R}dev"
+
+post-install:
+	${LN} -s ${TRACWEBADMIN_EGG} ${PYTHON_SITELIBDIR}/webadmin
 
 # --- trac.ini
 # [components]
