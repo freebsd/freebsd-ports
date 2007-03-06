@@ -50,3 +50,6 @@ SIZE (ispell-bg-2.1.tar.gz) = 233729
 SHA256 (ispell-sk-0.3.2.tar.gz) = 5b8a3e57e2a783c2e09984823e78ef758ff2954b7c165cea3ba4680e4dca657b
 MD5 (ispell-sk-0.3.2.tar.gz) = 39a7587f1334b0d707101e28e0c29070
 SIZE (ispell-sk-0.3.2.tar.gz) = 618244
+MD5 (ispell-czech-20040229.tar.gz) = 60d5cc92808eb09f764d900c680a9bff
+SHA256 (ispell-czech-20040229.tar.gz) = 7a8afeba08d9d888a7aea4b0e97eae3fa4b8ba3322e3c627f9420e14c51e8ffa
+SIZE (ispell-czech-20040229.tar.gz) = 1000601
