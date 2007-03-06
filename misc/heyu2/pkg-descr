@@ -4,6 +4,12 @@ box that plugs into an AC outlet and connects to a serial port.
 The CM11A is shipped with Windows software.  Heyu2 will control your
 X10 devices, set the CM11A interface clock and monitor X10 signals
 on the AC power lines. It will upload macros and timers to your
-CM11A for stand-alone execution.
+CM11A for stand-alone execution.  Heyu also supports the CM10A and 
+the CM12U.
+
+In addition to the CM11A, heyu supports W800RF32A or MR26A RF receiver
+connected to a second port as an auxiliary input device for X10 RF signals.
+
+Heyu can also use an optional CM17A interface to transmit X10 RF signals. 
 
 WWW: http://heyu.tanj.com/heyu2/
