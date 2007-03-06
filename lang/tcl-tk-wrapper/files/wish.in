@@ -1,0 +1,31 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# Wrapper for the tk shell "wish"
+
+WISH=
+TCLTK_CONF=%%TCLTK_CONF%%
+
+if [ -f "${TCLTK_CONF}" ]; then
+  . ${TCLTK_CONF}
+  if [ -n "${WISH}" ]; then
+    if [ -x "${WISH}" ]; then
+      exec ${WISH} "$@"
+    else
+      %%ECHO_CMD%% "File not found or not executable: ${WISH}" 
+      %%ECHO_CMD%% "Please check variable WISH in: ${TCLTK_CONF}"
+    fi
+  else
+    %%ECHO_CMD%% "Path to default wish shell is not set in the configuration file:"
+    %%ECHO_CMD%% "%%TCLTK_CONF%%"
+    %%ECHO_CMD%% "Please see the sample configuration file for details:"
+    %%ECHO_CMD%% "%%TCLTK_CONF%%.sample"
+  fi
+  %%ECHO_CMD%% ""
+  %%ECHO_CMD%% "You may need a wish shell installed to use this wrapper from ports like:"
+  %%ECHO_CMD%% "x11-toolkits/tk84 or x11-toolkits/tk85"
+else
+  %%ECHO_CMD%% "Configuration file not found: %%TCLTK_CONF%%"
+  %%ECHO_CMD%% "Please see the sample configuration file for details:"
+  %%ECHO_CMD%% "%%TCLTK_CONF%%.sample"
+fi
