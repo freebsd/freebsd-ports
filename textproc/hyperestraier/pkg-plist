@@ -13,11 +13,13 @@ include/estraier.h
 lib/libestraier.a
 lib/libestraier.so
 lib/libestraier.so.8
-lib/libestraier.so.8.34.0
+lib/libestraier.so.8.35.0
 libdata/pkgconfig/hyperestraier.pc
 libexec/estfraud.cgi
 libexec/estproxy.cgi
 libexec/estseek.cgi
+libexec/estscout.cgi
+libexec/estsupt.cgi
 %%DATADIR%%/COPYING
 %%DATADIR%%/ChangeLog
 %%DATADIR%%/THANKS
@@ -25,6 +27,7 @@ libexec/estseek.cgi
 %%DATADIR%%/doc/cguide-ja.html
 %%DATADIR%%/doc/common.css
 %%DATADIR%%/doc/coreframe.png
+%%DATADIR%%/doc/gateframe.png
 %%DATADIR%%/doc/icon16.png
 %%DATADIR%%/doc/index.html
 %%DATADIR%%/doc/index.ja.html
@@ -246,10 +249,12 @@ libexec/estseek.cgi
 %%DATADIR%%/estproxy.conf
 %%DATADIR%%/estraier.idl
 %%DATADIR%%/estresult.dtd
+%%DATADIR%%/estscout.conf
 %%DATADIR%%/estseek.conf
 %%DATADIR%%/estseek.help
 %%DATADIR%%/estseek.tmpl
 %%DATADIR%%/estseek.top
+%%DATADIR%%/estsupt.conf
 %%DATADIR%%/filter/estfxasis
 %%DATADIR%%/filter/estfxmantotxt
 %%DATADIR%%/filter/estfxmsotohtml
