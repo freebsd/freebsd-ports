@@ -1,0 +1,54 @@
+bin/phatfanslider
+bin/phatsliderbutton
+bin/phatkeyboard
+bin/phatpad
+bin/phatknob
+include/phat/phat.h
+include/phat/phatfanslider.h
+include/phat/phatvfanslider.h
+include/phat/phathfanslider.h
+include/phat/phatsliderbutton.h
+include/phat/phatkeyboard.h
+include/phat/phatvkeyboard.h
+include/phat/phathkeyboard.h
+include/phat/phatpad.h
+include/phat/phatknob.h
+lib/libphat.so.0
+lib/libphat.so
+lib/libphat.la
+lib/libphat.a
+libdata/pkgconfig/phat.pc
+share/gtk-doc/html/phat/abstractbaseclasses.html
+share/gtk-doc/html/phat/c4.html
+share/gtk-doc/html/phat/fansliders.html
+share/gtk-doc/html/phat/index.html
+share/gtk-doc/html/phat/install.html
+share/gtk-doc/html/phat/overview.html
+share/gtk-doc/html/phat/p4.html
+share/gtk-doc/html/phat/phat-phatfanslider.html
+share/gtk-doc/html/phat/phat-phathfanslider.html
+share/gtk-doc/html/phat/phat-phathkeyboard.html
+share/gtk-doc/html/phat/phat-phatkeyboard.html
+share/gtk-doc/html/phat/phat-phatprivate.html
+share/gtk-doc/html/phat/phat-phatsliderbutton.html
+share/gtk-doc/html/phat/phat-phatvfanslider.html
+share/gtk-doc/html/phat/phat-phatvkeyboard.html
+share/gtk-doc/html/phat/phat.html
+share/gtk-doc/html/phat/phatfanslider.html
+share/gtk-doc/html/phat/phathfanslider.html
+share/gtk-doc/html/phat/phathkeyboard.html
+share/gtk-doc/html/phat/phatkeyboard.html
+share/gtk-doc/html/phat/phatsliderbutton.html
+share/gtk-doc/html/phat/phatvfanslider.html
+share/gtk-doc/html/phat/phatvkeyboard.html
+share/gtk-doc/html/phat/phatwidgets.html
+share/gtk-doc/html/phat/use.html
+share/gtk-doc/html/phat/widgets.html
+share/gtk-doc/html/phat/index.sgml
+%%DATADIR%%/pixmaps/knob.png
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
+@dirrm share/gtk-doc/html/phat
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
+@dirrm include/phat

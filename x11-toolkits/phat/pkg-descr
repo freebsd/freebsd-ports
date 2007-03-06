@@ -1,0 +1,5 @@
+PHAT is a collection of GTK+ widgets geared toward pro-audio apps.
+The goal is to eliminate duplication of effort and provide some
+standardization (well, at least for GTK+ apps).
+
+WWW:	http://phat.berlios.de/

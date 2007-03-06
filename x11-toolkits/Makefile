@@ -166,6 +166,7 @@
     SUBDIR += pangoxsl
     SUBDIR += paragui
     SUBDIR += paragui-devel
+    SUBDIR += phat
     SUBDIR += php-gtk
     SUBDIR += plib
     SUBDIR += pmw
