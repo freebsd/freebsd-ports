@@ -1,5 +1,7 @@
 bin/hotkeys
+@unexec if cmp -s %D/etc/hotkeys.conf.sample %D/etc/hotkeys.conf; then rm -f %D/etc/hotkeys.conf; fi
 etc/hotkeys.conf.sample
+@exec if [ ! -f %D/etc/hotkeys.conf ] ; then cp -p %D/%F %B/hotkeys.conf; fi
 %%DATADIR%%/splash.png
 %%DATADIR%%/acerwl.def
 %%DATADIR%%/btc9000.def
