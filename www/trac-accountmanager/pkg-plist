@@ -1,2 +1,3 @@
-%%PYTHON_SITELIBDIR%%/TracAccountManager-%%VERSION%%-py%%PYVER%%.egg
-@unexec %%SED%% -i '' -e '/TracAccountManager-%%VERSION%%-py%%PYVER%%.egg/d' %D/%%PYTHON_SITELIBDIR%%/easy-install.pth
+@unexec %%EASY_INSTALL_CMD%% -q -m -S %D/%%PYTHON_SITELIBDIR%% %%TRACACCOUNTMANAGER_EGG_VER%%
+%%PYTHON_SITELIBDIR%%/%%TRACACCOUNTMANAGER_EGG%%
+@exec %%EASY_INSTALL_CMD%% -q -N -S %D/%%PYTHON_SITELIBDIR%% %%TRACACCOUNTMANAGER_EGG_VER%%
