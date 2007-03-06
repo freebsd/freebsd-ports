@@ -49,18 +49,11 @@ REINPLACE_ARGS=	-i ""
 MAIL=		mail
 .endif
 PLIST_SUB+=	MAIL=${MAIL}
-LOCALBASE?=	/usr/local
-
-.if exists(${LOCALBASE}/etc/php.conf)
-.include "${LOCALBASE}/etc/php.conf"
-.endif
 
 OPTIONS=	MYSQL "Use MySQL backend" on \
-		PGSQL "Use PostgreSQL backend" off
-.if defined(PHP_VER) && ${PHP_VER} == 5
-OPTIONS+=	SQLITE "Use SQLite backend" off
-.endif
-OPTIONS+=	SPELLCHECK "Enable spellchecking" off \
+		PGSQL "Use PostgreSQL backend" off \
+		SQLITE "Use SQLite backend (php5 only)" off \
+		SPELLCHECK "Enable spellchecking" off \
 		LOCALCHECK "Install internal spellchecker" off
 
 .include <bsd.port.pre.mk>
@@ -92,11 +85,6 @@ PLIST_SUB+=	SPELLCHECK=""
 .else
 PLIST_SUB+=	SPELLCHECK="@comment "
 .endif
-
-# Avoid INDEX breakage when WITHOUT_MYSQL is defined.
-USE_PHP?=	yes
-
-.include "${PORTSDIR}/Mk/bsd.php.mk"
 
 .if defined(WITH_LOCALCHECK)
 post-extract:
