@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dkimproxy
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	mail
 MASTER_SITES=	http://jason.long.name/dkimproxy/
 
