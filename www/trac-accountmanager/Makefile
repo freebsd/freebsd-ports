@@ -5,29 +5,38 @@
 # $FreeBSD$
 #
 
-PORTNAME=	accountmanagerplugin
-PORTVERSION=	0.9
-PORTREVISION=	2
+PORTNAME=	accountmanager
+PORTVERSION=	0.1.3.2063
+PORTEPOCH=	1
 CATEGORIES=	www devel python
-#MASTER_SITES=	http://trac-hacks.org/download/accountmanagerplugin.zip
+#MASTER_SITES=	http://trac-hacks.org/svn/accountmanagerplugin/0.10/
 MASTER_SITES=	http://dist.bsdlab.org/
 PKGNAMEPREFIX=	trac-
+DISTNAME=	TracAccountManager-${PORTVERSION}
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Account Manager Plugin for trac
 
-BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac \
-		easy_install:${PORTSDIR}/devel/py-setuptools
+BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools \
+		tracd:${PORTSDIR}/www/trac \
+		${PYTHON_SITELIBDIR}/webadmin/webadmin/__init__.py:${PORTSDIR}/www/trac-webadmin
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_ZIP=	yes
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTVERSION}
-PLIST_SUB=	VERSION=0.1.2 PYVER=${PYTHON_VERSION:S/python//} SED=${SED}
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+WRKSRC=			${WRKDIR}/accountmanagerplugin
 
-do-build:
-	@${DO_NADA}
+EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
+
+PYDISTUTILS_BUILD_TARGET=	bdist_egg
+PYDISTUTILS_INSTALL_TARGET=	easy_install
+PYDISTUTILS_INSTALLARGS=	-O 1 -N -S ${PYTHON_SITELIBDIR} ${WRKSRC}/dist/${TRACACCOUNTMANAGER_EGG}
+
+TRACACCOUNTMANAGER_EGG=	TracAccountManager-0.1.3dev-py${PYTHON_VER}.egg
+
+PLIST_SUB+=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
+		TRACACCOUNTMANAGER_EGG=${TRACACCOUNTMANAGER_EGG} \
+		TRACACCOUNTMANAGER_EGG_VER="TracAccountManager==0.1.3dev"
 
 # --- trac.ini
 # [components]
