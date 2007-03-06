@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jack-keyboard
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	audio
 MASTER_SITES=	http://pin.if.uz.zgora.pl/~trasz/jack-keyboard/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -18,6 +18,7 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack
 
 PLIST_FILES=	bin/jack-keyboard
 PORTDOCS=	README NEWS
+MAN1=		jack-keyboard.1
 
 USE_GNOME=	gtk20
 USE_GCC=	3.4+
@@ -28,6 +29,7 @@ do-install:
 		${MKDIR} ${DOCSDIR}
 		${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}/
 		${INSTALL_MAN} ${WRKSRC}/NEWS ${DOCSDIR}/
+		${INSTALL_MAN} ${WRKSRC}/jack-keyboard.1 ${MAN1PREFIX}/man/man1/
 .endif
 
 .include <bsd.port.mk>
