@@ -14239,6 +14239,7 @@ spcaview	ports/graphics/spcaview
 spe		ports/editors/spe
 speak		ports/games/speak
 speak_freely	ports/mbone/speak_freely
+specimen	ports/audio/specimen
 speedbar	ports/editors/speedbar
 speedbar-emacs20	ports/editors/speedbar-emacs20
 speex		ports/audio/speex
