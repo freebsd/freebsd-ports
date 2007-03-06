@@ -173,6 +173,7 @@
     SUBDIR += extipl
     SUBDIR += extrackt
     SUBDIR += ezjail
+    SUBDIR += facter
     SUBDIR += fanout
     SUBDIR += farbot
     SUBDIR += fastest_cvsup
