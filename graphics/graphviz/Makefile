@@ -14,11 +14,11 @@ MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graph Visualization Software from AT&T and Bell Labs
 
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg		\
-		png.5:${PORTSDIR}/graphics/png			\
-		freetype.9:${PORTSDIR}/print/freetype2		\
-		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig	\
-		expat.6:${PORTSDIR}/textproc/expat2		\
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png \
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
+		expat.6:${PORTSDIR}/textproc/expat2 \
 		gd.4:${PORTSDIR}/graphics/gd
 
 USE_TK=		84
@@ -33,15 +33,15 @@ CPPFLAGS+=	-I${X11BASE}/include -I${LOCALBASE}/include -I${TCL_INCLUDEDIR} -I${T
 
 MAKE_ENV=	EXPR_COMPAT=yes MISSING=${TRUE}
 
-MAN1=		acyclic.1 bcomps.1 ccomps.1 dijkstra.1 dot.1		 \
+MAN1=		acyclic.1 bcomps.1 ccomps.1 dijkstra.1 dot.1 \
 		dotty.1 gc.1 gvcolor.1 gvpack.1 gvpr.1 gxl2dot.1 lefty.1 \
 		lneato.1 nop.1 prune.1 sccmap.1 tred.1 unflatten.1
 MAN3=		agraph.3 cdt.3 expr.3 graph.3 gvc.3 pathplan.3
 MANN=		gdtclft.n tcldot.n tkspline.n
-MLINKS=		dot.1 circo.1		\
-		gxl2dot.1 dot2gxl.1	\
-		dot.1 fdp.1		\
-		dot.1 neato.1		\
+MLINKS=		dot.1 circo.1 \
+		gxl2dot.1 dot2gxl.1 \
+		dot.1 fdp.1 \
+		dot.1 neato.1 \
 		dot.1 twopi.1
 
 PATCH_TCL_SCRIPTS=	tclpkg/gv/Makefile.in tclpkg/tcldot/demo/doted \
@@ -65,22 +65,22 @@ OPTIONS=	PANGOCAIRO "build with pangocairo support (gtk)" off \
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS=	--program-transform-name="s/x/x/"		\
-		--enable-dependency-tracking			\
-		--with-iconvlibdir=${LOCALBASE}/lib		\
-		--with-libgd					\
-		--with-tclsh=${TCLSH}				\
-		--with-wish=${WISH}				\
-		--with-fontconfigincludedir=${X11BASE}/include	\
-		--with-fontconfiglibdir=${X11BASE}/lib 		\
-		--disable-io --disable-ocaml --disable-java	\
+CONFIGURE_ARGS=	--program-transform-name="s/x/x/" \
+		--enable-dependency-tracking \
+		--with-iconvlibdir=${LOCALBASE}/lib \
+		--with-libgd \
+		--with-tclsh=${TCLSH} \
+		--with-wish=${WISH} \
+		--with-fontconfigincludedir=${X11BASE}/include \
+		--with-fontconfiglibdir=${X11BASE}/lib \
+		--disable-io --disable-ocaml --disable-java \
 		--disable-sharp
 
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}"			\
-		CPPFLAGS="${CPPFLAGS}"	 		\
-		LDFLAGS="${LDFLAGS}"			\
-		TCLCONFIG="${TCL_LIBDIR}/tclConfig.sh"	\
-		TKCONFIG="${TK_LIBDIR}/tkConfig.sh"	\
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
+		CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}" \
+		TCLCONFIG="${TCL_LIBDIR}/tclConfig.sh" \
+		TKCONFIG="${TK_LIBDIR}/tkConfig.sh" \
 		MISSING=${TRUE}
 
 .if !defined(WITH_PANGOCAIRO)
@@ -97,7 +97,7 @@ USE_GNOME=	gtk20 pango
     defined(WITH_RUBY) || defined(WITH_LUA) || defined(WITH_TCL) || defined(WITH_GUILE)
 BUILD_DEPENDS+=		swig1.3:${PORTSDIR}/devel/swig13
 RUN_DEPENDS+=		swig1.3:${PORTSDIR}/devel/swig13
-CONFIGURE_ARGS+= 	--enable-swig
+CONFIGURE_ARGS+=	--enable-swig
 CONFIGURE_ENV+=		SWIG="${LOCALBASE}/bin/swig1.3"
 .else
 CONFIGURE_ARGS+=	--disable-swig
@@ -118,8 +118,10 @@ PLIST_SUB+=		WITH_PHP="@comment "
 . else
 CONFIGURE_ARGS+=	--enable-php
 PLIST_SUB+=		WITH_PHP=""
+USE_PHP=	yes
 USE_PHP_BUILD=	yes
 CPPFLAGS+=		-I${LOCALBASE}/include/php/Zend
+.include "${PORTSDIR}/Mk/bsd.php.mk"
 . endif
 
 . if !defined(WITH_PYTHON)
@@ -174,63 +176,65 @@ LIB_DEPENDS+=		guile.15:${PORTSDIR}/lang/guile
 . endif
 
 pre-patch:
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS}					\
-	  ${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|'	\
-	                   -e "s|\([^:]*:.*\) install-pdfDATA\(.*\)|\1\2|g"		\
-	                   -e "s|\([^:]*:.*\) install-htmlDATA\(.*\)|\1\2|g"		\
-	                   -e "s|\([^:]*:.*\) install-txtDATA\(.*\)|\1\2|g"		\
-	                   -e "s|\([^:]*:.*\) install-demoDATA\(.*\)|\1\2|g"		\
-	                   -e "s|\([^:]*:.*\) install-demoSCRIPTS\(.*\)|\1\2|g"		\
-	                   -e "s|\([^:]*:.*\) install-pathplanexampleDATA\(.*\)|\1\2|g" \
-	                   -e 's|demodir = $$(pkgdatadir)/demo|demodir = ${EXAMPLESDIR}|';
-
-	@${REINPLACE_CMD} -e 's|^\.SUFFIXES: \(.*\)\.1\(.*\)|.SUFFIXES: \1 \2|'	\
-	                  ${WRKSRC}/cmd/tools/Makefile.in			\
-	                  ${WRKSRC}/cmd/gvpr/Makefile.in
-
-	@${FIND} ${WRKSRC}/lib -name 'Makefile.in' | ${XARGS}				\
-	  ${REINPLACE_CMD} -e 's|libdir = @libdir@|libdir = @libdir@/graphviz|g';
-
+	@${FIND} ${WRKSRC} -name Makefile.in | \
+		${XARGS} ${REINPLACE_CMD} \
+		-e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
+		-e "s|\([^:]*:.*\) install-pdfDATA\(.*\)|\1\2|g" \
+		-e "s|\([^:]*:.*\) install-htmlDATA\(.*\)|\1\2|g" \
+		-e "s|\([^:]*:.*\) install-txtDATA\(.*\)|\1\2|g" \
+		-e "s|\([^:]*:.*\) install-demoDATA\(.*\)|\1\2|g" \
+		-e "s|\([^:]*:.*\) install-demoSCRIPTS\(.*\)|\1\2|g" \
+		-e "s|\([^:]*:.*\) install-pathplanexampleDATA\(.*\)|\1\2|g" \
+		-e 's|demodir = $$(pkgdatadir)/demo|demodir = ${EXAMPLESDIR}|';
+	@${REINPLACE_CMD} \
+		-e 's|^\.SUFFIXES: \(.*\)\.1\(.*\)|.SUFFIXES: \1 \2|' \
+		${WRKSRC}/cmd/tools/Makefile.in \
+		${WRKSRC}/cmd/gvpr/Makefile.in
+	@${FIND} ${WRKSRC}/lib -name 'Makefile.in' | \
+		${XARGS} ${REINPLACE_CMD} \
+		-e 's|libdir = @libdir@|libdir = @libdir@/graphviz|g';
 	@${REINPLACE_CMD} -e "s|/usr/include/php|${LOCALBASE}/include/php|g" \
 		-e "s|-lruby|-lruby${RUBY_SUFFIX}|g" ${WRKSRC}/configure
 
 post-install-script:
-	${INSTALL_MAN} ${WRKSRC}/tclpkg/gdtclft/gdtclft.n   ${MANNPREFIX}/man/mann
-	${INSTALL_MAN} ${WRKSRC}/tclpkg/tcldot/tcldot.n     ${MANNPREFIX}/man/mann
-	${INSTALL_MAN} ${WRKSRC}/tclpkg/tkspline/tkspline.n ${MANNPREFIX}/man/mann
+	${INSTALL_MAN} \
+		${WRKSRC}/tclpkg/gdtclft/gdtclft.n \
+		${WRKSRC}/tclpkg/tcldot/tcldot.n \
+		${WRKSRC}/tclpkg/tkspline/tkspline.n \
+		${MANNPREFIX}/man/mann/
 
 post-install: install-ldconfig-file
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/html
 	@${MKDIR} ${DOCSDIR}/pdf
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PDOCS_TXT} ${DOCSDIR}		\
-	             && ${INSTALL_DATA} ${PDOCS_PDF} ${DOCSDIR}/pdf	\
-	             && ${INSTALL_DATA} ${PDOCS_HTML} ${DOCSDIR}/html
-
+	cd ${WRKSRC} && \
+		${INSTALL_DATA} ${PDOCS_TXT} ${DOCSDIR}/ && \
+		${INSTALL_DATA} ${PDOCS_PDF} ${DOCSDIR}/pdf/ && \
+		${INSTALL_DATA} ${PDOCS_HTML} ${DOCSDIR}/html/
 .	for i in neato.pdf twopi.pdf fdp.pdf circo.pdf
 		cd ${DOCSDIR}/pdf && ${LN} -fs dot.pdf ${i}
 .	endfor
 	cd ${DOCSDIR}/pdf && ${LN} -fs gxl2dot.pdf dot2gxl.pdf
 .endif
-
 	@${ECHO_MSG} "Installing demo data..."
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT}  ${WRKSRC}/tclpkg/gdtclft/demo/entities        ${EXAMPLESDIR}
-	${INSTALL_DATA}    ${WRKSRC}/tclpkg/gdtclft/demo/entities.README ${EXAMPLESDIR}
-
-	${INSTALL_SCRIPT}  ${WRKSRC}/tclpkg/tcldot/demo/doted            ${EXAMPLESDIR}
-	${INSTALL_DATA}    ${WRKSRC}/tclpkg/tcldot/demo/doted.README     ${EXAMPLESDIR}
-
-	${INSTALL_SCRIPT}  ${WRKSRC}/tclpkg/tcldot/demo/gcat             ${EXAMPLESDIR}
-	${INSTALL_DATA}    ${WRKSRC}/tclpkg/tcldot/demo/gcat.README      ${EXAMPLESDIR}
-
+	${INSTALL_SCRIPT} \
+		${WRKSRC}/tclpkg/gdtclft/demo/entities \
+		${WRKSRC}/tclpkg/tcldot/demo/doted \
+		${WRKSRC}/tclpkg/tcldot/demo/gcat \
+		${WRKSRC}/tclpkg/tclpathplan/demo/pathplan \
+		${WRKSRC}/tclpkg/tkspline/demo/spline \
+		${EXAMPLESDIR}/
+	${INSTALL_DATA} \
+		${WRKSRC}/tclpkg/gdtclft/demo/entities.README \
+		${WRKSRC}/tclpkg/tcldot/demo/doted.README \
+		${WRKSRC}/tclpkg/tcldot/demo/gcat.README \
+		${WRKSRC}/tclpkg/tclpathplan/demo/pathplan.README \
+		${WRKSRC}/tclpkg/tkspline/demo/spline.README \
+		${EXAMPLESDIR}/
 	@${MKDIR} ${EXAMPLESDIR}/pathplan_data
-	${INSTALL_SCRIPT}  ${WRKSRC}/tclpkg/tclpathplan/demo/pathplan	 ${EXAMPLESDIR}
-	${INSTALL_DATA}    ${WRKSRC}/tclpkg/tclpathplan/demo/pathplan.README ${EXAMPLESDIR}
-	${INSTALL_DATA}    ${WRKSRC}/tclpkg/tclpathplan/demo/pathplan_data/*.dat \
-	                   ${EXAMPLESDIR}/pathplan_data
-
-	${INSTALL_SCRIPT}  ${WRKSRC}/tclpkg/tkspline/demo/spline	 ${EXAMPLESDIR}
-	${INSTALL_DATA}    ${WRKSRC}/tclpkg/tkspline/demo/spline.README	 ${EXAMPLESDIR}
+	${INSTALL_DATA} \
+		${WRKSRC}/tclpkg/tclpathplan/demo/pathplan_data/*.dat \
+		${EXAMPLESDIR}/pathplan_data/
 
 .include <bsd.port.post.mk>
