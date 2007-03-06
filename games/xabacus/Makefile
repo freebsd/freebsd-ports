@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	xabacus
-PORTVERSION=	7.2.6
+PORTVERSION=	7.3
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://www.tux.org/pub/tux/bagleyd/xabacus/
+MASTER_SITES=	http://www.tux.org/~bagleyd/abacus/ \
+		http://ftp.tux.org/pub/tux/bagleyd/xabacus/ \
+		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/math
 
 MAINTAINER=	ports@FreeBSD.org
