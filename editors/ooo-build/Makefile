@@ -7,10 +7,14 @@ PORTNAME=	ooo-build
 PORTVERSION=	${OOOBUILD_VERSION}
 MASTER_SITES+=	http://www.go-ooo.org/packages/OOE680/ \
 		http://www.go-ooo.org/packages/SRC680/ \
-		http://www.openclipart.org/downloads/0.18/:openclipart
+		http://www.openclipart.org/downloads/0.18/:openclipart \
+		${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/libwpd/g}:libwpd \
+		http://go-oo.org/packages/SRC680/:libwps
 DISTFILES+=	${OOOBUILD_SOURCE} \
 	${OOO_EXTRA_ARTWORK} ${OOO_CRYSTAL_IMAGES} \
-	${OOO_OPENCLIPART}:openclipart
+	${OOO_OPENCLIPART}:openclipart \
+	${OOO_LIBWPD}:libwpd \
+	${OOO_LIBWPS}:libwps
 
 MAINTAINER=	maho@FreeBSD.org
 
@@ -30,7 +34,7 @@ OOO_CRYSTAL_IMAGES=	ooo_crystal_images-1.tar.gz
 OOO_OPENCLIPART=	openclipart-0.18-full.tar.gz
 OOO_PATCHDIR=src680
 .else
-OOOBUILD_VERSION=2.1
+OOOBUILD_VERSION=2.1.7
 OOOBUILD_TAG=ooe680-m6
 OOOSRC=		OOo_OOE680_m6_source.tar.bz2
 OOOTAG=		OOE680_m6
@@ -40,13 +44,15 @@ OOOBUILD_SOURCE=${OOOBUILD}.tar.gz
 OOO_EXTRA_ARTWORK=extras-2.tar.bz2
 OOO_CRYSTAL_IMAGES=	ooo_crystal_images-1.tar.gz
 OOO_OPENCLIPART=	openclipart-0.18-full.tar.gz
+OOO_LIBWPD=		libwpd-0.8.8.tar.gz
+OOO_LIBWPS=		libwps-0.1.0~svn20070129.tar.gz
 OOO_PATCHDIR=src680
 .endif
 
 MD5_FILE=      ${.CURDIR}/distinfo
 USE_AUTOTOOLS=  autoconf:259
 
-CONFIGURE_ARGS+=	--enable-cairo --with-system-cairo --with-system-xrender-headers=yes #i62713#
+CONFIGURE_ARGS+=	--enable-cairo --with-system-cairo
 CONFIGURE_ARGS+=	--disable-access #--with-system-mdbtools
 #for lpsolve...
 CONFIGURE_ARGS+=	--with-system-lpsolve
@@ -77,17 +83,14 @@ pre-configure:
 .endif
 	@cd ${WRKDIR}/${OOOBUILD}/patches ; ${PERL} apply.pl ${WRKDIR}/${OOOBUILD}/patches/${OOO_PATCHDIR} ${WRKSRC} --distro=FreeBSD --distro=Binfilter --tag=${OOOBUILD_TAG}
 	@${CP} ${WRKDIR}/${OOOBUILD}/src/evolocal.odb ${WRKSRC}/extras/source/database/
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${OOO_LIBWPD} ${WRKSRC}/libwpd/download/
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${OOO_LIBWPS} ${WRKSRC}/libwps/download/
 .if !defined(DEVELOPER_VER)
 	@${CP} ${WRKDIR}/${OOOBUILD}/src/go-oo-team.png ${WRKSRC}/default_images/sw/res
 .endif
 #extract some goodies
 	cd ${WRKSRC} ; ${TAR} xjf ${DISTDIR}/${DIST_SUBDIR}/${OOO_EXTRA_ARTWORK}
 	#cd ${WRKDIR} ; ${TAR} xjf ${DISTDIR}/${DIST_SUBDIR}/${OOO_OPENCLIPART}
-.if defined(DEVELOPER_VER)
-	@${MKDIR} ${WRKSRC}/external_images
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${OOO_CRYSTAL_IMAGES} ${WRKSRC}/external_images
-.endif
-
 .if defined(DEVELOPER_VER)
 MASTERDIR=	${.CURDIR}/../openoffice.org-2-devel
 .else
