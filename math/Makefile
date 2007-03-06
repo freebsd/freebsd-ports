@@ -211,6 +211,7 @@
     SUBDIR += p5-Math-LinearCombination
     SUBDIR += p5-Math-Logic
     SUBDIR += p5-Math-Matrix
+    SUBDIR += p5-Math-NumberCruncher
     SUBDIR += p5-Math-Pari
     SUBDIR += p5-Math-Polynomial-Solve
     SUBDIR += p5-Math-Random
