@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	igraph
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	math python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/i/igraph/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,10 +19,4 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
