@@ -1,6 +1,14 @@
---- ./trac/notification.py.orig	Sun Mar  4 18:14:39 2007
-+++ ./trac/notification.py	Sun Mar  4 21:58:03 2007
-@@ -225,6 +225,13 @@
+--- trac/notification.py.orig	Sat Dec  9 19:06:15 2006
++++ trac/notification.py	Tue Mar  6 16:31:37 2007
+@@ -218,6 +218,7 @@
+     def format_header(self, key, name, email=None):
+         from email.Header import Header
+         maxlength = MAXHEADERLEN-(len(key)+2)
++	header = None
+         # Do not sent ridiculous short headers
+         if maxlength < 10:
+             raise TracError, "Header length is too short"
+@@ -225,6 +226,13 @@
              tmp = name.encode('ascii')
              header = Header(tmp, 'ascii', maxlinelen=maxlength)
          except UnicodeEncodeError:
@@ -14,7 +22,7 @@
              header = Header(name, self._charset, maxlinelen=maxlength)
          if not email:
              return header
-@@ -343,12 +350,17 @@
+@@ -343,12 +351,17 @@
                  headers['To'] = ', '.join(toaddrs)
          if pcc:
              headers['Cc'] = ', '.join(pcc)
