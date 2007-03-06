@@ -18,6 +18,17 @@ MAKE_ENV=	OPT="${CFLAGS}"
 
 CONFLICTS=	file-[0-9]*
 
+# This port is constructed very weirdly. It installs common
+# utils, like file, md5 and lastcomm, thus it conflicts with a
+# a lot of ports, and makes weird issues. If somebody want to
+# save it, the port should be reworked to use those tools from
+# the base system or from the Ports Collection. Furthermore, it
+# has been unmaintained for a long time, and the development
+# seems to be stalled, you can use sysutils/sleuthkit instead,
+# which has more features.
+DEPRECATED=	this port is obsolete, please use sysutils/sleuthkit instead
+EXPIRATION_DATE=	2007-04-06
+
 MAN1=		file-tct.1 grave-robber.1 icat.1 ils.1 lastcomm.1 lazarus.1 \
 		mactime.1 major_minor.1 md5-tct.1 pcat.1 timeout.1 unrm.1
 MAN5=		magic.5 tm-format.5
