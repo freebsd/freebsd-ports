@@ -9,9 +9,9 @@
  
  bin_SCRIPTS = muttbug flea @SMIMEAUX_TARGET@
  
---- doc/Makefile.in.orig	Sun Sep 18 16:56:56 2005
-+++ doc/Makefile.in	Sun Sep 18 17:00:01 2005
-@@ -81,14 +81,6 @@
+--- doc/Makefile.am.orig3	Tue Mar  6 17:51:02 2007
++++ doc/Makefile.am	Tue Mar  6 17:51:45 2007
+@@ -55,14 +55,6 @@
  	./instdoc muttrc.man $(DESTDIR)$(mandir)/man5/muttrc.5
  	./instdoc $(srcdir)/mbox.man $(DESTDIR)$(mandir)/man5/mbox.5
  	./instdoc $(srcdir)/mmdf.man $(DESTDIR)$(mandir)/man5/mmdf.5
@@ -24,5 +24,5 @@
 -	done
 -	-$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir)
  
- uninstall:
+ uninstall-local:
  	for f in mutt.1 mutt_dotlock.1 flea.1 muttbug.1 ; do \

@@ -1,11 +1,11 @@
---- doc/Makefile.in.orig2	Mon Jul 17 15:50:28 2006
-+++ doc/Makefile.in	Mon Jul 17 15:50:57 2006
-@@ -71,7 +71,7 @@
+--- doc/Makefile.am.orig2	Tue Mar  6 17:40:41 2007
++++ doc/Makefile.am	Tue Mar  6 17:42:51 2007
+@@ -42,7 +42,7 @@
  all: ../makedoc$(EXEEXT)
  	$(MAKE) makedoc-all
  
 -makedoc-all: mutt.1 muttrc.man
 +makedoc-all: mutt.1 muttrc.man manual.html stamp-doc-chunked manual.txt
  
- install: makedoc-all instdoc
+ install-data-local: makedoc-all instdoc
  	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1

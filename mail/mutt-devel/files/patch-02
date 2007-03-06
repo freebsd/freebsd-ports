@@ -1,5 +1,14 @@
---- doc/Makefile.am.orig	Mon Aug 14 16:06:21 2006
-+++ doc/Makefile.am	Wed Aug 30 14:52:04 2006
+--- doc/Makefile.am.orig	Tue Mar  6 17:39:29 2007
++++ doc/Makefile.am	Tue Mar  6 17:40:41 2007
+@@ -42,7 +42,7 @@
+ all: ../makedoc$(EXEEXT)
+ 	$(MAKE) makedoc-all
+ 
+-makedoc-all: mutt.1 muttrc.man manual.html stamp-doc-chunked manual.txt
++makedoc-all: mutt.1 muttrc.man
+ 
+ install-data-local: makedoc-all instdoc
+ 	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
 @@ -63,9 +63,6 @@
  		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
  	done
@@ -11,36 +20,6 @@
  uninstall-local:
  	for f in mutt.1 mutt_dotlock.1 flea.1 muttbug.1 ; do \
 @@ -82,7 +79,7 @@
- 
- check:
- manual.txt: manual.html
--	-lynx -dump -nolist -with_backspaces $^ > $@ || w3m -dump $^ > $@
-+	-lynx -dump -nolist -with_backspaces manual.html > $@ || w3m -dump $^ > $@
- 
- manual.html: $(srcdir)/html.xsl stamp-doc-xml
- 	-xsltproc --nonet -o $@ $(srcdir)/html.xsl manual.xml
---- doc/Makefile.in.orig1	Wed Jul  5 10:40:07 2006
-+++ doc/Makefile.in	Mon Jul 17 15:49:28 2006
-@@ -71,7 +71,7 @@
- all: ../makedoc$(EXEEXT)
- 	$(MAKE) makedoc-all
- 
--makedoc-all: mutt.1 muttrc.man manual.html stamp-doc-chunked manual.txt
-+makedoc-all: mutt.1 muttrc.man
- 
- install: makedoc-all instdoc
- 	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
-@@ -92,9 +92,6 @@
- 		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
- 	done
- 	-$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir)
--	-for f in $(HTML_DOCFILES) ; do \
--		$(INSTALL) -m 644 $$f $(DESTDIR)$(docdir) ; \
--	done
- 
- uninstall:
- 	for f in mutt.1 mutt_dotlock.1 flea.1 muttbug.1 ; do \
-@@ -111,7 +108,7 @@
  
  check:
  manual.txt: manual.html
