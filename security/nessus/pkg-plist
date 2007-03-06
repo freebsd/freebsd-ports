@@ -29,9 +29,9 @@ sbin/nessusd
 @dirrmtry var/nessus/jobs
 @dirrmtry var/nessus/logs
 @dirrmtry var/nessus/users
+var/nessus/nessus-services
 @dirrmtry var/nessus
 @dirrmtry etc/nessus
 @exec mkdir -p %D/lib/nessus/plugins
 @dirrmtry lib/nessus/plugins
 @dirrmtry lib/nessus
-@exec if [ ! -f %D/var/CA/serverkey.pem ]; then %D/sbin/nessus-mkcert; fi
