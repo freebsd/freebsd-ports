@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wings
 DIST_SUBDIR=	erlang
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A polygon mesh modeler written in Erlang
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
