@@ -2,10 +2,10 @@
 #
 # openvpn.sh - load tun/tap driver and start OpenVPN daemon
 #
-# (C) Copyright 2005 by Matthias Andree
+# (C) Copyright 2005 - 2007 by Matthias Andree
 # based on suggestions by Matthias Grimm and Dirk Gouders
-#
-# Made in Northrhine-Westphalia, Germany
+# with multi-instance contribution from Denis Shaposhnikov, Gleb Kozyrev
+# and Vasil Dimov
 #
 # $FreeBSD$
 # 
@@ -30,17 +30,29 @@
 
 # -----------------------------------------------------------------------------
 #
-# Add the following lines to /etc/rc.conf to enable openvpn at boot-up time:
+# This script supports running multiple instances of openvpn.
+# To run additional instance link this script to something like
+# % ln -s openvpn openvpn_foo
+# and define additional openvpn_foo_* variables in one of
+# /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/openvpn_foo
 #
-# openvpn_enable="YES"	# YES or NO
-# openvpn_if="tun" 	# driver(s) to load, set to "tun", "tap" or "tun tap"
+# Below NAME should be substituted with the name of this script. By default
+# it is openvpn, so read as openvpn_enable. If you linked the script to
+# openvpn_foo, then read as openvpn_foo_enable etc.
+#
+# The following variables are supported (defaults are shown).
+# You can place them in any of
+# /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/NAME
+#
+# NAME_enable="NO"	# set to YES to enable openvpn
+# NAME_if=""		# driver(s) to load, set to "tun", "tap" or "tun tap"
 #
 # # optional:
-# openvpn_flags=""	# openvpn command line flags
-# openvpn_configfile="%%PREFIX%%/etc/openvpn/openvpn.conf" 	# --config file
-# openvpn_dir="%%PREFIX%%/etc/openvpn"				# --cd directory
+# NAME_flags=""				# additional command line arguments
+# NAME_configfile="%%PREFIX%%/etc/openvpn/NAME.conf"	# --config file
+# NAME_dir="%%PREFIX%%/etc/openvpn"	# --cd directory
 #
-# You also need to set openvpn_configfile and openvpn_dir, if the configuration
+# You also need to set NAME_configfile and NAME_dir, if the configuration
 # file and directory where keys and certificates reside differ from the above
 # settings.
 #
@@ -51,14 +63,24 @@
 
 . %%RC_SUBR%%
 
-name=openvpn
-rcvar=`set_rcvar`
+case "$0" in
+/etc/rc*)
+	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+	# so get the name of the script from $_file
+	name=$(basename "$_file" .sh)
+	;;
+*)
+	name=$(basename "$0" .sh)
+	;;
+esac
+
+rcvar=$(set_rcvar)
 
 prefix="%%PREFIX%%"
 
 openvpn_precmd()
 {
-	for i in $openvpn_if ; do
+	for i in $interfaces ; do
 		# FreeBSD <= 5.4 does not know kldstat's -m option
 		# FreeBSD >= 6.0 does not add debug.* sysctl information
 		# in the default build - we check both to keep things simple
@@ -85,7 +107,7 @@ extra_commands="reload"
 pidfile="/var/run/${name}.pid"
 
 # command and arguments
-command="%%PREFIX%%/sbin/${name}"
+command="%%PREFIX%%/sbin/openvpn"
 
 # run this first
 start_precmd="openvpn_precmd"
@@ -93,11 +115,18 @@ start_precmd="openvpn_precmd"
 stop_postcmd="stop_postcmd"
 
 load_rc_config ${name}
-: ${openvpn_enable="NO"}
-: ${openvpn_flags=""}
-: ${openvpn_if=""}
-: ${openvpn_configfile="${prefix}/etc/openvpn/openvpn.conf"}
-: ${openvpn_dir="${prefix}/etc/openvpn"}
-required_files="${openvpn_configfile}"
-command_args="--cd ${openvpn_dir} --daemon --config ${openvpn_configfile} --writepid ${pidfile}"
+
+eval ": \${${name}_enable:=\"NO\"}"
+eval ": \${${name}_flags:=\"\"}"
+eval ": \${${name}_if:=\"\"}"
+eval ": \${${name}_configfile:=\"${prefix}/etc/openvpn/${name}.conf\"}"
+eval ": \${${name}_dir:=\"${prefix}/etc/openvpn\"}"
+
+configfile="$(eval echo \${${name}_configfile})"
+dir="$(eval echo \${${name}_dir})"
+interfaces="$(eval echo \${${name}_if})"
+
+required_files=${configfile}
+command_args="--cd ${dir} --daemon --config ${configfile} --writepid ${pidfile}"
+
 run_rc_command "$1"
