@@ -109,6 +109,13 @@ MASTER_SITE_BERLIOS+=	\
 	http://download2.berlios.de/%SUBDIR%/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_CENKES)
+MASTER_SITE_CENKES+=	\
+	http://bsd.cenkes.org/%SUBDIR%/ \
+	http://bsd2.cenkes.org/%SUBDIR%/ \
+	http://bsd3.cenkes.org/%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_COMP_SOURCES)
 MASTER_SITE_COMP_SOURCES+=	\
 	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.%SUBDIR%/ \
@@ -116,10 +123,7 @@ MASTER_SITE_COMP_SOURCES+=	\
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_CSME)
-MASTER_SITE_CSME+=	\
-	http://bsd1.csme.ru/%SUBDIR%/ \
-	http://bsd2.csme.ru/%SUBDIR%/ \
-	http://bsd3.csme.ru/%SUBDIR%/
+MASTER_SITE_CSME+=	${MASTER_SITE_CENKES}
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_DEBIAN)
@@ -1326,6 +1330,7 @@ MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN SF:SOURCEFORGE SFE:SOURCEFORGE_EXTENDED \
 MASTER_SITES_SUBDIRS=	\
 			APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
 			BERLIOS:${PORTNAME:L} \
+			CENKES:myports \
 			CSME:myports \
 			DEBIAN:pool/main/${PORTNAME:C/^((lib)?.).*$/\1/}/${PORTNAME} \
 			GCC:releases/${DISTNAME} \
