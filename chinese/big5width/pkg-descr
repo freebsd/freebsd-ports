@@ -1,4 +1,4 @@
-Unicode define some character width as ambigious. Software determines
+Unicode define some character width as ambiguous. Software determines
 the width of characters accroding the context. However, sometimes it is
 hard or impossible to know the context. Thus, this port dirty fixes some
 console software, let them recognize all characters in Big5 encoding
