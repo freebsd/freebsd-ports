@@ -94,7 +94,9 @@ EMPTY_DIRS=	plan9/log \
 
 post-patch:
 	@${FIND} ${WRKSRC}/man -type f -regex ".*\.[0-9?]$\" \
-		| ${XARGS} ${REINPLACE_CMD} -e 's|\\\*9|${PREFIX}/plan9|'
+		| ${XARGS} ${REINPLACE_CMD} -e 's|\\\*9|${PLAN9}|'
+	@${REINPLACE_CMD} -e 's|X11=/usr/X11R6|X11=${X11BASE}|' ${WRKSRC}/bin/9l \
+		${WRKSRC}/src/cmd/devdraw/mkwsysrules.sh
 
 do-build:
 	cd ${WRKSRC} && ./INSTALL
@@ -106,14 +108,14 @@ post-build:
 	  ${FIND} plan9 -type f \
 	    -a ! -path "plan9/man/man[0-9]/*.[0-9]*"; \
 	  for D in ${EMPTY_DIRS}; do \
-	    ${ECHO_CMD} "@exec ${MKDIR} ${PREFIX}/$${D}"; \
+	    ${ECHO_CMD} "@exec ${MKDIR} ${TARGETDIR}/$${D}"; \
 	  done; \
 	  ${FIND} plan9 -type d | ${SORT} -r \
 		| ${SED} -e 's|^|@dirrm |'; \
 	) > ${PLIST}
 
 do-install:
-	${CP} -rp ${WRKSRC} ${PREFIX}
+	${CP} -rp ${WRKSRC} ${TARGETDIR}
 
 post-install:
 	cd ${PLAN9} && \
