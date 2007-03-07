@@ -1,0 +1,8 @@
+tel is a little console-based phone book program. It allows adding,
+modifying, editing, and searching of phone book entries right on your
+terminal. Pretty printing capabilites are also provided. Entries are
+stored in a simple CSV file. This eases import and export with common
+spread sheet applications like Microsoft Excel or OpenOffice.org Calc.
+
+WWW: http://tel.berlios.de/
+Author: Sebastian Wiesner <basti.wiesner@gmx.net>
