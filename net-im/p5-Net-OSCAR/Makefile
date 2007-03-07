@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	kcochran@trolans.net
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for the AOL Instant Messenger OSCAR protocol
 
 PERL_MODBUILD=	yes
