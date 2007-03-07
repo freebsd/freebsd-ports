@@ -6,12 +6,15 @@ share/applications/crimson.desktop
 %%DATADIR%%/default.units
 %%DATADIR%%/levels/Anthill.lev
 %%DATADIR%%/levels/ArmsRace.lev
+%%DATADIR%%/levels/Baptism.lev
 %%DATADIR%%/levels/BeachRaid.lev
+%%DATADIR%%/levels/ClippedWings.lev
 %%DATADIR%%/levels/Foxhole.lev
 %%DATADIR%%/levels/General.lev
 %%DATADIR%%/levels/GreatBattle.lev
 %%DATADIR%%/levels/HeavyMetal.lev
 %%DATADIR%%/levels/IslandHoppers.lev
+%%DATADIR%%/levels/LakeYukarwa.lev
 %%DATADIR%%/levels/LankhValley.lev
 %%DATADIR%%/levels/LostFactories.lev
 %%DATADIR%%/levels/MountainDefense.lev
@@ -26,8 +29,11 @@ share/applications/crimson.desktop
 %%DATADIR%%/locale/de.dat
 %%DATADIR%%/locale/en.dat
 %%DATADIR%%/locale/fr.dat
+%%DATADIR%%/locale/hu.dat
+%%DATADIR%%/locale/it.dat
 %%DATADIR%%/locale/pl.dat
 %%DATADIR%%/locale/sk.dat
+%%DATADIR%%/locale/sr.dat
 %%DATADIR%%/music/default.mid
 %%DATADIR%%/sound/ask.wav
 %%DATADIR%%/sound/clicked.wav
@@ -37,9 +43,10 @@ share/applications/crimson.desktop
 %%DATADIR%%/sound/select.wav
 %%DATADIR%%/title.bmp
 share/pixmaps/crimson.png
-@dirrm %%DATADIR%%/sound
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/locale
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%
+@dirrmtry share/pixmaps/
 @dirrmtry share/applications
+@dirrm %%DATADIR%%/levels
+@dirrm %%DATADIR%%/locale
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/sound
+@dirrm %%DATADIR%%
