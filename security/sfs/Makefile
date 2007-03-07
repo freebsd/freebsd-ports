@@ -12,7 +12,7 @@ PORTREVISION=	4
 CATEGORIES=	security net
 MASTER_SITES=	http://www.fs.net/sfswww/dist/
 
-MAINTAINER=	handler@grendel.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Self-Certifying File System: A secure global network file system
 
 PLIST_SUB=	SFS_VERSION=${PORTVERSION}
