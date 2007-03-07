@@ -5,28 +5,18 @@
 # $FreeBSD$
 
 PORTNAME=	crimson
-PORTVERSION=	0.4.9
-PORTREVISION=	1
+PORTVERSION=	0.5.1
 CATEGORIES=	games
 MASTER_SITES=	http://crimson.seul.org/files/
-PKGNAMESUFFIX=	-fields
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	Tactical war game in the tradition of Battle Isle
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_SDL=	mixer sdl ttf
 
 MAN6=	crimson.6
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-BROKEN=		Internal compiler error on alpha 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
