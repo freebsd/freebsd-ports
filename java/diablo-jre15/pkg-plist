@@ -273,6 +273,7 @@ diablo-jre%%JRE_VERSION%%/lib/zi/America/Indiana/Marengo
 %%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/America/Indiana/Petersburg
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Indiana/Vevay
 %%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/America/Indiana/Vincennes
+%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/America/Indiana/Winamac
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Inuvik
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Iqaluit
 diablo-jre%%JRE_VERSION%%/lib/zi/America/Jamaica
@@ -579,19 +580,6 @@ diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Tongatapu
 diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Truk
 diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Wake
 diablo-jre%%JRE_VERSION%%/lib/zi/Pacific/Wallis
-%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/SystemV/AST4
-%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/SystemV/AST4ADT
-%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/SystemV/CST6
-%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/SystemV/CST6CDT
-%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/SystemV/EST5
-%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/SystemV/EST5EDT
-%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/SystemV/HST10
-%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/SystemV/MST7
-%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/SystemV/MST7MDT
-%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/SystemV/PST8
-%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/SystemV/PST8PDT
-%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/SystemV/YST9
-%%TZUPDATE%%diablo-jre%%JRE_VERSION%%/lib/zi/SystemV/YST9YDT
 diablo-jre%%JRE_VERSION%%/lib/zi/WET
 diablo-jre%%JRE_VERSION%%/lib/zi/ZoneInfoMappings
 diablo-jre%%JRE_VERSION%%/man/ja
@@ -635,7 +623,6 @@ diablo-jre%%JRE_VERSION%%/man/man1/unpack200.1
 @dirrm diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP/man1
 @dirrm diablo-jre%%JRE_VERSION%%/man/ja_JP.eucJP
 @dirrm diablo-jre%%JRE_VERSION%%/man
-%%TZUPDATE%%@dirrm diablo-jre%%JRE_VERSION%%/lib/zi/SystemV
 @dirrm diablo-jre%%JRE_VERSION%%/lib/zi/Pacific
 @dirrm diablo-jre%%JRE_VERSION%%/lib/zi/Indian
 @dirrm diablo-jre%%JRE_VERSION%%/lib/zi/Europe
