@@ -13,17 +13,14 @@
  /*-------------------------------------------------------------------------*/
  
 -extern time_t time ();
--extern char *ctime ();
--extern char *malloc ();
--extern char *getenv ();
--extern char *getlogin ();
++/* extern time_t time ();
+ extern char *ctime ();
+-/*extern char *malloc ();*/
++extern char *malloc ();
+ extern char *getenv ();
+ extern char *getlogin ();
 -extern struct passwd *getpwuid ();
-+//extern time_t time ();
-+//extern char *ctime ();
-+//extern char *malloc ();
-+//extern char *getenv ();
-+//extern char *getlogin ();
-+//extern struct passwd *getpwuid ();
++extern struct passwd *getpwuid (); */
  
  static int get_key ();
  
@@ -35,3 +32,12 @@
  
  /* These four variables determine which game we're playing */
  struct piece *pieces = pieces4;
+@@ -198,7 +199,7 @@
+   (void) umask (0000);		/* 000 octal, just to make the point */
+ 
+ #ifdef LOCKF
+-  if ((lock_fd = open (SCORE_FILE, O_RDWR | O_CREAT, 0666)) == -1)
++  if ((lock_fd = open (SCORE_FILE, O_RDWR | O_CREAT, 0664)) == -1)
+     die (LE_OPEN, "Couldn't open(2) score-file for lockf()");
+ 
+   while (i++ < 5) {		/* Make up to five attempts */
