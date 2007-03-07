@@ -15,7 +15,7 @@ SCSL_SRCFILE=	j2sdk-${JDK_VERSION:S/./_/g}-src-scsl.zip
 SCSL_BINFILE=	j2sdk-${JDK_VERSION:S/./_/g}-bin-scsl.zip
 PATCHSETFILE=	bsd-jdk14-patches-${JDK_PATCHSET_VERSION}.tar.gz
 POLICYFILE=	jce_policy-${JDK_VERSION:S/./_/g}.zip
-TZUPDATEFILE=	tzupdater-${TZUPDATE_VERSION:S/./_/g}.zip
+TZUPDATEFILE=	tzupdater-${TZUPDATE_VERSION}-${TZUPDATE_TZVERSION}.zip
 DISTFILES=	${SCSL_SRCFILE} ${SCSL_BINFILE} ${PATCHSETFILE}
 
 MAINTAINER=	glewis@FreeBSD.org
@@ -53,8 +53,8 @@ JDK_VERSION=	1.4.2
 JDK_PATCHSET_VERSION=	8
 LATEST_LINK=	jdk14
 
-TZUPDATE_VERSION=	1.0.1
-TZUPDATE_TZVERSION=	2007a
+TZUPDATE_VERSION=	1.1.0
+TZUPDATE_TZVERSION=	2007c
 
 SUN_LINUX_JDK_VERSION=  1.4.2
 
@@ -323,7 +323,8 @@ post-build:
 .if defined(WITH_TZUPDATE)
 	@# Update time zones
 	@-${JDKIMAGEDIR}/bin/java -jar \
-		${WRKDIR}/tzupdater${TZUPDATE_TZVERSION}/tzupdater.jar -u
+		${WRKDIR}/tzupdater-${TZUPDATE_VERSION}-${TZUPDATE_TZVERSION}/tzupdater.jar -u
+	@-${RM} -rf ${JDKIMAGEDIR}/jre/lib/zi.tzdata*
 .endif
 
 pre-install:
