@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	2.10.0.1
-PORTREVISION=	1
+DISTVERSION=	2.10.0.2
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpmyadmin
@@ -111,7 +110,14 @@ pre-everything::
 	${ECHO_MSG} "databases/phpmyadmin"
 	${ECHO_MSG} ""
 
+# When creating a package, empty directories will not be generated
+# from the pkg tarball.  Therefore make sure no directories are empty.
+
 post-patch:
+	cd ${WRKSRC} ; \
+	for emptydir in $$( ${FIND} . -type d -empty -print ) ; do \
+	    ${TOUCH} $${emptydir}/.keep-me ; \
+	done
 	${CP} ${FILESDIR}/${CFGFILE}.sample ${WRKSRC}/${CFGFILE}.sample
 	cd ${WRKSRC} ; \
 	${FIND} . ! -type d ! -name ${CFGFILE}.sample | ${SORT} | \
