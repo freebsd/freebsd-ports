@@ -35,6 +35,11 @@ PERL_CONFIGURE=	yes
 MAN3=		FormValidator::Simple.3 \
 		FormValidator::Simple::Results.3
 
+# included AutoInstall.pm bugs out on multi-dot version numbers, so let 
+# ports handle all the installation requirements...
+post-extract:
+	@${PERL} -i.bak -ne 'print unless /^requires/' ${WRKSRC}/Makefile.PL
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
