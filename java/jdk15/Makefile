@@ -270,7 +270,7 @@ pre-build:
 		${ECHO_MSG} "is known to cause problems during bootstrapping."; \
 		exit 1; \
 	fi
-.if defined(WITH_JAIL)#{
+.if !defined(WITH_JAIL)#{
 	@if [ "`/sbin/mount | grep ^linprocfs`" = "" ]; \
 	then \
 		${ECHO_MSG} "ERROR: You must have LINPROCFS mounted before" ; \
