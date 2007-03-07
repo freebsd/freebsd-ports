@@ -184,6 +184,7 @@
     SUBDIR += taskjuggler
     SUBDIR += taskstep
     SUBDIR += teapot
+    SUBDIR += tel
     SUBDIR += timer-applet
     SUBDIR += todo
     SUBDIR += tomboy
