@@ -55,9 +55,9 @@ IGNORE=		Only available for FreeBSD 5.x/i386 and FreeBSD 6.x/amd64 and later
 
 .if defined(WITH_TZUPDATE)
 EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
-TZUPDATE_VERSION=	1.0.1
-TZUPDATE_TZVERSION=	2007a
-TZUPDATEFILE=		tzupdater-${TZUPDATE_VERSION:S/./_/g}.zip
+TZUPDATE_VERSION=	1.1.0
+TZUPDATE_TZVERSION=	2007c
+TZUPDATEFILE=		tzupdater-${TZUPDATE_VERSION}-${TZUPDATE_TZVERSION}.zip
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} ${TZUPDATEFILE}
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 PLIST_SUB+=		TZORIGINAL="@comment "
@@ -102,8 +102,8 @@ post-extract:
 	@${UNZIP_CMD} -qo ${DISTDIR}/${TZUPDATEFILE} -d ${WRKDIR}
 	@# Update time zones
 	@-${WRKSRC}/bin/java -jar \
-		${WRKDIR}/tzupdater${TZUPDATE_TZVERSION}/tzupdater.jar -u
-	@${RM} -rf ${WRKSRC}/lib/zi.tzdata2005n
+		${WRKDIR}/tzupdater-${TZUPDATE_VERSION}-${TZUPDATE_TZVERSION}/tzupdater.jar -u
+	@${RM} -rf ${WRKSRC}/lib/zi.tzdata*
 .endif
 
 do-install:
