@@ -30,8 +30,6 @@ OPTIONS=	GD		"Enable GD support"		on \
 MAN1=		gnuplot.1 lasergnu.1
 INFO=		gnuplot
 
-.include <bsd.port.pre.mk>
-
 .if exists(${PREFIX}/bin/emacs) || exists(${PREFIX}/bin/xemacs)
 USE_EMACS=	yes
 EMACS_PORT_NAME=	emacs21
@@ -42,6 +40,8 @@ CONFIGURE_ARGS+=	--with-lisp-files
 PLIST_SUB+=		EMACS_SITE_LISPDIR="@comment "
 CONFIGURE_ARGS+=	--without-lisp-files
 .endif
+
+.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_READLINE)
 .if ${OSVERSION} < 500018
