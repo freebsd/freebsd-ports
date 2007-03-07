@@ -11,7 +11,7 @@ CATEGORIES=		net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xbplayer
 
-MAINTAINER=		handler@grendel.net
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Stream media files to XBox Media Center via XBMSP
 
 USE_GMAKE=		yes

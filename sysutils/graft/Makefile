@@ -10,7 +10,7 @@ PORTVERSION=		2.4
 CATEGORIES=		sysutils
 MASTER_SITES=		http://www.gormand.com.au/peters/tools/graft/
 
-MAINTAINER=		handler@grendel.net
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Automatically manage symlinks in a directory hierarchy
 
 USE_PERL5=		yes
