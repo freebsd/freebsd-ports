@@ -14,13 +14,13 @@ MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	An enhanced wiki and issue tracking system for software projects
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite20 \
-		${PYTHON_SITELIBDIR}/neo_cgi.so:${PORTSDIR}/www/clearsilver-python \
-		${PYTHON_SITELIBDIR}/svn/__init__.py:${PORTSDIR}/devel/subversion-python
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/neo_cgi.so:${PORTSDIR}/www/clearsilver-python
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	SILVERCITY "Use Silvercity for syntax highlighting" On \
-		DOCUTILS   "Allow additional text markup" On
+		DOCUTILS   "Allow additional text markup" On \
+		PGSQL	   "Use PostgreSQL instead of SQLite3" Off \
+		SUBVERSION "Support for subversion RCS" On
 CONFLICTS=	ja-trac-*
 
 USE_PYTHON=	yes
@@ -52,6 +52,16 @@ RUN_DEPENDS+=	${PREFIX}/bin/source2html.py:${PORTSDIR}/textproc/silvercity
 
 .if defined(WITH_DOCUTILS)
 RUN_DEPENDS+=	${PREFIX}/bin/rst2html:${PORTSDIR}/textproc/py-docutils
+.endif
+
+.if defined(WITH_PGSQL)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopg2/__init__.py:${PORTSDIR}/databases/py-psycopg2
+.else
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite20
+.endif
+
+.if !defined(WITHOUT_SUBVERSION)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/svn/__init__.py:${PORTSDIR}/devel/subversion-python
 .endif
 
 .include <bsd.port.post.mk>
