@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lua
-PORTVERSION=	5.0.2
-PORTREVISION=	3
+PORTVERSION=	5.0.3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/ \
 		ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
