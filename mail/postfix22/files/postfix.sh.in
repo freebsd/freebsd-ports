@@ -2,7 +2,7 @@
 #
 # $FreeBSD$
 #
-# PROVIDE: postfix
+# PROVIDE: postfix mail
 # REQUIRE: %%REQUIRE%%
 # KEYWORD: shutdown
 #
