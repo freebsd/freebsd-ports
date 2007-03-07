@@ -1,24 +1,23 @@
 Pinot is a D-Bus service that crawls, indexes your documents and monitors them
 for changes, with a GTK-based user interface that enables to query the index
 built by the service or your favourite Web engine, and display and analyze the
-results. All code is covered by the GNU GPL.
+results.
 
 Features:
-- full use of Xapian's advanced indexing and search facilities.
-- language detection with libtextcat.
-- dynamic document summaries.
+- advanced queries (probabilistic search, boolean filters, date ranges).
+- language detection.
+- listing of indexed documents.
+- editing of metadata.
+- automatic results labeling.
+- stored queries.
 - results ranking history.
-- easy labelling of documents.
-- open all documents with your favourite applications, as defined in your
-  shared-mime-info database.
-- support for indexing common file types (plain text, HTML, PDF, RTF, MS Word,
-  XML, OpenDocument/StarOffice, mbox, MP3 and Ogg Vorbis).
-- support for search plugins, either Open Search Description XML or Sherlock
-  files as used by FireFox, as well as the Google SOAP API.
-- able to query any index built with other Xapian-based tools, even if served
-  remotely.
-- D-Bus interface for easy integration with other applications (eg Deskbar
-  Applet).
-- not bound to a specific Desktop Environment.
+- dynamic document summaries.
+- only crawl and index the directories you choose.
+- D-Bus interface for easy integration with other applications, eg Deskbar
+  Applet.
+- no dependency on GNOME or KDE.
+- support for common file types.
+- search your desktop and the Web.
+- query remote indexes.
 
 WWW: http://pinot.berlios.de/
