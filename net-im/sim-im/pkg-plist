@@ -111,6 +111,7 @@ lib/sim/zodiak.la
 lib/sim/zodiak.so
 share/applications/kde/sim.desktop
 share/apps/sim/COPYING
+share/apps/sim/icons/GPL-Icons.jisp
 share/apps/sim/icons/additional.jisp
 share/apps/sim/icons/icq5.1.jisp
 share/apps/sim/icons/icq5.jisp
