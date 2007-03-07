@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gish-demo
-PORTVERSION=	1.2
+PORTVERSION=	1.4
 CATEGORIES=	games linux
 MASTER_SITES=	http://s159260531.onlinehome.us/demos/
 DISTNAME=	gishdemo
@@ -16,8 +16,7 @@ COMMENT=	A platform game with a gelatinous 12-pound ball of tar named Gish (Demo
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libvorbis.so.0:${PORTSDIR}/audio/linux-libvorbis \
 		${LINUXBASE}/usr/lib/libopenal.so.0:${PORTSDIR}/audio/linux-openal \
-		${LINUXBASE}/usr/lib/libalut.so.0:${PORTSDIR}/audio/linux-freealut \
-		${LINUXBASE}/usr/X11R6/lib/libGL.so.1.2:${PORTSDIR}/graphics/linux_dri
+		${LINUXBASE}/usr/lib/libalut.so.0:${PORTSDIR}/audio/linux-freealut
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	is an i386 Linux binary
@@ -26,6 +25,9 @@ NO_BUILD=	yes
 DATADIR=	${PREFIX}/lib/${PORTNAME}
 SUB_FILES=	rungish.sh
 SUB_LIST=	LINUXBASE=${LINUXBASE}
+
+pre-patch:
+	${MV} ${WRKDIR}/gish\ demo ${WRKSRC}
 
 do-install:
 	${MKDIR} ${DATADIR}
