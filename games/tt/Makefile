@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tt
-PORTVERSION=	14.0
+PORTVERSION=	15.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.miketaylor.org.uk/tech/tt/
 
@@ -16,7 +16,7 @@ COMMENT=	Tetris for Terminals
 ALL_TARGET=	tt
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tt ${PREFIX}/bin
+	${INSTALL_PROGRAM} -g games -m 2555 ${WRKSRC}/tt ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
