@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hiawatha
-PORTVERSION=	5.6
+PORTVERSION=	5.7
 CATEGORIES=	www
 MASTER_SITES=	http://hiawatha.leisink.org/files/
 
