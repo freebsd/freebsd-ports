@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	deluge
-PORTVERSION=	0.4.90.3
+PORTVERSION=	0.4.99.1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://deluge-torrent.org/downloads/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	boost_thread.3:${PORTSDIR}/devel/boost
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 
-USE_GNOME=	pygtk2
+USE_GNOME=	pygtk2 desktopfileutils
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
@@ -27,8 +27,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
 		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' ${WRKSRC}/setup.py
 
-.ifndef (NOPORTDOCS)
 post-install:
+	@-update-desktop-database
+.ifndef (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}

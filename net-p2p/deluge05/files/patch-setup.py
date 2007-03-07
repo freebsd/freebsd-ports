@@ -1,6 +1,6 @@
---- setup.py.orig	Thu Mar  1 18:27:45 2007
-+++ setup.py	Fri Mar  2 18:38:43 2007
-@@ -44,7 +44,7 @@
+--- setup.py.orig	Tue Mar  6 21:43:47 2007
++++ setup.py	Tue Mar  6 21:45:44 2007
+@@ -51,7 +51,7 @@
  #
  
  removals = ['-g', '-DNDEBUG', '-O2', '-Wstrict-prototypes']
@@ -9,7 +9,7 @@
  
  if pythonVersion == '2.5':
  	cv_opt = sysconfig.get_config_vars()["CFLAGS"]
-@@ -78,12 +78,14 @@
+@@ -85,12 +85,14 @@
  deluge_core = Extension('deluge_core',
                      include_dirs = ['./libtorrent', './libtorrent/include', 
                      			'./libtorrent/include/libtorrent', 
