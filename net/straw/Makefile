@@ -6,23 +6,22 @@
 #
 
 PORTNAME=	straw
-PORTVERSION=	0.25.1
-PORTREVISION=	6
+PORTVERSION=	0.26
 CATEGORIES=	net gnome
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=sources/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	R.Mahmatkhanov@SKYLINK.RU
 COMMENT=	A GNOME 2 desktop weblog aggregator written in Python
 
-BROKEN=	Does not work with the newer GTK/GNOME python bindings
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2007-04-10
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb \
+		${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus
 
 USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_GNOME=	gnomehier libglade2 pygnome2 pygnomeextras
-USE_PYTHON=	yes
+USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_INSTALLARGS=	-c -O1 --prefix=${PREFIX} \
 				--install-lib=${PREFIX}/share/gnome \
@@ -31,15 +30,6 @@ PYDISTUTILS_INSTALLARGS=	-c -O1 --prefix=${PREFIX} \
 GCONF_SCHEMAS=	straw.schemas
 
 .include <bsd.port.pre.mk>
-
-# pybsddb ships with python 2.3
-.if ${PYTHON_REL} < 230
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb3
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb3
-.else
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|g' \

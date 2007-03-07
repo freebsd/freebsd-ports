@@ -1,12 +1,15 @@
 bin/straw
 share/gnome/applications/straw.desktop
-share/gnome/pixmaps/straw.png
+share/pixmaps/straw.png
+share/gnome/straw/Application.py
+share/gnome/straw/Application.pyc
+share/gnome/straw/Application.pyo
+share/gnome/straw/CategorySelector.py
+share/gnome/straw/CategorySelector.pyc
+share/gnome/straw/CategorySelector.pyo
 share/gnome/straw/Config.py
 share/gnome/straw/Config.pyc
 share/gnome/straw/Config.pyo
-share/gnome/straw/DashboardFrontend.py
-share/gnome/straw/DashboardFrontend.pyc
-share/gnome/straw/DashboardFrontend.pyo
 share/gnome/straw/Event.py
 share/gnome/straw/Event.pyc
 share/gnome/straw/Event.pyo
@@ -25,30 +28,33 @@ share/gnome/straw/FeedItems.pyo
 share/gnome/straw/FeedList.py
 share/gnome/straw/FeedList.pyc
 share/gnome/straw/FeedList.pyo
+share/gnome/straw/FeedListView.py
+share/gnome/straw/FeedListView.pyc
+share/gnome/straw/FeedListView.pyo
 share/gnome/straw/FeedPropertiesDialog.py
 share/gnome/straw/FeedPropertiesDialog.pyc
 share/gnome/straw/FeedPropertiesDialog.pyo
-share/gnome/straw/FindDialog.py
-share/gnome/straw/FindDialog.pyc
-share/gnome/straw/FindDialog.pyo
+share/gnome/straw/Find.py
+share/gnome/straw/Find.pyc
+share/gnome/straw/Find.pyo
 share/gnome/straw/ImageCache.py
 share/gnome/straw/ImageCache.pyc
 share/gnome/straw/ImageCache.pyo
+share/gnome/straw/ItemList.py
+share/gnome/straw/ItemList.pyc
+share/gnome/straw/ItemList.pyo
 share/gnome/straw/ItemStore.py
 share/gnome/straw/ItemStore.pyc
 share/gnome/straw/ItemStore.pyo
+share/gnome/straw/ItemView.py
+share/gnome/straw/ItemView.pyc
+share/gnome/straw/ItemView.pyo
 share/gnome/straw/LookupManager.py
 share/gnome/straw/LookupManager.pyc
 share/gnome/straw/LookupManager.pyo
 share/gnome/straw/MVP.py
 share/gnome/straw/MVP.pyc
 share/gnome/straw/MVP.pyo
-share/gnome/straw/Main.py
-share/gnome/straw/Main.pyc
-share/gnome/straw/Main.pyo
-share/gnome/straw/MainWindow.py
-share/gnome/straw/MainWindow.pyc
-share/gnome/straw/MainWindow.pyo
 share/gnome/straw/MainloopManager.py
 share/gnome/straw/MainloopManager.pyc
 share/gnome/straw/MainloopManager.pyo
@@ -67,6 +73,9 @@ share/gnome/straw/OPMLExport.pyo
 share/gnome/straw/OPMLImport.py
 share/gnome/straw/OPMLImport.pyc
 share/gnome/straw/OPMLImport.pyo
+share/gnome/straw/OfflineToggle.py
+share/gnome/straw/OfflineToggle.pyc
+share/gnome/straw/OfflineToggle.pyo
 share/gnome/straw/ParsedSummary.py
 share/gnome/straw/ParsedSummary.pyc
 share/gnome/straw/ParsedSummary.pyo
@@ -79,9 +88,6 @@ share/gnome/straw/PreferencesDialog.pyo
 share/gnome/straw/QueueDict.py
 share/gnome/straw/QueueDict.pyc
 share/gnome/straw/QueueDict.pyo
-share/gnome/straw/SubscribeDialog.py
-share/gnome/straw/SubscribeDialog.pyc
-share/gnome/straw/SubscribeDialog.pyo
 share/gnome/straw/SummaryItem.py
 share/gnome/straw/SummaryItem.pyc
 share/gnome/straw/SummaryItem.pyo
@@ -100,10 +106,13 @@ share/gnome/straw/ValueMonitor.pyo
 share/gnome/straw/__init__.py
 share/gnome/straw/__init__.pyc
 share/gnome/straw/__init__.pyo
-share/gnome/straw/dashboard.py
-share/gnome/straw/dashboard.pyc
-share/gnome/straw/dashboard.pyo
+share/gnome/straw/constants.py
+share/gnome/straw/constants.pyc
+share/gnome/straw/constants.pyo
 share/gnome/straw/default_subscriptions.opml
+share/gnome/straw/dialogs.py
+share/gnome/straw/dialogs.pyc
+share/gnome/straw/dialogs.pyo
 share/gnome/straw/error.py
 share/gnome/straw/error.pyc
 share/gnome/straw/error.pyo
@@ -113,12 +122,6 @@ share/gnome/straw/feedfinder.pyo
 share/gnome/straw/feedparser.py
 share/gnome/straw/feedparser.pyc
 share/gnome/straw/feedparser.pyo
-share/gnome/straw/file_selector.py
-share/gnome/straw/file_selector.pyc
-share/gnome/straw/file_selector.pyo
-share/gnome/straw/hig_alert.py
-share/gnome/straw/hig_alert.pyc
-share/gnome/straw/hig_alert.pyo
 share/gnome/straw/httplib_async.py
 share/gnome/straw/httplib_async.pyc
 share/gnome/straw/httplib_async.pyo
@@ -126,36 +129,45 @@ share/gnome/straw/image-broken.png
 share/gnome/straw/image-waiting.png
 share/gnome/straw/offline.png
 share/gnome/straw/online.png
-share/gnome/straw/pytrayicon.so
 share/gnome/straw/straw.css
 share/gnome/straw/straw.glade
 share/gnome/straw/straw.png
+share/gnome/straw/strawdbus.py
+share/gnome/straw/strawdbus.pyc
+share/gnome/straw/strawdbus.pyo
+share/gnome/straw/strawtypes.py
+share/gnome/straw/strawtypes.pyc
+share/gnome/straw/strawtypes.pyo
+share/gnome/straw/subscribe.py
+share/gnome/straw/subscribe.pyc
+share/gnome/straw/subscribe.pyo
 share/gnome/straw/utils.py
 share/gnome/straw/utils.pyc
 share/gnome/straw/utils.pyo
+share/locale/bg/LC_MESSAGES/straw.mo
 share/locale/cs/LC_MESSAGES/straw.mo
 share/locale/de/LC_MESSAGES/straw.mo
 share/locale/en_CA/LC_MESSAGES/straw.mo
 share/locale/en_GB/LC_MESSAGES/straw.mo
 share/locale/es/LC_MESSAGES/straw.mo
+share/locale/eu/LC_MESSAGES/straw.mo
 share/locale/fi/LC_MESSAGES/straw.mo
 share/locale/fr/LC_MESSAGES/straw.mo
+share/locale/it/LC_MESSAGES/straw.mo
+share/locale/ja/LC_MESSAGES/straw.mo
+share/locale/lt/LC_MESSAGES/straw.mo
+share/locale/ne/LC_MESSAGES/straw.mo
 share/locale/nl/LC_MESSAGES/straw.mo
 share/locale/no/LC_MESSAGES/straw.mo
+share/locale/pa/LC_MESSAGES/straw.mo
 share/locale/pt/LC_MESSAGES/straw.mo
 share/locale/pt_BR/LC_MESSAGES/straw.mo
 share/locale/ru/LC_MESSAGES/straw.mo
+share/locale/rw/LC_MESSAGES/straw.mo
 share/locale/sr/LC_MESSAGES/straw.mo
 share/locale/sr@Latn/LC_MESSAGES/straw.mo
 share/locale/sv/LC_MESSAGES/straw.mo
+share/locale/uk/LC_MESSAGES/straw.mo
+share/locale/vi/LC_MESSAGES/straw.mo
+share/locale/zh_CN/LC_MESSAGES/straw.mo
 @dirrm share/gnome/straw
-@dirrmtry share/locale/sr/LC_MESSAGES
-@dirrmtry share/locale/sr
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/no/LC_MESSAGES
-@dirrmtry share/locale/no
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
