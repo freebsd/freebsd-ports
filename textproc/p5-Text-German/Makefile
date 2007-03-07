@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/U/UL/ULPFR
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		thorsten.greiner@web.de
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		German grundform reduction
 
 PERL_CONFIGURE=		yes

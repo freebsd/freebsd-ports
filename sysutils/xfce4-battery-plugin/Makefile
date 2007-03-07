@@ -12,7 +12,7 @@ CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	thorsten.greiner@web.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Battery monitor panel plugin for XFce4
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
