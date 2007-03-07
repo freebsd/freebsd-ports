@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Mar  7 12:10:53 2007
++++ Makefile.in	Wed Mar  7 13:28:22 2007
+@@ -207,7 +207,7 @@
+ SUBDIRS = src include util test client ztest zoom ziffy doc etc
+ aclocaldir = $(datadir)/aclocal
+ aclocal_DATA = m4/yaz.m4
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = yaz.pc
+ SPEC_FILE = $(PACKAGE).spec
+ EXTRA_DIST = $(SPEC_FILE) README LICENSE NEWS TODO \

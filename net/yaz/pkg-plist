@@ -35,6 +35,7 @@ include/yaz/querytowrbuf.h
 include/yaz/readconf.h
 include/yaz/record_conv.h
 include/yaz/retrieval.h
+include/yaz/snprintf.h
 include/yaz/soap.h
 include/yaz/sortspec.h
 include/yaz/srw.h
@@ -88,6 +89,7 @@ lib/libyaz.a
 lib/libyaz.la
 lib/libyaz.so
 lib/libyaz.so.2
+libdata/pkgconfig/yaz.pc
 share/aclocal/yaz.m4
 %%DOCSDIR%%/apilayer.png
 %%DOCSDIR%%/asn.external.html
@@ -141,6 +143,7 @@ share/aclocal/yaz.m4
 %%DOCSDIR%%/tools.log.html
 %%DOCSDIR%%/tools.nmem.html
 %%DOCSDIR%%/tools.oid.html
+%%DOCSDIR%%/tools.retrieval.html
 %%DOCSDIR%%/ziffy.html
 %%DOCSDIR%%/ziffy.using.html
 %%DOCSDIR%%/zoom.events.html
@@ -155,6 +158,7 @@ share/aclocal/yaz.m4
 %%DATADIR%%/etc/MARC21slim2MODS.xsl
 %%DATADIR%%/etc/MARC21slim2RDFDC.xsl
 %%DATADIR%%/etc/MARC21slimUtils.xsl
+%%DATADIR%%/etc/cqlpass.properties
 %%DATADIR%%/etc/maps.xml
 %%DATADIR%%/etc/pqf.properties
 %%DATADIR%%/etc/yazgfs.xml
