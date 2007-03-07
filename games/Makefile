@@ -223,6 +223,7 @@
     SUBDIR += freera
     SUBDIR += freesci
     SUBDIR += freesweep
+    SUBDIR += freetennis
     SUBDIR += fretsonfire
     SUBDIR += fretsonfire-data
     SUBDIR += frikqcc
