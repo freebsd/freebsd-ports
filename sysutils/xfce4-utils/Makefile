@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-utils
 PORTVERSION=	4.4.0
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITES_XFCE}
 DISTNAME=	xfce-utils-${PORTVERSION}
@@ -36,6 +37,15 @@ PLIST_SUB+=	WITH_DBUS=""
 .else
 CONFIGURE_ARGS+=--disable-dbus
 PLIST_SUB+=	WITH_DBUS="@comment "
+.endif
+
+post-patch:
+.if ${X11BASE} != ${LOCALBASE}
+	@${REINPLACE_CMD} 's|/usr/local/share:|${X11BASE}/share:|' \
+		${WRKSRC}/scripts/startxfce4.in
+.else
+	@${REINPLACE_CMD} 's|/usr/local/share:||' \
+		${WRKSRC}/scripts/startxfce4.in
 .endif
 
 .include <bsd.port.post.mk>
