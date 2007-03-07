@@ -7,6 +7,7 @@
 
 PORTNAME=	intltool
 PORTVERSION=	0.35.5
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.35
@@ -40,5 +41,10 @@ IGNORE=	requires Perl 5.6 or higher
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} \
 		-E -e '/^mkinstalldirs[[:space:]]*=/s^/\.\.^^g'
+
+post-install:
+	${MKDIR} ${PREFIX}/share/intltool/XML/Parser/Style
+	${INSTALL_DATA} ${FILESDIR}/OrigTree.pm \
+	    	${PREFIX}/share/intltool/XML/Parser/Style
 
 .include <bsd.port.post.mk>
