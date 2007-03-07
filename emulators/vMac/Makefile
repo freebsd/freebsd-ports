@@ -13,7 +13,7 @@ MASTER_SITES=		http://www.vmac.org/download/XWindows/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		troll@digitalspark.net
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Emulates a MacPlus machine!  Runs MacOS versions up to 7.5.5
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
