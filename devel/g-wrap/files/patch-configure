@@ -25,7 +25,7 @@
 +          LD="${LD-ld} -m elf_s390"
 +          ;;
 +        sparc64-*freebsd*)
-+          LD="${LD-ld} -m elf32_sparc"
++          LD="${LD-ld} -m elf_sparc"
 +          ;;
 +      esac
 +      ;;

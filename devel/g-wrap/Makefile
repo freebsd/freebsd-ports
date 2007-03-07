@@ -28,14 +28,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 gnomehack
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-CONFIGURE_TARGET=	--build=x86_64-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -fPIC"
-.else
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"glib"|"glib-2.0"|g ; \
@@ -54,4 +48,4 @@ post-install:
 		${PREFIX}/include/g-wrap/ffi
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
