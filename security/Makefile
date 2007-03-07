@@ -577,6 +577,7 @@
     SUBDIR += pwauth
     SUBDIR += pwman
     SUBDIR += pxytest
+    SUBDIR += py-bcrypt
     SUBDIR += py-cerealizer
     SUBDIR += py-clamav
     SUBDIR += py-crack
