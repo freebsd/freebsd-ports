@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://samy.kerneled.org/projects/
 
-MAINTAINER=	sbahra@kerneled.org
+MAINTAINER=	sbahra@gwu.edu
 COMMENT=	An RSS news client for the UNIX console
 
 MAN1=		wnews.1

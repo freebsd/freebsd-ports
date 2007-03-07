@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://www.kerneled.org/files/FreeBSD-ports/ \
 		http://icculus.org/openbox/2/docker/
 
-MAINTAINER=	sbahra@kerneled.org
+MAINTAINER=	sbahra@gwu.edu
 COMMENT=	A dockapp with support for GNOME2 and KDE3 tray icons
 
 PLIST_FILES=	bin/docker
