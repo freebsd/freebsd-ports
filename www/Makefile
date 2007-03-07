@@ -351,6 +351,7 @@
     SUBDIR += mod_line_edit
     SUBDIR += mod_log_config-st
     SUBDIR += mod_log_data
+    SUBDIR += mod_log_dbd
     SUBDIR += mod_log_mysql
     SUBDIR += mod_log_spread
     SUBDIR += mod_log_sql
