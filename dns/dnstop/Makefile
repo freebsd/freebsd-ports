@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnstop
-PORTVERSION=	20070105
+PORTVERSION=	20070219
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://dns.measurement-factory.com/tools/dnstop/src/
 
