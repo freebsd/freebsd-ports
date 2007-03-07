@@ -6,9 +6,9 @@
 #
 
 PORTNAME=       slock
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	x11
-MASTER_SITES=	http://www.suckless.org/download/ CSME
+MASTER_SITES=	http://www.suckless.org/download/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Simple X screen locker
