@@ -21,6 +21,7 @@
     SUBDIR += filezilla
     SUBDIR += fmirror
     SUBDIR += frox
+    SUBDIR += ftp-proxy
     SUBDIR += ftp-tls
     SUBDIR += ftpcopy
     SUBDIR += ftpcube

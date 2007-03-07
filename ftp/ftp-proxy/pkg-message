@@ -1,0 +1,23 @@
+===================================================================
+To make use of the proxy, pf.conf(5) needs the following rules. All
+anchors are mandatory.  Adjust the rules as needed.
+
+In the NAT section:
+
+  nat-anchor "ftp-proxy/*"
+  rdr-anchor "ftp-proxy/*"
+  rdr pass on $int_if proto tcp from $lan to any port 21 -> \
+      127.0.0.1 port 8021
+
+In the rule section:
+
+  anchor "ftp-proxy/*"
+  pass out proto tcp from $proxy to any port 21 keep state
+
+Add the following line to your /etc/rc.conf to enable the proxy on
+startup:
+
+  ftpproxy_enable="YES"
+
+Please consult the man page ftp-proxy(8) for more information.
+===================================================================
