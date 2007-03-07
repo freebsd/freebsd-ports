@@ -100,6 +100,7 @@ CONFIGURE_ARGS+=	--with-cc=${MPIDIR}/bin/mpicc --with-fc=${MPIDIR}/bin/mpif77
 BUILD_DEPENDS+=		${LOCALBASE}/mpich2/bin/mpicc:${PORTSDIR}/net/mpich2
 RUN_DEPENDS+=		${LOCALBASE}/mpich2/bin/mpirun:${PORTSDIR}/net/mpich2
 PKGNAMESUFFIX+=		-mpich
+WITHOUT_SPOOLES=	yes
 .endif
 
 CONFIGURE_ARGS+=	--with-mpi-dir=${MPIDIR}
