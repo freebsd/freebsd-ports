@@ -3,7 +3,6 @@ etc/sound/events/gossip.soundlist
 libdata/bonobo/servers/GNOME_Peekaboo_Applet.server
 libexec/peekaboo-applet
 share/gnome/applications/gossip.desktop
-share/gnome/gossip/channel-old4.png
 share/gnome/gossip/chat.glade
 share/gnome/gossip/file-transfer.glade
 share/gnome/gossip/gossip-account.dtd
@@ -12,6 +11,7 @@ share/gnome/gossip/gossip-away.png
 share/gnome/gossip/gossip-busy.png
 share/gnome/gossip/gossip-chatroom.dtd
 share/gnome/gossip/gossip-contact-groups.dtd
+share/gnome/gossip/gossip-contact.dtd
 share/gnome/gossip/gossip-extended-away.png
 share/gnome/gossip/gossip-group-message.png
 share/gnome/gossip/gossip-log.xsl
@@ -23,11 +23,8 @@ share/gnome/gossip/gossip-status-presets.dtd
 share/gnome/gossip/gossip-typing.png
 share/gnome/gossip/group-chat.glade
 share/gnome/gossip/main.glade
-share/gnome/gossip/my-user_48.png
-share/gnome/gossip/query_48.png
 share/gnome/gossip/vcard_16.png
 share/gnome/gossip/vcard_48.png
-share/gnome/gossip/watermark.png
 share/gnome/gossip/protocols/aim.protocol
 share/gnome/gossip/protocols/gossip-protocol.dtd
 share/gnome/gossip/protocols/icq.protocol
