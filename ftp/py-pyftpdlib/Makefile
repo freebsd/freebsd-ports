@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyftpdlib
-PORTVERSION=	0.1
+PORTVERSION=	0.1.1
 CATEGORIES=	ftp python
 MASTER_SITES=	http://pyftpdlib.googlecode.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
