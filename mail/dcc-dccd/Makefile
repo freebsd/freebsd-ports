@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcc-dccd
-PORTVERSION=	1.3.42
+PORTVERSION=	1.3.50
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rhyolite.com/anti-spam/dcc/source/ \
 		http://www.wa.apana.org.au/~dean/sources/
@@ -22,6 +22,8 @@ MAN8=		cdcc.8 dbclean.8 dblist.8 dcc.8 dccd.8 dccifd.8 dccm.8 \
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+
+USE_RC_SUBR=	dcc-start.sh
 
 #
 # User for dcc files and SUID binaries
@@ -105,11 +107,5 @@ post-build:
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 	${SH} ${PKGINSTALL} ${PREFIX} PRE-INSTALL
-
-post-install:
-.if !exists(${PREFIX}/dcc/map)
-	${CP} ${PREFIX}/dcc/map ${PREFIX}/dcc/map.dist
-	@${CHOWN} ${DCCUSER} ${PREFIX}/dcc/map.dist
-.endif
 
 .include <bsd.port.post.mk>

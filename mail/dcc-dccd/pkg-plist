@@ -13,9 +13,6 @@ dcc/grey_whitelist.dist
 @unexec if cmp -s %D/dcc/ids %D/dcc/ids.dist; then rm -f %D/dcc/ids; fi
 dcc/ids.dist
 @exec [ -f %B/ids ] || cp %B/%f %B/ids
-@unexec if cmp -s %D/dcc/map %D/dcc/map.dist; then rm -f %D/dcc/map; fi
-dcc/map.dist
-@exec [ -f %B/map ] || cp %B/%f %B/map
 @unexec if cmp -s %D/dcc/map.txt %D/dcc/map.txt.dist; then rm -f %D/dcc/map.txt; fi
 dcc/map.txt.dist
 @exec [ -f %B/map.txt ] || cp %B/%f %B/map.txt
@@ -39,6 +36,8 @@ dcc/cgi-bin/http2https
 dcc/cgi-bin/list-log
 dcc/cgi-bin/list-msg
 dcc/cgi-bin/webuser-notify
+dcc/cgi-bin/footer.dist
+dcc/cgi-bin/header.dist
 dcc/libexec/cron-dccd
 %%WITH_DCCIFD%%dcc/libexec/dccifd
 %%WITH_SENDMAIL%%dcc/libexec/dccm
@@ -49,6 +48,7 @@ dcc/libexec/dcc-stats-graph
 dcc/libexec/dcc-stats-init
 dcc/libexec/dccd
 dcc/libexec/dccsight
+dcc/libexec/dns-helper
 dcc/libexec/fetchblack
 dcc/libexec/fetch-testmsg-whitelist
 dcc/libexec/hackmc
@@ -65,6 +65,7 @@ dcc/libexec/stop-dccd
 dcc/libexec/updatedcc
 dcc/libexec/uninstalldcc
 dcc/libexec/wlist
+dcc/map
 @dirrm dcc/log
 @dirrm dcc/libexec
 @dirrm dcc/cgi-bin
