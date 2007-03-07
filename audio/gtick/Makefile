@@ -10,7 +10,7 @@ PORTVERSION=	0.3.12
 CATEGORIES=	audio
 MASTER_SITES=	http://www.antcom.de/gtick/download/
 
-MAINTAINER=	liamfoy@sepulcrum.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A metronome application
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
