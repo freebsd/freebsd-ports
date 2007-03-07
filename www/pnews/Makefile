@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	pnews
-PORTVERSION=	2.6.4
-PORTREVISION=	1
+PORTVERSION=	2.6.6
 PORTEPOCH=	1
 CATEGORIES=	www news
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -16,17 +15,20 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP Web-based News Reader
 
 USE_PHP=	yes
 NO_BUILD=	yes
 
-PNEWSDIR?=	${TARGETDIR}/www/pnews
+PNEWSDIR?=	www/pnews
+PNEWSFULLDIR=	${PREFIX}/${PNEWSDIR}
+PLIST_SUB+=	PNEWSDIR="${PNEWSDIR}"
 
 do-install:
-	@${MKDIR} ${PNEWSDIR}
-	@${CP} -R ${WRKSRC}/* ${PNEWSDIR}
-	@${CP} -R ${WRKSRC}/.htaccess ${WRKSRC}/* ${PNEWSDIR}
+	@${MKDIR} ${PNEWSFULLDIR}
+	@${CP} -R ${WRKSRC}/* ${PNEWSFULLDIR}
+	@${CP} -R ${WRKSRC}/.htaccess ${WRKSRC}/* ${PNEWSFULLDIR}
+	@${FIND} ${PNEWSFULLDIR} -path '*/.svn' | ${XARGS} ${RM} -fr
 
 .include <bsd.port.mk>
