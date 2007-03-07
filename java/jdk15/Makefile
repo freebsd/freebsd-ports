@@ -50,14 +50,14 @@ SCSL_SRCFILE=	jdk-${JDK_VERSION:S/./_/g}-src-scsl.zip
 SCSL_BINFILE=	jdk-${JDK_VERSION:S/./_/g}-bin-scsl.zip
 PATCHSETFILE=	bsd-jdk15-patches-${JDK_PATCHSET_VERSION}.tar.bz2
 POLICYFILE=	jce_policy-${JDK_VERSION:S/./_/g}.zip
-TZUPDATEFILE=	tzupdater-${TZUPDATE_VERSION:S/./_/g}.zip
+TZUPDATEFILE=	tzupdater-${TZUPDATE_VERSION}-${TZUPDATE_TZVERSION}.zip
 
 JDK_VERSION=	1.5.0
 JDK_PATCHSET_VERSION=	4
 LATEST_LINK=	jdk15
 
-TZUPDATE_VERSION=	1.0.1
-TZUPDATE_TZVERSION=	2007a
+TZUPDATE_VERSION=	1.1.0
+TZUPDATE_TZVERSION=	2007c
 
 SUN_LINUX_JDK_VERSION=	1.4.2
 
@@ -300,7 +300,7 @@ post-build:
 .if defined(WITH_TZUPDATE)
 	@# Update time zones
 	@-${JDKIMAGEDIR}/bin/java -jar \
-		${WRKDIR}/tzupdater${TZUPDATE_TZVERSION}/tzupdater.jar -u
+		${WRKDIR}/tzupdater-${TZUPDATE_VERSION}-${TZUPDATE_TZVERSION}/tzupdater.jar -u
 	@-${RM} -rf ${JDKIMAGEDIR}/jre/lib/zi.tzdata*
 .endif
 
