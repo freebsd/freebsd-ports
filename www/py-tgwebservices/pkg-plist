@@ -13,6 +13,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/controllers.py
 %%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/controllers.pyc
 %%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/controllers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/iconv.py
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/iconv.pyc
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/iconv.pyo
 %%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/release.py
 %%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/release.pyc
 %%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/release.pyo
@@ -25,12 +28,17 @@
 %%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/templates/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/templates/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/templates/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/templates/soap.html
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/templates/wsdl.html
 %%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/fixtures.py
 %%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/fixtures.pyc
 %%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/fixtures.pyo
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/test_controllers.py
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/test_controllers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/test_controllers.pyo
 %%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/test_json.py
 %%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/test_json.pyc
 %%PYTHON_SITELIBDIR%%/%%PYTGWEBSERVICES_EGG%%/tgwebservices/tests/test_json.pyo
