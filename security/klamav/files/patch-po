@@ -1,6 +1,6 @@
---- po/cs.po	Tue Jun  6 11:34:08 2006
-+++ po/cs.po	Tue Jun  6 11:35:12 2006
-@@ -1089,12 +1089,12 @@
+--- po/cs.po.orig	Tue Mar  6 11:34:52 2007
++++ po/cs.po	Tue Mar  6 11:36:11 2007
+@@ -987,12 +987,12 @@
  "I need to load a module called 'dazuko' first. This module will allow KlamAV "
  "to gain real-time access to files. If you don't want this message to appear "
  "in future, put the following command in your initialization scripts: "
@@ -15,9 +15,9 @@
  
  #: klamd.cpp:734 klamd.cpp:735
  msgid "Load Module"
---- po/de.po	Tue Jun  6 11:34:08 2006
-+++ po/de.po	Tue Jun  6 11:35:33 2006
-@@ -1080,7 +1080,7 @@
+--- po/de.po.orig	Tue Mar  6 11:34:52 2007
++++ po/de.po	Tue Mar  6 11:36:32 2007
+@@ -985,7 +985,7 @@
  "I need to load a module called 'dazuko' first. This module will allow KlamAV "
  "to gain real-time access to files. If you don't want this message to appear "
  "in future, put the following command in your initialization scripts: "
@@ -26,9 +26,9 @@
  msgstr ""
  "Es muß das Modul mit dem Namen \"dazuko\" geladen werden. Dies ermöglicht "
  "einen verbesserten Zugriffn auf die Datein. Wenn sie nicht möchten, dass "
---- po/es.po	Tue Jun  6 11:34:08 2006
-+++ po/es.po	Tue Jun  6 11:36:05 2006
-@@ -747,12 +747,12 @@
+--- po/es.po.orig	Tue Mar  6 11:34:52 2007
++++ po/es.po	Tue Mar  6 11:36:53 2007
+@@ -991,12 +991,12 @@
  "I need to load a module called 'dazuko' first. This module will allow KlamAV "
  "to gain real-time access to files. If you don't want this message to appear "
  "in future, put the following command in your initialization scripts: "
@@ -41,10 +41,10 @@
 -"inicialización: 'modprobe dazuko.o'. Necesita la clave de administrador."
 +"inicialización: 'kldload dazuko.ko'. Necesita la clave de administrador."
  
- #: klamd.cpp:718 klamd.cpp:719
+ #: klamd.cpp:734 klamd.cpp:735
  msgid "Load Module"
---- po/fr.po	Tue Jun  6 11:34:08 2006
-+++ po/fr.po	Tue Jun  6 11:37:06 2006
+--- po/fr.po.orig	Tue Mar  6 11:34:52 2007
++++ po/fr.po	Tue Mar  6 11:38:07 2007
 @@ -1018,8 +1018,8 @@
  msgstr "Il y a eu un problème au moment de détecter l'état de 'dazuko'."
  
@@ -56,9 +56,9 @@
  
  #: klamd.cpp:734
  #: klamd.cpp:735
---- po/hu.po	Tue Jun  6 11:34:08 2006
-+++ po/hu.po	Tue Jun  6 11:37:27 2006
-@@ -1086,12 +1086,12 @@
+--- po/hu.po.orig	Tue Mar  6 11:34:52 2007
++++ po/hu.po	Tue Mar  6 11:39:07 2007
+@@ -983,12 +983,12 @@
  "I need to load a module called 'dazuko' first. This module will allow KlamAV "
  "to gain real-time access to files. If you don't want this message to appear "
  "in future, put the following command in your initialization scripts: "
@@ -73,9 +73,9 @@
  "jelszót meg kell adni."
  
  #: klamd.cpp:734 klamd.cpp:735
---- po/it.po	Tue Jun  6 11:34:08 2006
-+++ po/it.po	Tue Jun  6 11:37:39 2006
-@@ -1067,7 +1067,7 @@
+--- po/it.po.orig	Tue Mar  6 11:34:52 2007
++++ po/it.po	Tue Mar  6 11:39:49 2007
+@@ -972,7 +972,7 @@
  "I need to load a module called 'dazuko' first. This module will allow KlamAV "
  "to gain real-time access to files. If you don't want this message to appear "
  "in future, put the following command in your initialization scripts: "
@@ -84,9 +84,9 @@
  msgstr ""
  
  #: klamd.cpp:734 klamd.cpp:735
---- po/pl.po	Tue Jun  6 11:34:08 2006
-+++ po/pl.po	Tue Jun  6 11:38:36 2006
-@@ -1083,12 +1083,12 @@
+--- po/pl.po.orig	Tue Mar  6 11:34:52 2007
++++ po/pl.po	Tue Mar  6 11:40:20 2007
+@@ -988,12 +988,12 @@
  "I need to load a module called 'dazuko' first. This module will allow KlamAV "
  "to gain real-time access to files. If you don't want this message to appear "
  "in future, put the following command in your initialization scripts: "
@@ -101,9 +101,9 @@
  "chwilę pojawi się pytanie o hasło administratora."
  
  #: klamd.cpp:734 klamd.cpp:735
---- po/pt_BR.po	Tue Jun  6 11:34:08 2006
-+++ po/pt_BR.po	Tue Jun  6 11:39:23 2006
-@@ -1151,12 +1151,12 @@
+--- po/pt_BR.po.orig	Tue Mar  6 11:34:52 2007
++++ po/pt_BR.po	Tue Mar  6 11:40:44 2007
+@@ -1046,12 +1046,12 @@
  "I need to load a module called 'dazuko' first. This module will allow KlamAV "
  "to gain real-time access to files. If you don't want this message to appear "
  "in future, put the following command in your initialization scripts: "
@@ -118,9 +118,9 @@
  "função."
  
  #: klamd.cpp:734 klamd.cpp:735
---- po/ru.po	Tue Jun  6 11:34:08 2006
-+++ po/ru.po	Tue Jun  6 11:41:25 2006
-@@ -1081,7 +1081,7 @@
+--- po/ru.po.orig	Tue Mar  6 11:34:52 2007
++++ po/ru.po	Tue Mar  6 11:41:18 2007
+@@ -986,7 +986,7 @@
  "I need to load a module called 'dazuko' first. This module will allow KlamAV "
  "to gain real-time access to files. If you don't want this message to appear "
  "in future, put the following command in your initialization scripts: "
@@ -129,9 +129,9 @@
  msgstr ""
  "Необходимо запустить модуль, называемый dazuko. Этот модуль разрешит KlamAV "
  "получать доступ в реальном времени к файлам. Далее Вас попросят ввести "
---- po/zh_CN.po	Tue Jun  6 11:34:08 2006
-+++ po/zh_CN.po	Tue Jun  6 11:42:02 2006
-@@ -581,7 +581,7 @@
+--- po/zh_CN.po.orig	Tue Mar  6 11:34:52 2007
++++ po/zh_CN.po	Tue Mar  6 11:41:44 2007
+@@ -960,7 +960,7 @@
  "I need to load a module called 'dazuko' first. This module will allow KlamAV "
  "to gain real-time access to files. If you don't want this message to appear "
  "in future, put the following command in your initialization scripts: "
@@ -139,4 +139,4 @@
 +"'kldload dazuko.ko'. You will next be asked for the root password."
  msgstr ""
  
- #: klamd.cpp:718 klamd.cpp:719
+ #: klamd.cpp:734 klamd.cpp:735
