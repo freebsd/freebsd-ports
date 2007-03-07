@@ -13,7 +13,7 @@ MASTER_SITES=	http://elfsh.segfault.net/files/
 DISTNAME=	elfsh-0.51b3-portable
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sbahra@kerneled.org
+MAINTAINER=	sbahra@gwu.edu
 COMMENT=	An attractive toolkit for the analyzation of ELF object files
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

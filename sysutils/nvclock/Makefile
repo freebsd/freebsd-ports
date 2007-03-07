@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.linuxhardware.org/nvclock/ \
 		http://www.kerneled.com/freebsd/ports/
 DISTNAME=	nvclock${PORTVERSION}
 
-MAINTAINER=	sbahra@kerneled.org
+MAINTAINER=	sbahra@gwu.edu
 COMMENT=	The nVidia graphic card status and overclocking tool
 
 USE_GMAKE=	yes
