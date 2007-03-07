@@ -21,6 +21,9 @@ BUILD_DEPENDS=	${SITE_PERL}/MIME/Entity.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+DEPRECATED=	Use mail/p5-Mail-Box instead
+EXPIRATION_DATE=	2007-04-02
+
 NO_LATEST_LINK=	yes
 PERL_CONFIGURE=	yes
 
