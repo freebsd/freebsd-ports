@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	wqy
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://dryice.name/computer/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	wqy
-DISTNAME=	${PORTNAME}-bitmapfont-pcf-${PORTVERSION}-4
+DISTNAME=	${PORTNAME}-bitmapfont-pcf-${PORTVERSION}-6
 
 MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	A font which includes all the CJK characters covered by Unicode 4.0
@@ -28,7 +28,7 @@ BUILD_DEPENDS+=        mkfontdir:${X_CLIENTS_PORT}
 BUILD_DEPENDS+=        fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	ChangeLog CREDIT GPL.txt INSTALL INSTALL.zh.gb2312 LOGO.png PLEASE_HELP_TO_IMPROVE README STAT
+PORTDOCS=	AUTHORS ChangeLog COPYING INSTALL INSTALL.zh.gb2312 LOGO.png README
 .endif
 
 do-install:
