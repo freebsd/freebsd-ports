@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		thorsten.greiner@web.de
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Stemmer for Italian
 
 PERL_CONFIGURE=		yes

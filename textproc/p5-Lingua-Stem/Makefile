@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		thorsten.greiner@web.de
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Provides word stemming algorithms localized by language
 
 BUILD_DEPENDS=		${SITE_PERL}/Lingua/PT/Stemmer.pm:${PORTSDIR}/textproc/p5-Lingua-PT-Stemmer \

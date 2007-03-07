@@ -13,7 +13,7 @@ DIST_SUBDIR=	xfce4
 PATCH_SITES=	http://people.freebsd.org/~oliver/xfce/
 PATCHFILES=	gcc295-xfce4-notes-plugin.patch
 
-MAINTAINER=	thorsten.greiner@web.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sticky notes panel plugin for XFce4
 
 GNU_CONFIGURE=	yes

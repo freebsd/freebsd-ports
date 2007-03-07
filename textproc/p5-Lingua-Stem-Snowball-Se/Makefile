@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/A/AS/ASKSH
 PKGNAMEPREFIX=		p5-
 DISTNAME=		Snowball-Swedish-${PORTVERSION}
 
-MAINTAINER=		thorsten.greiner@web.de
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A stemmer for Swedish
 
 PERL_CONFIGURE=		yes
