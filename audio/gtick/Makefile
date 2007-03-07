@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtick
-PORTVERSION=	0.3.12
+PORTVERSION=	0.3.13
 CATEGORIES=	audio
 MASTER_SITES=	http://www.antcom.de/gtick/download/
 
