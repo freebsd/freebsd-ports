@@ -1,15 +1,6 @@
---- src/klamd.cpp	Wed Mar  8 15:47:12 2006
-+++ src/klamd.cpp	Wed Mar  8 15:49:18 2006
-@@ -699,7 +699,7 @@
- 
- 	
- 	dazukoLoaded = FALSE;
--	QString lsmodCommand="lsmod";
-+	QString lsmodCommand="kldstat";
- 	lsmodproc = new KProcIO();
- 	QString curpath = (QString) getenv("PATH");
- 	lsmodproc->setEnvironment("PATH",curpath + ":/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin");
-@@ -730,7 +730,7 @@
+--- src/klamd.cpp.orig	Tue Mar  6 13:12:00 2007
++++ src/klamd.cpp	Tue Mar  6 13:13:55 2007
+@@ -742,7 +742,7 @@
  {
  	if (!(dazukoLoaded)){
  		int result;
@@ -18,12 +9,12 @@
  		i18n( "Load Module" ),
  		i18n( "Load Module" ),
  		i18n( "Delete2" ));
-@@ -803,7 +803,7 @@
+@@ -815,7 +815,7 @@
  // 	
  // 	//kdDebug() << release << endl;
  // 	QString insmodCommand="insmod /lib/modules/" + release + "/dazuko.o";
 -	QString insmodCommand="modprobe dazuko";
-+	QString insmodCommand="kldload  /usr/local/modules/dazuko.ko";
++	QString insmodCommand="kldload dazuko.ko";
  	//QString insmodCommand="insmod /opt/kde/bin/dazuko.o";
  	KProcIO *insmodproc = new KProcIO();
  	
