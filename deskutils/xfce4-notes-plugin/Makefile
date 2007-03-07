@@ -10,10 +10,8 @@ PORTVERSION=	1.4.1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
-PATCH_SITES=	http://people.freebsd.org/~oliver/xfce/
-PATCHFILES=	gcc295-xfce4-notes-plugin.patch
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Sticky notes panel plugin for XFce4
 
 GNU_CONFIGURE=	yes
