@@ -1,0 +1,11 @@
+--- constants.py.in	Sat Feb  4 14:24:37 2006
++++ constants.py.in	Wed Jan  3 23:42:34 2007
+@@ -11,7 +11,7 @@
+ STRAW_REF_URL = "%sstraw-ref.html" % STRAW_URL
+ libdir = os.path.normpath('$libdir')
+ localedir = os.path.normpath(os.path.join('$datadir','locale'))
+-datadir = os.path.normpath(os.path.join('$datadir','straw'))
++datadir = os.path.normpath(os.path.join('$datadir','gnome','straw'))
+ 
+ # if STRAW_IN_SOURCE_DIR, this will be the glade/ and images/ in source
+ # which is different from datadir (data/), whereas on default installations,

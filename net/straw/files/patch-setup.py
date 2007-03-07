@@ -1,30 +1,20 @@
---- setup.py.orig	Thu Jul 15 15:15:58 2004
-+++ setup.py	Sun Dec 19 23:29:18 2004
-@@ -108,8 +108,8 @@
-     '''Build list of data files to be installed'''
-     images = glob.glob('images/*.png')
+--- setup.py	Sat Feb 18 16:22:43 2006
++++ setup.py	Wed Jan  3 23:38:53 2007
+@@ -127,7 +127,7 @@
+         ]
      files = [
--        ('share/pixmaps', ['images/straw.png']),
--        ('share/straw', images + ['data/default_subscriptions.opml', 'data/straw.css', 'glade/straw.glade'])]
-+        ('share/gnome/pixmaps', ['images/straw.png']),
-+        ('share/gnome/straw', images + ['data/default_subscriptions.opml', 'data/straw.css', 'glade/straw.glade'])]
+         ('share/pixmaps', ['images/straw.png']),
+-        ('share/straw', images + misc)]
++        ('share/gnome/straw', images + misc)]
      return files
  
- long_desc = '''\
-@@ -134,13 +134,12 @@
-       data_files       = data_files(),
+ # Let distutils do the work
+@@ -146,7 +146,7 @@
        pot_file         = 'po/straw.pot',
        translations     = translations(),
--      #config_files     = [('gconf/schemas',['data/straw.schemas'],
--      #                     'with-gconf-schema-file-dir')],
-+      config_files     = [('gconf/schemas',['data/straw.schemas'],
-+                           'with-gconf-schema-file-dir')],
-       scripts          = ['src/straw'],
--      modules_check    = modules_check,
-       packages         = ['straw'],
-       package_dir      = {'straw' : 'src/lib'},
+       modules_check    = modules_check,
 -      msg_sources      = translation_files(),
 +      msg_sources      = ['glade/strings.c'] + glob.glob('src/lib/*.py'),
        desktop_file     = ['straw.desktop.in'],
-       ext_modules      = [TemplateExtension(name='trayicon',
-                                             pkc_name='pygtk-2.0 gtk+-2.0',
+       constants        = [('constants.py.in', strawenv)],
+       scripts          = ['src/straw'],

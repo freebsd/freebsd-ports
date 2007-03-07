@@ -1,18 +1,11 @@
---- src/straw.orig	Tue Feb 17 13:37:00 2004
-+++ src/straw	Tue Feb 17 13:37:50 2004
-@@ -20,13 +20,14 @@
-             return sd
-     h, t = os.path.split(os.path.split(os.path.abspath(sys.argv[0]))[0])
-     if t == 'bin':
--        libdir = os.path.join(h, 'lib')
-+        libdir = os.path.join(h, 'share', 'gnome')
-         fp = os.path.join(libdir, 'straw')
-         if os.path.isdir(fp):
-             return libdir
-     raise "FileNotFoundError", "couldn't find straw library dir"
- 
- sys.path.insert(0, find_straw_lib())
-+sys.path.insert(0, '%%PYTHON_SITELIBDIR%%')
- 
- import straw
- 
+--- src/straw	Thu Jan 26 15:11:29 2006
++++ src/straw	Wed Jan  3 23:44:51 2007
+@@ -49,7 +49,7 @@
+     if not sdir:
+         h, t = os.path.split(os.path.split(os.path.abspath(sys.argv[0]))[0])
+         if t == 'bin':
+-            libdir = os.path.join(h, 'lib')
++            libdir = os.path.join(h, 'share', 'gnome')
+             fp = os.path.join(libdir, 'straw')
+             if os.path.isdir(fp):
+                 sdir = libdir
