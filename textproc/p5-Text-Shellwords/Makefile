@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	hartzell@fruitfly.org
+MAINTAINER=	hartzell@alerce.com
 COMMENT=	This is a thin wrapper around the shellwords.pl package
 
 PERL_CONFIGURE=	yes
