@@ -16,6 +16,9 @@ lib/kde3/libamarok_daap-mediadevice.a
 lib/kde3/libamarok_massstorage-device.so
 lib/kde3/libamarok_massstorage-device.la
 lib/kde3/libamarok_massstorage-device.a
+%%MTP%%lib/kde3/libamarok_mtp-mediadevice.so
+%%MTP%%lib/kde3/libamarok_mtp-mediadevice.la
+%%MTP%%lib/kde3/libamarok_mtp-mediadevice.a
 lib/kde3/libamarok_nfs-device.so
 lib/kde3/libamarok_nfs-device.la
 lib/kde3/libamarok_nfs-device.a
@@ -1023,6 +1026,7 @@ share/locale/uk/LC_MESSAGES/amarok.mo
 share/locale/uz/LC_MESSAGES/amarok.mo
 share/locale/zh_CN/LC_MESSAGES/amarok.mo
 share/locale/zh_TW/LC_MESSAGES/amarok.mo
+%%MTP%%share/services/amarok_mtp-mediadevice.desktop
 %%NJB%%share/services/amarok_njb-mediadevice.desktop
 share/services/amarokitpc.protocol
 share/services/amaroklastfm.protocol
