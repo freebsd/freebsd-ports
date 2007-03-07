@@ -10,8 +10,8 @@ PORTVERSION=	1.1.2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.bucote.com/opensource/bdesktopclock/
 
-MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	A wondeful clock for desktop environment
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A simple clock for desktop environment
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
