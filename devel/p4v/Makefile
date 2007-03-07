@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	p4v
-PORTVERSION=	2006.1.108384
+PORTVERSION=	2007.1.116736
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.perforce.com/pub/perforce/r06.1/bin.freebsd54x86/
+MASTER_SITES=	ftp://ftp.perforce.com/pub/perforce/r07.1/bin.freebsd54x86/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
