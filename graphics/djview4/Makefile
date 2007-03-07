@@ -7,6 +7,7 @@
 
 PORTNAME=	djview
 PORTVERSION=	4.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	djvu
@@ -15,20 +16,16 @@ DISTNAME=	${PORTNAME}4-${PORTVERSION}
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Standalone Djvu viewer and plugin based on Qt4 toolkit
 
-BUILD_DEPENDS=	moc4:${PORTSDIR}/devel/qt4-moc \
-		qmake-qt4:${PORTSDIR}/devel/qmake4 \
-		rcc:${PORTSDIR}/devel/qt4-rcc \
-		uic4:${PORTSDIR}/devel/qt4-uic
-
-LIB_DEPENDS=	djvulibre.18:${PORTSDIR}/graphics/djvulibre-nox11 \
-		QtCore:${PORTSDIR}/devel/qt4-corelib \
-		QtGui:${PORTSDIR}/x11-toolkits/qt4-gui \
-		QtNetwork:${PORTSDIR}/net/qt4-network
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig gnometarget
+USE_QT_VER=	4
+QT_COMPONENTS=	gui network rcc uic moc qmake
 CONFIGURE_ENV=	QMAKE="${LOCALBASE}/bin/qmake-qt4" \
-		QMAKESPEC="${QMAKESPEC}"
+		QMAKESPEC="${QMAKESPEC}" \
+		CFLAGS="-I${X11BASE}/include" \
+		CXXFLAGS="-I${X11BASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib"
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
 .if defined(CXX) && ${CXX:M*icc}
