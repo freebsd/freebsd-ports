@@ -1,6 +1,6 @@
---- Coro/Makefile.PL.orig	Fri Dec 22 05:06:26 2006
-+++ Coro/Makefile.PL	Fri Jan  5 15:12:19 2007
-@@ -20,9 +20,7 @@
+--- Coro/Makefile.PL.orig	Wed Mar  7 09:39:09 2007
++++ Coro/Makefile.PL	Wed Mar  7 09:42:08 2007
+@@ -20,9 +20,7 @@ maintainer :)
  
  EOF
  
@@ -10,51 +10,52 @@
  
  
  $DEFINE .= " -DHAVE_MMAP" if $Config{d_mmap} eq "define" && $Config{d_munmap} eq "define";
-@@ -88,9 +86,7 @@
+@@ -88,10 +86,7 @@ EOF
  
  retry:
  
 -my $r = prompt "Use which implementation,\n" .
 -               "<s>etjmp/longjump, <u>context, <i>rix, <l>inux or <w>indows?",
 -               $iface;
-+my $r = 'u';
- $iface = lc $1 if $r =~ /(\S)/;
+-$iface = lc $1 if $r =~ /(\S)/;
++$iface = 'u';
  
  if ($iface eq "u") {
-@@ -145,7 +141,7 @@
+    $DEFINE .= " -DCORO_UCONTEXT";
+@@ -145,7 +140,7 @@ The default should be fine.
  
  EOF
  
 -my $stacksize = prompt ("C stack size factor?", "16384");
 +my $stacksize = 65536;
- $DEFINE .= " -DSTACKSIZE=$stacksize";
+ $DEFINE .= " -DCORO_STACKSIZE=$stacksize";
  
  print "using a stacksize of $stacksize * sizeof(long)\n";
-@@ -172,7 +168,7 @@
+@@ -172,7 +167,7 @@ The default, as usual, should be just fi
  
  EOF
  
 -my $stackguard = prompt ("Number of guard pages (0 disables)?", "4");
 +my $stackguard = 4;
- $DEFINE .= " -DSTACKGUARD=$stackguard";
+ $DEFINE .= " -DCORO_STACKGUARD=$stackguard";
  
  print <<EOF;
-@@ -190,8 +186,7 @@
+@@ -190,8 +185,7 @@ the safe choice.
  
  EOF
  
 -my $valgrind = prompt ("Enable valgrind support (y/n)?",
 -                       -r "/usr/include/valgrind/valgrind.h" ?  "y" : "n");
 +my $valgrind = 'n';
- $DEFINE .= " -DUSE_VALGRIND=1" if $valgrind =~ /[yY]/;
+ $DEFINE .= " -DCORO_USE_VALGRIND=1" if $valgrind =~ /[yY]/;
  
  
-@@ -208,7 +203,7 @@
+@@ -208,7 +202,7 @@ should enable it only as a last resort.
  
  EOF
  
 -my $use_internals = prompt ("Prefer perl functions over coro functions (y/n)?", "n");
 +my $use_internals = 'n';
- $DEFINE .= " -DPREFER_PERL_FUNCTIONS=1" if $use_internals =~ /[yY]/;
+ $DEFINE .= " -DCORO_PREFER_PERL_FUNCTIONS=1" if $use_internals =~ /[yY]/;
  
  print <<EOF;
