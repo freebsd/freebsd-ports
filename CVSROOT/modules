@@ -3066,6 +3066,7 @@ ftimes		ports/security/ftimes
 ftjam		ports/devel/ftjam
 ftjava		ports/games/ftjava
 ftnchek		ports/devel/ftnchek
+ftp-proxy	ports/ftp/ftp-proxy
 ftp-tls		ports/ftp/ftp-tls
 ftpcopy		ports/ftp/ftpcopy
 ftpcube		ports/ftp/ftpcube
