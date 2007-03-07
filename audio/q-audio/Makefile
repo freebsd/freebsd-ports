@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	q-lang
 PKGNAMEPREFIX=	q-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	ag@muwiinfa.geschichte.uni-mainz.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Q-Audio -- digital audio interface for the Q language
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \

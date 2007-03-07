@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	q-lang
 PKGNAMEPREFIX=	q-
 
-MAINTAINER=	ag@muwiinfa.geschichte.uni-mainz.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Q-Graph -- graph library and editor for the Q language
 
 RUN_DEPENDS=	${LOCALBASE}/bin/q:${PORTSDIR}/lang/q

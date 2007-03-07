@@ -10,7 +10,7 @@ PORTVERSION=	1.2a
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.musikwissenschaft.uni-mainz.de/~ag/${PORTNAME}/
 
-MAINTAINER=	ag@muwiinfa.geschichte.uni-mainz.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another Motif file manager
 
 USE_IMAKE=	yes
