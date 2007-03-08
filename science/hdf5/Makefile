@@ -9,7 +9,7 @@
 PORTNAME=	hdf5
 PORTVERSION=	1.6.5
 CATEGORIES=	science archivers graphics
-MASTER_SITES=	ftp://hdf.ncsa.uiuc.edu/pub/outgoing/hdf5/${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF5/current/src/
 
 MAINTAINER=	koziol@ncsa.uiuc.edu
 COMMENT=	Hierarchical Data Format library (from NCSA)
