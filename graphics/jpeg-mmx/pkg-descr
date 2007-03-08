@@ -1,7 +1,0 @@
-IJG's jpeg compression utilities and libraries with MMX optimization
-
-This is NOT a drop in replacement to graphics/jpeg
-
-See graphics/jpeg/pkg-descr for more information
-
-WWW: http://mjpeg.sf.net/

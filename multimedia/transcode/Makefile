@@ -7,7 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dl.fkb.wormulon.net/transcode/ \
 		http://dl.kel.wormulon.net/transcode/ \
@@ -115,10 +115,6 @@ WITH_LZO=	yes
 WITH_DIVX5=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libjpeg-mmx.so)
-WITH_JPEGMMX=	yes
-.endif
-
 .if exists(${LOCALBASE}/lib/liblavjpeg.so)
 WITH_MJPEG=	yes
 .endif
@@ -171,15 +167,6 @@ CONFIGURE_ARGS+=	--enable-imagemagick --with-imagemagick-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--enable-imagemagick=no
 PLIST_SUB+=	WITH_IMAGEMAGICK="@comment "
-.endif
-
-.if defined(WITH_JPEGMMX)
-LIB_DEPENDS+=	jpeg-mmx.62:${PORTSDIR}/graphics/jpeg-mmx
-CONFIGURE_ARGS+=	--enable-libjpegmmx
-PLIST_SUB+=	WITH_JPEGMMX=""
-.else
-CONFIGURE_ARGS+=	--enable-libjpegmmx=no
-PLIST_SUB+=	WITH_JPEGMMX="@comment "
 .endif
 
 .if defined(WITH_MJPEG)

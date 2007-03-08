@@ -2844,3 +2844,4 @@ www/horde|www/horde-base|2007-02-24|Port renamed for consistency
 www/phpip|net-mgmt/phpip|2007-02-26|move to net-mgmt/phpip
 www/aolserver-openacs-pg||2007-02-28|Not longer needed.
 devel/boost-gcc3|devel/boost|2007-03-07|Removed support for FreeBSD 4.
+graphics/jpeg-mmx|graphics/jpeg|2007-03-08|Has expired: no longer needed.
