@@ -1,5 +1,5 @@
---- configure.old	Tue Oct 18 11:18:21 2005
-+++ configure	Tue Oct 18 11:19:00 2005
+--- configure.orig	Wed Jan 12 23:04:18 2005
++++ configure	Tue Feb 27 08:31:28 2007
 @@ -339,7 +339,7 @@
  bindir='${exec_prefix}/bin'
  sbindir='${exec_prefix}/sbin'
@@ -9,3 +9,12 @@
  sysconfdir='${prefix}/etc'
  sharedstatedir='${prefix}/com'
  localstatedir='${prefix}/var'
+@@ -347,7 +347,7 @@
+ includedir='${prefix}/include'
+ oldincludedir='/usr/include'
+ infodir='${prefix}/info'
+-mandir='${prefix}/man'
++mandir='${prefix}/man/man1'
+ 
+ ac_prev=
+ for ac_option
