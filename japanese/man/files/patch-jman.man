@@ -1,0 +1,11 @@
+--- man/jman.man.orig2	Thu Mar  8 13:24:40 2007
++++ man/jman.man	Thu Mar  8 13:24:54 2007
+@@ -52,7 +52,7 @@
+ か
+ .Ev LANG
+ を
+-.Ev ja_JP.EUC
++.Ev ja_JP.eucJP
+ に設定しておく必要があります。
+ .Pp
+ オプションは以下の通りです。
