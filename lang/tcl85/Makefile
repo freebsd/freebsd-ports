@@ -7,7 +7,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.5.a.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -25,14 +25,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --includedir=${PREFIX}/include/tcl${TCL_VER}
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
 MAKE_ENV=	SHORT_TCL_VER=85 LANG=C LC_ALL=C	# LANG=C is required for some of UTF-using tests
-PKGINSTALL=	${PKGDIR}/pkg-install.tclsh
-PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.tclsh
 TCL_VER=	8.5
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for README.html
 PLIST_SUB=	TCL_VER=${TCL_VER} SHORT_TCL_VER=85
 EXTRACT_AFTER_ARGS=|${TAR} -xpf - --exclude compat/
 
-OPTIONS=	NO_TCL85_MAN "Do not install tcl85 manpages" off
+OPTIONS=	TCL85_MAN "Install tcl 8.5 manpages" on \
+		TCLSH_WRAPPER "Require tclsh wrapper from ports" off
 
 .include <bsd.port.pre.mk>
 
@@ -50,11 +49,11 @@ CONFLICTS=	tcl-threads-8.5*
 
 LATEST_LINK=	tcl85${THREADS_SUFFIX}
 
-.if defined(NOPORTDOCS)
-NO_INSTALL_MANPAGES=	true
+.if defined(WITH_TCLSH_WRAPPER)
+RUN_DEPENDS+=		tclsh:${PORTSDIR}/lang/tcl-tk-wrapper
 .endif
 
-.if defined(NO_INSTALL_MANPAGES) || defined(WITH_NO_TCL85_MAN)
+.if defined(NO_INSTALL_MANPAGES) || defined(WITHOUT_TCL85_MAN)
 
 PLIST_SUB+=	INSTMAN='@comment '
 
@@ -703,7 +702,7 @@ post-configure:
 	${REINPLACE_CMD} \
 		-e 's,-DNO_MEMMOVE=1,,' -e 's,-DNO_STRING_H=1,,' \
 		-e 's,^COMPAT_OBJS.*,,' ${WRKSRC}/Makefile
-.if defined(NO_INSTALL_MANPAGES) || defined(WITH_NO_TCL85_MAN)
+.if defined(NO_INSTALL_MANPAGES) || defined(WITHOUT_TCL85_MAN)
 	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
 		${WRKSRC}/Makefile
 . for mp in ${MAN1} ${MAN3} ${MANN}
@@ -724,7 +723,7 @@ post-install:
 .if exists(${PKGINSTALL})
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
 .endif
-.if !defined(NO_INSTALL_MANPAGES) && !defined(WITH_NO_TCL85_MAN)
+.if !defined(NO_INSTALL_MANPAGES) && !defined(WITHOUT_TCL85_MAN)
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/man.macros ${DATADIR}
 .endif
