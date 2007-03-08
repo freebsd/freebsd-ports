@@ -1376,6 +1376,7 @@ cmucl		ports/lang/cmucl
 cmucl-extra	ports/lang/cmucl-extra
 cmunge		ports/devel/cmunge
 cmus		ports/audio/cmus
+cmus-post.fm	ports/audio/cmus-post.fm
 cnd		ports/net/cnd
 cnet		ports/net/cnet
 cnews		ports/news/cnews
