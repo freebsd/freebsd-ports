@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vtcl
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1a1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,8 +17,10 @@ COMMENT=	An Application Development Environment For the TCL/TK language
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS= ${PREFIX}
+CONFIGURE_ARGS=	${PREFIX}
 NO_BUILD=	yes
+
+USE_DOS2UNIX=	configure
 
 pre-configure:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/configure

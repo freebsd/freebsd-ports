@@ -135,6 +135,7 @@ lib/vtcl/lib/Help/Tips
 lib/vtcl/lib/Help/WidgetTree
 lib/vtcl/lib/Help/about.ttd
 lib/vtcl/lib/Help/reference.ttd
+lib/vtcl/lib/Widgets/README
 lib/vtcl/lib/Widgets/blt/Options.wgt
 lib/vtcl/lib/Widgets/blt/barchart.gif
 lib/vtcl/lib/Widgets/blt/barchart.wgt
@@ -322,6 +323,8 @@ lib/vtcl/lib/bwidget/tree.tcl
 lib/vtcl/lib/bwidget/utils.tcl
 lib/vtcl/lib/bwidget/widget.tcl
 lib/vtcl/lib/bwidget/xpm2image.tcl
+lib/vtcl/lib/kpwidgets/sbands.tcl
+lib/vtcl/lib/kpwidgets/scrolledbands.tcl
 lib/vtcl/lib/color.tcl
 lib/vtcl/lib/command.tcl
 lib/vtcl/lib/compound.tcl
@@ -329,6 +332,7 @@ lib/vtcl/lib/compounds.tcl
 lib/vtcl/lib/do.tcl
 lib/vtcl/lib/dragsize.tcl
 lib/vtcl/lib/dump.tcl
+lib/vtcl/lib/events.txt
 lib/vtcl/lib/edit.tcl
 lib/vtcl/lib/file.tcl
 lib/vtcl/lib/font.tcl
@@ -344,6 +348,7 @@ lib/vtcl/lib/lib_itcl.tcl
 lib/vtcl/lib/lib_table.tcl
 lib/vtcl/lib/lib_tablelist.tcl
 lib/vtcl/lib/lib_tix.tcl
+lib/vtcl/lib/lib_user.tcl
 lib/vtcl/lib/lib_vtcl.tcl
 lib/vtcl/lib/loadwidg.tcl
 lib/vtcl/lib/menu.tcl
@@ -364,15 +369,18 @@ lib/vtcl/lib/var.tcl
 lib/vtcl/lib/vtclib.tcl
 lib/vtcl/lib/widget.tcl
 lib/vtcl/vtcl.tcl
-%%PORTDOCS%%share/doc/vtcl/combobox.html
-%%PORTDOCS%%share/doc/vtcl/mclistbox.html
-%%PORTDOCS%%share/doc/vtcl/progressbar.html
-%%PORTDOCS%%share/doc/vtcl/tutorial.html
-%%PORTDOCS%%share/doc/vtcl/tutorial.txt
+%%PORTDOCS%%%%DOCSDIR%%/combobox.html
+%%PORTDOCS%%%%DOCSDIR%%/mclistbox.html
+%%PORTDOCS%%%%DOCSDIR%%/progressbar.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorial.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo/about.ttd
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo/bitmapbutton_test.tcl
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo/bitmapbutton_compound.tcl
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo/combo.tcl
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo/draw.tcl
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo/ex1_cmpd.tcl
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo/grid.tcl
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo/images/free.gif
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo/images/line.gif
@@ -400,6 +408,7 @@ lib/vtcl/vtcl.tcl
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/menubutton.tcl
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/message.tcl
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/modal.tcl
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/ok.gif
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/scales.tcl
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/scrollbar.tcl
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/core/simple_topevel.tcl
@@ -412,6 +421,7 @@ lib/vtcl/vtcl.tcl
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/databaseview/databaseview_project.tcl
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/databaseview/databaseview_test.tcl
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/databaseview/readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/databaseview/test.mk
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/imagelist/imagelist.tcl
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/imagelist/imagelist_project.tcl
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo/tutorial/megawidgets/imagelist/imagelist_test.tcl
@@ -437,11 +447,12 @@ lib/vtcl/vtcl.tcl
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/demo/images
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/demo
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm share/doc/vtcl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/vtcl/lib/ttd
 @dirrm lib/vtcl/lib/bwidget/lang
 @dirrm lib/vtcl/lib/bwidget/images
 @dirrm lib/vtcl/lib/bwidget
+@dirrm lib/vtcl/lib/kpwidgets
 @dirrm lib/vtcl/lib/Widgets/vtcl
 @dirrm lib/vtcl/lib/Widgets/user
 @dirrm lib/vtcl/lib/Widgets/tix
