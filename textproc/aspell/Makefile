@@ -50,7 +50,8 @@ DICT_TARGET=
 .else
 VERDICT_EN=		6-en-6.0-0
 DICT_SUFFIX=		.tar.bz2
-MASTER_SITES+=		${MASTER_SITE_GNU:S|%SUBDIR%/|%SUBDIR%/dict/en/:dicten|}
+MASTER_SITES+=		${MASTER_SITE_GNU:S|$|:dicten|}
+MASTER_SITE_SUBDIR+=	aspell/dict/en/:dicten
 DISTFILES+=		aspell${VERDICT_EN}${DICT_SUFFIX}:dicten
 CONFLICTS=		aspell-without-dicten-0.*
 DICT_TARGET=		inst-dicten
