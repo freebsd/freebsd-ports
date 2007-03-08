@@ -4023,7 +4023,6 @@ gstreamer-plugins-ivorbis80	ports/audio/gstreamer-plugins-ivorbis80
 gstreamer-plugins-jack		ports/audio/gstreamer-plugins-jack
 gstreamer-plugins-jack80	ports/audio/gstreamer-plugins-jack80
 gstreamer-plugins-jpeg		ports/graphics/gstreamer-plugins-jpeg
-gstreamer-plugins-jpeg-mmx80	ports/graphics/gstreamer-plugins-jpeg-mmx80
 gstreamer-plugins-jpeg80	ports/graphics/gstreamer-plugins-jpeg80
 gstreamer-plugins-ladspa	ports/audio/gstreamer-plugins-ladspa
 gstreamer-plugins-ladspa80	ports/audio/gstreamer-plugins-ladspa80
@@ -5464,7 +5463,6 @@ jove		ports/editors/jove
 jp2a		ports/graphics/jp2a
 jpatch		ports/graphics/jpatch
 jpeg		ports/graphics/jpeg
-jpeg-mmx	ports/graphics/jpeg-mmx
 jpeg2pdf	ports/graphics/jpeg2pdf
 jpeg2ps-a4	ports/graphics/jpeg2ps-a4
 jpeg2ps-letter	ports/graphics/jpeg2ps-letter
