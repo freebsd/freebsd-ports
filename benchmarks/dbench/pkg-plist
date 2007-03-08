@@ -1,8 +1,5 @@
 bin/dbench
 bin/tbench
 bin/tbench_srv
-man/dbench.1
-man/tbench.1
-man/tbench_srv.1
 %%DATADIR%%/client.txt
 @dirrm share/dbench
