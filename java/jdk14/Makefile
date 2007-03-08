@@ -32,7 +32,8 @@ OPTIONS=	DEBUG	"Enable debugging support"	off \
 		IPV6	"Enable IPv6 support"		off \
 		POLICY	"Install the Unlimited Strength Policy Files"	off \
 		TZUPDATE	"Update the time zone data"		on \
-		WEB	"Enable the browser plugin and Java Web Start"	on
+		WEB	"Enable the browser plugin and Java Web Start"	on \
+		JAIL	"Port is being built within a jail"		off
 
 .if defined(WITH_OPENMOTIF_JDK)
 BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/x11-toolkits/open-motif-jdk:extract
