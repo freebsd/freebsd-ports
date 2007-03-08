@@ -238,7 +238,6 @@
     SUBDIR += gstreamer-plugins-gdkpixbuf80
     SUBDIR += gstreamer-plugins-hermes80
     SUBDIR += gstreamer-plugins-jpeg
-    SUBDIR += gstreamer-plugins-jpeg-mmx80
     SUBDIR += gstreamer-plugins-jpeg80
     SUBDIR += gstreamer-plugins-libcaca
     SUBDIR += gstreamer-plugins-libcaca80
@@ -299,7 +298,6 @@
     SUBDIR += jp2a
     SUBDIR += jpatch
     SUBDIR += jpeg
-    SUBDIR += jpeg-mmx
     SUBDIR += jpeg2pdf
     SUBDIR += jpeg2ps-a4
     SUBDIR += jpeg2ps-letter

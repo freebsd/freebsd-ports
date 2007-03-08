@@ -7,7 +7,7 @@
 
 PORTNAME=	lphoto
 PORTVERSION=	2.0.42
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://software.linspire.com/emptypool/lindowsos/pool/main/l/lphoto/
 DISTNAME=	${PORTNAME}_${PORTVERSION}-0.0.0.45.lindows0.1
@@ -30,20 +30,6 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH}=="i386"
-.if ${MACHINE_CPU:Mmmx} && !defined(WITHOUT_JPEGMMX)
-RUN_DEPENDS+=	jpegtran-mmx:${PORTSDIR}/graphics/jpeg-mmx
-
-pre_everything::
-	@${ECHO_MSG} "===> Define WITHOUT_JPEGMMX to disable jpeg-mmx support"
-	@${ECHO_MSG} "===>"
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|jpegtran|jpegtran-mmx|' \
-		${WRKSRC}/Lphoto/photolibrary.py
-.endif
-.endif
 
 do-install:
 	@cd ${WRKSRC} && ${PYTHON_CMD} install.py -d ${PREFIX}/${PYTHON_SITELIBDIR:S/${PYTHONBASE}//} -b ${PREFIX}/bin

@@ -69,7 +69,7 @@ _USE_GSTREAMER_ALL=	a52dec aalib annodex bad bz2 cairo cdaudio cdparanoia dts \
 _USE_GSTREAMER80_ALL=	a52dec aalib artsd audiofile cairo cdaudio cdio cdparanoia \
 			dts dv dvd esound faac faad ffmpeg flac \
 			gconf gdkpixbuf gnomevfs gsm hermes ivorbis jack jpeg \
-			jpeg-mmx ladspa lame libcaca libfame libmms libmng \
+			ladspa lame libcaca libfame libmms libmng \
 			libpng libvisual mad mikmod mpeg2dec mpeg2enc mplex \
 			musepack musicbrainz nas sdl shout shout2 sidplay \
 			smoothwave sndfile speex theora ogg pango polyp \
@@ -177,8 +177,6 @@ gdkpixbuf_DEPENDS=	graphics/gstreamer-plugins-gdkpixbuf
 hermes_DEPENDS=	graphics/gstreamer-plugins-hermes
 
 jpeg_DEPENDS=	graphics/gstreamer-plugins-jpeg
-
-jpeg-mmx_DEPENDS=	graphics/gstreamer-plugins-jpeg-mmx
 
 libcaca_DEPENDS=	graphics/gstreamer-plugins-libcaca
 
