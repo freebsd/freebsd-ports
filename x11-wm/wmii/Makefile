@@ -8,12 +8,13 @@
 PORTNAME=	wmii
 DISTVERSION=	3.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.suckless.org/download/ CSME
+MASTER_SITES=	http://www.suckless.org/download/ CENKES
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A dynamic, minimalist window manager for X11
 
 USE_X_PREFIX=	yes
+CONFLICTS=	wmii-3.[2-9]*
 
 MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${X11BASE}/lib" \
 		X11INC="${X11BASE}/include" CC="${CC}" \
