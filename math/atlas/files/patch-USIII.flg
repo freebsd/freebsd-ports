@@ -1,0 +1,27 @@
+http://math-atlas.sourceforge.net/errata.html
+Error in compiler flags for gcc/USIII arch defaults
+
+--- tune/blas/gemm/CASES/ccases.flg	Mon Dec 22 09:12:07 2003
++++ tune/blas/gemm/CASES/ccases.flg	Wed Mar  7 03:06:39 2007
+@@ -5,7 +5,7 @@
+ -mcpu=ultrasparc -mtune=ultrasparc -fomit-frame-pointer -O
+ 306 192 4 4 8 0 4 4 4 8 ATL_mm4x4x8p.c     "R. Clint Whaley" \
+ gcc
+--O -fomit-frame-pointer -fno-schedule-insns -fno-schedule-insns2
++-mcpu=ultrasparc -mtune=ultrasparc -O -fomit-frame-pointer -fno-schedule-insns -fno-schedule-insns2
+ 307 192 4 4 16 1 0 4 4 16 ATL_smm4x4x16_av.c  "R. Clint Whaley"
+ 308 192 4 4  4 1 0 4 4  4 ATL_smm4x4x4_av.c  "R. Clint Whaley"
+ 309  16 0 0  4 1 0 4 4  4 ATL_smmMNCU_av.c  "R. Clint Whaley"
+
+--- tune/blas/gemm/CASES/scases.flg	Mon Dec 22 09:12:07 2003
++++ tune/blas/gemm/CASES/scases.flg	Wed Mar  7 03:08:48 2007
+@@ -5,7 +5,7 @@
+ -mcpu=ultrasparc -mtune=ultrasparc -fomit-frame-pointer -O
+ 306 192 4 4 8 0 4 4 4 8 ATL_mm4x4x8p.c     "R. Clint Whaley" \
+ gcc
+--O -fomit-frame-pointer -fno-schedule-insns -fno-schedule-insns2
++-mcpu=ultrasparc -mtune=ultrasparc -O -fomit-frame-pointer -fno-schedule-insns -fno-schedule-insns2
+ 307 192 4 4 16 1 0 4 4 16 ATL_smm4x4x16_av.c  "R. Clint Whaley"
+ 308 192 4 4  4 1 0 4 4  4 ATL_smm4x4x4_av.c  "R. Clint Whaley"
+ 309  16 0 0  4 1 0 4 4  4 ATL_smmMNCU_av.c  "R. Clint Whaley"
+

@@ -1,0 +1,13 @@
+http://math-atlas.sourceforge.net/errata.html
+make kill from topdir removes libraries
+
+--- Make.top	Mon Dec 22 09:06:32 2003
++++ Make.top	Wed Mar  7 02:15:31 2007
+@@ -211,7 +211,6 @@
+ 	rm -rf src/blas/reference/level1/$(arch)
+ 	rm -rf src/auxil/$(arch)
+ 	rm -rf src/testing/$(arch)
+-	rm -rf lib/$(arch)
+ 	rm -rf bin/$(arch)
+ 
+ killall :
