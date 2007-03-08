@@ -9,7 +9,8 @@ PORTNAME=	epic4
 PORTVERSION=	2.6
 PORTREVISION=	1
 CATEGORIES=	irc ipv6
-MASTER_SITES=	ftp://ftp.prbh.org/pub/epic/EPIC4-PRODUCTION/ \
+MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC4-PRODUCTION/ \
+		http://tehran.lain.pl/epic-mirror/EPIC4-PRODUCTION/ \
 		ftp://ftp.irc.org/irc/clients/unix/epic/EPIC4-PRODUCTION/ \
 		ftp://ftp.parodius.com/pub/epic/EPIC4-PRODUCTION/ \
 		http://ftp.freenet.de/pub/ftp.prbh.org/pub/epic/EPIC4-PRODUCTION/ \
@@ -67,22 +68,22 @@ CONFIGURE_ARGS+=	--with-perl=${SITE_PERL}/../../${PERL_VER}/mach/CORE
 #
 .if defined(WITH_SOCKS5)
 .if exists(${LOCALBASE}/lib/libdsocks.so)
-BROKEN=                        Optional socks5 support will only build against net/socks5 which conflicts with net/dante
+BROKEN=	Optional socks5 support will only build against net/socks5 which conflicts with net/dante
 .endif
-BUILD_DEPENDS+=                ${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
-CONFIGURE_ARGS+=       --with-socks5=${LOCALBASE}/include
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
+CONFIGURE_ARGS+=	--with-socks5=${LOCALBASE}/include
 .endif
 
 ## WITH_SSL            enable SSL support
 #
 .if defined(WITH_SSL)
-CONFIGURE_ARGS+=       --with-ssl
+CONFIGURE_ARGS+=	--with-ssl
 .endif
 
 ## WITH_TERMCAP                forceably refuse to use terminfo/ncurses
 #
 .if defined(WITH_TERMCAP)
-CONFIGURE_ARGS+=       --with-termcap
+CONFIGURE_ARGS+=	--with-termcap
 .endif
 
 post-extract:
