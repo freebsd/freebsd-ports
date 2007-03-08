@@ -216,7 +216,6 @@
  37.54,		-122.18,	"gshapiro"			# Richmond, CA, USA
  37.51,		-122.30,	"kbyanc"			# Belmont, CA, USA
  37.781,	-122.398,	"billf"				# SOMA, San Francisco, CA, USA
- 47.5,		-122.4,		"jdp"				# Seattle, WA, USA
  37.8067,	-122.4113,	"jmallett"			# North Beach, San Francisco, CA, USA
 #37.80,		-122.43,	"julian"			# Downtown San Francisco, CA, USA
  37.80,		-122.43,	"njl"				# Downtown San Francisco, CA, USA
@@ -227,6 +226,7 @@
  42.29,		-122.89,	"ade"				# Medford, OR, USA
  49.27705,	-122.91385,	"cperciva"			# Burnaby, BC, Canada
  49.204533,	-122.919931,	"sobomax"			# New Westminster, BC, Canada
+ 48.482814,	-122.94369,	"jdp"				# Lopez Island, WA, USA
  49.3283,	-122.9968,	"brian"		align=left	# North Vancouver, Canada
  44.04, 	-123.06,	"anholt"			# Eugene, OR, USA
  48.3898,	-123.4875,	"cy"				# Victoria, BC, Canada
