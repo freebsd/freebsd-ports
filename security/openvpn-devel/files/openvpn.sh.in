@@ -25,7 +25,6 @@
 
 # PROVIDE: openvpn
 # REQUIRE: DAEMON
-# BEFORE:
 # KEYWORD: shutdown
 
 # -----------------------------------------------------------------------------
