@@ -65,6 +65,9 @@ CONFIGURE_ARGS+=--enable-dom \
 		--with-libxml-dir=${LOCALBASE}
 
 USE_GNOME=	libxml2
+
+USE_PHP=	spl
+USE_PHP_BUILD=	yes
 .endif
 
 .if ${PHP_MODNAME} == "exif"
@@ -198,6 +201,9 @@ CONFIGURE_ARGS+=--with-mysqli=${LOCALBASE}/bin/mysql_config
 USE_MYSQL=	yes
 DEFAULT_MYSQL_VER=	41
 BROKEN_WITH_MYSQL=	323 40
+
+USE_PHP=	spl
+USE_PHP_BUILD=	yes
 .endif
 
 .if ${PHP_MODNAME} == "ncurses"
@@ -394,6 +400,9 @@ CONFIGURE_ARGS+=--with-sqlite
 USE_PHP=	session
 USE_PHP_BUILD=	yes
 PHP_HEADER_DIRS=libsqlite/src
+
+USE_PHP=	spl
+USE_PHP_BUILD=	yes
 
 OPTIONS=	UTF8 "Enable UTF-8 support" off
 .endif
