@@ -22,6 +22,7 @@ USE_XLIB=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"
+USE_AUTOTOOLS=	libtool:15
 
 post-patch:
 	${REINPLACE_CMD} -e "s,prefix)/plugins,prefix)/lib/browser_plugins," ${WRKSRC}/src/Makefile.in
