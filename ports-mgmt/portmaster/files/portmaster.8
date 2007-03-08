@@ -24,7 +24,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd February 22, 2007
+.Dd March 8, 2007
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
@@ -50,6 +50,10 @@
 .Op Fl CGgntv [B|b] [uf|i] [D|d] m Ar arguments for make
 .Op . [Use in /usr/ports/foo/bar to build that port]
 .Nm
+.Fl -show-work
+.Op Fl Gv m Ar args for make
+<port, specified as above>
+.Nm
 .Op Fl CGgntv [B|b] [uf|i] [D|d] m Ar arguments for make
 .Fl o Ar <new port dir in /usr/ports> <installed port>
 .Nm
@@ -68,9 +72,9 @@
 .Op Fl b [D|d]
 .Fl s
 .Nm
-.Fl --clean-distfiles
+.Fl -clean-distfiles
 .Nm
-.Fl --clean-distfiles-all
+.Fl -clean-distfiles-all
 .Nm
 .Fl h
 .Pp
@@ -187,7 +191,8 @@ unattended mode, accepts defaults for all
 .Nm
 dialogues
 .It Fl f
-always rebuild ports (overrides -i)
+always rebuild ports (overrides
+.Fl i )
 .It Fl i
 interactive update mode
 .It Fl D
@@ -198,9 +203,13 @@ always clean distfiles
 any arguments to supply to
 .Xr make 1
 .It Fl p Ar port directory in /usr/ports
-Specify the full path to a port directory
+specify the full path to a port directory
+.It Fl -show-work
+show what dependent ports are, and are not installed (implies
+.Fl t ) .
+This flag must come first on the command line.
 .It Fl o Ar <new port dir in /usr/ports> <installed port>
-Replace the installed port with a port from a different origin
+replace the installed port with a port from a different origin
 .It Fl r Ar name/glob of port in /var/db/pkg
 rebuild port, and all ports that depend on it
 .It Fl a
@@ -210,7 +219,7 @@ list all installed ports by category
 .It Fl L
 list all installed ports by category, and search for updates
 .It Fl e Ar name of port directory in /var/db/pkg
-Expunge port using
+expunge port using
 .Xr pkg_delete 1 ,
 and optionally removing all distfiles.
 Calls
@@ -220,7 +229,7 @@ the port causes a dependency to no longer be
 necessary.
 .It Fl s
 clean out stale ports that used to be depended on
-.It Fl --clean-distfiles
+.It Fl -clean-distfiles
 recurse through the installed ports to get a list
 of distinfo files,
 then recurse through all files in
@@ -228,7 +237,7 @@ then recurse through all files in
 to make sure that they are still associated with
 an installed port.
 If not, offer to delete the stale file.
-.It Fl --clean-distfiles-all
+.It Fl -clean-distfiles-all
 do the same as above, but delete all files without prompting.
 .It Fl h
 display help file
