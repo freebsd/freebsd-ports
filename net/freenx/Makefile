@@ -9,8 +9,7 @@ PORTNAME=	freenx
 PORTVERSION=	0.4.4
 PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	http://download.berlios.de/freenx/ \
-		http://debian.tu-bs.de/knoppix/nx/
+MASTER_SITES=	http://www.iem.pw.edu.pl/ftp/distfiles/
 
 MAINTAINER=	freenx@deweyonline.com
 COMMENT=	Frontend (auth/session management) for nxserver libraries
