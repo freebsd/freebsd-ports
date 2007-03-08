@@ -952,6 +952,7 @@
     SUBDIR += py-flup
     SUBDIR += py-forgethtml
     SUBDIR += py-formencode
+    SUBDIR += py-funkload
     SUBDIR += py-htmltestcase
     SUBDIR += py-imdbpy
     SUBDIR += py-jonpy

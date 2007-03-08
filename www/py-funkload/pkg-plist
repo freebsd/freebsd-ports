@@ -1,0 +1,39 @@
+@unexec %%EASY_INSTALL_CMD%% -q -m -S %D/%%PYTHON_SITELIBDIR%% %%PYFUNKLOAD_EGG_VER%%
+%%PYTHON_SITELIBDIR%%/%%PYFUNKLOAD_EGG%%
+@exec %%EASY_INSTALL_CMD%% -q -N -S %D/%%PYTHON_SITELIBDIR%% %%PYFUNKLOAD_EGG_VER%%
+bin/fl-build-report
+bin/fl-credential-ctl
+bin/fl-import-from-tm-recorder
+bin/fl-install-demo
+bin/fl-monitor-ctl
+bin/fl-record
+bin/fl-run-bench
+bin/fl-run-test
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/demo/README.txt
+%%EXAMPLESDIR%%/demo/cmf/Cmf.conf
+%%EXAMPLESDIR%%/demo/cmf/README.txt
+%%EXAMPLESDIR%%/demo/cmf/credential.conf
+%%EXAMPLESDIR%%/demo/cmf/groups.txt
+%%EXAMPLESDIR%%/demo/cmf/passwords.txt
+%%EXAMPLESDIR%%/demo/cmf/test_Cmf.py
+%%EXAMPLESDIR%%/demo/simple/README.txt
+%%EXAMPLESDIR%%/demo/simple/Simple.conf
+%%EXAMPLESDIR%%/demo/simple/monitor.conf
+%%EXAMPLESDIR%%/demo/simple/test_Simple.py
+%%EXAMPLESDIR%%/demo/xmlrpc/Credential.conf
+%%EXAMPLESDIR%%/demo/xmlrpc/Makefile
+%%EXAMPLESDIR%%/demo/xmlrpc/README.txt
+%%EXAMPLESDIR%%/demo/xmlrpc/cred.conf
+%%EXAMPLESDIR%%/demo/xmlrpc/monitor.conf
+%%EXAMPLESDIR%%/demo/xmlrpc/test_Credential.py
+%%EXAMPLESDIR%%/demo/zope/README.txt
+%%EXAMPLESDIR%%/demo/zope/Zope.conf
+%%EXAMPLESDIR%%/demo/zope/test_Zope.py
+@dirrm %%EXAMPLESDIR%%/demo/zope
+@dirrm %%EXAMPLESDIR%%/demo/xmlrpc
+@dirrm %%EXAMPLESDIR%%/demo/simple
+@dirrm %%EXAMPLESDIR%%/demo/cmf
+@dirrm %%EXAMPLESDIR%%/demo
+@dirrm %%EXAMPLESDIR%%
