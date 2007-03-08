@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Local version: 1.152
+# Local version: 1.153
 # $FreeBSD$
 
 # Copyright (c) 2005-2007 Douglas Barton, All rights reserved
@@ -39,6 +39,8 @@ usage () {
 	echo "${0##*/} [Common flags] <glob pattern of directory in $pdb>"
 	echo "${0##*/} [Common flags] -p <port directory in $pd>"
 	echo "${0##*/} [Common flags] . [Use in $pd/foo/bar to build that port]"
+	echo ''
+	echo "${0##*/} --show-work [-Gv] [-m <args for make>] <port, as above>"
 	echo ''
 	echo "${0##*/} [Common flags] -o <new port dir in $pd> <installed port>"
 	echo "${0##*/} [Common flags] -r <name/glob of port directory in $pdb>"
@@ -176,6 +178,7 @@ safe_exit () {
 	if [ "$$" -eq "$PARENT_PID" ]; then
 		test -n "$NO_DEP_UPDATES" && rm -f $NO_DEP_UPDATES
 		test -n "$IPC_SAVE" && rm -f $IPC_SAVE
+		test -n "$DI_FILES" && rm -f $DI_FILES
 		if [ -n "$MASTER_RB_LIST" ]; then
 			case "$MASTER_RB_LIST" in
 			*/+REQUIRED_BY) ;;
@@ -524,6 +527,17 @@ dependency_check () {
 	fi
 
 	for dep_port in $dep_port_list; do
+		if [ -n "$SHOW_WORK" ]; then
+			orig=${dep_port#$pd/}
+			dir=`iport_from_origin $orig`
+			case "$dir" in
+			'') echo "===>>> NOT INSTALLED		$orig" ;;
+			*)  echo "===>>> Installed $orig" ;;
+			esac
+
+			continue
+		fi
+
 		test -n "$VERBOSE" &&
 		    echo "===>>> Checking dependency: $dep_port"
 
@@ -629,6 +643,8 @@ dependency_check () {
 		echo "===>>> Dependency check complete for $portdir"
 		echo ''
 	fi
+
+	[ -n "$SHOW_WORK" ] && safe_exit
 }
 
 unset_recursive_config () {
@@ -668,6 +684,8 @@ find_and_delete_distfiles () {
 			continue	# Do not delete current version
 			;;
 		*)	[ ! -d "$file" ] || continue
+			[ grep -q \(${file}\) $DI_FILES ] && continue
+
 			if [ -n "$ALWAYS_SCRUB_DISTFILES" ]; then
 				echo "===>>> Deleting stale distfile: $file"
 				rm -f $file
@@ -817,9 +835,12 @@ fi
 case "$1" in
 --clean-distfiles)	CLEAN_DISTFILES=yes ;;
 --clean-distfiles-all)	CLEAN_DISTFILES=yes ; ALL=yes ;;
+--show-work)		SHOW_WORK=yes ; RECURSE_THOROUGH=yes ; shift ;;
 esac
 
-if [ -n "$CLEAN_DISTFILES" ]; then
+read_distinfos () {
+	local origin distinfo disc1 file disc2
+
 	echo "===>>> Gathering distinfo list for installed ports"
 	for pkg in ${pdb}/*; do
 		[ -d $pkg ] || continue
@@ -833,14 +854,22 @@ if [ -n "$CLEAN_DISTFILES" ]; then
 		cd $pd/$origin || continue
 		distinfo=`make $MAKE_ARGS -V MD5_FILE`
 		if [ -s "$distinfo" ]; then
-			distinfos="$distinfos $distinfo"
+			while read disc1 file disc2; do
+				echo $file >> $DI_FILES
+			done < $distinfo
 		fi
 	done
+}
 
+if [ -n "$CLEAN_DISTFILES" ]; then
+	DI_FILES=`mktemp -t DI-FILES-$PARENT_PID`
+	read_distinfos
+
+	distdir=`make $MAKE_ARGS -f${pd}/Mk/bsd.port.mk -V DISTDIR`
 	echo "===>>> Checking for stale distfiles"
-	for df in `find $pd/distfiles -type f`; do
-		f=${df#$pd/distfiles/}
-		if ! grep -q \(${f}\) $distinfos; then
+	for df in `find $distdir -type f`; do
+		f=${df#$distdir/}
+		if ! grep -q \(${f}\) $DI_FILES; then
 			if [ -n "$ALL" ]; then
 				echo "===>>> Deleting $f"
 				rm $df
@@ -855,7 +884,7 @@ if [ -n "$CLEAN_DISTFILES" ]; then
 		fi
 	done
 
-	exit 0
+	safe_exit
 fi
 
 # Save switches for potential child processes
@@ -1050,6 +1079,10 @@ if [ -n "$UNATTENDED" ]; then
 fi
 
 if [ "$$" -eq "$PARENT_PID" ]; then
+	DI_FILES=`mktemp -t DI-FILES-$PARENT_PID`
+	export DI_FILES
+	(read_distinfos)&
+
 	CURRENT_DEPS_O=':'
 	CURRENT_DEPS_I=':'
 	IGNOREME_YES=':'
