@@ -6,7 +6,6 @@
 #
 
 PORTNAME=	qt-bluecurve-theme
-PORTREVISION=	1
 
 COMMENT=	The Bluecurve QT theme
 

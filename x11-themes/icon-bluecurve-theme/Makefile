@@ -9,9 +9,13 @@ PORTNAME=	icon-bluecurve-theme
 
 COMMENT=	The Bluecurve icon set
 
-BUILD_DEPENDS=	icon-slicer:${PORTSDIR}/graphics/icon-slicer
+BUILD_DEPENDS=	icon-slicer:${PORTSDIR}/graphics/icon-slicer \
+		pamrgbatopng:${PORTSDIR}/graphics/netpbm-devel
 
 MASTERDIR=	${.CURDIR}/../bluecurve-themes
+
+EXTRA_PATCHES=	${WRKDIR}/redhat-artwork-5.0.5-add-dirs-to-bluecurve-theme-index.patch
+PATCH_STRIP=	-p1
 
 WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
@@ -20,27 +24,7 @@ BUILD_WRKSRC=	${WRKSRC}/art/icon/Bluecurve/sheets
 BC_HIERS=	${BUILD_WRKSRC}/Bluecurve:${PREFIX}/share/icons/Bluecurve
 
 do-build:
-	${MKDIR} ${BUILD_WRKSRC}/Bluecurve
-.for t in added apps dialogs emblems files stock ooo
-	${LOCALBASE}/bin/icon-slicer \
-		--output-dir=${BUILD_WRKSRC}/Bluecurve \
-		--image-dir=${BUILD_WRKSRC} \
-		${BUILD_WRKSRC}/icons-${t}.icontheme
-.endfor
-	${MKDIR} ${BUILD_WRKSRC}/Bluecurve/36x36/apps
-	${MV} -f ${BUILD_WRKSRC}/gnome-spinner*.png ${BUILD_WRKSRC}/Bluecurve/36x36/apps
-	${MV} -f ${WRKSRC}/art/icon/Bluecurve/index.theme ${BUILD_WRKSRC}/Bluecurve
-.for d in 16x16 24x24 32x32 48x48
-	cd ${BUILD_WRKSRC}/Bluecurve/${d}/apps && \
-	${LN} -sf icon-db-user.png openofficeorg-base.png && \
-	${LN} -sf redhat-spreadsheet.png openofficeorg-calc.png && \
-	${LN} -sf icon-vector-editor.png openofficeorg-draw.png && \
-	${LN} -sf redhat-presentations.png openofficeorg-impress.png && \
-	${LN} -sf icon-calculator.png openofficeorg-math.png && \
-	${LN} -sf redhat-word-processor.png openofficeorg-writer.png
-.endfor
-	cd ${BUILD_WRKSRC}/Bluecurve/48x48/filesystems && \
-	${LN} -sf ../mimetypes/fileshare.png gnome-fs-ftp.png
+	@BUILD_WRKSRC="${BUILD_WRKSRC}" ${SH} ${SCRIPTDIR}/do-build
 
 pre-install:
 	@${ECHO_CMD} "@dirrm share/icons/Bluecurve" >> ${PLIST}
