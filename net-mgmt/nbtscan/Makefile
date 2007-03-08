@@ -8,7 +8,8 @@
 PORTNAME=	nbtscan
 PORTVERSION=	1.5.1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	${MASTER_SITE_GENTOO}
+MASTER_SITES=	http://www.inetcat.net/software/ \
+		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	thomas@goodking.ca
