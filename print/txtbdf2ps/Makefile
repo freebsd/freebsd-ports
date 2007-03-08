@@ -11,7 +11,7 @@ PORTVERSION=	0.7.1
 CATEGORIES=	print
 MASTER_SITES=	http://www.geocities.com/CapeCanaveral/Lab/5735/1/ \
 		http://oldrus-ispell.sourceforge.net/ \
-		http://members.fortunecity.com/brodsky/TL/LS/
+		http://src4.narod.ru/
 EXTRACT_SUFX=	.txt
 
 MAINTAINER=	spam@rm-rf.kiev.ua
