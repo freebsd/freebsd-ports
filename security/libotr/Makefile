@@ -8,14 +8,14 @@
 
 PORTNAME=	libotr
 PORTVERSION=	3.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://www.cypherpunks.ca/otr/
 
 MAINTAINER=	ports@mcdermottroe.com
 COMMENT=	The portable OTR Messaging Library and toolkit
 
-LIB_DEPENDS=	gpg-error.3:${PORTSDIR}/security/libgpg-error \
+LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error \
 		gcrypt:${PORTSDIR}/security/libgcrypt
 
 USE_AUTOTOOLS=	autoconf:259 libtool:15

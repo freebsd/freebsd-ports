@@ -6,6 +6,7 @@
 
 PORTNAME=		basket
 PORTVERSION=		1.0
+PORTREVISION=		1
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://basket.kde.org/downloads/
 
@@ -13,7 +14,7 @@ MAINTAINER=		markus@FreeBSD.org
 COMMENT=		Desktop organization tool
 
 LIB_DEPENDS+=		gpgme.17:${PORTSDIR}/security/gpgme \
-			gpg-error.3:${PORTSDIR}/security/libgpg-error
+			gpg-error.0:${PORTSDIR}/security/libgpg-error
 
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes

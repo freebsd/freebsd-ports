@@ -7,6 +7,7 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	1.7.6
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://josefsson.org/gnutls/releases/ \
 		ftp://ftp.gnutls.org/pub/gnutls/ \
@@ -20,7 +21,7 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
 
 LIB_DEPENDS=	gcrypt.13:${PORTSDIR}/security/libgcrypt \
-		gpg-error.3:${PORTSDIR}/security/libgpg-error
+		gpg-error.0:${PORTSDIR}/security/libgpg-error
 
 CONFLICTS=	gnutls-[0-9]*
 
