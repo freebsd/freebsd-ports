@@ -116,6 +116,7 @@
     SUBDIR += wmcp
     SUBDIR += wmg
     SUBDIR += wmii
+    SUBDIR += wmii-devel
     SUBDIR += wmthemeinstall
     SUBDIR += xcompmgr
     SUBDIR += xfce
