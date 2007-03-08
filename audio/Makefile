@@ -83,6 +83,7 @@
     SUBDIR += cmp3
     SUBDIR += cmt
     SUBDIR += cmus
+    SUBDIR += cmus-post.fm
     SUBDIR += coverhunter
     SUBDIR += cowbell
     SUBDIR += cpige
