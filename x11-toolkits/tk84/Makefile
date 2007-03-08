@@ -7,18 +7,21 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.4.14
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	x11-toolkits tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
+PKGNAMESUFFIX?=	${THREADS_SUFFIX}
 DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	martin@matuska.org
 COMMENT=	Graphical toolkit for TCL
 
-LIB_DEPENDS=	tcl84:${PORTSDIR}/${TCL84_PORT}
+USE_TCL=	84
+USE_TCL_BUILD=	84
 
-LATEST_LINK=	tk84
+LATEST_LINK?=	tk84
 USE_XLIB=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
@@ -30,22 +33,43 @@ CONFIGURE_ARGS=	--enable-shared --with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk${SHORT_TK_VER}.so.1
 MAKE_ENV=	SHORT_TK_VER=${SHORT_TK_VER}
 PLIST_SUB=	TK_VER=${TK_VER} SHORT_TK_VER=${SHORT_TK_VER}
-PKGINSTALL=	${PKGDIR}/pkg-install.wish
-PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.wish
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 MANCOMPRESSED=	no
 DATADIR=	${PREFIX}/share/${PORTNAME}${TK_VER}
 
-.ifdef (WITH_THREADS)
-CONFIGURE_ARGS+=	--enable-threads
-CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
-PKGNAMESUFFIX?=		-threads
-TCL84_PORT?=		lang/tcl84-thread
-.else
-TCL84_PORT?=		lang/tcl84
+OPTIONS=	TK84_MAN "Install tk 8.4 manpages" on \
+		WISH_WRAPPER "Require wish wrapper from ports" off
+
+.include <bsd.port.pre.mk>
+
+.if exists(${TCLSH})
+_TCL_IS_THREADED!=	${ECHO_CMD}	'puts [array names tcl_platform	-exact threaded]' | ${TCLSH} || return 0
+. if !defined(TCL_WITH_THREADS) && !defined(WITH_THREADS) && !empty(_TCL_IS_THREADED)
+TCL_WITH_THREADS=	yes
+. endif
 .endif
 
-.if !defined(WITHOUT_TK84_MAN)
+.if defined(TCL_WITH_THREADS) || defined(WITH_THREADS)
+. if defined(_TCL_IS_THREADED) && empty(_TCL_IS_THREADED)
+IGNORE=	tcl with threads is required. Please install tcl with WITH_THREADS defined or from lang/tcl${USE_TCL} port and try again
+. endif
+CONFIGURE_ARGS+=	--enable-threads
+CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
+THREADS_SUFFIX=		-threads
+USE_TCL=		84-thread
+USE_TCL_BUILD=		84-thread
+CONFLICTS=		tk-8.4*
+.include "${PORTSDIR}/Mk/bsd.tcl.mk"
+.else
+CONFIGURE_ARGS+=	--disable-threads
+CONFLICTS=		tk-threads-8.4*
+.endif
+
+.if defined(WITH_WISH_WRAPPER)
+RUN_DEPENDS+=		wish:${PORTSDIR}/lang/tcl-tk-wrapper
+.endif
+
+.if !defined(NO_INSTALL_MANPAGES) && !defined(WITHOUT_TK84_MAN)
 
 MAN1=	wish.1
 MAN3=	3DBorder.3 AddOption.3 BindTable.3 CanvPsY.3 CanvTkwin.3 \
@@ -367,7 +391,7 @@ post-configure:
 	${REINPLACE_CMD} \
 		-e 's|${WRKDIRPREFIX}${.CURDIR}|$${WRKDIRPREFIX}${TKBASE}|' \
 		${WRKSRC}/tkConfig.sh
-.if defined(WITHOUT_TK84_MAN)
+.if defined(NO_INSTALL_MANPAGES) || defined(WITHOUT_TK84_MAN)
 	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
 		${WRKSRC}/Makefile
 .endif
@@ -376,13 +400,10 @@ post-install:
 	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}/
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/man.macros ${DATADIR}
-.if exists(${PKGINSTALL})
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
-.endif
 
 regression-test:	build
 	cd ${WRKSRC}; ${MAKE} test
 	${ECHO_CMD} "package require Tk" | tclsh${TK_VER}
 	${ECHO_CMD} "load libtk${SHORT_TK_VER}.so" | tclsh${TK_VER}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
