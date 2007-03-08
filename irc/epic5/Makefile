@@ -9,7 +9,8 @@ PORTNAME=	epic5
 PORTVERSION=	0.2.0
 PORTREVISION=	1
 CATEGORIES=	irc ipv6
-MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC5-BETA/ \
+MASTER_SITES=	http://ftp.epicsol.org/pub/epic/EPIC5-BETA/ \
+		http://tehran.lain.pl/epic-mirror/EPIC5-BETA/ \
 		ftp://ftp.irc.org/irc/clients/unix/epic/EPIC5-ALPHA/ \
 		ftp://ftp.parodius.com/pub/epic/EPIC5-ALPHA/ \
 		http://ftp.freenet.de/pub/ftp.prbh.org/pub/epic/EPIC5-ALPHA/
