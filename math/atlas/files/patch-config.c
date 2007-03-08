@@ -180,3 +180,18 @@
     fprintf(fpout, "   LIBS = %s\n\n", LIBS);
  
     fprintf(fpout,
+
+http://math-atlas.sourceforge.net/errata.html
+String overrun in config for long compiler paths
+
+--- config.c	Mon Dec 22 09:06:32 2003
++++ config.c	Wed Mar  7 02:08:34 2007
+@@ -3411,7 +3411,7 @@
+    char LIBS[256];
+    char TAR[256], GZIP[256], GUNZIP[256], PMAKE[128];
+ 
+-   char comp[64], cflg[512], ln[512], tnam[256], archdef[256], mmdef[256];
++   char comp[512], cflg[512], ln[512], tnam[256], archdef[256], mmdef[256];
+    char BC[256], BCFLAGS[256];
+    int GOGO=0, L2IsKnown=0, Use3DNow=0, TuneL1=1;
+    int USEDEFL1=0;
