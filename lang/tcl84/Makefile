@@ -7,13 +7,14 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.4.14
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang tcl84
 MASTER_SITES=	SF
 PKGNAMESUFFIX?=	${THREADS_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	martin@matuska.org
 COMMENT=	Tool Command Language
 
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}
@@ -24,22 +25,32 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --includedir=${PREFIX}/include/tcl${TCL_VER}
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
 MAKE_ENV=	SHORT_TCL_VER=84 LANG=C LC_ALL=C	# LANG=C is required for some of UTF-using tests
-PKGINSTALL=	${PKGDIR}/pkg-install.tclsh
-PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.tclsh
 TCL_VER=	8.4
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for README.html
 PLIST_SUB=	TCL_VER=${TCL_VER} SHORT_TCL_VER=84
 EXTRACT_AFTER_ARGS=|${TAR} -xpf - --exclude compat/
 
+OPTIONS=	TCL84_MAN "Install tcl 8.4 manpages" on \
+		TCLSH_WRAPPER "Require tclsh wrapper from ports" off
+
+.include <bsd.port.pre.mk>
+
 .if defined(TCL_WITH_THREADS) || defined(WITH_THREADS)
 THREADS_SUFFIX=		-threads
 CONFIGURE_ARGS+=	--enable-threads
 CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
+CONFLICTS=		tcl-8.4*
+.else
+CONFLICTS=		tcl-threads-8.4*
 .endif
 
 LATEST_LINK=	tcl84${THREADS_SUFFIX}
 
-.if defined(WITHOUT_TCL84_MAN)
+.if defined(WITH_TCLSH_WRAPPER)
+RUN_DEPENDS+=		tclsh:${PORTSDIR}/lang/tcl-tk-wrapper
+.endif
+
+.if defined(NO_INSTALL_MANPAGES) || defined(WITHOUT_TCL84_MAN)
 
 PLIST_SUB+=	INSTMAN='@comment '
 
@@ -620,7 +631,7 @@ post-configure:
 	${REINPLACE_CMD} \
 		-e 's,-DNO_MEMMOVE=1,,' -e 's,-DNO_STRING_H=1,,' \
 		-e 's,^COMPAT_OBJS.*,,' ${WRKSRC}/Makefile
-.if defined(WITHOUT_TCL84_MAN)
+.if defined(NO_INSTALL_MANPAGES) || defined(WITHOUT_TCL84_MAN)
 	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
 		${WRKSRC}/Makefile
 . for mp in ${MAN1} ${MAN3} ${MANN}
@@ -638,10 +649,7 @@ post-configure:
 .endif
 
 post-install:
-.if exists(${PKGINSTALL})
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
-.endif
-.if !defined(WITHOUT_TCL84_MAN)
+.if !defined(WITHOUT_TCL84_MAN) && !defined(NO_INSTALL_MANPAGES)
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/man.macros ${DATADIR}
 .endif
@@ -649,4 +657,4 @@ post-install:
 regression-test:	build
 	cd ${WRKSRC} && LC_ALL=C ${MAKE} test
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
