@@ -32,6 +32,8 @@
 %%SITE_PERL%%/Genezzo/Havok/UserExtend.yml
 %%SITE_PERL%%/Genezzo/Havok/UserFunctions.pm
 %%SITE_PERL%%/Genezzo/Havok/UserFunctions.yml
+%%SITE_PERL%%/Genezzo/Havok/Utils.pm
+%%SITE_PERL%%/Genezzo/Havok/Utils.yml
 %%SITE_PERL%%/Genezzo/Index/bt2.pm
 %%SITE_PERL%%/Genezzo/Index/bt3.pm
 %%SITE_PERL%%/Genezzo/Index/btHash.pm
