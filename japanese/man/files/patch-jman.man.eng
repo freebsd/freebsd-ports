@@ -1,0 +1,11 @@
+--- man/jman.man.eng.orig	Thu Mar  8 13:25:41 2007
++++ man/jman.man.eng	Thu Mar  8 13:25:55 2007
+@@ -55,7 +55,7 @@
+ (or
+ .Ev LANG )
+ to
+-.Ev ja_JP.EUC
++.Ev ja_JP.eucJP
+ if you prefer to consult Japanese manual pages.
+ .Pp
+ The options are as follows:
