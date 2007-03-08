@@ -10,8 +10,8 @@ PORTVERSION=	0.3.0
 PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://joakimandersson.se/files/ \
-		ftp://ftp.jaist.ac.jp/pub/pkgsrc/distfiles/ \
-		http://www.goodking.ca/pub/files/
+		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=	thomas@goodking.ca
 COMMENT=	A colour-able replacement for tail(1)
