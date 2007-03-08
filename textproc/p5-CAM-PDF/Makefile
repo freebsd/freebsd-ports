@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	CAM-PDF
-PORTVERSION=	1.08
+PORTVERSION=	1.09
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLOTHO
+MASTER_SITE_SUBDIR=	../../authors/id/C/CD/CDOLAN
 PKGNAMEPREFIX=	p5-
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	PDF manipulation library
@@ -39,10 +38,4 @@ MAN3=		CAM::PDF.3 CAM::PDF::Content.3 CAM::PDF::Decrypt.3 \
 		CAM::PDF::Renderer::Images.3 CAM::PDF::Renderer::Text.3 \
 		CAM::PDF::Renderer::TextFB.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
