@@ -6,7 +6,6 @@
 #
 
 PORTNAME=	cursor-bluecurve-theme
-PORTREVISION=	2
 
 COMMENT=	The Bluecurve X cursor themes
 
@@ -17,7 +16,7 @@ MASTERDIR=	${.CURDIR}/../bluecurve-themes
 
 PREFIX=		${X11BASE}
 
-THEMES=		Bluecurve Bluecurve-inverse
+THEMES=		Bluecurve Bluecurve-inverse LBluecurve LBluecurve-inverse
 
 .for t in ${THEMES}
 BC_HIERS+=	${WRKSRC}/art/cursor/${t}/${t}:${PREFIX}/lib/X11/icons/${t}/cursors
@@ -29,8 +28,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|dnd_|dnd-|' \
 		${WRKSRC}/art/cursor/${t}/${t}.cursortheme
 .endfor
-	@${REINPLACE_CMD} -e 's|left-ptr-watch|left_ptr_watch|' \
-		${WRKSRC}/art/cursor/Bluecurve-inverse/Bluecurve-inverse.cursortheme
 
 do-build:
 	cd ${WRKSRC}/art/cursor/cursorthemegen \

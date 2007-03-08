@@ -5,8 +5,11 @@
 # $FreeBSD$
 #
 
+# NOTE TO VISITING COMMITTER: if you need to bump the port revisions
+# of the slave ports, you should add PORTREVISION?= to the "master
+# port" section below.
+
 PORTNAME?=	bluecurve-themes
-PORTREVISION?=	3
 CATEGORIES=	x11-themes
 
 MAINTAINER=	jylefort@FreeBSD.org
@@ -15,6 +18,11 @@ COMMENT?=	Meta-port for Bluecurve themes
 .if ${PORTNAME} == "bluecurve-themes"	# meta-port
 
 PORTVERSION=	1.0
+# PORTREVISION is useless for a meta-port, but it was incorrectly
+# added to the global section by someone (with the intent of bumping
+# the revisions of the slave ports) and it cannot be removed without
+# causing a version downgrade or using PORTEPOCH.
+PORTREVISION=	3
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
@@ -32,14 +40,11 @@ do-install:	# empty
 
 .else					# master port
 
-PORTVERSION=	0.234
-RPMREVISION=	1
+PORTVERSION=	5.0.11
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX:S|$|:fedora|} ${MASTER_SITE_LOCAL:S|$|:local|}
-MASTER_SITE_SUBDIR=	development/SRPMS/:fedora jylefort/:local
-DISTFILES=	redhat-artwork-${PORTVERSION}-${RPMREVISION}.src.rpm:fedora,local
-
-BROKEN=		Size mismatch
+MASTER_SITE_SUBDIR=	development/source/SRPMS/:fedora jylefort/:local
+DISTFILES=	redhat-artwork-${PORTVERSION}-1.fc7.src.rpm:fedora,local
 
 EXTRACT_DEPENDS+=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
@@ -49,6 +54,7 @@ WRKSRC=		${WRKDIR}/redhat-artwork-${PORTVERSION}
 DESCR?=		${.CURDIR}/pkg-descr
 PLIST?=		${.CURDIR}/pkg-plist
 FILESDIR=	${.CURDIR}/files
+SCRIPTDIR=	${.CURDIR}/scripts
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
