@@ -7,6 +7,8 @@
 
 CATEGORIES=	chinese net
 
+MAINTAINER=	jihuang@gate.sinica.edu.tw
+
 MASTERDIR=	${.CURDIR}/../../dns/bind8
 
 PATCH_SITES=	http://www.sinica.edu.tw/~jihuang/
@@ -14,9 +16,8 @@ PATCH_SITES=	http://www.sinica.edu.tw/~jihuang/
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 PATCHFILES=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}.diff.gz
 
+MD5_FILE=	${.CURDIR}/distinfo
+
 .include "${MASTERDIR}/Makefile"
 
-MD5_FILE=	${.CURDIR}/distinfo
-PKGNAMEPREFIX:= ${PKGNAMEPREFIX}
 
-MAINTAINER=	jihuang@gate.sinica.edu.tw
