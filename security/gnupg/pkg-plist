@@ -18,6 +18,7 @@ libexec/gpg2keys_finger
 libexec/gpg2keys_hkp
 %%LDAP%%libexec/gpg2keys_ldap
 sbin/addgnupghome
+sbin/applygnupgdefaults
 share/gnupg/FAQ
 share/gnupg/com-certs.pem
 share/gnupg/faq.html
