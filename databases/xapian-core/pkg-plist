@@ -308,6 +308,7 @@ share/aclocal/xapian.m4
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/globals_defs.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/globals_func.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/globals_type.html
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/globals_vars.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/graph_legend.dot
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/graph_legend.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/graph_legend.png
@@ -395,6 +396,7 @@ share/aclocal/xapian.m4
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/namespaceXapian.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/namespacemembers.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/namespacemembers_func.html
+%%PORTDOCS%%%%DOCSDIR%%/apidoc/html/namespacemembers_vars.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/namespaces.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/output_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/apidoc/html/output_8h.html
