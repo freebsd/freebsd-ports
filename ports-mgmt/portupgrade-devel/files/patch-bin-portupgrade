@@ -45,7 +45,7 @@ diff -u -r1.30 portupgrade
  
      STDERR.puts ' done]' if first
 -    $depends[origin] = depends
-+    $depends[origin] = depends.compact
++    $depends[origin] = depends.to_a.compact
    else
      $depends[origin]
    end
