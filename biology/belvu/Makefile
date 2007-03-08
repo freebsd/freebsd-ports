@@ -10,7 +10,7 @@ PORTNAME=	belvu
 PORTVERSION=	2.29
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.cgb.ki.se/pub/prog/belvu/
-DISTNAME=	${PORTNAME}.LIN_${PORTVERSION}
+DISTNAME=	${PORTNAME}.LIN_32bit_${PORTVERSION}
 EXTRACT_SUFX=	#
 EXTRACT_ONLY=	#
 
@@ -31,8 +31,8 @@ IGNORE=		there are also executables for Alpha and Sparc \
 .endif
 
 do-install:
-	${BRANDELF} -t Linux ${DISTDIR}/${DISTNAME}
 	${INSTALL_PROGRAM} ${DISTDIR}/${DISTNAME} ${PREFIX}/bin
+	${BRANDELF} -t Linux ${PREFIX}/bin/${DISTNAME}
 	( cd ${PREFIX}/bin && ${LN} -s ${DISTNAME} ${PORTNAME} )
 
 .include <bsd.port.post.mk>
