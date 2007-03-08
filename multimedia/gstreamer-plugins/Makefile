@@ -9,7 +9,7 @@
 PORTNAME=	gstreamer
 PORTVERSION?=	${BASE_PORTVERSION}
 PORTREVISION?=	0
-PORTEPOCH=	2
+PORTEPOCH=	3
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-plugins-base/:base \
 		http://gstreamer.freedesktop.org/src/gst-plugins-bad/:bad \
@@ -29,7 +29,7 @@ LIB_DEPENDS+=	gstreamer-0.10.0:${PORTSDIR}/multimedia/gstreamer \
 		popt.0:${PORTSDIR}/devel/popt \
 		oil-0.3.1:${PORTSDIR}/devel/liboil
 
-BASE_PORTVERSION=	0.10.11
+BASE_PORTVERSION=	0.10.12
 BASE_DISTNAME=		gst-plugins-base-${BASE_PORTVERSION}
 BASE_DISTFILE=		${BASE_DISTNAME}${EXTRACT_SUFX}
 BAD_PORTVERSION=	0.10.4
