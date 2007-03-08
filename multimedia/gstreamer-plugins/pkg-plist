@@ -26,6 +26,10 @@ include/gstreamer-%%VERSION%%/gst/interfaces/tunernorm.h
 include/gstreamer-%%VERSION%%/gst/interfaces/videoorientation.h
 include/gstreamer-%%VERSION%%/gst/interfaces/xoverlay.h
 include/gstreamer-%%VERSION%%/gst/netbuffer/gstnetbuffer.h
+include/gstreamer-%%VERSION%%/gst/pbutils/descriptions.h
+include/gstreamer-%%VERSION%%/gst/pbutils/install-plugins.h
+include/gstreamer-%%VERSION%%/gst/pbutils/missing-plugins.h
+include/gstreamer-%%VERSION%%/gst/pbutils/pbutils.h
 include/gstreamer-%%VERSION%%/gst/riff/riff-ids.h
 include/gstreamer-%%VERSION%%/gst/riff/riff-media.h
 include/gstreamer-%%VERSION%%/gst/riff/riff-read.h
@@ -113,6 +117,10 @@ lib/libgstnetbuffer-%%VERSION%%.a
 lib/libgstnetbuffer-%%VERSION%%.la
 lib/libgstnetbuffer-%%VERSION%%.so
 lib/libgstnetbuffer-%%VERSION%%.so.0
+lib/libgstpbutils-%%VERSION%%.a
+lib/libgstpbutils-%%VERSION%%.la
+lib/libgstpbutils-%%VERSION%%.so
+lib/libgstpbutils-%%VERSION%%.so.0
 lib/libgstriff-%%VERSION%%.a
 lib/libgstriff-%%VERSION%%.la
 lib/libgstriff-%%VERSION%%.so
@@ -133,6 +141,7 @@ libdata/pkgconfig/gstreamer-plugins-base-%%VERSION%%.pc
 share/locale/af/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/cs/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
+share/locale/de/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/hu/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
@@ -148,6 +157,7 @@ share/locale/vi/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 @dirrm include/gstreamer-%%VERSION%%/gst/tag
 @dirrm include/gstreamer-%%VERSION%%/gst/rtp
 @dirrm include/gstreamer-%%VERSION%%/gst/riff
+@dirrm include/gstreamer-%%VERSION%%/gst/pbutils
 @dirrm include/gstreamer-%%VERSION%%/gst/netbuffer
 @dirrm include/gstreamer-%%VERSION%%/gst/interfaces
 @dirrm include/gstreamer-%%VERSION%%/gst/floatcast
