@@ -244,7 +244,7 @@ _USE_PHP_ALL=	bcmath bz2 calendar ctype curl dba dbase \
 # version specific components
 _USE_PHP_VER4=	${_USE_PHP_ALL} crack dbx dio domxml filepro mcal mcve \
 		mnogosearch oracle overload pfpro xslt yp
-_USE_PHP_VER5=	${_USE_PHP_ALL} dom filter ming mysqli pdo pdo_sqlite \
+_USE_PHP_VER5=	${_USE_PHP_ALL} dom filter ming mysqli oci8 pdo pdo_sqlite \
 		simplexml soap spl sqlite tidy xmlreader xmlwriter xsl
 
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
@@ -285,6 +285,7 @@ mssql_DEPENDS=	databases/php${PHP_VER}-mssql
 mysql_DEPENDS=	databases/php${PHP_VER}-mysql
 mysqli_DEPENDS=	databases/php${PHP_VER}-mysqli
 ncurses_DEPENDS=devel/php${PHP_VER}-ncurses
+oci8_DEPENDS=	databases/php${PHP_VER}-oci8
 odbc_DEPENDS=	databases/php${PHP_VER}-odbc
 openssl_DEPENDS=security/php${PHP_VER}-openssl
 oracle_DEPENDS=	databases/php${PHP_VER}-oracle
