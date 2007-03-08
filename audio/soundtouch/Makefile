@@ -14,39 +14,27 @@ MASTER_SITES=	http://www.surina.net/soundtouch/
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An open-source audio processing library
 
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+BUILD_DEPENDS=	${LOCALBASE}/bin/automake19:${PORTSDIR}/devel/automake19
 CONFIGURE_ARGS=	--enable-shared=yes
+USE_AUTOTOOLS=	autoconf:259 libtool:15
 USE_LDCONFIG=	yes
 
-# For some reason this library contains config/ directory with
-# lots of broken symlinks.  Remove them here and add new one using
-# files/patch-config.  Files were taken from... Audacity, which is
-# distributed with it's own version of SoundTouch ;-)
-pre-patch:
-	${RM} -rf ${WRKSRC}/config/*
-	${FIND} ${WRKSRC} -name "Makefile.in*" -type f | ${XARGS} ${REINPLACE_CMD} -e \
-		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
-
 post-patch: .SILENT
-	${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|-O3|${CFLAGS}|; s|$$(prefix)/doc|$$(datadir)/doc|' \
-		${WRKSRC}/source/example/bpm/Makefile.in \
-		${WRKSRC}/source/example/SoundStretch/Makefile.in \
-		${WRKSRC}/source/SoundTouch/Makefile.in \
-		${WRKSRC}/include/Makefile.in ${WRKSRC}/Makefile.in
+.for f in config.guess config.sub depcomp install-sh missing
+	${LN} -sf ${LOCALBASE}/share/automake19/${f} ${WRKSRC}/config/${f}
+.endfor
+	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g; \
+		s|-O3|${CFLAGS}|; s|$$(prefix)/doc|$$(datadir)/doc|; \
+		s|COPYING.TXT||'
 	# Fix for GCC 4.x
 	${REINPLACE_CMD} -e 's|SoundTouch::||' ${WRKSRC}/include/SoundTouch.h
-	${CHMOD} +rx ${WRKSRC}/config/install-sh
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's/ install-pkgdocDATA$$//' \
+	${REINPLACE_CMD} -e 's| install-pkgdocDATA$$||' \
 		${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.pre.mk>
+post-configure:
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
