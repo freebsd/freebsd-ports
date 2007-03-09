@@ -1,6 +1,6 @@
---- team.c.orig	Sat Jul  1 17:33:24 1995
-+++ team.c	Mon Sep  1 16:13:15 2003
-@@ -58,8 +58,10 @@
+--- team.c.orig	Sat Jul  1 23:33:24 1995
++++ team.c	Sat Dec 16 18:34:07 2006
+@@ -58,12 +58,14 @@
    upstream to it, which has much the same effect.
  */
  
@@ -13,6 +13,11 @@
  
  #define TeamLBUFSZ	(64)		/* Low buffer size		*/
  #define TeamDBUFSZ	(60*512)	/* Default buffer size		*/
+-#define TeamHBUFSZ	(1L<<20)	/* High buffer size		*/
++#define TeamHBUFSZ	(1L<<26)	/* High buffer size		*/
+ 
+ #define TeamDTEAMSZ	4		/* Default # of processes	*/
+ #define TeamHTEAMSZ	16		/* High # of processes		*/
 @@ -84,11 +86,23 @@
  #include <sys/file.h>
  #include <sys/stat.h>
