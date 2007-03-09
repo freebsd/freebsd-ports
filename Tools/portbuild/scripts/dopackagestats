@@ -61,7 +61,12 @@ write_row () {
     fi
     # work around the fact that 5-exp is really 6-exp-prime
     if [ ! -f $indexfile ]; then
-      indexfile=$directory/ports/`cd $directory/ports&&ls INDEX* | head -1`
+      if [ -d $directory/ports ]; then
+          indexfile=$directory/ports/`cd $directory/ports&&ls INDEX* | head -1`
+        else
+          # work around the fact that 4 is EOL and thus has no ports/ directory
+         indexfile=$directory/logs/`cd $directory/logs&&ls INDEX* | head -1`
+        fi
     fi
 
     # column: date of CVS checkout
