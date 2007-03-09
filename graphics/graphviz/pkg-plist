@@ -17,7 +17,7 @@ bin/gvpack
 bin/dijkstra
 bin/bcomps
 bin/gvpr
-bin/lefty
+%%WITH_XPM%%bin/lefty
 bin/lneato
 bin/dotty
 bin/prune
@@ -69,6 +69,7 @@ include/graphviz/exgram.h
 include/graphviz/expr.h
 include/graphviz/gv.i
 include/graphviz/gv.cpp
+lib/graphviz/config
 lib/graphviz/libcdt.so
 lib/graphviz/libcdt.so.3
 lib/graphviz/libcdt.la
