@@ -7,7 +7,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	0.45
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,13 +24,13 @@ RUN_DEPENDS=	${SITE_PERL}/XML/XQL.pm:${PORTSDIR}/textproc/p5-XML-XQL
 
 #USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 WANT_GNOME=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libxslt
+USE_GNOME=	gnomehack intlhack libxslt
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	3.4
-CONFIGURE_ARGS=	--with-popt
+CONFIGURE_ARGS=	--with-popt \
+		--mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 
