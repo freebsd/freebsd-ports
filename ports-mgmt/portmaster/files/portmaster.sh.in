@@ -684,7 +684,7 @@ find_and_delete_distfiles () {
 			continue	# Do not delete current version
 			;;
 		*)	[ ! -d "$file" ] || continue
-			[ grep -q \(${file}\) $DI_FILES ] && continue
+			grep -q \(${file}\) $DI_FILES && continue
 
 			if [ -n "$ALWAYS_SCRUB_DISTFILES" ]; then
 				echo "===>>> Deleting stale distfile: $file"
