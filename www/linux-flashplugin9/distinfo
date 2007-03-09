@@ -1,3 +1,6 @@
 MD5 (flashplugin/9.0r31/install_flash_player_9_linux.tar.gz) = 76b38231a68995935185aa42dfda9db7
 SHA256 (flashplugin/9.0r31/install_flash_player_9_linux.tar.gz) = e31b971be7f98ea7eff67b2783ae20170c4d9f595b43ae5b59f98385a2b0c978
 SIZE (flashplugin/9.0r31/install_flash_player_9_linux.tar.gz) = 2609703
+MD5 (flashplugin/9.0r31/libflashsupport.so) = 20a61e9de44e7f58e9566b16ee6651d9
+SHA256 (flashplugin/9.0r31/libflashsupport.so) = 0ddd948214657e17866663cad5fb02ff2bfe8360969359db4aca6d65456d4cad
+SIZE (flashplugin/9.0r31/libflashsupport.so) = 7493

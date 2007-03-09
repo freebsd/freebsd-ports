@@ -1,0 +1,3 @@
+@cwd /compat/linux
+usr/lib/libflashsupport.so
+@cwd
