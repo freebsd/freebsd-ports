@@ -7,7 +7,7 @@
 
 PORTNAME=	blacs
 PORTVERSION=	1.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/blacs/
 DISTNAME=	BLACS
@@ -36,10 +36,12 @@ BUILD_DEPENDS=	${LOCALBASE}/mpi/openmpi/lib/libmpi.so:${PORTSDIR}/net/openmpi
 RUN_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
 EXTRA_PATCHES+=	${FILESDIR}/Bmake.inc-openmpi.diff
 .else
-BUILD_DEPENDS=	${LOCALBASE}/mpich2/lib/libmpich.a:${PORTSDIR}/net/mpich2
+LIB_DEPENDS=	mpich:${PORTSDIR}/net/mpich2
 RUN_DEPENDS=	${LOCALBASE}/mpich2/bin/mpirun:${PORTSDIR}/net/mpich2
 EXTRA_PATCHES+=	${FILESDIR}/Bmake.inc-mpich.diff
 .endif
+
+USE_LDCONFIG=	yes
 
 WANT_FORTRAN=	yes #dummy but future use
 BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
@@ -49,6 +51,17 @@ MAKE_ENV= "FC=${FC}" "F77=${F77}"
 USE_GMAKE=yes
 F77EXTRAFLAGS=	#-w -fno-globals -fugly-complex
 DEBUG_LEVEL=	0
+
+.if ${ARCH} == "sparc64" || ${ARCH} == "amd64"
+FPIC=	-fPIC
+.else
+FPIC=	-fpic
+.endif
+
+WRKSRC_SHARED=${WRKSRC}_shared
+CFLAGS_SHARED=${CFLAGS} ${FPIC}
+FFLAGS_SHARED=${CFLAGS} ${FPIC}
+SVERSION=1
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 .if ${ARCH} == "amd64"
@@ -66,23 +79,43 @@ CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops 
 pre-patch:
 	(${CP} ${WRKSRC}/BMAKES/Bmake.MPI-LINUX ${WRKSRC}/Bmake.inc)
 
+post-patch:
+	${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
+
 pre-configure:
 	(${REINPLACE_CMD} -e 's,@WRKSRC@,${WRKSRC},g ; s,@DEBUG_LEVEL@,${DEBUG_LEVEL},g ; s,@LOCALBASE@,${LOCALBASE},g ; s,@CC@,${CC},g ; s,@CFLAGS@,${CFLAGS},g ; s,@F77@,${F77},g ; s,@FFLAGS@,${FFLAGS},g ; s,@F77EXTRAFLAGS@,${F77EXTRAFLAGS},g ; s,   ARCH *.= ar,   ARCMD = ar,'  ${WRKSRC}/Bmake.inc)
+	(${REINPLACE_CMD} -e 's,@WRKSRC@,${WRKSRC_SHARED},g ; s,@DEBUG_LEVEL@,${DEBUG_LEVEL},g ; s,@LOCALBASE@,${LOCALBASE},g ; s,@CC@,${CC},g ; s,@CFLAGS@,${CFLAGS_SHARED},g ; s,@F77@,${F77},g ; s,@FFLAGS@,${FFLAGS_SHARED},g ; s,@F77EXTRAFLAGS@,${F77EXTRAFLAGS},g ; s,   ARCH *.= ar,   ARCMD = ar,'  ${WRKSRC_SHARED}/Bmake.inc)
 	${REINPLACE_CMD} -e 's|\$$(ARCH)|$$(ARCMD)|' ${WRKSRC}/SRC/MPI/Makefile
-.if ${OSVERSION} < 500000
-	${REINPLACE_CMD} -e 's|F77LOADFLAGS   = |F77LOADFLAGS   = ${PTHREAD_LIBS}|' ${WRKSRC}/Bmake.inc
-.endif
+	${REINPLACE_CMD} -e 's|\$$(ARCH)|$$(ARCMD)|' ${WRKSRC_SHARED}/SRC/MPI/Makefile
 
 do-build:
 	(cd ${WRKSRC}; make mpi; make tester)
-#	(cd ${WRKSRC}_SHARED; make mpi; make tester)
+	(cd ${WRKSRC_SHARED}; make mpi; make tester)
+
+post-build:
+	${RM} -rf ${WRKDIR}/tmp_shared
+	${MKDIR} ${WRKDIR}/tmp_shared
+	${FIND} ${WRKSRC_SHARED} -name "*\.a" -exec ${MV} {} ${WRKDIR}/tmp_shared \;
+	cd ${WRKDIR}/tmp_shared ; for i in `ls *.a | ${SED}  's/\.a//' `; do \
+		ld -Bshareable -o $${i}.so.${SVERSION} -x -soname $${i}.so.${SVERSION} --whole-archive $${i}.a ;\
+	${LN} -s $${i}.so.${SVERSION} $${i}.so ;\
+	done
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/LIB/blacsCinit_MPI-FreeBSD-${DEBUG_LEVEL}.a ${PREFIX}/lib/libblacsc.a
 	${INSTALL_DATA} ${WRKSRC}/LIB/blacsF77init_MPI-FreeBSD-${DEBUG_LEVEL}.a ${PREFIX}/lib/libblacsf77.a
 	${INSTALL_DATA} ${WRKSRC}/LIB/blacs_MPI-FreeBSD-${DEBUG_LEVEL}.a ${PREFIX}/lib/libblacs.a
+
+	${INSTALL_DATA} ${WRKDIR}/tmp_shared/blacsCinit_MPI-FreeBSD-${DEBUG_LEVEL}.so.${SVERSION} ${PREFIX}/lib/libblacsc.so.${SVERSION}
+	${INSTALL_DATA} ${WRKDIR}/tmp_shared/blacsF77init_MPI-FreeBSD-${DEBUG_LEVEL}.so.${SVERSION} ${PREFIX}/lib/libblacsf77.so.${SVERSION}
+	${INSTALL_DATA} ${WRKDIR}/tmp_shared/blacs_MPI-FreeBSD-${DEBUG_LEVEL}.so.${SVERSION} ${PREFIX}/lib/libblacs.so.${SVERSION}
+
+	${INSTALL_DATA} ${WRKDIR}/tmp_shared/blacsCinit_MPI-FreeBSD-${DEBUG_LEVEL}.so ${PREFIX}/lib/libblacsc.so
+	${INSTALL_DATA} ${WRKDIR}/tmp_shared/blacsF77init_MPI-FreeBSD-${DEBUG_LEVEL}.so ${PREFIX}/lib/libblacsf77.so
+	${INSTALL_DATA} ${WRKDIR}/tmp_shared/blacs_MPI-FreeBSD-${DEBUG_LEVEL}.so ${PREFIX}/lib/libblacs.so
+
 	${MKDIR} ${PREFIX}/share/BLACS/TESTING
-	( cd ${WRKSRC}/TESTING/EXE ; \
+	( cd ${WRKSRC_SHARED}/TESTING/EXE ; \
 	  ${INSTALL_PROGRAM} xCbtest_MPI-FreeBSD-${DEBUG_LEVEL} ${PREFIX}/share/BLACS/TESTING/xCbtest_MPI-FreeBSD; \
 	  ${INSTALL_PROGRAM} xFbtest_MPI-FreeBSD-${DEBUG_LEVEL} ${PREFIX}/share/BLACS/TESTING/xFbtest_MPI-FreeBSD; \
 	  ${INSTALL_DATA}  bsbr.dat   ${PREFIX}/share/BLACS/TESTING; \
