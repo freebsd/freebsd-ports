@@ -7,12 +7,10 @@
 #
 
 PORTNAME=	fasta3
-PORTVERSION=	34.t26.b3
+PORTVERSION=	34.26.2
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.virginia.edu/pub/fasta/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	pav
-DISTNAME=	fasta${PORTVERSION:S/.//g}
+MASTER_SITES=	ftp://ftp.virginia.edu/pub/fasta/
+DISTNAME=	fasta-${PORTVERSION}
 EXTRACT_SUFX=	.shar.Z
 
 MAINTAINER=	fernan@iib.unsam.edu.ar
