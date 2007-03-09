@@ -8,7 +8,8 @@
 PORTNAME=	tada
 PORTVERSION=	1.4.0
 CATEGORIES=	databases python
-MASTER_SITES=	http://www.darkarts.co.za/projects/${PORTNAME}/downloads/${PORTVERSION}/
+MASTER_SITES=	http://www.darkarts.co.za/projects/${PORTNAME}/attachment/wiki/downloads/${PORTVERSION}/
+EXTRACT_SUFX=	.tar.gz?format=raw
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
