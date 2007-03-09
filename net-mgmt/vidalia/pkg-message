@@ -1,0 +1,15 @@
+If your Onion Router isn't listening on 127.0.0.1,
+you can build the Vidalia port with TOR_CONTROL_ADDR
+set to something else. You can't change this address
+through Vidalia's GUI.
+
+Note that Vidalia requires systray support to do anything
+useful (you need the systray icon to open Vidalia's windows).
+
+If your Window Manager doesn't have a systray, you can
+install x11/stalonetray or another systray provider through
+the ports.
+
+The systray provider has to be running before you start
+Vidalia. Vidalia doesn't show any error messages if
+no systray was found!

@@ -211,6 +211,7 @@
     SUBDIR += tknetmon
     SUBDIR += torrus
     SUBDIR += trafd
+    SUBDIR += vidalia
     SUBDIR += wdiag
     SUBDIR += weplab
     SUBDIR += whatmask
