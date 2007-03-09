@@ -41,5 +41,13 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}" \
 
 RUBYGEMBIN=	${LOCALBASE}/bin/gem
 
+.if defined(DISTFILES)
+GEMFILES=	${DISTFILES:C/:[^:]+$//}
+.else
+GEMFILES=	${DISTNAME}${EXTRACT_SUFX}
+.endif
+
 do-install:
-	${RUBYGEMBIN} install --no-ri --install-dir ${PREFIX}/lib/ruby/gems/${REV} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}
+.for _D in ${GEMFILES}
+	${RUBYGEMBIN} install --no-ri --install-dir ${PREFIX}/lib/ruby/gems/${REV} ${DISTDIR}/${DIST_SUBDIR}/${_D}
+.endfor
