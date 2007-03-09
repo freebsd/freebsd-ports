@@ -7,6 +7,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.12
+PORTREVISION=	1
 CATEGORIES=	graphics tk84
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -21,11 +22,8 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		gd.4:${PORTSDIR}/graphics/gd
 
-USE_TK=		84
 USE_BISON=	yes
 USE_GMAKE=	yes
-USE_ICONV=	yes
-USE_XPM=	yes
 USE_AUTOTOOLS=	libltdl:15 libtool:15
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
@@ -34,10 +32,9 @@ CPPFLAGS+=	-I${X11BASE}/include -I${LOCALBASE}/include -I${TCL_INCLUDEDIR} -I${T
 MAKE_ENV=	EXPR_COMPAT=yes MISSING=${TRUE}
 
 MAN1=		acyclic.1 bcomps.1 ccomps.1 dijkstra.1 dot.1 \
-		dotty.1 gc.1 gvcolor.1 gvpack.1 gvpr.1 gxl2dot.1 lefty.1 \
+		dotty.1 gc.1 gvcolor.1 gvpack.1 gvpr.1 gxl2dot.1 \
 		lneato.1 nop.1 prune.1 sccmap.1 tred.1 unflatten.1
 MAN3=		agraph.3 cdt.3 expr.3 graph.3 gvc.3 pathplan.3
-MANN=		gdtclft.n tcldot.n tkspline.n
 MLINKS=		dot.1 circo.1 \
 		gxl2dot.1 dot2gxl.1 \
 		dot.1 fdp.1 \
@@ -54,7 +51,11 @@ PDOCS_HTML=	doc/*.html doc/info/*.html doc/info/*.gif
 
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
-OPTIONS=	PANGOCAIRO "build with pangocairo support (gtk)" off \
+OPTIONS=	TK "Build with TK support" on \
+		XPM "Build with XPM support" on \
+		ICONV "Build with ICONV support" on \
+		NLS "Build with gettext support" on \
+		PANGOCAIRO "build with pangocairo support (gtk)" off \
 		PERL "Perl bindings (swig)" off \
 		PHP "PHP bindings (swig)" off \
 		PYTHON "Python bindings (swig)" off \
@@ -65,32 +66,63 @@ OPTIONS=	PANGOCAIRO "build with pangocairo support (gtk)" off \
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS=	--program-transform-name="s/x/x/" \
+CONFIGURE_ARGS+=	--program-transform-name="s/x/x/" \
 		--enable-dependency-tracking \
-		--with-iconvlibdir=${LOCALBASE}/lib \
 		--with-libgd \
-		--with-tclsh=${TCLSH} \
-		--with-wish=${WISH} \
 		--with-fontconfigincludedir=${X11BASE}/include \
 		--with-fontconfiglibdir=${X11BASE}/lib \
 		--disable-io --disable-ocaml --disable-java \
 		--disable-sharp
 
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
 		CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
-		TCLCONFIG="${TCL_LIBDIR}/tclConfig.sh" \
-		TKCONFIG="${TK_LIBDIR}/tkConfig.sh" \
 		MISSING=${TRUE}
 
-.if !defined(WITH_PANGOCAIRO)
-CONFIGURE_ARGS+=	--with-pangocairo=no
-PLIST_SUB+=		WITH_PANGOCAIRO="@comment "
+.if !defined(WITHOUT_TK)
+USE_TK=		84
+.include "${PORTSDIR}/Mk/bsd.tcl.mk"
+CONFIGURE_ARGS+=	--with-tclsh=${TCLSH} \
+		--with-wish=${WISH}
+CONFIGURE_ENV+=	TCLCONFIG="${TCL_LIBDIR}/tclConfig.sh" \
+		TKCONFIG="${TK_LIBDIR}/tkConfig.sh"
+MANN=		gdtclft.n tcldot.n tkspline.n
 .else
+.if defined(WITH_TCL)
+USE_TCL=	84
+.include "${PORTSDIR}/Mk/bsd.tcl.mk"
+CONFIGURE_ARGS+=	--with-tclsh=${TCLSH}
+CONFIGURE_ENV+=	TCLCONFIG="${TCL_LIBDIR}/tclConfig.sh"
+.endif
+.endif
+
+.if !defined(WITHOUT_ICONV)
+USE_ICONV=	yes
+CONFIGURE_ARGS+=	--with-iconvlibdir=${LOCALBASE}/lib
+.endif
+
+.if !defined(WITHOUT_XPM)
+USE_XPM=	yes
+MAN1+=		lefty.1
+PLIST_SUB+=	WITH_XPM=""
+.else
+PLIST_SUB+=	WITH_XPM="@comment "
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+.else
+CONFIGURE_ARGS+=	--disable-nls
+.endif
+
+.if defined(WITH_PANGOCAIRO)
 CONFIGURE_ARGS+=	--with-gtk --with-pangocairo
 PLIST_SUB+=		WITH_PANGOCAIRO=""
 USE_GNOME=	gtk20 pango
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
+.else
+CONFIGURE_ARGS+=	--with-pangocairo=no
+PLIST_SUB+=		WITH_PANGOCAIRO="@comment "
 .endif
 
 .if defined(WITH_PERL) || defined(WITH_PHP) || defined(WITH_PYTHON) || \
@@ -101,6 +133,7 @@ CONFIGURE_ARGS+=	--enable-swig
 CONFIGURE_ENV+=		SWIG="${LOCALBASE}/bin/swig1.3"
 .else
 CONFIGURE_ARGS+=	--disable-swig
+CONFIGURE_ENV+=		SWIG="/nonexistent"
 .endif
 
 . if !defined(WITH_PERL)
@@ -192,16 +225,19 @@ pre-patch:
 		${WRKSRC}/cmd/gvpr/Makefile.in
 	@${FIND} ${WRKSRC}/lib -name 'Makefile.in' | \
 		${XARGS} ${REINPLACE_CMD} \
-		-e 's|libdir = @libdir@|libdir = @libdir@/graphviz|g';
+		-e 's|pkglibdir = $$(libdir)/@PACKAGE@|pkglibdir = $$(libdir)|g' \
+		-e 's|libdir = @libdir@|libdir = @libdir@/@PACKAGE@|g';
 	@${REINPLACE_CMD} -e "s|/usr/include/php|${LOCALBASE}/include/php|g" \
 		-e "s|-lruby|-lruby${RUBY_SUFFIX}|g" ${WRKSRC}/configure
 
+.if !defined(WITHOUT_TK)
 post-install-script:
 	${INSTALL_MAN} \
 		${WRKSRC}/tclpkg/gdtclft/gdtclft.n \
 		${WRKSRC}/tclpkg/tcldot/tcldot.n \
 		${WRKSRC}/tclpkg/tkspline/tkspline.n \
 		${MANNPREFIX}/man/mann/
+.endif
 
 post-install: install-ldconfig-file
 .if !defined(NOPORTDOCS)
