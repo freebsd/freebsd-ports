@@ -1,0 +1,14 @@
+--- configure	Sat Dec 30 20:15:57 2006
++++ configure.port	Wed Mar  7 18:11:26 2007
+@@ -20104,11 +20104,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+ 
+-	if $PYTHON -c 'import numpy ; numpy.array' 1>&5 2>&5; then
+ 	  eval "py_cv_mod_$py_mod_var=yes"
+-	else
+-	  eval "py_cv_mod_$py_mod_var=no"
+-	fi
+ 
+ fi
+ 

@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	visual
-PORTVERSION=	3.2.9
-PORTREVISION=	1
+PORTVERSION=	4.b14
 CATEGORIES=	graphics python
-MASTER_SITES=	http://www.vpython.org/download/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	visualpython
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A python module that offers real 3D visual output
 
-BUILD_DEPENDS=	${PYNUMERIC} \
+BUILD_DEPENDS=	${PYNUMPY} \
 		bjam:${PORTSDIR}/devel/boost-python
-LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
-RUN_DEPENDS=	${PYNUMERIC}
+LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea \
+		gtkglextmm-x11-1.2:${PORTSDIR}/x11-toolkits/gtkglextmm \
+		glademm-2.4.1:${PORTSDIR}/devel/libglademm24
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_AUTOTOOLS=	autoconf:259 libtool:15
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
@@ -33,23 +33,16 @@ OPTIONS=	EXAMPLES "install example files" on
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR}
-CONFIGURE_ENV=	PYTHONPATH=${PYTHON_LIBDIR}
+CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} --disable-dependency-tracking
 .if defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--disable-docs
 .endif
+CONFIGURE_ENV=	PYTHONPATH=${PYTHON_LIBDIR}
+MAKE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" LDFLAGS="${LDFLAGS} ${PTREAD_LIBS}"
 
 VPYTHON_SCRIPT=	bin/vpython.in
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
-.endif
-
-.if ${ARCH} == amd64
-IGNORE=		loops infinitely during build
-.endif
 
 .if !defined(WITH_EXAMPLES)
 CONFIGURE_ARGS+=	--disable-examples
@@ -62,7 +55,7 @@ PLIST_SUB+=	PORTEXAMPLES=""
 post-patch:
 	@cd ${WRKSRC}; \
 	${REINPLACE_CMD} -e 's|%%PYTHONBASE%%|${PYTHONBASE}|g' \
-		-e 's|%%PYTHON_VERSION%%|${PYTHON_VERSION:S/python//g}|g' \
+		-e 's|%%PYTHON_VERSION%%|${PYTHON_VER}|g' \
 		${VPYTHON_SCRIPT}
 
 .include <bsd.port.post.mk>
