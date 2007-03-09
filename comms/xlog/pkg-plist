@@ -1,12 +1,8 @@
 bin/xlog
-share/application-registry/xlog.applications
 share/applications/xlog.desktop
-share/applnk/Applications/xlog.desktop
-share/mime-info/xlog.keys
-share/mime-info/xlog.mime
 share/mime/packages/xlog.xml
-share/mimelnk/text/x-xlog.desktop
 share/pixmaps/gnome-mime-text-x-xlog.png
+share/pixmaps/xlog-icon.png
 share/pixmaps/xlog/cwdaemon.png
 share/pixmaps/xlog/gnome-mime-text-x-xlog.png
 share/pixmaps/xlog/jigsaw.png
@@ -28,40 +24,44 @@ share/pixmaps/xlog/s9.xpm
 share/pixmaps/xlog/xlog-b4.png
 share/pixmaps/xlog/xlog-icon.png
 share/pixmaps/xlog/xlog-keyer.png
+share/pixmaps/xlog/xlog-scoring.png
 share/pixmaps/xlog/xlog.png
 share/pixmaps/xlog/xlog.xpm
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/BUGS
 %%DATADIR%%/ChangeLog
 %%DATADIR%%/FAQ
-%%DATADIR%%/FAQ.fr
-%%DATADIR%%/FAQ.pl
+%%DATADIR%%/KEYS
 %%DATADIR%%/MANUAL
-%%DATADIR%%/MANUAL.fr
-%%DATADIR%%/MANUAL.pl
 %%DATADIR%%/THANKS
 %%DATADIR%%/TODO
 %%DATADIR%%/dxcc/cty.dat
 %%DATADIR%%/images/xlog-defaultsdialog.png
 %%DATADIR%%/images/xlog-dupecheckdialog.png
+%%DATADIR%%/images/xlog-exportdialog.png
+%%DATADIR%%/images/xlog-importdialog.png
 %%DATADIR%%/images/xlog-keyerwindow.png
 %%DATADIR%%/images/xlog-logeditor.png
 %%DATADIR%%/images/xlog-mainwindow.png
 %%DATADIR%%/images/xlog-mergelogdialog.png
 %%DATADIR%%/images/xlog-newlogdialog.png
 %%DATADIR%%/images/xlog-openlogdialog.png
+%%DATADIR%%/images/xlog-preferencesdialog-general.png
 %%DATADIR%%/images/xlog-preferencesdialog-hamlib.png
 %%DATADIR%%/images/xlog-preferencesdialog-info.png
+%%DATADIR%%/images/xlog-preferencesdialog-logs.png
 %%DATADIR%%/images/xlog-printdialog.png
+%%DATADIR%%/images/xlog-scorewindow.png
 %%DATADIR%%/images/xlog-workedwindow.png
 %%DATADIR%%/qsllabels.glabels
-share/locale/da/LC_MESSAGES/xlog.mo
-share/locale/es/LC_MESSAGES/xlog.mo
-share/locale/fr/LC_MESSAGES/xlog.mo
-share/locale/nl/LC_MESSAGES/xlog.mo
-share/locale/cs/LC_MESSAGES/xlog.mo
-share/locale/pl/LC_MESSAGES/xlog.mo
-share/locale/sk/LC_MESSAGES/xlog.mo
+%%WITHNLS%%share/locale/da/LC_MESSAGES/xlog.mo
+%%WITHNLS%%share/locale/es/LC_MESSAGES/xlog.mo
+%%WITHNLS%%share/locale/fr/LC_MESSAGES/xlog.mo
+%%WITHNLS%%share/locale/nl/LC_MESSAGES/xlog.mo
+%%WITHNLS%%share/locale/cs/LC_MESSAGES/xlog.mo
+%%WITHNLS%%share/locale/pl/LC_MESSAGES/xlog.mo
+%%WITHNLS%%share/locale/sk/LC_MESSAGES/xlog.mo
+%%WITHNLS%%share/locale/sv/LC_MESSAGES/xlog.mo
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/dxcc
 @dirrm %%DATADIR%%
@@ -69,10 +69,6 @@ share/locale/sk/LC_MESSAGES/xlog.mo
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @dirrmtry share/applications
-@dirrmtry share/applnk/Applications
-@dirrmtry share/applnk
-@dirrmtry share/application-registry
-@dirrmtry share/mimelnk/text
-@dirrmtry share/mimelnk
-@dirrmtry share/mime-info
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
 @dirrmtry share/pixmaps
