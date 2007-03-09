@@ -1,9 +1,8 @@
 @comment $FreeBSD$
 bin/vpython
-%%PYTHON_SITELIBDIR%%/cvisualmodule.a
 %%PYTHON_SITELIBDIR%%/cvisualmodule.la
 %%PYTHON_SITELIBDIR%%/cvisualmodule.so
-%%PYTHON_SITELIBDIR%%/cvisualmodule.so.1
+%%PYTHON_SITELIBDIR%%/cvisualmodule.so.3
 %%PYTHON_SITELIBDIR%%/visual/__init__.py
 %%PYTHON_SITELIBDIR%%/visual/__init__.pyc
 %%PYTHON_SITELIBDIR%%/visual/__init__.pyo
@@ -22,9 +21,8 @@ bin/vpython
 %%PYTHON_SITELIBDIR%%/visual/graph.py
 %%PYTHON_SITELIBDIR%%/visual/graph.pyc
 %%PYTHON_SITELIBDIR%%/visual/graph.pyo
-%%PYTHON_SITELIBDIR%%/visual/macevent.py
-%%PYTHON_SITELIBDIR%%/visual/macevent.pyc
-%%PYTHON_SITELIBDIR%%/visual/macevent.pyo
+%%PYTHON_SITELIBDIR%%/visual/logo_t.gif
+%%PYTHON_SITELIBDIR%%/visual/pan.png
 %%PYTHON_SITELIBDIR%%/visual/primitives.py
 %%PYTHON_SITELIBDIR%%/visual/primitives.pyc
 %%PYTHON_SITELIBDIR%%/visual/primitives.pyo
@@ -34,6 +32,7 @@ bin/vpython
 %%PYTHON_SITELIBDIR%%/visual/ui.py
 %%PYTHON_SITELIBDIR%%/visual/ui.pyc
 %%PYTHON_SITELIBDIR%%/visual/ui.pyo
+%%PYTHON_SITELIBDIR%%/visual/vpython.glade
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/visual/VisualIntro.css
 %%PORTDOCS%%%%DOCSDIR%%/visual/VisualIntro.html
@@ -85,6 +84,7 @@ bin/vpython
 %%PORTDOCS%%%%DOCSDIR%%/visual/rotation.html
 %%PORTDOCS%%%%DOCSDIR%%/visual/sphere.html
 %%PORTDOCS%%%%DOCSDIR%%/visual/spherebox.gif
+%%PORTDOCS%%%%DOCSDIR%%/visual/texture-opacity-lighting.html
 %%PORTDOCS%%%%DOCSDIR%%/visual/vector.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Tk-Visual.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bounce.py
@@ -99,12 +99,14 @@ bin/vpython
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/drape.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/faces_cone.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/faces_heightfield.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/flower128.vpt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gas.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/glinfo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graphtest.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gyro.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gyro2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/hanoi.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/labels.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lathe.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lorenz.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/orbit.py
@@ -113,11 +115,14 @@ bin/vpython
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stars.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stonehenge.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/texttest.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/texture_and_lighting.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/texturetest.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tictac.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tictacdat.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/toroid.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/toroid_drag.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wave.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/wood256lum.vpt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/visual/icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/visual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
