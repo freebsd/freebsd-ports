@@ -126,8 +126,6 @@
     SUBDIR += linux-blackdown-jdk13
     SUBDIR += linux-blackdown-jdk14
     SUBDIR += linux-blackdown-jre11
-    SUBDIR += linux-ibm-jdk13
-    SUBDIR += linux-ibm-jdk14
     SUBDIR += linux-sun-jdk12
     SUBDIR += linux-sun-jdk13
     SUBDIR += linux-sun-jdk14

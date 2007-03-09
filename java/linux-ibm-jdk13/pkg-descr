@@ -1,6 +1,0 @@
-IBM implementation of the Java 2 Standard Edition SDK,
-version 1.3 for Linux. It contains IBM's just-in-time
-compiler, enhanced with a unique Mixed Mode Interpreter
-and a re-engineered Java 2 virtual machine.
-
-WWW: http://www-106.ibm.com/developerworks/java/jdk/linux140/
