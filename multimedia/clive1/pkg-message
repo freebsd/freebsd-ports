@@ -1,0 +1,7 @@
+=====================================================
+
+The Newt User Interface requires the port devel/newt.
+Please, install or reinstall it manually (setting the
+knob WITH_PYTHON=yes).
+
+=====================================================
