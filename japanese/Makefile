@@ -61,8 +61,6 @@
     SUBDIR += elvis
     SUBDIR += emacs-emcws
     SUBDIR += emacs-manual
-    SUBDIR += emacs20-dl-canna
-    SUBDIR += emacs20-dl-wnn6
     SUBDIR += emacs20-emcws
     SUBDIR += epic4
     SUBDIR += epson-ttfonts
