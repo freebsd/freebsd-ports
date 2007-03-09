@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-UUID
-PORTVERSION=	0.148
+PORTVERSION=	1.148
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -20,10 +20,4 @@ CONFIGURE_ARGS=	</dev/null
 
 MAN3=		Data::UUID.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	perl 5.6 or newer required. Install lang/perl5.8 or lang/perl5 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
