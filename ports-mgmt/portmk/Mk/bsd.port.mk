@@ -412,6 +412,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_JAVA		- If set, this port relies on the Java language.
 #				  Implies inclusion of bsd.java.mk.  (Also see
 #				  that file for more information on USE_JAVA_*).
+# USE_OCAML		- If set, this port relies on the OCaml language.
+#				  Implies inclusion of bsd.ocaml.mk.  (Also see
+#				  that file for more information on USE_OCAML*).
 # USE_PYTHON	- If set, this port relies on the Python language.
 #				  Implies inclusion of bsd.python.mk. (Also see
 #				  that file for more information on USE_PYTHON_*
@@ -761,8 +764,12 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # For fetch:
 #
-# FETCH_CMD		- Full path to ftp/http fetch command if not in $PATH.
-#				  Default: "/usr/bin/fetch -ARr"
+# FETCH_BINARY	- Path to ftp/http fetch command if not in $PATH.
+#				  Default: "/usr/bin/fetch"
+# FETCH_ARGS	- Arguments to ftp/http fetch command.
+#				  Default: "-ARr"
+# FETCH_CMD		- ftp/http fetch command.
+#				  Default: ${FETCH_BINARY} ${FETCH_ARGS}
 # FETCH_BEFORE_ARGS
 #				- Arguments to ${FETCH_CMD} before filename.
 #				  Default: none
@@ -906,9 +913,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- If set, bsd.port.mk will automatically run ldconfig commands
 #				  from post-install and also add appropriate @exec/@unexec
 #				  directives to directories listed in LDCONFIG_DIRS. (deprecated)
-#				  If USE_LINUX_PREFIX is defined, the Linux version of ldconfig
-#				  will be used instead of the native FreeBSD version (in such
-#				  case, LDCONFIG_DIRS is ignored).
+#				  If USE_LINUX_PREFIX is defined, the Linux version of
+#				  ldconfig will be used instead of the native FreeBSD
+#				  version, and LDCONFIG_DIRS will be ignored.
 # LDCONFIG_DIRS	- List of directories to run ldconfig if INSTALLS_SHLIB is set.
 #				  Note that this is passed through sed just like the
 #				  rest of PLIST, so ${PLIST_SUB} substitutions also
@@ -916,16 +923,25 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  %%PREFIX%% for ${PREFIX}, %%LOCALBASE%% for
 #				  ${LOCALBASE_REL} and %%X11BASE%% for ${X11BASE_REL}.
 #				  Default: %%PREFIX%%/lib
-# USE_LDCONFIG  - If set to "yes", it replaces the old variable INSTALLS_SHLIB.
-# 				  Otherwise, it can be set to a list of directories to be added to
-# 				  ${PREFIX}/libdata/ldconfig/${UNIQUENAME}. Note that this
-# 				  directory is used by ldconfig startup script, it is meant to
-# 				  replace ldconfig scripts installed by some ports as (sometimes)
-# 				  000.${UNQUENAME}.sh.
+# USE_LDCONFIG  - If set to "yes", this subsumes the function of the
+#				  deprecated variable INSTALLS_SHLIB and adds ${PREFIX}/lib
+#				  to the list of directories to be searched for shared
+#				  libraries.  Otherwise, this is a list of directories to
+#				  be added to that list.  The directory names are written to
+#				  ${PREFIX}/libdata/ldconfig/${UNIQUENAME} which is then
+#				  used by the ldconfig startup script.
+#				  This mechanism replaces ldconfig scripts installed by some
+#				  ports, often under such names as 000.${UNQUENAME}.sh.
 # USE_LDCONFIG32
 # 				- Same as USE_LDCONFIG but the target file is
 # 				  ${PREFIX}/libdata/ldconfig32/${UNIQUENAME} instead.
 # 				  Note: that should only be used on 64-bit architectures.
+# NO_LDCONFIG_MTREE
+#				- Denotes whether the libdata/ldconfig directory is part of
+#				  the mtree on a given OSVERSION system.  If it is not, we
+#				  create the directory, pull in the ldconfig_compat port,
+#				  and clean up on de-installation.  NOTE: this variable is
+#				  internal to bsd.port.mk and must not be set in your Makefile.
 #
 # DOCSDIR		- Name of the directory to install the packages docs in.
 #				  Default: ${TARGETDIR}/share/doc/${PORTNAME}
@@ -1500,6 +1516,14 @@ PERL=		${LOCALBASE}/bin/perl
 .endif
 .endif
 
+.if defined(USE_OCAML)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.ocaml.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.ocaml.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.ocaml.mk"
+.endif
+.endif
+
 .if defined(USE_TCL) || defined(USE_TCL_BUILD) || defined(USE_TK) || defined(USE_TK_BUILD)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.tcl.mk)
 .include "${DEVELPORTSDIR}/Mk/bsd.tcl.mk"
@@ -1571,6 +1595,15 @@ PERL=		${LOCALBASE}/bin/perl
 .include "${PORTSDIR}/Mk/bsd.sdl.mk"
 .endif
 .endif
+
+.if defined(USE_OCAML)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.xfce.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.xfce.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.xfce.mk"
+.endif
+.endif
+
 
 # These do some path checks if DESTDIR is set correctly.
 # You can force skipping these test by defining IGNORE_PATH_CHECKS
@@ -2098,6 +2131,13 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .endif
 .endif
 
+.if defined(USE_OCAML)
+.if exists(${DEVELPORTSDIR}/Mk/bsd.xfce.mk)
+.include "${DEVELPORTSDIR}/Mk/bsd.xfce.mk"
+.else
+.include "${PORTSDIR}/Mk/bsd.xfce.mk"
+.endif
+.endif
 
 .if exists(${PORTSDIR}/../Makefile.inc)
 .include "${PORTSDIR}/../Makefile.inc"
@@ -2205,15 +2245,18 @@ PTHREAD_CFLAGS?=
 PTHREAD_LIBS?=		-pthread
 
 .if exists(/usr/bin/fetch)
-FETCH_CMD?=		/usr/bin/fetch -ApRr
+FETCH_BINARY?=	/usr/bin/fetch
+FETCH_ARGS?=	-ApRr
 FETCH_REGET?=	1
 .if !defined(DISABLE_SIZE)
 FETCH_BEFORE_ARGS+=	$${CKSIZE:+-S $$CKSIZE}
 .endif
 .else
-FETCH_CMD?=		/usr/bin/ftp
+FETCH_BINARY?=	/usr/bin/ftp
+FETCH_ARGS?=	-R
 FETCH_REGET?=	0
 .endif
+FETCH_CMD?=		${FETCH_BINARY} ${FETCH_ARGS}
 
 .if defined(RANDOMIZE_MASTER_SITES)
 .if exists(/usr/games/random)
