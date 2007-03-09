@@ -12852,6 +12852,7 @@ q3base		ports/games/q3base
 q3cellshading	ports/games/q3cellshading
 qadsl		ports/net/qadsl
 qalculate	ports/math/qalculate
+qar-bufo	ports/mail/qar-bufo
 qbrew		ports/misc/qbrew
 qca		ports/devel/qca
 qca-tls		ports/security/qca-tls
