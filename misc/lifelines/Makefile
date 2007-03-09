@@ -31,6 +31,10 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,ncursesw/curses.h,curses.h,' \
+		${WRKSRC}/src/hdrs/mycurses.h
+
 post-install:
 .if !defined(NOPORTDOCS)
 .for file in btedit.1 dbverify.1 llines.1
