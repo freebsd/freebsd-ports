@@ -23,8 +23,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--disable-evdevplug --disable-alsa --disable-amidiplug \
-		--disable-pulse --disable-coreaudio --disable-projectm \
-		--disable-flac
+		--disable-pulse --disable-coreaudio --disable-projectm
 WANT_GNOME=	yes
 WANT_SDL=	yes
 
@@ -34,8 +33,6 @@ PORTDOCS=	AUTHORS ChangeLog NEWS
 #		PULSE		"Enable PulseAudio output plugin"	off \
 #		COREAUDIO	"Enable CoreAudio output plugin"	off \
 #		PROJECTM	"Enable projectM vis plugin"		off \
-# to old ports:
-#		FLAC		"Enable flac input plugin"		off \
 
 OPTIONS=	ESOUND		"Enable Esound output output"		off \
 		MP3		"Enable mp3 plugin"			on  \
@@ -135,18 +132,11 @@ PLIST_SUB+=	ADPLUGPLUGIN="@comment "
 
 .if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+CONFIGURE_ARGS+=--enable-vorbis --enable-flac # it uses an internal flac-lib copy
 PLIST_SUB+=	VORBISPLUGIN=""
-#.if !defined(WITHOUT_FLAC)
-#LIB_DEPENDS+=   FLAC.7:${PORTSDIR}/audio/flac
-#CONFIGURE_ARGS+=--enable-flac
-#PLIST_SUB+=	FLACPLUGIN=""
-#.else
-#CONFIGURE_ARGS+=--disable-flac
-#PLIST_SUB+=	FLACPLUGIN="@comment "
-#.endif
 .else
-CONFIGURE_ARGS+=--disable-vorbis #--disable-flac
-PLIST_SUB+=	VORBISPLUGIN="@comment " #FLACPLUGIN="@comment "
+CONFIGURE_ARGS+=--disable-vorbis --disable-flac
+PLIST_SUB+=	VORBISPLUGIN="@comment "
 .endif
 
 .if !defined(WITHOUT_WAVPACK)
@@ -302,6 +292,10 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-I\.\./\.\./\.\.$$|& -I\.\./libflac|' \
+		${WRKSRC}/src/flac/plugin_common/Makefile
 
 post-install:
 .if defined(WITH_GNOME)
