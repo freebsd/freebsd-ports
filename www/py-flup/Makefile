@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flup
-PORTVERSION=	0.5.r2307
+PORTVERSION=	0.5.r2311
 CATEGORIES=	www python
 MASTER_SITES=	http://www.saddi.com/software/flup/dist/ \
 		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
@@ -16,18 +16,24 @@ DISTNAME=	flup-${PORTVERSION:E}
 MAINTAINER=	lwhsu@lwhsu.org
 COMMENT=	Random assortment of WSGI servers, middleware
 
-BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
+RUN_DEPENDS=	${BUILD_DEPENDES}
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
 
-PYFLUP_EGG=	${PORTNAME}-${PORTVERSION:R}-py${PYTHON_VERSION:S/^python//}.egg
+EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
 
-SUB_FILES+=	pkg-deinstall pkg-install
-SUB_LIST+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} \
-		EGG="${PORTNAME}==${PORTVERSION:R}"
+WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
-PLIST_SUB=	PYFLUP_EGG=${PYFLUP_EGG}
+PYDISTUTILS_BUILD_TARGET=	bdist_egg
+PYDISTUTILS_INSTALL_TARGET=	easy_install
+PYDISTUTILS_INSTALLARGS=	-O 1 -N -S ${PYTHON_SITELIBDIR} ${WRKSRC}/dist/${PYFLUP_EGG}
+
+PYFLUP_EGG=	${PORTNAME}-${PORTVERSION:R}-py${PYTHON_VER}.egg
+
+PLIST_SUB+=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
+		PYFLUP_EGG=${PYFLUP_EGG} \
+		PYFLUP_EGG_VER="${PORTNAME}==${PORTVERSION:R}"
 
 .include <bsd.port.mk>
