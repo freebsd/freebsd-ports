@@ -9,7 +9,7 @@ PORTVERSION=	0.1
 PORTREVISION=	1
 CATEGORIES=	graphics java
 MASTER_SITES=	http://www.jave.de/developer/\
-		http://ikaria.inf.fsr.uni-rostock.de/freebsd_public/
+		http://ikaria.informatik.uni-rostock.de/public_bsd/FreeBSD/
 DISTNAME=	jave_6.0_i20060105
 EXTRACT_SUFX=	.zip
 
