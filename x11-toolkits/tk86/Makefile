@@ -7,6 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.5.a.5
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -15,9 +16,10 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.a./a/}-src
 MAINTAINER=	martin@matuska.org
 COMMENT=	Graphical toolkit for TCL
 
-LIB_DEPENDS=	tcl85:${PORTSDIR}/${TCL85_PORT}
+USE_TCL=	85
+USE_TCL_BUILD=	85
 
-LATEST_LINK=	tk85
+LATEST_LINK?=	tk85
 USE_XLIB=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.a./a/}/unix
@@ -35,16 +37,39 @@ NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 MANCOMPRESSED=	no
 DATADIR=	${PREFIX}/share/${PORTNAME}${TK_VER}
 
-.ifdef (WITH_THREADS)
-CONFIGURE_ARGS+=	--enable-threads
-CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
-PKGNAMESUFFIX?=		-threads
-TCL85_PORT?=		lang/tcl85-thread
-.else
-TCL85_PORT?=		lang/tcl85
+OPTIONS=	TK85_MAN "Install tk 8.5 manpages" on \
+		WISH_WRAPPER "Require wish wrapper from ports" off
+
+.include <bsd.port.pre.mk>
+
+.if exists(${TCLSH})
+_TCL_IS_THREADED!=	${ECHO_CMD}	'puts [array names tcl_platform	-exact threaded]' | ${TCLSH} || return 0
+. if !defined(TCL_WITH_THREADS) && !defined(WITH_THREADS) && !empty(_TCL_IS_THREADED)
+TCL_WITH_THREADS=	yes
+. endif
 .endif
 
-.if !defined(WITHOUT_TK85_MAN)
+.if defined(TCL_WITH_THREADS) || defined(WITH_THREADS)
+. if defined(_TCL_IS_THREADED) && empty(_TCL_IS_THREADED)
+IGNORE=	tcl with threads is required. Please install tcl with WITH_THREADS defined or from lang/tcl${USE_TCL} port and try again
+. endif
+CONFIGURE_ARGS+=	--enable-threads
+CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
+THREADS_SUFFIX=		-threads
+USE_TCL=		85-thread
+USE_TCL_BUILD=		85-thread
+CONFLICTS=		tk-8.5*
+.include "${PORTSDIR}/Mk/bsd.tcl.mk"
+.else
+CONFIGURE_ARGS+=	--disable-threads
+CONFLICTS=		tk-threads-8.5*
+.endif
+
+.if defined(WITH_WISH_WRAPPER)
+RUN_DEPENDS+=		wish:${PORTSDIR}/lang/tcl-tk-wrapper
+.endif
+
+.if !defined(NO_INSTALL_MANPAGES) && !defined(WITHOUT_TK85_MAN)
 
 MAN1=	wish.1
 MAN3=	3DBorder.3 AddOption.3 BindTable.3 CanvPsY.3 CanvTkwin.3 \
@@ -373,7 +398,7 @@ post-configure:
 	${REINPLACE_CMD} \
 		-e 's|${WRKDIRPREFIX}${.CURDIR}|$${WRKDIRPREFIX}${TKBASE}|' \
 		${WRKSRC}/tkConfig.sh
-.if defined(WITHOUT_TK85_MAN)
+.if defined(NO_INSTALL_MANPAGES) || defined(WITHOUT_TK85_MAN)
 	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
 		${WRKSRC}/Makefile
 .endif
@@ -391,4 +416,4 @@ regression-test:	build
 	${ECHO_CMD} "package require Tk" | tclsh${TK_VER}
 	${ECHO_CMD} "load libtk${SHORT_TK_VER}.so" | tclsh${TK_VER}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
