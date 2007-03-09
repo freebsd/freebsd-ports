@@ -89,6 +89,7 @@
     SUBDIR += mtrace
     SUBDIR += nagcon
     SUBDIR += nagios
+    SUBDIR += nagios-pf-plugin
     SUBDIR += nagios-plugins
     SUBDIR += nagios-radauth-plugin
     SUBDIR += nagios-silfreed-plugins
