@@ -7,7 +7,7 @@
 
 PORTNAME=	libao
 PORTVERSION=	0.8.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.xiph.org/ao/src/
 
@@ -58,5 +58,10 @@ PKGNAMESUFFIX=	-esound
 CONFIGURE_ARGS+=	--disable-esd
 PLIST_SUB+=	ESOUND="@comment "
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/etc/libao.conf|${PREFIX}&|' \
+		${WRKSRC}/libao.conf.5 ${WRKSRC}/src/ao_private.h \
+		${WRKSRC}/doc/config.html
 
 .include <bsd.port.post.mk>
