@@ -1,8 +1,5 @@
-A library of routines for the conversion between 31-bit Unicode values (UCS-4)
-and their 8-bit encoding (UTF-9) defined in RFC 2044. The routines can handle
-input and output from/to files and memory. Useful for i18n programmers.
+A library of C routines for the conversion of Unicode to UTF-8 and back.
+The library can also be used to convert the 31-bit UCS-4 mappings to UTF-8 and
+back.
 
 WWW: http://www.whizkidtech.redprince.net/i18n/
-
-G. Adam Stanislav
-adam@redprince.net
