@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: fprotd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following to /etc/rc.conf[.local] to enable this service
+#
+# fprotd_enable="YES"
+#
+
+prefix=%%PREFIX%%
+
+. /etc/rc.subr
+
+name=fprotd
+rcvar=`set_rcvar`
+start_precmd="fprotd_precmd"
+command="${prefix}/f-prot/f-protd"
+command_args="> /dev/null 2>&1"
+
+required_files="/etc/f-prot.conf"
+
+load_rc_config ${name}
+
+: ${fprotd_enable=NO}
+: ${fprotd_virus_defs=${prefix}/f-prot}
+
+fprotd_precmd()
+{
+	rc_flags="--background --defpath ${fprotd_virus_defs} ${fprotd_flags}"
+}
+
+run_rc_command "$1"

@@ -1,0 +1,50 @@
+f-prot/LICENSE-FPAV.f-protd
+f-prot/f-protd
+f-prot/tools/f-prot-milter
+f-prot/tools/f-prot-qmail
+f-prot/tools/scan-mail.pl
+%%PORTDOCS%%%%DOCSDIR%%/add_info.html
+%%PORTDOCS%%%%DOCSDIR%%/appendix_a.html
+%%PORTDOCS%%%%DOCSDIR%%/auto_updt.html
+%%PORTDOCS%%%%DOCSDIR%%/comm_scan.html
+%%PORTDOCS%%%%DOCSDIR%%/conf_fprotd.html
+%%PORTDOCS%%%%DOCSDIR%%/conf_scanmail_bootup.html
+%%PORTDOCS%%%%DOCSDIR%%/d_scan_options.html
+%%PORTDOCS%%%%DOCSDIR%%/d_startup_options.html
+%%PORTDOCS%%%%DOCSDIR%%/daemon_scan.html
+%%PORTDOCS%%%%DOCSDIR%%/fprots.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/inf_eicar.gif
+%%PORTDOCS%%%%DOCSDIR%%/info_options.html
+%%PORTDOCS%%%%DOCSDIR%%/inst_pro.html
+%%PORTDOCS%%%%DOCSDIR%%/loc_files.html
+%%PORTDOCS%%%%DOCSDIR%%/loglevel.html
+%%PORTDOCS%%%%DOCSDIR%%/macro_scanning_options.html
+%%PORTDOCS%%%%DOCSDIR%%/mailscanner.html
+%%PORTDOCS%%%%DOCSDIR%%/main_feat.html
+%%PORTDOCS%%%%DOCSDIR%%/man_updt.html
+%%PORTDOCS%%%%DOCSDIR%%/milter_scan.html
+%%PORTDOCS%%%%DOCSDIR%%/notusing_fprot.so.gif
+%%PORTDOCS%%%%DOCSDIR%%/per_scan.html
+%%PORTDOCS%%%%DOCSDIR%%/postfix_scan.html
+%%PORTDOCS%%%%DOCSDIR%%/prot_samba.html
+%%PORTDOCS%%%%DOCSDIR%%/qmail_scan.html
+%%PORTDOCS%%%%DOCSDIR%%/reporting_options.html
+%%PORTDOCS%%%%DOCSDIR%%/scan_with_mailscanner.html
+%%PORTDOCS%%%%DOCSDIR%%/scanning_options.html
+%%PORTDOCS%%%%DOCSDIR%%/screenshot.jpg
+%%PORTDOCS%%%%DOCSDIR%%/sys_req.html
+%%PORTDOCS%%%%DOCSDIR%%/test_eicar.html
+%%PORTDOCS%%%%DOCSDIR%%/test_inst.html
+%%PORTDOCS%%%%DOCSDIR%%/updater.html
+%%PORTDOCS%%%%DOCSDIR%%/updater_req.html
+%%PORTDOCS%%%%DOCSDIR%%/updt_macro.gif
+%%PORTDOCS%%%%DOCSDIR%%/updt_noneed.gif
+%%PORTDOCS%%%%DOCSDIR%%/updt_sign.gif
+%%PORTDOCS%%%%DOCSDIR%%/updt_signature.gif
+%%PORTDOCS%%%%DOCSDIR%%/using_fprot.so.gif
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec install -d -m 755 -o root -g wheel %D/f-prot/backups
+@dirrmtry f-prot/backups
+@dirrmtry f-prot/tools
+@dirrmtry f-prot
