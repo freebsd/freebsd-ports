@@ -2846,3 +2846,5 @@ www/aolserver-openacs-pg||2007-02-28|Not longer needed.
 devel/boost-gcc3|devel/boost|2007-03-07|Removed support for FreeBSD 4.
 graphics/jpeg-mmx|graphics/jpeg|2007-03-08|Has expired: no longer needed.
 graphics/gstreamer-plugins-jpeg-mmx80|graphics/gstreamer-plugins-jpeg80|2007-03-08|graphics/jpeg-mmx was removed
+java/linux-ibm-jdk13||2007-03-09|Has expired: Vulnerabilities in the browser plugin
+java/linux-ibm-jdk14||2007-03-09|Has expired: Vulnerabilities in the browser plugin
