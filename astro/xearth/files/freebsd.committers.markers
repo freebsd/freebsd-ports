@@ -192,7 +192,6 @@
  40.1,		-105.3,		"gibbs,ken,will"		# Boulder, CO, USA
  40.01942534,	-105.23914289,	"imp"				# (CORE) Boulder, CO, USA
  29.067,	-110.967,	"jcamou"			# Hermosillo, Sonora, Mexico
- 40.4047,	-111.7508,	"glewis"			# Cedar Hills, UT, USA
  51.083,	-114.167,	"aaron"				# Calgary, Alberta, Canada
  51.083,	-114.13,	"davidc"			# Calgary, Alberta, Canada
  46.7357,	-116.9973,	"jasone"			# Moscow, ID, USA
@@ -212,6 +211,7 @@
  49.27705,	-122.91385,	"cperciva"			# Burnaby, BC, Canada
  49.204533,	-122.919931,	"sobomax"			# New Westminster, BC, Canada
  48.482814,	-122.94369,	"jdp"				# Lopez Island, WA, USA
+ 47.643,	-122.614	"glewis"			# Bremerton, WA, USA
  47.382689,	-122.227021,	"garys"				# Kent, WA, USA
  45.5,		-122.6,		"dg"				# near Portland, OR, USA
  45.31,		-122.39,	"alexbl"			# Portland, OR, USA
