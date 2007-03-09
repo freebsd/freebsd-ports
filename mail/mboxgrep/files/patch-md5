@@ -1,0 +1,160 @@
+--- src/mboxgrep.h	Sun Apr  6 17:01:49 2003
++++ src/mboxgrep.h	Tue Feb 27 17:24:30 2007
+@@ -29,4 +29,5 @@
+ 
+ #include <config.h>
++#include <stdint.h>
+ 
+ #include <time.h>  /* for tm structure */
+@@ -100,8 +101,13 @@
+ folder_t;
+ 
++typedef union {
++	uint64_t halves[2];
++	unsigned char bytes[16];
++} md5_t;
++
+ typedef struct
+ {
+-  char **md5;
+   int n;
++  md5_t md5s[];
+ }
+ checksum_t;
+--- src/scan.c	Sun Apr  6 17:01:49 2003
++++ src/scan.c	Tue Feb 27 17:19:23 2007
+@@ -60,5 +60,5 @@
+ #include "maildir.h"
+ #include "wrap.h"
+-#include "md5.h"
++#include <openssl/md5.h>
+ #ifdef HAVE_FTS_OPEN
+ # include <sys/stat.h>
+@@ -74,5 +74,8 @@
+ #endif /* HAVE_LIBDMALLOC */
+ 
+-void scan_mailbox (char path[])
++static int md5_check_message (const char *body, size_t bbytes);
++
++void
++scan_mailbox (const char path[])
+      /* {{{  */
+ {
+@@ -96,5 +99,4 @@
+   time_t tt;
+   struct tm *ct;
+-  extern checksum_t *cs;
+ 
+   extern option_t config;
+@@ -145,10 +147,10 @@
+       if ((config.format == MBOX) || (config.format == ZMBOX) ||
+ 	  (config.format == BZ2MBOX))
+-	msg = (message_t *) mbox_read_message (mbox);
++	msg = mbox_read_message (mbox);
+       else if ((config.format == MH) || (config.format == NNMH) ||
+ 	       (config.format == NNML))
+-	msg = (message_t *) mh_read_message (boxd);
++	msg = mh_read_message (boxd);
+       else if (config.format == MAILDIR)
+-	msg = (message_t *) maildir_read_message (maildird);
++	msg = maildir_read_message (maildird);
+ 
+       if (msg == NULL) break;
+@@ -179,5 +181,5 @@
+ 
+       if (config.dedup)
+-	isdup = md5_check_message (msg->body, cs);
++	isdup = md5_check_message (msg->body, msg->bbytes);
+ 
+       if (((res1 == 0) | (res2 == 0)) ^ ((config.invert ^ delete)) &&
+@@ -282,5 +284,6 @@
+ /* }}} */
+ 
+-void recursive_scan (char path[])
++void
++recursive_scan (const char path[])
+      /* {{{  */
+ 
+@@ -313,5 +316,5 @@
+   }
+ #else
+-  ftw (path, (void *) scan_mailbox, 1);
++  ftw (path, (int (*)(const char *, const struct *, int))scan_mailbox, 1);
+ #endif /* HAVE_FTS_OPEN */
+ }
+@@ -319,29 +322,33 @@
+ /* }}} */
+ 
+-int md5_check_message (char *body, checksum_t *chksum)
++static int
++md5_check_message (const char *body, size_t bbytes)
+      /* {{{  */
+ {
+-  struct md5_ctx a;
+-  unsigned char b[16];
++  MD5_CTX a;
++  md5_t b;
+   int i;
++  extern checksum_t *cs;
+ 
+-  md5_init_ctx (&a);
++  MD5_Init(&a);
+   if (body == NULL)
+-    md5_process_bytes ("", 0, &a);
++    MD5_Update(&a, "", 0);
+   else
+-    md5_process_bytes (body, strlen(body), &a);
+-  md5_finish_ctx(&a, b);
++    MD5_Update(&a, body, bbytes);
++  MD5_Final(b.bytes, &a);
+ 
+-  for (i = 0; i < chksum->n; i++)
++  for (i = 0; i < cs->n; i++)
+     {
+-      if (0 == strncmp (chksum->md5[i], b, 16)) 
++      if (b.halves[0] == cs->md5s[i].halves[0] &&
++	b.halves[1] == cs->md5s[i].halves[1])
+ 	return 1; 
+     }
+ 
+-  chksum->md5 = 
+-	(char **) xrealloc (chksum->md5, (1 + chksum->n) * sizeof (char *));
+-  chksum->md5[chksum->n] = xstrdup (b);
++  cs = 
++	xrealloc (cs, sizeof(checksum_t) + (i + 1) * sizeof (md5_t));
++  cs->md5s[i].halves[0] = b.halves[0];
++  cs->md5s[i].halves[1] = b.halves[1];
+ 
+-  (chksum->n)++;
++  cs->n++;
+ 
+   return 0;
+--- src/scan.h	Sun Mar 30 18:07:10 2003
++++ src/scan.h	Tue Feb 27 16:51:58 2007
+@@ -24,7 +24,6 @@
+ #include "mboxgrep.h"
+ 
+-void scan_mailbox (char path[]);
+-void recursive_scan (char path[]);
+-int md5_check_message (char *body, checksum_t *chksum);
++void scan_mailbox(const char path[]);
++void recursive_scan(const char path[]);
+ 
+ #endif /* SCAN_H */
+--- src/main.c	Sun Aug 24 15:23:50 2003
++++ src/main.c	Tue Feb 27 17:25:30 2007
+@@ -56,5 +56,5 @@
+ int maildir_count = 0;
+ int count = 0;
+-void *tmpp;
++FILE *tmpp;
+ checksum_t *cs;
+ 
+@@ -239,6 +239,5 @@
+     }
+ 
+-  cs = (checksum_t *) xmalloc (sizeof (checksum_t));
+-  cs->md5 = (char **) xcalloc (1, sizeof (char **));
++  cs = xmalloc (sizeof (checksum_t));
+   cs->n = 0;
+ 
