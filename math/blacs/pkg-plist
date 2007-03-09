@@ -1,6 +1,12 @@
 lib/libblacs.a
 lib/libblacsc.a
 lib/libblacsf77.a
+lib/libblacs.so
+lib/libblacs.so.1
+lib/libblacsc.so
+lib/libblacsc.so.1
+lib/libblacsf77.so
+lib/libblacsf77.so.1
 share/BLACS/TESTING/xCbtest_MPI-FreeBSD
 share/BLACS/TESTING/xFbtest_MPI-FreeBSD
 share/BLACS/TESTING/bsbr.dat
