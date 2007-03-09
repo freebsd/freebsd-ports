@@ -132,8 +132,9 @@ PLIST_SUB+=	ADPLUGPLUGIN="@comment "
 
 .if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
-CONFIGURE_ARGS+=--enable-vorbis --enable-flac # it uses an internal flac-lib copy
+CONFIGURE_ARGS+=--enable-vorbis --enable-flac	# it uses an internal flac-lib copy
 PLIST_SUB+=	VORBISPLUGIN=""
+CFLAGS+=	-I. -I../libflac -Ilibflac	# to not use system flac if it is installed
 .else
 CONFIGURE_ARGS+=--disable-vorbis --disable-flac
 PLIST_SUB+=	VORBISPLUGIN="@comment "
@@ -291,11 +292,6 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-I\.\./\.\./\.\.$$|& -I\.\./libflac|' \
-		${WRKSRC}/src/flac/plugin_common/Makefile
 
 post-install:
 .if defined(WITH_GNOME)
