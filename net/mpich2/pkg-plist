@@ -145,6 +145,8 @@ include/mpiof.h
 %%JAVA%%lib/trace_rlog/libTraceInput.so
 %%X11%%lib/libampe.a
 lib/libfmpich.a
+lib/libfmpich.so
+lib/libfmpich.so.0
 lib/libmpichf90.a
 lib/liblmpe.a
 lib/libmpe.a
@@ -154,6 +156,8 @@ lib/libmpe_nompi.a
 lib/libmpe_nompi_null.a
 lib/libmpe_null.a
 lib/libmpich.a
+lib/libmpich.so
+lib/libmpich.so.0
 lib/libmpichcxx.a
 lib/libtmpe.a
 %%JAVA%%lib/logconvertor.jar
