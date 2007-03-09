@@ -15333,6 +15333,7 @@ vice		ports/emulators/vice
 vicq		ports/net-im/vicq
 vid		ports/graphics/vid
 vida		ports/security/vida
+vidalia		ports/net-mgmt/vidalia
 videogen	ports/sysutils/videogen
 videotext	ports/misc/videotext
 view3ds		ports/graphics/view3ds
