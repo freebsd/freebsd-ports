@@ -49,7 +49,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>"Moritz Jodeit reports::</p>
+	<p>"Moritz Jodeit reports:</p>
 	<blockquote cite="http://lists.grok.org.uk/pipermail/full-disclosure/2007-March/052738.html">
 	  <p>There's an exploitable buffer overflow in the current version of
           MPlayer (v1.0rc1) which can be exploited with a maliciously crafted
