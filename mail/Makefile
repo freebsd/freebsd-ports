@@ -463,6 +463,7 @@
     SUBDIR += pygmy
     SUBDIR += pymsgauth
     SUBDIR += pyzor
+    SUBDIR += qar-bufo
     SUBDIR += qconfirm
     SUBDIR += qmHandle
     SUBDIR += qmail
