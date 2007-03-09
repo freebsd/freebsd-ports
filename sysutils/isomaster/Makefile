@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	isomaster
-PORTVERSION=	0.7
+PORTVERSION=	0.7.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://littlesvr.ca/isomaster/releases/
 
@@ -30,8 +30,6 @@ PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-MAN1=		isomaster.1
 
 post-install:
 	${MKDIR} ${PREFIX}/share/applications
