@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	deluge
-PORTVERSION=	0.4.99.1
+PORTVERSION=	0.4.99.2
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://deluge-torrent.org/downloads/
 
