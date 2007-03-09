@@ -11408,6 +11408,7 @@ pecl-swish	ports/www/pecl-swish
 pecl-tcpwrap	ports/security/pecl-tcpwrap
 pecl-tidy	ports/www/pecl-tidy
 pecl-timezonedb	ports/misc/pecl-timezonedb
+pecl-uploadprogress	ports/devel/pecl-uploadprogress
 pecl-vld	ports/devel/pecl-vld
 pecl-xdiff	ports/textproc/pecl-xdiff
 pecl-yaz	ports/net/pecl-yaz
