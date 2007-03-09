@@ -7,6 +7,7 @@
 
 PORTNAME=	mpich2
 PORTVERSION=	1.0.5p3
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	net parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/	\
@@ -33,8 +34,8 @@ USE_PERL5_BUILD=yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--enable-romio
-CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" F77=${F77} FFLAGS=${FFLAGS}
+CONFIGURE_ARGS=	--enable-romio --enable-sharedlibs=gcc
+CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}" LDFLAGS="${PTHREAD_LIBS}" F77=${F77} FFLAGS=${FFLAGS}
 FFLAGS?=	-O2
 NOCCACHE=	yes
 MAKE_ENV=	CCACHE_DISABLE=yes
@@ -84,6 +85,8 @@ CONFIGURE_ARGS+=	--without-docdir --without-htmldir
 CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR} --with-htmldir=${DOCSDIR}
 .endif
 
+LIBSSO=		fmpich mpich
+
 THREAD2FIX=	configure test/mpi/threads/comm/Makefile.in	\
 		test/mpi/threads/pt2pt/Makefile.in
 LOCALBASE2FIX=	src/mpe2/src/slog2sdk/trace_rlog/configure	\
@@ -127,8 +130,12 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${X11BASE2FIX:S|^|${WRKSRC}/|}
 
 post-install:
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}
-	@${CHOWN} -R ${BINOWN}:${BINGRP} ${PREFIX}/bin
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}
+	${CHOWN} -R ${BINOWN}:${BINGRP} ${PREFIX}/bin
+.for lib in ${LIBSSO}
+	${MV} ${PREFIX}/lib/lib${lib}.so ${PREFIX}/lib/lib${lib}.so.0
+	${LN} -s ${PREFIX}/lib/lib${lib}.so.0 ${PREFIX}/lib/lib${lib}.so
+.endfor
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/bin
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/bin
 	@${CAT} ${PKGMESSAGE}
