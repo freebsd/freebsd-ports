@@ -1,0 +1,7 @@
+qar-bufo generates the Qmail assign and recipients file based on unix groups.
+
+Unlike with qmail-pw2u, you don't need your users in /etc/passwd. They can be
+stored any where that a NSS module allows.
+
+Just make all users who send or recieve mail a member of a specific group, and
+that group will be used to generate the assign and recipients file.
