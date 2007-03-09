@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Statistics-Forecast
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	math
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Statistics
@@ -16,7 +16,6 @@ MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Calculates a future value
 
 PERL_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.1
 
 MAN3=		Statistics::Forecast.3
 
