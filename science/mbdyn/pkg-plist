@@ -29,8 +29,8 @@ lib/libmbmath.la
 lib/libmbmath.a
 lib/liby12.la
 lib/liby12.a
-lib/libcolamd.la
-lib/libcolamd.a
+lib/libcolamd_mbdyn.la
+lib/libcolamd_mbdyn.a
 lib/libnaive.la
 lib/libnaive.a
 lib/libmbwrap.la
