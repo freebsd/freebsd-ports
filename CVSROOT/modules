@@ -2598,6 +2598,7 @@ ezstream	ports/audio/ezstream
 ezxml		ports/textproc/ezxml
 f-prot		ports/security/f-prot
 f-prot-sig	ports/security/f-prot-sig
+f-protd		ports/security/f-protd
 f-spot		ports/graphics/f-spot
 f2py		ports/lang/f2py
 f4l		ports/editors/f4l
