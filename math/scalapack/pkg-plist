@@ -5,6 +5,8 @@ include/PBtools.h
 include/pblas.h
 include/scalapack.h
 lib/libscalapack.a
+lib/libscalapack.so
+lib/libscalapack.so.1
 %%DATADIR%%/TESTING/BLLT.dat
 %%DATADIR%%/TESTING/BLU.dat
 %%DATADIR%%/TESTING/BRD.dat

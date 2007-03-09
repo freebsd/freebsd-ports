@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scalapack
-PORTVERSION=	1.7.4
-PORTREVISION=	2
+PORTVERSION=	1.7.5
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/scalapack/
 DISTFILES=	scalapack-${PORTVERSION}.tgz manpages.tgz
@@ -22,8 +21,12 @@ EXTRACT_ONLY=	scalapack-${PORTVERSION}.tgz manpages.tgz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	The ScaLAPACK Scalable LAPACK library
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs \
-		${LOCALBASE}/bin/f2c:${PORTSDIR}/lang/f2c
+BUILD_DEPENDS=	${LOCALBASE}/bin/f2c:${PORTSDIR}/lang/f2c
+LIB_DEPENDS=	blacs.1:${PORTSDIR}/math/blacs
+
+CONFLICTS=	elmer-mathlibs-1*
+
+USE_LDCONFIG=	yes
 
 WANT_FORTRAN=	yes #dummy but future use
 BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
@@ -60,12 +63,23 @@ WITH_OPENMPI=   yes
 
 .if defined(WITH_OPENMPI)
 BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/lib/libmpi.so:${PORTSDIR}/net/openmpi
-RUN_DEPENDS=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
+RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
 EXTRA_PATCHES+=	${FILESDIR}/SLmake.inc-openmpi.diff
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/mpich2/lib/libmpich.a:${PORTSDIR}/net/mpich2
+LIB_DEPENDS+=	mpich:${PORTSDIR}/net/mpich2
 EXTRA_PATCHES+=	${FILESDIR}/SLmake.inc-mpich.diff
 .endif
+
+.if ${ARCH} == "sparc64" || ${ARCH} == "amd64"
+FPIC=	-fPIC
+.else
+FPIC=	-fpic
+.endif
+
+WRKSRC_SHARED=${WRKSRC}_shared
+CFLAGS_SHARED=${CFLAGS} ${FPIC}
+FFLAGS_SHARED=${CFLAGS} ${FPIC}
+SVERSION=1
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 .if ${ARCH} == "amd64"
@@ -81,25 +95,37 @@ CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops 
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,@BLAS@,${BLAS},g; s,@WRKSRC@,${WRKSRC},g ; s,@LOCALBASE@,${LOCALBASE},g ; s,@CC@,${CC},g ; s,@CFLAGS@,${CFLAGS},g ; s,@F77@,${F77},g ; s,@FFLAGS@,${FFLAGS},g ; s,@F77EXTRAFLAGS@,${F77EXTRAFLAGS},g ; s,^ARCH *.= ar,ARCMD = ar,' ${WRKSRC}/SLmake.inc
+	${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
+	@${REINPLACE_CMD} -e 's,@BLAS@,${BLAS},g; s,@WRKSRC@,${WRKSRC},g ; s,@LOCALBASE@,${LOCALBASE},g ; s,@CC@,${CC},g ; s,@CFLAGS@,${CFLAGS},g ; s,@F77@,${F77},g ; s,@FFLAGS@,${FFLAGS},g ; s,@NOOPT@,,g ; s,@F77EXTRAFLAGS@,${F77EXTRAFLAGS},g ; s,^ARCH *.= ar,ARCMD = ar,' ${WRKSRC}/SLmake.inc
+	@${REINPLACE_CMD} -e 's,@BLAS@,${BLAS},g; s,@WRKSRC@,${WRKSRC_SHARED},g ; s,@LOCALBASE@,${LOCALBASE},g ; s,@CC@,${CC},g ; s,@CFLAGS@,${CFLAGS_SHARED},g ; s,@F77@,${F77},g ; s,@FFLAGS@,${FFLAGS_SHARED},g ; s,@NOOPT@,${FPIC},g ; s,@F77EXTRAFLAGS@,${F77EXTRAFLAGS},g ; s,^ARCH *.= ar,ARCMD = ar,' ${WRKSRC_SHARED}/SLmake.inc
 .for mkf in ${ARCH2FIX}
 	@${REINPLACE_CMD} -e 's|\$$(ARCH)|$$(ARCMD)|' ${WRKSRC}/${mkf}/Makefile
+	@${REINPLACE_CMD} -e 's|\$$(ARCH)|$$(ARCMD)|' ${WRKSRC_SHARED}/${mkf}/Makefile
 .endfor
 
 do-build:
 	(cd ${WRKSRC}; make ; make exe)
+	(cd ${WRKSRC_SHARED}; make ; make exe)
 	(cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/PBtools.h.patch )
+	(cd ${WRKSRC_SHARED}; ${PATCH} < ${FILESDIR}/PBtools.h.patch )
 	(${MKDIR} ${WRKSRC}/include ;\
 	  cd ${WRKSRC}/include ;\
 	  f2c -C++ -P  ${WRKSRC}/SRC/*.f ;\
 	  f2c -C++ -P  ${WRKSRC}/TOOLS/*.f ;\
  	  ${CAT} *.P | ${GREP} -v :ref: > scalapack.h)
 
+post-build:
+	cd ${WRKSRC_SHARED} ; \
+	ld -Bshareable -o libscalapack.so.${SVERSION} -x -soname libscalapack.so.${SVERSION} --whole-archive ${WRKSRC_SHARED}/libscalapack.a ;\
+	${LN} -s libscalapack.so.${SVERSION} libscalapack.so
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libscalapack.a ${PREFIX}/lib/libscalapack.a
+	${INSTALL_DATA} ${WRKSRC_SHARED}/libscalapack.so ${PREFIX}/lib/libscalapack.so
+	${INSTALL_DATA} ${WRKSRC_SHARED}/libscalapack.so.1 ${PREFIX}/lib/libscalapack.so.1
 	${INSTALL_MAN}  ${WRKDIR}/MANPAGES/man/manl/*.l ${PREFIX}/man/manl
 	${MKDIR} ${PREFIX}/share/SCALAPACK/TESTING
-	(cd ${WRKSRC}/TESTING/ ;\
+	(cd ${WRKSRC_SHARED}/TESTING/ ;\
 	${INSTALL_PROGRAM} x* ${PREFIX}/share/SCALAPACK/TESTING ;\
 	${INSTALL_DATA} *.dat ${PREFIX}/share/SCALAPACK/TESTING)
 	${INSTALL_DATA} ${WRKSRC}/include/scalapack.h ${PREFIX}/include
