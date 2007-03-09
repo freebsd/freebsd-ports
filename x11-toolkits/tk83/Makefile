@@ -13,10 +13,11 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
 DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	martin@matuska.org
 COMMENT=	Graphical toolkit for TCL
 
-LIB_DEPENDS=	tcl83.1:${PORTSDIR}/${TCL83_PORT}
+USE_TCL=	83
+USE_TCL_BUILD=	83
 
 LATEST_LINK=	tk83
 USE_XLIB=	yes
@@ -36,9 +37,16 @@ NOPRECIOUSMAKEVARS=	Too many _MLINKS for README.html
 TCL83_PORT?=	lang/tcl83
 MANCOMPRESSED=	no
 
+OPTIONS=	TK83_MAN "Install tk 8.3 manpages" on \
+		WISH_WRAPPER "Require wish wrapper from ports" off
+
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_TK83_MAN)
+.if defined(WITH_WISH_WRAPPER)
+RUN_DEPENDS+=		wish:${PORTSDIR}/lang/tcl-tk-wrapper
+.endif
+
+.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK83_MAN)
 
 MAN1=	wish.1
 MAN3=	3DBorder.3 AddOption.3 BindTable.3 CanvPsY.3 CanvTkwin.3 \
@@ -330,7 +338,7 @@ post-configure:
 	${REINPLACE_CMD} \
 		-e 's|${WRKDIRPREFIX}${.CURDIR}|$${WRKDIRPREFIX}${TKBASE}|' \
 		${WRKSRC}/tkConfig.sh
-.if !defined(WITH_TK83_MAN)
+.if defined(NO_INSTALL_MANPAGES) || !defined(WITH_TK83_MAN)
 	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
 		${WRKSRC}/Makefile
 .endif
