@@ -11,7 +11,7 @@ PORTNAME=	lilypond
 PORTVERSION=	2.2.2
 PORTREVISION=	1
 CATEGORIES=	print audio
-MASTER_SITES=	http://lilypond.org/download/v2.2/:src \
+MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/:src \
 		http://distfiles.master.finkmirrors.net/:rpm
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src \
 		${PORTNAME}-${PORTVERSION}-1.i386.rpm:rpm
