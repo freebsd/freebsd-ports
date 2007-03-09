@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clive
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.7
 #PORTREVISION=	0
 #PORTEPOCH=	0
 CATEGORIES=	multimedia
@@ -31,6 +31,9 @@ OPTIONS=	FFMPEG	"Install ffmpeg for re-encoding" off \
 		MPLAYER	"Install mplayer as video player" off \
 		VLC	"Install vlc as video player" off
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
 
