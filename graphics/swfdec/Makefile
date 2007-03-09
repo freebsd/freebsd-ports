@@ -17,8 +17,6 @@ COMMENT=	Flash Rendering Library
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
 		oil-0.3.1:${PORTSDIR}/devel/liboil
 
-BROKEN=		Incomplete pkg-plist
-
 USE_XLIB=	yes
 USE_SDL=	sdl
 USE_GNOME=	gnomehack gtk20
@@ -36,6 +34,8 @@ PLIST_SUB=	VERSION=${PORTVERSION:R}
 post-patch:
 	@${REINPLACE_CMD} -e "s,int16_t,__int16_t," ${WRKSRC}/libswfdec/swfdec_shape.c
 	@${REINPLACE_CMD} -e 's|plugin||g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e "s|sdl-config|${SDL_CONFIG:T}|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|sdl-config|${SDL_CONFIG:T}|g" \
+		-e 's|libavcodec|libavcodec-nonfreebsd|g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

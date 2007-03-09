@@ -23,4 +23,6 @@ share/gtk-doc/html/swfdec/swfdec-SwfdecBuffer.html
 share/gtk-doc/html/swfdec/swfdec.devhelp
 share/gtk-doc/html/swfdec/swfdec.devhelp2
 share/gtk-doc/html/swfdec/up.png
+@dirrm share/gtk-doc/html/swfdec
+@dirrm include/swfdec-%%VERSION%%/libswfdec
 @dirrm include/swfdec-%%VERSION%%
