@@ -1,5 +1,5 @@
---- SLmake.inc.orig	Thu Aug  9 04:59:50 2001
-+++ SLmake.inc	Mon Nov 13 15:45:36 2006
+--- SLmake.inc.orig	Thu Jan 19 06:36:03 2006
++++ SLmake.inc	Wed Mar  7 14:03:20 2007
 @@ -19,26 +19,26 @@
  #  The complete path to the top level of ScaLAPACK directory, usually
  #  $(HOME)/SCALAPACK
@@ -42,15 +42,25 @@
 +F77           = mpif77
  #F77           = /usr/local/pgi/linux86/bin/pgf77
 -CC            = gcc
-+CC            = mpicc
- NOOPT         = 
+-NOOPT         = 
 -F77FLAGS      =  -O3 $(NOOPT)
 -CCFLAGS       = -O4
++CC            = mpicc
++NOOPT         = @NOOPT@
 +F77FLAGS      = @FFLAGS@
 +CCFLAGS       = @CFLAGS@
  SRCFLAG       =
  F77LOADER     = $(F77)
  CCLOADER      = $(CC)
+@@ -82,7 +82,7 @@
+ #  C preprocessor defs for compilation 
+ #  (-DNoChange, -DAdd_, -DUpCase, or -Df77IsF2C)
+ #
+-CDEFS         = -Df77IsF2C -DNO_IEEE $(USEMPI)
++CDEFS         = -DAdd_ -DNO_IEEE $(USEMPI)
+ #
+ #  The archiver and the flag(s) to use when building archive (library)
+ #  Also the ranlib routine.  If your system has no ranlib, set RANLIB = echo
 @@ -94,7 +94,7 @@
  #  The name of the libraries to be created/linked to
  #
