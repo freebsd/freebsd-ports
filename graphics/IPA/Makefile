@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	IPA
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.prima.eu.org/IPA/
 
