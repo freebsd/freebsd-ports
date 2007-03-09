@@ -186,6 +186,8 @@ ezmlm-*			mail/ezmlm		No license -- see
 ezmlm-*			mail/ezmlm-idx		No license -- see
 						http://cr.yp.to/softwarelaw.html
 f-prot-sig*		security/f-prot-sig	Free for personal use only
+f-protd			security/f-protd	60 days free of trial for 
+						everybody
 f6kuzzzz.taz		databases/libudbc	Downloading and redistribution
 						terms are unclear
 faac*			audio/faac		Restrictive copyright (do not
