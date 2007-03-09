@@ -29,7 +29,7 @@ upgrades.
   }
 
   Note also, portupgrade knows nothing how to handle ports with different
-  suffixes (E.g. -nox11). So you should define explicitly variables 
+  suffixes (E.g. -nox11). So you should define explicitly variables
   (E.g. WITHOUT_X11=yes) for the ports in /etc/make.conf or pkgtools.conf
   (MAKE_ARGS section) files.
 
