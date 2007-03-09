@@ -7,6 +7,7 @@
 
 PORTNAME=	spambayes
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,6 +21,13 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+USE_RC_SUBR=	pyspamd
+LOCALSTATDIR?=	/var/db/spambayes
+DBDIR?=		${LOCALSTATDIR}/dbs
+CACHEDIR?=	${LOCALSTATDIR}/cache
+PLIST_SUB+=	LOCALSTATDIR=${LOCALSTATDIR} \
+		DBDIR=${DBDIR} \
+		CACHEDIR=${CACHEDIR}
 
 PORTDOCS=	CHANGELOG.txt \
 		LICENSE.txt \
@@ -40,8 +48,19 @@ post-patch:
 		${XARGS} -n 10 -x \
 		${REINPLACE_CMD} -E \
 		-e 's|/usr/bin/env python|${PYTHONBASE}/bin/${PYTHON_VERSION}|'
-	@${FIND} ${WRKSRC}/utilities ${WRKSRC}/contrib \
+	@${FIND} ${WRKSRC}/utilities ${WRKSRC}/contrib ${WRKSRC}/spambayes\
 		-type f -name *.bak | ${XARGS} ${RM}
+	@${REINPLACE_CMD} -e \
+		'/persistent_storage_file/s|hammie.db|${DBDIR}/hammie.db|' \
+		-e \
+		'/messageinfo_storage_file/s|spambayes.messageinfo.db|${DBDIR}/spambayes.messageinfo.db|' \
+		-e \
+		'/spam_cache/s|pop3proxy-spam-cache|${CACHEDIR}/pop3proxy-spam-cache|' \
+		-e \
+		'/ham_cache/s|pop3proxy-ham-cache|${CACHEDIR}/pop3proxy-ham-cache|' \
+		-e \
+		'/unknown_cache/s|pop3proxy-unknown-cache|${CACHEDIR}/pop3proxy-unknown-cache|' \
+		${WRKSRC}/spambayes/Options.py
 
 post-install:
 .ifndef(NOPORTDOCS)
@@ -56,5 +75,7 @@ post-install:
 	@${MKDIR} ${DOCSDIR}/utilities
 	@${INSTALL_DATA} ${WRKSRC}/utilities/* ${DOCSDIR}/utilities
 .endif
+	@${MKDIR} ${CACHEDIR}
+	@${MKDIR} ${DBDIR}
 
 .include <bsd.port.mk>

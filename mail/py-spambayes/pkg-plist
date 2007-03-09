@@ -160,4 +160,14 @@ bin/sb_xmlrpcserver.py
 %%PYTHON_SITELIBDIR%%/spambayes/tokenizer.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/spambayes/resources
 @dirrm %%PYTHON_SITELIBDIR%%/spambayes
-@unexec rmdir %%PYTHON_SITELIBDIR%% 2>/dev/null || true
+@cwd /
+@exec echo mkdir -p %%CACHEDIR%%
+@exec echo mkdir -p %%DBDIR%%
+@dirrmtry %%CACHEDIR%%/pop3proxy-spam-cache
+@dirrmtry %%CACHEDIR%%/pop3proxy-ham-cache
+@dirrmtry %%CACHEDIR%%/pop3proxy-unknown-cache
+@dirrmtry %%CACHEDIR%%
+@dirrmtry %%DBDIR%%
+@dirrmtry %%LOCALSTATDIR%%
+@cwd %%PREFIX%%
+@dirrmtry %%PYTHON_SITELIBDIR%%

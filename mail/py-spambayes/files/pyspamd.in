@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# Start or stop pyspamd
+# $FreeBSD$
+
+# PROVIDE: pyspamd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+prefix=/usr/local
+
+# Define these pyspamd_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+
+. /etc/rc.subr
+
+name="pyspamd"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${pyspamd_enable="NO"}
+
+command="/usr/sbin/daemon"
+command_args=" -p /var/run/pyspamd.pid /usr/local/bin/python -OO /usr/local/bin/sb_server.py 2>&1 >/dev/null"
+pidfile="/var/run/pyspamd.pid"
+procname="/usr/local/bin/python"
+
+run_rc_command "$1"
