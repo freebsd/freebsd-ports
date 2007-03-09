@@ -75,6 +75,10 @@ CONFIGURE_ARGS+=--disable-doxygen
 IGNORE=	does not build on 4.X
 .endif
 
+.if ${OSVERSION} > 700032
+CFLAGS+=	-D_XOPEN_SOURCE_EXTENDED
+.endif
+
 .if !defined(GAIM_SLAVE)
 .if ${HAVE_GNOME:Mgconf2}!="" || exists(${LOCALBASE}/bin/gconftool-2)
 USE_GNOME+=	gconf2
