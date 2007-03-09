@@ -21,7 +21,7 @@ lib/audacious/Input/libalac.so
 lib/audacious/Input/libcdaudio.so
 lib/audacious/Input/libconsole.so
 lib/audacious/Input/libcuesheet.so
-@comment %%FLACPLUGIN%%lib/audacious/Input/libflac.so
+%%VORBISPLUGIN%%lib/audacious/Input/libflac.so
 %%MP3PLUGIN%%lib/audacious/Input/libmadplug.so
 lib/audacious/Input/libmetronom.so
 %%MODPLUG%%lib/audacious/Input/libmodplug.so
