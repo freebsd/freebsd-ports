@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xlog
-PORTVERSION=	1.3.1
+PORTVERSION=	1.5
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://pg4i.chronos.org.uk/download/ \
 		http://www.qsl.net/pg4i/download/
@@ -13,21 +13,23 @@ MASTER_SITES=	http://pg4i.chronos.org.uk/download/ \
 MAINTAINER=	matt@chronos.org.uk
 COMMENT=	Amateur Radio logging application
 
-USE_GNOME=	libgnomeprint gtk20
+USE_GETTEXT=	yes
+USE_GNOME=	libgnomeprint gnomelibs gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mime-update \
 		--mandir=${PREFIX}/man
 
-.if defined(WITH_HAMLIB)
 LIB_DEPENDS+=	hamlib:${PORTSDIR}/comms/hamlib
-CONFIGURE_ARGS+=	--enable-hamlib
-.endif
 
 MAN1=		xlog.1
 
-pre-extract:
-.if !defined(WITH_HAMLIB)
-	@${ECHO_MSG} "You can enable hamlib support for Xlog by defining WITH_HAMLIB"
+.if defined (WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+WITHNLS=	"@comment "
+.else
+WITHNLS=	""
 .endif
+
+PLIST_SUB+=	WITHNLS=${WITHNLS}
 
 .include <bsd.port.mk>
