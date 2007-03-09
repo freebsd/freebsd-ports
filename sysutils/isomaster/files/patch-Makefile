@@ -1,4 +1,4 @@
---- Makefile.orig	Thu Jan 11 16:37:43 2007
+--- Makefile.orig
 +++ Makefile
 @@ -47,7 +47,7 @@
  
@@ -9,12 +9,14 @@
  
  isomaster: $(OBJECTS) bk/bk.a iniparser-2.15/libiniparser.a
  	$(CC) $(OBJECTS) bk/bk.a iniparser-2.15/libiniparser.a $(CFLAGS) $(CPPFLAGS) `pkg-config --libs gtk+-2.0`-o isomaster
-@@ -92,14 +92,14 @@
+@@ -91,15 +91,15 @@
+ ifndef WITHOUT_NLS
  	cd po && $(MAKE) install
  endif
- 	$(INSTALL) -d $(DESTDIR)$(MYMANPATH)
+-	$(INSTALL) -d $(DESTDIR)$(MYMANPATH)
 -	$(INSTALL) -m 644 isomaster.1.gz $(DESTDIR)$(MYMANPATH)
-+	$(INSTALL) -m 644 isomaster.1 $(DESTDIR)$(MYMANPATH)
++#	$(INSTALL) -d $(DESTDIR)$(MYMANPATH)
++#	$(INSTALL) -m 644 isomaster.1 $(DESTDIR)$(MYMANPATH)
  
  uninstall: 
  	$(RM) $(DESTDIR)$(BINPATH)/isomaster
