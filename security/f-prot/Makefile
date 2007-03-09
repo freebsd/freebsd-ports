@@ -28,7 +28,7 @@ NO_BUILD=	yes
 
 MAN1=		f-prot.1
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 do-install:
 	cd ${WRKDIR} && ${TAR}	--exclude man_pages \
