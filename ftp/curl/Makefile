@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.16.0
-PORTREVISION=	1
+PORTVERSION=	7.16.1
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -56,6 +55,7 @@ OPTIONS=	CARES "Asynchronous DNS resolution via c-ares" off \
 		IPV6 "IPv6 support" on \
 		KERBEROS4 "Kerberos 4 authentication" off \
 		LIBIDN "Internationalized Domain Names via libidn" off \
+		LIBSSH2 "SCP/SFTP support via libssh2" off \
 		NTLM "NTLM authentication" off \
 		OPENSSL "OpenSSL support" on
 
@@ -63,6 +63,10 @@ OPTIONS=	CARES "Asynchronous DNS resolution via c-ares" off \
 
 .if defined(WITH_GNUTLS) && defined(WITH_OPENSSL)
 IGNORE=		may only use GNU TLS if OpenSSL support is disabled
+.endif
+
+.if defined(WITH_LIBSSH2) && !defined(WITH_OPENSSL)
+IGNORE=		only supports LIBSSH2 with OpenSSL
 .endif
 
 .if defined(WITH_NTLM) && !defined(WITH_OPENSSL)
@@ -117,6 +121,13 @@ LIB_DEPENDS+=	idn.16:${PORTSDIR}/dns/libidn
 CONFIGURE_ARGS+=	--with-libidn=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-libidn
+.endif
+
+.if defined(WITH_LIBSSH2)
+LIB_DEPENDS+=	ssh2.0:${PORTSDIR}/security/libssh2
+CONFIGURE_ARGS+=	--with-libssh2=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-libssh2
 .endif
 
 .if defined(WITH_CURL_DEBUG)
