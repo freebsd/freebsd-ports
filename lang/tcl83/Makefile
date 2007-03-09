@@ -7,13 +7,13 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.3.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang tcl83
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
 DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	martin@matuska.org
 COMMENT=	Tool Command Language
 
 LATEST_LINK=	tcl83
@@ -24,15 +24,20 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --includedir=${LOCALBASE}/include/tcl${TCL_VER}
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
 MAKE_ENV=	SHORT_TCL_VER=83
-PKGINSTALL=	${PKGDIR}/pkg-install.tclsh
-PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.tclsh
 TCL_VER=	8.3
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 PLIST_SUB=	TCL_VER=${TCL_VER} SHORT_TCL_VER=83
 
+OPTIONS=	TCL83_MAN "Install tcl 8.3 manpages" on \
+		TCLSH_WRAPPER "Require tclsh wrapper from ports" off
+
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_TCL83_MAN)
+.if defined(WITH_TCLSH_WRAPPER)
+RUN_DEPENDS+=		tclsh:${PORTSDIR}/lang/tcl-tk-wrapper
+.endif
+
+.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL83_MAN)
 
 MAN1=	tclsh.1
 
@@ -432,7 +437,7 @@ post-configure:
 	${REINPLACE_CMD} \
 		-e 's|${WRKDIRPREFIX}${.CURDIR}|$${WRKDIRPREFIX}${TCLBASE}|' \
 		${WRKSRC}/tclConfig.sh
-.if !defined(WITH_TCL83_MAN)
+.if defined(NO_INSTALL_MANPAGES) || !defined(WITH_TCL83_MAN)
 	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
 		${WRKSRC}/Makefile
 .endif
