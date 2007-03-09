@@ -7,16 +7,17 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.2.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-toolkits tk82
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_2
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	martin@matuska.org
 COMMENT=	Graphical toolkit for TCL
 
-LIB_DEPENDS=	tcl82.1:${PORTSDIR}/${TCL82_PORT}
+USE_TCL=	82
+USE_TCL_BUILD=	82
 
 LATEST_LINK=	tk82
 USE_XLIB=	yes
@@ -34,9 +35,16 @@ PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.wish
 TCL82_PORT?=	lang/tcl82
 MANCOMPRESSED=	no
 
+OPTIONS=	TK82_MAN "Install tk 8.2 manpages" on \
+		WISH_WRAPPER "Require wish wrapper from ports" off
+
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_TK82_MAN)
+.if defined(WITH_WISH_WRAPPER)
+RUN_DEPENDS+=		wish:${PORTSDIR}/lang/tcl-tk-wrapper
+.endif
+
+.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK82_MAN)
 
 MAN1=	wish.1
 MAN3=	3DBorder.3 BindTable.3 CanvPsY.3 CanvTkwin.3 CanvTxtInfo.3 \
@@ -312,7 +320,7 @@ post-configure:
 	${REINPLACE_CMD} \
 		-e 's|${WRKDIRPREFIX}${.CURDIR}|$${WRKDIRPREFIX}${TKBASE}|' \
 		${WRKSRC}/tkConfig.sh
-.if !defined(WITH_TK82_MAN)
+.if defined(NO_INSTALL_MANPAGES) || !defined(WITH_TK82_MAN)
 	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
 		${WRKSRC}/Makefile
 .endif
