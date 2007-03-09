@@ -11,12 +11,3 @@
      ;;
    esac
  
-@@ -35638,7 +35640,7 @@
- main ()
- {
- #ifndef basename
--  char *p = (char *) basename;
-+  char *(*p)(const char *) = basename;
-   return !p;
- #endif
- 
