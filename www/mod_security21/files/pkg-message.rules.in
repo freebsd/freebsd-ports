@@ -1,0 +1,10 @@
+
+The modsecurity 2 Core Rules have been installed in 
+
+  %%PREFIX%%/%%APACHEETCDIR%%/Includes/mod_security2/
+
+and run in "DetectionOnly" mode as not to disturb operatings.
+
+Please read http://www.modsecurity.org/projects/rules/index.html
+
+Logging is done to /var/log/httpd-modsec-*.log

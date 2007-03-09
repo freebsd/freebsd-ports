@@ -64,7 +64,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '\
 		s|SecRuleEngine On|SecRuleEngine DetectionOnly|; \
 		s|SecAuditLog.*logs/modsec_audit.log|SecAuditLog /var/log/httpd-modsec2_audit.log|; \
-		s|SecDebugLog.*logs/modsec_debug.log|SecAuditLog /var/log/httpd-modsec2_debug.log|; \
+		s|SecDebugLog.*logs/modsec_debug.log|SecDebugLog /var/log/httpd-modsec2_debug.log|; \
 		s|SecServerSignature "Apache/2.2.0 (Fedora)"|SecServerSignature "Apache/${APACHE_VERSION:C/[0-9]/\0./g}x (${OPSYS})"|; \
 		' ${WRKSRCTOP}/rules/modsecurity_crs_10_config.conf
 
