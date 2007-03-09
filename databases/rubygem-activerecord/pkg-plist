@@ -50,7 +50,6 @@
 %%GEM_LIB_DIR%%/lib/active_record/connection_adapters/sqlserver_adapter.rb
 %%GEM_LIB_DIR%%/lib/active_record/connection_adapters/sybase_adapter.rb
 %%GEM_LIB_DIR%%/lib/active_record/connection_adapters/abstract/connection_specification.rb
-%%GEM_LIB_DIR%%/lib/active_record/connection_adapters/abstract/connection_specification.rb.rej
 %%GEM_LIB_DIR%%/lib/active_record/connection_adapters/abstract/database_statements.rb
 %%GEM_LIB_DIR%%/lib/active_record/connection_adapters/abstract/quoting.rb
 %%GEM_LIB_DIR%%/lib/active_record/connection_adapters/abstract/schema_definitions.rb
