@@ -33,4 +33,5 @@ IGNORE=		requires perl5.6. Install lang/perl5 or lang/perl5.8 and try again
 BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
+BROKEN=		hangs asking 'Please enter your CPAN site' repeatedly
 .include <bsd.port.post.mk>
