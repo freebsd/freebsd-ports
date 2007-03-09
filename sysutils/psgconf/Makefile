@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	psgconf
-PORTVERSION=	3.2.3
+PORTVERSION=	3.2.4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp-dev.cites.uiuc.edu/pub/psgconf/
 
@@ -195,8 +195,11 @@ PKGDEINSTALL=	${WRKSRC}/postinstall
 post-patch:
 	${FIND} ${WRKSRC} -name "*.orig" -delete
 
+.if ${ARCH} == "amd64"
+# Does not work because Proc::ProcessTable is broken
 post-build:
 	cd ${WRKSRC} && ${MAKE} test
+.endif
 
 post-install:
 	-@${MKDIR} ${PREFIX}/etc
