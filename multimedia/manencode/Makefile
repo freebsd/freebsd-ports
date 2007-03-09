@@ -38,7 +38,7 @@ INTERFACE=	DVD.png DVDOK.png bt_play.png bt_stop.png \
 MAKE_ENV?=	QTDIR=${QT_PREFIX}
 QMAKE?=	${LOCALBASE}/bin/qmake-qt4
 QMAKESPEC?=	${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
-WRKSRC=	${WRKDIR}/${DISTNAME}
+WRKSRC=	${WRKDIR}/Manencode
 
 DESKTOP_ENTRIES=	"Manencode" \
   			"Transcode your video" \
