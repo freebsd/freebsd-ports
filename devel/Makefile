@@ -1671,6 +1671,7 @@
     SUBDIR += pecl-runkit
     SUBDIR += pecl-statgrab
     SUBDIR += pecl-svn
+    SUBDIR += pecl-uploadprogress
     SUBDIR += pecl-vld
     SUBDIR += pedisassem
     SUBDIR += perforce
