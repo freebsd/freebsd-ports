@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	t_coffee
-PORTVERSION=	3.27
+PORTVERSION=	4.96
 CATEGORIES=	biology
 MASTER_SITES=	http://www.tcoffee.org/Packages/
 DISTNAME=	T-COFFEE_distribution_Version_${PORTVERSION}
