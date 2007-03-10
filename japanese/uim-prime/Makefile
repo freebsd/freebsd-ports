@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-prime
 COMMENT=	Uim plugin using PRIME input method
 
 BUILD_DEPENDS=	prime:${PORTSDIR}/japanese/prime
-LIB_DEPENDS=	uim.3:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	uim.4:${PORTSDIR}/textproc/uim
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim

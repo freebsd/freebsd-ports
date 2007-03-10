@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-canna
 COMMENT=	Uim plugin using Canna input method
 
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna \
-		uim.3:${PORTSDIR}/textproc/uim
+		uim.4:${PORTSDIR}/textproc/uim
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}

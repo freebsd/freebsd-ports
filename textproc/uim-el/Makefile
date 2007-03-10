@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uim-el
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://uim.freedesktop.org/releases/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}

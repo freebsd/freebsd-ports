@@ -1,11 +1,11 @@
---- gtk/Makefile.in.orig	Fri Dec 16 17:10:56 2005
-+++ gtk/Makefile.in	Sat Dec 24 03:04:10 2005
-@@ -381,15 +381,15 @@
- $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
+--- gtk/Makefile.in.orig	Wed Jan  3 21:36:56 2007
++++ gtk/Makefile.in	Wed Jan  3 21:38:08 2007
+@@ -364,15 +364,15 @@
+ $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
  	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
  install-moduleLTLIBRARIES: $(module_LTLIBRARIES)
 -	@$(NORMAL_INSTALL)
--	test -z "$(moduledir)" || $(mkdir_p) "$(DESTDIR)$(moduledir)"
+-	test -z "$(moduledir)" || $(MKDIR_P) "$(DESTDIR)$(moduledir)"
 -	@list='$(module_LTLIBRARIES)'; for p in $$list; do \
 -	  if test -f $$p; then \
 -	    f=$(am__strip_dir) \
@@ -14,7 +14,7 @@
 -	  else :; fi; \
 -	done
 +@GTK2_TRUE@	@$(NORMAL_INSTALL)
-+@GTK2_TRUE@	test -z "$(moduledir)" || $(mkdir_p) "$(DESTDIR)$(moduledir)"
++@GTK2_TRUE@	test -z "$(moduledir)" || $(MKDIR_P) "$(DESTDIR)$(moduledir)"
 +@GTK2_TRUE@	@list='$(module_LTLIBRARIES)'; for p in $$list; do \
 +@GTK2_TRUE@	  if test -f $$p; then \
 +@GTK2_TRUE@	    f=$(am__strip_dir) \

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	uim
-PORTVERSION=	1.2.1
-PORTREVISION?=	1
+PORTVERSION=	1.3.1
 CATEGORIES?=	textproc
 MASTER_SITES=	http://uim.freedesktop.org/releases/
 .if !defined(UIM_SLAVE) && defined(WITHOUT_X11)
@@ -25,6 +24,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
 
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
@@ -78,25 +78,16 @@ CONFIGURE_ARGS+=--without-${_x}
 CONFIGURE_ARGS+=--disable-applet
 .endif
 
-.if !defined(UIM_SLAVE)
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "NOTE:"
-	@${ECHO_MSG} "Optional features are splitted into the following slave ports."
-	@${ECHO_MSG} "OPTIONS variable is no longer used."
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "japanese/uim-anthy"
-	@${ECHO_MSG} "japanese/uim-canna"
-	@${ECHO_MSG} "japanese/uim-prime"
-	@${ECHO_MSG} "textproc/uim-gnome"
-	@${ECHO_MSG} "textproc/uim-gtk"
-	@${ECHO_MSG} "textproc/uim-m17nlib"
-	@${ECHO_MSG} "textproc/uim-qt"
-	@${ECHO_MSG} ""
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/scm/skk-custom.scm
+
+do-build:
+.if !defined(UIM_SLAVE)
+.for d in replace uim scm xim po fep emacs pixmaps
+	cd ${WRKSRC}/${d} && ${GMAKE}
+.endfor
+	cd ${WRKSRC}/helper && ${GMAKE}
+.endif
 
 do-install:
 .if !defined(UIM_SLAVE)
@@ -109,6 +100,7 @@ do-install:
 
 .if !defined(UIM_SLAVE) && !defined(NOPORTDOCS)
 post-install:
+	${MKDIR} ${DATADIR}/helperdata
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${DOCSDIR_JA}
 	${INSTALL_DATA} ${WRKSRC}/doc/KEY ${DOCSDIR}/KEY

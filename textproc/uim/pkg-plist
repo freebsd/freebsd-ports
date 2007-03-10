@@ -20,7 +20,7 @@ lib/libuim-custom.so.2
 lib/libuim.a
 lib/libuim.la
 lib/libuim.so
-lib/libuim.so.3
+lib/libuim.so.4
 lib/uim/plugin/libuim-custom-enabler.a
 lib/uim/plugin/libuim-custom-enabler.la
 lib/uim/plugin/libuim-custom-enabler.so
@@ -93,6 +93,8 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/pixmaps/hangul3.png
 %%DATADIR%%/pixmaps/hangul3.svg
 %%DATADIR%%/pixmaps/im_subst.svg
+%%DATADIR%%/pixmaps/im_switcher.png
+%%DATADIR%%/pixmaps/im_switcher.svg
 %%DATADIR%%/pixmaps/ipa-x-sampa.png
 %%DATADIR%%/pixmaps/ipa-x-sampa.svg
 %%DATADIR%%/pixmaps/ja_azik.png
@@ -147,9 +149,10 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/pixmaps/scim.svg
 %%DATADIR%%/pixmaps/skk.png
 %%DATADIR%%/pixmaps/skk.svg
-%%DATADIR%%/pixmaps/switcher-icon.png
 %%DATADIR%%/pixmaps/tcode.png
 %%DATADIR%%/pixmaps/tcode.svg
+%%DATADIR%%/pixmaps/trycode.png
+%%DATADIR%%/pixmaps/trycode.svg
 %%DATADIR%%/pixmaps/tutcode.png
 %%DATADIR%%/pixmaps/tutcode.svg
 %%DATADIR%%/pixmaps/uim-dict.png
@@ -180,6 +183,7 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/spellcheck-custom.scm
 %%DATADIR%%/spellcheck.scm
 %%DATADIR%%/tcode.scm
+%%DATADIR%%/trycode.scm
 %%DATADIR%%/tutcode-key-custom.scm
 %%DATADIR%%/tutcode.scm
 %%DATADIR%%/uim-db.scm
@@ -195,7 +199,6 @@ share/locale/ko/LC_MESSAGES/uim.mo
 @dirrmtry share/applications
 %%PORTDOCS%%@dirrm %%DOCSDIR_JA%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/helperdata
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/ko/LC_MESSAGES
-@dirrmtry share/locale/ko

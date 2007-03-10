@@ -1,6 +1,6 @@
---- uim/Makefile.in.orig	Fri Jul  7 11:16:53 2006
-+++ uim/Makefile.in	Fri Jul 28 00:01:50 2006
-@@ -89,14 +89,11 @@
+--- uim/Makefile.in.orig	Wed Jan  3 21:08:38 2007
++++ uim/Makefile.in	Wed Jan  3 21:16:23 2007
+@@ -85,8 +85,6 @@
  libLTLIBRARIES_INSTALL = $(INSTALL)
  uim_pluginLTLIBRARIES_INSTALL = $(INSTALL)
  LTLIBRARIES = $(lib_LTLIBRARIES) $(uim_plugin_LTLIBRARIES)
@@ -9,37 +9,47 @@
  am__libuim_anthy_la_SOURCES_DIST = anthy.c
  @ANTHY_TRUE@@ENABLE_ANTHY_STATIC_FALSE@am_libuim_anthy_la_OBJECTS = libuim_anthy_la-anthy.lo
  libuim_anthy_la_OBJECTS = $(am_libuim_anthy_la_OBJECTS)
+@@ -95,7 +93,6 @@
+ 	$(libuim_anthy_la_LDFLAGS) $(LDFLAGS) -o $@
  @ANTHY_TRUE@@ENABLE_ANTHY_STATIC_FALSE@am_libuim_anthy_la_rpath =  \
  @ANTHY_TRUE@@ENABLE_ANTHY_STATIC_FALSE@	-rpath $(uim_plugindir)
 -@CANNA_TRUE@libuim_canna_la_DEPENDENCIES = libuim.la
  am__libuim_canna_la_SOURCES_DIST = canna.c
  @CANNA_TRUE@am_libuim_canna_la_OBJECTS = libuim_canna_la-canna.lo
  libuim_canna_la_OBJECTS = $(am_libuim_canna_la_OBJECTS)
-@@ -109,23 +106,19 @@
- libuim_custom_la_DEPENDENCIES = libuim.la
- am_libuim_custom_la_OBJECTS = libuim_custom_la-uim-custom.lo
- libuim_custom_la_OBJECTS = $(am_libuim_custom_la_OBJECTS)
+@@ -117,7 +114,6 @@
+ libuim_custom_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(libuim_custom_la_LDFLAGS) $(LDFLAGS) -o $@
 -@M17NLIB_TRUE@libuim_m17nlib_la_DEPENDENCIES = libuim.la
  am__libuim_m17nlib_la_SOURCES_DIST = m17nlib.c
  @M17NLIB_TRUE@am_libuim_m17nlib_la_OBJECTS =  \
  @M17NLIB_TRUE@	libuim_m17nlib_la-m17nlib.lo
- libuim_m17nlib_la_OBJECTS = $(am_libuim_m17nlib_la_OBJECTS)
+@@ -126,7 +122,6 @@
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(libuim_m17nlib_la_LDFLAGS) $(LDFLAGS) -o $@
  @M17NLIB_TRUE@am_libuim_m17nlib_la_rpath = -rpath $(uim_plugindir)
 -@MANA_TRUE@libuim_mana_la_DEPENDENCIES = libuim.la
  am__libuim_mana_la_SOURCES_DIST = mana.c
  @MANA_TRUE@am_libuim_mana_la_OBJECTS = libuim_mana_la-mana.lo
  libuim_mana_la_OBJECTS = $(am_libuim_mana_la_OBJECTS)
+@@ -134,7 +129,6 @@
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(libuim_mana_la_LDFLAGS) $(LDFLAGS) -o $@
  @MANA_TRUE@am_libuim_mana_la_rpath = -rpath $(uim_plugindir)
 -@PRIME_TRUE@libuim_prime_la_DEPENDENCIES = libuim.la
  am__libuim_prime_la_SOURCES_DIST = prime.c
  @PRIME_TRUE@am_libuim_prime_la_OBJECTS = libuim_prime_la-prime.lo
  libuim_prime_la_OBJECTS = $(am_libuim_prime_la_OBJECTS)
+@@ -142,7 +136,6 @@
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(libuim_prime_la_LDFLAGS) $(LDFLAGS) -o $@
  @PRIME_TRUE@am_libuim_prime_la_rpath = -rpath $(uim_plugindir)
 -@SCIM_TRUE@libuim_scim_la_DEPENDENCIES = libuim.la
  am__libuim_scim_la_SOURCES_DIST = scim.cpp
  @SCIM_TRUE@am_libuim_scim_la_OBJECTS = libuim_scim_la-scim.lo
  libuim_scim_la_OBJECTS = $(am_libuim_scim_la_OBJECTS)
-@@ -491,27 +484,27 @@
+@@ -494,27 +487,27 @@
  	$(am__append_5)
  libuim_custom_la_SOURCES = uim-custom.c
  @M17NLIB_TRUE@libuim_m17nlib_la_SOURCES = m17nlib.c

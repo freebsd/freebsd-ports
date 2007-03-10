@@ -1,15 +1,15 @@
---- helper/Makefile.in.orig	Mon Aug 21 00:57:13 2006
-+++ helper/Makefile.in	Mon Aug 21 00:57:24 2006
+--- helper/Makefile.in.orig	Wed Jan  3 21:22:49 2007
++++ helper/Makefile.in	Wed Jan  3 21:26:49 2007
 @@ -87,8 +87,6 @@
  @GTK2_TRUE@	uim_candwin_gtk-candwin-gtk.$(OBJEXT) \
  @GTK2_TRUE@	uim_candwin_gtk-caret-state-indicator.$(OBJEXT)
  uim_candwin_gtk_OBJECTS = $(am_uim_candwin_gtk_OBJECTS)
 -@GTK2_TRUE@uim_candwin_gtk_DEPENDENCIES =  \
 -@GTK2_TRUE@	$(top_builddir)/uim/libuim.la
- am__uim_dict_gtk_SOURCES_DIST = dict-main-gtk.c dict-canna-cclass.c \
- 	dict-canna-cclass.h dict-word-win-gtk.c dict-word-win-gtk.h \
- 	dict-word-list-win-gtk.c dict-word-list-win-gtk.h dict-util.c \
-@@ -111,22 +109,14 @@
+ uim_candwin_gtk_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(uim_candwin_gtk_CFLAGS) \
+ 	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+@@ -114,10 +112,6 @@
  @DICT_TRUE@@GTK2_TRUE@	$(am__objects_1) $(am__objects_2)
  uim_dict_gtk_OBJECTS = $(am_uim_dict_gtk_OBJECTS)
  am__DEPENDENCIES_1 =
@@ -17,65 +17,74 @@
 -@DICT_TRUE@@GTK2_TRUE@	$(top_builddir)/uim/libuim.la \
 -@DICT_TRUE@@GTK2_TRUE@	$(am__DEPENDENCIES_1) \
 -@DICT_TRUE@@GTK2_TRUE@	$(am__DEPENDENCIES_1)
- am__uim_im_switcher_gtk_SOURCES_DIST = im-switcher-gtk.c
+ uim_dict_gtk_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(uim_dict_gtk_CFLAGS) \
+ 	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+@@ -125,8 +119,6 @@
  @GTK2_TRUE@am_uim_im_switcher_gtk_OBJECTS =  \
  @GTK2_TRUE@	uim_im_switcher_gtk-im-switcher-gtk.$(OBJEXT)
  uim_im_switcher_gtk_OBJECTS = $(am_uim_im_switcher_gtk_OBJECTS)
 -@GTK2_TRUE@uim_im_switcher_gtk_DEPENDENCIES =  \
 -@GTK2_TRUE@	$(top_builddir)/uim/libuim.la
- am__uim_input_pad_ja_SOURCES_DIST = input-pad-ja.c
+ uim_im_switcher_gtk_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) \
+ 	$(uim_im_switcher_gtk_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+@@ -135,8 +127,6 @@
  @GTK2_TRUE@am_uim_input_pad_ja_OBJECTS =  \
  @GTK2_TRUE@	uim_input_pad_ja-input-pad-ja.$(OBJEXT)
  uim_input_pad_ja_OBJECTS = $(am_uim_input_pad_ja_OBJECTS)
 -@GTK2_TRUE@uim_input_pad_ja_DEPENDENCIES =  \
 -@GTK2_TRUE@	$(top_builddir)/uim/libuim.la
- am__uim_pref_gtk_SOURCES_DIST = pref-gtk.c pref-gtk-custom-widgets.c \
- 	pref-gtk-custom-widgets.h ../gtk/key-util-gtk.c \
- 	../gtk/key-util-gtk.h
-@@ -134,23 +124,17 @@
+ uim_input_pad_ja_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(uim_input_pad_ja_CFLAGS) \
+ 	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+@@ -147,8 +137,6 @@
  @GTK2_4_TRUE@@GTK2_TRUE@@PREF_TRUE@	uim_pref_gtk-pref-gtk-custom-widgets.$(OBJEXT) \
  @GTK2_4_TRUE@@GTK2_TRUE@@PREF_TRUE@	uim_pref_gtk-key-util-gtk.$(OBJEXT)
  uim_pref_gtk_OBJECTS = $(am_uim_pref_gtk_OBJECTS)
 -@GTK2_4_TRUE@@GTK2_TRUE@@PREF_TRUE@uim_pref_gtk_DEPENDENCIES = $(top_builddir)/uim/libuim-custom.la \
 -@GTK2_4_TRUE@@GTK2_TRUE@@PREF_TRUE@	$(top_builddir)/uim/libuim.la
- am__uim_toolbar_applet_SOURCES_DIST = toolbar-applet-gnome.c \
- 	toolbar-common-gtk.c
- @APPLET_TRUE@am_uim_toolbar_applet_OBJECTS = uim_toolbar_applet-toolbar-applet-gnome.$(OBJEXT) \
- @APPLET_TRUE@	uim_toolbar_applet-toolbar-common-gtk.$(OBJEXT)
+ uim_pref_gtk_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(uim_pref_gtk_CFLAGS) \
+ 	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+@@ -157,8 +145,6 @@
+ @APPLET_GNOME_TRUE@am_uim_toolbar_applet_OBJECTS = uim_toolbar_applet-toolbar-applet-gnome.$(OBJEXT) \
+ @APPLET_GNOME_TRUE@	uim_toolbar_applet-toolbar-common-gtk.$(OBJEXT)
  uim_toolbar_applet_OBJECTS = $(am_uim_toolbar_applet_OBJECTS)
--@APPLET_TRUE@uim_toolbar_applet_DEPENDENCIES =  \
--@APPLET_TRUE@	$(top_builddir)/uim/libuim.la
- am__uim_toolbar_gtk_SOURCES_DIST = toolbar-standalone-gtk.c \
- 	toolbar-common-gtk.c
- @GTK2_TRUE@am_uim_toolbar_gtk_OBJECTS =  \
+-@APPLET_GNOME_TRUE@uim_toolbar_applet_DEPENDENCIES =  \
+-@APPLET_GNOME_TRUE@	$(top_builddir)/uim/libuim.la
+ uim_toolbar_applet_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) \
+ 	$(uim_toolbar_applet_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+@@ -169,8 +155,6 @@
  @GTK2_TRUE@	uim_toolbar_gtk-toolbar-standalone-gtk.$(OBJEXT) \
  @GTK2_TRUE@	uim_toolbar_gtk-toolbar-common-gtk.$(OBJEXT)
  uim_toolbar_gtk_OBJECTS = $(am_uim_toolbar_gtk_OBJECTS)
 -@GTK2_TRUE@uim_toolbar_gtk_DEPENDENCIES =  \
 -@GTK2_TRUE@	$(top_builddir)/uim/libuim.la
- am__uim_toolbar_gtk_systray_SOURCES_DIST = toolbar-systray-gtk.c \
- 	toolbar-common-gtk.c eggtrayicon.c eggtrayicon.h
- @GTK2_TRUE@am_uim_toolbar_gtk_systray_OBJECTS = uim_toolbar_gtk_systray-toolbar-systray-gtk.$(OBJEXT) \
-@@ -158,8 +142,6 @@
+ uim_toolbar_gtk_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(uim_toolbar_gtk_CFLAGS) \
+ 	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+@@ -181,8 +165,6 @@
  @GTK2_TRUE@	uim_toolbar_gtk_systray-eggtrayicon.$(OBJEXT)
  uim_toolbar_gtk_systray_OBJECTS =  \
  	$(am_uim_toolbar_gtk_systray_OBJECTS)
 -@GTK2_TRUE@uim_toolbar_gtk_systray_DEPENDENCIES =  \
 -@GTK2_TRUE@	$(top_builddir)/uim/libuim.la
- DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)/uim
- depcomp = $(SHELL) $(top_srcdir)/depcomp
- am__depfiles_maybe = depfiles
-@@ -447,8 +429,7 @@
+ uim_toolbar_gtk_systray_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) \
+ 	$(uim_toolbar_gtk_systray_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+@@ -434,8 +416,7 @@
  uim_pixmapsdir = @uim_pixmapsdir@
  EXTRA_DIST = GNOME_UimApplet.server.in.in uim-dict-ui.xml.in
  helper_defs = -DUIM_DATADIR=\""$(datadir)/@PACKAGE@"\"
--@APPLET_TRUE@uim_toolbar_applet_LDADD = @GTK2_LIBS@ @APPLET_LIBS@ \
--@APPLET_TRUE@			   $(top_builddir)/uim/libuim.la
-+@APPLET_TRUE@uim_toolbar_applet_LDADD = @GTK2_LIBS@ @APPLET_LIBS@
+-@APPLET_GNOME_TRUE@uim_toolbar_applet_LDADD = @GTK2_LIBS@ @APPLET_GNOME_LIBS@ \
+-@APPLET_GNOME_TRUE@			   $(top_builddir)/uim/libuim.la
++@APPLET_GNOME_TRUE@uim_toolbar_applet_LDADD = @GTK2_LIBS@ @APPLET_GNOME_LIBS@
  
- @APPLET_TRUE@uim_toolbar_applet_CPPFLAGS = $(helper_defs) -I$(top_srcdir) -I$(top_builddir)
- @APPLET_TRUE@uim_toolbar_applet_CFLAGS = @GTK2_CFLAGS@ @APPLET_CFLAGS@
-@@ -464,34 +445,32 @@
+ @APPLET_GNOME_TRUE@uim_toolbar_applet_CPPFLAGS = $(helper_defs) -I$(top_srcdir) -I$(top_builddir)
+ @APPLET_GNOME_TRUE@uim_toolbar_applet_CFLAGS = @GTK2_CFLAGS@ @APPLET_GNOME_CFLAGS@
+@@ -453,25 +434,25 @@
  @GTK2_TRUE@			   ../gtk/caret-state-indicator.c \
  @GTK2_TRUE@			   ../gtk/caret-state-indicator.h
  
@@ -106,21 +115,21 @@
  @GTK2_TRUE@uim_input_pad_ja_CPPFLAGS = -I$(top_srcdir) -I$(top_builddir)
  @GTK2_TRUE@uim_input_pad_ja_CFLAGS = @GTK2_CFLAGS@ -Wall
  @GTK2_4_TRUE@@GTK2_TRUE@@PREF_TRUE@uim_pref_gtk_SOURCES = pref-gtk.c \
- @GTK2_4_TRUE@@GTK2_TRUE@@PREF_TRUE@			pref-gtk-custom-widgets.c pref-gtk-custom-widgets.h \
+@@ -479,8 +460,7 @@
+ @GTK2_4_TRUE@@GTK2_TRUE@@PREF_TRUE@			pref-gtk-keytab.h \
  @GTK2_4_TRUE@@GTK2_TRUE@@PREF_TRUE@			../gtk/key-util-gtk.c ../gtk/key-util-gtk.h
  
 -@GTK2_4_TRUE@@GTK2_TRUE@@PREF_TRUE@uim_pref_gtk_LDADD = @GTK2_LIBS@ $(top_builddir)/uim/libuim-custom.la \
 -@GTK2_4_TRUE@@GTK2_TRUE@@PREF_TRUE@			$(top_builddir)/uim/libuim.la
--
 +@GTK2_4_TRUE@@GTK2_TRUE@@PREF_TRUE@uim_pref_gtk_LDADD = @GTK2_LIBS@
+ 
  @GTK2_4_TRUE@@GTK2_TRUE@@PREF_TRUE@uim_pref_gtk_CPPFLAGS = $(helper_defs) -I$(top_srcdir) -I$(top_builddir)
  @GTK2_4_TRUE@@GTK2_TRUE@@PREF_TRUE@uim_pref_gtk_CFLAGS = @GTK2_CFLAGS@ -Wall
- @DICT_TRUE@@GTK2_TRUE@uim_dict_gtk_SOURCES = dict-main-gtk.c \
-@@ -506,7 +485,6 @@
- @DICT_TRUE@@GTK2_TRUE@	dict-cclass-dialog.h $(am__append_4) \
- @DICT_TRUE@@GTK2_TRUE@	$(am__append_7)
+@@ -496,7 +476,6 @@
+ @DICT_TRUE@@GTK2_TRUE@	dict-cclass-dialog.h $(am__append_5) \
+ @DICT_TRUE@@GTK2_TRUE@	$(am__append_8)
  @DICT_TRUE@@GTK2_TRUE@uim_dict_gtk_LDADD = @GTK2_LIBS@ \
 -@DICT_TRUE@@GTK2_TRUE@	$(top_builddir)/uim/libuim.la \
- @DICT_TRUE@@GTK2_TRUE@	$(am__append_5) $(am__append_8)
+ @DICT_TRUE@@GTK2_TRUE@	$(am__append_6) $(am__append_9)
  @DICT_TRUE@@GTK2_TRUE@uim_dict_gtk_CPPFLAGS = $(helper_defs) \
  @DICT_TRUE@@GTK2_TRUE@	-I$(top_srcdir) -I$(top_builddir) \

@@ -1,11 +1,11 @@
---- helper/Makefile.in.orig	Fri Dec 16 17:10:59 2005
-+++ helper/Makefile.in	Sat Dec 24 03:05:26 2005
-@@ -422,7 +422,7 @@
- @APPLET_TRUE@uim_toolbar_applet_CPPFLAGS = $(helper_defs) -I$(top_srcdir) -I$(top_builddir)
- @APPLET_TRUE@uim_toolbar_applet_CFLAGS = @GTK2_CFLAGS@ @APPLET_CFLAGS@ @GNOME2_CFLAGS@ -Wall
- @APPLET_TRUE@uim_toolbar_applet_SOURCES = toolbar-applet-gnome.c toolbar-common-gtk.c
--@APPLET_TRUE@serverdir = $(libdir)/bonobo/servers
-+@APPLET_TRUE@serverdir = $(prefix)/libdata/bonobo/servers
- @APPLET_TRUE@server_DATA = GNOME_UimApplet.server
- @APPLET_TRUE@server_in_files = $(server_DATA:=.in)
- @APPLET_TRUE@server_in_in_files = $(server_in_files:=.in)
+--- helper/Makefile.in.orig	Wed Jan  3 21:40:57 2007
++++ helper/Makefile.in	Wed Jan  3 21:41:05 2007
+@@ -442,7 +442,7 @@
+ # recent version of gcc has the option to suppress the warning
+ #uim_toolbar_applet_CFLAGS += -Wno-overlength-strings
+ @APPLET_GNOME_TRUE@uim_toolbar_applet_SOURCES = toolbar-applet-gnome.c toolbar-common-gtk.c
+-@APPLET_GNOME_TRUE@serverdir = $(libdir)/bonobo/servers
++@APPLET_GNOME_TRUE@serverdir = $(prefix)/libdata/bonobo/servers
+ @APPLET_GNOME_TRUE@server_DATA = GNOME_UimApplet.server
+ @APPLET_GNOME_TRUE@server_in_files = $(server_DATA:=.in)
+ @APPLET_GNOME_TRUE@server_in_in_files = $(server_in_files:=.in)

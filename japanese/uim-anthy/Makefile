@@ -19,7 +19,7 @@ USE_GNOME=	gtk20
 .endif
 
 LIB_DEPENDS=	anthy.1:${PORTSDIR}/japanese/anthy \
-		uim.3:${PORTSDIR}/textproc/uim
+		uim.4:${PORTSDIR}/textproc/uim
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
@@ -44,7 +44,7 @@ do-install:
 	(cd ${WRKSRC}/uim && \
 	${GMAKE} uim_plugin_LTLIBRARIES=libuim-anthy.la install-uim_pluginLTLIBRARIES)
 .if !defined(WITHOUT_X11)
-	(cd ${WRKSRC}/helper && ${GMAKE} bin_PROGRAMS=uim-dict-gtk install-binPROGRAMS)
+	(cd ${WRKSRC}/helper && ${GMAKE} bin_PROGRAMS=uim-dict-gtk install-binPROGRAMS install-uim_dict_uiDATA)
 .endif
 
 post-install:
