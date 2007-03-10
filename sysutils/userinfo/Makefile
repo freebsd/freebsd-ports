@@ -8,10 +8,9 @@
 PORTNAME=	userinfo
 PORTVERSION=	2.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://arbornet.org/~bjk/userinfo/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	bjk@m-net.arbornet.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show information about local users
 
 USE_AUTOTOOLS=	libtool:15
