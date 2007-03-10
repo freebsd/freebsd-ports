@@ -6,24 +6,25 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.0s.20070309
 CATEGORIES=	emulators
 MASTER_SITES=	http://qemu.org/:release \
 		http://qemu-forum.ipi.fi/qemu-snapshots/:snapshot \
 		http://people.fruitsalad.org/nox/qemu/:snapshot \
 		http://www.volny.cz/xnavara/qemu/:snapshot \
 		http://people.brandeis.edu/~jcoiner/qemu_idedma/:idedma \
-		http://people.freebsd.org/~maho/qemu/:misc \
-		http://people.freebsd.org/~jkim/:bios
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release \
-		qemu-bios.bin:bios
+		http://people.freebsd.org/~maho/qemu/:misc
+DISTNAME=	${PORTNAME}-snapshot-2007-03-09_05
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
 DIST_SUBDIR=	qemu
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	nox@FreeBSD.org
-COMMENT=	QEMU CPU Emulator
+COMMENT=	QEMU CPU Emulator - development snapshot
 
 HAS_CONFIGURE=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETOPT_LONG=	yes
 USE_PERL5=	yes
@@ -33,6 +34,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}
 MAKE_ENV+=	BSD_MAKE="${MAKE}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 MAN1=		qemu.1 qemu-img.1
 ONLY_FOR_ARCHS=	amd64 i386
+CONFLICTS=	qemu-[0-9]*
 
 OPTIONS=	KQEMU "Build with (alpha!) accelerator module" Off \
 		HACKS_CIRRUS "Large display speedup (buggy!)" Off \
@@ -80,7 +82,6 @@ post-extract:
 	@${MKDIR} ${WRKSRC}/kqemu
 	@${TOUCH} ${WRKSRC}/kqemu/Makefile
 	@${ECHO} all: > ${WRKSRC}/kqemu/Makefile.freebsd
-	@${CP} -p ${_DISTDIR}/qemu-bios.bin ${WRKSRC}/pc-bios/bios.bin
 
 pre-patch:
 	@for A in ${ONLY_FOR_ARCHS}; do \

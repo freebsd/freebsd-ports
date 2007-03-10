@@ -8,14 +8,14 @@ Index: qemu/vl.c
  static CharDriverState *qemu_chr_open_pty(void)
  {
      struct termios tty;
-@@ -1665,6 +1665,7 @@
+@@ -1904,6 +1907,7 @@
      return chr;
  }
  
 +#if defined(__linux__)
- static int pp_ioctl(CharDriverState *chr, int cmd, void *arg)
- {
-     int fd = (int)chr->opaque;
+ typedef struct {
+     int fd;
+     int mode;
 @@ -1727,6 +1728,7 @@
      chr->chr_ioctl = pp_ioctl;
      return chr;
