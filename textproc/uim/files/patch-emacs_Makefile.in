@@ -1,12 +1,12 @@
---- emacs/Makefile.in.orig	Fri Dec 16 17:10:53 2005
-+++ emacs/Makefile.in	Sat Dec 24 07:41:33 2005
-@@ -670,15 +670,6 @@
- distclean-libtool:
- 	-rm -f libtool
- uninstall-info-am:
+--- emacs/Makefile.in.orig	Wed Jan  3 21:31:12 2007
++++ emacs/Makefile.in	Wed Jan  3 21:32:26 2007
+@@ -735,15 +735,6 @@
+ 
+ clean-libtool:
+ 	-rm -rf .libs _libs
 -install-dist_uimel_lispDATA: $(dist_uimel_lisp_DATA)
 -	@$(NORMAL_INSTALL)
--	test -z "$(uimel_lispdir)" || $(mkdir_p) "$(DESTDIR)$(uimel_lispdir)"
+-	test -z "$(uimel_lispdir)" || $(MKDIR_P) "$(DESTDIR)$(uimel_lispdir)"
 -	@list='$(dist_uimel_lisp_DATA)'; for p in $$list; do \
 -	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 -	  f=$(am__strip_dir) \

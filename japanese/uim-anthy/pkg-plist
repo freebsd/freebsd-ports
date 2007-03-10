@@ -2,5 +2,6 @@
 lib/uim/plugin/libuim-anthy.a
 lib/uim/plugin/libuim-anthy.la
 lib/uim/plugin/libuim-anthy.so
+%%X11%%share/uim/helperdata/uim-dict-ui.xml
 @exec uim-module-manager --register anthy
 @unexec uim-module-manager --unregister anthy
