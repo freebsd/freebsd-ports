@@ -20,17 +20,17 @@ Index: qemu/Makefile
  	rm -f *.o *.a $(TOOLS) dyngen$(EXESUF) TAGS *.pod *~ */*~
  	$(MAKE) -C tests clean
 Index: qemu/Makefile.target
-@@ -391,8 +391,8 @@
- VL_LDFLAGS+=-Wl,-G0 -Wl,-T,$(SRC_PATH)/ia64.ld
+@@ -465,8 +465,8 @@
+ SDL_LIBS := $(filter-out -mwindows, $(SDL_LIBS)) -mconsole
  endif
  
 -$(QEMU_SYSTEM): $(VL_OBJS) libqemu.a
--	$(CC) $(VL_LDFLAGS) -o $@ $^ $(LIBS) $(SDL_LIBS) $(COCOA_LIBS) $(VL_LIBS)
+-	$(CC) $(VL_LDFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS) $(SDL_LIBS) $(COCOA_LIBS) $(VL_LIBS)
 +$(QEMU_SYSTEM): $(VL_OBJS) libqemu.a ../bsd/libmath.a
-+	$(CC) $(VL_LDFLAGS) -o $@ $^ $(LIBS) $(SDL_LIBS) $(COCOA_LIBS) $(VL_LIBS) ../bsd/libmath.a
++	$(CC) $(VL_LDFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS) $(SDL_LIBS) $(COCOA_LIBS) $(VL_LIBS) ../bsd/libmath.a
  
  cocoa.o: cocoa.m
- 	$(CC) $(CFLAGS) $(DEFINES) -c -o $@ $<
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) $(BASE_CFLAGS) -c -o $@ $<
 Index: qemu/fpu/softfloat-native.c
 @@ -2,11 +2,16 @@
     context is supported */
