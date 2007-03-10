@@ -154,7 +154,6 @@ PLIST_SUB+=		WITH_PHP=""
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 CPPFLAGS+=		-I${LOCALBASE}/include/php/Zend
-.include "${PORTSDIR}/Mk/bsd.php.mk"
 . endif
 
 . if !defined(WITH_PYTHON)
@@ -227,6 +226,9 @@ pre-patch:
 		${XARGS} ${REINPLACE_CMD} \
 		-e 's|pkglibdir = $$(libdir)/@PACKAGE@|pkglibdir = $$(libdir)|g' \
 		-e 's|libdir = @libdir@|libdir = @libdir@/@PACKAGE@|g';
+	@${FIND} ${WRKSRC}/lib -name '*.pc.in' | \
+		${XARGS} ${REINPLACE_CMD} \
+		-e 's|libdir=@libdir@|libdir=@libdir@/@PACKAGE@|';
 	@${REINPLACE_CMD} -e "s|/usr/include/php|${LOCALBASE}/include/php|g" \
 		-e "s|-lruby|-lruby${RUBY_SUFFIX}|g" ${WRKSRC}/configure
 
