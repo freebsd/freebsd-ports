@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Log-Log4perl
-PORTVERSION=	0.50
+PORTVERSION=	0.51
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Catalyst
@@ -16,7 +16,7 @@ MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Log::Log4perl logging for Catalyst
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \
+		p5-Log-Log4perl>=0.49:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-Params-Validate>=0:${PORTSDIR}/devel/p5-Params-Validate \
 		p5-Sub-Install>=0:${PORTSDIR}/devel/p5-Sub-Install
 RUN_DEPENDS=	${BUILD_DEPENDS}
