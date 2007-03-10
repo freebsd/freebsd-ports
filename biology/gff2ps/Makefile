@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://www1.imim.es/pub/gff_tools/gff2ps/:prog \
 		http://www1.imim.es/software/gfftools/gff2ps_docs/manual/:doc
 DISTFILES=	${PORTNAME}_v${PORTVERSION}.gz:prog ${GFF2PS_MAN}.gz:doc
 
-MAINTAINER=	chuynh@biolateral.com.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts gff-formated genomic data-sets to PostScript
 
 RUN_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
