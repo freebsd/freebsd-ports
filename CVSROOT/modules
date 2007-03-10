@@ -12870,6 +12870,7 @@ qdecoder	ports/www/qdecoder
 qdvdauthor	ports/multimedia/qdvdauthor
 qemacs		ports/editors/qemacs
 qemu		ports/emulators/qemu
+qemu-devel	ports/emulators/qemu-devel
 qemu-launcher	ports/emulators/qemu-launcher
 qextmdi		ports/devel/qextmdi
 qfaxreader	ports/comms/qfaxreader
