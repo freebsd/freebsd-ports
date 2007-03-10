@@ -1,0 +1,15 @@
+--- configure.orig	Wed Jun 12 11:31:31 2002
++++ configure	Sat Mar 10 21:51:00 2007
+@@ -7612,8 +7612,11 @@
+     if test "x$withval" = "xyes"; then
+       withval=$ssllib
+       SSLINC=$sslinc
++      LIBS="$LIBS $withval"
++    else
++      SSLINC="-I$withval/include/openssl"
++      LIBS="$LIBS -L$withval/lib -lssl -lcrypto"
+     fi
+-    LIBS="$LIBS $withval"
+     cat > conftest.$ac_ext <<EOF
+ #line 7619 "configure"
+ #include "confdefs.h"
