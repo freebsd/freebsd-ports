@@ -7,7 +7,7 @@
 
 PORTNAME=	trac
 PORTVERSION=	0.10.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese www devel python
 MASTER_SITES=	http://dist.bsdlab.org/ \
 		http://www.i-act.co.jp/project/products/downloads/
@@ -16,14 +16,13 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-ja-1.zip
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	An enhanced wiki and issue tracking system for software projects
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite20 \
-		${PYTHON_SITELIBDIR}/neo_cgi.so:${PORTSDIR}/www/clearsilver-python \
-		${PYTHON_SITELIBDIR}/svn/__init__.py:${PORTSDIR}/devel/subversion-python \
-		${PYTHON_SITELIBDIR}/japanese.pth:${PORTSDIR}/japanese/pycodec
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/neo_cgi.so:${PORTSDIR}/www/clearsilver-python
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	SILVERCITY "Use Silvercity for syntax highlighting" On \
-		DOCUTILS   "Allow additional text markup" On
+		DOCUTILS   "Allow additional text markup" On \
+		PGSQL	   "Use PostgreSQL instead of SQLite3" Off \
+		SUBVERSION "Support for subversion RCS" On
 CONFLICTS=	trac-0.*
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-ja-1
 
@@ -44,6 +43,9 @@ x-generate-plist:
 		;s,@dirrm (%%PYTHON_SITELIBDIR%%|${PYTHON_LIBDIR:S,${PYTHONBASE}/,,})$$,,g \
 		' | ${TR} -s '\n') > temp-pkg-plist
 
+post-patch:
+	${FIND} ${WRKSRC} -name '*.orig' | ${XARGS} ${RM}
+
 post-install:
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
@@ -57,6 +59,16 @@ RUN_DEPENDS+=	${PREFIX}/bin/source2html.py:${PORTSDIR}/textproc/silvercity
 
 .if defined(WITH_DOCUTILS)
 RUN_DEPENDS+=	${PREFIX}/bin/rst2html:${PORTSDIR}/textproc/py-docutils
+.endif
+
+.if defined(WITH_PGSQL)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopg2/__init__.py:${PORTSDIR}/databases/py-psycopg2
+.else
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite20
+.endif
+
+.if !defined(WITHOUT_SUBVERSION)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/svn/__init__.py:${PORTSDIR}/devel/subversion-python
 .endif
 
 .include <bsd.port.post.mk>
