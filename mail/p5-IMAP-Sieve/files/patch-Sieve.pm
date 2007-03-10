@@ -1,5 +1,5 @@
---- Sieve.pm.orig	Sat Jun 23 22:42:48 2001
-+++ Sieve.pm	Thu Apr 24 18:10:29 2003
+--- Sieve.pm.orig	Sun Jun 24 05:42:48 2001
++++ Sieve.pm	Sat Mar 10 15:37:46 2007
 @@ -93,7 +93,7 @@
  							 Proto => 'tcp',
  							 Reuse => 1); })
@@ -25,7 +25,7 @@
  	   $_ = $self->_read;
  ##	   $_=$self->_read;
  	}
-@@ -126,6 +128,55 @@
+@@ -126,8 +128,57 @@
      else {
  	$self->{'Capability'}=$_;
      }
@@ -79,8 +79,11 @@
 +	}
 +    }
      $userpass = "$self->{'Proxy'}\x00".$self->{'Login'}."\x00".$self->{'Password'};
-     $encode=encode_base64($userpass);
+-    $encode=encode_base64($userpass);
++    $encode=encode_base64($userpass, '');
      $len=length($encode);
+     print $fh "AUTHENTICATE \"PLAIN\" {$len+}\r\n";
+  
 @@ -196,7 +247,7 @@
  			}
  		}
