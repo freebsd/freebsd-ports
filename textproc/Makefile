@@ -923,6 +923,7 @@
     SUBDIR += uim-el-xemacs21-mule
     SUBDIR += uim-gnome
     SUBDIR += uim-gtk
+    SUBDIR += uim-kde
     SUBDIR += uim-m17nlib
     SUBDIR += uim-qt
     SUBDIR += uncrustify
