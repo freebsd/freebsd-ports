@@ -33,6 +33,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}
 MAKE_ENV+=	BSD_MAKE="${MAKE}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 MAN1=		qemu.1 qemu-img.1
 ONLY_FOR_ARCHS=	amd64 i386
+CONFLICTS=	qemu-devel-[0-9]*
 
 OPTIONS=	KQEMU "Build with (alpha!) accelerator module" Off \
 		HACKS_CIRRUS "Large display speedup (buggy!)" Off \
