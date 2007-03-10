@@ -7,6 +7,7 @@
 
 PORTNAME=	whowatch
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/ \
 		${MASTER_SITE_PACKETSTORM}
