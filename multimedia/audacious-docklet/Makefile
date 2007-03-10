@@ -7,13 +7,14 @@
 
 PORTNAME=	audacious-docklet
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://nedudu.hu/downloads/
 
 MAINTAINER=	feature.id@gmail.com
 COMMENT=	Systray plugin for audacious
 
-LIB_DEPENDS=	audacious.4:${PORTSDIR}/multimedia/audacious
+LIB_DEPENDS=	audacious.5:${PORTSDIR}/multimedia/audacious
 BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
 
 USE_BZIP2=	yes
