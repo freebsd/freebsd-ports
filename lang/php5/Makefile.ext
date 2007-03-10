@@ -587,7 +587,7 @@ pre-configure:
 .if defined(WITH_MSSQL)
 LIB_DEPENDS+=	sybdb.5:${PORTSDIR}/databases/freetds-msdblib
 .else
-LIB_DEPENDS+=	ct.3:${PORTSDIR}/databases/freetds
+LIB_DEPENDS+=	ct.4:${PORTSDIR}/databases/freetds
 .endif
 .endif
 
