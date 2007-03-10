@@ -107,6 +107,7 @@
     SUBDIR += psim-freebsd
     SUBDIR += pyxmame
     SUBDIR += qemu
+    SUBDIR += qemu-devel
     SUBDIR += qemu-launcher
     SUBDIR += qmc2
     SUBDIR += quasi88
