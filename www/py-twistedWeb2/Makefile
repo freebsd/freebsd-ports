@@ -11,7 +11,7 @@ MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Web2/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedWeb2-${PORTVERSION}
 
-MAINTAINER=	landonf@opendarwin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The next generation Web Server Framework built with Twisted
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore

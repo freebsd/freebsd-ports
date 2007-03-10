@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.zope.org/Members/fdrake/zconfig/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	ZConfig-${PORTVERSION}
 
-MAINTAINER=	landonf@opendarwin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ZConfig is a general use python configuration library
 
 WRKSRC=		${WRKDIR}/ZConfig-${PORTVERSION}
