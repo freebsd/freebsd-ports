@@ -1,0 +1,194 @@
+Index: RELEASE
+===================================================================
+--- RELEASE	(.../trac-0.10.3)	(revision 4957)
++++ RELEASE	(.../trac-0.10.3.1)	(revision 4957)
+@@ -1,8 +1,8 @@
+-Release Notes for Trac 0.10.3
+-=============================
+-December 12, 2006
++Release Notes for Trac 0.10.3.1
++===============================
++March 8, 2007
+ 
+-We're happy to announce the Trac 0.10.3 release, available from:
++We're happy to announce the Trac 0.10.3.1 release, available from:
+ 
+   http://trac.edgewall.org/wiki/TracDownload
+ 
+@@ -11,18 +11,15 @@
+ 
+   http://trac.edgewall.org/wiki/MailingList
+ 
+-Trac 0.10.3 is a bug fix release and fixes a few bugs introduced in the 
+-0.10.1 and 0.10.2 releases. A brief summary of major changes:
++Trac 0.10.3.1 is a security release:
++* Always send "Content-Disposition: attachment" headers where potentially 
++  unsafe (user provided) content is available for download. This behaviour
++  can be altered using the "render_unsafe_content" option in the 
++  "attachment" and "browser" sections of trac.ini.
++ * Fixed XSS vulnerability in "download wiki page as text" in combination with 
++   Microsoft IE. Reported by Yoshinori Oota, Business Architects Inc.
+ 
+- * Timeline fail to load with a "NoSuchChangeset" error message (#4132).
+- * Timed out MySQL connections not handled properly (#3645).
+- * Subversion repository resync broken. (#4204).
+ 
+-The complete list of closed tickets can be found here:
+-
+-   http://trac.edgewall.org/query?status=closed&milestone=0.10.3
+-
+-
+ Acknowledgements
+ ================
+ 
+Index: wiki-default/WikiStart
+===================================================================
+--- wiki-default/WikiStart	(.../trac-0.10.3)	(revision 4957)
++++ wiki-default/WikiStart	(.../trac-0.10.3.1)	(revision 4957)
+@@ -1,4 +1,4 @@
+-= Welcome to Trac 0.10.3 =
++= Welcome to Trac 0.10.3.1 =
+ 
+ Trac is a '''minimalistic''' approach to '''web-based''' management of
+ '''software projects'''. Its goal is to simplify effective tracking and handling of software issues, enhancements and overall progress.
+Index: ChangeLog
+===================================================================
+--- ChangeLog	(.../trac-0.10.3)	(revision 4957)
++++ ChangeLog	(.../trac-0.10.3.1)	(revision 4957)
+@@ -1,3 +1,14 @@
++Trac 0.10.3.1 (March 8, 2007)
++http://svn.edgewall.org/repos/trac/tags/trac-0.10.3.1
++
++ Trac 0.10.3.1 is a security release:
++ * Always send "Content-Disposition: attachment" headers where potentially 
++   unsafe (user provided) content is available for download. This behaviour
++   can be altered using the "render_unsafe_content" option in the 
++   "attachment" and "browser" sections of trac.ini.
++ * Fixed XSS vulnerability in "download wiki page as text" in combination with 
++   Microsoft IE. Reported by Yoshinori Oota, Business Architects Inc.
++	
+ Trac 0.10.3 (Dec 12, 2006)
+ http://svn.edgewall.org/repos/trac/tags/trac-0.10.3
+ 
+Index: trac/attachment.py
+===================================================================
+--- trac/attachment.py	(.../trac-0.10.3)	(revision 4957)
++++ trac/attachment.py	(.../trac-0.10.3.1)	(revision 4957)
+@@ -555,22 +555,24 @@
+             # Eventually send the file directly
+             format = req.args.get('format')
+             if format in ('raw', 'txt'):
+-                if not self.render_unsafe_content and not binary:
+-                    # Force browser to download HTML/SVG/etc pages that may
+-                    # contain malicious code enabling XSS attacks
+-                    req.send_header('Content-Disposition', 'attachment;' +
+-                                    'filename=' + attachment.filename)
+-                if not mime_type or (self.render_unsafe_content and \
+-                                     not binary and format == 'txt'):
+-                    mime_type = 'text/plain'
++                if not self.render_unsafe_content:
++                    # Force browser to download files instead of rendering
++                    # them, since they might contain malicious code enabling 
++                    # XSS attacks
++                    req.send_header('Content-Disposition', 'attachment')
++                if format == 'txt':
++                      mime_type = 'text/plain'
++                elif not mime_type:
++                    mime_type = 'application/octet-stream'
+                 if 'charset=' not in mime_type:
+                     charset = mimeview.get_charset(str_data, mime_type)
+                     mime_type = mime_type + '; charset=' + charset
++
+                 req.send_file(attachment.path, mime_type)
+ 
+             # add ''Plain Text'' alternate link if needed
+-            if self.render_unsafe_content and not binary and \
+-               mime_type and not mime_type.startswith('text/plain'):
++            if (self.render_unsafe_content and 
++                mime_type and not mime_type.startswith('text/plain')):
+                 plaintext_href = attachment.href(req, format='txt')
+                 add_link(req, 'alternate', plaintext_href, 'Plain Text',
+                          mime_type)
+Index: trac/mimeview/api.py
+===================================================================
+--- trac/mimeview/api.py	(.../trac-0.10.3)	(revision 4957)
++++ trac/mimeview/api.py	(.../trac-0.10.3.1)	(revision 4957)
+@@ -604,8 +604,8 @@
+                                                          content, selector)
+         req.send_response(200)
+         req.send_header('Content-Type', output_type)
+-        req.send_header('Content-Disposition', 'filename=%s.%s' % (filename,
+-                                                                   ext))
++        req.send_header('Content-Disposition', 'attachment; filename=%s.%s' % 
++                        (filename, ext))
+         req.end_headers()
+         req.write(content)
+         raise RequestDone        
+Index: trac/__init__.py
+===================================================================
+--- trac/__init__.py	(.../trac-0.10.3)	(revision 4957)
++++ trac/__init__.py	(.../trac-0.10.3.1)	(revision 4957)
+@@ -11,7 +11,7 @@
+ """
+ __docformat__ = 'epytext en'
+ 
+-__version__ = '0.10.3'
++__version__ = '0.10.3.1'
+ __url__ = 'http://trac.edgewall.org/'
+ __copyright__ = '(C) 2003-2006 Edgewall Software'
+ __license__ = 'BSD'
+Index: trac/versioncontrol/web_ui/browser.py
+===================================================================
+--- trac/versioncontrol/web_ui/browser.py	(.../trac-0.10.3)	(revision 4957)
++++ trac/versioncontrol/web_ui/browser.py	(.../trac-0.10.3.1)	(revision 4957)
+@@ -21,7 +21,7 @@
+ from fnmatch import fnmatchcase
+ 
+ from trac import util
+-from trac.config import ListOption, Option
++from trac.config import ListOption, BoolOption, Option
+ from trac.core import *
+ from trac.mimeview import Mimeview, is_binary, get_mimetype
+ from trac.perm import IPermissionRequestor
+@@ -57,6 +57,18 @@
+         glob patterns, i.e. "*" can be used as a wild card)
+         (''since 0.10'')""")
+ 
++    render_unsafe_content = BoolOption('browser', 'render_unsafe_content',
++                                        'false',
++        """Whether attachments should be rendered in the browser, or
++        only made downloadable.
++ 
++        Pretty much any file may be interpreted as HTML by the browser,
++        which allows a malicious user to attach a file containing cross-site
++        scripting attacks.
++        
++        For public sites where anonymous users can create attachments it is
++        recommended to leave this option disabled (which is the default).""")
++ 
+     # INavigationContributor methods
+ 
+     def get_active_navigation_item(self, req):
+@@ -216,6 +228,11 @@
+                             format == 'txt' and 'text/plain' or mime_type)
+             req.send_header('Content-Length', node.content_length)
+             req.send_header('Last-Modified', http_date(node.last_modified))
++            if not self.render_unsafe_content:
++                # Force browser to download files instead of rendering
++                # them, since they might contain malicious code enabling 
++                # XSS attacks
++                req.send_header('Content-Disposition', 'attachment')
+             req.end_headers()
+ 
+             while 1:
+Index: trac/scripts/tests/admin-tests.txt
+===================================================================
+--- trac/scripts/tests/admin-tests.txt	(.../trac-0.10.3)	(revision 4957)
++++ trac/scripts/tests/admin-tests.txt	(.../trac-0.10.3.1)	(revision 4957)
+@@ -1,5 +1,5 @@
+ ===== test_help_ok =====
+-trac-admin - The Trac Administration Console 0.10.3
++trac-admin - The Trac Administration Console 0.10.3.1
+ 
+ Usage: trac-admin </path/to/projenv> [command [subcommand] [option ...]]
+ 
