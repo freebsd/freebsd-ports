@@ -1,7 +1,7 @@
 %%SITE_PERL%%/Class/MOP.pm
 %%SITE_PERL%%/Class/MOP/Attribute.pm
 %%SITE_PERL%%/Class/MOP/Class.pm
-%%SITE_PERL%%/Class/MOP/Class/Immutable.pm
+%%SITE_PERL%%/Class/MOP/Immutable.pm
 %%SITE_PERL%%/Class/MOP/Instance.pm
 %%SITE_PERL%%/Class/MOP/Method.pm
 %%SITE_PERL%%/Class/MOP/Method/Accessor.pm
@@ -21,6 +21,5 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/Perl6Attribute.pod
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry %%SITE_PERL%%/Class/MOP/Method
-@dirrmtry %%SITE_PERL%%/Class/MOP/Class
 @dirrmtry %%SITE_PERL%%/Class/MOP
 @dirrmtry %%SITE_PERL%%/Class
