@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	cthulhain
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.9
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www0.get-e.org/Themes/E17/_files/ \
-		http://sunner.elcomnet.ru/~stas/
+		ftp://ftp.springdaemons.com/pub/snapshots/e17/
 PKGNAMEPREFIX=	e17-theme-
-DISTNAME=	cthulhain-0.3pre5
+DISTNAME=	cthulhain-0.3pre9
 EXTRACT_SUFX=	.edj
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Cthulhain theme for use with e17 window manager
 
-RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment-devel
+RUN_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment-devel
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
