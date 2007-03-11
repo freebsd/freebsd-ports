@@ -30,6 +30,7 @@
     SUBDIR += e17-splash-takara
     SUBDIR += e17-theme-blue_eyed
     SUBDIR += e17-theme-cthulhain
+    SUBDIR += e17-theme-dali
     SUBDIR += e17-theme-darkness
     SUBDIR += e17-theme-gant
     SUBDIR += e17-theme-japan2007
