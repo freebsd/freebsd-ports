@@ -243,6 +243,7 @@
     SUBDIR += latex2html
     SUBDIR += latte
     SUBDIR += lemmatizer
+    SUBDIR += lemmatizer2
     SUBDIR += libcroco
     SUBDIR += libebml
     SUBDIR += libextractor
