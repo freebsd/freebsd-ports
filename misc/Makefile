@@ -367,7 +367,6 @@
     SUBDIR += p5-Zen-Koans
     SUBDIR += patanjali
     SUBDIR += patchutils
-    SUBDIR += pbs
     SUBDIR += pciids
     SUBDIR += pdfmap
     SUBDIR += pdmenu
