@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	shntool
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.etree.org/shnutils/shntool/dist/src/ CSME LOCAL/fenner
 
-MAINTAINER=	fenner@FreeBSD.Org
+MAINTAINER=	infofarmer@FreeBSD.Org
 COMMENT=	Multi-purpose .wav processing utility
 
 GNU_CONFIGURE=	yes
