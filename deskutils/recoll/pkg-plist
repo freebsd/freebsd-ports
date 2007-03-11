@@ -1,7 +1,7 @@
 bin/recoll
 bin/recollindex
-share/applications/recoll.desktop
-share/icons/hicolor/48x48/apps/recoll.png
+share/applications/recoll-searchgui.desktop
+share/icons/hicolor/48x48/apps/recoll-searchgui.png
 %%DATADIR%%/doc/docbook.css
 %%DATADIR%%/doc/usermanual.html
 %%DATADIR%%/examples/mimeconf
@@ -13,14 +13,18 @@ share/icons/hicolor/48x48/apps/recoll.png
 %%DATADIR%%/filters/rcldoc
 %%DATADIR%%/filters/rcldvi
 %%DATADIR%%/filters/rclgaim
+%%DATADIR%%/filters/rcllyx
+%%DATADIR%%/filters/rclman
 %%DATADIR%%/filters/rclmedia
 %%DATADIR%%/filters/rclpdf
 %%DATADIR%%/filters/rclppt
 %%DATADIR%%/filters/rclps
 %%DATADIR%%/filters/rclrtf
+%%DATADIR%%/filters/rclscribus
 %%DATADIR%%/filters/rclsoff
 %%DATADIR%%/filters/rcluncomp
 %%DATADIR%%/filters/rclxls
+%%DATADIR%%/filters/xdg-open
 %%DATADIR%%/images/document.png
 %%DATADIR%%/images/drawing.png
 %%DATADIR%%/images/folder.png
@@ -38,8 +42,9 @@ share/icons/hicolor/48x48/apps/recoll.png
 %%DATADIR%%/images/txt.png
 %%DATADIR%%/images/wordprocessing.png
 %%DATADIR%%/translations/recoll_fr.qm
-%%DATADIR%%/translations/recoll_ru.qm
+%%DATADIR%%/translations/recoll_it.qm
 %%DATADIR%%/translations/recoll_uk.qm
+%%DATADIR%%/translations/recoll_ru.qm
 @dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%/filters
