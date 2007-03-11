@@ -1,0 +1,79 @@
+$FreeBSD$
+--- cp-install	Wed Mar  7 22:17:56 2007
++++ cp-install.port	Sat Mar 10 21:47:41 2007
+@@ -42,7 +42,7 @@
+ except:
+ 	u=1
+ 
+-if u:
++if 0:
+ 	okay("""You do not appear to be running this script as 'root' user.
+ Continuing will probably cause all kinds of strange errors
+ and a generally unsatisfactory experience. But, we can try...
+@@ -64,14 +64,14 @@
+ 
+ """
+ 
+-okay("")
++#okay("")
+ 
+ ###########################################
+ ######## Copy the executable.
+ 
+-bin='/usr/local/bin/mma'
++bin='%%PREFIX%%/bin/mma'
+ 
+-if os.path.exists(bin):
++if 0:
+ 	okay("Existing mma executable '%s' is being overwritten." % bin)
+ 	os.remove(bin)
+ 
+@@ -84,7 +84,7 @@
+ 
+ dest = '/usr/local/share/mma'
+ 
+-if os.path.exists(dest):
++if 0:
+    bu=dest.rsplit('/', 1)[0] + '/mma-old'
+    if os.path.exists(bu):
+       print "This script was going to move the existing MMA tree to"
+@@ -117,9 +117,18 @@
+ ###########################################
+ ######## Copy the html docs
+ 
+-print "Copying HTML documentation to", dest
++if not os.getenv('NOPORTDOCS'):
++    docsdir = '%%DOCSDIR%%'
++    print "Copying HTML documentation to", docsdir
++    shutil.copytree( "docs", docsdir)
+ 
+-shutil.copytree( "docs", dest+"/docs")
++###########################################
++######## Copy examples
++
++if not os.getenv('WITHOUT_EXAMPLES'):
++    examplesdir = '%%EXAMPLESDIR%%'
++    print "Copying example files to", examplesdir
++    shutil.copytree( "egs", examplesdir)
+ 
+ ###########################################
+ ######## Set permissions/udate database
+@@ -127,14 +136,14 @@
+ print
+ print "Updating database file. This uses mma with the -G option."
+ print "If this fails, something was not installed properly"
+-print "and you should contact Bob and we'll figure it out."
++#print "and you should contact Bob and we'll figure it out."
+ 
+-okay("")
++#okay("")
+ 
+ os.system("%s -G" % bin)
+ 
+-print "Setting permissions on MMADIR database file for user update."
+-os.system("chmod a+w " + dest+"/lib/stdlib/.mmaDB")
++#print "Setting permissions on MMADIR database file for user update."
++#os.system("chmod a+w " + dest+"/lib/stdlib/.mmaDB")
+ 
+ 
+ 

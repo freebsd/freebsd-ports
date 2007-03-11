@@ -386,6 +386,7 @@
     SUBDIR += mixer.app
     SUBDIR += mixmos
     SUBDIR += mixxx
+    SUBDIR += mma
     SUBDIR += moc
     SUBDIR += modplugplay
     SUBDIR += mp-player
