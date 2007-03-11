@@ -19,6 +19,7 @@ RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu \
 
 CHANGESET=	2010
 CONFLICTS=	wmii-3.[0-46-9]* wmii-3.5.1*
+USE_XLIB=	yes
 USE_BZIP2=	yes
 MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${X11BASE}/lib" \
 		X11INC="${X11BASE}/include" CC="${CC}" \
