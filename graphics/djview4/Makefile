@@ -7,7 +7,7 @@
 
 PORTNAME=	djview
 PORTVERSION=	4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	djvu
@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}4-${PORTVERSION}
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Standalone Djvu viewer and plugin based on Qt4 toolkit
 
+LIB_DEPENDS=	djvulibre.18:${PORTSDIR}/graphics/djvulibre-nox11
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig gnometarget
