@@ -2186,7 +2186,11 @@ e17-splash-takara	ports/x11-themes/e17-splash-takara
 e17-theme-blue_eyed	ports/x11-themes/e17-theme-blue_eyed
 e17-theme-cthulhain	ports/x11-themes/e17-theme-cthulhain
 e17-theme-darkness	ports/x11-themes/e17-theme-darkness
+e17-theme-gant	ports/x11-themes/e17-theme-gant
+e17-theme-japan2007	ports/x11-themes/e17-theme-japan2007
 e17-theme-kor	ports/x11-themes/e17-theme-kor
+e17-theme-milky	ports/x11-themes/e17-theme-milky
+e17-theme-simply_white	ports/x11-themes/e17-theme-simply_white
 e17-utils	ports/x11-wm/e17-utils
 e2fsprogs	ports/sysutils/e2fsprogs
 e2fsprogs-libuuid	ports/misc/e2fsprogs-libuuid
