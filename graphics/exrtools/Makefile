@@ -7,6 +7,7 @@
 
 PORTNAME=	exrtools
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://scanline.ca/exrtools/ \
 		http://critical.ch/distfiles/ \
