@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jgrapht
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	java math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -48,12 +48,9 @@ pre-fetch:
 	@${ECHO_MSG} "    WITHOUT_COMPILE=yes    Install the pre-compiled .jar file"
 	@${ECHO_MSG} ""
 
-post-build:
-	${MV} ${WRKSRC}/${PORTNAME}-${PORTVERSION}-local.jar ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar
-
 do-install:
 	@${ECHO_MSG} -n  ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-jdk${JAVA_PORT_VERSION:C/([0-9]\.[0-9])\.[0-9]/\1/}.jar ${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [DONE]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
