@@ -13,6 +13,8 @@
 %%SITE_PERL%%/Moose/Meta/Instance.pm
 %%SITE_PERL%%/Moose/Meta/Method.pm
 %%SITE_PERL%%/Moose/Meta/Method/Accessor.pm
+%%SITE_PERL%%/Moose/Meta/Method/Constructor.pm
+%%SITE_PERL%%/Moose/Meta/Method/Destructor.pm
 %%SITE_PERL%%/Moose/Meta/Method/Overriden.pm
 %%SITE_PERL%%/Moose/Meta/Role.pm
 %%SITE_PERL%%/Moose/Meta/Role/Method.pm
