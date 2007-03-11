@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	euphoria
-PORTVERSION=	20061008
+PORTVERSION=	20070223
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	XMMS2 GUI frontend written with Enlightenment e17 libraries

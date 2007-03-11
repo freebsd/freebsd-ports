@@ -7,7 +7,7 @@
 
 PORTNAME=	ipager
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://useperl.ru/ipager/src/
 DISTNAME=	ipager-${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	ipager-${PORTVERSION}
 MAINTAINER=	vlad@vlad.uz.ua
 COMMENT=	X11 pager program
 
-LIB_DEPENDS+=	Imlib2.3:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS+=	Imlib2.4:${PORTSDIR}/graphics/imlib2
 
 USE_SCONS=	yes
 

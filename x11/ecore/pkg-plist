@@ -1,10 +1,5 @@
 bin/ecore-config
 %%EET%%bin/ecore_config
-bin/ecore_dbus_hal_test
-bin/ecore_dbus_receiver_test
-bin/ecore_dbus_test
-%%EVAS%%bin/ecore_evas_test
-%%EVAS%%bin/ecore_test
 include/Ecore.h
 include/Ecore_Con.h
 %%EET%%include/Ecore_Config.h
@@ -15,6 +10,7 @@ include/Ecore_Desktop.h
 include/Ecore_File.h
 include/Ecore_Ipc.h
 include/Ecore_Job.h
+include/Ecore_Str.h
 include/Ecore_Txt.h
 %%X11%%include/Ecore_X.h
 %%X11%%include/Ecore_X_Atoms.h
@@ -65,28 +61,6 @@ lib/libecore_txt.so.1
 %%X11%%lib/libecore_x.so.1
 libdata/pkgconfig/ecore.pc
 share/aclocal/ecore.m4
-%%DATADIR%%/fonts/Vera.ttf
-%%DATADIR%%/fonts/VeraBI.ttf
-%%DATADIR%%/fonts/VeraBd.ttf
-%%DATADIR%%/fonts/VeraIt.ttf
-%%DATADIR%%/fonts/VeraMoBI.ttf
-%%DATADIR%%/fonts/VeraMoBd.ttf
-%%DATADIR%%/fonts/VeraMoIt.ttf
-%%DATADIR%%/fonts/VeraMono.ttf
-%%DATADIR%%/fonts/VeraSe.ttf
-%%DATADIR%%/fonts/VeraSeBd.ttf
-%%DATADIR%%/fonts/fonts.alias
-%%DATADIR%%/fonts/fonts.dir
-%%DATADIR%%/images/ball.png
-%%DATADIR%%/images/bar.png
-%%DATADIR%%/images/bar_shad_above.png
-%%DATADIR%%/images/bar_shad_below.png
-%%DATADIR%%/images/bg.png
-%%DATADIR%%/images/crosshair.png
-%%DATADIR%%/images/e_logo.png
-%%DATADIR%%/images/evas_logo.png
-%%DATADIR%%/images/shadow.png
-%%DATADIR%%/pointers/mouse_pointer.png
 @dirrm %%DATADIR%%/pointers
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/fonts

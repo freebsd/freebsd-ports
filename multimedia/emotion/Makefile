@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	emotion
-PORTVERSION=	20060926
-PORTREVISION=	2
+PORTVERSION=	20070223
+PORTREVISION=	0
 CATEGORIES=	multimedia
-MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Video playback wrapper library for e17

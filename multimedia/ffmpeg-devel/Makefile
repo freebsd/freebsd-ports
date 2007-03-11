@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	0.4.9.cvs.${RELEASE_DATE}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 #		http://mplayerhq.hu/MPlayer/cvs/
@@ -332,7 +332,7 @@ PLIST_FILES+=	lib/vhook/drawtext.so
 
 # enable imlib2
 . ifdef(WITH_IMLIB2)
-LIB_DEPENDS+=	Imlib2.3:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS+=	Imlib2.4:${PORTSDIR}/graphics/imlib2
 
 PLIST_FILES+=	lib/vhook/imlib2.so
 . else

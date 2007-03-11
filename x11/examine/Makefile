@@ -7,15 +7,12 @@
 #
 
 PORTNAME=	examine
-PORTVERSION=	20060926
+PORTVERSION=	20070223
 CATEGORIES=	x11
-MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Interface for configuring EFL applications
-
-LIB_DEPENDS=	ecore.1:${PORTSDIR}/x11/ecore \
-		ewl.0:${PORTSDIR}/x11-toolkits/ewl
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

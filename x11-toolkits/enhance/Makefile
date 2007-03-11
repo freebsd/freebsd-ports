@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	enhance
-PORTVERSION=	20060926
+PORTVERSION=	20070223
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A library for rapid application development with ETK/Glade

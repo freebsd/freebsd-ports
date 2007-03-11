@@ -7,7 +7,6 @@ lib/enlightenment/modules/rain/%%E17_ARCH%%/module.la
 lib/enlightenment/modules/rain/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/rain/module.desktop
 lib/enlightenment/modules/rain/module.edj
-lib/enlightenment/modules/rain/module_icon.png
 %%NLS%%share/locale/eo/LC_MESSAGES/rain.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/rain.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/rain.mo

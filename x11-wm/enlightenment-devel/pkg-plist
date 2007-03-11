@@ -1,7 +1,5 @@
-bin/eap_to_desktop
 bin/enlightenment
 bin/enlightenment-config
-bin/enlightenment_eapp
 bin/enlightenment_imc
 bin/enlightenment_remote
 bin/enlightenment_start
@@ -31,9 +29,9 @@ include/enlightenment/e_container.h
 include/enlightenment/e_datastore.h
 include/enlightenment/e_desk.h
 include/enlightenment/e_desklock.h
-include/enlightenment/e_deskpreview.h
 include/enlightenment/e_dialog.h
 include/enlightenment/e_dnd.h
+include/enlightenment/e_dpms.h
 include/enlightenment/e_eap_editor.h
 include/enlightenment/e_editable.h
 include/enlightenment/e_entry.h
@@ -42,10 +40,14 @@ include/enlightenment/e_error.h
 include/enlightenment/e_exebuf.h
 include/enlightenment/e_exehist.h
 include/enlightenment/e_fdo_menu_to_order.h
+include/enlightenment/e_filereg.h
+include/enlightenment/e_flowlayout.h
 include/enlightenment/e_fm.h
 include/enlightenment/e_fm_mime.h
+include/enlightenment/e_fm_prop.h
 include/enlightenment/e_focus.h
 include/enlightenment/e_font.h
+include/enlightenment/e_fwin.h
 include/enlightenment/e_gadcon.h
 include/enlightenment/e_grabinput.h
 include/enlightenment/e_hints.h
@@ -53,28 +55,37 @@ include/enlightenment/e_icon.h
 include/enlightenment/e_ilist.h
 include/enlightenment/e_includes.h
 include/enlightenment/e_init.h
-include/enlightenment/e_int_border_border.h
 include/enlightenment/e_int_border_locks.h
 include/enlightenment/e_int_border_menu.h
 include/enlightenment/e_int_border_prop.h
 include/enlightenment/e_int_border_remember.h
 include/enlightenment/e_int_config_apps.h
+include/enlightenment/e_int_config_borders.h
 include/enlightenment/e_int_config_cfgdialogs.h
+include/enlightenment/e_int_config_clientlist.h
+include/enlightenment/e_int_config_color_classes.h
 include/enlightenment/e_int_config_cursor.h
+include/enlightenment/e_int_config_desk.h
 include/enlightenment/e_int_config_desklock.h
 include/enlightenment/e_int_config_desks.h
 include/enlightenment/e_int_config_display.h
+include/enlightenment/e_int_config_dpms.h
 include/enlightenment/e_int_config_exebuf.h
 include/enlightenment/e_int_config_focus.h
 include/enlightenment/e_int_config_fonts.h
 include/enlightenment/e_int_config_icon_themes.h
+include/enlightenment/e_int_config_imc.h
+include/enlightenment/e_int_config_imc_import.h
 include/enlightenment/e_int_config_intl.h
 include/enlightenment/e_int_config_keybindings.h
 include/enlightenment/e_int_config_menus.h
+include/enlightenment/e_int_config_mime.h
+include/enlightenment/e_int_config_mime_edit.h
 include/enlightenment/e_int_config_modules.h
 include/enlightenment/e_int_config_mousebindings.h
 include/enlightenment/e_int_config_paths.h
 include/enlightenment/e_int_config_performance.h
+include/enlightenment/e_int_config_screensaver.h
 include/enlightenment/e_int_config_shelf.h
 include/enlightenment/e_int_config_startup.h
 include/enlightenment/e_int_config_theme.h
@@ -113,6 +124,7 @@ include/enlightenment/e_popup.h
 include/enlightenment/e_prefix.h
 include/enlightenment/e_remember.h
 include/enlightenment/e_resist.h
+include/enlightenment/e_screensaver.h
 include/enlightenment/e_scrollframe.h
 include/enlightenment/e_sha1.h
 include/enlightenment/e_shelf.h
@@ -131,12 +143,14 @@ include/enlightenment/e_tlist.h
 include/enlightenment/e_user.h
 include/enlightenment/e_utils.h
 include/enlightenment/e_widget.h
+include/enlightenment/e_widget_aspect.h
 include/enlightenment/e_widget_button.h
 include/enlightenment/e_widget_check.h
 include/enlightenment/e_widget_color_well.h
 include/enlightenment/e_widget_config_list.h
 include/enlightenment/e_widget_csel.h
 include/enlightenment/e_widget_cslider.h
+include/enlightenment/e_widget_desk_preview.h
 include/enlightenment/e_widget_entry.h
 include/enlightenment/e_widget_framelist.h
 include/enlightenment/e_widget_frametable.h
@@ -203,6 +217,9 @@ lib/enlightenment/modules/temperature/%%E17_ARCH%%/module.la
 lib/enlightenment/modules/temperature/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/temperature/module.desktop
 lib/enlightenment/modules/temperature/module.edj
+lib/enlightenment/preload/e_precache.so
+lib/enlightenment/preload/e_precache.la
+lib/enlightenment/preload/e_precache.a
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/COPYING
 %%DATADIR%%/data/backgrounds/Blue_Sky_Tree.edj
@@ -223,13 +240,14 @@ lib/enlightenment/modules/temperature/module.edj
 %%DATADIR%%/data/fonts/fonts.alias
 %%DATADIR%%/data/fonts/fonts.dir
 %%DATADIR%%/data/icons/audio_player.png
+%%DATADIR%%/data/icons/audio_player2.png
+%%DATADIR%%/data/icons/image_viewer.png
+%%DATADIR%%/data/icons/mail_client.png
+%%DATADIR%%/data/icons/text_editor.png
 %%DATADIR%%/data/icons/video_player.png
 %%DATADIR%%/data/icons/web_browser.png
 %%DATADIR%%/data/icons/xterm.png
-%%DATADIR%%/data/images/button_in.png
-%%DATADIR%%/data/images/button_out.png
-%%DATADIR%%/data/images/e.png
-%%DATADIR%%/data/images/error_bg.png
+%%DATADIR%%/data/images/enlightenment.png
 %%DATADIR%%/data/images/test.edj
 %%DATADIR%%/data/images/test.jpg
 %%DATADIR%%/data/images/test.png
@@ -246,27 +264,14 @@ lib/enlightenment/modules/temperature/module.edj
 %%DATADIR%%/doc/documentation.html
 %%DATADIR%%/doc/enlightenment.png
 share/locale/bg/LC_MESSAGES/enlightenment.mo
-share/locale/cs/LC_MESSAGES/enlightenment.mo
-share/locale/da/LC_MESSAGES/enlightenment.mo
 share/locale/de/LC_MESSAGES/enlightenment.mo
 share/locale/eo/LC_MESSAGES/enlightenment.mo
-share/locale/es/LC_MESSAGES/enlightenment.mo
-share/locale/fi/LC_MESSAGES/enlightenment.mo
 share/locale/fr/LC_MESSAGES/enlightenment.mo
 share/locale/hu/LC_MESSAGES/enlightenment.mo
 share/locale/it/LC_MESSAGES/enlightenment.mo
 share/locale/ja/LC_MESSAGES/enlightenment.mo
-share/locale/ko/LC_MESSAGES/enlightenment.mo
-share/locale/nb/LC_MESSAGES/enlightenment.mo
-share/locale/nl/LC_MESSAGES/enlightenment.mo
-share/locale/pl/LC_MESSAGES/enlightenment.mo
-share/locale/pt/LC_MESSAGES/enlightenment.mo
 share/locale/ru/LC_MESSAGES/enlightenment.mo
-share/locale/sk/LC_MESSAGES/enlightenment.mo
 share/locale/sl/LC_MESSAGES/enlightenment.mo
-share/locale/sv/LC_MESSAGES/enlightenment.mo
-share/locale/zh_CN/LC_MESSAGES/enlightenment.mo
-share/locale/zh_TW/LC_MESSAGES/enlightenment.mo
 share/xsessions/enlightenment.desktop
 @dirrmtry share/xsessions
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
@@ -317,6 +322,7 @@ share/xsessions/enlightenment.desktop
 @dirrm lib/enlightenment/modules/battery/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/battery
 @dirrm lib/enlightenment/modules
+@dirrm lib/enlightenment/preload
 @dirrm lib/enlightenment
 @dirrm include/enlightenment
 @dirrm etc/enlightenment

@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	enlightenment
-PORTVERSION=	20060926
+PORTVERSION=	20070223
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 DISTNAME=	e-${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org

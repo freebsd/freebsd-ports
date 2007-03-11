@@ -7,14 +7,14 @@
 
 PORTNAME=	wmmsg
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://mirror.israel.net/pub/FreeBSD/distfiles/
 
 MAINTAINER=	t.kempka@web.de
 COMMENT=	Dockapp that notifies you on ICQ, AIM and IRC events
 
-LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

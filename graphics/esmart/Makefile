@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	esmart
-PORTVERSION=	20060926
+PORTVERSION=	20070223
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Evas smart objects development libraries
-
-LIB_DEPENDS=	epsilon.0:${PORTSDIR}/graphics/epsilon
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libltdl:15

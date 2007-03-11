@@ -4,7 +4,6 @@ lib/enlightenment/modules/cpu/%%E17_ARCH%%/module.la
 lib/enlightenment/modules/cpu/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/cpu/module.desktop
 lib/enlightenment/modules/cpu/module.edj
-lib/enlightenment/modules/cpu/module_icon.png
 @dirrm lib/enlightenment/modules/cpu/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/cpu
 @dirrmtry lib/enlightenment/modules

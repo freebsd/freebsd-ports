@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	epeg
-PORTVERSION=	20060926
+PORTVERSION=	20070223
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An IMMENSELY FAST JPEG thumbnailer library API

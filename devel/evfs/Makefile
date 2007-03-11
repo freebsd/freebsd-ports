@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	evfs
-PORTVERSION=	20060926
-PORTREVISION=	1
+PORTVERSION=	20070223
+PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An extensible virtual file system library

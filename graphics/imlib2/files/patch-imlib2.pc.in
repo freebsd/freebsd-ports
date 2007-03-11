@@ -1,0 +1,9 @@
+--- imlib2.pc.in.orig	Mon Feb 26 02:38:45 2007
++++ imlib2.pc.in	Mon Feb 26 02:38:57 2007
+@@ -8,5 +8,5 @@
+ Requires: @requirements@
+ Version: @VERSION@
+ Libs: -L${libdir} -lImlib2
+-Cflags: -I${includedir}
++Cflags: -I${includedir} @my_includes@
+ 

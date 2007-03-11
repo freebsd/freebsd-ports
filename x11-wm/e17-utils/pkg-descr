@@ -1,7 +1,5 @@
 e_util is a collection of utils for enlightenment 0.17:
- - e17genmenu - menu entries generator
  - e17setroot - cmdline util to set the background
- - eapp_edit - graphical eapp icons editor
  - entangle - simple menu editor
  - exige - program launcher
 

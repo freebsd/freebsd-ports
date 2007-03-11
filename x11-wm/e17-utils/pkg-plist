@@ -1,23 +1,6 @@
-bin/e17genmenu
 bin/e17setroot
-bin/eap_edit
 bin/entangle
 bin/exige
-%%DATADIR%%/data/e17genmenu/icons/e.png
-%%DATADIR%%/data/e17genmenu/icons/package_applications.png
-%%DATADIR%%/data/e17genmenu/icons/package_development.png
-%%DATADIR%%/data/e17genmenu/icons/package_editors.png
-%%DATADIR%%/data/e17genmenu/icons/package_edutainment.png
-%%DATADIR%%/data/e17genmenu/icons/package_favourite.png
-%%DATADIR%%/data/e17genmenu/icons/package_games.png
-%%DATADIR%%/data/e17genmenu/icons/package_graphics.png
-%%DATADIR%%/data/e17genmenu/icons/package_multimedia.png
-%%DATADIR%%/data/e17genmenu/icons/package_network.png
-%%DATADIR%%/data/e17genmenu/icons/package_settings.png
-%%DATADIR%%/data/e17genmenu/icons/package_system.png
-%%DATADIR%%/data/e17genmenu/icons/package_toys.png
-%%DATADIR%%/data/e17genmenu/icons/package_utilities.png
-%%DATADIR%%/data/e17genmenu/icons/package_wordprocessing.png
 %%DATADIR%%/data/entangle/default.edj
 %%DATADIR%%/data/exige/default.edj
 share/enlightenment/config-apps/entangle.eap
@@ -25,7 +8,6 @@ share/enlightenment/config-apps/entangle.eap
 @dirrmtry share/enlightenment/config-apps
 @dirrm %%DATADIR%%/data/exige
 @dirrm %%DATADIR%%/data/entangle
-@dirrm %%DATADIR%%/data/e17genmenu/icons
 @dirrm %%DATADIR%%/data/e17genmenu
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%

@@ -7,7 +7,7 @@
 
 PORTNAME=	Imlib2
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.muhri.net/
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-Perl-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl bindings for Imlib2
 
-LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2
 
 PERL_CONFIGURE=	yes
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	fbdesk
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://fluxbox.sourceforge.net/download/ \
 		${MASTER_SITE_GENTOO} \
@@ -19,7 +20,7 @@ COMMENT=	A Fluxbox utility to create and manage icons on the desktop
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft \
-		Imlib2.3:${PORTSDIR}/graphics/imlib2
+		Imlib2.4:${PORTSDIR}/graphics/imlib2
 
 PLIST_FILES=	bin/fbdesk
 USE_X_PREFIX=	yes
