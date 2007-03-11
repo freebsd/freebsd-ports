@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.wesnoth.org/files/
@@ -21,7 +21,7 @@ USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 WANT_GNOME=	yes
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-libiconv-prefix=${LOCALBASE} \
