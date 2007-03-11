@@ -1,11 +1,9 @@
 bin/Mercury_Messenger
 %%INSTDIR%%/Mercury_Messenger
 %%VID%%%%INSTDIR%%/lib/VidConf-libs.jar
-%%INSTDIR%%/lib/SpellCheck.jar
 %%INSTDIR%%/lib/dMSN.jar
 %%INSTDIR%%/lib/jdom1_0.jar
 %%INSTDIR%%/lib/xmlpull.jar
-%%INSTDIR%%/resources/AppData/Backgrounds/.keep_me
 %%INSTDIR%%/resources/AppData/CustomEmoticons/MSN7.zip
 %%INSTDIR%%/resources/AppData/Games/.keep_me
 %%INSTDIR%%/resources/AppData/Images/Default.zip
@@ -65,8 +63,6 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/settings/Default_Global.xml
 %%INSTDIR%%/resources/settings/Window_Advanced_Account.xml
 %%INSTDIR%%/resources/settings/Window_Advanced_Global.xml
-%%INSTDIR%%/resources/settings/Window_Basic_Account.xml
-%%INSTDIR%%/resources/settings/Window_Basic_Global.xml
 %%INSTDIR%%/resources/settings/Window_View.xml
 %%INSTDIR%%/resources/text/EventExampleLog.xml
 %%INSTDIR%%/resources/text/EventLog.xsl
@@ -86,7 +82,6 @@ bin/Mercury_Messenger
 @dirrm %%INSTDIR%%/resources/AppData/Images
 @dirrm %%INSTDIR%%/resources/AppData/Games
 @dirrm %%INSTDIR%%/resources/AppData/CustomEmoticons
-@dirrm %%INSTDIR%%/resources/AppData/Backgrounds
 @dirrm %%INSTDIR%%/resources/AppData
 @dirrm %%INSTDIR%%/resources
 @dirrm %%INSTDIR%%/lib
