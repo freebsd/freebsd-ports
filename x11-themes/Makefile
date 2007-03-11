@@ -36,6 +36,7 @@
     SUBDIR += e17-theme-japan2007
     SUBDIR += e17-theme-kor
     SUBDIR += e17-theme-milky
+    SUBDIR += e17-theme-night_bling
     SUBDIR += e17-theme-simply_white
     SUBDIR += engradient
     SUBDIR += enlightenment-theme-BlueSteel
