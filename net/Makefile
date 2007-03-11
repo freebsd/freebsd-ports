@@ -133,6 +133,7 @@
     SUBDIR += fspclient
     SUBDIR += fspd
     SUBDIR += fsplib
+    SUBDIR += ftelnetd
     SUBDIR += g2ipmsg
     SUBDIR += gacxtool
     SUBDIR += gastman
