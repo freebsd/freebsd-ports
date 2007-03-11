@@ -19,6 +19,8 @@ COMMENT=	Encode/decode Perl utf-8 strings into TeX
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Unfetchable
+
 MAN3=	TeX::Encode.3
 
 PERL_CONFIGURE=	yes
