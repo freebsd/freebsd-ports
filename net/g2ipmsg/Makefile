@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	g2ipmsg
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.ipmsg.org/archive/ \
 		${MASTER_SITE_LOCAL} \
@@ -24,12 +24,14 @@ USE_GNOME=	gnomeprefix gnomehack intlhack intltool pkgconfig \
 USE_GSTREAMER=	vorbis
 USE_ICONV=	yes
 USE_XLIB=	yes
+USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--enable-systray
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ARGS=	--enable-systray --with-ssl=${OPENSSLBASE}
 
 GCONF_SCHEMAS=	g2ipmsg.schemas
+
+LDFLAGS+=	"-L${LOCALBASE}/lib"
 
 post-install:
 	@update-desktop-database
