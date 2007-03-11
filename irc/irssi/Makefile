@@ -72,6 +72,10 @@ BROKEN=	This version of FreeBSD does not support IPv6. Please use WITH_IPV6=no
 
 .if defined(WITH_BOT)
 CONFIGURE_ARGS+=	--with-bot
+PLIST_SUB+=	WITH_BOT=""
+.else
+CONFIGURE_ARGS+=	--without-bot
+PLIST_SUB+=	WITH_BOT="@comment "
 .endif
 
 post-patch:
