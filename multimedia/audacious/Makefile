@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	audacious
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://static.audacious-media-player.org/release/
 EXTRACT_SUFX=.tgz
@@ -64,6 +64,8 @@ post-patch:
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|datarootdir}/man|prefix}/man|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-c |--check-format --check-domain |g' \
+		${WRKSRC}/po/Makefile.in.in
 
 post-install:
 .if !defined(NOPORTDOCS)
