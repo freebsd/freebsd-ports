@@ -8,5 +8,4 @@ lib/libembryo.so.9
 libdata/pkgconfig/embryo.pc
 %%DATADIR%%/include/default.inc
 @dirrm %%DATADIR%%/include
-@dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%
