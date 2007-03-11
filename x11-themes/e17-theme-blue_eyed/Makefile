@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	blue_eyed
-PORTVERSION=	0.6.5.3
-PORTREVISION=	1
+PORTVERSION=	0.6.5.6
+PORTREVISION=	0
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www0.get-e.org/Themes/E17/_files/ \
-		http://sunner.elcomnet.ru/~stas/
+		ftp://ftp.springdaemons.com/pub/snapshots/e17/
 PKGNAMEPREFIX=	e17-theme-
-DISTNAME=	blue_eyed_0.6.5.g_i
+DISTNAME=	blue_eyed_0.6.5.g_l
 EXTRACT_SUFX=	.edj
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	BlueEyed theme for use with e17 window manager
 
-RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment-devel
+RUN_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment-devel
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
