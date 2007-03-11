@@ -3069,6 +3069,7 @@ fswiki		ports/www/fswiki
 ft2demos	ports/print/ft2demos
 ftdi-eeprom	ports/misc/ftdi-eeprom
 fte		ports/editors/fte
+ftelnetd	ports/net/ftelnetd
 fteqw		ports/games/fteqw
 ftgl		ports/graphics/ftgl
 ftimes		ports/security/ftimes
