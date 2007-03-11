@@ -6,13 +6,14 @@
 
 PORTNAME=	cduce
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cduce.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An efficient XML centric functionnal programming language
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre-utf8
+LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib \
 		${LOCALBASE}/lib/ocaml/site-lib/ulex/ulexing.a:${PORTSDIR}/devel/ocaml-ulex \

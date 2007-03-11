@@ -7,7 +7,7 @@
 
 PORTNAME=	sulci
 PORTVERSION=	0.5.a.20060221
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.jabber.ru/files/sulci/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./-alpha-/}
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		${OCAML_SITELIBDIR}/netclient/netclient.a:${PORTSDIR}/net/ocaml-netclient \
 		${OCAML_SITELIBDIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
 LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite2 \
-		pcre.0:${PORTSDIR}/devel/pcre-utf8
+		pcre.0:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	${OCAML_SITELIBDIR}/netstring/netstring.a:${PORTSDIR}/www/ocaml-net \
 		mueller:${PORTSDIR}/russian/mueller-dic
 

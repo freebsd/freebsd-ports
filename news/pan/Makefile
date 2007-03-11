@@ -8,6 +8,7 @@
 
 PORTNAME=	pan
 PORTVERSION=	0.125
+PORTREVISION=	1
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/source/
 DIST_SUBDIR=	gnome2
@@ -15,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Threaded GTK+2 newsreader based on Agent for Windows
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre-utf8 \
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		gmime-2.0.4:${PORTSDIR}/mail/gmime2
 
 USE_XLIB=	yes

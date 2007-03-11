@@ -7,6 +7,7 @@
 
 PORTNAME=	subtitleeditor
 PORTVERSION=	0.13.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://kitone.free.fr/subtitleeditor/files/ CSME
 
@@ -18,7 +19,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
 		enchant.1:${PORTSDIR}/textproc/enchant \
-		pcre.0:${PORTSDIR}/devel/pcre-utf8
+		pcre.0:${PORTSDIR}/devel/pcre
 
 USE_GNOME=	gtk20
 USE_GSTREAMER=	good

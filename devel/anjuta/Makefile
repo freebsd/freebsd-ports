@@ -7,7 +7,7 @@
 
 PORTNAME=	anjuta
 PORTVERSION=	1.2.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	anjuta
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	anjuta
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integrated Development Environment for C and C++
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre-utf8
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	${LOCALBASE}/gnu-autotools/bin/autoconf:${PORTSDIR}/devel/gnu-autoconf \
 		${LOCALBASE}/gnu-autotools/bin/automake:${PORTSDIR}/devel/gnu-automake \
 		libtool:${PORTSDIR}/devel/libtool15

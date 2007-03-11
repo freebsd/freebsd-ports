@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=	--disable-opensp
 
 .if !defined(WITHOUT_ADBLOCK)
 EPHY_EXTENSIONS:=	${EPHY_EXTENSIONS},adblock
-LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre-utf8
+LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
 PLIST_SUB+=		ADBLOCK=""
 .else
 PLIST_SUB+=		ADBLOCK="@comment "

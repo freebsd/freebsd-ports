@@ -8,6 +8,7 @@
 
 PORTNAME=	bluefish
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	www editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	HTML editor designed for the experienced web designer
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre-utf8 \
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		aspell.16:${PORTSDIR}/textproc/aspell
 
 .if !defined(WITHOUT_WEBLINT)

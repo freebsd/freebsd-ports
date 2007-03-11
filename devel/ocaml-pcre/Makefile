@@ -7,6 +7,7 @@
 
 PORTNAME=	pcre
 PORTVERSION=	5.11.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 PKGNAMEPREFIX=	ocaml-
@@ -15,7 +16,7 @@ DISTNAME=	pcre-ocaml-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl compatible regular expressions for Objective Caml
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre-utf8
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_OCAML=	yes
 USE_OCAML_FINDLIB=	yes
