@@ -1,3 +1,4 @@
+%%WITH_BOT%%bin/botti
 bin/irssi
 etc/irssi.conf
 etc/irssi.conf.sample
