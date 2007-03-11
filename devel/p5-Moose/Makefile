@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/S/ST/STEVAN
@@ -17,10 +17,9 @@ COMMENT=	A complete modern object system for Perl 5
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
-	p5-Class-MOP>=0.36:${PORTSDIR}/devel/p5-Class-MOP \
+	p5-Class-MOP>=0.37:${PORTSDIR}/devel/p5-Class-MOP \
 	p5-Sub-Name>=0.02:${PORTSDIR}/devel/p5-Sub-Name \
-	p5-Sub-Exporter>=0.954:${PORTSDIR}/devel/p5-Sub-Exporter \
-	p5-Sub-Install>=0.92:${PORTSDIR}/devel/p5-Sub-Install
+	p5-Sub-Exporter>=0.972:${PORTSDIR}/devel/p5-Sub-Exporter
 
 PERL_MODBUILD=	yes
 
@@ -39,6 +38,8 @@ MAN3=	Moose.3 \
 	Moose::Meta::Instance.3 \
 	Moose::Meta::Method.3 \
 	Moose::Meta::Method::Accessor.3 \
+	Moose::Meta::Method::Constructor.3 \
+	Moose::Meta::Method::Destructor.3 \
 	Moose::Meta::Method::Overriden.3 \
 	Moose::Meta::Role.3 \
 	Moose::Meta::Role::Method.3 \
