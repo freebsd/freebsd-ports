@@ -7,7 +7,7 @@
 
 PORTNAME=	embryo
 PORTVERSION=	20070223
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
