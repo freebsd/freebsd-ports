@@ -6,9 +6,10 @@
 #
 
 PORTNAME=		mksh
-DISTVERSION=		R29
+DISTVERSION=		R29b
 CATEGORIES=		shells
-MASTER_SITES=		http://www.mirbsd.org/MirOS/dist/mir/mksh/
+MASTER_SITES=		http://www.mirbsd.org/MirOS/dist/mir/mksh/ \
+			http://pub.allbsd.org/MirOS/dist/mir/mksh/
 DISTFILES=		${PORTNAME}-${DISTVERSION}.cpio.gz
 
 MAINTAINER=		andreas@syndrom23.de
