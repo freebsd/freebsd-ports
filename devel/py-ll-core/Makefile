@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ll-core
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.5
 CATEGORIES=	devel python
 MASTER_SITES=	http://ftp.livinglogic.de/core/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
