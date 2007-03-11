@@ -2,29 +2,29 @@
 # Date created:		4 Aug 2006
 # Whom:			Stanislav Sedov <ssedov@mbsd.msk.ru>
 #
-# $MBSDlabs$
 # $FreeBSD$
 #
 
 PORTNAME=	blue
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
+PORTREVISION=	0
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://www0.get-e.org/Themes/Startup/_files/ \
-		http://sunner.elcomnet.ru/~stas/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
+		${MASTER_SITE_GET_E}
+MASTER_SITE_SUBDIR=	Themes/E17_-_Startup
 PKGNAMEPREFIX=	e17-splash-
-DISTNAME=	init_blue
+DISTNAME=	init_${PORTNAME}
 EXTRACT_SUFX=	.edj
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Blue splash screen for e17 window manager
 
-RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment-devel
+RUN_DEPENDS=	enlightenment-config:${PORTSDIR}/x11-wm/enlightenment-devel
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	share/enlightenment/data/init/init_blue.edj
+PLIST_FILES=	share/enlightenment/data/init/${DISTNAME}${EXTRACT_SUFX}
 
 do-extract:
 	${MKDIR} ${WRKDIR}
