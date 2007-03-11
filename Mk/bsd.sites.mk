@@ -412,6 +412,16 @@ MASTER_SITE_GENTOO+=	\
 	ftp://gentoo.kems.net/pub/mirrors/gentoo/%SUBDIR%/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_GET_E)
+MASTER_SITE_GET_E+=	\
+	http://www0.get-e.org/%SUBDIR%/_files/ \
+	http://www1.get-e.org/%SUBDIR%/_files/ \
+	http://www2.get-e.org/%SUBDIR%/_files/ \
+	http://www3.get-e.org/%SUBDIR%/_files/ \
+	http://www4.get-e.org/%SUBDIR%/_files/ \
+	http://www5.get-e.org/%SUBDIR%/_files/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_GNOME)
 MASTER_SITE_GNOME+=	\
 	ftp://ftp.belnet.be/mirror/ftp.gnome.org/%SUBDIR%/ \
