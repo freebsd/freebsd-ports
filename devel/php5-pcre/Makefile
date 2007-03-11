@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	4
+
 CATEGORIES=	devel
 
 MASTERDIR=	${.CURDIR}/../../lang/php5
