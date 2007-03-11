@@ -9,9 +9,9 @@ sbin/auth2
 sbin/backup
 sbin/backup.sh
 sbin/bldvldb.sh
-sbin/codadump2tar
-sbin/codaconfedit
 sbin/coda-server-logrotate
+sbin/codaconfedit
+sbin/codadump2tar
 sbin/codasrv
 sbin/codastart
 sbin/createvol_rep
