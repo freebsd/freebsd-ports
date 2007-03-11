@@ -237,9 +237,9 @@ CONFIGURE_ARGS+=--enable-pcntl
 .endif
 
 .if ${PHP_MODNAME} == "pcre"
-CONFIGURE_ARGS+=--with-pcre-regex=yes
+LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
 
-PHP_HEADER_DIRS=pcrelib
+CONFIGURE_ARGS+=--with-pcre-regex=${LOCALBASE}
 .endif
 
 .if ${PHP_MODNAME} == "pdo"
