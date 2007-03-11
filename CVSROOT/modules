@@ -7284,6 +7284,7 @@ mlton		ports/lang/mlton
 mlview		ports/editors/mlview
 mlvwm		ports/x11-wm/mlvwm
 mm		ports/devel/mm
+mma		ports/audio/mma
 mmail		ports/news/mmail
 mmake		ports/java/mmake
 mmc		ports/mail/mmc
