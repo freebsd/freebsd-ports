@@ -36,8 +36,6 @@ dcc/cgi-bin/http2https
 dcc/cgi-bin/list-log
 dcc/cgi-bin/list-msg
 dcc/cgi-bin/webuser-notify
-dcc/cgi-bin/footer.dist
-dcc/cgi-bin/header.dist
 dcc/libexec/cron-dccd
 %%WITH_DCCIFD%%dcc/libexec/dccifd
 %%WITH_SENDMAIL%%dcc/libexec/dccm
@@ -65,6 +63,8 @@ dcc/libexec/stop-dccd
 dcc/libexec/updatedcc
 dcc/libexec/uninstalldcc
 dcc/libexec/wlist
+dcc/cgi-bin/header
+dcc/cgi-bin/footer
 dcc/map
 @dirrm dcc/log
 @dirrm dcc/libexec
