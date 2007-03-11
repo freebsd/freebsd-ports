@@ -8,7 +8,7 @@
 
 PORTNAME=	gaim
 PORTVERSION=	2.0.0.b6
-PORTREVISION?=	5
+PORTREVISION?=	6
 CATEGORIES?=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -226,7 +226,8 @@ post-patch:
 			${WRKSRC}/libgaim/gaim-send \
 			${WRKSRC}/libgaim/gaim-send-async
 	@${REINPLACE_CMD} -e 's|/python|/env python|' \
-	    		${WRKSRC}/libgaim/gaim-remote
+	    		${WRKSRC}/libgaim/gaim-remote \
+			${WRKSRC}/libgaim/gaim-url-handler
 .if defined(GAIM_SLAVE)
 	@${FIND} ${BUILD_WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[$$][(]top_builddir[)]/libgaim/libgaim.la|${LOCALBASE}/lib/libgaim.la|g' \
