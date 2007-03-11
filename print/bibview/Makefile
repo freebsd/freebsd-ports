@@ -11,7 +11,7 @@ CATEGORIES=	print databases
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR= biblio/bibtex/utils/bibview-2.0
 
-MAINTAINER=	dbader@eece.unm.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical interface for manipulating BibTeX bibliography databases
 
 USE_IMAKE=	yes
