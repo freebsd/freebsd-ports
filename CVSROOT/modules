@@ -6071,6 +6071,7 @@ ledger		ports/finance/ledger
 leim20		ports/editors/leim20
 leim21		ports/editors/leim21
 lemmatizer	ports/textproc/lemmatizer
+lemmatizer2	ports/textproc/lemmatizer2
 lemon		ports/devel/lemon
 lens		ports/mail/lens
 leo		ports/editors/leo
