@@ -7,6 +7,7 @@
 
 PORTNAME=	svk
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLKAO
@@ -40,7 +41,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-L
 		p5-Locale-Maketext-Lexicon>=0.62:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
 		p5-Locale-Maketext-Simple>=0.16:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
 		p5-Path-Class>=0.16:${PORTSDIR}/devel/p5-Path-Class \
-		p5-PathTools>=3.18:${PORTSDIR}/devel/p5-PathTools \
+		p5-PathTools>=3.19:${PORTSDIR}/devel/p5-PathTools \
 		p5-PerlIO-eol>=0.13:${PORTSDIR}/devel/p5-PerlIO-eol \
 		p5-PerlIO-via-dynamic>=0.11:${PORTSDIR}/devel/p5-PerlIO-via-dynamic \
 		p5-PerlIO-via-symlink>=0.02:${PORTSDIR}/devel/p5-PerlIO-via-symlink \
