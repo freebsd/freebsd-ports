@@ -6,7 +6,7 @@
 
 PORTNAME=	kaffeine
 PORTVERSION=	0.8.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kaffeine
@@ -27,7 +27,7 @@ CONFIGURE_ENV=		CXXFLAGS="${CFLAGS}" CFLAGS="${CFLAGS} -I${WRKSRC}"
 CONFIGURE_TARGET=
 DVB_HEADERS=		ca.h dmx.h frontend.h net.h
 
-.ifndef (WITHOUT_GSTREAMER)
+.ifdef (WITH_GSTREAMER)
 USE_GSTREAMER80=	yes
 PLIST_SUB+=		NOGSTREAMER=""
 .else
@@ -52,7 +52,7 @@ PLIST_SUB+=	NODVB="@comment "
 CONFIGURE_ARGS+=	--with-xorg
 .endif
 
-.ifdef (WITHOUT_GSTREAMER)
+.ifndef (WITH_GSTREAMER)
 CONFIGURE_ARGS+=	--without-gstreamer
 .endif
 
