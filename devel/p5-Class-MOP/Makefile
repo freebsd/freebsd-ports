@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-MOP
-PORTVERSION=	0.36
+PORTVERSION=	0.37
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/S/ST/STEVAN
@@ -23,7 +23,7 @@ PERL_MODBUILD=	yes
 MAN3=	Class::MOP.3 \
 	Class::MOP::Attribute.3 \
 	Class::MOP::Class.3 \
-	Class::MOP::Class::Immutable.3 \
+	Class::MOP::Immutable.3 \
 	Class::MOP::Instance.3 \
 	Class::MOP::Method.3 \
 	Class::MOP::Method::Accessor.3 \
