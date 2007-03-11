@@ -25,6 +25,8 @@ LIB_DEPENDS=	xml\\+\\+:${PORTSDIR}/textproc/libxml++26 \
 		vorbis:${PORTSDIR}/audio/libvorbis
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
+BROKEN=		Does not build
+
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_SCONS=	yes

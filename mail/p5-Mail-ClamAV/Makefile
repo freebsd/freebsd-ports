@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDe
 		clamscan:${PORTSDIR}/security/clamav
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Does not build
+
 INSTALLS_SHLIB=	yes
 
 PERL_CONFIGURE=	yes
