@@ -13,6 +13,7 @@ bin/trackerd
 etc/xdg/autostart/trackerd.desktop
 include/tracker-client.h
 include/tracker.h
+lib/deskbar-applet/handlers/tracker-handler.py
 lib/libtrackerclient.a
 lib/libtrackerclient.la
 lib/libtrackerclient.so
@@ -91,5 +92,7 @@ share/locale/sv/LC_MESSAGES/tracker.mo
 @dirrm lib/tracker/filters/application
 @dirrm lib/tracker/filters
 @dirrm lib/tracker
+@dirrmtry lib/deskbar-applet/handlers
+@dirrmtry lib/deskbar-applet
 @dirrmtry etc/xdg/autostart
 @dirrmtry etc/xdg
