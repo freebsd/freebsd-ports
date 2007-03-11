@@ -61,7 +61,3 @@ lib/libecore_txt.so.1
 %%X11%%lib/libecore_x.so.1
 libdata/pkgconfig/ecore.pc
 share/aclocal/ecore.m4
-@dirrm %%DATADIR%%/pointers
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%
