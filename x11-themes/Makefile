@@ -24,6 +24,7 @@
     SUBDIR += cursor-polar-theme
     SUBDIR += e17-splash-azul
     SUBDIR += e17-splash-blue
+    SUBDIR += e17-splash-clean
     SUBDIR += e17-splash-fortune
     SUBDIR += e17-splash-logo
     SUBDIR += e17-splash-shiny
