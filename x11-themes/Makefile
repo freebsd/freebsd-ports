@@ -31,7 +31,11 @@
     SUBDIR += e17-theme-blue_eyed
     SUBDIR += e17-theme-cthulhain
     SUBDIR += e17-theme-darkness
+    SUBDIR += e17-theme-gant
+    SUBDIR += e17-theme-japan2007
     SUBDIR += e17-theme-kor
+    SUBDIR += e17-theme-milky
+    SUBDIR += e17-theme-simply_white
     SUBDIR += engradient
     SUBDIR += enlightenment-theme-BlueSteel
     SUBDIR += enlightenment-theme-BrushedMetal-Tigert
