@@ -11,7 +11,7 @@ CATEGORIES=	biology
 MASTER_SITES=	http://abacus.gene.ucl.ac.uk/software/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	dbader@eece.unm.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Phylogenetic Analysis by Maximum Likelihood (PAML)
 
 USE_GMAKE=	YES
