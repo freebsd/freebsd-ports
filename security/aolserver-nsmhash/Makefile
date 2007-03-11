@@ -5,11 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	aolserver-nsmhash
+PORTNAME=	nsmhash
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://www.aolserver.cz/download/
-DISTFILES=	nsmhash-${PORTVERSION}.tgz
+PKGNAMEPREFIX=	aolserver-
+EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	aolserver
 
 MAINTAINER=	martin@matuska.org
@@ -24,7 +26,14 @@ RUN_DEPENDS+=	${BUILD_DEPENDS}
 PLIST_SUB+=	AOLSERVERBASE=${AOLSERVERBASE:S/${PREFIX}\///}
 
 USE_GMAKE=	yes
-USE_TCL_BUILD=	yes
+
+USE_TCL_VER?=	84
+
+.if ${USE_TCL_VER} != 84 && ${USE_TCL_VER} != 85
+IGNORE=		supported values for USE_TCL_VER are only 84 and 85
+.endif
+
+USE_TCL_BUILD=	${USE_TCL_VER}-thread
 
 .include <bsd.port.pre.mk>
 
