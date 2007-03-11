@@ -7,7 +7,7 @@
 
 PORTNAME=	evidence
 PORTVERSION=	0.9.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ MAINTAINER=	freebsd@troback.com
 COMMENT=	Enlightened file-manager
 
 BUILD_DEPENDS=	pngtopnm:${PORTSDIR}/graphics/netpbm
-LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
+LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2 \
 		evas.1:${PORTSDIR}/graphics/evas \
 		edje.5:${PORTSDIR}/graphics/edje \
 		ecore.1:${PORTSDIR}/x11/ecore \

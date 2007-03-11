@@ -3,7 +3,6 @@ lib/enlightenment/modules/flame/%%E17_ARCH%%/module.la
 lib/enlightenment/modules/flame/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/flame/module.desktop
 lib/enlightenment/modules/flame/module.edj
-lib/enlightenment/modules/flame/module_icon.png
 %%NLS%%share/locale/eo/LC_MESSAGES/flame.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/flame.mo
 %%NLS%%share/locale/it/LC_MESSAGES/flame.mo

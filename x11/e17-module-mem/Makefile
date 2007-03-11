@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mem
-PORTVERSION=	20060926
+PORTVERSION=	20070223
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	x11
-MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 PKGNAMEPREFIX=	e17-module-
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 

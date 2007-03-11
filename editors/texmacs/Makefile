@@ -7,6 +7,7 @@
 
 PORTNAME=	texmacs
 PORTVERSION=	1.0.6.9
+PORTREVISION=	1
 CATEGORIES=	editors print
 MASTER_SITES=	http://www.texmacs.org/Download/ftp/%SUBDIR%/ \
 		ftp://ftp.texmacs.org/pub/TeXmacs/%SUBDIR%/ \
@@ -42,7 +43,7 @@ MAN1=		texmacs.1 fig2ps.1
 MANCOMPRESSED=	yes
 
 .if !defined(WITHOUT_IMLIB2)
-LIB_DEPENDS+=	Imlib2.3:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS+=	Imlib2.4:${PORTSDIR}/graphics/imlib2
 CONFIGURE_ARGS+=	--with-imlib2
 .endif
 

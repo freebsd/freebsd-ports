@@ -1,12 +1,4 @@
 bin/evas-config
-%%BUFFER%%bin/evas_buffer_test
-%%DIRECTFB%%bin/evas_directfb_test
-%%DIRECTFB%%bin/evas_directfb_window
-%%WITH_GL%%bin/evas_gl_x11_test
-%%SOFTX11%%bin/evas_software_x11_perf_load
-%%SOFTX11%%bin/evas_software_x11_perf_test
-%%SOFTX11%%bin/evas_software_x11_test
-%%XRENDER%%bin/evas_xrender_x11_test
 include/Evas.h
 %%BUFFER%%include/Evas_Engine_Buffer.h
 %%DIRECTFB%%include/Evas_Engine_DirectFB.h
@@ -75,27 +67,6 @@ lib/libevas.la
 lib/libevas.so
 lib/libevas.so.1
 libdata/pkgconfig/evas.pc
-%%DATADIR%%/Vera.ttf
-%%DATADIR%%/VeraBI.ttf
-%%DATADIR%%/VeraBd.ttf
-%%DATADIR%%/VeraIt.ttf
-%%DATADIR%%/VeraMoBI.ttf
-%%DATADIR%%/VeraMoBd.ttf
-%%DATADIR%%/VeraMoIt.ttf
-%%DATADIR%%/VeraMono.ttf
-%%DATADIR%%/VeraSe.ttf
-%%DATADIR%%/VeraSeBd.ttf
-%%DATADIR%%/backdrop.png
-%%DATADIR%%/e_logo.png
-%%DATADIR%%/evas_logo.png
-%%DATADIR%%/fonts.alias
-%%DATADIR%%/fonts.dir
-%%DATADIR%%/panel.png
-%%DATADIR%%/panel_shadow.png
-%%DATADIR%%/panel_top.png
-%%DATADIR%%/t1.png
-%%DATADIR%%/t2.png
-%%DATADIR%%/test_pattern.png
 @dirrm %%DATADIR%%
 %%TIFF%%@dirrm lib/evas/modules/savers/tiff/%%E17_ARCH%%
 %%TIFF%%@dirrm lib/evas/modules/savers/tiff

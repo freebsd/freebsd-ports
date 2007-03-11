@@ -7,7 +7,7 @@
 
 PORTNAME=	camserv
 PORTVERSION=	0.5.1
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -17,7 +17,7 @@ MAINTAINER=	uspoerlein@gmail.com
 COMMENT=	Camserv is a free program to do streaming video via the web
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		Imlib2.3:${PORTSDIR}/graphics/imlib2 \
+		Imlib2.4:${PORTSDIR}/graphics/imlib2 \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
 		freetype.9:${PORTSDIR}/print/freetype2
 

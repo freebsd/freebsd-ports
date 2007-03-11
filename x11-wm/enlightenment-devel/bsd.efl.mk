@@ -121,7 +121,7 @@ _evfs_VERSION=		0
 _ewl_CATEGORY=		x11-toolkits
 _ewl_DEPENDS=		evas ecore edje epsilon
 _ewl_PREFIX=		${LOCALBASE}
-_ewl_VERSION=		0
+_ewl_VERSION=		1
 
 _exml_CATEGORY=		textproc
 _exml_DEPENDS=		ecore
@@ -130,7 +130,7 @@ _exml_VERSION=		1
 
 _imlib2_CATEGORY=	graphics
 _imlib2_PREFIX=		${LOCALBASE}
-_imlib2_VERSION=	3
+_imlib2_VERSION=	4
 _imlib2_SLIB=		Imlib2
 
 #

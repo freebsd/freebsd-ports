@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	0.4.9-pre1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	ffmpeg
@@ -135,7 +135,7 @@ PLIST_SUB+=	DRAWTEXT="@comment "
 .endif
 ## enable imlib2
 .if !defined(WITHOUT_VHOOK) && defined(WITH_IMLIB2)
-LIB_DEPENDS+=	Imlib2.3:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS+=	Imlib2.4:${PORTSDIR}/graphics/imlib2
 
 PLIST_SUB+=	IMLIB2=""
 .else

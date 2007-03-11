@@ -7,6 +7,7 @@
 
 PORTNAME=	libast
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://critical.ch/distfiles/ \
 		http://www.eterm.org/download/
@@ -15,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library of assorted spiffy things
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
-		Imlib2.3:${PORTSDIR}/graphics/imlib2
+		Imlib2.4:${PORTSDIR}/graphics/imlib2
 
 USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes

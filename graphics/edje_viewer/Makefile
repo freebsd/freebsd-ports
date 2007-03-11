@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	edje_viewer
-PORTVERSION=	20060926
+PORTVERSION=	20070223
 CATEGORIES=	graphics
-MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A simple viewer for .edj files

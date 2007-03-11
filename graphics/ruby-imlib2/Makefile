@@ -7,16 +7,17 @@
 
 PORTNAME=	imlib2
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://www.pablotron.org/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Imlib2 bindings for Ruby
 
-LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

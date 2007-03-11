@@ -6,7 +6,7 @@
 
 PORTNAME=	libcaca
 PORTVERSION=	0.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://libcaca.zoy.org/files/
 
@@ -29,7 +29,7 @@ USE_XLIB=	yes
 .if defined(WITHOUT_IMLIB2)
 CONFIGURE_ARGS+=	--disable-imlib2
 .else
-LIB_DEPENDS+=		Imlib2.3:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS+=		Imlib2.4:${PORTSDIR}/graphics/imlib2
 .endif
 
 .include <bsd.port.pre.mk>

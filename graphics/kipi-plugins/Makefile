@@ -7,7 +7,7 @@
 
 PORTNAME=	kipi-plugins
 PORTVERSION=	0.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -185,7 +185,7 @@ PLIST_SUB+=	SIMPLEVIEWEREXPORT:="@comment "
 .if !defined(WITHOUT_SLIDESHOW)
 PLIST_SUB+=	SLIDESHOW:=""
 SUBDIRS+=	slideshow
-LIB_DEPENDS+=	Imlib2.3:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS+=	Imlib2.4:${PORTSDIR}/graphics/imlib2
 .else
 PLIST_SUB+=	SLIDESHOW:="@comment "
 .endif

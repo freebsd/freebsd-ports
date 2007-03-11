@@ -12,7 +12,6 @@ include/etk/etk_button.h
 include/etk/etk_cache.h
 include/etk/etk_canvas.h
 include/etk/etk_check_button.h
-include/etk/etk_clipboard.h
 include/etk/etk_colorpicker.h
 include/etk/etk_combobox.h
 include/etk/etk_config.h
@@ -26,6 +25,7 @@ include/etk/etk_engine.h
 include/etk/etk_entry.h
 include/etk/etk_event.h
 include/etk/etk_filechooser_widget.h
+include/etk/etk_fixed.h
 include/etk/etk_frame.h
 include/etk/etk_iconbox.h
 include/etk/etk_image.h
@@ -49,9 +49,11 @@ include/etk/etk_scrollbar.h
 include/etk/etk_scrolled_view.h
 include/etk/etk_selection.h
 include/etk/etk_separator.h
+include/etk/etk_shadow.h
 include/etk/etk_signal.h
 include/etk/etk_signal_callback.h
 include/etk/etk_slider.h
+include/etk/etk_spinner.h
 include/etk/etk_statusbar.h
 include/etk/etk_stock.h
 include/etk/etk_string.h
@@ -63,7 +65,7 @@ include/etk/etk_toggle_button.h
 include/etk/etk_tool_button.h
 include/etk/etk_toolbar.h
 include/etk/etk_tooltips.h
-include/etk/etk_toplevel_widget.h
+include/etk/etk_toplevel.h
 include/etk/etk_tree.h
 include/etk/etk_tree_model.h
 include/etk/etk_type.h
@@ -75,6 +77,9 @@ include/etk/etk_window.h
 lib/etk/engines/ecore_evas.a
 lib/etk/engines/ecore_evas.la
 lib/etk/engines/ecore_evas.so
+lib/etk/engines/ecore_evas_gl_x11.a
+lib/etk/engines/ecore_evas_gl_x11.la
+lib/etk/engines/ecore_evas_gl_x11.so
 lib/etk/engines/ecore_evas_software_x11.a
 lib/etk/engines/ecore_evas_software_x11.la
 lib/etk/engines/ecore_evas_software_x11.so
@@ -103,10 +108,18 @@ libdata/pkgconfig/etk.pc
 %%DATADIR%%/images/panel.png
 %%DATADIR%%/images/panel_shadow.png
 %%DATADIR%%/images/panel_top.png
+%%DATADIR%%/images/picture1.png
+%%DATADIR%%/images/picture2.png
+%%DATADIR%%/images/picture3.png
+%%DATADIR%%/images/picture4.png
+%%DATADIR%%/images/picture5.png
+%%DATADIR%%/images/picture6.png
+%%DATADIR%%/images/right_arrow.png
 %%DATADIR%%/images/test.png
-%%DATADIR%%/pointers/default_pointer.png
 %%DATADIR%%/themes/default.edj
+%%DATADIR%%/wm/default.edj
 share/locale/fr/LC_MESSAGES/etk.mo
+@dirrm %%DATADIR%%/wm
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/pointers
 @dirrm %%DATADIR%%/images

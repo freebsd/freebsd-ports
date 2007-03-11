@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ecore
-PORTVERSION=	20060926
-PORTREVISION=	2
+PORTVERSION=	20070223
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	x11
-MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A core event abstraction library
@@ -25,7 +25,7 @@ USE_GETOPT_LONG=yes
 
 CONFIGURE_ARGS=	--disable-ecore-dfb
 
-OPTIONS=	DBUS		"Enable DBUS support" off \
+OPTIONS=	DBUS		"Enable DBUS support" on \
 		CURL		"Enable Curl support" on \
 		X11		"Enable X11 support" on \
 		EVAS		"Enable evas support" on \

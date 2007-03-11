@@ -6,22 +6,19 @@
 #
 
 PORTNAME=	imlib2_loaders
-PORTVERSION=	20060926
+PORTVERSION=	20070223
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Extra image loader plugins for Imlib 2
 
-LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2 \
-		edb.1:${PORTSDIR}/databases/edb \
-		eet.9:${PORTSDIR}/devel/eet
-
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget
+USE_EFL=	edb eet imlib2
 
 OPTIONS=	EDB	"Enable edb loader" on \
 		EET	"Enable eet loader" on \

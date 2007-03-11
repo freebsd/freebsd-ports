@@ -7,6 +7,7 @@
 
 PORTNAME=	enlightenment
 PORTVERSION=	0.16.8.2
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,7 @@ DISTNAME=	e16-${PORTVERSION}
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A very artistic X window manager
 
-LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2
 
 DATADIR=	${PREFIX}/share/e16
 

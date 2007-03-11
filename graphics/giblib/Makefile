@@ -7,14 +7,14 @@
 
 PORTNAME=	giblib
 PORTVERSION=	1.2.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 
 MAINTAINER=	andrew.nau.ua@gmail.com
 COMMENT=	A utility library that includes a wrapper for imlib2
 
-LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2
 
 USE_AUTOTOOLS=	libtool:15
 USE_X_PREFIX=	yes

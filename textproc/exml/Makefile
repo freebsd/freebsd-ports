@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	exml
-PORTVERSION=	20060926
+PORTVERSION=	20070223
 CATEGORIES=	textproc
-MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	EXML is an abstracted, generalized interface to libxml

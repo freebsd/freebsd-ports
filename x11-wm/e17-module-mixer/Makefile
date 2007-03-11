@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mixer
-PORTVERSION=	20060926
+PORTVERSION=	20070223
 CATEGORIES=	x11
-MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 PKGNAMEPREFIX=	e17-module-
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
@@ -23,6 +23,14 @@ USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig
 USE_EFL=	edje
 GNU_CONFIGURE=	yes
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS= --disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 .include "../../x11-wm/enlightenment-devel/bsd.efl.mk"

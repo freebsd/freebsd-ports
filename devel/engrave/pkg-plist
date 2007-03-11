@@ -16,6 +16,7 @@ include/engrave/engrave_parse.h
 include/engrave/engrave_part.h
 include/engrave/engrave_part_state.h
 include/engrave/engrave_program.h
+include/engrave/engrave_spectrum.h
 include/engrave/engrave_style.h
 lib/libengrave.a
 lib/libengrave.la

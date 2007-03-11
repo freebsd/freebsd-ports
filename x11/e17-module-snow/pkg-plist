@@ -6,7 +6,6 @@ lib/enlightenment/modules/snow/%%E17_ARCH%%/module.la
 lib/enlightenment/modules/snow/%%E17_ARCH%%/module.so
 lib/enlightenment/modules/snow/module.desktop
 lib/enlightenment/modules/snow/module.edj
-lib/enlightenment/modules/snow/module_icon.png
 lib/enlightenment/modules/snow/tree.png
 %%NLS%%share/locale/eo/LC_MESSAGES/snow.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/snow.mo

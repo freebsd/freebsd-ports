@@ -7,13 +7,14 @@
 
 PORTNAME=	qcomicbook
 PORTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://linux.bydg.org/~yogin/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QT-based comic book archive viewer
 
-LIB_DEPENDS=	Imlib2.3:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		unrar:${PORTSDIR}/archivers/unrar
 
