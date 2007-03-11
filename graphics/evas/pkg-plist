@@ -67,7 +67,6 @@ lib/libevas.la
 lib/libevas.so
 lib/libevas.so.1
 libdata/pkgconfig/evas.pc
-@dirrm %%DATADIR%%
 %%TIFF%%@dirrm lib/evas/modules/savers/tiff/%%E17_ARCH%%
 %%TIFF%%@dirrm lib/evas/modules/savers/tiff
 %%PNG%%@dirrm lib/evas/modules/savers/png/%%E17_ARCH%%
