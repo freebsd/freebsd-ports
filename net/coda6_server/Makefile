@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	coda
-PORTVERSION=	6.1.1
+PORTVERSION=	6.1.2
 CATEGORIES=	net
 # as of 5 Oct 2006 the archive is not present on ftp.wu-wien.ac.at
 # but maybe it'll appear there soon
