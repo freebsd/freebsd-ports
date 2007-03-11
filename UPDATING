@@ -13,6 +13,14 @@ upgrades.
   The remnants of FreeBSD 4.X support have been removed from bsd.port.mk.
   Any remaining users should _not_ get this or any subsequent updates.
 
+20070311:
+  AFFECTS: users of x11-wm/enlightenment-devel
+  AUTHOR: stas@FreeBSD.org
+
+  The binary used to start an enlightenment session was renamed from
+  enlightenment to enlightenment_start. All users should update their
+  xinitrc's or other startup files to reflect this change.
+
 20070301:
   AFFECTS: users of ports-mgmt/portupgrade*
   AUTHOR: sem@FreeBSD.org
