@@ -1601,7 +1601,6 @@
     SUBDIR += pcl-cvs-emacs20
     SUBDIR += pcre
     SUBDIR += pcre++
-    SUBDIR += pcre-utf8
     SUBDIR += pcsc-lite
     SUBDIR += pdcurses
     SUBDIR += pear

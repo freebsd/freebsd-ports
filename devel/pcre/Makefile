@@ -7,6 +7,7 @@
 
 PORTNAME=	pcre
 PORTVERSION=	7.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/unix/misc/%SUBDIR%/ \
@@ -16,23 +17,15 @@ MASTER_SITE_SUBDIR=${PORTNAME}
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Perl Compatible Regular Expressions library
 
-CONFLICTS?=	pcre-utf8-[0-9]*
-
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man --enable-utf8 \
+		--enable-unicode-properties
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
-
-.if defined(WITH_UTF8)
-CONFLICTS=	pcre-[0-9]*
-PKGNAMESUFFIX=	-utf8
-CONFIGURE_ARGS+=--enable-utf8 \
-		--enable-unicode-properties
 .endif
 
 .if defined(WITH_LINK_SIZE)
