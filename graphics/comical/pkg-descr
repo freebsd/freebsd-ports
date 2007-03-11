@@ -1,8 +1,18 @@
-Comical is a sequential image viewer. It supports viewing images from archives
-(bzip, zip and rar format), as well as fullscreen viewing. Image formats
-supported are JPEG, PNG, GIF, and TIFF.
+Finally - a cross-platform, open-source CBR and CBZ reader!  Read your
+favorite scanned comic books and graphic novels with Comical's
+absurdly easy GUI and in-your-face double page display!
 
-WWW: http://mlf.sketchyorigins.com/
+Nifty Features:
+* Single-Page or Double-Page display modes.
+* Zoom modes: Fit, Fit-to-Width, Fit-to-Height, Original, Custom.
+* Crisp image scaling with algorithms adapted from FreeImage 3.
+* Detects double pages scanned together and displays it accordingly.
+* Page rotation.
+* Full-Screen mode.
+* Left-to-Right or Right-to-Left browsing.
+* Displays JPG, GIF, and PNG images.
+* Supports RAR(.cbr) and ZIP(.cbz) comic book archives
+* Supports all encrypted RAR archives as well as ZIP archives with
+  pkzip 2.04g encryption.
 
-- John
-john@mcaree.org
+WWW: http://comical.sourceforge.net/
