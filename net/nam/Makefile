@@ -7,6 +7,7 @@
 
 PORTNAME=	nam
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.isi.edu/nsnam/dist/
 DISTNAME=	nam-src-${PORTVERSION}
@@ -21,6 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
+CXXFLAGS+=	-I${LOCALBASE}/include/tclcl
 CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4
 MAKE_ARGS=	CCOPT="${CXXFLAGS}"
 ALL_TARGET=	${PORTNAME}
@@ -28,6 +30,7 @@ ALL_TARGET=	${PORTNAME}
 MAN1=		nam.1
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/src/local/Tcl-1.0|${LOCALBASE}/include/tclcl|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|const = NULL|const = 0|g' ${WRKSRC}/agent.h
 	@${REINPLACE_CMD} -e 's|friend Queue|friend class Queue|g' ${WRKSRC}/queue.h
 
