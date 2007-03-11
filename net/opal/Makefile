@@ -34,10 +34,6 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not build on FreeBSD 4.x, if you manage to make it work, please send a patch to the maintainer: ${MAINTAINER}
-.endif
-
 # Avoid build error on 64-bit architectures
 .if (${ARCH} == "amd64") || (${ARCH} == "ia64") || (${ARCH} == "sparc64")
 CFLAGS+=	-fPIC
@@ -50,7 +46,7 @@ CONFIGURE_ARGS+=	--enable-h263avcodec=${LOCALBASE}/include/ffmpeg
 
 .ifdef (WITH_SPEEX)
 LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
-BUILD_DEPENDS+=	${LOCALBASE}/include/speex/speex_echo.h:${PORTSDIR}/audio/speex-devel
+BUILD_DEPENDS+=	${LOCALBASE}/include/speex/speex_echo.h:${PORTSDIR}/audio/speex
 CONFIGURE_ARGS+=	--enable-localspeex=no
 .else
 CONFIGURE_ARGS+=	--enable-localspeex=yes
