@@ -417,6 +417,8 @@ share/locale/az_IR/LC_MESSAGES/gtk20-properties.mo
 share/locale/az_IR/LC_MESSAGES/gtk20.mo
 share/locale/be/LC_MESSAGES/gtk20-properties.mo
 share/locale/be/LC_MESSAGES/gtk20.mo
+share/locale/be@latin/LC_MESSAGES/gtk20-properties.mo
+share/locale/be@latin/LC_MESSAGES/gtk20.mo
 share/locale/bg/LC_MESSAGES/gtk20-properties.mo
 share/locale/bg/LC_MESSAGES/gtk20.mo
 share/locale/bn/LC_MESSAGES/gtk20-properties.mo
@@ -445,6 +447,8 @@ share/locale/en_CA/LC_MESSAGES/gtk20-properties.mo
 share/locale/en_CA/LC_MESSAGES/gtk20.mo
 share/locale/en_GB/LC_MESSAGES/gtk20-properties.mo
 share/locale/en_GB/LC_MESSAGES/gtk20.mo
+share/locale/eo/LC_MESSAGES/gtk20-properties.mo
+share/locale/eo/LC_MESSAGES/gtk20.mo
 share/locale/es/LC_MESSAGES/gtk20-properties.mo
 share/locale/es/LC_MESSAGES/gtk20.mo
 share/locale/et/LC_MESSAGES/gtk20-properties.mo
@@ -690,6 +694,8 @@ share/themes/Raleigh/gtk-2.0/gtkrc
 @dirrmtry share/locale/ca
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
 @dirrmtry share/locale/be/LC_MESSAGES
 @dirrmtry share/locale/be
 @dirrmtry share/locale/az_IR/LC_MESSAGES
