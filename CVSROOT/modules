@@ -12358,6 +12358,7 @@ py-amanith	ports/graphics/py-amanith
 py-anonfunc	ports/devel/py-anonfunc
 py-anygui	ports/x11-toolkits/py-anygui
 py-ao		ports/audio/py-ao
+py-apachelog	ports/www/py-apachelog
 py-apetag	ports/audio/py-apetag
 py-argparse	ports/devel/py-argparse
 py-asn1		ports/devel/py-asn1
