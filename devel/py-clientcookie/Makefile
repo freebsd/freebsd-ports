@@ -15,6 +15,9 @@ DISTNAME=	ClientCookie-${PORTVERSION}
 MAINTAINER=	him@richardkiss.com
 COMMENT=	Client-side HTTP cookies for Python
 
+DEPRECATED=	Module rolled into www/py-mechanize by author
+EXPIRATION_DATE=2007-05-26
+
 USE_PYTHON=	2.0+
 USE_PYDISTUTILS=	yes
 
