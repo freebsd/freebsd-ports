@@ -692,7 +692,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Multiple vulnerabilities has been found in PHP, including:
+	<p>Multiple vulnerabilities have been found in PHP, including:
 	  buffer overflows, stack overflows, format string, and
 	  information disclosure vulnerabilities.</p>
 	<p>The session extension contained <code>safe_mode</code> and
