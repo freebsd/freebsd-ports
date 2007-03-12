@@ -16,6 +16,7 @@ COMMENT=	A GTK2 based XMMS2 client, written in C
 BUILD_DEPENDS=	${LOCALBASE}/lib/libxmmsclient.so:${PORTSDIR}/audio/xmms2
 
 USE_GNOME=	gtk20
+USE_GMAKE=	yes
 
 ALL_TARGET=	${PORTNAME}
 
@@ -24,10 +25,6 @@ PLIST_FILES=	bin/gxmms2 \
 PLIST_DIRS=		%%DATADIR%%
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-#BROKEN=		does not build on FreeBSD 4.x
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
