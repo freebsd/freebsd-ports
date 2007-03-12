@@ -10,7 +10,7 @@ PORTVERSION=	2.2.15
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.redhillconsulting.com.au/products/simian/
 
-MAINTAINER=	andreas@syndrom23.de
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Similarity analyser for source and other text files
 
 .if defined(WITHOUT_JAVA) && !defined(WITH_MONO)
