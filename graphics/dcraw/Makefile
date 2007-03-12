@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	dcraw
-PORTVERSION=	8.62
+PORTVERSION=	8.63
 CATEGORIES=	graphics
-MASTER_SITES=	CSME
+MASTER_SITES=	CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Decoder for RAW files from digital cameras
