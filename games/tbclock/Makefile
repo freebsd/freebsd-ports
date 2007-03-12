@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	tbclock
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	games
-MASTER_SITES=	http://tamentis.com/projects/tbclock/files/ CSME
+MASTER_SITES=	http://tamentis.com/projects/tbclock/files/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Binary clock in curses
 
-#USE_GMAKE=	yes
-MAKEFILE=	GNUmakefile
+HAS_CONFIGURE=	yes
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1
 
 post-patch:
-	@${REINPLACE_CMD} -e '/ifeq/,/endif/d;/^CC/d;/^CFLAGS/d' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e '/^CC/d;/^CFLAGS/d' ${WRKSRC}/configure
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
