@@ -17,6 +17,7 @@ info/gcc%%SUFFIX%%/dir
 %%JAVA%%bin/gc-analyze%%SUFFIX%%
 %%JAVA%%bin/gcj%%SUFFIX%%
 %%JAVA%%bin/gcj-dbtool%%SUFFIX%%
+%%JAVA%%bin/gcjh%%SUFFIX%%
 %%JAVA%%bin/gij%%SUFFIX%%
 %%JAVA%%bin/gjar%%SUFFIX%%
 %%JAVA%%bin/gjarsigner%%SUFFIX%%
