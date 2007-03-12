@@ -42,7 +42,7 @@ COMMENT=	A webmail system which accesses mail over IMAP
 #
 # - WITH_HTML		: enable HTML composition mode;
 #
-# - WITHOUT_IMAPSERVER	: if your IMAP server runs on another machine;
+# - WITH_IMAPSERVER	: if you to depend on an IMAP server;
 #
 # or you can select to work with one of these servers:
 #
@@ -138,11 +138,11 @@ PATCH2RM=	prefs.php.dist.orig servers.php.dist.orig conf.xml.orig	\
 # else we shall install imap-uw.
 # IMAP servers are ordered according to my tastes, if several are
 # installed, we just record the first one.
-.if !defined(WITHOUT_IMAPSERVER)
+.if defined(WITH_IMAPSERVER)
 . if defined(WITH_IMAP-UW) || exists(${LOCALBASE}/libexec/imapd)
 RUN_DEPENDS+=	${LOCALBASE}/libexec/imapd:${PORTSDIR}/mail/imap-uw
 . elif defined(WITH_CYRUS-IMAPD) || exists(${LOCALBASE}/lib/libacap.a)
-RUN_DEPENDS+=	${LOCALBASE}/lib/libacap.a:${PORTSDIR}/mail/cyrus-imapd2
+RUN_DEPENDS+=	${LOCALBASE}/lib/libacap.a:${PORTSDIR}/mail/cyrus-imapd23
 . elif defined(WITH_COURIER-IMAP) || exists(${LOCALBASE}/bin/deliverquota)
 RUN_DEPENDS+=	${LOCALBASE}/bin/deliverquota:${PORTSDIR}/mail/courier-imap
 . elif defined(WITH_DOVECOT) || exists(${LOCALBASE}/libexec/dovecot/imap)
