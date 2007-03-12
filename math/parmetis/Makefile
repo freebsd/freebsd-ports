@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	math parallel
 MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/
 
-MAINTAINER=	eoin@maths.tcd.ie
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A package for parallel (mpi) unstructured graph partitioning
 
 RUN_DEPENDS=	${LOCALBASE}/mpich2/bin/mpirun:${PORTSDIR}/net/mpich2
