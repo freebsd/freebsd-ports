@@ -20,6 +20,7 @@ bin/starte16
 %%DATADIR%%/config/bindings.cfg
 %%DATADIR%%/config/definitions
 %%DATADIR%%/config/e16keyedit.db
+%%DATADIR%%/config/fonts.cfg-xft_example
 %%DATADIR%%/config/matches.cfg
 %%DATADIR%%/config/menus.cfg
 %%DATADIR%%/config/pix/about.png
@@ -53,7 +54,6 @@ bin/starte16
 %%DATADIR%%/config/pix/moveres.png
 %%DATADIR%%/config/pix/note.png
 %%DATADIR%%/config/pix/pager.png
-%%DATADIR%%/config/pix/pawn.png
 %%DATADIR%%/config/pix/place.png
 %%DATADIR%%/config/pix/pumpkin.png
 %%DATADIR%%/config/pix/raise.png
