@@ -1,0 +1,61 @@
+@comment $FreeBSD$
+bin/yolk
+%%PORTDOCS%%%%DOCSDIR%%/api/epydoc.css
+%%PORTDOCS%%%%DOCSDIR%%/api/index.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/epydoc.css
+%%PORTDOCS%%%%DOCSDIR%%/api/private/exceptions.Exception-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/frames.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/help.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/index.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/indices.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/toc-everything.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/toc-yolk-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/toc-yolk.__version__-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/toc-yolk.cli-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/toc-yolk.metadata-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/toc-yolk.pypi-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/toc-yolk.yolklib-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/trees.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/yolk-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/yolk.__version__-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/yolk.cli-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/yolk.cli.Usage-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/yolk.metadata-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/yolk.pypi-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/yolk.pypi.CheeseShop-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/yolk.yolklib-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/private/yolk.yolklib.Distributions-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/epydoc.css
+%%PORTDOCS%%%%DOCSDIR%%/api/public/exceptions.Exception-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/frames.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/help.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/index.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/indices.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/toc-everything.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/toc-yolk-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/toc-yolk.__version__-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/toc-yolk.cli-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/toc-yolk.metadata-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/toc-yolk.pypi-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/toc-yolk.yolklib-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/trees.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/yolk-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/yolk.__version__-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/yolk.cli-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/yolk.cli.Usage-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/yolk.metadata-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/yolk.pypi-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/yolk.pypi.CheeseShop-class.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/yolk.yolklib-module.html
+%%PORTDOCS%%%%DOCSDIR%%/api/public/yolk.yolklib.Distributions-class.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rss_feed.py
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/private
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api/public
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@unexec %%EASY_INSTALL_CMD%% -q -x -m -N -S %D/%%PYTHON_SITELIBDIR%% %%PYYOLK_EGG_VER%%
+%%PYTHON_SITELIBDIR%%/%%PYYOLK_EGG%%
+@exec %%EASY_INSTALL_CMD%% -x -N -S %D/%%PYTHON_SITELIBDIR%% %%PYYOLK_EGG_VER%%
