@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	gnucap
-PORTVERSION=	2006.07.08
+PORTVERSION=	2007.02.21
 CATEGORIES=	cad
 MASTER_SITES=	http://www.gnucap.org/devel/ \
 		http://www.geda.seul.org/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	The Gnu Circuit Analysis Package
 
 USE_GMAKE=	yes
@@ -23,7 +23,7 @@ CONFIGURE_ARGS+=	--docdir=${PREFIX}/share/doc/${PORTNAME} \
 
 OPTIONS=	READLINE "Enable commandline features via readline" on
 
-MAN1=		gnucap.1
+MAN1=		gnucap.1 gnucap-ibis.1
 
 .include <bsd.port.pre.mk>
 
