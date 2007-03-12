@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	xride
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Viewer for kernel geom layer
 
-LIB_DEPENDS=	gvc.2:${PORTSDIR}/graphics/graphviz
+LIB_DEPENDS=	gvc:${PORTSDIR}/graphics/graphviz
 
 USE_XLIB=	yes
 USE_AUTOTOOLS=	libtool:15
