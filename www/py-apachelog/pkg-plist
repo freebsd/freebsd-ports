@@ -1,0 +1,5 @@
+%%PYTHON_SITELIBDIR%%/apachelog.py
+%%PYTHON_SITELIBDIR%%/apachelog.pyc
+%%PYTHON_SITELIBDIR%%/apachelog.pyo
+@dirrm %%PYTHON_SITELIBDIR%%
+@dirrm %%PYTHON_LIBDIR%%

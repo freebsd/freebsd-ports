@@ -941,6 +941,7 @@
     SUBDIR += py-HTMLgen
     SUBDIR += py-Lightbox
     SUBDIR += py-albatross
+    SUBDIR += py-apachelog
     SUBDIR += py-beautifulsoup
     SUBDIR += py-cherrypy
     SUBDIR += py-cherrypy-old
