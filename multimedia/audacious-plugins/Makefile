@@ -94,7 +94,7 @@ CONFIGURE_ARGS+=--disable-rocklight
 PLIST_SUB+=	ROCKLIGHTPLUGIN="@comment "
 .endif
 
-.if !defined(WITHOUT_LIRC)
+.if defined(WITH_LIRC)
 LIB_DEPENDS+=	lirc_client.1:${PORTSDIR}/comms/lirc
 CONFIGURE_ARGS+=--enable-lirc
 PLIST_SUB+=	LIRCPLUGIN=""
@@ -121,7 +121,7 @@ CONFIGURE_ARGS+=--disable-aosd
 PLIST_SUB+=	AOSDPLUGIN="@comment "
 .endif
 
-.if !defined(WITHOUT_ADPLUG)
+.if defined(WITH_ADPLUG)
 LIB_DEPENDS+=	binio.1:${PORTSDIR}/devel/libbinio
 CONFIGURE_ARGS+=--enable-adplug
 PLIST_SUB+=	ADPLUGPLUGIN=""
@@ -130,7 +130,7 @@ CONFIGURE_ARGS+=--disable-adplug
 PLIST_SUB+=	ADPLUGPLUGIN="@comment "
 .endif
 
-.if !defined(WITHOUT_VORBIS)
+.if defined(WITH_VORBIS)
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--enable-vorbis --enable-flac	# it uses an internal flac-lib copy
 PLIST_SUB+=	VORBISPLUGIN=""
@@ -140,7 +140,7 @@ CONFIGURE_ARGS+=--disable-vorbis --disable-flac
 PLIST_SUB+=	VORBISPLUGIN="@comment "
 .endif
 
-.if !defined(WITHOUT_WAVPACK)
+.if defined(WITH_WAVPACK)
 LIB_DEPENDS+=	wavpack.1:${PORTSDIR}/audio/wavpack
 CONFIGURE_ARGS+=--enable-wavpack
 PLIST_SUB+=	WAVPACKPLUGIN=""
@@ -157,7 +157,7 @@ CONFIGURE_ARGS+=--disable-aac
 PLIST_SUB+=	AACPLUGIN="@comment "
 .endif
 
-.if !defined(WITHOUT_SNDFILE)
+.if defined(WITH_SNDFILE)
 LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
 CONFIGURE_ARGS+=--enable-sndfile
 PLIST_SUB+=	SNDFILEPLUGIN=""
@@ -166,7 +166,7 @@ CONFIGURE_ARGS+=--disable-sndfile
 PLIST_SUB+=	SNDFILEPLUGIN="@comment "
 .endif
 
-.if !defined(WITHOUT_MODPLUG)
+.if defined(WITH_MODPLUG)
 LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
 PLIST_SUB+=	MODPLUG=""
 CONFIGURE_ARGS+=--enable-modplug
@@ -175,7 +175,7 @@ PLIST_SUB+=	MODPLUG="@comment "
 CONFIGURE_ARGS+=--disable-modplug
 .endif
 
-.if !defined(WITHOUT_MPC)
+.if defined(WITH_MPC)
 LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec \
 		tag.5:${PORTSDIR}/audio/taglib
 PLIST_SUB+=	MPCPLUGIN=""
@@ -193,7 +193,7 @@ CONFIGURE_ARGS+=--disable-wma
 PLIST_SUB+=	WMAPLUGIN="@comment "
 .endif
 
-.if !defined(WITHOUT_JACK)
+.if defined(WITH_JACK)
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 CONFIGURE_ARGS+=--enable-jack
 PLIST_SUB+=	JACKPLUGIN=""
@@ -202,7 +202,7 @@ CONFIGURE_ARGS+=--disable-jack
 PLIST_SUB+=	JACKPLUGIN="@comment "
 .endif
 
-.if !defined(WITHOUT_ARTS)
+.if defined(WITH_ARTS)
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 CONFIGURE_ARGS+=--enable-arts
 PLIST_SUB+=	ARTSPLUGIN=""
@@ -219,7 +219,7 @@ PLIST_SUB+=	OSSPLUGIN="@comment "
 CONFIGURE_ARGS+=--disable-oss
 .endif
 
-.if !defined(WITHOUT_SID)
+.if defined(WITH_SID)
 LIB_DEPENDS+=	sidplay.1:${PORTSDIR}/audio/libsidplay
 PLIST_SUB+=	SIDPLUGIN=""
 CONFIGURE_ARGS+=--enable-sid
@@ -243,7 +243,7 @@ USE_SDL=	sdl
 .else
 CONFIGURE_ARGS+=--disable-paranormal
 PLIST_SUB+=	PARANORMALPLUGIN="@comment "
-.if !defined(WITHOUT_MMS)
+.if defined(WITH_MMS)
 LIB_DEPENDS+=	mms.0:${PORTSDIR}/net/libmms
 CONFIGURE_ARGS+=--enable-mms
 PLIST_SUB+=	MMSPLUGIN=""
@@ -270,7 +270,7 @@ CONFIGURE_ARGS+=--disable-tta
 PLIST_SUB+=	TTAPLUGIN="@comment "
 .endif
 
-.if !defined(WITHOUT_LAME)
+.if defined(WITH_LAME)
 LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
 CONFIGURE_ARGS+=--enable-lame
 PLIST_SUB+=	LAMEPLUGIN=""
