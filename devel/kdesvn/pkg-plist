@@ -38,7 +38,7 @@ lib/kde3/libkdesvnpart.so
 lib/libsvnqt.la
 lib/libsvnqt.so
 lib/libsvnqt.so.3
-lib/libsvnqt.so.3.1.0
+lib/libsvnqt.so.3.1.1
 share/applications/kde/kdesvn.desktop
 share/apps/kdesvn/kdesvnui.rc
 share/apps/kdesvnpart/kdesvn_part.rc
@@ -255,6 +255,7 @@ share/locale/cs/LC_MESSAGES/kdesvn.mo
 share/locale/de/LC_MESSAGES/kdesvn.mo
 share/locale/es/LC_MESSAGES/kdesvn.mo
 share/locale/fr/LC_MESSAGES/kdesvn.mo
+share/locale/gl/LC_MESSAGES/kdesvn.mo
 share/locale/it/LC_MESSAGES/kdesvn.mo
 share/locale/nl/LC_MESSAGES/kdesvn.mo
 share/locale/pa/LC_MESSAGES/kdesvn.mo
