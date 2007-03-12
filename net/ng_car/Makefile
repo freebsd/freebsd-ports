@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	ng_car
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	net
-MASTER_SITES=	http://npf.pt.freebsd.org/~l1/softs/
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	mpd
 
-MAINTAINER=	nuno.antunes@gmail.com
+MAINTAINER=	mav@alkar.net
 COMMENT=	Netgraph committed access rate node
 
 NO_PACKAGE=	Should be in sync with the kernel to work correctly
