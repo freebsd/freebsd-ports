@@ -5,17 +5,29 @@
 # $FreeBSD$
 #
 
+CATEGORIES=	net python
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+
 COMMENT=	Python module for libdnet
 
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2007-04-10
+LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet
+
+NOT_FOR_ARCHS=	ia64
+NOT_FOR_ARCHS_REASON_ia64=	fails to build with internal compiler error
 
 MASTERDIR=	${.CURDIR}/../libdnet
+INSTALL_WRKSRC=	${WRKSRC}/python
+DESCR=		${.CURDIR}/pkg-descr
+PLIST=		${.CURDIR}/pkg-plist
 
-BUILD_PYTHON_MODULE=	yes
+LIBDNET_SLAVE=	yes
 
-NOT_FOR_ARCHS=			ia64
-NOT_FOR_ARCHS_REASON_ia64=	fails to build with internal compiler error
+USE_PYTHON=	yes
+CONFIGURE_ARGS=	--with-python
+
+.if defined(MAINTAINER_MODE)
+regression-test: install
+	${PYTHON_CMD} ${INSTALL_WRKSRC}/test.py
+.endif
 
 .include "${MASTERDIR}/Makefile"
