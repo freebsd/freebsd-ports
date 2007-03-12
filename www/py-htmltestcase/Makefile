@@ -16,6 +16,9 @@ DISTNAME=	HtmlTestCase-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A python html unit testing
 
+DEPRECATED=	Upstream site disappeared and dependency is set to expire
+EXPIRATION_DATE=2007-05-26
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ClientCookie/__init__.py:${PORTSDIR}/devel/py-clientcookie\
 		${PYTHON_SITELIBDIR}/${PYCLIENTFORM_EGG}:${PORTSDIR}/www/py-clientform
 
