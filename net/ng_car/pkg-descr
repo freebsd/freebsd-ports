@@ -2,6 +2,3 @@ The ng_car netgraph module is a "Committed Access Rate" iplementation for
 netgraph. It provides an easy way to use a network interface at a rate below
 its specification. It uses a token bucket algorithm to measure and classify the
 network packets flowing through it. 
-
-WWW: http://npf.pt.FreeBSD.org/
-Author: Nuno Antunes <nuno.antunes@gmail.com>
