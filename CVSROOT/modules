@@ -12785,6 +12785,7 @@ py-yadis	ports/net/py-yadis
 py-yaml		ports/devel/py-yaml
 py-yapsnmp	ports/net-mgmt/py-yapsnmp
 py-yenc		ports/news/py-yenc
+py-yolk		ports/misc/py-yolk
 py-zconfig	ports/devel/py-zconfig
 py-zopeInterface	ports/devel/py-zopeInterface
 py-zpt		ports/textproc/py-zpt
