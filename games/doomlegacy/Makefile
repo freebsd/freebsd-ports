@@ -13,7 +13,7 @@ DISTNAME=	legacy_${PORTVERSION}_src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${WADFILE}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	bock@bock.nnov.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DooM Legacy: popular DooM clone!
 
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
