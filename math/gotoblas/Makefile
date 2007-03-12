@@ -78,7 +78,7 @@ pre-everything::
 	@${ECHO_CMD} "- None is specified, gfortran will be used."
 	@${ECHO_CMD} "****"
 
-.if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
+.if !defined(PACKAGE_BUILDING) && !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
 do-fetch:
 	@${ECHO_CMD} "You need to fetch ${DISTFILES} from:"
 	@${ECHO_CMD} "http://www.tacc.utexas.edu/resources/software/software.php"
