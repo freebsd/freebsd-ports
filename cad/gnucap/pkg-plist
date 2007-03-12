@@ -12,7 +12,6 @@ bin/gnucap-modelgen
 %%DOCSDIR%%/relnotes.033
 %%DOCSDIR%%/relnotes.034
 %%DOCSDIR%%/whatisit
-%%EXAMPLESDIR%%/README
 %%EXAMPLESDIR%%/eq.doc
 %%EXAMPLESDIR%%/eq2-145.ckt
 %%EXAMPLESDIR%%/eq2-289.ckt
@@ -24,12 +23,17 @@ bin/gnucap-modelgen
 %%EXAMPLESDIR%%/eq4-9217.ckt
 %%EXAMPLESDIR%%/eq4-9217.tran-slow.ckt
 %%EXAMPLESDIR%%/eq4-9217.tran.ckt
+%%EXAMPLESDIR%%/eq5-.ac.ckt
 %%EXAMPLESDIR%%/eq5-.tran.ckt
+%%EXAMPLESDIR%%/eq5-.tran.euler.fast.ckt
 %%EXAMPLESDIR%%/eq5-.tran.fast.ckt
 %%EXAMPLESDIR%%/eq5-.tran.like-spice.ckt
 %%EXAMPLESDIR%%/eq5-.tran.slow.ckt
 %%EXAMPLESDIR%%/eq5-.tran.vfast.ckt
 %%EXAMPLESDIR%%/eq5-.tran.vvfast.ckt
+%%EXAMPLESDIR%%/eq5-.tran.vvvfast.ckt
+%%EXAMPLESDIR%%/eq6-.tran.vvvfast.ckt
+%%EXAMPLESDIR%%/eq7-.tran.vvvfast.ckt
 %%EXAMPLESDIR%%/eqboost.ckt
 %%EXAMPLESDIR%%/eqflat.ckt
 %%EXAMPLESDIR%%/eqmodify.ckt
@@ -49,6 +53,6 @@ bin/gnucap-modelgen
 %%EXAMPLESDIR%%/runall
 %%EXAMPLESDIR%%/runall.out
 %%EXAMPLESDIR%%/sc18.ckt
-@dirrmtry %%EXAMPLESDIR%%
-@dirrmtry %%DOCSDIR%%/manual
-@dirrmtry %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%/manual
+@dirrm %%DOCSDIR%%
