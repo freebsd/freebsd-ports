@@ -386,6 +386,7 @@
     SUBDIR += py-distutils
     SUBDIR += py-osd
     SUBDIR += py-pexpect
+    SUBDIR += py-yolk
     SUBDIR += pybliographer
     SUBDIR += pylize
     SUBDIR += pypanda
