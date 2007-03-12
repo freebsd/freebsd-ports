@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=		ekg
-PORTVERSION=		1.7.r2
+PORTVERSION=		1.7.r3
 PORTEPOCH=		2
 CATEGORIES=		polish net-im
 MASTER_SITES=		http://ekg.chmurka.net/
-DISTNAME=		${PORTNAME}-1.7rc2
+DISTNAME=		${PORTNAME}-1.7rc3
 
 MAINTAINER=		alex@bsdguru.org
 COMMENT=		Text-mode Gadu-Gadu client
@@ -28,7 +28,7 @@ CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 OPTIONS=	ASPELL "Build with ASPELL support" off
-		
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_ASPELL)
