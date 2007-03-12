@@ -2,17 +2,79 @@ bin/xneur
 @unexec if cmp -s %D/etc/xneur/en/dict %D/etc/xneur/en/dict.dist; then rm -f %D/etc/xneur/en/dict; fi
 etc/xneur/en/dict.dist
 @exec	if [ ! -f %D/etc/xneur/en/dict ] ; then cp -p %D/%F %B/dict; fi
-etc/xneur/en/proto
+@unexec if cmp -s %D/etc/xneur/en/langdef %D/etc/xneur/en/langdef.dist; then rm -f %D/etc/xneur/en/langdef; fi
+etc/xneur/en/langdef.dist
+@exec   if [ ! -f %D/etc/xneur/en/langdef ] ; then cp -p %D/%F %B/langdef; fi
+@unexec if cmp -s %D/etc/xneur/en/proto %D/etc/xneur/en/proto.dist; then rm -f %D/etc/xneur/en/proto; fi
+etc/xneur/en/proto.dist
+@exec   if [ ! -f %D/etc/xneur/en/proto ] ; then cp -p %D/%F %B/proto; fi
+@unexec if cmp -s %D/etc/xneur/en/proto3 %D/etc/xneur/en/proto3.dist; then rm -f %D/etc/xneur/en/proto3; fi
+etc/xneur/en/proto3.dist
+@exec   if [ ! -f %D/etc/xneur/en/proto3 ] ; then cp -p %D/%F %B/proto3; fi
+@unexec if cmp -s %D/etc/xneur/en/regexp %D/etc/xneur/en/regexp.dist; then rm -f %D/etc/xneur/en/regexp; fi
+etc/xneur/en/regexp.dist
+@exec   if [ ! -f %D/etc/xneur/en/regexp ] ; then cp -p %D/%F %B/regexp; fi
 @unexec if cmp -s %D/etc/xneur/ru/dict %D/etc/xneur/ru/dict.dist; then rm -f %D/etc/xneur/ru/dict; fi
 etc/xneur/ru/dict.dist
-@exec	if [ ! -f %D/etc/xneur/ru/dict ] ; then cp -p %D/%F %B/dict; fi
-etc/xneur/ru/proto
+@exec   if [ ! -f %D/etc/xneur/ru/dict ] ; then cp -p %D/%F %B/dict; fi
+@unexec if cmp -s %D/etc/xneur/ru/langdef %D/etc/xneur/ru/langdef.dist; then rm -f %D/etc/xneur/ru/langdef; fi
+etc/xneur/ru/langdef.dist
+@exec   if [ ! -f %D/etc/xneur/ru/langdef ] ; then cp -p %D/%F %B/langdef; fi
+@unexec if cmp -s %D/etc/xneur/ru/proto %D/etc/xneur/ru/proto.dist; then rm -f %D/etc/xneur/ru/proto; fi
+etc/xneur/ru/proto.dist
+@exec   if [ ! -f %D/etc/xneur/ru/proto ] ; then cp -p %D/%F %B/proto; fi
+@unexec if cmp -s %D/etc/xneur/ru/proto3 %D/etc/xneur/ru/proto3.dist; then rm -f %D/etc/xneur/ru/proto3; fi
+etc/xneur/ru/proto3.dist
+@exec   if [ ! -f %D/etc/xneur/ru/proto3 ] ; then cp -p %D/%F %B/proto3; fi
+@unexec if cmp -s %D/etc/xneur/ru/regexp %D/etc/xneur/ru/regexp.dist; then rm -f %D/etc/xneur/ru/regexp; fi
+etc/xneur/ru/regexp.dist
+@exec   if [ ! -f %D/etc/xneur/ru/regexp ] ; then cp -p %D/%F %B/regexp; fi
+@unexec if cmp -s %D/etc/xneur/uk/dict %D/etc/xneur/uk/dict.dist; then rm -f %D/etc/xneur/uk/dict; fi
+etc/xneur/uk/dict.dist
+@exec   if [ ! -f %D/etc/xneur/uk/dict ] ; then cp -p %D/%F %B/dict; fi
+@unexec if cmp -s %D/etc/xneur/uk/langdef %D/etc/xneur/uk/langdef.dist; then rm -f %D/etc/xneur/uk/langdef; fi
+etc/xneur/uk/langdef.dist
+@exec   if [ ! -f %D/etc/xneur/uk/langdef ] ; then cp -p %D/%F %B/langdef; fi
+@unexec if cmp -s %D/etc/xneur/uk/proto %D/etc/xneur/uk/proto.dist; then rm -f %D/etc/xneur/uk/proto; fi
+etc/xneur/uk/proto.dist
+@exec   if [ ! -f %D/etc/xneur/uk/proto ] ; then cp -p %D/%F %B/proto; fi
+@unexec if cmp -s %D/etc/xneur/uk/proto3 %D/etc/xneur/uk/proto3.dist; then rm -f %D/etc/xneur/uk/proto3; fi
+etc/xneur/uk/proto3.dist
+@exec   if [ ! -f %D/etc/xneur/uk/proto3 ] ; then cp -p %D/%F %B/proto3; fi
+@unexec if cmp -s %D/etc/xneur/uk/regexp %D/etc/xneur/uk/regexp.dist; then rm -f %D/etc/xneur/uk/regexp; fi
+etc/xneur/uk/regexp.dist
+@exec   if [ ! -f %D/etc/xneur/uk/regexp ] ; then cp -p %D/%F %B/regexp; fi
+@unexec if cmp -s %D/etc/xneur/be/dict %D/etc/xneur/be/dict.dist; then rm -f %D/etc/xneur/be/dict; fi
+etc/xneur/be/dict.dist
+@exec   if [ ! -f %D/etc/xneur/be/dict ] ; then cp -p %D/%F %B/dict; fi
+@unexec if cmp -s %D/etc/xneur/be/langdef %D/etc/xneur/be/langdef.dist; then rm -f %D/etc/xneur/be/langdef; fi
+etc/xneur/be/langdef.dist
+@exec   if [ ! -f %D/etc/xneur/be/langdef ] ; then cp -p %D/%F %B/langdef; fi
+@unexec if cmp -s %D/etc/xneur/be/proto %D/etc/xneur/be/proto.dist; then rm -f %D/etc/xneur/be/proto; fi
+etc/xneur/be/proto.dist
+@exec   if [ ! -f %D/etc/xneur/be/proto ] ; then cp -p %D/%F %B/proto; fi
+@unexec if cmp -s %D/etc/xneur/be/proto3 %D/etc/xneur/be/proto3.dist; then rm -f %D/etc/xneur/be/proto3; fi
+etc/xneur/be/proto3.dist
+@exec   if [ ! -f %D/etc/xneur/be/proto3 ] ; then cp -p %D/%F %B/proto3; fi
+@unexec if cmp -s %D/etc/xneur/be/regexp %D/etc/xneur/be/regexp.dist; then rm -f %D/etc/xneur/be/regexp; fi
+etc/xneur/be/regexp.dist
+@exec   if [ ! -f %D/etc/xneur/be/regexp ] ; then cp -p %D/%F %B/regexp; fi
 @unexec if cmp -s %D/etc/xneur/xneurrc %D/etc/xneur/xneurrc.dist; then rm -f %D/etc/xneur/xneurrc; fi
 etc/xneur/xneurrc.dist
 @exec	if [ ! -f %D/etc/xneur/xneurrc ] ; then cp -p %D/%F %B/xneurrc; fi
+@unexec if cmp -s %D/etc/xneur/xneurrc-be %D/etc/xneur/xneurrc-be.dist; then rm -f %D/etc/xneur/xneurrc-be; fi
+etc/xneur/xneurrc-be.dist
+@exec   if [ ! -f %D/etc/xneur/xneurrc-be ] ; then cp -p %D/%F %B/xneurrc-be; fi
+@unexec if cmp -s %D/etc/xneur/xneurrc-uk %D/etc/xneur/xneurrc-uk.dist; then rm -f %D/etc/xneur/xneurrc-uk; fi
+etc/xneur/xneurrc-uk.dist
+@exec   if [ ! -f %D/etc/xneur/xneurrc-uk ] ; then cp -p %D/%F %B/xneurrc-uk; fi
+include/xneur/xnconfig.h
 lib/libxnconfig.so.3
 lib/libxnconfig.so
 lib/libxnconfig.la
+@dirrm include/xneur
 @dirrmtry etc/xneur/ru
+@dirrmtry etc/xneur/uk
+@dirrmtry etc/xneur/be
 @dirrmtry etc/xneur/en
 @dirrmtry etc/xneur
