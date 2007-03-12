@@ -1,5 +1,5 @@
---- scripts/e_gen_menu.orig	Thu Mar 30 04:09:17 2006
-+++ scripts/e_gen_menu	Fri Aug 11 00:11:58 2006
+--- scripts/e_gen_menu.orig	Sat Jan 13 20:34:49 2007
++++ scripts/e_gen_menu	Sun Mar 11 11:26:16 2007
 @@ -25,7 +25,7 @@
  ##############################################################################
  
@@ -9,21 +9,3 @@
  $Prefixes = "$Prefixes:/opt/kde3:/opt/gnome";	# SUSE
  $Prefixes = RemoveDuplcates($Prefixes);
  
-@@ -54,7 +54,7 @@
- $loc1 = "" if ($loc1 eq $loc2);
- 
- $EdirUser = "$ENV{'HOME'}/.e16" unless $EdirUser;
--$EdirRoot = "/usr/share/enlightenment" unless $EdirRoot;
-+$EdirRoot = "%%PREFIX%%/share/enlightenment" unless $EdirRoot;
- $EdirBin  = "/usr/bin" unless $EdirBin;
- 
- $EdirIcons = "$EdirUser/icons";
-@@ -101,7 +101,7 @@
- 	"x:Firefox:firefox",
- 	"x:Galeon:galeon",
- 	"x:Opera:opera",
--	"x:Electric Eyes:ee",
-+	"x:Electric Eyes:ElectricEyes",
- 	"x:Gmplayer:gmplayer",
- 	"x:Xine:xine",
- 	"x:The GIMP:gimp",
