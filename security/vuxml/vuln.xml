@@ -35,7 +35,7 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="73f53712-d028-11db-8c07-0211d85f11fb">
-    <topic>ktorrent -- two vulnerabilities</topic>
+    <topic>ktorrent -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>ktorrent</name>
@@ -64,6 +64,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-03-09</discovery>
       <entry>2007-03-11</entry>
+      <modified>2007-03-12</modified>
     </dates>
   </vuln>
 
@@ -718,6 +719,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-02-09</discovery>
       <entry>2007-02-17</entry>
+      <modified>2007-03-12</modified>
     </dates>
   </vuln>
 
