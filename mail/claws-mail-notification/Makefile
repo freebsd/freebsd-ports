@@ -7,10 +7,12 @@
 
 PORTNAME=	notification
 PORTVERSION=	0.9
+PORTREVISION?=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
 DISTNAME=	notification_plugin-${PORTVERSION}
+PORTREVISION?=	1
 
 MAINTAINER=	c0rn@o2.pl
 COMMENT=	New/unread mail notification plugin for claws-mail
