@@ -6,7 +6,7 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
-200704-12:
+20070312:
   AFFECTS: all users of net/py-libdnet
   AUTHOR: tmclaugh@FreeBSD.org
 
