@@ -14,7 +14,6 @@
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-parentconflict.xul
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-progress.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-progress.xul
-%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-rdfserializer.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-remote.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-separatorconflict.xul
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-settings.js
@@ -22,10 +21,15 @@
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-setup.xul
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-sync.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-tree.css
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-update.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/de-DE/conflicts.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/de-DE/foxmarks.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/de-DE/foxmarks.properties
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/de-DE/setup.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/el-GR/conflicts.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/el-GR/foxmarks.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/el-GR/foxmarks.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/el-GR/setup.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/en-US/conflicts.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/en-US/foxmarks.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/en-US/foxmarks.properties
@@ -80,9 +84,11 @@
 %%XPI_XPIDIR%%/components/foxmarks-service.idl
 %%XPI_XPIDIR%%/components/foxmarks-service.js
 %%XPI_XPIDIR%%/components/foxmarks-service.xpt
+%%XPI_XPIDIR%%/defaults/preferences/prefs.js
 %%XPI_XPIDIR%%/install.rdf
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/content
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/de-DE
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/el-GR
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/en-US
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/es-ES
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/fr-FR
@@ -102,3 +108,5 @@
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles
 @dirrm %%XPI_XPIDIR%%/chrome
 @dirrm %%XPI_XPIDIR%%/components
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults
