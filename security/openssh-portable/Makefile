@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openssh
-DISTVERSION=	4.5p1
+DISTVERSION=	4.6p1
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/%SUBDIR%/ \
@@ -100,8 +100,7 @@ CONFIGURE_ARGS+=	--disable-suid-ssh
 .if defined(KRB5_HOME) && exists(${KRB5_HOME}) || defined(WITH_GSSAPI)
 .if defined(WITH_KERB_GSSAPI)
 PATCH_DIST_STRIP=	-p0
-PATCH_SITES+=		http://www.sxw.org.uk/computing/patches/
-PATCHFILES+=		openssh-4.4p1-gsskex-20061002.patch
+EXTRA_PATCHES+=		${FILESDIR}/openssh-4.5p1-gsskex-20061220.patch
 .endif
 PORTABLE_SUFFIX=	# empty
 GSSAPI_SUFFIX=		-gssapi
@@ -146,12 +145,14 @@ BROKEN=			HPN and LPK patches are incompatible
 .if defined(WITH_HPN)
 PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=		http://www.psc.edu/networking/projects/hpn-ssh/
-PATCHFILES+=		openssh-4.5p1-hpn12v14.diff.gz
+PATCHFILES+=		openssh-4.6p1-hpn12v16.diff.gz
 .endif
 
+# See http://dev.inversepath.com/trac/openssh-lpk
 .if defined(WITH_LPK)
-PATCH_DIST_STRIP=	-p0
-EXTRA_PATCHES+=		${FILESDIR}/openssh-lpk.patch
+PATCH_DIST_STRIP=	-p1
+PATCH_SITES+=		http://dev.inversepath.com/openssh-lpk/
+PATCHFILES+=		openssh-lpk-4.5p1-0.3.8.patch
 USE_OPENLDAP=		yes
 CPPFLAGS+=		"-I${LOCALBASE}/include -DWITH_LDAP_PUBKEY"
 CONFIGURE_ARGS+=	--with-libs='-lldap' --with-ldflags='-L/usr/local/lib' \
