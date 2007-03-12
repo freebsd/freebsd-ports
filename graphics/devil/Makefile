@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openil
 DISTNAME=	DevIL-${PORTVERSION}
 
-MAINTAINER=	andreas@syndrom23.de
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A full featured cross-platform image library
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
