@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sobby
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	net
 MASTER_SITES=	http://releases.0x539.de/sobby/
 
-MAINTAINER=	andreas@syndrom23.de
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A standalone obby server
 
 LIB_DEPENDS=	net6:${PORTSDIR}/net/net6 \
@@ -27,14 +27,8 @@ CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 PLIST_FILES=	bin/sobby
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	some dependencies does not run on FreeBSD < 5.x
-.endif
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/sobby ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/sobby.1 ${PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
