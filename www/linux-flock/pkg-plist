@@ -109,6 +109,8 @@ lib/%%APP_NAME%%/icons/document.png
 lib/%%APP_NAME%%/icons/mozicon128.png
 lib/%%APP_NAME%%/icons/mozicon16.xpm
 lib/%%APP_NAME%%/icons/mozicon50.xpm
+lib/%%APP_NAME%%/libfreebl3.chk
+lib/%%APP_NAME%%/libfreebl3.so
 lib/%%APP_NAME%%/libmozjs.so
 lib/%%APP_NAME%%/libnspr4.so
 lib/%%APP_NAME%%/libnss3.so
