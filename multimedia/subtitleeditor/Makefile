@@ -36,13 +36,4 @@ post-patch:
 	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|strtoll|std::strtoll|g' ${WRKSRC}/src/SubtitleASS.cc
 
-pre-configure::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "This ports need pcre with utf-8 support. If you already"
-	@${ECHO_MSG} "have pcre installed, you may need to run"
-	@${ECHO_MSG} "# portupgrade -fo devel/pcre-utf8 pcre"
-	@${ECHO_MSG} "for this port to build"
-	@${ECHO_MSG} ""
-	@sleep 2
-
 .include <bsd.port.mk>
