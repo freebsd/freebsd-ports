@@ -7,6 +7,7 @@
 
 PORTNAME=	ns
 PORTVERSION=	2.29
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.isi.edu/nsnam/dist/
 DISTNAME=	ns-src-${PORTVERSION}
@@ -23,12 +24,17 @@ MANCOMPRESSED=	no
 WRKSRC=		${WRKDIR}/ns-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4 --with-tclcl=${LOCALBASE}
+CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4
 MAKE_ARGS+=	"LDFLAGS=${LDFLAGS}"
 
 ALL_TARGET=
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/src/local/Tcl-1.0 \\|${LOCALBASE}/include/tclcl \\|g' \
+		-e 's|/usr/src/local/Tcl-1.0\"|${LOCALBASE}/lib\"|g' \
+		${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ns ${PREFIX}/bin
