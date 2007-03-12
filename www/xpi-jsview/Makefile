@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	jsview
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	www
-MASTER_SITES=	http://forum.softwareblaze.com/jsview/ CSME
+MASTER_SITES=	http://forum.softwareblaze.com/jsview/ CENKES
 DISTNAME=	${PORTNAME}${DISTVERSION}
 
 MAINTAINER=	infofarmer@FreeBSD.org
