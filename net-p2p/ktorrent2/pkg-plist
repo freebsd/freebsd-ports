@@ -33,7 +33,7 @@ lib/kde3/ktupnpplugin.so
 lib/kde3/ktwebinterfaceplugin.a
 lib/kde3/ktwebinterfaceplugin.la
 lib/kde3/ktwebinterfaceplugin.so
-lib/libktorrent-2.1.so
+lib/libktorrent-2.1.2.so
 lib/libktorrent.a
 lib/libktorrent.la
 lib/libktorrent.so
@@ -307,6 +307,31 @@ share/apps/ktorrent/icons/hicolor/64x64/filesystems/ktprefdownloads.png
 share/apps/ktorrent/ktorrentui.rc
 share/apps/ktorrent/ktpartfileimportpluginui.rc
 share/apps/ktorrent/ktschedulerpluginui.rc
+share/apps/ktorrent/www/coldmilk/favicon.ico
+share/apps/ktorrent/www/coldmilk/icon.png
+share/apps/ktorrent/www/coldmilk/icons/16x16/edit_user.png
+share/apps/ktorrent/www/coldmilk/icons/22x22/exit.png
+share/apps/ktorrent/www/coldmilk/icons/22x22/ktstart_all.png
+share/apps/ktorrent/www/coldmilk/icons/22x22/ktstop_all.png
+share/apps/ktorrent/www/coldmilk/icons/22x22/remove.png
+share/apps/ktorrent/www/coldmilk/icons/22x22/start.png
+share/apps/ktorrent/www/coldmilk/icons/22x22/stop.png
+share/apps/ktorrent/www/coldmilk/icons/32x32/configure.png
+share/apps/ktorrent/www/coldmilk/icons/32x32/extender_opened.png
+share/apps/ktorrent/www/coldmilk/icons/32x32/fileopen.png
+share/apps/ktorrent/www/coldmilk/icons/32x32/folder1.png
+share/apps/ktorrent/www/coldmilk/icons/48x48/exit.png
+share/apps/ktorrent/www/coldmilk/icons/48x48/switchuser.png
+share/apps/ktorrent/www/coldmilk/icons/64x64/down.png
+share/apps/ktorrent/www/coldmilk/icons/64x64/folder1_man.png
+share/apps/ktorrent/www/coldmilk/icons/64x64/looknfeel.png
+share/apps/ktorrent/www/coldmilk/interface.js
+share/apps/ktorrent/www/coldmilk/interface.php
+share/apps/ktorrent/www/coldmilk/login.html
+share/apps/ktorrent/www/coldmilk/page_update.js
+share/apps/ktorrent/www/coldmilk/rest.php
+share/apps/ktorrent/www/coldmilk/shutdown.php
+share/apps/ktorrent/www/coldmilk/style.css
 share/apps/ktorrent/www/default/favicon.ico
 share/apps/ktorrent/www/default/grad1.jpg
 share/apps/ktorrent/www/default/grad2.jpg
@@ -369,6 +394,7 @@ share/locale/es/LC_MESSAGES/ktorrent.mo
 share/locale/et/LC_MESSAGES/ktorrent.mo
 share/locale/eu/LC_MESSAGES/ktorrent.mo
 share/locale/fa/LC_MESSAGES/ktorrent.mo
+share/locale/fi/LC_MESSAGES/ktorrent.mo
 share/locale/fr/LC_MESSAGES/ktorrent.mo
 share/locale/ga/LC_MESSAGES/ktorrent.mo
 share/locale/gl/LC_MESSAGES/ktorrent.mo
@@ -380,6 +406,7 @@ share/locale/km/LC_MESSAGES/ktorrent.mo
 share/locale/lt/LC_MESSAGES/ktorrent.mo
 share/locale/mk/LC_MESSAGES/ktorrent.mo
 share/locale/ms/LC_MESSAGES/ktorrent.mo
+share/locale/nb/LC_MESSAGES/ktorrent.mo
 share/locale/nds/LC_MESSAGES/ktorrent.mo
 share/locale/nl/LC_MESSAGES/ktorrent.mo
 share/locale/pa/LC_MESSAGES/ktorrent.mo
@@ -429,6 +456,8 @@ share/servicetypes/ktorrentplugin.desktop
 @dirrmtry share/locale/km
 @dirrmtry share/locale/gl/LC_MESSAGES
 @dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
 @dirrmtry share/locale/el/LC_MESSAGES
 @dirrmtry share/locale/el
 @dirrmtry share/locale/cs/LC_MESSAGES
@@ -437,6 +466,13 @@ share/servicetypes/ktorrentplugin.desktop
 @dirrmtry share/locale/ca
 @dirrm share/apps/ktorrent/www/mobile
 @dirrm share/apps/ktorrent/www/default
+@dirrm share/apps/ktorrent/www/coldmilk/icons/64x64
+@dirrm share/apps/ktorrent/www/coldmilk/icons/48x48
+@dirrm share/apps/ktorrent/www/coldmilk/icons/32x32
+@dirrm share/apps/ktorrent/www/coldmilk/icons/22x22
+@dirrm share/apps/ktorrent/www/coldmilk/icons/16x16
+@dirrm share/apps/ktorrent/www/coldmilk/icons
+@dirrm share/apps/ktorrent/www/coldmilk
 @dirrm share/apps/ktorrent/www
 @dirrm share/apps/ktorrent/icons/hicolor/64x64/filesystems
 @dirrm share/apps/ktorrent/icons/hicolor/64x64/actions
