@@ -8,7 +8,7 @@
 #
 35.2,	-80.9,	"ftp2.FreeBSD.org"	# Charlotte, NC 
 38.6,	-77.0,	"ftp4.FreeBSD.org"	# Arlington, VA (atinc.com)
-39.6, -104.8,	"anoncvs1/cvsup14.FreeBSD.org"	# Denver, CO (ViaWest.net)
+39.74, -105.01,	"anoncvs1/cvsup14.FreeBSD.org"	# Denver, CO (LiquidNeon.com)
 43.6,	-83.9,	"ftp5.FreeBSD.org"	# Mt. Pleasant, MI (C-Mich U)
 44.9,	-68.8,	"ftp7.FreeBSD.org"	# Orono, ME (U of Maine)
 #
