@@ -7,7 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	0.9.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
