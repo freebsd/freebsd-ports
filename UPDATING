@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+200704-12:
+  AFFECTS: all users of net/py-libdnet
+  AUTHOR: tmclaugh@FreeBSD.org
+
+  The py-libdnet port has been seperated out as a slave port to libdnet and
+  is now dependent on libdnet.  py-libdnet now only installs the libdnet
+  python modules.  Since files previously owned by py-libdnet are now owned
+  by its dependency, in order to upgrade correctly, py-libdnet must be
+  deinstall and then reinstalled manually.
+
 20070205:
   AFFECTS: all users of FreeBSD 4.X
   AUTHOR: portmgr@FreeBSD.org
