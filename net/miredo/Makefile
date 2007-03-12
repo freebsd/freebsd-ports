@@ -10,7 +10,7 @@ PORTVERSION=		0.9.8
 CATEGORIES=		net ipv6
 MASTER_SITES=		http://www.remlab.net/files/miredo/
 
-MAINTAINER=		andreas@syndrom23.de
+MAINTAINER=		miwi@FreeBSD.org
 COMMENT=		Opensource Teredo (IPv6 tunneling) implementation
 
 USE_BZIP2=		yes

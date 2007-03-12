@@ -11,7 +11,7 @@ CATEGORIES=		x11-fonts
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	freefont
 
-MAINTAINER=		andreas@syndrom23.de
+MAINTAINER=		miwi@FreeBSD.org
 COMMENT=		Free UCS Outline Fonts
 
 NO_BUILD=		yes

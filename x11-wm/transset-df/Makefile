@@ -10,7 +10,7 @@ PORTVERSION=	5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://forchheimer.se/transset-df/
 
-MAINTAINER=	andreas@syndrom23.de
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Make your windows transparent
 
 USE_X_PREFIX=	yes

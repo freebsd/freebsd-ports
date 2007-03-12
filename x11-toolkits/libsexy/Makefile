@@ -10,7 +10,7 @@ PORTVERSION=	0.1.10
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	http://releases.chipx86.com/libsexy/libsexy/
 
-MAINTAINER=	andreas@syndrom23.de
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Extension widgets for GTK+
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
