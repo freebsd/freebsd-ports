@@ -28,7 +28,8 @@ OPTIONS=	IMP "IMAP Webmail System" on	\
 		CHORA "CVS Web Viewer" off	\
 		GOLLEM "Web-Based File Manager" off	\
 		JETA "Java SSH Applets" off	\
-		HPASSWD "Password Changing Module" off
+		HPASSWD "Password Changing Module" off	\
+		VACATION "Vacation & Auto Respond" off
 
 .include <bsd.port.pre.mk>
 
@@ -76,6 +77,10 @@ RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/jeta/index.php:${PORTSDIR}/security/jeta
 
 .if defined(WITH_HPASSWD)
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/passwd/index.php:${PORTSDIR}/www/horde-passwd
+.endif
+
+.if defined(WITH_VACATION)
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/vacation/main.php:${PORTSDIR}/mail/horde-vacation
 .endif
 
 post-configure:
