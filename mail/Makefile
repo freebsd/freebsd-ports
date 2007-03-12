@@ -158,6 +158,7 @@
     SUBDIR += hashcash
     SUBDIR += hbiff
     SUBDIR += heirloom-mailx
+    SUBDIR += horde-vacation
     SUBDIR += hotwayd
     SUBDIR += ifile
     SUBDIR += ilohamail
