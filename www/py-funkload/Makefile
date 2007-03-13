@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	funkload
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	www python
 MASTER_SITES=	http://funkload.nuxeo.org/ \
 		http://cheeseshop.python.org/packages/source/f/funkload/
