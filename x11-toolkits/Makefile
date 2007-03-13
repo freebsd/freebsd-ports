@@ -186,6 +186,7 @@
     SUBDIR += py-gui
     SUBDIR += py-kde
     SUBDIR += py-kiwi
+    SUBDIR += py-pyxfce
     SUBDIR += py-qt
     SUBDIR += py-sexy
     SUBDIR += py-tkinter
