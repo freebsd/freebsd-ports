@@ -57,7 +57,6 @@ bin/makekdewidgets
 bin/meinproc
 bin/preparetips
 bin/start_kdeinit
-etc/rc.d/kdelibs.sh
 etc/xdg/menus/kde-applications.menu
 include/arts/artskde.h
 include/arts/kartsdispatcher.h
@@ -1192,6 +1191,7 @@ share/apps/katepart/scripts/script-indent-c-char.js
 share/apps/katepart/scripts/script-indent-c-newline.js
 share/apps/katepart/scripts/sort.js
 share/apps/katepart/syntax/abc.xml
+share/apps/katepart/syntax/actionscript.xml
 share/apps/katepart/syntax/ada.xml
 share/apps/katepart/syntax/ahdl.xml
 share/apps/katepart/syntax/alert.xml

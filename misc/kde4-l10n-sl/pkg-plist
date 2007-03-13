@@ -350,6 +350,7 @@ share/locale/sl/LC_MESSAGES/kaccess.mo
 share/locale/sl/LC_MESSAGES/kaddressbook.mo
 share/locale/sl/LC_MESSAGES/kalarm.mo
 share/locale/sl/LC_MESSAGES/kalzium.mo
+share/locale/sl/LC_MESSAGES/kanagram.mo
 share/locale/sl/LC_MESSAGES/kandy.mo
 share/locale/sl/LC_MESSAGES/kappfinder.mo
 share/locale/sl/LC_MESSAGES/karm.mo
@@ -569,6 +570,7 @@ share/locale/sl/LC_MESSAGES/khotkeys.mo
 share/locale/sl/LC_MESSAGES/khtmlkttsd.mo
 share/locale/sl/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/sl/LC_MESSAGES/kicker.mo
+share/locale/sl/LC_MESSAGES/kickermenu_kate.mo
 share/locale/sl/LC_MESSAGES/kiconedit.mo
 share/locale/sl/LC_MESSAGES/kig.mo
 share/locale/sl/LC_MESSAGES/kimagemapeditor.mo
@@ -606,6 +608,7 @@ share/locale/sl/LC_MESSAGES/kio_thumbnail.mo
 share/locale/sl/LC_MESSAGES/kio_trash.mo
 share/locale/sl/LC_MESSAGES/kio_zeroconf.mo
 share/locale/sl/LC_MESSAGES/kioexec.mo
+share/locale/sl/LC_MESSAGES/kitchensync.mo
 share/locale/sl/LC_MESSAGES/kiten.mo
 share/locale/sl/LC_MESSAGES/kjobviewer.mo
 share/locale/sl/LC_MESSAGES/kjots.mo
@@ -647,6 +650,7 @@ share/locale/sl/LC_MESSAGES/kmplot.mo
 share/locale/sl/LC_MESSAGES/kmrml.mo
 share/locale/sl/LC_MESSAGES/knetattach.mo
 share/locale/sl/LC_MESSAGES/knetwalk.mo
+share/locale/sl/LC_MESSAGES/knetworkconf.mo
 share/locale/sl/LC_MESSAGES/knewsticker.mo
 share/locale/sl/LC_MESSAGES/knode.mo
 share/locale/sl/LC_MESSAGES/knotes.mo
@@ -808,6 +812,7 @@ share/locale/sl/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/sl/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/sl/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/sl/LC_MESSAGES/libkickermenu_tom.mo
+share/locale/sl/LC_MESSAGES/libkitchensync.mo
 share/locale/sl/LC_MESSAGES/libkleopatra.mo
 share/locale/sl/LC_MESSAGES/libkmime.mo
 share/locale/sl/LC_MESSAGES/libkonq.mo

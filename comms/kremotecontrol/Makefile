@@ -7,7 +7,6 @@
 
 PORTNAME=	kdeutils
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	3
 CATEGORIES?=	misc kde
 MASTER_SITES=		${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -18,7 +17,7 @@ COMMENT=	Utilities for the KDE integrated X11 desktop
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		netsnmp:${PORTSDIR}/net-mgmt/net-snmp
-RUN_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
+RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
 CONFLICTS=	kgpg-[0-9]* superkaramba-[0-9]*
 
@@ -35,7 +34,7 @@ DO_NOT_COMPILE+=klaptopdaemon kmilo
 CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 CONFIGURE_ARGS+=--with-pythondir=${LOCALBASE}
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"

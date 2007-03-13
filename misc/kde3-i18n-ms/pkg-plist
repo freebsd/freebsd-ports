@@ -84,6 +84,8 @@ share/locale/ms/LC_MESSAGES/kblackbox.mo
 share/locale/ms/LC_MESSAGES/kbounce.mo
 share/locale/ms/LC_MESSAGES/kbruch.mo
 share/locale/ms/LC_MESSAGES/kbstateapplet.mo
+share/locale/ms/LC_MESSAGES/kbugbuster.mo
+share/locale/ms/LC_MESSAGES/kcachegrind.mo
 share/locale/ms/LC_MESSAGES/kcalc.mo
 share/locale/ms/LC_MESSAGES/kcharselect.mo
 share/locale/ms/LC_MESSAGES/kcharselectapplet.mo
@@ -196,6 +198,7 @@ share/locale/ms/LC_MESSAGES/kfile_au.mo
 share/locale/ms/LC_MESSAGES/kfile_avi.mo
 share/locale/ms/LC_MESSAGES/kfile_bmp.mo
 share/locale/ms/LC_MESSAGES/kfile_cert.mo
+share/locale/ms/LC_MESSAGES/kfile_cpp.mo
 share/locale/ms/LC_MESSAGES/kfile_dds.mo
 share/locale/ms/LC_MESSAGES/kfile_deb.mo
 share/locale/ms/LC_MESSAGES/kfile_desktop.mo
@@ -366,9 +369,11 @@ share/locale/ms/LC_MESSAGES/kpf.mo
 share/locale/ms/LC_MESSAGES/kpilot.mo
 share/locale/ms/LC_MESSAGES/kpovmodeler.mo
 share/locale/ms/LC_MESSAGES/kppp.mo
+share/locale/ms/LC_MESSAGES/kppplogview.mo
 share/locale/ms/LC_MESSAGES/kprinter.mo
 share/locale/ms/LC_MESSAGES/krandr.mo
 share/locale/ms/LC_MESSAGES/krdb.mo
+share/locale/ms/LC_MESSAGES/krdc.mo
 share/locale/ms/LC_MESSAGES/kreadconfig.mo
 share/locale/ms/LC_MESSAGES/krec.mo
 share/locale/ms/LC_MESSAGES/kregexpeditor.mo
@@ -380,6 +385,7 @@ share/locale/ms/LC_MESSAGES/kres_groupwise.mo
 share/locale/ms/LC_MESSAGES/kres_kolab.mo
 share/locale/ms/LC_MESSAGES/kres_remote.mo
 share/locale/ms/LC_MESSAGES/kres_xmlrpc.mo
+share/locale/ms/LC_MESSAGES/krfb.mo
 share/locale/ms/LC_MESSAGES/kruler.mo
 share/locale/ms/LC_MESSAGES/krunapplet.mo
 share/locale/ms/LC_MESSAGES/ksame.mo
@@ -388,6 +394,7 @@ share/locale/ms/LC_MESSAGES/kscd.mo
 share/locale/ms/LC_MESSAGES/kscreensaver.mo
 share/locale/ms/LC_MESSAGES/ksig.mo
 share/locale/ms/LC_MESSAGES/ksim.mo
+share/locale/ms/LC_MESSAGES/ksirc.mo
 share/locale/ms/LC_MESSAGES/ksmiletris.mo
 share/locale/ms/LC_MESSAGES/ksmserver.mo
 share/locale/ms/LC_MESSAGES/ksnake.mo
@@ -440,10 +447,12 @@ share/locale/ms/LC_MESSAGES/kvoctrain.mo
 share/locale/ms/LC_MESSAGES/kwalletmanager.mo
 share/locale/ms/LC_MESSAGES/kwatchgnupg.mo
 share/locale/ms/LC_MESSAGES/kweather.mo
+share/locale/ms/LC_MESSAGES/kwifimanager.mo
 share/locale/ms/LC_MESSAGES/kwin.mo
 share/locale/ms/LC_MESSAGES/kwin_art_clients.mo
 share/locale/ms/LC_MESSAGES/kwin_clients.mo
 share/locale/ms/LC_MESSAGES/kwin_lib.mo
+share/locale/ms/LC_MESSAGES/kwireless.mo
 share/locale/ms/LC_MESSAGES/kwordquiz.mo
 share/locale/ms/LC_MESSAGES/kworldclock.mo
 share/locale/ms/LC_MESSAGES/kwriteconfig.mo
@@ -494,6 +503,7 @@ share/locale/ms/LC_MESSAGES/pitchablespeed.mo
 share/locale/ms/LC_MESSAGES/ppdtranslations.mo
 share/locale/ms/LC_MESSAGES/privacy.mo
 share/locale/ms/LC_MESSAGES/qeditor.mo
+share/locale/ms/LC_MESSAGES/quanta.mo
 share/locale/ms/LC_MESSAGES/quicklauncher.mo
 share/locale/ms/LC_MESSAGES/rellinks.mo
 share/locale/ms/LC_MESSAGES/searchbarplugin.mo

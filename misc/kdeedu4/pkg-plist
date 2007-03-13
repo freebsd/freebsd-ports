@@ -1693,14 +1693,20 @@ share/apps/ktouch/de.neo.keyboard
 share/apps/ktouch/de.swiss.keyboard
 share/apps/ktouch/dk.keyboard
 share/apps/ktouch/down.wav
+share/apps/ktouch/dvorak-fr-1.ktouch.xml
+share/apps/ktouch/dvorak-fr-2.ktouch.xml
 share/apps/ktouch/dvorak.ktouch.xml
 share/apps/ktouch/dvorak_ABCD.ktouch.xml
 share/apps/ktouch/dvorak_es.ktouch.xml
+share/apps/ktouch/dvorak_fr.keyboard
 share/apps/ktouch/en.dvorak.keyboard
 share/apps/ktouch/en.keyboard
 share/apps/ktouch/english.ktouch.xml
 share/apps/ktouch/finnish.ktouch.xml
 share/apps/ktouch/finnish_for_kids.ktouch.xml
+share/apps/ktouch/fr.a.keyboard
+share/apps/ktouch/fr.keyboard
+share/apps/ktouch/fr.swiss.keyboard
 share/apps/ktouch/french.ktouch.xml
 share/apps/ktouch/french2.ktouch.xml
 share/apps/ktouch/german.ktouch.xml
@@ -1708,6 +1714,7 @@ share/apps/ktouch/german.neo.ktouch.xml
 share/apps/ktouch/german.number.ktouch.xml
 share/apps/ktouch/german2.ktouch.xml
 share/apps/ktouch/german3.ktouch.xml
+share/apps/ktouch/he.keyboard
 share/apps/ktouch/hu.keyboard
 share/apps/ktouch/hungarian.ktouch.xml
 share/apps/ktouch/hungarian_expert.ktouch.xml
@@ -1721,6 +1728,7 @@ share/apps/ktouch/polish.ktouch.xml
 share/apps/ktouch/russian.ktouch.xml
 share/apps/ktouch/russian2ktouch.xml
 share/apps/ktouch/russian_long.ktouch.xml
+share/apps/ktouch/sl.keyboard
 share/apps/ktouch/slovenian.ktouch.xml
 share/apps/ktouch/spanish.ktouch.xml
 share/apps/ktouch/splash.png

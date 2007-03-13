@@ -16,8 +16,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Software Development Kit
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
-		svn_client-1.0:${PORTSDIR}/devel/subversion
+LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion
 
 CONFLICTS=	umbrello-[0-9]* kcachegrind-[0-9]*
 
@@ -27,13 +26,13 @@ PREFIX=		${KDE_PREFIX}
 USE_PERL5=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_BDB=	yes
 USE_AUTOTOOLS=  libtool:15
 
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
+USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS+=--with-db-include-dir=${LOCALBASE}/include/db4 \
-		--with-db-lib-dir=${LOCALBASE}/lib --with-db-name=db4 \
+CONFIGURE_ARGS+=--with-db-include-dir=${BDB_INCLUDE_DIR} \
+		--with-db-lib-dir=${BDB_LIB_DIR} --with-db-name=${BDB_LIB_NAME} \
 		--with-apr-config=${LOCALBASE}/bin/apr-1-config \
 		--with-apu-config=${LOCALBASE}/bin/apu-1-config \
 		--with-svn-include=${LOCALBASE}/include \

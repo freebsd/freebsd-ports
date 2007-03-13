@@ -446,6 +446,7 @@ share/locale/ja/LC_MESSAGES/khotkeys.mo
 share/locale/ja/LC_MESSAGES/khtmlkttsd.mo
 share/locale/ja/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ja/LC_MESSAGES/kicker.mo
+share/locale/ja/LC_MESSAGES/kickermenu_kate.mo
 share/locale/ja/LC_MESSAGES/kiconedit.mo
 share/locale/ja/LC_MESSAGES/kig.mo
 share/locale/ja/LC_MESSAGES/kimagemapeditor.mo
@@ -686,6 +687,7 @@ share/locale/ja/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/ja/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/ja/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/ja/LC_MESSAGES/libkickermenu_tom.mo
+share/locale/ja/LC_MESSAGES/libkitchensync.mo
 share/locale/ja/LC_MESSAGES/libkleopatra.mo
 share/locale/ja/LC_MESSAGES/libkmime.mo
 share/locale/ja/LC_MESSAGES/libkonq.mo

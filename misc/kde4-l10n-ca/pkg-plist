@@ -311,6 +311,9 @@ share/doc/HTML/ca/kfind/man-kfind.1.docbook
 share/doc/HTML/ca/kgeography/common
 share/doc/HTML/ca/kgeography/index.cache.bz2
 share/doc/HTML/ca/kgeography/index.docbook
+share/doc/HTML/ca/kget/common
+share/doc/HTML/ca/kget/index.cache.bz2
+share/doc/HTML/ca/kget/index.docbook
 share/doc/HTML/ca/kgpg/common
 share/doc/HTML/ca/kgpg/index.cache.bz2
 share/doc/HTML/ca/kgpg/index.docbook
@@ -364,6 +367,7 @@ share/doc/HTML/ca/khelpcenter/userguide/common
 share/doc/HTML/ca/khelpcenter/userguide/control-center.docbook
 share/doc/HTML/ca/khelpcenter/userguide/creating-graphics.docbook
 share/doc/HTML/ca/khelpcenter/userguide/credits-and-license.docbook
+share/doc/HTML/ca/khelpcenter/userguide/customizing-desktop.docbook
 share/doc/HTML/ca/khelpcenter/userguide/email.docbook
 share/doc/HTML/ca/khelpcenter/userguide/extragear-applications.docbook
 share/doc/HTML/ca/khelpcenter/userguide/file-sharing.docbook
@@ -434,6 +438,9 @@ share/doc/HTML/ca/kicker/index.cache.bz2
 share/doc/HTML/ca/kicker/index.docbook
 share/doc/HTML/ca/kicker/man-appletproxy.1.docbook
 share/doc/HTML/ca/kicker/man-kicker.1.docbook
+share/doc/HTML/ca/kig/common
+share/doc/HTML/ca/kig/index.cache.bz2
+share/doc/HTML/ca/kig/index.docbook
 share/doc/HTML/ca/kinfocenter/blockdevices/common
 share/doc/HTML/ca/kinfocenter/blockdevices/index.cache.bz2
 share/doc/HTML/ca/kinfocenter/blockdevices/index.docbook
@@ -790,9 +797,14 @@ share/doc/HTML/ca/ktimer/index.docbook
 share/doc/HTML/ca/ktnef/common
 share/doc/HTML/ca/ktnef/index.cache.bz2
 share/doc/HTML/ca/ktnef/index.docbook
+share/doc/HTML/ca/ktouch/color_options.png
 share/doc/HTML/ca/ktouch/common
+share/doc/HTML/ca/ktouch/general_options.png
 share/doc/HTML/ca/ktouch/index.cache.bz2
 share/doc/HTML/ca/ktouch/index.docbook
+share/doc/HTML/ca/ktouch/keyboard_options.png
+share/doc/HTML/ca/ktouch/man-ktouch.1.docbook
+share/doc/HTML/ca/ktouch/training_options.png
 share/doc/HTML/ca/kttsd/common
 share/doc/HTML/ca/kttsd/index.cache.bz2
 share/doc/HTML/ca/kttsd/index.docbook
@@ -1143,6 +1155,7 @@ share/locale/ca/LC_MESSAGES/khotkeys.mo
 share/locale/ca/LC_MESSAGES/khtmlkttsd.mo
 share/locale/ca/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ca/LC_MESSAGES/kicker.mo
+share/locale/ca/LC_MESSAGES/kickermenu_kate.mo
 share/locale/ca/LC_MESSAGES/kiconedit.mo
 share/locale/ca/LC_MESSAGES/kig.mo
 share/locale/ca/LC_MESSAGES/kimagemapeditor.mo
@@ -1180,6 +1193,7 @@ share/locale/ca/LC_MESSAGES/kio_thumbnail.mo
 share/locale/ca/LC_MESSAGES/kio_trash.mo
 share/locale/ca/LC_MESSAGES/kio_zeroconf.mo
 share/locale/ca/LC_MESSAGES/kioexec.mo
+share/locale/ca/LC_MESSAGES/kitchensync.mo
 share/locale/ca/LC_MESSAGES/kiten.mo
 share/locale/ca/LC_MESSAGES/kjobviewer.mo
 share/locale/ca/LC_MESSAGES/kjots.mo
@@ -1383,6 +1397,7 @@ share/locale/ca/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/ca/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/ca/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/ca/LC_MESSAGES/libkickermenu_tom.mo
+share/locale/ca/LC_MESSAGES/libkitchensync.mo
 share/locale/ca/LC_MESSAGES/libkleopatra.mo
 share/locale/ca/LC_MESSAGES/libkmime.mo
 share/locale/ca/LC_MESSAGES/libkonq.mo
@@ -1518,6 +1533,7 @@ share/locale/ca/flag.png
 @dirrm share/doc/HTML/ca/kinfocenter/cdinfo
 @dirrm share/doc/HTML/ca/kinfocenter/blockdevices
 @dirrm share/doc/HTML/ca/kinfocenter
+@dirrm share/doc/HTML/ca/kig
 @dirrm share/doc/HTML/ca/kicker-applets
 @dirrm share/doc/HTML/ca/kicker
 @dirrm share/doc/HTML/ca/khelpcenter/visualdict
@@ -1528,6 +1544,7 @@ share/locale/ca/flag.png
 @dirrm share/doc/HTML/ca/khelpcenter
 @dirrm share/doc/HTML/ca/khangman
 @dirrm share/doc/HTML/ca/kgpg
+@dirrm share/doc/HTML/ca/kget
 @dirrm share/doc/HTML/ca/kgeography
 @dirrm share/doc/HTML/ca/kfind
 @dirrm share/doc/HTML/ca/keduca

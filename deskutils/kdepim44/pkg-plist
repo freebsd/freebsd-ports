@@ -171,13 +171,13 @@ include/kontact/summary.h
 include/korganizer/baseview.h
 include/korganizer/calendarviewbase.h
 include/korganizer/calprinter.h
-include/korganizer/calprinthelper.h
 include/korganizer/calprintpluginbase.h
 include/korganizer/corehelper.h
 include/korganizer/mainwindow.h
 include/korganizer/part.h
 include/korganizer/printplugin.h
 include/kpilot/kpilotlink.h
+include/kpilot/pilot.h
 include/kpilot/pilotDatabase.h
 include/kpilot/pilotLinkVersion.h
 include/kpilot/pilotLocalDatabase.h
@@ -291,9 +291,6 @@ lib/kde3/conduit_doc.so
 lib/kde3/conduit_knotes.a
 lib/kde3/conduit_knotes.la
 lib/kde3/conduit_knotes.so
-lib/kde3/conduit_mal.a
-lib/kde3/conduit_mal.la
-lib/kde3/conduit_mal.so
 lib/kde3/conduit_memofile.a
 lib/kde3/conduit_memofile.la
 lib/kde3/conduit_memofile.so
@@ -588,6 +585,9 @@ lib/kde3/libkorg_hebrew.so
 lib/kde3/libkorg_journalprint.a
 lib/kde3/libkorg_journalprint.la
 lib/kde3/libkorg_journalprint.so
+lib/kde3/libkorg_yearlyprint.a
+lib/kde3/libkorg_yearlyprint.la
+lib/kde3/libkorg_yearlyprint.so
 lib/kde3/libkorganizerpart.a
 lib/kde3/libkorganizerpart.la
 lib/kde3/libkorganizerpart.so
@@ -1696,6 +1696,7 @@ share/apps/libkholidays/holiday_fi
 share/apps/libkholidays/holiday_fr
 share/apps/libkholidays/holiday_frswiss
 share/apps/libkholidays/holiday_gb
+share/apps/libkholidays/holiday_gr
 share/apps/libkholidays/holiday_gt
 share/apps/libkholidays/holiday_hu
 share/apps/libkholidays/holiday_ie
@@ -1736,6 +1737,7 @@ share/autostart/korgac.desktop
 share/config.kcfg/abbrowserconduit.kcfg
 share/config.kcfg/akregator.kcfg
 share/config.kcfg/custommimeheader.kcfg
+share/config.kcfg/customtemplates_kfg.kcfg
 share/config.kcfg/docconduit.kcfg
 share/config.kcfg/egroupware.kcfg
 share/config.kcfg/groupwise.kcfg
@@ -1750,7 +1752,6 @@ share/config.kcfg/korganizer.kcfg
 share/config.kcfg/kpalmdoc.kcfg
 share/config.kcfg/kpilot.kcfg
 share/config.kcfg/kpilotlib.kcfg
-share/config.kcfg/malconduit.kcfg
 share/config.kcfg/memofileconduit.kcfg
 share/config.kcfg/mk4config.kcfg
 share/config.kcfg/pimemoticons.kcfg
@@ -1758,14 +1759,33 @@ share/config.kcfg/popmail.kcfg
 share/config.kcfg/replyphrases.kcfg
 share/config.kcfg/slox.kcfg
 share/config.kcfg/sysinfoconduit.kcfg
+share/config.kcfg/templatesconfiguration_kfg.kcfg
 share/config.kcfg/timeconduit.kcfg
 share/config.kcfg/vcalconduitbase.kcfg
 share/config/kmail.antispamrc
 share/config/kmail.antivirusrc
 share/config/libkleopatrarc
+share/doc/HTML/en/akregator/add-feed.png
+share/doc/HTML/en/akregator/add-feed2.png
+share/doc/HTML/en/akregator/add-folder.png
+share/doc/HTML/en/akregator/add-folder2.png
+share/doc/HTML/en/akregator/advanced-tab.png
+share/doc/HTML/en/akregator/appearance-tab.png
+share/doc/HTML/en/akregator/archive-tab.png
+share/doc/HTML/en/akregator/browser-tab.png
 share/doc/HTML/en/akregator/common
+share/doc/HTML/en/akregator/general-tab.png
 share/doc/HTML/en/akregator/index.cache.bz2
 share/doc/HTML/en/akregator/index.docbook
+share/doc/HTML/en/akregator/konq.png
+share/doc/HTML/en/akregator/konq2.png
+share/doc/HTML/en/akregator/main-window.png
+share/doc/HTML/en/akregator/main-window2.png
+share/doc/HTML/en/akregator/main-window3.png
+share/doc/HTML/en/akregator/main-window4.png
+share/doc/HTML/en/akregator/quick-filter.png
+share/doc/HTML/en/akregator/rss.png
+share/doc/HTML/en/akregator/rss3.png
 share/doc/HTML/en/kaddressbook/addhost.png
 share/doc/HTML/en/kaddressbook/common
 share/doc/HTML/en/kaddressbook/conf.png
@@ -2247,6 +2267,7 @@ share/services/korganizer/hebrew.desktop
 share/services/korganizer/holidays.desktop
 share/services/korganizer/journalprint.desktop
 share/services/korganizer/webexport.desktop
+share/services/korganizer/yearprint.desktop
 share/services/korganizer_configcolors.desktop
 share/services/korganizer_configdesignerfields.desktop
 share/services/korganizer_configfonts.desktop
@@ -2295,7 +2316,6 @@ share/services/kresources/konnector/qtopia.desktop
 share/services/kresources/konnector/remotekonnector.desktop
 share/services/kresources/konnector_manager.desktop
 share/services/ldifvcardthumbnail.desktop
-share/services/mal_conduit.desktop
 share/services/mbox.protocol
 share/services/memofile-conduit.desktop
 share/services/notepad-conduit.desktop
@@ -2695,7 +2715,6 @@ share/servicetypes/kpilotconduit.desktop
 @dirrm share/apps/akregator/pics
 @dirrm share/apps/akregator/about
 @dirrm share/apps/akregator
-@dirrm lib/kconf_update_bin
 @dirrm include/qgpgme
 @dirrm include/mimelib
 @dirrm include/libkcal

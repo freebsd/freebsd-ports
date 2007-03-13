@@ -104,6 +104,9 @@ share/doc/HTML/nl/docs/common/gpl-translated.html
 share/doc/HTML/nl/docs/common/kde-localised.css
 share/doc/HTML/nl/docs/common/lgpl-translated.html
 share/doc/HTML/nl/docs/common/logotp3.png
+share/doc/HTML/nl/irkick/common
+share/doc/HTML/nl/irkick/index.cache.bz2
+share/doc/HTML/nl/irkick/index.docbook
 share/doc/HTML/nl/juk/common
 share/doc/HTML/nl/juk/index.cache.bz2
 share/doc/HTML/nl/juk/index.docbook
@@ -194,6 +197,9 @@ share/doc/HTML/nl/kcalc/index.docbook
 share/doc/HTML/nl/kcharselect/common
 share/doc/HTML/nl/kcharselect/index.cache.bz2
 share/doc/HTML/nl/kcharselect/index.docbook
+share/doc/HTML/nl/kcmlirc/common
+share/doc/HTML/nl/kcmlirc/index.cache.bz2
+share/doc/HTML/nl/kcmlirc/index.docbook
 share/doc/HTML/nl/kcoloredit/common
 share/doc/HTML/nl/kcoloredit/index.cache.bz2
 share/doc/HTML/nl/kcoloredit/index.docbook
@@ -383,12 +389,6 @@ share/doc/HTML/nl/kdcop/index.docbook
 share/doc/HTML/nl/kdebugdialog/common
 share/doc/HTML/nl/kdebugdialog/index.cache.bz2
 share/doc/HTML/nl/kdebugdialog/index.docbook
-share/doc/HTML/nl/kdelirc/irkick/common
-share/doc/HTML/nl/kdelirc/irkick/index.cache.bz2
-share/doc/HTML/nl/kdelirc/irkick/index.docbook
-share/doc/HTML/nl/kdelirc/kcmlirc/common
-share/doc/HTML/nl/kdelirc/kcmlirc/index.cache.bz2
-share/doc/HTML/nl/kdelirc/kcmlirc/index.docbook
 share/doc/HTML/nl/kdeprint/add-printer-wiz.docbook
 share/doc/HTML/nl/kdeprint/common
 share/doc/HTML/nl/kdeprint/cups-config.docbook
@@ -414,6 +414,10 @@ share/doc/HTML/nl/kdf/index.cache.bz2
 share/doc/HTML/nl/kdf/index.docbook
 share/doc/HTML/nl/kdf/kdf.png
 share/doc/HTML/nl/kdf/kdf_config.png
+share/doc/HTML/nl/kdm/common
+share/doc/HTML/nl/kdm/index.cache.bz2
+share/doc/HTML/nl/kdm/index.docbook
+share/doc/HTML/nl/kdm/kdmrc-ref.docbook
 share/doc/HTML/nl/kdvi/common
 share/doc/HTML/nl/kdvi/index.cache.bz2
 share/doc/HTML/nl/kdvi/index.docbook
@@ -423,9 +427,35 @@ share/doc/HTML/nl/keduca/index.docbook
 share/doc/HTML/nl/kenolaba/common
 share/doc/HTML/nl/kenolaba/index.cache.bz2
 share/doc/HTML/nl/kenolaba/index.docbook
+share/doc/HTML/nl/kfilereplace/addstringsdialog_window.png
+share/doc/HTML/nl/kfilereplace/backup_option.png
+share/doc/HTML/nl/kfilereplace/casesensitive_option.png
+share/doc/HTML/nl/kfilereplace/command_option.png
 share/doc/HTML/nl/kfilereplace/common
+share/doc/HTML/nl/kfilereplace/edit.png
+share/doc/HTML/nl/kfilereplace/edit_add.png
+share/doc/HTML/nl/kfilereplace/edit_remove.png
+share/doc/HTML/nl/kfilereplace/eraser.png
+share/doc/HTML/nl/kfilereplace/filereplace.png
+share/doc/HTML/nl/kfilereplace/filesearch.png
+share/doc/HTML/nl/kfilereplace/filesimulate.png
 share/doc/HTML/nl/kfilereplace/index.cache.bz2
 share/doc/HTML/nl/kfilereplace/index.docbook
+share/doc/HTML/nl/kfilereplace/invert.png
+share/doc/HTML/nl/kfilereplace/kfr_standalone_main_window_1.png
+share/doc/HTML/nl/kfilereplace/optionsdialog_main_window_1.png
+share/doc/HTML/nl/kfilereplace/optionsdialog_main_window_2.png
+share/doc/HTML/nl/kfilereplace/project.png
+share/doc/HTML/nl/kfilereplace/projectdialog_main_window_1.png
+share/doc/HTML/nl/kfilereplace/projectdialog_main_window_2.png
+share/doc/HTML/nl/kfilereplace/recursive_option.png
+share/doc/HTML/nl/kfilereplace/regularexpression_option.png
+share/doc/HTML/nl/kfilereplace/report_example.png
+share/doc/HTML/nl/kfilereplace/results_view.png
+share/doc/HTML/nl/kfilereplace/stop.png
+share/doc/HTML/nl/kfilereplace/strings_view.png
+share/doc/HTML/nl/kfilereplace/toolbar.png
+share/doc/HTML/nl/kfilereplace/unsortedList.png
 share/doc/HTML/nl/kfind/common
 share/doc/HTML/nl/kfind/index.cache.bz2
 share/doc/HTML/nl/kfind/index.docbook
@@ -501,7 +531,6 @@ share/doc/HTML/nl/khelpcenter/userguide/accessibility.docbook
 share/doc/HTML/nl/khelpcenter/userguide/base-kde-applications.docbook
 share/doc/HTML/nl/khelpcenter/userguide/browser-fine-tuning.docbook
 share/doc/HTML/nl/khelpcenter/userguide/burning-cds.docbook
-share/doc/HTML/nl/khelpcenter/userguide/common
 share/doc/HTML/nl/khelpcenter/userguide/control-center.docbook
 share/doc/HTML/nl/khelpcenter/userguide/creating-graphics.docbook
 share/doc/HTML/nl/khelpcenter/userguide/credits-and-license.docbook
@@ -515,8 +544,6 @@ share/doc/HTML/nl/khelpcenter/userguide/getting-started.docbook
 share/doc/HTML/nl/khelpcenter/userguide/glossary.docbook
 share/doc/HTML/nl/khelpcenter/userguide/groupware-kontact.docbook
 share/doc/HTML/nl/khelpcenter/userguide/history.docbook
-share/doc/HTML/nl/khelpcenter/userguide/index.cache.bz2
-share/doc/HTML/nl/khelpcenter/userguide/index.docbook
 share/doc/HTML/nl/khelpcenter/userguide/installation.docbook
 share/doc/HTML/nl/khelpcenter/userguide/internet-shortcuts.docbook
 share/doc/HTML/nl/khelpcenter/userguide/intro.docbook
@@ -787,6 +814,9 @@ share/doc/HTML/nl/kmplot/man-kmplot.1.docbook
 share/doc/HTML/nl/kmplot/menu.docbook
 share/doc/HTML/nl/kmplot/reference.docbook
 share/doc/HTML/nl/kmplot/using.docbook
+share/doc/HTML/nl/knetattach/common
+share/doc/HTML/nl/knetattach/index.cache.bz2
+share/doc/HTML/nl/knetattach/index.docbook
 share/doc/HTML/nl/knode/commands.docbook
 share/doc/HTML/nl/knode/common
 share/doc/HTML/nl/knode/credits.docbook
@@ -829,6 +859,9 @@ share/doc/HTML/nl/kommander/widgets.docbook
 share/doc/HTML/nl/kompare/common
 share/doc/HTML/nl/kompare/index.cache.bz2
 share/doc/HTML/nl/kompare/index.docbook
+share/doc/HTML/nl/kompmgr/common
+share/doc/HTML/nl/kompmgr/index.cache.bz2
+share/doc/HTML/nl/kompmgr/index.docbook
 share/doc/HTML/nl/konq-plugins/babel/common
 share/doc/HTML/nl/konq-plugins/babel/index.cache.bz2
 share/doc/HTML/nl/konq-plugins/babel/index.docbook
@@ -1547,6 +1580,7 @@ share/locale/nl/LC_MESSAGES/khotkeys.mo
 share/locale/nl/LC_MESSAGES/khtmlkttsd.mo
 share/locale/nl/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/nl/LC_MESSAGES/kicker.mo
+share/locale/nl/LC_MESSAGES/kickermenu_kate.mo
 share/locale/nl/LC_MESSAGES/kiconedit.mo
 share/locale/nl/LC_MESSAGES/kig.mo
 share/locale/nl/LC_MESSAGES/kimagemapeditor.mo
@@ -1584,6 +1618,7 @@ share/locale/nl/LC_MESSAGES/kio_thumbnail.mo
 share/locale/nl/LC_MESSAGES/kio_trash.mo
 share/locale/nl/LC_MESSAGES/kio_zeroconf.mo
 share/locale/nl/LC_MESSAGES/kioexec.mo
+share/locale/nl/LC_MESSAGES/kitchensync.mo
 share/locale/nl/LC_MESSAGES/kiten.mo
 share/locale/nl/LC_MESSAGES/kjobviewer.mo
 share/locale/nl/LC_MESSAGES/kjots.mo
@@ -1787,6 +1822,7 @@ share/locale/nl/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/nl/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/nl/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/nl/LC_MESSAGES/libkickermenu_tom.mo
+share/locale/nl/LC_MESSAGES/libkitchensync.mo
 share/locale/nl/LC_MESSAGES/libkleopatra.mo
 share/locale/nl/LC_MESSAGES/libkmime.mo
 share/locale/nl/LC_MESSAGES/libkonq.mo
@@ -1907,12 +1943,14 @@ share/locale/nl/flag.png
 @dirrm share/doc/HTML/nl/konq-plugins/crashes
 @dirrm share/doc/HTML/nl/konq-plugins/babel
 @dirrm share/doc/HTML/nl/konq-plugins
+@dirrm share/doc/HTML/nl/kompmgr
 @dirrm share/doc/HTML/nl/kompare
 @dirrm share/doc/HTML/nl/kommander
 @dirrm share/doc/HTML/nl/kolf
 @dirrm share/doc/HTML/nl/kodo
 @dirrm share/doc/HTML/nl/knotes
 @dirrm share/doc/HTML/nl/knode
+@dirrm share/doc/HTML/nl/knetattach
 @dirrm share/doc/HTML/nl/kmplot
 @dirrm share/doc/HTML/nl/kmouth
 @dirrm share/doc/HTML/nl/kmousetool
@@ -1976,12 +2014,10 @@ share/locale/nl/flag.png
 @dirrm share/doc/HTML/nl/kenolaba
 @dirrm share/doc/HTML/nl/keduca
 @dirrm share/doc/HTML/nl/kdvi
+@dirrm share/doc/HTML/nl/kdm
 @dirrm share/doc/HTML/nl/kdf
 @dirrm share/doc/HTML/nl/kdesu
 @dirrm share/doc/HTML/nl/kdeprint
-@dirrm share/doc/HTML/nl/kdelirc/kcmlirc
-@dirrm share/doc/HTML/nl/kdelirc/irkick
-@dirrm share/doc/HTML/nl/kdelirc
 @dirrm share/doc/HTML/nl/kdebugdialog
 @dirrm share/doc/HTML/nl/kdcop
 @dirrm share/doc/HTML/nl/kdat
@@ -2042,6 +2078,7 @@ share/locale/nl/flag.png
 @dirrm share/doc/HTML/nl/kcontrol/arts
 @dirrm share/doc/HTML/nl/kcontrol
 @dirrm share/doc/HTML/nl/kcoloredit
+@dirrm share/doc/HTML/nl/kcmlirc
 @dirrm share/doc/HTML/nl/kcharselect
 @dirrm share/doc/HTML/nl/kcalc
 @dirrm share/doc/HTML/nl/kbugbuster
@@ -2062,6 +2099,7 @@ share/locale/nl/flag.png
 @dirrm share/doc/HTML/nl/kaddressbook
 @dirrm share/doc/HTML/nl/kaboodle
 @dirrm share/doc/HTML/nl/juk
+@dirrm share/doc/HTML/nl/irkick
 @dirrm share/doc/HTML/nl/docs/common
 @dirrm share/doc/HTML/nl/docs
 @dirrm share/doc/HTML/nl/atlantik

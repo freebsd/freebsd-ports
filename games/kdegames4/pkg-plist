@@ -141,6 +141,7 @@ share/applications/kde/klickety.desktop
 share/applications/kde/klines.desktop
 share/applications/kde/kmahjongg.desktop
 share/applications/kde/kmines.desktop
+share/applications/kde/knetwalk.desktop
 share/applications/kde/kolf.desktop
 share/applications/kde/konquest.desktop
 share/applications/kde/kpat.desktop
@@ -844,8 +845,8 @@ share/apps/carddecks/decks/deck8.desktop
 share/apps/carddecks/decks/deck8.png
 share/apps/carddecks/decks/deck9.desktop
 share/apps/carddecks/decks/deck9.png
-%%FREEBSD_DECK%%share/apps/carddecks/decks/deck_freebsd.desktop
-%%FREEBSD_DECK%%share/apps/carddecks/decks/deck_freebsd.png
+share/apps/carddecks/decks/deck_freebsd.desktop
+share/apps/carddecks/decks/deck_freebsd.png
 share/apps/kasteroids/kasteroidsui.rc
 share/apps/kasteroids/sounds/Explosion.wav
 share/apps/kasteroids/sprites/bg.png
@@ -1121,7 +1122,7 @@ share/apps/katomic/levels/level_8
 share/apps/katomic/levels/level_80
 share/apps/katomic/levels/level_81
 share/apps/katomic/levels/level_82
-share/apps/katomic/levels/level_84
+share/apps/katomic/levels/level_83
 share/apps/katomic/levels/level_9
 share/apps/katomic/pics/abilder.png
 share/apps/katomic/pics/molek.png

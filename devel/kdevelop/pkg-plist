@@ -5,15 +5,10 @@ bin/kdevelop-bin
 bin/kdevelop-htdig
 bin/kdevprj2kdevelop
 bin/kdevprofileeditor
-bin/r++
 include/kdevelop/buildtools/base/kdevbuildtool.h
 include/kdevelop/buildtools/parsers/qmake/qmakeast.h
 include/kdevelop/buildtools/parsers/qmake/qmakeastvisitor.h
 include/kdevelop/buildtools/parsers/qmake/qmakedriver.h
-include/kdevelop/buildtools/projectmanager/interfaces/kdevprojectbuilder.h
-include/kdevelop/buildtools/projectmanager/interfaces/kdevprojecteditor.h
-include/kdevelop/buildtools/projectmanager/interfaces/kdevprojectimporter.h
-include/kdevelop/buildtools/projectmanager/interfaces/kdevprojectmodel.h
 include/kdevelop/buildtools/widgets/addenvvardlg.h
 include/kdevelop/buildtools/widgets/addfilesdialog.h
 include/kdevelop/buildtools/widgets/environmentvariableswidget.h
@@ -30,10 +25,13 @@ include/kdevelop/buildtools/widgets/subclassesdlgbase.h
 include/kdevelop/catalog/catalog.h
 include/kdevelop/catalog/tag.h
 include/kdevelop/cppparser/ast.h
+include/kdevelop/cppparser/cachemanager.h
 include/kdevelop/cppparser/driver.h
 include/kdevelop/cppparser/errors.h
 include/kdevelop/cppparser/lexer.h
+include/kdevelop/cppparser/lexercache.h
 include/kdevelop/cppparser/lookup.h
+include/kdevelop/cppparser/macro.h
 include/kdevelop/cppparser/parser.h
 include/kdevelop/cppparser/tree_parser.h
 include/kdevelop/interfaces/KDevCoreIface.h
@@ -41,6 +39,7 @@ include/kdevelop/interfaces/KDevPartControllerIface.h
 include/kdevelop/interfaces/codemodel.h
 include/kdevelop/interfaces/codemodel_treeparser.h
 include/kdevelop/interfaces/codemodel_utils.h
+include/kdevelop/interfaces/extensions/codebrowserfrontend.h
 include/kdevelop/interfaces/extensions/dcop/KDevAppFrontendIface.h
 include/kdevelop/interfaces/extensions/dcop/KDevMakeFrontendIface.h
 include/kdevelop/interfaces/extensions/kdevappfrontend.h
@@ -51,6 +50,7 @@ include/kdevelop/interfaces/extensions/kdevsourceformatter.h
 include/kdevelop/interfaces/extensions/kdevversioncontrol.h
 include/kdevelop/interfaces/extras/kdevcompileroptions.h
 include/kdevelop/interfaces/extras/kdevvcsintegrator.h
+include/kdevelop/interfaces/hashedstring.h
 include/kdevelop/interfaces/katedocumentmanagerinterface.h
 include/kdevelop/interfaces/kdevapi.h
 include/kdevelop/interfaces/kdevcoderepository.h
@@ -111,9 +111,8 @@ include/kdevelop/shell/generalinfowidgetbase.h
 include/kdevelop/shell/languageselectwidget.h
 include/kdevelop/shell/mainwindowshare.h
 include/kdevelop/shell/mimewarningdialog.h
-include/kdevelop/shell/newmainwindow.h
+include/kdevelop/shell/multibuffer.h
 include/kdevelop/shell/partcontroller.h
-include/kdevelop/shell/partselectwidget.h
 include/kdevelop/shell/plugincontroller.h
 include/kdevelop/shell/profileengine/profile.h
 include/kdevelop/shell/profileengine/profileengine.h
@@ -132,6 +131,7 @@ include/kdevelop/util/filetemplate.h
 include/kdevelop/util/kscriptactionmanager.h
 include/kdevelop/util/rurl.h
 include/kdevelop/util/urlutil.h
+include/kdevelop/widgets/fancylistviewitem.h
 include/kdevelop/widgets/flagboxes.h
 include/kdevelop/widgets/kcomboview.h
 include/kdevelop/widgets/kdevhtmlpart.h
@@ -146,6 +146,9 @@ lib/kconf_update_bin/kdev-gen-settings-kconf_update
 lib/kde3/kio_chm.a
 lib/kde3/kio_chm.la
 lib/kde3/kio_chm.so
+lib/kde3/kio_csharpdoc.a
+lib/kde3/kio_csharpdoc.la
+lib/kde3/kio_csharpdoc.so
 lib/kde3/kio_perldoc.a
 lib/kde3/kio_perldoc.la
 lib/kde3/kio_perldoc.so
@@ -161,22 +164,18 @@ lib/kde3/libcvsserviceintegrator.so
 lib/kde3/libdocchmplugin.a
 lib/kde3/libdocchmplugin.la
 lib/kde3/libdocchmplugin.so
-lib/kde3/libdocchmplugin.so.0
 lib/kde3/libdoccustomplugin.a
 lib/kde3/libdoccustomplugin.la
 lib/kde3/libdoccustomplugin.so
 lib/kde3/libdocdevhelpplugin.a
 lib/kde3/libdocdevhelpplugin.la
 lib/kde3/libdocdevhelpplugin.so
-lib/kde3/libdocdevhelpplugin.so.0
 lib/kde3/libdocdoxygenplugin.a
 lib/kde3/libdocdoxygenplugin.la
 lib/kde3/libdocdoxygenplugin.so
-lib/kde3/libdocdoxygenplugin.so.0
 lib/kde3/libdockdevtocplugin.a
 lib/kde3/libdockdevtocplugin.la
 lib/kde3/libdockdevtocplugin.so
-lib/kde3/libdockdevtocplugin.so.0
 lib/kde3/libdocqtplugin.a
 lib/kde3/libdocqtplugin.la
 lib/kde3/libdocqtplugin.so
@@ -222,9 +221,15 @@ lib/kde3/libkdevclearcase.so
 lib/kde3/libkdevcppsupport.a
 lib/kde3/libkdevcppsupport.la
 lib/kde3/libkdevcppsupport.so
+lib/kde3/libkdevcsharpsupport.a
+lib/kde3/libkdevcsharpsupport.la
+lib/kde3/libkdevcsharpsupport.so
 lib/kde3/libkdevctags2.a
 lib/kde3/libkdevctags2.la
 lib/kde3/libkdevctags2.so
+lib/kde3/libkdevcustompcsimporter.a
+lib/kde3/libkdevcustompcsimporter.la
+lib/kde3/libkdevcustompcsimporter.so
 lib/kde3/libkdevcustomproject.a
 lib/kde3/libkdevcustomproject.la
 lib/kde3/libkdevcustomproject.so
@@ -285,24 +290,15 @@ lib/kde3/libkdevfullscreen.so
 lib/kde3/libkdevgccoptions.a
 lib/kde3/libkdevgccoptions.la
 lib/kde3/libkdevgccoptions.so
-lib/kde3/libkdevghcoptions.a
-lib/kde3/libkdevghcoptions.la
-lib/kde3/libkdevghcoptions.so
 lib/kde3/libkdevgrepview.a
 lib/kde3/libkdevgrepview.la
 lib/kde3/libkdevgrepview.so
-lib/kde3/libkdevhaskellproject.a
-lib/kde3/libkdevhaskellproject.la
-lib/kde3/libkdevhaskellproject.so
-lib/kde3/libkdevhaskellsupport.a
-lib/kde3/libkdevhaskellsupport.la
-lib/kde3/libkdevhaskellsupport.so
-lib/kde3/libkdevjavadebugger.a
-lib/kde3/libkdevjavadebugger.la
-lib/kde3/libkdevjavadebugger.so
 lib/kde3/libkdevjavasupport.a
 lib/kde3/libkdevjavasupport.la
 lib/kde3/libkdevjavasupport.so
+lib/kde3/libkdevkdelibsimporter.a
+lib/kde3/libkdevkdelibsimporter.la
+lib/kde3/libkdevkdelibsimporter.so
 lib/kde3/libkdevkonsoleview.a
 lib/kde3/libkdevkonsoleview.la
 lib/kde3/libkdevkonsoleview.so
@@ -333,12 +329,15 @@ lib/kde3/libkdevpgioptions.so
 lib/kde3/libkdevphpsupport.a
 lib/kde3/libkdevphpsupport.la
 lib/kde3/libkdevphpsupport.so
-lib/kde3/libkdevprojectmanager.a
-lib/kde3/libkdevprojectmanager.la
-lib/kde3/libkdevprojectmanager.so
 lib/kde3/libkdevpythonsupport.a
 lib/kde3/libkdevpythonsupport.la
 lib/kde3/libkdevpythonsupport.so
+lib/kde3/libkdevqt4importer.a
+lib/kde3/libkdevqt4importer.la
+lib/kde3/libkdevqt4importer.so
+lib/kde3/libkdevqtimporter.a
+lib/kde3/libkdevqtimporter.la
+lib/kde3/libkdevqtimporter.so
 lib/kde3/libkdevquickopen.a
 lib/kde3/libkdevquickopen.la
 lib/kde3/libkdevquickopen.so
@@ -360,9 +359,6 @@ lib/kde3/libkdevscripting.so
 lib/kde3/libkdevscriptproject.a
 lib/kde3/libkdevscriptproject.la
 lib/kde3/libkdevscriptproject.so
-lib/kde3/libkdevsecurity.a
-lib/kde3/libkdevsecurity.la
-lib/kde3/libkdevsecurity.so
 lib/kde3/libkdevsnippet.a
 lib/kde3/libkdevsnippet.la
 lib/kde3/libkdevsnippet.so
@@ -396,9 +392,6 @@ lib/kde3/libkdevvcsmanager.so
 lib/kde3/libperforceintegrator.a
 lib/kde3/libperforceintegrator.la
 lib/kde3/libperforceintegrator.so
-lib/kde3/libqeditorpart.a
-lib/kde3/libqeditorpart.la
-lib/kde3/libqeditorpart.so
 lib/kde3/libsubversionintegrator.a
 lib/kde3/libsubversionintegrator.la
 lib/kde3/libsubversionintegrator.so
@@ -414,9 +407,10 @@ lib/libdocumentation_interfaces.a
 lib/libdocumentation_interfaces.la
 lib/libdocumentation_interfaces.so
 lib/libdocumentation_interfaces.so.0
-lib/libkdevautomakeimporter.a
-lib/libkdevautomakeimporter.la
-lib/libkdevautomakeimporter.so
+lib/libgdbmi_parser.a
+lib/libgdbmi_parser.la
+lib/libgdbmi_parser.so
+lib/libgdbmi_parser.so.0
 lib/libkdevbuildbase.a
 lib/libkdevbuildbase.la
 lib/libkdevbuildbase.so
@@ -433,12 +427,6 @@ lib/libkdevcppparser.a
 lib/libkdevcppparser.la
 lib/libkdevcppparser.so
 lib/libkdevcppparser.so.0
-lib/libkdevcustomimporter.a
-lib/libkdevcustomimporter.la
-lib/libkdevcustomimporter.so
-lib/libkdevcustompcsimporter.a
-lib/libkdevcustompcsimporter.la
-lib/libkdevcustompcsimporter.so
 lib/libkdevelop.a
 lib/libkdevelop.la
 lib/libkdevelop.so
@@ -447,12 +435,6 @@ lib/libkdevextras.a
 lib/libkdevextras.la
 lib/libkdevextras.so
 lib/libkdevextras.so.0
-lib/libkdevkdelibsimporter.a
-lib/libkdevkdelibsimporter.la
-lib/libkdevkdelibsimporter.so
-lib/libkdevmakebuilder.a
-lib/libkdevmakebuilder.la
-lib/libkdevmakebuilder.so
 lib/libkdevpropertyeditor.a
 lib/libkdevpropertyeditor.la
 lib/libkdevpropertyeditor.so
@@ -461,9 +443,6 @@ lib/libkdevqmakeparser.a
 lib/libkdevqmakeparser.la
 lib/libkdevqmakeparser.so
 lib/libkdevqmakeparser.so.0
-lib/libkdevqtimporter.a
-lib/libkdevqtimporter.la
-lib/libkdevqtimporter.so
 lib/libkdevshell.a
 lib/libkdevshell.la
 lib/libkdevshell.so
@@ -488,13 +467,6 @@ lib/libprofileengine.a
 lib/libprofileengine.la
 lib/libprofileengine.so
 lib/libprofileengine.so.0
-lib/libprojectmanager_interfaces.a
-lib/libprojectmanager_interfaces.la
-lib/libprojectmanager_interfaces.so
-lib/libprojectmanager_interfaces.so.1
-lib/libqmakeimporter.a
-lib/libqmakeimporter.la
-lib/libqmakeimporter.so
 share/applications/kde/kdevassistant.desktop
 share/applications/kde/kdevdesigner.desktop
 share/applications/kde/kdevelop.desktop
@@ -509,6 +481,7 @@ share/apps/kdevabbrev/sources/qt_classes
 share/apps/kdevabbrev/templates/cpptemplates
 share/apps/kdevabbrev/templates/pascaltemplates
 share/apps/kdevabbrev/templates/phptemplates
+share/apps/kdevabbrev/templates/rubytemplates
 share/apps/kdevadaproject/kdevadaproject.rc
 share/apps/kdevadasupport/kdevadasupport.rc
 share/apps/kdevantproject/kdevantproject.rc
@@ -549,12 +522,8 @@ share/apps/kdevappwizard/fpchello.png
 share/apps/kdevappwizard/fpchello.tar.gz
 share/apps/kdevappwizard/fpcsharedlib.png
 share/apps/kdevappwizard/fpcsharedlib.tar.gz
-share/apps/kdevappwizard/gnomeapp.png
-share/apps/kdevappwizard/gnomeapp.tar.gz
 share/apps/kdevappwizard/gtk2mmapp.png
 share/apps/kdevappwizard/gtk2mmapp.tar.gz
-share/apps/kdevappwizard/haskellhello.png
-share/apps/kdevappwizard/haskellhello.tar.gz
 share/apps/kdevappwizard/importfiles/ada.kdevelop
 share/apps/kdevappwizard/importfiles/c-auto.kdevelop
 share/apps/kdevappwizard/importfiles/c.kdevelop
@@ -571,6 +540,7 @@ share/apps/kdevappwizard/importfiles/pascal.kdevelop
 share/apps/kdevappwizard/importfiles/perl.kdevelop
 share/apps/kdevappwizard/importfiles/php.kdevelop
 share/apps/kdevappwizard/importfiles/python.kdevelop
+share/apps/kdevappwizard/importfiles/qt4qmake.kdevelop
 share/apps/kdevappwizard/importfiles/qtqmake.kdevelop
 share/apps/kdevappwizard/importfiles/qttmake.kdevelop
 share/apps/kdevappwizard/importfiles/ruby.kdevelop
@@ -590,6 +560,7 @@ share/apps/kdevappwizard/imports/pascal
 share/apps/kdevappwizard/imports/perl
 share/apps/kdevappwizard/imports/php
 share/apps/kdevappwizard/imports/python
+share/apps/kdevappwizard/imports/qt4qmake
 share/apps/kdevappwizard/imports/qtqmake
 share/apps/kdevappwizard/imports/qttmake
 share/apps/kdevappwizard/imports/ruby
@@ -605,12 +576,10 @@ share/apps/kdevappwizard/kateplugin.png
 share/apps/kdevappwizard/kateplugin.tar.gz
 share/apps/kdevappwizard/kateplugin2.png
 share/apps/kdevappwizard/kateplugin2.tar.gz
-share/apps/kdevappwizard/kbearimportfilter.png
-share/apps/kdevappwizard/kbearimportfilter.tar.gz
-share/apps/kdevappwizard/kbearplugin.png
-share/apps/kdevappwizard/kbearplugin.tar.gz
 share/apps/kdevappwizard/kcmodule.png
 share/apps/kdevappwizard/kcmodule.tar.gz
+share/apps/kdevappwizard/kconfig35.png
+share/apps/kdevappwizard/kconfig35.tar.gz
 share/apps/kdevappwizard/kdedcop.png
 share/apps/kdevappwizard/kdedcop.tar.gz
 share/apps/kdevappwizard/kdevappwizard.rc
@@ -682,6 +651,10 @@ share/apps/kdevappwizard/qmakeapp.png
 share/apps/kdevappwizard/qmakeapp.tar.gz
 share/apps/kdevappwizard/qmakesimple.png
 share/apps/kdevappwizard/qmakesimple.tar.gz
+share/apps/kdevappwizard/qt4hello.png
+share/apps/kdevappwizard/qt4hello.tar.gz
+share/apps/kdevappwizard/qt4makeapp.png
+share/apps/kdevappwizard/qt4makeapp.tar.gz
 share/apps/kdevappwizard/qtopiaapp.png
 share/apps/kdevappwizard/qtopiaapp.tar.gz
 share/apps/kdevappwizard/qtruby.png
@@ -698,7 +671,6 @@ share/apps/kdevappwizard/superwaba.png
 share/apps/kdevappwizard/superwaba.tar.gz
 share/apps/kdevappwizard/template-common/Artistic
 share/apps/kdevappwizard/template-common/COPYING
-share/apps/kdevappwizard/template-common/COPYING-DOCS
 share/apps/kdevappwizard/template-common/COPYING.LIB
 share/apps/kdevappwizard/template-common/LICENSE.BSD
 share/apps/kdevappwizard/template-common/LICENSE.QPL
@@ -753,18 +725,15 @@ share/apps/kdevappwizard/templates/fortranhello.kdevtemplate
 share/apps/kdevappwizard/templates/fpcgtk.kdevtemplate
 share/apps/kdevappwizard/templates/fpchello.kdevtemplate
 share/apps/kdevappwizard/templates/fpcsharedlib.kdevtemplate
-share/apps/kdevappwizard/templates/gnomeapp.kdevtemplate
 share/apps/kdevappwizard/templates/gtk2mmapp.kdevtemplate
-share/apps/kdevappwizard/templates/haskellhello.kdevtemplate
 share/apps/kdevappwizard/templates/javahello.kdevtemplate
 share/apps/kdevappwizard/templates/kapp.kdevtemplate
 share/apps/kdevappwizard/templates/kappjava.kdevtemplate
 share/apps/kdevappwizard/templates/kappruby.kdevtemplate
 share/apps/kdevappwizard/templates/kateplugin.kdevtemplate
 share/apps/kdevappwizard/templates/kateplugin2.kdevtemplate
-share/apps/kdevappwizard/templates/kbearimportfilter.kdevtemplate
-share/apps/kdevappwizard/templates/kbearplugin.kdevtemplate
 share/apps/kdevappwizard/templates/kcmodule.kdevtemplate
+share/apps/kdevappwizard/templates/kconfig35.kdevtemplate
 share/apps/kdevappwizard/templates/kdedcop.kdevtemplate
 share/apps/kdevappwizard/templates/kdevlang.kdevtemplate
 share/apps/kdevappwizard/templates/kdevpart.kdevtemplate
@@ -800,6 +769,8 @@ share/apps/kdevappwizard/templates/pythonhello.kdevtemplate
 share/apps/kdevappwizard/templates/pytk.kdevtemplate
 share/apps/kdevappwizard/templates/qmakeapp.kdevtemplate
 share/apps/kdevappwizard/templates/qmakesimple.kdevtemplate
+share/apps/kdevappwizard/templates/qt4hello.kdevtemplate
+share/apps/kdevappwizard/templates/qt4makeapp.kdevtemplate
 share/apps/kdevappwizard/templates/qtopiaapp.kdevtemplate
 share/apps/kdevappwizard/templates/qtruby.kdevtemplate
 share/apps/kdevappwizard/templates/qtrubyapp.kdevtemplate
@@ -858,10 +829,13 @@ share/apps/kdevcppsupport/newclass/gtk_header
 share/apps/kdevcppsupport/newclass/gtk_source
 share/apps/kdevcppsupport/newclass/objc_header
 share/apps/kdevcppsupport/newclass/objc_source
+share/apps/kdevcppsupport/subclassing/subclass_qt4_template.cpp
+share/apps/kdevcppsupport/subclassing/subclass_qt4_template.h
 share/apps/kdevcppsupport/subclassing/subclass_template.cpp
 share/apps/kdevcppsupport/subclassing/subclass_template.h
 share/apps/kdevcppsupport/templates/default.cpp
 share/apps/kdevcppsupport/templates/default.h
+share/apps/kdevcsharpsupport/kdevcsharpsupport.rc
 share/apps/kdevctags2/kdevpart_ctags2.rc
 share/apps/kdevcustomproject/kdevcustomproject.rc
 share/apps/kdevcvsservice/buildcvs.sh
@@ -1123,11 +1097,10 @@ share/apps/kdevdocumentation/tocs/fortran_bugs_gcc.toc
 share/apps/kdevdocumentation/tocs/gnome1.toc
 share/apps/kdevdocumentation/tocs/gnustep.toc
 share/apps/kdevdocumentation/tocs/gtk_bugs.toc
-share/apps/kdevdocumentation/tocs/haskell.toc
-share/apps/kdevdocumentation/tocs/haskell_bugs_ghc.toc
 share/apps/kdevdocumentation/tocs/java_bugs_gcc.toc
 share/apps/kdevdocumentation/tocs/java_bugs_sun.toc
 share/apps/kdevdocumentation/tocs/kde2book.toc
+share/apps/kdevdocumentation/tocs/kdetemplates.toc
 share/apps/kdevdocumentation/tocs/kdev3api.toc
 share/apps/kdevdocumentation/tocs/libc.toc
 share/apps/kdevdocumentation/tocs/libstdc++.toc
@@ -1161,10 +1134,15 @@ share/apps/kdevelop/icons/hicolor/16x16/actions/methodnew.png
 share/apps/kdevelop/icons/hicolor/16x16/actions/newwidget.png
 share/apps/kdevelop/icons/hicolor/16x16/actions/project_open.png
 share/apps/kdevelop/icons/hicolor/16x16/actions/qmake_app.png
+share/apps/kdevelop/icons/hicolor/16x16/actions/qmake_app_disabled.png
+share/apps/kdevelop/icons/hicolor/16x16/actions/qmake_func_scope.png
+share/apps/kdevelop/icons/hicolor/16x16/actions/qmake_inc_scope.png
 share/apps/kdevelop/icons/hicolor/16x16/actions/qmake_lib.png
+share/apps/kdevelop/icons/hicolor/16x16/actions/qmake_lib_disabled.png
 share/apps/kdevelop/icons/hicolor/16x16/actions/qmake_scope.png
 share/apps/kdevelop/icons/hicolor/16x16/actions/qmake_scopenew.png
 share/apps/kdevelop/icons/hicolor/16x16/actions/qmake_sub.png
+share/apps/kdevelop/icons/hicolor/16x16/actions/qmake_sub_disabled.png
 share/apps/kdevelop/icons/hicolor/16x16/actions/qmake_subclass.png
 share/apps/kdevelop/icons/hicolor/16x16/actions/qmake_ui_h.png
 share/apps/kdevelop/icons/hicolor/16x16/actions/qmakerun.png
@@ -1226,7 +1204,6 @@ share/apps/kdevelop/profiles/IDE/CompiledLanguageIDE/CandCppIDE/CppIDE/profile.c
 share/apps/kdevelop/profiles/IDE/CompiledLanguageIDE/CandCppIDE/profile.config
 share/apps/kdevelop/profiles/IDE/CompiledLanguageIDE/FortranIDE/fortran.appwizard
 share/apps/kdevelop/profiles/IDE/CompiledLanguageIDE/FortranIDE/profile.config
-share/apps/kdevelop/profiles/IDE/CompiledLanguageIDE/HaskellIDE/haskell.appwizard
 share/apps/kdevelop/profiles/IDE/CompiledLanguageIDE/HaskellIDE/profile.config
 share/apps/kdevelop/profiles/IDE/CompiledLanguageIDE/JavaIDE/java.appwizard
 share/apps/kdevelop/profiles/IDE/CompiledLanguageIDE/JavaIDE/profile.config
@@ -1235,6 +1212,7 @@ share/apps/kdevelop/profiles/IDE/CompiledLanguageIDE/PascalIDE/profile.config
 share/apps/kdevelop/profiles/IDE/CompiledLanguageIDE/profile.config
 share/apps/kdevelop/profiles/IDE/DatabaseIDE/profile.config
 share/apps/kdevelop/profiles/IDE/DatabaseIDE/sql.appwizard
+share/apps/kdevelop/profiles/IDE/ScriptingLanguageIDE/CSharpIDE/csharp.appwizard
 share/apps/kdevelop/profiles/IDE/ScriptingLanguageIDE/PHPIDE/php.appwizard
 share/apps/kdevelop/profiles/IDE/ScriptingLanguageIDE/PHPIDE/profile.config
 share/apps/kdevelop/profiles/IDE/ScriptingLanguageIDE/PerlIDE/perl.appwizard
@@ -1250,11 +1228,11 @@ share/apps/kdevelop/profiles/IDE/profile.config
 share/apps/kdevelop/profiles/KDevAssistant/profile.config
 share/apps/kdevelop/profiles/profile.config
 share/apps/kdevelop/profiles/projectprofiles
-share/apps/kdevfilecreate/file-templates/F
 share/apps/kdevfilecreate/file-templates/adb
 share/apps/kdevfilecreate/file-templates/ads
 share/apps/kdevfilecreate/file-templates/c
 share/apps/kdevfilecreate/file-templates/cpp
+share/apps/kdevfilecreate/file-templates/css
 share/apps/kdevfilecreate/file-templates/dox
 share/apps/kdevfilecreate/file-templates/dpr
 share/apps/kdevfilecreate/file-templates/f
@@ -1265,8 +1243,8 @@ share/apps/kdevfilecreate/file-templates/for
 share/apps/kdevfilecreate/file-templates/fpp
 share/apps/kdevfilecreate/file-templates/ftn
 share/apps/kdevfilecreate/file-templates/h
-share/apps/kdevfilecreate/file-templates/hs
 share/apps/kdevfilecreate/file-templates/java
+share/apps/kdevfilecreate/file-templates/js
 share/apps/kdevfilecreate/file-templates/l
 share/apps/kdevfilecreate/file-templates/ll
 share/apps/kdevfilecreate/file-templates/pas-program
@@ -1277,17 +1255,25 @@ share/apps/kdevfilecreate/file-templates/pm
 share/apps/kdevfilecreate/file-templates/pp-program
 share/apps/kdevfilecreate/file-templates/pp-unit
 share/apps/kdevfilecreate/file-templates/py
+share/apps/kdevfilecreate/file-templates/qrc
 share/apps/kdevfilecreate/file-templates/rb
 share/apps/kdevfilecreate/file-templates/rhtml
+share/apps/kdevfilecreate/file-templates/rjs
+share/apps/kdevfilecreate/file-templates/rxml
 share/apps/kdevfilecreate/file-templates/ts
 share/apps/kdevfilecreate/file-templates/ui
 share/apps/kdevfilecreate/file-templates/ui-confdialog
 share/apps/kdevfilecreate/file-templates/ui-dialog
+share/apps/kdevfilecreate/file-templates/ui-dialog-qt4
 share/apps/kdevfilecreate/file-templates/ui-dialogb
+share/apps/kdevfilecreate/file-templates/ui-dialogb-qt4
 share/apps/kdevfilecreate/file-templates/ui-dialogr
+share/apps/kdevfilecreate/file-templates/ui-dialogr-qt4
 share/apps/kdevfilecreate/file-templates/ui-mainwin
+share/apps/kdevfilecreate/file-templates/ui-mainwin-qt4
 share/apps/kdevfilecreate/file-templates/ui-tabdialog
 share/apps/kdevfilecreate/file-templates/ui-widget
+share/apps/kdevfilecreate/file-templates/ui-widget-qt4
 share/apps/kdevfilecreate/file-templates/ui-wizard
 share/apps/kdevfilecreate/file-templates/y
 share/apps/kdevfilecreate/file-templates/yy
@@ -1299,9 +1285,6 @@ share/apps/kdevfortransupport/kdevfortransupport.rc
 share/apps/kdevfullscreen/kdevpart_fullscreen.rc
 share/apps/kdevgrepview/icons/hicolor/22x22/actions/grep.png
 share/apps/kdevgrepview/kdevgrepview.rc
-share/apps/kdevhaskellproject/kdevhaskellproject.rc
-share/apps/kdevhaskellsupport/kdevhaskellsupport.rc
-share/apps/kdevjavadebugger/kdevjavadebugger.rc
 share/apps/kdevjavasupport/kdevjavasupport.rc
 share/apps/kdevmakeview/kdevmakeview.rc
 share/apps/kdevpartexplorer/kdevpartexplorer.rc
@@ -1310,7 +1293,6 @@ share/apps/kdevpascalsupport/kdevpascalsupport.rc
 share/apps/kdevperlsupport/kdevperlsupport.rc
 share/apps/kdevphpsupport/kdevphpsupport.rc
 share/apps/kdevphpsupport/phpfunctions
-share/apps/kdevprojectmanager/kdevprojectmanager.rc
 share/apps/kdevpythonsupport/kdevpythonsupport.rc
 share/apps/kdevquickopen/kdevpart_quickopen.rc
 share/apps/kdevrbdebugger/debuggee.rb
@@ -1329,29 +1311,22 @@ share/apps/kdevrubysupport/pics/ruby_config.png
 share/apps/kdevrubysupport/pics/ruby_run.png
 share/apps/kdevscripting/kdevscripting.rc
 share/apps/kdevscriptproject/kdevscriptproject.rc
-share/apps/kdevsecurity/patterns
 share/apps/kdevsqlsupport/kdevsqlsupport.rc
 share/apps/kdevtipofday/kdevpart_tipofday.rc
 share/apps/kdevtipofday/tips
 share/apps/kdevtools/kdevpart_tools.rc
 share/apps/kdevtrollproject/kdevtrollproject.rc
 share/apps/kdevvalgrind/kdevpart_valgrind.rc
-share/apps/kio_pydoc/kde_inspect.py
 share/apps/kio_pydoc/kde_pydoc.py
-share/apps/qeditorpart/highlight/highlighting.xml
-share/apps/qeditorpart/highlight/qt.xml
-share/apps/qeditorpart/qeditor_part.rc
 share/config/kdevassistantrc
 share/config/kdeveloprc
 share/desktop-directories/kde-development-kdevelop.directory
-share/doc/HTML/en/kde_app_devel/CMakeLists.txt
 share/doc/HTML/en/kde_app_devel/appwizard.png
 share/doc/HTML/en/kde_app_devel/common
 share/doc/HTML/en/kde_app_devel/index.cache.bz2
 share/doc/HTML/en/kde_app_devel/index.docbook
 share/doc/HTML/en/kde_app_devel/kscribblefiles.png
 share/doc/HTML/en/kdevelop-apidocs/common
-share/doc/HTML/en/kdevelop/CMakeLists.txt
 share/doc/HTML/en/kdevelop/SF-general.png
 share/doc/HTML/en/kdevelop/SF-indent.png
 share/doc/HTML/en/kdevelop/SF-other.png
@@ -1367,6 +1342,10 @@ share/doc/HTML/en/kdevelop/automake-manager.png
 share/doc/HTML/en/kdevelop/automake-subproject-popup.png
 share/doc/HTML/en/kdevelop/automake-target-popup.png
 share/doc/HTML/en/kdevelop/automakemanager.png
+share/doc/HTML/en/kdevelop/build-commands.png
+share/doc/HTML/en/kdevelop/build-configurations.png
+share/doc/HTML/en/kdevelop/build-menu-automake.png
+share/doc/HTML/en/kdevelop/build-menu.png
 share/doc/HTML/en/kdevelop/class-browsers.docbook
 share/doc/HTML/en/kdevelop/classview.png
 share/doc/HTML/en/kdevelop/commands.docbook
@@ -1385,15 +1364,25 @@ share/doc/HTML/en/kdevelop/configure-docu-devhelp.png
 share/doc/HTML/en/kdevelop/configure-docu-dox.png
 share/doc/HTML/en/kdevelop/configure-docu-edit.png
 share/doc/HTML/en/kdevelop/configure-docu-general.png
+share/doc/HTML/en/kdevelop/configure-docu-indexgen.png
 share/doc/HTML/en/kdevelop/configure-docu-toc.png
 share/doc/HTML/en/kdevelop/configure-editor.png
 share/doc/HTML/en/kdevelop/configure-file-selector.png
+share/doc/HTML/en/kdevelop/configure-file-templates.png
 share/doc/HTML/en/kdevelop/configure-general.png
+share/doc/HTML/en/kdevelop/configure-project-buildconfig.png
+share/doc/HTML/en/kdevelop/configure-project-configure.png
+share/doc/HTML/en/kdevelop/configure-project-cpp.png
+share/doc/HTML/en/kdevelop/configure-project-cppoptions.png
 share/doc/HTML/en/kdevelop/configure-project-doc.png
+share/doc/HTML/en/kdevelop/configure-project-make.png
+share/doc/HTML/en/kdevelop/configure-project-run.png
 share/doc/HTML/en/kdevelop/configure-select.png
 share/doc/HTML/en/kdevelop/configure-snippets.png
 share/doc/HTML/en/kdevelop/create-new-project-cvs.png
+share/doc/HTML/en/kdevelop/create-new-project.png
 share/doc/HTML/en/kdevelop/createnewproject.png
+share/doc/HTML/en/kdevelop/createnewprojectoptions.png
 share/doc/HTML/en/kdevelop/credits.docbook
 share/doc/HTML/en/kdevelop/cvs.docbook
 share/doc/HTML/en/kdevelop/debugger.docbook
@@ -1403,18 +1392,31 @@ share/doc/HTML/en/kdevelop/doctree.png
 share/doc/HTML/en/kdevelop/doctreeview.png
 share/doc/HTML/en/kdevelop/documentation.docbook
 share/doc/HTML/en/kdevelop/documents-contents.png
+share/doc/HTML/en/kdevelop/documents-search.png
 share/doc/HTML/en/kdevelop/edit-doctree-TOC-entry.png
 share/doc/HTML/en/kdevelop/editing.docbook
+share/doc/HTML/en/kdevelop/editor-ctags-lookup.png
+share/doc/HTML/en/kdevelop/editor-ctags-menu.png
+share/doc/HTML/en/kdevelop/editor-ctags-regenerate.png
+share/doc/HTML/en/kdevelop/editor-find-menu.png
+share/doc/HTML/en/kdevelop/editor-search-doc.png
+share/doc/HTML/en/kdevelop/editor-switch-header.png
 share/doc/HTML/en/kdevelop/empty-ide.png
 share/doc/HTML/en/kdevelop/file-browsers.docbook
+share/doc/HTML/en/kdevelop/file-list-close-selected.png
+share/doc/HTML/en/kdevelop/file-list-session-create.png
+share/doc/HTML/en/kdevelop/file-list-session-default.png
 share/doc/HTML/en/kdevelop/file-selector.png
 share/doc/HTML/en/kdevelop/filetree.png
+share/doc/HTML/en/kdevelop/find-in-files.png
 share/doc/HTML/en/kdevelop/folded-tabs.png
 share/doc/HTML/en/kdevelop/getting-started.docbook
+share/doc/HTML/en/kdevelop/hello-world-app.png
 share/doc/HTML/en/kdevelop/importdirectory.png
 share/doc/HTML/en/kdevelop/index.cache.bz2
 share/doc/HTML/en/kdevelop/index.docbook
 share/doc/HTML/en/kdevelop/kdcop_browsing.png
+share/doc/HTML/en/kdevelop/kdevdesigner.png
 share/doc/HTML/en/kdevelop/kdevelop-ideal-mode-0.png
 share/doc/HTML/en/kdevelop/kdevelop-ideal-mode.png
 share/doc/HTML/en/kdevelop/kdevelop-install.docbook
@@ -1429,13 +1431,26 @@ share/doc/HTML/en/kdevelop/nutshell.docbook
 share/doc/HTML/en/kdevelop/open-project.png
 share/doc/HTML/en/kdevelop/open-recent-project.png
 share/doc/HTML/en/kdevelop/plugin-tools.docbook
+share/doc/HTML/en/kdevelop/problem-report-all-todos.png
+share/doc/HTML/en/kdevelop/problem-report-marks.png
+share/doc/HTML/en/kdevelop/problem-report-todo.png
 share/doc/HTML/en/kdevelop/project-advanced.docbook
 share/doc/HTML/en/kdevelop/project-management.docbook
+share/doc/HTML/en/kdevelop/raw-project-warning.png
+share/doc/HTML/en/kdevelop/run-button.png
 share/doc/HTML/en/kdevelop/script_location.png
 share/doc/HTML/en/kdevelop/select-user-interface-0.png
 share/doc/HTML/en/kdevelop/select-user-interface.png
 share/doc/HTML/en/kdevelop/setup.docbook
+share/doc/HTML/en/kdevelop/split-source-header-navigate.png
+share/doc/HTML/en/kdevelop/split-source-header.png
+share/doc/HTML/en/kdevelop/split-windows.png
+share/doc/HTML/en/kdevelop/split-workspace.png
 share/doc/HTML/en/kdevelop/survey-manual.docbook
+share/doc/HTML/en/kdevelop/tutorial-debug-tree.png
+share/doc/HTML/en/kdevelop/tutorial-hello-new.png
+share/doc/HTML/en/kdevelop/tutorial-hello-options.png
+share/doc/HTML/en/kdevelop/tutorial-new-project.png
 share/doc/HTML/en/kdevelop/unixdev.docbook
 share/doc/HTML/en/kdevelop/wrong-project-location.png
 share/icons/hicolor/16x16/actions/breakpoint_add.png
@@ -1459,6 +1474,7 @@ share/icons/locolor/32x32/actions/kdevelop_tip.png
 share/mimelnk/application/x-kdevelop.desktop
 share/mimelnk/text/x-fortran.desktop
 share/services/chm.protocol
+share/services/csharpdoc.protocol
 share/services/docchmplugin.desktop
 share/services/doccustomplugin.desktop
 share/services/docdevhelpplugin.desktop
@@ -1473,7 +1489,6 @@ share/services/kdevantproject.desktop
 share/services/kdevappoutputview.desktop
 share/services/kdevappwizard.desktop
 share/services/kdevastyle.desktop
-share/services/kdevautomakeimporter.desktop
 share/services/kdevautoproject.desktop
 share/services/kdevbashsupport.desktop
 share/services/kdevbookmarks.desktop
@@ -1481,9 +1496,9 @@ share/services/kdevclassview.desktop
 share/services/kdevclearcase.desktop
 share/services/kdevclearcaseintegrator.desktop
 share/services/kdevcppsupport.desktop
+share/services/kdevcsharpsupport.desktop
 share/services/kdevcsupport.desktop
 share/services/kdevctags2.desktop
-share/services/kdevcustomimporter.desktop
 share/services/kdevcustomproject.desktop
 share/services/kdevcvsservice.desktop
 share/services/kdevcvsserviceintegrator.desktop
@@ -1506,17 +1521,12 @@ share/services/kdevfpcoptions.desktop
 share/services/kdevfullscreen.desktop
 share/services/kdevg77options.desktop
 share/services/kdevgccoptions.desktop
-share/services/kdevghcoptions.desktop
 share/services/kdevgppoptions.desktop
 share/services/kdevgrepview.desktop
-share/services/kdevhaskellproject.desktop
-share/services/kdevhaskellsupport.desktop
-share/services/kdevjavadebugger.desktop
 share/services/kdevjavasupport.desktop
 share/services/kdevkdeautoproject.desktop
 share/services/kdevkdelibsimporter.desktop
 share/services/kdevkonsoleview.desktop
-share/services/kdevmakebuilder.desktop
 share/services/kdevmakeview.desktop
 share/services/kdevopenwith.desktop
 share/services/kdevpartexplorer.desktop
@@ -1529,9 +1539,8 @@ share/services/kdevperlsupport.desktop
 share/services/kdevpgf77options.desktop
 share/services/kdevpghpfoptions.desktop
 share/services/kdevphpsupport.desktop
-share/services/kdevprojectmanager.desktop
 share/services/kdevpythonsupport.desktop
-share/services/kdevqmakeimporter.desktop
+share/services/kdevqt4importer.desktop
 share/services/kdevqtimporter.desktop
 share/services/kdevquickopen.desktop
 share/services/kdevrbdebugger.desktop
@@ -1540,7 +1549,6 @@ share/services/kdevreplace.desktop
 share/services/kdevrubysupport.desktop
 share/services/kdevscripting.desktop
 share/services/kdevscriptproject.desktop
-share/services/kdevsecurity.desktop
 share/services/kdevsnippet.desktop
 share/services/kdevsqlsupport.desktop
 share/services/kdevsubversion.desktop
@@ -1555,8 +1563,8 @@ share/services/kdevvalgrind.desktop
 share/services/kdevvcsmanager.desktop
 share/services/perldoc.protocol
 share/services/pydoc.protocol
-share/services/qeditor_part.desktop
 share/servicetypes/kdevelopappfrontend.desktop
+share/servicetypes/kdevelopcodebrowserfrontend.desktop
 share/servicetypes/kdevelopcompileroptions.desktop
 share/servicetypes/kdevelopcreatefile.desktop
 share/servicetypes/kdevelopdifffrontend.desktop
@@ -1566,8 +1574,6 @@ share/servicetypes/kdevelopmakefrontend.desktop
 share/servicetypes/kdeveloppcsimporter.desktop
 share/servicetypes/kdevelopplugin.desktop
 share/servicetypes/kdevelopproject.desktop
-share/servicetypes/kdevelopprojectbuilder.desktop
-share/servicetypes/kdevelopprojectimporter.desktop
 share/servicetypes/kdevelopsourceformatter.desktop
 share/servicetypes/kdevelopvcsintegrator.desktop
 share/servicetypes/kdevelopversioncontrol.desktop
@@ -1636,11 +1642,6 @@ share/servicetypes/kdevelopversioncontrol.desktop
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/languages/lib/designer_integration/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/languages/lib/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/languages/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/buildtools/projectmanager/interfaces/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/buildtools/projectmanager/interfaces/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/buildtools/projectmanager/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/buildtools/projectmanager/interfaces/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/buildtools/projectmanager/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/buildtools/lib/widgets/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/buildtools/lib/widgets/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/buildtools/lib/parsers/qmake/html
@@ -1667,8 +1668,6 @@ share/servicetypes/kdevelopversioncontrol.desktop
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/buildtools/lib/widgets/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/buildtools/lib/base/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/buildtools/lib/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/buildtools/projectmanager/interfaces/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/buildtools/projectmanager/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/buildtools/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/lib/util/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/lib/interfaces/extensions/html
@@ -1679,6 +1678,9 @@ share/servicetypes/kdevelopversioncontrol.desktop
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/lib/widgets/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/lib/catalog/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/lib/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/src/profileengine/lib/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/src/profileengine/html
+@exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/src/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/parts/documentation/interfaces/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/parts/documentation/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/parts/html
@@ -1688,17 +1690,12 @@ share/servicetypes/kdevelopversioncontrol.desktop
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/buildtools/lib/widgets/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/buildtools/lib/base/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/buildtools/lib/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/buildtools/projectmanager/interfaces/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/buildtools/projectmanager/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/buildtools/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/languages/lib/interfaces/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/languages/lib/debugger/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/languages/lib/designer_integration/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/languages/lib/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/languages/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/src/profileengine/lib/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/src/profileengine/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdevelop-apidocs/src/html
 @exec /bin/mkdir -p %D/share/apps/kdevvcsmanager
 @dirrm share/doc/HTML/en/kdevelop-apidocs/src/profileengine/lib/html
 @dirrm share/doc/HTML/en/kdevelop-apidocs/src/profileengine/lib
@@ -1740,10 +1737,6 @@ share/servicetypes/kdevelopversioncontrol.desktop
 @dirrm share/doc/HTML/en/kdevelop-apidocs/languages/lib
 @dirrm share/doc/HTML/en/kdevelop-apidocs/languages/html
 @dirrm share/doc/HTML/en/kdevelop-apidocs/languages
-@dirrm share/doc/HTML/en/kdevelop-apidocs/buildtools/projectmanager/interfaces/html
-@dirrm share/doc/HTML/en/kdevelop-apidocs/buildtools/projectmanager/interfaces
-@dirrm share/doc/HTML/en/kdevelop-apidocs/buildtools/projectmanager/html
-@dirrm share/doc/HTML/en/kdevelop-apidocs/buildtools/projectmanager
 @dirrm share/doc/HTML/en/kdevelop-apidocs/buildtools/lib/widgets/html
 @dirrm share/doc/HTML/en/kdevelop-apidocs/buildtools/lib/widgets
 @dirrm share/doc/HTML/en/kdevelop-apidocs/buildtools/lib/parsers/qmake/html
@@ -1761,8 +1754,6 @@ share/servicetypes/kdevelopversioncontrol.desktop
 @dirrm share/doc/HTML/en/kdevelop-apidocs
 @dirrm share/doc/HTML/en/kdevelop
 @dirrm share/doc/HTML/en/kde_app_devel
-@dirrm share/apps/qeditorpart/highlight
-@dirrm share/apps/qeditorpart
 @dirrm share/apps/kio_pydoc
 @dirrm share/apps/kdevvcsmanager
 @dirrm share/apps/kdevvalgrind
@@ -1770,7 +1761,6 @@ share/servicetypes/kdevelopversioncontrol.desktop
 @dirrm share/apps/kdevtools
 @dirrm share/apps/kdevtipofday
 @dirrm share/apps/kdevsqlsupport
-@dirrm share/apps/kdevsecurity
 @dirrm share/apps/kdevscriptproject
 @dirrm share/apps/kdevscripting
 @dirrm share/apps/kdevrubysupport/pics
@@ -1784,7 +1774,6 @@ share/servicetypes/kdevelopversioncontrol.desktop
 @dirrm share/apps/kdevrbdebugger
 @dirrm share/apps/kdevquickopen
 @dirrm share/apps/kdevpythonsupport
-@dirrm share/apps/kdevprojectmanager
 @dirrm share/apps/kdevphpsupport
 @dirrm share/apps/kdevperlsupport
 @dirrm share/apps/kdevpascalsupport
@@ -1792,9 +1781,6 @@ share/servicetypes/kdevelopversioncontrol.desktop
 @dirrm share/apps/kdevpartexplorer
 @dirrm share/apps/kdevmakeview
 @dirrm share/apps/kdevjavasupport
-@dirrm share/apps/kdevjavadebugger
-@dirrm share/apps/kdevhaskellsupport
-@dirrm share/apps/kdevhaskellproject
 @dirrm share/apps/kdevgrepview/icons/hicolor/22x22/actions
 @dirrm share/apps/kdevgrepview/icons/hicolor/22x22
 @dirrm share/apps/kdevgrepview/icons/hicolor
@@ -1812,6 +1798,7 @@ share/servicetypes/kdevelopversioncontrol.desktop
 @dirrm share/apps/kdevelop/profiles/IDE/ScriptingLanguageIDE/PythonIDE
 @dirrm share/apps/kdevelop/profiles/IDE/ScriptingLanguageIDE/PerlIDE
 @dirrm share/apps/kdevelop/profiles/IDE/ScriptingLanguageIDE/PHPIDE
+@dirrm share/apps/kdevelop/profiles/IDE/ScriptingLanguageIDE/CSharpIDE
 @dirrm share/apps/kdevelop/profiles/IDE/ScriptingLanguageIDE
 @dirrm share/apps/kdevelop/profiles/IDE/DatabaseIDE
 @dirrm share/apps/kdevelop/profiles/IDE/CompiledLanguageIDE/PascalIDE
@@ -1859,6 +1846,7 @@ share/servicetypes/kdevelopversioncontrol.desktop
 @dirrm share/apps/kdevcvsservice
 @dirrm share/apps/kdevcustomproject
 @dirrm share/apps/kdevctags2
+@dirrm share/apps/kdevcsharpsupport
 @dirrm share/apps/kdevcppsupport/templates
 @dirrm share/apps/kdevcppsupport/subclassing
 @dirrm share/apps/kdevcppsupport/newclass
@@ -1908,8 +1896,6 @@ share/servicetypes/kdevelopversioncontrol.desktop
 @dirrm include/kdevelop/cppparser
 @dirrm include/kdevelop/catalog
 @dirrm include/kdevelop/buildtools/widgets
-@dirrm include/kdevelop/buildtools/projectmanager/interfaces
-@dirrm include/kdevelop/buildtools/projectmanager
 @dirrm include/kdevelop/buildtools/parsers/qmake
 @dirrm include/kdevelop/buildtools/parsers
 @dirrm include/kdevelop/buildtools/base

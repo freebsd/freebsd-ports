@@ -202,9 +202,27 @@ share/doc/HTML/es/KRegExpEditor/text.png
 share/doc/HTML/es/KRegExpEditor/texttool.png
 share/doc/HTML/es/KRegExpEditor/theEditor.png
 share/doc/HTML/es/KRegExpEditor/wordboundary.png
+share/doc/HTML/es/akregator/add-feed.png
+share/doc/HTML/es/akregator/add-feed2.png
+share/doc/HTML/es/akregator/add-folder.png
+share/doc/HTML/es/akregator/add-folder2.png
+share/doc/HTML/es/akregator/advanced-tab.png
+share/doc/HTML/es/akregator/appearance-tab.png
+share/doc/HTML/es/akregator/archive-tab.png
+share/doc/HTML/es/akregator/browser-tab.png
 share/doc/HTML/es/akregator/common
+share/doc/HTML/es/akregator/general-tab.png
 share/doc/HTML/es/akregator/index.cache.bz2
 share/doc/HTML/es/akregator/index.docbook
+share/doc/HTML/es/akregator/konq.png
+share/doc/HTML/es/akregator/konq2.png
+share/doc/HTML/es/akregator/main-window.png
+share/doc/HTML/es/akregator/main-window2.png
+share/doc/HTML/es/akregator/main-window3.png
+share/doc/HTML/es/akregator/main-window4.png
+share/doc/HTML/es/akregator/quick-filter.png
+share/doc/HTML/es/akregator/rss.png
+share/doc/HTML/es/akregator/rss3.png
 share/doc/HTML/es/amor/billy.png
 share/doc/HTML/es/amor/bonhomme.png
 share/doc/HTML/es/amor/bsd.png
@@ -336,9 +354,12 @@ share/doc/HTML/es/blinken/index.docbook
 share/doc/HTML/es/cervisia/annotate.png
 share/doc/HTML/es/cervisia/checkout.png
 share/doc/HTML/es/cervisia/commit.png
+share/doc/HTML/es/cervisia/common
 share/doc/HTML/es/cervisia/diff.png
 share/doc/HTML/es/cervisia/history.png
 share/doc/HTML/es/cervisia/import.png
+share/doc/HTML/es/cervisia/index.cache.bz2
+share/doc/HTML/es/cervisia/index.docbook
 share/doc/HTML/es/cervisia/logtree.png
 share/doc/HTML/es/cervisia/mainview.png
 share/doc/HTML/es/cervisia/patch.png
@@ -352,6 +373,9 @@ share/doc/HTML/es/docs/common/kde-localised.css
 share/doc/HTML/es/docs/common/kde_logo.png
 share/doc/HTML/es/docs/common/lgpl-translated.html
 share/doc/HTML/es/docs/common/logotp3.png
+share/doc/HTML/es/irkick/common
+share/doc/HTML/es/irkick/index.cache.bz2
+share/doc/HTML/es/irkick/index.docbook
 share/doc/HTML/es/juk/common
 share/doc/HTML/es/juk/history-playlist.png
 share/doc/HTML/es/juk/index.cache.bz2
@@ -602,6 +626,9 @@ share/doc/HTML/es/kcalc/index.docbook
 share/doc/HTML/es/kcharselect/common
 share/doc/HTML/es/kcharselect/index.cache.bz2
 share/doc/HTML/es/kcharselect/index.docbook
+share/doc/HTML/es/kcmlirc/common
+share/doc/HTML/es/kcmlirc/index.cache.bz2
+share/doc/HTML/es/kcmlirc/index.docbook
 share/doc/HTML/es/kcoloredit/common
 share/doc/HTML/es/kcoloredit/index.cache.bz2
 share/doc/HTML/es/kcoloredit/index.docbook
@@ -816,12 +843,6 @@ share/doc/HTML/es/kdelibs/man-dcop.1.docbook
 share/doc/HTML/es/kdelibs/man-kbuildsycoca.8.docbook
 share/doc/HTML/es/kdelibs/man-kdeoptions.7.docbook
 share/doc/HTML/es/kdelibs/man-qtoptions.7.docbook
-share/doc/HTML/es/kdelirc/irkick/common
-share/doc/HTML/es/kdelirc/irkick/index.cache.bz2
-share/doc/HTML/es/kdelirc/irkick/index.docbook
-share/doc/HTML/es/kdelirc/kcmlirc/common
-share/doc/HTML/es/kdelirc/kcmlirc/index.cache.bz2
-share/doc/HTML/es/kdelirc/kcmlirc/index.docbook
 share/doc/HTML/es/kdeprint/add-printer-wiz.docbook
 share/doc/HTML/es/kdeprint/common
 share/doc/HTML/es/kdeprint/cr32-action-wizard.png
@@ -3019,6 +3040,7 @@ share/locale/es/LC_MESSAGES/kio_thumbnail.mo
 share/locale/es/LC_MESSAGES/kio_trash.mo
 share/locale/es/LC_MESSAGES/kio_zeroconf.mo
 share/locale/es/LC_MESSAGES/kioexec.mo
+share/locale/es/LC_MESSAGES/kitchensync.mo
 share/locale/es/LC_MESSAGES/kiten.mo
 share/locale/es/LC_MESSAGES/kjobviewer.mo
 share/locale/es/LC_MESSAGES/kjots.mo
@@ -3222,6 +3244,7 @@ share/locale/es/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/es/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/es/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/es/LC_MESSAGES/libkickermenu_tom.mo
+share/locale/es/LC_MESSAGES/libkitchensync.mo
 share/locale/es/LC_MESSAGES/libkleopatra.mo
 share/locale/es/LC_MESSAGES/libkmime.mo
 share/locale/es/LC_MESSAGES/libkonq.mo
@@ -3450,9 +3473,6 @@ share/locale/es/flag.png
 @dirrm share/doc/HTML/es/kdesvn-build
 @dirrm share/doc/HTML/es/kdesu
 @dirrm share/doc/HTML/es/kdeprint
-@dirrm share/doc/HTML/es/kdelirc/kcmlirc
-@dirrm share/doc/HTML/es/kdelirc/irkick
-@dirrm share/doc/HTML/es/kdelirc
 @dirrm share/doc/HTML/es/kdelibs
 @dirrm share/doc/HTML/es/kdebugdialog
 @dirrm share/doc/HTML/es/kdearch
@@ -3514,6 +3534,7 @@ share/locale/es/flag.png
 @dirrm share/doc/HTML/es/kcontrol/arts
 @dirrm share/doc/HTML/es/kcontrol
 @dirrm share/doc/HTML/es/kcoloredit
+@dirrm share/doc/HTML/es/kcmlirc
 @dirrm share/doc/HTML/es/kcharselect
 @dirrm share/doc/HTML/es/kcalc
 @dirrm share/doc/HTML/es/kcachegrind
@@ -3540,6 +3561,7 @@ share/locale/es/flag.png
 @dirrm share/doc/HTML/es/kaddressbook
 @dirrm share/doc/HTML/es/kaboodle
 @dirrm share/doc/HTML/es/juk
+@dirrm share/doc/HTML/es/irkick
 @dirrm share/doc/HTML/es/docs/common
 @dirrm share/doc/HTML/es/docs
 @dirrm share/doc/HTML/es/cervisia

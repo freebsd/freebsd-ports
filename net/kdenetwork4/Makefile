@@ -8,7 +8,6 @@
 
 PORTNAME=	kdenetwork
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES?=	net kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -30,7 +29,7 @@ USE_GMAKE=	yes
 USE_OPENSSL=	yes
 
 USE_AUTOTOOLS=  libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 DO_NOT_COMPILE+=kopete lanbrowsing filesharing
 

@@ -27,7 +27,7 @@ PREFIX=		${KDE_PREFIX}
 USE_AUTOTOOLS=  libtool:15
 USE_GMAKE=	yes
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib/kde3
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"

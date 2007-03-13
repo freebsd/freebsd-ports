@@ -240,7 +240,6 @@ share/doc/HTML/es/krita/commands-menus.docbook
 share/doc/HTML/es/krita/commands-palettes.docbook
 share/doc/HTML/es/krita/commands-toolbars.docbook
 share/doc/HTML/es/krita/commands.docbook
-share/doc/HTML/es/krita/common
 share/doc/HTML/es/krita/createdocument.png
 share/doc/HTML/es/krita/credits.docbook
 share/doc/HTML/es/krita/crocusses-bumpmap.png
@@ -289,8 +288,6 @@ share/doc/HTML/es/krita/dialogs-shearimage.png
 share/doc/HTML/es/krita/dialogs-shearlayer.png
 share/doc/HTML/es/krita/faq.docbook
 share/doc/HTML/es/krita/filters-customconvolution.png
-share/doc/HTML/es/krita/index.cache.bz2
-share/doc/HTML/es/krita/index.docbook
 share/doc/HTML/es/krita/installation.docbook
 share/doc/HTML/es/krita/introduction.docbook
 share/doc/HTML/es/krita/mainscreen.png
@@ -568,6 +565,7 @@ share/doc/HTML/es/kword/formframe2.png
 share/doc/HTML/es/kword/formframe3.png
 share/doc/HTML/es/kword/formframe4.png
 share/doc/HTML/es/kword/formframe5.png
+share/doc/HTML/es/kword/formframe6.png
 share/doc/HTML/es/kword/forminteg.png
 share/doc/HTML/es/kword/formllind.png
 share/doc/HTML/es/kword/formlrind.png
@@ -727,7 +725,6 @@ share/locale/es/LC_MESSAGES/desktop_koffice.mo
 share/locale/es/LC_MESSAGES/example.mo
 share/locale/es/LC_MESSAGES/karbon.mo
 share/locale/es/LC_MESSAGES/kchart.mo
-share/locale/es/LC_MESSAGES/kdgantt.mo
 share/locale/es/LC_MESSAGES/kexi.mo
 share/locale/es/LC_MESSAGES/kfile_abiword.mo
 share/locale/es/LC_MESSAGES/kfile_gnumeric.mo

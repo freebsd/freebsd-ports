@@ -23,6 +23,7 @@ LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile \
 		cdda_paranoia:${PORTSDIR}/audio/cdparanoia \
 		ogg:${PORTSDIR}/audio/libogg \
 		tag:${PORTSDIR}/audio/taglib \
+		theora:${PORTSDIR}/multimedia/libtheora \
 		vorbis:${PORTSDIR}/audio/libvorbis
 
 USE_KDELIBS_VER=3
@@ -36,7 +37,7 @@ MAKE_ENV=	${CONFIGURE_ENV}
 
 CONFIGURE_ARGS+=	--with-vorbis="${LOCALBASE}" --disable-xinetest
 CONFIGURE_ENV+=	AKODE_CONFIG=${LOCALBASE}/bin/akode-config
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 DO_NOT_COMPILE+=akode juk mpeglib mpeglib_artsplug xine_artsplugin
 
@@ -46,13 +47,6 @@ OPTIONS=	AKODE "Use akode for audio playback" on \
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
-
-#.if ${OSVERSION} > 500035
-LIB_DEPENDS+=	theora:${PORTSDIR}/multimedia/libtheora
-PLIST_SUB+=	THEORA=""
-#.else
-#PLIST_SUB+=	THEORA="@comment "
-#.endif
 
 .if !defined(WITHOUT_AKODE)
 LIB_DEPENDS+=	akode:${PORTSDIR}/audio/akode

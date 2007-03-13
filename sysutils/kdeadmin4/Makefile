@@ -23,7 +23,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=  libtool:15
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib/kde3
 
 post-patch:

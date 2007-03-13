@@ -5861,10 +5861,12 @@ koffice-i18n-eu	ports/misc/koffice-i18n-eu
 koffice-i18n-fa	ports/misc/koffice-i18n-fa
 koffice-i18n-fi	ports/misc/koffice-i18n-fi
 koffice-i18n-ga	ports/misc/koffice-i18n-ga
+koffice-i18n-gl	ports/misc/koffice-i18n-gl
 koffice-i18n-hi	ports/misc/koffice-i18n-hi
 koffice-i18n-hsb	ports/misc/koffice-i18n-hsb
 koffice-i18n-is	ports/misc/koffice-i18n-is
 koffice-i18n-it	ports/misc/koffice-i18n-it
+koffice-i18n-km	ports/misc/koffice-i18n-km
 koffice-i18n-lo	ports/misc/koffice-i18n-lo
 koffice-i18n-lt	ports/misc/koffice-i18n-lt
 koffice-i18n-lv	ports/misc/koffice-i18n-lv

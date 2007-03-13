@@ -440,6 +440,9 @@ lib/kde3/kicker.so
 lib/kde3/kickermenu_find.a
 lib/kde3/kickermenu_find.la
 lib/kde3/kickermenu_find.so
+lib/kde3/kickermenu_kate.a
+lib/kde3/kickermenu_kate.la
+lib/kde3/kickermenu_kate.so
 lib/kde3/kickermenu_kdeprint.a
 lib/kde3/kickermenu_kdeprint.la
 lib/kde3/kickermenu_kdeprint.so
@@ -1158,6 +1161,7 @@ share/apps/kappfinder/apps/Internet/mozilla.desktop
 share/apps/kappfinder/apps/Internet/netscape.desktop
 share/apps/kappfinder/apps/Internet/netscape6.desktop
 share/apps/kappfinder/apps/Internet/opera.desktop
+share/apps/kappfinder/apps/Internet/wireshark.desktop
 share/apps/kappfinder/apps/Internet/xbiff.desktop
 share/apps/kappfinder/apps/Internet/xchat.desktop
 share/apps/kappfinder/apps/Internet/xfmail.desktop
@@ -1628,6 +1632,7 @@ share/apps/kicker/icons/locolor/16x16/actions/modified.png
 share/apps/kicker/menuext/find.desktop
 share/apps/kicker/menuext/find/kfind.desktop
 share/apps/kicker/menuext/find/websearch.desktop
+share/apps/kicker/menuext/katesessionmenu.desktop
 share/apps/kicker/menuext/konquerormenu.desktop
 share/apps/kicker/menuext/konsolemenu.desktop
 share/apps/kicker/menuext/prefmenu.desktop
@@ -2081,7 +2086,7 @@ share/desktop-directories/kde-edutainment.directory
 share/desktop-directories/kde-games-arcade.directory
 share/desktop-directories/kde-games-board.directory
 share/desktop-directories/kde-games-card.directory
-share/desktop-directories/kde-games-kidsgames.directory
+share/desktop-directories/kde-games-kids.directory
 share/desktop-directories/kde-games-roguelikes.directory
 share/desktop-directories/kde-games-strategy.directory
 share/desktop-directories/kde-games.directory
@@ -2420,6 +2425,7 @@ share/doc/HTML/en/khelpcenter/userguide/common
 share/doc/HTML/en/khelpcenter/userguide/control-center.docbook
 share/doc/HTML/en/khelpcenter/userguide/creating-graphics.docbook
 share/doc/HTML/en/khelpcenter/userguide/credits-and-license.docbook
+share/doc/HTML/en/khelpcenter/userguide/customizing-desktop.docbook
 share/doc/HTML/en/khelpcenter/userguide/desktop.png
 share/doc/HTML/en/khelpcenter/userguide/email.docbook
 share/doc/HTML/en/khelpcenter/userguide/extragear-applications.docbook
@@ -2480,6 +2486,7 @@ share/doc/HTML/en/khelpcenter/userguide/ripsettings.png
 share/doc/HTML/en/khelpcenter/userguide/screen-captures.docbook
 share/doc/HTML/en/khelpcenter/userguide/services.png
 share/doc/HTML/en/khelpcenter/userguide/shared-sessions.docbook
+share/doc/HTML/en/khelpcenter/userguide/splash-screen.png
 share/doc/HTML/en/khelpcenter/userguide/standard-menu-entries.docbook
 share/doc/HTML/en/khelpcenter/userguide/switching-sessions.docbook
 share/doc/HTML/en/khelpcenter/userguide/the-filemanager.docbook
@@ -2492,7 +2499,6 @@ share/doc/HTML/en/khelpcenter/userguide/where-next.docbook
 share/doc/HTML/en/khelpcenter/userguide/windows-how-to.docbook
 share/doc/HTML/en/khelpcenter/userguide/your-kde-account.docbook
 share/doc/HTML/en/khelpcenter/visualdict/common
-share/doc/HTML/en/khelpcenter/visualdict/contextmenu.png
 share/doc/HTML/en/khelpcenter/visualdict/index.cache.bz2
 share/doc/HTML/en/khelpcenter/visualdict/index.docbook
 share/doc/HTML/en/khelpcenter/visualdict/pict1.png
@@ -2508,6 +2514,9 @@ share/doc/HTML/en/khelpcenter/visualdict/pict18.png
 share/doc/HTML/en/khelpcenter/visualdict/pict19.png
 share/doc/HTML/en/khelpcenter/visualdict/pict2.png
 share/doc/HTML/en/khelpcenter/visualdict/pict20.png
+share/doc/HTML/en/khelpcenter/visualdict/pict21.png
+share/doc/HTML/en/khelpcenter/visualdict/pict22.png
+share/doc/HTML/en/khelpcenter/visualdict/pict23.png
 share/doc/HTML/en/khelpcenter/visualdict/pict3.png
 share/doc/HTML/en/khelpcenter/visualdict/pict4.png
 share/doc/HTML/en/khelpcenter/visualdict/pict5.png
@@ -2649,6 +2658,7 @@ share/doc/HTML/en/knetattach/common
 share/doc/HTML/en/knetattach/index.cache.bz2
 share/doc/HTML/en/knetattach/index.docbook
 share/doc/HTML/en/knetattach/screenshot.png
+share/doc/HTML/en/knetattach/screenshot1.png
 share/doc/HTML/en/knetattach/screenshot2.png
 share/doc/HTML/en/knetattach/screenshot3.png
 share/doc/HTML/en/knetattach/screenshot4.png
@@ -2742,7 +2752,6 @@ share/icons/crystalsvg/128x128/apps/licq.png
 share/icons/crystalsvg/128x128/apps/linuxconf.png
 share/icons/crystalsvg/128x128/apps/locale.png
 share/icons/crystalsvg/128x128/apps/looknfeel.png
-share/icons/crystalsvg/128x128/apps/mozilla.png
 share/icons/crystalsvg/128x128/apps/multimedia.png
 share/icons/crystalsvg/128x128/apps/netscape.png
 share/icons/crystalsvg/128x128/apps/package.png
@@ -2808,7 +2817,6 @@ share/icons/crystalsvg/16x16/apps/enhanced_browsing.png
 share/icons/crystalsvg/16x16/apps/evolution.png
 share/icons/crystalsvg/16x16/apps/fifteenpieces.png
 share/icons/crystalsvg/16x16/apps/filetypes.png
-share/icons/crystalsvg/16x16/apps/firefox.png
 share/icons/crystalsvg/16x16/apps/fonts.png
 share/icons/crystalsvg/16x16/apps/gabber.png
 share/icons/crystalsvg/16x16/apps/gaim.png
@@ -2862,9 +2870,6 @@ share/icons/crystalsvg/16x16/apps/looknfeel.png
 share/icons/crystalsvg/16x16/apps/lyx.png
 share/icons/crystalsvg/16x16/apps/mac.png
 share/icons/crystalsvg/16x16/apps/mathematica.png
-share/icons/crystalsvg/16x16/apps/mozilla.png
-share/icons/crystalsvg/16x16/apps/mozilla_m.png
-share/icons/crystalsvg/16x16/apps/mozilla_mail.png
 share/icons/crystalsvg/16x16/apps/multimedia.png
 share/icons/crystalsvg/16x16/apps/nedit.png
 share/icons/crystalsvg/16x16/apps/netscape.png
@@ -2911,7 +2916,6 @@ share/icons/crystalsvg/16x16/apps/stylesheet.png
 share/icons/crystalsvg/16x16/apps/systemtray.png
 share/icons/crystalsvg/16x16/apps/taskbar.png
 share/icons/crystalsvg/16x16/apps/terminal.png
-share/icons/crystalsvg/16x16/apps/thunderbird.png
 share/icons/crystalsvg/16x16/apps/tux.png
 share/icons/crystalsvg/16x16/apps/usb.png
 share/icons/crystalsvg/16x16/apps/vnc.png
@@ -3016,7 +3020,6 @@ share/icons/crystalsvg/32x32/apps/error.png
 share/icons/crystalsvg/32x32/apps/evolution.png
 share/icons/crystalsvg/32x32/apps/fifteenpieces.png
 share/icons/crystalsvg/32x32/apps/filetypes.png
-share/icons/crystalsvg/32x32/apps/firefox.png
 share/icons/crystalsvg/32x32/apps/fonts.png
 share/icons/crystalsvg/32x32/apps/gabber.png
 share/icons/crystalsvg/32x32/apps/gaim.png
@@ -3071,9 +3074,6 @@ share/icons/crystalsvg/32x32/apps/looknfeel.png
 share/icons/crystalsvg/32x32/apps/lyx.png
 share/icons/crystalsvg/32x32/apps/mac.png
 share/icons/crystalsvg/32x32/apps/mathematica.png
-share/icons/crystalsvg/32x32/apps/mozilla.png
-share/icons/crystalsvg/32x32/apps/mozilla_m.png
-share/icons/crystalsvg/32x32/apps/mozilla_mail.png
 share/icons/crystalsvg/32x32/apps/multimedia.png
 share/icons/crystalsvg/32x32/apps/nedit.png
 share/icons/crystalsvg/32x32/apps/netscape.png
@@ -3118,7 +3118,6 @@ share/icons/crystalsvg/32x32/apps/stylesheet.png
 share/icons/crystalsvg/32x32/apps/systemtray.png
 share/icons/crystalsvg/32x32/apps/taskbar.png
 share/icons/crystalsvg/32x32/apps/terminal.png
-share/icons/crystalsvg/32x32/apps/thunderbird.png
 share/icons/crystalsvg/32x32/apps/tux.png
 share/icons/crystalsvg/32x32/apps/usb.png
 share/icons/crystalsvg/32x32/apps/vnc.png
@@ -3177,7 +3176,6 @@ share/icons/crystalsvg/48x48/apps/enhanced_browsing.png
 share/icons/crystalsvg/48x48/apps/evolution.png
 share/icons/crystalsvg/48x48/apps/fifteenpieces.png
 share/icons/crystalsvg/48x48/apps/filetypes.png
-share/icons/crystalsvg/48x48/apps/firefox.png
 share/icons/crystalsvg/48x48/apps/fonts.png
 share/icons/crystalsvg/48x48/apps/gabber.png
 share/icons/crystalsvg/48x48/apps/gaim.png
@@ -3226,9 +3224,6 @@ share/icons/crystalsvg/48x48/apps/licq.png
 share/icons/crystalsvg/48x48/apps/linuxconf.png
 share/icons/crystalsvg/48x48/apps/locale.png
 share/icons/crystalsvg/48x48/apps/looknfeel.png
-share/icons/crystalsvg/48x48/apps/mozilla.png
-share/icons/crystalsvg/48x48/apps/mozilla_m.png
-share/icons/crystalsvg/48x48/apps/mozilla_mail.png
 share/icons/crystalsvg/48x48/apps/multimedia.png
 share/icons/crystalsvg/48x48/apps/nedit.png
 share/icons/crystalsvg/48x48/apps/netscape.png
@@ -3330,7 +3325,6 @@ share/icons/crystalsvg/64x64/apps/licq.png
 share/icons/crystalsvg/64x64/apps/linuxconf.png
 share/icons/crystalsvg/64x64/apps/locale.png
 share/icons/crystalsvg/64x64/apps/looknfeel.png
-share/icons/crystalsvg/64x64/apps/mozilla.png
 share/icons/crystalsvg/64x64/apps/multimedia.png
 share/icons/crystalsvg/64x64/apps/nedit.png
 share/icons/crystalsvg/64x64/apps/netscape.png

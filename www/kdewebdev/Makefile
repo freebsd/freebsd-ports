@@ -18,7 +18,8 @@ COMMENT=	Comprehensive html/website development environment
 
 BUILD_DEPENDS=	cvsservice:${PORTSDIR}/devel/kdesdk3 \
 		xgettext:${PORTSDIR}/devel/gettext
-RUN_DEPENDS=	tidy:${PORTSDIR}/www/tidy
+RUN_DEPENDS=	cvsservice:${PORTSDIR}/devel/kdesdk3 \
+		tidy:${PORTSDIR}/www/tidy
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}

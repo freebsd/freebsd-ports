@@ -99,6 +99,7 @@ share/locale/lv/LC_MESSAGES/kdelibs.mo
 share/locale/lv/LC_MESSAGES/kdelibs_colors.mo
 share/locale/lv/LC_MESSAGES/kdepasswd.mo
 share/locale/lv/LC_MESSAGES/kdeprint.mo
+share/locale/lv/LC_MESSAGES/kdeprint_part.mo
 share/locale/lv/LC_MESSAGES/kdeprintfax.mo
 share/locale/lv/LC_MESSAGES/kdesktop.mo
 share/locale/lv/LC_MESSAGES/kdessh.mo
@@ -155,6 +156,8 @@ share/locale/lv/LC_MESSAGES/kio_sftp.mo
 share/locale/lv/LC_MESSAGES/kio_smb.mo
 share/locale/lv/LC_MESSAGES/kio_smtp.mo
 share/locale/lv/LC_MESSAGES/kio_system.mo
+share/locale/lv/LC_MESSAGES/kio_tar.mo
+share/locale/lv/LC_MESSAGES/kio_trash.mo
 share/locale/lv/LC_MESSAGES/kioexec.mo
 share/locale/lv/LC_MESSAGES/kiten.mo
 share/locale/lv/LC_MESSAGES/kjobviewer.mo
@@ -225,6 +228,7 @@ share/locale/lv/LC_MESSAGES/ksplash.mo
 share/locale/lv/LC_MESSAGES/kstars.mo
 share/locale/lv/LC_MESSAGES/kstart.mo
 share/locale/lv/LC_MESSAGES/kstartperf.mo
+share/locale/lv/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/lv/LC_MESSAGES/ksync.mo
 share/locale/lv/LC_MESSAGES/ksysguard.mo
 share/locale/lv/LC_MESSAGES/ksystemtrayapplet.mo
@@ -265,6 +269,7 @@ share/locale/lv/LC_MESSAGES/libtaskbar.mo
 share/locale/lv/LC_MESSAGES/libtaskmanager.mo
 share/locale/lv/LC_MESSAGES/lockout.mo
 share/locale/lv/LC_MESSAGES/lskat.mo
+share/locale/lv/LC_MESSAGES/mediaapplet.mo
 share/locale/lv/LC_MESSAGES/naughtyapplet.mo
 share/locale/lv/LC_MESSAGES/noatun.mo
 share/locale/lv/LC_MESSAGES/nsplugin.mo

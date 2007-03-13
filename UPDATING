@@ -6,6 +6,22 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070313:
+  AFFECTS: users of x11/kdebase3
+  AUTHOR: kde@freebsd.org
+
+  The HAL option has been turned on by default and the fstabbackend
+  patches which have kept the fstab backend for the media kioslave
+  at the status quo of KDE 3.5.3 have been removed. This means that
+
+     MOUNTING DEVICES THROUGH KDE WILL NO LONGER WORK WITHOUT HAL.
+
+  Thus if you wish to use device icons or the media:/ view in konqueror,
+  make sure to turn on the HAL option in the x11/kdebase3 port and also 
+  read /usr/ports/UPDATING entry 20061219 and
+  http://www.freebsd.org/gnome/docs/faq2.html#q19 for more information on
+  using HAL.
+
 20070312:
   AFFECTS: all users of net/py-libdnet
   AUTHOR: tmclaugh@FreeBSD.org

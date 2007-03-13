@@ -85,6 +85,7 @@ share/locale/zh_TW/LC_MESSAGES/kaboodle.mo
 share/locale/zh_TW/LC_MESSAGES/kaccess.mo
 share/locale/zh_TW/LC_MESSAGES/kaddressbook.mo
 share/locale/zh_TW/LC_MESSAGES/kalarm.mo
+share/locale/zh_TW/LC_MESSAGES/kalzium.mo
 share/locale/zh_TW/LC_MESSAGES/kanagram.mo
 share/locale/zh_TW/LC_MESSAGES/kandy.mo
 share/locale/zh_TW/LC_MESSAGES/kappfinder.mo
@@ -122,6 +123,7 @@ share/locale/zh_TW/LC_MESSAGES/kbounce.mo
 share/locale/zh_TW/LC_MESSAGES/kbruch.mo
 share/locale/zh_TW/LC_MESSAGES/kbstateapplet.mo
 share/locale/zh_TW/LC_MESSAGES/kbugbuster.mo
+share/locale/zh_TW/LC_MESSAGES/kcachegrind.mo
 share/locale/zh_TW/LC_MESSAGES/kcalc.mo
 share/locale/zh_TW/LC_MESSAGES/kcharselect.mo
 share/locale/zh_TW/LC_MESSAGES/kcharselectapplet.mo
@@ -304,7 +306,9 @@ share/locale/zh_TW/LC_MESSAGES/khotkeys.mo
 share/locale/zh_TW/LC_MESSAGES/khtmlkttsd.mo
 share/locale/zh_TW/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/zh_TW/LC_MESSAGES/kicker.mo
+share/locale/zh_TW/LC_MESSAGES/kickermenu_kate.mo
 share/locale/zh_TW/LC_MESSAGES/kiconedit.mo
+share/locale/zh_TW/LC_MESSAGES/kig.mo
 share/locale/zh_TW/LC_MESSAGES/kimagemapeditor.mo
 share/locale/zh_TW/LC_MESSAGES/kinetd.mo
 share/locale/zh_TW/LC_MESSAGES/kio.mo
@@ -340,6 +344,7 @@ share/locale/zh_TW/LC_MESSAGES/kio_thumbnail.mo
 share/locale/zh_TW/LC_MESSAGES/kio_trash.mo
 share/locale/zh_TW/LC_MESSAGES/kio_zeroconf.mo
 share/locale/zh_TW/LC_MESSAGES/kioexec.mo
+share/locale/zh_TW/LC_MESSAGES/kitchensync.mo
 share/locale/zh_TW/LC_MESSAGES/kiten.mo
 share/locale/zh_TW/LC_MESSAGES/kjobviewer.mo
 share/locale/zh_TW/LC_MESSAGES/kjots.mo
@@ -377,6 +382,7 @@ share/locale/zh_TW/LC_MESSAGES/kmobile.mo
 share/locale/zh_TW/LC_MESSAGES/kmoon.mo
 share/locale/zh_TW/LC_MESSAGES/kmousetool.mo
 share/locale/zh_TW/LC_MESSAGES/kmouth.mo
+share/locale/zh_TW/LC_MESSAGES/kmplot.mo
 share/locale/zh_TW/LC_MESSAGES/kmrml.mo
 share/locale/zh_TW/LC_MESSAGES/knetattach.mo
 share/locale/zh_TW/LC_MESSAGES/knetwalk.mo
@@ -496,6 +502,7 @@ share/locale/zh_TW/LC_MESSAGES/kuick_plugin.mo
 share/locale/zh_TW/LC_MESSAGES/kuickshow.mo
 share/locale/zh_TW/LC_MESSAGES/kuiviewer.mo
 share/locale/zh_TW/LC_MESSAGES/kuser.mo
+share/locale/zh_TW/LC_MESSAGES/kverbos.mo
 share/locale/zh_TW/LC_MESSAGES/kview.mo
 share/locale/zh_TW/LC_MESSAGES/kview_scale.mo
 share/locale/zh_TW/LC_MESSAGES/kviewbrowserplugin.mo
@@ -505,6 +512,7 @@ share/locale/zh_TW/LC_MESSAGES/kviewpresenterplugin.mo
 share/locale/zh_TW/LC_MESSAGES/kviewscannerplugin.mo
 share/locale/zh_TW/LC_MESSAGES/kviewshell.mo
 share/locale/zh_TW/LC_MESSAGES/kviewviewer.mo
+share/locale/zh_TW/LC_MESSAGES/kvoctrain.mo
 share/locale/zh_TW/LC_MESSAGES/kwalletmanager.mo
 share/locale/zh_TW/LC_MESSAGES/kwatchgnupg.mo
 share/locale/zh_TW/LC_MESSAGES/kweather.mo
@@ -515,6 +523,7 @@ share/locale/zh_TW/LC_MESSAGES/kwin_art_clients.mo
 share/locale/zh_TW/LC_MESSAGES/kwin_clients.mo
 share/locale/zh_TW/LC_MESSAGES/kwin_lib.mo
 share/locale/zh_TW/LC_MESSAGES/kwireless.mo
+share/locale/zh_TW/LC_MESSAGES/kwordquiz.mo
 share/locale/zh_TW/LC_MESSAGES/kworldclock.mo
 share/locale/zh_TW/LC_MESSAGES/kwriteconfig.mo
 share/locale/zh_TW/LC_MESSAGES/kxkb.mo
@@ -539,6 +548,7 @@ share/locale/zh_TW/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/zh_TW/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/zh_TW/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/zh_TW/LC_MESSAGES/libkickermenu_tom.mo
+share/locale/zh_TW/LC_MESSAGES/libkitchensync.mo
 share/locale/zh_TW/LC_MESSAGES/libkleopatra.mo
 share/locale/zh_TW/LC_MESSAGES/libkmime.mo
 share/locale/zh_TW/LC_MESSAGES/libkonq.mo

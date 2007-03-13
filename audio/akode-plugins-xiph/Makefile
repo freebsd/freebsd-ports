@@ -32,7 +32,7 @@ USE_AUTOTOOLS=  libtool:15
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/akode-${PORTVERSION}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_ENV+=	LDFLAGS=-L${WRKSRC}/akode/lib/.libs
 CONFIGURE_ARGS+=--with-extra-libs=${LOCALBASE}/lib \

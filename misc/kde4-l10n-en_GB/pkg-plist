@@ -1,4 +1,54 @@
 share/apps/katepart/syntax/logohighlightstyle.en_GB.xml
+share/apps/klettres/en_GB/alpha/a.ogg
+share/apps/klettres/en_GB/alpha/b.ogg
+share/apps/klettres/en_GB/alpha/c.ogg
+share/apps/klettres/en_GB/alpha/d.ogg
+share/apps/klettres/en_GB/alpha/e.ogg
+share/apps/klettres/en_GB/alpha/f.ogg
+share/apps/klettres/en_GB/alpha/g.ogg
+share/apps/klettres/en_GB/alpha/h.ogg
+share/apps/klettres/en_GB/alpha/i.ogg
+share/apps/klettres/en_GB/alpha/j.ogg
+share/apps/klettres/en_GB/alpha/k.ogg
+share/apps/klettres/en_GB/alpha/l.ogg
+share/apps/klettres/en_GB/alpha/m.ogg
+share/apps/klettres/en_GB/alpha/n.ogg
+share/apps/klettres/en_GB/alpha/o.ogg
+share/apps/klettres/en_GB/alpha/p.ogg
+share/apps/klettres/en_GB/alpha/q.ogg
+share/apps/klettres/en_GB/alpha/r.ogg
+share/apps/klettres/en_GB/alpha/s.ogg
+share/apps/klettres/en_GB/alpha/t.ogg
+share/apps/klettres/en_GB/alpha/u.ogg
+share/apps/klettres/en_GB/alpha/v.ogg
+share/apps/klettres/en_GB/alpha/w.ogg
+share/apps/klettres/en_GB/alpha/x.ogg
+share/apps/klettres/en_GB/alpha/y.ogg
+share/apps/klettres/en_GB/alpha/z.ogg
+share/apps/klettres/en_GB/sounds.xml
+share/apps/klettres/en_GB/syllab/arm.ogg
+share/apps/klettres/en_GB/syllab/ball.ogg
+share/apps/klettres/en_GB/syllab/car.ogg
+share/apps/klettres/en_GB/syllab/dog.ogg
+share/apps/klettres/en_GB/syllab/ear.ogg
+share/apps/klettres/en_GB/syllab/fix.ogg
+share/apps/klettres/en_GB/syllab/gas.ogg
+share/apps/klettres/en_GB/syllab/gem.ogg
+share/apps/klettres/en_GB/syllab/hot.ogg
+share/apps/klettres/en_GB/syllab/hut.ogg
+share/apps/klettres/en_GB/syllab/jet.ogg
+share/apps/klettres/en_GB/syllab/key.ogg
+share/apps/klettres/en_GB/syllab/me.ogg
+share/apps/klettres/en_GB/syllab/my.ogg
+share/apps/klettres/en_GB/syllab/no.ogg
+share/apps/klettres/en_GB/syllab/or.ogg
+share/apps/klettres/en_GB/syllab/pet.ogg
+share/apps/klettres/en_GB/syllab/saw.ogg
+share/apps/klettres/en_GB/syllab/say.ogg
+share/apps/klettres/en_GB/syllab/sit.ogg
+share/apps/klettres/en_GB/syllab/sky.ogg
+share/apps/klettres/en_GB/syllab/the.ogg
+share/apps/klettres/en_GB/syllab/well.ogg
 share/apps/kturtle/data/logokeywords.en_GB.xml
 share/apps/kturtle/examples/en_GB/curly.logo
 share/apps/kturtle/examples/en_GB/example1.logo
@@ -1257,3 +1307,7 @@ share/locale/en_GB/flag.png
 @dirrm share/apps/kturtle/examples
 @dirrm share/apps/kturtle/data
 @dirrm share/apps/kturtle
+@dirrm share/apps/klettres/en_GB/syllab
+@dirrm share/apps/klettres/en_GB/alpha
+@dirrm share/apps/klettres/en_GB
+@dirrm share/apps/klettres

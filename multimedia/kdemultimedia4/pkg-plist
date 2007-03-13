@@ -105,9 +105,9 @@ lib/kde3/kfile_ogg.so
 lib/kde3/kfile_sid.a
 lib/kde3/kfile_sid.la
 lib/kde3/kfile_sid.so
-%%THEORA%%lib/kde3/kfile_theora.a
-%%THEORA%%lib/kde3/kfile_theora.la
-%%THEORA%%lib/kde3/kfile_theora.so
+lib/kde3/kfile_theora.a
+lib/kde3/kfile_theora.la
+lib/kde3/kfile_theora.so
 lib/kde3/kfile_wav.a
 lib/kde3/kfile_wav.la
 lib/kde3/kfile_wav.so
@@ -1128,7 +1128,7 @@ share/services/kfile_mpc.desktop
 share/services/kfile_mpeg.desktop
 share/services/kfile_ogg.desktop
 share/services/kfile_sid.desktop
-%%THEORA%%share/services/kfile_theora.desktop
+share/services/kfile_theora.desktop
 share/services/kfile_wav.desktop
 share/services/kmixctrl_restore.desktop
 share/services/krec_exportogg.desktop

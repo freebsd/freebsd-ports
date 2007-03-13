@@ -1,3 +1,6 @@
+share/apps/kanagram/data/de/hauptstaedte.kvtml
+share/apps/kanagram/data/de/personen.kvtml
+share/apps/kanagram/data/de/tiere.kvtml
 share/apps/katepart/syntax/logohighlightstyle.de_DE.xml
 share/apps/khangman/data/de/animals.kvtml
 share/apps/khangman/data/de/easy.kvtml
@@ -95,9 +98,6 @@ share/apps/kturtle/examples/de_DE/zufallsname.logo
 share/doc/HTML/de/KRegExpEditor/common
 share/doc/HTML/de/KRegExpEditor/index.cache.bz2
 share/doc/HTML/de/KRegExpEditor/index.docbook
-share/doc/HTML/de/akregator/common
-share/doc/HTML/de/akregator/index.cache.bz2
-share/doc/HTML/de/akregator/index.docbook
 share/doc/HTML/de/amor/common
 share/doc/HTML/de/amor/index.cache.bz2
 share/doc/HTML/de/amor/index.docbook
@@ -147,6 +147,9 @@ share/doc/HTML/de/docs/common/gpl-translated.html
 share/doc/HTML/de/docs/common/kde-localised.css
 share/doc/HTML/de/docs/common/lgpl-translated.html
 share/doc/HTML/de/docs/common/logotp3.png
+share/doc/HTML/de/irkick/common
+share/doc/HTML/de/irkick/index.cache.bz2
+share/doc/HTML/de/irkick/index.docbook
 share/doc/HTML/de/juk/common
 share/doc/HTML/de/juk/history-playlist.png
 share/doc/HTML/de/juk/index.cache.bz2
@@ -200,10 +203,14 @@ share/doc/HTML/de/kalzium/timeline.png
 share/doc/HTML/de/kamera/common
 share/doc/HTML/de/kamera/index.cache.bz2
 share/doc/HTML/de/kamera/index.docbook
+share/doc/HTML/de/kanagram/common
+share/doc/HTML/de/kanagram/index.cache.bz2
+share/doc/HTML/de/kanagram/index.docbook
 share/doc/HTML/de/kandy/common
 share/doc/HTML/de/kandy/index.cache.bz2
 share/doc/HTML/de/kandy/index.docbook
 share/doc/HTML/de/kappfinder/man-kappfinder.1.docbook
+share/doc/HTML/de/kapptemplate/man-kapptemplate.1.docbook
 share/doc/HTML/de/karm/common
 share/doc/HTML/de/karm/copy-this-task.png
 share/doc/HTML/de/karm/csvexport.png
@@ -249,8 +256,12 @@ share/doc/HTML/de/katomic/common
 share/doc/HTML/de/katomic/index.cache.bz2
 share/doc/HTML/de/katomic/index.docbook
 share/doc/HTML/de/kbabel/catman.docbook
+share/doc/HTML/de/kbabel/common
+share/doc/HTML/de/kbabel/dictionaries.docbook
 share/doc/HTML/de/kbabel/faq.docbook
 share/doc/HTML/de/kbabel/glossary.docbook
+share/doc/HTML/de/kbabel/index.cache.bz2
+share/doc/HTML/de/kbabel/index.docbook
 share/doc/HTML/de/kbabel/kbabeldict.docbook
 share/doc/HTML/de/kbabel/man-catalogmanager.1.docbook
 share/doc/HTML/de/kbabel/menu.docbook
@@ -288,12 +299,16 @@ share/doc/HTML/de/kbugbuster/index.docbook
 share/doc/HTML/de/kcachegrind/common
 share/doc/HTML/de/kcachegrind/index.cache.bz2
 share/doc/HTML/de/kcachegrind/index.docbook
+share/doc/HTML/de/kcalc/commands.docbook
 share/doc/HTML/de/kcalc/common
 share/doc/HTML/de/kcalc/index.cache.bz2
 share/doc/HTML/de/kcalc/index.docbook
 share/doc/HTML/de/kcharselect/common
 share/doc/HTML/de/kcharselect/index.cache.bz2
 share/doc/HTML/de/kcharselect/index.docbook
+share/doc/HTML/de/kcmlirc/common
+share/doc/HTML/de/kcmlirc/index.cache.bz2
+share/doc/HTML/de/kcmlirc/index.docbook
 share/doc/HTML/de/kcoloredit/common
 share/doc/HTML/de/kcoloredit/index.cache.bz2
 share/doc/HTML/de/kcoloredit/index.docbook
@@ -480,12 +495,6 @@ share/doc/HTML/de/kdelibs/man-dcop.1.docbook
 share/doc/HTML/de/kdelibs/man-kbuildsycoca.8.docbook
 share/doc/HTML/de/kdelibs/man-kdeoptions.7.docbook
 share/doc/HTML/de/kdelibs/man-qtoptions.7.docbook
-share/doc/HTML/de/kdelirc/irkick/common
-share/doc/HTML/de/kdelirc/irkick/index.cache.bz2
-share/doc/HTML/de/kdelirc/irkick/index.docbook
-share/doc/HTML/de/kdelirc/kcmlirc/common
-share/doc/HTML/de/kdelirc/kcmlirc/index.cache.bz2
-share/doc/HTML/de/kdelirc/kcmlirc/index.docbook
 share/doc/HTML/de/kdeprint/add-printer-wiz.docbook
 share/doc/HTML/de/kdeprint/common
 share/doc/HTML/de/kdeprint/cups-config.docbook
@@ -507,6 +516,9 @@ share/doc/HTML/de/kdesu/common
 share/doc/HTML/de/kdesu/index.cache.bz2
 share/doc/HTML/de/kdesu/index.docbook
 share/doc/HTML/de/kdesu/man-kdesu.1.docbook
+share/doc/HTML/de/kdesvn-build/common
+share/doc/HTML/de/kdesvn-build/index.cache.bz2
+share/doc/HTML/de/kdesvn-build/index.docbook
 share/doc/HTML/de/kdf/common
 share/doc/HTML/de/kdf/index.cache.bz2
 share/doc/HTML/de/kdf/index.docbook
@@ -533,6 +545,7 @@ share/doc/HTML/de/keduca/common
 share/doc/HTML/de/keduca/index.cache.bz2
 share/doc/HTML/de/keduca/index.docbook
 share/doc/HTML/de/keduca/man-keduca.1.docbook
+share/doc/HTML/de/keduca/man-keducabuilder.1.docbook
 share/doc/HTML/de/keduca/screenshot.png
 share/doc/HTML/de/kenolaba/common
 share/doc/HTML/de/kenolaba/index.cache.bz2
@@ -581,6 +594,9 @@ share/doc/HTML/de/kfouleggs/index.docbook
 share/doc/HTML/de/kgamma/common
 share/doc/HTML/de/kgamma/index.cache.bz2
 share/doc/HTML/de/kgamma/index.docbook
+share/doc/HTML/de/kgeography/common
+share/doc/HTML/de/kgeography/index.cache.bz2
+share/doc/HTML/de/kgeography/index.docbook
 share/doc/HTML/de/kget/common
 share/doc/HTML/de/kget/index.cache.bz2
 share/doc/HTML/de/kget/index.docbook
@@ -614,6 +630,7 @@ share/doc/HTML/de/khangman/index.cache.bz2
 share/doc/HTML/de/khangman/index.docbook
 share/doc/HTML/de/khangman/khangman1.png
 share/doc/HTML/de/khangman/khangman2.png
+share/doc/HTML/de/khangman/man-khangman.6.docbook
 share/doc/HTML/de/khangman/normalsettings.png
 share/doc/HTML/de/khelpcenter/common
 share/doc/HTML/de/khelpcenter/contact.docbook
@@ -660,6 +677,7 @@ share/doc/HTML/de/khelpcenter/userguide/common
 share/doc/HTML/de/khelpcenter/userguide/control-center.docbook
 share/doc/HTML/de/khelpcenter/userguide/creating-graphics.docbook
 share/doc/HTML/de/khelpcenter/userguide/credits-and-license.docbook
+share/doc/HTML/de/khelpcenter/userguide/customizing-desktop.docbook
 share/doc/HTML/de/khelpcenter/userguide/email.docbook
 share/doc/HTML/de/khelpcenter/userguide/extragear-applications.docbook
 share/doc/HTML/de/khelpcenter/userguide/file-sharing.docbook
@@ -708,6 +726,23 @@ share/doc/HTML/de/khelpcenter/userguide/your-kde-account.docbook
 share/doc/HTML/de/khelpcenter/visualdict/common
 share/doc/HTML/de/khelpcenter/visualdict/index.cache.bz2
 share/doc/HTML/de/khelpcenter/visualdict/index.docbook
+share/doc/HTML/de/khelpcenter/visualdict/pict1.png
+share/doc/HTML/de/khelpcenter/visualdict/pict10.png
+share/doc/HTML/de/khelpcenter/visualdict/pict11.png
+share/doc/HTML/de/khelpcenter/visualdict/pict12.png
+share/doc/HTML/de/khelpcenter/visualdict/pict13.png
+share/doc/HTML/de/khelpcenter/visualdict/pict14.png
+share/doc/HTML/de/khelpcenter/visualdict/pict16.png
+share/doc/HTML/de/khelpcenter/visualdict/pict19.png
+share/doc/HTML/de/khelpcenter/visualdict/pict20.png
+share/doc/HTML/de/khelpcenter/visualdict/pict21.png
+share/doc/HTML/de/khelpcenter/visualdict/pict22.png
+share/doc/HTML/de/khelpcenter/visualdict/pict23.png
+share/doc/HTML/de/khelpcenter/visualdict/pict4.png
+share/doc/HTML/de/khelpcenter/visualdict/pict5.png
+share/doc/HTML/de/khelpcenter/visualdict/pict6.png
+share/doc/HTML/de/khelpcenter/visualdict/pict7.png
+share/doc/HTML/de/khelpcenter/visualdict/pict8.png
 share/doc/HTML/de/khelpcenter/welcome.docbook
 share/doc/HTML/de/khelpcenter/whatiskde.docbook
 share/doc/HTML/de/khexedit/common
@@ -738,6 +773,7 @@ share/doc/HTML/de/kig/index.cache.bz2
 share/doc/HTML/de/kig/index.docbook
 share/doc/HTML/de/kig/macro_wizard.png
 share/doc/HTML/de/kig/macros_at_work.png
+share/doc/HTML/de/kig/man-kig.1.docbook
 share/doc/HTML/de/kig/script_wizard.png
 share/doc/HTML/de/kig/script_wizard_entering_code.png
 share/doc/HTML/de/kig/selecting_objects.png
@@ -1235,6 +1271,7 @@ share/doc/HTML/de/kpf/common
 share/doc/HTML/de/kpf/index.cache.bz2
 share/doc/HTML/de/kpf/index.docbook
 share/doc/HTML/de/kpilot/common
+share/doc/HTML/de/kpilot/faq.docbook
 share/doc/HTML/de/kpilot/index.cache.bz2
 share/doc/HTML/de/kpilot/index.docbook
 share/doc/HTML/de/kpoker/common
@@ -1417,6 +1454,7 @@ share/doc/HTML/de/kstars/ellipticalgalaxies.docbook
 share/doc/HTML/de/kstars/equinox.docbook
 share/doc/HTML/de/kstars/faq.docbook
 share/doc/HTML/de/kstars/find.png
+share/doc/HTML/de/kstars/fitsviewer.docbook
 share/doc/HTML/de/kstars/flux.docbook
 share/doc/HTML/de/kstars/fovdialog.png
 share/doc/HTML/de/kstars/geocoords.docbook
@@ -1438,6 +1476,16 @@ share/doc/HTML/de/kstars/leapyear.docbook
 share/doc/HTML/de/kstars/lightcurves.docbook
 share/doc/HTML/de/kstars/luminosity.docbook
 share/doc/HTML/de/kstars/magnitude.docbook
+share/doc/HTML/de/kstars/man-celestrongps.1.docbook
+share/doc/HTML/de/kstars/man-fliccd.1.docbook
+share/doc/HTML/de/kstars/man-indiserver.1.docbook
+share/doc/HTML/de/kstars/man-lx200_16.1.docbook
+share/doc/HTML/de/kstars/man-lx200autostar.1.docbook
+share/doc/HTML/de/kstars/man-lx200classic.1.docbook
+share/doc/HTML/de/kstars/man-lx200generic.1.docbook
+share/doc/HTML/de/kstars/man-temma.1.docbook
+share/doc/HTML/de/kstars/man-v4ldriver.1.docbook
+share/doc/HTML/de/kstars/man-v4lphilips.1.docbook
 share/doc/HTML/de/kstars/meridian.docbook
 share/doc/HTML/de/kstars/newfov.png
 share/doc/HTML/de/kstars/observinglist.docbook
@@ -1475,14 +1523,19 @@ share/doc/HTML/de/ktalkd/common
 share/doc/HTML/de/ktalkd/index.cache.bz2
 share/doc/HTML/de/ktalkd/index.docbook
 share/doc/HTML/de/kteatime/common
+share/doc/HTML/de/kteatime/config.png
 share/doc/HTML/de/kteatime/index.cache.bz2
 share/doc/HTML/de/kteatime/index.docbook
 share/doc/HTML/de/ktimer/common
 share/doc/HTML/de/ktimer/index.cache.bz2
 share/doc/HTML/de/ktimer/index.docbook
+share/doc/HTML/de/ktnef/common
+share/doc/HTML/de/ktnef/index.cache.bz2
+share/doc/HTML/de/ktnef/index.docbook
 share/doc/HTML/de/ktouch/common
 share/doc/HTML/de/ktouch/index.cache.bz2
 share/doc/HTML/de/ktouch/index.docbook
+share/doc/HTML/de/ktouch/man-ktouch.1.docbook
 share/doc/HTML/de/ktouch/screenshot1.png
 share/doc/HTML/de/ktouch/screenshot2.png
 share/doc/HTML/de/ktouch/screenshot3.png
@@ -1706,6 +1759,28 @@ share/doc/HTML/de/quanta/quanta-menus.docbook
 share/doc/HTML/de/quanta/quanta-projects.docbook
 share/doc/HTML/de/quanta/working-with-quanta.docbook
 share/doc/HTML/de/scripts/man-adddebug.1.docbook
+share/doc/HTML/de/scripts/man-cheatmake.1.docbook
+share/doc/HTML/de/scripts/man-create_cvsignore.1.docbook
+share/doc/HTML/de/scripts/man-create_makefile.1.docbook
+share/doc/HTML/de/scripts/man-create_makefiles.1.docbook
+share/doc/HTML/de/scripts/man-cvscheck.1.docbook
+share/doc/HTML/de/scripts/man-cvslastchange.1.docbook
+share/doc/HTML/de/scripts/man-cvslastlog.1.docbook
+share/doc/HTML/de/scripts/man-cvsrevertlast.1.docbook
+share/doc/HTML/de/scripts/man-cxxmetric.1.docbook
+share/doc/HTML/de/scripts/man-demangle.1.docbook
+share/doc/HTML/de/scripts/man-extend_dmalloc.1.docbook
+share/doc/HTML/de/scripts/man-extractrc.1.docbook
+share/doc/HTML/de/scripts/man-fixincludes.1.docbook
+share/doc/HTML/de/scripts/man-po2xml.1.docbook
+share/doc/HTML/de/scripts/man-pruneemptydirs.1.docbook
+share/doc/HTML/de/scripts/man-qtdoc.1.docbook
+share/doc/HTML/de/scripts/man-reportview.1.docbook
+share/doc/HTML/de/scripts/man-split2po.1.docbook
+share/doc/HTML/de/scripts/man-swappo.1.docbook
+share/doc/HTML/de/scripts/man-transxx.1.docbook
+share/doc/HTML/de/scripts/man-xml2pot.1.docbook
+share/doc/HTML/de/scripts/man-zonetab2pot.1.docbook
 share/doc/HTML/de/superkaramba/common
 share/doc/HTML/de/superkaramba/index.cache.bz2
 share/doc/HTML/de/superkaramba/index.docbook
@@ -2013,6 +2088,7 @@ share/locale/de/LC_MESSAGES/khotkeys.mo
 share/locale/de/LC_MESSAGES/khtmlkttsd.mo
 share/locale/de/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/de/LC_MESSAGES/kicker.mo
+share/locale/de/LC_MESSAGES/kickermenu_kate.mo
 share/locale/de/LC_MESSAGES/kiconedit.mo
 share/locale/de/LC_MESSAGES/kig.mo
 share/locale/de/LC_MESSAGES/kimagemapeditor.mo
@@ -2050,6 +2126,7 @@ share/locale/de/LC_MESSAGES/kio_thumbnail.mo
 share/locale/de/LC_MESSAGES/kio_trash.mo
 share/locale/de/LC_MESSAGES/kio_zeroconf.mo
 share/locale/de/LC_MESSAGES/kioexec.mo
+share/locale/de/LC_MESSAGES/kitchensync.mo
 share/locale/de/LC_MESSAGES/kiten.mo
 share/locale/de/LC_MESSAGES/kjobviewer.mo
 share/locale/de/LC_MESSAGES/kjots.mo
@@ -2253,6 +2330,7 @@ share/locale/de/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/de/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/de/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/de/LC_MESSAGES/libkickermenu_tom.mo
+share/locale/de/LC_MESSAGES/libkitchensync.mo
 share/locale/de/LC_MESSAGES/libkleopatra.mo
 share/locale/de/LC_MESSAGES/libkmime.mo
 share/locale/de/LC_MESSAGES/libkonq.mo
@@ -2331,6 +2409,7 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/kttsd
 @dirrm share/doc/HTML/de/ktron
 @dirrm share/doc/HTML/de/ktouch
+@dirrm share/doc/HTML/de/ktnef
 @dirrm share/doc/HTML/de/ktimer
 @dirrm share/doc/HTML/de/kteatime
 @dirrm share/doc/HTML/de/ktalkd
@@ -2457,6 +2536,7 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/kgoldrunner
 @dirrm share/doc/HTML/de/kghostview
 @dirrm share/doc/HTML/de/kget
+@dirrm share/doc/HTML/de/kgeography
 @dirrm share/doc/HTML/de/kgamma
 @dirrm share/doc/HTML/de/kfouleggs
 @dirrm share/doc/HTML/de/kfloppy
@@ -2469,11 +2549,9 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/kdm
 @dirrm share/doc/HTML/de/kdict
 @dirrm share/doc/HTML/de/kdf
+@dirrm share/doc/HTML/de/kdesvn-build
 @dirrm share/doc/HTML/de/kdesu
 @dirrm share/doc/HTML/de/kdeprint
-@dirrm share/doc/HTML/de/kdelirc/kcmlirc
-@dirrm share/doc/HTML/de/kdelirc/irkick
-@dirrm share/doc/HTML/de/kdelirc
 @dirrm share/doc/HTML/de/kdelibs
 @dirrm share/doc/HTML/de/kdebugdialog
 @dirrm share/doc/HTML/de/kdcop
@@ -2532,6 +2610,7 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/kcontrol/arts
 @dirrm share/doc/HTML/de/kcontrol
 @dirrm share/doc/HTML/de/kcoloredit
+@dirrm share/doc/HTML/de/kcmlirc
 @dirrm share/doc/HTML/de/kcharselect
 @dirrm share/doc/HTML/de/kcalc
 @dirrm share/doc/HTML/de/kcachegrind
@@ -2547,14 +2626,17 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/kate
 @dirrm share/doc/HTML/de/kasteroids
 @dirrm share/doc/HTML/de/karm
+@dirrm share/doc/HTML/de/kapptemplate
 @dirrm share/doc/HTML/de/kappfinder
 @dirrm share/doc/HTML/de/kandy
+@dirrm share/doc/HTML/de/kanagram
 @dirrm share/doc/HTML/de/kamera
 @dirrm share/doc/HTML/de/kalzium
 @dirrm share/doc/HTML/de/kalarm
 @dirrm share/doc/HTML/de/kaddressbook
 @dirrm share/doc/HTML/de/kaboodle
 @dirrm share/doc/HTML/de/juk
+@dirrm share/doc/HTML/de/irkick
 @dirrm share/doc/HTML/de/docs/common
 @dirrm share/doc/HTML/de/docs
 @dirrm share/doc/HTML/de/cervisia
@@ -2563,7 +2645,6 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/artsbuilder
 @dirrm share/doc/HTML/de/ark
 @dirrm share/doc/HTML/de/amor
-@dirrm share/doc/HTML/de/akregator
 @dirrm share/doc/HTML/de/KRegExpEditor
 @dirrm share/apps/kturtle/examples/de_DE
 @dirrm share/apps/kturtle/examples
@@ -2579,3 +2660,6 @@ share/locale/de/flag.png
 @dirrm share/apps/khangman/data/de
 @dirrm share/apps/khangman/data
 @dirrm share/apps/khangman
+@dirrm share/apps/kanagram/data/de
+@dirrm share/apps/kanagram/data
+@dirrm share/apps/kanagram

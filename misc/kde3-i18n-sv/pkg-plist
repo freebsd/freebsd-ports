@@ -48,9 +48,25 @@ share/doc/HTML/sv/KRegExpEditor/lookaheadtools.png
 share/doc/HTML/sv/KRegExpEditor/repeattool.png
 share/doc/HTML/sv/KRegExpEditor/texttool.png
 share/doc/HTML/sv/KRegExpEditor/theEditor.png
+share/doc/HTML/sv/akregator/add-feed.png
+share/doc/HTML/sv/akregator/add-feed2.png
+share/doc/HTML/sv/akregator/add-folder.png
+share/doc/HTML/sv/akregator/add-folder2.png
+share/doc/HTML/sv/akregator/advanced-tab.png
+share/doc/HTML/sv/akregator/appearance-tab.png
+share/doc/HTML/sv/akregator/archive-tab.png
+share/doc/HTML/sv/akregator/browser-tab.png
 share/doc/HTML/sv/akregator/common
+share/doc/HTML/sv/akregator/general-tab.png
 share/doc/HTML/sv/akregator/index.cache.bz2
 share/doc/HTML/sv/akregator/index.docbook
+share/doc/HTML/sv/akregator/konq.png
+share/doc/HTML/sv/akregator/konq2.png
+share/doc/HTML/sv/akregator/main-window.png
+share/doc/HTML/sv/akregator/main-window2.png
+share/doc/HTML/sv/akregator/main-window3.png
+share/doc/HTML/sv/akregator/main-window4.png
+share/doc/HTML/sv/akregator/quick-filter.png
 share/doc/HTML/sv/amor/common
 share/doc/HTML/sv/amor/index.cache.bz2
 share/doc/HTML/sv/amor/index.docbook
@@ -127,6 +143,9 @@ share/doc/HTML/sv/docs/common/gpl-translated.html
 share/doc/HTML/sv/docs/common/kde-localised.css
 share/doc/HTML/sv/docs/common/lgpl-translated.html
 share/doc/HTML/sv/docs/common/logotp3.png
+share/doc/HTML/sv/irkick/common
+share/doc/HTML/sv/irkick/index.cache.bz2
+share/doc/HTML/sv/irkick/index.docbook
 share/doc/HTML/sv/juk/common
 share/doc/HTML/sv/juk/history-playlist.png
 share/doc/HTML/sv/juk/index.cache.bz2
@@ -337,6 +356,9 @@ share/doc/HTML/sv/kcalc/index.docbook
 share/doc/HTML/sv/kcharselect/common
 share/doc/HTML/sv/kcharselect/index.cache.bz2
 share/doc/HTML/sv/kcharselect/index.docbook
+share/doc/HTML/sv/kcmlirc/common
+share/doc/HTML/sv/kcmlirc/index.cache.bz2
+share/doc/HTML/sv/kcmlirc/index.docbook
 share/doc/HTML/sv/kcoloredit/common
 share/doc/HTML/sv/kcoloredit/index.cache.bz2
 share/doc/HTML/sv/kcoloredit/index.docbook
@@ -543,12 +565,6 @@ share/doc/HTML/sv/kdelibs/man-dcop.1.docbook
 share/doc/HTML/sv/kdelibs/man-kbuildsycoca.8.docbook
 share/doc/HTML/sv/kdelibs/man-kdeoptions.7.docbook
 share/doc/HTML/sv/kdelibs/man-qtoptions.7.docbook
-share/doc/HTML/sv/kdelirc/irkick/common
-share/doc/HTML/sv/kdelirc/irkick/index.cache.bz2
-share/doc/HTML/sv/kdelirc/irkick/index.docbook
-share/doc/HTML/sv/kdelirc/kcmlirc/common
-share/doc/HTML/sv/kdelirc/kcmlirc/index.cache.bz2
-share/doc/HTML/sv/kdelirc/kcmlirc/index.docbook
 share/doc/HTML/sv/kdeprint/add-printer-wiz.docbook
 share/doc/HTML/sv/kdeprint/common
 share/doc/HTML/sv/kdeprint/cups-config.docbook
@@ -830,6 +846,7 @@ share/doc/HTML/sv/khelpcenter/userguide/common
 share/doc/HTML/sv/khelpcenter/userguide/control-center.docbook
 share/doc/HTML/sv/khelpcenter/userguide/creating-graphics.docbook
 share/doc/HTML/sv/khelpcenter/userguide/credits-and-license.docbook
+share/doc/HTML/sv/khelpcenter/userguide/customizing-desktop.docbook
 share/doc/HTML/sv/khelpcenter/userguide/desktop.png
 share/doc/HTML/sv/khelpcenter/userguide/email.docbook
 share/doc/HTML/sv/khelpcenter/userguide/extragear-applications.docbook
@@ -894,6 +911,7 @@ share/doc/HTML/sv/khelpcenter/userguide/screen-captures.docbook
 share/doc/HTML/sv/khelpcenter/userguide/services.png
 share/doc/HTML/sv/khelpcenter/userguide/shared-sessions.docbook
 share/doc/HTML/sv/khelpcenter/userguide/shortcuts.docbook
+share/doc/HTML/sv/khelpcenter/userguide/splash-screen.png
 share/doc/HTML/sv/khelpcenter/userguide/staff.docbook
 share/doc/HTML/sv/khelpcenter/userguide/standard-menu-entries.docbook
 share/doc/HTML/sv/khelpcenter/userguide/switching-sessions.docbook
@@ -908,7 +926,6 @@ share/doc/HTML/sv/khelpcenter/userguide/where-next.docbook
 share/doc/HTML/sv/khelpcenter/userguide/windows-how-to.docbook
 share/doc/HTML/sv/khelpcenter/userguide/your-kde-account.docbook
 share/doc/HTML/sv/khelpcenter/visualdict/common
-share/doc/HTML/sv/khelpcenter/visualdict/contextmenu.png
 share/doc/HTML/sv/khelpcenter/visualdict/index.cache.bz2
 share/doc/HTML/sv/khelpcenter/visualdict/index.docbook
 share/doc/HTML/sv/khelpcenter/visualdict/pict1.png
@@ -924,11 +941,15 @@ share/doc/HTML/sv/khelpcenter/visualdict/pict18.png
 share/doc/HTML/sv/khelpcenter/visualdict/pict19.png
 share/doc/HTML/sv/khelpcenter/visualdict/pict2.png
 share/doc/HTML/sv/khelpcenter/visualdict/pict20.png
+share/doc/HTML/sv/khelpcenter/visualdict/pict21.png
+share/doc/HTML/sv/khelpcenter/visualdict/pict22.png
+share/doc/HTML/sv/khelpcenter/visualdict/pict23.png
 share/doc/HTML/sv/khelpcenter/visualdict/pict3.png
 share/doc/HTML/sv/khelpcenter/visualdict/pict4.png
 share/doc/HTML/sv/khelpcenter/visualdict/pict5.png
 share/doc/HTML/sv/khelpcenter/visualdict/pict6.png
 share/doc/HTML/sv/khelpcenter/visualdict/pict7.png
+share/doc/HTML/sv/khelpcenter/visualdict/pict8.png
 share/doc/HTML/sv/khelpcenter/welcome.docbook
 share/doc/HTML/sv/khelpcenter/whatiskde.docbook
 share/doc/HTML/sv/khexedit/common
@@ -2462,6 +2483,7 @@ share/locale/sv/LC_MESSAGES/khotkeys.mo
 share/locale/sv/LC_MESSAGES/khtmlkttsd.mo
 share/locale/sv/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/sv/LC_MESSAGES/kicker.mo
+share/locale/sv/LC_MESSAGES/kickermenu_kate.mo
 share/locale/sv/LC_MESSAGES/kiconedit.mo
 share/locale/sv/LC_MESSAGES/kig.mo
 share/locale/sv/LC_MESSAGES/kimagemapeditor.mo
@@ -2499,6 +2521,7 @@ share/locale/sv/LC_MESSAGES/kio_thumbnail.mo
 share/locale/sv/LC_MESSAGES/kio_trash.mo
 share/locale/sv/LC_MESSAGES/kio_zeroconf.mo
 share/locale/sv/LC_MESSAGES/kioexec.mo
+share/locale/sv/LC_MESSAGES/kitchensync.mo
 share/locale/sv/LC_MESSAGES/kiten.mo
 share/locale/sv/LC_MESSAGES/kjobviewer.mo
 share/locale/sv/LC_MESSAGES/kjots.mo
@@ -2702,6 +2725,7 @@ share/locale/sv/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/sv/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/sv/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/sv/LC_MESSAGES/libkickermenu_tom.mo
+share/locale/sv/LC_MESSAGES/libkitchensync.mo
 share/locale/sv/LC_MESSAGES/libkleopatra.mo
 share/locale/sv/LC_MESSAGES/libkmime.mo
 share/locale/sv/LC_MESSAGES/libkonq.mo
@@ -2930,9 +2954,6 @@ share/locale/sv/flag.png
 @dirrm share/doc/HTML/sv/kdesvn-build
 @dirrm share/doc/HTML/sv/kdesu
 @dirrm share/doc/HTML/sv/kdeprint
-@dirrm share/doc/HTML/sv/kdelirc/kcmlirc
-@dirrm share/doc/HTML/sv/kdelirc/irkick
-@dirrm share/doc/HTML/sv/kdelirc
 @dirrm share/doc/HTML/sv/kdelibs
 @dirrm share/doc/HTML/sv/kdebugdialog
 @dirrm share/doc/HTML/sv/kdearch
@@ -2996,6 +3017,7 @@ share/locale/sv/flag.png
 @dirrm share/doc/HTML/sv/kcontrol/arts
 @dirrm share/doc/HTML/sv/kcontrol
 @dirrm share/doc/HTML/sv/kcoloredit
+@dirrm share/doc/HTML/sv/kcmlirc
 @dirrm share/doc/HTML/sv/kcharselect
 @dirrm share/doc/HTML/sv/kcalc
 @dirrm share/doc/HTML/sv/kcachegrind
@@ -3021,6 +3043,7 @@ share/locale/sv/flag.png
 @dirrm share/doc/HTML/sv/kaddressbook
 @dirrm share/doc/HTML/sv/kaboodle
 @dirrm share/doc/HTML/sv/juk
+@dirrm share/doc/HTML/sv/irkick
 @dirrm share/doc/HTML/sv/docs/common
 @dirrm share/doc/HTML/sv/docs
 @dirrm share/doc/HTML/sv/cervisia

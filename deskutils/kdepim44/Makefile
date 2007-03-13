@@ -7,7 +7,6 @@
 
 PORTNAME=	kdepim
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	deskutils mail news palm kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -17,7 +16,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Personal Information Management tools for KDE
 
 LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
-		mal:${PORTSDIR}/palm/libmal \
 		pisock:${PORTSDIR}/palm/pilot-link \
 		sasl2:${PORTSDIR}/security/cyrus-sasl2
 
@@ -32,7 +30,7 @@ USE_OPENSSL=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 CONFIGURE_ARGS=	--with-gpg=${LOCALBASE}/bin/gpg \
 		--with-gpgsm=${LOCALBASE}/bin/gpgsm \

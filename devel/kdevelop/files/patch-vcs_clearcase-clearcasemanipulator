@@ -1,0 +1,11 @@
+--- vcs/clearcase/clearcasemanipulator.cpp.orig	Mon Mar  5 13:06:42 2007
++++ vcs/clearcase/clearcasemanipulator.cpp	Mon Mar  5 13:06:56 2007
+@@ -20,7 +20,7 @@
+ #include <libgen.h>
+ #include <errno.h>
+ 
+-#if defined(Q_OS_MACX) || defined(MACOSX)
++#if defined(Q_OS_MACX) || defined(MACOSX) || defined(Q_OS_FREEBSD)
+ //this function is taken from GNU libc
+ //it does not exist on macos
+ int getline(char **lineptr, size_t *n, FILE *stream)

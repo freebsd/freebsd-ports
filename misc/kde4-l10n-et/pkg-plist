@@ -49,6 +49,9 @@ share/doc/HTML/et/docs/common/logotp3.png
 share/doc/HTML/et/flashkard/common
 share/doc/HTML/et/flashkard/index.cache.bz2
 share/doc/HTML/et/flashkard/index.docbook
+share/doc/HTML/et/irkick/common
+share/doc/HTML/et/irkick/index.cache.bz2
+share/doc/HTML/et/irkick/index.docbook
 share/doc/HTML/et/juk/common
 share/doc/HTML/et/juk/index.cache.bz2
 share/doc/HTML/et/juk/index.docbook
@@ -157,6 +160,9 @@ share/doc/HTML/et/kcalc/index.docbook
 share/doc/HTML/et/kcharselect/common
 share/doc/HTML/et/kcharselect/index.cache.bz2
 share/doc/HTML/et/kcharselect/index.docbook
+share/doc/HTML/et/kcmlirc/common
+share/doc/HTML/et/kcmlirc/index.cache.bz2
+share/doc/HTML/et/kcmlirc/index.docbook
 share/doc/HTML/et/kcoloredit/common
 share/doc/HTML/et/kcoloredit/index.cache.bz2
 share/doc/HTML/et/kcoloredit/index.docbook
@@ -352,12 +358,6 @@ share/doc/HTML/et/kdelibs/man-dcop.1.docbook
 share/doc/HTML/et/kdelibs/man-kbuildsycoca.8.docbook
 share/doc/HTML/et/kdelibs/man-kdeoptions.7.docbook
 share/doc/HTML/et/kdelibs/man-qtoptions.7.docbook
-share/doc/HTML/et/kdelirc/irkick/common
-share/doc/HTML/et/kdelirc/irkick/index.cache.bz2
-share/doc/HTML/et/kdelirc/irkick/index.docbook
-share/doc/HTML/et/kdelirc/kcmlirc/common
-share/doc/HTML/et/kdelirc/kcmlirc/index.cache.bz2
-share/doc/HTML/et/kdelirc/kcmlirc/index.docbook
 share/doc/HTML/et/kdeprint/add-printer-wiz.docbook
 share/doc/HTML/et/kdeprint/common
 share/doc/HTML/et/kdeprint/cups-config.docbook
@@ -518,6 +518,7 @@ share/doc/HTML/et/khelpcenter/userguide/common
 share/doc/HTML/et/khelpcenter/userguide/control-center.docbook
 share/doc/HTML/et/khelpcenter/userguide/creating-graphics.docbook
 share/doc/HTML/et/khelpcenter/userguide/credits-and-license.docbook
+share/doc/HTML/et/khelpcenter/userguide/customizing-desktop.docbook
 share/doc/HTML/et/khelpcenter/userguide/desktop.png
 share/doc/HTML/et/khelpcenter/userguide/email.docbook
 share/doc/HTML/et/khelpcenter/userguide/extragear-applications.docbook
@@ -1630,6 +1631,7 @@ share/locale/et/LC_MESSAGES/khotkeys.mo
 share/locale/et/LC_MESSAGES/khtmlkttsd.mo
 share/locale/et/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/et/LC_MESSAGES/kicker.mo
+share/locale/et/LC_MESSAGES/kickermenu_kate.mo
 share/locale/et/LC_MESSAGES/kiconedit.mo
 share/locale/et/LC_MESSAGES/kig.mo
 share/locale/et/LC_MESSAGES/kimagemapeditor.mo
@@ -1667,6 +1669,7 @@ share/locale/et/LC_MESSAGES/kio_thumbnail.mo
 share/locale/et/LC_MESSAGES/kio_trash.mo
 share/locale/et/LC_MESSAGES/kio_zeroconf.mo
 share/locale/et/LC_MESSAGES/kioexec.mo
+share/locale/et/LC_MESSAGES/kitchensync.mo
 share/locale/et/LC_MESSAGES/kiten.mo
 share/locale/et/LC_MESSAGES/kjobviewer.mo
 share/locale/et/LC_MESSAGES/kjots.mo
@@ -1870,6 +1873,7 @@ share/locale/et/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/et/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/et/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/et/LC_MESSAGES/libkickermenu_tom.mo
+share/locale/et/LC_MESSAGES/libkitchensync.mo
 share/locale/et/LC_MESSAGES/libkleopatra.mo
 share/locale/et/LC_MESSAGES/libkmime.mo
 share/locale/et/LC_MESSAGES/libkonq.mo
@@ -2096,9 +2100,6 @@ share/locale/et/flag.png
 @dirrm share/doc/HTML/et/kdesvn-build
 @dirrm share/doc/HTML/et/kdesu
 @dirrm share/doc/HTML/et/kdeprint
-@dirrm share/doc/HTML/et/kdelirc/kcmlirc
-@dirrm share/doc/HTML/et/kdelirc/irkick
-@dirrm share/doc/HTML/et/kdelirc
 @dirrm share/doc/HTML/et/kdelibs
 @dirrm share/doc/HTML/et/kdebugdialog
 @dirrm share/doc/HTML/et/kdearch
@@ -2162,6 +2163,7 @@ share/locale/et/flag.png
 @dirrm share/doc/HTML/et/kcontrol/arts
 @dirrm share/doc/HTML/et/kcontrol
 @dirrm share/doc/HTML/et/kcoloredit
+@dirrm share/doc/HTML/et/kcmlirc
 @dirrm share/doc/HTML/et/kcharselect
 @dirrm share/doc/HTML/et/kcalc
 @dirrm share/doc/HTML/et/kcachegrind
@@ -2188,6 +2190,7 @@ share/locale/et/flag.png
 @dirrm share/doc/HTML/et/kaddressbook
 @dirrm share/doc/HTML/et/kaboodle
 @dirrm share/doc/HTML/et/juk
+@dirrm share/doc/HTML/et/irkick
 @dirrm share/doc/HTML/et/flashkard
 @dirrm share/doc/HTML/et/docs/common
 @dirrm share/doc/HTML/et/docs

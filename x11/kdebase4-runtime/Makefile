@@ -8,7 +8,6 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	4
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -42,7 +41,7 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 USE_AUTOTOOLS=  libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 CONFIGURE_ENV+=	RUN_KAPPFINDER=no kde_cv_utmp_file=/var/run/utmp
@@ -52,7 +51,7 @@ CONFIGURE_ARGS+=--without-java			\
 		--with-ssl-dir=${OPENSSLBASE}
 
 OPTIONS=	ARTSWRAPPER "Suid wrapper for aRts, req'd for realtime prio" on \
-		HAL "Use HAL backend for media:/ (FreeBSD 5+ only)" off \
+		HAL "Use HAL backend for media:/ (FreeBSD 5+ only)" on \
 		HTDIG "Depend on htdig, used to build manual indices" off
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
@@ -70,7 +69,7 @@ RUN_DEPENDS+=	artswrapper:${PORTSDIR}/audio/artswrapper
 RUN_DEPENDS+=	htdig:${PORTSDIR}/textproc/htdig
 .endif
 
-.if defined(WITH_HAL) && ${OSVERSION} > 500035
+.if !defined(WITHOUT_HAL) && ${OSVERSION} > 500035
 EXTRA_PATCHES=	${FILESDIR}/extrapatch-kioslave_media_mediamanager-halbackend.cpp \
 		${FILESDIR}/extrapatch-kioslave_media_mediamanager-halbackend.h \
 		${FILESDIR}/extrapatch-kioslave_media_mounthelper-kio_media_mounthelper.cpp
@@ -79,11 +78,8 @@ LIB_DEPENDS+=	dbus-qt-1.1:${PORTSDIR}/devel/dbus-qt3 \
 PLIST_SUB+=	MEDIA=""
 .else
 CONFIGURE_ARGS+=--without-hal
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-kio_media \
-		${FILESDIR}/extrapatch-kioslave_media_mediamanager-fstabbackend.cpp
 PLIST_SUB+=	MEDIA="@comment "
 .endif
-
 
 post-extract:
 	@${ECHO} "#!/bin/sh" > ${WRKSRC}/mkpamserv

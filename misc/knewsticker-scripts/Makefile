@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Utilityscripts for KNewsTicker
+COMMENT=	Additional scripts for KNewsTicker
 
 KDE_SPLIT=	${KNEWSTICKERAPP_PORTNAME:S/${KDE_SPLIT_DIST}-//}
 KDE_DOC_SPLIT=	# none
@@ -25,7 +25,7 @@ PREFIX=		${KDE_PREFIX}
 USE_AUTOTOOLS=  libtool:15
 USE_GMAKE=	yes
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib/kde3
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"

@@ -1,5 +1,5 @@
---- kioslave/media/mediamanager/halbackend.h.orig	Sun Jan 28 23:58:13 2007
-+++ kioslave/media/mediamanager/halbackend.h	Thu Feb  1 02:51:48 2007
+--- kioslave/media/mediamanager/halbackend.h.orig	Mon Jan 15 12:31:32 2007
++++ kioslave/media/mediamanager/halbackend.h	Wed Feb 21 15:01:12 2007
 @@ -34,6 +34,9 @@
  #include <qobject.h>
  #include <qstringlist.h>
@@ -10,7 +10,7 @@
  
  #include <config.h>
  
-@@ -154,6 +157,9 @@
+@@ -156,6 +159,9 @@
  
  private slots:
  	void slotResult(KIO::Job *job);
@@ -20,10 +20,10 @@
  
  /* Hal call-backs -- from gvm*/
  public:
-@@ -217,6 +223,10 @@
- 	DBusConnection *dbus_connection;
+@@ -233,6 +239,10 @@
+ 	};
  
- 	QMap<KIO::Job *, QString> mount_jobs;
+ 	QMap<KIO::Job *, struct mount_job_data*> mount_jobs;
 +#ifdef Q_OS_FREEBSD
 +	QTimer m_pollTimer;
 +	QPtrList<Medium> m_pollMediaList;
