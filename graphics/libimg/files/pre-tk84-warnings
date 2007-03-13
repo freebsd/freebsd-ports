@@ -1,0 +1,38 @@
+--- imgXPM.c	Tue Jan 15 16:00:08 2002
++++ imgXPM.c	Thu Jun  9 20:33:32 2005
+@@ -287,6 +287,6 @@
+     char buffer[MAX_BUFFER];
+     int i, isMono;
+-    int color1;
+-    unsigned int data;
++    intptr_t color1;
++    uintptr_t data;
+     Tcl_HashEntry *hPtr;
+ 
+@@ -466,5 +466,5 @@
+ 	
+ 	for (i = 0; i < width; ) {
+-	    unsigned int col;
++	    uintptr_t col;
+ 
+ 	    memcpy((char *) &color1, p, byteSize);
+@@ -476,7 +476,7 @@
+ 	     */
+ 	    if (hPtr != (Tcl_HashEntry *)NULL) 
+-	        col = (int)Tcl_GetHashValue(hPtr);
++	        col = (uintptr_t)Tcl_GetHashValue(hPtr);
+ 	    else 
+-	        col = (int)0;
++	        col = 0;
+ 	    
+ 	    /*
+@@ -500,7 +500,7 @@
+ 			hPtr = Tcl_FindHashEntry(&colorTable, (char *) color1);
+ 			if (hPtr != (Tcl_HashEntry *)NULL) 
+-			    col = (int)Tcl_GetHashValue(hPtr);
++			    col = (uintptr_t)Tcl_GetHashValue(hPtr);
+ 			else 
+-			    col = (int)0;
++			    col = 0;
+ 		    }
+ 		} while ((i < width) && col);
