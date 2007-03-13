@@ -7,7 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.3.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-toolkits tk83
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -31,13 +31,11 @@ CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl${TK_VER} \
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk${SHORT_TK_VER}.so.1
 MAKE_ENV=	SHORT_TK_VER=${SHORT_TK_VER}
 PLIST_SUB=	TK_VER=${TK_VER} SHORT_TK_VER=${SHORT_TK_VER}
-PKGINSTALL=	${PKGDIR}/pkg-install.wish
-PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.wish
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for README.html
 TCL83_PORT?=	lang/tcl83
 MANCOMPRESSED=	no
 
-OPTIONS=	TK83_MAN "Install tk 8.3 manpages" on \
+OPTIONS=	TK83_MAN "Install tk 8.3 manpages" off \
 		WISH_WRAPPER "Require wish wrapper from ports" off
 
 .include <bsd.port.pre.mk>
@@ -338,15 +336,11 @@ post-configure:
 	${REINPLACE_CMD} \
 		-e 's|${WRKDIRPREFIX}${.CURDIR}|$${WRKDIRPREFIX}${TKBASE}|' \
 		${WRKSRC}/tkConfig.sh
-.if defined(NO_INSTALL_MANPAGES) || !defined(WITH_TK83_MAN)
-	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
-		${WRKSRC}/Makefile
-.endif
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}/
-.if exists(${PKGINSTALL})
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
+.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK83_MAN)
+	@cd ${WRKSRC} && ${MAKE} -f Makefile install-doc
 .endif
 
 test:

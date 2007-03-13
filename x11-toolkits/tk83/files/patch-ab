@@ -1,11 +1,9 @@
 --- Makefile.in.orig	Wed Oct 23 19:45:50 2002
-+++ Makefile.in	Tue Nov 12 21:56:31 2002
-@@ -57,7 +57,9 @@
- SCRIPT_INSTALL_DIR	= $(INSTALL_ROOT)$(TK_LIBRARY)
++++ Makefile.in	Mon Mar 12 18:00:56 2007
+@@ -58,6 +58,8 @@
  
  # Directory in which to install the include file tk.h:
--INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
-+INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
+ INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
 +GENERIC_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/generic
 +UNIX_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/unix
  
@@ -53,7 +51,14 @@
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f ${STUB_LIB_FILE}
  	@MAKE_STUB_LIB@
-@@ -460,7 +470,7 @@
+@@ -454,13 +464,13 @@
+ 	gdb ./wish --command=gdb.run
+ 	rm gdb.run
+ 
+-install: all install-binaries install-libraries install-demos install-doc
++install: all install-binaries install-libraries install-demos
+ 
+ # Note: before running ranlib below, must cd to target directory because
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
@@ -97,8 +102,7 @@
 -	@for i in $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkPlatDecls.h \
 -		$(GENERIC_DIR)/tkDecls.h ; \
 +	@for i in $(GENERIC_DIR)/*.h ; \
- 	    do \
--	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
++	    do \
 +	    $(INSTALL_DATA) $$i $(GENERIC_INCLUDE_INSTALL_DIR); \
 +	    done;
 +	@for i in $(UNIX_DIR)/*.h ; \
@@ -106,7 +110,8 @@
 +	    $(INSTALL_DATA) $$i $(UNIX_INCLUDE_INSTALL_DIR); \
 +	    done;
 +	@for i in $(INSTALL_HDRS) ; \
-+  	    do \
+ 	    do \
+-	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
 +	    j=`basename $$i` ; \
 +	    ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/$$j $(INCLUDE_INSTALL_DIR)/$$j ; \
  	    done;
