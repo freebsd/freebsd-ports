@@ -9588,6 +9588,7 @@ p5-IO-Null	ports/devel/p5-IO-Null
 p5-IO-Pager	ports/devel/p5-IO-Pager
 p5-IO-Prompt	ports/devel/p5-IO-Prompt
 p5-IO-Socket-Multicast	ports/net/p5-IO-Socket-Multicast
+p5-IO-Socket-Multicast6	ports/net/p5-IO-Socket-Multicast6
 p5-IO-Socket-SSL	ports/security/p5-IO-Socket-SSL
 p5-IO-String	ports/devel/p5-IO-String
 p5-IO-Tee	ports/devel/p5-IO-Tee
