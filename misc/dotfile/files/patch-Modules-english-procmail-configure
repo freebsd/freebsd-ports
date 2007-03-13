@@ -1,0 +1,12 @@
+--- Modules/english/procmail/configure.orig	Sat Feb 19 20:15:42 2000
++++ Modules/english/procmail/configure	Tue Mar 13 12:59:19 2007
+@@ -533,8 +533,7 @@
+ echo "----------------------------------------------------------------------"
+ echo "----------------------------------------------------------------------"
+ 
+-
+-for ac_prog in tclsh7.6 tclsh7.5 tclsh7.4 tclsh
++for ac_prog in tclsh8.2 tclsh8.1 tclsh8.0 tclsh7.6 tclsh7.5 tclsh7.4 tclsh
+ do
+ # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2
