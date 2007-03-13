@@ -62,6 +62,7 @@ mythtv:*:119:119:MythTV pseudo-user:/home/mythtv:/bin/sh
 pdns_recursor:*:120:120:pdns_recursor pseudo-user:/nonexistent:/sbin/nologin
 fetchmail:*:124:124:Fetchmail mail-retrieval daemon:/nonexistent:/sbin/nologin
 postfix:*:125:125:Postfix Mail System:/var/spool/postfix:/sbin/nologin
+navcron:*:127:127:Network Administration Visualized:/usr/local/nav:/sbin/nologin
 vchat:*:128:128:VChat Conferencing System:/nonexistent:/sbin/nologin
 _bgpd:*:130:130:BGP Daemon:/var/empty:/sbin/nologin
 _ospfd:*:131:131:OSPF Daemon:/var/empty:/sbin/nologin

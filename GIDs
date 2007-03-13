@@ -54,6 +54,7 @@ pdns:*:120
 fetchmail:*:124
 postfix:*:125:
 maildrop:*:126:
+nav:*:127:
 vchat:*:128:
 _bgpd:*:130:
 _ospfd:*:131:
