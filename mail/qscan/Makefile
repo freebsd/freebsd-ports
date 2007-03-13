@@ -7,7 +7,7 @@
 
 PORTNAME=	qscan
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail security
 MASTER_SITES=	ftp://ftp.c9x.org/qscan/
 

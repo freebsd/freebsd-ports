@@ -7,6 +7,7 @@
 
 PORTNAME=	MailScanner
 PORTVERSION=	4.58.9
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -85,7 +86,7 @@ PLIST_SUB+=	SPAMASSASSIN_SYMLINK="@comment "
 PLIST_SUB+=	SPAMASSASSIN_SYMLINK=""
 .endif
 
-.if defined(WITH_CLAMAV)
+.if !defined(WITHOUT_CLAMAV)
 RUN_DEPENDS+=	clamscan:${PORTSDIR}/security/clamav
 .endif
 

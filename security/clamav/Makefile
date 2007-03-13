@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	0.90
-PORTREVISION=	3
+PORTVERSION=	0.90.1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -30,6 +29,10 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
+
+# This port has a problem with -pthread,
+# force to use -lthr until it's not fixed.
+PTHREAD_LIBS=	-lthr
 
 PORTDOCS=	*
 
