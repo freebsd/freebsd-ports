@@ -3,8 +3,9 @@ bin/pildriver.py
 bin/pilfile.py
 bin/pilfont.py
 bin/pilprint.py
-include/%%PYTHON_VERSION%%/ImPlatform.h
-include/%%PYTHON_VERSION%%/Imaging.h
+%%PYTHON_INCLUDEDIR%%/ImPlatform.h
+%%PYTHON_INCLUDEDIR%%/Imaging.h
+%%PYTHON_SITELIBDIR%%/PIL.pth
 %%PYTHON_SITELIBDIR%%/PIL/ArgImagePlugin.py
 %%PYTHON_SITELIBDIR%%/PIL/ArgImagePlugin.pyc
 %%PYTHON_SITELIBDIR%%/PIL/ArgImagePlugin.pyo
@@ -86,6 +87,9 @@ include/%%PYTHON_VERSION%%/Imaging.h
 %%PYTHON_SITELIBDIR%%/PIL/ImageDraw.py
 %%PYTHON_SITELIBDIR%%/PIL/ImageDraw.pyc
 %%PYTHON_SITELIBDIR%%/PIL/ImageDraw.pyo
+%%PYTHON_SITELIBDIR%%/PIL/ImageDraw2.py
+%%PYTHON_SITELIBDIR%%/PIL/ImageDraw2.pyc
+%%PYTHON_SITELIBDIR%%/PIL/ImageDraw2.pyo
 %%PYTHON_SITELIBDIR%%/PIL/ImageEnhance.py
 %%PYTHON_SITELIBDIR%%/PIL/ImageEnhance.pyc
 %%PYTHON_SITELIBDIR%%/PIL/ImageEnhance.pyo
@@ -107,6 +111,12 @@ include/%%PYTHON_VERSION%%/Imaging.h
 %%PYTHON_SITELIBDIR%%/PIL/ImageGrab.py
 %%PYTHON_SITELIBDIR%%/PIL/ImageGrab.pyc
 %%PYTHON_SITELIBDIR%%/PIL/ImageGrab.pyo
+%%PYTHON_SITELIBDIR%%/PIL/ImageMath.py
+%%PYTHON_SITELIBDIR%%/PIL/ImageMath.pyc
+%%PYTHON_SITELIBDIR%%/PIL/ImageMath.pyo
+%%PYTHON_SITELIBDIR%%/PIL/ImageMode.py
+%%PYTHON_SITELIBDIR%%/PIL/ImageMode.pyc
+%%PYTHON_SITELIBDIR%%/PIL/ImageMode.pyo
 %%PYTHON_SITELIBDIR%%/PIL/ImageOps.py
 %%PYTHON_SITELIBDIR%%/PIL/ImageOps.pyc
 %%PYTHON_SITELIBDIR%%/PIL/ImageOps.pyo
@@ -116,6 +126,9 @@ include/%%PYTHON_VERSION%%/Imaging.h
 %%PYTHON_SITELIBDIR%%/PIL/ImagePath.py
 %%PYTHON_SITELIBDIR%%/PIL/ImagePath.pyc
 %%PYTHON_SITELIBDIR%%/PIL/ImagePath.pyo
+%%PYTHON_SITELIBDIR%%/PIL/ImageQt.py
+%%PYTHON_SITELIBDIR%%/PIL/ImageQt.pyc
+%%PYTHON_SITELIBDIR%%/PIL/ImageQt.pyo
 %%PYTHON_SITELIBDIR%%/PIL/ImageSequence.py
 %%PYTHON_SITELIBDIR%%/PIL/ImageSequence.pyc
 %%PYTHON_SITELIBDIR%%/PIL/ImageSequence.pyo
@@ -229,8 +242,8 @@ include/%%PYTHON_VERSION%%/Imaging.h
 %%PYTHON_SITELIBDIR%%/PIL/__init__.pyo
 %%PYTHON_SITELIBDIR%%/PIL/_imaging.so
 %%PYTHON_SITELIBDIR%%/PIL/_imagingft.so
+%%PYTHON_SITELIBDIR%%/PIL/_imagingmath.so
 %%TKINTER%%%%PYTHON_SITELIBDIR%%/PIL/_imagingtk.so
-%%PYTHON_SITELIBDIR%%/PIL.pth
 @dirrm %%PYTHON_SITELIBDIR%%/PIL
 %%EXAMPLESDIR%%/README
 %%EXAMPLESDIR%%/enhancer.py
