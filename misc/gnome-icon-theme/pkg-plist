@@ -244,6 +244,10 @@ share/icons/gnome/16x16/actions/up.png
 share/icons/gnome/16x16/actions/view-fullscreen.png
 share/icons/gnome/16x16/actions/view-refresh.png
 share/icons/gnome/16x16/actions/view-restore.png
+share/icons/gnome/16x16/actions/viewmag+.png
+share/icons/gnome/16x16/actions/viewmag-.png
+share/icons/gnome/16x16/actions/viewmag1.png
+share/icons/gnome/16x16/actions/viewmagfit.png
 share/icons/gnome/16x16/actions/window-close.png
 share/icons/gnome/16x16/actions/window-new.png
 share/icons/gnome/16x16/actions/window_fullscreen.png
@@ -1766,6 +1770,10 @@ share/icons/gnome/22x22/actions/up.png
 share/icons/gnome/22x22/actions/view-fullscreen.png
 share/icons/gnome/22x22/actions/view-refresh.png
 share/icons/gnome/22x22/actions/view-restore.png
+share/icons/gnome/22x22/actions/viewmag+.png
+share/icons/gnome/22x22/actions/viewmag-.png
+share/icons/gnome/22x22/actions/viewmag1.png
+share/icons/gnome/22x22/actions/viewmagfit.png
 share/icons/gnome/22x22/actions/window-close.png
 share/icons/gnome/22x22/actions/window-new.png
 share/icons/gnome/22x22/actions/window_fullscreen.png
@@ -2476,6 +2484,10 @@ share/icons/gnome/24x24/actions/up.png
 share/icons/gnome/24x24/actions/view-fullscreen.png
 share/icons/gnome/24x24/actions/view-refresh.png
 share/icons/gnome/24x24/actions/view-restore.png
+share/icons/gnome/24x24/actions/viewmag+.png
+share/icons/gnome/24x24/actions/viewmag-.png
+share/icons/gnome/24x24/actions/viewmag1.png
+share/icons/gnome/24x24/actions/viewmagfit.png
 share/icons/gnome/24x24/actions/window-close.png
 share/icons/gnome/24x24/actions/window-new.png
 share/icons/gnome/24x24/actions/window_fullscreen.png
@@ -2720,8 +2732,8 @@ share/icons/gnome/24x24/devices/stock_mic.png
 share/icons/gnome/24x24/devices/stock_printers.png
 share/icons/gnome/24x24/devices/system-floppy.png
 share/icons/gnome/24x24/devices/system.png
-share/icons/gnome/24x24/devices/video-display.png
 share/icons/gnome/24x24/devices/usbpendrive_unmount.png
+share/icons/gnome/24x24/devices/video-display.png
 share/icons/gnome/24x24/devices/xfce-printer.png
 share/icons/gnome/24x24/devices/xfce4-display.png
 share/icons/gnome/24x24/devices/xfce4-keyboard.png
@@ -3731,6 +3743,10 @@ share/icons/gnome/32x32/actions/top.png
 share/icons/gnome/32x32/actions/up.png
 share/icons/gnome/32x32/actions/view-fullscreen.png
 share/icons/gnome/32x32/actions/view-restore.png
+share/icons/gnome/32x32/actions/viewmag+.png
+share/icons/gnome/32x32/actions/viewmag-.png
+share/icons/gnome/32x32/actions/viewmag1.png
+share/icons/gnome/32x32/actions/viewmagfit.png
 share/icons/gnome/32x32/actions/window-new.png
 share/icons/gnome/32x32/actions/window_fullscreen.png
 share/icons/gnome/32x32/actions/window_new.png
@@ -4018,8 +4034,8 @@ share/icons/gnome/32x32/mimetypes/x-office-presentation.png
 share/icons/gnome/32x32/mimetypes/x-office-spreadsheet.png
 share/icons/gnome/32x32/mimetypes/zip.png
 share/icons/gnome/32x32/places/application-x-gnome-saved-search.png
-share/icons/gnome/32x32/places/distributor-logo.png
 share/icons/gnome/32x32/places/desktop.png
+share/icons/gnome/32x32/places/distributor-logo.png
 share/icons/gnome/32x32/places/emptytrash.png
 share/icons/gnome/32x32/places/folder-remote.png
 share/icons/gnome/32x32/places/folder-saved-search.png
@@ -4487,6 +4503,10 @@ share/icons/gnome/scalable/actions/top.svg
 share/icons/gnome/scalable/actions/up.svg
 share/icons/gnome/scalable/actions/view-fullscreen.svg
 share/icons/gnome/scalable/actions/view-restore.svg
+share/icons/gnome/scalable/actions/viewmag+.svg
+share/icons/gnome/scalable/actions/viewmag-.svg
+share/icons/gnome/scalable/actions/viewmag1.svg
+share/icons/gnome/scalable/actions/viewmagfit.svg
 share/icons/gnome/scalable/actions/window-new.svg
 share/icons/gnome/scalable/actions/window_fullscreen.svg
 share/icons/gnome/scalable/actions/window_new.svg
@@ -4969,12 +4989,62 @@ share/icons/gnome/scalable/status/weather-snow.svg
 share/icons/gnome/scalable/status/weather-storm.svg
 share/icons/gnome/scalable/status/xfce-trash_full.svg
 share/icons/gnome/scalable/stock/generic/stock_person.svg
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/tk/LC_MESSAGES
+@dirrmtry share/locale/tk
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/li/LC_MESSAGES
+@dirrmtry share/locale/li
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be
 @dirrmtry share/icons/gnome/scalable/stock/generic
 @dirrmtry share/icons/gnome/scalable/stock
 @dirrmtry share/icons/gnome/scalable/status
