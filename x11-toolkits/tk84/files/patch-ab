@@ -1,6 +1,6 @@
---- Makefile.in.orig	Wed Apr 19 14:29:37 2006
-+++ Makefile.in	Sun Jun  4 22:40:52 2006
-@@ -63,6 +63,8 @@
+--- Makefile.in.orig	Thu Oct 19 19:27:34 2006
++++ Makefile.in	Mon Mar 12 18:18:40 2007
+@@ -64,6 +64,8 @@
  
  # Directory in which to install the include file tk.h:
  INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
@@ -9,7 +9,7 @@
  
  # Path to the private tk header dir:
  PRIVATE_INCLUDE_DIR	= @PRIVATE_INCLUDE_DIR@
-@@ -93,7 +95,7 @@
+@@ -94,7 +96,7 @@
  # The directory containing the Tcl sources and headers appropriate
  # for this version of Tk ("srcdir" will be replaced or has already
  # been replaced by the configure script):
@@ -18,7 +18,7 @@
  
  # The directory containing the Tcl library archive file appropriate
  # for this version of Tk:
-@@ -129,7 +131,7 @@
+@@ -130,7 +132,7 @@
  #CFLAGS			= $(CFLAGS_DEBUG)
  #CFLAGS			= $(CFLAGS_OPTIMIZE)
  #CFLAGS			= $(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
@@ -27,7 +27,7 @@
  
  # Flags to pass to the linker
  LDFLAGS_DEBUG		= @LDFLAGS_DEBUG@
-@@ -264,7 +266,7 @@
+@@ -265,7 +267,7 @@
  STLIB_LD		= @STLIB_LD@
  SHLIB_LD		= @SHLIB_LD@
  SHLIB_LD_LIBS		= @SHLIB_LD_LIBS@
@@ -36,7 +36,7 @@
  
  # Additional search flags needed to find the various shared libraries
  # at run-time.  The first symbol is for use when creating a binary
-@@ -476,6 +478,8 @@
+@@ -477,6 +479,8 @@
  	default.h ks_names.h tkPatch.h tk.h tkButton.h tkCanvas.h tkInt.h  \
  	tkPort.h tkScrollbar.h tkText.h
  
@@ -45,7 +45,7 @@
  DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
  
  all: binaries libraries doc
-@@ -495,6 +499,12 @@
+@@ -496,6 +500,12 @@
  ${LIB_FILE}: ${OBJS} ${STUB_LIB_FILE} @LIB_RSRC_FILE@
  	rm -f $@
  	@MAKE_LIB@
@@ -58,7 +58,16 @@
  
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
-@@ -613,7 +623,8 @@
+@@ -601,7 +611,7 @@
+ 	gdb ./wish --command=gdb.run
+ 	rm gdb.run
+ 
+-INSTALL_TARGETS = install-binaries install-libraries install-demos install-doc @EXTRA_INSTALL@
++INSTALL_TARGETS = install-binaries install-libraries install-demos @EXTRA_INSTALL@
+ 
+ install: $(INSTALL_TARGETS)
+ 
+@@ -614,7 +624,8 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  

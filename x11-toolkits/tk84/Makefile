@@ -7,7 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.4.14
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	x11-toolkits tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -69,7 +69,14 @@ CONFLICTS=		tk-threads-8.4*
 RUN_DEPENDS+=		wish:${PORTSDIR}/lang/tcl-tk-wrapper
 .endif
 
-.if !defined(NO_INSTALL_MANPAGES) && !defined(WITHOUT_TK84_MAN)
+.if defined(NO_INSTALL_MANPAGES) || !defined(WITH_TK84_MAN)
+
+PLIST_SUB+=	INSTMAN='@comment '
+
+.else
+
+DATADIR=	${PREFIX}/share/${PORTNAME}${TCL_VER}
+PLIST_SUB+=	INSTMAN=''
 
 MAN1=	wish.1
 MAN3=	3DBorder.3 AddOption.3 BindTable.3 CanvPsY.3 CanvTkwin.3 \
@@ -382,24 +389,23 @@ pre-everything::
 pre-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
-.for mp in ${MAN1} ${MAN3} ${MANN}
-	@${REINPLACE_CMD} -e 's|^.so man.macros|.so ${DATADIR}/man.macros|'	\
-		${WRKSRC}/../doc/${mp}
-.endfor
 
 post-configure:
 	${REINPLACE_CMD} \
 		-e 's|${WRKDIRPREFIX}${.CURDIR}|$${WRKDIRPREFIX}${TKBASE}|' \
 		${WRKSRC}/tkConfig.sh
-.if defined(NO_INSTALL_MANPAGES) || defined(WITHOUT_TK84_MAN)
-	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
-		${WRKSRC}/Makefile
-.endif
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}/
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/man.macros ${DATADIR}
+.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK84_MAN)
+.for mp in ${MAN1} ${MAN3} ${MANN}
+	@${REINPLACE_CMD} -e 's|^.so man.macros|.so ${DATADIR}/man.macros|'	\
+		${WRKSRC}/../doc/${mp}
+.endfor
+	@cd ${WRKSRC} && ${MAKE} install-doc ${MAKE_ENV}
+.endif
 
 regression-test:	build
 	cd ${WRKSRC}; ${MAKE} test
