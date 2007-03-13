@@ -215,6 +215,7 @@ lib/vice/fonts/vice-cbm.pcf
 %%PORTDOCS%%%%DOCSDIR%%/Walkthrough-Howto.txt
 %%PORTDOCS%%%%DOCSDIR%%/Win32-Howto.txt
 %%PORTDOCS%%%%DOCSDIR%%/amigaos.html
+%%PORTDOCS%%%%DOCSDIR%%/beos.html
 %%PORTDOCS%%%%DOCSDIR%%/cartconv.txt
 %%PORTDOCS%%%%DOCSDIR%%/cbm_basic_tokens.txt
 %%PORTDOCS%%%%DOCSDIR%%/drive_info.txt
@@ -222,6 +223,7 @@ lib/vice/fonts/vice-cbm.pcf
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/mon.txt
 %%PORTDOCS%%%%DOCSDIR%%/new.gif
+%%PORTDOCS%%%%DOCSDIR%%/openGLsync-howto.txt
 %%PORTDOCS%%%%DOCSDIR%%/serial.txt
 %%PORTDOCS%%%%DOCSDIR%%/solaris.html
 %%PORTDOCS%%%%DOCSDIR%%/vice_1.html

@@ -1,11 +1,11 @@
---- doc/html/Makefile.in.orig	Sun Aug 27 22:15:28 2006
-+++ doc/html/Makefile.in	Thu Sep  7 21:25:55 2006
-@@ -245,7 +245,7 @@
+--- doc/html/Makefile.in.orig	Sun Mar  4 23:06:04 2007
++++ doc/html/Makefile.in	Tue Mar 13 12:55:43 2007
+@@ -274,7 +274,7 @@
  xpet_LDFLAGS = @xpet_LDFLAGS@
  xplus4_LDFLAGS = @xplus4_LDFLAGS@
  xvic_LDFLAGS = @xvic_LDFLAGS@
 -docdir = $(VICEDIR)/doc
 +docdir = $(prefix)/share/doc/vice
- 
  doc_DATA = \
  	amigaos.html \
+ 	beos.html \
