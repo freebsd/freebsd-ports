@@ -24,5 +24,10 @@ USE_GMAKE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|zeroconf||' ${WRKSRC}/plugins/Makefile.in
+	@${FIND} ${WRKSRC} -name Makefile.in | \
+		${XARGS} ${REINPLACE_CMD} \
+		-e '/^INCLUDES =/{:loop' -e '/\\$$/{N;bloop' \
+		-e '};/$$(all_includes)/{s///;s/$$/ $$(all_includes)/' \
+		-e '}' -e '}'
 
 .include <bsd.port.mk>
