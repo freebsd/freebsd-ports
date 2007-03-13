@@ -24,6 +24,9 @@
 # RTCPU in your OPTIONS selection.
 # The correct instruction set of your processor is normally
 # auto-detected, so there is probably no necessity to change them.
+# Note that disabling SIMD via the OPTIONS framework completely
+# disables utilization of vector engines, i.e. it implies
+# WITHOUT_MMX, WITHOUT_3DNOW and WITHOUT_SSE
 #
 # WITHOUT_MMX
 # default: autodetected
@@ -32,10 +35,6 @@
 # WITHOUT_3DNOW
 # default: autodetected
 # disables using of 3dNow! instructions on AMD CPUs
-#
-# WITHOUT_DSP
-# default: autodetected
-# disables using of AMD Athlon DSP extentions
 #
 # WITHOUT_SSE
 # default: autodetected
@@ -131,6 +130,7 @@ OPTIONS=	DEBUG "Include debug symbols in mplayer's binary files" off
 .if !defined(MPLAYER_GENERIC_BUILD)
 OPTIONS+=	RTCPU "Let mplayer dynamically check for CPU features" on
 OPTIONS+=	OCFLAGS "Use optimized compiler flags" on
+OPTIONS+=	SIMD "Allow mplayer to use vector engines (MMX...)" on
 OPTIONS+=	MENCODER "Support encoding of multimedia files" on
 OPTIONS+=	IPV6 "Include inet6 network support" on
 OPTIONS+=	X11 "Enable X11 support for mplayer's video output" on
@@ -316,7 +316,7 @@ CONFIGURE_ARGS+=	--disable-mencoder
 PLIST_SUB+=	MENCODER="@comment "
 .endif
 
-.if defined(WITH_NVIDIA)
+.if defined(WITH_NVIDIA) && ${OSVERSION} < 600033
 LIB_DEPENDS+=	XvMCNVIDIA.1:${PORTSDIR}/x11/nvidia-driver
 CONFIGURE_ARGS+=	--enable-xvmc \
 			--enable-xvmclib=XvMCNVIDIA
@@ -587,21 +587,18 @@ DEFAULT_KERN_HZ=1024
 .endif
 
 # "enable" build for other archs
-.if ${ARCH} == "i386"
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
 .if !defined(WITHOUT_RTCPU)
 CONFIGURE_ARGS+=--enable-runtime-cpudetection
 .else #WITH_RTCPU
-.if defined(WITHOUT_MMX)
+.if defined(WITHOUT_MMX) || defined(WITHOUT_SIMD)
 CONFIGURE_ARGS+=--disable-mmx
 .endif
-.if defined(WITHOUT_3DNOW) || ${OSVERSION} < 400021
-CONFIGURE_ARGS+=--disable-3dnow
+.if defined(WITHOUT_3DNOW) || defined(WITHOUT_SIMD) || ${OSVERSION} < 400021
+CONFIGURE_ARGS+=--disable-3dnow --disable-3dnowext
 .endif
-.if defined(WITHOUT_DSP) || defined(WITHOUT_3DNOW) || ${OSVERSION} < 400021
-CONFIGURE_ARGS+=--disable-3dnowex
-.endif
-.if defined(WITHOUT_SSE)
-CONFIGURE_ARGS+=--disable-mmx2 --disable-sse --disable-sse2
+.if defined(WITHOUT_SSE) || defined(WITHOUT_SIMD)
+CONFIGURE_ARGS+=--disable-mmxext --disable-sse --disable-sse2
 .endif
 .endif #WITH_RTCPU
 .if !defined(WITHOUT_WIN32)
@@ -613,7 +610,7 @@ CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 CONFIGURE_ARGS+=	--disable-win32 \
 			--disable-qtx-codecs
 .endif
-.endif # ARCH == i386
+.endif # ARCH == i386/amd64
 
 pre-everything::
 	@${ECHO_MSG} "N - O - T - E"
