@@ -123,7 +123,6 @@ share/applications/kde/kdf.desktop
 share/applications/kde/kgpg.desktop
 share/applications/kde/khexedit.desktop
 share/applications/kde/kregexpeditor.desktop
-share/applications/kde/ksim.desktop
 share/applications/kde/ktimer.desktop
 share/applications/kde/kwalletconfig.desktop
 share/applications/kde/kwalletmanager-kwalletd.desktop

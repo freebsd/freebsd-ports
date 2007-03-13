@@ -69,7 +69,6 @@ share/doc/HTML/da/krita/index.cache.bz2
 share/doc/HTML/da/krita/index.docbook
 share/doc/HTML/da/krita/installation.docbook
 share/doc/HTML/da/krita/introduction.docbook
-share/doc/HTML/da/krita/scripting.docbook
 share/doc/HTML/da/krita/settings.docbook
 share/doc/HTML/da/krita/tutorial-quick-starts.docbook
 share/doc/HTML/da/krita/tutorial-select-layer.docbook
@@ -152,7 +151,6 @@ share/locale/da/LC_MESSAGES/desktop_koffice.mo
 share/locale/da/LC_MESSAGES/example.mo
 share/locale/da/LC_MESSAGES/karbon.mo
 share/locale/da/LC_MESSAGES/kchart.mo
-share/locale/da/LC_MESSAGES/kdgantt.mo
 share/locale/da/LC_MESSAGES/kexi.mo
 share/locale/da/LC_MESSAGES/kfile_abiword.mo
 share/locale/da/LC_MESSAGES/kfile_gnumeric.mo

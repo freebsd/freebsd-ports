@@ -29,7 +29,7 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=  libtool:15
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/kdegraphics-${PORTVERSION}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 pre-configure:
 	${ECHO_CMD} libkscan ${PORTNAME} doc > ${WRKSRC}/inst-apps

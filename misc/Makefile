@@ -254,10 +254,12 @@
     SUBDIR += koffice-i18n-fa
     SUBDIR += koffice-i18n-fi
     SUBDIR += koffice-i18n-ga
+    SUBDIR += koffice-i18n-gl
     SUBDIR += koffice-i18n-hi
     SUBDIR += koffice-i18n-hsb
     SUBDIR += koffice-i18n-is
     SUBDIR += koffice-i18n-it
+    SUBDIR += koffice-i18n-km
     SUBDIR += koffice-i18n-lo
     SUBDIR += koffice-i18n-lt
     SUBDIR += koffice-i18n-lv

@@ -72,6 +72,9 @@ share/doc/HTML/pt/docs/common/gpl-translated.html
 share/doc/HTML/pt/docs/common/kde-localised.css
 share/doc/HTML/pt/docs/common/lgpl-translated.html
 share/doc/HTML/pt/docs/common/logotp3.png
+share/doc/HTML/pt/irkick/common
+share/doc/HTML/pt/irkick/index.cache.bz2
+share/doc/HTML/pt/irkick/index.docbook
 share/doc/HTML/pt/juk/common
 share/doc/HTML/pt/juk/index.cache.bz2
 share/doc/HTML/pt/juk/index.docbook
@@ -198,6 +201,9 @@ share/doc/HTML/pt/kcalc/index.docbook
 share/doc/HTML/pt/kcharselect/common
 share/doc/HTML/pt/kcharselect/index.cache.bz2
 share/doc/HTML/pt/kcharselect/index.docbook
+share/doc/HTML/pt/kcmlirc/common
+share/doc/HTML/pt/kcmlirc/index.cache.bz2
+share/doc/HTML/pt/kcmlirc/index.docbook
 share/doc/HTML/pt/kcoloredit/common
 share/doc/HTML/pt/kcoloredit/index.cache.bz2
 share/doc/HTML/pt/kcoloredit/index.docbook
@@ -401,12 +407,6 @@ share/doc/HTML/pt/kdelibs/man-dcop.1.docbook
 share/doc/HTML/pt/kdelibs/man-kbuildsycoca.8.docbook
 share/doc/HTML/pt/kdelibs/man-kdeoptions.7.docbook
 share/doc/HTML/pt/kdelibs/man-qtoptions.7.docbook
-share/doc/HTML/pt/kdelirc/irkick/common
-share/doc/HTML/pt/kdelirc/irkick/index.cache.bz2
-share/doc/HTML/pt/kdelirc/irkick/index.docbook
-share/doc/HTML/pt/kdelirc/kcmlirc/common
-share/doc/HTML/pt/kdelirc/kcmlirc/index.cache.bz2
-share/doc/HTML/pt/kdelirc/kcmlirc/index.docbook
 share/doc/HTML/pt/kdeprint/add-printer-wiz.docbook
 share/doc/HTML/pt/kdeprint/common
 share/doc/HTML/pt/kdeprint/cups-config.docbook
@@ -585,6 +585,7 @@ share/doc/HTML/pt/khelpcenter/userguide/common
 share/doc/HTML/pt/khelpcenter/userguide/control-center.docbook
 share/doc/HTML/pt/khelpcenter/userguide/creating-graphics.docbook
 share/doc/HTML/pt/khelpcenter/userguide/credits-and-license.docbook
+share/doc/HTML/pt/khelpcenter/userguide/customizing-desktop.docbook
 share/doc/HTML/pt/khelpcenter/userguide/email.docbook
 share/doc/HTML/pt/khelpcenter/userguide/extragear-applications.docbook
 share/doc/HTML/pt/khelpcenter/userguide/file-sharing.docbook
@@ -1763,6 +1764,7 @@ share/locale/pt/LC_MESSAGES/khotkeys.mo
 share/locale/pt/LC_MESSAGES/khtmlkttsd.mo
 share/locale/pt/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/pt/LC_MESSAGES/kicker.mo
+share/locale/pt/LC_MESSAGES/kickermenu_kate.mo
 share/locale/pt/LC_MESSAGES/kiconedit.mo
 share/locale/pt/LC_MESSAGES/kig.mo
 share/locale/pt/LC_MESSAGES/kimagemapeditor.mo
@@ -1800,6 +1802,7 @@ share/locale/pt/LC_MESSAGES/kio_thumbnail.mo
 share/locale/pt/LC_MESSAGES/kio_trash.mo
 share/locale/pt/LC_MESSAGES/kio_zeroconf.mo
 share/locale/pt/LC_MESSAGES/kioexec.mo
+share/locale/pt/LC_MESSAGES/kitchensync.mo
 share/locale/pt/LC_MESSAGES/kiten.mo
 share/locale/pt/LC_MESSAGES/kjobviewer.mo
 share/locale/pt/LC_MESSAGES/kjots.mo
@@ -2003,6 +2006,7 @@ share/locale/pt/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/pt/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/pt/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/pt/LC_MESSAGES/libkickermenu_tom.mo
+share/locale/pt/LC_MESSAGES/libkitchensync.mo
 share/locale/pt/LC_MESSAGES/libkleopatra.mo
 share/locale/pt/LC_MESSAGES/libkmime.mo
 share/locale/pt/LC_MESSAGES/libkonq.mo
@@ -2232,9 +2236,6 @@ share/locale/pt/flag.png
 @dirrm share/doc/HTML/pt/kdesvn-build
 @dirrm share/doc/HTML/pt/kdesu
 @dirrm share/doc/HTML/pt/kdeprint
-@dirrm share/doc/HTML/pt/kdelirc/kcmlirc
-@dirrm share/doc/HTML/pt/kdelirc/irkick
-@dirrm share/doc/HTML/pt/kdelirc
 @dirrm share/doc/HTML/pt/kdelibs
 @dirrm share/doc/HTML/pt/kdebugdialog
 @dirrm share/doc/HTML/pt/kdearch
@@ -2299,6 +2300,7 @@ share/locale/pt/flag.png
 @dirrm share/doc/HTML/pt/kcontrol/arts
 @dirrm share/doc/HTML/pt/kcontrol
 @dirrm share/doc/HTML/pt/kcoloredit
+@dirrm share/doc/HTML/pt/kcmlirc
 @dirrm share/doc/HTML/pt/kcharselect
 @dirrm share/doc/HTML/pt/kcalc
 @dirrm share/doc/HTML/pt/kcachegrind
@@ -2325,6 +2327,7 @@ share/locale/pt/flag.png
 @dirrm share/doc/HTML/pt/kaddressbook
 @dirrm share/doc/HTML/pt/kaboodle
 @dirrm share/doc/HTML/pt/juk
+@dirrm share/doc/HTML/pt/irkick
 @dirrm share/doc/HTML/pt/docs/common
 @dirrm share/doc/HTML/pt/docs
 @dirrm share/doc/HTML/pt/cervisia

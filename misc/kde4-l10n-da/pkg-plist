@@ -139,6 +139,9 @@ share/doc/HTML/da/docs/common/gpl-translated.html
 share/doc/HTML/da/docs/common/kde-localised.css
 share/doc/HTML/da/docs/common/lgpl-translated.html
 share/doc/HTML/da/docs/common/logotp3.png
+share/doc/HTML/da/irkick/common
+share/doc/HTML/da/irkick/index.cache.bz2
+share/doc/HTML/da/irkick/index.docbook
 share/doc/HTML/da/juk/common
 share/doc/HTML/da/juk/index.cache.bz2
 share/doc/HTML/da/juk/index.docbook
@@ -255,6 +258,9 @@ share/doc/HTML/da/kcalc/index.docbook
 share/doc/HTML/da/kcharselect/common
 share/doc/HTML/da/kcharselect/index.cache.bz2
 share/doc/HTML/da/kcharselect/index.docbook
+share/doc/HTML/da/kcmlirc/common
+share/doc/HTML/da/kcmlirc/index.cache.bz2
+share/doc/HTML/da/kcmlirc/index.docbook
 share/doc/HTML/da/kcoloredit/common
 share/doc/HTML/da/kcoloredit/index.cache.bz2
 share/doc/HTML/da/kcoloredit/index.docbook
@@ -449,12 +455,6 @@ share/doc/HTML/da/kdelibs/man-dcop.1.docbook
 share/doc/HTML/da/kdelibs/man-kbuildsycoca.8.docbook
 share/doc/HTML/da/kdelibs/man-kdeoptions.7.docbook
 share/doc/HTML/da/kdelibs/man-qtoptions.7.docbook
-share/doc/HTML/da/kdelirc/irkick/common
-share/doc/HTML/da/kdelirc/irkick/index.cache.bz2
-share/doc/HTML/da/kdelirc/irkick/index.docbook
-share/doc/HTML/da/kdelirc/kcmlirc/common
-share/doc/HTML/da/kdelirc/kcmlirc/index.cache.bz2
-share/doc/HTML/da/kdelirc/kcmlirc/index.docbook
 share/doc/HTML/da/kdeprint/add-printer-wiz.docbook
 share/doc/HTML/da/kdeprint/common
 share/doc/HTML/da/kdeprint/cups-config.docbook
@@ -617,6 +617,7 @@ share/doc/HTML/da/khelpcenter/userguide/common
 share/doc/HTML/da/khelpcenter/userguide/control-center.docbook
 share/doc/HTML/da/khelpcenter/userguide/creating-graphics.docbook
 share/doc/HTML/da/khelpcenter/userguide/credits-and-license.docbook
+share/doc/HTML/da/khelpcenter/userguide/customizing-desktop.docbook
 share/doc/HTML/da/khelpcenter/userguide/email.docbook
 share/doc/HTML/da/khelpcenter/userguide/extragear-applications.docbook
 share/doc/HTML/da/khelpcenter/userguide/file-sharing.docbook
@@ -1069,6 +1070,7 @@ share/doc/HTML/da/kontact/index.docbook
 share/doc/HTML/da/kooka/common
 share/doc/HTML/da/kooka/index.cache.bz2
 share/doc/HTML/da/kooka/index.docbook
+share/doc/HTML/da/kopete/chatstyle.docbook
 share/doc/HTML/da/kopete/common
 share/doc/HTML/da/kopete/index.cache.bz2
 share/doc/HTML/da/kopete/index.docbook
@@ -1761,6 +1763,7 @@ share/locale/da/LC_MESSAGES/khotkeys.mo
 share/locale/da/LC_MESSAGES/khtmlkttsd.mo
 share/locale/da/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/da/LC_MESSAGES/kicker.mo
+share/locale/da/LC_MESSAGES/kickermenu_kate.mo
 share/locale/da/LC_MESSAGES/kiconedit.mo
 share/locale/da/LC_MESSAGES/kig.mo
 share/locale/da/LC_MESSAGES/kimagemapeditor.mo
@@ -1798,6 +1801,7 @@ share/locale/da/LC_MESSAGES/kio_thumbnail.mo
 share/locale/da/LC_MESSAGES/kio_trash.mo
 share/locale/da/LC_MESSAGES/kio_zeroconf.mo
 share/locale/da/LC_MESSAGES/kioexec.mo
+share/locale/da/LC_MESSAGES/kitchensync.mo
 share/locale/da/LC_MESSAGES/kiten.mo
 share/locale/da/LC_MESSAGES/kjobviewer.mo
 share/locale/da/LC_MESSAGES/kjots.mo
@@ -2001,6 +2005,7 @@ share/locale/da/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/da/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/da/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/da/LC_MESSAGES/libkickermenu_tom.mo
+share/locale/da/LC_MESSAGES/libkitchensync.mo
 share/locale/da/LC_MESSAGES/libkleopatra.mo
 share/locale/da/LC_MESSAGES/libkmime.mo
 share/locale/da/LC_MESSAGES/libkonq.mo
@@ -2225,9 +2230,6 @@ share/locale/da/flag.png
 @dirrm share/doc/HTML/da/kdesvn-build
 @dirrm share/doc/HTML/da/kdesu
 @dirrm share/doc/HTML/da/kdeprint
-@dirrm share/doc/HTML/da/kdelirc/kcmlirc
-@dirrm share/doc/HTML/da/kdelirc/irkick
-@dirrm share/doc/HTML/da/kdelirc
 @dirrm share/doc/HTML/da/kdelibs
 @dirrm share/doc/HTML/da/kdebugdialog
 @dirrm share/doc/HTML/da/kdearch
@@ -2288,6 +2290,7 @@ share/locale/da/flag.png
 @dirrm share/doc/HTML/da/kcontrol/arts
 @dirrm share/doc/HTML/da/kcontrol
 @dirrm share/doc/HTML/da/kcoloredit
+@dirrm share/doc/HTML/da/kcmlirc
 @dirrm share/doc/HTML/da/kcharselect
 @dirrm share/doc/HTML/da/kcalc
 @dirrm share/doc/HTML/da/kcachegrind
@@ -2314,6 +2317,7 @@ share/locale/da/flag.png
 @dirrm share/doc/HTML/da/kaddressbook
 @dirrm share/doc/HTML/da/kaboodle
 @dirrm share/doc/HTML/da/juk
+@dirrm share/doc/HTML/da/irkick
 @dirrm share/doc/HTML/da/docs/common
 @dirrm share/doc/HTML/da/docs
 @dirrm share/doc/HTML/da/cervisia

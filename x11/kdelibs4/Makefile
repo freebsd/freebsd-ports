@@ -8,7 +8,6 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	4
 CATEGORIES=	x11 kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -56,8 +55,7 @@ USE_OPENSSL=	yes
 USE_QT_VER=	3
 PREFIX=		${KDE_PREFIX}
 
-USE_LDCONFIG=	yes
-LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
+USE_LDCONFIG=	${PREFIX}/lib/kde3
 
 USE_AUTOTOOLS=  libtool:15
 CONFIGURE_TARGET=# empty
@@ -101,12 +99,5 @@ post-configure:
 	${TOUCH} ${WRKSRC}/kdecore/kdemacros.h.in
 	${TOUCH} ${WRKSRC}/kio/kssl/ksslconfig.h.in
 	${TOUCH} ${WRKSRC}/kjs/global.h.in
-
-post-install:
-	${MKDIR} ${PREFIX}/etc/rc.d
-	${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${FILESDIR}/kdelibs.sh \
-		> ${PREFIX}/etc/rc.d/kdelibs.sh
-	${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/kdelibs.sh
-	${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/etc/rc.d/kdelibs.sh
 
 .include <bsd.port.post.mk>

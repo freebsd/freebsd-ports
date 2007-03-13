@@ -1,3 +1,4 @@
+share/apps/katepart/syntax/logohighlightstyle.sk.xml
 share/apps/klettres/sk/alpha/a-0.ogg
 share/apps/klettres/sk/alpha/a-1.ogg
 share/apps/klettres/sk/alpha/a-10.ogg
@@ -132,6 +133,20 @@ share/apps/ktuberling/sounds/sk/okuliare.wav
 share/apps/ktuberling/sounds/sk/slnecneokuliare.wav
 share/apps/ktuberling/sounds/sk/ucho.wav
 share/apps/ktuberling/sounds/sk/usta.wav
+share/apps/kturtle/data/logokeywords.sk.xml
+share/apps/kturtle/examples/sk/farbenieplatna.logo
+share/apps/kturtle/examples/sk/kde.logo
+share/apps/kturtle/examples/sk/kvet.logo
+share/apps/kturtle/examples/sk/nahodnemeno.logo
+share/apps/kturtle/examples/sk/nasobilka.logo
+share/apps/kturtle/examples/sk/reklama.logo
+share/apps/kturtle/examples/sk/sipka.logo
+share/apps/kturtle/examples/sk/spirala.logo
+share/apps/kturtle/examples/sk/spiraly.logo
+share/apps/kturtle/examples/sk/stvorce.logo
+share/apps/kturtle/examples/sk/stvorec.logo
+share/apps/kturtle/examples/sk/trojuholnik.logo
+share/apps/kturtle/examples/sk/trojuholniky.logo
 share/doc/HTML/sk/amor/common
 share/doc/HTML/sk/amor/index.cache.bz2
 share/doc/HTML/sk/amor/index.docbook
@@ -1055,6 +1070,7 @@ share/locale/sk/LC_MESSAGES/khotkeys.mo
 share/locale/sk/LC_MESSAGES/khtmlkttsd.mo
 share/locale/sk/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/sk/LC_MESSAGES/kicker.mo
+share/locale/sk/LC_MESSAGES/kickermenu_kate.mo
 share/locale/sk/LC_MESSAGES/kiconedit.mo
 share/locale/sk/LC_MESSAGES/kig.mo
 share/locale/sk/LC_MESSAGES/kimagemapeditor.mo
@@ -1092,6 +1108,7 @@ share/locale/sk/LC_MESSAGES/kio_thumbnail.mo
 share/locale/sk/LC_MESSAGES/kio_trash.mo
 share/locale/sk/LC_MESSAGES/kio_zeroconf.mo
 share/locale/sk/LC_MESSAGES/kioexec.mo
+share/locale/sk/LC_MESSAGES/kitchensync.mo
 share/locale/sk/LC_MESSAGES/kiten.mo
 share/locale/sk/LC_MESSAGES/kjobviewer.mo
 share/locale/sk/LC_MESSAGES/kjots.mo
@@ -1295,6 +1312,7 @@ share/locale/sk/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/sk/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/sk/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/sk/LC_MESSAGES/libkickermenu_tom.mo
+share/locale/sk/LC_MESSAGES/libkitchensync.mo
 share/locale/sk/LC_MESSAGES/libkleopatra.mo
 share/locale/sk/LC_MESSAGES/libkmime.mo
 share/locale/sk/LC_MESSAGES/libkonq.mo
@@ -1499,6 +1517,10 @@ share/locale/sk/flag.png
 @dirrm share/doc/HTML/sk/docs
 @dirrm share/doc/HTML/sk/atlantik
 @dirrm share/doc/HTML/sk/amor
+@dirrm share/apps/kturtle/examples/sk
+@dirrm share/apps/kturtle/examples
+@dirrm share/apps/kturtle/data
+@dirrm share/apps/kturtle
 @dirrm share/apps/ktuberling/sounds/sk
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling

@@ -33,7 +33,7 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=  libtool:15
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/kdemultimedia-${PORTVERSION}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=CFLAGS=-I${LOCALBASE}/include/tunepimp-0.4 \
 		LDFLAGS=-L${LOCALBASE}/lib/tunepimp-0.4
 

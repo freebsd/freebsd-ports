@@ -272,6 +272,7 @@ share/locale/el/LC_MESSAGES/khotkeys.mo
 share/locale/el/LC_MESSAGES/khtmlkttsd.mo
 share/locale/el/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/el/LC_MESSAGES/kicker.mo
+share/locale/el/LC_MESSAGES/kickermenu_kate.mo
 share/locale/el/LC_MESSAGES/kiconedit.mo
 share/locale/el/LC_MESSAGES/kig.mo
 share/locale/el/LC_MESSAGES/kimagemapeditor.mo
@@ -309,6 +310,7 @@ share/locale/el/LC_MESSAGES/kio_thumbnail.mo
 share/locale/el/LC_MESSAGES/kio_trash.mo
 share/locale/el/LC_MESSAGES/kio_zeroconf.mo
 share/locale/el/LC_MESSAGES/kioexec.mo
+share/locale/el/LC_MESSAGES/kitchensync.mo
 share/locale/el/LC_MESSAGES/kiten.mo
 share/locale/el/LC_MESSAGES/kjobviewer.mo
 share/locale/el/LC_MESSAGES/kjots.mo
@@ -512,6 +514,7 @@ share/locale/el/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/el/LC_MESSAGES/libkickermenu_remotemenu.mo
 share/locale/el/LC_MESSAGES/libkickermenu_systemmenu.mo
 share/locale/el/LC_MESSAGES/libkickermenu_tom.mo
+share/locale/el/LC_MESSAGES/libkitchensync.mo
 share/locale/el/LC_MESSAGES/libkleopatra.mo
 share/locale/el/LC_MESSAGES/libkmime.mo
 share/locale/el/LC_MESSAGES/libkonq.mo

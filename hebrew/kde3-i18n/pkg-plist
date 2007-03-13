@@ -286,6 +286,7 @@ share/locale/he/LC_MESSAGES/kfile_sid.mo
 share/locale/he/LC_MESSAGES/kfile_tga.mo
 share/locale/he/LC_MESSAGES/kfile_theora.mo
 share/locale/he/LC_MESSAGES/kfile_tiff.mo
+share/locale/he/LC_MESSAGES/kfile_torrent.mo
 share/locale/he/LC_MESSAGES/kfile_ts.mo
 share/locale/he/LC_MESSAGES/kfile_txt.mo
 share/locale/he/LC_MESSAGES/kfile_vcf.mo
@@ -343,6 +344,7 @@ share/locale/he/LC_MESSAGES/kio_smtp.mo
 share/locale/he/LC_MESSAGES/kio_svn.mo
 share/locale/he/LC_MESSAGES/kio_system.mo
 share/locale/he/LC_MESSAGES/kio_tar.mo
+share/locale/he/LC_MESSAGES/kio_thumbnail.mo
 share/locale/he/LC_MESSAGES/kio_trash.mo
 share/locale/he/LC_MESSAGES/kioexec.mo
 share/locale/he/LC_MESSAGES/kjobviewer.mo
