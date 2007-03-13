@@ -7,7 +7,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.3.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	lang tcl83
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -28,7 +28,7 @@ TCL_VER=	8.3
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 PLIST_SUB=	TCL_VER=${TCL_VER} SHORT_TCL_VER=83
 
-OPTIONS=	TCL83_MAN "Install tcl 8.3 manpages" on \
+OPTIONS=	TCL83_MAN "Install tcl 8.3 manpages" off \
 		TCLSH_WRAPPER "Require tclsh wrapper from ports" off
 
 .include <bsd.port.pre.mk>
@@ -437,17 +437,13 @@ post-configure:
 	${REINPLACE_CMD} \
 		-e 's|${WRKDIRPREFIX}${.CURDIR}|$${WRKDIRPREFIX}${TCLBASE}|' \
 		${WRKSRC}/tclConfig.sh
-.if defined(NO_INSTALL_MANPAGES) || !defined(WITH_TCL83_MAN)
-	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
-		${WRKSRC}/Makefile
-.endif
 
 post-install:
-.if exists(${PKGINSTALL})
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
-.endif
 	${INSTALL_DATA} ${FILESDIR}/koi8-u.enc \
 		${PREFIX}/lib/tcl${TCL_VER}/encoding/
+.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL83_MAN)
+	@cd ${WRKSRC} && ${MAKE} -f Makefile install-doc
+.endif
 
 test:
 	cd ${WRKSRC} && ${MAKE} test
