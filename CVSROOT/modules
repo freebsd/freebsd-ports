@@ -6333,6 +6333,7 @@ libidn		ports/dns/libidn
 libieee1284	ports/sysutils/libieee1284
 libijs		ports/print/libijs
 libimg		ports/graphics/libimg
+libimg-tkstep80	ports/graphics/libimg-tkstep80
 libint		ports/science/libint
 libiodbc	ports/databases/libiodbc
 libiptcdata	ports/graphics/libiptcdata
