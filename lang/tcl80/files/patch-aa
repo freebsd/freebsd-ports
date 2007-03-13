@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu Apr 29 10:26:03 1999
-+++ Makefile.in	Thu Apr 29 10:33:07 1999
+--- Makefile.in.orig	Tue Mar  9 07:51:26 1999
++++ Makefile.in	Mon Mar 12 16:32:22 2007
 @@ -55,7 +55,9 @@
  BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
  
@@ -43,7 +43,14 @@
  # Make target which outputs the list of the .o contained in the Tcl lib
  # usefull to build a single big shared library containing Tcl and other
  # extensions.  used for the Tcl Plugin.  -- dl
-@@ -433,7 +441,7 @@
+@@ -427,13 +435,13 @@
+ 	cd dltest; if test -f configure; then ./configure; else \
+ 	    $(DLTEST_DIR)/configure; fi
+ 
+-install: install-binaries install-libraries install-man
++install: install-binaries install-libraries
+ 
+ # Note: before running ranlib below, must cd to target directory because
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  

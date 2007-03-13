@@ -7,13 +7,13 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang tcl80
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=tcl8_0
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	martin@matuska.org
 COMMENT=	Tool Command Language
 
 NO_LATEST_LINK=	yes
@@ -22,29 +22,29 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
-PKGINSTALL=	${PKGDIR}/pkg-install.tclsh
-PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.tclsh
 
 SHLIB_MAJOR=	1
 SHLIB_MINOR=	5
 MAKEFILE=	makefile
 TCL_LIB=	libtcl80.so
 
+OPTIONS=	TCL80_MAN "Install tcl 8.0 manpages" off \
+		TCLSH_WRAPPER "Require tclsh wrapper from ports" off
+
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_TCL80_MAN)
-.include "${FILESDIR}/manpages"
+.if defined(WITH_TCLSH_WRAPPER)
+RUN_DEPENDS+=		tclsh:${PORTSDIR}/lang/tcl-tk-wrapper
 .endif
 
+.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL80_MAN)
+.include "${FILESDIR}/manpages"
 MANCOMPRESSED=	yes
+.endif
 
 post-configure:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}
 	@${CP} ${FILESDIR}/makefile     ${WRKSRC}
-.if !defined(WITH_TCL80_MAN)
-	@${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
-		${WRKSRC}/Makefile
-.endif
 
 pre-build:
 	@cd ${WRKSRC} && ${MAKE} -f Makefile.lib PREFIX=${PREFIX} \
@@ -52,10 +52,10 @@ pre-build:
 	   OSVERSION=${OSVERSION}
 
 post-install:
-	${LN} -sf ${TCL_LIB}.${SHLIB_MAJOR} ${PREFIX}/lib/${TCL_LIB}
-.if exists(${PKGINSTALL})
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
+.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL80_MAN)
+	@cd ${WRKSRC} && ${MAKE} -f Makefile install-man
 .endif
+	${LN} -sf ${TCL_LIB}.${SHLIB_MAJOR} ${PREFIX}/lib/${TCL_LIB}
 
 test:
 	cd ${WRKSRC} && ${MAKE} test
