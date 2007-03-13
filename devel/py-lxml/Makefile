@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lxml
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://codespeak.net/lxml/ \
 		http://cheeseshop.python.org/packages/source/l/lxml/
@@ -22,6 +22,7 @@ RUN_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
+MANUAL_PACKAGE_BUILD=Doesn't build in tinderbox environment
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 

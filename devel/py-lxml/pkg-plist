@@ -14,9 +14,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/_elementpath.py
 %%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/_elementpath.pyc
 %%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/_elementpath.pyo
-%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/elementlib.py
-%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/elementlib.pyc
-%%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/elementlib.pyo
 %%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/etree.py
 %%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/etree.pyc
 %%PYTHON_SITELIBDIR%%/%%PYLXML_EGG%%/lxml/etree.pyo
