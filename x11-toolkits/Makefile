@@ -234,6 +234,7 @@
     SUBDIR += tk84
     SUBDIR += tk84-thread
     SUBDIR += tk85
+    SUBDIR += tk85-thread
     SUBDIR += tkdnd
     SUBDIR += tkshape
     SUBDIR += tkstep80
