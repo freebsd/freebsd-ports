@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Jan 30 11:20:44 2007
-+++ Makefile.in	Tue Jan 30 11:30:35 2007
+--- Makefile.in.orig	Mon Oct 23 15:45:33 2006
++++ Makefile.in	Mon Mar 12 18:32:29 2007
 @@ -64,6 +64,8 @@
  
  # Directory in which to install the include file tk.h:
@@ -58,6 +58,15 @@
  
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
+@@ -613,7 +623,7 @@
+ 	gdb ./wish --command=gdb.run
+ 	rm gdb.run
+ 
+-INSTALL_TARGETS = install-binaries install-libraries install-demos install-doc @EXTRA_INSTALL@
++INSTALL_TARGETS = install-binaries install-libraries install-demos @EXTRA_INSTALL@
+ 
+ install: $(INSTALL_TARGETS)
+ 
 @@ -626,7 +636,8 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
