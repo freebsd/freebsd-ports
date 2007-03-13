@@ -1,0 +1,82 @@
+%%GEM_CACHE%%
+%%GEM_SPEC%%
+%%GEM_LIB_DIR%%/lib/datename.rb
+%%GEM_LIB_DIR%%/lib/captcha.rb
+%%GEM_LIB_DIR%%/lib/parmvalid.rb
+%%GEM_LIB_DIR%%/doc/USAGE
+%%GEM_LIB_DIR%%/doc/LICENSE
+%%GEM_LIB_DIR%%/doc/README
+%%GEM_LIB_DIR%%/doc/INSTALL
+%%GEM_LIB_DIR%%/doc/ChangeLog
+%%GEM_LIB_DIR%%/data/captcha/templates/default.html
+%%GEM_LIB_DIR%%/samples/captcha.conf
+%%GEM_LIB_DIR%%/samples/validate.rb
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+%%GEM_DOC_DIR%%/rdoc/files/lib/datename_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/captcha_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/parmvalid_rb.html
+%%GEM_DOC_DIR%%/rdoc/classes/Time.src/M000001.html
+%%GEM_DOC_DIR%%/rdoc/classes/Time.src/M000002.html
+%%GEM_DOC_DIR%%/rdoc/classes/Time.src/M000003.html
+%%GEM_DOC_DIR%%/rdoc/classes/Time.src/M000004.html
+%%GEM_DOC_DIR%%/rdoc/classes/Time.src/M000005.html
+%%GEM_DOC_DIR%%/rdoc/classes/Time.src/M000006.html
+%%GEM_DOC_DIR%%/rdoc/classes/Numeric.src/M000007.html
+%%GEM_DOC_DIR%%/rdoc/classes/String.src/M000008.html
+%%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA.src/M000009.html
+%%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA/ObfuscatedImage.src/M000010.html
+%%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA/ObfuscatedImage.src/M000011.html
+%%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA/ObfuscatedImage.src/M000012.html
+%%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA/ObfuscatedImage.src/M000013.html
+%%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA/ObfuscatedImage.src/M000014.html
+%%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA/Rectangle.src/M000015.html
+%%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA/Rectangle.src/M000016.html
+%%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA/Web.src/M000017.html
+%%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA/Web.src/M000018.html
+%%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA/Web.src/M000019.html
+%%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA/Web.src/M000020.html
+%%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA/Web.src/M000021.html
+%%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA/Web.src/M000022.html
+%%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA/Web.src/M000023.html
+%%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA/ObfuscatedImage.html
+%%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA/Rectangle.html
+%%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA/Web.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParameterValidator.src/M000024.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParameterValidator.src/M000025.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParameterValidator.src/M000026.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParameterValidator.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParameterValidator.src/M000028.html
+%%GEM_DOC_DIR%%/rdoc/classes/Time.html
+%%GEM_DOC_DIR%%/rdoc/classes/Numeric.html
+%%GEM_DOC_DIR%%/rdoc/classes/String.html
+%%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParameterValidator.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParameterValidator/MissingParameterException.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParameterValidator/InvalidParameterException.html
+%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
+%%GEM_DOC_DIR%%/rdoc/index.html
+@dirrm %%GEM_LIB_DIR%%/samples
+@dirrm %%GEM_LIB_DIR%%/data/captcha/templates
+@dirrm %%GEM_LIB_DIR%%/data/captcha
+@dirrm %%GEM_LIB_DIR%%/data
+@dirrm %%GEM_LIB_DIR%%/doc
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ParameterValidator
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ParameterValidator.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA/Web.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA/Rectangle.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA/ObfuscatedImage.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/CAPTCHA.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/String.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Numeric.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Time.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
+@dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc
+@dirrm %%GEM_DOC_DIR%%
