@@ -7,6 +7,7 @@
 
 PORTNAME=	dotfile
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	misc tk82
 MASTER_SITES=	http://www.blackie.dk/dotfile/download/
 
@@ -14,33 +15,26 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GUI dotfile generator program to create .config files
 
 BUILD_DEPENDS=	formail:${PORTSDIR}/mail/procmail
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
-RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
-.if defined(WITH_JAPANESE)
-BUILD_DEPENDS+=	wish8.0jp:${PORTSDIR}/japanese/tk80
-RUN_DEPENDS+=	wish8.0jp:${PORTSDIR}/japanese/tk80
-.endif
 
 GNU_CONFIGURE=	yes
 PLIST_SUB=	DISTNAME="${DISTNAME}"
 NO_BUILD=	yes
 
-.if !defined(BATCH)
-IS_INTERACTIVE=	yes
-.endif
-
 MAN1=		dotfile.1
 
-post-patch:
-.if defined(BATCH)
+OPTIONS=	JAPANESE "Use Japanese as default language" off
+
+USE_TK=		82
+USE_TK_BUILD=	82
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_JAPANESE)
-	@${REINPLACE_CMD} -e "s|set answer \"\"|set answer \"2\"|" \
-		${WRKSRC}/language.tcl
-.else
-	@${REINPLACE_CMD} -e "s|set answer \"\"|set answer \"1\"|" \
-		${WRKSRC}/language.tcl
-.endif # WITH_JAPANESE
-.endif # BATCH
+CONFIGURE_ENV+=	LANGUAGE="japanese"
+.endif
+
+post-patch:
+	@${RM} ${WRKSRC}/Modules/english/procmail/configure.orig
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/dotfile
 
 post-configure:
@@ -63,4 +57,4 @@ post-install:
 	@${ECHO_CMD} ""
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
