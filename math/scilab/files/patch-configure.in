@@ -53,3 +53,13 @@
       fi
      DLDLIB='${SCIDIR}/libs/libdld.a'
      DLD_SUBDIR=dld
+@@ -1904,6 +1919,9 @@
+ 	GETLIBTK=libtk$TK_MAJOR_VERSION.$TK_MINOR_VERSION.$SONAME
+ 	
+ 	case "$host" in
++		*-*-freebsd*)
++		GETLIBTK=libtk$TK_MAJOR_VERSION$TK_MINOR_VERSION.$SONAME
++		;;
+ 		*-*-darwin*)
+ 		GETLIBTK=/sw/lib/libtk$TK_MAJOR_VERSION.$TK_MINOR_VERSION.dylib
+ 		;;
