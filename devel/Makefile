@@ -2098,6 +2098,7 @@
     SUBDIR += tpasm
     SUBDIR += tpg
     SUBDIR += trio
+    SUBDIR += truc
     SUBDIR += tvision
     SUBDIR += uclmmbase
     SUBDIR += ucpp
