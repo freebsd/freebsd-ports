@@ -1,0 +1,11 @@
+# Makefile for gamess
+all: gamess_exe
+
+gamess_exe: 
+	(cd tools ; make )
+	(cd ddi ; ./compddi )
+	./compall
+	csh lked
+
+clean:
+	rm -rf object/*.o  *.o *.f

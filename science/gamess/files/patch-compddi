@@ -1,0 +1,94 @@
+--- ddi/compddi.orig	Wed Aug 30 22:34:15 2006
++++ ddi/compddi	Fri Mar  9 10:28:28 2007
+@@ -12,9 +12,9 @@
+ #  1. Choose your machine, the legal values for TARGET are
+ #      amd64,axp64,compaq-sc,cray-pvp,cray-t3e,cray-x1,cray-xd1,cray-xt3,
+ #      fuji-pp32,fuji-pp64,hpux32,hpux64,ibm32,ibm64,ibm64-sp,ibm-bg,
+-#      linux-ia64,linux-pc,mac32,macG5,necsx,sgi32,sgi64,sun32,sun64
++#      linux-ia64,linux-pc,mac32,macG5,necsx,sgi32,sgi64,sun32,sun64,freebsd-i386,freebsd-amd64
+ #
+-         set TARGET = ibm64
++         set TARGET = %%ARCH%%
+ 
+ #  2. Choose DDI communication layer, the only legal values are
+ #                   sockets,mixed,mpi,shmem,lapi
+@@ -575,7 +575,77 @@
+      set RANLIB_FLAGS = ' '
+ 
+   endif
++# --------------------------------------- #
++# FreeBSD for x86 PCs                     #
++# --------------------------------------- #
+ 
++  if($TARGET == freebsd-i386) then
++
++     set FORTRAN=%%FORTRAN%%      # choose from g77, gfortran, ifort, pgf77, f2c
++
++     set CC = %%CC%%
++     set CFLAGS = "-DLINUX -O3 -fstrict-aliasing -I./include"
++
++     switch ($FORTRAN)
++        case g77:
++        case pgf77:
++        case f2c:
++           set NumUS=2
++           breaksw
++        case gfortran:
++           set CFLAGS = "$CFLAGS -Dgetarg_=_gfortran_getarg_i4"
++           set CFLAGS = "$CFLAGS -Diargc_=_gfortran_iargc"
++           set NumUS=1
++           breaksw
++        case ifort:
++           set NumUS=1
++           breaksw
++        default:
++           echo Please spell your ia32 compiler correctly.
++           exit 4
++     endsw
++
++     set CLIBS  = "%%PTHREAD_LIBS%%"
++     set F77_OPTS = "-DINT_SIZE=int -D_UNDERSCORES=$NumUS"
++     set AR_FLAGS     = 'cr'
++     set RANLIB_FLAGS = ' '
++
++  endif
++
++# ------------- #
++# FreeBSD amd64 #
++# ------------- #
++  if($TARGET == freebsd-amd64) then
++
++     set CC = %%CC%%
++     set CFLAGS = "-DLINUX -m64 -O3 -fstrict-aliasing -I./include"
++
++     set FORTRAN=%%FORTRAN%%
++     switch ($FORTRAN)
++        case g77:
++        case pgf77:
++        case f2c:
++           set NumUS=2
++           breaksw
++        case gfortran:
++           set CFLAGS = "$CFLAGS -Dgetarg_=_gfortran_getarg_i4"
++           set CFLAGS = "$CFLAGS -Diargc_=_gfortran_iargc"
++           set NumUS=1
++           breaksw
++        case ifort:
++           set NumUS=1
++           breaksw
++        default:
++           echo Please spell your x86_64 compiler correctly.
++           exit 4
++     endsw
++
++     set CLIBS  = "%%PTHREAD_LIB%%"
++     set F77_OPTS = "-DINT_SIZE=int -D_UNDERSCORES=$NumUS"
++     set AR_FLAGS     = 'cr'
++     set RANLIB_FLAGS = ' '
++
++  endif
+ 
+ # ------------------------- #
+ # Mac OS X (10.2 or 10.3)   #
+
+

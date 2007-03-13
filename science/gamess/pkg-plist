@@ -1,0 +1,56 @@
+bin/gamess
+bin/gms/ddikick.x
+bin/gms/gamess.00.x
+share/doc/gamess/INPUT.DOC
+share/doc/gamess/INTRO.DOC
+share/doc/gamess/IRON.DOC
+share/doc/gamess/PROG.DOC
+share/doc/gamess/REFS.DOC
+share/doc/gamess/TESTS.DOC
+share/gamess/ericfmt.dat
+share/examples/gamess/exam01.inp
+share/examples/gamess/exam02.inp
+share/examples/gamess/exam03.inp
+share/examples/gamess/exam04.inp
+share/examples/gamess/exam05.inp
+share/examples/gamess/exam06.inp
+share/examples/gamess/exam07.inp
+share/examples/gamess/exam08.inp
+share/examples/gamess/exam09.inp
+share/examples/gamess/exam10.inp
+share/examples/gamess/exam11.inp
+share/examples/gamess/exam12.inp
+share/examples/gamess/exam13.inp
+share/examples/gamess/exam14.inp
+share/examples/gamess/exam15.inp
+share/examples/gamess/exam16.inp
+share/examples/gamess/exam17.inp
+share/examples/gamess/exam18.inp
+share/examples/gamess/exam19.inp
+share/examples/gamess/exam20.inp
+share/examples/gamess/exam21.inp
+share/examples/gamess/exam22.inp
+share/examples/gamess/exam23.inp
+share/examples/gamess/exam24.inp
+share/examples/gamess/exam25.inp
+share/examples/gamess/exam26.inp
+share/examples/gamess/exam27.inp
+share/examples/gamess/exam28.inp
+share/examples/gamess/exam29.inp
+share/examples/gamess/exam30.inp
+share/examples/gamess/exam31.inp
+share/examples/gamess/exam32.inp
+share/examples/gamess/exam33.inp
+share/examples/gamess/exam34.inp
+share/examples/gamess/exam35.inp
+share/examples/gamess/exam36.inp
+share/examples/gamess/exam37.inp
+share/examples/gamess/exam38.inp
+share/examples/gamess/exam39.inp
+share/examples/gamess/exam40.inp
+share/examples/gamess/exam41.inp
+@dirrm bin/gms
+@dirrm share/doc/gamess
+@dirrm share/gamess
+@dirrm share/examples/gamess
+
