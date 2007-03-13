@@ -4,13 +4,13 @@
 #
 # $FreeBSD$
 
-PORTNAME=		squirrelmail
-PORTVERSION=		3.9.1
-PORTREVISION=		1
+PORTNAME=		vlogin
+PORTVERSION=		3.9.2
 CATEGORIES=		mail www
 MASTER_SITES=		http://www.squirrelmail.org/plugins/
-PKGNAMESUFFIX=		-${SQUIRREL_PLUGIN_NAME}-plugin
-DISTNAME=		${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}-1.2.7
+PKGNAMEPREFIX=		squirrelmail-
+PKGNAMESUFFIX=		-plugin
+DISTNAME=		${PORTNAME}-${PORTVERSION}-1.2.7
 DIST_SUBDIR=		squirrelmail
 
 MAINTAINER=		neil@darlow.co.uk
@@ -19,7 +19,7 @@ COMMENT=		Adds multi-site-hosting capabilities to SquirrelMail
 RUN_DEPENDS=		${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail \
 			squirrelmail-compatibility-plugin>=2.0.5:${PORTSDIR}/mail/squirrelmail-compatibility-plugin
 
-SQUIRREL_PLUGIN_NAME=	vlogin
+SQUIRREL_PLUGIN_NAME=	${PORTNAME}
 
 .ifdef SQUIRRELDIR
 PLIST_SUB+=		SQUIRRELDIR=${SQUIRRELDIR}
@@ -32,11 +32,14 @@ SQUIRRELDIR=		${PREFIX}/squirrelmail
 PLIST_SUB+=		SQUIRRELDIR=squirrelmail
 .	endif
 .endif
+PLIST_SUB+=		SQUIRREL_PLUGIN_NAME=${SQUIRREL_PLUGIN_NAME}
 
 NO_BUILD=		yes
 NO_WRKSUBDIR=		yes
 USE_PERL5_BUILD=	yes
 WANT_PHP_WEB=		yes
+
+.include <bsd.port.pre.mk>
 
 pre-everything::
 	@${ECHO} ""
@@ -66,4 +69,4 @@ post-install:
 	@${ECHO} "${SQUIRRELDIR}/config/conf.pl --install-plugin ${SQUIRREL_PLUGIN_NAME}"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
