@@ -1,0 +1,12 @@
+--- configure.in.orig
++++ configure.in
+@@ -335,6 +335,9 @@
+        AC_DEFINE(OS2, 1, [Compiling on OS/2 EMX])
+        AC_DEFINE(C_DIRECTSERIAL, 1, [ Define to 1 if you want serial passthrough support (Win32, Posix and OS/2).])
+        ;;
++    *-*-freebsd*)
++       AC_DEFINE(FREEBSD, 1, [Compiling on FREEBSD])
++       AC_DEFINE(C_DIRECTSERIAL, 1, [ Define to 1 if you want serial passthrough support (Win32, Posix and OS/2).])
+ esac
+ 
+ dnl Some stuff for the icon.
