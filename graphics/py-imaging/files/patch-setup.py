@@ -1,6 +1,6 @@
---- ./setup.py	Wed Mar 23 13:16:40 2005
-+++ ./setup.py	Thu Jun 16 13:24:28 2005
-@@ -129,14 +129,25 @@
+--- setup.py.orig	Sun Dec  3 11:37:29 2006
++++ setup.py	Sat Jan 13 07:24:13 2007
+@@ -145,14 +145,25 @@
  
          prefix = sysconfig.get_config_var("prefix")
          if prefix:

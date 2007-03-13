@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	imaging
-PORTVERSION=	1.1.5
-PORTREVISION=	2
+PORTVERSION=	1.1.6
 CATEGORIES=	graphics python
 MASTER_SITES=	http://effbot.org/downloads/ \
-	        http://www.pythonware.net/storage/
+		http://www.pythonware.net/storage/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Imaging-${PORTVERSION}
 
@@ -24,12 +23,12 @@ LATEST_LINK=	py-${PORTNAME}
 
 DIST_SUBDIR=	python
 USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USE_PYDISTUTILS=	yes
 
 PORTDOCS=	*
 
-DOCDIRS=	${PREFIX}/share/doc/py-imaging
-EXAMPLESDIR=	${PREFIX}/share/examples/py-imaging
+DOCSDIR=	${TARGETDIR}/share/doc/py-${PORTNAME}
+EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}
 
 OPTIONS=	TKINTER "Build with tkinter for X support" on
 
