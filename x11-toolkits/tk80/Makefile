@@ -7,36 +7,42 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits tk80
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_0
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	martin@matuska.org
 COMMENT=	Graphical toolkit for TCL
 
-LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
+USE_TCL=	80
+USE_TCL_BUILD=	80
 
 NO_LATEST_LINK=	yes
 USE_XLIB=	yes
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/tk8.0.5/unix
+WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} TK_LIB_FILE=${TK_LIB_FILE}
 TK_LIB_FILE=	${TK_LIB}.${SHLIB_MAJOR}
-PKGINSTALL=	${PKGDIR}/pkg-install.wish
-PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.wish
 
 SHLIB_MAJOR=	1
 SHLIB_MINOR=	4
 MAKEFILE=	makefile
 TK_LIB=		libtk80.so
 
+OPTIONS=	TK80_MAN "Install tk 8.0 manpages" off \
+		WISH_WRAPPER "Require wish wrapper from ports" off
+
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_TK80_MAN)
+.if defined(WITH_WISH_WRAPPER)
+RUN_DEPENDS+=		wish:${PORTSDIR}/lang/tcl-tk-wrapper
+.endif
+
+.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK80_MAN)
 
 MAN1=	wish.1
 MAN3=	3DBorder.3 BindTable.3 CanvPsY.3 CanvTkwin.3 CanvTxtInfo.3 \
@@ -285,19 +291,16 @@ post-patch:
 post-configure:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}
 	@${CP} ${FILESDIR}/makefile     ${WRKSRC}
-.if !defined(WITH_TK80_MAN)
-	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
-		${WRKSRC}/Makefile
-.endif
 
 pre-build:
 	@cd ${WRKSRC} && ${MAKE} -f Makefile.lib PREFIX=${PREFIX} \
-	    SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR}
+	    SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} \
+	    X11BASE="${X11BASE}"
 
 post-install:
 	${LN} -sf ${TK_LIB_FILE} ${PREFIX}/lib/${TK_LIB}
-.if exists(${PKGINSTALL})
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
+.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK80_MAN)
+	@cd ${WRKSRC} && ${MAKE} -f Makefile install-man
 .endif
 
 test:
