@@ -8,15 +8,14 @@
 PORTNAME=	adstudio
 PORTVERSION=	4.7.2
 CATEGORIES=	databases devel java
-MASTER_SITES=	http://download.aquafold.com/download/v${PORTVERSION}/java/
-DISTNAME=	ads-java-novm-${PORTVERSION}
+MASTER_SITES=	http://download.aquafold.com/download/v${PORTVERSION}/linux/
+DISTNAME=	ads-linux-novm-${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A database query and administration tool
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
-USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_BUILD=	yes
