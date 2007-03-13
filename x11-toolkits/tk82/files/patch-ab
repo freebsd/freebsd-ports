@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Dec 14 23:00:19 1999
-+++ Makefile.in	Mon Apr 24 09:41:33 2000
+--- Makefile.in.orig	Wed Dec 15 05:00:19 1999
++++ Makefile.in	Mon Mar 12 17:42:52 2007
 @@ -56,7 +56,9 @@
  BIN_DIR =		$(exec_prefix)/bin
  
@@ -53,7 +53,14 @@
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f ${STUB_LIB_FILE}
  	@MAKE_STUB_LIB@
-@@ -425,7 +433,7 @@
+@@ -419,13 +427,13 @@
+ 	TK_LIBRARY=@TK_SRC_DIR@/library; export TK_LIBRARY; \
+ 	./tktest
+ 
+-install: all install-binaries install-libraries install-demos install-doc
++install: all install-binaries install-libraries install-demos
+ 
+ # Note: before running ranlib below, must cd to target directory because
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
