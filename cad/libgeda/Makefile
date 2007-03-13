@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	libgeda
-PORTVERSION=	20061020
+PORTVERSION=	20070216
 PORTREVISION=	0
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
-		http://geda.seul.org/devel/${PORTVERSION}/ \
-		http://www.tinkerbox.org/projects/files/gEDA/
+		http://geda.seul.org/devel/${PORTVERSION}/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	The gEDA's tools base utility library

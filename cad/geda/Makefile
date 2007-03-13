@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geda
-PORTVERSION=	20061020
+PORTVERSION=	20070216
 PORTREVISION=	0
 CATEGORIES=	cad
 MASTER_SITES=	# empty
@@ -21,8 +21,7 @@ RUN_DEPENDS=	${DATADIR}/sym:${PORTSDIR}/cad/geda-symbols \
 		gnetlist:${PORTSDIR}/cad/geda-netlist \
 		gmk_sym:${PORTSDIR}/cad/geda-utils \
 		gsymcheck:${PORTSDIR}/cad/geda-symcheck \
-		gattrib:${PORTSDIR}/cad/geda-gattrib \
-		geda:${PORTSDIR}/cad/geda-projectmanager
+		gattrib:${PORTSDIR}/cad/geda-gattrib
 
 NO_BUILD=	yes
 
