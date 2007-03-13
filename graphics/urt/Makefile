@@ -29,6 +29,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=	config/urt
 MAKEFILE=	makefile
+USE_GMAKE=	yes
 ALL_TARGET=	# none
 USE_LDCONFIG=	yes
 
