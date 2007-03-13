@@ -1,5 +1,5 @@
---- Makefile.in.orig	Wed Jan 17 13:10:55 2007
-+++ Makefile.in	Wed Jan 17 12:55:33 2007
+--- Makefile.in.orig	Mon Oct 23 15:41:32 2006
++++ Makefile.in	Mon Mar 12 18:28:44 2007
 @@ -57,6 +57,8 @@
  
  # Directory in which to install the include file tcl.h:
@@ -44,6 +44,15 @@
  
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
+@@ -706,7 +718,7 @@
+ dltest.marker:
+ 	cd dltest ; $(MAKE)
+ 
+-INSTALL_TARGETS = install-binaries install-libraries install-doc @EXTRA_INSTALL@
++INSTALL_TARGETS = install-binaries install-libraries @EXTRA_INSTALL@
+ 
+ install: $(INSTALL_TARGETS)
+ 
 @@ -735,6 +747,13 @@
  	@echo "Installing $(LIB_FILE) to $(LIB_INSTALL_DIR)/"
  	@@INSTALL_LIB@

@@ -7,7 +7,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.5.a.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -30,7 +30,7 @@ NOPRECIOUSMAKEVARS=	Too many _MLINKS for README.html
 PLIST_SUB=	TCL_VER=${TCL_VER} SHORT_TCL_VER=85
 EXTRACT_AFTER_ARGS=|${TAR} -xpf - --exclude compat/
 
-OPTIONS=	TCL85_MAN "Install tcl 8.5 manpages" on \
+OPTIONS=	TCL85_MAN "Install tcl 8.5 manpages" off \
 		TCLSH_WRAPPER "Require tclsh wrapper from ports" off
 
 .include <bsd.port.pre.mk>
@@ -53,7 +53,7 @@ LATEST_LINK=	tcl85${THREADS_SUFFIX}
 RUN_DEPENDS+=		tclsh:${PORTSDIR}/lang/tcl-tk-wrapper
 .endif
 
-.if defined(NO_INSTALL_MANPAGES) || defined(WITHOUT_TCL85_MAN)
+.if defined(NO_INSTALL_MANPAGES) || !defined(WITH_TCL85_MAN)
 
 PLIST_SUB+=	INSTMAN='@comment '
 
@@ -702,14 +702,6 @@ post-configure:
 	${REINPLACE_CMD} \
 		-e 's,-DNO_MEMMOVE=1,,' -e 's,-DNO_STRING_H=1,,' \
 		-e 's,^COMPAT_OBJS.*,,' ${WRKSRC}/Makefile
-.if defined(NO_INSTALL_MANPAGES) || defined(WITHOUT_TCL85_MAN)
-	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
-		${WRKSRC}/Makefile
-. for mp in ${MAN1} ${MAN3} ${MANN}
-	@${REINPLACE_CMD} -e 's|^.so man.macros|.so ${DATADIR}/man.macros|'	\
-		${WRKSRC}/../doc/${mp}
-. endfor
-.endif
 .if ${BLACKHOLE} != '' && ${BLACKHOLE} != 0
 	# ====================================================
 	# net.inet.tcp.blackhole is non-zero. Some http-tests
@@ -720,12 +712,14 @@ post-configure:
 .endif
 
 post-install:
-.if exists(${PKGINSTALL})
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
-.endif
-.if !defined(NO_INSTALL_MANPAGES) && !defined(WITHOUT_TCL85_MAN)
+.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL85_MAN)
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/man.macros ${DATADIR}
+. for mp in ${MAN1} ${MAN3} ${MANN}
+	@${REINPLACE_CMD} -e 's|^.so man.macros|.so ${DATADIR}/man.macros|'	\
+		${WRKSRC}/../doc/${mp}
+. endfor
+	@cd ${WRKSRC} && ${MAKE} -f Makefile install-doc ${MAKE_ENV}
 .endif
 
 regression-test:	build
