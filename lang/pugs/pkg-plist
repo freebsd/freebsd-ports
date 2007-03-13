@@ -9,3 +9,362 @@ bin/prove6
 @dirrmtry %%SITE_PERL%%/Inline
 @dirrmtry %%SITE_PERL%%/Perl6
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl6
+%%SITE_PERL6_REL%%/site_perl/Algorithm/TokenBucket.pm
+%%SITE_PERL6_REL%%/site_perl/Automata/Cellular.pm
+%%SITE_PERL6_REL%%/site_perl/Automata/Cellular/Rule.pm
+%%SITE_PERL6_REL%%/site_perl/Benchmark.pm
+%%SITE_PERL6_REL%%/site_perl/CGI.pm
+%%SITE_PERL6_REL%%/site_perl/CGI/Remote.pm
+%%SITE_PERL6_REL%%/site_perl/CGI/Server.pm
+%%SITE_PERL6_REL%%/site_perl/CGI/Util.pm
+%%SITE_PERL6_REL%%/site_perl/Cipher.pm
+%%SITE_PERL6_REL%%/site_perl/Cipher/Arcfour.pm
+%%SITE_PERL6_REL%%/site_perl/Cipher/Block.pm
+%%SITE_PERL6_REL%%/site_perl/Cipher/Caesar.pm
+%%SITE_PERL6_REL%%/site_perl/Cipher/Stream.pm
+%%SITE_PERL6_REL%%/site_perl/Cipher/TEA.pm
+%%SITE_PERL6_REL%%/site_perl/Cipher/TestGuts.pm
+%%SITE_PERL6_REL%%/site_perl/Config/Tiny.pm
+%%SITE_PERL6_REL%%/site_perl/Date.pm
+%%SITE_PERL6_REL%%/site_perl/Date/Span.pm
+%%SITE_PERL6_REL%%/site_perl/DateTime/Recurrence.pm
+%%SITE_PERL6_REL%%/site_perl/DateTime/Span.pm
+%%SITE_PERL6_REL%%/site_perl/FA/DFA.pm
+%%SITE_PERL6_REL%%/site_perl/File/Find.pm
+%%SITE_PERL6_REL%%/site_perl/File/Spec.pm
+%%SITE_PERL6_REL%%/site_perl/File/Spec/Unix.pm
+%%SITE_PERL6_REL%%/site_perl/File/Spec/Win32.pm
+%%SITE_PERL6_REL%%/site_perl/FindBin.pm
+%%SITE_PERL6_REL%%/site_perl/Getopt/Std.pm
+%%SITE_PERL6_REL%%/site_perl/HTML/Entities.pm
+%%SITE_PERL6_REL%%/site_perl/HTTP/Cookies.pm
+%%SITE_PERL6_REL%%/site_perl/HTTP/Date.pm
+%%SITE_PERL6_REL%%/site_perl/HTTP/Headers.pm
+%%SITE_PERL6_REL%%/site_perl/HTTP/Headers/Util.pm
+%%SITE_PERL6_REL%%/site_perl/HTTP/Message.pm
+%%SITE_PERL6_REL%%/site_perl/HTTP/Query.pm
+%%SITE_PERL6_REL%%/site_perl/HTTP/Request.pm
+%%SITE_PERL6_REL%%/site_perl/HTTP/Request/CGI.pm
+%%SITE_PERL6_REL%%/site_perl/HTTP/Response.pm
+%%SITE_PERL6_REL%%/site_perl/HTTP/Server/Simple.pm
+%%SITE_PERL6_REL%%/site_perl/HTTP/Status.pm
+%%SITE_PERL6_REL%%/site_perl/Kwid/Event/Parser.pm
+%%SITE_PERL6_REL%%/site_perl/LWP/Simple.pm
+%%SITE_PERL6_REL%%/site_perl/Locale/KeyedText.pm
+%%SITE_PERL6_REL%%/site_perl/Locale/KeyedText/L/en.pm
+%%SITE_PERL6_REL%%/site_perl/Log/Selective.pm
+%%SITE_PERL6_REL%%/site_perl/MIME/Base64.pm
+%%SITE_PERL6_REL%%/site_perl/Math/Basic.pm
+%%SITE_PERL6_REL%%/site_perl/Math/Random/Kiss.pm
+%%SITE_PERL6_REL%%/site_perl/Module/Pluggable/Fast.pm
+%%SITE_PERL6_REL%%/site_perl/Net/IRC.pm
+%%SITE_PERL6_REL%%/site_perl/Net/IRC/JoinOnInvite.pm
+%%SITE_PERL6_REL%%/site_perl/Net/IRC/OO.pm
+%%SITE_PERL6_REL%%/site_perl/Net/IRC/SeenExt.pm
+%%SITE_PERL6_REL%%/site_perl/Parse/Architecture.pod
+%%SITE_PERL6_REL%%/site_perl/Parse/Rule/Core.pm
+%%SITE_PERL6_REL%%/site_perl/Parse/Rule/Media/Text.pm
+%%SITE_PERL6_REL%%/site_perl/Parse/Rule/Medium.pm
+%%SITE_PERL6_REL%%/site_perl/Parse/Rule/Strategies/CPS.pm
+%%SITE_PERL6_REL%%/site_perl/Parse/Rule/Strategies/CPS/Text.pm
+%%SITE_PERL6_REL%%/site_perl/Parse/Rule/Strategy.pm
+%%SITE_PERL6_REL%%/site_perl/Perl/Compiler/CodeGen.pm
+%%SITE_PERL6_REL%%/site_perl/Perl/Compiler/CodeGen/NameGen.pm
+%%SITE_PERL6_REL%%/site_perl/Perl/Compiler/CodeGen/Perl5_Str.pm
+%%SITE_PERL6_REL%%/site_perl/Perl/Compiler/PIL.pm
+%%SITE_PERL6_REL%%/site_perl/Perl/Compiler/PIL/Node_pm_gen.pl
+%%SITE_PERL6_REL%%/site_perl/Perl/Compiler/PIL/Util.pm
+%%SITE_PERL6_REL%%/site_perl/Perl/testy.pl
+%%SITE_PERL6_REL%%/site_perl/Perl6/Container/Array.pm
+%%SITE_PERL6_REL%%/site_perl/Perl6/Grammar.pm
+%%SITE_PERL6_REL%%/site_perl/Perl6/Value/List.pm
+%%SITE_PERL6_REL%%/site_perl/Perldoc/DOM.pm
+%%SITE_PERL6_REL%%/site_perl/Perldoc/DOM/Element.pm
+%%SITE_PERL6_REL%%/site_perl/Perldoc/DOM/Node.pm
+%%SITE_PERL6_REL%%/site_perl/Perldoc/DOM/PI.pm
+%%SITE_PERL6_REL%%/site_perl/Perldoc/DOM/Text.pm
+%%SITE_PERL6_REL%%/site_perl/Perldoc/DOM/WS.pm
+%%SITE_PERL6_REL%%/site_perl/Pod/Event/Handler/HTML.pm
+%%SITE_PERL6_REL%%/site_perl/Pod/Event/Handler/POD.pm
+%%SITE_PERL6_REL%%/site_perl/Pod/Event/Parser.pm
+%%SITE_PERL6_REL%%/site_perl/Prelude.pm.yml
+%%SITE_PERL6_REL%%/site_perl/Recurrence.pm
+%%SITE_PERL6_REL%%/site_perl/Rosetta.pm
+%%SITE_PERL6_REL%%/site_perl/Rosetta/Copying.pod
+%%SITE_PERL6_REL%%/site_perl/Rosetta/Engine/Example.pm
+%%SITE_PERL6_REL%%/site_perl/Rosetta/Engine/Example/L/en.pm
+%%SITE_PERL6_REL%%/site_perl/Rosetta/FAQ.pod
+%%SITE_PERL6_REL%%/site_perl/Rosetta/L/en.pm
+%%SITE_PERL6_REL%%/site_perl/Rosetta/Language.pod
+%%SITE_PERL6_REL%%/site_perl/Rosetta/Migration.pod
+%%SITE_PERL6_REL%%/site_perl/Rosetta/Model.pm
+%%SITE_PERL6_REL%%/site_perl/Rosetta/Model/L/en.pm
+%%SITE_PERL6_REL%%/site_perl/Rosetta/Overview.pod
+%%SITE_PERL6_REL%%/site_perl/Rosetta/SeeAlso.pod
+%%SITE_PERL6_REL%%/site_perl/Rosetta/Shell.pm
+%%SITE_PERL6_REL%%/site_perl/Rosetta/Shell/L/en.pm
+%%SITE_PERL6_REL%%/site_perl/Rosetta/TODO.pod
+%%SITE_PERL6_REL%%/site_perl/Rosetta/Validator.pm
+%%SITE_PERL6_REL%%/site_perl/Rosetta/Validator/L/en.pm
+%%SITE_PERL6_REL%%/site_perl/Set.pm
+%%SITE_PERL6_REL%%/site_perl/Set/Hash.pm
+%%SITE_PERL6_REL%%/site_perl/Set/Infinite.pm
+%%SITE_PERL6_REL%%/site_perl/Set/Infinite/Functional.pm
+%%SITE_PERL6_REL%%/site_perl/Set/Relation.pm
+%%SITE_PERL6_REL%%/site_perl/Set/Symbols.pm
+%%SITE_PERL6_REL%%/site_perl/Span.pm
+%%SITE_PERL6_REL%%/site_perl/Span/Code.pm
+%%SITE_PERL6_REL%%/site_perl/Span/Int.pm
+%%SITE_PERL6_REL%%/site_perl/Span/Num.pm
+%%SITE_PERL6_REL%%/site_perl/Test.pm
+%%SITE_PERL6_REL%%/site_perl/Test.pm.yml
+%%SITE_PERL6_REL%%/site_perl/Test/Builder.pm
+%%SITE_PERL6_REL%%/site_perl/Test/Builder/Output.pm
+%%SITE_PERL6_REL%%/site_perl/Test/Builder/Test.pm
+%%SITE_PERL6_REL%%/site_perl/Test/Builder/TestPlan.pm
+%%SITE_PERL6_REL%%/site_perl/Test/Builder/Tester.pm
+%%SITE_PERL6_REL%%/site_perl/Test/PIL/Bootstrap.pm
+%%SITE_PERL6_REL%%/site_perl/Test/Pil.pm
+%%SITE_PERL6_REL%%/site_perl/Text/Glob.pm
+%%SITE_PERL6_REL%%/site_perl/Tree.pm
+%%SITE_PERL6_REL%%/site_perl/Tree/Visitor.pm
+%%SITE_PERL6_REL%%/site_perl/Tree/Visitor/FindByPath.pm
+%%SITE_PERL6_REL%%/site_perl/URI/Escape.pm
+%%SITE_PERL6_REL%%/site_perl/WTemplate.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/js/lib/PIL2JS.js
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/js/lib/Perl6/Attribute.js
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/js/lib/Perl6/Class.js
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/js/lib/Perl6/Instance.js
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/js/lib/Perl6/MetaClass.js
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/js/lib/Perl6/MetaClass/Dispatcher.js
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/js/lib/Perl6/MetaModel.js
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/js/lib/Perl6/Method.js
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/js/lib/Perl6/MultiMethod.js
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/js/lib/Perl6/Object.js
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Class/Rebless.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL/Cont.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL/P5Macro.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL/PApp.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL/PAssign.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL/PBind.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL/PExp.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL/PLit.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL/PNil.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL/PNoop.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL/PPad.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL/PPos.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL/PStmt.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL/PStmts.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL/PVal.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL/PVar.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL/Params.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL/Parser.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL/RawJS.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL/Subs.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL/Types.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL2JS.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL2JS/JSPM.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Perl6/Run/JS.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Prelude.js
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Prelude/JS.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/AST/Expression.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Compiler/Perl6.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Compiler/Regex.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Compiler/RegexPerl5.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Compiler/Rule.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Compiler/RuleInline-more.pl
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Compiler/Token.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Compiler/benchmark.pl
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Compiler/compile_p6grammar-token.pl
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Compiler/compile_p6grammar.pl
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Compiler/grammar.pl
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Compiler/precedence.pl
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Emitter/Perl6/Perl5.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Emitter/Perl6/Perl5/Any.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Emitter/Perl6/Perl5/Array.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Emitter/Perl6/Perl5/Expression.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Emitter/Perl6/Perl5/Hash.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Emitter/Perl6/Perl5/Native.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Emitter/Perl6/Perl5/Perl5Array.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Emitter/Perl6/Perl5/Perl5Hash.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Emitter/Perl6/Perl5/Perl5Range.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Emitter/Perl6/Perl5/Scalar.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Emitter/Perl6/Perl5/Statements.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Emitter/Perl6/Perl5/Value.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Emitter/Perl6/Perl5/node.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Emitter/Rule/Parsec.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Emitter/Rule/Perl5.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Emitter/Rule/Perl5/Ratchet.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Emitter/Rule/Perl5/Regex.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Grammar/Base.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Grammar/BaseCategory.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Grammar/Circumfix.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Grammar/Expression.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Grammar/Infix.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Grammar/Operator.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Grammar/P6Rule.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Grammar/Perl6.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Grammar/Pod.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Grammar/Postcircumfix.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Grammar/Postfix.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Grammar/Precedence.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Grammar/Prefix.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Grammar/Quote.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Grammar/Rule.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Grammar/Rule.pmc
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Grammar/Rule2.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Grammar/RulePure.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Grammar/StatementControl.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Grammar/StatementModifier.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Grammar/Term.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Grammar/Ternary.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Runtime/Capture.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Runtime/Common.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Runtime/Match.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Runtime/Match/HsBridge.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Runtime/Perl5Container.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Runtime/Perl6.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Runtime/Perl6AST.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Runtime/Perl6Prelude.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Runtime/Regex.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Runtime/Rule.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Test.js
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/jspugs.pl
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/pil2js.pl
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/pugs-smokejs.pl
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/runjs.pl
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/v6.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/v6/hello_world.pl
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/v6/lrep.pl
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/v6/moose-2.pl
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/v6/moose-3.pl
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/v6/moose-4.pl
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude/JS.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude/JS/Array.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude/JS/Bool.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude/JS/Code.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude/JS/Context.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude/JS/Continuations.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude/JS/ControlFlow.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude/JS/Hash.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude/JS/IO.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude/JS/JSAN.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude/JS/Junc.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude/JS/Keyed.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude/JS/Math.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude/JS/OO.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude/JS/Operators.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude/JS/Pair.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude/JS/Perl5.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude/JS/Proxy.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude/JS/Ref.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude/JS/Rules.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude/JS/Smartmatch.pm
+%%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude/JS/Str.pm
+%%SITE_PERL6_REL%%/site_perl/fp.pm
+%%SITE_PERL6_REL%%/site_perl/lib.pm
+%%SITE_PERL6_REL%%/site_perl/re.pm
+@dirrm %%SITE_PERL6_REL%%/site_perl/mach
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude/JS
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib/Prelude
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6/lib
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl6
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/man3
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/v6
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Runtime/Match
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Runtime
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Grammar
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Emitter/Rule/Perl5
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Emitter/Rule
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Emitter/Perl6/Perl5
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Emitter/Perl6
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Emitter
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/Compiler
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs/AST
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Pugs
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Prelude
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Perl6/Run
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Perl6
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL2JS
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/PIL
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib/Class
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5/lib
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/perl5
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/js/lib/Perl6/MetaClass
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/js/lib/Perl6
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/js/lib
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs/js
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto/pugs
+@dirrm %%SITE_PERL6_REL%%/site_perl/auto
+@dirrm %%SITE_PERL6_REL%%/site_perl/URI
+@dirrm %%SITE_PERL6_REL%%/site_perl/Tree/Visitor
+@dirrm %%SITE_PERL6_REL%%/site_perl/Tree
+@dirrm %%SITE_PERL6_REL%%/site_perl/Text
+@dirrm %%SITE_PERL6_REL%%/site_perl/Test/PIL
+@dirrm %%SITE_PERL6_REL%%/site_perl/Test/Builder
+@dirrm %%SITE_PERL6_REL%%/site_perl/Test
+@dirrm %%SITE_PERL6_REL%%/site_perl/Span
+@dirrm %%SITE_PERL6_REL%%/site_perl/Set/Infinite
+@dirrm %%SITE_PERL6_REL%%/site_perl/Set
+@dirrm %%SITE_PERL6_REL%%/site_perl/Rosetta/Validator/L
+@dirrm %%SITE_PERL6_REL%%/site_perl/Rosetta/Validator
+@dirrm %%SITE_PERL6_REL%%/site_perl/Rosetta/Shell/L
+@dirrm %%SITE_PERL6_REL%%/site_perl/Rosetta/Shell
+@dirrm %%SITE_PERL6_REL%%/site_perl/Rosetta/Model/L
+@dirrm %%SITE_PERL6_REL%%/site_perl/Rosetta/Model
+@dirrm %%SITE_PERL6_REL%%/site_perl/Rosetta/L
+@dirrm %%SITE_PERL6_REL%%/site_perl/Rosetta/Engine/Example/L
+@dirrm %%SITE_PERL6_REL%%/site_perl/Rosetta/Engine/Example
+@dirrm %%SITE_PERL6_REL%%/site_perl/Rosetta/Engine
+@dirrm %%SITE_PERL6_REL%%/site_perl/Rosetta
+@dirrm %%SITE_PERL6_REL%%/site_perl/Pod/Event/Handler
+@dirrm %%SITE_PERL6_REL%%/site_perl/Pod/Event
+@dirrm %%SITE_PERL6_REL%%/site_perl/Pod
+@dirrm %%SITE_PERL6_REL%%/site_perl/Perldoc/DOM
+@dirrm %%SITE_PERL6_REL%%/site_perl/Perldoc
+@dirrm %%SITE_PERL6_REL%%/site_perl/Perl6/Value
+@dirrm %%SITE_PERL6_REL%%/site_perl/Perl6/Container
+@dirrm %%SITE_PERL6_REL%%/site_perl/Perl6
+@dirrm %%SITE_PERL6_REL%%/site_perl/Perl/Compiler/PIL
+@dirrm %%SITE_PERL6_REL%%/site_perl/Perl/Compiler/CodeGen
+@dirrm %%SITE_PERL6_REL%%/site_perl/Perl/Compiler
+@dirrm %%SITE_PERL6_REL%%/site_perl/Perl
+@dirrm %%SITE_PERL6_REL%%/site_perl/Parse/Rule/Strategies/CPS
+@dirrm %%SITE_PERL6_REL%%/site_perl/Parse/Rule/Strategies
+@dirrm %%SITE_PERL6_REL%%/site_perl/Parse/Rule/Media
+@dirrm %%SITE_PERL6_REL%%/site_perl/Parse/Rule
+@dirrm %%SITE_PERL6_REL%%/site_perl/Parse
+@dirrm %%SITE_PERL6_REL%%/site_perl/Net/IRC
+@dirrm %%SITE_PERL6_REL%%/site_perl/Net
+@dirrm %%SITE_PERL6_REL%%/site_perl/Module/Pluggable
+@dirrm %%SITE_PERL6_REL%%/site_perl/Module
+@dirrm %%SITE_PERL6_REL%%/site_perl/Math/Random
+@dirrm %%SITE_PERL6_REL%%/site_perl/Math
+@dirrm %%SITE_PERL6_REL%%/site_perl/MIME
+@dirrm %%SITE_PERL6_REL%%/site_perl/Log
+@dirrm %%SITE_PERL6_REL%%/site_perl/Locale/KeyedText/L
+@dirrm %%SITE_PERL6_REL%%/site_perl/Locale/KeyedText
+@dirrm %%SITE_PERL6_REL%%/site_perl/Locale
+@dirrm %%SITE_PERL6_REL%%/site_perl/LWP
+@dirrm %%SITE_PERL6_REL%%/site_perl/Kwid/Event
+@dirrm %%SITE_PERL6_REL%%/site_perl/Kwid
+@dirrm %%SITE_PERL6_REL%%/site_perl/HTTP/Server
+@dirrm %%SITE_PERL6_REL%%/site_perl/HTTP/Request
+@dirrm %%SITE_PERL6_REL%%/site_perl/HTTP/Headers
+@dirrm %%SITE_PERL6_REL%%/site_perl/HTTP
+@dirrm %%SITE_PERL6_REL%%/site_perl/HTML
+@dirrm %%SITE_PERL6_REL%%/site_perl/Getopt
+@dirrm %%SITE_PERL6_REL%%/site_perl/File/Spec
+@dirrm %%SITE_PERL6_REL%%/site_perl/File
+@dirrm %%SITE_PERL6_REL%%/site_perl/FA
+@dirrm %%SITE_PERL6_REL%%/site_perl/DateTime
+@dirrm %%SITE_PERL6_REL%%/site_perl/Date
+@dirrm %%SITE_PERL6_REL%%/site_perl/Config
+@dirrm %%SITE_PERL6_REL%%/site_perl/Cipher
+@dirrm %%SITE_PERL6_REL%%/site_perl/CGI
+@dirrm %%SITE_PERL6_REL%%/site_perl/Automata/Cellular
+@dirrm %%SITE_PERL6_REL%%/site_perl/Automata
+@dirrm %%SITE_PERL6_REL%%/site_perl/Algorithm
+@dirrm %%SITE_PERL6_REL%%/site_perl
+@dirrm %%SITE_PERL6_REL%%
