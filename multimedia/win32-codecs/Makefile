@@ -22,7 +22,7 @@ DISTFILES=	all-20061022.tar.bz2 \
 DIST_SUBDIR=	win32
 EXTRACT_ONLY=	all-20061022.tar.bz2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Huge compilation of Win32 binary video codecs
 
 RESTRICTED=	Unsure of codec's license			# '
@@ -48,19 +48,18 @@ ADDITIONAL_CODECS_WRKSRC=	${DISTFILES:S/.tar.bz2//}
 REMOVE_CODECS_FILES=	AvidQTAVUICodec.qtx QuickTimeEssentials.qtx QuickTime.qts \
 			QuickTimeInternetExtras.qtx qtmlClient.dll BeHereiVideo.qtx
 
-OPTIONS=	QUICKTIME	"Install quicktime codec"	off \
-		REALPLAYER	"Install realplayer codec"	on
+OPTIONS=	REALPLAYER	"Install realplayer codec"	on
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_QUICKTIME)
-FORBIDDEN=	Remote code execution: http://vuxml.FreeBSD.org/24f6b1eb-43d5-11db-81e1-000e0c2e438a.html
-ADDITIONAL_CODECS_DISTFILES+=	qt63dlls-20050115.tar.bz2 \
-				qtextras-20041107.tar.bz2
-PLIST_SUB+=	QUICKTIME=""
-.else
+#.if defined(WITH_QUICKTIME)
+#FORBIDDEN=	Remote code execution: http://vuxml.FreeBSD.org/24f6b1eb-43d5-11db-81e1-000e0c2e438a.html
+#ADDITIONAL_CODECS_DISTFILES+=	qt63dlls-20050115.tar.bz2 \
+#				qtextras-20041107.tar.bz2
+#PLIST_SUB+=	QUICKTIME=""
+#.else
 PLIST_SUB+=	QUICKTIME="@comment "
-.endif
+#.endif
 
 .if !defined(WITHOUT_REALPLAYER)
 ADDITIONAL_CODECS_DISTFILES+=	rp9codecs-20050115.tar.bz2 \
