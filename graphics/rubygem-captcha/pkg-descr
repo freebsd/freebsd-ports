@@ -1,0 +1,6 @@
+A simple CAPTCHA ("Completely Automatic Public Turing Test to Tell Computers
+and Humans Apart") written in Ruby. This will dynamically create an image
+containing a key displayed on a noisy background, which the user must enter
+into a text box.
+
+WWW: http://captcha.rubyforge.org/

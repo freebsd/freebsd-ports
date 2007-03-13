@@ -621,6 +621,7 @@
     SUBDIR += ruby-rsvg2
     SUBDIR += ruby-svg
     SUBDIR += ruby-tgif
+    SUBDIR += rubygem-captcha
     SUBDIR += rubygem-gruff
     SUBDIR += rubygem-scruffy
     SUBDIR += rubyphoto
