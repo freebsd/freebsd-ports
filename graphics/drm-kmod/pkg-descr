@@ -1,6 +1,0 @@
-FreeBSD DRM kernel modules for the Direct Rendering 
-Infrastructure.  With XFree86 4.0 they provide 3d 
-acceleration under X for 3dfx Voodoo3/5/Banshee, 
-Matrox G200 and G400, and ATI Rage128 and Radeon cards.
-
-WWW: http://people.freebsd.org/~anholt/dri/
