@@ -7,8 +7,8 @@
 
 PORTNAME=	libimg
 PORTVERSION=	1.2.4
-PORTREVISION=	2
-CATEGORIES=	graphics tk84
+PORTREVISION=	3
+CATEGORIES?=	graphics tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tkimg
 DISTNAME=	img${PORTVERSION}
@@ -16,10 +16,42 @@ DISTNAME=	img${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library of image format handlers for Tk4.1 and later
 
-LIB_DEPENDS=	tk84:${PORTSDIR}/x11-toolkits/tk84 \
-		png:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		tiff:${PORTSDIR}/graphics/tiff
+
+.if defined(USE_TKSTEP80)
+PKGNAMESUFFIX=	-tkstep80
+MAKEFILE=	${FILESDIR}/Makefile.tkstep80
+MAKE_ENV+=	TCL_VER=8.0
+EXTRA_PATCHES=	${FILESDIR}/pre-tk84-warnings
+BUILD_DEPENDS+=	${LOCALBASE}/lib/tkstep8.0/tkstep.tcl:${PORTSDIR}/x11-toolkits/tkstep80
+RUN_DEPENDS+=	${BUILD_DEPENDS}
+CONFLICTS=	libimg-1.* libimg-tk83-1.*
+.elif defined(USE_TK) && ${USE_TK} == 83
+PKGNAMESUFFIX=	-tk83
+USE_TK=		83
+USE_TK_BUILD=	83
+MAKEFILE=	${FILESDIR}/Makefile.bsd
+MAKE_ENV+=	TCL_VER=8.3
+PATCHDIR=
+EXTRA_PATCHES=	${FILESDIR}/pre-tk84-warnings
+CONFLICTS=	libimg-1.* libimg-tkstep-1.*
+.else
+USE_TK=		84
+USE_TK_BUILD=	84
+MAKEFILE=	${FILESDIR}/Makefile.bsd
+EXTRA_PATCHES=	${FILESDIR}/tk84-Tk_PhotoPutBlock ${FILESDIR}/tk84-warnings
+CONFLICTS=	libimg-tk83-1.* libimg-tkstep-1.*
+.endif
+
+DIR=		lib/Img1.2
+
+SHLIB_NAME=	libimg.so.1
+SHLIB_LINK=	${SHLIB_NAME:R}
+
+PLIST_SUB+=	DIR="${DIR}" SHLIB_NAME="${SHLIB_NAME}" \
+		SHLIB_LINK="${SHLIB_LINK}"
 
 WRKSRC=		${WRKDIR}/img${PORTVERSION}
 
@@ -28,20 +60,17 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude '*/libz/*' \
 		--exclude '*/compat/*' --exclude '*/libtiff/*' \
 		--exclude '*/libjpeg/*' --exclude '*/libpng/*'
 
-MAKEFILE=	${FILESDIR}/Makefile.bsd
-
 MAKE_ARGS=	PORTVERSION="${PORTVERSION}" LOCALBASE="${LOCALBASE}" \
-		MKDIR="${MKDIR}" INSTALL_DATA="${INSTALL_DATA}"
+		MKDIR="${MKDIR}" INSTALL_DATA="${INSTALL_DATA}" \
+		X11BASE="${X11BASE}" SHLIB_NAME="${SHLIB_NAME}" \
+		DIR="${DIR}"
 
 USE_LDCONFIG=	yes
 
 .if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${LOCALBASE}/share/doc/Img1.2
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${LOCALBASE}/share/doc/Img1.2
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
-
-PLIST_SUBP!=	${SETENV} TCL_VER=${TCL_VER} ${MAKE} -f ${MAKEFILE} environ
-PLIST_SUB+=	${PLIST_SUBP}

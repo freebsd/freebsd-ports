@@ -3,30 +3,16 @@ SHLIB_NAME?=	libimg.so.1
 PORTVERSION?=	1.2.4
 LOCALBASE?=	/usr/local
 X11BASE?=	/usr/X11R6
-TCL_VER?=	8.4
-
-.if exists(${LOCALBASE}/lib/tk${TCL_VER}/tkConfig.sh)
-# If for some reason  the file does not exist -- make the best guess. In
-# reality, it will exist by the time we are actually doing the build, so
-# the quality of the guess does not matter. But we still try well. -mi
-TCL_STUB_LIB_SPEC!=	. ${LOCALBASE}/lib/tcl${TCL_VER}/tclConfig.sh; \
-		echo $$TCL_STUB_LIB_SPEC
-TK_STUB_LIB_SPEC!=	. ${LOCALBASE}/lib/tk${TCL_VER}/tkConfig.sh; \
-		echo $$TK_STUB_LIB_SPEC
-.else
-TCL_STUB_LIB_SPEC=	-L${LOCALBASE}/lib -ltclstub${TCL_VER:S/.//}
-TK_STUB_LIB_SPEC=	-L${LOCALBASE}/lib -ltkstub${TCL_VER:S/.//}
-.endif
+TCL_VER?=	8.0
 
 LDADD=		-lm -lz -L${LOCALBASE}/lib -lpng -ljpeg -ltiff \
-		${TCL_STUB_LIB_SPEC} ${TK_STUB_LIB_SPEC} \
 		-L${X11BASE}/lib -lX11
 
 CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER}
 CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER}/generic
 CFLAGS+=	-D__X11__ -I${X11BASE}/include -DALLOW_B64
-CFLAGS+=	-I${LOCALBASE}/include/tk${TCL_VER}
-CFLAGS+=	-DNDEBUG -Wall -I. -DUSE_TCL_STUBS -DUSE_TK_STUBS
+CFLAGS+=	-I${LOCALBASE}/include/tkstep${TCL_VER}
+CFLAGS+=	-DNDEBUG -Wall -I.
 CFLAGS+=	-DVERSION=\"${PORTVERSION}\" -I${LOCALBASE}/include
 CFLAGS+=	-DHAVE_JPEGLIB_H -DHAVE_TIFF_H -DHAVE_DLFCN_H -DHAVE_IMG_H
 

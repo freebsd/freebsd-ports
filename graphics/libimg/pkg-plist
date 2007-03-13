@@ -13,9 +13,9 @@ lib/%%SHLIB_LINK%%
 %%DIR%%/msgs/nl.msg
 @dirrm %%DIR%%/msgs
 @dirrm %%DIR%%
-%%PORTDOCS%%share/doc/Img1.2/default.css
-%%PORTDOCS%%share/doc/Img1.2/formats.htm
-%%PORTDOCS%%share/doc/Img1.2/index.htm
-%%PORTDOCS%%share/doc/Img1.2/install.htm
-%%PORTDOCS%%share/doc/Img1.2/library.htm
-%%PORTDOCS%%@dirrm share/doc/Img1.2
+%%PORTDOCS%%%%DOCSDIR%%/default.css
+%%PORTDOCS%%%%DOCSDIR%%/formats.htm
+%%PORTDOCS%%%%DOCSDIR%%/index.htm
+%%PORTDOCS%%%%DOCSDIR%%/install.htm
+%%PORTDOCS%%%%DOCSDIR%%/library.htm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
