@@ -5,14 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=	tcl-thread
+PORTNAME=	tcl
 PORTVERSION=	8.1.b1
+PORTREVISION=	1
 CATEGORIES=	lang tcl81
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_1
+PKGNAMESUFFIX=	-threads
 DISTNAME=	tcl8.1b1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	martin@matuska.org
 COMMENT=	Tcl81 with threads support
 
 FILE_DEPENDS=	${PORTSDIR}/lang/tcl80
@@ -23,9 +25,17 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-threads
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
-PKGINSTALL=	${PORTSDIR}/lang/tcl82/pkg/pkg-install.tclsh
-PKGDEINSTALL=	${PORTSDIR}/lang/tcl82/pkg/pkg-deinstall.tclsh
 
+OPTIONS=	TCL81_MAN "Install tcl 8.1 manpages" off \
+		TCLSH_WRAPPER "Require tclsh wrapper from ports" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_TCLSH_WRAPPER)
+RUN_DEPENDS+=		tclsh:${PORTSDIR}/lang/tcl-tk-wrapper
+.endif
+
+.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL81_MAN)
 MAN1=	tclsh.1
 
 MAN3=	AddErrInfo.3 Alloc.3 AllowExc.3 AppInit.3 AssocData.3 Async.3 \
@@ -56,16 +66,15 @@ MANN=	Tcl.n after.n append.n array.n bgerror.n binary.n break.n case.n \
 	variable.n vwait.n while.n
 
 MANCOMPRESSED=	yes
-
-.include <bsd.port.pre.mk>
+.endif
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
+BROKEN=	does not compile on sparc64
 .endif
 
 post-install:
-.if exists(${PKGINSTALL})
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
+.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL81_MAN)
+	@cd ${WRKSRC} && ${MAKE} -f Makefile install-man
 .endif
 
 test:
