@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	examples
-PORTVERSION=	20061020
+PORTVERSION=	20070216
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 		http://geda.seul.org/devel/${PORTVERSION}/

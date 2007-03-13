@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	netlist
-PORTVERSION=	20061020
+PORTVERSION=	20070216
 PORTREVISION=	0
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
-		http://geda.seul.org/devel/${PORTVERSION}/ \
-		http://www.tinkerbox.org/projects/files/gEDA/
+		http://geda.seul.org/devel/${PORTVERSION}/
 PKGNAMEPREFIX=	geda-
 DISTNAME=	${PKGNAMEPREFIX}g${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	The gEDA's netlister
 
-LIB_DEPENDS=	geda.27:${PORTSDIR}/cad/libgeda
+LIB_DEPENDS=	geda.28:${PORTSDIR}/cad/libgeda
 RUN_DEPENDS=	${LOCALBASE}/share/geda/sym:${PORTSDIR}/cad/geda-symbols
 
 DATADIR=	${PREFIX}/share/geda

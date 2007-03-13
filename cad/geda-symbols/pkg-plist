@@ -786,6 +786,7 @@
 %%DATADIR%%/sym/font/N.sym
 %%DATADIR%%/sym/font/O-acute-accent.sym
 %%DATADIR%%/sym/font/O-diaeresis.sym
+%%DATADIR%%/sym/font/O-double-acute-accent.sym
 %%DATADIR%%/sym/font/O-slash.sym
 %%DATADIR%%/sym/font/O.sym
 %%DATADIR%%/sym/font/P.sym
@@ -796,6 +797,7 @@
 %%DATADIR%%/sym/font/T.sym
 %%DATADIR%%/sym/font/U-acute-accent.sym
 %%DATADIR%%/sym/font/U-diaeresis.sym
+%%DATADIR%%/sym/font/U-double-acute-accent.sym
 %%DATADIR%%/sym/font/U.sym
 %%DATADIR%%/sym/font/V.sym
 %%DATADIR%%/sym/font/W.sym
@@ -847,12 +849,14 @@
 %%DATADIR%%/sym/font/m_.sym
 %%DATADIR%%/sym/font/minus.sym
 %%DATADIR%%/sym/font/more.sym
+%%DATADIR%%/sym/font/mu_.sym
 %%DATADIR%%/sym/font/n_-acute-accent.sym
 %%DATADIR%%/sym/font/n_-tilde.sym
 %%DATADIR%%/sym/font/n_.sym
 %%DATADIR%%/sym/font/newline.sym
 %%DATADIR%%/sym/font/o_-acute-accent.sym
 %%DATADIR%%/sym/font/o_-diaeresis.sym
+%%DATADIR%%/sym/font/o_-double-acute-accent.sym
 %%DATADIR%%/sym/font/o_-slash.sym
 %%DATADIR%%/sym/font/o_.sym
 %%DATADIR%%/sym/font/p_.sym
@@ -877,6 +881,7 @@
 %%DATADIR%%/sym/font/tilde.sym
 %%DATADIR%%/sym/font/u_-acute-accent.sym
 %%DATADIR%%/sym/font/u_-diaeresis.sym
+%%DATADIR%%/sym/font/u_-double-acute-accent.sym
 %%DATADIR%%/sym/font/u_.sym
 %%DATADIR%%/sym/font/under.sym
 %%DATADIR%%/sym/font/v_.sym

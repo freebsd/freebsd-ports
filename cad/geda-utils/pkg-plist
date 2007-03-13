@@ -1,6 +1,7 @@
 bin/convert_sym
 bin/garchive
 bin/gmk_sym
+bin/gnet_hier_verilog.sh
 bin/grenum
 bin/gsch2pcb
 bin/gschemdoc
