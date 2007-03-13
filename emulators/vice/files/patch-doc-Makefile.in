@@ -1,11 +1,11 @@
---- doc/Makefile.in.orig	Sun Aug 27 22:15:28 2006
-+++ doc/Makefile.in	Thu Sep  7 21:24:17 2006
-@@ -245,7 +245,7 @@
+--- doc/Makefile.in.orig	Sun Mar  4 23:06:04 2007
++++ doc/Makefile.in	Tue Mar 13 12:54:27 2007
+@@ -295,7 +295,7 @@
  xpet_LDFLAGS = @xpet_LDFLAGS@
  xplus4_LDFLAGS = @xplus4_LDFLAGS@
  xvic_LDFLAGS = @xvic_LDFLAGS@
 -docdir = $(VICEDIR)/doc
 +docdir = $(prefix)/share/doc/vice
- 
  doc_DATA = \
+ 	Minix-Howto.txt \
  	MSDOS-Ethernet-Howto.txt \
