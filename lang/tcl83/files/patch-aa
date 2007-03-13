@@ -1,11 +1,9 @@
 --- Makefile.in.orig	Fri Oct 18 22:44:46 2002
-+++ Makefile.in	Tue Nov 12 21:45:50 2002
-@@ -53,7 +53,9 @@
- SCRIPT_INSTALL_DIR	= $(INSTALL_ROOT)$(TCL_LIBRARY)
++++ Makefile.in	Mon Mar 12 17:53:11 2007
+@@ -54,6 +54,8 @@
  
  # Directory in which to install the include file tcl.h:
--INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
-+INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
+ INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
 +GENERIC_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/generic
 +UNIX_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/unix
  
@@ -47,6 +45,15 @@
  
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f ${STUB_LIB_FILE}
+@@ -533,7 +544,7 @@
+ 	cd dltest; if test -f configure; then ./configure; else \
+ 	    $(DLTEST_DIR)/configure; fi
+ 
+-install: install-binaries install-libraries install-doc
++install: install-binaries install-libraries
+ 
+ install-strip:
+ 	$(MAKE) install \
 @@ -561,6 +572,12 @@
  	@$(INSTALL_LIBRARY) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TCL_LIB_FILE))
@@ -89,14 +96,14 @@
 -	@for i in $(GENERIC_DIR)/tcl.h $(GENERIC_DIR)/tclDecls.h \
 -		$(GENERIC_DIR)/tclPlatDecls.h ; \
 +	@for i in $(GENERIC_DIR)/*.h ; \
++	    do \
++	    $(INSTALL_DATA) $$i $(GENERIC_INCLUDE_INSTALL_DIR); \
++	    done;
++	@for i in $(UNIX_DIR)/*.h ; \
  	    do \
 -	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
-+	    $(INSTALL_DATA) $$i $(GENERIC_INCLUDE_INSTALL_DIR); \
- 	    done;
-+	@for i in $(UNIX_DIR)/*.h ; \
-+  	    do \
 +	    $(INSTALL_DATA) $$i $(UNIX_INCLUDE_INSTALL_DIR); \
-+ 	    done;
+ 	    done;
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tcl.h $(INCLUDE_INSTALL_DIR)/tcl.h
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tclDecls.h $(INCLUDE_INSTALL_DIR)/tclDecls.h
  	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)";
