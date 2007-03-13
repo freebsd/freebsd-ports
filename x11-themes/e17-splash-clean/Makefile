@@ -8,10 +8,11 @@
 PORTNAME=	clean
 PORTVERSION=	2.0
 CATEGORIES=	x11-themes
-MASTER_SITES=	http://www0.get-e.org/Themes/E17_-_Startup/_files/ \
-		ftp://ftp.springdaemons.com/pub/snapshots/e17/
+MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/ \
+		${MASTER_SITE_GET_E}
+MASTER_SITE_SUBDIR=	Themes/E17_-_Startup
 PKGNAMEPREFIX=	e17-splash-
-DISTNAME=	init_clean
+DISTNAME=	init_${PORTNAME}
 EXTRACT_SUFX=	.edj
 
 MAINTAINER=	stas@FreeBSD.org
