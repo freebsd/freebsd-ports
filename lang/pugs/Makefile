@@ -29,10 +29,28 @@ BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
 
-SITE_PERL6_REL=	lib/perl6
-
 MAN3=		Perl6::Pugs.3 \
 		Inline::Pugs.3
+
+SITE_PERL6_REL=	lib/perl6
+PERL6_MANPREFIX= ${TARGETDIR}/${SITE_PERL6_REL}/site_perl/auto/pugs/perl5
+SITE_PERL6_MAN3=	Class::Rebless.3 \
+			PIL2JS::JSPM.3 \
+			Pugs::Compiler::Perl6.3 \
+			Pugs::Compiler::Regex.3 \
+			Pugs::Compiler::RegexPerl5.3 \
+			Pugs::Compiler::Rule.3 \
+			Pugs::Compiler::Token.3 \
+			Pugs::Compiler::compile_p6grammar-token.3 \
+			Pugs::Compiler::compile_p6grammar.3 \
+			Pugs::Emitter::Perl6::Perl5.3 \
+			Pugs::Grammar::Precedence.3 \
+			Pugs::Runtime::Capture.3 \
+			Pugs::Runtime::Match.3 \
+			Pugs::Runtime::Perl6.3 \
+			v6.3
+_MANPAGES+=     ${SITE_PERL6_MAN3:S%^%${PERL6_MANPREFIX}/man3/%}
+PLIST_SUB=      SITE_PERL6_REL=${SITE_PERL6_REL}
 
 .include <bsd.port.pre.mk>
 
@@ -50,10 +68,6 @@ post-install:
 		${SED} -e 's|^${TARGETDIR}/||' >> ${TMPPLIST}
 	@${FIND} -d ${EXAMPLESDIR} -type d | \
 		${SED} -e 's|^${TARGETDIR}/|@dirrm |' >> ${TMPPLIST}
-.endif
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.x or later
 .endif
 
 .include <bsd.port.post.mk>
