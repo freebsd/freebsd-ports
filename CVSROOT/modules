@@ -1650,7 +1650,6 @@ cy-aspell	ports/textproc/cy-aspell
 cyberbit-ttfonts	ports/x11-fonts/cyberbit-ttfonts
 cybercalendar	ports/www/cybercalendar
 cycle		ports/deskutils/cycle
-cyclone		ports/lang/cyclone
 cygne-sdl	ports/emulators/cygne-sdl
 cymbaline	ports/audio/cymbaline
 cynthiune	ports/audio/cynthiune
@@ -1912,7 +1911,6 @@ dirvish		ports/sysutils/dirvish
 discid		ports/audio/discid
 disco		ports/net-mgmt/disco
 diskcheckd	ports/sysutils/diskcheckd
-diskmark	ports/sysutils/diskmark
 diskprep	ports/sysutils/diskprep
 diskscrub	ports/sysutils/diskscrub
 disktool	ports/sysutils/disktool
@@ -5349,7 +5347,6 @@ jama		ports/math/jama
 jamboree	ports/audio/jamboree
 jamin		ports/audio/jamin
 jamlib		ports/mail/jamlib
-janosvm		ports/java/janosvm
 jargon		ports/misc/jargon
 jarl		ports/net-im/jarl
 jasmin		ports/java/jasmin
@@ -5799,7 +5796,6 @@ ko-bitchx	ports/korean/bitchx
 ko-elm		ports/korean/elm
 ko-engdic	ports/korean/engdic
 ko-eterm	ports/korean/eterm
-ko-gau		ports/korean/gau
 ko-gdick	ports/korean/gdick
 ko-ghostscript-gnu-korfont	ports/korean/ghostscript-gnu-korfont
 ko-gtkcomm	ports/korean/gtkcomm
@@ -6605,7 +6601,6 @@ lightning-xpi	ports/deskutils/lightning-xpi
 lightsquid	ports/www/lightsquid
 lighttpd	ports/www/lighttpd
 lila-xfwm4	ports/x11-themes/lila-xfwm4
-lile		ports/misc/lile
 lilurl		ports/www/lilurl
 lilypond	ports/print/lilypond
 limewire	ports/net-p2p/limewire
@@ -7660,7 +7655,6 @@ mutt-ng		ports/mail/mutt-ng
 mutt_vc_query	ports/mail/mutt_vc_query
 muttprint	ports/print/muttprint
 muttzilla	ports/mail/muttzilla
-muuz		ports/misc/muuz
 mvdsv		ports/games/mvdsv
 mwavem		ports/comms/mwavem
 mx4j		ports/java/mx4j
@@ -11719,7 +11713,6 @@ pidentd		ports/security/pidentd
 pidof		ports/sysutils/pidof
 piewm		ports/x11-wm/piewm
 pikdev		ports/devel/pikdev
-pike70		ports/lang/pike70
 pike72		ports/lang/pike72
 pike76		ports/lang/pike76
 pilot-link	ports/palm/pilot-link
@@ -14728,7 +14721,6 @@ tel		ports/deskutils/tel
 telak		ports/graphics/telak
 telbook		ports/misc/telbook
 tellico		ports/misc/tellico
-telnetx		ports/net/telnetx
 telserv		ports/net/telserv
 tempcontrol	ports/misc/tempcontrol
 temperature.app	ports/x11/temperature.app
@@ -15918,7 +15910,6 @@ xdelta		ports/misc/xdelta
 xdemineur	ports/games/xdemineur
 xdesktopwaves	ports/games/xdesktopwaves
 xdeview		ports/converters/xdeview
-xdf		ports/misc/xdf
 xdg-utils	ports/devel/xdg-utils
 xdgagrab	ports/graphics/xdgagrab
 xdialog		ports/x11/xdialog

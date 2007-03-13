@@ -31,7 +31,6 @@
     SUBDIR += compaq-cc
     SUBDIR += csharp-mode.el
     SUBDIR += cu-prolog
-    SUBDIR += cyclone
     SUBDIR += dice
     SUBDIR += diveintopython
     SUBDIR += drscheme
@@ -220,7 +219,6 @@
     SUBDIR += php5
     SUBDIR += php5-extensions
     SUBDIR += php_doc
-    SUBDIR += pike70
     SUBDIR += pike72
     SUBDIR += pike76
     SUBDIR += pm3-base

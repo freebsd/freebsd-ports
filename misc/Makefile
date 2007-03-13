@@ -297,7 +297,6 @@
     SUBDIR += libpri-bristuff
     SUBDIR += libutf
     SUBDIR += lifelines
-    SUBDIR += lile
     SUBDIR += lingoteach
     SUBDIR += linm
     SUBDIR += localedata
@@ -320,7 +319,6 @@
     SUBDIR += mmv
     SUBDIR += mshell
     SUBDIR += mtx
-    SUBDIR += muuz
     SUBDIR += nagios-base-logos
     SUBDIR += najitool
     SUBDIR += newer
@@ -479,7 +477,6 @@
     SUBDIR += xbiso
     SUBDIR += xd
     SUBDIR += xdelta
-    SUBDIR += xdf
     SUBDIR += xenmenu
     SUBDIR += xfce4-appfinder
     SUBDIR += xfce4-artwork

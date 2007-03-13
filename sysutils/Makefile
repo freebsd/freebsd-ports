@@ -127,7 +127,6 @@
     SUBDIR += dirdiff
     SUBDIR += dirvish
     SUBDIR += diskcheckd
-    SUBDIR += diskmark
     SUBDIR += diskprep
     SUBDIR += diskscrub
     SUBDIR += disktool
