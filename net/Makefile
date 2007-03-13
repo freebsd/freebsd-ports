@@ -822,7 +822,6 @@
     SUBDIR += tcpxd
     SUBDIR += tcpxtract
     SUBDIR += tdetect
-    SUBDIR += telnetx
     SUBDIR += telserv
     SUBDIR += thcrut
     SUBDIR += throttled

@@ -2855,3 +2855,12 @@ devel/pcre-utf8||2007-03-11|UTF8 support is now enabled in devel/pcre
 www/ruby-webunit||2007-03-13|Has expired: has deprecated dependencies
 emulators/grustibus||2007-03-13|Has expired: Project was abandoned 6 years ago and expects an old version of xmame (0.37b4), please use other frontends instead (like gxmame)
 graphics/drm-kmod||2007-03-13|Has expired: Broken on all supported versions of FreeBSD
+java/janosvm||2007-03-13|Has expired: Broken on all supported versions of FreeBSD
+korean/gau||2007-03-13|Has expired: Broken on all supported versions of FreeBSD
+lang/cyclone||2007-03-13|Has expired: Broken on all supported versions of FreeBSD
+lang/pike70||2007-03-13|Has expired: Please use pike72
+misc/lile||2007-03-13|Has expired: Broken on all supported versions of FreeBSD
+misc/muuz||2007-03-13|Has expired: Broken on all supported versions of FreeBSD
+misc/xdf||2007-03-13|Has expired: Broken on all supported versions of FreeBSD
+net/telnetx||2007-03-13|Has expired: Broken on all supported versions of FreeBSD
+sysutils/diskmark||2007-03-13|Has expired: Makes no sense on FreeBSD > 4.x.  Use glabel(8) instead

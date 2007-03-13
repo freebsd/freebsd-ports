@@ -1,5 +1,0 @@
-The ile program can be run as a simple shell around any program.
-It gives any program an input line editing and a history mechanism. It
-can also be run around your favourite shell. When run around the shell
-ile records the input to interactive programs launched from the
-shell as well as the commands to the shell in its history buffer.
