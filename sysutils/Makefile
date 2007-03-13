@@ -131,7 +131,6 @@
     SUBDIR += diskscrub
     SUBDIR += disktool
     SUBDIR += disktype
-    SUBDIR += diskusage
     SUBDIR += dmidecode
     SUBDIR += dolly
     SUBDIR += dolly+
@@ -716,7 +715,6 @@
     SUBDIR += xmbmon
     SUBDIR += xosview
     SUBDIR += xperfmon
-    SUBDIR += xperfmon3
     SUBDIR += xsi
     SUBDIR += xstow
     SUBDIR += xsu

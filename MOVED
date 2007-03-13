@@ -2864,3 +2864,6 @@ misc/muuz||2007-03-13|Has expired: Broken on all supported versions of FreeBSD
 misc/xdf||2007-03-13|Has expired: Broken on all supported versions of FreeBSD
 net/telnetx||2007-03-13|Has expired: Broken on all supported versions of FreeBSD
 sysutils/diskmark||2007-03-13|Has expired: Makes no sense on FreeBSD > 4.x.  Use glabel(8) instead
+sysutils/diskusage||2007-03-13|Has expired: Unmainntaied, MASTER_SITES disappeared, WWW disappeared.
+sysutils/xperfmon3||2007-03-13|Has expired: Broken on all supported versions of FreeBSD
+comms/mwavem||2007-03-13|Has expired: Broken on all supported versions of FreeBSD
