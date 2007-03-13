@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imapsync
-PORTVERSION=	1.213
+PORTVERSION=	1.217
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://www.linux-france.org/prj/imapsync/dist/
 EXTRACT_SUFX=	.tgz
