@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	v_sim
-PORTVERSION=	3.2.1
+PORTVERSION=	3.3.0
 CATEGORIES=	science
 MASTER_SITES=	http://www-drfmc.cea.fr/sp2m/L_Sim/V_Sim/download/
 
@@ -17,9 +17,9 @@ USE_GNOME=	gtk20
 USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include"	\
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-USE_GCC=	3.4+
 
 .if defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS="@comment "
@@ -28,19 +28,22 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/bin/gtkdoc-mkdb) || defined(WITH_FULL_DOC)
-BUILD_DEPENDS+=	gtkdoc-mkdb:${PORTSDIR}/textproc/gtk-doc
-CONFIGURE_ARGS+="--enable-gtk-doc"
-PLIST_SUB+=	REFDOC=""
+.if !defined(WITHOUT_CDF)
+LIB_DEPENDS+=	netcdf.1:${PORTSDIR}/science/netcdf
+CONFIGURE_ARGS+=--with-nanoquanta --with-nanoquanta-path=${LOCALBASE}
+PLIST_SUB+=	CDF=""
 .else
-CONFIGURE_ARGS+="--disable-gtk-doc"
-PLIST_SUB+=	REFDOC="@comment "
+CONFIGURE_ARGS+=--without-nanoquanta
+PLIST_SUB+=	CDF="@comment "
 .endif
 
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile with gcc 2.95
+.if !defined(WITHOUT_BABEL)
+LIB_DEPENDS+=	openbabel.1:${PORTSDIR}/science/openbabel
+CONFIGURE_ARGS+=--with-openbabel --with-openbabel-path=${LOCALBASE}
+PLIST_SUB+=	BABEL=""
+.else
+CONFIGURE_ARGS+=--without-openbabel
+PLIST_SUB+=	BABEL="@comment "
 .endif
 
 pre-configure:
@@ -59,4 +62,4 @@ pre-configure:
 		${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
