@@ -1,0 +1,33 @@
+# New ports collection makefile for:	p5-Net-RTP
+# Date created:		2007-03-10
+# Whom:			Jin-Shan Tseng <tjs@cdpa.nsysu.edu.tw>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Net-RTP
+PORTVERSION=	0.08
+CATEGORIES=	net perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Net
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	tjs@cdpa.nsysu.edu.tw
+COMMENT=	Send and receive RTP packets (RFC3550)
+
+RUN_DEPENDS=	p5-IO-Socket-Multicast6>=0.02:${PORTSDIR}/net/p5-IO-Socket-Multicast6 \
+		p5-IO-Socket-Multicast>=1.00:${PORTSDIR}/net/p5-IO-Socket-Multicast \
+		p5-IO-Socket-INET6>=1.20:${PORTSDIR}/net/p5-IO-INET6 \
+		p5-Socket6>=0.19:${PORTSDIR}/net/p5-Socket6
+
+PERL_MODBUILD=	yes
+
+MAN1=		rtpdump.pl.1 \
+		rtplosslog.pl.1 \
+		rtpsend-pcmu.pl.1 \
+		rtpstats.pl.1
+
+MAN3=		Net::RTP.3 \
+		Net::RTP::Packet.3
+
+.include <bsd.port.mk>
