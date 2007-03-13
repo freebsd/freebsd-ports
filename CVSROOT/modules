@@ -14860,6 +14860,7 @@ tk83		ports/x11-toolkits/tk83
 tk84		ports/x11-toolkits/tk84
 tk84-thread	ports/x11-toolkits/tk84-thread
 tk85		ports/x11-toolkits/tk85
+tk85-thread	ports/x11-toolkits/tk85-thread
 tkXwin		ports/x11/tkXwin
 tkabber		ports/net-im/tkabber
 tkabber-devel	ports/net-im/tkabber-devel
