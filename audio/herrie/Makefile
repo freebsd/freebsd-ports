@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	herrie
-PORTVERSION=	1.5
+PORTVERSION=	1.5.1
 CATEGORIES=	audio
 MASTER_SITES=	http://g-rave.nl/projects/herrie/distfiles/ \
 		http://www.il.fontys.nl/~ed/projects/herrie/distfiles/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	http://g-rave.nl/projects/herrie/distfiles/ \
 MAINTAINER=	ed@fxq.nl
 COMMENT=	A small command line interface music player
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV+=	PREFIX=${PREFIX}
@@ -31,9 +31,6 @@ OPTIONS=	MAD "MAD MP3 support" on \
 		LIBAO "LibAO support (breaks chroot)" off \
 		XCURSES "Build XCurses version" off
 
-PLIST_FILES=	bin/herrie \
-		share/locale/nl/LC_MESSAGES/herrie.mo \
-		share/locale/tr/LC_MESSAGES/herrie.mo
 MAN1=		herrie.1
 MANCOMPRESSED=	yes
 
@@ -61,11 +58,11 @@ LIB_DEPENDS+=	modplug:${PORTSDIR}/audio/libmodplug
 CONFIGURE_ARGS+=no_modplug
 .endif
 .if !defined(WITHOUT_LIBAO)
-LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao
+LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
 CONFIGURE_ARGS+=ao
 .endif
 .if !defined(WITHOUT_XCURSES)
-LIB_DEPENDS=	XCurses.2:${PORTSDIR}/devel/pdcurses
+LIB_DEPENDS+=	XCurses.2:${PORTSDIR}/devel/pdcurses
 CONFIGURE_ARGS+=xcurses
 .endif
 
