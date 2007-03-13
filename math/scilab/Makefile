@@ -7,7 +7,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math cad parallel
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/
 EXTRACT_SUFX=	-src.tar.gz
@@ -69,7 +69,7 @@ PLIST_SUB+=	GTK2="@comment " NOGTK2=""
 .endif
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
-WITH_ATLAS=     yes
+WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
 CONFIGURE_ARGS+=	--with-atlas-library=${LOCALBASE}/lib
@@ -85,13 +85,13 @@ MAKE_ENV+=	BLAS_LIBS="-L${LOCALBASE}/lib ${BLAS_LIBS}"
 # Scilab broken with GCC 3.3 on FreeBSD 5.3
 .if ${OSVERSION} >= 503000 && ${OSVERSION} < 600000
 #USE_GCC=	3.2 #override FC and F77
-BUILD_DEPENDS+= gcc32:${PORTSDIR}/lang/gcc32
+BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
 CC=		gcc32
 CXX=		g++32
 .endif
 
 WANT_FORTRAN=yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
 F77=		gfortran42
 FC=		gfortran42
 CONFIGURE_ARGS+=	--with-gfortran
