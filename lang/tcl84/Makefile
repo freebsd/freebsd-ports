@@ -631,14 +631,6 @@ post-configure:
 	${REINPLACE_CMD} \
 		-e 's,-DNO_MEMMOVE=1,,' -e 's,-DNO_STRING_H=1,,' \
 		-e 's,^COMPAT_OBJS.*,,' ${WRKSRC}/Makefile
-.if defined(NO_INSTALL_MANPAGES) || defined(WITHOUT_TCL84_MAN)
-	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
-		${WRKSRC}/Makefile
-. for mp in ${MAN1} ${MAN3} ${MANN}
-	@${REINPLACE_CMD} -e 's|^.so man.macros|.so ${DATADIR}/man.macros|'	\
-		${WRKSRC}/../doc/${mp}
-. endfor
-.endif
 .if ${BLACKHOLE} != '' && ${BLACKHOLE} != 0
 	# ====================================================
 	# net.inet.tcp.blackhole is non-zero. Some http-tests
@@ -649,9 +641,14 @@ post-configure:
 .endif
 
 post-install:
-.if !defined(WITHOUT_TCL84_MAN) && !defined(NO_INSTALL_MANPAGES)
+.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL84_MAN)
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/man.macros ${DATADIR}
+. for mp in ${MAN1} ${MAN3} ${MANN}
+	@${REINPLACE_CMD} -e 's|^.so man.macros|.so ${DATADIR}/man.macros|'	\
+		${WRKSRC}/../doc/${mp}
+. endfor
+	@cd ${WRKSRC} && ${MAKE} -f Makefile install-doc ${MAKE_ENV}
 .endif
 
 regression-test:	build
