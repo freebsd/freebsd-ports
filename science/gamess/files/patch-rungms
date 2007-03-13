@@ -1,0 +1,133 @@
+--- rungms.orig	Mon Nov 20 08:09:11 2006
++++ rungms	Thu Mar  8 17:28:51 2007
+@@ -1,4 +1,4 @@
+-#!/bin/csh
++#!/bin/csh -f
+ #
+ #  27 Mar 06 - MWS 
+ #
+@@ -54,7 +54,14 @@
+ #       of using LoadLeveler via a "llgms" front end in ~/gamess/misc.
+ #
+ set TARGET=sockets
+-set SCR=/scr/$USER
++set SCR=.
++if ($#argv == 0 ) then
++        echo "Usage: gamess <input file>"
++       exit
++endif
++set SCR=.
++set GMSPATH=/usr/local/bin/gms
++
+ #
+ set JOB=$1      # name of the input file xxx.inp, give only the xxx part
+ set VERNO=$2    # revision number of the executable created by 'lked' step
+@@ -66,30 +73,40 @@
+ #
+ #  ---- the top third of the script is input and other file assignments ----
+ #
+-echo ----- GAMESS execution script -----
++#echo ----- GAMESS execution script -----
+ set master=`hostname`
+-echo This job is running on host $master
+-echo under operating system `uname` at `date`
+-echo "Available scratch disk space (Kbyte units) at beginning of the job is"
+-df -k $SCR
++#echo This job is running on host $master
++#echo under operating system `uname` at `date`
++#echo "Available scratch disk space (Kbyte units) at beginning of the job is"
++#df -k $SCR
++
++set JOBORG=$JOB
++set JOB=$JOB:r      # strip off possible .inp
++
++if (-e $JOBORG) then
++   cp  $JOBORG $SCR/$JOB.F05
++else	
++   echo "Input file $JOBORG does not exist.  Please fix and resubmit."
++   exit 4
++endif
+ 
+ #  Grab a copy of the input file.
+ #  In the case of EXAMnn jobs, this file might be in the "tests" subdirectory.
+-if ($JOB:r.inp == $JOB) set JOB=$JOB:r      # strip off possible .inp
+-if (-e $JOB.inp) then
+-   set echo
+-   cp  $JOB.inp  $SCR/$JOB.F05
+-   unset echo
+-else
+-   if (-e tests/$JOB.inp) then
+-      set echo
+-      cp  tests/$JOB.inp  $SCR/$JOB.F05
+-      unset echo
+-   else
+-      echo "Input file $JOB.inp does not exist.  Please fix and resubmit."
+-      exit 4
+-   endif
+-endif
++#if ($JOB:r.inp == $JOB) set JOB=$JOB:r      # strip off possible .inp
++#if (-e $JOB.inp) then
++#   set echo
++#   cp  $JOB.inp  $SCR/$JOB.F05
++#   unset echo
++#else
++#   if (-e tests/$JOB.inp) then
++#      set echo
++#      cp  tests/$JOB.inp  $SCR/$JOB.F05
++#      unset echo
++#   else
++#      echo "Input file $JOB.inp does not exist.  Please fix and resubmit."
++#      exit 4
++#   endif
++#endif
+ 
+ #  file assignments.
+ #
+@@ -112,16 +129,16 @@
+ #  d. see NEO plug-in code's documentation regarding the NUCBAS file.
+ #         Note that you must edit a+b, but will probably skip c+d.
+ #
+-set echo
++# set echo
+ #                        ASCII input files (see explanation above)
+-setenv ERICFMT ~mike/gamess/ericfmt.dat
+-setenv MCPPATH ~mike/gamess/mcpdata
++setenv  ERICFMT %%PREFIX%%/share/gamess/ericfmt.dat
++setenv  MCPPATH %%PREFIX%%/share/gamess/mcpdata
+ setenv  EXTBAS /dev/null
+ setenv  NUCBAS /dev/null
+ #
+-setenv IRCDATA ~$USER/scr/$JOB.irc
++setenv IRCDATA $SCR/$JOB.irc
+ setenv   INPUT $SCR/$JOB.F05
+-setenv   PUNCH ~$USER/scr/$JOB.dat
++setenv   PUNCH $SCR/$JOB.dat
+ setenv  AOINTS $SCR/$JOB.F08
+ setenv  MOINTS $SCR/$JOB.F09
+ setenv DICTNRY $SCR/$JOB.F10
+@@ -151,8 +168,8 @@
+ setenv  SOINTY $SCR/$JOB.F32
+ setenv  SOINTZ $SCR/$JOB.F33
+ setenv  SORESC $SCR/$JOB.F34
+-setenv   SIMEN ~$USER/scr/$JOB.simen
+-setenv  SIMCOR ~$USER/scr/$JOB.simcor
++setenv   SIMEN $SCR/$JOB.simen
++setenv  SIMCOR $SCR/$JOB.simcor
+ setenv GCILIST $SCR/$JOB.F37
+ setenv HESSIAN $SCR/$JOB.F38
+ setenv SOCCDAT $SCR/$JOB.F40
+@@ -302,10 +319,10 @@
+ 
+ setenv GMSJOBNAME $JOB  # this values is used only by the VB2000 add-on code
+ 
+-if ((-e $PUNCH) || (-e $IRCDATA)) then
+-   echo Please rename/erase $PUNCH and/or $IRCDATA, and resubmit
+-   exit 4
+-endif
++#if ((-e $PUNCH) || (-e $IRCDATA)) then
++#   echo Please rename/erase $PUNCH and/or $IRCDATA, and resubmit
++#   exit 4
++#endif
+ 
+ #  ---- the middle third of the script is to execute GAMESS ----
+ #

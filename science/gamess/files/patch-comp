@@ -1,0 +1,293 @@
+--- comp.orig	Tue Nov  7 00:17:54 2006
++++ comp	Fri Mar  9 10:44:49 2007
+@@ -8,11 +8,11 @@
+ #  1. Choose your machine, the legal values for TARGET are
+ #      amd64,axp64,compaq-sc,cray-pvp,cray-t3e,cray-x1,cray-xd1,cray-xt3,
+ #      fuji-pp32,fuji-pp64,hpux32,hpux64,ibm32,ibm64,ibm64-sp,ibm-bg,
+-#      linux-ia64,linux-pc,mac32,macG5,necsx,sgi32,sgi64,sun32,sun64
++#      linux-ia64,linux-pc,mac32,macG5,necsx,sgi32,sgi64,sun32,sun64,freebsd-amd64,freebsd-i386
+ #  2. Choose your GAMESS directory tree.
+ #
+-set TARGET=ibm64
+-chdir /u1/mike/gamess
++set TARGET=%%ARCH%%
++#chdir /u1/mike/gamess
+ #
+ #    ---- and now the script begins...
+ #
+@@ -31,6 +31,9 @@
+ #
+ set OK=false
+ if ($TARGET == amd64)      set OK=true
++if ($TARGET == freebsd-amd64) set OK=true
++if ($TARGET == freebsd-i386)  set OK=true
++if ($TARGET == sun64)      set OK=true
+ if ($TARGET == axp64)      set OK=true
+ if ($TARGET == compaq-sc)  set OK=true
+ if ($TARGET == cray-pvp)   set OK=true
+@@ -115,6 +118,8 @@
+ endif
+ if  ($TARGET == mac32)        set BLAS3=true
+ if  ($TARGET == macG5)        set BLAS3=true
++if  ($TARGET == freebsd-i386) set BLAS3=true
++if  ($TARGET == freebsd-amd64) set BLAS3=true
+ if  ($TARGET == sgi32)        set BLAS3=true
+ if  ($TARGET == sgi64)        set BLAS3=true
+ if (($TARGET == sun32) && (-e /opt/SUNWspro/lib/libsunperf.so)) set BLAS3=true
+@@ -493,6 +498,19 @@
+    if ($MODULE == iolib)  setenv MACHIN '*UNX'
+    if ($MODULE == unport) setenv MACHIN '*F2C'
+ endif
++if ($TARGET == freebsd-amd64) then
++                          setenv MACHIN '*I64'
++   if ($MODULE == ddi)    setenv MACHIN '*SOC'
++   if ($MODULE == iolib)  setenv MACHIN '*UNX'
++   if ($MODULE == unport) setenv MACHIN '*AMD'
++endif
++if ($TARGET == freebsd-i386) then
++                          setenv MACHIN '*I32'
++   if ($MODULE == ddi)    setenv MACHIN '*SOC'
++   if ($MODULE == iolib)  setenv MACHIN '*UNX'
++   if ($MODULE == unport) setenv MACHIN '*F2C'
++endif
++
+ if (($TARGET == mac32) || ($TARGET == macG5)) then
+                           setenv MACHIN '*I32'
+    if ($MODULE == ddi)    setenv MACHIN '*SOC'
+@@ -1630,6 +1648,236 @@
+ #--   f77 -c $OPT -stackvar $MODULE.f
+ #--   unset echo
+ #--endif
++
++#
++#  FreeBSD (i386)
++#      
++if ($TARGET == freebsd-i386) then
++#
++#   The target of freebsd-i386 requires that you select a FORTRAN compiler.
++#   There are five choices,
++#          g77,
++#             the default, because it is on our PCs at Iowa State!
++#             lacks support for unit numbers over 99, or REAL*16
++#          gfortran,
++#             the gnu FORTRAN being included in recent Linux distributions
++#             this allows unit numbers over 99, but not REAL*16
++#          Intel's commercial ifort,
++#             this is usually a bit faster, and supports both unit
++#             numbers above 99 and REAL*16 (i.e. runs all of GAMESS)
++#          Portland's commercial pgf77, 
++#             lacks support for REAL*16
++#          the obsolete combination of f2c/gcc.  
++#             lacks support for unit numbers over 99, or REAL*16
++#
++#   Note that the source code is the same for any of the possibilities, so
++#   something missing means only that you can't run that particular thing:
++#      Use of RUNTYP=TDHFX requires file numbers over 99.
++#      Use of quadruple precision (MODEQR) in relativity requires REAL*16.
++#
++#   The only thing you need to change is the next line.
++#   Note: you must make the analogous choice in compddi and lked, as well.
++#
++    set FORTRAN=%%FORTRAN%%       # choose from g77, gfortran, ifort, pgf77, f2c
++#
++    switch ($FORTRAN)
++#
++#   1. Using g77 compiler.     compiler version query: rpm -q gcc-g77
++#   If your RedHat is older than 6.0, see the f2c/gcc clause below.
++#
++#   The meaning of g77's flags are
++#      -O0, -O1, -O2, -O3 are the optimization levels, -O means -O1
++#      -Wno-globals -fno-globals together suppress argument type checking.
++#      -fautomatic defeats use of static storage
++#      -malign-double uses 64 bit data alignment
++#   Tests on a representative GAMESS test suite (executing energy, gradient
++#   hessian code, as well as various SCF, MCSCF, MP2 runs, show that each
++#   of the more aggressive optimizations -ffast-math, -march=i586, and -O3
++#   gave speedups of less than 1% each.  (-march=i686 slows a Celeron type
++#   Pentium II fractionally).  None of these optimizations are used below.
++#
++   case g77:
++   set OPT = '-O2'
++   if ($MODULE == ormas1) set OPT='-O2 -fno-move-all-movables' # RH9, g77 3.3
++   if ($MODULE == zheev)  set OPT='-O0'  # defensive compiling
++#
++#   g77 does not support FORTRAN logical units above 99, or 128 bit math.
++#
++   if (($MODULE == qeigen) || ($MODULE == int2c)) then
++      mv $MODULE.f $MODULE.junk
++      sed -e "s/Q-/D-/g" \
++          -e "s/Q+00/D+00/g" \
++          -e "s/REAL\*16/DOUBLE PRECISION/" $MODULE.junk > $MODULE.f
++      rm -f $MODULE.junk
++   endif
++   if (($MODULE == iolib) || ($MODULE == inputa)) then
++      mv $MODULE.f $MODULE.junk
++      sed -e "s/MXUNIT=299/MXUNIT=99/g" $MODULE.junk > $MODULE.f
++      rm -f $MODULE.junk
++   endif
++   set echo
++   %%FC%% -c $OPT -malign-double -fautomatic \
++           -Wno-globals -fno-globals $MODULE.f
++   unset echo
++   breaksw
++#
++#   2. Using gfortran compiler.     Tested with gfortran 4.1.1 on FC5.
++#   gfortran was included with Fedora Core distributions starting around FC4.
++#   compiler version query: rpm -q gcc-gfortran
++#
++#   This is a 32 bit version, i.e. not using -fdefault-integer-8!
++#   Unlike g77, gfortran allows for unit numbers above 100.
++#   Like g77, gfortran does not support quadruple precision.
++#
++#      -Ox optimization level is from the gcc back end, x can be 0,1,2,3
++#      -std=legacy  suppresses warnings about use of f77 constructs.
++#
++   case gfortran:
++   set OPT='-O2'
++   if ($MODULE == zheev)  set OPT='-O0'  # defensive compiling
++   if (($MODULE == qeigen) || ($MODULE == int2c)) then
++      mv $MODULE.f $MODULE.junk
++      sed -e "s/Q-/D-/g" \
++          -e "s/Q+00/D+00/g" \
++          -e "s/REAL\*16/DOUBLE PRECISION/" $MODULE.junk > $MODULE.f
++      rm -f $MODULE.junk
++   endif
++   set echo
++   %%FC%% -c $OPT -std=legacy $MODULE.f
++   unset echo
++   breaksw
++#
++#    3. Intel Fortran Compiler for Linux
++#    Please see the 64 bit Linux target for more details as to where
++#    to get this compiler, and its cost, and for an explanation of
++#    the command line arguments.
++#
++#    Note that this is more agressive (-O3 compared to -O2) than the
++#    other two places in this file where ifort is used.  If some
++#    version gives you problems, drop this back to -O2.
++#
++#    Dmitri likes to use "-O3 -xN -ssp -unroll8 -ip -pad -opt_report",
++#    but that may cause certain ifort versions to fail on some files.
++#
++   case ifort:
++   set OPT = '-O3'
++   if ($MODULE == delocl) set OPT='-O0'  # from Cheol
++   if ($MODULE == zheev)  set OPT='-O0'
++   set echo
++   %%FC%% -c -i4 $OPT -auto -assume byterecl -w95 -cm $MODULE.f
++   unset echo
++   breaksw
++#
++#    4. Portland Group compiler.
++#    This is a synthesis of recommendations from Fred Arnold and Brian
++#    Salter-Duke.  -fast means -O2 -Munroll -Mnoframe, the latter option
++#    seems to be the source of several incorrect results.  It is said that
++#    "-Munroll" and "-tp p6" gives no significant improvement in run times.
++#    The -Mlfs flag is supposed to cure the 2 GB file size limit.
++#    exam19 may hang when using this compiler.  -Mlfs at link-time
++#    enables large file support.  Your login script must set
++#    up the use of this compiler, along the lines of
++#          setenv PATH $PATH\:/usr/pgi/linux86/bin
++#          setenv PGI /usr/pgi
++#
++   case pgf77:
++   if (($MODULE == qfmm) || ($MODULE == solib) || ($MODULE == zheev)) then
++       mv $MODULE.f $MODULE.junk
++       sed -e s/DREAL/DBLE/g $MODULE.junk > $MODULE.f
++       rm -f $MODULE.junk
++   endif
++   if (($MODULE == qeigen) || ($MODULE == int2c)) then
++      mv $MODULE.f $MODULE.junk
++      sed -e "s/Q-/D-/g" \
++          -e "s/Q+00/D+00/g" \
++          -e "s/REAL\*16/DOUBLE PRECISION/" $MODULE.junk > $MODULE.f
++      rm -f $MODULE.junk
++   endif
++   set OPT = '-O2'
++   if ($MODULE == zheev)  set OPT = '-O2 -Kieee'
++   if ($MODULE == bassto) set OPT = '-O0'  # Takako
++   set echo
++   pgf77 -c $OPT -Msecond_underscore $MODULE.f
++   unset echo
++   breaksw
++#
++#   5. RedHat 4.x and 5.x's FORTRAN compiler was f2c/gcc.
++#   This is a totally obsolete option, actually.
++#
++   case f2c:
++   if (($MODULE == qfmm) || ($MODULE == solib) || ($MODULE == zheev)) then
++       mv $MODULE.f $MODULE.junk
++       sed -e s/DREAL/DBLE/g $MODULE.junk > $MODULE.f
++       rm -f $MODULE.junk
++   endif
++   if (($MODULE == qeigen) || ($MODULE == int2c)) then
++      mv $MODULE.f $MODULE.junk
++      sed -e "s/Q-/D-/g" \
++          -e "s/Q+00/D+00/g" \
++          -e "s/REAL\*16/DOUBLE PRECISION/" $MODULE.junk > $MODULE.f
++      rm -f $MODULE.junk
++   endif
++   if (($MODULE == iolib) || ($MODULE == inputa)) then
++      mv $MODULE.f $MODULE.junk
++      sed -e "s/MXUNIT=299/MXUNIT=99/g" $MODULE.junk > $MODULE.f
++      rm -f $MODULE.junk
++   endif
++   set OPT = '-O3 -malign-double'
++   set echo
++   f2c -w66 -a -Nn1604 -Nx800 $MODULE.f
++   gcc -c $OPT $MODULE.c
++   rm -f $MODULE.c
++   unset echo
++   breaksw
++#
++   default:
++      echo Please spell your ia32 compiler correctly.
++      exit 4
++      breaksw
++   endsw
++#                     ... end of FreeBSD on 32 bit PC compiler choices.
++endif
++if ($TARGET == freebsd-amd64) then
++#
++#   The only thing you need to change is the next line.
++#   Note: you must make the analogous choice in compddi and lked, as well.
++#
++   set FORTRAN=%%FORTRAN%%      # choose from gfortran, ifort
++#
++   switch ($FORTRAN)
++
++   case gfortran:
++      set OPT='-O2'
++      if ($MODULE == zheev)  set OPT='-O0'  # defensive compiling
++      if (($MODULE == qeigen) || ($MODULE == int2c)) then
++         mv $MODULE.f $MODULE.junk
++         sed -e "s/Q-/D-/g" \
++             -e "s/Q+00/D+00/g" \
++             -e "s/REAL\*16/DOUBLE PRECISION/" $MODULE.junk > $MODULE.f
++         rm -f $MODULE.junk
++      endif
++      set echo
++      %%FC%% -fdefault-integer-8 $OPT -std=legacy $MODULE.f
++      unset echo
++      breaksw
++
++   case ifort:
++      set OPT = '-O2'
++      if ($MODULE == delocl) set OPT='-O0'
++      if ($MODULE == zheev)  set OPT='-O0'
++      set echo
++      %%FC%% -c -i8 $OPT -auto -assume byterecl -w95 -cm $MODULE.f
++      unset echo
++      breaksw
++#
++   default:
++      echo "Please spell your AMD64's FORTRAN compiler name correctly."
++      exit 4
++      breaksw
++   endsw
++#                     ... end of FreeBSD on 64 bit AMD processors.
++endif
++
+ #
+ #  Store the generated object code, clean up, and quit
+ #
