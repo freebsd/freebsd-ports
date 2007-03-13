@@ -13,6 +13,7 @@
 
 PORTNAME=	clamfilter
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.wyae.de/software/ensita-clamfilter/
 

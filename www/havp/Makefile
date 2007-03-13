@@ -7,7 +7,7 @@
 
 PORTNAME=	havp
 PORTVERSION=	0.82
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.server-side.de/download/ \
 				http://bio3k.softboard.ru/uploads/arch/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.server-side.de/download/ \
 MAINTAINER=	b3k@mail.ru
 COMMENT=	HTTP Antivirus Proxy
 
-LIB_DEPENDS=	clamav.1:${PORTSDIR}/security/clamav
+LIB_DEPENDS=	clamav.2:${PORTSDIR}/security/clamav
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

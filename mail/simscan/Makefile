@@ -7,7 +7,7 @@
 
 PORTNAME=	simscan
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.inter7.com/simscan/
 MASTER_SITE_SUBDIR=	${PORTNAME}
