@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/IO/Socket/Multicast6.pm
+@dirrmtry %%SITE_PERL%%/IO/Socket
+@dirrmtry %%SITE_PERL%%/IO
