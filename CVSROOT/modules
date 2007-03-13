@@ -1915,7 +1915,6 @@ diskprep	ports/sysutils/diskprep
 diskscrub	ports/sysutils/diskscrub
 disktool	ports/sysutils/disktool
 disktype	ports/sysutils/disktype
-diskusage	ports/sysutils/diskusage
 dislin		ports/math/dislin
 display		ports/misc/display
 displaycalibrator	ports/deskutils/displaycalibrator
@@ -7656,7 +7655,6 @@ mutt_vc_query	ports/mail/mutt_vc_query
 muttprint	ports/print/muttprint
 muttzilla	ports/mail/muttzilla
 mvdsv		ports/games/mvdsv
-mwavem		ports/comms/mwavem
 mx4j		ports/java/mx4j
 mxico		ports/x11/mxico
 mxp		ports/graphics/mxp
@@ -16316,7 +16314,6 @@ xpcd		ports/graphics/xpcd
 xpdf		ports/graphics/xpdf
 xpenguins	ports/games/xpenguins
 xperfmon	ports/sysutils/xperfmon
-xperfmon3	ports/sysutils/xperfmon3
 xphoon		ports/astro/xphoon
 xphotohunter	ports/games/xphotohunter
 xpi-adblock	ports/www/xpi-adblock

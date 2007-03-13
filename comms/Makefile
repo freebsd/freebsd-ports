@@ -67,7 +67,6 @@
     SUBDIR += mlan
     SUBDIR += mlan3
     SUBDIR += mserver
-    SUBDIR += mwavem
     SUBDIR += nasawash
     SUBDIR += ncid
     SUBDIR += nec2c
