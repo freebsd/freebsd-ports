@@ -2852,3 +2852,6 @@ japanese/emacs20-dl-canna||2007-03-09|Has expired: has deprecated dependency
 japanese/emacs20-dl-wnn6||2007-03-09|Has expired: has deprecated dependency
 misc/pbs||2007-03-11|Has expired: failed to build
 devel/pcre-utf8||2007-03-11|UTF8 support is now enabled in devel/pcre
+www/ruby-webunit||2007-03-13|Has expired: has deprecated dependencies
+emulators/grustibus||2007-03-13|Has expired: Project was abandoned 6 years ago and expects an old version of xmame (0.37b4), please use other frontends instead (like gxmame)
+graphics/drm-kmod||2007-03-13|Has expired: Broken on all supported versions of FreeBSD

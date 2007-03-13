@@ -1017,7 +1017,6 @@
     SUBDIR += ruby-http-access
     SUBDIR += ruby-nora
     SUBDIR += ruby-tmpl
-    SUBDIR += ruby-webunit
     SUBDIR += rubygem-actionpack
     SUBDIR += rubygem-actionwebservice
     SUBDIR += rubygem-bluecloth

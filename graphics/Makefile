@@ -91,7 +91,6 @@
     SUBDIR += dore
     SUBDIR += dri
     SUBDIR += driconf
-    SUBDIR += drm-kmod
     SUBDIR += duhdraw
     SUBDIR += dynamechs
     SUBDIR += ecg2png

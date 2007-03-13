@@ -2062,7 +2062,6 @@ drill		ports/dns/drill
 drivel		ports/deskutils/drivel
 drjava		ports/editors/drjava
 drm		ports/games/drm
-drm-kmod	ports/graphics/drm-kmod
 dropbear	ports/security/dropbear
 drpython	ports/devel/drpython
 drraw		ports/www/drraw
@@ -3946,7 +3945,6 @@ grubinvaders	ports/games/grubinvaders
 gruftistats	ports/irc/gruftistats
 gruler		ports/deskutils/gruler
 grun		ports/misc/grun
-grustibus	ports/emulators/grustibus
 grx		ports/graphics/grx
 grzip		ports/archivers/grzip
 gsasl		ports/security/gsasl
@@ -13632,7 +13630,6 @@ ruby-tzfile	ports/devel/ruby-tzfile
 ruby-usersguide	ports/lang/ruby-usersguide
 ruby-vorbisfile	ports/audio/ruby-vorbisfile
 ruby-vpim	ports/misc/ruby-vpim
-ruby-webunit	ports/www/ruby-webunit
 ruby-wirble	ports/devel/ruby-wirble
 ruby-wx		ports/x11-toolkits/ruby-wx
 ruby-xml-script	ports/textproc/ruby-xml-script
