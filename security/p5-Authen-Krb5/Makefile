@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Authen
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Krb5-${PORTVERSION}
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for Kerberos 5
 
 LIB_DEPENDS=	gssapi_krb5.2:${PORTSDIR}/security/krb5

@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to rotate logfiles
 
 PERL_CONFIGURE=	yes

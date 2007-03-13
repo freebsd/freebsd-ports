@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Taint
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Runtime enable/disable taint checking
 
 PERL_CONFIGURE=	yes
