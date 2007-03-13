@@ -1,4 +1,4 @@
-# FreeBSD 2.x
+# FreeBSD 5.x
 
 . $ROOT/conf/os/bsd4.4-lite
 
@@ -14,29 +14,29 @@ OSNAMES="FREEBSD:$OSNAMES"
 #
 #
 MAN1_EXT=1
-MAN1=!!PREFIX!!/man/man1
+MAN1=%%MANPREFIX%%/man/man1
 MAN5_EXT=5
-MAN5=!!PREFIX!!/man/man5
+MAN5=%%MANPREFIX%%/man/man5
 MAN8_EXT=8
-MAN8=!!PREFIX!!/man/man8
+MAN8=%%MANPREFIX%%/man/man8
 
 # SMAIL_BIN_DIR - location for uupath, etc.
-SMAIL_BIN_DIR=!!PREFIX!!/bin
+SMAIL_BIN_DIR=%%PREFIX%%/bin
 
 # SMAIL_NAME - to replace sendmail completely
-SMAIL_NAME=!!PREFIX!!/sbin/sendmail
+SMAIL_NAME=%%PREFIX%%/sbin/sendmail
 
 # OTHER_SMAIL_NAMES - to replace sendmail completely
-OTHER_SMAIL_NAMES=!!PREFIX!!/bin/mailq:!!PREFIX!!/bin/rmail:!!PREFIX!!/bin/rsmtp
+OTHER_SMAIL_NAMES=%%PREFIX%%/bin/mailq:%%PREFIX%%/bin/rmail:%%PREFIX%%/bin/rsmtp
 
 # NEWALIASES - to replace sendmail completely
-NEWALIASES=!!PREFIX!!/bin/newaliases
+NEWALIASES=%%PREFIX%%/bin/newaliases
 
 # LIB_DIR - config files
-LIB_DIR=!!PREFIX!!/etc/smail
+LIB_DIR=%%PREFIX%%/etc/smail
 
 # UTIL_BIN_DIR - programs
-UTIL_BIN_DIR=!!PREFIX!!/libexec/smail
+UTIL_BIN_DIR=%%PREFIX%%/libexec/smail
 
 # Enable rfc1413 (ident protocol) and ESMTP sending support (EHLO)
 HAVE=$HAVE:EHLO:RFC1413:LIBWRAP
@@ -63,19 +63,27 @@ REWRITE_FILE=rewrite
 REWRITE_TYPE=lsearch
 
 # CPPFLAGS - interesting flags for the cpp, and cc commands
-CPPFLAGS="-I. -I.. -I../src -I/usr/local/include -I!!PREFIX!!/include"
+CPPFLAGS="-I. -I.. -I../src %%CPPFLAGS%%"
 
-CFLAGS="$CFLAGS -I!!PREFIX!!/include"
+CFLAGS="%%CFLAGS%%"
 
 # LDFLAGS - flags to pass to the loader
-LDFLAGS="-L/usr/local/lib -L!!PREFIX!!/lib"
+LDFLAGS="%%LDFLAGS%%"
 
 # LIBS - libraries to include in binaries
-LIBS="-lident -lwrap"
+LIBS="%%LIBS%%"
 
 # OSLIBS - we don't have libresolv
-# I doubt that the change to smail-3.2.0.110/conf/os/bsd4.4 is the right way
-# to do it.
 OSLIBS="-lcrypt"
 
-MISC_DEFINES="$MISC_DEFINES:USE_TARGET_DOMAIN:NO_FORWARDTO_FILE:USE_LSEARCH_REGEXCMP:USE_STRICT_MX"
+SPOOL_DIRS=/var/spool/smail
+TMP_DIR=/var/spool/smail/tmp
+LOG_DIR=/var/log/smail
+UNSHAR_MAP_DIR=/var/spool/uumaps
+NEWS_SPOOL_DIR=/var/spool/news
+UUWHO_FILE=/var/spool/smail/uuwho
+
+MISC_DEFINES="$MISC_DEFINES:USE_TARGET_DOMAIN:NO_FORWARDTO_FILE:USE_LSEARCH_REGEXCMP:USE_STRICT_MX:%%CYRUS_IMAPD%%"
+
+# Architecture type
+ARCH_TYPE=%%ARCH_TYPE%%
