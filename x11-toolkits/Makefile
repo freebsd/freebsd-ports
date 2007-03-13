@@ -232,6 +232,7 @@
     SUBDIR += tk82
     SUBDIR += tk83
     SUBDIR += tk84
+    SUBDIR += tk84-thread
     SUBDIR += tk85
     SUBDIR += tkdnd
     SUBDIR += tkshape
