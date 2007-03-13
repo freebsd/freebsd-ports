@@ -7,11 +7,11 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.2.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	lang tcl82
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_2
-DISTNAME=	tcl8.2.3
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	martin@matuska.org
 COMMENT=	Tool Command Language
@@ -23,12 +23,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
 MAKE_ENV=	SHORT_TCL_VER=82
-PKGINSTALL=	${PKGDIR}/pkg-install.tclsh
-PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.tclsh
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 PLIST_SUB=	TCL_VER=8.2 SHORT_TCL_VER=82
 
-OPTIONS=	TCL82_MAN "Install tcl 8.2 manpages" on \
+OPTIONS=	TCL82_MAN "Install tcl 8.2 manpages" off \
 		TCLSH_WRAPPER "Require tclsh wrapper from ports" off
 
 .include <bsd.port.pre.mk>
@@ -391,14 +389,10 @@ post-configure:
 	${REINPLACE_CMD} \
 		-e 's|${WRKDIRPREFIX}${.CURDIR}|$${WRKDIRPREFIX}${TCLBASE}|' \
 		${WRKSRC}/tclConfig.sh
-.if defined(NO_INSTALL_MANPAGES) || !defined(WITH_TCL82_MAN)
-	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
-		${WRKSRC}/Makefile
-.endif
 
 post-install:
-.if exists(${PKGINSTALL})
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
+.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL82_MAN)
+	@cd ${WRKSRC} && ${MAKE} -f Makefile install-doc
 .endif
 
 test:
