@@ -373,6 +373,7 @@
     SUBDIR += php5-propel
     SUBDIR += php5-sqlite
     SUBDIR += php5-sybase_ct
+    SUBDIR += phpminiadmin
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
     SUBDIR += postgis
