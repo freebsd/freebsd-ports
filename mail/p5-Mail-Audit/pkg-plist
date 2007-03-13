@@ -1,11 +1,8 @@
 %%SITE_PERL%%/Mail/Audit.pm
 %%SITE_PERL%%/Mail/Audit/KillDups.pm
-%%SITE_PERL%%/Mail/Audit/List.pm
 %%SITE_PERL%%/Mail/Audit/MAPS.pm
 %%SITE_PERL%%/Mail/Audit/MailInternet.pm
 %%SITE_PERL%%/Mail/Audit/MimeEntity.pm
-%%SITE_PERL%%/Mail/Audit/PGP.pm
-%%SITE_PERL%%/Mail/Audit/Razor.pm
 %%SITE_PERL%%/Mail/Audit/Util/Tempdir.pm
 %%SITE_PERL%%/Mail/Audit/Vacation.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Audit/.packlist
