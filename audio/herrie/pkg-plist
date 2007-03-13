@@ -1,0 +1,4 @@
+bin/herrie
+etc/herrie.conf.sample
+share/locale/nl/LC_MESSAGES/herrie.mo
+share/locale/tr/LC_MESSAGES/herrie.mo
