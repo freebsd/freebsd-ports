@@ -11,7 +11,7 @@ CATEGORIES=	sysutils archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
 
-MAINTAINER=	ebrandi@fugspbr.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full featured command-line backup tool, aimed for disks
 
 USE_AUTOTOOLS=	libtool:15
