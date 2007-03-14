@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Mail-ClamAV
-PORTVERSION=	0.17
-PORTREVISION=	1
+PORTVERSION=	0.20
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -21,9 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDe
 		clamscan:${PORTSDIR}/security/clamav
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		Does not build
-
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 PERL_CONFIGURE=	yes
 
@@ -35,7 +32,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		"requires perl 5.6.x or later. Install lang/perl5 and try again"
+IGNORE=		requires perl 5.6.x or later. Install lang/perl5 and try again
 .endif
 
 .include <bsd.port.post.mk>
