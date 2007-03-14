@@ -31,7 +31,8 @@ USE_PYTHON=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-lintl"
+		LIBS="-lintl" \
+		PYTHON="${PYTHON_VERSION}"
 CONFIGURE_ARGS=	--disable-docs
 LDFLAGS+=	-L${LOCALBASE}/lib
 
