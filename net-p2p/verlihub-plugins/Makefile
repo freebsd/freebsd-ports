@@ -12,7 +12,7 @@ MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=     verlihub
 DISTNAME=	vh_plugins-0.1
 
-MAINTAINER=     hurbold@yahoo.com
+MAINTAINER=     ports@FreeBSD.org
 COMMENT=        Plugins for the Verlihub Linux/Unix Direct Connect Hub Software
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/verlihub:${PORTSDIR}/net-p2p/verlihub
