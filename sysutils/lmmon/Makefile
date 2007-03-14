@@ -23,12 +23,8 @@ PLIST_FILES=	bin/lmmon
 
 FIXFILES=	configure configure.in lmmon.c
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-.if ${OSVERSION} > 500000
 	@${REINPLACE_CMD} -e 's,machine/smb.h,dev/smbus/smb.h,' \
 		${FIXFILES:S,^,${WRKSRC}/,}
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
