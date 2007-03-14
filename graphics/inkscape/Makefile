@@ -7,7 +7,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	0.45
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +25,7 @@ RUN_DEPENDS=	${SITE_PERL}/XML/XQL.pm:${PORTSDIR}/textproc/p5-XML-XQL
 #USE_BZIP2=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes
-USE_GNOME=	gnomehack intlhack libxslt
+USE_GNOME=	gnomehack desktopfileutils intlhack libxslt
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	3.4
