@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ogmrip
-DISTVERSION=	0.10.2
+DISTVERSION=	0.10.3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,8 +25,6 @@ RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer \
 		lame:${PORTSDIR}/audio/lame
 LIB_DEPENDS=	dvdread:${PORTSDIR}/multimedia/libdvdread \
 		x264:${PORTSDIR}/multimedia/x264
-
-BROKEN=		Incorrect pkg-plist
 
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
@@ -122,6 +120,16 @@ PLIST_SUB+=		ENCHANT_SUPPORT=""
 CONFIGURE_ARGS+=	--disable-enchant-support
 PLIST_SUB+=		ENCHANT_SUPPORT="@comment "
 .endif
+
+X264_SUPPORT!=		${LOCALBASE}/bin/mencoder -ovc help 2> /dev/null | \
+				${GREP} -q '^ *x264 *- .*$$' && \
+	  			${ECHO_CMD} "" || ${ECHO_CMD} "@comment "
+PLIST_SUB+=		X264_SUPPORT="${X264_SUPPORT}"
+
+LAVF_SUPPORT!=		${LOCALBASE}/bin/mencoder -of help 2> /dev/null | \
+				${GREP} -q '^ *lavf *- .*$$' && \
+	  			${ECHO_CMD} "" || ${ECHO_CMD} "@comment "
+PLIST_SUB+=		LAVF_SUPPORT="${LAVF_SUPPORT}"
 
 pre-configure:
 	@if ${LOCALBASE}/mencoder -ovc help 2> /dev/null | ${GREP} -q "^ *xvid *- .*" ; then \
