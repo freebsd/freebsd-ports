@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	linkchecker
-PORTVERSION=	4.5
-CATEGORIES=	www
+PORTVERSION=	4.6
+CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
@@ -17,13 +17,27 @@ COMMENT=	Check HTML documents for broken links
 
 USE_PYTHON=		2.4
 USE_PYDISTUTILS=	yes
+
 MAN1=	linkchecker.1
+MANLANG=	"" de fr
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-post-patch:
-	@${REINPLACE_CMD} -e 's/gnu99/gnu89/' ${WRKSRC}/setup.py
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+post-patch:
+.if !defined(WITHOUT_NLS)
+	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/nls-patch-setup.py
+.endif
+
+.if !defined(WITHOUT_NLS)
+post-install:
+	${CP} ${WRKSRC}/build/share/locale/de/LC_MESSAGES/linkchecker.mo ${PREFIX}/share/locale/de/LC_MESSAGES/
+	${CP} ${WRKSRC}/build/share/locale/es/LC_MESSAGES/linkchecker.mo ${PREFIX}/share/locale/es/LC_MESSAGES/
+	${CP} ${WRKSRC}/build/share/locale/fr/LC_MESSAGES/linkchecker.mo ${PREFIX}/share/locale/fr/LC_MESSAGES/
+.endif
+
+.include <bsd.port.mk>
