@@ -1,5 +1,0 @@
-This port installs three kernel modules, big5cd9660.ko, big5msdos.ko and
-big5ntfs.ko, which will let users read Big5 filenames on Joliet, VFAT,
-and NTFS filesystems, respectively.
-
-The NTFS version is contributed by:  huangant.bbs@bbs.cs.ntou.edu.tw

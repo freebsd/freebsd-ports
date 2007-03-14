@@ -16629,7 +16629,6 @@ zh-autoconvert	ports/chinese/autoconvert
 zh-bg5pdf	ports/chinese/bg5pdf
 zh-bg5ps	ports/chinese/bg5ps
 zh-big5con	ports/chinese/big5con
-zh-big5fs	ports/chinese/big5fs
 zh-big5width	ports/chinese/big5width
 zh-bind8	ports/chinese/bind8
 zh-bitchx	ports/chinese/bitchx
@@ -16656,7 +16655,6 @@ zh-fireflyttf	ports/chinese/fireflyttf
 zh-fortunetw	ports/chinese/fortunetw
 zh-gb2jis	ports/chinese/gb2jis
 zh-gb2ps	ports/chinese/gb2ps
-zh-gbfs		ports/chinese/gbfs
 zh-gbk2uni	ports/chinese/gbk2uni
 zh-gbscript	ports/chinese/gbscript
 zh-gcin		ports/chinese/gcin
