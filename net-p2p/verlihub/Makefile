@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	verlihub
 DISTNAME=	verlihub-0.9.8c-RC2
 
-MAINTAINER=	hurbold@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Direct Connect protocol server (Hub)
 
 # XXX: Actually, bash isn't required for building,
