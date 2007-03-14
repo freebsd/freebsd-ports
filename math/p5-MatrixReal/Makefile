@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	Math
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Math-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	sander@haldjas.folklore.ee
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A perl module implementing a Matrix of Reals
 
 PERL_CONFIGURE=	YES
