@@ -12,7 +12,7 @@ MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A bootmark plugin for xfce panel.
+COMMENT=	A bookmark plugin for xfce panel.
 
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
