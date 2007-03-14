@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Module
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	apeiron@comcast.net
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Call module plugins in a specified order
 
 RUN_DEPENDS=	${SITE_PERL}/Module/Pluggable.pm:${PORTSDIR}/devel/p5-Module-Pluggable \
