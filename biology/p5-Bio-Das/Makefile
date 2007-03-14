@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.biodas.org/download/Bio::Das/ \
 MASTER_SITE_SUBDIR=	Bio
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	razi@genet.sickkids.on.ca
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Client-side library for Distributed Genome Annotation System
 
 BUILD_DEPENDS=	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
