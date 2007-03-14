@@ -10,7 +10,7 @@ PORTVERSION=	1.7.1
 CATEGORIES=	games
 MASTER_SITES=	http://downloads.tlhiv.org/xgame/
 
-MAINTAINER=	aberg@doomnet.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Perl script which enhances gameplay under Linux/Unix
 
 NO_BUILD=	yes

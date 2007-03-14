@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://userpage.fu-berlin.de/~zeank/gtk-imonc/download/
 
-MAINTAINER=	aberg@doomnet.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK2-based imond-client to control an on(e) disc fli4l router
 
 GNU_CONFIGURE=	yes
