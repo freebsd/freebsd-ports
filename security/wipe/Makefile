@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ebrandi@fugspbr.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File and block device wiping utility
 
 USE_BZIP2=	yes
