@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pptpclient
 DISTNAME=		pptp-${PORTVERSION}
 
-MAINTAINER=	thomas@cuivre.fr.eu.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PPTP client for establishing a VPN link with an NT server
 
 USE_GETOPT_LONG=yes
