@@ -41,7 +41,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --with-libdir=${PREFIX}/lib/ocaml
 PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)cp([[:space:]]
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
 
 .if (exists(${LOCALBASE}/bin/lablgl) && exists(${LOCALBASE}/libdata/pkgconfig/gtkgl-2.0.pc)) || defined(WITH_GTKTL)
 CONFIGURE_ARGS+=	--with-gl

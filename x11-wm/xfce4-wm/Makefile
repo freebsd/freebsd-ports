@@ -30,7 +30,6 @@ OPTIONS=	COMPOSITE	"Support the experimental X11 Composite extension"	on \
 		STARTUP 	"Enable startup notification support"			on
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
 
 .if !defined(WITHOUT_COMPOSITE)
 CONFIGURE_ARGS+=--enable-compositor

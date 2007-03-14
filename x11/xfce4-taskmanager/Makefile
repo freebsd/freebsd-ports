@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-taskmanager
 PORTVERSION=	0.4.0.r2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://xfce4-taskmanager.nebulon.de/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
@@ -30,6 +30,4 @@ USE_XLIB=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|linux|freebsd|g; s|^CFLAGS = |&-lkvm -lm |' ${WRKSRC}/src/Makefile.in
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

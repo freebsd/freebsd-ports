@@ -25,6 +25,4 @@ post-patch:
 	@${REINPLACE_CMD} -e '12s|^$$|PATH="$${PATH}:${LOCALBASE}/gnu-autotools/bin"|' \
 		${WRKSRC}/scripts/xdt-autogen.in
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

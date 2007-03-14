@@ -27,7 +27,6 @@ MASTERPORT=	${PORTSDIR}/devel/ocaml-camlidl
 PATTERN=	([[:space:]]*)cp([[:space:]]+.*)
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
 
 post-extract:
 # PREFIX, CFLAGS and permissions safeness

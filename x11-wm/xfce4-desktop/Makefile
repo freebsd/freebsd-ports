@@ -28,7 +28,8 @@ USE_LDCONFIG=	yes
 USE_XFCE=	configenv libgui libmcs libutil mcsmanager panel
 USE_XLIB=	yes
 
-OPTIONS=	THUNAR	"Enable thunar support"		on
+OPTIONS=	FAM	"Enable FAM support"		on \
+		THUNAR	"Enable thunar support"		on
 
 MAN1=		xfdesktop.1
 
@@ -41,7 +42,9 @@ USE_XFCE+=	libexo thunar
 CONFIGURE_ARGS+=--disable-thunar-vfs --disable-thunarx --disable-exo
 .endif
 
-.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
+.if !defined(WITHOUT_FAM)
+.else
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure

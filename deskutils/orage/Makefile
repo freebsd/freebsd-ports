@@ -27,7 +27,6 @@ OPTIONS=	BDB	"Enable BDB support"		off \
 		ICAL	"Enable libical support"	off
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
 
 .if defined(WITH_BDB)
 CONFIGURE_ARGS+=--with-bdb4=yes --with-bdb4_dir=${LOCALBASE}

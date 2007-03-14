@@ -37,7 +37,6 @@ MASTERPORT=	${PORTSDIR}/devel/ocaml-camlidl
 PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)cp([[:space:]]
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
 
 .if defined(WITHOUT_GL)
 PLIST_SUB+=	GL="@comment "

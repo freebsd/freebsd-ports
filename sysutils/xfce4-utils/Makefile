@@ -28,7 +28,6 @@ USE_XLIB=	yes
 OPTIONS=	DBUS	"Enable D-BUS support"			on
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
 
 .if !defined(WITHOUT_DBUS)
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib

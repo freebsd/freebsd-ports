@@ -29,7 +29,6 @@ OPTIONS=	XMMS		"Enable xmms support"			on \
 		AUDACIOUS	"Enable audacious support"		off
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
 
 .if defined(WITH_BEEP)
 RUN_DEPENDS+=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player

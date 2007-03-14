@@ -33,7 +33,6 @@ OPTIONS=	TAGLIB	"Enable metadata editing"		off \
 		STARTUP "Enable startup notification support"	on
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
 
 .if defined(WITH_TAGLIB)
 LIB_DEPENDS+=	tag.5:${PORTSDIR}/audio/taglib

@@ -32,7 +32,6 @@ OPTIONS=	DBUS	"Enable D-BUS support"			on \
 MAN1=		Terminal.1
 
 .include  <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
 
 .if !defined(WITHOUT_DBUS)
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib

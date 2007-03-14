@@ -144,6 +144,4 @@ post-patch:
 post-install:
 	@-update-desktop-database
 
-#keep this here
-.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
 .include <bsd.port.post.mk>

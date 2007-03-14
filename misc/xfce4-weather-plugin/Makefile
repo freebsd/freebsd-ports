@@ -23,6 +23,4 @@ USE_GNOME=	gnometarget glib20 gtk20 intltool intlhack libxml2 pkgconfig
 USE_XFCE=	configenv libgui libutil panel
 USE_XLIB=	yes
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

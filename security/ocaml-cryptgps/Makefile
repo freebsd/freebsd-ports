@@ -29,7 +29,6 @@ DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 .endif
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
 
 post-extract:
 # For nonstandard prefixes

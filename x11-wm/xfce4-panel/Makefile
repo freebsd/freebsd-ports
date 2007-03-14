@@ -29,7 +29,6 @@ OPTIONS=	GTKDOC	"install the library documentation"	off \
 		STARTUP "Enable startup notification support"	on
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
 
 .if defined(WITH_GTKDOC)
 BUILD_DEPENDS+=	gtkdocize:${PORTSDIR}/textproc/gtk-doc

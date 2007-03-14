@@ -40,6 +40,4 @@ post-install:
 	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/)
 .endif
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
