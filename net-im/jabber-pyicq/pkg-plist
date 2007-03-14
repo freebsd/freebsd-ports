@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 @unexec if cmp -s %D/%%EXAMPLESDIR%%/etc/jabber-pyicq.xml %D/etc/jabber-pyicq.xml; then rm -f %D/etc/jabber-pyicq.xml; fi
+%%EXAMPLESDIR%%/db-setup.mysql
 %%EXAMPLESDIR%%/etc/jabber-pyicq.xml
 @exec [ -f %D/etc/jabber-pyicq.xml ] || cp %B/%f %D/etc/jabber-pyicq.xml
 lib/jabber/pyicq/PyICQt.py
