@@ -12,7 +12,7 @@ CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=mysqlcppapi
 
-MAINTAINER=	gaoj@cpsc.ucalgary.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fork of mysql++ C++ API for MySQL
 
 USE_AUTOTOOLS=	libtool:15

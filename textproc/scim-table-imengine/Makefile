@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
 DISTNAME=	scim-tables-${PORTVERSION}
 
-MAINTAINER=	gaoj@cpsc.ucalgary.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM table based input method engine
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim

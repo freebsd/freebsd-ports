@@ -12,7 +12,7 @@ CATEGORIES=	textproc kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	scim
 
-MAINTAINER=	gaoj@cpsc.ucalgary.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An input method platform based on SCIM library and KDE/QT
 
 LIB_DEPENDS=	scim-1.0.9:${PORTSDIR}/textproc/scim
