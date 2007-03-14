@@ -21,7 +21,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--program-transform-name="" \
 			--disable-usb
 
-post-configure:
+post-patch:
 	@ ${REINPLACE_CMD} -e "s|pkgconfigdir =.*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g" \
 		${WRKSRC}/Makefile.in
 
