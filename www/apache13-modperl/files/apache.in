@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/www/apache13-modperl/files/Attic/apache.sh,v 1.3 2006-02-20 20:47:46 dougb Exp $
+# $FreeBSD$
 
 # PROVIDE: apache
 # REQUIRE: DAEMON
@@ -14,8 +14,8 @@
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 apache_enable="${apache_enable-NO}"
-apache_flags=""
-apache_pidfile="/var/run/httpd.pid"
+apache_flags="${apache_flags=''}"
+apache_pidfile="${apache_pidfile='/var/run/httpd.pid'}"
 
 . %%RC_SUBR%%
 

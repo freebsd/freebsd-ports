@@ -7,6 +7,7 @@
 
 PORTNAME=	apache+mod_perl
 PORTVERSION=	${VERSION_APACHE}
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD:S/$/:apache/} \
 		${MASTER_SITE_PERL_CPAN:S/$/Apache\/:modperl/}
@@ -30,7 +31,7 @@ CONFLICTS=	apache-1.* apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+
 		apache-*-2.*
 
 USE_PERL5=	YES
-USE_RC_SUBR=	yes
+USE_RC_SUBR=	apache
 
 DATADIR=	${PREFIX}/www
 DOCUMENT_ROOT=	${DATADIR}/data
@@ -147,10 +148,6 @@ MAN8=	ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 \
 MAN3+=		Apache::MyConfig.3
 .endif
 
-post-extract:
-	@${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/apache.sh > ${WRKSRC}/apache.sh
-
 pre-configure:
 	@ cd ${WRKSRC_MODPERL}; \
 	${PERL5} Makefile.PL EVERYTHING=1 APACHE_SRC=../apache_${VERSION_APACHE}\
@@ -167,8 +164,5 @@ pre-build:
 pre-install:
 	@ cd ${WRKSRC_MODPERL} ; \
 	${MAKE} install
-
-post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/apache.sh ${PREFIX}/etc/rc.d/apache.sh
 
 .include <bsd.port.post.mk>
