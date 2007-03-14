@@ -12,7 +12,7 @@ MASTER_SITES=	http://downloads.sourceforge.jp/mplus-fonts/5030/ \
 		http://wids.net/archive/mplusfonts/distfiles/
 DISTNAME=	mplus_bitmap_fonts-${PORTVERSION}
 
-MAINTAINER=	Ys@PixyGarden.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	12x13 dots X11 kanji fonts with simple and readable design
 
 BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
