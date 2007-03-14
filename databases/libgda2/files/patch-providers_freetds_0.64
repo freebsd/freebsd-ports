@@ -1,0 +1,44 @@
+--- providers/freetds/gda-freetds-provider.c.orig	Tue Jan  9 18:50:54 2007
++++ providers/freetds/gda-freetds-provider.c	Wed Mar  7 17:10:38 2007
+@@ -253,7 +253,7 @@
+ 
+ 	/* Version 0.60 api uses context additionaly */
+ #if defined(HAVE_FREETDS_VER0_6X) || defined(HAVE_FREETDS_VER0_60)
+-	tds_cnc->ctx = tds_alloc_context();
++	tds_cnc->ctx = tds_alloc_context(NULL);
+ 	if (! tds_cnc->ctx) {
+ 		gda_log_error (_("Allocating tds context failed."));
+ 		gda_freetds_free_connection_data (tds_cnc);
+@@ -1062,9 +1062,9 @@
+ 	                      TDS_SUCCEED);
+ 
+ 	msg = g_strdup_printf(_("Msg %d, Level %d, State %d, Server %s, Line %d\n%s\n"),
+-	                      msg_info->msg_number,
+-	                      msg_info->msg_level,
+-	                      msg_info->msg_state,
++	                      msg_info->msgno,
++	                      msg_info->severity,
++	                      msg_info->state,
+ 	                      (msg_info->server ? msg_info->server : ""),
+ 	                      msg_info->line_number,
+ 	                      msg_info->message ? msg_info->message : "");
+@@ -1074,7 +1074,7 @@
+ 		if (cnc != NULL) {
+ 			error = gda_error_new ();
+ 			gda_error_set_description (error, msg);
+-			gda_error_set_number (error, msg_info->msg_number);
++			gda_error_set_number (error, msg_info->msgno);
+ 			gda_error_set_source (error, "gda-freetds");
+ 			if (msg_info->sql_state != NULL) {
+ 				gda_error_set_sqlstate (error,
+--- providers/freetds/gda-freetds-recordset.c.orig	Mon Mar 12 13:19:31 2007
++++ providers/freetds/gda-freetds-recordset.c	Mon Mar 12 13:21:09 2007
+@@ -386,7 +386,7 @@
+ 				g_object_unref (recset);
+ 				recset = NULL;
+ 				return NULL;
+-			} else if (tds_cnc->rc != TDS_NO_MORE_ROWS) {
++			} else if (tds_cnc->rc != TDS_NO_MORE_RESULTS) {
+ 				error = gda_freetds_make_error(tds_cnc->tds,
+ 				                               _("Unexpected freetds return code in tds_process_row_tokens().\n"));
+ 				gda_connection_add_error (cnc, error);
