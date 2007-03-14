@@ -11,7 +11,7 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	http://beta.smileaf.org/files/kdmtheme/ \
 		${MASTER_SITE_GENTOO:S/%SUBDIR%/distfiles/}
 
-MAINTAINER=	illusia@inbox.lv
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDM Theme Manager
 
 USE_KDEBASE_VER=3
@@ -22,10 +22,4 @@ USE_GMAKE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Does not build on FreeBSD < 5.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
