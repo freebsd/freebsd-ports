@@ -30,7 +30,6 @@ OPTIONS=	LPR	"Use lpr as printing system"		on \
 		LETTER	"Use letter paper format instead of A4" off
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
 
 .if defined(WITH_CUPS)
 CONFIGURE_ARGS+=--enable-cups

@@ -31,7 +31,6 @@ SA_DIR=		${LOCALBASE}/${OCAML_SITELIBDIR}
 DOCS=	README.txt TODO
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin/

@@ -31,7 +31,6 @@ PLIST_FILES=	bin/camomilecharmap \
 		bin/camomilelocaledef
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
 
 .if ${OSVERSION} < 500000
 BROKEN=		Need working <wctype.h>

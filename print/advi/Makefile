@@ -45,6 +45,4 @@ post-extract:
 		-e 's,install -m 755,\$${BSD_INSTALL_PROGRAM},' \
 		${WRKSRC}/Makefile
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

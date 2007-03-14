@@ -24,6 +24,4 @@ USE_XFCE=	configenv
 USE_XLIB=	yes
 WANT_GNOME=	yes
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

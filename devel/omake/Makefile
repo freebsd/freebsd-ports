@@ -27,7 +27,6 @@ MAN1=	omake-base.1 omake-doc.1 omake-language.1 omake-options.1 \
 	omake-shell.1 omake-system.1 omake.1 osh.1
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
 
 .if ${OSVERSION} > 500000 && exists(${LOCALBASE}/lib/libreadline.so.5)
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline

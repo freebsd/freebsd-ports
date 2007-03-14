@@ -40,7 +40,6 @@ COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
 		${FIND} $$1/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;' --
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
 
 post-extract:
 #

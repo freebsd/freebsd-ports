@@ -26,6 +26,4 @@ USE_XFCE=	configenv libexo thunar
 USE_XLIB=	yes
 USE_AUTOTOOLS=	libtool:15
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11-wm/xfce4/bsd.xfce.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

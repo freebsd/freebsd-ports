@@ -29,7 +29,6 @@ PORTDOCS=	README
 .endif
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/main ${TARGETDIR}/bin/IMP

@@ -24,7 +24,6 @@ USE_OCAMLWASH=	yes
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
 
 .if ${OSVERSION} < 500000
 USE_GMAKE=	yes

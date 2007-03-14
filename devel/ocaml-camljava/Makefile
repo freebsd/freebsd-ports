@@ -20,7 +20,6 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
 
 post-extract:
 	@${REINPLACE_CMD} -e "s,^\(JAVAC=\).*,\1${JAVAC},g" \
