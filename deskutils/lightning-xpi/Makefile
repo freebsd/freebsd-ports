@@ -30,13 +30,13 @@ _IGNORE_MSG=	precompiled binaries, contact ahze@FreeBSD.org for build informatio
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
 
+ARCH_PORTVERSION?=	0.3.1
+
 .if ${ARCH}=="i386"
 . if ${OSVERSION} < 600000 && ${OSVERSION} > 500000
 OS_VER=	5
-ARCH_PORTVERSION=0.3.1
 . elif ${OSVERSION} > 600000
 OS_VER=	6
-ARCH_PORTVERSION=0.3.1
 . else
 IGNORE=	${_IGNORE_MSG}
 . endif
