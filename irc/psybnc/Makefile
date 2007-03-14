@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.psyBNC.at/download/final/ \
 		http://psyBNC.info/download/final/
 DISTNAME=	psyBNC${PORTVERSION}
 
-MAINTAINER=	webmaster@topfx.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PsyBNC is an extremely powerful IRC bouncer
 
 WRKSRC=		${WRKDIR}/psybnc
