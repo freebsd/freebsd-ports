@@ -1,2 +1,2 @@
-XXE_VERSION=	3.5.0
+XXE_VERSION=	3.5.2
 XXE_DIR=	xxe-std-${XXE_VERSION:S/./_/g}
