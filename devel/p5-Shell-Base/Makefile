@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Shell
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	apeiron@comcast.net
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module implementing a simple command shell
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/Size.pm:${PORTSDIR}/devel/p5-Term-Size \
