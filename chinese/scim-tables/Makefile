@@ -12,7 +12,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
 
-MAINTAINER=	gaoj@cpsc.ucalgary.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM table based Chinese input methods
 
 BUILD_DEPENDS=	scim-make-table:${PORTSDIR}/textproc/scim-table-imengine

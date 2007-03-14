@@ -12,7 +12,7 @@ CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
 
-MAINTAINER=	gaoj@cpsc.ucalgary.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SCIM Chinese Smart Pinyin input method
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
