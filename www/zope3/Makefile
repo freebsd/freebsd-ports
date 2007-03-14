@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zope
-PORTVERSION=	3.3.0
+PORTVERSION=	3.3.1
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope3/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}
@@ -17,7 +17,7 @@ MAINTAINER=	dsh@vlink.ru
 COMMENT=	An object-based web application platform
 
 LATEST_LINK=	zope3
-USE_PYTHON=	yes
+USE_PYTHON=	2.4
 USE_RC_SUBR=	${PORTNAME}3.sh zeo3.sh
 
 # Note: the notes that follow reflect the decisions of prior maintainers
