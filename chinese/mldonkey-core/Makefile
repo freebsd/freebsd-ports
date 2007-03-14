@@ -10,7 +10,7 @@
 PORTNAME=	mldonkey-core
 CATEGORIES=	chinese
 
-MAINTAINER=	piaip@csie.ntu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client 'core' for MLDonkey with Traditional Chinese (Big5) support
 
 WITHOUT_GUI=	yes
