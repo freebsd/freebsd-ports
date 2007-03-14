@@ -18,7 +18,7 @@ USE_AUTOTOOLS=	libtool:15
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man --disable-build-html --datadir=${DATADIR}
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man --disable-build-html --datadir=${DATADIR} --disable-upx
 
 CPPFLAGS=	-DHAVE_DECL_GETOPT=0
 
