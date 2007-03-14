@@ -8,17 +8,14 @@
 PORTNAME=	mod_tidy
 PORTVERSION=	0.5
 CATEGORIES=	www
-MASTER_SITES=	http://mod-tidy.sourceforge.net/src/
+MASTER_SITES=	http://mod-tidy.sourceforge.net/src/ \
+		http://keyserver.kjsl.com/~jharris/distfiles/
 DIST_SUBDIR=	apache2
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Validates the HTML output of your apache2 webserver
 
 LIB_DEPENDS=	tidy:${PORTSDIR}/www/tidy-lib
-
-BROKEN=		Size mismatch
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2007-04-10
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 USE_APACHE=	20
