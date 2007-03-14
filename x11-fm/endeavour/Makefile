@@ -17,6 +17,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	A graphical file manager and image viewer aimed towards new users
 
+DEPRECATED=	depreciated upstream, should be replaced by endeavour 2; hardcoded X11BASE
+
 PLIST_FILES=	bin/endeavour
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
