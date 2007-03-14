@@ -7,6 +7,7 @@
 
 PORTNAME=	rssowl
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	rssowl
@@ -33,15 +34,11 @@ ALL_TARGET=	deploy_linux
 
 DOCS_PREFIX=	doc
 
-DOCS=		CHANGELOG.txt epl-v10.html mpl-v11.txt LICENSE.txt \
+PORTDOCS=	CHANGELOG.txt epl-v10.html mpl-v11.txt LICENSE.txt \
 		faq.html rssowl_i18n.template README.txt faq.xml
 
 PLIST_FILES=	bin/rssowl %%DATADIR%%/rssowl.jar share/pixmaps/rssowl.png
-.for f in ${DOCS}
-PLIST_FILES+=	%%DOCSDIR%%/${f}
-.endfor
-
-PLIST_DIRS=	%%DATADIR%% %%DOCSDIR%%
+PLIST_DIRS=	%%DATADIR%%
 
 DESKTOP_ENTRIES="RSSOwl" \
 		"Read newsfeeds" \
@@ -67,14 +64,14 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/rssowl.jar ${DATADIR}
 	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/img/32x32.png ${PREFIX}/share/pixmaps/rssowl.png
-
-post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for f in ${DOCS}
-	${INSTALL_MAN} ${WRKSRC}/${DOCS_PREFIX}/${f} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${DOCS_PREFIX}/${f} ${DOCSDIR}
 .endfor
 .endif
+
+post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
