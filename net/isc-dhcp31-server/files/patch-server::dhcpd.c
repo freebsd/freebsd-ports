@@ -117,7 +117,7 @@
 +			set_jail = argv [i];
 +			if (++i == argc)
 +				usage ();
-+			if (ascii2addr (AF_INET, argv[i], &jail_ip_address) < 0)
++			if (inet_pton (AF_INET, argv[i], &jail_ip_address) < 0)
 +				log_fatal ("invalid ip address: %s", argv[i]);
 +			jail_ip_address = ntohl (jail_ip_address);
 +			no_dhcpd_jail = 1;
@@ -146,7 +146,7 @@
 +	if (!no_dhcpd_jail && (s = getenv ("DHCPD_JAIL_HOSTNAME")) &&
 +	    (s2 = getenv ("DHCPD_JAIL_IPADDRESS"))) {
 +		set_jail = s;
-+		if (ascii2addr (AF_INET, s2, &jail_ip_address) < 0)
++		if (inet_pton (AF_INET, s2, &jail_ip_address) < 0)
 +			log_fatal ("invalid ip address: %s", s2);
 +		jail_ip_address = ntohl (jail_ip_address);
 +	}
