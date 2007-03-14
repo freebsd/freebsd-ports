@@ -1,6 +1,6 @@
---- follow.c.orig	2002-02-19 19:42:34.000000000 +0000
-+++ follow.c
-@@ -96,7 +96,7 @@ void set_terminal()
+--- follow.c.orig	Sat Oct 14 00:12:28 2006
++++ follow.c	Sat Oct 14 00:12:43 2006
+@@ -96,7 +96,7 @@
      ioctl(0, TIOCGLTC, &ltcsave);
      ttyb = ttybsave;
      ttyb.sg_flags = (ttyb.sg_flags|O_CBREAK) & ~O_ECHO;
