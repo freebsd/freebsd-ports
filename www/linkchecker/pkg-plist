@@ -2,6 +2,9 @@ bin/linkchecker
 %%DATADIR%%/linkcheckerrc
 %%DATADIR%%/logging.conf
 %%EXAMPLESDIR%%/check.js
+%%EXAMPLESDIR%%/check_blacklist.sh
+%%EXAMPLESDIR%%/check_for_x_errors.sh
+%%EXAMPLESDIR%%/check_urls.sh
 %%EXAMPLESDIR%%/index.html
 %%EXAMPLESDIR%%/lc.cgi
 %%EXAMPLESDIR%%/lc.fcgi
@@ -9,7 +12,6 @@ bin/linkchecker
 %%EXAMPLESDIR%%/lc_cgi.html.en
 %%EXAMPLESDIR%%/leer.html.de
 %%EXAMPLESDIR%%/leer.html.en
-%%EXAMPLESDIR%%/linkcheck-cron.sh
 %%EXAMPLESDIR%%/linkchecker-completion
 %%PYTHON_SITELIBDIR%%/_linkchecker_configdata.py
 %%PYTHON_SITELIBDIR%%/linkcheck/HtmlParser/__init__.py
@@ -337,6 +339,9 @@ bin/linkchecker
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/zone.py
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/zone.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/dns/zone.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/dummy.py
+%%PYTHON_SITELIBDIR%%/linkcheck/dummy.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/dummy.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/fcgi.py
 %%PYTHON_SITELIBDIR%%/linkcheck/fcgi.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/fcgi.pyo
@@ -442,3 +447,12 @@ bin/linkchecker
 @dirrm %%PYTHON_SITELIBDIR%%/linkcheck/ftpparse
 @dirrm %%PYTHON_SITELIBDIR%%/linkcheck/logger
 @dirrm %%PYTHON_SITELIBDIR%%/linkcheck
+%%NLS%%share/locale/de/LC_MESSAGES/linkchecker.mo
+%%NLS%%share/locale/es/LC_MESSAGES/linkchecker.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/linkchecker.mo
+%%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fr
+%%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es
+%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de

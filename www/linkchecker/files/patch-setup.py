@@ -1,5 +1,5 @@
---- setup.py.orig	Fri Sep 22 12:15:34 2006
-+++ setup.py	Fri Nov  3 12:18:45 2006
+--- setup.py.orig	Tue Nov 21 17:49:07 2006
++++ setup.py	Wed Dec 27 12:28:29 2006
 @@ -471,7 +471,6 @@
      # windows does not have unistd.h
      define_macros.append(('YY_NO_UNISTD_H', None))
@@ -27,6 +27,6 @@
 -    data_files.append(('share/linkchecker/examples',
 +    data_files.append(('man/man1', ['doc/en/linkchecker.1']))
 +    data_files.append(('share/examples/linkchecker',
-               ['config/linkchecker-completion', 'config/linkcheck-cron.sh']))
- elif win_compiling:
-     data_files.append(('share/linkchecker/doc',
+               ['config/linkchecker-completion',
+                'doc/examples/check_blacklist.sh',
+                'doc/examples/check_for_x_errors.sh',
