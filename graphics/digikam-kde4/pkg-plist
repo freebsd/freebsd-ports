@@ -45,6 +45,7 @@ include/digikam/rawdecodingsettings.h
 include/digikam/sidebar.h
 include/digikam/squeezedcombobox.h
 include/digikam/thumbbar.h
+include/digikam/whitebalance.h
 include/digikam_export.h
 lib/kde3/digikamimageplugin_core.a
 lib/kde3/digikamimageplugin_core.la
@@ -55,9 +56,6 @@ lib/kde3/kio_digikamalbums.so
 lib/kde3/kio_digikamdates.a
 lib/kde3/kio_digikamdates.la
 lib/kde3/kio_digikamdates.so
-lib/kde3/kio_digikampreview.a
-lib/kde3/kio_digikampreview.la
-lib/kde3/kio_digikampreview.so
 lib/kde3/kio_digikamsearch.a
 lib/kde3/kio_digikamsearch.la
 lib/kde3/kio_digikamsearch.so
@@ -98,40 +96,25 @@ share/apps/digikam/about/main.html
 share/apps/digikam/about/top-left.png
 share/apps/digikam/about/top-middle.png
 share/apps/digikam/about/top-right-digikam.png
-share/apps/digikam/data/autolevels.png
 share/apps/digikam/data/bothhorz.png
 share/apps/digikam/data/bothvert.png
-share/apps/digikam/data/browntone.png
-share/apps/digikam/data/bwgreen.png
-share/apps/digikam/data/bworange.png
-share/apps/digikam/data/bwred.png
-share/apps/digikam/data/bwyellow.png
 share/apps/digikam/data/centerheight.png
 share/apps/digikam/data/centerwidth.png
-share/apps/digikam/data/coldtone.png
 share/apps/digikam/data/curvefree.png
 share/apps/digikam/data/curvemooth.png
-share/apps/digikam/data/digikamlogo.png
 share/apps/digikam/data/duplicatebothhorz.png
 share/apps/digikam/data/duplicatebothvert.png
-share/apps/digikam/data/equalize.png
-share/apps/digikam/data/exiv2logo.png
-share/apps/digikam/data/gphotologo.png
 share/apps/digikam/data/histogram-lin.png
 share/apps/digikam/data/histogram-log.png
-share/apps/digikam/data/image-broken.png
 share/apps/digikam/data/image-full.png
 share/apps/digikam/data/image-selection.png
-share/apps/digikam/data/lcmslogo.png
+share/apps/digikam/data/logo-digikam.png
+share/apps/digikam/data/logo-exiv2.png
+share/apps/digikam/data/logo-gphoto.png
+share/apps/digikam/data/logo-lcms.png
 share/apps/digikam/data/menusidepixmap.png
-share/apps/digikam/data/neutralbw.png
-share/apps/digikam/data/normalize.png
 share/apps/digikam/data/original.png
-share/apps/digikam/data/platinum.png
 share/apps/digikam/data/rating.png
-share/apps/digikam/data/selenium.png
-share/apps/digikam/data/sepia.png
-share/apps/digikam/data/stretchcontrast.png
 share/apps/digikam/data/target.png
 share/apps/digikam/data/togglemouseover.png
 share/apps/digikam/data/worldmap.jpg
@@ -191,6 +174,7 @@ share/apps/digikam/icons/hicolor/128x128/actions/resize_image.png
 share/apps/digikam/icons/hicolor/128x128/actions/sharpenimage.png
 share/apps/digikam/icons/hicolor/128x128/actions/slideshow.png
 share/apps/digikam/icons/hicolor/128x128/actions/viewimage.png
+share/apps/digikam/icons/hicolor/128x128/apps/dcraw.png
 share/apps/digikam/icons/hicolor/128x128/apps/digikam.png
 share/apps/digikam/icons/hicolor/16x16/actions/addimagefolder.png
 share/apps/digikam/icons/hicolor/16x16/actions/adjusthsl.png
@@ -270,12 +254,14 @@ share/apps/digikam/icons/hicolor/32x32/actions/histogram.png
 share/apps/digikam/icons/hicolor/32x32/actions/imagecomment.png
 share/apps/digikam/icons/hicolor/32x32/actions/importfolders2albums.png
 share/apps/digikam/icons/hicolor/32x32/actions/invertimage.png
+share/apps/digikam/icons/hicolor/32x32/actions/overexposure.png
 share/apps/digikam/icons/hicolor/32x32/actions/ratiocrop.png
 share/apps/digikam/icons/hicolor/32x32/actions/redeyes.png
 share/apps/digikam/icons/hicolor/32x32/actions/resize_image.png
 share/apps/digikam/icons/hicolor/32x32/actions/sharpenimage.png
 share/apps/digikam/icons/hicolor/32x32/actions/slideshow.png
 share/apps/digikam/icons/hicolor/32x32/actions/tag-addressbook.png
+share/apps/digikam/icons/hicolor/32x32/actions/tag-assigned.png
 share/apps/digikam/icons/hicolor/32x32/actions/tag-delete.png
 share/apps/digikam/icons/hicolor/32x32/actions/tag-events.png
 share/apps/digikam/icons/hicolor/32x32/actions/tag-folder.png
@@ -286,6 +272,7 @@ share/apps/digikam/icons/hicolor/32x32/actions/tag-properties.png
 share/apps/digikam/icons/hicolor/32x32/actions/tag-recents.png
 share/apps/digikam/icons/hicolor/32x32/actions/tag-reset.png
 share/apps/digikam/icons/hicolor/32x32/actions/tag.png
+share/apps/digikam/icons/hicolor/32x32/actions/underexposure.png
 share/apps/digikam/icons/hicolor/32x32/actions/viewimage.png
 share/apps/digikam/icons/hicolor/32x32/apps/digikam.png
 share/apps/digikam/icons/hicolor/48x48/actions/addimagefolder.png
@@ -400,6 +387,7 @@ share/apps/showfoto/icons/hicolor/128x128/actions/flip.png
 share/apps/showfoto/icons/hicolor/128x128/actions/histogram.png
 share/apps/showfoto/icons/hicolor/128x128/actions/resize_image.png
 share/apps/showfoto/icons/hicolor/128x128/actions/slideshow.png
+share/apps/showfoto/icons/hicolor/128x128/apps/dcraw.png
 share/apps/showfoto/icons/hicolor/128x128/apps/showfoto.png
 share/apps/showfoto/icons/hicolor/16x16/actions/flip.png
 share/apps/showfoto/icons/hicolor/16x16/actions/histogram.png
@@ -460,6 +448,7 @@ share/locale/el/LC_MESSAGES/digikam.mo
 share/locale/en_GB/LC_MESSAGES/digikam.mo
 share/locale/es/LC_MESSAGES/digikam.mo
 share/locale/et/LC_MESSAGES/digikam.mo
+share/locale/fa/LC_MESSAGES/digikam.mo
 share/locale/fi/LC_MESSAGES/digikam.mo
 share/locale/fr/LC_MESSAGES/digikam.mo
 share/locale/ga/LC_MESSAGES/digikam.mo
@@ -475,6 +464,7 @@ share/locale/mk/LC_MESSAGES/digikam.mo
 share/locale/ms/LC_MESSAGES/digikam.mo
 share/locale/mt/LC_MESSAGES/digikam.mo
 share/locale/nb/LC_MESSAGES/digikam.mo
+share/locale/nds/LC_MESSAGES/digikam.mo
 share/locale/nl/LC_MESSAGES/digikam.mo
 share/locale/nn/LC_MESSAGES/digikam.mo
 share/locale/pa/LC_MESSAGES/digikam.mo
@@ -490,6 +480,7 @@ share/locale/sr/LC_MESSAGES/digikam.mo
 share/locale/sr@Latn/LC_MESSAGES/digikam.mo
 share/locale/sv/LC_MESSAGES/digikam.mo
 share/locale/ta/LC_MESSAGES/digikam.mo
+share/locale/th/LC_MESSAGES/digikam.mo
 share/locale/tr/LC_MESSAGES/digikam.mo
 share/locale/uk/LC_MESSAGES/digikam.mo
 share/locale/vi/LC_MESSAGES/digikam.mo
@@ -498,7 +489,6 @@ share/locale/zh_TW/LC_MESSAGES/digikam.mo
 share/services/digikamalbums.protocol
 share/services/digikamdates.protocol
 share/services/digikamimageplugin_core.desktop
-share/services/digikampreview.protocol
 share/services/digikamsearch.protocol
 share/services/digikamtags.protocol
 share/services/digikamthumbnail.protocol
@@ -611,6 +601,8 @@ share/servicetypes/digikamimageplugin.desktop
 @dirrmtry share/locale/pl
 @dirrmtry share/locale/nn/LC_MESSAGES
 @dirrmtry share/locale/nn
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/gl/LC_MESSAGES
 @dirrmtry share/locale/gl
 @dirrmtry share/locale/fi/LC_MESSAGES
