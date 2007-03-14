@@ -126,6 +126,9 @@
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/verify.py
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/verify.pyc
 %%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/verify.pyo
+%%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/testCompile.py
+%%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/testCompile.pyc
+%%ZOPEBASEDIR%%/lib/python/RestrictedPython/tests/testCompile.pyo
 %%ZOPEBASEDIR%%/lib/python/ThreadedAsync/LoopCallback.py
 %%ZOPEBASEDIR%%/lib/python/ThreadedAsync/LoopCallback.pyc
 %%ZOPEBASEDIR%%/lib/python/ThreadedAsync/LoopCallback.pyo
@@ -6539,6 +6542,7 @@
 %%ZOPEBASEDIR%%/lib/python/zope/app/folder/filerepresentation.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/folder/filerepresentation.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/folder/filerepresentation.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/app/folder/filerepresentation.txt
 %%ZOPEBASEDIR%%/lib/python/zope/app/folder/folder.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/folder/folder.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/folder/folder.pyo
@@ -6896,6 +6900,12 @@
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/exception/unauthorized.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/exception/unauthorized.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/exception/unauthorized.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/app/http/ftests/__init__.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/http/ftests/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/http/ftests/__init__.pyo
+%%ZOPEBASEDIR%%/lib/python/zope/app/http/ftests/test_put.py
+%%ZOPEBASEDIR%%/lib/python/zope/app/http/ftests/test_put.pyc
+%%ZOPEBASEDIR%%/lib/python/zope/app/http/ftests/test_put.pyo
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/httpdate.py
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/httpdate.pyc
 %%ZOPEBASEDIR%%/lib/python/zope/app/http/httpdate.pyo
@@ -11565,6 +11575,7 @@
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/http/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/http/exception/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/http/exception
+@dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/http/ftests
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/http
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/form/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/zope/app/form/browser/tests
