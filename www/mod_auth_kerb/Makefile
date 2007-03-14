@@ -8,12 +8,10 @@
 # Shamelessly stolen from will's mod_auth_any port.
 
 PORTNAME=	mod_auth_kerb
-PORTVERSION=	5.0.r6
-PORTREVISION=	1
+PORTVERSION=	5.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=modauthkerb
-DISTNAME=	mod_auth_kerb-5.0-rc6
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module for authenticating users with Kerberos v5
@@ -24,7 +22,8 @@ COMMENT=	An Apache module for authenticating users with Kerberos v5
 # (i.e., HTTP over SSL/TLS).  Thus, we require as a dependency
 # a version of Apache which can do this.
 #
-USE_APACHE=	13
+USE_APACHE=	1.3+
+USE_GMAKE=	yes
 # Don't fsck with CFLAGS
 CFLAGS:=
 GNU_CONFIGURE=	yes
@@ -39,7 +38,7 @@ OPTIONS+=	off
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700014
-BROKEN=		"Does not compile on FreeBSD >= 7.0"
+BROKEN=		Does not compile on FreeBSD >= 7.0
 .endif
 
 .if exists(${PREFIX}/sbin/apxs)
