@@ -121,17 +121,13 @@ X11_FILES=	../src/solaris/native/sun/awt/font/fontpath.c
 .include <bsd.port.pre.mk>
 
 .if !defined(JDK13DIR)
-.if defined(WITH_LINUX_BOOTSTRAP)
-JDK13DIR=	${LOCALBASE}/linux-blackdown-jdk${JDK_VERSION}
-BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/linux-blackdown-jdk13
-.elif exists(${LOCALBASE}/jdk${JDK_VERSION}/bin/javac)
+.if exists(${LOCALBASE}/jdk${JDK_VERSION}/bin/javac)
 JDK13DIR=	${LOCALBASE}/jdk${JDK_VERSION}
 .else
 JDK13DIR=	${LOCALBASE}/jbootstrap
 BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/jbootstrap
 .endif
 .endif
-
 
 .if ${OSVERSION} < 460101 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500038 )
 EXTRACT_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
