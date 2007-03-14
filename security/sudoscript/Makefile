@@ -10,7 +10,7 @@ PORTVERSION=	2.1.2
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	hbo@egbok.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audited shells in Perl with sudo(8) and script(1)
 
 MAN1=		ss.1 sudoshell.1
