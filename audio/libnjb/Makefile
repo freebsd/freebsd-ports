@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	teksimian@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library, API for communicating with Creative and Dell audio players
 
 LIB_DEPENDS=	usb:${PORTSDIR}/devel/libusb
