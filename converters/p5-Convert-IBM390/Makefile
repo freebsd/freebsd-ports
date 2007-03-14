@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Convert
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dev@fenux.net
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Functions for manipulating mainframe data
 
 PERL_CONFIGURE=	yes

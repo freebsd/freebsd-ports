@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dev@fenux.net
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A module implementing a portable chomp
 
 PERL_CONFIGURE=	yes
