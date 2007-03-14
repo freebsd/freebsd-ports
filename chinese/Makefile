@@ -18,7 +18,6 @@
     SUBDIR += bg5pdf
     SUBDIR += bg5ps
     SUBDIR += big5con
-    SUBDIR += big5fs
     SUBDIR += big5width
     SUBDIR += bind8
     SUBDIR += bitchx
@@ -46,7 +45,6 @@
     SUBDIR += fortunetw
     SUBDIR += gb2jis
     SUBDIR += gb2ps
-    SUBDIR += gbfs
     SUBDIR += gbscript
     SUBDIR += gcin
     SUBDIR += gugod-clean

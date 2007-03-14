@@ -1,6 +1,0 @@
-@comment $FreeBSD$
-etc/rc.d/big5fs.sh
-modules/cd9660.ko
-modules/%%MSDOSFSKO%%
-modules/ntfs.ko
-@dirrmtry modules

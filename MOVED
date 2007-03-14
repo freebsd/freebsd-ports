@@ -2867,3 +2867,5 @@ sysutils/diskmark||2007-03-13|Has expired: Makes no sense on FreeBSD > 4.x.  Use
 sysutils/diskusage||2007-03-13|Has expired: Unmainntaied, MASTER_SITES disappeared, WWW disappeared.
 sysutils/xperfmon3||2007-03-13|Has expired: Broken on all supported versions of FreeBSD
 comms/mwavem||2007-03-13|Has expired: Broken on all supported versions of FreeBSD
+chinese/big5fs||2007-03-14|Has expired: Use mount_cd9660(8), mount_msdosfs(8), or mount_ntfs(8) instead
+chinese/gbfs||2007-03-14|Has expired: Use mount_cd9660(8), mount_msdosfs(8), or mount_ntfs(8) instead
