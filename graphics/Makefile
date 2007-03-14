@@ -362,6 +362,7 @@
     SUBDIR += libimg-tkstep80
     SUBDIR += libiptcdata
     SUBDIR += libkexif
+    SUBDIR += libkexiv2
     SUBDIR += libkipi
     SUBDIR += liblug
     SUBDIR += libmng
