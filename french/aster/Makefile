@@ -73,9 +73,9 @@ FLAGARCH=	-DLINUX64		# 64 bits
 .if ${OSVERSION} < 600022
 BROKEN=	Does not compile on this version, and cannot be patched easily.
 .endif
-#.if ${ARCH} != "i386"
-#BROKEN=	Seg. fault on ${ARCH} during compilation of elements.
-#.endif
+.if ${ARCH} != "i386"
+BROKEN=	Seg. fault on ${ARCH} during compilation of elements.
+.endif
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
@@ -213,6 +213,8 @@ lib_atlas=	# empty
 LASTKDIR?=	${PORTNAME}/ASTK/ASTK_CLIENT
 ASTKDIR=	${LOCALBASE}/${LASTKDIR}
 
+${WRKSRC}/instdir/${vaster}/elements:	build
+
 pre-configure:
 	${REINPLACE_CMD} -e 's|PREFER_SHARED_LIBS=False|PREFER_SHARED_LIBS=True|' ${WRKSRC}/setup.cfg
 	${REINPLACE_CMD} -e 's|/opt/aster|${WRKSRC}/instdir|'		\
@@ -309,7 +311,7 @@ do-build:
 pre-install:
 	${CHMOD} go-x ${WRKSRC}/instdir/${vaster}/materiau/A42_REF_A.NOMI
 
-do-install:
+do-install:	${WRKSRC}/instdir/${vaster}/elements
 	${MKDIR} ${tools_dir} ${inst_dir}
 	${INSTALL_PROGRAM} ${WRKSRC}/instdir/${vaster}/asteru ${inst_dir}
 	${INSTALL_SCRIPT} ${WRKSRC}/instdir/${vaster}/asterd ${inst_dir} # Don't strip!
