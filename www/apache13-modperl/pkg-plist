@@ -17,7 +17,6 @@ etc/apache/mime.types-dist
 @unexec if cmp -s %D/etc/apache/srm.conf %D/etc/apache/srm.conf-dist; then rm -f %D/etc/apache/srm.conf; fi
 etc/apache/srm.conf-dist
 @exec [ ! -f %B/srm.conf ] && cp %B/%f %B/srm.conf
-etc/rc.d/apache.sh
 include/apache/ap.h
 include/apache/ap_alloc.h
 include/apache/ap_compat.h
