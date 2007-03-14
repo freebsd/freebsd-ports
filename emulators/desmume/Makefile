@@ -22,4 +22,10 @@ USE_GNOME=	gtk20 libglade2
 
 PLIST_FILES=	bin/desmume-glade bin/desmume bin/desmume-cli
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		Does not compile on ia64
+.endif
+
+.include <bsd.port.post.mk>
