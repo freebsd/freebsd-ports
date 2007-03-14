@@ -45,7 +45,7 @@ INSTALL_DIR=	${PREFIX}/${PKGNAMEPREFIX}jre${JRE_VERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600000
+.if ${OSVERSION} >= 600000 && ${OSVERSION} <= 700000
 JRE_OSREL=freebsd6
 .elif ${OSVERSION} >= 500000 && ${ARCH} == "i386"
 JRE_OSREL=freebsd5
