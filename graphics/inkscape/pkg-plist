@@ -346,7 +346,6 @@ share/inkscape/ui/menus-bars.xml
 share/inkscape/ui/toolbox.xml
 share/inkscape/ui/units.txt
 share/inkscape/ui/units.xml
-share/pixmaps/inkscape.png
 share/locale/am/LC_MESSAGES/inkscape.mo
 share/locale/az/LC_MESSAGES/inkscape.mo
 share/locale/be/LC_MESSAGES/inkscape.mo
@@ -398,6 +397,8 @@ share/locale/uk/LC_MESSAGES/inkscape.mo
 share/locale/vi/LC_MESSAGES/inkscape.mo
 share/locale/zh_CN/LC_MESSAGES/inkscape.mo
 share/locale/zh_TW/LC_MESSAGES/inkscape.mo
+share/pixmaps/inkscape.png
+@dirrmtry share/pixmaps
 @dirrmtry share/locale/en_US@piglatin/LC_MESSAGES
 @dirrmtry share/locale/en_US@piglatin
 @dirrm share/inkscape/ui
@@ -415,4 +416,5 @@ share/locale/zh_TW/LC_MESSAGES/inkscape.mo
 @dirrm share/inkscape/examples
 @dirrm share/inkscape/clipart
 @dirrm share/inkscape
+@dirrmtry share/applications
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
