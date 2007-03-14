@@ -14,7 +14,7 @@ MASTER_SITES=	http://gd.tuwien.ac.at/languages/ada/gnat/3.15p/asis/ \
 DISTNAME=	asis-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	thomas@cuivre.fr.eu.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNAT implementation of the Ada Semantic Interface Specification
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat

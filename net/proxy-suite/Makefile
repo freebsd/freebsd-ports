@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.suse.com/pub/projects/proxy-suite/src/ \
 		ftp://ftp.gwdg.de/pub/linux/suse/ftp.suse.com/projects/proxy-suite/src/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.gwdg.de/pub/linux/suse/ftp.suse.com/projects/proxy-suite/src/
 
-MAINTAINER=	thomas@cuivre.fr.eu.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The SuSE Proxy-Suite, a set of programs to enhance firewall security
 
 USE_AUTOTOOLS=	autoconf:253
