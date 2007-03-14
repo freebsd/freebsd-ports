@@ -59,12 +59,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2007-1384</cvename>
+      <cvename>CVE-2007-1385</cvename>
       <url>http://ktorrent.org/forum/viewtopic.php?t=1401</url>
     </references>
     <dates>
       <discovery>2007-03-09</discovery>
       <entry>2007-03-11</entry>
-      <modified>2007-03-12</modified>
+      <modified>2007-03-14</modified>
     </dates>
   </vuln>
 
