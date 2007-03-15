@@ -7,6 +7,7 @@
 
 PORTNAME=	libtabe
 PORTVERSION=	0.2.6
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://cle.linux.org.tw/pub/xcin/cvs/
 
@@ -50,6 +51,7 @@ pre-everything::
 .endif
 
 post-patch:
+	${REINPLACE_CMD} -e '/objformat/s/echo aout/echo elf/' ${WRKSRC}/configure
 .if defined(WITHOUT_X11)
 	${REINPLACE_CMD} -e '/all:/s/ bims//; /bims/d' ${WRKSRC}/src/Makefile.in
 .endif
