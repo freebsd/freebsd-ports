@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fapg
-PORTVERSION=	0.37
+PORTVERSION=	0.38
 CATEGORIES=	audio
 MASTER_SITES=	http://royale.zerezo.com/${PORTNAME}/
 
