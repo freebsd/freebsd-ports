@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Chart-Clicker
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Chart
@@ -16,7 +16,8 @@ MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Powerful, extensible charting
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0.25:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-Cairo>=1.000:${PORTSDIR}/graphics/p5-Cairo
+		p5-Cairo>=1.000:${PORTSDIR}/graphics/p5-Cairo \
+		p5-DateTime-Set>=0:${PORTSDIR}/devel/p5-DateTime-Set
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
