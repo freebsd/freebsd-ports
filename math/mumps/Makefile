@@ -41,17 +41,6 @@ GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 FFLAGS+=	-O3 -ffast-math
 .endif
 
-.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
-WITH_ATLAS=     yes
-.endif
-.if defined(WITH_ATLAS)
-LIB_DEPENDS+=   atlas.2:${PORTSDIR}/math/atlas
-BLAS_LIBS=	-lf77blas -latlas
-.else
-LIB_DEPENDS+=   blas.2:${PORTSDIR}/math/blas
-BLAS_LIBS=	-lblas
-.endif
-
 .ifdef WITH_METIS
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmetis.a:${PORTSDIR}/math/metis
 MAKE_ENV+=	ORDERINGSF=-Dmetis
@@ -61,14 +50,25 @@ PLIST_SUB+=	MUMPSVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/mpich2/bin/mpicc) && !defined(WITHOUT_MPI)
-WITH_MPI=	yes
+.if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
+WITH_ATLAS=     yes
 .endif
+.if defined(WITH_ATLAS)
+LIB_DEPENDS+=   atlas.2:${PORTSDIR}/math/atlas
+BLAS_LIBS=	-lf77blas -latlas
+LAPACK_LIBS=	-lalapack -lcblas
+.else
+LIB_DEPENDS+=   blas.2:${PORTSDIR}/math/blas
+BLAS_LIBS=	-lblas
+LAPACK_LIBS=	-llapack
+.endif
+
 .ifdef WITH_MPI
 PKGNAMESUFFIX+=		-mpich
 BUILD_DEPENDS+=	${LOCALBASE}/mpich2/include/mpif.h:${PORTSDIR}/net/mpich2 \
 		${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs \
 		${LOCALBASE}/lib/libscalapack.a:${PORTSDIR}/math/scalapack
+LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack
 # Note: -l?mumps still requires to be linked with -lblacs + -lscalapack
 RUN_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpirun:${PORTSDIR}/net/mpich2 \
 		${LOCALBASE}/lib/libblacs.a:${PORTSDIR}/math/blacs \
@@ -104,6 +104,9 @@ pre-build:
 	s+@BLAS_LIBS@+${BLAS_LIBS}+ ; \
 	s+@LOCALBASE@+${LOCALBASE}+g;' \
 		${WRKSRC}/Makefile.inc
+.ifdef WITH_MPI
+	@${REINPLACE_CMD} -e 's+@LAPACK_LIBS@+${LAPACK_LIBS}+g;' ${WRKSRC}/Makefile.inc
+.endif
 .ifdef WITH_METIS
 	@${REINPLACE_CMD} -e 's+#LMETIS+LMETIS+' ${WRKSRC}/Makefile.inc
 .endif
