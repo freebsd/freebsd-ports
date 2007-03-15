@@ -125,6 +125,7 @@ share/locale/ja/LC_MESSAGES/liferea.mo
 share/locale/pl/LC_MESSAGES/liferea.mo
 share/locale/pt_BR/LC_MESSAGES/liferea.mo
 share/locale/ru/LC_MESSAGES/liferea.mo
+share/locale/sv/LC_MESSAGES/liferea.mo
 share/locale/tr/LC_MESSAGES/liferea.mo
 @dirrm share/gnome/liferea/xslt
 @dirrm share/gnome/liferea/pixmaps
