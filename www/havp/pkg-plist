@@ -121,6 +121,6 @@ etc/havp/havp.config.default
 @dirrm %%EXAMPLESDIR%%/templates
 %%EXAMPLESDIR%%/whitelist.sample
 @dirrm %%EXAMPLESDIR%%
-@unexec rmdir %%LOG_DIR%% 2>/dev/null || true
-@unexec rmdir %%TMP_DIR%% 2>/dev/null || true
-@unexec rmdir %%RUN_DIR%% 2>/dev/null || true
+@dirrmtry %%LOG_DIR%%
+@dirrmtry %%TMP_DIR%%
+@dirrmtry %%RUN_DIR%%
