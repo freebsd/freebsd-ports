@@ -8,3 +8,4 @@ privlic="$PREFIX/lib/";
 optimize="$CFLAGS";
 cc="$CC";
 ld="$CC";
+i_termios="define";
