@@ -8,6 +8,7 @@
 
 PORTNAME=	enity
 PORTVERSION=	20070223
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 
@@ -23,5 +24,10 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/enity
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_bin_enity.c
+.endif
+
 .include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
 .include <bsd.port.post.mk>
