@@ -9,4 +9,4 @@ MASTERDIR=		${.CURDIR}/../mumps
 
 WITH_MPI=		yes
 
-.include "${MASTERDIR}/Makefile"
+.include "../mumps/Makefile"
