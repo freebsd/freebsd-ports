@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gotoblas
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	math
 MASTER_SITES=	#empty
 DISTNAME=	GotoBLAS-${PORTVERSION}
@@ -24,6 +24,8 @@ PLIST_FILES=	lib/libgoto.a \
 		lib/libgotop.a \
 		lib/libgotop.so \
 		lib/libgotop.so.1
+
+USE_PERL5=	yes
 
 .include <bsd.port.pre.mk>
 
