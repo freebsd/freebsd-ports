@@ -6,24 +6,26 @@
 #
 
 PORTNAME=	ditrack
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ditrack.org/files/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tracking system based on Subversion repository
 
 RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
 
 NO_BUILD=	yes
+USE_PYDISTUTILS=	yes
 USE_PYTHON=	yes
+WRKSRC=		${WRKDIR}/DITrack-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-do-install:
-	${CP} -R ${WRKSRC}/DITrack ${PYTHON_SITELIBDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/dt* ${PREFIX}/bin
+post-install:
+	${MKDIR} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/upgrade-0.4-db.py ${DATADIR}
 .ifndef(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/html/index.html ${DOCSDIR}

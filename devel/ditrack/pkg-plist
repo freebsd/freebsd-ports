@@ -1,26 +1,71 @@
 @comment $FreeBSD$
+%%DATADIR%%/upgrade-0.4-db.py
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PYTHON_SITELIBDIR%%/DITrack/Command/__init__.py
+%%PYTHON_SITELIBDIR%%/DITrack/Command/__init__.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/Command/__init__.pyo
 %%PYTHON_SITELIBDIR%%/DITrack/Command/act.py
+%%PYTHON_SITELIBDIR%%/DITrack/Command/act.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/Command/act.pyo
 %%PYTHON_SITELIBDIR%%/DITrack/Command/cat.py
+%%PYTHON_SITELIBDIR%%/DITrack/Command/cat.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/Command/cat.pyo
+%%PYTHON_SITELIBDIR%%/DITrack/Command/commit.py
+%%PYTHON_SITELIBDIR%%/DITrack/Command/commit.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/Command/commit.pyo
 %%PYTHON_SITELIBDIR%%/DITrack/Command/generic.py
+%%PYTHON_SITELIBDIR%%/DITrack/Command/generic.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/Command/generic.pyo
 %%PYTHON_SITELIBDIR%%/DITrack/Command/help.py
+%%PYTHON_SITELIBDIR%%/DITrack/Command/help.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/Command/help.pyo
 %%PYTHON_SITELIBDIR%%/DITrack/Command/list.py
+%%PYTHON_SITELIBDIR%%/DITrack/Command/list.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/Command/list.pyo
 %%PYTHON_SITELIBDIR%%/DITrack/Command/new.py
+%%PYTHON_SITELIBDIR%%/DITrack/Command/new.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/Command/new.pyo
+%%PYTHON_SITELIBDIR%%/DITrack/Command/remove.py
+%%PYTHON_SITELIBDIR%%/DITrack/Command/remove.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/Command/remove.pyo
+%%PYTHON_SITELIBDIR%%/DITrack/Command/status.py
+%%PYTHON_SITELIBDIR%%/DITrack/Command/status.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/Command/status.pyo
 %%PYTHON_SITELIBDIR%%/DITrack/DB.py
+%%PYTHON_SITELIBDIR%%/DITrack/DB.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/DB.pyo
 %%PYTHON_SITELIBDIR%%/DITrack/Edit.py
+%%PYTHON_SITELIBDIR%%/DITrack/Edit.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/Edit.pyo
 %%PYTHON_SITELIBDIR%%/DITrack/SVN.py
+%%PYTHON_SITELIBDIR%%/DITrack/SVN.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/SVN.pyo
 %%PYTHON_SITELIBDIR%%/DITrack/UI.py
+%%PYTHON_SITELIBDIR%%/DITrack/UI.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/UI.pyo
 %%PYTHON_SITELIBDIR%%/DITrack/Util/__init__.py
+%%PYTHON_SITELIBDIR%%/DITrack/Util/__init__.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/Util/__init__.pyo
 %%PYTHON_SITELIBDIR%%/DITrack/Util/cmdline.py
+%%PYTHON_SITELIBDIR%%/DITrack/Util/cmdline.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/Util/cmdline.pyo
 %%PYTHON_SITELIBDIR%%/DITrack/Util/common.py
+%%PYTHON_SITELIBDIR%%/DITrack/Util/common.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/Util/common.pyo
 %%PYTHON_SITELIBDIR%%/DITrack/__init__.py
+%%PYTHON_SITELIBDIR%%/DITrack/__init__.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/__init__.pyo
 %%PYTHON_SITELIBDIR%%/DITrack/dt/__init__.py
+%%PYTHON_SITELIBDIR%%/DITrack/dt/__init__.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/dt/__init__.pyo
 %%PYTHON_SITELIBDIR%%/DITrack/dt/globals.py
+%%PYTHON_SITELIBDIR%%/DITrack/dt/globals.pyc
+%%PYTHON_SITELIBDIR%%/DITrack/dt/globals.pyo
 bin/dt
 bin/dt-createdb
 @dirrmtry %%PYTHON_SITELIBDIR%%/DITrack/dt
 @dirrmtry %%PYTHON_SITELIBDIR%%/DITrack/Util
 @dirrmtry %%PYTHON_SITELIBDIR%%/DITrack/Command
 @dirrmtry %%PYTHON_SITELIBDIR%%/DITrack
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
