@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/(.)\.(..)\.(.)$/\1\2\3/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	quakelee@cn.FreeBSD.org
 COMMENT=	A Bayesian anti-spam filter written in Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
