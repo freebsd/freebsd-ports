@@ -9,7 +9,7 @@
 -LDFLAGS = -O
 -LIBS = -lcurses
 +#CC = cc
-+CFLAGS += -c -DBSD -DHAVE_GETOPT
++CFLAGS += -c -DPOSIX -DHAVE_GETOPT
 +#LDFLAGS = -O
 +LIBS = -ltermcap
  
