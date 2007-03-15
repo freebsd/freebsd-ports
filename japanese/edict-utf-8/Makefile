@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	edict-utf-8
-PORTVERSION=	20070106
+PORTVERSION=	20070314
 CATEGORIES=	japanese
 MASTER_SITES=	http://redundancy.redundancy.org/mirror/${PORTNAME}/
 DISTFILES=	${DICTFILES}
