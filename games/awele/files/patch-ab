@@ -1,5 +1,5 @@
 --- tkAppInit.c.orig	Fri Dec  8 16:35:38 1995
-+++ tkAppInit.c	Fri May  1 09:36:18 1998
++++ tkAppInit.c	Thu Mar 15 08:44:13 2007
 @@ -9,12 +9,10 @@
   *
   * See the file "license.terms" for information on usage and redistribution
@@ -15,15 +15,18 @@
  #include "tk.h"
  
  extern void create_commands(Tcl_Interp *,Tk_Window);
-@@ -27,6 +25,7 @@
+@@ -25,9 +23,7 @@
+  * Sun shared libraries to be used for Tcl.
+  */
  
- extern int matherr();
- int *tclDummyMathPtr = (int *) matherr;
+-extern int matherr();
+-int *tclDummyMathPtr = (int *) matherr;
+-
 +
- 
  /*
   *----------------------------------------------------------------------
-@@ -77,14 +76,13 @@
+  *
+@@ -77,14 +73,13 @@
  Tcl_AppInit(interp)
      Tcl_Interp *interp;		/* Interpreter for application. */
  {
@@ -39,15 +42,7 @@
  
      /*
       * Call the init procedures for included packages.  Each call should
-@@ -103,17 +101,14 @@
-      */
-     create_commands(interp, main);
-     link_global_variables(interp, main);
--
-+ 
-     /*
-      * Specify a user-specific startup file to invoke if the application
-      * is run interactively.  Typically the startup file is "~/.apprc"
+@@ -110,10 +105,7 @@
       * where "app" is the name of the application.  If this line is deleted
       * then no user-specific startup file will be run under any conditions.
       */

@@ -7,7 +7,8 @@
 
 PORTNAME=	awele
 PORTVERSION=	1.0
-CATEGORIES=	games tk82
+PORTREVISION=	1
+CATEGORIES=	games tk84
 MASTER_SITES=	http://www-air.inria.fr/ftp/Jean-Paul/ \
 		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
@@ -16,14 +17,19 @@ DISTFILES=	${PORTNAME}1.0.tgz
 MAINTAINER=	tg@FreeBSD.org
 COMMENT=	An african board game
 
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
-
+USE_TK=		yes
 WRKSRC=		${WRKDIR}/awele
 USE_IMAKE=	yes
 USE_PERL5_BUILD=yes
 MAN6=		xawele.6
+PLIST_FILES=	bin/awelewish bin/xawele
 
 post-patch:
 	${PERL} -pi -e "s|\@\@LOCALBASE\@\@|${LOCALBASE}|g;" ${WRKSRC}/Imakefile
+
+post-install:
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "Use xawele to start awele"
+	@${ECHO_CMD} ""
 
 .include <bsd.port.mk>
