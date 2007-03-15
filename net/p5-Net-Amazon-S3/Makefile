@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Net-Amazon-S3
-PORTVERSION=	0.37
+PORTVERSION=	0.38
 CATEGORIES=	net
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Use the Amazon S3 - Simple Storage Service
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
@@ -28,10 +28,6 @@ PERL_CONFIGURE=	yes
 MAN3=		Net::Amazon::S3.3 Net::Amazon::S3::Bucket.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600	# Inherited from www/p5-libwww
-IGNORE=		requires Perl 5.6 or later. Install lang/perl5.8 and try again
-.endif
 
 .if ${PERL_LEVEL} < 500703
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
