@@ -10,7 +10,7 @@ DISTVERSION=	6-ar-1.2-0
 PORTEPOCH=	1
 CATEGORIES=	arabic textproc
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aspell Arabic dictionaries
 
 DICT=	 	ar

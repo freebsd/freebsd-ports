@@ -10,7 +10,7 @@ DISTVERSION=	6-hy-0.0.3-0
 PORTEPOCH=	1
 CATEGORIES=	textproc
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aspell Armenian dictionary
 
 DICT=	 	hy
