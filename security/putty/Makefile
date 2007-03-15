@@ -19,19 +19,19 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 MAKEFILE=	Makefile.gtk
 CFLAGS+=	-DBSD_PTYS -DOMIT_UTMP
 
-.if !defined(WITHOUT_IPV6)
-CFLAGS+=	-DIPV6
-.endif
-
-PLIST_FILES=	bin/plink bin/pscp bin/psftp
-MAN1=		plink.1 pscp.1 psftp.1
+PLIST_FILES=	bin/plink bin/pscp bin/psftp bin/puttygen
+MAN1=		plink.1 pscp.1 psftp.1 puttygen.1
 
 .if !defined(WITHOUT_GTK)
 USE_GNOME=	gtk12
-PLIST_FILES+=	bin/pterm bin/putty bin/puttygen bin/puttytel
-MAN1+=		pterm.1 putty.1 puttygen.1 puttytel.1
+PLIST_FILES+=	bin/pterm bin/putty bin/puttytel
+MAN1+=		pterm.1 putty.1 puttytel.1
 MAKE_ENV+=	PUTTY_WITH_GTK=yes
 CFLAGS+=	`${GTK_CONFIG} --cflags`
+.endif
+
+.if !defined(WITHOUT_IPV6)
+CFLAGS+=	-DIPV6
 .endif
 
 post-patch:
