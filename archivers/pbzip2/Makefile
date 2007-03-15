@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	pbzip2
-PORTVERSION=	0.9.6
+PORTVERSION=	1.0
 CATEGORIES=	archivers
-MASTER_SITES=	http://compression.ca/pbzip2/
+MASTER_SITES=	http://compression.ca/pbzip2/ CENKES
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parallel BZIP2
@@ -29,7 +29,7 @@ post-patch:
 		-e "s,\"PRIu64\",#PRIu64,g" ${WRKSRC}/pbzip2.cpp
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	@${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.mk>
