@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	havp
-PORTVERSION=	0.82
-PORTREVISION=	2
+PORTVERSION=	0.85
 CATEGORIES=	www
 MASTER_SITES=	http://www.server-side.de/download/ \
 				http://bio3k.softboard.ru/uploads/arch/
@@ -15,12 +14,14 @@ MASTER_SITES=	http://www.server-side.de/download/ \
 MAINTAINER=	b3k@mail.ru
 COMMENT=	HTTP Antivirus Proxy
 
-LIB_DEPENDS=	clamav.2:${PORTSDIR}/security/clamav
+LIB_DEPENDS=	clamav.1:${PORTSDIR}/security/clamav
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_PERL5_BUILD=	yes
 USE_RC_SUBR=	havp
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--disable-locking
 
 LOG_DIR=	/var/log/havp
 TMP_DIR=	/var/tmp/havp
@@ -30,22 +31,44 @@ PLIST_SUB+=	LOG_DIR=${LOG_DIR} TMP_DIR=${TMP_DIR} RUN_DIR=${RUN_DIR}
 SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	LOG_DIR=${LOG_DIR} TMP_DIR=${TMP_DIR} RUN_DIR=${RUN_DIR}
 
+OPTIONS=	SSL "Enable SSL proxying (not scanned, only forwarded!)" on \
+			CLAMAV "Enable libclamav support" on \
+			TROPHIE "Enable Trend Micro (Trophie) support" off
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
 BROKEN=		this port does not compile on FreeBSD 4.x.
 .endif
 
+.if defined(WITH_SSL)
+CONFIGURE_ARGS+=	--enable-ssl-tunnel
+.else
+CONFIGURE_ARGS+=	--disable-ssl-tunnel
+.endif
+
+.if defined(WITH_CLAMAV)
+CONFIGURE_ARGS+=	--enable-clamav
+.else
+CONFIGURE_ARGS+=	--disable-clamav
+.endif
+
+.if defined(WITH_TROPHIE)
+CONFIGURE_ARGS+=	--enable-trophie
+.else
+CONFIGURE_ARGS+=	--disable-trophie
+.endif
+
 pre-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@[ -f ${PREFIX}/etc/havp/havp.config ] || \
-		${CP} -p ${PREFIX}/etc/havp/havp.config.default ${PREFIX}/etc/havp/havp.config
+		${CP} ${PREFIX}/etc/havp/havp.config.default ${PREFIX}/etc/havp/havp.config
 	@${MKDIR} ${EXAMPLESDIR}
 	@${CP} ${WRKSRC}/etc/havp/blacklist ${EXAMPLESDIR}/blacklist.sample
 	@${CP} -R ${WRKSRC}/etc/havp/templates ${EXAMPLESDIR}
 	@${CP} ${WRKSRC}/etc/havp/whitelist ${EXAMPLESDIR}/whitelist.sample
-	@${SH} ${PKGINSTALL} ${PREFIX} POST-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>

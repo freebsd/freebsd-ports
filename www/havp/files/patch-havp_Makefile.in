@@ -1,34 +1,26 @@
---- havp/Makefile.in.bak	Sun Apr 23 18:31:11 2006
-+++ havp/Makefile.in	Sat Jun 17 12:12:17 2006
-@@ -26,31 +26,7 @@
- install: all
- 	$(INSTALL) -d $(sbindir)
- 	$(INSTALL) -s -m 755 havp $(sbindir)/havp
--	$(INSTALL) -d -m 755 /var/log/havp/
--	$(INSTALL) -d -m 755 /var/tmp/havp/
--	$(INSTALL) -d -m 755 /var/run/havp/
--	$(INSTALL) -d /etc/init.d
--	$(INSTALL) -m 755 ../etc/init.d/havp /etc/init.d/
- 	$(INSTALL) -m 644 ../etc/havp/havp.config $(etcdir)/havp/havp.config.default
--	@if [ ! -f $(etcdir)/havp/havp.config ]; then \
--		$(INSTALL) -m 644 ../etc/havp/havp.config $(etcdir)/havp/havp.config; \
+--- havp/Makefile.in.orig	Fri Mar  9 10:18:56 2007
++++ havp/Makefile.in	Fri Mar  9 10:20:54 2007
+@@ -25,23 +25,6 @@
+ 	$(INSTALL) -m 755 -d $(etcdir)
+ 	$(INSTALL) -s -m 755 havp $(prefix)/sbin/havp
+ 	$(INSTALL) -m 644 ../etc/havp/havp.config $(etcdir)/havp.config.default
+-	if [ ! -f $(etcdir)/havp.config ]; then \
+-		$(INSTALL) -m 644 ../etc/havp/havp.config $(etcdir)/havp.config; \
 -	else \
--		../update-conf $(etcdir)/havp/havp.config; \
+-		../update-conf $(etcdir)/havp.config; \
 -	fi
--	@if [ ! -f $(etcdir)/havp/whitelist ]; then \
--		$(INSTALL) -m 644 ../etc/havp/whitelist $(etcdir)/havp/whitelist; \
+-	if [ ! -f $(etcdir)/whitelist ]; then \
+-		$(INSTALL) -m 644 ../etc/havp/whitelist $(etcdir)/whitelist; \
 -	fi
--	@if [ ! -f $(etcdir)/havp/blacklist ]; then \
--		$(INSTALL) -m 644 ../etc/havp/blacklist $(etcdir)/havp/blacklist; \
+-	if [ ! -f $(etcdir)/blacklist ]; then \
+-		$(INSTALL) -m 644 ../etc/havp/blacklist $(etcdir)/blacklist; \
 -	fi
--	cp -r ../etc/havp/templates $(etcdir)/havp
--	chmod -R a+rX $(etcdir)/havp/templates
+-	cp -r ../etc/havp/templates $(etcdir)
+-	chmod -R a+rX $(etcdir)/templates
+-
 -	@echo ""
--	@echo "Remember to give correct permissions:"
--	@echo " chown <havpuser> /var/tmp/havp (after mounting if needed)"
--	@echo " chown <havpuser> /var/log/havp"
--	@echo " chown <havpuser> /var/run/havp"
+-	@echo "HAVP installed - see documentation for needed extra steps"
 -	@echo ""
  
  clean:
- 	rm -f havp *.o scanners/*.o
+ 	cd scanners && $(MAKE) clean

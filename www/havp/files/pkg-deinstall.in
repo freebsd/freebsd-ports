@@ -7,10 +7,20 @@ fi
 
 HAVP_USER=havp
 
-if pw usershow "$HAVP_USER" 2>/dev/null 1>&2; then
-	echo "=============================================================================="
-	echo "To delete $HAVP_USER user permanently, use 'pw userdel \"$HAVP_USER\"'"
-	echo "=============================================================================="
+echo
+echo "===================================================="
+echo
+echo "If you want remove havp permanently from you system"
+echo "execute following commands:"
+echo
+echo " # rm -rf %%LOG_DIR%%"
+echo " # rm -rf %%RUN_DIR%%"
+echo " # rm -rf %%TMP_DIR%%"
+if pw usershow "${HAVP_USER}" 2>/dev/null 1>&2; then
+	echo " # pw userdel ${HAVP_USER}"
 fi
+echo
+echo "===================================================="
+echo
 
 exit 0
