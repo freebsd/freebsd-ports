@@ -7,6 +7,7 @@
 
 PORTNAME=	bmpx
 PORTVERSION=	0.36.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://files.beep-media-player.org/releases/0.36/
 
@@ -17,7 +18,7 @@ LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
 		cairomm-1.0.1:${PORTSDIR}/graphics/cairomm \
 		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia \
-		neon.25:${PORTSDIR}/www/neon \
+		neon.26:${PORTSDIR}/www/neon \
 		glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
 		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		rsvg-2:${PORTSDIR}/graphics/librsvg2 \

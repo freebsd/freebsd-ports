@@ -7,6 +7,7 @@
 
 PORTNAME=	cadaver
 PORTVERSION=	0.22.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/cadaver/ \
 		http://www.tcbug.org/
@@ -14,7 +15,7 @@ MASTER_SITES=	http://www.webdav.org/cadaver/ \
 MAINTAINER=	josh@tcbug.org
 COMMENT=	Commandline client for DAV
 
-LIB_DEPENDS=	neon.25:${PORTSDIR}/www/neon
+LIB_DEPENDS=	neon.26:${PORTSDIR}/www/neon
 
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes

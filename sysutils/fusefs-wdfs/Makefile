@@ -7,6 +7,7 @@
 
 PORTNAME=	wdfs
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://noedler.de/projekte/wdfs/
 PKGNAMEPREFIX=	fusefs-
@@ -15,7 +16,7 @@ MAINTAINER=	tgyurci@freemail.hu
 COMMENT=	Mount remote WedDAV directories with Fuse
 
 LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs \
-		neon.25:${PORTSDIR}/www/neon
+		neon.26:${PORTSDIR}/www/neon
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 GNU_CONFIGURE=	yes
