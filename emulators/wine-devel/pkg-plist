@@ -500,6 +500,7 @@ lib/wine/dmsynth.dll.so
 lib/wine/dmusic.dll.so
 lib/wine/dmusic32.dll.so
 lib/wine/dnsapi.dll.so
+lib/wine/dpnaddr.dll.so
 lib/wine/dpnhpast.dll.so
 lib/wine/dplay.dll.so
 lib/wine/dplayx.dll.so
