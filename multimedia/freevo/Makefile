@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freevo
 
-MAINTAINER=	netcom@sauber.net
+MAINTAINER=	fbsd@opal.com
 COMMENT=	Open source digital jukebox
 
 RUN_DEPENDS=	aumix:${PORTSDIR}/audio/aumix \
