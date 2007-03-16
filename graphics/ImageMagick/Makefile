@@ -64,7 +64,7 @@ OPTIONS=	X11				"X11 support" on \
 		IMAGEMAGICK_DOT		"GraphViz dot graphs support" off \
 		IMAGEMAGICK_WMF			"WMF format support" off \
 		IMAGEMAGICK_SVG			"SVG format support" off \
-		IMAGEMAGICK_PDF			"PDF format support" on \
+		IMAGEMAGICK_PDF			"PDF format support" off \
 		IMAGEMAGICK_MPEG2		"MPEG2 format support" on \
 		IMAGEMAGICK_GSLIB	"libgs (Postscript SHLIB) support" off
 
@@ -248,7 +248,7 @@ CONFIGURE_ARGS+=	--without-rsvg
 .endif
 
 # PDF (Adobe Portable Document Format) support
-.if !defined(WITHOUT_IMAGEMAGICK_PDF)
+.if defined(WITH_IMAGEMAGICK_PDF)
 USE_GHOSTSCRIPT=	yes
 WITH_GHOSTSCRIPT_AFPL=	yes
 .endif
