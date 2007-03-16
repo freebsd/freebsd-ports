@@ -7,7 +7,8 @@
 
 PORTNAME=	tkhylafax
 PORTVERSION=	3.2b
-CATEGORIES=	comms tk82
+PORTREVISION=	1
+CATEGORIES=	comms tk84
 MASTER_SITES=	ftp://ftp.hylafax.org/contrib/tkhylafax/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}
 
@@ -15,9 +16,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tcl/tk interface to Sam Leffler's fax package
 
 USE_GHOSTSCRIPT_RUN=	yes
+USE_TK=		yes
 
-RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82 \
-		sendfax:${PORTSDIR}/comms/hylafax \
+RUN_DEPENDS=	sendfax:${PORTSDIR}/comms/hylafax \
 		gv:${PORTSDIR}/print/gv
 
 WRKSRC=		${WRKDIR}/tkhylafax
