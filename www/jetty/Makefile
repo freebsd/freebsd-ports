@@ -6,41 +6,93 @@
 #
 
 PORTNAME=	jetty
-DISTVERSION=	5.1.11RC0
-PORTREVISION=	1
+DISTVERSION=	6.1.1
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	jetty
-DISTNAME=	${PORTNAME}-${DISTVERSION}-all
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Extensible Java HTTP Server
+MAINTAINER=	jbq@caraldi.com
+COMMENT=	Full-featured web server implemented entirely in java
 
+USE_RC_SUBR=	${PORTNAME}
 USE_ZIP=	yes
-JAVA_BUILD=	jdk
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
-USE_ANT=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+USE_PYTHON=	1.6+
+PLIST=			${WRKDIR}/pkg-plist
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
-PLIST_SUB=	JETTY_VERSION=${PORTVERSION}
+APP_NAME=	${PORTNAME}
+APP_HOME=	${PREFIX}/${PORTNAME}
+PID_FILE?=	${APP_HOME}/${APP_NAME}.pid
+RUNASUSER?=	www
+RUNASUID?=	80
+GROUP?=		www
+GID?=		80
+LOG_FILE?=	${APP_HOME}/${APP_NAME}.log
 
-post-extract:
-	${FIND} ${WRKSRC} -name CVS -delete
-	${FIND} ${WRKSRC} -name .cvsignore -delete
+SUB_LIST=	\
+		APP_HOME=${APP_HOME} \
+		APP_NAME=${APP_NAME} \
+		RC_SUBR=${RC_SUBR} \
+		JAVA_HOME=${JAVA_HOME} \
+		JAVA=${JAVA} \
+		PID_FILE=${PID_FILE} \
+		RUNASUSER=${RUNASUSER} \
+		RUNASUID=${RUNASUID} \
+		GROUP=${GROUP} \
+		GID=${GID} \
+		LOG_FILE=${LOG_FILE} \
+		PYTHON_CMD=${PYTHON_CMD}
+
+SUB_FILES=	\
+		pkg-install \
+		pkg-deinstall \
+		${APP_NAME}ctl \
+		${APP_NAME} \
+		message \
+		message-advanced
+
+do-build:
+
+post-build:
+	@${ECHO_MSG} "===>    Building packing list"
+	@> ${PLIST}
+
+	@cd ${WRKSRC} && ${FIND} -H * -type f \
+	| ${EGREP} -v "^(bin/|bin$$)" | ${SED} -e "s|^|${PORTNAME}/|" >> ${PLIST}
+
+	@cd ${WRKSRC} && ${FIND} -H -d * -type d \
+	| ${EGREP} -v "^(bin/|bin$$)" | ${SED} -e "s|^|@dirrm ${PORTNAME}/|" >> ${PLIST}
+
+	@${ECHO} @dirrm ${PORTNAME} >> ${PLIST}
+	@${CAT} ${MASTERDIR}/pkg-plist >> ${PLIST}
+
+pre-install:
+	@${FMT} -w80 ${WRKDIR}/message > ${PKGMESSAGE}
+	@${CAT} ${WRKDIR}/message-advanced >> ${PKGMESSAGE}
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/java/${PORTNAME}
-	@(cd ${WRKSRC} && ${TAR} -c --exclude 'src/*' -f - ./ ) \
-		| (cd ${PREFIX}/share/java/${PORTNAME} && ${TAR} --unlink -x -f -)
+	@${ECHO_MSG} "===>    Installing into ${APP_HOME}"
+
+# Create user/group
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+	@${MKDIR} ${APP_HOME}
+	@cd ${WRKSRC} && ${FIND} -H * | ${EGREP} -v "^(bin/|bin$$)" | ${CPIO} -pdmuL -R ${RUNASUSER}:${GROUP} ${APP_HOME}
+	@${CHOWN} ${RUNASUSER}:${GROUP} ${PREFIX}/${PORTNAME}
+
+	@${ECHO_MSG} "===>    Installing into ${PREFIX}/sbin"
+	@${INSTALL_SCRIPT} ${WRKDIR}/${APP_NAME}ctl ${PREFIX}/sbin
+
+	@${ECHO_MSG} "===>    Installing ${PREFIX}/etc/rc.d/${APP_NAME}"
+	@${INSTALL_SCRIPT} ${WRKDIR}/${APP_NAME} ${PREFIX}/etc/rc.d
 
 post-install:
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGMESSAGE} \
-		| ${SED} 's|-%%PORTVERSION%%||g'
-	@${CHMOD} a+rx \
-		${PREFIX}/share/java/${PORTNAME}/extra/unix/bin/jetty.sh
-	@${LN} -sf \
-		${PREFIX}/share/java/${PORTNAME}/extra/unix/bin/jetty.sh \
-		${PREFIX}/sbin/jetty
+	@${ECHO_CMD}
+	@${ECHO_CMD} "********************************************************************************"
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD} "********************************************************************************"
+	@${ECHO_CMD}
 
 .include <bsd.port.mk>
