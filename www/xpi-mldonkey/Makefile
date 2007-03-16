@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	1.10
+PORTVERSION=	2.0
 CATEGORIES=	www net-p2p
-MASTER_SITES=	http://www.informatik.uni-oldenburg.de/~dyna/${PORTNAME}/${PORTVERSION}/ CSME
+MASTER_SITES=	http://www.informatik.uni-oldenburg.de/~dyna/${PORTNAME}/${PORTVERSION}/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A ed2k, magnet and sig2dat protocol handler
