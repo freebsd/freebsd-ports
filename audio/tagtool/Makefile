@@ -6,8 +6,7 @@
 #    $MCom: ports/audio/tagtool/Makefile,v 1.1 2006/09/30 01:15:37 ahze Exp $
 
 PORTNAME=	tagtool
-PORTVERSION=	0.12.2
-PORTREVISION=	3
+PORTVERSION=	0.12.3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,20 +17,20 @@ COMMENT=	A GNOME MP3/Ogg file tagger
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
+USE_BZIP2=	yes
+USE_GNOME=	gnomehack intlhack libglade2
 USE_XLIB=	yes
 USE_GETTEXT=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack intlhack libglade2 gnomehier
-
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+INSTALLS_ICONS=	yes
+
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib -Wl,--export-dynamic ${PTHREAD_LIBS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 post-patch:
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
-		${REINPLACE_CMD} -e \
-			's|(prefix)/share/applications|(prefix)/share/gnome/applications|g; \
-			 s|(datadir)/pixmaps|(prefix)/share/gnome/pixmaps|g' \
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-Wno-pointer-sign||g'
 
 .include <bsd.port.mk>
