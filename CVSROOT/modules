@@ -5759,6 +5759,7 @@ kludge3d	ports/graphics/kludge3d
 kluje		ports/deskutils/kluje
 kmamerun	ports/emulators/kmamerun
 kmastermind	ports/games/kmastermind
+kmatrix3d	ports/deskutils/kmatrix3d
 kmenc15		ports/multimedia/kmenc15
 kmerlin		ports/net-im/kmerlin
 kmess		ports/net-im/kmess
