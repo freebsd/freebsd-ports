@@ -1,4 +1,4 @@
-@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin pupdate; fi
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
 %%SQUIRRELDIR%%/plugins/pupdate/docs/index.php
 %%SQUIRRELDIR%%/plugins/pupdate/docs/INSTALL
 %%SQUIRRELDIR%%/plugins/pupdate/docs/README
@@ -17,4 +17,4 @@
 @dirrm %%SQUIRRELDIR%%/plugins/pupdate/docs
 @dirrm %%SQUIRRELDIR%%/plugins/pupdate/udata
 @dirrm %%SQUIRRELDIR%%/plugins/pupdate
-@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin pupdate; fi
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi

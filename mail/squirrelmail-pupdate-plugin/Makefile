@@ -5,20 +5,22 @@
 # $FreeBSD$
 #
 
-PORTNAME=	squirrelmail-${SQUIRREL_PLUGIN_NAME}-plugin
+PORTNAME=	pupdate
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.squirrelmail.org/plugins/
-DISTNAME=	${SQUIRREL_PLUGIN_NAME}.${PORTVERSION}-1.4.2
+PKGNAMEPREFIX=	squirrelmail-
+PKGNAMESUFFIX=	-plugin
+DISTNAME=	${PORTNAME}.${PORTVERSION}-1.4.2
 DIST_SUBDIR=	squirrelmail
 
 MAINTAINER=	thomas@goodking.ca
 COMMENT=	Checks for plugin updates by parsing the SM site
 
-RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail \
-		${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail-compatibility-plugin
+RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail
 
-SQUIRREL_PLUGIN_NAME=	pupdate
+SQUIRREL_PLUGIN_NAME=	${PORTNAME}
 
 .ifdef SQUIRRELDIR
 PLIST_SUB+=	SQUIRRELDIR=${SQUIRRELDIR}
@@ -34,6 +36,7 @@ PLIST_SUB+=	SQUIRRELDIR=squirrelmail
 SUB_LIST+=	"SQUIRRELDIR=squirrelmail"
 .endif
 .endif
+PLIST_SUB+=	SQUIRREL_PLUGIN_NAME=${SQUIRREL_PLUGIN_NAME}
 
 SUB_FILES=	pkg-message
 
@@ -42,6 +45,8 @@ NO_WRKSUBDIR=		yes
 USE_PERL5_BUILD=	yes
 USE_PHP=		yes
 WANT_PHP_WEB=		yes
+
+.include <bsd.port.pre.mk>
 
 pre-everything::
 	@${ECHO} ""
@@ -73,4 +78,4 @@ post-install:
 	@${ECHO} ""
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
