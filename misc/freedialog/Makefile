@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.vocito.com/downloads/software/dialog/
 DISTNAME=	dialog-${PORTVERSION}
 
-MAINTAINER=	ports@vocito.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of dialog(1) under a BSD-friendly license
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libiberty.so:${PORTSDIR}/devel/freelibiberty

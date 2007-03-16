@@ -10,7 +10,7 @@ PORTVERSION=	1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.vocito.com/downloads/software/uwatch/
 
-MAINTAINER=	ports@vocito.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitor user logins and logouts
 
 MAN1=		uwatch.1
