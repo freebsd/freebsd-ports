@@ -6,7 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.4.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 		http://svnbook.red-bean.com/en/1.2/:bookhtml \
@@ -76,7 +76,7 @@ CFLAGS+=	-g
 .endif
 
 .if !defined(WITHOUT_NEON)
-LIB_DEPENDS+=	neon.25:${PORTSDIR}/www/neon
+LIB_DEPENDS+=	neon.26:${PORTSDIR}/www/neon
 CONFIGURE_ARGS+=	--with-neon=${LOCALBASE}
 PLIST_SUB+=		WITHOUT_NEON=""
 .else

@@ -7,7 +7,7 @@
 
 PORTNAME=	bazaar
 PORTVERSION=	1.4.2
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://bazaar-vcs.org/releases/src/obsolete/
 DISTNAME=	bazaar_${PORTVERSION}
@@ -20,13 +20,15 @@ BUILD_DEPENDS=	gmake:${PORTSDIR}/devel/gmake \
 		gdiff:${PORTSDIR}/textproc/diffutils \
 		gtar:${PORTSDIR}/archivers/gtar
 RUN_DEPENDS=	${BUILD_DEPENDS}
-LIB_DEPENDS=	neon.25:${PORTSDIR}/www/neon \
+LIB_DEPENDS=	neon.26:${PORTSDIR}/www/neon \
 		gpgme.17:${PORTSDIR}/security/gpgme
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
+
+BROKEN=		does not build with www/neon 0.26.x
 
 MAN1=		baz.1
 
