@@ -1489,9 +1489,14 @@ Note:  Please add new entries to the beginning of this file.
     <topic>tdiary -- injection vulnerability</topic>
     <affects>
       <package>
+	<name>ja-tdiary</name>
 	<name>tdiary</name>
-	<range><lt>2.0.3</lt></range>
-        <range><gt>2.1</gt><lt>2.1.4.20061126</lt></range>
+	<range><le>2.0.3</le></range>
+      </package>
+      <package>
+	<name>ja-tdiary-devel</name>
+	<name>tdiary-devel</name>
+	<range><gt>2.1</gt><lt>2.1.4_2</lt></range>
       </package>
     </affects>
     <description>
@@ -1505,7 +1510,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-12-10</discovery>
       <entry>2006-12-13</entry>
-      <modified>2006-12-15</modified>
+      <modified>2007-03-16</modified>
     </dates>
   </vuln>
 
@@ -1803,9 +1808,14 @@ Note:  Please add new entries to the beginning of this file.
     <topic>tdiary  -- cross site scripting vulnerability</topic>
     <affects>
       <package>
+	<name>ja-tdiary</name>
 	<name>tdiary</name>
-	<range><lt>2.0.2</lt></range>
-        <range><gt>2.1</gt><lt>2.1.4.20061115</lt></range>
+	<range><le>2.0.2</le></range>
+      </package>
+      <package>
+	<name>ja-tdiary-devel</name>
+	<name>tdiary-devel</name>
+	<range><gt>2.1</gt><lt>2.1.4_1</lt></range>
       </package>
     </affects>
     <description>
@@ -1820,6 +1830,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-11-26</discovery>
       <entry>2006-12-02</entry>
+      <modified>2007-03-16</modified>
     </dates>
   </vuln>
 
