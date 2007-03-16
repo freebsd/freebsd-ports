@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.vocito.com/downloads/software/libiberty/ \
 		ftp://ftp.vocito.com/pub/vocito.com/software/libiberty/
 DISTNAME=	libiberty-${PORTVERSION}
 
-MAINTAINER=	ports@vocito.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A freely-redistributable libiberty clone
 
 CONFLICTS=	gnulibiberty-*
