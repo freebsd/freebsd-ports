@@ -21,9 +21,9 @@ sbin/splatd
 %%PYTHON_SITELIBDIR%%/splat/helpers/homeDirectory.py
 %%PYTHON_SITELIBDIR%%/splat/helpers/homeDirectory.pyc
 %%PYTHON_SITELIBDIR%%/splat/helpers/homeDirectory.pyo
-%%PYTHON_SITELIBDIR%%/splat/helpers/homeHelper.py
-%%PYTHON_SITELIBDIR%%/splat/helpers/homeHelper.pyc
-%%PYTHON_SITELIBDIR%%/splat/helpers/homeHelper.pyo
+%%PYTHON_SITELIBDIR%%/splat/helpers/homeutils.py
+%%PYTHON_SITELIBDIR%%/splat/helpers/homeutils.pyc
+%%PYTHON_SITELIBDIR%%/splat/helpers/homeutils.pyo
 %%PYTHON_SITELIBDIR%%/splat/helpers/purgeUser.py
 %%PYTHON_SITELIBDIR%%/splat/helpers/purgeUser.pyc
 %%PYTHON_SITELIBDIR%%/splat/helpers/purgeUser.pyo
