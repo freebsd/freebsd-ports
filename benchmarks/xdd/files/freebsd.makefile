@@ -3,7 +3,7 @@ SHELL =		/bin/sh
 CC ?=		gcc
 CFLAGS +=	-DFreeBSD -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE -g 
 PROJECT =	xdd
-OBJECTS =	xdd.o access_pattern.o barrier.o global_time.o initialization.o parse.o pclk.o read_after_write.o results.o ticker.o time_stamp.o
+OBJECTS =	xdd.o access_pattern.o barrier.o global_time.o initialization.o parse.o pclk.o read_after_write.o results.o ticker.o time_stamp.o verify.o
 HEADERS = 	xdd.h pclk.h ticker.h misc.h 
 TSOBJECTS =	timeserver.o pclk.o ticker.o
 GTOBJECTS = gettime.o global_time.o pclk.o ticker.o
