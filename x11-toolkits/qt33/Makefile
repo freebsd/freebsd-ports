@@ -8,6 +8,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.3.7
+PORTREVISION=	1
 CATEGORIES?=	x11-toolkits ipv6
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-free-${PORTVERSION}
@@ -183,6 +184,7 @@ post-build:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${GREP} --mmap -F -l -- \
 		"${PLATFORM}" | ${XARGS} ${REINPLACE_CMD} -e "s,${PLATFORM}/qmake.conf,," \
 		-e "s,${PLATFORM},,"
+	@${RM} -f ${WRKSRC}/doc/html/qmake*
 
 # Work around qmake generated dependencies
 pre-su-install:
