@@ -102,7 +102,7 @@ PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} == 502010
+.if ${OSVERSION} < 601000
 PTHREAD_LIBS=	-pthread
 .endif
 
