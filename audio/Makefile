@@ -26,7 +26,6 @@
     SUBDIR += amp
     SUBDIR += ample
     SUBDIR += amrcoder
-    SUBDIR += anthem
     SUBDIR += aqualung
     SUBDIR += ardour
     SUBDIR += arts

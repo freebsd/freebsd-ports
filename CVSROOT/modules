@@ -394,7 +394,6 @@ anope		ports/irc/anope
 ansiprint	ports/print/ansiprint
 ant-xinclude-task	ports/textproc/ant-xinclude-task
 anteater	ports/sysutils/anteater
-anthem		ports/audio/anthem
 antipolix	ports/games/antipolix
 antivirus-milter	ports/mail/antivirus-milter
 antiword	ports/textproc/antiword
