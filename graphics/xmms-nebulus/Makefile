@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmms-nebulus
-PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTVERSION=	0.8.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://nebulus.tuxfamily.org/
 
