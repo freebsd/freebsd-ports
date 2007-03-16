@@ -1,0 +1,36 @@
+Jetty is now installed in %%APP_HOME%%
+
+You may want to activate it in /etc/rc.conf:
+
+  # echo %%APP_NAME%%_enable="YES" >> /etc/rc.conf
+
+Then copy the sample configuration file to the proper location:
+
+  # cp %%PREFIX%%/jetty/etc/jetty.xml %%PREFIX%%/etc/jetty.xml 
+
+Now, start Jetty:
+
+env - %%PREFIX%%/etc/rc.d/%%APP_NAME%%.sh start
+
+For this control script to run seamlessly, it is recommended to increase the
+maximum length of commands displayed by ps(1).  Please append the following
+setting to /etc/sysctl.conf:
+
+  # Do not truncate command line arguments in ps(1) listing
+  kern.ps_arg_cache_limit=10000
+
+This setting will take effect at next reboot, however it is possible to have
+immediate effect with the following command as root:
+
+  # sysctl kern.ps_arg_cache_limit=10000
+
+If you wish to skip this setting, please note that the `stop', `restart' and
+`status' will not function properly with %%APP_NAME%%.sh.
+
+Once Jetty is started, point your web browser to the default home page at
+http://localhost:8080/test/ to read the documentation and test the samples.
+
+Jetty configuration is located at %%PREFIX%%/etc/%%APP_NAME%%.xml
+
+
+Enjoy!
