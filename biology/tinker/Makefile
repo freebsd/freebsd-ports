@@ -18,8 +18,6 @@ COMMENT=	A general purpose molecular modelling package
 
 BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
 
-BROKEN=		Unfetchable
-
 MAKE_ENV+=	HAVE_G2C=yes INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
 WRKSRC=		${WRKDIR}/tinker/source
