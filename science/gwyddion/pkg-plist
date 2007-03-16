@@ -22,11 +22,13 @@ lib/gwyddion/modules/file/ecsfile.so
 lib/gwyddion/modules/file/gwyfile.so
 lib/gwyddion/modules/file/hdf4file.so
 lib/gwyddion/modules/file/hitachi-afm.so
+lib/gwyddion/modules/file/intematix.so
 lib/gwyddion/modules/file/jeol.so
 lib/gwyddion/modules/file/jpkscan.so
 lib/gwyddion/modules/file/metropro.so
 lib/gwyddion/modules/file/microprof.so
 lib/gwyddion/modules/file/mifile.so
+lib/gwyddion/modules/file/nanoscope-ii.so
 lib/gwyddion/modules/file/nanoscope.so
 lib/gwyddion/modules/file/nanonis.so
 lib/gwyddion/modules/file/nanotop.so
@@ -96,6 +98,7 @@ lib/gwyddion/modules/process/maskops.so
 lib/gwyddion/modules/process/median-bg.so
 lib/gwyddion/modules/process/merge.so
 lib/gwyddion/modules/process/outliers.so
+lib/gwyddion/modules/process/polydistort.so
 lib/gwyddion/modules/process/polylevel.so
 lib/gwyddion/modules/process/presentationops.so
 lib/gwyddion/modules/process/rotate.so
@@ -205,6 +208,7 @@ include/gwyddion/libgwydgets/gwygraphwindow.h
 include/gwyddion/libgwydgets/gwygrapharea.h
 include/gwyddion/libgwydgets/gwygraphbasics.h
 include/gwyddion/libgwydgets/gwygraphcorner.h
+include/gwyddion/libgwydgets/gwygraphcurves.h
 include/gwyddion/libgwydgets/gwygraph.h
 include/gwyddion/libgwydgets/gwygraphlabel.h
 include/gwyddion/libgwydgets/gwygraphselections.h
@@ -275,7 +279,7 @@ libexec/gwyddion/plugins/process/invert_ruby.rb.rgi
 %%NLS%%share/locale/de/LC_MESSAGES/gwyddion.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gwyddion.mo
 share/mime/packages/gwyddion.xml
-share/pixmaps/gwyddion.png
+share/icons/hicolor/48x48/apps/gwyddion.png
 %%DATADIR%%/pixmaps/cd_line.png
 %%DATADIR%%/pixmaps/cd_rline.png
 %%DATADIR%%/pixmaps/cd_rstep.png
@@ -450,12 +454,32 @@ share/pixmaps/gwyddion.png
 %%DATADIR%%/gradients/Yellow
 %%DATADIR%%/gradients/Zones
 share/applications/gwyddion.desktop
-share/mime/application/x-gwyddion-spm.xml
+share/mime/application/x-bcr-spm.xml
+share/mime/application/x-bcrf-spm.xml
 share/mime/application/x-createc-spm.xml
-share/mime/application/x-nanoscope-spm.xml
-share/mime/application/x-spmlab-spm.xml
-share/mime/application/x-sis-spm.xml
+share/mime/application/x-dme-spm.xml
+share/mime/application/x-gwyddion-spm.xml
+share/mime/application/x-hitachi-spm.xml
+share/mime/application/x-jpk-spm.xml
+share/mime/application/x-mi-spm.xml
+share/mime/application/x-nanonis-spm.xml
+share/mime/application/x-nanoscope-ii-spm.xml
+share/mime/application/x-nanoscope-iii-spm.xml
+share/mime/application/x-nanosurf-spm.xml
 share/mime/application/x-nt-mdt-spm.xml
+share/mime/application/x-pni-spm.xml
+share/mime/application/x-rhk-sm2-spm.xml
+share/mime/application/x-rhk-sm3-spm.xml
+share/mime/application/x-seiko-spm.xml
+share/mime/application/x-sis-spm.xml
+share/mime/application/x-spml-spm.xml
+share/mime/application/x-spmlab-spm.xml
+share/mime/application/x-stp-spm.xml
+share/mime/application/x-surf-spm.xml
+share/mime/application/x-unisoku-spm.xml
+share/mime/application/x-witec-spm.xml
+share/mime/application/x-wsxm-spm.xml
+share/mime/application/x-zygo-spm.xml
 @dirrm share/gwyddion/gradients
 @dirrm share/gwyddion/glmaterials
 @dirrm share/gwyddion/pixmaps

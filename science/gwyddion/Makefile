@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gwyddion
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	science graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,11 +25,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
-		--disable-pascal
+		--disable-pascal --disable-pygwy
 
 MAKE_ARGS=	pkgconfigdatadir=${PREFIX}/libdata/pkgconfig
 
-USE_X_PREFIX=	yes
 USE_GNOME=	desktopfileutils gnomemimedata gtk20 libxml2
 USE_GL=		yes
 USE_BZIP2=	yes
@@ -65,11 +64,4 @@ post-patch:
 		${WRKSRC}/ltmain.sh
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/,/[^\]$$/d' ${WRKSRC}/devel-docs/Makefile.in
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-BUILD_DEPENDS+=	${LOCALBASE}/bin/pod2man:${PORTSDIR}/textproc/p5-podlators
-CONFIGURE_ENV+=	POD2MAN="${LOCALBASE}/bin/pod2man"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
