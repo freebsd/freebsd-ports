@@ -7,7 +7,8 @@
 
 PORTNAME=	bsvc
 PORTVERSION=	2.1
-CATEGORIES=	emulators tk82
+PORTREVISION=	1
+CATEGORIES=	emulators tk84
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/emulators
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
@@ -15,11 +16,9 @@ DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extensible hardware simulation framework with MC68K support
 
-RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-
 MAKE_ENV=	PROJECT_BASE=${PREFIX} WRKSRC=${WRKSRC}
+USE_TK=		yes
 
 .include <bsd.port.pre.mk>
 
