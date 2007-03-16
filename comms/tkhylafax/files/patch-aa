@@ -14,11 +14,11 @@
  
  # The full path to tclsh
 -TCLSH = /usr/bin/tclsh
-+TCLSH = tclsh8.2
++TCLSH = tclsh8.4
  
  # The full path to wish.
 -WISH = /usr/bin/wish
-+WISH = wish8.2
++WISH = wish8.4
  
  # The full path to your postscript viewer
 -GHOSTVIEW = /usr/X11/bin/gv
