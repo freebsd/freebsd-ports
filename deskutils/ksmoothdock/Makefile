@@ -6,18 +6,22 @@
 #
 
 PORTNAME=	ksmoothdock
-PORTVERSION=	3.6.1
+PORTVERSION=	4.3
 CATEGORIES=	deskutils kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION}_automake1.9
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dock program for KDE with smooth zooming
 
-USE_AUTOTOOLS=	libtool:15
+USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
-USE_KDELIBS_VER=3
+USE_AUTOTOOLS=	autoconf:259:env automake:19:env libtool:15:env
+GNU_CONFIGURE=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+pre-configure:
+	@cd ${WRKSRC}/admin && ${RM} -f ltmain.sh && ${CP} -f ${LTMAIN} .
+	@cd ${WRKSRC} && ${GMAKE} -f admin/Makefile.common
 
 .include <bsd.port.mk>
