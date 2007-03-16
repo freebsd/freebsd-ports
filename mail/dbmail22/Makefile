@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dbmail
-PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTVERSION=	2.2.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/2.2/
 
@@ -35,6 +34,7 @@ USE_OPENSSL=	YES
 CFLAGS+=	-fPIC -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" LOCALBASE=${LOCALBASE}
+MAKE_ARGS+=	mandir=${PREFIX}/man
 
 PORTDOCS=	AUTHORS BUGS COPYING INSTALL NEWS README \
 		README.aliases README.exim README.ldap \
@@ -96,6 +96,9 @@ PLIST_SUB+=	SIEVE="@comment "
 .if defined(WITH_LDAP)
 CONFIGURE_ARGS+=--with-auth-ldap=${LOCALBASE}/include
 USE_OPENLDAP=	yes
+PLIST_SUB+=	LDAP=""
+.else
+PLIST_SUB+=	LDAP="@comment "
 .endif
 
 .if defined(WITHOUT_MYSQL) && !defined(WITH_POSTGRESQL) && !defined(WITH_SQLITE)
