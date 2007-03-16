@@ -1,37 +1,73 @@
 bin/clig
-share/%%VERSION%%/bin/clig
-share/%%VERSION%%/tcl/genCheckMandatory.tcl
-share/%%VERSION%%/tcl/genStruct.tcl
-share/%%VERSION%%/tcl/genShowOptionValues.tcl
-share/%%VERSION%%/tcl/genParse.tcl
-share/%%VERSION%%/tcl/genMan.tcl
-share/%%VERSION%%/tcl/genDotH.tcl
-share/%%VERSION%%/tcl/genDotC.tcl
-share/%%VERSION%%/tcl/genDefault.tcl
-share/%%VERSION%%/tcl/genUsage.tcl
-share/%%VERSION%%/tcl/genGUI.tcl
-share/%%VERSION%%/tcl/globalpg.tcl
-share/%%VERSION%%/tcl/ober.tcl
-share/%%VERSION%%/c/catArgv.c
-share/%%VERSION%%/c/missingErr.c
-share/%%VERSION%%/c/getStringOpts.c
-share/%%VERSION%%/c/getStringOpt.c
-share/%%VERSION%%/c/getIntOpts.c
-share/%%VERSION%%/c/getIntOpt.c
-share/%%VERSION%%/c/getFloatOpts.c
-share/%%VERSION%%/c/getFloatOpt.c
-share/%%VERSION%%/c/checkIntLower.c
-share/%%VERSION%%/c/checkIntHigher.c
-share/%%VERSION%%/c/checkFloatLower.c
-share/%%VERSION%%/c/checkFloatHigher.c
-share/%%VERSION%%/c/template.man
-share/doc/clig/makefile
-share/doc/clig/cmdline.cli
-share/doc/clig/main.c
+bin/cligUsage
+lib/clig/c/catArgv.c
+lib/clig/c/checkDoubleHigher.c
+lib/clig/c/checkDoubleLower.c
+lib/clig/c/checkFloatConversion.c
+lib/clig/c/checkFloatHigher.c
+lib/clig/c/checkFloatLower.c
+lib/clig/c/checkIntHigher.c
+lib/clig/c/checkIntLower.c
+lib/clig/c/checkLongHigher.c
+lib/clig/c/checkLongLower.c
+lib/clig/c/getDoubleOpt.c
+lib/clig/c/getDoubleOpts.c
+lib/clig/c/getFloatOpt.c
+lib/clig/c/getFloatOpts.c
+lib/clig/c/getIntOpt.c
+lib/clig/c/getIntOpts.c
+lib/clig/c/getLongOpt.c
+lib/clig/c/getLongOpts.c
+lib/clig/c/getStringOpt.c
+lib/clig/c/getStringOpts.c
+lib/clig/c/missingErr.c
+lib/clig/c/template.man
+lib/clig/pkgIndex.tcl
+lib/clig/tcl/cmdline.cli
+lib/clig/tcl/genCheckMandatory.tcl
+lib/clig/tcl/genDefault.tcl
+lib/clig/tcl/genDotC.tcl
+lib/clig/tcl/genDotH.tcl
+lib/clig/tcl/genGUI.tcl
+lib/clig/tcl/genMan.tcl
+lib/clig/tcl/genParse.tcl
+lib/clig/tcl/genShowOptionValues.tcl
+lib/clig/tcl/genStruct.tcl
+lib/clig/tcl/genUsage.tcl
+lib/clig/tcl/globalpg.tcl
+lib/clig/tcl/ober.tcl
+lib/clig/tcl/util.tcl
+lib/clig/tcllib/DeclCommandline.tcl
+lib/clig/tcllib/DeclDescription.tcl
+lib/clig/tcllib/DeclDouble.tcl
+lib/clig/tcllib/DeclFlag.tcl
+lib/clig/tcllib/DeclFloat.tcl
+lib/clig/tcllib/DeclInt.tcl
+lib/clig/tcllib/DeclLong.tcl
+lib/clig/tcllib/DeclName.tcl
+lib/clig/tcllib/DeclRest.tcl
+lib/clig/tcllib/DeclString.tcl
+lib/clig/tcllib/DeclUsage.tcl
+lib/clig/tcllib/DeclVersion.tcl
+lib/clig/tcllib/declOpt.tcl
+lib/clig/tcllib/oldOpts.tcl
+lib/clig/tcllib/parse.tcl
+lib/clig/tcllib/setSpec.tcl
+lib/clig/tcllib/usage.tcl
+lib/clig/tcllib/version.tcl
+share/doc/clig/ANNOUNCE
 share/doc/clig/CHANGES
+share/doc/clig/COPYING-2.0
+share/doc/clig/LICENSE
+share/doc/clig/README
 share/doc/clig/WISHLIST
-@dirrm share/%%VERSION%%/bin
+share/doc/clig/example/cmdline.cli
+share/doc/clig/example/main.c
+share/doc/clig/example/makefile
+share/doc/clig/index.html
+@dirrm lib/clig/c
+@dirrm lib/clig/tcl
+@dirrm lib/clig/tcllib
+@dirrm lib/clig
+@dirrm share/doc/clig/example
 @dirrm share/doc/clig
-@dirrm share/%%VERSION%%/c
-@dirrm share/%%VERSION%%/tcl
-@dirrm share/%%VERSION%%

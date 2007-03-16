@@ -6,34 +6,35 @@
 #
 
 PORTNAME=	clig
-PORTVERSION=	1.1.3
-CATEGORIES=	devel tcl82
-MASTER_SITES=	http://wsd.iitb.fhg.de/~geg/clighome/
+PORTVERSION=	1.9.11.1
+CATEGORIES=	devel tcl84
+MASTER_SITES=	http://wsd.iitb.fhg.de/~geg/clighome/ \
+  		http://www.carpetsmoker.net/distfiles/ \
+		http://www.xs4all.nl/~tournoij/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	Auto-generate an (argc, argv) processor, usage message, and manpage
 
-# This should work with any version of tcl.  See also ${MAKE_ENV}.
-BUILD_DEPENDS=	${LOCALBASE}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82
-RUN_DEPENDS=	${LOCALBASE}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82
+NO_BUILD=	yes
+USE_TCL_BUILD=	yes
+USE_TCL=	yes
+MAKEFILE=	makefile
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN1=		clig.1
+MANN=		clig_Commandline.n clig_Description.n clig_Double.n clig_Flag.n \
+		clig_Float.n clig_Int.n clig_Long.n clig_Name.n clig_Rest.n \
+		clig_String.n clig_Usage.n clig_Version.n clig_parseCmdline.n
 
-NO_BUILD=	yes
-MAKEFILE=	makefile
-MAKE_ENV=	tclsh=${PREFIX}/bin/tclsh8.2
-PLIST_SUB=	VERSION=${DISTNAME}
-
-do-patch:
-	@${CHMOD} a+r ${WRKSRC}/CHANGES
-	@${MV} ${WRKSRC}/makefile ${WRKSRC}/makefile.orig
-	@${SED} -e 's#prefix =~/tools#prefix =${PREFIX}/share#' \
-	       -e 's#LROOT =~/tools#LROOT =${PREFIX}#' \
-	       -e 's#DOCDIR =$$(prefix)/doc#DOCDIR =${PREFIX}/share/doc/clig#' \
-	       -e 's#MANDIR =$$(prefix)#MANDIR =${MANPREFIX}/man/#' \
-		${WRKSRC}/makefile.orig > ${WRKSRC}/makefile
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/WISHLIST ${PREFIX}/share/doc/clig
+post-patch:
+	@${RM} ${WRKSRC}/example/.cvsignore
+	@${FIND} -d ${WRKSRC} -type d -and -name CVS -exec ${RM} -r {} \;
+	@${REINPLACE_CMD} -e 's|prefix =/usr|prefix=${PREFIX}|; \
+		s|/usr/bin/tclsh|${TCLSH}|; \
+		s|/doc/|/share/doc/|; \
+		s|-$$(VERSION)||;' \
+			${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e "s|tclsh|${TCLSH}|" \
+		${WRKSRC}/man/fixman
 
 .include <bsd.port.mk>
