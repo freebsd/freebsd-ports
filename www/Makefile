@@ -1030,6 +1030,7 @@
     SUBDIR += rubygem-redcloth
     SUBDIR += rubygem-rubyfulsoup
     SUBDIR += rubygem-scrapi
+    SUBDIR += rubygem-scrubyt
     SUBDIR += sahana2
     SUBDIR += sams
     SUBDIR += sarg
