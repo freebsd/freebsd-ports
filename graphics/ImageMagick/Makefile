@@ -7,7 +7,7 @@
 
 PORTNAME=	ImageMagick
 DISTVERSION=	6.3.2-0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
