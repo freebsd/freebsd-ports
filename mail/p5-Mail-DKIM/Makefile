@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Mail-DKIM
-PORTVERSION=	0.23
+PORTVERSION=	0.24
 CATEGORIES=	mail perl5
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
-		http://jason.long.name/dkimproxy/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	yanagisawa@csg.is.titech.ac.jp
@@ -23,6 +23,9 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Crypt/OpenSSL/RSA.pm:${PORTSDIR}/securi
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+MASTER_SITE_BACKUP+=	http://freebsd.unixfreunde.de/sources/ \
+			http://jason.long.name/dkimproxy/
 
 PERL_CONFIGURE=	yes
 
