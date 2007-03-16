@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt_CHAP
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	security www pear
 
 MAINTAINER=	thomas@goodking.ca
