@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gaphor
-PORTVERSION=	0.7.1
+PORTVERSION=	0.9.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,22 +15,15 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	UML modeling environment written in Python
 
-BUILD_DEPENDS=	diacanvas2>=0:${PORTSDIR}/graphics/diacanvas2
-RUN_DEPENDS=	${BUILD_DEPENDS}
 .if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
 .endif
 
-USE_PYTHON=	2.2+
+CONFLICTS=	zope-3*
 
-do-configure:
-	@cd ${WRKSRC}; ${PYTHON_CMD} setup.py config
-
-do-build:
-	@cd ${WRKSRC}; ${PYTHON_CMD} setup.py build; ${PYTHON_CMD} setup.py build_mo
-
-do-install:
-	@cd ${WRKSRC}; ${PYTHON_CMD} setup.py install --install-data=${PREFIX}/share/gaphor; ${PYTHON_CMD} setup.py install_mo
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${DATADIR}
+USE_GNOME=	pygnome2
+USE_PYTHON=	2.4+
+USE_PYDISTUTILS=	yes
+USE_GETTEXT=	yes
 
 .include <bsd.port.mk>
