@@ -30,10 +30,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 
-# This port has a problem with -pthread,
-# force to use -lthr until it's not fixed.
-PTHREAD_LIBS=	-lthr
-
 PORTDOCS=	*
 
 DBDIR=		/var/db/clamav
@@ -102,7 +98,15 @@ PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 601000
+# This port has a problem with -pthread,
+# force to use -lthr until it's not fixed.
+.if ${OSVERSION} >= 601000
+PTHREAD_LIBS=	-lthr
+.endif
+# Maybe the port is broken for
+# FreeBSD 5.2.1 since -lc_r
+# and -pthread have both issues there.
+.if ${OSVERSION} == 502010
 PTHREAD_LIBS=	-pthread
 .endif
 
