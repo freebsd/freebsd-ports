@@ -8,7 +8,7 @@
 PORTNAME=	xtris
 PORTVERSION=	1.15
 CATEGORIES=	games ipv6
-MASTER_SITES=	http://www.iagora.com/~espel/xtris/
+MASTER_SITES=	ftp://quatramaran.ens.fr/pub/orabidoo/
 
 PATCH_SITES=	ftp://ftp.42.org/pub/orphan/	
 PATCHFILES=	xtris-1.15-v6-19991218.diff.gz
@@ -16,10 +16,6 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sec@42.org
 COMMENT=	A multi-player version of a popular game for the X Window system
-
-BROKEN=		Unfetchable
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2007-04-10
 
 RESTRICTED=	"Possible trademark infringement"
 WRKSRC=		${WRKDIR}/xtris
