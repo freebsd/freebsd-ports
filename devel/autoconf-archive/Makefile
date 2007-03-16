@@ -16,9 +16,9 @@ DISTNAME=	${PORTNAME}-${DISTDATE}
 MAINTAINER=	mkamm@gmx.net
 COMMENT=	A set of useful GNU Autoconf macros
 
-DISTDATE=	2007-02-19
+DISTDATE=	2007-03-12
 USE_BZIP2=	yes
-USE_AUTOTOOLS=	automake:19:env autoconf:259:env
+USE_AUTOTOOLS=	autoconf:261:env automake:110:env
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
@@ -45,6 +45,5 @@ plist:
 	${SORT} -u >${PLIST}
 	${ECHO_CMD} '%%PORTDOCS%%@dirrm %%DOCSDIR%%/html' >>${PLIST}
 	${ECHO_CMD} '%%PORTDOCS%%@dirrm %%DOCSDIR%%' >>${PLIST}
-	${ECHO_CMD} '@dirrm %%MACRODIR%%' >>${PLIST}
 
 .include <bsd.port.mk>
