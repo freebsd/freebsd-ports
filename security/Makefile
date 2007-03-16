@@ -287,6 +287,7 @@
     SUBDIR += nss
     SUBDIR += ocaml-cryptgps
     SUBDIR += ocaml-cryptokit
+    SUBDIR += ocaml-ssl
     SUBDIR += oidentd
     SUBDIR += oinkmaster
     SUBDIR += op
