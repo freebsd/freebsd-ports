@@ -48,8 +48,18 @@ lib/aflib/libaflibOggFile-%%VERSION%%.so
 lib/aflib/libaflibOggFile.so
 lib/aflib/libaflibWavFile-%%VERSION%%.so
 lib/aflib/libaflibWavFile.so
+
+lib/aflib/libaflibDevFile.la
+lib/aflib/libaflibAifcFile.la
+lib/aflib/libaflibAiffFile.la
+lib/aflib/libaflibAuFile.la
+lib/aflib/libaflibWavFile.la
+lib/aflib/libaflibOggFile.la
+lib/aflib/libaflibMpgFile.la
+
 lib/libaflib-%%VERSION%%.so
 lib/libaflib.so
+lib/libaflib.la
 share/aclocal/audiofile.m4
 @dirrm lib/aflib
 @dirrm include/aflib
