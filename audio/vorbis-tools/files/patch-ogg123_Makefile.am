@@ -1,0 +1,26 @@
+
+$FreeBSD$
+
+--- ogg123/Makefile.am.orig
++++ ogg123/Makefile.am
+@@ -16,7 +16,7 @@
+ 
+ datadir = @datadir@
+ localedir = $(datadir)/locale
+-DEFS = -DLOCALEDIR=\"$(localedir)\" @DEFS@
++DEFS = -DSYSCONFDIR=\"$(sysconfdir)\" -DLOCALEDIR=\"$(localedir)\" @DEFS@
+ 
+ docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
+ mandir = @MANDIR@
+@@ -44,10 +44,9 @@
+                 $(flac_sources) $(speex_sources)
+ 
+ man_MANS = ogg123.1
+-doc_DATA = ogg123rc-example
+ 
+ EXTRA_ogg123_SOURCES = \
+-                $(man_MANS) $(doc_DATA)
++                $(man_MANS)
+ 
+ debug:
+ 	$(MAKE) all CFLAGS="@DEBUG@"
