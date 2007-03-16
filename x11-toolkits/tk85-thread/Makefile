@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-WITH_THREADS=	yes
+BUILDING_TK_THREADS=	yes
 
 MASTERDIR=	${.CURDIR}/../tk85
 
