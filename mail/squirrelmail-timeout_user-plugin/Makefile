@@ -5,12 +5,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=	squirrelmail-${SQUIRREL_PLUGIN_NAME}-plugin
+PORTNAME=	timeout_user
 PORTVERSION=	1.1.1
 PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.squirrelmail.org/plugins/
-DISTNAME=	${SQUIRREL_PLUGIN_NAME}-${PORTVERSION}-0.5
+PKGNAMEPREFIX=	squirrelmail-
+PKGNAMESUFFIX=	-plugin
+DISTNAME=	${PORTNAME}-${PORTVERSION}-0.5
 DIST_SUBDIR=	squirrelmail
 
 MAINTAINER=	thomas@goodking.ca
@@ -19,7 +21,7 @@ COMMENT=	Automatically logs a user out if they're idle for a set amount of time
 RUN_DEPENDS=	${SQUIRRELDIR}/index.php:${PORTSDIR}/mail/squirrelmail \
 		${SQUIRRELDIR}/plugins/compatibility:${PORTSDIR}/mail/squirrelmail-compatibility-plugin
 
-SQUIRREL_PLUGIN_NAME=	timeout_user
+SQUIRREL_PLUGIN_NAME=	${PORTNAME}
 
 .ifdef SQUIRRELDIR
 PLIST_SUB+=	SQUIRRELDIR=${SQUIRRELDIR}
@@ -35,12 +37,15 @@ PLIST_SUB+=	SQUIRRELDIR=squirrelmail
 SUB_LIST+=	"SQUIRRELDIR=squirrelmail"
 .endif
 .endif
+PLIST_SUB+=	SQUIRREL_PLUGIN_NAME=${SQUIRREL_PLUGIN_NAME}
 
 NO_BUILD=		yes
 NO_WRKSUBDIR=		yes
 USE_PERL5_BUILD=	yes
 USE_PHP=		yes
 WANT_PHP_WEB=		yes
+
+.include <bsd.port.pre.mk>
 
 pre-everything::
 	@${ECHO} ""
@@ -71,4 +76,4 @@ post-install:
 .endif
 	@${ECHO} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
