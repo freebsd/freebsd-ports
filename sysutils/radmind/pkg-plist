@@ -7,6 +7,7 @@ bin/lfdiff
 bin/lmerge
 bin/lsort
 bin/ra.sh
+bin/repo
 bin/twhich
 sbin/radmind
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
