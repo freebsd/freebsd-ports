@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	darkice
-PORTVERSION=	0.17.1
+PORTVERSION=	0.18
 CATEGORIES=	audio net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://darkice.tyrell.hu/dist/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IceCast, IceCast2 and ShoutCast live audio streamer
@@ -24,8 +24,8 @@ OPTIONS=	VORBIS "Ogg Vorbis support" on \
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--without-alsa \
-		--with-vorbis-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
+		--without-alsa
 
 MAN1=		darkice.1
 MAN5=		darkice.cfg.5
@@ -33,9 +33,14 @@ PLIST_FILES=	bin/darkice etc/darkice.cfg
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		does not compile on 4.x
+.endif
+
 .if defined(WITHOUT_VORBIS)
 CONFIGURE_ARGS+=	--without-vorbis
 .else
+CONFIGURE_ARGS+=	--with-vorbis-prefix=${LOCALBASE}
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 .endif
 
@@ -62,6 +67,7 @@ CONFIGURE_ARGS+=	--without-faac
 
 .if defined(WITH_JACK)
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+CONFIGURE_ARGS+=	--with-jack-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-jack
 .endif
