@@ -7,7 +7,7 @@
 
 PORTNAME=	sword
 PORTVERSION=	1.5.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v1.5/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -19,6 +19,7 @@ COMMENT=	A project framework for manipulating Bible texts
 USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	automake:19
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--without-conf --without-clucene
 USE_LDCONFIG=	yes
@@ -39,7 +40,7 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
+		${WRKSRC}/Makefile.am
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/sword/mods.d
