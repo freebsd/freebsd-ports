@@ -6,8 +6,8 @@
     Put all *.slf files into ${DATADIR}/Data.
     Put all *.jsd and *.sti files from the TILECACHE directory into
     ${DATADIR}/Data/TILECACHE.
-		All filenames must be lowercase!
-		After copying you can use "make lowercase" to rename all files.
+    All filenames must be lowercase!
+    After copying you can use "make lowercase" to rename all files.
 
     Enjoy!
 

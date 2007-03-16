@@ -1,16 +1,15 @@
 # New ports collection makefile for: Jagged Alliance 2
-# Date created:         xx Nov 2006
+# Date created:         16 Nov 2006
 # Whom:                 Christoph Mallon <christoph.mallon@gmx.de>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	ja2
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	games
-MASTER_SITES=	\
-	http://deponie.yamagi.org/freebsd/distfiles/ \
-	http://ja2.dragonriders.de/files/
+MASTER_SITES=	http://deponie.yamagi.org/freebsd/distfiles/ \
+		http://ja2.dragonriders.de/files/
 
 MAINTAINER=	christoph.mallon@gmx.de
 COMMENT=	A port of "Jagged Alliance 2" using SDL
@@ -31,7 +30,7 @@ NO_PACKAGE=	Language of the datafiles must be hardcoded in the game binary
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS=	DUTCH	"Compile for dutch version"	Off \
-		ENGLISH	"Compile for english version"	On  \
+		ENGLISH	"Compile for english version"	Off \
 		FRENCH	"Compile for french version"	Off \
 		GERMAN	"Compile for german version"	Off \
 		ITALIAN	"Compile for italian version"	Off \
@@ -40,17 +39,17 @@ OPTIONS=	DUTCH	"Compile for dutch version"	Off \
 .include <bsd.port.pre.mk>
 
 .ifndef WITHOUT_ENGLISH
-MAKE_ARGS+=	ENGLISH=yes
+MAKE_ARGS+=	LNG=ENGLISH
 .elifdef WITH_DUTCH
-MAKE_ARGS+=	DUTCH=yes
+MAKE_ARGS+=	LNG=DUTCH
 .elifdef WITH_FRENCH
-MAKE_ARGS+=	FRENCH=yes
+MAKE_ARGS+=	LNG=FRENCH
 .elifdef WITH_GERMAN
-MAKE_ARGS+=	GERMAN=yes
+MAKE_ARGS+=	LNG=GERMAN
 .elifdef WITH_ITALIAN
-MAKE_ARGS+=	ITALIAN=yes
+MAKE_ARGS+=	LNG=ITALIAN
 .elifdef WITH_POLISH
-MAKE_ARGS+=	POLISH=yes
+MAKE_ARGS+=	LNG=POLISH
 .else
 IGNORE=	no language has been chosen. Please choose the appropriate language for your game CD
 .endif
