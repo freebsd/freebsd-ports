@@ -107,6 +107,7 @@
     SUBDIR += kickpim
     SUBDIR += klipoquery
     SUBDIR += kluje
+    SUBDIR += kmatrix3d
     SUBDIR += knowit
     SUBDIR += kompose
     SUBDIR += kooldock
