@@ -13685,6 +13685,7 @@ rubygem-rtags	ports/devel/rubygem-rtags
 rubygem-rubyforge	ports/devel/rubygem-rubyforge
 rubygem-rubyfulsoup	ports/www/rubygem-rubyfulsoup
 rubygem-scrapi	ports/www/rubygem-scrapi
+rubygem-scrubyt	ports/www/rubygem-scrubyt
 rubygem-scruffy	ports/graphics/rubygem-scruffy
 rubygem-snmp	ports/net-mgmt/rubygem-snmp
 rubygem-sqlite3	ports/databases/rubygem-sqlite3
