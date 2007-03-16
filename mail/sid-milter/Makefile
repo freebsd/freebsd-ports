@@ -24,10 +24,6 @@ INSTALL_WRKSRC=	${WRKSRC}/sid-filter
 PLIST_FILES=	libexec/sid-filter
 PORTDOCS=	${DOCSFILES}
 
-.if defined(PARALLEL_PACKAGE_BUILD)
-IGNORE=	pointyhat cluster does not support sysvipc
-.endif
-
 SITE+=		${FILESDIR}/site.config.m4
 .if defined(WITH_SIDMILTER_AR)
 MAN3=		ar.3
