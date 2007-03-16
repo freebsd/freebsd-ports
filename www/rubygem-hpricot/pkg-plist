@@ -68,8 +68,6 @@
 %%GEM_LIB_DIR%%/lib/hpricot/text.rb
 %%GEM_LIB_DIR%%/lib/hpricot/traverse.rb
 %%GEM_LIB_DIR%%/lib/hpricot_scan.so
-%%GEM_LIB_DIR%%/test
-%%GEM_LIB_DIR%%/test/files
 %%GEM_LIB_DIR%%/test/files/basic.xhtml
 %%GEM_LIB_DIR%%/test/files/boingboing.html
 %%GEM_LIB_DIR%%/test/files/cy0.html
@@ -90,7 +88,6 @@
 @dirrm %%GEM_LIB_DIR%%/extras
 @dirrm %%GEM_LIB_DIR%%/ext/hpricot_scan
 @dirrm %%GEM_LIB_DIR%%/ext
-@dirrm %%GEM_LIB_DIR%%/bin
 @dirrm %%GEM_LIB_DIR%%
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/hpricot
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
