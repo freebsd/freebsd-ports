@@ -1,9 +1,0 @@
-If vpnc under FreeBSD 4 fails with
-
-    socket(SOCK_RAW): Protocol not supported
-
-check your kernel configuration. The ESP protocol may be only
-enabled for FAST_IPSEC (this cannot be configured together with
-IPSEC). See LINT for further details.
-
-Under FreeBSD 5 vpnc should work without any IPSEC enabled.

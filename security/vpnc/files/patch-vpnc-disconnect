@@ -1,5 +1,5 @@
---- vpnc-disconnect.orig	Fri May 27 12:27:48 2005
-+++ vpnc-disconnect	Fri May 27 12:28:02 2005
+--- vpnc-disconnect.orig	Tue Mar 13 16:27:11 2007
++++ vpnc-disconnect	Tue Mar 13 16:27:17 2007
 @@ -1,6 +1,6 @@
  #!/bin/sh
  
