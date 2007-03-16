@@ -34,6 +34,79 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f235fe7a-b9ca-11db-bf0f-0013720b182d">
+    <topic>samba -- potential Denial of Service bug in smbd</topic>
+    <affects>
+      <package>
+	<name>samba</name>
+	<name>ja-samba</name>
+	<range><ge>3.0.6,1</ge><lt>3.0.24,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Samba Team reports:</p>
+	<blockquote cite="http://www.samba.org/samba/security/CVE-2007-0452.html">
+	  <p>Internally Samba's file server daemon, smbd, implements
+	    support for deferred file open calls in an attempt to serve
+	    client requests that would otherwise fail due to a share mode
+	    violation.  When renaming a file under certain circumstances
+	    it is possible that the request is never removed from the deferred
+	    open queue.  smbd will then become stuck is a loop trying to
+	    service the open request.</p>
+	  <p>This bug may allow an authenticated user to exhaust resources
+	    such as memory and CPU on the server by opening multiple CIFS
+	    sessions, each of which will normally spawn a new smbd process,
+	    and sending each connection into an infinite loop.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-0452</cvename>
+      <url>http://www.samba.org/samba/security/CVE-2007-0452.html</url>
+    </references>
+    <dates>
+      <discovery>2007-02-05</discovery>
+      <entry>2007-03-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="57ae52f7-b9cc-11db-bf0f-0013720b182d">
+    <topic>samba -- format string bug in afsacl.so VFS plugin</topic>
+    <affects>
+      <package>
+	<name>samba</name>
+	<name>ja-samba</name>
+	<range><ge>3.0.6,1</ge><lt>3.0.24,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Samba Team reports:</p>
+	<blockquote cite="http://www.samba.org/samba/security/CVE-2007-0454.html">
+	  <p>NOTE: This security advisory only impacts Samba servers
+	    that share AFS file systems to CIFS clients and which have
+	    been explicitly instructed in smb.conf to load the afsacl.so
+	    VFS module.</p>
+	  <p>The source defect results in the name of a file stored on
+	    disk being used as the format string in a call to snprintf().
+	    This bug becomes exploitable only when a user is able
+	    to write to a share which utilizes Samba's afsacl.so library
+	    for setting Windows NT access control lists on files residing
+	    on an AFS file system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-0454</cvename>
+      <url>http://www.samba.org/samba/security/CVE-2007-0454.html</url>
+    </references>
+    <dates>
+      <discovery>2007-02-05</discovery>
+      <entry>2007-03-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="73f53712-d028-11db-8c07-0211d85f11fb">
     <topic>ktorrent -- multiple vulnerabilities</topic>
     <affects>
