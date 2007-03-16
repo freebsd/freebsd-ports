@@ -1,6 +1,6 @@
---- timeserver.c.orig	Mon May 29 04:25:26 2006
-+++ timeserver.c	Mon May 29 04:25:56 2006
-@@ -29,9 +29,9 @@
+--- timeserver.c.orig	Fri Mar 16 07:13:50 2007
++++ timeserver.c	Fri Mar 16 07:14:38 2007
+@@ -30,9 +30,9 @@
  #include <stdarg.h> /* variable arguments stuff */
  #include <string.h> /* strrchr(), strerror() */
  #include <errno.h> /* errno stuff */
@@ -12,7 +12,7 @@
  #include <bstring.h>
  #endif
  #include <limits.h> /* USHRT_MAX */
-@@ -57,7 +57,7 @@
+@@ -58,7 +58,7 @@
  /* ----- */
  /* Types */
  /* ----- */
@@ -21,12 +21,12 @@
  /* SGI defines these in <netinet/in.h> */
  typedef unsigned long in_addr_t; /* An IP number */
  typedef unsigned short in_port_t; /* A port number */
-@@ -231,7 +231,7 @@
+@@ -225,7 +225,7 @@
+ #if (IRIX || WIN32)
+     nd = getdtablehi();
+ #endif
+-#if (LINUX || OSX)
++#if (LINUX || OSX || FreeBSD)
+     nd = getdtablesize();
+ #endif
  #if (AIX)
-     nd = sd + 1;
- #endif
--#if (SOLARIS || HPUX || OSX)
-+#if (SOLARIS || HPUX || OSX || FreeBSD)
- 	nd = FD_SETSIZE;
- #endif
-     for (;;) {

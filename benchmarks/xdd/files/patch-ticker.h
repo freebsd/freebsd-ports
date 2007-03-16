@@ -1,5 +1,5 @@
---- ticker.h.orig	Mon May 29 04:02:17 2006
-+++ ticker.h	Mon May 29 04:02:33 2006
+--- ticker.h.orig	Fri Mar 16 06:44:32 2007
++++ ticker.h	Fri Mar 16 06:44:41 2007
 @@ -35,7 +35,7 @@
  /* Types */
  /* ----- */

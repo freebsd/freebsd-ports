@@ -1,6 +1,6 @@
---- parse.c.orig	Thu Jun  1 14:48:28 2006
-+++ parse.c	Thu Jun  1 14:56:44 2006
-@@ -697,7 +697,7 @@
+--- parse.c.orig	Fri Mar 16 07:10:44 2007
++++ parse.c	Fri Mar 16 07:11:44 2007
+@@ -810,7 +810,7 @@
  xddfunc_delay(int32_t argc, char *argv[])
  { 
  	xgp->passdelay = atoi(argv[1]);
@@ -9,10 +9,10 @@
  }
  /*----------------------------------------------------------------------------*/
  // Delete the target file when complete
-@@ -1101,7 +1101,7 @@
+@@ -1218,7 +1218,7 @@
  xddfunc_maxerrors(int32_t argc, char *argv[])
  {
- 	xgp->max_errors = atoi(argv[1]);
+ 	xgp->max_errors = atoll(argv[1]);
 -    return(1);
 +    return(2);
  }

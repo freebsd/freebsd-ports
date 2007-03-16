@@ -1,5 +1,5 @@
---- global_time.c.orig	Mon May 29 04:12:29 2006
-+++ global_time.c	Mon May 29 04:16:36 2006
+--- global_time.c.orig	Fri Mar 16 06:52:49 2007
++++ global_time.c	Fri Mar 16 06:53:39 2007
 @@ -42,11 +42,15 @@
  #else /* GENERIC_UNIX */
  #include <netdb.h>

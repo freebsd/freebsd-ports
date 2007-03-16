@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	xdd
-PORTVERSION=	64
+PORTVERSION=	65
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ioperformance.com/xddversions/
-DISTNAME=	xdd64.121805
+DISTNAME=	xdd65.013007
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	g.gonter@ieee.org
 COMMENT=	Tool for measuring and characterizing disk subsystem I/O
 
-WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 PLIST_FILES=	bin/xdd bin/timeserver bin/gettime
+USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=	.*\.(c|cpp|h)
 
 .include <bsd.port.pre.mk>
 

@@ -1,6 +1,6 @@
---- ticker.c.orig	Mon May 29 04:23:53 2006
-+++ ticker.c	Mon May 29 04:24:15 2006
-@@ -76,7 +76,7 @@
+--- ticker.c.orig	Fri Mar 16 07:12:27 2007
++++ ticker.c	Fri Mar 16 07:12:55 2007
+@@ -75,7 +75,7 @@
      return;
  }
  /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
@@ -9,7 +9,7 @@
  void
  ticker_open(tick_t *tickp) {
      uint32_t picos;
-@@ -161,7 +161,7 @@
+@@ -160,7 +160,7 @@
      return; /* Ticker not open, or error reading ticker */
  }
  /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
@@ -18,7 +18,7 @@
  void
  ticker_read(tick_t *tickp) {
      struct timeval current_time;
-@@ -198,7 +198,7 @@
+@@ -197,7 +197,7 @@
   *
   * Close the ticker.
   */
