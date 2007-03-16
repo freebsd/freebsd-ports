@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.server-side.de/download/ \
 MAINTAINER=	b3k@mail.ru
 COMMENT=	HTTP Antivirus Proxy
 
-LIB_DEPENDS=	clamav.1:${PORTSDIR}/security/clamav
+LIB_DEPENDS=	clamav.2:${PORTSDIR}/security/clamav
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
