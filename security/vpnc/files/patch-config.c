@@ -1,6 +1,6 @@
---- config.c.orig	Sun May  1 22:06:36 2005
-+++ config.c	Tue Aug  2 20:18:29 2005
-@@ -125,12 +125,12 @@
+--- config.c.orig	Fri Feb 16 18:22:06 2007
++++ config.c	Tue Mar 13 16:11:53 2007
+@@ -251,12 +251,12 @@
  
  static const char *config_def_script(void)
  {
@@ -14,15 +14,15 @@
 +	return "/var/run/vpnc.pid";
  }
  
- static const struct config_names_s {
-@@ -520,8 +520,8 @@
+ static const char *config_def_vendor(void)
+@@ -701,8 +701,8 @@
  	}
- 
+ 	
  	if (!got_conffile) {
 -		read_config_file("/etc/vpnc/default.conf", config, 1);
 -		read_config_file("/etc/vpnc.conf", config, 1);
 +		read_config_file("%%PREFIX%%/etc/vpnc/default.conf", config, 1);
 +		read_config_file("%%PREFIX%%/etc/vpnc.conf", config, 1);
  	}
- 
+ 	
  	if (!print_config) {

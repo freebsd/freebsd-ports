@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vpnc
-PORTVERSION=	0.3.3
-PORTREVISION=	5
+PORTVERSION=	0.4.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~massar/vpnc/
 
@@ -20,13 +19,14 @@ USE_GMAKE=	yes
 ALL_TARGET=	vpnc
 
 USE_RC_SUBR=	vpnc
+USE_PERL5_BUILD=	yes
 
 PLIST_FILES=	sbin/vpnc \
 		sbin/vpnc-script \
 		sbin/vpnc-disconnect \
 		etc/vpnc.conf.sample
 
-PORTDOCS=	README ChangeLog TODO
+PORTDOCS=	README TODO
 MAN8=		vpnc.8
 
 .include <bsd.port.pre.mk>
@@ -35,7 +35,7 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/config.c
 	@${REINPLACE_CMD} -e \
-		's|%%CC%%|${CC}|;s|%%CFLAGS%%|${CFLAGS}|' \
+		's|%%PREFIX%%|${PREFIX}|;s|%%CC%%|${CC}|;s|%%CFLAGS%%|${CFLAGS}|' \
 			${WRKSRC}/Makefile
 
 do-install:
@@ -51,8 +51,5 @@ do-install:
 	${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

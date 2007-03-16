@@ -1,8 +1,8 @@
-VPNC - Client for Cisco 3000 VPN Concentrator
+VPNC - Client for Cisco 3000 VPN Concentrator, IOS and PIX
 
-A VPN client compatible with Cisco's EasyVPN equipment.
-Supports IPSec (ESP) with Mode Configuration and Xauth. Supports only
-shared-secret IPSec authentication, 3DES, MD5, and IP tunneling.
-It runs entirely in userspace.
+Vpnc is a VPN client for the Cisco 3000 VPN Concentrator, creating a
+IPSec-like connection as a tunneling network device for the local
+system. The created connection is presented as a tunneling network
+device to the local system. The daemon runs entirely in userspace.
 
 WWW: http://www.unix-ag.uni-kl.de/~massar/vpnc/
