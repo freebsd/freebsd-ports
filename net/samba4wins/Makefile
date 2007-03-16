@@ -6,10 +6,10 @@
 #
 
 PORTNAME=		samba4wins
-PORTVERSION=		1.0.4.r1
+PORTVERSION=		1.0.6
 CATEGORIES=		net
 MASTER_SITES=		http://ftp.sernet.de/pub/samba4WINS/debian/pool/
-DISTNAME=		${PORTNAME}_${PORTVERSION:S/.r/-/}
+DISTNAME=		${PORTNAME}_${PORTVERSION}-1
 
 MAINTAINER=		timur@gnu.org
 COMMENT=		A full featured replicating WINS server for UNIX
@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	--exec-prefix=${PREFIX} \
 			--with-logfilebase=${S4W_LOGDIR}
 
 CONFIGURE_ARGS+=	--disable-reg-gconf --disable-socket-wrapper \
-			--with-readline=/usr --with-included-popt \
+			--with-readline=${DESTDIR}/usr --with-included-popt \
 			--with-libiconv=${LOCALBASE} --without-sqlite3 \
 			--without-pthreads --without-python
 
@@ -65,11 +65,11 @@ post-build:
 post-install:
 			@${MKDIR} ${S4W_CONFDIR}
 			${INSTALL_DATA} ${FILESDIR}/samba4wins.conf.sample ${S4W_CONFDIR}
-			@${MKDIR} ${DOCSDIR}
 .if !defined(NOPORTDOCS)
-.for d in HOWTO.txt NEWS.txt README.txt TODO.txt
-			${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/debian/${PORTNAME}-*-${d} ${DOCSDIR}/${d}
-.endfor
+			@${MKDIR} ${DOCSDIR}
+.	for d in HOWTO.txt NEWS.txt README.txt TODO.txt
+			${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/debian/${PORTNAME}-${PORTVERSION}-${d} ${DOCSDIR}/${d}
+.	endfor
 .endif
 
 .include <bsd.port.mk>
