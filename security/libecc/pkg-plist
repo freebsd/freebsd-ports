@@ -3,6 +3,7 @@ include/libecc/debug.h
 include/libecc/fieldmath.h
 include/libecc/polynomial.h
 include/libecc/rng.h
+include/libecc/rds.h
 include/libecc/sha.h
 include/libecc/square.hcc
 lib/libecc.so
