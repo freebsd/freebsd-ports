@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sympa
-PORTVERSION=	5.2.2
+PORTVERSION=	5.2.4
 CATEGORIES=	mail
 MASTER_SITES?=	http://www.sympa.org/distribution/
 
@@ -28,7 +28,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 LATEST_LINK=	sympa5
 USE_APACHE=	1.3+
-CONFLICTS=	sympa-4* sympa-5.[0-1]* sympa-5.2.1*
+CONFLICTS=	sympa-4* sympa-5.[0-1]* sympa-5.2.[0-3]*
 
 DB_TYPE?=mysql
 
@@ -46,7 +46,7 @@ PLIST_SUB+=	NLS=""
 IGNORE=		needs Perl 5.8.6 or above (lang/perl5.8)
 .endif
 
-.if defined(WITH_FASTCGI)
+.if !defined(WITHOUT_FASTCGI)
 BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
 BUILD_DEPENDS+=		${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FastCGI
 .endif
@@ -97,7 +97,7 @@ pre-fetch:
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
 	@${ECHO} "      DB_TYPE=type                    Optional: mysql, Oracle, Pg or Sybase"
-	@${ECHO} "      WITH_FASTCGI                    Use FastCGI instead of plain CGI"
+	@${ECHO} "      WITHOUT_FASTCGI                 Use plain CGI instead of FastCGI"
 	@${ECHO} ""
 
 post-patch:

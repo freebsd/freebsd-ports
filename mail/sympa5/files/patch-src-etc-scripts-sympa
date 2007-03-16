@@ -1,0 +1,120 @@
+--- src/etc/script/sympa.old	Mon Nov 21 14:49:13 2005
++++ src/etc/script/sympa	Tue Mar 13 14:43:46 2007
+@@ -1,4 +1,4 @@
+-#! --SH--
++#! /bin/sh
+ #
+ # sympa			Mailing Lists Management System
+ #
+@@ -7,7 +7,7 @@
+ # Modified by Olivier Salaun 27/07/2000
+ #    - translations
+ #    - lang parameter deleted (defined in sympa.conf)
+-#    - introduced --VARS-- parsed by Makefile
++#    - introduced  parsed by Makefile
+ #    - no more sympauser since sympa sets its UID
+ # Modified by Michel Bouissou  27/07/2000
+ #
+@@ -29,19 +29,24 @@
+ 
+ if [ ${OSTYPE} != "FreeBSD" -a ${OSTYPE} != "SunOS" -a ${OSTYPE} != "darwin7.0" -a ${OSTYPE} != "Debian" -a ${OSTYPE} != "Suse" ]; then
+     # Source function library.
+-    . --INITDIR--/functions
++    . /usr/local/etc/rc.d/functions
+ 
+     # Get config.
+     . /etc/sysconfig/network
+ fi
+ 
++if [ ${OSTYPE} = "FreeBSD" ]; then
++    # Source function library.
++    . /etc/rc.subr
++fi
++
+ # Sympa parameters
+ # Sympa binaries directory
+-sympadir="--SBINDIR--"
++sympadir="/usr/local/sbin"
+ 
+ # Sympa config files directory
+-sympaconf="--CONFIG--"
+-wwsympaconf="--WWSCONFIG--"
++sympaconf="/usr/local/etc/sympa/sympa.conf"
++wwsympaconf="/usr/local/etc/sympa/wwsympa.conf"
+ 
+ ##'echo -n' not supported with SH on Solaris
+ if [ ${OSTYPE} = "SunOS" ]; then
+@@ -65,8 +70,8 @@
+ 
+     else
+        # First try "/u1/home/sympa/*.pid" files
+-       if [ -f --PIDDIR--/$1.pid ] ; then
+-             pid=`head -1 --PIDDIR--/$1.pid`
++       if [ -f /var/run/$1.pid ] ; then
++             pid=`head -1 /var/run/$1.pid`
+              if [ "$pid" != "" ] ; then
+                  running=`ps -A | grep "$pid"`
+                  if [ "$running" != "" ]; then
+@@ -96,7 +101,7 @@
+ #		startparam=""
+ #	fi
+  
+-	if [ ${OSTYPE} = "IRIX" -o ${OSTYPE} = "SunOS" -o ${OSTYPE} = "Debian" -o ${OSTYPE} = "Suse" ]; then
++	if [ ${OSTYPE} = "FreeBSD" -o ${OSTYPE} = "IRIX" -o ${OSTYPE} = "SunOS" -o ${OSTYPE} = "Debian" -o ${OSTYPE} = "Suse" ]; then
+ 		$sympadir/$1.pl $startparam && echo "success" || echo "failure"
+ 	else
+ 		$sympadir/$1.pl $startparam && success || failure
+@@ -149,12 +154,12 @@
+         return 1
+     fi
+  
+-	if [ -f --PIDDIR--/$1.pid ]; then
++	if [ -f /var/run/$1.pid ]; then
+ 		echo $echo_opt "Stopping module $1.pl: "
+-		pid=`head -1 --PIDDIR--/$1.pid`
++		pid=`head -1 /var/run/$1.pid`
+ 		running=`ps -A | grep "$pid"`
+ 		if [ "$running" != "" ]; then
+-		if [ ${OSTYPE} = "IRIX" -o ${OSTYPE} = "SunOS" -o ${OSTYPE} = "Debian" -o ${OSTYPE} = "Suse" ]; then
++		if [ ${OSTYPE} = "FreeBSD" -o ${OSTYPE} = "IRIX" -o ${OSTYPE} = "SunOS" -o ${OSTYPE} = "Debian" -o ${OSTYPE} = "Suse" ]; then
+ 			kill -TERM $pid && echo "success" || echo "failure"
+ 		    else
+ 			kill -TERM $pid && success || failure
+@@ -185,13 +190,13 @@
+ # See how we were called.
+ case "$1" in
+   start)
+-	if [ ! -f --LOCKDIR--/sympa ]; then
++	if [ ! -f /var/spool/lock/sympa ]; then
+ 		echo "Starting Sympa subsystem: "
+ 		sympa_start sympa
+ 		sympa_start archived
+ 		sympa_start bounced
+ 		sympa_start task_manager
+-		touch --LOCKDIR--/sympa
++		touch /var/spool/lock/sympa
+ 		echo
+ 	else
+ 
+@@ -205,17 +210,17 @@
+ 	sympa_stop bounced
+ 	sympa_stop archived
+ 	sympa_stop sympa
+-	if [ -f --PIDDIR--/sympa-distribute.pid ]; then
++	if [ -f /var/run/sympa-distribute.pid ]; then
+ 		sympa_stop sympa-distribute
+ 	fi
+ 	sympa_stop task_manager
+-	if [ -f --LOCKDIR--/sympa ]; then
+-		rm -f --LOCKDIR--/sympa
++	if [ -f /var/spool/lock/sympa ]; then
++		rm -f /var/spool/lock/sympa
+ 	fi
+ 	;;
+   status)
+ 	echo "Status of Sympa subsystem: "
+-	if [ -f --LOCKDIR--/sympa ]; then
++	if [ -f /var/spool/lock/sympa ]; then
+ 		echo "Status file for subsystem found."
+ 	else
+ 		echo "Status file for subsystem NOT found."

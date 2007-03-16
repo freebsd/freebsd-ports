@@ -8,7 +8,6 @@ bin/create_db.mysql
 bin/crypt_passwd.pl
 bin/init_comment.pl
 bin/ldap_alias_manager.pl
-bin/load_subscribers.pl
 bin/mod2html.pl
 bin/p12topem.pl
 bin/queue
