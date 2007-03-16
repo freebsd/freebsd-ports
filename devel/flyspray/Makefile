@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	flyspray
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.9
 CATEGORIES=	devel
-MASTER_SITES=	http://flyspray.rocks.cc/files/
+MASTER_SITES=	http://www.flyspray.org/
 
 MAINTAINER=	nick@foobar.org
 COMMENT=	A simple, easy-to-use web based bug tracking system
@@ -16,10 +16,12 @@ COMMENT=	A simple, easy-to-use web based bug tracking system
 RUN_DEPENDS=	${LOCALBASE}/share/adodb/adodb.inc.php:${PORTSDIR}/databases/adodb
 
 USE_PHP=	mysql pcre session
+USE_ZIP=	yes
 WANT_PHP_WEB=	yes
 
 NO_BUILD=	yes
 
+NO_WRKSUBDIR=	yes
 FLYSPRAYDIR=	${PREFIX}/share/${PORTNAME}
 ATTACHMENTDIR=	${DBDIR}/${PORTNAME}/attachments
 DBDIR=		/var/db
@@ -30,14 +32,12 @@ DOC_FILES=	AUTHORS.txt BUGS.txt CHANGELOG.txt INSTALL.txt \
 		licences/ADOdb.licence.txt \
 		licences/Flyspray.licence.txt \
 		licences/NuvolaIcons.licence.txt \
-		licences/class.jabber.php.licence.txt \
-		licences/jsCalendar.licence.txt \
-		licences/phpMarkdown.licence.txt \
-		licences/phpmailer.licence.txt \
+		licences/jsCalendar.licence.txt
 
-FLYSPRAY_FILES=	.htaccess favicon.ico header.php index.php \
-		remote-client.php remote.php docs/licences/gnu_lgpl.html \
-		includes lang scripts setup sql themes
+FLYSPRAY_FILES=	cache docs/licences/gnu_lgpl.html \
+		favicon.ico feed.php header.php htaccess.dist includes \
+		index.php javascript lang plugins robots.txt schedule.php \
+		scripts setup templates themes
 
 PKGMESSAGE=	${WRKSRC}/pkg-message
 
@@ -51,8 +51,6 @@ post-patch:
 do-install:
 	@${MKDIR} ${FLYSPRAYDIR}
 	${CHMOD} 755 ${FLYSPRAYDIR}
-	${INSTALL_DATA} ${WRKSRC}/flyspray.conf.php \
-		${FLYSPRAYDIR}/flyspray.conf.php-dist
 	${TOUCH} ${FLYSPRAYDIR}/flyspray.conf.php
 	cd ${WRKSRC} && \
 		tar cf - ${FLYSPRAY_FILES} | \
@@ -62,6 +60,7 @@ do-install:
 	@${MKDIR} ${ATTACHMENTDIR}
 	${CHMOD} 750 ${ATTACHMENTDIR}
 	${CHOWN} ${WWWOWN}:${WWWGRP} ${ATTACHMENTDIR}
+	${CHOWN} ${WWWOWN}:${WWWGRP} ${FLYSPRAYDIR}/cache
 	${CHOWN} ${WWWOWN}:${WWWGRP} ${FLYSPRAYDIR}/flyspray.conf.php
 
 post-install: install-doc
