@@ -7004,6 +7004,7 @@ manencode	ports/multimedia/manencode
 mangband	ports/games/mangband
 mango		ports/misc/mango
 manipulate_data	ports/security/manipulate_data
+manslide	ports/multimedia/manslide
 mantis		ports/databases/mantis
 manu-gothica	ports/x11-fonts/manu-gothica
 manued.el	ports/textproc/manued.el
