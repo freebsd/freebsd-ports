@@ -1,0 +1,33 @@
+--- unix/configure.orig	Thu Mar 15 03:26:26 2007
++++ unix/configure	Thu Mar 15 03:25:16 2007
+@@ -23,6 +23,8 @@
+ # Initialize some variables set by options.
+ # The variables have the same names as the options, with
+ # dashes changed to underlines.
++TCL_EXEC=tclsh8.4
++WISH_EXEC=wish8.4
+ build=NONE
+ cache_file=./config.cache
+ exec_prefix=NONE
+@@ -735,8 +737,8 @@
+ 
+ # find include/tcl.h
+ for f in $with_tclpath $prefix_locations ; do
+-  if test -r "$f/include/tcl.h"; then
+-    TCL_INC_DIR=$f/include
++  if test -r "$f/include/tcl8.4/tcl.h"; then
++    TCL_INC_DIR=$f/include/tcl8.4
+     echo "$ac_t""setting TCL_INC_DIR to $TCL_INC_DIR" 1>&6
+     break
+   fi
+@@ -744,8 +746,8 @@
+  
+ # find lib/tclConfig.sh
+ for f in $with_tclpath $exec_prefix_locations ; do
+-  if test -r "$f/lib/tclConfig.sh"; then
+-    TCL_LIB_DIR=$f/lib
++  if test -r "$f/lib/tcl8.4/tclConfig.sh"; then
++    TCL_LIB_DIR=$f/lib/tcl8.4
+     echo "$ac_t""setting TCL_LIB_DIR to $TCL_LIB_DIR" 1>&6
+     break
+   fi
