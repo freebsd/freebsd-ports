@@ -12,6 +12,7 @@ bin/mkv_encoder.py
 bin/mng_encoder.py
 bin/mpeg_encoder.py
 bin/ogm_encoder.py
+bin/sendOSC
 bin/smogrify
 bin/theora_encoder.py
 %%DOCSDIR%%/AUTHORS

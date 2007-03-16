@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	lives
-DISTVERSION=	0.9.8.2
+DISTVERSION=	0.9.8.3
 CATEGORIES=	multimedia
-MASTER_SITES=	SF
+MASTER_SITES=	http://www.xs4all.nl/%7Esalsaman/lives/current/ CENKES
+DISTNAME=	LiVES-${DISTVERSION}
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Video editing system
@@ -36,6 +37,7 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		sswf:${PORTSDIR}/graphics/sswf \
 		${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
 
+WRKSRC=		${WRKDIR}/${DISTNAME:L}
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PERL5=	yes
