@@ -143,6 +143,7 @@
     SUBDIR += lxdvdrip
     SUBDIR += mandvd
     SUBDIR += manencode
+    SUBDIR += manslide
     SUBDIR += mjpegtools
     SUBDIR += mjpegtools-yuvfilters
     SUBDIR += mkvtoolnix
