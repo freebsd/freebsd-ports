@@ -7,18 +7,18 @@
 
 PORTNAME=	klondike
 PORTVERSION=	1.9
-CATEGORIES=	games tk82
+PORTREVISION=	1
+CATEGORIES=	games tk84
 MASTER_SITES=	http://www.isi.edu/~johnh/SOFTWARE/JACOBY/
 
 MAINTAINER=	faber@isi.edu
 COMMENT=	A solitaire game for X11
 
-RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --datadir=${PREFIX}/share/games \
 		--mandir=${PREFIX}/man
-CONFIGURE_ENV=	WISHX=${PREFIX}/bin/wish8.2
+CONFIGURE_ENV=	WISHX=${PREFIX}/bin/wish8.4
+USE_TK=		yes
 MAN6=		klondike.6
 
 .include <bsd.port.mk>
