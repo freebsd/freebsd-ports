@@ -2,25 +2,25 @@ bin/gnash
 bin/gparser
 bin/gprocessor
 %%PLUGIN%%lib/browser_plugins/libgnashplugin.so
-lib/gnash/libgnashasobjs.a
-lib/gnash/libgnashasobjs.la
-lib/gnash/libgnashasobjs.so
-lib/gnash/libgnashasobjs.so.0
-lib/gnash/libgnashbackend.a
+lib/gnash/libgnashamf-0.7.2.so
+lib/gnash/libgnashamf.la
+lib/gnash/libgnashamf.so
+lib/gnash/libgnashbackend-0.7.2.so
 lib/gnash/libgnashbackend.la
 lib/gnash/libgnashbackend.so
-lib/gnash/libgnashbackend.so.0
-lib/gnash/libgnashbase.a
+lib/gnash/libgnashbase-0.7.2.so
 lib/gnash/libgnashbase.la
 lib/gnash/libgnashbase.so
-lib/gnash/libgnashbase.so.0
-lib/gnash/libgnashgeo.a
+lib/gnash/libgnashgeo-0.7.2.so
 lib/gnash/libgnashgeo.la
 lib/gnash/libgnashgeo.so
-lib/gnash/libgnashgeo.so.0
-lib/gnash/libgnashserver.a
+lib/gnash/libgnashgui-0.7.2.so
+lib/gnash/libgnashgui.la
+lib/gnash/libgnashgui.so
+lib/gnash/libgnashserver-0.7.2.so
 lib/gnash/libgnashserver.la
 lib/gnash/libgnashserver.so
-lib/gnash/libgnashserver.so.0
+%%DATADIR%%/gnash_128_96.ico
+@dirrm %%DATADIR%%
 @dirrm lib/gnash
-%%PLUGIN%%@dirrmtry lib/browser_plugins
+%%PLUGIN%%@dirrm lib/browser_plugins

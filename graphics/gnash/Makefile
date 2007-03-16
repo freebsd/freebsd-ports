@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnash
-PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTVERSION=	0.7.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -15,47 +14,73 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	GNU Flash movie player
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	boost_thread.3:${PORTSDIR}/devel/boost \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		ogg.5:${PORTSDIR}/audio/libogg
+		curl.4:${PORTSDIR}/ftp/curl
 
-USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehier glib20 pkgconfig libxml2
-USE_SDL=	sdl mixer
-USE_X_PREFIX=	yes
-USE_GCC=	3.4+
+USE_GNOME=	pkgconfig libxml2
+USE_XLIB=	yes
 
 PLUGIN_DIR=	${PREFIX}/lib/browser_plugins
 
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -Wl,--rpath,${PREFIX}/lib/gnash" \
 		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}"
 
 CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/gnash" \
-		--with-plugindir=${PLUGIN_DIR}
+		--with-plugindir=${PLUGIN_DIR} \
+		--enable-jpeg
 
-OPTIONS=	PLUGIN	"Enable firefox plugin" on
+MAN1=		gnash.1
+
+OPTIONS=	PLUGIN	"Enable browser plugin" on \
+		GTK	"Enable GTK GUI"	on \
+		SOUND	"Enable sound"	on \
+		GSTREAMER	"Use GStreamer sound output instead of SDL"	off \
+		MAD	"Support mp3 decoding through libmad"	on
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_PLUGIN)
-CONFIGURE_ARGS+=	--disable-plugin
-PLIST_SUB+=	PLUGIN="@comment "
+.if defined(WITHOUT_GTK)
+USE_SDL+=		sdl
+CONFIGURE_ARGS+=	--enable-gui=SDL
 .else
-USE_GNOME+=	atk pango gtk20
-LIB_DEPENDS+=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
+CONFIGURE_ARGS+=	--enable-gui=GTK
+USE_GNOME+=		atk pango gtk20
+LIB_DEPENDS+=		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
+.endif
+
+.if defined(WITHOUT_SOUND)
+CONFIGURE_ARGS+=	--enable-sound=NO
+.else
+.    if defined(WITH_GSTREAMER)
+USE_GSTREAMER=		yes
+CONFIGURE_ARGS+=	--enable-sound=GST
+.    else
+USE_SDL+=		sdl
+CONFIGURE_ARGS+=	--enable-sound=SDL
+.        if defined(WITHOUT_MAD)
+CONFIGURE_ARGS+=	--without-mp3-decoder
+.        else
+CONFIGURE_ARGS+=	--with-mp3-decoder=mad
+LIB_DEPENDS+=		mad.2:${PORTSDIR}/audio/libmad
+.        endif
+.    endif
+.endif
+
+.if defined(WITHOUT_PLUGIN)
+PLIST_SUB+=	PLUGIN="@comment "
+CONFIGURE_ARGS+=	--disable-plugin
+.else
 PLIST_SUB+=	PLUGIN=""
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|gnash-dbg.log|.gnash-dbg.log|' ${WRKSRC}/libbase/log.h
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g;s|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-.if !defined(WITH_PLUGIN)
-	@${REINPLACE_CMD} -e '/STD_DIRS/ s|plugin||' ${WRKSRC}/Makefile.in
-.endif
 
 .include <bsd.port.post.mk>
