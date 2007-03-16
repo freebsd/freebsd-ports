@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-WITH_THREADS=	yes
+BUILDING_TCL_THREADS=	yes
 
 MASTERDIR=	${.CURDIR}/../tcl85
 
