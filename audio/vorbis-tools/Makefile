@@ -12,6 +12,10 @@ PORTEPOCH=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/vorbis/
 
+PATCH_SITES=	http://sites.inka.de/~mips/unix/distfiles/
+PATCHFILES=	vorbis-tools-1.1.1-flac-1.1.3.patch
+PATCH_DIST_STRIP=-p1
+
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Play, encode, and manage Ogg Vorbis files
 
@@ -21,8 +25,9 @@ LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
 		speex.1:${PORTSDIR}/audio/speex \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
+USE_AUTOTOOLS=	aclocal:19 autoconf:259 automake:19 libtool:15
 USE_GETTEXT=	yes
-GNU_CONFIGURE=	yes
+ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-vcut
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
