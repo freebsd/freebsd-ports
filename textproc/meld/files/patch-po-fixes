@@ -1,0 +1,185 @@
+--- po/ru.po.orig	2006/08/27 09:11:02	1.1
++++ po/ru.po	2006/08/27 09:11:53
+@@ -190,57 +190,57 @@
+ #, python-format
+ msgid "%i second"
+ msgid_plural "%i seconds"
+-msgstr[0] "секунда"
+-msgstr[1] "секунды"
+-msgstr[2] "секунд"
++msgstr[0] "%i секунда"
++msgstr[1] "%i секунды"
++msgstr[2] "%i секунд"
+ 
+ #: ../dirdiff.py:571
+ #, python-format
+ msgid "%i minute"
+ msgid_plural "%i minutes"
+-msgstr[0] "минута"
+-msgstr[1] "минуты"
+-msgstr[2] "минут"
++msgstr[0] "%i минута"
++msgstr[1] "%i минуты"
++msgstr[2] "%i минут"
+ 
+ #: ../dirdiff.py:572
+ #, python-format
+ msgid "%i hour"
+ msgid_plural "%i hours"
+-msgstr[0] "час"
+-msgstr[1] "часа"
+-msgstr[2] "часов"
++msgstr[0] "%i час"
++msgstr[1] "%i часа"
++msgstr[2] "%i часов"
+ 
+ #: ../dirdiff.py:573
+ #, python-format
+ msgid "%i day"
+ msgid_plural "%i days"
+-msgstr[0] "день"
+-msgstr[1] "дня"
+-msgstr[2] "дней"
++msgstr[0] "%i день"
++msgstr[1] "%i дня"
++msgstr[2] "%i дней"
+ 
+ #: ../dirdiff.py:574
+ #, python-format
+ msgid "%i week"
+ msgid_plural "%i weeks"
+-msgstr[0] "неделя"
+-msgstr[1] "недели"
+-msgstr[2] "недель"
++msgstr[0] "%i неделя"
++msgstr[1] "%i недели"
++msgstr[2] "%i недель"
+ 
+ #: ../dirdiff.py:575
+ #, python-format
+ msgid "%i month"
+ msgid_plural "%i months"
+-msgstr[0] "месяц"
+-msgstr[1] "месяца"
+-msgstr[2] "месяцев"
++msgstr[0] "%i месяц"
++msgstr[1] "%i месяца"
++msgstr[2] "%i месяцев"
+ 
+ #: ../dirdiff.py:576
+ #, python-format
+ msgid "%i year"
+ msgid_plural "%i years"
+-msgstr[0] "год"
+-msgstr[1] "года"
+-msgstr[2] "лет"
++msgstr[0] "%i год"
++msgstr[1] "%i года"
++msgstr[2] "%i лет"
+ 
+ #. Abbreviation for insert,overwrite so that it will fit in the status bar
+ #: ../filediff.py:224
+--- po/hu.po.orig	2006-02-24 19:19:25.000000000 -0500
++++ po/hu.po	2006-09-11 13:18:43.000000000 -0400
+@@ -99,49 +99,42 @@
+ msgid "%i second"
+ msgid_plural "%i seconds"
+ msgstr[0] "%i másodperc"
+-msgstr[1] "%i másodperc"
+ 
+ #: ../dirdiff.py:570
+ #, python-format
+ msgid "%i minute"
+ msgid_plural "%i minutes"
+ msgstr[0] "%i perc"
+-msgstr[1] "%i perc"
+ 
+ #: ../dirdiff.py:571
+ #, python-format
+ msgid "%i hour"
+ msgid_plural "%i hours"
+ msgstr[0] "%i óra"
+-msgstr[1] "%i óra"
+ 
+ #: ../dirdiff.py:572
+ #, python-format
+ msgid "%i day"
+ msgid_plural "%i days"
+ msgstr[0] "%i nap"
+-msgstr[1] "%i nap"
+ 
+ #: ../dirdiff.py:573
+ #, python-format
+ msgid "%i week"
+ msgid_plural "%i weeks"
+ msgstr[0] "%i hét"
+-msgstr[1] "%i hét"
+ 
+ #: ../dirdiff.py:574
+ #, python-format
+ msgid "%i month"
+ msgid_plural "%i months"
+ msgstr[0] "%i hónap"
+-msgstr[1] "%i hónap"
+ 
+ #: ../dirdiff.py:575
+ #, python-format
+ msgid "%i year"
+ msgid_plural "%i years"
+ msgstr[0] "%i év"
+-msgstr[1] "%i év"
+ 
+ #. Abbreviation for insert,overwrite so that it will fit in the status bar
+ #: ../filediff.py:214
+--- po/ja.po.orig	2006-03-05 06:03:44.000000000 -0500
++++ po/ja.po	2006-09-11 13:19:58.000000000 -0400
+@@ -97,49 +97,42 @@
+ msgid "%i second"
+ msgid_plural "%i seconds"
+ msgstr[0] "%i 秒"
+-msgstr[1] "%i 秒"
+ 
+ #: ../dirdiff.py:570
+ #, python-format
+ msgid "%i minute"
+ msgid_plural "%i minutes"
+ msgstr[0] "%i 分"
+-msgstr[1] "%i 分"
+ 
+ #: ../dirdiff.py:571
+ #, python-format
+ msgid "%i hour"
+ msgid_plural "%i hours"
+ msgstr[0] "%i 時間"
+-msgstr[1] "%i 時間"
+ 
+ #: ../dirdiff.py:572
+ #, python-format
+ msgid "%i day"
+ msgid_plural "%i days"
+ msgstr[0] "%i 日"
+-msgstr[1] "%i 日"
+ 
+ #: ../dirdiff.py:573
+ #, python-format
+ msgid "%i week"
+ msgid_plural "%i weeks"
+ msgstr[0] "%i 週間"
+-msgstr[1] "%i 週間"
+ 
+ #: ../dirdiff.py:574
+ #, python-format
+ msgid "%i month"
+ msgid_plural "%i months"
+ msgstr[0] "%i ヶ月"
+-msgstr[1] "%i ヶ月"
+ 
+ #: ../dirdiff.py:575
+ #, python-format
+ msgid "%i year"
+ msgid_plural "%i years"
+ msgstr[0] "%i 年"
+-msgstr[1] "%i 年"
+ 
+ #. Abbreviation for insert,overwrite so that it will fit in the status bar
+ #: ../filediff.py:215
