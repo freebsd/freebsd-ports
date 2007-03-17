@@ -26,4 +26,9 @@ CONFIGURE_TARGET=	--target=""
 USE_LDCONFIG=	yes
 MAN1=		soxt-config.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	${REINPLACE_CMD} -e "s,echo aout, echo elf," ${WRKSRC}/configure
+
+.include <bsd.port.post.mk>

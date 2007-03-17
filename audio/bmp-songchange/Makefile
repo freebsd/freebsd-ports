@@ -21,4 +21,9 @@ GNU_CONFIGURE=  yes
 
 PLIST_FILES=	lib/bmp/General/libsong_change.so
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	${REINPLACE_CMD} -e "s,echo aout, echo elf," ${WRKSRC}/configure
+
+.include <bsd.port.post.mk>
