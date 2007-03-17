@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%\//clement\/:aprmysql/}
@@ -90,6 +90,10 @@ CONFIGURE_ARGS+=	--enable-v4-mapped
 .   endif
 .endif
 
+.if !defined(WITHOUT_SSL_MODULES)
+USE_OPENSSL=	yes
+.endif
+
 .if defined(WITH_STATIC_SUPPORT)
 CONFIGURE_ARGS+=	--enable-static-support
 .endif
@@ -123,11 +127,6 @@ CONFIGURE_ARGS+=	--with-ldap \
 .include "${APACHEDIR}/Makefile.doc"
 .include "${APACHEDIR}/Makefile.modules"
 .include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_SSL_MODULES)
-USE_OPENSSL_RPATH=yes
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
-.endif
 
 .if defined(WITH_APR_FROM_PORTS)
 PLIST_SUB+=	APR_PORTS="@comment "
