@@ -26,6 +26,8 @@ RUN_DEPENDS=	p5-HTML-Tree>=3.22:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+BROKEN=		Incorrect pkg-plist
+
 PERL_CONFIGURE=	yes
 
 MAN3=	HTML::Widget.3 \
