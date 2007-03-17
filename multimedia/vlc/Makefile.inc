@@ -288,7 +288,8 @@ pre-install:
 .endif
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET} prefix=${FAKEDIR}
-	${RM} -f ${FAKEDIR}/share/locale/locale.alias
+	${RM} -f ${FAKEDIR}/share/locale/locale.alias \
+		 ${FAKEDIR}/lib/charset.alias
 	cd ${FAKEDIR}/bin && ${FIND} -s * | \
 		${SED} -e 's|^|bin/|' >> ${PLIST}
 	cd ${FAKEDIR}/include && ${FIND} -s * -type f -o -type l | \
