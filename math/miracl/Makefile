@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	miracl
-PORTVERSION=	5.21
+PORTVERSION=	5.22
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.computing.dcu.ie/pub/crypto/
 DISTNAME=	${PORTNAME}
@@ -20,7 +20,8 @@ NO_WRKSUBDIR=	yes
 
 EXTRACT_BEFORE_ARGS=	-j -aa -L
 
-PLIST_FILES=	lib/libmiracl.a
+PLIST_FILES=	lib/libmiracl.a \
+		include/miracl.h include/mirdef.h
 
 .include <bsd.port.pre.mk>
 
@@ -44,5 +45,10 @@ do-install:
 # lib
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.a \
 		${PREFIX}/lib/lib${PORTNAME}.a
+# headers
+	@${INSTALL_DATA} ${WRKSRC}/miracl.h \
+		${PREFIX}/include/miracl.h
+	@${INSTALL_DATA} ${WRKSRC}/mirdef.h \
+		${PREFIX}/include/mirdef.h
 
 .include <bsd.port.post.mk>
