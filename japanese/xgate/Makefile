@@ -42,7 +42,7 @@ RESTRICTED=	"Commercial license"
 
 .include <bsd.port.pre.mk>
 
-APP_HOME!=	${MAKE} -C ${PORTSDIR}/www/jakarta-tomcat41 -VAPP_HOME
+APP_HOME!=	${MAKE} -C ${PORTSDIR}/www/tomcat41 -VAPP_HOME
 WWWOWN?=	www
 WWWGRP?=	www
 
