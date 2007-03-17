@@ -7,6 +7,7 @@
 
 PORTNAME=	barbecue
 PORTVERSION=	1.0.6d
+PORTREVISION=	1
 CATEGORIES=	graphics print java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +26,7 @@ PLIST_FILES+=	%%JAVAJARDIR%%/${JARFILES:S|-${PORTVERSION}||}	\
 		%%JAVAJARDIR%%/LICENSE.barbecue.txt
 
 .if defined(WITH_TOMCAT41)
-RUN_DEPENDS+=	${LOCALBASE}/bin/tomcat41ctl:${PORTSDIR}/www/jakarta-tomcat41
+RUN_DEPENDS+=	${LOCALBASE}/bin/tomcat41ctl:${PORTSDIR}/www/tomcat41
 JAKARTA_HOME=	${LOCALBASE}/jakarta-tomcat4.1
 PLIST_FILES+=	${JAKARTA_HOME:S|^${LOCALBASE}/||}/webapps/${PORTNAME}.war
 .endif
