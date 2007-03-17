@@ -24,6 +24,11 @@ INSTALL_WRKSRC=	${WRKSRC}/sid-filter
 PLIST_FILES=	libexec/sid-filter
 PORTDOCS=	${DOCSFILES}
 
+IPCCHECK!=	ipcrm -q 0 2>&1 || true
+.if ${IPCCHECK:Mimplemented}
+IGNORE=		your system does not support sysvipc
+.endif
+
 SITE+=		${FILESDIR}/site.config.m4
 .if defined(WITH_SIDMILTER_AR)
 MAN3=		ar.3
