@@ -1596,7 +1596,7 @@ PERL=		${LOCALBASE}/bin/perl
 .endif
 .endif
 
-.if defined(USE_OCAML)
+.if defined(USE_XFCE)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.xfce.mk)
 .include "${DEVELPORTSDIR}/Mk/bsd.xfce.mk"
 .else
@@ -2131,7 +2131,7 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .endif
 .endif
 
-.if defined(USE_OCAML)
+.if defined(USE_XFCE)
 .if exists(${DEVELPORTSDIR}/Mk/bsd.xfce.mk)
 .include "${DEVELPORTSDIR}/Mk/bsd.xfce.mk"
 .else
