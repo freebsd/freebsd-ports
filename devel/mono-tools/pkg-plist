@@ -3,8 +3,8 @@ bin/gasnview
 bin/gnunit
 bin/gnunit2
 bin/monodoc
-lib/create-native-map/create-native-map.exe
 lib/create-native-map/MapAttribute.cs
+lib/create-native-map/create-native-map.exe
 lib/mono/1.0/gasnview.exe
 lib/mono/1.0/gnunit.exe
 lib/mono/2.0/gnunit2.exe
@@ -14,5 +14,6 @@ lib/monodoc/browser.exe
 libdata/pkgconfig/create-native-map.pc
 share/applications/monodoc.desktop
 share/pixmaps/monodoc.png
-@dirrm lib/create-native-map
 @dirrmtry share/applications
+@dirrmtry lib/monodoc
+@dirrm lib/create-native-map

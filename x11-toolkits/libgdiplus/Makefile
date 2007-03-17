@@ -3,11 +3,11 @@
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.32 2006/12/06 22:10:38 killfill Exp $
+#   $Id: Makefile,v 1.34 2007/02/07 15:40:01 killfill Exp $
 #
 
 PORTNAME=	libgdiplus
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.go-mono.com/sources/${PORTNAME}/
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 
 USE_GNOME=	gnomehack gnometarget glib20
 USE_GMAKE=	yes
-USE_LDCONFIG=	yes
+INSTALLS_SHLIB=	yes
 USE_XLIB=	yes
 LIBTOOLFILES=	configure cairo/configure
 USE_AUTOTOOLS=	libtool:15
