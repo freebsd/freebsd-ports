@@ -1,3 +1,3 @@
-MD5 (apache2/mod_auth_imap-2.0.2.tar.gz) = e49a8c061a659c19bca3a53098fbe792
-SHA256 (apache2/mod_auth_imap-2.0.2.tar.gz) = 8bdbf043d46bcb9ee57eb77825b5202e80cbaa865c640db663ab2143ace71dfc
-SIZE (apache2/mod_auth_imap-2.0.2.tar.gz) = 12699
+MD5 (apache20/mod_auth_imap2-2.2.0.tar.gz) = 28d648942d37df92cabdbccf0e962e05
+SHA256 (apache20/mod_auth_imap2-2.2.0.tar.gz) = 9642a13932010b9587d7b2263f21bed29602253bac18cb6c8847385d13d3cce0
+SIZE (apache20/mod_auth_imap2-2.2.0.tar.gz) = 12787
