@@ -6,6 +6,7 @@
 
 PORTNAME=	xgate
 PORTVERSION=	3.5pl3
+PORTREVISION=	1
 CATEGORIES=	japanese mail www java
 MASTER_SITES=	http://www.orangesoft.co.jp/xGate/download/
 DISTNAME=	${PORTNAME}pkg${PORTVERSION}
@@ -15,7 +16,7 @@ DIST_SUBDIR=	xGate
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	xGate webmail system implemented by Servlet over IMAP4/POP3
 
-RUN_DEPENDS=	tomcat41ctl:${PORTSDIR}/www/jakarta-tomcat41 \
+RUN_DEPENDS=	tomcat41ctl:${PORTSDIR}/www/tomcat41 \
 		${JAVA_HOME}/jre/lib/security/.jce_policy14:${PORTSDIR}/security/jce_policy14
 
 NO_BUILD=	yes
