@@ -15,6 +15,7 @@ lib/monodoc/cs2ecma.exe
 lib/monodoc/mod.exe
 lib/monodoc/monodoc.xml
 lib/monodoc/monodocer.exe
+lib/monodoc/monodocer1.exe
 lib/monodoc/monodocs2html.exe
 lib/monodoc/monodocs2slashdoc.exe
 lib/monodoc/normalize.exe
@@ -30,9 +31,6 @@ lib/monodoc/sources/cs-errors.zip
 lib/monodoc/sources/ecma334.source
 lib/monodoc/sources/ecma334.tree
 lib/monodoc/sources/ecma334.zip
-lib/monodoc/sources/monoapi.source
-lib/monodoc/sources/monoapi.tree
-lib/monodoc/sources/monoapi.zip
 lib/monodoc/sources/netdocs.source
 lib/monodoc/sources/netdocs.tree
 lib/monodoc/sources/netdocs.zip
