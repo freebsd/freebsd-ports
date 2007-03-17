@@ -28,4 +28,7 @@ PLIST_SUB=	GTK1=""
 PLIST_SUB=	GTK1="@comment "
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e "s,echo aout, echo elf," ${WRKSRC}/configure
+
 .include <bsd.port.mk>
