@@ -30,11 +30,7 @@ INSTALLS_SHLIB=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not build on FreeBSD 4.x"
-.endif
-
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+BROKEN=		Does not build on FreeBSD 4.x
 .endif
 
 pre-everything::
@@ -46,5 +42,8 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${libdir}/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e "s,-Werror,," ${WRKSRC}/opensync/Makefile.in \
+		${WRKSRC}/osengine/Makefile.in
+	${REINPLACE_CMD} -e "s,echo aout, echo elf,g" ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
