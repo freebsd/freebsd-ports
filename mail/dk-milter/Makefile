@@ -36,10 +36,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_MILTER_
 .endif
 .endif
 
-.if defined(PARALLEL_PACKAGE_BUILD)
-IGNORE=	pointyhat cluster does not support sysvipc 
-.endif
-
 SENDMAIL_MILTER_PORT?=	sendmail
 WCONF=		${WRKSRC}/devtools/Site
 MAN8=		dk-filter.8
