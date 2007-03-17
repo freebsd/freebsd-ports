@@ -16,6 +16,8 @@ COMMENT=	A real-time strategy game
 
 RUN_DEPENDS=	stratagus:${PORTSDIR}/games/stratagus
 
+BROKEN=		Unfetchable
+
 NO_WRKSUBDIR=	yes
 
 do-build:
