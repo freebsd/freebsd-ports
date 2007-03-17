@@ -6,17 +6,17 @@
 #    $MCom: ports/x11/startup-notification/Makefile,v 1.8 2006/09/10 00:51:15 mezz Exp $
 
 PORTNAME=	startup-notification
-PORTVERSION=	0.8
-PORTREVISION=	3
+PORTVERSION=	0.9
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://www.freedesktop.org/software/startup-notification/releases/
-MASTER_SITE_SUBDIR=	sources/startup-notification/0.8
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library that supports startup notification spec from freedesktop.org
 
+USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_XLIB=	yes
 USE_GMAKE=	yes
