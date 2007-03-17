@@ -18,3 +18,7 @@ Let your lists for hosts, passwd and group be resolved via nsswitch.conf:
 	shadow:	files nis
 	group:	files nis
 	hosts:	files dns nis
+
+WARNING: doing work which needs to chroot into the linux base may not work.
+In such cases (e.g. cross-development) you are better suited with a linux_dist
+port.
