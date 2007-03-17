@@ -20,7 +20,6 @@ USE_QT_VER=	3
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_AUTOTOOLS=	libtool:15
 
 MAN1=		bbconf.1
 PORTDOCS=	AUTHORS ChangeLog README README.html TODO
@@ -40,7 +39,8 @@ PLIST_DIRS=	lib/bbconf/plugins lib/bbconf
 post-patch:
 	@${REINPLACE_CMD} -e 's|: install-docDATA|:|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|-O2 ||g ; \
-		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+		 s|-lpthread|${PTHREAD_LIBS}|g; s|echo aout|echo elf|' \
+		${WRKSRC}/configure
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 	@${REINPLACE_CMD} -e '/^CXXFLAGS =/s/$$/ -fPIC/' \
 	    ${WRKSRC}/bbconf/plugins/*/Makefile.in
