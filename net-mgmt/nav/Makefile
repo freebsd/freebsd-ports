@@ -7,6 +7,7 @@
 
 PORTNAME=	nav
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +23,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant \
 		${JAVALIBDIR}/snmp.jar:${PORTSDIR}/java/drexelsnmp
 
 .if exists(${LOCALBASE}/jakarta-tomcat4.1/bin/catalina.sh)
-TOMCAT_DEPEND=	${LOCALBASE}/jakarta-tomcat4.1:${PORTSDIR}/www/jakarta-tomcat41
+TOMCAT_DEPEND=	${LOCALBASE}/jakarta-tomcat4.1:${PORTSDIR}/www/tomcat41
 CATALINA_HOME=	${LOCALBASE}/jakarta-tomcat4.1
 .elif exists(${LOCALBASE}/jakarta-tomcat4.0.6/bin/catalina.sh)
 TOMCAT_DEPEND=	${LOCALBASE}/jakarta-tomcat4.0.6:${PORTSDIR}/www/jakarta-tomcat4

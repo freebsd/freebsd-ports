@@ -7,6 +7,7 @@
 
 PORTNAME=	jetspeed
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=jetspeed/binaries
@@ -16,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jetspeed is an Open Source Portal, written in Java and XML
 
 RUN_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant \
-		${JAKARTA_HOME}/bin/bootstrap.jar:${PORTSDIR}/www/jakarta-tomcat41
+		${JAKARTA_HOME}/bin/bootstrap.jar:${PORTSDIR}/www/tomcat41
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/-war//}
 USE_ZIP=	yes

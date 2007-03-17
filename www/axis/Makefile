@@ -6,7 +6,7 @@
 
 PORTNAME=		axis
 PORTVERSION=		1.4
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		www java
 MASTER_SITES=		${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	ws/axis/${PORTVERSION:S,.,_,g}
@@ -28,8 +28,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/jakarta-tomcat5:${PORTSDIR}/www/jakarta-tomcat5
 RUN_DEPENDS+=	${LOCALBASE}/jakarta-tomcat5:${PORTSDIR}/www/jakarta-tomcat5
 .elif exists(${LOCALBASE}/jakarta-tomcat4.1/webapps)
 WEBAPPDIR=	${PREFIX}/jakarta-tomcat4.1/webapps
-BUILD_DEPENDS+=	${LOCALBASE}/jakarta-tomcat4.1:${PORTSDIR}/www/jakarta-tomcat41
-RUN_DEPENDS+=	${LOCALBASE}/jakarta-tomcat4.1:${PORTSDIR}/www/jakarta-tomcat41
+BUILD_DEPENDS+=	${LOCALBASE}/jakarta-tomcat4.1:${PORTSDIR}/www/tomcat41
+RUN_DEPENDS+=	${LOCALBASE}/jakarta-tomcat4.1:${PORTSDIR}/www/tomcat41
 .elif exists(${LOCALBASE}/jakarta-tomcat4.0.6/webapps)
 WEBAPPDIR=	${PREFIX}/jakarta-tomcat4.0.6/webapps
 BUILD_DEPENDS+=	${LOCALBASE}/jakarta-tomcat4.0.6:${PORTSDIR}/www/jakarta-tomcat4
