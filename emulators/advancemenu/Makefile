@@ -16,6 +16,8 @@ COMMENT=	AdvanceMENU is a frontend for AdvanceMAME, MAME, MESS, RAINE
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
+BROKEN=		Incomplete pkg-plist
+
 USE_GL=		yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
