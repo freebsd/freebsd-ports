@@ -1,9 +1,0 @@
---- /dev/null	Thu Nov 30 19:11:00 2006
-+++ Makefile_FreeBSD_6	Thu Nov 30 19:12:50 2006
-@@ -0,0 +1,6 @@
-+TCL_INC = ${LOCALBASE}/include/tcl8.2
-+TK_INC  = ${LOCALBASE}/include/tk8.2
-+INCS   = -I${X11BASE}/include \
-+         -I$(TCL_INC)/generic -I$(TK_INC)/generic
-+LDLIBS = -L${LOCALBASE}/lib \
-+         -L${X11BASE}/lib -ltk82 -ltcl82 -lXext -lX11 -lm

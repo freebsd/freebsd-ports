@@ -27,10 +27,6 @@ LATEST_LINK=	rat30
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700000
-BROKEN=		Does not compile on FreeBSD 7.X
-.endif
-
 do-build:
 	(cd ${WRKSRC};${SETENV} ${MAKE_ENV} MAKE=${GMAKE} ${SH} ./Build rat)
 
