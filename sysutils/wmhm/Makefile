@@ -22,15 +22,13 @@ MANCOMPRESSED=	yes
 PLIST_FILES=	bin/wmhm
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS_REASON=	"requires speaker(4)"
 
 CONFIGURE_ARGS+=--with-xpm-includes=${X11BASE}/include \
 		--with-xpm-library=${X11BASE}/lib
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/wmhm
