@@ -32,6 +32,8 @@ DOCSFILES=	Changelog INSTALL LICENSE docs/docs.html docs/docs.txt \
 
 .if defined(WITH_SENDMAIL_PORT)
 CONFIGURE_ARGS+=	--sendmail-dir "${LOCALBASE}"
+.else
+CONFIGURE_ARGS+=	--sendmail-dir "/usr"
 .endif
 
 .if defined(SMTP_AFTER_POP3)
