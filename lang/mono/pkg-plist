@@ -1,4 +1,5 @@
 bin/al
+bin/al2
 bin/caspol
 bin/cert2spc
 bin/certmgr
@@ -10,6 +11,7 @@ bin/dtd2xsd
 bin/gacutil
 bin/genxs
 bin/gmcs
+bin/httpcfg
 bin/ilasm
 bin/ilasm2
 bin/jay
@@ -58,71 +60,71 @@ etc/mono/2.0/machine.config
 etc/mono/2.0/web.config
 etc/mono/browscap.ini
 etc/mono/config
-include/mono/cil/opcode.def
-include/mono/interpreter/embed.h
-include/mono/io-layer/access.h
-include/mono/io-layer/atomic.h
-include/mono/io-layer/collection.h
-include/mono/io-layer/context.h
-include/mono/io-layer/critical-sections.h
-include/mono/io-layer/error.h
-include/mono/io-layer/events.h
-include/mono/io-layer/handles.h
-include/mono/io-layer/io-layer.h
-include/mono/io-layer/io-portability.h
-include/mono/io-layer/io.h
-include/mono/io-layer/macros.h
-include/mono/io-layer/mono-mutex.h
-include/mono/io-layer/mutexes.h
-include/mono/io-layer/processes.h
-include/mono/io-layer/security.h
-include/mono/io-layer/semaphores.h
-include/mono/io-layer/sockets.h
-include/mono/io-layer/status.h
-include/mono/io-layer/system.h
-include/mono/io-layer/threads.h
-include/mono/io-layer/timefuncs.h
-include/mono/io-layer/types.h
-include/mono/io-layer/uglify.h
-include/mono/io-layer/versioninfo.h
-include/mono/io-layer/wait.h
-include/mono/io-layer/wapi.h
-include/mono/jit/jit.h
-include/mono/metadata/appdomain.h
-include/mono/metadata/assembly.h
-include/mono/metadata/blob.h
-include/mono/metadata/class.h
-include/mono/metadata/debug-helpers.h
-include/mono/metadata/debug-mono-symfile.h
-include/mono/metadata/environment.h
-include/mono/metadata/exception.h
-include/mono/metadata/image.h
-include/mono/metadata/loader.h
-include/mono/metadata/mempool.h
-include/mono/metadata/metadata.h
-include/mono/metadata/mono-debug.h
-include/mono/metadata/mono-gc.h
-include/mono/metadata/object.h
-include/mono/metadata/opcodes.h
-include/mono/metadata/profiler.h
-include/mono/metadata/reflection.h
-include/mono/metadata/row-indexes.h
-include/mono/metadata/threads.h
-include/mono/metadata/tokentype.h
-include/mono/metadata/verify.h
-include/mono/metadata/mono-config.h
-include/mono/metadata/attrdefs.h
-include/mono/utils/mono-codeman.h
-include/mono/utils/mono-counters.h
-include/mono/utils/mono-digest.h
-include/mono/utils/mono-hash.h
-include/mono/utils/mono-logger.h
-include/mono/utils/mono-math.h
-include/mono/utils/mono-path.h
-include/mono/utils/mono-poll.h
-include/mono/utils/mono-stdlib.h
-include/mono/utils/mono-uri.h
-include/mono/utils/monobitset.h
+include/mono-1.0/mono/cil/opcode.def
+include/mono-1.0/mono/interpreter/embed.h
+include/mono-1.0/mono/io-layer/access.h
+include/mono-1.0/mono/io-layer/atomic.h
+include/mono-1.0/mono/io-layer/collection.h
+include/mono-1.0/mono/io-layer/context.h
+include/mono-1.0/mono/io-layer/critical-sections.h
+include/mono-1.0/mono/io-layer/error.h
+include/mono-1.0/mono/io-layer/events.h
+include/mono-1.0/mono/io-layer/handles.h
+include/mono-1.0/mono/io-layer/io-layer.h
+include/mono-1.0/mono/io-layer/io-portability.h
+include/mono-1.0/mono/io-layer/io.h
+include/mono-1.0/mono/io-layer/macros.h
+include/mono-1.0/mono/io-layer/mono-mutex.h
+include/mono-1.0/mono/io-layer/mutexes.h
+include/mono-1.0/mono/io-layer/processes.h
+include/mono-1.0/mono/io-layer/security.h
+include/mono-1.0/mono/io-layer/semaphores.h
+include/mono-1.0/mono/io-layer/sockets.h
+include/mono-1.0/mono/io-layer/status.h
+include/mono-1.0/mono/io-layer/system.h
+include/mono-1.0/mono/io-layer/threads.h
+include/mono-1.0/mono/io-layer/timefuncs.h
+include/mono-1.0/mono/io-layer/types.h
+include/mono-1.0/mono/io-layer/uglify.h
+include/mono-1.0/mono/io-layer/versioninfo.h
+include/mono-1.0/mono/io-layer/wait.h
+include/mono-1.0/mono/io-layer/wapi.h
+include/mono-1.0/mono/jit/jit.h
+include/mono-1.0/mono/metadata/appdomain.h
+include/mono-1.0/mono/metadata/assembly.h
+include/mono-1.0/mono/metadata/attrdefs.h
+include/mono-1.0/mono/metadata/blob.h
+include/mono-1.0/mono/metadata/class.h
+include/mono-1.0/mono/metadata/debug-helpers.h
+include/mono-1.0/mono/metadata/debug-mono-symfile.h
+include/mono-1.0/mono/metadata/environment.h
+include/mono-1.0/mono/metadata/exception.h
+include/mono-1.0/mono/metadata/image.h
+include/mono-1.0/mono/metadata/loader.h
+include/mono-1.0/mono/metadata/mempool.h
+include/mono-1.0/mono/metadata/metadata.h
+include/mono-1.0/mono/metadata/mono-config.h
+include/mono-1.0/mono/metadata/mono-debug.h
+include/mono-1.0/mono/metadata/mono-gc.h
+include/mono-1.0/mono/metadata/object.h
+include/mono-1.0/mono/metadata/opcodes.h
+include/mono-1.0/mono/metadata/profiler.h
+include/mono-1.0/mono/metadata/reflection.h
+include/mono-1.0/mono/metadata/row-indexes.h
+include/mono-1.0/mono/metadata/threads.h
+include/mono-1.0/mono/metadata/tokentype.h
+include/mono-1.0/mono/metadata/verify.h
+include/mono-1.0/mono/utils/mono-codeman.h
+include/mono-1.0/mono/utils/mono-counters.h
+include/mono-1.0/mono/utils/mono-digest.h
+include/mono-1.0/mono/utils/mono-hash.h
+include/mono-1.0/mono/utils/mono-logger.h
+include/mono-1.0/mono/utils/mono-math.h
+include/mono-1.0/mono/utils/mono-path.h
+include/mono-1.0/mono/utils/mono-poll.h
+include/mono-1.0/mono/utils/mono-stdlib.h
+include/mono-1.0/mono/utils/mono-uri.h
+include/mono-1.0/mono/utils/monobitset.h
 lib/libMonoPosixHelper.a
 lib/libMonoPosixHelper.la
 lib/libMonoPosixHelper.so
@@ -291,11 +293,18 @@ lib/mono/2.0/I18N.Rare.dll
 lib/mono/2.0/I18N.West.dll
 lib/mono/2.0/I18N.dll
 lib/mono/2.0/ICSharpCode.SharpZipLib.dll
+lib/mono/2.0/MSBuild/Microsoft.Build.CommonTypes.xsd
+lib/mono/2.0/MSBuild/Microsoft.Build.Core.xsd
 lib/mono/2.0/Microsoft.Build.Engine.dll
 lib/mono/2.0/Microsoft.Build.Framework.dll
 lib/mono/2.0/Microsoft.Build.Tasks.dll
 lib/mono/2.0/Microsoft.Build.Utilities.dll
+lib/mono/2.0/Microsoft.Build.xsd
+lib/mono/2.0/Microsoft.CSharp.targets
+lib/mono/2.0/Microsoft.Common.targets
+lib/mono/2.0/Microsoft.Common.tasks
 lib/mono/2.0/Microsoft.JScript.dll
+lib/mono/2.0/Microsoft.VisualBasic.targets
 lib/mono/2.0/Microsoft.VisualC.dll
 lib/mono/2.0/Microsoft.Vsa.dll
 lib/mono/2.0/Mono.C5.dll
@@ -336,6 +345,8 @@ lib/mono/2.0/System.Web.dll
 lib/mono/2.0/System.Windows.Forms.dll
 lib/mono/2.0/System.Xml.dll
 lib/mono/2.0/System.dll
+lib/mono/2.0/al.exe
+lib/mono/2.0/al.exe.mdb
 lib/mono/2.0/cscompmgd.dll
 lib/mono/2.0/gmcs.exe
 lib/mono/2.0/gmcs.exe.config
@@ -362,6 +373,7 @@ lib/mono/2.0/wsdl.exe
 lib/mono/2.0/wsdl.exe.mdb
 lib/mono/2.0/xbuild.exe
 lib/mono/2.0/xbuild.exe.mdb
+lib/mono/2.0/xbuild.rsp
 lib/mono/compat-1.0/ICSharpCode.SharpZipLib.dll
 lib/mono/compat-2.0/ICSharpCode.SharpZipLib.dll
 lib/mono/gac/Accessibility/1.0.5000.0__b03f5f7f11d50a3a/Accessibility.dll
@@ -598,12 +610,6 @@ lib/mono/gac/nunit.mocks/2.2.8.0__96d09a1eb7f44a77/nunit.mocks.dll
 lib/mono/gac/nunit.mocks/2.2.8.0__96d09a1eb7f44a77/nunit.mocks.dll.mdb
 lib/mono/gac/nunit.util/2.2.0.0__96d09a1eb7f44a77/nunit.util.dll
 lib/mono/gac/nunit.util/2.2.0.0__96d09a1eb7f44a77/nunit.util.dll.mdb
-lib/mono/xbuild/MSBuild/Microsoft.Build.CommonTypes.xsd
-lib/mono/xbuild/MSBuild/Microsoft.Build.Core.xsd
-lib/mono/xbuild/Microsoft.Build.xsd
-lib/mono/xbuild/Microsoft.CSharp.targets
-lib/mono/xbuild/Microsoft.Common.tasks
-lib/mono/xbuild/xbuild.rsp
 libdata/pkgconfig/dotnet.pc
 libdata/pkgconfig/mono-cairo.pc
 libdata/pkgconfig/mono-nunit.pc
@@ -647,13 +653,12 @@ share/libgc-mono/leak.html
 share/libgc-mono/scale.html
 share/libgc-mono/simple_example.html
 share/libgc-mono/tree.html
-%%DATADIR%%/cil/cil-opcodes.xml
-@dirrm share/mono/cil
-@dirrm share/mono
+share/mono-1.0/mono/cil/cil-opcodes.xml
+@dirrm share/mono-1.0/mono/cil
+@dirrm share/mono-1.0/mono
+@dirrm share/mono-1.0
 @dirrm share/libgc-mono
 @dirrm share/jay
-@dirrm lib/mono/xbuild/MSBuild
-@dirrm lib/mono/xbuild
 @dirrm lib/mono/gac/nunit.util/2.2.0.0__96d09a1eb7f44a77
 @dirrm lib/mono/gac/nunit.util
 @dirrm lib/mono/gac/nunit.mocks/2.2.8.0__96d09a1eb7f44a77
@@ -838,16 +843,18 @@ share/libgc-mono/tree.html
 @dirrmtry lib/mono/gac
 @dirrmtry lib/mono/compat-2.0
 @dirrmtry lib/mono/compat-1.0
+@dirrmtry lib/mono/2.0/MSBuild
 @dirrmtry lib/mono/2.0
 @dirrmtry lib/mono/1.0
 @dirrmtry lib/mono
-@dirrm include/mono/utils
-@dirrm include/mono/metadata
-@dirrm include/mono/jit
-@dirrm include/mono/io-layer
-@dirrm include/mono/interpreter
-@dirrm include/mono/cil
-@dirrm include/mono
+@dirrm include/mono-1.0/mono/utils
+@dirrm include/mono-1.0/mono/metadata
+@dirrm include/mono-1.0/mono/jit
+@dirrm include/mono-1.0/mono/io-layer
+@dirrm include/mono-1.0/mono/interpreter
+@dirrm include/mono-1.0/mono/cil
+@dirrm include/mono-1.0/mono
+@dirrm include/mono-1.0
 @dirrm etc/mono/2.0
 @dirrm etc/mono/1.0
 @dirrm etc/mono

@@ -3,12 +3,12 @@
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.71 2007/01/13 21:29:41 tmclau02 Exp $
+#   $Id: Makefile,v 1.78 2007/02/26 22:13:36 tmclau02 Exp $
 #
 
 PORTNAME=	mono
-PORTVERSION=	1.2.2.1
-PORTREVISION=	3
+PORTVERSION=	1.2.3.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/sources/mono/ \
 		${MASTER_SITE_LOCAL}
@@ -51,7 +51,8 @@ MAN1=		al.1 cert2spc.1 certmgr.1 chktrust.1 cilc.1 disco.1 dtd2xsd.1 \
 		mint.1 mkbundle.1 mono-service.1 mono-shlib-cop.1 mono.1 \
 		monoburg.1 monodis.1 monop.1 monostyle.1 mozroots.1 oldmono.1 \
 		permview.1 prj2make.1 secutil.1 setreg.1 signcode.1 sn.1 \
-		soapsuds.1 sqlsharp.1 wsdl.1 xsd.1 mono-xmltool.1 sgen.1
+		soapsuds.1 sqlsharp.1 wsdl.1 xsd.1 mono-xmltool.1 sgen.1 \
+		httpcfg.1
 MAN5=		mono-config.5
 
 .include <bsd.port.pre.mk>
