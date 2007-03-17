@@ -484,6 +484,7 @@ share/icons/HighContrast-SVG/scalable/actions/gtk-refresh.svg
 share/icons/HighContrast-SVG/scalable/actions/gtk-remove.svg
 share/icons/HighContrast-SVG/scalable/actions/gtk-save-as.svg
 share/icons/HighContrast-SVG/scalable/actions/gtk-save.svg
+share/icons/HighContrast-SVG/scalable/actions/gtk-select-all.svg
 share/icons/HighContrast-SVG/scalable/actions/gtk-sort-ascending.svg
 share/icons/HighContrast-SVG/scalable/actions/gtk-sort-descending.svg
 share/icons/HighContrast-SVG/scalable/actions/gtk-stop.svg
@@ -644,6 +645,10 @@ share/icons/HighContrast-SVG/scalable/actions/view-refresh.svg
 share/icons/HighContrast-SVG/scalable/actions/view-restore.svg
 share/icons/HighContrast-SVG/scalable/actions/view-sort-ascending.svg
 share/icons/HighContrast-SVG/scalable/actions/view-sort-descending.svg
+share/icons/HighContrast-SVG/scalable/actions/viewmag+.svg
+share/icons/HighContrast-SVG/scalable/actions/viewmag-.svg
+share/icons/HighContrast-SVG/scalable/actions/viewmag1.svg
+share/icons/HighContrast-SVG/scalable/actions/viewmagfit.svg
 share/icons/HighContrast-SVG/scalable/actions/window-close.svg
 share/icons/HighContrast-SVG/scalable/actions/window-new.svg
 share/icons/HighContrast-SVG/scalable/actions/window_fullscreen.svg
