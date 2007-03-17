@@ -2,21 +2,17 @@ dgd/Copyright
 dgd/Credits
 dgd/README
 dgd/README.FreeBSD
-dgd/README.rgx
 dgd/README.sites
 dgd/bin/driver.net
-dgd/bin/precomp.net
 dgd/doc/Commercial
 dgd/doc/Introduction.NET
 dgd/doc/LPC.html
-dgd/doc/Patching
 dgd/doc/Platforms
 dgd/doc/editor
 dgd/doc/kfun/allocate
 dgd/doc/kfun/call_other
 dgd/doc/kfun/call_out
 dgd/doc/kfun/call_trace
-dgd/doc/kfun/catch
 dgd/doc/kfun/ceil
 dgd/doc/kfun/clone_object
 dgd/doc/kfun/compile_object
@@ -49,8 +45,6 @@ dgd/doc/kfun/query_editor
 dgd/doc/kfun/query_ip_number
 dgd/doc/kfun/random
 dgd/doc/kfun/read_file
-dgd/doc/kfun/regexp_compile
-dgd/doc/kfun/regexp_match
 dgd/doc/kfun/remove_call_out
 dgd/doc/kfun/remove_dir
 dgd/doc/kfun/remove_file
@@ -70,8 +64,6 @@ dgd/doc/kfun/time
 dgd/doc/kfun/typeof
 dgd/doc/kfun/users
 dgd/doc/kfun/write_file
-dgd/doc/regexps
-dgd/doc/rgx_example.c
 dgd/mud/doc/kernel/efun/add_event
 dgd/mud/doc/kernel/efun/call_other
 dgd/mud/doc/kernel/efun/call_trace
@@ -82,7 +74,6 @@ dgd/mud/doc/kernel/efun/event
 dgd/mud/doc/kernel/efun/find_object
 dgd/mud/doc/kernel/efun/get_dir
 dgd/mud/doc/kernel/efun/query_events
-dgd/mud/doc/kernel/efun/query_subscribed
 dgd/mud/doc/kernel/efun/remove_event
 dgd/mud/doc/kernel/efun/status
 dgd/mud/doc/kernel/efun/subscribe_event
