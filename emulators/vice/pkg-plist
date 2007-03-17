@@ -10,6 +10,7 @@ bin/xplus4
 bin/xvic
 %%NLS%%share/locale/de/LC_MESSAGES/vice.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/vice.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/vice.mo
 %%NLS%%share/locale/it/LC_MESSAGES/vice.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/vice.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/vice.mo
