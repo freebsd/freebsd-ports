@@ -1,20 +1,10 @@
---- gettext-runtime/configure.orig	Thu Jan 29 12:12:42 2004
-+++ gettext-runtime/configure	Mon Dec 13 02:57:36 2004
-@@ -1938,7 +1938,7 @@
+--- gettext-runtime/configure.orig	Mon Nov 27 09:34:04 2006
++++ gettext-runtime/configure	Sun Dec  3 17:44:05 2006
+@@ -4663,7 +4663,3 @@
  
- docdir='${datadir}/doc/gettext'
- 
--test "$mandir" != '${prefix}/man' || mandir='${datadir}/man'
-+test "$mandir" != '${prefix}/man' || mandir='${prefix}/man'
- 
- ac_ext=c
- ac_cpp='$CPP $CPPFLAGS'
-@@ -3635,7 +3635,7 @@
- fi
- 
- if test -n "$HAVE_JAVACOMP" && test -n "$JAR"; then
+-if test -n "$HAVE_JAVACOMP" && test -n "$JAR" && test "$JAVA_CHOICE" != no; then
 -  BUILDJAVA=yes
-+  BUILDJAVA=no
- else
+-else
    BUILDJAVA=no
- fi
+-fi
+ 
