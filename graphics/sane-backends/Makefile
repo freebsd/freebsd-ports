@@ -33,7 +33,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man --with-docdir=${DOCSDIR} \
 		--disable-locking
-		
+
 MAKE_ENV=	NOPORTDOCS=${NOPORTDOCS}
 USE_LDCONFIG=	yes
 
@@ -74,6 +74,6 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|= \.\./libtool|= @LIBTOOL@|g'
 	@${REINPLACE_CMD} -e 's|} -D_REENT|} ${PTHREAD_CFLAGS} -D_REENT|g ; \
-		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+		 s|-lpthread|${PTHREAD_LIBS}|g; s|echo aout|echo elf|' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
