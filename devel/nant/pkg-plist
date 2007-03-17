@@ -20,6 +20,15 @@ share/NAnt/bin/NAnt.NUnit2Tasks.xml
 share/NAnt/bin/NAnt.SourceControlTasks.dll
 share/NAnt/bin/NAnt.SourceControlTasks.dll.mdb
 share/NAnt/bin/NAnt.SourceControlTasks.xml
+share/NAnt/bin/NAnt.VSNetTasks.dll
+share/NAnt/bin/NAnt.VSNetTasks.dll.mdb
+share/NAnt/bin/NAnt.VSNetTasks.xml
+share/NAnt/bin/NAnt.VisualCppTasks.dll
+share/NAnt/bin/NAnt.VisualCppTasks.dll.mdb
+share/NAnt/bin/NAnt.VisualCppTasks.xml
+share/NAnt/bin/NAnt.Win32Tasks.dll
+share/NAnt/bin/NAnt.Win32Tasks.dll.mdb
+share/NAnt/bin/NAnt.Win32Tasks.xml
 share/NAnt/bin/NAnt.exe
 share/NAnt/bin/NAnt.exe.config
 share/NAnt/bin/NAnt.exe.mdb
