@@ -3,11 +3,11 @@
 # Whom:				Tom McLaughlin <tmclaugh@sdf.lonestar.org>
 #
 # $FreeBSD$
-#   $Id: Makefile,v 1.39 2007/01/26 02:49:02 tmclau02 Exp $
+#   $Id: Makefile,v 1.43 2007/03/11 19:24:30 killfill Exp $
 #
 
 PORTNAME=	f-spot
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.5
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -28,6 +28,7 @@ GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
+INSTALLS_OMF=	yes
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

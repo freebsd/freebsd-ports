@@ -39,9 +39,19 @@ share/gnome/applications/f-spot.desktop
 share/gnome/help/f-spot/C/f-spot.xml
 share/gnome/help/f-spot/C/figures/f-spot-fullscreen.png
 share/gnome/help/f-spot/C/figures/f-spot-slideshow.png
+share/gnome/help/f-spot/da/f-spot.xml
+share/gnome/help/f-spot/da/figures/f-spot-fullscreen.png
+share/gnome/help/f-spot/da/figures/f-spot-slideshow.png
+share/gnome/help/f-spot/fr/f-spot.xml
+share/gnome/help/f-spot/fr/figures/f-spot-fullscreen.png
+share/gnome/help/f-spot/fr/figures/f-spot-slideshow.png
 share/gnome/help/f-spot/sv/f-spot.xml
 share/gnome/help/f-spot/sv/figures/f-spot-fullscreen.png
 share/gnome/help/f-spot/sv/figures/f-spot-slideshow.png
+share/gnome/omf/f-spot/f-spot-C.omf
+share/gnome/omf/f-spot/f-spot-da.omf
+share/gnome/omf/f-spot/f-spot-fr.omf
+share/gnome/omf/f-spot/f-spot-sv.omf
 share/icons/hicolor/16x16/apps/f-spot.png
 share/icons/hicolor/16x16/apps/f-spot.svg
 share/icons/hicolor/22x22/apps/f-spot.png
@@ -111,8 +121,13 @@ share/locale/zh_TW/LC_MESSAGES/f-spot.mo
 @dirrmtry share/locale/cs
 @dirrmtry share/locale/ca/LC_MESSAGES
 @dirrmtry share/locale/ca
+@dirrm share/gnome/omf/f-spot
 @dirrm share/gnome/help/f-spot/sv/figures
 @dirrm share/gnome/help/f-spot/sv
+@dirrm share/gnome/help/f-spot/fr/figures
+@dirrm share/gnome/help/f-spot/fr
+@dirrm share/gnome/help/f-spot/da/figures
+@dirrm share/gnome/help/f-spot/da
 @dirrm share/gnome/help/f-spot/C/figures
 @dirrm share/gnome/help/f-spot/C
 @dirrm share/gnome/help/f-spot
