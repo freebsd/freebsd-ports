@@ -16,6 +16,8 @@ COMMENT=	X 'tv_grab_au' is an XMLTV grabber for Australian TV programmes
 
 RUN_DEPENDS=	tv_check:${PORTSDIR}/textproc/p5-xmltv
 
+BROKEN=		Incomplete pkg-plist
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 

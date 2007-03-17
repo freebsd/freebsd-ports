@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	SDL port of the popular MAME (Multi Arcade Machine Emulator)
 
+BROKEN=		Incomplete pkg-plist
+
 USE_ZIP=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
