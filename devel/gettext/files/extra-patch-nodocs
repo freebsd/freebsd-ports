@@ -1,0 +1,55 @@
+--- gettext-runtime/intl-java/Makefile.in.orig	Mon May 23 04:23:40 2005
++++ gettext-runtime/intl-java/Makefile.in	Tue Jan 30 20:02:41 2007
+@@ -464,5 +464,5 @@
+ 
+-all-local: all-classes all-javadoc1 all-javadoc2
+-install-data-local: install-classes install-javadoc1 install-javadoc2
+-installdirs-local: installdirs-classes installdirs-javadoc1 installdirs-javadoc2
++all-local: all-classes
++install-data-local: install-classes
++installdirs-local: installdirs-classes
+ uninstall-local: uninstall-classes uninstall-javadoc1 uninstall-javadoc2
+
+--- gettext-runtime/intl-csharp/Makefile.in.orig	Mon May 23 04:23:39 2005
++++ gettext-runtime/intl-csharp/Makefile.in	Tue Jan 30 20:11:08 2007
+@@ -432,5 +432,5 @@
+ 
+-all-local: all-dll all-doc
+-install-data-local: install-dll install-doc
+-installdirs-local: installdirs-dll installdirs-doc
++all-local: all-dll
++install-data-local: install-dll
++installdirs-local: installdirs-dll
+ uninstall-local: uninstall-dll uninstall-doc
+
+--- gettext-runtime/libasprintf/Makefile.in.orig	Mon May 23 04:23:55 2005
++++ gettext-runtime/libasprintf/Makefile.in	Tue Jan 30 20:24:01 2007
+@@ -882,5 +882,5 @@
+ 
+-all-local: html-local
+-install-data-local: install-html
+-installdirs-local: installdirs-html
++all-local:
++install-data-local:
++installdirs-local:
+ uninstall-local: uninstall-html
+
+--- gettext-tools/Makefile.in.orig	Mon Nov 27 09:34:56 2006
++++ gettext-tools/Makefile.in	Tue Jan 30 23:15:59 2007
+@@ -944,3 +944,3 @@
+ 
+-install-data-am: install-examplesbuildauxDATA \
++install-data-am: \
+ 	install-gettextsrcSCRIPTS
+
+--- gettext-tools/m4/Makefile.in.orig	Mon May 23 04:24:27 2005
++++ gettext-tools/m4/Makefile.in	Tue Jan 30 20:19:34 2007
+@@ -530,3 +530,3 @@
+ installdirs:
+-	for dir in "$(DESTDIR)$(aclocaldir)" "$(DESTDIR)$(examplesbuildauxdir)"; do \
++	for dir in "$(DESTDIR)$(aclocaldir)" ; do \
+ 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+@@ -575,3 +575,3 @@
+ 
+-install-data-am: install-aclocalDATA install-examplesbuildauxDATA
++install-data-am: install-aclocalDATA

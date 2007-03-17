@@ -1,0 +1,11 @@
+--- gettext-tools/man/Makefile.in.orig	Mon May 23 04:24:28 2005
++++ gettext-tools/man/Makefile.in	Tue Jan 30 22:12:40 2007
+@@ -576,5 +576,5 @@
+ 
+-all-local: html-local
+-install-data-local: install-html
+-installdirs-local: installdirs-html
++all-local:
++install-data-local:
++installdirs-local:
+ uninstall-local: uninstall-html

@@ -19,30 +19,31 @@ bin/msgmerge
 bin/msgunfmt
 bin/msguniq
 bin/ngettext
+bin/recode-sr-latin
 bin/xgettext
 include/autosprintf.h
 include/gettext-po.h
 include/libintl.h
 @exec /bin/mkdir -p %D/lib/gettext
+lib/charset.alias
 lib/libasprintf.a
 lib/libasprintf.la
 lib/libasprintf.so
 lib/libasprintf.so.0
 lib/libgettextlib-%%VERSION%%.so
-lib/libgettextlib.a
 lib/libgettextlib.la
 lib/libgettextlib.so
 lib/libgettextpo.a
 lib/libgettextpo.la
 lib/libgettextpo.so
-lib/libgettextpo.so.1
+lib/libgettextpo.so.3
 lib/libgettextsrc.la
 lib/libgettextsrc-%%VERSION%%.so
 lib/libgettextsrc.so
 lib/libintl.a
 lib/libintl.la
 lib/libintl.so
-lib/libintl.so.6
+lib/libintl.so.8
 libdata/gettext-tools/hostname
 libdata/gettext-tools/project-id
 libdata/gettext-tools/urlget
@@ -53,173 +54,208 @@ share/aclocal/glibc2.m4
 share/aclocal/glibc21.m4
 share/aclocal/iconv.m4
 share/aclocal/intdiv0.m4
+share/aclocal/intl.m4
+share/aclocal/intldir.m4
 share/aclocal/intmax.m4
 share/aclocal/inttypes-pri.m4
-share/aclocal/inttypes.m4
 share/aclocal/inttypes_h.m4
-share/aclocal/isc-posix.m4
 share/aclocal/lcmessage.m4
 share/aclocal/lib-ld.m4
 share/aclocal/lib-link.m4
 share/aclocal/lib-prefix.m4
+share/aclocal/lock.m4
 share/aclocal/longdouble.m4
 share/aclocal/longlong.m4
 share/aclocal/nls.m4
 share/aclocal/po.m4
 share/aclocal/printf-posix.m4
 share/aclocal/progtest.m4
-share/aclocal/signed.m4
 share/aclocal/size_max.m4
 share/aclocal/stdint_h.m4
 share/aclocal/uintmax_t.m4
 share/aclocal/ulonglong.m4
+share/aclocal/visibility.m4
 share/aclocal/wchar_t.m4
 share/aclocal/wint_t.m4
 share/aclocal/xsize.m4
-%%DOCSDIR%%/FAQ.html
-%%DOCSDIR%%/csharpdoc/GNU_Gettext.html
-%%DOCSDIR%%/csharpdoc/GNU_Gettext_GettextResourceManager.html
-%%DOCSDIR%%/csharpdoc/GNU_Gettext_GettextResourceSet.html
-%%DOCSDIR%%/csharpdoc/begin.html
-%%DOCSDIR%%/csharpdoc/index.html
-%%DOCSDIR%%/csharpdoc/namespaces.html
-%%DOCSDIR%%/examples/build-aux/csharpcomp.m4
-%%DOCSDIR%%/examples/build-aux/csharpcomp.sh.in
-%%DOCSDIR%%/examples/build-aux/csharpexec.m4
-%%DOCSDIR%%/examples/build-aux/csharpexec.sh.in
-%%DOCSDIR%%/examples/build-aux/gcj.m4
-%%DOCSDIR%%/examples/build-aux/javacomp.m4
-%%DOCSDIR%%/examples/build-aux/javacomp.sh.in
-%%DOCSDIR%%/examples/build-aux/javaexec.m4
-%%DOCSDIR%%/examples/build-aux/javaexec.sh.in
-%%DOCSDIR%%/javadoc1/AllNames.html
-%%DOCSDIR%%/javadoc1/gnu.gettext.GettextResource.html
-%%DOCSDIR%%/javadoc1/images/blue-ball-small.gif
-%%DOCSDIR%%/javadoc1/images/blue-ball.gif
-%%DOCSDIR%%/javadoc1/images/class-index.gif
-%%DOCSDIR%%/javadoc1/images/constructor-index.gif
-%%DOCSDIR%%/javadoc1/images/constructors.gif
-%%DOCSDIR%%/javadoc1/images/cyan-ball-small.gif
-%%DOCSDIR%%/javadoc1/images/cyan-ball.gif
-%%DOCSDIR%%/javadoc1/images/error-index.gif
-%%DOCSDIR%%/javadoc1/images/exception-index.gif
-%%DOCSDIR%%/javadoc1/images/green-ball-small.gif
-%%DOCSDIR%%/javadoc1/images/green-ball.gif
-%%DOCSDIR%%/javadoc1/images/interface-index.gif
-%%DOCSDIR%%/javadoc1/images/magenta-ball-small.gif
-%%DOCSDIR%%/javadoc1/images/magenta-ball.gif
-%%DOCSDIR%%/javadoc1/images/method-index.gif
-%%DOCSDIR%%/javadoc1/images/methods.gif
-%%DOCSDIR%%/javadoc1/images/package-index.gif
-%%DOCSDIR%%/javadoc1/images/red-ball-small.gif
-%%DOCSDIR%%/javadoc1/images/red-ball.gif
-%%DOCSDIR%%/javadoc1/images/variable-index.gif
-%%DOCSDIR%%/javadoc1/images/variables.gif
-%%DOCSDIR%%/javadoc1/images/yellow-ball-small.gif
-%%DOCSDIR%%/javadoc1/images/yellow-ball.gif
-%%DOCSDIR%%/javadoc1/packages.html
-%%DOCSDIR%%/javadoc1/tree.html
-%%DOCSDIR%%/javadoc2/allclasses-frame.html
-%%DOCSDIR%%/javadoc2/deprecated-list.html
-%%DOCSDIR%%/javadoc2/gnu/gettext/GettextResource.html
-%%DOCSDIR%%/javadoc2/gnu/gettext/package-frame.html
-%%DOCSDIR%%/javadoc2/gnu/gettext/package-summary.html
-%%DOCSDIR%%/javadoc2/gnu/gettext/package-tree.html
-%%DOCSDIR%%/javadoc2/help-doc.html
-%%DOCSDIR%%/javadoc2/index-all.html
-%%DOCSDIR%%/javadoc2/index.html
-%%DOCSDIR%%/javadoc2/overview-tree.html
-%%DOCSDIR%%/javadoc2/package-list
-%%DOCSDIR%%/javadoc2/packages.html
-%%DOCSDIR%%/javadoc2/serialized-form.html
-%%DOCSDIR%%/javadoc2/stylesheet.css
-%%DOCSDIR%%/tutorial.html
-share/doc/libasprintf/autosprintf.html
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/csharpdoc/GNU_Gettext.html
+%%PORTDOCS%%%%DOCSDIR%%/csharpdoc/GNU_Gettext_GettextResourceManager.html
+%%PORTDOCS%%%%DOCSDIR%%/csharpdoc/GNU_Gettext_GettextResourceSet.html
+%%PORTDOCS%%%%DOCSDIR%%/csharpdoc/begin.html
+%%PORTDOCS%%%%DOCSDIR%%/csharpdoc/index.html
+%%PORTDOCS%%%%DOCSDIR%%/csharpdoc/namespaces.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/build-aux/csharpcomp.m4
+%%PORTDOCS%%%%DOCSDIR%%/examples/build-aux/csharpcomp.sh.in
+%%PORTDOCS%%%%DOCSDIR%%/examples/build-aux/csharpexec.m4
+%%PORTDOCS%%%%DOCSDIR%%/examples/build-aux/csharpexec.sh.in
+%%PORTDOCS%%%%DOCSDIR%%/examples/build-aux/csharpexec-test.exe
+%%PORTDOCS%%%%DOCSDIR%%/examples/build-aux/gcj.m4
+%%PORTDOCS%%%%DOCSDIR%%/examples/build-aux/javacomp.m4
+%%PORTDOCS%%%%DOCSDIR%%/examples/build-aux/javacomp.sh.in
+%%PORTDOCS%%%%DOCSDIR%%/examples/build-aux/javaexec.m4
+%%PORTDOCS%%%%DOCSDIR%%/examples/build-aux/javaexec.sh.in
+%%PORTDOCS%%%%DOCSDIR%%/gettext_1.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_2.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_3.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_4.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_5.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_6.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_7.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_8.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_9.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_10.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_11.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_12.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_13.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_14.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_15.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_16.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_17.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_18.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_19.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_20.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_21.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_22.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_23.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_24.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_25.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_foot.html
+%%PORTDOCS%%%%DOCSDIR%%/gettext_toc.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/AllNames.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/gnu.gettext.GettextResource.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/blue-ball-small.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/blue-ball.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/class-index.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/constructor-index.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/constructors.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/cyan-ball-small.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/cyan-ball.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/error-index.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/exception-index.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/green-ball-small.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/green-ball.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/interface-index.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/magenta-ball-small.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/magenta-ball.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/method-index.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/methods.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/package-index.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/red-ball-small.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/red-ball.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/variable-index.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/variables.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/yellow-ball-small.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/images/yellow-ball.gif
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/packages.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc1/tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc2/allclasses-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc2/deprecated-list.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc2/gnu/gettext/GettextResource.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc2/gnu/gettext/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc2/gnu/gettext/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc2/gnu/gettext/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc2/help-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc2/index-all.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc2/index.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc2/overview-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc2/package-list
+%%PORTDOCS%%%%DOCSDIR%%/javadoc2/packages.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc2/serialized-form.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc2/stylesheet.css
+%%PORTDOCS%%%%DOCSDIR%%/tutorial.html
+%%PORTDOCS%%share/doc/libasprintf/autosprintf_all.html
 share/emacs/site-lisp/po-compat.el
 share/emacs/site-lisp/po-mode.el
-share/gettext/ABOUT-NLS
-share/gettext/archive.tar.gz
-share/gettext/config.rpath
-share/gettext/gettext.h
-share/gettext/intl/COPYING.LIB-2.0
-share/gettext/intl/COPYING.LIB-2.1
-share/gettext/intl/ChangeLog
-share/gettext/intl/Makefile.in
-share/gettext/intl/VERSION
-share/gettext/intl/bindtextdom.c
-share/gettext/intl/config.charset
-share/gettext/intl/dcgettext.c
-share/gettext/intl/dcigettext.c
-share/gettext/intl/dcngettext.c
-share/gettext/intl/dgettext.c
-share/gettext/intl/dngettext.c
-share/gettext/intl/eval-plural.h
-share/gettext/intl/explodename.c
-share/gettext/intl/finddomain.c
-share/gettext/intl/gettext.c
-share/gettext/intl/gettextP.h
-share/gettext/intl/gmo.h
-share/gettext/intl/hash-string.h
-share/gettext/intl/intl-compat.c
-share/gettext/intl/l10nflist.c
-share/gettext/intl/langprefs.c
-share/gettext/intl/libgnuintl.h.in
-share/gettext/intl/loadinfo.h
-share/gettext/intl/loadmsgcat.c
-share/gettext/intl/localcharset.c
-share/gettext/intl/localcharset.h
-share/gettext/intl/locale.alias
-share/gettext/intl/localealias.c
-share/gettext/intl/localename.c
-share/gettext/intl/log.c
-share/gettext/intl/ngettext.c
-share/gettext/intl/os2compat.c
-share/gettext/intl/os2compat.h
-share/gettext/intl/osdep.c
-share/gettext/intl/plural-exp.c
-share/gettext/intl/plural-exp.h
-share/gettext/intl/plural.c
-share/gettext/intl/plural.y
-share/gettext/intl/printf-args.c
-share/gettext/intl/printf-args.h
-share/gettext/intl/printf-parse.c
-share/gettext/intl/printf-parse.h
-share/gettext/intl/printf.c
-share/gettext/intl/ref-add.sin
-share/gettext/intl/ref-del.sin
-share/gettext/intl/relocatable.c
-share/gettext/intl/relocatable.h
-share/gettext/intl/textdomain.c
-share/gettext/intl/vasnprintf.c
-share/gettext/intl/vasnprintf.h
-share/gettext/intl/vasnwprintf.h
-share/gettext/intl/wprintf-parse.h
-share/gettext/intl/xsize.h
-share/gettext/mkinstalldirs
-share/gettext/msgunfmt.tcl
-share/gettext/po/Makefile.in.in
-share/gettext/po/Makevars.template
-share/gettext/po/Rules-quot
-share/gettext/po/boldquot.sed
-share/gettext/po/en@boldquot.header
-share/gettext/po/en@quot.header
-share/gettext/po/insert-header.sin
-share/gettext/po/quot.sed
-share/gettext/po/remove-potcdate.sin
-share/gettext/projects/GNOME/team-address
-share/gettext/projects/GNOME/teams.html
-share/gettext/projects/GNOME/teams.url
-share/gettext/projects/GNOME/trigger
-share/gettext/projects/KDE/team-address
-share/gettext/projects/KDE/teams.html
-share/gettext/projects/KDE/teams.url
-share/gettext/projects/KDE/trigger
-share/gettext/projects/TP/team-address
-share/gettext/projects/TP/teams.html
-share/gettext/projects/TP/teams.url
-share/gettext/projects/TP/trigger
-share/gettext/projects/index
-share/gettext/projects/team-address
+%%DATADIR%%/ABOUT-NLS
+%%DATADIR%%/archive.tar.gz
+%%DATADIR%%/config.rpath
+%%DATADIR%%/gettext.h
+%%DATADIR%%/intl/COPYING.LIB-2.0
+%%DATADIR%%/intl/COPYING.LIB-2.1
+%%DATADIR%%/intl/ChangeLog
+%%DATADIR%%/intl/Makefile.in
+%%DATADIR%%/intl/VERSION
+%%DATADIR%%/intl/bindtextdom.c
+%%DATADIR%%/intl/config.charset
+%%DATADIR%%/intl/dcgettext.c
+%%DATADIR%%/intl/dcigettext.c
+%%DATADIR%%/intl/dcngettext.c
+%%DATADIR%%/intl/dgettext.c
+%%DATADIR%%/intl/dngettext.c
+%%DATADIR%%/intl/eval-plural.h
+%%DATADIR%%/intl/explodename.c
+%%DATADIR%%/intl/export.h
+%%DATADIR%%/intl/finddomain.c
+%%DATADIR%%/intl/gettext.c
+%%DATADIR%%/intl/gettextP.h
+%%DATADIR%%/intl/gmo.h
+%%DATADIR%%/intl/hash-string.c
+%%DATADIR%%/intl/hash-string.h
+%%DATADIR%%/intl/intl-compat.c
+%%DATADIR%%/intl/intl-exports.c
+%%DATADIR%%/intl/l10nflist.c
+%%DATADIR%%/intl/langprefs.c
+%%DATADIR%%/intl/libgnuintl.h.in
+%%DATADIR%%/intl/loadinfo.h
+%%DATADIR%%/intl/loadmsgcat.c
+%%DATADIR%%/intl/localcharset.c
+%%DATADIR%%/intl/localcharset.h
+%%DATADIR%%/intl/locale.alias
+%%DATADIR%%/intl/localealias.c
+%%DATADIR%%/intl/localename.c
+%%DATADIR%%/intl/lock.c
+%%DATADIR%%/intl/lock.h
+%%DATADIR%%/intl/log.c
+%%DATADIR%%/intl/ngettext.c
+%%DATADIR%%/intl/os2compat.c
+%%DATADIR%%/intl/os2compat.h
+%%DATADIR%%/intl/osdep.c
+%%DATADIR%%/intl/plural-exp.c
+%%DATADIR%%/intl/plural-exp.h
+%%DATADIR%%/intl/plural.c
+%%DATADIR%%/intl/plural.y
+%%DATADIR%%/intl/printf-args.c
+%%DATADIR%%/intl/printf-args.h
+%%DATADIR%%/intl/printf-parse.c
+%%DATADIR%%/intl/printf-parse.h
+%%DATADIR%%/intl/printf.c
+%%DATADIR%%/intl/ref-add.sin
+%%DATADIR%%/intl/ref-del.sin
+%%DATADIR%%/intl/relocatable.c
+%%DATADIR%%/intl/relocatable.h
+%%DATADIR%%/intl/textdomain.c
+%%DATADIR%%/intl/vasnprintf.c
+%%DATADIR%%/intl/vasnprintf.h
+%%DATADIR%%/intl/vasnwprintf.h
+%%DATADIR%%/intl/version.c
+%%DATADIR%%/intl/wprintf-parse.h
+%%DATADIR%%/intl/xsize.h
+%%DATADIR%%/javaversion.class
+%%DATADIR%%/msgunfmt.tcl
+%%DATADIR%%/po/Makefile.in.in
+%%DATADIR%%/po/Makevars.template
+%%DATADIR%%/po/Rules-quot
+%%DATADIR%%/po/boldquot.sed
+%%DATADIR%%/po/en@boldquot.header
+%%DATADIR%%/po/en@quot.header
+%%DATADIR%%/po/insert-header.sin
+%%DATADIR%%/po/quot.sed
+%%DATADIR%%/po/remove-potcdate.sin
+%%DATADIR%%/projects/GNOME/team-address
+%%DATADIR%%/projects/GNOME/teams.html
+%%DATADIR%%/projects/GNOME/teams.url
+%%DATADIR%%/projects/GNOME/trigger
+%%DATADIR%%/projects/KDE/team-address
+%%DATADIR%%/projects/KDE/teams.html
+%%DATADIR%%/projects/KDE/teams.url
+%%DATADIR%%/projects/KDE/trigger
+%%DATADIR%%/projects/TP/team-address
+%%DATADIR%%/projects/TP/teams.html
+%%DATADIR%%/projects/TP/teams.url
+%%DATADIR%%/projects/TP/trigger
+%%DATADIR%%/projects/index
+%%DATADIR%%/projects/team-address
 share/locale/be/LC_MESSAGES/gettext-runtime.mo
 share/locale/be/LC_MESSAGES/gettext-tools.mo
 share/locale/ca/LC_MESSAGES/gettext-runtime.mo
@@ -236,6 +272,7 @@ share/locale/en@boldquot/LC_MESSAGES/gettext-runtime.mo
 share/locale/en@boldquot/LC_MESSAGES/gettext-tools.mo
 share/locale/en@quot/LC_MESSAGES/gettext-runtime.mo
 share/locale/en@quot/LC_MESSAGES/gettext-tools.mo
+share/locale/eo/LC_MESSAGES/gettext-runtime.mo
 share/locale/es/LC_MESSAGES/gettext-runtime.mo
 share/locale/es/LC_MESSAGES/gettext-tools.mo
 share/locale/et/LC_MESSAGES/gettext-runtime.mo
@@ -288,25 +325,26 @@ share/locale/vi/LC_MESSAGES/gettext-runtime.mo
 share/locale/vi/LC_MESSAGES/gettext-tools.mo
 share/locale/zh_CN/LC_MESSAGES/gettext-runtime.mo
 share/locale/zh_CN/LC_MESSAGES/gettext-tools.mo
+share/locale/zh_HK/LC_MESSAGES/gettext-runtime.mo
 share/locale/zh_TW/LC_MESSAGES/gettext-runtime.mo
 share/locale/zh_TW/LC_MESSAGES/gettext-tools.mo
-@dirrm share/gettext/projects/TP
-@dirrm share/gettext/projects/KDE
-@dirrm share/gettext/projects/GNOME
-@dirrm share/gettext/projects
-@dirrm share/gettext/po
-@dirrm share/gettext/intl
-@dirrm share/gettext
-@dirrm share/doc/libasprintf
-@dirrm %%DOCSDIR%%/javadoc2/gnu/gettext
-@dirrm %%DOCSDIR%%/javadoc2/gnu
-@dirrm %%DOCSDIR%%/javadoc2
-@dirrm %%DOCSDIR%%/javadoc1/images
-@dirrm %%DOCSDIR%%/javadoc1
-@dirrm %%DOCSDIR%%/examples/build-aux
-@dirrm %%DOCSDIR%%/examples
-@dirrm %%DOCSDIR%%/csharpdoc
-@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/projects/TP
+@dirrm %%DATADIR%%/projects/KDE
+@dirrm %%DATADIR%%/projects/GNOME
+@dirrm %%DATADIR%%/projects
+@dirrm %%DATADIR%%/po
+@dirrm %%DATADIR%%/intl
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm share/doc/libasprintf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc2/gnu/gettext
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc2/gnu
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc2
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc1/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc1
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/build-aux
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/csharpdoc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm libdata/gettext-tools
 @dirrm lib/gettext
 @dirrmtry share/locale/be/LC_MESSAGES
@@ -328,6 +366,7 @@ share/locale/zh_TW/LC_MESSAGES/gettext-tools.mo
 @dirrmtry share/locale/sr/LC_MESSAGES
 @dirrmtry share/locale/uk/LC_MESSAGES
 @dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/be
 @dirrmtry share/locale/ca
@@ -348,4 +387,5 @@ share/locale/zh_TW/LC_MESSAGES/gettext-tools.mo
 @dirrmtry share/locale/sr
 @dirrmtry share/locale/uk
 @dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/zh_TW

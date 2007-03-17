@@ -1,37 +1,18 @@
---- gettext-runtime/intl/Makefile.in.orig	Mon Apr 11 14:34:59 2005
-+++ gettext-runtime/intl/Makefile.in	Mon Apr 18 19:10:08 2005
-@@ -52,7 +52,7 @@
- YFLAGS = --name-prefix=__gettext
- 
+--- gettext-runtime/intl/Makefile.in.orig	Mon Nov 27 09:02:00 2006
++++ gettext-runtime/intl/Makefile.in	Sun Dec  3 17:48:38 2006
+@@ -78,3 +78,3 @@
  DEFS = -DLOCALEDIR=\"$(localedir)\" -DLOCALE_ALIAS_PATH=\"$(aliaspath)\" \
---DLIBDIR=\"$(libdir)\" -DIN_LIBINTL \
-+-DLIBDIR=\"$(prefix)/libdata\" -DIN_LIBINTL \
+--DLIBDIR=\"$(libdir)\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL \
++-DLIBDIR=\"$(prefix)/libdata\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL \
  -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"$(libdir)\" -DNO_XMALLOC \
- -Dset_relocation_prefix=libintl_set_relocation_prefix \
- -Drelocate=libintl_relocate \
-@@ -154,7 +154,7 @@
- libintl.la libgnuintl.la: $(OBJECTS)
- 	$(LIBTOOL) --mode=link \
+@@ -191,3 +191,3 @@
  	  $(CC) $(CPPFLAGS) $(CFLAGS) $(XCFLAGS) $(LDFLAGS) -o $@ \
--	  $(OBJECTS) @LTLIBICONV@ @INTL_MACOSX_LIBS@ $(LIBS) -lc \
-+	  $(OBJECTS) @LTLIBICONV@ @INTL_MACOSX_LIBS@ $(LIBS) \
+-	  $(OBJECTS) @LTLIBICONV@ @INTL_MACOSX_LIBS@ $(LIBS) @LTLIBTHREAD@ -lc \
++	  $(OBJECTS) @LTLIBICONV@ @INTL_MACOSX_LIBS@ $(LIBS) @LTLIBTHREAD@ \
  	  -version-info $(LTV_CURRENT):$(LTV_REVISION):$(LTV_AGE) \
- 	  -rpath $(libdir) \
- 	  -no-undefined
-@@ -164,7 +164,7 @@
- # according to the libtool documentation, section "Library interface versions".
- # Maintainers of other packages that include the intl directory must *not*
- # change these values.
--LTV_CURRENT=7
-+LTV_CURRENT=6
- LTV_REVISION=3
- LTV_AGE=4
- 
-@@ -288,22 +288,6 @@
- 	  : ; \
- 	fi
+@@ -346,18 +346,2 @@
  	if test '@USE_INCLUDED_LIBINTL@' = yes; then \
--	  test @GLIBC21@ != no || $(mkinstalldirs) $(DESTDIR)$(libdir); \
+-	  test @GLIBC21@ != no || $(mkdir_p) $(DESTDIR)$(libdir); \
 -	  temp=$(DESTDIR)$(libdir)/t-charset.alias; \
 -	  dest=$(DESTDIR)$(libdir)/charset.alias; \
 -	  if test -f $(DESTDIR)$(libdir)/charset.alias; then \
@@ -47,12 +28,8 @@
 -	      rm -f $$temp; \
 -	    fi; \
 -	  fi; \
- 	  $(mkinstalldirs) $(DESTDIR)$(localedir); \
- 	  test -f $(DESTDIR)$(localedir)/locale.alias \
- 	    && orig=$(DESTDIR)$(localedir)/locale.alias \
-@@ -389,9 +373,9 @@
- 	  : ; \
- 	fi
+ 	  $(mkdir_p) $(DESTDIR)$(localedir); \
+@@ -447,5 +431,5 @@
  	if test '@USE_INCLUDED_LIBINTL@' = yes; then \
 -	  if test -f $(DESTDIR)$(libdir)/charset.alias; then \
 -	    temp=$(DESTDIR)$(libdir)/t-charset.alias; \
@@ -61,5 +38,3 @@
 +	    temp=$(DESTDIR)$(prefix)/libdata/t-charset.alias; \
 +	    dest=$(DESTDIR)$(prefix)/libdata/charset.alias; \
  	    sed -f ref-del.sed $$dest > $$temp; \
- 	    if grep '^# Packages using this file: $$' $$temp > /dev/null; then \
- 	      rm -f $$dest; \
