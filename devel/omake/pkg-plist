@@ -1,4 +1,5 @@
 bin/cvs_realclean
+bin/ocamldep-omake
 bin/omake
 bin/osh
 lib/omake/OMakefile.default
@@ -9,12 +10,63 @@ lib/omake/build/C.om
 lib/omake/build/Common.om
 lib/omake/build/LaTeX.om
 lib/omake/build/OCaml.om
+lib/omake/build/svn_realclean.om
 lib/omake/configure/Configure.om
+lib/omake/configure/X.om
 lib/omake/configure/fam.om
 lib/omake/configure/ncurses.om
 lib/omake/configure/readline.om
+lib/omake/configure/snprintf.om
 lib/omake/parse/C/Lex.om
 lib/omake/parse/C/Parse.om
+%%PORTDOCS%%%%DOCSDIR%%/announce.txt
+%%PORTDOCS%%%%DOCSDIR%%/changelog.html
+%%PORTDOCS%%%%DOCSDIR%%/contents_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/download.html
+%%PORTDOCS%%%%DOCSDIR%%/images/announce.ps
+%%PORTDOCS%%%%DOCSDIR%%/images/announce.tex
+%%PORTDOCS%%%%DOCSDIR%%/images/grid.ai
+%%PORTDOCS%%%%DOCSDIR%%/images/omake-manual.ai
+%%PORTDOCS%%%%DOCSDIR%%/images/omake-manual.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/omake.ai
+%%PORTDOCS%%%%DOCSDIR%%/images/omake.eps
+%%PORTDOCS%%%%DOCSDIR%%/images/omake.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/omake.psd
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/next_motif.gif
+%%PORTDOCS%%%%DOCSDIR%%/omake-all-index.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-autoconf.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-base.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-build-examples.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-build.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-contents.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-detail.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-doc.css
+%%PORTDOCS%%%%DOCSDIR%%/omake-doc.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-fun-index.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-grammar.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-language-examples.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-language.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-obj-index.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-option-index.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-options.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-pervasives.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-quickstart.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-references.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-rules.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-shell.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-system.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-target-index.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-toc.html
+%%PORTDOCS%%%%DOCSDIR%%/omake-var-index.html
+%%PORTDOCS%%%%DOCSDIR%%/omake.html
+%%PORTDOCS%%%%DOCSDIR%%/omake_lists.html
+%%PORTDOCS%%%%DOCSDIR%%/omake_papers.html
+%%PORTDOCS%%%%DOCSDIR%%/omake_users.html
+%%PORTDOCS%%%%DOCSDIR%%/osh.html
+%%PORTDOCS%%%%DOCSDIR%%/previous_motif.gif
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/omake/parse/C
 @dirrm lib/omake/parse
 @dirrm lib/omake/configure

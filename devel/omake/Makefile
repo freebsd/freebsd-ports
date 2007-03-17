@@ -7,24 +7,31 @@
 #
 
 PORTNAME=	omake
-PORTVERSION=	0.9.6.9.1
+PORTVERSION=	0.9.8.1
 CATEGORIES=	devel
 MASTER_SITES=	http://omake.metaprl.org/downloads/ \
 		http://sunner.elcomnet.ru/~stas/
-DISTNAME=	omake-0.9.6.9-1
+DISTNAME=	omake-0.9.8.1-1
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A flexible build system
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.[0-9]*$//}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=yes
 
 FETCH_CMD?=	/usr/bin/fetch -Rr
 
-MAN1=	omake-base.1 omake-doc.1 omake-language.1 omake-options.1 \
-	omake-pervasives.1 omake-quickstart.1 omake-root.1 omake-rules.1 \
-	omake-shell.1 omake-system.1 omake.1 osh.1
+# XXX: exists untill it will be committed to bsd.port.mk
+COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
+		2>&1) && \
+		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} $$1 && \
+		${FIND} $$1/ -type d -exec ${CHMOD} 755 {} \; && \
+		${FIND} $$1/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;' --
+
+.if !defined(NOPORTDOCS)
+INFO=		omake-doc
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -56,6 +63,14 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		"s,^(READLINE_ENABLED[[:space:]]*=[[:space:]]*).*,\1false," \
 		${WRKSRC}/mk/make_config ${WRKSRC}/mk/defaults
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/
+	@(cd ${WRKSRC}/doc/html/ && ${COPYTREE_SHARE} \* "${DOCSDIR}/")
+	@(cd ${WRKSRC}/doc/info/ \
+		&& ${COPYTREE_SHARE} \* "${PREFIX}/${INFO_PATH}/")
 .endif
 
 .include <bsd.port.post.mk>
