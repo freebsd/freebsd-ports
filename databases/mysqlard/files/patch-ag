@@ -2,7 +2,7 @@
 +++ src/mysqlar_graph.sh	Tue Aug  1 12:53:48 2006
 @@ -1,4 +1,4 @@
 -#!/bin/bash
-+#!/usr/local/bin/bash
++#!/bin/sh
  #
  #  $Id: mysqlar_graph.sh 40 2006-01-20 20:26:11Z dewitge $
  #	

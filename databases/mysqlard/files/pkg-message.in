@@ -8,7 +8,7 @@ mysql> FLUSH PRIVILEGES;
 
 2) Add the mysqlard crontab to root's crontab:
 
-*/5 * * * * hourly=1 daily=1 weekly=1 monthly=1 \
+*/5 * * * * /usr/bin/env hourly=1 daily=1 weekly=1 monthly=1 \
 %%PREFIX%%/bin/mysqlar_graph > /dev/null
 
 3) Add a line like this to your apache's httpd.conf:
