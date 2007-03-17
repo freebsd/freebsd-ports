@@ -8,7 +8,7 @@
 
 PORTNAME=	qtpixmap
 PORTVERSION=	0.28
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.cpdrummond.freeuk.com/
 DISTNAME=	QtPixmap-${PORTVERSION}
@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/7043-//}
 USE_AUTOTOOLS=	libtool:15
 
-.if !defined(WITHOUT_GTK1)
+.if defined(WITH_GTK1)
 USE_GNOME+=	gtk12 imlib
 PLIST_SUB=	GTK1=""
 .else
