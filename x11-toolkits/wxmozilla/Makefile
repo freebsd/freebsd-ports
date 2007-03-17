@@ -29,10 +29,6 @@ USE_LDCONFIG=	yes
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
 
-.if ${OSVERSION} < 500000
-IGNORE=	does not build on 4.X
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|mozilla-nspr|nspr|g' \
 		${WRKSRC}/configure
