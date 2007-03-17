@@ -2,7 +2,7 @@
 +++ src/mysqlard.server.sh	Tue Aug  1 11:11:29 2006
 @@ -1,4 +1,4 @@
 -#!/bin/bash
-+#!/usr/local/bin/bash
++#!/bin/sh
  #
  #  $Id: mysqlard.server.sh 40 2006-01-20 20:26:11Z dewitge $
  #	

@@ -2,7 +2,7 @@
 +++ src/mysqlar.weekly.sh	Tue Aug  1 11:11:09 2006
 @@ -1,4 +1,4 @@
 -#!/bin/bash
-+#!/usr/local/bin/bash
++#!/bin/sh
  #
  #  $Id: mysqlar.weekly.sh 35 2004-03-10 15:48:41Z dewitge $
  #	

@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash
+#!/bin/sh
 #
 #  $Id: mysqlard.server.sh 40 2006-01-20 20:26:11Z dewitge $
 #	
@@ -16,7 +16,7 @@
 . %%RC_SUBR%%
 
 # Source the config script
-if [[ "$datadir" == "" ]] ; then
+if [ -z "$datadir" ] ; then
 	echo Loading defaultsettings
 	. %%PREFIX%%/etc/mysqlard.cnf
 fi
@@ -44,11 +44,11 @@ queryfile=${queryfile:="${datadir}/queries.rrd"}
 slavefile=${slavefile:="${datadir}/slave.rrd"}
 
 slaveopt=
-if [[ "$slave" != "" ]]; then
+if [ -n "$slave" ]; then
   slaveopt=-L
 fi
 
-if [[ "$MYSQLHOST" != "" ]] ; then
+if [ -n "$MYSQLHOST" ] ; then
   MYSQLHOST=--host=$MYSQLHOST
 fi
 
@@ -63,7 +63,7 @@ avgsamps () {
 }
 archives () {
   arch=$(($1 / $2))
-  if [[ $(($2 * ${arch} * $3)) -lt $4 ]]
+  if [ $(($2 * ${arch} * $3)) -lt $4 ]
   then
     arch=$((${arch} + 1))
   fi
