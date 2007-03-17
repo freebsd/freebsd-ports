@@ -213,8 +213,8 @@
     SUBDIR += iwebcal
     SUBDIR += jakarta-jmeter
     SUBDIR += jakarta-tomcat4
-    SUBDIR += jakarta-tomcat41
     SUBDIR += jakarta-tomcat5
+    SUBDIR += tomcat41
     SUBDIR += tomcat55
     SUBDIR += tomcat6
     SUBDIR += jdresolve

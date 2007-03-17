@@ -1,14 +1,8 @@
 @comment $FreeBSD$
-@unexec if cmp -s %D/%%T%%/conf/server.xml %D/%%T%%/conf/server.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/server.xml; else echo If permanently deleting this package, %D/%%T%%/conf/server.xml must be removed manually; fi
-@unexec if cmp -s %D/%%T%%/conf/jk2.properties %D/%%T%%/conf/jk2.properties.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/jk2.properties; else echo If permanently deleting this package, %D/%%T%%/conf/jk2.properties must be removed manually; fi
-@unexec if cmp -s %D/%%T%%/conf/server-noexamples.xml.config %D/%%T%%/conf/server-noexamples.xml.config.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/server-noexamples.xml.config; else echo If permanently deleting this package, %D/%%T%%/conf/server-noexamples.xml.config must be removed manually; fi
-@unexec if cmp -s %D/%%T%%/conf/catalina.policy %D/%%T%%/conf/catalina.policy.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/catalina.policy; else echo If permanently deleting this package, %D/%%T%%/conf/server.xml must be removed manually; fi
-@unexec if cmp -s %D/%%T%%/conf/tomcat-users.xml %D/%%T%%/conf/tomcat-users.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/tomcat-users.xml; else echo If permanently deleting this package, %D/%%T%%/conf/tomcat-users.xml must be removed manually; fi
-@unexec if cmp -s %D/%%T%%/conf/web.xml %D/%%T%%/conf/web.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/web.xml; else echo If permanently deleting this package, %D/%%T%%/conf/web.xml must be removed manually; fi
+%%T%%/BUILDING.txt
 %%T%%/LICENSE
 %%T%%/README.txt
 %%T%%/RELEASE-NOTES-4.1.txt
-%%T%%/RELEASE-PLAN-4.1.txt
 %%T%%/RUNNING.txt
 %%T%%/bin/bootstrap.jar
 %%T%%/bin/catalina.sh
@@ -22,14 +16,14 @@
 %%T%%/bin/tomcat-jni.jar
 %%T%%/bin/tool-wrapper.sh
 %%T%%/common/endorsed/xercesImpl.jar
-%%T%%/common/endorsed/xmlParserAPIs.jar
+%%T%%/common/endorsed/xml-apis.jar
 %%T%%/common/lib/activation.jar
 %%T%%/common/lib/ant-launcher.jar
 %%T%%/common/lib/ant.jar
-%%T%%/common/lib/commons-collections.jar
-%%T%%/common/lib/commons-dbcp-1.1.jar
-%%T%%/common/lib/commons-logging-api.jar
-%%T%%/common/lib/commons-pool-1.1.jar
+%%T%%/common/lib/commons-collections-3.2.jar
+%%T%%/common/lib/commons-dbcp-1.2.1.jar
+%%T%%/common/lib/commons-logging-api-1.1.jar
+%%T%%/common/lib/commons-pool-1.3.jar
 %%T%%/common/lib/jasper-compiler.jar
 %%T%%/common/lib/jasper-runtime.jar
 %%T%%/common/lib/jdbc2_0-stdext.jar
@@ -41,23 +35,30 @@
 %%T%%/common/lib/naming-resources.jar
 %%T%%/common/lib/servlet.jar
 %%T%%/common/lib/tools.jar
-%%T%%/conf/catalina.policy.%%CONF_EXT%%
-%%T%%/conf/jk2.properties.%%CONF_EXT%%
-%%T%%/conf/server-noexamples.xml.config.%%CONF_EXT%%
-%%T%%/conf/server.xml.%%CONF_EXT%%
-%%T%%/conf/tomcat-users.xml.%%CONF_EXT%%
-%%T%%/conf/web.xml.%%CONF_EXT%%
+%%T%%/conf/catalina.policy
+%%T%%/conf/catalina.policy.sample
+%%T%%/conf/jk2.properties
+%%T%%/conf/jk2.properties.sample
+%%T%%/conf/server-noexamples.xml.config
+%%T%%/conf/server-noexamples.xml.config.sample
+%%T%%/conf/server.xml
+%%T%%/conf/server.xml.sample
+%%T%%/conf/tomcat-users.xml
+%%T%%/conf/tomcat-users.xml.sample
+%%T%%/conf/web.xml
+%%T%%/conf/web.xml.sample
 %%T%%/logs/stderr.log
 %%T%%/logs/stdout.log
 %%T%%/server/lib/catalina-ant.jar
 %%T%%/server/lib/catalina.jar
 %%T%%/server/lib/commons-beanutils.jar
-%%T%%/server/lib/commons-digester.jar
-%%T%%/server/lib/commons-fileupload-1.0.jar
-%%T%%/server/lib/commons-logging.jar
+%%T%%/server/lib/commons-digester-1.7.jar
+%%T%%/server/lib/commons-fileupload-1.1.1.jar
+%%T%%/server/lib/commons-io-1.2.jar
+%%T%%/server/lib/commons-logging-1.1.jar
 %%T%%/server/lib/commons-modeler.jar
 %%T%%/server/lib/jaas.jar
-%%T%%/server/lib/jakarta-regexp-1.3.jar
+%%T%%/server/lib/jakarta-regexp-1.4.jar
 %%T%%/server/lib/mx4j-jmx.jar
 %%T%%/server/lib/mx4j.license
 %%T%%/server/lib/servlets-cgi.renametojar
@@ -72,8 +73,7 @@
 %%T%%/server/lib/tomcat-jk.jar
 %%T%%/server/lib/tomcat-jk2.jar
 %%T%%/server/lib/tomcat-util.jar
-%%T%%/server/lib/tomcat-warp.jar
-%%T%%/server/webapps/admin/WEB-INF/classes/filters/SetCharacterEncodingFilter.class
+%%T%%/server/lib/tomcat4-coyote.jar
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/ActionTag.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/ActionsTag.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/ApplicationLocales.class
@@ -126,6 +126,7 @@
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/defaultcontext/DeleteDefaultContextsAction.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/defaultcontext/EditDefaultContextAction.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/defaultcontext/SaveDefaultContextAction.class
+%%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/filters/SetCharacterEncodingFilter.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/host/AddAliasAction.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/host/AddHostAction.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/host/AliasForm.class
@@ -150,6 +151,7 @@
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/logger/LoggersForm.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/logger/SaveLoggerAction.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/realm/AddRealmAction.class
+%%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/realm/DataSourceRealmForm.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/realm/DeleteRealmAction.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/realm/DeleteRealmForm.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/realm/DeleteRealmsAction.class
@@ -159,6 +161,7 @@
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/realm/MemoryRealmForm.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/realm/RealmForm.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/realm/RealmsForm.class
+%%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/realm/SaveDataSourceRealmAction.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/realm/SaveJDBCRealmAction.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/realm/SaveJNDIRealmAction.class
 %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/realm/SaveMemoryRealmAction.class
@@ -305,6 +308,7 @@
 %%T%%/server/webapps/admin/logger/logger.jsp
 %%T%%/server/webapps/admin/logger/loggers.jsp
 %%T%%/server/webapps/admin/login.jsp
+%%T%%/server/webapps/admin/realm/dataSourceRealm.jsp
 %%T%%/server/webapps/admin/realm/jdbcRealm.jsp
 %%T%%/server/webapps/admin/realm/jndiRealm.jsp
 %%T%%/server/webapps/admin/realm/memoryRealm.jsp
@@ -366,14 +370,14 @@
 %%T%%/server/webapps/admin/valve/valves.jsp
 %%T%%/server/webapps/manager/WEB-INF/web.xml
 %%T%%/server/webapps/manager/html-manager-howto.html
-%%T%%/server/webapps/manager/images/jakarta-logo.gif
+%%T%%/server/webapps/manager/images/asf-logo.gif
 %%T%%/server/webapps/manager/images/tomcat.gif
 %%T%%/server/webapps/manager/images/void.gif
 %%T%%/server/webapps/manager/manager-howto.html
 %%T%%/temp/README.txt
 %%T%%/webapps/ROOT/WEB-INF/web.xml
+%%T%%/webapps/ROOT/asf-logo-wide.gif
 %%T%%/webapps/ROOT/index.jsp
-%%T%%/webapps/ROOT/jakarta-banner.gif
 %%T%%/webapps/ROOT/tomcat-power.gif
 %%T%%/webapps/ROOT/tomcat.gif
 %%T%%/webapps/admin.xml
@@ -691,24 +695,6 @@
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/package-frame.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/package-summary.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/package-tree.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/Constants.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpCertificates.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpConfigurationHandler.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpConnection.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpConnector.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpEngine.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpHost.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpLogger.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpPacket.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpRequest.Stream.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpRequest.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpRequestHandler.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpResponse.Stream.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpResponse.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpSSLData.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/package-frame.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/package-summary.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/package-tree.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedGetInitParameter.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedGetInitParameterNames.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core/ApplicationContext.PrivilegedGetNamedDispatcher.html
@@ -890,6 +876,7 @@
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/CatalinaManagerMBean.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/CatalinaService.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/ClassLoaderFactory.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/ConnectorCreateRule.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/Constants.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/ContextConfig.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/ContextRuleSet.html
@@ -907,6 +894,7 @@
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/NamingRuleSet.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/PasswdUserDatabase.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/SecurityClassLoad.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/SetAllPropertiesRule.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/TldRuleSet.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/Tool.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/UserConfig.html
@@ -1069,9 +1057,11 @@
 %%T%%/webapps/tomcat-docs/catalina/funcspecs/printer/mbean-names.html
 %%T%%/webapps/tomcat-docs/cgi-howto.html
 %%T%%/webapps/tomcat-docs/class-loader-howto.html
+%%T%%/webapps/tomcat-docs/config/ajp13.html
 %%T%%/webapps/tomcat-docs/config/connectors.html
 %%T%%/webapps/tomcat-docs/config/context.html
 %%T%%/webapps/tomcat-docs/config/coyote.html
+%%T%%/webapps/tomcat-docs/config/coyotejk.html
 %%T%%/webapps/tomcat-docs/config/defaultcontext.html
 %%T%%/webapps/tomcat-docs/config/engine.html
 %%T%%/webapps/tomcat-docs/config/globalresources.html
@@ -1083,9 +1073,11 @@
 %%T%%/webapps/tomcat-docs/config/loader.html
 %%T%%/webapps/tomcat-docs/config/logger.html
 %%T%%/webapps/tomcat-docs/config/manager.html
+%%T%%/webapps/tomcat-docs/config/printer/ajp13.html
 %%T%%/webapps/tomcat-docs/config/printer/connectors.html
 %%T%%/webapps/tomcat-docs/config/printer/context.html
 %%T%%/webapps/tomcat-docs/config/printer/coyote.html
+%%T%%/webapps/tomcat-docs/config/printer/coyotejk.html
 %%T%%/webapps/tomcat-docs/config/printer/defaultcontext.html
 %%T%%/webapps/tomcat-docs/config/printer/engine.html
 %%T%%/webapps/tomcat-docs/config/printer/globalresources.html
@@ -1110,7 +1102,7 @@
 %%T%%/webapps/tomcat-docs/config/valve.html
 %%T%%/webapps/tomcat-docs/config/webapp.html
 %%T%%/webapps/tomcat-docs/html-manager-howto.html
-%%T%%/webapps/tomcat-docs/images/jakarta-logo.gif
+%%T%%/webapps/tomcat-docs/images/asf-logo.gif
 %%T%%/webapps/tomcat-docs/images/printer.gif
 %%T%%/webapps/tomcat-docs/images/tomcat.gif
 %%T%%/webapps/tomcat-docs/images/void.gif
@@ -1178,6 +1170,7 @@
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/compiler/ServletWriter.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/compiler/TagConstants.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/compiler/TagLibraryInfoImpl.html
+%%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/compiler/TextOptimizer.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/compiler/TldLocationsCache.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/compiler/Validator.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/compiler/package-frame.html
@@ -1239,58 +1232,61 @@
 %%T%%/webapps/tomcat-docs/jasper/docs/api/resources/inherit.gif
 %%T%%/webapps/tomcat-docs/jasper/docs/api/serialized-form.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/stylesheet.css
-%%T%%/webapps/tomcat-docs/jk2/common/AJPv13-extensions-proposal.html
-%%T%%/webapps/tomcat-docs/jk2/common/AJPv13.html
-%%T%%/webapps/tomcat-docs/jk2/common/doccontrib.html
-%%T%%/webapps/tomcat-docs/jk2/common/printer/AJPv13-extensions-proposal.html
-%%T%%/webapps/tomcat-docs/jk2/common/printer/AJPv13.html
-%%T%%/webapps/tomcat-docs/jk2/common/printer/doccontrib.html
-%%T%%/webapps/tomcat-docs/jk2/common/printer/tools.html
-%%T%%/webapps/tomcat-docs/jk2/common/tools.html
-%%T%%/webapps/tomcat-docs/jk2/faq.html
-%%T%%/webapps/tomcat-docs/jk2/images/corner.gif
-%%T%%/webapps/tomcat-docs/jk2/images/jakarta.gif
-%%T%%/webapps/tomcat-docs/jk2/images/jk2.gif
-%%T%%/webapps/tomcat-docs/jk2/images/jk2.png
-%%T%%/webapps/tomcat-docs/jk2/images/mod_jk.jpg
-%%T%%/webapps/tomcat-docs/jk2/images/pixel.gif
-%%T%%/webapps/tomcat-docs/jk2/images/tomcat.ico
-%%T%%/webapps/tomcat-docs/jk2/index.html
-%%T%%/webapps/tomcat-docs/jk2/jk/aphowto.html
-%%T%%/webapps/tomcat-docs/jk2/jk/domhowto.html
-%%T%%/webapps/tomcat-docs/jk2/jk/iishowto.html
-%%T%%/webapps/tomcat-docs/jk2/jk/neshowto.html
-%%T%%/webapps/tomcat-docs/jk2/jk/printer/aphowto.html
-%%T%%/webapps/tomcat-docs/jk2/jk/printer/domhowto.html
-%%T%%/webapps/tomcat-docs/jk2/jk/printer/iishowto.html
-%%T%%/webapps/tomcat-docs/jk2/jk/printer/neshowto.html
-%%T%%/webapps/tomcat-docs/jk2/jk/printer/quickhowto.html
-%%T%%/webapps/tomcat-docs/jk2/jk/printer/workershowto.html
-%%T%%/webapps/tomcat-docs/jk2/jk/quickhowto.html
-%%T%%/webapps/tomcat-docs/jk2/jk/workershowto.html
-%%T%%/webapps/tomcat-docs/jk2/jk2/confighowto.html
-%%T%%/webapps/tomcat-docs/jk2/jk2/configtc.html
-%%T%%/webapps/tomcat-docs/jk2/jk2/configtccom.html
-%%T%%/webapps/tomcat-docs/jk2/jk2/configtcex.html
-%%T%%/webapps/tomcat-docs/jk2/jk2/configweb.html
-%%T%%/webapps/tomcat-docs/jk2/jk2/configwebcom.html
-%%T%%/webapps/tomcat-docs/jk2/jk2/configwebex.html
-%%T%%/webapps/tomcat-docs/jk2/jk2/davhowto.html
-%%T%%/webapps/tomcat-docs/jk2/jk2/installhowto.html
-%%T%%/webapps/tomcat-docs/jk2/jk2/printer/confighowto.html
-%%T%%/webapps/tomcat-docs/jk2/jk2/printer/configtc.html
-%%T%%/webapps/tomcat-docs/jk2/jk2/printer/configtccom.html
-%%T%%/webapps/tomcat-docs/jk2/jk2/printer/configtcex.html
-%%T%%/webapps/tomcat-docs/jk2/jk2/printer/configweb.html
-%%T%%/webapps/tomcat-docs/jk2/jk2/printer/configwebcom.html
-%%T%%/webapps/tomcat-docs/jk2/jk2/printer/configwebex.html
-%%T%%/webapps/tomcat-docs/jk2/jk2/printer/davhowto.html
-%%T%%/webapps/tomcat-docs/jk2/jk2/printer/installhowto.html
-%%T%%/webapps/tomcat-docs/jk2/jk2/printer/vhosthowto.html
-%%T%%/webapps/tomcat-docs/jk2/jk2/vhosthowto.html
-%%T%%/webapps/tomcat-docs/jk2/printer/faq.html
-%%T%%/webapps/tomcat-docs/jk2/printer/index.html
-%%T%%/webapps/tomcat-docs/jk2/style.css
+%%T%%/webapps/tomcat-docs/jk/changelog.html
+%%T%%/webapps/tomcat-docs/jk/common/ajpv13a.html
+%%T%%/webapps/tomcat-docs/jk/common/ajpv13ext.html
+%%T%%/webapps/tomcat-docs/jk/common/printer/ajpv13a.html
+%%T%%/webapps/tomcat-docs/jk/common/printer/ajpv13ext.html
+%%T%%/webapps/tomcat-docs/jk/common/printer/tools.html
+%%T%%/webapps/tomcat-docs/jk/common/tools.html
+%%T%%/webapps/tomcat-docs/jk/config/apache.html
+%%T%%/webapps/tomcat-docs/jk/config/iis.html
+%%T%%/webapps/tomcat-docs/jk/config/printer/apache.html
+%%T%%/webapps/tomcat-docs/jk/config/printer/iis.html
+%%T%%/webapps/tomcat-docs/jk/config/printer/workers.html
+%%T%%/webapps/tomcat-docs/jk/config/workers.html
+%%T%%/webapps/tomcat-docs/jk/faq.html
+%%T%%/webapps/tomcat-docs/jk/howto/apache.html
+%%T%%/webapps/tomcat-docs/jk/howto/doccontrib.html
+%%T%%/webapps/tomcat-docs/jk/howto/domino.html
+%%T%%/webapps/tomcat-docs/jk/howto/iis.html
+%%T%%/webapps/tomcat-docs/jk/howto/index.html
+%%T%%/webapps/tomcat-docs/jk/howto/loadbalancers.html
+%%T%%/webapps/tomcat-docs/jk/howto/nes.html
+%%T%%/webapps/tomcat-docs/jk/howto/printer/apache.html
+%%T%%/webapps/tomcat-docs/jk/howto/printer/doccontrib.html
+%%T%%/webapps/tomcat-docs/jk/howto/printer/domino.html
+%%T%%/webapps/tomcat-docs/jk/howto/printer/iis.html
+%%T%%/webapps/tomcat-docs/jk/howto/printer/index.html
+%%T%%/webapps/tomcat-docs/jk/howto/printer/loadbalancers.html
+%%T%%/webapps/tomcat-docs/jk/howto/printer/nes.html
+%%T%%/webapps/tomcat-docs/jk/howto/printer/quick.html
+%%T%%/webapps/tomcat-docs/jk/howto/printer/workers.html
+%%T%%/webapps/tomcat-docs/jk/howto/quick.html
+%%T%%/webapps/tomcat-docs/jk/howto/workers.html
+%%T%%/webapps/tomcat-docs/jk/images/add.gif
+%%T%%/webapps/tomcat-docs/jk/images/code.gif
+%%T%%/webapps/tomcat-docs/jk/images/design.gif
+%%T%%/webapps/tomcat-docs/jk/images/docs.gif
+%%T%%/webapps/tomcat-docs/jk/images/fix.gif
+%%T%%/webapps/tomcat-docs/jk/images/jakarta-logo.gif
+%%T%%/webapps/tomcat-docs/jk/images/printer.gif
+%%T%%/webapps/tomcat-docs/jk/images/tomcat.gif
+%%T%%/webapps/tomcat-docs/jk/images/update.gif
+%%T%%/webapps/tomcat-docs/jk/images/void.gif
+%%T%%/webapps/tomcat-docs/jk/index.html
+%%T%%/webapps/tomcat-docs/jk/news/20041100.html
+%%T%%/webapps/tomcat-docs/jk/news/20050101.html
+%%T%%/webapps/tomcat-docs/jk/news/20060101.html
+%%T%%/webapps/tomcat-docs/jk/news/printer/20041100.html
+%%T%%/webapps/tomcat-docs/jk/news/printer/20050101.html
+%%T%%/webapps/tomcat-docs/jk/news/printer/20060101.html
+%%T%%/webapps/tomcat-docs/jk/printer/changelog.html
+%%T%%/webapps/tomcat-docs/jk/printer/faq.html
+%%T%%/webapps/tomcat-docs/jk/printer/index.html
+%%T%%/webapps/tomcat-docs/jk/printer/proxy.html
+%%T%%/webapps/tomcat-docs/jk/proxy.html
+%%T%%/webapps/tomcat-docs/jk/style.css
 %%T%%/webapps/tomcat-docs/jndi-datasource-examples-howto.html
 %%T%%/webapps/tomcat-docs/jndi-resources-howto.html
 %%T%%/webapps/tomcat-docs/manager-howto.html
@@ -1479,14 +1475,8 @@
 %%T%%/webapps/webdav/index.html
 %%T%%/webapps/webdav/tomcat-power.gif
 %%T%%/webapps/webdav/tomcat.gif
-@exec mkdir %D/%%T%%/server/classes || true
-@exec mkdir %D/%%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp/admin/filters ||true
-@exec mkdir %D/%%T%%/shared || true
-@exec mkdir %D/%%T%%/shared/classes || true
-@exec mkdir %D/%%T%%/shared/lib || true
-@exec mkdir %D/%%T%%/work || true
-@exec mkdir %D/%%T%%/common/classes ||true
-@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%T%%/conf %D/%%T%%/logs %D/%%T%%/temp %D/%%T%%/work
+@dirrm share/nls/en_US.US-ASCII
+@dirrm share/nls/POSIX
 @dirrm %%T%%/work
 @dirrm %%T%%/webapps/webdav/WEB-INF
 @dirrm %%T%%/webapps/webdav
@@ -1503,15 +1493,17 @@
 @dirrm %%T%%/webapps/tomcat-docs/servletapi/javax
 @dirrm %%T%%/webapps/tomcat-docs/servletapi
 @dirrm %%T%%/webapps/tomcat-docs/printer
-@dirrm %%T%%/webapps/tomcat-docs/jk2/printer
-@dirrm %%T%%/webapps/tomcat-docs/jk2/jk2/printer
-@dirrm %%T%%/webapps/tomcat-docs/jk2/jk2
-@dirrm %%T%%/webapps/tomcat-docs/jk2/jk/printer
-@dirrm %%T%%/webapps/tomcat-docs/jk2/jk
-@dirrm %%T%%/webapps/tomcat-docs/jk2/images
-@dirrm %%T%%/webapps/tomcat-docs/jk2/common/printer
-@dirrm %%T%%/webapps/tomcat-docs/jk2/common
-@dirrm %%T%%/webapps/tomcat-docs/jk2
+@dirrm %%T%%/webapps/tomcat-docs/jk/printer
+@dirrm %%T%%/webapps/tomcat-docs/jk/news/printer
+@dirrm %%T%%/webapps/tomcat-docs/jk/news
+@dirrm %%T%%/webapps/tomcat-docs/jk/images
+@dirrm %%T%%/webapps/tomcat-docs/jk/howto/printer
+@dirrm %%T%%/webapps/tomcat-docs/jk/howto
+@dirrm %%T%%/webapps/tomcat-docs/jk/config/printer
+@dirrm %%T%%/webapps/tomcat-docs/jk/config
+@dirrm %%T%%/webapps/tomcat-docs/jk/common/printer
+@dirrm %%T%%/webapps/tomcat-docs/jk/common
+@dirrm %%T%%/webapps/tomcat-docs/jk
 @dirrm %%T%%/webapps/tomcat-docs/jasper/docs/api/resources
 @dirrm %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/xmlparser
 @dirrm %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/util
@@ -1550,7 +1542,6 @@
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/core
-@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector
@@ -1652,7 +1643,6 @@
 @dirrm %%T%%/server/webapps/admin/WEB-INF/classes/org/apache/webapp
 @dirrm %%T%%/server/webapps/admin/WEB-INF/classes/org/apache
 @dirrm %%T%%/server/webapps/admin/WEB-INF/classes/org
-@dirrm %%T%%/server/webapps/admin/WEB-INF/classes/filters
 @dirrm %%T%%/server/webapps/admin/WEB-INF/classes
 @dirrm %%T%%/server/webapps/admin/WEB-INF
 @dirrm %%T%%/server/webapps/admin

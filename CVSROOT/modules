@@ -5335,7 +5335,6 @@ jakarta-poi	ports/textproc/jakarta-poi
 jakarta-regexp	ports/java/jakarta-regexp
 jakarta-struts	ports/java/jakarta-struts
 jakarta-tomcat4	ports/www/jakarta-tomcat4
-jakarta-tomcat41	ports/www/jakarta-tomcat41
 jakarta-tomcat5	ports/www/jakarta-tomcat5
 jakelib2	ports/devel/jakelib2
 jalbum		ports/graphics/jalbum
@@ -14931,6 +14930,7 @@ tolua++		ports/lang/tolua++
 tolua4		ports/lang/tolua4
 tomatoes	ports/games/tomatoes
 tomboy		ports/deskutils/tomboy
+tomcat41	ports/www/tomcat41
 tomcat55	ports/www/tomcat55
 tomcat6		ports/www/tomcat6
 tome		ports/games/tome
