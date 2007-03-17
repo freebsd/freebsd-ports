@@ -18,6 +18,8 @@ COMMENT=	Python adaptor for the poker-eval toolkit
 
 LIB_DEPENDS=	poker-eval.1:${PORTSDIR}/games/poker-eval
 
+BROKEN=		Configure fails
+
 USE_GNOME=	gnometarget pkgconfig
 USE_PYTHON=	2.3+
 GNU_CONFIGURE=	yes
