@@ -7,6 +7,8 @@ skin	forecastfox	classic/1.0	jar:chrome/forecastfox.jar!/skin/classic/forecastfo
 
 locale	forecastfox	en-US	jar:chrome/forecastfox.jar!/locale/en-US/forecastfox/
 
+locale	forecastfox	bg-BG	jar:chrome/forecastfox.jar!/locale/bg-BG/forecastfox/
+
 locale	forecastfox	ca-AD	jar:chrome/forecastfox.jar!/locale/ca-AD/forecastfox/
 
 locale	forecastfox	cs-CZ	jar:chrome/forecastfox.jar!/locale/cs-CZ/forecastfox/
@@ -15,11 +17,9 @@ locale	forecastfox	da-DK	jar:chrome/forecastfox.jar!/locale/da-DK/forecastfox/
 
 locale	forecastfox	de-DE	jar:chrome/forecastfox.jar!/locale/de-DE/forecastfox/
 
-locale	forecastfox	el-GR	jar:chrome/forecastfox.jar!/locale/el-GR/forecastfox/
-
 locale	forecastfox	es-ES	jar:chrome/forecastfox.jar!/locale/es-ES/forecastfox/
 
-locale	forecastfox	eu-ES	jar:chrome/forecastfox.jar!/locale/eu-ES/forecastfox/
+locale	forecastfox	fi-FI	jar:chrome/forecastfox.jar!/locale/fi-FI/forecastfox/
 
 locale	forecastfox	fr-FR	jar:chrome/forecastfox.jar!/locale/fr-FR/forecastfox/
 
@@ -27,9 +27,7 @@ locale	forecastfox	hu-HU	jar:chrome/forecastfox.jar!/locale/hu-HU/forecastfox/
 
 locale	forecastfox	it-IT	jar:chrome/forecastfox.jar!/locale/it-IT/forecastfox/
 
-locale	forecastfox	ja-JP	jar:chrome/forecastfox.jar!/locale/ja-JP/forecastfox/
-
-locale	forecastfox	mn-MN	jar:chrome/forecastfox.jar!/locale/mn-MN/forecastfox/
+locale	forecastfox	ko-KR	jar:chrome/forecastfox.jar!/locale/ko-KR/forecastfox/
 
 locale	forecastfox	nb-NO	jar:chrome/forecastfox.jar!/locale/nb-NO/forecastfox/
 
@@ -39,14 +37,16 @@ locale	forecastfox	pl-PL	jar:chrome/forecastfox.jar!/locale/pl-PL/forecastfox/
 
 locale	forecastfox	pt-BR	jar:chrome/forecastfox.jar!/locale/pt-BR/forecastfox/
 
+locale	forecastfox	ro-RO	jar:chrome/forecastfox.jar!/locale/ro-RO/forecastfox/
+
 locale	forecastfox	ru-RU	jar:chrome/forecastfox.jar!/locale/ru-RU/forecastfox/
 
 locale	forecastfox	sk-SK	jar:chrome/forecastfox.jar!/locale/sk-SK/forecastfox/
 
-locale	forecastfox	sl-SI	jar:chrome/forecastfox.jar!/locale/sl-SI/forecastfox/
-
 locale	forecastfox	sv-SE	jar:chrome/forecastfox.jar!/locale/sv-SE/forecastfox/
 
-locale	forecastfox	zh-CN	jar:chrome/forecastfox.jar!/locale/zh-CN/forecastfox/
+locale	forecastfox	tr-TR	jar:chrome/forecastfox.jar!/locale/tr-TR/forecastfox/
 
-locale	forecastfox	zh-TW	jar:chrome/forecastfox.jar!/locale/zh-TW/forecastfox/
+locale	forecastfox	uk-UA	jar:chrome/forecastfox.jar!/locale/uk-UA/forecastfox/
+
+locale	forecastfox	zh-CN	jar:chrome/forecastfox.jar!/locale/zh-CN/forecastfox/
