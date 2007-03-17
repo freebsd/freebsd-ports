@@ -1,23 +1,24 @@
---- mono/metadata/filewatcher.c.orig	Thu Dec  1 18:51:19 2005
-+++ mono/metadata/filewatcher.c	Sun Dec 18 01:54:10 2005
-@@ -99,9 +99,6 @@
+--- mono/metadata/filewatcher.c.orig	Fri Dec 29 19:52:48 2006
++++ mono/metadata/filewatcher.c	Fri Dec 29 20:25:18 2006
+@@ -44,9 +44,6 @@
  gint
  ves_icall_System_IO_FSW_SupportsFSW (void)
  {
 -#if HAVE_KQUEUE
 -	return 3;
 -#else
- 	GModule *fam_module;
+ 	MonoDl *fam_module;
  	gchar *filename;
  	int lib_used = 4; /* gamin */
-@@ -119,13 +116,19 @@
+@@ -76,14 +73,20 @@
  	}
  
  	if (fam_module == NULL)
 -		return 0;
 +		goto nofam;
  
- 	g_module_symbol (fam_module, "FAMNextEvent", (gpointer *) &FAMNextEvent);
+ 	err = mono_dl_symbol (fam_module, "FAMNextEvent", (gpointer *) &FAMNextEvent);
+ 	g_free (err);
  	if (FAMNextEvent == NULL)
 -		return 0;
 +		goto nofam;
