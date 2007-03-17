@@ -2870,3 +2870,4 @@ comms/mwavem||2007-03-13|Has expired: Broken on all supported versions of FreeBS
 chinese/big5fs||2007-03-14|Has expired: Use mount_cd9660(8), mount_msdosfs(8), or mount_ntfs(8) instead
 chinese/gbfs||2007-03-14|Has expired: Use mount_cd9660(8), mount_msdosfs(8), or mount_ntfs(8) instead
 audio/anthem||2007-03-16|Has expired: this software is not developed any more
+www/jakarta-tomcat41|www/tomcat41|2007-03-17|Renamed (no longer a Jakarta project)

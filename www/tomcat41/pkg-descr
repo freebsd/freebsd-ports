@@ -1,4 +1,4 @@
-Jakarta Tomcat is a web server written in 100% Pure Java. The
+Apache Tomcat is a web server written in 100% Pure Java. The
 Tomcat 4 branch is the reference implementation for the Java
 Servlet 2.3 and JavaServer Pages 1.2 technologies.
 
@@ -16,4 +16,4 @@ o Custom Ant tasks to interact with the manager application directly from
   build.xml scripts
 
 
-WWW: http://jakarta.apache.org/tomcat/
+WWW: http://tomcat.apache.org/
