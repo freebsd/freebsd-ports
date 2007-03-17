@@ -543,4 +543,4 @@ www/apache22/icons/world2.png
 @unexec rm -f %D/etc/apache22/httpd.conf.bak 2> /dev/null || true
 @dirrmtry etc/apache22/envvars.d
 @dirrmtry etc/apache22/extra
-@unexec rmdir %D/etc/apache22 2> /dev/null || echo "===> If you plan to do not reinstall apache22, you can safely remove %D/etc/apache22."
+@dirrmtry etc/apache22

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache22.sh.in,v 1.2 2007-01-13 12:13:12 clement Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/apache22/files/Attic/apache22.sh.in,v 1.3 2007-03-17 16:03:24 clement Exp $
 #
 
 # PROVIDE: apache22
@@ -91,7 +91,7 @@ else
 		if [ "x$1" != "xrestart" ]; then
 			for profile in ${apache22_profiles}; do
 				echo "===> apache22 profile: ${profile}"
-				%%PREFIX%%/etc/rc.d/apache22.sh $1 ${profile}
+				%%PREFIX%%/etc/rc.d/apache22%%RC_SUBR_SUFFIX%% $1 ${profile}
 				retcode="$?"
 				if [ "0${retcode}" -ne 0 ]; then
 					failed="${profile} (${retcode}) ${failed:-}"
