@@ -26,5 +26,6 @@ USE_AUTOTOOLS=	libtool:15
 
 post-patch:
 	${REINPLACE_CMD} -e "s,prefix)/plugins,prefix)/lib/browser_plugins," ${WRKSRC}/src/Makefile.in
+	${REINPLACE_CMD} -e "s,echo aout, echo elf," ${WRKSRC}/configure
 
 .include <bsd.port.mk>
