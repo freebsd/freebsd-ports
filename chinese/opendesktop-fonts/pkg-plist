@@ -1,3 +1,3 @@
-%%X11%%@unexec if cmp -s %%X11BASE%%/etc/fonts/local.conf %D/%%FONTSDIR%%/local.conf-sung; then rm -f %%X11BASE%%/etc/fonts/local.conf; fi
-%%FONTSDIR%%/local.conf-sung
-%%X11%%@exec cp %D/%%FONTSDIR%%/local.conf-sung %%X11BASE%%/etc/fonts/local.conf
+%%X11%%@unexec if cmp -s %%X11BASE%%/etc/fonts/local.conf %D/%%FONTSDIR%%/local.conf-odo; then rm -f %%X11BASE%%/etc/fonts/local.conf; fi
+%%FONTSDIR%%/local.conf-odo
+%%X11%%@exec cp %D/%%FONTSDIR%%/local.conf-odo %%X11BASE%%/etc/fonts/local.conf
