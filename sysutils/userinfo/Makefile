@@ -8,7 +8,8 @@
 PORTNAME=	userinfo
 PORTVERSION=	2.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	bjk
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show information about local users
