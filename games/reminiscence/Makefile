@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	REminiscence
-PORTVERSION=	0.1.8
-PORTREVISION=	1
+PORTVERSION=	0.1.9
 CATEGORIES=	games
-MASTER_SITES=	http://membres.lycos.fr/cyxdown/reminiscence/ \
+MASTER_SITES=	http://cyxdown.free.fr/reminiscence/ \
 		http://www.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@amdmi3.ru
@@ -20,6 +19,7 @@ USE_GMAKE=	yes
 USE_SDL=	sdl
 
 ALL_TARGET=	rs
+MAKE_ENV=	CXX="${CXX}"
 
 PORTDOCS=	README
 
