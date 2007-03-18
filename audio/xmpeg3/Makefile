@@ -19,7 +19,7 @@ RUN_DEPENDS=	amp:${PORTSDIR}/audio/amp \
 		wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 IGNORE=		does not work
-EXPIRATION_DATE=	2006-04-19
+EXPIRATION_DATE=	2007-04-19
 PLIST_FILES=	bin/xmpeg3
 
 WRKSRC=		${WRKDIR}/xmpeg3
