@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkpod
 PORTVERSION=	0.99.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	GUI for Apple iPods using GTK2
 
 LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag \
-		gpod.400:${PORTSDIR}/audio/libgpod
+		gpod.1:${PORTSDIR}/audio/libgpod
 RUN_DEPENDS=	mp3gain:${PORTSDIR}/audio/mp3gain \
 		iconv:${PORTSDIR}/converters/libiconv
 
@@ -42,14 +42,17 @@ LIB_DEPENDS+=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 
-pre-configure:
+pre-configure: .SILENT
 # install locale correctly (share dir instead of lib dir)
-	@${REINPLACE_CMD} -e 's|DATADIRNAME=lib|DATADIRNAME=share|' \
+	${REINPLACE_CMD} -e 's|DATADIRNAME=lib|DATADIRNAME=share|' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|(libdir)/locale|(datadir)/locale|' \
+	${REINPLACE_CMD} -e 's|(libdir)/locale|(datadir)/locale|' \
 		${WRKSRC}/po/Makefile.in.in
 # work-around a segfault when attempting to delete track from iPod
-	@${REINPLACE_CMD} '83,85d' ${WRKSRC}/src/confirmation.c
+	${REINPLACE_CMD} '83,85d' ${WRKSRC}/src/confirmation.c
+# catch up with recent libgpod update to version 0.4.2
+	${REINPLACE_CMD} -e 's|unk208|mediatype|g' ${WRKSRC}/src/file.c \
+		${WRKSRC}/src/file_itunesdb.c
 
 post-install:
 .if !defined(NOPORTDOCS)
