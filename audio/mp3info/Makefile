@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mp3info
-PORTVERSION=	0.8.4
-PORTREVISION=	2
+PORTVERSION=	0.8.5
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/mp3-utils/mp3info
+DISTNAME=	${PORTNAME}-${PORTVERSION}a
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	conrads@cox.net
@@ -25,10 +25,10 @@ MAN1=		mp3info.1
 ALL_TARGET=	doc mp3info
 
 .if ${HAVE_GNOME:Mgtk12}!=""
+PKGNAMESUFFIX=	-gtk
 USE_GNOME+=	gtk12
 ALL_TARGET+=	gmp3info
 PLIST_SUB+=	WITH_GTK=""
-PKGNAMESUFFIX=	-gtk
 .else
 PLIST_SUB+=	WITH_GTK="@comment "
 .endif
