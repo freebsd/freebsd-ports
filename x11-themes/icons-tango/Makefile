@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	icons-tango
-PORTVERSION=	0.7.2
-PORTREVISION=	3
+PORTVERSION=	0.8.0
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://tango-project.org/releases/ \
 		${MASTER_SITE_GENTOO}
@@ -23,5 +22,6 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/icon-name-mapping:${PORTSDIR}/x11-themes/ico
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	intlhack
+INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>
