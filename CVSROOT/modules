@@ -16430,6 +16430,7 @@ xrolo		ports/deskutils/xrolo
 xrootconsole	ports/x11/xrootconsole
 xrot		ports/games/xrot
 xrsh		ports/x11/xrsh
+xrsi		ports/x11/xrsi
 xrubik		ports/games/xrubik
 xsane		ports/graphics/xsane
 xsb		ports/lang/xsb
