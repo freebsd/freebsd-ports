@@ -51,6 +51,7 @@ IGNORE=		requires an active X session (and DISPLAY variable).  Please compile th
 .endif
 
 post-patch:
+	@${RM} ${WRKSRC}/lesson-files/bin/csound-play-harmonic-interval.sh.orig
 	@${GREP} -lR "/usr/bin/python" ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -e 's|/usr/bin/python|${SETENV} python|g'
 .for file in lessonfile_editor.py.in run-solfege.py.in
