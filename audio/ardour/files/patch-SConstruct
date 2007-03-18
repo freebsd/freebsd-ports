@@ -1,5 +1,5 @@
---- SConstruct.orig	Wed Jan 17 22:13:21 2007
-+++ SConstruct	Wed Jan 17 22:55:30 2007
+--- SConstruct.orig	Fri Mar 16 22:45:44 2007
++++ SConstruct	Sun Mar 18 09:53:00 2007
 @@ -38,7 +38,7 @@
      BoolOption('FPU_OPTIMIZATION', 'Build runtime checked assembler code', 1),
      BoolOption('LIBLO', 'Compile with support for liblo library', 1),
@@ -8,8 +8,8 @@
 +    PathOption('PREFIX', 'Set the install "prefix"', '/usr/local', PathOption.PathIsDirCreate),
      BoolOption('SURFACES', 'Build support for control surfaces', 1),
      BoolOption('SYSLIBS', 'USE AT YOUR OWN RISK: CANCELS ALL SUPPORT FROM ARDOUR AUTHORS: Use existing system versions of various libraries instead of internal ones', 0),
-     BoolOption('VERSIONED', 'Add revision information to ardour/gtk executable name inside the build directory', 0),
-@@ -655,13 +655,7 @@
+     BoolOption('UNIVERSAL', 'Compile as universal binary.  Requires that external libraries are already universal.', 0),
+@@ -660,13 +660,7 @@
  # prepend boiler plate optimization flags
  #
  
@@ -18,13 +18,13 @@
 -    "-fomit-frame-pointer",
 -    "-ffast-math",
 -    "-fstrength-reduce",
--    "-fno-strict-aliasing"
+-    "-pipe"
 -    ]
 +opt_flags[:0] = [ "%%CFLAGS%%" ];
  
  if env['DEBUG'] == 1:
      env.Append(CCFLAGS=" ".join (debug_flags))
-@@ -742,9 +736,9 @@
+@@ -754,9 +748,9 @@
      prep_libcheck(env, libraries['lo'])
  
      conf = Configure (libraries['lo'])
@@ -37,7 +37,7 @@
      
      libraries['lo'] = conf.Finish ()
  
-@@ -784,8 +778,10 @@
+@@ -796,8 +790,10 @@
      subst_dict['%MIDITAG%'] = "ardour"
      subst_dict['%MIDITYPE%'] = "coremidi"
  else:
@@ -50,7 +50,7 @@
  
  env = conf.Finish()
  
-@@ -1006,33 +1002,33 @@
+@@ -1021,33 +1017,33 @@
  # i18n support
  #
  
@@ -111,7 +111,7 @@
  
  if env['NLS'] == 1:
      env.Append(CCFLAGS="-DENABLE_NLS")
-@@ -1049,8 +1045,8 @@
+@@ -1064,8 +1060,8 @@
      subst_dict['%JACK_INPUT%'] = "coreaudio:Built-in Audio:in"
      subst_dict['%JACK_OUTPUT%'] = "coreaudio:Built-in Audio:out"
  else:
