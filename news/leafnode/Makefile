@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	leafnode
-DISTVERSION=	1.11.6.rc1
+DISTVERSION=	1.11.6
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED:S/$/:sourceforge/} \
-		http://osdn.dl.sourceforge.net/sourceforge/${PORTNAME}/:sourceforge \
 		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/ \
 		${MASTER_SITE_SUNSITE:S/$/:sunsite/}
 MASTER_SITE_SUBDIR=	${PORTNAME}/:sourceforge \
 			./:DEFAULT \
 			system/news/transport/:sunsite
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT,sourceforge,sunsite
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:sourceforge,sunsite,DEFAULT
 
 MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	NNTP package for offline news caching and reading
