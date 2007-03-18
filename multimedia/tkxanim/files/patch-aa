@@ -2,7 +2,7 @@
 +++ tkxanim	Sun Oct 24 13:16:35 1999
 @@ -1,4 +1,4 @@
 -#!/usr/bin/wish -f
-+#!CHANGEME/bin/wish8.2 -f
++#!CHANGEME/bin/wish8.4 -f
  
  # tkxanim v 0.43
  # Aaron Faby <aaron@yourlink.net>
