@@ -17,5 +17,5 @@ to /etc/devfs.conf:
 	
 Please refer to the online documentation for additional information.
 
-%%MASTER_SITES%%
+http://www.zampanosbits.com/check_pf/
 

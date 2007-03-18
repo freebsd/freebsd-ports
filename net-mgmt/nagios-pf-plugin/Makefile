@@ -8,7 +8,8 @@
 PORTNAME=	nagios-pf-plugin
 PORTVERSION=	0.1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.zampanosbits.com/check_pf/
+MASTER_SITES=	http://www.zampanosbits.com/check_pf/ \
+		http://restek.wwu.edu/~kian/
 DISTNAME=	check_pf-${PORTVERSION}
 
 MAINTAINER=	kian.mohageri@gmail.com
@@ -19,8 +20,13 @@ NAGIOS_PLUGIN_DIR?=	libexec/nagios/
 PLIST_FILES=	${NAGIOS_PLUGIN_DIR}/check_pf
 PLIST_DIRS=	${NAGIOS_PLUGIN_DIR}
 SUB_FILES=	pkg-message
-SUB_LIST=	MASTER_SITES=${MASTER_SITES} \
-		NAGIOS_PLUGIN_DIR=${NAGIOS_PLUGIN_DIR}
+SUB_LIST=	NAGIOS_PLUGIN_DIR=${NAGIOS_PLUGIN_DIR}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 601000
+IGNORE=		requires FreeBSD 6.1 or later
+.endif
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -44,4 +50,4 @@ pre-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
