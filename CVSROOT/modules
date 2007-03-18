@@ -9361,6 +9361,7 @@ p5-Flickr-API	ports/www/p5-Flickr-API
 p5-Flickr-Upload	ports/www/p5-Flickr-Upload
 p5-Font-AFM	ports/x11-fonts/p5-Font-AFM
 p5-Font-TTF	ports/x11-fonts/p5-Font-TTF
+p5-Font-TTFMetrics	ports/x11-fonts/p5-Font-TTFMetrics
 p5-FormValidator-Simple	ports/textproc/p5-FormValidator-Simple
 p5-FreeBSD-Portindex	ports/ports-mgmt/p5-FreeBSD-Portindex
 p5-FreeBSD-Ports	ports/ports-mgmt/p5-FreeBSD-Ports
