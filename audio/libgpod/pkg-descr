@@ -7,7 +7,7 @@ was made self-contained with gtkpod V0.93, decision was made to put
 this code in a separate library so that other projects can benefit from
 it without duplicating code.
 
-libgpod supports playlists, smart playlists, playcounts, ratings, and
-podcasts.  Support for cover art and photos is currently being tested.
+libgpod supports playlists, smart playlists, playcounts, ratings, podcasts,
+cover art, audio and video.  Photo support is implemented as well.
 
 WWW: http://www.gtkpod.org/libgpod.html

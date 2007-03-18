@@ -1,7 +1,7 @@
 include/gpod-1.0/gpod/itdb.h
 @dirrm include/gpod-1.0/gpod
 @dirrm include/gpod-1.0
-lib/libgpod.so.400
+lib/libgpod.so.1
 lib/libgpod.so
 lib/libgpod.la
 lib/libgpod.a
@@ -14,21 +14,24 @@ share/locale/it/LC_MESSAGES/libgpod.mo
 share/locale/ja/LC_MESSAGES/libgpod.mo
 share/locale/sv/LC_MESSAGES/libgpod.mo
 %%PORTDOCS%%%%DOCSDIR%%/ch01.html
-%%PORTDOCS%%%%DOCSDIR%%/ch02.html
 %%PORTDOCS%%%%DOCSDIR%%/home.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/index.sgml
+%%PORTDOCS%%%%DOCSDIR%%/itunesdb.html
 %%PORTDOCS%%%%DOCSDIR%%/left.png
 %%PORTDOCS%%%%DOCSDIR%%/libgpod-Artwork.html
 %%PORTDOCS%%%%DOCSDIR%%/libgpod-Device.html
 %%PORTDOCS%%%%DOCSDIR%%/libgpod-File-handling-functions.html
 %%PORTDOCS%%%%DOCSDIR%%/libgpod-Low-level-functions.html
+%%PORTDOCS%%%%DOCSDIR%%/libgpod-Photo-database.html
 %%PORTDOCS%%%%DOCSDIR%%/libgpod-Playlists.html
+%%PORTDOCS%%%%DOCSDIR%%/libgpod-Smart-Playlists.html
 %%PORTDOCS%%%%DOCSDIR%%/libgpod-The-Itdb-iTunesDB-structure.html
 %%PORTDOCS%%%%DOCSDIR%%/libgpod-Time-handling.html
 %%PORTDOCS%%%%DOCSDIR%%/libgpod-Tracks.html
 %%PORTDOCS%%%%DOCSDIR%%/libgpod.devhelp
 %%PORTDOCS%%%%DOCSDIR%%/libgpod.devhelp2
+%%PORTDOCS%%%%DOCSDIR%%/photodb.html
 %%PORTDOCS%%%%DOCSDIR%%/up.png
 %%PORTDOCS%%%%DOCSDIR%%/right.png
 %%PORTDOCS%%%%DOCSDIR%%/style.css

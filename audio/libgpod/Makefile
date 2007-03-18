@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgpod
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkpod
@@ -37,7 +37,7 @@ post-extract: .SILENT
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's, docs$$,,' ${WRKSRC}/Makefile.in
 .endif
-	${REINPLACE_CMD} '19987,20009d' ${WRKSRC}/configure
+	${REINPLACE_CMD} '19491,19513d' ${WRKSRC}/configure
 .if defined(GCCVERSION)
 .   if ${GCCVERSION} < 030000
 	${REINPLACE_CMD} -e 's,\[\],[0],' ${WRKSRC}/src/db-itunes-parser.h
