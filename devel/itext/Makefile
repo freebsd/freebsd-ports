@@ -13,33 +13,28 @@ CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${EXTRA_JARS}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	stefan@FreeBSD.org
 COMMENT=	A Java-PDF Library
+
+BUILD_DEPENDS=	${JAVAJARDIR}/bcmail.jar:${PORTSDIR}/java/bouncycastle
+RUN_DEPENDS=	${JAVAJARDIR}/bcmail.jar:${PORTSDIR}/java/bouncycastle
 
 WRKSRC=		${WRKDIR}/src
 EXTRACT_AFTER_ARGS=	| (${MKDIR} ${WRKSRC} && ${TAR} -xf - -C ${WRKSRC})
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.xml
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.4+
 USE_ANT=	yes
 ALL_TARGET=	jar
+MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES
 .if !defined(NOPORTDOCS)
 ALL_TARGET+=	javadoc
 PORTDOCS=	*
 .endif
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
-EXTRA_JARS=	bcmail-jdk14-135.jar bcprov-jdk14-135.jar
-
-post-extract:
-	${MKDIR} ${WRKDIR}/build/bin
-.for jarfile in ${EXTRA_JARS}
-	${CP} ${DISTDIR}/${jarfile} ${WRKDIR}/build/bin
-.endfor
 
 do-install:
 	@${INSTALL_DATA} ${WRKDIR}/build/bin/iText.jar \
