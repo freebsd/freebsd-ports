@@ -279,7 +279,7 @@ gst_musicbrainz_PLIST_FILES=	${GST_LIB_DIR}/libgsttrm.so \
 gst_musicbrainz_DIST=	bad
 
 # neon
-gst_neon_LIB_DEPENDS+=	neon.25:${PORTSDIR}/www/neon
+gst_neon_LIB_DEPENDS+=	neon.26:${PORTSDIR}/www/neon
 gst_neon_CONFIGURE_ENV+=	NEON_CFLAGS="-I${LOCALBASE}/include/neon"
 gst_neon_PLIST_FILES=	${GST_LIB_DIR}/libgstneonhttpsrc.a \
 			${GST_LIB_DIR}/libgstneonhttpsrc.la \

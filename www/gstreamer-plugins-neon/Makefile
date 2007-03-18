@@ -4,8 +4,9 @@
 #
 # $FreeBSD$
 #    $MCom: ports/www/gstreamer-plugins-neon/Makefile,v 1.1 2006/07/06 19:32:35 ahze Exp $
+#
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www
 
 COMMENT=	Gstreamer neon plugin
