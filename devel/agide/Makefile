@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	agide
-PORTVERSION=	0.121
-PORTREVISION=	6
+PORTVERSION=	0.124
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	a-a-p
@@ -29,6 +28,15 @@ USE_WX=		2.4
 WX_COMPS=	python
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+IGNORE=		triggers python crash on startup. 
+.endif
+
+post-patch:
+	${REINPLACE_CMD} -e "s,share/man,man," ${WRKSRC}/main.aap
+
 pre-install:
 	@${SH} ${FILESDIR}/check_vim
 
@@ -36,4 +44,4 @@ do-install:
 	@cd ${WRKSRC} && \
 		${PREFIX}/bin/aap PREFIX="${PREFIX}" install
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
