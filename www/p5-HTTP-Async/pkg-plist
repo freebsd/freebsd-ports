@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Async/.packlist
+%%SITE_PERL%%/HTTP/Async.pm
+%%SITE_PERL%%/HTTP/Async/Polite.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Async
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP
+@dirrmtry %%SITE_PERL%%/HTTP/Async
+@dirrmtry %%SITE_PERL%%/HTTP
