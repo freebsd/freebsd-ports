@@ -7,7 +7,7 @@
 
 PORTNAME=	fireflyttf
 PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES?=	http://firefly.idv.tw/apt/firefly-font/ \
 		http://www.study-area.org/apt/firefly-font/
@@ -15,6 +15,8 @@ DISTNAME?=	fireflysung-${PORTVERSION}
 
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	Firefly TrueType Font is combine of two arphic sung fonts
+
+CONFLICTS=	zh-opendesktop-fonts-*
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
