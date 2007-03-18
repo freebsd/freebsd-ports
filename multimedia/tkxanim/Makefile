@@ -7,15 +7,16 @@
 
 PORTNAME=	tkxanim
 PORTVERSION=	0.43
-CATEGORIES=	multimedia tk82
+PORTREVISION=	1
+CATEGORIES=	multimedia tk84
 MASTER_SITES=	http://freshmeat.net/redir/tkxanim/10652/url_tgz/ \
 		http://freebsd.unixfreunde.de/sources/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk frontend to xanim
 
-RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82 \
-		xanim:${PORTSDIR}/multimedia/xanim
+RUN_DEPENDS=	xanim:${PORTSDIR}/multimedia/xanim
+USE_TK=		yes
 
 WRKSRC=		${WRKDIR}/Tkxanim
 
