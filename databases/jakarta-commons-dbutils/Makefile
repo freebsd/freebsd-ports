@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	commons-dbutils
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	commons/dbutils/source
 PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemoliu@gmail.com
 COMMENT=	JDBC helper library
 
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
@@ -24,7 +24,7 @@ USE_ANT=	yes
 
 MAKE_ARGS=	-cp ${JAVAJARDIR}/junit.jar
 ALL_TARGET=	dist
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
 .if !defined(NOPORTDOCS)
@@ -33,8 +33,7 @@ PORTDOCS=	LICENSE.txt api
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
-# strangely the jar archive from a 1.0 build contains 1.1 as version number
-	@${INSTALL_DATA} ${WRKSRC}/dist/commons-dbutils-1.1-dev.jar \
+	@${INSTALL_DATA} ${WRKSRC}/dist/commons-dbutils-1.1.jar \
 		${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [DONE]"
 .if !defined(NOPORTDOCS)
