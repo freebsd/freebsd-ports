@@ -1,4 +1,13 @@
-Firefly Truetype Font is combine of two arphic sung font and is embed
-9pt, 10pt, 11pt bitmaps.
+OpenDesktop Font is combine of two arphic Ming and Kai font with 
+12-pixel(9-point),  13-pixel(10-point), 14-pixel(10.5-point), 
+15-pixel(11-point), 16-pixel(12-point) embedded bitmap fonts
 
-WWW: http://www.study-area.org/apt/firefly-font/
+NOTICE: This Truetype font contains embedded bitmap fonts made
+        by firefly and is released as a whole
+        under the ARPHIC PUBLIC LICENSE.
+        There are also seperate bitmap fonts made by Firefly and
+        released under the GENERAL PUBLIC LICENSE (GPL):
+        ftp://ftp.opendesktop.org.tw/odp/ODOFonts/Bitmaps/
+
+
+WWW: http://opendesktop.org.tw
