@@ -1,3 +1,3 @@
-MD5 (apache2/mod-vhost-ldap-0.2.6.tar.bz2) = fcf5520d890382f5943a3943bebe2c22
-SHA256 (apache2/mod-vhost-ldap-0.2.6.tar.bz2) = 9d23c464f2ba4855e24f63127e8e594b79f48f9f75000ac75dd9176e947fa034
-SIZE (apache2/mod-vhost-ldap-0.2.6.tar.bz2) = 7519
+MD5 (apache2/mod-vhost-ldap-1.0.tar.bz2) = 2e01928896a24d1bdd6f9245f64c2a8f
+SHA256 (apache2/mod-vhost-ldap-1.0.tar.bz2) = e14713d736e79ca7760b8ca8bd32fd01e97ef0f14396bdea9373d7bfd8dd1f87
+SIZE (apache2/mod-vhost-ldap-1.0.tar.bz2) = 7862
