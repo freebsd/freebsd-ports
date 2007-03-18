@@ -16,7 +16,7 @@ cvs diff -u -b -N -kk -rZ-icap-2_6_merge_HEAD -ricap-2_6
 See http://devel.squid-cache.org/icap/ for further information
 about the ICAP client project.
 
-Patch last updated: 2007-03-04
+Patch last updated: 2007-03-18
 
 Note: the patchset needs manual adjustments once in a while because
       the ICAP developers develop against Squid-2-HEAD and not
@@ -2238,12 +2238,8 @@ diff -p -u -b -r1.7 -r1.6.8.2
  	if (define[$2] != "")
 Index: src/client_side.c
 ===================================================================
-RCS file: /cvsroot/squid/squid/src/client_side.c,v
-retrieving revision 1.154
-retrieving revision 1.89.4.14
-diff -p -u -b -r1.154 -r1.89.4.14
---- src/client_side.c	11 Dec 2006 00:53:11 -0000	1.154
-+++ src/client_side.c	12 Dec 2006 22:49:44 -0000	1.89.4.14
+--- src/client_side.c.orig	Wed Mar 14 15:11:26 2007
++++ src/client_side.c	Sun Mar 18 11:16:30 2007
 @@ -109,7 +109,7 @@ static const char *const crlf = "\r\n";
  static CWCB clientWriteComplete;
  static CWCB clientWriteBodyComplete;
@@ -2300,7 +2296,7 @@ diff -p -u -b -r1.154 -r1.89.4.14
  clientCreateStoreEntry(clientHttpRequest * h, method_t m, request_flags flags)
  {
      StoreEntry *e;
-@@ -638,6 +641,10 @@ clientRedirectDone(void *data, char *res
+@@ -640,6 +643,10 @@ clientRedirectDone(void *data, char *res
      if (urlgroup && *urlgroup)
  	http->request->urlgroup = xstrdup(urlgroup);
      clientInterpretRequestHeaders(http);
@@ -2311,7 +2307,7 @@ diff -p -u -b -r1.154 -r1.89.4.14
  #if HEADERS_LOG
      headersLog(0, 1, request->method, request);
  #endif
-@@ -1352,11 +1359,22 @@ httpRequestFree(void *data)
+@@ -1368,11 +1375,22 @@ httpRequestFree(void *data)
      /* Unlink us from the clients request list */
      dlinkDelete(&http->node, &http->conn->reqs);
      dlinkDelete(&http->active, &ClientActiveRequests);
@@ -2335,7 +2331,7 @@ diff -p -u -b -r1.154 -r1.89.4.14
  connStateFree(int fd, void *data)
  {
      ConnStateData *connState = data;
-@@ -1376,8 +1394,9 @@ connStateFree(int fd, void *data)
+@@ -1392,8 +1410,9 @@ connStateFree(int fd, void *data)
  	authenticateAuthUserRequestUnlock(connState->auth_user_request);
      connState->auth_user_request = NULL;
      authenticateOnCloseConnection(connState);
@@ -2346,7 +2342,7 @@ diff -p -u -b -r1.154 -r1.89.4.14
      if (connState->pinning.fd >= 0)
  	comm_close(connState->pinning.fd);
      cbdataFree(connState);
-@@ -1575,7 +1594,7 @@ clientSetKeepaliveFlag(clientHttpRequest
+@@ -1591,7 +1610,7 @@ clientSetKeepaliveFlag(clientHttpRequest
      }
  }
  
@@ -2355,7 +2351,7 @@ diff -p -u -b -r1.154 -r1.89.4.14
  clientCheckContentLength(request_t * r)
  {
      switch (r->method) {
-@@ -1594,7 +1613,7 @@ clientCheckContentLength(request_t * r)
+@@ -1610,7 +1629,7 @@ clientCheckContentLength(request_t * r)
      /* NOT REACHED */
  }
  
@@ -2364,7 +2360,7 @@ diff -p -u -b -r1.154 -r1.89.4.14
  clientCachable(clientHttpRequest * http)
  {
      request_t *req = http->request;
-@@ -1620,7 +1639,7 @@ clientCachable(clientHttpRequest * http)
+@@ -1636,7 +1655,7 @@ clientCachable(clientHttpRequest * http)
  }
  
  /* Return true if we can query our neighbors for this object */
@@ -2373,7 +2369,7 @@ diff -p -u -b -r1.154 -r1.89.4.14
  clientHierarchical(clientHttpRequest * http)
  {
      const char *url = http->uri;
-@@ -3307,7 +3326,7 @@ clientProcessRequest2(clientHttpRequest 
+@@ -3302,7 +3321,7 @@ clientProcessRequest2(clientHttpRequest 
      return LOG_TCP_HIT;
  }
  
@@ -2382,7 +2378,7 @@ diff -p -u -b -r1.154 -r1.89.4.14
  clientProcessRequest(clientHttpRequest * http)
  {
      char *url = http->uri;
-@@ -3318,6 +3337,11 @@ clientProcessRequest(clientHttpRequest *
+@@ -3313,6 +3332,11 @@ clientProcessRequest(clientHttpRequest *
  	RequestMethodStr[r->method],
  	url);
      r->flags.collapsed = 0;
@@ -2394,7 +2390,7 @@ diff -p -u -b -r1.154 -r1.89.4.14
      if (r->method == METHOD_CONNECT && !http->redirect.status) {
  	http->log_type = LOG_TCP_MISS;
  #if USE_SSL && SSL_CONNECT_INTERCEPT
-@@ -3812,6 +3836,20 @@ clientReadRequest(int fd, void *data)
+@@ -3808,6 +3832,20 @@ clientReadRequest(int fd, void *data)
  	    (long) conn->in.offset, (long) conn->in.size);
  	len = conn->in.size - conn->in.offset - 1;
      }
@@ -2415,17 +2411,16 @@ diff -p -u -b -r1.154 -r1.89.4.14
      statCounter.syscalls.sock.reads++;
      size = FD_READ_METHOD(fd, conn->in.buf + conn->in.offset, len);
      if (size > 0) {
-@@ -3916,7 +3954,8 @@ clientReadRequest(int fd, void *data)
- 	    /* add to the client request queue */
+@@ -3913,6 +3951,8 @@ clientReadRequest(int fd, void *data)
  	    dlinkAddTail(http, &http->node, &conn->reqs);
  	    conn->nrequests++;
--	    commSetTimeout(fd, Config.Timeout.lifetime, clientLifetimeTimeout, http);
+ 	    commSetTimeout(fd, Config.Timeout.lifetime, clientLifetimeTimeout, http);
 +	    F->pconn.uses++;
 +            F->pconn.type = 0;
  	    if (parser_return_code < 0) {
  		debug(33, 1) ("clientReadRequest: FD %d (%s:%d) Invalid Request\n", fd, fd_table[fd].ipaddr, fd_table[fd].remote_port);
  		err = errorCon(ERR_INVALID_REQ, HTTP_BAD_REQUEST, NULL);
-@@ -4086,7 +4125,7 @@ clientReadRequest(int fd, void *data)
+@@ -4082,7 +4122,7 @@ clientReadRequest(int fd, void *data)
  }
  
  /* file_read like function, for reading body content */
@@ -2434,7 +2429,7 @@ diff -p -u -b -r1.154 -r1.89.4.14
  clientReadBody(request_t * request, char *buf, size_t size, CBCB * callback, void *cbdata)
  {
      ConnStateData *conn = request->body_reader_data;
-@@ -4215,7 +4254,7 @@ clientProcessBody(ConnStateData * conn)
+@@ -4211,7 +4251,7 @@ clientProcessBody(ConnStateData * conn)
  }
  
  /* Abort a body request */
@@ -2443,7 +2438,7 @@ diff -p -u -b -r1.154 -r1.89.4.14
  clientAbortBody(request_t * request)
  {
      ConnStateData *conn = request->body_reader_data;
-@@ -4257,7 +4296,7 @@ requestTimeout(int fd, void *data)
+@@ -4253,7 +4293,7 @@ requestTimeout(int fd, void *data)
  	 * Some data has been sent to the client, just close the FD
  	 */
  	comm_close(fd);
@@ -2452,10 +2447,11 @@ diff -p -u -b -r1.154 -r1.89.4.14
  	/*
  	 * assume its a persistent connection; just close it
  	 */
-@@ -4978,6 +5017,52 @@ varyEvaluateMatch(StoreEntry * entry, re
+@@ -4974,6 +5014,52 @@ varyEvaluateMatch(StoreEntry * entry, re
+ 	}
      }
  }
- 
++
 +#if HS_FEAT_ICAP
 +static int
 +clientIcapReqMod(clientHttpRequest * http)
@@ -2501,10 +2497,9 @@ diff -p -u -b -r1.154 -r1.89.4.14
 +    return 1;
 +}
 +#endif
-+
+ 
  /* This is a handler normally called by comm_close() */
  static void
- clientPinnedConnectionClosed(int fd, void *data)
 Index: src/comm.c
 ===================================================================
 RCS file: /cvsroot/squid/squid/src/comm.c,v
