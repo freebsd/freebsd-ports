@@ -9,4 +9,4 @@ a light source editor and a simple scene tree are provided.
 All of the QGLViewer helper classes (such as vectors, points, the camera,
 etc.) are serializable using the Qt-builtin XML facility.
 
-WWW: http://www.gris.uni-tuebingen.de/projects/qglviewer/
+WWW: http://www.gris.uni-tuebingen.de/grisalt/projects/qglviewer/

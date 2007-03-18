@@ -10,7 +10,7 @@ PORTNAME=	qglviewer
 PORTVERSION=	1.4
 PORTREVISION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.gris.uni-tuebingen.de/projects/qglviewer/
+MASTER_SITES=	http://www.gris.uni-tuebingen.de/grisalt/projects/qglviewer/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Use OpenGL to play around with three dimensional scenes
