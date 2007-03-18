@@ -17,6 +17,10 @@ COMMENT=	A Tcl/Tk based AOL Instant Messenger (AIM) Chat Client
 RUN_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82 \
 		wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
+IGNORE=		uses the old and unsupported TOC protocol, use net-im/aim or net-im/gaim instead
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2007-04-19
+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/tik
 
