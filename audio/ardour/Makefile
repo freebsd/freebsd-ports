@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ardour
-DISTVERSION=	2.0beta11.1
-PORTREVISION=	1
+DISTVERSION=	2.0beta12
 CATEGORIES=	audio
 MASTER_SITES=	http://ardour.org/files/releases/
 
@@ -22,8 +21,8 @@ LIB_DEPENDS=	lrdf.2:${PORTSDIR}/textproc/liblrdf \
 		boost_date_time.3:${PORTSDIR}/devel/boost \
 		gnomecanvasmm-2.6:${PORTSDIR}/graphics/libgnomecanvasmm26 \
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
-		lo.6:${PORTSDIR}/audio/liblo
-BUILD_DEPENDS=	${LOCALBASE}/lib/libSoundTouch.a:${PORTSDIR}/audio/soundtouch
+		lo.6:${PORTSDIR}/audio/liblo \
+		SoundTouch.0:${PORTSDIR}/audio/soundtouch
 
 USE_SCONS=	yes
 SCONS_ENV+=	SYSLIBS=yes PREFIX=${PREFIX} NLS=yes FPU_OPTIMIZATION=0
@@ -38,11 +37,13 @@ PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 # Upstream uses these flags by default.
 .if !defined(WITHOUT_OPTIMIZED_CFLAGS)
-CFLAGS+=	-O3 -fomit-frame-pointer -ffast-math -fstrength-reduce -fno-strict-aliasing
+CFLAGS+=	-O3 -fomit-frame-pointer -ffast-math -fstrength-reduce
 .endif
 
+CFLAGS:=	${CFLAGS:N-fno-strict-aliasing}
+
 .if ${OSVERSION} < 600000
-BROKEN=		Does not compile on 4.x and 5.x
+BROKEN=		Does not compile on 5.x
 .endif
 
 post-patch:
