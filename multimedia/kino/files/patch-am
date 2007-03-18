@@ -1,6 +1,6 @@
---- src/jogshuttle.cc.orig	Mon Mar 15 23:13:46 2004
-+++ src/jogshuttle.cc	Tue Apr 13 11:51:37 2004
-@@ -26,7 +26,7 @@
+--- src/jogshuttle.cc.orig	Tue Feb 20 07:32:05 2007
++++ src/jogshuttle.cc	Sat Mar 17 21:05:33 2007
+@@ -27,7 +27,7 @@
  #include <fcntl.h>
  #include <unistd.h>
  #include <errno.h>
@@ -9,20 +9,15 @@
  
  #include "jogshuttle.h"
  #include "preferences.h"
-@@ -343,9 +343,10 @@
+@@ -343,6 +343,7 @@
  */
  void JogShuttle::inputCallback( gint source, GdkInputCondition condition )
  {
 +#if 0
  	g_return_if_fail( this != NULL );
--	// g_return_if_fail( input_ >= 0 );
--	// g_return_if_fail( input_ == source );
-+	g_return_if_fail( input_ >= 0 );
-+	g_return_if_fail( input_ == source );
- 	g_return_if_fail( condition == GDK_INPUT_READ );
- 
- 	struct media_ctrl_event ev;
-@@ -402,4 +403,5 @@
+ 	// g_return_if_fail( input_ >= 0 );
+ 	// g_return_if_fail( input_ == source );
+@@ -405,4 +406,5 @@
  	{
  		return;
  	}

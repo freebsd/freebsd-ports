@@ -1,4 +1,6 @@
+%%FFMPEG_KINO%%bin/ffmpeg-kino
 bin/kino
+bin/kino2raw
 include/kino/audio_filters.h
 include/kino/audio_transitions.h
 include/kino/endian_types.h
@@ -100,6 +102,7 @@ share/gnome/kino/help/en/keyboard.html
 share/gnome/kino/help/en/kino.xml
 share/gnome/kino/help/en/links.html
 share/gnome/kino/help/en/locked.html
+share/gnome/kino/help/en/media/terms/jogshuttle/shuttlepro.png
 share/gnome/kino/help/en/media/ui/kinoui.png
 share/gnome/kino/help/en/metadata.html
 share/gnome/kino/help/en/metadata_example.html
@@ -238,10 +241,12 @@ share/gnome/kino/scripts/exports/ffmpeg_vcd.sh
 share/gnome/kino/scripts/exports/ffmpeg_xvid.sh
 share/gnome/kino/scripts/exports/ffmpeg_xvid_dual.sh
 share/gnome/kino/scripts/exports/mencoder.sh
-share/gnome/kino/scripts/exports/mencoder_dual.sh
 share/gnome/kino/scripts/exports/rawplay.sh
 share/gnome/kino/scripts/import/audio.sh
 share/gnome/kino/scripts/import/media.sh
+share/gnome/kino/scripts/publish/bliptv_frame.sh
+share/gnome/kino/scripts/publish/bliptv_project.sh
+share/gnome/kino/scripts/publish/echo.sh
 share/gnome/kino/scripts/publish/frame.sh
 share/gnome/kino/scripts/publish/project.sh
 share/gnome/kino/lumas/bar_bottom.png
@@ -296,6 +301,8 @@ share/mime/packages/kino.xml
 @dirrm include/kino
 @dirrm lib/kino-gtk2
 @dirrm share/gnome/kino/help/en/images
+@dirrm share/gnome/kino/help/en/media/terms/jogshuttle
+@dirrm share/gnome/kino/help/en/media/terms
 @dirrm share/gnome/kino/help/en/media/ui
 @dirrm share/gnome/kino/help/en/media
 @dirrm share/gnome/kino/help/en
