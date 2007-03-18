@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Font/TTFMetrics.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Font/TTFMetrics/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font/TTFMetrics
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font
+@dirrmtry %%SITE_PERL%%/Font
