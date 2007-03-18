@@ -54,6 +54,7 @@
     SUBDIR += nucleus
     SUBDIR += p5-Font-AFM
     SUBDIR += p5-Font-TTF
+    SUBDIR += p5-Font-TTFMetrics
     SUBDIR += p5-type1inst
     SUBDIR += pcf2bdf
     SUBDIR += ppantsfonts
