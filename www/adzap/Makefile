@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	adzap
-PORTVERSION=	20070225
+PORTVERSION=	20070317
 CATEGORIES=	www perl5
 MASTER_SITES=	http://adzapper.sourceforge.net/ LOCAL/kris
 
