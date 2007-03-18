@@ -6,17 +6,21 @@
 #
 
 PORTNAME=	dropbear
-PORTVERSION=	0.48.1
+PORTVERSION=	0.49
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://matt.ucc.asn.au/dropbear/releases/
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SSH 2 server, designed to be usable in small memory environments
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 
-.if defined(WANT_STATIC)
+OPTIONS=   STATIC  "Build statically"  off \
+
+.include <bsd.port.pre.mk>
+
+.if defined(WANT_STATIC) || defined(WITH_STATIC)
 CONFIGURE_ENV=	LDFLAGS=-static
 .endif
 
@@ -32,13 +36,17 @@ post-patch:
 post-install:
 	@${MKDIR} ${PREFIX}/etc/dropbear
 	@${ECHO_MSG} ""
+.if defined(WANT_STATIC)
+	@${ECHO_MSG} " WARNING: deprecated option WANT_STATIC used, use 'make config' instead"
+	@${ECHO_MSG} ""
+.endif
 	@${INSTALL_SCRIPT} ${WRKSRC}/dropbear.sh ${PREFIX}/etc/rc.d/dropbear.sh.sample
 	@${ECHO_MSG} " Now you have to create your SSH host key."
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} " To create RSA key:"
-	@${ECHO_MSG} " ${PREFIX}/sbin/dropbearkey -t rsa -f ${PREFIX}/etc/dropbear/dropbear_rsa_host_key"
+	@${ECHO_MSG} " ${PREFIX}/bin/dropbearkey -t rsa -f ${PREFIX}/etc/dropbear/dropbear_rsa_host_key"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} " For more details, run ${PREFIX}/sbin/dropbearkey -h"
+	@${ECHO_MSG} " For more details, run ${PREFIX}/bin/dropbearkey -h"
 	@${ECHO_MSG} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
