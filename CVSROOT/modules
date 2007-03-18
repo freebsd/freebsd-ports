@@ -3100,6 +3100,7 @@ fujiplay	ports/graphics/fujiplay
 fung-calc	ports/math/fung-calc
 funktrackergold	ports/audio/funktrackergold
 funnelweb	ports/devel/funnelweb
+funnyboat	ports/games/funnyboat
 fuse		ports/emulators/fuse
 fusefs-curlftpfs	ports/sysutils/fusefs-curlftpfs
 fusefs-encfs	ports/sysutils/fusefs-encfs
