@@ -1,0 +1,11 @@
+Other JSON modules require setting several parameters before calling the
+conversion methods to do what I want. This module does things by default
+that I think should be done when working with JSON in Perl. This module also
+encodes and decodes faster than JSON.pm and JSON::Syck in my benchmarks.
+
+This means that any piece of data in Perl will get converted to something in
+JSON instead of throwing an exception. It also means that output will be
+strict JSON, while accepted input will be flexible, without having to set
+any options.
+
+WWW: http://search.cpan.org/dist/JSON-DWIW/
