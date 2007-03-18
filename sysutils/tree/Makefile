@@ -8,7 +8,7 @@
 PORTNAME=	tree
 PORTVERSION=	1.5.1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://mama.indstate.edu/linux/tree/
+MASTER_SITES=	ftp://mama.indstate.edu/linux/tree/ CENKES
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,11 +19,4 @@ MAKE_ENV+=	MKDIR="${MKDIR}"
 MAN1=		tree.1
 PLIST_FILES=	bin/tree
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-post-patch:
-	@${REINPLACE_CMD} -e "s:iswprint:isprint:" ${WRKSRC}/tree.c
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
