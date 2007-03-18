@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mod_vhost_ldap
-PORTVERSION=	0.2.6
+PORTVERSION=	1.0
 CATEGORIES=	www
-MASTER_SITES=	http://alioth.debian.org/download.php/1137/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/1422/
 DISTNAME=	${PORTNAME:S/_/-/g}-${PORTVERSION}
 DIST_SUBDIR=	apache2
 
@@ -18,7 +18,7 @@ COMMENT=	Virtual Hosting from ldap built on top of mod_ldap
 USE_BZIP2=	YES
 USE_OPENLDAP=	YES
 
-USE_APACHE=	20
+USE_APACHE=	20+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 AP_LIB+=	${LOCALBASE}/lib -lldap
@@ -26,8 +26,10 @@ AP_EXTRAS+=	-DMOD_VHOST_LDAP_VERSION=\\\"mod_vhost_ldap/${PORTVERSION}\\\"
 
 PORTDOCS=	mod_vhost_ldap.schema vhost_ldap.conf COPYING
 
+WRKSRC=		${WRKDIR}/${PORTNAME:S/_/-/g}-${PORTVERSION}.0
+
 .if defined(PACKAGE_BUILDING)
-IGNORE=		Requires support of LDAP in apache 2.0.x port
+IGNORE=		Requires support of LDAP in apache 2.x port
 .endif
 
 post-install:
