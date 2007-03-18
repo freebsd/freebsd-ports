@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyflakes-${PORTVERSION}
 
 MAINTAINER=	alexbl@FreeBSD.org
-COMMENT=	Pyflakes is a program that analyzes Pythom programs for errors
+COMMENT=	Pyflakes is a program that analyzes Python programs for errors
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
