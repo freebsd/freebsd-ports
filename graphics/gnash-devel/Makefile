@@ -38,7 +38,7 @@ CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/gnash" \
 MAN1=		gnash.1
 
 OPTIONS=	PLUGIN	"Enable browser plugin" on \
-		GTK	"Enable GTK GUI"	on \
+		GTK	"Enable GTK GUI (required for plugin)"	on \
 		SOUND	"Enable sound"	on \
 		GSTREAMER	"Use GStreamer sound output instead of SDL"	off \
 		MAD	"Support mp3 decoding through libmad"	on
@@ -72,7 +72,7 @@ LIB_DEPENDS+=		mad.2:${PORTSDIR}/audio/libmad
 .    endif
 .endif
 
-.if defined(WITHOUT_PLUGIN)
+.if defined(WITHOUT_PLUGIN) || defined(WITHOUT_GTK)
 PLIST_SUB+=	PLUGIN="@comment "
 CONFIGURE_ARGS+=	--disable-plugin
 .else
