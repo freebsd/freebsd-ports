@@ -28,4 +28,8 @@ PLIST_FILES=	lib/ladspa/caps.so
 CFLAGS+=	-O6 -ffast-math -funroll-loops
 .endif
 
+.if ${OSVERSION} < 600000
+BROKEN=		Does not compile on 5.x
+.endif
+
 .include <bsd.port.post.mk>
