@@ -83,6 +83,7 @@
     SUBDIR += nvi-euc-cn
     SUBDIR += nvi-euc-tw
     SUBDIR += oicq
+    SUBDIR += opendesktop-fonts
     SUBDIR += oto
     SUBDIR += oxford
     SUBDIR += oxim
