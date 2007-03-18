@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kino
-PORTVERSION=	0.9.5
+PORTVERSION=	1.0.0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,13 +15,13 @@ MAINTAINER=	pb@FreeBSD.org
 COMMENT=	A DV non-linear video editor
 
 LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv	\
-		avcodec.1:$(PORTSDIR)/multimedia/ffmpeg-devel	\
 		Magick.10:${PORTSDIR}/graphics/ImageMagick	\
 		samplerate.1:${PORTSDIR}/audio/libsamplerate
 RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer	\
 		mplex:${PORTSDIR}/multimedia/mjpegtools
 
-OPTIONS=	QUICKTIME "With Quicktime support" off
+OPTIONS=	QUICKTIME "With Quicktime support" off	\
+		FFMPEG_KINO "With ffmpeg-kino" on
 
 USE_AUTOTOOLS=	autoconf:259
 USE_GETTEXT=	yes
@@ -47,6 +47,14 @@ IGNORE=	Does not compile on FreeBSD 4.x
 .if defined(WITH_QUICKTIME)
 LIB_DEPENDS+=	quicktime.0:${PORTSDIR}/multimedia/libquicktime
 CONFIGURE_ARGS+=	--with-quicktime
+.endif
+
+.if defined(WITH_FFMPEG_KINO)
+PLIST_SUB+=	FFMPEG_KINO=""
+.else
+CONFIGURE_ARGS+= --disable-local-ffmpeg
+PLIST_SUB+=	FFMPEG_KINO="@comment "
+LIB_DEPENDS+=	avcodec.1:$(PORTSDIR)/multimedia/ffmpeg-devel
 .endif
 
 .include <bsd.port.post.mk>

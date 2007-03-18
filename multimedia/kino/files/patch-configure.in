@@ -1,5 +1,5 @@
---- configure.in.orig	Tue Apr 25 20:18:28 2006
-+++ configure.in	Tue Jul 18 23:14:58 2006
+--- configure.in.orig	Thu Mar  8 04:52:54 2007
++++ configure.in	Sun Mar 18 00:00:50 2007
 @@ -40,32 +40,32 @@
  AC_SUBST(LIBDV_CFLAGS)
  AC_SUBST(LIBDV_LIBS)
@@ -26,6 +26,13 @@
 -AC_CHECK_LIB(rom1394, rom1394_get_node_type, ,
 -	[AC_MSG_ERROR([Unable to link with librom1394. Check that your have librom1394 installed (usually part of libavc1394) and that the version is 0.4.1 or newer])]
 -)
+-
+-AC_CHECK_LIB(pthread, pthread_create, ,
+-	[AC_MSG_ERROR([You need the pthread library to compile kino])]
+-)
+-AC_CHECK_LIB(dl, dlopen, ,
+-	[AC_MSG_ERROR([You need libdl to compile kino])]
+-)
 +#AC_CHECK_HEADER([libavc1394/avc1394.h], ,
 +#	[AC_MSG_ERROR([avc1394.h not found, install libavc1394-devel])
 +#])
@@ -38,13 +45,7 @@
 +#AC_CHECK_LIB(rom1394, rom1394_get_node_type, ,
 +#	[AC_MSG_ERROR([Unable to link with librom1394. Check that your have librom1394 installed (usually part of libavc1394) and that the version is 0.4.1 or newer])]
 +#)
- 
--AC_CHECK_LIB(pthread, pthread_create, ,
--	[AC_MSG_ERROR([You need the pthread library to compile kino])]
--)
--AC_CHECK_LIB(dl, dlopen, ,
--	[AC_MSG_ERROR([You need libdl to compile kino])]
--)
++
 +#AC_CHECK_LIB(pthread, pthread_create, ,
 +#	[AC_MSG_ERROR([You need the pthread library to compile kino])]
 +#)
@@ -52,5 +53,20 @@
 +#	[AC_MSG_ERROR([You need libdl to compile kino])]
 +#)
  
- # ######################################################################
- # checks for optional packages
+ # LIBIEC61883
+ AC_ARG_WITH(dv1394, AC_HELP_STRING([--with-dv1394],[Use dv1394 instead of libiec61883 for DV I/O (only if you must).]))
+@@ -187,12 +187,12 @@
+ 			tar -xzf ffmpeg-svn-r8218.tar.gz
+ 		fi
+ 		if ! (test -f ffmpeg/config.mak) ; then
+-			pushd ffmpeg
++			(cd ffmpeg
+ 			./configure --disable-ffserver --disable-ffplay --disable-v4l \
+ 			--disable-v4l2 --disable-dv1394 --disable-network --disable-zlib \
+ 			--disable-vhook --build-suffix=-kino --enable-gpl --enable-swscaler \
+ 			--prefix="$prefix"
+-			popd
++			)
+ 		fi
+ 	fi
+ ])
