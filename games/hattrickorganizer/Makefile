@@ -23,8 +23,6 @@ NO_BUILD=	  yes
 USE_JAVA=	  yes
 JAVA_VERSION=	  1.4+
 
-SUB_FILES=	  hattrickorganizer.sh
-
 do-install:
 	cd ${WRKSRC} && ${FIND} . -type d -exec ${MKDIR} ${DATADIR}/{} \;
 	cd ${WRKSRC} && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
