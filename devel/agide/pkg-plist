@@ -4,6 +4,8 @@ lib/aap/Agide-%%PORTVERSION%%/Activities/AapProject.py
 lib/aap/Agide-%%PORTVERSION%%/Activities/AapProject.pyc
 lib/aap/Agide-%%PORTVERSION%%/Activities/DebugProgram.py
 lib/aap/Agide-%%PORTVERSION%%/Activities/DebugProgram.pyc
+lib/aap/Agide-%%PORTVERSION%%/Activities/Makefile.py
+lib/aap/Agide-%%PORTVERSION%%/Activities/Makefile.pyc
 lib/aap/Agide-%%PORTVERSION%%/Activities/File.py
 lib/aap/Agide-%%PORTVERSION%%/Activities/File.pyc
 lib/aap/Agide-%%PORTVERSION%%/Activities/PythonShell.py
@@ -27,6 +29,11 @@ lib/aap/Agide-%%PORTVERSION%%/Images/Out.png
 lib/aap/Agide-%%PORTVERSION%%/Images/Over.png
 lib/aap/Agide-%%PORTVERSION%%/Images/Run.png
 lib/aap/Agide-%%PORTVERSION%%/Images/Step.png
+lib/aap/Agide-%%PORTVERSION%%/Images/Out.xpm
+lib/aap/Agide-%%PORTVERSION%%/Images/Over.xpm
+lib/aap/Agide-%%PORTVERSION%%/Images/DebugFullSpeed.xpm
+lib/aap/Agide-%%PORTVERSION%%/Images/Run.xpm
+lib/aap/Agide-%%PORTVERSION%%/Images/Step.xpm
 lib/aap/Agide-%%PORTVERSION%%/NavTree.py
 lib/aap/Agide-%%PORTVERSION%%/NavTree.pyc
 lib/aap/Agide-%%PORTVERSION%%/Navigator.py
@@ -66,9 +73,19 @@ lib/aap/Agide-%%PORTVERSION%%/check.pyc
 lib/aap/Agide-%%PORTVERSION%%/filelist.aap
 lib/aap/Agide-%%PORTVERSION%%/main.aap
 lib/aap/Agide-%%PORTVERSION%%/startup.vim
+lib/aap/Agide-%%PORTVERSION%%/lang/ja.po
+lib/aap/Agide-%%PORTVERSION%%/lang/nl.po
+lib/aap/Agide-%%PORTVERSION%%/lang/main.aap
+lib/aap/Agide-%%PORTVERSION%%/lang/ja/LC_MESSAGES/agide.mo
+lib/aap/Agide-%%PORTVERSION%%/lang/nl/LC_MESSAGES/agide.mo
 @dirrm lib/aap/Agide-%%PORTVERSION%%/Activities
 @dirrm lib/aap/Agide-%%PORTVERSION%%/Images
 @dirrm lib/aap/Agide-%%PORTVERSION%%/Tools/GrepToolUtil
 @dirrm lib/aap/Agide-%%PORTVERSION%%/Tools
+@dirrm lib/aap/Agide-%%PORTVERSION%%/lang/ja/LC_MESSAGES
+@dirrm lib/aap/Agide-%%PORTVERSION%%/lang/ja
+@dirrm lib/aap/Agide-%%PORTVERSION%%/lang/nl/LC_MESSAGES
+@dirrm lib/aap/Agide-%%PORTVERSION%%/lang/nl
+@dirrm lib/aap/Agide-%%PORTVERSION%%/lang
 @dirrm lib/aap/Agide-%%PORTVERSION%%
 @dirrmtry lib/aap
