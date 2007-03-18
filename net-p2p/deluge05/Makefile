@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	deluge
-PORTVERSION=	0.4.99.2
+PORTVERSION=	0.5.0
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://deluge-torrent.org/downloads/
 
@@ -23,6 +23,12 @@ USE_PYDISTUTILS=yes
 
 DOCS=		LICENSE README
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "sparc64" || ${ARCH} == "ia64"
+CFLAGS+=	-DAMD64
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
 		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' ${WRKSRC}/setup.py
@@ -36,4 +42,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
