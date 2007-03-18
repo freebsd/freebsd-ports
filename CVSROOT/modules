@@ -1044,6 +1044,7 @@ byaccj		ports/devel/byaccj
 bygfoot		ports/games/bygfoot
 bzflag		ports/games/bzflag
 bzip		ports/archivers/bzip
+bzr-gtk		ports/devel/bzr-gtk
 bzrtools	ports/devel/bzrtools
 c-ares		ports/dns/c-ares
 c-hey		ports/misc/c-hey
