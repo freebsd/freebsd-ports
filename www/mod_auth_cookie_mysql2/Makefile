@@ -5,18 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	mod_auth_cookie_mysql2
-PORTVERSION=	0.5
+PORTVERSION=	0.7
 CATEGORIES=	www
-MASTER_SITES=	http://home.digithi.de/digithi/dev/
+MASTER_SITES=	http://home.digithi.de/digithi/dev/mod_auth_cookie_mysql/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
-DIST_SUBDIR=	apache2
+DIST_SUBDIR=	apache20
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows authentication against a MySQL database via a secure cookie
 
 USE_MYSQL=	YES
-# If someone can test it with MySQL 5.0 ;-)
-IGNORE_WITH_MYSQL=	50
 
 USE_APACHE=	20+
 
