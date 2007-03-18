@@ -9524,6 +9524,7 @@ p5-HTML-WikiConverter-TikiWiki	ports/www/p5-HTML-WikiConverter-TikiWiki
 p5-HTML-WikiConverter-UseMod	ports/www/p5-HTML-WikiConverter-UseMod
 p5-HTML-WikiConverter-WakkaWiki	ports/www/p5-HTML-WikiConverter-WakkaWiki
 p5-HTML-WikiConverter-WikkaWiki	ports/www/p5-HTML-WikiConverter-WikkaWiki
+p5-HTTP-Async	ports/www/p5-HTTP-Async
 p5-HTTP-Body	ports/www/p5-HTTP-Body
 p5-HTTP-BrowserDetect	ports/www/p5-HTTP-BrowserDetect
 p5-HTTP-Cache-Transparent	ports/www/p5-HTTP-Cache-Transparent
