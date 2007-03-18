@@ -112,6 +112,7 @@
     SUBDIR += buildtool
     SUBDIR += buildtool-doc
     SUBDIR += byaccj
+    SUBDIR += bzr-gtk
     SUBDIR += bzrtools
     SUBDIR += c2lib
     SUBDIR += c2man
