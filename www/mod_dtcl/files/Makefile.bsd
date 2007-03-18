@@ -1,4 +1,4 @@
-TCL_VERSION?=8.3
+TCL_VERSION?=8.4
 TCL_NDVER?=${TCL_VERSION:S/.//}	# same, but without the dot
 
 PREFIX?=	/usr/local

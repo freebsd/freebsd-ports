@@ -7,14 +7,16 @@
 
 PORTNAME=	mod_dtcl
 PORTVERSION=	0.12.0
-CATEGORIES=	www tcl83
+PORTREVISION=	1
+CATEGORIES=	www tcl84
 MASTER_SITES=	http://tcl.apache.org/mod_dtcl/download/
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Embeds a TCL8 interpreter in the Apache server
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
-LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83
+USE_TCL=	yes
+USE_TCL_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/mod_dtcl
 MAKEFILE=	${FILESDIR}/Makefile.bsd
