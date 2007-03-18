@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dar
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -27,7 +27,6 @@ MAN1=		dar.1 dar_cp.1 dar_manager.1 dar_slave.1 dar_xform.1
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-libdar-integers.hpp
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--with-libintl-prefix=${PREFIX}
@@ -36,10 +35,6 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -Ee 's,(_nl_expand_alias) \(0\),\1 (),g' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
 .if !defined(NOPORTDOCS)
