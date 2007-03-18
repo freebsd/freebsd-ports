@@ -55,25 +55,8 @@ gtk_MAN=	gtk-query-immodules-2.0.1 gtk-update-icon-cache.1
 
 MAN1=		${gdk_pixbuf_MAN} ${gtk_MAN}
 
-# Setting WITH_DEBUG=yes effectively adds -g to $CFLAGS
-# unless doing so would clobber a preexisting $CFLAGS.
-# Setting to yes also causes debugging into to be spat out
-# on the command-line.
-# Set to minimum if you want to send in a backtrace; set
-# to yes if you want to know what gtk thinks it's doing.
-.if defined(WITH_DEBUG) || defined(WITHOUT_DEBUG)
-.if defined(WITHOUT_DEBUG) || ${WITH_DEBUG:L} == "no"
-CONFIGURE_ARGS+=	--enable-debug=no
-.else
-.if ${WITH_DEBUG:L} == "yes"
+.if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug=yes
-STRIP=
-.else
-CONFIGURE_ARGS+=	--enable-debug=minimum
-CFLAGS+=		-g
-.endif
-STRIP=
-.endif
 .endif
 
 .include <bsd.port.pre.mk>
@@ -92,16 +75,6 @@ PLIST_SUB+=	CUPS:="@comment "
 .if ${OSVERSION} >= 500000 && ( ${ARCH} == "i386" || ${ARCH} == "amd64" ) \
 	&& ${CC} != "icc"
 #CFLAGS+=	-mno-sse2
-.endif
-
-pre-everything::
-.if !defined(WITH_DEBUG)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Enable or disable debugging with the following knob"
-	@${ECHO_MSG} "WITH_DEBUG=[no|minimum|yes] or WITHOUT_DEBUG=yes"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Default is minimum"
-	@${ECHO_MSG}
 .endif
 
 post-patch:
