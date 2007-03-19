@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-ListDetector
-PORTVERSION=	0.34
+PORTVERSION=	1.01
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -15,11 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for detecting mailing list messages
 
-RUN_DEPENDS=	${SITE_PERL}/Email/Valid.pm:${PORTSDIR}/mail/p5-Email-Valid \
-		${SITE_PERL}/Email/Abstract.pm:${PORTSDIR}/mail/p5-Email-Abstract \
+RUN_DEPENDS=	${SITE_PERL}/Email/Abstract.pm:${PORTSDIR}/mail/p5-Email-Abstract \
+		${SITE_PERL}/Email/Valid.pm:${PORTSDIR}/mail/p5-Email-Valid \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
 
@@ -49,7 +48,6 @@ MAN3=	Mail::ListDetector.3 \
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/sample.pl \
-		${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/sample.pl ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
