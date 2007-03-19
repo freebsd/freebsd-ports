@@ -1,0 +1,5 @@
+libspiff is a parser library for the XML Shareable Playlist Format
+(XSPF). XSPF is an open format for playlists. The XSPF specification has
+been written by Xiph.
+
+WWW: http://libspiff.sourceforge.net/
