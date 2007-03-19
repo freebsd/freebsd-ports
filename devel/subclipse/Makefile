@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	subclipse
-PORTVERSION=	1.0.4
+PORTVERSION=	1.2.0
 CATEGORIES=	devel java
-MASTER_SITES=	http://subclipse.tigris.org/files/documents/906/35678/
+MASTER_SITES=	http://subclipse.tigris.org/files/documents/906/36425
 DISTNAME=	site-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
@@ -27,9 +27,11 @@ USE_ZIP=	yes
 ECLIPSE=	${PREFIX}/eclipse
 SUBCLIPSE=	org.tigris.subversion.subclipse
 SUBCLIPSEFILES=	features/${SUBCLIPSE}_${PORTVERSION} \
+		features/org.tigris.subversion.subclipse.mylar_1.0.1 \
 		plugins/${SUBCLIPSE}.core_${PORTVERSION} \
-		plugins/${SUBCLIPSE}.ui_${PORTVERSION} \
-		plugins/${SUBCLIPSE}_${PORTVERSION}
+		plugins/${SUBCLIPSE}.doc_${PORTVERSION} \
+		plugins/${SUBCLIPSE}.mylar_1.0.1 \
+		plugins/${SUBCLIPSE}.ui_${PORTVERSION}
 
 WGET?=		${LOCALBASE}/bin/wget
 
