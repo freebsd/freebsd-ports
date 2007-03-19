@@ -1,9 +1,21 @@
-WARINING: 
-If you use default self-sined certificates in wildfire 3.1.1 
-version to support SSL, you need to necessarily regenerate them. 
-After the installation please go to the "Server Certificates" menu 
-and generate your certificates. After this you will be able to
-connect through SSL again.
+NOTE: 
+Due to the name change the product releases will work as follows:
+
+o  3.2.x series: these releases will continue to use the Wildfire name so
+   that critical bug fixes can be delivered with minimal hassle to existing
+   users.
+
+o  3.3.x series: starting with 3.3.0, the server is called Openfire. 
+   There will be a small amount of upgrade pain associated with this release
+   since configuration files like wildfire.xml will now be openfire.xml, etc.
+
+WARNING:
+============================================================================
+If you use default self-sined certificates in wildfire 3.1.1 version to
+support SSL, you need to necessarily regenerate them. After the installation
+please go to the "Server Certificates" menu and generate your certificates.
+Than you will be able to connect through SSL again.
+============================================================================
 
 You can find the documentation files for this package in the 
 directory %%PREFIX%%/share/doc/wildfire.

@@ -6,16 +6,15 @@
 #
 
 PORTNAME=       wildfire
-PORTVERSION=    3.2.2
+PORTVERSION=    3.2.3
 CATEGORIES=     net-im java
 MASTER_SITES=   http://www.igniterealtime.org/downloadServlet?filename=wildfire/
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
 
 MAINTAINER=     quetzal@zone3000.net
-COMMENT=        Wildfire is an enterprise instant messaging (EIM) server
+COMMENT=        Openfire (formerly Wildfire) is an enterprise instant messaging server
 
 RUN_DEPENDS=    classpath:${PORTSDIR}/java/javavmwrapper
-
 USE_JAVA=       yes
 JAVA_VERSION=   1.5+
 
@@ -55,11 +54,11 @@ do-install:
 	(cd ${INSTALL_WRKSRC}/plugins && ${FIND} . \
 	| ${CPIO} -pvdmu -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/plugins)
 
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR};
 	(cd ${WRKSRC} && ${INSTALL_DATA} -o ${SHAREOWN} -g ${SHAREGRP} \
 	LICENSE.html README.html changelog.html ${DOCSDIR});
 
-.if !defined(NOPORTDOCS)
 	(cd ${WRKSRC}/documentation/docs && ${FIND} . \
 	| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1 )
 .endif
