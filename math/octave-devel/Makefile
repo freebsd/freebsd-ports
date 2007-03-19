@@ -17,7 +17,7 @@ PKGNAMESUFFIX=  -devel
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Developer's version of math/octave
 
-BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
+BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot \
 		gperf:${PORTSDIR}/devel/gperf \
 		${LOCALBASE}/lib/libglpk.a:${PORTSDIR}/math/glpk
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
@@ -37,6 +37,10 @@ INFO=		octave liboctave
 MAN1=		octave.1 octave-bug.1 mkoctfile.1 octave-config.1
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BUILD_DEPENDS+=	info:${PORTSDIR}/print/texinfo
+.endif
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
