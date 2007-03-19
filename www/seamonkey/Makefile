@@ -42,8 +42,7 @@ OPTIONS=MAILNEWS "Enable Mail and News modules" on \
 	LDAP "Enable LDAP support for Mailnews" on \
 	CHATZILLA "Enable the Chatzilla IRC module" on \
 	JAVASCRIPT_DEBUGGER "Enable DTD and JavaScript debuggers" off \
-	SMB "Enable smb:// URI support using gnomevfs" off \
-	CALENDAR "Enable the calendar" off
+	SMB "Enable smb:// URI support using gnomevfs" off
 
 .include <bsd.port.pre.mk>
 
@@ -87,10 +86,6 @@ MOZ_OPTIONS+=		--enable-jsd \
 .else
 MOZ_OPTIONS+=		--disable-jsd \
 			--disable-dtd-debug
-.endif
-
-.if defined(WITH_CALENDAR)
-MOZ_OPTIONS+=	--enable-calendar
 .endif
 
 .if defined(WITHOUT_COMPOSER)
