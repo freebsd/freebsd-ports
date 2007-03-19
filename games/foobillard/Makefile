@@ -17,6 +17,9 @@ COMMENT=	A free OpenGL-billard game
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
+OPTIONS=	SDL	"Use SDL instead of glut"	off \
+		NVIDIA_BUMPREF	"Enable NVidia extensions"	off
+
 .include <bsd.port.pre.mk>
 
 FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config
@@ -42,20 +45,6 @@ CONFIGURE_ARGS+=	--disable-nvidia
 .endif
 
 MAN6=		foobillard.6
-
-pre-everything::
-.if !defined(WITH_SDL) || !defined(WITH_NVIDIA_BUMPREF)
-	@${ECHO_MSG} "You may specify the following on the command line:"
-	@${ECHO_MSG} ""
-.endif
-
-.if !defined(WITH_SDL)
-	@${ECHO_MSG} "WITH_SDL=yes to use SDL-lib instead of glut"
-.endif
-
-.if !defined(WITH_NVIDIA_BUMPREF)
-	@${ECHO_MSG} "WITH_NVIDIA_BUMPREF=yes to enable NV-extensions"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%FREETYPE_CONFIG%%|${FREETYPE_CONFIG}|g' \
