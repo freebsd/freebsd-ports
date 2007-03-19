@@ -129,6 +129,7 @@
     SUBDIR += libmpeg2
     SUBDIR += libmpeg3
     SUBDIR += libquicktime
+    SUBDIR += libspiff
     SUBDIR += libtheora
     SUBDIR += libxine
     SUBDIR += linux-divx4linux

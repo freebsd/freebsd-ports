@@ -1,0 +1,26 @@
+include/spiff/ProjectOpus/ProjectOpusPlaylistExtension.h
+include/spiff/ProjectOpus/ProjectOpusPlaylistExtensionReader.h
+include/spiff/ProjectOpus/ProjectOpusPlaylistExtensionWriter.h
+include/spiff/Spiff.h
+include/spiff/SpiffData.h
+include/spiff/SpiffDefines.h
+include/spiff/SpiffExtension.h
+include/spiff/SpiffExtensionReader.h
+include/spiff/SpiffExtensionReaderFactory.h
+include/spiff/SpiffExtensionWriter.h
+include/spiff/SpiffIndentFormatter.h
+include/spiff/SpiffProps.h
+include/spiff/SpiffPropsWriter.h
+include/spiff/SpiffReader.h
+include/spiff/SpiffReaderCallback.h
+include/spiff/SpiffSeamlessFormatter.h
+include/spiff/SpiffSkipExtensionReader.h
+include/spiff/SpiffStack.h
+include/spiff/SpiffToolbox.h
+include/spiff/SpiffTrack.h
+include/spiff/SpiffTrackWriter.h
+include/spiff/SpiffWriter.h
+include/spiff/SpiffXmlFormatter.h
+lib/libspiff.a
+@dirrm include/spiff/ProjectOpus
+@dirrm include/spiff
