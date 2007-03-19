@@ -5353,6 +5353,7 @@ jarl		ports/net-im/jarl
 jasmin		ports/java/jasmin
 jasper		ports/graphics/jasper
 jasperreports	ports/databases/jasperreports
+java-access-bridge	ports/accessibility/java-access-bridge
 java-beepcore	ports/net/java-beepcore
 java-checkstyle	ports/java/java-checkstyle
 java-commapi	ports/comms/java-commapi
@@ -6292,6 +6293,7 @@ libgnomecanvasmm26	ports/graphics/libgnomecanvasmm26
 libgnomecups	ports/print/libgnomecups
 libgnomedb	ports/databases/libgnomedb
 libgnomedb-reference	ports/databases/libgnomedb-reference
+libgnomekbd	ports/x11/libgnomekbd
 libgnomemm	ports/x11/libgnomemm
 libgnomemm26	ports/x11/libgnomemm26
 libgnomeprint	ports/print/libgnomeprint
@@ -6315,6 +6317,7 @@ libgsf-gnome	ports/devel/libgsf-gnome
 libgtk-java	ports/x11-toolkits/libgtk-java
 libgtkeditor	ports/x11-toolkits/libgtkeditor
 libgtkhtml	ports/www/libgtkhtml
+libgtksourceviewmm	ports/x11-toolkits/libgtksourceviewmm
 libgtop		ports/devel/libgtop
 libgutenfetch	ports/devel/libgutenfetch
 libhash		ports/devel/libhash
@@ -6410,6 +6413,7 @@ liboggz		ports/audio/liboggz
 liboil		ports/devel/liboil
 libol		ports/devel/libol
 libole2		ports/devel/libole2
+liboobs		ports/devel/liboobs
 liboop		ports/devel/liboop
 libopendaap	ports/devel/libopendaap
 libopennet	ports/net/libopennet
@@ -12765,6 +12769,7 @@ py-vertex	ports/net-p2p/py-vertex
 py-visual	ports/graphics/py-visual
 py-vmaps	ports/devel/py-vmaps
 py-vorbis	ports/audio/py-vorbis
+py-vte		ports/x11-toolkits/py-vte
 py-wax		ports/x11-toolkits/py-wax
 py-webunit	ports/www/py-webunit
 py-webware	ports/www/py-webware
@@ -14966,7 +14971,7 @@ toshctl		ports/sysutils/toshctl
 tosvcd		ports/multimedia/tosvcd
 totd		ports/dns/totd
 totem		ports/multimedia/totem
-totem-gstreamer	ports/multimedia/totem-gstreamer
+totem-xine	ports/multimedia/totem-xine
 tovid		ports/multimedia/tovid
 towitoko	ports/devel/towitoko
 toxine		ports/multimedia/toxine
@@ -15921,6 +15926,7 @@ xdelta		ports/misc/xdelta
 xdemineur	ports/games/xdemineur
 xdesktopwaves	ports/games/xdesktopwaves
 xdeview		ports/converters/xdeview
+xdg-user-dirs-gtk	ports/devel/xdg-user-dirs-gtk
 xdg-utils	ports/devel/xdg-utils
 xdgagrab	ports/graphics/xdgagrab
 xdialog		ports/x11/xdialog
