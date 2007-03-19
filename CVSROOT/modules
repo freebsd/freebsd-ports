@@ -5752,6 +5752,7 @@ klat		ports/editors/klat
 kldfind		ports/sysutils/kldfind
 klh10		ports/emulators/klh10
 klibido		ports/news/klibido
+klineakconfig	ports/sysutils/klineakconfig
 klipoquery	ports/deskutils/klipoquery
 klira		ports/audio/klira
 klog		ports/comms/klog
