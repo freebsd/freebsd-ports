@@ -60,6 +60,7 @@ post-extract::
 		<${FILESDIR}/${PORTNAME}.desktop.in >${WRKDIR}/${PORTNAME}.desktop
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|--without-nss||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/local/netscape|${LOCALBASE}|g' \
 		-e 's|/usr/local/lib/netscape|${LOCALBASE}/lib|g' \
 		${WRKSRC}/xpcom/*/SpecialSystemDirectory.cpp
