@@ -64,6 +64,7 @@ include/fltk/compat/FL/x.H
 @dirrm include/fltk/compat
 include/fltk/Adjuster.h
 include/fltk/AlignGroup.h
+include/fltk/AnsiWidget.h
 include/fltk/BarGroup.h
 include/fltk/Box.h
 include/fltk/Browser.h
