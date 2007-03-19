@@ -7,6 +7,7 @@
 
 PORTNAME=	nexuiz
 PORTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,7 +40,8 @@ OPTIONS=	CLIENT		"Build GLX client"		on \
 # Loads libraries on run-time, thus RUN_DEPENDS
 RUN_DEPENDS=	${LOCALBASE}/lib/libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		${LOCALBASE}/lib/libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		${LOCALBASE}/lib/libpng.so:${PORTSDIR}/graphics/png
+		${LOCALBASE}/lib/libpng.so:${PORTSDIR}/graphics/png \
+		${LOCALBASE}/lib/libcurl.so:${PORTSDIR}/ftp/curl
 .endif
 
 .if !defined(WITHOUT_CLIENT)
@@ -65,13 +67,14 @@ PLIST_SUB+=	SERVER=""
 PLIST_SUB+=	SERVER="@comment "
 .endif
 
-pre-patch:
+post-extract:
 	@${EXTRACT_CMD} ${WRKDIR}/Nexuiz/sources/enginesource20070123.zip \
 		-d ${WRKDIR}/Nexuiz/sources
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},; 88,$$d' \
 		${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -E 's,(fs_basedir\, )"",\1"${DATADIR}",' ${WRKSRC}/fs.c
 	@${REINPLACE_CMD} -e 's,RTLD_LAZY,& | RTLD_GLOBAL,' ${WRKSRC}/vid_glx.c
+	@${REINPLACE_CMD} -E 's,(libcurl\.so)\.3,\1,' ${WRKSRC}/libcurl.c
 
 do-build:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
