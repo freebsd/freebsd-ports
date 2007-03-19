@@ -53,6 +53,7 @@ share/sgml/tei/p4/teilitex.ent
 share/sgml/tei/p4/teilitex.dtd
 share/sgml/tei/p4/teilite.dec
 share/sgml/tei/p4/catalog
-@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DTDDIR%%/catalog
-@dirrm share/sgml/tei/p4/
+@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%SGMLDIR%%/%%DTDDIR%%/catalog
+@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add nextCatalog %%SGMLDIR%%/%%DTDDIR%%/catalog.xml
+@dirrm share/sgml/tei/p4
 @dirrmtry share/sgml/tei
