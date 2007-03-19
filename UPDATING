@@ -6,6 +6,26 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070319:
+  AFFECTS: users of x11-wm/fluxbox and x11-wm/fluxbox-devel
+  AUTHOR: mezz@FreeBSD.org
+
+  The x11-wm/fluxbox-devel has been merged into x11-wm/fluxbox. You should
+  be back up your ~/.fluxbox and remove it. If you still want to keep to
+  use the same ~/.fluxbox, then you will have to do this:
+
+  	- The prefix has been changed from X11BASE (/usr/X11R6) to
+  	  LOCALBASE (/usr/local). You might have to edit a few of paths in
+  	  the ~/.fluxbox/* if there is any.
+  	- The bsetroot has been renamed to fbsetroot. You might have to
+  	  tweak a few of theme for bsetroot -> fbsetroot. Other way can be
+  	  done is to install the x11-wm/boxtools that has bsetroot if you
+  	  don't want to edit any theme.
+
+  While I am here, don't forget to use 'pkgdb -F'. As for the portmaster
+  users, I don't think you will need to do anything since portmaster will
+  taking care of it by default.
+
 20070318:
   AFFECTS: users of devel/gettext (ie: YOU)
   AUTHOR: ade@FreeBSD.org

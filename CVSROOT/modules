@@ -2843,7 +2843,6 @@ fluidsynth-dssi	ports/audio/fluidsynth-dssi
 flux-art	ports/x11-themes/flux-art
 fluxbg		ports/x11/fluxbg
 fluxbox		ports/x11-wm/fluxbox
-fluxbox-devel	ports/x11-wm/fluxbox-devel
 fluxbox-sid-pack	ports/x11-themes/fluxbox-sid-pack
 fluxcms		ports/www/fluxcms
 fluxconf	ports/x11-wm/fluxconf

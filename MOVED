@@ -2871,3 +2871,4 @@ chinese/gbfs||2007-03-14|Has expired: Use mount_cd9660(8), mount_msdosfs(8), or 
 audio/anthem||2007-03-16|Has expired: this software is not developed any more
 www/jakarta-tomcat41|www/tomcat41|2007-03-17|Renamed (no longer a Jakarta project)
 multimedia/totem-gstreamer|multimedia/totem|2007-03-19|multimedia/totem now uses gstreamer by default
+x11-wm/fluxbox-devel|x11-wm/fluxbox|2007-03-19|Merged into x11-wm/fluxbox

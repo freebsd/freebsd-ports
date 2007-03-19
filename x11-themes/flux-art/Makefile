@@ -12,9 +12,9 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.iluxa.kremenchug.net/files/
 
 MAINTAINER=	ilya@space.rootshell.ru
-COMMENT=	Flux-art themes pack for fluxbox-devel
+COMMENT=	Flux-art themes pack for fluxbox
 
-RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox-devel
+RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox
 
 CONFLICTS=	fluxbox-fluxmod-*
 

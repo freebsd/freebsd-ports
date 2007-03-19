@@ -38,7 +38,6 @@
     SUBDIR += fbcmd
     SUBDIR += fbpager
     SUBDIR += fluxbox
-    SUBDIR += fluxbox-devel
     SUBDIR += fluxconf
     SUBDIR += fluxspace
     SUBDIR += fluxter

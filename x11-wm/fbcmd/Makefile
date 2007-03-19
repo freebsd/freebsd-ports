@@ -13,7 +13,7 @@ MASTER_SITES=	http://darkshed.feuersenger.net/files/c_cpp/fbcmd/
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	A commandline utility for controlling fluxbox
 
-RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox-devel
+RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
