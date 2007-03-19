@@ -9,7 +9,7 @@ PORTNAME=	freenet6
 PORTVERSION=	2.1.1
 PORTREVISION=	6
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://www.hexago.com/files/
+MASTER_SITES=	http://www.go6.net/4105/file.asp?file_id=80&foo=/
 DISTNAME=	tspc-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
