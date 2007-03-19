@@ -3,5 +3,3 @@ data.
 This module can be used for debug or for security.
 This beta version include one filter dumping the POST data for an
 incoming request, and a filter dumping the outgoing data.
-
-WWW: http://loghttp.sourceforge.net/
