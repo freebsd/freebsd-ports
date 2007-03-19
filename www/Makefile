@@ -189,6 +189,7 @@
     SUBDIR += horde-base
     SUBDIR += horde-meta
     SUBDIR += horde-passwd
+    SUBDIR += horde-trean
     SUBDIR += hotjava
     SUBDIR += htdump
     SUBDIR += html2hdml
