@@ -11,6 +11,7 @@ bin/hfind
 bin/icat
 bin/ifind
 bin/ils
+bin/img_cat
 bin/img_stat
 bin/istat
 bin/jcat
