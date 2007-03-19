@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Workflow
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Workflow
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	svysh@cryptocom.ru
+MAINTAINER=	svysh@ipmce.ru
 COMMENT=	Simple, flexible system to implement workflows
 
 BUILD_DEPENDS=	\
