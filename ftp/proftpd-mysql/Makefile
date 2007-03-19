@@ -4,13 +4,15 @@
 #
 # $FreeBSD$
 
-MAINTAINER=     thomas@goirand.fr
-COMMENT=        Highly configurable ftp daemon with MySQL support
+PORTNAME=	proftpd
+PKGNAMESUFFIX=	-mysql
 
-PKGNAMESUFFIX=  -mysql
-WITH_MYSQL=     yes
+MAINTAINER=	thomas@goirand.fr
+COMMENT=	Highly configurable ftp daemon with MySQL support
+
+WITH_MYSQL=	yes
 CONFLICTS=	proftpd-1.*
 
-MASTERDIR=      ${.CURDIR}/../../ftp/proftpd
+MASTERDIR=	${.CURDIR}/../../ftp/proftpd
 
-.include "${MASTERDIR}/Makefile"
+.include	"${MASTERDIR}/Makefile"
