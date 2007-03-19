@@ -1,3 +1,6 @@
 MD5 (webmin-1.330.tar.gz) = b6ba36e762ebae2d759bb8d66a7ca7c5
 SHA256 (webmin-1.330.tar.gz) = fd5e4a689a4729bb8600d796914f8532dc3fb664b55fcd69b2315ff0d7f73b1a
 SIZE (webmin-1.330.tar.gz) = 10783240
+MD5 (mysql-1.330-3.wbm.gz) = 7d780e9980617ab0d2f9278504e34c73
+SHA256 (mysql-1.330-3.wbm.gz) = 84636dbd7febd70d028300ab1c34b8cdb27f53eafb3e8aa5f1a69ebdecb7430d
+SIZE (mysql-1.330-3.wbm.gz) = 222166
