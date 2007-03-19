@@ -1,37 +1,37 @@
 @unexec %D/etc/rc.d/wildfire stop > /dev/null 2>&1 || true
-@unexec if cmp -s %D/etc/wildfire/wildfire.xml %D/%%EXAMPLESDIR%%/wildfire.xml; then rm -f %D/etc/wildfire/wildfire.xml; else echo If permanently deleting this package, %%PREFIX%%/etc/wildfire.xml must be removed manually; fi
+@unexec if cmp -s %D/etc/wildfire/wildfire.xml %D/%%EXAMPLESDIR%%/wildfire.xml; then rm -f %D/etc/wildfire/wildfire.xml; else echo If permanently deleting this package, %%PREFIX%%/etc/wildfire/wildfire.xml must be removed manually; fi
 @unexec [ -d %D/share/doc/wildfire/javadoc ] && rm -rf %D/share/doc/wildfire/javadoc
 %%EXAMPLESDIR%%/wildfire.xml
 @exec [ -d /var/log/wildfire ] || mkdir -p  /var/log/wildfire && chown wildfire:wildfire /var/log/wildfire
 @exec [ -d /var/db/wildfire ] || mkdir -p  /var/db/wildfire && chown wildfire:wildfire /var/db/wildfire
 @exec [ -d %D/etc/wildfire ] || mkdir -p  %D/etc/wildfire && chown wildfire:wildfire %D/etc/wildfire
 @exec [ -f %D/etc/wildfire/wildfire.xml ] || cp %%EXAMPLESDIR%%/wildfire.xml %D/etc/wildfire/wildfire.xml && chown wildfire:wildfire %D/etc/wildfire/wildfire.xml
-share/doc/wildfire/LICENSE.html
-share/doc/wildfire/README.html
-share/doc/wildfire/changelog.html
-share/doc/wildfire/database-guide.html
-share/doc/wildfire/database.html
-share/doc/wildfire/db-integration-guide.html
-share/doc/wildfire/images/header_logo.gif
-share/doc/wildfire/images/launcher.png
-share/doc/wildfire/images/sitemesh.png
-share/doc/wildfire/images/windows_service.png
-share/doc/wildfire/images/setup_ldap.png
-share/doc/wildfire/images/active_directory.png
-share/doc/wildfire/index.html
-share/doc/wildfire/install-guide.html
-share/doc/wildfire/ldap-guide.html
-share/doc/wildfire/licenses/LICENSE-commons-logging.txt
-share/doc/wildfire/licenses/LICENSE-dom4j.txt
-share/doc/wildfire/licenses/LICENSE-jaxen.txt
-share/doc/wildfire/licenses/LICENSE-xpp3.txt
-share/doc/wildfire/plugin-dev-guide.html
-share/doc/wildfire/protocol-support.html
-share/doc/wildfire/source-build.html
-share/doc/wildfire/ssl-guide.html
-share/doc/wildfire/style.css
-share/doc/wildfire/translator-guide.html
-share/doc/wildfire/upgrade-guide.html
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.html
+%%PORTDOCS%%%%DOCSDIR%%/README.html
+%%PORTDOCS%%%%DOCSDIR%%/changelog.html
+%%PORTDOCS%%%%DOCSDIR%%/database-guide.html
+%%PORTDOCS%%%%DOCSDIR%%/database.html
+%%PORTDOCS%%%%DOCSDIR%%/db-integration-guide.html
+%%PORTDOCS%%%%DOCSDIR%%/images/header_logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/launcher.png
+%%PORTDOCS%%%%DOCSDIR%%/images/sitemesh.png
+%%PORTDOCS%%%%DOCSDIR%%/images/windows_service.png
+%%PORTDOCS%%%%DOCSDIR%%/images/setup_ldap.png
+%%PORTDOCS%%%%DOCSDIR%%/images/active_directory.png
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/install-guide.html
+%%PORTDOCS%%%%DOCSDIR%%/ldap-guide.html
+%%PORTDOCS%%%%DOCSDIR%%/licenses/LICENSE-commons-logging.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses/LICENSE-dom4j.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses/LICENSE-jaxen.txt
+%%PORTDOCS%%%%DOCSDIR%%/licenses/LICENSE-xpp3.txt
+%%PORTDOCS%%%%DOCSDIR%%/plugin-dev-guide.html
+%%PORTDOCS%%%%DOCSDIR%%/protocol-support.html
+%%PORTDOCS%%%%DOCSDIR%%/source-build.html
+%%PORTDOCS%%%%DOCSDIR%%/ssl-guide.html
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/translator-guide.html
+%%PORTDOCS%%%%DOCSDIR%%/upgrade-guide.html
 share/java/classes/activation.jar
 share/java/classes/bouncycastle.jar
 share/java/classes/commons-el.jar
@@ -307,9 +307,9 @@ share/nls/en_US.US-ASCII
 @dirrm share/java/wildfire/plugins/admin/webapp/WEB-INF
 @dirrm share/java/wildfire/plugins/admin/webapp
 @dirrm share/java/wildfire/plugins/admin
-@dirrm share/doc/wildfire/licenses
-@dirrm share/doc/wildfire/images
-@dirrm share/doc/wildfire
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/licenses
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%
 @unexec rmdir %D/share/java/wildfire/plugins 2> /dev/null || echo "If permanently deleting this package, %D/share/jave/wildfire/plugins must be removed manually"
 @unexec rmdir %D/etc/wildfire 2> /dev/null || echo "If permanently deleting this package, %D/etc/wildfire must be removed manually"
