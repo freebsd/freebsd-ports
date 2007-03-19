@@ -26,7 +26,6 @@ lib/luma/base/gui/BaseSelectorDesign.py
 lib/luma/base/gui/BaseSelectorDesign.pyc
 lib/luma/base/gui/BaseSelectorDesign.ui
 lib/luma/base/gui/ImprovedServerDialog.py
-lib/luma/base/gui/ImprovedServerDialog.ui
 lib/luma/base/gui/ImprovedServerDialogDesign.py
 lib/luma/base/gui/ImprovedServerDialogDesign.ui
 lib/luma/base/gui/ImprovedServerDialog.pyc
@@ -379,7 +378,6 @@ lib/luma/plugins/usermanagement/usermanagement_plugin.pyc
 %%DATADIR%%/icons/ok.png
 %%DATADIR%%/icons/password_big.png
 %%DATADIR%%/icons/passwordmedium.png
-%%DATADIR%%/icons/plugins/addressbook/addressbook.png
 %%DATADIR%%/icons/plugins/addressbook/category.png
 %%DATADIR%%/icons/plugins/addressbook/email.png
 %%DATADIR%%/icons/plugins/addressbook/home.png
@@ -389,11 +387,9 @@ lib/luma/plugins/usermanagement/usermanagement_plugin.pyc
 %%DATADIR%%/icons/plugins/addressbook/phone.png
 %%DATADIR%%/icons/plugins/addressbook/url.png
 %%DATADIR%%/icons/plugins/addressbook/work.png
-%%DATADIR%%/icons/plugins/admin_utils/admin_utils.png
 %%DATADIR%%/icons/plugins/admin_utils/date.png
 %%DATADIR%%/icons/plugins/admin_utils/secure.png
 %%DATADIR%%/icons/plugins/browser_plugin/plugin.png
-%%DATADIR%%/icons/plugins/mass_creation_plugin/massive_users.png
 %%DATADIR%%/icons/plugins/search_plugin/plugin.png
 %%DATADIR%%/icons/plugins/template_plugin/add.png
 %%DATADIR%%/icons/plugins/template_plugin/down.png
@@ -407,7 +403,6 @@ lib/luma/plugins/usermanagement/usermanagement_plugin.pyc
 %%DATADIR%%/icons/plugins/usermanagement/home.png
 %%DATADIR%%/icons/plugins/usermanagement/password.png
 %%DATADIR%%/icons/plugins/usermanagement/shell.png
-%%DATADIR%%/icons/plugins/usermanagement/usermanagement.png
 %%DATADIR%%/icons/alias.png
 %%DATADIR%%/icons/reload.png
 %%DATADIR%%/icons/save.png
@@ -426,6 +421,15 @@ lib/luma/plugins/usermanagement/usermanagement_plugin.pyc
 %%DATADIR%%/icons/warning_big.png
 %%DATADIR%%/icons/world.png
 %%DATADIR%%/icons/worldmedium.png
+%%DATADIR%%/i18n/luma_it.qm
+%%DATADIR%%/icons/plugins/addressbook/plugin.png
+%%DATADIR%%/icons/plugins/admin_utils/plugin.png
+%%DATADIR%%/icons/plugins/schemabrowser/plugin.png
+%%DATADIR%%/icons/plugins/mass_creation_plugin/plugin.png
+%%DATADIR%%/icons/plugins/usermanagement/plugin.png
+%%DATADIR%%/icons/security32.png
+%%DATADIR%%/icons/config32.png
+%%DATADIR%%/icons/certificate32.png
 @dirrm lib/luma/base/backend
 @dirrm lib/luma/base/gui
 @dirrm lib/luma/base/utils/backend
@@ -448,6 +452,7 @@ lib/luma/plugins/usermanagement/usermanagement_plugin.pyc
 @dirrm %%DATADIR%%/i18n
 @dirrm %%DATADIR%%/icons/AdvancedObjectWidget
 @dirrm %%DATADIR%%/icons/mainwin
+@dirrm %%DATADIR%%/icons/plugins/schemabrowser
 @dirrm %%DATADIR%%/icons/plugins/addressbook
 @dirrm %%DATADIR%%/icons/plugins/admin_utils
 @dirrm %%DATADIR%%/icons/plugins/browser_plugin
