@@ -1,0 +1,34 @@
+SHLIB_NAME	 =	helix.so
+
+CXXFLAGS	+=	-D_UNIX -DMOZ_X11 -I${LOCALBASE}/include/nspr
+CXXFLAGS	+=	-I${LOCALBASE}/include/${GECKO}/uconv
+CXXFLAGS	+=	-I${LOCALBASE}/include/${GECKO}/xpcom
+CXXFLAGS	+=	-I${LOCALBASE}/include/${GECKO}/npapi
+CXXFLAGS	+=	-I${LOCALBASE}/include/${GECKO}/string
+CXXFLAGS	+=	-I${LOCALBASE}/include/${GECKO}
+CXXFLAGS	+=	-I${X11BASE}/include
+CXXFLAGS	+=	-I${TOP}/player/app/plugin/include
+CXXFLAGS	+=	-I${TOP}/player/app/gtk/pub
+
+SRCS		 =	hxbackend.cpp	\
+			np_entry.cpp	\
+			npn_gate.cpp	\
+			npp_gate.cpp	\
+			nsHXPlayer.cpp	\
+			plugin.cpp	\
+			tokenizer.cpp
+
+XPIDL		?=	${LOCALBASE}/lib/${GECKO}/xpidl
+XPTLINK		?=	${XPIDL:H}/xpt_link
+SHARE_IDL	!=	echo ${LOCALBASE}/share/idl/${GECKO:S/-devel/-2/}*
+
+.PATH:	${TOP}/player/app/plugin ${TOP}/player/app/plugin/common
+
+nphelix.xpt:	nsIHXPlayer.idl
+	${XPIDL} -m header -I${SHARE_IDL} ${.ALLSRC}
+	${XPIDL} -m typelib -I${SHARE_IDL} ${.ALLSRC}
+	${XPTLINK} $@ nsIHXPlayer.xpt
+
+all:	nphelix.xpt
+
+.include <bsd.lib.mk>

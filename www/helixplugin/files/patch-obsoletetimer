@@ -1,0 +1,178 @@
+Don't look for the ancient nsIScriptableTimer.h header and its
+long-obsolete content...
+
+	-mi
+
+--- player/app/plugin/hxbackend.h	Mon Nov 22 19:24:25 2004
++++ player/app/plugin/hxbackend.h	Sun Jul  2 01:13:09 2006
+@@ -62,9 +62,4 @@
+ #include "nsIObserver.h"
+ 
+-/* Mozilla 1.0-1.2 had nsIScriptableTimer.h and a different nsITimer.h. We
+-   use the nsIScriptableTimer version to avoid conflicts with the newer
+-   nsITimer. */
+-#include "nsIScriptableTimer.h"
+-
+ /* Mozilla 1.3+ have the modern nsITimer */
+ #include "nsITimer.h"
+@@ -106,5 +101,5 @@
+     nsresult ReadGenericResponse(PRBool *retval);
+ 
+-    PRBool AreCallbacksSupported(void) { return m_pTimer || m_pObsoleteTimer; }
++    PRBool AreCallbacksSupported(void) { return m_pTimer != NULL; }
+     
+ private:
+@@ -129,5 +124,4 @@
+     
+     nsITimer *m_pTimer;
+-    nsIScriptableTimer *m_pObsoleteTimer; // Only found in old mozilla's
+     nsIScriptableUnicodeConverter *m_pUConv;
+     nsIPromptService *m_pPromptService;
+--- player/app/plugin/nsHXPlayer.cpp	Mon Nov 22 19:24:25 2004
++++ player/app/plugin/nsHXPlayer.cpp	Sun Jul  2 01:47:25 2006
+@@ -560,8 +560,8 @@
+         XFlush(ws_info->display);
+         
+-        nLen = asprintf(&pMsg, "%s %d %d %d %d %d %d %d %d %d %d %d\n",
++        nLen = asprintf(&pMsg, "%s %td %d %d %d %d %d %d %d %d %d %d\n",
+                         szCommand,
+                         m_iPlayerID,
+-                        (int)aWindow->window,
++                        (intptr_t)aWindow->window,
+                         aWindow->x,
+                         aWindow->y,
+@@ -602,5 +602,4 @@
+     PRBool retval;
+     unsigned int nStreamLength;
+-    int nStreamId = 0;
+ 
+     nStreamLength = ( stream->end > 0 ) ? stream->end : 0; 
+@@ -617,16 +616,7 @@
+     *stype = NP_NORMAL;
+ 
+-    if(m_bIsFirstNewStream)
+-    {
+-        nStreamId = 0;    
+-    }
+-    else
+-    {
+-        nStreamId = (int)stream;
+-    }
+-    
+-    nLen = asprintf(&pMsg, "NewStream %d %d %s %s %d\n",
++    nLen = asprintf(&pMsg, "NewStream %d %td %s %s %d\n",
+                     m_iPlayerID,
+-                    nStreamId,
++                    (intptr_t)(m_bIsFirstNewStream ? 0 : stream),
+                     stream->url,
+                     type,
+@@ -671,5 +661,5 @@
+     (void)offset;
+ 
+-    nLen = asprintf(&pMsg, "StreamData %d %d %d\n", m_iPlayerID, (int)streamID, nDataLen);
++    nLen = asprintf(&pMsg, "StreamData %d %td %d\n", m_iPlayerID, (intptr_t)streamID, nDataLen);
+     result = m_pBackend->SendMessage(pMsg, nLen);
+     free(pMsg);
+@@ -704,5 +694,5 @@
+     const void *streamID = (void*)stream;
+     
+-    nLen = asprintf(&pMsg, "StreamDone %d %d\n", m_iPlayerID, (int)streamID);
++    nLen = asprintf(&pMsg, "StreamDone %d %td\n", m_iPlayerID, (intptr_t)streamID);
+     result = m_pBackend->SendMessage(pMsg, nLen);
+     free(pMsg);
+--- player/app/plugin/hxbackend.cpp	Mon Nov 22 19:24:25 2004
++++ player/app/plugin/hxbackend.cpp	Sun Jul  2 02:37:29 2006
+@@ -153,5 +153,4 @@
+         m_nCallbackBufPos(0),
+         m_pTimer(NULL),
+-        m_pObsoleteTimer(NULL),
+         m_pUConv(NULL),
+         m_pPromptService(NULL),
+@@ -424,13 +423,5 @@
+                                                           (void**)&m_pTimer);
+             
+-            if(!m_pTimer)
+-            {
+-                /* Try to get an old-style mozilla 1.0-1.2 timer */
+-                pComponentManager->CreateInstanceByContractID(NS_TIMER_CONTRACTID,
+-                                                              NULL,
+-                                                              NS_GET_IID(nsIScriptableTimer),
+-                                                              (void**)&m_pObsoleteTimer);
+-            }
+-            
++ 
+             NS_RELEASE(pComponentManager);
+         }
+@@ -545,5 +536,5 @@
+             sprintf(cbSd, "%d", cbsockets[1]);
+                 
+-            if (m_pTimer || m_pObsoleteTimer)
++            if (m_pTimer)
+             {
+                 /* We have a timer callback, include --callbacks flag */
+@@ -716,13 +699,4 @@
+             free(szJavaScriptAlert);        
+         }
+-
+-        if(pUnicodeTitle)
+-        {
+-            m_pMemory->Free(pUnicodeTitle);
+-        }
+-        if(pUnicodeMessage)
+-        {
+-            m_pMemory->Free(pUnicodeMessage);
+-        }
+     }
+     
+@@ -894,5 +868,5 @@
+         m_pTimer->Init(pTimerFob,
+                        500,
+-                       nsIScriptableTimer::TYPE_REPEATING_SLACK);
++                       nsITimer::TYPE_REPEATING_SLACK);
+         m_pTimer->Cancel();
+ 
+@@ -901,20 +875,4 @@
+     }
+ 
+-    if(m_pObsoleteTimer)
+-    {
+-        m_pObsoleteTimer->Cancel();
+-
+-        /* Re-initing causes the timer to unref this and switch its ref
+-           to pTimerFob instead */
+-        m_pObsoleteTimer->Init(pTimerFob,
+-                               500,
+-                               nsIScriptableTimer::PRIORITY_NORMAL,
+-                               nsIScriptableTimer::TYPE_REPEATING_SLACK);
+-        m_pObsoleteTimer->Cancel();
+-
+-        NS_RELEASE(m_pObsoleteTimer);
+-        m_pObsoleteTimer = NULL;
+-    }
+-
+     NS_RELEASE(pTimerFob);
+     
+@@ -1187,12 +1145,4 @@
+                        nsITimer::TYPE_REPEATING_SLACK);
+     }
+-    else if(m_pObsoleteTimer)
+-    {
+-        m_bCallbackTimerRunning = PR_TRUE;
+-        m_pObsoleteTimer->Init(this,
+-                               500,
+-                               nsIScriptableTimer::PRIORITY_NORMAL,
+-                               nsIScriptableTimer::TYPE_REPEATING_SLACK);
+-    }
+ }
+ 
+@@ -1205,10 +1155,3 @@
+         m_pTimer->Cancel();
+     }
+-    if(m_pObsoleteTimer)
+-    {
+-        m_bCallbackTimerRunning = PR_FALSE;
+-        m_pObsoleteTimer->Cancel();
+-    }
+ }
+-
+-

@@ -1,0 +1,66 @@
+Use browser-installed headers instead of the bundled (obsolete)
+copies...
+
+Fix other bugs/deficiencies...
+
+	-mi
+
+--- player/app/plugin/nsHXPlayer.cpp	Mon Nov 22 19:24:25 2004
++++ player/app/plugin/nsHXPlayer.cpp	Tue Oct 24 13:13:00 2006
+@@ -56,5 +56,4 @@
+ #include "hxbackend.h"
+ #include "tokenizer.h"
+-#include "asprintf.h"
+ 
+ #include <stdlib.h>
+--- player/app/plugin/hxbackend.cpp	Sun Oct 22 13:33:21 2006
++++ player/app/plugin/hxbackend.cpp	Sun Oct 22 13:50:24 2006
+@@ -66,13 +66,10 @@
+ #include <signal.h>
+ 
+-#include "npplat.h"
+-#include "hxbackend.h"
+-#include "asprintf.h"
+-
+ #include "tokenizer.h"
++#include "hxbackend.h"
+ 
+-#include "nsIServiceManager.h"
+-#include "nsIComponentManager.h"
+-#include "nsIDOMWindow.h"
++#include <nsIServiceManager.h>
++#include <nsIComponentManager.h>
++#include <nsIDOMWindow.h>
+ 
+ #define EXIT_CODE_UNKNOWN          0
+@@ -358,5 +357,5 @@ nsresult CHXPlayerBackend::ReceiveMessag
+     {
+         /* Trim back the buffer to the size we actually used (plus NULL) */
+-        pBuf = (char*)realloc(pBuf, nPos + 1);
++        *ppBuf = (char*)realloc(pBuf, nPos + 1);
+     }
+     else
+@@ -509,5 +500,5 @@
+         fcntl(cbsockets[1], F_SETFD, 0);
+ 
+-        m_nChildPid = fork();
++        m_nChildPid = vfork();
+         if(m_nChildPid < 0)
+         {
+--- player/app/plugin/nsHXPlayer.h	Sun Oct 22 13:59:54 2006
++++ player/app/plugin/nsHXPlayer.h	Sun Oct 22 14:11:15 2006
+@@ -51,10 +51,10 @@
+ #define __NS_HXPLAYER_H__
+ 
+-#include "nsISupports.h"
+-#include "nsIClassInfo.h"
++#include <nsISupports.h>
++#include <nsIClassInfo.h>
+ #include "nsIHXPlayer.h"
+-#include "nsISupportsImpl.h"
++#include <nsISupportsImpl.h>
+ #include "embddef.h"
+-#include "npapi.h"
++#include <npapi.h>
+ #include "pluginbase.h"
+ 
