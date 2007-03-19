@@ -63,6 +63,7 @@
     SUBDIR += gps
     SUBDIR += grepcidr
     SUBDIR += grepip
+    SUBDIR += horde-nic
     SUBDIR += icmpmonitor
     SUBDIR += icmpquery
     SUBDIR += ifgraph
