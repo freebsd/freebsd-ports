@@ -1,0 +1,39 @@
+--- player/app/plugin/hxbackend.cpp	Mon Mar 19 14:45:03 2007
++++ player/app/plugin/hxbackend.cpp	Mon Mar 19 16:49:02 2007
+@@ -72,4 +72,5 @@
+ #include <nsIComponentManager.h>
+ #include <nsIDOMWindow.h>
++#include <nsStringAPI.h>
+ 
+ #define EXIT_CODE_UNKNOWN          0
+@@ -710,17 +702,13 @@
+     if(instance)
+     {
+-        PRUnichar *pUnicodeTitle = NULL;
+-        PRUnichar *pUnicodeMessage = NULL;
+-
+         NPN_GetValue(instance, NPNVDOMWindow, &pDomWindow);
+ 
+-        if(m_pPromptService && m_pUConv && m_pMemory && pDomWindow)
+-        {
+-            m_pUConv->ConvertToUnicode("Helix DNA Plugin Error", &pUnicodeTitle);
+-            m_pUConv->ConvertToUnicode(szError, &pUnicodeMessage);
+-        }
+-
+-        if(pUnicodeTitle && pUnicodeMessage && m_pPromptService && m_pMemory && pDomWindow)
++        if(m_pPromptService && m_pMemory && pDomWindow)
+         {        
++            nsString UnicodeMessage, UnicodeTitle;
++
++	    NS_CStringToUTF16(nsCString(szError), NS_CSTRING_ENCODING_ASCII, UnicodeMessage);
++	    NS_CStringToUTF16(nsCString("Helix DNA Plugin Error"), NS_CSTRING_ENCODING_ASCII, UnicodeTitle);
++
+             /* Cancel the callback timer while the alert dialog is up to
+                prevent a race (eg, the timer callback can call Shutdown(),
+@@ -730,5 +718,5 @@
+             StopCallbackTimer();
+             
+-            m_pPromptService->Alert(pDomWindow, pUnicodeTitle, pUnicodeMessage);
++            m_pPromptService->Alert(pDomWindow, UnicodeTitle.get(), UnicodeMessage.get());
+ 
+             if(bRestartCallbackTimer)

@@ -185,6 +185,7 @@
     SUBDIR += harvest
     SUBDIR += hastymail
     SUBDIR += havp
+    SUBDIR += helixplugin
     SUBDIR += hiawatha
     SUBDIR += hinventory-client
     SUBDIR += horde-base
