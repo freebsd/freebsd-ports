@@ -15,7 +15,7 @@ DISTNAME=	sidpack
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Sid themes pack for fluxbox
 
-RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox-devel
+RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox
 
 USE_BZIP2=	yes
 USE_XLIB=	yes

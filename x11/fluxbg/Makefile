@@ -23,10 +23,9 @@ USE_GNOME=	gnomehack gnometarget
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${X11BASE}/bin/bsetbg) &&  \
-    !exists(${LOCALBASE}/bin/fbsetbg) && \
+.if !exists(${LOCALBASE}/bin/fbsetbg) && \
     !exists(${X11BASE}/bin/fbsetbg)
-RUN_DEPENDS=	fbsetbg:${PORTSDIR}/x11-wm/fluxbox-devel
+RUN_DEPENDS=	fbsetbg:${PORTSDIR}/x11-wm/fluxbox
 .endif
 
 post-patch:
