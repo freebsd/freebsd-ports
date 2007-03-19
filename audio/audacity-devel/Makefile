@@ -16,16 +16,19 @@ MAINTAINER=	xxjack12xx@gmail.com
 COMMENT=	Audacity is a GUI editor for digital audio waveforms
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	wx_gtk2_core-2.6.0:${PORTSDIR}/x11-toolkits/wxgtk26
 
 CONFLICTS=	audacity-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}-beta
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GETTEXT=	yes
 USE_GCC=	4.1
+
+USE_WX=		2.6
+WX_COMPS=	wx
 
 CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 
@@ -45,7 +48,7 @@ SSE_CFLAGS=	-mno-sse -mno-sse2
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${SSE_CFLAGS} ${PTHREAD_CFLAGS}" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${SSE_CFLAGS} ${PTHREAD_CFLAGS}" \
-		WX_CONFIG=${X11BASE}/bin/wxgtk2-2.6-config
+		WX_CONFIG=${WX_CONFIG}
 
 .if !defined(NOPORTDOCS)
 MAKE_ENV=	DOC=yes
@@ -76,5 +79,9 @@ CONFIGURE_ARGS+=	--without-id3tag
 post-patch:
 	@${REINPLACE_CMD} -e 's,^sndfile.c : .*,,' \
 		${WRKSRC}/lib-src/libsndfile/src/Makefile.in
+.if ${ARCH} != "i386" && ${ARCH} != "amd64"
+	@${REINPLACE_CMD} -e 's,-msse2?,,' \
+		${WRKSRC}/lib-src/soundtouch/source/SoundTouch/Makefile.in
+.endif
 
 .include <bsd.port.post.mk>
