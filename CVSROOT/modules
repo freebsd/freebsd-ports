@@ -1819,6 +1819,7 @@ denature	ports/textproc/denature
 denemo		ports/audio/denemo
 deng		ports/games/deng
 denyhosts	ports/security/denyhosts
+deputy		ports/devel/deputy
 deskbar-applet	ports/deskutils/deskbar-applet
 deskmenu	ports/x11/deskmenu
 desktop-file-utils	ports/devel/desktop-file-utils
