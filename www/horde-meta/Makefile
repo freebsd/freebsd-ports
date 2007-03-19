@@ -29,7 +29,8 @@ OPTIONS=	IMP "IMAP Webmail System" on	\
 		GOLLEM "Web-Based File Manager" off	\
 		JETA "Java SSH Applets" off	\
 		HPASSWD "Password Changing Module" off	\
-		VACATION "Vacation & Auto Respond" off
+		VACATION "Vacation & Auto Respond" off	\
+		TREAN "Bookmark Manager" off
 
 .include <bsd.port.pre.mk>
 
@@ -81,6 +82,10 @@ RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/passwd/index.php:${PORTSDIR}/www/horde-p
 
 .if defined(WITH_VACATION)
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/vacation/main.php:${PORTSDIR}/mail/horde-vacation
+.endif
+
+.if defined(WITH_TREAN)
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/trean/data.php:${PORTSDIR}/www/horde-trean
 .endif
 
 post-configure:
