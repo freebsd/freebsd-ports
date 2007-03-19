@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	DBIx-MySQLSequence
-PORTVERSION=	1.00
+PORTVERSION=	1.02
 CATEGORIES=	databases perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	DBIx
 PKGNAMEPREFIX=	p5-
 
@@ -24,8 +24,6 @@ PERL_CONFIGURE=	yes
 MAN3=	DBIx::MySQLSequence.3
 
 post-patch:
-	@${RM} ${WRKSRC}/inc/Module/Install/AutoInstall.pm
-	@${PERL} -pi -e '$$_="" if m|Install/AutoInstall|' ${WRKSRC}/MANIFEST
-	@${PERL} -pi -e '$$_="" if m/Test::More|auto_install/' ${WRKSRC}/Makefile.PL
+	@${PERL} -pi -e '$$_="" if m/Test::More/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
