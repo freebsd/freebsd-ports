@@ -7,20 +7,22 @@
 #
 
 PORTNAME=	jpatch
-PORTVERSION=	0.3.b1
-CATEGORIES=	graphics
+DISTVERSION=	0.4p1
+CATEGORIES=	graphics java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.b/beta/}
+DISTNAME=	${PORTNAME}0_4preview1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemoliu@gmail.com
 COMMENT=	A spline based 3D modeling tool
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
+USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}${DISTVERSION}
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		bin/jpatch
