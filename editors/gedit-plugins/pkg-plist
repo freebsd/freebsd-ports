@@ -11,6 +11,11 @@ lib/gedit-2/plugins/charmap.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/colorpicker.py
 %%PYTHON%%lib/gedit-2/plugins/colorpicker.pyc
 %%PYTHON%%lib/gedit-2/plugins/colorpicker.pyo
+%%PYTHON%%lib/gedit-2/plugins/drawspaces.gedit-plugin
+%%PYTHON%%lib/gedit-2/plugins/drawspaces.glade
+%%PYTHON%%lib/gedit-2/plugins/drawspaces.py
+%%PYTHON%%lib/gedit-2/plugins/drawspaces.pyc
+%%PYTHON%%lib/gedit-2/plugins/drawspaces.pyo
 lib/gedit-2/plugins/gpdefs.py
 lib/gedit-2/plugins/gpdefs.pyc
 lib/gedit-2/plugins/gpdefs.pyo
