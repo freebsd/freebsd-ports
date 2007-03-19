@@ -1,0 +1,144 @@
+%%TREANDIR%%/add.php
+%%TREANDIR%%/bookmark.php
+%%TREANDIR%%/browse.php
+%%TREANDIR%%/config/.cvsignore
+%%TREANDIR%%/config/.htaccess
+%%TREANDIR%%/config/conf.xml
+%%TREANDIR%%/config/prefs.php.dist
+%%TREANDIR%%/data.php
+%%TREANDIR%%/edit.php
+%%TREANDIR%%/favicon.php
+%%TREANDIR%%/index.php
+%%TREANDIR%%/js/src/star_rating.js
+%%TREANDIR%%/js/star_rating.js
+%%TREANDIR%%/lib/Block/bookmarks.php
+%%TREANDIR%%/lib/Block/highestrated.php
+%%TREANDIR%%/lib/Block/mostclicked.php
+%%TREANDIR%%/lib/Block/tree_menu.php
+%%TREANDIR%%/lib/Bookmarks.php
+%%TREANDIR%%/lib/Forms/Search.php
+%%TREANDIR%%/lib/Trean.php
+%%TREANDIR%%/lib/Views/BookmarkList.php
+%%TREANDIR%%/lib/api.php
+%%TREANDIR%%/lib/base.php
+%%TREANDIR%%/lib/version.php
+%%TREANDIR%%/locale/de_DE/LC_MESSAGES/trean.mo
+%%TREANDIR%%/locale/en_US/help.xml
+%%TREANDIR%%/locale/es_ES/LC_MESSAGES/trean.mo
+%%TREANDIR%%/locale/fi_FI/LC_MESSAGES/trean.mo
+%%TREANDIR%%/locale/fi_FI/help.xml
+%%TREANDIR%%/locale/fr_FR/LC_MESSAGES/trean.mo
+%%TREANDIR%%/locale/it_IT/LC_MESSAGES/trean.mo
+%%TREANDIR%%/locale/nb_NO/LC_MESSAGES/trean.mo
+%%TREANDIR%%/locale/nl_NL/LC_MESSAGES/trean.mo
+%%TREANDIR%%/locale/sl_SI/LC_MESSAGES/trean.mo
+%%TREANDIR%%/locale/sv_SE/LC_MESSAGES/trean.mo
+%%TREANDIR%%/locale/zh_TW/LC_MESSAGES/trean.mo
+%%TREANDIR%%/perms.php
+%%TREANDIR%%/po/de_DE.po
+%%TREANDIR%%/po/es_ES.po
+%%TREANDIR%%/po/fi_FI.po
+%%TREANDIR%%/po/fr_FR.po
+%%TREANDIR%%/po/it_IT.po
+%%TREANDIR%%/po/nb_NO.po
+%%TREANDIR%%/po/nl_NL.po
+%%TREANDIR%%/po/sl_SI.po
+%%TREANDIR%%/po/sv_SE.po
+%%TREANDIR%%/po/trean.pot
+%%TREANDIR%%/po/zh_TW.po
+%%TREANDIR%%/redirect.php
+%%TREANDIR%%/reports.php
+%%TREANDIR%%/rss.php
+%%TREANDIR%%/scripts/check_links.php
+%%TREANDIR%%/scripts/sql/trean.sql
+%%TREANDIR%%/scripts/upgrades/2006-12-29_cleanup.php
+%%TREANDIR%%/scripts/upgrades/2006-12-29_sql_bookmarks.php
+%%TREANDIR%%/search.php
+%%TREANDIR%%/templates/add/add.inc
+%%TREANDIR%%/templates/block/1line.inc
+%%TREANDIR%%/templates/block/2line.inc
+%%TREANDIR%%/templates/block/standard.inc
+%%TREANDIR%%/templates/browse.php
+%%TREANDIR%%/templates/common-header.inc
+%%TREANDIR%%/templates/data/export.inc
+%%TREANDIR%%/templates/data/import.inc
+%%TREANDIR%%/templates/edit/bookmark.inc
+%%TREANDIR%%/templates/edit/folder.inc
+%%TREANDIR%%/templates/edit/footer.inc
+%%TREANDIR%%/templates/edit/header.inc
+%%TREANDIR%%/templates/menu.inc
+%%TREANDIR%%/templates/reports.php
+%%TREANDIR%%/templates/search.php
+%%TREANDIR%%/templates/star_rating_helper.php
+%%TREANDIR%%/templates/views/BookmarkList.php
+%%TREANDIR%%/test.php
+%%TREANDIR%%/themes/graphics/add.png
+%%TREANDIR%%/themes/graphics/az.png
+%%TREANDIR%%/themes/graphics/delete.png
+%%TREANDIR%%/themes/graphics/edit.png
+%%TREANDIR%%/themes/graphics/favicon.ico
+%%TREANDIR%%/themes/graphics/folders/folder_create.png
+%%TREANDIR%%/themes/graphics/folders/folder_delete.png
+%%TREANDIR%%/themes/graphics/folders/folder_edit.png
+%%TREANDIR%%/themes/graphics/http/1xx.png
+%%TREANDIR%%/themes/graphics/http/2xx.png
+%%TREANDIR%%/themes/graphics/http/3xx.png
+%%TREANDIR%%/themes/graphics/http/4xx.png
+%%TREANDIR%%/themes/graphics/http/5xx.png
+%%TREANDIR%%/themes/graphics/http/error.png
+%%TREANDIR%%/themes/graphics/minus.png
+%%TREANDIR%%/themes/graphics/plus.png
+%%TREANDIR%%/themes/graphics/protocol/ftp.png
+%%TREANDIR%%/themes/graphics/protocol/http.png
+%%TREANDIR%%/themes/graphics/protocol/https.png
+%%TREANDIR%%/themes/graphics/rating-star.gif
+%%TREANDIR%%/themes/graphics/reports.png
+%%TREANDIR%%/themes/graphics/trean.png
+%%TREANDIR%%/themes/graphics/za.png
+%%TREANDIR%%/themes/screen.css
+%%HORDE_INC%%httpd-trean.conf
+@dirrm %%TREANDIR%%/themes/graphics/protocol
+@dirrm %%TREANDIR%%/themes/graphics/http
+@dirrm %%TREANDIR%%/themes/graphics/folders
+@dirrm %%TREANDIR%%/themes/graphics
+@dirrm %%TREANDIR%%/themes
+@dirrm %%TREANDIR%%/templates/views
+@dirrm %%TREANDIR%%/templates/edit
+@dirrm %%TREANDIR%%/templates/data
+@dirrm %%TREANDIR%%/templates/block
+@dirrm %%TREANDIR%%/templates/add
+@dirrm %%TREANDIR%%/templates
+@dirrm %%TREANDIR%%/scripts/upgrades
+@dirrm %%TREANDIR%%/scripts/sql
+@dirrm %%TREANDIR%%/scripts
+@dirrm %%TREANDIR%%/po
+@dirrm %%TREANDIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%TREANDIR%%/locale/zh_TW
+@dirrm %%TREANDIR%%/locale/sv_SE/LC_MESSAGES
+@dirrm %%TREANDIR%%/locale/sv_SE
+@dirrm %%TREANDIR%%/locale/sl_SI/LC_MESSAGES
+@dirrm %%TREANDIR%%/locale/sl_SI
+@dirrm %%TREANDIR%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%TREANDIR%%/locale/nl_NL
+@dirrm %%TREANDIR%%/locale/nb_NO/LC_MESSAGES
+@dirrm %%TREANDIR%%/locale/nb_NO
+@dirrm %%TREANDIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%TREANDIR%%/locale/it_IT
+@dirrm %%TREANDIR%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%TREANDIR%%/locale/fr_FR
+@dirrm %%TREANDIR%%/locale/fi_FI/LC_MESSAGES
+@dirrm %%TREANDIR%%/locale/fi_FI
+@dirrm %%TREANDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%TREANDIR%%/locale/es_ES
+@dirrm %%TREANDIR%%/locale/en_US
+@dirrm %%TREANDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%TREANDIR%%/locale/de_DE
+@dirrm %%TREANDIR%%/locale
+@dirrm %%TREANDIR%%/lib/Views
+@dirrm %%TREANDIR%%/lib/Forms
+@dirrm %%TREANDIR%%/lib/Block
+@dirrm %%TREANDIR%%/lib
+@dirrm %%TREANDIR%%/js/src
+@dirrm %%TREANDIR%%/js
+@dirrm %%TREANDIR%%/config
+@dirrm %%TREANDIR%%
