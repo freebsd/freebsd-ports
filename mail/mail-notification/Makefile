@@ -7,6 +7,7 @@
 
 PORTNAME=	mail-notification
 DISTVERSION=	4.0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	mailnotify
@@ -71,7 +72,7 @@ PLIST_SUB+=	GMAIL=""
 CONFIGURE_ARGS+=--disable-evolution
 PLIST_SUB+=	EVOLUTION="@comment "
 .else
-EVO_VERSION=	2.8
+EVO_VERSION=	2.10
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin-${EVO_VERSION}.pc:${PORTSDIR}/mail/evolution
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin-${EVO_VERSION}.pc:${PORTSDIR}/mail/evolution
 PLIST_SUB+=	EVOLUTION="" EVO_VERSION=${EVO_VERSION}

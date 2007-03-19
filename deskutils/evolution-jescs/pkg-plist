@@ -9,6 +9,7 @@ share/gnome/evolution/%%EVO_VERSION%%/images/sunone-invitations-mini.png
 share/gnome/evolution-jescs/glade/sunone-add-permission-dialog.glade
 share/gnome/evolution-jescs/glade/sunone-permissions-dialog.glade
 share/gnome/evolution-jescs/glade/sunone-subscription-dialog.glade
+share/locale/ar/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/ca/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/cs/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo
 share/locale/de/LC_MESSAGES/evolution-jescs-%%VERSION%%.mo

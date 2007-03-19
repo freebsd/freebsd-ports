@@ -4,11 +4,11 @@
 # Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/textproc/libxml++26/Makefile,v 1.13 2006/04/13 07:52:38 bland Exp $
+#   $MCom: ports/textproc/libxml++26/Makefile,v 1.18 2007/03/07 19:06:06 marcus Exp $
 #
 
 PORTNAME=	libxml++
-PORTVERSION=	2.14.0
+PORTVERSION=	2.18.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -34,6 +34,10 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e '/^gentoo_ltmain_version=/s/`.*`/$$gentoo_lt_version/' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/^library_configdir =/s/libdir/includedir/' \
+	    	${WRKSRC}/libxml++/Makefile.in
+	@${REINPLACE_CMD} -e '/^Cflags:/s/libdir/includedir/' \
+	    	${WRKSRC}/libxml++-2.6.pc.in
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -E '/^SUBDIRS = /s/(docs|examples)//g' ${WRKSRC}/Makefile.in
 .endif

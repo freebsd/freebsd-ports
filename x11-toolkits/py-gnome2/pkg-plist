@@ -72,7 +72,7 @@ share/pygtk/2.0/defs/gconf.defs
 share/pygtk/2.0/defs/gnome-types.defs
 share/pygtk/2.0/defs/gnome.defs
 share/pygtk/2.0/defs/ui.defs
-@dirrm share/pygtk/2.0/argtypes
+@dirrmtry share/pygtk/2.0/argtypes
 %%PORTDOCS%%@dirrm share/examples/py-gnome/vfs/pygvfsmethod
 %%PORTDOCS%%@dirrm share/examples/py-gnome/vfs
 %%PORTDOCS%%@dirrm share/examples/py-gnome/popt

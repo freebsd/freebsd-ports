@@ -1,20 +1,9 @@
---- gconf/gconftool.c.orig	Fri May  5 12:36:01 2006
-+++ gconf/gconftool.c	Fri May  5 12:39:29 2006
-@@ -3724,6 +3724,8 @@
- static int
- do_makefile_install(GConfEngine* conf, const gchar** args, gboolean unload)
- {
-+  int sync_result;
-+
-   if (args == NULL)
-     {
-       g_printerr (_("Must specify some schema files to install\n"));
-@@ -3738,7 +3740,15 @@
-       ++args;
+--- gconf/gconftool.c.orig	Fri Mar  2 17:10:13 2007
++++ gconf/gconftool.c	Tue Mar  6 12:01:04 2007
+@@ -3781,6 +3781,13 @@ do_makefile_install(GConfEngine* conf, c
      }
  
--  return do_sync (conf);
-+  sync_result = do_sync (conf);
+   retval |= do_sync (conf);
 +
 +  /*
 +   * Send all the gconfd-2 processes a SIGHUP so that they reload the
@@ -22,7 +11,6 @@
 +   */
 +  system("/usr/bin/killall -SIGHUP gconfd-2 >/dev/null 2>&1");
 +
-+  return sync_result;
+   return retval;
  }
  
- typedef enum {

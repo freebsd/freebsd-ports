@@ -3,12 +3,11 @@
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/mail/evolution/Makefile,v 1.119 2006/10/07 17:10:06 marcus Exp $
+#   $MCom: ports/mail/evolution/Makefile,v 1.134 2007/03/13 05:41:38 marcus Exp $
 #
 
 PORTNAME=	evolution
-PORTVERSION=	2.8.3
-PORTREVISION=	1
+PORTVERSION=	2.10.0
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -26,16 +25,13 @@ USE_BISON=	yes
 USE_GETTEXT=	yes
 USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack evolutiondataserver \
-		gtkhtml3 desktopfileutils
+		gtkhtml3 desktopfileutils gnomedocutils libgnomeprintui
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
+INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/evolution/%%VERSION%%
 CONFIGURE_ARGS=	--enable-nss=yes \
-		--with-nss-includes=${LOCALBASE}/include/nss/nss \
-		--with-nss-libs=${LOCALBASE}/lib \
-		--with-nspr-includes=${LOCALBASE}/include/nspr \
-		--with-nspr-libs=${LOCALBASE}/lib \
 		--enable-mono=no \
 		--with-sub-version=" FreeBSD GNOME Team Port"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -47,9 +43,9 @@ GCONF_SCHEMAS=	apps_evolution_addressbook-${EVO_VERSION}.schemas \
 		apps_evolution_shell-${EVO_VERSION}.schemas \
 		evolution-mail-${EVO_VERSION}.schemas
 
-EVO_VERSION=	2.8
+EVO_VERSION=	2.10
 PLIST_SUB=	VERSION=${EVO_VERSION} \
-		PORTVERSION=2.8
+		PORTVERSION=2.10
 
 OPTIONS=	PILOT "Enable Palm Pilot sync support" off \
 		LDAP "Enable LDAP support" on \
@@ -61,16 +57,11 @@ USE_LDCONFIG=	${PREFIX}/lib/evolution/${EVO_VERSION}
 .include "${PORTSDIR}/misc/ldconfig_compat/bsd.ldconfig.mk"
 
 .if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
-WITH_GSTREAMER=	yes
 WITH_DBUS=	yes
 .endif
 
 .if exists(${LOCALBASE}/lib/libdbus-glib-1.so)
 WITH_DBUS=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libgstreamer-0.8.so)
-WITH_GSTREAMER=	yes
 .endif
 
 .if defined(WITH_PILOT)
@@ -93,13 +84,6 @@ CONFIGURE_ARGS+=--with-openldap=no
 RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 .endif
 
-.if defined(WITH_GSTREAMER)
-LIB_DEPENDS+=	gstreamer-0.8.5:${PORTSDIR}/multimedia/gstreamer80
-PLIST_SUB+=	GSTREAMER=""
-.else
-PLIST_SUB+=	GSTREAMER="@comment "
-.endif
-
 .if defined(WITH_DBUS)
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 PLIST_SUB+=	DBUS=""
@@ -118,6 +102,10 @@ CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME} --with-krb5-includes=${HEIMDAL_HOME
 CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE}
 .endif
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^plugins_standard_always/s/audio-inline//' \
+	    	${WRKSRC}/configure
 
 post-install: install-ldconfig-file
 	@${LN} -sf ${PREFIX}/bin/evolution-${EVO_VERSION} \

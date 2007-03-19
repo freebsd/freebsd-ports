@@ -27,9 +27,9 @@ CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --with-gmp
 
 .if ${PORTNAME:M*XGP}
 LIB_DEPENDS+=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		gtkhtml-3.8.15:${PORTSDIR}/www/gtkhtml3 \
 		YGP-${PORTVERSION}.0:${PORTSDIR}/devel/libYGP
 PLIST_SUB+=	YGP="@comment " XGP=""
+USE_GGNOME+=	gtkhtml3
 CFG_PATCH+=	s/mozembed/mozembedNO/g;
 XGP_PATCH+=	s/(^@AM.*)?GtkMozViewer(.lo|.c|.Plo@am__quote@)//;
 MKIN_PATCH+=	s/^(SUBDIRS = ).*$$/\1XGP/;
@@ -47,6 +47,8 @@ post-patch:
 		${XARGS} -0 ${REINPLACE_CMD} -e 's/ygp-cfg/xgp-cfg/g'
 	@${CP} ${WRKSRC}/ygp-cfg.h ${WRKSRC}/xgp-cfg.h
 	@${CP} ${WRKSRC}/ygp-cfg.h.in ${WRKSRC}/xgp-cfg.h.in
+	@${REINPLACE_CMD} -e 's|libgtkhtml-3.8|libgtkhtml-3.14|g' \
+	    	${WRKSRC}/configure
 .endif
 
 post-install:

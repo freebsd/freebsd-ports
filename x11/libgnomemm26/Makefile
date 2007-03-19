@@ -3,11 +3,11 @@
 # Whom:                 Alexander Nedotsukov <bland@mail.ru>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/libgnomemm26/Makefile,v 1.10 2006/08/21 15:25:07 ahze Exp $
+#   $MCom: ports/x11/libgnomemm26/Makefile,v 1.12 2007/03/10 05:37:03 marcus Exp $
 #
 
 PORTNAME=	libgnomemm
-PORTVERSION=	2.16.0
+PORTVERSION=	2.18.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}

@@ -66,12 +66,7 @@ share/dbus-1/services/org.gnome.Epiphany.service
 %%DOCSDIR%%/up.png
 share/gnome/applications/bme.desktop
 share/gnome/applications/epiphany.desktop
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-share/gnome/epiphany/art/epiphany-bookmarks.png
-share/gnome/epiphany/art/epiphany-download.png
-share/gnome/epiphany/art/epiphany-entry.png
-share/gnome/epiphany/art/epiphany-history.png
-share/gnome/epiphany/art/epiphany-popup-hidden.png
+share/gnome/epiphany/about.ini
 share/gnome/epiphany/chrome/branding/brand.dtd
 share/gnome/epiphany/chrome/branding/brand.properties
 share/gnome/epiphany/chrome/epiphany.manifest
@@ -91,6 +86,34 @@ share/gnome/epiphany/glade/epiphany.glade
 share/gnome/epiphany/glade/form-signing-dialog.glade
 share/gnome/epiphany/glade/prefs-dialog.glade
 share/gnome/epiphany/glade/print.glade
+share/gnome/epiphany/icons/hicolor/16x16/actions/bookmark-view.png
+share/gnome/epiphany/icons/hicolor/16x16/actions/bookmark-web.png
+share/gnome/epiphany/icons/hicolor/16x16/actions/download.png
+share/gnome/epiphany/icons/hicolor/16x16/actions/history-view.png
+share/gnome/epiphany/icons/hicolor/16x16/actions/location-entry.png
+share/gnome/epiphany/icons/hicolor/16x16/status/popup-hidden.png
+share/gnome/epiphany/icons/hicolor/22x22/actions/bookmark-view.png
+share/gnome/epiphany/icons/hicolor/22x22/actions/bookmark-web.png
+share/gnome/epiphany/icons/hicolor/22x22/actions/download.png
+share/gnome/epiphany/icons/hicolor/22x22/actions/history-view.png
+share/gnome/epiphany/icons/hicolor/22x22/actions/location-entry.png
+share/gnome/epiphany/icons/hicolor/22x22/status/popup-hidden.png
+share/gnome/epiphany/icons/hicolor/24x24/actions/bookmark-view.png
+share/gnome/epiphany/icons/hicolor/24x24/actions/bookmark-web.png
+share/gnome/epiphany/icons/hicolor/24x24/actions/download.png
+share/gnome/epiphany/icons/hicolor/24x24/actions/history-view.png
+share/gnome/epiphany/icons/hicolor/24x24/actions/location-entry.png
+share/gnome/epiphany/icons/hicolor/24x24/status/popup-hidden.png
+share/gnome/epiphany/icons/hicolor/32x32/actions/bookmark-view.png
+share/gnome/epiphany/icons/hicolor/32x32/actions/download.png
+share/gnome/epiphany/icons/hicolor/32x32/actions/history-view.png
+share/gnome/epiphany/icons/hicolor/32x32/actions/location-entry.png
+share/gnome/epiphany/icons/hicolor/32x32/status/popup-hidden.png
+share/gnome/epiphany/icons/hicolor/scalable/actions/bookmark-view.svg
+share/gnome/epiphany/icons/hicolor/scalable/actions/download.svg
+share/gnome/epiphany/icons/hicolor/scalable/actions/history-view.svg
+share/gnome/epiphany/icons/hicolor/scalable/actions/location-entry.svg
+share/gnome/epiphany/icons/hicolor/scalable/status/popup-hidden.svg
 share/gnome/epiphany/mime-types-permissions.xml
 share/gnome/help/epiphany/C/epiphany.xml
 share/gnome/help/epiphany/C/figures/ephy-addressbar-smartbookmark-screenshot.png
@@ -108,6 +131,11 @@ share/gnome/help/epiphany/el/figures/ephy-addressbar-smartbookmark-screenshot.pn
 share/gnome/help/epiphany/el/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
 share/gnome/help/epiphany/el/figures/ephy-history-window-screenshot.png
 share/gnome/help/epiphany/el/figures/ephy-screenshot.png
+share/gnome/help/epiphany/en_GB/epiphany.xml
+share/gnome/help/epiphany/en_GB/figures/ephy-addressbar-smartbookmark-screenshot.png
+share/gnome/help/epiphany/en_GB/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
+share/gnome/help/epiphany/en_GB/figures/ephy-history-window-screenshot.png
+share/gnome/help/epiphany/en_GB/figures/ephy-screenshot.png
 share/gnome/help/epiphany/es/epiphany.xml
 share/gnome/help/epiphany/es/figures/ephy-addressbar-smartbookmark-screenshot.png
 share/gnome/help/epiphany/es/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
@@ -128,6 +156,11 @@ share/gnome/help/epiphany/fr/figures/ephy-addressbar-smartbookmark-screenshot.pn
 share/gnome/help/epiphany/fr/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
 share/gnome/help/epiphany/fr/figures/ephy-history-window-screenshot.png
 share/gnome/help/epiphany/fr/figures/ephy-screenshot.png
+share/gnome/help/epiphany/it/epiphany.xml
+share/gnome/help/epiphany/it/figures/ephy-addressbar-smartbookmark-screenshot.png
+share/gnome/help/epiphany/it/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
+share/gnome/help/epiphany/it/figures/ephy-history-window-screenshot.png
+share/gnome/help/epiphany/it/figures/ephy-screenshot.png
 share/gnome/help/epiphany/ja/epiphany.xml
 share/gnome/help/epiphany/ja/figures/ephy-addressbar-smartbookmark-screenshot.png
 share/gnome/help/epiphany/ja/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
@@ -156,10 +189,12 @@ share/gnome/help/epiphany/uk/figures/ephy-screenshot.png
 share/gnome/omf/epiphany/epiphany-C.omf
 share/gnome/omf/epiphany/epiphany-bg.omf
 share/gnome/omf/epiphany/epiphany-el.omf
+share/gnome/omf/epiphany/epiphany-en_GB.omf
 share/gnome/omf/epiphany/epiphany-es.omf
 share/gnome/omf/epiphany/epiphany-eu.omf
 share/gnome/omf/epiphany/epiphany-fi.omf
 share/gnome/omf/epiphany/epiphany-fr.omf
+share/gnome/omf/epiphany/epiphany-it.omf
 share/gnome/omf/epiphany/epiphany-ja.omf
 share/gnome/omf/epiphany/epiphany-nl.omf
 share/gnome/omf/epiphany/epiphany-ru.omf
@@ -242,6 +277,7 @@ share/locale/wa/LC_MESSAGES/epiphany.mo
 share/locale/zh_CN/LC_MESSAGES/epiphany.mo
 share/locale/zh_HK/LC_MESSAGES/epiphany.mo
 share/locale/zh_TW/LC_MESSAGES/epiphany.mo
+%%PYTHON%%share/pygtk/2.0/defs/epiphany.defs
 @dirrm share/gnome/omf/epiphany
 @dirrm share/gnome/help/epiphany/uk/figures
 @dirrm share/gnome/help/epiphany/uk
@@ -253,6 +289,8 @@ share/locale/zh_TW/LC_MESSAGES/epiphany.mo
 @dirrm share/gnome/help/epiphany/nl
 @dirrm share/gnome/help/epiphany/ja/figures
 @dirrm share/gnome/help/epiphany/ja
+@dirrm share/gnome/help/epiphany/it/figures
+@dirrm share/gnome/help/epiphany/it
 @dirrm share/gnome/help/epiphany/fr/figures
 @dirrm share/gnome/help/epiphany/fr
 @dirrm share/gnome/help/epiphany/fi/figures
@@ -261,6 +299,8 @@ share/locale/zh_TW/LC_MESSAGES/epiphany.mo
 @dirrm share/gnome/help/epiphany/eu
 @dirrm share/gnome/help/epiphany/es/figures
 @dirrm share/gnome/help/epiphany/es
+@dirrm share/gnome/help/epiphany/en_GB/figures
+@dirrm share/gnome/help/epiphany/en_GB
 @dirrm share/gnome/help/epiphany/el/figures
 @dirrm share/gnome/help/epiphany/el
 @dirrm share/gnome/help/epiphany/bg/figures
@@ -268,6 +308,23 @@ share/locale/zh_TW/LC_MESSAGES/epiphany.mo
 @dirrm share/gnome/help/epiphany/C/figures
 @dirrm share/gnome/help/epiphany/C
 @dirrm share/gnome/help/epiphany
+@dirrm share/gnome/epiphany/icons/hicolor/scalable/status
+@dirrm share/gnome/epiphany/icons/hicolor/scalable/actions
+@dirrm share/gnome/epiphany/icons/hicolor/scalable
+@dirrm share/gnome/epiphany/icons/hicolor/32x32/status
+@dirrm share/gnome/epiphany/icons/hicolor/32x32/actions
+@dirrm share/gnome/epiphany/icons/hicolor/32x32
+@dirrm share/gnome/epiphany/icons/hicolor/24x24/status
+@dirrm share/gnome/epiphany/icons/hicolor/24x24/actions
+@dirrm share/gnome/epiphany/icons/hicolor/24x24
+@dirrm share/gnome/epiphany/icons/hicolor/22x22/status
+@dirrm share/gnome/epiphany/icons/hicolor/22x22/actions
+@dirrm share/gnome/epiphany/icons/hicolor/22x22
+@dirrm share/gnome/epiphany/icons/hicolor/16x16/status
+@dirrm share/gnome/epiphany/icons/hicolor/16x16/actions
+@dirrm share/gnome/epiphany/icons/hicolor/16x16
+@dirrm share/gnome/epiphany/icons/hicolor
+@dirrm share/gnome/epiphany/icons
 @dirrm share/gnome/epiphany/glade
 @dirrm share/gnome/epiphany/chrome/global
 @dirrm share/gnome/epiphany/chrome/branding
@@ -281,10 +338,8 @@ share/locale/zh_TW/LC_MESSAGES/epiphany.mo
 @dirrm include/epiphany/%%EPHY_VERSION%%/epiphany
 @dirrm include/epiphany/%%EPHY_VERSION%%
 @dirrm include/epiphany
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-%%PYTHON%%@cwd %%LOCALBASE%%
-%%PYTHON%%share/pygtk/2.0/defs/epiphany.defs
-%%PYTHON%%@cwd %%EPHY_PREFIX%%
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/zh_HK/LC_MESSAGES

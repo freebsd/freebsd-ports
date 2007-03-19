@@ -7,7 +7,7 @@
 
 PORTNAME=	erwn
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www editors
 MASTER_SITES=	http://lisas.de/erwin/
 DISTNAME=	erwin-${PORTVERSION}
@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 MAN1=		erwin.1
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|gtkhtml-3.6|gtkhtml-3.8|g" \
+	@${REINPLACE_CMD} -e "s|gtkhtml-3.6|gtkhtml-3.14|g" \
 		${WRKSRC}/configure
 
 post-install:

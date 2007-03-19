@@ -3,20 +3,21 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
+#   $MCom: ports/textproc/gnome-doc-utils/Makefile,v 1.44 2007/03/13 00:37:32 mezz Exp $
 #
 
 PORTNAME=	gnome-doc-utils
-PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTVERSION=	0.10.1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-doc-utils/0.7
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DISTNAME=	gnome-doc-utils-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME doc utils
 
-BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
+BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper \
+    		gawk:${PORTSDIR}/lang/gawk
 RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper \
 		${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2 \
 		${LOCALBASE}/share/xml/docbook/4.3/catalog.xml:${PORTSDIR}/textproc/docbook-xml-430 \

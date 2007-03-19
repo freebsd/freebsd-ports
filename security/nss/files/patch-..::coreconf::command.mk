@@ -1,5 +1,3 @@
-$FreeBSD$
-
 --- ../coreconf/command.mk	Mon Oct 10 19:46:12 2005
 +++ ../coreconf/command.mk	Wed Jan 18 17:23:28 2006
 @@ -46,5 +46,5 @@

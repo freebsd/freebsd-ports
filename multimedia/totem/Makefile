@@ -3,17 +3,18 @@
 # Whom:                 Hendrik Scholz <hendrik@scholz.net>
 #
 # $FreeBSD$
+#    $MCom: ports/multimedia/totem/Makefile,v 1.77 2007/03/11 05:25:07 mezz Exp $
 #
 
 PORTNAME=	totem
-PORTVERSION=	2.16.5
-PORTREVISION?=	1
+PORTVERSION=	2.18.0
+PORTREVISION?=	0
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER?=	gnome@FreeBSD.org
-COMMENT?=	A Xine-based video player for the GNOME 2 Desktop
+COMMENT?=	A gstreamer-based video player for the GNOME 2 Desktop
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 LIB_DEPENDS=	musicbrainz:${PORTSDIR}/audio/libmusicbrainz \
@@ -36,27 +37,23 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 	       	LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lXrandr"
 
-OPTIONS?=	DVDNAV "Enable DVD support" on \
-		GSTREAMER "Use Gstreamer instead of Xine" off \
-		MOZILLA_PLUGIN "Totem mozilla plugin" off
-
-MAN1=	totem.1 totem-video-thumbnailer.1
+MAN1=		totem.1 totem-video-thumbnailer.1
 GCONF_SCHEMAS=	totem-handlers.schemas totem-video-thumbnail.schemas \
 		totem.schemas
-CONFLICTS?=	totem-gstreamer-[0-9]*
+CONFLICTS?=	totem-gstreamer-[0-9]* totem-xine-[0-9]*
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MOZILLA_PLUGIN)
-USE_GECKO=	firefox mozilla seamonkey xulrunner<->firefox firefox15<->firefox
+.if defined(WITH_MOZILLA_PLUGIN) && ${SLAVE_PORT:L}=="yes"
+USE_GECKO=	firefox mozilla seamonkey xulrunner<->firefox firefox-devel<->firefox
 .include "${PORTSDIR}/www/mozilla/bsd.gecko.mk"
-PLIST_SUB+=	MOZILLA=""
 CONFIGURE_ARGS+=--with-mozilla=${GECKO} \
 		--enable-gmp-plugin \
 		--enable-complex-plugin \
 		--enable-narrowspace-plugin
+BUILD_WRKSRC=	${WRKSRC}/browser-plugin
+INSTALL_WRKSRC=	${WRKSRC}/browser-plugin
 .else
-PLIST_SUB+=	MOZILLA="@comment "
 CONFIGURE_ARGS+=--without-mozilla \
 		--disable-browser-plugins \
 		--disable-mozilla \
@@ -66,13 +63,13 @@ CONFIGURE_ARGS+=--without-mozilla \
 		--disable-narrowspace-plugin
 .endif
 
-.if defined(WITH_GSTREAMER)
+.if !defined(WITH_TOTEM_XINE) || ${SLAVE_PORT}=="no"
 CONFIGURE_ARGS+=--enable-gstreamer=yes
 USE_GSTREAMER+=	gnomevfs core gconf hal good mpeg2dec ugly
 WITHOUT_DVDNAV=	yes
 PLIST_SUB+=	GSTREAMER=""
 .else
-LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.16:${PORTSDIR}/multimedia/libxine
 PLIST_SUB+=	GSTREAMER="@comment "
 .endif
 
@@ -101,6 +98,8 @@ post-patch:
 		s|mozilla/plugins|browser_plugins|' \
 		${WRKSRC}/browser-plugin/Makefile.in \
 		${WRKSRC}/browser-plugin/idl/Makefile.in
+	@${REINPLACE_CMD} -e 's|dbus >= 0.61|dbus-1 >= 0.61|g' \
+	    	${WRKSRC}/configure
 .if defined(WITH_GSTREAMER)
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
 		${WRKSRC}/src/backend/bacon-video-widget-gst-0.10.c

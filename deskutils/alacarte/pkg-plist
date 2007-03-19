@@ -1,7 +1,4 @@
 bin/alacarte
-%%PYTHON_SITELIBDIR%%/Alacarte/DialogHandler.py
-%%PYTHON_SITELIBDIR%%/Alacarte/DialogHandler.pyc
-%%PYTHON_SITELIBDIR%%/Alacarte/DialogHandler.pyo
 %%PYTHON_SITELIBDIR%%/Alacarte/MainWindow.py
 %%PYTHON_SITELIBDIR%%/Alacarte/MainWindow.pyc
 %%PYTHON_SITELIBDIR%%/Alacarte/MainWindow.pyo
@@ -24,6 +21,7 @@ share/icons/hicolor/22x22/apps/alacarte.png
 share/icons/hicolor/scalable/apps/alacarte.svg
 share/locale/ar/LC_MESSAGES/alacarte.mo
 share/locale/as/LC_MESSAGES/alacarte.mo
+share/locale/be/LC_MESSAGES/alacarte.mo
 share/locale/bg/LC_MESSAGES/alacarte.mo
 share/locale/bn/LC_MESSAGES/alacarte.mo
 share/locale/bn_IN/LC_MESSAGES/alacarte.mo
@@ -33,6 +31,7 @@ share/locale/da/LC_MESSAGES/alacarte.mo
 share/locale/de/LC_MESSAGES/alacarte.mo
 share/locale/dz/LC_MESSAGES/alacarte.mo
 share/locale/el/LC_MESSAGES/alacarte.mo
+share/locale/en_CA/LC_MESSAGES/alacarte.mo
 share/locale/en_GB/LC_MESSAGES/alacarte.mo
 share/locale/eo/LC_MESSAGES/alacarte.mo
 share/locale/es/LC_MESSAGES/alacarte.mo
@@ -64,6 +63,7 @@ share/locale/pa/LC_MESSAGES/alacarte.mo
 share/locale/pl/LC_MESSAGES/alacarte.mo
 share/locale/pt/LC_MESSAGES/alacarte.mo
 share/locale/pt_BR/LC_MESSAGES/alacarte.mo
+share/locale/ro/LC_MESSAGES/alacarte.mo
 share/locale/ru/LC_MESSAGES/alacarte.mo
 share/locale/si/LC_MESSAGES/alacarte.mo
 share/locale/sl/LC_MESSAGES/alacarte.mo
@@ -96,6 +96,8 @@ share/locale/zh_TW/LC_MESSAGES/alacarte.mo
 @dirrmtry share/locale/sl
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
 @dirrmtry share/locale/pt/LC_MESSAGES
 @dirrmtry share/locale/pt
 @dirrmtry share/locale/pl/LC_MESSAGES
@@ -122,6 +124,8 @@ share/locale/zh_TW/LC_MESSAGES/alacarte.mo
 @dirrmtry share/locale/ca
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be
 @dirrmtry share/locale/as/LC_MESSAGES
 @dirrmtry share/locale/as
 @dirrm share/gnome/alacarte

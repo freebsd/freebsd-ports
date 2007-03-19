@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/gnome-control-center/Makefile,v 1.120 2006/10/03 00:02:39 ahze Exp $
+#   $MCom: ports/sysutils/gnome-control-center/Makefile,v 1.132 2007/03/12 22:05:56 marcus Exp $
 #
 
 PORTNAME=	gnome-control-center
-PORTVERSION=	2.16.3
+PORTVERSION=	2.18.0
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/control-center/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -27,7 +27,7 @@ GNOME_DESKTOP_VERSION=2
 USE_GSTREAMER=	good
 WANT_GNOME=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack metacity nautilus2 \
-		gnomemenus desktopfileutils nautilus2
+		gnomemenus desktopfileutils libgnomekbd gnomepanel
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
@@ -39,8 +39,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 GCONF_SCHEMAS=	apps_gnome_settings_daemon_default_editor.schemas \
 		apps_gnome_settings_daemon_keybindings.schemas \
 		apps_gnome_settings_daemon_screensaver.schemas \
+		control-center.schemas \
 		desktop_gnome_font_rendering.schemas \
-		desktop_gnome_peripherals_keyboard_xkb.schemas \
 		fontilus.schemas themus.schemas
 
 .if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)

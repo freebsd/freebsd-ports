@@ -20,8 +20,8 @@ lib/gnome-build-1.0/backends/libgbf-mkfile.so.0
 lib/libgbf-1.la
 lib/libgbf-1.so
 lib/libgbf-1.so.0
-lib/libgbf-widgets-1.so
 lib/libgbf-widgets-1.la
+lib/libgbf-widgets-1.so
 lib/libgbf-widgets-1.so.0
 libdata/pkgconfig/gnome-build-1.0.pc
 share/gnome/gnome-build/GBF/AmFiles.pm
@@ -76,3 +76,31 @@ share/locale/zh_CN/LC_MESSAGES/gbf-1.mo
 @dirrm lib/gnome-build-1.0
 @dirrm include/gnome-build-1.0/gbf
 @dirrm include/gnome-build-1.0
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be

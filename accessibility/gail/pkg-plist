@@ -14,6 +14,7 @@ share/locale/ar/LC_MESSAGES/gail.mo
 share/locale/as/LC_MESSAGES/gail.mo
 share/locale/az/LC_MESSAGES/gail.mo
 share/locale/be/LC_MESSAGES/gail.mo
+share/locale/be@latin/LC_MESSAGES/gail.mo
 share/locale/bg/LC_MESSAGES/gail.mo
 share/locale/bn/LC_MESSAGES/gail.mo
 share/locale/bn_IN/LC_MESSAGES/gail.mo
@@ -49,6 +50,7 @@ share/locale/ko/LC_MESSAGES/gail.mo
 share/locale/ku/LC_MESSAGES/gail.mo
 share/locale/lt/LC_MESSAGES/gail.mo
 share/locale/lv/LC_MESSAGES/gail.mo
+share/locale/mg/LC_MESSAGES/gail.mo
 share/locale/mi/LC_MESSAGES/gail.mo
 share/locale/mk/LC_MESSAGES/gail.mo
 share/locale/ml/LC_MESSAGES/gail.mo
@@ -117,6 +119,8 @@ share/locale/zh_TW/LC_MESSAGES/gail.mo
 @dirrmtry share/locale/ne
 @dirrmtry share/locale/mi/LC_MESSAGES
 @dirrmtry share/locale/mi
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/ko/LC_MESSAGES
@@ -135,6 +139,8 @@ share/locale/zh_TW/LC_MESSAGES/gail.mo
 @dirrmtry share/locale/ca
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
 @dirrmtry share/locale/be/LC_MESSAGES
 @dirrmtry share/locale/be
 @dirrmtry share/locale/as/LC_MESSAGES

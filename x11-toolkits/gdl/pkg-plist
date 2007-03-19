@@ -10,19 +10,19 @@ include/libgdl-1.0/gdl/gdl-dock-placeholder.h
 include/libgdl-1.0/gdl/gdl-dock-tablabel.h
 include/libgdl-1.0/gdl/gdl-dock.h
 include/libgdl-1.0/gdl/gdl-icons.h
-include/libgdl-1.0/gdl/gdl-recent.h
+include/libgdl-1.0/gdl/gdl-stock-icons.h
 include/libgdl-1.0/gdl/gdl-stock.h
 include/libgdl-1.0/gdl/gdl-tools.h
 include/libgdl-1.0/gdl/gdl.h
 include/libgdl-1.0/gdl/libgdltypebuiltins.h
-lib/libgdl-1.a
 lib/libgdl-1.la
 lib/libgdl-1.so
 lib/libgdl-1.so.0
+lib/libgdl-gnome-1.la
+lib/libgdl-gnome-1.so
+lib/libgdl-gnome-1.so.0
 libdata/pkgconfig/gdl-1.0.pc
-%%DATADIR%%/images/stock-close-12.png
-%%DATADIR%%/images/stock-menu-left-12.png
-%%DATADIR%%/images/stock-menu-right-12.png
+libdata/pkgconfig/gdl-gnome-1.0.pc
 share/gnome/gdl/glade/layout.glade
 share/locale/am/LC_MESSAGES/gdl-1.mo
 share/locale/az/LC_MESSAGES/gdl-1.mo
@@ -30,6 +30,7 @@ share/locale/ca/LC_MESSAGES/gdl-1.mo
 share/locale/cs/LC_MESSAGES/gdl-1.mo
 share/locale/da/LC_MESSAGES/gdl-1.mo
 share/locale/de/LC_MESSAGES/gdl-1.mo
+share/locale/dz/LC_MESSAGES/gdl-1.mo
 share/locale/el/LC_MESSAGES/gdl-1.mo
 share/locale/en_CA/LC_MESSAGES/gdl-1.mo
 share/locale/en_GB/LC_MESSAGES/gdl-1.mo
@@ -38,6 +39,7 @@ share/locale/fi/LC_MESSAGES/gdl-1.mo
 share/locale/fr/LC_MESSAGES/gdl-1.mo
 share/locale/ga/LC_MESSAGES/gdl-1.mo
 share/locale/hr/LC_MESSAGES/gdl-1.mo
+share/locale/hu/LC_MESSAGES/gdl-1.mo
 share/locale/it/LC_MESSAGES/gdl-1.mo
 share/locale/ja/LC_MESSAGES/gdl-1.mo
 share/locale/mk/LC_MESSAGES/gdl-1.mo
@@ -58,12 +60,6 @@ share/locale/sr@Latn/LC_MESSAGES/gdl-1.mo
 share/locale/sv/LC_MESSAGES/gdl-1.mo
 share/locale/vi/LC_MESSAGES/gdl-1.mo
 share/locale/zh_CN/LC_MESSAGES/gdl-1.mo
-@dirrm share/gnome/gdl/glade
-@dirrm share/gnome/gdl
-@dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%
-@dirrm include/libgdl-1.0/gdl
-@dirrm include/libgdl-1.0
 @dirrmtry share/locale/zh_CN/LC_MESSAGES
 @dirrmtry share/locale/zh_CN
 @dirrmtry share/locale/sr/LC_MESSAGES
@@ -82,7 +78,13 @@ share/locale/zh_CN/LC_MESSAGES/gdl-1.mo
 @dirrmtry share/locale/fi
 @dirrmtry share/locale/el/LC_MESSAGES
 @dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrmtry share/locale/cs/LC_MESSAGES
 @dirrmtry share/locale/cs
 @dirrmtry share/locale/ca/LC_MESSAGES
 @dirrmtry share/locale/ca
+@dirrm share/gnome/gdl/glade
+@dirrm share/gnome/gdl
+@dirrm include/libgdl-1.0/gdl
+@dirrm include/libgdl-1.0

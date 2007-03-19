@@ -3,12 +3,11 @@
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/gdl/Makefile,v 1.4 2006/09/10 00:51:16 mezz Exp $
+#   $MCom: ports/x11-toolkits/gdl/Makefile,v 1.8 2007/02/16 18:14:27 mezz Exp $
 #
 
 PORTNAME=	gdl
-PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTVERSION=	0.7.2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -17,6 +16,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Components intended to be shared between GNOME development tools
 
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui
 USE_GETTEXT=	yes

@@ -1,0 +1,34 @@
+include/gtksourceviewmm-1.0/gtksourceviewmm/init.h
+include/gtksourceviewmm-1.0/gtksourceviewmm/private/sourcebuffer_p.h
+include/gtksourceviewmm-1.0/gtksourceviewmm/private/sourcelanguage_p.h
+include/gtksourceviewmm-1.0/gtksourceviewmm/private/sourcelanguagesmanager_p.h
+include/gtksourceviewmm-1.0/gtksourceviewmm/private/sourcemarker_p.h
+include/gtksourceviewmm-1.0/gtksourceviewmm/private/sourcestylescheme_p.h
+include/gtksourceviewmm-1.0/gtksourceviewmm/private/sourcetag_p.h
+include/gtksourceviewmm-1.0/gtksourceviewmm/private/sourcetagstyle_p.h
+include/gtksourceviewmm-1.0/gtksourceviewmm/private/sourcetagtable_p.h
+include/gtksourceviewmm-1.0/gtksourceviewmm/private/sourceview_p.h
+include/gtksourceviewmm-1.0/gtksourceviewmm/sourcebuffer.h
+include/gtksourceviewmm-1.0/gtksourceviewmm/sourcelanguage.h
+include/gtksourceviewmm-1.0/gtksourceviewmm/sourcelanguagesmanager.h
+include/gtksourceviewmm-1.0/gtksourceviewmm/sourcemarker.h
+include/gtksourceviewmm-1.0/gtksourceviewmm/sourcestylescheme.h
+include/gtksourceviewmm-1.0/gtksourceviewmm/sourcetag.h
+include/gtksourceviewmm-1.0/gtksourceviewmm/sourcetagstyle.h
+include/gtksourceviewmm-1.0/gtksourceviewmm/sourcetagtable.h
+include/gtksourceviewmm-1.0/gtksourceviewmm/sourceview.h
+include/gtksourceviewmm-1.0/gtksourceviewmm/wrap_init.h
+lib/gtksourceviewmm-1.0/include/gtksourceviewmmconfig.h
+lib/gtksourceviewmm-1.0/proc/m4/convert.m4
+lib/gtksourceviewmm-1.0/proc/m4/convert_gtksourceviewmm.m4
+lib/libgtksourceviewmm-1.0.la
+lib/libgtksourceviewmm-1.0.so
+lib/libgtksourceviewmm-1.0.so.1
+libdata/pkgconfig/libgtksourceviewmm-1.0.pc
+@dirrm lib/gtksourceviewmm-1.0/proc/m4
+@dirrm lib/gtksourceviewmm-1.0/proc
+@dirrm lib/gtksourceviewmm-1.0/include
+@dirrm lib/gtksourceviewmm-1.0
+@dirrm include/gtksourceviewmm-1.0/gtksourceviewmm/private
+@dirrm include/gtksourceviewmm-1.0/gtksourceviewmm
+@dirrm include/gtksourceviewmm-1.0

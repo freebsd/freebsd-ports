@@ -582,6 +582,7 @@
     SUBDIR += liboil
     SUBDIR += libol
     SUBDIR += libole2
+    SUBDIR += liboobs
     SUBDIR += liboop
     SUBDIR += libopendaap
     SUBDIR += libopensync
@@ -2125,6 +2126,7 @@
     SUBDIR += wizardkit
     SUBDIR += wxGlade
     SUBDIR += wxGlade-devel
+    SUBDIR += xdg-user-dirs-gtk
     SUBDIR += xdg-utils
     SUBDIR += xfc
     SUBDIR += xfce4-dev-tools

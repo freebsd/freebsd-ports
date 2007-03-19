@@ -22,13 +22,9 @@ libdata/pkgconfig/gnome-mag-1.0.pc
 %%DOCSDIR%%/reference/html/GNOME__Magnifier_8idl-source.html
 %%DOCSDIR%%/reference/html/GNOME__Magnifier_8idl.html
 %%DOCSDIR%%/reference/html/annotated.html
-%%DOCSDIR%%/reference/html/damage-client_8c-source.html
-%%DOCSDIR%%/reference/html/damage-client_8c.html
-%%DOCSDIR%%/reference/html/damage-client_8h-source.html
-%%DOCSDIR%%/reference/html/damage-client_8h.html
-%%DOCSDIR%%/reference/html/dir_87465088ddb33e7a87f93e298b526e3e.html
-%%DOCSDIR%%/reference/html/dir_be9d3086025220affea426c40de4e445.html
 %%DOCSDIR%%/reference/html/dirs.html
+%%DOCSDIR%%/reference/html/dir_6873ac4aad386abfe4dc85b1c4c7162f.html
+%%DOCSDIR%%/reference/html/dir_ed2a549a3a7169145b90da06827de1bb.html
 %%DOCSDIR%%/reference/html/doxygen.css
 %%DOCSDIR%%/reference/html/doxygen.png
 %%DOCSDIR%%/reference/html/files.html
@@ -45,6 +41,7 @@ libdata/pkgconfig/gnome-mag-1.0.pc
 %%DOCSDIR%%/reference/html/functions_0x6c.html
 %%DOCSDIR%%/reference/html/functions_0x6d.html
 %%DOCSDIR%%/reference/html/functions_0x6e.html
+%%DOCSDIR%%/reference/html/functions_0x6f.html
 %%DOCSDIR%%/reference/html/functions_0x70.html
 %%DOCSDIR%%/reference/html/functions_0x71.html
 %%DOCSDIR%%/reference/html/functions_0x72.html
@@ -72,6 +69,7 @@ libdata/pkgconfig/gnome-mag-1.0.pc
 %%DOCSDIR%%/reference/html/functions_vars_0x6c.html
 %%DOCSDIR%%/reference/html/functions_vars_0x6d.html
 %%DOCSDIR%%/reference/html/functions_vars_0x6e.html
+%%DOCSDIR%%/reference/html/functions_vars_0x6f.html
 %%DOCSDIR%%/reference/html/functions_vars_0x70.html
 %%DOCSDIR%%/reference/html/functions_vars_0x71.html
 %%DOCSDIR%%/reference/html/functions_vars_0x72.html
@@ -128,6 +126,10 @@ libdata/pkgconfig/gnome-mag-1.0.pc
 %%DOCSDIR%%/reference/html/globals_func_0x7a.html
 %%DOCSDIR%%/reference/html/globals_type.html
 %%DOCSDIR%%/reference/html/globals_vars.html
+%%DOCSDIR%%/reference/html/gmag-events_8c-source.html
+%%DOCSDIR%%/reference/html/gmag-events_8c.html
+%%DOCSDIR%%/reference/html/gmag-events_8h-source.html
+%%DOCSDIR%%/reference/html/gmag-events_8h.html
 %%DOCSDIR%%/reference/html/index.html
 %%DOCSDIR%%/reference/html/interfaceGNOME_1_1Magnifier_1_1Magnifier.html
 %%DOCSDIR%%/reference/html/interfaceGNOME_1_1Magnifier_1_1ZoomRegion.html
@@ -183,6 +185,7 @@ libdata/pkgconfig/gnome-mag-1.0.pc
 %%DOCSDIR%%/reference/html/structPOA__GNOME__Magnifier__ZoomRegion____vepv.html
 %%DOCSDIR%%/reference/html/structZoomRegion.html
 %%DOCSDIR%%/reference/html/structZoomRegionClass.html
+%%DOCSDIR%%/reference/html/struct__GmagWin.html
 %%DOCSDIR%%/reference/html/struct__MagnifierPrivate.html
 %%DOCSDIR%%/reference/html/struct__ZoomRegionPrivate.html
 %%DOCSDIR%%/reference/html/structtiming.html

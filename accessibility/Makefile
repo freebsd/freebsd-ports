@@ -15,6 +15,7 @@
     SUBDIR += gnome-speech
     SUBDIR += gnopernicus
     SUBDIR += gok
+    SUBDIR += java-access-bridge
     SUBDIR += kdeaccessibility
     SUBDIR += linux-atk
     SUBDIR += orca

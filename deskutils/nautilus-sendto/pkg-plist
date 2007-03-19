@@ -1,6 +1,8 @@
 bin/nautilus-sendto
 lib/gaim/nautilus.la
 lib/gaim/nautilus.so
+lib/nautilus-sendto/plugins/libnstbluetooth.la
+lib/nautilus-sendto/plugins/libnstbluetooth.so
 lib/nautilus-sendto/plugins/libnstevolution.la
 lib/nautilus-sendto/plugins/libnstevolution.so
 lib/nautilus-sendto/plugins/libnstgaim.la
@@ -9,8 +11,9 @@ lib/nautilus-sendto/plugins/libnstsylpheed.la
 lib/nautilus-sendto/plugins/libnstsylpheed.so
 lib/nautilus/extensions-1.0/libnautilus-sendto.la
 lib/nautilus/extensions-1.0/libnautilus-sendto.so
-share/gnome/nautilus-sendto/glade/nautilus-sendto-force.glade
 share/gnome/nautilus-sendto/glade/nautilus-sendto.glade
+share/locale/ar/LC_MESSAGES/nautilus-sendto.mo
+share/locale/be/LC_MESSAGES/nautilus-sendto.mo
 share/locale/bg/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ca/LC_MESSAGES/nautilus-sendto.mo
 share/locale/cs/LC_MESSAGES/nautilus-sendto.mo
@@ -44,6 +47,7 @@ share/locale/pt_BR/LC_MESSAGES/nautilus-sendto.mo
 share/locale/ru/LC_MESSAGES/nautilus-sendto.mo
 share/locale/rw/LC_MESSAGES/nautilus-sendto.mo
 share/locale/sk/LC_MESSAGES/nautilus-sendto.mo
+share/locale/sl/LC_MESSAGES/nautilus-sendto.mo
 share/locale/sq/LC_MESSAGES/nautilus-sendto.mo
 share/locale/sv/LC_MESSAGES/nautilus-sendto.mo
 share/locale/th/LC_MESSAGES/nautilus-sendto.mo
@@ -57,6 +61,8 @@ share/locale/zh_TW/LC_MESSAGES/nautilus-sendto.mo
 @dirrmtry share/locale/zh_CN
 @dirrmtry share/locale/uk/LC_MESSAGES
 @dirrmtry share/locale/uk
+@dirrmtry share/locale/sl/LC_MESSAGES
+@dirrmtry share/locale/sl
 @dirrmtry share/locale/sk/LC_MESSAGES
 @dirrmtry share/locale/sk
 @dirrmtry share/locale/rw/LC_MESSAGES
@@ -81,6 +87,8 @@ share/locale/zh_TW/LC_MESSAGES/nautilus-sendto.mo
 @dirrmtry share/locale/cs
 @dirrmtry share/locale/ca/LC_MESSAGES
 @dirrmtry share/locale/ca
+@dirrmtry share/locale/be/LC_MESSAGES
+@dirrmtry share/locale/be
 @dirrm share/gnome/nautilus-sendto/glade
 @dirrm share/gnome/nautilus-sendto
 @dirrm lib/nautilus-sendto/plugins

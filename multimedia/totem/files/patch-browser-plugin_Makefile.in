@@ -1,0 +1,110 @@
+--- browser-plugin/Makefile.in.orig	Fri Mar  2 07:22:29 2007
++++ browser-plugin/Makefile.in	Fri Mar  2 07:24:05 2007
+@@ -72,7 +72,7 @@
+ pluginLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(noinst_LTLIBRARIES) $(plugin_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
+-@ENABLE_BASIC_PLUGIN_TRUE@libtotem_basic_plugin_la_DEPENDENCIES = $(top_builddir)/src/plparse/libtotem-plparser-mini.la \
++@ENABLE_BASIC_PLUGIN_TRUE@libtotem_basic_plugin_la_DEPENDENCIES = \
+ @ENABLE_BASIC_PLUGIN_TRUE@	libtotempluginviewer_marshal.la \
+ @ENABLE_BASIC_PLUGIN_TRUE@	$(am__DEPENDENCIES_1) \
+ @ENABLE_BASIC_PLUGIN_TRUE@	$(am__DEPENDENCIES_1)
+@@ -88,7 +88,7 @@
+ 	$(am_libtotem_basic_plugin_la_OBJECTS)
+ @ENABLE_BASIC_PLUGIN_TRUE@am_libtotem_basic_plugin_la_rpath = -rpath \
+ @ENABLE_BASIC_PLUGIN_TRUE@	$(plugindir)
+-@ENABLE_COMPLEX_PLUGIN_TRUE@libtotem_complex_plugin_la_DEPENDENCIES = $(top_builddir)/src/plparse/libtotem-plparser-mini.la \
++@ENABLE_COMPLEX_PLUGIN_TRUE@libtotem_complex_plugin_la_DEPENDENCIES = \
+ @ENABLE_COMPLEX_PLUGIN_TRUE@	libtotempluginviewer_marshal.la \
+ @ENABLE_COMPLEX_PLUGIN_TRUE@	$(am__DEPENDENCIES_1) \
+ @ENABLE_COMPLEX_PLUGIN_TRUE@	$(am__DEPENDENCIES_1)
+@@ -104,7 +104,7 @@
+ 	$(am_libtotem_complex_plugin_la_OBJECTS)
+ @ENABLE_COMPLEX_PLUGIN_TRUE@am_libtotem_complex_plugin_la_rpath =  \
+ @ENABLE_COMPLEX_PLUGIN_TRUE@	-rpath $(plugindir)
+-@ENABLE_GMP_PLUGIN_TRUE@libtotem_gmp_plugin_la_DEPENDENCIES = $(top_builddir)/src/plparse/libtotem-plparser-mini.la \
++@ENABLE_GMP_PLUGIN_TRUE@libtotem_gmp_plugin_la_DEPENDENCIES = \
+ @ENABLE_GMP_PLUGIN_TRUE@	libtotempluginviewer_marshal.la \
+ @ENABLE_GMP_PLUGIN_TRUE@	$(am__DEPENDENCIES_1) \
+ @ENABLE_GMP_PLUGIN_TRUE@	$(am__DEPENDENCIES_1)
+@@ -124,7 +124,7 @@
+ libtotem_gmp_plugin_la_OBJECTS = $(am_libtotem_gmp_plugin_la_OBJECTS)
+ @ENABLE_GMP_PLUGIN_TRUE@am_libtotem_gmp_plugin_la_rpath = -rpath \
+ @ENABLE_GMP_PLUGIN_TRUE@	$(plugindir)
+-@ENABLE_MULLY_PLUGIN_TRUE@libtotem_mully_plugin_la_DEPENDENCIES = $(top_builddir)/src/plparse/libtotem-plparser-mini.la \
++@ENABLE_MULLY_PLUGIN_TRUE@libtotem_mully_plugin_la_DEPENDENCIES = \
+ @ENABLE_MULLY_PLUGIN_TRUE@	libtotempluginviewer_marshal.la \
+ @ENABLE_MULLY_PLUGIN_TRUE@	$(am__DEPENDENCIES_1) \
+ @ENABLE_MULLY_PLUGIN_TRUE@	$(am__DEPENDENCIES_1)
+@@ -140,7 +140,7 @@
+ 	$(am_libtotem_mully_plugin_la_OBJECTS)
+ @ENABLE_MULLY_PLUGIN_TRUE@am_libtotem_mully_plugin_la_rpath = -rpath \
+ @ENABLE_MULLY_PLUGIN_TRUE@	$(plugindir)
+-@ENABLE_NARROWSPACE_PLUGIN_TRUE@libtotem_narrowspace_plugin_la_DEPENDENCIES = $(top_builddir)/src/plparse/libtotem-plparser-mini.la \
++@ENABLE_NARROWSPACE_PLUGIN_TRUE@libtotem_narrowspace_plugin_la_DEPENDENCIES = \
+ @ENABLE_NARROWSPACE_PLUGIN_TRUE@	libtotempluginviewer_marshal.la \
+ @ENABLE_NARROWSPACE_PLUGIN_TRUE@	$(am__DEPENDENCIES_1) \
+ @ENABLE_NARROWSPACE_PLUGIN_TRUE@	$(am__DEPENDENCIES_1)
+@@ -360,7 +360,7 @@
+ MOZILLA_LIBDIR = @MOZILLA_LIBDIR@
+ MOZILLA_NOT_LINKED_CFLAGS = @MOZILLA_NOT_LINKED_CFLAGS@
+ MOZILLA_NOT_LINKED_LIBS = @MOZILLA_NOT_LINKED_LIBS@
+-MOZILLA_PLUGINDIR = @MOZILLA_PLUGINDIR@
++MOZILLA_PLUGINDIR = /var/tmp/totem/lib/browser_plugins
+ MOZILLA_PREFIX = @MOZILLA_PREFIX@
+ MOZILLA_XPCOM_CFLAGS = @MOZILLA_XPCOM_CFLAGS@
+ MOZILLA_XPIDL = @MOZILLA_XPIDL@
+@@ -464,7 +464,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ SUBDIRS = idl
+-plugindir = $(libdir)/mozilla/plugins
++plugindir = $(libdir)/browser_plugins
+ plugin_LTLIBRARIES = $(am__append_1) $(am__append_2) $(am__append_3) \
+ 	$(am__append_4) $(am__append_5)
+ BUILT_SOURCES = $(libtotempluginviewer_marshal_la_SOURCES) \
+@@ -581,7 +581,7 @@
+ @ENABLE_BASIC_PLUGIN_TRUE@	$(AM_CXXFLAGS)
+ 
+ @ENABLE_BASIC_PLUGIN_TRUE@libtotem_basic_plugin_la_LIBADD = \
+-@ENABLE_BASIC_PLUGIN_TRUE@	$(top_builddir)/src/plparse/libtotem-plparser-mini.la		\
++@ENABLE_BASIC_PLUGIN_TRUE@	-ltotem-plparser \
+ @ENABLE_BASIC_PLUGIN_TRUE@	libtotempluginviewer_marshal.la					\
+ @ENABLE_BASIC_PLUGIN_TRUE@	$(DBUS_LIBS)	\
+ @ENABLE_BASIC_PLUGIN_TRUE@ 	$(MOZILLA_LIBS)	\
+@@ -641,7 +641,7 @@
+ @ENABLE_GMP_PLUGIN_TRUE@	$(AM_CXXFLAGS)
+ 
+ @ENABLE_GMP_PLUGIN_TRUE@libtotem_gmp_plugin_la_LIBADD = \
+-@ENABLE_GMP_PLUGIN_TRUE@	$(top_builddir)/src/plparse/libtotem-plparser-mini.la		\
++@ENABLE_GMP_PLUGIN_TRUE@	-ltotem-plparser \
+ @ENABLE_GMP_PLUGIN_TRUE@	libtotempluginviewer_marshal.la	\
+ @ENABLE_GMP_PLUGIN_TRUE@	$(DBUS_LIBS)	\
+ @ENABLE_GMP_PLUGIN_TRUE@ 	$(MOZILLA_LIBS)	\
+@@ -695,7 +695,7 @@
+ @ENABLE_COMPLEX_PLUGIN_TRUE@	$(AM_CXXFLAGS)
+ 
+ @ENABLE_COMPLEX_PLUGIN_TRUE@libtotem_complex_plugin_la_LIBADD = \
+-@ENABLE_COMPLEX_PLUGIN_TRUE@	$(top_builddir)/src/plparse/libtotem-plparser-mini.la		\
++@ENABLE_COMPLEX_PLUGIN_TRUE@	-ltotem-plparser \
+ @ENABLE_COMPLEX_PLUGIN_TRUE@	libtotempluginviewer_marshal.la					\
+ @ENABLE_COMPLEX_PLUGIN_TRUE@	$(DBUS_LIBS)	\
+ @ENABLE_COMPLEX_PLUGIN_TRUE@ 	$(MOZILLA_LIBS)	\
+@@ -749,7 +749,7 @@
+ @ENABLE_NARROWSPACE_PLUGIN_TRUE@	$(AM_CXXFLAGS)
+ 
+ @ENABLE_NARROWSPACE_PLUGIN_TRUE@libtotem_narrowspace_plugin_la_LIBADD = \
+-@ENABLE_NARROWSPACE_PLUGIN_TRUE@	$(top_builddir)/src/plparse/libtotem-plparser-mini.la		\
++@ENABLE_NARROWSPACE_PLUGIN_TRUE@	-ltotem-plparser \
+ @ENABLE_NARROWSPACE_PLUGIN_TRUE@	libtotempluginviewer_marshal.la					\
+ @ENABLE_NARROWSPACE_PLUGIN_TRUE@	$(DBUS_LIBS)	\
+ @ENABLE_NARROWSPACE_PLUGIN_TRUE@ 	$(MOZILLA_LIBS)	\
+@@ -803,7 +803,7 @@
+ @ENABLE_MULLY_PLUGIN_TRUE@	$(AM_CXXFLAGS)
+ 
+ @ENABLE_MULLY_PLUGIN_TRUE@libtotem_mully_plugin_la_LIBADD = \
+-@ENABLE_MULLY_PLUGIN_TRUE@	$(top_builddir)/src/plparse/libtotem-plparser-mini.la		\
++@ENABLE_MULLY_PLUGIN_TRUE@	-ltotem-plparser \
+ @ENABLE_MULLY_PLUGIN_TRUE@	libtotempluginviewer_marshal.la					\
+ @ENABLE_MULLY_PLUGIN_TRUE@	$(DBUS_LIBS)	\
+ @ENABLE_MULLY_PLUGIN_TRUE@ 	$(MOZILLA_LIBS)	\

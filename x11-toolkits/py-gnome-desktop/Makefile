@@ -3,11 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/x11-toolkits/py-gnome-desktop/Makefile,v 1.50 2006/09/05 01:09:07 ahze Exp $
+#    $MCom: ports/x11-toolkits/py-gnome-desktop/Makefile,v 1.58 2007/03/18 05:45:44 marcus Exp $
 #
 
 PORTNAME=	gnome
-PORTVERSION=	2.16.0
+PORTVERSION=	2.18.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-python-desktop/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -19,10 +20,12 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of Python bindings used by modules in the GNOME Desktop
 
+BUILD_DEPENDS=	bug-buddy:${PORTSDIR}/devel/bug-buddy
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop \
-		totem-plparser.1:${PORTSDIR}/multimedia/totem-gstreamer \
+		totem-plparser.1:${PORTSDIR}/multimedia/totem \
 		gnome-media-profiles.0:${PORTSDIR}/audio/gnome-media \
 		gnome-keyring:${PORTSDIR}/security/gnome-keyring
+RUN_DEPENDS=	bug-buddy:${PORTSDIR}/devel/bug-buddy
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -30,6 +33,7 @@ USE_PYTHON=	yes
 USE_GNOME=	gnomehack libgnomeprintui gnomepanel gnomedesktop \
 		gtksourceview libwnck nautiluscdburner pygnome2 metacity
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-metacity
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -52,6 +56,7 @@ post-install:
 	${MKDIR} ${EG_DST_DIR}
 	${TAR} -C ${EG_SRC_DIR} -cf - . | ${TAR} -C ${EG_DST_DIR} -xf -
 	${CHOWN} -R ${BINOWN}:${BINGRP} ${EG_DST_DIR}
+	${CHMOD} -R go-w ${EG_DST_DIR}
 .endif
 
 .include <bsd.port.post.mk>

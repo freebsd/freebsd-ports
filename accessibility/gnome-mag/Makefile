@@ -3,11 +3,11 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/accessibility/gnome-mag/Makefile,v 1.22 2006/09/10 00:51:05 mezz Exp $
+#   $MCom: ports/accessibility/gnome-mag/Makefile,v 1.27 2007/03/11 06:58:01 marcus Exp $
 #
 
 PORTNAME=	gnome-mag
-PORTVERSION=	0.13.2
+PORTVERSION=	0.14.3
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -27,5 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 DOCSDIR=	${PREFIX}/share/doc/gnome-mag-${PORTVERSION}
+
+MAN1=		magnifier.1
 
 .include <bsd.port.mk>

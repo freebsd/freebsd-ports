@@ -1,0 +1,11 @@
+--- configure.orig	Mon Dec 18 18:05:50 2006
++++ configure	Mon Dec 18 18:06:30 2006
+@@ -25315,7 +25315,7 @@ else
+ echo "${ECHO_T}yes" >&6
+ 	enable_cairo_pdf=yes
+ fi
+-	    if test x$enable_cairo_pdf == xyes; then
++	    if test x$enable_cairo_pdf = xyes; then
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_CAIRO_PDF 1

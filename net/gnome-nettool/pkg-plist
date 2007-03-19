@@ -10,7 +10,13 @@ share/gnome/gnome-nettool/pixmaps/network.png
 share/gnome/gnome-nettool/pixmaps/wavelan-16.png
 share/gnome/help/gnome-nettool/C/gnome-nettool.xml
 share/gnome/help/gnome-nettool/C/legal.xml
+share/gnome/help/gnome-nettool/fr/gnome-nettool.xml
+share/gnome/help/gnome-nettool/pa/gnome-nettool.xml
+share/gnome/help/gnome-nettool/sv/gnome-nettool.xml
 share/gnome/omf/gnome-nettool/gnome-nettool-C.omf
+share/gnome/omf/gnome-nettool/gnome-nettool-fr.omf
+share/gnome/omf/gnome-nettool/gnome-nettool-pa.omf
+share/gnome/omf/gnome-nettool/gnome-nettool-sv.omf
 share/gnome/pixmaps/gnome-nettool.png
 share/icons/hicolor/48x48/apps/gnome-nettool.png
 share/locale/ar/LC_MESSAGES/gnome-nettool.mo
@@ -46,6 +52,7 @@ share/locale/it/LC_MESSAGES/gnome-nettool.mo
 share/locale/ja/LC_MESSAGES/gnome-nettool.mo
 share/locale/ka/LC_MESSAGES/gnome-nettool.mo
 share/locale/ko/LC_MESSAGES/gnome-nettool.mo
+share/locale/ku/LC_MESSAGES/gnome-nettool.mo
 share/locale/lt/LC_MESSAGES/gnome-nettool.mo
 share/locale/lv/LC_MESSAGES/gnome-nettool.mo
 share/locale/mg/LC_MESSAGES/gnome-nettool.mo
@@ -80,12 +87,6 @@ share/locale/xh/LC_MESSAGES/gnome-nettool.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-nettool.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-nettool.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-nettool.mo
-@dirrm share/gnome/omf/gnome-nettool
-@dirrm share/gnome/help/gnome-nettool/C
-@dirrm share/gnome/help/gnome-nettool
-@dirrm share/gnome/gnome-nettool/pixmaps
-@dirrm share/gnome/gnome-nettool/dialogs
-@dirrm share/gnome/gnome-nettool
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -114,6 +115,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-nettool.mo
 @dirrmtry share/locale/ne
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
 @dirrmtry share/locale/ko/LC_MESSAGES
 @dirrmtry share/locale/ko
 @dirrmtry share/locale/gl/LC_MESSAGES
@@ -130,3 +133,12 @@ share/locale/zh_TW/LC_MESSAGES/gnome-nettool.mo
 @dirrmtry share/locale/ca
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrm share/gnome/omf/gnome-nettool
+@dirrm share/gnome/help/gnome-nettool/sv
+@dirrm share/gnome/help/gnome-nettool/pa
+@dirrm share/gnome/help/gnome-nettool/fr
+@dirrm share/gnome/help/gnome-nettool/C
+@dirrm share/gnome/help/gnome-nettool
+@dirrm share/gnome/gnome-nettool/pixmaps
+@dirrm share/gnome/gnome-nettool/dialogs
+@dirrm share/gnome/gnome-nettool

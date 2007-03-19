@@ -39,9 +39,6 @@ lib/libgnomeprint-2-2.a
 lib/libgnomeprint-2-2.la
 lib/libgnomeprint-2-2.so
 lib/libgnomeprint-2-2.so.0
-%%CUPS:%%lib/libgnomeprint/%%VERSION%%/modules/libgnomeprintcups.a
-%%CUPS:%%lib/libgnomeprint/%%VERSION%%/modules/libgnomeprintcups.la
-%%CUPS:%%lib/libgnomeprint/%%VERSION%%/modules/libgnomeprintcups.so
 lib/libgnomeprint/%%VERSION%%/modules/filters/libgnomeprint-clip.a
 lib/libgnomeprint/%%VERSION%%/modules/filters/libgnomeprint-clip.la
 lib/libgnomeprint/%%VERSION%%/modules/filters/libgnomeprint-clip.so
@@ -60,6 +57,9 @@ lib/libgnomeprint/%%VERSION%%/modules/filters/libgnomeprint-position.so
 lib/libgnomeprint/%%VERSION%%/modules/filters/libgnomeprint-reorder.a
 lib/libgnomeprint/%%VERSION%%/modules/filters/libgnomeprint-reorder.la
 lib/libgnomeprint/%%VERSION%%/modules/filters/libgnomeprint-reorder.so
+lib/libgnomeprint/%%VERSION%%/modules/filters/libgnomeprint-reverse.a
+lib/libgnomeprint/%%VERSION%%/modules/filters/libgnomeprint-reverse.la
+lib/libgnomeprint/%%VERSION%%/modules/filters/libgnomeprint-reverse.so
 lib/libgnomeprint/%%VERSION%%/modules/filters/libgnomeprint-rotate.a
 lib/libgnomeprint/%%VERSION%%/modules/filters/libgnomeprint-rotate.la
 lib/libgnomeprint/%%VERSION%%/modules/filters/libgnomeprint-rotate.so
@@ -69,6 +69,9 @@ lib/libgnomeprint/%%VERSION%%/modules/filters/libgnomeprint-select.so
 lib/libgnomeprint/%%VERSION%%/modules/filters/libgnomeprint-zoom.a
 lib/libgnomeprint/%%VERSION%%/modules/filters/libgnomeprint-zoom.la
 lib/libgnomeprint/%%VERSION%%/modules/filters/libgnomeprint-zoom.so
+%%CUPS:%%lib/libgnomeprint/%%VERSION%%/modules/libgnomeprintcups.a
+%%CUPS:%%lib/libgnomeprint/%%VERSION%%/modules/libgnomeprintcups.la
+%%CUPS:%%lib/libgnomeprint/%%VERSION%%/modules/libgnomeprintcups.so
 lib/libgnomeprint/%%VERSION%%/modules/libgnomeprintlpd.a
 lib/libgnomeprint/%%VERSION%%/modules/libgnomeprintlpd.la
 lib/libgnomeprint/%%VERSION%%/modules/libgnomeprintlpd.so
@@ -95,12 +98,14 @@ share/locale/az/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/be/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/bg/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/bn/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
+share/locale/bn_IN/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/bs/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/ca/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/cs/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/cy/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/da/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/de/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
+share/locale/dz/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/el/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/en_CA/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
@@ -121,7 +126,9 @@ share/locale/id/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/is/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/it/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/ja/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
+share/locale/ka/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/ko/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
+share/locale/ky/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/lt/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/lv/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/mk/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
@@ -133,7 +140,7 @@ share/locale/nb/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/ne/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/nl/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/nn/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
-share/locale/no/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
+share/locale/or/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/pa/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/pl/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/pt/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
@@ -156,6 +163,7 @@ share/locale/vi/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/wa/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/xh/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
+share/locale/zh_HK/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 @dirrm share/gnome/libgnomeprint/%%VERSION%%/printers/uninstalled
 @dirrm share/gnome/libgnomeprint/%%VERSION%%/printers
@@ -175,6 +183,8 @@ share/locale/zh_TW/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 @dirrm etc/gnome/libgnomeprint-2.0
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/zh_CN/LC_MESSAGES
 @dirrmtry share/locale/zh_CN
 @dirrmtry share/locale/xh/LC_MESSAGES
@@ -197,14 +207,14 @@ share/locale/zh_TW/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 @dirrmtry share/locale/pt
 @dirrmtry share/locale/pl/LC_MESSAGES
 @dirrmtry share/locale/pl
-@dirrmtry share/locale/no/LC_MESSAGES
-@dirrmtry share/locale/no
 @dirrmtry share/locale/nn/LC_MESSAGES
 @dirrmtry share/locale/nn
 @dirrmtry share/locale/ne/LC_MESSAGES
 @dirrmtry share/locale/ne
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
+@dirrmtry share/locale/ky/LC_MESSAGES
+@dirrmtry share/locale/ky
 @dirrmtry share/locale/ko/LC_MESSAGES
 @dirrmtry share/locale/ko
 @dirrmtry share/locale/gl/LC_MESSAGES
@@ -213,9 +223,13 @@ share/locale/zh_TW/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 @dirrmtry share/locale/fi
 @dirrmtry share/locale/el/LC_MESSAGES
 @dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrmtry share/locale/cs/LC_MESSAGES
 @dirrmtry share/locale/cs
 @dirrmtry share/locale/ca/LC_MESSAGES
 @dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be/LC_MESSAGES
 @dirrmtry share/locale/be

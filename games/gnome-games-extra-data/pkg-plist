@@ -13,6 +13,7 @@ share/gnome/pixmaps/gnobots2/mice.png
 share/gnome/pixmaps/gnome-games-common/cards/bellot.svg
 share/gnome/pixmaps/gnome-games-common/cards/dondorf.svg
 share/gnome/pixmaps/gnome-games-common/cards/ornamental.svg
+share/gnome/pixmaps/gnome-games-common/cards/paris.svg
 share/gnome/pixmaps/gnometris/5blocks-tig.png
 share/gnome/pixmaps/gnometris/5blocks-tim.png
 share/gnome/pixmaps/gnometris/5blocks.png
@@ -27,5 +28,6 @@ share/gnome/pixmaps/iagno/shrink.png
 share/gnome/pixmaps/iagno/sunmoon.png
 share/gnome/pixmaps/mahjongg/default.png
 share/gnome/pixmaps/mahjongg/default2.png
+share/gnome/pixmaps/mahjongg/greek-letters.png
 share/gnome/pixmaps/mahjongg/maya.png
 share/gnome/pixmaps/mahjongg/seta.png

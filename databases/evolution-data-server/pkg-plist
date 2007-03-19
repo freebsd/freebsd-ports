@@ -351,11 +351,11 @@ lib/evolution-data-server-%%EVO_VERSION%%/extensions/libecalbackendweather.so
 lib/libcamel-%%EVO_VERSION%%.a
 lib/libcamel-%%EVO_VERSION%%.la
 lib/libcamel-%%EVO_VERSION%%.so
-lib/libcamel-%%EVO_VERSION%%.so.0
+lib/libcamel-%%EVO_VERSION%%.so.10
 lib/libcamel-provider-%%EVO_VERSION%%.a
 lib/libcamel-provider-%%EVO_VERSION%%.la
 lib/libcamel-provider-%%EVO_VERSION%%.so
-lib/libcamel-provider-%%EVO_VERSION%%.so.8
+lib/libcamel-provider-%%EVO_VERSION%%.so.10
 lib/libebook-%%EVO_VERSION%%.a
 lib/libebook-%%EVO_VERSION%%.la
 lib/libebook-%%EVO_VERSION%%.so
@@ -375,7 +375,7 @@ lib/libedata-cal-%%EVO_VERSION%%.so.6
 lib/libedataserver-%%EVO_VERSION%%.a
 lib/libedataserver-%%EVO_VERSION%%.la
 lib/libedataserver-%%EVO_VERSION%%.so
-lib/libedataserver-%%EVO_VERSION%%.so.7
+lib/libedataserver-%%EVO_VERSION%%.so.9
 lib/libedataserverui-%%EVO_VERSION%%.a
 lib/libedataserverui-%%EVO_VERSION%%.la
 lib/libedataserverui-%%EVO_VERSION%%.so
@@ -383,11 +383,11 @@ lib/libedataserverui-%%EVO_VERSION%%.so.8
 lib/libegroupwise-%%EVO_VERSION%%.a
 lib/libegroupwise-%%EVO_VERSION%%.la
 lib/libegroupwise-%%EVO_VERSION%%.so
-lib/libegroupwise-%%EVO_VERSION%%.so.12
+lib/libegroupwise-%%EVO_VERSION%%.so.13
 lib/libexchange-storage-%%EVO_VERSION%%.a
 lib/libexchange-storage-%%EVO_VERSION%%.la
 lib/libexchange-storage-%%EVO_VERSION%%.so
-lib/libexchange-storage-%%EVO_VERSION%%.so.2
+lib/libexchange-storage-%%EVO_VERSION%%.so.3
 libdata/bonobo/servers/GNOME_Evolution_DataServer_%%EVO_VERSION%%.server
 libdata/pkgconfig/camel-%%EVO_VERSION%%.pc
 libdata/pkgconfig/camel-provider-%%EVO_VERSION%%.pc
@@ -413,6 +413,7 @@ share/doc/libebook/ch01.html
 share/doc/libebook/home.png
 share/doc/libebook/index.html
 share/doc/libebook/index.sgml
+share/doc/libebook/ix01.html
 share/doc/libebook/left.png
 share/doc/libebook/libebook-EAddressWestern.html
 share/doc/libebook/libebook-ENameWestern.html
@@ -425,15 +426,16 @@ share/doc/libebook/right.png
 share/doc/libebook/style.css
 share/doc/libebook/up.png
 share/doc/libecal/ECal.html
+share/doc/libecal/ECalListener.html
 share/doc/libecal/ECalComponent.html
+share/doc/libecal/ECalView.html
+share/doc/libecal/ECalViewListener.html
 share/doc/libecal/ch01.html
 share/doc/libecal/home.png
 share/doc/libecal/index.html
 share/doc/libecal/index.sgml
+share/doc/libecal/ix01.html
 share/doc/libecal/left.png
-share/doc/libecal/libecal-ECalListener.html
-share/doc/libecal/libecal-ECalView.html
-share/doc/libecal/libecal-ECalViewListener.html
 share/doc/libecal/libecal-e-cal-recur.html
 share/doc/libecal/libecal-e-cal-time-util.html
 share/doc/libecal/libecal-e-cal-types.html
@@ -443,19 +445,43 @@ share/doc/libecal/libecal.devhelp2
 share/doc/libecal/right.png
 share/doc/libecal/style.css
 share/doc/libecal/up.png
+share/doc/libedata-book/EBookBackend.html
+share/doc/libedata-book/EBookBackendCache.html
+share/doc/libedata-book/EBookBackendFactory.html
+share/doc/libedata-book/EBookBackendSExp.html
+share/doc/libedata-book/EBookBackendSummary.html
+share/doc/libedata-book/EBookBackendSync.html
+share/doc/libedata-book/EDataBook.html
+share/doc/libedata-book/EDataBookView.html
+share/doc/libedata-book/ch01.html
+share/doc/libedata-book/home.png
+share/doc/libedata-book/index.html
+share/doc/libedata-book/index.sgml
+share/doc/libedata-book/ix01.html
+share/doc/libedata-book/left.png
+share/doc/libedata-book/libedata-book-EDataBookFactory.html
+share/doc/libedata-book/libedata-book-e-book-backend-db-cache.html
+share/doc/libedata-book/libedata-book-e-data-book-marshal.html
+share/doc/libedata-book/libedata-book-ximian-vcard.html
+share/doc/libedata-book/libedata-book.devhelp
+share/doc/libedata-book/libedata-book.devhelp2
+share/doc/libedata-book/right.png
+share/doc/libedata-book/style.css
+share/doc/libedata-book/up.png
 share/doc/libedata-cal/ECalBackend.html
+share/doc/libedata-cal/ECalBackendCache.html
+share/doc/libedata-cal/ECalBackendFactory.html
 share/doc/libedata-cal/ECalBackendSExp.html
+share/doc/libedata-cal/ECalBackendSync.html
 share/doc/libedata-cal/EDataCal.html
+share/doc/libedata-cal/EDataCalFactory.html
 share/doc/libedata-cal/EDataCalView.html
 share/doc/libedata-cal/ch01.html
 share/doc/libedata-cal/home.png
 share/doc/libedata-cal/index.html
 share/doc/libedata-cal/index.sgml
+share/doc/libedata-cal/ix01.html
 share/doc/libedata-cal/left.png
-share/doc/libedata-cal/libedata-cal-ECalBackendCache.html
-share/doc/libedata-cal/libedata-cal-ECalBackendFactory.html
-share/doc/libedata-cal/libedata-cal-ECalBackendSync.html
-share/doc/libedata-cal/libedata-cal-EDataCalFactory.html
 share/doc/libedata-cal/libedata-cal-e-cal-backend-util.html
 share/doc/libedata-cal/libedata-cal.devhelp
 share/doc/libedata-cal/libedata-cal.devhelp2
@@ -467,17 +493,18 @@ share/doc/libedataserver/home.png
 share/doc/libedataserver/index.html
 share/doc/libedataserver/index.sgml
 share/doc/libedataserver/left.png
-share/doc/libedataserver/libedataserver-EAccount.html
-share/doc/libedataserver/libedataserver-EAccountList.html
-share/doc/libedataserver/libedataserver-EComponentListener.html
-share/doc/libedataserver/libedataserver-EFileCache.html
-share/doc/libedataserver/libedataserver-EIterator.html
-share/doc/libedataserver/libedataserver-EList.html
-share/doc/libedataserver/libedataserver-EListIterator.html
+share/doc/libedataserver/EAccount.html
+share/doc/libedataserver/EAccountList.html
+share/doc/libedataserver/EComponentListener.html
+share/doc/libedataserver/EFileCache.html
+share/doc/libedataserver/EIterator.html
+share/doc/libedataserver/EList.html
+share/doc/libedataserver/EListIterator.html
+share/doc/libedataserver/ESource.html
+share/doc/libedataserver/ESourceGroup.html
+share/doc/libedataserver/ESourceList.html
+share/doc/libedataserver/ix01.html
 share/doc/libedataserver/libedataserver-ESExp.html
-share/doc/libedataserver/libedataserver-ESource.html
-share/doc/libedataserver/libedataserver-ESourceGroup.html
-share/doc/libedataserver/libedataserver-ESourceList.html
 share/doc/libedataserver/libedataserver-e-categories.html
 share/doc/libedataserver/libedataserver-e-data-server-module.html
 share/doc/libedataserver/libedataserver-e-db3-utils.html
@@ -497,6 +524,32 @@ share/doc/libedataserver/libedataserver.devhelp2
 share/doc/libedataserver/right.png
 share/doc/libedataserver/style.css
 share/doc/libedataserver/up.png
+share/doc/libedataserverui/ECategoriesDialog.html
+share/doc/libedataserverui/EContactStore.html
+share/doc/libedataserverui/EDestinationStore.html
+share/doc/libedataserverui/ENameSelector.html
+share/doc/libedataserverui/ENameSelectorDialog.html
+share/doc/libedataserverui/ENameSelectorEntry.html
+share/doc/libedataserverui/ENameSelectorList.html
+share/doc/libedataserverui/ENameSelectorModel.html
+share/doc/libedataserverui/ESourceOptionMenu.html
+share/doc/libedataserverui/ESourceSelector.html
+share/doc/libedataserverui/ESourceSelectorDialog.html
+share/doc/libedataserverui/ETreeModelGenerator.html
+share/doc/libedataserverui/ch01.html
+share/doc/libedataserverui/home.png
+share/doc/libedataserverui/index.html
+share/doc/libedataserverui/index.sgml
+share/doc/libedataserverui/ix01.html
+share/doc/libedataserverui/left.png
+share/doc/libedataserverui/libedataserverui-e-book-auth-util.html
+share/doc/libedataserverui/libedataserverui-e-data-server-ui-marshal.html
+share/doc/libedataserverui/libedataserverui-e-passwords.html
+share/doc/libedataserverui/libedataserverui.devhelp
+share/doc/libedataserverui/libedataserverui.devhelp2
+share/doc/libedataserverui/right.png
+share/doc/libedataserverui/style.css
+share/doc/libedataserverui/up.png
 share/gnome/evolution-data-server-%%VERSION%%/evolutionperson.schema
 share/gnome/evolution-data-server-%%VERSION%%/glade/e-categories-dialog.glade
 share/gnome/evolution-data-server-%%VERSION%%/glade/e-name-selector-dialog.glade
@@ -883,24 +936,24 @@ share/gnome/evolution-data-server-%%VERSION%%/zoneinfo/zones.tab
 share/gnome/idl/evolution-data-server-%%EVO_VERSION%%/Evolution-DataServer-Addressbook.idl
 share/gnome/idl/evolution-data-server-%%EVO_VERSION%%/Evolution-DataServer-Calendar.idl
 share/gnome/idl/evolution-data-server-%%EVO_VERSION%%/Evolution-DataServer.idl
-share/gnome/pixmaps/evolution-data-server-%%VERSION%%/category_birthday_16.png
-share/gnome/pixmaps/evolution-data-server-%%VERSION%%/category_business_16.png
-share/gnome/pixmaps/evolution-data-server-%%VERSION%%/category_favorites_16.png
-share/gnome/pixmaps/evolution-data-server-%%VERSION%%/category_gifts_16.png
-share/gnome/pixmaps/evolution-data-server-%%VERSION%%/category_goals_16.png
-share/gnome/pixmaps/evolution-data-server-%%VERSION%%/category_holiday-cards_16.png
-share/gnome/pixmaps/evolution-data-server-%%VERSION%%/category_holiday_16.png
-share/gnome/pixmaps/evolution-data-server-%%VERSION%%/category_hot-contacts_16.png
-share/gnome/pixmaps/evolution-data-server-%%VERSION%%/category_ideas_16.png
-share/gnome/pixmaps/evolution-data-server-%%VERSION%%/category_international_16.png
-share/gnome/pixmaps/evolution-data-server-%%VERSION%%/category_key-customer_16.png
-share/gnome/pixmaps/evolution-data-server-%%VERSION%%/category_miscellaneous_16.png
-share/gnome/pixmaps/evolution-data-server-%%VERSION%%/category_personal_16.png
-share/gnome/pixmaps/evolution-data-server-%%VERSION%%/category_phonecalls_16.png
-share/gnome/pixmaps/evolution-data-server-%%VERSION%%/category_status_16.png
-share/gnome/pixmaps/evolution-data-server-%%VERSION%%/category_strategies_16.png
-share/gnome/pixmaps/evolution-data-server-%%VERSION%%/category_suppliers_16.png
-share/gnome/pixmaps/evolution-data-server-%%VERSION%%/category_time-and-expenses_16.png
+share/gnome/pixmaps/evolution-data-server/category_birthday_16.png
+share/gnome/pixmaps/evolution-data-server/category_business_16.png
+share/gnome/pixmaps/evolution-data-server/category_favorites_16.png
+share/gnome/pixmaps/evolution-data-server/category_gifts_16.png
+share/gnome/pixmaps/evolution-data-server/category_goals_16.png
+share/gnome/pixmaps/evolution-data-server/category_holiday-cards_16.png
+share/gnome/pixmaps/evolution-data-server/category_holiday_16.png
+share/gnome/pixmaps/evolution-data-server/category_hot-contacts_16.png
+share/gnome/pixmaps/evolution-data-server/category_ideas_16.png
+share/gnome/pixmaps/evolution-data-server/category_international_16.png
+share/gnome/pixmaps/evolution-data-server/category_key-customer_16.png
+share/gnome/pixmaps/evolution-data-server/category_miscellaneous_16.png
+share/gnome/pixmaps/evolution-data-server/category_personal_16.png
+share/gnome/pixmaps/evolution-data-server/category_phonecalls_16.png
+share/gnome/pixmaps/evolution-data-server/category_status_16.png
+share/gnome/pixmaps/evolution-data-server/category_strategies_16.png
+share/gnome/pixmaps/evolution-data-server/category_suppliers_16.png
+share/gnome/pixmaps/evolution-data-server/category_time-and-expenses_16.png
 share/locale/am/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/ar/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
@@ -974,7 +1027,7 @@ share/locale/xh/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/zh_HK/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
-@dirrm share/gnome/pixmaps/evolution-data-server-%%VERSION%%
+@dirrm share/gnome/pixmaps/evolution-data-server
 @dirrm share/gnome/idl/evolution-data-server-%%EVO_VERSION%%
 @dirrm share/gnome/evolution-data-server-%%VERSION%%/zoneinfo/Pacific
 @dirrm share/gnome/evolution-data-server-%%VERSION%%/zoneinfo/Indian
@@ -993,8 +1046,10 @@ share/locale/zh_TW/LC_MESSAGES/evolution-data-server-%%VERSION%%.mo
 @dirrm share/gnome/evolution-data-server-%%VERSION%%/weather
 @dirrm share/gnome/evolution-data-server-%%VERSION%%/glade
 @dirrm share/gnome/evolution-data-server-%%VERSION%%
+@dirrm share/doc/libedataserverui
 @dirrm share/doc/libedataserver
 @dirrm share/doc/libedata-cal
+@dirrm share/doc/libedata-book
 @dirrm share/doc/libecal
 @dirrm share/doc/libebook
 @dirrm lib/evolution-data-server-%%EVO_VERSION%%/extensions

@@ -3,11 +3,11 @@
 # Whom:                Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/x11/gdm/Makefile,v 1.44 2006/10/03 13:36:08 ahze Exp $
+#    $MCom: ports/x11/gdm/Makefile,v 1.58 2007/03/12 16:56:06 marcus Exp $
 #
 
 PORTNAME=	gdm
-PORTVERSION=	2.16.5
+PORTVERSION=	2.18.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -31,7 +31,8 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack gnomehier libgnomeui librsvg2 gnomedocutils \
 		gnomeprefix
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man \
+		--with-console-kit=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		GTKDOC="false"

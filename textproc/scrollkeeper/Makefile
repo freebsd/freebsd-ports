@@ -3,11 +3,11 @@
 # Whom:					Rene Hexel <rh@netbsd.org>
 #
 # $FreeBSD$
-#    $MCom: ports/textproc/scrollkeeper/Makefile,v 1.2 2006/09/10 00:51:13 mezz Exp $
+#    $MCom: ports/textproc/scrollkeeper/Makefile,v 1.7 2007/02/20 20:26:47 marcus Exp $
 
 PORTNAME=	scrollkeeper
 PORTVERSION=	0.3.14
-PORTREVISION=	5
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -18,19 +18,20 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An Open Document Cataloging Project
 
 BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
-		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}/docbook.cat:${PORTSDIR}/textproc/docbook-sk \
-		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
+		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
+		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}/catalog.xml:${PORTSDIR}/textproc/docbook-xml \
+    		${LOCALBASE}/share/xml/docbook/4.1.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-sk
 RUN_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
-		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}/docbook.cat:${PORTSDIR}/textproc/docbook-sk \
-		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
+		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
+    		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}/catalog.xml:${PORTSDIR}/textproc/docbook-xml \
+    		${LOCALBASE}/share/xml/docbook/4.1.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-sk
 
-DOCBOOK_VERSION=	4.1.2
+DOCBOOK_VERSION=4.2
 
-USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_BISON=	yes
 USE_GNOME=	gnomehack gnomehier gnometarget libxslt intlhack
 USE_LDCONFIG=	yes

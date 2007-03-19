@@ -1,6 +1,128 @@
 bin/gnumeric
 bin/gnumeric-%%VERSION%%
 bin/ssconvert
+bin/ssindex
+include/libspreadsheet-1-7/application.h
+include/libspreadsheet-1-7/auto-format.h
+include/libspreadsheet-1-7/cell-draw.h
+include/libspreadsheet-1-7/cell.h
+include/libspreadsheet-1-7/cellspan.h
+include/libspreadsheet-1-7/clipboard.h
+include/libspreadsheet-1-7/cmd-edit.h
+include/libspreadsheet-1-7/collect.h
+include/libspreadsheet-1-7/colrow.h
+include/libspreadsheet-1-7/command-context-stderr.h
+include/libspreadsheet-1-7/command-context.h
+include/libspreadsheet-1-7/commands.h
+include/libspreadsheet-1-7/complete-sheet.h
+include/libspreadsheet-1-7/complete.h
+include/libspreadsheet-1-7/complex.h
+include/libspreadsheet-1-7/consolidate.h
+include/libspreadsheet-1-7/dependent.h
+include/libspreadsheet-1-7/expr-impl.h
+include/libspreadsheet-1-7/expr-name.h
+include/libspreadsheet-1-7/expr.h
+include/libspreadsheet-1-7/file-autoft.h
+include/libspreadsheet-1-7/format-template.h
+include/libspreadsheet-1-7/func-builtin.h
+include/libspreadsheet-1-7/func.h
+include/libspreadsheet-1-7/gnm-datetime.h
+include/libspreadsheet-1-7/gnm-format.h
+include/libspreadsheet-1-7/gnm-graph-window.h
+include/libspreadsheet-1-7/gnm-plugin.h
+include/libspreadsheet-1-7/gnm-so-filled.h
+include/libspreadsheet-1-7/gnm-so-line.h
+include/libspreadsheet-1-7/gnm-so-polygon.h
+include/libspreadsheet-1-7/gnm-style-impl.h
+include/libspreadsheet-1-7/gnumeric-canvas.h
+include/libspreadsheet-1-7/gnumeric-gconf.h
+include/libspreadsheet-1-7/gnumeric-pane.h
+include/libspreadsheet-1-7/gnumeric-simple-canvas.h
+include/libspreadsheet-1-7/gnumeric.h
+include/libspreadsheet-1-7/graph.h
+include/libspreadsheet-1-7/gui-clipboard.h
+include/libspreadsheet-1-7/gui-file.h
+include/libspreadsheet-1-7/gui-gnumeric.h
+include/libspreadsheet-1-7/gui-util.h
+include/libspreadsheet-1-7/gutils.h
+include/libspreadsheet-1-7/history.h
+include/libspreadsheet-1-7/hlink-impl.h
+include/libspreadsheet-1-7/hlink.h
+include/libspreadsheet-1-7/input-msg.h
+include/libspreadsheet-1-7/item-acetate.h
+include/libspreadsheet-1-7/item-bar.h
+include/libspreadsheet-1-7/item-cursor.h
+include/libspreadsheet-1-7/item-debug.h
+include/libspreadsheet-1-7/item-edit.h
+include/libspreadsheet-1-7/item-grid.h
+include/libspreadsheet-1-7/libgnumeric.h
+include/libspreadsheet-1-7/mathfunc.h
+include/libspreadsheet-1-7/mstyle.h
+include/libspreadsheet-1-7/number-match.h
+include/libspreadsheet-1-7/numbers.h
+include/libspreadsheet-1-7/parse-util.h
+include/libspreadsheet-1-7/pattern.h
+include/libspreadsheet-1-7/pivottable.h
+include/libspreadsheet-1-7/position.h
+include/libspreadsheet-1-7/preview-grid-impl.h
+include/libspreadsheet-1-7/preview-grid.h
+include/libspreadsheet-1-7/print-cell.h
+include/libspreadsheet-1-7/print-info.h
+include/libspreadsheet-1-7/print.h
+include/libspreadsheet-1-7/rangefunc-strings.h
+include/libspreadsheet-1-7/rangefunc.h
+include/libspreadsheet-1-7/ranges.h
+include/libspreadsheet-1-7/regression.h
+include/libspreadsheet-1-7/rendered-value.h
+include/libspreadsheet-1-7/search.h
+include/libspreadsheet-1-7/selection.h
+include/libspreadsheet-1-7/session.h
+include/libspreadsheet-1-7/sheet-autofill.h
+include/libspreadsheet-1-7/sheet-control-gui-priv.h
+include/libspreadsheet-1-7/sheet-control-gui.h
+include/libspreadsheet-1-7/sheet-control-priv.h
+include/libspreadsheet-1-7/sheet-control.h
+include/libspreadsheet-1-7/sheet-filter-combo.h
+include/libspreadsheet-1-7/sheet-filter.h
+include/libspreadsheet-1-7/sheet-merge.h
+include/libspreadsheet-1-7/sheet-object-cell-comment.h
+include/libspreadsheet-1-7/sheet-object-graph.h
+include/libspreadsheet-1-7/sheet-object-image.h
+include/libspreadsheet-1-7/sheet-object-impl.h
+include/libspreadsheet-1-7/sheet-object-widget.h
+include/libspreadsheet-1-7/sheet-object.h
+include/libspreadsheet-1-7/sheet-private.h
+include/libspreadsheet-1-7/sheet-style.h
+include/libspreadsheet-1-7/sheet-view.h
+include/libspreadsheet-1-7/sheet.h
+include/libspreadsheet-1-7/solver.h
+include/libspreadsheet-1-7/sort.h
+include/libspreadsheet-1-7/stf-export.h
+include/libspreadsheet-1-7/stf-parse.h
+include/libspreadsheet-1-7/stf.h
+include/libspreadsheet-1-7/str.h
+include/libspreadsheet-1-7/style-border.h
+include/libspreadsheet-1-7/style-color.h
+include/libspreadsheet-1-7/style-conditions.h
+include/libspreadsheet-1-7/style-font.h
+include/libspreadsheet-1-7/style.h
+include/libspreadsheet-1-7/symbol.h
+include/libspreadsheet-1-7/validation-combo.h
+include/libspreadsheet-1-7/validation.h
+include/libspreadsheet-1-7/value.h
+include/libspreadsheet-1-7/wbc-gtk.h
+include/libspreadsheet-1-7/workbook-cmd-format.h
+include/libspreadsheet-1-7/workbook-control-gui-priv.h
+include/libspreadsheet-1-7/workbook-control-gui.h
+include/libspreadsheet-1-7/workbook-control-priv.h
+include/libspreadsheet-1-7/workbook-control.h
+include/libspreadsheet-1-7/workbook-edit.h
+include/libspreadsheet-1-7/workbook-priv.h
+include/libspreadsheet-1-7/workbook-view.h
+include/libspreadsheet-1-7/workbook.h
+include/libspreadsheet-1-7/xml-io-version.h
+include/libspreadsheet-1-7/xml-io.h
+include/libspreadsheet-1-7/xml-sax.h
 lib/gnumeric/%%VERSION%%/plugins/applix/applix.la
 lib/gnumeric/%%VERSION%%/plugins/applix/applix.so
 lib/gnumeric/%%VERSION%%/plugins/applix/plugin.xml
@@ -124,13 +246,17 @@ lib/gnumeric/%%VERSION%%/plugins/uihello/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/xbase/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/xbase/xbase.la
 lib/gnumeric/%%VERSION%%/plugins/xbase/xbase.so
+lib/goffice/0.3.7/plugins/gnumeric/gnumeric.la
+lib/goffice/0.3.7/plugins/gnumeric/gnumeric.so
+lib/goffice/0.3.7/plugins/gnumeric/plugin.xml
 lib/libspreadsheet-%%VERSION%%.so
 lib/libspreadsheet.la
 lib/libspreadsheet.so
-libdata/bonobo/servers/GNOME_Gnumeric.server
+libdata/pkgconfig/libspreadsheet-1.7.pc
 @exec update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/applications/gnumeric.desktop
 share/gnome/gnumeric/%%VERSION%%/GNOME_Gnumeric-gtk.xml
+share/gnome/gnumeric/%%VERSION%%/Gnumeric-embed.xml
 share/gnome/gnumeric/%%VERSION%%/autoformat-templates/3D/.category
 share/gnome/gnumeric/%%VERSION%%/autoformat-templates/3D/autoformat.3D.button.xml
 share/gnome/gnumeric/%%VERSION%%/autoformat-templates/3D/autoformat.3D.list.xml
@@ -177,6 +303,7 @@ share/gnome/gnumeric/%%VERSION%%/glade/consolidate.glade
 share/gnome/gnumeric/%%VERSION%%/glade/correlation.glade
 share/gnome/gnumeric/%%VERSION%%/glade/covariance.glade
 share/gnome/gnumeric/%%VERSION%%/glade/dao.glade
+share/gnome/gnumeric/%%VERSION%%/glade/data-table.glade
 share/gnome/gnumeric/%%VERSION%%/glade/define-name.glade
 share/gnome/gnumeric/%%VERSION%%/glade/delete-cells.glade
 share/gnome/gnumeric/%%VERSION%%/glade/descriptive-stats.glade
@@ -218,9 +345,9 @@ share/gnome/gnumeric/%%VERSION%%/glade/shuffle.glade
 share/gnome/gnumeric/%%VERSION%%/glade/simulation.glade
 share/gnome/gnumeric/%%VERSION%%/glade/so-checkbox.glade
 share/gnome/gnumeric/%%VERSION%%/glade/so-frame.glade
+share/gnome/gnumeric/%%VERSION%%/glade/so-list.glade
 share/gnome/gnumeric/%%VERSION%%/glade/so-scrollbar.glade
 share/gnome/gnumeric/%%VERSION%%/glade/solver.glade
-share/gnome/gnumeric/%%VERSION%%/glade/summary.glade
 share/gnome/gnumeric/%%VERSION%%/glade/tabulate.glade
 share/gnome/gnumeric/%%VERSION%%/glade/variance-tests.glade
 share/gnome/gnumeric/%%VERSION%%/glade/view.glade
@@ -630,8 +757,6 @@ share/gnome/help/gnumeric/C/quick-start.xml
 share/gnome/help/gnumeric/C/welcome.xml
 share/gnome/help/gnumeric/C/workbooks.xml
 share/gnome/help/gnumeric/C/worksheets.xml
-share/gnome/mc/templates/gnumeric.desktop
-share/gnome/mime-info/gnumeric.keys
 share/gnome/mime-info/gnumeric.mime
 share/gnome/omf/gnumeric/gnumeric-C.omf
 share/gnome/pixmaps/gnome-application-vnd.lotus-1-2-3.png
@@ -656,6 +781,8 @@ share/gnome/pixmaps/gnumeric/win32-gnumeric.ico
 share/gnome/pixmaps/win32-gnumeric.ico
 share/locale/am/LC_MESSAGES/gnumeric-functions.mo
 share/locale/am/LC_MESSAGES/gnumeric.mo
+share/locale/ar/LC_MESSAGES/gnumeric-functions.mo
+share/locale/ar/LC_MESSAGES/gnumeric.mo
 share/locale/az/LC_MESSAGES/gnumeric-functions.mo
 share/locale/az/LC_MESSAGES/gnumeric.mo
 share/locale/bg/LC_MESSAGES/gnumeric-functions.mo
@@ -808,4 +935,44 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins
 @dirrm lib/gnumeric/%%VERSION%%
 @dirrm lib/gnumeric
+@dirrm lib/goffice/0.3.7/plugins/gnumeric
+@dirrm include/libspreadsheet-1-7
 @unexec update-desktop-database > /dev/null || /usr/bin/true
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
+@dirrmtry share/locale/sr/LC_MESSAGES
+@dirrmtry share/locale/sr
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/no/LC_MESSAGES
+@dirrmtry share/locale/no
+@dirrmtry share/locale/nn/LC_MESSAGES
+@dirrmtry share/locale/nn
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/ko/LC_MESSAGES
+@dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca

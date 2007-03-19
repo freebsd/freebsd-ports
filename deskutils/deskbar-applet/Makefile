@@ -3,11 +3,11 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/deskutils/deskbar-applet/Makefile,v 1.42 2006/09/07 19:05:16 marcus Exp $
+#    $MCom: ports/deskutils/deskbar-applet/Makefile,v 1.54 2007/03/14 11:58:47 ahze Exp $
 #
 
 PORTNAME=	deskbar-applet
-PORTVERSION=	2.16.2
+PORTVERSION=	2.18.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -15,6 +15,9 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Omnipresent versatile search interface
+
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -24,7 +27,7 @@ USE_PYTHON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-CONFIGURE_ARGS=	--disable-beagle
+INSTALLS_OMF=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -33,10 +36,6 @@ GCONF_SCHEMAS=	deskbar-applet.schemas
 OPTIONS=	EVO "Enable evolution support" on
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Does not build on 4.X
-.endif
 
 .if !defined(WITHOUT_EVO)
 USE_GNOME+=	evolutiondataserver

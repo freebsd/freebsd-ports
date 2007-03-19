@@ -13,6 +13,7 @@ include/gdict-1.0/gdict/gdict-enum-types.h
 include/gdict-1.0/gdict/gdict-source-loader.h
 include/gdict-1.0/gdict/gdict-source.h
 include/gdict-1.0/gdict/gdict-speller.h
+include/gdict-1.0/gdict/gdict-strategy-chooser.h
 include/gdict-1.0/gdict/gdict-utils.h
 include/gdict-1.0/gdict/gdict-version.h
 include/gdict-1.0/gdict/gdict.h
@@ -48,27 +49,11 @@ share/gnome/applications/gnome-dictionary.desktop
 share/gnome/applications/gnome-screenshot.desktop
 share/gnome/applications/gnome-search-tool.desktop
 share/gnome/applications/gnome-system-log.desktop
-share/gnome/baobab/pixmaps/alfa_sort.png
 share/gnome/baobab/pixmaps/baobab.glade
-share/gnome/baobab/pixmaps/baobab.xpm
-share/gnome/baobab/pixmaps/busy.gif
-share/gnome/baobab/pixmaps/done.png
-share/gnome/baobab/pixmaps/format_numeric.png
-share/gnome/baobab/pixmaps/format_percent.png
-share/gnome/baobab/pixmaps/green.png
-share/gnome/baobab/pixmaps/nautilus.png
-share/gnome/baobab/pixmaps/num_sort.png
-share/gnome/baobab/pixmaps/red.png
-share/gnome/baobab/pixmaps/scan_directory.png
-share/gnome/baobab/pixmaps/scan_harddisk.png
-share/gnome/baobab/pixmaps/search.png
-share/gnome/baobab/pixmaps/searchall.png
 share/gnome/baobab/pixmaps/shot.png
-share/gnome/baobab/pixmaps/stop.png
-share/gnome/baobab/pixmaps/white.png
-share/gnome/baobab/pixmaps/yellow.png
 share/gnome/gdict-1.0/sources/default.desktop
 share/gnome/gdict-1.0/sources/spanish.desktop
+share/gnome/gdict-1.0/sources/thai.desktop
 share/gnome/gnome-2.0/ui/GNOME_DictionaryApplet.xml
 share/gnome/gnome-dictionary/gnome-dictionary-preferences.glade
 share/gnome/gnome-dictionary/gnome-dictionary-ui.xml
@@ -83,6 +68,18 @@ share/gnome/help/baobab/C/figures/baobab_remote.png
 share/gnome/help/baobab/C/figures/baobab_treemaps.png
 share/gnome/help/baobab/C/figures/baobab_window.png
 share/gnome/help/baobab/C/legal.xml
+share/gnome/help/baobab/en_GB/baobab.xml
+share/gnome/help/baobab/en_GB/figures/baobab_fullscan.png
+share/gnome/help/baobab/en_GB/figures/baobab_prefs.png
+share/gnome/help/baobab/en_GB/figures/baobab_remote.png
+share/gnome/help/baobab/en_GB/figures/baobab_treemaps.png
+share/gnome/help/baobab/en_GB/figures/baobab_window.png
+share/gnome/help/baobab/es/baobab.xml
+share/gnome/help/baobab/es/figures/baobab_fullscan.png
+share/gnome/help/baobab/es/figures/baobab_prefs.png
+share/gnome/help/baobab/es/figures/baobab_remote.png
+share/gnome/help/baobab/es/figures/baobab_treemaps.png
+share/gnome/help/baobab/es/figures/baobab_window.png
 share/gnome/help/baobab/fr/baobab.xml
 share/gnome/help/baobab/fr/figures/baobab_fullscan.png
 share/gnome/help/baobab/fr/figures/baobab_prefs.png
@@ -132,6 +129,15 @@ share/gnome/help/gnome-dictionary/fr/figures/gnome-dictionary-lookup.png
 share/gnome/help/gnome-dictionary/fr/figures/gnome-dictionary-preferences-print.png
 share/gnome/help/gnome-dictionary/fr/figures/gnome-dictionary-preferences-source.png
 share/gnome/help/gnome-dictionary/fr/gnome-dictionary.xml
+share/gnome/help/gnome-dictionary/it/figures/gnome-dictionary-add-source.png
+share/gnome/help/gnome-dictionary/it/figures/gnome-dictionary-applet-window.png
+share/gnome/help/gnome-dictionary/it/figures/gnome-dictionary-applet.png
+share/gnome/help/gnome-dictionary/it/figures/gnome-dictionary-application.png
+share/gnome/help/gnome-dictionary/it/figures/gnome-dictionary-find.png
+share/gnome/help/gnome-dictionary/it/figures/gnome-dictionary-lookup.png
+share/gnome/help/gnome-dictionary/it/figures/gnome-dictionary-preferences-print.png
+share/gnome/help/gnome-dictionary/it/figures/gnome-dictionary-preferences-source.png
+share/gnome/help/gnome-dictionary/it/gnome-dictionary.xml
 share/gnome/help/gnome-dictionary/ru/figures/gnome-dictionary-add-source.png
 share/gnome/help/gnome-dictionary/ru/figures/gnome-dictionary-applet-window.png
 share/gnome/help/gnome-dictionary/ru/figures/gnome-dictionary-applet.png
@@ -181,17 +187,22 @@ share/gnome/help/gnome-system-log/fr/figures/syslog_window.png
 share/gnome/help/gnome-system-log/fr/gnome-system-log.xml
 share/gnome/help/gnome-system-log/it/figures/syslog_window.png
 share/gnome/help/gnome-system-log/it/gnome-system-log.xml
+share/gnome/help/gnome-system-log/ru/figures/syslog_window.png
+share/gnome/help/gnome-system-log/ru/gnome-system-log.xml
 share/gnome/help/gnome-system-log/sv/figures/syslog_window.png
 share/gnome/help/gnome-system-log/sv/gnome-system-log.xml
 share/gnome/help/gnome-system-log/uk/figures/syslog_window.png
 share/gnome/help/gnome-system-log/uk/gnome-system-log.xml
 share/gnome/omf/baobab/baobab-C.omf
+share/gnome/omf/baobab/baobab-en_GB.omf
+share/gnome/omf/baobab/baobab-es.omf
 share/gnome/omf/baobab/baobab-fr.omf
 share/gnome/omf/baobab/baobab-sv.omf
 share/gnome/omf/gnome-dictionary/gnome-dictionary-C.omf
 share/gnome/omf/gnome-dictionary/gnome-dictionary-el.omf
 share/gnome/omf/gnome-dictionary/gnome-dictionary-es.omf
 share/gnome/omf/gnome-dictionary/gnome-dictionary-fr.omf
+share/gnome/omf/gnome-dictionary/gnome-dictionary-it.omf
 share/gnome/omf/gnome-dictionary/gnome-dictionary-ru.omf
 share/gnome/omf/gnome-dictionary/gnome-dictionary-sv.omf
 share/gnome/omf/gnome-dictionary/gnome-dictionary-uk.omf
@@ -205,11 +216,13 @@ share/gnome/omf/gnome-system-log/gnome-system-log-C.omf
 share/gnome/omf/gnome-system-log/gnome-system-log-es.omf
 share/gnome/omf/gnome-system-log/gnome-system-log-fr.omf
 share/gnome/omf/gnome-system-log/gnome-system-log-it.omf
+share/gnome/omf/gnome-system-log/gnome-system-log-ru.omf
 share/gnome/omf/gnome-system-log/gnome-system-log-sv.omf
 share/gnome/omf/gnome-system-log/gnome-system-log-uk.omf
 share/gnome/pixmaps/gsearchtool/thumbnail_frame.png
-share/icons/hicolor/48x48/apps/baobab.png
+share/icons/hicolor/24x24/apps/baobab.png
 share/icons/hicolor/48x48/apps/gnome-dictionary.png
+share/icons/hicolor/scalable/apps/baobab.svg
 share/icons/hicolor/scalable/apps/gnome-dictionary.svg
 share/locale/am/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-utils-2.0.mo
@@ -291,6 +304,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-utils-2.0.mo
 @dirrm share/gnome/help/gnome-system-log/uk
 @dirrm share/gnome/help/gnome-system-log/sv/figures
 @dirrm share/gnome/help/gnome-system-log/sv
+@dirrm share/gnome/help/gnome-system-log/ru/figures
+@dirrm share/gnome/help/gnome-system-log/ru
 @dirrm share/gnome/help/gnome-system-log/it/figures
 @dirrm share/gnome/help/gnome-system-log/it
 @dirrm share/gnome/help/gnome-system-log/fr/figures
@@ -319,6 +334,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-utils-2.0.mo
 @dirrm share/gnome/help/gnome-dictionary/sv
 @dirrm share/gnome/help/gnome-dictionary/ru/figures
 @dirrm share/gnome/help/gnome-dictionary/ru
+@dirrm share/gnome/help/gnome-dictionary/it/figures
+@dirrm share/gnome/help/gnome-dictionary/it
 @dirrm share/gnome/help/gnome-dictionary/fr/figures
 @dirrm share/gnome/help/gnome-dictionary/fr
 @dirrm share/gnome/help/gnome-dictionary/es/figures
@@ -332,6 +349,10 @@ share/locale/zh_TW/LC_MESSAGES/gnome-utils-2.0.mo
 @dirrm share/gnome/help/baobab/sv
 @dirrm share/gnome/help/baobab/fr/figures
 @dirrm share/gnome/help/baobab/fr
+@dirrm share/gnome/help/baobab/es/figures
+@dirrm share/gnome/help/baobab/es
+@dirrm share/gnome/help/baobab/en_GB/figures
+@dirrm share/gnome/help/baobab/en_GB
 @dirrm share/gnome/help/baobab/C/figures
 @dirrm share/gnome/help/baobab/C
 @dirrm share/gnome/help/baobab

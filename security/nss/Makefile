@@ -3,10 +3,11 @@
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/security/nss/Makefile,v 1.6 2006/12/17 21:46:42 marcus Exp $
 
 PORTNAME=	nss
-PORTVERSION=	3.11.4
+PORTVERSION=	${_MAJOR}.${_MINOR}.${_PATCH}
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_RTM/src
@@ -17,9 +18,13 @@ COMMENT=	Libraries to support development of security-enabled applications
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr
 
+_MAJOR=	3
+_MINOR=	11
+_PATCH=	4
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/mozilla/security/nss
 
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib/nss
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 MAKE_ENV=	BSD_LDOPTS="${PTHREAD_LIBS} -L${LOCALBASE}/lib" \
@@ -39,11 +44,12 @@ EXTERNALS=	CVS dbm security/nss/cmd/zlib nsprpub security/dbm
 EXTRACT_AFTER_ARGS=| ${TAR} -xf -	\
 	${EXTERNALS:C,^,--exclude ${DISTNAME}/mozilla/,}
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" \
-		${WRKSRC:H:H}/security/coreconf/FreeBSD.mk
-
 BINS=${DIST}/${OPSYS}${OSREL}_OPT.OBJ
+
+INSTALL_BINS=	certcgi certutil checkcert cmsutil crlutil derdump makepqg \
+		mangle modutil ocspclnt oidcalc p7content p7env p7sign \
+		p7verify pk12util rsaperf shlibsign signtool signver \
+		ssltap strsclnt symkeyutil vfychain vfyserv
 
 test:
 	cd ${WRKSRC}/tests;	\
@@ -58,18 +64,35 @@ test:
 		echo "All tests succeeded. Good news.";	\
 	fi
 
+post-patch:
+	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" \
+		${WRKSRC:H:H}/security/coreconf/FreeBSD.mk
+	@${SED} -e 's|@exec_prefix@|${PREFIX}|; \
+		s|@includedir@|${PREFIX}/include/nss|; \
+		s|@libdir@|${PREFIX}/lib/nss|; \
+		s|@prefix@|${PREFIX}|' \
+		${FILESDIR}/nss-config.in >${WRKDIR}/nss-config
+	@${SED} -e 's|@PREFIX@|${PREFIX}|; s|@PORTVERSION@|${PORTVERSION}|' \
+		${FILESDIR}/nss.pc.in >${WRKDIR}/nss.pc
+.for i in MAJOR MINOR PATCH
+	@${SED} -i.${i} -e 's|@${i}@|${_${i}}|' ${WRKDIR}/nss-config
+.endfor
+
 do-install:
-	${MKDIR} ${PREFIX}/include/nss
+	${MKDIR} ${PREFIX}/include/nss ${PREFIX}/lib/nss
 	${TAR} -C ${DIST}/public --dereference -cf - . | \
 		${TAR} -C ${PREFIX}/include/nss -xf -
 	${INSTALL_DATA} ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/lib/*.so.1 \
-		${PREFIX}/lib
+		${PREFIX}/lib/nss
 	${INSTALL_DATA} ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/lib/libcrmf.a \
-		${PREFIX}/lib
-	${INSTALL_PROGRAM} `${SED}	\
-	    -e 's|^bin/|${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/bin/|' \
-	    -e t -e d ${PLIST}` ${PREFIX}/bin/
+	    	${PREFIX}/lib/nss
+.for bin in ${INSTALL_BINS}
+	${INSTALL_PROGRAM} ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/bin/${bin} \
+		${PREFIX}/bin
+.endfor
 	cd ${DIST}/FreeBSD${OSREL:C/.$/*/}_OPT.OBJ/lib && \
-		${TAR} -cf - *.so | ${TAR} --unlink -C ${PREFIX}/lib -xf -
+	    	${TAR} -cf - *.so | ${TAR} --unlink -C ${PREFIX}/lib/nss -xf -
+	${INSTALL_SCRIPT} ${WRKDIR}/nss-config ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKDIR}/nss.pc ${PREFIX}/libdata/pkgconfig
 
 .include <bsd.port.post.mk>

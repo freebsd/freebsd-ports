@@ -1,28 +1,10 @@
---- configure.orig	Thu Jul 13 12:02:50 2006
-+++ configure	Thu Jul 13 12:04:24 2006
-@@ -22229,6 +22229,7 @@ echo $ECHO_N "checking for $ac_func... $
- if eval "test \"\${$as_ac_var+set}\" = set"; then
+--- configure.orig	Tue Feb 13 07:51:47 2007
++++ configure	Tue Feb 13 07:51:47 2007
+@@ -22302,6 +22302,7 @@
+ if test "${gt_cv_func_ngettext_libc+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
 +  LIBS="-lintl $LIBS"
    cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -28440,7 +28441,7 @@ BONOBO_ACTIVATION_IDL_DIR="`$PKG_CONFIG 
- 
- 
- # dbus directory
--DBUS_SERVICES_DIR='$(datadir)'"/dbus-1/services"
-+DBUS_SERVICES_DIR='$(prefix)'"/share/dbus-1/services"
- 
- 
- cat >>confdefs.h <<_ACEOF
-@@ -29126,7 +29127,7 @@ fi
- 
- 
- cat >>confdefs.h <<_ACEOF
--#define GNOMECC_DATA_DIR "${real_prefix}/share/${GETTEXT_PACKAGE}"
-+#define GNOMECC_DATA_DIR "${datadir}/${GETTEXT_PACKAGE}"
- _ACEOF
- 
- 

@@ -17,18 +17,12 @@ lib/deskbar-applet/handlers/epiphany.pyo
 lib/deskbar-applet/handlers/files.py
 lib/deskbar-applet/handlers/files.pyc
 lib/deskbar-applet/handlers/files.pyo
-lib/deskbar-applet/handlers/galago.py
-lib/deskbar-applet/handlers/galago.pyc
-lib/deskbar-applet/handlers/galago.pyo
 lib/deskbar-applet/handlers/galeon.py
 lib/deskbar-applet/handlers/galeon.pyc
 lib/deskbar-applet/handlers/galeon.pyo
 lib/deskbar-applet/handlers/gdmactions.py
 lib/deskbar-applet/handlers/gdmactions.pyc
 lib/deskbar-applet/handlers/gdmactions.pyo
-lib/deskbar-applet/handlers/google-live.py
-lib/deskbar-applet/handlers/google-live.pyc
-lib/deskbar-applet/handlers/google-live.pyo
 lib/deskbar-applet/handlers/history.py
 lib/deskbar-applet/handlers/history.pyc
 lib/deskbar-applet/handlers/history.pyo
@@ -41,6 +35,9 @@ lib/deskbar-applet/handlers/mozilla.pyo
 lib/deskbar-applet/handlers/programs.py
 lib/deskbar-applet/handlers/programs.pyc
 lib/deskbar-applet/handlers/programs.pyo
+lib/deskbar-applet/handlers/recent.py
+lib/deskbar-applet/handlers/recent.pyc
+lib/deskbar-applet/handlers/recent.pyo
 lib/deskbar-applet/handlers/web_address.py
 lib/deskbar-applet/handlers/web_address.pyc
 lib/deskbar-applet/handlers/web_address.pyo
@@ -77,6 +74,9 @@ lib/deskbar-applet/handlers/yahoo.pyo
 %%PYTHON_SITELIBDIR%%/deskbar/ModuleContext.py
 %%PYTHON_SITELIBDIR%%/deskbar/ModuleContext.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/ModuleContext.pyo
+%%PYTHON_SITELIBDIR%%/deskbar/ModuleInstaller.py
+%%PYTHON_SITELIBDIR%%/deskbar/ModuleInstaller.pyc
+%%PYTHON_SITELIBDIR%%/deskbar/ModuleInstaller.pyo
 %%PYTHON_SITELIBDIR%%/deskbar/ModuleList.py
 %%PYTHON_SITELIBDIR%%/deskbar/ModuleList.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/ModuleList.pyo
@@ -203,6 +203,18 @@ lib/deskbar-applet/handlers/yahoo.pyo
 %%PYTHON_SITELIBDIR%%/deskbar/ui/window/__init__.py
 %%PYTHON_SITELIBDIR%%/deskbar/ui/window/__init__.pyc
 %%PYTHON_SITELIBDIR%%/deskbar/ui/window/__init__.pyo
+%%PYTHON_SITELIBDIR%%/deskbar/updater/ErrorDialog.py
+%%PYTHON_SITELIBDIR%%/deskbar/updater/ErrorDialog.pyc
+%%PYTHON_SITELIBDIR%%/deskbar/updater/ErrorDialog.pyo
+%%PYTHON_SITELIBDIR%%/deskbar/updater/NewStuffUpdater.py
+%%PYTHON_SITELIBDIR%%/deskbar/updater/NewStuffUpdater.pyc
+%%PYTHON_SITELIBDIR%%/deskbar/updater/NewStuffUpdater.pyo
+%%PYTHON_SITELIBDIR%%/deskbar/updater/ProgressbarDialog.py
+%%PYTHON_SITELIBDIR%%/deskbar/updater/ProgressbarDialog.pyc
+%%PYTHON_SITELIBDIR%%/deskbar/updater/ProgressbarDialog.pyo
+%%PYTHON_SITELIBDIR%%/deskbar/updater/__init__.py
+%%PYTHON_SITELIBDIR%%/deskbar/updater/__init__.pyc
+%%PYTHON_SITELIBDIR%%/deskbar/updater/__init__.pyo
 libdata/bonobo/servers/Deskbar_Applet.server
 libdata/pkgconfig/deskbar-applet.pc
 share/gnome/deskbar-applet/Deskbar_Applet.xml
@@ -221,6 +233,10 @@ share/gnome/deskbar-applet/art/yahoo.png
 share/gnome/deskbar-applet/mozilla-search.glade
 share/gnome/deskbar-applet/prefs-dialog.glade
 share/gnome/deskbar-applet/smart-bookmarks.glade
+share/gnome/help/deskbar/C/deskbar.xml
+share/gnome/help/deskbar/C/figures/deskbar-applet.png
+share/gnome/help/deskbar/C/legal.xml
+share/gnome/omf/deskbar/deskbar-C.omf
 share/icons/hicolor/16x16/apps/deskbar-applet.png
 share/icons/hicolor/22x22/apps/deskbar-applet.png
 share/icons/hicolor/32x32/apps/deskbar-applet.png
@@ -243,6 +259,7 @@ share/locale/en_GB/LC_MESSAGES/deskbar-applet.mo
 share/locale/es/LC_MESSAGES/deskbar-applet.mo
 share/locale/et/LC_MESSAGES/deskbar-applet.mo
 share/locale/eu/LC_MESSAGES/deskbar-applet.mo
+share/locale/fa/LC_MESSAGES/deskbar-applet.mo
 share/locale/fi/LC_MESSAGES/deskbar-applet.mo
 share/locale/fr/LC_MESSAGES/deskbar-applet.mo
 share/locale/gl/LC_MESSAGES/deskbar-applet.mo
@@ -271,6 +288,7 @@ share/locale/pa/LC_MESSAGES/deskbar-applet.mo
 share/locale/pl/LC_MESSAGES/deskbar-applet.mo
 share/locale/pt/LC_MESSAGES/deskbar-applet.mo
 share/locale/pt_BR/LC_MESSAGES/deskbar-applet.mo
+share/locale/ro/LC_MESSAGES/deskbar-applet.mo
 share/locale/ru/LC_MESSAGES/deskbar-applet.mo
 share/locale/sk/LC_MESSAGES/deskbar-applet.mo
 share/locale/sl/LC_MESSAGES/deskbar-applet.mo
@@ -286,8 +304,13 @@ share/locale/vi/LC_MESSAGES/deskbar-applet.mo
 share/locale/zh_CN/LC_MESSAGES/deskbar-applet.mo
 share/locale/zh_HK/LC_MESSAGES/deskbar-applet.mo
 share/locale/zh_TW/LC_MESSAGES/deskbar-applet.mo
+@dirrm share/gnome/omf/deskbar
+@dirrm share/gnome/help/deskbar/C/figures
+@dirrm share/gnome/help/deskbar/C
+@dirrm share/gnome/help/deskbar
 @dirrm share/gnome/deskbar-applet/art
 @dirrm share/gnome/deskbar-applet
+@dirrm %%PYTHON_SITELIBDIR%%/deskbar/updater
 @dirrm %%PYTHON_SITELIBDIR%%/deskbar/ui/window
 @dirrm %%PYTHON_SITELIBDIR%%/deskbar/ui/entriac
 @dirrm %%PYTHON_SITELIBDIR%%/deskbar/ui/cuemiac
@@ -317,6 +340,8 @@ share/locale/zh_TW/LC_MESSAGES/deskbar-applet.mo
 @dirrmtry share/locale/sl
 @dirrmtry share/locale/sk/LC_MESSAGES
 @dirrmtry share/locale/sk
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
 @dirrmtry share/locale/pt/LC_MESSAGES
 @dirrmtry share/locale/pt
 @dirrmtry share/locale/pl/LC_MESSAGES

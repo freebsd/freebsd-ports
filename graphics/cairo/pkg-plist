@@ -1,3 +1,4 @@
+include/cairo/cairo-deprecated.h
 include/cairo/cairo-features.h
 include/cairo/cairo-ft.h
 %%GLITZ%%include/cairo/cairo-glitz.h

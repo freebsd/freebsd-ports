@@ -1,11 +1,11 @@
---- configure.orig	Wed May 17 00:00:16 2006
-+++ configure	Wed May 17 00:01:21 2006
-@@ -24000,7 +24000,7 @@ GTK2BUILD_CFLAGS="$GTK2_CFLAGS $SETTINGS
- if [ x"$WITHDARWIN" = xtrue ]; then
-       GTK2BUILD_LIBS="$X_LIBS $GTK2_LIBS $SETTINGS_LIBS $gthread_LIBS $gnome_speech_LIBS $gnome_a11y_LIBS $glade_LIBS $gnome_LIBS $wnck_LIBS $hildon_LIBS"
+--- configure.orig	Sun Dec  3 18:59:04 2006
++++ configure	Sun Dec  3 18:59:15 2006
+@@ -23152,7 +23152,7 @@ echo "$as_me:$LINENO: result: $have_prog
+ echo "${ECHO_T}$have_prog_gnu_ld" >&6
+ 
+ if [ x"$have_prog_gnu_ld" = xyes ]; then
+-   ed_flags="-Wl,--export-dynamic,"
++   ed_flags="-Wl,--export-dynamic"
  else
--      GTK2BUILD_LIBS="$X_LIBS $GTK2_LIBS $SETTINGS_LIBS $gthread_LIBS $gnome_speech_LIBS $gnome_a11y_LIBS $glade_LIBS $gnome_LIBS $wnck_LIBS $hildon_LIBS -Wl,--export-dynamic,"
-+      GTK2BUILD_LIBS="$X_LIBS $GTK2_LIBS $SETTINGS_LIBS $gthread_LIBS $gnome_speech_LIBS $gnome_a11y_LIBS $glade_LIBS $gnome_LIBS $wnck_LIBS $hildon_LIBS -Wl,--export-dynamic"
+    ed_flags=""
  fi
- 
- 

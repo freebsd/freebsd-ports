@@ -19,18 +19,24 @@ share/gnome/desktop-directories/Development.directory
 share/gnome/desktop-directories/Education.directory
 share/gnome/desktop-directories/Games.directory
 share/gnome/desktop-directories/Graphics.directory
+share/gnome/desktop-directories/Hardware.directory
 share/gnome/desktop-directories/Internet.directory
+share/gnome/desktop-directories/InternetAndNetwork.directory
 share/gnome/desktop-directories/KDE.directory
+share/gnome/desktop-directories/LookAndFeel.directory
 share/gnome/desktop-directories/Multimedia.directory
 share/gnome/desktop-directories/Office.directory
 share/gnome/desktop-directories/Other.directory
+share/gnome/desktop-directories/Personal.directory
 share/gnome/desktop-directories/Preferences.directory
 share/gnome/desktop-directories/Settings-Accessibility.directory
 share/gnome/desktop-directories/Settings.directory
 share/gnome/desktop-directories/System-Settings.directory
 share/gnome/desktop-directories/System-Tools.directory
+share/gnome/desktop-directories/System.directory
 share/locale/ar/LC_MESSAGES/gnome-menus.mo
 share/locale/be/LC_MESSAGES/gnome-menus.mo
+share/locale/be@latin/LC_MESSAGES/gnome-menus.mo
 share/locale/bg/LC_MESSAGES/gnome-menus.mo
 share/locale/bn/LC_MESSAGES/gnome-menus.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-menus.mo
@@ -44,14 +50,15 @@ share/locale/dz/LC_MESSAGES/gnome-menus.mo
 share/locale/el/LC_MESSAGES/gnome-menus.mo
 share/locale/en_CA/LC_MESSAGES/gnome-menus.mo
 share/locale/en_GB/LC_MESSAGES/gnome-menus.mo
+share/locale/eo/LC_MESSAGES/gnome-menus.mo
 share/locale/es/LC_MESSAGES/gnome-menus.mo
 share/locale/et/LC_MESSAGES/gnome-menus.mo
 share/locale/eu/LC_MESSAGES/gnome-menus.mo
 share/locale/fa/LC_MESSAGES/gnome-menus.mo
 share/locale/fi/LC_MESSAGES/gnome-menus.mo
 share/locale/fr/LC_MESSAGES/gnome-menus.mo
-share/locale/gn/LC_MESSAGES/gnome-menus.mo
 share/locale/gl/LC_MESSAGES/gnome-menus.mo
+share/locale/gn/LC_MESSAGES/gnome-menus.mo
 share/locale/gu/LC_MESSAGES/gnome-menus.mo
 share/locale/he/LC_MESSAGES/gnome-menus.mo
 share/locale/hi/LC_MESSAGES/gnome-menus.mo
@@ -105,8 +112,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-menus.mo
 @dirrm include/gnome-menus
 @dirrmtry etc/xdg/menus
 @dirrmtry etc/xdg
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -167,5 +172,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-menus.mo
 @dirrmtry share/locale/ca
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
 @dirrmtry share/locale/be/LC_MESSAGES
 @dirrmtry share/locale/be

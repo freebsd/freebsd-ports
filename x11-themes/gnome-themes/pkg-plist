@@ -1,5 +1,6 @@
 share/gnome/themes/Clearlooks/metacity-1/metacity-theme-1.xml
 share/gnome/themes/Glider/metacity-1/metacity-theme-1.xml
+share/gnome/themes/Glossy/metacity-1/metacity-theme-1.xml
 share/gnome/themes/Mist/metacity-1/metacity-theme-1.xml
 share/icons/Crux/16x16/actions/back.png
 share/icons/Crux/16x16/actions/bottom.png
@@ -347,6 +348,7 @@ share/icons/HighContrast-SVG/scalable/actions/application-exit.svg
 share/icons/HighContrast-SVG/scalable/actions/appointment-new.svg
 share/icons/HighContrast-SVG/scalable/actions/appointment.svg
 share/icons/HighContrast-SVG/scalable/actions/back.svg
+share/icons/HighContrast-SVG/scalable/actions/bookmark-view.svg
 share/icons/HighContrast-SVG/scalable/actions/bottom.svg
 share/icons/HighContrast-SVG/scalable/actions/button_cancel.svg
 share/icons/HighContrast-SVG/scalable/actions/cancel.svg
@@ -499,6 +501,7 @@ share/icons/HighContrast-SVG/scalable/actions/gtk-zoom-out.svg
 share/icons/HighContrast-SVG/scalable/actions/help-about.svg
 share/icons/HighContrast-SVG/scalable/actions/help-contents.svg
 share/icons/HighContrast-SVG/scalable/actions/help-faq.svg
+share/icons/HighContrast-SVG/scalable/actions/history-view.svg
 share/icons/HighContrast-SVG/scalable/actions/insert-image.svg
 share/icons/HighContrast-SVG/scalable/actions/insert-link.svg
 share/icons/HighContrast-SVG/scalable/actions/insert-object.svg
@@ -514,6 +517,7 @@ share/icons/HighContrast-SVG/scalable/actions/mail-mark-important.svg
 share/icons/HighContrast-SVG/scalable/actions/mail-mark-junk.svg
 share/icons/HighContrast-SVG/scalable/actions/mail-mark-notjunk.svg
 share/icons/HighContrast-SVG/scalable/actions/mail-mark-read.svg
+share/icons/HighContrast-SVG/scalable/actions/mail-mark-unread.svg
 share/icons/HighContrast-SVG/scalable/actions/mail-message-new.svg
 share/icons/HighContrast-SVG/scalable/actions/mail-reply-all.svg
 share/icons/HighContrast-SVG/scalable/actions/mail-reply-sender.svg
@@ -580,6 +584,7 @@ share/icons/HighContrast-SVG/scalable/actions/stock_mail-reply-to-all.svg
 share/icons/HighContrast-SVG/scalable/actions/stock_mail-reply.svg
 share/icons/HighContrast-SVG/scalable/actions/stock_mail-send-receive.svg
 share/icons/HighContrast-SVG/scalable/actions/stock_mail-send.svg
+share/icons/HighContrast-SVG/scalable/actions/stock_mail-unread.svg
 share/icons/HighContrast-SVG/scalable/actions/stock_media-fwd.svg
 share/icons/HighContrast-SVG/scalable/actions/stock_media-next.svg
 share/icons/HighContrast-SVG/scalable/actions/stock_media-pause.svg
@@ -905,11 +910,24 @@ share/icons/HighContrast-SVG/scalable/devices/yast_joystick.svg
 share/icons/HighContrast-SVG/scalable/devices/yast_mouse.svg
 share/icons/HighContrast-SVG/scalable/devices/yast_printer.svg
 share/icons/HighContrast-SVG/scalable/devices/yast_soundcard.svg
+share/icons/HighContrast-SVG/scalable/emblems/emblem-default.svg
 share/icons/HighContrast-SVG/scalable/emblems/emblem-documents.svg
+share/icons/HighContrast-SVG/scalable/emblems/emblem-downloads.svg
 share/icons/HighContrast-SVG/scalable/emblems/emblem-favorite.svg
+share/icons/HighContrast-SVG/scalable/emblems/emblem-important.svg
+share/icons/HighContrast-SVG/scalable/emblems/emblem-mail.svg
 share/icons/HighContrast-SVG/scalable/emblems/emblem-photos.svg
 share/icons/HighContrast-SVG/scalable/emblems/emblem-readonly.svg
 share/icons/HighContrast-SVG/scalable/emblems/emblem-symbolic-link.svg
+share/icons/HighContrast-SVG/scalable/emblems/emblem-system.svg
+share/icons/HighContrast-SVG/scalable/emblems/stock_mail-priority-high.svg
+share/icons/HighContrast-SVG/scalable/emotes/face-glasses.svg
+share/icons/HighContrast-SVG/scalable/emotes/face-plain.svg
+share/icons/HighContrast-SVG/scalable/emotes/face-sad.svg
+share/icons/HighContrast-SVG/scalable/emotes/face-smile-big.svg
+share/icons/HighContrast-SVG/scalable/emotes/face-smile.svg
+share/icons/HighContrast-SVG/scalable/emotes/face-surprise.svg
+share/icons/HighContrast-SVG/scalable/emotes/face-wink.svg
 share/icons/HighContrast-SVG/scalable/mimetypes/application-x-executable.svg
 share/icons/HighContrast-SVG/scalable/mimetypes/ascii.svg
 share/icons/HighContrast-SVG/scalable/mimetypes/audio-x-generic.svg
@@ -1022,6 +1040,10 @@ share/icons/HighContrast-SVG/scalable/places/user-desktop.svg
 share/icons/HighContrast-SVG/scalable/places/user-home.svg
 share/icons/HighContrast-SVG/scalable/places/user-trash.svg
 share/icons/HighContrast-SVG/scalable/places/xfce-trash_empty.svg
+share/icons/HighContrast-SVG/scalable/status/audio-volume-high.svg
+share/icons/HighContrast-SVG/scalable/status/audio-volume-low.svg
+share/icons/HighContrast-SVG/scalable/status/audio-volume-medium.svg
+share/icons/HighContrast-SVG/scalable/status/audio-volume-muted.svg
 share/icons/HighContrast-SVG/scalable/status/connect_no.svg
 share/icons/HighContrast-SVG/scalable/status/dialog-error.svg
 share/icons/HighContrast-SVG/scalable/status/dialog-information.svg
@@ -1068,6 +1090,12 @@ share/icons/HighContrast-SVG/scalable/status/stock_lock-open.svg
 share/icons/HighContrast-SVG/scalable/status/stock_lock.svg
 share/icons/HighContrast-SVG/scalable/status/stock_open.svg
 share/icons/HighContrast-SVG/scalable/status/stock_trash_full.svg
+share/icons/HighContrast-SVG/scalable/status/stock_volume-0.svg
+share/icons/HighContrast-SVG/scalable/status/stock_volume-max.svg
+share/icons/HighContrast-SVG/scalable/status/stock_volume-med.svg
+share/icons/HighContrast-SVG/scalable/status/stock_volume-min.svg
+share/icons/HighContrast-SVG/scalable/status/stock_volume-mute.svg
+share/icons/HighContrast-SVG/scalable/status/stock_volume.svg
 share/icons/HighContrast-SVG/scalable/status/trashcan_full.svg
 share/icons/HighContrast-SVG/scalable/status/user-trash-full.svg
 share/icons/HighContrast-SVG/scalable/status/xfce-trash_full.svg
@@ -2108,18 +2136,18 @@ share/icons/LowContrastLargePrint/48x48/mimetypes/gnome-mime-video-x-msvideo.png
 share/icons/LowContrastLargePrint/48x48/mimetypes/gnome-mime-x-font-afm.png
 share/icons/LowContrastLargePrint/48x48/mimetypes/gnome-package.png
 share/icons/LowContrastLargePrint/index.theme
-share/icons/Mist/16x16/actions/document-open.svg
-share/icons/Mist/16x16/actions/fileopen.svg
-share/icons/Mist/16x16/actions/gtk-open.svg
+share/icons/Mist/16x16/actions/document-open.png
+share/icons/Mist/16x16/actions/fileopen.png
+share/icons/Mist/16x16/actions/gtk-open.png
 share/icons/Mist/16x16/places/application-x-gnome-saved-search.png
 share/icons/Mist/16x16/places/folder-new.png
 share/icons/Mist/16x16/places/folder-remote.png
 share/icons/Mist/16x16/places/folder-saved-search.png
 share/icons/Mist/16x16/places/folder.png
-share/icons/Mist/16x16/places/folder_home.svg
+share/icons/Mist/16x16/places/folder_home.png
 share/icons/Mist/16x16/places/gnome-fs-directory.png
 share/icons/Mist/16x16/places/gnome-fs-ftp.png
-share/icons/Mist/16x16/places/gnome-fs-home.svg
+share/icons/Mist/16x16/places/gnome-fs-home.png
 share/icons/Mist/16x16/places/gnome-fs-nfs.png
 share/icons/Mist/16x16/places/gnome-fs-share.png
 share/icons/Mist/16x16/places/gnome-fs-smb.png
@@ -2127,15 +2155,15 @@ share/icons/Mist/16x16/places/gnome-fs-ssh.png
 share/icons/Mist/16x16/places/gnome-mime-x-directory-smb-share.png
 share/icons/Mist/16x16/places/network.png
 share/icons/Mist/16x16/places/stock_folder.png
-share/icons/Mist/16x16/places/user-home.svg
+share/icons/Mist/16x16/places/user-home.png
 share/icons/Mist/16x16/status/folder-drag-accept.svg
 share/icons/Mist/16x16/status/folder-open.svg
 share/icons/Mist/16x16/status/folder_open.svg
 share/icons/Mist/16x16/status/gnome-fs-directory-accept.svg
 share/icons/Mist/16x16/status/stock_open.svg
-share/icons/Mist/22x22/actions/document-open.svg
-share/icons/Mist/22x22/actions/fileopen.svg
-share/icons/Mist/22x22/actions/gtk-open.svg
+share/icons/Mist/22x22/actions/document-open.png
+share/icons/Mist/22x22/actions/fileopen.png
+share/icons/Mist/22x22/actions/gtk-open.png
 share/icons/Mist/22x22/places/application-x-gnome-saved-search.png
 share/icons/Mist/22x22/places/folder-new.png
 share/icons/Mist/22x22/places/folder-remote.png
@@ -2153,11 +2181,11 @@ share/icons/Mist/22x22/places/gnome-mime-x-directory-smb-share.png
 share/icons/Mist/22x22/places/network.png
 share/icons/Mist/22x22/places/stock_folder.png
 share/icons/Mist/22x22/places/user-home.svg
-share/icons/Mist/22x22/status/folder-drag-accept.svg
-share/icons/Mist/22x22/status/folder-open.svg
-share/icons/Mist/22x22/status/folder_open.svg
-share/icons/Mist/22x22/status/gnome-fs-directory-accept.svg
-share/icons/Mist/22x22/status/stock_open.svg
+share/icons/Mist/22x22/status/folder-drag-accept.png
+share/icons/Mist/22x22/status/folder-open.png
+share/icons/Mist/22x22/status/folder_open.png
+share/icons/Mist/22x22/status/gnome-fs-directory-accept.png
+share/icons/Mist/22x22/status/stock_open.png
 share/icons/Mist/24x24/actions/document-open.png
 share/icons/Mist/24x24/actions/fileopen.png
 share/icons/Mist/24x24/actions/gtk-open.png
@@ -2315,6 +2343,8 @@ share/themes/Clearlooks/index.theme
 share/themes/Crux/index.theme
 share/themes/Glider/gtk-2.0/gtkrc
 share/themes/Glider/index.theme
+share/themes/Glossy/gtk-2.0/gtkrc
+share/themes/Glossy/index.theme
 share/themes/HighContrast/gtk-2.0/gtkrc
 share/themes/HighContrast/index.theme
 share/themes/HighContrastInverse/gtk-2.0/gtkrc
@@ -2598,7 +2628,7 @@ share/themes/HighContrastLargePrintInverse/pixmaps/volume-min.png
 share/themes/HighContrastLargePrintInverse/pixmaps/volume-mute.png
 share/themes/HighContrastLargePrintInverse/pixmaps/volume-zero.png
 share/themes/LargePrint/gtk-2.0/gtkrc
-share/themes/LargePrint/index.theme
+share/themes/LargePrint/index.theme.disabled
 share/themes/LargePrint/pixmaps/double-click-maybe.png
 share/themes/LargePrint/pixmaps/double-click-off.png
 share/themes/LargePrint/pixmaps/double-click-on.png
@@ -2737,7 +2767,7 @@ share/themes/LargePrint/pixmaps/volume-min.png
 share/themes/LargePrint/pixmaps/volume-mute.png
 share/themes/LargePrint/pixmaps/volume-zero.png
 share/themes/LowContrast/gtk-2.0/gtkrc
-share/themes/LowContrast/index.theme.disabled
+share/themes/LowContrast/index.theme
 share/themes/LowContrastLargePrint/gtk-2.0/gtkrc
 share/themes/LowContrastLargePrint/index.theme.disabled
 share/themes/LowContrastLargePrint/pixmaps/double-click-maybe.png
@@ -2900,6 +2930,8 @@ share/themes/Simple/gtk-2.0/gtkrc
 @dirrm share/themes/HighContrastInverse
 @dirrm share/themes/HighContrast/gtk-2.0
 @dirrm share/themes/HighContrast
+@dirrm share/themes/Glossy/gtk-2.0
+@dirrm share/themes/Glossy
 @dirrm share/themes/Glider/gtk-2.0
 @dirrm share/themes/Glider
 @dirrm share/themes/Crux
@@ -2959,6 +2991,7 @@ share/themes/Simple/gtk-2.0/gtkrc
 @dirrm share/icons/HighContrast-SVG/scalable/status
 @dirrm share/icons/HighContrast-SVG/scalable/places
 @dirrm share/icons/HighContrast-SVG/scalable/mimetypes
+@dirrm share/icons/HighContrast-SVG/scalable/emotes
 @dirrm share/icons/HighContrast-SVG/scalable/emblems
 @dirrm share/icons/HighContrast-SVG/scalable/devices
 @dirrm share/icons/HighContrast-SVG/scalable/categories
@@ -2993,6 +3026,8 @@ share/themes/Simple/gtk-2.0/gtkrc
 @dirrmtry share/icons
 @dirrm share/gnome/themes/Mist/metacity-1
 @dirrm share/gnome/themes/Mist
+@dirrm share/gnome/themes/Glossy/metacity-1
+@dirrm share/gnome/themes/Glossy
 @dirrm share/gnome/themes/Glider/metacity-1
 @dirrm share/gnome/themes/Glider
 @dirrm share/gnome/themes/Clearlooks/metacity-1

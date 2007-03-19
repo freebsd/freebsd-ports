@@ -19,6 +19,7 @@ share/locale/am/LC_MESSAGES/libwnck.mo
 share/locale/ar/LC_MESSAGES/libwnck.mo
 share/locale/az/LC_MESSAGES/libwnck.mo
 share/locale/be/LC_MESSAGES/libwnck.mo
+share/locale/be@latin/LC_MESSAGES/libwnck.mo
 share/locale/bg/LC_MESSAGES/libwnck.mo
 share/locale/bn/LC_MESSAGES/libwnck.mo
 share/locale/bn_IN/LC_MESSAGES/libwnck.mo
@@ -151,5 +152,7 @@ share/locale/zh_TW/LC_MESSAGES/libwnck.mo
 @dirrmtry share/locale/ca
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
 @dirrmtry share/locale/be/LC_MESSAGES
 @dirrmtry share/locale/be

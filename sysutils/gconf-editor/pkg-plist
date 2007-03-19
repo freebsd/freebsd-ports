@@ -3,7 +3,16 @@ share/gnome/applications/gconf-editor.desktop
 share/gnome/help/gconf-editor/C/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/C/gconf-editor.xml
 share/gnome/help/gconf-editor/C/legal.xml
+share/gnome/help/gconf-editor/fr/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/fr/gconf-editor.xml
+share/gnome/help/gconf-editor/it/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/it/gconf-editor.xml
+share/gnome/help/gconf-editor/sv/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/sv/gconf-editor.xml
 share/gnome/omf/gconf-editor/gconf-editor-C.omf
+share/gnome/omf/gconf-editor/gconf-editor-fr.omf
+share/gnome/omf/gconf-editor/gconf-editor-it.omf
+share/gnome/omf/gconf-editor/gconf-editor-sv.omf
 share/gnome/pixmaps/gconf-editor/entry-blank.png
 share/gnome/pixmaps/gconf-editor/entry-bool.png
 share/gnome/pixmaps/gconf-editor/entry-list.png
@@ -17,6 +26,7 @@ share/locale/am/LC_MESSAGES/gconf-editor.mo
 share/locale/ar/LC_MESSAGES/gconf-editor.mo
 share/locale/az/LC_MESSAGES/gconf-editor.mo
 share/locale/be/LC_MESSAGES/gconf-editor.mo
+share/locale/be@latin/LC_MESSAGES/gconf-editor.mo
 share/locale/bg/LC_MESSAGES/gconf-editor.mo
 share/locale/bn/LC_MESSAGES/gconf-editor.mo
 share/locale/bn_IN/LC_MESSAGES/gconf-editor.mo
@@ -90,6 +100,12 @@ share/locale/zh_HK/LC_MESSAGES/gconf-editor.mo
 share/locale/zh_TW/LC_MESSAGES/gconf-editor.mo
 @dirrm share/gnome/pixmaps/gconf-editor
 @dirrm share/gnome/omf/gconf-editor
+@dirrm share/gnome/help/gconf-editor/sv/figures
+@dirrm share/gnome/help/gconf-editor/sv
+@dirrm share/gnome/help/gconf-editor/it/figures
+@dirrm share/gnome/help/gconf-editor/it
+@dirrm share/gnome/help/gconf-editor/fr/figures
+@dirrm share/gnome/help/gconf-editor/fr
 @dirrm share/gnome/help/gconf-editor/C/figures
 @dirrm share/gnome/help/gconf-editor/C
 @dirrm share/gnome/help/gconf-editor
@@ -147,5 +163,7 @@ share/locale/zh_TW/LC_MESSAGES/gconf-editor.mo
 @dirrmtry share/locale/ca
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
 @dirrmtry share/locale/be/LC_MESSAGES
 @dirrmtry share/locale/be

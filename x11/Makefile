@@ -156,6 +156,7 @@
     SUBDIR += libgnome
     SUBDIR += libgnome-java
     SUBDIR += libgnome-reference
+    SUBDIR += libgnomekbd
     SUBDIR += libgnomemm
     SUBDIR += libgnomemm26
     SUBDIR += libsx

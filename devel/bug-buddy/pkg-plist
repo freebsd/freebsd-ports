@@ -12,8 +12,6 @@ share/gnome/bug-buddy/bugzilla/ximian/config
 share/gnome/bug-buddy/bugzilla/ximian/mostfreq
 share/gnome/bug-buddy/bugzilla/ximian/products
 share/gnome/bug-buddy/gdb-cmd
-share/gnome/bug-buddy/gnome.png
-share/gnome/bug-buddy/ximian.png
 share/icons/hicolor/48x48/apps/bug-buddy.png
 share/locale/am/LC_MESSAGES/bug-buddy.mo
 share/locale/ar/LC_MESSAGES/bug-buddy.mo

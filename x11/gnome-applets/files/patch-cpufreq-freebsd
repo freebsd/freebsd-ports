@@ -63,52 +63,6 @@
                  NULL
          };
          static const gchar *const documenters[] = {
---- cpufreq/src/Makefile.in.orig	Sat Jun 17 13:42:50 2006
-+++ cpufreq/src/Makefile.in	Sat Jun 17 14:03:45 2006
-@@ -62,7 +62,8 @@ am__cpufreq_applet_SOURCES_DIST = cpufre
- 	cpufreq-monitor-procfs.h cpufreq-monitor-sysfs.c \
- 	cpufreq-monitor-sysfs.h cpufreq-monitor-libcpufreq.c \
- 	cpufreq-monitor-libcpufreq.h cpufreq-monitor-cpuinfo.c \
--	cpufreq-monitor-cpuinfo.h
-+	cpufreq-monitor-cpuinfo.h cpufreq-monitor-sysctl.c \
-+	cpufreq-monitor-sysctl.h
- @HAVE_LIBCPUFREQ_TRUE@am__objects_1 =  \
- @HAVE_LIBCPUFREQ_TRUE@	cpufreq-monitor-libcpufreq.$(OBJEXT)
- am_cpufreq_applet_OBJECTS = cpufreq-applet.$(OBJEXT) \
-@@ -71,7 +72,8 @@ am_cpufreq_applet_OBJECTS = cpufreq-appl
- 	cpufreq-monitor-factory.$(OBJEXT) \
- 	cpufreq-monitor-procfs.$(OBJEXT) \
- 	cpufreq-monitor-sysfs.$(OBJEXT) $(am__objects_1) \
--	cpufreq-monitor-cpuinfo.$(OBJEXT)
-+	cpufreq-monitor-cpuinfo.$(OBJEXT) \
-+	cpufreq-monitor-sysctl.$(OBJEXT)
- cpufreq_applet_OBJECTS = $(am_cpufreq_applet_OBJECTS)
- am__DEPENDENCIES_1 =
- cpufreq_applet_DEPENDENCIES = $(am__DEPENDENCIES_1) \
-@@ -85,6 +87,7 @@ am__depfiles_maybe = depfiles
- @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-monitor-libcpufreq.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-monitor-procfs.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-monitor-sysfs.Po \
-+@AMDEP_TRUE@	./$(DEPDIR)/cpufreq-monitor-sysctl.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-monitor.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-popup.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-prefs.Po \
-@@ -397,6 +400,7 @@ cpufreq_applet_SOURCES = \
- 	cpufreq-monitor.c       	cpufreq-monitor.h	      	\
- 	cpufreq-monitor-factory.c	cpufreq-monitor-factory.h	\
- 	cpufreq-monitor-procfs.c	cpufreq-monitor-procfs.h	\
-+	cpufreq-monitor-sysctl.c	cpufreq-monitor-sysctl.h	\
- 	cpufreq-monitor-sysfs.c	        cpufreq-monitor-sysfs.h	        \
- 	$(cpufreq_files)						\
- 	cpufreq-monitor-cpuinfo.c       cpufreq-monitor-cpuinfo.h
-@@ -482,6 +486,7 @@ distclean-compile:
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-monitor-factory.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-monitor-libcpufreq.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-monitor-procfs.Po@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-monitor-sysctl.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-monitor-sysfs.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-monitor.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-popup.Po@am__quote@
 --- cpufreq/src/cpufreq-monitor-sysctl.h.orig	Sat Jun 17 14:05:37 2006
 +++ cpufreq/src/cpufreq-monitor-sysctl.h	Sat Jun 17 14:14:13 2006
 @@ -0,0 +1,49 @@
@@ -161,170 +115,6 @@
 +CPUFreqMonitor *cpufreq_monitor_sysctl_new      (guint cpu);
 +
 +#endif /* __CPUFREQ_MONITOR_SYSCTL_H__ */
---- cpufreq/src/cpufreq-monitor-sysctl.c.orig	Sat Jun 17 14:15:55 2006
-+++ cpufreq/src/cpufreq-monitor-sysctl.c	Sat Jun 24 01:45:23 2006
-@@ -0,0 +1,161 @@
-+/*
-+ * Copyright (C) 2001, 2002 Free Software Foundation
-+ *
-+ *  This library is free software; you can redistribute it and/or
-+ *  modify it under the terms of the GNU General Public
-+ *  License as published by the Free Software Foundation; either
-+ *  version 2 of the License, or (at your option) any later version.
-+ *
-+ *  This library is distributed in the hope that it will be useful,
-+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
-+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-+ *  General Public License for more details.
-+ *
-+ *  You should have received a copy of the GNU General Public
-+ *  License along with this library; if not, write to the Free
-+ *  Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-+ *
-+ * Authors : Joe Marcus Clarke <marcus@FreeBSD.org>
-+ */
-+
-+#include <glib.h>
-+#include <glib/gi18n.h>
-+
-+#include <string.h>
-+
-+#ifdef __FreeBSD__
-+#include <sys/types.h>
-+#include <sys/sysctl.h>
-+
-+#include "cpufreq-monitor-sysctl.h"
-+
-+#define PARENT_TYPE TYPE_CPUFREQ_MONITOR
-+
-+#define CPUFREQ_MONITOR_GET_PROTECTED(obj) (G_TYPE_INSTANCE_GET_PRIVATE((obj), PARENT_TYPE, CPUFreqMonitorProtected))
-+
-+static void     cpufreq_monitor_sysctl_class_init                (CPUFreqMonitorSysctlClass *klass);
-+
-+static gboolean     cpufreq_monitor_sysctl_run                       (CPUFreqMonitor *monitor);
-+static GList   *cpufreq_monitor_sysctl_get_available_frequencies (CPUFreqMonitor *monitor);
-+
-+static gboolean cpufreq_monitor_sysctl_get                       (gpointer gdata);
-+
-+G_DEFINE_TYPE (CPUFreqMonitorSysctl, cpufreq_monitor_sysctl, CPUFREQ_TYPE_MONITOR)
-+
-+static void
-+cpufreq_monitor_sysctl_init (CPUFreqMonitorSysctl *monitor)
-+{
-+}
-+
-+static void
-+cpufreq_monitor_sysctl_class_init (CPUFreqMonitorSysctlClass *klass)
-+{
-+	CPUFreqMonitorClass *monitor_class = CPUFREQ_MONITOR_CLASS (klass);
-+
-+	monitor_class->run = cpufreq_monitor_sysctl_run;
-+	monitor_class->get_available_frequencies = cpufreq_monitor_sysctl_get_available_frequencies;
-+}
-+
-+CPUFreqMonitor *
-+cpufreq_monitor_sysctl_new (guint cpu)
-+{
-+	   CPUFreqMonitorSysctl *monitor;
-+
-+	   monitor = g_object_new (TYPE_CPUFREQ_MONITOR_SYSCTL, "cpu", cpu, NULL);
-+
-+	   return CPUFREQ_MONITOR (monitor);
-+}
-+
-+static gboolean
-+cpufreq_monitor_sysctl_run (CPUFreqMonitor *monitor)
-+{
-+	   gint                     fmax, fmin, ifreq;
-+	   gchar                   *governor;
-+	   size_t                   len;
-+	   gchar                   *freq_oid;
-+	   guint                    mon_cpu;
-+	   GList                   *list;
-+
-+	   list = cpufreq_monitor_get_available_frequencies (CPUFREQ_MONITOR (monitor));
-+
-+	   fmax = atoi ((gchar *) list->data);
-+	   fmin = atoi ((gchar *) g_list_nth_data (list, (g_list_length (list) - 1)));
-+
-+	   g_object_get (G_OBJECT (monitor), "cpu", &mon_cpu, NULL);
-+	   len = sizeof (ifreq);
-+	   freq_oid = g_strdup_printf ("dev.cpu.%d.freq", mon_cpu);
-+
-+	   if (sysctlbyname (freq_oid, &ifreq, &len, NULL, 0) == -1) {
-+	       		 g_free (freq_oid);
-+	       		 return FALSE;
-+	   }
-+
-+	   ifreq *= 1000;
-+
-+	   if (ifreq == fmax)
-+	       		 governor = g_strdup ("performance");
-+	   else if (ifreq == fmin)
-+	       		 governor = g_strdup ("economy");
-+	   else
-+	       		 governor = g_strdup ("other");
-+
-+	   g_object_set (G_OBJECT (monitor),
-+			 "governor", governor,
-+			 "frequency", ifreq,
-+			 "max-frequency", fmax,
-+			 NULL);
-+
-+	   return TRUE;
-+}
-+
-+static GList *
-+cpufreq_monitor_sysctl_get_available_frequencies (CPUFreqMonitor *monitor)
-+{
-+	   gchar *levels_oid, *levels;
-+	   gchar **levelsp, **l;
-+	   GList *list = NULL;
-+	   gint mib[4];
-+	   guint mon_cpu;
-+	   size_t len;
-+
-+	   g_object_get (G_OBJECT (monitor), "cpu", &mon_cpu, NULL);
-+
-+	   levels_oid = g_strdup_printf ("dev.cpu.%d.freq_levels",
-+	   	mon_cpu);
-+	   len = 4;
-+	   sysctlnametomib (levels_oid, mib, &len);
-+	   len = sizeof (levels);
-+	   g_free (levels_oid);
-+
-+	   if (sysctl (mib, 4, NULL, &len, NULL, 0) == -1)
-+			 return NULL;
-+
-+	   levels = g_malloc (len);
-+	   if (sysctl (mib, 4, levels, &len, NULL, 0) == -1)
-+	       		 return NULL;
-+
-+	   levelsp = g_strsplit (levels, " ", 0);
-+	   g_free (levels);
-+
-+	   for (l = levelsp; l && *l; l++) {
-+	       		 gchar **frpr;
-+
-+			 frpr = g_strsplit (*l, "/", 0);
-+	       		 if (frpr && frpr[0] != NULL) {
-+			     		/* sysctl format is %d/%d where the
-+					 * first %d is the frequency, and
-+					 * the second is the power used in
-+					 * mW.
-+					 */
-+			     		int freq = atoi (frpr[0]);
-+					list =
-+						g_list_append (list, g_strdup_printf ("%d", freq * 1000));
-+			 }
-+			 g_strfreev (frpr);
-+	   }
-+
-+	   g_strfreev (levelsp);
-+
-+	   return (list);
-+}
-+#endif /* __FreeBSD__ */
 --- cpufreq/src/cpufreq-monitor-factory.c.orig	Sat Jun 17 06:28:02 2006
 +++ cpufreq/src/cpufreq-monitor-factory.c	Sat Jun 24 01:45:54 2006
 @@ -17,6 +17,7 @@
@@ -427,3 +217,228 @@
  
  void
  cpufreq_utils_display_error (const gchar *message,
+--- cpufreq/src/cpufreq-monitor-sysctl.c.orig	Wed Feb 28 14:03:58 2007
++++ cpufreq/src/cpufreq-monitor-sysctl.c	Wed Feb 28 14:28:47 2007
+@@ -0,0 +1,176 @@
++/*
++ * Copyright (C) 2001, 2002 Free Software Foundation
++ *
++ *  This library is free software; you can redistribute it and/or
++ *  modify it under the terms of the GNU General Public
++ *  License as published by the Free Software Foundation; either
++ *  version 2 of the License, or (at your option) any later version.
++ *
++ *  This library is distributed in the hope that it will be useful,
++ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ *  General Public License for more details.
++ *
++ *  You should have received a copy of the GNU General Public
++ *  License along with this library; if not, write to the Free
++ *  Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
++ *
++ * Authors : Joe Marcus Clarke <marcus@FreeBSD.org>
++ */
++
++#include <glib.h>
++#include <glib/gi18n.h>
++
++#include <string.h>
++
++#ifdef __FreeBSD__
++#include <sys/types.h>
++#include <sys/sysctl.h>
++
++#include "cpufreq-monitor-sysctl.h"
++
++#define PARENT_TYPE TYPE_CPUFREQ_MONITOR
++
++#define CPUFREQ_MONITOR_GET_PROTECTED(obj) (G_TYPE_INSTANCE_GET_PRIVATE((obj), PARENT_TYPE, CPUFreqMonitorProtected))
++
++static void     cpufreq_monitor_sysctl_class_init                (CPUFreqMonitorSysctlClass *klass);
++
++static gboolean     cpufreq_monitor_sysctl_run                       (CPUFreqMonitor *monitor);
++static GList   *cpufreq_monitor_sysctl_get_available_frequencies (CPUFreqMonitor *monitor);
++static GList   *cpufreq_monitor_sysctl_get_available_governors   (CPUFreqMonitor *monitor);
++
++static gboolean cpufreq_monitor_sysctl_get                       (gpointer gdata);
++
++G_DEFINE_TYPE (CPUFreqMonitorSysctl, cpufreq_monitor_sysctl, CPUFREQ_TYPE_MONITOR)
++
++static void
++cpufreq_monitor_sysctl_init (CPUFreqMonitorSysctl *monitor)
++{
++}
++
++static void
++cpufreq_monitor_sysctl_class_init (CPUFreqMonitorSysctlClass *klass)
++{
++	CPUFreqMonitorClass *monitor_class = CPUFREQ_MONITOR_CLASS (klass);
++
++	monitor_class->run = cpufreq_monitor_sysctl_run;
++	monitor_class->get_available_frequencies = cpufreq_monitor_sysctl_get_available_frequencies;
++	monitor_class->get_available_governors = cpufreq_monitor_sysctl_get_available_governors;
++}
++
++CPUFreqMonitor *
++cpufreq_monitor_sysctl_new (guint cpu)
++{
++	   CPUFreqMonitorSysctl *monitor;
++
++	   monitor = g_object_new (TYPE_CPUFREQ_MONITOR_SYSCTL, "cpu", cpu, NULL);
++
++	   return CPUFREQ_MONITOR (monitor);
++}
++
++static gboolean
++cpufreq_monitor_sysctl_run (CPUFreqMonitor *monitor)
++{
++	   gint                     fmax, fmin, ifreq;
++	   gchar                   *governor;
++	   size_t                   len;
++	   gchar                   *freq_oid;
++	   guint                    mon_cpu;
++	   GList                   *list;
++
++	   list = cpufreq_monitor_sysctl_get_available_frequencies (CPUFREQ_MONITOR (monitor));
++
++	   fmax = atoi ((gchar *) list->data);
++	   fmin = atoi ((gchar *) g_list_nth_data (list, (g_list_length (list) - 1)));
++
++	   g_object_get (G_OBJECT (monitor), "cpu", &mon_cpu, NULL);
++	   len = sizeof (ifreq);
++	   freq_oid = g_strdup_printf ("dev.cpu.%d.freq", mon_cpu);
++
++	   if (sysctlbyname (freq_oid, &ifreq, &len, NULL, 0) == -1) {
++	       		 g_free (freq_oid);
++	       		 return FALSE;
++	   }
++
++	   ifreq *= 1000;
++
++	   if (ifreq == fmax)
++	       		 governor = g_strdup ("performance");
++	   else if (ifreq == fmin)
++	       		 governor = g_strdup ("economy");
++	   else
++	       		 governor = g_strdup ("userspace");
++
++	   g_object_set (G_OBJECT (monitor),
++			 "online", TRUE,
++			 "governor", governor,
++			 "frequency", ifreq,
++			 "max-frequency", fmax,
++			 NULL);
++
++	   return TRUE;
++}
++
++static GList *
++cpufreq_monitor_sysctl_get_available_frequencies (CPUFreqMonitor *monitor)
++{
++	   gchar *levels_oid, *levels;
++	   gchar **levelsp, **l;
++	   GList *list = NULL;
++	   gint mib[4];
++	   guint mon_cpu;
++	   size_t len;
++
++	   g_object_get (G_OBJECT (monitor), "cpu", &mon_cpu, NULL);
++
++	   levels_oid = g_strdup_printf ("dev.cpu.%d.freq_levels",
++	   	mon_cpu);
++	   len = 4;
++	   sysctlnametomib (levels_oid, mib, &len);
++	   len = sizeof (levels);
++	   g_free (levels_oid);
++
++	   if (sysctl (mib, 4, NULL, &len, NULL, 0) == -1)
++			 return NULL;
++
++	   levels = g_malloc (len);
++	   if (sysctl (mib, 4, levels, &len, NULL, 0) == -1)
++	       		 return NULL;
++
++	   levelsp = g_strsplit (levels, " ", 0);
++	   g_free (levels);
++
++	   for (l = levelsp; l && *l; l++) {
++	       		 gchar **frpr;
++
++			 frpr = g_strsplit (*l, "/", 0);
++	       		 if (frpr && frpr[0] != NULL) {
++			     		/* sysctl format is %d/%d where the
++					 * first %d is the frequency, and
++					 * the second is the power used in
++					 * mW.
++					 */
++			     		int freq = atoi (frpr[0]);
++					list =
++						g_list_append (list, g_strdup_printf ("%d", freq * 1000));
++			 }
++			 g_strfreev (frpr);
++	   }
++
++	   g_strfreev (levelsp);
++
++	   return (list);
++}
++
++static GList *
++cpufreq_monitor_sysctl_get_available_governors (CPUFreqMonitor *monitor)
++{
++	GList *list = NULL;
++
++	list = g_list_prepend (list, g_strdup ("performance"));
++	list = g_list_prepend (list, g_strdup ("userspace"));
++	list = g_list_prepend (list, g_strdup ("economy"));
++
++	return list;
++}
++#endif /* __FreeBSD__ */
+--- cpufreq/src/Makefile.in.orig	Mon Mar 12 11:58:09 2007
++++ cpufreq/src/Makefile.in	Mon Mar 12 12:12:06 2007
+@@ -62,7 +62,8 @@ am__cpufreq_applet_SOURCES_DIST = cpufre
+ 	cpufreq-monitor-procfs.h cpufreq-monitor-sysfs.c \
+ 	cpufreq-monitor-sysfs.h cpufreq-monitor-libcpufreq.c \
+ 	cpufreq-monitor-libcpufreq.h cpufreq-monitor-cpuinfo.c \
+-	cpufreq-monitor-cpuinfo.h
++	cpufreq-monitor-cpuinfo.h cpufreq-monitor-sysctl.c \
++	cpufreq-monitor-sysctl.h
+ @HAVE_LIBCPUFREQ_TRUE@am__objects_1 =  \
+ @HAVE_LIBCPUFREQ_TRUE@	cpufreq-monitor-libcpufreq.$(OBJEXT)
+ am_cpufreq_applet_OBJECTS = cpufreq-applet.$(OBJEXT) \
+@@ -71,7 +72,8 @@ am_cpufreq_applet_OBJECTS = cpufreq-appl
+ 	cpufreq-monitor-factory.$(OBJEXT) \
+ 	cpufreq-monitor-procfs.$(OBJEXT) \
+ 	cpufreq-monitor-sysfs.$(OBJEXT) $(am__objects_1) \
+-	cpufreq-monitor-cpuinfo.$(OBJEXT)
++	cpufreq-monitor-cpuinfo.$(OBJEXT) \
++	cpufreq-monitor-sysctl.$(OBJEXT)
+ cpufreq_applet_OBJECTS = $(am_cpufreq_applet_OBJECTS)
+ am__DEPENDENCIES_1 =
+ cpufreq_applet_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+@@ -85,6 +87,7 @@ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-monitor-libcpufreq.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-monitor-procfs.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-monitor-sysfs.Po \
++@AMDEP_TRUE@	./$(DEPDIR)/cpufreq-monitor-sysctl.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-monitor.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-popup.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-prefs.Po \
+@@ -411,6 +414,7 @@ cpufreq_applet_SOURCES = \
+ 	cpufreq-monitor.c       	cpufreq-monitor.h	      	\
+ 	cpufreq-monitor-factory.c	cpufreq-monitor-factory.h	\
+ 	cpufreq-monitor-procfs.c	cpufreq-monitor-procfs.h	\
++	cpufreq-monitor-sysctl.c	cpufreq-monitor-sysctl.h	\
+ 	cpufreq-monitor-sysfs.c	        cpufreq-monitor-sysfs.h	        \
+ 	$(cpufreq_files)						\
+ 	cpufreq-monitor-cpuinfo.c       cpufreq-monitor-cpuinfo.h
+@@ -496,6 +500,7 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-monitor-factory.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-monitor-libcpufreq.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-monitor-procfs.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-monitor-sysctl.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-monitor-sysfs.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-monitor.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-popup.Po@am__quote@

@@ -3,12 +3,12 @@
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
-#   $MCom: ports/math/gnumeric/Makefile,v 1.14 2005/10/11 22:44:47 marcus Exp $
+#   $MCom: ports/math/gnumeric/Makefile,v 1.28 2007/03/06 17:06:53 marcus Exp $
 #
 
 PORTNAME=	gnumeric
-PORTVERSION=	1.6.3
-PORTREVISION=	2
+PORTVERSION=	1.7.8
+PORTREVISION=	1
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -17,12 +17,12 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The GNOME 2 spreadsheet
 
-LIB_DEPENDS=	goffice-1.2:${PORTSDIR}/devel/goffice \
+LIB_DEPENDS=	goffice-0.3:${PORTSDIR}/devel/goffice \
 		psiconv.10:${PORTSDIR}/converters/psiconv
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier libgnomeprintui \
@@ -31,7 +31,8 @@ USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-guile --with-bonobo
+CONFIGURE_ARGS=	--without-guile --with-bonobo \
+		--mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}" \
 		python_prog=${PYTHON_VERSION}
@@ -64,9 +65,10 @@ PLIST_SUB+=		GNOMEDB="@comment "
 
 post-patch:
 	@${RM} -f ${WRKSRC}/GNOME_Gnumeric.server.in
-	@${REINPLACE_CMD} 's|gnm_sys_data_dir (), "doc"|"${PREFIX}/share/gnome/help/gnumeric/"|' ${WRKSRC}/src/wbcg-actions.c
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/gnumeric.desktop ${PREFIX}/share/gnome/applications
+	${INSTALL_DATA} ${WRKSRC}/gnumeric.mime ${PREFIX}/share/gnome/mime-info
 	@-update-desktop-database
 .for dir in share/gnome lib
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/${dir}/gnumeric

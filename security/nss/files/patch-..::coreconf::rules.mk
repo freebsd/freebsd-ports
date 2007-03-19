@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- ../coreconf/rules.mk.orig	Thu Apr  3 16:48:00 2003
 +++ ../coreconf/rules.mk	Fri Apr 11 01:01:50 2003
 @@ -110,6 +110,7 @@

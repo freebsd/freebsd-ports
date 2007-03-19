@@ -7,7 +7,7 @@
 
 PORTNAME=	gaim
 PORTVERSION=	1.5.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES?=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -73,7 +73,7 @@ LIB_DEPENDS+=		nss3:${PORTSDIR}/security/nss
 CONFIGURE_ARGS+=	--with-nspr-includes=${LOCALBASE}/include/nspr \
 			--with-nspr-libs=${LOCALBASE}/lib \
 			--with-nss-includes=${LOCALBASE}/include/nss/nss \
-			--with-nss-libs=${LOCALBASE}/lib
+			--with-nss-libs=${LOCALBASE}/lib/nss
 .else
 CONFIGURE_ARGS+=	--disable-nss
 .endif

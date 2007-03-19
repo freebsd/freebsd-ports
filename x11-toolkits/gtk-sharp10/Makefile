@@ -8,7 +8,7 @@
 
 PORTNAME=	gtk-sharp
 PORTVERSION=	1.0.10
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://go-mono.com/sources/${PORTNAME}/
 
@@ -31,7 +31,8 @@ post-patch:
 	@${FIND} ${WRKSRC} -name '*.pl' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^#!/usr/bin/perl|#!${PERL}|'
 	@${REINPLACE_CMD} -e 's|enable_gda=yes|enable_gda=no|g ; \
-		s|enable_gnomedb=yes|enable_gnomedb=no|g' ${WRKSRC}/configure
+		s|enable_gnomedb=yes|enable_gnomedb=no|g ; \
+		s|libgtkhtml-3.8|libgtkhtml-3.14|g' ${WRKSRC}/configure
 
 pre-su-install:
 	${MKDIR} ${LOCALBASE}/share/gapi

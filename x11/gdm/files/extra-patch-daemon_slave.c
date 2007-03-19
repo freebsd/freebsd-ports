@@ -1,6 +1,6 @@
---- daemon/slave.c.orig	Wed Jun  1 20:49:30 2005
-+++ daemon/slave.c	Wed Jun  1 20:50:45 2005
-@@ -344,8 +344,7 @@
+--- daemon/slave.c.orig	Sat Oct 28 22:38:51 2006
++++ daemon/slave.c	Tue Oct 31 12:33:41 2006
+@@ -321,8 +321,7 @@ run_session_output (gboolean read_until_
  			break;
  		}
  
@@ -10,7 +10,7 @@
  			continue;
  
  		/* write until we succeed in writing something */
-@@ -367,13 +366,6 @@
+@@ -344,13 +343,6 @@ run_session_output (gboolean read_until_
  		}
  
  		d->xsession_errors_bytes += r;

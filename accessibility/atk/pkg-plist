@@ -9,6 +9,7 @@ include/atk-1.0/atk/atkhyperlink.h
 include/atk-1.0/atk/atkhyperlinkimpl.h
 include/atk-1.0/atk/atkhypertext.h
 include/atk-1.0/atk/atkimage.h
+include/atk-1.0/atk/atkmisc.h
 include/atk-1.0/atk/atknoopobject.h
 include/atk-1.0/atk/atknoopobjectfactory.h
 include/atk-1.0/atk/atkobject.h
@@ -36,6 +37,7 @@ share/locale/ar/LC_MESSAGES/atk10.mo
 share/locale/as/LC_MESSAGES/atk10.mo
 share/locale/az/LC_MESSAGES/atk10.mo
 share/locale/be/LC_MESSAGES/atk10.mo
+share/locale/be@latin/LC_MESSAGES/atk10.mo
 share/locale/bg/LC_MESSAGES/atk10.mo
 share/locale/bn/LC_MESSAGES/atk10.mo
 share/locale/bn_IN/LC_MESSAGES/atk10.mo
@@ -177,6 +179,8 @@ share/locale/zh_TW/LC_MESSAGES/atk10.mo
 @dirrmtry share/locale/ca
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
 @dirrmtry share/locale/be/LC_MESSAGES
 @dirrmtry share/locale/be
 @dirrmtry share/locale/as/LC_MESSAGES

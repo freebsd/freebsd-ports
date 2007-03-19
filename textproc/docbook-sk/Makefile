@@ -7,7 +7,7 @@
 
 PORTNAME=	docbook-sk
 PORTVERSION=	4.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/xml/${PORTVERSION}/
 DISTNAME=	docbkx${PORTVERSION:S/.//g}
@@ -40,7 +40,6 @@ do-install:
 	done
 
 post-install:
-	@${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${DOCBOOKDIR}/docbook.cat
 	@${XMLCATMGR} -c ${CATALOG_PORTS_XML} add public "-//OASIS//ELEMENTS DocBook XML Information Pool V4.1.2//EN" file://${DOCBOOKDIR}/dbpoolx.mod
 	@${XMLCATMGR} -c ${CATALOG_PORTS_XML} add public "-//OASIS//DTD DocBook XML V4.1.2//EN" file://${DOCBOOKDIR}/docbookx.dtd
 	@${XMLCATMGR} -c ${CATALOG_PORTS_XML} add public "-//OASIS//ENTITIES DocBook XML Character Entities V4.1.2//EN" file://${DOCBOOKDIR}/dbcentx.mod

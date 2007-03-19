@@ -75,10 +75,13 @@ share/gnome/pixmaps/nautilus/colors.png
 share/gnome/pixmaps/nautilus/emblems.png
 share/gnome/pixmaps/nautilus/erase.png
 share/gnome/pixmaps/nautilus/knob.png
-share/gnome/pixmaps/nautilus/nautilus-launch-icon.png
 share/gnome/pixmaps/nautilus/note-indicator.png
-share/gnome/pixmaps/nautilus/text-selection-frame.png
 share/gnome/pixmaps/nautilus/thumbnail_frame.png
+share/icons/hicolor/16x16/apps/nautilus.png
+share/icons/hicolor/22x22/apps/nautilus.png
+share/icons/hicolor/24x24/apps/nautilus.png
+share/icons/hicolor/32x32/apps/nautilus.png
+share/icons/hicolor/scalable/apps/nautilus.svg
 share/locale/af/LC_MESSAGES/nautilus.mo
 share/locale/am/LC_MESSAGES/nautilus.mo
 share/locale/ar/LC_MESSAGES/nautilus.mo
@@ -98,6 +101,7 @@ share/locale/dz/LC_MESSAGES/nautilus.mo
 share/locale/el/LC_MESSAGES/nautilus.mo
 share/locale/en_CA/LC_MESSAGES/nautilus.mo
 share/locale/en_GB/LC_MESSAGES/nautilus.mo
+share/locale/eo/LC_MESSAGES/nautilus.mo
 share/locale/es/LC_MESSAGES/nautilus.mo
 share/locale/et/LC_MESSAGES/nautilus.mo
 share/locale/eu/LC_MESSAGES/nautilus.mo

@@ -3,11 +3,11 @@
 # Whom:					Adam Weinberger, based off kiesel's ximian-exchange port
 #
 # $FreeBSD$
-#   $MCom: ports/mail/evolution-exchange/Makefile,v 1.70 2006/10/03 02:06:00 ahze Exp $
+#   $MCom: ports/mail/evolution-exchange/Makefile,v 1.83 2007/03/13 16:03:50 marcus Exp $
 #
 
 PORTNAME=	evolution-exchange
-PORTVERSION=	2.8.3
+PORTVERSION=	2.10.0
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -24,17 +24,22 @@ USE_GETTEXT=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_BDB=	41
 USE_OPENLDAP=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnometarget
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-openldap=${LOCALBASE} \
 		--with-static-ldap=no \
-		--disable-compile-warnings
+		--disable-compile-warnings \
+		--with-libdb=${LOCALBASE}
 
-EVO_VERSION=	2.8
-PLIST_SUB=	VERSION="2.8" EVO_VERSION=${EVO_VERSION} EDS_VERSION="1.2" \
-		OLDDOCSDIR="share/doc/ximian-connector"
+EVO_VERSION=	2.10
+VERSION=	2.10
+PLIST_SUB=	VERSION=${VERSION} EVO_VERSION=${EVO_VERSION} \
+		EDS_VERSION="1.2" OLDDOCSDIR="share/doc/ximian-connector"
+
+GCONF_SCHEMAS=	apps_exchange_addressbook-${VERSION}.schemas
 
 .include <bsd.port.pre.mk>
 
@@ -57,5 +62,11 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC"
 .if exists(${LOCALBASE}/include/mapi.h)
 IGNORE=	does not build with ${LOCALBASE}/include/mapi.h exists in system, run pkg_info -W ${LOCALBASE}/include/mapi.h to find the offending port and uninstall it, then install ${PORTNAME} and reinstall port
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|EVOLUTION_API_VERSION=2.8|EVOLUTION_API_VERSION=2.10| ; \
+	    	s|EDS_BASE_VERSION=1.8|EDS_BASE_VERSION=1.10| ; \
+		s|-ldb|-l${BDB_LIB_NAME}|g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
