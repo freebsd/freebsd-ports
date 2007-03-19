@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	bins
-PORTVERSION=	1.1.20
-PORTREVISION=	2
+PORTVERSION=	1.1.29
 CATEGORIES=	www
-MASTER_SITES=	http://jsautret.free.fr/BINS/
+MASTER_SITES=	http://download.gna.org/bins/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Tool to generate HTML photo albums with XML support
 
 RUN_DEPENDS=	\
 	${PBASE}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 	${PBASE}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick \
 	${PBASE}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
+	${PBASE}/${PERL_ARCH}/Text/Unaccent.pm:${PORTSDIR}/textproc/p5-Text-Unaccent \
+	${PBASE}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
 	${PBASE}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
 	${PBASE}/HTML/Clean.pm:${PORTSDIR}/www/p5-HTML-Clean \
 	${PBASE}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
@@ -29,7 +30,6 @@ RUN_DEPENDS=	\
 	${PBASE}/XML/Handler/YAWriter.pm:${PORTSDIR}/textproc/p5-XML-Handler-YAWriter \
 	${PBASE}/XML/Parser/PerlSAX.pm:${PORTSDIR}/textproc/p5-libxml
 
-IS_INTERACTIVE=	yes
 USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
@@ -38,13 +38,13 @@ NO_BUILD=	yes
 PBASE=	${SITE_PERL}
 
 # additional scripts
-BINS_SCRIPTS=	bins_txt2xml
+BINS_SCRIPTS=	tools/bins_txt2xml
 # doc file extension
 DOC_EXTS=	html sgml xml
 
 MAN1=	bins-edit-gui.1 bins.1 bins_edit.1
 
-post-patch:
+post-patch::
 # perl PREFIX safeness
 	@${FIND} ${WRKSRC} -type f | \
 		${XARGS} -n 10 -x ${REINPLACE_CMD} -E \
@@ -52,7 +52,7 @@ post-patch:
 # prefix safeness
 	@${REINPLACE_CMD} -E \
 		-e 's|(bins_edit=)".+"(.*)$$|\1"${PREFIX}/bin/bins_edit"\2|' \
-		${WRKSRC}/bins_txt2xml
+		${WRKSRC}/tools/bins_txt2xml
 
 do-install:
 	@${SETENV} PREFIX=${PREFIX} RC=${PREFIX}/share/bins ${WRKSRC}/install.sh
@@ -71,29 +71,25 @@ post-install:
 .include <bsd.port.pre.mk>
 
 ##
-## this port requires PERL 5.6.x or later
+## default for either pointyhat or unattended builds
 ##
-.if !(exists(${LOCALBASE}/bin/perl5.6.0) || exists(${LOCALBASE}/bin/perl5.6.1))
-IGNORE=	requires perl 5.6.x or later. Install lang/perl5 then try again
-.endif
+.if defined(PACKAGE_BUILDING) || defined(BATCH)
+WITH_I18N=	yes
 
-##
-## default for either bento or unattended builds
-##
-.ifdef(BATCH)
-WITH_I18N=yes
+post-patch::
+	@${REINPLACE_CMD} -e 's,read dummy,,' ${WRKSRC}/install.sh
 .endif
 
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-install.sh
 
 # localization support
-.ifdef(WITH_I18N)
+.if defined(WITH_I18N)
 RUN_DEPENDS+=	\
 	${PBASE}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext
 .endif
 
 pre-everything::
-.ifndef(WITH_I18N)
+.if !defined(WITH_I18N)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_I18N to enable localization support.'
 	@${ECHO_MSG} '===>   Support for languages other than english.'
