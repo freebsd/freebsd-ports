@@ -20,9 +20,11 @@ CONFLICTS?=	courier-0.* postfix-1.* postfix-2.* smail-3.* zmailer-2.*
 CONFLICTS+=	sendmail-8.11.* sendmail-*-8.11.* sendmail+*-8.11.*
 CONFLICTS+=	sendmail-8.12.* sendmail-*-8.12.* sendmail+*-8.12.*
 
+.if !defined(SENDMAIL_WITHOUT_SHMEM)
 IPCCHECK!=	ipcrm -q 0 2>&1 || true
 .if ${IPCCHECK:Mimplemented}
 IGNORE=		your system does not support sysvipc
+.endif
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
