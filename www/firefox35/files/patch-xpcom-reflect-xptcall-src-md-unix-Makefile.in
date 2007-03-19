@@ -1,0 +1,54 @@
+--- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	Thu Aug 14 21:00:23 2003
++++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Sun Feb  1 15:06:40 2004
+@@ -49,6 +49,9 @@
+ ifeq (86,$(findstring 86,$(OS_TEST)))
+ CPPSRCS		:= xptcinvoke_unixish_x86.cpp xptcstubs_unixish_x86.cpp
+ endif
++ifeq (amd64,$(OS_TEST))
++CPPSRCS		:= xptcinvoke_x86_64_linux.cpp xptcstubs_x86_64_linux.cpp
++endif
+ endif
+ #
+ # New code for Linux, et. al., with gcc
+@@ -60,7 +63,7 @@
+ endif
+ endif
+ # IA64 Linux
+-ifneq (,$(filter Linux,$(OS_ARCH)))
++ifneq (,$(filter Linux FreeBSD,$(OS_ARCH)))
+ ifneq (,$(findstring ia64,$(OS_TEST)))
+ CPPSRCS		:= xptcinvoke_ipf64.cpp xptcstubs_ipf64.cpp
+ ASFILES		:= xptcstubs_asm_ipf64.s xptcinvoke_asm_ipf64.s
+@@ -106,9 +109,15 @@
+ ASFILES		:= xptcinvoke_asm_osf1_alpha.s xptcstubs_asm_osf1_alpha.s
+ endif
+ #
++# FreeBSD/Alpha
++#
++ifeq ($(OS_ARCH)$(OS_TEST),FreeBSDalpha)
++CPPSRCS		:= xptcinvoke_freebsd_alpha.cpp xptcstubs_freebsd_alpha.cpp
++endif
++#
+ # Linux/Alpha
+ #
+-ifneq (,$(filter Linuxalpha FreeBSDalpha NetBSDalpha,$(OS_ARCH)$(OS_TEST)))                           
++ifneq (,$(filter Linuxalpha NetBSDalpha,$(OS_ARCH)$(OS_TEST)))                           
+ CPPSRCS		:= xptcinvoke_linux_alpha.cpp xptcstubs_linux_alpha.cpp
+ endif
+ #
+@@ -294,6 +303,15 @@
+ ifeq ($(OS_ARCH)$(OS_TEST),NetBSDsparc)
+ CPPSRCS		:= xptcinvoke_sparc_netbsd.cpp xptcstubs_sparc_netbsd.cpp
+ ASFILES		:= xptcinvoke_asm_sparc_netbsd.s xptcstubs_asm_sparc_netbsd.s
++endif
++#
++# FreeBSD/SPARC64
++#
++ifeq ($(OS_ARCH),FreeBSD)
++ifneq (,$(findstring sparc,$(OS_TEST)))
++CPPSRCS		:= xptcinvoke_sparc64_freebsd.cpp xptcstubs_sparc64_freebsd.cpp
++ASFILES		:= xptcinvoke_asm_sparc64_freebsd.s xptcstubs_asm_sparcv9_solaris.s
++endif
+ endif
+ #
+ # Solaris/SPARC
