@@ -2766,6 +2766,7 @@ firedns		ports/dns/firedns
 fireflies	ports/x11/fireflies
 firefox		ports/www/firefox
 firefox15	ports/www/firefox15
+firefox-devel	ports/www/firefox-devel
 firefox-i18n	ports/www/firefox-i18n
 firefox-remote	ports/www/firefox-remote
 firemime	ports/mail/firemime
