@@ -1,3 +1,3 @@
-MD5 (apache2/mod_auth_external-2.2.10.tar.gz) = 48956bd1cdc54eac3dd603d030a38f48
-SHA256 (apache2/mod_auth_external-2.2.10.tar.gz) = 5114cc67c5bc4fe3a922aabc30a82a7fbea8f6a7b25a2752c53d28e9be13f0d1
-SIZE (apache2/mod_auth_external-2.2.10.tar.gz) = 51917
+MD5 (apache20/mod_auth_external-2.2.11.tar.gz) = 9518e508cc201a4130f6c9209c6dc9d3
+SHA256 (apache20/mod_auth_external-2.2.11.tar.gz) = 8068130444e9a93193062494c43e6a2d2d8e03e8ebdc9d378ab9c17c12a9e0c5
+SIZE (apache20/mod_auth_external-2.2.11.tar.gz) = 52542
