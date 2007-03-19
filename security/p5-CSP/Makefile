@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	CSP
-PORTVERSION=	0.33
+PORTVERSION=	0.34
 CATEGORIES=	security perl5
 MASTER_SITES=	ftp://ftp.it.su.se/pub/users/leifj/ \
-		http://cold.darkambient.net/
+		http://redundancy.redundancy.org/mirror/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lx@redundancy.redundancy.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A Perl tool for managing Certificate Authorities
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
