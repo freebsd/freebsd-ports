@@ -1,5 +1,5 @@
---- layout/preferences.menu.orig	Sat Dec 11 07:58:50 2004
-+++ layout/preferences.menu	Tue Mar  1 01:28:57 2005
+--- layout/preferences.menu.orig	Tue Feb 13 04:18:01 2007
++++ layout/preferences.menu	Tue Feb 13 16:54:35 2007
 @@ -9,12 +9,15 @@
    <DefaultAppDirs/>
    <DefaultDirectoryDirs/>
@@ -24,11 +24,11 @@
      <Include>
        <And>
 +        <Not>
-+          <Or>
-+            <Category>Qt</Category>
-+            <Category>KDE</Category>
-+          </Or>
-+        </Not>
++	  <Or>
++	    <Category>Qt</Category>
++	    <Category>KDE</Category>
++	  </Or>
++	</Not>
          <Category>Settings</Category>
          <Category>Accessibility</Category>
        </And>

@@ -134,6 +134,7 @@ share/locale/ko/LC_MESSAGES/zenity.mo
 share/locale/ku/LC_MESSAGES/zenity.mo
 share/locale/lt/LC_MESSAGES/zenity.mo
 share/locale/lv/LC_MESSAGES/zenity.mo
+share/locale/mg/LC_MESSAGES/zenity.mo
 share/locale/mi/LC_MESSAGES/zenity.mo
 share/locale/mk/LC_MESSAGES/zenity.mo
 share/locale/ml/LC_MESSAGES/zenity.mo
@@ -215,6 +216,8 @@ share/locale/zh_TW/LC_MESSAGES/zenity.mo
 @dirrmtry share/locale/ne
 @dirrmtry share/locale/mi/LC_MESSAGES
 @dirrmtry share/locale/mi
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/ko/LC_MESSAGES

@@ -31,6 +31,8 @@ share/gnome/themes/AgingGorilla/metacity-1/inactive-minimize-button.png
 share/gnome/themes/AgingGorilla/metacity-1/metacity-theme-1.xml
 share/gnome/themes/Atlanta/metacity-1/metacity-theme-1.xml
 share/gnome/themes/Bright/metacity-1/metacity-theme-1.xml
+share/gnome/themes/Bright/metacity-1/metacity-theme-2.xml
+share/gnome/themes/Crux/metacity-1/active-above-button.png
 share/gnome/themes/Crux/metacity-1/active-border-top-left-border.png
 share/gnome/themes/Crux/metacity-1/active-border-top-right-border.png
 share/gnome/themes/Crux/metacity-1/active-bottom-left-border.png
@@ -55,6 +57,8 @@ share/gnome/themes/Crux/metacity-1/active-restore-button.png
 share/gnome/themes/Crux/metacity-1/active-right-border.png
 share/gnome/themes/Crux/metacity-1/active-right-top-border-shaded.png
 share/gnome/themes/Crux/metacity-1/active-right-top-border.png
+share/gnome/themes/Crux/metacity-1/active-shade-button.png
+share/gnome/themes/Crux/metacity-1/active-stick-button.png
 share/gnome/themes/Crux/metacity-1/active-top-center-left.png
 share/gnome/themes/Crux/metacity-1/active-top-center-mid-left.png
 share/gnome/themes/Crux/metacity-1/active-top-center-mid-right.png
@@ -65,6 +69,10 @@ share/gnome/themes/Crux/metacity-1/active-top-mid-left-border.png
 share/gnome/themes/Crux/metacity-1/active-top-mid-right-border.png
 share/gnome/themes/Crux/metacity-1/active-top-right-border.png
 share/gnome/themes/Crux/metacity-1/active-top-right-corner.png
+share/gnome/themes/Crux/metacity-1/active-unabove-button.png
+share/gnome/themes/Crux/metacity-1/active-unshade-button.png
+share/gnome/themes/Crux/metacity-1/active-unstick-button.png
+share/gnome/themes/Crux/metacity-1/inactive-above-button.png
 share/gnome/themes/Crux/metacity-1/inactive-border-top-left-border.png
 share/gnome/themes/Crux/metacity-1/inactive-border-top-right-border.png
 share/gnome/themes/Crux/metacity-1/inactive-bottom-left-border.png
@@ -88,6 +96,8 @@ share/gnome/themes/Crux/metacity-1/inactive-restore-button.png
 share/gnome/themes/Crux/metacity-1/inactive-right-border.png
 share/gnome/themes/Crux/metacity-1/inactive-right-top-border-shaded.png
 share/gnome/themes/Crux/metacity-1/inactive-right-top-border.png
+share/gnome/themes/Crux/metacity-1/inactive-shade-button.png
+share/gnome/themes/Crux/metacity-1/inactive-stick-button.png
 share/gnome/themes/Crux/metacity-1/inactive-top-center-left.png
 share/gnome/themes/Crux/metacity-1/inactive-top-center-mid.png
 share/gnome/themes/Crux/metacity-1/inactive-top-center-right.png
@@ -96,7 +106,11 @@ share/gnome/themes/Crux/metacity-1/inactive-top-left-corner.png
 share/gnome/themes/Crux/metacity-1/inactive-top-mid-border.png
 share/gnome/themes/Crux/metacity-1/inactive-top-right-border.png
 share/gnome/themes/Crux/metacity-1/inactive-top-right-corner.png
+share/gnome/themes/Crux/metacity-1/inactive-unabove-button.png
+share/gnome/themes/Crux/metacity-1/inactive-unshade-button.png
+share/gnome/themes/Crux/metacity-1/inactive-unstick-button.png
 share/gnome/themes/Crux/metacity-1/metacity-theme-1.xml
+share/gnome/themes/Crux/metacity-1/metacity-theme-2.xml
 share/gnome/themes/Esco/metacity-1/metacity-theme-1.xml
 share/gnome/themes/Metabox/metacity-1/metacity-theme-1.xml
 share/gnome/themes/Simple/metacity-1/close.png

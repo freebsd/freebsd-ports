@@ -1,10 +1,10 @@
---- Makefile.in.orig	Wed Jul 27 02:23:03 2005
-+++ Makefile.in	Wed Jul 27 02:25:27 2005
-@@ -721,28 +721,7 @@
- 
+--- Makefile.in.orig	Sat Nov  4 14:54:15 2006
++++ Makefile.in	Sat Nov  4 14:54:46 2006
+@@ -785,28 +785,6 @@ $(srcdir)/ChangeLog:
+ .PHONY: ChangeLog $(srcdir)/ChangeLog
  
  install-data-local:
--	$(mkinstalldirs) $(DESTDIR)$(configdir)
+-	$(mkinstalldirs) $(DESTDIR)$(configdir) $(DESTDIR)$(fc_cachedir)
 -	if [ -f $(DESTDIR)$(configdir)/fonts.conf ]; then \
 -	  echo "backing up existing $(DESTDIR)$(configdir)/fonts.conf"; \
 -	  mv $(DESTDIR)$(configdir)/fonts.conf $(DESTDIR)$(configdir)/fonts.conf.bak; \
@@ -16,17 +16,16 @@
 -	  echo " $(INSTALL_DATA) fonts.conf $(DESTDIR)$(configdir)/fonts.conf"; \
 -	  $(INSTALL_DATA) fonts.conf $(DESTDIR)$(configdir)/fonts.conf; \
 -	fi; fi
--	if $(RUN_FC_CACHE_TEST); then \
--	    echo " fc-cache/fc-cache -f -v"; \
--	    fc-cache/fc-cache -f -v; \
+-	@(if $(RUN_FC_CACHE_TEST); then \
+-	    echo " fc-cache/fc-cache -s -f -v"; \
+-	    fc-cache/fc-cache -s -f -v; \
 -	else \
 -	    echo "***"; \
 -	    echo "*** Warning: fonts.cache not built"; \
 -	    echo "***"; \
 -	    echo "*** Generate this file manually on host system using fc-cache"; \
 -	    echo "***"; \
--	fi
-+
+-	fi)
  
  uninstall-local:
  	if [ -f $(srcdir)/fonts.conf ]; then \

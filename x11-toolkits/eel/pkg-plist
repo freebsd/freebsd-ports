@@ -11,7 +11,6 @@ include/eel-2/eel/eel-dateedit-extensions.h
 include/eel-2/eel/eel-debug-drawing.h
 include/eel-2/eel/eel-debug.h
 include/eel-2/eel/eel-editable-label.h
-include/eel-2/eel/eel-ellipsizing-label.h
 include/eel-2/eel/eel-enumeration.h
 include/eel-2/eel/eel-features.h
 include/eel-2/eel/eel-gconf-extensions.h

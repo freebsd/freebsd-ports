@@ -108,6 +108,7 @@ share/locale/cs/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/cy/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/da/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/de/LC_MESSAGES/libbonobo-2.0.mo
+share/locale/dz/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/el/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/en_CA/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/en_GB/LC_MESSAGES/libbonobo-2.0.mo
@@ -135,6 +136,7 @@ share/locale/ku/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/li/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/lt/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/lv/LC_MESSAGES/libbonobo-2.0.mo
+share/locale/mg/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/mk/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/ml/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/mn/LC_MESSAGES/libbonobo-2.0.mo
@@ -210,6 +212,8 @@ share/locale/zh_TW/LC_MESSAGES/libbonobo-2.0.mo
 @dirrmtry share/locale/nn
 @dirrmtry share/locale/ne/LC_MESSAGES
 @dirrmtry share/locale/ne
+@dirrmtry share/locale/mg/LC_MESSAGES
+@dirrmtry share/locale/mg
 @dirrmtry share/locale/li/LC_MESSAGES
 @dirrmtry share/locale/li
 @dirrmtry share/locale/ku/LC_MESSAGES
@@ -222,6 +226,8 @@ share/locale/zh_TW/LC_MESSAGES/libbonobo-2.0.mo
 @dirrmtry share/locale/fi
 @dirrmtry share/locale/el/LC_MESSAGES
 @dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrmtry share/locale/cs/LC_MESSAGES
 @dirrmtry share/locale/cs
 @dirrmtry share/locale/ca/LC_MESSAGES

@@ -3,30 +3,33 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/deskutils/ontv/Makefile,v 1.3 2006/10/08 16:50:42 mezz Exp $
+#   $MCom: ports/deskutils/ontv/Makefile,v 1.5 2007/02/18 19:18:34 mezz Exp $
 #
 
 PORTNAME=	ontv
-PORTVERSION=	2.2.0
-PORTREVISION=	2
-CATEGORIES=	deskutils
+PORTVERSION=	2.4.0
+CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	GNOME Applet frontend of XMLTV
+COMMENT=	A GNOME Applet for monitoring current and upcoming TV programs
 
-LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree \
+		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cElementTree.so:${PORTSDIR}/devel/py-celementtree \
+		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify \
+		${PYTHON_SITELIBDIR}/gtk-2.0/vtemodule.so:${PORTSDIR}/x11-toolkits/py-vte \
 		tv_grab_be:${PORTSDIR}/textproc/p5-xmltv
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	pygnomedesktop gnomeprefix pygnomeextras
+USE_GNOME=	gnomehack gnomeprefix pygnomedesktop pygnomeextras
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 GCONF_SCHEMAS=	ontv.schemas
+INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>

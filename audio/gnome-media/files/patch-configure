@@ -1,0 +1,74 @@
+--- configure.orig	Mon Feb 12 16:07:48 2007
++++ configure	Mon Feb 12 16:08:23 2007
+@@ -5808,7 +5808,7 @@ if test "${enable_cddbslave+set}" = set;
+ else
+   enable_cddbslave=yes
+ fi;
+-if test "x$enable_cddbslave" == "xyes"; then
++if test "x$enable_cddbslave" = "xyes"; then
+ 
+ pkg_failed=no
+ echo "$as_me:$LINENO: checking for CDDBSLAVE" >&5
+@@ -6750,7 +6750,7 @@ if test "${enable_profiles+set}" = set; 
+ else
+   enable_profiles=yes
+ fi;
+-if test "x$enable_profiles" == "xyes"; then
++if test "x$enable_profiles" = "xyes"; then
+ 
+ pkg_failed=no
+ echo "$as_me:$LINENO: checking for GMP" >&5
+@@ -6967,7 +6967,7 @@ echo "$as_me: WARNING:  Grecord will be 
+   PROGRAMS_GRECORD_ERROR="	gnome media profiles is disabled"
+ fi
+ 
+-if test "x$HAVE_GST" = "xyes" && test "x$enable_grecord" == "xyes"; then
++if test "x$HAVE_GST" = "xyes" && test "x$enable_grecord" = "xyes"; then
+   PROGRAMS_GRECORD="grecord"
+ 
+   gst010_toolsdir=`$PKG_CONFIG --variable=toolsdir gstreamer-0.10`
+@@ -24186,7 +24186,7 @@ if test "${enable_vumeter+set}" = set; t
+ else
+   enable_vumeter=yes
+ fi;
+-if test -n "$we_have_esd" && test "x$enable_vumeter" == "xyes"; then
++if test -n "$we_have_esd" && test "x$enable_vumeter" = "xyes"; then
+ 
+ pkg_failed=no
+ echo "$as_me:$LINENO: checking for VUMETER" >&5
+@@ -24304,7 +24304,7 @@ if test "${enable_gnomecd+set}" = set; t
+ else
+   enable_gnomecd=yes
+ fi;
+-if test "x$enable_gnomecd" == "xyes"; then
++if test "x$enable_gnomecd" = "xyes"; then
+ 
+ pkg_failed=no
+ echo "$as_me:$LINENO: checking for GNOMECD" >&5
+@@ -24640,7 +24640,7 @@ fi
+ 
+ 
+ 
+-if test "x$HAVE_GNOMECD" = "xyes" && test "x$enable_gnomecd" == "xyes" ; then
++if test "x$HAVE_GNOMECD" = "xyes" && test "x$enable_gnomecd" = "xyes" ; then
+   cdrom_header=""
+ 
+ for ac_header in linux/cdrom.h
+@@ -25510,7 +25510,7 @@ if test "${enable_gstprops+set}" = set; 
+ else
+   enable_gstprops=yes
+ fi;
+-if test "x$HAVE_GST" = "xyes" && test "x$enable_gstprops" == "xyes";
++if test "x$HAVE_GST" = "xyes" && test "x$enable_gstprops" = "xyes";
+ then
+       COMMON_MODULES="gconf-2.0 libgnomeui-2.0 libglade-2.0 >= 1.99.12 gstreamer-$GST_MAJORMINOR"
+ 
+@@ -25673,7 +25673,7 @@ if test "${enable_gstmix+set}" = set; th
+ else
+   enable_gstmix=yes
+ fi;
+-if test "x$HAVE_GST" = "xyes" && test "x$enable_gstmix" == "xyes";
++if test "x$HAVE_GST" = "xyes" && test "x$enable_gstmix" = "xyes";
+ then
+ 
+ pkg_failed=no

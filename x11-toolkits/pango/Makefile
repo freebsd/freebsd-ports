@@ -3,11 +3,11 @@
 # Whom:				Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/pango/Makefile,v 1.84 2006/10/13 19:09:37 marcus Exp $
+#   $MCom: ports/x11-toolkits/pango/Makefile,v 1.94 2007/03/13 00:54:42 mezz Exp $
 #
 
 PORTNAME=	pango
-PORTVERSION=	1.14.10
+PORTVERSION=	1.16.1
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/pango/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/},} \
@@ -40,7 +40,7 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 # stuff, with Bad Results[tm]
 #
 GLIB2_CFLAGS=	`pkg-config glib-2.0 --cflags`
-PLIST_SUB=	VERSION="1.5.0"
+PLIST_SUB=	VERSION="1.6.0"
 
 FONTSCALE=	${X11BASE}/lib/X11/fonts/TTF/luximb.ttf
 FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/encodings.dir

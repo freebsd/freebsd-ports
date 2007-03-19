@@ -12,6 +12,24 @@ lib/libgnomeprintui-2-2.la
 lib/libgnomeprintui-2-2.so
 lib/libgnomeprintui-2-2.so.0
 libdata/pkgconfig/libgnomeprintui-2.2.pc
+%%DOCSDIR%%/ch02.html
+%%DOCSDIR%%/home.png
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/index.sgml
+%%DOCSDIR%%/left.png
+%%DOCSDIR%%/libgnomeprintui-gnome-font-dialog.html
+%%DOCSDIR%%/libgnomeprintui-gnome-print-copies.html
+%%DOCSDIR%%/libgnomeprintui-gnome-print-dialog.html
+%%DOCSDIR%%/libgnomeprintui-gnome-print-job-preview.html
+%%DOCSDIR%%/libgnomeprintui-gnome-print-paper-selector.html
+%%DOCSDIR%%/libgnomeprintui-gnome-print-preview.html
+%%DOCSDIR%%/libgnomeprintui-gnome-printer-selector.html
+%%DOCSDIR%%/libgnomeprintui.devhelp
+%%DOCSDIR%%/libgnomeprintui.devhelp2
+%%DOCSDIR%%/libgnomeprintui.html
+%%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
+%%DOCSDIR%%/up.png
 share/gnome/libgnomeprintui/%%VERSION%%/gnome-print-job-preview.xml
 share/locale/af/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/am/LC_MESSAGES/libgnomeprintui-2.2.mo
@@ -20,12 +38,14 @@ share/locale/az/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/be/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/bg/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/bn/LC_MESSAGES/libgnomeprintui-2.2.mo
+share/locale/bn_IN/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/bs/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ca/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/cs/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/cy/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/da/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/de/LC_MESSAGES/libgnomeprintui-2.2.mo
+share/locale/dz/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/el/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/en_CA/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/en_GB/LC_MESSAGES/libgnomeprintui-2.2.mo
@@ -46,6 +66,7 @@ share/locale/id/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/is/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/it/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ja/LC_MESSAGES/libgnomeprintui-2.2.mo
+share/locale/ka/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/kn/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ko/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/li/LC_MESSAGES/libgnomeprintui-2.2.mo
@@ -54,12 +75,13 @@ share/locale/lv/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/mk/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ml/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/mn/LC_MESSAGES/libgnomeprintui-2.2.mo
+share/locale/mr/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ms/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/nb/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ne/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/nl/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/nn/LC_MESSAGES/libgnomeprintui-2.2.mo
-share/locale/no/LC_MESSAGES/libgnomeprintui-2.2.mo
+share/locale/or/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/pa/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/pl/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/pt/LC_MESSAGES/libgnomeprintui-2.2.mo
@@ -82,13 +104,17 @@ share/locale/vi/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/wa/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/xh/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomeprintui-2.2.mo
+share/locale/zh_HK/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomeprintui-2.2.mo
 @dirrm share/gnome/libgnomeprintui/%%VERSION%%
 @dirrm share/gnome/libgnomeprintui
+@dirrm %%DOCSDIR%%
 @dirrm include/libgnomeprintui-2.2/libgnomeprintui
 @dirrm include/libgnomeprintui-2.2
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/zh_CN/LC_MESSAGES
 @dirrmtry share/locale/zh_CN
 @dirrmtry share/locale/xh/LC_MESSAGES
@@ -111,12 +137,12 @@ share/locale/zh_TW/LC_MESSAGES/libgnomeprintui-2.2.mo
 @dirrmtry share/locale/pt
 @dirrmtry share/locale/pl/LC_MESSAGES
 @dirrmtry share/locale/pl
-@dirrmtry share/locale/no/LC_MESSAGES
-@dirrmtry share/locale/no
 @dirrmtry share/locale/nn/LC_MESSAGES
 @dirrmtry share/locale/nn
 @dirrmtry share/locale/ne/LC_MESSAGES
 @dirrmtry share/locale/ne
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
 @dirrmtry share/locale/li/LC_MESSAGES
 @dirrmtry share/locale/li
 @dirrmtry share/locale/ko/LC_MESSAGES
@@ -127,9 +153,13 @@ share/locale/zh_TW/LC_MESSAGES/libgnomeprintui-2.2.mo
 @dirrmtry share/locale/fi
 @dirrmtry share/locale/el/LC_MESSAGES
 @dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrmtry share/locale/cs/LC_MESSAGES
 @dirrmtry share/locale/cs
 @dirrmtry share/locale/ca/LC_MESSAGES
 @dirrmtry share/locale/ca
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
 @dirrmtry share/locale/be/LC_MESSAGES
 @dirrmtry share/locale/be

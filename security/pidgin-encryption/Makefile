@@ -7,6 +7,7 @@
 
 PORTNAME=	encryption
 PORTVERSION=	2.39
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -29,7 +30,7 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--with-nspr-includes=${LOCALBASE}/include/nspr \
 		--with-nspr-libs=${LOCALBASE}/lib \
 		--with-nss-includes=${LOCALBASE}/include/nss/nss \
-		--with-nss-libs=${LOCALBASE}/lib
+		--with-nss-libs=${LOCALBASE}/lib/nss
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

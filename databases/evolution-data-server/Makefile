@@ -3,11 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/databases/evolution-data-server/Makefile,v 1.99 2006/10/03 00:13:42 ahze Exp $
+#   $MCom: ports/databases/evolution-data-server/Makefile,v 1.112 2007/03/13 04:35:01 marcus Exp $
 #
 
 PORTNAME=	evolution-data-server
-PORTVERSION=	1.8.3
+PORTVERSION=	1.10.0
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -34,16 +34,12 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static \
 		--enable-nss=yes \
 		--with-openldap=yes \
-		--with-nss-includes=${LOCALBASE}/include/nss/nss \
-		--with-nss-libs=${LOCALBASE}/lib \
-		--with-nspr-includes=${LOCALBASE}/include/nspr \
-		--with-nspr-libs=${LOCALBASE}/lib \
 		--with-krb5=/usr \
 		--with-libdb=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-PLIST_SUB=	VERSION="1.8" EVO_VERSION="1.2"
+PLIST_SUB=	VERSION="1.10" EVO_VERSION="1.2"
 
 OPTIONS=	IMAP4	"Enable experimental IMAP4 backend" off
 

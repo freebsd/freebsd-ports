@@ -223,7 +223,7 @@
     SUBDIR += tkxanim
     SUBDIR += tosvcd
     SUBDIR += totem
-    SUBDIR += totem-gstreamer
+    SUBDIR += totem-xine
     SUBDIR += tovid
     SUBDIR += toxine
     SUBDIR += transcode

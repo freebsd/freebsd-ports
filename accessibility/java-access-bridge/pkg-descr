@@ -1,0 +1,3 @@
+Connects the built-in GNOME accessibility support in Java Swing apps to the
+GNOME Accessibility framework, specifically the Assistive Technology Service
+Provider Interface (AT-SPI).

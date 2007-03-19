@@ -3,14 +3,13 @@
 # Whom:			Michael Johnson <ahze@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/deskutils/nautilus-open-terminal/Makefile,v 1.7 2006/08/09 13:07:37 ahze Exp $
+#    $MCom: ports/deskutils/nautilus-open-terminal/Makefile,v 1.9 2007/03/05 13:36:03 ahze Exp $
 #
 
 PORTNAME=	nautilus-open-terminal
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	deskutils
-MASTER_SITES=	http://manny.cluecoder.org/packages/nautilus-open-terminal/ \
-    		http://www.marcuscom.com/downloads/
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Nautilus extension which allows you to open a terminal

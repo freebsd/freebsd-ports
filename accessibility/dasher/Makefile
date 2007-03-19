@@ -3,11 +3,11 @@
 # Whom:					lewiz <purple@lewiz.net>
 #
 # $FreeBSD$
-#   $MCom: ports/accessibility/dasher/Makefile,v 1.44 2006/09/03 21:33:52 marcus Exp $
+#   $MCom: ports/accessibility/dasher/Makefile,v 1.50 2007/03/12 20:16:34 mezz Exp $
 #
 
 PORTNAME=	dasher
-PORTVERSION=	4.2.2
+PORTVERSION=	4.4.0
 PORTEPOCH=	1
 CATEGORIES=	accessibility editors x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -34,6 +34,7 @@ USE_GCC=	3.4+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+GCONF_SCHEMAS=	dasher.schemas
 MAN1=		dasher.1
 
 .include <bsd.port.pre.mk>

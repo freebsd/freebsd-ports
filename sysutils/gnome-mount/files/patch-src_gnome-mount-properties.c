@@ -1,5 +1,5 @@
---- src/gnome-mount-properties.c.orig	Sun Dec  3 02:25:59 2006
-+++ src/gnome-mount-properties.c	Sun Dec  3 02:30:25 2006
+--- src/gnome-mount-properties.c.orig	Sun Dec  3 02:38:14 2006
++++ src/gnome-mount-properties.c	Sun Dec  3 02:39:27 2006
 @@ -27,6 +27,8 @@
  #include <libhal.h>
  #include <libhal-storage.h>

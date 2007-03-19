@@ -1,11 +1,11 @@
---- configure.orig	Tue Oct  3 08:23:12 2006
-+++ configure	Tue Oct  3 08:23:12 2006
-@@ -26464,7 +26464,7 @@
+--- configure.orig	Tue Feb 13 16:22:38 2007
++++ configure	Tue Feb 13 16:23:19 2007
+@@ -24887,7 +24887,7 @@ fi
  
  
  
--for ac_func in cfmakeraw getpgid getpt grantpt unlockpt ptsname ptsname_r
-+for ac_func in cfmakeraw getpgid getpt posix_openpt grantpt unlockpt ptsname ptsname_r
+-for ac_func in cfmakeraw fork setsid setpgid getpgid getpt grantpt unlockpt ptsname ptsname_r tcgetattr tcsetattr
++for ac_func in cfmakeraw fork setsid setpgid getpgid getpt grantpt posix_openpt unlockpt ptsname ptsname_r tcgetattr tcsetattr
  do
  as_ac_var=`echo "ac_cv_func_$ac_func" | $as_tr_sh`
  echo "$as_me:$LINENO: checking for $ac_func" >&5

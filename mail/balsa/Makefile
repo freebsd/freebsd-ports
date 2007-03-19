@@ -3,11 +3,12 @@
 # Whom:					Glenn Johnson <gljohns@bellsouth.net>
 #
 # $FreeBSD$
-#   $MCom: ports/mail/balsa/Makefile,v 1.7 2006/07/27 17:09:22 mezz Exp $
+#   $MCom: ports/mail/balsa/Makefile,v 1.10 2007/03/14 17:45:39 marcus Exp $
 #
 
 PORTNAME=	balsa
 PORTVERSION=	2.3.14
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/
 DISTNAME=	balsa-${PORTVERSION}
@@ -76,7 +77,8 @@ post-patch:
 		${WRKSRC}/libbalsa/mailbox_imap.c
 # PREFIX safeness
 	@${REINPLACE_CMD} -E \
-		-e 's|^(HICOLOR_ICON_DIR)[^/]+/|\1=${PREFIX}/|' \
+		-e 's|^(HICOLOR_ICON_DIR)[^/]+/|\1=${PREFIX}/| ; \
+		s|libgtkhtml-3.8|libgtkhtml-3.14|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:

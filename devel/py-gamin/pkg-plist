@@ -1,6 +1,4 @@
-lib/%%PYTHON_VERSION%%/site-packages/gamin.py
-lib/%%PYTHON_VERSION%%/site-packages/gamin.pyc
-lib/%%PYTHON_VERSION%%/site-packages/gamin.pyo
-lib/%%PYTHON_VERSION%%/site-packages/_gamin.a
-lib/%%PYTHON_VERSION%%/site-packages/_gamin.la
-lib/%%PYTHON_VERSION%%/site-packages/_gamin.so
+%%PYTHON_SITELIBDIR%%/_gamin.a
+%%PYTHON_SITELIBDIR%%/_gamin.la
+%%PYTHON_SITELIBDIR%%/_gamin.so
+%%PYTHON_SITELIBDIR%%/gamin.py

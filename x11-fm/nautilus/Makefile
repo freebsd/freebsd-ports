@@ -3,11 +3,12 @@
 # Whom:                 		ade, archie
 #
 # $FreeBSD$
-#   $MCom: ports/x11-fm/nautilus/Makefile,v 1.117 2006/10/02 22:48:27 ahze Exp $
+#   $MCom: ports/x11-fm/nautilus/Makefile,v 1.127 2007/03/16 16:07:42 marcus Exp $
 #
 
 PORTNAME=	nautilus
-PORTVERSION=	2.16.3
+PORTVERSION=	2.18.0.1
+PORTREVISION=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -18,6 +19,7 @@ COMMENT=	File manager for the GNOME desktop
 
 LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif
 
+INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
@@ -35,11 +37,20 @@ CONFIGURE_ARGS=	--with-freetype2-lib-place=${LOCALBASE}/lib \
 		--enable-static
 MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 
+OPTIONS=	TRACKER "Enable Tracker Search (sysutils/tracker)" Off
+
 GCONF_SCHEMAS=	apps_nautilus_preferences.schemas
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_TRACKER)
+LIB_DEPENDS+=	trackerclient.0:${PORTSDIR}/sysutils/tracker
+.else
+CONFIGURE_ARGS+=--disable-tracker
+.endif
 
 post-install:
 	${MKDIR} ${PREFIX}/lib/nautilus/extensions-1.0
 	@-update-desktop-database
-#	@${CHMOD} u+w ${PREFIX}/share/gnome/nautilus/*.desktop
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

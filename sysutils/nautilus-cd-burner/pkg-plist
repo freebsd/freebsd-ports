@@ -71,6 +71,7 @@ share/locale/it/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/ja/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/ka/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/ko/LC_MESSAGES/nautilus-cd-burner.mo
+share/locale/ku/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/lt/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/lv/LC_MESSAGES/nautilus-cd-burner.mo
 share/locale/mg/LC_MESSAGES/nautilus-cd-burner.mo
@@ -145,6 +146,8 @@ share/locale/zh_TW/LC_MESSAGES/nautilus-cd-burner.mo
 @dirrmtry share/locale/ne
 @dirrmtry share/locale/mg/LC_MESSAGES
 @dirrmtry share/locale/mg
+@dirrmtry share/locale/ku/LC_MESSAGES
+@dirrmtry share/locale/ku
 @dirrmtry share/locale/ko/LC_MESSAGES
 @dirrmtry share/locale/ko
 @dirrmtry share/locale/hy/LC_MESSAGES

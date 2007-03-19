@@ -1,47 +1,3 @@
---- cpufreq/src/cpufreq-selector/Makefile.in.orig	Sat Jun 24 01:52:35 2006
-+++ cpufreq/src/cpufreq-selector/Makefile.in	Sat Jun 24 02:14:08 2006
-@@ -58,13 +58,15 @@ am__cpufreq_selector_SOURCES_DIST = cpuf
- 	cpufreq-selector.h cpufreq-selector-sysfs.c \
- 	cpufreq-selector-sysfs.h cpufreq-selector-procfs.c \
- 	cpufreq-selector-procfs.h cpufreq-selector-libcpufreq.c \
--	cpufreq-selector-libcpufreq.h main.c
-+	cpufreq-selector-libcpufreq.h main.c \
-+	cpufreq-selector-sysctl.c cpufreq-selector-sysctl.h
- @HAVE_LIBCPUFREQ_TRUE@am__objects_1 =  \
- @HAVE_LIBCPUFREQ_TRUE@	cpufreq-selector-libcpufreq.$(OBJEXT)
- am_cpufreq_selector_OBJECTS = cpufreq-selector.$(OBJEXT) \
- 	cpufreq-selector-sysfs.$(OBJEXT) \
- 	cpufreq-selector-procfs.$(OBJEXT) $(am__objects_1) \
--	main.$(OBJEXT)
-+	main.$(OBJEXT) \
-+	cpufreq-selector-sysctl.$(OBJEXT)
- cpufreq_selector_OBJECTS = $(am_cpufreq_selector_OBJECTS)
- am__DEPENDENCIES_1 =
- cpufreq_selector_DEPENDENCIES = $(am__DEPENDENCIES_1) \
-@@ -74,6 +76,7 @@ depcomp = $(SHELL) $(top_srcdir)/depcomp
- am__depfiles_maybe = depfiles
- @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/cpufreq-selector-libcpufreq.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-selector-procfs.Po \
-+@AMDEP_TRUE@	./$(DEPDIR)/cpufreq-selector-sysctl.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-selector-sysfs.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-selector.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/main.Po
-@@ -371,6 +374,7 @@ cpufreq_selector_SOURCES = \
- 	cpufreq-selector.c               cpufreq-selector.h        \
- 	cpufreq-selector-sysfs.c         cpufreq-selector-sysfs.h  \
- 	cpufreq-selector-procfs.c        cpufreq-selector-procfs.h \
-+	cpufreq-selector-sysctl.c        cpufreq-selector-sysctl.h \
- 	$(cpufreq_files)					   \
- 	main.c
- 
-@@ -451,6 +455,7 @@ distclean-compile:
- 
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-selector-libcpufreq.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-selector-procfs.Po@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-selector-sysctl.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-selector-sysfs.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-selector.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
 --- cpufreq/src/cpufreq-selector/cpufreq-selector-sysctl.h.orig	Sat Jun 24 01:52:35 2006
 +++ cpufreq/src/cpufreq-selector/cpufreq-selector-sysctl.h	Sat Jun 24 02:13:05 2006
 @@ -0,0 +1,53 @@
@@ -234,3 +190,47 @@
 +
 +	   return TRUE;
 +}
+--- cpufreq/src/cpufreq-selector/Makefile.in.orig	Mon Mar 12 11:58:09 2007
++++ cpufreq/src/cpufreq-selector/Makefile.in	Mon Mar 12 12:12:33 2007
+@@ -58,13 +58,15 @@ am__cpufreq_selector_SOURCES_DIST = cpuf
+ 	cpufreq-selector.h cpufreq-selector-sysfs.c \
+ 	cpufreq-selector-sysfs.h cpufreq-selector-procfs.c \
+ 	cpufreq-selector-procfs.h cpufreq-selector-libcpufreq.c \
+-	cpufreq-selector-libcpufreq.h main.c
++	cpufreq-selector-libcpufreq.h main.c \
++	cpufreq-selector-sysctl.c cpufreq-selector-sysctl.h
+ @HAVE_LIBCPUFREQ_TRUE@am__objects_1 =  \
+ @HAVE_LIBCPUFREQ_TRUE@	cpufreq-selector-libcpufreq.$(OBJEXT)
+ am_cpufreq_selector_OBJECTS = cpufreq-selector.$(OBJEXT) \
+ 	cpufreq-selector-sysfs.$(OBJEXT) \
+ 	cpufreq-selector-procfs.$(OBJEXT) $(am__objects_1) \
+-	main.$(OBJEXT)
++	main.$(OBJEXT) \
++	cpufreq-selector-sysctl.$(OBJEXT)
+ cpufreq_selector_OBJECTS = $(am_cpufreq_selector_OBJECTS)
+ am__DEPENDENCIES_1 =
+ cpufreq_selector_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+@@ -75,6 +77,7 @@ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/cpufreq-selector-libcpufreq.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-selector-procfs.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-selector-sysfs.Po \
++@AMDEP_TRUE@	./$(DEPDIR)/cpufreq-selector-sysctl.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-selector.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/main.Po
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+@@ -385,6 +388,7 @@ cpufreq_selector_SOURCES = \
+ 	cpufreq-selector.c               cpufreq-selector.h        \
+ 	cpufreq-selector-sysfs.c         cpufreq-selector-sysfs.h  \
+ 	cpufreq-selector-procfs.c        cpufreq-selector-procfs.h \
++	cpufreq-selector-sysctl.c        cpufreq-selector-sysctl.h \
+ 	$(cpufreq_files)					   \
+ 	main.c
+ 
+@@ -466,6 +470,7 @@ distclean-compile:
+ 
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-selector-libcpufreq.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-selector-procfs.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-selector-sysctl.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-selector-sysfs.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-selector.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@

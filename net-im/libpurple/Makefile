@@ -3,12 +3,12 @@
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/net-im/libgaim/Makefile,v 1.4 2006/10/29 18:55:28 marcus Exp $
+#   $MCom: ports/net-im/libgaim/Makefile,v 1.10 2007/03/11 06:36:56 marcus Exp $
 #
 
 PORTNAME=	gaim
 PORTVERSION=	2.0.0.b6
-PORTREVISION?=	6
+PORTREVISION?=	7
 CATEGORIES?=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -121,7 +121,7 @@ CONFIGURE_ARGS+=	--enable-nss=yes \
 			--with-nspr-includes=${LOCALBASE}/include/nspr \
 			--with-nspr-libs=${LOCALBASE}/lib \
 			--with-nss-includes=${LOCALBASE}/include/nss/nss \
-			--with-nss-libs=${LOCALBASE}/lib
+			--with-nss-libs=${LOCALBASE}/lib/nss
 .else
 CONFIGURE_ARGS+=	--enable-nss=no
 .endif

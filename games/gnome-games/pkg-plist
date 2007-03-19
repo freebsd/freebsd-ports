@@ -1,10 +1,11 @@
 bin/blackjack
-bin/games-server.py
-bin/gataxx
+bin/glchess
 bin/glines
 bin/gnect
 bin/gnibbles
 bin/gnobots2
+bin/gnome-gnuchess
+bin/gnome-sudoku
 bin/gnometris
 bin/gnomine
 bin/gnotravex
@@ -17,13 +18,173 @@ bin/sol
 etc/sound/events/gnibbles.soundlist
 etc/sound/events/gnobots2.soundlist
 etc/sound/events/iagno.soundlist
+%%PYTHON_SITELIBDIR%%/glchess/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/ai.py
+%%PYTHON_SITELIBDIR%%/glchess/ai.pyc
+%%PYTHON_SITELIBDIR%%/glchess/ai.pyo
+%%PYTHON_SITELIBDIR%%/glchess/cecp.py
+%%PYTHON_SITELIBDIR%%/glchess/cecp.pyc
+%%PYTHON_SITELIBDIR%%/glchess/cecp.pyo
+%%PYTHON_SITELIBDIR%%/glchess/chess/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/chess/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/chess/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/chess/board.py
+%%PYTHON_SITELIBDIR%%/glchess/chess/board.pyc
+%%PYTHON_SITELIBDIR%%/glchess/chess/board.pyo
+%%PYTHON_SITELIBDIR%%/glchess/chess/lan.py
+%%PYTHON_SITELIBDIR%%/glchess/chess/lan.pyc
+%%PYTHON_SITELIBDIR%%/glchess/chess/lan.pyo
+%%PYTHON_SITELIBDIR%%/glchess/chess/pgn.py
+%%PYTHON_SITELIBDIR%%/glchess/chess/pgn.pyc
+%%PYTHON_SITELIBDIR%%/glchess/chess/pgn.pyo
+%%PYTHON_SITELIBDIR%%/glchess/chess/san.py
+%%PYTHON_SITELIBDIR%%/glchess/chess/san.pyc
+%%PYTHON_SITELIBDIR%%/glchess/chess/san.pyo
+%%PYTHON_SITELIBDIR%%/glchess/config.py
+%%PYTHON_SITELIBDIR%%/glchess/config.pyc
+%%PYTHON_SITELIBDIR%%/glchess/config.pyo
+%%PYTHON_SITELIBDIR%%/glchess/defaults.py
+%%PYTHON_SITELIBDIR%%/glchess/defaults.pyc
+%%PYTHON_SITELIBDIR%%/glchess/defaults.pyo
+%%PYTHON_SITELIBDIR%%/glchess/game.py
+%%PYTHON_SITELIBDIR%%/glchess/game.pyc
+%%PYTHON_SITELIBDIR%%/glchess/game.pyo
+%%PYTHON_SITELIBDIR%%/glchess/glchess.py
+%%PYTHON_SITELIBDIR%%/glchess/glchess.pyc
+%%PYTHON_SITELIBDIR%%/glchess/glchess.pyo
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/dialogs.py
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/dialogs.pyc
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/dialogs.pyo
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/gtkui.py
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/gtkui.pyc
+%%PYTHON_SITELIBDIR%%/glchess/gtkui/gtkui.pyo
+%%PYTHON_SITELIBDIR%%/glchess/main.py
+%%PYTHON_SITELIBDIR%%/glchess/main.pyc
+%%PYTHON_SITELIBDIR%%/glchess/main.pyo
+%%PYTHON_SITELIBDIR%%/glchess/network/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/network/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/network/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/network/announce.py
+%%PYTHON_SITELIBDIR%%/glchess/network/announce.pyc
+%%PYTHON_SITELIBDIR%%/glchess/network/announce.pyo
+%%PYTHON_SITELIBDIR%%/glchess/network/protocol.py
+%%PYTHON_SITELIBDIR%%/glchess/network/protocol.pyc
+%%PYTHON_SITELIBDIR%%/glchess/network/protocol.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/cairo/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/cairo/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/cairo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/cairo/pieces.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/cairo/pieces.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/cairo/pieces.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/human.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/human.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/human.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/builtin_models.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/builtin_models.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/builtin_models.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/new_models.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/new_models.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/new_models.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/opengl.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/opengl.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/opengl.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/png.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/png.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/png.pyo
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/texture.py
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/texture.pyc
+%%PYTHON_SITELIBDIR%%/glchess/scene/opengl/texture.pyo
+%%PYTHON_SITELIBDIR%%/glchess/uci.py
+%%PYTHON_SITELIBDIR%%/glchess/uci.pyc
+%%PYTHON_SITELIBDIR%%/glchess/uci.pyo
+%%PYTHON_SITELIBDIR%%/glchess/ui/__init__.py
+%%PYTHON_SITELIBDIR%%/glchess/ui/__init__.pyc
+%%PYTHON_SITELIBDIR%%/glchess/ui/__init__.pyo
+%%PYTHON_SITELIBDIR%%/glchess/ui/ui.py
+%%PYTHON_SITELIBDIR%%/glchess/ui/ui.pyc
+%%PYTHON_SITELIBDIR%%/glchess/ui/ui.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/__init__.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/colors.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/colors.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/colors.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/defaults.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/defaults.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/defaults.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/dialog_swallower.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/dialog_swallower.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/dialog_swallower.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/game_selector.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/game_selector.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/game_selector.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/gnome_sudoku.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/gnome_sudoku.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/gnome_sudoku.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/gsudoku.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/gsudoku.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/gsudoku.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/Undo.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/Undo.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/Undo.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/__init__.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/dialog_extras.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/dialog_extras.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/dialog_extras.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/gconf_wrapper.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/gconf_wrapper.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/gconf_wrapper.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/image_extras.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/image_extras.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies/image_extras.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/pausable.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/pausable.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/pausable.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/printing.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/printing.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/printing.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/saver.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/saver.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/saver.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/simple_debug.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/simple_debug.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/simple_debug.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku_generator_gui.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku_generator_gui.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku_generator_gui.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku_labeller.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku_labeller.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku_labeller.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku_maker.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku_maker.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/sudoku_maker.pyo
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/timer.py
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/timer.pyc
+%%PYTHON_SITELIBDIR%%/gnome_sudoku/timer.pyo
 share/gnome/applications/blackjack.desktop
 share/gnome/applications/freecell.desktop
-share/gnome/applications/gataxx.desktop
+share/gnome/applications/glchess.desktop
 share/gnome/applications/glines.desktop
 share/gnome/applications/gnect.desktop
 share/gnome/applications/gnibbles.desktop
 share/gnome/applications/gnobots2.desktop
+share/gnome/applications/gnome-sudoku.desktop
 share/gnome/applications/gnometris.desktop
 share/gnome/applications/gnomine.desktop
 share/gnome/applications/gnotravex.desktop
@@ -110,7 +271,8 @@ share/gnome/blackjack/Vegas_Strip.rules
 @unexec [ -s %D/share/gnome/games/gnotski.7.scores ] || rm -f %D/share/gnome/games/gnotski.7.scores
 @unexec [ -s %D/share/gnome/games/gnotski.8.scores ] || rm -f %D/share/gnome/games/gnotski.8.scores
 @unexec [ -s %D/share/gnome/games/gnotski.9.scores ] || rm -f %D/share/gnome/games/gnotski.9.scores
-@unexec [ -s %D/share/gnome/games/gtali.scores ] || rm -f %D/share/gnome/games/gtali.scores
+@unexec [ -s %D/share/gnome/games/gtali.Colors.scores ] || rm -f %D/share/gnome/games/gtali.Colors.scores
+@unexec [ -s %D/share/gnome/games/gtali.Regular.scores ] || rm -f %D/share/gnome/games/gtali.Regular.scores
 @unexec [ -s %D/share/gnome/games/mahjongg.bridges.scores ] || rm -f %D/share/gnome/games/mahjongg.bridges.scores
 @unexec [ -s %D/share/gnome/games/mahjongg.cloud.scores ] || rm -f %D/share/gnome/games/mahjongg.cloud.scores
 @unexec [ -s %D/share/gnome/games/mahjongg.confounding.scores ] || rm -f %D/share/gnome/games/mahjongg.confounding.scores
@@ -123,6 +285,27 @@ share/gnome/blackjack/Vegas_Strip.rules
 @unexec [ -s %D/share/gnome/games/same-gnome.Large.scores ] || rm -f %D/share/gnome/games/same-gnome.Large.scores
 @unexec [ -s %D/share/gnome/games/same-gnome.Medium.scores ] || rm -f %D/share/gnome/games/same-gnome.Medium.scores
 @unexec [ -s %D/share/gnome/games/same-gnome.Small.scores ] || rm -f %D/share/gnome/games/same-gnome.Small.scores
+@unexec [ -L %D/share/gnome/games/same-gnome.scores ] || rm -f %D/share/gnome/games/same-gnome.scores
+share/gnome/ggz/gnome-games/about_bg.png
+share/gnome/ggz/gnome-games/ggz_gtk_admin.svg
+share/gnome/ggz/gnome-games/ggz_gtk_bot.svg
+share/gnome/ggz/gnome-games/ggz_gtk_guest.svg
+share/gnome/ggz/gnome-games/ggz_gtk_lag0.svg
+share/gnome/ggz/gnome-games/ggz_gtk_lag1.svg
+share/gnome/ggz/gnome-games/ggz_gtk_lag2.svg
+share/gnome/ggz/gnome-games/ggz_gtk_lag3.svg
+share/gnome/ggz/gnome-games/ggz_gtk_lag4.svg
+share/gnome/ggz/gnome-games/ggz_gtk_lag5.svg
+share/gnome/ggz/gnome-games/ggz_gtk_registered.svg
+share/gnome/glchess/ai.glade
+share/gnome/glchess/ai.xml
+share/gnome/glchess/chess_view.glade
+share/gnome/glchess/error_dialog.glade
+share/gnome/glchess/glchess.glade
+share/gnome/glchess/glchess.svg
+share/gnome/glchess/load_game.glade
+share/gnome/glchess/new_game.glade
+share/gnome/glchess/save_game.glade
 share/gnome/gnect/white_ob.cn4.gz
 share/gnome/gnibbles/level001.gnl
 share/gnome/gnibbles/level002.gnl
@@ -155,10 +338,16 @@ share/gnome/gnobots2/nightmare.cfg
 share/gnome/gnobots2/robots2.cfg
 share/gnome/gnobots2/robots2_easy.cfg
 share/gnome/gnobots2/robots_with_safe_teleport.cfg
-share/gnome/gnome-games/ataxx/themes/2.14/classic.png
 share/gnome/gnome-games/mahjongg/maps/mahjongg.map
 share/gnome/gnome-games/same-gnome/themes/2.10/planets.png
 share/gnome/gnome-games/same-gnome/themes/2.10/stones.png
+share/gnome/gnome-sudoku/high_scores.glade
+share/gnome/gnome-sudoku/new_game.glade
+share/gnome/gnome-sudoku/open_game.glade
+share/gnome/gnome-sudoku/print_games.glade
+share/gnome/gnome-sudoku/puzzle_generator.glade
+share/gnome/gnome-sudoku/starter_puzzles
+share/gnome/gnome-sudoku/tracker.glade
 share/gnome/help/aisleriot/C/agnes.xml
 share/gnome/help/aisleriot/C/aisleriot.xml
 share/gnome/help/aisleriot/C/athena.xml
@@ -226,8 +415,6 @@ share/gnome/help/aisleriot/C/scuffle.xml
 share/gnome/help/aisleriot/C/seahaven.xml
 share/gnome/help/aisleriot/C/sir_tommy.xml
 share/gnome/help/aisleriot/C/spider.xml
-share/gnome/help/aisleriot/C/spider_one_suit.xml
-share/gnome/help/aisleriot/C/spider_two_suit.xml
 share/gnome/help/aisleriot/C/spiderette.xml
 share/gnome/help/aisleriot/C/straight_up.xml
 share/gnome/help/aisleriot/C/streets_and_alleys.xml
@@ -335,18 +522,32 @@ share/gnome/help/blackjack/C/blackjack.xml
 share/gnome/help/blackjack/C/figures/blackjack_start_window.png
 share/gnome/help/blackjack/C/figures/blackjack_win_window.png
 share/gnome/help/blackjack/C/legal.xml
-share/gnome/help/gataxx/C/figures/gataxx-legalmoves.png
-share/gnome/help/gataxx/C/gataxx.xml
-share/gnome/help/gataxx/C/legal.xml
+share/gnome/help/glchess/C/glchess.xml
+share/gnome/help/glchess/C/legal.xml
 share/gnome/help/glines/C/figures/glines-gameover.png
 share/gnome/help/glines/C/figures/glines-startgame.png
 share/gnome/help/glines/C/figures/preferences.png
 share/gnome/help/glines/C/glines.xml
 share/gnome/help/glines/C/legal.xml
+share/gnome/help/glines/fr/figures/glines-gameover.png
+share/gnome/help/glines/fr/figures/glines-startgame.png
+share/gnome/help/glines/fr/figures/preferences.png
+share/gnome/help/glines/fr/glines.xml
+share/gnome/help/glines/ru/figures/glines-gameover.png
+share/gnome/help/glines/ru/figures/glines-startgame.png
+share/gnome/help/glines/ru/figures/preferences.png
+share/gnome/help/glines/ru/glines.xml
+share/gnome/help/glines/sv/figures/glines-gameover.png
+share/gnome/help/glines/sv/figures/glines-startgame.png
+share/gnome/help/glines/sv/figures/preferences.png
+share/gnome/help/glines/sv/glines.xml
 share/gnome/help/gnect/C/figures/mainwindow.png
 share/gnome/help/gnect/C/figures/tileset.png
 share/gnome/help/gnect/C/gnect.xml
 share/gnome/help/gnect/C/legal.xml
+share/gnome/help/gnect/sv/figures/mainwindow.png
+share/gnome/help/gnect/sv/figures/tileset.png
+share/gnome/help/gnect/sv/gnect.xml
 share/gnome/help/gnibbles/C/figures/game.png
 share/gnome/help/gnibbles/C/figures/intro.png
 share/gnome/help/gnibbles/C/figures/playing.png
@@ -362,6 +563,13 @@ share/gnome/help/gnobots2/es/gnobots2.xml
 share/gnome/help/gnobots2/es/legal.xml
 share/gnome/help/gnobots2/it/gnobots2.xml
 share/gnome/help/gnobots2/it/legal.xml
+share/gnome/help/gnome-sudoku/C/figures/Print_Sudokus.png
+share/gnome/help/gnome-sudoku/C/figures/always_show_hint.png
+share/gnome/help/gnome-sudoku/C/figures/error_highlighting.png
+share/gnome/help/gnome-sudoku/C/figures/highlighting.png
+share/gnome/help/gnome-sudoku/C/figures/hints.png
+share/gnome/help/gnome-sudoku/C/gnome-sudoku.xml
+share/gnome/help/gnome-sudoku/C/legal.xml
 share/gnome/help/gnometris/C/gnometris.xml
 share/gnome/help/gnometris/C/legal.xml
 share/gnome/help/gnomine/C/figures/easy-hints-1.png
@@ -410,12 +618,22 @@ share/gnome/help/same-gnome/C/figures/play.png
 share/gnome/help/same-gnome/C/figures/start-up.png
 share/gnome/help/same-gnome/C/legal.xml
 share/gnome/help/same-gnome/C/same-gnome.xml
+share/gnome/help/same-gnome/ru/figures/play.png
+share/gnome/help/same-gnome/ru/figures/start-up.png
+share/gnome/help/same-gnome/ru/same-gnome.xml
+share/gnome/help/same-gnome/sv/figures/play.png
+share/gnome/help/same-gnome/sv/figures/start-up.png
+share/gnome/help/same-gnome/sv/same-gnome.xml
+share/gnome/omf/glchess/glchess-C.omf
+share/gnome/omf/glines/glines-C.omf
+share/gnome/omf/glines/glines-fr.omf
+share/gnome/omf/glines/glines-ru.omf
+share/gnome/omf/glines/glines-sv.omf
+share/gnome/omf/gnect/gnect-C.omf
+share/gnome/omf/gnect/gnect-sv.omf
 share/gnome/omf/gnome-games/aisleriot-C.omf
 share/gnome/omf/gnome-games/aisleriot-fr.omf
 share/gnome/omf/gnome-games/blackjack-C.omf
-share/gnome/omf/gnome-games/gataxx-C.omf
-share/gnome/omf/gnome-games/glines-C.omf
-share/gnome/omf/gnome-games/gnect-C.omf
 share/gnome/omf/gnome-games/gnibbles-C.omf
 share/gnome/omf/gnome-games/gnobots2-C.omf
 share/gnome/omf/gnome-games/gnobots2-da.omf
@@ -429,7 +647,9 @@ share/gnome/omf/gnome-games/gtali-C.omf
 share/gnome/omf/gnome-games/gtali-da.omf
 share/gnome/omf/gnome-games/iagno-C.omf
 share/gnome/omf/gnome-games/mahjongg-C.omf
-share/gnome/omf/gnome-games/same-gnome-C.omf
+share/gnome/omf/same-gnome/same-gnome-C.omf
+share/gnome/omf/same-gnome/same-gnome-ru.omf
+share/gnome/omf/same-gnome/same-gnome-sv.omf
 share/gnome/pixmaps/blackjack/baize.png
 share/gnome/pixmaps/blackjack/blackjack-splash.png
 share/gnome/pixmaps/blackjack/chip-1.svg
@@ -439,6 +659,9 @@ share/gnome/pixmaps/blackjack/chip-5.svg
 share/gnome/pixmaps/cards/baize.png
 share/gnome/pixmaps/cards/slot.svg
 share/gnome/pixmaps/cards/slots/white-outline.svg
+share/gnome/pixmaps/glchess.svg
+share/gnome/pixmaps/glchess/board.png
+share/gnome/pixmaps/glchess/piece.png
 share/gnome/pixmaps/glines/balls.svg
 share/gnome/pixmaps/glines/shapes.svg
 share/gnome/pixmaps/gnect/bg_grotty.jpg
@@ -458,7 +681,6 @@ share/gnome/pixmaps/gnibbles/bonus4.svg
 share/gnome/pixmaps/gnibbles/bonus5.svg
 share/gnome/pixmaps/gnibbles/diamond.svg
 share/gnome/pixmaps/gnibbles/gnibbles-logo.svg
-share/gnome/pixmaps/gnibbles/gnibbles.png
 share/gnome/pixmaps/gnibbles/life.svg
 share/gnome/pixmaps/gnibbles/questionmark.svg
 share/gnome/pixmaps/gnibbles/snake-blue.svg
@@ -488,9 +710,9 @@ share/gnome/pixmaps/gnobots2/splat.png
 share/gnome/pixmaps/gnobots2/ufo.svg
 share/gnome/pixmaps/gnobots2/yahoo.png
 share/gnome/pixmaps/gnome-games-common/cards/bonded.svg
-share/gnome/pixmaps/gnome-games-common/cards/paris.svg
 share/gnome/pixmaps/gnome-games-common/icons/rteleport.png
 share/gnome/pixmaps/gnome-games-common/icons/teleport.png
+share/gnome/pixmaps/gnome-sudoku/footprints.png
 share/gnome/pixmaps/gnometris/7blocks-gw.png
 share/gnome/pixmaps/gnometris/7blocks-tig.png
 share/gnome/pixmaps/gnomine/bang.svg
@@ -503,6 +725,7 @@ share/gnome/pixmaps/gnomine/flag-question.svg
 share/gnome/pixmaps/gnomine/flag.svg
 share/gnome/pixmaps/gnomine/mine.svg
 share/gnome/pixmaps/gnomine/warning.svg
+share/gnome/pixmaps/gnotravex/baize.png
 share/gnome/pixmaps/gnotski.svg
 share/gnome/pixmaps/gtali/gnome-dice-1.svg
 share/gnome/pixmaps/gtali/gnome-dice-2.svg
@@ -511,10 +734,18 @@ share/gnome/pixmaps/gtali/gnome-dice-4.svg
 share/gnome/pixmaps/gtali/gnome-dice-5.svg
 share/gnome/pixmaps/gtali/gnome-dice-6.svg
 share/gnome/pixmaps/gtali/gnome-dice-none.svg
+share/gnome/pixmaps/gtali/kismet-none.svg
+share/gnome/pixmaps/gtali/kismet1.svg
+share/gnome/pixmaps/gtali/kismet2.svg
+share/gnome/pixmaps/gtali/kismet3.svg
+share/gnome/pixmaps/gtali/kismet4.svg
+share/gnome/pixmaps/gtali/kismet5.svg
+share/gnome/pixmaps/gtali/kismet6.svg
 share/gnome/pixmaps/iagno/classic.png
 share/gnome/pixmaps/iagno/woodtrim.png
 share/gnome/pixmaps/mahjongg/postmodern.svg
 share/gnome/pixmaps/mahjongg/smooth.png
+share/gnome/pixmaps/sudoku.png
 share/gnome/sol-games/agnes.scm
 share/gnome/sol-games/athena.scm
 share/gnome/sol-games/auld_lang_syne.scm
@@ -579,8 +810,6 @@ share/gnome/sol-games/seahaven.scm
 share/gnome/sol-games/sir_tommy.scm
 share/gnome/sol-games/sol.scm
 share/gnome/sol-games/spider.scm
-share/gnome/sol-games/spider_one_suit.scm
-share/gnome/sol-games/spider_two_suit.scm
 share/gnome/sol-games/spiderette.scm
 share/gnome/sol-games/straight_up.scm
 share/gnome/sol-games/streets_and_alleys.scm
@@ -623,23 +852,19 @@ share/gnome/sounds/gnometris/slide.wav
 share/gnome/sounds/gnometris/turn.wav
 share/gnome/sounds/iagno/flip-piece.wav
 share/gnome/sounds/iagno/gameover.wav
-share/icons/hicolor/16x16/apps/gnome-ataxx.png
 share/icons/hicolor/16x16/apps/gnome-gnomine.png
 share/icons/hicolor/16x16/apps/gnome-iagno.png
 share/icons/hicolor/16x16/apps/gnome-nibbles.png
 share/icons/hicolor/16x16/apps/gnome-tali.png
-share/icons/hicolor/22x22/apps/gnome-ataxx.png
 share/icons/hicolor/22x22/apps/gnome-gnomine.png
 share/icons/hicolor/22x22/apps/gnome-iagno.png
 share/icons/hicolor/22x22/apps/gnome-nibbles.png
 share/icons/hicolor/22x22/apps/gnome-tali.png
-share/icons/hicolor/32x32/apps/gnome-ataxx.png
 share/icons/hicolor/32x32/apps/gnome-gnomine.png
 share/icons/hicolor/32x32/apps/gnome-iagno.png
 share/icons/hicolor/32x32/apps/gnome-nibbles.png
 share/icons/hicolor/32x32/apps/gnome-tali.png
 share/icons/hicolor/48x48/apps/gnome-aisleriot.png
-share/icons/hicolor/48x48/apps/gnome-ataxx.png
 share/icons/hicolor/48x48/apps/gnome-blackjack.png
 share/icons/hicolor/48x48/apps/gnome-five-or-more.png
 share/icons/hicolor/48x48/apps/gnome-four-in-a-row.png
@@ -654,7 +879,6 @@ share/icons/hicolor/48x48/apps/gnome-robots.png
 share/icons/hicolor/48x48/apps/gnome-same-gnome.png
 share/icons/hicolor/48x48/apps/gnome-tali.png
 share/icons/hicolor/48x48/apps/gnome-tetravex.png
-share/icons/hicolor/scalable/apps/gnome-ataxx.svg
 share/icons/hicolor/scalable/apps/gnome-gnomine.svg
 share/icons/hicolor/scalable/apps/gnome-iagno.svg
 share/icons/hicolor/scalable/apps/gnome-nibbles.svg
@@ -740,8 +964,10 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/pixmaps/mahjongg
 @dirrm share/gnome/pixmaps/iagno
 @dirrm share/gnome/pixmaps/gtali
+@dirrm share/gnome/pixmaps/gnotravex
 @dirrm share/gnome/pixmaps/gnomine
 @dirrm share/gnome/pixmaps/gnometris
+@dirrm share/gnome/pixmaps/gnome-sudoku
 @dirrm share/gnome/pixmaps/gnome-games-common/icons
 @dirrm share/gnome/pixmaps/gnome-games-common/cards
 @dirrm share/gnome/pixmaps/gnome-games-common
@@ -749,10 +975,19 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/pixmaps/gnibbles
 @dirrm share/gnome/pixmaps/gnect
 @dirrm share/gnome/pixmaps/glines
+@dirrm share/gnome/pixmaps/glchess
 @dirrm share/gnome/pixmaps/cards/slots
 @dirrm share/gnome/pixmaps/cards
 @dirrm share/gnome/pixmaps/blackjack
+@dirrm share/gnome/omf/same-gnome
 @dirrm share/gnome/omf/gnome-games
+@dirrm share/gnome/omf/gnect
+@dirrm share/gnome/omf/glines
+@dirrm share/gnome/omf/glchess
+@dirrm share/gnome/help/same-gnome/sv/figures
+@dirrm share/gnome/help/same-gnome/sv
+@dirrm share/gnome/help/same-gnome/ru/figures
+@dirrm share/gnome/help/same-gnome/ru
 @dirrm share/gnome/help/same-gnome/C/figures
 @dirrm share/gnome/help/same-gnome/C
 @dirrm share/gnome/help/same-gnome
@@ -777,6 +1012,9 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/help/gnomine
 @dirrm share/gnome/help/gnometris/C
 @dirrm share/gnome/help/gnometris
+@dirrm share/gnome/help/gnome-sudoku/C/figures
+@dirrm share/gnome/help/gnome-sudoku/C
+@dirrm share/gnome/help/gnome-sudoku
 @dirrm share/gnome/help/gnobots2/it
 @dirrm share/gnome/help/gnobots2/es
 @dirrm share/gnome/help/gnobots2/da
@@ -786,15 +1024,22 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/help/gnibbles/C/figures
 @dirrm share/gnome/help/gnibbles/C
 @dirrm share/gnome/help/gnibbles
+@dirrm share/gnome/help/gnect/sv/figures
+@dirrm share/gnome/help/gnect/sv
 @dirrm share/gnome/help/gnect/C/figures
 @dirrm share/gnome/help/gnect/C
 @dirrm share/gnome/help/gnect
+@dirrm share/gnome/help/glines/sv/figures
+@dirrm share/gnome/help/glines/sv
+@dirrm share/gnome/help/glines/ru/figures
+@dirrm share/gnome/help/glines/ru
+@dirrm share/gnome/help/glines/fr/figures
+@dirrm share/gnome/help/glines/fr
 @dirrm share/gnome/help/glines/C/figures
 @dirrm share/gnome/help/glines/C
 @dirrm share/gnome/help/glines
-@dirrm share/gnome/help/gataxx/C/figures
-@dirrm share/gnome/help/gataxx/C
-@dirrm share/gnome/help/gataxx
+@dirrm share/gnome/help/glchess/C
+@dirrm share/gnome/help/glchess
 @dirrm share/gnome/help/blackjack/C/figures
 @dirrm share/gnome/help/blackjack/C
 @dirrm share/gnome/help/blackjack
@@ -803,19 +1048,32 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/help/aisleriot/C/figures
 @dirrm share/gnome/help/aisleriot/C
 @dirrm share/gnome/help/aisleriot
+@dirrm share/gnome/gnome-sudoku
 @dirrm share/gnome/gnome-games/same-gnome/themes/2.10
 @dirrm share/gnome/gnome-games/same-gnome/themes
 @dirrm share/gnome/gnome-games/same-gnome
 @dirrm share/gnome/gnome-games/mahjongg/maps
 @dirrm share/gnome/gnome-games/mahjongg
-@dirrm share/gnome/gnome-games/ataxx/themes/2.14
-@dirrm share/gnome/gnome-games/ataxx/themes
-@dirrm share/gnome/gnome-games/ataxx
 @dirrm share/gnome/gnome-games
 @dirrm share/gnome/gnobots2
 @dirrm share/gnome/gnibbles
 @dirrm share/gnome/gnect
+@dirrm share/gnome/glchess
+@dirrm share/gnome/ggz/gnome-games
+@dirrm share/gnome/ggz
 @dirrm share/gnome/blackjack
+@dirrm %%PYTHON_SITELIBDIR%%/gnome_sudoku/gtk_goodies
+@dirrm %%PYTHON_SITELIBDIR%%/gnome_sudoku
+@dirrm %%PYTHON_SITELIBDIR%%/glchess/ui
+@dirrm %%PYTHON_SITELIBDIR%%/glchess/scene/opengl
+@dirrm %%PYTHON_SITELIBDIR%%/glchess/scene/cairo
+@dirrm %%PYTHON_SITELIBDIR%%/glchess/scene
+@dirrm %%PYTHON_SITELIBDIR%%/glchess/network
+@dirrm %%PYTHON_SITELIBDIR%%/glchess/gtkui
+@dirrm %%PYTHON_SITELIBDIR%%/glchess/chess
+@dirrm %%PYTHON_SITELIBDIR%%/glchess
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/zh_HK/LC_MESSAGES

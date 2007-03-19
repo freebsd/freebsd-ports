@@ -3,26 +3,32 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/system-tools-backends/Makefile,v 1.21 2006/07/27 03:59:24 marcus Exp $
+#   $MCom: ports/sysutils/system-tools-backends/Makefile,v 1.34 2007/03/12 12:25:41 ahze Exp $
 #
 
 PORTNAME=	system-tools-backends
-PORTVERSION=	1.4.2
-PORTREVISION=	3
+PORTVERSION=	2.2.0
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.4
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Backend system admin scripts for gnome-system-tools
 
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DBus.pm:${PORTSDIR}/devel/p5-Net-DBus
+LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DBus.pm:${PORTSDIR}/devel/p5-Net-DBus
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
-USE_GETTEXT=	yes
-USE_GNOME=	gnomehack gnometarget intlhack
+USE_GNOME=	gnomehack intlhack glib20
 GNU_CONFIGURE=	yes
+USE_RC_SUBR=	system-tools-backends
+USE_GNOME_SUBR=	yes
+CONFIGURE_ARGS=	--with-stb-group=wheel \
+		--localstatedir=/var
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -30,12 +36,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .if ${PERL_LEVEL} <= 500800
 RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-.endif
-
-.if ${PERL_LEVEL} < 500600
-post-configure:
-	@${FIND} ${WRKSRC} \( -name "*.pl" -or -name "*-conf" \) | \
-		${XARGS} ${REINPLACE_CMD} -e 's|@scriptsdir|[@]scriptsdir|g'
 .endif
 
 .include <bsd.port.post.mk>

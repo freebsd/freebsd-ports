@@ -7,6 +7,7 @@ bin/derdump
 bin/makepqg
 bin/mangle
 bin/modutil
+bin/nss-config
 bin/ocspclnt
 bin/oidcalc
 bin/p7content
@@ -113,18 +114,20 @@ include/nss/nss/sslerr.h
 include/nss/nss/sslproto.h
 include/nss/nss/sslt.h
 include/nss/nss/watcomfx.h
-lib/libcrmf.a
-lib/libfreebl3.so
-lib/libfreebl3.so.1
-lib/libnss3.so
-lib/libnss3.so.1
-lib/libnssckbi.so
-lib/libnssckbi.so.1
-lib/libsmime3.so
-lib/libsmime3.so.1
-lib/libsoftokn3.so
-lib/libsoftokn3.so.1
-lib/libssl3.so
-lib/libssl3.so.1
+lib/nss/libcrmf.a
+lib/nss/libfreebl3.so
+lib/nss/libfreebl3.so.1
+lib/nss/libnss3.so
+lib/nss/libnss3.so.1
+lib/nss/libnssckbi.so
+lib/nss/libnssckbi.so.1
+lib/nss/libsmime3.so
+lib/nss/libsmime3.so.1
+lib/nss/libsoftokn3.so
+lib/nss/libsoftokn3.so.1
+lib/nss/libssl3.so
+lib/nss/libssl3.so.1
+libdata/pkgconfig/nss.pc
+@dirrm lib/nss
 @dirrm include/nss/nss
 @dirrm include/nss

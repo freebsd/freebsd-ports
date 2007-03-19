@@ -1,5 +1,5 @@
---- src/info.c.orig	Mon Apr  3 15:41:33 2006
-+++ src/info.c	Sun Apr 23 21:57:39 2006
+--- src/info.c.orig	Fri Dec  1 10:36:15 2006
++++ src/info.c	Mon Dec 18 17:32:19 2006
 @@ -20,6 +20,10 @@
  #include <gtk/gtk.h>
  #include <glib/gi18n.h>
@@ -76,7 +76,7 @@
  			(*iface) = g_strdup_printf ("%s (%s)", _(info_iface_desc[i].name), dev_name);
  			if (info_iface_desc[i].pixbuf == NULL) {
  				path = g_build_filename (PIXMAPS_DIR, info_iface_desc[i].icon, NULL);
-@@ -217,38 +260,87 @@ info_nic_update_stats (gpointer data)
+@@ -218,38 +261,87 @@ info_nic_update_stats (gpointer data)
  	gchar tx[10], tx_error[10], tx_drop[10], tx_ovr[10]; 
  	*/
  	gchar iface[30]; /*, flags[30]; */
@@ -170,7 +170,7 @@
  
  		if (g_ascii_strcasecmp (iface, text) == 0) {
  			/*
-@@ -276,7 +368,9 @@ info_nic_update_stats (gpointer data)
+@@ -277,7 +369,9 @@ info_nic_update_stats (gpointer data)
  	}
  	
  	g_io_channel_unref (io);
@@ -181,10 +181,10 @@
  
  	return TRUE;
  }
-@@ -405,8 +499,20 @@ info_get_nic_information (const gchar *n
- 	InfoIpAddr *ip;
- 	gint flags;
+@@ -425,8 +519,19 @@ info_get_nic_information (const gchar *n
+ 	#ifdef __linux__
  	mii_data_result data;
+ 	#endif
 +#ifdef __FreeBSD__
 +	gint hwmib[6];
 +	size_t hwlen;
@@ -199,21 +199,10 @@
 +		g_warning ("getifaddrs failed: %s", g_strerror (errno));
 +		goto fail;
 +	}
-+	memset (&data, 0, sizeof (data));
  
  	for (ifr6 = ifa0; ifr6; ifr6 = ifr6->ifa_next) {
  		if (strcmp (ifr6->ifa_name, nic) != 0) {
-@@ -452,7 +558,9 @@ info_get_nic_information (const gchar *n
- 			ifc.ifc_req = (struct ifreq *) buf;
- 			ioctl (sockfd, SIOCGIFCONF, &ifc);
- 
-+#if defined(__linux__)
- 			data = mii_get_basic (nic);
-+#endif /* defined(__linux__) */
- 
- 			for (ptr = buf; ptr < buf + ifc.ifc_len;) {
- 				ifr = (struct ifreq *) ptr;
-@@ -483,6 +591,45 @@ info_get_nic_information (const gchar *n
+@@ -510,6 +615,45 @@ info_get_nic_information (const gchar *n
  				   (int) ((guchar *) &ifrcopy.ifr_hwaddr.sa_data)[3],
  				   (int) ((guchar *) &ifrcopy.ifr_hwaddr.sa_data)[4],
  				   (int) ((guchar *) &ifrcopy.ifr_hwaddr.sa_data)[5]);
@@ -259,7 +248,7 @@
  #else
  			g_sprintf (dst, NOT_AVAILABLE);
  #endif /* SIOCGIFHWADDR */
-@@ -595,6 +742,8 @@ info_get_nic_information (const gchar *n
+@@ -625,6 +769,8 @@ info_get_nic_information (const gchar *n
  	}
  
  	freeifaddrs (ifa0);

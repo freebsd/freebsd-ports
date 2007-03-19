@@ -3,15 +3,13 @@
 # Whom:				Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/libgail-gnome/Makefile,v 1.16 2006/09/10 00:51:17 mezz Exp $
+#   $MCom: ports/x11-toolkits/libgail-gnome/Makefile,v 1.18 2007/03/12 13:52:14 ahze Exp $
 #
 
 PORTNAME=	libgail-gnome
-PORTVERSION=	1.1.3
-PORTREVISION=	2
+PORTVERSION=	1.18.0
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.1
+MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -24,18 +22,10 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomeprefix gnomehack gnomepanel atspi
-CONFIGURE_ARGS=	--enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+PLIST_FILES=	lib/gtk-2.0/modules/libgail-gnome.la \
+		lib/gtk-2.0/modules/libgail-gnome.so \
+		libdata/pkgconfig/libgail-gnome.pc
 
-post-patch:
-	@${REINPLACE_CMD} -e "/^SUBDIRS =/s/test//" \
-		${WRKSRC}/Makefile.in
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	does not build on 4.X
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

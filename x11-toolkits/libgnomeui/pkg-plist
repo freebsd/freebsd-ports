@@ -67,6 +67,7 @@ share/locale/am/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ar/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/az/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/be/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/be@latin/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/bg/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/bn/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/bn_IN/LC_MESSAGES/libgnomeui-2.0.mo
@@ -77,6 +78,7 @@ share/locale/cs/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/cy/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/da/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/de/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/dz/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/el/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/en_CA/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/en_GB/LC_MESSAGES/libgnomeui-2.0.mo
@@ -210,11 +212,15 @@ share/locale/zu/LC_MESSAGES/libgnomeui-2.0.mo
 @dirrmtry share/locale/fi
 @dirrmtry share/locale/el/LC_MESSAGES
 @dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrmtry share/locale/cs/LC_MESSAGES
 @dirrmtry share/locale/cs
 @dirrmtry share/locale/ca/LC_MESSAGES
 @dirrmtry share/locale/ca
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
 @dirrmtry share/locale/be/LC_MESSAGES
 @dirrmtry share/locale/be

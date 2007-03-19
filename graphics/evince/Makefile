@@ -3,12 +3,11 @@
 # Whom:					Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/graphics/evince/Makefile,v 1.58 2006/10/10 02:27:26 ahze Exp $
+#   $MCom: ports/graphics/evince/Makefile,v 1.64 2007/03/13 12:00:09 ahze Exp $
 #
 
 PORTNAME=	evince
-PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -33,6 +32,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 GCONF_SCHEMAS=	evince.schemas evince-thumbnailer.schemas
+
+MAN1=		evince.1
 
 OPTIONS=	DVI		"Enable DVI viewer support"		off \
 		T1LIB		"Enable T1LIB for TYPE1 fonts to DVI (Enables DVI)"	off \
@@ -104,10 +105,8 @@ RUN_DEPENDS+=	unrar:${PORTSDIR}/archivers/unrar \
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lt1lib|-lt1 -lm| ; \
-		s|execinfo.h|#|g' \
-		${WRKSRC}/configure \
-		${WRKSRC}/dvi/mdvi-lib/Makefile.in
+	@${REINPLACE_CMD} -e 's|execinfo.h|#|g' \
+		${WRKSRC}/configure
 
 post-install:
 	@-update-desktop-database

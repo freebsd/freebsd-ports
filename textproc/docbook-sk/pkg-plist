@@ -7,9 +7,7 @@ share/xml/docbook/%%DTD_VERSION%%/dbgenent.mod
 share/xml/docbook/%%DTD_VERSION%%/dbhierx.mod
 share/xml/docbook/%%DTD_VERSION%%/dbnotnx.mod
 share/xml/docbook/%%DTD_VERSION%%/dbpoolx.mod
-@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove CATALOG %%DOCBOOKDIR%%/docbook.cat
 share/xml/docbook/%%DTD_VERSION%%/docbook.cat
-@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DOCBOOKDIR%%/docbook.cat
 share/xml/docbook/%%DTD_VERSION%%/docbookx.dtd
 @exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//ELEMENTS DocBook XML Information Pool V4.1.2//EN" file://%%DOCBOOKDIR%%/dbpoolx.mod
 @exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//DTD DocBook XML V4.1.2//EN" file://%%DOCBOOKDIR%%/docbookx.dtd

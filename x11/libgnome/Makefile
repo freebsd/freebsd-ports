@@ -3,11 +3,11 @@
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/libgnome/Makefile,v 1.86 2006/09/04 18:09:21 marcus Exp $
+#   $MCom: ports/x11/libgnome/Makefile,v 1.100 2007/03/12 15:49:09 ahze Exp $
 #
 
 PORTNAME=	libgnome
-PORTVERSION=	2.16.0
+PORTVERSION=	2.18.0
 PORTREVISION?=	0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -52,7 +52,9 @@ GCONF_SCHEMAS=	desktop_gnome_accessibility_keyboard.schemas \
 		desktop_gnome_peripherals_keyboard.schemas \
 		desktop_gnome_peripherals_mouse.schemas \
 		desktop_gnome_sound.schemas desktop_gnome_thumbnailers.schemas \
-		desktop_gnome_typing_break.schemas
+		desktop_gnome_typing_break.schemas \
+		desktop_gnome_applications_at_mobility.schemas \
+		desktop_gnome_applications_at_visual.schemas
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \

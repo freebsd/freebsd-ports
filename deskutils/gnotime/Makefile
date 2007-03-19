@@ -3,12 +3,12 @@
 # Whom:			Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
 #
 # $FreeBSD$
-#   $MCom$
+#   $MCom: ports/deskutils/gnotime/Makefile,v 1.18 2007/03/14 17:45:39 marcus Exp $
 #
 
 PORTNAME=	gnotime
 PORTVERSION=	2.2.2
-PORTREVISON=	2
+PORTREVISON=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gttr
@@ -30,5 +30,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 
 MAN1=		gnotime.1
 GCONF_SCHEMAS=	gnotime.schemas
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|libgtkhtml-3.8|libgtkhtml-3.14|g' \
+	    	${WRKSRC}/configure
 
 .include <bsd.port.mk>

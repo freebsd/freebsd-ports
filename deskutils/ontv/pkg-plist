@@ -10,9 +10,6 @@
 %%PYTHON_SITELIBDIR%%/ontv/Configuration.py
 %%PYTHON_SITELIBDIR%%/ontv/Configuration.pyc
 %%PYTHON_SITELIBDIR%%/ontv/Configuration.pyo
-%%PYTHON_SITELIBDIR%%/ontv/DBus.py
-%%PYTHON_SITELIBDIR%%/ontv/DBus.pyc
-%%PYTHON_SITELIBDIR%%/ontv/DBus.pyo
 %%PYTHON_SITELIBDIR%%/ontv/GUI.py
 %%PYTHON_SITELIBDIR%%/ontv/GUI.pyc
 %%PYTHON_SITELIBDIR%%/ontv/GUI.pyo
@@ -52,6 +49,12 @@
 %%PYTHON_SITELIBDIR%%/ontv/TimeSpan.py
 %%PYTHON_SITELIBDIR%%/ontv/TimeSpan.pyc
 %%PYTHON_SITELIBDIR%%/ontv/TimeSpan.pyo
+%%PYTHON_SITELIBDIR%%/ontv/Utils.py
+%%PYTHON_SITELIBDIR%%/ontv/Utils.pyc
+%%PYTHON_SITELIBDIR%%/ontv/Utils.pyo
+%%PYTHON_SITELIBDIR%%/ontv/XMLTVAssistant.py
+%%PYTHON_SITELIBDIR%%/ontv/XMLTVAssistant.pyc
+%%PYTHON_SITELIBDIR%%/ontv/XMLTVAssistant.pyo
 %%PYTHON_SITELIBDIR%%/ontv/XMLTVFile.py
 %%PYTHON_SITELIBDIR%%/ontv/XMLTVFile.pyc
 %%PYTHON_SITELIBDIR%%/ontv/XMLTVFile.pyo
@@ -70,11 +73,20 @@
 libdata/bonobo/servers/GNOME_OnTVApplet.server
 libexec/ontv
 share/gnome/gnome-2.0/ui/GNOME_OnTVApplet.xml
-share/gnome/ontv/ontv-logo-downloading.png
+share/gnome/ontv/images/ontv-logo-downloading.png
 share/gnome/ontv/ontv.glade
-share/gnome/pixmaps/ontv.png
+share/icons/hicolor/16x16/apps/ontv.png
+share/icons/hicolor/22x22/apps/ontv.png
+share/icons/hicolor/24x24/apps/ontv.png
+share/icons/hicolor/32x32/apps/ontv.png
+share/icons/hicolor/48x48/apps/ontv.png
+share/icons/hicolor/scalable/apps/ontv.svg
+share/locale/ar/LC_MESSAGES/ontv.mo
 share/locale/bg/LC_MESSAGES/ontv.mo
+share/locale/ca/LC_MESSAGES/ontv.mo
+share/locale/cs/LC_MESSAGES/ontv.mo
 share/locale/de/LC_MESSAGES/ontv.mo
+share/locale/dz/LC_MESSAGES/ontv.mo
 share/locale/en_CA/LC_MESSAGES/ontv.mo
 share/locale/en_GB/LC_MESSAGES/ontv.mo
 share/locale/es/LC_MESSAGES/ontv.mo
@@ -86,10 +98,12 @@ share/locale/nl/LC_MESSAGES/ontv.mo
 share/locale/pa/LC_MESSAGES/ontv.mo
 share/locale/pl/LC_MESSAGES/ontv.mo
 share/locale/pt_BR/LC_MESSAGES/ontv.mo
+share/locale/sk/LC_MESSAGES/ontv.mo
 share/locale/sv/LC_MESSAGES/ontv.mo
 share/locale/uk/LC_MESSAGES/ontv.mo
 share/locale/vi/LC_MESSAGES/ontv.mo
 share/locale/zh_CN/LC_MESSAGES/ontv.mo
+@dirrm share/gnome/ontv/images
 @dirrm share/gnome/ontv
 @dirrm %%PYTHON_SITELIBDIR%%/ontv/keybinder
 @dirrm %%PYTHON_SITELIBDIR%%/ontv
@@ -97,7 +111,15 @@ share/locale/zh_CN/LC_MESSAGES/ontv.mo
 @dirrmtry share/locale/zh_CN
 @dirrmtry share/locale/uk/LC_MESSAGES
 @dirrmtry share/locale/uk
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
 @dirrmtry share/locale/pl/LC_MESSAGES
 @dirrmtry share/locale/pl
 @dirrmtry share/locale/fi/LC_MESSAGES
 @dirrmtry share/locale/fi
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca

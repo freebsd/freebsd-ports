@@ -24,6 +24,7 @@ libexec/clock-applet
 libexec/fish-applet-2
 libexec/notification-area-applet
 libexec/wnck-applet
+share/gnome/applications/gnome-panel.desktop
 share/gnome/gnome-2.0/ui/GNOME_ClockApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_FishApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_NotificationAreaApplet.xml
@@ -60,6 +61,9 @@ share/gnome/help/clock/nl/legal.xml
 share/gnome/help/clock/pa/clock.xml
 share/gnome/help/clock/pa/figures/clock_applet.png
 share/gnome/help/clock/pa/legal.xml
+share/gnome/help/clock/ru/clock.xml
+share/gnome/help/clock/ru/figures/clock_applet.png
+share/gnome/help/clock/ru/legal.xml
 share/gnome/help/clock/sr/clock.xml
 share/gnome/help/clock/sr/figures/clock_applet.png
 share/gnome/help/clock/sr/legal.xml
@@ -142,6 +146,14 @@ share/gnome/help/window-list/ko/figures/window_list_group.png
 share/gnome/help/window-list/ko/figures/window_list_group_applet.png
 share/gnome/help/window-list/ko/legal.xml
 share/gnome/help/window-list/ko/window-list.xml
+share/gnome/help/window-list/pa/figures/window_list_applet.png
+share/gnome/help/window-list/pa/figures/window_list_group_applet.png
+share/gnome/help/window-list/pa/legal.xml
+share/gnome/help/window-list/pa/window-list.xml
+share/gnome/help/window-list/ru/figures/window_list_applet.png
+share/gnome/help/window-list/ru/figures/window_list_group_applet.png
+share/gnome/help/window-list/ru/legal.xml
+share/gnome/help/window-list/ru/window-list.xml
 share/gnome/help/window-list/sv/figures/window_list_applet.png
 share/gnome/help/window-list/sv/figures/window_list_group_applet.png
 share/gnome/help/window-list/sv/legal.xml
@@ -185,6 +197,12 @@ share/gnome/help/workspace-switcher/ko/workspace-switcher.xml
 share/gnome/help/workspace-switcher/nl/figures/workspace_switcher_applet.png
 share/gnome/help/workspace-switcher/nl/legal.xml
 share/gnome/help/workspace-switcher/nl/workspace-switcher.xml
+share/gnome/help/workspace-switcher/pa/figures/workspace_switcher_applet.png
+share/gnome/help/workspace-switcher/pa/legal.xml
+share/gnome/help/workspace-switcher/pa/workspace-switcher.xml
+share/gnome/help/workspace-switcher/ru/figures/workspace_switcher_applet.png
+share/gnome/help/workspace-switcher/ru/legal.xml
+share/gnome/help/workspace-switcher/ru/workspace-switcher.xml
 share/gnome/help/workspace-switcher/sv/figures/workspace_switcher_applet.png
 share/gnome/help/workspace-switcher/sv/legal.xml
 share/gnome/help/workspace-switcher/sv/workspace-switcher.xml
@@ -209,6 +227,7 @@ share/gnome/omf/clock/clock-ja.omf
 share/gnome/omf/clock/clock-ko.omf
 share/gnome/omf/clock/clock-nl.omf
 share/gnome/omf/clock/clock-pa.omf
+share/gnome/omf/clock/clock-ru.omf
 share/gnome/omf/clock/clock-sr.omf
 share/gnome/omf/clock/clock-sv.omf
 share/gnome/omf/clock/clock-uk.omf
@@ -238,6 +257,8 @@ share/gnome/omf/window-list/window-list-C.omf
 share/gnome/omf/window-list/window-list-es.omf
 share/gnome/omf/window-list/window-list-fr.omf
 share/gnome/omf/window-list/window-list-it.omf
+share/gnome/omf/window-list/window-list-pa.omf
+share/gnome/omf/window-list/window-list-ru.omf
 share/gnome/omf/window-list/window-list-sv.omf
 share/gnome/omf/window-list/window-list-uk.omf
 share/gnome/omf/window-list/window-list-zh_CN.omf
@@ -246,6 +267,8 @@ share/gnome/omf/workspace-switcher/workspace-switcher-es.omf
 share/gnome/omf/workspace-switcher/workspace-switcher-fr.omf
 share/gnome/omf/workspace-switcher/workspace-switcher-it.omf
 share/gnome/omf/workspace-switcher/workspace-switcher-nl.omf
+share/gnome/omf/workspace-switcher/workspace-switcher-pa.omf
+share/gnome/omf/workspace-switcher/workspace-switcher-ru.omf
 share/gnome/omf/workspace-switcher/workspace-switcher-sv.omf
 share/gnome/omf/workspace-switcher/workspace-switcher-uk.omf
 share/gnome/panel/glade/fish.glade
@@ -265,6 +288,7 @@ share/icons/hicolor/16x16/apps/gnome-panel-clock.png
 share/icons/hicolor/16x16/apps/gnome-panel-drawer.png
 share/icons/hicolor/16x16/apps/gnome-panel-fish.png
 share/icons/hicolor/16x16/apps/gnome-panel-force-quit.png
+share/icons/hicolor/16x16/apps/gnome-panel-launcher.png
 share/icons/hicolor/16x16/apps/gnome-panel-notification-area.png
 share/icons/hicolor/16x16/apps/gnome-panel-separator.png
 share/icons/hicolor/16x16/apps/gnome-panel-window-list.png
@@ -275,6 +299,7 @@ share/icons/hicolor/22x22/apps/gnome-panel-clock.png
 share/icons/hicolor/22x22/apps/gnome-panel-drawer.png
 share/icons/hicolor/22x22/apps/gnome-panel-fish.png
 share/icons/hicolor/22x22/apps/gnome-panel-force-quit.png
+share/icons/hicolor/22x22/apps/gnome-panel-launcher.png
 share/icons/hicolor/22x22/apps/gnome-panel-notification-area.png
 share/icons/hicolor/22x22/apps/gnome-panel-separator.png
 share/icons/hicolor/22x22/apps/gnome-panel-window-list.png
@@ -285,6 +310,7 @@ share/icons/hicolor/24x24/apps/gnome-panel-clock.png
 share/icons/hicolor/24x24/apps/gnome-panel-drawer.png
 share/icons/hicolor/24x24/apps/gnome-panel-fish.png
 share/icons/hicolor/24x24/apps/gnome-panel-force-quit.png
+share/icons/hicolor/24x24/apps/gnome-panel-launcher.png
 share/icons/hicolor/24x24/apps/gnome-panel-notification-area.png
 share/icons/hicolor/24x24/apps/gnome-panel-separator.png
 share/icons/hicolor/24x24/apps/gnome-panel-window-list.png
@@ -295,6 +321,7 @@ share/icons/hicolor/32x32/apps/gnome-panel-clock.png
 share/icons/hicolor/32x32/apps/gnome-panel-drawer.png
 share/icons/hicolor/32x32/apps/gnome-panel-fish.png
 share/icons/hicolor/32x32/apps/gnome-panel-force-quit.png
+share/icons/hicolor/32x32/apps/gnome-panel-launcher.png
 share/icons/hicolor/32x32/apps/gnome-panel-notification-area.png
 share/icons/hicolor/32x32/apps/gnome-panel-separator.png
 share/icons/hicolor/32x32/apps/gnome-panel-window-list.png
@@ -305,6 +332,7 @@ share/icons/hicolor/scalable/apps/gnome-panel-clock.svg
 share/icons/hicolor/scalable/apps/gnome-panel-drawer.svg
 share/icons/hicolor/scalable/apps/gnome-panel-fish.svg
 share/icons/hicolor/scalable/apps/gnome-panel-force-quit.svg
+share/icons/hicolor/scalable/apps/gnome-panel-launcher.svg
 share/icons/hicolor/scalable/apps/gnome-panel-notification-area.svg
 share/icons/hicolor/scalable/apps/gnome-panel-separator.svg
 share/icons/hicolor/scalable/apps/gnome-panel-window-list.svg
@@ -411,6 +439,10 @@ share/locale/zu/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/help/workspace-switcher/uk
 @dirrm share/gnome/help/workspace-switcher/sv/figures
 @dirrm share/gnome/help/workspace-switcher/sv
+@dirrm share/gnome/help/workspace-switcher/ru/figures
+@dirrm share/gnome/help/workspace-switcher/ru
+@dirrm share/gnome/help/workspace-switcher/pa/figures
+@dirrm share/gnome/help/workspace-switcher/pa
 @dirrm share/gnome/help/workspace-switcher/nl/figures
 @dirrm share/gnome/help/workspace-switcher/nl
 @dirrm share/gnome/help/workspace-switcher/ko/figures
@@ -436,6 +468,10 @@ share/locale/zu/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/help/window-list/uk
 @dirrm share/gnome/help/window-list/sv/figures
 @dirrm share/gnome/help/window-list/sv
+@dirrm share/gnome/help/window-list/ru/figures
+@dirrm share/gnome/help/window-list/ru
+@dirrm share/gnome/help/window-list/pa/figures
+@dirrm share/gnome/help/window-list/pa
 @dirrm share/gnome/help/window-list/ko/figures
 @dirrm share/gnome/help/window-list/ko
 @dirrm share/gnome/help/window-list/ja/figures
@@ -485,6 +521,8 @@ share/locale/zu/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/help/clock/sv
 @dirrm share/gnome/help/clock/sr/figures
 @dirrm share/gnome/help/clock/sr
+@dirrm share/gnome/help/clock/ru/figures
+@dirrm share/gnome/help/clock/ru
 @dirrm share/gnome/help/clock/pa/figures
 @dirrm share/gnome/help/clock/pa
 @dirrm share/gnome/help/clock/nl/figures

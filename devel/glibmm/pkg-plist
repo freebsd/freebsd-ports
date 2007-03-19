@@ -16,6 +16,7 @@ include/glibmm-%%API_VERSION%%/glibmm/i18n.h
 include/glibmm-%%API_VERSION%%/glibmm/init.h
 include/glibmm-%%API_VERSION%%/glibmm/interface.h
 include/glibmm-%%API_VERSION%%/glibmm/iochannel.h
+include/glibmm-%%API_VERSION%%/glibmm/keyfile.h
 include/glibmm-%%API_VERSION%%/glibmm/listhandle.h
 include/glibmm-%%API_VERSION%%/glibmm/main.h
 include/glibmm-%%API_VERSION%%/glibmm/markup.h
@@ -32,6 +33,7 @@ include/glibmm-%%API_VERSION%%/glibmm/private/date_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/fileutils_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/interface_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/iochannel_p.h
+include/glibmm-%%API_VERSION%%/glibmm/private/keyfile_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/markup_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/module_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/object_p.h

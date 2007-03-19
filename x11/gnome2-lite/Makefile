@@ -3,7 +3,7 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome2-lite/Makefile,v 1.50 2006/10/14 06:34:16 marcus Exp $
+#   $MCom: ports/x11/gnome2-lite/Makefile,v 1.54 2007/03/02 15:38:59 ahze Exp $
 #
 
 PORTREVISION=	0
@@ -32,7 +32,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-applet
 		gconf-editor:${PORTSDIR}/sysutils/gconf-editor \
 		gnome-control-center:${PORTSDIR}/sysutils/gnome-control-center \
     		gnome-mount:${PORTSDIR}/sysutils/gnome-mount \
-		totem:${PORTSDIR}/multimedia/totem-gstreamer
+		totem:${PORTSDIR}/multimedia/totem
 
 MASTERDIR=	${.CURDIR}/../gnome2
 CONFLICTS=	gnome2-[0-9]*

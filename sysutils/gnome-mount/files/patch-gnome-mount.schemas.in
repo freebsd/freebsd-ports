@@ -1,0 +1,38 @@
+--- gnome-mount.schemas.in.orig	Wed Jun 21 22:45:53 2006
++++ gnome-mount.schemas.in	Sun Dec 31 15:38:28 2006
+@@ -6,7 +6,7 @@
+         <applyto>/system/storage/default_options/vfat/mount_options</applyto>
+         <type>list</type>
+         <list_type>string</list_type>
+-        <default>[shortname=winnt,uid=]</default>
++        <default>[longnames,-u=]</default>
+         <locale name="C">
+           <short>Default mount options for vfat fs</short>
+           <long>A list of default mount options for volumes formatted with the vfat file system.</long>
+@@ -18,7 +18,7 @@
+         <applyto>/system/storage/default_options/iso9660/mount_options</applyto>
+         <type>list</type>
+         <list_type>string</list_type>
+-        <default>[uid=]</default>
++        <default>[]</default>
+         <locale name="C">
+           <short>Default mount options for iso9660 fs</short>
+           <long>A list of default mount options for volumes formatted with the iso9660 file system.</long>
+@@ -30,7 +30,7 @@
+         <applyto>/system/storage/default_options/udf/mount_options</applyto>
+         <type>list</type>
+         <list_type>string</list_type>
+-        <default>[uid=]</default>
++        <default>[]</default>
+         <locale name="C">
+           <short>Default mount options for udf fs</short>
+           <long>A list of default mount options for volumes formatted with the udf file system.</long>
+@@ -42,7 +42,7 @@
+         <applyto>/system/storage/default_options/ntfs/mount_options</applyto>
+         <type>list</type>
+         <list_type>string</list_type>
+-        <default>[umask=222]</default>
++        <default>[-m=222]</default>
+         <locale name="C">
+           <short>Default mount options for ntfs fs</short>
+           <long>A list of default mount options for volumes formatted with the ntfs file system.</long>

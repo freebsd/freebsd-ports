@@ -1,133 +1,56 @@
-libdata/pkgconfig/system-tools-backends.pc
-share/aclocal/system-tools-backends.m4
-share/locale/ar/LC_MESSAGES/system-tools-backends.mo
-share/locale/az/LC_MESSAGES/system-tools-backends.mo
-share/locale/bg/LC_MESSAGES/system-tools-backends.mo
-share/locale/bn/LC_MESSAGES/system-tools-backends.mo
-share/locale/bs/LC_MESSAGES/system-tools-backends.mo
-share/locale/ca/LC_MESSAGES/system-tools-backends.mo
-share/locale/cs/LC_MESSAGES/system-tools-backends.mo
-share/locale/da/LC_MESSAGES/system-tools-backends.mo
-share/locale/de/LC_MESSAGES/system-tools-backends.mo
-share/locale/el/LC_MESSAGES/system-tools-backends.mo
-share/locale/en_CA/LC_MESSAGES/system-tools-backends.mo
-share/locale/en_GB/LC_MESSAGES/system-tools-backends.mo
-share/locale/es/LC_MESSAGES/system-tools-backends.mo
-share/locale/eu/LC_MESSAGES/system-tools-backends.mo
-share/locale/fi/LC_MESSAGES/system-tools-backends.mo
-share/locale/fr/LC_MESSAGES/system-tools-backends.mo
-share/locale/gu/LC_MESSAGES/system-tools-backends.mo
-share/locale/hi/LC_MESSAGES/system-tools-backends.mo
-share/locale/hr/LC_MESSAGES/system-tools-backends.mo
-share/locale/hu/LC_MESSAGES/system-tools-backends.mo
-share/locale/id/LC_MESSAGES/system-tools-backends.mo
-share/locale/it/LC_MESSAGES/system-tools-backends.mo
-share/locale/ja/LC_MESSAGES/system-tools-backends.mo
-share/locale/ko/LC_MESSAGES/system-tools-backends.mo
-share/locale/lt/LC_MESSAGES/system-tools-backends.mo
-share/locale/ms/LC_MESSAGES/system-tools-backends.mo
-share/locale/nb/LC_MESSAGES/system-tools-backends.mo
-share/locale/ne/LC_MESSAGES/system-tools-backends.mo
-share/locale/nl/LC_MESSAGES/system-tools-backends.mo
-share/locale/no/LC_MESSAGES/system-tools-backends.mo
-share/locale/pa/LC_MESSAGES/system-tools-backends.mo
-share/locale/pl/LC_MESSAGES/system-tools-backends.mo
-share/locale/pt/LC_MESSAGES/system-tools-backends.mo
-share/locale/pt_BR/LC_MESSAGES/system-tools-backends.mo
-share/locale/ro/LC_MESSAGES/system-tools-backends.mo
-share/locale/rw/LC_MESSAGES/system-tools-backends.mo
-share/locale/sk/LC_MESSAGES/system-tools-backends.mo
-share/locale/sq/LC_MESSAGES/system-tools-backends.mo
-share/locale/sr/LC_MESSAGES/system-tools-backends.mo
-share/locale/sr@Latn/LC_MESSAGES/system-tools-backends.mo
-share/locale/sv/LC_MESSAGES/system-tools-backends.mo
-share/locale/ta/LC_MESSAGES/system-tools-backends.mo
-share/locale/th/LC_MESSAGES/system-tools-backends.mo
-share/locale/tr/LC_MESSAGES/system-tools-backends.mo
-share/locale/uk/LC_MESSAGES/system-tools-backends.mo
-share/locale/vi/LC_MESSAGES/system-tools-backends.mo
-share/locale/xh/LC_MESSAGES/system-tools-backends.mo
-share/locale/zh_CN/LC_MESSAGES/system-tools-backends.mo
-share/locale/zh_TW/LC_MESSAGES/system-tools-backends.mo
-share/setup-tool-backends/files/general_isdn_ppp_options
-share/setup-tool-backends/scripts/boot-conf
-share/setup-tool-backends/scripts/boot-grub.pl
-share/setup-tool-backends/scripts/boot-lilo.pl
-share/setup-tool-backends/scripts/boot-yaboot.pl
-share/setup-tool-backends/scripts/boot.pl
-share/setup-tool-backends/scripts/debug.pl
-share/setup-tool-backends/scripts/dhcpd-conf
-share/setup-tool-backends/scripts/dhcpd.pl
-share/setup-tool-backends/scripts/disks-conf
-share/setup-tool-backends/scripts/display-conf
-share/setup-tool-backends/scripts/file.pl
-share/setup-tool-backends/scripts/filesys.pl
-share/setup-tool-backends/scripts/font-conf
-share/setup-tool-backends/scripts/font.pl
-share/setup-tool-backends/scripts/general.pl
-share/setup-tool-backends/scripts/guess_system.sh
-share/setup-tool-backends/scripts/internetsharing-conf
-share/setup-tool-backends/scripts/ishare.pl
-share/setup-tool-backends/scripts/media.pl
-share/setup-tool-backends/scripts/memory-conf
-share/setup-tool-backends/scripts/mouse-conf
-share/setup-tool-backends/scripts/network-conf
-share/setup-tool-backends/scripts/network.pl
-share/setup-tool-backends/scripts/package-conf
-share/setup-tool-backends/scripts/parse.pl
-share/setup-tool-backends/scripts/partition.pl
-share/setup-tool-backends/scripts/platform.pl
-share/setup-tool-backends/scripts/print-conf
-share/setup-tool-backends/scripts/print.pl
-share/setup-tool-backends/scripts/process.pl
-share/setup-tool-backends/scripts/replace.pl
-share/setup-tool-backends/scripts/report.pl
-share/setup-tool-backends/scripts/service-list.pl
-share/setup-tool-backends/scripts/service.pl
-share/setup-tool-backends/scripts/services-conf
-share/setup-tool-backends/scripts/share.pl
-share/setup-tool-backends/scripts/shares-conf
-share/setup-tool-backends/scripts/time-conf
-share/setup-tool-backends/scripts/tokenizer.pl
-share/setup-tool-backends/scripts/type1inst
-share/setup-tool-backends/scripts/users-conf
-share/setup-tool-backends/scripts/util.pl
-share/setup-tool-backends/scripts/x.pl
-share/setup-tool-backends/scripts/xml.pl
-@dirrm share/setup-tool-backends/scripts
-@dirrm share/setup-tool-backends/files
-@dirrm share/setup-tool-backends
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/xh/LC_MESSAGES
-@dirrmtry share/locale/xh
-@dirrmtry share/locale/uk/LC_MESSAGES
-@dirrmtry share/locale/uk
-@dirrmtry share/locale/sr/LC_MESSAGES
-@dirrmtry share/locale/sr
-@dirrmtry share/locale/sk/LC_MESSAGES
-@dirrmtry share/locale/sk
-@dirrmtry share/locale/rw/LC_MESSAGES
-@dirrmtry share/locale/rw
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/ro
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/no/LC_MESSAGES
-@dirrmtry share/locale/no
-@dirrmtry share/locale/ne/LC_MESSAGES
-@dirrmtry share/locale/ne
-@dirrmtry share/locale/ko/LC_MESSAGES
-@dirrmtry share/locale/ko
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
+bin/system-tools-backends
+etc/dbus-1/system.d/system-tools-backends.conf
+libdata/pkgconfig/system-tools-backends-2.0.pc
+share/dbus-1/services/org.freedesktop.SystemToolsBackends.GroupsConfig.service
+share/dbus-1/services/org.freedesktop.SystemToolsBackends.HostsConfig.service
+share/dbus-1/services/org.freedesktop.SystemToolsBackends.IfacesConfig.service
+share/dbus-1/services/org.freedesktop.SystemToolsBackends.NFSConfig.service
+share/dbus-1/services/org.freedesktop.SystemToolsBackends.NTPConfig.service
+share/dbus-1/services/org.freedesktop.SystemToolsBackends.Platform.service
+share/dbus-1/services/org.freedesktop.SystemToolsBackends.SMBConfig.service
+share/dbus-1/services/org.freedesktop.SystemToolsBackends.ServicesConfig.service
+share/dbus-1/services/org.freedesktop.SystemToolsBackends.TimeConfig.service
+share/dbus-1/services/org.freedesktop.SystemToolsBackends.UsersConfig.service
+share/dbus-1/services/org.freedesktop.SystemToolsBackends.service
+share/system-tools-backends-2.0/files/general_isdn_ppp_options
+share/system-tools-backends-2.0/scripts/GroupsConfig.pm
+share/system-tools-backends-2.0/scripts/HostsConfig.pm
+share/system-tools-backends-2.0/scripts/IfacesConfig.pm
+share/system-tools-backends-2.0/scripts/Init/Services.pm
+share/system-tools-backends-2.0/scripts/Init/ServicesList.pm
+share/system-tools-backends-2.0/scripts/NFSConfig.pm
+share/system-tools-backends-2.0/scripts/NTPConfig.pm
+share/system-tools-backends-2.0/scripts/Network/Hosts.pm
+share/system-tools-backends-2.0/scripts/Network/Ifaces.pm
+share/system-tools-backends-2.0/scripts/Platform.pm
+share/system-tools-backends-2.0/scripts/SMBConfig.pm
+share/system-tools-backends-2.0/scripts/ServicesConfig.pm
+share/system-tools-backends-2.0/scripts/Shares/NFS.pm
+share/system-tools-backends-2.0/scripts/Shares/SMB.pm
+share/system-tools-backends-2.0/scripts/StbObject.pm
+share/system-tools-backends-2.0/scripts/SystemToolsBackends.pl
+share/system-tools-backends-2.0/scripts/Time/NTP.pm
+share/system-tools-backends-2.0/scripts/Time/TimeDate.pm
+share/system-tools-backends-2.0/scripts/TimeConfig.pm
+share/system-tools-backends-2.0/scripts/Users/Groups.pm
+share/system-tools-backends-2.0/scripts/Users/Shells.pm
+share/system-tools-backends-2.0/scripts/Users/Users.pm
+share/system-tools-backends-2.0/scripts/UsersConfig.pm
+share/system-tools-backends-2.0/scripts/Utils/Backend.pm
+share/system-tools-backends-2.0/scripts/Utils/File.pm
+share/system-tools-backends-2.0/scripts/Utils/Monitor.pm
+share/system-tools-backends-2.0/scripts/Utils/Parse.pm
+share/system-tools-backends-2.0/scripts/Utils/Platform.pm
+share/system-tools-backends-2.0/scripts/Utils/Replace.pm
+share/system-tools-backends-2.0/scripts/Utils/Report.pm
+share/system-tools-backends-2.0/scripts/Utils/Util.pm
+share/system-tools-backends-2.0/scripts/Utils/XML.pm
+@dirrm share/system-tools-backends-2.0/scripts/Utils
+@dirrm share/system-tools-backends-2.0/scripts/Users
+@dirrm share/system-tools-backends-2.0/scripts/Time
+@dirrm share/system-tools-backends-2.0/scripts/Shares
+@dirrm share/system-tools-backends-2.0/scripts/Network
+@dirrm share/system-tools-backends-2.0/scripts/Init
+@dirrm share/system-tools-backends-2.0/scripts
+@dirrm share/system-tools-backends-2.0/files
+@dirrm share/system-tools-backends-2.0

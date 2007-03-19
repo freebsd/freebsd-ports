@@ -146,7 +146,7 @@ share/locale/zh_CN/LC_MESSAGES/at-spi.mo
 share/locale/zh_HK/LC_MESSAGES/at-spi.mo
 share/locale/zh_TW/LC_MESSAGES/at-spi.mo
 @dirrm share/gnome/idl/at-spi-1.0
-@dirrm lib/orbit-2.0
+@dirrmtry lib/orbit-2.0
 @dirrm include/at-spi-1.0/login-helper
 @dirrm include/at-spi-1.0/libspi
 @dirrm include/at-spi-1.0/cspi

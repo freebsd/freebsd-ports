@@ -109,6 +109,7 @@
     SUBDIR += libgnomeuimm26
     SUBDIR += libgtk-java
     SUBDIR += libgtkeditor
+    SUBDIR += libgtksourceviewmm
     SUBDIR += libpanelappletmm
     SUBDIR += libsexy
     SUBDIR += libsexymm
@@ -191,6 +192,7 @@
     SUBDIR += py-sexy
     SUBDIR += py-tkinter
     SUBDIR += py-tktreectrl
+    SUBDIR += py-vte
     SUBDIR += py-wax
     SUBDIR += py-wmgeneral
     SUBDIR += py-wxPython24

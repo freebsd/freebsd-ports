@@ -3,12 +3,11 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-applets/Makefile,v 1.141 2006/10/08 02:12:50 marcus Exp $
+#   $MCom: ports/x11/gnome-applets/Makefile,v 1.152 2007/03/12 17:47:04 marcus Exp $
 #
 
 PORTNAME=	gnome-applets
-PORTVERSION=	2.16.2
-PORTREVISION=	1
+PORTVERSION=	2.18.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -17,13 +16,13 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Applets components for the GNOME 2 Desktop Environment
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/system-tools-backends.pc:${PORTSDIR}/sysutils/system-tools-backends \
-    		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-control-center
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/system-tools-backends-2.0.pc:${PORTSDIR}/sysutils/system-tools-backends \
+		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-control-center
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop \
 		xklavier.11:${PORTSDIR}/x11/libxklavier \
-		gucharmap.5:${PORTSDIR}/deskutils/gucharmap
-RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/system-tools-backends.pc:${PORTSDIR}/sysutils/system-tools-backends \
-    		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-control-center
+		gucharmap.6:${PORTSDIR}/deskutils/gucharmap
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/system-tools-backends-2.0.pc:${PORTSDIR}/sysutils/system-tools-backends \
+		${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-control-center
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
@@ -34,7 +33,7 @@ INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomepanel \
-		gail gnomedocutils
+		gail gnomedocutils libgnomekbd
 WANT_GNOME=	yes
 USE_GSTREAMER=	yes
 GNU_CONFIGURE=	yes
@@ -101,6 +100,8 @@ PLIST_SUB+=	PYTHON="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' \
 		${WRKSRC}/libgweather/weather-met.c
+	@${REINPLACE_CMD} -e 's|system-tools-backends|system-tools-backends-2.0|g' \
+	    	${WRKSRC}/configure
 .if !defined(USE_PYTHON)
 	@${REINPLACE_CMD} -e 's|HAVE_PYGTK="yes"|HAVE_PYGTK="no"|' \
 		${WRKSRC}/configure

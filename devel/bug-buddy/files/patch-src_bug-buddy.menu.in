@@ -1,11 +1,11 @@
---- src/bug-buddy.menu.in.orig	Wed Sep 20 02:28:05 2006
-+++ src/bug-buddy.menu.in	Wed Sep 20 02:28:12 2006
+--- src/bug-buddy.menu.in.orig	Tue Feb 27 13:46:40 2007
++++ src/bug-buddy.menu.in	Tue Feb 27 13:46:54 2007
 @@ -6,7 +6,7 @@
    <Name>Bug Buddy programs</Name>
  
    <!-- Read only files in default .desktop file location -->
 -  <LegacyDir>@prefix@/@DATADIRNAME@/applications</LegacyDir>
 +  <LegacyDir>@prefix@/@DATADIRNAME@/gnome/applications</LegacyDir>
+   <LegacyDir>@prefix@/@DATADIRNAME@/gnome/autostart</LegacyDir>
  
    <!-- we want to process all desktop files; Unfortunately,
-        files with NoDisplay=true won't be returned by the 

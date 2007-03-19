@@ -5,7 +5,6 @@ bin/gnome-session-save
 bin/gnome-wm
 share/gnome/applications/session-properties.desktop
 share/gnome/default.session
-share/gnome/default.wm
 share/gnome/pixmaps/splash/MaMBaNgGaoX-2.12.png
 share/gnome/pixmaps/splash/adamw-piggy-2.12.png
 share/gnome/pixmaps/splash/adamw-trophy-2.12.png
@@ -13,6 +12,7 @@ share/gnome/pixmaps/splash/andreas-slogan-2.12.png
 share/gnome/pixmaps/splash/andreas-splash-2.12.png
 share/gnome/pixmaps/splash/domix-splash-2.12.png
 share/gnome/pixmaps/splash/domix-splash2-2.12.png
+share/gnome/pixmaps/splash/franz-splash_218.png
 share/gnome/pixmaps/splash/gnome-splash.png
 share/gnome/pixmaps/splash/mumija-2.12.png
 share/gnome/pixmaps/splash/mumija2-2.12.png
@@ -21,6 +21,11 @@ share/gnome/pixmaps/splash/original-gnome-splash.png
 share/gnome/pixmaps/splash/tremulant-2.12.png
 share/gnome/pixmaps/splash/tremulant-blood-2.12.png
 share/gnome/pixmaps/splash/tremulant-brushed-metal-2.12.png
+share/icons/hicolor/16x16/apps/session-properties.png
+share/icons/hicolor/22x22/apps/session-properties.png
+share/icons/hicolor/24x24/apps/session-properties.png
+share/icons/hicolor/32x32/apps/session-properties.png
+share/icons/hicolor/scalable/apps/session-properties.svg
 share/locale/af/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-session-2.0.mo

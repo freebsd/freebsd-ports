@@ -1,6 +1,6 @@
 #!/bin/sh
 # $FreeBSD$
-#    $MCom: ports/misc/hicolor-icon-theme/files/pkg-install.in,v 1.1 2006/08/11 01:19:11 ahze Exp $
+#    $MCom: ports/misc/hicolor-icon-theme/files/pkg-install.in,v 1.4 2007/02/16 18:14:25 mezz Exp $
 
 PATH=/bin:/usr/bin:/usr/sbin
 

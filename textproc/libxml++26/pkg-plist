@@ -1,3 +1,4 @@
+include/libxml++-%%API_VERSION%%/include/libxml++config.h
 include/libxml++-%%API_VERSION%%/libxml++/attribute.h
 include/libxml++-%%API_VERSION%%/libxml++/document.h
 include/libxml++-%%API_VERSION%%/libxml++/dtd.h
@@ -124,9 +125,6 @@ libdata/pkgconfig/libxml++-%%API_VERSION%%.pc
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/classxmlpp_1_1Parser__inherit__graph.md5
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/classxmlpp_1_1ProcessingInstructionNode-members.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/classxmlpp_1_1ProcessingInstructionNode.html
-%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/classxmlpp_1_1ProcessingInstructionNode__inherit__graph.jpg
-%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/classxmlpp_1_1ProcessingInstructionNode__inherit__graph.map
-%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/classxmlpp_1_1ProcessingInstructionNode__inherit__graph.md5
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/classxmlpp_1_1SaxParser-members.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/classxmlpp_1_1SaxParser.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/classxmlpp_1_1SaxParser__inherit__graph.jpg
@@ -169,25 +167,25 @@ libdata/pkgconfig/libxml++-%%API_VERSION%%.pc
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/classxmlpp_1_1validity__error__inherit__graph.md5
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/commentnode_8h.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/contentnode_8h.html
-%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_000000.html
-%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_000000_dep.jpg
-%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_000000_dep.map
-%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_000001.html
-%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_000001_dep.jpg
-%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_000001_dep.map
-%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_000002.html
-%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_000002_dep.jpg
-%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_000002_dep.map
-%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_000003.html
-%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_000003_dep.jpg
-%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_000003_dep.map
-%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_000004.html
-%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_000004_dep.jpg
-%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_000004_dep.map
-%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_000005.html
-%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_000005_dep.jpg
-%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_000005_dep.map
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dirs.html
+%%PORTDOCS%%share/doc/libxml++-2.6/docs/reference/%%DOC_VERSION%%/html/dir_060042f61ad41255a77b5a60dc66afb4.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_060042f61ad41255a77b5a60dc66afb4_dep.jpg
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_060042f61ad41255a77b5a60dc66afb4_dep.map
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_98cc7bcadc131313690a7320eb0caa09.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_98cc7bcadc131313690a7320eb0caa09_dep.jpg
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_98cc7bcadc131313690a7320eb0caa09_dep.map
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_9cc7404ab660b5374779d403c202c70c.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_9cc7404ab660b5374779d403c202c70c_dep.jpg
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_9cc7404ab660b5374779d403c202c70c_dep.map
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_c513157412c8384caf468454c2c3cfa9.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_c513157412c8384caf468454c2c3cfa9_dep.jpg
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_c513157412c8384caf468454c2c3cfa9_dep.map
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_cf5c1e9933cb056be190fe9c88b8f1f0.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_cf5c1e9933cb056be190fe9c88b8f1f0_dep.jpg
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_cf5c1e9933cb056be190fe9c88b8f1f0_dep.map
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_d49b71a5503b600be72da967490472e5.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_d49b71a5503b600be72da967490472e5_dep.jpg
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/dir_d49b71a5503b600be72da967490472e5_dep.map
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/document_8h.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/domparser_8h.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/doxygen.css
@@ -219,6 +217,25 @@ libdata/pkgconfig/libxml++-%%API_VERSION%%.pc
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_0x77.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_0x78.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_0x7e.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_func_0x63.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_func_0x64.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_func_0x65.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_func_0x66.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_func_0x67.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_func_0x68.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_func_0x69.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_func_0x6b.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_func_0x6c.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_func_0x6d.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_func_0x6e.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_func_0x6f.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_func_0x70.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_func_0x72.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_func_0x73.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_func_0x74.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_func_0x76.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_func_0x77.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_func_0x7e.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_enum.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_eval.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_func.html
@@ -226,6 +243,7 @@ libdata/pkgconfig/libxml++-%%API_VERSION%%.pc
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_type.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/functions_vars.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/globals.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/globals_defs.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/globals_enum.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/globals_eval.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/globals_type.html
@@ -259,13 +277,14 @@ libdata/pkgconfig/libxml++-%%API_VERSION%%.pc
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/internal__error_8h.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/istreamparserinputbuffer_8h.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/keepblanks_8h.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/libxml++config_8h.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/libxml++_8h.html
-%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/namespaceSigC.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/namespacemembers.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/namespacemembers_enum.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/namespacemembers_eval.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/namespacemembers_type.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/namespaces.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/namespacesigc.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/namespacexmlpp.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/node_8h.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/noncopyable_8h.html
@@ -280,6 +299,7 @@ libdata/pkgconfig/libxml++-%%API_VERSION%%.pc
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/structxmlpp_1_1SaxParser_1_1Attribute.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/structxmlpp_1_1SaxParser_1_1AttributeHasName-members.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/structxmlpp_1_1SaxParser_1_1AttributeHasName.html
+%%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/tabs.css
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/textnode_8h.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/textreader_8h.html
 %%PORTDOCS%%share/doc/libxml++-%%API_VERSION%%/docs/reference/%%DOC_VERSION%%/html/validator_8h.html
@@ -297,4 +317,5 @@ libdata/pkgconfig/libxml++-%%API_VERSION%%.pc
 @dirrm include/libxml++-%%API_VERSION%%/libxml++/io
 @dirrm include/libxml++-%%API_VERSION%%/libxml++/exceptions
 @dirrm include/libxml++-%%API_VERSION%%/libxml++
+@dirrm include/libxml++-%%API_VERSION%%/include
 @dirrm include/libxml++-%%API_VERSION%%

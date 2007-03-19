@@ -3,7 +3,7 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome2-fifth-toe/Makefile,v 1.79 2006/07/19 06:00:46 ahze Exp $
+#   $MCom: ports/x11/gnome2-fifth-toe/Makefile,v 1.81 2007/03/14 21:39:30 marcus Exp $
 #
 
 PORTREVISION=	0
@@ -21,7 +21,6 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan \
 		${LOCALBASE}/lib/gaim/docklet.so:${PORTSDIR}/net-im/gaim \
 		tsclient:${PORTSDIR}/net/tsclient \
 		galeon:${PORTSDIR}/www/galeon \
-		seahorse:${PORTSDIR}/security/seahorse \
 		${LOCALBASE}/share/gnome/themes/Gorilla/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/gnome-themes-extras \
 		bluefish:${PORTSDIR}/www/bluefish \
 		gossip:${PORTSDIR}/net-im/gossip \

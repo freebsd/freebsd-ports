@@ -1,0 +1,30 @@
+bin/gkbd-indicator-plugins-capplet
+include/libgnomekbd/gkbd-config-registry-client.h
+include/libgnomekbd/gkbd-config-registry.h
+include/libgnomekbd/gkbd-desktop-config.h
+include/libgnomekbd/gkbd-indicator-config.h
+include/libgnomekbd/gkbd-indicator-plugin.h
+include/libgnomekbd/gkbd-indicator.h
+include/libgnomekbd/gkbd-keyboard-config.h
+include/libgnomekbd/gkbd-keyboard-drawing.h
+include/libgnomekbd/gkbd-util.h
+lib/libgnomekbd.a
+lib/libgnomekbd.la
+lib/libgnomekbd.so
+lib/libgnomekbd.so.1
+lib/libgnomekbdui.a
+lib/libgnomekbdui.la
+lib/libgnomekbdui.so
+lib/libgnomekbdui.so.1
+libdata/pkgconfig/libgnomekbd.pc
+libdata/pkgconfig/libgnomekbdui.pc
+share/gnome/applications/gkbd-indicator-plugins-capplet.desktop
+share/gnome/libgnomekbd/glade/gkbd-indicator-plugins.glade
+share/icons/hicolor/48x48/apps/gkbd-indicator-plugins-capplet.png
+share/locale/bg/LC_MESSAGES/libgnomekbd.mo
+share/locale/ja/LC_MESSAGES/libgnomekbd.mo
+share/locale/nb/LC_MESSAGES/libgnomekbd.mo
+share/locale/ru/LC_MESSAGES/libgnomekbd.mo
+@dirrm share/gnome/libgnomekbd/glade
+@dirrm share/gnome/libgnomekbd
+@dirrm include/libgnomekbd

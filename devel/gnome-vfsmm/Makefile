@@ -3,11 +3,11 @@
 # Whom:                 Alexander Nedotsukov <bland@mail.ru>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/gnome-vfsmm/Makefile,v 1.21 2006/08/21 15:51:25 ahze Exp $
+#   $MCom: ports/devel/gnome-vfsmm/Makefile,v 1.23 2007/03/10 05:33:01 marcus Exp $
 #
 
 PORTNAME=	gnome-vfsmm
-PORTVERSION=	2.16.1
+PORTVERSION=	2.18.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}

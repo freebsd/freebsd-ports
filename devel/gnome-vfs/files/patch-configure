@@ -1,6 +1,15 @@
---- configure.orig	Tue Nov  7 04:08:31 2006
-+++ configure	Mon Nov 20 10:52:37 2006
-@@ -21984,6 +21984,8 @@
+--- configure.orig	Mon Feb 12 14:15:37 2007
++++ configure	Mon Feb 12 14:15:37 2007
+@@ -5708,7 +5708,7 @@ fi
+ 
+ 
+ for ac_header in sys/types.h sys/stat.h stdlib.h string.h memory.h strings.h \
+-		  inttypes.h stdint.h unistd.h
++		  inttypes.h stdint.h unistd.h sys/sysmacros.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ echo "$as_me:$LINENO: checking for $ac_header" >&5
+@@ -22101,6 +22101,8 @@ echo $ECHO_N "checking for LC_MESSAGES..
  if test "${am_cv_val_LC_MESSAGES+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
@@ -9,7 +18,7 @@
    cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -22030,6 +22032,7 @@
+@@ -22147,6 +22149,7 @@ am_cv_val_LC_MESSAGES=no
  fi
  rm -f conftest.err conftest.$ac_objext \
        conftest$ac_exeext conftest.$ac_ext
@@ -17,7 +26,7 @@
  fi
  echo "$as_me:$LINENO: result: $am_cv_val_LC_MESSAGES" >&5
  echo "${ECHO_T}$am_cv_val_LC_MESSAGES" >&6
-@@ -23495,6 +23498,7 @@
+@@ -23612,6 +23615,7 @@ if test `eval echo '${'$as_ac_var'}'` = 
    cat >>confdefs.h <<_ACEOF
  #define `echo "HAVE_$ac_func" | $as_tr_cpp` 1
  _ACEOF
@@ -25,16 +34,7 @@
   have_ngettext=yes
  else
    echo "$as_me:$LINENO: checking for ngettext in -lintl" >&5
-@@ -24892,7 +24896,7 @@
- 
- 
- 
--for ac_header in mntent.h sys/mnttab.h sys/vfstab.h sys/cdio.h sys/mount.h sys/mntctl.h sys/vfs.h sys/vmount.h sys/sysctl.h fstab.h fnmatch.h
-+for ac_header in mntent.h sys/mnttab.h sys/vfstab.h sys/cdio.h sys/mount.h sys/mntctl.h sys/vfs.h sys/vmount.h sys/sysctl.h fstab.h fnmatch.h sys/sysmacros.h
- do
- as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
- if eval "test \"\${$as_ac_Header+set}\" = set"; then
-@@ -33245,7 +33249,7 @@
+@@ -33364,7 +33368,7 @@ if test "${openssl_libs+set}" = set; the
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
  
@@ -43,7 +43,7 @@
  		cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -33543,7 +33547,7 @@
+@@ -33662,7 +33666,7 @@ if test "${openssl_libs+set}" = set; the
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
  
@@ -51,24 +51,4 @@
 +		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcrypto"
  		cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
- _ACEOF
-@@ -39124,6 +39128,9 @@
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
-+#ifdef HAVE_SYS_PARAM_H
-+#include <sys/param.h>
-+#endif
- #include <sys/statfs.h>
- #include <sys/fstyp.h>
- _ACEOF
-@@ -39165,6 +39172,9 @@
- cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
-+#ifdef HAVE_SYS_PARAM_H
-+#include <sys/param.h>
-+#endif
- #include <sys/statfs.h>
- #include <sys/vmount.h>
  _ACEOF

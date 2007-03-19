@@ -1,12 +1,47 @@
 bin/fc-cache
+bin/fc-cat
 bin/fc-list
 bin/fc-match
-etc/fonts/conf.d/autohint.conf
-etc/fonts/conf.d/no-bitmaps.conf
-etc/fonts/conf.d/no-sub-pixel.conf
-etc/fonts/conf.d/sub-pixel.conf
-etc/fonts/conf.d/unhinted.conf
-etc/fonts/conf.d/yes-bitmaps.conf
+etc/fonts/conf.avail/10-autohint.conf
+etc/fonts/conf.avail/10-no-sub-pixel.conf
+etc/fonts/conf.avail/10-sub-pixel-bgr.conf
+etc/fonts/conf.avail/10-sub-pixel-rgb.conf
+etc/fonts/conf.avail/10-sub-pixel-vbgr.conf
+etc/fonts/conf.avail/10-sub-pixel-vrgb.conf
+etc/fonts/conf.avail/10-unhinted.conf
+etc/fonts/conf.avail/20-fix-globaladvance.conf
+etc/fonts/conf.avail/20-lohit-gujarati.conf
+etc/fonts/conf.avail/20-unhint-small-vera.conf
+etc/fonts/conf.avail/30-amt-aliases.conf
+etc/fonts/conf.avail/30-urw-aliases.conf
+etc/fonts/conf.avail/40-generic.conf
+etc/fonts/conf.avail/49-sansserif.conf
+etc/fonts/conf.avail/50-user.conf
+etc/fonts/conf.avail/51-local.conf
+etc/fonts/conf.avail/60-latin.conf
+etc/fonts/conf.avail/65-fonts-persian.conf
+etc/fonts/conf.avail/65-nonlatin.conf
+etc/fonts/conf.avail/69-unifont.conf
+etc/fonts/conf.avail/70-no-bitmaps.conf
+etc/fonts/conf.avail/70-yes-bitmaps.conf
+etc/fonts/conf.avail/80-delicious.conf
+etc/fonts/conf.avail/90-synthetic.conf
+etc/fonts/conf.avail/README
+etc/fonts/conf.d/20-fix-globaladvance.conf
+etc/fonts/conf.d/20-lohit-gujarati.conf
+etc/fonts/conf.d/20-unhint-small-vera.conf
+etc/fonts/conf.d/30-amt-aliases.conf
+etc/fonts/conf.d/30-urw-aliases.conf
+etc/fonts/conf.d/40-generic.conf
+etc/fonts/conf.d/49-sansserif.conf
+etc/fonts/conf.d/50-user.conf
+etc/fonts/conf.d/51-local.conf
+etc/fonts/conf.d/60-latin.conf
+etc/fonts/conf.d/65-fonts-persian.conf
+etc/fonts/conf.d/65-nonlatin.conf
+etc/fonts/conf.d/69-unifont.conf
+etc/fonts/conf.d/80-delicious.conf
+etc/fonts/conf.d/90-synthetic.conf
 @unexec if cmp -s %D/etc/fonts/fonts.conf %D/etc/fonts/fonts.conf.default; then rm -f %D/etc/fonts/fonts.conf; fi
 etc/fonts/fonts.conf.default
 @exec [ -f %B/fonts.conf ] || cp %B/%f %B/fonts.conf
@@ -21,4 +56,6 @@ lib/libfontconfig.so.1
 libdata/pkgconfig/fontconfig.pc
 @dirrm include/fontconfig
 @dirrmtry etc/fonts/conf.d
+@dirrmtry etc/fonts/conf.avail
 @dirrmtry etc/fonts
+@unexec rm -rf /var/db/fontconfig 2>/dev/null || true

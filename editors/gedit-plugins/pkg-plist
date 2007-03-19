@@ -22,11 +22,26 @@ lib/gedit-2/plugins/libcharmap.la
 lib/gedit-2/plugins/libcharmap.so
 lib/gedit-2/plugins/libshowtabbar.la
 lib/gedit-2/plugins/libshowtabbar.so
+%%PYTHON%%lib/gedit-2/plugins/sessionsaver.gedit-plugin
+%%PYTHON%%lib/gedit-2/plugins/sessionsaver/__init__.py
+%%PYTHON%%lib/gedit-2/plugins/sessionsaver/__init__.pyc
+%%PYTHON%%lib/gedit-2/plugins/sessionsaver/__init__.pyo
+%%PYTHON%%lib/gedit-2/plugins/sessionsaver/dialogs.py
+%%PYTHON%%lib/gedit-2/plugins/sessionsaver/dialogs.pyc
+%%PYTHON%%lib/gedit-2/plugins/sessionsaver/dialogs.pyo
+%%PYTHON%%lib/gedit-2/plugins/sessionsaver/sessionsaver.glade
+%%PYTHON%%lib/gedit-2/plugins/sessionsaver/store.py
+%%PYTHON%%lib/gedit-2/plugins/sessionsaver/store.pyc
+%%PYTHON%%lib/gedit-2/plugins/sessionsaver/store.pyo
 lib/gedit-2/plugins/showtabbar.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/smartspaces.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/smartspaces.py
 %%PYTHON%%lib/gedit-2/plugins/smartspaces.pyc
 %%PYTHON%%lib/gedit-2/plugins/smartspaces.pyo
+%%PYTHON%%lib/gedit-2/plugins/terminal.gedit-plugin
+%%PYTHON%%lib/gedit-2/plugins/terminal.py
+%%PYTHON%%lib/gedit-2/plugins/terminal.pyc
+%%PYTHON%%lib/gedit-2/plugins/terminal.pyo
 share/locale/ar/LC_MESSAGES/gedit-plugins.mo
 share/locale/az/LC_MESSAGES/gedit-plugins.mo
 share/locale/be/LC_MESSAGES/gedit-plugins.mo
@@ -35,6 +50,7 @@ share/locale/ca/LC_MESSAGES/gedit-plugins.mo
 share/locale/cs/LC_MESSAGES/gedit-plugins.mo
 share/locale/da/LC_MESSAGES/gedit-plugins.mo
 share/locale/de/LC_MESSAGES/gedit-plugins.mo
+share/locale/dz/LC_MESSAGES/gedit-plugins.mo
 share/locale/el/LC_MESSAGES/gedit-plugins.mo
 share/locale/en_CA/LC_MESSAGES/gedit-plugins.mo
 share/locale/en_GB/LC_MESSAGES/gedit-plugins.mo
@@ -87,6 +103,7 @@ share/locale/wa/LC_MESSAGES/gedit-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/gedit-plugins.mo
 share/locale/zh_HK/LC_MESSAGES/gedit-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/gedit-plugins.mo
+%%PYTHON%%@dirrm lib/gedit-2/plugins/sessionsaver
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
@@ -123,6 +140,8 @@ share/locale/zh_TW/LC_MESSAGES/gedit-plugins.mo
 @dirrmtry share/locale/fi
 @dirrmtry share/locale/el/LC_MESSAGES
 @dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrmtry share/locale/cs/LC_MESSAGES
 @dirrmtry share/locale/cs
 @dirrmtry share/locale/ca/LC_MESSAGES

@@ -3,11 +3,11 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome2/Makefile,v 1.182 2006/10/14 06:34:16 marcus Exp $
+#   $MCom: ports/x11/gnome2/Makefile,v 1.201 2007/03/14 21:39:30 marcus Exp $
 #
 
 PORTNAME=	gnome2
-PORTVERSION=	2.16.3
+PORTVERSION=	2.18.0
 PORTREVISION?=	0
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	# empty
@@ -43,15 +43,15 @@ RUN_DEPENDS?=	${LOCALBASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-apple
 		${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera \
 		${LOCALBASE}/libexec/gnome-netstatus-applet:${PORTSDIR}/net/gnome-netstatus \
 		dasher:${PORTSDIR}/accessibility/dasher \
-		evolution-2.8:${PORTSDIR}/mail/evolution \
+		evolution-2.10:${PORTSDIR}/mail/evolution \
 		${LOCALBASE}/libexec/evolution-webcal:${PORTSDIR}/www/evolution-webcal \
 		network-admin:${PORTSDIR}/sysutils/gnome-system-tools \
 		gnome-nettool:${PORTSDIR}/net/gnome-nettool \
 		vino-session:${PORTSDIR}/net/vino \
-		exchange-connector-setup-2.8:${PORTSDIR}/mail/evolution-exchange \
+		exchange-connector-setup-2.10:${PORTSDIR}/mail/evolution-exchange \
 		${LOCALBASE}/lib/gstreamer-0.10/.gstreamer-plugins-core.keep:${PORTSDIR}/multimedia/gstreamer-plugins-core \
 		${LOCALBASE}/lib/gstreamer-0.10/libgstgconfelements.so:${PORTSDIR}/devel/gstreamer-plugins-gconf \
-		totem:${PORTSDIR}/multimedia/totem-gstreamer \
+		totem:${PORTSDIR}/multimedia/totem \
 		gnome-control-center:${PORTSDIR}/sysutils/gnome-control-center \
 		${LOCALBASE}/share/gnome/gnome-background-properties/gnome-branded.xml:${PORTSDIR}/x11-themes/gnome-backgrounds \
 		sound-juicer:${PORTSDIR}/audio/sound-juicer \
@@ -65,8 +65,8 @@ RUN_DEPENDS?=	${LOCALBASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnome-apple
 		gnome-volume-manager:${PORTSDIR}/sysutils/gnome-volume-manager \
 		orca:${PORTSDIR}/accessibility/orca \
 		gnome-mount:${PORTSDIR}/sysutils/gnome-mount \
-		ekiga:${PORTSDIR}/net/ekiga \
-		${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon
+		${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon \
+		seahorse:${PORTSDIR}/security/seahorse
 
 NO_BUILD=	yes
 
@@ -88,8 +88,11 @@ RUN_DEPENDS+=	yelp:${PORTSDIR}/x11/yelp \
 		epiphany:${PORTSDIR}/www/epiphany
 .endif
 .if ${.CURDIR:T}!="gnome2-lite"
-.if ${ARCH} == "i386"
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
 RUN_DEPENDS+=	tomboy:${PORTSDIR}/deskutils/tomboy
+.endif
+.if ${OSVERSION}>=600000
+RUN_DEPENDS+=	ekiga:${PORTSDIR}/net/ekiga
 .endif
 .endif
 .endif

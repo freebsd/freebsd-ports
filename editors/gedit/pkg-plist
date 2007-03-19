@@ -23,6 +23,7 @@ include/gedit-%%VERSION%%/gedit/gedit-tab.h
 include/gedit-%%VERSION%%/gedit/gedit-utils.h
 include/gedit-%%VERSION%%/gedit/gedit-view.h
 include/gedit-%%VERSION%%/gedit/gedit-window.h
+lib/gedit-2/gedit-bugreport.sh
 lib/gedit-2/plugins/changecase.gedit-plugin
 lib/gedit-2/plugins/docinfo.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/externaltools.gedit-plugin
@@ -38,6 +39,9 @@ lib/gedit-2/plugins/docinfo.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/externaltools/functions.py
 %%PYTHON%%lib/gedit-2/plugins/externaltools/functions.pyc
 %%PYTHON%%lib/gedit-2/plugins/externaltools/functions.pyo
+%%PYTHON%%lib/gedit-2/plugins/externaltools/library.py
+%%PYTHON%%lib/gedit-2/plugins/externaltools/library.pyc
+%%PYTHON%%lib/gedit-2/plugins/externaltools/library.pyo
 %%PYTHON%%lib/gedit-2/plugins/externaltools/manager.py
 %%PYTHON%%lib/gedit-2/plugins/externaltools/manager.pyc
 %%PYTHON%%lib/gedit-2/plugins/externaltools/manager.pyo
@@ -55,6 +59,8 @@ lib/gedit-2/plugins/libfilebrowser.la
 lib/gedit-2/plugins/libfilebrowser.so
 lib/gedit-2/plugins/libindent.la
 lib/gedit-2/plugins/libindent.so
+lib/gedit-2/plugins/libmodelines.la
+lib/gedit-2/plugins/libmodelines.so
 lib/gedit-2/plugins/libsample.la
 lib/gedit-2/plugins/libsample.so
 lib/gedit-2/plugins/libsort.la
@@ -65,11 +71,14 @@ lib/gedit-2/plugins/libtaglist.la
 lib/gedit-2/plugins/libtaglist.so
 lib/gedit-2/plugins/libtime.la
 lib/gedit-2/plugins/libtime.so
-%%PYTHON%%lib/gedit-2/plugins/modelines.gedit-plugin
-%%PYTHON%%lib/gedit-2/plugins/modelines.py
-%%PYTHON%%lib/gedit-2/plugins/modelines.pyc
-%%PYTHON%%lib/gedit-2/plugins/modelines.pyo
+lib/gedit-2/plugins/modelines.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/pythonconsole.gedit-plugin
+%%PYTHON%%lib/gedit-2/plugins/pythonconsole/__init__.py
+%%PYTHON%%lib/gedit-2/plugins/pythonconsole/__init__.pyc
+%%PYTHON%%lib/gedit-2/plugins/pythonconsole/__init__.pyo
+%%PYTHON%%lib/gedit-2/plugins/pythonconsole/console.py
+%%PYTHON%%lib/gedit-2/plugins/pythonconsole/console.pyc
+%%PYTHON%%lib/gedit-2/plugins/pythonconsole/console.pyo
 lib/gedit-2/plugins/sample.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/snippets.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/snippets/ElementTree.py
@@ -105,12 +114,6 @@ lib/gedit-2/plugins/sample.gedit-plugin
 %%PYTHON%%lib/gedit-2/plugins/snippets/snippets.glade
 lib/gedit-2/plugins/sort.gedit-plugin
 lib/gedit-2/plugins/spell.gedit-plugin
-%%PYTHON%%lib/gedit-2/plugins/pythonconsole/__init__.py
-%%PYTHON%%lib/gedit-2/plugins/pythonconsole/__init__.pyc
-%%PYTHON%%lib/gedit-2/plugins/pythonconsole/__init__.pyo
-%%PYTHON%%lib/gedit-2/plugins/pythonconsole/console.py
-%%PYTHON%%lib/gedit-2/plugins/pythonconsole/console.pyc
-%%PYTHON%%lib/gedit-2/plugins/pythonconsole/console.pyo
 lib/gedit-2/plugins/taglist.gedit-plugin
 lib/gedit-2/plugins/time.gedit-plugin
 libdata/pkgconfig/gedit-%%VERSION%%.pc
@@ -160,11 +163,11 @@ share/gnome/gedit-2/glade/spell-checker.glade2
 share/gnome/gedit-2/glade/time.glade2
 share/gnome/gedit-2/icons/gedit-plugin.png
 share/gnome/gedit-2/logo/gedit-logo.png
-%%PYTHON%%share/gnome/gedit-2/plugins/externaltools/stock-tools.xml
 share/gnome/gedit-2/plugins/filebrowser/gedit-file-browser-widget-ui.xml
 %%PYTHON%%share/gnome/gedit-2/plugins/snippets/c++.xml
 %%PYTHON%%share/gnome/gedit-2/plugins/snippets/c.xml
 %%PYTHON%%share/gnome/gedit-2/plugins/snippets/css.xml
+%%PYTHON%%share/gnome/gedit-2/plugins/snippets/docbook.xml
 %%PYTHON%%share/gnome/gedit-2/plugins/snippets/global.xml
 %%PYTHON%%share/gnome/gedit-2/plugins/snippets/haskell.xml
 %%PYTHON%%share/gnome/gedit-2/plugins/snippets/html.xml
@@ -179,9 +182,14 @@ share/gnome/gedit-2/plugins/filebrowser/gedit-file-browser-widget-ui.xml
 %%PYTHON%%share/gnome/gedit-2/plugins/snippets/sh.xml
 %%PYTHON%%share/gnome/gedit-2/plugins/snippets/tcl.xml
 %%PYTHON%%share/gnome/gedit-2/plugins/snippets/xml.xml
+%%PYTHON%%share/gnome/gedit-2/plugins/tools/build
+%%PYTHON%%share/gnome/gedit-2/plugins/tools/open-terminal-here
+%%PYTHON%%share/gnome/gedit-2/plugins/tools/remove-trailing-spaces
+%%PYTHON%%share/gnome/gedit-2/plugins/tools/run-command
 share/gnome/gedit-2/taglist/HTML.tags
 share/gnome/gedit-2/taglist/Latex.tags
 share/gnome/gedit-2/taglist/XSLT.tags
+share/gnome/gedit-2/taglist/XUL.tags
 share/gnome/gedit-2/ui/gedit-ui.xml
 share/gnome/help/gedit/C/figures/gedit_format_bold.png
 share/gnome/help/gedit/C/figures/gedit_format_italic.png
@@ -419,17 +427,17 @@ share/locale/zh_TW/LC_MESSAGES/gedit.mo
 @dirrm share/gnome/help/gedit
 @dirrm share/gnome/gedit-2/ui
 @dirrm share/gnome/gedit-2/taglist
-@dirrm share/gnome/gedit-2/logo
-@dirrm share/gnome/gedit-2/icons
+%%PYTHON%%@dirrm share/gnome/gedit-2/plugins/tools
 %%PYTHON%%@dirrm share/gnome/gedit-2/plugins/snippets
 @dirrm share/gnome/gedit-2/plugins/filebrowser
-%%PYTHON%%@dirrm share/gnome/gedit-2/plugins/externaltools
 @dirrm share/gnome/gedit-2/plugins
+@dirrm share/gnome/gedit-2/logo
+@dirrm share/gnome/gedit-2/icons
 @dirrm share/gnome/gedit-2/glade
 @dirrm share/gnome/gedit-2
 @dirrm %%DOCSDIR%%
-%%PYTHON%%@dirrm lib/gedit-2/plugins/pythonconsole
 %%PYTHON%%@dirrm lib/gedit-2/plugins/snippets
+%%PYTHON%%@dirrm lib/gedit-2/plugins/pythonconsole
 %%PYTHON%%@dirrm lib/gedit-2/plugins/externaltools
 @dirrm lib/gedit-2/plugins
 @dirrm lib/gedit-2

@@ -25,6 +25,7 @@ share/locale/ang/LC_MESSAGES/vte.mo
 share/locale/ar/LC_MESSAGES/vte.mo
 share/locale/az/LC_MESSAGES/vte.mo
 share/locale/be/LC_MESSAGES/vte.mo
+share/locale/be@latin/LC_MESSAGES/vte.mo
 share/locale/bg/LC_MESSAGES/vte.mo
 share/locale/bn/LC_MESSAGES/vte.mo
 share/locale/bn_IN/LC_MESSAGES/vte.mo
@@ -158,6 +159,8 @@ share/locale/zh_TW/LC_MESSAGES/vte.mo
 @dirrmtry share/locale/ca
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
 @dirrmtry share/locale/be/LC_MESSAGES
 @dirrmtry share/locale/be
 @dirrmtry share/locale/ang/LC_MESSAGES

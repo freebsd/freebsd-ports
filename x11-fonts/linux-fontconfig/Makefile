@@ -7,7 +7,7 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.2.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-fonts linux
 DISTNAME=	${PORTNAME}-${PORTVERSION}-13
 
@@ -28,6 +28,6 @@ post-extract:
 	${RM} ${WRKSRC}/etc/fonts/fonts.conf
 
 post-install:
-	${LN} -s ${X11BASE}/etc/fonts/fonts.conf ${PREFIX}/etc/fonts/fonts.conf
+	${INSTALL_DATA} ${FILESDIR}/fonts.conf ${PREFIX}/etc/fonts/fonts.conf
 
 .include <bsd.port.mk>

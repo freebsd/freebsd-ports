@@ -3,12 +3,12 @@
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
 # $FreeBSD$
-#   $MCom: ports/finance/gnucash/Makefile,v 1.12 2007/02/23 18:27:51 ahze Exp $
+#   $MCom: ports/finance/gnucash/Makefile,v 1.14 2007/03/13 05:58:37 marcus Exp $
 #
 
 PORTNAME=	gnucash
 PORTVERSION=	2.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.gnucash.org/pub/gnucash/sources/stable/
@@ -80,7 +80,8 @@ PLIST_SUB=	AQBANKING="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$${datarootdir}/info|${PREFIX}/info|' \
+	@${REINPLACE_CMD} -e 's|$${datarootdir}/info|${PREFIX}/info| ; \
+	    	s|libgtkhtml-3.8|libgtkhtml-3.14|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|$$(datadir)/aclocal|${PREFIX}/share/aclocal|' \
 		${WRKSRC}/Makefile.in
