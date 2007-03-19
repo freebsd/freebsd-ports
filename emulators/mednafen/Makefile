@@ -51,7 +51,7 @@ IGNORE=		needs round(3), which appears in 5.3 or later
 .endif
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|g' ${WRKSRC}/configure -e \
+	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|g' -e \
 		's|/usr/local|${LOCALBASE}|g' -e 's|/usr/X11R6|${X11BASE}|g' \
 			${WRKSRC}/configure
 
