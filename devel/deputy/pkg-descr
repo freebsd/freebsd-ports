@@ -1,0 +1,10 @@
+Deputy is a C compiler that is capable of preventing common C programming 
+errors, including out-of-bounds memory accesses as well as many other 
+common type-safety errors. 
+
+Deputy allows C programmers to provide simple type annotations that 
+describe pointer bounds and other important program invariants. 
+Deputy verifies that your program adheres to these invariants through a 
+combination of compile-time and run-time checking.
+
+WWW:	http://deputy.cs.berkeley.edu/
