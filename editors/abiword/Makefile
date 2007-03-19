@@ -73,7 +73,7 @@ GNOME_ENABLED=		yes
 .endif
 
 .if defined(WITH_GUCHARMAP) || exists(${LOCALBASE}/libdata/pkgconfig/gucharmap.pc)
-LIB_DEPENDS+=		gucharmap.5:${PORTSDIR}/deskutils/gucharmap
+LIB_DEPENDS+=		gucharmap.6:${PORTSDIR}/deskutils/gucharmap
 .else
 CONFIGURE_ARGS+=	--enable-cmap=no
 .endif
