@@ -22,7 +22,7 @@ upgrades.
   	  done is to install the x11-wm/boxtools that has bsetroot if you
   	  don't want to edit any theme.
 
-  While I am here, don't forget to use 'pkgdb -F'. As for the portmaster
+  While I am here, don't forget to use 'pkgdb -Ff'. As for the portmaster
   users, I don't think you will need to do anything since portmaster will
   taking care of it by default.
 
