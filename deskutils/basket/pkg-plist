@@ -127,6 +127,7 @@ share/locale/pl_PL/LC_MESSAGES/basket.mo
 share/locale/pt/LC_MESSAGES/basket.mo
 share/locale/ru/LC_MESSAGES/basket.mo
 share/locale/tr/LC_MESSAGES/basket.mo
+share/locale/zh_CN/LC_MESSAGES/basket.mo
 share/locale/zh_TW/LC_MESSAGES/basket.mo
 share/mimelnk/application/x-basket-archive.desktop
 share/mimelnk/application/x-basket-template.desktop
@@ -144,6 +145,8 @@ share/services/basketthumbcreator.desktop
 %%KONTACT%%@dirrmtry share/services/kontact
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
 @dirrmtry share/locale/pt/LC_MESSAGES
 @dirrmtry share/locale/pt
 @dirrmtry share/locale/pl_PL/LC_MESSAGES

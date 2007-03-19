@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		basket
-PORTVERSION=		1.0
-PORTREVISION=		1
+PORTVERSION=		1.0.1
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://basket.kde.org/downloads/
 
