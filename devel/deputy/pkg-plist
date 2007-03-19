@@ -1,0 +1,17 @@
+bin/deputy
+include/deputy/annots.h
+include/deputy/checks.h
+include/deputy/libc_patch.i
+libexec/deputy/deputy.asm.exe
+libexec/deputy/deputy.byte.exe
+libexec/deputy/deputy_libc.o
+@dirrm libexec/deputy
+@dirrm include/deputy
+@cwd %%LOCALBASE%%
+%%SITE_PERL%%/CIL/Cilly.pm
+%%SITE_PERL%%/CIL/KeptFile.pm
+%%SITE_PERL%%/CIL/OutputFile.pm
+%%SITE_PERL%%/CIL/TempFile.pm
+%%SITE_PERL%%/CilConfig.pm
+%%SITE_PERL%%/Deputy.pm
+@dirrm %%SITE_PERL%%/CIL

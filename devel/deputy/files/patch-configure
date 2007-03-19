@@ -1,0 +1,30 @@
+--- configure.orig	Fri Mar 16 17:09:36 2007
++++ configure	Fri Mar 16 17:09:40 2007
+@@ -2390,13 +2390,25 @@
+ 
+ case "$target" in
+   # linux
+-  *86*linux*|*86*freebsd*|*86*openbsd*)
++  *86*linux*|*86*openbsd*)
+     echo "$as_me:$LINENO: result: configuring for $target" >&5
+ echo "${ECHO_T}configuring for $target" >&6
+     ARCHOS=x86_LINUX
+     ;;
+ 
+-  # linux
++  # FreeBSD
++  *i386*freebsd*|*amd64*freebsd*)
++    if test x"${ARCH}" = x""; then
++       ARCH=`uname -p`
++    fi
++
++    echo "$as_me:$LINENO: result: configuring for freebsd/${ARCH}" >&5
++echo "${ECHO_T}configuring for freebsd/${ARCH}" >&6
++
++    ARCHOS=${ARCH}_FREEBSD
++    ;;
++
++  # Mac OS X
+   *86*darwin*)
+     echo "$as_me:$LINENO: result: configuring for $target" >&5
+ echo "${ECHO_T}configuring for $target" >&6

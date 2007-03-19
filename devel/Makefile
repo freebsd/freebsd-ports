@@ -233,6 +233,7 @@
     SUBDIR += dbus-qt4
     SUBDIR += dbus-sharp
     SUBDIR += ddd
+    SUBDIR += deputy
     SUBDIR += desktop-file-utils
     SUBDIR += devhelp
     SUBDIR += devtodo

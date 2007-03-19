@@ -1,0 +1,11 @@
+--- cil/Makefile.in.orig	Fri Mar 16 17:10:11 2007
++++ cil/Makefile.in	Fri Mar 16 17:10:16 2007
+@@ -236,7 +236,7 @@
+ endif
+ # Now the extra features, with the first letter capitalized
+ 	echo -n " (* EXTRAFEATURES: *)" >> $@  
+-	/bin/echo -e \
++	/bin/echo \
+           $(foreach f,@EXTRAFEATURES@, \
+              "\n   "`echo $f | cut -c 1 | tr "[a-z]" "[A-Z]"``echo $f | cut -c 2-`".feature;") >> $@
+ 	echo "]"   >>$@ 
