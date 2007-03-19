@@ -4406,6 +4406,7 @@ honeyd		ports/net/honeyd
 hope		ports/lang/hope
 horde-base	ports/www/horde-base
 horde-meta	ports/www/horde-meta
+horde-nic	ports/net-mgmt/horde-nic
 horde-passwd	ports/www/horde-passwd
 horde-trean	ports/www/horde-trean
 horde-vacation	ports/mail/horde-vacation
