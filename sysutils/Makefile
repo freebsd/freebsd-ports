@@ -317,6 +317,7 @@
     SUBDIR += kkeyled
     SUBDIR += klaptopdaemon
     SUBDIR += kldfind
+    SUBDIR += klineakconfig
     SUBDIR += kmilo
     SUBDIR += knutclient
     SUBDIR += komparator

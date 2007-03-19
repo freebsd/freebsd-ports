@@ -1,0 +1,29 @@
+# New ports collection makefile for:	klineakconfig
+# Date created:				5 July 2002
+# Whom:					Kay Lehmann <kay_lehmann@web.de>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	klineakconfig
+PORTVERSION=	0.9
+CATEGORIES=	sysutils kde
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	lineak
+DIST_SUBDIR=	lineak
+
+MAINTAINER=	kay_lehmann@web.de
+COMMENT=	Configure lineakd through a KDE interface
+
+LIB_DEPENDS=	lineak.8:${PORTSDIR}/sysutils/lineakd
+
+USE_KDELIBS_VER=3
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
+
+post-patch:
+	@${TOUCH} ${WRKSRC}/config.h.in
+	@${REINPLACE_CMD} -e 's|-ldl||;s|-O2||g;s|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure
+
+.include <bsd.port.mk>
