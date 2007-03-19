@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sleuthkit
-PORTVERSION=	2.06
+PORTVERSION=	2.07
 CATEGORIES=	sysutils security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,14 +25,14 @@ BROKEN=		Does not build on pre-GEOM versions of FreeBSD
 .endif
 
 PROGS=		dcalc dcat disk_sreset disk_stat dls dstat ffind \
-		fls fsstat hfind icat ifind ils img_stat istat \
+		fls fsstat hfind icat ifind ils img_cat img_stat istat \
 		jcat jls md5 mmls mmstat sha1 sigfind srch_strings
 SCRIPTS=	mactime sorter
 DOCS=		CHANGES.txt README.txt docs/*
 MAN1=		dcalc.1 dcat.1 disk_sreset.1 disk_stat.1 dls.1 \
 		dstat.1 ffind.1 fls.1 fsstat.1 hfind.1 icat.1 ifind.1 \
-		ils.1 img_stat.1 istat.1 jcat.1 jls.1 mactime.1 mmls.1 \
-		sigfind.1 sorter.1
+		ils.1 img_cat.1 img_stat.1 istat.1 jcat.1 jls.1 mactime.1 \
+		mmls.1 sigfind.1 sorter.1
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's/^CC[[:space:]]*=/CC \?=/' \
@@ -43,9 +43,6 @@ post-patch:
 		${WRKSRC}/src/hashtools/Makefile ${WRKSRC}/src/imgtools/Makefile \
 		${WRKSRC}/src/auxtools/Makefile ${WRKSRC}/src/mmtools/Makefile \
 		${WRKSRC}/src/srchtools/Makefile
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
-		-e '8s|-g -Wall|${CFLAGS}| ; 9s|-g -Wall|${CXXFLAGS}|' \
-		${WRKSRC}/src/afflib/Makefile.defs ${WRKSRC}/src/afflib/Makefile
 
 do-install:
 .if !defined(NOPORTDOCS)
