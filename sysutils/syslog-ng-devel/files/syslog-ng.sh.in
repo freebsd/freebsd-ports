@@ -12,7 +12,11 @@
 # to enable this service:
 #
 #syslog_ng_enable="YES"
+#syslog_ng_config="-u daemon"
+#syslog_ng_pid="/var/run/syslog-ng.pid"
 #
+
+syslog_ng_purgeklog=${syslog_ng_purgeklog-"NO"}
 
 . %%RC_SUBR%%
 
@@ -21,13 +25,19 @@ rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/syslog-ng
 required_files=%%PREFIX%%/etc/syslog-ng/syslog-ng.conf
-pidfile=/var/run/syslog.pid
 extra_commands=reload
+
+if checkyesno syslog_ng_purgeklog; then
+	start_precmd="echo \"Purging klog(9)\" && sysctl -w kern.msgbuf_clear=1 $start_precmd";
+fi
+
 stop_postcmd=stop_postcmd
 
 load_rc_config $name
 
 : ${syslog_ng_enable:="NO"}
+pidfile=${syslog_ng_pid:-"/var/run/syslog.pid"}
+command_args="-p ${pidfile} ${syslog_ng_config}"
 
 stop_postcmd() {
   rm -f $pidfile
