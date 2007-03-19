@@ -88,7 +88,7 @@ RUN_DEPENDS+=	yelp:${PORTSDIR}/x11/yelp \
 		epiphany:${PORTSDIR}/www/epiphany
 .endif
 .if ${.CURDIR:T}!="gnome2-lite"
-.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+.if ${ARCH} == "i386"
 RUN_DEPENDS+=	tomboy:${PORTSDIR}/deskutils/tomboy
 .endif
 .if ${OSVERSION}>=600000
