@@ -7,7 +7,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.4.14
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	lang tcl84
 MASTER_SITES=	SF
@@ -24,27 +24,29 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --includedir=${PREFIX}/include/tcl${TCL_VER}
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
-MAKE_ENV=	SHORT_TCL_VER=84 LANG=C LC_ALL=C	# LANG=C is required for some of UTF-using tests
 TCL_VER=	8.4
+SHORT_TCL_VER=	${TCL_VER:S/8./8/}
+MAKE_ENV=	SHORT_TCL_VER="${SHORT_TCL_VER}" LANG=C LC_ALL=C	# LANG=C is required for some of UTF-using tests
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for README.html
-PLIST_SUB=	TCL_VER=${TCL_VER} SHORT_TCL_VER=84
+PLIST_SUB=	TCL_VER="${TCL_VER}" SHORT_TCL_VER="${SHORT_TCL_VER}"
 EXTRACT_AFTER_ARGS=|${TAR} -xpf - --exclude compat/
 
+.if !defined(BUILDING_TCL_THREADS)
 OPTIONS=	TCL84_MAN "Install tcl 8.4 manpages" on \
 		TCLSH_WRAPPER "Require tclsh wrapper from ports" off
+.else
+USE_TCL=	${SHORT_TCL_VER}
+PLIST=		${PKGDIR}/pkg-plist.threads
+THREADS_SUFFIX=	-threads
+.endif
 
 .include <bsd.port.pre.mk>
 
-.if defined(TCL_WITH_THREADS) || defined(WITH_THREADS)
-THREADS_SUFFIX=		-threads
+.if defined(BUILDING_TCL_THREADS)
 CONFIGURE_ARGS+=	--enable-threads
 CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
-CONFLICTS=		tcl-8.4*
 .else
-CONFLICTS=		tcl-threads-8.4*
-.endif
-
-LATEST_LINK=	tcl84${THREADS_SUFFIX}
+CONFIGURE_ARGS+=	--disable-threads
 
 .if defined(WITH_TCLSH_WRAPPER)
 RUN_DEPENDS+=		tclsh:${PORTSDIR}/lang/tcl-tk-wrapper
@@ -612,13 +614,25 @@ MLINKS=	Access.3 Tcl_Access.3 \
 
 .endif
 
+.endif # defined(BUILDING_TCL_THREADS)
+
+LATEST_LINK=	tcl84${THREADS_SUFFIX}
+
 TCLBASE?=	${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}
 
-.if defined(TCL_WITH_THREADS) || defined(WITH_THREADS)
-pre-configure:
+.if defined(BUILDING_TCL_THREADS)
+post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		-e 's|$${TCL_TRIM_DOTS}|$${TCL_TRIM_DOTS}${THREADS_SUFFIX}|g' \
+		-e 's|-ltcl$${TCL_VERSION}|-ltcl$${TCL_VERSION}${THREADS_SUFFIX}|g' \
+		-e 's/-ltcl`echo $${TCL_VERSION} | tr -d .`/-ltcl`echo $${TCL_VERSION} | tr -d .`${THREADS_SUFFIX}/g' \
+		-e 's|-ltclstub$${TCL_VERSION}|-ltclstub$${TCL_VERSION}${THREADS_SUFFIX}|g' \
+		-e 's/-ltclstub`echo $${TCL_VERSION} | tr -d .`/-ltclstub`echo $${TCL_VERSION} | tr -d .`${THREADS_SUFFIX}/g' \
 		${WRKSRC}/configure
-
+	@${REINPLACE_CMD} -e 's|libtcl$${SHORT_TCL_VER}|libtcl$${SHORT_TCL_VER}${THREADS_SUFFIX}|g' \
+		-e 's|$$(BIN_INSTALL_DIR)/tclsh$$(VERSION)|$$(BIN_INSTALL_DIR)/tclsh$$(VERSION)${THREADS_SUFFIX}|g' \
+		-e 's|$$(SCRIPT_INSTALL_DIR)/tclConfig.sh|$$(SCRIPT_INSTALL_DIR)/tclConfig${THREADS_SUFFIX}.sh|g' \
+		${WRKSRC}/Makefile.in
 .endif
 
 # Where the below command fails, there is no need for concern:
@@ -640,6 +654,12 @@ post-configure:
 	# ====================================================
 .endif
 
+.if defined(BUILDING_TCL_THREADS)
+do-install:
+	@cd ${WRKSRC} && ${MAKE_ENV} ${MAKE} -f Makefile install-binaries
+	@${MKDIR} ${PREFIX}/lib/tcl${TCL_VER}${THREADS_SUFFIX}
+	@${LN} -s ${PREFIX}/lib/tcl${TCL_VER}/tclConfig${THREADS_SUFFIX}.sh ${PREFIX}/lib/tcl${TCL_VER}${THREADS_SUFFIX}/tclConfig.sh
+.else
 post-install:
 .if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL84_MAN)
 	${MKDIR} ${DATADIR}
@@ -650,6 +670,8 @@ post-install:
 . endfor
 	@cd ${WRKSRC} && ${MAKE} -f Makefile install-doc ${MAKE_ENV}
 .endif
+
+.endif # !defined(BUILDING_TCL_THREADS)
 
 regression-test:	build
 	cd ${WRKSRC} && LC_ALL=C ${MAKE} test
