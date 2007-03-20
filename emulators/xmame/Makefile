@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.franksworld.org/dist/xmame/ \
 		http://x.mame.net/download/ \
 		http://www.energyhq.es.eu.org/files/ \
 		http://www.energyhq.be/files/ \
-		http://www.pkix.net/mirror/x.mame.net/ \
+		http://www.pkix.net/mirror/x.mame.net/
 DISTNAME=	xmame-${XMAMEVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
