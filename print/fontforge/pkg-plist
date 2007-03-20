@@ -1,8 +1,10 @@
 bin/fontforge
 bin/sfddiff
+lib/libgdraw.a
 lib/libgdraw.la
 lib/libgdraw.so
 lib/libgdraw.so.1
+lib/libgunicode.a
 lib/libgunicode.la
 lib/libgunicode.so
 lib/libgunicode.so.2
@@ -21,8 +23,10 @@ share/locale/vi/LC_MESSAGES/FontForge.mo
 %%DATADIR%%/Adobe-Japan1-6.cidmap
 %%DATADIR%%/Adobe-Japan2-0.cidmap
 %%DATADIR%%/Adobe-Korea1-2.cidmap
+%%DATADIR%%/plugins/gb12345.a
 %%DATADIR%%/plugins/gb12345.la
 %%DATADIR%%/plugins/gb12345.lai
+%%DATADIR%%/plugins/gb12345.o
 %%DATADIR%%/plugins/gb12345.so
 %%DATADIR%%/plugins/gb12345.so.0
 %%PORTDOCS%%%%DOCSDIR%%/AA-Comparison.html
