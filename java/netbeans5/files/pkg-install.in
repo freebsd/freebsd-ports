@@ -2,7 +2,7 @@
 
 case "$2" in
     POST-INSTALL)
-	ln -sf %%PREFIX%%/netbeans4/bin/netbeans %%PREFIX%%/bin/netbeans4
+	ln -sf %%PREFIX%%/netbeans4/bin/netbeans %%PREFIX%%/bin/netbeans5
 	;;
 esac
 
