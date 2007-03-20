@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Workflow
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	svysh@ipmce.ru
+MAINTAINER=	svysh@pn.sinp.msu.ru
 COMMENT=	Simple, flexible system to implement workflows
 
 BUILD_DEPENDS=	\
