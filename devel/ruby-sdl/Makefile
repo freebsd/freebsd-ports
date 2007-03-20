@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	sdl
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 PORTREVISION=	0
 CATEGORIES=	devel graphics audio ruby
-MASTER_SITES=	http://mbsd.msk.ru/dist/ \
-		http://www.kmc.gr.jp/~ohai/rubysdl/
+MASTER_SITES=	http://www.kmc.gr.jp/~ohai/rubysdl/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -20,7 +19,7 @@ COMMENT=	Ruby extension library to use SDL library
 
 BUILD_DEPENDS=	${NONEXISTENT}:${RUBY_OPENGL_PORTDIR}:patch
 
-RUBY_OPENGL_PORTDIR=	${.CURDIR}/../../graphics/ruby-opengl
+RUBY_OPENGL_PORTDIR=	${PORTSDIR}/graphics/ruby-opengl
 RUBY_OPENGL_WRKSRC_CMD=	cd ${RUBY_OPENGL_PORTDIR}; ${MAKE} -V WRKSRC
 
 USE_SDL=	mixer image ttf sdl
