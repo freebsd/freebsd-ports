@@ -8,12 +8,12 @@ lib/libmcal.a
 lib/libmcal.so
 lib/libmcal.so.0
 @dirrm include/mcal
-%%PORTDOCS%%share/doc/libmcal/CHANGELOG
-%%PORTDOCS%%share/doc/libmcal/FAQ-MCAL
-%%PORTDOCS%%share/doc/libmcal/FEATURE-IMPLEMENTATION
-%%PORTDOCS%%share/doc/libmcal/FUNCTION-REF.html
-%%PORTDOCS%%share/doc/libmcal/HOW-TO-MCAL
-%%PORTDOCS%%share/doc/libmcal/LICENSE
-%%PORTDOCS%%share/doc/libmcal/README
-%%PORTDOCS%%share/doc/libmcal/README.mstore
-%%PORTDOCS%%@dirrm share/doc/libmcal
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/FAQ-MCAL
+%%PORTDOCS%%%%DOCSDIR%%/FEATURE-IMPLEMENTATION
+%%PORTDOCS%%%%DOCSDIR%%/FUNCTION-REF.html
+%%PORTDOCS%%%%DOCSDIR%%/HOW-TO-MCAL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.mstore
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
