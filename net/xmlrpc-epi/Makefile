@@ -30,6 +30,12 @@ METHODS=	TestNormal TestFault TestStruct TestArray TestBoolean	\
 
 CONFLICTS=	xmlrpc-c-0.*
 
+pre-configure:
+	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS}	\
+	${REINPLACE_CMD} -e '/^LTCOMPILE =/s/--mode=/--tag=CC --mode=/'
+	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS}	\
+	${REINPLACE_CMD} -e '/^LINK =/s/--mode=/--tag=CC --mode=/'
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
