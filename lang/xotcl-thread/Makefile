@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+PKGNAMESUFFIX=	-thread
+
 WITH_THREADS=	yes
 
 MASTERDIR=	${.CURDIR}/../xotcl
