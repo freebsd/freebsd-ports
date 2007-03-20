@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	qt
-PORTVERSION=	3.3.7
-PORTREVISION=	1
+PORTVERSION=	3.3.8
 CATEGORIES?=	x11-toolkits ipv6
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-free-${PORTVERSION}
@@ -139,7 +138,10 @@ EXTRA_PATCHES=	${PATCHDIR}/0001-dnd_optimization.patch \
 		${PATCHDIR}/0056-khotkeys_input_84434.patch \
 		${PATCHDIR}/0059-qpopup_has_mouse.patch \
 		${PATCHDIR}/0060-qpopup_ignore_mousepos.patch \
-		${PATCHDIR}/0061-qscrollview-propagate-horizontal-wheelevent.patch
+		${PATCHDIR}/0061-qscrollview-propagate-horizontal-wheelevent.patch \
+		${PATCHDIR}/0073-xinerama-aware-qpopup.patch \
+		${PATCHDIR}/0076-fix-qprocess.diff \
+		${PATCHDIR}/xxxx-qt-font-default-subst.patch
 PKGNAMESUFFIX=	-copy
 COMMENT+=	(+ KDE patches)
 CONFLICTS+=	qt-3.3.*

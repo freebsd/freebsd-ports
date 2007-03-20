@@ -4,9 +4,10 @@ author: Lubos Lunak <l.lunak@kde.org>
 
 See 0005-qpixmap_mitshm.patch for details.
 
---- src/kernel/qpixmap_x11.cpp.sav	Tue Nov 26 15:32:21 2002
-+++ src/kernel/qpixmap_x11.cpp	Tue Nov 26 15:37:21 2002
-@@ -1278,9 +1278,6 @@ bool QPixmap::convertFromImage( const QI
+
+--- src/kernel/qpixmap_x11.cpp
++++ src/kernel/qpixmap_x11.cpp
+@@ -1123,9 +1123,6 @@ bool QPixmap::convertFromImage( const QI
  	    return FALSE;
  	int    bppc = xi->bits_per_pixel;
  
@@ -16,7 +17,7 @@ See 0005-qpixmap_mitshm.patch for details.
  	bool contig_bits = n_bits(red_mask) == rbits &&
                             n_bits(green_mask) == gbits &&
                             n_bits(blue_mask) == bbits;
-@@ -1329,32 +1326,70 @@ bool QPixmap::convertFromImage( const QI
+@@ -1174,32 +1171,70 @@ bool QPixmap::convertFromImage( const QI
  	    }
  	    init=TRUE;
  	}
@@ -103,7 +104,7 @@ See 0005-qpixmap_mitshm.patch for details.
  #define GET_PIXEL_DITHER_TC \
  		int r = qRed  ( *p ); \
  		int g = qGreen( *p ); \
-@@ -1374,91 +1409,177 @@ bool QPixmap::convertFromImage( const QI
+@@ -1220,91 +1255,177 @@ bool QPixmap::convertFromImage( const QI
  		    ? g << green_shift : g >> -green_shift; \
  		b = blue_shift  > 0 \
  		    ? b << blue_shift  : b >> -blue_shift; \
@@ -353,17 +354,17 @@ See 0005-qpixmap_mitshm.patch for details.
      }
  
      if ( d == 8 && !trucol ) {			// 8 bit pixmap
-@@ -1738,15 +1859,24 @@ bool QPixmap::convertFromImage( const QI
+@@ -1554,15 +1675,24 @@ bool QPixmap::convertFromImage( const QI
  
- 		if (image.depth() == 32) {
- 		    const int *iptr = (const int *) image.bits();
--		    int max = w * h;
--		    while (max--)
--			*aptr++ = *iptr++ >> 24; // squirt
+                 if (image.depth() == 32) {
+                     const int *iptr = (const int *) image.bits();
+-                    int max = w * h;
+-                    while (max--)
+-                        *aptr++ = *iptr++ >> 24; // squirt
 +                    if( axi->bytes_per_line == (int)w ) {
-+		        int max = w * h;
-+		        while (max--)
-+			    *aptr++ = *iptr++ >> 24; // squirt
++                        int max = w * h;
++                        while (max--)
++                            *aptr++ = *iptr++ >> 24; // squirt
 +                    } else {
 +                        for (uint i = 0; i < h; ++i ) {
 +                            for (uint j = 0; j < w; ++j )
@@ -371,13 +372,13 @@ See 0005-qpixmap_mitshm.patch for details.
 +                            aptr += ( axi->bytes_per_line - w );
 +                        }
 +                    }
- 		} else if (image.depth() == 8) {
- 		    const QRgb * const rgb = image.colorTable();
- 		    for (uint y = 0; y < h; ++y) {
- 			const uchar *iptr = image.scanLine(y);
- 			for (uint x = 0; x < w; ++x)
- 			    *aptr++ = qAlpha(rgb[*iptr++]);
+                 } else if (image.depth() == 8) {
+                     const QRgb * const rgb = image.colorTable();
+                     for (uint y = 0; y < h; ++y) {
+                         const uchar *iptr = image.scanLine(y);
+                         for (uint x = 0; x < w; ++x)
+                             *aptr++ = qAlpha(rgb[*iptr++]);
 +                        aptr += ( axi->bytes_per_line - w );
- 		    }
- 		}
+                     }
+                 }
  
