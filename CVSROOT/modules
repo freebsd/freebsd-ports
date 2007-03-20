@@ -16328,7 +16328,7 @@ xosd		ports/misc/xosd
 xosmulti	ports/games/xosmulti
 xosview		ports/sysutils/xosview
 xotcl		ports/lang/xotcl
-#xotcl-thread	ports/lang/xotcl-thread
+xotcl-thread	ports/lang/xotcl-thread
 xp		ports/textproc/xp
 xpacman		ports/games/xpacman
 xpad		ports/deskutils/xpad
