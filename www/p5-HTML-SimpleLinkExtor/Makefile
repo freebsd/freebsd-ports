@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-SimpleLinkExtor
-PORTVERSION=	1.16
+PORTVERSION=	1.17
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -16,6 +16,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	This is a simple HTML link extractor
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-libwww>0:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
