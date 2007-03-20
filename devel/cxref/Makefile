@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	cxref
-PORTVERSION=	1.6a
-PORTREVISION=	1
+PORTVERSION=	1.6b
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.gedanken.demon.co.uk/download-cxref/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	devel/lang/c
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	C program cross-referencing & documentation tool
 
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-cxref-cpp
+CONFIGURE_ARGS=	--without-cxref-cpp --mandir="${PREFIX}/man"
 ALL_TARGET=	programs
 
 MAN1=		cxref.1 cxref-query.1
