@@ -15,7 +15,8 @@ DISTNAME=	e16-${PORTVERSION}
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A very artistic X window manager
 
-LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2 \
+		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 DATADIR=	${PREFIX}/share/e16
 
