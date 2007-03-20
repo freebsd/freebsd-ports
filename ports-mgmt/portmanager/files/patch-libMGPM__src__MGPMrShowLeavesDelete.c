@@ -1,5 +1,13 @@
 --- ./libMGPM/src/MGPMrShowLeavesDelete.c.orig	Mon Dec 12 15:32:34 2005
 +++ ./libMGPM/src/MGPMrShowLeavesDelete.c	Fri Dec  8 17:13:00 2006
+@@ -28,7 +28,6 @@
+ */
+ 
+ #include	<libMGPM.h>
+-#include	<sgtty.h>
+ 
+ int	nuke( char* leafPortDir );
+ int	rebuildDb( structProperty* property );
 @@ -39,19 +39,21 @@
  	char	exact[]			= "exact";
  	char	id[]			= "MGPMrShowLeavesDelete";
