@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geography/NationalGrid/.packlist
+%%SITE_PERL%%/Geography/NationalGrid.pm
+%%SITE_PERL%%/Geography/NationalGrid/IE.pm
+%%SITE_PERL%%/Geography/NationalGrid/GB.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geography/NationalGrid
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geography
+@dirrmtry %%SITE_PERL%%/Geography/NationalGrid
+@dirrmtry %%SITE_PERL%%/Geography
