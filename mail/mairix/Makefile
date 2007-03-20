@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	mairix
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	mail
-MASTER_SITES=	http://www.rpcurnow.force9.co.uk/mairix/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	mairix
 
 MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	Indexing and searching in Maildir, MH or mbox folders
