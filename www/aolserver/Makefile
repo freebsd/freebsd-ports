@@ -7,7 +7,7 @@
 
 PORTNAME=	aolserver
 PORTVERSION=	4.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	aolserver
@@ -44,8 +44,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 IGNORE=		supported values for USE_TCL_VER are only 84 and 85
 .endif
 
-USE_TCL=	${USE_TCL_VER}-thread
-USE_TCL_BUILD=	${USE_TCL_VER}-thread
+LIB_DEPENDS+=	tcl${USE_TCL_VER}-threads:${PORTSDIR}/lang/tcl${USE_TCL_VER}-thread
 
 OPTIONS=	HTMLDOCS "Install HTML documentation" off \
 		TESTS "Install tests in examples directory" off
@@ -56,16 +55,9 @@ OPTIONS=	HTMLDOCS "Install HTML documentation" off \
 BROKEN=		does not compile on ia64
 .endif
 
-. if exists(${TCLSH})
-_TCL_IS_THREADED!=	${ECHO_CMD} 'puts [array names tcl_platform -exact threaded]' | ${TCLSH} || return 0
-.  if empty(_TCL_IS_THREADED)
-IGNORE=	Tcl with threads is required. Please install Tcl with WITH_THREADS defined or from lang/tcl${USE_TCL} port and try again
-.  endif
-. endif
-
-CONFIGURE_ENV+=		TCLSH=${TCLSH}
+CONFIGURE_ENV+=		TCLSH=${LOCALBASE}/bin/tclsh${USE_TCL_VER:S/8/8./}-threads
 CONFIGURE_ARGS+=	--prefix=${AOLSERVERBASE} \
-			--with-tcl=${TCL_LIBDIR}
+			--with-tcl=${LOCALBASE}/lib/tcl${USE_TCL_VER:S/8/8./}-threads
 
 .if !defined(NO_INSTALL_MANPAGES)
 INSTALL_TARGET=	install install-man
