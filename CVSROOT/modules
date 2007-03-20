@@ -9426,6 +9426,7 @@ p5-Geo-ShapeFile	ports/devel/p5-Geo-ShapeFile
 p5-Geo-Weather	ports/misc/p5-Geo-Weather
 p5-Geography-Countries	ports/misc/p5-Geography-Countries
 p5-Geography-NationalGrid	ports/misc/p5-Geography-NationalGrid
+p5-Geography-NationalGrid-TW	ports/misc/p5-Geography-NationalGrid-TW
 p5-Getargs-Long	ports/devel/p5-Getargs-Long
 p5-Getopt-ArgvFile	ports/devel/p5-Getopt-ArgvFile
 p5-Getopt-Declare	ports/devel/p5-Getopt-Declare
