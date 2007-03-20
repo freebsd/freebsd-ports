@@ -6,7 +6,12 @@ bin/gnome-wm
 share/gnome/applications/session-properties.desktop
 share/gnome/default.session
 share/gnome/pixmaps/splash/MaMBaNgGaoX-2.12.png
+share/gnome/pixmaps/splash/adamw-bat-2.18.jpg
+share/gnome/pixmaps/splash/adamw-conky-2.18.png
+share/gnome/pixmaps/splash/adamw-cow-2.18.png
+share/gnome/pixmaps/splash/adamw-mouth-2.18.png
 share/gnome/pixmaps/splash/adamw-piggy-2.12.png
+share/gnome/pixmaps/splash/adamw-swing-2.18.png
 share/gnome/pixmaps/splash/adamw-trophy-2.12.png
 share/gnome/pixmaps/splash/andreas-slogan-2.12.png
 share/gnome/pixmaps/splash/andreas-splash-2.12.png
