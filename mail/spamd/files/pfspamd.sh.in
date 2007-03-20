@@ -14,6 +14,8 @@
 #				Set it to "YES" to enable spamd
 # pfspamd_flags (str):		Set to "" by default.
 #				Extra flags passed to start command.
+# pfspamd_setup_flags (str):		Set to "" by default.
+#				Extra flags passed to spamd-setup command.
 
 . %%RC_SUBR%%
 
@@ -26,13 +28,21 @@ restart_postcmd="pfspamd_postcmd"
 
 [ -z "$pfspamd_enable" ]	&& pfspamd_enable="NO"
 [ -z "$pfspamd_flags" ]		&& pfspamd_flags=""
+[ -z "$pfspamd_setup_flags" ]	&& pfspamd_setup_flags=""
 
 load_rc_config $name
+
+# we override check_process to avoid conflict with the spamd from sa-spamd
+check_process()
+{
+ ps ax -o pid,command | grep "libexec/spamd" | grep -v grep | awk '{print $1}'
+}
+
 
 pfspamd_postcmd() 
 {
 	if [ -x %%PREFIX%%/sbin/spamd-setup ]; then
-		%%PREFIX%%/sbin/spamd-setup
+		%%PREFIX%%/sbin/spamd-setup $pfspamd_setup_flags
 	fi
 }
 
