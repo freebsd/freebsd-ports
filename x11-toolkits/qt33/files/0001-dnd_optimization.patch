@@ -5,8 +5,9 @@ author: Lubos Lunak <l.lunak@kde.org>
 See http://lists.kde.org/?t=104388858900001&r=1&w=2
 
 
---- src/kernel/qdnd_x11.cpp.sav	2003-02-05 16:09:45.000000000 +0100
-+++ src/kernel/qdnd_x11.cpp	2003-02-07 16:14:49.000000000 +0100
+
+--- src/kernel/qdnd_x11.cpp
++++ src/kernel/qdnd_x11.cpp
 @@ -49,13 +49,15 @@
  #include "qdragobject.h"
  #include "qobjectlist.h"
@@ -25,7 +26,7 @@ See http://lists.kde.org/?t=104388858900001&r=1&w=2
  #undef KeyPress
  #undef KeyRelease
  
-@@ -249,20 +251,47 @@ class QShapedPixmapWidget : public QWidg
+@@ -253,20 +255,47 @@ class QShapedPixmapWidget : public QWidg
  public:
      QShapedPixmapWidget(int screen = -1) :
  	QWidget(QApplication::desktop()->screen( screen ),
@@ -75,8 +76,8 @@ See http://lists.kde.org/?t=104388858900001&r=1&w=2
 +    QPoint oldhot;
  };
  
- QShapedPixmapWidget * qt_xdnd_deco = 0;
-@@ -859,6 +888,45 @@ void QDragManager::timerEvent( QTimerEve
+ static QShapedPixmapWidget * qt_xdnd_deco = 0;
+@@ -872,6 +901,45 @@ void QDragManager::timerEvent( QTimerEve
  	move( QCursor::pos() );
  }
  
@@ -122,7 +123,7 @@ See http://lists.kde.org/?t=104388858900001&r=1&w=2
  bool QDragManager::eventFilter( QObject * o, QEvent * e)
  {
      if ( beingCancelled ) {
-@@ -881,8 +949,10 @@ bool QDragManager::eventFilter( QObject 
+@@ -894,8 +962,10 @@ bool QDragManager::eventFilter( QObject 
  
      if ( e->type() == QEvent::MouseMove ) {
  	QMouseEvent* me = (QMouseEvent *)e;
@@ -135,16 +136,16 @@ See http://lists.kde.org/?t=104388858900001&r=1&w=2
  	return TRUE;
      } else if ( e->type() == QEvent::MouseButtonRelease ) {
  	qApp->removeEventFilter( this );
-@@ -1106,7 +1176,7 @@ void QDragManager::move( const QPoint & 
- 	delete qt_xdnd_deco;
- 	qt_xdnd_deco = new QShapedPixmapWidget( screen );
+@@ -1136,7 +1206,7 @@ void QDragManager::move( const QPoint & 
+ 	    qt_xdnd_deco->grabMouse();
+ 	}
      }
 -    updatePixmap();
 +    updatePixmap( globalPos );
  
      if ( qt_xdnd_source_sameanswer.contains( globalPos ) &&
  	 qt_xdnd_source_sameanswer.isValid() ) {
-@@ -1679,7 +1749,7 @@ bool QDragManager::drag( QDragObject * o
+@@ -1729,7 +1799,7 @@ bool QDragManager::drag( QDragObject * o
      // qt_xdnd_source_object persists until we get an xdnd_finish message
  }
  
@@ -153,7 +154,7 @@ See http://lists.kde.org/?t=104388858900001&r=1&w=2
  {
      if ( qt_xdnd_deco ) {
  	QPixmap pm;
-@@ -1694,9 +1764,8 @@ void QDragManager::updatePixmap()
+@@ -1744,9 +1814,8 @@ void QDragManager::updatePixmap()
  		defaultPm = new QPixmap(default_pm);
  	    pm = *defaultPm;
  	}
@@ -165,7 +166,7 @@ See http://lists.kde.org/?t=104388858900001&r=1&w=2
  	    //if ( willDrop ) {
  	    qt_xdnd_deco->show();
  	    //} else {
-@@ -1705,4 +1774,9 @@ void QDragManager::updatePixmap()
+@@ -1755,4 +1824,9 @@ void QDragManager::updatePixmap()
      }
  }
  
@@ -175,8 +176,8 @@ See http://lists.kde.org/?t=104388858900001&r=1&w=2
 +}
 +
  #endif // QT_NO_DRAGANDDROP
---- src/kernel/qdragobject.h.sav	2002-11-01 19:25:07.000000000 +0100
-+++ src/kernel/qdragobject.h	2001-01-01 01:01:00.000000000 +0100
+--- src/kernel/qdragobject.h
++++ src/kernel/qdragobject.h
 @@ -245,6 +245,7 @@ private:
      void move( const QPoint & );
      void drop();
