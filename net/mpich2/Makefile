@@ -129,6 +129,14 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${LOCALBASE2FIX:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${X11BASE2FIX:S|^|${WRKSRC}/|}
 
+	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/confdb/libtool-2.13.m4
+	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/confdb/libtool.m4
+	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/src/mpe2/src/slog2sdk/trace_rlog/libtool.m4
+	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/src/mpe2/src/slog2sdk/trace_sample/libtool.m4
+	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${THREAD2FIX:S|^|${WRKSRC}/|}
+	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${LOCALBASE2FIX:S|^|${WRKSRC}/|}
+	${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${X11BASE2FIX:S|^|${WRKSRC}/|}
+
 post-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}
 	${CHOWN} -R ${BINOWN}:${BINGRP} ${PREFIX}/bin
