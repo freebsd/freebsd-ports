@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	delphij
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	delphij@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Traps spammers with a very slow smtp-login and return 4xx error
 
 USE_BZIP2=	yes
