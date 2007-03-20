@@ -6,6 +6,7 @@ include/irrlicht/ETerrainElements.h
 include/irrlicht/IAnimatedMesh.h
 include/irrlicht/IAnimatedMeshB3d.h
 include/irrlicht/IAnimatedMeshMD2.h
+include/irrlicht/IAnimatedMeshMD3.h
 include/irrlicht/IAnimatedMeshMS3D.h
 include/irrlicht/IAnimatedMeshSceneNode.h
 include/irrlicht/IAnimatedMeshX.h
@@ -26,15 +27,18 @@ include/irrlicht/IGUIContextMenu.h
 include/irrlicht/IGUICheckBox.h
 include/irrlicht/IGUIEditBox.h
 include/irrlicht/IGUIElement.h
+include/irrlicht/IGUIElementFactory.h
 include/irrlicht/IGUIEnvironment.h
 include/irrlicht/IGUIFileOpenDialog.h
 include/irrlicht/IGUIFont.h
+include/irrlicht/IGUIFontBitmap.h
 include/irrlicht/IGUIImage.h
 include/irrlicht/IGUIInOutFader.h
 include/irrlicht/IGUIListBox.h
 include/irrlicht/IGUIMeshViewer.h
 include/irrlicht/IGUIScrollBar.h
 include/irrlicht/IGUISkin.h
+include/irrlicht/IGUISpriteBank.h
 include/irrlicht/IGUIStaticText.h
 include/irrlicht/IGUITabControl.h
 include/irrlicht/IGUIToolbar.h
@@ -58,6 +62,7 @@ include/irrlicht/IParticleAffector.h
 include/irrlicht/IParticleEmitter.h
 include/irrlicht/IParticleSystemSceneNode.h
 include/irrlicht/IQ3LevelMesh.h
+include/irrlicht/IQ3Shader.h
 include/irrlicht/IReadFile.h
 include/irrlicht/ISceneCollisionManager.h
 include/irrlicht/ISceneManager.h
@@ -96,14 +101,17 @@ include/irrlicht/SMeshBuffer.h
 include/irrlicht/SMeshBufferLightMap.h
 include/irrlicht/SMeshBufferTangents.h
 include/irrlicht/SParticle.h
-include/irrlicht/SViewFrustrum.h
 include/irrlicht/SceneParameters.h
+include/irrlicht/SViewFrustum.h
 include/irrlicht/aabbox3d.h
+include/irrlicht/coreutil.h
 include/irrlicht/dimension2d.h
+include/irrlicht/fast_atof.h
 include/irrlicht/heapsort.h
 include/irrlicht/irrAllocator.h
 include/irrlicht/irrArray.h
 include/irrlicht/irrList.h
+include/irrlicht/irrMap.h
 include/irrlicht/irrMath.h
 include/irrlicht/irrString.h
 include/irrlicht/irrTypes.h
@@ -179,7 +187,7 @@ lib/libIrrlicht.so.%%SHARED_LIB_VER%%
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/Particle.tga
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/axe.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/ball.wav
-%%EXAMPLES%%%%EXAMPLESDIR%%/media/burning avatar.gif
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/bigfont.png
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/burninglogo.png
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/config.xml
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/d3d8.psh
@@ -188,7 +196,9 @@ lib/libIrrlicht.so.%%SHARED_LIB_VER%%
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/d3d9.psh
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/d3d9.vsh
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/demoback.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/demoback.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/detailmap3.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/directxlogo.png
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/dotnetback.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/dwarf-Read-Me.txt
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/dwarf.jpg
@@ -205,7 +215,7 @@ lib/libIrrlicht.so.%%SHARED_LIB_VER%%
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/fontcourier.bmp
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/fonthaettenschweiler.bmp
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/fontlucida.png
-%%EXAMPLES%%%%EXAMPLESDIR%%/media/help.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/help.png
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/impact.wav
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/irr.ico
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/irrlicht.dat
@@ -217,16 +227,20 @@ lib/libIrrlicht.so.%%SHARED_LIB_VER%%
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/irrlicht2_up.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/irrlichtlogo.BMP
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/irrlichtlogo.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/irrlichtlogo2.png
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/irrlichtlogoaligned.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/irrlichtlogoalpha.tga
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/irrlichtlogoalpha2.tga
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/lucida.xml
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/lucida0.png
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/map-20kdm2.pk3
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/map-20kdm2.txt
-%%EXAMPLES%%%%EXAMPLESDIR%%/media/open.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/open.png
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/opengl.frag
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/opengl.psh
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/opengl.vert
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/opengl.vsh
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/opengllogo.png
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/particle.bmp
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/particlered.bmp
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/particlewhite.bmp
@@ -250,13 +264,14 @@ lib/libIrrlicht.so.%%SHARED_LIB_VER%%
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/t351sml.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/terrain-heightmap.bmp
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/terrain-texture.jpg
-%%EXAMPLES%%%%EXAMPLESDIR%%/media/tools.bmp
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/tools.png
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/vc6include.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/vc6optionsdir.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/vcnetinclude.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/wall.bmp
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/wall.jpg
 %%EXAMPLES%%%%EXAMPLESDIR%%/media/water.jpg
+%%EXAMPLES%%%%EXAMPLESDIR%%/media/zip.png
 @dirrm include/irrlicht
 %%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/01.HelloWorld
 %%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/02.Quake3Map
