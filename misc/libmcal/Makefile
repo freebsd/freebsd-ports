@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} mcaldrivers-0.9.tar.gz
 
-MAINTAINER=	thierry@pompo.net
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Modular Calendar Access Library
 
 USE_AUTOTOOLS=	libltdl:15
@@ -21,13 +21,16 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-mstore --with-icap \
 		--prefix=${PREFIX} --exec-prefix=${PREFIX}
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 WRKSRCDRV=	${WRKDIR}/mcal-drivers
 
 DOCS=		CHANGELOG FAQ-MCAL FEATURE-IMPLEMENTATION FUNCTION-REF.html \
 		HOW-TO-MCAL LICENSE README mstore/README.mstore
+
+PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 post-extract:
 	${CP} -pR ${WRKSRCDRV}/mstore ${WRKSRC}
@@ -41,10 +44,8 @@ post-extract:
 	${CHMOD} u+x ${WRKSRC}/configure
 	${MV} ${WRKSRC}/mstore/README ${WRKSRC}/mstore/README.mstore
 
-post-patch:
-	${REINPLACE_CMD} -e "s:/etc/mpasswd:${PREFIX}/etc/mpasswd:" ${WRKSRC}/mstore/mstore.c
-
 pre-configure:
+	${REINPLACE_CMD} -e "s:/etc/mpasswd:${PREFIX}/etc/mpasswd:" ${WRKSRC}/mstore/mstore.c
 	@${ECHO_MSG} "===>  Building the driver mstore"
 	cd ${WRKSRC}/mstore ; \
 		${MAKE}
@@ -65,7 +66,7 @@ post-install:
 	@${ECHO_MSG} "===>  Documentation installed in ${DOCSDIR}."
 .endif
 	@${ECHO}
-	@${CAT} ${PKGMESSAGE} | ${SED} -e "s:%%LOCALBASE%%:${LOCALBASE}:g"
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO}
 
 .include <bsd.port.mk>
