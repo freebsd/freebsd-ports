@@ -1,0 +1,11 @@
+--- configure.orig	Tue Mar 20 14:01:31 2007
++++ configure	Tue Mar 20 14:02:49 2007
+@@ -24639,7 +24639,7 @@
+ 
+ 
+ GTKHTMLPRESENT=no
+-for GTKHTMLVER in 3.8 3.7 3.6 3.5 3.4 3.2 3.1 3.0 ; do
++for GTKHTMLVER in 3.14 3.8 3.7 3.6 3.5 3.4 3.2 3.1 3.0 ; do
+   if $PKG_CONFIG --exists libgtkhtml-$GTKHTMLVER ; then
+ 
+   succeeded=no

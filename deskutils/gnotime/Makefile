@@ -31,8 +31,4 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 MAN1=		gnotime.1
 GCONF_SCHEMAS=	gnotime.schemas
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|libgtkhtml-3.8|libgtkhtml-3.14|g' \
-	    	${WRKSRC}/configure
-
 .include <bsd.port.mk>
