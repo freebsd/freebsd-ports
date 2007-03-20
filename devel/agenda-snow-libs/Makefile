@@ -13,6 +13,9 @@ MASTER_SITES=	http://lev.serebryakov.spb.ru/download/agenda/
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	SNOW libraries which are needed to develop for Agenda VR3 PDA
 
+DEPRECATED=	Agenda VR3 is dead for long time
+EXPIRATION_DATE=2007-05-20
+
 RUN_DEPENDS=	${PREFIX}/${TARGET_PLATFORM}/include/stdio.h:${PORTSDIR}/devel/agenda-headers
 
 USE_BZIP2=	yes

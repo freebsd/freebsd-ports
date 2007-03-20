@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-cvs
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	GNU binutils for mipsel-linux cross-development with SNOW ABI
 
+DEPRECATED=     This is Agenda VR3-specific port, and Agenda VR3 is dead for long time.
+EXPIRATION_DATE=2007-05-20
+
 WRKSRC=		${WRKDIR}/binutils-CVS/src
 
 USE_BZIP2=	yes
