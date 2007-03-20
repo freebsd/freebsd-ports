@@ -5,7 +5,7 @@
              break;
          }
 -        t += i;
-+        t = (void *) ((int) t + i);
++        t = (void *) ((long) t + i);
          len -= i;
      } while (len > 0);
      for (;;){
@@ -14,7 +14,7 @@
              break;
          }
 -        t += i;
-+        t = (void *) ((int) t + i);
++        t = (void *) ((long) t + i);
          len -= i;
      } while (len > 0);
      for (;;){
