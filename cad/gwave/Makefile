@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gwave
-PORTVERSION=	20051222
+PORTVERSION=	20060606
 CATEGORIES=	cad
-MASTER_SITES=	http://www.cs.unc.edu/~tell/dist/ \
-		http://geda.seul.org/dist/
+MASTER_SITES=	http://geda.seul.org/dist/
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Waveform viewer for analogue electronic simulation tools
 
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile \
@@ -37,7 +36,6 @@ DOCFILES=	Guile.notes \
 		spice3.txt
 
 MAN1=		sp2sp.1
-PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 

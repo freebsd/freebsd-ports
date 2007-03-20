@@ -3,29 +3,21 @@ bin/gwave-exec
 bin/gwaverepl
 bin/sp2sp
 bin/sweepsplit
-share/guile/app/gwave/system.gwaverc
-share/guile/app/gwave/cmds.scm
-share/guile/app/gwave/dynlink.scm
-share/guile/app/gwave/export-gnugraph.scm
-share/guile/app/gwave/export-gnuplot.scm
-share/guile/app/gwave/export.scm
-share/guile/app/gwave/extra-menus.scm
-share/guile/app/gwave/globals.scm
-share/guile/app/gwave/gtk-helpers.scm
-share/guile/app/gwave/gwave-config.scm
-share/guile/app/gwave/gwave-startup.scm
-share/guile/app/gwave/minimal.scm
-share/guile/app/gwave/std-args.scm
-share/guile/app/gwave/std-menus.scm
-share/guile/app/gwave/std-toolbar.scm
-share/guile/app/gwave/utils.scm
-share/guile/app/gwave/visiblewave-ops.scm
+%%PORTDOCS%%%%DOCSDIR%%/Guile.notes
+%%PORTDOCS%%%%DOCSDIR%%/gwave-concepts.txt
+%%PORTDOCS%%%%DOCSDIR%%/gwave-hooks.txt
+%%PORTDOCS%%%%DOCSDIR%%/gwave-procedures.txt
+%%PORTDOCS%%%%DOCSDIR%%/gwave-variables.txt
+%%PORTDOCS%%%%DOCSDIR%%/hspice-output.txt
+%%PORTDOCS%%%%DOCSDIR%%/hspice.txt
+%%PORTDOCS%%%%DOCSDIR%%/spice3.txt
 %%EXAMPLES%%%%EXAMPLESDIR%%/Readme
 %%EXAMPLES%%%%EXAMPLESDIR%%/aoi.W
 %%EXAMPLES%%%%EXAMPLESDIR%%/aoi.W.gw
 %%EXAMPLES%%%%EXAMPLESDIR%%/aoi.W.tr0
 %%EXAMPLES%%%%EXAMPLESDIR%%/aoi.W.tr0.gw
 %%EXAMPLES%%%%EXAMPLESDIR%%/aoi.W1
+%%EXAMPLES%%%%EXAMPLESDIR%%/deespectre.raw
 %%EXAMPLES%%%%EXAMPLESDIR%%/diffpair.braw
 %%EXAMPLES%%%%EXAMPLESDIR%%/diffpair.sp
 %%EXAMPLES%%%%EXAMPLESDIR%%/gw
@@ -49,11 +41,32 @@ share/guile/app/gwave/visiblewave-ops.scm
 %%EXAMPLES%%%%EXAMPLESDIR%%/quickTRAN.tr0
 %%EXAMPLES%%%%EXAMPLESDIR%%/rcsq.raw
 %%EXAMPLES%%%%EXAMPLESDIR%%/rcsq.sp
+%%EXAMPLES%%%%EXAMPLESDIR%%/rlc.braw
+%%EXAMPLES%%%%EXAMPLESDIR%%/rlc.raw
+%%EXAMPLES%%%%EXAMPLESDIR%%/rlc.sp
 %%EXAMPLES%%%%EXAMPLESDIR%%/test1.tr0.binary
 %%EXAMPLES%%%%EXAMPLESDIR%%/tlong.tr0.9601
 %%EXAMPLES%%%%EXAMPLESDIR%%/tpwl.acs
 %%EXAMPLES%%%%EXAMPLESDIR%%/tscript
-%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%
+share/guile/app/gwave/cmds.scm
+share/guile/app/gwave/dynlink.scm
+share/guile/app/gwave/export-gnugraph.scm
+share/guile/app/gwave/export-gnuplot.scm
+share/guile/app/gwave/export.scm
+share/guile/app/gwave/extra-menus.scm
+share/guile/app/gwave/globals.scm
+share/guile/app/gwave/gtk-helpers.scm
+share/guile/app/gwave/gwave-config.scm
+share/guile/app/gwave/gwave-startup.scm
+share/guile/app/gwave/minimal.scm
+share/guile/app/gwave/std-args.scm
+share/guile/app/gwave/std-menus.scm
+share/guile/app/gwave/std-toolbar.scm
+share/guile/app/gwave/system.gwaverc
+share/guile/app/gwave/utils.scm
+share/guile/app/gwave/visiblewave-ops.scm
 @dirrm share/guile/app/gwave
 @dirrmtry share/guile/app
 @dirrmtry share/guile
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
