@@ -1,0 +1,6 @@
+Geography::NationalGrid is a factory class whose sole purpose is to give you
+an object for the right country. Geography::NationalGrid::GB and
+Geography::NationalGrid::IE are included with this distribution - other
+countries' national grids are converted by other packages.
+
+WWW: http://search.cpan.org/dist/Geography-NationalGrid/
