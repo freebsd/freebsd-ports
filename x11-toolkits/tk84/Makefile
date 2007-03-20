@@ -7,7 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.4.14
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	x11-toolkits tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -17,9 +17,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
 MAINTAINER=	martin@matuska.org
 COMMENT=	Graphical toolkit for TCL
-
-USE_TCL=	84
-USE_TCL_BUILD=	84
 
 LATEST_LINK?=	tk84
 USE_XLIB=	yes
@@ -36,34 +33,33 @@ PLIST_SUB=	TK_VER=${TK_VER} SHORT_TK_VER=${SHORT_TK_VER}
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 MANCOMPRESSED=	no
 DATADIR=	${PREFIX}/share/${PORTNAME}${TK_VER}
+SUB_FILES=	pkgIndex.tcl
+
+.if !defined(BUILDING_TK_THREADS)
+USE_TCL=	84
+USE_TCL_BUILD=	84
 
 OPTIONS=	TK84_MAN "Install tk 8.4 manpages" on \
 		WISH_WRAPPER "Require wish wrapper from ports" off
+.else
+USE_TK=		${SHORT_TK_VER}
+PLIST=		${PKGDIR}/pkg-plist.threads
+THREADS_SUFFIX=	-threads
+LIB_DEPENDS=	tcl${SHORT_TK_VER}${THREADS_SUFFIX}:${PORTSDIR}/lang/tcl${SHORT_TK_VER}-thread
+.endif
+
+SUB_LIST+=	THREADS_SUFFIX="${THREADS_SUFFIX}"
 
 .include <bsd.port.pre.mk>
 
-.if exists(${TCLSH})
-_TCL_IS_THREADED!=	${ECHO_CMD}	'puts [array names tcl_platform	-exact threaded]' | ${TCLSH} || return 0
-. if !defined(TCL_WITH_THREADS) && !defined(WITH_THREADS) && !empty(_TCL_IS_THREADED)
-TCL_WITH_THREADS=	yes
-. endif
-.endif
-
-.if defined(TCL_WITH_THREADS) || defined(WITH_THREADS)
-. if defined(_TCL_IS_THREADED) && empty(_TCL_IS_THREADED)
-IGNORE=	tcl with threads is required. Please install tcl with WITH_THREADS defined or from lang/tcl${USE_TCL} port and try again
-. endif
-CONFIGURE_ARGS+=	--enable-threads
-CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
-THREADS_SUFFIX=		-threads
-USE_TCL=		84-thread
-USE_TCL_BUILD=		84-thread
-CONFLICTS=		tk-8.4*
-.include "${PORTSDIR}/Mk/bsd.tcl.mk"
+.if defined(BUILDING_TK_THREADS)
+CONFIGURE_ARGS+=	--enable-threads --with-tcl=${LOCALBASE}/lib/tcl${TK_VER}${THREADS_SUFFIX}
+CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+			ac_cv_path_tclsh="${LOCALBASE}/bin/tclsh${TK_VER}${THREADS_SUFFIX}"
+LATEST_LINK=		tk85${THREADS_SUFFIX}
 .else
-CONFIGURE_ARGS+=	--disable-threads
-CONFLICTS=		tk-threads-8.4*
-.endif
+CONFIGURE_ARGS+=	--disable-threads --with-tcl=${LOCALBASE}/lib/tcl${TK_VER}
+CONFIGURE_ENV+=		ac_cv_path_tclsh="${TCLSH}"
 
 .if defined(WITH_WISH_WRAPPER)
 RUN_DEPENDS+=		wish:${PORTSDIR}/lang/tcl-tk-wrapper
@@ -381,25 +377,49 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 
 .endif
 
+.endif  # defined(BUILDING_TK_THREADS)
+
 TKBASE?=	${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}
 
 pre-everything::
 	@if ${TEST} -e "${NONEXISTENT}"; then ${ECHO_MSG} "=== Aborted, please remove ${NONEXISTENT}"; exit 1; fi
 
-pre-configure:
+post-patch:
+	@${REINPLACE_CMD} -e 's|@TK_SHARED_BUILD@|#@TK_SHARED_BUILD@|g' ${WRKSRC}/Makefile.in
+.if defined(BUILDING_TK_THREADS)
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		-e 's|$${TCL_TRIM_DOTS}|$${TCL_TRIM_DOTS}${THREADS_SUFFIX}|g' \
+		-e 's|-ltk$${VERSION}|-ltk$${VERSION}${THREADS_SUFFIX}|g' \
+		-e 's/-ltk`echo $${VERSION} | tr -d .`/-ltk`echo $${VERSION} | tr -d .`${THREADS_SUFFIX}/g' \
+		-e 's|-ltkstub$${TK_VERSION}|-ltkstub$${TK_VERSION}${THREADS_SUFFIX}|g' \
+		-e 's/-ltkstub`echo $${TK_VERSION} | tr -d .`/-ltkstub`echo $${TK_VERSION} | tr -d .`${THREADS_SUFFIX}/g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|libtk$${SHORT_TK_VER}|libtk$${SHORT_TK_VER}${THREADS_SUFFIX}|g' \
+		-e 's|$$(BIN_INSTALL_DIR)/wish$$(VERSION)|$$(BIN_INSTALL_DIR)/wish$$(VERSION)${THREADS_SUFFIX}|g' \
+		-e 's|tk$$(VERSION)/tkConfig.sh|tk$$(VERSION)/tkConfig${THREADS_SUFFIX}.sh|g' \
+		-e 's|$$(LIB_INSTALL_DIR)$$(TK_PKG_DIR)|${WRKDIR}|g' \
+		-e 's|$$(MINOR_VERSION)$$(TCLPATCHL)|$$(MINOR_VERSION)$$(TCLPATCHL)${THREADS_SUFFIX}|g' \
+		${WRKSRC}/Makefile.in
+.endif
 
 post-configure:
 	${REINPLACE_CMD} \
 		-e 's|${WRKDIRPREFIX}${.CURDIR}|$${WRKDIRPREFIX}${TKBASE}|' \
 		${WRKSRC}/tkConfig.sh
 
+.if defined(BUILDING_TK_THREADS)
+do-install:
+	@cd ${WRKSRC} && ${MAKE_ENV} ${MAKE} -f Makefile install-binaries
+	@${MKDIR} ${PREFIX}/lib/tk${TK_VER}${THREADS_SUFFIX}
+	@${LN} -sf ${PREFIX}/lib/tk${TK_VER}/tkConfig${THREADS_SUFFIX}.sh \
+		${PREFIX}/lib/tk${TK_VER}${THREADS_SUFFIX}/tkConfig.sh
+.endif
+
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}/
+	${INSTALL_DATA} ${WRKDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}${THREADS_SUFFIX}/
+.if !defined(BUILDING_TK_THREADS) && !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK84_MAN)
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/man.macros ${DATADIR}
-.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK84_MAN)
 .for mp in ${MAN1} ${MAN3} ${MANN}
 	@${REINPLACE_CMD} -e 's|^.so man.macros|.so ${DATADIR}/man.macros|'	\
 		${WRKSRC}/../doc/${mp}
