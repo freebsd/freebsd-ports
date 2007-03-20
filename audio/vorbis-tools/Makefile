@@ -37,6 +37,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		ogg123.1 oggdec.1 oggenc.1 ogginfo.1 vcut.1 vorbiscomment.1
 
+# after lib-depends
+pre-configure:
+	${CP} ${LOCALBASE}/share/gettext/po/Makefile.in.in \
+		${WRKSRC}/po/Makefile.in.in
+
 post-install:
 	${MKDIR} ${PREFIX}/share/examples/vorbis-tools
 	${INSTALL_DATA} ${WRKSRC}/ogg123/ogg123rc-example \
