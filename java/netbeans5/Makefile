@@ -1,18 +1,18 @@
 # New ports collection makefile for:	netbeans
-# Date Created:				2 Jun 2003
-# Whom:				 	olgeni@FreeBSD.org
+# Date Created:				15 May 2007
+# Whom:				 	Nemo Liu <nemoliu@gmail.com>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	netbeans4
-PORTVERSION=	4.1
+PORTNAME=	netbeans5
+PORTVERSION=	5
 CATEGORIES=	java devel
-MASTER_SITES=
-DISTNAME=	netbeans-4_1
+MASTER_SITES=	http://us1.mirror.netbeans.org/download/5_0/fcs/200601251500/
+DISTNAME=	netbeans-5_0
 
-MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	A full-featured integrated environment for Java
+MAINTAINER=	nemoliu@gmail.com
+COMMENT=	A free and open-source IDE for Java
 
 USE_BZIP2=	yes
 USE_JAVA=	yes
@@ -24,13 +24,9 @@ WRKSRC=		${WRKDIR}/netbeans
 
 SUB_FILES=	pkg-install pkg-deinstall
 
-DOWNLOAD_URL?=	http://www.netbeans.info/downloads/download.php?p=1&a=bd&os=1&lang=1&rv=4.1&b_bt=2
+DOWNLOAD_URL?=	http://www.netbeans.info/downloads/index.php?rs=2
 
 .include <bsd.port.pre.mk>
-
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
-IGNORE=		you must manually fetch the source distribution (${DISTFILES}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
-.endif
 
 post-patch:
 	@${RM} ${WRKSRC}/etc/netbeans.conf.orig
@@ -40,12 +36,12 @@ do-configure:
 	@${RM} ${WRKSRC}/etc/netbeans.conf.bak
 
 do-install:
-	@${MKDIR} ${PREFIX}/netbeans4
-	@${CP} -r ${WRKSRC}/* ${PREFIX}/netbeans4
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/netbeans4
-	@${LN} -sf ${PREFIX}/netbeans4/bin/netbeans ${PREFIX}/bin/netbeans4
-	@(cd ${WRKDIR}; ${FIND} -s netbeans -not -type d) | ${SED} -ne 's,^netbeans,netbeans4,p' >> ${TMPPLIST}
-	@(cd ${WRKDIR}; ${FIND} -s -d netbeans -type d) | ${SED} -ne 's,^netbeans,netbeans4,' -ne 's,^,@dirrm ,p' >> ${TMPPLIST}
-	@(cd ${WRKDIR}; ${FIND} -s -d netbeans -type d -empty) | ${SED} -ne 's,^netbeans,netbeans4,' -ne 's,^,@exec mkdir -p %D/,p' >> ${TMPPLIST}
+	@${MKDIR} ${PREFIX}/netbeans5
+	@${CP} -r ${WRKSRC}/* ${PREFIX}/netbeans5
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/netbeans5
+	@${LN} -sf ${PREFIX}/netbeans5/bin/netbeans ${PREFIX}/bin/netbeans5
+	@(cd ${WRKDIR}; ${FIND} -s netbeans -not -type d) | ${SED} -ne 's,^netbeans,netbeans5,p' >> ${TMPPLIST}
+	@(cd ${WRKDIR}; ${FIND} -s -d netbeans -type d) | ${SED} -ne 's,^netbeans,netbeans5,' -ne 's,^,@dirrm ,p' >> ${TMPPLIST}
+	@(cd ${WRKDIR}; ${FIND} -s -d netbeans -type d -empty) | ${SED} -ne 's,^netbeans,netbeans5,' -ne 's,^,@exec ${MKDIR} %D/,p' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
