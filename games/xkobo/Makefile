@@ -19,6 +19,10 @@ USE_IMAKE=	yes
 ALL_TARGET=	xkobo
 MAN1=		xkobo.1
 
+post-configure:
+	${REINPLACE_CMD} -E -e 's,^.* CC = .*$$, CC=${CC},' \
+			    -e 's,^.* CXX = .*$$, CXX=${CXX},' ${WRKSRC}/Makefile
+
 post-install:
 	${CHMOD} u-s,g+s ${PREFIX}/bin/xkobo
 	${CHOWN} root:games ${PREFIX}/bin/xkobo ${PREFIX}/lib/X11/xkobo-scores
