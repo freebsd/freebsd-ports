@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	builder
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@logvinov.com
 COMMENT=	Facilitate programatic generation of XML markup
 
 USE_RUBY=	yes
