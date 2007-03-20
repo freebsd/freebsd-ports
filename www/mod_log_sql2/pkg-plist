@@ -2,4 +2,5 @@
 @exec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%F
 @unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%F
 %%APACHEMODDIR%%/mod_log_sql_mysql.so
+%%APACHE2X%%%%APACHEMODDIR%%/mod_log_sql_logio.so
 %%SSL%%%%APACHEMODDIR%%/mod_log_sql_ssl.so

@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_log_sql
-PORTVERSION=	1.100
+PORTVERSION=	1.101
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.outoforder.cc/downloads/${PORTNAME}/
 
@@ -18,9 +18,11 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--with-apxs=${APXS}
 SSL_PLIST=	""
-PLIST_SUB+=	SSL=${SSL_PLIST}
+APACHE2X=	""
+PLIST_SUB+=	SSL=${SSL_PLIST} APACHE2X=${APACHE2X}
 
 USE_MYSQL=	yes
+USE_APACHE=	13+
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql"
 
 .include <bsd.port.pre.mk>
@@ -28,17 +30,14 @@ CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql"
 CONFIGURE_ARGS+=	--with-dbi=${LOCALBASE}
 LIB_DEPENDS+=		dbi.0:${PORTSDIR}/databases/libdbi
 .endif
-.include "${PORTSDIR}/www/apache20/Makefile.modules.3rd"
-.   if ${AP_VER} == 13
+.   if ${APACHE_VERSION} == 13
 WITHOUT_SSL=	YES
+APACHE2X=	"@comment "
 .   endif
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=	--disable-ssl
 SSL_PLIST=	"@comment "
 .else
-.if !exists(${LOCALBASE}/include/apache2/mod_ssl.h)
-BROKEN=		"Please recompile apache2 with SSL support"
-.endif
 .endif
 
 .include <bsd.port.post.mk>
