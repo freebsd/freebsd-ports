@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	citrix_ica
-PORTVERSION=	9.00
-PORTREVISION=	4
+PORTVERSION=	10.0
 CATEGORIES=	net comms linux
 MASTER_SITES=
 DISTNAME=	${PORTNAME}-linuxx86-${PORTVERSION}
@@ -51,12 +50,11 @@ IGNORE='The distribution file for this port may not be automatically fetched due
 do-fetch:
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 	@${ECHO} ""
-	@${ECHO} "You have to fetch the file manually after reading and"
-	@${ECHO} "agreeing to the license at:"
+	@${ECHO} "You have to fetch the file manually from"
 	@${ECHO} ""
-	@${ECHO} "http://www.citrix.com/download/bin/license.asp?client=linux"
+	@${ECHO} "http://www.citrix.com/English/SS/downloads/details.asp?dID=2755&downloadID=3323&pID=186"
 	@${ECHO} ""
-	@${ECHO} "Once linuxx86.tar.gz has been downloaded move it to"
+	@${ECHO} "Once en.linuxx86.tar.gz has been downloaded move it to"
 	@${ECHO} "${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} and restart the build."
 	@${ECHO} ""
 	@${FALSE}

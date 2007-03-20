@@ -1,6 +1,6 @@
---- linuxx86/hinst.orig	Fri Apr  8 19:52:59 2005
-+++ linuxx86/hinst	Wed May 18 14:07:10 2005
-@@ -75,7 +75,7 @@
+--- linuxx86/hinst.orig	Tue Oct 31 07:07:08 2006
++++ linuxx86/hinst	Mon Mar  5 12:26:02 2007
+@@ -86,7 +86,7 @@
  fi
  
  #  Install in here by default.
@@ -9,53 +9,25 @@
  
  #  Default CDROM mount point
  DefaultCDSourceDir=/cdrom
-@@ -2166,7 +2166,7 @@
+@@ -2217,7 +2217,7 @@
+ 	then
+ 		:
+ 	else
+-		/bin/false
++		/usr/bin/false
+ 		return 
+ 	fi
  
- 	# rm -f $m_filename $mf_filename $o_filename $of_filename
+@@ -2263,7 +2263,7 @@
+ 		fi
+ 	fi
  
 -	/bin/true
 +	/usr/bin/true
  }
  
  ###############################################################################
-@@ -2217,10 +2217,34 @@
- #
- ###############################################################################
- 
-+check_for_ns() {
-+	BIN=`/usr/bin/file $1/plugins/libnullplugin.so | /usr/bin/awk '{print $11}'`
-+	case ${BIN} in
-+	\(SYSV\),)
-+		NETSCAPE_DIR="$1"
-+		PLUGIN_PATH="$s/plugins"
-+		FOUND_NS="TRUE"
-+	esac
-+}
-+
-+NSCP="/usr/local/libexec/netscape \
-+	/usr/local/libexec/netscape-linux \
-+	/usr/local/netscape \
-+	/usr/local/netscape-linux \
-+	/usr/local/lib/netscape \
-+	/usr/local/lib/netscape-linux \
-+	/usr/local/lib/linux-mozilla \
-+	/usr/local/lib/mozilla \
-+	$MOZILLA_HOME"
-+
-+for dir in ${NSCP}; do
-+	if [ -e $dir/plugins/libnullplugin.so ]; then
-+		check_for_ns $dir;
-+	fi
-+done
-+
- INST_DIR=$ICAInstDir
- TMP_NAME=/tmp/ICAnetscape.$$
--NETSCAPE_DIR="/usr/local/lib/netscape"
--PLUGIN_PATH="/usr/local/netscape/plugins"
- PLUGIN_NAME=npica.so
- PLUGIN_CLASS=ICAClObj.class
- MAILCAP_FILE=mailcap
-@@ -2293,26 +2317,19 @@
+@@ -2387,26 +2387,19 @@
  
  netscape_integrate()
  {
@@ -87,7 +59,7 @@
  	user_prompt $integrate_netscape2
   	getyesno $INSTALLER_NO
  	if [ "$ANSWER" = "$INSTALLER_YES" ]
-@@ -2321,9 +2338,9 @@
+@@ -2415,9 +2408,9 @@
  	else
    		user_echo $integrate_netscape6
  	fi
@@ -99,68 +71,3 @@
      # Create utility script files in install root.
      create_wfica_script
      create_wfica_assoc_script
-@@ -2953,55 +2970,6 @@
-     echo "$BINDIR"
- }
- 
--################################################################################
--#
--# find_browsers
--#
--# Returns a list of directories containing new-style mozilla-based browsers 
--# that may be launched by files on the $PATH.
--#
--################################################################################
--find_browsers()
--{
--    PROGS="netscape mozilla firefox"
--    DIST_BIN_DIR=""
--    STANDARD_DIRS="/usr/local/netscape /usr/local/mozilla"
--
--    case $op_system in
--       SunOS) if
--                 /usr/bin/pkginfo -q $SOLARIS_PACKAGE_NAME
--              then
--                 relocation_base=`/usr/bin/pkginfo -r $SOLARIS_PACKAGE_NAME`
--                 STANDARD_DIRS="$STANDARD_DIRS $relocation_base/$SOLARIS_PACKAGE_DIRECTORY"
--
--                 # N.B. the Netscape 7 packages for SOLARIS 9 have an extended installation path built-in!
--                 case `uname -r` in
--                    5.9) STANDARD_DIRS="$STANDARD_DIRS $relocation_base/dt/appconfig/$SOLARIS_PACKAGE_DIRECTORY"
--                         ;;
--                    *)   ;;
--                 esac
--              fi;;
--       *) ;;
--    esac
--
--    for d in `echo $PATH | sed "s/:/ /g"` $STANDARD_DIRS
--    do
--	echo $d
--    done | sort -u | while read d
--    do 
--	for p in $PROGS
--	do    
--	    # Find the each instance of each named browser
--	    PROG=$d/$p
--	    if test -f $PROG
--	    then
--		# Where is the installation and what version is it?
--		find_extra_bin_dirs $PROG
--	    fi
--	done
--    done | sort -u
--}
--
- BROWSER_LIST_KEY="BROWSER_DIR"
- ################################################################################
- #
-@@ -3226,6 +3194,8 @@
- wfcmgr_ja_NAME='MetaFrame UNIX クライアント'
- 
- DEFAULT_GNOME_TARGET_DIRS="/usr/share/applications \
-+                           /usr/local/share/applnk/Internet \
-+                           /usr/local/share/applnk/Networking \
-                            /etc/opt/gnome/SuSE/Internet"
- DEFAULT_KDE_TARGET_DIRS="/usr/share/applnk/Applications \
-                         /usr/share/applnk-redhat/Internet \
