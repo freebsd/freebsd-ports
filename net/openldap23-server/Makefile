@@ -39,7 +39,7 @@ BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
 PORTREVISION_CLIENT=	0
-PORTREVISION_SERVER=	0
+PORTREVISION_SERVER=	1
 
 .if !defined(CLIENT_ONLY)
 OPTIONS=	SASL "With (Cyrus) SASL2 support" on \
@@ -160,6 +160,7 @@ PKGMESSAGE=		${WRKSRC}/pkg-message.client
 .else
 # server specific configuration
 
+USE_LDCONFIG=		${PREFIX}/libexec/openldap
 SUB_FILES+=		pkg-deinstall pkg-message pkg-install
 USE_RC_SUBR=		slapd.sh ${SLURPDSH}
 
