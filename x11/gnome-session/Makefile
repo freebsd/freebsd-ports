@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-session
 PORTVERSION=	2.18.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://www.marcuscom.com/downloads/:local
