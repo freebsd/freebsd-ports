@@ -14,14 +14,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	An anonymous network
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/libgmp4 \
-		${JAVASHAREDIR}/jetty/ext/ant.jar:${PORTSDIR}/www/jetty \
-		${JAVASHAREDIR}/jetty/ext/commons-el.jar:${PORTSDIR}/www/jetty \
-		${JAVASHAREDIR}/jetty/ext/commons-logging.jar:${PORTSDIR}/www/jetty \
-		${JAVASHAREDIR}/jetty/ext/jasper-compiler.jar:${PORTSDIR}/www/jetty \
-		${JAVASHAREDIR}/jetty/ext/jasper-runtime.jar:${PORTSDIR}/www/jetty \
-		${JAVASHAREDIR}/jetty/ext/xercesImpl.jar:${PORTSDIR}/www/jetty \
-		${JAVASHAREDIR}/jetty/lib/javax.servlet.jar:${PORTSDIR}/www/jetty \
-		${JAVASHAREDIR}/jetty/lib/org.mortbay.jetty.jar:${PORTSDIR}/www/jetty
+		${LOCALBASE}/sbin/jettyctl:${PORTSDIR}/www/jetty
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 USE_BZIP2=	yes
