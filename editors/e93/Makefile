@@ -7,18 +7,28 @@
 
 PORTNAME=	e93
 PORTVERSION=	1.3.4
-CATEGORIES=	editors tcl82 tk82
-MASTER_SITES=	ftp://ftp.e93.org/pub/
+PORTREVISION=	1
+CATEGORIES=	editors tcl84 tk84
+MASTER_SITES=	ftp://ftp.e93.org/pub/ \
+  		http://www.crpetsmoker.net/distfiles/ \
+		http://www.xs4all.nl/~tournoij/distfiles/
 DISTNAME=	${PORTNAME}-1.3r4X
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	A nifty editor based on Tcl/Tk
 
-LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
-		tk82.1:${PORTSDIR}/x11-toolkits/tk82
-
+USE_TCL=	yes
+USE_TCL_BUILD=	yes
+USE_TK=		yes
+USE_TK_BUILD=	yes
+USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+post-patch:
+	@${REINPLACE_CMD} 's|wish|wish${TK_VER}|' ${WRKSRC}/e93r
+	@${REINPLACE_CMD} 's|CFLAGS=|CFLAGS+=$$(TK_INCLUDE) -I${LOCALBASE}/include |' \
+		${WRKSRC}/Makefile ${WRKSRC}/xgui/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/e93 ${PREFIX}/bin

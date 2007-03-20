@@ -11,12 +11,12 @@
  # files are located elsewhere on your system:
 -TCL_INCLUDE=-I/usr/local/include
 -TCL_LIB=-L/usr/local/lib
-+TCL_INCLUDE=-I${LOCALBASE}/include/tcl8.2
++TCL_INCLUDE=-I${LOCALBASE}/include/tcl8.4
 +TCL_LIB=-L${LOCALBASE}/lib
  # uncomment and change if you want to link with specific versions of Tcl/Tk
 -#TCL_VERSION=8.3
-+TCL_VERSION=82
-+TK_INCLUDE=-I${LOCALBASE}/include/tk8.2
++TCL_VERSION=84
++TK_INCLUDE=-I${LOCALBASE}/include/tk8.4
  
  
  # The following lines may need to be altered if the X include and library
