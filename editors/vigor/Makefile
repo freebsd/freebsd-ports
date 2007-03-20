@@ -7,30 +7,30 @@
 
 PORTNAME=	vigor
 PORTVERSION=	0.016
-CATEGORIES=	editors tk82 tcl82
+PORTREVISION=	1
+CATEGORIES=	editors tk84 tcl84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	A vi clone inspired by the userfriendly comic strip
 
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
-		tcl82.1:${PORTSDIR}/lang/tcl82
-
+USE_TCL=	yes
+USE_TCL_BUILD=	yes
+USE_TK=		yes
+USE_TK_BUILD=	yes
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--program-transform-name="s,0,1,"
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
-USE_XLIB=	yes
 
-WRKSRC=	${WRKDIR}/${DISTNAME}/build
-CFLAGS+=	-I${LOCALBASE}/include/tcl8.2 -I${LOCALBASE}/include/tk8.2
+WRKSRC=		${WRKDIR}/${DISTNAME}/build
+CFLAGS+=	-I${LOCALBASE}/include/tcl${TCL_VER} -I${LOCALBASE}/include/tk${TK_VER}
 
-# Uglyness. So is "-ltcl -ltk -ltcl", so I don't feel bad.
 post-patch:
-	${REINPLACE_CMD} \
-		-e 's,-ltcl,-ltcl82 -L${LOCALBASE}/lib,g' \
-		-e 's,-ltk,-ltk82,g' \
-		-e 's,^grantpt,XXXgrantpt,g' \
-		${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|tcl80|tcl${TCL_VER:S/.//} -L${LOCALBASE}/lib|; \
+		s|tk80|tk${TK_VER:S/.//}|; \
+		s|^grantpt|XXXgrantpt|;' \
+			${WRKSRC}/configure
 
 .include <bsd.port.mk>
