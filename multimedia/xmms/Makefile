@@ -22,7 +22,7 @@ WANT_GNOME=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \
@@ -143,6 +143,8 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,-pthread,${PTHREAD_LIBS},g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/objformat/s|echo aout|echo elf|' \
+		${WRKSRC}/configure ${WRKSRC}/libxmms/configure
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/xmms/Skins
