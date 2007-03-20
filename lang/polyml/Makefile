@@ -20,6 +20,7 @@ USE_GCC=	3.2+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --without-x
 USE_LDCONFIG=	yes
+ONLY_FOR_ARCHS=	i386
 
 PLIST_FILES=	bin/poly		\
 		bin/polyimport		\
