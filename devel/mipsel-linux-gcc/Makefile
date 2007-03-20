@@ -17,6 +17,9 @@ PKGNAMEPREFIX=	mipsel-linux-
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Gcc-2.97 for mipsel-linux cross-development with SNOW ABI
 
+DEPRECATED=	This is Agenda VR3-specific port, and Agenda VR3 is dead for long time.
+EXPIRATION_DATE=2007-05-20
+
 BUILD_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		${PKGNAMEPREFIX}ld:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/include/stdio.h:${PORTSDIR}/devel/agenda-headers \

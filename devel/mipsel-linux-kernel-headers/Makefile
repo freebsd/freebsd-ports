@@ -16,6 +16,9 @@ DISTNAME=	kernel-headers-2.4.0-test9_1
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Kernel headers for linux 2.4.0-pre9 for development for mipsel-linux
 
+DEPRECATED=	This is Agenda VR3-specific port, and Agenda VR3 is dead for long time.
+EXPIRATION_DATE=2007-05-20
+
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
