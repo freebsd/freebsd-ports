@@ -6,7 +6,7 @@
 #
 
 # The following compile-time options are available:
-# NOSHARED=yes		compile a static version of zsh
+# NO_SHARED=yes		compile a static version of zsh
 #			(default: use dynamically loadable modules)
 # WITHOUT_ZSH_MEM=yes	disable zsh-mem and zsh-secure-free options
 #			(default: on)
@@ -75,7 +75,7 @@ CONFIGURE_ARGS+=	--enable-zsh-mem --enable-zsh-secure-free
 CONFIGURE_ARGS+=	--enable-maildir-support
 .endif
 
-.if defined(NOSHARED)
+.if defined(NO_SHARED)
 CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -static"
 CONFIGURE_ARGS+=	--disable-dynamic
 PLIST_SUB+=		NO_STATIC="@comment "
