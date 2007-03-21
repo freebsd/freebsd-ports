@@ -7,14 +7,13 @@
 #
 
 PORTNAME=	Flickr-Upload
-PORTVERSION=	1.22
-PORTREVISION=	1
+PORTVERSION=	1.25
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Flickr
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Upload images to flickr.com
 
 RUN_DEPENDS=	${SITE_PERL}/Flickr/API.pm:${PORTSDIR}/www/p5-Flickr-API \
@@ -27,10 +26,4 @@ PERL_CONFIGURE=	yes
 MAN1=		flickr_upload.1
 MAN3=		Flickr::Upload.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
