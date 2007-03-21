@@ -26,7 +26,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2 \
 
 USE_GNOME=	libgtkhtml
 PERL_CONFIGURE=	yes
-USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 

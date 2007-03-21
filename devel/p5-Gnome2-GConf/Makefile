@@ -21,7 +21,6 @@ BUILD_DEPENDS=		${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-D
 RUN_DEPENDS=		${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2
 
 PERL_CONFIGURE=		yes
-USE_GMAKE=		yes
 USE_GNOME=		gconf2
 
 MAN3=			Gnome2::GConf.3 \

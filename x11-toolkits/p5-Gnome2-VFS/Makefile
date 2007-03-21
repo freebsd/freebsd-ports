@@ -27,7 +27,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2 \
 
 USE_GNOME=	gnomevfs2
 PERL_CONFIGURE=	yes
-USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
