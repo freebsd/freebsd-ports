@@ -16,9 +16,9 @@ MAINTAINER=		jbq@caraldi.com
 COMMENT=		GUI front end for the efax fax program
 
 LIB_DEPENDS=		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
-RUN_DEPENDS=		ggv:${PORTSDIR}/print/ggv \
-			gs:${PORTSDIR}/print/ghostscript-gnu
+RUN_DEPENDS=		ggv:${PORTSDIR}/print/ggv
 
+USE_GHOSTSCRIPT_RUN=	yes
 USE_GNOME=		gtk20
 USE_X_PREFIX=		yes
 GNU_CONFIGURE=		yes
