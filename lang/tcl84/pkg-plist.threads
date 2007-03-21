@@ -1,0 +1,8 @@
+bin/tclsh%%TCL_VER%%-threads
+lib/libtcl%%SHORT_TCL_VER%%-threads.a
+lib/libtcl%%SHORT_TCL_VER%%-threads.so
+lib/libtcl%%SHORT_TCL_VER%%-threads.so.1
+lib/libtclstub%%SHORT_TCL_VER%%-threads.a
+lib/tcl%%TCL_VER%%/tclConfig-threads.sh
+lib/tcl%%TCL_VER%%-threads/tclConfig.sh
+@dirrm lib/tcl%%TCL_VER%%-threads
