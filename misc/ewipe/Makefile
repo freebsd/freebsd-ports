@@ -7,19 +7,22 @@
 
 PORTNAME=	ewipe
 PORTVERSION=	1.2.0
-CATEGORIES?=	misc tk82
-MASTER_SITES=	http://www.jnet-jp.to/~sekisita/ewipe/
+PORTREVISION=	1
+CATEGORIES?=	misc tk84
+MASTER_SITES=	http://www.jnet-jp.to/~sekisita/ewipe/ \
+		http://www.carpetsmoker.net/distfiles/ \
+		http://www.xs4all.nl/~tournoij/distfiles/
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	carpetsmoker@xs4all.nl
 COMMENT?=	Tcl/tk-based presentation tool
 
 .if defined(KANJI)
 RUN_DEPENDS=	wish8.0jp:${PORTSDIR}/japanese/tk80
 .else
-RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
+USE_TK=		yes
 .endif
 
-NO_BUILD=	YES
+NO_BUILD=	yes
 TCLLIBS=	definefont.tcl edittable.tcl setpointer.tcl viewer.tcl tclIndex
 MYPORTDOCS=	Changes.jp README README.jp dot.ewipe
 EXAMPLES=	a1.gif a2.gif a3.gif a4.gif blue1.gif sample.ewp test.ewp \
@@ -27,14 +30,13 @@ EXAMPLES=	a1.gif a2.gif a3.gif a4.gif blue1.gif sample.ewp test.ewp \
 
 .if defined(KANJI)
 WISH=		${LOCALBASE}/bin/wish8.0jp
-.else
-WISH=		${LOCALBASE}/bin/wish8.2
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} \
-		-e "s|%%PREFIX%%|${PREFIX}|g;" \
-		-e "s|%%WISH%%|${WISH}|g;" ${WRKSRC}/ewipe
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g; \
+		s|%%WISH%%|${WISH}|g; \
+		s|PATH \.|PATH ${DATADIR}|;' \
+			${WRKSRC}/ewipe
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/ewipe
