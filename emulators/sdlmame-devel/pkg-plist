@@ -11,6 +11,7 @@ libexec/sdlmame/romcmp
 %%PORTDOCS%%%%DOCSDIR%%/docs/newvideo.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows.txt
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew_0112u2.txt
 %%DATADIR%%/ui.bdf
 @dirrm %%DATADIR%%/roms
 @dirrm %%DATADIR%%/nvram
