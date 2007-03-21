@@ -39,7 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>squid</name>
-        <range><ge>2.6.1</ge></range>
+	<range><ge>2.6.1</ge></range>
 	<range><lt>2.6.12</lt></range>
       </package>
     </affects>
@@ -48,13 +48,13 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Squid advisory 2007:1 notes:</p>
 	<blockquote cite="http://www.squid-cache.org/Advisories/SQUID-2007_1.txt">
 	  <p>Due to an internal error Squid-2.6 is vulnerable to a denial of
-           service attack when processing the TRACE request method.</p>
-          <p>Workarounds:</p>
-          <p>To work around the problem deny access to using the TRACE method by
-           inserting the following two lines before your first http_access
-           rule.</p>
-         <p>acl TRACE method TRACE</p>
-         <p>http_access deny TRACE</p>
+	    service attack when processing the TRACE request method.</p>
+	  <p>Workarounds:</p>
+	  <p>To work around the problem deny access to using the TRACE method by
+	    inserting the following two lines before your first http_access
+	    rule.</p>
+	  <p>acl TRACE method TRACE</p>
+	  <p>http_access deny TRACE</p>
 	</blockquote>
       </body>
     </description>
