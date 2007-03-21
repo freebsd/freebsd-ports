@@ -8319,6 +8319,7 @@ osb-nrcit	ports/www/osb-nrcit
 osb-nrcore	ports/www/osb-nrcore
 oscommerce	ports/www/oscommerce
 osdclock	ports/x11-clocks/osdclock
+osdmixer	ports/audio/osdmixer
 osg		ports/graphics/osg
 osh		ports/shells/osh
 osiris		ports/security/osiris
