@@ -19,7 +19,6 @@ COMMENT=	Modifed GTK pixmap engine to obtain Theme information from Qt
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/7043-//}
-USE_AUTOTOOLS=	libtool:15
 
 .if defined(WITH_GTK1)
 USE_GNOME+=	gtk12 imlib
