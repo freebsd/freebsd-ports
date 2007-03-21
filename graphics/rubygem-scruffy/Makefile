@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	Beautiful Graphs for Ruby
 
-RUN_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/builder-2.0.0.gemspec:${PORTSDIR}/devel/rubygem-builder
+RUN_DEPENDS=	${LOCALBASE}/${SPEC_DIR}/builder-2.1.1.gemspec:${PORTSDIR}/devel/rubygem-builder
 
 USE_RUBY=	yes
 
