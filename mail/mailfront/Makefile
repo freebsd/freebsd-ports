@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mailfront
-PORTVERSION=	1.01
+PORTVERSION=	1.10
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/ \
 		${MASTER_SITE_LOCAL}
@@ -40,6 +40,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mailfront-0.92-dw-auth
 
 do-configure:
 	${ECHO_CMD} "${PREFIX}/bin"	> ${WRKSRC}/conf-bin
+	${ECHO_CMD} "${PREFIX}/include"	> ${WRKSRC}/conf-include
 	${ECHO_CMD} "${MODULES_DIR}"	> ${WRKSRC}/conf-modules
 	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/conf-cc
 	${ECHO_CMD} "${CC} ${CFLAGS_SO}"> ${WRKSRC}/conf-ccso
