@@ -7,15 +7,15 @@
 
 PORTNAME=	cbrowser
 PORTVERSION=	0.8
-CATEGORIES=	devel tk83
+PORTREVISION=	1
+CATEGORIES=	devel tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jkoshy@freebsd.org
 COMMENT=	Graphical front end for cscope and cscope clones
 
-RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
-
+USE_TK=		yes
 NO_BUILD=	yes
 
 # Private variables
