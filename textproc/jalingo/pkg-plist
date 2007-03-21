@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+bin/jalingo
+%%DATADIR%%/%%JALINGOJAR%%
+@dirrm %%DATADIR%%

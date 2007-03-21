@@ -1,0 +1,10 @@
+JaLingo is a free OS independent dictionary application.
+
+It understands 4 dictionary formats:
+
+    * DSL
+    * Mova
+    * PtkDict/phpMyLingvo MySQL dumps
+    * Sdictionary (249)
+
+WWW:	http://jalingo.sourceforge.net/

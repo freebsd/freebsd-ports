@@ -1,0 +1,46 @@
+# New ports collection makefile for:	jalingo
+# Date created:		2007-03-17
+# Whom:			Nicola Vitale <nivit@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	jalingo
+PORTVERSION=	0.6.0
+#PORTREVISION=	0
+CATEGORIES=	textproc java
+MASTER_SITES=	SFE
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+EXTRACT_SUFX=	.7z
+
+MAINTAINER=	nivit@FreeBSD.org
+COMMENT=	A free OS indipendent dictionary application
+
+EXTRACT_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
+
+USE_ANT=	yes
+USE_JAVA=	yes
+JAVA_VERSION=	1.5+
+
+ALL_TARGET=	dist
+
+P7ZIP_CMD=	${LOCALBASE}/bin/7z
+P7ZIP_ARGS=	x -o${WRKDIR}
+
+SUB_FILES=	${PORTNAME}
+SUB_LIST=	JALINGOJAR=${JALINGOJAR}
+PLIST_SUB=	JALINGOJAR=${JALINGOJAR}
+
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+
+JALINGOJAR=	${PORTNAME}.jar
+
+do-extract:
+	@${MKDIR} ${WRKDIR} && ${P7ZIP_CMD} ${P7ZIP_ARGS} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+
+do-install:
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/dist/${JALINGOJAR} ${DATADIR}/${JALINGOJAR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

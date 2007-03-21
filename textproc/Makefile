@@ -227,6 +227,7 @@
     SUBDIR += jade
     SUBDIR += jakarta-commons-digester
     SUBDIR += jakarta-poi
+    SUBDIR += jalingo
     SUBDIR += java2html
     SUBDIR += javacc
     SUBDIR += jaxup
