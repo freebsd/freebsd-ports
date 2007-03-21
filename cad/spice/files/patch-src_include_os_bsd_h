@@ -1,6 +1,6 @@
 --- src/include/os_bsd.h.orig	Sat Apr 24 18:09:46 1993
 +++ src/include/os_bsd.h	Mon Apr  3 21:27:21 2006
-@@ -8,18 +8,32 @@
+@@ -8,18 +8,36 @@
  
  #include "os_unix.h"
  
@@ -24,8 +24,12 @@
 -#define HAS_INDEX		/* index( ) instead of strchr( )	*/
  #define HAS_BCOPY		/* bcopy( ), bzero( )			*/
  #define HAS_BSDRANDOM		/* srandom( ) and random( )		*/
++#ifdef __FreeBSD__
++#define HAS_POSIXTTY		/* <termios.h>				*/
++#else
  #define HAS_BSDTTY		/* <sgtty.h>				*/
 -#define HAS_BSDDIRS		/* <sys/dir.h>				*/
++#endif
  #define HAS_BSDRUSAGE		/* getrusage( )				*/
  #define HAS_BSDRLIMIT		/* getrlimit( )				*/
  #define HAS_DUP2
