@@ -15,7 +15,6 @@ MASTER_SITES=	http://www.franksworld.org/dist/xmame/ \
 		http://www.energyhq.be/files/ \
 		http://www.pkix.net/mirror/x.mame.net/
 DISTNAME=	xmame-${XMAMEVERSION}
-DIST_SUBDIR=	xmame
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	UNIX/X11 port of the Multi Arcade Machine Emulator (MAME)
