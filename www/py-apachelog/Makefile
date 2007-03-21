@@ -8,7 +8,8 @@
 PORTNAME=	apachelog
 PORTVERSION=	1.0
 CATEGORIES=	www
-MASTER_SITES=	http://apachelog.googlecode.com/files/
+MASTER_SITES=	http://apachelog.googlecode.com/files/ \
+		http://freebsd.unixfreunde.de/sources/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	miwi@FreeBSD.org
