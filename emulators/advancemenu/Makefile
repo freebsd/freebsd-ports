@@ -16,8 +16,6 @@ COMMENT=	AdvanceMENU is a frontend for AdvanceMAME, MAME, MESS, RAINE
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-BROKEN=		Incomplete pkg-plist
-
 USE_GL=		yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
@@ -49,7 +47,7 @@ CONFIGURE_ARGS+=--disable-slang
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -Ee 's|^(pkg.*)/advance|\1/${PORTNAME}|' \
+	@${REINPLACE_CMD} -Ee 's|^(pkg.*)/advance|\1/${PORTNAME}|; /pkgdir/d' \
 		${WRKSRC}/advance/advance.mak
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/pkgdocdir/d' ${WRKSRC}/advance/advance.mak
