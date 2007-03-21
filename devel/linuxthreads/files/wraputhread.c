@@ -25,7 +25,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: /tmp/pcvs/ports/devel/linuxthreads/files/wraputhread.c,v 1.4 2005-07-22 22:20:21 tegge Exp $
+ * $FreeBSD: /tmp/pcvs/ports/devel/linuxthreads/files/wraputhread.c,v 1.5 2007-03-21 21:40:24 tegge Exp $
  */
 
 #ifdef LINUXTHREADS_WRAP_API
@@ -69,6 +69,7 @@
 #define __pthread_detach linuxthreads_pthread_detach
 #define __pthread_equal linuxthreads_pthread_equal
 #define __pthread_exit linuxthreads_pthread_exit
+#define __pthread_getattr_np linuxthreads_pthread_getattr_np
 #define __pthread_getcpuclockid linuxthreads_pthread_getcpuclockid
 #define __pthread_getschedparam linuxthreads_pthread_getschedparam
 #define __pthread_join linuxthreads_pthread_join
@@ -118,6 +119,7 @@
 #define __pthread_detach pthread_detach
 #define __pthread_equal pthread_equal
 #define __pthread_exit pthread_exit
+#define __pthread_getattr_np pthread_getattr_np
 #define __pthread_getschedparam pthread_getschedparam
 #define __pthread_join pthread_join
 #define __pthread_key_delete pthread_key_delete
@@ -186,6 +188,7 @@ int   __pthread_create(pthread_t *,
 int   __pthread_detach(pthread_t);
 int   __pthread_equal(pthread_t, pthread_t);
 void  __pthread_exit(void *);
+int   __pthread_getattr_np(pthread_t, pthread_attr_t *);
 int   __pthread_getconcurrency(void);
 int   __pthread_getschedparam(pthread_t, int *, struct sched_param *);
 void *__pthread_getspecific(pthread_key_t);
@@ -229,6 +232,10 @@ int   __pthread_setschedparam(pthread_t, int, const struct sched_param *);
 int   __pthread_setspecific(pthread_key_t, const void *);
 int   __pthread_sigmask(int, const sigset_t *, sigset_t *);
 void  __pthread_testcancel(void);
+
+extern int pthread_attr_get_np(pthread_t, pthread_attr_t *)
+	__attribute__ ((weak, alias("_pthread_attr_get_np")));
+
 
 static pthread_mutex_t allocmutexlock = PTHREAD_MUTEX_INITIALIZER;
 enum uthread_mutextype {
@@ -537,9 +544,10 @@ int
 _pthread_attr_getstackaddr(const pthread_attr_t **attr,
 			   void **stackaddr)
 {
+	size_t stacksize;
 	if (attr == NULL || *attr == NULL || stackaddr == NULL)
 		return EINVAL;
-	return __pthread_attr_getstackaddr(*attr, stackaddr);
+	return __pthread_attr_getstack(*attr, stackaddr, &stacksize);
 }
 
 int
@@ -549,6 +557,14 @@ _pthread_attr_getstacksize(const pthread_attr_t **attr,
 	if (attr == NULL || *attr == NULL || stacksize == NULL)
 		return EINVAL;
 	return __pthread_attr_getstacksize(*attr, stacksize);
+}
+
+int
+_pthread_attr_get_np(pthread_t tid, pthread_attr_t **dst)
+{
+	if (dst == NULL || *dst == NULL)
+		return EINVAL;
+	return __pthread_getattr_np(tid, *dst);
 }
 
 int
@@ -1275,7 +1291,7 @@ _pthread_mutexattr_settype(pthread_mutexattr_t **mattr, int type)
 						   PTHREAD_MUTEX_ERRORCHECK);
 	case UTHREAD_PTHREAD_MUTEX_RECURSIVE:
 		return __pthread_mutexattr_settype(*mattr,
-						   PTHREAD_MUTEX_ERRORCHECK);
+						   PTHREAD_MUTEX_RECURSIVE);
 	case UTHREAD_PTHREAD_MUTEX_NORMAL:
 		return __pthread_mutexattr_settype(*mattr,
 						   PTHREAD_MUTEX_NORMAL);
