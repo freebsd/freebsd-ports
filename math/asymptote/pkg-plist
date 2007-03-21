@@ -10,6 +10,7 @@ bin/xasy
 %%DATADIR%%/asy.vim
 %%DATADIR%%/asymptote.py
 %%DATADIR%%/babel.asy
+%%DATADIR%%/binarytree.asy
 %%DATADIR%%/contour.asy
 %%DATADIR%%/drawtree.asy
 %%DATADIR%%/embed.asy
@@ -22,8 +23,11 @@ bin/xasy
 %%DATADIR%%/graph.asy
 %%DATADIR%%/graph3.asy
 %%DATADIR%%/graph_settings.asy
+%%DATADIR%%/grid3.asy
+%%DATADIR%%/labelpath.asy
 %%DATADIR%%/latin1.asy
 %%DATADIR%%/light.asy
+%%DATADIR%%/markers.asy
 %%DATADIR%%/math.asy
 %%DATADIR%%/metapost.asy
 %%DATADIR%%/palette.asy
@@ -72,6 +76,7 @@ bin/xasy
 %%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section8.html
 %%PORTDOCS%%%%DOCSDIR%%/asy-faq.html/section9.html
 %%PORTDOCS%%%%DOCSDIR%%/asymptote.pdf
+%%PORTDOCS%%%%DOCSDIR%%/intro.pdf
 %%EXAMPLESDIR%%/BezierSurface.asy
 %%EXAMPLESDIR%%/Bode.asy
 %%EXAMPLESDIR%%/CAD1.asy
@@ -95,7 +100,9 @@ bin/xasy
 %%EXAMPLESDIR%%/axis3.asy
 %%EXAMPLESDIR%%/bezier.asy
 %%EXAMPLESDIR%%/bezier2.asy
+%%EXAMPLESDIR%%/beziercurve.asy
 %%EXAMPLESDIR%%/bigsquare.asy
+%%EXAMPLESDIR%%/binarytreetest.asy
 %%EXAMPLESDIR%%/brokenaxis.asy
 %%EXAMPLESDIR%%/buildcycle.asy
 %%EXAMPLESDIR%%/cardiod.asy
@@ -112,6 +119,7 @@ bin/xasy
 %%EXAMPLESDIR%%/cos2theta.asy
 %%EXAMPLESDIR%%/cosaddition.asy
 %%EXAMPLESDIR%%/cube.asy
+%%EXAMPLESDIR%%/curvedlabel.asy
 %%EXAMPLESDIR%%/cylinder.asy
 %%EXAMPLESDIR%%/cylinderskeleton.asy
 %%EXAMPLESDIR%%/datagraph.asy
@@ -131,6 +139,8 @@ bin/xasy
 %%EXAMPLESDIR%%/exp.asy
 %%EXAMPLESDIR%%/fano.asy
 %%EXAMPLESDIR%%/fermi.asy
+%%EXAMPLESDIR%%/filegraph.asy
+%%EXAMPLESDIR%%/filegraph.dat
 %%EXAMPLESDIR%%/fillcontour.asy
 %%EXAMPLESDIR%%/fjortoft.asy
 %%EXAMPLESDIR%%/flow.asy
@@ -139,6 +149,7 @@ bin/xasy
 %%EXAMPLESDIR%%/generalaxis.asy
 %%EXAMPLESDIR%%/generalaxis3.asy
 %%EXAMPLESDIR%%/grid.asy
+%%EXAMPLESDIR%%/grid3xyz.asy
 %%EXAMPLESDIR%%/hatch.asy
 %%EXAMPLESDIR%%/helix.asy
 %%EXAMPLESDIR%%/hierarchy.asy
@@ -149,6 +160,7 @@ bin/xasy
 %%EXAMPLESDIR%%/imagecontour.asy
 %%EXAMPLESDIR%%/imagehistogram.asy
 %%EXAMPLESDIR%%/integraltest.asy
+%%EXAMPLESDIR%%/intro.asy
 %%EXAMPLESDIR%%/join.asy
 %%EXAMPLESDIR%%/join3.asy
 %%EXAMPLESDIR%%/labelbox.asy
@@ -175,6 +187,8 @@ bin/xasy
 %%EXAMPLESDIR%%/lowint.asy
 %%EXAMPLESDIR%%/lowupint.asy
 %%EXAMPLESDIR%%/makepen.asy
+%%EXAMPLESDIR%%/markers1.asy
+%%EXAMPLESDIR%%/markers2.asy
 %%EXAMPLESDIR%%/mexicanhat.asy
 %%EXAMPLESDIR%%/monthaxis.asy
 %%EXAMPLESDIR%%/mosaic.asy
