@@ -9,10 +9,14 @@ bin/qmtpfront-echo
 bin/qmtpfront-qmail
 bin/smtpfront-echo
 bin/smtpfront-qmail
+include/mailfront/constants.h
+include/mailfront/mailfront.h
+include/mailfront/responses.h
 libexec/mailfront/backend-echo.so
 libexec/mailfront/backend-qmail.so
 libexec/mailfront/plugin-add-received.so
 libexec/mailfront/plugin-check-fqdn.so
+libexec/mailfront/plugin-clamav.so
 libexec/mailfront/plugin-counters.so
 libexec/mailfront/plugin-cvm-validate.so
 libexec/mailfront/plugin-mailrules.so
@@ -40,8 +44,10 @@ libexec/mailfront/protocol-smtp.so
 %%PORTDOCS%%%%DOCSDIR%%/plugin-accept.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-add-received.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-check-fqdn.html
+%%PORTDOCS%%%%DOCSDIR%%/plugin-clamav.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-counters.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-cvm-validate.html
+%%PORTDOCS%%%%DOCSDIR%%/plugin-force-file.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-mailrules.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-patterns.html
 %%PORTDOCS%%%%DOCSDIR%%/plugin-qmail-validate.html
