@@ -18,7 +18,7 @@
  WISH4.2 = /usr/local/bin/wish4.2
  WISH8.0 = /usr/local/bin/wish8.0
 -WISH8.3	= /usr/local/bin/wish8.3
-+WISH8.3	?= /usr/local/bin/wish8.3
++WISH8.3	?= /usr/local/bin/wish8.4
  WISH = $(WISH8.3)
  
  # ---------------- NO NEED TO CHANGE ANYTHING BELOW THIS LINE ---------------
