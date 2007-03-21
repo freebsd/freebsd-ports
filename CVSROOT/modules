@@ -6421,6 +6421,7 @@ liboobs		ports/devel/liboobs
 liboop		ports/devel/liboop
 libopendaap	ports/devel/libopendaap
 libopennet	ports/net/libopennet
+libopenraw	ports/graphics/libopenraw
 libopensync	ports/devel/libopensync
 liborigin	ports/math/liborigin
 libosip		ports/net/libosip
