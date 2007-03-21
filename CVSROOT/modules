@@ -4212,6 +4212,7 @@ gtksubtitler	ports/multimedia/gtksubtitler
 gtktalog	ports/misc/gtktalog
 gtkterm2	ports/x11/gtkterm2
 gtktetcolor	ports/games/gtktetcolor
+gtkunique	ports/x11-toolkits/gtkunique
 gtkwave		ports/cad/gtkwave
 gtkyahoo	ports/net-im/gtkyahoo
 gtl		ports/misc/gtl
