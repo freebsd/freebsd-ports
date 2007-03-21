@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBD-mysql
-PORTVERSION=	4.001
+PORTVERSION=	4.003
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
@@ -26,9 +26,5 @@ USE_MYSQL=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=	Bundle::DBD::mysql.3 DBD::mysql.3 DBD::mysql::INSTALL.3
-
-post-patch:
-	@${PERL} -pi -e 's/$$/ || MYSQL_VERSION_ID == 50000/ if $$. == 107' \
-		${WRKSRC}/mysql.xs
 
 .include <bsd.port.mk>
