@@ -7,21 +7,21 @@
 
 PORTNAME=	rat
 PORTVERSION=	4.2.25
-PORTREVISION=	1
-CATEGORIES=	mbone audio ipv6 tk83
-MASTER_SITES=								      \
-	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/releases/${PORTVERSION}/ \
-	http://www.icir.org/hodson/ucl-mirror/
+PORTREVISION=	2
+CATEGORIES=	mbone audio ipv6 tk84
+MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/releases/${PORTVERSION}/ \
+		http://www.icir.org/hodson/ucl-mirror/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPv4/v6 Multicast and unicast audio conferencing tool
 
-TCLTK_VERSION=	8.3
-LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
-
+USE_TK=		yes
+USE_TK_BUILD=	yes
+USE_TCL=	yes
+USE_TCL_BUILD=	yes
 USE_AUTOTOOLS=	autoconf:213
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include --enable-ipv6
 
 MAN1=		rat.1
 MANCOMPRESSED=	no
@@ -33,19 +33,16 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 400014
-ENABLE_IPv6=	--enable-ipv6
-.endif
-
 .if ${OSVERSION} >= 700011
 EXTRA_PATCHES=	${FILESDIR}/timet.patch
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e "s,-Werror,," ${WRKSRC}/common/configure.in \
+	@${REINPLACE_CMD} -e "s,-Werror,," ${WRKSRC}/common/configure.in \
 		${WRKSRC}/rat/configure.in
 
 do-install:
+	@${REINPLACE_CMD} 's|#/|#!/|' ${WRKSRC}/rat/${RAT_SCRIPT}
 	${INSTALL_PROGRAM} ${WRKSRC}/rat/${RAT} ${PREFIX}/bin/${RAT}
 	${INSTALL_PROGRAM} ${WRKSRC}/rat/${RAT}-ui ${PREFIX}/bin/${RAT}-ui
 	${INSTALL_PROGRAM} ${WRKSRC}/rat/${RAT}-media ${PREFIX}/bin/${RAT}-media
@@ -62,7 +59,8 @@ run-autotools::
 	@${DO_NADA}
 
 do-configure:
-	cd ${WRKSRC}/common && ${AUTOCONF} && ./configure ${CONFIGURE_ARGS} ${ENABLE_IPv6}
-	cd ${WRKSRC}/rat && ${AUTOCONF} && ./configure ${CONFIGURE_ARGS} --with-tcl=${LOCALBASE} --with-tk=${LOCALBASE} ${ENABLE_IPv6} --with-tcltk-version=${TCLTK_VERSION}
+	cd ${WRKSRC}/common && ${AUTOCONF} && ./configure ${CONFIGURE_ARGS}
+	cd ${WRKSRC}/rat && ${AUTOCONF} && ./configure ${CONFIGURE_ARGS} \
+		--with-tcl=${LOCALBASE} --with-tk=${LOCALBASE} --with-tcltk-version=${TK_VER}
 
 .include <bsd.port.post.mk>
