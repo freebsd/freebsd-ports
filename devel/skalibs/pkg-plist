@@ -16,6 +16,9 @@ include/skalibs/cdb_make.h
 include/skalibs/datastruct.h
 include/skalibs/direntry.h
 include/skalibs/diuint.h
+include/skalibs/diuint32.h
+include/skalibs/diuint32alloc.h
+include/skalibs/diuint32bunch.h
 include/skalibs/diuintalloc.h
 include/skalibs/diuintbunch.h
 include/skalibs/djbunix.h
