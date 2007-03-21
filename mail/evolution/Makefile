@@ -8,6 +8,7 @@
 
 PORTNAME=	evolution
 PORTVERSION=	2.10.0
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -108,6 +109,9 @@ post-patch:
 	    	${WRKSRC}/configure
 
 post-install: install-ldconfig-file
+	${MKDIR} ${PREFIX}/include/evolution-${EVO_VERSION}/composer
+	${INSTALL_DATA} ${WRKSRC}/composer/e-msg*.h ${PREFIX}/include/evolution-${EVO_VERSION}/composer
+	${INSTALL_DATA} ${WRKSRC}/composer/Editor.h ${PREFIX}/include/evolution-${EVO_VERSION}/composer
 	@${LN} -sf ${PREFIX}/bin/evolution-${EVO_VERSION} \
 		${PREFIX}/bin/evolution
 	-@update-desktop-database
