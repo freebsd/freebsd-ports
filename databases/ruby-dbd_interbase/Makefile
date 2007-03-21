@@ -32,8 +32,4 @@ CONFIGURE_ARGS=	--with=${PORTNAME}
 
 .include "${.CURDIR}/../ruby-dbi/Makefile.common"
 
-BROKEN=		Does not compile
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2007-04-10
-
 .include <bsd.port.mk>
