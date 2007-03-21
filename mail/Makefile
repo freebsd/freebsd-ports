@@ -348,6 +348,7 @@
     SUBDIR += p5-Mail-Graph
     SUBDIR += p5-Mail-IMAPClient
     SUBDIR += p5-Mail-IMAPTalk
+    SUBDIR += p5-Mail-LMLM
     SUBDIR += p5-Mail-ListDetector
     SUBDIR += p5-Mail-MailStats
     SUBDIR += p5-Mail-Mbox-MessageParser
