@@ -5,21 +5,30 @@
 # $FreeBSD$
 #
 
-PORTNAME=		cost
-PORTVERSION=		2.2p1
-CATEGORIES=		textproc tk82
-MASTER_SITES=		http://www.flightlab.com/~joe/cost/
+PORTNAME=	cost
+PORTVERSION=	2.2p1
+PORTREVISION=	1
+CATEGORIES=	textproc tcl84
+MASTER_SITES=	http://www.flightlab.com/~joe/cost/
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	SGML/XML application programming tool
 
-LIB_DEPENDS=		tcl82.1:${PORTSDIR}/lang/tcl82
+USE_TCL=	yes
+USE_TCL_BUILD=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
+GNU_CONFIGURE=	YES
+CONFIGURE_ARGS+=--with-tcl=${LOCALBASE}/lib/tcl8.4 \
+		--with-docdir=${PREFIX}/share/doc/cost --with-charmaps
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC" TCL_INCLUDE_SPEC="${LOCALBASE}/include/tcl8.4"
 
-WRKSRC=			${WRKDIR}/${DISTNAME}/src
-GNU_CONFIGURE=		YES
-CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl8.2 \
-			--with-docdir=${PREFIX}/share/doc/cost --with-charmaps
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC" TCL_INCLUDE_SPEC="${LOCALBASE}/include/tcl8.2"
+post-patch:
+	@${REINPLACE_CMD} -e 's|TCL_SRC_DIR%g|TCL_INCLUDE_SPEC%g|' \
+		${WRKSRC}/configure
+
+post-configure:
+	@${REINPLACE_CMD} -e 's|-I$$(TCL_SRC_DIR)/generic|$$(TCL_SRC_DIR)|' \
+		${WRKSRC}/Makefile
 
 do-install:
 	${MKDIR} ${PREFIX}/lib/cost2.2
