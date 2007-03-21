@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Yahoo/Search.pm
+%%SITE_PERL%%/Yahoo/Search/Request.pm
+%%SITE_PERL%%/Yahoo/Search/Response.pm
+%%SITE_PERL%%/Yahoo/Search/Result.pm
+%%SITE_PERL%%/Yahoo/Search/XML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Yahoo/Search/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Yahoo/Search
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Yahoo
+@dirrmtry %%SITE_PERL%%/Yahoo/Search
+@dirrmtry %%SITE_PERL%%/Yahoo
