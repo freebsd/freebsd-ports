@@ -141,8 +141,8 @@ PATCH2RM=	prefs.php.dist.orig servers.php.dist.orig conf.xml.orig	\
 .if defined(WITH_IMAPSERVER)
 . if defined(WITH_IMAP-UW) || exists(${LOCALBASE}/libexec/imapd)
 RUN_DEPENDS+=	${LOCALBASE}/libexec/imapd:${PORTSDIR}/mail/imap-uw
-. elif defined(WITH_CYRUS-IMAPD) || exists(${LOCALBASE}/lib/libacap.a)
-RUN_DEPENDS+=	${LOCALBASE}/lib/libacap.a:${PORTSDIR}/mail/cyrus-imapd23
+. elif defined(WITH_CYRUS-IMAPD) || exists(${LOCALBASE}/cyrus/bin/master)
+RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/master:${PORTSDIR}/mail/cyrus-imapd23
 . elif defined(WITH_COURIER-IMAP) || exists(${LOCALBASE}/bin/deliverquota)
 RUN_DEPENDS+=	${LOCALBASE}/bin/deliverquota:${PORTSDIR}/mail/courier-imap
 . elif defined(WITH_DOVECOT) || exists(${LOCALBASE}/libexec/dovecot/imap)
