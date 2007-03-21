@@ -1,6 +1,6 @@
-diff -ru ../../work.PRE4/linuxthreads-2.2.3_20/freebsd-compat.h ./freebsd-compat.h
---- ../../work.PRE4/linuxthreads-2.2.3_20/freebsd-compat.h	Sun Jun  8 17:13:55 2003
-+++ ./freebsd-compat.h	Tue May 23 21:39:26 2006
+diff -ru ../../work.PRE4/linuxthreads-2.2.3_21/freebsd-compat.h ./freebsd-compat.h
+--- ../../work.PRE4/linuxthreads-2.2.3_21/freebsd-compat.h	Sat Jun  8 20:18:05 2002
++++ ./freebsd-compat.h	Mon Mar 19 22:31:38 2007
 @@ -4,6 +4,7 @@
  #include <sched.h>
  #include <sys/types.h>
@@ -9,58 +9,141 @@ diff -ru ../../work.PRE4/linuxthreads-2.2.3_20/freebsd-compat.h ./freebsd-compat
  
  
  #if __FreeBSD__ >= 5
-@@ -15,9 +16,9 @@
- #define __libc_fsync __sys_fsync
- #define __libc_nanosleep __sys_nanosleep
- #define __libc_open __sys_open
--#define __libc_read __sys_read
-+#define __libc_oread __sys_read
- #define __libc_waitpid __waitpid
--#define __libc_write __sys_write
-+#define __libc_owrite __sys_write
- #define __libc_longjmp __longjmp
- #define __libc_siglongjmp __siglongjmp
- #define __libc_msync __sys_msync
-@@ -37,9 +38,9 @@
- #define __libc_fsync _fsync
- #define __libc_nanosleep _nanosleep
- #define __libc_open _open
--#define __libc_read _read
-+#define __libc_oread _read
- #define __libc_waitpid __waitpid
--#define __libc_write _write
-+#define __libc_owrite _write
- #define __libc_longjmp __longjmp
- #define __libc_siglongjmp __siglongjmp
- #define __libc_msync _msync
-@@ -75,8 +76,28 @@
- #define __ptr_t void *
- #define __pid_t pid_t
+@@ -77,6 +78,26 @@
  
--ssize_t __libc_write(int, const void *, size_t);
--ssize_t __libc_read(int, void *, size_t);
-+ssize_t __libc_owrite(int, const void *, size_t);
-+ssize_t __libc_oread(int, void *, size_t);
+ ssize_t __libc_write(int, const void *, size_t);
+ ssize_t __libc_read(int, void *, size_t);
 +static inline ssize_t
-+__libc_write(int fd, const void *buf, size_t wsize) 
++__libc_safe_write(int fd, const void *buf, size_t wsize) 
 +{
 +	ssize_t written;
 +	
 +	do {
-+		written = __libc_owrite(fd, buf, wsize);
++		written = __libc_write(fd, buf, wsize);
 +	} while (written < 0 && errno == EINTR);
 +	return (written);
 +}
 +static inline ssize_t
-+__libc_read(int fd, void *buf, size_t rsize) 
++__libc_safe_read(int fd, void *buf, size_t rsize) 
 +{
 +	ssize_t got;
 +
 +	do {
-+		got = __libc_oread(fd, buf, rsize);
++		got = __libc_read(fd, buf, rsize);
 +	} while (got < 0 && errno == EINTR);
 +	return (got);
 +}
  pid_t   __libc_waitpid(pid_t wpid, int *status, int options);
  int	__libc_poll(struct pollfd *_pfd, unsigned int _nfsd, int _timeout);
  pid_t	__libc_getpid(void);
+diff -ru ../../work.PRE4/linuxthreads-2.2.3_21/join.c ./join.c
+--- ../../work.PRE4/linuxthreads-2.2.3_21/join.c	Mon Mar 19 22:29:45 2007
++++ ./join.c	Mon Mar 19 22:33:43 2007
+@@ -79,7 +79,7 @@
+   if (self == __pthread_main_thread && __pthread_manager_request >= 0) {
+     request.req_thread = self;
+     request.req_kind = REQ_MAIN_THREAD_EXIT;
+-    __libc_write(__pthread_manager_request, (char *)&request, sizeof(request));
++    __libc_safe_write(__pthread_manager_request, (char *)&request, sizeof(request));
+     suspend(self);
+     /* Main thread flushes stdio streams and runs atexit functions.
+        It also calls a handler within LinuxThreads which sends a process exit
+@@ -174,7 +174,7 @@
+     request.req_thread = self;
+     request.req_kind = REQ_FREE;
+     request.req_args.free.thread_id = thread_id;
+-    __libc_write(__pthread_manager_request,
++    __libc_safe_write(__pthread_manager_request,
+ 		 (char *) &request, sizeof(request));
+   }
+   return 0;
+@@ -212,7 +212,7 @@
+     request.req_thread = thread_self();
+     request.req_kind = REQ_FREE;
+     request.req_args.free.thread_id = thread_id;
+-    __libc_write(__pthread_manager_request,
++    __libc_safe_write(__pthread_manager_request,
+ 		 (char *) &request, sizeof(request));
+   }
+   return 0;
+diff -ru ../../work.PRE4/linuxthreads-2.2.3_21/manager.c ./manager.c
+--- ../../work.PRE4/linuxthreads-2.2.3_21/manager.c	Mon Mar 19 22:29:45 2007
++++ ./manager.c	Mon Mar 19 22:33:49 2007
+@@ -132,7 +132,7 @@
+   /* Raise our priority to match that of main thread */
+   __pthread_manager_adjust_prio(__pthread_main_thread->p_priority);
+   /* Synchronize debugging of the thread manager */
+-  n = __libc_read(reqfd, (char *)&request, sizeof(request));
++  n = __libc_safe_read(reqfd, (char *)&request, sizeof(request));
+   ASSERT(n == sizeof(request) && request.req_kind == REQ_DEBUG);
+   ufd.fd = reqfd;
+   ufd.events = POLLIN;
+@@ -152,7 +152,7 @@
+     }
+     /* Read and execute request */
+     if (n == 1 && (ufd.revents & POLLIN)) {
+-      n = __libc_read(reqfd, (char *)&request, sizeof(request));
++      n = __libc_safe_read(reqfd, (char *)&request, sizeof(request));
+       ASSERT(n == sizeof(request));
+       switch(request.req_kind) {
+       case REQ_CREATE:
+@@ -268,7 +268,7 @@
+   if (__pthread_threads_debug && __pthread_sig_debug > 0) {
+     request.req_thread = self;
+     request.req_kind = REQ_DEBUG;
+-    __libc_write(__pthread_manager_request,
++    __libc_safe_write(__pthread_manager_request,
+                  (char *) &request, sizeof(request));
+     suspend(self);
+   }
+@@ -917,7 +917,7 @@
+     struct pthread_request request;
+     request.req_thread = 0;
+     request.req_kind = REQ_KICK;
+-    __libc_write(__pthread_manager_request, (char *) &request, sizeof(request));
++    __libc_safe_write(__pthread_manager_request, (char *) &request, sizeof(request));
+   }
+ }
+ 
+diff -ru ../../work.PRE4/linuxthreads-2.2.3_21/pthread.c ./pthread.c
+--- ../../work.PRE4/linuxthreads-2.2.3_21/pthread.c	Mon Mar 19 22:29:45 2007
++++ ./pthread.c	Mon Mar 19 22:34:57 2007
+@@ -605,7 +605,7 @@
+     }
+   /* Synchronize debugging of the thread manager */
+   request.req_kind = REQ_DEBUG;
+-  __libc_write(__pthread_manager_request, (char *) &request, sizeof(request));
++  __libc_safe_write(__pthread_manager_request, (char *) &request, sizeof(request));
+   return 0;
+ }
+ 
+@@ -627,7 +627,7 @@
+   request.req_args.create.arg = arg;
+   sigprocmask(SIG_SETMASK, (const sigset_t *) NULL,
+               &request.req_args.create.mask);
+-  __libc_write(__pthread_manager_request, (char *) &request, sizeof(request));
++  __libc_safe_write(__pthread_manager_request, (char *) &request, sizeof(request));
+   suspend(self);
+   retval = THREAD_GETMEM(self, p_retcode);
+   if (__builtin_expect (retval, 0) == 0)
+@@ -759,7 +759,7 @@
+     request.req_thread = self;
+     request.req_kind = REQ_PROCESS_EXIT;
+     request.req_args.exit.code = 0;
+-    __libc_write(__pthread_manager_request,
++    __libc_safe_write(__pthread_manager_request,
+ 		 (char *) &request, sizeof(request));
+     suspend(self);
+     /* Main thread should accumulate times for thread manager and its
+diff -ru ../../work.PRE4/linuxthreads-2.2.3_21/semaphore.c ./semaphore.c
+--- ../../work.PRE4/linuxthreads-2.2.3_21/semaphore.c	Mon Mar 19 22:29:45 2007
++++ ./semaphore.c	Mon Mar 19 22:34:21 2007
+@@ -167,7 +167,7 @@
+     }
+     request.req_kind = REQ_POST;
+     request.req_args.post = sem;
+-    __libc_write(__pthread_manager_request,
++    __libc_safe_write(__pthread_manager_request,
+                  (char *) &request, sizeof(request));
+   }
+   return 0;
