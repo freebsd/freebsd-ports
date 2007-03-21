@@ -8,13 +8,12 @@
 PORTNAME=	xperfmon++
 PORTVERSION=	2.0
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/ \
-		ftp://ftp.u-aizu.ac.jp/pub/misc/tools/xperfmon/ \
-		ftp://ftp.ibank.ru/pub/unix_src/benchmarks/
+MASTER_SITES=	http://wwwhomes.uni-bielefeld.de/lkoeller/
+
 DISTNAME=	xperfmon++v1.1
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
+MAINTAINER=	ports@freebsd.org
 COMMENT=	A graphical X11 system performance monitor
 
 USE_IMAKE=	yes
