@@ -17,7 +17,7 @@
 #			to use
 
 PORTNAME=	maildrop
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -72,6 +72,7 @@ CONFIGURE_ARGS+=	--enable-sendmail=/usr/sbin/sendmail
 
 .if defined(WITH_FAM) || exists(${LOCALBASE}/lib/libfam.so.0)
 USE_FAM=	yes
+WANT_FAM_SYSTEM=	fam
 .endif
 
 .if defined(MAILDROP_TRUSTED_USERS)
