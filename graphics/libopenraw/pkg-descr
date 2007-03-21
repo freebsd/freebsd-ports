@@ -1,0 +1,6 @@
+libopenraw is an ongoing project to provide a free software implementation for
+camera RAW files decoding.  One of the main reason is that dcraw is not suited
+for easy integration into applications, and there is a need for an easy to use
+API to build free software digital image processing application.
+
+WWW: http://libopenraw.freedesktop.org/
