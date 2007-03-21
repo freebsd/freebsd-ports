@@ -65,7 +65,8 @@ test:
 	fi
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" \
+	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g ; \
+		s|/usr/X11R6|${X11BASE}|g" \
 		${WRKSRC:H:H}/security/coreconf/FreeBSD.mk
 	@${SED} -e 's|@exec_prefix@|${PREFIX}|; \
 		s|@includedir@|${PREFIX}/include/nss|; \
