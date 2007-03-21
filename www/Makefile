@@ -188,6 +188,7 @@
     SUBDIR += helixplugin
     SUBDIR += hiawatha
     SUBDIR += hinventory-client
+    SUBDIR += horde-ansel
     SUBDIR += horde-base
     SUBDIR += horde-meta
     SUBDIR += horde-passwd
