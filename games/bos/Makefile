@@ -8,15 +8,13 @@
 PORTNAME=	bos
 PORTVERSION=	2.0.1
 CATEGORIES=	games
-MASTER_SITES=	http://www.boswars.org/files/
+MASTER_SITES=	http://www.boswars.org/releases/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A real-time strategy game
 
 RUN_DEPENDS=	stratagus:${PORTSDIR}/games/stratagus
-
-BROKEN=		Unfetchable
 
 NO_WRKSUBDIR=	yes
 
