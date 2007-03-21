@@ -7,29 +7,34 @@
 
 PORTNAME=	zorro
 PORTVERSION=	1.1.8
-CATEGORIES=	deskutils tk82
+PORTREVISION=	1
+CATEGORIES=	deskutils tk84
 MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 		http://atreides.freenix.no/~anders/ \
 		ftp://totem.fix.no/pub/mirrors/misc/
-
 DISTNAME=	${PORTNAME}-1.1p8
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	A simple to-do list manager
 
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
-
+USE_TK=		yes
 NO_BUILD=	yes
+PLIST_FILES=	bin/zorro
+PORTDOCS=	DOTzorrorc
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/zorro
+	@${REINPLACE_CMD} -e 's|/usr/local/bin/wish|${WISH}|' \
+		${WRKSRC}/zorro
+	@${REINPLACE_CMD} -e 's|oof|of|' ${WRKSRC}/DOTzorrorc
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/zorro ${PREFIX}/bin/zorro
-	${MKDIR} ${PREFIX}/share/zorro
-	${INSTALL_DATA} ${WRKSRC}/DOTzorrorc ${PREFIX}/share/zorro
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/DOTzorrorc ${DOCSDIR}
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Take a look at ${PREFIX}/share/zorro/DOTzorrorc"
+	@${ECHO_MSG} "Take a look at ${DOCSDIR}/DOTzorrorc"
 	@${ECHO_MSG} ""
+.endif
 
 .include <bsd.port.mk>
