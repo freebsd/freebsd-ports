@@ -16,11 +16,11 @@ COMMENT=	Manage your projects or tasks within GNU Emacs
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		dvips:${PORTSDIR}/print/dvipsk-tetex \
-		ps2pdf:${PORTSDIR}/print/ghostscript-gnu \
 		xpdf:${PORTSDIR}/graphics/xpdf
 
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
+USE_GHOSTSCRIPT_RUN=	yes
 
 .if ${EMACS_PORT_NAME} != "emacs21"
 PORTNAMESUFFIX=	${PKGNAMESUFFIX}
