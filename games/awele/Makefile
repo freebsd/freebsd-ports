@@ -17,7 +17,10 @@ DISTFILES=	${PORTNAME}1.0.tgz
 MAINTAINER=	tg@FreeBSD.org
 COMMENT=	An african board game
 
-USE_TK=		yes
+LIB_DEPENDS=	tk${USE_TK}.1:${PORTSDIR}/x11-toolkits/tk${USE_TK}
+
+USE_TCL_BUILD=	84
+USE_TK=		84
 WRKSRC=		${WRKDIR}/awele
 USE_IMAKE=	yes
 USE_PERL5_BUILD=yes
