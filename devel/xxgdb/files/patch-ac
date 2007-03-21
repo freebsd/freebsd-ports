@@ -1,5 +1,16 @@
 --- calldbx.c.orig	Tue Jun 20 07:11:00 1995
 +++ calldbx.c	Fri Nov 17 21:27:09 2000
+@@ -74,8 +74,8 @@
+ #include <string.h>
+ #include <fcntl.h>
+ #include "global.h"
+-#if !(defined(OLDSUNOS) || defined(BSD))
+-#include <termio.h>
++#if !(defined(OLDSUNOS) || defined(BSD)) || defined(__FreeBSD__)
++#include <termios.h>
+ #else
+ #include <sgtty.h>
+ #endif
 @@ -137,13 +137,17 @@
  
  #ifndef sco
@@ -19,3 +30,29 @@
  	    if ((master = open(pty, O_RDWR)) >= 0) 
  		return (master); 
  	}
+@@ -246,8 +250,8 @@
+ /*
+  * (JBL)10MAY91 : use sgttyb if generic BSD
+  */
+-#if !(defined(OLDSUNOS) || defined(BSD))
+-    struct termio Termio;
++#if !(defined(OLDSUNOS) || defined(BSD)) || defined(__FreeBSD__)
++    struct termios Termio;
+ #else
+     struct sgttyb Termio;
+ #endif
+@@ -355,11 +359,11 @@
+ 	/*
+ 	 * (JBL)10MAY91 : use sgttyb if OLDSUN or generic BSD
+ 	 */ 
+-#if !(defined(OLDSUNOS) || defined(BSD))
+-	ioctl(slave, TCGETA, &Termio);
++#if !(defined(OLDSUNOS) || defined(BSD)) || defined(__FreeBSD__)
++	tcgetattr(slave, &Termio);
+ 	Termio.c_lflag &= ~ECHO;	/* No echo */
+ 	Termio.c_oflag &= ~ONLCR;	/* Do not map NL to CR-NL on output */
+-	ioctl(slave, TCSETA, &Termio);
++	tcsetattr(slave, TCSANOW, &Termio);
+ #else
+ 	ioctl(slave, TIOCGETP, &Termio);
+ 	Termio.sg_flags &= ~ECHO;	/* No echo */
