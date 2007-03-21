@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c27bc173-d7aa-11db-b141-0016179b2dd5">
+    <topic>Squid -- TRACE method handling denial of service</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+        <range><ge>2.6.1</ge></range>
+	<range><lt>2.6.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Squid advisory 2007:1 notes:</p>
+	<blockquote cite="http://www.squid-cache.org/Advisories/SQUID-2007_1.txt">
+	  <p>Due to an internal error Squid-2.6 is vulnerable to a denial of
+           service attack when processing the TRACE request method.</p>
+          <p>Workarounds:</p>
+          <p>To work around the problem deny access to using the TRACE method by
+           inserting the following two lines before your first http_access
+           rule.</p>
+         <p>acl TRACE method TRACE</p>
+         <p>http_access deny TRACE</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+    <url>http://www.squid-cache.org/Advisories/SQUID-2007_1.txt</url>
+    </references>
+    <dates>
+      <discovery>2007-03-21</discovery>
+      <entry>2007-03-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8e02441d-d39c-11db-a6da-0003476f14d3">
     <topic>sql-ledger -- security bypass vulnerability</topic>
     <affects>
