@@ -7,24 +7,25 @@
 #
 
 PORTNAME=	sgrep
-PORTVERSION=	${SGREP_VER}	# dont know ver, so I decide to choose sgrep ver
+PORTVERSION=	1.1a
+PORTEPOCH=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	http://www.rexx.com/~dkuhlman/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=	pysgrep.tar.gz sgrep-${SGREP_VER}.tar.gz
-EXTRACT_ONLY=	sgrep-1.92a.tar.gz
+DISTFILES=	pysgrep-${PORTVERSION}.tar.gz sgrep-${SGREP_VER}.tar.gz
+EXTRACT_ONLY=	sgrep-${SGREP_VER}.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python wrappers for Sgrep
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/sgreplib.so
-SGREP_VER=	1.92a
+SGREP_VER=	1.94a
 WRKSRC=		${WRKDIR}/sgrep-${SGREP_VER}
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 post-extract:
-	@${TAR} -zxf ${_DISTDIR}/pysgrep.tar.gz -C ${WRKSRC}
+	@${TAR} -zxf ${DISTDIR}/pysgrep-${PORTVERSION}.tar.gz -C ${WRKSRC}
 
 .include <bsd.port.mk>
