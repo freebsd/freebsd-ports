@@ -16,6 +16,7 @@
     SUBDIR += a2png
     SUBDIR += aalib
     SUBDIR += acidwarp
+    SUBDIR += agave
     SUBDIR += agg
     SUBDIR += ale
     SUBDIR += allegrogl
@@ -206,7 +207,6 @@
     SUBDIR += gmt
     SUBDIR += gnash
     SUBDIR += gnofract4d
-    SUBDIR += gnome-colorscheme
     SUBDIR += gnomecanvas
     SUBDIR += gnomeiconedit
     SUBDIR += gnustep-slideshow
