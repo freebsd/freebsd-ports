@@ -22,7 +22,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if defined(WITHOUT_NLS)
-CONFIGURE_ARGS=	--without-nls
+CONFIGURE_ARGS=	--disable-nls
 PLIST_SUB=	NLS="@comment "
 .else
 USE_ICONV=	yes
