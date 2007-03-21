@@ -19,5 +19,6 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnometarget
+USE_XFCE=	configenv	# to get MASTER_SITE_SUBDIR something has to be defined
 
 .include <bsd.port.mk>

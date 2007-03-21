@@ -20,6 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/gnu-autotools/bin/autoconf:${PORTSDIR}/devel/gnu-autoc
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
+USE_XFCE=	configenv	# to get MASTER_SITE_SUBDIR something has to be defined
 
 post-patch:
 	@${REINPLACE_CMD} -e '12s|^$$|PATH="$${PATH}:${LOCALBASE}/gnu-autotools/bin"|' \
