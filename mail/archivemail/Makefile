@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	archivemail
-PORTVERSION=	0.6.2
+PORTVERSION=	0.7.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sergei@FreeBSD.org
-COMMENT=	Search mailbox files and archive or delete mail older than N days
+COMMENT=	Archive or delete mail older than N days
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-DOCS=		CHANGELOG FAQ Makefile README TODO archivemail.sgml
+DOCS=		CHANGELOG FAQ README TODO archivemail.sgml
 EXAMPLES=	test_archivemail.py examples/archivemail_all
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/archivemail.py ${PREFIX}/bin/archivemail
+	${INSTALL_SCRIPT} ${WRKSRC}/archivemail ${PREFIX}/bin/archivemail
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
