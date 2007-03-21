@@ -30,7 +30,9 @@ OPTIONS=	IMP "IMAP Webmail System" on	\
 		JETA "Java SSH Applets" off	\
 		HPASSWD "Password Changing Module" off	\
 		VACATION "Vacation & Auto Respond" off	\
-		TREAN "Bookmark Manager" off
+		TREAN "Bookmark Manager" off	\
+		NIC "Network Monitor" off	\
+		ANSEL "Photo Gallery" off
 
 .include <bsd.port.pre.mk>
 
@@ -86,6 +88,14 @@ RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/vacation/main.php:${PORTSDIR}/mail/horde
 
 .if defined(WITH_TREAN)
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/trean/data.php:${PORTSDIR}/www/horde-trean
+.endif
+
+.if defined(WITH_NIC)
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/nic/status.php:${PORTSDIR}/net-mgmt/horde-nic
+.endif
+
+.if defined(WITH_ANSEL)
+RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/ansel/gallery.php:${PORTSDIR}/www/horde-ansel
 .endif
 
 post-configure:
