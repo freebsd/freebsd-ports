@@ -444,6 +444,7 @@
     SUBDIR += optimfrog
     SUBDIR += orpheus
     SUBDIR += osalp
+    SUBDIR += osdmixer
     SUBDIR += p5-Audio
     SUBDIR += p5-Audio-Beep
     SUBDIR += p5-Audio-CD
