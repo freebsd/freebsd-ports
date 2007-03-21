@@ -1,0 +1,35 @@
+@comment $FreeBSD$
+%%DATADIR%%/COPYING
+%%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types/Hamakor.pm
+%%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types/Iglu.pm
+%%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types/Ivrix.pm
+%%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types/Linuxology.pm
+%%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types/Perl_IL.pm
+%%EXAMPLESDIR%%/Iglu/make-dist.sh
+%%EXAMPLESDIR%%/Iglu/test.pl
+%%EXAMPLESDIR%%/Iglu/upload.sh
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/LMLM/.packlist
+%%SITE_PERL%%/Mail/LMLM.pm
+%%SITE_PERL%%/Mail/LMLM/Object.pm
+%%SITE_PERL%%/Mail/LMLM/Render.pm
+%%SITE_PERL%%/Mail/LMLM/Render/HTML.pm
+%%SITE_PERL%%/Mail/LMLM/Types/Base.pm
+%%SITE_PERL%%/Mail/LMLM/Types/Egroups.pm
+%%SITE_PERL%%/Mail/LMLM/Types/Ezmlm.pm
+%%SITE_PERL%%/Mail/LMLM/Types/Listar.pm
+%%SITE_PERL%%/Mail/LMLM/Types/Listserv.pm
+%%SITE_PERL%%/Mail/LMLM/Types/Mailman.pm
+%%SITE_PERL%%/Mail/LMLM/Types/Majordomo.pm
+%%SITE_PERL%%/Mail/get-version.pl
+@dirrmtry %%SITE_PERL%%/Mail/LMLM/Types
+@dirrmtry %%SITE_PERL%%/Mail/LMLM/Render
+@dirrmtry %%SITE_PERL%%/Mail/LMLM
+@dirrmtry %%SITE_PERL%%/Mail
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/LMLM
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
+@dirrmtry %%EXAMPLESDIR%%/Iglu/Iglu/LMLM/Types
+@dirrmtry %%EXAMPLESDIR%%/Iglu/Iglu/LMLM
+@dirrmtry %%EXAMPLESDIR%%/Iglu/Iglu
+@dirrmtry %%EXAMPLESDIR%%/Iglu
+@dirrmtry %%EXAMPLESDIR%%
+@dirrmtry %%DATADIR%%
