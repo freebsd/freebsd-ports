@@ -65,17 +65,17 @@ PKGMESSIN=	pkg-message.in
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-FLAGARCH=	-DP_LINUX -DLINUX	# 32 bits
+FLAGARCH=	-DP_LINUX -DLINUX
 .else
-FLAGARCH=	-DLINUX64		# 64 bits
+FLAGARCH=	-DLINUX64 -fdefault-integer-8 -fdefault-real-8
 .endif
 
 .if ${OSVERSION} < 600022
 BROKEN=	Does not compile on this version, and cannot be patched easily.
 .endif
-.if ${ARCH} != "i386"
-BROKEN=	Seg. fault on ${ARCH} during compilation of elements.
-.endif
+#.if ${ARCH} != "i386"
+#BROKEN=	Seg. fault on ${ARCH} during compilation of elements.
+#.endif
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
