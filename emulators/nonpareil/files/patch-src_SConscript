@@ -1,72 +1,34 @@
---- src/SConscript.orig	Tue Jun 28 09:53:44 2005
-+++ src/SConscript	Sat Feb 17 14:10:33 2007
+--- src/SConscript.orig	Tue Oct 31 07:26:16 2006
++++ src/SConscript	Mon Mar 19 08:45:58 2007
 @@ -41,16 +41,11 @@
  
  build_env.Append (CPPPATH = ['.'])
  build_env.Append (CPPPATH = ['#/build/common'])  # generated includes
 -build_env.Append (CCFLAGS = ['-Wall'])
-+build_env.Append (CCFLAGS = ['-Wall %%CFLAGS%%'])
++build_env.Append (CCFLAGS = ['-Wall -O2 -fno-strict-aliasing -pipe -march=pentiumpro'])
  build_env.Append (YACCFLAGS = [ '-d', '-v' ])
 -
 -if build_env ['debug'] :
 -    build_env.Append (CCFLAGS = ['-g'])
 -else:
 -    build_env.Append (CCFLAGS = ['-O2'])
-+build_env.Replace (CC = '%%CC%%')
++build_env.Replace (CC = 'cc')
  
  if cross and ming and build_target_only:
 -    build_env.Replace (CC = '/usr/local/mingw/bin/i586-mingw32msvc-gcc')
      build_env.Append (CCFLAGS = ['-mms-bitfields'])
      build_env.Append (CPPPATH = ['/usr/local/gtkwin/include'])  # libpng
      build_env.Append (CPPPATH = ['/usr/local/gtkwin/SDL-1.2.8/include'])
-@@ -190,46 +185,6 @@
-                        UASM = uasm,
-                        UASMCOM = "$UASM $UASMFLAGS $SOURCE -o $TARGET -l ${TARGETS[1]}")
+@@ -91,7 +86,7 @@
+ if build_env ['build_target_only'] == 0:
+     str2png_env = build_env.Copy ()
  
--
--#-----------------------------------------------------------------------------
--# prepare graphics
--#-----------------------------------------------------------------------------
--
--if not build_target_only:
--    str2png_env = native_env.Copy ()
--
--    # pull in X11-related environment variables to make gdk-pixbuf library happy
--    for var in [ 'DISPLAY', 'XAUTHORITY' ]:
--        if var in os.environ:
--            str2png_env ['ENV'][var] = os.environ [var]
--
--    title_env = str2png_env.Copy (STR2PNG_STRING = 'NONPAREIL',
--                                  STR2PNG_OPTS = '-x 40 -y 44 -m 10')
--
--    title_env.STR2PNG (target = 'nonpareil_title',
--                       source = build_env ['KML_41CV'])
--
--    native_env.PNG2C (target = '#build/common/nonpareil_title_png.c',
--                      source = 'nonpareil_title.png')
--            
--    rgoose_env = str2png_env.Copy (STR2PNG_STRING = '.',
--                                   STR2PNG_OPTS = '-x 40 -y 44')
--
--    rgoose_env.STR2PNG (target = 'rgoose',
--                        source = build_env ['KML_41CV'])
--
--    native_env.PNG2C (target = '#build/common/rgoose_png.c',
--                      source = 'rgoose.png')
--            
--    lgoose_env = str2png_env.Copy (STR2PNG_STRING = ',',
--                                   STR2PNG_OPTS = '-x 40 -y 44')
--
--    lgoose_env.STR2PNG (target = 'lgoose',
--                        source = build_env ['KML_41CV'])
--
--    native_env.PNG2C (target = '#build/common/lgoose_png.c',
--                      source = 'lgoose.png')
--
- #-----------------------------------------------------------------------------
- # prepare sounds
- #-----------------------------------------------------------------------------
-@@ -294,7 +249,7 @@
+-    str2png_env.Append (CPPDEFINES = {'DEFAULT_PATH': 'image'})
++    str2png_env.Append (CPPDEFINES = ['DEFAULT_PATH=image'])
+ 
+     str2png_srcs = Split ("""str2png.c""")
+ 
+@@ -287,7 +282,7 @@
  
  csim_env = nonpareil_env.Copy ()
  if not ming:
