@@ -1,18 +1,25 @@
 bin/isomaster
-share/applications/isomaster.desktop
+%%DESKTOPDIR%%/isomaster.desktop
 %%DATADIR%%/icons/add2-kearone.png
+%%DATADIR%%/icons/delete-kearone.png
 %%DATADIR%%/icons/extract2-kearone.png
-%%DATADIR%%/icons/folder-new-tango.png
+%%DATADIR%%/icons/folder-new-kearone.png
+%%DATADIR%%/icons/go-back-kearone.png
 %%DATADIR%%/icons/isomaster.png
 %%NLS%%share/locale/bg/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/de/LC_MESSAGES/isomaster.mo
+%%NLS%%share/locale/es/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/isomaster.mo
+%%NLS%%share/locale/it/LC_MESSAGES/isomaster.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/isomaster.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/isomaster.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/isomaster.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/isomaster.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/isomaster.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/isomaster.mo
-share/pixmaps/isomaster.png
-@dirrmtry share/pixmaps
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
+@dirrmtry %%DESKTOPDIR%%
