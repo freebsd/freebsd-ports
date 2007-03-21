@@ -15,6 +15,15 @@
  }
  
  static const char *config_def_vendor(void)
+@@ -485,7 +485,7 @@
+ {
+ 	char *realname;
+ 	
+-	asprintf(&realname, "%s%s%s", index(name, '/') ? "" : "/etc/vpnc/", name, add_dot_conf ? ".conf" : "");
++	asprintf(&realname, "%s%s%s", index(name, '/') ? "" : "%%PREFIX%%/etc/vpnc/", name, add_dot_conf ? ".conf" : "");
+ 	return realname;
+ }
+ 
 @@ -701,8 +701,8 @@
  	}
  	
