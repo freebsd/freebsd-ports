@@ -4,6 +4,10 @@ include/evolution-%%VERSION%%/addressbook/gui/widgets/eab-config.h
 include/evolution-%%VERSION%%/addressbook/gui/widgets/eab-menu.h
 include/evolution-%%VERSION%%/addressbook/gui/widgets/eab-popup.h
 include/evolution-%%VERSION%%/calendar/gui/e-cal-config.h
+include/evolution-%%VERSION%%/composer/Editor.h
+include/evolution-%%VERSION%%/composer/e-msg-composer-hdrs.h
+include/evolution-%%VERSION%%/composer/e-msg-composer-select-file.h
+include/evolution-%%VERSION%%/composer/e-msg-composer.h
 include/evolution-%%VERSION%%/e-conduit/e-pilot-map.h
 include/evolution-%%VERSION%%/e-conduit/e-pilot-util.h
 include/evolution-%%VERSION%%/e-util/e-bconf-map.h
