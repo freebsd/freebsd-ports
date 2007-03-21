@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gimmie
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.5
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.beatniksoftware.com/gimmie/releases/
 
@@ -22,6 +22,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libgnomecups-1.0.a:${PORTSDIR}/print/libgnomecup
 USE_GNOME=	gnomehack gnometarget gnomeprefix pygnome2 pygnomedesktop pygnomeextras
 USE_GMAKE=	yes
 USE_PYTHON=	yes
+GCONF_SCHEMAS=	gimmie.schemas
+INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
