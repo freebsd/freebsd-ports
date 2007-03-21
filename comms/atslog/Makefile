@@ -7,6 +7,7 @@
 
 PORTNAME=	atslog
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	BERLIOS
 
@@ -108,7 +109,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/data/sql/install-sql.pl ${DATADIR}/sql
 	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
 	cd ${WRKSRC}/libexec && \
-	${FIND} . -type f ! -iregex ".*\.sh" -exec \
+	${FIND} -E . -type f ! -iregex ".*\.(sh|orig)" -exec \
 		${INSTALL_DATA} "{}" "${PREFIX}/libexec/${PORTNAME}/{}" \;
 	${INSTALL_SCRIPT} ${WRKSRC}/libexec/genindex.sh ${PREFIX}/libexec/${PORTNAME}/
 .if !defined(WITHOUT_WWW)
