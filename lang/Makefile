@@ -330,7 +330,6 @@
     SUBDIR += xds
     SUBDIR += xds-c
     SUBDIR += xotcl
-    SUBDIR += xotcl-thread
     SUBDIR += xsb
     SUBDIR += yabasic
     SUBDIR += yarv
