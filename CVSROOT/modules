@@ -283,6 +283,7 @@ afterstep-i18n	ports/x11-wm/afterstep-i18n
 afterstep-stable	ports/x11-wm/afterstep-stable
 aftp		ports/emulators/aftp
 agame		ports/games/agame
+agave		ports/graphics/agave
 agef		ports/sysutils/agef
 agenda-headers	ports/devel/agenda-headers
 agenda-libs	ports/devel/agenda-libs
@@ -3623,7 +3624,6 @@ gnome-blog	ports/deskutils/gnome-blog
 gnome-bluecurve-theme	ports/x11-themes/gnome-bluecurve-theme
 gnome-build	ports/devel/gnome-build
 gnome-clipboard-daemon	ports/x11/gnome-clipboard-daemon
-gnome-colorscheme	ports/graphics/gnome-colorscheme
 gnome-commander	ports/x11-fm/gnome-commander
 gnome-commander2	ports/x11-fm/gnome-commander2
 gnome-common	ports/devel/gnome-common
