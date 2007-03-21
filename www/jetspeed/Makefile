@@ -26,7 +26,7 @@ JAVA_VERSION=	1.4
 
 NO_BUILD=	yes
 
-JAKARTA_HOME=	${LOCALBASE}/jakarta-tomcat4.1
+JAKARTA_HOME=	${LOCALBASE}/apache-tomcat4.1
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/jetspeed.war ${JAKARTA_HOME}/webapps
