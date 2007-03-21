@@ -1,0 +1,16 @@
+--- libexec/bp-250.lib.orig	Sun Mar  4 17:48:54 2007
++++ libexec/bp-250.lib	Tue Mar 20 19:55:47 2007
+@@ -97,7 +97,12 @@
+ 		$number=0;
+ 	}
+ 
+-	$forwarded=0;
++	if ($transfer_conditio=~(/1[1234]/)) {
++		$forwarded=1;
++	}
++	else {
++		$forwarded=0;
++	}
+ 	# print("$timeofcall,$forwarded,$internally,$co,$way,$number,$duration\n");
+ 	WriteRecord($timeofcall, $forwarded, $internally, $co, $way, $number, $duration);
+ }
