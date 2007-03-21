@@ -7,28 +7,34 @@
 
 PORTNAME=	tkirc
 PORTVERSION=	2.46
-CATEGORIES=	irc tk83
+PORTREVISION=	1
+CATEGORIES=	irc tk84
 MASTER_SITES=	http://netsplit.de/tkirc2/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	A GUI for the ircII Internet Relay Chat client
 
-RUN_DEPENDS=	irc:${PORTSDIR}/irc/ircII \
-		wish8.3:${PORTSDIR}/x11-toolkits/tk83
+RUN_DEPENDS=	irc:${PORTSDIR}/irc/ircII
 
+USE_TK=		yes
 WRKSRC=		${WRKDIR}/tkirc2
 NO_BUILD=	yes
+
+post-patch:
+	@${REINPLACE_CMD} 's|wish8\.3|${WISH}|;' ${WRKSRC}/tkirc2
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tkirc2 ${PREFIX}/bin
 	${LN} -f ${PREFIX}/bin/tkirc2 ${PREFIX}/bin/tkirc
-	${MKDIR} ${PREFIX}/share/doc/tkirc
-	${INSTALL_DATA} ${WRKSRC}/CHANGES ${PREFIX}/share/doc/tkirc
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/tkirc
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/tkirc
-	${MKDIR} ${PREFIX}/share/doc/tkirc/examples
-	${TAR} cf - -C ${WRKSRC} .tkirc2 | \
-	    ${TAR} xf - -C ${PREFIX}/share/doc/tkirc/examples
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${MKDIR} ${EXAMPLESDIR}
+	${MV} ${WRKSRC}/.tkirc2/.data ${WRKSRC}/.tkirc2/DOTdata
+	${CP} -r ${WRKSRC}/.tkirc2 ${EXAMPLESDIR}/DOTtkirc2
+.endif
 
 .include <bsd.port.mk>
