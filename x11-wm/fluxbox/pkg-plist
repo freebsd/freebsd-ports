@@ -3,6 +3,7 @@ bin/fbsetbg
 bin/fbsetroot
 bin/fluxbox
 bin/fluxbox-generate_menu
+bin/fluxbox-update_configs
 bin/startfluxbox
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -120,7 +121,8 @@ bin/startfluxbox
 %%NLS:%%%%DATADIR%%/nls/de_DE.ISO-8859-15/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/de_DE.UTF-8/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/el_GR.UTF-8/fluxbox.cat
-%%NLS:%%%%DATADIR%%/nls/el_GR.utf8/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/es_AR.ISO-8859-15/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/es_AR.UTF-8/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/es_ES.ISO-8859-15/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/es_ES.UTF-8/fluxbox.cat
 %%NLS:%%%%DATADIR%%/nls/et_EE.ISO-8859-15/fluxbox.cat
@@ -263,7 +265,8 @@ bin/startfluxbox
 %%NLS:%%@dirrm %%DATADIR%%/nls/et_EE.ISO-8859-15
 %%NLS:%%@dirrm %%DATADIR%%/nls/es_ES.UTF-8
 %%NLS:%%@dirrm %%DATADIR%%/nls/es_ES.ISO-8859-15
-%%NLS:%%@dirrm %%DATADIR%%/nls/el_GR.utf8
+%%NLS:%%@dirrm %%DATADIR%%/nls/es_AR.UTF-8
+%%NLS:%%@dirrm %%DATADIR%%/nls/es_AR.ISO-8859-15
 %%NLS:%%@dirrm %%DATADIR%%/nls/el_GR.UTF-8
 %%NLS:%%@dirrm %%DATADIR%%/nls/de_DE.UTF-8
 %%NLS:%%@dirrm %%DATADIR%%/nls/de_DE.ISO-8859-15
