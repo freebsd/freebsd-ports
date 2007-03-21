@@ -7,10 +7,10 @@
 
 PORTNAME=		linux-nx-client
 PORTVERSION=		2.1.0
-PORTREVISON=		1
+PORTREVISION=		2
 CATEGORIES=		net
 MASTER_SITES=		http://web04.nomachine.com/download/${PORTVERSION}/Linux/
-DISTNAME=		nxclient-${PORTVERSION}-11.i386
+DISTNAME=		nxclient-${PORTVERSION}-17.i386
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		The NoMachine NX client
