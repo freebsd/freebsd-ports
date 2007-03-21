@@ -7,21 +7,22 @@
 
 PORTNAME=	tkregexp
 PORTVERSION=	3.0
-CATEGORIES=	misc tk83
+PORTREVISION=	1
+CATEGORIES=	misc tk84
 MASTER_SITES=	http://laurent.riesterer.free.fr/regexp/
 DISTNAME=	visual_regexp-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	An interactive regexp design tool
 
-RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
-
-NO_WRKSUBDIR=	yes
+USE_TK=		yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/tkregexp
-USE_X_PREFIX=	yes
+
+post-patch:
+	@${REINPLACE_CMD} 's|wish8.3|${WISH}|' ${WRKSRC}/visual_regexp.tcl
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME}/visual_regexp.tcl ${PREFIX}/bin/${PORTNAME}
+	@${INSTALL_SCRIPT} ${WRKSRC}/visual_regexp.tcl ${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
