@@ -7,7 +7,7 @@
 
 PORTNAME=	xotcl
 PORTVERSION=	1.5.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES?=	lang tcl84
 MASTER_SITES=	http://media.wu-wien.ac.at/download/
 
@@ -40,7 +40,7 @@ AOLSERVERBASE?=	${LOCALBASE}/aolserver
 
 .if defined(AOLSERVER_XOTCL)
 RUN_DEPENDS+=		${LOCALBASE}/aolserver/bin/init.tcl:${PORTSDIR}/www/aolserver \
-			${LOCALBASE}/lib/xotcl${PORTVERSION}/xotclConfig.sh:${PORTSDIR}/lang/xotcl-thread
+			${LOCALBASE}/lib/xotcl${PORTVERSION}/xotclConfig.sh:${PORTSDIR}/lang/xotcl
 PLIST=			${WRKDIR}/pkg-plist.aolserver
 PLIST_FILES=		${AOLSERVERBASE:S/${LOCALBASE}\///}/modules/tcl/xotcl.tcl
 LATEST_LINK=		aolserver-xotcl
