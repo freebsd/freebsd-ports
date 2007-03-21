@@ -39,7 +39,7 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_BITMAP_IMAGES)
+.if !defined(WITHOUT_BITMAP_IMAGES)
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiffxx.4:${PORTSDIR}/graphics/tiff
@@ -48,12 +48,12 @@ CONFIGURE_ARGS+=	 --with-jpeg=${LOCALBASE} --with-tiff=${LOCALBASE} --with-png=$
 CONFIGURE_ARGS+=	 --with-jpeg=no --with-png=no -with-tiff=no
 .endif
 
-.if defined(WITH_LATEX_GS)
-RUN_DEPENDS+=	latex:${PORTSDIR}/print/teTeX \
-		gs:${PORTSDIR}/print/ghostscript-gnu
+.if !defined(WITHOUT_LATEX_GS)
+USE_GHOSTSCRIPT_RUN=	yes
+RUN_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
 .endif
 
-.if defined(WITH_X_WINDOWS)
+.if !defined(WITHOUT_X_WINDOWS)
 CONFIGURE_ARGS+=	--with-x
 USE_XLIB=	yes
 .endif
