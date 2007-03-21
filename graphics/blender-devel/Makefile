@@ -23,13 +23,13 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		SDL.11:${PORTSDIR}/devel/sdl12 \
 		Half.4:${PORTSDIR}/graphics/OpenEXR \
-		gettextpo.1:${PORTSDIR}/devel/gettext \
 		openal.0:${PORTSDIR}/audio/openal \
 		alut.1:${PORTSDIR}/audio/freealut \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg-devel
 
 PLIST_FILES=	bin/blender
 USE_X_PREFIX=	yes
+USE_GETTEXT=	yes
 USE_PYTHON=	2.4+
 USE_SDL=	sdl
 USE_GL=		yes
