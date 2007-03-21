@@ -1,0 +1,38 @@
+include/gtkunique-1.0/gtkunique/gtkunique.h
+include/gtkunique-1.0/gtkunique/gtkuniqueapp.h
+include/gtkunique-1.0/gtkunique/gtkuniqueenumtypes.h
+include/gtkunique-1.0/gtkunique/gtkuniqueversion.h
+%%DBUS%%lib/libgtkunique-dbus-1.0.a
+%%DBUS%%lib/libgtkunique-dbus-1.0.la
+%%DBUS%%lib/libgtkunique-dbus-1.0.so
+%%DBUS%%lib/libgtkunique-dbus-1.0.so.0
+%%XLIBS%%lib/libgtkunique-xlibs-1.0.a
+%%XLIBS%%lib/libgtkunique-xlibs-1.0.la
+%%XLIBS%%lib/libgtkunique-xlibs-1.0.so
+%%XLIBS%%lib/libgtkunique-xlibs-1.0.so.0
+libdata/pkgconfig/gtkunique-1.0.pc
+%%DBUS%%libdata/pkgconfig/gtkunique-dbus-1.0.pc
+%%XLIBS%%libdata/pkgconfig/gtkunique-xlibs-1.0.pc
+share/gtk-doc/html/gtkunique/GtkUniqueApp.html
+share/gtk-doc/html/gtkunique/communication.html
+share/gtk-doc/html/gtkunique/gtkunique.devhelp
+share/gtk-doc/html/gtkunique/gtkunique.devhelp2
+share/gtk-doc/html/gtkunique/gtkunique-backend-Xlibs.html
+share/gtk-doc/html/gtkunique/gtkunique-gtkuniqueversion.html
+share/gtk-doc/html/gtkunique/home.png
+share/gtk-doc/html/gtkunique/ch01.html
+share/gtk-doc/html/gtkunique/ch02.html
+share/gtk-doc/html/gtkunique/ch03.html
+share/gtk-doc/html/gtkunique/index.html
+share/gtk-doc/html/gtkunique/index.sgml
+share/gtk-doc/html/gtkunique/left.png
+share/gtk-doc/html/gtkunique/license.html
+share/gtk-doc/html/gtkunique/right.png
+share/gtk-doc/html/gtkunique/setup.html
+share/gtk-doc/html/gtkunique/style.css
+share/gtk-doc/html/gtkunique/up.png
+@dirrm share/gtk-doc/html/gtkunique
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
+@dirrm include/gtkunique-1.0/gtkunique
+@dirrm include/gtkunique-1.0

@@ -1,0 +1,5 @@
+GtkUnique is a library to facilitate programming single instance applications -
+that is applications that gets instanced once and each subsequent instance just
+quits - or send a command to the currently running instance.
+
+WWW: http://log.emmanuelebassi.net/archives/2006/10/love-and-communication/
