@@ -56,6 +56,9 @@ libdata/bonobo/servers/GNOME_GimmieApplet.server
 %%PYTHON_SITELIBDIR%%/gimmie/gimmie_people.py
 %%PYTHON_SITELIBDIR%%/gimmie/gimmie_people.pyc
 %%PYTHON_SITELIBDIR%%/gimmie/gimmie_people.pyo
+%%PYTHON_SITELIBDIR%%/gimmie/gimmie_prefs.py
+%%PYTHON_SITELIBDIR%%/gimmie/gimmie_prefs.pyc
+%%PYTHON_SITELIBDIR%%/gimmie/gimmie_prefs.pyo
 %%PYTHON_SITELIBDIR%%/gimmie/gimmie_recent.py
 %%PYTHON_SITELIBDIR%%/gimmie/gimmie_recent.pyc
 %%PYTHON_SITELIBDIR%%/gimmie/gimmie_recent.pyo
@@ -114,6 +117,7 @@ libexec/gimmie_applet
 share/icons/hicolor/32x32/apps/gimmie.png
 share/icons/hicolor/48x48/apps/gimmie.png
 share/icons/hicolor/scalable/apps/gimmie.svg
+share/gnome/gnome-2.0/ui/GNOME_GimmieApplet.xml
 share/gnome/pixmaps/gimmie.png
 @dirrm %%PYTHON_SITELIBDIR%%/gimmie/traymanager
 @dirrm %%PYTHON_SITELIBDIR%%/gimmie/sexy
