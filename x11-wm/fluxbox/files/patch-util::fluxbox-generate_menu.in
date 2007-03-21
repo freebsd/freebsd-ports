@@ -121,7 +121,7 @@
  
  # gnome prefix
 -for GNOME_PREFIX in "${GNOME_PREFIX}" /usr/local /usr/X11R6 /usr /opt "${PREFIX}"; do
-+for GNOME_PREFIX in "${GNOME_PREFIX}" %%X11BASE%% %%LOCALBASE%% /opt "${PREFIX}"; do
++for GNOME_PREFIX in "${GNOME_PREFIX}" %%LOCALBASE%% %%X11BASE%% /opt "${PREFIX}"; do
      if [ -n "${GNOME_PREFIX}" -a -d "$GNOME_PREFIX/share/gnome" ]; then
          break;
      fi

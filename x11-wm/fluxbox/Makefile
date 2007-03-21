@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fluxbox
-PORTVERSION=	1.0rc2
-PORTREVISION=	5
+PORTVERSION=	1.0rc3
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,6 +23,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS README TODO
 MAN1=		fbrun.1 fbsetbg.1 fbsetroot.1 fluxbox.1 fluxstyle.1 \
@@ -37,6 +37,7 @@ STRIP=
 .endif
 
 .if defined(WITH_DOCHTML)
+# http://fluxbox.org/docbook/en/tarballs/
 MASTER_SITES+=		${MASTER_SITE_LOCAL:S,%SUBDIR%,mezz,}:html \
 			http://people.freebsd.org/~mezz/distfiles/:html
 DISTFILES+=		fb-doc-mfhtml-${DOCSVERSION}.tgz:html
@@ -47,6 +48,7 @@ PLIST_SUB+=		DOCHTML:="@comment "
 .endif
 
 .if defined(WITH_DOCPDF)
+# http://fluxbox.org/docbook/en/pdf/
 MASTER_SITES+=		${MASTER_SITE_LOCAL:S,%SUBDIR%,mezz,}:pdf \
 			http://people.freebsd.org/~mezz/distfiles/:pdf
 DISTFILES+=		fluxbook-${DOCSVERSION}.pdf:pdf
