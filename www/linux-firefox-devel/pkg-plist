@@ -78,8 +78,10 @@ lib/%%APP_NAME%%/extensions/inspector@mozilla.org/components/inspector-cmdline.j
 lib/%%APP_NAME%%/extensions/inspector@mozilla.org/defaults/preferences/inspector.js
 lib/%%APP_NAME%%/extensions/inspector@mozilla.org/install.rdf
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/chrome.manifest
+lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/libqfaservices.so
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/qfaservices.xpt
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/XTalkback.ad
+lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/master.ini
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/talkback
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/components/talkback/talkback.so
 lib/%%APP_NAME%%/extensions/talkback@mozilla.org/install.rdf
