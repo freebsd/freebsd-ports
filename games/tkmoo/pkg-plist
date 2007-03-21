@@ -1,16 +1,16 @@
 bin/tkmoo
-share/tkmoo/plugins/ansi.tcl
-share/tkmoo/plugins/cmdcomplete.tcl
-share/tkmoo/plugins/displayurl.tcl
-share/tkmoo/plugins/mcp21.tcl
-share/tkmoo/plugins/message.tcl
-share/tkmoo/plugins/rehash.tcl
-share/tkmoo/plugins/search_macro.tcl
-share/tkmoo/plugins/serverinfo.tcl
-share/tkmoo/plugins/simpleedit.tcl
-share/tkmoo/plugins/status.tcl
-share/tkmoo/plugins/timezone.tcl
-share/tkmoo/plugins/url_trigger.tcl
-share/tkmoo/plugins/webbrowser.tcl
-@dirrm share/tkmoo/plugins
-@dirrm share/tkmoo
+%%DATADIR%%/plugins/ansi.tcl
+%%DATADIR%%/plugins/cmdcomplete.tcl
+%%DATADIR%%/plugins/displayurl.tcl
+%%DATADIR%%/plugins/mcp21.tcl
+%%DATADIR%%/plugins/message.tcl
+%%DATADIR%%/plugins/rehash.tcl
+%%DATADIR%%/plugins/search_macro.tcl
+%%DATADIR%%/plugins/serverinfo.tcl
+%%DATADIR%%/plugins/simpleedit.tcl
+%%DATADIR%%/plugins/status.tcl
+%%DATADIR%%/plugins/timezone.tcl
+%%DATADIR%%/plugins/url_trigger.tcl
+%%DATADIR%%/plugins/webbrowser.tcl
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%

@@ -7,18 +7,17 @@
 
 PORTNAME=	tkmoo
 PORTVERSION=	0.3.32
-CATEGORIES=	games tk83
+PORTREVISION=	1
+CATEGORIES=	games tk84
 MASTER_SITES=	http://www.awns.com/tkMOO-light/Source/
 DISTNAME=	tkMOO-light-${PORTVERSION}
 
 MAINTAINER=	adam-ports@blacktabby.org
 COMMENT=	Tk-based M** client with scripting support
 
-RUN_DEPENDS=	${WISH83}:${PORTSDIR}/x11-toolkits/tk83
-
-WISH83?=	${LOCALBASE}/bin/wish8.3
+USE_TK=		yes
 MAKE_ENV+=	TKMOO_LIB_DIR="${DATADIR}" \
-		TKMOO_BIN_DIR="${PREFIX}/bin" WISH8.3="${WISH83}"
+		TKMOO_BIN_DIR="${PREFIX}/bin" WISH8.3="${WISH}"
 
 do-install:
 	@${MKDIR} ${DATADIR}/plugins
