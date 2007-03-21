@@ -6,23 +6,23 @@
 
 PORTNAME=	OpenVerse
 PORTVERSION=	0.8.7
-CATEGORIES=	net tk82
+PORTREVISION=	1
+CATEGORIES=	net tcl84 tk84
 MASTER_SITES=	http://www.openverse.com/files/OpenVerse/
 DISTNAME=	${PORTNAME}-0.8-7
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A visual chat program written in Tcl/Tk
 
-RUN_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82 \
-		wish8.2:${PORTSDIR}/x11-toolkits/tk82
-
+USE_TK=		yes
+USE_TCL=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/OpenVerse
 
 STRIP=	# Nothing to Strip
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/wish|${LOCALBASE}/bin/wish8.2|g' \
+	@${REINPLACE_CMD} -e 's|/usr/bin/wish|${WISH}|g' \
 	-e 's|/usr/lib/OpenVerse|${PREFIX}/lib/OpenVerse|g' \
 		${WRKSRC}/OpenVerse.tcl
 
