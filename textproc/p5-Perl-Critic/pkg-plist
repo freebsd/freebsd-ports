@@ -24,6 +24,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/CodeLayout/ProhibitHardTabs.pm
 %%SITE_PERL%%/Perl/Critic/Policy/CodeLayout/ProhibitParensWithBuiltins.pm
 %%SITE_PERL%%/Perl/Critic/Policy/CodeLayout/ProhibitQuotedWordLists.pm
+%%SITE_PERL%%/Perl/Critic/Policy/CodeLayout/ProhibitTrailingWhitespace.pm
 %%SITE_PERL%%/Perl/Critic/Policy/CodeLayout/RequireConsistentNewlines.pm
 %%SITE_PERL%%/Perl/Critic/Policy/CodeLayout/RequireTidyCode.pm
 %%SITE_PERL%%/Perl/Critic/Policy/CodeLayout/RequireTrailingCommas.pm
@@ -78,6 +79,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/TestingAndDebugging/RequireTestLabels.pm
 %%SITE_PERL%%/Perl/Critic/Policy/TestingAndDebugging/RequireUseStrict.pm
 %%SITE_PERL%%/Perl/Critic/Policy/TestingAndDebugging/RequireUseWarnings.pm
+%%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitCommaSeparatedStatements.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitConstantPragma.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitEmptyQuotes.pm
 %%SITE_PERL%%/Perl/Critic/Policy/ValuesAndExpressions/ProhibitEscapedCharacters.pm
@@ -95,6 +97,7 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/ProhibitLocalVars.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/ProhibitMatchVars.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/ProhibitPackageVars.pm
+%%SITE_PERL%%/Perl/Critic/Policy/Variables/ProhibitPerl4PackageNames.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/ProhibitPunctuationVars.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/ProtectPrivateVars.pm
 %%SITE_PERL%%/Perl/Critic/Policy/Variables/RequireInitializationForLocalVars.pm

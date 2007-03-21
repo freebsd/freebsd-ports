@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Perl-Critic
-PORTVERSION=	1.03
+PORTVERSION=	1.05
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Perl
@@ -53,6 +53,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::CodeLayout::ProhibitHardTabs.3 \
 	Perl::Critic::Policy::CodeLayout::ProhibitParensWithBuiltins.3 \
 	Perl::Critic::Policy::CodeLayout::ProhibitQuotedWordLists.3 \
+	Perl::Critic::Policy::CodeLayout::ProhibitTrailingWhitespace.3 \
 	Perl::Critic::Policy::CodeLayout::RequireConsistentNewlines.3 \
 	Perl::Critic::Policy::CodeLayout::RequireTidyCode.3 \
 	Perl::Critic::Policy::CodeLayout::RequireTrailingCommas.3 \
@@ -107,6 +108,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::TestingAndDebugging::RequireTestLabels.3 \
 	Perl::Critic::Policy::TestingAndDebugging::RequireUseStrict.3 \
 	Perl::Critic::Policy::TestingAndDebugging::RequireUseWarnings.3 \
+	Perl::Critic::Policy::ValuesAndExpressions::ProhibitCommaSeparatedStatements.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitConstantPragma.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitEmptyQuotes.3 \
 	Perl::Critic::Policy::ValuesAndExpressions::ProhibitEscapedCharacters.3 \
@@ -124,6 +126,7 @@ MAN3=	Perl::Critic.3 \
 	Perl::Critic::Policy::Variables::ProhibitLocalVars.3 \
 	Perl::Critic::Policy::Variables::ProhibitMatchVars.3 \
 	Perl::Critic::Policy::Variables::ProhibitPackageVars.3 \
+	Perl::Critic::Policy::Variables::ProhibitPerl4PackageNames.3 \
 	Perl::Critic::Policy::Variables::ProhibitPunctuationVars.3 \
 	Perl::Critic::Policy::Variables::ProtectPrivateVars.3 \
 	Perl::Critic::Policy::Variables::RequireInitializationForLocalVars.3 \
