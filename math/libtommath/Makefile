@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtommath
-PORTVERSION=	0.40
+PORTVERSION=	0.41
 CATEGORIES=	math
 MASTER_SITES=	http://libtom.org/files/ \
 		http://www.atarininja.org/~wxs/distfiles/
