@@ -30,7 +30,6 @@ HAS_CONFIGURE=	yes
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} -unix PREFIX=${PREFIX} INCLUDEPATH+=/foo/bar/ZZZZZZZZZZZZZZZ \
-		LIBS+=-L/foo/bar/XXXXXXXXXXXXXXXXX texmaker.pro
+		${QMAKE} -unix PREFIX=${PREFIX} texmaker.pro
 
 .include <bsd.port.mk>
