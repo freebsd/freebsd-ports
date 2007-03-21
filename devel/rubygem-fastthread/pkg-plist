@@ -2,9 +2,9 @@
 %%GEM_SPEC%%
 %%GEM_LIB_DIR%%/Rakefile
 %%GEM_LIB_DIR%%/setup.rb
+%%GEM_LIB_DIR%%/test/test_all.rb
 %%GEM_LIB_DIR%%/test/test_condvar.rb
 %%GEM_LIB_DIR%%/test/test_mutex.rb
-%%GEM_LIB_DIR%%/test/test_all.rb
 %%GEM_LIB_DIR%%/test/test_queue.rb
 %%GEM_LIB_DIR%%/ext/fastthread/fastthread.c
 %%GEM_LIB_DIR%%/ext/fastthread/extconf.rb
