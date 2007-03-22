@@ -16,6 +16,7 @@ COMMENT=	Groundhog, a simple logic game
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
+USE_GCC=	3.4
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
