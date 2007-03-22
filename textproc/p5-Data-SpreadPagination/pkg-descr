@@ -1,0 +1,7 @@
+Perl module for page numbering and spread pagination. The object produced by
+Data::SpreadPagination can be used to create an easy to use spread pagination
+navigator. It inherits from Data::Page, and in addition provides methods to
+create a pagination spread, keeping pagenumbers displayed within a sensible
+limit.
+
+WWW: http://search.cpan.org/dist/Data-SpreadPagination/
