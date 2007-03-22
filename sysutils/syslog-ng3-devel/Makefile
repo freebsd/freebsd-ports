@@ -6,25 +6,27 @@
 #
 
 PORTNAME=	syslog-ng
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/syslog-ng/2.0/src/
 
 MAINTAINER=	ivan.lago@ifom-ieo-campus.it
 COMMENT=	A powerful syslogd replacement
 
+LIB_DEPENDS=	evtlog.0:${PORTSDIR}/sysutils/eventlog
+
 MAN5=		syslog-ng.conf.5
 MAN8=		syslog-ng.8
 
 USE_RC_SUBR=	syslog-ng.sh
 GNU_CONFIGURE=	yes
+USE_GNOME=	glib20
 USE_GCC=	3.3+
 NO_LATEST_LINK=	yes
-PKGMESSAGE=	${WRKDIR}/MESSAGE
+SUB_FILES=	pkg-message
+SUB_LIST=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 
-LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20 \
-		evtlog.0:${PORTSDIR}/sysutils/eventlog
+CONFIGURE_ARGS=	--enable-dynamic-linking --mandir=${PREFIX}/man
 
 .if defined(WITH_TCP_WRAPPERS)
 CONFIGURE_ARGS+=--enable-tcp-wrapper
@@ -32,9 +34,6 @@ CONFIGURE_ARGS+=--enable-tcp-wrapper
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/src/syslog-ng.h
-
-post-build:
-	@${SED} -e 's,__PREFIX__,${PREFIX},g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 
 post-install:
 .if !defined(NOPORTDOCS)
