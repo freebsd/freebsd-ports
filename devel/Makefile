@@ -412,6 +412,7 @@
     SUBDIR += gtranslator
     SUBDIR += guichan
     SUBDIR += guikachu
+    SUBDIR += guile-lib
     SUBDIR += gwenhywfar
     SUBDIR += gzstream
     SUBDIR += hachoir-core

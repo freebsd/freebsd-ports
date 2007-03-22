@@ -1,0 +1,71 @@
+share/guile/site/config/load.scm
+share/guile/site/container/delay-tree.scm
+share/guile/site/container/nodal-tree.scm
+share/guile/site/container/queue.scm
+share/guile/site/debugging/assert.scm
+share/guile/site/debugging/time.scm
+share/guile/site/graph/topological-sort.scm
+share/guile/site/htmlprag.scm
+share/guile/site/io/string.scm
+share/guile/site/logging/logger.scm
+share/guile/site/logging/port-log.scm
+share/guile/site/logging/rotating-log.scm
+share/guile/site/math/minima.scm
+share/guile/site/math/primes.scm
+share/guile/site/math/rationalize.scm
+share/guile/site/md5.scm
+share/guile/site/os/process.scm
+share/guile/site/scheme/documentation.scm
+share/guile/site/scheme/session.scm
+share/guile/site/search/basic.scm
+share/guile/site/srfi/srfi-34.scm
+share/guile/site/srfi/srfi-35.scm
+share/guile/site/srfi/srfi-40.scm
+share/guile/site/statprof.scm
+share/guile/site/string/completion.scm
+share/guile/site/string/soundex.scm
+share/guile/site/string/transform.scm
+share/guile/site/string/wrap.scm
+share/guile/site/sxml/apply-templates.scm
+share/guile/site/sxml/simple.scm
+share/guile/site/sxml/ssax-simple.scm
+share/guile/site/sxml/ssax.scm
+share/guile/site/sxml/ssax/input-parse.scm
+share/guile/site/sxml/transform.scm
+share/guile/site/sxml/upstream/SSAX-expanded.scm
+share/guile/site/sxml/upstream/SSAX.scm
+share/guile/site/sxml/upstream/SXML-tree-trans.scm
+share/guile/site/sxml/upstream/SXPath-old.scm
+share/guile/site/sxml/upstream/assert.scm
+share/guile/site/sxml/upstream/input-parse.scm
+share/guile/site/sxml/upstream/packages.scm
+share/guile/site/sxml/xpath.scm
+share/guile/site/term/ansi-color.scm
+share/guile/site/texinfo.scm
+share/guile/site/texinfo/html.scm
+share/guile/site/texinfo/indexing.scm
+share/guile/site/texinfo/nodal-tree.scm
+share/guile/site/texinfo/plain-text.scm
+share/guile/site/texinfo/reflection.scm
+share/guile/site/texinfo/serialize.scm
+share/guile/site/text/parse-lalr.scm
+share/guile/site/unit-test.scm
+@dirrm share/guile/site/text
+@dirrm share/guile/site/texinfo
+@dirrm share/guile/site/term
+@dirrm share/guile/site/sxml/upstream
+@dirrm share/guile/site/sxml/ssax
+@dirrm share/guile/site/sxml
+@dirrm share/guile/site/string
+@dirrm share/guile/site/srfi
+@dirrm share/guile/site/search
+@dirrm share/guile/site/scheme
+@dirrm share/guile/site/os
+@dirrm share/guile/site/math
+@dirrm share/guile/site/logging
+@dirrm share/guile/site/io
+@dirrm share/guile/site/graph
+@dirrm share/guile/site/debugging
+@dirrm share/guile/site/container
+@dirrm share/guile/site/config
+@dirrm share/guile/site
