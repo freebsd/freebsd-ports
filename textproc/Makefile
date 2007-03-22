@@ -346,6 +346,7 @@
     SUBDIR += p5-Class-CSV
     SUBDIR += p5-Data-FormValidator
     SUBDIR += p5-Data-Report
+    SUBDIR += p5-Data-SpreadPagination
     SUBDIR += p5-DelimMatch
     SUBDIR += p5-Devel-TraceSAX
     SUBDIR += p5-Excel-Template
