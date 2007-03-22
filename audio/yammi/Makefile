@@ -6,58 +6,47 @@
 #
 
 PORTNAME=	yammi
-PORTVERSION=	1.2.rc
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.2.r/.2-r/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A QT-based music manager with fuzzy search
 
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
-		id3-3.8.3:${PORTSDIR}/audio/id3lib
+		tag.5:${PORTSDIR}/audio/taglib
 
-OPTIONS=	ARTS "Arts backend support" on \
-		XMMS "XMMS backend support" off \
-		NOATUN "Noatun backend support" on
+OPTIONS=	XMMS "XMMS backend support" off
 
-USE_QT_VER=	3
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
-CONFIGURE_ARGS+=	--program-prefix='' --enable-threading=yes --enable-mt=yes
-USE_KDELIBS_VER=3
+USE_AUTOTOOLS=	autoconf:259:env automake:19:env libtool:15:env
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-gstreamer
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_ARTS)
-.if defined(WITHOUT_XMMS)
-.if defined(WITHOUT_NOATUN)
-IGNORE=	You must define at least one backend for yammi
-.endif
-.endif
-.endif
-
-.if !defined(WITHOUT_ARTS)
-CONFIGURE_ARGS+=--with-arts
-LIB_DEPENDS+=	artsgui:${PORTSDIR}/multimedia/kdemultimedia3
-.else
-CONFIGURE_ARGS+=--without-arts
-.endif
-
-.if !defined(WITHOUT_NOATUN)
-RUN_DEPENDS+=	noatun:${PORTSDIR}/multimedia/kdemultimedia3
-.endif
-
-.if !defined(WITHOUT_XMMS)
+.if defined(WITH_XMMS)
 CONFIGURE_ARGS+=--enable-xmms
-BUILD_DEPENDS+= xmms-config:${PORTSDIR}/multimedia/xmms
-LIB_DEPENDS+=   xmms.4:${PORTSDIR}/multimedia/xmms
+BUILD_DEPENDS+=	xmms-config:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 .else
 CONFIGURE_ARGS+=--disable-xmms
 .endif
+
+post-patch:
+	@cd ${WRKSRC}/admin && ${REINPLACE_CMD} -e \
+		's|="autoconf"|="${AUTOCONF:T}"|g ; \
+		 s|="autoheader"|="${AUTOHEADER:T}"|g ; \
+		 s|="autom4te"|="${AUTOM4TE:T}"|g ; \
+		 s|="automake"|="${AUTOMAKE:T}"|g ; \
+		 s|="aclocal"|="${ACLOCAL:T}"|g' detect-autoconf.sh
+
+pre-configure:
+	@cd ${WRKSRC}/admin && ${RM} -f ltmain.sh && ${CP} -f ${LTMAIN} .
+	@cd ${WRKSRC} && ${GMAKE} -f admin/Makefile.common
 
 .include <bsd.port.post.mk>
