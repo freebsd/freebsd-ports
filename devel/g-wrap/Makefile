@@ -32,6 +32,7 @@ CONFIGURE_TARGET=	--build=${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -fPIC"
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|"glib"|"glib-2.0"|g ; \
 		s|SRFI_34=yes|SRFI_34=no|g ; s|SRFI_35=yes|SRFI_35=no|g' \
 			${WRKSRC}/configure
