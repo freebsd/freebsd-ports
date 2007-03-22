@@ -23,7 +23,7 @@ INSTALL_TARGET=	setup check
 MAN1=		clockadd.1 clockspeed.1 clockview.1 sntpclock.1 \
 		taiclock.1 taiclockd.1
 
-PREFIX_FIX_FILES=	${WRKSRC}/leapsecs_read.c ${WRKSRC}/INSTALL
+PREFIX_FIX_FILES=	leapsecs_read.c INSTALL
 CLOCKSPEED_RC_SCRIPT_SAMPLE=	${FILESDIR}/clockspeed.sh.sample
 RC_SCRIPT_STARTUP_DIR=		${PREFIX}/etc/rc.d
 
@@ -37,7 +37,12 @@ post-extract:
 	@${ECHO} hasclock_gettime.h >> ${WRKSRC}/${file}
 .endfor
 
-post-patch: real-post-patch
+post-patch:
+	@${SED} "s!/usr/local/!${PREFIX}!" ${CLOCKSPEED_RC_SCRIPT_SAMPLE} > \
+		${WRKDIR}/${CLOCKSPEED_RC_SCRIPT_SAMPLE:T}
+.for file in ${PREFIX_FIX_FILES}
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${file}
+.endfor
 
 do-configure:
 	@${ECHO_CMD} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
@@ -47,24 +52,13 @@ do-configure:
 post-build:
 	@${CP} ${LOCALBASE}/etc/leapsecs.dat ${WRKSRC}/leapsecs.dat
 
-post-install: real-post-install
-
-.include <bsd.port.post.mk>
-
-real-post-patch:
-	@${SED} "s!/usr/local/!${PREFIX}!" ${CLOCKSPEED_RC_SCRIPT_SAMPLE} > \
-		${WRKDIR}/${CLOCKSPEED_RC_SCRIPT_SAMPLE:T}
-.for file in ${PREFIX_FIX_FILES}
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${file}
-.endfor
-
-real-post-install:
+post-install:
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
-		${PREFIX}/share/doc/clockspeed
-	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/clockspeed
+		${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
 	@${INSTALL_DATA} ${PKGMESSAGE} \
-		${PREFIX}/share/doc/clockspeed/INSTALL-FreeBSD
+		${DOCSDIR}/INSTALL-FreeBSD
 .endif
 	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
 		${PREFIX}/etc/clockspeed
@@ -72,3 +66,5 @@ real-post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/${CLOCKSPEED_RC_SCRIPT_SAMPLE:T} \
 		${RC_SCRIPT_STARTUP_DIR}/${CLOCKSPEED_RC_SCRIPT_SAMPLE:T}
 	@${SED} s!/usr/local/!${PREFIX}/! ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>
