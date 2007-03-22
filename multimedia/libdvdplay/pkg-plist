@@ -3,6 +3,7 @@ include/dvdplay/info.h
 include/dvdplay/nav.h
 include/dvdplay/state.h
 lib/libdvdplay.a
+lib/libdvdplay.la
 lib/libdvdplay.so
 lib/libdvdplay.so.0
 @dirrm include/dvdplay

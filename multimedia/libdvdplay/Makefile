@@ -7,6 +7,7 @@
 
 PORTNAME=	libdvdplay
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -16,9 +17,10 @@ COMMENT=	Portable abstraction library for DVD navigation
 
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 
+USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-dvdread-tree=${LOCALBASE}/include
-INSTALLS_SHLIB=	yes
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
