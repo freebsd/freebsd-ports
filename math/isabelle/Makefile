@@ -22,7 +22,6 @@ MAINTAINER=	timbob@bigpond.com
 COMMENT=	A generic proof assistant
 
 OPTIONS=	SMLNJ "Use SML/NJ (devel) instead of the faster Poly/ML" Off
-NO_PACKAGE=	Requires non-standard kernel setting.
 
 .include <bsd.port.pre.mk>
 
@@ -30,11 +29,13 @@ NO_PACKAGE=	Requires non-standard kernel setting.
 ML_SYSTEM=	smlnj-110
 ML_HOME=	${LOCALBASE}/smlnj/bin
 ML_OPTIONS=	@SMLdebug=/dev/null
+ML_PLATFORM=	x86-bsd
 .else
-ML_SYSTEM=	polyml-4.2.0
-ML_HOME=	${LOCALBASE}/lib/polyml/
-ML_OPTIONS=	-H 80
+ML_SYSTEM=	polyml-5.0
+ML_HOME=	${LOCALBASE}/bin
+ML_OPTIONS=	-H 500
 ML_DBASE=	""
+ML_PLATFORM=	""
 .endif
 
 USE_PERL5=	yes
@@ -43,12 +44,12 @@ RUN_DEPENDS+=	proofgeneral:${PORTSDIR}/math/proofgeneral
 
 DOCFILES=	Contents *.pdf *.eps *.ps *.dvi
 
-PLIST_SUB=	HEAPSUBDIR=${ML_SYSTEM}_x86-bsd
-
 .if defined(WITH_SMLNJ)
+PLIST_SUB=	HEAPSUBDIR=${ML_SYSTEM}_${ML_PLATFORM}
 BUILD_DEPENDS+=	sml:${PORTSDIR}/lang/sml-nj-devel
 RUN_DEPENDS+=	sml:${PORTSDIR}/lang/sml-nj-devel
 .else
+PLIST_SUB=	HEAPSUBDIR=${ML_SYSTEM}
 BUILD_DEPENDS+=	poly:${PORTSDIR}/lang/polyml
 RUN_DEPENDS+=	poly:${PORTSDIR}/lang/polyml
 .endif
@@ -57,8 +58,12 @@ NO_INSTALL_MANPAGES=yes
 
 post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
-	@${CP} ${FILESDIR}/polyml-4.1.4-patch.ML ${WRKSRC}/src/Pure/ML-Systems/
-	@${CP} ${FILESDIR}/polyml-4.2.0.ML ${WRKSRC}/src/Pure/ML-Systems/
+	@${CP} ${FILESDIR}/run-polyml-5.0 ${WRKSRC}/lib/scripts/
+	@${CHMOD} ugo+x ${WRKSRC}/lib/scripts/run-polyml-5.0
+	@${CP} ${FILESDIR}/polyml-5.0.ML ${WRKSRC}/src/Pure/ML-Systems/
+.if !defined(WITH_SMLNJ)
+	@${CP} ${FILESDIR}/proofgeneral-settings.el ${WRKSRC}/etc/
+.endif
 
 post-patch:
 	@${MV} ${WRKSRC}/etc/settings ${WRKSRC}/etc/settings.presed
@@ -66,18 +71,11 @@ post-patch:
 		 s|%%ML_HOME%%|${ML_HOME}|;		\
 		 s|%%ML_OPTIONS%%|\"${ML_OPTIONS}\"|;	\
 		 s|%%ML_DBASE%%|${ML_DBASE}|;		\
+		 s|%%ML_PLATFORM%%|${ML_PLATFORM}|;	\
 		 s|%%PREFIX%%|${PREFIX}|"		\
 		${WRKSRC}/etc/settings.presed > ${WRKSRC}/etc/settings
 	@${RM} ${WRKSRC}/etc/settings.presed
 	@${TOUCH} ${WRKSRC}/contrib/.keep
-
-pre-build:
-.if !defined(WITH_SMLNJ)
-	@if ${TEST} `ulimit -Hd` -lt 917504; then	\
-		${CAT} ${FILESDIR}/badmaxdsiz;		\
-		exit 1;					\
-	fi
-.endif
 
 post-install:
 	${WRKSRC}/bin/isatool ${INSTALL} -d ${PREFIX}/share/isabelle -p ${PREFIX}/bin

@@ -2070,6 +2070,7 @@ bin/isatool
 %%DATADIR%%/lib/scripts/polyml-version
 %%DATADIR%%/lib/scripts/run-mosml
 %%DATADIR%%/lib/scripts/run-polyml
+%%DATADIR%%/lib/scripts/run-polyml-5.0
 %%DATADIR%%/lib/scripts/run-smlnj
 %%DATADIR%%/lib/scripts/showtime
 %%DATADIR%%/lib/scripts/unsymbolize.pl
@@ -3341,8 +3342,7 @@ bin/isatool
 %%DATADIR%%/src/Pure/ML-Systems/cpu-timer-basis.ML
 %%DATADIR%%/src/Pure/ML-Systems/cpu-timer-gc.ML
 %%DATADIR%%/src/Pure/ML-Systems/mosml.ML
-%%DATADIR%%/src/Pure/ML-Systems/polyml-4.1.4-patch.ML
-%%DATADIR%%/src/Pure/ML-Systems/polyml-4.2.0.ML
+%%DATADIR%%/src/Pure/ML-Systems/polyml-5.0.ML
 %%DATADIR%%/src/Pure/ML-Systems/polyml-posix.ML
 %%DATADIR%%/src/Pure/ML-Systems/polyml-time-limit.ML
 %%DATADIR%%/src/Pure/ML-Systems/polyml.ML

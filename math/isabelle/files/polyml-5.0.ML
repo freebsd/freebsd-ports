@@ -1,9 +1,7 @@
-(*  Title:      Pure/ML-Systems/polyml-4.1.4-patch.ML
-    ID:         $Id$
-    Author:     Makarius
+(*  Title:      Pure/ML-Systems/polyml-5.0.ML
+    ID:         $Id: polyml-5.0.ML,v 1.1 2006/12/07 13:11:39 wenzelm Exp $
 
-Patch for PolyML 4.1.4 to make it work with Isabelle2005.  We commit
-this into ML_dbase!
+Compatibility wrapper for Poly/ML 5.0 -- version for Isabelle2005.
 *)
 
 structure Posix =
@@ -29,3 +27,7 @@ struct
   val all = full;
 end;
 
+
+use "ML-Systems/polyml.ML";
+
+val pointer_eq = PolyML.pointerEq;
