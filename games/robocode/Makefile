@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	robocode
-PORTVERSION=	1.0.7
+PORTVERSION=	1.2.6
 CATEGORIES=	games java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=robocode
-DISTNAME=	${PORTNAME}-setup-${PORTVERSION}
+DISTNAME=	${PORTNAME}-setup-${PORTVERSION}A
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemoliu@gmail.com
 COMMENT=	A game for learning Java[tm] programming language
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 JAVA_EXTRACT=	yes
 JAVA_RUN=	yes
 
