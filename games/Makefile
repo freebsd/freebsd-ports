@@ -210,7 +210,6 @@
     SUBDIR += formido
     SUBDIR += fortunate
     SUBDIR += fotaq
-    SUBDIR += frabs
     SUBDIR += freebsd-games
     SUBDIR += freecell-solver
     SUBDIR += freeciv

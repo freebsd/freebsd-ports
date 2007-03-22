@@ -8,7 +8,6 @@
     SUBDIR += cbb
     SUBDIR += expense
     SUBDIR += gnofin
-    SUBDIR += gnomepm
     SUBDIR += gnucash
     SUBDIR += gnucash-docs
     SUBDIR += grisbi
