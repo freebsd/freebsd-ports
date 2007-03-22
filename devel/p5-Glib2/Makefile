@@ -20,8 +20,6 @@ BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/PkgConfig.pm:${PORTSDIR}/devel/p5-ExtUtils-
 
 USE_GNOME=	glib20
 PERL_CONFIGURE=	yes
-USE_GMAKE=	yes
-CONFIGURE_ENV+=	FORCE_GMAKE=yes
 WRKSRC=		${WRKDIR}/${PORTNAME:S/2//}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
