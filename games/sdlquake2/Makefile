@@ -28,7 +28,6 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 MAKE_ENV=	LIBDIR="${LIBDIR}"
 PLIST_SUB=	LIBDIR=${LIBDIR:S/${PREFIX}\///}
 
-
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 
 .include <bsd.port.pre.mk>
