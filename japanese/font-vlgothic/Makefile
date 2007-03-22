@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vlgothic
-PORTVERSION=	20061026
+PORTVERSION=	20070317
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://vinelinux.org/~daisuke/vlgothic/ \
 		http://dicey.org/vlgothic/
@@ -36,7 +36,7 @@ do-install:
 			${WRKSRC}/VL-Gothic-Regular.ttf \
 			${PREFIX}/${FONTSDIR}
 	${MKDIR} ${PREFIX}/etc/fonts/conf.d
-	${INSTALL_DATA} ${FILESDIR}/25.vlgothic.conf \
+	${INSTALL_DATA} ${FILESDIR}/63-vlgothic.conf \
 			${PREFIX}/etc/fonts/conf.d
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

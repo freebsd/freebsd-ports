@@ -1,5 +1,5 @@
 @comment $FreeBSD$
-etc/fonts/conf.d/25.vlgothic.conf
+etc/fonts/conf.d/63-vlgothic.conf
 %%FONTSDIR%%/VL-PGothic-Regular.ttf
 %%FONTSDIR%%/VL-Gothic-Regular.ttf
 %%PORTDOCS%%%%DOCSDIR%%/Changelog
