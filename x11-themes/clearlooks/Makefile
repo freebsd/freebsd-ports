@@ -66,6 +66,7 @@ pre-everything::
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 .if ${PORTNAME} != "clearlooks"
 	@${REINPLACE_CMD} -e 's|gtkrc||' \
 		${WRKSRC}/themes/Clearlooks/gtk-2.0/Makefile.in
