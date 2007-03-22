@@ -19,14 +19,21 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 CONFLICTS=	rpm-4.*
 
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:14 autoconf:213 libtool:15
 CONFIGURE_ARGS=	--with-glob
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lintl -liconv"
 USE_LDCONFIG=	yes
 MAKE_ENV=	OLD_PO_FILE_INPUT=1
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -lintl -liconv"
+.endif
 
 MAN1=		gendiff.1
 MAN8=		rpm.8 rpm2cpio.8

@@ -56,19 +56,19 @@ lib/rpm/vpkg-provides.sh
 lib/rpm/vpkg-provides2.sh
 lib/rpmpopt
 lib/rpmrc
-share/locale/cs/LC_MESSAGES/rpm.mo
-share/locale/de/LC_MESSAGES/rpm.mo
-share/locale/fi/LC_MESSAGES/rpm.mo
-share/locale/fr/LC_MESSAGES/rpm.mo
-share/locale/ja/LC_MESSAGES/rpm.mo
-share/locale/pl/LC_MESSAGES/rpm.mo
-share/locale/pt_BR/LC_MESSAGES/rpm.mo
-share/locale/ru/LC_MESSAGES/rpm.mo
-share/locale/sk/LC_MESSAGES/rpm.mo
-share/locale/sl/LC_MESSAGES/rpm.mo
-share/locale/sr/LC_MESSAGES/rpm.mo
-share/locale/sv/LC_MESSAGES/rpm.mo
-share/locale/tr/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/de/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/rpm.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/rpm.mo
 @dirrm lib/rpm
 @dirrm include/rpm
 @dirrmtry src/redhat/SRPMS
