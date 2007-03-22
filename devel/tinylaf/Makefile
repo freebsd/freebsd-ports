@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	tinylaf
-PORTVERSION=	1.3.02
+PORTVERSION=	1.3.05
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.muntjak.de/hans/java/tinylaf/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemoliu@gmail.com
 COMMENT=	A pluggable Look and Feel for Java
 
 USE_ZIP=	yes
