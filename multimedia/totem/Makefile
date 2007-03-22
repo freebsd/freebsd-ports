@@ -69,7 +69,7 @@ USE_GSTREAMER+=	gnomevfs core gconf hal good mpeg2dec ugly
 WITHOUT_DVDNAV=	yes
 PLIST_SUB+=	GSTREAMER=""
 .else
-LIB_DEPENDS+=	xine.16:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	xine.1:${PORTSDIR}/multimedia/libxine
 PLIST_SUB+=	GSTREAMER="@comment "
 .endif
 
