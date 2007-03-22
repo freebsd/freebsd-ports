@@ -6,6 +6,7 @@
 
 PORTNAME=	gchemutils
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,7 @@ COMMENT=	C++ classes and Gtk2 widgets related to chemistry
 
 LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext \
 		openbabel.1:${PORTSDIR}/science/openbabel \
-		goffice-1.2:${PORTSDIR}/devel/goffice
+		goffice-0.3:${PORTSDIR}/devel/goffice
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
