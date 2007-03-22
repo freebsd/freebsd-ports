@@ -863,6 +863,7 @@
     SUBDIR += sdcv
     SUBDIR += sdf
     SUBDIR += sdocbook-xml
+    SUBDIR += sdom
     SUBDIR += senna
     SUBDIR += sgmlformat
     SUBDIR += sgmls
