@@ -1,0 +1,18 @@
+include/libruin.h
+lib/libruin.a
+lib/libruin.so
+lib/libruin.so.0
+lib/libruin/css/xhtml.css
+lib/libruin/css/xul.css
+lib/libruin/scheme/scss/lexer.scm
+lib/libruin/scheme/scss/parser.scm
+lib/libruin/scheme/scss/scss.scm
+lib/libruin/scheme/sdom/core.scm
+lib/libruin/scheme/sdom/events.scm
+@dirrm lib/libruin/css
+@dirrm lib/libruin/scheme/sdom
+@dirrm lib/libruin/scheme/scss
+@dirrm lib/libruin/scheme
+@dirrm lib/libruin
+%%DATADIR%%/ChangeLog
+@dirrm %%DATADIR%%

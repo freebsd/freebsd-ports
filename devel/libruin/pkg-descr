@@ -1,0 +1,13 @@
+libRUIN (Renderer for User Interfaces in Ncurses) is a rendering library for
+various XML-based user interface markup languages (such as XHTML or Mozilla
+XUL), using the Ncurses terminal control library as a rendering target.
+GNU Guile and the SDOM Scheme module are used as the "glue" that manages user
+input and event handling (as such, event handlers must currently be written
+in Guile Scheme; support for ECMAscript event handlers is being considered
+for inclusion). An application programmer passes an XML document (including,
+potentially, a set of CSS stylesheets) and an Ncurses WINDOW structure, and
+libRUIN paints the WINDOW according to the markup and CSS; the programmer may
+subsequently pass Ncurses-style input strings to that WINDOW via libRUIN, and
+libRUIN will handle the resulting event flows.
+
+WWW: http://www.nongnu.org/libruin/

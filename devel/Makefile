@@ -596,6 +596,7 @@
     SUBDIR += libpperl
     SUBDIR += libpthread-stubs
     SUBDIR += libredblack
+    SUBDIR += libruin
     SUBDIR += libs11n
     SUBDIR += libshbuf
     SUBDIR += libshhmsg
