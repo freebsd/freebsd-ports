@@ -9,7 +9,7 @@ PORTNAME=	mame
 PORTVERSION=	0.112
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.mame.net/:mame \
-		http://www.mameworld.net/mameinfo/update/:mameinfo \
+		${MASTER_SITE_LOCAL:S|$|alepulver/:mameinfo|} \
 		http://zemamu.free.fr/:icons \
 		http://cheat.retrogames.com/:cheats \
 		http://www.mameworld.net/highscore/:hiscore \
@@ -21,8 +21,6 @@ EXTRACT_ONLY=	#
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Additional files for MAME (Multi Arcade Machine Emulator)
-
-BROKEN=		Unfetchable
 
 USE_ZIP=	yes
 NO_BUILD=	yes
