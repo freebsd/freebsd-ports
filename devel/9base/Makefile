@@ -26,6 +26,9 @@ APPS=	awk basename bc cat cleanname date dc echo grep ls mk rc read sed seq\
 PLIST_FILES=	${APPS:S|^|9/bin/|} ${APPS:S|^|9/man/man1/|:S|$|.1|} 9/man/man7/regexp.7 9/etc/rcmain
 PLIST_DIRS=	9/bin 9/etc 9/man/man1 9/man/man7 9/man 9
 
+ONLY_FOR_ARCHS=	i386 amd64 sparc64
+ONLY_FOR_ARCHS_REASON=	has low-level code unavailable for ${ARCH}
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|PREFIX|"${PREFIX}/9"|' ${WRKSRC}/rc/plan9ish.c
 	@${REINPLACE_CMD} -e '/OBJTYPE!=/s|!=.*|=${ARCH:S,i386,386,:S,amd64,x86_64,:S,sparc64,sun4u,}|' ${WRKSRC}/lib9/Makefile
