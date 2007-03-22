@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Time
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Period-${PORTVERSION}
 
-MAINTAINER=	nick@netdot.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl module that contains code to deal with time periods
 
 PERL_CONFIGURE=	YES

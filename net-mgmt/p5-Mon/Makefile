@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Mon
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Mon-${PORTVERSION}
 
-MAINTAINER=	nick@netdot.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A perl module that supports mon, a network and system monitoring daemon
 
 PERL_CONFIGURE=	YES

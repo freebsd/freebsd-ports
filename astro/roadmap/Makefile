@@ -12,7 +12,7 @@ CATEGORIES=	astro
 MASTER_SITES=	http://roadmap.digitalomaha.net/roadmap/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/.r/rc/:S/./_/g}_src
 
-MAINTAINER=	nick@netdot.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vector-based GPS moving map
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
