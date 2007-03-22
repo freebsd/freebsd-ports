@@ -53,6 +53,7 @@ post-patch:
 .ifndef PATCH_DEBUG
 	@${RM} -f ${WRKSRC}/config/config_default.php.orig
 .endif
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${REINPLACE_CMD} -e 's|ispell|${LOCALBASE}/bin/ispell|g' \
 		${WRKSRC}/plugins/squirrelspell/sqspell_config.php
 	@${RM} ${WRKSRC}/plugins/squirrelspell/sqspell_config.php.bak
