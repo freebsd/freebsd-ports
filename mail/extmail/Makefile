@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	extmail
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	mail
-MASTER_SITES=	http://extmail.org/download/%SUBDIR%/ \
+MASTER_SITES=	http://www.extmail.org/dist/extmail/%SUBDIR%/ \
 		http://chifeng.cosoft.org.cn/extmail/%SUBDIR%/
 
 MAINTAINER?=	chifeng@gmail.com

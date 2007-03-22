@@ -298,6 +298,9 @@ www/extmail/libs/Ext/GlobalAbook.pm
 www/extmail/libs/Ext/GlobalAbook/File.pm
 www/extmail/libs/Ext/GlobalAbook/LDAP.pm
 www/extmail/libs/Ext/Lang.pm
+www/extmail/libs/Ext/Logger.pm
+www/extmail/libs/Ext/Logger/File.pm
+www/extmail/libs/Ext/Logger/Syslog.pm
 www/extmail/libs/Ext/MIME.pm
 www/extmail/libs/Ext/MailFilter.pm
 www/extmail/libs/Ext/POP3.pm
@@ -327,6 +330,7 @@ www/extmail/webmail.cf.default
 @dirrm www/extmail/libs/HTML
 @dirrm www/extmail/libs/Ext/Unicode
 @dirrm www/extmail/libs/Ext/Storage
+@dirrm www/extmail/libs/Ext/Logger
 @dirrm www/extmail/libs/Ext/GlobalAbook
 @dirrm www/extmail/libs/Ext/Auth
 @dirrm www/extmail/libs/Ext/App
