@@ -39,8 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>squid</name>
-	<range><ge>2.6.1</ge></range>
-	<range><lt>2.6.12</lt></range>
+	<range><ge>2.6.*</ge><lt>2.6.12</lt></range>
       </package>
     </affects>
     <description>
@@ -62,8 +61,9 @@ Note:  Please add new entries to the beginning of this file.
     <url>http://www.squid-cache.org/Advisories/SQUID-2007_1.txt</url>
     </references>
     <dates>
-      <discovery>2007-03-21</discovery>
-      <entry>2007-03-20</entry>
+      <discovery>2007-03-20</discovery>
+      <entry>2007-03-21</entry>
+      <modified>2007-03-21</modified>
     </dates>
   </vuln>
 
