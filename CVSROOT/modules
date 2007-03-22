@@ -10204,6 +10204,7 @@ p5-POE-Component-Client-FTP	ports/ftp/p5-POE-Component-Client-FTP
 p5-POE-Component-Client-HTTP	ports/www/p5-POE-Component-Client-HTTP
 p5-POE-Component-Client-Ident	ports/net/p5-POE-Component-Client-Ident
 p5-POE-Component-Client-Keepalive	ports/net/p5-POE-Component-Client-Keepalive
+p5-POE-Component-Client-MSN	ports/net-im/p5-POE-Component-Client-MSN
 p5-POE-Component-Client-NNTP	ports/news/p5-POE-Component-Client-NNTP
 p5-POE-Component-Client-POP3	ports/mail/p5-POE-Component-Client-POP3
 p5-POE-Component-Client-Ping	ports/net/p5-POE-Component-Client-Ping
