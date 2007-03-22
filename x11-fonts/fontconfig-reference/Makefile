@@ -74,6 +74,7 @@ MAN3=		FcAtomicCreate.3  \
 		FcFreeTypeCharIndex.3  \
 		FcFreeTypeCharSet.3  \
 		FcFreeTypeQuery.3  \
+		FcFreeTypeQueryFace.3 \
 		FcGetVersion.3  \
 		FcInit.3  \
 		FcInitBringUptoDate.3  \
