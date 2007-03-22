@@ -7,7 +7,7 @@
 
 PORTNAME=	libtomoe-gtk
 PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=tomoe/23341
@@ -16,7 +16,7 @@ MAINTAINER=	ume@FreeBSD.org
 COMMENT=	TOMOE GTK+ library
 
 LIB_DEPENDS=	tomoe.1:${PORTSDIR}/japanese/tomoe \
-		gucharmap.5:${PORTSDIR}/deskutils/gucharmap
+		gucharmap.6:${PORTSDIR}/deskutils/gucharmap
 
 USE_GNOME=	lthack gnomehack gtk20
 GNU_CONFIGURE=	yes
