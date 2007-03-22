@@ -1,9 +1,2 @@
 #!/bin/sh
-index=`expr "$1" | /`;
-if [ $index != $1 ]
-then
-        dir=`pwd`/$1;
-else
-        dir="$1";
-fi
-perl %%DATADIR%%/bin/gprename.pl %%DATADIR%%/ $dir &
+perl %%DATADIR%%/bin/gprename.pl %%DATADIR%%/ $@ &
