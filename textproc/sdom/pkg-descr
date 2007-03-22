@@ -1,0 +1,6 @@
+SDOM is an implementation of the W3C DOM recommendation (Level 3), including
+support for event handling, in the Scheme programming language. SDOM builds
+upon the work of Oleg Kiselyov's SXML project and aims to be fully compatible
+with the SXML API.
+
+WWW: http://www.nongnu.org/sdom/
