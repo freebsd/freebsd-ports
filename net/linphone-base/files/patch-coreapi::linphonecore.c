@@ -1,12 +1,13 @@
---- coreapi/linphonecore.c.orig	Sat Mar 11 00:19:17 2006
-+++ coreapi/linphonecore.c	Sat Apr  1 00:57:53 2006
-@@ -36,9 +36,7 @@
- #include <arpa/inet.h>
- #include <time.h>
+--- coreapi/linphonecore.c.orig	Fri Sep  8 18:16:44 2006
++++ coreapi/linphonecore.c	Tue Sep 12 22:33:19 2006
+@@ -29,10 +29,8 @@
+ #include "exevents.h"
+ 
  
 -#ifdef INET6  
+ #ifndef WIN32
  #include <netdb.h>  
 -#endif
+ #endif
  
  #include "enum.h"
- 

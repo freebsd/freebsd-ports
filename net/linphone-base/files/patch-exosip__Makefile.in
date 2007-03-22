@@ -1,0 +1,20 @@
+--- exosip/Makefile.in.bak	Tue Jan 23 19:20:22 2007
++++ exosip/Makefile.in	Sun Feb 25 12:21:39 2007
+@@ -54,7 +54,7 @@
+ LTLIBRARIES = $(noinst_LTLIBRARIES)
+ am__DEPENDENCIES_1 =
+ libeXosip_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
+-am_libeXosip_la_OBJECTS = eXosip.lo jrequest.lo jresponse.lo \
++am_libeXosip_la_OBJECTS = osip_negotiation.lo eXosip.lo jrequest.lo jresponse.lo \
+ 	jcallback.lo jdialog.lo udp.lo jcall.lo jreg.lo jfreinds.lo \
+ 	jidentity.lo eXutils.lo jnotify.lo jsubscribers.lo \
+ 	jsubscribe.lo jevents.lo sdp_offans.lo misc.lo jpipe.lo \
+@@ -263,7 +263,7 @@
+ target_alias = @target_alias@
+ noinst_LTLIBRARIES = libeXosip.la
+ AM_CFLAGS = $(EXOSIP_CFLAGS)
+-libeXosip_la_SOURCES = eXosip.c  \
++libeXosip_la_SOURCES = osip_negotiation.c eXosip.c  \
+ jrequest.c jresponse.c    jcallback.c  jdialog.c   udp.c  \
+ jcall.c jreg.c jfreinds.c jidentity.c  eXutils.c          \
+ jnotify.c      jsubscribers.c          jsubscribe.c    jevents.c \

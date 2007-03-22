@@ -1,13 +1,25 @@
 bin/linphonec
 bin/sipomatic
 include/linphone/config.h
-include/linphone/glist.h
-include/linphone/gshell.h
-include/linphone/gspawn.h
 include/linphone/linphonecore.h
 include/linphone/lpconfig.h
-include/linphone/sndcard.h
-include/linphone/uglib.h
+include/mediastreamer2/allfilters.h
+include/mediastreamer2/dtmfgen.h
+include/mediastreamer2/ice.h
+include/mediastreamer2/mediastream.h
+include/mediastreamer2/mscommon.h
+include/mediastreamer2/msfileplayer.h
+include/mediastreamer2/msfilerec.h
+include/mediastreamer2/msfilter.h
+include/mediastreamer2/msqueue.h
+include/mediastreamer2/msrtp.h
+include/mediastreamer2/mssndcard.h
+include/mediastreamer2/msticker.h
+include/mediastreamer2/msv4l.h
+include/mediastreamer2/msvideo.h
+include/mediastreamer2/msvideoout.h
+include/mediastreamer2/waveheader.h
+include/ortp/event.h
 include/ortp/ortp.h
 include/ortp/payloadtype.h
 include/ortp/port.h
@@ -17,16 +29,27 @@ include/ortp/rtpsession.h
 include/ortp/rtpsignaltable.h
 include/ortp/sessionset.h
 include/ortp/str_utils.h
+include/ortp/stun.h
+include/ortp/stun_udp.h
 include/ortp/telephonyevents.h
 lib/liblinphone.a
 lib/liblinphone.la
 lib/liblinphone.so
-lib/liblinphone.so.4
+lib/liblinphone.so.7
+lib/libmediastreamer.a
+lib/libmediastreamer.la
+lib/libmediastreamer.so
+lib/libmediastreamer.so.0
 lib/libortp.a
 lib/libortp.la
 lib/libortp.so
-lib/libortp.so.4
+lib/libortp.so.5
+lib/libquickstream.a
+lib/libquickstream.la
+lib/libquickstream.so
+lib/libquickstream.so.0
 libdata/pkgconfig/linphone.pc
+libdata/pkgconfig/mediastreamer.pc
 libdata/pkgconfig/ortp.pc
 libexec/mediastream
 %%DATADIR%%/sounds/hello16000.wav
@@ -40,33 +63,23 @@ libexec/mediastream
 %%DATADIR%%/sounds/rings/synth.wav
 %%DATADIR%%/sounds/rings/tapping.wav
 %%DATADIR%%/sounds/rings/toy.wav
-%%DOCSDIR%%/mediastreamer/book1.html
-%%DOCSDIR%%/mediastreamer/coreapi.html
-%%DOCSDIR%%/mediastreamer/index.sgml
-%%DOCSDIR%%/mediastreamer/mediastreamer-filters.html
-%%DOCSDIR%%/mediastreamer/mediastreamer-msringplayer.html
-%%DOCSDIR%%/mediastreamer/mediastreamer-mssync.html
-%%DOCSDIR%%/mediastreamer/mediastreamer-running-processing-chains.html
-%%DOCSDIR%%/mediastreamer/msfilterimplementations.html
-%%DOCSDIR%%/mediastreamer/userapi.html
-share/locale/cs/LC_MESSAGES/linphone.mo
-share/locale/de/LC_MESSAGES/linphone.mo
-share/locale/es/LC_MESSAGES/linphone.mo
-share/locale/fr/LC_MESSAGES/linphone.mo
-share/locale/it/LC_MESSAGES/linphone.mo
-share/locale/ja/LC_MESSAGES/linphone.mo
-share/locale/nl/LC_MESSAGES/linphone.mo
-share/locale/pl/LC_MESSAGES/linphone.mo
-share/locale/pt_BR/LC_MESSAGES/linphone.mo
-share/locale/sv/LC_MESSAGES/linphone.mo
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrm %%DOCSDIR%%/mediastreamer
-@dirrm %%DOCSDIR%%
+%%NLS%%share/locale/cs/LC_MESSAGES/linphone.mo
+%%NLS%%share/locale/de/LC_MESSAGES/linphone.mo
+%%NLS%%share/locale/es/LC_MESSAGES/linphone.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/linphone.mo
+%%NLS%%share/locale/it/LC_MESSAGES/linphone.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/linphone.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/linphone.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/linphone.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/linphone.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/linphone.mo
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs
 @dirrm %%DATADIR%%/sounds/rings
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%
 @dirrm include/ortp
+@dirrm include/mediastreamer2
 @dirrm include/linphone

@@ -1,5 +1,5 @@
---- mediastreamer2/oss.c.orig	Fri Mar 24 18:30:55 2006
-+++ mediastreamer2/oss.c	Sat Apr  1 01:00:49 2006
+--- mediastreamer2/src/oss.c.orig	Thu Nov  9 19:45:26 2006
++++ mediastreamer2/src/oss.c	Wed Dec 27 23:57:46 2006
 @@ -30,7 +30,10 @@
  #include <sys/time.h>
  #include <sys/ioctl.h>

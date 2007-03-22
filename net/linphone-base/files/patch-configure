@@ -1,26 +1,50 @@
---- configure.orig	Sat Apr  1 01:54:31 2006
-+++ configure	Sat Apr  1 01:54:31 2006
-@@ -23542,23 +23542,6 @@
+--- configure.orig	Fri Nov 10 05:54:17 2006
++++ configure	Thu Dec 28 00:35:46 2006
+@@ -24896,27 +24896,6 @@
+ 	prefix=${ac_default_prefix}
  fi
  
- 
+-DATADIRNAME=share
+-
 -cat >>confdefs.h <<_ACEOF
--#define PACKAGE_LOCALE_DIR "${realprefix}/${DATADIRNAME}/locale"
+-#define PACKAGE_LOCALE_DIR "${prefix}/${DATADIRNAME}/locale"
 -_ACEOF
 -
 -
 -
 -cat >>confdefs.h <<_ACEOF
--#define PACKAGE_DATA_DIR "${realprefix}/${DATADIRNAME}"
+-#define PACKAGE_DATA_DIR "${prefix}/${DATADIRNAME}"
 -_ACEOF
 -
 -
 -
 -cat >>confdefs.h <<_ACEOF
--#define PACKAGE_SOUND_DIR "${realprefix}/${DATADIRNAME}/sounds/linphone"
+-#define PACKAGE_SOUND_DIR "${prefix}/${DATADIRNAME}/sounds/linphone"
 -_ACEOF
 -
 -
- found_sound=no
+-
+-
+ for ac_func in getifaddrs
+ do
+ as_ac_var=`echo "ac_cv_func_$ac_func" | $as_tr_sh`
+@@ -25210,9 +25189,8 @@
  
+ CPPFLAGS=$CPPFLAGS_save
  
+-LDFLAGS_save=$LDFLAGS
+-LDFLAGS=$OSIP_LIBS
+-LIBS_save=$LIBS
++LIBS_save=$LDFLAGS
++LIBS=$OSIP_LIBS
+ 
+ { echo "$as_me:$LINENO: checking for osip_message_init in -losipparser2" >&5
+ echo $ECHO_N "checking for osip_message_init in -losipparser2... $ECHO_C" >&6; }
+@@ -25304,7 +25282,6 @@
+    { (exit 1); exit 1; }; }
+ fi
+ 
+-LDFLAGS=$LDFLAGS_save
+ LIBS=$LIBS_save
+ 
+ OSIP_LIBS="$OSIP_LIBS -losipparser2 -losip2"
