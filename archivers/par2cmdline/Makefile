@@ -25,6 +25,8 @@ PLIST_FILES=	bin/par2 bin/par2create bin/par2repair bin/par2verify
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -lstdc++||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|#define PACKED __attribute__ ((packed))|#define PACKED|' ${WRKSRC}/par1fileformat.h
+	@${REINPLACE_CMD} -e 's|#define PACKED __attribute__ ((packed))|#define PACKED|' ${WRKSRC}/par2fileformat.h
 
 post-install:
 .if !defined(NOPORTDOCS)
