@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	cedet
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	${PORTNAME}-1.0pre3
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER?=	dryice@FreeBSD.org
 COMMENT=	Collection of Emacs Development Environment Tools
 
 PORTCLASS=	master
@@ -35,6 +35,13 @@ SEMANTIC_INFOS=	bovine.info grammar-fw.info semantic-appdev.info \
 
 USE_GMAKE=	yes
 CONFLICTS=	eieio* semantic* speedbar*
+
+.if (${EMACS_PORT_NAME} == "emacs22")
+EXTRA_PATCHES+=	${FILESDIR}/semantic-idle.fix.emacs22.diff
+PLIST_SUB+=	EMACS22_HAVE="@comment "
+.else
+PLIST_SUB+=	EMACS22_HAVE=""
+.endif
 
 do-install:
 	${MKDIR} ${CEDET_LISPDIR}
@@ -92,10 +99,21 @@ do-install:
 
 # speedbar
 	${MKDIR} ${CEDET_LISPDIR}/speedbar
+
+# emacs22 have own
+.if (${EMACS_PORT_NAME} == "emacs22")
+	${RM} -f ${WRKSRC}/speedbar/speedbar.el
+	${RM} -f ${WRKSRC}/speedbar/speedbar.elc
+.endif
+
 .for i in *.el *.elc *.xpm
 	${INSTALL_DATA} ${WRKSRC}/speedbar/${i} ${CEDET_LISPDIR}/speedbar
 .endfor
+
+# emacs22 have own
+.if (${EMACS_PORT_NAME} != "emacs22")
 	${INSTALL_DATA} ${WRKSRC}/speedbar/speedbar.info ${PREFIX}/info
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
