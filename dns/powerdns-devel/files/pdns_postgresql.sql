@@ -3,7 +3,7 @@ CREATE TABLE domains (
 	name VARCHAR(255) NOT NULL,
 	type VARCHAR(6) NOT NULL,
 	master VARCHAR(40) DEFAULT NULL,
-	account VARCHAR(40) DEFAULT NULL
+	account VARCHAR(40) DEFAULT NULL,
 	notified_serial INT DEFAULT NULL,
 	last_check INT DEFAULT NULL,
 CONSTRAINT pk_id
@@ -22,7 +22,7 @@ CREATE TABLE records (
 	prio INT DEFAULT NULL,
 	content VARCHAR(255) DEFAULT NULL,
 	change_date INT DEFAULT NULL,
-CONSTRAINT pk_id
+CONSTRAINT pk_records_id
 	PRIMARY KEY (id),
 CONSTRAINT fk_domainid
 	FOREIGN KEY (domain_id)
