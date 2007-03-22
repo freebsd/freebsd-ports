@@ -13867,6 +13867,7 @@ scrollz		ports/irc/scrollz
 scrot		ports/graphics/scrot
 scsh		ports/lang/scsh
 scsh-install-lib	ports/devel/scsh-install-lib
+scss		ports/textproc/scss
 scud		ports/comms/scud
 scummvm		ports/games/scummvm
 scummvm-tools	ports/games/scummvm-tools
