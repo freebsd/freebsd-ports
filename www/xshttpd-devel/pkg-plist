@@ -67,6 +67,6 @@ bin/xspasswd
 @dirrm %%WWWDIR%%/contrib
 @dirrm %%WWWDIR%%/gfxcount
 @dirrm %%WWWDIR%%/icons
-@dirrmtry %%WWWDIR%%%/cgi-bin
-@dirrmtry %%WWWDIR%%%/htdocs
-@dirrmtry %%WWWDIR%%%/logs
+@dirrmtry %%WWWDIR%%/cgi-bin
+@dirrmtry %%WWWDIR%%/htdocs
+@dirrmtry %%WWWDIR%%/logs

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xshttpd
-DISTVERSION=	3.4b26
+DISTVERSION=	3.5b04
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 		ftp://mud.stack.nl/pub/xs-httpd/release/
@@ -22,7 +22,7 @@ CONFLICTS+=	apache-[0-9]* xshttpd-[0-9]*
 
 MAN1=		clearxs.1 gfxcount.1 httpd.1 httpdc.1 imagemap.1 \
 		readxs.1 xsindex.1 xspasswd.1
-MAN5=		httpd.conf.5 xsauth.5 xsscripts.5 xsredir.5
+MAN5=		httpd.conf.5 xsauth.5 xsconf.5 xsscripts.5 xsredir.5
 USE_BZIP2=	yes
 USE_RC_SUBR=	xshttpd.sh
 
