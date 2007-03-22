@@ -6,26 +6,27 @@
 #
 
 PORTNAME=	ctf
-PORTVERSION=	1.50
+PORTVERSION=	1.52
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|:data,src|}
-MASTER_SITE_SUBDIR=	quake2/ctf/:data \
-			quake2/ctf/source/:src
+MASTER_SITES=	${MASTER_SITE_IDSOFTWARE:S|$|:data|} \
+		http://offload1.icculus.org/quake2/files/:src
+MASTER_SITE_SUBDIR=	quake2/ctf/:data
 PKGNAMEPREFIX=	${Q2PKGNAMEPREFIX}
 DISTFILES=	${CTF_DATA}:data \
 		${CTF_SRC}:src
+DIST_SUBDIR=	quake2lnx
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Quake II CTF (Capture The Flag) modification
 
 USE_ZIP=	yes
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/${CTF_SRC:S/.tar.gz//}/src/ctf
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${LATEST_LINK}
 
-CTF_DATA=	q2ctf${PORTVERSION:S/.//}.zip
-CTF_SRC=	q2ctf-1.02-source.shar.Z
+CTF_DATA=	q2ctf150.zip
+CTF_SRC=	quake2-r0.16.2.tar.gz
 
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 
@@ -33,10 +34,10 @@ CTF_SRC=	q2ctf-1.02-source.shar.Z
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR} && \
-		uncompress -c ${DISTDIR}/${CTF_SRC} | ${TAIL} +394 | ${SH}
+	@${TAR} zxf ${DISTDIR}/${DIST_SUBDIR}/${CTF_SRC} -C ${WRKDIR} \
+		--include "${CTF_SRC:S/.tar.gz//}/src/ctf/*"
 	@${UNZIP_CMD} -aq -d ${WRKDIR}/ctf \
-		${DISTDIR}/${CTF_DATA} -x *.dll *.ico
+		${DISTDIR}/${DIST_SUBDIR}/${CTF_DATA} -x *.dll *.ico
 
 post-extract:
 	@${CP} ${FILESDIR}/${MAKEFILE} ${WRKSRC}
@@ -45,11 +46,12 @@ do-install:
 	${MKDIR} ${Q2DIR}/ctf
 	${INSTALL_PROGRAM} ${WRKSRC}/game.so ${Q2DIR}/ctf
 .for f in *.cfg *.pak
-	${INSTALL_DATA} ${WRKSRC}/ctf/${f} ${Q2DIR}/ctf
+	${INSTALL_DATA} ${WRKDIR}/ctf/${f} ${Q2DIR}/ctf
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ctf/readme.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/ctf/readme.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
