@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Amazon
-PORTVERSION=	0.39
+PORTVERSION=	0.40
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -29,9 +29,6 @@ PERL_CONFIGURE=	yes
 
 .if ${PERL_LEVEL} < 500805
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
-.endif
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
 .include <bsd.port.post.mk>
