@@ -342,8 +342,8 @@ bin/semanticdb.sh
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/speedbar/speedbar-load.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/speedbar/speedbar-load.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/speedbar/speedbar-loaddefs.el
-%%EMACS_VERSION_SITE_LISPDIR%%/cedet/speedbar/speedbar.el
-%%EMACS_VERSION_SITE_LISPDIR%%/cedet/speedbar/speedbar.elc
+%%EMACS22_HAVE%%%%EMACS_VERSION_SITE_LISPDIR%%/cedet/speedbar/speedbar.el
+%%EMACS22_HAVE%%%%EMACS_VERSION_SITE_LISPDIR%%/cedet/speedbar/speedbar.elc
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/speedbar
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/wisent
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/bovine
