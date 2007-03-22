@@ -511,7 +511,6 @@
     SUBDIR += xmbase-grok
     SUBDIR += xmysqladmin
     SUBDIR += yasql
-    SUBDIR += zodb
     SUBDIR += zodb3
 
 .include <bsd.port.subdir.mk>

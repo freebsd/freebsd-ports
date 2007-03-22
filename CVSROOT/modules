@@ -2976,7 +2976,6 @@ fr-mozilla-flp	ports/french/mozilla-flp
 fr-plgrenouille	ports/french/plgrenouille
 fr-staroffice52	ports/french/staroffice52
 fr-xtel		ports/french/xtel
-frabs		ports/games/frabs
 fracplanet	ports/graphics/fracplanet
 fractorama	ports/graphics/fractorama
 fragroute	ports/security/fragroute
@@ -3730,7 +3729,6 @@ gnomekiss	ports/games/gnomekiss
 gnomememoryblocks	ports/games/gnomememoryblocks
 gnomemm		ports/x11-toolkits/gnomemm
 gnomephotoprinter	ports/print/gnomephotoprinter
-gnomepm		ports/finance/gnomepm
 gnomermind	ports/games/gnomermind
 gnomesudoku	ports/games/gnomesudoku
 gnometelnet	ports/net/gnometelnet
@@ -16805,7 +16803,6 @@ zmailer		ports/mail/zmailer
 zmtx-zmrx	ports/comms/zmtx-zmrx
 znavigator	ports/www/znavigator
 znibbles	ports/games/znibbles
-zodb		ports/databases/zodb
 zodb3		ports/databases/zodb3
 zoidberg	ports/shells/zoidberg
 zoinks		ports/editors/zoinks
