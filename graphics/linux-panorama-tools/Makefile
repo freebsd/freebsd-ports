@@ -15,7 +15,7 @@ PORTNAME=	linux-panorama-tools
 PORTVERSION=	2.6b1
 PORTREVISION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.path.unimelb.edu.au/~dersch/
+MASTER_SITES=	http://www.all-in-one.ee/~dersch/
 DISTNAME=	PanoTools
 
 MAINTAINER=	vd@FreeBSD.org
