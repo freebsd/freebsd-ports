@@ -29,6 +29,7 @@ COMMENT=	Modern branch of an old mail user agent
 # Global variables
 #
 
+CONFLICTS=	elm-[0-9]*
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-//:S/ME+/.ME+./}
 
 HAS_CONFIGURE=	yes
@@ -47,8 +48,7 @@ CONFIGURE_ARGS=	-b -S -P ${PREFIX} -c ../${CONFIG_PATH:T}
 MAKE_ENV=	MJ="FORMATTER=groff FORMATTER_OPTS=-Tlatin1"
 ALL_TARGET=	all
 
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/%%SHLIB_DIR%%
+USE_LDCONFIG=	yes
 
 PLIST_SUB=	SO_REV="${SO_REV}" \
 		MAIL_DIR="${MAIL_DIR:S,^${PREFIX}/,,}" \
@@ -82,7 +82,7 @@ OPTIONS=	ELM_ICONV "libiconv support" on \
 
 ELM_VERSION=	2.4
 ELM_REVISION=	123
-ELM_PATCHLEVEL=	e	# a...z = patch-level, _ means no patch-level.
+ELM_PATCHLEVEL=	f	# a...z = patch-level, _ means no patch-level.
 
 ELM_PATCHDONE=	false
 .for level in _ a b c d e f g h i j k l m n o p q r s t u v w x y z
