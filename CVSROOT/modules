@@ -9085,6 +9085,7 @@ p5-Data-Report	ports/textproc/p5-Data-Report
 p5-Data-RoundRobin	ports/devel/p5-Data-RoundRobin
 p5-Data-Serializer	ports/devel/p5-Data-Serializer
 p5-Data-ShowTable	ports/devel/p5-Data-ShowTable
+p5-Data-SpreadPagination	ports/textproc/p5-Data-SpreadPagination
 p5-Data-Stag	ports/devel/p5-Data-Stag
 p5-Data-Structure-Util	ports/devel/p5-Data-Structure-Util
 p5-Data-Swap	ports/devel/p5-Data-Swap
