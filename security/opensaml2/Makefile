@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opensaml
-PORTVERSION=	1.1
+DISTVERSION=	1.1b
 CATEGORIES=	security
 MASTER_SITES=	http://shibboleth.internet2.edu/downloads/
 
@@ -22,6 +22,8 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-1.1
 
 .include <bsd.port.pre.mk>
 
