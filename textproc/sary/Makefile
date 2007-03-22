@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A suffix array library and tools, which provide fast full-text search
 
 USE_GNOME=	glib20 gnomehack gnometarget
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 
 MAN1=		sary.1	mksary.1
