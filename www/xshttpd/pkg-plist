@@ -9,10 +9,12 @@ bin/xspasswd
 %%WWWDIR%%/cgi-bin/imagemap
 %%WWWDIR%%/cgi-bin/xschpass
 %%WWWDIR%%/contrib/SSL-Makefile
+%%WWWDIR%%/contrib/agentstats.pl
+%%WWWDIR%%/contrib/caroot.pem
 %%WWWDIR%%/contrib/logrotate.sh
 %%WWWDIR%%/contrib/persistent.pl
+%%WWWDIR%%/contrib/powered-by-xs.gif
 %%WWWDIR%%/contrib/wwwstats.pl
-%%WWWDIR%%/contrib/agentstats.pl
 %%WWWDIR%%/compress.methods.sample
 %%WWWDIR%%/gfxcount/digital0.ppm
 %%WWWDIR%%/gfxcount/digital1.ppm
