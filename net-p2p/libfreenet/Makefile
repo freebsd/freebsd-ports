@@ -22,6 +22,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/libfreenet
 USE_LDCONFIG=	yes
 
+DEPRECATED=	Does not work with existing Freenet network
+EXPIRATION_DATE=2007-04-22
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 		${WRKSRC}/configure

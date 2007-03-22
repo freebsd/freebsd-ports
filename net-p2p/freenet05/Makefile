@@ -24,6 +24,9 @@ JAVA_VERSION=	1.4+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+DEPRECATED=	Does not work with existing Freenet network
+EXPIRATION_DATE=2007-04-22
+
 JAVAVM=		${LOCALBASE}/bin/java
 #
 DATA_FILES=	seednodes.ref
