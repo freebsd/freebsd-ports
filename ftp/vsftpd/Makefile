@@ -42,7 +42,7 @@ MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 .endif
 
 do-configure:
-	${REINPLACE_CMD} -e "s=/etc/vsftpd.conf=${PREFIX}/etc/vsftpd.conf=" \
+	${REINPLACE_CMD} -e "s|/etc/vsftpd.conf|${PREFIX}/etc/vsftpd.conf|" \
 		${WRKSRC}/defs.h
 	${REINPLACE_CMD} \
 		-e "s|^CC 	=	gcc|CC	= ${CC}|" \
@@ -50,15 +50,17 @@ do-configure:
 		-e "s|	-Wl,-s| -Wl,-s ${LDFLAGS}|" \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e \
-		"s/#undef VSF_BUILD_TCPWRAPPERS/#define VSF_BUILD_TCPWRAPPERS 1/" \
+		"s|#undef VSF_BUILD_TCPWRAPPERS|#define VSF_BUILD_TCPWRAPPERS 1|" \
 		${WRKSRC}/builddefs.h
 	${ECHO_CMD} "secure_chroot_dir=${PREFIX}/share/vsftpd/empty" >> \
 		${WRKSRC}/vsftpd.conf
-	${REINPLACE_CMD} -e "s=/etc/v=${PREFIX}/etc/v=" \
+	${REINPLACE_CMD} -e "s|/etc/v|${PREFIX}/etc/v|" \
+		-e 's|delay_failed_logins|delay_failed_login|' \
+		-e 's|delay_successful_logins|delay_successful_login|' \
 		${WRKSRC}/vsftpd.8 ${WRKSRC}/vsftpd.conf.5 ${WRKSRC}/tunables.c
 .if !defined(WITHOUT_SSL) && defined(WITH_VSFTPD_SSL)
 	${REINPLACE_CMD} -e \
-		"s/#undef VSF_BUILD_SSL/#define VSF_BUILD_SSL 1/" \
+		"s|#undef VSF_BUILD_SSL|#define VSF_BUILD_SSL 1|" \
 		${WRKSRC}/builddefs.h
 .endif
 
