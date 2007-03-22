@@ -4,7 +4,7 @@
 #
 
 # PROVIDE: syslogd
-# REQUIRE: mountcritremote cleanvar
+# REQUIRE: mountcritremote cleanvar ldconfig
 # BEFORE:  SERVERS
 
 #
