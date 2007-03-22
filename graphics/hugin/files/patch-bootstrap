@@ -1,5 +1,14 @@
 --- bootstrap.orig	Mon Aug 21 01:19:33 2006
-+++ bootstrap	Fri Jan 19 09:57:39 2007
++++ bootstrap	Thu Mar 22 12:59:45 2007
+@@ -42,7 +42,7 @@
+ 	gettextize_version=`$GETTEXTIZE --version | sed 's/^[^0-9]*\([0-9.][0-9.]*\).*/\1/'`
+ #	echo gettextize version: $gettextize_version
+ 	case $gettextize_version in
+-	    0.11*|0.12*|0.13*|0.14*)
++	    0.1[1-9]*)
+ 		have_gettextize=true
+ 		;;
+ 	esac
 @@ -106,15 +106,17 @@
      mkdir -p ./config
  fi
