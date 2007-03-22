@@ -1,7 +1,5 @@
-etc/software/cups-samba.remove
-libexec/cups/backend/smb
-share/cups/drivers/cups5.hlp
-share/cups/drivers/cupsdrv5.dll
-share/cups/drivers/cupsui5.dll
+share/cups/drivers/cups6.inf
+share/cups/drivers/cups6.ini
+share/cups/drivers/cupsps6.dll
+share/cups/drivers/cupsui6.dll
 @dirrm share/cups/drivers
-@dirrm etc/software
