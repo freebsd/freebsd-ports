@@ -14,6 +14,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome Java Accessibility Bridge
 
+BUILD_DEPENDS=	xprop:${X_CLIENTS_PORT}
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	atspi gnomehack
