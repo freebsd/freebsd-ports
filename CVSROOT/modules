@@ -10695,6 +10695,7 @@ p5-Text-FIGlet	ports/misc/p5-Text-FIGlet
 p5-Text-FillIn	ports/textproc/p5-Text-FillIn
 p5-Text-Filter	ports/textproc/p5-Text-Filter
 p5-Text-Filter-Chain	ports/textproc/p5-Text-Filter-Chain
+p5-Text-FixEOL	ports/textproc/p5-Text-FixEOL
 p5-Text-FixedLength	ports/textproc/p5-Text-FixedLength
 p5-Text-FixedLength-Extra	ports/textproc/p5-Text-FixedLength-Extra
 p5-Text-Flowchart	ports/textproc/p5-Text-Flowchart
