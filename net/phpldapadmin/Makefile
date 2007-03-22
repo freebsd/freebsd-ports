@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpldapadmin
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 PORTEPOCH=	1
 CATEGORIES=	net www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -18,7 +18,7 @@ COMMENT=	A set of PHP-scripts to administer LDAP over the web
 
 NO_BUILD=	yes
 USE_PHP=	gettext ldap openssl pcre session xml
-PHP_VER=	5
+DEFAULT_PHP_VER=	5
 IGNORE_WITH_PHP=	4
 
 .if defined(WITH_SUPHP)
