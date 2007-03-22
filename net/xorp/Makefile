@@ -6,18 +6,13 @@
 #
 
 PORTNAME=	xorp
-PORTVERSION=	1.3
-PORTREVISION=	2
+PORTVERSION=	1.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.xorp.org/releases/${PORTVERSION}/	\
 		http://www2.xorp.org/releases/${PORTVERSION}/	\
 		http://www5.xorp.org/releases/${PORTVERSION}/	\
 		http://www3.xorp.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
-
-# Patch for http://www.xorp.org/advisories/XORP_SA_06:01.ospf.txt.
-PATCH_SITES=	http://www.xorp.org/patches/SA-06:01/
-PATCHFILES=	xorp_sa_06:01.ospf_1.3.patch:DEFAULT
 
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	The eXtensible Open Router Platform
@@ -79,6 +74,7 @@ CONFIGURE_ARGS+=	--with-snmp					 \
 	--with-path-to-net-snmpd-config=${LOCALBASE}/bin/net-snmp-config \
 	--enable-shared
 PLIST_SUB+=		XORP_SNMP=""
+USE_LDCONFIG=		${PREFIX}/mibs
 .else
 PLIST_SUB+=		XORP_SNMP="@comment "
 .endif

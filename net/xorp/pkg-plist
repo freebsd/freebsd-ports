@@ -25,6 +25,8 @@ etc/templates/mld.cmds
 etc/templates/mld.tp
 etc/templates/ospfv2.cmds
 etc/templates/ospfv2.tp
+etc/templates/ospfv3.cmds
+etc/templates/ospfv3.tp
 etc/templates/pim.cmds
 etc/templates/pim6.cmds
 etc/templates/rib.tp
