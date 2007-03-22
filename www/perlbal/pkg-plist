@@ -18,6 +18,8 @@ bin/perlbal
 %%SITE_PERL%%/Perlbal/Plugin/Queues.pm
 %%SITE_PERL%%/Perlbal/Plugin/Stats.pm
 %%SITE_PERL%%/Perlbal/Plugin/Vhosts.pm
+%%SITE_PERL%%/Perlbal/Plugin/LazyCDN.pm
+%%SITE_PERL%%/Perlbal/Plugin/NotModified.pm
 %%SITE_PERL%%/Perlbal/Pool.pm
 %%SITE_PERL%%/Perlbal/ReproxyManager.pm
 %%SITE_PERL%%/Perlbal/Service.pm
