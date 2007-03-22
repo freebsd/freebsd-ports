@@ -1,6 +1,6 @@
---- configure.in.orig	Tue Jul  4 22:25:21 2006
-+++ configure.in	Tue Jul  4 22:26:40 2006
-@@ -807,14 +807,9 @@
+--- configure.in.orig	Wed Mar 14 18:59:04 2007
++++ configure.in	Thu Mar 22 18:44:37 2007
+@@ -831,14 +831,9 @@
  dnl utils/flower_malloc related
  dnl ---------------------------------------------------------------------------
  
