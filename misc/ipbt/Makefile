@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipbt
-DISTVERSION=	r7286
+DISTVERSION=	r7379
 CATEGORIES=	misc
 MASTER_SITES=	http://www.chiark.greenend.org.uk/~sgtatham/ipbt/ \
 		http://freebsd.unixfreunde.de/sources/
