@@ -24,6 +24,7 @@ LIB_DEPENDS=	mp3lame:${PORTSDIR}/audio/lame \
 		xml2:${PORTSDIR}/textproc/libxml2
 
 USE_AUTOTOOLS=	automake:19:env autoconf:259:env libtool:15 aclocal:19:env
+USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 WANT_SDL=	yes
@@ -36,6 +37,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 CONFIGURE_ARGS=	--disable-warnings \
 		--with-jsapi-include=${LOCALBASE}/include
 USE_GMAKE=	yes
+DESKTOP_ENTRIES=	Avidemux "Simple video editor" "" "avidemux2" "" false
 OPTIONS=	OPTIMIZED_CFLAGS "build with -O3 for lavcodec" off \
 		FAAC "FAAC (mpeg4/aac encoder)" off \
 		FAAD "FAAD (mpeg4/aac decoder)" off \
@@ -104,10 +106,6 @@ LIB_DEPENDS+=	x264:${PORTSDIR}/multimedia/x264
 LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
 .endif
 
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
-.endif
-
 post-extract:
 	@${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' \
 		${WRKSRC}/avidemux/ADM_mplex/ADM_mplexout.cpp
@@ -125,18 +123,6 @@ post-patch:
 	@${REINPLACE_CMD} "s|-O2|${CFLAGS}|" ${WRKSRC}/configure
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${REINPLACE_CMD} "s|-O3|${CFLAGS}|" ${WRKSRC}/avidemux/ADM_lavcodec/Makefile.am
-.endif
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} 's|-falign-loops=16||' ${WRKSRC}/configure \
-		${WRKSRC}/avidemux/ADM_lavcodec/Makefile.in \
-		${WRKSRC}/avidemux/ADM_lavcodec/Makefile.in \
-		${WRKSRC}/avidemux/ADM_lavcodec/libpostproc/Makefile.in \
-		${WRKSRC}/avidemux/ADM_lavcodec/libpostproc/Makefile.am
-	@${REINPLACE_CMD} 's|-msse||' ${WRKSRC}/configure \
-		${WRKSRC}/avidemux/ADM_lavcodec/Makefile.in \
-		${WRKSRC}/avidemux/ADM_lavcodec/Makefile.am \
-		${WRKSRC}/avidemux/ADM_lavcodec/libpostproc/Makefile.in \
-		${WRKSRC}/avidemux/ADM_lavcodec/libpostproc/Makefile.am
 .endif
 
 .include <bsd.port.post.mk>
