@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	gprename
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 PORTEPOCH=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	Perl script for renaming multiple files
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 
@@ -38,8 +37,8 @@ PLIST_FILES=	bin/gprename \
 		%%DATADIR%%/languages/lang.pt-br.ISO-8859-1 \
 		%%DATADIR%%/languages/lang.pt-br.UTF-8 \
 		%%DATADIR%%/languages/langs.pl \
-		%%DATADIR%%/pixmaps/gprename_icon64.xpm
-PLIST_DIRS=	%%DATADIR%%/pixmaps \
+		%%DATADIR%%/icon/gprename_icon.png
+PLIST_DIRS=	%%DATADIR%%/icon \
 		%%DATADIR%%/languages \
 		%%DATADIR%%/bin \
 		%%DATADIR%%
@@ -55,8 +54,8 @@ do-install:
 	@${MKDIR} ${DATADIR}/languages
 	${INSTALL_DATA} ${WRKSRC}/languages/lang.* ${DATADIR}/languages
 	${INSTALL_DATA} ${WRKSRC}/languages/langs.pl ${DATADIR}/languages
-	@${MKDIR} ${DATADIR}/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/*.xpm ${DATADIR}/pixmaps
+	@${MKDIR} ${DATADIR}/icon
+	${INSTALL_DATA} ${WRKSRC}/icon/gprename_icon.png ${DATADIR}/icon/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
