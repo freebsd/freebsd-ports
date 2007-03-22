@@ -1,0 +1,20 @@
+%%SITE_PERL%%/RT/Client/REST.pm
+%%SITE_PERL%%/RT/Client/REST/Attachment.pm
+%%SITE_PERL%%/RT/Client/REST/Exception.pm
+%%SITE_PERL%%/RT/Client/REST/Forms.pm
+%%SITE_PERL%%/RT/Client/REST/HTTPClient.pm
+%%SITE_PERL%%/RT/Client/REST/Object.pm
+%%SITE_PERL%%/RT/Client/REST/Object/Exception.pm
+%%SITE_PERL%%/RT/Client/REST/Queue.pm
+%%SITE_PERL%%/RT/Client/REST/SearchResult.pm
+%%SITE_PERL%%/RT/Client/REST/Ticket.pm
+%%SITE_PERL%%/RT/Client/REST/Transaction.pm
+%%SITE_PERL%%/RT/Client/REST/User.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RT/Client/REST/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RT/Client/REST
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RT/Client
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RT
+@dirrmtry %%SITE_PERL%%/RT/Client/REST/Object
+@dirrmtry %%SITE_PERL%%/RT/Client/REST
+@dirrmtry %%SITE_PERL%%/RT/Client
+@dirrmtry %%SITE_PERL%%/RT

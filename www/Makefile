@@ -784,6 +784,7 @@
     SUBDIR += p5-POE-Component-Server-SimpleHTTP
     SUBDIR += p5-ParallelUA
     SUBDIR += p5-PodToHTML
+    SUBDIR += p5-RT-Client-REST
     SUBDIR += p5-RTx-Statistics
     SUBDIR += p5-SCGI
     SUBDIR += p5-SRU
