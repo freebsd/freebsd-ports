@@ -10,3 +10,18 @@ $FreeBSD$
  <config_ndpmon>
  	<ignor_autoconf>1</ignor_autoconf>
  	<syslog_facility>LOG_LOCAL1</syslog_facility>
+@@ -7,12 +7,12 @@
+         <actions_low_pri>
+         	<sendmail>1</sendmail>
+         	<syslog>1</syslog>
+-        	<exec_pipe_program>/usr/local/ndpmon/demopipeprogram.pl</exec_pipe_program>
++        	<exec_pipe_program>%%PREFIX%%/share/ndpmon/demopipeprogram.pl</exec_pipe_program>
+         </actions_low_pri>
+         <actions_high_pri>
+         	<sendmail>1</sendmail>
+         	<syslog>1</syslog>
+-        	<exec_pipe_program>/usr/local/ndpmon/demopipeprogram.pl</exec_pipe_program>
++        	<exec_pipe_program>%%PREFIX%%/share/ndpmon/demopipeprogram.pl</exec_pipe_program>
+         </actions_high_pri>
+         <use_reverse_hostlookups>1</use_reverse_hostlookups>
+         <routers>
