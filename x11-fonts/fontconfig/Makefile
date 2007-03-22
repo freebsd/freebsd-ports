@@ -40,7 +40,6 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 
 MAN1=		fc-cache.1 fc-cat.1 fc-list.1 fc-match.1
-MAN3=		FcFreeTypeQueryFace.3
 MAN5=		fonts-conf.5
 PORTDOCS=	fontconfig-user.html fontconfig-user.pdf fontconfig-user.txt
 
