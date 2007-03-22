@@ -1,4 +1,4 @@
 bin/xskinmidi
-lib/timidity/interface_i.so
+%%TIMID_LIBDIR%%/interface_i.so
 %%PORTDOCS%%%%DOCSDIR%%/README.xskin
 %%PORTDOCS%%share/doc/ja/timidity++/README.xskin

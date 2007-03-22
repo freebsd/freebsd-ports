@@ -5,15 +5,17 @@
 # $FreeBSD$
 #
 
+PKGNAMESUFFIX=	-slang
+
 CATEGORIES=	japanese
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Slang interface for TiMidity++ with Japanese support
 
-INTERFACE=	slang
-JAPANESE=	yes
-PLIST_FILES=	lib/timidity/interface_s.so
+MASTERDIR=	${.CURDIR}/../../audio/timidity++
 
-MASTERDIR=	${.CURDIR}/../../audio/timidity++-emacs
+JAPANESE=	yes
+
+PLIST_FILES=	${TIMID_LIBDIR}/interface_s.so
 
 .include "${MASTERDIR}/Makefile"

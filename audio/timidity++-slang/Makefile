@@ -5,12 +5,13 @@
 # $FreeBSD$
 #
 
-INTERFACE=	slang
+PKGNAMESUFFIX=	-slang
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Slang interface for TiMidity++
 
-MASTERDIR=	${.CURDIR:H:H}/audio/timidity++-emacs
-PLIST_FILES=	lib/timidity/interface_s.so
+MASTERDIR=	${.CURDIR}/../..//audio/timidity++
+
+PLIST_FILES=	${TIMID_LIBDIR}/interface_s.so
 
 .include "${MASTERDIR}/Makefile"

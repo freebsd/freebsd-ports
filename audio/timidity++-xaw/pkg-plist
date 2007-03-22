@@ -3,21 +3,21 @@ lib/X11/app-defaults/TiMidity
 lib/X11/%%EUCJP_LOCALE%%/app-defaults/TiMidity
 @cwd %%REALPREFIX%%
 bin/xawmidi
-lib/timidity/bitmaps/back.xbm
-lib/timidity/bitmaps/fwrd.xbm
-lib/timidity/bitmaps/next.xbm
-lib/timidity/bitmaps/pause.xbm
-lib/timidity/bitmaps/play.xbm
-lib/timidity/bitmaps/prev.xbm
-lib/timidity/bitmaps/quit.xbm
-lib/timidity/bitmaps/random.xbm
-lib/timidity/bitmaps/repeat.xbm
-lib/timidity/bitmaps/stop.xbm
-lib/timidity/bitmaps/timidity.xbm
-lib/timidity/interface_a.so
+%%TIMID_LIBDIR%%/bitmaps/back.xbm
+%%TIMID_LIBDIR%%/bitmaps/fwrd.xbm
+%%TIMID_LIBDIR%%/bitmaps/next.xbm
+%%TIMID_LIBDIR%%/bitmaps/pause.xbm
+%%TIMID_LIBDIR%%/bitmaps/play.xbm
+%%TIMID_LIBDIR%%/bitmaps/prev.xbm
+%%TIMID_LIBDIR%%/bitmaps/quit.xbm
+%%TIMID_LIBDIR%%/bitmaps/random.xbm
+%%TIMID_LIBDIR%%/bitmaps/repeat.xbm
+%%TIMID_LIBDIR%%/bitmaps/stop.xbm
+%%TIMID_LIBDIR%%/bitmaps/timidity.xbm
+%%TIMID_LIBDIR%%/interface_a.so
 %%PORTDOCS%%%%DOCSDIR%%/README.xaw
 %%PORTDOCS%%share/doc/ja/timidity++/README.xaw
-@dirrm lib/timidity/bitmaps
+@dirrm %%TIMID_LIBDIR%%/bitmaps
 @cwd %%X11BASE%%
 @dirrmtry lib/X11/%%EUCJP_LOCALE%%/app-defaults
 @dirrmtry lib/X11/%%EUCJP_LOCALE%%

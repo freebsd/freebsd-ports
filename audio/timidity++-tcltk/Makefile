@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-INTERFACE=	tcltk
+PKGNAMESUFFIX=	-tcltk
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk interface for TiMidity++
 
-MASTERDIR=	${.CURDIR:H:H}/audio/timidity++-emacs
+MASTERDIR=	${.CURDIR}/../../audio/timidity++
 
 .include "${MASTERDIR}/Makefile"

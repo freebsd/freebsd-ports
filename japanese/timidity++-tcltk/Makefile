@@ -5,14 +5,15 @@
 # $FreeBSD$
 #
 
+PKGNAMESUFFIX=	-tcltk
+
 CATEGORIES=	japanese
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk interface for TiMidity++ with Japanese support
 
-INTERFACE=	tcltk
 JAPANESE=	yes
 
-MASTERDIR=	${.CURDIR}/../../audio/timidity++-emacs
+MASTERDIR=	${.CURDIR}/../../audio/timidity++
 
 .include "${MASTERDIR}/Makefile"

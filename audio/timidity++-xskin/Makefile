@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-INTERFACE=	xskin
+PKGNAMESUFFIX=	-xskin
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11AMP skin interface for TiMidity++
 
-MASTERDIR=	${.CURDIR}/../../audio/timidity++-emacs
+MASTERDIR=	${.CURDIR}/../../audio/timidity++
 
 .include "${MASTERDIR}/Makefile"

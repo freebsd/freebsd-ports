@@ -5,13 +5,13 @@
 # $FreeBSD$
 #
 
-INTERFACE=	xaw
+PKGNAMESUFFIX=	-xaw
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xaw interface for TiMidity++
 
-MASTERDIR=	${.CURDIR}/../../audio/timidity++-emacs
+MASTERDIR=	${.CURDIR}/../../audio/timidity++
 
-PLIST_SUB+=	REALPREFIX=${PREFIX}
+PLIST_SUB=	REALPREFIX=${PREFIX}
 
 .include "${MASTERDIR}/Makefile"

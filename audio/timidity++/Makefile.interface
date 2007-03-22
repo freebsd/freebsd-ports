@@ -1,0 +1,132 @@
+#$FreeBSD$
+
+# Shared by timidity++ interface ports
+
+RUN_DEPENDS+=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++
+
+SLAVEDIRS=	audio/timidity++-gtk audio/timidity++-motif \
+		audio/timidity++-slang audio/timidity++-tcltk \
+		audio/timidity++-xaw audio/timidity++-xskin \
+		japanese/timidity++-slang japanese/timidity++-tcltk
+
+INTERFACE=	${PKGNAMESUFFIX:S/^-//}
+
+DESCR=		${.CURDIR}/pkg-descr
+
+.if exists(${.CURDIR}/pkg-plist)
+PLIST=		${.CURDIR}/pkg-plist	
+.else
+PLIST=		${NONEXISTENT}
+.endif
+.if exists(${.CURDIR}/pkg-message)
+PKGMESSAGE=	${.CURDIR}/pkg-message
+.else
+PKGMESSAGE=	${NONEXISTENT}
+.endif
+
+CONFIGURE_ENV+=	SHLD="${CC} -shared ${LDFLAGS}"
+LDFLAGS=	-export-dynamic
+
+CONFIGURE_ARGS+=--enable-dynamic=${INTERFACE}
+
+BUILD_WRKSRC=	${WRKSRC}/interface
+INSTALL_WRKSRC=	${WRKSRC}/interface
+
+# interface section
+
+.if ${INTERFACE} == "emacs"
+ELISPDIR=	share/emacs/site-lisp
+.endif
+
+.if ${INTERFACE} == "gtk"
+LINK=		gtkmidi
+
+USE_GNOME=	gtk12
+USE_XLIB=	yes
+.endif
+
+.if ${INTERFACE} == "motif"
+LINK=		xmmidi
+
+USE_MOTIF=	yes
+USE_XLIB=	yes
+
+CONFIGURE_ENV+=	MOTIFLIB="${MOTIFLIB}"
+.endif
+
+.if ${INTERFACE} == "slang"
+CONFIGURE_ARGS+=--with-includes=${LOCALBASE}/include \
+		--with-libraries=${LOCALBASE}/lib \
+		--enable-ncurses
+
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+.if defined(JAPANESE)
+LIB_DEPENDS+=	slang.2:${PORTSDIR}/japanese/libslang
+.else
+LIB_DEPENDS+=	slang:${PORTSDIR}/devel/libslang
+.endif
+.endif
+
+.if ${INTERFACE} == "tcltk"
+LINK=		tkmidi
+
+USE_XLIB=	yes
+
+DOCFILES=	README.tk
+DOCLANG=	C ja_JP.eucJP
+
+.if defined(JAPANESE)
+LIB_DEPENDS+=	tk80jp.1:${PORTSDIR}/japanese/tk80
+
+CONFIGURE_ARGS+=	--with-tcl-includes=${LOCALBASE}/include/tcl8.0jp \
+		--with-tk-includes=${LOCALBASE}/include/tk8.0jp \
+		--with-tcl-libs=${LOCALBASE}/lib --with-tk-libs=${LOCALBASE}/lib
+CONFIGURE_ENV+=	WISH=wish8.0jp
+.else
+LIB_DEPENDS+=	tk84:${PORTSDIR}/x11-toolkits/tk84
+
+CONFIGURE_ARGS+=	--with-tcl-includes=${LOCALBASE}/include/tcl8.4 \
+		--with-tk-includes=${LOCALBASE}/include/tk8.4 \
+		--with-tcl-libs=${LOCALBASE}/lib --with-tk-libs=${LOCALBASE}/lib
+CONFIGURE_ENV+=	WISH=wish8.4
+.endif
+.endif
+
+.if ${INTERFACE} == "xaw"
+LINK=		xawmidi
+
+LIB_DEPENDS+=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
+
+USE_XLIB=	yes
+
+DOCFILES=	README.xaw
+DOCLANG=	C ja_JP.eucJP
+.endif
+
+.if ${INTERFACE} == "xskin"
+LINK=		xskinmidi
+
+USE_XLIB=	yes
+
+DOCFILES=	README.xskin
+DOCLANG=	C ja_JP.eucJP
+.endif
+
+.include <bsd.port.pre.mk>
+
+post-install::
+.if ${INTERFACE} == "emacs"
+	@${MKDIR} ${PREFIX}/${ELISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/interface/timidity.el ${PREFIX}/${ELISPDIR}
+.endif
+.if ${INTERFACE} == "xaw"
+	@${MKDIR} ${X11BASE}/lib/X11/${EUCJP_LOCALE}/app-defaults
+	${INSTALL_DATA} ${WRKSRC}/TiMidity.ad \
+		${X11BASE}/lib/X11/app-defaults/TiMidity
+	${INSTALL_DATA} ${WRKSRC}/TiMidity-uj.ad \
+		${X11BASE}/lib/X11/${EUCJP_LOCALE}/app-defaults/TiMidity
+.endif
+.if defined(LINK)
+	${LN} -sf ${PREFIX}/bin/timidity ${PREFIX}/bin/${LINK}
+.endif
