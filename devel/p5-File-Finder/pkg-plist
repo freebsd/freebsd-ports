@@ -1,0 +1,8 @@
+%%SITE_PERL%%/File/Finder.pm
+%%SITE_PERL%%/File/Finder/Steps.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Finder/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Finder
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/File/Finder
+@dirrmtry %%SITE_PERL%%/File

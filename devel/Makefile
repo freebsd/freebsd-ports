@@ -1127,6 +1127,7 @@
     SUBDIR += p5-File-Find-Object
     SUBDIR += p5-File-Find-Rule
     SUBDIR += p5-File-Find-Rule-Filesys-Virtual
+    SUBDIR += p5-File-Finder
     SUBDIR += p5-File-Flat
     SUBDIR += p5-File-Flock
     SUBDIR += p5-File-FnMatch
