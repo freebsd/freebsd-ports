@@ -4,9 +4,9 @@ bin/clockview
 bin/sntpclock
 bin/taiclock
 bin/taiclockd
-%%PORTDOCS%%share/doc/clockspeed/INSTALL
-%%PORTDOCS%%share/doc/clockspeed/INSTALL-FreeBSD
-%%PORTDOCS%%@dirrm share/doc/clockspeed
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL-FreeBSD
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @mode 0755
 @exec mkdir %D/etc/clockspeed
 etc/clockspeed/leapsecs.dat
