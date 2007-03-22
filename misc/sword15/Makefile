@@ -26,6 +26,12 @@ USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+.include <bsd.port.pre.mk>
+
+.if ( ${OSVERSION} >= 700000 )
+BROKEN=	does not build on 7.X
+.endif
+
 .if defined(WITHOUT_CURL)
 CONFIGURE_ARGS+=	--without-curl
 PLIST_SUB+=	INSTALLMGR="@comment "
@@ -56,4 +62,4 @@ post-install:
 register:
 	@(cd ${WRKSRC} && make register)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
