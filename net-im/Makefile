@@ -92,6 +92,7 @@
     SUBDIR += naim
     SUBDIR += newsbot
     SUBDIR += ocaml-jabbr
+    SUBDIR += p5-POE-Component-Client-MSN
     SUBDIR += pebrot
     SUBDIR += pork
     SUBDIR += py-msnp
