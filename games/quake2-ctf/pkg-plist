@@ -1,7 +1,22 @@
+%%PORTDOCS%%%%DOCSDIR%%/admin.gif
+%%PORTDOCS%%%%DOCSDIR%%/adminset.gif
+%%PORTDOCS%%%%DOCSDIR%%/automac.gif
+%%PORTDOCS%%%%DOCSDIR%%/ghost.jpg
+%%PORTDOCS%%%%DOCSDIR%%/grapple.jpg
+%%PORTDOCS%%%%DOCSDIR%%/layout.jpg
+%%PORTDOCS%%%%DOCSDIR%%/mainctf_back.jpg
+%%PORTDOCS%%%%DOCSDIR%%/menu.gif
+%%PORTDOCS%%%%DOCSDIR%%/q2ctf.html
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/say_team.gif
+%%PORTDOCS%%%%DOCSDIR%%/stats.jpg
+%%PORTDOCS%%%%DOCSDIR%%/tech1.gif
+%%PORTDOCS%%%%DOCSDIR%%/tech2.gif
+%%PORTDOCS%%%%DOCSDIR%%/tech3.gif
+%%PORTDOCS%%%%DOCSDIR%%/tech4.gif
 %%Q2DIR%%/ctf/game.so
 %%Q2DIR%%/ctf/pak0.pak
 %%Q2DIR%%/ctf/pak1.pak
 %%Q2DIR%%/ctf/server.cfg
-%%PORTDOCS%%%%DOCSDIR%%/readme.txt
 @dirrm %%Q2DIR%%/ctf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
