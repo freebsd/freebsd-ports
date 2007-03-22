@@ -3,7 +3,8 @@ server to Windows NT/XP/2000/2003 clients with a single Windows
 driver that customizes the printer based on the PPD file for the
 printer.
 
-WWW: http://www.easysw.com/
+You will also need the Microsoft Windows PostScript drivers from
+a Windows 2000 or higher system. Consult the cupsaddsmb(8) man page
+for details.
 
---
-John Merryweather Cooper <coop9211@uidaho.edu>
+WWW: http://www.cups.org/windows/software.php

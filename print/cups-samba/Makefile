@@ -8,39 +8,36 @@
 #
 
 PORTNAME=	cups-samba
-PORTVERSION=	5.0.r3
+PORTVERSION=	6.0
 CATEGORIES=	print net
-MASTER_SITES=	ftp://ftp.easysw.com/pub/cups/windows/ \
-		ftp://ftp2.easysw.com/pub/cups/windows/ \
-		ftp://ftp3.easysw.com/pub/cups/windows/
-DISTNAME=	${PORTNAME}-5.0rc3
+MASTER_SITES=	${MASTER_SITE_EASYSW}
+MASTER_SITE_SUBDIR=cups/windows
+DISTNAME=	cups-windows-${PORTVERSION}-source
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tomasv@megalogika.lt
 COMMENT=	The Common UNIX Printing System:  MS Windows client drivers
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
-		tardy:${PORTSDIR}/archivers/tardy \
-		${LOCALBASE}/sbin/cupsd:${PORTSDIR}/print/cups-base \
-		smbspool:${PORTSDIR}/net/samba3
 RUN_DEPENDS=	smbspool:${PORTSDIR}/net/samba3 \
-		${LOCALBASE}/sbin/cupsd:${PORTSDIR}/print/cups-base \
-		espgs:${PORTSDIR}/print/cups-pstoraster
+		${LOCALBASE}/sbin/cupsd:${PORTSDIR}/print/cups-base
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-SH=		${LOCALBASE}/bin/bash
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		-e 's|%%TARDY%%|${LOCALBASE}/bin/tardy|g' \
-		${WRKSRC}/cups-samba.install \
-		${WRKSRC}/cups-samba.remove
+DATADIR=	${TARGETDIR}/share/cups
+DRIVER_FILES=	cups6.inf cups6.ini cupsps6.dll cupsui6.dll
+
+SUB_FILES=	pkg-message
+
+pre-install:
+	${MKDIR} ${DATADIR}/drivers
 
 do-install:
-	cd ${WRKSRC} && ${SH} ${WRKSRC}/cups-samba.install now
+	cd ${WRKSRC} && \
+	for DRVFILE in ${DRIVER_FILES}; do \
+		${INSTALL_DATA} ${WRKSRC}/cups-windows-${PORTVERSION}/i386/$${DRVFILE} ${DATADIR}/drivers; \
+	done
 
 post-install:
-	@${CAT} ${PKGMESSAGE} | ${SED} 's|%%PREFIX%%|${PREFIX}|g'
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
