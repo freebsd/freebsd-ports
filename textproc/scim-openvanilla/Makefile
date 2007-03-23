@@ -28,4 +28,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS=-I${X11BASE}/include	\
 		OV_MODULEDIR=${PREFIX}/lib/openvanilla/
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+
 .include <bsd.port.mk>
