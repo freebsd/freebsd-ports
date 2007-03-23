@@ -1,0 +1,40 @@
+bin/free-sa
+etc/free-sa/downloads
+etc/free-sa/sa.conf
+share/free-sa/English
+share/free-sa/Russian
+share/free-sa/RussianMail
+share/doc/free-sa-1.0.2/COPYING
+share/doc/free-sa-1.0.2/INSTALL
+share/doc/free-sa-1.0.2/README
+share/doc/free-sa-1.0.2/README.DEV
+www/free-sa/d.png
+www/free-sa/g.png
+www/free-sa/gsa.css
+www/free-sa/lsa.css
+www/free-sa/rsa.css
+www/free-sa/themes/default
+www/free-sa/themes/rbsec/d.png
+www/free-sa/themes/rbsec/g.png
+www/free-sa/themes/rbsec/gsa.css
+www/free-sa/themes/rbsec/lsa.css
+www/free-sa/themes/rbsec/rsa.css
+www/free-sa/themes/sarg/d.png
+www/free-sa/themes/sarg/g.png
+www/free-sa/themes/sarg/gsa.css
+www/free-sa/themes/sarg/lsa.css
+www/free-sa/themes/sarg/rsa.css
+www/free-sa/themes/silver/d.png
+www/free-sa/themes/silver/g.png
+www/free-sa/themes/silver/gsa.css
+www/free-sa/themes/silver/lsa.css
+www/free-sa/themes/silver/rsa.css
+www/free-sa/themes/sa.js
+@dirrm etc/free-sa
+@dirrm share/free-sa
+@dirrm share/doc/free-sa-1.0.2
+@dirrm www/free-sa/themes/rbsec
+@dirrm www/free-sa/themes/sarg
+@dirrm www/free-sa/themes/silver
+@dirrm www/free-sa/themes
+@dirrm www/free-sa
