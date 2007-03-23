@@ -7,7 +7,6 @@
 
 PORTNAME=	nss
 PORTVERSION=	${_MAJOR}.${_MINOR}.${_PATCH}
-PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_RTM/src
@@ -20,7 +19,7 @@ LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr
 
 _MAJOR=	3
 _MINOR=	11
-_PATCH=	4
+_PATCH=	5
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/mozilla/security/nss
 
