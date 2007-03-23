@@ -153,6 +153,7 @@
     SUBDIR += fluxcms
     SUBDIR += fnord
     SUBDIR += formication
+    SUBDIR += free-sa
     SUBDIR += fswiki
     SUBDIR += g-cows
     SUBDIR += g-gcl
