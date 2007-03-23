@@ -1,0 +1,3 @@
+sbin/nstxd
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

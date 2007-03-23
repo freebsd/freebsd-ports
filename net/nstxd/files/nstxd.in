@@ -1,0 +1,65 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: nstxd
+# REQUIRE: DAEMON
+
+#
+# Add the following lines to /etc/rc.conf to enable nstxd:
+#
+#nstxd_domain="<your nstx domain>"
+#
+# You can disable automatic startup specifying:
+#
+#nstxd_enable="NO"
+#
+# See nstxd(8) for flags.
+#
+# The default behavour of this script is to bind nstxd to the IP 
+# of the interface with default route.
+# If you want it bind to the IP of a different interface you
+# specify this interface in /etc/rc.conf:
+#nstxd_interface="fxp0"
+# If you have static IPs or you want nstxd to listen only a
+# specific IP (e.g. 127.0.0.1) you can specify:
+#nstxd_ip="127.0.0.1"
+# in /etc/rc.conf
+# 
+# This script can also take care of the tun interface configuration
+# you simply put something like
+#nstxd_ifconfig="172.16.1.1 172.16.1.2"
+# in /etc/rc.conf to have this script automatically run
+# ifconfig with the above parameter on the device opened by nstxd.
+#
+. %%RC_SUBR%%
+
+name=nstxd
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/nstxd
+
+load_rc_config ${name}
+
+# set defaults
+nstxd_interface=${nstxd_interface:-$(route get default|grep interface|cut -d: -f2)}
+nstxd_ip=${nstxd_ip:-$(ifconfig ${nstxd_interface}|grep "inet "|xargs|cut -d' ' -f 2)}
+
+if [ -n "${nstxd_domain}" ]
+then	nstxd_enable=${nstxd_enable:-"YES"}
+else	nstxd_enable="NO"
+fi
+
+nstxd_flags=${nstxd_flags:-"-D -i ${nstxd_ip} ${nstxd_domain}"}
+
+tmpfile=$(mktemp /tmp/$(basename $0).XXXXXX) || exit 1
+run_rc_command "$1" 2>&1|tee ${tmpfile}
+nstx_if=$(grep "using device" ${tmpfile}|cut -d' ' -f5)
+rm -f ${tmpfile}
+
+if [ -n "${nstxd_ifconfig}" -a -n "${nstx_if}" ]
+then	echo "Configuring nstx interface: ifconfig ${nstx_if} ${nstxd_ifconfig} up"
+	ifconfig ${nstx_if} ${nstxd_ifconfig}
+fi
+
