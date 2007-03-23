@@ -1,0 +1,20 @@
+MenuMaker is application finding and menu generation utility. It is capable of
+finding lots of installed programs and generating the root menu consistent
+across all supported X window managers, so one will get (almost) the same menu
+no matter what WM is currently used. It is pure Python application hence it
+runs on every relevant system.
+
+Supported X window managers:
+
+- BlackBox
+- Deskmenu
+- FluxBox
+- IceWM
+- OpenBox, version 3
+- PekWM
+- WindowMaker
+- XFCE, version 4
+
+It also reads Freedesktop.org's .desktop files.
+
+WWW: http://menumaker.sourceforge.net/
