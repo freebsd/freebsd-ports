@@ -17,27 +17,22 @@ COMMENT=	Text user interface using the xine library
 
 LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
 
-USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -I${X11BASE}/lib"
-
-MAN1=		toxine.1
 
 OPTIONS=	AALIB "Enable aalib support" on \
 		LIBCACA "Enable libcaca support" on \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" on
+
+MAN1=		toxine.1
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 502000
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 CONFIGURE_ARGS+=--with-readline=${LOCALBASE}
-.endif
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-main.c
 .endif
 
 .if !defined(WITHOUT_AALIB)
