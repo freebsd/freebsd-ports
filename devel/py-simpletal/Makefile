@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.owlfish.com/software/simpleTAL/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SimpleTAL-${PORTVERSION}
 
-MAINTAINER=	j.haarman@synantics.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stand alone TAL Python implementation to power  HTML & XML templates
 
 USE_PYTHON=	yes
