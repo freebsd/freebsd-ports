@@ -21,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libmimedir.a:${PORTSDIR}/devel/libmimedir
 MAN1=		synce-matchmaker.1
 
 USE_ICONV=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-libsynce=${LOCALBASE}
 USE_LDCONFIG=	yes
