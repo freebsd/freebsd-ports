@@ -83,4 +83,7 @@ USE_PYTHON=		2.3+
 USE_GNOME+=		pygtk2
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+
 .include <bsd.port.post.mk>
