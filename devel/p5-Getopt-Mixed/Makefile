@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Getopt-Mixed
-PORTVERSION=	1.008
+PORTVERSION=	1.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Getopt
@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for processing of both short and long command line options
+
+DEPRECATED=	Use devel/p5-Getopt-Long instead
+EXPIRATION_DATE=	2007-04-23
 
 PERL_CONFIGURE=	yes
 
