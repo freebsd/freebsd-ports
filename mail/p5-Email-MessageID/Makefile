@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Email-MessageID
-PORTVERSION=	1.35
+PORTVERSION=	1.351
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Email
@@ -22,8 +22,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Email::MessageID.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} <= 500503
-EXTRA_PATCHES=	${FILESDIR}/5.005-Makefile.PL
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
