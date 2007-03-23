@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_NETBSD} \
 		http://www.cd.chalmers.se/~hch/
 DISTNAME=	FileRunner-${PORTVERSION}
 
-MAINTAINER=	andrew.nau.ua@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filemanager with FTP capabilities. Uses Tcl/Tk
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84

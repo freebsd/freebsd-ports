@@ -10,7 +10,7 @@ PORTVERSION=	2.8
 CATEGORIES=	misc tk84
 MASTER_SITES=	http://math-www.uni-paderborn.de/~axel/tkinfo/
 
-MAINTAINER=	andrew.nau.ua@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tk script to read GNU "info" files and display them
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84

@@ -12,7 +12,7 @@ CATEGORIES=	misc tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	andrew.nau.ua@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Tcl/Tk based manual browser
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
