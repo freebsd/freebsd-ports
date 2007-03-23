@@ -15023,6 +15023,7 @@ trac-gantt	ports/www/trac-gantt
 trac-nav	ports/www/trac-nav
 trac-pagetopdf	ports/www/trac-pagetopdf
 trac-privatetickets	ports/www/trac-privatetickets
+trac-robotstxt	ports/www/trac-robotstxt
 trac-tags	ports/www/trac-tags
 trac-webadmin	ports/www/trac-webadmin
 trac-wikinotification	ports/www/trac-wikinotification
