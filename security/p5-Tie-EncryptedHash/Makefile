@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tie
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mharo@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Hashes (and objects based on hashes) with encrypting fields
 
 BUILD_DEPENDS=	${SITE_PERL}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC \

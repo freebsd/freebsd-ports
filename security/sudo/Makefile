@@ -21,7 +21,7 @@ MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		ftp://ftp.stikman.com/pub/sudo/
 DISTNAME=	${PORTNAME}-1.6.8p12
 
-MAINTAINER=	mharo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allow others to run commands as root
 
 GNU_CONFIGURE=	yes

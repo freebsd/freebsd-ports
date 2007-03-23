@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Convert
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mharo@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read/write access to ASN.1-encoded PEM files with optional encryption
 
 BUILD_DEPENDS=	${SITE_PERL}/Convert/ASN1.pm:${PORTSDIR}/converters/p5-Convert-ASN1 \

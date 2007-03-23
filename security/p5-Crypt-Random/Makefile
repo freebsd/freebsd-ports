@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mharo@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Cryptographically Secure, True Random Number Generator
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Math/Pari.pm:${PORTSDIR}/math/p5-Math-Pari \

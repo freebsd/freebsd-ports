@@ -11,7 +11,7 @@ PORTREVISION=		3
 CATEGORIES=		graphics www
 MASTER_SITES=		http://cvs.gis.umn.edu/dist/
 
-MAINTAINER=		mharo@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		System for developing web-based GIS applications
 
 LIB_DEPENDS=		gd.4:${PORTSDIR}/graphics/gd \
@@ -89,7 +89,7 @@ CONFIGURE_ARGS+=	--with-postgis=${LOCALBASE}/bin/pg_config
 		${ECHO_MSG} ""; \
 		sleep 2; \
 	fi
-BUILD_DEPENDS+=		php-config:${PORTSDIR}/www/php4-cgi
+BUILD_DEPENDS+=		php-config:${PORTSDIR}/lang/php4
 CONFIGURE_ARGS+=	--with-php=${LOCALBASE}
 PHP_EXTENSION_DIR!=	${LOCALBASE}/bin/php-config --extension-dir | ${SED} -e 's,/usr/local/,,'
 PLIST_SUB+=		PHP_EXTENSION_DIR=${PHP_EXTENSION_DIR}
