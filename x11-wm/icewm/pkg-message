@@ -1,0 +1,19 @@
+==============================================================================
+
+IceWM has been installed.
+
+If you want a set of icons to use with IceWM see:
+
+* http://themes.freshmeat.net/projects/iceicons/
+
+If you want more themes see:
+
+* http://themes.freshmeat.net/browse/925/
+
+If you do not see icons in the tray when they should be there, please try
+rebuilding with the "IMLIB" option enabled.
+
+Graphical configuration tools for IceWM are outdated and obsolete, but there
+is a useful menu generator in the ports tree: "deskutils/menumaker".
+
+==============================================================================
