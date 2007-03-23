@@ -1,0 +1,3 @@
+nstxd allows a nstx client daemon to tunnel IP traffic through DNS requests
+to the machine running nstxd.
+See %%PREFIX%%/share/doc/nstxd/README for more!

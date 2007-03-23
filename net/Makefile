@@ -360,6 +360,7 @@
     SUBDIR += nph
     SUBDIR += ns
     SUBDIR += nss_ldap
+    SUBDIR += nstxd
     SUBDIR += ntalk
     SUBDIR += ntop
     SUBDIR += ntp
