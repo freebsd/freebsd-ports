@@ -1,0 +1,15 @@
+bin/burrGui
+bin/burrTxt
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/AlPackino.xmpuzzle
+%%DOCSDIR%%/BallRoom.xmpuzzle
+%%DOCSDIR%%/Bermuda.xmpuzzle
+%%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/CubeInCage.xmpuzzle
+%%DOCSDIR%%/DraculasDentalDesaster.xmpuzzle
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/PelikanBurr.xmpuzzle
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README.TXT
+%%DOCSDIR%%/UserGuide.pdf
+@dirrm %%DOCSDIR%%
