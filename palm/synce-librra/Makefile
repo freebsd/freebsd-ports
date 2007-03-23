@@ -29,9 +29,5 @@ USE_LDCONFIG=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||g' \
 		${WRKSRC}/lib/Makefile.in
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|' ${WRKSRC}/lib/rrac.h \
-		${WRKSRC}/lib/generator.h
-.endif
 
 .include <bsd.port.mk>
