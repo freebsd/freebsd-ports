@@ -34,10 +34,11 @@ write_header () {
 write_table_begin () {
   echo "<table border='1' cellpadding='4' cellspacing='1' bgcolor='$TABLEBGCOLOR'>" >> ${TMPFILE}
   echo "<tr>" >> ${TMPFILE}
-  echo "<td align='left' width='80' bgcolor='$TABLEBGCOLOR'>&nbsp;</td>" >> ${TMPFILE}
+  echo "<td align='left' width='100' bgcolor='$TABLEBGCOLOR'>&nbsp;</td>" >> ${TMPFILE}
   echo "<th width='60' bgcolor='$THCOLOR'>cvs date</th>" >> ${TMPFILE}
   echo "<th width='60' bgcolor='$THCOLOR'>latest log</th>" >> ${TMPFILE}
   echo "<th bgcolor='$THCOLOR'>INDEX</th>" >> ${TMPFILE}
+  echo "<th bgcolor='$THCOLOR'>build logs</th>" >> ${TMPFILE}
   echo "<th bgcolor='$THCOLOR'>packages</th>" >> ${TMPFILE}
   echo "<th bgcolor='$THCOLOR'>errors</th>" >> ${TMPFILE}
   echo "<th bgcolor='$THCOLOR'>skipped</th>" >> ${TMPFILE}
@@ -95,18 +96,22 @@ write_row () {
       n_index=`cat $indexfile | wc -l`
     fi
 
+    # column: buildlog count
+    n_logs=0
+    if [ -d $directory/logs ]; then
+      n_logs=`ls $directory/logs | grep '\.log' | wc -l`
+    fi
+
     # column: package count
     n_packages=0
     if [ -d $directory/packages/All ]; then
-      n_packages=`find $directory/packages/All -name \*.tbz -o -name \*.tgz |wc -l`
+      n_packages=`find $directory/packages/All -name \*.tbz -or -name \*.tgz |wc -l`
     fi
 
     # column: error count
     n_errors=0
     if [ -d $directory/errors ]; then
-      # XXX MCL why doesn't this work???
-      #n_errors=`find $directory/errors -name \*.log -o -name \*.log.bz2 |wc -l`
-      n_errors=`ls $directory/errors | grep '.log' | wc -l`
+      n_errors=`ls $directory/errors | grep '\.log' | wc -l`
     fi
 
     # column: duds count
@@ -117,7 +122,7 @@ write_row () {
 
     # column: missing count
     if [ $n_index -ne 0 ]; then
-      n_missing=`expr $n_index - $n_packages - $n_errors - $n_duds`
+      n_missing=`expr $n_index - $n_logs - $n_errors - $n_duds`
     else  # index currently being rebuilt
       n_missing=0
     fi
@@ -167,6 +172,10 @@ write_row () {
 
     echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
     echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-latest-logs'>" >> ${TMPFILE}
+    echo "$n_logs</a></td>" >> ${TMPFILE}
+
+    echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
+    echo "<a href='http://pointyhat.freebsd.org/errorlogs/$arch-$build-packages-latest'>" >> ${TMPFILE}
     echo "$n_packages</a></td>" >> ${TMPFILE}
 
     echo "<td align='right' bgcolor='$cellcolor'>" >> ${TMPFILE}
@@ -194,10 +203,11 @@ write_footer () {
   echo "<li><b>latest log</b> is the date of the latest logfile.</li>" >> ${TMPFILE}
   echo "<li><b>cvs date</b> is the date of the latest CVS checkout done by the script.  It may be inaccurate if a manual checkout was done later.</li>" >> ${TMPFILE}
   echo "<li><b>INDEX</b> is number of ports in the INDEX file built from the latest cvs checkout.</li>" >> ${TMPFILE}
-  echo "<li><b>packages</b> is number of packages successfully built.</li>" >> ${TMPFILE}
-  echo "<li><b>errors</b> is number of packages that failed.</li>" >> ${TMPFILE}
+  echo "<li><b>build logs</b> is number of packages attempted.  Note: if a run was restarted, you may see duplicates here.</li>" >> ${TMPFILE}
+  echo "<li><b>packages</b> is number of packages successfully built.  Note: if a run was restarted, you may see duplicates here.</li>" >> ${TMPFILE}
+  echo "<li><b>errors</b> is number of packages that failed.  Note: if a run was restarted, you may see duplicates here.</li>" >> ${TMPFILE}
   echo "<li><b>skipped</b> is number of packages that were skipped due to NO_PACKAGE, IGNORE, BROKEN, FORBIDDEN, and so forth (\"duds\" file).</li>" >> ${TMPFILE}
-  echo "<li><b>missing</b> is the INDEX column minus the others.  These are packages that have not been built for one reason or another.  Note: interrupted and/or restarted builds can make this number inaccurate.</li>" >> ${TMPFILE}
+  echo "<li><b>missing</b> is the INDEX column minus the build logs plus the errors plus the skipped.  These are packages that have not been built for one reason or another.  Note: interrupted and/or restarted builds can make this number inaccurate because of the duplicates, above.</li>" >> ${TMPFILE}
   echo "<li><b>running</b> is whether there are still processes running.</li>" >> ${TMPFILE}
   echo "<li><b>completed</b> is whether that build terminated normally or not, as seen from the logfile.</li>" >> ${TMPFILE}
   echo "</ul>" >> ${TMPFILE}
