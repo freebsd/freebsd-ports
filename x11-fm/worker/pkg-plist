@@ -33,6 +33,12 @@ share/pixmaps/WorkerIcon48.xpm
 %%DATADIR%%/catalogs/russian.catalog.utf8
 %%DATADIR%%/catalogs/russian.catalog.coms.utf8
 %%DATADIR%%/catalogs/russian.catalog.flags.utf8
+%%DATADIR%%/catalogs/slovensky.catalog
+%%DATADIR%%/catalogs/slovensky.catalog.utf8
+%%DATADIR%%/catalogs/slovensky.catalog.coms
+%%DATADIR%%/catalogs/slovensky.catalog.coms.utf8
+%%DATADIR%%/catalogs/slovensky.catalog.flags
+%%DATADIR%%/catalogs/slovensky.catalog.flags.utf8
 %%DATADIR%%/catalogs/spanish.catalog
 %%DATADIR%%/catalogs/spanish.catalog.coms
 %%DATADIR%%/catalogs/spanish.catalog.flags
@@ -45,6 +51,8 @@ share/pixmaps/WorkerIcon48.xpm
 %%DATADIR%%/catalogs/nederlands.catalog.coms.utf8
 %%DATADIR%%/catalogs/nederlands.catalog.flags
 %%DATADIR%%/catalogs/nederlands.catalog.flags.utf8
+%%DATADIR%%/config-slovensky
+%%DATADIR%%/config-slovensky.utf8
 %%DATADIR%%/config-deutsch
 %%DATADIR%%/config-deutsch.utf8
 %%DATADIR%%/config-english
