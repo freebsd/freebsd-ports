@@ -94,6 +94,7 @@
     SUBDIR += bugsx
     SUBDIR += bumprace
     SUBDIR += burgerspace
+    SUBDIR += burrtools
     SUBDIR += bygfoot
     SUBDIR += bzflag
     SUBDIR += cake
