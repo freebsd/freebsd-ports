@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cairo
-PORTVERSION=	1.2.0
+PORTVERSION=	1.4.1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://cairographics.org/releases/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -18,8 +18,10 @@ COMMENT=	Ruby binding for Cairo
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 
+USE_GNOME=	pkgconfig
 USE_RUBY=	yes
-USE_RUBY_SETUP=	yes
+USE_RUBY_EXTCONF=yes
+CONFIGURE_ARGS+=--ruby=${RUBY}
 
 DOCS=		AUTHORS COPYING ChangeLog GPL NEWS README
 
