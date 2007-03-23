@@ -34,6 +34,9 @@ XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 MAN1=		openjade.1
 DATADIR=	${PREFIX}/share/sgml/openjade
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+
 post-install:
 	@${CAT} ${PLIST} | \
 		${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} | \
