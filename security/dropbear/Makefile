@@ -10,7 +10,7 @@ PORTVERSION=	0.49
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://matt.ucc.asn.au/dropbear/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	spam@rm-rf.kiev.ua
 COMMENT=	An SSH 2 server, designed to be usable in small memory environments
 
 GNU_CONFIGURE=	YES
