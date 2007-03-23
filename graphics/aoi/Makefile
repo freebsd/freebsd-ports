@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	aoi
-PORTVERSION=	2.0
+PORTVERSION=	2.4.1
 CATEGORIES=	graphics java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	aoi
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemoliu@gmail.com
 COMMENT=	An open source Java written 3D modelling and rendering studio
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
@@ -21,7 +21,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 USE_ZIP=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/ArtOfIllusion${PORTVERSION}
+WRKSRC=		${WRKDIR}/ArtOfIllusion${PORTVERSION:S/.//g}
 
 EXTRACT_BEFORE_ARGS=	-a -q
 
@@ -30,11 +30,16 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 SUB_FILES=	aoi.sh
 
 do-install:
+	@${ECHO_MSG} -n ">> Installing ..."
 	${MKDIR} ${DATADIR}
 	(cd ${WRKSRC} && ${FIND} ArtOfIllusion.jar Icons Plugins Scripts | \
 	    ${CPIO} -pdmuv -R${SHAREOWN}:${SHAREGRP} ${DATADIR})
+	${INSTALL_SCRIPT} ${WRKDIR}/aoi.sh ${PREFIX}/bin/aoi
+
+.if !defined(NOPORTDOCS)
+	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}/..."
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} HISTORY LICENSE README ${DOCSDIR})
-	${INSTALL_SCRIPT} ${WRKDIR}/aoi.sh ${PREFIX}/bin/aoi
+.endif
 
 .include <bsd.port.mk>

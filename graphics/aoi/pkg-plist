@@ -6,7 +6,15 @@ bin/aoi
 %%DATADIR%%/Icons/32x32.png
 %%DATADIR%%/Icons/48x48.png
 %%DATADIR%%/Icons/64x64.png
+%%DATADIR%%/Plugins/Help/AOIHelp.zip
+%%DATADIR%%/Plugins/Help/helpgui-1.1a.jar
+%%DATADIR%%/Plugins/Help/jhall.jar
+%%DATADIR%%/Plugins/Help/jhelpaction.jar
+%%DATADIR%%/Plugins/Help/pircbot.jar
+%%DATADIR%%/Plugins/HelpPlugin.jar
 %%DATADIR%%/Plugins/OSSpecific.jar
+%%DATADIR%%/Plugins/PluginRegistry.jar
+%%DATADIR%%/Plugins/PostInstall.jar
 %%DATADIR%%/Plugins/Renderers.jar
 %%DATADIR%%/Plugins/SPManager.jar
 %%DATADIR%%/Plugins/Tools.jar
@@ -14,8 +22,11 @@ bin/aoi
 %%DATADIR%%/Scripts/Objects/Fur.aoi
 %%DATADIR%%/Scripts/Objects/Fur.bsh
 %%DATADIR%%/Scripts/Objects/Particle Jet.bsh
+%%DATADIR%%/Scripts/Objects/README.txt
+%%DATADIR%%/Scripts/Startup/README.txt
 %%DATADIR%%/Scripts/Tools/Join Objects.bsh
 %%DATADIR%%/Scripts/Tools/Platonic Solid.bsh
+%%DATADIR%%/Scripts/Tools/README.txt
 %%DATADIR%%/Scripts/Tools/Sculpt.bsh
 %%DATADIR%%/Scripts/Tools/Text.bsh
 %%DATADIR%%/Scripts/Tools/Thicken.bsh
@@ -23,6 +34,7 @@ bin/aoi
 @dirrm %%DATADIR%%/Scripts/Startup
 @dirrm %%DATADIR%%/Scripts/Objects
 @dirrm %%DATADIR%%/Scripts
+@dirrm %%DATADIR%%/Plugins/Help
 @dirrm %%DATADIR%%/Plugins
 @dirrm %%DATADIR%%/Icons
 @dirrm %%DATADIR%%
