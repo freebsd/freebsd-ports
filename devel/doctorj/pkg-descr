@@ -1,12 +1,16 @@
-DoctorJ is a set of applications that analyze Java code. Documentation is 
-verified for compliance with the standard and for accuracy against the 
-code, beyond what javadoc does. Statistics for a file or project can be 
-generated, including the number of lines of code per class and method, 
-and the overall total. A syntax analyzer is in development.
+Beyond the level of what Javadoc does, DoctorJ compares documentation against
+code. Among what it detects:
+    * misspelled words
+    * parameter and exception names:
+          o missing
+          o misordered
+          o misspelled
+    * Javadoc tags:
+          o invalid
+          o misordered
+          o missing expected arguments
+          o invalid arguments
+          o missing descriptions
+    * undocumented classes, methods, fields, parameters
 
-
-WWW:		http://doctorj.sourceforge.net/
-AUTHOR:		Jeff Pace <jpace@incava.org>
-
-	- Michael L. Hostbaek
-	mich@FreeBSD.org
+WWW: http://doctorj.sourceforge.net/
