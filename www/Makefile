@@ -426,6 +426,7 @@
     SUBDIR += neowebscript
     SUBDIR += netoffice
     SUBDIR += netrik
+    SUBDIR += netstiff
     SUBDIR += nginx
     SUBDIR += notftp
     SUBDIR += npapi-xine
