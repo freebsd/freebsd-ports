@@ -26,12 +26,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-libsynce=${LOCALBASE}
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH}==amd64
-BROKEN=needs to have -fPIC added for amd64
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||g' \
 		${WRKSRC}/lib/Makefile.in
@@ -40,4 +34,4 @@ post-patch:
 		${WRKSRC}/lib/generator.h
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
