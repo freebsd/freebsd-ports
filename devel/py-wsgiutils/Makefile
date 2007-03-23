@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.owlfish.com/software/wsgiutils/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	WSGIUtils-${PORTVERSION}
 
-MAINTAINER=	j.haarman@synantics.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility libraries for development of simple WSGI programs
 
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
