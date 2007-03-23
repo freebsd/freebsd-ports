@@ -16025,6 +16025,7 @@ xfce4-mpc-plugin	ports/audio/xfce4-mpc-plugin
 xfce4-netload-plugin	ports/sysutils/xfce4-netload-plugin
 xfce4-notes-plugin	ports/deskutils/xfce4-notes-plugin
 xfce4-panel	ports/x11-wm/xfce4-panel
+xfce4-places-plugin	ports/sysutils/xfce4-places-plugin
 xfce4-print	ports/print/xfce4-print
 xfce4-quicklauncher-plugin	ports/x11/xfce4-quicklauncher-plugin
 xfce4-screenshooter-plugin	ports/x11/xfce4-screenshooter-plugin
