@@ -1,12 +1,24 @@
---- snake/snake/move.c.orig	Wed May 29 02:54:00 2002
-+++ snake/snake/move.c	Sun Apr 16 21:04:37 2006
-@@ -103,6 +103,9 @@
+Index: snake/snake/move.c
+@@ -677,10 +674,10 @@
  
- #include "snake.h"
+ 	gtty(0, &orig);
+ 	new=orig;
+-	new.sg_flags &= ~(ECHO|CRMOD|ALLDELAY|XTABS);
+-	new.sg_flags |= CBREAK;
++	new.c_lflag &= ~(ECHO|ICRNL|OXTABS);
++	new.c_lflag &= ~ICANON;
+ 	signal(SIGINT,stop);
+-	ospeed = orig.sg_ospeed;
++	ospeed = cfgetospeed(&orig);
+ #ifdef TIOCGLTC
+ 	ioctl(0, TIOCGLTC, &olttyc);
+ 	nlttyc = olttyc;
+@@ -689,7 +686,7 @@
+ #endif
+ 	raw();
  
-+#define stty(_a,_b) ioctl(_a,TIOCSETP,_b)
-+#define gtty(_a,_b) ioctl(_a,TIOCGETP,_b)
-+
- int CMlength;
- int NDlength;
- int BSlength;
+-	if ((orig.sg_flags & XTABS) == XTABS) TA=0;
++	if ((orig.c_lflag & OXTABS) == OXTABS) TA=0;
+ 	putpad(KS);
+ 	putpad(TI);
+ 	point(&cursor,0,LINES-1);
