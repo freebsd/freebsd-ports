@@ -6,7 +6,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	4.0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-4.0.x/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-4.0.x/
@@ -21,12 +21,13 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 .endif
 
-GNU_CONFIGURE=  yes
+USE_AUTOTOOLS=	libtool:15
 LIBTOOLFILES=	configure db3/configure db/dist/configure popt/configure \
 		beecrypt/configure
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
+USE_LDCONFIG=	yes
 LATEST_LINK=	rpm4
 CONFLICTS=	beecrypt-* rpm-3.*
 
