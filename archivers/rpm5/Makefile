@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-4.0.x/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-4.0.x/
 
-MAINTAINER=	glewis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The RPM Package Manager
 
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3 \
