@@ -1,0 +1,6 @@
+libexec/xfce4/panel-plugins/xfce4-places-plugin
+share/xfce4/panel-plugins/places.desktop
+@dirrm share/xfce4/panel-plugins
+@dirrm share/xfce4
+@dirrm libexec/xfce4/panel-plugins
+@dirrm libexec/xfce4
