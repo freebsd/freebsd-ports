@@ -21,8 +21,8 @@ USE_BZIP2=	yes
 USE_GETOPT_LONG=yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_AUTOTOOLS=	libtool:15
+USE_LDCONFIG=	yes
 CONFIGURE_ENV=	LIBS=${PTHREAD_LIBS}' -L${LOCALBASE}/lib' \
 		CFLAGS='${CFLAGS}' X11BASE='${X11BASE}' \
 		GTK_CONFIG='${GTK_CONFIG}' GLIB_CONFIG='${GLIB_CONFIG}' \
@@ -51,7 +51,7 @@ PLIST_SUB=	WITH_XMMS="@comment "
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's,-lc_r,-lblahblah,g' ${WRKSRC}/ltmain.sh
-	@${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},g ; s,echo aout,echo elf,' ${WRKSRC}/configure
 .for f in src/libxosd/Makefile.in src/xmms_plugin/Makefile.in
 	@${REINPLACE_CMD} -e 's,^\(CFLAGS =\)\(.*\)$$,\1 -I.. \2,g' ${WRKSRC}/$f
 .endfor
