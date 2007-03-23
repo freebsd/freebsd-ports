@@ -64,7 +64,7 @@
 %%T%%/server/lib/catalina-optional.jar
 %%T%%/server/lib/catalina-storeconfig.jar
 %%T%%/server/lib/catalina.jar
-%%T%%/server/lib/commons-modeler.jar
+%%T%%/server/lib/commons-modeler-2.0.jar
 %%T%%/server/lib/servlets-cgi.renametojar
 %%T%%/server/lib/servlets-default.jar
 %%T%%/server/lib/servlets-invoker.jar
@@ -720,6 +720,7 @@
 %%T%%/webapps/tomcat-docs/printer/ssi-howto.html
 %%T%%/webapps/tomcat-docs/printer/ssl-howto.html
 %%T%%/webapps/tomcat-docs/printer/status.html
+%%T%%/webapps/tomcat-docs/printer/virtual-hosting-howto.html
 %%T%%/webapps/tomcat-docs/printer/windows-service-howto.html
 %%T%%/webapps/tomcat-docs/proxy-howto.html
 %%T%%/webapps/tomcat-docs/realm-howto.html
@@ -831,6 +832,7 @@
 %%T%%/webapps/tomcat-docs/ssi-howto.html
 %%T%%/webapps/tomcat-docs/ssl-howto.html
 %%T%%/webapps/tomcat-docs/status.html
+%%T%%/webapps/tomcat-docs/virtual-hosting-howto.html
 %%T%%/webapps/tomcat-docs/windows-service-howto.html
 %%T%%/webapps/webdav/WEB-INF/web.xml
 %%T%%/webapps/webdav/index.html
