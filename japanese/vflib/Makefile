@@ -26,10 +26,13 @@ USE_FREETYPE=	yes
 USE_GETTEXT=	yes
 USE_XLIB=	yes
 USE_AUTOTOOLS=	autoconf:213
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-freetype \
 		--with-freetype-includedir=${LOCALBASE}/include/freetype1/freetype \
 		--with-freetype-libdir=${LOCALBASE}/lib
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/ltconfig
 
 pre-install:
 	@(cd ${WRKSRC}/tools; \
