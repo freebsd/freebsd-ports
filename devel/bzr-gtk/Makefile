@@ -7,6 +7,7 @@
 
 PORTNAME=	bzr-gtk
 PORTVERSION=	0.14.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://samba.org/~jelmer/bzr/
 
@@ -25,6 +26,7 @@ OPTIONS=	GTKSOURCE "GTKSourceview support" OFF
 do-patch:
 		${REINPLACE_CMD} -e 's|/usr/share/olive/olive.glade|${PREFIX}/share/olive/olive.glade|' ${WRKSRC}/olive/guifiles.py
 		${REINPLACE_CMD} -e 's|/usr/share/olive/cmenu.ui|${PREFIX}/share/olive/cmenu.ui|' ${WRKSRC}/olive/guifiles.py
+		${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' ${WRKSRC}/olive-gtk.desktop
 
 .include <bsd.port.pre.mk>
 
