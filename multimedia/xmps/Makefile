@@ -9,10 +9,7 @@ PORTNAME=	xmps
 PORTVERSION=	0.2.0
 PORTREVISION=	4
 CATEGORIES=	multimedia gnome
-# per distfile survey, site disappeared in June 2003
-# http://xmps.sourceforge.net/sources/
-MASTER_SITES=	http://download2.projectmayo.com/dnload/divx4linux/xmps/ \
-		http://ftp.vin.bg.ac.yu/linux/mmedia/xmps/
+MASTER_SITES=	http://ftp.vin.bg.ac.yu/linux/mmedia/xmps/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X MPEG Player System - a media player with a very nice GUI
