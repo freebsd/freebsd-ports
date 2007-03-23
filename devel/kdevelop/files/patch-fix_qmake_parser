@@ -1,3 +1,212 @@
+diff -ruN buildtools/lib/parsers/qmake.orig/FlexLexer.h buildtools/lib/parsers/qmake/FlexLexer.h
+--- buildtools/lib/parsers/qmake.orig/FlexLexer.h	Thu Jan  1 01:00:00 1970
++++ buildtools/lib/parsers/qmake/FlexLexer.h	Thu Mar 22 21:48:49 2007
+@@ -0,0 +1,205 @@
++
++// -*-C++-*-
++// FlexLexer.h -- define interfaces for lexical analyzer classes generated
++// by flex
++
++// Copyright (c) 1993 The Regents of the University of California.
++// All rights reserved.
++//
++// This code is derived from software contributed to Berkeley by
++// Kent Williams and Tom Epperly.
++//
++//  Redistribution and use in source and binary forms, with or without
++//  modification, are permitted provided that the following conditions
++//  are met:
++
++//  1. Redistributions of source code must retain the above copyright
++//  notice, this list of conditions and the following disclaimer.
++//  2. Redistributions in binary form must reproduce the above copyright
++//  notice, this list of conditions and the following disclaimer in the
++//  documentation and/or other materials provided with the distribution.
++
++//  Neither the name of the University nor the names of its contributors
++//  may be used to endorse or promote products derived from this software
++//  without specific prior written permission.
++
++//  THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
++//  IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
++//  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
++//  PURPOSE.
++
++// This file defines FlexLexer, an abstract class which specifies the
++// external interface provided to flex C++ lexer objects, and yyFlexLexer,
++// which defines a particular lexer class.
++//
++// If you want to create multiple lexer classes, you use the -P flag
++// to rename each yyFlexLexer to some other xxFlexLexer.  You then
++// include <FlexLexer.h> in your other sources once per lexer class:
++//
++//	#undef yyFlexLexer
++//	#define yyFlexLexer xxFlexLexer
++//	#include <FlexLexer.h>
++//
++//	#undef yyFlexLexer
++//	#define yyFlexLexer zzFlexLexer
++//	#include <FlexLexer.h>
++//	...
++
++#ifndef __FLEX_LEXER_H
++// Never included before - need to define base class.
++#define __FLEX_LEXER_H
++
++#include <iostream>
++#  ifndef FLEX_STD
++#    define FLEX_STD std::
++#  endif
++
++extern "C++" {
++
++struct yy_buffer_state;
++typedef int yy_state_type;
++
++class FlexLexer {
++public:
++	virtual ~FlexLexer()	{ }
++
++	const char* YYText() const	{ return yytext; }
++	int YYLeng()	const	{ return yyleng; }
++
++	virtual void
++		yy_switch_to_buffer( struct yy_buffer_state* new_buffer ) = 0;
++	virtual struct yy_buffer_state*
++		yy_create_buffer( FLEX_STD istream* s, int size ) = 0;
++	virtual void yy_delete_buffer( struct yy_buffer_state* b ) = 0;
++	virtual void yyrestart( FLEX_STD istream* s ) = 0;
++
++	virtual int yylex() = 0;
++
++	// Call yylex with new input/output sources.
++	int yylex( FLEX_STD istream* new_in, FLEX_STD ostream* new_out = 0 )
++		{
++		switch_streams( new_in, new_out );
++		return yylex();
++		}
++
++	// Switch to new input/output streams.  A nil stream pointer
++	// indicates "keep the current one".
++	virtual void switch_streams( FLEX_STD istream* new_in = 0,
++					FLEX_STD ostream* new_out = 0 ) = 0;
++
++	int lineno() const		{ return yylineno; }
++
++	int debug() const		{ return yy_flex_debug; }
++	void set_debug( int flag )	{ yy_flex_debug = flag; }
++
++protected:
++	char* yytext;
++	int yyleng;
++	int yylineno;		// only maintained if you use %option yylineno
++	int yy_flex_debug;	// only has effect with -d or "%option debug"
++};
++
++}
++#endif
++
++#if defined(yyFlexLexer) || ! defined(yyFlexLexerOnce)
++// Either this is the first time through (yyFlexLexerOnce not defined),
++// or this is a repeated include to define a different flavor of
++// yyFlexLexer, as discussed in the flex man page.
++#define yyFlexLexerOnce
++
++extern "C++" {
++
++class yyFlexLexer : public FlexLexer {
++public:
++	// arg_yyin and arg_yyout default to the cin and cout, but we
++	// only make that assignment when initializing in yylex().
++	yyFlexLexer( FLEX_STD istream* arg_yyin = 0, FLEX_STD ostream* arg_yyout = 0 );
++
++	virtual ~yyFlexLexer();
++
++	void yy_switch_to_buffer( struct yy_buffer_state* new_buffer );
++	struct yy_buffer_state* yy_create_buffer( FLEX_STD istream* s, int size );
++	void yy_delete_buffer( struct yy_buffer_state* b );
++	void yyrestart( FLEX_STD istream* s );
++
++    void yypush_buffer_state( struct yy_buffer_state* new_buffer );
++    void yypop_buffer_state(void);
++
++	virtual int yylex();
++	virtual void switch_streams( FLEX_STD istream* new_in, FLEX_STD ostream* new_out );
++
++protected:
++	virtual int LexerInput( char* buf, int max_size );
++	virtual void LexerOutput( const char* buf, int size );
++	virtual void LexerError( const char* msg );
++
++	void yyunput( int c, char* buf_ptr );
++	int yyinput();
++
++	void yy_load_buffer_state();
++	void yy_init_buffer( struct yy_buffer_state* b, FLEX_STD istream* s );
++	void yy_flush_buffer( struct yy_buffer_state* b );
++
++	int yy_start_stack_ptr;
++	int yy_start_stack_depth;
++	int* yy_start_stack;
++
++	void yy_push_state( int new_state );
++	void yy_pop_state();
++	int yy_top_state();
++
++	yy_state_type yy_get_previous_state();
++	yy_state_type yy_try_NUL_trans( yy_state_type current_state );
++	int yy_get_next_buffer();
++
++	FLEX_STD istream* yyin;	// input source for default LexerInput
++	FLEX_STD ostream* yyout;	// output sink for default LexerOutput
++
++	// yy_hold_char holds the character lost when yytext is formed.
++	char yy_hold_char;
++
++	// Number of characters read into yy_ch_buf.
++	int yy_n_chars;
++
++	// Points to current character in buffer.
++	char* yy_c_buf_p;
++
++	int yy_init;		// whether we need to initialize
++	int yy_start;		// start state number
++
++	// Flag which is used to allow yywrap()'s to do buffer switches
++	// instead of setting up a fresh yyin.  A bit of a hack ...
++	int yy_did_buffer_switch_on_eof;
++
++
++    size_t yy_buffer_stack_top; /**< index of top of stack. */
++    size_t yy_buffer_stack_max; /**< capacity of stack. */
++    struct yy_buffer_state ** yy_buffer_stack; /**< Stack as an array. */
++    void yyensure_buffer_stack(void);
++
++	// The following are not always needed, but may be depending
++	// on use of certain flex features (like REJECT or yymore()).
++
++	yy_state_type yy_last_accepting_state;
++	char* yy_last_accepting_cpos;
++
++	yy_state_type* yy_state_buf;
++	yy_state_type* yy_state_ptr;
++
++	char* yy_full_match;
++	int* yy_full_state;
++	int yy_full_lp;
++
++	int yy_lp;
++	int yy_looking_for_trail_begin;
++
++	int yy_more_flag;
++	int yy_more_len;
++	int yy_more_offset;
++	int yy_prev_more_offset;
++};
++
++}
++
++#endif
 diff -u --exclude=.svn -Nur kdev_3.4.0.org/buildtools/lib/parsers/qmake/location.hh kdev_3.4.0/buildtools/lib/parsers/qmake/location.hh
 --- buildtools/lib/parsers/qmake/location.hh	1970-01-01 01:00:00.000000000 +0100
 +++ buildtools/lib/parsers/qmake/location.hh	2007-02-07 20:35:17.000000000 +0100
@@ -147,13 +356,133 @@ diff -u --exclude=.svn -Nur kdev_3.4.0.org/buildtools/lib/parsers/qmake/location
 +}
 +
 +#endif // not BISON_LOCATION_HH
-diff -u --exclude=.svn -Nur kdev_3.4.0.org/buildtools/lib/parsers/qmake/Makefile.am kdev_3.4.0/buildtools/lib/parsers/qmake/Makefile.am
---- buildtools/lib/parsers/qmake/Makefile.am	2007-02-07 21:15:37.000000000 +0100
-+++ buildtools/lib/parsers/qmake/Makefile.am	2007-02-07 20:35:17.000000000 +0100
-@@ -10,22 +10,20 @@
- METASOURCES = AUTO
- lib_LTLIBRARIES = libkdevqmakeparser.la
- libkdevqmakeparser_la_LDFLAGS = -no-undefined $(all_libraries) $(LIB_KIO)
+diff -ruN buildtools/lib/parsers/qmake.orig/Makefile.in buildtools/lib/parsers/qmake/Makefile.in
+--- buildtools/lib/parsers/qmake.orig/Makefile.in	Thu Jan 25 15:48:03 2007
++++ buildtools/lib/parsers/qmake/Makefile.in	Thu Mar 22 21:48:26 2007
+@@ -1,4 +1,4 @@
+-# Makefile.in generated by automake 1.9.5 from Makefile.am.
++# Makefile.in generated by automake 1.9.6 from Makefile.am.
+ # KDE tags expanded automatically by am_edit - $Revision: 483858 $ 
+ # @configure_input@
+ 
+@@ -22,8 +22,6 @@
+ #SUBDIRS = tests
+ 
+ 
+-SOURCES = $(libkdevqmakeparser_la_SOURCES)
+-
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
+ VPATH = @srcdir@
+@@ -47,7 +45,7 @@
+ build_triplet = @build@
+ host_triplet = @host@
+ target_triplet = @target@
+-DIST_COMMON = $(kdevelopbuildtoolsinclude_HEADERS) \
++DIST_COMMON = $(kdevelopbuildtoolsinclude_HEADERS) $(noinst_HEADERS) \
+ 	$(srcdir)/../../../../Doxyfile.am $(srcdir)/Makefile.am \
+ 	$(srcdir)/Makefile.in
+ subdir = buildtools/lib/parsers/qmake
+@@ -70,13 +68,13 @@
+ libLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+ libkdevqmakeparser_la_LIBADD =
+-am_libkdevqmakeparser_la_OBJECTS = qmakeast.lo qmakedriver.lo \
+-	qmake_yacc.lo qmakeastvisitor.lo
++am_libkdevqmakeparser_la_OBJECTS = qmake_lex.lo qmake_yacc.lo \
++	qmakeast.lo qmakeastvisitor.lo qmakedriver.lo
+ #>- libkdevqmakeparser_la_OBJECTS = $(am_libkdevqmakeparser_la_OBJECTS)
+ #>+ 5
+ libkdevqmakeparser_la_final_OBJECTS = libkdevqmakeparser_la.all_cpp.lo 
+-libkdevqmakeparser_la_nofinal_OBJECTS = qmakeast.lo qmakedriver.lo \
+-	qmake_yacc.lo qmakeastvisitor.lo
++libkdevqmakeparser_la_nofinal_OBJECTS = qmake_lex.lo qmake_yacc.lo \
++	qmakeast.lo qmakeastvisitor.lo qmakedriver.lo
+ @KDE_USE_FINAL_FALSE@libkdevqmakeparser_la_OBJECTS = $(libkdevqmakeparser_la_nofinal_OBJECTS)
+ @KDE_USE_FINAL_TRUE@libkdevqmakeparser_la_OBJECTS = $(libkdevqmakeparser_la_final_OBJECTS)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+@@ -103,7 +101,7 @@
+ SOURCES = $(libkdevqmakeparser_la_SOURCES)
+ DIST_SOURCES = $(libkdevqmakeparser_la_SOURCES)
+ kdevelopbuildtoolsincludeHEADERS_INSTALL = $(INSTALL_HEADER)
+-HEADERS = $(kdevelopbuildtoolsinclude_HEADERS)
++HEADERS = $(kdevelopbuildtoolsinclude_HEADERS) $(noinst_HEADERS)
+ ETAGS = etags
+ CTAGS = ctags
+ #>- DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+@@ -131,9 +129,6 @@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DB3INCLUDES = @DB3INCLUDES@
+-DB3LDFLAGS = @DB3LDFLAGS@
+-DB3LIB = @DB3LIB@
+ DCOPIDL = @DCOPIDL@
+ DCOPIDL2CPP = @DCOPIDL2CPP@
+ DCOPIDLNG = @DCOPIDLNG@
+@@ -300,7 +295,15 @@
+ build_cpu = @build_cpu@
+ build_os = @build_os@
+ build_vendor = @build_vendor@
++buildtools_SUBDIR_included_FALSE = @buildtools_SUBDIR_included_FALSE@
++buildtools_SUBDIR_included_TRUE = @buildtools_SUBDIR_included_TRUE@
+ datadir = @datadir@
++doc_SUBDIR_included_FALSE = @doc_SUBDIR_included_FALSE@
++doc_SUBDIR_included_TRUE = @doc_SUBDIR_included_TRUE@
++editors_SUBDIR_included_FALSE = @editors_SUBDIR_included_FALSE@
++editors_SUBDIR_included_TRUE = @editors_SUBDIR_included_TRUE@
++embedded_SUBDIR_included_FALSE = @embedded_SUBDIR_included_FALSE@
++embedded_SUBDIR_included_TRUE = @embedded_SUBDIR_included_TRUE@
+ exec_prefix = @exec_prefix@
+ gmake_prog = @gmake_prog@
+ host = @host@
+@@ -384,19 +387,32 @@
+ kde_wallpaperdir = @kde_wallpaperdir@
+ kde_widgetdir = @kde_widgetdir@
+ kdeinitdir = @kdeinitdir@
+-kdelibs_doxydir = @kdelibs_doxydir@
++kdevdesigner_SUBDIR_included_FALSE = @kdevdesigner_SUBDIR_included_FALSE@
++kdevdesigner_SUBDIR_included_TRUE = @kdevdesigner_SUBDIR_included_TRUE@
++languages_SUBDIR_included_FALSE = @languages_SUBDIR_included_FALSE@
++languages_SUBDIR_included_TRUE = @languages_SUBDIR_included_TRUE@
++lib_SUBDIR_included_FALSE = @lib_SUBDIR_included_FALSE@
++lib_SUBDIR_included_TRUE = @lib_SUBDIR_included_TRUE@
+ libdir = @libdir@
+ libexecdir = @libexecdir@
+ localstatedir = @localstatedir@
+ mandir = @mandir@
++mimetypes_SUBDIR_included_FALSE = @mimetypes_SUBDIR_included_FALSE@
++mimetypes_SUBDIR_included_TRUE = @mimetypes_SUBDIR_included_TRUE@
+ mkdir_p = @mkdir_p@
+ oldincludedir = @oldincludedir@
++parts_SUBDIR_included_FALSE = @parts_SUBDIR_included_FALSE@
++parts_SUBDIR_included_TRUE = @parts_SUBDIR_included_TRUE@
++pics_SUBDIR_included_FALSE = @pics_SUBDIR_included_FALSE@
++pics_SUBDIR_included_TRUE = @pics_SUBDIR_included_TRUE@
+ prefix = @prefix@
+ program_transform_name = @program_transform_name@
+ qt_includes = @qt_includes@
+ qt_libraries = @qt_libraries@
+ sbindir = @sbindir@
+ sharedstatedir = @sharedstatedir@
++src_SUBDIR_included_FALSE = @src_SUBDIR_included_FALSE@
++src_SUBDIR_included_TRUE = @src_SUBDIR_included_TRUE@
+ sysconfdir = @sysconfdir@
+ tar = @tar@
+ target = @target@
+@@ -406,6 +422,8 @@
+ target_vendor = @target_vendor@
+ unsermake_enable_pch_FALSE = @unsermake_enable_pch_FALSE@
+ unsermake_enable_pch_TRUE = @unsermake_enable_pch_TRUE@
++vcs_SUBDIR_included_FALSE = @vcs_SUBDIR_included_FALSE@
++vcs_SUBDIR_included_TRUE = @vcs_SUBDIR_included_TRUE@
+ x_includes = @x_includes@
+ x_libraries = @x_libraries@
+ xdg_appsdir = @xdg_appsdir@
+@@ -420,8 +438,8 @@
+ #>- libkdevqmakeparser_la_LDFLAGS = -no-undefined $(all_libraries) $(LIB_KIO)
+ #>+ 1
+ libkdevqmakeparser_la_LDFLAGS = -no-undefined $(KDE_NO_UNDEFINED) $(all_libraries) $(LIB_KIO)
 -libkdevqmakeparser_la_SOURCES = qmakeast.cpp qmakedriver.cpp qmake_yacc.cpp \
 -	qmakeastvisitor.cpp
 +libkdevqmakeparser_la_SOURCES = qmake_lex.cpp qmake_yacc.cpp qmakeast.cpp \
@@ -161,6 +490,47 @@ diff -u --exclude=.svn -Nur kdev_3.4.0.org/buildtools/lib/parsers/qmake/Makefile
  
  kdevelopbuildtoolsincludedir = $(includedir)/kdevelop/buildtools/parsers/qmake
  kdevelopbuildtoolsinclude_HEADERS = qmakeast.h qmakedriver.h qmakeastvisitor.h
+@@ -429,6 +447,7 @@
+ DOXYGEN_REFERENCES = dcop interfaces kdecore kdefx kdeui khtml kmdi kio kjs kparts kutils
+ DOXYGEN_PROJECTNAME = KDevelop QMake parser
+ DOXYGEN_DOCDIRPREFIX = kdevparser
++noinst_HEADERS = qmake_lex.h
+ #>- all: all-am
+ #>+ 1
+ all: docs-am  all-am
+@@ -444,9 +463,9 @@
+ #>- 	      exit 1;; \
+ #>- 	  esac; \
+ #>- 	done; \
+-#>- 	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign  buildtools/lib/parsers/qmake/Makefile'; \
++#>- 	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  buildtools/lib/parsers/qmake/Makefile'; \
+ #>- 	cd $(top_srcdir) && \
+-#>- 	  $(AUTOMAKE) --foreign  buildtools/lib/parsers/qmake/Makefile
++#>- 	  $(AUTOMAKE) --gnu  buildtools/lib/parsers/qmake/Makefile
+ #>+ 12
+ 	@for dep in $?; do \
+ 	  case '$(am__configure_deps)' in \
+@@ -456,9 +475,9 @@
+ 	      exit 1;; \
+ 	  esac; \
+ 	done; \
+-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign  buildtools/lib/parsers/qmake/Makefile'; \
++	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  buildtools/lib/parsers/qmake/Makefile'; \
+ 	cd $(top_srcdir) && \
+-	  $(AUTOMAKE) --foreign  buildtools/lib/parsers/qmake/Makefile
++	  $(AUTOMAKE) --gnu  buildtools/lib/parsers/qmake/Makefile
+ 	cd $(top_srcdir) && perl admin/am_edit buildtools/lib/parsers/qmake/Makefile.in
+ .PRECIOUS: Makefile
+ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
+@@ -516,6 +535,7 @@
+ distclean-compile:
+ 	-rm -f *.tab.c
+ 
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/qmake_lex.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/qmake_yacc.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/qmakeast.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/qmakeastvisitor.Plo@am__quote@
+@@ -753,14 +773,12 @@
  
  parser:
  	cd $(srcdir) ; \
@@ -175,13 +545,52 @@ diff -u --exclude=.svn -Nur kdev_3.4.0.org/buildtools/lib/parsers/qmake/Makefile
 -	mv -f qmake_yacc.hpp qmake_yacc.h ; \
 +	bison -d qmake.yy -r all -k -t -oqmake_yacc.cpp ; \
  	flex -d -oqmake_lex.cpp qmake.ll
+ apidox-am-yes:
+ 	@if test -z "$(DOXYGEN_EMPTY)"; then \
+@@ -958,7 +976,7 @@
  
- EXTRA_DIST = qmake.yy qmake.ll
-@@ -35,3 +33,4 @@
- DOXYGEN_DOCDIRPREFIX = kdevparser
- include ../../../../Doxyfile.am
  
-+noinst_HEADERS = qmake_lex.h
+ #>+ 2
+-KDE_DIST=qmake_lex.cpp Mainpage.dox qmake_yacc.h Makefile.in Makefile.am 
++KDE_DIST=location.hh qmake_yacc.hpp position.hh Mainpage.dox stack.hh Makefile.in Makefile.am 
+ 
+ #>+ 3
+ clean-closures:
+@@ -977,9 +995,9 @@
+ 	      exit 1;; \
+ 	  esac; \
+ 	done; \
+-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign  buildtools/lib/parsers/qmake/Makefile'; \
++	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  buildtools/lib/parsers/qmake/Makefile'; \
+ 	cd $(top_srcdir) && \
+-	  $(AUTOMAKE) --foreign  buildtools/lib/parsers/qmake/Makefile
++	  $(AUTOMAKE) --gnu  buildtools/lib/parsers/qmake/Makefile
+ 	cd $(top_srcdir) && perl admin/am_edit buildtools/lib/parsers/qmake/Makefile.in
+ 
+ 
+@@ -990,7 +1008,7 @@
+ bcheck: bcheck-am
+ 
+ bcheck-am:
+-	@for i in $(kdevelopbuildtoolsinclude_HEADERS); do \
++	@for i in $(kdevelopbuildtoolsinclude_HEADERS) ; do \
+ 	    if test $(srcdir)/$$i -nt $$i.bchecktest.cc; then \
+ 	        echo "int main() {return 0;}" > $$i.bchecktest.cc ; \
+ 	        echo "#include \"$$i\"" >> $$i.bchecktest.cc ; \
+@@ -1006,11 +1024,11 @@
+ 
+ 
+ #>+ 11
+-libkdevqmakeparser_la.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/qmakeast.cpp $(srcdir)/qmakedriver.cpp $(srcdir)/qmake_yacc.cpp $(srcdir)/qmakeastvisitor.cpp 
++libkdevqmakeparser_la.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/qmake_lex.cpp $(srcdir)/qmake_yacc.cpp $(srcdir)/qmakeast.cpp $(srcdir)/qmakeastvisitor.cpp $(srcdir)/qmakedriver.cpp 
+ 	@echo 'creating libkdevqmakeparser_la.all_cpp.cpp ...'; \
+ 	rm -f libkdevqmakeparser_la.all_cpp.files libkdevqmakeparser_la.all_cpp.final; \
+ 	echo "#define KDE_USE_FINAL 1" >> libkdevqmakeparser_la.all_cpp.final; \
+-	for file in qmakeast.cpp qmakedriver.cpp qmake_yacc.cpp qmakeastvisitor.cpp ; do \
++	for file in qmake_lex.cpp qmake_yacc.cpp qmakeast.cpp qmakeastvisitor.cpp qmakedriver.cpp ; do \
+ 	  echo "#include \"$$file\"" >> libkdevqmakeparser_la.all_cpp.files; \
+ 	  test ! -f $(srcdir)/$$file || egrep '^#pragma +implementation' $(srcdir)/$$file >> libkdevqmakeparser_la.all_cpp.final; \
+ 	done; \
 diff -u --exclude=.svn -Nur kdev_3.4.0.org/buildtools/lib/parsers/qmake/position.hh kdev_3.4.0/buildtools/lib/parsers/qmake/position.hh
 --- buildtools/lib/parsers/qmake/position.hh	1970-01-01 01:00:00.000000000 +0100
 +++ buildtools/lib/parsers/qmake/position.hh	2007-02-07 20:35:14.000000000 +0100
