@@ -12,7 +12,7 @@ CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_EXIM:S/$/:exim/}
 MASTER_SITE_SUBDIR=	exim4/:exim
 DISTNAME=	${PORTNAME}-${EXIM_VERSION}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:exim FAQ.txt.bz2:exim
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:exim
 DIST_SUBDIR=	exim
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -30,8 +30,6 @@ DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 
 EXIM_VERSION=	4.66
 SA_EXIM_VERSION=4.2
-
-IGNOREFILES=	FAQ.txt.bz2
 
 .if !defined(EXIMON_ONLY)
 .if defined(PKGNAMESUFFIX)
@@ -61,7 +59,7 @@ MAN8=		exim.8
 NO_INSTALL_MANPAGES=	yes
 .endif
 
-PORTDOC_BASE=	ACKNOWLEDGMENTS FAQ NOTICE README.UPDATING
+PORTDOC_BASE=	ACKNOWLEDGMENTS NOTICE README.UPDATING
 PORTDOC_FILES=	ChangeLog Exim3.upgrade Exim4.upgrade NewStuff \
 		OptionLists.txt README README.SIEVE dbm.discuss.txt \
 		experimental-spec.txt filter.txt pcrepattern.txt \
@@ -593,7 +591,6 @@ pre-everything::
 .endif
 
 post-extract:
-	@${BZCAT} ${_DISTDIR}/FAQ.txt.bz2 > ${WRKSRC}/FAQ
 .if defined(WITH_SA_EXIM)
 	@cd ${WRKDIR} && ${GZIP_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/sa-exim-${SA_EXIM_VERSION}.tar.gz ${EXTRACT_AFTER_ARGS}
 .endif
