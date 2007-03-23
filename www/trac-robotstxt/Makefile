@@ -7,6 +7,7 @@
 
 PORTNAME=	robotxt
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/trac/
 PKGNAMEPREFIX=	trac-
@@ -32,6 +33,6 @@ TRACROBO_EGG=	TracRobotsTxt-${PORTVERSION}-py${PYTHON_VER}.egg
 
 PLIST_SUB+=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
 		TRACROBO_EGG=${TRACROBO_EGG} \
-		TRACROBO_EGG_VER="TracROBO==${PORTVERSION}"
+		TRACROBO_EGG_VER="TracRobotsTxt==${PORTVERSION}"
 
 .include <bsd.port.mk>
