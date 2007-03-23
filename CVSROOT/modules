@@ -7879,6 +7879,7 @@ netshow		ports/multimedia/netshow
 netspades	ports/games/netspades
 netspeed_applet	ports/net/netspeed_applet
 netspoc		ports/net-mgmt/netspoc
+netstiff	ports/www/netstiff
 netstrain	ports/net/netstrain
 nettest		ports/net/nettest
 nettle		ports/security/nettle
