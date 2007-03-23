@@ -1112,6 +1112,7 @@
     SUBDIR += trac-nav
     SUBDIR += trac-pagetopdf
     SUBDIR += trac-privatetickets
+    SUBDIR += trac-robotstxt
     SUBDIR += trac-tags
     SUBDIR += trac-webadmin
     SUBDIR += trac-wikinotification
