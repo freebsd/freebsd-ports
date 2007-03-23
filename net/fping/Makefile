@@ -9,7 +9,8 @@
 PORTNAME=	fping
 PORTVERSION=	2.4b2
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://www.fping.com/download/
+MASTER_SITES=	http://keyserver.kjsl.com/~jharris/distfiles/
+#MASTER_SITES=	http://www.fping.com/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_to-ipv6
 
 MAINTAINER=	jharris@widomaker.com
