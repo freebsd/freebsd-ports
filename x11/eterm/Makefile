@@ -20,7 +20,7 @@ BUILD_DEPENDS=	man2html:${PORTSDIR}/textproc/man2html
 LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2 \
 		ast.2:${PORTSDIR}/devel/libast
 
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS?=--enable-trans --enable-utmp \
 		--enable-xim --with-theme-update \
