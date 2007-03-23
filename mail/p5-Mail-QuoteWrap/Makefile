@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	MailQuoteWrap${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	mharo@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides wrapping functionality for quoted Email and Usenet messages
 
 BUILD_DEPENDS=	${SITE_PERL}/Text/Format.pm:${PORTSDIR}/textproc/p5-Text-Format

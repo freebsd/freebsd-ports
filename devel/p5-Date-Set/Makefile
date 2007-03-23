@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Date
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mharo@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A module for date/time sets
 
 BUILD_DEPENDS=	${SITE_PERL}/Set/Infinite.pm:${PORTSDIR}/devel/p5-Set-Infinite \
