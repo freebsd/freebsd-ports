@@ -7,7 +7,7 @@
 
 PORTNAME=	thinice
 PORTVERSION=	1.0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_THEMES}
 MASTER_SITE_SUBDIR=	thinice
@@ -19,10 +19,6 @@ COMMENT=	A clean-looking GTK Theme Engine
 WRKSRC=		${WRKDIR}/gtk-${PORTNAME}-theme-${PORTVERSION}
 
 USE_GNOME=	gtk12
-GNU_CONFIGURE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
-		${WRKSRC}/configure
+USE_AUTOTOOLS=	libtool:15
 
 .include <bsd.port.mk>
