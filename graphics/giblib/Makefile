@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 
-MAINTAINER=	andrew.nau.ua@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility library that includes a wrapper for imlib2
 
 LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.twobarleycorns.net/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 
-MAINTAINER=	andrew.nau.ua@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk frontends to CVS, Subversion and diff
 
 NO_BUILD=	yes

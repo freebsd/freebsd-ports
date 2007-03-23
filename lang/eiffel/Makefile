@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://netsw.org/softeng/lang/eiffel/eiffels/
 DISTNAME=	${PORTNAME}s${PORTVERSION}
 EXTRACT_SUFX=	.freebsd.tar.gz
 
-MAINTAINER=	andrew.nau.ua@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A compiler for the object-oriented language Eiffel
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
