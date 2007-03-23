@@ -1,0 +1,32 @@
+# New ports collection makefile for:	netstiff
+# Date created:				23 March 2007
+# Whom:					Alexander Logvinov <ports@logvinov.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	netstiff
+PORTVERSION=	20070322
+CATEGORIES=	www
+MASTER_SITES=	http://pkqs.net/~sbeyer/tools/netstiff/
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
+
+MAINTAINER=	ports@logvinov.com
+COMMENT=	A powerful web page update checker
+
+NO_BUILD=	yes
+USE_RUBY=	yes
+RUBY_NO_BUILD_DEPENDS=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
+PLIST_FILES=	bin/${PORTNAME}
+MAN1=		${PORTNAME}.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/bin/ruby|${RUBY}|' ${WRKSRC}/${PORTNAME}
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
+
+.include <bsd.port.mk>
