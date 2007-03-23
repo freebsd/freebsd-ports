@@ -1,0 +1,61 @@
+bin/mmaker
+lib/menumaker/Config.py
+lib/menumaker/Config.pyc
+lib/menumaker/Keywords.py
+lib/menumaker/Keywords.pyc
+lib/menumaker/MenuMaker/BlackBox.py
+lib/menumaker/MenuMaker/BlackBox.pyc
+lib/menumaker/MenuMaker/CLI.py
+lib/menumaker/MenuMaker/CLI.pyc
+lib/menumaker/MenuMaker/Deskmenu.py
+lib/menumaker/MenuMaker/Deskmenu.pyc
+lib/menumaker/MenuMaker/FluxBox.py
+lib/menumaker/MenuMaker/FluxBox.pyc
+lib/menumaker/MenuMaker/IceWM.py
+lib/menumaker/MenuMaker/IceWM.pyc
+lib/menumaker/MenuMaker/OpenBox3.py
+lib/menumaker/MenuMaker/OpenBox3.pyc
+lib/menumaker/MenuMaker/PekWM.py
+lib/menumaker/MenuMaker/PekWM.pyc
+lib/menumaker/MenuMaker/WindowMaker.py
+lib/menumaker/MenuMaker/WindowMaker.pyc
+lib/menumaker/MenuMaker/Xfce4.py
+lib/menumaker/MenuMaker/Xfce4.pyc
+lib/menumaker/MenuMaker/__init__.py
+lib/menumaker/MenuMaker/__init__.pyc
+lib/menumaker/MenuMaker/xBox.py
+lib/menumaker/MenuMaker/xBox.pyc
+lib/menumaker/Paths.py
+lib/menumaker/Paths.pyc
+lib/menumaker/Prophet/Categories.py
+lib/menumaker/Prophet/Categories.pyc
+lib/menumaker/Prophet/Debian/__init__.py
+lib/menumaker/Prophet/Debian/__init__.pyc
+lib/menumaker/Prophet/Debian/menu/debian-2.2r5
+lib/menumaker/Prophet/Debian/menu/ubuntu-5.04
+lib/menumaker/Prophet/Debian/menu/ubuntu-5.10
+lib/menumaker/Prophet/Desktop/__init__.py
+lib/menumaker/Prophet/Desktop/__init__.pyc
+lib/menumaker/Prophet/Legacy/Development.py
+lib/menumaker/Prophet/Legacy/Development.pyc
+lib/menumaker/Prophet/Legacy/Editor.py
+lib/menumaker/Prophet/Legacy/Editor.pyc
+lib/menumaker/Prophet/Legacy/Emulator.py
+lib/menumaker/Prophet/Legacy/Emulator.pyc
+lib/menumaker/Prophet/Legacy/Multimedia.py
+lib/menumaker/Prophet/Legacy/Multimedia.pyc
+lib/menumaker/Prophet/Legacy/Network.py
+lib/menumaker/Prophet/Legacy/Network.pyc
+lib/menumaker/Prophet/Legacy/Shell.py
+lib/menumaker/Prophet/Legacy/Shell.pyc
+lib/menumaker/Prophet/Legacy/__init__.py
+lib/menumaker/Prophet/Legacy/__init__.pyc
+lib/menumaker/Prophet/__init__.py
+lib/menumaker/Prophet/__init__.pyc
+@dirrm lib/menumaker/Prophet/Legacy
+@dirrm lib/menumaker/Prophet/Desktop
+@dirrm lib/menumaker/Prophet/Debian/menu
+@dirrm lib/menumaker/Prophet/Debian
+@dirrm lib/menumaker/Prophet
+@dirrm lib/menumaker/MenuMaker
+@dirrm lib/menumaker
