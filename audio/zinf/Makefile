@@ -89,6 +89,9 @@ pre-everything::
 	@${ECHO_MSG} "WITH_ALL_PLUGINS=yes	build with all plugins"
 	@${ECHO_MSG}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+
 post-install:
 	@${MKDIR} ${PREFIX}/etc/sdr/plugins
 	${INSTALL_DATA} ${FILESDIR}/sdr2.plugin.S100.audio.rtp.mpa.zinf \
