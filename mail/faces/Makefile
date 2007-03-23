@@ -10,7 +10,7 @@ PORTNAME=	faces
 PORTVERSION=	1.7.7
 PORTREVISION=	7
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual mail, user and print face server
@@ -27,6 +27,7 @@ MAN1=		compface.1
 MAN3=		compface.3
 MLINKS=		compface.1 uncompface.1 \
 		compface.3 uncompface.3
+PORTDOCS=	README
 
 .include <bsd.port.pre.mk>
 

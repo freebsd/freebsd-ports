@@ -9,7 +9,5 @@ include/compface.h
 lib/libcompface.a
 lib/libcompface.so
 lib/libcompface.so.1
-%%PORTDOCS%%share/doc/faces/README
-%%PORTDOCS%%@dirrm share/doc/faces
 %%X11%%@cwd %%X11BASE%%
 %%X11%%lib/X11/app-defaults/Faces
