@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/icon-name-mapping:${PORTSDIR}/x11-themes/ico
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	intlhack
+USE_GNOME=	intlhack gnomehack
 INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>
