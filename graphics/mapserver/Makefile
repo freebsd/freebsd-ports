@@ -74,8 +74,7 @@ CONFIGURE_ARGS+=	--with-gdal=${LOCALBASE}/bin/gdal-config \
 .endif
 
 .if defined(WITH_POSTGIS)
-POSTGRESQL_PORT?=	databases/postgis
-LIB_DEPENDS+=		pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+USE_PGSQL=	YES
 CONFIGURE_ARGS+=	--with-postgis=${LOCALBASE}/bin/pg_config
 .endif
 
