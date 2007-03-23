@@ -7,6 +7,7 @@
 
 PORTNAME=	unixbench
 PORTVERSION=	4.1.0
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.tux.org/pub/tux/benchmarks/System/unixbench/
 EXTRACT_SUFX=	.tgz
