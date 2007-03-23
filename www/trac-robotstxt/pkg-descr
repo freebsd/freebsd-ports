@@ -1,0 +1,4 @@
+Serve a robots.txt file from Trac. Mostly useful to tracd users,
+but works on anything. Just put the data you want in the wiki page RobotsTxt.
+
+WWW:	http://trac-hacks.org/wiki/RobotsTxtPlugin
