@@ -8031,6 +8031,7 @@ nss_ldap	ports/net/nss_ldap
 nss_mdns	ports/dns/nss_mdns
 nss_resinit	ports/dns/nss_resinit
 nstreams	ports/net-mgmt/nstreams
+nstxd		ports/net/nstxd
 ntalk		ports/net/ntalk
 nte		ports/mbone/nte
 ntfsprogs	ports/sysutils/ntfsprogs
