@@ -53,7 +53,7 @@ JDK_OSREL=freebsd5
 IGNORE=		Only available for FreeBSD 5.x/i386 and FreeBSD 6.x/amd64 and later
 .endif
 
-.if defined(WITH_TZUPDATE)
+.if !defined(WITHOUT_TZUPDATE)
 EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 TZUPDATE_VERSION=	1.1.0
 TZUPDATE_TZVERSION=	2007c
@@ -75,7 +75,7 @@ PLIST_SUB+=	WEB="@comment "
 PLIST_SUB+=	CLIENTVM="@comment "
 .endif
 
-.if (!exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) || (defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE}))) && !defined(PACKAGE_BUILDING) && defined(JDK_OSREL)
+.if (!exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) || (!defined(WITHOUT_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE}))) && !defined(PACKAGE_BUILDING) && defined(JDK_OSREL)
 ECHO_MSG=/usr/bin/printf
 IGNORE=	:\n\
 Because of licensing restrictions, you must fetch the distribution\n\
@@ -89,7 +89,7 @@ with a web browser and \"Accept\" the End User License Agreement for\n\
 \"Caffe Diablo ${JDK_VERSION}\".  Please place the downloaded\n\
 ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}.\n\n
 .endif
-.if defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})
+.if !defined(WITHOUT_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})
 IGNORE += Please open http://java.sun.com/javase/downloads/index.jsp\n\
 in a web browser and follow the \"Download\" link for\n\
 \"JDK US DST Timezone Update Tool - ${TZUPDATE_VERSION}\" to obtain the\n\
@@ -98,7 +98,7 @@ time zone update file, ${TZUPDATEFILE}.\n\n
 .endif
 
 
-.if defined(WITH_TZUPDATE)
+.if !defined(WITHOUT_TZUPDATE)
 post-extract:
 	@${UNZIP_CMD} -qo ${DISTDIR}/${TZUPDATEFILE} -d ${WRKDIR}
 	@# Update time zones
