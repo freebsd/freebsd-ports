@@ -98,13 +98,9 @@ CONFIGURE_ARGS+=--with-python=no
 WITH_FFTW3=	yes
 .endif
 .if defined(WITH_FFTW3)
-LIB_DEPENDS+=	fftw3.3:${PORTSDIR}/math/fftw3		\
-		fftw3f.3:${PORTSDIR}/math/fftw3-float
+LIB_DEPENDS+=	fftw3.4:${PORTSDIR}/math/fftw3		\
+		fftw3f.4:${PORTSDIR}/math/fftw3-float
 CONFIGURE_ARGS+=--with-fftw=${LOCALBASE}
-.endif
-
-.if ${OSVERSION} < 500000
-BROKEN=	Does not compile with gcc-2.95
 .endif
 
 .if defined(BUILD_PYTHON_MODULE)
@@ -122,7 +118,7 @@ post-install:
 .endif
 
 .if defined(MAINTAINER_MODE)
-test:	install
+regression-test:	install
 . if defined(BUILD_PYTHON_MODULE)
 	@${ECHO_CMD} 'import GDL' > ${WRKDIR}/testgdl.py
 	@${ECHO_CMD} 'print GDL.function("sin",(1,))' >> ${WRKDIR}/testgdl.py
