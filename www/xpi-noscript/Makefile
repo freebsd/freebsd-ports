@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	noscript
-PORTVERSION=	1.1.4.6.070304
-DISTVERSIONSUFFIX=	-fx+fl+mz+zm
+PORTVERSION=	1.1.4.6.070317
+#DISTVERSIONSUFFIX=	-fx+fl+mz+zm
 CATEGORIES=	www
+MASTER_SITES=	http://ariel.informaction.com/data/releases/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A security-enhancing Java/JS filtering extension
