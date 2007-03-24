@@ -16,10 +16,9 @@ COMMENT=	Web-based RSS/RDF/ATOM news aggregator
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-WWWDIR=		${PREFIX}/www
 
 do-install:
-	${MKDIR} ${WWWDIR}/${PORTNAME}
-	${CP} -R ${WRKSRC} ${WWWDIR}
+	${MKDIR} ${WWWDIR}
+	${CP} -R ${WRKSRC}/ ${WWWDIR}
 
 .include <bsd.port.mk>

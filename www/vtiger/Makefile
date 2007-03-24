@@ -24,7 +24,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_MYSQL=	yes
 WANT_MYSQL_VER=	50
 
-WWWDIR?=	${PREFIX}/www/vtiger
 WRKSRC=		${WRKDIR}/vtigercrm
 
 post-extract:

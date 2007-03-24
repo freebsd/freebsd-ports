@@ -28,10 +28,6 @@ MAN1=		quickie-config.1 quickie_prime.1 quickie.1 quickie_svt.1 \
 
 SUB_FILES=	pkg-message
 
-WWWOWN?=	www
-WWWGRP?=	www
-WWWDIR?=	${PREFIX}/www
-
 PORTDOCS=	${DISTNAME}.pdf
 
 .if !defined(NOPORTDOCS)
@@ -51,11 +47,11 @@ pre-install:
 post-install:
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${DATADIR}
 .if !defined(WITHOUT_CGICOPY)
-	@if [ -d ${WWWDIR}/cgi-bin/ ]; then \
-	    if [ ! -f ${WWWDIR}/cgi-bin/${PORTNAME} ]; then \
+	@if [ -d ${PREFIX}/www/cgi-bin/ ]; then \
+	    if [ ! -f ${PREFIX}/www/cgi-bin/${PORTNAME} ]; then \
 	        ${ECHO_MSG} "===> Copying CGI binary..." ; \
-	        ${CP} -p ${PREFIX}/bin/${PORTNAME} ${WWWDIR}/cgi-bin/${PORTNAME} ; \
-	        ${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/cgi-bin/${PORTNAME} ; \
+	        ${CP} -p ${PREFIX}/bin/${PORTNAME} ${PREFIX}/www/cgi-bin/${PORTNAME} ; \
+	        ${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/www/cgi-bin/${PORTNAME} ; \
 	    fi ; \
 	fi
 .endif

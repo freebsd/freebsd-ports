@@ -27,12 +27,11 @@ IGNORE_WITH_MYSQL=	40
 # where to install
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-WWWDIR?=	${PREFIX}/www
 .ifndef SITEFRAMEDIR
 .ifdef APACHE_DATADIR
 SITEFRAMEDIR=	${APACHE_DATADIR}/siteframe
 .else
-SITEFRAMEDIR=	${WWWDIR}/siteframe
+SITEFRAMEDIR=	${WWWDIR}
 .endif
 .endif
 

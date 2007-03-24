@@ -2,13 +2,13 @@
 @unexec if cmp -s %D/%%CONFDIR%%/drraw.conf-dist %D/%%CONFDIR%%/drraw.conf; then rm -f %D/%%CONFDIR%%/drraw.conf; fi
 %%CONFDIR%%/drraw.conf-dist
 @exec if [ ! -f %D/%%CONFDIR%%/drraw.conf ]; then cp -p %D/%F %B/drraw.conf; fi
-%%WWWDIR%%/drraw/drraw.cgi
-%%WWWDIR%%/drraw/icons/bomb.gif
-%%WWWDIR%%/drraw/icons/folder.gif
-%%WWWDIR%%/drraw/icons/folder.open.gif
-%%WWWDIR%%/drraw/icons/generic.gif
-%%WWWDIR%%/drraw/icons/link.gif
-%%WWWDIR%%/drraw/icons/text.gif
-%%WWWDIR%%/drraw/icons/unknown.gif
-@dirrm %%WWWDIR%%/drraw/icons
-@dirrm %%WWWDIR%%/drraw
+%%WWWDIR%%/drraw.cgi
+%%WWWDIR%%/icons/bomb.gif
+%%WWWDIR%%/icons/folder.gif
+%%WWWDIR%%/icons/folder.open.gif
+%%WWWDIR%%/icons/generic.gif
+%%WWWDIR%%/icons/link.gif
+%%WWWDIR%%/icons/text.gif
+%%WWWDIR%%/icons/unknown.gif
+@dirrm %%WWWDIR%%/icons
+@dirrm %%WWWDIR%%

@@ -20,18 +20,12 @@ USE_PHP=	mysql
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
-SUB_LIST=	INSTALLDIR=${INSTALLDIR}
-
-WEBOWN?=	www
-WEBGRP?=	www
-WWWDIR=		${PREFIX}/www
-INSTALLDIR=	${WWWDIR}/poweradmin
 
 do-install:
-	${MKDIR} ${INSTALLDIR}
+	${MKDIR} ${WWWDIR}
 	cd ${WRKSRC}; ${FIND} . \
-		| ${CPIO} -pdm -R ${WEBOWN}:${WEBGRP} ${INSTALLDIR}
-		${MV} ${INSTALLDIR}/inc/config-block.inc.php  ${INSTALLDIR}/inc/config.inc.php.sample
+		| ${CPIO} -pdm -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	${MV} ${WWWDIR}/inc/config-block.inc.php  ${WWWDIR}/inc/config.inc.php.sample
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

@@ -39,17 +39,13 @@ USE_RC_SUBR=	netdisco.sh
 
 NO_BUILD=	yes
 
-WWWOWN?=	www
-WWWGRP?=	www
-WWWDIR?=	www/${PORTNAME}
-WWWDATADIR=	${PREFIX}/${WWWDIR}
 RUNDIR?=	/var/run
 DBDIR?=		/var/db
 APACHE_CFG=	${APACHE_CFGDIR}/httpd.conf
 
 SUB_FILES=	pkg-message pkg-install
-SUB_LIST=	WWWDIR=${WWWDIR} DBDIR=${DBDIR}
-PLIST_SUB=	WWWDIR=${WWWDIR} DBDIR=${DBDIR}
+SUB_LIST=	DBDIR=${DBDIR}
+PLIST_SUB=	DBDIR=${DBDIR}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -83,7 +79,7 @@ pre-install:
 .	endfor
 
 	cd ${WRKSRC} && \
-	   ${REINPLACE_CMD} -e 's#%%WWWDATADIR%%#${WWWDATADIR}#g'	\
+	   ${REINPLACE_CMD} -e 's#%%WWWDIR%%#${WWWDIR}#g'	\
 	                    -e 's#%%PREFIX%%#${PREFIX}#g'		\
 	                    -e 's#%%DATADIR%%#${DATADIR}#g'		\
 	                    -e 's#%%RUNDIR%%#${RUNDIR}#g'		\
@@ -96,15 +92,15 @@ do-install:
 		cd ${WRKSRC} && ${INSTALL_SCRIPT} ${i} ${PREFIX}/bin
 .	endfor
 
-	${MKDIR} ${WWWDATADIR}
-	cd ${WRKSRC}/html && ${INSTALL_DATA} autohandler *.* ${WWWDATADIR}
+	${MKDIR} ${WWWDIR}
+	cd ${WRKSRC}/html && ${INSTALL_DATA} autohandler *.* ${WWWDIR}
 
-	${MKDIR} ${WWWDATADIR}/doc
-	cd ${WRKSRC}/html/doc && ${INSTALL_DATA} *.* ${WWWDATADIR}/doc
+	${MKDIR} ${WWWDIR}/doc
+	cd ${WRKSRC}/html/doc && ${INSTALL_DATA} *.* ${WWWDIR}/doc
 
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDATADIR}
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
-	${MKDIR} ${WWWDATADIR}/mason
+	${MKDIR} ${WWWDIR}/mason
 
 	${INSTALL_DATA} ${WRKSRC}/netdisco.pm ${SITE_PERL}
 

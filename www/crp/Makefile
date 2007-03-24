@@ -20,7 +20,6 @@ USE_PHP=	yes
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 
-WWWDIR?=	${PREFIX}/www
 SPOOLDIR?=	/var/spool/conference
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -31,10 +30,10 @@ post-patch:
 
 do-install:
 	@${MKDIR} -m 755 ${WWWDIR} ${SPOOLDIR}
-	@${CP} -R ${WRKSRC} ${WWWDIR}
-	@${SED} -e 's#/var/www/html#${PREFIX}/www/${DISTNAME}#' \
-	  ${WRKSRC}/Code/confHeader.inc > ${WWWDIR}/${DISTNAME}/Code/confHeader.inc
-	@${CHOWN} -R ${WWWOWN}:${WWWGROUP} ${WWWDIR}/${DISTNAME} ${SPOOLDIR}
+	@${CP} -R ${WRKSRC}/ ${WWWDIR}/
+	@${SED} -e 's#/var/www/html#${WWWDIR}#' \
+	  ${WRKSRC}/Code/confHeader.inc > ${WWWDIR}/Code/confHeader.inc
+	@${CHOWN} -R ${WWWOWN}:${WWWGROUP} ${WWWDIR} ${SPOOLDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

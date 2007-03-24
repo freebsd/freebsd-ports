@@ -17,10 +17,7 @@ COMMENT=	Webbased iCal calendar viewer
 
 NO_BUILD=	yes
 USE_PHP=	yes
-IWEBCAL=	www/iwebcal
-WWWDIR=		${PREFIX}/${IWEBCAL}
 WRKSRC=		${WRKDIR}/iWebCal
-PLIST_SUB=	IWEBCAL=${IWEBCAL}
 
 post-extract:
 	-@${FIND} ${WRKSRC}/ -type d -name '.svn' | ${XARGS} ${RM} -rf

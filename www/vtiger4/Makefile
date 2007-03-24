@@ -20,7 +20,7 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-WWWDIR?=	${PREFIX}/www/vtiger
+WWWDIR=		${PREFIX}/www/vtiger
 WRKSRC=		${WRKDIR}/vtiger_crm
 
 post-extract:
