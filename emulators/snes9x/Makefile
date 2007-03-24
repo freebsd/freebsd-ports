@@ -7,6 +7,7 @@
 
 PORTNAME=	snes9x
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://files.ipherswipsite.com/snes9x/ \
 		http://www.geocities.co.jp/SiliconValley-PaloAlto/2560/release/ \
@@ -31,7 +32,7 @@ MAKE_ARGS=	INCLUDES="-I${WRKSRC}/unzip -I${WRKSRC} -I${X11BASE}/include \
 		OPTIMISE="${CXXFLAGS}"
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-PLIST_FILES=	bin/${SNES9X_BIN}
+PLIST_FILES=	bin/${PORTNAME}
 SUB_FILES=	pkg-message
 
 OPTIONS=	DEBUG	"Enable debug information"	off \
@@ -73,9 +74,6 @@ CONFIGURE_ARGS+=	--without-mmx
 .if defined(WITH_OPENGL)
 USE_GL=		yes
 CONFIGURE_ARGS+=	--with-opengl
-SNES9X_BIN=	osnes9x
-.else
-SNES9X_BIN=	snes9x
 .endif
 
 .if !defined(WITHOUT_SCREENSHOT)
@@ -109,7 +107,7 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/unix/docs/readme_unix.txt ${DOCSDIR}/README
 .endif
-	${INSTALL_PROGRAM} ${WRKSRC}/${SNES9X_BIN} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
