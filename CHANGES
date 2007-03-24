@@ -10,6 +10,27 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20070324:
+AUTHOR: portmgr@FreeBSD.org
+The following changes were made to the ports infrastructure:
+
+  * Default LIBTOOLFILES value was changed from literal `configure'
+    to ${CONFIGURE_SCRIPT}.
+
+  * bsd.efl.mk was moved to ports/Mk.  USE_EFL family of macros is now
+    generally available to all ports.
+
+  * New macros COPYTREE_BIN and COPYTREE_SHARE were added, to allow
+    for easy installation of a tree hierarchy, either with executable (bin)
+    or read-only (share) permissions on files.
+
+  * A new variable WWWDIR was added, with default value of
+    ${PREFIX}/www/${PORTNAME}.
+
+  * Variables DOCSDIR_REL, DATADIR_REL, EXAMPLESDIR_REL and WWWDIR_REL were
+    added for porter's convenience.  They contain the values of their
+    respective non-REL variables, except relative to installation PREFIX.
+
 20070306:
 AUTHOR: portmgr@FreeBSD.org
 The following changes were made to the ports infrastructure:
