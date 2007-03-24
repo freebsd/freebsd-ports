@@ -1,0 +1,11 @@
+--- build.xml.orig	Sat Mar 24 15:05:35 2007
++++ build.xml	Sat Mar 24 15:06:33 2007
+@@ -77,7 +77,7 @@
+     <tstamp/>
+     <property name="Name" value="Jasmin"/>
+     <property name="name" value="jasmin"/>
+-    <property name="version" value="2.1"/>
++    <property name="version" value="2.3"/>
+     <property name="year" value="2006"/>
+ 
+     <echo message="----------- ${Name} ${version} [${year}] ------------"/>
