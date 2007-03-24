@@ -7,6 +7,7 @@
 
 PORTNAME=	ljpms
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	www perl5 deskutils
 MASTER_SITES=	http://ljsm.feechki.org/
 DISTFILES=	ljpms-1_3.zip
