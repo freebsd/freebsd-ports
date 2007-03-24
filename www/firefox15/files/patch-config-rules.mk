@@ -1,6 +1,6 @@
---- config/rules.mk.orig	Tue Aug 26 13:28:47 2003
-+++ config/rules.mk	Sun Feb  1 15:11:41 2004
-@@ -444,7 +444,11 @@
+--- config/rules.mk.orig	Fri Apr 28 12:25:51 2006
++++ config/rules.mk
+@@ -443,7 +443,11 @@
  
  ifeq ($(OS_ARCH),FreeBSD)
  ifdef IS_COMPONENT

@@ -1,6 +1,6 @@
---- extensions/typeaheadfind/src/nsTypeAheadFind.cpp.orig	Wed Nov 19 01:20:47 2003
-+++ extensions/typeaheadfind/src/nsTypeAheadFind.cpp	Tue Feb 10 02:52:26 2004
-@@ -323,11 +323,11 @@
+--- extensions/typeaheadfind/src/nsTypeAheadFind.cpp.orig	Tue Jun 28 19:03:59 2005
++++ extensions/typeaheadfind/src/nsTypeAheadFind.cpp
+@@ -318,11 +318,11 @@
    prefBranch->GetBoolPref("accessibility.typeaheadfind.startlinksonly",
                            &mStartLinksOnlyPref);
  
@@ -15,7 +15,7 @@
      prefBranch->GetCharPref("accessibility.typeaheadfind.soundURL",
                               getter_Copies(soundStr));
    }
-@@ -758,7 +758,7 @@
+@@ -757,7 +757,7 @@
      }
      else {
        // No find string to backspace in!
@@ -24,7 +24,7 @@
          // This flag should be on only if the last key was a backspace.
          // It keeps us from accidentally hitting backspace too many times and
          // going back in history when we really just wanted to clear 
-@@ -1012,7 +1012,9 @@
+@@ -1022,7 +1022,9 @@
  
      // Error sound (don't fire when backspace is pressed, they're 
      // trying to correct the mistake!)
@@ -35,7 +35,7 @@
  
      // Remove bad character from buffer, so we can continue typing from
      // last matched character
-@@ -1059,7 +1061,7 @@
+@@ -1069,7 +1071,7 @@
  void
  nsTypeAheadFind::PlayNotFoundSound()
  {

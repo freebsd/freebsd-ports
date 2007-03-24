@@ -1,6 +1,6 @@
---- modules/libpref/src/init/all.js.orig	Mon Feb 13 22:58:15 2006
-+++ modules/libpref/src/init/all.js	Tue May  2 00:32:55 2006
-@@ -1883,33 +1883,33 @@
+--- modules/libpref/src/init/all.js.orig	Fri Aug 18 15:12:03 2006
++++ modules/libpref/src/init/all.js
+@@ -1885,33 +1885,33 @@
  
  // th
  

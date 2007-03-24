@@ -1,6 +1,6 @@
---- security/coreconf/FreeBSD.mk.orig	Wed Mar 26 20:17:25 2003
-+++ security/coreconf/FreeBSD.mk	Sun Nov 21 22:59:49 2004
-@@ -43,8 +43,12 @@
+--- security/coreconf/FreeBSD.mk.orig	Fri Jan 20 18:36:11 2006
++++ security/coreconf/FreeBSD.mk
+@@ -45,8 +45,12 @@
  ifeq ($(OS_TEST),alpha)
  CPU_ARCH		= alpha
  else
@@ -13,7 +13,7 @@
  
  OS_CFLAGS		= $(DSO_CFLAGS) -ansi -Wall -DFREEBSD -DHAVE_STRERROR -DHAVE_BSD_FLOCK
  
-@@ -71,7 +75,11 @@
+@@ -73,7 +77,11 @@
  DLL_SUFFIX		= so.1.0
  endif
  
@@ -24,5 +24,5 @@
 +MKSHLIB			= $(CC) -Wl,-Bsymbolic $(DSO_LDOPTS) -o $@
 +endif
  ifdef MAPFILE
- # Add LD options to restrict exported symbols to those in the map file
+ 	MKSHLIB += -Wl,--version-script,$(MAPFILE)
  endif
