@@ -550,7 +550,6 @@ MASTER_SITE_ISC+=	\
 
 .if !defined(IGNORE_MASTER_SITE_KDE)
 MASTER_SITE_KDE+=	\
-	ftp://ftp.scarlet.be/pub/kde/%SUBDIR%/ \
 	http://ftp.scarlet.be/pub/kde/%SUBDIR%/ \
 	http://mirrors.isc.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.gtlib.cc.gatech.edu/pub/kde/%SUBDIR%/ \
