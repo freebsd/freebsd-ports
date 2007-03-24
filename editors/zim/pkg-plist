@@ -3,8 +3,12 @@ bin/zim
 %%SITE_PERL%%/Gtk2/Ex/HyperTextBuffer.pm
 %%SITE_PERL%%/Gtk2/Ex/HyperTextView.pm
 %%SITE_PERL%%/Gtk2/Ex/PathBar.pm
+%%SITE_PERL%%/Zim.pm
+%%SITE_PERL%%/Zim/Events.pm
 %%SITE_PERL%%/Zim/File.pm
+%%SITE_PERL%%/Zim/Formats.pm
 %%SITE_PERL%%/Zim/Formats/Html.pm
+%%SITE_PERL%%/Zim/Formats/Txt2tags.pm
 %%SITE_PERL%%/Zim/Formats/Wiki.pm
 %%SITE_PERL%%/Zim/GUI.pm
 %%SITE_PERL%%/Zim/GUI/Calendar.pm
@@ -15,22 +19,27 @@ bin/zim
 %%SITE_PERL%%/Zim/GUI/PathBar.pm
 %%SITE_PERL%%/Zim/GUI/PreferencesDialog.pm
 %%SITE_PERL%%/Zim/GUI/PropertiesDialog.pm
+%%SITE_PERL%%/Zim/GUI/RepositoriesDialog.pm
 %%SITE_PERL%%/Zim/GUI/SearchDialog.pm
 %%SITE_PERL%%/Zim/GUI/Spell.pm
 %%SITE_PERL%%/Zim/GUI/TrayIcon.pm
 %%SITE_PERL%%/Zim/GUI/TreeView.pm
 %%SITE_PERL%%/Zim/History.pm
 %%SITE_PERL%%/Zim/Page.pm
-%%SITE_PERL%%/Zim/Page/Text.pm
 %%SITE_PERL%%/Zim/Repository.pm
-%%SITE_PERL%%/Zim/Repository/Base.pm
 %%SITE_PERL%%/Zim/Repository/Files.pm
 %%SITE_PERL%%/Zim/Repository/Man.pm
 %%SITE_PERL%%/Zim/Selection.pm
 %%SITE_PERL%%/Zim/Template.pm
+%%SITE_PERL%%/Zim/TextBuffer.pm
 %%SITE_PERL%%/Zim/Win32.pm
 share/applications/zim.desktop
 share/pixmaps/zim.png
+share/pixmaps/zim/gtk-connect.png
+share/pixmaps/zim/stock_calendar-view-month.png
+%%DATADIR%%/album.conf
+%%DATADIR%%/dates.list
+%%DATADIR%%/default.conf
 %%DATADIR%%/entities.list
 %%DATADIR%%/doc/.zim.config
 %%DATADIR%%/doc/invade_your_desktop.png
@@ -43,6 +52,7 @@ share/pixmaps/zim.png
 %%DATADIR%%/doc/zim/usage.txt
 %%DATADIR%%/doc/zim/usage/autoformat.txt
 %%DATADIR%%/doc/zim/usage/commandline.txt
+%%DATADIR%%/doc/zim/usage/config.txt
 %%DATADIR%%/doc/zim/usage/exporting.txt
 %%DATADIR%%/doc/zim/usage/getting_started.txt
 %%DATADIR%%/doc/zim/usage/html_entities.txt
@@ -57,11 +67,14 @@ share/pixmaps/zim.png
 %%DATADIR%%/doc/zim/usage/syntax.txt
 %%DATADIR%%/plugins/PrintToBrowser.pl
 %%DATADIR%%/plugins/Spell.pl
+%%DATADIR%%/plugins/Subversion.pl
 %%DATADIR%%/plugins/TrayIcon.pl
-%%DATADIR%%/templates/Default.html
-%%DATADIR%%/templates/Presentation.html
-%%DATADIR%%/templates/Print.html
-%%DATADIR%%/templates/SlideShow_(S5).html
+%%DATADIR%%/reader.conf
+%%DATADIR%%/templates/html/Default.html
+%%DATADIR%%/templates/html/Presentation.html
+%%DATADIR%%/templates/html/Print.html
+%%DATADIR%%/templates/html/SlideShow_(S5).html
+%%DATADIR%%/templates/txt2tags/Default.t2t
 %%DATADIR%%/urls.list
 %%DATADIR%%/zim.svg
 @dirrmtry %%SITE_PERL%%/Gtk2/Ex
@@ -69,13 +82,15 @@ share/pixmaps/zim.png
 @dirrm %%SITE_PERL%%/Zim/GUI
 @dirrm %%SITE_PERL%%/Zim/Repository
 @dirrm %%SITE_PERL%%/Zim/Formats
-@dirrm %%SITE_PERL%%/Zim/Page
 @dirrm %%SITE_PERL%%/Zim
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/doc/zim/usage
 @dirrm %%DATADIR%%/doc/zim
 @dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%/templates/txt2tags
+@dirrm %%DATADIR%%/templates/html
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
+@dirrmtry share/pixmaps/zim
 @dirrmtry share/pixmaps
