@@ -146,7 +146,6 @@ share/doc/libxcb/manual/files.html
 share/doc/libxcb/manual/functions.html
 share/doc/libxcb/manual/functions_vars.html
 share/doc/libxcb/manual/globals.html
-share/doc/libxcb/manual/globals_defs.html
 share/doc/libxcb/manual/globals_func.html
 share/doc/libxcb/manual/globals_type.html
 share/doc/libxcb/manual/glx_8h-source.html
