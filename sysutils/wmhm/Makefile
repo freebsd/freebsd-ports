@@ -30,6 +30,10 @@ CONFIGURE_ARGS+=--with-xpm-includes=${X11BASE}/include \
 
 .include <bsd.port.pre.mk>
 
+.if (${OSVERSION} < 601000) && (${ARCH} == "amd64")
+IGNORE=		5.x does not support speaker(4)
+.endif
+
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/wmhm
 

@@ -1,11 +1,15 @@
 --- operations.c.orig	Sun Jul 22 07:00:55 2001
-+++ operations.c	Sat Mar 17 17:43:22 2007
-@@ -39,12 +39,11 @@
++++ operations.c	Sat Mar 24 14:29:26 2007
+@@ -39,12 +39,16 @@
  #include <unistd.h>
  #include <math.h>
  #include <machine/cpufunc.h>
--#include <machine/speaker.h>
++#include <osreldate.h>
++#if __FreeBSD_version >= 601000
 +#include <dev/speaker/speaker.h>
++#else
+ #include <machine/speaker.h>
++#endif
  
  #ifdef HAVE_SMBUS
 -#include <machine/smb.h>
