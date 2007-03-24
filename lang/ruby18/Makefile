@@ -126,13 +126,6 @@ EXTDOCS=	bigdecimal/bigdecimal_*.html	\
 
 MAN1=		${RUBY_NAME}.1
 
-# XXX: exists untill it will be committed to bsd.port.mk
-COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
-		2>&1) && \
-		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} $$1 && \
-		${FIND} $$1/ -type d -exec ${CHMOD} 755 {} \; && \
-		${FIND} $$1/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;' --
-
 # Macros to change variables in rbconfig.rb
 RB_SET_CONF_VAR=${SH} -c '${REINPLACE_CMD} -E -e "s,(CONFIG\[\"$$0\"\][[:space:]]*=[[:space:]]*)(\(?)(.*)(\)?),\1\2$$1\4," ${WRKSRC}/rbconfig.rb' --
 

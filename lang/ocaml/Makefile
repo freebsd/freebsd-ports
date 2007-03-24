@@ -35,13 +35,6 @@ OPTIONS=	X11	"Build with X11 support" on \
 MODOPT=		camlp4o camlp4r ocamlc ocamldep ocamldoc ocamllex ocamlopt
 PATTERN=	[[:space:]]*(do|then)?[[:space:]]*)(\$$\(CP\)|cp)([[:space:]]
 
-# XXX: exists untill it will be committed to bsd.port.mk
-COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
-		2>&1) && \
-		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} $$1 && \
-		${FIND} $$1/ -type d -exec ${CHMOD} 755 {} \; && \
-		${FIND} $$1/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;' --
-
 .include <bsd.port.pre.mk>
 
 MAN1!=	${CAT} ${FILESDIR}/man1

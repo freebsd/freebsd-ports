@@ -26,13 +26,6 @@ INSTALL_TARGET=	site-install
 
 DOCS=		README doc event_codes.txt
 
-# XXX: exists untill it will be committed to bsd.port.mk
-COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
-		2>&1) && \
-		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} $$1 && \
-		${FIND} $$1/ -type d -exec ${CHMOD} 755 {} \; && \
-		${FIND} $$1/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;' --
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
