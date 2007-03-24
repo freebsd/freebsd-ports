@@ -74,6 +74,9 @@ CONFIGURE_ARGS+=	--without-mmx
 .if defined(WITH_OPENGL)
 USE_GL=		yes
 CONFIGURE_ARGS+=	--with-opengl
+SNES9X_BIN=	osnes9x
+.else
+SNES9X_BIN=	snes9x
 .endif
 
 .if !defined(WITHOUT_SCREENSHOT)
@@ -107,7 +110,7 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/unix/docs/readme_unix.txt ${DOCSDIR}/README
 .endif
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${SNES9X_BIN} ${PREFIX}/bin/${PORTNAME}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
