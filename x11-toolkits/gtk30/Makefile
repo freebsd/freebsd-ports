@@ -68,15 +68,6 @@ PLIST_SUB+=	CUPS:=""
 PLIST_SUB+=	CUPS:="@comment "
 .endif
 
-# There is a SSE2 bug in either GCC or in our libc, when use p4, p-m or else
-# is being use in CPUTYPE that enable SSE2 will causing Java with GTK2 and
-# Mono/gtk-sharp crash. Disable SSE2 to solve the crash and see ports/72014
-# for detail.
-.if ${OSVERSION} >= 500000 && ( ${ARCH} == "i386" || ${ARCH} == "amd64" ) \
-	&& ${CC} != "icc"
-#CFLAGS+=	-mno-sse2
-.endif
-
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${GREP} -l lgmodule | \
 		${XARGS} ${REINPLACE_CMD} -e 's|-lgmodule|@GMODULE_LIBS@|g'
