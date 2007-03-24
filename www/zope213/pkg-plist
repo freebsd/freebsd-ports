@@ -1,4 +1,12 @@
 %%ZOPEBASEDIR%%/Products/00readme-freebsd.txt
+%%ZOPEBASEDIR%%/Products/Hotfix_20070320/README.txt
+%%ZOPEBASEDIR%%/Products/Hotfix_20070320/__init__.py
+%%ZOPEBASEDIR%%/Products/Hotfix_20070320/__init__.pyc
+%%ZOPEBASEDIR%%/Products/Hotfix_20070320/tests/__init__.py
+%%ZOPEBASEDIR%%/Products/Hotfix_20070320/tests/__init__.pyc
+%%ZOPEBASEDIR%%/Products/Hotfix_20070320/tests/test_hotfix.py
+%%ZOPEBASEDIR%%/Products/Hotfix_20070320/tests/test_hotfix.pyc
+%%ZOPEBASEDIR%%/Products/Hotfix_20070320/version.txt
 %%ZOPEBASEDIR%%/bin/README.txt
 %%ZOPEBASEDIR%%/bin/analyze.py
 %%ZOPEBASEDIR%%/bin/analyze.pyc
@@ -9854,5 +9862,7 @@
 @dirrm %%ZOPEBASEDIR%%/skel/etc/package-includes
 @dirrm %%ZOPEBASEDIR%%/skel/etc
 @dirrm %%ZOPEBASEDIR%%/skel
+@dirrm %%ZOPEBASEDIR%%/Products/Hotfix_20070320/tests
+@dirrm %%ZOPEBASEDIR%%/Products/Hotfix_20070320
 @dirrmtry %%ZOPEBASEDIR%%/Products
 @dirrmtry %%ZOPEBASEDIR%%
