@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plus
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.7.1
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -28,6 +28,7 @@ USE_GETTEXT=		yes
 
 DOCSDIR=	share/doc/${PKGNAMEPREFIX:S/-//}
 DATADIR=	share/${PKGNAMEPREFIX:S/-//}
+MAN1=		nicotine-import-winconfig.1 nicotine.1
 
 OPTIONS=	GEOIP "Enable the GeoIP based country code blocker" off \
 		PSYCO "Enable Psyco, the optimizing Python compiler" on \
