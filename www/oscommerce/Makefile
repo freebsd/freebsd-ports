@@ -23,9 +23,6 @@ NO_BUILD=	yes
 OSCOMMERCE=	${PREFIX}/www/data/oscommerce
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-WWWOWN?=	www
-WWWGRP?=	www
-
 do-install:
 	${MKDIR} ${OSCOMMERCE}
 	${CP} -R ${WRKSRC}/catalog ${OSCOMMERCE}

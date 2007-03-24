@@ -28,8 +28,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-WWWOWN?=	www
-WWWGRP?=	www
 LOGDIR?=	/var/log/hydra
 
 SUB_FILES=	pkg-deinstall

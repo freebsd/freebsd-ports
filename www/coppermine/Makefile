@@ -25,8 +25,6 @@ USE_PHP+=	gd
 .endif
 
 CPGDIR?=	www/coppermine
-WWWOWN?=	www
-WWWGRP?=	www
 
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message

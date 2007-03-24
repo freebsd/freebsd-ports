@@ -32,8 +32,6 @@ HOSTNAME!=	/usr/sbin/sysctl -n kern.hostname
 #
 WWWDOCROOT?=	www/data
 PHPBB_URL?=	phpBB2
-WWWOWN?=	www
-WWWGRP?=	www
 #
 # End of user-configurable variables.
 

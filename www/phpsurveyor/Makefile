@@ -23,8 +23,6 @@ USE_ZIP=	yes
 #User-configurable variables
 WWWDOCROOT?=	www/
 PHPSURVEYORURL?=	phpsurveyor
-WWWOWN?=	www
-WWWGRP?=	www
 #
 # End of user-configurable variables.
 

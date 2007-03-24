@@ -27,8 +27,6 @@ USE_BZIP2=	yes
 #
 WWWDOCROOT?=	www
 PHPBBURL?=	phpBB2
-WWWOWN?=	www
-WWWGRP?=	www
 #
 # End of user-configurable variables.
 
