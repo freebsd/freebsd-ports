@@ -32,5 +32,4 @@ GNU_CONFIGURE=	yes
 IGNORE=	does not build on 4.X
 .endif
 
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
 .include <bsd.port.post.mk>

@@ -25,9 +25,6 @@ OPTIONS=	EWL "Build EWL backend" on \
 		ETK "Build ETK backed" off
 
 .include <bsd.port.pre.mk>
-BEFOREPORTMK=	yes
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
-.undef BEFOREPORTMK
 
 .if defined(WITHOUT_EWL) && !defined(WITH_ETK)
 BROKEN=		you should select either ETK or EWL
@@ -43,5 +40,4 @@ USE_EFL+=	etk
 PLIST_FILES+=	bin/empower_etk
 .endif
 
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
 .include <bsd.port.post.mk>

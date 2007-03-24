@@ -29,7 +29,6 @@ OPTIONS=	XTRACT "Enable metadata extraction via libextractor" on \
 DATADIR=	${PREFIX}/share/entropy
 
 .include <bsd.port.pre.mk>
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
 
 .if !defined(WITHOUT_XTRACT)
 LIB_DEPENDS+=	extractor.2:${PORTSDIR}/textproc/libextractor

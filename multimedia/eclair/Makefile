@@ -24,6 +24,4 @@ USE_EFL=	ecore edje evas emotion
 USE_EFL_ESMART=	trans_x11
 USE_SQLITE=	3
 
-.include <bsd.port.pre.mk>
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

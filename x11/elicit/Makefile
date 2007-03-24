@@ -26,5 +26,4 @@ USE_EFL_ESMART=	trans_x11
 BROKEN=		edje is broken on ia64
 .endif
 
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
 .include <bsd.port.post.mk>

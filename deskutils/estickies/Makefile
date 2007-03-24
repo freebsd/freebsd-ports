@@ -20,6 +20,4 @@ USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_EFL=	etk eet
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

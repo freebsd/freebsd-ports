@@ -28,9 +28,6 @@ PLIST_FILES=	bin/exhibit %%DATADIR%%/gui.edj
 PLIST_DIRS=	%%DATADIR%%
 
 .include <bsd.port.pre.mk>
-BEFOREPORTMK=	yes
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
-.undef BEFOREPORTMK
 
 .if !defined(WITHOUT_ENGRAVE) || ${HAVE_EFL:Mengrave}
 USE_EFL+=	engrave
@@ -41,5 +38,4 @@ BUILD_DEPENDS+=	enlightenment_remote:${PORTSDIR}/x11-wm/enlightenment-devel
 RUN_DEPENDS+=	enlightenment_remote:${PORTSDIR}/x11-wm/enlightenment-devel
 .endif
 
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
 .include <bsd.port.post.mk>

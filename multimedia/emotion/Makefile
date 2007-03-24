@@ -26,7 +26,6 @@ OPTIONS=	XINE "Build Xine module" on \
 		GST "Build GStreamer module" on
 
 .include <bsd.port.pre.mk>
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
 
 .if defined(WITHOUT_XINE) && defined(WITHOUT_GST)
 IGNORE=	is useless without playback library. Please run 'make config' and choose one of XINE and GST

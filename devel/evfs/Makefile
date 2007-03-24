@@ -29,7 +29,6 @@ OPTIONS=	SAMBA	"Build samba plugin" off \
 		XTRACT "Enable extended metadata extraction via libextractor" on
 
 .include <bsd.port.pre.mk>
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
 
 .if defined(WITH_SAMBA)
 LIB_DEPENDS+=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient

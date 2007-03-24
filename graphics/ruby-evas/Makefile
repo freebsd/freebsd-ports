@@ -32,5 +32,4 @@ do-install:
 	@(cd ${WRKSRC}; ${SETENV} EVAS_PREFIX=${LOCALBASE} \
 		${LOCALBASE}/bin/rake install)
 
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
 .include <bsd.port.post.mk>

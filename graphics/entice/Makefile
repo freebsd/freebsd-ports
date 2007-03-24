@@ -29,5 +29,4 @@ USE_EFL_ESMART=	thumb
 BROKEN=		does not install on ${ARCH}
 .endif
 
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
 .include <bsd.port.post.mk>

@@ -28,6 +28,4 @@ USE_GNOME=	gnometarget pkgconfig
 USE_EFL=	imlib2 evas edje ecore embryo eet ewl engrave epsilon
 USE_EFL_ESMART=	trans_x11
 
-.include <bsd.port.pre.mk>
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

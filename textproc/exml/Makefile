@@ -19,6 +19,4 @@ USE_GNOME=	libxml2 libxslt gnomehack gnometarget pkgconfig
 USE_EFL=	ecore
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
