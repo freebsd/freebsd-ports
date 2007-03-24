@@ -48,5 +48,4 @@ CONFIGURE_ARGS=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
 .include <bsd.port.post.mk>

@@ -29,5 +29,4 @@ PLIST_FILES=	bin/enity
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-src_bin_enity.c
 .endif
 
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
 .include <bsd.port.post.mk>

@@ -22,6 +22,4 @@ USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_EFL=	ecore evas epsilon edje
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

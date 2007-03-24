@@ -176,5 +176,4 @@ CONFIGURE_ARGS+=	--disable-image-loader-svg
 PLIST_SUB+=	SVG="@comment "
 .endif
 
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
 .include <bsd.port.post.mk>

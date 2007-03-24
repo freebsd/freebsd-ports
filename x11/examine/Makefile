@@ -22,6 +22,4 @@ USE_EFL=	ecore ewl
 
 PLIST_FILES=	bin/examine bin/exsh
 
-.include <bsd.port.pre.mk>
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

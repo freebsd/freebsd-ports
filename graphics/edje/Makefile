@@ -32,5 +32,4 @@ IGNORE=	does not build on 4.X
 BROKEN=		edje is broken on ia64
 .endif
 
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
 .include <bsd.port.post.mk>

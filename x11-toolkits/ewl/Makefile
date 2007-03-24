@@ -27,9 +27,6 @@ OPTIONS=	EPSILON	"Enable Epsilon Support for Ewl_Image" on \
 		EMOTION "Enable Emotion Support for Ewl_Media" on
 
 .include <bsd.port.pre.mk>
-BEFOREPORTMK=	yes
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
-.undef BEFOREPORTMK
 
 .if ${ARCH} == ia64
 BROKEN=		does not compile on ${ARCH}
@@ -55,5 +52,4 @@ PLIST_SUB+=	EVAS_GL=""
 PLIST_SUB+=	EVAS_GL="@comment "
 .endif
 
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
 .include <bsd.port.post.mk>

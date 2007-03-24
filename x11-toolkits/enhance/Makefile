@@ -22,6 +22,4 @@ USE_LDCONFIG=	yes
 USE_EFL=	ecore etk exml
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

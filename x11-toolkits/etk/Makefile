@@ -24,6 +24,4 @@ USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 LDFLAGS=	"-lintl"
 
-.include <bsd.port.pre.mk>
-.include "../../x11-wm/enlightenment-devel/bsd.efl.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
