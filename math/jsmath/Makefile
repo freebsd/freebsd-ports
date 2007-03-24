@@ -17,8 +17,6 @@ COMMENT=	A Javascript tool for including mathematics in web pages
 USE_ZIP=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-WWWDIR?=	${PREFIX}/www/${PORTNAME}
-PLIST_SUB+=	WWWDIR=${WWWDIR:S,^${PREFIX}/,,}
 
 OPTIONS=	IMAGE_FONTS "Enable image fonts" On \
 		SPRITE_FONTS "Enable sprite fonts" Off

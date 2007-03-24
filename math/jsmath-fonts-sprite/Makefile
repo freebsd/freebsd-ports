@@ -18,7 +18,6 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}
 WWWDIR?=	${PREFIX}/www/jsMath
-WWWDIR_REL?=	${WWWDIR:S,^${PREFIX}/,,}
 
 .for _i in bx ex mi r sy ti
 PLIST_SUB+=	D${_i}a=${WWWDIR_REL}/fonts-sprite/cm${_i}10/alpha
@@ -26,7 +25,6 @@ PLIST_SUB+=	D${_i}p=${WWWDIR_REL}/fonts-sprite/cm${_i}10/plain
 PLIST_SUB+=	D${_i}j=${WWWDIR_REL}/fonts-sprite/cm${_i}10
 .endfor
 PLIST_SUB+=	Dcmj=${WWWDIR_REL}/fonts-sprite/cm-fonts
-PLIST_SUB+=	WWWDIR=${WWWDIR_REL}
 
 do-install:
 	@${INSTALL} -d ${WWWDIR}/fonts-sprite
