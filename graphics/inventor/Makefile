@@ -7,7 +7,7 @@
 
 PORTNAME=	inventor
 PORTVERSION=	2.1.5.p10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://oss.sgi.com/projects/inventor/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-/}
