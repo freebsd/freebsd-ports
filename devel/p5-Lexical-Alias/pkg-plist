@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Lexical/Alias.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lexical/Alias/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lexical/Alias/Alias.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lexical/Alias/Alias.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lexical/Alias
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lexical
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Lexical
