@@ -1,6 +1,7 @@
---- config/mkdepend/imakemdep.h	Fri Sep  4 21:22:25 1998
-+++ config/mkdepend/imakemdep.h	Thu Oct 16 22:43:25 2003
-@@ -278,4 +278,7 @@
+--- config/mkdepend/imakemdep.h.orig	Tue Apr 20 14:38:14 2004
++++ config/mkdepend/imakemdep.h
+@@ -440,6 +440,9 @@
+ # ifdef __i386__
  	"-D__i386__",
  # endif
 +# if defined(__amd64__) || defined(__x86_64__)
@@ -8,3 +9,4 @@
 +# endif
  # ifdef __GNUC__
  	"-traditional",
+ # endif

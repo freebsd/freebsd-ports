@@ -1,6 +1,6 @@
---- extensions/typeaheadfind/src/nsTypeAheadFind.h.orig	Fri May 23 22:00:33 2003
-+++ extensions/typeaheadfind/src/nsTypeAheadFind.h	Mon Feb  9 22:21:43 2004
-@@ -194,6 +194,9 @@
+--- extensions/typeaheadfind/src/nsTypeAheadFind.h.orig	Mon Jun 27 18:02:03 2005
++++ extensions/typeaheadfind/src/nsTypeAheadFind.h
+@@ -197,6 +197,9 @@
  
    nsCString mNotFoundSoundURL;
  

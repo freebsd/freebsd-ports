@@ -1,30 +1,37 @@
---- Makefile.in	Tue Sep 14 16:59:40 2004
-+++ Makefile.in	Tue Aug  2 08:26:55 2005
-@@ -102,6 +102,4 @@
+--- Makefile.in.orig	Tue Dec 19 14:07:36 2006
++++ Makefile.in
+@@ -110,8 +110,6 @@
+ #
  # tier 1 -  3rd party individual libraries
  #
 -tier_1_dirs	+= dbm
 -
  ifndef MOZ_NATIVE_JPEG
  tier_1_dirs	+= jpeg
---- security/manager/ssl/src/Makefile.in	Wed Jan  7 08:36:51 2004
-+++ security/manager/ssl/src/Makefile.in	Tue Aug  2 09:13:07 2005
-@@ -117,5 +117,5 @@
+ endif
+--- security/manager/ssl/src/Makefile.in.orig	Tue Aug  2 22:24:18 2005
++++ security/manager/ssl/src/Makefile.in
+@@ -123,7 +123,7 @@
+ 
  # Use local includes because they are inserted before INCLUDES
  # so that Mozilla's nss.h is used, not glibc's
 -LOCAL_INCLUDES += -I$(DIST)/public/nss \
 +LOCAL_INCLUDES += -I$(LOCALBASE)/include/nss/nss \
                    $(NULL)
  
---- config/config.mk	Tue Oct 12 00:11:11 2004
-+++ config/config.mk	Tue Aug  2 09:19:18 2005
-@@ -170,5 +170,4 @@
+ EXTRA_DSO_LDOPTS += \
+--- config/config.mk.orig	Thu Apr  6 09:28:13 2006
++++ config/config.mk
+@@ -144,7 +144,6 @@
+ 
  NSS_LIBS	= \
  	$(LIBS_DIR) \
 -	$(DIST)/lib/$(LIB_PREFIX)crmf.$(LIB_SUFFIX) \
  	-lsmime3 \
  	-lssl3 \
-@@ -189,11 +188,5 @@
+ 	-lnss3 \
+@@ -163,13 +162,7 @@
+ endif
  endif
  
 -NSS_DEP_LIBS	= \
@@ -37,9 +44,11 @@
 +NSS_DEP_LIBS	=
  
  MOZ_UNICHARUTIL_LIBS = $(DIST)/lib/$(LIB_PREFIX)unicharutil_s.$(LIB_SUFFIX)
---- security/manager/ssl/src/nsNSSComponent.cpp	Thu Apr 22 15:48:30 2004
-+++ security/manager/ssl/src/nsNSSComponent.cpp	Thu Aug  4 16:44:27 2005
-@@ -88,4 +88,8 @@
+ MOZ_REGISTRY_LIBS          = $(DIST)/lib/$(LIB_PREFIX)mozreg_s.$(LIB_SUFFIX)
+--- security/manager/ssl/src/nsNSSComponent.cpp.orig	Thu Aug 25 23:41:50 2005
++++ security/manager/ssl/src/nsNSSComponent.cpp
+@@ -119,6 +119,10 @@
+ #include "p12plcy.h"
  }
  
 +#include <sys/types.h>
@@ -48,20 +57,26 @@
 +
  #ifdef PR_LOGGING
  PRLogModuleInfo* gPIPNSSLog = nsnull;
-@@ -406,4 +410,5 @@
+ #endif
+@@ -689,6 +693,7 @@
+ 
      const char *possible_ckbi_locations[] = {
        NS_GRE_DIR,
 +      NS_UNIX_LIB_DIR,
        NS_XPCOM_CURRENT_PROCESS_DIR
      };
-@@ -419,5 +424,5 @@
+     
+@@ -702,7 +707,7 @@
+         continue;
        }
  
 -      char *fullModuleName = nsnull;
 +      char *fullModuleName;
  #ifdef XP_MAC
        nsCAutoString nativePath;
-@@ -431,4 +436,12 @@
+       mozFile->AppendNative(NS_LITERAL_CSTRING("Essential Files"));
+@@ -714,6 +719,14 @@
+       mozFile->GetNativePath(processDir);
        fullModuleName = PR_GetLibraryName(processDir.get(), "nssckbi");
  #endif
 +      if (fullModuleName == nsnull)
@@ -74,9 +89,10 @@
 +      }
        /* If a module exists with the same name, delete it. */
        NS_ConvertUCS2toUTF8 modNameUTF8(modName);
---- security/manager/Makefile.in.orig	Tue Dec 19 17:07:37 2006
-+++ security/manager/Makefile.in	Sat Feb 24 17:28:01 2007
-@@ -52,21 +52,12 @@ PACKAGE_VARS += \
+       int modType;
+--- security/manager/Makefile.in.orig	Tue Dec 19 14:07:37 2006
++++ security/manager/Makefile.in
+@@ -52,21 +52,12 @@
  	SSL3_LIB \
  	SOFTOKEN3_LIB \
  	SOFTOKEN3_CHK \
@@ -98,7 +114,7 @@
  # Default
  HAVE_FREEBL_LIBS = 1
  
-@@ -190,11 +181,6 @@ export:: .nss.cleaned
+@@ -190,11 +181,6 @@
  
  .nss.cleaned: .nss.checkout
  	$(MAKE) -C $(topsrcdir)/security/coreconf $(DEFAULT_GMAKE_FLAGS) clean
@@ -110,7 +126,7 @@
  	touch $@
  
  .nss.checkout:
-@@ -212,89 +198,6 @@ libs::
+@@ -212,89 +198,6 @@
  	$(MAKE) -C $(topsrcdir)/security/coreconf $(DEFAULT_GMAKE_FLAGS)
  ifeq ($(OS_ARCH),WINNT)
  	cd $(DIST)/lib; cp -f $(LIB_PREFIX)dbm$(MOZ_BITS).$(LIB_SUFFIX) $(LIB_PREFIX)dbm.$(LIB_SUFFIX)
@@ -200,7 +216,7 @@
  endif
  	$(MAKE) -C boot $@
  	$(MAKE) -C ssl $@
-@@ -304,42 +207,6 @@ ifdef MOZ_XUL
+@@ -304,42 +207,6 @@
  endif
  
  install::
@@ -243,7 +259,7 @@
  	$(MAKE) -C boot $@
  	$(MAKE) -C ssl $@
  	$(MAKE) -C locales $@
-@@ -355,11 +222,6 @@ ifdef MOZ_XUL
+@@ -355,11 +222,6 @@
  	$(MAKE) -C pki $@
  endif
  	$(MAKE) -C $(topsrcdir)/security/coreconf $(DEFAULT_GMAKE_FLAGS) clean
