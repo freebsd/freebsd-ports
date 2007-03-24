@@ -6,23 +6,22 @@
 #
 
 PORTNAME=	jasmin
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	2.3
 PORTEPOCH=	1
 CATEGORIES=	java lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemoliu@gmail.com
 COMMENT=	Java Assembler Interface
-
-RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_ZIP=	yes
 USE_ANT=	yes
 ALL_TARGET=	jasmin
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
+USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=	.*\.(txt|xml|j|class|java|mf|css|bnf|html)
 
 SUB_FILES=	jasmin.sh
 
