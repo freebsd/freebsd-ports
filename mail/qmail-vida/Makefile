@@ -17,6 +17,8 @@ MASTER_SITE_SUBDIR=${PORTNAME}/2100/:vida
 MAINTAINER=	futurebsd@infoseek.to
 COMMENT=	SMTP_AUTH/APOP support for qmail
 
+IGNORE=		abuses UID registered to another port, and uses unregistered GID
+
 DISTFILES=	${DISTNAME}.tar.gz:vida	\
 		${DISTNAME_QMAIL}.tar.gz:qmail		\
 		${DISTNAME_CHECKPASSWORD}.tar.gz:checkpassword	\
