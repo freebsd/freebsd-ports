@@ -4,3 +4,6 @@ SIZE (zope/Zope-2.8.8-final.tgz) = 5394023
 MD5 (zope/Hotfix_20060821.tar.gz) = 5cb921d15ff6d290bfc73bdc20ff67c1
 SHA256 (zope/Hotfix_20060821.tar.gz) = 6ba5f717cc7443c6182c5b829f2a4228e7c56667d07e2b6fad8323ab1ec850af
 SIZE (zope/Hotfix_20060821.tar.gz) = 1050
+MD5 (zope/Hotfix_20070320.tgz) = 0b4cd365d99731e18827ead11400087d
+SHA256 (zope/Hotfix_20070320.tgz) = 3b8760301826aba22386a561de48523663fc7840fc11280e2c34163ba4be383a
+SIZE (zope/Hotfix_20070320.tgz) = 3805
