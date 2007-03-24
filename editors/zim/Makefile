@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zim
-PORTVERSION=	0.17
+PORTVERSION=	0.19
 CATEGORIES=	editors perl5
 MASTER_SITES=	http://pardus-larus.student.utwente.nl/~pardus/downloads/Zim/
 DISTNAME=	Zim-${PORTVERSION}
@@ -28,7 +28,11 @@ MAN3=		Gtk2::Ex::DesktopEntryMenu.3 \
 		Gtk2::Ex::HyperTextBuffer.3 \
 		Gtk2::Ex::HyperTextView.3 \
 		Gtk2::Ex::PathBar.3 \
+		Zim.3 \
+		Zim::Events.3 \
 		Zim::File.3 \
+		Zim::Formats.3 \
+		Zim::Formats::Txt2tags.3 \
 		Zim::GUI::Spell.3 \
 		Zim::Selection.3 \
 		Zim::GUI::Calendar.3 \
@@ -40,6 +44,7 @@ MAN3=		Gtk2::Ex::DesktopEntryMenu.3 \
 		Zim::GUI::SearchDialog.3 \
 		Zim::GUI.3 \
 		Zim::GUI::PageView.3 \
+		Zim::GUI::RepositoriesDialog.3 \
 		Zim::GUI::TrayIcon.3 \
 		Zim::GUI::TreeView.3 \
 		Zim::GUI::PathBar.3 \
@@ -47,12 +52,11 @@ MAN3=		Gtk2::Ex::DesktopEntryMenu.3 \
 		Zim::Formats::Wiki.3 \
 		Zim::History.3 \
 		Zim::Page.3 \
-		Zim::Page::Text.3 \
 		Zim::Repository.3 \
-		Zim::Repository::Base.3 \
 		Zim::Repository::Files.3 \
 		Zim::Repository::Man.3 \
 		Zim::Template.3 \
+		Zim::TextBuffer.3 \
 		Zim::Win32.3
 
 OPTIONS=	TRAYICON	"Support trayicon"	on \
