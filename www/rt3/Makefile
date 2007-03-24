@@ -52,6 +52,8 @@ BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+IGNORE=		uses a random gid in the range reserved for local sysadmin use
+
 APACHE_COMPAT=	yes
 HAS_CONFIGURE=	yes
 #NO_BUILD=	yes
