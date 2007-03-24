@@ -2110,6 +2110,7 @@
     SUBDIR += uclmmbase
     SUBDIR += ucpp
     SUBDIR += udis86
+    SUBDIR += umem
     SUBDIR += upnp
     SUBDIR += upnp104
     SUBDIR += upp
