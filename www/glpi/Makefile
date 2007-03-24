@@ -24,8 +24,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 CPIOARGS=	--quiet -pdum -R
 
 GLPIDIR?=	www/${PORTNAME}
-WWWOWN?=	www
-WWWGRP?=	www
 
 .include <bsd.port.pre.mk>
 

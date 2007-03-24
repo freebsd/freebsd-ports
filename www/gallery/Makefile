@@ -81,8 +81,6 @@ pre-fetch:
 .endif
 
 GALLERYDIR?=	www/data/gallery
-WWWOWN?=	www
-WWWGRP?=	www
 
 post-configure:
 	@ ${SED} -e 's#%%PREFIX%%#${PREFIX}#g' \

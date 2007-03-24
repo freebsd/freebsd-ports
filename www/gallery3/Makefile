@@ -26,8 +26,6 @@ CPIOARGS=	--quiet -pdum -R
 PLIST_SUB+=	GALLERY2DIR=${GALLERY2DIR}
 
 GALLERY2DIR?=	www/gallery2
-WWWOWN?=	www
-WWWGRP?=	www
 
 # Note that USE_PHP must be set before bsd.port.pre.mk is included, so
 # OPTIONS can't be used right now without making portlint angry

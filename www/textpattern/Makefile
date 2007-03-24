@@ -15,8 +15,6 @@ COMMENT=	A free, flexible, elegant, easy-to-use content management system
 
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
-WWWOWN?=	www
-WWWGRP?=	www
 TEXTPATTERN?=	www/${PORTNAME}
 PLIST_SUB+=	TEXTPATTERN=${TEXTPATTERN}
 USE_PHP=	mbstring xml mysql

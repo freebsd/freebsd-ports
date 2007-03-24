@@ -24,8 +24,6 @@ USE_DOS2UNIX=	tools/logresolvemerge.pl
 SUB_FILES=	pkg-message
 AWSTATS?=	www/awstats
 PLIST_SUB=	AWSTATS=${AWSTATS}
-WWWOWN?=	www
-WWWGRP?=	www
 
 CONFLICTS=	awstats-6.*
 LATEST_LINK=	awstats-devel

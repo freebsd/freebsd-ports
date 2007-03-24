@@ -43,8 +43,6 @@ RESTRICTED=	"Commercial license"
 .include <bsd.port.pre.mk>
 
 APP_HOME!=	${MAKE} -C ${PORTSDIR}/www/tomcat41 -VAPP_HOME
-WWWOWN?=	www
-WWWGRP?=	www
 
 CNFLSTS=	account/admin.ndt	\
 		account/license.dat	\

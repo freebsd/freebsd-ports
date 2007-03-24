@@ -36,8 +36,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/web
 # tweaked at buildtime.  Perform a "make options" to see more
 # information on these variables.
 WEBFRONTDIR?=	www/ganglia
-WWWOWN?=	www
-WWWGRP?=	www
 
 # Set custom variables:
 #

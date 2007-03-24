@@ -19,8 +19,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
-WWWOWN?=	www
-WWWGRP?=	www
 INSTALL_DIR?=	www/${PORTNAME}
 PLIST=		${WRKDIR}/pkg-plist
 

@@ -24,8 +24,6 @@ NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME:L}-${PORTVERSION}
 
 WWW_ROOT?=	www/lam
-WWWOWN?=	www
-WWWGRP?=	www
 PKGINSTALL=	${WRKDIR}/pkg-install
 PLIST_SUB+=	WWWROOT=${WWW_ROOT}
 WWW_DATA=	index.html config graphics help lib sess style templates tmp

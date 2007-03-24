@@ -18,8 +18,6 @@ USE_BZIP2=	yes
 #
 WWWDOCROOT?=	www/data
 WACKOURL?=	wacko
-WWWOWN?=	www
-WWWGRP?=	www
 #
 # End of user-configurable variables.
 CFGFILE=interwiki.conf
