@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	ljpms
-PORTVERSION=    1.2
+PORTVERSION=	1.3
 CATEGORIES=	www perl5 deskutils
 MASTER_SITES=	http://ljsm.feechki.org/
-DISTFILES=	ljpms-1_2.zip
+DISTFILES=	ljpms-1_3.zip
 
 MAINTAINER=	ache@freebsd.org
 COMMENT=	Livejournal.com postings mass-restore and permissions utility
 
 RUN_DEPENDS=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
-		${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
+		${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite \
+		${SITE_PERL}/Digest/Perl/MD5.pm:${PORTSDIR}/security/p5-Digest-Perl-MD5
 
 PLIST_FILES=	bin/ljpms
 NO_WRKSUBDIR=	yes
