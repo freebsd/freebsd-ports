@@ -37,13 +37,6 @@ PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS+=--disable-video-x11
 .endif
 
-# XXX: exists until it will be committed to bsd.port.mk
-COPYTREE_SHARE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
-		2>&1) && \
-		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} $$1 && \
-		${FIND} $$1/ -type d -exec ${CHMOD} 755 {} \; && \
-		${FIND} $$1/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;' --
-
 EXAMPLES=	test/*.c test/*.bmp test/*.dat test/*.xbm test/*.wav
 DOCS=		BUGS COPYING CREDITS README README-SDL.txt WhatsNew docs.html
 
