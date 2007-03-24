@@ -37,6 +37,9 @@
 %%PYTHON_SITELIBDIR%%/pcs/packets/nd6.py
 %%PYTHON_SITELIBDIR%%/pcs/packets/nd6.pyc
 %%PYTHON_SITELIBDIR%%/pcs/packets/nd6.pyo
+%%PYTHON_SITELIBDIR%%/pcs/packets/payload.py
+%%PYTHON_SITELIBDIR%%/pcs/packets/payload.pyc
+%%PYTHON_SITELIBDIR%%/pcs/packets/payload.pyo
 %%PYTHON_SITELIBDIR%%/pcs/packets/pseudoipv6.py
 %%PYTHON_SITELIBDIR%%/pcs/packets/pseudoipv6.pyc
 %%PYTHON_SITELIBDIR%%/pcs/packets/pseudoipv6.pyo
@@ -55,23 +58,18 @@
 %%PYTHON_SITELIBDIR%%/pcs/packets/udpv6.py
 %%PYTHON_SITELIBDIR%%/pcs/packets/udpv6.pyc
 %%PYTHON_SITELIBDIR%%/pcs/packets/udpv6.pyo
-%%PYTHON_SITELIBDIR%%/pcs/packets/ymsgr.py
-%%PYTHON_SITELIBDIR%%/pcs/packets/ymsgr.pyc
-%%PYTHON_SITELIBDIR%%/pcs/packets/ymsgr.pyo
-%%PYTHON_SITELIBDIR%%/pcs/pcs.py
-%%PYTHON_SITELIBDIR%%/pcs/pcs.pyc
-%%PYTHON_SITELIBDIR%%/pcs/pcs.pyo
+%%PYTHON_SITELIBDIR%%/pcs/pcap.so
 @dirrm %%PYTHON_SITELIBDIR%%/pcs/packets
 @dirrm %%PYTHON_SITELIBDIR%%/pcs
-%%PORTDOCS%%%%DOCSDIR%%/design.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pcs.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/arpwhohas.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/ddos_analyze.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/dns_query.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/http_get.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pcap_info.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pcap_slice.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/ping.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/snarf.py
-%%PORTDOCS%%%%EXAMPLESDIR%%/tcpslice.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/udp_echo.py
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
