@@ -7,7 +7,7 @@
 
 PORTNAME=	stardict
 PORTVERSION=	2.4.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -36,6 +36,7 @@ GCONF_SCHEMAS=	stardict.schemas
 INSTALLS_OMF=	yes
 PLIST_SUB=	GNOME=""
 .else
+USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=--disable-gnome-support --disable-schemas-install
 PLIST_SUB=	GNOME="@comment not installed: "
 .endif
