@@ -8,7 +8,7 @@
 
 PORTNAME=	bitstream-vera
 PORTVERSION=	1.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/ttf-${PORTNAME}/1.10
@@ -50,18 +50,13 @@ post-patch:
 # Install
 #
 
-do-install: install-fonts install-conf install-docs
+do-install: install-fonts install-docs
 
 install-fonts:
 	${MKDIR} ${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTSDIR}
 	${INSTALL_DATA} ${FILESDIR}/fonts.dir ${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT.TXT ${FONTSDIR}
-
-install-conf:
-	${MKDIR} ${PREFIX}/etc/fonts/conf.d
-	${INSTALL_DATA} ${WRKSRC}/local.conf \
-		${PREFIX}/etc/fonts/conf.d/0.vera.conf
 
 install-docs:
 .if !defined(NOPORTDOCS)
