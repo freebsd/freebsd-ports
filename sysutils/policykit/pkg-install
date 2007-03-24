@@ -4,7 +4,7 @@ case $2 in
 POST-INSTALL)
 	USER=polkit
 	GROUP=${USER}
-	UID=559
+	UID=562
 	GID=${UID}
 	PW=/usr/sbin/pw
 
