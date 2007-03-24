@@ -7735,6 +7735,7 @@ nag		ports/deskutils/nag
 nagcon		ports/net-mgmt/nagcon
 nagios		ports/net-mgmt/nagios
 nagios-base-logos	ports/misc/nagios-base-logos
+nagios-certexp-plugin	ports/net-mgmt/nagios-certexp-plugin
 nagios-pf-plugin	ports/net-mgmt/nagios-pf-plugin
 nagios-plugins	ports/net-mgmt/nagios-plugins
 nagios-radauth-plugin	ports/net-mgmt/nagios-radauth-plugin
