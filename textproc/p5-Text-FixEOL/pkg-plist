@@ -1,2 +1,3 @@
 %%SITE_PERL%%/Text/FixEOL.pm
 %%SITE_PERL%%/Text/FixEOL.pod
+@dirrmtry %%SITE_PERL%%/Text
