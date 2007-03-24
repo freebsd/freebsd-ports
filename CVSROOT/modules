@@ -15222,6 +15222,7 @@ uk-webalizer	ports/ukrainian/webalizer
 ulxmlrpcpp	ports/net/ulxmlrpcpp
 umark		ports/games/umark
 umatrix		ports/math/umatrix
+umem		ports/devel/umem
 umfpack		ports/math/umfpack
 umix		ports/audio/umix
 umodplayer	ports/audio/umodplayer
