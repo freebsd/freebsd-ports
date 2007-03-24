@@ -6,8 +6,7 @@
 #      $Id: Makefile 23 2006-10-25 14:24:32Z buhnux $
 
 PORTNAME=	liboil
-PORTVERSION=	0.3.10
-PORTREVISION=	1
+PORTVERSION=	0.3.11
 CATEGORIES=	devel
 MASTER_SITES=	http://liboil.freedesktop.org/download/ \
 		${MASTER_SITE_LOCAL}
