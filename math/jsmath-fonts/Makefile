@@ -18,7 +18,6 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/jsMath
 WWWDIR?=	${PREFIX}/www/jsMath
-WWWDIR_REL?=	${WWWDIR:S,^${PREFIX}/,,}
 
 .for _i in bx ex mi r sy ti
 PLIST_SUB+=	D${_i}a=${WWWDIR_REL}/fonts/cm${_i}10/alpha
@@ -26,7 +25,6 @@ PLIST_SUB+=	D${_i}p=${WWWDIR_REL}/fonts/cm${_i}10/plain
 .endfor
 PLIST_SUB+=	Dcma=${WWWDIR_REL}/fonts/cm-fonts/alpha
 PLIST_SUB+=	Dcmp=${WWWDIR_REL}/fonts/cm-fonts/plain
-PLIST_SUB+=	WWWDIR=${WWWDIR_REL}
 
 do-install:
 	@${INSTALL} -d ${WWWDIR}/fonts
