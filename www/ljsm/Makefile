@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	ljsm
-PORTVERSION=    2.8
+PORTVERSION=	2.8
+PORTREVISION=	1
 CATEGORIES=	www perl5 deskutils
 MASTER_SITES=	http://ljsm.feechki.org/
 EXTRACT_SUFX=	.zip
