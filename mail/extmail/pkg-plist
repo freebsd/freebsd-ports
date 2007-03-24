@@ -290,10 +290,12 @@ www/extmail/libs/Ext/Auth/LDAP.pm
 www/extmail/libs/Ext/Auth/MySQL.pm
 www/extmail/libs/Ext/CGI.pm
 www/extmail/libs/Ext/CSV.pm
+www/extmail/libs/Ext/CaptCha.pm
 www/extmail/libs/Ext/Config.pm
 www/extmail/libs/Ext/DB.pm
 www/extmail/libs/Ext/DateTime.pm
 www/extmail/libs/Ext/FCGI.pm
+www/extmail/libs/Ext/GD.pm
 www/extmail/libs/Ext/GlobalAbook.pm
 www/extmail/libs/Ext/GlobalAbook/File.pm
 www/extmail/libs/Ext/GlobalAbook/LDAP.pm
