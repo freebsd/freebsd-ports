@@ -28,6 +28,9 @@ bin/paster
 %%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/paste/script/util/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/paste/script/util/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/paste/script/util/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/paste/script/wsgiserver/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/paste/script/wsgiserver/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/paste/script/wsgiserver/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/paste/script/appinstall.py
 %%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/paste/script/appinstall.pyc
 %%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/paste/script/appinstall.pyo
@@ -107,6 +110,7 @@ bin/paster
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/paste/script/templates/basic_package
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/paste/script/templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/paste/script/util
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/paste/script/wsgiserver
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/paste/script
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/EGG-INFO/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYPASTESCRIPT_EGG%%/EGG-INFO
