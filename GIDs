@@ -20,7 +20,7 @@ www:*:80:
 qnofiles:*:81:
 qmail:*:82:
 mysql:*:88:
-vpopmail:*:89:
+vchkpw:*:89:
 firebird:*:90:
 mailman:*:91:
 gdm:*:92:
