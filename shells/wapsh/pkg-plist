@@ -8,23 +8,23 @@ etc/wapsh/htshd.conf.dist
 @unexec if cmp -s %D/etc/wapsh/loginhosts %D/etc/wapsh/loginhosts.dist; then rm -f %D/etc/wapsh/loginhosts; fi
 etc/wapsh/loginhosts.dist
 @exec [ -f %B/loginhosts ] || cp %B/%f %B/loginhosts
-%%DATADIR%%/command.php
-%%DATADIR%%/command_html.inc
-%%DATADIR%%/command_wml.inc
-%%DATADIR%%/common.inc
-%%DATADIR%%/common_html.inc
-%%DATADIR%%/common_wml.inc
-%%DATADIR%%/controls_wml.php
-%%DATADIR%%/displayfuncs.inc
-%%DATADIR%%/getloginhosts.inc
-%%DATADIR%%/history_edit_wml.php
-%%DATADIR%%/history_html.php
-%%DATADIR%%/history_wml.php
-%%DATADIR%%/index.html
-%%DATADIR%%/login_html.php
-%%DATADIR%%/login_wml.php
-%%DATADIR%%/scroll_wml.php
-%%DATADIR%%/shortcuts_wml.php
+%%WWWDIR%%/command.php
+%%WWWDIR%%/command_html.inc
+%%WWWDIR%%/command_wml.inc
+%%WWWDIR%%/common.inc
+%%WWWDIR%%/common_html.inc
+%%WWWDIR%%/common_wml.inc
+%%WWWDIR%%/controls_wml.php
+%%WWWDIR%%/displayfuncs.inc
+%%WWWDIR%%/getloginhosts.inc
+%%WWWDIR%%/history_edit_wml.php
+%%WWWDIR%%/history_html.php
+%%WWWDIR%%/history_wml.php
+%%WWWDIR%%/index.html
+%%WWWDIR%%/login_html.php
+%%WWWDIR%%/login_wml.php
+%%WWWDIR%%/scroll_wml.php
+%%WWWDIR%%/shortcuts_wml.php
 %%PORTDOCS%%%%DOCSDIR%%/Image1.jpg
 %%PORTDOCS%%%%DOCSDIR%%/Image2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/Image3.jpg
@@ -94,5 +94,5 @@ etc/wapsh/loginhosts.dist
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/implementation_notes
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/user_guide
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%
+@dirrm %%WWWDIR%%
 @dirrmtry www/data

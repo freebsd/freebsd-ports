@@ -19,26 +19,22 @@ USE_PHP=	pcre xml
 WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME:L}
-WWWOWN?=	www
-WWWGRP?=	www
-WWWDIR?=	www/${PORTNAME}
-DATADIR=	${PREFIX}/${WWWDIR}
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
 
 post-patch:
 	${RM} -f ${PLIST}
 	cd ${WRKSRC};\
-	${FIND} . ! -type d | ${SORT} | ${SED} "s|^\.|${WWWDIR}|"\
+	${FIND} . ! -type d | ${SORT} | ${SED} "s|^\.|${WWWDIR_REL}|"\
 		>${PLIST};\
-	${FIND} . -type d | ${SORT} -r | ${SED} "s|^\.|@dirrm ${WWWDIR}|"\
+	${FIND} . -type d | ${SORT} -r | ${SED} "s|^\.|@dirrm ${WWWDIR_REL}|"\
 		>>${PLIST}
 
 do-install:
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${WWWDIR}
 	cd ${WRKSRC}; ${FIND} . \
-		| ${CPIO} -pdm -R ${WWWOWN}:${WWWGRP} ${DATADIR}
-	${CHMOD} -R ${BINMODE} ${DATADIR}
-	${FIND} ${DATADIR} ! -type d | ${XARGS} ${CHMOD} ${NOBINMODE}
+		| ${CPIO} -pdm -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	${CHMOD} -R ${BINMODE} ${WWWDIR}
+	${FIND} ${WWWDIR} ! -type d | ${XARGS} ${CHMOD} ${NOBINMODE}
 
 .include <bsd.port.mk>

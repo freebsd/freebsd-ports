@@ -22,13 +22,12 @@ NO_BUILD=	yes
 
 PORTDOCS=	CHANGES INSTALL LICENSE README.EVENTS WISHLIST
 
-WWWDIR?=	www
 CONFDIR?=	etc
 DATADIRS?=	"/var/db/rrdtool" => "[Label1] "
 SAVEDDIR?=	/var/db/${PORTNAME}/saved
 TMPDIR?=	/var/db/${PORTNAME}/tmp
 
-PLIST_SUB+=	WWWDIR=${WWWDIR} CONFDIR=${CONFDIR}
+PLIST_SUB+=	CONFDIR=${CONFDIR}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CONFDIR%%|${PREFIX}/${CONFDIR}|g' ${WRKSRC}/drraw.cgi
@@ -43,12 +42,12 @@ post-patch:
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/drraw.conf-dist ${PREFIX}/${CONFDIR}
 
-	${MKDIR} ${PREFIX}/${WWWDIR}/${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKSRC}/drraw.cgi ${PREFIX}/${WWWDIR}/${PORTNAME}
+	${MKDIR} ${WWWDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/drraw.cgi ${WWWDIR}
 
-	${MKDIR} ${PREFIX}/${WWWDIR}/${PORTNAME}/icons
+	${MKDIR} ${WWWDIR}/icons
 .for theFile in bomb.gif folder.gif folder.open.gif generic.gif link.gif text.gif unknown.gif
-	${INSTALL_DATA} ${WRKSRC}/icons/${theFile} ${PREFIX}/${WWWDIR}/${PORTNAME}/icons
+	${INSTALL_DATA} ${WRKSRC}/icons/${theFile} ${WWWDIR}/icons
 .endfor
 
 .if !defined(NOPORTDOCS)

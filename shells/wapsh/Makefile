@@ -19,10 +19,6 @@ USE_RC_SUBR=	htshd.sh
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
-WWWOWN?=	www
-WWWGRP?=	www
-WWWDIR?=	www/${PORTNAME}
-DATADIR=	${PREFIX}/${WWWDIR}
 SUB_FILES=	pkg-message
 
 USERGUIDEDOCS=	Image10.jpg Image11.jpg Image12.jpg Image13.jpg \
@@ -57,10 +53,9 @@ do-build:
 
 pre-install:
 	@${ECHO_MSG} "----------------------------------------------------------------"
-	@${ECHO_MSG} "Set WWWDIR to the location of your web server's document root,"
-	@${ECHO_MSG} "relative to ${PREFIX}"
+	@${ECHO_MSG} "Set WWWDIR to the location of your web server's document root"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "${PORTNAME} will be installed under ${PREFIX}/\$$WWWDIR/"
+	@${ECHO_MSG} "${PORTNAME} will be installed under \$$WWWDIR/"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "The current value of WWWDIR is: ${WWWDIR}"
 	@${ECHO_MSG} ""
@@ -80,11 +75,11 @@ do-install:
 	fi
 .endfor
 
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${WWWDIR}
 .for H in ${HTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/htdocs/$H ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/htdocs/$H ${WWWDIR}
 .endfor
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${DATADIR}
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/admin_guide

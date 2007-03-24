@@ -16,13 +16,8 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	Webbased calendar with iCal support
 
 NO_BUILD=	yes
-PHPICALENDAR=	www/phpicalendar
-WWWDIR=		${PREFIX}/${PHPICALENDAR}
-PLIST_SUB+=	PHPICALENDAR=${PHPICALENDAR}
 USE_PHP=	session
 SUB_FILES=	pkg-message
-SUB_LIST=	WWWDIR=${WWWDIR}
-PKGMESSAGE=	${WRKDIR}/pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}/
 
 post-extract:

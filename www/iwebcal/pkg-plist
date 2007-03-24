@@ -1,45 +1,45 @@
-%%IWEBCAL%%/README.txt
-%%IWEBCAL%%/Sample.ics
-%%IWEBCAL%%/base/main.inc
-%%IWEBCAL%%/base/popup-event-info.php
-%%IWEBCAL%%/base/time-zones.inc
-%%IWEBCAL%%/class/CalItem.inc
-%%IWEBCAL%%/class/Calendar.inc
-%%IWEBCAL%%/class/Property.inc
-%%IWEBCAL%%/class/iWebCal.inc
-%%IWEBCAL%%/config.inc
-%%IWEBCAL%%/img/btn-bg-over.gif
-%%IWEBCAL%%/img/btn-bg-sel.gif
-%%IWEBCAL%%/img/btn-bg.gif
-%%IWEBCAL%%/img/btn-change-cal.gif
-%%IWEBCAL%%/img/btn-left-over.gif
-%%IWEBCAL%%/img/btn-left-sel.gif
-%%IWEBCAL%%/img/btn-left.gif
-%%IWEBCAL%%/img/btn-next-over.gif
-%%IWEBCAL%%/img/btn-next.gif
-%%IWEBCAL%%/img/btn-prev-over.gif
-%%IWEBCAL%%/img/btn-prev.gif
-%%IWEBCAL%%/img/btn-right-over.gif
-%%IWEBCAL%%/img/btn-right-sel.gif
-%%IWEBCAL%%/img/btn-right.gif
-%%IWEBCAL%%/img/btn-today.gif
-%%IWEBCAL%%/img/completed-check.gif
-%%IWEBCAL%%/img/completed-header.gif
-%%IWEBCAL%%/img/day-bg.gif
-%%IWEBCAL%%/img/event-bg.gif
-%%IWEBCAL%%/img/event-header-bg.gif
-%%IWEBCAL%%/img/note-button.gif
-%%IWEBCAL%%/img/pix-transparent.gif
-%%IWEBCAL%%/img/powered-by-logo.gif
-%%IWEBCAL%%/img/untimed-event-bg.gif
-%%IWEBCAL%%/include/GNU General Public License.txt
-%%IWEBCAL%%/include/iWebCal-ie6.css
-%%IWEBCAL%%/include/iWebCal.css
-%%IWEBCAL%%/include/iWebCal.js
-%%IWEBCAL%%/index.php
-@dirrm %%IWEBCAL%%/include
-@dirrm %%IWEBCAL%%/img
-@dirrm %%IWEBCAL%%/class
-@dirrm %%IWEBCAL%%/base
-@dirrmtry %%IWEBCAL%%/cache
-@dirrmtry %%IWEBCAL%%
+%%WWWDIR%%/README.txt
+%%WWWDIR%%/Sample.ics
+%%WWWDIR%%/base/main.inc
+%%WWWDIR%%/base/popup-event-info.php
+%%WWWDIR%%/base/time-zones.inc
+%%WWWDIR%%/class/CalItem.inc
+%%WWWDIR%%/class/Calendar.inc
+%%WWWDIR%%/class/Property.inc
+%%WWWDIR%%/class/iWebCal.inc
+%%WWWDIR%%/config.inc
+%%WWWDIR%%/img/btn-bg-over.gif
+%%WWWDIR%%/img/btn-bg-sel.gif
+%%WWWDIR%%/img/btn-bg.gif
+%%WWWDIR%%/img/btn-change-cal.gif
+%%WWWDIR%%/img/btn-left-over.gif
+%%WWWDIR%%/img/btn-left-sel.gif
+%%WWWDIR%%/img/btn-left.gif
+%%WWWDIR%%/img/btn-next-over.gif
+%%WWWDIR%%/img/btn-next.gif
+%%WWWDIR%%/img/btn-prev-over.gif
+%%WWWDIR%%/img/btn-prev.gif
+%%WWWDIR%%/img/btn-right-over.gif
+%%WWWDIR%%/img/btn-right-sel.gif
+%%WWWDIR%%/img/btn-right.gif
+%%WWWDIR%%/img/btn-today.gif
+%%WWWDIR%%/img/completed-check.gif
+%%WWWDIR%%/img/completed-header.gif
+%%WWWDIR%%/img/day-bg.gif
+%%WWWDIR%%/img/event-bg.gif
+%%WWWDIR%%/img/event-header-bg.gif
+%%WWWDIR%%/img/note-button.gif
+%%WWWDIR%%/img/pix-transparent.gif
+%%WWWDIR%%/img/powered-by-logo.gif
+%%WWWDIR%%/img/untimed-event-bg.gif
+%%WWWDIR%%/include/GNU General Public License.txt
+%%WWWDIR%%/include/iWebCal-ie6.css
+%%WWWDIR%%/include/iWebCal.css
+%%WWWDIR%%/include/iWebCal.js
+%%WWWDIR%%/index.php
+@dirrm %%WWWDIR%%/include
+@dirrm %%WWWDIR%%/img
+@dirrm %%WWWDIR%%/class
+@dirrm %%WWWDIR%%/base
+@dirrmtry %%WWWDIR%%/cache
+@dirrmtry %%WWWDIR%%
