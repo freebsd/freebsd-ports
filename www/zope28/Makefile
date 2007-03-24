@@ -7,12 +7,14 @@
 
 PORTNAME=	zope
 PORTVERSION=	2.8.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/:src \
-		http://www.zope.org/Products/Zope/Hotfix-2006-08-21/Hotfix-20060821/:hotfix
+		http://www.zope.org/Products/Zope/Hotfix-2006-08-21/Hotfix-20060821/:hotfix1 \
+		http://www.zope.org/Products/Zope/Hotfix-2007-03-20/Hotfix-20070320/:hotfix2
 DISTFILES=	Zope-${PORTVERSION}-final.tgz:src \
-		${HOTFIX}.tar.gz:hotfix
+		${HOTFIX1}.tar.gz:hotfix1 \
+		${HOTFIX2}.tgz:hotfix2
 DIST_SUBDIR=	zope
 
 MAINTAINER=	dsh@vlink.ru
@@ -21,7 +23,8 @@ COMMENT=	An object-based web application platform
 WRKSRC=		${WRKDIR}/Zope-${PORTVERSION}-final
 USE_PYTHON=	2.3-2.4
 USE_RC_SUBR=	${PORTNAME}28.sh zeo28.sh
-HOTFIX=		Hotfix_20060821
+HOTFIX1=	Hotfix_20060821
+HOTFIX2=	Hotfix_20070320
 LATEST_LINK=	zope28
 
 # Note: the notes that follow reflect the decisions of prior maintainers
@@ -71,10 +74,12 @@ post-patch:
 		${WRKSRC}/configure
 
 post-build:
-	-${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKDIR}/${HOTFIX}
+	-${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKDIR}/${HOTFIX1}
+	-${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKDIR}/${HOTFIX2}
 
 post-install:
-	@${CP} -R ${WRKDIR}/${HOTFIX} ${ZOPEBASEDIR}/lib/python/Products/
+	@${CP} -R ${WRKDIR}/${HOTFIX1} ${ZOPEBASEDIR}/lib/python/Products/
+	@${CP} -R ${WRKDIR}/${HOTFIX2} ${ZOPEBASEDIR}/lib/python/Products/
 	${MV} ${ZOPEBASEDIR}/skel/etc/zope.conf.in \
 		${ZOPEBASEDIR}/skel/etc/zope.conf.sample.in
 
