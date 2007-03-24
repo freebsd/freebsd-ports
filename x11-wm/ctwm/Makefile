@@ -7,6 +7,7 @@
 
 PORTNAME=	ctwm
 PORTVERSION=	3.8a
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://ctwm.free.lp.se/dist/ \
 		http://www.centralmiss.com/~matt/distfiles/
@@ -14,16 +15,24 @@ MASTER_SITES=	http://ctwm.free.lp.se/dist/ \
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	An extension to twm, with support for multiple virtual screens, etc
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
-RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		ctwm.1
 
+.include <bsd.port.pre.mk>
+
+# Very old versions need GNU m4
+.if ( ${OSVERSION} < 450005 || \
+	( ${OSVERSION} >= 500000 && ${OSVERSION} < 500034 ) )
+EXTRA_PATCHES+=	${FILESDIR}/gm4-patch
+BUILD_DEPENDS+=	gm4:${PORTSDIR}/devel/m4
+RUN_DEPENDS+=	gm4:${PORTSDIR}/devel/m4
+.endif
+
 pre-configure:
 	${CP} ${WRKSRC}/Imakefile.local-template ${WRKSRC}/Imakefile.local
 	${CAT} ${FILESDIR}/Imakefile.local-additional >> ${WRKSRC}/Imakefile.local
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
