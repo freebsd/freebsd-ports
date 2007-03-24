@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Config-IniHash
-PORTVERSION=	2.8.2
+PORTVERSION=	2.9.0
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/J/JE/JENDA
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for reading and writing INI files
 
 RUN_DEPENDS=	${SITE_PERL}/Hash/Case.pm:${PORTSDIR}/devel/p5-Hash-Case \
