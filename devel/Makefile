@@ -135,6 +135,7 @@
     SUBDIR += cdk
     SUBDIR += cdoc
     SUBDIR += cedet
+    SUBDIR += cedet-emacs22
     SUBDIR += cflow
     SUBDIR += cflow2vcg
     SUBDIR += cgdb
