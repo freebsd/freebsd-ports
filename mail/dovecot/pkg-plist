@@ -1,6 +1,8 @@
 @comment $FreeBSD$
 @unexec if cmp -s %D/etc/dovecot-example.conf %D/etc/dovecot.conf; then rm -f %D/etc/dovecot.conf; fi
 etc/dovecot-example.conf
+etc/dovecot-ldap-example.conf
+etc/dovecot-sql-example.conf
 @exec if [ ! -f %D/etc/dovecot.conf ] ; then cp -p %D/%F %B/dovecot.conf; fi
 @dirrmtry include/dovecot
 lib/dovecot/imap/lib01_acl_plugin.so
@@ -51,8 +53,10 @@ libexec/dovecot/checkpassword-reply
 libexec/dovecot/dict
 libexec/dovecot/dovecot-auth
 libexec/dovecot/gdbhelper
+libexec/dovecot/idxview
 libexec/dovecot/imap
 libexec/dovecot/imap-login
+libexec/dovecot/logview
 %%POP3%%libexec/dovecot/pop3
 %%POP3%%libexec/dovecot/pop3-login
 libexec/dovecot/rawlog
@@ -62,6 +66,4 @@ sbin/dovecot
 sbin/dovecotpw
 %%DATADIR%%/dovecot-openssl.cnf
 %%DATADIR%%/mkcert.sh
-%%DATADIR%%/dovecot-ldap.conf
-%%DATADIR%%/dovecot-sql.conf
 @dirrm %%DATADIR%%

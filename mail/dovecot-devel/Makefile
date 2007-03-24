@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dovecot
-DISTVERSION=	1.0.rc27
+DISTVERSION=	1.0.rc28
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/
 
@@ -157,8 +157,6 @@ post-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/doc/mkcert.sh ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/dovecot-openssl.cnf ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/dovecot-ldap.conf ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/dovecot-sql.conf ${DATADIR}
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
