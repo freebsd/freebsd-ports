@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	eet
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	devel ruby
 MASTER_SITES=	ftp://ftp.code-monkey.de/pub/ruby-eet/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
