@@ -7,11 +7,11 @@
 
 PORTNAME=	aMule
 PORTVERSION=	2.1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p
-#MASTER_SITES=	http://download.berlios.de/amule/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	amule
+
 PATCH_SITES=	http://cvs.pld-linux.org/cgi-bin/cvsweb/SOURCES/
 PATCHFILES=	aMule-wx.patch?rev=1.2
 PATCH_DIST_STRIP=	-p1
@@ -26,7 +26,6 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier gnomehack gnomeprefix
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 USE_WX=		2.8
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
@@ -36,9 +35,7 @@ CONFIGURE_ARGS=	--disable-debug \
 		--without-included-gettext \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-libiconv-prefix=${LOCALBASE} \
-		--with-curl-config=${CURL_CONFIG} \
-		--enable-embedded_crypto \
-		--enable-monolithic
+		--enable-embedded_crypto
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
@@ -49,9 +46,8 @@ OPTIONS=	OPTIMIZE "Build with optimization" on \
 		AMULEWEBSRV "Compile aMule WebServer" on \
 		CAS "Compile C aMule Statistics (+GUI)" on \
 		ALC "Compile aMule Link Creator (+GUI)" on \
-		AMULEDAEMON "Compile aMule daemon version - EXPERIMENTAL" off
-
-CURL_CONFIG?=	${LOCALBASE}/bin/curl-config
+		AMULEDAEMON "Compile aMule daemon version - EXPERIMENTAL" off \
+		WXUNICODE "Enable Unicode support" on
 
 .include <bsd.port.pre.mk>
 
@@ -59,14 +55,20 @@ CURL_CONFIG?=	${LOCALBASE}/bin/curl-config
 BROKEN=		Will not compile on FreeBSD 4.x - See net-p2p/amule1 for 4.x compatibility
 .endif
 
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+.else
+CONFIGURE_ARGS+=	--disable-nls
+.endif
+
 # Configure options
-.if defined(WITH_OPTIMIZE)
+.if !defined(WITHOUT_OPTIMIZE)
 CONFIGURE_ARGS+=	--enable-optimize
 .else
 CONFIGURE_ARGS+=	--disable-optimize
 .endif
 
-.if defined(WITH_ED2K)
+.if !defined(WITHOUT_ED2K)
 CONFIGURE_ARGS+=	--enable-ed2k
 PLIST_SUB+=		PL_ED2K=""
 .else
@@ -74,7 +76,7 @@ CONFIGURE_ARGS+=	--disable-ed2k
 PLIST_SUB+=		PL_ED2K="@comment "
 .endif
 
-.if defined(WITH_AMULECMD)
+.if !defined(WITHOUT_AMULECMD)
 CONFIGURE_ARGS+=	--enable-amulecmd
 PLIST_SUB+=		PL_AMULECMD=""
 .else
@@ -82,7 +84,7 @@ CONFIGURE_ARGS+=	--disable-amulecmd
 PLIST_SUB+=		PL_AMULECMD="@comment "
 .endif
 
-.if defined(WITH_AMULEWEBSRV)
+.if !defined(WITHOUT_AMULEWEBSRV)
 CONFIGURE_ARGS+=	--enable-webserver
 PLIST_SUB+=		PL_AMULEWEBSRV=""
 .else
@@ -90,7 +92,7 @@ CONFIGURE_ARGS+=	--disable-webserver
 PLIST_SUB+=		PL_AMULEWEBSRV="@comment "
 .endif
 
-.if defined(WITH_CAS)
+.if !defined(WITHOUT_CAS)
 CONFIGURE_ARGS+=	--enable-cas --enable-wxcas
 PLIST_SUB+=		PL_CAS=""
 .else
@@ -98,7 +100,7 @@ CONFIGURE_ARGS+=	--disable-cas --disable-wxcas
 PLIST_SUB+=		PL_CAS="@comment "
 .endif
 
-.if defined(WITH_ALC)
+.if !defined(WITHOUT_ALC)
 CONFIGURE_ARGS+=	--enable-alc --enable-alcc
 PLIST_SUB+=		PL_ALC=""
 .else
@@ -113,6 +115,10 @@ USE_RC_SUBR=		amuled.sh
 .else
 CONFIGURE_ARGS+=	--disable-amule-daemon --disable-amule-gui
 PLIST_SUB+=		PL_AMULEDAEMON="@comment "
+.endif
+
+.if !defined(WITHOUT_WXUNICODE)
+WX_UNICODE=yes
 .endif
 
 # Man pages management
