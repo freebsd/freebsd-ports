@@ -2,7 +2,7 @@
 #
 # Configures to build the Qt library
 #
-# Copyright (C) 1999-2006 Trolltech ASA. All rights reserved.
+# Copyright (C) 1999-2007 Trolltech ASA. All rights reserved.
 #
 # This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
 # WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
@@ -535,6 +535,7 @@ CFG_USER_BUILD_KEY=
 CFG_ACCESSIBILITY=auto
 CFG_QT3SUPPORT=yes
 CFG_ENDIAN=auto
+CFG_DOUBLEFORMAT=auto
 CFG_IWMMXT=no
 CFG_GETADDRINFO=auto
 CFG_IPV6IFNAME=auto
@@ -1948,7 +1949,7 @@ else
         ;;
     SunOS:5*:*)
         case "$UNAME_MACHINE" in
-	sun4u*)
+	sun4u*|sun4v*)
             if [ "$OPT_VERBOSE" = "yes" ]; then
                 echo "    Sun SPARC (sparc)"
             fi
@@ -3165,9 +3166,9 @@ setBootstrapVariable()
 }
 END {
     if (length(var) > 0) {
-        printf "%s = ", var
+        printf "%s =", var
         for (i = 1; i <= NR; ++i)
-            printf "$(%s_%s) ", var, i
+            printf " $(%s_%s)", var, i
             printf "\n"
     }
 }' >> "$mkfile"
@@ -3891,14 +3892,11 @@ if [ "$PLATFORM_X11" = "yes" ]; then
         fi
     fi
 
-fi # X11
-
-if [ "$PLATFORM_X11" = "yes" -o "$PLATFORM_QWS" = "yes" ]; then
     # auto-detect Glib support
     if [ "$CFG_GLIB" != "no" ]; then
         if "$WHICH" pkg-config >/dev/null 2>&1; then
-            QT_CFLAGS_GLIB=`pkg-config --cflags glib-2.0`
-            QT_LIBS_GLIB=`pkg-config --libs glib-2.0`
+            QT_CFLAGS_GLIB=`pkg-config --cflags glib-2.0 gthread-2.0`
+            QT_LIBS_GLIB=`pkg-config --libs glib-2.0 gthread-2.0`
         fi
         if "$unixtests/compile.test" "$XQMAKESPEC" $OPT_VERBOSE "$relpath" "$outpath" config.tests/x11/glib "Glib" $L_FLAGS $I_FLAGS $l_FLAGS $QT_CFLAGS_GLIB $QT_LIBS_GLIB $X11TESTS_FLAGS; then
             CFG_GLIB=yes
@@ -3916,7 +3914,7 @@ if [ "$PLATFORM_X11" = "yes" -o "$PLATFORM_QWS" = "yes" ]; then
             fi
         fi
     fi
-fi # X11/QWS
+fi # X11
 
 # QWS
 if [ "$PLATFORM_QWS" = "yes" ]; then
@@ -3968,6 +3966,35 @@ if [ "$CFG_ENDIAN" = "auto" ]; then
     fi
 fi
 
+if [ "$CFG_DOUBLEFORMAT" = "auto" ]; then
+    if [ "$PLATFORM_QWS" != "yes" ]; then
+        CFG_DOUBLEFORMAT=normal
+    else
+        "$unixtests/doubleformat.test" "$XQMAKESPEC" $OPT_VERBOSE "$relpath" "$outpath"
+	F="$?"
+        if [ "$F" -eq 10 ] && [ "$CFG_ENDIAN" = "Q_LITTLE_ENDIAN" ]; then
+            CFG_DOUBLEFORMAT=normal
+        elif [ "$F" -eq 11 ] && [ "$CFG_ENDIAN" = "Q_BIG_ENDIAN" ]; then
+            CFG_DOUBLEFORMAT=normal
+        elif [ "$F" -eq 10 ]; then
+            CFG_DOUBLEFORMAT="Q_DOUBLE_LITTLE"
+        elif [ "$F" -eq 11 ]; then
+            CFG_DOUBLEFORMAT="Q_DOUBLE_BIG"
+        elif [ "$F" -eq 12 ]; then
+            CFG_DOUBLEFORMAT="Q_DOUBLE_LITTLE_SWAPPED"
+        elif [ "$F" -eq 13 ]; then
+            CFG_DOUBLEFORMAT="Q_DOUBLE_BIG_SWAPPED"
+        else
+            echo
+	    echo "The system floating point format could not be detected."
+	    echo "This may cause data to be generated in a wrong format"
+	    echo "Turn on verbose messaging (-v) to see the final report."
+	    # we do not fail on this since this is a new test, and if it fails, 
+	    # the old behavior should be correct in most cases
+            CFG_DOUBLEFORMAT=normal
+        fi
+    fi
+fi
 if [ "$CFG_STL" != "no" ]; then
     if "$unixtests/compile.test" "$XQMAKESPEC" $OPT_VERBOSE "$relpath" "$outpath" config.tests/unix/stl "STL" $L_FLAGS $I_FLAGS $l_FLAGS; then
         CFG_STL=yes
@@ -4580,6 +4607,17 @@ EOF
 else
     echo "#define Q_BYTE_ORDER $CFG_ENDIAN" >>"$outpath/src/corelib/global/qconfig.h.new"
 fi
+
+if [ "$CFG_DOUBLEFORMAT" != "normal" ]; then
+    cat >>"$outpath/src/corelib/global/qconfig.h.new" <<EOF
+/* Non-IEEE double format */
+#define Q_DOUBLE_LITTLE "01234567"
+#define Q_DOUBLE_BIG "76543210"
+#define Q_DOUBLE_LITTLE_SWAPPED "45670123"
+#define Q_DOUBLE_BIG_SWAPPED "32107654"
+#define Q_DOUBLE_FORMAT $CFG_DOUBLEFORMAT
+EOF
+fi 
 
 echo '/* Machine Architecture */' >>"$outpath/src/corelib/global/qconfig.h.new"
 ARCH_STR=`echo $ARCH | tr 'abcdefghijklmnopqrstuvwxyz' 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'`

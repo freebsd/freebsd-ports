@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	qtdemo
-PORTVERSION=	4.2.2
-PORTREVISION=	3
+PORTVERSION=	4.2.3
+PORTREVISION=	0
 CATEGORIES?=	misc
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -33,7 +33,7 @@ LIB_DEPENDS=	QtAssistantClient:${PORTSDIR}/devel/qt4-libqtassistantclient \
 		QtSvg:${PORTSDIR}/graphics/qt4-svg \
 		QtTest:${PORTSDIR}/devel/qt4-qtestlib \
 		QtXml:${PORTSDIR}/textproc/qt4-xml
-RUN_DEPENDS=	qt4-imageformats>=4.2.2:${PORTSDIR}/graphics/qt4-imageformats
+RUN_DEPENDS=	qt4-imageformats>=4.2.3:${PORTSDIR}/graphics/qt4-imageformats
 
 CONFLICTS=	linguist-0.* qt-2.* qt-3.0.* \
 		qt-3.1.* qt-3.2.* qt-designer-2.* xfmail-1.5.[0-5] \
@@ -44,7 +44,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-fast -no-exceptions \
 		-platform ${LOCALBASE}/share/qt4/mkspecs/freebsd-g++ \
 		-qt-gif -release -system-libjpeg -system-libpng \
-		-system-zlib -no-nas-sound -prefix ${PREFIX} -no-sm \
+		-system-zlib -no-nas-sound -prefix ${PREFIX}  \
 		-plugindir ${PREFIX}/lib/plugins -bindir ${PREFIX}/bin \
 		-confirm-license
 

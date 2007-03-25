@@ -406,8 +406,8 @@ lib/libQtCore.prl
 lib/libQtCore.so
 lib/libQtCore.so.4
 lib/libQtCore.so.4.2
-lib/libQtCore.so.4.2.2
-lib/libQtCore.so.4.2.2.debug
+lib/libQtCore.so.4.2.3
+lib/libQtCore.so.4.2.3.debug
 lib/plugins/.keep_me
 libdata/pkgconfig/QtCore.pc
 @dirrm lib/plugins

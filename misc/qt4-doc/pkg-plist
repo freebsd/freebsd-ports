@@ -54,6 +54,7 @@
 %%DOCSDIR%%/html/assistant-simpletextviewer-mainwindow-h.html
 %%DOCSDIR%%/html/assistant-simpletextviewer.html
 %%DOCSDIR%%/html/assistant.dcf
+%%DOCSDIR%%/html/atomic-operations.html
 %%DOCSDIR%%/html/basic.html
 %%DOCSDIR%%/html/bughowto.html
 %%DOCSDIR%%/html/buildsystem.html
@@ -362,6 +363,7 @@
 %%DOCSDIR%%/html/images/2dpainting-example.png
 %%DOCSDIR%%/html/images/abstract-connections.png
 %%DOCSDIR%%/html/images/affine-demo.png
+%%DOCSDIR%%/html/images/alphachannelimage.png
 %%DOCSDIR%%/html/images/alphafill.png
 %%DOCSDIR%%/html/images/analogclock-example.png
 %%DOCSDIR%%/html/images/analogclock-viewport.png
@@ -449,6 +451,7 @@
 %%DOCSDIR%%/html/images/cleanlooks-lineedit.png
 %%DOCSDIR%%/html/images/cleanlooks-listview.png
 %%DOCSDIR%%/html/images/cleanlooks-progressbar.png
+%%DOCSDIR%%/html/images/cleanlooks-pushbutton-menu.png
 %%DOCSDIR%%/html/images/cleanlooks-pushbutton.png
 %%DOCSDIR%%/html/images/cleanlooks-radiobutton.png
 %%DOCSDIR%%/html/images/cleanlooks-slider.png
@@ -605,6 +608,7 @@
 %%DOCSDIR%%/html/images/graphicsview-shapes.png
 %%DOCSDIR%%/html/images/graphicsview-text.png
 %%DOCSDIR%%/html/images/graphicsview-view.png
+%%DOCSDIR%%/html/images/graphicsview-zorder.png
 %%DOCSDIR%%/html/images/gridlayout.png
 %%DOCSDIR%%/html/images/groupbox-example.png
 %%DOCSDIR%%/html/images/hellogl-example.png
@@ -706,10 +710,10 @@
 %%DOCSDIR%%/html/images/macintosh-toolbox.png
 %%DOCSDIR%%/html/images/macintosh-toolbutton.png
 %%DOCSDIR%%/html/images/macintosh-treeview.png
-%%DOCSDIR%%/html/images/mainwindow-contextmenu.png
 %%DOCSDIR%%/html/images/mainwindow-demo.png
 %%DOCSDIR%%/html/images/mainwindow-docks-example.png
 %%DOCSDIR%%/html/images/mainwindow-docks.png
+%%DOCSDIR%%/html/images/mainwindowlayout.png
 %%DOCSDIR%%/html/images/mandelbrot.png
 %%DOCSDIR%%/html/images/mandelbrot_scroll1.png
 %%DOCSDIR%%/html/images/mandelbrot_scroll2.png
@@ -806,6 +810,7 @@
 %%DOCSDIR%%/html/images/plastique-printdialog.png
 %%DOCSDIR%%/html/images/plastique-progressbar.png
 %%DOCSDIR%%/html/images/plastique-progressdialog.png
+%%DOCSDIR%%/html/images/plastique-pushbutton-menu.png
 %%DOCSDIR%%/html/images/plastique-pushbutton.png
 %%DOCSDIR%%/html/images/plastique-radiobutton.png
 %%DOCSDIR%%/html/images/plastique-sizegrip.png
@@ -1069,6 +1074,7 @@
 %%DOCSDIR%%/html/images/svgviewer-example.png
 %%DOCSDIR%%/html/images/syntaxhighlighter-example.png
 %%DOCSDIR%%/html/images/system-tray.png
+%%DOCSDIR%%/html/images/systemtray-editor.png
 %%DOCSDIR%%/html/images/systemtray-example.png
 %%DOCSDIR%%/html/images/t1.png
 %%DOCSDIR%%/html/images/t10.png
@@ -2297,8 +2303,12 @@
 %%DOCSDIR%%/html/qgraphicsscene.html
 %%DOCSDIR%%/html/qgraphicsscenecontextmenuevent-members.html
 %%DOCSDIR%%/html/qgraphicsscenecontextmenuevent.html
+%%DOCSDIR%%/html/qgraphicsscenedragdropevent-members.html
+%%DOCSDIR%%/html/qgraphicsscenedragdropevent.html
 %%DOCSDIR%%/html/qgraphicssceneevent-members.html
 %%DOCSDIR%%/html/qgraphicssceneevent.html
+%%DOCSDIR%%/html/qgraphicsscenehelpevent-members.html
+%%DOCSDIR%%/html/qgraphicsscenehelpevent.html
 %%DOCSDIR%%/html/qgraphicsscenehoverevent-members.html
 %%DOCSDIR%%/html/qgraphicsscenehoverevent.html
 %%DOCSDIR%%/html/qgraphicsscenemouseevent-members.html
@@ -3299,6 +3309,7 @@
 %%DOCSDIR%%/html/qxmlsimplereader.html
 %%DOCSDIR%%/html/rcc.html
 %%DOCSDIR%%/html/resources.html
+%%DOCSDIR%%/html/richtext-advanced-processing.html
 %%DOCSDIR%%/html/richtext-calendar-main-cpp.html
 %%DOCSDIR%%/html/richtext-calendar-mainwindow-cpp.html
 %%DOCSDIR%%/html/richtext-calendar-mainwindow-h.html

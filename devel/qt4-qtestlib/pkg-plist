@@ -33,6 +33,6 @@ lib/libQtTest.prl
 lib/libQtTest.so
 lib/libQtTest.so.4
 lib/libQtTest.so.4.2
-lib/libQtTest.so.4.2.2
-lib/libQtTest.so.4.2.2.debug
+lib/libQtTest.so.4.2.3
+lib/libQtTest.so.4.2.3.debug
 @dirrm include/QtTest

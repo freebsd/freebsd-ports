@@ -158,7 +158,7 @@ CONFIGURE_ENV+=	MOC="${MOC}" UIC="${UIC}" CPPFLAGS="${CPPFLAGS} ${QTCPPFLAGS}" L
 MAKE_ENV+=	QMAKESPEC="${QMAKESPEC}"
 .endif # !defined(QT_NONSTANDARD)
 
-QT4_VERSION=	4.2.2
+QT4_VERSION=	4.2.3
 
 _QT_COMPONENTS_ALL=	accessible assistant codecs-cn codecs-jp codecs-kr \
 			codecs-tw corelib designer doc gui iconengines \

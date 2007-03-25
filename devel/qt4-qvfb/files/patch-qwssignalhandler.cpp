@@ -1,5 +1,5 @@
---- qwssignalhandler.cpp.orig	Sun Jan 14 15:53:45 2007
-+++ qwssignalhandler.cpp	Sun Jan 14 15:53:52 2007
+--- qwssignalhandler.cpp.orig	Thu Mar 22 16:17:51 2007
++++ qwssignalhandler.cpp	Thu Mar 22 16:18:10 2007
 @@ -27,13 +27,6 @@
  #include <sys/ipc.h>
  #include <sys/sem.h>
@@ -11,6 +11,6 @@
 -    struct seminfo  *__buf;
 -};
 -
- QWSSignalHandler::QWSSignalHandler()
+ class QWSSignalHandlerPrivate
  {
-     const int signums[] = { SIGHUP, SIGINT, SIGQUIT, SIGILL, SIGABRT, SIGFPE,
+ public:

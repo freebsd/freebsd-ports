@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	corelib
-PORTVERSION=	4.2.2
-PORTREVISION=	2
+PORTVERSION=	4.2.3
+PORTREVISION=	0
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -32,7 +32,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	-fast -no-exceptions \
 		-platform ${LOCALBASE}/share/qt4/mkspecs/freebsd-g++ \
 		-qt-gif -release -system-libjpeg -system-libpng \
-		-system-zlib -no-nas-sound -no-sm -confirm-license \
+		-system-zlib -no-nas-sound  -confirm-license \
 		-prefix ${PREFIX} \
 		-docdir ${PREFIX}/share/doc/qt4 \
 		-headerdir ${PREFIX}/include \

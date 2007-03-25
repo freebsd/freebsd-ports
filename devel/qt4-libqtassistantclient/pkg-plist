@@ -6,6 +6,6 @@ lib/libQtAssistantClient.prl
 lib/libQtAssistantClient.so
 lib/libQtAssistantClient.so.4
 lib/libQtAssistantClient.so.4.2
-lib/libQtAssistantClient.so.4.2.2
-lib/libQtAssistantClient.so.4.2.2.debug
+lib/libQtAssistantClient.so.4.2.3
+lib/libQtAssistantClient.so.4.2.3.debug
 @dirrm include/QtAssistant

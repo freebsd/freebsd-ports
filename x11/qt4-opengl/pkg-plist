@@ -19,7 +19,7 @@ lib/libQtOpenGL.prl
 lib/libQtOpenGL.so
 lib/libQtOpenGL.so.4
 lib/libQtOpenGL.so.4.2
-lib/libQtOpenGL.so.4.2.2
-lib/libQtOpenGL.so.4.2.2.debug
+lib/libQtOpenGL.so.4.2.3
+lib/libQtOpenGL.so.4.2.3.debug
 libdata/pkgconfig/QtOpenGL.pc
 @dirrm include/QtOpenGL
