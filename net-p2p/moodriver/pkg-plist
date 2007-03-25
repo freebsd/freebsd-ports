@@ -3,8 +3,8 @@ bin/moo
 include/moodriver/moo/driver.hh
 include/moodriver/moo/mucipher.h
 include/moodriver/moo/types.hh
-lib/libmoodriver.so.0
 lib/libmoodriver.so
+lib/libmoodriver.so.1
 lib/libmoodriver.la
 libdata/pkgconfig/moodriver.pc
 @dirrm include/moodriver/moo

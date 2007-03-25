@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moodriver
-PORTVERSION=	0.09
+PORTVERSION=	0.20.1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://files.beep-media-player.org/releases/moodriver/
 
@@ -18,9 +18,9 @@ LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig
+CONFIGURE_ARGS=	--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig
 USE_GETTEXT=	yes
-USE_GNOME=	glib20
+USE_GNOME=	glib20 pkgconfig
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
