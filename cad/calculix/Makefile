@@ -34,8 +34,6 @@ LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut \
 		metis.1:${PORTSDIR}/math/metis	\
 		taucs.1:${PORTSDIR}/math/taucs
 
-BROKEN=		Unfetchable
-
 USE_BZIP2=	yes
 
 DIST_SOURCES=	ccx_${PORTVERSION}.src${EXTRACT_SUFX}	\
