@@ -30,7 +30,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Glib.pm:${PORTSDIR}/devel/p5-Glib2 \
 
 USE_GNOME=	libgnomeui libgnome libbonoboui
 PERL_CONFIGURE=	yes
-USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
