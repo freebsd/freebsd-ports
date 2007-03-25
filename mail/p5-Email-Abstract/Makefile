@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	Email-Abstract
-PORTVERSION=	2.131
+PORTVERSION=	2.132
 CATEGORIES=	mail perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Email
 PKGNAMEPREFIX=	p5-
 
@@ -29,8 +29,4 @@ MAN3=		Email::Abstract.3 \
 		Email::Abstract::MailInternet.3 \
 		Email::Abstract::MailMessage.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6 or later. Please install lang/perl5 or lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
