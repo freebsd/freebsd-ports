@@ -1,0 +1,11 @@
+--- Imakefile.orig	Sun Mar 25 12:49:22 2007
++++ Imakefile	Sun Mar 25 12:49:32 2007
+@@ -5,7 +5,7 @@
+ LOCAL_LIBRARIES = $(XPMLIB) $(XLIB)  
+ 
+ LINTLIBS = $(LINTXLIB)
+-CC = gcc -g
++#CC = $(CC)
+ 
+ SRCS = asclock.c parser.c symbols.c config.c
+ OBJS = asclock.o parser.o symbols.o config.o
