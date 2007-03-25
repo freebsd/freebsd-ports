@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Genezzo/.packlist
 %%SITE_PERL%%/Genezzo.pm
+%%SITE_PERL%%/Genezzo/BasicHelp.pm
 %%SITE_PERL%%/Genezzo/Block/RDBArray.pm
 %%SITE_PERL%%/Genezzo/Block/RDBlkA.pm
 %%SITE_PERL%%/Genezzo/Block/RDBlk_NN.pm
@@ -26,6 +27,8 @@
 %%SITE_PERL%%/Genezzo/Havok/SQLCompare.yml
 %%SITE_PERL%%/Genezzo/Havok/SQLScalar.pm
 %%SITE_PERL%%/Genezzo/Havok/SQLScalar.yml
+%%SITE_PERL%%/Genezzo/Havok/SysHelp.pm
+%%SITE_PERL%%/Genezzo/Havok/SysHelp.yml
 %%SITE_PERL%%/Genezzo/Havok/SysHook.pm
 %%SITE_PERL%%/Genezzo/Havok/SysHook.yml
 %%SITE_PERL%%/Genezzo/Havok/UserExtend.pm
