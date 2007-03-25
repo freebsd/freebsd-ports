@@ -66,8 +66,10 @@ PKGMESSIN=	pkg-message.in
 
 .if ${ARCH} == "i386"
 FLAGARCH=	-DP_LINUX -DLINUX
+FFLAGARCH=
 .else
-FLAGARCH=	-DLINUX64 -fdefault-integer-8 -fdefault-real-8
+FLAGARCH=	-DLINUX64
+FFLAGARCH=	-fdefault-integer-8 -fdefault-real-8
 .endif
 
 .if ${OSVERSION} < 600022
@@ -272,11 +274,11 @@ pre-configure:
 	${ECHO_CMD} "SHELL_EXECUTION='${SHELL_INSTALL_ASTER}'"	>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "EDITOR='${WITH_ED}'"			>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "LDFLAGS='-v ${LDFLAGS}'"			>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "FFLAGS='-c ${FFLAGS} ${FLAGARCH}'"	>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "FFLAGS_DBG='-c -g -O ${FLAGARCH}'"	>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "F90FLAGS='-c ${FFLAGS} ${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
+	${ECHO_CMD} "FFLAGS='-c ${FFLAGS} ${FLAGARCH} ${FFLAGARCH}'"	>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "FFLAGS_DBG='-c -g -O ${FLAGARCH} ${FFLAGARCH}'"	>> ${WRKSRC}/setup.cfg
+	${ECHO_CMD} "F90FLAGS='-c ${FFLAGS} ${FLAGARCH} ${FFLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
-	${ECHO_CMD} "F90FLAGS_DBG='-c -g -O ${FLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
+	${ECHO_CMD} "F90FLAGS_DBG='-c -g -O ${FLAGARCH} ${FFLAGARCH} -I${LOCALBASE}/include -I${HOME_MPI}/include'"	\
 		>> ${WRKSRC}/setup.cfg
 	${ECHO_CMD} "CFLAGS='-c ${CFLAGS} ${PTHREAD_CFLAGS} ${FLAGARCH} -I${LOCALBASE}/include'"	\
 		>> ${WRKSRC}/setup.cfg
