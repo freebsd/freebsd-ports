@@ -3810,6 +3810,7 @@ gobby		ports/editors/gobby
 goblin		ports/misc/goblin
 gocr		ports/graphics/gocr
 goffice		ports/devel/goffice
+goffice1		ports/devel/goffice1
 gofish		ports/net/gofish
 goggles		ports/multimedia/goggles
 gogo		ports/audio/gogo
