@@ -7,11 +7,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
 %%DRUPAL_BASE%%/.htaccess
 %%DRUPAL_BASE%%/cron.php
-%%DRUPAL_BASE%%/database/database.4.0.mysql
-%%DRUPAL_BASE%%/database/database.4.1.mysql
-%%DRUPAL_BASE%%/database/database.pgsql
-%%DRUPAL_BASE%%/database/updates.inc
-%%DRUPAL_BASE%%/includes/xmlrpcs.inc
+%%DRUPAL_BASE%%/includes/bootstrap.inc
+%%DRUPAL_BASE%%/includes/cache.inc
 %%DRUPAL_BASE%%/includes/common.inc
 %%DRUPAL_BASE%%/includes/database.inc
 %%DRUPAL_BASE%%/includes/database.mysql.inc
@@ -21,6 +18,9 @@
 %%DRUPAL_BASE%%/includes/form.inc
 %%DRUPAL_BASE%%/includes/image.inc
 %%DRUPAL_BASE%%/includes/install.inc
+%%DRUPAL_BASE%%/includes/install.mysql.inc
+%%DRUPAL_BASE%%/includes/install.mysqli.inc
+%%DRUPAL_BASE%%/includes/install.pgsql.inc
 %%DRUPAL_BASE%%/includes/locale.inc
 %%DRUPAL_BASE%%/includes/menu.inc
 %%DRUPAL_BASE%%/includes/module.inc
@@ -31,16 +31,21 @@
 %%DRUPAL_BASE%%/includes/theme.inc
 %%DRUPAL_BASE%%/includes/unicode.inc
 %%DRUPAL_BASE%%/includes/xmlrpc.inc
-%%DRUPAL_BASE%%/includes/bootstrap.inc
+%%DRUPAL_BASE%%/includes/xmlrpcs.inc
 %%DRUPAL_BASE%%/index.php
-%%DRUPAL_BASE%%/misc/watchdog-warning.png
+%%DRUPAL_BASE%%/install.php
+%%DRUPAL_BASE%%/misc/arrow-asc.png
 %%DRUPAL_BASE%%/misc/arrow-desc.png
 %%DRUPAL_BASE%%/misc/autocomplete.js
 %%DRUPAL_BASE%%/misc/blog.png
 %%DRUPAL_BASE%%/misc/collapse.js
-%%DRUPAL_BASE%%/misc/drupal.css
 %%DRUPAL_BASE%%/misc/drupal.js
 %%DRUPAL_BASE%%/misc/druplicon.png
+%%DRUPAL_BASE%%/misc/farbtastic/farbtastic.css
+%%DRUPAL_BASE%%/misc/farbtastic/farbtastic.js
+%%DRUPAL_BASE%%/misc/farbtastic/marker.png
+%%DRUPAL_BASE%%/misc/farbtastic/mask.png
+%%DRUPAL_BASE%%/misc/farbtastic/wheel.png
 %%DRUPAL_BASE%%/misc/favicon.ico
 %%DRUPAL_BASE%%/misc/feed.png
 %%DRUPAL_BASE%%/misc/forum-closed.png
@@ -50,6 +55,7 @@
 %%DRUPAL_BASE%%/misc/forum-new.png
 %%DRUPAL_BASE%%/misc/forum-sticky.png
 %%DRUPAL_BASE%%/misc/grippie.png
+%%DRUPAL_BASE%%/misc/jquery.js
 %%DRUPAL_BASE%%/misc/maintenance.css
 %%DRUPAL_BASE%%/misc/menu-collapsed.png
 %%DRUPAL_BASE%%/misc/menu-expanded.png
@@ -66,78 +72,176 @@
 %%DRUPAL_BASE%%/misc/print.css
 %%DRUPAL_BASE%%/misc/progress.gif
 %%DRUPAL_BASE%%/misc/progress.js
+%%DRUPAL_BASE%%/misc/tableselect.js
 %%DRUPAL_BASE%%/misc/textarea.js
 %%DRUPAL_BASE%%/misc/throbber.gif
 %%DRUPAL_BASE%%/misc/update.js
 %%DRUPAL_BASE%%/misc/upload.js
 %%DRUPAL_BASE%%/misc/watchdog-error.png
+%%DRUPAL_BASE%%/misc/watchdog-ok.png
+%%DRUPAL_BASE%%/misc/watchdog-warning.png
 %%DRUPAL_BASE%%/misc/xml.png
-%%DRUPAL_BASE%%/misc/arrow-asc.png
-%%DRUPAL_BASE%%/modules/watchdog.module
-%%DRUPAL_BASE%%/modules/archive.module
-%%DRUPAL_BASE%%/modules/block.module
-%%DRUPAL_BASE%%/modules/blog.module
-%%DRUPAL_BASE%%/modules/blogapi.module
-%%DRUPAL_BASE%%/modules/book.module
-%%DRUPAL_BASE%%/modules/comment.module
-%%DRUPAL_BASE%%/modules/contact.module
-%%DRUPAL_BASE%%/modules/drupal.module
-%%DRUPAL_BASE%%/modules/filter.module
-%%DRUPAL_BASE%%/modules/forum.module
-%%DRUPAL_BASE%%/modules/help.module
-%%DRUPAL_BASE%%/modules/legacy.module
-%%DRUPAL_BASE%%/modules/locale.module
-%%DRUPAL_BASE%%/modules/menu.module
-%%DRUPAL_BASE%%/modules/node.module
-%%DRUPAL_BASE%%/modules/page.module
-%%DRUPAL_BASE%%/modules/path.module
-%%DRUPAL_BASE%%/modules/ping.module
-%%DRUPAL_BASE%%/modules/poll.module
-%%DRUPAL_BASE%%/modules/profile.module
-%%DRUPAL_BASE%%/modules/user.module
-%%DRUPAL_BASE%%/modules/search.module
-%%DRUPAL_BASE%%/modules/statistics.module
-%%DRUPAL_BASE%%/modules/story.module
-%%DRUPAL_BASE%%/modules/system.module
-%%DRUPAL_BASE%%/modules/taxonomy.module
-%%DRUPAL_BASE%%/modules/throttle.module
-%%DRUPAL_BASE%%/modules/tracker.module
-%%DRUPAL_BASE%%/modules/upload.module
-%%DRUPAL_BASE%%/modules/aggregator.module
+%%DRUPAL_BASE%%/modules/aggregator/aggregator.css
+%%DRUPAL_BASE%%/modules/aggregator/aggregator.info
+%%DRUPAL_BASE%%/modules/aggregator/aggregator.install
+%%DRUPAL_BASE%%/modules/aggregator/aggregator.module
+%%DRUPAL_BASE%%/modules/block/block.css
+%%DRUPAL_BASE%%/modules/block/block.info
+%%DRUPAL_BASE%%/modules/block/block.module
+%%DRUPAL_BASE%%/modules/blog/blog.info
+%%DRUPAL_BASE%%/modules/blog/blog.module
+%%DRUPAL_BASE%%/modules/blogapi/blogapi.info
+%%DRUPAL_BASE%%/modules/blogapi/blogapi.module
+%%DRUPAL_BASE%%/modules/book/book.css
+%%DRUPAL_BASE%%/modules/book/book.info
+%%DRUPAL_BASE%%/modules/book/book.install
+%%DRUPAL_BASE%%/modules/book/book.module
+%%DRUPAL_BASE%%/modules/color/color.css
+%%DRUPAL_BASE%%/modules/color/color.info
+%%DRUPAL_BASE%%/modules/color/color.install
+%%DRUPAL_BASE%%/modules/color/color.js
+%%DRUPAL_BASE%%/modules/color/color.module
+%%DRUPAL_BASE%%/modules/color/images/hook.png
+%%DRUPAL_BASE%%/modules/color/images/lock.png
+%%DRUPAL_BASE%%/modules/comment/comment.css
+%%DRUPAL_BASE%%/modules/comment/comment.info
+%%DRUPAL_BASE%%/modules/comment/comment.install
+%%DRUPAL_BASE%%/modules/comment/comment.module
+%%DRUPAL_BASE%%/modules/contact/contact.info
+%%DRUPAL_BASE%%/modules/contact/contact.install
+%%DRUPAL_BASE%%/modules/contact/contact.module
+%%DRUPAL_BASE%%/modules/drupal/drupal.info
+%%DRUPAL_BASE%%/modules/drupal/drupal.install
+%%DRUPAL_BASE%%/modules/drupal/drupal.module
+%%DRUPAL_BASE%%/modules/filter/filter.info
+%%DRUPAL_BASE%%/modules/filter/filter.module
+%%DRUPAL_BASE%%/modules/forum/forum.css
+%%DRUPAL_BASE%%/modules/forum/forum.info
+%%DRUPAL_BASE%%/modules/forum/forum.install
+%%DRUPAL_BASE%%/modules/forum/forum.module
+%%DRUPAL_BASE%%/modules/help/help.css
+%%DRUPAL_BASE%%/modules/help/help.info
+%%DRUPAL_BASE%%/modules/help/help.module
+%%DRUPAL_BASE%%/modules/legacy/legacy.info
+%%DRUPAL_BASE%%/modules/legacy/legacy.module
+%%DRUPAL_BASE%%/modules/locale/locale.css
+%%DRUPAL_BASE%%/modules/locale/locale.info
+%%DRUPAL_BASE%%/modules/locale/locale.install
+%%DRUPAL_BASE%%/modules/locale/locale.module
+%%DRUPAL_BASE%%/modules/menu/menu.info
+%%DRUPAL_BASE%%/modules/menu/menu.module
+%%DRUPAL_BASE%%/modules/node/content_types.inc
+%%DRUPAL_BASE%%/modules/node/node.css
+%%DRUPAL_BASE%%/modules/node/node.info
+%%DRUPAL_BASE%%/modules/node/node.module
+%%DRUPAL_BASE%%/modules/path/path.info
+%%DRUPAL_BASE%%/modules/path/path.module
+%%DRUPAL_BASE%%/modules/ping/ping.info
+%%DRUPAL_BASE%%/modules/ping/ping.module
+%%DRUPAL_BASE%%/modules/poll/poll.css
+%%DRUPAL_BASE%%/modules/poll/poll.info
+%%DRUPAL_BASE%%/modules/poll/poll.install
+%%DRUPAL_BASE%%/modules/poll/poll.module
+%%DRUPAL_BASE%%/modules/profile/profile.info
+%%DRUPAL_BASE%%/modules/profile/profile.install
+%%DRUPAL_BASE%%/modules/profile/profile.module
+%%DRUPAL_BASE%%/modules/search/search.css
+%%DRUPAL_BASE%%/modules/search/search.info
+%%DRUPAL_BASE%%/modules/search/search.install
+%%DRUPAL_BASE%%/modules/search/search.module
+%%DRUPAL_BASE%%/modules/statistics/statistics.info
+%%DRUPAL_BASE%%/modules/statistics/statistics.install
+%%DRUPAL_BASE%%/modules/statistics/statistics.module
+%%DRUPAL_BASE%%/modules/system/admin.css
+%%DRUPAL_BASE%%/modules/system/defaults.css
+%%DRUPAL_BASE%%/modules/system/system.css
+%%DRUPAL_BASE%%/modules/system/system.info
+%%DRUPAL_BASE%%/modules/system/system.install
+%%DRUPAL_BASE%%/modules/system/system.module
+%%DRUPAL_BASE%%/modules/taxonomy/taxonomy.info
+%%DRUPAL_BASE%%/modules/taxonomy/taxonomy.module
+%%DRUPAL_BASE%%/modules/throttle/throttle.info
+%%DRUPAL_BASE%%/modules/throttle/throttle.module
+%%DRUPAL_BASE%%/modules/tracker/tracker.css
+%%DRUPAL_BASE%%/modules/tracker/tracker.info
+%%DRUPAL_BASE%%/modules/tracker/tracker.module
+%%DRUPAL_BASE%%/modules/upload/upload.info
+%%DRUPAL_BASE%%/modules/upload/upload.module
+%%DRUPAL_BASE%%/modules/user/user.css
+%%DRUPAL_BASE%%/modules/user/user.info
+%%DRUPAL_BASE%%/modules/user/user.module
+%%DRUPAL_BASE%%/modules/watchdog/watchdog.css
+%%DRUPAL_BASE%%/modules/watchdog/watchdog.info
+%%DRUPAL_BASE%%/modules/watchdog/watchdog.module
+%%DRUPAL_BASE%%/profiles/default/default.profile
+%%DRUPAL_BASE%%/robots.txt
 %%DRUPAL_BASE%%/scripts/code-clean.sh
 %%DRUPAL_BASE%%/scripts/code-style.pl
 %%DRUPAL_BASE%%/scripts/cron-curl.sh
 %%DRUPAL_BASE%%/scripts/cron-lynx.sh
-%%DRUPAL_BASE%%/scripts/prefix.sh
-@unexec if cmp -s %D/%%DRUPAL_BASE%%/sites/default/settings.php-dist %D/%%DRUPAL_BASE%%/sites/default/settings.php; then rm -f %D/%%DRUPAL_BASE%%/sites/default/settings.php; fi
+%%DRUPAL_BASE%%/sites/all/README.txt
+%%DRUPAL_BASE%%/sites/default/settings.php
 %%DRUPAL_BASE%%/sites/default/settings.php-dist
-@exec if [ ! -f %D/%%DRUPAL_BASE%%/sites/default/settings.php ] ; then cp -p %D/%F %B/settings.php; fi
-%%DRUPAL_BASE%%/themes/bluemarine/style.css
+%%DRUPAL_BASE%%/themes/bluemarine/block.tpl.php
 %%DRUPAL_BASE%%/themes/bluemarine/box.tpl.php
 %%DRUPAL_BASE%%/themes/bluemarine/comment.tpl.php
 %%DRUPAL_BASE%%/themes/bluemarine/logo.png
 %%DRUPAL_BASE%%/themes/bluemarine/node.tpl.php
 %%DRUPAL_BASE%%/themes/bluemarine/page.tpl.php
 %%DRUPAL_BASE%%/themes/bluemarine/screenshot.png
-%%DRUPAL_BASE%%/themes/bluemarine/block.tpl.php
+%%DRUPAL_BASE%%/themes/bluemarine/style.css
+%%DRUPAL_BASE%%/themes/chameleon/background.png
+%%DRUPAL_BASE%%/themes/chameleon/chameleon.theme
+%%DRUPAL_BASE%%/themes/chameleon/common.css
+%%DRUPAL_BASE%%/themes/chameleon/logo.png
 %%DRUPAL_BASE%%/themes/chameleon/marvin/bullet.png
 %%DRUPAL_BASE%%/themes/chameleon/marvin/druplicon-watermark.png
 %%DRUPAL_BASE%%/themes/chameleon/marvin/logo.png
 %%DRUPAL_BASE%%/themes/chameleon/marvin/screenshot.png
 %%DRUPAL_BASE%%/themes/chameleon/marvin/style.css
-%%DRUPAL_BASE%%/themes/chameleon/chameleon.theme
-%%DRUPAL_BASE%%/themes/chameleon/common.css
-%%DRUPAL_BASE%%/themes/chameleon/background.png
 %%DRUPAL_BASE%%/themes/chameleon/screenshot.png
 %%DRUPAL_BASE%%/themes/chameleon/style.css
-%%DRUPAL_BASE%%/themes/chameleon/logo.png
 %%DRUPAL_BASE%%/themes/engines/phptemplate/block.tpl.php
 %%DRUPAL_BASE%%/themes/engines/phptemplate/box.tpl.php
 %%DRUPAL_BASE%%/themes/engines/phptemplate/comment.tpl.php
 %%DRUPAL_BASE%%/themes/engines/phptemplate/default.tpl.php
 %%DRUPAL_BASE%%/themes/engines/phptemplate/node.tpl.php
 %%DRUPAL_BASE%%/themes/engines/phptemplate/phptemplate.engine
-%%DRUPAL_BASE%%/themes/pushbutton/tabs-option-on.png
+%%DRUPAL_BASE%%/themes/garland/block.tpl.php
+%%DRUPAL_BASE%%/themes/garland/color/base.png
+%%DRUPAL_BASE%%/themes/garland/color/color.inc
+%%DRUPAL_BASE%%/themes/garland/color/preview.css
+%%DRUPAL_BASE%%/themes/garland/color/preview.png
+%%DRUPAL_BASE%%/themes/garland/comment.tpl.php
+%%DRUPAL_BASE%%/themes/garland/fix-ie.css
+%%DRUPAL_BASE%%/themes/garland/images/bg-bar-white.png
+%%DRUPAL_BASE%%/themes/garland/images/bg-bar.png
+%%DRUPAL_BASE%%/themes/garland/images/bg-content-left.png
+%%DRUPAL_BASE%%/themes/garland/images/bg-content-right.png
+%%DRUPAL_BASE%%/themes/garland/images/bg-content.png
+%%DRUPAL_BASE%%/themes/garland/images/bg-navigation-item-hover.png
+%%DRUPAL_BASE%%/themes/garland/images/bg-navigation-item.png
+%%DRUPAL_BASE%%/themes/garland/images/bg-navigation.png
+%%DRUPAL_BASE%%/themes/garland/images/bg-tab.png
+%%DRUPAL_BASE%%/themes/garland/images/body.png
+%%DRUPAL_BASE%%/themes/garland/images/gradient-inner.png
+%%DRUPAL_BASE%%/themes/garland/images/menu-collapsed.gif
+%%DRUPAL_BASE%%/themes/garland/images/menu-expanded.gif
+%%DRUPAL_BASE%%/themes/garland/images/menu-leaf.gif
+%%DRUPAL_BASE%%/themes/garland/logo.png
+%%DRUPAL_BASE%%/themes/garland/minnelli/color/base.png
+%%DRUPAL_BASE%%/themes/garland/minnelli/color/color.inc
+%%DRUPAL_BASE%%/themes/garland/minnelli/color/preview.png
+%%DRUPAL_BASE%%/themes/garland/minnelli/logo.png
+%%DRUPAL_BASE%%/themes/garland/minnelli/screenshot.png
+%%DRUPAL_BASE%%/themes/garland/minnelli/style.css
+%%DRUPAL_BASE%%/themes/garland/node.tpl.php
+%%DRUPAL_BASE%%/themes/garland/page.tpl.php
+%%DRUPAL_BASE%%/themes/garland/print.css
+%%DRUPAL_BASE%%/themes/garland/screenshot.png
+%%DRUPAL_BASE%%/themes/garland/style.css
+%%DRUPAL_BASE%%/themes/garland/template.php
+%%DRUPAL_BASE%%/themes/pushbutton/arrow-next-hover.png
 %%DRUPAL_BASE%%/themes/pushbutton/arrow-next-visited.png
 %%DRUPAL_BASE%%/themes/pushbutton/arrow-next.png
 %%DRUPAL_BASE%%/themes/pushbutton/arrow-prev-hover.png
@@ -169,23 +273,64 @@
 %%DRUPAL_BASE%%/themes/pushbutton/tabs-on.png
 %%DRUPAL_BASE%%/themes/pushbutton/tabs-option-hover.png
 %%DRUPAL_BASE%%/themes/pushbutton/tabs-option-off.png
-%%DRUPAL_BASE%%/themes/pushbutton/arrow-next-hover.png
+%%DRUPAL_BASE%%/themes/pushbutton/tabs-option-on.png
 %%DRUPAL_BASE%%/update.php
 %%DRUPAL_BASE%%/xmlrpc.php
-@dirrm %%DRUPAL_BASE%%/themes/pushbutton
-@dirrm %%DRUPAL_BASE%%/themes/engines/phptemplate
-@dirrm %%DRUPAL_BASE%%/themes/engines
+@unexec rm -f %%DRUPAL_BASE%%/files/.htaccess 2> /dev/null || true
+@dirrm %%DRUPAL_BASE%%/includes
+@dirrm %%DRUPAL_BASE%%/misc/farbtastic
+@dirrm %%DRUPAL_BASE%%/misc
+@dirrm %%DRUPAL_BASE%%/modules/menu
+@dirrm %%DRUPAL_BASE%%/modules/block
+@dirrm %%DRUPAL_BASE%%/modules/blog
+@dirrm %%DRUPAL_BASE%%/modules/blogapi
+@dirrm %%DRUPAL_BASE%%/modules/book
+@dirrm %%DRUPAL_BASE%%/modules/color/images
+@dirrm %%DRUPAL_BASE%%/modules/color
+@dirrm %%DRUPAL_BASE%%/modules/comment
+@dirrm %%DRUPAL_BASE%%/modules/contact
+@dirrm %%DRUPAL_BASE%%/modules/drupal
+@dirrm %%DRUPAL_BASE%%/modules/filter
+@dirrm %%DRUPAL_BASE%%/modules/forum
+@dirrm %%DRUPAL_BASE%%/modules/help
+@dirrm %%DRUPAL_BASE%%/modules/legacy
+@dirrm %%DRUPAL_BASE%%/modules/locale
+@dirrm %%DRUPAL_BASE%%/modules/aggregator
+@dirrm %%DRUPAL_BASE%%/modules/node
+@dirrm %%DRUPAL_BASE%%/modules/path
+@dirrm %%DRUPAL_BASE%%/modules/ping
+@dirrm %%DRUPAL_BASE%%/modules/poll
+@dirrm %%DRUPAL_BASE%%/modules/profile
+@dirrm %%DRUPAL_BASE%%/modules/search
+@dirrm %%DRUPAL_BASE%%/modules/statistics
+@dirrm %%DRUPAL_BASE%%/modules/system
+@dirrm %%DRUPAL_BASE%%/modules/taxonomy
+@dirrm %%DRUPAL_BASE%%/modules/throttle
+@dirrm %%DRUPAL_BASE%%/modules/tracker
+@dirrm %%DRUPAL_BASE%%/modules/upload
+@dirrm %%DRUPAL_BASE%%/modules/user
+@dirrm %%DRUPAL_BASE%%/modules/watchdog
+@dirrm %%DRUPAL_BASE%%/modules
+@dirrm %%DRUPAL_BASE%%/profiles/default
+@dirrm %%DRUPAL_BASE%%/profiles
+@dirrm %%DRUPAL_BASE%%/scripts
+@dirrm %%DRUPAL_BASE%%/themes/bluemarine
 @dirrm %%DRUPAL_BASE%%/themes/chameleon/marvin
 @dirrm %%DRUPAL_BASE%%/themes/chameleon
-@dirrm %%DRUPAL_BASE%%/themes/bluemarine
+@dirrm %%DRUPAL_BASE%%/themes/engines/phptemplate
+@dirrm %%DRUPAL_BASE%%/themes/engines
+@dirrm %%DRUPAL_BASE%%/themes/garland/images
+@dirrm %%DRUPAL_BASE%%/themes/garland/color
+@dirrm %%DRUPAL_BASE%%/themes/garland/minnelli/color
+@dirrm %%DRUPAL_BASE%%/themes/garland/minnelli
+@dirrm %%DRUPAL_BASE%%/themes/garland
+@dirrm %%DRUPAL_BASE%%/themes/pushbutton
 @dirrm %%DRUPAL_BASE%%/themes
+@dirrmtry %%DRUPAL_BASE%%/files
+@dirrmtry %%DRUPAL_BASE%%/sites/all
 @dirrmtry %%DRUPAL_BASE%%/sites/default
 @dirrmtry %%DRUPAL_BASE%%/sites
-@dirrm %%DRUPAL_BASE%%/scripts
 @dirrmtry %%DRUPAL_BASE%%/modules
-@dirrm %%DRUPAL_BASE%%/misc
-@dirrm %%DRUPAL_BASE%%/includes
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DRUPAL_BASE%%/database
 @dirrmtry %%DRUPAL_BASE%%
 @unexec (test -d %D/%%DRUPAL_BASE%% && (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%DRUPAL_BASE%% and its contents manually.")) || true
