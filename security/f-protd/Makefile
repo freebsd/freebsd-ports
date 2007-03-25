@@ -19,6 +19,8 @@ RUN_DEPENDS=	${LOCALBASE}/f-prot/f-prot:${PORTSDIR}/security/f-prot \
 
 RESTRICTED=	Restrictive 60 day evaluation license
 
+BROKEN=		Unfetchable
+
 WRKSRC=		${WRKDIR}/f-prot
 NO_BUILD=	yes
 USE_RC_SUBR=	fprotd.sh fprotd_scanmail.sh
