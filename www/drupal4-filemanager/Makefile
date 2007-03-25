@@ -19,5 +19,5 @@ DOC_DIRS=	doc
 DOC_FILES=	LICENSE.txt README.txt CREDITS INSTALL doc/filemanager.php
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/drupal/bsd.drupal.mk"
+.include "${.CURDIR}/../../www/drupal5/bsd.drupal.mk"
 .include <bsd.port.post.mk>

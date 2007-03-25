@@ -20,5 +20,5 @@ MODULE_FILES=	taxonomy_access.install taxonomy_access.module taxonomy_access_adm
 DOC_FILES=	INSTALL.txt LICENSE.txt README.txt UPDATE.txt
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/drupal/bsd.drupal.mk"
+.include "${.CURDIR}/../../www/drupal5/bsd.drupal.mk"
 .include <bsd.port.post.mk>
