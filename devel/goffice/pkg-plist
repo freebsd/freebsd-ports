@@ -505,7 +505,7 @@ share/locale/zh_TW/LC_MESSAGES/goffice-%%VERSION%%.mo
 @dirrm lib/goffice/%%VERSION%%/plugins/plot_barcol
 @dirrm lib/goffice/%%VERSION%%/plugins
 @dirrm lib/goffice/%%VERSION%%
-@dirrm lib/goffice
+@dirrmtry lib/goffice
 @dirrm include/libgoffice-0.3/goffice/utils
 @dirrm include/libgoffice-0.3/goffice/ms-compat
 @dirrm include/libgoffice-0.3/goffice/gtk
