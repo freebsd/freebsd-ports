@@ -16,8 +16,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A tool to measure maximum TCP and UDP bandwidth
 
-NO_CDROM=	can't charge a fee for the software
-
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/iperf
