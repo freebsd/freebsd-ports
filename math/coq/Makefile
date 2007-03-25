@@ -6,15 +6,11 @@
 #
 
 PORTNAME=	coq
-PORTVERSION=	8.0p3
+PORTVERSION=	8.1
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.inria.fr/INRIA/coq/V8.0pl3/
-DISTNAME=	coq-8.0pl3
+MASTER_SITES=	ftp://ftp.inria.fr/INRIA/coq/V${PORTVERSION}/
 
-PATCHFILES=	patch-coq-8.0pl3-ocaml-3.09
-PATCH_SITES=	${MASTER_SITES}
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	Theorem prover based on lambda-C
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
@@ -48,6 +44,9 @@ PLIST_SUB+=	IDE="@comment "
 MAN1=	coq-interface.1 coq-tex.1 coq_makefile.1 coqc.1 coqdep.1 coqdoc.1 \
 	coqmktop.1 coqtop.1 coqtop.byte.1 coqtop.opt.1 coqwc.1 gallina.1 \
 	parser.1
+
+post-patch:
+	@${REINPLACE_CMD} -e '/FreeBSD.*\.byte/s/^/#/' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
