@@ -1542,6 +1542,7 @@ cryptlib	ports/security/cryptlib
 cryptopp	ports/security/cryptopp
 cryptoslam	ports/games/cryptoslam
 cryptplug	ports/security/cryptplug
+cryptstring	ports/security/cryptstring
 crystalentitylayer	ports/graphics/crystalentitylayer
 crystalentitylayer-devel	ports/graphics/crystalentitylayer-devel
 crystalspace	ports/graphics/crystalspace
