@@ -19,6 +19,10 @@ LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext \
 		openbabel.1:${PORTSDIR}/science/openbabel \
 		goffice-0.3:${PORTSDIR}/devel/goffice
 
+# new release of gchemutils, which supports new goffice, needs a new, yet
+# unreleased openbabel-2.1.0, too
+BROKEN=		does not work with new goffice
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix intlhack libglade2 libgnomeprintui libgnomeui
@@ -43,10 +47,6 @@ PLIST_SUB=	MOZILLA=""
 .else
 CONFIGURE_ARGS+=--disable-mozilla-plugin
 PLIST_SUB=	MOZILLA="@comment "
-.endif
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not link with openbabel
 .endif
 
 .include <bsd.port.post.mk>
