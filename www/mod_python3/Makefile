@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_python
-PORTVERSION=	3.2.10
+PORTVERSION=	3.3.1
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 MASTER_SITE_SUBDIR=	modpython
@@ -16,7 +16,7 @@ MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Apache module that embeds the Python interpreter within the server
 
 USE_APACHE=	2.0+
-USE_PYTHON=	2.3+
+USE_PYTHON=	yes
 
 LATEST_LINK=	mod_python3
 GNU_CONFIGURE=	yes
