@@ -6,35 +6,34 @@
 #
 
 PORTNAME=	bftpd
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	ftp
-MASTER_SITES=	http://bftpd.sourceforge.net/downloads/src/ \
-		http://www.alaskaparadise.com/freebsd/
+MASTER_SITES=	SF
 
-MAINTAINER=	beech@alaskaparadise.org
+MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	Very configurable FTP server that can do chroot easily
 
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--enable-pam
 
+PLIST_FILES=	sbin/${PORTNAME} etc/${PORTNAME}.conf.sample
 MAN8=		bftpd.8
+PORTDOCS=	en pl
 
 post-patch:
-	@${REINPLACE_CMD} -e "s@chmod 644 /var@#chmod 644 /var@g; \
-			s@touch /var@#touch /var@g; \
-			s@DESTDIR)/etc@prefix)/etc@g; \
-			s@bftpd.conf @bftpd.conf.sample @g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's,/etc/bftpd.conf,${PREFIX}/etc/bftpd.conf,' \
 		${WRKSRC}/mypaths.h
 	@${REINPLACE_CMD} -e "s@-ldl@@" ${WRKSRC}/configure
-	@${CP} ${WRKSRC}/bftpd.conf ${WRKSRC}/bftpd.conf.sample
+	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -rf
 
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${MAN8PREFIX}/man/man8/
+	${INSTALL_DATA} ${WRKSRC}/bftpd.conf ${PREFIX}/etc/bftpd.conf.sample
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/en/bftpddoc-en.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/en/*.html ${DOCSDIR}
+	${INSTALL} -d ${DOCSDIR}/
+	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
