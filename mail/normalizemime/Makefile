@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	normalizemime
-PORTVERSION=	1.16.20050628
-PORTREVISION=	1
+PORTVERSION=	1.18.20070320
 CATEGORIES=	mail
 MASTER_SITES=	http://hyvatti.iki.fi/~jaakko/spam/
 DISTNAME=	normalizemime.cc
