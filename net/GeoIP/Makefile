@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GeoIP
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/c/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
