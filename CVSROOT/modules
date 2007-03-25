@@ -561,6 +561,7 @@ assp		ports/mail/assp
 asterisk	ports/net/asterisk
 asterisk-addons	ports/net/asterisk-addons
 asterisk-app-ldap	ports/net/asterisk-app-ldap
+asterisk-app-notify	ports/net/asterisk-app-notify
 asterisk-bristuff	ports/net/asterisk-bristuff
 asterisk-fop	ports/www/asterisk-fop
 asterisk-oh323	ports/net/asterisk-oh323
