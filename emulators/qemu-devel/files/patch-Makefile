@@ -1,5 +1,5 @@
 Index: qemu/Makefile
-@@ -19,14 +19,19 @@
+@@ -19,7 +19,11 @@
  BASE_LDFLAGS += -static
  endif
  ifdef BUILD_DOCS
@@ -11,16 +11,7 @@ Index: qemu/Makefile
  else
  DOCS=
  endif
- 
- ifndef CONFIG_DARWIN
- ifndef CONFIG_WIN32
--LIBS+=-lrt
-+# XXX need ifndef CONFIG_BSD
-+# LIBS+=-lrt
- endif
- endif
- 
-@@ -64,8 +69,10 @@
+@@ -60,8 +64,10 @@
  common  de-ch  es     fo  fr-ca  hu     ja  mk  nl-be      pt  sl     tr
  
  install-doc: $(DOCS)
