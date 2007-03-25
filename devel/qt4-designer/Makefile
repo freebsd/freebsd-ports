@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	designer
-PORTVERSION=	4.2.2
-PORTREVISION=	1
+PORTVERSION=	4.2.3
+PORTREVISION=	0
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -40,7 +40,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	-fast -no-exceptions \
 		-platform ${LOCALBASE}/share/qt4/mkspecs/freebsd-g++ \
 		-qt-gif -release -system-libjpeg -system-libpng \
-		-system-zlib -no-nas-sound -prefix ${PREFIX} -no-sm\
+		-system-zlib -no-nas-sound -prefix ${PREFIX} \
 		-plugindir ${PREFIX}/lib/plugins -bindir ${PREFIX}/bin \
 		-confirm-license
 

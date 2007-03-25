@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	gui
-PORTVERSION=	4.2.2
-PORTREVISION=	1
+PORTVERSION=	4.2.3
+PORTREVISION=	0
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -36,7 +36,7 @@ USE_XLIB=	yes
 CONFIGURE_ARGS=	-fast -no-exceptions ${CUPS} \
 		-platform ${LOCALBASE}/share/qt4/mkspecs/freebsd-g++ \
 		-qt-gif -release -system-libjpeg -system-libpng \
-		-system-zlib -prefix ${PREFIX} -no-sm \
+		-system-zlib -prefix ${PREFIX} \
 		-plugindir ${PREFIX}/lib/plugins -bindir ${PREFIX}/bin \
 		-confirm-license
 

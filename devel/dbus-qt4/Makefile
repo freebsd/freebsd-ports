@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	dbus
-PORTVERSION=	4.2.2
-PORTREVISION=	2
+PORTVERSION=	4.2.3
+PORTREVISION=	0
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMESUFFIX=	-qt4
@@ -34,7 +34,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	-fast -no-exceptions \
 		-platform ${LOCALBASE}/share/qt4/mkspecs/freebsd-g++ \
 		-qt-gif -release -system-libjpeg -system-libpng \
-		-system-zlib -system-nas-sound -prefix ${PREFIX} -no-sm \
+		-system-zlib -system-nas-sound -prefix ${PREFIX}  \
 		-plugindir ${PREFIX}/lib/plugins -bindir ${PREFIX}/bin -v \
 		-no-nas-sound -confirm-license
 

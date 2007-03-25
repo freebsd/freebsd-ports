@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	assistant
-PORTVERSION=	4.2.2
-PORTREVISION=	2
+PORTVERSION=	4.2.3
+PORTREVISION=	0
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -28,7 +28,7 @@ LIB_DEPENDS=	Qt3Support:${PORTSDIR}/devel/qt4-qt3support \
 		QtNetwork:${PORTSDIR}/net/qt4-network \
 		QtSql:${PORTSDIR}/databases/qt4-sql \
 		QtXml:${PORTSDIR}/textproc/qt4-xml
-RUN_DEPENDS=	qt4-doc>=4.2.2:${PORTSDIR}/misc/qt4-doc
+RUN_DEPENDS=	qt4-doc>=4.2.3:${PORTSDIR}/misc/qt4-doc
 
 CONFLICTS=	linguist-0.* qt-2.* qt-3.0.* \
 		qt-3.1.* qt-3.2.* qt-designer-2.* xfmail-1.5.[0-5] \
@@ -39,7 +39,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-fast -no-exceptions \
 		-platform ${LOCALBASE}/share/qt4/mkspecs/freebsd-g++ \
 		-qt-gif -release -system-libjpeg -system-libpng \
-		-system-zlib -no-nas-sound -prefix ${PREFIX} -no-sm \
+		-system-zlib -no-nas-sound -prefix ${PREFIX}  \
 		-plugindir ${PREFIX}/lib/plugins -bindir ${PREFIX}/bin \
 		-confirm-license -no-separate-debug-info
 

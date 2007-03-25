@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	opengl
-PORTVERSION=	4.2.2
-PORTREVISION=	2
+PORTVERSION=	4.2.3
+PORTREVISION=	0
 CATEGORIES?=	x11
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -35,7 +35,7 @@ USE_XLIB=	yes
 CONFIGURE_ARGS=	-fast -no-exceptions \
 		-platform ${LOCALBASE}/share/qt4/mkspecs/freebsd-g++ \
 		-qt-gif -release -system-libjpeg -system-libpng \
-		-system-zlib -prefix ${PREFIX} -no-sm \
+		-system-zlib -prefix ${PREFIX}  \
 		-plugindir ${PREFIX}/lib/plugins -bindir ${PREFIX}/bin \
 		-no-nas-sound -confirm-license
 
