@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net-mgmt/net-snmp-devel/files/Attic/snmpd.sh.in,v 1.5 2007-02-28 01:17:16 kuriyama Exp $
+# $FreeBSD: /tmp/pcvs/ports/net-mgmt/net-snmp-devel/files/Attic/snmpd.sh.in,v 1.6 2007-03-25 12:35:45 kuriyama Exp $
 #
 # PROVIDE: snmpd
 # REQUIRE: DAEMON
@@ -32,7 +32,6 @@ rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/${name}
 pidfile=${snmpd_pidfile}
-sig_stop=KILL
 start_precmd=snmpd_precmd
 
 load_rc_config ${name}

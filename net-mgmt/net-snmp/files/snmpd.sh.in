@@ -32,7 +32,6 @@ rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/${name}
 pidfile=${snmpd_pidfile}
-sig_stop=KILL
 start_precmd=snmpd_precmd
 
 load_rc_config ${name}
