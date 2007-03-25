@@ -375,6 +375,7 @@
     SUBDIR += kgeography
     SUBDIR += kiki
     SUBDIR += kimboot
+    SUBDIR += klavaro
     SUBDIR += klondike
     SUBDIR += kmastermind
     SUBDIR += kmquake2

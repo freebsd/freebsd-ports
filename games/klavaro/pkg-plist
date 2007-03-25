@@ -1,0 +1,153 @@
+share/locale/cs_CZ/LC_MESSAGES/klavaro.mo
+share/locale/de_DE/LC_MESSAGES/klavaro.mo
+share/locale/eo_EO/LC_MESSAGES/klavaro.mo
+share/locale/es_ES/LC_MESSAGES/klavaro.mo
+share/locale/fr_FR/LC_MESSAGES/klavaro.mo
+share/locale/hu_HU/LC_MESSAGES/klavaro.mo
+share/locale/pl_PL/LC_MESSAGES/klavaro.mo
+share/locale/pt_BR/LC_MESSAGES/klavaro.mo
+share/locale/sv_SE/LC_MESSAGES/klavaro.mo
+bin/klavaro
+%%DATADIR%%/C.paragraphs
+%%DATADIR%%/C.words
+%%DATADIR%%/C_about.txt
+%%DATADIR%%/C_adapt_intro.txt
+%%DATADIR%%/C_basic_intro.txt
+%%DATADIR%%/C_fluid_intro.txt
+%%DATADIR%%/C_help.txt
+%%DATADIR%%/C_intro.txt
+%%DATADIR%%/C_velo_intro.txt
+%%DATADIR%%/azerty_fr.kbd
+%%DATADIR%%/basic_lessons.txt
+%%DATADIR%%/cs_CZ.paragraphs
+%%DATADIR%%/cs_CZ.words
+%%DATADIR%%/cs_CZ_about.txt
+%%DATADIR%%/cs_CZ_adapt_intro.txt
+%%DATADIR%%/cs_CZ_basic_intro.txt
+%%DATADIR%%/cs_CZ_fluid_intro.txt
+%%DATADIR%%/cs_CZ_help.txt
+%%DATADIR%%/cs_CZ_intro.txt
+%%DATADIR%%/cs_CZ_velo_intro.txt
+%%DATADIR%%/de_DE.paragraphs
+%%DATADIR%%/de_DE.words
+%%DATADIR%%/de_DE_about.txt
+%%DATADIR%%/de_DE_adapt_intro.txt
+%%DATADIR%%/de_DE_basic_intro.txt
+%%DATADIR%%/de_DE_fluid_intro.txt
+%%DATADIR%%/de_DE_help.txt
+%%DATADIR%%/de_DE_velo_intro.txt
+%%DATADIR%%/dvorak_br.kbd
+%%DATADIR%%/dvorak_fr.kbd
+%%DATADIR%%/dvorak_us.kbd
+%%DATADIR%%/dvorak_us_br.kbd
+%%DATADIR%%/dvorak_us_es.kbd
+%%DATADIR%%/dvorak_us_se.kbd
+%%DATADIR%%/eo_EO.paragraphs
+%%DATADIR%%/eo_EO.words
+%%DATADIR%%/eo_EO_about.txt
+%%DATADIR%%/eo_EO_adapt_intro.txt
+%%DATADIR%%/eo_EO_basic_intro.txt
+%%DATADIR%%/eo_EO_fluid_intro.txt
+%%DATADIR%%/eo_EO_help.txt
+%%DATADIR%%/eo_EO_intro.txt
+%%DATADIR%%/eo_EO_velo_intro.txt
+%%DATADIR%%/es_ES.paragraphs
+%%DATADIR%%/es_ES.words
+%%DATADIR%%/es_ES_about.txt
+%%DATADIR%%/es_ES_adapt_intro.txt
+%%DATADIR%%/es_ES_basic_intro.txt
+%%DATADIR%%/es_ES_fluid_intro.txt
+%%DATADIR%%/es_ES_help.txt
+%%DATADIR%%/es_ES_intro.txt
+%%DATADIR%%/es_ES_velo_intro.txt
+%%DATADIR%%/fingers_position.txt
+%%DATADIR%%/fr_FR.paragraphs
+%%DATADIR%%/fr_FR.words
+%%DATADIR%%/fr_FR_about.txt
+%%DATADIR%%/fr_FR_adapt_intro.txt
+%%DATADIR%%/fr_FR_basic_intro.txt
+%%DATADIR%%/fr_FR_fluid_intro.txt
+%%DATADIR%%/fr_FR_help.txt
+%%DATADIR%%/fr_FR_intro.txt
+%%DATADIR%%/fr_FR_velo_intro.txt
+%%DATADIR%%/hu_HU.paragraphs
+%%DATADIR%%/hu_HU.words
+%%DATADIR%%/hu_HU_about.txt
+%%DATADIR%%/hu_HU_adapt_intro.txt
+%%DATADIR%%/hu_HU_basic_intro.txt
+%%DATADIR%%/hu_HU_fluid_intro.txt
+%%DATADIR%%/hu_HU_help.txt
+%%DATADIR%%/hu_HU_intro.txt
+%%DATADIR%%/hu_HU_velo_intro.txt
+%%DATADIR%%/jtsuken_ru.kbd
+%%DATADIR%%/pixmaps/hands_0.xpm
+%%DATADIR%%/pixmaps/hands_1.xpm
+%%DATADIR%%/pixmaps/hands_2.xpm
+%%DATADIR%%/pixmaps/hands_3.xpm
+%%DATADIR%%/pixmaps/hands_4.xpm
+%%DATADIR%%/pixmaps/hands_5.xpm
+%%DATADIR%%/pixmaps/hands_6.xpm
+%%DATADIR%%/pixmaps/hands_7.xpm
+%%DATADIR%%/pixmaps/hands_8.xpm
+%%DATADIR%%/pixmaps/hands_9.xpm
+%%DATADIR%%/pixmaps/logo.xpm
+%%DATADIR%%/pixmaps/shift.xpm
+%%DATADIR%%/pl_PL.paragraphs
+%%DATADIR%%/pl_PL.words
+%%DATADIR%%/pl_PL_about.txt
+%%DATADIR%%/pl_PL_adapt_intro.txt
+%%DATADIR%%/pl_PL_basic_intro.txt
+%%DATADIR%%/pl_PL_fluid_intro.txt
+%%DATADIR%%/pl_PL_help.txt
+%%DATADIR%%/pl_PL_intro.txt
+%%DATADIR%%/pl_PL_velo_intro.txt
+%%DATADIR%%/pt_BR.paragraphs
+%%DATADIR%%/pt_BR.words
+%%DATADIR%%/pt_BR_about.txt
+%%DATADIR%%/pt_BR_adapt_intro.txt
+%%DATADIR%%/pt_BR_basic_intro.txt
+%%DATADIR%%/pt_BR_fluid_intro.txt
+%%DATADIR%%/pt_BR_help.txt
+%%DATADIR%%/pt_BR_intro.txt
+%%DATADIR%%/pt_BR_velo_intro.txt
+%%DATADIR%%/qwerty_br.kbd
+%%DATADIR%%/qwerty_br_abnt0.kbd
+%%DATADIR%%/qwerty_br_abnt2.kbd
+%%DATADIR%%/qwerty_cz.kbd
+%%DATADIR%%/qwerty_el.kbd
+%%DATADIR%%/qwerty_es.kbd
+%%DATADIR%%/qwerty_he.kbd
+%%DATADIR%%/qwerty_it.kbd
+%%DATADIR%%/qwerty_pt.kbd
+%%DATADIR%%/qwerty_se.kbd
+%%DATADIR%%/qwerty_us.kbd
+%%DATADIR%%/qwerty_us2.kbd
+%%DATADIR%%/qwertz_cz.kbd
+%%DATADIR%%/qwertz_de.kbd
+%%DATADIR%%/qwertz_hu.kbd
+%%DATADIR%%/qwertz_pl.kbd
+%%DATADIR%%/sv_SE.paragraphs
+%%DATADIR%%/sv_SE.words
+%%DATADIR%%/sv_SE_about.txt
+%%DATADIR%%/sv_SE_adapt_intro.txt
+%%DATADIR%%/sv_SE_basic_intro.txt
+%%DATADIR%%/sv_SE_fluid_intro.txt
+%%DATADIR%%/sv_SE_help.txt
+%%DATADIR%%/sv_SE_intro.txt
+%%DATADIR%%/sv_SE_velo_intro.txt
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
+@dirrmtry share/locale/cs_CZ/LC_MESSAGES
+@dirrmtry share/locale/cs_CZ
+@dirrmtry share/locale/de_DE/LC_MESSAGES
+@dirrmtry share/locale/de_DE
+@dirrmtry share/locale/eo_EO/LC_MESSAGES
+@dirrmtry share/locale/eo_EO
+@dirrmtry share/locale/fr_FR/LC_MESSAGES
+@dirrmtry share/locale/fr_FR
+@dirrmtry share/locale/hu_HU/LC_MESSAGES
+@dirrmtry share/locale/hu_HU
+@dirrmtry share/locale/pl_PL/LC_MESSAGES
+@dirrmtry share/locale/pl_PL
+@dirrmtry share/locale/sv_SE/LC_MESSAGES
+@dirrmtry share/locale/sv_SE
