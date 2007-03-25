@@ -15966,7 +15966,6 @@ xdelta		ports/misc/xdelta
 xdemineur	ports/games/xdemineur
 xdesktopwaves	ports/games/xdesktopwaves
 xdeview		ports/converters/xdeview
-xdg-user-dirs-gtk	ports/devel/xdg-user-dirs-gtk
 xdg-utils	ports/devel/xdg-utils
 xdgagrab	ports/graphics/xdgagrab
 xdialog		ports/x11/xdialog
