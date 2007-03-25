@@ -1121,6 +1121,7 @@ share/locale/zh_TW/LC_MESSAGES/evolution-%%VERSION%%.mo
 @dirrm include/evolution-%%VERSION%%/mail
 @dirrm include/evolution-%%VERSION%%/e-util
 @dirrm include/evolution-%%VERSION%%/e-conduit
+@dirrm include/evolution-%%VERSION%%/composer
 @dirrm include/evolution-%%VERSION%%/calendar/gui
 @dirrm include/evolution-%%VERSION%%/calendar
 @dirrm include/evolution-%%VERSION%%/addressbook/gui/widgets
