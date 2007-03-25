@@ -4,24 +4,27 @@ You now need to create the DB where Drupal is going to live
    createdb -U pgsql -W drupal
    createuser -U pgsql -P -e drupal
    createlang -U pgsql -W plpgsql drupal
-   psql -U drupal drupal < %%DRUPAL_DIR%%/database/database.pgsql
 
  MySQL::
    mysqladmin -u dba_user -p create drupal
    mysql -u dba_user -p
    GRANT ALL PRIVILEGES ON drupal.* TO drupal@localhost IDENTIFIED BY 'passwd';
-   mysql -u drupal -p drupal < %%DRUPAL_DIR%%/database/database.mysql"
 
-Then edit the %%DRUPAL_DIR%%/sites/default/settings.php
-to your needs.  Once you have done that you must add appropriate
-configuration directives to your apache configuration file
-(%%PREFIX%%/etc/apache(2)/httpd.conf).  A typical configuration would be:
+You also need to add appropriate configuration directives to your apache
+configuration file (%%PREFIX%%/etc/apache(2)/httpd.conf).
+
+A typical configuration might read:
 
     Alias /drupal "%%DRUPAL_DIR%%"
-
     <Directory "%%DRUPAL_DIR%%">
         Options Indexes FollowSymlinks MultiViews
         AllowOverride None
         Order allow,deny
         Allow from all
     </Directory>
+
+Please see http://drupal.org/cron for important information on setting up
+periodic maintenance tasks in Drupal.
+
+For important information about upgrading from Drupal version 4, please see: 
+%%DRUPAL_DIR%%/doc/UPGRADE.txt

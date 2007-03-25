@@ -1,0 +1,11 @@
+--- modules/taxonomy/taxonomy.module~	Sat Mar 17 00:26:28 2007
++++ modules/taxonomy/taxonomy.module	Sat Mar 17 00:26:28 2007
+@@ -619,7 +619,7 @@
+   foreach ($vocabularies as $vid => $vocabulary) {
+     if ($vocabulary->tags && !$free_tags) { continue; }
+     $tree = taxonomy_get_tree($vid);
+-    if ($tree && (count($tree) > 1)) {
++    if ($tree && (count($tree) >= 1)) {
+       $options[$vocabulary->name] = array();
+       foreach ($tree as $term) {
+         $options[$vocabulary->name][$term->tid] = str_repeat('-', $term->depth) . $term->name;
