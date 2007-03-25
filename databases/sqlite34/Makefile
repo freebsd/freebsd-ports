@@ -1,18 +1,21 @@
-# ex:ts=8
-# New ports collection makefile for:	sqlite
-# Date created:			Feb 21, 2001
-# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
+# New ports collection makefile for:	sqlite3
+# Date created:				Feb 21, 2001
+# Whom:					Ying-Chieh Liao <ijliao@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	sqlite
-PORTVERSION=	3.3.12
+PORTNAME=	sqlite3
+PORTVERSION=	3.3.13
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
+.if defined(USE_THOL)
+PKGNAMESUFFIX=	-threads
+.endif
+DISTNAME=	sqlite-${PORTVERSION}
 
 MAINTAINER=	mnag@FreeBSD.org
-COMMENT=	An SQL database engine in a C library w/ Tcl wrapper
+COMMENT?=	An SQL database engine in a C library w/ Tcl wrapper
 
 USE_GMAKE=	YES
 USE_GNOME=	pkgconfig
@@ -23,19 +26,27 @@ GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=		--prefix=${PREFIX} --with-hints=freebsd.hints
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-DOCSDIR=	${PREFIX}/share/doc/sqlite3
-EXAMPLESDIR=	${PREFIX}/share/examples/sqlite3
-
 OPTIONS=	DEBUG		"Enable debugging & verbose explain"	off \
 		DOCS		"Building docs (depends on TCL)"	on \
 		FTS1		"Enable FTS1 (Full Text Search) module"	off \
-		TCLWRAPPER	"TCL wrapper for SQLITE"		off \
-		THREADS		"Enable threads support"		off
+		TCLWRAPPER	"TCL wrapper for SQLITE"		off
 
 # Defaults, for building the docs:
 TCL_V?=		8.4
 MAKE_ARGS+=	TCLSH=tclsh${TCL_V}
 MAKE_ENV+=	TCL_VER=${TCL_V}
+
+.if !defined(USE_THOL)
+OPTIONS+=	THREADS		"Enable threads support"		off
+PLIST_SUB+=	THOL="@comment "
+CONFLICTS=	sqlite-threads-3*
+.else
+CONFIGURE_ARGS+=	--enable-threadsafe --enable-threads-override-locks
+PLIST_SUB+=	THOL=""
+CONFLICTS=	sqlite-3*
+.endif
+
+SLAVEDIRS=	databases/sqlite3-threads
 
 .include <bsd.port.pre.mk>
 
@@ -69,13 +80,6 @@ CONFIGURE_ARGS+=	--enable-threadsafe
 .endif
 
 post-patch:
-.if defined(WITH_THREADS)
-	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -E -e "s|(Libs:.*)|\1 ${PTHREAD_LIBS}|" \
-		-e "s|(Cflags:.*)|\1 ${PTHREAD_CFLAGS}|" \
-		${WRKSRC}/sqlite.pc.in ${WRKSRC}/sqlite3.pc.in
-.endif
 	@${REINPLACE_CMD} -e "s|tclsh \$$(TOP)|\$$(TCLSH) \$$(TOP)|g" \
 		-e "s|./libtool|${LIBTOOL}|g" \
 		-e "s|\$${HAVE_TCL:1=tcl_install}||" \
@@ -84,6 +88,15 @@ post-patch:
 		> ${WRKSRC}/freebsd.hints
 	@${ECHO} "config_TARGET_TCL_LIBS=\"-L${PREFIX}/lib -ltcl${TCL_V:S/.//}\"" \
 		>> ${WRKSRC}/freebsd.hints
+
+pre-configure:
+.if defined(WITH_THREADS) || defined(USE_THOL)
+	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -E -e "s|(Libs:.*)|\1 ${PTHREAD_LIBS}|" \
+		-e "s|(Cflags:.*)|\1 ${PTHREAD_CFLAGS}|" \
+		${WRKSRC}/sqlite.pc.in ${WRKSRC}/sqlite3.pc.in
+.endif
 
 post-install:
 .if defined(WITH_TCLWRAPPER)
@@ -99,5 +112,9 @@ post-install:
 .endif
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${FILESDIR}/example.tcl ${EXAMPLESDIR}
+.if defined(USE_THOL)
+	@${MKDIR} ${DATADIR}
+	@${TOUCH} ${DATADIR}/sqlite3_with_threads-override-locks
+.endif
 
 .include <bsd.port.post.mk>
