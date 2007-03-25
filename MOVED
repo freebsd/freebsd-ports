@@ -2877,3 +2877,12 @@ graphics/gnome-colorscheme|graphics/agave|2007-03-21|Project renamed
 databases/zodb||2007-03-22|Has expired: outdated software, databases/zodb3 should be used
 finance/gnomepm||2007-03-22|Has expired: is unfetchable and has no homepage
 games/frabs||2007-03-22|Has expired: is unfetchable and homepage disappeared
+www/drupal|www/drupal4|2007-03-25|rename for drupal5
+www/drupal-attachment|www/drupal4-attachment|2007-03-25|rename for drupal5
+www/drupal-filemanager|www/drupal4-filemanager|2007-03-25|rename for drupal5
+www/drupal-gsitemap|www/drupal4-gsitemap|2007-03-25|rename for drupal5
+www/drupal-i18n|www/drupal4-i18n|2007-03-25|rename for drupal5
+www/drupal-nice_menus|www/drupal4-nice_menus|2007-03-25|rename for drupal5
+www/drupal-taxonomy_access|www/drupal4-taxonomy_access|2007-03-25|rename for drupal5
+www/drupal-textile|www/drupal4-textile|2007-03-25|rename for drupal5
+security/drupal-ldap_integration|security/drupal4-ldap_integration|2007-03-25|rename for drupal5
