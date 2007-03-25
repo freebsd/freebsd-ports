@@ -83,7 +83,8 @@
 @dirrmtry %%LOCAL_FONTSDIR%%/TrueType
 @dirrmtry %%LOCAL_FONTSDIR%%
 @cwd %%X11BASE%%
-etc/fonts/conf.d/2.ipa-ttfonts.conf
+etc/fonts/conf.d/20-unhint-ipattfonts.conf
+etc/fonts/conf.d/62-fonts-ipattfonts.conf
 %%X_FONTSDIR%%/TrueType/ipag.ttf
 %%X_FONTSDIR%%/TrueType/ipagp.ttf
 %%X_FONTSDIR%%/TrueType/ipagui.ttf

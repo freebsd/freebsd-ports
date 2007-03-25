@@ -7,7 +7,7 @@
 
 PORTNAME=	ipa-ttfonts
 PORTVERSION=	1.0.20060520
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
@@ -62,7 +62,8 @@ do-install:
 		${DATADIR}/fonts/M+*.ttf \
 		${PREFIX}/${X_FONTSDIR}/TrueType/
 	${MKDIR} ${PREFIX}/etc/fonts/conf.d
-	${INSTALL_DATA} ${FILESDIR}/2.ipa-ttfonts.conf \
+	${INSTALL_DATA} ${FILESDIR}/20-unhint-ipattfonts.conf \
+		${FILESDIR}/62-fonts-ipattfonts.conf \
 		${PREFIX}/etc/fonts/conf.d
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
