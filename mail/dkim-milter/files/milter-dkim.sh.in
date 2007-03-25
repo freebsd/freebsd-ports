@@ -67,7 +67,7 @@ if [ -n "$2" ]; then
 	eval milterdkim_domain="\${milterdkim_${profile}_domain:-${milterdkim_domain}}"
 	eval milterdkim_key="\${milterdkim_${profile}_key:-${milterdkim_key}}"
 	eval milterdkim_flags="\${milterdkim_${profile}_flags:-${milterdkim_flags}}"
-	command_args="-l -p ${milterdkim_socket} -u ${milterdkim_uid} -P ${pidfile}"
+	command_args="-l -p ${milterdkim_socket} -u ${milterdkim_uid} -P ${pidfile} -d ${milterdkim_domain} -k ${milterdkim_key} -s ${milterdkim_selector} -S ${milterdkim_alg}"
     else
 	echo "$0: extra argument ignored"
     fi
@@ -90,7 +90,7 @@ else
 	fi
     else
 	milterdkim_flags=${milterdkim_flags}
-	command_args="-l -p ${milterdkim_socket} -u ${milterdkim_uid} -P ${pidfile}"
+	command_args="-l -p ${milterdkim_socket} -u ${milterdkim_uid} -P ${pidfile} -d ${milterdkim_domain} -k ${milterdkim_key} -s ${milterdkim_selector} -S ${milterdkim_alg}"
     fi
 fi
 
