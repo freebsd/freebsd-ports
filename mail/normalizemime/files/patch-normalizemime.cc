@@ -18,3 +18,11 @@
  
    while (in_left > 0) {
      if ((size_t)(-1) == iconv (ic, &ibuf, &in_left, &obuf, &out_left)) {
+@@ -1491,6 +1493,7 @@
+       "X-Spam-",           // Added by SpamAssasin for example
+       "X-CRM114-",         // Added by CRM114
+       "X-Virus-",          // Added by ClamAV
++      "X-DSPAM-",          // Added by DSPAM
+       "X-UID:",            // added by Pine mail user agent
+       "Status:",           // added by Pine mail user agent
+       "X-Status:",         // added by Pine mail user agent
