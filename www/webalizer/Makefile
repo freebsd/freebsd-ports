@@ -145,12 +145,16 @@ do-extract:
 .endif
 
 pre-configure:
-	@${MV} ${WRKSRC}/webalizer.1 ${WRKSRC}/webalizer.1.sed
-	${SED} -e "s=/etc=${PREFIX}/etc=" \
-		${WRKSRC}/webalizer.1.sed > ${WRKSRC}/webalizer.1
-	@${MV} ${WRKSRC}/webalizer.c ${WRKSRC}/webalizer.c.sed
-	${SED} -e "s=webalizer.conf=${PKGNAMEPREFIX}webalizer.conf=" \
-		${WRKSRC}/webalizer.c.sed > ${WRKSRC}/webalizer.c
+	${REINPLACE_CMD} -e "s|/etc|${PREFIX}/etc|" \
+		${WRKSRC}/webalizer.1
+	${REINPLACE_CMD} \
+		-e "s|webalizer.conf|${PKGNAMEPREFIX}webalizer.conf|" \
+		${WRKSRC}/webalizer.c
+.if defined(WITH_GEOIP)
+	${REINPLACE_CMD} \
+		-e 's|USE_GEOIP=""|USE_GEOIP="yes"|' \
+		${WRKSRC}/configure
+.endif
 .if !defined(WEBALIZER_LANG)
 	@${ECHO_MSG} "You can customize the language by typing"
 	@${ECHO_MSG} "       make WEBALIZER_LANG=<lang>"
