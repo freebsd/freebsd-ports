@@ -6,15 +6,11 @@
 #
 
 PORTNAME=	zope29
-PORTVERSION=	2.9.6
-PORTREVISION=	1
+PORTVERSION=	2.9.7
 CATEGORIES=	www python zope
-MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/ \
-		http://www.zope.org/Products/Zope/Hotfix-2007-03-20/Hotfix-20070320/:hotfix
+MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-final
 EXTRACT_SUFX=	.tgz
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		Hotfix_20070320.tgz:hotfix
 DIST_SUBDIR=	zope
 
 MAINTAINER=	yasi@yasi.to
@@ -76,9 +72,6 @@ post-configure:
 		-e 's,^.*LN.*PYTHON.*$$,,g' \
 		${WRKSRC}/${MAKEFILE}
 
-post-build:
-	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKDIR}/Hotfix_20070320/
-
 post-install:
 	${MV} ${ZOPEBASEDIR}/skel/etc/zope.conf.in \
 		${ZOPEBASEDIR}/skel/etc/zope.conf.sample.in
@@ -86,7 +79,6 @@ post-install:
 	${MKDIR} ${ZOPEBASEDIR}/Products
 	${CP} ${FILESDIR}/Products_00readme-freebsd.txt \
 		${ZOPEBASEDIR}/Products/00readme-freebsd.txt
-	${CP} -R ${WRKDIR}/Hotfix_20070320 ${ZOPEBASEDIR}/Products/
 
 	${FIND} ${ZOPEBASEDIR} -type f -print0 | ${XARGS} -0 -- ${CHMOD} a-w+r
 
