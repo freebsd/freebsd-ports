@@ -1,11 +1,29 @@
---- Makefile.orig	Wed Jun 25 17:44:34 2003
-+++ Makefile	Wed Jun 25 17:45:03 2003
-@@ -37,7 +37,7 @@
- 	$(LIBSO) libhoard.o $(OBJS) -o $@ $(LIBS)
+--- Makefile.orig	Sun Mar 11 10:57:07 2007
++++ Makefile	Sun Mar 11 11:00:07 2007
+@@ -1,6 +1,8 @@
+ # Commands to compile Hoard for various targets.
+ # Run make (with no arguments) to see the complete target list.
  
- libhoard.o: libhoard.cpp $(SRCS)
--	$(CXX) $(CXXFLAGS) -c $< -o $@
-+	$(CXX) $(CXXFLAGS) $(FEATURESXX) -c $< -o $@
- endif
++FREEBSD_COMPILE := $(CXX) $(CFLAGS) -static -DNDEBUG  -I. -Iheaplayers -Iheaplayers/util -D_REENTRANT=1 -shared libhoard.cpp -Bsymbolic -o libhoard.so -pthread -fPIC
++
+ DARWIN8_COMPILE := g++ -pipe -O2 -DNDEBUG  -I. -Iheaplayers -Iheaplayers/util -D_REENTRANT=1 -compatibility_version 1 -current_version 1 -dynamiclib libhoard.cpp -o libhoard.dylib -ldl -lpthread
  
- ifeq ($(WINDOWS),1)
+ DARWIN8_COMPILE_DEBUG := g++ -pipe -g -I. -Iheaplayers -Iheaplayers/util -D_REENTRANT=1 -compatibility_version 1 -current_version 1 -dynamiclib libhoard.cpp -o libhoard.dylib -ldl -lpthread
+@@ -32,6 +34,7 @@
+ all:
+ 	@echo "To build Hoard, specify the desired build target:"
+ 
++	@echo " freebsd"
+ 	@echo " darwin"
+ 	@echo " linux-gcc-x86"
+ 	@echo " solaris-sunw-sparc"
+@@ -42,6 +45,9 @@
+ 	@echo "  (for build instructions on Windows, see NOTES.Windows)"
+ 
+ .PHONY: darwin linux-gcc-x86 linux-gcc-x86-debug solaris-sunw-sparc solaris-sunw-x86 solaris-gcc-sparc generic-gcc clean
++
++freebsd:
++	$(FREEBSD_COMPILE)
+ 
+ darwin:
+ 	$(DARWIN8_COMPILE)
