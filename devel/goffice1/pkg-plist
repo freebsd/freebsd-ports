@@ -1,137 +1,126 @@
-include/libgoffice-0.3/goffice/app/error-info.h
-include/libgoffice-0.3/goffice/app/file.h
-include/libgoffice-0.3/goffice/app/go-cmd-context-impl.h
-include/libgoffice-0.3/goffice/app/go-cmd-context.h
-include/libgoffice-0.3/goffice/app/go-doc-control-impl.h
-include/libgoffice-0.3/goffice/app/go-doc-control.h
-include/libgoffice-0.3/goffice/app/go-doc-impl.h
-include/libgoffice-0.3/goffice/app/go-doc.h
-include/libgoffice-0.3/goffice/app/go-plugin-loader-module.h
-include/libgoffice-0.3/goffice/app/go-plugin-loader.h
-include/libgoffice-0.3/goffice/app/go-plugin-service-impl.h
-include/libgoffice-0.3/goffice/app/go-plugin-service.h
-include/libgoffice-0.3/goffice/app/go-plugin.h
-include/libgoffice-0.3/goffice/app/goffice-app.h
-include/libgoffice-0.3/goffice/app/io-context-priv.h
-include/libgoffice-0.3/goffice/app/io-context.h
-include/libgoffice-0.3/goffice/app/module-plugin-defs.h
-include/libgoffice-0.3/goffice/component/go-component-factory.h
-include/libgoffice-0.3/goffice/component/go-component.h
-include/libgoffice-0.3/goffice/component/goffice-component.h
-include/libgoffice-0.3/goffice/cut-n-paste/foocanvas/foo-canvas-line.h
-include/libgoffice-0.3/goffice/cut-n-paste/foocanvas/foo-canvas-pixbuf.h
-include/libgoffice-0.3/goffice/cut-n-paste/foocanvas/foo-canvas-polygon.h
-include/libgoffice-0.3/goffice/cut-n-paste/foocanvas/foo-canvas-rect-ellipse.h
-include/libgoffice-0.3/goffice/cut-n-paste/foocanvas/foo-canvas-text.h
-include/libgoffice-0.3/goffice/cut-n-paste/foocanvas/foo-canvas-util.h
-include/libgoffice-0.3/goffice/cut-n-paste/foocanvas/foo-canvas-widget.h
-include/libgoffice-0.3/goffice/cut-n-paste/foocanvas/foo-canvas.h
-include/libgoffice-0.3/goffice/cut-n-paste/foocanvas/libfoocanvas.h
-include/libgoffice-0.3/goffice/data/go-data-impl.h
-include/libgoffice-0.3/goffice/data/go-data-simple.h
-include/libgoffice-0.3/goffice/data/go-data.h
-include/libgoffice-0.3/goffice/data/goffice-data.h
-include/libgoffice-0.3/goffice/drawing/god-anchor.h
-include/libgoffice-0.3/goffice/drawing/god-default-attributes.h
-include/libgoffice-0.3/goffice/drawing/god-drawing-group.h
-include/libgoffice-0.3/goffice/drawing/god-drawing-renderer-gdk.h
-include/libgoffice-0.3/goffice/drawing/god-drawing-view.h
-include/libgoffice-0.3/goffice/drawing/god-drawing.h
-include/libgoffice-0.3/goffice/drawing/god-image-store.h
-include/libgoffice-0.3/goffice/drawing/god-image.h
-include/libgoffice-0.3/goffice/drawing/god-paragraph-attributes.h
-include/libgoffice-0.3/goffice/drawing/god-property-table.h
-include/libgoffice-0.3/goffice/drawing/god-shape.h
-include/libgoffice-0.3/goffice/drawing/god-text-model.h
-include/libgoffice-0.3/goffice/goffice-features.h
-include/libgoffice-0.3/goffice/goffice.h
-include/libgoffice-0.3/goffice/graph/goffice-graph.h
-include/libgoffice-0.3/goffice/graph/gog-axis-line-impl.h
-include/libgoffice-0.3/goffice/graph/gog-axis-line.h
-include/libgoffice-0.3/goffice/graph/gog-axis.h
-include/libgoffice-0.3/goffice/graph/gog-chart-impl.h
-include/libgoffice-0.3/goffice/graph/gog-chart.h
-include/libgoffice-0.3/goffice/graph/gog-control-foocanvas.h
-include/libgoffice-0.3/goffice/graph/gog-data-allocator.h
-include/libgoffice-0.3/goffice/graph/gog-data-set.h
-include/libgoffice-0.3/goffice/graph/gog-error-bar.h
-include/libgoffice-0.3/goffice/graph/gog-graph-impl.h
-include/libgoffice-0.3/goffice/graph/gog-graph.h
-include/libgoffice-0.3/goffice/graph/gog-grid-line.h
-include/libgoffice-0.3/goffice/graph/gog-grid.h
-include/libgoffice-0.3/goffice/graph/gog-guru.h
-include/libgoffice-0.3/goffice/graph/gog-label.h
-include/libgoffice-0.3/goffice/graph/gog-legend.h
-include/libgoffice-0.3/goffice/graph/gog-object-xml.h
-include/libgoffice-0.3/goffice/graph/gog-object.h
-include/libgoffice-0.3/goffice/graph/gog-outlined-object.h
-include/libgoffice-0.3/goffice/graph/gog-plot-engine.h
-include/libgoffice-0.3/goffice/graph/gog-plot-impl.h
-include/libgoffice-0.3/goffice/graph/gog-plot.h
-include/libgoffice-0.3/goffice/graph/gog-reg-curve.h
-include/libgoffice-0.3/goffice/graph/gog-renderer-cairo.h
-include/libgoffice-0.3/goffice/graph/gog-renderer-gnome-print.h
-include/libgoffice-0.3/goffice/graph/gog-renderer-impl.h
-include/libgoffice-0.3/goffice/graph/gog-renderer.h
-include/libgoffice-0.3/goffice/graph/gog-series-impl.h
-include/libgoffice-0.3/goffice/graph/gog-series-lines.h
-include/libgoffice-0.3/goffice/graph/gog-series.h
-include/libgoffice-0.3/goffice/graph/gog-smoothed-curve.h
-include/libgoffice-0.3/goffice/graph/gog-style.h
-include/libgoffice-0.3/goffice/graph/gog-styled-object.h
-include/libgoffice-0.3/goffice/graph/gog-theme.h
-include/libgoffice-0.3/goffice/graph/gog-trend-line.h
-include/libgoffice-0.3/goffice/graph/gog-view.h
-include/libgoffice-0.3/goffice/gtk/go-action-combo-color.h
-include/libgoffice-0.3/goffice/gtk/go-action-combo-pixmaps.h
-include/libgoffice-0.3/goffice/gtk/go-action-combo-stack.h
-include/libgoffice-0.3/goffice/gtk/go-action-combo-text.h
-include/libgoffice-0.3/goffice/gtk/go-charmap-sel.h
-include/libgoffice-0.3/goffice/gtk/go-color-group.h
-include/libgoffice-0.3/goffice/gtk/go-color-palette.h
-include/libgoffice-0.3/goffice/gtk/go-color-selector.h
-include/libgoffice-0.3/goffice/gtk/go-combo-box.h
-include/libgoffice-0.3/goffice/gtk/go-combo-color.h
-include/libgoffice-0.3/goffice/gtk/go-combo-pixmaps.h
-include/libgoffice-0.3/goffice/gtk/go-combo-text.h
-include/libgoffice-0.3/goffice/gtk/go-font-sel.h
-include/libgoffice-0.3/goffice/gtk/go-format-sel.h
-include/libgoffice-0.3/goffice/gtk/go-gradient-selector.h
-include/libgoffice-0.3/goffice/gtk/go-graph-widget.h
-include/libgoffice-0.3/goffice/gtk/go-line-selector.h
-include/libgoffice-0.3/goffice/gtk/go-locale-sel.h
-include/libgoffice-0.3/goffice/gtk/go-marker-selector.h
-include/libgoffice-0.3/goffice/gtk/go-optionmenu.h
-include/libgoffice-0.3/goffice/gtk/go-palette.h
-include/libgoffice-0.3/goffice/gtk/go-pattern-selector.h
-include/libgoffice-0.3/goffice/gtk/go-rotation-sel.h
-include/libgoffice-0.3/goffice/gtk/go-selector.h
-include/libgoffice-0.3/goffice/gtk/goffice-gtk.h
-include/libgoffice-0.3/goffice/ms-compat/go-ms-parser.h
-include/libgoffice-0.3/goffice/ms-compat/god-drawing-ms-client-handler.h
-include/libgoffice-0.3/goffice/ms-compat/god-drawing-ms.h
-include/libgoffice-0.3/goffice/ms-compat/god-image-ms.h
-include/libgoffice-0.3/goffice/utils/datetime.h
-include/libgoffice-0.3/goffice/utils/go-color.h
-include/libgoffice-0.3/goffice/utils/go-file.h
-include/libgoffice-0.3/goffice/utils/go-font.h
-include/libgoffice-0.3/goffice/utils/go-format.h
-include/libgoffice-0.3/goffice/utils/go-geometry.h
-include/libgoffice-0.3/goffice/utils/go-glib-extras.h
-include/libgoffice-0.3/goffice/utils/go-gradient.h
-include/libgoffice-0.3/goffice/utils/go-image.h
-include/libgoffice-0.3/goffice/utils/go-libxml-extras.h
-include/libgoffice-0.3/goffice/utils/go-line.h
-include/libgoffice-0.3/goffice/utils/go-locale.h
-include/libgoffice-0.3/goffice/utils/go-marker.h
-include/libgoffice-0.3/goffice/utils/go-math.h
-include/libgoffice-0.3/goffice/utils/go-pattern.h
-include/libgoffice-0.3/goffice/utils/go-rangefunc.h
-include/libgoffice-0.3/goffice/utils/go-regression.h
-include/libgoffice-0.3/goffice/utils/go-undo.h
-include/libgoffice-0.3/goffice/utils/go-units.h
-include/libgoffice-0.3/goffice/utils/goffice-utils.h
-include/libgoffice-0.3/goffice/utils/regutf8.h
+include/libgoffice-1/goffice/app/error-info.h
+include/libgoffice-1/goffice/app/file.h
+include/libgoffice-1/goffice/app/go-cmd-context-impl.h
+include/libgoffice-1/goffice/app/go-cmd-context.h
+include/libgoffice-1/goffice/app/go-doc-control-impl.h
+include/libgoffice-1/goffice/app/go-doc-control.h
+include/libgoffice-1/goffice/app/go-doc-impl.h
+include/libgoffice-1/goffice/app/go-doc.h
+include/libgoffice-1/goffice/app/go-plugin-loader-module.h
+include/libgoffice-1/goffice/app/go-plugin-loader.h
+include/libgoffice-1/goffice/app/go-plugin-service-impl.h
+include/libgoffice-1/goffice/app/go-plugin-service.h
+include/libgoffice-1/goffice/app/go-plugin.h
+include/libgoffice-1/goffice/app/goffice-app.h
+include/libgoffice-1/goffice/app/io-context-priv.h
+include/libgoffice-1/goffice/app/io-context.h
+include/libgoffice-1/goffice/app/module-plugin-defs.h
+include/libgoffice-1/goffice/cut-n-paste/foocanvas/foo-canvas-line.h
+include/libgoffice-1/goffice/cut-n-paste/foocanvas/foo-canvas-pixbuf.h
+include/libgoffice-1/goffice/cut-n-paste/foocanvas/foo-canvas-polygon.h
+include/libgoffice-1/goffice/cut-n-paste/foocanvas/foo-canvas-rect-ellipse.h
+include/libgoffice-1/goffice/cut-n-paste/foocanvas/foo-canvas-text.h
+include/libgoffice-1/goffice/cut-n-paste/foocanvas/foo-canvas-util.h
+include/libgoffice-1/goffice/cut-n-paste/foocanvas/foo-canvas-widget.h
+include/libgoffice-1/goffice/cut-n-paste/foocanvas/foo-canvas.h
+include/libgoffice-1/goffice/cut-n-paste/foocanvas/libfoocanvas.h
+include/libgoffice-1/goffice/cut-n-paste/pcre/pcre.h
+include/libgoffice-1/goffice/data/go-data-impl.h
+include/libgoffice-1/goffice/data/go-data-simple.h
+include/libgoffice-1/goffice/data/go-data.h
+include/libgoffice-1/goffice/data/goffice-data.h
+include/libgoffice-1/goffice/drawing/god-anchor.h
+include/libgoffice-1/goffice/drawing/god-default-attributes.h
+include/libgoffice-1/goffice/drawing/god-drawing-group.h
+include/libgoffice-1/goffice/drawing/god-drawing-renderer-gdk.h
+include/libgoffice-1/goffice/drawing/god-drawing-view.h
+include/libgoffice-1/goffice/drawing/god-drawing.h
+include/libgoffice-1/goffice/drawing/god-image-store.h
+include/libgoffice-1/goffice/drawing/god-image.h
+include/libgoffice-1/goffice/drawing/god-paragraph-attributes.h
+include/libgoffice-1/goffice/drawing/god-property-table.h
+include/libgoffice-1/goffice/drawing/god-shape.h
+include/libgoffice-1/goffice/drawing/god-text-model.h
+include/libgoffice-1/goffice/goffice-features.h
+include/libgoffice-1/goffice/goffice.h
+include/libgoffice-1/goffice/graph/goffice-graph.h
+include/libgoffice-1/goffice/graph/gog-axis-line-impl.h
+include/libgoffice-1/goffice/graph/gog-axis-line.h
+include/libgoffice-1/goffice/graph/gog-axis.h
+include/libgoffice-1/goffice/graph/gog-chart-impl.h
+include/libgoffice-1/goffice/graph/gog-chart.h
+include/libgoffice-1/goffice/graph/gog-control-foocanvas.h
+include/libgoffice-1/goffice/graph/gog-data-allocator.h
+include/libgoffice-1/goffice/graph/gog-data-set.h
+include/libgoffice-1/goffice/graph/gog-error-bar.h
+include/libgoffice-1/goffice/graph/gog-graph-impl.h
+include/libgoffice-1/goffice/graph/gog-graph.h
+include/libgoffice-1/goffice/graph/gog-grid-line.h
+include/libgoffice-1/goffice/graph/gog-grid.h
+include/libgoffice-1/goffice/graph/gog-guru.h
+include/libgoffice-1/goffice/graph/gog-label.h
+include/libgoffice-1/goffice/graph/gog-legend.h
+include/libgoffice-1/goffice/graph/gog-object-xml.h
+include/libgoffice-1/goffice/graph/gog-object.h
+include/libgoffice-1/goffice/graph/gog-outlined-object.h
+include/libgoffice-1/goffice/graph/gog-plot-engine.h
+include/libgoffice-1/goffice/graph/gog-plot-impl.h
+include/libgoffice-1/goffice/graph/gog-plot.h
+include/libgoffice-1/goffice/graph/gog-reg-curve.h
+include/libgoffice-1/goffice/graph/gog-renderer-gnome-print.h
+include/libgoffice-1/goffice/graph/gog-renderer-impl.h
+include/libgoffice-1/goffice/graph/gog-renderer-pixbuf.h
+include/libgoffice-1/goffice/graph/gog-renderer-svg.h
+include/libgoffice-1/goffice/graph/gog-renderer.h
+include/libgoffice-1/goffice/graph/gog-series-impl.h
+include/libgoffice-1/goffice/graph/gog-series-lines.h
+include/libgoffice-1/goffice/graph/gog-series.h
+include/libgoffice-1/goffice/graph/gog-style.h
+include/libgoffice-1/goffice/graph/gog-styled-object.h
+include/libgoffice-1/goffice/graph/gog-theme.h
+include/libgoffice-1/goffice/graph/gog-view.h
+include/libgoffice-1/goffice/gtk/go-action-combo-color.h
+include/libgoffice-1/goffice/gtk/go-action-combo-pixmaps.h
+include/libgoffice-1/goffice/gtk/go-action-combo-stack.h
+include/libgoffice-1/goffice/gtk/go-action-combo-text.h
+include/libgoffice-1/goffice/gtk/go-charmap-sel.h
+include/libgoffice-1/goffice/gtk/go-color-group.h
+include/libgoffice-1/goffice/gtk/go-color-palette.h
+include/libgoffice-1/goffice/gtk/go-combo-box.h
+include/libgoffice-1/goffice/gtk/go-combo-color.h
+include/libgoffice-1/goffice/gtk/go-combo-pixmaps.h
+include/libgoffice-1/goffice/gtk/go-combo-text.h
+include/libgoffice-1/goffice/gtk/go-font-sel.h
+include/libgoffice-1/goffice/gtk/go-format-sel.h
+include/libgoffice-1/goffice/gtk/go-graph-widget.h
+include/libgoffice-1/goffice/gtk/go-locale-sel.h
+include/libgoffice-1/goffice/gtk/go-optionmenu.h
+include/libgoffice-1/goffice/gtk/go-rotation-sel.h
+include/libgoffice-1/goffice/gtk/goffice-gtk.h
+include/libgoffice-1/goffice/ms-compat/go-ms-parser.h
+include/libgoffice-1/goffice/ms-compat/god-drawing-ms-client-handler.h
+include/libgoffice-1/goffice/ms-compat/god-drawing-ms.h
+include/libgoffice-1/goffice/ms-compat/god-image-ms.h
+include/libgoffice-1/goffice/utils/datetime.h
+include/libgoffice-1/goffice/utils/format-impl.h
+include/libgoffice-1/goffice/utils/go-color.h
+include/libgoffice-1/goffice/utils/go-file.h
+include/libgoffice-1/goffice/utils/go-font.h
+include/libgoffice-1/goffice/utils/go-format-match.h
+include/libgoffice-1/goffice/utils/go-format.h
+include/libgoffice-1/goffice/utils/go-geometry.h
+include/libgoffice-1/goffice/utils/go-glib-extras.h
+include/libgoffice-1/goffice/utils/go-gradient.h
+include/libgoffice-1/goffice/utils/go-libxml-extras.h
+include/libgoffice-1/goffice/utils/go-line.h
+include/libgoffice-1/goffice/utils/go-marker.h
+include/libgoffice-1/goffice/utils/go-math.h
+include/libgoffice-1/goffice/utils/go-pattern.h
+include/libgoffice-1/goffice/utils/go-rangefunc.h
+include/libgoffice-1/goffice/utils/go-regression.h
+include/libgoffice-1/goffice/utils/go-units.h
+include/libgoffice-1/goffice/utils/goffice-utils.h
+include/libgoffice-1/goffice/utils/regutf8.h
 lib/goffice/%%VERSION%%/plugins/plot_barcol/barcol.a
 lib/goffice/%%VERSION%%/plugins/plot_barcol/barcol.la
 lib/goffice/%%VERSION%%/plugins/plot_barcol/barcol.so
@@ -165,8 +154,6 @@ lib/goffice/%%VERSION%%/plugins/plot_surface/surface.a
 lib/goffice/%%VERSION%%/plugins/plot_surface/surface.la
 lib/goffice/%%VERSION%%/plugins/plot_surface/surface.so
 lib/goffice/%%VERSION%%/plugins/plot_xy/gog-bubble-prefs.glade
-lib/goffice/%%VERSION%%/plugins/plot_xy/gog-xy-color-prefs.glade
-lib/goffice/%%VERSION%%/plugins/plot_xy/gog-xy-series-prefs.glade
 lib/goffice/%%VERSION%%/plugins/plot_xy/plot-types.xml
 lib/goffice/%%VERSION%%/plugins/plot_xy/plugin.xml
 lib/goffice/%%VERSION%%/plugins/plot_xy/xy.a
@@ -182,319 +169,172 @@ lib/goffice/%%VERSION%%/plugins/reg_logfit/logfit.la
 lib/goffice/%%VERSION%%/plugins/reg_logfit/logfit.so
 lib/goffice/%%VERSION%%/plugins/reg_logfit/plugin.xml
 lib/goffice/%%VERSION%%/plugins/reg_logfit/reg-types.xml
-lib/goffice/%%VERSION%%/plugins/smoothing/gog-exp-smooth.glade
-lib/goffice/%%VERSION%%/plugins/smoothing/gog-moving-avg.glade
-lib/goffice/%%VERSION%%/plugins/smoothing/plugin.xml
-lib/goffice/%%VERSION%%/plugins/smoothing/smoothing.a
-lib/goffice/%%VERSION%%/plugins/smoothing/smoothing.la
-lib/goffice/%%VERSION%%/plugins/smoothing/smoothing.so
-lib/goffice/%%VERSION%%/plugins/smoothing/types.xml
-lib/libgoffice-0.a
-lib/libgoffice-0.la
-lib/libgoffice-0.so
-lib/libgoffice-0.so.3
-libdata/pkgconfig/libgoffice-0.3.pc
-%%DOCSDIR%%/GOData.html
-%%DOCSDIR%%/GODataMatrix.html
-%%DOCSDIR%%/GODataScalar.html
-%%DOCSDIR%%/GODataVector.html
-%%DOCSDIR%%/GogAxis.html
-%%DOCSDIR%%/GogAxisLine.html
-%%DOCSDIR%%/GogChart.html
-%%DOCSDIR%%/GogDataAllocator.html
-%%DOCSDIR%%/GogDataset.html
-%%DOCSDIR%%/GogErrorBar.html
-%%DOCSDIR%%/GogGraph.html
-%%DOCSDIR%%/GogGrid.html
-%%DOCSDIR%%/GogGridLine.html
-%%DOCSDIR%%/GogLabel.html
-%%DOCSDIR%%/GogLegend.html
-%%DOCSDIR%%/GogObject.html
-%%DOCSDIR%%/GogOutlinedObject.html
-%%DOCSDIR%%/GogPersist.html
-%%DOCSDIR%%/GogPlot.html
-%%DOCSDIR%%/GogRegCurve.html
-%%DOCSDIR%%/GogRegEqn.html
-%%DOCSDIR%%/GogRenderer.html
-%%DOCSDIR%%/GogSeries.html
-%%DOCSDIR%%/GogSeriesLines.html
-%%DOCSDIR%%/GogStyle.html
-%%DOCSDIR%%/GogStyledObject.html
-%%DOCSDIR%%/GogView.html
-%%DOCSDIR%%/ch01.html
-%%DOCSDIR%%/ch02.html
-%%DOCSDIR%%/ch03.html
-%%DOCSDIR%%/ch04.html
-%%DOCSDIR%%/ch05.html
-%%DOCSDIR%%/ch06.html
-%%DOCSDIR%%/ch07.html
-%%DOCSDIR%%/ch08.html
-%%DOCSDIR%%/ch09.html
-%%DOCSDIR%%/ch10.html
-%%DOCSDIR%%/ch11.html
-%%DOCSDIR%%/goffice-GOComboBox.html
-%%DOCSDIR%%/goffice-GOComboColor.html
-%%DOCSDIR%%/goffice-GOComponent.html
-%%DOCSDIR%%/goffice-GODoc.html
-%%DOCSDIR%%/goffice-GODocControl.html
-%%DOCSDIR%%/goffice-GOPluginLoader.html
-%%DOCSDIR%%/goffice-GOPluginService.html
-%%DOCSDIR%%/goffice-GOService.html
-%%DOCSDIR%%/goffice-GoApp.html
-%%DOCSDIR%%/goffice-GoCharmapSel.html
-%%DOCSDIR%%/goffice-GoCmdContext.html
-%%DOCSDIR%%/goffice-GoColor.html
-%%DOCSDIR%%/goffice-GoComboPixmaps.html
-%%DOCSDIR%%/goffice-GoComboText.html
-%%DOCSDIR%%/goffice-GoComponentFactory.html
-%%DOCSDIR%%/goffice-GoFontSel.html
-%%DOCSDIR%%/goffice-GoFormatSel.html
-%%DOCSDIR%%/goffice-GoGeometry.html
-%%DOCSDIR%%/goffice-GoGlibExtras.html
-%%DOCSDIR%%/goffice-GoLibxmlExtras.html
-%%DOCSDIR%%/goffice-GoLocaleSel.html
-%%DOCSDIR%%/goffice-GoObject.html
-%%DOCSDIR%%/goffice-GoOptionMenu.html
-%%DOCSDIR%%/goffice-GoPluginLoaderModule.html
-%%DOCSDIR%%/goffice-GoRotationSel.html
-%%DOCSDIR%%/goffice-GoSearchReplace.html
-%%DOCSDIR%%/goffice-GogAxisMap.html
-%%DOCSDIR%%/goffice-GogChartMap.html
-%%DOCSDIR%%/goffice-GogControlFooCanvas.html
-%%DOCSDIR%%/goffice-GogEditor.html
-%%DOCSDIR%%/goffice-GogGuru.html
-%%DOCSDIR%%/goffice-GogPlotEngine.html
-%%DOCSDIR%%/goffice-GogTool.html
-%%DOCSDIR%%/goffice-Math.html
-%%DOCSDIR%%/goffice-Ranges.html
-%%DOCSDIR%%/goffice-RegUTF8.html
-%%DOCSDIR%%/goffice-Regressions.html
-%%DOCSDIR%%/goffice-Units.html
-%%DOCSDIR%%/goffice-go-format.html
-%%DOCSDIR%%/goffice-go-gradient.html
-%%DOCSDIR%%/goffice-go-line.html
-%%DOCSDIR%%/goffice-go-marker.html
-%%DOCSDIR%%/goffice-go-pattern.html
-%%DOCSDIR%%/goffice-go-plugin.html
-%%DOCSDIR%%/goffice-gog-theme.html
-%%DOCSDIR%%/goffice.devhelp
-%%DOCSDIR%%/goffice.devhelp2
-%%DOCSDIR%%/home.png
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/index.sgml
-%%DOCSDIR%%/left.png
-%%DOCSDIR%%/pt01.html
-%%DOCSDIR%%/pt02.html
-%%DOCSDIR%%/pt03.html
-%%DOCSDIR%%/right.png
-%%DOCSDIR%%/style.css
-%%DOCSDIR%%/up.png
+lib/libgoffice-1.a
+lib/libgoffice-1.la
+lib/libgoffice-1.so
+lib/libgoffice-1.so.2
+libdata/pkgconfig/libgoffice-1.pc
 share/gnome/goffice/%%VERSION%%/glade/go-font-sel.glade
 share/gnome/goffice/%%VERSION%%/glade/go-format-sel.glade
-share/gnome/goffice/%%VERSION%%/glade/go-image-save-dialog-extra.glade
 share/gnome/goffice/%%VERSION%%/glade/go-rotation-sel.glade
 share/gnome/goffice/%%VERSION%%/glade/gog-axis-prefs.glade
+share/gnome/goffice/%%VERSION%%/glade/gog-chart-prefs.glade
 share/gnome/goffice/%%VERSION%%/glade/gog-error-bar-prefs.glade
-share/gnome/goffice/%%VERSION%%/glade/gog-graph-prefs.glade
 share/gnome/goffice/%%VERSION%%/glade/gog-guru-type-selector.glade
 share/gnome/goffice/%%VERSION%%/glade/gog-guru.glade
 share/gnome/goffice/%%VERSION%%/glade/gog-object-prefs.glade
-share/gnome/goffice/%%VERSION%%/glade/gog-plot-prefs.glade
 share/gnome/goffice/%%VERSION%%/glade/gog-reg-curve-prefs.glade
 share/gnome/goffice/%%VERSION%%/glade/gog-reg-eqn-prefs.glade
 share/gnome/goffice/%%VERSION%%/glade/gog-style-prefs.glade
 share/gnome/goffice/%%VERSION%%/patterns/svg-patterns.xml
-share/gnome/pixmaps/goffice/%%VERSION%%/area.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/bar-hboth.png
-share/gnome/pixmaps/goffice/%%VERSION%%/bar-hminus.png
-share/gnome/pixmaps/goffice/%%VERSION%%/bar-hplus.png
-share/gnome/pixmaps/goffice/%%VERSION%%/bar-none.png
-share/gnome/pixmaps/goffice/%%VERSION%%/bar-vboth.png
-share/gnome/pixmaps/goffice/%%VERSION%%/bar-vminus.png
-share/gnome/pixmaps/goffice/%%VERSION%%/bar-vplus.png
-share/gnome/pixmaps/goffice/%%VERSION%%/bar.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/boxplot.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/bubble.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_area_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_area_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_area_1_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_bar_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_bar_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_bar_1_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_bar_2_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_bar_2_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_bar_2_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_boxplot_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_boxplot_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_bubble_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_colored_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_column_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_column_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_column_1_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_column_2_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_column_2_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_column_2_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_column_3_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cone_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cone_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cone_1_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cone_2_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cone_2_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cone_2_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cone_3_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_contour_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cylinder_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cylinder_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cylinder_1_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cylinder_2_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cylinder_2_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cylinder_2_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_cylinder_3_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_dropbar_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_dropbar_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_histogram_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_line_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_line_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_line_1_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_line_2_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_line_2_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_line_2_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_line_3_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_minmax_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_minmax_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_minmax_2_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_minmax_2_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pie_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pie_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pie_1_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pie_2_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pie_2_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pie_2_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pie_3_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pie_3_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_polar_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pyramid_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pyramid_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pyramid_1_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pyramid_2_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pyramid_2_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pyramid_2_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_pyramid_3_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_radar_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_radar_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_radar_1_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_ring_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_ring_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_scatter_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_scatter_2_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_scatter_2_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_scatter_3_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_scatter_3_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_scatter_3_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_scatter_4_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_scatter_4_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_scatter_4_3.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_scatter_4_4.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_stock_1_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_stock_1_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_stock_2_1.png
-share/gnome/pixmaps/goffice/%%VERSION%%/chart_stock_2_2.png
-share/gnome/pixmaps/goffice/%%VERSION%%/color.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/column.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/doughnut.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/dropbar.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/hist.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/linegraph.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/minmax.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/pie.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/polar.png
-share/gnome/pixmaps/goffice/%%VERSION%%/radar.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/scatter.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/stock.xpm
-share/gnome/pixmaps/goffice/%%VERSION%%/surface.xpm
-share/locale/am/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/az/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/bg/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/ca/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/cs/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/da/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/de/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/el/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/en_CA/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/en_GB/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/es/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/et/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/fi/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/fr/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/ga/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/gl/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/he/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/hr/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/hu/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/it/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/ja/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/ko/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/lv/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/ml/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/mr/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/ms/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/nb/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/nl/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/nn/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/pl/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/pt/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/pt_BR/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/ro/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/ru/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/sk/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/sr/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/sr@Latn/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/sv/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/tr/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/uk/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/vi/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/zh_CN/LC_MESSAGES/goffice-%%VERSION%%.mo
-share/locale/zh_TW/LC_MESSAGES/goffice-%%VERSION%%.mo
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/uk/LC_MESSAGES
-@dirrmtry share/locale/uk
-@dirrmtry share/locale/sr/LC_MESSAGES
-@dirrmtry share/locale/sr
-@dirrmtry share/locale/sk/LC_MESSAGES
-@dirrmtry share/locale/sk
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/ro
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/nn/LC_MESSAGES
-@dirrmtry share/locale/nn
+share/gnome/pixmaps/goffice/area.xpm
+share/gnome/pixmaps/goffice/bar-hboth.png
+share/gnome/pixmaps/goffice/bar-hminus.png
+share/gnome/pixmaps/goffice/bar-hplus.png
+share/gnome/pixmaps/goffice/bar-none.png
+share/gnome/pixmaps/goffice/bar-vboth.png
+share/gnome/pixmaps/goffice/bar-vminus.png
+share/gnome/pixmaps/goffice/bar-vplus.png
+share/gnome/pixmaps/goffice/bar.xpm
+share/gnome/pixmaps/goffice/boxplot.xpm
+share/gnome/pixmaps/goffice/bubble.xpm
+share/gnome/pixmaps/goffice/chart_area_1_1.png
+share/gnome/pixmaps/goffice/chart_area_1_2.png
+share/gnome/pixmaps/goffice/chart_area_1_3.png
+share/gnome/pixmaps/goffice/chart_bar_1_1.png
+share/gnome/pixmaps/goffice/chart_bar_1_2.png
+share/gnome/pixmaps/goffice/chart_bar_1_3.png
+share/gnome/pixmaps/goffice/chart_bar_2_1.png
+share/gnome/pixmaps/goffice/chart_bar_2_2.png
+share/gnome/pixmaps/goffice/chart_bar_2_3.png
+share/gnome/pixmaps/goffice/chart_boxplot_1_1.png
+share/gnome/pixmaps/goffice/chart_bubble_1_1.png
+share/gnome/pixmaps/goffice/chart_column_1_1.png
+share/gnome/pixmaps/goffice/chart_column_1_2.png
+share/gnome/pixmaps/goffice/chart_column_1_3.png
+share/gnome/pixmaps/goffice/chart_column_2_1.png
+share/gnome/pixmaps/goffice/chart_column_2_2.png
+share/gnome/pixmaps/goffice/chart_column_2_3.png
+share/gnome/pixmaps/goffice/chart_column_3_1.png
+share/gnome/pixmaps/goffice/chart_cone_1_1.png
+share/gnome/pixmaps/goffice/chart_cone_1_2.png
+share/gnome/pixmaps/goffice/chart_cone_1_3.png
+share/gnome/pixmaps/goffice/chart_cone_2_1.png
+share/gnome/pixmaps/goffice/chart_cone_2_2.png
+share/gnome/pixmaps/goffice/chart_cone_2_3.png
+share/gnome/pixmaps/goffice/chart_cone_3_1.png
+share/gnome/pixmaps/goffice/chart_contour_1_1.png
+share/gnome/pixmaps/goffice/chart_cylinder_1_1.png
+share/gnome/pixmaps/goffice/chart_cylinder_1_2.png
+share/gnome/pixmaps/goffice/chart_cylinder_1_3.png
+share/gnome/pixmaps/goffice/chart_cylinder_2_1.png
+share/gnome/pixmaps/goffice/chart_cylinder_2_2.png
+share/gnome/pixmaps/goffice/chart_cylinder_2_3.png
+share/gnome/pixmaps/goffice/chart_cylinder_3_1.png
+share/gnome/pixmaps/goffice/chart_dropbar_1_1.png
+share/gnome/pixmaps/goffice/chart_dropbar_1_2.png
+share/gnome/pixmaps/goffice/chart_line_1_1.png
+share/gnome/pixmaps/goffice/chart_line_1_2.png
+share/gnome/pixmaps/goffice/chart_line_1_3.png
+share/gnome/pixmaps/goffice/chart_line_2_1.png
+share/gnome/pixmaps/goffice/chart_line_2_2.png
+share/gnome/pixmaps/goffice/chart_line_2_3.png
+share/gnome/pixmaps/goffice/chart_line_3_1.png
+share/gnome/pixmaps/goffice/chart_minmax_1_1.png
+share/gnome/pixmaps/goffice/chart_minmax_1_2.png
+share/gnome/pixmaps/goffice/chart_minmax_2_1.png
+share/gnome/pixmaps/goffice/chart_minmax_2_2.png
+share/gnome/pixmaps/goffice/chart_pie_1_1.png
+share/gnome/pixmaps/goffice/chart_pie_1_2.png
+share/gnome/pixmaps/goffice/chart_pie_1_3.png
+share/gnome/pixmaps/goffice/chart_pie_2_1.png
+share/gnome/pixmaps/goffice/chart_pie_2_2.png
+share/gnome/pixmaps/goffice/chart_pie_2_3.png
+share/gnome/pixmaps/goffice/chart_polar_1_1.png
+share/gnome/pixmaps/goffice/chart_pyramid_1_1.png
+share/gnome/pixmaps/goffice/chart_pyramid_1_2.png
+share/gnome/pixmaps/goffice/chart_pyramid_1_3.png
+share/gnome/pixmaps/goffice/chart_pyramid_2_1.png
+share/gnome/pixmaps/goffice/chart_pyramid_2_2.png
+share/gnome/pixmaps/goffice/chart_pyramid_2_3.png
+share/gnome/pixmaps/goffice/chart_pyramid_3_1.png
+share/gnome/pixmaps/goffice/chart_radar_1_1.png
+share/gnome/pixmaps/goffice/chart_radar_1_2.png
+share/gnome/pixmaps/goffice/chart_radar_1_3.png
+share/gnome/pixmaps/goffice/chart_ring_1_1.png
+share/gnome/pixmaps/goffice/chart_ring_1_2.png
+share/gnome/pixmaps/goffice/chart_scatter_1_1.png
+share/gnome/pixmaps/goffice/chart_scatter_2_1.png
+share/gnome/pixmaps/goffice/chart_scatter_2_2.png
+share/gnome/pixmaps/goffice/chart_scatter_3_1.png
+share/gnome/pixmaps/goffice/chart_scatter_3_2.png
+share/gnome/pixmaps/goffice/chart_scatter_3_3.png
+share/gnome/pixmaps/goffice/chart_stock_1_1.png
+share/gnome/pixmaps/goffice/chart_stock_1_2.png
+share/gnome/pixmaps/goffice/chart_stock_2_1.png
+share/gnome/pixmaps/goffice/chart_stock_2_2.png
+share/gnome/pixmaps/goffice/column.xpm
+share/gnome/pixmaps/goffice/doughnut.xpm
+share/gnome/pixmaps/goffice/dropbar.xpm
+share/gnome/pixmaps/goffice/linegraph.xpm
+share/gnome/pixmaps/goffice/minmax.xpm
+share/gnome/pixmaps/goffice/pie.xpm
+share/gnome/pixmaps/goffice/polar.png
+share/gnome/pixmaps/goffice/radar.xpm
+share/gnome/pixmaps/goffice/scatter.xpm
+share/gnome/pixmaps/goffice/stock.xpm
+share/gnome/pixmaps/goffice/surface.xpm
+share/locale/am/LC_MESSAGES/goffice.mo
+share/locale/az/LC_MESSAGES/goffice.mo
+share/locale/bg/LC_MESSAGES/goffice.mo
+share/locale/ca/LC_MESSAGES/goffice.mo
+share/locale/cs/LC_MESSAGES/goffice.mo
+share/locale/da/LC_MESSAGES/goffice.mo
+share/locale/de/LC_MESSAGES/goffice.mo
+share/locale/el/LC_MESSAGES/goffice.mo
+share/locale/en_CA/LC_MESSAGES/goffice.mo
+share/locale/en_GB/LC_MESSAGES/goffice.mo
+share/locale/es/LC_MESSAGES/goffice.mo
+share/locale/et/LC_MESSAGES/goffice.mo
+share/locale/fi/LC_MESSAGES/goffice.mo
+share/locale/fr/LC_MESSAGES/goffice.mo
+share/locale/ga/LC_MESSAGES/goffice.mo
+share/locale/gl/LC_MESSAGES/goffice.mo
+share/locale/he/LC_MESSAGES/goffice.mo
+share/locale/hr/LC_MESSAGES/goffice.mo
+share/locale/hu/LC_MESSAGES/goffice.mo
+share/locale/it/LC_MESSAGES/goffice.mo
+share/locale/ja/LC_MESSAGES/goffice.mo
+share/locale/ko/LC_MESSAGES/goffice.mo
+share/locale/lv/LC_MESSAGES/goffice.mo
+share/locale/ml/LC_MESSAGES/goffice.mo
+share/locale/mr/LC_MESSAGES/goffice.mo
+share/locale/ms/LC_MESSAGES/goffice.mo
+share/locale/nb/LC_MESSAGES/goffice.mo
+share/locale/nl/LC_MESSAGES/goffice.mo
+share/locale/nn/LC_MESSAGES/goffice.mo
+share/locale/no/LC_MESSAGES/goffice.mo
+share/locale/pl/LC_MESSAGES/goffice.mo
+share/locale/pt/LC_MESSAGES/goffice.mo
+share/locale/pt_BR/LC_MESSAGES/goffice.mo
+share/locale/ro/LC_MESSAGES/goffice.mo
+share/locale/ru/LC_MESSAGES/goffice.mo
+share/locale/sk/LC_MESSAGES/goffice.mo
+share/locale/sr/LC_MESSAGES/goffice.mo
+share/locale/sr@Latn/LC_MESSAGES/goffice.mo
+share/locale/sv/LC_MESSAGES/goffice.mo
+share/locale/tr/LC_MESSAGES/goffice.mo
+share/locale/uk/LC_MESSAGES/goffice.mo
+share/locale/vi/LC_MESSAGES/goffice.mo
+share/locale/zh_CN/LC_MESSAGES/goffice.mo
+share/locale/zh_TW/LC_MESSAGES/goffice.mo
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
-@dirrmtry share/locale/ko/LC_MESSAGES
-@dirrmtry share/locale/ko
-@dirrmtry share/locale/gl/LC_MESSAGES
-@dirrmtry share/locale/gl
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
-@dirrm share/gnome/pixmaps/goffice/%%VERSION%%
 @dirrm share/gnome/pixmaps/goffice
 @dirrm share/gnome/goffice/%%VERSION%%/patterns
 @dirrm share/gnome/goffice/%%VERSION%%/glade
 @dirrm share/gnome/goffice/%%VERSION%%
 @dirrm share/gnome/goffice
-@dirrm %%DOCSDIR%%
-@dirrm lib/goffice/%%VERSION%%/plugins/smoothing
 @dirrm lib/goffice/%%VERSION%%/plugins/reg_logfit
 @dirrm lib/goffice/%%VERSION%%/plugins/reg_linear
 @dirrm lib/goffice/%%VERSION%%/plugins/plot_xy
@@ -505,16 +345,16 @@ share/locale/zh_TW/LC_MESSAGES/goffice-%%VERSION%%.mo
 @dirrm lib/goffice/%%VERSION%%/plugins/plot_barcol
 @dirrm lib/goffice/%%VERSION%%/plugins
 @dirrm lib/goffice/%%VERSION%%
-@dirrm lib/goffice
-@dirrm include/libgoffice-0.3/goffice/utils
-@dirrm include/libgoffice-0.3/goffice/ms-compat
-@dirrm include/libgoffice-0.3/goffice/gtk
-@dirrm include/libgoffice-0.3/goffice/graph
-@dirrm include/libgoffice-0.3/goffice/drawing
-@dirrm include/libgoffice-0.3/goffice/data
-@dirrm include/libgoffice-0.3/goffice/cut-n-paste/foocanvas
-@dirrm include/libgoffice-0.3/goffice/cut-n-paste
-@dirrm include/libgoffice-0.3/goffice/component
-@dirrm include/libgoffice-0.3/goffice/app
-@dirrm include/libgoffice-0.3/goffice
-@dirrm include/libgoffice-0.3
+@dirrmtry lib/goffice
+@dirrm include/libgoffice-1/goffice/utils
+@dirrm include/libgoffice-1/goffice/ms-compat
+@dirrm include/libgoffice-1/goffice/gtk
+@dirrm include/libgoffice-1/goffice/graph
+@dirrm include/libgoffice-1/goffice/drawing
+@dirrm include/libgoffice-1/goffice/data
+@dirrm include/libgoffice-1/goffice/cut-n-paste/pcre
+@dirrm include/libgoffice-1/goffice/cut-n-paste/foocanvas
+@dirrm include/libgoffice-1/goffice/cut-n-paste
+@dirrm include/libgoffice-1/goffice/app
+@dirrm include/libgoffice-1/goffice
+@dirrm include/libgoffice-1

@@ -395,6 +395,7 @@
     SUBDIR += gnustep-make
     SUBDIR += gob2
     SUBDIR += goffice
+    SUBDIR += goffice1
     SUBDIR += gonzui
     SUBDIR += google-sparsehash
     SUBDIR += gorm
