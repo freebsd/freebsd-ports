@@ -1,11 +1,3 @@
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
 %%IMPDIR%%/acl.php
 %%IMPDIR%%/attachment.php
 %%IMPDIR%%/compose.php
@@ -359,7 +351,6 @@
 %%IMPDIR%%/themes/sun/screen.css
 %%IMPDIR%%/thread.php
 %%IMPDIR%%/view.php
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%HORDE_INC%%httpd-imp.conf
 @dirrm %%IMPDIR%%/themes/sun
 @dirrm %%IMPDIR%%/themes/simplex

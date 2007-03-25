@@ -1,19 +1,18 @@
-# Ports collection makefile for:  Nag
-# Date created:			  Sun Dec 14, 2001
-# Whom:				  Thierry Thomas (<thierry@pompo.net>)
+# Ports collection makefile for:	nag
+# Date created:			Sun Dec 14, 2001
+# Whom:				Thierry Thomas (<thierry@pompo.net>)
 #
 # $FreeBSD$
 #
 
 PORTNAME=	nag
-PORTVERSION=	2.1.2
-PORTREVISION=	1
+PORTVERSION=	2.1.3
+DISTVERSIONPREFIX=	h3-
 CATEGORIES=	deskutils www
 MASTER_SITES=	HORDE
-DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
 MAINTAINER=	beech@alaskaparadise.com
-COMMENT=	Nag is a simple, multiuser task list manager
+COMMENT=	Simple multiuser task list manager
 
 RUN_DEPENDS=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde-base
 
@@ -28,8 +27,8 @@ SUB_FILES=	pkg-message pkg-install pkg-deinstall
 SUB_LIST=	NAGDIR=${NAGDIR}
 
 REINPLACE_ARGS=	-i ""
-DOCS=		README docs/CHANGES docs/CREDITS docs/INSTALL	\
-		docs/RELEASE_NOTES docs/TODO docs/UPGRADING
+PORTDOCS=	README CHANGES CREDITS INSTALL	\
+		RELEASE_NOTES TODO UPGRADING
 CONFFILE=	menu.php prefs.php
 SUB_DIRS=	config js lib locale po scripts templates themes
 
@@ -47,6 +46,9 @@ HORDE_INC=	${LOCALBASE}/etc/apache${APACHE_VERSION:S/20/2/}/Includes
 HORDE_INC=	${LOCALBASE}/etc/horde
 .endif
 
+post-extract:
+	@${MV} ${WRKSRC}/README ${WRKSRC}/docs/
+
 pre-configure:
 	@(cd ${WRKSRC}/scripts &&	\
 		${FIND} . -name "*.php" -exec	\
@@ -55,20 +57,16 @@ pre-configure:
 		${FILESDIR}/httpd.conf.nag > ${WRKDIR}/httpd-nag.conf
 
 do-install:
-	@${MKDIR}  ${NAGDIR}
-.for REP in ${SUB_DIRS}
-	@${CP} -Rp ${WRKSRC}/${REP} ${NAGDIR}
-.endfor
-	@${CP} -p  ${WRKSRC}/*.php ${NAGDIR}
-
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${NAGDIR}
-	@${CHMOD} -R o-rwx ${CONFDIR}
-	@${INSTALL_DATA} ${WRKDIR}/httpd-nag.conf ${HORDE_INC}
+	@${INSTALL} -d ${NAGDIR}/
+	@${CP} -Rp ${SUB_DIRS:S|^|${WRKSRC}/|} ${NAGDIR}/
+	@${CP} -p ${WRKSRC}/*.php ${NAGDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/config/conf.xml ${CONFDIR}/
+	@${INSTALL_DATA} ${WRKDIR}/httpd-nag.conf ${HORDE_INC}/
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${NAGDIR}/
+	@${CHMOD} -R o-rwx ${CONFDIR}/
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for FILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.endfor
+	@${INSTALL} -d ${DOCSDIR}/
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 

@@ -1,11 +1,3 @@
-%%HORDE_INC%%/httpd-nag.conf
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
 %%NAGDIR%%/config/.htaccess
 %%NAGDIR%%/config/conf.xml
 %%NAGDIR%%/config/menu.php.dist
@@ -15,6 +7,7 @@
 %%NAGDIR%%/index.php
 %%NAGDIR%%/js/fixUnstyledOptions.js
 %%NAGDIR%%/js/tables.js
+%%NAGDIR%%/js/prototype.js
 %%NAGDIR%%/lib/.htaccess
 %%NAGDIR%%/lib/Block/summary.php
 %%NAGDIR%%/lib/Driver.php
@@ -30,6 +23,8 @@
 %%NAGDIR%%/list.php
 %%NAGDIR%%/locale/ar_SY/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/bg_BG/LC_MESSAGES/nag.mo
+%%NAGDIR%%/locale/ca_ES/LC_MESSAGES/nag.mo
+%%NAGDIR%%/locale/ca_ES/help.xml
 %%NAGDIR%%/locale/cs_CZ/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/da_DK/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/de_DE/LC_MESSAGES/nag.mo
@@ -69,6 +64,7 @@
 %%NAGDIR%%/po/README
 %%NAGDIR%%/po/ar_SY.po
 %%NAGDIR%%/po/bg_BG.po
+%%NAGDIR%%/po/ca_ES.po
 %%NAGDIR%%/po/cs_CZ.po
 %%NAGDIR%%/po/da_DK.po
 %%NAGDIR%%/po/de_DE.po
@@ -97,6 +93,7 @@
 %%NAGDIR%%/po/sv_SE.po
 %%NAGDIR%%/po/zh_CN.po
 %%NAGDIR%%/po/zh_TW.po
+%%NAGDIR%%/pref_api.php
 %%NAGDIR%%/scripts/.htaccess
 %%NAGDIR%%/scripts/import_vtodos.php
 %%NAGDIR%%/scripts/sql/nag.mssql.sql
@@ -139,7 +136,7 @@
 %%NAGDIR%%/themes/graphics/za.png
 %%NAGDIR%%/themes/screen.css
 %%NAGDIR%%/view.php
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%HORDE_INC%%/httpd-nag.conf
 @dirrm %%NAGDIR%%/themes/graphics
 @dirrm %%NAGDIR%%/themes
 @dirrm %%NAGDIR%%/templates/view
@@ -210,6 +207,8 @@
 @dirrm %%NAGDIR%%/locale/da_DK
 @dirrm %%NAGDIR%%/locale/cs_CZ/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/cs_CZ
+@dirrm %%NAGDIR%%/locale/ca_ES/LC_MESSAGES
+@dirrm %%NAGDIR%%/locale/ca_ES
 @dirrm %%NAGDIR%%/locale/bg_BG/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/bg_BG
 @dirrm %%NAGDIR%%/locale/ar_SY/LC_MESSAGES

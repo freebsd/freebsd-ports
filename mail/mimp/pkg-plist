@@ -37,6 +37,7 @@
 %%MIMPDIR%%/lib/api.php
 %%MIMPDIR%%/lib/prefs.php
 %%MIMPDIR%%/lib/version.php
+%%MIMPDIR%%/locale/ca_ES/LC_MESSAGES/mimp.mo
 %%MIMPDIR%%/locale/de_DE/LC_MESSAGES/mimp.mo
 %%MIMPDIR%%/locale/es_ES/LC_MESSAGES/mimp.mo
 %%MIMPDIR%%/locale/fi_FI/LC_MESSAGES/mimp.mo
@@ -44,12 +45,15 @@
 %%MIMPDIR%%/locale/hu_HU/LC_MESSAGES/mimp.mo
 %%MIMPDIR%%/locale/it_IT/LC_MESSAGES/mimp.mo
 %%MIMPDIR%%/locale/lt_LT/LC_MESSAGES/mimp.mo
+%%MIMPDIR%%/locale/nl_NL/LC_MESSAGES/mimp.mo
+%%MIMPDIR%%/locale/pt_PT/LC_MESSAGES/mimp.mo
 %%MIMPDIR%%/locale/ro_RO/LC_MESSAGES/mimp.mo
 %%MIMPDIR%%/login.php
 %%MIMPDIR%%/mailbox.php
 %%MIMPDIR%%/message.php
 %%MIMPDIR%%/po/README
 %%MIMPDIR%%/po/mimp.pot
+%%MIMPDIR%%/po/ca_ES.po
 %%MIMPDIR%%/po/de_DE.po
 %%MIMPDIR%%/po/es_ES.po
 %%MIMPDIR%%/po/fi_FI.po
@@ -57,6 +61,8 @@
 %%MIMPDIR%%/po/hu_HU.po
 %%MIMPDIR%%/po/it_IT.po
 %%MIMPDIR%%/po/lt_LT.po
+%%MIMPDIR%%/po/nl_NL.po
+%%MIMPDIR%%/po/pt_PT.po
 %%MIMPDIR%%/po/ro_RO.po
 %%MIMPDIR%%/redirect.php
 %%MIMPDIR%%/templates/common-header.inc
@@ -83,6 +89,10 @@
 @dirrm %%MIMPDIR%%/po
 @dirrm %%MIMPDIR%%/locale/ro_RO/LC_MESSAGES
 @dirrm %%MIMPDIR%%/locale/ro_RO
+@dirrm %%MIMPDIR%%/locale/pt_PT/LC_MESSAGES
+@dirrm %%MIMPDIR%%/locale/pt_PT
+@dirrm %%MIMPDIR%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%MIMPDIR%%/locale/nl_NL
 @dirrm %%MIMPDIR%%/locale/lt_LT/LC_MESSAGES
 @dirrm %%MIMPDIR%%/locale/lt_LT
 @dirrm %%MIMPDIR%%/locale/it_IT/LC_MESSAGES
@@ -97,6 +107,8 @@
 @dirrm %%MIMPDIR%%/locale/es_ES
 @dirrm %%MIMPDIR%%/locale/de_DE/LC_MESSAGES
 @dirrm %%MIMPDIR%%/locale/de_DE
+@dirrm %%MIMPDIR%%/locale/ca_ES/LC_MESSAGES
+@dirrm %%MIMPDIR%%/locale/ca_ES
 @dirrm %%MIMPDIR%%/locale
 @dirrm %%MIMPDIR%%/lib/MIME/Viewer
 @dirrm %%MIMPDIR%%/lib/MIME

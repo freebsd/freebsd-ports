@@ -1,11 +1,3 @@
-%%HORDE_INC%%/httpd-ingo.conf
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
-%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%INGODIR%%/blacklist.php
 %%INGODIR%%/config/.htaccess
 %%INGODIR%%/config/backends.php.dist
@@ -36,6 +28,7 @@
 %%INGODIR%%/lib/base.php
 %%INGODIR%%/lib/version.php
 %%INGODIR%%/locale/ca_ES/LC_MESSAGES/ingo.mo
+%%INGODIR%%/locale/ca_ES/help.xml
 %%INGODIR%%/locale/cs_CZ/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/da_DK/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/de_DE/LC_MESSAGES/ingo.mo
@@ -48,6 +41,7 @@
 %%INGODIR%%/locale/fi_FI/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/fi_FI/help.xml
 %%INGODIR%%/locale/fr_FR/LC_MESSAGES/ingo.mo
+%%INGODIR%%/locale/fr_FR/help.xml
 %%INGODIR%%/locale/hu_HU/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/it_IT/LC_MESSAGES/ingo.mo
 %%INGODIR%%/locale/ko_KR/LC_MESSAGES/ingo.mo
@@ -127,7 +121,7 @@
 %%INGODIR%%/themes/screen.css
 %%INGODIR%%/vacation.php
 %%INGODIR%%/whitelist.php
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%HORDE_INC%%/httpd-ingo.conf
 @dirrm %%INGODIR%%/themes/graphics
 @dirrm %%INGODIR%%/themes
 @dirrm %%INGODIR%%/templates/whitelist

@@ -1,11 +1,3 @@
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/LDAP
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
 %%TURBADIR%%/add.php
 %%TURBADIR%%/addressbooks.php
 %%TURBADIR%%/browse.php
@@ -38,6 +30,7 @@
 %%TURBADIR%%/lib/Object/Group.php
 %%TURBADIR%%/lib/ObjectView.php
 %%TURBADIR%%/lib/Renderer.php
+%%TURBADIR%%/lib/tests/tovcard.phpt
 %%TURBADIR%%/lib/Turba.php
 %%TURBADIR%%/lib/api.php
 %%TURBADIR%%/lib/base.php
@@ -47,6 +40,7 @@
 %%TURBADIR%%/locale/ar_SY/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/bg_BG/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/ca_ES/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/ca_ES/help.xml
 %%TURBADIR%%/locale/cs_CZ/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/da_DK/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/de_DE/LC_MESSAGES/turba.mo
@@ -61,6 +55,7 @@
 %%TURBADIR%%/locale/fi_FI/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/fi_FI/help.xml
 %%TURBADIR%%/locale/fr_FR/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/fr_FR/help.xml
 %%TURBADIR%%/locale/gl_ES/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/hu_HU/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/is_IS/LC_MESSAGES/turba.mo
@@ -183,7 +178,6 @@
 %%TURBADIR%%/vcard.php
 %%TURBADIR%%/view.php
 %%HORDE_INC%%/httpd-turba.conf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%TURBADIR%%/themes/ideas
 @dirrm %%TURBADIR%%/themes/graphics/menu
 @dirrm %%TURBADIR%%/themes/graphics
@@ -272,6 +266,7 @@
 @dirrm %%TURBADIR%%/locale/ar_SY/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/ar_SY
 @dirrm %%TURBADIR%%/locale
+@dirrm %%TURBADIR%%/lib/tests
 @dirrm %%TURBADIR%%/lib/Object
 @dirrm %%TURBADIR%%/lib/Driver
 @dirrm %%TURBADIR%%/lib/Block

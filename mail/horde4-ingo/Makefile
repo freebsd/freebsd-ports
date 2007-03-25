@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ingo
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
+DISTVERSIONPREFIX=	h3-
 CATEGORIES=	mail www
 MASTER_SITES=	HORDE
-DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
 MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	Horde's email-filter management application
@@ -34,8 +34,8 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES=	pkg-message pkg-install pkg-deinstall
 SUB_LIST=	INGODIR=${INGODIR}
 
-DOCS=		LICENSE README docs/CHANGES docs/CREDITS docs/INSTALL	\
-		docs/RELEASE_NOTES docs/TODO
+PORTDOCS=	README CHANGES CREDITS INSTALL	\
+		RELEASE_NOTES TODO
 CONFFILE=	backends.php fields.php prefs.php
 SUB_DIRS=	config lib locale po scripts templates themes js
 
@@ -61,25 +61,24 @@ HORDE_INC=	${LOCALBASE}/etc/horde
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 
+post-extract:
+	@${MV} ${WRKSRC}/README ${WRKSRC}/docs/
+
 pre-configure:
 	@${SED} -e "s:/home/httpd/html/horde/ingo:${INGODIR}:g"		\
 		${FILESDIR}/httpd.conf.ingo >${WRKDIR}/httpd-ingo.conf
 
 do-install:
-	@${MKDIR}  ${INGODIR}
-.for REP in ${SUB_DIRS}
-	@${CP} -Rp ${WRKSRC}/${REP} ${INGODIR}
-.endfor
-	@${CP} -p  ${WRKSRC}/*.php ${INGODIR}
-
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${INGODIR}
-	@${CHMOD} -R o-rwx ${CONFDIR}
-	@${INSTALL_DATA} ${WRKDIR}/httpd-ingo.conf ${HORDE_INC}
+	@${INSTALL} -d ${INGODIR}/
+	@${CP} -Rp ${SUB_DIRS:S|^|${WRKSRC}/|} ${INGODIR}/
+	@${CP} -p ${WRKSRC}/*.php ${INGODIR}/
+	@${INSTALL_DATA} ${WRKSRC}/config/conf.xml ${CONFDIR}/
+	@${INSTALL_DATA} ${WRKDIR}/httpd-ingo.conf ${HORDE_INC}/
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${INGODIR}/
+	@${CHMOD} -R o-rwx ${CONFDIR}/
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for FILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.endfor
+	@${INSTALL} -d ${DOCSDIR}/
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
