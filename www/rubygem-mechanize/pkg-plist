@@ -1,154 +1,9 @@
 %%GEM_CACHE%%
-%%GEM_DOC_DIR%%/rdoc/classes/Hpricot.html
-%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Elem.html
-%%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Elem.src/M000228.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000162.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000163.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000164.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000165.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000166.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000167.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000168.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000169.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000170.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000171.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000172.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000173.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000174.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000175.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000176.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000177.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000178.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000180.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000181.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000182.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000183.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000184.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000185.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000186.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000187.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000188.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000189.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000192.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000193.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000194.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000195.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000196.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000197.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000198.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000199.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000200.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000201.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000202.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000203.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000204.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000205.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000206.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000207.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000211.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000212.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000213.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000215.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000216.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000217.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000218.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src/M000220.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP/Copy.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP/Delete.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP/Get.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP/Head.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP/Lock.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP/Mkcol.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP/Move.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP/Options.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP/Post.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP/Propfind.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP/Proppatch.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP/Put.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP/Trace.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP/Unlock.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPError.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPExceptions.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPFatalError.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPGenericRequest.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPGenericRequest.src/M000147.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPGenericRequest.src/M000148.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPGenericRequest.src/M000149.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPGenericRequest.src/M000150.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPGenericRequest.src/M000151.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPGenericRequest.src/M000152.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPGenericRequest.src/M000153.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000114.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000115.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000116.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000117.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000118.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000119.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000120.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000122.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000124.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000125.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000126.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000127.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000128.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000129.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000131.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000132.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000134.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000135.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000136.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000137.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000138.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000139.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000140.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000141.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000142.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000143.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000145.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src/M000146.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPRequest.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPRequest.src/M000161.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPResponse.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPResponse.src/M000221.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPResponse.src/M000222.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPResponse.src/M000223.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPResponse.src/M000224.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPResponse.src/M000225.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPResponse.src/M000226.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPRetriableError.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPServerException.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/ProtoAuthError.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/ProtoCommandError.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/ProtoFatalError.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/ProtoRetriableError.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/ProtoServerError.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/ProtoSyntaxError.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/ProtoUnknownError.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/ProtocolError.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/WriteAdapter.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/WriteAdapter.src/M000154.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/WriteAdapter.src/M000155.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/WriteAdapter.src/M000156.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/WriteAdapter.src/M000158.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/WriteAdapter.src/M000159.html
-%%GEM_DOC_DIR%%/rdoc/classes/Net/WriteAdapter.src/M000160.html
-%%GEM_DOC_DIR%%/rdoc/classes/REXML.html
-%%GEM_DOC_DIR%%/rdoc/classes/REXML/Comment.html
-%%GEM_DOC_DIR%%/rdoc/classes/REXML/Comment.src/M000112.html
-%%GEM_DOC_DIR%%/rdoc/classes/REXML/Node.html
-%%GEM_DOC_DIR%%/rdoc/classes/REXML/Node.src/M000103.html
-%%GEM_DOC_DIR%%/rdoc/classes/REXML/Node.src/M000105.html
-%%GEM_DOC_DIR%%/rdoc/classes/REXML/Node.src/M000106.html
-%%GEM_DOC_DIR%%/rdoc/classes/REXML/Node.src/M000107.html
-%%GEM_DOC_DIR%%/rdoc/classes/REXML/Node.src/M000108.html
-%%GEM_DOC_DIR%%/rdoc/classes/REXML/Node.src/M000109.html
-%%GEM_DOC_DIR%%/rdoc/classes/REXML/Node.src/M000110.html
-%%GEM_DOC_DIR%%/rdoc/classes/REXML/Text.html
-%%GEM_DOC_DIR%%/rdoc/classes/REXML/Text.src/M000113.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize.src/M000001.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize.src/M000002.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize.src/M000003.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize.src/M000004.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize.src/M000005.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize.src/M000006.html
@@ -161,18 +16,17 @@
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize.src/M000013.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize.src/M000014.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize.src/M000015.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize.src/M000016.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize.src/M000017.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize.src/M000019.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Button.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/CheckBox.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/CheckBox.src/M000044.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/CheckBox.src/M000043.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/ContentTypeError.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/ContentTypeError.src/M000045.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/ContentTypeError.src/M000044.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Cookie.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Cookie.src/M000099.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Cookie.src/M000100.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/CookieJar.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/CookieJar.src/M000024.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/CookieJar.src/M000025.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/CookieJar.src/M000026.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/CookieJar.src/M000027.html
@@ -180,10 +34,9 @@
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/CookieJar.src/M000029.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/CookieJar.src/M000030.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/CookieJar.src/M000031.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/CookieJar.src/M000032.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Field.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Field.src/M000081.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Field.src/M000082.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Field.src/M000083.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/File.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/File.src/M000101.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/File.src/M000102.html
@@ -192,8 +45,9 @@
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/FileUpload.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/FileUpload.src/M000065.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Form.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Form.src/M000083.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Form.src/M000084.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Form.src/M000085.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Form.src/M000086.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Form.src/M000087.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Form.src/M000088.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Form.src/M000089.html
@@ -203,45 +57,47 @@
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Form.src/M000093.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Form.src/M000094.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Form.src/M000095.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Form.src/M000096.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Frame.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Frame.src/M000033.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Frame.src/M000032.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/GlobalForm.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/GlobalForm.src/M000018.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/GlobalForm.src/M000019.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/GlobalForm.src/M000020.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/GlobalForm.src/M000021.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/GlobalForm.src/M000022.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/GlobalForm.src/M000023.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Headers.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Headers.src/M000051.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Headers.src/M000052.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/ImageButton.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/ImageButton.src/M000052.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/ImageButton.src/M000053.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/ImageButton.src/M000054.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Link.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Link.src/M000045.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Link.src/M000046.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Link.src/M000047.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Link.src/M000048.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/List.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/List.src/M000070.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/List.src/M000071.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/List.src/M000072.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/List.src/M000074.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/List.src/M000073.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Meta.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/MultiSelectList.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/MultiSelectList.src/M000074.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/MultiSelectList.src/M000075.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/MultiSelectList.src/M000076.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/MultiSelectList.src/M000077.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/MultiSelectList.src/M000078.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/MultiSelectList.src/M000079.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/MultiSelectList.src/M000080.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/MultiSelectList.src/M000081.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Option.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Option.src/M000037.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Option.src/M000038.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Option.src/M000039.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Option.src/M000040.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Option.src/M000043.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Option.src/M000042.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Page.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Page.src/M000066.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Page.src/M000067.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Page.src/M000068.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Page.src/M000069.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Page.src/M000070.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/PluggableParser.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/PluggableParser.src/M000055.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/PluggableParser.src/M000056.html
@@ -253,21 +109,20 @@
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/PluggableParser.src/M000062.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/PluggableParser.src/M000063.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/REXMLPage.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/REXMLPage.src/M000024.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/REXMLPage.src/M000023.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/RadioButton.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/RadioButton.src/M000033.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/RadioButton.src/M000034.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/RadioButton.src/M000035.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/RadioButton.src/M000036.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/RadioButton.src/M000037.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/ResponseCodeError.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/ResponseCodeError.src/M000096.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/ResponseCodeError.src/M000097.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/ResponseCodeError.src/M000098.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/SelectList.html
+%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/SelectList.src/M000048.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/SelectList.src/M000049.html
 %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/SelectList.src/M000050.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/SelectList.src/M000051.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Util.html
-%%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Util.src/M000054.html
 %%GEM_DOC_DIR%%/rdoc/created.rid
 %%GEM_DOC_DIR%%/rdoc/files/lib/mechanize/cookie_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/mechanize/errors_rb.html
@@ -276,7 +131,6 @@
 %%GEM_DOC_DIR%%/rdoc/files/lib/mechanize/hpricot_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/mechanize/inspect_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/mechanize/list_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/mechanize/mech_version_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/mechanize/net-overrides/net/http_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/mechanize/net-overrides/net/https_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/mechanize/net-overrides/net/protocol_rb.html
@@ -285,9 +139,6 @@
 %%GEM_DOC_DIR%%/rdoc/files/lib/mechanize/parsers/rexml_page_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/mechanize/pluggable_parsers_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/mechanize/rexml_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/mechanize/rexml_rb.src/M000001.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/mechanize/rexml_rb.src/M000002.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/mechanize/rexml_rb.src/M000003.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/mechanize_rb.html
 %%GEM_DOC_DIR%%/rdoc/fr_class_index.html
 %%GEM_DOC_DIR%%/rdoc/fr_file_index.html
@@ -315,7 +166,6 @@
 %%GEM_LIB_DIR%%/lib/mechanize/hpricot.rb
 %%GEM_LIB_DIR%%/lib/mechanize/inspect.rb
 %%GEM_LIB_DIR%%/lib/mechanize/list.rb
-%%GEM_LIB_DIR%%/lib/mechanize/mech_version.rb
 %%GEM_LIB_DIR%%/lib/mechanize/net-overrides/net/http.rb
 %%GEM_LIB_DIR%%/lib/mechanize/net-overrides/net/https.rb
 %%GEM_LIB_DIR%%/lib/mechanize/net-overrides/net/protocol.rb
@@ -364,6 +214,7 @@
 %%GEM_LIB_DIR%%/test/htdocs/tc_referer.html
 %%GEM_LIB_DIR%%/test/htdocs/tc_relative_links.html
 %%GEM_LIB_DIR%%/test/htdocs/tc_textarea.html
+%%GEM_LIB_DIR%%/test/ssl_server.rb
 %%GEM_LIB_DIR%%/test/tc_authenticate.rb
 %%GEM_LIB_DIR%%/test/tc_bad_links.rb
 %%GEM_LIB_DIR%%/test/tc_checkboxes.rb
@@ -379,6 +230,8 @@
 %%GEM_LIB_DIR%%/test/tc_forms.rb
 %%GEM_LIB_DIR%%/test/tc_frames.rb
 %%GEM_LIB_DIR%%/test/tc_gzipping.rb
+%%GEM_LIB_DIR%%/test/tc_html_unscape_forms.rb
+%%GEM_LIB_DIR%%/test/tc_if_modified_since.rb
 %%GEM_LIB_DIR%%/test/tc_links.rb
 %%GEM_LIB_DIR%%/test/tc_mech.rb
 %%GEM_LIB_DIR%%/test/tc_multi_select.rb
@@ -418,14 +271,12 @@
 @dirrm %%GEM_LIB_DIR%%/lib
 @dirrm %%GEM_LIB_DIR%%/eg
 @dirrm %%GEM_LIB_DIR%%
-@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/mechanize/rexml_rb.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/mechanize/parsers
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/mechanize/net-overrides/net
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/mechanize/net-overrides
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/mechanize
 @dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
 @dirrm %%GEM_DOC_DIR%%/rdoc/files
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Util.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/SelectList.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/ResponseCodeError.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/RadioButton.src
@@ -437,6 +288,7 @@
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/List.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Link.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/ImageButton.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Headers.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/GlobalForm.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Frame.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize/Form.src
@@ -451,20 +303,6 @@
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/WWW/Mechanize
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/WWW
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/REXML/Text.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/REXML/Node.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/REXML/Comment.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/REXML
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/WriteAdapter.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPResponse.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPRequest.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPHeader.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/HTTPGenericRequest.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net/HTTP
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Net
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Hpricot/Elem.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Hpricot
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes
 @dirrm %%GEM_DOC_DIR%%/rdoc
 @dirrm %%GEM_DOC_DIR%%
