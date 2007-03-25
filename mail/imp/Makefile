@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	imp
-PORTVERSION=	4.1.3
-PORTREVISION=	2
+PORTVERSION=	4.1.4
+DISTVERSIONPREFIX=	h3-
 CATEGORIES=	mail www
 MASTER_SITES=	HORDE
-DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
 MAINTAINER=	beech@alaskaparadise.com
-COMMENT=	A webmail system which accesses mail over IMAP
+COMMENT=	Webmail system for IMAP/POP3 mailboxes
 
 #-----------------------------------------------------------------------
 # You may define these options:
@@ -103,8 +102,8 @@ USE_APACHE=	1.3+	# needed to test APACHE_VERSION
 USE_GETTEXT=	yes
 REINPLACE_ARGS=	-i.beforeIMP
 
-DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL	\
-		docs/RELEASE_NOTES  docs/TODO  docs/UPGRADING
+PORTDOCS=	README CHANGES CREDITS INSTALL	\
+		RELEASE_NOTES  TODO  UPGRADING
 CONFFILE=	filter.txt header.php menu.php mime_drivers.php motd.php \
 		prefs.php servers.php trailer.txt
 SUB_DIRS=	config js lib locale po scripts templates themes
@@ -166,6 +165,9 @@ pre-everything::
 	@${ECHO_MSG} ""
 .endif
 
+post-extract:
+	@${MV} ${WRKSRC}/README ${WRKSRC}/docs/
+
 pre-configure:
 	@${REINPLACE_CMD} -e "s:/usr/local:${LOCALBASE}:" ${WRKSRC}/config/conf.xml
 .if !defined(WITHOUT_ASPELL)
@@ -217,21 +219,16 @@ pre-install:
 .endif
 
 do-install:
-	@${MKDIR}  ${IMPDIR}
-.for REP in ${SUB_DIRS}
-	@${CP} -Rp ${WRKSRC}/${REP} ${IMPDIR}
-.endfor
-	@${CP} -p  ${WRKSRC}/*.php ${IMPDIR}
-
-	@${INSTALL_DATA} ${WRKSRC}/config/conf.xml ${CONFDIR}
-	@${INSTALL_DATA} ${WRKDIR}/httpd-imp.conf ${HORDE_INC}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${IMPDIR}
-	@${CHMOD} -R o-rwx ${CONFDIR}
+	@${INSTALL} -d ${IMPDIR}/
+	@${CP} -Rp ${SUB_DIRS:S|^|${WRKSRC}/|} ${IMPDIR}/
+	@${CP} -p ${WRKSRC}/*.php ${IMPDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/config/conf.xml ${CONFDIR}/
+	@${INSTALL_DATA} ${WRKDIR}/httpd-imp.conf ${HORDE_INC}/
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${IMPDIR}/
+	@${CHMOD} -R o-rwx ${CONFDIR}/
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for FILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.endfor
+	@${INSTALL} -d ${DOCSDIR}/
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 

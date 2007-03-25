@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	mimp
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
+DISTVERSIONPREFIX=	h3-
 CATEGORIES=	mail www
 MASTER_SITES=	HORDE
-DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
 MAINTAINER=	beech@alaskaparadise.com
-COMMENT=	A mobile webmail system which uses the horde framework
+COMMENT=	Mobile webmail system
 
 #-----------------------------------------------------------------------
 # You may define these options:
@@ -160,15 +160,12 @@ pre-install:
 
 do-install:
 	@${INSTALL} -d ${MIMPDIR}/
-.for REP in ${SUB_DIRS}
-	@${CP} -Rp ${WRKSRC}/${REP} ${MIMPDIR}/
-.endfor
-	@${CP} -p  ${WRKSRC}/*.php ${MIMPDIR}/
+	@${CP} -Rp ${SUB_DIRS:S|^|${WRKSRC}/|} ${MIMPDIR}/
+	@${CP} -p ${WRKSRC}/*.php ${MIMPDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/config/conf.xml ${CONFDIR}/
 	@${INSTALL_DATA} ${WRKDIR}/httpd-mimp.conf ${HORDE_INC}/
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${MIMPDIR}/
 	@${CHMOD} -R o-rwx ${CONFDIR}/
-
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}/
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${DOCSDIR}/

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	turba
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.4
+DISTVERSIONPREFIX=	h3-
 CATEGORIES=	mail www
 MASTER_SITES=	HORDE
-DISTNAME=	${PORTNAME}-h3-${PORTVERSION}
 
 MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	The Horde contact management application
@@ -34,8 +34,8 @@ USE_APACHE=	1.3+	# needed to test APACHE_VERSION
 USE_GETTEXT=	yes
 
 REINPLACE_ARGS=	-i ""
-DOCS=		README docs/CHANGES docs/CREDITS docs/INSTALL	\
-		docs/LDAP docs/RELEASE_NOTES docs/TODO docs/UPGRADING
+PORTDOCS=	README CHANGES CREDITS INSTALL LDAP \
+		RELEASE_NOTES TODO UPGRADING
 CONFFILE=	attributes.php menu.php mime_drivers.php prefs.php sources.php
 SUB_DIRS=	config lib locale po scripts templates themes
 
@@ -66,6 +66,9 @@ HORDE_INC=	${LOCALBASE}/etc/apache${APACHE_VERSION:S/20/2/}/Includes
 HORDE_INC=	${LOCALBASE}/etc/horde
 .endif
 
+post-extract:
+	@${MV} ${WRKSRC}/README ${WRKSRC}/docs/
+
 pre-configure:
 	@${RM} ${WRKSRC}/config/sources.php.dist.orig
 	@${SED} -e "s:/home/httpd/html/horde/turba:${TURBADIR}:g"	\
@@ -77,20 +80,16 @@ pre-configure:
 .endif
 
 do-install:
-	@${MKDIR}  ${TURBADIR}
-.for REP in ${SUB_DIRS}
-	@${CP} -Rp ${WRKSRC}/${REP} ${TURBADIR}
-.endfor
-	@${CP} -p  ${WRKSRC}/*.php ${TURBADIR}
-
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${TURBADIR}
-	@${CHMOD} -R o-rwx ${CONFDIR}
-	@${INSTALL_DATA} ${WRKDIR}/httpd-turba.conf ${HORDE_INC}
+	@${INSTALL} -d ${TURBADIR}/
+	@${CP} -Rp ${SUB_DIRS:S|^|${WRKSRC}/|} ${TURBADIR}/
+	@${CP} -p ${WRKSRC}/*.php ${TURBADIR}/
+	@${INSTALL_DATA} ${WRKSRC}/config/conf.xml ${CONFDIR}/
+	@${INSTALL_DATA} ${WRKDIR}/httpd-turba.conf ${HORDE_INC}/
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${TURBADIR}/
+	@${CHMOD} -R o-rwx ${CONFDIR}/
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for FILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.endfor
+	@${INSTALL} -d ${DOCSDIR}/
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
