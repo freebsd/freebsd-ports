@@ -15,3 +15,5 @@ libdata/pkgconfig/sqlite3.pc
 %%WITH_TCLWRAPPER%%@dirrm lib/sqlite
 %%EXAMPLESDIR%%/example.tcl
 @dirrm %%EXAMPLESDIR%%
+%%THOL%%%%DATADIR%%/sqlite3_with_threads-override-locks
+%%THOL%%@dirrm %%DATADIR%%
