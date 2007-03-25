@@ -16,6 +16,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	FreeBSD-modified Taylor UUCP (unix-to-unix copy program)
 
 USE_BZIP2=	yes
+MANCOMPRESSED=	yes
 
 MAN1=	cu.1 uuconv.1 uucp.1 uulog.1 uuname.1 uupick.1 uustat.1 \
 	uuto.1 uux.1
