@@ -17,6 +17,8 @@ COMMENT=	Improved Hungarian spelling checker
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
+BROKEN=		Does not install
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--with-ui"
