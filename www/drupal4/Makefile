@@ -5,10 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	drupal
+PORTNAME=	drupal4
 PORTVERSION=	4.7.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.osuosl.org/pub/drupal/files/projects/
+DISTNAME=	drupal-${PORTVERSION}
 DIST_SUBDIR=	drupal
 
 MAINTAINER=	nick@foobar.org
@@ -35,7 +37,11 @@ USE_PHP+=	mysql
 .endif
 .if defined(WITH_PGSQL)
 RUN_DEPENDS+=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
+USE_PHP+=	pgsql
 .endif
+
+post-patch:
+	${RM} ${WRKSRC}/modules/taxonomy.module.orig
 
 do-install:
 	${MKDIR} ${DRUPAL_DIR}
@@ -64,5 +70,5 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include "${.CURDIR}/bsd.drupal.mk"
+.include "${.CURDIR}/../../www/drupal5/bsd.drupal.mk"
 .include <bsd.port.post.mk>
