@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	Email-Folder
-PORTVERSION=	0.85.2
+PORTVERSION=	0.85.3
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-0.852
+DISTNAME=	${PORTNAME}-0.853
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Read all the messages from a folder as Email::Simple objects
@@ -27,9 +27,4 @@ MAN3=		Email::Folder.3 \
 		Email::Folder::Mbox.3 \
 		Email::Folder::Reader.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	${PERL} -pi -e '$$_="" if /use warnings;/' ${WRKSRC}/Makefile.PL
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
