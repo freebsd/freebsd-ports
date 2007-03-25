@@ -91,7 +91,7 @@
 +#ifndef IPFW
  	while ((ch = getopt(argc, argv, "nd")) != -1) {
 +#else
-+	while ((ch = getopt(argc, argv, "ndt")) != -1) {
++	while ((ch = getopt(argc, argv, "ndt:")) != -1) {
 +#endif
  		switch (ch) {
  		case 'n':
