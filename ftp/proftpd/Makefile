@@ -39,6 +39,7 @@ USE_RC_SUBR=	proftpd.sh
 
 CONFIGURE_ARGS=	--localstatedir=/var/run \
 		--sysconfdir=${EXAMPLESDIR}/etc \
+		--enable-builtin-getnameinfo \
 		--disable-sendfile
 
 OPTIONS=	IPV6 "Use IPv6" off \
