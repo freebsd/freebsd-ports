@@ -29,5 +29,5 @@ MODULE_DIRS=	flags i18nprofile
 DOC_FILES=	CHANGELOG.txt CREDITS.txt HOWTO.txt INSTALL.txt LICENSE.txt README.txt
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/drupal/bsd.drupal.mk"
+.include "${.CURDIR}/../../www/drupal5/bsd.drupal.mk"
 .include <bsd.port.post.mk>

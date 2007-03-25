@@ -26,5 +26,5 @@ MODULE_CONF_DIRS=	ldap_integration
 DOC_FILES=	CHANGES.txt LICENSE.txt README.txt
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/drupal/bsd.drupal.mk"
+.include "${.CURDIR}/../../www/drupal5/bsd.drupal.mk"
 .include <bsd.port.post.mk>

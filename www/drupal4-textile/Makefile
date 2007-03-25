@@ -45,5 +45,5 @@ DOC_FILES=	CHANGELOG.txt CREDITS.txt INSTALL.txt LICENSE.txt README.txt \
 		textilephp/TODO
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/drupal/bsd.drupal.mk"
+.include "${.CURDIR}/../../www/drupal5/bsd.drupal.mk"
 .include <bsd.port.post.mk>

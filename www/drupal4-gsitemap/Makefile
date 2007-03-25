@@ -19,5 +19,5 @@ MODULE_FILES=	gsitemap.install gsitemap.module
 DOC_FILES=	INSTALL.txt LICENSE.txt README.txt
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/drupal/bsd.drupal.mk"
+.include "${.CURDIR}/../../www/drupal5/bsd.drupal.mk"
 .include <bsd.port.post.mk>
