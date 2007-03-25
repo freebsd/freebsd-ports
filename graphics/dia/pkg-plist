@@ -55,6 +55,8 @@ lib/dia/libsvg_filter.la
 lib/dia/libsvg_filter.so
 lib/dia/libuml_objects.la
 lib/dia/libuml_objects.so
+lib/dia/libvdx_filter.la
+lib/dia/libvdx_filter.so
 lib/dia/libwpg_filter.la
 lib/dia/libwpg_filter.so
 lib/dia/libxfig_filter.la
@@ -65,10 +67,12 @@ share/gnome/applications/dia.desktop
 share/gnome/dia/dia.xpm
 share/gnome/dia/dia_logo.png
 %%PYTHON:%%share/gnome/dia/python-startup.py
+%%PYTHON:%%share/gnome/dia/python/aobjects.py
 %%PYTHON:%%share/gnome/dia/python/codegen.py
 %%PYTHON:%%share/gnome/dia/python/diasvg.py
 %%PYTHON:%%share/gnome/dia/python/diasvg_import.py
 %%PYTHON:%%share/gnome/dia/python/dot.py
+%%PYTHON:%%share/gnome/dia/python/doxrev.py
 %%PYTHON:%%share/gnome/dia/python/group_props.py
 %%PYTHON:%%share/gnome/dia/python/gtkcons.py
 %%PYTHON:%%share/gnome/dia/python/otypes.py
@@ -157,6 +161,90 @@ share/gnome/dia/shapes/Assorted/triangle-isoceles.png
 share/gnome/dia/shapes/Assorted/triangle-isoceles.shape
 share/gnome/dia/shapes/Assorted/triangle-rightangle.png
 share/gnome/dia/shapes/Assorted/triangle-rightangle.shape
+share/gnome/dia/shapes/BPMN/Activity-Looping.png
+share/gnome/dia/shapes/BPMN/Activity-Looping.shape
+share/gnome/dia/shapes/BPMN/Ad-Hoc-Collapsed-Sub-Process.png
+share/gnome/dia/shapes/BPMN/Ad-Hoc-Collapsed-Sub-Process.shape
+share/gnome/dia/shapes/BPMN/Collapsed-Sub-Process.png
+share/gnome/dia/shapes/BPMN/Collapsed-Sub-Process.shape
+share/gnome/dia/shapes/BPMN/Compensation-Collapsed-Sub-Process.png
+share/gnome/dia/shapes/BPMN/Compensation-Collapsed-Sub-Process.shape
+share/gnome/dia/shapes/BPMN/Compensation.png
+share/gnome/dia/shapes/BPMN/Compensation.shape
+share/gnome/dia/shapes/BPMN/Data-Object.png
+share/gnome/dia/shapes/BPMN/Data-Object.shape
+share/gnome/dia/shapes/BPMN/End-Event-Cancel.png
+share/gnome/dia/shapes/BPMN/End-Event-Cancel.shape
+share/gnome/dia/shapes/BPMN/End-Event-Compensation.png
+share/gnome/dia/shapes/BPMN/End-Event-Compensation.shape
+share/gnome/dia/shapes/BPMN/End-Event-Error.png
+share/gnome/dia/shapes/BPMN/End-Event-Error.shape
+share/gnome/dia/shapes/BPMN/End-Event-Link.png
+share/gnome/dia/shapes/BPMN/End-Event-Link.shape
+share/gnome/dia/shapes/BPMN/End-Event-Message.png
+share/gnome/dia/shapes/BPMN/End-Event-Message.shape
+share/gnome/dia/shapes/BPMN/End-Event-Multiple.png
+share/gnome/dia/shapes/BPMN/End-Event-Multiple.shape
+share/gnome/dia/shapes/BPMN/End-Event-Terminate.png
+share/gnome/dia/shapes/BPMN/End-Event-Terminate.shape
+share/gnome/dia/shapes/BPMN/End-Event.png
+share/gnome/dia/shapes/BPMN/End-Event.shape
+share/gnome/dia/shapes/BPMN/Gateway-Complex.png
+share/gnome/dia/shapes/BPMN/Gateway-Complex.shape
+share/gnome/dia/shapes/BPMN/Gateway-Exclusive-XOR-Data-Based.png
+share/gnome/dia/shapes/BPMN/Gateway-Exclusive-XOR-Data-Based.shape
+share/gnome/dia/shapes/BPMN/Gateway-Exclusive-XOR-Event-Based.png
+share/gnome/dia/shapes/BPMN/Gateway-Exclusive-XOR-Event-Based.shape
+share/gnome/dia/shapes/BPMN/Gateway-Inclusive-OR.png
+share/gnome/dia/shapes/BPMN/Gateway-Inclusive-OR.shape
+share/gnome/dia/shapes/BPMN/Gateway-Parallel-AND.png
+share/gnome/dia/shapes/BPMN/Gateway-Parallel-AND.shape
+share/gnome/dia/shapes/BPMN/Gateway.png
+share/gnome/dia/shapes/BPMN/Gateway.shape
+share/gnome/dia/shapes/BPMN/Group.png
+share/gnome/dia/shapes/BPMN/Group.shape
+share/gnome/dia/shapes/BPMN/Intermediate-Event-Cancel.png
+share/gnome/dia/shapes/BPMN/Intermediate-Event-Cancel.shape
+share/gnome/dia/shapes/BPMN/Intermediate-Event-Compensation.png
+share/gnome/dia/shapes/BPMN/Intermediate-Event-Compensation.shape
+share/gnome/dia/shapes/BPMN/Intermediate-Event-Error.png
+share/gnome/dia/shapes/BPMN/Intermediate-Event-Error.shape
+share/gnome/dia/shapes/BPMN/Intermediate-Event-Link.png
+share/gnome/dia/shapes/BPMN/Intermediate-Event-Link.shape
+share/gnome/dia/shapes/BPMN/Intermediate-Event-Message.png
+share/gnome/dia/shapes/BPMN/Intermediate-Event-Message.shape
+share/gnome/dia/shapes/BPMN/Intermediate-Event-Multiple.png
+share/gnome/dia/shapes/BPMN/Intermediate-Event-Multiple.shape
+share/gnome/dia/shapes/BPMN/Intermediate-Event-Rule.png
+share/gnome/dia/shapes/BPMN/Intermediate-Event-Rule.shape
+share/gnome/dia/shapes/BPMN/Intermediate-Event-Timer.png
+share/gnome/dia/shapes/BPMN/Intermediate-Event-Timer.shape
+share/gnome/dia/shapes/BPMN/Intermediate-Event.png
+share/gnome/dia/shapes/BPMN/Intermediate-Event.shape
+share/gnome/dia/shapes/BPMN/Looping-Collapsed-Sub-Process.png
+share/gnome/dia/shapes/BPMN/Looping-Collapsed-Sub-Process.shape
+share/gnome/dia/shapes/BPMN/Multiple-Instance-Collapsed-Sub-Process.png
+share/gnome/dia/shapes/BPMN/Multiple-Instance-Collapsed-Sub-Process.shape
+share/gnome/dia/shapes/BPMN/Multiple-Instance-Task.png
+share/gnome/dia/shapes/BPMN/Multiple-Instance-Task.shape
+share/gnome/dia/shapes/BPMN/Start-Event-Link.png
+share/gnome/dia/shapes/BPMN/Start-Event-Link.shape
+share/gnome/dia/shapes/BPMN/Start-Event-Message.png
+share/gnome/dia/shapes/BPMN/Start-Event-Message.shape
+share/gnome/dia/shapes/BPMN/Start-Event-Multiple.png
+share/gnome/dia/shapes/BPMN/Start-Event-Multiple.shape
+share/gnome/dia/shapes/BPMN/Start-Event-Rule.png
+share/gnome/dia/shapes/BPMN/Start-Event-Rule.shape
+share/gnome/dia/shapes/BPMN/Start-Event-Timer.png
+share/gnome/dia/shapes/BPMN/Start-Event-Timer.shape
+share/gnome/dia/shapes/BPMN/Start-Event.png
+share/gnome/dia/shapes/BPMN/Start-Event.shape
+share/gnome/dia/shapes/BPMN/Task.png
+share/gnome/dia/shapes/BPMN/Task.shape
+share/gnome/dia/shapes/BPMN/Text-Annotation.png
+share/gnome/dia/shapes/BPMN/Text-Annotation.shape
+share/gnome/dia/shapes/BPMN/Transaction.png
+share/gnome/dia/shapes/BPMN/Transaction.shape
 share/gnome/dia/shapes/ChemEng/ACgen.png
 share/gnome/dia/shapes/ChemEng/ACgen.shape
 share/gnome/dia/shapes/ChemEng/SaT-fixedtube.png
@@ -1169,6 +1257,8 @@ share/gnome/dia/shapes/Electric/vrelay.png
 share/gnome/dia/shapes/Electric/vrelay.shape
 share/gnome/dia/shapes/Flowchart/collate.png
 share/gnome/dia/shapes/Flowchart/collate.shape
+share/gnome/dia/shapes/Flowchart/datasource.png
+share/gnome/dia/shapes/Flowchart/datasource.shape
 share/gnome/dia/shapes/Flowchart/delay.png
 share/gnome/dia/shapes/Flowchart/delay.shape
 share/gnome/dia/shapes/Flowchart/display.png
@@ -1501,11 +1591,11 @@ share/gnome/dia/shapes/sybase/stableq.png
 share/gnome/dia/shapes/sybase/stableq.shape
 share/gnome/dia/sheets/AADL.sheet
 share/gnome/dia/sheets/Assorted.sheet
+share/gnome/dia/sheets/BPMN.sheet
 share/gnome/dia/sheets/ChemEng.sheet
 share/gnome/dia/sheets/Circuit.sheet
 share/gnome/dia/sheets/Contact.sheet
 share/gnome/dia/sheets/Cybernetics.sheet
-share/gnome/dia/sheets/EML.sheet
 share/gnome/dia/sheets/ER.sheet
 share/gnome/dia/sheets/ER/weakentity.png
 share/gnome/dia/sheets/Electric.sheet
@@ -1576,6 +1666,9 @@ share/gnome/dia/sheets/civil.sheet
 share/gnome/dia/sheets/jigsaw.sheet
 share/gnome/dia/sheets/network.sheet
 share/gnome/dia/sheets/sybase.sheet
+share/gnome/dia/ui/display-ui.xml
+share/gnome/dia/ui/popup-ui.xml
+share/gnome/dia/ui/toolbox-ui.xml
 share/gnome/dia/xslt/dia-uml.xsl
 share/gnome/dia/xslt/dia-uml2c++.xsl
 share/gnome/dia/xslt/dia-uml2componentlist.xsl
@@ -1617,6 +1710,7 @@ share/gnome/mime-info/dia.mime
 share/gnome/pixmaps/dia-diagram.png
 share/gnome/pixmaps/dia_gnome_icon.png
 share/locale/am/LC_MESSAGES/dia.mo
+share/locale/ar/LC_MESSAGES/dia.mo
 share/locale/az/LC_MESSAGES/dia.mo
 share/locale/be/LC_MESSAGES/dia.mo
 share/locale/bg/LC_MESSAGES/dia.mo
@@ -1633,6 +1727,7 @@ share/locale/eu/LC_MESSAGES/dia.mo
 share/locale/fi/LC_MESSAGES/dia.mo
 share/locale/fr/LC_MESSAGES/dia.mo
 share/locale/ga/LC_MESSAGES/dia.mo
+share/locale/gl/LC_MESSAGES/dia.mo
 share/locale/gu/LC_MESSAGES/dia.mo
 share/locale/hr/LC_MESSAGES/dia.mo
 share/locale/hu/LC_MESSAGES/dia.mo
@@ -1641,6 +1736,8 @@ share/locale/is/LC_MESSAGES/dia.mo
 share/locale/it/LC_MESSAGES/dia.mo
 share/locale/ja/LC_MESSAGES/dia.mo
 share/locale/ko/LC_MESSAGES/dia.mo
+share/locale/lt/LC_MESSAGES/dia.mo
+share/locale/lv/LC_MESSAGES/dia.mo
 share/locale/mk/LC_MESSAGES/dia.mo
 share/locale/ml/LC_MESSAGES/dia.mo
 share/locale/mn/LC_MESSAGES/dia.mo
@@ -1661,6 +1758,7 @@ share/locale/sq/LC_MESSAGES/dia.mo
 share/locale/sr/LC_MESSAGES/dia.mo
 share/locale/sr@Latn/LC_MESSAGES/dia.mo
 share/locale/sv/LC_MESSAGES/dia.mo
+share/locale/th/LC_MESSAGES/dia.mo
 share/locale/tr/LC_MESSAGES/dia.mo
 share/locale/uk/LC_MESSAGES/dia.mo
 share/locale/vi/LC_MESSAGES/dia.mo
@@ -1692,6 +1790,8 @@ share/locale/zh_TW/LC_MESSAGES/dia.mo
 @dirrmtry share/locale/ne
 @dirrmtry share/locale/ko/LC_MESSAGES
 @dirrmtry share/locale/ko
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
 @dirrmtry share/locale/fi/LC_MESSAGES
 @dirrmtry share/locale/fi
 @dirrmtry share/locale/el/LC_MESSAGES
@@ -1711,6 +1811,7 @@ share/locale/zh_TW/LC_MESSAGES/dia.mo
 @dirrm share/gnome/help/dia/en
 @dirrm share/gnome/help/dia
 @dirrm share/gnome/dia/xslt
+@dirrm share/gnome/dia/ui
 @dirrm share/gnome/dia/sheets/UML
 @dirrm share/gnome/dia/sheets/KAOS
 @dirrm share/gnome/dia/sheets/Jackson
@@ -1738,6 +1839,7 @@ share/locale/zh_TW/LC_MESSAGES/dia.mo
 @dirrm share/gnome/dia/shapes/Cisco
 @dirrm share/gnome/dia/shapes/Circuit
 @dirrm share/gnome/dia/shapes/ChemEng
+@dirrm share/gnome/dia/shapes/BPMN
 @dirrm share/gnome/dia/shapes/Assorted
 @dirrm share/gnome/dia/shapes
 %%PYTHON:%%@dirrm share/gnome/dia/python
