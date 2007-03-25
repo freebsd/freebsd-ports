@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xmlformat
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.kitebird.com/software/xmlformat/
 
