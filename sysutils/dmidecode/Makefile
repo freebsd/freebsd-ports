@@ -25,8 +25,13 @@ PORTDOCS=	AUTHORS CHANGELOG README
 
 MAN8=		biosdecode.8 dmidecode.8 ownership.8 vpddecode.8
 
-.if !defined(NOPORTDOCS)
+post-patch:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e '/^install.*:/s,install-doc,,' ${WRKSRC}/Makefile
+.endif
+
 post-install:
+.if !defined(NOPORTDOCS)
 	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
