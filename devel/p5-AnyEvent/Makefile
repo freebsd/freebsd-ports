@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	AnyEvent
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/M/ML/MLEHMANN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-2.51
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provide framework for multiple event loops
@@ -22,8 +22,8 @@ MAN3=		AnyEvent.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
+.if ${PERL_LEVEL} < 500800
+IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 and try again
 .endif
 
 .include <bsd.port.post.mk>
