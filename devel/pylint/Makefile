@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pylint
-PORTVERSION=	0.12.2
+PORTVERSION=	0.13.0
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.logilab.org/pub/pylint/
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
@@ -19,15 +19,9 @@ RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/logilab/astng/__init__.py:${PORTSDIR}/de
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 230
-RUN_DEPENDS+=	${PYTHONPREFIX_SITELIBDIR}/optparse.py:${PORTSDIR}/devel/py-optik
-.endif
-
 pre-everything::
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "You may want to install x11-toolkits/py-tkinter to make pylint-gui work."
 	@${ECHO_CMD} ""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
