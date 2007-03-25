@@ -1,6 +1,0 @@
-This module adds a full featured file management API for your modules to
-use. This API is module development and does not directly add functionality
-to your site. This module is required for the attachment module which is an
-alternative to Drupal's included upload module.
-
-WWW: http://drupal.org/project/filemanager
