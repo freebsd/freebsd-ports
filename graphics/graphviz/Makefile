@@ -80,7 +80,7 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
 		MISSING=${TRUE}
 
 .if !defined(WITHOUT_TK)
-USE_TK=		84
+USE_TK_BUILD=	84
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 CONFIGURE_ARGS+=	--with-tclsh=${TCLSH} \
 		--with-wish=${WISH}
@@ -89,7 +89,7 @@ CONFIGURE_ENV+=	TCLCONFIG="${TCL_LIBDIR}/tclConfig.sh" \
 MANN=		gdtclft.n tcldot.n tkspline.n
 .else
 .if defined(WITH_TCL)
-USE_TCL=	84
+USE_TCL_BUILD=	84
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 CONFIGURE_ARGS+=	--with-tclsh=${TCLSH}
 CONFIGURE_ENV+=	TCLCONFIG="${TCL_LIBDIR}/tclConfig.sh"
