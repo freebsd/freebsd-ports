@@ -87,9 +87,6 @@
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/package/__init__.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/package/subpackage/__init__.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/package/subpackage/module.py
-%%PYTHON_SITELIBDIR%%/logilab/astng/test/runtests.py
-%%PYTHON_SITELIBDIR%%/logilab/astng/test/runtests.pyc
-%%PYTHON_SITELIBDIR%%/logilab/astng/test/runtests.pyo
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/unittest_builder.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/unittest_builder.pyc
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/unittest_builder.pyo
@@ -123,4 +120,4 @@
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/astng/test/data
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/astng/test
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/astng
-@dirrm %%PYTHON_SITELIBDIR%%/logilab
+@dirrmtry %%PYTHON_SITELIBDIR%%/logilab
