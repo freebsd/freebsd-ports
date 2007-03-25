@@ -1,0 +1,4 @@
+Very simple PHP functions for encrypting and signing (and reverse,
+decrypting and verifying) on string under BSD license.
+
+WWW:	http://code.google.com/p/cryptstring/
