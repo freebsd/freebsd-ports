@@ -1,0 +1,11 @@
+--- Makefile.in	Tue Mar 20 07:13:19 2007
++++ Makefile.in	Tue Mar 20 07:14:28 2007
+@@ -18,7 +18,7 @@
+ 
+ INSTALL = /usr/bin/install
+ 
+-CFLAGS  = @CFLAGS@ @DEFS@  -Werror -Wall -DTOTCONF=\"$(TOT_CONFIG_FILE)\" @OPTFLAGS@ $(INCLUDEPATH)
++CFLAGS  = @CFLAGS@ @DEFS@  -Wall -DTOTCONF=\"$(TOT_CONFIG_FILE)\" @OPTFLAGS@ $(INCLUDEPATH)
+ 
+ # When debugging is enabled by --enable-malloc-debug flag to the configure
+ # script, the @DBMALLOC@ substitution will contain the empty string, thus
