@@ -7,6 +7,7 @@
 
 PORTNAME=	java-access-bridge
 PORTVERSION=	1.18.0
+PORTREVISION=	1
 CATEGORIES=	accessibility java gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -15,6 +16,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome Java Accessibility Bridge
 
 BUILD_DEPENDS=	xprop:${X_CLIENTS_PORT}
+RUN_DEPENDS=	xprop:${X_CLIENTS_PORT}
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
