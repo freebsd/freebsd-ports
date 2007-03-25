@@ -7,7 +7,7 @@
 
 PORTNAME=	amanda
 PORTVERSION=	2.5.1p3
-PORTREVISION?=	1
+PORTREVISION?=	2
 PKGNAMESUFFIX?=	-server
 PORTEPOCH=	1
 CATEGORIES=	misc
@@ -56,8 +56,12 @@ CONFIGURE_ARGS+=	--with-config=${AMANDA_CONFIG}
 CONFIGURE_ARGS+=	--with-udpportrange=${AMANDA_UDPPORTRANGE}
 .endif
 
+# AMANDA_PORTRANGE is obsoleted.  Use AMANDA_TCPPORTRANGE instead.
 .if defined (AMANDA_PORTRANGE)
-CONFIGURE_ARGS+=	--with-portrange=${AMANDA_PORTRANGE}
+AMANDA_TCPPORTRANGE=	${AMANDA_PORTRANGE}
+.endif
+.if defined (AMANDA_TCPPORTRANGE)
+CONFIGURE_ARGS+=	--with-tcpportrange=${AMANDA_TCPPORTRANGE}
 .endif
 
 .if !defined(WITHOUT_GNUTAR)
@@ -84,7 +88,7 @@ pre-fetch:
 	@${ECHO} "        The default is operator"
 	@${ECHO} "    AMANDA_GROUP=group to specify the default group"
 	@${ECHO} "        The default is operator"
-	@${ECHO} "    AMANDA_PORTRANGE=low,high to restrict Amanda to TCP ports"
+	@${ECHO} "    AMANDA_TCPPORTRANGE=low,high to restrict Amanda to TCP ports"
 	@${ECHO} "        between low and high when connecting from the server"
 	@${ECHO} "        to the client for data, messages, and indexing."
 	@${ECHO} "        The default is no restriction on TCP ports."
@@ -170,7 +174,7 @@ pre-fetch:
 	@${ECHO} "        The default is operator"
 	@${ECHO} "    AMANDA_GROUP=group to specify the default group"
 	@${ECHO} "        The default is operator"
-	@${ECHO} "    AMANDA_PORTRANGE=low,high to restrict Amanda to TCP ports"
+	@${ECHO} "    AMANDA_TCPPORTRANGE=low,high to restrict Amanda to TCP ports"
 	@${ECHO} "        between low and high when connecting from the server"
 	@${ECHO} "        to the client for data, messages, and indexing."
 	@${ECHO} "        The default is no restriction on TCP ports."
