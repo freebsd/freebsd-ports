@@ -11,7 +11,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://home.clara.net/nox/software/epsmerge/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	bms@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Merge multiple EPS files into one EPS or PS file
 
 USE_PERL5=	yes
