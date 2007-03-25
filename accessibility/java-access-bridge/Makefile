@@ -26,11 +26,6 @@ JAVA_OS=	native
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR}
 
-PLIST_FILES=	share/jar/JNav.jar \
-		share/jar/accessibility.properties \
-		share/java/classes/gnome-java-bridge.jar
-
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${prefix}/share/jar|${JAVAJARDIR}|' \
 		${WRKSRC}/Makefile.in \
