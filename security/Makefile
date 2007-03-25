@@ -83,6 +83,7 @@
     SUBDIR += cryptlib
     SUBDIR += cryptopp
     SUBDIR += cryptplug
+    SUBDIR += cryptstring
     SUBDIR += cutlass
     SUBDIR += cvm
     SUBDIR += cyrus-sasl
