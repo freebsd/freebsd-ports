@@ -1,7 +1,34 @@
 # $FreeBSD$
 #
 
-DRUPAL_BASE?=	www/drupal
+# Make sure we cannot define both DRUPAL4_MODULE and DRUPAL5_MODULE
+.if defined(DRUPAL4_MODULE) && defined(DRUPAL5_MODULE)
+BROKEN=		cannot define both DRUPAL4_MODULE and DRUPAL5_MODULE in module Makefile
+.endif
+
+# Make sure DRUPAL_MODULE is defined.  If no DRUPAL*_module defined, then define DRUPAL4_MODULE
+.if defined(DRUPAL4_MODULE) || defined(DRUPAL5_MODULE)
+DRUPAL_MODULE?=	yes
+.else
+.if defined(DRUPAL_MODULE)
+DRUPAL4_MODULE=	yes
+.endif
+.endif
+
+# Make sure DRUPAL_PORT is defined.  If no DRUPAL*_module defined, then define DRUPAL4_PORT
+.if defined(DRUPAL4_PORT) || defined(DRUPAL5_PORT)
+DRUPAL_PORT?=	yes
+.else
+.if defined(DRUPAL_PORT)
+DRUPAL4_PORT=	yes
+.endif
+.endif
+
+.if defined(DRUPAL5_MODULE) || defined(DRUPAL5_PORT)
+DRUPAL_BASE?=	www/drupal5
+.else
+DRUPAL_BASE?=	www/drupal4
+.endif
 DRUPAL_DIR=	${PREFIX}/${DRUPAL_BASE}
 DRUPAL_DOCSDIR?=	${PREFIX}/${DRUPAL_BASE}/doc
 PLIST_SUB+=	DRUPAL_BASE=${DRUPAL_BASE}
@@ -12,19 +39,33 @@ DOCSDIR?=	${DRUPAL_DOCSDIR}
 .endif
 
 .if defined(DRUPAL_MODULE)
+
+.if defined(DRUPAL4_MODULE)
+RUN_DEPENDS+=	${LOCALBASE}/${DRUPAL_BASE}/index.php:${PORTSDIR}/www/drupal4
+PKGNAMEPREFIX=	drupal4-
 DRUPAL_VERSION?=	4.7.0
 .if defined(DRUPAL_MODSUBDIR)
 DRUPAL_MODDIR?= ${DRUPAL_BASE}/modules/${DRUPAL_MODSUBDIR}
 .else 
 DRUPAL_MODDIR?= ${DRUPAL_BASE}/modules
 .endif
+.endif
+
+.if defined(DRUPAL5_MODULE)
+RUN_DEPENDS+=	${LOCALBASE}/${DRUPAL_BASE}/index.php:${PORTSDIR}/www/drupal5
+PKGNAMEPREFIX=	drupal5-
+DRUPAL_VERSION?=	5.0
+.if defined(DRUPAL_MODSUBDIR)
+DRUPAL_MODDIR?= ${DRUPAL_BASE}/sites/all/modules/${DRUPAL_MODSUBDIR}
+.else
+DRUPAL_MODDIR?= ${DRUPAL_BASE}/sites/all/modules/${PORTNAME}
+.endif
+.endif
+
 DOCSDIR?=	${DRUPAL_DOCSDIR}/${PORTNAME}
 
 MASTER_SITES?=	http://ftp.osuosl.org/pub/drupal/files/projects/
-PKGNAMEPREFIX=	drupal-
 DIST_SUBDIR=	drupal
-
-RUN_DEPENDS+=	${LOCALBASE}/${DRUPAL_BASE}/index.php:${PORTSDIR}/www/drupal
 
 NO_BUILD?=	yes
 
@@ -32,8 +73,8 @@ WRKSRC?=	${WRKDIR}/${PORTNAME}
 
 .if defined(MODULE_CONF_FILES)
 SUB_FILES=	pkg-install
-SUB_LIST+=	CONF_FILES=${MODULE_CONF_FILES:C|^|${DRUPAL_MODDIR}/|} \
-		CONF_DIRS=${MODULE_CONF_DIRS:C|^|${DRUPAL_MODDIR}/|}
+SUB_LIST+=	CONF_FILES="${MODULE_CONF_FILES:C|^|${DRUPAL_MODDIR}/|}" \
+		CONF_DIRS="${MODULE_CONF_DIRS:C|^|${DRUPAL_MODDIR}/|}"
 # XXX: where?
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${PKGINSTALL}
