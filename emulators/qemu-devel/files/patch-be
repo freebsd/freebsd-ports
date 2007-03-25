@@ -1,15 +1,3 @@
-Index: qemu/Makefile.target
-@@ -404,7 +404,9 @@
- ifndef CONFIG_DARWIN
- ifndef CONFIG_WIN32
- ifndef CONFIG_SOLARIS
--VL_LIBS=-lutil -lrt
-+#VL_LIBS=-lutil -lrt
-+# XXX this cant be just merged back...
-+VL_LIBS=-lutil
- endif
- endif
- endif
 Index: qemu/vl.c
 @@ -541,7 +541,7 @@
  static void init_get_clock(void)
