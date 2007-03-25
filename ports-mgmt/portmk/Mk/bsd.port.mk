@@ -357,10 +357,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  versions for their nationality.
 # WITH_GHOSTSCRIPT_GPL
 #				- If set, this port uses the GPL version of the ghostscript
-#				  software instead of the AFPL version, which is used otherwise.
-# WITH_GHOSTSCRIPT_GNU
-#				- If set, this port uses the GNU version of the ghostscript
-#				  software instead of the AFPL version, which is used otherwise.
+#				  software instead of the GNU version, which is used otherwise.
+# WITH_GHOSTSCRIPT_AFPL
+#				- If set, this port uses the AFPL version of the ghostscript
+#				  software instead of the GNU version, which is used otherwise.
 ##
 # USE_BISON		- If set, this port uses bison for building.
 ##
@@ -2188,20 +2188,20 @@ CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 # Set the default for the installation of Postscript(TM)-
 # compatible functionality.
 .if !defined(WITHOUT_X11)
-.if defined(WITH_GHOSTSCRIPT_GNU)
-GHOSTSCRIPT_PORT?=	print/ghostscript-gnu
+.if defined(WITH_GHOSTSCRIPT_AFPL)
+GHOSTSCRIPT_PORT?=	print/ghostscript-afpl
 .elif defined(WITH_GHOSTSCRIPT_GPL)
 GHOSTSCRIPT_PORT?=	print/ghostscript-gpl
 .else
-GHOSTSCRIPT_PORT?=	print/ghostscript-afpl
+GHOSTSCRIPT_PORT?=	print/ghostscript-gnu
 .endif
 .else
-.if defined(WITH_GHOSTSCRIPT_GNU)
-GHOSTSCRIPT_PORT?=	print/ghostscript-gnu-nox11
+.if defined(WITH_GHOSTSCRIPT_AFPL)
+GHOSTSCRIPT_PORT?=	print/ghostscript-afpl-nox11
 .elif defined(WITH_GHOSTSCRIPT_GPL)
 GHOSTSCRIPT_PORT?=	print/ghostscript-gpl-nox11
 .else
-GHOSTSCRIPT_PORT?=	print/ghostscript-afpl-nox11
+GHOSTSCRIPT_PORT?=	print/ghostscript-gnu-nox11
 .endif
 .endif
 
@@ -3463,20 +3463,15 @@ check-vulnerable:
 	fi
 .endif
 
-# set alg to any of SIZE, MD5, SHA256 (or any other checksum algorithm):
-DISTINFO_DATA?=	DIR=${DIST_SUBDIR}; ${AWK} -v alg=$$alg \
-    -v file=$${DIR:+$$DIR/}$${file\#\#*/}	\
-		'$$1 == alg && $$2 == "(" file ")" {print $$4}' ${MD5_FILE}
-
 # Fetch
 
 .if !target(do-fetch)
 do-fetch:
 	@${MKDIR} ${_DISTDIR}
-	@cd ${_DISTDIR};\
+	@(cd ${_DISTDIR}; \
 	 ${_MASTER_SITES_ENV} ; \
 	 for _file in ${DISTFILES}; do \
-		file=$${_file%%:*}; \
+		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
 		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
 		force_fetch=false; \
 		filebasename=`${BASENAME} $$file`; \
@@ -3487,6 +3482,8 @@ do-fetch:
 			fi; \
 		done; \
 		if [ ! -f $$file -a ! -f $$filebasename -o "$$force_fetch" = "true" ]; then \
+			DIR=${DIST_SUBDIR}; \
+			pattern="$${DIR:+$$DIR/}`${ECHO_CMD} $$file | ${SED} -e 's/\./\\\\./g'`"; \
 			if [ -L $$file -o -L $$filebasename ]; then \
 				${ECHO_MSG} "=> ${_DISTDIR}/$$file is a broken symlink."; \
 				${ECHO_MSG} "=> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
@@ -3494,8 +3491,7 @@ do-fetch:
 				exit 1; \
 			fi ; \
 			if [ -f ${MD5_FILE} -a "x${NO_CHECKSUM}" = "x" ]; then \
-				_md5sum=`alg=MD5; ${DISTINFO_DATA}`; \
-				if [ -z "$$_md5sum" ]; then \
+				if ! ${GREP} -q "^MD5 ($$pattern)" ${MD5_FILE}; then \
 					${ECHO_MSG} "=> $${DIR:+$$DIR/}$$file is not in ${MD5_FILE}."; \
 					${ECHO_MSG} "=> Either ${MD5_FILE} is out of date, or"; \
 					${ECHO_MSG} "=> $${DIR:+$$DIR/}$$file is spelled incorrectly."; \
@@ -3522,7 +3518,8 @@ do-fetch:
 			fi ; \
 			for site in `eval $$SORTED_MASTER_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
 			    ${ECHO_MSG} "=> Attempting to fetch from $${site}."; \
-				CKSIZE=`alg=SIZE; ${DISTINFO_DATA}`; \
+				DIR=${DIST_SUBDIR}; \
+				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
 				case $${file} in \
 				*/*)	${MKDIR} $${file%/*}; \
 						args="-o $${file} $${site}$${file}";; \
@@ -3536,10 +3533,10 @@ do-fetch:
 			${ECHO_MSG} "=> port manually into ${_DISTDIR} and try again."; \
 			exit 1; \
 	    fi \
-	 done
+	 done)
 .if defined(PATCHFILES)
-	@cd ${_DISTDIR};\
-	${_PATCH_SITES_ENV} ; \
+	@(cd ${_DISTDIR}; \
+	 ${_PATCH_SITES_ENV} ; \
 	 for _file in ${PATCHFILES}; do \
 		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
 		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
@@ -3574,7 +3571,9 @@ do-fetch:
 			fi ; \
 			for site in `eval $$SORTED_PATCH_SITES_CMD_TMP`; do \
 			    ${ECHO_MSG} "=> Attempting to fetch from $${site}."; \
-				CKSIZE=`alg=SIZE; ${DISTINFO_DATA}`; \
+				DIR=${DIST_SUBDIR}; \
+				pattern="$${DIR:+$$DIR/}`${ECHO_CMD} $$file | ${SED} -e 's/\./\\\\./g'`"; \
+				CKSIZE=`${GREP} "^SIZE ($$pattern)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
 				case $${file} in \
 				*/*)	${MKDIR} $${file%/*}; \
 						args="-o $${file} $${site}$${file}";; \
@@ -3588,7 +3587,7 @@ do-fetch:
 			${ECHO_MSG} "=> port manually into ${_DISTDIR} and try again."; \
 			exit 1; \
 	    fi \
-	 done
+	 done)
 .endif
 .endif
 
@@ -4631,8 +4630,8 @@ fetch-list:
 						continue; \
 					fi; \
 				fi; \
-				DIR=${DIST_SUBDIR};\
-				CKSIZE=`alg=SIZE; ${DISTINFO_DATA}`; \
+				DIR=${DIST_SUBDIR}; \
+				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
 				case $${file} in \
 				*/*)	args="-o $${file} $${site}$${file}";; \
 				*)		args=$${site}$${file};; \
@@ -4663,7 +4662,8 @@ fetch-list:
 				SORTED_PATCH_SITES_CMD_TMP="${SORTED_PATCH_SITES_DEFAULT_CMD}" ; \
 			fi ; \
 			for site in `eval $$SORTED_PATCH_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
-				CKSIZE=`alg=SIZE; ${DISTINFO_DATA}`; \
+				DIR=${DIST_SUBDIR}; \
+				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
 				case $${file} in \
 				*/*)	args="-o $${file} $${site}$${file}";; \
 				*)		args=$${site}$${file};; \
@@ -4740,10 +4740,15 @@ makesum: check-checksum-algorithms
 
 .if !target(checksum)
 checksum: fetch check-checksum-algorithms
-	@${checksum_init} \
+	@ \
+	\
+	${checksum_init} \
+	\
 	if [ -f ${MD5_FILE} ]; then \
-		cd ${DISTDIR}; OK="";\
+	(	cd ${DISTDIR}; OK=""; \
 		for file in ${_CKSUMFILES}; do \
+			pattern="`${ECHO_CMD} $$file | ${SED} -e 's/\./\\\\./g'`"; \
+			\
 			ignored="true"; \
 			for alg in ${CHECKSUM_ALGORITHMS:U}; do \
 				ignore="false"; \
@@ -4751,7 +4756,7 @@ checksum: fetch check-checksum-algorithms
 				\
 				if [ $$alg_executable != "NO" ]; then \
 					MKSUM=`$$alg_executable < $$file`; \
-					CKSUM=`${DISTINFO_DATA}`; \
+					CKSUM=`${GREP} "^$$alg ($$pattern)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
 				else \
 					ignore="true"; \
 				fi; \
@@ -4796,6 +4801,8 @@ checksum: fetch check-checksum-algorithms
 		done; \
 		\
 		for file in ${_IGNOREFILES}; do \
+			pattern="`${ECHO_CMD} $$file | ${SED} -e 's/\./\\\\./g'`"; \
+			\
 			ignored="true"; \
 			alreadymatched="false"; \
 			for alg in ${CHECKSUM_ALGORITHMS:U}; do \
@@ -4803,7 +4810,7 @@ checksum: fetch check-checksum-algorithms
 				eval alg_executable=\$$$$alg; \
 				\
 				if [ $$alg_executable != "NO" ]; then \
-					CKSUM=`${DISTINFO_DATA}`; \
+					CKSUM=`${GREP} "^$$alg ($$pattern)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
 				else \
 					ignore="true"; \
 				fi; \
@@ -4851,6 +4858,7 @@ checksum: fetch check-checksum-algorithms
 		if [ "$$OK" != "true" ]; then \
 			exit 1; \
 		fi \
+	); \
 	elif [ -n "${_CKSUMFILES:M*}" ]; then \
 		${ECHO_MSG} "=> No checksum file (${MD5_FILE})."; \
 	fi
@@ -5168,59 +5176,61 @@ fetch-recursive-list:
 	done
 .endif
 
-# Used by fetch-required and fetch-required list, this script looks
-# at each of the dependencies. If 3 items are specified in the tuple,
-# such as foo:${PORTSDIR}/graphics/foo:extract, the first item (foo)
-# is examined. Only if it begins with a / and does not exist on the
-# file-system will ``make targ'' proceed.
-# For more usual (dual-item) dependency tuples, the ``make targ''
-# proceeds, if the exact package, which the directory WOULD'VE installed,
-# is not yet installed.
-# This is the exact behaviour of the old code, and it may need
-# revisiting. For example, the entire first case seems dubious, and in
-# the second case we, probably, should be satisfied with _any_ (earlier)
-# package, with the same origin as that of the dir.
-#
-#	-mi
-FETCH_LIST?=	for i in $$deps; do \
-		prog=$${i%%:*}; dir=$${i\#*:}; \
-		case $$dir in	\
-		*:*) if [ $$prog != $${prog\#/} -o ! -e $$prog ]; then	\
-				dir=$${dir%%:*};	\
-			else	\
-				continue;	\
-			fi;;	\
-		*) if [ -d ${PKG_DBDIR}/$$(cd $$dir; ${MAKE} -V PKGNAME) ]; then \
-				continue;	\
-			fi;;	\
-		esac;	\
-		echo cd $$dir; ${MAKE} $$targ; \
-	done
-
 .if !target(fetch-required)
 fetch-required: fetch
-.if defined(NO_DEPENDS)
-	@${ECHO_MSG} "===> NO_DEPENDS is set, not fetching any distfiles for ${PKG_NAME}"
-.else
 	@${ECHO_MSG} "===> Fetching all required distfiles for ${PKGNAME} and dependencies"
 .for deptype in EXTRACT PATCH FETCH BUILD RUN
 .if defined(${deptype}_DEPENDS)
-	@targ=fetch; deps="${${deptype}_DEPENDS}"; ${FETCH_LIST}
+.if !defined(NO_DEPENDS)
+	@for i in ${${deptype}_DEPENDS}; do \
+		prog=`${ECHO_CMD} $$i | ${CUT} -f 1 -d ':'`; \
+		dir=`${ECHO_CMD} $$i | ${CUT} -f 2-999 -d ':'`; \
+		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
+			dir=`${ECHO_CMD} $$dir | ${CUT} -f 1 -d ':'`; \
+			if ${EXPR} "$$prog" : \\/ >/dev/null; then \
+				if [ ! -e "$$prog" ]; then \
+					(cd $$dir; ${MAKE} fetch); \
+				fi; \
+			fi; \
+		else \
+			(cd $$dir; \
+			tmp=`${MAKE} -V PKGNAME`; \
+			if [ ! -d ${PKG_DBDIR}/$${tmp} ]; then \
+				${MAKE} fetch; \
+			fi );  \
+		fi; \
+	done
+.endif
 .endif
 .endfor
-.endif
-
 .endif
 
 .if !target(fetch-required-list)
 fetch-required-list: fetch-list
-.if !defined(NO_DEPENDS)
 .for deptype in EXTRACT PATCH FETCH BUILD RUN
 .if defined(${deptype}_DEPENDS)
-	@targ=fetch-list; deps="${${deptype}_DEPENDS}"; ${FETCH_LIST}
+.if !defined(NO_DEPENDS)
+	@for i in ${${deptype}_DEPENDS}; do \
+		prog=`${ECHO_CMD} $$i | ${CUT} -f 1 -d ':'`; \
+		dir=`${ECHO_CMD} $$i | ${CUT} -f 2-999 -d ':'`; \
+		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
+			dir=`${ECHO_CMD} $$dir | ${CUT} -f 1 -d ':'`; \
+			if ${EXPR} "$$prog" : \\/ >/dev/null; then \
+				if [ ! -e "$$prog" ]; then \
+					(cd $$dir; ${MAKE} fetch-list); \
+				fi; \
+			fi; \
+		else \
+			(cd $$dir; \
+			tmp=`${MAKE} -V PKGNAME`; \
+			if [ ! -d ${PKG_DBDIR}/$${tmp} ]; then \
+				${MAKE} fetch-list; \
+			fi );  \
+		fi; \
+	done
+.endif
 .endif
 .endfor
-.endif
 .endif
 
 .if !target(checksum-recursive)
@@ -5239,7 +5249,7 @@ build-depends-list:
 .endif
 
 BUILD-DEPENDS-LIST= \
-	for dir in $$(${ECHO_CMD} "${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS}" | ${SED} -E -e 's,([^: ]*):([^: ]*)(:[^ ]*)?,\2,g' -e 'y/ /\n/'| ${SORT} -u); do \
+	for dir in $$(${ECHO_CMD} "${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | ${SORT} -u); do \
 		if [ -d $$dir ]; then \
 			${ECHO_CMD} $$dir; \
 		else \
@@ -5253,7 +5263,7 @@ run-depends-list:
 .endif
 
 RUN-DEPENDS-LIST= \
-	for dir in $$(${ECHO_CMD} "${_LIB_RUN_DEPENDS:C,.*:([^:]*).*,\1,}" | ${SED} -e 'y/ /\n/' | ${SORT} -u); do \
+	for dir in $$(${ECHO_CMD} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${SED} -e 'y/ /\n/' | ${CUT} -f 2 -d ':' | ${SORT} -u); do \
 		if [ -d $$dir ]; then \
 			${ECHO_CMD} $$dir; \
 		else \
@@ -5269,7 +5279,6 @@ package-depends-list:
 	@${PACKAGE-DEPENDS-LIST}
 .endif
 
-_LIB_RUN_DEPENDS=	${LIB_DEPENDS} ${RUN_DEPENDS}
 PACKAGE-DEPENDS-LIST?= \
 	if [ "${CHILD_DEPENDS}" ]; then \
 		installed=$$(${PKG_INFO} -qO ${PKGORIGIN} 2>/dev/null || \
@@ -5285,22 +5294,21 @@ PACKAGE-DEPENDS-LIST?= \
 		done; \
 	fi; \
 	checked="${PARENT_CHECKED}"; \
-	for dir in ${_LIB_RUN_DEPENDS:C,[^:]*:([^:]*):?.*,\1,}; do \
+	for dir in $$(${ECHO_CMD} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${SED} -e 'y/ /\n/' | ${CUT} -f 2 -d ':'); do \
 		dir=$$(${REALPATH} $$dir); \
 		if [ -d $$dir ]; then \
-			case $$checked in	\
-			$$dir|$$dir\ *|*\ $$dir|*\ $$dir\ *) continue;;	\
-			esac;	\
-			childout=$$(cd $$dir; ${MAKE} CHILD_DEPENDS=yes PARENT_CHECKED="$$checked" package-depends-list); \
-			set -- $$childout; \
-			childdir=""; \
-			while [ $$\# != 0 ]; do \
-				childdir="$$childdir $$2"; \
-				${ECHO_CMD} "$$1 $$2 $$3"; \
-				shift 3; \
-			done; \
-			checked="$$dir $$childdir $$checked"; \
-		else \\
+			if (${ECHO_CMD} $$checked | ${GREP} -qwv "$$dir"); then \
+				childout=$$(cd $$dir; ${MAKE} CHILD_DEPENDS=yes PARENT_CHECKED="$$checked" package-depends-list); \
+				set -- $$childout; \
+				childdir=""; \
+				while [ $$\# != 0 ]; do \
+					childdir="$$childdir $$2"; \
+					${ECHO_CMD} "$$1 $$2 $$3"; \
+					shift 3; \
+				done; \
+				checked="$$dir $$childdir $$checked"; \
+			fi; \
+		else \
 			${ECHO_MSG} "${PKGNAME}: \"$$dir\" non-existent -- dependency list incomplete" >&2; \
 		fi; \
 	done
@@ -5320,7 +5328,7 @@ package-recursive: package
 # Show missing dependiencies
 missing:
 	@for dir in $$(${ALL-DEPENDS-LIST}); do \
-		THISORIGIN=$${dir##${PORTSDIR}/}; \
+		THISORIGIN=$$(${ECHO_CMD} $$dir | ${SED} 's,${PORTSDIR}/,,'); \
 		installed=$$(${PKG_INFO} -qO $${THISORIGIN}); \
 		if [ -z "$$installed" ]; then \
 			${ECHO_CMD} $$THISORIGIN; \
@@ -5523,7 +5531,7 @@ generate-plist:
 	@${ECHO_CMD} '@cwd ${PREFIX}' >> ${TMPPLIST}
 .endif
 	@for i in $$(${ECHO_CMD} ${__MANPAGES} ${_TMLINKS:M${_PREFIX}*:S|^${_PREFIX}/||} ' ' | ${SED} -E -e 's|man([1-9ln])/([^/ ]+) |cat\1/\2 |g'); do \
-		${ECHO_CMD} "@unexec rm -f %D/$$i %D/$${i%.gz} %D/$${i%.bz2} %D/$$i.gz %D/$$i.bz2" >> ${TMPPLIST}; \
+		${ECHO_CMD} "@unexec rm -f %D/$${i%.gz} %D/$${i%.gz}.gz" >> ${TMPPLIST}; \
 	done
 .endfor
 	@if [ -f ${PLIST} ]; then \
@@ -5536,7 +5544,7 @@ generate-plist:
 .endfor
  
 .for dir in ${PLIST_DIRS}
-	@${ECHO_CMD} ${dir} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} -e 's,^,@dirrm ,' >> ${TMPPLIST}
+	@${ECHO_CMD} ${dir} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} | ${SED} -e 's,^,@dirrm ,' >> ${TMPPLIST}
 .endfor
 # To be removed once INSTALLS_SHLIB has been eradicated.
 .if defined(INSTALLS_SHLIB) && !defined(INSTALL_AS_USER)
@@ -5718,7 +5726,7 @@ fake-pkg:
 		if [ -f ${PKGMESSAGE} ]; then \
 			${CP} ${PKGMESSAGE} ${PKG_DBDIR}/${PKGNAME}/+DISPLAY; \
 		fi; \
-		for dep in `${PKG_INFO} -qf ${PKGNAME} | ${AWK} '/^@pkgdep / {print $$2}' | ${SORT} -u`; do \
+		for dep in `${PKG_INFO} -qf ${PKGNAME} | ${GREP} -w ^@pkgdep | ${AWK} '{print $$2}' | ${SORT} -u`; do \
 			if [ -d ${PKG_DBDIR}/$$dep -a -z `${ECHO_CMD} $$dep | ${GREP} -E ${PKG_IGNORE_DEPENDS}` ]; then \
 				if ! ${GREP} ^${PKGNAME}$$ ${PKG_DBDIR}/$$dep/+REQUIRED_BY \
 					>/dev/null 2>&1; then \
