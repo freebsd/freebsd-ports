@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.15.5.1
+PORTVERSION=	7.16.1
 CATEGORIES=	ftp python
 MASTER_SITES=	http://pycurl.sourceforge.net/download/ \
 		http://pycurl.sourceforge.net/download/00-OLD-VERSIONS/
@@ -22,8 +22,8 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_OPENSSL=	yes
 
-DOCSDIR=	${PREFIX}/share/doc/py-curl
-EXAMPLESDIR=	${PREFIX}/share/examples/py-curl
+DOCSDIR=	${TARGETDIR}/share/doc/py-curl
+EXAMPLESDIR=	${TARGETDIR}/share/examples/py-curl
 
 post-patch:
 	${REINPLACE_CMD} \

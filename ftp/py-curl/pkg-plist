@@ -2,6 +2,7 @@
 %%PYTHON_SITELIBDIR%%/curl/__init__.pyc
 %%PYTHON_SITELIBDIR%%/curl/__init__.pyo
 %%PYTHON_SITELIBDIR%%/pycurl.so
+@dirrm %%PYTHON_SITELIBDIR%%/curl
 %%EXAMPLESDIR%%/basicfirst.py
 %%EXAMPLESDIR%%/file_upload.py
 %%EXAMPLESDIR%%/linksys.py
@@ -9,6 +10,7 @@
 %%EXAMPLESDIR%%/retriever.py
 %%EXAMPLESDIR%%/sfquery.py
 %%EXAMPLESDIR%%/xmlrpc_curl.py
+@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
@@ -33,6 +35,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/tests/test_multi4.py
 %%PORTDOCS%%%%DOCSDIR%%/tests/test_multi5.py
 %%PORTDOCS%%%%DOCSDIR%%/tests/test_multi6.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/test_multi_socket.py
+%%PORTDOCS%%%%DOCSDIR%%/tests/test_multi_timer.py
 %%PORTDOCS%%%%DOCSDIR%%/tests/test_multi_vs_thread.py
 %%PORTDOCS%%%%DOCSDIR%%/tests/test_post.py
 %%PORTDOCS%%%%DOCSDIR%%/tests/test_post2.py
@@ -41,8 +45,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/tests/test_stringio.py
 %%PORTDOCS%%%%DOCSDIR%%/tests/test_xmlrpc.py
 %%PORTDOCS%%%%DOCSDIR%%/tests/util.py
-@dirrm %%PYTHON_SITELIBDIR%%/curl
-@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tests
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
