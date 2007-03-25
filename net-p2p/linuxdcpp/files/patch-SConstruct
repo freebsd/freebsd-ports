@@ -1,6 +1,6 @@
---- SConstruct.orig	Tue Feb  6 21:27:05 2007
-+++ SConstruct	Tue Feb  6 22:31:03 2007
-@@ -91,9 +91,15 @@
+--- SConstruct.orig	Sat Mar 24 13:33:17 2007
++++ SConstruct	Sat Mar 24 18:13:16 2007
+@@ -74,12 +74,24 @@
  	conf_dir = 'build/sconf',
  	log_file = 'build/sconf/config.log')
  
@@ -16,10 +16,19 @@
  if os.environ.has_key('CXXFLAGS'):
  	env['CXXFLAGS'] = os.environ['CXXFLAGS'].split()
  
-@@ -145,11 +151,6 @@
++if os.environ.has_key('CPPPATH'):
++	env['CPPPATH'] = os.environ['CPPPATH'].split()
++
++if os.environ.has_key('LIBPATH'):
++	env['LIBPATH'] = os.environ['LIBPATH'].split()
++
+ env.SConsignFile('build/sconf/.sconsign')
+ opts.Save('build/sconf/scache.conf', env)
+ Help(opts.GenerateHelpText(env))
+@@ -125,11 +137,6 @@
+ 		Exit(1)
  
  	if not conf.CheckHeader('unistd.h'):
- 		print '\tHeader file unistd.h not found'
 -		Exit(1)
 -
 -	if not conf.CheckLibWithHeader('pthread', 'pthread.h', 'c'):
