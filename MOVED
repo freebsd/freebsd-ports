@@ -2886,3 +2886,4 @@ www/drupal-nice_menus|www/drupal4-nice_menus|2007-03-25|rename for drupal5
 www/drupal-taxonomy_access|www/drupal4-taxonomy_access|2007-03-25|rename for drupal5
 www/drupal-textile|www/drupal4-textile|2007-03-25|rename for drupal5
 security/drupal-ldap_integration|security/drupal4-ldap_integration|2007-03-25|rename for drupal5
+devel/xdg-user-dirs-gtk||2007-03-25|Not all dependencies are in ports yet
