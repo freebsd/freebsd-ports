@@ -20,6 +20,8 @@ BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 LIB_DEPENDS=	uim:${PORTSDIR}/textproc/uim
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Does not compile
+
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	lthack
 USE_X_LIB=	yes
