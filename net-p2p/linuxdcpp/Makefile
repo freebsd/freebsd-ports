@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linuxdcpp
-PORTVERSION=	0.0.1.20070206	#0.0.1.YYYYMMDD
+PORTVERSION=	0.0.1.20070324	#0.0.1.YYYYMMDD
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~mezz/distfiles/
@@ -22,7 +22,6 @@ USE_ICONV=	yes
 USE_SCONS=	yes
 USE_OPENSSL=	yes
 
-CXXFLAGS+=	-I. -I${LOCALBASE}/include
 SCONS_BUILDENV=	${SCONS_ENV}
 
 .if defined(WITH_DEBUG)
