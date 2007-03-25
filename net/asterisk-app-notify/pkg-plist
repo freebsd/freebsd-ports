@@ -1,0 +1,7 @@
+@unexec if cmp -s %D/etc/asterisk/dialer_extensions.conf.sample %D/etc/asterisk/dialer_extensions.conf; then rm -f %D/etc/asterisk/dialer_extensions.conf; fi
+etc/asterisk/dialer_extensions.conf.sample
+@exec if [ ! -f %D/etc/asterisk/dialer_extensions.conf ] ; then cp -p %D/%F %B/dialer_extensions.conf; fi
+lib/asterisk/modules/app_notify.so
+@dirrmtry lib/asterisk/modules
+@dirrmtry lib/asterisk
+@dirrmtry etc/asterisk

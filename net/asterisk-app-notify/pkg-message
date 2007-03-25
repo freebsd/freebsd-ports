@@ -1,0 +1,14 @@
+*****************************************************************************
+
+a) If this is a new install, restart Asterisk or activate the module by
+   running:
+
+   # asterisk -rx "load app_notify"
+
+b) If this is an upgrade, you can restart Asterisk or reload the module by
+   running:
+
+   # asterisk -rx "unload app_notify"
+   # asterisk -rx "load app_notify"
+
+*****************************************************************************
