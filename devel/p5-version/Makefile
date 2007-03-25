@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	version
-PORTVERSION=	0.70
+PORTVERSION=	0.71
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/J/JP/JPEACOCK
@@ -19,11 +19,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		version.3
 
-.include <bsd.port.pre.mk>
-
-# requires Perl 5.00504
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
