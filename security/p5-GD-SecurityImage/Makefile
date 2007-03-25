@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	GD
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@rbt.ca
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for creating CAPTCHA security images
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \

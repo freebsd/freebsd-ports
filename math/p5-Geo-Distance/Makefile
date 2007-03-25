@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Geo
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@rbt.ca
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Calculate Distances and Closest Locations
 
 PERL_CONFIGURE=	yes

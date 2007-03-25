@@ -11,7 +11,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bricolage
 
-MAINTAINER=	ports@rbt.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full-featured, open-source content-management and publishing system
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \

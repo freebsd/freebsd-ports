@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	MasonX/DWHEELER
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@rbt.ca
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Mason callback support via Params::CallbackRequest
 
 BUILD_DEPENDS=	${SITE_PERL}/HTML/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
