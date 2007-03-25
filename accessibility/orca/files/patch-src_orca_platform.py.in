@@ -1,0 +1,8 @@
+--- src/orca/platform.py.in.orig	Sun Mar 25 01:07:40 2007
++++ src/orca/platform.py.in	Sun Mar 25 01:07:56 2007
+@@ -40,4 +40,4 @@ package     = "@PACKAGE@"
+ 
+ # The name of the data directory (usually "share").
+ #
+-datadirname = "@DATADIRNAME@"
++datadirname = "@datadir@"
