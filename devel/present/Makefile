@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.0
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A library for reading Microsoft PowerPoint(tm) documents
 
-LIB_DEPENDS=	goffice-0.3:${PORTSDIR}/devel/goffice
+LIB_DEPENDS=	goffice-1.2:${PORTSDIR}/devel/goffice1
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool:15
