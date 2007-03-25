@@ -1,5 +1,9 @@
 @exec mkdir -p /var/spool/cups/tmp || true
 @exec chown -R root:daemon /var/spool/cups
+@exec mkdir -p /var/cache/cups || true
+@exec chown root:cups /var/cache/cups
+@exec mkdir -p /var/log/cups || true
+@exec chown cups:daemon /var/log/cups
 @exec mkdir %D/etc/cups/ppd || true
 @exec mkdir %D/etc/cups/interfaces || true
 @unexec rm -rf /var/spool/cups 2>/dev/null || true
@@ -17,6 +21,7 @@ etc/cups/mime.convs.N
 @unexec if cmp -s %D/etc/cups/mime.types.N %D/etc/cups/mime.types; then rm -f %D/etc/cups/mime.types; fi
 etc/cups/mime.types.N
 @exec if test ! -f %D/etc/cups/mime.types; then cp -p %D/etc/cups/mime.types.N %D/etc/cups/mime.types; fi
+@exec chgrp cups %D/etc/cups
 bin/cupstestdsc
 bin/lp
 bin/cancel
@@ -1352,7 +1357,7 @@ sbin/lpmove
 @dirrm %%DATADIR%%/templates/pl
 @dirrm %%DATADIR%%/templates/sv
 @dirrm %%DATADIR%%/templates
-@exec  mkdir -p %%DATADIR%%/profiles
+@exec  mkdir -p %D%%DATADIR%%/profiles
 @dirrm %%DATADIR%%/profiles
 @dirrmtry %%DATADIR%%/model
 @dirrm %%DATADIR%%/fonts
@@ -1364,7 +1369,7 @@ sbin/lpmove
 @dirrm libexec/cups/notifier
 @dirrm libexec/cups/monitor
 @dirrmtry libexec/cups/filter
-@exec mkdir -p libexec/cups/driver
+@exec mkdir -p %Dlibexec/cups/driver
 @dirrm libexec/cups/driver
 @dirrm libexec/cups/daemon
 @dirrm libexec/cups/cgi-bin

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cups
-PORTVERSION=	1.2.8
+PORTVERSION=	1.2.10
 DISTVERSIONSUFFIX=	-source
 PORTREVISION=	0
 CATEGORIES=	print
@@ -73,7 +73,6 @@ CONFIGURE_ARGS+=	--with-php
 USE_PHP=		yes
 USE_PHP_BUILD=		yes
 PLIST_SUB+=		PHP=""
-.include "${PORTSDIR}/Mk/bsd.php.mk"
 .else
 CONFIGURE_ARGS+=	--without-php
 PLIST_SUB+=		PHP="@comment "
@@ -160,5 +159,7 @@ post-install:
 	${INSTALL} -d ${CUPS_SPOOLDIR}/tmp/
 	${CHOWN} -R ${CUPSOWN}:${CUPSGRP} ${CUPS_SPOOLDIR}/
 	${CHMOD} -R g+w ${CUPS_SPOOLDIR}/
+	${INSTALL} -d /var/cache/cups/
+	${CHOWN} root:${CUPSGRP} /var/cache/cups/
 
 .include <bsd.port.post.mk>
