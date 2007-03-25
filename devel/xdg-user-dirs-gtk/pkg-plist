@@ -1,5 +1,0 @@
-bin/xdg-user-dirs-gtk-update
-etc/xdg/autostart/user-dirs-update-gtk.desktop
-share/locale/de/LC_MESSAGES/xdg-user-dirs-gtk.mo
-@dirrmtry etc/xdg/autostart
-@dirrmtry etc/xdg

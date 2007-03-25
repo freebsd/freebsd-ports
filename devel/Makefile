@@ -2134,7 +2134,6 @@
     SUBDIR += wizardkit
     SUBDIR += wxGlade
     SUBDIR += wxGlade-devel
-    SUBDIR += xdg-user-dirs-gtk
     SUBDIR += xdg-utils
     SUBDIR += xfc
     SUBDIR += xfce4-dev-tools
