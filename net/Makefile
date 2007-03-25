@@ -30,6 +30,7 @@
     SUBDIR += asterisk
     SUBDIR += asterisk-addons
     SUBDIR += asterisk-app-ldap
+    SUBDIR += asterisk-app-notify
     SUBDIR += asterisk-bristuff
     SUBDIR += asterisk-oh323
     SUBDIR += astfax
