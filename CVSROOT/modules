@@ -5760,6 +5760,7 @@ klamav		ports/security/klamav
 klaptopdaemon	ports/sysutils/klaptopdaemon
 klassmodeler	ports/devel/klassmodeler
 klat		ports/editors/klat
+klavaro		ports/games/klavaro
 kldfind		ports/sysutils/kldfind
 klh10		ports/emulators/klh10
 klibido		ports/news/klibido
