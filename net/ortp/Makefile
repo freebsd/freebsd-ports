@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ortp
-PORTVERSION=	0.12.0
+PORTVERSION=	0.13.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	linphone/ortp/sources
@@ -17,6 +17,11 @@ COMMENT=	A Real-time Transport Protocol (RTP) stack
 USE_GNOME=	glib20 pkgconfig gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
+
+pre-install:
+.if defined(NOPORTDOCS)
+	${RM} -rf ${WRKSRC}/docs/html
+.endif
 
 .include <bsd.port.mk>

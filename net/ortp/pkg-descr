@@ -12,10 +12,13 @@ Features:
  * Implements blocking and non blocking IO for RTP sessions.
  * Supports mutiplexing IO, so that hundreds of RTP sessions can be managed by
    a single thread.
+ * Features an adaptive jitter algorithm for a receiver to adapt to the
+   clockrate of the sender.
  * Supports part of RFC2833 for telephone events over RTP.
  * The API is well documented using gtk-doc.
  * Licensed under the Lesser Gnu Public License.
  * RTCP messages sent periodically since 0.7.0 (compound packet including
    sender report or receiver report + SDES)
+ * Includes an API to parse incoming RTCP packets.
 
-WWW: http://www.linphone.org/ortp/
+WWW:	http://www.linphone.org/index.php/v2/code_review/ortp
