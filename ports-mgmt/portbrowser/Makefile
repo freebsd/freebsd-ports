@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	portbrowser
-PORTVERSION=	0.3
-PORTREVISION=	3
+PORTVERSION=	0.4
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.bytelabs.org/
 DISTNAME=	pb-browser-${PORTVERSION}
