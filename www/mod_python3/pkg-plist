@@ -20,6 +20,9 @@
 %%PYTHON_SITELIBDIR%%/mod_python/cgihandler.py
 %%PYTHON_SITELIBDIR%%/mod_python/cgihandler.pyc
 %%PYTHON_SITELIBDIR%%/mod_python/cgihandler.pyo
+%%PYTHON_SITELIBDIR%%/mod_python/importer.py
+%%PYTHON_SITELIBDIR%%/mod_python/importer.pyc
+%%PYTHON_SITELIBDIR%%/mod_python/importer.pyo
 %%PYTHON_SITELIBDIR%%/mod_python/psp.py
 %%PYTHON_SITELIBDIR%%/mod_python/psp.pyc
 %%PYTHON_SITELIBDIR%%/mod_python/psp.pyo
