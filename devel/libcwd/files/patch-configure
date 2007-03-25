@@ -1,8 +1,20 @@
---- configure.orig	Tue May 31 03:06:27 2005
-+++ configure	Tue Jan 24 17:51:36 2006
-@@ -22699,5 +22699,2 @@
+--- configure.orig	Fri Nov 17 00:18:15 2006
++++ configure	Tue Mar 13 19:00:42 2007
+@@ -6293,6 +6293,7 @@
+ echo "${ECHO_T}no" >&6; }
+ fi
+ 
++cw_cv_sys_ps_wide_pid_option="-ww"
+ 
+ # The PS_WIDE_PID_OPTION test is not needed when --disable-location is used.
+ if test x"$libcwd_config_location" = x"yes"; then
+@@ -24201,9 +24202,6 @@
+ 
+ 
  PCHOPTS=
 -if test "$cw_cv_prog_CXX_pch" = "yes"; then
 -  PCHOPTS="-include pch.h"
 -fi
  
+ 
+ ac_config_files="$ac_config_files include/libcwd/timestamp-config.h:include/libcwd/config.h.in"
