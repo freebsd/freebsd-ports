@@ -1,2 +1,4 @@
 C++ library to use as an abstraction layer between museekd
 and a client application that wants to use it.
+
+WWW:	http://projects.beep-media-player.org/index.php/Main/MooDriver
