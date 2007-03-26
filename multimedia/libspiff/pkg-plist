@@ -21,6 +21,10 @@ include/spiff/SpiffTrack.h
 include/spiff/SpiffTrackWriter.h
 include/spiff/SpiffWriter.h
 include/spiff/SpiffXmlFormatter.h
+include/spiff/spiff_c.h
 lib/libspiff.a
+lib/libspiff.la
+lib/libspiff.so
+lib/libspiff.so.0
 @dirrm include/spiff/ProjectOpus
 @dirrm include/spiff
