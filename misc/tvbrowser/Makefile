@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	tvbrowser
-PORTVERSION=	2.5
-CATEGORIES=	misc java
+PORTVERSION=	2.5.2
+CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	tvbrowser
 
 MAINTAINER=	lars.engels@0x20.net
-COMMENT=	A digital tv guide
+COMMENT=	A digital TV guide
 
 USE_LDCONFIG=	yes
 NO_BUILD=	yes
@@ -21,7 +21,7 @@ JAVA_VERSION=	1.5+
 SUB_FILES=	tvbrowser
 
 DESKTOP_ENTRIES="TV-Browser" \
-		"Browse TV programs" \
+		"A digital TV guide" \
 		"${DATADIR}/imgs/tvbrowser128.png" \
 		"tvbrowser" \
 		"Application;TV;" \
