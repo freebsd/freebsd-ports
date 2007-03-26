@@ -1,12 +1,10 @@
 bin/tkabber
 %%DATADIR%%/Tclx.tcl
-%%DATADIR%%/aniemoteicons/aniemoteicons.tcl
-%%DATADIR%%/aniemoteicons/anigif.tcl
 %%DATADIR%%/balloon.tcl
 %%DATADIR%%/browser.tcl
 %%DATADIR%%/chats.tcl
 %%DATADIR%%/ckabber.tcl
-%%DATADIR%%/config.tcl
+%%DATADIR%%/configdir.tcl
 %%DATADIR%%/custom.tcl
 %%DATADIR%%/datagathering.tcl
 %%DATADIR%%/default.tcl
@@ -159,7 +157,9 @@ bin/tkabber
 %%DATADIR%%/pixmaps/default/services/yahoo_offline.gif
 %%DATADIR%%/pixmaps/default/services/yahoo_online.gif
 %%DATADIR%%/pixmaps/default/services/yahoo_xa.gif
-%%DATADIR%%/pixmaps/default/tkabber/chat-bookmark.gif
+%%DATADIR%%/pixmaps/default/tkabber/chat-bookmark-blue.gif
+%%DATADIR%%/pixmaps/default/tkabber/chat-bookmark-green.gif
+%%DATADIR%%/pixmaps/default/tkabber/chat-bookmark-red.gif
 %%DATADIR%%/pixmaps/default/tkabber/gpg-badencrypted.gif
 %%DATADIR%%/pixmaps/default/tkabber/gpg-badsigned.gif
 %%DATADIR%%/pixmaps/default/tkabber/gpg-encrypted.gif
@@ -173,7 +173,9 @@ bin/tkabber
 %%DATADIR%%/pixmaps/default/tkabber/toolbar-join-conference.gif
 %%DATADIR%%/pixmaps/default/tkabber/toolbar-show-offline.gif
 %%DATADIR%%/pixmaps/default/tkabber/toolbar-show-online.gif
-%%DATADIR%%/pixmaps/default/tkabber/xaddress.gif
+%%DATADIR%%/pixmaps/default/tkabber/xaddress-blue.gif
+%%DATADIR%%/pixmaps/default/tkabber/xaddress-green.gif
+%%DATADIR%%/pixmaps/default/tkabber/xaddress-red.gif
 %%DATADIR%%/pixmaps/feather16/docking/available-away.gif
 %%DATADIR%%/pixmaps/feather16/docking/available-chat.gif
 %%DATADIR%%/pixmaps/feather16/docking/available-dnd.gif
@@ -263,6 +265,7 @@ bin/tkabber
 %%DATADIR%%/pixmaps/stars/tkabber/toolbar-show-online.gif
 %%DATADIR%%/pixmaps/stars/tkabber/xaddress.gif
 %%DATADIR%%/plugins.tcl
+%%DATADIR%%/plugins/chat/abbrev.tcl
 %%DATADIR%%/plugins/chat/bookmark_highlighted.tcl
 %%DATADIR%%/plugins/chat/chatstate.tcl
 %%DATADIR%%/plugins/chat/clear.tcl
@@ -278,6 +281,7 @@ bin/tkabber
 %%DATADIR%%/plugins/chat/empty_body.tcl
 %%DATADIR%%/plugins/chat/events.tcl
 %%DATADIR%%/plugins/chat/exec_command.tcl
+%%DATADIR%%/plugins/chat/histool.tcl
 %%DATADIR%%/plugins/chat/history.tcl
 %%DATADIR%%/plugins/chat/info_commands.tcl
 %%DATADIR%%/plugins/chat/insert_nick.tcl
@@ -290,6 +294,7 @@ bin/tkabber
 %%DATADIR%%/plugins/chat/open_chat.tcl
 %%DATADIR%%/plugins/chat/open_window.tcl
 %%DATADIR%%/plugins/chat/popupmenu.tcl
+%%DATADIR%%/plugins/chat/postpone.tcl
 %%DATADIR%%/plugins/chat/send_message.tcl
 %%DATADIR%%/plugins/chat/unisymbols.tcl
 %%DATADIR%%/plugins/chat/update_tab.tcl
@@ -337,9 +342,11 @@ bin/tkabber
 %%DATADIR%%/plugins/search/browser.tcl
 %%DATADIR%%/plugins/search/chat.tcl
 %%DATADIR%%/plugins/search/custom.tcl
+%%DATADIR%%/plugins/search/headlines.tcl
 %%DATADIR%%/plugins/search/logger.tcl
 %%DATADIR%%/plugins/search/rawxml.tcl
 %%DATADIR%%/plugins/search/search.tcl
+%%DATADIR%%/plugins/search/spanel.tcl
 %%DATADIR%%/plugins/si/ibb.tcl
 %%DATADIR%%/plugins/si/iqibb.tcl
 %%DATADIR%%/plugins/si/socks5.tcl
@@ -378,6 +385,7 @@ bin/tkabber
 %%DATADIR%%/splash.tcl
 %%DATADIR%%/tkabber.tcl
 %%DATADIR%%/trans.tcl
+%%DATADIR%%/trans/de.msg
 %%DATADIR%%/trans/es.msg
 %%DATADIR%%/trans/pl.msg
 %%DATADIR%%/trans/ru.msg
@@ -417,7 +425,6 @@ bin/tkabber
 %%PORTDOCS%%%%DOCSDIR%%/tkabber.html
 %%PORTDOCS%%%%DOCSDIR%%/tkabber.xml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/aniemoteicons
 @dirrm %%DATADIR%%/emoticons/default
 @dirrm %%DATADIR%%/emoticons
 @dirrm %%DATADIR%%/ifacetk
@@ -446,12 +453,12 @@ bin/tkabber
 @dirrm %%DATADIR%%/pixmaps/stars/roster
 @dirrm %%DATADIR%%/pixmaps/stars
 @dirrm %%DATADIR%%/pixmaps
-@dirrm %%DATADIR%%/plugins/iq
+@dirrm %%DATADIR%%/plugins/chat
 @dirrm %%DATADIR%%/plugins/unix
 @dirrm %%DATADIR%%/plugins/filetransfer
 @dirrm %%DATADIR%%/plugins/jidlink
 @dirrm %%DATADIR%%/plugins/search
-@dirrm %%DATADIR%%/plugins/chat
+@dirrm %%DATADIR%%/plugins/iq
 @dirrm %%DATADIR%%/plugins/richtext
 @dirrm %%DATADIR%%/plugins/windows
 @dirrm %%DATADIR%%/plugins/si
@@ -463,8 +470,8 @@ bin/tkabber
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/trans
 @dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%/xrdb
-@dirrm %%EXAMPLESDIR%%/tools
-@dirrm %%EXAMPLESDIR%%/tclCarbonNotification-1.0.0
 @dirrm %%EXAMPLESDIR%%/configs
+@dirrm %%EXAMPLESDIR%%/tclCarbonNotification-1.0.0
+@dirrm %%EXAMPLESDIR%%/tools
+@dirrm %%EXAMPLESDIR%%/xrdb
 @dirrm %%EXAMPLESDIR%%
