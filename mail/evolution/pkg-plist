@@ -228,6 +228,8 @@ lib/evolution/%%VERSION%%/components/libevolution-mail.so
 %%PILOT:%%lib/evolution/%%VERSION%%/conduits/libeaddress_conduit.so
 %%PILOT:%%lib/evolution/%%VERSION%%/conduits/libecalendar_conduit.la
 %%PILOT:%%lib/evolution/%%VERSION%%/conduits/libecalendar_conduit.so
+%%PILOT:%%lib/evolution/%%VERSION%%/conduits/libememo_conduit.la
+%%PILOT:%%lib/evolution/%%VERSION%%/conduits/libememo_conduit.so
 %%PILOT:%%lib/evolution/%%VERSION%%/conduits/libetodo_conduit.la
 %%PILOT:%%lib/evolution/%%VERSION%%/conduits/libetodo_conduit.so
 lib/evolution/%%VERSION%%/libeabutil.la
@@ -566,6 +568,7 @@ share/gnome/evolution/%%VERSION%%/weather/category_weather_sun_16.png
 share/gnome/evolution/%%VERSION%%/weather/category_weather_tstorm_16.png
 %%PILOT:%%share/gnome/gnome-pilot/conduits/e-address-%%VERSION%%.conduit
 %%PILOT:%%share/gnome/gnome-pilot/conduits/e-calendar-%%VERSION%%.conduit
+%%PILOT:%%share/gnome/gnome-pilot/conduits/e-memo-%%VERSION%%.conduit
 %%PILOT:%%share/gnome/gnome-pilot/conduits/e-todo-%%VERSION%%.conduit
 share/gnome/help/evolution/C/evolution.xml
 share/gnome/help/evolution/C/figures/Screenshot-Free-Busy.png
