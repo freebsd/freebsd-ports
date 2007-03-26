@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qucs
-PORTVERSION=	0.0.10
+PORTVERSION=	0.0.11
 CATEGORIES=	cad science
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,6 +18,7 @@ USE_QT_VER=	3
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 
 MAN1=		qucs.1 qucsator.1 qucsattenuator.1 qucsconv.1 qucsdigi.1 \
 		qucsedit.1 qucsfilter.1 qucshelp.1 qucslib.1 qucstrans.1
