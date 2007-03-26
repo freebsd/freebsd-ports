@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	neonpp
-PORTVERSION=	0.2
-PORTREVISION=	1
+PORTVERSION=	0.3
 CATEGORIES=	www
 MASTER_SITES=	http://files.beep-media-player.org/releases/neonpp/ \
 		${MASTER_SITE_LOCAL}
@@ -18,8 +17,6 @@ COMMENT=	C++ wrapper library for neon
 
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		neon.26:${PORTSDIR}/www/neon
-
-BROKEN=		does not build with www/neon 0.26.x
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
