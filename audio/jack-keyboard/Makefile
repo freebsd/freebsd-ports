@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jack-keyboard
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	audio
 MASTER_SITES=	http://pin.if.uz.zgora.pl/~trasz/jack-keyboard/ \
 		http://freebsd.unixfreunde.de/sources/
