@@ -8,19 +8,18 @@
 #
 
 PORTNAME=	festival
-PORTVERSION=	1.95
-PORTREVISION=	1
+PORTVERSION=	1.96
 CATEGORIES=	audio accessibility
 MASTER_SITES=	${MASTER_SITE_FESTIVAL}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTFILES=	${DISTNAME}-beta.tar.gz 	\
-		speech_tools-1.2.95-beta.tar.gz
+		speech_tools-1.2.${PORTVERSION:E}-beta.tar.gz
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Multi-lingual speech synthesis system
 
-#LIB_DEPENDS=	audio:${PORTSDIR}/audio/nas \
-#		esd:${PORTSDIR}/audio/esound
+OPTIONS=	NAS "Enable Network Audio System (NAS) backend" on \
+		ESD "Enable ESound backend" on
 
 DIST_SUBDIR=	festival
 
@@ -41,12 +40,33 @@ MAN1=		festival.1 festival_client.1
 WRKSRC=		${WRKDIR}
 
 do-build:
-.for ii in speech_tools festival
-	@(cd ${WRKDIR}/${ii}; \
-	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile ${MAKE_ARGS})
+.for d in speech_tools festival
+	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKDIR}/$d ${MAKE_FLAGS} Makefile \
+		${MAKE_ARGS}
 .endfor
 
+# Can not make test in `festival', because the voices may not be installed
+# XXX: this should fail, if the verdict is not "Test OK"...
+post-build test:
+	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKDIR}/speech_tools test
+
 .include <bsd.port.pre.mk>
+
+.ifdef WITH_NAS
+LIB_DEPENDS+=	audio:${PORTSDIR}/audio/nas
+post-patch::
+	${REINPLACE_CMD} -e 's,# INCLUDE_MODULES += NAS_AUDIO,INCLUDE_MODULES += NAS_AUDIO,' \
+		${WRKDIR}/*/config/config.in
+.else
+CONFIGURE_ARGS+=--disable-nas
+.endif
+
+.ifdef WITH_ESD
+LIB_DEPENDS+=	esd:${PORTSDIR}/audio/esound
+post-patch::
+	${REINPLACE_CMD} -e 's,# INCLUDE_MODULES += ESD_AUDIO,INCLUDE_MODULES += ESD_AUDIO,' \
+		${WRKDIR}/*/config/config.in
+.endif
 
 do-configure:
 .for d in speech_tools festival
@@ -64,6 +84,9 @@ do-configure:
 	    -e 's,^OPTIMI,#OPTIMI,' \
 	    ${WRKSRC}/speech_tools/config/compilers/gcc*.mak
 .endfor
+	# This step helps to use a compiler, the vendor has not seen before:
+	${TEST} -e ${WRKDIR}/speech_tools/config/compilers/${CC}.mak ||	\
+		${LN} -s gcc_defaults.mak ${WRKDIR}/speech_tools/config/compilers/${CC}.mak
 
 do-install:
 	${MKDIR} ${FHOME}/lib/voices/english/

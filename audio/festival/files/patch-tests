@@ -1,0 +1,22 @@
+Tracking the structure's size does not seem meaningful... The size is
+different on different architectures. Disable the tracking so that the
+rest of the test can be used.
+
+	-mi
+
+--- speech_tools/testsuite/matrix_regression.cc	Fri Apr 30 12:56:51 2004
++++ speech_tools/testsuite/matrix_regression.cc	Mon Mar 26 04:07:25 2007
+@@ -55,7 +55,4 @@
+   EST_TMatrix<int> m(5,5);
+ 
+-  cout << "EST_TVector<int> size = " << sizeof(EST_TVector<int>) << " bytes.\n";
+-  cout << "EST_TMatrix<int> size = " << sizeof(EST_TMatrix<int>) << " bytes.\n";
+-
+   for(int i=0; i<m.num_rows(); i++)
+     for(int j=0; j<m.num_columns(); j++)
+--- speech_tools/testsuite/correct/matrix_regression.out	Wed Apr  4 07:55:32 2001
++++ speech_tools/testsuite/correct/matrix_regression.out	Mon Mar 26 04:07:56 2007
+@@ -1,3 +1 @@
+-EST_TVector<int> size = 20 bytes.
+-EST_TMatrix<int> size = 28 bytes.
+ Initial Matrix
