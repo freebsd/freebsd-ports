@@ -16,18 +16,21 @@ COMMENT=	MBONE video tool
 
 BUILD_DEPENDS+= v4l_compat>=1.0.20060801:${PORTSDIR}/multimedia/v4l_compat
 
-LIB_DEPENDS=	tk84:${PORTSDIR}/x11-toolkits/tk84 \
-		uclmmbase:${PORTSDIR}/devel/uclmmbase
+LIB_DEPENDS=	uclmmbase:${PORTSDIR}/devel/uclmmbase
+USE_TK=		yes
+USE_TK_BUILD=	yes
 
 USE_AUTOTOOLS=	autoconf:213
 USE_X_PREFIX=	yes
-CONFIGURE_ARGS= -x-libraries=${PREFIX}/lib \
-		-x-includes=${PREFIX}/include \
+CONFIGURE_ARGS= -x-libraries=${X11BASE}/lib \
+		-x-includes=${X11BASE}/include \
 		-without-ucltcl \
 		-with-tcl=${LOCALBASE} \
 		-without-ucltk \
-		-with-tk=${LOCALBASE} \
-		-enable-ipv6
+		-with-tk=${LOCALBASE}
+.ifndef (NO_INET6)
+CONFIGURE_ARGS+=-enable-ipv6
+.endif
 MAN1=		vic.1
 
 post-patch:
