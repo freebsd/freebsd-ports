@@ -29,5 +29,6 @@ INSTALLS_SHLIB=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|`$$XMMS_CONFIG --libs`|"`$$XMMS_CONFIG --libs` ${PTHREAD_LIBS}"|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-lglib -lgtk|-lglib-12 -lgtk-12|' ${WRKSRC}/skin/foreign/xmmsvis/Makefile.in
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/ltconfig
 
 .include <bsd.port.mk>
