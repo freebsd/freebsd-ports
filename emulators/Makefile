@@ -27,6 +27,7 @@
     SUBDIR += dtcyber
     SUBDIR += dynagen
     SUBDIR += dynamips
+    SUBDIR += dynamips-devel
     SUBDIR += e-uae
     SUBDIR += extract-xiso
     SUBDIR += fceu
