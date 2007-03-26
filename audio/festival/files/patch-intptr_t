@@ -1,0 +1,364 @@
+This is from Gentoo's port (gcc41-amd64-int-pointer.patch), except
+we use intptr_t instead of long so as not to pessimize the i386
+case, where long is wider than pointer.
+
+	-mi
+
+--- speech_tools/include/EST_simplestats.h	2006/07/21 02:18:39	1.1
++++ speech_tools/include/EST_simplestats.h	2006/07/21 02:35:43
+@@ -194,7 +194,7 @@ enum EST_tprob_type {tprob_string, tprob
+     for example
+     \begin{verbatim}
+        EST_DiscreteProbistribution pdf;
+-       for (int i=pdf.item_start(); i < pdf.item_end(); i=pdf.item_next(i))
++       for (intptr_t i=pdf.item_start(); i < pdf.item_end(); i=pdf.item_next(i))
+        {
+           EST_String name;
+           double prob;
+@@ -265,17 +265,17 @@ public:
+     /// 
+     double frequency(const int i) const; 
+     /// Used for iterating through members of the distribution
+-    int item_start() const;
++    intptr_t item_start() const;
+     /// Used for iterating through members of the distribution
+-    int item_next(int idx) const;
++    intptr_t item_next(intptr_t idx) const;
+     /// Used for iterating through members of the distribution
+-    int item_end(int idx) const;
++    int item_end(intptr_t idx) const;
+     /// During iteration returns name given index 
+-    const EST_String &item_name(int idx) const;
++    const EST_String &item_name(intptr_t idx) const;
+     /// During iteration returns name and frequency given index  
+-    void item_freq(int idx,EST_String &s,double &freq) const;
++    void item_freq(intptr_t idx,EST_String &s,double &freq) const;
+     /// During iteration returns name and probability given index
+-    void item_prob(int idx,EST_String &s,double &prob) const;
++    void item_prob(intptr_t idx,EST_String &s,double &prob) const;
+ 
+     /// Returns discrete vocabulary of distribution
+     inline const EST_Discrete *const get_discrete() const { return discrete; };
+--- speech_tools/stats/wagon/wagon_aux.cc	2006/07/21 02:18:39	1.1
++++ speech_tools/stats/wagon/wagon_aux.cc	2006/07/21 02:36:09
+@@ -537,7 +537,7 @@ ostream & operator <<(ostream &s, WImpur
+     }
+     else if (imp.t == wnim_class)
+     {
+-	int i;
++	intptr_t i;
+ 	EST_String name;
+ 	double prob;
+ 
+--- speech_tools/stats/EST_DProbDist.cc	2006/07/21 02:18:39	1.1
++++ speech_tools/stats/EST_DProbDist.cc	2006/07/21 02:41:32
+@@ -305,15 +305,15 @@ double EST_DiscreteProbDistribution::ent
+ }
+ 
+ //  For iterating through members of a probability distribution
+-int EST_DiscreteProbDistribution::item_start(void) const
++intptr_t EST_DiscreteProbDistribution::item_start(void) const
+ {
+     if (type == tprob_discrete)
+ 	return 0;
+     else
+-	return (int)scounts.list.head();
++	return (intptr_t)scounts.list.head();
+ }
+ 
+-int EST_DiscreteProbDistribution::item_end(int idx) const
++int EST_DiscreteProbDistribution::item_end(intptr_t idx) const
+ {
+     if (type == tprob_discrete)
+ 	return (idx >= icounts.length());
+@@ -321,15 +321,15 @@ int EST_DiscreteProbDistribution::item_e
+ 	return ((EST_Litem *)idx == 0);
+ }
+ 
+-int EST_DiscreteProbDistribution::item_next(int idx) const
++intptr_t EST_DiscreteProbDistribution::item_next(intptr_t idx) const
+ {
+     if (type == tprob_discrete)
+ 	return ++idx;
+     else
+-	return (int)next((EST_Litem *)idx);
++	return (intptr_t)next((EST_Litem *)idx);
+ }
+ 
+-const EST_String &EST_DiscreteProbDistribution::item_name(int idx) const
++const EST_String &EST_DiscreteProbDistribution::item_name(intptr_t idx) const
+ {
+     if (type == tprob_discrete)
+ 	return discrete->name(idx);
+@@ -337,7 +337,7 @@ const EST_String &EST_DiscreteProbDistri
+ 	return scounts.list((EST_Litem *)idx).k;
+ }
+ 
+-void EST_DiscreteProbDistribution::item_freq(int idx,EST_String &s,double &freq) const
++void EST_DiscreteProbDistribution::item_freq(intptr_t idx,EST_String &s,double &freq) const
+ {
+     if (type == tprob_discrete)
+     {
+@@ -351,7 +351,7 @@ void EST_DiscreteProbDistribution::item_
+     }
+ }
+ 
+-void EST_DiscreteProbDistribution::item_prob(int idx,EST_String &s,double &prob) const
++void EST_DiscreteProbDistribution::item_prob(intptr_t idx,EST_String &s,double &prob) const
+ {
+     if (type == tprob_discrete)
+     {
+@@ -368,7 +368,7 @@ void EST_DiscreteProbDistribution::item_
+ ostream & operator<<(ostream &s, const EST_DiscreteProbDistribution &pd)
+ {
+     // Output best with probabilities
+-    int i;
++    intptr_t i;
+     double prob;
+     double sum=0;
+     EST_String name;
+--- speech_tools/grammar/ngram/EST_Ngrammar.cc	2006/07/21 02:18:39	1.1
++++ speech_tools/grammar/ngram/EST_Ngrammar.cc	2006/07/21 02:38:54
+@@ -180,7 +180,7 @@ bool EST_BackoffNgrammarState::accumulat
+ 					  const double count)
+ {
+ 
+-//    int i;
++//    intptr_t i;
+ //    cerr << "accumulate level " << p_level << " : ";
+ //    for(i=0;i<words.n();i++)
+ //    {
+@@ -302,7 +302,7 @@ void EST_BackoffNgrammarState::print_fre
+     // not right - just print out, then recurse through children
+     // change to use 'backoff_traverse'
+     
+-    int k;
++    intptr_t k;
+     double freq;
+     EST_String name;
+     for (k=p_pdf.item_start();
+@@ -369,7 +369,7 @@ void EST_BackoffNgrammarState::zap()
+ {
+ 
+     // recursively delete this state and all its children
+-    int k;
++    intptr_t k;
+     double freq;
+     EST_String name;
+     for (k=p_pdf.item_start();
+@@ -452,7 +452,7 @@ bool EST_BackoffNgrammarState::set_backo
+ 
+ void EST_BackoffNgrammarState::frequency_of_frequencies(EST_DVector &ff)
+ {
+-    int k,max=ff.n();
++    intptr_t k; int max=ff.n();
+     double freq;
+     EST_String name;
+     for (k=p_pdf.item_start();
+@@ -911,7 +911,7 @@ void EST_Ngrammar::accumulate(const EST_
+ {
+     
+     /*
+-       int i;
++       intptr_t i;
+        for(i=0;i<words.n();i++)
+        {
+        cerr << vocab_pdf.item_name(words(i));
+@@ -1581,7 +1581,7 @@ void EST_Ngrammar::prune_backoff_represe
+     // remove any branches with zero frequency count
+     
+     // find children of this state with zero freq and zap them
+-    int k;
++    intptr_t k;
+     double freq;
+     EST_String name;
+     for (k=start_state->pdf_const().item_start();
+@@ -2320,7 +2320,7 @@ void EST_Ngrammar::print_freqs(ostream &
+ 	backoff_representation->print_freqs(os,p_order);
+     else
+     {
+-	int i,j,k;
++	int i,j; intptr_t k;
+ 	EST_IVector window(p_order-1);
+ 	
+ 	for (i=0; i < p_num_states; i++)
+@@ -2661,7 +2661,7 @@ EST_Ngrammar::backoff_traverse(EST_Backo
+     function(start_state,params);
+     
+     // and recurse down the tree
+-    int k;
++    intptr_t k;
+     double freq;
+     EST_String name;
+     for (k=start_state->pdf_const().item_start();
+@@ -2692,7 +2692,7 @@ EST_Ngrammar::backoff_traverse(EST_Backo
+     {
+ 	// and recurse down the tree if we haven't
+ 	// reached the level yet
+-	int k;
++	intptr_t k;
+ 	double freq;
+ 	EST_String name;
+ 	
+--- speech_tools/grammar/ngram/ngrammar_io.cc	2006/07/21 02:18:39	1.1
++++ speech_tools/grammar/ngram/ngrammar_io.cc	2006/07/21 02:39:05
+@@ -281,7 +281,7 @@ EST_read_status 
+ load_ngram_cstr_bin(const EST_String filename, EST_Ngrammar &n)
+ {
+     EST_TokenStream ts;
+-    int i,j,k,order;
++    int i,j,order; intptr_t k;
+     int num_entries;
+     double approx_num_samples = 0.0;
+     intptr_t freq_data_start, freq_data_end;
+@@ -407,7 +407,7 @@ EST_write_status
+ save_ngram_htk_ascii_sub(const EST_String &word, ostream *ost, 
+ 			 EST_Ngrammar &n, double floor)
+ {
+-    int k;
++    intptr_t k;
+     EST_String name;
+     double freq;
+     EST_StrVector this_ngram(2); // assumes bigram
+@@ -734,7 +734,7 @@ save_ngram_cstr_ascii(const EST_String f
+     // awb's format
+     (void)trace;
+     ostream *ost;
+-    int i,k;
++    int i; intptr_t k;
+     
+     if (filename == "-")
+ 	ost = &cout;
+@@ -831,7 +831,7 @@ save_ngram_cstr_bin(const EST_String fil
+     if (n.representation() == EST_Ngrammar::sparse)
+ 	return misc_write_error;
+     
+-    int i,k;
++    int i; intptr_t k;
+     FILE *ofd;
+     double lfreq = -1;
+     double count = -1;
+--- speech_tools/grammar/ngram/ngrammar_aux.cc	2006/07/21 02:18:39	1.1
++++ speech_tools/grammar/ngram/ngrammar_aux.cc	2006/07/21 02:39:20
+@@ -117,7 +117,7 @@ smooth_ExponentialFit(EST_DVector &N, in
+ 
+ void make_f_of_f(EST_BackoffNgrammarState *s,void *params)
+ {
+-    int k;
++    intptr_t k;
+     double freq;
+     EST_String name;
+ 
+@@ -138,7 +138,7 @@ void make_f_of_f(EST_BackoffNgrammarStat
+ 
+ void get_max_f(EST_BackoffNgrammarState *s,void *params)
+ {
+-    int k;
++    intptr_t k;
+     double freq;
+     EST_String name;
+ 
+@@ -158,7 +158,7 @@ void get_max_f(EST_BackoffNgrammarState 
+ 
+ void map_f_of_f(EST_BackoffNgrammarState *s,void *params)
+ {
+-    int k;
++    intptr_t k;
+     double freq;
+     EST_String name;
+ 
+@@ -184,7 +184,7 @@ void map_f_of_f(EST_BackoffNgrammarState
+ 
+ void zero_small_f(EST_BackoffNgrammarState *s,void *params)
+ {
+-    int k;
++    intptr_t k;
+     double freq;
+     EST_String name;
+ 
+@@ -204,7 +204,7 @@ void zero_small_f(EST_BackoffNgrammarSta
+ 
+ void frequency_of_frequencies(EST_DVector &ff, EST_Ngrammar &n,int this_order)
+ {
+-  int i,k,size;
++  int i,size; intptr_t k;
+   double max=0.0;
+ 
+   // if ff has zero size, do complete frequency of frequencies
+@@ -302,7 +302,7 @@ void frequency_of_frequencies(EST_DVecto
+ 
+ void map_frequencies(EST_Ngrammar &n, const EST_DVector &map, const int this_order)
+ {
+-  int i,k;
++  int i; intptr_t k;
+ 
+ 
+   switch(n.representation())
+--- speech_tools/grammar/ngram/EST_PST.cc	2006/07/21 02:18:39	1.1
++++ speech_tools/grammar/ngram/EST_PST.cc	2006/07/21 02:39:31
+@@ -71,7 +71,7 @@ EST_PredictionSuffixTree_tree_node::prin
+ 	// Base -- print from pd 
+ 	EST_String s;
+ 	double freq;
+-	for (int i = pd.item_start(); 
++	for (intptr_t i = pd.item_start(); 
+ 	     !pd.item_end(i); 
+ 	     i=pd.item_next(i))
+ 	{
+@@ -98,7 +98,7 @@ EST_PredictionSuffixTree_tree_node::prin
+ 	EST_String s;
+ 	double prob;
+ 	os << get_path() << " :";
+-	for (int i = pd.item_start(); !pd.item_end(i) ; i=pd.item_next(i))
++	for (intptr_t i = pd.item_start(); !pd.item_end(i) ; i=pd.item_next(i))
+ 	{
+ 	    pd.item_prob(i,s,prob);
+ 	    os << " " << s << " " << prob;
+--- speech_tools/grammar/ngram/freqsmooth.cc	2006/07/21 02:18:39	1.1
++++ speech_tools/grammar/ngram/freqsmooth.cc	2006/07/21 02:46:42
+@@ -74,7 +74,7 @@ void fs_build_backoff_ngrams(EST_Ngramma
+ 				 EST_Ngrammar &ngram)
+ {
+     // Build all the backoff grammars back to uni-grams
+-    int i,j,k,l;
++    int i,j,l; intptr_t k;
+ 
+     for (i=0; i < ngram.order()-1; i++)
+ 	backoff_ngrams[i].init(i+1,EST_Ngrammar::dense,
+@@ -110,7 +110,7 @@ int fs_backoff_smooth(EST_Ngrammar *back
+ {
+     // For all ngrams which are too infrequent, adjust their
+     // frequencies based on their backoff probabilities
+-    int i,j;
++    int i; intptr_t j;
+     double occurs;
+     double backoff_prob;
+ 
+--- speech_tools/grammar/wfst/wfst_train.cc	2006/07/21 02:18:39	1.1
++++ speech_tools/grammar/wfst/wfst_train.cc	2006/07/21 02:39:47
+@@ -299,7 +299,7 @@ static LISP find_best_split(EST_WFST &wf
+     LISP *ssplits;
+     gc_protect(&splits);
+     EST_String sname;
+-    int b,best_b,i;
++    int b,best_b; intptr_t i;
+     int num_pdfs;
+     double best_score, score, sfreq;
+ 
+@@ -374,7 +374,7 @@ static double score_pdf_combine(EST_Disc
+     // Find score of (a+b) vs (all-(a+b))
+     EST_DiscreteProbDistribution ab(a);
+     EST_DiscreteProbDistribution all_but_ab(all);
+-    int i;
++    intptr_t i;
+     EST_String sname;
+     double sfreq, score;
+     for (i=b.item_start(); !b.item_end(i);
+@@ -506,7 +506,7 @@ static double find_score_if_split(EST_WF
+     EST_DiscreteProbDistribution pdf_split(&wfst.in_symbols());
+     EST_DiscreteProbDistribution pdf_remain(&wfst.in_symbols());
+     int in, tostate, id;
+-    int i;
++    intptr_t i;
+     double sfreq;
+     EST_String sname;
