@@ -2,3 +2,6 @@ bin/glpsol
 bin/tspsol
 include/glpk.h
 lib/libglpk.a
+lib/libglpk.la
+lib/libglpk.so
+lib/libglpk.so.0
