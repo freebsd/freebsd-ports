@@ -8,7 +8,7 @@
 
 PORTNAME=	vino
 PORTVERSION=	2.18.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -32,14 +32,4 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 GCONF_SCHEMAS=	vino-server.schemas
 
-OPTIONS=	IPV6 "Enable IPv6 support" off
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_IPV6)
-CONFIGURE_ARGS+=	--enable-ipv6
-.else
-CONFIGURE_ARGS+=	--disable-ipv6
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
