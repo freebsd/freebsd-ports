@@ -566,7 +566,6 @@
     SUBDIR += pbnc
     SUBDIR += pchar
     SUBDIR += pcnfsd
-    SUBDIR += pcs
     SUBDIR += pdb
     SUBDIR += pear-Auth_RADIUS
     SUBDIR += pear-Net_CDDB
@@ -651,6 +650,7 @@
     SUBDIR += py-netstring
     SUBDIR += py-pcap
     SUBDIR += py-pcapy
+    SUBDIR += py-pcs
     SUBDIR += py-pypcap
     SUBDIR += py-radix
     SUBDIR += py-rrdpipe
