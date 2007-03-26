@@ -6,8 +6,8 @@
 #    $MCom: ports/sysutils/gstreamer-plugins-hal/Makefile,v 1.1 2006/05/17 12:29:05 ahze Exp $
 #
 
-CATEGORIES=	sysutils
 PORTREVISION=	0
+CATEGORIES=	sysutils
 
 COMMENT=	Gstreamer hal plugin
 
