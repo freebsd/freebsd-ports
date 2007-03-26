@@ -18,6 +18,8 @@ RUN_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 
 WRKSRC=		${WRKDIR}/ConvertAll
 
+BROKEN=		Unfetchable
+
 USE_PYTHON=	2.4+
 
 post-patch:
