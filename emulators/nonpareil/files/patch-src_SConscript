@@ -1,18 +1,18 @@
 --- src/SConscript.orig	Tue Oct 31 07:26:16 2006
-+++ src/SConscript	Mon Mar 19 08:45:58 2007
++++ src/SConscript	Mon Mar 26 23:12:06 2007
 @@ -41,16 +41,11 @@
  
  build_env.Append (CPPPATH = ['.'])
  build_env.Append (CPPPATH = ['#/build/common'])  # generated includes
 -build_env.Append (CCFLAGS = ['-Wall'])
-+build_env.Append (CCFLAGS = ['-Wall -O2 -fno-strict-aliasing -pipe -march=pentiumpro'])
++build_env.Append (CCFLAGS = "%%CFLAGS%%")
  build_env.Append (YACCFLAGS = [ '-d', '-v' ])
 -
 -if build_env ['debug'] :
 -    build_env.Append (CCFLAGS = ['-g'])
 -else:
 -    build_env.Append (CCFLAGS = ['-O2'])
-+build_env.Replace (CC = 'cc')
++build_env.Replace (CC = '%%CC%%')
  
  if cross and ming and build_target_only:
 -    build_env.Replace (CC = '/usr/local/mingw/bin/i586-mingw32msvc-gcc')
