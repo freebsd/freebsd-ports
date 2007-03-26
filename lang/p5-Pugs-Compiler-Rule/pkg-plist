@@ -14,6 +14,7 @@
 %%SITE_PERL%%/Pugs/Runtime/Match/HsBridge.pm
 %%SITE_PERL%%/Pugs/Runtime/Regex.pm
 %%SITE_PERL%%/Pugs/Runtime/Rule.pm
+%%SITE_PERL%%/Pugs/Runtime/StrPos.pm
 @dirrm %%SITE_PERL%%/Pugs/Runtime/Match
 @dirrmtry %%SITE_PERL%%/Pugs/Runtime
 @dirrmtry %%SITE_PERL%%/Pugs/Grammar

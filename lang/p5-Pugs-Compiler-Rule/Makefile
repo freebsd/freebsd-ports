@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Pugs-Compiler-Rule
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/F/FG/FGLOCK
@@ -29,12 +29,7 @@ MAN3=	Pugs::Compiler::Regex.3 \
 	Pugs::Compiler::Rule.3 \
 	Pugs::Compiler::Token.3 \
 	Pugs::Grammar::Precedence.3 \
-	Pugs::Runtime::Match.3
+	Pugs::Runtime::Match.3 \
+	Pugs::Runtime::StrPos.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6 or later. Install lang/perl5 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
