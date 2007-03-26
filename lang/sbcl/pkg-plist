@@ -43,7 +43,6 @@ lib/sbcl/sb-bsd-sockets/constants.lisp
 lib/sbcl/sb-bsd-sockets/constants.lisp-temp
 lib/sbcl/sb-bsd-sockets/defpackage.fasl
 lib/sbcl/sb-bsd-sockets/defpackage.lisp
-lib/sbcl/sb-bsd-sockets/doc.lisp
 lib/sbcl/sb-bsd-sockets/foo.c
 lib/sbcl/sb-bsd-sockets/inet.fasl
 lib/sbcl/sb-bsd-sockets/inet.lisp
