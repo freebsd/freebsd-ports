@@ -17,18 +17,15 @@ DISTFILES=	${PORTNAME}1.0.tgz
 MAINTAINER=	tg@FreeBSD.org
 COMMENT=	An african board game
 
-LIB_DEPENDS=	tk${USE_TK}.1:${PORTSDIR}/x11-toolkits/tk${USE_TK}
-
 USE_TCL_BUILD=	84
-USE_TK=		84
+USE_TK_BUILD=	${USE_TCL_BUILD}
 WRKSRC=		${WRKDIR}/awele
 USE_IMAKE=	yes
-USE_PERL5_BUILD=yes
 MAN6=		xawele.6
 PLIST_FILES=	bin/awelewish bin/xawele
 
 post-patch:
-	${PERL} -pi -e "s|\@\@LOCALBASE\@\@|${LOCALBASE}|g;" ${WRKSRC}/Imakefile
+	${REINPLACE_CMD} -e "s|\@\@LOCALBASE\@\@|${LOCALBASE}|g;" ${WRKSRC}/Imakefile
 
 post-install:
 	@${ECHO_CMD} ""
