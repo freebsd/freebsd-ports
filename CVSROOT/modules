@@ -2158,6 +2158,7 @@ dynagen		ports/emulators/dynagen
 dynamag		ports/x11/dynamag
 dynamechs	ports/graphics/dynamechs
 dynamips	ports/emulators/dynamips
+dynamips-devel	ports/emulators/dynamips-devel
 dynamite	ports/archivers/dynamite
 dzip		ports/archivers/dzip
 e		ports/math/e
