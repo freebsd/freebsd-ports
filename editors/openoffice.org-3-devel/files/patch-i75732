@@ -1,0 +1,18 @@
+? sw/unxfbsdx.pro
+Index: sw/source/core/doc/makefile.mk
+===================================================================
+RCS file: /cvs/sw/sw/source/core/doc/makefile.mk,v
+retrieving revision 1.16
+diff -u -r1.16 makefile.mk
+--- sw/source/core/doc/makefile.mk	28 Feb 2007 15:40:53 -0000	1.16
++++ sw/source/core/doc/makefile.mk	26 Mar 2007 05:08:30 -0000
+@@ -94,7 +94,8 @@
+ 
+ EXCEPTIONSFILES = \
+                 $(SLO)$/doclay.obj \
+-                $(SLO)$/docnew.obj
++                $(SLO)$/docnew.obj \
++                $(SLO)$/tblrwcl.obj
+ 
+ # --- Tagets -------------------------------------------------------
+ 
