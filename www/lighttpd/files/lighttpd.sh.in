@@ -30,6 +30,11 @@ pidfile=/var/run/lighttpd.pid
 required_files=${lighttpd_conf}
 stop_postcmd=stop_postcmd
 restart_precmd="checkconfig"
+reload_precmd=reload_precmd
+reload_postcmd=reload_postcmd
+sig_reload="-INT"
+check_cmd="checkconfig"
+extra_commands="reload check"
 
 checkconfig()
 {
@@ -40,6 +45,17 @@ checkconfig()
 stop_postcmd()
 {
 	rm -f ${pidfile}
+}
+
+reload_precmd()
+{
+	echo "Stoping ${name} and start gracefully."
+}
+
+reload_postcmd()
+{
+	rm -f ${pidfile}
+	run_rc_command start
 }
 
 run_rc_command "$1"
