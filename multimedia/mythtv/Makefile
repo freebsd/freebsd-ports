@@ -24,8 +24,6 @@ RUN_DEPENDS=	tv_check:${PORTSDIR}/textproc/p5-xmltv \
 		${X11BASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin \
 		wget:${PORTSDIR}/ftp/wget
 
-BROKEN=		Incorrect pkg-plist
-
 ONLY_FOR_ARCHS= i386
 USE_BZIP2=	yes
 USE_QT_VER=	3

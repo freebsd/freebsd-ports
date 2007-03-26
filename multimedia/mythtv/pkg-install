@@ -2,28 +2,26 @@
 # $FreeBSD$
 
 PATH=/bin:/usr/sbin:/usr/bin:/usr/local/bin
-case $2 in
-POST-INSTALL)
-    USER=mythtv
-    GROUP=${USER}
-    UID=119
-    GID=${UID}
-    HOME=/home/mythtv
+USER=mythtv
+GROUP=${USER}
+UID=119
+GID=${UID}
+HOME=/home/mythtv
 
-    if pw group show "${GROUP}" 2>/dev/null; then
+if pw group show "${GROUP}" 2>/dev/null; then
 	echo "You already have a group \"${GROUP}\", so I will use it."
-    else
+else
 	if pw groupadd ${GROUP} -g ${GID}; then
 	    echo "Added group \"${GROUP}\"."
 	else
 	    echo "Adding group \"${GROUP}\" failed..."
 	    exit 1
 	fi
-    fi
+fi
 
-    if pw user show "${USER}" 2>/dev/null; then
+if pw user show "${USER}" 2>/dev/null; then
 	echo "You already have a user \"${USER}\", so I will use it."
-    else
+else
 	if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
 	    -d ${HOME} -m -s /bin/sh -c "MythTV"
 	then
@@ -36,10 +34,10 @@ POST-INSTALL)
 	    echo "Adding user \"${USER}\" failed..."
 	    exit 1
 	fi
-    fi
+fi
 
 # Now make the database
-    if [ -f /usr/local/etc/rc.d/mysql-server ]; then
+if [ -f /usr/local/etc/rc.d/mysql-server ]; then
 	pgrep mysqld > /dev/null
 	if [ $? -ne 0 ]; then
 	    /usr/local/etc/rc.d/mysql-server start
@@ -67,25 +65,22 @@ EOF
 	  else
 	    echo Created database mythconverg.	
 	fi
-    else
+else
 	cat <<EOF
 
 No MySQL server found.	If you want to run the database on this
 machine, please install the latest MySQL server and then create the
 database with this command:
 
-    mysql < /usr/local/share/mythtv/database/mc.sql
+mysql < /usr/local/share/mythtv/database/mc.sql
 EOF
 
-    fi
+fi
 
 cat <<EOF
 
 To set up mythtv, first assign a password to user mythtv, then log in
 as mythtv and run
 
-    mythtv-setup
+mythtv-setup
 EOF
-    ;;
-
-esac
