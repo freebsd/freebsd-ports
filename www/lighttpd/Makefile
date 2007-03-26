@@ -40,7 +40,8 @@ OPTIONS=	BZIP2		"Enable Bzip2 support" off \
 		MYSQL		"Enable MYSQL support" off \
 		OPENLDAP	"Enable LDAP support" off \
 		OPENSSL		"Enable SSL support" on \
-		VALGRIND	"Enable valgrind support" off
+		VALGRIND	"Enable valgrind support" off \
+		WEBDAV		"Enable WebDAV support"	off
 
 .include <bsd.port.pre.mk>
 
@@ -108,16 +109,37 @@ RUN_DEPENDS+=		valgrind:${PORTSDIR}/devel/valgrind
 CONFIGURE_ARGS+=	--with-valgrind
 .endif
 
+.if defined(WITH_WEBDAV)
+USE_GNOME+=		libxml2
+LIB_DEPENDS+=		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid \
+			sqlite3.8:${PORTSDIR}/databases/sqlite3
+CONFIGURE_ARGS+=	--with-webdav-props --with-webdav-locks
+.endif
+
 SUB_LIST+=		REQUIRE="${_REQUIRE}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-D_XOPEN_SOURCE=600||' -e 's|-std=gnu99||' \
-		${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e 's|-std=gnu99||' ${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -E -e 's|(server.document-root.*=).*|\1 "${PREFIX}/www/data/"|' \
+		-e 's|(server.errorlog.*=).*|\1 "/var/log/lighttpd.error.log"|' \
+		-e 's|# server.event-handler|server.event-handler|' \
+		-e 's|(accesslog.filename.*=).*|\1 "/var/log/lighttpd.access.log"|' \
+		-e 's|#server.pid-file|server.pid-file|' \
+		-e 's|#server.username.*|server.username            = "www"|' \
+		-e 's|#server.groupname.*|server.groupname           = "www"|' \
+		-e 's|/usr/local/bin/php|${PREFIX}/bin/php-cgi|' \
+			${WRKSRC}/doc/lighttpd.conf
+.if !defined(WITHOUT_IPV6)
+	@${ECHO} "" >> ${WRKSRC}/doc/lighttpd.conf
+	@${ECHO} "# Enable IPV6 and IPV4 together" >> ${WRKSRC}/doc/lighttpd.conf
+	@${ECHO} "server.use-ipv6 = \"enable\"" >> ${WRKSRC}/doc/lighttpd.conf
+	@${ECHO} "\$$SERVER[\"socket\"] == \"0.0.0.0:80\" { }" >> ${WRKSRC}/doc/lighttpd.conf
+.endif
 
 post-install:
-	@${INSTALL_DATA} ${FILESDIR}/lighttpd.conf.sample ${PREFIX}/etc
+	@${INSTALL_DATA} ${WRKSRC}/doc/lighttpd.conf ${PREFIX}/etc/lighttpd.conf.sample
 .if !exists(${PREFIX}/etc/lighttpd.conf)
-	@${INSTALL_DATA} ${FILESDIR}/lighttpd.conf.sample ${PREFIX}/etc/lighttpd.conf
+	@${INSTALL_DATA} ${WRKSRC}/doc/lighttpd.conf ${PREFIX}/etc/lighttpd.conf
 .endif
 	@${LIBTOOL} --finish ${PREFIX}/lib
 
