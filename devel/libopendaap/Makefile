@@ -18,7 +18,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN3=		libopendaap.3
 
