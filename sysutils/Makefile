@@ -549,6 +549,7 @@
     SUBDIR += scan_ffs
     SUBDIR += scanbuttond
     SUBDIR += screen
+    SUBDIR += screenie
     SUBDIR += sdd
     SUBDIR += searchmonkey
     SUBDIR += sec
