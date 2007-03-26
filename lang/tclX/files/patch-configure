@@ -1,0 +1,11 @@
+--- configure.orig	Sat Oct  8 01:17:50 2005
++++ configure	Sun Mar 25 15:34:58 2007
+@@ -6917,7 +6917,7 @@
+         fi
+     else
+         # tclConfig.sh is in $INSTALL/lib directory
+-        REAL_TCL_BIN_DIR=`cd ${TCL_BIN_DIR}/../bin/;pwd`
++        REAL_TCL_BIN_DIR=`cd ${TCL_BIN_DIR}/../../bin/;pwd`
+         if test "$TEA_PLATFORM" = "windows"; then
+             TCLSH_PROG=${REAL_TCL_BIN_DIR}/tclsh${TCL_MAJOR_VERSION}${TCL_MINOR_VERSION}${TCL_DBGX}${EXEEXT}
+         else

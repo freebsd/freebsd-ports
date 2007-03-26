@@ -1,6 +1,7 @@
---- unix/tools/bldmanhelp.tcl	Thu Dec  2 15:33:05 2004
-+++ unix/tools/bldmanhelp.tcl	Mon Jun 26 19:51:14 2006
-@@ -12,8 +12,7 @@
+--- ./unix/tools/bldmanhelp.tcl.orig	Thu Dec  2 21:33:05 2004
++++ ./unix/tools/bldmanhelp.tcl	Sun Mar 25 17:07:36 2007
+@@ -11,10 +11,9 @@
+ #
  # The command line is:
  #
 -#   bldmanhelp docdir maninfo helpdir
@@ -10,13 +11,18 @@
 -#    o docdir is the directory containing the manual pages.
  #    o maninfo is the path to a file that when sources returns a list of
  #      entries describing manual pages to convert.  Each entry is a list
-@@ -70,15 +69,27 @@
+ #      of manual file and the path of the help file to generate.
+@@ -69,17 +68,32 @@
+ proc CopyManPage {manPage outFH} {
      global skipSection
  
 -    set stat [catch {
 -        open $manPage
 -    } fh]
 +    set section [lindex [split $manPage .] end]
++    if {$section == "macros"} {
++      return
++    }
 +    set manPage [file rootname $manPage]
 +    set manPage [split [exec man -w $section $manPage] ":)"]
 +    if {[llength $manPage] > 1} { # Get the source, not from cat
@@ -42,7 +48,9 @@
 +	    {.so man.macros} {}
              .so* {
                  CopyManPage [lindex $line 1] $outFH
-@@ -120,9 +131,8 @@
+             }
+@@ -119,11 +133,10 @@
+ # for input to buildhelp.
  #
  
 -proc GenInputFile {docDir manInfoTbl tmpFile} {
@@ -53,16 +61,19 @@
 -   cd $docDir
  
     foreach ent $manInfoTbl {
-@@ -145,5 +155,4 @@
+        puts stdout "    preprocessing $ent"
+@@ -144,13 +157,12 @@
+ 
  set tmpFile "bldmanhelp.tmp"
  
 -set docDir [lindex $argv 0]
  set manInfoTbl [source [lindex $argv 1]]
  set helpDir [lindex $argv 2]
-@@ -151,5 +160,5 @@
+ set brief [lindex $argv 3]
  
  puts stdout "Begin preprocessing UCB manual files"
 -GenInputFile $docDir $manInfoTbl $tmpFile
 +GenInputFile $manInfoTbl $tmpFile
  
  buildhelp $helpDir $brief [list $tmpFile]
+ 
