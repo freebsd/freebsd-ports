@@ -26,9 +26,13 @@ INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-
-GCONF_SCHEMAS=	desktop_gnome_peripherals_keyboard_xkb.schemas
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+GCONF_SCHEMAS=	desktop_gnome_peripherals_keyboard_xkb.schemas
+
+post-patch:
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+	    	's|-Werror||g'
 
 .include <bsd.port.mk>
