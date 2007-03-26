@@ -50,16 +50,20 @@ bin/tvbrowser
 %%DATADIR%%/icons/tango/16x16/apps/preferences-desktop-font.png
 %%DATADIR%%/icons/tango/16x16/apps/preferences-desktop-locale.png
 %%DATADIR%%/icons/tango/16x16/apps/preferences-desktop-theme.png
+%%DATADIR%%/icons/tango/16x16/apps/preferences-desktop-wallpaper.png
 %%DATADIR%%/icons/tango/16x16/apps/preferences-system-network-proxy.png
 %%DATADIR%%/icons/tango/16x16/apps/system-software-update.png
 %%DATADIR%%/icons/tango/16x16/categories/preferences-desktop.png
+%%DATADIR%%/icons/tango/16x16/devices/input-mouse.png
 %%DATADIR%%/icons/tango/16x16/devices/printer.png
 %%DATADIR%%/icons/tango/16x16/emblems/emblem-symbolic-link.png
+%%DATADIR%%/icons/tango/16x16/mimetypes/image-x-generic.png
 %%DATADIR%%/icons/tango/16x16/mimetypes/video-x-generic.png
 %%DATADIR%%/icons/tango/16x16/status/close-over.png
 %%DATADIR%%/icons/tango/16x16/status/dialog-information.png
 %%DATADIR%%/icons/tango/16x16/status/dialog-warning.png
 %%DATADIR%%/icons/tango/16x16/status/folder-open.png
+%%DATADIR%%/icons/tango/16x16/status/network-transmit-receive.png
 %%DATADIR%%/icons/tango/16x16/status/view-filter-set.png
 %%DATADIR%%/icons/tango/22x22/actions/appointment-new.png
 %%DATADIR%%/icons/tango/22x22/actions/document-edit.png
@@ -74,6 +78,7 @@ bin/tvbrowser
 %%DATADIR%%/icons/tango/22x22/actions/edit-find.png
 %%DATADIR%%/icons/tango/22x22/actions/edit-paste.png
 %%DATADIR%%/icons/tango/22x22/actions/format-justify-fill.png
+%%DATADIR%%/icons/tango/22x22/actions/go-bottom.png
 %%DATADIR%%/icons/tango/22x22/actions/go-down.png
 %%DATADIR%%/icons/tango/22x22/actions/go-next.png
 %%DATADIR%%/icons/tango/22x22/actions/go-previous.png
@@ -81,6 +86,7 @@ bin/tvbrowser
 %%DATADIR%%/icons/tango/22x22/actions/go-to-next-day.png
 %%DATADIR%%/icons/tango/22x22/actions/go-to-previous-day.png
 %%DATADIR%%/icons/tango/22x22/actions/go-to-today.png
+%%DATADIR%%/icons/tango/22x22/actions/go-top.png
 %%DATADIR%%/icons/tango/22x22/actions/go-up.png
 %%DATADIR%%/icons/tango/22x22/actions/mail-message-new.png
 %%DATADIR%%/icons/tango/22x22/actions/media-playback-start.png
@@ -116,6 +122,7 @@ bin/tvbrowser
 %%DATADIR%%/icons/tango/22x22/mimetypes/video-x-generic.png
 %%DATADIR%%/icons/tango/22x22/status/dialog-information.png
 %%DATADIR%%/icons/tango/22x22/status/folder-open.png
+%%DATADIR%%/icons/tango/22x22/status/network-transmit-receive.png
 %%DATADIR%%/icons/tango/22x22/status/view-filter-set.png
 %%DATADIR%%/icons/tango/index.theme
 %%DATADIR%%/icons/tango/license.txt
@@ -165,8 +172,8 @@ bin/tvbrowser
 %%DATADIR%%/plugins/NewsPlugin.jar
 %%DATADIR%%/plugins/PrintPlugin.jar
 %%DATADIR%%/plugins/RadioTimesDataService.jar
-%%DATADIR%%/plugins/SimpleMarkerPlugin.jar
 %%DATADIR%%/plugins/ShowviewPlugin.jar
+%%DATADIR%%/plugins/SimpleMarkerPlugin.jar
 %%DATADIR%%/plugins/SweDBTvDataService.jar
 %%DATADIR%%/plugins/TVRaterPlugin.jar
 %%DATADIR%%/plugins/TvBrowserDataService.jar
