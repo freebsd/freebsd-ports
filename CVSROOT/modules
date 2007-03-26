@@ -11231,7 +11231,6 @@ pcp		ports/science/pcp
 pcre		ports/devel/pcre
 pcre++		ports/devel/pcre++
 pcrs		ports/textproc/pcrs
-pcs		ports/net/pcs
 pcsc-lite	ports/devel/pcsc-lite
 pd		ports/audio/pd
 pdb		ports/net/pdb
@@ -12650,6 +12649,7 @@ py-pastedeploy	ports/www/py-pastedeploy
 py-pastescript	ports/www/py-pastescript
 py-pcap		ports/net/py-pcap
 py-pcapy	ports/net/py-pcapy
+py-pcs		ports/net/pcs
 py-pefile	ports/devel/py-pefile
 py-period	ports/devel/py-period
 py-pexpect	ports/misc/py-pexpect
