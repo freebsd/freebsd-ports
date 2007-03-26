@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quasi88
-PORTVERSION=	0.5.5
+PORTVERSION=	0.6.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.117.ne.jp/~show/pc8801/
 EXTRACT_SUFX=	.tgz
@@ -14,36 +14,50 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PC-8801 emulator for X
 
-USE_X_PREFIX=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
-DATAFILES=	_quasi88rc
-DOCFILES=	FAQ.TXT FORMAT.TXT GET-IMAGE.TXT HISTORY.TXT MANUAL.TXT QUASI88.TXT
+MAKE_ENV=	DATADIR="${DATADIR}" _CC="${CC}" _CFLAGS="${CFLAGS}" \
+		_CXX="${CXX}" LD="${CXX}"
 
-.if !defined(WITH_SOUND)
-pre-everything::
-	@ ${ECHO_MSG} "===> If you want to enable sound, use \"make WITH_SOUND=yes\"."
-.else
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-aa
+PORTDOCS=	FAQ.TXT FORMAT.TXT GET-IMAGE.TXT HISTORY.TXT MANUAL.TXT \
+		QUASI88.TXT
+PLIST_FILES=	bin/quasi88 %%EXAMPLESDIR%%/quasi88.rc
+PLIST_DIRS=	%%EXAMPLESDIR%%
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+MAKE_ENV+=	LSB_FIRST=1
 .endif
 
-.if !defined(WITH_DGA)
-pre-everything::
-	@ ${ECHO_MSG} "===> If you want to enable sound, use \"make WITH_DGA=yes\"."
+.if defined(WITH_SDL)
+USE_SDL=	sdl
+MAKE_ENV+=	SDL_VERSION=1 JOYSTICK="joy_sdl"
 .else
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-ab
+MAKE_ENV+=	X11_VERSION=1 JOYSTICK="joy_bsd_usb"
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^X11_|# X11_|g ; \
+		 s|~/quasi88|$${DATADIR}|g ; \
+		 s|^LSB_|# LSB_|g ; \
+		 s|^JOY|# JOY|g ; \
+		 s|gcc|$${_CC}|g ; \
+		 s|-O2|$${_CFLAGS}|g ; \
+		 s|/usr/X11R6|$${X11BASE}|g ; \
+		 s|g++|$${_CXX}|g ; \
+		 s|-lstdc++||g ; \
+		 s|^LD|# LD|g' ${WRKSRC}/Makefile
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/quasi88 ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/quasi88 ${PREFIX}/bin
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/quasi88.rc ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/quasi88
-.for i in ${DATAFILES}
-	@ ${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/quasi88/
-.endfor
-.for i in ${DOCFILES}
-	@ ${INSTALL_DATA} ${WRKSRC}/doc/${i} ${PREFIX}/share/doc/quasi88/
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/document/${file} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
