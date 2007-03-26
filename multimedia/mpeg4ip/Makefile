@@ -38,7 +38,6 @@ CONFIGURE_ARGS=	--enable-ffmpeg=${LOCALBASE} \
 		--enable-mp4live \
 		--disable-static
 
-
 OPTIONS=	ARTS "Enable Arts Support" Off \
 		ESOUND "Enable Esound Support" Off \
 		IPV6 "Enable IPV6 Support" On \
