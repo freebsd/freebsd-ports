@@ -1,11 +1,11 @@
---- tkabber.tcl.orig	Sun Feb 11 22:34:35 2007
-+++ tkabber.tcl	Mon Feb 12 14:44:44 2007
-@@ -102,7 +102,7 @@
+--- tkabber.tcl.orig	Sat Mar 17 20:24:28 2007
++++ tkabber.tcl	Mon Mar 26 12:56:48 2007
+@@ -104,7 +104,7 @@
      return $snapshot
  }
  
--set tkabber_version "0.9.9-SVN[get_snapshot [file join $rootdir ChangeLog]]"
-+set tkabber_version "0.9.9-SVN[get_snapshot [file join $rootdir version]]"
+-set tkabber_version "0.9.9-SVN[get_snapshot [fullpath ChangeLog]]"
++set tkabber_version "0.9.9-SVN[get_snapshot [fullpath version]]"
  set toolkit_version "Tcl/Tk [info patchlevel]"
- if {$is_a_starkit} {
-     append toolkit_version " (starkit)"
+ 
+ proc rescmd {id res ls} {

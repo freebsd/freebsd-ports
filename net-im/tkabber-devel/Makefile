@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkabber
-PORTVERSION=	0.9.9.a.20070212
+PORTVERSION=	0.9.9.a.20070325
 CATEGORIES=	net-im
 MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -28,8 +28,8 @@ USE_BZIP2=	yes
 USE_TCL=	yes
 USE_TK=		yes
 
-SUBDIRS=	aniemoteicons emoticons ifacetk jabberlib-tclxml \
-		mclistbox msgs pixmaps plugins sounds trans
+SUBDIRS=	emoticons ifacetk jabberlib-tclxml mclistbox msgs pixmaps \
+		plugins sounds trans
 
 OPTIONS=	ZLIB "with zlib support" off
 
@@ -40,18 +40,11 @@ do-install:
 
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/*.tcl ${DATADIR}
-.for i in ${SUBDIRS}
-	${CP} -R ${WRKSRC}/${i} ${DATADIR}
-.endfor
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${SUBDIRS}" ${DATADIR})
 	${HEAD} -1 ${WRKSRC}/ChangeLog > ${DATADIR}/version
 
 	${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
-
-.for i in ${DATADIR} ${EXAMPLESDIR}
-	${FIND} ${i} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
-	${FIND} ${i} -type f -print0 | ${XARGS} -0 ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-.endfor
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
