@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtl
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.3
 CATEGORIES=	misc
 # The original distribution files are no longer freely
 # available from the master_sites
@@ -21,13 +21,12 @@ RESTRICTED=	License forbids redistribution (source or binary)
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	lthack
-USE_GCC=	3.3	# Won't build with 3.4
 
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/GTL-${PORTVERSION}.tar.gz)
 ECHO_MSG=/usr/bin/printf
-IGNORE= \n\
+IGNORE=	\n\
 With the release of version 1.0.0 the download policy of GTL has been\n\
 changed. GTL can be downloaded free of charge for non-commercial use.\n\
 Please follow the steps below to get access to the download archive:\n\
