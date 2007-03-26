@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cksfv
-PORTVERSION=	1.3.9
+PORTVERSION=	1.3.10
 CATEGORIES=	security
 MASTER_SITES=	http://zakalwe.virtuaalipalvelin.net/~shd/foss/cksfv/files/ \
 		http://critical.ch/distfiles/ \
