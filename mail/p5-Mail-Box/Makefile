@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-Box
-PORTVERSION=	2.069
+PORTVERSION=	2.070
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -41,10 +41,4 @@ CONFIGURE_ARGS=	</dev/null
 CONFIGURE_ENV+=	MAILBOX_INSTALL_OPTIONALS=n
 
 .include "Makefile.man"
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=	requires perl 5.6.1 or newer. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
