@@ -20,7 +20,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gnomehack pkgconfig lthack
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \

@@ -15,7 +15,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Network Audio System
 
 USE_IMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 MAKE_ENV+=	COMPRESS_CMD="${COMPRESS_CMD:S/c//}"
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message

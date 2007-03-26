@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-gcc-pipe
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
