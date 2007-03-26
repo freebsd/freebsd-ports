@@ -9,19 +9,18 @@ PORTNAME=	vsound
 PORTVERSION=	0.6
 PORTREVISION=	2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.zorg.org/vsound/
+MASTER_SITES=	http://www.vsound.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for capturing audio streams from programs with OSS output
 
-USE_AUTOTOOLS=	libtool:15
 BUILD_DEPENDS=	sox:${PORTSDIR}/audio/sox
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
 
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
