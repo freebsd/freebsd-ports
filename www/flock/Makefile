@@ -63,7 +63,7 @@ IGNORE=	core dumps on ${ARCH}
 .if ${ARCH}=="sparc64" && ${OSVERSION} < 601101
 IGNORE=	core dumps on ${ARCH}, need kern.osreldate>=601101
 .endif
- 
+
 .if ${OSVERSION} >= 600000
 MOZ_OPTIONS+=	--enable-svg --enable-svg-renderer=cairo
 .endif
