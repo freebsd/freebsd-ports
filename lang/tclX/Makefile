@@ -7,7 +7,7 @@
 
 PORTNAME=	tclX
 PORTVERSION=	8.4
-CATEGORIES=	lang tcl${TCL_DVER} devel
+CATEGORIES=	lang tcl${USE_TCL} devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=tclx
 DISTNAME=	tclx${PORTVERSION}
@@ -16,18 +16,15 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Extended TCL
 
 USE_BZIP2=	yes
-LIB_DEPENDS=	tcl${TCL_DVER}:${PORTSDIR}/lang/tcl${TCL_DVER}
+USE_TCL_BUILD=	yes
 
-TCL_VER?=	8.4
-TCL_DVER?=	${TCL_VER:S/.//}
-
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include/tcl${TCL_VER}/unix\
-		-I${LOCALBASE}/include/tcl${TCL_VER}/generic"
-CONFIGURE_ARGS= --enable-shared \
+CONFIGURE_ENV+=	CPPFLAGS="-I${TCL_INCLUDEDIR}/unix\
+		-I${TCL_INCLUDEDIR}/generic"
+CONFIGURE_ARGS=	--enable-shared \
 		--with-help=Help \
-		--with-tcl="${LOCALBASE}/lib/tcl${TCL_VER}"
+		--with-tcl="${TCL_LIBDIR}"
 PLIST_SUB=	TCLX_VER=${PORTVERSION}
 ALL_TARGET=	binaries libraries test
 INSTALL_TARGET=	install-binaries install-libraries
@@ -36,7 +33,7 @@ ALL_TARGET+=	doc
 INSTALL_TARGET+=install-help
 .endif
 
-MAN3=   CmdWrite.3 Handles.3 Keylist.3 ObjCmdWrite.3 TclXInit.3
+MAN3=	CmdWrite.3 Handles.3 Keylist.3 ObjCmdWrite.3 TclXInit.3
 MANN=	TclX.n
 
 MLINKS=	CmdWrite.3	TclCommandWriting.3	\
@@ -51,15 +48,25 @@ MLINKS+=	Handles.3	TclX_Handle$l.3
 MLINKS+=	TclXInit.3	$l.3
 .endfor
 
+.include <bsd.port.pre.mk>
+
+pre-configure:
+.if exists(${TCL_LIBDIR}/tclConfig-threads.sh)
+	${REINPLACE_CMD} -e 's|tclConfig.sh|tclConfig-threads.sh|'	\
+		${WRKSRC}/${CONFIGURE_SCRIPT}
+.endif
+	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|'	\
+		${WRKSRC}/${CONFIGURE_SCRIPT}
+
 post-configure:
 	${REINPLACE_CMD} -e	\
-	    's,^TCLSH_PROG.*,TCLSH_PROG=${LOCALBASE}/bin/tclsh${TCL_VER},' \
+	    's,^TCLSH_PROG.*,TCLSH_PROG=${TCLSH},' \
 	    -e 's,TCL_LIBRARY=.*,\\,' ${WRKSRC}/Makefile
 	# Disabling the failing help.test
-	mv ${WRKSRC}/tests/help.test ${WRKSRC}/tests/help.test.dis
+	${MV} ${WRKSRC}/tests/help.test ${WRKSRC}/tests/help.test.dis
 
 pre-su-install:
 	cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MAN3} ${PREFIX}/man/man3
 	cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MANN} ${PREFIX}/man/mann
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
