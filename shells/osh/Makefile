@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	osh
-PORTVERSION=	060124
+PORTVERSION=	20070324
 CATEGORIES=	shells
 MASTER_SITES=	http://jneitzel.sdf1.org/osh/src/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	An implementation of the UNIX 6th Edition shell
 
-MAN1=		fd2.1 goto.1 if.1 osh.1
+MAN1=		fd2.1 goto.1 if.1 osh.1 sh6.1 glob6.1
 
 post-install:
 	@${ECHO_MSG} "updating ${DESTDIR}/etc/shells"
