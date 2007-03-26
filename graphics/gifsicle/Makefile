@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gifsicle
-PORTVERSION=	1.46
+PORTVERSION=	1.48
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.lcdf.org/gifsicle/
 
