@@ -62,7 +62,7 @@ OPTIONS+=	VORBIS "Vorbis support" On
 OPTIONS+=	WIN32_CODECS "win32 multimedia DLL's" Off
 OPTIONS+=	X264 "Enable H.264/AVC codec support" On
 
-CONFLICTS=	vlc-*
+CONFLICTS=	vlc-[0-9]*
 
 WITH_VLC_DEFAULT_FONT?=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
 
