@@ -34,13 +34,11 @@ CONFIGURE_ARGS=	--with-popt \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 
-MAN1=		inkscape.1 inkview.1
+MAN1=		inkscape.1
+MAN1_EN=	inkview.1
+MANLANG=	"" fr
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	requires symbols not present on 4.X
-.endif
 
 .if ${HAVE_GNOME:Mlibgnomeprintui} != ""
 USE_GNOME+=		libgnomeprintui
@@ -62,7 +60,6 @@ post-patch:
 	    	${WRKSRC}/configure
 
 post-install:
-	${GZIP_CMD} ${PREFIX}/man/fr/man1/inkscape.1
 	@-update-desktop-database
 
 .include <bsd.port.post.mk>
