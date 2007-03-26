@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	vdrift
-PORTVERSION=	20061006
-PORTREVISION=	2
+PORTVERSION=	20070323
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-2006-10-06-src
+DISTNAME=	${PORTNAME}-2007-03-23-src
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
@@ -31,6 +30,7 @@ SCONS_ARGS=	prefix=${PREFIX} \
 		datadir=share/${PORTNAME} \
 		bindir=bin \
 		use_binreloc=0
+WRKSRC=		${WRKDIR}/build/${DISTNAME}
 
 SUB_FILES=	pkg-message
 
@@ -51,10 +51,6 @@ PLIST_SUB+=	NLS=""
 FLAG_NLS=	true
 .else
 PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
 .endif
 
 .if ${ARCH} == "sparc64"
