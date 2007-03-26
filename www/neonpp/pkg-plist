@@ -2,7 +2,6 @@
 include/neon++-1.0/neon++/session.hh
 include/neon++-1.0/neon++/request.hh
 include/neon++-1.0/neon++/neonpp-exception.hh
-include/neon++-1.0/neon++/util.hh
 lib/libneonpp.so.0
 lib/libneonpp.so
 lib/libneonpp.la
