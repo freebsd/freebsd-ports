@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linux-gspca-kmod
-PORTVERSION=	1.0.12
+PORTVERSION=	1.0.12.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mxhaard.free.fr/spca50x/Download/
 DISTNAME=	gspcav1-20070110
