@@ -5,6 +5,7 @@ bin/rancid-cvs
 bin/rancid-run
 libexec/rancid/alogin
 libexec/rancid/arancid
+libexec/rancid/agmrancid
 libexec/rancid/blogin
 libexec/rancid/brancid
 libexec/rancid/cat5rancid
@@ -47,24 +48,24 @@ libexec/rancid/xrancid
 libexec/rancid/zrancid
 etc/rancid/lg.conf.sample
 etc/rancid/rancid.conf.sample
-share/rancid/CHANGES
-share/rancid/COPYING
-share/rancid/FAQ
-share/rancid/README
-share/rancid/README.lg
-share/rancid/README.misc
-share/rancid/UPGRADING
-share/rancid/cisco-load.exp
-share/rancid/cisco-reload.exp
-share/rancid/cloginrc.sample
-share/rancid/downreport
-share/rancid/getipacctg
-share/rancid/index.html
-share/rancid/lg.conf.sample
-share/rancid/lgnotes.html
-share/rancid/rancid.conf.sample
-share/rancid/rtrfilter
-@dirrm share/rancid
+%%DATADIR%%/CHANGES
+%%DATADIR%%/COPYING
+%%DATADIR%%/FAQ
+%%DATADIR%%/README
+%%DATADIR%%/README.lg
+%%DATADIR%%/README.misc
+%%DATADIR%%/UPGRADING
+%%DATADIR%%/cisco-load.exp
+%%DATADIR%%/cisco-reload.exp
+%%DATADIR%%/cloginrc.sample
+%%DATADIR%%/downreport
+%%DATADIR%%/getipacctg
+%%DATADIR%%/index.html
+%%DATADIR%%/lg.conf.sample
+%%DATADIR%%/lgnotes.html
+%%DATADIR%%/rancid.conf.sample
+%%DATADIR%%/rtrfilter
+@dirrm %%DATADIR%%
 @dirrm var/rancid
 @dirrm etc/rancid
 @dirrm libexec/rancid

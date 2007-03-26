@@ -185,6 +185,7 @@
     SUBDIR += py-twistedSNMP
     SUBDIR += py-yapsnmp
     SUBDIR += rancid
+    SUBDIR += rancid-devel
     SUBDIR += rate
     SUBDIR += rcpd
     SUBDIR += remarp
