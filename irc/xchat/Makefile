@@ -28,7 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 CONFIGURE_ARGS=	--enable-nls \
 		--enable-ipv6
 
-CONFLICTS=	xchat-1* xchat-systray-plugin*
+CONFLICTS=	xchat-1* xchat-systray-plugin-[0-9]*
 
 .if defined(WITH_SOCKS)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
