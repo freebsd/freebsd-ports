@@ -13878,6 +13878,7 @@ scramble	ports/games/scramble
 screamer	ports/lang/screamer
 screem		ports/www/screem
 screen		ports/sysutils/screen
+screenie	ports/sysutils/screenie
 scriba		ports/lang/scriba
 scribes		ports/editors/scribes
 scribus		ports/print/scribus
