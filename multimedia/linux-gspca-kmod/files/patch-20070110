@@ -1,6 +1,6 @@
 diff -ubwr ./Conexant/cx11646.h /usr/ports/luigi/gspca/work-luigi/gspcav1-20070110/Conexant/cx11646.h
 --- ./Conexant/cx11646.h	Fri Apr 21 12:02:04 2006
-+++ /usr/ports/luigi/gspca/work-luigi/gspcav1-20070110/Conexant/cx11646.h	Mon Jan 22 08:40:08 2007
++++ /usr/ports/luigi/gspca/work-luigi/gspcav1-20070110/Conexant/cx11646.h	Mon Jan 22 09:41:14 2007
 @@ -25,12 +25,6 @@
  static void cx11646_start(struct usb_spca50x *spca50x);
  static void cx11646_stop0(struct usb_spca50x *spca50x);
@@ -16,7 +16,7 @@ diff -ubwr ./Conexant/cx11646.h /usr/ports/luigi/gspca/work-luigi/gspcav1-200701
  static void cx11646_setAutobright(struct usb_spca50x *spca50x);
 diff -ubwr ./decoder/gspcadecoder.c /usr/ports/luigi/gspca/work-luigi/gspcav1-20070110/decoder/gspcadecoder.c
 --- ./decoder/gspcadecoder.c	Thu Dec  7 16:54:34 2006
-+++ /usr/ports/luigi/gspca/work-luigi/gspcav1-20070110/decoder/gspcadecoder.c	Wed Jan 31 13:30:17 2007
++++ /usr/ports/luigi/gspca/work-luigi/gspcav1-20070110/decoder/gspcadecoder.c	Thu Feb  8 22:50:57 2007
 @@ -304,7 +304,6 @@
  
  };
@@ -25,6 +25,15 @@ diff -ubwr ./decoder/gspcadecoder.c /usr/ports/luigi/gspca/work-luigi/gspcav1-20
  
  static int jpeg_decode411(struct spca50x_frame *myframe, int force_rgb);
  static int jpeg_decode422(struct spca50x_frame *myframe, int force_rgb);
+@@ -607,7 +606,7 @@
+ 	    break;
+ 
+ 	default:
+-
++	    // printf("%s: bad row %d 0x%x\n", __FUNCTION__, row, word);
+ 	    return -1;
+ 	}
+ 	outp += width;
 @@ -891,6 +890,7 @@
      *bitfill += 7;
      return 0xff;
@@ -75,7 +84,7 @@ diff -ubwr ./decoder/gspcadecoder.c /usr/ports/luigi/gspca/work-luigi/gspcav1-20
  	tdc = *ptr++;
 diff -ubwr ./gspca.h /usr/ports/luigi/gspca/work-luigi/gspcav1-20070110/gspca.h
 --- ./gspca.h	Wed Nov 29 18:24:32 2006
-+++ /usr/ports/luigi/gspca/work-luigi/gspcav1-20070110/gspca.h	Wed Jan 31 16:16:43 2007
++++ /usr/ports/luigi/gspca/work-luigi/gspcav1-20070110/gspca.h	Wed Jan 31 17:29:09 2007
 @@ -34,7 +34,7 @@
  #define PAC207_ENDPOINT_ADDRESS 5	/* Isoc endpoint number */
  /* only 2 or 4 frames are allowed here !!! */
@@ -87,7 +96,7 @@ diff -ubwr ./gspca.h /usr/ports/luigi/gspca/work-luigi/gspcav1-20070110/gspca.h
  #define VENDOR_SUNPLUS 0x04fc
 diff -ubwr ./gspca_core.c /usr/ports/luigi/gspca/work-luigi/gspcav1-20070110/gspca_core.c
 --- ./gspca_core.c	Wed Jan 10 22:22:01 2007
-+++ /usr/ports/luigi/gspca/work-luigi/gspcav1-20070110/gspca_core.c	Wed Jan 31 13:30:17 2007
++++ /usr/ports/luigi/gspca/work-luigi/gspcav1-20070110/gspca_core.c	Fri Feb  9 11:57:34 2007
 @@ -32,7 +32,7 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
@@ -120,7 +129,17 @@ diff -ubwr ./gspca_core.c /usr/ports/luigi/gspca/work-luigi/gspcav1-20070110/gsp
  gspca_set_isoc_ep(struct usb_spca50x *spca50x, int nbalt)
  {
  	int i, j;
-@@ -4100,7 +4093,7 @@
+@@ -1901,6 +1894,9 @@
+ 	if (spca50x->user)
+ 		goto out;
+ 	err = -ENOMEM;
++	/* XXX set compress and autoexpo */
++	spca50x->autoexpo = autoexpo;
++	spca50x->compress = compress;
+ 	if (spca50x_alloc(spca50x))
+ 		goto out;
+ /* initialize sensor and decoding */
+@@ -4100,7 +4096,7 @@
  {
  	if (usb_register(&spca5xx_driver) < 0)
  		return -1;
