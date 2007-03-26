@@ -1,6 +1,18 @@
---- tcl_commands.c	Fri Jun 29 12:38:00 2001
-+++ tcl_commands.c	Tue Aug  7 22:55:11 2001
-@@ -676,7 +676,14 @@
+--- tcl_commands.c	Wed Jun 26 09:12:43 2002
++++ tcl_commands.c	Mon Mar 26 02:01:19 2007
+@@ -359,3 +359,3 @@
+     char *t;
+-    char *authorization = NULL;
++    const char *authorization;
+ 
+@@ -397,4 +397,4 @@
+     /* Get the user/pass info for Basic authentication */
+-    (const char*)authorization = ap_table_get(globals->r->headers_in, "Authorization");
+-    if (authorization && !strcasecmp(ap_getword_nc(POOL, &authorization, ' '), "Basic"))
++    authorization = ap_table_get(globals->r->headers_in, "Authorization");
++    if (authorization && !strcasecmp(ap_getword(POOL, &authorization, ' '), "Basic"))
+     {
+@@ -739,15 +739,19 @@
  	{
 +	    union {
 +		ClientData handle;
@@ -16,19 +28,23 @@
 -		if (ApacheUpload_FILE(upload) != NULL)
 +		if (handle.fd != -1)
  		{
-@@ -684,4 +690,3 @@
- 		    char *channelname = NULL;
+ 		    /* create and return a file channel */
+-		    char *channelname = NULL;
 -		    chan = Tcl_MakeFileChannel((ClientData)fileno(
 -			ApacheUpload_FILE(upload)), TCL_READABLE);
 +		    chan = Tcl_MakeFileChannel(handle.handle, TCL_READABLE);
  		    Tcl_RegisterChannel(interp, chan);
-@@ -709,4 +714,3 @@
+-		    channelname = Tcl_GetChannelName(chan);
+-		    Tcl_SetStringObj(result, channelname, -1);
++		    Tcl_SetStringObj(result, Tcl_GetChannelName(chan), -1);
+ 		}
+@@ -772,4 +776,3 @@
  
 -		chan = Tcl_MakeFileChannel((ClientData)fileno(
 -		    ApacheUpload_FILE(upload)), TCL_READABLE);
 +		chan = Tcl_MakeFileChannel(handle.handle, TCL_READABLE);
  		Tcl_SetChannelOption(interp, chan, "-translation", "binary");
-@@ -736,4 +740,3 @@
+@@ -799,4 +802,3 @@
  		    bytes = Tcl_Alloc(ApacheUpload_size(upload));
 -		    chan = Tcl_MakeFileChannel((ClientData)fileno(
 -			ApacheUpload_FILE(upload)), TCL_READABLE);
