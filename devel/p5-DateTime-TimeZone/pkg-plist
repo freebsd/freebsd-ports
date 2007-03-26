@@ -159,6 +159,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Rankin_Inlet.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Recife.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Regina.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Resolute.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Rio_Branco.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Santiago.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Santo_Domingo.pm
