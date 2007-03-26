@@ -13,6 +13,7 @@ bin/pushmi
 %%SITE_PERL%%/Pushmi/Command/Sync.pm
 %%SITE_PERL%%/Pushmi/Command/Tryauth.pm
 %%SITE_PERL%%/Pushmi/Command/Unlock.pm
+%%SITE_PERL%%/Pushmi/Command/Verify.pm
 %%SITE_PERL%%/Pushmi/Editor/Locker.pm
 @dirrm %%SITE_PERL%%/Pushmi/Editor
 @dirrm %%SITE_PERL%%/Pushmi/Command
