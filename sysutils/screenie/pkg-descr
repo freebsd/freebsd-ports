@@ -1,0 +1,5 @@
+Screenie is a small and lightweight screen(1) wrapper that is designed to be a
+session handler that simplifies the process of administrating detached jobs by
+providing an interactive menu.
+
+WWW: http://pubwww.fhzh.ch/~mgloor/screenie.html
