@@ -1,4 +1,6 @@
-%%FONTSDIR%%/fonts.cache-1
+%%CONFAVAILDIR%%/85-wqy-bitmapsong.conf
+%%CONFDDIR%%/85-wqy-bitmapsong.conf
+%%WITHALIAS%%%%FONTSDIR%%/fonts.alias
 %%FONTSDIR%%/fonts.dir
 %%FONTSDIR%%/fonts.scale
 %%FONTSDIR%%/wenquanyi_10pt.pcf
