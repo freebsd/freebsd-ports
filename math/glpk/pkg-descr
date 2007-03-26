@@ -1,8 +1,11 @@
-GLPK -- GNU Linear Programming Kit.
+The GLPK package is a set of routines written in ANSI C and organized
+in the form of a callable library. This package is intended for solving
+large-scale linear programming (LP), mixed integer linear programming (MIP)
+and other related problems.
 
-The GLPK package is intended for solving large scale linear programming
-problems by means of the revised simplex method. It is a set of routines
-organized in the form of a library and written in the ANSI C programming
-language.
+The GLPK package includes the following main components:
+
+- implementation of the simplex method;
+- implementation of the exact simplex method based on bignum (rational)
 
 WWW: http://www.gnu.org/software/glpk/glpk.html
