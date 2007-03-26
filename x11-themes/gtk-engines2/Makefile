@@ -21,9 +21,10 @@ CONFLICTS=	gtk-smooth-engine-[0-9]* clearlooks-[0-9]*
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gtk20
+USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .if defined(WITH_ANIMATION)
