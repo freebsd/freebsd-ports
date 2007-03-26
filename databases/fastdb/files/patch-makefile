@@ -1,5 +1,5 @@
---- makefile.orig	Sat Oct 21 20:41:50 2006
-+++ makefile	Tue Mar  6 09:00:42 2007
+--- makefile.orig	Sat Jan 13 01:22:03 2007
++++ makefile	Mon Mar 26 09:16:22 2007
 @@ -32,8 +32,8 @@
  THRLIBS=
  SUFF=
@@ -59,11 +59,11 @@
  	(cd $(LIBSPATH) && ln -f -s $(FASTDB_SHARED) libfastdb$(SUFF).so \
  	 && ln -f -s $(CLI_SHARED) libcli$(SUFF).so)
 -	if [ -f $(JNI_LIB) ]; then cp $(JNI_LIB) $(LIBSPATH); \
--	  cd $(LIBSPATH) && ln -f -s $(JNI_LIB) libjnicli$(SUFF).so; fi
+-	  cd $(LIBSPATH) && ln -f -s $(JNI_LIB) libjnicli.so; fi
  
  uninstall:
  	rm -fr $(INCSPATH)
--	cd $(LIBSPATH); rm -f $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(JNI_LIB) libfastdb$(SUFF).so libjnicli$(SUFF).so libcli$(SUFF).so
+-	cd $(LIBSPATH); rm -f $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) $(JNI_LIB) libfastdb$(SUFF).so libjnicli.so libcli$(SUFF).so
 +	cd $(LIBSPATH); rm -f $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED) libfastdb$(SUFF).so libcli$(SUFF).so
  	rm $(BINSPATH)/subsql
  
