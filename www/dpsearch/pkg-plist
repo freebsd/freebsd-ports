@@ -365,11 +365,11 @@ include/dps_wild.h
 include/dps_word.h
 include/dps_xmalloc.h
 include/dpsearch.h
-lib/libdpcharset-4.so
+lib/libdpcharset-445.so
 lib/libdpcharset.a
 lib/libdpcharset.la
 lib/libdpcharset.so
-lib/libdpsearch-4.so
+lib/libdpsearch-445.so
 lib/libdpsearch.a
 lib/libdpsearch.la
 lib/libdpsearch.so
@@ -460,8 +460,8 @@ sbin/stored
 %%DOCSDIR%%/dpsearch-opsys.ru.html
 %%DOCSDIR%%/dpsearch-oracle.en.html
 %%DOCSDIR%%/dpsearch-oracle.ru.html
-%%DOCSDIR%%/dpsearch-pars.ru.html
 %%DOCSDIR%%/dpsearch-pars.en.html
+%%DOCSDIR%%/dpsearch-pars.ru.html
 %%DOCSDIR%%/dpsearch-perf.en.html
 %%DOCSDIR%%/dpsearch-perf.ru.html
 %%DOCSDIR%%/dpsearch-register.en.html
@@ -470,10 +470,10 @@ sbin/stored
 %%DOCSDIR%%/dpsearch-rel.ru.html
 %%DOCSDIR%%/dpsearch-searchd.en.html
 %%DOCSDIR%%/dpsearch-searchd.ru.html
-%%DOCSDIR%%/dpsearch-srvtable.ru.html
-%%DOCSDIR%%/dpsearch-srvtable.en.html
 %%DOCSDIR%%/dpsearch-srcache.en.html
 %%DOCSDIR%%/dpsearch-srcache.ru.html
+%%DOCSDIR%%/dpsearch-srvtable.en.html
+%%DOCSDIR%%/dpsearch-srvtable.ru.html
 %%DOCSDIR%%/dpsearch-stored.en.html
 %%DOCSDIR%%/dpsearch-stored.ru.html
 %%DOCSDIR%%/dpsearch-subsections.en.html
