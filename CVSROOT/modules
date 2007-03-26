@@ -9690,6 +9690,7 @@ p5-Iterator-Util	ports/devel/p5-Iterator-Util
 p5-JSAN		ports/lang/p5-JSAN
 p5-JSON		ports/converters/p5-JSON
 p5-JSON-DWIW	ports/converters/p5-JSON-DWIW
+p5-JSON-XS	ports/converters/p5-JSON-XS
 p5-Jabber-Connection	ports/net-im/p5-Jabber-Connection
 p5-Jabber-SimpleSend	ports/net-im/p5-Jabber-SimpleSend
 p5-Java		ports/devel/p5-Java
