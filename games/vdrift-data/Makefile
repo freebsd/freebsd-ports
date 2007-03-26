@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	data
-PORTVERSION=	20061006
+PORTVERSION=	20070323
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vdrift
@@ -21,7 +21,7 @@ USE_BZIP2=	yes
 NO_BUILD=	yes
 DATADIR=	${PREFIX}/share/vdrift
 PLIST=		${WRKDIR}/pkg-plist
-WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}2006-10-06-src
+WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}2007-03-23-src
 
 OPTIONS=	MINIMAL	"Install minimal requerimients of data files" off \
 		FULL	"Install all data files"	on
@@ -39,11 +39,11 @@ pre-everything::
 .endif
 
 .if defined(WITH_MINIMAL)
-DISTFILES+=	${PKGNAMEPREFIX}2006-10-06-${PORTNAME}-minimal.tar.bz2
+DISTFILES+=	${PKGNAMEPREFIX}2007-03-23-${PORTNAME}-minimal.tar.bz2
 .endif
 
 .if defined(WITH_FULL)
-DISTFILES+=	${PKGNAMEPREFIX}2006-10-06-${PORTNAME}-full.tar.bz2
+DISTFILES+=	${PKGNAMEPREFIX}2007-03-23-${PORTNAME}-full.tar.bz2
 .endif
 
 post-extract:
