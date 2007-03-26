@@ -2,5 +2,7 @@ bin/fd2
 bin/goto
 bin/if
 bin/osh
+bin/sh6
+bin/glob6
 @exec echo "updating ${DESTDIR}/etc/shells"; cp ${DESTDIR}/etc/shells ${DESTDIR}/etc/shells.bak; (grep -v %D/%F ${DESTDIR}/etc/shells.bak; echo %D/%F) >${DESTDIR}/etc/shells
 @unexec echo "updating ${DESTDIR}/etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells
