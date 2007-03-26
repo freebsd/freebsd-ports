@@ -1,16 +1,6 @@
---- src/server.c.orig	Thu Jan 26 16:00:28 2006
-+++ src/server.c	Mon Jan 22 20:13:09 2007
-@@ -342,7 +342,8 @@
- 	lo_method next;
- 
- 	if (s->socket != -1) close(s->socket);
--	freeaddrinfo(s->ai);
-+	if (s->ai)
-+	    freeaddrinfo(s->ai);
- 	free(s->hostname);
- 	free(s->path);
- 	for (it = s->first; it; it = next) {
-@@ -639,38 +640,11 @@
+--- src/server.c.orig	Thu Mar 22 00:48:37 2007
++++ src/server.c	Sat Mar 24 10:40:37 2007
+@@ -659,38 +659,11 @@
  
      //inet_ntop(s->addr.ss_family, &s->addr.padding, hostname, sizeof(hostname));
      if (s->protocol == LO_UDP) {
