@@ -32,11 +32,13 @@ PLIST_SUB=	FONTSDIR=${FONTSDIR} \
 BUILD_DEPENDS+=        mkfontdir:${X_CLIENTS_PORT}
 BUILD_DEPENDS+=        fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
+OPTIONS=	ALIAS	"Install fonts.alias" off
+
+.include <bsd.port.pre.mk>
+
 .if !defined(NOPORTDOCS)
 PORTDOCS=	AUTHORS ChangeLog COPYING INSTALL INSTALL.zh.gb2312 LOGO.png README
 .endif
-
-OPTIONS=	ALIAS	"Install fonts.alias" off
 
 .if defined(WITH_ALIAS)
 PLIST_SUB+=	WITHALIAS=""
@@ -66,4 +68,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
