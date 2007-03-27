@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	google-sparsehash
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	goog-sparsehash
+MASTER_SITES=	http://google-sparsehash.googlecode.com/files/
 DISTNAME=	sparsehash-${PORTVERSION}
 
 MAINTAINER=	vd@FreeBSD.org
@@ -19,12 +18,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-# /usr/include/g++/stl_algobase.h:139: template instantiation depth exceeds maximum of 17
-# /usr/include/g++/stl_algobase.h:139:  (use -ftemplate-depth-NN to increase the maximum)
-CFLAGS+=	-ftemplate-depth-32
-.endif
 
 post-patch:
 .if !defined(NOPORTDOCS)

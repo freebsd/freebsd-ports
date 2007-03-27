@@ -17,7 +17,9 @@ include/google/type_traits.h
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/dense_hash_map.html
 %%PORTDOCS%%%%DOCSDIR%%/dense_hash_set.html
+%%PORTDOCS%%%%DOCSDIR%%/designstyle.css
 %%PORTDOCS%%%%DOCSDIR%%/implementation.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/performance.html
 %%PORTDOCS%%%%DOCSDIR%%/sparse_hash_map.html
 %%PORTDOCS%%%%DOCSDIR%%/sparse_hash_set.html
