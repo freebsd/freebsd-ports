@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	qt
-PORTVERSION=	3.17
+PORTVERSION=	20070220
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyQt3/GPL/ \
+MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/Snapshots/PyQt3/ \
 		http://freebsd.ricin.com/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PyQt-x11-gpl-${PORTVERSION}
+DISTNAME=	PyQt-x11-gpl-3-snapshot-${PORTVERSION}
 
 MAINTAINER=	danny@ricin.com
 COMMENT=	Python bindings for the Qt toolkit
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		qmake:${PORTSDIR}/devel/qmake
 
 USE_QT_VER=	3
-USE_PYTHON=	yes
+USE_PYTHON=	2.3+
 
 OPTIONS=	DEBUG "Enable debugging symbols" off \
 		DOCS "Install documentation" on \
