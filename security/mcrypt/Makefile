@@ -8,14 +8,13 @@
 #
 
 PORTNAME=	mcrypt
-PORTVERSION=	2.6.4
-PORTREVISION=	3
+PORTVERSION=	2.6.5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://argeas.cs-net.gr/pub/unix/mcrypt/attic/ \
 		ftp://ftp.ntua.gr/pub/security/mcrypt/ \
 		ftp://mcrypt.hellug.gr/pub/mcrypt/attic/
-MASTER_SITE_SUBDIR=	mcrypt
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replacement for crypt(1)
@@ -23,42 +22,31 @@ COMMENT=	Replacement for crypt(1)
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
 		mhash.2:${PORTSDIR}/security/mhash/
 
-USE_AUTOTOOLS=	autoconf:259:env
-USE_GETTEXT=		yes
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--enable-static --with-catgets
-CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -lintl"
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-GNU_CONFIGURE=		yes
-DOCS=			FORMAT magic
-MAN1=			mcrypt.1
-PKGMESSAGE=		${WRKDIR}/pkg-message
-PLIST=			${WRKDIR}/pkg-plist
+USE_GETTEXT=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_ARGS=	--enable-static --with-catgets
 
-# to avoid having to read the configure script
-pre-configure:
-	cd ${WRKSRC} && ${RM} configure && ${AUTOCONF}
+MAN1=		mcrypt.1
+PORTDOCS=	FORMAT magic
+PLIST_FILES=	bin/mcrypt \
+		%%EXAMPLESDIR%%/sample.mcryptrc \
+		share/locale/cs/LC_MESSAGES/mcrypt.mo \
+		share/locale/de/LC_MESSAGES/mcrypt.mo \
+		share/locale/el/LC_MESSAGES/mcrypt.mo \
+		share/locale/es_AR/LC_MESSAGES/mcrypt.mo \
+		share/locale/pl/LC_MESSAGES/mcrypt.mo
+PLIST_DIRS=	%%EXAMPLESDIR%%
+
+PLIST=		${WRKDIR}/pkg-plist
 
 pre-install:
-	${ECHO_CMD} bin/${PORTNAME} > ${PLIST}
-.for i in cs de el es_AR pl
-	${ECHO_CMD} share/locale/${i}/LC_MESSAGES/mcrypt.mo >> ${PLIST}
-	${ECHO_CMD} @dirrmtry share/locale/${i}/LC_MESSAGES >> ${PLIST}
-	${ECHO_CMD} @dirrmtry share/locale/${i} >> ${PLIST}
+.for i in es_AR
+	@${ECHO_CMD} "@dirrmtry share/locale/${i}/LC_MESSAGES" >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry share/locale/${i}" >> ${PLIST}
 .endfor
-.if !defined(NOPORTDOCS)
-	${ECHO_CMD} share/examples/${PORTNAME}/sample.mcryptrc >> ${PLIST}
-	${ECHO_CMD} @dirrm share/examples/${PORTNAME} >> ${PLIST}
-.for i in ${DOCS}
-	${ECHO_CMD} share/doc/${PORTNAME}/${i} >> ${PLIST}
-.endfor
-	${ECHO_CMD} @dirrm share/doc/${PORTNAME} >> ${PLIST}
-.endif
-	${ECHO_CMD} "*** WARNING ***" > ${PKGMESSAGE}
-	${ECHO_CMD} \
-"The source for this package has not been reviewed by the FreeBSD maintainer." \
-		>> ${PKGMESSAGE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/mcrypt ${PREFIX}/bin/
@@ -70,10 +58,11 @@ do-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/sample.mcryptrc ${EXAMPLESDIR}/
 	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${MANPREFIX}/man/man1/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/${PORTNAME} ${DOCSDIR}
+	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/sample.mcryptrc ${EXAMPLESDIR}/
-.for i in ${DOCS}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in FORMAT magic
 	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}/
 .endfor
 .endif
