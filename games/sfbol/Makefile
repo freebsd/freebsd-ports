@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	sfbol
-PORTVERSION=	4.24
+PORTVERSION=	4.37
 CATEGORIES=	games java
-MASTER_SITES=	http://www.sfbonline.com/install4/InstData/Java/
+MASTER_SITES=	http://www.sfbonline.com/programs/
 DISTNAME=	install40
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
@@ -15,11 +15,9 @@ EXTRACT_ONLY=
 MAINTAINER=	peter.thoenen@yahoo.com
 COMMENT=	Star Fleet Battles Online
 
-BROKEN=		Unfetchable
-
 IGNOREFILES=	install40.jar
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 JAVA_RUN=	jre
 JAVA_EXTRACT=	jre
 NO_BUILD=	yes
