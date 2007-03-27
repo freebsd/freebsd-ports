@@ -7029,6 +7029,7 @@ manedit		ports/editors/manedit
 manencode	ports/multimedia/manencode
 mangband	ports/games/mangband
 mango		ports/misc/mango
+mangos		ports/games/mangos
 manipulate_data	ports/security/manipulate_data
 manslide	ports/multimedia/manslide
 mantis		ports/databases/mantis
