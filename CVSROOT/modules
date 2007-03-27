@@ -12698,6 +12698,7 @@ py-qp		ports/www/py-qp
 py-qpy		ports/www/py-qpy
 py-qt		ports/x11-toolkits/py-qt
 py-qt4-core	ports/devel/py-qt4-core
+py-qt4-doc	ports/misc/py-qt4-doc
 py-qt4-gui	ports/x11-toolkits/py-qt4-gui
 py-qt4-sql	ports/databases/py-qt4-sql
 py-radix	ports/net/py-radix
