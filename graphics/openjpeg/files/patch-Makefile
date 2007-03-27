@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Feb  1 22:25:11 2006
-+++ Makefile	Sat Jan 13 12:52:47 2007
+--- Makefile.orig	Tue Feb 13 09:49:00 2007
++++ Makefile	Tue Mar 20 22:14:10 2007
 @@ -8,15 +8,13 @@
  INCLUDE = -Ilibopenjpeg
  
@@ -13,7 +13,7 @@
  # Converts cr/lf to just lf
  DOS2UNIX = dos2unix
  
--COMPILERFLAGS = -O3
+-COMPILERFLAGS = -O3 -fPIC
 +COMPILERFLAGS := $(CFLAGS)
  LIBRARIES = -lstdc++
  
