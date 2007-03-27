@@ -8,12 +8,11 @@
 PORTNAME=	xmamegui
 DISTVERSION=	0.9-1
 CATEGORIES=	emulators java
-MASTER_SITES=	http://www.parallelrealities.co.uk/download.php?type=zip&file=
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	alepulver
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	SDLMAME frontend that has been written using Java
-
-FETCH_BEFORE_ARGS+=	-o ${DISTNAME}${EXTRACT_SUFX}
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
