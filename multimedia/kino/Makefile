@@ -36,7 +36,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/lqt		\
 			-L${LOCALBASE}/lib -L${X11BASE}/lib"	\
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-dv1394
-MAN1=	kino.1
+MAN1=	ffmpeg-kino.1 kino.1 kino2raw.1
 
 .include <bsd.port.pre.mk>
 

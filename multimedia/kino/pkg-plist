@@ -23,8 +23,6 @@ lib/kino-gtk2/libkinoplus.so
 lib/kino-gtk2/libtimfx.a
 lib/kino-gtk2/libtimfx.la
 lib/kino-gtk2/libtimfx.so
-man/man1/ffmpeg-kino.1
-man/man1/kino2raw.1
 share/gnome/applications/Kino.desktop
 share/gnome/kino/about.jpeg
 share/gnome/kino/capture.png
