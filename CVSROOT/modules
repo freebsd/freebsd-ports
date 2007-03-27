@@ -12707,6 +12707,7 @@ py-qt4-gui	ports/x11-toolkits/py-qt4-gui
 py-qt4-network	ports/net/py-qt4-network
 py-qt4-opengl	ports/x11/py-qt4-opengl
 py-qt4-sql	ports/databases/py-qt4-sql
+py-qt4-svg	ports/graphics/py-qt4-svg
 py-qt4-test	ports/devel/py-qt4-test
 py-qt4-xml	ports/textproc/py-qt4-xml
 py-radix	ports/net/py-radix
