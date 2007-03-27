@@ -2,8 +2,22 @@ bin/kchmviewer
 %%KDE%%lib/kde3/kio_msits.a
 %%KDE%%lib/kde3/kio_msits.la
 %%KDE%%lib/kde3/kio_msits.so
+lib/libchmfile.a
+%%KDE%%lib/libkdeextra.a
 %%KDE%%share/applnk/kchmviewer.desktop
 %%KDE%%share/icons/crystalsvg/128x128/apps/kchmviewer.png
 %%KDE%%share/icons/crystalsvg/48x48/apps/kchmviewer.png
 %%KDE%%share/icons/crystalsvg/64x64/apps/kchmviewer.png
+%%KDE%%share/locale/cs/LC_MESSAGES/kchmviewer.mo
+%%KDE%%share/locale/du/LC_MESSAGES/kchmviewer.mo
+%%KDE%%share/locale/fr/LC_MESSAGES/kchmviewer.mo
+%%KDE%%share/locale/ru/LC_MESSAGES/kchmviewer.mo
+%%KDE%%share/locale/tr/LC_MESSAGES/kchmviewer.mo
+%%KDE%%share/locale/zh_CN/LC_MESSAGES/kchmviewer.mo
 %%KDE%%share/services/msits.protocol
+%%KDE%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
+%%KDE%%@dirrmtry share/locale/zh_CN
+%%KDE%%@dirrmtry share/locale/du/LC_MESSAGES
+%%KDE%%@dirrmtry share/locale/du
+%%KDE%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%KDE%%@dirrmtry share/locale/cs
