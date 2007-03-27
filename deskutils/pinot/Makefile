@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Personal search and metasearch for the Free Desktop
 
-BUILD_DEPENDS=	update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
+BUILD_DEPENDS=	update-desktop-database:${PORTSDIR}/devel/desktop-file-utils	\
+		${SQ3THOL}:${PORTSDIR}/databases/sqlite3-threads
 LIB_DEPENDS=	xapian.13:${PORTSDIR}/databases/xapian-core	\
 		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24	\
 		textcat.0:${PORTSDIR}/textproc/libtextcat	\
@@ -26,6 +27,7 @@ LIB_DEPENDS=	xapian.13:${PORTSDIR}/databases/xapian-core	\
 		tag.5:${PORTSDIR}/audio/taglib			\
 		curl.4:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info	\
+		${SQ3THOL}:${PORTSDIR}/databases/sqlite3-threads	\
 		antiword:${PORTSDIR}/textproc/antiword			\
 		xdg-open:${PORTSDIR}/devel/xdg-utils			\
 		pdftotext:${PORTSDIR}/graphics/xpdf			\
@@ -44,13 +46,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_GETTEXT=	yes
 USE_XLIB=	yes
-USE_SQLITE=	3
+#USE_SQLITE=	3	# Replaced by sqlite3-threads
 USE_PYTHON=	yes
 USE_LDCONFIG=	${PREFIX}/lib/pinot/filters
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug=yes
 .endif
+
+SQ3THOL=	${LOCALBASE}/share/sqlite3/sqlite3_with_threads-override-locks
 
 INSTALLS_ICONS=	yes
 
