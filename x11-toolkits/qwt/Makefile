@@ -17,6 +17,8 @@ COMMENT=	Qwt widget library for technical purposes
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
+CONFLICTS=	qwt-devel-5.*
+
 USE_QT_VER=	3
 USE_BZIP2=	yes
 MAKE_ENV=	CXXFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
@@ -25,6 +27,8 @@ MAKE_ENV=	CXXFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 		QTDIR="${X11BASE}"	\
 		MOC=${MOC}
 USE_LDCONFIG=	yes
+
+PORTSCOUT=	limit:^4\.
 
 MAN3=		QwtAnalogClock.3	\
 		QwtArrayData.3		\
