@@ -1,5 +1,5 @@
 This port contains packages from a near-minimal installation of Fedora Core
-Linux 4.  These packages, in conjunction with the linux kernel module,
+Linux 6.  These packages, in conjunction with the linux kernel module,
 form the basis of the Linux compatibility environment. It is designed to
 provide a nice user experience by using the FreeBSD configuration for
 corresponding Linux stuff where possible. Because of this any work which
