@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pytz
-PORTVERSION=	2007c
+PORTVERSION=	2007d
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://cheeseshop.python.org/packages/source/p/pytz/
+MASTER_SITES=	http://cheeseshop.python.org/packages/source/p/pytz/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pytz
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
