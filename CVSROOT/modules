@@ -2081,6 +2081,7 @@ drupal4-nice_menus	ports/www/drupal4-nice_menus
 drupal4-taxonomy_access	ports/www/drupal4-taxonomy_access
 drupal4-textile	ports/www/drupal4-textile
 drupal5		ports/www/drupal5
+drupal5-tinymce	ports/www/drupal5-tinymce
 drweb		ports/security/drweb
 drweb-postfix	ports/security/drweb-postfix
 drweb-qmail	ports/security/drweb-qmail
