@@ -6,7 +6,7 @@
 
 PORTNAME=	expect
 PORTVERSION=	5.43.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang tcl84 tk84
 MASTER_SITES=	http://expect.nist.gov/src/
 
@@ -44,7 +44,6 @@ CONFIGURE_ARGS?=--enable-shared \
 		--with-tclconfig=${LOCALBASE}/lib/tcl8.4 \
 		--with-tclinclude=${LOCALBASE}/include/tcl8.4 \
 		${TK_CONFIG_ARGS}
-CONFIGURE_ENV=	LDFLAGS="-lutil"
 
 .if !defined(NO_MAN_INSTALL)
 MAN1=		autoexpect.1 cryptdir.1 decryptdir.1 dislocate.1 \
