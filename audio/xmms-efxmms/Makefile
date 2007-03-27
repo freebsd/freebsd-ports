@@ -27,4 +27,7 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	lib/xmms/Effect/libefx.la \
 		lib/xmms/Effect/libefx.so
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/ltconfig
+
 .include <bsd.port.mk>
