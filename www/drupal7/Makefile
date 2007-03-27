@@ -7,6 +7,7 @@
 
 PORTNAME=	drupal5
 PORTVERSION=	5.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.osuosl.org/pub/drupal/files/projects/
 DISTNAME=	drupal-${PORTVERSION}
@@ -62,6 +63,8 @@ do-install:
 	@if [ ! -f ${DRUPAL_DIR}/sites/default/settings.php ]; then \
 		${CP} -p ${DRUPAL_DIR}/sites/default/settings.php-dist ${DRUPAL_DIR}/sites/default/settings.php ; \
 	fi
+	${MKDIR} ${DRUPAL_DIR}/sites/all/modules
+	${MKDIR} ${DRUPAL_DIR}/sites/all/themes
 	${CP} -R ${WRKSRC}/themes ${DRUPAL_DIR}
 	${CP} ${WRKSRC}/update.php ${DRUPAL_DIR}
 	${CP} ${WRKSRC}/xmlrpc.php ${DRUPAL_DIR}

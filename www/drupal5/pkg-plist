@@ -327,6 +327,8 @@
 @dirrm %%DRUPAL_BASE%%/themes/pushbutton
 @dirrm %%DRUPAL_BASE%%/themes
 @dirrmtry %%DRUPAL_BASE%%/files
+@dirrmtry %%DRUPAL_BASE%%/sites/all/modules
+@dirrmtry %%DRUPAL_BASE%%/sites/all/themes
 @dirrmtry %%DRUPAL_BASE%%/sites/all
 @dirrmtry %%DRUPAL_BASE%%/sites/default
 @dirrmtry %%DRUPAL_BASE%%/sites
