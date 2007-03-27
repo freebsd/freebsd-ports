@@ -15,7 +15,7 @@ COMMENT=	A port of the Solaris memory allocator
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/ -ldl//g' ${WRKSRC}/Makefile.in
