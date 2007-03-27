@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pavuk
-PORTVERSION=	0.9.34
-PORTREVISION=	1
+PORTVERSION=	0.9.35
 CATEGORIES=	ftp www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,8 +20,9 @@ USE_GNOME=	gnometarget
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--with-locale-dir=${PREFIX}/share/locale \
-		--disable-debug --disable-gnome --disable-gtk2 --disable-js \
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
+		--with-locale-dir=${PREFIX}/share/locale \
+		--disable-debug --disable-gnome --disable-js \
 		--enable-utf-8 --enable-threads
 
 MAN1=		pavuk.1
@@ -40,10 +40,9 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
-.if ${HAVE_GNOME:Mgtk12}!=""
+.if ${HAVE_GNOME:Mgtk20}!=""
 PKGNAMESUFFIX=	-gtk
-USE_GNOME+=	gtk12
-CONFIGURE_ARGS+=	--with-gtk-config="${GTK_CONFIG}"
+USE_GNOME+=	gtk20
 .else
 CONFIGURE_ARGS+=	--disable-gtk
 .endif
