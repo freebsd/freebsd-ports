@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	1.7.6
-PORTREVISION=	1
+PORTVERSION=	1.7.7
 CATEGORIES=	security net
 MASTER_SITES=	http://josefsson.org/gnutls/releases/ \
 		ftp://ftp.gnutls.org/pub/gnutls/ \
@@ -27,7 +26,8 @@ CONFLICTS=	gnutls-[0-9]*
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
-USE_GNOME=	pkgconfig
+USE_GNOME=	pkgconfig ltverhack
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

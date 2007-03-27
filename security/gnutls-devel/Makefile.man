@@ -25,6 +25,11 @@ MAN3=	\
 	gnutls_auth_client_get_type.3 \
 	gnutls_auth_get_type.3 \
 	gnutls_auth_server_get_type.3 \
+	gnutls_authz_enable.3 \
+	gnutls_authz_send_saml_assertion.3 \
+	gnutls_authz_send_saml_assertion_url.3 \
+	gnutls_authz_send_x509_attr_cert.3 \
+	gnutls_authz_send_x509_attr_cert_url.3 \
 	gnutls_bye.3 \
 	gnutls_certificate_activation_time_peers.3 \
 	gnutls_certificate_allocate_credentials.3 \
@@ -310,6 +315,7 @@ MAN3=	\
 	gnutls_x509_crl_get_version.3 \
 	gnutls_x509_crl_import.3 \
 	gnutls_x509_crl_init.3 \
+	gnutls_x509_crl_print.3 \
 	gnutls_x509_crt_print.3 \
 	gnutls_x509_crl_set_crt.3 \
 	gnutls_x509_crl_set_crt_serial.3 \
@@ -363,6 +369,7 @@ MAN3=	\
 	gnutls_x509_crt_get_pk_rsa_raw.3 \
 	gnutls_x509_crt_get_proxy.3 \
 	gnutls_x509_crt_get_serial.3 \
+	gnutls_x509_crl_get_signature.3 \
 	gnutls_x509_crt_get_signature_algorithm.3 \
 	gnutls_x509_crt_get_subject_alt_name.3 \
 	gnutls_x509_crt_get_subject_key_id.3 \
