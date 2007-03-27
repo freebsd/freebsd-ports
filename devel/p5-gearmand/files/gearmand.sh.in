@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/devel/p5-gearmand/files/Attic/gearmand.sh.in,v 1.1 2007-03-27 07:15:30 miwi Exp $
+#
+
+# PROVIDE: %%NAME%%
+# REQUIRE: DAEMON
+
+# Add the following line to /etc/rc.conf to enable `%%NAME%%':
+#
+#%%NAME%%_enable="YES"
+
+. "%%RC_SUBR%%"
+
+name="%%NAME%%"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/gearmand"
+command_interpreter="%%PREFIX%%/bin/perl"
+command_args="--daemon"
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${%%NAME%%_enable="NO"}
+
+run_rc_command "$1"

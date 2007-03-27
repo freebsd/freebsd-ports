@@ -1,0 +1,10 @@
+Gearman is a system to farm out work to other machines, dispatching function
+calls to machines that are better suited to do work, to do work in parallel,
+to load balance lots of function calls, or to call functions between
+languages.
+
+This is the server daemon component.  The bridge between workers (clients who
+can do work) and callers (clients who want work done).  You should run several
+of these, at least two, for both load balancing and high availability.
+
+WWW: http://www.danga.com/gearman/
