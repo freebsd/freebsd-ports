@@ -24,12 +24,8 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}" \
 		--with-ogg="${LOCALBASE}" \
 		--with-xmms-prefix="${X11BASE}"
-
+MAKE_ENV=	MAKEOBJDIR=/nonexistent		# ignore ${WRKSRC}/obj
 MAKEFILE=	${FILESDIR}/Makefile
-
-# "obj" is magic to our make(1)
-post-configure:
-	@${RM} -rf ${WRKSRC}/obj
 
 # XXX
 post-install:
