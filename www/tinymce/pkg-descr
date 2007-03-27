@@ -1,0 +1,20 @@
+TinyMCE is a platform independent web based Javascript HTML WYSIWYG editor
+control released as Open Source under LGPL by Moxiecode Systems AB. It has
+the ability to convert HTML TEXTAREA fields or other HTML elements to editor
+instances. TinyMCE is very easy to integrate into other Content Management
+Systems.
+
+TinyMCE Features
+
+    * Easy to integrate, takes only two lines of code.
+    * Customizable through themes and plugins.
+    * Customizable XHTML 1.0 output. Block invalid elements and force
+    attributes.
+    * International language support (Language packs)
+    * Multiple browser support, Mozilla, MSIE, FireFox, Opera and Safari
+    (experimental).
+    * PHP/.NET/JSP/Coldfusion GZip compressor, Makes TinyMCE 75% smaller and
+    a lot faster to load.
+    * You can easily use AJAX to save and load content!
+
+WWW: http://tinymce.moxiecode.com/

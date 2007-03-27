@@ -1104,6 +1104,7 @@
     SUBDIR += tidy-devel
     SUBDIR += tidy-lib
     SUBDIR += tikiwiki
+    SUBDIR += tinymce
     SUBDIR += tinyproxy
     SUBDIR += trac
     SUBDIR += trac-accountmanager
