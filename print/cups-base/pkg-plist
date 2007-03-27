@@ -1357,7 +1357,7 @@ sbin/lpmove
 @dirrm %%DATADIR%%/templates/pl
 @dirrm %%DATADIR%%/templates/sv
 @dirrm %%DATADIR%%/templates
-@exec  mkdir -p %D%%DATADIR%%/profiles
+@exec  mkdir -p %D/%%DATADIR%%/profiles
 @dirrm %%DATADIR%%/profiles
 @dirrmtry %%DATADIR%%/model
 @dirrm %%DATADIR%%/fonts
@@ -1369,7 +1369,7 @@ sbin/lpmove
 @dirrm libexec/cups/notifier
 @dirrm libexec/cups/monitor
 @dirrmtry libexec/cups/filter
-@exec mkdir -p %Dlibexec/cups/driver
+@exec mkdir -p %D/libexec/cups/driver
 @dirrm libexec/cups/driver
 @dirrm libexec/cups/daemon
 @dirrm libexec/cups/cgi-bin
