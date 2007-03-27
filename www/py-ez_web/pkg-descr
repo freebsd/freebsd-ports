@@ -1,0 +1,5 @@
+ez_web is a tiny and designed for modify web framework. It provides concise
+fucntions, no complex candy. ez_web is working as a CGI or apache handler
+with mod_python.
+
+WWW:	https://opensvn.csie.org/traccgi/PumperWeb/wiki/ez_web

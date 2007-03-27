@@ -961,6 +961,7 @@
     SUBDIR += py-cssutils
     SUBDIR += py-django
     SUBDIR += py-django-devel
+    SUBDIR += py-ez_web
     SUBDIR += py-fcgi
     SUBDIR += py-flup
     SUBDIR += py-forgethtml
