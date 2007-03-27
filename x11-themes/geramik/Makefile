@@ -22,5 +22,6 @@ WRKSRC=		${WRKDIR}/Geramik-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GNOME=	gtk20
 
 .include <bsd.port.mk>
