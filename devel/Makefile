@@ -1906,6 +1906,7 @@
     SUBDIR += qt4-uic
     SUBDIR += qt4-uic3
     SUBDIR += qsa
+    SUBDIR += qscintilla2
     SUBDIR += qssl
     SUBDIR += quilt
     SUBDIR += radrails
