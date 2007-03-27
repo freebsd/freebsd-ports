@@ -1860,6 +1860,7 @@
     SUBDIR += py-simpy
     SUBDIR += py-sip
     SUBDIR += py-spark
+    SUBDIR += py-sqlcc
     SUBDIR += py-statgrab
     SUBDIR += py-tables
     SUBDIR += py-testgears
