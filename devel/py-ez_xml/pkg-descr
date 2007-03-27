@@ -1,0 +1,6 @@
+ez_xml is a XML template generator that compiles a XML template file into a
+Python module. Programmers feed data to a template module to generate a
+respective XML document. ez_xml provides concise functions, no complex
+flow-control instructions.
+
+WWW:	https://opensvn.csie.org/traccgi/PumperWeb/wiki/ez_xml
