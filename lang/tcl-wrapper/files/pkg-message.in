@@ -1,0 +1,7 @@
+*******************************************************************
+You may wish to modify (or create) the configuration file:
+%%TX_CONF_FULL%%
+
+Sample configuration file is located at:
+%%TX_CONF_FULL%%.sample
+*******************************************************************
