@@ -5,13 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	sip
-PORTVERSION=	4.5.2
+PORTVERSION=	20070310
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/sip4/ \
+MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/Snapshots/sip4/ \
 		http://freebsd.ricin.com/ports/distfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	miwi
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	sip-snapshot-${PORTVERSION}
 
 MAINTAINER=	danny@ricin.com
 COMMENT=	Python to C and C++ bindings generator
