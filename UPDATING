@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070327:
+  AFFECTS: users of devel/py-sip and x11-toolkits/py-qt
+  AUTHOR: miwi@FreeBSD.org
+
+  py-sip and py-qt has been updated to the latest snapshot. Please update
+  py-sip *before* updating py-qt and/or installing py-qt4-*. The full changelog
+  can be found at http://people.freebsd.org/~miwi/py-qt4.txt
+
 20070325:
   AFFECTS: users of www/drupal and drupal-*
   AUTHOR: rafan@FreeBSD.org
