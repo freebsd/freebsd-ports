@@ -16,7 +16,7 @@ DISTNAME=	3952-Geramik-${PORTVERSION}
 MAINTAINER=	haesu@TowardEX.com
 COMMENT=	A Keramik KDE styled theme for GTK
 
-RUN_DEPENDS=	${LOCALBASE}/lib/gtk/themes/engines/libqtpixmap.so:${PORTSDIR}/x11-toolkits/qtpixmap
+RUN_DEPENDS=	${LOCALBASE}/lib/gtk-2.0/${GTK2_VERSION}/engines/libqtpixmap.so:${PORTSDIR}/x11-toolkits/qtpixmap
 
 WRKSRC=		${WRKDIR}/Geramik-${PORTVERSION}
 
