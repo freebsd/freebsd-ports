@@ -22,18 +22,10 @@ USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GL=		yes
 USE_GNOME=	gtk12
-
 GNU_CONFIGURE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" \
-		${WRKSRC}/configure ${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e "s|<stdint.h>|<inttypes.h>|g" \
-		${WRKSRC}/src/dynam.c ${WRKSRC}/src/glstuff.c \
-		${WRKSRC}/src/gui.c ${WRKSRC}/src/plugin.c \
-		${WRKSRC}/src/presets.c ${WRKSRC}/src/scivi.c \
-		${WRKSRC}/src/utilx.c ${WRKSRC}/src/utilf.c \
-		${WRKSRC}/src/utilsnd.c
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
