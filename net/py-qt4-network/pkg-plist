@@ -1,0 +1,19 @@
+%%PYTHON_SITELIBDIR%%/PyQt4/QtNetwork.so
+%%SIPFILES%%%%SIPDIR%%/QtNetwork/QtNetworkmod.sip
+%%SIPFILES%%%%SIPDIR%%/QtNetwork/qabstractsocket.sip
+%%SIPFILES%%%%SIPDIR%%/QtNetwork/qftp.sip
+%%SIPFILES%%%%SIPDIR%%/QtNetwork/qhostaddress.sip
+%%SIPFILES%%%%SIPDIR%%/QtNetwork/qhostinfo.sip
+%%SIPFILES%%%%SIPDIR%%/QtNetwork/qhttp.sip
+%%SIPFILES%%%%SIPDIR%%/QtNetwork/qnetworkinterface.sip
+%%SIPFILES%%%%SIPDIR%%/QtNetwork/qnetworkproxy.sip
+%%SIPFILES%%%%SIPDIR%%/QtNetwork/qtcpserver.sip
+%%SIPFILES%%%%SIPDIR%%/QtNetwork/qtcpsocket.sip
+%%SIPFILES%%%%SIPDIR%%/QtNetwork/qudpsocket.sip
+%%SIPFILES%%%%SIPDIR%%/QtNetwork/qurlinfo.sip
+%%SIPFILES%%@dirrm %%SIPDIR%%/QtNetwork
+@cwd %%LOCALBASE%%
+%%API%%%%APIFILE%%
+%%API%%@dirrmtry share/qt4/qsci/api/python
+%%API%%@dirrmtry share/qt4/qsci/api
+%%API%%@dirrmtry share/qt4/qsci
