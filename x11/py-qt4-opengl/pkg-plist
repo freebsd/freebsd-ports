@@ -1,0 +1,12 @@
+%%PYTHON_SITELIBDIR%%/PyQt4/QtOpenGL.so
+%%SIPFILES%%%%SIPDIR%%/QtOpenGL/QtOpenGLmod.sip
+%%SIPFILES%%%%SIPDIR%%/QtOpenGL/qgl.sip
+%%SIPFILES%%%%SIPDIR%%/QtOpenGL/qglcolormap.sip
+%%SIPFILES%%%%SIPDIR%%/QtOpenGL/qglframebufferobject.sip
+%%SIPFILES%%%%SIPDIR%%/QtOpenGL/qglpixelbuffer.sip
+%%SIPFILES%%@dirrm %%SIPDIR%%/QtOpenGL
+@cwd %%LOCALBASE%%
+%%API%%%%APIFILE%%
+%%API%%@dirrmtry share/qt4/qsci/api/python
+%%API%%@dirrmtry share/qt4/qsci/api
+%%API%%@dirrmtry share/qt4/qsci
