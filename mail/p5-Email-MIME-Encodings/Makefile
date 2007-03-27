@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Email-MIME-Encodings
-PORTVERSION=	1.310
+PORTVERSION=	1.311
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,16 +14,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	A unified interface to MIME encoding and decoding
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-MIME-Base64>3.05:${PORTSDIR}/converters/p5-MIME-Base64
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Email::MIME::Encodings.3
-
-post-patch:
-	${PERL} -pi -e '$$_="" if /use warnings/;' ${WRKSRC}/lib/Email/MIME/Encodings.pm
-test:
-	cd ${WRKSRC} ; make test
 
 .include <bsd.port.mk>
