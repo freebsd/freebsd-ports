@@ -1,6 +1,36 @@
---- setup.py.orig	Tue Feb 27 14:25:52 2007
-+++ setup.py	Tue Feb 27 14:26:23 2007
-@@ -18,14 +18,14 @@
+--- setup.py	Sat Mar 17 12:55:11 2007
++++ setup.py	Mon Mar 26 19:02:17 2007
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!%%PYTHON_CMD%%
+ from distutils.core import setup
+ from glob import glob
+ import sys
+@@ -6,23 +6,6 @@
+ if sys.hexversion < 0x020400f0:
+     sys.stderr.write("python version failed: current version = %s.%s, needed version >= 2.4\n" % (sys.version_info[0],sys.version_info[1]))
+     sys.exit(1)
+-try:
+-    import libxml2
+-except ImportError:
+-    sys.stderr.write("dependencies failed: python libxml2\n") 
+-    sys.exit(1)
+-try:
+-    import libxslt
+-except ImportError:
+-    sys.stderr.write("dependencies failed: python libxslt1\n") 
+-    sys.exit(1)
+-try:
+-    import gtk.glade
+-except ImportError:
+-    sys.stderr.write("dependencies failed: python glade\n") 
+-    sys.exit(1)
+-
+-
+ 
+ setup(name='loemu',
+       version='0.1.1',
+@@ -40,14 +23,14 @@
   * The generation of subsets of the gamelist is very fast.
  """,
        license='GNU GPL',

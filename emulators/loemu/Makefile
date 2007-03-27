@@ -46,5 +46,7 @@ post-patch:
 			's|/share/games/|/share/|g' -e \
 			's|/usr/bin/python|${PYTHON_CMD}|g' "{}" \;
 .endfor
+	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|g' \
+		${WRKSRC}/setup.py
 
 .include <bsd.port.post.mk>
