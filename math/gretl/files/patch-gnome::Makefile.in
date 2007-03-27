@@ -1,19 +1,21 @@
---- gnome/Makefile.in.orig	Tue Nov 22 03:45:16 2005
-+++ gnome/Makefile.in	Fri Jan  6 22:54:18 2006
-@@ -4,10 +4,10 @@
- docdir = $(topsrc)/doc
+--- gnome/Makefile.in.orig	Sat Dec 23 00:26:03 2006
++++ gnome/Makefile.in	Sun Mar 25 02:18:02 2007
+@@ -5,12 +5,10 @@
  
  INSTALL = @INSTALL@
+ prefix = @prefix@
 -gnome_prefix = @gnome_prefix@
 +datadir = @datadir@
  have_gnome = @have_gnome@
  
--sysconfdir = $(gnome_prefix)/etc
+-ifeq ($(gnome_prefix),NA)
+-  gnome_prefix = $(prefix)
+-endif
 +sysconfdir = @sysconfdir@
  
  GCONFTOOL = @GCONFTOOL@
  GCONF_SCHEMA_CONFIG_SOURCE = @GCONF_SCHEMA_CONFIG_SOURCE@
-@@ -23,10 +23,10 @@
+@@ -26,10 +24,10 @@
    schemadir = $(GCONF_SCHEMA_FILE_DIR)
  endif
  
