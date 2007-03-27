@@ -8,7 +8,7 @@
 # Please make sure all changes to this file are passed either through
 # the maintainer, or portmgr@FreeBSD.org
 
-Autotools_Include_MAINTAINER=	ade@FreeBSD.org
+Autotools_Include_MAINTAINER=	jylefort@FreeBSD.org
 
 #---------------------------------------------------------------------------
 # IMPORTANT!  READ ME!  YES, THAT MEANS YOU!
