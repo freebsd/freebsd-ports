@@ -303,6 +303,7 @@
     SUBDIR += py-probstat
     SUBDIR += py-scientific
     SUBDIR += qalculate
+    SUBDIR += qd
     SUBDIR += qgfe
     SUBDIR += qhull
     SUBDIR += qscanplot

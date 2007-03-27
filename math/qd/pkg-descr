@@ -1,0 +1,11 @@
+A Double-Double and Quad-Double Arithmetic library.
+Double-double and quad-double numbers are unevaluated sum of
+two and four IEEE doubles capable of representing 106 and 212 bits
+of significand, respectively. The library is written in C++, taking full
+advantage of operator overloading. C, Fortran 77, and Fortran 90 interfaces
+are also provided.
+
+This work was done at Lawrence Berkeley National Laboratory,
+NERSC Division, Yozo Hida with Xiaoye S. Li and David H. Bailey.
+
+WWW: http://www.cs.berkeley.edu/~yozo/
