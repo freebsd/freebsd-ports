@@ -1838,6 +1838,7 @@
     SUBDIR += py-pydasm
     SUBDIR += py-pytz
     SUBDIR += py-qt4-core
+    SUBDIR += py-qt4-dbus
     SUBDIR += py-rbtree
     SUBDIR += py-repl
     SUBDIR += py-resourcepackage
