@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=sather/Doc
 PKGNAMEPREFIX=	sather-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}.html
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A tutorial on the Sather programming language
 
 NO_BUILD=	yes

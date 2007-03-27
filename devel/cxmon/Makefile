@@ -10,7 +10,7 @@ PORTVERSION=	3.1
 CATEGORIES=	devel
 MASTER_SITES=	http://cxmon.cebix.net/downloads/
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Interactive file manipulation tool and disassembler
 
 GNU_CONFIGURE=	yes

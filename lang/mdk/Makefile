@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/v${PORTVERSION}/:gnu \
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:gnu \
 		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:sf
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A set of utilities for developing programs using MIX and MIXAL
 
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile \

@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.janestcapital.com/ocaml/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An OCaml library for working with S-expressions
 
 USE_GMAKE=	yes

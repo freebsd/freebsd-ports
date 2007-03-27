@@ -15,7 +15,7 @@ MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/\
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	ocaml-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Ocaml Object interface for ocaml's standard library modules
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml

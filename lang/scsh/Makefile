@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
 		ftp://ftp.scsh.net/pub/scsh/0.6/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A Unix shell embedded into Scheme, with access to all Posix calls
 
 CONFLICTS=	scheme48-[0-9]*

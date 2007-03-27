@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.ocaml-programming.de/packages/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Symmetric cryptographic algorithms package for OCaml
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

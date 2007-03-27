@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nsayer
 DISTNAME=	calctool-2.4pl13
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A multi-GUI (terminal, X, XView) calculator program
 
 USE_LDCONFIG=	yes

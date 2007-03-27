@@ -14,7 +14,7 @@ MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/ \
 PKGNAMEPREFIX=	ocaml-
 PKGNAMESUFFIX=	${SFXGL}${SFXGNOME}${SFXGLADE}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An Objective Caml interface to gtk+
 
 USE_GMAKE=	yes

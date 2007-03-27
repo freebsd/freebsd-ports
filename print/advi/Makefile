@@ -12,7 +12,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://caml.inria.fr/distrib/bazar-ocaml/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Active-DVI viewer
 
 BUILD_DEPENDS=	${CI_DEPEND}:${PORTSDIR}/graphics/ocaml-images \

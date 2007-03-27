@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/olabl/ \
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	lablgtk-${PORTVERSION}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An Objective Caml interface to GTK+ 2.x
 
 USE_GMAKE=	yes
