@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	webunit
-PORTVERSION=	1.3.8
+PORTVERSION=	1.3.9
 CATEGORIES=	www python
-MASTER_SITES=	http://mechanicalcat.net/tech/webunit/ \
+MASTER_SITES=	http://cheeseshop.python.org/packages/source/w/webunit/ \
+		http://mechanicalcat.net/tech/webunit/ \
 		http://funkload.nuxeo.org/3dparty/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
