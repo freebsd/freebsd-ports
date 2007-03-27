@@ -652,6 +652,7 @@
     SUBDIR += py-pcapy
     SUBDIR += py-pcs
     SUBDIR += py-pypcap
+    SUBDIR += py-qt4-network
     SUBDIR += py-radix
     SUBDIR += py-rrdpipe
     SUBDIR += py-rrdtool_lgpl
