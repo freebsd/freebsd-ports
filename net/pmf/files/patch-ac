@@ -18,7 +18,7 @@
  #define SYSTEM_NEWS_FILE                "NEWS"
  #define SYSTEM_HELP_DIR                 "helpfiles"
  #define SYSTEM_SOUND_DIR                "soundfiles"
-@@ -63,7 +65,9 @@
+@@ -63,14 +65,20 @@
  #define X_OUTPUT_PROGRAM	"cat"
  
  /* What system? Define one either BSD or SYSV:*/
@@ -28,7 +28,8 @@
  /* #define SYSV */
  
  /* What ioctl do we use for the ttys? */
-@@ -71,6 +75,10 @@
+-#ifdef BSD
++#if defined(BSD) && !defined(__FreeBSD__)
  #  define USE_TIOCGETP
  #else
  #  define USE_TCGETA

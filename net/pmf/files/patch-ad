@@ -1,7 +1,10 @@
 --- main.c.orig	Sun Sep 22 12:13:43 1991
 +++ main.c	Fri Feb 11 04:14:00 2000
-@@ -15,6 +15,7 @@
- #include <sgtty.h>
+@@ -12,9 +12,9 @@
+ #include <stdio.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+-#include <sgtty.h>
  #include <signal.h>
  #include <setjmp.h>
 +#include <sys/param.h>
