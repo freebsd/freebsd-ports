@@ -42,9 +42,9 @@
 %%PORTDOCS%%@dirrmtry %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrmtry %%RUBY_MODDOCDIR%%
 %%PORTDOCS%%@dirrmtry %%RUBY_DOCDIR%%
-@dirrmtry %%RUBY_SITELIBDIR%%/rss/maker
-@dirrmtry %%RUBY_SITELIBDIR%%/rss/dublincore
-@dirrmtry %%RUBY_SITELIBDIR%%/rss
+@dirrm %%RUBY_SITELIBDIR%%/rss/maker
+@dirrm %%RUBY_SITELIBDIR%%/rss/dublincore
+@dirrm %%RUBY_SITELIBDIR%%/rss
 @dirrmtry %%RUBY_SITELIBDIR%%
 @dirrmtry lib/ruby/site_ruby
 @dirrmtry lib/ruby
