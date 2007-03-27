@@ -1,0 +1,17 @@
+--- configure.orig	Thu Jun 14 18:41:51 2001
++++ configure	Tue Mar 27 17:56:32 2007
+@@ -1397,14 +1397,8 @@
+     if test "$use_sharedlib" != no
+     then
+       sharedlib=fbsd
+-      if test -x /usr/bin/objformat
+-      then
+-	if test x`/usr/bin/objformat` = xelf
+-	then
+ 	  sharedlib=gnuelf
+ 	  make_mhconfig='CFLAGS="-O -DMHSLIB_NOMINVER"'
+-	fi
+-      fi
+       echo __ELF__ | $CC -E - | grep -q __ELF__ || sharedlib=gnuelf
+       slflags="-fpic"
+       slibdir=$libdir

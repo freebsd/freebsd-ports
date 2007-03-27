@@ -23,4 +23,7 @@ USE_GMAKE=	yes
 
 ONLY_FOR_ARCHS=	amd64 i386
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/ltconfig
+
 .include <bsd.port.mk>

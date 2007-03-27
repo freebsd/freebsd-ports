@@ -8,7 +8,7 @@
 
 PORTNAME=	ppl
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.unipr.it/pub/ppl/releases/%SUBDIR%/ \
 		http://www.cs.unipr.it/ppl/Download/ftp/releases/%SUBDIR%/
@@ -21,7 +21,8 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
+LIBTOOLFILES=	configure Watchdog/configure
 CONFIGURE_ARGS=	--disable-debugging \
 		--enable-optimization \
 		--with-cflags="${CFLAGS}" \
@@ -31,11 +32,4 @@ CONFIGURE_ARGS=	--disable-debugging \
 USE_LDCONFIG=	yes
 PORTDOCS=	*
 
-.include <bsd.port.pre.mk>
-
-# ppl needs gcc > 3.1, with libgmp4 compiled with the same gcc version
-.if ${OSVERSION} < 500035
-IGNORE=		"Does not build with older versions of FreeBSD"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -21,8 +21,8 @@ LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 
 USE_BZIP2=		yes
 WRKSRC=			${WRKDIR}/${DISTNAME}/build.unix
-GNU_CONFIGURE=		yes
-INSTALLS_SHLIB=		yes
+USE_AUTOTOOLS=		libtool:15
+USE_LDCONFIG=		yes
 CONFIGURE_ARGS+=	--with-db3=${LOCALBASE}
 CONFIGURE_SCRIPT=	../dist/configure
 MAN1=			ex.1 vi.1 view.1

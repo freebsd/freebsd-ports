@@ -50,6 +50,9 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/${APACHE_PORT}
 EXTRA_PATCHES+=	${PATCHDIR}/RELENG_4-patch-htnet_SSLConnection.cc
 .endif
 
+post-patch:
+	@${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} -e 's|echo aout|echo elf|'
+
 pre-install:
 .if exists(${PREFIX}/etc/htdig/htdig.conf)
 	${MV} ${PREFIX}/etc/htdig/htdig.conf ${PREFIX}/etc/htdig/htdig.conf.old
