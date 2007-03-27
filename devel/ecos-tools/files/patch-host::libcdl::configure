@@ -1,7 +1,16 @@
 $FreeBSD$
 
---- ../ecos/host/libcdl/configure~	Wed Feb 12 18:22:31 2003
-+++ ../ecos/host/libcdl/configure	Sat Feb 21 19:13:54 2004
+--- ../ecos/host/libcdl/configure.orig	Wed Feb 12 18:22:31 2003
++++ ../ecos/host/libcdl/configure	Tue Mar 27 19:35:42 2007
+@@ -1534,7 +1534,7 @@
+ 
+         if test "${GCC}" = "yes" ; then
+         ecos_CFLAGS="${ecos_CFLAGS} -pipe -Wall -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs"
+-        ecos_CXXFLAGS="${ecos_CXXFLAGS} -pipe -Wall -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Woverloaded-virtual"
++        ecos_CXXFLAGS="${ecos_CXXFLAGS} -pipe -Wall -Wpointer-arith -Wcast-qual -Woverloaded-virtual"
+     elif test "${MSVC}" = "yes" ; then
+         ecos_CFLAGS="${ecos_CFLAGS} -nologo -W3"
+         ecos_CXXFLAGS="${ecos_CXXFLAGS} -nologo -W3 -GR -GX"
 @@ -1968,64 +1968,6 @@
  		{ echo "configure: error: ${tclconfig}/tclConfig.sh does not define TCL_LIB_SPEC" 1>&2; exit 1; }
  	    fi
