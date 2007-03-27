@@ -7,6 +7,17 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20070327:
+  AFFECTS: users of x11-wm/fluxbox
+  AUTHOR: mezz@FreeBSD.org
+
+  In 1.0rc3, they have changed ~/.fluxbox/startup from 755 to 644 that has
+  caused not possible to start up your Fluxbox if you remove ~/.fluxbox or
+  you are a first time user. The solution is to update your Fluxbox to
+  1.0rc3_1 and do this:
+
+  	chmod 755 ~/.fluxbox/startup
+
+20070327:
   AFFECTS: users of lang/tcl-tk-wrapper, lang/tcl*, x11-toolkits/tk*
   AUTHOR: martin@matuska.org
 
@@ -14,7 +25,6 @@ upgrades.
   x11-toolkits/tk-wrapper ports. The Tcl and Tk ports no longer include an
   option to install the wrapper - the wrapper ports require a Tcl/Tk instead.
   The new configuration files in local etc are named: tclsh.conf wish.conf
-
 
 20070327:
   AFFECTS: users of devel/py-sip and x11-toolkits/py-qt
