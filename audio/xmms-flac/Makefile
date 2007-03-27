@@ -20,7 +20,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		FLAC.7:${PORTSDIR}/audio/flac
 
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}" \
 		--with-ogg="${LOCALBASE}" \
 		--with-xmms-prefix="${X11BASE}"
@@ -33,6 +33,6 @@ post-configure:
 
 # XXX
 post-install:
-	@${RM} ${PREFIX}/lib/xmms/Input/libxmms-flac.la
+	${RM} ${PREFIX}/lib/xmms/Input/libxmms-flac.la
 
 .include <bsd.port.mk>

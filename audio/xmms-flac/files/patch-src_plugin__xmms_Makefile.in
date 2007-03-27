@@ -13,6 +13,15 @@ $FreeBSD$
  am__objects_1 = charset.lo configure.lo fileinfo.lo http.lo plugin.lo \
  	tag.lo
  am_libxmms_flac_la_OBJECTS = $(am__objects_1)
+@@ -189,7 +188,7 @@
+ LIBS = @LIBS@
+ 
+ # Don't build a static library
+-LIBTOOL = $(top_builddir)/libtool-disable-static
++LIBTOOL = @LIBTOOL@ --tag=disable-static
+ LN_S = @LN_S@
+ LTLIBICONV = @LTLIBICONV@
+ LTLIBOBJS = @LTLIBOBJS@
 @@ -296,8 +295,7 @@
  	$(top_builddir)/src/share/replaygain_analysis/libreplaygain_analysis.la \
  	$(top_builddir)/src/share/replaygain_synthesis/libreplaygain_synthesis.la \
