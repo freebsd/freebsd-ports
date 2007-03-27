@@ -7,7 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.3.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-toolkits tk83
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -35,14 +35,9 @@ NOPRECIOUSMAKEVARS=	Too many _MLINKS for README.html
 TCL83_PORT?=	lang/tcl83
 MANCOMPRESSED=	no
 
-OPTIONS=	TK83_MAN "Install tk 8.3 manpages" off \
-		WISH_WRAPPER "Require wish wrapper from ports" off
+OPTIONS=	TK83_MAN "Install tk 8.3 manpages" off
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_WISH_WRAPPER)
-RUN_DEPENDS+=		wish:${PORTSDIR}/lang/tcl-tk-wrapper
-.endif
 
 .if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK83_MAN)
 

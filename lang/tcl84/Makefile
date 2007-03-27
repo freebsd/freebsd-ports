@@ -7,7 +7,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.4.14
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	lang tcl84
 MASTER_SITES=	SF
@@ -32,8 +32,7 @@ PLIST_SUB=	TCL_VER="${TCL_VER}" SHORT_TCL_VER="${SHORT_TCL_VER}"
 EXTRACT_AFTER_ARGS=|${TAR} -xpf - --exclude compat/
 
 .if !defined(BUILDING_TCL_THREADS)
-OPTIONS=	TCL84_MAN "Install tcl 8.4 manpages" on \
-		TCLSH_WRAPPER "Require tclsh wrapper from ports" off
+OPTIONS=	TCL84_MAN "Install tcl 8.4 manpages" on
 .else
 USE_TCL=	${SHORT_TCL_VER}
 PLIST=		${PKGDIR}/pkg-plist.threads
@@ -47,10 +46,6 @@ CONFIGURE_ARGS+=	--enable-threads
 CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 .else
 CONFIGURE_ARGS+=	--disable-threads
-
-.if defined(WITH_TCLSH_WRAPPER)
-RUN_DEPENDS+=		tclsh:${PORTSDIR}/lang/tcl-tk-wrapper
-.endif
 
 .if defined(NO_INSTALL_MANPAGES) || defined(WITHOUT_TCL84_MAN)
 

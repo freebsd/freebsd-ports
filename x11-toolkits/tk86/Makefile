@@ -7,7 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.5.a.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -37,8 +37,7 @@ SUB_FILES=	pkgIndex.tcl
 USE_TCL=	${SHORT_TK_VER}
 USE_TCL_BUILD=	${SHORT_TK_VER}
 
-OPTIONS=	TK85_MAN "Install tk 8.5 manpages" off \
-		WISH_WRAPPER "Require wish wrapper from ports" off
+OPTIONS=	TK85_MAN "Install tk 8.5 manpages" off
 .else
 USE_TK=		${SHORT_TK_VER}
 PLIST=		${PKGDIR}/pkg-plist.threads
@@ -58,10 +57,6 @@ LATEST_LINK=		tk85${THREADS_SUFFIX}
 .else
 CONFIGURE_ARGS+=	--disable-threads --with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
 			ac_cv_path_tclsh="${TCLSH}"
-
-.if defined(WITH_WISH_WRAPPER)
-RUN_DEPENDS+=		wish:${PORTSDIR}/lang/tcl-tk-wrapper
-.endif
 
 .if defined(NO_INSTALL_MANPAGES) || !defined(WITH_TK84_MAN)
 

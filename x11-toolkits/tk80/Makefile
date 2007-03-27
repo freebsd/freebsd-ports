@@ -7,7 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits tk80
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_0
@@ -33,14 +33,9 @@ SHLIB_MINOR=	4
 MAKEFILE=	makefile
 TK_LIB=		libtk80.so
 
-OPTIONS=	TK80_MAN "Install tk 8.0 manpages" off \
-		WISH_WRAPPER "Require wish wrapper from ports" off
+OPTIONS=	TK80_MAN "Install tk 8.0 manpages" off
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_WISH_WRAPPER)
-RUN_DEPENDS+=		wish:${PORTSDIR}/lang/tcl-tk-wrapper
-.endif
 
 .if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK80_MAN)
 
