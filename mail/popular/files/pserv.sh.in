@@ -9,8 +9,8 @@
 # KEYWORD: shutdown
 
 # /etc/rc.conf lines:
-# pserv="YES"   # enable pserv
-# pserv="pop"   # user for pserv
+# pserv_enable="YES"   # enable pserv
+# pserv_user="pop"   # user for pserv
 
 . %%RC_SUBR%%
 
@@ -19,8 +19,8 @@ rcvar=`set_rcvar`
 
 load_rc_config $name
 
-: ${pserv="NO"}
-: ${pserv="pop"}
+: ${pserv_enable="NO"}
+: ${pserv_user="pop"}
 
 command="%%PREFIX%%/sbin/pserv"
 start_precmd="${name}_prestart"
@@ -31,16 +31,16 @@ reload_cmd="${name}_configure"
 pproxy_prestart()
 {
 	mkdir -p /var/log/popular
-	chown ${pproxy_user} /var/log/popular
+	chown ${pserv_user} /var/log/popular
 	mkdir -p /var/run/popular
-	chown ${pproxy_user} /var/run/popular
+	chown ${pserv_user} /var/run/popular
 }
 
 pproxy_configure()
 {
 	if [ -f %%PREFIX%%/etc/popular/pserv.rc ]; then
 		sleep 1;
-		su -m ${pproxy_user} -c "%%PREFIX%%/bin/pcontrol --program=pserv %%PREFIX%%/etc/popular/pserv.rc"
+		su -m ${pserv_user} -c "%%PREFIX%%/bin/pcontrol --program=pserv %%PREFIX%%/etc/popular/pserv.rc"
 	fi
 }
 

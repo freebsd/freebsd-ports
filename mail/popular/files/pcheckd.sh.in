@@ -9,8 +9,8 @@
 # KEYWORD: shutdown
 
 # /etc/rc.conf lines:
-# pcheckd="YES"   # enable pcheckd
-# pcheckd="pop"   # user for pcheckd
+# pcheckd_enable="YES"   # enable pcheckd
+# pcheckd_user="pop"   # user for pcheckd
 
 . %%RC_SUBR%%
 
@@ -19,8 +19,8 @@ rcvar=`set_rcvar`
 
 load_rc_config $name
 
-: ${pcheckd="NO"}
-: ${pcheckd="pop"}
+: ${pcheckd_enable="NO"}
+: ${pcheckd_user="pop"}
 
 command="%%PREFIX%%/sbin/pcheckd"
 start_precmd="${name}_prestart"
@@ -29,9 +29,9 @@ extra_commands="reload"
 pproxy_prestart()
 {
 	mkdir -p /var/log/popular
-	chown ${pproxy_user} /var/log/popular
+	chown ${pcheckd_user} /var/log/popular
 	mkdir -p /var/run/popular
-	chown ${pproxy_user} /var/run/popular
+	chown ${pcheckd_user} /var/run/popular
 }
 
 run_rc_command "$1"

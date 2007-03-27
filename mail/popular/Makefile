@@ -7,7 +7,7 @@
 
 PORTNAME=	popular
 PORTVERSION=	1.5.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.remote.org/jochen/mail/popular/download/
 
