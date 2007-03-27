@@ -188,6 +188,7 @@
     SUBDIR += gkrellmvolume2
     SUBDIR += glame
     SUBDIR += glurp
+    SUBDIR += gmidimonitor
     SUBDIR += gmixer
     SUBDIR += gmpc
     SUBDIR += gmpccaa
