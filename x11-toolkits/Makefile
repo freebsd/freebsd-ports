@@ -190,6 +190,7 @@
     SUBDIR += py-kiwi
     SUBDIR += py-pyxfce
     SUBDIR += py-qt
+    SUBDIR += py-qt4-gui
     SUBDIR += py-sexy
     SUBDIR += py-tkinter
     SUBDIR += py-tktreectrl
