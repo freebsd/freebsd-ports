@@ -8,7 +8,8 @@
 PORTNAME=	net6
 PORTVERSION=	1.3.3
 CATEGORIES=	net devel
-MASTER_SITES=	http://releases.0x539.de/net6/
+MASTER_SITES=	http://releases.0x539.de/net6/ \
+		http://www.atarininja.org/~wxs/distfiles/
 
 MAINTAINER=	wxs@atarininja.org
 COMMENT=	Network access framework for IPv4/IPv6

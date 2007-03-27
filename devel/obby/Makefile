@@ -8,7 +8,8 @@
 PORTNAME=	obby
 PORTVERSION=	0.4.3
 CATEGORIES=	devel
-MASTER_SITES=	http://releases.0x539.de/obby/
+MASTER_SITES=	http://releases.0x539.de/obby/ \
+		http://www.atarininja.org/~wxs/distfiles/
 
 MAINTAINER=	wxs@atarininja.org
 COMMENT=	A library for synced document buffers
