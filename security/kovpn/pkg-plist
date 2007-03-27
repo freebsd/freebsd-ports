@@ -1,4 +1,5 @@
 bin/kovpn
+bin/kovpnsetup
 share/doc/HTML/en/kovpn/common
 share/doc/HTML/en/kovpn/index.docbook
 share/doc/HTML/en/kovpn/index.cache.bz2
@@ -17,7 +18,7 @@ share/applnk/Utilities/kovpn.desktop
 @dirrm share/doc/HTML/en/kovpn
 @dirrm share/apps/kovpn/pics
 @dirrm share/apps/kovpn
+@dirrm %%PORTDOCS%%%%DOCSDIR%%
 @dirrmtry share/icons/hicolor/16x16/apps
 @dirrmtry share/icons/hicolor/32x32/apps
 @dirrmtry share/applnk/Utilities
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

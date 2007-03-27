@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	kovpn
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	security kde
 MASTER_SITES=	http://home.bawue.de/~lighter/www.enlighter.de/files/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}_pre6
 
 MAINTAINER=	anderson@cnpm.embrapa.br
 COMMENT=	A simple GUI for OpenVPN clients
 
 RUN_DEPENDS=	openvpn:${PORTSDIR}/security/openvpn
 
-WRKSRC=		${WRKDIR}/kovpn
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
