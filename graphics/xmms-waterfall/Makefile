@@ -26,5 +26,6 @@ PLIST_FILES=	lib/xmms/Visualization/libwaterfall.la \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2|${CFLAGS}|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/ltconfig
 
 .include <bsd.port.mk>
