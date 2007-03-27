@@ -9431,6 +9431,7 @@ p5-Gantry	ports/www/p5-Gantry
 p5-Gateway	ports/news/p5-Gateway
 p5-GdkImlib	ports/x11-toolkits/p5-GdkImlib
 p5-GdkPixbuf	ports/x11-toolkits/p5-GdkPixbuf
+p5-Gearman	ports/devel/p5-Gearman
 p5-Genezzo	ports/databases/p5-Genezzo
 p5-Geo-Cache	ports/misc/p5-Geo-Cache
 p5-Geo-Caching	ports/www/p5-Geo-Caching
