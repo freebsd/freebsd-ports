@@ -7,7 +7,7 @@
 
 PORTNAME=	sipxpbx
 PORTVERSION=	3.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.sipfoundry.org/pub/sipX/3.6/SRC/
 
@@ -64,7 +64,10 @@ CONFIGURE_ARGS+=	--enable-sip-tls \
 		--with-mod_cplusplus=${PREFIX}/${APACHEINCLUDEDIR}
 SUB_LIST=	LOCALSTATEDIR=${LOCALSTATEDIR} \
 		PREFIX=${PREFIX} \
-		DESTDIR=${DESTDIR}
+		DESTDIR=${DESTDIR} \
+		APACHEMODDIR=${APACHEMODDIR} \
+		APACHE_VERSION=${APACHE_VERSION}
+
 SUB_FILES=	pkg-deinstall sipxpbx pkg-message pkg-install
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGINSTALL=	${WRKDIR}/pkg-install
@@ -89,21 +92,7 @@ pre-install:
 	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 
 post-install:
-	# fix up permission on sipX directories under /var
-	${MKDIR} ${LOCALSTATEDIR}/log/sipxpbx
-	${MKDIR} ${LOCALSTATEDIR}/run/sipxpbx
-	${CHOWN} -R sipx:sipx ${LOCALSTATEDIR}/log/sipxpbx
-	${CHOWN} -R sipx:sipx ${LOCALSTATEDIR}/run/sipxpbx
-	${CHOWN} -R sipx:sipx ${LOCALSTATEDIR}/sipxdata
-	${CHOWN} -R sipx:sipx ${PREFIX}/etc/sipxpbx
-	${CHOWN} -R sipx:sipx ${PREFIX}/www/sipX
 	@${CAT} ${PKGMESSAGE}
-	@if [ ! -f ${PREFIX}/${APACHEMODDIR}/mod_ssl.so ] ; then \
-		${ECHO} "!!!!!!!!!!" ; \
-		${ECHO} "You have installed www/apache${APACHE_VERSION} without the SSL module." ; \
-		${ECHO} "sipXpbx requires the apache SSL module." ; \
-		${ECHO} "Please rebuild and reinstall www/apache${APACHE_VERSION} with -DWITH_SSL_MODULES" ; \
-		${ECHO} "!!!!!!!!!!" ; \
-	fi
+	@${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>

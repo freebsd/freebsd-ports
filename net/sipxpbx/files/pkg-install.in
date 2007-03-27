@@ -2,11 +2,11 @@
 
 PATH=/bin:/usr/sbin
 
+USER=sipx
+GROUP=sipx
+
 case $2 in
 PRE-INSTALL)
-	USER=sipx
-	GROUP=sipx
-
 	if pw group show "${GROUP}" 2> /dev/null ; then
 		echo "You already have a group \"${GROUP}\", so I will use it."
 	else
@@ -28,6 +28,23 @@ PRE-INSTALL)
 			echo "Add of user \"${USER}\" failed."
 			exit 1
 		fi
+	fi
+	;;
+POST-INSTALL)
+	# fix up permission on sipX directories under /var
+	mkdir -p %%LOCALSTATEDIR%%/log/sipxpbx
+	mkdir -p %%LOCALSTATEDIR%%/run/sipxpbx
+	chown ${USER}:${GROUP} %%LOCALSTATEDIR%%/log/sipxpbx
+	chown ${USER}:${GROUP} %%LOCALSTATEDIR%%/run/sipxpbx
+	chown -R ${USER}:${GROUP} %%LOCALSTATEDIR%%/sipxdata
+	chown ${USER}:${GROUP} %%PREFIX%%/etc/sipxpbx
+	chown -R ${USER}:${GROUP} %%PREFIX%%/www/sipX
+	if [ ! -f %%PREFIX%%/%%APACHEMODDIR%%/mod_ssl.so ] ; then \
+		echo "!!!!!!!!!!" ; \
+		echo "You have installed www/apache%%APACHE_VERSION%% without the SSL module." ; \
+		echo "sipXpbx requires the apache SSL module." ; \
+		echo "Please rebuild and reinstall www/apache%%APACHE_VERSION%% with -DWITH_SSL_MODULES" ; \
+		echo "!!!!!!!!!!" ; \
 	fi
 	;;
 esac
