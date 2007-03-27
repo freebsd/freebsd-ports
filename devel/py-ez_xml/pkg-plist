@@ -1,0 +1,11 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/ez_xml/__init__.py
+%%PYTHON_SITELIBDIR%%/ez_xml/compiler.py
+%%PYTHON_SITELIBDIR%%/ez_xml/tools.py
+%%PYTHON_SITELIBDIR%%/ez_xml/__init__.pyc
+%%PYTHON_SITELIBDIR%%/ez_xml/compiler.pyc
+%%PYTHON_SITELIBDIR%%/ez_xml/tools.pyc
+%%PYTHON_SITELIBDIR%%/ez_xml/__init__.pyo
+%%PYTHON_SITELIBDIR%%/ez_xml/compiler.pyo
+%%PYTHON_SITELIBDIR%%/ez_xml/tools.pyo
+@dirrmtry %%PYTHON_SITELIBDIR%%/ez_xml

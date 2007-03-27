@@ -1784,6 +1784,7 @@
     SUBDIR += py-elementtree
     SUBDIR += py-epsilon
     SUBDIR += py-event
+    SUBDIR += py-ez_xml
     SUBDIR += py-ezpyinline
     SUBDIR += py-fam
     SUBDIR += py-fileutils
