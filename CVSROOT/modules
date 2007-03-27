@@ -3579,6 +3579,7 @@ gmencoder	ports/multimedia/gmencoder
 gmessage	ports/x11/gmessage
 gmetadom	ports/textproc/gmetadom
 gmfsk		ports/comms/gmfsk
+gmidimonitor	ports/audio/gmidimonitor
 gmime		ports/mail/gmime
 gmime2		ports/mail/gmime2
 gmime2-sharp	ports/mail/gmime2-sharp
