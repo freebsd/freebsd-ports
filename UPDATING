@@ -7,6 +7,16 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20070327:
+  AFFECTS: users of lang/tcl-tk-wrapper, lang/tcl*, x11-toolkits/tk*
+  AUTHOR: martin@matuska.org
+
+  The lang/tcl-tk-wrapper port has been replaced by lang/tcl-wrapper and
+  x11-toolkits/tk-wrapper ports. The Tcl and Tk ports no longer include an
+  option to install the wrapper - the wrapper ports require a Tcl/Tk instead.
+  The new configuration files in local etc are named: tclsh.conf wish.conf
+
+
+20070327:
   AFFECTS: users of devel/py-sip and x11-toolkits/py-qt
   AUTHOR: miwi@FreeBSD.org
 
