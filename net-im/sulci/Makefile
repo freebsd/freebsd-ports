@@ -15,27 +15,28 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./-alpha-/}
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	A Jabber bot
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
-		${LOCALBASE}/lib/ocaml/cryptokit.cma:${PORTSDIR}/security/ocaml-cryptokit \
-		${OCAML_SITELIBDIR}/ulex/ulexing.a:${PORTSDIR}/devel/ocaml-ulex \
-		ocamlfind:${PORTSDIR}/devel/ocaml-findlib \
-		${OCAML_SITELIBDIR}/netstring/netstring.a:${PORTSDIR}/www/ocaml-net \
-		${OCAML_SITELIBDIR}/netclient/netclient.a:${PORTSDIR}/net/ocaml-netclient \
-		${OCAML_SITELIBDIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
+BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/cryptokit.cma:${PORTSDIR}/security/ocaml-cryptokit \
+		${LOCALBASE}/${OCAML_SITELIBDIR}/ulex/ulexing.a:${PORTSDIR}/devel/ocaml-ulex \
+		${LOCALBASE}/${OCAML_SITELIBDIR}/netstring/netstring.a:${PORTSDIR}/www/ocaml-net \
+		${LOCALBASE}/${OCAML_SITELIBDIR}/netclient/netclient.a:${PORTSDIR}/net/ocaml-netclient \
+		${LOCALBASE}/${OCAML_SITELIBDIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre
 LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite2 \
 		pcre.0:${PORTSDIR}/devel/pcre
-RUN_DEPENDS=	${OCAML_SITELIBDIR}/netstring/netstring.a:${PORTSDIR}/www/ocaml-net \
+RUN_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/netstring/netstring.a:${PORTSDIR}/www/ocaml-net \
 		mueller:${PORTSDIR}/russian/mueller-dic
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_OCAML=	yes
+NO_OCAML_RUNDEPENDS=	yes
+USE_OCAML_FINDLIB=	yes
 USE_RC_SUBR=	${PORTNAME}.sh
 
 ALL_TARGET=	subdirs
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
-OCAML_SITELIBDIR=	${LOCALBASE}/lib/ocaml/site-lib
+OPTIONS=	MUC_LOG "with muc_log plugin" on
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}/${PORTNAME} ${PREFIX}/sbin
@@ -70,4 +71,11 @@ do-install:
 post-install:
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/lang/ocaml/bsd.ocaml.mk"
+
+.if defined(WITHOUT_MUC_LOG)
+EXTRA_PATCHES+=	${FILESDIR}/without-muc-log.patch
+.endif
+
+.include <bsd.port.post.mk>

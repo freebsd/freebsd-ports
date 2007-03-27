@@ -1,0 +1,21 @@
+--- sulci/Makefile.orig	Tue Feb 21 16:05:07 2006
++++ sulci/Makefile	Wed Apr 26 18:11:29 2006
+@@ -5,7 +5,7 @@
+ include Makefile.conf
+ 
+ SOURCES = version.ml config.ml logger.ml common.ml types.ml lang.ml muc.ml \
+-	  find_url.ml muc_log.ml hooks.ml iq.ml http_suck.ml
++	  find_url.ml hooks.ml iq.ml http_suck.ml
+ 
+ SUBDIRS = lang
+ 
+--- sulci/hooks.ml.orig	Sat Feb  4 20:00:48 2006
++++ sulci/hooks.ml	Wed Apr 26 18:10:59 2006
+@@ -167,7 +167,6 @@
+    in
+       (try
+ 	  let event = get_event () in
+-	     Muc_log.process_log event from xml;
+ 	     List.iter (fun proc -> proc event from xml out) !filters;
+ 	     (match event with
+ 		 | Iq _ ->
