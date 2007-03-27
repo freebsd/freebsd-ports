@@ -12927,6 +12927,7 @@ qcl		ports/science/qcl
 qcomicbook	ports/graphics/qcomicbook
 qconfirm	ports/mail/qconfirm
 qcread		ports/graphics/qcread
+qd		ports/math/qd
 qdbm		ports/databases/qdbm
 qdbm-java	ports/databases/qdbm-java
 qdbm-plus	ports/databases/qdbm-plus
