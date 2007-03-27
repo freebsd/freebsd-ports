@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scrubyt
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	tota@rtfm.jp
 COMMENT=	A powerful web scraping toolkit written in Ruby
 
-#BUILD_DEPENDS=	rubygem-mechanize>=0.6.3:${PORTSDIR}/www/rubygem-mechanize
 RUN_DEPENDS=	rubygem-mechanize>=0.6.3:${PORTSDIR}/www/rubygem-mechanize
 
 .include <bsd.port.pre.mk>
