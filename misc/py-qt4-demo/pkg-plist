@@ -1,0 +1,554 @@
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/activeqt/README
+%%EXAMPLESDIR%%/activeqt/webbrowser/icons/image0.xpm
+%%EXAMPLESDIR%%/activeqt/webbrowser/icons/image1.xpm
+%%EXAMPLESDIR%%/activeqt/webbrowser/icons/image2.xpm
+%%EXAMPLESDIR%%/activeqt/webbrowser/icons/image3.xpm
+%%EXAMPLESDIR%%/activeqt/webbrowser/icons/image4.xpm
+%%EXAMPLESDIR%%/activeqt/webbrowser/icons/image5.xpm
+%%EXAMPLESDIR%%/activeqt/webbrowser/icons/image6.xpm
+%%EXAMPLESDIR%%/activeqt/webbrowser/mainwindow.qrc
+%%EXAMPLESDIR%%/activeqt/webbrowser/mainwindow.ui
+%%EXAMPLESDIR%%/activeqt/webbrowser/mainwindow_rc.py
+%%EXAMPLESDIR%%/activeqt/webbrowser/mainwindow_rc.pyc
+%%EXAMPLESDIR%%/activeqt/webbrowser/ui_mainwindow.py
+%%EXAMPLESDIR%%/activeqt/webbrowser/ui_mainwindow.pyc
+%%EXAMPLESDIR%%/activeqt/webbrowser/webbrowser.py
+%%EXAMPLESDIR%%/activeqt/webbrowser/webbrowser.pyc
+%%EXAMPLESDIR%%/designer/README
+%%EXAMPLESDIR%%/designer/calculatorform/calculatorform.py
+%%EXAMPLESDIR%%/designer/calculatorform/calculatorform.pyc
+%%EXAMPLESDIR%%/designer/calculatorform/calculatorform.ui
+%%EXAMPLESDIR%%/designer/calculatorform/ui_calculatorform.py
+%%EXAMPLESDIR%%/designer/calculatorform/ui_calculatorform.pyc
+%%EXAMPLESDIR%%/designer/plugins/plugins.py
+%%EXAMPLESDIR%%/designer/plugins/plugins.pyc
+%%EXAMPLESDIR%%/designer/plugins/python/analogclockplugin.py
+%%EXAMPLESDIR%%/designer/plugins/python/analogclockplugin.pyc
+%%EXAMPLESDIR%%/designer/plugins/python/bubbleswidgetplugin.py
+%%EXAMPLESDIR%%/designer/plugins/python/bubbleswidgetplugin.pyc
+%%EXAMPLESDIR%%/designer/plugins/python/counterlabelplugin.py
+%%EXAMPLESDIR%%/designer/plugins/python/counterlabelplugin.pyc
+%%EXAMPLESDIR%%/designer/plugins/python/helloglwidgetplugin.py
+%%EXAMPLESDIR%%/designer/plugins/python/helloglwidgetplugin.pyc
+%%EXAMPLESDIR%%/designer/plugins/python/highlightedtexteditplugin.py
+%%EXAMPLESDIR%%/designer/plugins/python/highlightedtexteditplugin.pyc
+%%EXAMPLESDIR%%/designer/plugins/python/polygonwidgetplugin.py
+%%EXAMPLESDIR%%/designer/plugins/python/polygonwidgetplugin.pyc
+%%EXAMPLESDIR%%/designer/plugins/python/pydemoplugin.py
+%%EXAMPLESDIR%%/designer/plugins/python/pydemoplugin.pyc
+%%EXAMPLESDIR%%/designer/plugins/python/pythonconsoleplugin.py
+%%EXAMPLESDIR%%/designer/plugins/python/pythonconsoleplugin.pyc
+%%EXAMPLESDIR%%/designer/plugins/widgets/analogclock.py
+%%EXAMPLESDIR%%/designer/plugins/widgets/analogclock.pyc
+%%EXAMPLESDIR%%/designer/plugins/widgets/bubbleswidget.py
+%%EXAMPLESDIR%%/designer/plugins/widgets/bubbleswidget.pyc
+%%EXAMPLESDIR%%/designer/plugins/widgets/counterlabel.py
+%%EXAMPLESDIR%%/designer/plugins/widgets/counterlabel.pyc
+%%EXAMPLESDIR%%/designer/plugins/widgets/helloglwidget.py
+%%EXAMPLESDIR%%/designer/plugins/widgets/helloglwidget.pyc
+%%EXAMPLESDIR%%/designer/plugins/widgets/highlightedtextedit.py
+%%EXAMPLESDIR%%/designer/plugins/widgets/highlightedtextedit.pyc
+%%EXAMPLESDIR%%/designer/plugins/widgets/polygonwidget.py
+%%EXAMPLESDIR%%/designer/plugins/widgets/polygonwidget.pyc
+%%EXAMPLESDIR%%/designer/plugins/widgets/pydemo.py
+%%EXAMPLESDIR%%/designer/plugins/widgets/pydemo.pyc
+%%EXAMPLESDIR%%/designer/plugins/widgets/pythonconsolewidget.py
+%%EXAMPLESDIR%%/designer/plugins/widgets/pythonconsolewidget.pyc
+%%EXAMPLESDIR%%/dialogs/README
+%%EXAMPLESDIR%%/dialogs/complexwizard.py
+%%EXAMPLESDIR%%/dialogs/complexwizard.pyc
+%%EXAMPLESDIR%%/dialogs/configdialog/configdialog.py
+%%EXAMPLESDIR%%/dialogs/configdialog/configdialog.pyc
+%%EXAMPLESDIR%%/dialogs/configdialog/configdialog.qrc
+%%EXAMPLESDIR%%/dialogs/configdialog/configdialog_rc.py
+%%EXAMPLESDIR%%/dialogs/configdialog/configdialog_rc.pyc
+%%EXAMPLESDIR%%/dialogs/configdialog/images/config.png
+%%EXAMPLESDIR%%/dialogs/configdialog/images/query.png
+%%EXAMPLESDIR%%/dialogs/configdialog/images/update.png
+%%EXAMPLESDIR%%/dialogs/extension.py
+%%EXAMPLESDIR%%/dialogs/extension.pyc
+%%EXAMPLESDIR%%/dialogs/findfiles.py
+%%EXAMPLESDIR%%/dialogs/findfiles.pyc
+%%EXAMPLESDIR%%/dialogs/simplewizard.py
+%%EXAMPLESDIR%%/dialogs/simplewizard.pyc
+%%EXAMPLESDIR%%/dialogs/standarddialogs.py
+%%EXAMPLESDIR%%/dialogs/standarddialogs.pyc
+%%EXAMPLESDIR%%/dialogs/tabdialog.py
+%%EXAMPLESDIR%%/dialogs/tabdialog.pyc
+%%EXAMPLESDIR%%/draganddrop/README
+%%EXAMPLESDIR%%/draganddrop/draggableicons/draggableicons.py
+%%EXAMPLESDIR%%/draganddrop/draggableicons/draggableicons.pyc
+%%EXAMPLESDIR%%/draganddrop/draggableicons/draggableicons.qrc
+%%EXAMPLESDIR%%/draganddrop/draggableicons/draggableicons_rc.py
+%%EXAMPLESDIR%%/draganddrop/draggableicons/draggableicons_rc.pyc
+%%EXAMPLESDIR%%/draganddrop/draggableicons/images/boat.png
+%%EXAMPLESDIR%%/draganddrop/draggableicons/images/car.png
+%%EXAMPLESDIR%%/draganddrop/draggableicons/images/house.png
+%%EXAMPLESDIR%%/draganddrop/draggabletext/draggabletext.py
+%%EXAMPLESDIR%%/draganddrop/draggabletext/draggabletext.pyc
+%%EXAMPLESDIR%%/draganddrop/draggabletext/draggabletext.qrc
+%%EXAMPLESDIR%%/draganddrop/draggabletext/draggabletext_rc.py
+%%EXAMPLESDIR%%/draganddrop/draggabletext/draggabletext_rc.pyc
+%%EXAMPLESDIR%%/draganddrop/draggabletext/words.txt
+%%EXAMPLESDIR%%/draganddrop/fridgemagnets/fridgemagnets.py
+%%EXAMPLESDIR%%/draganddrop/fridgemagnets/fridgemagnets.pyc
+%%EXAMPLESDIR%%/draganddrop/fridgemagnets/fridgemagnets.qrc
+%%EXAMPLESDIR%%/draganddrop/fridgemagnets/fridgemagnets_rc.py
+%%EXAMPLESDIR%%/draganddrop/fridgemagnets/fridgemagnets_rc.pyc
+%%EXAMPLESDIR%%/draganddrop/fridgemagnets/words.txt
+%%EXAMPLESDIR%%/draganddrop/puzzle/example.jpg
+%%EXAMPLESDIR%%/draganddrop/puzzle/puzzle.py
+%%EXAMPLESDIR%%/draganddrop/puzzle/puzzle.pyc
+%%EXAMPLESDIR%%/draganddrop/puzzle/puzzle.qrc
+%%EXAMPLESDIR%%/draganddrop/puzzle/puzzle_rc.py
+%%EXAMPLESDIR%%/draganddrop/puzzle/puzzle_rc.pyc
+%%EXAMPLESDIR%%/graphicsview/README
+%%EXAMPLESDIR%%/graphicsview/collidingmice/collidingmice.py
+%%EXAMPLESDIR%%/graphicsview/collidingmice/collidingmice.pyc
+%%EXAMPLESDIR%%/graphicsview/collidingmice/images/cheese.jpg
+%%EXAMPLESDIR%%/graphicsview/collidingmice/mice.qrc
+%%EXAMPLESDIR%%/graphicsview/collidingmice/mice_rc.py
+%%EXAMPLESDIR%%/graphicsview/collidingmice/mice_rc.pyc
+%%EXAMPLESDIR%%/graphicsview/elasticnodes.py
+%%EXAMPLESDIR%%/graphicsview/elasticnodes.pyc
+%%EXAMPLESDIR%%/itemviews/README
+%%EXAMPLESDIR%%/itemviews/chart/chart.py
+%%EXAMPLESDIR%%/itemviews/chart/chart.pyc
+%%EXAMPLESDIR%%/itemviews/chart/chart.qrc
+%%EXAMPLESDIR%%/itemviews/chart/chart_rc.py
+%%EXAMPLESDIR%%/itemviews/chart/chart_rc.pyc
+%%EXAMPLESDIR%%/itemviews/chart/mydata.cht
+%%EXAMPLESDIR%%/itemviews/chart/qtdata.cht
+%%EXAMPLESDIR%%/itemviews/dirview.py
+%%EXAMPLESDIR%%/itemviews/dirview.pyc
+%%EXAMPLESDIR%%/itemviews/pixelator/images/qt.png
+%%EXAMPLESDIR%%/itemviews/pixelator/images.qrc
+%%EXAMPLESDIR%%/itemviews/pixelator/pixelator.py
+%%EXAMPLESDIR%%/itemviews/pixelator/pixelator.pyc
+%%EXAMPLESDIR%%/itemviews/pixelator/pixelator_rc.py
+%%EXAMPLESDIR%%/itemviews/pixelator/pixelator_rc.pyc
+%%EXAMPLESDIR%%/itemviews/puzzle/example.jpg
+%%EXAMPLESDIR%%/itemviews/puzzle/puzzle.py
+%%EXAMPLESDIR%%/itemviews/puzzle/puzzle.pyc
+%%EXAMPLESDIR%%/itemviews/puzzle/puzzle.qrc
+%%EXAMPLESDIR%%/itemviews/puzzle/puzzle_rc.py
+%%EXAMPLESDIR%%/itemviews/puzzle/puzzle_rc.pyc
+%%EXAMPLESDIR%%/itemviews/simpledommodel.py
+%%EXAMPLESDIR%%/itemviews/simpledommodel.pyc
+%%EXAMPLESDIR%%/itemviews/simpletreemodel/default.txt
+%%EXAMPLESDIR%%/itemviews/simpletreemodel/simpletreemodel.py
+%%EXAMPLESDIR%%/itemviews/simpletreemodel/simpletreemodel.pyc
+%%EXAMPLESDIR%%/itemviews/simpletreemodel/simpletreemodel.qrc
+%%EXAMPLESDIR%%/itemviews/simpletreemodel/simpletreemodel_rc.py
+%%EXAMPLESDIR%%/itemviews/simpletreemodel/simpletreemodel_rc.pyc
+%%EXAMPLESDIR%%/itemviews/sortingmodel/default.txt
+%%EXAMPLESDIR%%/itemviews/sortingmodel/sortingmodel.py
+%%EXAMPLESDIR%%/itemviews/sortingmodel/sortingmodel.pyc
+%%EXAMPLESDIR%%/itemviews/sortingmodel/sortingmodel.qrc
+%%EXAMPLESDIR%%/itemviews/sortingmodel/sortingmodel_rc.py
+%%EXAMPLESDIR%%/itemviews/sortingmodel/sortingmodel_rc.pyc
+%%EXAMPLESDIR%%/itemviews/spinboxdelegate.py
+%%EXAMPLESDIR%%/itemviews/spinboxdelegate.pyc
+%%EXAMPLESDIR%%/layouts/README
+%%EXAMPLESDIR%%/layouts/basiclayout.py
+%%EXAMPLESDIR%%/layouts/basiclayout.pyc
+%%EXAMPLESDIR%%/layouts/borderlayout.py
+%%EXAMPLESDIR%%/layouts/borderlayout.pyc
+%%EXAMPLESDIR%%/layouts/flowlayout.py
+%%EXAMPLESDIR%%/layouts/flowlayout.pyc
+%%EXAMPLESDIR%%/mainwindows/README
+%%EXAMPLESDIR%%/mainwindows/application/application.py
+%%EXAMPLESDIR%%/mainwindows/application/application.pyc
+%%EXAMPLESDIR%%/mainwindows/application/application.qrc
+%%EXAMPLESDIR%%/mainwindows/application/application_rc.py
+%%EXAMPLESDIR%%/mainwindows/application/application_rc.pyc
+%%EXAMPLESDIR%%/mainwindows/application/images/copy.png
+%%EXAMPLESDIR%%/mainwindows/application/images/cut.png
+%%EXAMPLESDIR%%/mainwindows/application/images/new.png
+%%EXAMPLESDIR%%/mainwindows/application/images/open.png
+%%EXAMPLESDIR%%/mainwindows/application/images/paste.png
+%%EXAMPLESDIR%%/mainwindows/application/images/save.png
+%%EXAMPLESDIR%%/mainwindows/dockwidgets/dockwidgets.py
+%%EXAMPLESDIR%%/mainwindows/dockwidgets/dockwidgets.pyc
+%%EXAMPLESDIR%%/mainwindows/dockwidgets/dockwidgets.qrc
+%%EXAMPLESDIR%%/mainwindows/dockwidgets/dockwidgets_rc.py
+%%EXAMPLESDIR%%/mainwindows/dockwidgets/dockwidgets_rc.pyc
+%%EXAMPLESDIR%%/mainwindows/dockwidgets/images/new.png
+%%EXAMPLESDIR%%/mainwindows/dockwidgets/images/print.png
+%%EXAMPLESDIR%%/mainwindows/dockwidgets/images/save.png
+%%EXAMPLESDIR%%/mainwindows/dockwidgets/images/undo.png
+%%EXAMPLESDIR%%/mainwindows/mdi/images/copy.png
+%%EXAMPLESDIR%%/mainwindows/mdi/images/cut.png
+%%EXAMPLESDIR%%/mainwindows/mdi/images/new.png
+%%EXAMPLESDIR%%/mainwindows/mdi/images/open.png
+%%EXAMPLESDIR%%/mainwindows/mdi/images/paste.png
+%%EXAMPLESDIR%%/mainwindows/mdi/images/save.png
+%%EXAMPLESDIR%%/mainwindows/mdi/mdi.py
+%%EXAMPLESDIR%%/mainwindows/mdi/mdi.pyc
+%%EXAMPLESDIR%%/mainwindows/mdi/mdi.qrc
+%%EXAMPLESDIR%%/mainwindows/mdi/mdi_rc.py
+%%EXAMPLESDIR%%/mainwindows/mdi/mdi_rc.pyc
+%%EXAMPLESDIR%%/mainwindows/menus.py
+%%EXAMPLESDIR%%/mainwindows/menus.pyc
+%%EXAMPLESDIR%%/mainwindows/recentfiles.py
+%%EXAMPLESDIR%%/mainwindows/recentfiles.pyc
+%%EXAMPLESDIR%%/mainwindows/sdi/images/copy.png
+%%EXAMPLESDIR%%/mainwindows/sdi/images/cut.png
+%%EXAMPLESDIR%%/mainwindows/sdi/images/new.png
+%%EXAMPLESDIR%%/mainwindows/sdi/images/open.png
+%%EXAMPLESDIR%%/mainwindows/sdi/images/paste.png
+%%EXAMPLESDIR%%/mainwindows/sdi/images/save.png
+%%EXAMPLESDIR%%/mainwindows/sdi/sdi.py
+%%EXAMPLESDIR%%/mainwindows/sdi/sdi.pyc
+%%EXAMPLESDIR%%/mainwindows/sdi/sdi.qrc
+%%EXAMPLESDIR%%/mainwindows/sdi/sdi_rc.py
+%%EXAMPLESDIR%%/mainwindows/sdi/sdi_rc.pyc
+%%EXAMPLESDIR%%/network/README
+%%EXAMPLESDIR%%/network/blockingfortuneclient.py
+%%EXAMPLESDIR%%/network/blockingfortuneclient.pyc
+%%EXAMPLESDIR%%/network/broadcastreceiver.py
+%%EXAMPLESDIR%%/network/broadcastreceiver.pyc
+%%EXAMPLESDIR%%/network/broadcastsender.py
+%%EXAMPLESDIR%%/network/broadcastsender.pyc
+%%EXAMPLESDIR%%/network/fortuneclient.py
+%%EXAMPLESDIR%%/network/fortuneclient.pyc
+%%EXAMPLESDIR%%/network/fortuneserver.py
+%%EXAMPLESDIR%%/network/fortuneserver.pyc
+%%EXAMPLESDIR%%/network/ftp/ftp.py
+%%EXAMPLESDIR%%/network/ftp/ftp.pyc
+%%EXAMPLESDIR%%/network/ftp/ftp.qrc
+%%EXAMPLESDIR%%/network/ftp/ftp_rc.py
+%%EXAMPLESDIR%%/network/ftp/ftp_rc.pyc
+%%EXAMPLESDIR%%/network/ftp/images/cdtoparent.png
+%%EXAMPLESDIR%%/network/ftp/images/dir.png
+%%EXAMPLESDIR%%/network/ftp/images/file.png
+%%EXAMPLESDIR%%/network/http.py
+%%EXAMPLESDIR%%/network/http.pyc
+%%EXAMPLESDIR%%/network/loopback.py
+%%EXAMPLESDIR%%/network/loopback.pyc
+%%EXAMPLESDIR%%/network/threadedfortuneserver.py
+%%EXAMPLESDIR%%/network/threadedfortuneserver.pyc
+%%EXAMPLESDIR%%/opengl/2dpainting.py
+%%EXAMPLESDIR%%/opengl/2dpainting.pyc
+%%EXAMPLESDIR%%/opengl/README
+%%EXAMPLESDIR%%/opengl/grabber.py
+%%EXAMPLESDIR%%/opengl/grabber.pyc
+%%EXAMPLESDIR%%/opengl/hellogl.py
+%%EXAMPLESDIR%%/opengl/hellogl.pyc
+%%EXAMPLESDIR%%/opengl/overpainting.py
+%%EXAMPLESDIR%%/opengl/overpainting.pyc
+%%EXAMPLESDIR%%/opengl/samplebuffers.py
+%%EXAMPLESDIR%%/opengl/samplebuffers.pyc
+%%EXAMPLESDIR%%/opengl/textures/images/side1.png
+%%EXAMPLESDIR%%/opengl/textures/images/side2.png
+%%EXAMPLESDIR%%/opengl/textures/images/side3.png
+%%EXAMPLESDIR%%/opengl/textures/images/side4.png
+%%EXAMPLESDIR%%/opengl/textures/images/side5.png
+%%EXAMPLESDIR%%/opengl/textures/images/side6.png
+%%EXAMPLESDIR%%/opengl/textures/textures.py
+%%EXAMPLESDIR%%/opengl/textures/textures.pyc
+%%EXAMPLESDIR%%/opengl/textures/textures.qrc
+%%EXAMPLESDIR%%/opengl/textures/textures_rc.py
+%%EXAMPLESDIR%%/opengl/textures/textures_rc.pyc
+%%EXAMPLESDIR%%/painting/README
+%%EXAMPLESDIR%%/painting/basicdrawing/basicdrawing.py
+%%EXAMPLESDIR%%/painting/basicdrawing/basicdrawing.pyc
+%%EXAMPLESDIR%%/painting/basicdrawing/basicdrawing.qrc
+%%EXAMPLESDIR%%/painting/basicdrawing/basicdrawing_rc.py
+%%EXAMPLESDIR%%/painting/basicdrawing/basicdrawing_rc.pyc
+%%EXAMPLESDIR%%/painting/basicdrawing/images/brick.png
+%%EXAMPLESDIR%%/painting/basicdrawing/images/qt-logo.png
+%%EXAMPLESDIR%%/painting/concentriccircles.py
+%%EXAMPLESDIR%%/painting/concentriccircles.pyc
+%%EXAMPLESDIR%%/painting/painterpaths.py
+%%EXAMPLESDIR%%/painting/painterpaths.pyc
+%%EXAMPLESDIR%%/painting/svgviewer/files/cubic.svg
+%%EXAMPLESDIR%%/painting/svgviewer/files/spheres.svg
+%%EXAMPLESDIR%%/painting/svgviewer/svgviewer.py
+%%EXAMPLESDIR%%/painting/svgviewer/svgviewer.pyc
+%%EXAMPLESDIR%%/painting/svgviewer/svgviewer.qrc
+%%EXAMPLESDIR%%/painting/svgviewer/svgviewer_rc.py
+%%EXAMPLESDIR%%/painting/svgviewer/svgviewer_rc.pyc
+%%EXAMPLESDIR%%/painting/transformations.py
+%%EXAMPLESDIR%%/painting/transformations.pyc
+%%EXAMPLESDIR%%/pyuic/compile-on-the-fly.py
+%%EXAMPLESDIR%%/pyuic/compile-on-the-fly.pyc
+%%EXAMPLESDIR%%/pyuic/demo.ui
+%%EXAMPLESDIR%%/pyuic/load_ui1.py
+%%EXAMPLESDIR%%/pyuic/load_ui1.pyc
+%%EXAMPLESDIR%%/pyuic/load_ui2.py
+%%EXAMPLESDIR%%/pyuic/load_ui2.pyc
+%%EXAMPLESDIR%%/richtext/README
+%%EXAMPLESDIR%%/richtext/calendar.py
+%%EXAMPLESDIR%%/richtext/calendar.pyc
+%%EXAMPLESDIR%%/richtext/orderform.py
+%%EXAMPLESDIR%%/richtext/orderform.pyc
+%%EXAMPLESDIR%%/richtext/syntaxhighlighter/examples/example
+%%EXAMPLESDIR%%/richtext/syntaxhighlighter/syntaxhighlighter.py
+%%EXAMPLESDIR%%/richtext/syntaxhighlighter/syntaxhighlighter.pyc
+%%EXAMPLESDIR%%/richtext/syntaxhighlighter/syntaxhighlighter.qrc
+%%EXAMPLESDIR%%/richtext/syntaxhighlighter/syntaxhighlighter_rc.py
+%%EXAMPLESDIR%%/richtext/syntaxhighlighter/syntaxhighlighter_rc.pyc
+%%EXAMPLESDIR%%/sql/README
+%%EXAMPLESDIR%%/sql/cachedtable.py
+%%EXAMPLESDIR%%/sql/cachedtable.pyc
+%%EXAMPLESDIR%%/sql/connection.py
+%%EXAMPLESDIR%%/sql/connection.pyc
+%%EXAMPLESDIR%%/sql/querymodel.py
+%%EXAMPLESDIR%%/sql/querymodel.pyc
+%%EXAMPLESDIR%%/sql/relationaltablemode.py
+%%EXAMPLESDIR%%/sql/relationaltablemode.pyc
+%%EXAMPLESDIR%%/sql/tablemodel.py
+%%EXAMPLESDIR%%/sql/tablemodel.pyc
+%%EXAMPLESDIR%%/threads/README
+%%EXAMPLESDIR%%/threads/mandelbrot.py
+%%EXAMPLESDIR%%/threads/mandelbrot.pyc
+%%EXAMPLESDIR%%/threads/semaphores.py
+%%EXAMPLESDIR%%/threads/semaphores.pyc
+%%EXAMPLESDIR%%/threads/waitconditions.py
+%%EXAMPLESDIR%%/threads/waitconditions.pyc
+%%EXAMPLESDIR%%/tools/README
+%%EXAMPLESDIR%%/tools/codecs/codecs.py
+%%EXAMPLESDIR%%/tools/codecs/codecs.pyc
+%%EXAMPLESDIR%%/tools/codecs/encodedfiles/iso-8859-1.txt
+%%EXAMPLESDIR%%/tools/codecs/encodedfiles/iso-8859-15.txt
+%%EXAMPLESDIR%%/tools/codecs/encodedfiles/utf-16.txt
+%%EXAMPLESDIR%%/tools/codecs/encodedfiles/utf-16be.txt
+%%EXAMPLESDIR%%/tools/codecs/encodedfiles/utf-16le.txt
+%%EXAMPLESDIR%%/tools/codecs/encodedfiles/utf-8.txt
+%%EXAMPLESDIR%%/tools/i18n/i18n.py
+%%EXAMPLESDIR%%/tools/i18n/i18n.pyc
+%%EXAMPLESDIR%%/tools/i18n/i18n.qrc
+%%EXAMPLESDIR%%/tools/i18n/i18n_rc.py
+%%EXAMPLESDIR%%/tools/i18n/i18n_rc.pyc
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_ar.qm
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_ar.ts
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_cs.qm
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_cs.ts
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_de.qm
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_de.ts
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_el.qm
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_el.ts
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_en.qm
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_en.ts
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_eo.qm
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_eo.ts
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_fr.qm
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_fr.ts
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_it.qm
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_it.ts
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_jp.qm
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_jp.ts
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_ko.qm
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_ko.ts
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_no.qm
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_no.ts
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_pt.qm
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_pt.ts
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_ru.qm
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_ru.ts
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_sv.qm
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_sv.ts
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_zh.qm
+%%EXAMPLESDIR%%/tools/i18n/translations/i18n_zh.ts
+%%EXAMPLESDIR%%/tools/qtdemo/demos.xml
+%%EXAMPLESDIR%%/tools/qtdemo/displayshape.py
+%%EXAMPLESDIR%%/tools/qtdemo/displayshape.pyc
+%%EXAMPLESDIR%%/tools/qtdemo/displaywidget.py
+%%EXAMPLESDIR%%/tools/qtdemo/displaywidget.pyc
+%%EXAMPLESDIR%%/tools/qtdemo/examples.xml
+%%EXAMPLESDIR%%/tools/qtdemo/images/qt4-logo.png
+%%EXAMPLESDIR%%/tools/qtdemo/images/rb-logo.png
+%%EXAMPLESDIR%%/tools/qtdemo/launcher.py
+%%EXAMPLESDIR%%/tools/qtdemo/launcher.pyc
+%%EXAMPLESDIR%%/tools/qtdemo/qtdemo.py
+%%EXAMPLESDIR%%/tools/qtdemo/qtdemo.pyc
+%%EXAMPLESDIR%%/tools/qtdemo/qtdemo.qrc
+%%EXAMPLESDIR%%/tools/qtdemo/qtdemo.rc
+%%EXAMPLESDIR%%/tools/qtdemo/qtdemo_rc.py
+%%EXAMPLESDIR%%/tools/qtdemo/qtdemo_rc.pyc
+%%EXAMPLESDIR%%/tools/regexp.py
+%%EXAMPLESDIR%%/tools/regexp.pyc
+%%EXAMPLESDIR%%/tools/settingseditor/inifiles/troll.ini
+%%EXAMPLESDIR%%/tools/settingseditor/settingseditor.py
+%%EXAMPLESDIR%%/tools/settingseditor/settingseditor.pyc
+%%EXAMPLESDIR%%/tutorial/README
+%%EXAMPLESDIR%%/tutorial/t1.py
+%%EXAMPLESDIR%%/tutorial/t1.pyc
+%%EXAMPLESDIR%%/tutorial/t10.py
+%%EXAMPLESDIR%%/tutorial/t10.pyc
+%%EXAMPLESDIR%%/tutorial/t11.py
+%%EXAMPLESDIR%%/tutorial/t11.pyc
+%%EXAMPLESDIR%%/tutorial/t12.py
+%%EXAMPLESDIR%%/tutorial/t12.pyc
+%%EXAMPLESDIR%%/tutorial/t13.py
+%%EXAMPLESDIR%%/tutorial/t13.pyc
+%%EXAMPLESDIR%%/tutorial/t14.py
+%%EXAMPLESDIR%%/tutorial/t14.pyc
+%%EXAMPLESDIR%%/tutorial/t2.py
+%%EXAMPLESDIR%%/tutorial/t2.pyc
+%%EXAMPLESDIR%%/tutorial/t3.py
+%%EXAMPLESDIR%%/tutorial/t3.pyc
+%%EXAMPLESDIR%%/tutorial/t4.py
+%%EXAMPLESDIR%%/tutorial/t4.pyc
+%%EXAMPLESDIR%%/tutorial/t5.py
+%%EXAMPLESDIR%%/tutorial/t5.pyc
+%%EXAMPLESDIR%%/tutorial/t6.py
+%%EXAMPLESDIR%%/tutorial/t6.pyc
+%%EXAMPLESDIR%%/tutorial/t7.py
+%%EXAMPLESDIR%%/tutorial/t7.pyc
+%%EXAMPLESDIR%%/tutorial/t8.py
+%%EXAMPLESDIR%%/tutorial/t8.pyc
+%%EXAMPLESDIR%%/tutorial/t9.py
+%%EXAMPLESDIR%%/tutorial/t9.pyc
+%%EXAMPLESDIR%%/widgets/README
+%%EXAMPLESDIR%%/widgets/analogclock.py
+%%EXAMPLESDIR%%/widgets/analogclock.pyc
+%%EXAMPLESDIR%%/widgets/calculator.py
+%%EXAMPLESDIR%%/widgets/calculator.pyc
+%%EXAMPLESDIR%%/widgets/charactermap.py
+%%EXAMPLESDIR%%/widgets/charactermap.pyc
+%%EXAMPLESDIR%%/widgets/digitalclock.py
+%%EXAMPLESDIR%%/widgets/digitalclock.pyc
+%%EXAMPLESDIR%%/widgets/groupbox.py
+%%EXAMPLESDIR%%/widgets/groupbox.pyc
+%%EXAMPLESDIR%%/widgets/icons/icons.py
+%%EXAMPLESDIR%%/widgets/icons/icons.pyc
+%%EXAMPLESDIR%%/widgets/icons/images/designer.png
+%%EXAMPLESDIR%%/widgets/icons/images/find_disabled.png
+%%EXAMPLESDIR%%/widgets/icons/images/find_normal.png
+%%EXAMPLESDIR%%/widgets/icons/images/monkey_off_128x128.png
+%%EXAMPLESDIR%%/widgets/icons/images/monkey_off_16x16.png
+%%EXAMPLESDIR%%/widgets/icons/images/monkey_off_32x32.png
+%%EXAMPLESDIR%%/widgets/icons/images/monkey_off_64x64.png
+%%EXAMPLESDIR%%/widgets/icons/images/monkey_on_128x128.png
+%%EXAMPLESDIR%%/widgets/icons/images/monkey_on_16x16.png
+%%EXAMPLESDIR%%/widgets/icons/images/monkey_on_32x32.png
+%%EXAMPLESDIR%%/widgets/icons/images/monkey_on_64x64.png
+%%EXAMPLESDIR%%/widgets/icons/images/qtopia_16x16.png
+%%EXAMPLESDIR%%/widgets/icons/images/qtopia_32x32.png
+%%EXAMPLESDIR%%/widgets/icons/images/qtopia_48x48.png
+%%EXAMPLESDIR%%/widgets/imageviewer.py
+%%EXAMPLESDIR%%/widgets/imageviewer.pyc
+%%EXAMPLESDIR%%/widgets/lineedits.py
+%%EXAMPLESDIR%%/widgets/lineedits.pyc
+%%EXAMPLESDIR%%/widgets/movie/icons/eject.png
+%%EXAMPLESDIR%%/widgets/movie/icons/play-pause.png
+%%EXAMPLESDIR%%/widgets/movie/icons/quit.png
+%%EXAMPLESDIR%%/widgets/movie/icons/stop.png
+%%EXAMPLESDIR%%/widgets/movie/movie.py
+%%EXAMPLESDIR%%/widgets/movie/movie.pyc
+%%EXAMPLESDIR%%/widgets/movie/movie.qrc
+%%EXAMPLESDIR%%/widgets/movie/movie_rc.py
+%%EXAMPLESDIR%%/widgets/movie/movie_rc.pyc
+%%EXAMPLESDIR%%/widgets/screenshot.py
+%%EXAMPLESDIR%%/widgets/screenshot.pyc
+%%EXAMPLESDIR%%/widgets/scribble.py
+%%EXAMPLESDIR%%/widgets/scribble.pyc
+%%EXAMPLESDIR%%/widgets/shapedclock.py
+%%EXAMPLESDIR%%/widgets/shapedclock.pyc
+%%EXAMPLESDIR%%/widgets/sliders.py
+%%EXAMPLESDIR%%/widgets/sliders.pyc
+%%EXAMPLESDIR%%/widgets/spinboxes.py
+%%EXAMPLESDIR%%/widgets/spinboxes.pyc
+%%EXAMPLESDIR%%/widgets/styles.py
+%%EXAMPLESDIR%%/widgets/styles.pyc
+%%EXAMPLESDIR%%/widgets/tetrix.py
+%%EXAMPLESDIR%%/widgets/tetrix.pyc
+%%EXAMPLESDIR%%/widgets/tooltips/images/circle.png
+%%EXAMPLESDIR%%/widgets/tooltips/images/square.png
+%%EXAMPLESDIR%%/widgets/tooltips/images/triangle.png
+%%EXAMPLESDIR%%/widgets/tooltips/tooltips.py
+%%EXAMPLESDIR%%/widgets/tooltips/tooltips.pyc
+%%EXAMPLESDIR%%/widgets/tooltips/tooltips.qrc
+%%EXAMPLESDIR%%/widgets/tooltips/tooltips_rc.py
+%%EXAMPLESDIR%%/widgets/tooltips/tooltips_rc.pyc
+%%EXAMPLESDIR%%/widgets/wiggly.py
+%%EXAMPLESDIR%%/widgets/wiggly.pyc
+%%EXAMPLESDIR%%/widgets/windowflags.py
+%%EXAMPLESDIR%%/widgets/windowflags.pyc
+%%EXAMPLESDIR%%/xml/README
+%%EXAMPLESDIR%%/xml/dombookmarks/dombookmarks.py
+%%EXAMPLESDIR%%/xml/dombookmarks/dombookmarks.pyc
+%%EXAMPLESDIR%%/xml/dombookmarks/frank.xbel
+%%EXAMPLESDIR%%/xml/dombookmarks/jennifer.xbel
+%%EXAMPLESDIR%%/xml/saxbookmarks/frank.xbel
+%%EXAMPLESDIR%%/xml/saxbookmarks/jennifer.xbel
+%%EXAMPLESDIR%%/xml/saxbookmarks/saxbookmarks.py
+%%EXAMPLESDIR%%/xml/saxbookmarks/saxbookmarks.pyc
+@dirrm %%EXAMPLESDIR%%/activeqt/webbrowser/icons
+@dirrm %%EXAMPLESDIR%%/activeqt/webbrowser
+@dirrm %%EXAMPLESDIR%%/activeqt
+@dirrm %%EXAMPLESDIR%%/designer/calculatorform
+@dirrm %%EXAMPLESDIR%%/designer/plugins/python
+@dirrm %%EXAMPLESDIR%%/designer/plugins/widgets
+@dirrm %%EXAMPLESDIR%%/designer/plugins
+@dirrm %%EXAMPLESDIR%%/designer
+@dirrm %%EXAMPLESDIR%%/dialogs/configdialog/images
+@dirrm %%EXAMPLESDIR%%/dialogs/configdialog
+@dirrm %%EXAMPLESDIR%%/dialogs
+@dirrm %%EXAMPLESDIR%%/draganddrop/draggableicons/images
+@dirrm %%EXAMPLESDIR%%/draganddrop/draggableicons
+@dirrm %%EXAMPLESDIR%%/draganddrop/draggabletext
+@dirrm %%EXAMPLESDIR%%/draganddrop/fridgemagnets
+@dirrm %%EXAMPLESDIR%%/draganddrop/puzzle
+@dirrm %%EXAMPLESDIR%%/draganddrop
+@dirrm %%EXAMPLESDIR%%/graphicsview/collidingmice/images
+@dirrm %%EXAMPLESDIR%%/graphicsview/collidingmice
+@dirrm %%EXAMPLESDIR%%/graphicsview
+@dirrm %%EXAMPLESDIR%%/itemviews/chart
+@dirrm %%EXAMPLESDIR%%/itemviews/pixelator/images
+@dirrm %%EXAMPLESDIR%%/itemviews/pixelator
+@dirrm %%EXAMPLESDIR%%/itemviews/puzzle
+@dirrm %%EXAMPLESDIR%%/itemviews/simpletreemodel
+@dirrm %%EXAMPLESDIR%%/itemviews/sortingmodel
+@dirrm %%EXAMPLESDIR%%/itemviews
+@dirrm %%EXAMPLESDIR%%/layouts
+@dirrm %%EXAMPLESDIR%%/mainwindows/application/images
+@dirrm %%EXAMPLESDIR%%/mainwindows/application
+@dirrm %%EXAMPLESDIR%%/mainwindows/dockwidgets/images
+@dirrm %%EXAMPLESDIR%%/mainwindows/dockwidgets
+@dirrm %%EXAMPLESDIR%%/mainwindows/mdi/images
+@dirrm %%EXAMPLESDIR%%/mainwindows/mdi
+@dirrm %%EXAMPLESDIR%%/mainwindows/sdi/images
+@dirrm %%EXAMPLESDIR%%/mainwindows/sdi
+@dirrm %%EXAMPLESDIR%%/mainwindows
+@dirrm %%EXAMPLESDIR%%/network/ftp/images
+@dirrm %%EXAMPLESDIR%%/network/ftp
+@dirrm %%EXAMPLESDIR%%/network
+@dirrm %%EXAMPLESDIR%%/opengl/textures/images
+@dirrm %%EXAMPLESDIR%%/opengl/textures
+@dirrm %%EXAMPLESDIR%%/opengl
+@dirrm %%EXAMPLESDIR%%/painting/basicdrawing/images
+@dirrm %%EXAMPLESDIR%%/painting/basicdrawing
+@dirrm %%EXAMPLESDIR%%/painting/svgviewer/files
+@dirrm %%EXAMPLESDIR%%/painting/svgviewer
+@dirrm %%EXAMPLESDIR%%/painting
+@dirrm %%EXAMPLESDIR%%/pyuic
+@dirrm %%EXAMPLESDIR%%/richtext/syntaxhighlighter/examples
+@dirrm %%EXAMPLESDIR%%/richtext/syntaxhighlighter
+@dirrm %%EXAMPLESDIR%%/richtext
+@dirrm %%EXAMPLESDIR%%/sql
+@dirrm %%EXAMPLESDIR%%/threads
+@dirrm %%EXAMPLESDIR%%/tools/codecs/encodedfiles
+@dirrm %%EXAMPLESDIR%%/tools/codecs
+@dirrm %%EXAMPLESDIR%%/tools/i18n/translations
+@dirrm %%EXAMPLESDIR%%/tools/i18n
+@dirrm %%EXAMPLESDIR%%/tools/qtdemo/images
+@dirrm %%EXAMPLESDIR%%/tools/qtdemo
+@dirrm %%EXAMPLESDIR%%/tools/settingseditor/inifiles/
+@dirrm %%EXAMPLESDIR%%/tools/settingseditor
+@dirrm %%EXAMPLESDIR%%/tools
+@dirrm %%EXAMPLESDIR%%/tutorial
+@dirrm %%EXAMPLESDIR%%/widgets/icons/images
+@dirrm %%EXAMPLESDIR%%/widgets/icons
+@dirrm %%EXAMPLESDIR%%/widgets/movie/icons
+@dirrm %%EXAMPLESDIR%%/widgets/movie
+@dirrm %%EXAMPLESDIR%%/widgets/tooltips/images
+@dirrm %%EXAMPLESDIR%%/widgets/tooltips
+@dirrm %%EXAMPLESDIR%%/widgets
+@dirrm %%EXAMPLESDIR%%/xml/dombookmarks
+@dirrm %%EXAMPLESDIR%%/xml/saxbookmarks
+@dirrm %%EXAMPLESDIR%%/xml
+@dirrm %%EXAMPLESDIR%%
