@@ -16,12 +16,12 @@ DISTNAME=	${PKGNAMEPREFIX:S/-/+/}-${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A fork of nicotine soulseek client
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
-		${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
 
 CONFLICTS=	nicotine-[0-9]*
 
 USE_BZIP2=		yes
+USE_GNOME=		pygtk2
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 USE_GETTEXT=		yes
