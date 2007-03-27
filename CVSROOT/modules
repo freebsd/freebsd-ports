@@ -12907,6 +12907,7 @@ pysol-sound-server	ports/audio/pysol-sound-server
 pysycache	ports/games/pysycache
 pysycache-lang	ports/games/pysycache-lang
 pysycache-themes	ports/games/pysycache-themes
+pythk		ports/devel/pythk
 python		ports/lang/python
 python-doc-html	ports/lang/python-doc-html
 python-doc-pdf-a4	ports/lang/python-doc-pdf-a4
