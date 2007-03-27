@@ -1,5 +1,5 @@
---- eclipse/plugins/org.eclipse.cdt.source.freebsd.gtk.x86_3.1.1.200609270800/src/org.eclipse.cdt.core.freebsd_3.1.1.200609270800/library/openpty.c.orig	Thu Mar 30 19:18:06 2006
-+++ eclipse/plugins/org.eclipse.cdt.source.freebsd.gtk.x86_3.1.1.200609270800/src/org.eclipse.cdt.core.freebsd_3.1.1.200609270800/library/openpty.c	Thu Mar 30 19:18:47 2006
+--- eclipse/plugins/org.eclipse.cdt.source.freebsd.gtk.x86_3.1.2.200702150621/src/org.eclipse.cdt.core.freebsd_3.1.2.200702150621/library/openpty.c.orig	Thu Mar 30 19:18:06 2006
++++ eclipse/plugins/org.eclipse.cdt.source.freebsd.gtk.x86_3.1.2.200702150621/src/org.eclipse.cdt.core.freebsd_3.1.2.200702150621/library/openpty.c	Thu Mar 30 19:18:47 2006
 @@ -20,7 +20,6 @@
  #include <grp.h>
  
