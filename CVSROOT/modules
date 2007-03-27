@@ -13003,6 +13003,7 @@ qscanplot	ports/math/qscanplot
 qscheme		ports/lang/qscheme
 qscintilla	ports/x11-toolkits/qscintilla
 qscintilla2	ports/devel/qscintilla2
+qscintilla2-designerplugin	ports/devel/qscintilla2-designerplugin
 qsf		ports/mail/qsf
 qsheff		ports/mail/qsheff
 qslim		ports/graphics/qslim
