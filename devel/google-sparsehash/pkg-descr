@@ -3,4 +3,4 @@ The Google SparseHash project contains several hash-map implementations in use
 at Google, with different performance characteristics, including an
 implementation that optimizes for space and one that optimizes for speed.
 
-WWW: http://goog-sparsehash.sourceforge.net
+WWW: http://code.google.com/p/google-sparsehash
