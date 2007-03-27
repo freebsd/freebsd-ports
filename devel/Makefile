@@ -1893,6 +1893,7 @@
     SUBDIR += pymacs
     SUBDIR += pypersrc
     SUBDIR += pyrex
+    SUBDIR += pythk
     SUBDIR += pythontidy
     SUBDIR += qca
     SUBDIR += qextmdi
