@@ -1,0 +1,28 @@
+#!/bin/sh
+# $FreeBSD: /tmp/pcvs/ports/lang/tcl-wrapper/files/wrapper.in,v 1.1 2007-03-27 10:52:18 miwi Exp $
+#
+# Wrapper for the %%TX_PORT%% shell "%%TX_SHELL%%"
+
+%%TX_SHELL_U%%=
+%%TX_SHELL_U%%_CONF=%%TX_CONF_FULL%%
+
+if [ -f "${%%TX_SHELL_U%%_CONF}" ]; then
+  . ${%%TX_SHELL_U%%_CONF}
+  if [ -n "${%%TX_SHELL_U%%}" ]; then
+    if [ -x "${%%TX_SHELL_U%%}" ]; then
+      exec ${%%TX_SHELL_U%%} "$@"
+    else
+      %%ECHO_CMD%% "File not found or not executable: ${%%TX_SHELL_U%%}" 
+      %%ECHO_CMD%% "Please check variable %%TX_SHELL_U%% in: ${%%TX_SHELL_U%%_CONF}"
+    fi
+  else
+    %%ECHO_CMD%% "You do not have set path to default %%TX_SHELL%% in the configuration file:"
+    %%ECHO_CMD%% "%%TX_CONF%%"
+    %%ECHO_CMD%% "Please see the sample configuration file for details:"
+    %%ECHO_CMD%% "%%TX_CONF%%.sample"
+  fi
+else
+  %%ECHO_CMD%% "Configuration file not found: %%TX_CONF%%"
+  %%ECHO_CMD%% "Please see the sample configuration file for details:"
+  %%ECHO_CMD%% "%%TX_CONF%%.sample"
+fi

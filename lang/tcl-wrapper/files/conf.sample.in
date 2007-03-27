@@ -1,0 +1,6 @@
+# This is a sample configuration file for %%TX_CONF%%
+# Target for the "%%TX_SHELL%%" wrapper is configured here.
+#
+# %%TX_SHELL_U%%= full path to your %%TX_SHELL%% shell
+%%TX_SHELL_U%%=%%PREFIX%%/bin/%%TX_SHELL%%%%TX_VER%%
+#%%TX_SHELL_U%%=%%PREFIX%%/bin/%%TX_SHELL%%%%TX_VER%%-threads
