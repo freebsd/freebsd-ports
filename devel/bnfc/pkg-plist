@@ -1,27 +1,27 @@
 bin/bnfc
+%%EXAMPLESDIR%%/C4.cf
+%%EXAMPLESDIR%%/JavaletteLight.cf
+%%EXAMPLESDIR%%/OCL.cf
+%%EXAMPLESDIR%%/Prolog.cf
+%%EXAMPLESDIR%%/fstStudio.cf
+%%EXAMPLESDIR%%/haskell-core/AbsCore.hcr
+%%EXAMPLESDIR%%/haskell-core/Core.cf
+%%EXAMPLESDIR%%/haskell-core/Hello.hcr
+%%EXAMPLESDIR%%/haskell-core/ParCore.hcr
+%%EXAMPLESDIR%%/haskell-core/README
+%%EXAMPLESDIR%%/haskell-core/TopCore.hs
+%%EXAMPLESDIR%%/haskell-core/notes.txt
+%%EXAMPLESDIR%%/koe.jll
+%%EXAMPLESDIR%%/koe2.c
+%%EXAMPLESDIR%%/multi/Arithm.cf
+%%EXAMPLESDIR%%/multi/TestArithm.hs
+%%EXAMPLESDIR%%/multi/types/Types.cf
+%%EXAMPLESDIR%%/multi/types/ex.old
+%%EXAMPLESDIR%%/prolog.pl
+%%EXAMPLESDIR%%/small.pl
+@dirrm %%EXAMPLESDIR%%/multi/types
+@dirrm %%EXAMPLESDIR%%/multi
+@dirrm %%EXAMPLESDIR%%/haskell-core
+@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/LBNF-report.tex
-%%PORTDOCS%%%%EXAMPLESDIR%%/C4.cf
-%%PORTDOCS%%%%EXAMPLESDIR%%/JavaletteLight.cf
-%%PORTDOCS%%%%EXAMPLESDIR%%/OCL.cf
-%%PORTDOCS%%%%EXAMPLESDIR%%/Prolog.cf
-%%PORTDOCS%%%%EXAMPLESDIR%%/fstStudio.cf
-%%PORTDOCS%%%%EXAMPLESDIR%%/haskell-core/AbsCore.hcr
-%%PORTDOCS%%%%EXAMPLESDIR%%/haskell-core/Core.cf
-%%PORTDOCS%%%%EXAMPLESDIR%%/haskell-core/Hello.hcr
-%%PORTDOCS%%%%EXAMPLESDIR%%/haskell-core/ParCore.hcr
-%%PORTDOCS%%%%EXAMPLESDIR%%/haskell-core/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/haskell-core/TopCore.hs
-%%PORTDOCS%%%%EXAMPLESDIR%%/haskell-core/notes.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/koe.jll
-%%PORTDOCS%%%%EXAMPLESDIR%%/koe2.c
-%%PORTDOCS%%%%EXAMPLESDIR%%/multi/Arithm.cf
-%%PORTDOCS%%%%EXAMPLESDIR%%/multi/TestArithm.hs
-%%PORTDOCS%%%%EXAMPLESDIR%%/multi/types/Types.cf
-%%PORTDOCS%%%%EXAMPLESDIR%%/multi/types/ex.old
-%%PORTDOCS%%%%EXAMPLESDIR%%/prolog.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/small.pl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/multi/types
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/multi
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/haskell-core
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
