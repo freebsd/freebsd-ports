@@ -2,20 +2,27 @@
 %%RUBY_SITELIBDIR%%/rss/0.9.rb
 %%RUBY_SITELIBDIR%%/rss/1.0.rb
 %%RUBY_SITELIBDIR%%/rss/2.0.rb
+%%RUBY_SITELIBDIR%%/rss/atom.rb
 %%RUBY_SITELIBDIR%%/rss/content.rb
 %%RUBY_SITELIBDIR%%/rss/converter.rb
 %%RUBY_SITELIBDIR%%/rss/dublincore.rb
+%%RUBY_SITELIBDIR%%/rss/dublincore/1.0.rb
 %%RUBY_SITELIBDIR%%/rss/dublincore/2.0.rb
+%%RUBY_SITELIBDIR%%/rss/dublincore/atom.rb
 %%RUBY_SITELIBDIR%%/rss/image.rb
 %%RUBY_SITELIBDIR%%/rss/maker.rb
 %%RUBY_SITELIBDIR%%/rss/maker/0.9.rb
 %%RUBY_SITELIBDIR%%/rss/maker/1.0.rb
 %%RUBY_SITELIBDIR%%/rss/maker/2.0.rb
+%%RUBY_SITELIBDIR%%/rss/maker/atom.rb
 %%RUBY_SITELIBDIR%%/rss/maker/base.rb
 %%RUBY_SITELIBDIR%%/rss/maker/content.rb
 %%RUBY_SITELIBDIR%%/rss/maker/dublincore.rb
+%%RUBY_SITELIBDIR%%/rss/maker/entry.rb
+%%RUBY_SITELIBDIR%%/rss/maker/feed.rb
 %%RUBY_SITELIBDIR%%/rss/maker/image.rb
 %%RUBY_SITELIBDIR%%/rss/maker/syndication.rb
+%%RUBY_SITELIBDIR%%/rss/maker/taxonomy.rb
 %%RUBY_SITELIBDIR%%/rss/maker/trackback.rb
 %%RUBY_SITELIBDIR%%/rss/parser.rb
 %%RUBY_SITELIBDIR%%/rss/rexmlparser.rb
@@ -25,18 +32,19 @@
 %%RUBY_SITELIBDIR%%/rss/trackback.rb
 %%RUBY_SITELIBDIR%%/rss/utils.rb
 %%RUBY_SITELIBDIR%%/rss/xml-stylesheet.rb
+%%RUBY_SITELIBDIR%%/rss/xml.rb
 %%RUBY_SITELIBDIR%%/rss/xmlparser.rb
 %%RUBY_SITELIBDIR%%/rss/xmlscanner.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.en
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/Tutorial.en
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.ja
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/Tutorial.ja
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
+%%PORTDOCS%%@dirrmtry %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrmtry %%RUBY_MODDOCDIR%%
 %%PORTDOCS%%@dirrmtry %%RUBY_DOCDIR%%
-@dirrm %%RUBY_SITELIBDIR%%/rss/maker
-@dirrm %%RUBY_SITELIBDIR%%/rss/dublincore
-@dirrm %%RUBY_SITELIBDIR%%/rss
+@dirrmtry %%RUBY_SITELIBDIR%%/rss/maker
+@dirrmtry %%RUBY_SITELIBDIR%%/rss/dublincore
+@dirrmtry %%RUBY_SITELIBDIR%%/rss
 @dirrmtry %%RUBY_SITELIBDIR%%
 @dirrmtry lib/ruby/site_ruby
 @dirrmtry lib/ruby
