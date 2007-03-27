@@ -12700,6 +12700,7 @@ py-qt		ports/x11-toolkits/py-qt
 py-qt4-assistant	ports/devel/py-qt4-assistant
 py-qt4-core	ports/devel/py-qt4-core
 py-qt4-dbus	ports/devel/py-qt4-dbus
+py-qt4-demo	ports/misc/py-qt4-demo
 py-qt4-designer	ports/devel/py-qt4-designer
 py-qt4-designerplugin	ports/devel/py-qt4-designerplugin
 py-qt4-doc	ports/misc/py-qt4-doc
