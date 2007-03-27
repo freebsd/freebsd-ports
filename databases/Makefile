@@ -430,6 +430,7 @@
     SUBDIR += py-psycopg
     SUBDIR += py-psycopg2
     SUBDIR += py-pyPgSQL
+    SUBDIR += py-qt4-sql
     SUBDIR += py-sqlalchemy
     SUBDIR += py-sqlite3
     SUBDIR += py-sqlobject
