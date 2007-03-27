@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	12.3
+PORTVERSION=	12.4
 CATEGORIES=	misc
-MASTER_SITES=	http://www.lafn.org/~av832/ CSME
+MASTER_SITES=	http://www.lafn.org/~av832/ CENKES
 PKGNAMEPREFIX=	health-
 
 MAINTAINER=	infofarmer@FreeBSD.org
