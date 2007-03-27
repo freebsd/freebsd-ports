@@ -1,0 +1,10 @@
+You now need to create a WWW alias in your web server configuration to allow
+the Drupal module to use the TinyMCE code.  For Apache based systems, the
+following directive will work:
+
+    Alias %%TINYMCE_MODDIR%% %%TINYMCEDIR%%
+
+Please see the TinyMCE Wiki for more information on how to get the most out
+of this package:
+
+    http://wiki.moxiecode.com/index.php/TinyMCE:Index 
