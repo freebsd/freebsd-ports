@@ -1,0 +1,39 @@
+%%PYTHON_SITELIBDIR%%/PyQt4/Qsci.so
+%%SIPFILES%%%%SIPDIR%%/Qsci/qsciapis.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscicommand.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscicommandset.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscidocument.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscilexer.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscilexerbash.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscilexerbatch.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscilexercpp.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscilexercsharp.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscilexercss.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscilexerdiff.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscilexerhtml.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscilexeridl.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscilexerjava.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscilexerjavascript.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscilexerlua.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscilexermakefile.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscilexerperl.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscilexerpov.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscilexerproperties.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscilexerpython.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscilexerruby.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscilexersql.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscilexertex.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscimacro.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscimod3.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscimod4.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscimodcommon.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qsciprinter.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qsciscintilla.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qsciscintillabase3.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qsciscintillabase4.sip
+%%SIPFILES%%@dirrm %%SIPDIR%%/Qsci
+@cwd %%LOCALBASE%%
+share/qt4/qsci/api/python/QScintilla2.api
+@dirrmtry share/qt4/qsci/api/python
+@dirrmtry share/qt4/qsci/api
+@dirrmtry share/qt4/qsci

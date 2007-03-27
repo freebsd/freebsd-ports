@@ -1,0 +1,5 @@
+PyQt4 is a set of Python bindings for Trolltech's Qt4 application framework.
+This package provides the Qsci module for the Qscintilla2 editor component.
+
+WWW: http://www.riverbankcomputing.co.uk/pyqt/
+     http://www.riverbankcomputing.co.uk/qscintilla/
