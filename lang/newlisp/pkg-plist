@@ -20,6 +20,7 @@ bin/newlisp
 %%PORTDOCS%%%%EXAMPLESDIR%%/udp-server.lsp
 %%PORTDOCS%%%%EXAMPLESDIR%%/upload.cgi
 %%PORTDOCS%%%%EXAMPLESDIR%%/upload.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/#sqlite.cgi#
 %%PORTDOCS%%%%EXAMPLESDIR%%/xmlrpc.cgi
 %%DATADIR%%/cgi.lsp
 %%DATADIR%%/ftp.lsp
