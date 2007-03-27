@@ -11086,6 +11086,7 @@ p5-dTemplate	ports/textproc/p5-dTemplate
 p5-ePerl	ports/lang/p5-ePerl
 p5-enum		ports/devel/p5-enum
 p5-forks	ports/devel/p5-forks
+p5-gearmand	ports/devel/p5-gearmand
 p5-hp200lx-db	ports/databases/p5-hp200lx-db
 p5-iCal-Parser	ports/devel/p5-iCal-Parser
 p5-libapreq	ports/www/p5-libapreq
