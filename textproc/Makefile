@@ -759,6 +759,7 @@
     SUBDIR += py-lucene
     SUBDIR += py-markdown
     SUBDIR += py-pyx12
+    SUBDIR += py-qt4-xml
     SUBDIR += py-rdflib
     SUBDIR += py-reverend
     SUBDIR += py-rss2gen
