@@ -11,7 +11,7 @@ $FreeBSD$
  void x_misc_setup(void);
  void x_net_setup(void);
  void x_qlist_setup(void);
-@@ -78,7 +78,7 @@ void conf_init(void)
+@@ -79,7 +79,7 @@ void conf_init(void)
      x_connective_setup();
      x_time_setup();
      x_arithmetic_setup();
