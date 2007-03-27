@@ -1,0 +1,12 @@
+--- libextra/opencdk/Makefile.in.orig	Tue Mar 27 09:53:50 2007
++++ libextra/opencdk/Makefile.in	Tue Mar 27 09:54:10 2007
+@@ -422,7 +422,8 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ INCLUDES = -I$(top_srcdir)/lib \
+-	-I$(top_srcdir)/lgl -I$(top_builddir)/lgl
++	-I$(top_srcdir)/lgl -I$(top_builddir)/lgl \
++	-I$(top_srcdir)/gl
+ 
+ noinst_LTLIBRARIES = libminiopencdk.la
+ libminiopencdk_la_SOURCES = md.h packet.h opencdk.h context.h main.h	\
