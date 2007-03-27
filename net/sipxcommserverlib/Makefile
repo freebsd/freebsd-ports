@@ -7,7 +7,7 @@
 
 PORTNAME=	sipxcommserverlib
 PORTVERSION=	3.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.sipfoundry.org/pub/sipX/3.6/SRC/
 
@@ -38,8 +38,11 @@ CONFIGURE_ENV+=	wwwdir=${PREFIX}/www/sipX \
 CONFIGURE_ARGS+=	--enable-sip-tls \
 		--prefix=${PREFIX} \
 		--localstatedir=${LOCALSTATEDIR}
-SUB_LIST=	LOCALSTATEDIR=${LOCALSTATEDIR}
-SUB_FILES=	pkg-deinstall
+SUB_LIST=	LOCALSTATEDIR=${LOCALSTATEDIR} \
+		PREFIX=${PREFIX}
+SUB_FILES=	pkg-install pkg-deinstall
+
+PKGINSTALL=	${WRKDIR}/pkg-install
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,/bin/bash,${PREFIX}/bin/bash," ${WRKSRC}/bin/configpp
@@ -48,6 +51,9 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,@PREFIX@,${PREFIX}," ${WRKSRC}/bin/pgpatch.sh
 	@${REINPLACE_CMD} -e "s,/bin/bash,${PREFIX}/bin/bash," ${WRKSRC}/src/sipdbtest/sipdbtest.sh.in
 
+pre-install:
+	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${SED} -e "s,@bindir@,${PREFIX}/bin,g" < ${WRKSRC}/doc/INSTALL.ssl.in \
@@ -55,5 +61,6 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/INSTALL.ssl ${DOCSDIR}
 .endif
+	@${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
