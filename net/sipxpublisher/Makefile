@@ -7,6 +7,7 @@
 
 PORTNAME=	sipxpublisher
 PORTVERSION=	3.6.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.sipfoundry.org/pub/sipX/3.6/SRC/
 
@@ -30,10 +31,19 @@ CONFIGURE_ENV+=	wwwdir=${PREFIX}/www/sipX \
 CONFIGURE_ARGS+=	--enable-sip-tls \
 		--prefix=${PREFIX} \
 		--localstatedir=${LOCALSTATEDIR}
-SUB_LIST=	LOCALSTATEDIR=${LOCALSTATEDIR}
-SUB_FILES=	pkg-deinstall
+SUB_LIST=	LOCALSTATEDIR=${LOCALSTATEDIR} \
+		PREFIX=${PREFIX}
+SUB_FILES=	pkg-install pkg-deinstall
+
+PKGINSTALL=	${WRKDIR}/pkg-install
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,/bin/bash,${PREFIX}/bin/bash," ${WRKSRC}/bin/sipstatus.sh.in
+
+pre-install:
+	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
+
+post-install:
+	@${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
 
 .include <bsd.port.mk>
