@@ -7,7 +7,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.1.b1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang tcl81
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_1
@@ -26,14 +26,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-threads
 CONFIGURE_ENV=	PORTSDIR=${PORTSDIR}
 
-OPTIONS=	TCL81_MAN "Install tcl 8.1 manpages" off \
-		TCLSH_WRAPPER "Require tclsh wrapper from ports" off
+OPTIONS=	TCL81_MAN "Install tcl 8.1 manpages" off
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_TCLSH_WRAPPER)
-RUN_DEPENDS+=		tclsh:${PORTSDIR}/lang/tcl-tk-wrapper
-.endif
 
 .if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL81_MAN)
 MAN1=	tclsh.1
