@@ -1,6 +1,6 @@
---- src/unix-gcc.mak.orig	Thu Oct 24 21:57:57 2002
-+++ src/unix-gcc.mak	Sun Nov 17 22:01:58 2002
-@@ -24,14 +24,15 @@
+--- src/unix-gcc.mak.orig	Fri Jul  7 06:32:50 2006
++++ src/unix-gcc.mak	Fri Mar 23 14:44:08 2007
+@@ -21,15 +21,16 @@
  # source, generated intermediate file, and object directories
  # for the graphics library (GL) and the PostScript/PDF interpreter (PS).
  
@@ -10,6 +10,7 @@
 -GLOBJDIR=./obj
 -PSSRCDIR=./src
 -PSLIBDIR=./lib
+-PSRESDIR=./Resource
 -PSGENDIR=./obj
 -PSOBJDIR=./obj
 +.CURDIR?=.
@@ -19,12 +20,13 @@
 +GLOBJDIR=${.CURDIR}/obj
 +PSSRCDIR=${.CURDIR}/src
 +PSLIBDIR=${.CURDIR}/lib
++PSRESDIR=${.CURDIR}/Resource
 +PSGENDIR=${.CURDIR}/obj
 +PSOBJDIR=${.CURDIR}/obj
  
  # Do not edit the next group of lines.
  
-@@ -50,11 +51,10 @@
+@@ -48,11 +49,10 @@
  # the directories also define the default search path for the
  # initialization files (gs_*.ps) and the fonts.
  
@@ -66,7 +68,22 @@
  #ZLIB_NAME=gz
  ZLIB_NAME=z
  
-@@ -197,7 +197,7 @@
+@@ -179,6 +179,14 @@
+ JBIG2_LIB=jbig2dec
+ JBIG2SRCDIR=jbig2dec
+ 
++# Choose the library to use for (JPXDecode support)
++# whether to link to an external build or compile in from source
++# and source location and configuration flags for compiling in
++JPX_LIB=jasper
++SHARE_JPX=0
++JPXSRCDIR=jasper
++JPX_CFLAGS=-DJAS_CONFIGURE
++
+ # Define the directory where the icclib source are stored.
+ # See icclib.mak for more information
+ 
+@@ -202,7 +210,7 @@
  
  # Define the name of the C compiler.
  
@@ -75,7 +92,7 @@
  
  # Define the name of the linker for the final link step.
  # Normally this is the same as the C compiler.
-@@ -214,9 +214,9 @@
+@@ -219,9 +227,9 @@
  # Define the added flags for standard, debugging, profiling 
  # and shared object builds.
  
@@ -88,16 +105,16 @@
  CFLAGS_SO=-fPIC
  
  # Define the other compilation flags.  Add at most one of the following:
-@@ -230,7 +230,7 @@
+@@ -235,7 +243,7 @@
  # We don't include -ansi, because this gets in the way of the platform-
  #   specific stuff that <math.h> typically needs; nevertheless, we expect
  #   gcc to accept ANSI-style function prototypes and function definitions.
 -XCFLAGS=
-+XCFLAGS+=-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include
++XCFLAGS+=-I${.CURDIR}/jasper/src/libjasper/include -I${LOCALBASE}/include/libpng -I${LOCALBASE}/include
  
  CFLAGS=$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)
  
-@@ -241,7 +241,7 @@
+@@ -246,7 +254,7 @@
  #	-R /usr/local/xxx/lib:/usr/local/lib
  # giving the full path names of the shared library directories.
  # XLDFLAGS can be set from the command line.
@@ -106,7 +123,7 @@
  
  LDFLAGS=$(XLDFLAGS)
  
-@@ -274,7 +274,7 @@
+@@ -279,7 +287,7 @@
  # Note that x_.h expects to find the header files in $(XINCLUDE)/X11,
  # not in $(XINCLUDE).
  
@@ -115,7 +132,7 @@
  
  # Define the directory/ies and library names for the X11 library files.
  # XLIBDIRS is for ld and should include -L; XLIBDIR is for LD_RUN_PATH
-@@ -286,12 +286,12 @@
+@@ -291,12 +299,12 @@
  # Solaris and other SVR4 systems with dynamic linking probably want
  #XLIBDIRS=-L/usr/openwin/lib -R/usr/openwin/lib
  # X11R6 (on any platform) may need
@@ -131,3 +148,13 @@
  
  # Define whether this platform has floating point hardware:
  #	FPU_TYPE=2 means floating point is faster than fixed point.
+@@ -447,6 +455,9 @@
+ include $(GLSRCDIR)/zlib.mak
+ include $(GLSRCDIR)/libpng.mak
+ include $(GLSRCDIR)/jbig2.mak
++include $(GLSRCDIR)/jasper.mak
++include $(GLSRCDIR)/ldf_jb2.mak
++include $(GLSRCDIR)/lwf_jp2.mak
+ include $(GLSRCDIR)/icclib.mak
+ include $(GLSRCDIR)/ijs.mak
+ include $(GLSRCDIR)/devs.mak

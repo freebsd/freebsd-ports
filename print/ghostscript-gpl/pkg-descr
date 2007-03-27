@@ -18,5 +18,9 @@ This port includes add-on packages (not part of the official gs release)
 	o Additional contributed uniprint driver profiles for
 	  - Epson Stylus Color 740 and Epson LQ-1170
 
+Note: Since GPL Ghostscript 8.x is currently inferior to older version
+about handling Asian TrueType fonts, users who want to print or display
+Asian characters should use GNU Ghostscript 7.x (print/ghostscipt-gnu).
+
 WWW: http://www.cs.wisc.edu/~ghost/doc/GPL/index.htm
      http://www.ghostscript.com/

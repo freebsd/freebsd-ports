@@ -1,0 +1,19 @@
+--- lib/ps2epsi.orig	Thu May 25 02:19:27 2006
++++ lib/ps2epsi	Fri Mar 23 10:55:11 2007
+@@ -5,14 +5,8 @@
+ # executable name set in the makefile
+ GS_EXECUTABLE=gs
+ 
+-# try to create a temporary file securely
+-tmpdir=/tmp/ps2epsi.$$
+-(umask 077 && mkdir $tmpdir)
+-if test ! -d $tmpdir; then
+-	echo "failed: could not create temporary file"
+-	exit 1
+-fi
+-tmpfile=$tmpdir/ps2epsi$$
++tmpfile=`mktemp -t ps2epsi.XXXXXX || exit 1`
++trap "rm -rf $tmpfile" 0 1 2 3 7 13 15
+ 
+ export outfile
+ 

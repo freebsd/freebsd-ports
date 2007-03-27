@@ -1,5 +1,5 @@
 --- src/gdevgdi.c.orig	Wed Jun 19 19:32:49 2002
-+++ src/gdevgdi.c	Mon Jul 21 13:44:41 2003
++++ src/gdevgdi.c	Fri Dec 31 17:41:18 2004
 @@ -60,8 +60,8 @@
  #define GDI_REPEAT_LENGTH 2
  #define GDI_BAND_HEIGHT   128
@@ -53,6 +53,19 @@
  private FILE *WritePJLHeaderData(gx_device_printer *pdev, FILE *fp);
  private FILE *WriteBandHeader(FILE *fp, unsigned int usBandNo, 
                       unsigned char ubCompMode, unsigned int usBandWidth, 
+@@ -193,9 +207,9 @@
+ 	}
+ 
+         ul_band_size = band_width_bytes * band_height;
+-        ibp = (byte *)gs_malloc(ul_band_size, 1, "gdi_print_page");
+-        obp = (byte *)gs_malloc(ul_band_size*13/10, 1, "gdi_print_page");
+-        tmp = (byte *)gs_malloc(raster, 1, "gdi_print_page");
++        ibp = (byte *)gs_malloc(pdev->memory, ul_band_size, 1, "gdi_print_page");
++        obp = (byte *)gs_malloc(pdev->memory, ul_band_size*13/10, 1, "gdi_print_page");
++        tmp = (byte *)gs_malloc(pdev->memory, raster, 1, "gdi_print_page");
+ 
+         if (!ibp) return_error(gs_error_VMerror);
+         if (!obp) return_error(gs_error_VMerror);
 @@ -220,7 +234,7 @@
              memset(obp, 0x00, ul_band_size*13/10);
              for (j=0; j<band_height; j++) {
@@ -102,7 +115,7 @@
 +		    int f, g, h;
 +		    if (!fudge) {
 +		      ASSERT(use_band == ibp);
-+		      use_band = (byte*)gs_malloc(ul_band_size, 1, "gdi_print_page/fudge");
++		      use_band = (byte*)gs_malloc(pdev->memory, ul_band_size, 1, "gdi_print_page/fudge");
 +		      fudge=1;
 +		    }
 +		    memcpy(use_band, ibp, ul_band_size);
@@ -130,7 +143,7 @@
 +	      oh_well:
 +		if (fudge > 1) {
 +		  ASSERT(use_band != ibp);
-+		  gs_free(use_band, ul_band_size, 1, "gdi_print_page/fudge");
++		  gs_free(pdev->memory, use_band, ul_band_size, 1, "gdi_print_page/fudge");
 +		  /*fprintf(stderr, "smartgdi: band %d fudge factor is %d\n", i, fudge);*/
 +		}
 +	      }
@@ -138,7 +151,7 @@
  		break;
  	    case GDI_COMP_SCANLINE:
                  ul_comp_size = bmp2run(obp, ibp, band_height, band_width_bytes, GDI_REAL_COMP);
-@@ -253,7 +323,7 @@
+@@ -253,15 +323,15 @@
  
              prn_stream = WriteBandHeader(prn_stream, i, compression_type, (band_width_bytes * 8),
                                           band_height, ul_comp_size); 
@@ -147,6 +160,17 @@
              fwrite(obp, ul_comp_size, 1, prn_stream);
          }
      
+         /* Trailer Output */
+         WriteTrailerData(prn_stream);
+-        gs_free(ibp, ul_band_size, 1, "gdi_line_buffer");
+-        gs_free(obp, ul_band_size*13/10, 1, "gdi_line_buffer");
+-        gs_free(tmp, raster, 1, "gdi_line_buffer");
++        gs_free(pdev->memory, ibp, ul_band_size, 1, "gdi_line_buffer");
++        gs_free(pdev->memory, obp, ul_band_size*13/10, 1, "gdi_line_buffer");
++        gs_free(pdev->memory, tmp, raster, 1, "gdi_line_buffer");
+         return code;
+ }
+ 
 @@ -271,50 +341,50 @@
    unsigned char buffer[300];
    int dots_per_inch = (int)pdev->y_pixels_per_inch;

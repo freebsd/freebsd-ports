@@ -1,5 +1,5 @@
 --- src/gdevcd8.c.orig	Mon Feb 28 16:01:59 2000
-+++ src/gdevcd8.c	Wed Dec 10 21:32:53 2003
++++ src/gdevcd8.c	Fri Dec 17 19:42:52 2004
 @@ -406,19 +406,19 @@
  };
  
@@ -236,6 +236,24 @@
  
  
  private void
+@@ -1175,7 +1175,7 @@
+        2bpp feature of the hp850 someday, it is sized like storage.
+        storagee contains the errors from b/w fs-ditherng */
+ 
+-    data_ptrs.storage = (ulong *) gs_malloc(misc_vars.storage_size_words, W,
++    data_ptrs.storage = (ulong *) gs_malloc(pdev->memory, misc_vars.storage_size_words, W,
+ 					    "cdj850_print_page");
+ 
+     /* if we can't allocate working area */
+@@ -1196,7 +1196,7 @@
+     (*cdj850->terminate_page) (pdev, prn_stream);
+ 
+     /* Free Memory */
+-    gs_free((char *)data_ptrs.storage, misc_vars.storage_size_words, W,
++    gs_free(pdev->memory, (char *)data_ptrs.storage, misc_vars.storage_size_words, W,
+ 	    "hp850_print_page");
+ 
+     return 0;
 @@ -2744,13 +2744,14 @@
      (y) = gx_bits_to_color_value((v) & ((1 << (b)) - 1), (b))
  
