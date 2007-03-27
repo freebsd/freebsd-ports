@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- src/libFLAC/Makefile.in.orig
++++ src/libFLAC/Makefile.in
+@@ -304,7 +304,6 @@
+ @FLaC__CPU_IA32_TRUE@@FLaC__HAS_NASM_TRUE@@FLaC__NO_ASM_FALSE@libFLAC_la_LIBADD = ia32/libFLAC-asm.la
+ @FLaC__CPU_PPC_TRUE@@FLaC__HAS_AS__TEMPORARILY_DISABLED_FALSE@@FLaC__HAS_GAS__TEMPORARILY_DISABLED_TRUE@@FLaC__NO_ASM_FALSE@libFLAC_la_LIBADD = ppc/gas/libFLAC-asm.la
+ @FLaC__CPU_PPC_TRUE@@FLaC__HAS_AS__TEMPORARILY_DISABLED_TRUE@@FLaC__NO_ASM_FALSE@libFLAC_la_LIBADD = ppc/as/libFLAC-asm.la
+-@FLaC__CPU_PPC_TRUE@@FLaC__NO_ASM_FALSE@LOCAL_EXTRA_LDFLAGS = "-Wl,-read_only_relocs,warning"
+ SUBDIRS = $(ARCH_SUBDIRS) include .
+ m4datadir = $(datadir)/aclocal
+ m4data_DATA = libFLAC.m4
