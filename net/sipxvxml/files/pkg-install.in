@@ -1,0 +1,38 @@
+#!/bin/sh
+
+PATH=/bin:/usr/sbin
+
+USER=sipx
+GROUP=sipx
+
+case $2 in
+PRE-INSTALL)
+	if pw group show "${GROUP}" 2> /dev/null ; then
+		echo "You already have a group \"${GROUP}\", so I will use it."
+	else
+		if pw groupadd ${GROUP} ; then
+			echo "Added group \"${GROUP}\"."
+		else
+			echo "Add of group \"${GROUP}\" failed."
+			exit 1
+		fi
+	fi
+
+	if pw user show "${USER}" 2> /dev/null ; then
+		echo "You already have a user \"${USER}\", so I will use it."
+	else
+		if pw useradd ${USER} -g ${GROUP} -h - \
+		    -d %%LOCALSTATEDIR%%/sipxdata/configserver/phone/profile/tftproot -s %%PREFIX%%/bin/bash -c "sipX" ; then
+			echo "Added user \"${USER}\"."
+		else
+			echo "Add of user \"${USER}\" failed."
+			exit 1
+		fi
+	fi
+	;;
+POST-INSTALL)
+	chown ${USER}:${GROUP} %%PREFIX%%/etc/sipxpbx
+	chown ${USER}:${GROUP} %%PREFIX%%/www/sipX/conf
+	chown ${USER}:${GROUP} %%PREFIX%%/www/sipX
+	;;
+esac
