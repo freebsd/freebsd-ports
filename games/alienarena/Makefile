@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	alienarena
-PORTVERSION=	2007.603
+PORTVERSION=	2007.604
 CATEGORIES=	games
 MASTER_SITES=	http://cor.planetquake.gamespy.com/codered/files/
-DISTNAME=	${PORTNAME}2007-linux20070121-x86
+DISTNAME=	${PORTNAME}2007-linux20070225-x86
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Alien Arena 2006 (native version)
