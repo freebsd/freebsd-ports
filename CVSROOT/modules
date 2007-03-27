@@ -12697,6 +12697,7 @@ py-pyxmpp	ports/net-im/py-pyxmpp
 py-qp		ports/www/py-qp
 py-qpy		ports/www/py-qpy
 py-qt		ports/x11-toolkits/py-qt
+py-qt4-core	ports/devel/py-qt4-core
 py-radix	ports/net/py-radix
 py-rbtree	ports/devel/py-rbtree
 py-rdflib	ports/textproc/py-rdflib
