@@ -25,12 +25,12 @@ CONFLICTS=	XFree86-libraries-* xorg-libraries-*
 
 USE_BZIP2=	yes
 PREFIX?=	${X11BASE}
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 CONFIGURE_ARGS+= --enable-xdmauth
 CFLAGS+=	-DMALLOC_0_RETURNS_NULL
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack pkgconfig
 
 .include <bsd.port.mk>

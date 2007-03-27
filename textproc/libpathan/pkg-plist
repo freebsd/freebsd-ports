@@ -274,6 +274,6 @@ include/pathan/simpleVariables/VariableTypeStore.hpp
 @dirrm include/pathan
 lib/libpathan.la
 lib/libpathan.so.%%PATHAN_LIB_VERSION%%
-@exec ln -sf libpathen.so.%%PATHAN_LIB_VERSION%% %D/lib/libpathan.so
+@exec ln -sf libpathan.so.%%PATHAN_LIB_VERSION%% %D/lib/libpathan.so
 @unexec if test ! -r %D/lib/libpathan.so; then rm -f %D/lib/libpathan.so; fi
 @unexec if test ! -r %D/lib/libpathan.so.%%PATHAN_LIB_VERSION%%; then rm -f %D/lib/libpathan.so.%%PATHAN_LIB_VERSION%%; fi

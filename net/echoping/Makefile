@@ -53,4 +53,7 @@ PLIST_SUB+=	WITH_PGSQL="@comment "
 
 CONFIGURE_ARGS+=--enable-plugin="${PING_PLUGINS}"
 
+post-patch:
+	@${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} -e 's|echo aout|echo elf|'
+
 .include <bsd.port.post.mk>
