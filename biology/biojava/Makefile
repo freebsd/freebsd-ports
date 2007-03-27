@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	biojava
-DISTVERSION=	1.5-beta
+DISTVERSION=	1.5-beta2
 PORTEPOCH=	1
 CATEGORIES=	biology java
 MASTER_SITES=	http://www.biojava.org/download/bj15b/all/:source	\
@@ -15,12 +15,16 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:source	\
 		bytecode.jar:bin
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemoliu@gmail.com
 COMMENT=	Open-source java tools for processing biological data
 
 BUILD_DEPENDS=	${JAVALIBDIR}/hsqldb.jar:${PORTSDIR}/databases/hsqldb \
+		${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j \
+		${JAVALIBDIR}/jakarta-regexp.jar:${PORTSDIR}/java/jakarta-regexp \
+		${JAVALIBDIR}/commons-cli.jar:${PORTSDIR}/java/jakarta-commons-cli \
 		${JAVALIBDIR}/commons-dbcp.jar:${PORTSDIR}/java/jakarta-commons-dbcp \
-		${JAVALIBDIR}/commons-pool.jar:${PORTSDIR}/java/jakarta-commons-pool
+		${JAVALIBDIR}/commons-pool.jar:${PORTSDIR}/java/jakarta-commons-pool \
+		${JAVALIBDIR}/commons-collections.jar:${PORTSDIR}/java/jakarta-commons-collections
 RUN_DEPENDS=	${JAVALIBDIR}/hsqldb.jar:${PORTSDIR}/databases/hsqldb \
 		${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j \
 		${JAVALIBDIR}/jakarta-regexp.jar:${PORTSDIR}/java/jakarta-regexp \
@@ -33,12 +37,8 @@ RUN_DEPENDS=	${JAVALIBDIR}/hsqldb.jar:${PORTSDIR}/databases/hsqldb \
 BUILD_DEPENDS+=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 .endif
 
-BROKEN=		Does not build
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2007-04-10
-
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 USE_ANT=	yes
 MAKE_ENV=	CLASSPATH="${JAVALIBDIR}"
 ALL_TARGET=	compile-apps
@@ -48,6 +48,7 @@ PLIST_SUB+=	VER=${DISTVERSION}
 JARFILES=	apps-${DISTVERSION}.jar biojava.jar bytecode.jar
 PORTDOCS=	biojava
 SAMPLES=	demos
+WRKSRC=${WRKDIR}
 
 .if !defined(NOPORTDOCS)
 ALL_TARGET+=	javadocs-biojava
