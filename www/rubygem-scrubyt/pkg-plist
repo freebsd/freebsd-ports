@@ -2,19 +2,24 @@
 %%GEM_DOC_DIR%%/rdoc/created.rid
 %%GEM_DOC_DIR%%/rdoc/rdoc-style.css
 %%GEM_DOC_DIR%%/rdoc/files/lib/scrubyt_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/scrubyt/utils/shared_utils_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/scrubyt/utils/xpathutils_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/scrubyt/utils/simple_example_lookup_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/scrubyt/utils/compound_example_lookup_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/scrubyt/output/result_dumper_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/scrubyt/output/export_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/scrubyt/output/post_processor_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/scrubyt/output/result_rb.html
-%%GEM_DOC_DIR%%/rdoc/files/lib/scrubyt/core/navigation/fetch_action_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/scrubyt/core/navigation/navigation_actions_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/scrubyt/core/navigation/fetch_action_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/scrubyt/core/scraping/result_indexer_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/scrubyt/core/scraping/constraint_adder_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/scrubyt/core/scraping/constraint_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/scrubyt/core/scraping/filter_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/scrubyt/core/scraping/pattern_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/scrubyt/core/scraping/pre_filter_document_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/scrubyt/core/scraping/compound_example_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/scrubyt/core/shared/u_r_i_builder_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/scrubyt/core/shared/evaluation_context_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/scrubyt/core/shared/extractor_rb.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/PostProcessor.src/M000001.html
@@ -29,13 +34,13 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/EvaluationContext.src/M000010.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/EvaluationContext.src/M000011.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/EvaluationContext.src/M000012.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/EvaluationContext.src/M000013.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ResultDumper.src/M000013.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ResultDumper.src/M000014.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ResultDumper.src/M000015.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ResultDumper.src/M000016.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ResultDumper.src/M000017.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ResultIndexer.src/M000017.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ResultIndexer.src/M000018.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ResultIndexer.src/M000019.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/XPathUtils.src/M000019.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/XPathUtils.src/M000020.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/XPathUtils.src/M000021.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/XPathUtils.src/M000022.html
@@ -43,71 +48,91 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/XPathUtils.src/M000024.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/XPathUtils.src/M000025.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/XPathUtils.src/M000026.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/XPathUtils.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/CompoundExampleLookup.src/M000027.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Extractor.src/M000028.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Extractor.src/M000029.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Extractor.src/M000030.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Extractor.src/M000031.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Extractor.src/M000032.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/PreFilterDocument.src/M000033.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Pattern.src/M000034.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Pattern.src/M000035.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Pattern.src/M000036.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Pattern.src/M000037.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Pattern.src/M000038.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Pattern.src/M000039.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Extractor.src/M000033.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Extractor.src/M000034.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Extractor.src/M000035.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Extractor.src/M000036.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/URIBuilder.src/M000037.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/URIBuilder.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/PreFilterDocument.src/M000039.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Pattern.src/M000040.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Pattern.src/M000041.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Pattern.src/M000042.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Filter.src/M000043.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Filter.src/M000044.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Filter.src/M000045.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Filter.src/M000046.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Constraint.src/M000047.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Constraint.src/M000048.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Constraint.src/M000049.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Constraint.src/M000050.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Constraint.src/M000051.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Constraint.src/M000052.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Constraint.src/M000053.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Result.src/M000054.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Result.src/M000055.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Result.src/M000056.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/NavigationActions.src/M000057.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/NavigationActions.src/M000058.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/NavigationActions.src/M000059.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/NavigationActions.src/M000060.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/NavigationActions.src/M000061.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/NavigationActions.src/M000062.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/NavigationActions.src/M000063.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/NavigationActions.src/M000064.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/FetchAction.src/M000065.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/FetchAction.src/M000066.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/FetchAction.src/M000067.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/FetchAction.src/M000068.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Pattern.src/M000043.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Pattern.src/M000044.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Pattern.src/M000045.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Pattern.src/M000046.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Pattern.src/M000047.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Pattern.src/M000048.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/SharedUtils.src/M000049.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/SharedUtils.src/M000050.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Filter.src/M000051.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Filter.src/M000052.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Filter.src/M000053.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Filter.src/M000054.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Filter.src/M000055.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Constraint.src/M000056.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Constraint.src/M000057.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Constraint.src/M000058.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Constraint.src/M000059.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Constraint.src/M000060.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Constraint.src/M000061.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Constraint.src/M000062.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Result.src/M000063.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Result.src/M000064.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Result.src/M000065.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/SimpleExampleLookup.src/M000066.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/CompoundExample.src/M000067.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/CompoundExample.src/M000068.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/FetchAction.src/M000069.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/FetchAction.src/M000070.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/FetchAction.src/M000071.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Export.src/M000072.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ConstraintAdder.src/M000073.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ConstraintAdder.src/M000074.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ConstraintAdder.src/M000075.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ConstraintAdder.src/M000076.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ConstraintAdder.src/M000077.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/FetchAction.src/M000072.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/FetchAction.src/M000073.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/FetchAction.src/M000074.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/FetchAction.src/M000075.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/FetchAction.src/M000076.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/FetchAction.src/M000077.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/NavigationActions.src/M000078.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/NavigationActions.src/M000079.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/NavigationActions.src/M000080.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/NavigationActions.src/M000081.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/NavigationActions.src/M000082.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/NavigationActions.src/M000083.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/NavigationActions.src/M000084.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/NavigationActions.src/M000085.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/NavigationActions.src/M000086.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Export.src/M000087.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ConstraintAdder.src/M000088.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ConstraintAdder.src/M000089.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ConstraintAdder.src/M000090.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ConstraintAdder.src/M000091.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ConstraintAdder.src/M000092.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/PostProcessor.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/EvaluationContext.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ResultDumper.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ResultIndexer.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/XPathUtils.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/CompoundExampleLookup.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Extractor.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/URIBuilder.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/PreFilterDocument.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Pattern.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/SharedUtils.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Filter.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Constraint.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Result.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/NavigationActions.html
-%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/FetchAction.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/SimpleExampleLookup.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/CompoundExample.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Export.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/FetchAction.html
+%%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/NavigationActions.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ConstraintAdder.html
 %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt.html
 %%GEM_DOC_DIR%%/rdoc/fr_file_index.html
@@ -119,19 +144,24 @@
 %%GEM_LIB_DIR%%/CHANGELOG
 %%GEM_LIB_DIR%%/Rakefile
 %%GEM_LIB_DIR%%/lib/scrubyt.rb
+%%GEM_LIB_DIR%%/lib/scrubyt/utils/shared_utils.rb
 %%GEM_LIB_DIR%%/lib/scrubyt/utils/xpathutils.rb
+%%GEM_LIB_DIR%%/lib/scrubyt/utils/simple_example_lookup.rb
+%%GEM_LIB_DIR%%/lib/scrubyt/utils/compound_example_lookup.rb
 %%GEM_LIB_DIR%%/lib/scrubyt/output/result_dumper.rb
 %%GEM_LIB_DIR%%/lib/scrubyt/output/export.rb
 %%GEM_LIB_DIR%%/lib/scrubyt/output/post_processor.rb
 %%GEM_LIB_DIR%%/lib/scrubyt/output/result.rb
-%%GEM_LIB_DIR%%/lib/scrubyt/core/navigation/fetch_action.rb
 %%GEM_LIB_DIR%%/lib/scrubyt/core/navigation/navigation_actions.rb
+%%GEM_LIB_DIR%%/lib/scrubyt/core/navigation/fetch_action.rb
 %%GEM_LIB_DIR%%/lib/scrubyt/core/scraping/result_indexer.rb
 %%GEM_LIB_DIR%%/lib/scrubyt/core/scraping/constraint_adder.rb
 %%GEM_LIB_DIR%%/lib/scrubyt/core/scraping/constraint.rb
 %%GEM_LIB_DIR%%/lib/scrubyt/core/scraping/filter.rb
 %%GEM_LIB_DIR%%/lib/scrubyt/core/scraping/pattern.rb
 %%GEM_LIB_DIR%%/lib/scrubyt/core/scraping/pre_filter_document.rb
+%%GEM_LIB_DIR%%/lib/scrubyt/core/scraping/compound_example.rb
+%%GEM_LIB_DIR%%/lib/scrubyt/core/shared/u_r_i_builder.rb
 %%GEM_LIB_DIR%%/lib/scrubyt/core/shared/evaluation_context.rb
 %%GEM_LIB_DIR%%/lib/scrubyt/core/shared/extractor.rb
 %%GEM_LIB_DIR%%/test/unittests/filter_test.rb
@@ -139,6 +169,7 @@
 %%GEM_LIB_DIR%%/test/unittests/extractor_test.rb
 %%GEM_LIB_DIR%%/test/unittests/xpathutils_test.rb
 %%GEM_LIB_DIR%%/test/unittests/constraint_test.rb
+%%GEM_LIB_DIR%%/test/unittests/simple_example_lookup_test.rb
 %%GEM_LIB_DIR%%/test/unittests/input/constraint_test.html
 %%GEM_LIB_DIR%%/test/unittests/input/test.html
 %%GEM_SPEC%%
@@ -168,14 +199,19 @@
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ResultDumper.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ResultIndexer.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/XPathUtils.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/CompoundExampleLookup.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Extractor.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/URIBuilder.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/PreFilterDocument.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Pattern.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/SharedUtils.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Filter.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Constraint.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Result.src
-@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/NavigationActions.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/SimpleExampleLookup.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/CompoundExample.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/FetchAction.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/NavigationActions.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/Export.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt/ConstraintAdder.src
 @dirrm %%GEM_DOC_DIR%%/rdoc/classes/Scrubyt
