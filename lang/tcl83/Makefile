@@ -7,7 +7,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.3.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	lang tcl83
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -28,14 +28,9 @@ TCL_VER=	8.3
 NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 PLIST_SUB=	TCL_VER=${TCL_VER} SHORT_TCL_VER=83
 
-OPTIONS=	TCL83_MAN "Install tcl 8.3 manpages" off \
-		TCLSH_WRAPPER "Require tclsh wrapper from ports" off
+OPTIONS=	TCL83_MAN "Install tcl 8.3 manpages" off
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_TCLSH_WRAPPER)
-RUN_DEPENDS+=		tclsh:${PORTSDIR}/lang/tcl-tk-wrapper
-.endif
 
 .if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL83_MAN)
 
