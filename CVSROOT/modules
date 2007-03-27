@@ -14899,6 +14899,7 @@ tinyerp-server	ports/finance/tinyerp-server
 tinyfugue	ports/net/tinyfugue
 tinylaf		ports/devel/tinylaf
 tinyldap	ports/net/tinyldap
+tinymce		ports/www/tinymce
 tinymux		ports/games/tinymux
 tinyproxy	ports/www/tinyproxy
 tinyq		ports/devel/tinyq
