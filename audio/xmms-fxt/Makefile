@@ -25,4 +25,8 @@ USE_GNOME=	gtk12
 PLIST_FILES=	lib/xmms/Effect/libfxt.la \
 		lib/xmms/Effect/libfxt.so
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
+		${WRKSRC}/configure ${WRKSRC}/ltconfig
+
 .include <bsd.port.mk>

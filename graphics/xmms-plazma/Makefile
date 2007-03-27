@@ -26,4 +26,7 @@ PLIST_FILES=	lib/xmms/Visualization/libplazma.a \
 		lib/xmms/Visualization/libplazma.la \
 		lib/xmms/Visualization/libplazma.so
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/ltconfig
+
 .include <bsd.port.mk>
