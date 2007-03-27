@@ -7,7 +7,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.5.a.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -32,8 +32,7 @@ PLIST_SUB=	TCL_VER=${TCL_VER} SHORT_TCL_VER=${SHORT_TCL_VER}
 EXTRACT_AFTER_ARGS=|${TAR} -xpf - --exclude compat/
 
 .if !defined(BUILDING_TCL_THREADS)
-OPTIONS=	TCL85_MAN "Install tcl 8.5 manpages" off \
-		TCLSH_WRAPPER "Require tclsh wrapper from ports" off
+OPTIONS=	TCL85_MAN "Install tcl 8.5 manpages" off
 .else
 USE_TCL=	${SHORT_TCL_VER}
 PLIST=		${PKGDIR}/pkg-plist.threads
@@ -59,10 +58,6 @@ CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS
 .else
 
 CONFIGURE_ARGS+=	--disable-threads
-
-.if defined(WITH_TCLSH_WRAPPER)
-RUN_DEPENDS+=		tclsh:${PORTSDIR}/lang/tcl-tk-wrapper
-.endif
 
 .if defined(NO_INSTALL_MANPAGES) || !defined(WITH_TCL85_MAN)
 

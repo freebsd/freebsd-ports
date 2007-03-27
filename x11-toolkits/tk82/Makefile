@@ -7,7 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.2.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-toolkits tk82
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	tcl8_2
@@ -33,14 +33,9 @@ PLIST_SUB=	TK_VER=${TK_VER} SHORT_TK_VER=${SHORT_TK_VER}
 TCL82_PORT?=	lang/tcl82
 MANCOMPRESSED=	no
 
-OPTIONS=	TK82_MAN "Install tk 8.2 manpages" off \
-		WISH_WRAPPER "Require wish wrapper from ports" off
+OPTIONS=	TK82_MAN "Install tk 8.2 manpages" off
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_WISH_WRAPPER)
-RUN_DEPENDS+=		wish:${PORTSDIR}/lang/tcl-tk-wrapper
-.endif
 
 .if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TK82_MAN)
 
