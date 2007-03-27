@@ -1,5 +1,5 @@
---- linux/Makefile.orig	Sun Jan 14 16:37:32 2007
-+++ linux/Makefile	Sun Jan 14 16:41:19 2007
+--- linux/Makefile.orig	Mon Mar 26 00:13:44 2007
++++ linux/Makefile	Mon Mar 26 00:14:51 2007
 @@ -11,25 +11,14 @@
  GLIBC=
  endif
@@ -30,7 +30,7 @@
  CLIENT_DIR=$(MOUNT_DIR)/client
  SERVER_DIR=$(MOUNT_DIR)/server
  REF_GL_DIR=$(MOUNT_DIR)/ref_gl
-@@ -42,51 +31,31 @@
+@@ -42,51 +31,29 @@
  
  EGCS=/usr/local/egcs-1.1.2/bin/gcc
  
@@ -42,23 +42,23 @@
 -_LIB := lib
 -endif
 -
--BASE_CFLAGS=-Dstricmp=strcasecmp -D_stricmp=strcasecmp -D__linux__
-+CC?=gcc
- 
+-BASE_CFLAGS=-Dstricmp=strcasecmp -D_stricmp=strcasecmp -D__unix__
+-
 -ifeq ($(ARCH),axp)
 -RELEASE_CFLAGS=$(BASE_CFLAGS) -ffast-math -funroll-loops \
 -	-fomit-frame-pointer -fexpensive-optimizations
 -endif
-+BASE_CFLAGS=$(CFLAGS) -Dstricmp=strcasecmp -D_stricmp=strcasecmp -I$(X11BASE)/include
- 
+-
 -ifeq ($(ARCH),ppc)
 -RELEASE_CFLAGS=$(BASE_CFLAGS) -O2 -ffast-math -funroll-loops \
 -	-fomit-frame-pointer -fexpensive-optimizations
 -endif
-+RELEASE_CFLAGS=$(BASE_CFLAGS)
++CC?=gcc
  
 -ifeq ($(ARCH),sparc)
 -RELEASE_CFLAGS=$(BASE_CFLAGS) -ffast-math -funroll-loops \
++BASE_CFLAGS=$(CFLAGS) -Dstricmp=strcasecmp -D_stricmp=strcasecmp -I$(X11BASE)/include
++RELEASE_CFLAGS=$(BASE_CFLAGS)
 +ifdef OPTIMIZED_CFLAGS
 +RELEASE_CFLAGS+=-O2 -ffast-math -funroll-loops \
  	-fomit-frame-pointer -fexpensive-optimizations
@@ -66,12 +66,12 @@
 -
 -ifeq ($(ARCH),i386)
 -RELEASE_CFLAGS=$(BASE_CFLAGS) -O2 -ffast-math -funroll-loops -falign-loops=2 \
--	-falign-jumps=2 -falign-functions=2 -fno-strict-aliasing
+-	-fomit-frame-pointer -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing -ftree-vectorize
 -endif
 -
 -ifeq ($(ARCH),x86_64)
--RELEASE_CFLAGS=$(BASE_CFLAGS) -O2 -ffast-math -funroll-loops \
--	-fomit-frame-pointer -fexpensive-optimizations -fno-strict-aliasing
+-RELEASE_CFLAGS=$(BASE_CFLAGS) -O2 -ffast-math -funroll-loops -falign-loops=2 \
+-        -fomit-frame-pointer -falign-jumps=2 -falign-functions=2 -fno-strict-aliasing -ftree-vectorize
 +  ifeq ($(ARCH),i386)
 +RELEASE_CFLAGS+=-falign-loops=2 -falign-jumps=2 -falign-functions=2 \
 +	-fno-strict-aliasing
@@ -95,17 +95,17 @@
  
  SDLCFLAGS=$(shell sdl-config --cflags)
  SDLLDFLAGS=$(shell sdl-config --libs)
-@@ -115,15 +84,15 @@
+@@ -115,19 +82,19 @@
  # SETUP AND BUILD
  #############################################################################
  
 -ifeq ($(ARCH),axp)
--TARGETS=$(BUILDDIR)/crded \
+-TARGETS=$(BUILDDIR)/crded.$(ARCH) \
 -	$(BUILDDIR)/game$(ARCH).$(SHLIBEXT) \
 -	$(BUILDDIR)/arena/game$(ARCH).$(SHLIBEXT)
 -else
--TARGETS=$(BUILDDIR)/crded \
--	$(BUILDDIR)/crx \
+-TARGETS=$(BUILDDIR)/crded.$(ARCH) \
+-	$(BUILDDIR)/crx.$(ARCH) \
 -	$(BUILDDIR)/game$(ARCH).$(SHLIBEXT) \
 -	$(BUILDDIR)/arena/game$(ARCH).$(SHLIBEXT)
 +TARGETS=$(BUILDDIR)/game.$(SHLIBEXT) \
@@ -120,7 +120,42 @@
  endif
  
  ifeq ($(strip $(SDLSOUND)),1)
-@@ -597,7 +566,7 @@
+-	TARGETS+=$(BUILDDIR)/crx.sdl.$(ARCH)
++	TARGETS+=$(BUILDDIR)/crx.sdl
+ endif
+ 
+ build_debug:
+@@ -234,18 +201,14 @@
+ SOUND_SDL_OBJS = \
+ 	$(BUILDDIR)/client/snd_sdl.o
+ 
+-ifeq ($(ARCH),axp)
+-CODERED_AS_OBJS =  #blank
+-else
+ CODERED_AS_OBJS = \
+ 	$(BUILDDIR)/client/snd_mixa.o
+-endif
+ 
+ 
+-$(BUILDDIR)/crx.$(ARCH) : $(CODERED_OBJS) $(SOUND_OSS_OBJS) $(CODERED_AS_OBJS) $(REF_GL_OBJS) $(REF_GL_GLX_OBJS)
++$(BUILDDIR)/crx : $(CODERED_OBJS) $(SOUND_OSS_OBJS) $(CODERED_AS_OBJS) $(REF_GL_OBJS) $(REF_GL_GLX_OBJS)
+ 	$(CC) $(CFLAGS) -o $@ $(CODERED_OBJS) $(SOUND_OSS_OBJS) $(CODERED_AS_OBJS) $(LDFLAGS) $(REF_GL_OBJS) $(REF_GL_GLX_OBJS) $(GLXLDFLAGS)
+ 
+-$(BUILDDIR)/crx.sdl.$(ARCH) : $(CODERED_OBJS) $(SOUND_SDL_OBJS) $(CODERED_AS_OBJS) $(REF_GL_OBJS) $(REF_GL_GLX_OBJS)
++$(BUILDDIR)/crx.sdl : $(CODERED_OBJS) $(SOUND_SDL_OBJS) $(CODERED_AS_OBJS) $(REF_GL_OBJS) $(REF_GL_GLX_OBJS)
+ 	$(CC) $(CFLAGS) -o $@ $(CODERED_OBJS) $(SOUND_SDL_OBJS) $(CODERED_AS_OBJS) $(LDFLAGS) $(REF_GL_OBJS) $(REF_GL_GLX_OBJS) $(GLXLDFLAGS) $(SDLLDFLAGS)
+ 
+ $(BUILDDIR)/client/cl_cin.o :     $(CLIENT_DIR)/cl_cin.c
+@@ -478,7 +441,7 @@
+ 	$(BUILDDIR)/ded/cl_null.o \
+ 	$(BUILDDIR)/ded/cd_null.o
+ 
+-$(BUILDDIR)/crded.$(ARCH) : $(CRDED_OBJS)
++$(BUILDDIR)/crded : $(CRDED_OBJS)
+ 	$(CC) $(CFLAGS) -o $@ $(CRDED_OBJS) $(LDFLAGS)
+ 
+ $(BUILDDIR)/ded/cmd.o :        $(COMMON_DIR)/cmd.c
+@@ -597,7 +560,7 @@
  
  
  
@@ -129,7 +164,7 @@
  	$(CC) $(CFLAGS) $(SHLIBLDFLAGS) -o $@ $(GAME_OBJS)
  
  
-@@ -753,7 +722,7 @@
+@@ -753,7 +716,7 @@
  	$(BUILDDIR)/arena/p_weapon.o \
  	$(BUILDDIR)/arena/vehicles.o
  

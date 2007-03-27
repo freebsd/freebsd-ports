@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	alienarena
-PORTVERSION=	2007.603
+PORTVERSION=	2007.604
 CATEGORIES=	games
 MASTER_SITES=	http://cor.planetquake.gamespy.com/codered/files/
 PKGNAMESUFFIX=	-data
-DISTNAME=	${PORTNAME}2007-linux20070121-x86
+DISTNAME=	${PORTNAME}2007-linux20070225-x86
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Alien Arena 2006 (data)
@@ -23,13 +23,15 @@ WRKSRC=		${WRKDIR}/${DISTNAME:C/-linux.*//}
 .include <bsd.port.pre.mk>
 
 post-extract:
-	@${RM} ${WRKSRC}/arena/gamei386.so ${WRKSRC}/data1/gamei386.so
+	@cd ${WRKSRC}/arena && ${RM} *.dll *.so
+	@cd ${WRKSRC}/data1 && ${RM} *.dll *.so
 
 do-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && ${CP} -R arena botinfo data1 ${DATADIR}
 	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
 	@${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
+	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/alienarena.xpm ${PREFIX}/share/pixmaps
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
