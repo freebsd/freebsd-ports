@@ -26,6 +26,7 @@ DATADIR=	${PREFIX}/share/xmms/VU_Meter_skins
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' ${WRKSRC}/src/vumeter.h
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
 post-install:
 .for s in default default.mirror default.oldxmms
