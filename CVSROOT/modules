@@ -12492,6 +12492,7 @@ py-excelerator	ports/textproc/py-excelerator
 py-exif		ports/graphics/py-exif
 py-expat	ports/textproc/py-expat
 py-eyed3	ports/audio/py-eyed3
+py-ez_web	ports/www/py-ez_web
 py-ez_xml	ports/devel/py-ez_xml
 py-ezpyinline	ports/devel/py-ezpyinline
 py-fam		ports/devel/py-fam
