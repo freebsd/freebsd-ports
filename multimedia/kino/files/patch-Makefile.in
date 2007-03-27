@@ -1,0 +1,12 @@
+--- Makefile.in.orig	Tue Mar 27 16:15:11 2007
++++ Makefile.in	Tue Mar 27 16:15:55 2007
+@@ -715,8 +715,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-data-local install-desktopDATA \
+-	install-udevrulesDATA
++install-data-am: install-data-local install-desktopDATA
+ 
+ install-exec-am:
+ 
