@@ -1,5 +1,23 @@
 --- md2k/gdevmd2k.c.orig	Sun May  2 14:07:57 1999
-+++ md2k/gdevmd2k.c	Fri Nov  8 07:29:13 2002
++++ md2k/gdevmd2k.c	Fri Dec 17 19:10:22 2004
+@@ -495,7 +495,7 @@
+     int i, j;
+ 
+     /* allocate memory */
+-    work = (byte *)gs_malloc(3+sizeof(int), line_size,
++    work = (byte *)gs_malloc(pdev->memory, 3+sizeof(int), line_size,
+ 			     "alps_print_page(work)");
+     if (work == 0)
+ 	return_error(gs_error_VMerror);
+@@ -597,7 +597,7 @@
+ 	   "\033\052\162\103"
+ 	   "\033\045\0\130", 1, 9, prn_stream);
+ 
+-    gs_free((char *)work, 3+sizeof(int), line_size, "alps_print_page(work)");
++    gs_free(pdev->memory, (char *)work, 3+sizeof(int), line_size, "alps_print_page(work)");
+     return 0;
+ }
+ 
 @@ -638,11 +638,13 @@
      (k) = gx_bits_to_color_value((v) & ((1 << (b)) - 1), (b))
  

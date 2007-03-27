@@ -57,9 +57,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
-# normazile WRKSRC so things like cups-pstoraster may work
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 CONFLICTS=	ghostscript-afpl* ghostscript-gnu*
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -83,7 +80,7 @@ MLINKS=		gslp.1 gsbj.1 \
 		ps2pdf.1 ps2pdf13.1 \
 		ps2ps.1 eps2eps.1
 
-XCFLAGS=	-DUPD_SIGNAL=0 -DSTDINT_TYPES_DEFINED=1
+XCFLAGS=	-DUPD_SIGNAL=0 -DHAVE_HYPOT=1 -DSYS_TYPES_HAS_STDINT_TYPES=1
 
 .if defined(A4)
 XCFLAGS+=	-DA4
@@ -106,13 +103,12 @@ MAKE_ENV+=	FT_BRIDGE=1 FT_ROOT="${WRKSRC}/freetype" FT_LIB_EXT=".a"
 
 .if defined(WITH_SHLIB)
 .undef WITHOUT_X11
-USE_GNOME=	gtk12
-MAKE_ENV+=	GS_SHLIB_VER="${SHLIB_VER}"
+USE_GNOME=	gtk20
 ALL_TARGET=	so pcl3opts
 INSTALL_TARGET=	soinstall
 USE_LDCONFIG=	yes
-SHLIB_VER=	1
-PLIST_SUB+=	SHLIB="" SHLIB_VER="${SHLIB_VER}"
+PLIST_SUB+=	SHLIB="" SHLIB_VER="${GS_VERSION:R}"
+INCLUDEDIR=	${PREFIX}/include/ghostscript
 .else
 ALL_TARGET=	all pcl3opts
 PLIST_SUB+=	SHLIB="@comment "
@@ -130,6 +126,7 @@ HP8XX_SRCS=	gdevcd8.tar.gz
 
 # PCL3 - additional driver for HP PCL3 printers, by Martin Lottermoser
 # http://home.vrweb.de/martin.lottermoser/pcl3.html
+# XXX FIXME
 PCL3=		pcl3
 PCL3_VERS=	3.3
 PCL3_NAME=	${PCL3}-${PCL3_VERS}
@@ -182,6 +179,7 @@ LIPS_NAME=	gdevlips-${LIPS_VERS}
 LIPS_SRCS=	${LIPS_NAME}.tar.gz
 
 # DMPRT - additional driver for generic dot matrix printers
+# XXX FIXME
 DMPRT=		dmprt
 DMPRT_VERS=	2.01
 DMPRT_NAME=	${DMPRT}-${DMPRT_VERS}
@@ -245,8 +243,6 @@ pre-everything::
 
 post-extract:
 	${ECHO_MSG} ">>> in post-extract ..."
-# normazile WRKSRC so things like cups-pstoraster may work
-	${LN} -sf ${WRKDIR}/${DISTNAME} ${WRKDIR}/${PORTNAME}
 # ** 3rd party driver **
 # Note: don't forget to add those devices in scripts/configure,
 # which update unix-gcc.mak to build gs with these new devices!
@@ -295,6 +291,7 @@ post-extract:
 # for EPAG driver
 	${ECHO_MSG} ">>>   extracting ${EPAG_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EPAG_SRCS}
+	${LN} -sf ${EPAG_NAME} ${WRKSRC}/${EPAG}
 # for EPLASER driver
 	${ECHO_MSG} ">>>   extracting ${EPLASER_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EPLASER_SRCS}
@@ -338,13 +335,13 @@ pre-configure:
 	${ECHO_MSG} ">>>   adding ${HP8XX} driver to contrib.mak ..."
 	${CAT} ${FILESDIR}/cdj850.contrib.mak \
 		>> ${WRKSRC}/src/contrib.mak
-# for DJ970 driver
-	${ECHO_MSG} ">>>   adding ${DJ970} driver to contrib.mak ..."
-	${CAT} ${FILESDIR}/dj970.contrib.mak \
-		>> ${WRKSRC}/src/contrib.mak
 # for PCL3 driver
 	${ECHO_MSG} ">>>   adding ${PCL3} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/${PCL3_NAME}/src/contrib.mak-7.00.add \
+		>> ${WRKSRC}/src/contrib.mak
+# for DJ970 driver
+	${ECHO_MSG} ">>>   adding ${DJ970} driver to contrib.mak ..."
+	${CAT} ${FILESDIR}/dj970.contrib.mak \
 		>> ${WRKSRC}/src/contrib.mak
 # for MD2K driver
 	${ECHO_MSG} ">>>   adding ${MD2K} driver to contrib.mak ..."
@@ -404,6 +401,11 @@ pre-configure:
 	${ECHO_MSG} ">>>   adding ${LEX7000} driver to contrib.mak ..."
 	${CAT} ${FILESDIR}/lex7000.contrib.mak \
 		>> ${WRKSRC}/src/contrib.mak
+
+post-configure:
+	${ECHO_MSG} ">>> in post-configure ..."
+	cd ${WRKSRC}/jasper ; \
+		${SETENV} ${MAKE_ENV} ${SH} ./configure
 
 pre-build:
 	${ECHO_MSG} ">>> in pre-build ..."
@@ -481,10 +483,19 @@ pre-su-install:
 	${ECHO_MSG} ">>>   creating ghostscript destdir ..."
 	${MKDIR} ${DATADIR}
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
+.if defined(WITH_SHLIB)
+	${MKDIR} ${INCLUDEDIR}
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${INCLUDEDIR}
+.endif
 
 post-install:
 	${ECHO_MSG} ">>> in post-install ..."
 	${LN} -s -f ${LOCALBASE}/share/fonts/CIDFont ${CIDFONTDIR}/CIDFont
+.if defined(WITH_SHLIB)
+.for i in iapi.h ierrors.h
+	${INSTALL_DATA} ${WRKSRC}/src/${i} ${INCLUDEDIR}
+.endfor
+.endif
 	${ECHO_MSG} ">>>   stripping gs ..."
 .if defined(WITH_SHLIB)
 	${STRIP_CMD} ${PREFIX}/bin/gsc ${PREFIX}/bin/gsx

@@ -1,6 +1,6 @@
---- src/fapi_ft.c.orig	Sat Dec 13 07:07:59 2003
-+++ src/fapi_ft.c	Wed Mar 17 21:43:43 2004
-@@ -30,7 +30,8 @@
+--- src/fapi_ft.c.orig	Mon Mar 13 17:18:19 2006
++++ src/fapi_ft.c	Sun Mar 18 16:23:21 2007
+@@ -26,11 +26,14 @@
  #include "math_.h"
  
  /* FreeType headers */
@@ -10,3 +10,9 @@
  #include "freetype/ftincrem.h"
  #include "freetype/ftglyph.h"
  #include "freetype/ftoutln.h"
+ #include "freetype/fttrigon.h"
++#include "gserrors.h"
++#include "gserror.h"
+ 
+ /* Note: structure definitions here start with FF_, which stands for 'FAPI FreeType". */
+ 

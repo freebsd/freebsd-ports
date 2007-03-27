@@ -1,5 +1,5 @@
 --- mjc/gdevmjc.c.orig	Sat Nov  2 17:58:50 1996
-+++ mjc/gdevmjc.c	Sun Nov 10 21:37:22 2002
++++ mjc/gdevmjc.c	Fri Dec 31 16:24:50 2004
 @@ -43,7 +43,8 @@
  #include <limits.h>
  #include "gdevprn.h"
@@ -259,6 +259,30 @@
  
  
  private int
+@@ -988,7 +980,7 @@
+ 
+ /* NOZ */
+   xtalbuff_size = plane_size*8 + 64;
+-  xtalbuff = (short *) gs_malloc( xtalbuff_size*(16*4+2*4) , W, "mj_colour_print_barrier");
++  xtalbuff = (short *) gs_malloc(pdev->memory, xtalbuff_size*(16*4+2*4) , W, "mj_colour_print_barrier");
+   memset(xtalbuff, 0, xtalbuff_size*(16*4+2*4) * W);
+   {
+   	int i;
+@@ -1027,12 +1019,12 @@
+   	p += xtalbuff_size;
+   }
+ 
+-  storage = (word *) gs_malloc(storage_size_words, W, "mj_colour_print_page");
++  storage = (word *) gs_malloc(pdev->memory, storage_size_words, W, "mj_colour_print_page");
+ 
+ /* prepare a temporary buffer for mj_raster_cmd */
+ 
+   mj_tmp_buf_size = plane_size;
+-  mj_tmp_buf = (byte *) gs_malloc(mj_tmp_buf_size, W ,"mj_raster_buffer");
++  mj_tmp_buf = (byte *) gs_malloc(pdev->memory, mj_tmp_buf_size, W ,"mj_raster_buffer");
+ 
+ #if 0
+   fprintf(stderr, "storage_size_words :%d\n", storage_size_words);
 @@ -1163,7 +1155,8 @@
  
    /* Send each scan line in turn */
@@ -269,7 +293,19 @@
      int cErr, mErr, yErr, kErr;
      int this_pass, i;
      long int lnum;
-@@ -1412,10 +1405,10 @@
+@@ -1403,19 +1396,19 @@
+     fflush(prn_stream);
+   }
+   /* free temporary storage */
+-  gs_free((char *) storage, storage_size_words, W, "mj_colour_print_page");
+-  gs_free((char *) mj_tmp_buf, mj_tmp_buf_size, W, "mj_raster_buffer");
+-  gs_free((char *) xtalbuff , xtalbuff_size*(16*4+2*4) , W, "mj_colour_print_barrier");
++  gs_free(pdev->memory, (char *) storage, storage_size_words, W, "mj_colour_print_page");
++  gs_free(pdev->memory, (char *) mj_tmp_buf, mj_tmp_buf_size, W, "mj_raster_buffer");
++  gs_free(pdev->memory, (char *) xtalbuff , xtalbuff_size*(16*4+2*4) , W, "mj_colour_print_barrier");
+ 
+   return 0;
+ }
  
  void 
  mj_color_correct(gx_color_value *Rptr ,gx_color_value *Gptr , gx_color_value *Bptr )

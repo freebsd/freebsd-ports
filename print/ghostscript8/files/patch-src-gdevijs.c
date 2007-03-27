@@ -1,5 +1,5 @@
---- src/gdevijs.c.orig	Wed Mar 24 17:38:53 2004
-+++ src/gdevijs.c	Thu May 26 01:23:29 2005
+--- src/gdevijs.c.orig	Thu Mar 10 23:57:23 2005
++++ src/gdevijs.c	Fri May 27 02:56:55 2005
 @@ -27,15 +27,29 @@
   * which is a security risk, since any program can be run.
   * You should use -dSAFER which sets .LockSafetyParams to true 
@@ -30,9 +30,9 @@
  /* This should go into gdevprn.h, or, better yet, gdevprn should
     acquire an API for changing resolution. */
  int gdev_prn_maybe_realloc_memory(gx_device_printer *pdev,
-@@ -51,6 +65,14 @@
- private dev_proc_get_params(gsijs_get_params);
+@@ -52,6 +66,14 @@
  private dev_proc_put_params(gsijs_put_params);
+ private dev_proc_finish_copydevice(gsijs_finish_copydevice);
  
 +/* Following definitions are for krgb support. */
 +private dev_proc_create_buf_device(gsijs_create_buf_device);
@@ -42,10 +42,10 @@
 +private dev_proc_fill_path(gsijs_fill_path);
 +private dev_proc_stroke_path(gsijs_stroke_path);
 +
- private const gx_device_procs gsijs_procs =
- prn_color_params_procs(gsijs_open, gsijs_output_page, gsijs_close,
- 		   gx_default_rgb_map_rgb_color, gx_default_rgb_map_color_rgb,
-@@ -83,6 +105,14 @@
+ private const gx_device_procs gsijs_procs = {
+ 	gsijs_open,
+ 	NULL,	/* get_initial_matrix */
+@@ -126,6 +148,14 @@
  
      IjsClientCtx *ctx;
      int ijs_version;
@@ -60,7 +60,7 @@
  };
  
  #define DEFAULT_DPI 74   /* See gsijs_set_resolution() below. */
-@@ -110,7 +140,12 @@
+@@ -153,7 +183,12 @@
      FALSE,	/* Tumble_set */
  
      NULL,	/* IjsClient *ctx */
@@ -74,7 +74,7 @@
  };
  
  
-@@ -126,12 +161,254 @@
+@@ -169,12 +204,254 @@
  
  /**************************************************************************/
  
@@ -334,7 +334,7 @@
  
  private int
  gsijs_parse_wxh (const char *val, int size, double *pw, double *ph)
-@@ -169,34 +446,6 @@
+@@ -212,34 +489,6 @@
  }
  
  /**
@@ -369,7 +369,7 @@
   * gsijs_set_generic_params: Set generic IJS parameters.
   **/
  private int
-@@ -207,9 +456,6 @@
+@@ -250,9 +499,6 @@
      int i, j;
      char *value;
  
@@ -379,7 +379,7 @@
      /* Split IjsParams into separate parameters and send to ijs server */
      value = NULL;
      for (i=0, j=0; (j < ijsdev->IjsParams_size) && (i < sizeof(buf)-1); j++) {
-@@ -250,68 +496,6 @@
+@@ -293,68 +539,6 @@
  }
  
  /**
@@ -448,7 +448,7 @@
   * gsijs_set_margin_params: Do margin negotiation with IJS server.
   **/
  private int
-@@ -322,9 +506,6 @@
+@@ -365,9 +549,6 @@
      int i, j;
      char *value;
  
@@ -458,7 +458,7 @@
      /* Split IjsParams into separate parameters and send to ijs server */
      value = NULL;
      for (i=0, j=0; (j < ijsdev->IjsParams_size) && (i < sizeof(buf)-1); j++) {
-@@ -491,12 +672,18 @@
+@@ -534,12 +715,18 @@
      char buf[256];
      bool use_outputfd;
      int fd = -1;
@@ -477,7 +477,7 @@
      /* Decide whether to use OutputFile or OutputFD. Note: how to
         determine this is a tricky question, so we just allow the
         user to set it.
-@@ -511,6 +698,8 @@
+@@ -554,6 +741,8 @@
      if (code < 0)
  	return code;
  
@@ -486,7 +486,7 @@
      if (use_outputfd) {
  	/* Note: dup() may not be portable to all interesting IJS
  	   platforms. In that case, this branch should be #ifdef'ed out.
-@@ -570,6 +759,9 @@
+@@ -613,6 +802,9 @@
      if (code >= 0)
  	code = gsijs_set_margin_params(ijsdev);
  
@@ -496,7 +496,7 @@
      return code;
  }
  
-@@ -629,21 +821,6 @@
+@@ -695,21 +887,6 @@
      return min(width, end);
  }
  
@@ -518,7 +518,7 @@
  /* Print a page.  Don't use normal printer gdev_prn_output_page 
   * because it opens the output file.
   */
-@@ -654,8 +831,9 @@
+@@ -720,8 +897,9 @@
      gx_device_printer *pdev = (gx_device_printer *)dev;
      int raster = gdev_prn_raster(pdev);
      int ijs_width, ijs_height;
@@ -529,7 +529,7 @@
      unsigned char *data;
      char buf[256];
      double xres = pdev->HWResolution[0];
-@@ -671,13 +849,23 @@
+@@ -737,13 +915,23 @@
  
      /* Determine bitmap width and height */
      ijs_height = gdev_prn_print_scan_lines(dev);
@@ -550,14 +550,14 @@
 +        /* Create banding buffer for k plane. */
 +        ijsdev->k_width = ijs_width;
 +        ijsdev->k_band_size = band_height * k_row_bytes;   
-+        if ((ijsdev->k_band = gs_malloc(ijsdev->k_band_size, 1, "gsijs_output_page")) == (unsigned char *)NULL)
++        if ((ijsdev->k_band = gs_malloc(pdev->memory, ijsdev->k_band_size, 1, "gsijs_output_page")) == (unsigned char *)NULL)
 +           return gs_note_error(gs_error_VMerror);
 +    }
 +
      /* Required page parameters */
      sprintf(buf, "%d", n_chan);
      gsijs_client_set_param(ijsdev, "NumChan", buf);
-@@ -686,44 +874,71 @@
+@@ -752,44 +940,71 @@
  
      /* This needs to become more sophisticated for DeviceN. */
      strcpy(buf, (n_chan == 4) ? "DeviceCMYK" : 
@@ -644,12 +644,12 @@
 +#endif
 +
 +    if(krgb_mode)
-+        gs_free(ijsdev->k_band, ijsdev->k_band_size, 1, "gsijs_output_page");
++        gs_free(pdev->memory, ijsdev->k_band, ijsdev->k_band_size, 1, "gsijs_output_page");
 +
      gs_free_object(pdev->memory, data, "gsijs_output_page");
  
      endcode = (pdev->buffer_space && !pdev->is_async_renderer ?
-@@ -1027,7 +1242,6 @@
+@@ -1093,7 +1308,6 @@
  	dprintf2("ijs: Can't set parameter %s=%s\n", key, value);
      return code;
  }

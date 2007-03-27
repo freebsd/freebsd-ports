@@ -1,22 +1,13 @@
---- lib/gs_ttf.ps.orig	Sat Feb 14 04:43:51 2004
-+++ lib/gs_ttf.ps	Mon Jun  7 12:51:44 2004
-@@ -519,7 +519,7 @@
-   (maxp) 1 index
-   (name) 1 index
-   (OS/2) 1 index
--  (post) 1 index
-+  (post) { .readbigtable }
-   (vhea) 1 index
- 	% Big tables
-   (glyf) { .readbigtable }
-@@ -854,10 +854,17 @@
+--- lib/gs_ttf.ps.orig	Tue Feb  6 20:07:48 2007
++++ lib/gs_ttf.ps	Sat Mar 24 16:15:49 2007
+@@ -997,10 +997,17 @@
    } ifelse
  		% Stack: ... /FontInfo mark key1 value1 ...
    post null ne {
--    /ItalicAngle post 4 gets32 65536.0 div
--    /isFixedPitch post 12 getu32 0 ne
--    /UnderlinePosition post 8 gets16 upem div
--    /UnderlineThickness post 10 gets16 upem div
+-    /ItalicAngle first_post_string 4 gets32 65536.0 div
+-    /isFixedPitch first_post_string 12 getu32 0 ne
+-    /UnderlinePosition first_post_string 8 gets16 upem div
+-    /UnderlineThickness first_post_string 10 gets16 upem div
 +    post type /arraytype eq {
 +      % this post table is a big table. /post should be [(...) ...]
 +      % data we actually need here should be first one in array.
