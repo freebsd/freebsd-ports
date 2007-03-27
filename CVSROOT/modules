@@ -12703,6 +12703,7 @@ py-qt4-designer	ports/devel/py-qt4-designer
 py-qt4-designerplugin	ports/devel/py-qt4-designerplugin
 py-qt4-doc	ports/misc/py-qt4-doc
 py-qt4-gui	ports/x11-toolkits/py-qt4-gui
+py-qt4-network	ports/net/py-qt4-network
 py-qt4-opengl	ports/x11/py-qt4-opengl
 py-qt4-sql	ports/databases/py-qt4-sql
 py-qt4-test	ports/devel/py-qt4-test
