@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Server
-PORTVERSION=	0.95
+PORTVERSION=	0.96
 CATEGORIES=	net perl5
 MASTER_SITES=	http://seamons.com/projects/perl/net_server/ \
 		${MASTER_SITE_PERL_CPAN}
