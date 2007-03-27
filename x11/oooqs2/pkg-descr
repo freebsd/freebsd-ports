@@ -1,6 +1,8 @@
-OpenOffice.org Quickstarter is a small application that runs in the KDE 
+OpenOffice.org Quickstarter is a small application that runs in the KDE
 SystemTray. It is used to quickly start the different OpenOffice.org
-modules without having to go through the K-Menu. 
+modules without having to go through the K-Menu.
+
+This port provided quickstarter only for OpenOffice 2.x
 
 Author: segfault_ii@web.de
-WWW:   http://segfaultskde.berlios.de/index.php?content=oooqs
+WWW:   http://developer.berlios.de/projects/segfaultskde/
