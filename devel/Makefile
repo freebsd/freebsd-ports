@@ -1165,6 +1165,7 @@
     SUBDIR += p5-Filter
     SUBDIR += p5-Filter-Template
     SUBDIR += p5-FreezeThaw
+    SUBDIR += p5-Gearman
     SUBDIR += p5-Geo-ShapeFile
     SUBDIR += p5-Getargs-Long
     SUBDIR += p5-Getopt-ArgvFile
