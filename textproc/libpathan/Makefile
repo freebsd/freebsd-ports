@@ -35,7 +35,7 @@ PLIST_SUB+=	PATHAN_LIB_VERSION=${PATHAN_LIB_VERSION}
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|LIBS="-lpthread|LIBS="${PTHREAD_LIBS}|g' \
+	@${REINPLACE_CMD} -e 's|LIBS="-lpthread|LIBS="${PTHREAD_LIBS}|g ; s|echo aout|echo elf|' \
 			${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|targetoptions="-O2"|targetoptions="${CFLAGS}"|g' \
 			${WRKSRC}/runConfigure

@@ -44,12 +44,9 @@ MAKE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=		yes
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

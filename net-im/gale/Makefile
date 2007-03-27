@@ -21,9 +21,10 @@ LIB_DEPENDS=	wwwcore.1:${PORTSDIR}/www/libwww \
 
 USE_ICONV=	yes
 USE_GNOME=	glib12
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
+LIBTOOLFILES=	configure liboop/configure
 USE_OPENSSL=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib \
