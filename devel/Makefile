@@ -1841,6 +1841,7 @@
     SUBDIR += py-qt4-dbus
     SUBDIR += py-qt4-designer
     SUBDIR += py-qt4-designerplugin
+    SUBDIR += py-qt4-test
     SUBDIR += py-rbtree
     SUBDIR += py-repl
     SUBDIR += py-resourcepackage
