@@ -19,14 +19,15 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 ALL_TARGET=	# empty
 
-.include <bsd.port.pre.mk>
-
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-shared
+CONFIGURE_ARGS=	--enable-shared
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
 post-install:
 	@${LN} -sf ${PREFIX}/lib/libderiv-stable.so.1 ${PREFIX}/lib/libderiv.so.1
 	@${LN} -sf ${PREFIX}/lib/libint-stable.so.1 ${PREFIX}/lib/libint.so.1
 	@${LN} -sf ${PREFIX}/lib/libr12-stable.so.1 ${PREFIX}/lib/libr12.so.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

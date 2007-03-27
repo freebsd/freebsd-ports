@@ -22,7 +22,7 @@ OPTIONS+=	PGSQL "Support for PostgreSQL (Experimental)" off
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if defined(LIBHOME_WITH_BDB_VER)
 WITH_BDB_VER=	${LIBHOME_WITH_BDB_VER}
@@ -88,6 +88,7 @@ PLIST_SUB=	NSS=""
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/ltconfig ${WRKSRC}/configure
 .if defined(WITH_BDB)
 	@${REINPLACE_CMD} -e 's;db-4.3 db-4.2;${BDB_LIB_NAME};g' \
 		${WRKSRC}/configure

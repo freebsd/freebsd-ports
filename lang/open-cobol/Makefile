@@ -19,7 +19,7 @@ COMMENT=	An open-source COBOL compiler
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 USE_GETOPT_LONG=yes
-USE_AUTOTOOLS=	libltdl:15
+USE_AUTOTOOLS=	libltdl:15 libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

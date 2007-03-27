@@ -18,11 +18,14 @@ COMMENT=	Change Password Utility for LDAP
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_OPENLDAP=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/cpu --with-ldap=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-DLDAP_DEPRECATED"
 
 MAN5=		cpu.conf.5
 MAN8=		cpu.8 cpu-ldap.8
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
