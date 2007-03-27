@@ -7,7 +7,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang tcl80
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=tcl8_0
@@ -28,14 +28,9 @@ SHLIB_MINOR=	5
 MAKEFILE=	makefile
 TCL_LIB=	libtcl80.so
 
-OPTIONS=	TCL80_MAN "Install tcl 8.0 manpages" off \
-		TCLSH_WRAPPER "Require tclsh wrapper from ports" off
+OPTIONS=	TCL80_MAN "Install tcl 8.0 manpages" off
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_TCLSH_WRAPPER)
-RUN_DEPENDS+=		tclsh:${PORTSDIR}/lang/tcl-tk-wrapper
-.endif
 
 .if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL80_MAN)
 .include "${FILESDIR}/manpages"
