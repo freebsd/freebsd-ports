@@ -183,6 +183,7 @@
     SUBDIR += nvidia-settings
     SUBDIR += nvidia-xconfig
     SUBDIR += oooqs
+    SUBDIR += oooqs2
     SUBDIR += p5-Clipboard
     SUBDIR += p5-X11-GUITest
     SUBDIR += p5-X11-IdleTime

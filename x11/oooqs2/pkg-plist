@@ -1,21 +1,33 @@
-bin/oooqs
-share/icons/hicolor/64x64/apps/oooqs.png
-share/icons/hicolor/16x16/apps/oooqs.png
-share/icons/hicolor/32x32/apps/oooqs.png
-share/icons/hicolor/48x48/apps/oooqs.png
-share/applnk/Utilities/oooqs.desktop
-share/autostart/oooqs.desktop
-share/locale/br/LC_MESSAGES/oooqs.mo
-share/locale/bs/LC_MESSAGES/oooqs.mo
-share/locale/de/LC_MESSAGES/oooqs.mo
-share/locale/es/LC_MESSAGES/oooqs.mo
-share/locale/fr/LC_MESSAGES/oooqs.mo
-share/locale/it/LC_MESSAGES/oooqs.mo
-share/locale/nl/LC_MESSAGES/oooqs.mo
-share/locale/ru/LC_MESSAGES/oooqs.mo
-share/locale/sk/LC_MESSAGES/oooqs.mo
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/64x64
-@dirrmtry share/applnk/Utilities
+bin/oooqs2
+share/applnk/Utilities/oooqs2.desktop
+%%DOCSDIR%%/de/oooqs2/common
+%%DOCSDIR%%/de/oooqs2/index.cache.bz2
+%%DOCSDIR%%/de/oooqs2/index.docbook
+%%DOCSDIR%%/en/oooqs2/common
+%%DOCSDIR%%/en/oooqs2/index.cache.bz2
+%%DOCSDIR%%/en/oooqs2/index.docbook
+share/icons/hicolor/128x128/apps/oooqs2.png
+share/icons/hicolor/16x16/apps/oooqs2.png
+share/icons/hicolor/32x32/apps/oooqs2.png
+share/icons/hicolor/48x48/apps/oooqs2.png
+share/icons/hicolor/64x64/apps/oooqs2.png
+share/locale/de/LC_MESSAGES/oooqs2.mo
+@dirrm share/icons/hicolor/64x64/apps
+@dirrm share/icons/hicolor/64x64
+@dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/48x48
+@dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16
+@dirrm share/icons/hicolor/128x128/apps
+@dirrm share/icons/hicolor/128x128
+@dirrm share/icons/hicolor
+@dirrm share/icons
+@dirrm %%DOCSDIR%%/en/oooqs2
+@dirrm %%DOCSDIR%%/en
+@dirrm %%DOCSDIR%%/de/oooqs2
+@dirrm %%DOCSDIR%%/de
+@dirrm %%DOCSDIR%%
+@dirrm share/applnk/Utilities
+@dirrm share/applnk
