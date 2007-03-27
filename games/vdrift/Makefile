@@ -23,7 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/settings/VDrift.config:${PORTSDIR}/g
 
 USE_BZIP2=	yes
 USE_GL=		yes
-USE_SDL=	sdl image net
+USE_SDL=	sdl image net gfx
 
 MAKE_ENV=	CC="${CC}" CXX="${CXX}"
 SCONS_ARGS=	prefix=${PREFIX} \
