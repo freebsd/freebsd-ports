@@ -14934,6 +14934,7 @@ titlefix	ports/sysutils/titlefix
 tits		ports/comms/tits
 tivodecode	ports/multimedia/tivodecode
 tix		ports/x11-toolkits/tix
+tk-wrapper	ports/lang/tk-wrapper
 tk80		ports/x11-toolkits/tk80
 tk82		ports/x11-toolkits/tk82
 tk83		ports/x11-toolkits/tk83
