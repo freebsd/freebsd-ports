@@ -1837,6 +1837,7 @@
     SUBDIR += py-pycallgraph
     SUBDIR += py-pydasm
     SUBDIR += py-pytz
+    SUBDIR += py-qt4-assistant
     SUBDIR += py-qt4-core
     SUBDIR += py-qt4-dbus
     SUBDIR += py-qt4-designer
