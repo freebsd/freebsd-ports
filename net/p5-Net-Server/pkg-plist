@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/Net/Server.pm
 %%SITE_PERL%%/Net/Server.pod
 %%SITE_PERL%%/Net/Server/Daemonize.pm
