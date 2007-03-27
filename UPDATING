@@ -7,6 +7,38 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20070327:
+  AFFECTS: users of emulators/linux_base-fc6
+  AUTHOR: bsam@FreeBSD.org
+
+  ATTENTION! The port is experimental for now. Use it at your own risk. This
+  port may be used only with 7-CURRENT and compat.linux.osrelease=2.6.16.
+
+  To use/test the port (along with linux FC4 infrastructure ports) you
+  should do:
+
+  0. Backup all your vital information!
+  1. Remove the current linux base port.
+  2. Add to your /etc/make.conf "OVERRIDE_LINUX_BASE_PORT=fc6".
+  3. Make sure no linux application is running.
+  4. Set apropriate sysctl (compat.linux.osrelease=2.6.16).
+  5. Install emulation/linux_base-fc6.
+  5a. Those who use linux ports with automatic plist building should
+      apply the following patch:
+      ftp://mail.ipt.ru/pub/FreeBSD/patches/bsd.linux-rpm.mk-autoplist.diff
+
+  That should be enough at most circumstances. If you have difficulties,
+  please be sure to expand item 1 to:
+
+  1a. Remove all ports which depends on linux base port.
+  1b. Remove linux base port.
+  1c. Clean /compat/linux/ directory.
+
+  In case you want to get rid of the port, deinstall it, then return
+  back compat.linux.osrelease to 2.4.2 (as usual make sure that no
+  linux application is running) and remove from /etc/make.conf the line
+  containing the OVERRIDE_LINUX_BASE_PORT variable.
+
+20070327:
   AFFECTS: users of x11-wm/fluxbox
   AUTHOR: mezz@FreeBSD.org
 
