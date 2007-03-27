@@ -1,0 +1,5 @@
+@cwd %%LOCALBASE%%
+lib/plugins/designer/libpythonplugin.so
+@exec mkdir -p %D/lib/plugins/designer/python
+@dirrmtry lib/plugins/designer/python
+@dirrmtry lib/plugins/designer
