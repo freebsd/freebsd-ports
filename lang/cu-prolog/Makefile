@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.icot.or.jp/ifs/kbms-clp/unix/cuprolog/ \
 DISTNAME=	cupsrc
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} cupdoc${EXTRACT_SUFX}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Experimental constraint logic programming language
 
 WRKSRC=		${WRKDIR}/src

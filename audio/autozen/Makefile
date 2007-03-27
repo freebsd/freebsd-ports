@@ -11,7 +11,7 @@ PORTREVISION=	0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.linux.edu/download/
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Adjust brain waves with sound
 
 MAKE_ENV+=	PTHREAD_FLAGS="${PTHREAD_CFLAGS} ${PTHREAD_LIBS}" \

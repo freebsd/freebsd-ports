@@ -17,7 +17,7 @@ DISTNAME=	rubyref_html_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Ruby Class and Module Reference, in HTML format
 
 USE_RUBY=	yes

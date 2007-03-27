@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.zork.org/software/
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A string handling library for C
 
 LIB_DEPENDS=	xxl.2:${PORTSDIR}/devel/xxl:install

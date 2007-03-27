@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	libmpc8xx
 DISTNAME=	mpc8xx-${PORTVERSION}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Standalone library to control various mpc8xx boards
 
 WRKSRC=		${WRKDIR}/libmpc8xx

@@ -12,7 +12,7 @@ PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cobite.com/cvsps/
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Create patchset information from CVS
 
 USE_GMAKE=	yes

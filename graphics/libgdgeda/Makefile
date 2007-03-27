@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/dist/ \
 		http://www.geda.seul.org/devel/support/ \
 		http://www.tinkerbox.org/projects/files/gEDA/
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Special version of the gd graphic lib for use by gEDA programs
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png

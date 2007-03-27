@@ -10,7 +10,7 @@ PORTVERSION=	1142334561
 CATEGORIES=	sysutils
 MASTER_SITES=	http://mbsd.msk.ru/dist/
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	POSIX fuser utility for FreeBSD
 
 USE_BZIP2=	yes

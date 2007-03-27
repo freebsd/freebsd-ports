@@ -10,7 +10,7 @@ PORTVERSION=	1.1.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.zero-based.org/software/jpegpixi/
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Useful to correct images from digtal camera with CCD defects
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg

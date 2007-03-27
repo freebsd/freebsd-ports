@@ -15,7 +15,7 @@ MASTER_SITES=	http://caml.inria.fr/distrib/ \
 PKGNAMESUFFIX=	-examples
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Example programs for the Objective Caml
 
 NO_BUILD=	yes

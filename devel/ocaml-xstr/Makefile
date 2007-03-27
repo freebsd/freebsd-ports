@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml-programming.de/packages/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	ssedov@mbsd.msk.ru
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Thread-safe implementation of string searching/matching
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
