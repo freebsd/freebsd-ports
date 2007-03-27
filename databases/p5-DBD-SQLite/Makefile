@@ -19,7 +19,7 @@ COMMENT=	Provides access to SQLite3 databases through the DBI
 # than the bundled version and has an incompatible DB file format.
 # In this way we can be sure DBD::SQLite can interoperate with
 # databases/sqlite3.
-BUILD_DEPENDS=	sqlite>=3.3.3:${PORTSDIR}/databases/sqlite3
+BUILD_DEPENDS=	sqlite3>=3.3.3:${PORTSDIR}/databases/sqlite3
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
