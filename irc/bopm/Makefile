@@ -17,7 +17,8 @@ COMMENT=	Open proxy and DNSBL monitor, designed for use with ircds
 
 LOGDIR=		/var/log/${PORTNAME}
 
-GNU_CONFIGURE=		yes
+USE_AUTOTOOLS=	libtool:15
+LIBTOOLFILES=	configure src/libopm/configure
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--sysconfdir=${PREFIX}/etc --localstatedir=${LOGDIR}
 
