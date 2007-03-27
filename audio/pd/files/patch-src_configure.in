@@ -1,21 +1,121 @@
-$FreeBSD$
-
---- src/configure.in.orig	Fri Sep 26 21:40:18 2003
-+++ src/configure.in	Tue Nov 11 23:53:26 2003
-@@ -136,6 +136,38 @@
-         		AC_CHECK_LIB(tk8.0, main,,echo no tk library found || exit 1)))))))
+--- src/configure.in.orig	Sat Oct 28 21:13:24 2006
++++ src/configure.in	Sun Mar 25 13:28:57 2007
+@@ -22,6 +22,9 @@
+ AC_SUBST(EXTERNTARGET)
  
+ dnl other defaults
++dnl respect upstream CFLAGS
++GUIFLAGS="$CFLAGS $GUIFLAGS"
++echo Base GUIFLAGS=$GUIFLAGS
  
+ dnl check for features
+ 
+@@ -83,7 +86,7 @@
+          echo "pthreads required" || exit 1)
+ 
+ dnl Check for fftw package
+-if test x$fftw == "xyes";
++if test x$fftw = "xyes";
+ then
+ AC_CHECK_LIB(fftw, fftw_one,PDLIB="$PDLIB -lfftw",
+     echo "fftw package not found - using built-in FFT"; fftw=no)
+@@ -92,62 +95,96 @@
+ dnl look for tcl 8.x... do I really have to go through all this!?
+ 
+ foundit=no
+-if test $foundit == "no";
++if test x$foundit = "xno";
+ then
+     AC_CHECK_HEADER(tcl.h,foundit=yes,)
+ fi
+-if test $foundit == "no";
++if test x$foundit = "xno";
+ then
+     AC_CHECK_HEADER(tcl8.7/tcl.h,
+     	GUIFLAGS="$GUIFLAGS -I/usr/include/tcl8.7";foundit=yes,)
+ fi
+-if test $foundit == "no";
++if test x$foundit = "xno";
+ then
+     AC_CHECK_HEADER(tcl8.6/tcl.h,
+     	GUIFLAGS="$GUIFLAGS -I/usr/include/tcl8.6";foundit=yes,)
+ fi
+-if test $foundit == "no";
++if test x$foundit = "xno";
+ then
+     AC_CHECK_HEADER(tcl8.5/tcl.h,
+     	GUIFLAGS="$GUIFLAGS -I/usr/include/tcl8.5";foundit=yes,)
+ fi
+-if test $foundit == "no";
++if test x$foundit = "xno";
+ then
+     AC_CHECK_HEADER(tcl8.4/tcl.h,
+     	GUIFLAGS="$GUIFLAGS -I/usr/include/tcl8.4";foundit=yes,)
+ fi
+-if test $foundit == "no";
++if test x$foundit = "xno";
+ then
+     AC_CHECK_HEADER(tcl8.3/tcl.h,
+     	GUIFLAGS="$GUIFLAGS -I/usr/include/tcl8.3";foundit=yes,)
+ fi
+-if test $foundit == "no";
++if test x$foundit = "xno";
+ then
+     AC_CHECK_HEADER(tcl8.2/tcl.h,
+     	GUIFLAGS="$GUIFLAGS -I/usr/include/tcl8.2";foundit=yes,)
+ fi
+-if test $foundit == "no";
++if test x$foundit = "xno";
+ then
+     echo no tcl header found
+     exit -1
+ fi
+ 
+-AC_CHECK_LIB(tcl8.7, main,,
+-    AC_CHECK_LIB(tcl8.6, main,,
+-	AC_CHECK_LIB(tcl8.5, main,,
+-	    AC_CHECK_LIB(tcl8.4, main,,
+-		AC_CHECK_LIB(tcl8.3, main,,
+-		    AC_CHECK_LIB(tcl8.2, main,,
+-        		AC_CHECK_LIB(tcl8.0, main,,echo no tcl library found || exit 1)))))))
+-
+-AC_CHECK_LIB(tk8.7, main,,
+-    AC_CHECK_LIB(tk8.6, main,,
+-	AC_CHECK_LIB(tk8.5, main,,
+-	    AC_CHECK_LIB(tk8.4, main,,
+-		AC_CHECK_LIB(tk8.3, main,,
+-		    AC_CHECK_LIB(tk8.2, main,,
+-        		AC_CHECK_LIB(tk8.0, main,,echo no tk library found || exit 1)))))))
+-
++AC_CHECK_LIB(tcl87, main,,
++    AC_CHECK_LIB(tcl86, main,,
++	AC_CHECK_LIB(tcl85, main,,
++	    AC_CHECK_LIB(tcl84, main,,
++		AC_CHECK_LIB(tcl83, main,,
++		    AC_CHECK_LIB(tcl82, main,,
++        		AC_CHECK_LIB(tcl80, main,,echo no tcl library found || exit 1)))))))
++
++AC_CHECK_LIB(tk87, main,,
++    AC_CHECK_LIB(tk86, main,,
++	AC_CHECK_LIB(tk85, main,,
++	    AC_CHECK_LIB(tk84, main,,
++		AC_CHECK_LIB(tk83, main,,
++		    AC_CHECK_LIB(tk82, main,,
++        		AC_CHECK_LIB(tk80, main,,echo no tk library found || exit 1)))))))
++
++
 +if test `uname -s` = FreeBSD;
 +then
 +    EXT=pd_freebsd
-+    MORECFLAGS="-DPA_USE_OSS -DPA_LITTLE_ENDIAN \
-+    	 -DUSEAPI_OSS \
-+        -I../portaudio/pa_common \
-+        -I../portaudio/pablio -I../portaudio/portmidi-macosx \
++    CPPFLAGS="-DDL_OPEN -DPA_USE_OSS -DUNIX -DUNISTD\
++    	-DUSEAPI_OSS \
++        -I../portaudio/pa_common -I../portaudio/pablio \
++        -I../portmidi/pm_common \
++        -I../portmidi/pm_linux \
 +	-Werror -fno-strict-aliasing"
++    LDFLAGS="-Wl,-export-dynamic"
 +    SYSSRC="s_audio_oss.c"
-+    if test x$portaudio == "xyes";
++    if test x$portaudio = "xyes";
 +    then
 +    	MORECFLAGS="-DUSEAPI_PORTAUDIO "$MORECFLAGS
 +	SYSSRC="s_audio_pa.c \
@@ -37,7 +137,6 @@ $FreeBSD$
 +    GUINAME="pd-gui"
 +    OSNUMBER=0
 +fi
-+
+ 
  if test `uname -s` = Linux;
  then
-     dnl Ckecking for ALSA

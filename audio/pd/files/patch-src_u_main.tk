@@ -1,0 +1,45 @@
+--- src/u_main.tk.orig	Sun Oct  8 20:04:07 2006
++++ src/u_main.tk	Sun Mar 25 22:15:29 2007
+@@ -91,7 +91,7 @@
+ 
+ set pd_deffont {courier 12 bold}
+ 
+-set help_top_directory $pd_guidir/doc
++set help_top_directory $pd_guidir/share/doc/pd
+ 
+ # it's unfortunate but we seem to have to turn off global bindings
+ # for Text objects to get control-s and control-t to do what we want for
+@@ -513,9 +513,9 @@
+          }
+          
+     $mbar.audio add command -label {Test Audio and MIDI} \
+-        -command {menu_doc_open doc/7.stuff/tools testtone.pd} 
++        -command {menu_doc_open share/doc/pd/7.stuff/tools testtone.pd} 
+     $mbar.audio add command -label {Load Meter} \
+-        -command {menu_doc_open doc/7.stuff/tools load-meter.pd} 
++        -command {menu_doc_open share/doc/pd/7.stuff/tools load-meter.pd} 
+ 
+ #       the MacOS X app menu
+ 
+@@ -526,7 +526,7 @@
+ # See SPECIAL MENUS IN MENUBARS http://www.tcl.tk/man/tcl8.4/TkCmd/menu.htm
+          if {$pd_nt == 2} {
+                   $mbar.apple add command -label "About Pd..." -command \
+-                                {menu_doc_open doc/1.manual 1.introduction.txt} 
++                                {menu_doc_open share/doc/pd/1.manual 1.introduction.txt} 
+                   menu $mbar.apple.preferences -tearoff 0
+                   $mbar.apple add cascade -label "Preferences" -menu $mbar.apple.preferences
+                   $mbar.apple.preferences add command -label "Path..." \
+@@ -543,10 +543,10 @@
+         # the "Help" menu
+     if {$pd_nt != 2} {
+         $mbar.help add command -label {About Pd} \
+-            -command {menu_doc_open doc/1.manual 1.introduction.txt} 
++            -command {menu_doc_open share/doc/pd/1.manual 1.introduction.txt} 
+     }
+     $mbar.help add command -label {Html ...} \
+-        -command {menu_doc_open doc/1.manual index.htm} 
++        -command {menu_doc_open share/doc/pd/1.manual index.htm} 
+     $mbar.help add command -label {Browser ...} \
+         -command {menu_doc_browser $help_top_directory} 
+ }
