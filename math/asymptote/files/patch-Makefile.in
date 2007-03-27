@@ -1,17 +1,19 @@
---- Makefile.in	Wed Dec 13 03:06:26 2006
-+++ Makefile.in.port	Wed Dec 13 13:42:00 2006
-@@ -22,8 +22,8 @@
+--- Makefile.in	Mon Mar  5 10:04:20 2007
++++ Makefile.in.port	Mon Mar  5 21:44:00 2007
+@@ -22,9 +22,9 @@
  CLEAN = camp.output asy.list
  NAME = asy
  EXTRABIN = x$(NAME)
 -EXTRA = asy-mode.el asy-keywords.el asy-init.el asy.vim asymptote.py
+-KEYWORDS = base $(ASYMPTOTE_SITEDIR)
 -LATEXFILES = asymptote.sty asycolors.sty pdfanim_temp.sty
 +EXTRA = base/asy-mode.el base/asy-keywords.el base/asy-init.el base/asy.vim base/asymptote.py
++KEYWORDS = base/*.asy
 +LATEXFILES = doc/asymptote.sty doc/asycolors.sty doc/pdfanim_temp.sty
  
  DEFS = @DEFS@ @OPTIONS@
  CFLAGS = @CPPFLAGS@ @CFLAGS@ 
-@@ -44,7 +44,7 @@
+@@ -45,7 +45,7 @@
  datadir = $(DESTDIR)@datadir@
  asydir = $(datadir)/asymptote
  docdir = $(DESTDIR)@docdir@
@@ -20,8 +22,8 @@
  animationsdir = $(exampledir)/animations
  latexdir = $(DESTDIR)@latexdir@
  INSTALL = @INSTALL@
-@@ -69,7 +69,7 @@
- 	rm -f $(GC).tar
+@@ -73,7 +73,7 @@
+ 	fi
  	cd $(GC); \
  	./configure $(GCOPTIONS); \
 -	$(MAKE) check
@@ -29,7 +31,16 @@
  
  html:	asy
  	cd doc; $(MAKE) doc
-@@ -111,11 +111,11 @@
+@@ -103,7 +103,7 @@
+ 
+ asy-keywords.el: asy-list.pl 
+ 	./asy -l -dir base > asy.list
+-	ls $(addsuffix /*.asy,$(KEYWORDS)) | grep -v plain\* | grep -v featpost3D | xargs ./asy -l -dir base >> asy.list
++	ls $(KEYWORDS) | grep -v plain\* | grep -v featpost3D | xargs ./asy -l -dir base >> asy.list
+ 	./asy-list.pl asy.list @VERSION@
+ 	ln -sf ../asy-keywords.el base/
+ 
+@@ -115,11 +115,11 @@
  	${INSTALL} -d $(bindir) $(asydir) $(exampledir) $(animationsdir)
  	-${INSTALL} -d $(latexdir)
  	${INSTALL} -p -m 755 $(NAME) $(EXTRABIN) $(bindir)
