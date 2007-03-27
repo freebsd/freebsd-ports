@@ -58,20 +58,27 @@ etc/krb5.conf.dist
 etc/ld.so.cache
 etc/ld.so.conf
 etc/logrotate.d/rpm
+etc/mke2fs.conf
 etc/mtab
 @unexec if cmp -s %D/etc/nsswitch.conf.dist %D/etc/nsswitch.conf; then rm -f %D/etc/nsswitch.conf; fi
 etc/nsswitch.conf.dist
+etc/pam.d/runuser
+etc/pam.d/runuser-l
 etc/pam.d/su
+etc/pam.d/su-l
 etc/pki/rpm-gpg/RPM-GPG-KEY
 etc/pki/rpm-gpg/RPM-GPG-KEY-beta
 etc/pki/rpm-gpg/RPM-GPG-KEY-fedora
 etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-extras
+etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-legacy
 etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-rawhide
 etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-test
 etc/pki/rpm-gpg/RPM-GPG-KEY-rawhide
 etc/profile
 etc/profile.d/colorls.csh
 etc/profile.d/colorls.sh
+etc/profile.d/glib2.csh
+etc/profile.d/glib2.sh
 etc/redhat-release
 etc/rpc
 etc/securetty
@@ -79,22 +86,20 @@ etc/shells
 etc/skel/.bash_logout
 etc/skel/.bash_profile
 etc/skel/.bashrc
-etc/sysconfig/rhn/sources
 etc/termcap
 @unexec if cmp -s %D/etc/yp.conf.sample %D/etc/yp.conf; then rm -f %D/etc/yp.conf; fi
 etc/yp.conf.sample
-etc/yum.repos.d/fedora-devel.repo
-etc/yum.repos.d/fedora-extras-devel.repo
+etc/yum.repos.d/fedora-core.repo
+etc/yum.repos.d/fedora-development.repo
+etc/yum.repos.d/fedora-extras-development.repo
 etc/yum.repos.d/fedora-extras.repo
+etc/yum.repos.d/fedora-legacy.repo
 etc/yum.repos.d/fedora-updates-testing.repo
 etc/yum.repos.d/fedora-updates.repo
-etc/yum.repos.d/fedora.repo
 lib/ld-%%GLIBCVER%%.so
 lib/ld-linux.so.2
 lib/libBrokenLocale-%%GLIBCVER%%.so
 lib/libBrokenLocale.so.1
-lib/libNoVersion-%%GLIBCVER%%.so
-lib/libNoVersion.so.1
 lib/libSegFault.so
 lib/libacl.so.1
 lib/libacl.so.1.1.0
@@ -102,14 +107,10 @@ lib/libanl-%%GLIBCVER%%.so
 lib/libanl.so.1
 lib/libattr.so.1
 lib/libattr.so.1.1.0
-lib/libblkid.so.1
-lib/libblkid.so.1.0
 lib/libc-%%GLIBCVER%%.so
 lib/libc.so.6
 lib/libcidn-%%GLIBCVER%%.so
 lib/libcidn.so.1
-lib/libcom_err.so.2
-lib/libcom_err.so.2.1
 lib/libcrypt-%%GLIBCVER%%.so
 lib/libcrypt.so.1
 lib/libdb-4.1.so
@@ -119,37 +120,29 @@ lib/libdb_cxx-4.1.so
 lib/libdb_cxx-4.2.so
 lib/libdl-%%GLIBCVER%%.so
 lib/libdl.so.2
-lib/libe2p.so.2
-lib/libe2p.so.2.3
-lib/libext2fs.so.2
-lib/libext2fs.so.2.4
-lib/libgcc_s-4.0.2-20051126.so.1
+lib/libgcc_s-4.1.1-20070105.so.1
 lib/libgcc_s.so.1
+lib/libglib-2.0.so.0
+lib/libglib-2.0.so.0.1200.9
+lib/libgmodule-2.0.so.0
+lib/libgmodule-2.0.so.0.1200.9
+lib/libgobject-2.0.so.0
+lib/libgobject-2.0.so.0.1200.9
+lib/libgthread-2.0.so.0
+lib/libgthread-2.0.so.0.1200.9
 lib/libm-%%GLIBCVER%%.so
 lib/libm.so.6
 lib/libnsl-%%GLIBCVER%%.so
 lib/libnsl.so.1
-lib/libnss1_compat-%%GLIBCVER%%.so
-lib/libnss1_compat.so.1
-lib/libnss1_dns-%%GLIBCVER%%.so
-lib/libnss1_dns.so.1
-lib/libnss1_files-%%GLIBCVER%%.so
-lib/libnss1_files.so.1
-lib/libnss1_nis-%%GLIBCVER%%.so
-lib/libnss1_nis.so.1
 lib/libnss_compat-%%GLIBCVER%%.so
-lib/libnss_compat.so.1
 lib/libnss_compat.so.2
 lib/libnss_dns-%%GLIBCVER%%.so
-lib/libnss_dns.so.1
 lib/libnss_dns.so.2
 lib/libnss_files-%%GLIBCVER%%.so
-lib/libnss_files.so.1
 lib/libnss_files.so.2
 lib/libnss_hesiod-%%GLIBCVER%%.so
 lib/libnss_hesiod.so.2
 lib/libnss_nis-%%GLIBCVER%%.so
-lib/libnss_nis.so.1
 lib/libnss_nis.so.2
 lib/libnss_nisplus-%%GLIBCVER%%.so
 lib/libnss_nisplus.so.2
@@ -162,52 +155,38 @@ lib/libresolv.so.2
 lib/librt-%%GLIBCVER%%.so
 lib/librt.so.1
 lib/libselinux.so.1
-lib/libss.so.2
-lib/libss.so.2.0
+lib/libsepol.so.1
 lib/libtermcap.so.2
 lib/libtermcap.so.2.0.8
 lib/libthread_db-1.0.so
 lib/libthread_db.so.1
 lib/libutil-%%GLIBCVER%%.so
 lib/libutil.so.1
-lib/libuuid.so.1
-lib/libuuid.so.1.2
-lib/obsolete/linuxthreads/libc-%%GLIBCVER%%.so
-lib/obsolete/linuxthreads/libc.so.6
-lib/obsolete/linuxthreads/libm-%%GLIBCVER%%.so
-lib/obsolete/linuxthreads/libm.so.6
-lib/obsolete/linuxthreads/libpthread-0.10.so
-lib/obsolete/linuxthreads/libpthread.so.0
-lib/obsolete/linuxthreads/librt-%%GLIBCVER%%.so
-lib/obsolete/linuxthreads/librt.so.1
-lib/obsolete/linuxthreads/libthread_db-1.0.so
-lib/obsolete/linuxthreads/libthread_db.so.1
-lib/tls/i486/libdb-4.3.so
-lib/tls/i586/libdb-4.3.so
-lib/tls/i686/libdb-4.3.so
+lib/rtkaio/librt.so.1
+lib/rtkaio/librtkaio-%%GLIBCVER%%.so
 sbin/badblocks
 sbin/blkid
 sbin/debugfs
 sbin/dumpe2fs
-sbin/e2image
 sbin/e2fsck
+sbin/e2image
 sbin/e2label
 sbin/findfs
 sbin/fsck
-sbin/fsck.ext3
 sbin/fsck.ext2
+sbin/fsck.ext3
 sbin/install-info
 sbin/ldconfig
 sbin/logsave
-sbin/mkfs.ext3
-sbin/mkfs.ext2
 sbin/mke2fs
-sbin/runuser
+sbin/mkfs.ext2
+sbin/mkfs.ext3
 sbin/resize2fs
+sbin/runuser
 sbin/sln
 sbin/tune2fs
-usr/bin/X11
 usr/bin/[
+usr/bin/base64
 usr/bin/bashbug-32
 usr/bin/berkeley_db41_svc
 usr/bin/berkeley_db42_svc
@@ -256,9 +235,7 @@ usr/bin/du
 usr/bin/env
 usr/bin/expand
 usr/bin/expr
-usr/sbin/ext2online
 usr/bin/factor
-usr/sbin/filefrag
 usr/bin/fmt
 usr/bin/fold
 usr/bin/gencat
@@ -284,7 +261,6 @@ usr/bin/logname
 usr/bin/lsattr
 usr/bin/md5sum
 usr/bin/mkfifo
-usr/sbin/mklost+found
 usr/bin/nl
 usr/bin/nohup
 usr/bin/od
@@ -309,6 +285,10 @@ usr/bin/rpmverify
 usr/bin/runcon
 usr/bin/seq
 usr/bin/sha1sum
+usr/bin/sha224sum
+usr/bin/sha256sum
+usr/bin/sha384sum
+usr/bin/sha512sum
 usr/bin/shred
 usr/bin/split
 usr/bin/sprof
@@ -341,7 +321,6 @@ usr/kerberos/share/examples/krb5/kdc.conf
 usr/kerberos/share/examples/krb5/krb5.conf
 usr/kerberos/share/examples/krb5/services.append
 usr/kerberos/share/gnats/mit
-usr/lib/X11
 usr/lib/gconv/ANSI_X3.110.so
 usr/lib/gconv/ARMSCII-8.so
 usr/lib/gconv/ASMO_449.so
@@ -557,6 +536,7 @@ usr/lib/gconv/MAC-IS.so
 usr/lib/gconv/MAC-SAMI.so
 usr/lib/gconv/MAC-UK.so
 usr/lib/gconv/MACINTOSH.so
+usr/lib/gconv/MIK.so
 usr/lib/gconv/NATS-DANO.so
 usr/lib/gconv/NATS-SEFI.so
 usr/lib/gconv/PT154.so
@@ -583,37 +563,27 @@ usr/lib/gconv/libJIS.so
 usr/lib/gconv/libJISX0213.so
 usr/lib/gconv/libKSC.so
 usr/lib/libbz2.so.1
-usr/lib/libbz2.so.1.0.2
-usr/lib/libcurses.so
-usr/lib/libcursesw.so
+usr/lib/libbz2.so.1.0.3
 usr/lib/libdb-4.3.so
 usr/lib/libdb_cxx-4.3.so
 usr/lib/libdes425.so.3
 usr/lib/libdes425.so.3.0
-usr/lib/libelf-0.108.so
+usr/lib/libelf-0.125.so
 usr/lib/libelf.so.1
-usr/lib/libform.so
 usr/lib/libform.so.5
-usr/lib/libform.so.5.4
-usr/lib/libformw.so
+usr/lib/libform.so.5.5
 usr/lib/libformw.so.5
-usr/lib/libformw.so.5.4
+usr/lib/libformw.so.5.5
 usr/lib/libfreetype.so.6
-usr/lib/libfreetype.so.6.3.7
+usr/lib/libfreetype.so.6.3.10
 usr/lib/libgdbm.so.2
 usr/lib/libgdbm.so.2.0.0
-usr/lib/libglib-1.2.so.0
-usr/lib/libglib-1.2.so.0.0.10
-usr/lib/libgmodule-1.2.so.0
-usr/lib/libgmodule-1.2.so.0.0.10
 usr/lib/libgssapi_krb5.so.2
 usr/lib/libgssapi_krb5.so.2.2
 usr/lib/libgssrpc.so.4
 usr/lib/libgssrpc.so.4.0
-usr/lib/libgthread-1.2.so.0
-usr/lib/libgthread-1.2.so.0.0.10
 usr/lib/libhistory.so.5
-usr/lib/libhistory.so.5.0
+usr/lib/libhistory.so.5.1
 usr/lib/libk5crypto.so.3
 usr/lib/libk5crypto.so.3.0
 usr/lib/libkadm5clnt.so.5
@@ -627,48 +597,40 @@ usr/lib/libkrb4.so.2.0
 usr/lib/libkrb5.so.3
 usr/lib/libkrb5.so.3.2
 usr/lib/libkrb5support.so.0
-usr/lib/libkrb5support.so.0.0
-usr/lib/libmenu.so
+usr/lib/libkrb5support.so.0.1
 usr/lib/libmenu.so.5
-usr/lib/libmenu.so.5.4
-usr/lib/libmenuw.so
+usr/lib/libmenu.so.5.5
 usr/lib/libmenuw.so.5
-usr/lib/libmenuw.so.5.4
-usr/lib/libncurses.so
+usr/lib/libmenuw.so.5.5
 usr/lib/libncurses.so.5
-usr/lib/libncurses.so.5.4
-usr/lib/libncursesw.so
+usr/lib/libncurses.so.5.5
 usr/lib/libncursesw.so.5
-usr/lib/libncursesw.so.5.4
-usr/lib/libpanel.so
+usr/lib/libncursesw.so.5.5
 usr/lib/libpanel.so.5
-usr/lib/libpanel.so.5.4
-usr/lib/libpanelw.so
+usr/lib/libpanel.so.5.5
 usr/lib/libpanelw.so.5
-usr/lib/libpanelw.so.5.4
+usr/lib/libpanelw.so.5.5
+usr/lib/libpcrecpp.so.0
+usr/lib/libpcrecpp.so.0.0.0
 usr/lib/libpcreposix.so.0
 usr/lib/libpcreposix.so.0.0.0
 usr/lib/libpopt.a
-usr/lib/libpopt.la
 usr/lib/libpopt.so
 usr/lib/libpopt.so.0
 usr/lib/libpopt.so.0.0.0
 usr/lib/libreadline.so.5
-usr/lib/libreadline.so.5.0
-usr/lib/libslang-utf8.so.1
-usr/lib/libslang-utf8.so.1.4.9
+usr/lib/libreadline.so.5.1
+usr/lib/libselinux.so
+usr/lib/libslang.so.2
+usr/lib/libslang.so.2.0.6
+usr/lib/libstdc++-3-libc6.2-2-2.10.0.so
+usr/lib/libstdc++-libc6.2-2.so.3
 usr/lib/libstdc++.so.5
 usr/lib/libstdc++.so.5.0.7
 usr/lib/libstdc++.so.6
-usr/lib/libstdc++.so.6.0.7
-usr/lib/libstdc++-2-libc6.1-1-2.9.0.so
-usr/lib/libstdc++-3-libc6.2-2-2.10.0.so
-usr/lib/libstdc++-libc6.1-1.so.2
-usr/lib/libstdc++-libc6.2-2.so.3
-usr/lib/libttf.so.2
-usr/lib/libttf.so.2.3.0
+usr/lib/libstdc++.so.6.0.8
 usr/lib/libz.so.1
-usr/lib/libz.so.1.2.2.2
+usr/lib/libz.so.1.2.3
 usr/lib/locale/aa_DJ.utf8/LC_ADDRESS
 usr/lib/locale/aa_DJ.utf8/LC_COLLATE
 usr/lib/locale/aa_DJ.utf8/LC_CTYPE
@@ -1209,6 +1171,18 @@ usr/lib/locale/ar_YE/LC_NUMERIC
 usr/lib/locale/ar_YE/LC_PAPER
 usr/lib/locale/ar_YE/LC_TELEPHONE
 usr/lib/locale/ar_YE/LC_TIME
+usr/lib/locale/as_IN.utf8/LC_ADDRESS
+usr/lib/locale/as_IN.utf8/LC_COLLATE
+usr/lib/locale/as_IN.utf8/LC_CTYPE
+usr/lib/locale/as_IN.utf8/LC_IDENTIFICATION
+usr/lib/locale/as_IN.utf8/LC_MEASUREMENT
+usr/lib/locale/as_IN.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/as_IN.utf8/LC_MONETARY
+usr/lib/locale/as_IN.utf8/LC_NAME
+usr/lib/locale/as_IN.utf8/LC_NUMERIC
+usr/lib/locale/as_IN.utf8/LC_PAPER
+usr/lib/locale/as_IN.utf8/LC_TELEPHONE
+usr/lib/locale/as_IN.utf8/LC_TIME
 usr/lib/locale/az_AZ.utf8/LC_ADDRESS
 usr/lib/locale/az_AZ.utf8/LC_COLLATE
 usr/lib/locale/az_AZ.utf8/LC_CTYPE
@@ -1377,6 +1351,30 @@ usr/lib/locale/byn_ER/LC_NUMERIC
 usr/lib/locale/byn_ER/LC_PAPER
 usr/lib/locale/byn_ER/LC_TELEPHONE
 usr/lib/locale/byn_ER/LC_TIME
+usr/lib/locale/ca_AD.utf8/LC_ADDRESS
+usr/lib/locale/ca_AD.utf8/LC_COLLATE
+usr/lib/locale/ca_AD.utf8/LC_CTYPE
+usr/lib/locale/ca_AD.utf8/LC_IDENTIFICATION
+usr/lib/locale/ca_AD.utf8/LC_MEASUREMENT
+usr/lib/locale/ca_AD.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/ca_AD.utf8/LC_MONETARY
+usr/lib/locale/ca_AD.utf8/LC_NAME
+usr/lib/locale/ca_AD.utf8/LC_NUMERIC
+usr/lib/locale/ca_AD.utf8/LC_PAPER
+usr/lib/locale/ca_AD.utf8/LC_TELEPHONE
+usr/lib/locale/ca_AD.utf8/LC_TIME
+usr/lib/locale/ca_AD/LC_ADDRESS
+usr/lib/locale/ca_AD/LC_COLLATE
+usr/lib/locale/ca_AD/LC_CTYPE
+usr/lib/locale/ca_AD/LC_IDENTIFICATION
+usr/lib/locale/ca_AD/LC_MEASUREMENT
+usr/lib/locale/ca_AD/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/ca_AD/LC_MONETARY
+usr/lib/locale/ca_AD/LC_NAME
+usr/lib/locale/ca_AD/LC_NUMERIC
+usr/lib/locale/ca_AD/LC_PAPER
+usr/lib/locale/ca_AD/LC_TELEPHONE
+usr/lib/locale/ca_AD/LC_TIME
 usr/lib/locale/ca_ES.utf8/LC_ADDRESS
 usr/lib/locale/ca_ES.utf8/LC_COLLATE
 usr/lib/locale/ca_ES.utf8/LC_CTYPE
@@ -1413,6 +1411,54 @@ usr/lib/locale/ca_ES@euro/LC_NUMERIC
 usr/lib/locale/ca_ES@euro/LC_PAPER
 usr/lib/locale/ca_ES@euro/LC_TELEPHONE
 usr/lib/locale/ca_ES@euro/LC_TIME
+usr/lib/locale/ca_FR.utf8/LC_ADDRESS
+usr/lib/locale/ca_FR.utf8/LC_COLLATE
+usr/lib/locale/ca_FR.utf8/LC_CTYPE
+usr/lib/locale/ca_FR.utf8/LC_IDENTIFICATION
+usr/lib/locale/ca_FR.utf8/LC_MEASUREMENT
+usr/lib/locale/ca_FR.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/ca_FR.utf8/LC_MONETARY
+usr/lib/locale/ca_FR.utf8/LC_NAME
+usr/lib/locale/ca_FR.utf8/LC_NUMERIC
+usr/lib/locale/ca_FR.utf8/LC_PAPER
+usr/lib/locale/ca_FR.utf8/LC_TELEPHONE
+usr/lib/locale/ca_FR.utf8/LC_TIME
+usr/lib/locale/ca_FR/LC_ADDRESS
+usr/lib/locale/ca_FR/LC_COLLATE
+usr/lib/locale/ca_FR/LC_CTYPE
+usr/lib/locale/ca_FR/LC_IDENTIFICATION
+usr/lib/locale/ca_FR/LC_MEASUREMENT
+usr/lib/locale/ca_FR/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/ca_FR/LC_MONETARY
+usr/lib/locale/ca_FR/LC_NAME
+usr/lib/locale/ca_FR/LC_NUMERIC
+usr/lib/locale/ca_FR/LC_PAPER
+usr/lib/locale/ca_FR/LC_TELEPHONE
+usr/lib/locale/ca_FR/LC_TIME
+usr/lib/locale/ca_IT.utf8/LC_ADDRESS
+usr/lib/locale/ca_IT.utf8/LC_COLLATE
+usr/lib/locale/ca_IT.utf8/LC_CTYPE
+usr/lib/locale/ca_IT.utf8/LC_IDENTIFICATION
+usr/lib/locale/ca_IT.utf8/LC_MEASUREMENT
+usr/lib/locale/ca_IT.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/ca_IT.utf8/LC_MONETARY
+usr/lib/locale/ca_IT.utf8/LC_NAME
+usr/lib/locale/ca_IT.utf8/LC_NUMERIC
+usr/lib/locale/ca_IT.utf8/LC_PAPER
+usr/lib/locale/ca_IT.utf8/LC_TELEPHONE
+usr/lib/locale/ca_IT.utf8/LC_TIME
+usr/lib/locale/ca_IT/LC_ADDRESS
+usr/lib/locale/ca_IT/LC_COLLATE
+usr/lib/locale/ca_IT/LC_CTYPE
+usr/lib/locale/ca_IT/LC_IDENTIFICATION
+usr/lib/locale/ca_IT/LC_MEASUREMENT
+usr/lib/locale/ca_IT/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/ca_IT/LC_MONETARY
+usr/lib/locale/ca_IT/LC_NAME
+usr/lib/locale/ca_IT/LC_NUMERIC
+usr/lib/locale/ca_IT/LC_PAPER
+usr/lib/locale/ca_IT/LC_TELEPHONE
+usr/lib/locale/ca_IT/LC_TIME
 usr/lib/locale/cs_CZ.utf8/LC_ADDRESS
 usr/lib/locale/cs_CZ.utf8/LC_COLLATE
 usr/lib/locale/cs_CZ.utf8/LC_CTYPE
@@ -1437,6 +1483,18 @@ usr/lib/locale/cs_CZ/LC_NUMERIC
 usr/lib/locale/cs_CZ/LC_PAPER
 usr/lib/locale/cs_CZ/LC_TELEPHONE
 usr/lib/locale/cs_CZ/LC_TIME
+usr/lib/locale/csb_PL/LC_ADDRESS
+usr/lib/locale/csb_PL/LC_COLLATE
+usr/lib/locale/csb_PL/LC_CTYPE
+usr/lib/locale/csb_PL/LC_IDENTIFICATION
+usr/lib/locale/csb_PL/LC_MEASUREMENT
+usr/lib/locale/csb_PL/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/csb_PL/LC_MONETARY
+usr/lib/locale/csb_PL/LC_NAME
+usr/lib/locale/csb_PL/LC_NUMERIC
+usr/lib/locale/csb_PL/LC_PAPER
+usr/lib/locale/csb_PL/LC_TELEPHONE
+usr/lib/locale/csb_PL/LC_TIME
 usr/lib/locale/cy_GB.utf8/LC_ADDRESS
 usr/lib/locale/cy_GB.utf8/LC_COLLATE
 usr/lib/locale/cy_GB.utf8/LC_CTYPE
@@ -1665,6 +1723,42 @@ usr/lib/locale/de_LU@euro/LC_NUMERIC
 usr/lib/locale/de_LU@euro/LC_PAPER
 usr/lib/locale/de_LU@euro/LC_TELEPHONE
 usr/lib/locale/de_LU@euro/LC_TIME
+usr/lib/locale/dz_BT/LC_ADDRESS
+usr/lib/locale/dz_BT/LC_COLLATE
+usr/lib/locale/dz_BT/LC_CTYPE
+usr/lib/locale/dz_BT/LC_IDENTIFICATION
+usr/lib/locale/dz_BT/LC_MEASUREMENT
+usr/lib/locale/dz_BT/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/dz_BT/LC_MONETARY
+usr/lib/locale/dz_BT/LC_NAME
+usr/lib/locale/dz_BT/LC_NUMERIC
+usr/lib/locale/dz_BT/LC_PAPER
+usr/lib/locale/dz_BT/LC_TELEPHONE
+usr/lib/locale/dz_BT/LC_TIME
+usr/lib/locale/el_CY.utf8/LC_ADDRESS
+usr/lib/locale/el_CY.utf8/LC_COLLATE
+usr/lib/locale/el_CY.utf8/LC_CTYPE
+usr/lib/locale/el_CY.utf8/LC_IDENTIFICATION
+usr/lib/locale/el_CY.utf8/LC_MEASUREMENT
+usr/lib/locale/el_CY.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/el_CY.utf8/LC_MONETARY
+usr/lib/locale/el_CY.utf8/LC_NAME
+usr/lib/locale/el_CY.utf8/LC_NUMERIC
+usr/lib/locale/el_CY.utf8/LC_PAPER
+usr/lib/locale/el_CY.utf8/LC_TELEPHONE
+usr/lib/locale/el_CY.utf8/LC_TIME
+usr/lib/locale/el_CY/LC_ADDRESS
+usr/lib/locale/el_CY/LC_COLLATE
+usr/lib/locale/el_CY/LC_CTYPE
+usr/lib/locale/el_CY/LC_IDENTIFICATION
+usr/lib/locale/el_CY/LC_MEASUREMENT
+usr/lib/locale/el_CY/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/el_CY/LC_MONETARY
+usr/lib/locale/el_CY/LC_NAME
+usr/lib/locale/el_CY/LC_NUMERIC
+usr/lib/locale/el_CY/LC_PAPER
+usr/lib/locale/el_CY/LC_TELEPHONE
+usr/lib/locale/el_CY/LC_TIME
 usr/lib/locale/el_GR.utf8/LC_ADDRESS
 usr/lib/locale/el_GR.utf8/LC_COLLATE
 usr/lib/locale/el_GR.utf8/LC_CTYPE
@@ -2841,6 +2935,18 @@ usr/lib/locale/fr_LU@euro/LC_NUMERIC
 usr/lib/locale/fr_LU@euro/LC_PAPER
 usr/lib/locale/fr_LU@euro/LC_TELEPHONE
 usr/lib/locale/fr_LU@euro/LC_TIME
+usr/lib/locale/fy_NL/LC_ADDRESS
+usr/lib/locale/fy_NL/LC_COLLATE
+usr/lib/locale/fy_NL/LC_CTYPE
+usr/lib/locale/fy_NL/LC_IDENTIFICATION
+usr/lib/locale/fy_NL/LC_MEASUREMENT
+usr/lib/locale/fy_NL/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/fy_NL/LC_MONETARY
+usr/lib/locale/fy_NL/LC_NAME
+usr/lib/locale/fy_NL/LC_NUMERIC
+usr/lib/locale/fy_NL/LC_PAPER
+usr/lib/locale/fy_NL/LC_TELEPHONE
+usr/lib/locale/fy_NL/LC_TIME
 usr/lib/locale/ga_IE.utf8/LC_ADDRESS
 usr/lib/locale/ga_IE.utf8/LC_COLLATE
 usr/lib/locale/ga_IE.utf8/LC_CTYPE
@@ -3129,6 +3235,30 @@ usr/lib/locale/hu_HU/LC_NUMERIC
 usr/lib/locale/hu_HU/LC_PAPER
 usr/lib/locale/hu_HU/LC_TELEPHONE
 usr/lib/locale/hu_HU/LC_TIME
+usr/lib/locale/hy_AM.armscii8/LC_ADDRESS
+usr/lib/locale/hy_AM.armscii8/LC_COLLATE
+usr/lib/locale/hy_AM.armscii8/LC_CTYPE
+usr/lib/locale/hy_AM.armscii8/LC_IDENTIFICATION
+usr/lib/locale/hy_AM.armscii8/LC_MEASUREMENT
+usr/lib/locale/hy_AM.armscii8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/hy_AM.armscii8/LC_MONETARY
+usr/lib/locale/hy_AM.armscii8/LC_NAME
+usr/lib/locale/hy_AM.armscii8/LC_NUMERIC
+usr/lib/locale/hy_AM.armscii8/LC_PAPER
+usr/lib/locale/hy_AM.armscii8/LC_TELEPHONE
+usr/lib/locale/hy_AM.armscii8/LC_TIME
+usr/lib/locale/hy_AM/LC_ADDRESS
+usr/lib/locale/hy_AM/LC_COLLATE
+usr/lib/locale/hy_AM/LC_CTYPE
+usr/lib/locale/hy_AM/LC_IDENTIFICATION
+usr/lib/locale/hy_AM/LC_MEASUREMENT
+usr/lib/locale/hy_AM/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/hy_AM/LC_MONETARY
+usr/lib/locale/hy_AM/LC_NAME
+usr/lib/locale/hy_AM/LC_NUMERIC
+usr/lib/locale/hy_AM/LC_PAPER
+usr/lib/locale/hy_AM/LC_TELEPHONE
+usr/lib/locale/hy_AM/LC_TIME
 usr/lib/locale/id_ID.utf8/LC_ADDRESS
 usr/lib/locale/id_ID.utf8/LC_COLLATE
 usr/lib/locale/id_ID.utf8/LC_CTYPE
@@ -3549,6 +3679,18 @@ usr/lib/locale/lv_LV/LC_NUMERIC
 usr/lib/locale/lv_LV/LC_PAPER
 usr/lib/locale/lv_LV/LC_TELEPHONE
 usr/lib/locale/lv_LV/LC_TIME
+usr/lib/locale/mai_IN/LC_ADDRESS
+usr/lib/locale/mai_IN/LC_COLLATE
+usr/lib/locale/mai_IN/LC_CTYPE
+usr/lib/locale/mai_IN/LC_IDENTIFICATION
+usr/lib/locale/mai_IN/LC_MEASUREMENT
+usr/lib/locale/mai_IN/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/mai_IN/LC_MONETARY
+usr/lib/locale/mai_IN/LC_NAME
+usr/lib/locale/mai_IN/LC_NUMERIC
+usr/lib/locale/mai_IN/LC_PAPER
+usr/lib/locale/mai_IN/LC_TELEPHONE
+usr/lib/locale/mai_IN/LC_TIME
 usr/lib/locale/mg_MG.utf8/LC_ADDRESS
 usr/lib/locale/mg_MG.utf8/LC_COLLATE
 usr/lib/locale/mg_MG.utf8/LC_CTYPE
@@ -3861,6 +4003,18 @@ usr/lib/locale/no_NO/LC_NUMERIC
 usr/lib/locale/no_NO/LC_PAPER
 usr/lib/locale/no_NO/LC_TELEPHONE
 usr/lib/locale/no_NO/LC_TIME
+usr/lib/locale/nr_ZA/LC_ADDRESS
+usr/lib/locale/nr_ZA/LC_COLLATE
+usr/lib/locale/nr_ZA/LC_CTYPE
+usr/lib/locale/nr_ZA/LC_IDENTIFICATION
+usr/lib/locale/nr_ZA/LC_MEASUREMENT
+usr/lib/locale/nr_ZA/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/nr_ZA/LC_MONETARY
+usr/lib/locale/nr_ZA/LC_NAME
+usr/lib/locale/nr_ZA/LC_NUMERIC
+usr/lib/locale/nr_ZA/LC_PAPER
+usr/lib/locale/nr_ZA/LC_TELEPHONE
+usr/lib/locale/nr_ZA/LC_TIME
 usr/lib/locale/nso_ZA/LC_ADDRESS
 usr/lib/locale/nso_ZA/LC_COLLATE
 usr/lib/locale/nso_ZA/LC_CTYPE
@@ -3933,6 +4087,18 @@ usr/lib/locale/om_KE/LC_NUMERIC
 usr/lib/locale/om_KE/LC_PAPER
 usr/lib/locale/om_KE/LC_TELEPHONE
 usr/lib/locale/om_KE/LC_TIME
+usr/lib/locale/or_IN/LC_ADDRESS
+usr/lib/locale/or_IN/LC_COLLATE
+usr/lib/locale/or_IN/LC_CTYPE
+usr/lib/locale/or_IN/LC_IDENTIFICATION
+usr/lib/locale/or_IN/LC_MEASUREMENT
+usr/lib/locale/or_IN/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/or_IN/LC_MONETARY
+usr/lib/locale/or_IN/LC_NAME
+usr/lib/locale/or_IN/LC_NUMERIC
+usr/lib/locale/or_IN/LC_PAPER
+usr/lib/locale/or_IN/LC_TELEPHONE
+usr/lib/locale/or_IN/LC_TIME
 usr/lib/locale/pa_IN/LC_ADDRESS
 usr/lib/locale/pa_IN/LC_COLLATE
 usr/lib/locale/pa_IN/LC_CTYPE
@@ -3945,6 +4111,18 @@ usr/lib/locale/pa_IN/LC_NUMERIC
 usr/lib/locale/pa_IN/LC_PAPER
 usr/lib/locale/pa_IN/LC_TELEPHONE
 usr/lib/locale/pa_IN/LC_TIME
+usr/lib/locale/pa_PK/LC_ADDRESS
+usr/lib/locale/pa_PK/LC_COLLATE
+usr/lib/locale/pa_PK/LC_CTYPE
+usr/lib/locale/pa_PK/LC_IDENTIFICATION
+usr/lib/locale/pa_PK/LC_MEASUREMENT
+usr/lib/locale/pa_PK/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/pa_PK/LC_MONETARY
+usr/lib/locale/pa_PK/LC_NAME
+usr/lib/locale/pa_PK/LC_NUMERIC
+usr/lib/locale/pa_PK/LC_PAPER
+usr/lib/locale/pa_PK/LC_TELEPHONE
+usr/lib/locale/pa_PK/LC_TIME
 usr/lib/locale/pl_PL.utf8/LC_ADDRESS
 usr/lib/locale/pl_PL.utf8/LC_COLLATE
 usr/lib/locale/pl_PL.utf8/LC_CTYPE
@@ -4341,6 +4519,18 @@ usr/lib/locale/sr_CS/LC_NUMERIC
 usr/lib/locale/sr_CS/LC_PAPER
 usr/lib/locale/sr_CS/LC_TELEPHONE
 usr/lib/locale/sr_CS/LC_TIME
+usr/lib/locale/sr_ME/LC_ADDRESS
+usr/lib/locale/sr_ME/LC_COLLATE
+usr/lib/locale/sr_ME/LC_CTYPE
+usr/lib/locale/sr_ME/LC_IDENTIFICATION
+usr/lib/locale/sr_ME/LC_MEASUREMENT
+usr/lib/locale/sr_ME/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/sr_ME/LC_MONETARY
+usr/lib/locale/sr_ME/LC_NAME
+usr/lib/locale/sr_ME/LC_NUMERIC
+usr/lib/locale/sr_ME/LC_PAPER
+usr/lib/locale/sr_ME/LC_TELEPHONE
+usr/lib/locale/sr_ME/LC_TIME
 usr/lib/locale/ss_ZA/LC_ADDRESS
 usr/lib/locale/ss_ZA/LC_COLLATE
 usr/lib/locale/ss_ZA/LC_CTYPE
@@ -4593,6 +4783,30 @@ usr/lib/locale/tn_ZA/LC_NUMERIC
 usr/lib/locale/tn_ZA/LC_PAPER
 usr/lib/locale/tn_ZA/LC_TELEPHONE
 usr/lib/locale/tn_ZA/LC_TIME
+usr/lib/locale/tr_CY.utf8/LC_ADDRESS
+usr/lib/locale/tr_CY.utf8/LC_COLLATE
+usr/lib/locale/tr_CY.utf8/LC_CTYPE
+usr/lib/locale/tr_CY.utf8/LC_IDENTIFICATION
+usr/lib/locale/tr_CY.utf8/LC_MEASUREMENT
+usr/lib/locale/tr_CY.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/tr_CY.utf8/LC_MONETARY
+usr/lib/locale/tr_CY.utf8/LC_NAME
+usr/lib/locale/tr_CY.utf8/LC_NUMERIC
+usr/lib/locale/tr_CY.utf8/LC_PAPER
+usr/lib/locale/tr_CY.utf8/LC_TELEPHONE
+usr/lib/locale/tr_CY.utf8/LC_TIME
+usr/lib/locale/tr_CY/LC_ADDRESS
+usr/lib/locale/tr_CY/LC_COLLATE
+usr/lib/locale/tr_CY/LC_CTYPE
+usr/lib/locale/tr_CY/LC_IDENTIFICATION
+usr/lib/locale/tr_CY/LC_MEASUREMENT
+usr/lib/locale/tr_CY/LC_MESSAGES/SYS_LC_MESSAGES
+usr/lib/locale/tr_CY/LC_MONETARY
+usr/lib/locale/tr_CY/LC_NAME
+usr/lib/locale/tr_CY/LC_NUMERIC
+usr/lib/locale/tr_CY/LC_PAPER
+usr/lib/locale/tr_CY/LC_TELEPHONE
+usr/lib/locale/tr_CY/LC_TIME
 usr/lib/locale/tr_TR.utf8/LC_ADDRESS
 usr/lib/locale/tr_TR.utf8/LC_COLLATE
 usr/lib/locale/tr_TR.utf8/LC_CTYPE
@@ -5024,24 +5238,19 @@ usr/lib/rpm/rpme
 usr/lib/rpm/rpmfile
 usr/lib/rpm/rpmi
 usr/lib/rpm/rpmk
-usr/lib/rpm/rpmpopt-4.4.1
+usr/lib/rpm/rpmpopt-4.4.2
 usr/lib/rpm/rpmq
 usr/lib/rpm/rpmrc
 usr/lib/rpm/rpmu
 usr/lib/rpm/rpmv
 usr/lib/rpm/tgpg
-usr/lib/tls/i486/libdb-4.3.so
-usr/lib/tls/i486/libdb_cxx-4.3.so
-usr/lib/tls/i586/libdb-4.3.so
-usr/lib/tls/i586/libdb_cxx-4.3.so
-usr/lib/tls/i686/libdb-4.3.so
-usr/lib/tls/i686/libdb_cxx-4.3.so
 usr/libexec/getconf/POSIX_V6_ILP32_OFF32
 usr/libexec/getconf/POSIX_V6_ILP32_OFFBIG
 usr/libexec/pt_chown
 usr/sbin/avcstat
 usr/sbin/build-locale-archive
 usr/sbin/chroot
+usr/sbin/filefrag
 usr/sbin/getenforce
 usr/sbin/getsebool
 usr/sbin/glibc_post_upgrade.i386
@@ -5049,478 +5258,262 @@ usr/sbin/iconvconfig
 usr/sbin/iconvconfig.i386
 usr/sbin/libgcc_post_upgrade
 usr/sbin/matchpathcon
+usr/sbin/mklost+found
 usr/sbin/rpcinfo
 usr/sbin/selinuxenabled
 usr/sbin/setenforce
-usr/sbin/setsebool
 usr/sbin/togglesebool
+usr/sbin/tzdata-update
 usr/sbin/zdump
 usr/sbin/zic
-usr/share/doc/HTML/README-en.html
-usr/share/doc/HTML/RELEASE-NOTES-en.html
-usr/share/doc/HTML/css/content.css
-usr/share/doc/HTML/css/docbook.css
-usr/share/doc/HTML/css/fedora.css
-usr/share/doc/HTML/css/layout.css
-usr/share/doc/HTML/css/print.css
-usr/share/doc/HTML/fedora.css
-usr/share/doc/HTML/figs/Fedora_Desktop.png
-usr/share/doc/HTML/img/corner-bl.png
-usr/share/doc/HTML/img/corner-br.png
-usr/share/doc/HTML/img/corner-tl.png
-usr/share/doc/HTML/img/corner-tr.png
-usr/share/doc/HTML/img/header-download.png
-usr/share/doc/HTML/img/header-faq.png
-usr/share/doc/HTML/img/header-fedora_logo.png
-usr/share/doc/HTML/img/header-projects.png
-usr/share/doc/HTML/index.html
-usr/share/doc/HTML/ld-txt-fedora-desktop-screenshot.html
-usr/share/doc/HTML/stylesheet-images/1.png
-usr/share/doc/HTML/stylesheet-images/1.svg
-usr/share/doc/HTML/stylesheet-images/10.png
-usr/share/doc/HTML/stylesheet-images/10.svg
-usr/share/doc/HTML/stylesheet-images/11.png
-usr/share/doc/HTML/stylesheet-images/11.svg
-usr/share/doc/HTML/stylesheet-images/12.png
-usr/share/doc/HTML/stylesheet-images/12.svg
-usr/share/doc/HTML/stylesheet-images/13.png
-usr/share/doc/HTML/stylesheet-images/13.svg
-usr/share/doc/HTML/stylesheet-images/14.png
-usr/share/doc/HTML/stylesheet-images/14.svg
-usr/share/doc/HTML/stylesheet-images/15.png
-usr/share/doc/HTML/stylesheet-images/15.svg
-usr/share/doc/HTML/stylesheet-images/2.png
-usr/share/doc/HTML/stylesheet-images/2.svg
-usr/share/doc/HTML/stylesheet-images/3.png
-usr/share/doc/HTML/stylesheet-images/3.svg
-usr/share/doc/HTML/stylesheet-images/4.png
-usr/share/doc/HTML/stylesheet-images/4.svg
-usr/share/doc/HTML/stylesheet-images/5.png
-usr/share/doc/HTML/stylesheet-images/5.svg
-usr/share/doc/HTML/stylesheet-images/6.png
-usr/share/doc/HTML/stylesheet-images/6.svg
-usr/share/doc/HTML/stylesheet-images/7.png
-usr/share/doc/HTML/stylesheet-images/7.svg
-usr/share/doc/HTML/stylesheet-images/8.png
-usr/share/doc/HTML/stylesheet-images/8.svg
-usr/share/doc/HTML/stylesheet-images/9.png
-usr/share/doc/HTML/stylesheet-images/9.svg
-usr/share/doc/HTML/stylesheet-images/LICENSE
-usr/share/doc/HTML/stylesheet-images/callout.svg
-usr/share/doc/HTML/stylesheet-images/caution.png
-usr/share/doc/HTML/stylesheet-images/important.png
-usr/share/doc/HTML/stylesheet-images/note.png
-usr/share/doc/HTML/stylesheet-images/tip.png
-usr/share/doc/HTML/stylesheet-images/warning.png
-usr/share/doc/bash-3.0/CHANGES
-usr/share/doc/bash-3.0/COMPAT
-usr/share/doc/bash-3.0/FAQ
-usr/share/doc/bash-3.0/INTRO
-usr/share/doc/bash-3.0/NEWS
-usr/share/doc/bash-3.0/NOTES
-usr/share/doc/bash-3.0/POSIX
-usr/share/doc/bash-3.0/article.ms
-usr/share/doc/bash-3.0/article.ps
-usr/share/doc/bash-3.0/article.txt
-usr/share/doc/bash-3.0/bash.0
-usr/share/doc/bash-3.0/bash.html
-usr/share/doc/bash-3.0/bash.ps
-usr/share/doc/bash-3.0/bashbug.0
-usr/share/doc/bash-3.0/bashbug.ps
-usr/share/doc/bash-3.0/bashdb/PERMISSION
-usr/share/doc/bash-3.0/bashdb/bashdb
-usr/share/doc/bash-3.0/bashdb/bashdb.el
-usr/share/doc/bash-3.0/bashref.html
-usr/share/doc/bash-3.0/bashref.ps
-usr/share/doc/bash-3.0/builtins.0
-usr/share/doc/bash-3.0/builtins.ps
-usr/share/doc/bash-3.0/complete/bashcc-1.0.1.tar.gz
-usr/share/doc/bash-3.0/complete/complete-examples
-usr/share/doc/bash-3.0/complete/complete.freebsd
-usr/share/doc/bash-3.0/complete/complete.gnu-longopt
-usr/share/doc/bash-3.0/complete/complete.ianmac
-usr/share/doc/bash-3.0/complete/complete2.ianmac
-usr/share/doc/bash-3.0/functions/array-stuff
-usr/share/doc/bash-3.0/functions/array-to-string
-usr/share/doc/bash-3.0/functions/autoload
-usr/share/doc/bash-3.0/functions/autoload.v2
-usr/share/doc/bash-3.0/functions/autoload.v3
-usr/share/doc/bash-3.0/functions/basename
-usr/share/doc/bash-3.0/functions/basename2
-usr/share/doc/bash-3.0/functions/coproc.bash
-usr/share/doc/bash-3.0/functions/coshell.README
-usr/share/doc/bash-3.0/functions/coshell.bash
-usr/share/doc/bash-3.0/functions/csh-compat
-usr/share/doc/bash-3.0/functions/dirfuncs
-usr/share/doc/bash-3.0/functions/dirname
-usr/share/doc/bash-3.0/functions/emptydir
-usr/share/doc/bash-3.0/functions/exitstat
-usr/share/doc/bash-3.0/functions/external
-usr/share/doc/bash-3.0/functions/fact
-usr/share/doc/bash-3.0/functions/fstty
-usr/share/doc/bash-3.0/functions/func
-usr/share/doc/bash-3.0/functions/gethtml
-usr/share/doc/bash-3.0/functions/getoptx.bash
-usr/share/doc/bash-3.0/functions/inetaddr
-usr/share/doc/bash-3.0/functions/inpath
-usr/share/doc/bash-3.0/functions/isnum.bash
-usr/share/doc/bash-3.0/functions/isnum2
-usr/share/doc/bash-3.0/functions/isvalidip
-usr/share/doc/bash-3.0/functions/jdate.bash
-usr/share/doc/bash-3.0/functions/jj.bash
-usr/share/doc/bash-3.0/functions/keep
-usr/share/doc/bash-3.0/functions/ksh-cd
-usr/share/doc/bash-3.0/functions/ksh-compat-test
-usr/share/doc/bash-3.0/functions/kshenv
-usr/share/doc/bash-3.0/functions/login
-usr/share/doc/bash-3.0/functions/lowercase
-usr/share/doc/bash-3.0/functions/manpage
-usr/share/doc/bash-3.0/functions/mhfold
-usr/share/doc/bash-3.0/functions/notify.bash
-usr/share/doc/bash-3.0/functions/pathfuncs
-usr/share/doc/bash-3.0/functions/recurse
-usr/share/doc/bash-3.0/functions/repeat2
-usr/share/doc/bash-3.0/functions/repeat3
-usr/share/doc/bash-3.0/functions/seq
-usr/share/doc/bash-3.0/functions/seq2
-usr/share/doc/bash-3.0/functions/shcat
-usr/share/doc/bash-3.0/functions/shcat2
-usr/share/doc/bash-3.0/functions/sort-pos-params
-usr/share/doc/bash-3.0/functions/substr
-usr/share/doc/bash-3.0/functions/substr2
-usr/share/doc/bash-3.0/functions/term
-usr/share/doc/bash-3.0/functions/whatis
-usr/share/doc/bash-3.0/functions/whence
-usr/share/doc/bash-3.0/functions/which
-usr/share/doc/bash-3.0/functions/xalias.bash
-usr/share/doc/bash-3.0/functions/xfind.bash
-usr/share/doc/bash-3.0/loadables/Makefile
-usr/share/doc/bash-3.0/loadables/Makefile.in
-usr/share/doc/bash-3.0/loadables/README
-usr/share/doc/bash-3.0/loadables/basename.c
-usr/share/doc/bash-3.0/loadables/cat.c
-usr/share/doc/bash-3.0/loadables/cut.c
-usr/share/doc/bash-3.0/loadables/dirname.c
-usr/share/doc/bash-3.0/loadables/finfo.c
-usr/share/doc/bash-3.0/loadables/getconf.c
-usr/share/doc/bash-3.0/loadables/getconf.h
-usr/share/doc/bash-3.0/loadables/head.c
-usr/share/doc/bash-3.0/loadables/hello.c
-usr/share/doc/bash-3.0/loadables/id.c
-usr/share/doc/bash-3.0/loadables/ln.c
-usr/share/doc/bash-3.0/loadables/logname.c
-usr/share/doc/bash-3.0/loadables/mkdir.c
-usr/share/doc/bash-3.0/loadables/necho.c
-usr/share/doc/bash-3.0/loadables/pathchk.c
-usr/share/doc/bash-3.0/loadables/perl/Makefile
-usr/share/doc/bash-3.0/loadables/perl/Makefile.in
-usr/share/doc/bash-3.0/loadables/perl/README
-usr/share/doc/bash-3.0/loadables/perl/bperl.c
-usr/share/doc/bash-3.0/loadables/perl/iperl.c
-usr/share/doc/bash-3.0/loadables/print.c
-usr/share/doc/bash-3.0/loadables/printenv.c
-usr/share/doc/bash-3.0/loadables/push.c
-usr/share/doc/bash-3.0/loadables/realpath.c
-usr/share/doc/bash-3.0/loadables/rmdir.c
-usr/share/doc/bash-3.0/loadables/sleep.c
-usr/share/doc/bash-3.0/loadables/strftime.c
-usr/share/doc/bash-3.0/loadables/sync.c
-usr/share/doc/bash-3.0/loadables/tee.c
-usr/share/doc/bash-3.0/loadables/template.c
-usr/share/doc/bash-3.0/loadables/truefalse.c
-usr/share/doc/bash-3.0/loadables/tty.c
-usr/share/doc/bash-3.0/loadables/uname.c
-usr/share/doc/bash-3.0/loadables/unlink.c
-usr/share/doc/bash-3.0/loadables/whoami.c
-usr/share/doc/bash-3.0/misc/aliasconv.bash
-usr/share/doc/bash-3.0/misc/aliasconv.sh
-usr/share/doc/bash-3.0/misc/cshtobash
-usr/share/doc/bash-3.0/misc/suncmd.termcap
-usr/share/doc/bash-3.0/rbash.0
-usr/share/doc/bash-3.0/rbash.ps
-usr/share/doc/bash-3.0/rose94.ps
-usr/share/doc/bash-3.0/scripts.noah/PERMISSION
-usr/share/doc/bash-3.0/scripts.noah/README
-usr/share/doc/bash-3.0/scripts.noah/aref.bash
-usr/share/doc/bash-3.0/scripts.noah/bash.sub.bash
-usr/share/doc/bash-3.0/scripts.noah/bash_version.bash
-usr/share/doc/bash-3.0/scripts.noah/meta.bash
-usr/share/doc/bash-3.0/scripts.noah/mktmp.bash
-usr/share/doc/bash-3.0/scripts.noah/number.bash
-usr/share/doc/bash-3.0/scripts.noah/prompt.bash
-usr/share/doc/bash-3.0/scripts.noah/remap_keys.bash
-usr/share/doc/bash-3.0/scripts.noah/require.bash
-usr/share/doc/bash-3.0/scripts.noah/send_mail.bash
-usr/share/doc/bash-3.0/scripts.noah/shcat.bash
-usr/share/doc/bash-3.0/scripts.noah/source.bash
-usr/share/doc/bash-3.0/scripts.noah/string.bash
-usr/share/doc/bash-3.0/scripts.noah/stty.bash
-usr/share/doc/bash-3.0/scripts.noah/y_or_n_p.bash
-usr/share/doc/bash-3.0/scripts.v2/PERMISSION
-usr/share/doc/bash-3.0/scripts.v2/README
-usr/share/doc/bash-3.0/scripts.v2/arc2tarz
-usr/share/doc/bash-3.0/scripts.v2/bashrand
-usr/share/doc/bash-3.0/scripts.v2/cal2day.bash
-usr/share/doc/bash-3.0/scripts.v2/cdhist.bash
-usr/share/doc/bash-3.0/scripts.v2/corename
-usr/share/doc/bash-3.0/scripts.v2/fman
-usr/share/doc/bash-3.0/scripts.v2/frcp
-usr/share/doc/bash-3.0/scripts.v2/lowercase
-usr/share/doc/bash-3.0/scripts.v2/ncp
-usr/share/doc/bash-3.0/scripts.v2/newext
-usr/share/doc/bash-3.0/scripts.v2/nmv
-usr/share/doc/bash-3.0/scripts.v2/pages
-usr/share/doc/bash-3.0/scripts.v2/pf
-usr/share/doc/bash-3.0/scripts.v2/pmtop
-usr/share/doc/bash-3.0/scripts.v2/ren
-usr/share/doc/bash-3.0/scripts.v2/rename
-usr/share/doc/bash-3.0/scripts.v2/repeat
-usr/share/doc/bash-3.0/scripts.v2/shprof
-usr/share/doc/bash-3.0/scripts.v2/untar
-usr/share/doc/bash-3.0/scripts.v2/uudec
-usr/share/doc/bash-3.0/scripts.v2/uuenc
-usr/share/doc/bash-3.0/scripts.v2/vtree
-usr/share/doc/bash-3.0/scripts.v2/where
-usr/share/doc/bash-3.0/scripts/adventure.sh
-usr/share/doc/bash-3.0/scripts/bcsh.sh
-usr/share/doc/bash-3.0/scripts/cat.sh
-usr/share/doc/bash-3.0/scripts/center
-usr/share/doc/bash-3.0/scripts/dd-ex.sh
-usr/share/doc/bash-3.0/scripts/fixfiles.bash
-usr/share/doc/bash-3.0/scripts/hanoi.bash
-usr/share/doc/bash-3.0/scripts/inpath
-usr/share/doc/bash-3.0/scripts/krand.bash
-usr/share/doc/bash-3.0/scripts/line-input.bash
-usr/share/doc/bash-3.0/scripts/nohup.bash
-usr/share/doc/bash-3.0/scripts/precedence
-usr/share/doc/bash-3.0/scripts/randomcard.bash
-usr/share/doc/bash-3.0/scripts/scrollbar
-usr/share/doc/bash-3.0/scripts/scrollbar2
-usr/share/doc/bash-3.0/scripts/self-repro
-usr/share/doc/bash-3.0/scripts/showperm.bash
-usr/share/doc/bash-3.0/scripts/shprompt
-usr/share/doc/bash-3.0/scripts/spin.bash
-usr/share/doc/bash-3.0/scripts/timeout
-usr/share/doc/bash-3.0/scripts/vtree2
-usr/share/doc/bash-3.0/scripts/vtree3
-usr/share/doc/bash-3.0/scripts/vtree3a
-usr/share/doc/bash-3.0/scripts/websrv.sh
-usr/share/doc/bash-3.0/scripts/xterm_title
-usr/share/doc/bash-3.0/scripts/zprintf
-usr/share/doc/bash-3.0/startup-files/Bash_aliases
-usr/share/doc/bash-3.0/startup-files/Bash_profile
-usr/share/doc/bash-3.0/startup-files/Bashrc.bfox
-usr/share/doc/bash-3.0/startup-files/README
-usr/share/doc/bash-3.0/startup-files/apple/README
-usr/share/doc/bash-3.0/startup-files/apple/aliases
-usr/share/doc/bash-3.0/startup-files/apple/bash.defaults
-usr/share/doc/bash-3.0/startup-files/apple/environment
-usr/share/doc/bash-3.0/startup-files/apple/login
-usr/share/doc/bash-3.0/startup-files/apple/logout
-usr/share/doc/bash-3.0/startup-files/apple/rc
-usr/share/doc/bash-3.0/startup-files/bash-profile
-usr/share/doc/bash-3.0/startup-files/bashrc
-usr/share/doc/bzip2-1.0.2/CHANGES
-usr/share/doc/bzip2-1.0.2/LICENSE
-usr/share/doc/bzip2-1.0.2/README
-usr/share/doc/bzip2-1.0.2/README.COMPILATION.PROBLEMS
-usr/share/doc/bzip2-1.0.2/Y2K_INFO
+usr/share/doc/bash-3.1/CHANGES
+usr/share/doc/bash-3.1/COMPAT
+usr/share/doc/bash-3.1/FAQ
+usr/share/doc/bash-3.1/INTRO
+usr/share/doc/bash-3.1/NEWS
+usr/share/doc/bash-3.1/NOTES
+usr/share/doc/bash-3.1/POSIX
+usr/share/doc/bash-3.1/article.ms
+usr/share/doc/bash-3.1/article.ps
+usr/share/doc/bash-3.1/article.txt
+usr/share/doc/bash-3.1/bash.0
+usr/share/doc/bash-3.1/bash.html
+usr/share/doc/bash-3.1/bash.ps
+usr/share/doc/bash-3.1/bashbug.0
+usr/share/doc/bash-3.1/bashbug.ps
+usr/share/doc/bash-3.1/bashdb/PERMISSION
+usr/share/doc/bash-3.1/bashdb/README
+usr/share/doc/bash-3.1/bashdb/bashdb
+usr/share/doc/bash-3.1/bashdb/bashdb.el
+usr/share/doc/bash-3.1/bashref.html
+usr/share/doc/bash-3.1/bashref.ps
+usr/share/doc/bash-3.1/builtins.0
+usr/share/doc/bash-3.1/builtins.ps
+usr/share/doc/bash-3.1/complete/bashcc-1.0.1.tar.gz
+usr/share/doc/bash-3.1/complete/complete-examples
+usr/share/doc/bash-3.1/complete/complete.freebsd
+usr/share/doc/bash-3.1/complete/complete.gnu-longopt
+usr/share/doc/bash-3.1/complete/complete.ianmac
+usr/share/doc/bash-3.1/complete/complete2.ianmac
+usr/share/doc/bash-3.1/functions/array-stuff
+usr/share/doc/bash-3.1/functions/array-to-string
+usr/share/doc/bash-3.1/functions/autoload
+usr/share/doc/bash-3.1/functions/autoload.v2
+usr/share/doc/bash-3.1/functions/autoload.v3
+usr/share/doc/bash-3.1/functions/basename
+usr/share/doc/bash-3.1/functions/basename2
+usr/share/doc/bash-3.1/functions/coproc.bash
+usr/share/doc/bash-3.1/functions/coshell.README
+usr/share/doc/bash-3.1/functions/coshell.bash
+usr/share/doc/bash-3.1/functions/csh-compat
+usr/share/doc/bash-3.1/functions/dirfuncs
+usr/share/doc/bash-3.1/functions/dirname
+usr/share/doc/bash-3.1/functions/emptydir
+usr/share/doc/bash-3.1/functions/exitstat
+usr/share/doc/bash-3.1/functions/external
+usr/share/doc/bash-3.1/functions/fact
+usr/share/doc/bash-3.1/functions/fstty
+usr/share/doc/bash-3.1/functions/func
+usr/share/doc/bash-3.1/functions/gethtml
+usr/share/doc/bash-3.1/functions/getoptx.bash
+usr/share/doc/bash-3.1/functions/inetaddr
+usr/share/doc/bash-3.1/functions/inpath
+usr/share/doc/bash-3.1/functions/isnum.bash
+usr/share/doc/bash-3.1/functions/isnum2
+usr/share/doc/bash-3.1/functions/isvalidip
+usr/share/doc/bash-3.1/functions/jdate.bash
+usr/share/doc/bash-3.1/functions/jj.bash
+usr/share/doc/bash-3.1/functions/keep
+usr/share/doc/bash-3.1/functions/ksh-cd
+usr/share/doc/bash-3.1/functions/ksh-compat-test
+usr/share/doc/bash-3.1/functions/kshenv
+usr/share/doc/bash-3.1/functions/login
+usr/share/doc/bash-3.1/functions/lowercase
+usr/share/doc/bash-3.1/functions/manpage
+usr/share/doc/bash-3.1/functions/mhfold
+usr/share/doc/bash-3.1/functions/notify.bash
+usr/share/doc/bash-3.1/functions/pathfuncs
+usr/share/doc/bash-3.1/functions/recurse
+usr/share/doc/bash-3.1/functions/repeat2
+usr/share/doc/bash-3.1/functions/repeat3
+usr/share/doc/bash-3.1/functions/seq
+usr/share/doc/bash-3.1/functions/seq2
+usr/share/doc/bash-3.1/functions/shcat
+usr/share/doc/bash-3.1/functions/shcat2
+usr/share/doc/bash-3.1/functions/sort-pos-params
+usr/share/doc/bash-3.1/functions/substr
+usr/share/doc/bash-3.1/functions/substr2
+usr/share/doc/bash-3.1/functions/term
+usr/share/doc/bash-3.1/functions/whatis
+usr/share/doc/bash-3.1/functions/whence
+usr/share/doc/bash-3.1/functions/which
+usr/share/doc/bash-3.1/functions/xalias.bash
+usr/share/doc/bash-3.1/functions/xfind.bash
+usr/share/doc/bash-3.1/loadables/Makefile
+usr/share/doc/bash-3.1/loadables/Makefile.in
+usr/share/doc/bash-3.1/loadables/README
+usr/share/doc/bash-3.1/loadables/basename.c
+usr/share/doc/bash-3.1/loadables/cat.c
+usr/share/doc/bash-3.1/loadables/cut.c
+usr/share/doc/bash-3.1/loadables/dirname.c
+usr/share/doc/bash-3.1/loadables/finfo.c
+usr/share/doc/bash-3.1/loadables/getconf.c
+usr/share/doc/bash-3.1/loadables/getconf.h
+usr/share/doc/bash-3.1/loadables/head.c
+usr/share/doc/bash-3.1/loadables/hello.c
+usr/share/doc/bash-3.1/loadables/id.c
+usr/share/doc/bash-3.1/loadables/ln.c
+usr/share/doc/bash-3.1/loadables/logname.c
+usr/share/doc/bash-3.1/loadables/mkdir.c
+usr/share/doc/bash-3.1/loadables/necho.c
+usr/share/doc/bash-3.1/loadables/pathchk.c
+usr/share/doc/bash-3.1/loadables/perl/Makefile
+usr/share/doc/bash-3.1/loadables/perl/Makefile.in
+usr/share/doc/bash-3.1/loadables/perl/README
+usr/share/doc/bash-3.1/loadables/perl/bperl.c
+usr/share/doc/bash-3.1/loadables/perl/iperl.c
+usr/share/doc/bash-3.1/loadables/print.c
+usr/share/doc/bash-3.1/loadables/printenv.c
+usr/share/doc/bash-3.1/loadables/push.c
+usr/share/doc/bash-3.1/loadables/realpath.c
+usr/share/doc/bash-3.1/loadables/rmdir.c
+usr/share/doc/bash-3.1/loadables/sleep.c
+usr/share/doc/bash-3.1/loadables/strftime.c
+usr/share/doc/bash-3.1/loadables/sync.c
+usr/share/doc/bash-3.1/loadables/tee.c
+usr/share/doc/bash-3.1/loadables/template.c
+usr/share/doc/bash-3.1/loadables/truefalse.c
+usr/share/doc/bash-3.1/loadables/tty.c
+usr/share/doc/bash-3.1/loadables/uname.c
+usr/share/doc/bash-3.1/loadables/unlink.c
+usr/share/doc/bash-3.1/loadables/whoami.c
+usr/share/doc/bash-3.1/misc/aliasconv.bash
+usr/share/doc/bash-3.1/misc/aliasconv.sh
+usr/share/doc/bash-3.1/misc/cshtobash
+usr/share/doc/bash-3.1/misc/suncmd.termcap
+usr/share/doc/bash-3.1/rbash.0
+usr/share/doc/bash-3.1/rbash.ps
+usr/share/doc/bash-3.1/rose94.ps
+usr/share/doc/bash-3.1/scripts.noah/PERMISSION
+usr/share/doc/bash-3.1/scripts.noah/README
+usr/share/doc/bash-3.1/scripts.noah/aref.bash
+usr/share/doc/bash-3.1/scripts.noah/bash.sub.bash
+usr/share/doc/bash-3.1/scripts.noah/bash_version.bash
+usr/share/doc/bash-3.1/scripts.noah/meta.bash
+usr/share/doc/bash-3.1/scripts.noah/mktmp.bash
+usr/share/doc/bash-3.1/scripts.noah/number.bash
+usr/share/doc/bash-3.1/scripts.noah/prompt.bash
+usr/share/doc/bash-3.1/scripts.noah/remap_keys.bash
+usr/share/doc/bash-3.1/scripts.noah/require.bash
+usr/share/doc/bash-3.1/scripts.noah/send_mail.bash
+usr/share/doc/bash-3.1/scripts.noah/shcat.bash
+usr/share/doc/bash-3.1/scripts.noah/source.bash
+usr/share/doc/bash-3.1/scripts.noah/string.bash
+usr/share/doc/bash-3.1/scripts.noah/stty.bash
+usr/share/doc/bash-3.1/scripts.noah/y_or_n_p.bash
+usr/share/doc/bash-3.1/scripts.v2/PERMISSION
+usr/share/doc/bash-3.1/scripts.v2/README
+usr/share/doc/bash-3.1/scripts.v2/arc2tarz
+usr/share/doc/bash-3.1/scripts.v2/bashrand
+usr/share/doc/bash-3.1/scripts.v2/cal2day.bash
+usr/share/doc/bash-3.1/scripts.v2/cdhist.bash
+usr/share/doc/bash-3.1/scripts.v2/corename
+usr/share/doc/bash-3.1/scripts.v2/fman
+usr/share/doc/bash-3.1/scripts.v2/frcp
+usr/share/doc/bash-3.1/scripts.v2/lowercase
+usr/share/doc/bash-3.1/scripts.v2/ncp
+usr/share/doc/bash-3.1/scripts.v2/newext
+usr/share/doc/bash-3.1/scripts.v2/nmv
+usr/share/doc/bash-3.1/scripts.v2/pages
+usr/share/doc/bash-3.1/scripts.v2/pf
+usr/share/doc/bash-3.1/scripts.v2/pmtop
+usr/share/doc/bash-3.1/scripts.v2/ren
+usr/share/doc/bash-3.1/scripts.v2/rename
+usr/share/doc/bash-3.1/scripts.v2/repeat
+usr/share/doc/bash-3.1/scripts.v2/shprof
+usr/share/doc/bash-3.1/scripts.v2/untar
+usr/share/doc/bash-3.1/scripts.v2/uudec
+usr/share/doc/bash-3.1/scripts.v2/uuenc
+usr/share/doc/bash-3.1/scripts.v2/vtree
+usr/share/doc/bash-3.1/scripts.v2/where
+usr/share/doc/bash-3.1/scripts/adventure.sh
+usr/share/doc/bash-3.1/scripts/bcsh.sh
+usr/share/doc/bash-3.1/scripts/cat.sh
+usr/share/doc/bash-3.1/scripts/center
+usr/share/doc/bash-3.1/scripts/dd-ex.sh
+usr/share/doc/bash-3.1/scripts/fixfiles.bash
+usr/share/doc/bash-3.1/scripts/hanoi.bash
+usr/share/doc/bash-3.1/scripts/inpath
+usr/share/doc/bash-3.1/scripts/krand.bash
+usr/share/doc/bash-3.1/scripts/line-input.bash
+usr/share/doc/bash-3.1/scripts/nohup.bash
+usr/share/doc/bash-3.1/scripts/precedence
+usr/share/doc/bash-3.1/scripts/randomcard.bash
+usr/share/doc/bash-3.1/scripts/scrollbar
+usr/share/doc/bash-3.1/scripts/scrollbar2
+usr/share/doc/bash-3.1/scripts/self-repro
+usr/share/doc/bash-3.1/scripts/showperm.bash
+usr/share/doc/bash-3.1/scripts/shprompt
+usr/share/doc/bash-3.1/scripts/spin.bash
+usr/share/doc/bash-3.1/scripts/timeout
+usr/share/doc/bash-3.1/scripts/vtree2
+usr/share/doc/bash-3.1/scripts/vtree3
+usr/share/doc/bash-3.1/scripts/vtree3a
+usr/share/doc/bash-3.1/scripts/websrv.sh
+usr/share/doc/bash-3.1/scripts/xterm_title
+usr/share/doc/bash-3.1/scripts/zprintf
+usr/share/doc/bash-3.1/startup-files/Bash_aliases
+usr/share/doc/bash-3.1/startup-files/Bash_profile
+usr/share/doc/bash-3.1/startup-files/Bashrc.bfox
+usr/share/doc/bash-3.1/startup-files/README
+usr/share/doc/bash-3.1/startup-files/apple/README
+usr/share/doc/bash-3.1/startup-files/apple/aliases
+usr/share/doc/bash-3.1/startup-files/apple/bash.defaults
+usr/share/doc/bash-3.1/startup-files/apple/environment
+usr/share/doc/bash-3.1/startup-files/apple/login
+usr/share/doc/bash-3.1/startup-files/apple/logout
+usr/share/doc/bash-3.1/startup-files/apple/rc
+usr/share/doc/bash-3.1/startup-files/bash-profile
+usr/share/doc/bash-3.1/startup-files/bashrc
+usr/share/doc/bzip2-1.0.3/CHANGES
+usr/share/doc/bzip2-1.0.3/LICENSE
+usr/share/doc/bzip2-1.0.3/README
+usr/share/doc/bzip2-1.0.3/README.COMPILATION.PROBLEMS
+usr/share/doc/bzip2-1.0.3/Y2K_INFO
 usr/share/doc/compat-db-4.2.52/db-4.1.25/LICENSE
 usr/share/doc/compat-db-4.2.52/db-4.1.25/README
 usr/share/doc/compat-db-4.2.52/db-4.2.52/LICENSE
 usr/share/doc/compat-db-4.2.52/db-4.2.52/README
-usr/share/doc/coreutils-5.2.1/ABOUT-NLS
-usr/share/doc/coreutils-5.2.1/ChangeLog.bz2
-usr/share/doc/coreutils-5.2.1/NEWS
-usr/share/doc/coreutils-5.2.1/README
-usr/share/doc/coreutils-5.2.1/THANKS
-usr/share/doc/coreutils-5.2.1/TODO
-usr/share/doc/coreutils-5.2.1/fileutils/ChangeLog-1997.bz2
-usr/share/doc/coreutils-5.2.1/fileutils/ChangeLog.bz2
-usr/share/doc/coreutils-5.2.1/fileutils/NEWS
-usr/share/doc/coreutils-5.2.1/sh-utils/ChangeLog.0.bz2
-usr/share/doc/coreutils-5.2.1/sh-utils/ChangeLog.bz2
-usr/share/doc/coreutils-5.2.1/sh-utils/NEWS
-usr/share/doc/coreutils-5.2.1/textutils/ChangeLog.bz2
-usr/share/doc/coreutils-5.2.1/textutils/NEWS
-usr/share/doc/db4-4.3.27/LICENSE
-usr/share/doc/db4-4.3.27/README
-usr/share/doc/e2fsprogs-1.38/AUTHORS.ext2resize
-usr/share/doc/e2fsprogs-1.38/COPYING.ext2resize
-usr/share/doc/e2fsprogs-1.38/HOWTO.ext2resize
-usr/share/doc/e2fsprogs-1.38/NEWS.ext2resize
-usr/share/doc/e2fsprogs-1.38/README
-usr/share/doc/e2fsprogs-1.38/README.ext2resize
-usr/share/doc/e2fsprogs-1.38/RELEASE-NOTES
-usr/share/doc/fedora-release-4/GPL
-usr/share/doc/fedora-release-4/README
-usr/share/doc/fedora-release-4/README-Accessibility
-usr/share/doc/fedora-release-4/README-en.html
-usr/share/doc/fedora-release-4/RELEASE-NOTES
-usr/share/doc/fedora-release-4/RELEASE-NOTES-en.html
-usr/share/doc/fedora-release-4/RPM-GPG-KEY
-usr/share/doc/fedora-release-4/RPM-GPG-KEY-beta
-usr/share/doc/fedora-release-4/RPM-GPG-KEY-fedora
-usr/share/doc/fedora-release-4/RPM-GPG-KEY-fedora-extras
-usr/share/doc/fedora-release-4/RPM-GPG-KEY-fedora-rawhide
-usr/share/doc/fedora-release-4/RPM-GPG-KEY-fedora-test
-usr/share/doc/fedora-release-4/RPM-GPG-KEY-rawhide
-usr/share/doc/fedora-release-4/autorun-template
-usr/share/doc/fedora-release-4/eula.txt
-usr/share/doc/fedora-release-4/fedora.css
-usr/share/doc/fedora-release-4/figs/Fedora_Desktop.png
-usr/share/doc/fedora-release-4/stylesheet-images/1.png
-usr/share/doc/fedora-release-4/stylesheet-images/1.svg
-usr/share/doc/fedora-release-4/stylesheet-images/10.png
-usr/share/doc/fedora-release-4/stylesheet-images/10.svg
-usr/share/doc/fedora-release-4/stylesheet-images/11.png
-usr/share/doc/fedora-release-4/stylesheet-images/11.svg
-usr/share/doc/fedora-release-4/stylesheet-images/12.png
-usr/share/doc/fedora-release-4/stylesheet-images/12.svg
-usr/share/doc/fedora-release-4/stylesheet-images/13.png
-usr/share/doc/fedora-release-4/stylesheet-images/13.svg
-usr/share/doc/fedora-release-4/stylesheet-images/14.png
-usr/share/doc/fedora-release-4/stylesheet-images/14.svg
-usr/share/doc/fedora-release-4/stylesheet-images/15.png
-usr/share/doc/fedora-release-4/stylesheet-images/15.svg
-usr/share/doc/fedora-release-4/stylesheet-images/2.png
-usr/share/doc/fedora-release-4/stylesheet-images/2.svg
-usr/share/doc/fedora-release-4/stylesheet-images/3.png
-usr/share/doc/fedora-release-4/stylesheet-images/3.svg
-usr/share/doc/fedora-release-4/stylesheet-images/4.png
-usr/share/doc/fedora-release-4/stylesheet-images/4.svg
-usr/share/doc/fedora-release-4/stylesheet-images/5.png
-usr/share/doc/fedora-release-4/stylesheet-images/5.svg
-usr/share/doc/fedora-release-4/stylesheet-images/6.png
-usr/share/doc/fedora-release-4/stylesheet-images/6.svg
-usr/share/doc/fedora-release-4/stylesheet-images/7.png
-usr/share/doc/fedora-release-4/stylesheet-images/7.svg
-usr/share/doc/fedora-release-4/stylesheet-images/8.png
-usr/share/doc/fedora-release-4/stylesheet-images/8.svg
-usr/share/doc/fedora-release-4/stylesheet-images/9.png
-usr/share/doc/fedora-release-4/stylesheet-images/9.svg
-usr/share/doc/fedora-release-4/stylesheet-images/LICENSE
-usr/share/doc/fedora-release-4/stylesheet-images/callout.svg
-usr/share/doc/fedora-release-4/stylesheet-images/caution.png
-usr/share/doc/fedora-release-4/stylesheet-images/important.png
-usr/share/doc/fedora-release-4/stylesheet-images/note.png
-usr/share/doc/fedora-release-4/stylesheet-images/tip.png
-usr/share/doc/fedora-release-4/stylesheet-images/warning.png
-usr/share/doc/freetype-2.1.9/ChangeLog
-usr/share/doc/freetype-2.1.9/README
-usr/share/doc/freetype-2.1.9/announce
-usr/share/doc/freetype-2.1.9/docs/CHANGES
-usr/share/doc/freetype-2.1.9/docs/CUSTOMIZE
-usr/share/doc/freetype-2.1.9/docs/DEBUG
-usr/share/doc/freetype-2.1.9/docs/FTL.txt
-usr/share/doc/freetype-2.1.9/docs/GPL.txt
-usr/share/doc/freetype-2.1.9/docs/INSTALL
-usr/share/doc/freetype-2.1.9/docs/INSTALL.ANY
-usr/share/doc/freetype-2.1.9/docs/INSTALL.GNU
-usr/share/doc/freetype-2.1.9/docs/INSTALL.UNX
-usr/share/doc/freetype-2.1.9/docs/INSTALL.VMS
-usr/share/doc/freetype-2.1.9/docs/PATENTS
-usr/share/doc/freetype-2.1.9/docs/TODO
-usr/share/doc/freetype-2.1.9/docs/TRUETYPE
-usr/share/doc/freetype-2.1.9/docs/UPGRADE.UNX
-usr/share/doc/freetype-2.1.9/docs/VERSION.DLL
-usr/share/doc/freetype-2.1.9/docs/cache.html
-usr/share/doc/freetype-2.1.9/docs/design/basic-design.png
-usr/share/doc/freetype-2.1.9/docs/design/design-1.html
-usr/share/doc/freetype-2.1.9/docs/design/design-2.html
-usr/share/doc/freetype-2.1.9/docs/design/design-3.html
-usr/share/doc/freetype-2.1.9/docs/design/design-4.html
-usr/share/doc/freetype-2.1.9/docs/design/design-5.html
-usr/share/doc/freetype-2.1.9/docs/design/design-6.html
-usr/share/doc/freetype-2.1.9/docs/design/detailed-design.png
-usr/share/doc/freetype-2.1.9/docs/design/hierarchy-example.png
-usr/share/doc/freetype-2.1.9/docs/design/index.html
-usr/share/doc/freetype-2.1.9/docs/design/library-model.png
-usr/share/doc/freetype-2.1.9/docs/design/modules.html
-usr/share/doc/freetype-2.1.9/docs/design/simple-model.png
-usr/share/doc/freetype-2.1.9/docs/formats.txt
-usr/share/doc/freetype-2.1.9/docs/freetype2/build-system.html
-usr/share/doc/freetype-2.1.9/docs/freetype2/demo-programs.png
-usr/share/doc/freetype-2.1.9/docs/freetype2/drivers-list.png
-usr/share/doc/freetype-2.1.9/docs/freetype2/index.html
-usr/share/doc/freetype-2.1.9/docs/freetype2/io-frames.html
-usr/share/doc/freetype-2.1.9/docs/freetype2/library-compilation.png
-usr/share/doc/freetype-2.1.9/docs/freetype2/logo1.png
-usr/share/doc/freetype-2.1.9/docs/freetype2/platform-detection.png
-usr/share/doc/freetype-2.1.9/docs/freetype2/system-interface.html
-usr/share/doc/freetype-2.1.9/docs/freetype2/tutorial.html
-usr/share/doc/freetype-2.1.9/docs/ft2faq.html
-usr/share/doc/freetype-2.1.9/docs/glyphs/Image1.png
-usr/share/doc/freetype-2.1.9/docs/glyphs/Image2.png
-usr/share/doc/freetype-2.1.9/docs/glyphs/Image3.png
-usr/share/doc/freetype-2.1.9/docs/glyphs/Image4.png
-usr/share/doc/freetype-2.1.9/docs/glyphs/bbox1.png
-usr/share/doc/freetype-2.1.9/docs/glyphs/bbox2.png
-usr/share/doc/freetype-2.1.9/docs/glyphs/body_comparison.png
-usr/share/doc/freetype-2.1.9/docs/glyphs/bravo_kerned.png
-usr/share/doc/freetype-2.1.9/docs/glyphs/bravo_unkerned.png
-usr/share/doc/freetype-2.1.9/docs/glyphs/clipping.png
-usr/share/doc/freetype-2.1.9/docs/glyphs/down_flow.png
-usr/share/doc/freetype-2.1.9/docs/glyphs/glyphs-1.html
-usr/share/doc/freetype-2.1.9/docs/glyphs/glyphs-2.html
-usr/share/doc/freetype-2.1.9/docs/glyphs/glyphs-3.html
-usr/share/doc/freetype-2.1.9/docs/glyphs/glyphs-4.html
-usr/share/doc/freetype-2.1.9/docs/glyphs/glyphs-5.html
-usr/share/doc/freetype-2.1.9/docs/glyphs/glyphs-6.html
-usr/share/doc/freetype-2.1.9/docs/glyphs/glyphs-7.html
-usr/share/doc/freetype-2.1.9/docs/glyphs/grid_1.png
-usr/share/doc/freetype-2.1.9/docs/glyphs/index.html
-usr/share/doc/freetype-2.1.9/docs/glyphs/index2.htm
-usr/share/doc/freetype-2.1.9/docs/glyphs/points_conic.png
-usr/share/doc/freetype-2.1.9/docs/glyphs/points_conic2.png
-usr/share/doc/freetype-2.1.9/docs/glyphs/points_cubic.png
-usr/share/doc/freetype-2.1.9/docs/glyphs/points_segment.png
-usr/share/doc/freetype-2.1.9/docs/glyphs/twlewis1.png
-usr/share/doc/freetype-2.1.9/docs/glyphs/twlewis2.png
-usr/share/doc/freetype-2.1.9/docs/glyphs/up_flow.png
-usr/share/doc/freetype-2.1.9/docs/license.txt
-usr/share/doc/freetype-2.1.9/docs/modules.txt
-usr/share/doc/freetype-2.1.9/docs/raster.txt
-usr/share/doc/freetype-2.1.9/docs/reference/.cvsignore
-usr/share/doc/freetype-2.1.9/docs/reference/README
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-base_interface.html
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-basic_types.html
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-bdf_fonts.html
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-cache_subsystem.html
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-computations.html
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-glyph_management.html
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-gzip.html
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-header_file_macros.html
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-index.html
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-list_processing.html
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-lzw.html
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-mac_specific.html
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-module_management.html
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-multiple_masters.html
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-outline_processing.html
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-pfr_fonts.html
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-raster.html
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-sfnt_names.html
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-sizes_management.html
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-system_interface.html
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-toc.html
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-truetype_tables.html
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-type1_tables.html
-usr/share/doc/freetype-2.1.9/docs/reference/ft2-winfnt_fonts.html
-usr/share/doc/freetype-2.1.9/docs/release
-usr/share/doc/freetype-2.1.9/docs/tutorial/example1.c
-usr/share/doc/freetype-2.1.9/docs/tutorial/metrics.png
-usr/share/doc/freetype-2.1.9/docs/tutorial/metrics2.png
-usr/share/doc/freetype-2.1.9/docs/tutorial/step1.html
-usr/share/doc/freetype-2.1.9/docs/tutorial/step2.html
+usr/share/doc/coreutils-5.97/ABOUT-NLS
+usr/share/doc/coreutils-5.97/ChangeLog.bz2
+usr/share/doc/coreutils-5.97/NEWS
+usr/share/doc/coreutils-5.97/README
+usr/share/doc/coreutils-5.97/THANKS
+usr/share/doc/coreutils-5.97/TODO
+usr/share/doc/coreutils-5.97/fileutils/ChangeLog-1997.bz2
+usr/share/doc/coreutils-5.97/fileutils/ChangeLog.bz2
+usr/share/doc/coreutils-5.97/fileutils/NEWS
+usr/share/doc/coreutils-5.97/sh-utils/ChangeLog.0.bz2
+usr/share/doc/coreutils-5.97/sh-utils/ChangeLog.bz2
+usr/share/doc/coreutils-5.97/sh-utils/NEWS
+usr/share/doc/coreutils-5.97/textutils/ChangeLog.bz2
+usr/share/doc/coreutils-5.97/textutils/NEWS
+usr/share/doc/db4-4.3.29/LICENSE
+usr/share/doc/db4-4.3.29/README
+usr/share/doc/e2fsprogs-1.39/README
+usr/share/doc/e2fsprogs-1.39/RELEASE-NOTES
+usr/share/doc/fedora-release-6/GPL
+usr/share/doc/fedora-release-6/eula.txt
+usr/share/doc/freetype-2.2.1/ChangeLog
+usr/share/doc/freetype-2.2.1/README
 usr/share/doc/gdbm-1.8.0/COPYING
 usr/share/doc/gdbm-1.8.0/NEWS
 usr/share/doc/gdbm-1.8.0/README
-usr/share/doc/glib-1.2.10/AUTHORS
-usr/share/doc/glib-1.2.10/COPYING
-usr/share/doc/glib-1.2.10/ChangeLog
-usr/share/doc/glib-1.2.10/NEWS
-usr/share/doc/glib-1.2.10/README
+usr/share/doc/glib2-2.12.9/AUTHORS
+usr/share/doc/glib2-2.12.9/COPYING
+usr/share/doc/glib2-2.12.9/ChangeLog
+usr/share/doc/glib2-2.12.9/NEWS
+usr/share/doc/glib2-2.12.9/README
 usr/share/doc/glibc-%%GLIBCVER%%/BUGS
 usr/share/doc/glibc-%%GLIBCVER%%/CONFORMANCE
 usr/share/doc/glibc-%%GLIBCVER%%/COPYING
@@ -5534,35 +5527,12 @@ usr/share/doc/glibc-%%GLIBCVER%%/PROJECTS
 usr/share/doc/glibc-%%GLIBCVER%%/README
 usr/share/doc/glibc-%%GLIBCVER%%/README.hesiod
 usr/share/doc/glibc-%%GLIBCVER%%/README.libm
-usr/share/doc/glibc-common-%%GLIBCVER%%/ChangeLog.14.bz2
 usr/share/doc/glibc-common-%%GLIBCVER%%/ChangeLog.15.bz2
+usr/share/doc/glibc-common-%%GLIBCVER%%/ChangeLog.16.bz2
 usr/share/doc/glibc-common-%%GLIBCVER%%/ChangeLog.bz2
-usr/share/doc/glibc-common-%%GLIBCVER%%/ChangeLog.threads.bz2
-usr/share/doc/glibc-common-%%GLIBCVER%%/Changes.threads
-usr/share/doc/glibc-common-%%GLIBCVER%%/FAQ-threads.html
-usr/share/doc/glibc-common-%%GLIBCVER%%/README.threads
 usr/share/doc/glibc-common-%%GLIBCVER%%/README.timezone
 usr/share/doc/glibc-common-%%GLIBCVER%%/README.ufc-crypt
-usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/Makefile
-usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex1.c
-usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex10.c
-usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex11.c
-usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex12.c
-usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex13.c
-usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex14.c
-usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex15.c
-usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex16.c
-usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex17.c
-usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex18.c
-usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex2.c
-usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex3.c
-usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex4.c
-usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex5.c
-usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex6.c
-usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex7.c
-usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex8.c
-usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/ex9.c
-usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads/tststatic.c
+usr/share/doc/glibc-common-%%GLIBCVER%%/gai.conf
 usr/share/doc/grep-2.5.1/ABOUT-NLS
 usr/share/doc/grep-2.5.1/AUTHORS
 usr/share/doc/grep-2.5.1/ChangeLog
@@ -5570,41 +5540,43 @@ usr/share/doc/grep-2.5.1/NEWS
 usr/share/doc/grep-2.5.1/README
 usr/share/doc/grep-2.5.1/THANKS
 usr/share/doc/grep-2.5.1/TODO
-usr/share/doc/libgcc-4.0.2/COPYING.LIB
-usr/share/doc/ncurses-5.4/ANNOUNCE
-usr/share/doc/ncurses-5.4/README
-usr/share/doc/ncurses-5.4/announce.html
-usr/share/doc/pcre-5.0/AUTHORS
-usr/share/doc/pcre-5.0/LICENCE
-usr/share/doc/rpm-4.4.1/BETA-GPG-KEY
-usr/share/doc/rpm-4.4.1/CHANGES
-usr/share/doc/rpm-4.4.1/GROUPS
-usr/share/doc/rpm-4.4.1/Makefile
-usr/share/doc/rpm-4.4.1/Makefile.am
-usr/share/doc/rpm-4.4.1/Makefile.in
-usr/share/doc/rpm-4.4.1/RPM-GPG-KEY
-usr/share/doc/rpm-4.4.1/RPM-PGP-KEY
-usr/share/doc/rpm-4.4.1/builddependencies
-usr/share/doc/rpm-4.4.1/buildroot
-usr/share/doc/rpm-4.4.1/conditionalbuilds
-usr/share/doc/rpm-4.4.1/dependencies
-usr/share/doc/rpm-4.4.1/format
-usr/share/doc/rpm-4.4.1/hregions
-usr/share/doc/rpm-4.4.1/macros
-usr/share/doc/rpm-4.4.1/multiplebuilds
-usr/share/doc/rpm-4.4.1/queryformat
-usr/share/doc/rpm-4.4.1/relocatable
-usr/share/doc/rpm-4.4.1/rollbacks
-usr/share/doc/rpm-4.4.1/signatures
-usr/share/doc/rpm-4.4.1/spec
-usr/share/doc/rpm-4.4.1/triggers
-usr/share/doc/rpm-4.4.1/tsort
+usr/share/doc/info-4.8/COPYING
+usr/share/doc/libgcc-4.1.1/COPYING.LIB
+usr/share/doc/ncurses-5.5/ANNOUNCE
+usr/share/doc/ncurses-5.5/README
+usr/share/doc/ncurses-5.5/announce.html
+usr/share/doc/pcre-6.6/AUTHORS
+usr/share/doc/pcre-6.6/LICENCE
+usr/share/doc/rpm-4.4.2/BETA-GPG-KEY
+usr/share/doc/rpm-4.4.2/CHANGES
+usr/share/doc/rpm-4.4.2/GROUPS
+usr/share/doc/rpm-4.4.2/RPM-GPG-KEY
+usr/share/doc/rpm-4.4.2/RPM-PGP-KEY
+usr/share/doc/rpm-4.4.2/builddependencies
+usr/share/doc/rpm-4.4.2/buildroot
+usr/share/doc/rpm-4.4.2/conditionalbuilds
+usr/share/doc/rpm-4.4.2/dependencies
+usr/share/doc/rpm-4.4.2/format
+usr/share/doc/rpm-4.4.2/hregions
+usr/share/doc/rpm-4.4.2/macros
+usr/share/doc/rpm-4.4.2/multiplebuilds
+usr/share/doc/rpm-4.4.2/queryformat
+usr/share/doc/rpm-4.4.2/relocatable
+usr/share/doc/rpm-4.4.2/rollbacks
+usr/share/doc/rpm-4.4.2/signatures
+usr/share/doc/rpm-4.4.2/spec
+usr/share/doc/rpm-4.4.2/triggers
+usr/share/doc/rpm-4.4.2/tsort
 usr/share/doc/setserial-2.17/README
 usr/share/doc/setserial-2.17/rc.serial
-usr/share/doc/setup-2.5.44/uidgid
-usr/share/doc/zlib-1.2.2.2/README
+usr/share/doc/setup-2.6.1.1/uidgid
+usr/share/doc/slang-2.0.6/COPYING
+usr/share/doc/slang-2.0.6/changes.txt
+usr/share/doc/zlib-1.2.3/README
 usr/share/eula/eula.en_US
 usr/share/firstboot/modules/eula.py
+usr/share/firstboot/modules/eula.pyc
+usr/share/firstboot/modules/eula.pyo
 usr/share/i18n/charmaps/ANSI_X3.110-1983.gz
 usr/share/i18n/charmaps/ANSI_X3.4-1968.gz
 usr/share/i18n/charmaps/ARMSCII-8.gz
@@ -5792,6 +5764,7 @@ usr/share/i18n/charmaps/MAC-IS.gz
 usr/share/i18n/charmaps/MAC-SAMI.gz
 usr/share/i18n/charmaps/MAC-UK.gz
 usr/share/i18n/charmaps/MACINTOSH.gz
+usr/share/i18n/charmaps/MIK.gz
 usr/share/i18n/charmaps/MSZ_7795.3.gz
 usr/share/i18n/charmaps/NATS-DANO-ADD.gz
 usr/share/i18n/charmaps/NATS-DANO.gz
@@ -5849,6 +5822,7 @@ usr/share/i18n/locales/ar_SD
 usr/share/i18n/locales/ar_SY
 usr/share/i18n/locales/ar_TN
 usr/share/i18n/locales/ar_YE
+usr/share/i18n/locales/as_IN
 usr/share/i18n/locales/az_AZ
 usr/share/i18n/locales/be_BY
 usr/share/i18n/locales/be_BY@latin
@@ -5859,9 +5833,13 @@ usr/share/i18n/locales/br_FR
 usr/share/i18n/locales/br_FR@euro
 usr/share/i18n/locales/bs_BA
 usr/share/i18n/locales/byn_ER
+usr/share/i18n/locales/ca_AD
 usr/share/i18n/locales/ca_ES
 usr/share/i18n/locales/ca_ES@euro
+usr/share/i18n/locales/ca_FR
+usr/share/i18n/locales/ca_IT
 usr/share/i18n/locales/cs_CZ
+usr/share/i18n/locales/csb_PL
 usr/share/i18n/locales/cy_GB
 usr/share/i18n/locales/da_DK
 usr/share/i18n/locales/de_AT
@@ -5873,6 +5851,8 @@ usr/share/i18n/locales/de_DE
 usr/share/i18n/locales/de_DE@euro
 usr/share/i18n/locales/de_LU
 usr/share/i18n/locales/de_LU@euro
+usr/share/i18n/locales/dz_BT
+usr/share/i18n/locales/el_CY
 usr/share/i18n/locales/el_GR
 usr/share/i18n/locales/el_GR@euro
 usr/share/i18n/locales/en_AU
@@ -5926,6 +5906,7 @@ usr/share/i18n/locales/fr_FR
 usr/share/i18n/locales/fr_FR@euro
 usr/share/i18n/locales/fr_LU
 usr/share/i18n/locales/fr_LU@euro
+usr/share/i18n/locales/fy_NL
 usr/share/i18n/locales/ga_IE
 usr/share/i18n/locales/ga_IE@euro
 usr/share/i18n/locales/gd_GB
@@ -5965,6 +5946,7 @@ usr/share/i18n/locales/lg_UG
 usr/share/i18n/locales/lo_LA
 usr/share/i18n/locales/lt_LT
 usr/share/i18n/locales/lv_LV
+usr/share/i18n/locales/mai_IN
 usr/share/i18n/locales/mg_MG
 usr/share/i18n/locales/mi_NZ
 usr/share/i18n/locales/mk_MK
@@ -5981,11 +5963,14 @@ usr/share/i18n/locales/nl_NL
 usr/share/i18n/locales/nl_NL@euro
 usr/share/i18n/locales/nn_NO
 usr/share/i18n/locales/no_NO
+usr/share/i18n/locales/nr_ZA
 usr/share/i18n/locales/nso_ZA
 usr/share/i18n/locales/oc_FR
 usr/share/i18n/locales/om_ET
 usr/share/i18n/locales/om_KE
+usr/share/i18n/locales/or_IN
 usr/share/i18n/locales/pa_IN
+usr/share/i18n/locales/pa_PK
 usr/share/i18n/locales/pl_PL
 usr/share/i18n/locales/pt_BR
 usr/share/i18n/locales/pt_PT
@@ -6005,6 +5990,7 @@ usr/share/i18n/locales/so_KE
 usr/share/i18n/locales/so_SO
 usr/share/i18n/locales/sq_AL
 usr/share/i18n/locales/sr_CS
+usr/share/i18n/locales/sr_ME
 usr/share/i18n/locales/ss_ZA
 usr/share/i18n/locales/st_ZA
 usr/share/i18n/locales/sv_FI
@@ -6019,6 +6005,7 @@ usr/share/i18n/locales/ti_ET
 usr/share/i18n/locales/tig_ER
 usr/share/i18n/locales/tl_PH
 usr/share/i18n/locales/tn_ZA
+usr/share/i18n/locales/tr_CY
 usr/share/i18n/locales/tr_TR
 usr/share/i18n/locales/translit_circle
 usr/share/i18n/locales/translit_cjk_compat
@@ -6061,180 +6048,263 @@ usr/share/info/readline.info.gz
 usr/share/info/rluserman.info.gz
 usr/share/locale/af/LC_MESSAGES/coreutils.mo
 usr/share/locale/af/LC_TIME/coreutils.mo
+usr/share/locale/am/LC_MESSAGES/glib20.mo
+usr/share/locale/ar/LC_MESSAGES/glib20.mo
+usr/share/locale/az/LC_MESSAGES/glib20.mo
 usr/share/locale/be/LC_MESSAGES/coreutils.mo
+usr/share/locale/be/LC_MESSAGES/glib20.mo
 usr/share/locale/be/LC_MESSAGES/libc.mo
 usr/share/locale/be/LC_TIME/coreutils.mo
+usr/share/locale/bg/LC_MESSAGES/coreutils.mo
+usr/share/locale/bg/LC_MESSAGES/glib20.mo
+usr/share/locale/bg/LC_TIME/coreutils.mo
+usr/share/locale/bn/LC_MESSAGES/glib20.mo
+usr/share/locale/bn_IN/LC_MESSAGES/glib20.mo
+usr/share/locale/bs/LC_MESSAGES/glib20.mo
 usr/share/locale/ca/LC_MESSAGES/coreutils.mo
+usr/share/locale/ca/LC_MESSAGES/glib20.mo
 usr/share/locale/ca/LC_MESSAGES/libc.mo
 usr/share/locale/ca/LC_TIME/coreutils.mo
 usr/share/locale/cs/LC_MESSAGES/coreutils.mo
 usr/share/locale/cs/LC_MESSAGES/e2fsprogs.mo
-usr/share/locale/cs/LC_MESSAGES/freetype.mo
+usr/share/locale/cs/LC_MESSAGES/glib20.mo
 usr/share/locale/cs/LC_MESSAGES/grep.mo
 usr/share/locale/cs/LC_MESSAGES/libc.mo
 usr/share/locale/cs/LC_MESSAGES/popt.mo
 usr/share/locale/cs/LC_MESSAGES/rpm.mo
 usr/share/locale/cs/LC_TIME/coreutils.mo
+usr/share/locale/cy/LC_MESSAGES/glib20.mo
 usr/share/locale/da/LC_MESSAGES/coreutils.mo
+usr/share/locale/da/LC_MESSAGES/glib20.mo
 usr/share/locale/da/LC_MESSAGES/libc.mo
 usr/share/locale/da/LC_MESSAGES/popt.mo
 usr/share/locale/da/LC_MESSAGES/rpm.mo
 usr/share/locale/da/LC_TIME/coreutils.mo
 usr/share/locale/de/LC_MESSAGES/coreutils.mo
 usr/share/locale/de/LC_MESSAGES/e2fsprogs.mo
-usr/share/locale/de/LC_MESSAGES/freetype.mo
+usr/share/locale/de/LC_MESSAGES/glib20.mo
 usr/share/locale/de/LC_MESSAGES/grep.mo
 usr/share/locale/de/LC_MESSAGES/libc.mo
 usr/share/locale/de/LC_MESSAGES/popt.mo
 usr/share/locale/de/LC_MESSAGES/rpm.mo
 usr/share/locale/de/LC_TIME/coreutils.mo
+usr/share/locale/dz/LC_MESSAGES/glib20.mo
 usr/share/locale/el/LC_MESSAGES/coreutils.mo
+usr/share/locale/el/LC_MESSAGES/glib20.mo
 usr/share/locale/el/LC_MESSAGES/grep.mo
 usr/share/locale/el/LC_MESSAGES/libc.mo
 usr/share/locale/el/LC_TIME/coreutils.mo
 usr/share/locale/en@boldquot/LC_MESSAGES/bash.mo
 usr/share/locale/en@quot/LC_MESSAGES/bash.mo
+usr/share/locale/en_CA/LC_MESSAGES/glib20.mo
+usr/share/locale/en_GB/LC_MESSAGES/glib20.mo
 usr/share/locale/en_GB/LC_MESSAGES/libc.mo
+usr/share/locale/eo/LC_MESSAGES/glib20.mo
 usr/share/locale/eo/LC_MESSAGES/grep.mo
 usr/share/locale/es/LC_MESSAGES/coreutils.mo
 usr/share/locale/es/LC_MESSAGES/e2fsprogs.mo
-usr/share/locale/es/LC_MESSAGES/freetype.mo
+usr/share/locale/es/LC_MESSAGES/glib20.mo
 usr/share/locale/es/LC_MESSAGES/grep.mo
 usr/share/locale/es/LC_MESSAGES/libc.mo
 usr/share/locale/es/LC_MESSAGES/popt.mo
 usr/share/locale/es/LC_TIME/coreutils.mo
 usr/share/locale/et/LC_MESSAGES/coreutils.mo
+usr/share/locale/et/LC_MESSAGES/glib20.mo
 usr/share/locale/et/LC_MESSAGES/grep.mo
 usr/share/locale/et/LC_TIME/coreutils.mo
+usr/share/locale/eu/LC_MESSAGES/coreutils.mo
+usr/share/locale/eu/LC_MESSAGES/glib20.mo
+usr/share/locale/eu/LC_TIME/coreutils.mo
 usr/share/locale/eu_ES/LC_MESSAGES/popt.mo
+usr/share/locale/fa/LC_MESSAGES/glib20.mo
 usr/share/locale/fi/LC_MESSAGES/coreutils.mo
+usr/share/locale/fi/LC_MESSAGES/glib20.mo
 usr/share/locale/fi/LC_MESSAGES/libc.mo
 usr/share/locale/fi/LC_MESSAGES/popt.mo
 usr/share/locale/fi/LC_MESSAGES/rpm.mo
 usr/share/locale/fi/LC_TIME/coreutils.mo
 usr/share/locale/fr/LC_MESSAGES/coreutils.mo
 usr/share/locale/fr/LC_MESSAGES/e2fsprogs.mo
-usr/share/locale/fr/LC_MESSAGES/freetype.mo
+usr/share/locale/fr/LC_MESSAGES/glib20.mo
 usr/share/locale/fr/LC_MESSAGES/grep.mo
 usr/share/locale/fr/LC_MESSAGES/libc.mo
 usr/share/locale/fr/LC_MESSAGES/popt.mo
 usr/share/locale/fr/LC_MESSAGES/rpm.mo
 usr/share/locale/fr/LC_TIME/coreutils.mo
 usr/share/locale/ga/LC_MESSAGES/coreutils.mo
+usr/share/locale/ga/LC_MESSAGES/glib20.mo
 usr/share/locale/ga/LC_TIME/coreutils.mo
 usr/share/locale/gl/LC_MESSAGES/coreutils.mo
+usr/share/locale/gl/LC_MESSAGES/glib20.mo
 usr/share/locale/gl/LC_MESSAGES/grep.mo
 usr/share/locale/gl/LC_MESSAGES/libc.mo
 usr/share/locale/gl/LC_MESSAGES/popt.mo
 usr/share/locale/gl/LC_MESSAGES/rpm.mo
 usr/share/locale/gl/LC_TIME/coreutils.mo
+usr/share/locale/gu/LC_MESSAGES/glib20.mo
+usr/share/locale/he/LC_MESSAGES/glib20.mo
+usr/share/locale/hi/LC_MESSAGES/glib20.mo
+usr/share/locale/hr/LC_MESSAGES/coreutils.mo
+usr/share/locale/hr/LC_MESSAGES/glib20.mo
 usr/share/locale/hr/LC_MESSAGES/grep.mo
 usr/share/locale/hr/LC_MESSAGES/libc.mo
+usr/share/locale/hr/LC_TIME/coreutils.mo
 usr/share/locale/hu/LC_MESSAGES/coreutils.mo
+usr/share/locale/hu/LC_MESSAGES/glib20.mo
 usr/share/locale/hu/LC_MESSAGES/libc.mo
 usr/share/locale/hu/LC_MESSAGES/popt.mo
 usr/share/locale/hu/LC_TIME/coreutils.mo
+usr/share/locale/hy/LC_MESSAGES/glib20.mo
+usr/share/locale/id/LC_MESSAGES/glib20.mo
 usr/share/locale/id/LC_MESSAGES/grep.mo
 usr/share/locale/id/LC_MESSAGES/popt.mo
+usr/share/locale/is/LC_MESSAGES/glib20.mo
 usr/share/locale/is/LC_MESSAGES/popt.mo
 usr/share/locale/is/LC_MESSAGES/rpm.mo
 usr/share/locale/it/LC_MESSAGES/coreutils.mo
 usr/share/locale/it/LC_MESSAGES/e2fsprogs.mo
+usr/share/locale/it/LC_MESSAGES/glib20.mo
 usr/share/locale/it/LC_MESSAGES/grep.mo
 usr/share/locale/it/LC_MESSAGES/libc.mo
 usr/share/locale/it/LC_MESSAGES/popt.mo
 usr/share/locale/it/LC_TIME/coreutils.mo
 usr/share/locale/ja/LC_MESSAGES/coreutils.mo
+usr/share/locale/ja/LC_MESSAGES/glib20.mo
 usr/share/locale/ja/LC_MESSAGES/grep.mo
 usr/share/locale/ja/LC_MESSAGES/libc.mo
 usr/share/locale/ja/LC_MESSAGES/popt.mo
 usr/share/locale/ja/LC_MESSAGES/rpm.mo
 usr/share/locale/ja/LC_TIME/coreutils.mo
+usr/share/locale/ka/LC_MESSAGES/glib20.mo
 usr/share/locale/ko/LC_MESSAGES/coreutils.mo
+usr/share/locale/ko/LC_MESSAGES/glib20.mo
 usr/share/locale/ko/LC_MESSAGES/grep.mo
 usr/share/locale/ko/LC_MESSAGES/libc.mo
 usr/share/locale/ko/LC_MESSAGES/popt.mo
 usr/share/locale/ko/LC_MESSAGES/rpm.mo
 usr/share/locale/ko/LC_TIME/coreutils.mo
+usr/share/locale/ku/LC_MESSAGES/glib20.mo
 usr/share/locale/lg/LC_MESSAGES/coreutils.mo
 usr/share/locale/lg/LC_TIME/coreutils.mo
 usr/share/locale/locale.alias
+usr/share/locale/lt/LC_MESSAGES/glib20.mo
+usr/share/locale/lv/LC_MESSAGES/glib20.mo
+usr/share/locale/mk/LC_MESSAGES/glib20.mo
+usr/share/locale/ml/LC_MESSAGES/glib20.mo
+usr/share/locale/mn/LC_MESSAGES/glib20.mo
 usr/share/locale/ms/LC_MESSAGES/coreutils.mo
+usr/share/locale/ms/LC_MESSAGES/glib20.mo
 usr/share/locale/ms/LC_TIME/coreutils.mo
 usr/share/locale/nb/LC_MESSAGES/coreutils.mo
+usr/share/locale/nb/LC_MESSAGES/glib20.mo
 usr/share/locale/nb/LC_MESSAGES/libc.mo
 usr/share/locale/nb/LC_TIME/coreutils.mo
+usr/share/locale/ne/LC_MESSAGES/glib20.mo
 usr/share/locale/nl/LC_MESSAGES/coreutils.mo
 usr/share/locale/nl/LC_MESSAGES/e2fsprogs.mo
-usr/share/locale/nl/LC_MESSAGES/freetype.mo
+usr/share/locale/nl/LC_MESSAGES/glib20.mo
 usr/share/locale/nl/LC_MESSAGES/grep.mo
 usr/share/locale/nl/LC_MESSAGES/libc.mo
 usr/share/locale/nl/LC_TIME/coreutils.mo
+usr/share/locale/nn/LC_MESSAGES/glib20.mo
 usr/share/locale/no/LC_MESSAGES/coreutils.mo
 usr/share/locale/no/LC_MESSAGES/grep.mo
 usr/share/locale/no/LC_MESSAGES/popt.mo
 usr/share/locale/no/LC_MESSAGES/rpm.mo
 usr/share/locale/no/LC_TIME/coreutils.mo
+usr/share/locale/or/LC_MESSAGES/glib20.mo
+usr/share/locale/pa/LC_MESSAGES/glib20.mo
 usr/share/locale/pl/LC_MESSAGES/coreutils.mo
 usr/share/locale/pl/LC_MESSAGES/e2fsprogs.mo
+usr/share/locale/pl/LC_MESSAGES/glib20.mo
 usr/share/locale/pl/LC_MESSAGES/grep.mo
 usr/share/locale/pl/LC_MESSAGES/libc.mo
 usr/share/locale/pl/LC_MESSAGES/popt.mo
 usr/share/locale/pl/LC_MESSAGES/rpm.mo
 usr/share/locale/pl/LC_TIME/coreutils.mo
 usr/share/locale/pt/LC_MESSAGES/coreutils.mo
+usr/share/locale/pt/LC_MESSAGES/glib20.mo
 usr/share/locale/pt/LC_MESSAGES/popt.mo
 usr/share/locale/pt/LC_MESSAGES/rpm.mo
 usr/share/locale/pt/LC_TIME/coreutils.mo
 usr/share/locale/pt_BR/LC_MESSAGES/coreutils.mo
+usr/share/locale/pt_BR/LC_MESSAGES/glib20.mo
 usr/share/locale/pt_BR/LC_MESSAGES/grep.mo
 usr/share/locale/pt_BR/LC_MESSAGES/libc.mo
 usr/share/locale/pt_BR/LC_MESSAGES/popt.mo
 usr/share/locale/pt_BR/LC_MESSAGES/rpm.mo
 usr/share/locale/pt_BR/LC_TIME/coreutils.mo
+usr/share/locale/ro/LC_MESSAGES/glib20.mo
 usr/share/locale/ro/LC_MESSAGES/popt.mo
 usr/share/locale/ro/LC_MESSAGES/rpm.mo
 usr/share/locale/ru/LC_MESSAGES/coreutils.mo
+usr/share/locale/ru/LC_MESSAGES/glib20.mo
 usr/share/locale/ru/LC_MESSAGES/grep.mo
 usr/share/locale/ru/LC_MESSAGES/libc.mo
 usr/share/locale/ru/LC_MESSAGES/popt.mo
 usr/share/locale/ru/LC_MESSAGES/rpm.mo
 usr/share/locale/ru/LC_TIME/coreutils.mo
+usr/share/locale/rw/LC_MESSAGES/coreutils.mo
 usr/share/locale/rw/LC_MESSAGES/e2fsprogs.mo
+usr/share/locale/rw/LC_MESSAGES/glib20.mo
 usr/share/locale/rw/LC_MESSAGES/libc.mo
+usr/share/locale/rw/LC_TIME/coreutils.mo
 usr/share/locale/sk/LC_MESSAGES/coreutils.mo
+usr/share/locale/sk/LC_MESSAGES/glib20.mo
 usr/share/locale/sk/LC_MESSAGES/libc.mo
 usr/share/locale/sk/LC_MESSAGES/popt.mo
 usr/share/locale/sk/LC_MESSAGES/rpm.mo
 usr/share/locale/sk/LC_TIME/coreutils.mo
 usr/share/locale/sl/LC_MESSAGES/coreutils.mo
+usr/share/locale/sl/LC_MESSAGES/glib20.mo
 usr/share/locale/sl/LC_MESSAGES/grep.mo
 usr/share/locale/sl/LC_MESSAGES/popt.mo
 usr/share/locale/sl/LC_MESSAGES/rpm.mo
 usr/share/locale/sl/LC_TIME/coreutils.mo
+usr/share/locale/sq/LC_MESSAGES/glib20.mo
+usr/share/locale/sr/LC_MESSAGES/glib20.mo
 usr/share/locale/sr/LC_MESSAGES/popt.mo
 usr/share/locale/sr/LC_MESSAGES/rpm.mo
+usr/share/locale/sr@Latn/LC_MESSAGES/glib20.mo
+usr/share/locale/sr@ije/LC_MESSAGES/glib20.mo
 usr/share/locale/sv/LC_MESSAGES/coreutils.mo
 usr/share/locale/sv/LC_MESSAGES/e2fsprogs.mo
+usr/share/locale/sv/LC_MESSAGES/glib20.mo
 usr/share/locale/sv/LC_MESSAGES/grep.mo
 usr/share/locale/sv/LC_MESSAGES/libc.mo
 usr/share/locale/sv/LC_MESSAGES/popt.mo
 usr/share/locale/sv/LC_MESSAGES/rpm.mo
 usr/share/locale/sv/LC_TIME/coreutils.mo
+usr/share/locale/ta/LC_MESSAGES/glib20.mo
+usr/share/locale/te/LC_MESSAGES/glib20.mo
+usr/share/locale/th/LC_MESSAGES/glib20.mo
+usr/share/locale/tl/LC_MESSAGES/glib20.mo
 usr/share/locale/tr/LC_MESSAGES/coreutils.mo
 usr/share/locale/tr/LC_MESSAGES/e2fsprogs.mo
+usr/share/locale/tr/LC_MESSAGES/glib20.mo
 usr/share/locale/tr/LC_MESSAGES/libc.mo
 usr/share/locale/tr/LC_MESSAGES/popt.mo
 usr/share/locale/tr/LC_MESSAGES/rpm.mo
 usr/share/locale/tr/LC_TIME/coreutils.mo
+usr/share/locale/tt/LC_MESSAGES/glib20.mo
+usr/share/locale/uk/LC_MESSAGES/glib20.mo
 usr/share/locale/uk/LC_MESSAGES/popt.mo
+usr/share/locale/vi/LC_MESSAGES/coreutils.mo
+usr/share/locale/vi/LC_MESSAGES/glib20.mo
+usr/share/locale/vi/LC_TIME/coreutils.mo
+usr/share/locale/wa/LC_MESSAGES/glib20.mo
 usr/share/locale/wa/LC_MESSAGES/popt.mo
+usr/share/locale/xh/LC_MESSAGES/glib20.mo
+usr/share/locale/yi/LC_MESSAGES/glib20.mo
 usr/share/locale/zh/LC_MESSAGES/popt.mo
 usr/share/locale/zh_CN/LC_MESSAGES/coreutils.mo
+usr/share/locale/zh_CN/LC_MESSAGES/glib20.mo
 usr/share/locale/zh_CN/LC_MESSAGES/libc.mo
 usr/share/locale/zh_CN/LC_MESSAGES/popt.mo
 usr/share/locale/zh_CN/LC_TIME/coreutils.mo
+usr/share/locale/zh_HK/LC_MESSAGES/glib20.mo
 usr/share/locale/zh_TW/LC_MESSAGES/coreutils.mo
+usr/share/locale/zh_TW/LC_MESSAGES/glib20.mo
 usr/share/locale/zh_TW/LC_MESSAGES/libc.mo
 usr/share/locale/zh_TW/LC_MESSAGES/popt.mo
 usr/share/locale/zh_TW/LC_TIME/coreutils.mo
@@ -6247,6 +6317,7 @@ usr/share/man/man1/..1.gz
 usr/share/man/man1/:.1.gz
 usr/share/man/man1/[.1.gz
 usr/share/man/man1/alias.1.gz
+usr/share/man/man1/base64.1.gz
 usr/share/man/man1/basename.1.gz
 usr/share/man/man1/bash.1.gz
 usr/share/man/man1/bashbug.1.gz
@@ -6370,6 +6441,10 @@ usr/share/man/man1/seq.1.gz
 usr/share/man/man1/set.1.gz
 usr/share/man/man1/sh.1.gz
 usr/share/man/man1/sha1sum.1.gz
+usr/share/man/man1/sha224sum.1.gz
+usr/share/man/man1/sha256sum.1.gz
+usr/share/man/man1/sha384sum.1.gz
+usr/share/man/man1/sha512sum.1.gz
 usr/share/man/man1/shift.1.gz
 usr/share/man/man1/shopt.1.gz
 usr/share/man/man1/shred.1.gz
@@ -6420,7 +6495,9 @@ usr/share/man/man1/yes.1.gz
 usr/share/man/man3/history.3.gz
 usr/share/man/man3/popt.3.gz
 usr/share/man/man3/readline.3.gz
+usr/share/man/man5/e2fsck.conf.5.gz
 usr/share/man/man5/info.5.gz
+usr/share/man/man5/mke2fs.conf.5.gz
 usr/share/man/man5/term.5.gz
 usr/share/man/man5/terminfo.5.gz
 usr/share/man/man7/term.7.gz
@@ -6433,30 +6510,28 @@ usr/share/man/man8/dumpe2fs.8.gz
 usr/share/man/man8/e2fsck.8.gz
 usr/share/man/man8/e2image.8.gz
 usr/share/man/man8/e2label.8.gz
-usr/share/man/man8/ext2online.8.gz
 usr/share/man/man8/filefrag.8.gz
 usr/share/man/man8/findfs.8.gz
 usr/share/man/man8/fsck.8.gz
-usr/share/man/man8/fsck.ext3.8.gz
 usr/share/man/man8/fsck.ext2.8.gz
+usr/share/man/man8/fsck.ext3.8.gz
 usr/share/man/man8/getenforce.8.gz
 usr/share/man/man8/getsebool.8.gz
 usr/share/man/man8/logsave.8.gz
 usr/share/man/man8/matchpathcon.8.gz
-usr/share/man/man8/mkfs.ext3.8.gz
-usr/share/man/man8/mkfs.ext2.8.gz
 usr/share/man/man8/mke2fs.8.gz
+usr/share/man/man8/mkfs.ext2.8.gz
+usr/share/man/man8/mkfs.ext3.8.gz
 usr/share/man/man8/mklost+found.8.gz
 usr/share/man/man8/resize2fs.8.gz
 usr/share/man/man8/rpm.8.gz
 usr/share/man/man8/rpm2cpio.8.gz
-usr/share/man/man8/tune2fs.8.gz
 usr/share/man/man8/selinux.8.gz
 usr/share/man/man8/selinuxenabled.8.gz
 usr/share/man/man8/setenforce.8.gz
-usr/share/man/man8/setsebool.8.gz
 usr/share/man/man8/setserial.8.gz
 usr/share/man/man8/togglesebool.8.gz
+usr/share/man/man8/tune2fs.8.gz
 usr/share/man/pl/man1/gendiff.1.gz
 usr/share/man/pl/man8/rpm.8.gz
 usr/share/man/pl/man8/rpm2cpio.8.gz
@@ -6612,6 +6687,7 @@ usr/share/terminfo/a/adm42-ns
 usr/share/terminfo/a/adm5
 usr/share/terminfo/a/aepro
 usr/share/terminfo/a/aixterm
+usr/share/terminfo/a/aixterm-16color
 usr/share/terminfo/a/aixterm-m
 usr/share/terminfo/a/aixterm-m-old
 usr/share/terminfo/a/aj
@@ -6662,6 +6738,7 @@ usr/share/terminfo/a/ansi
 usr/share/terminfo/a/ansi+arrows
 usr/share/terminfo/a/ansi+csr
 usr/share/terminfo/a/ansi+cup
+usr/share/terminfo/a/ansi+enq
 usr/share/terminfo/a/ansi+erase
 usr/share/terminfo/a/ansi+idc
 usr/share/terminfo/a/ansi+idl
@@ -7363,6 +7440,8 @@ usr/share/terminfo/g/gator-t
 usr/share/terminfo/g/gigi
 usr/share/terminfo/g/glasstty
 usr/share/terminfo/g/gnome
+usr/share/terminfo/g/gnome-256color
+usr/share/terminfo/g/gnome-fc5
 usr/share/terminfo/g/gnome-rh62
 usr/share/terminfo/g/gnome-rh72
 usr/share/terminfo/g/gnome-rh80
@@ -7532,6 +7611,7 @@ usr/share/terminfo/h/hpex2
 usr/share/terminfo/h/hpgeneric
 usr/share/terminfo/h/hpsub
 usr/share/terminfo/h/hpterm
+usr/share/terminfo/h/hpterm-color
 usr/share/terminfo/h/htx11
 usr/share/terminfo/h/hurd
 usr/share/terminfo/h/hz1000
@@ -7643,6 +7723,7 @@ usr/share/terminfo/k/konsole
 usr/share/terminfo/k/konsole-16color
 usr/share/terminfo/k/konsole-base
 usr/share/terminfo/k/konsole-linux
+usr/share/terminfo/k/konsole-solaris
 usr/share/terminfo/k/konsole-vt100
 usr/share/terminfo/k/konsole-vt420pc
 usr/share/terminfo/k/konsole-xf3x
@@ -7856,6 +7937,7 @@ usr/share/terminfo/n/nsterm+c
 usr/share/terminfo/n/nsterm+c41
 usr/share/terminfo/n/nsterm+mac
 usr/share/terminfo/n/nsterm+s
+usr/share/terminfo/n/nsterm-16color
 usr/share/terminfo/n/nsterm-7
 usr/share/terminfo/n/nsterm-7-c
 usr/share/terminfo/n/nsterm-7-c-s
@@ -8089,6 +8171,7 @@ usr/share/terminfo/p/pt505-22
 usr/share/terminfo/p/pt505-24
 usr/share/terminfo/p/pty
 usr/share/terminfo/p/putty
+usr/share/terminfo/p/putty-256color
 usr/share/terminfo/q/qansi
 usr/share/terminfo/q/qansi-g
 usr/share/terminfo/q/qansi-m
@@ -8151,6 +8234,7 @@ usr/share/terminfo/r/rtpc
 usr/share/terminfo/r/rxvt
 usr/share/terminfo/r/rxvt+pcfkeys
 usr/share/terminfo/r/rxvt-16color
+usr/share/terminfo/r/rxvt-256color
 usr/share/terminfo/r/rxvt-basic
 usr/share/terminfo/r/rxvt-color
 usr/share/terminfo/r/rxvt-cygwin
@@ -8198,6 +8282,7 @@ usr/share/terminfo/s/sun-48
 usr/share/terminfo/s/sun-c
 usr/share/terminfo/s/sun-cgsix
 usr/share/terminfo/s/sun-cmd
+usr/share/terminfo/s/sun-color
 usr/share/terminfo/s/sun-e
 usr/share/terminfo/s/sun-e-s
 usr/share/terminfo/s/sun-il
@@ -8520,6 +8605,7 @@ usr/share/terminfo/v/vt-61
 usr/share/terminfo/v/vt-utf8
 usr/share/terminfo/v/vt100
 usr/share/terminfo/v/vt100+
+usr/share/terminfo/v/vt100+enq
 usr/share/terminfo/v/vt100+fnkeys
 usr/share/terminfo/v/vt100+keypad
 usr/share/terminfo/v/vt100+pfkeys
@@ -8543,6 +8629,7 @@ usr/share/terminfo/v/vt100-w-nam
 usr/share/terminfo/v/vt100-w-nav
 usr/share/terminfo/v/vt100nam
 usr/share/terminfo/v/vt102
+usr/share/terminfo/v/vt102+enq
 usr/share/terminfo/v/vt102-nsgr
 usr/share/terminfo/v/vt102-w
 usr/share/terminfo/v/vt125
@@ -8897,6 +8984,12 @@ usr/share/terminfo/x/xnuppc-m-f
 usr/share/terminfo/x/xnuppc-m-f2
 usr/share/terminfo/x/xtalk
 usr/share/terminfo/x/xterm
+usr/share/terminfo/x/xterm+256color
+usr/share/terminfo/x/xterm+88color
+usr/share/terminfo/x/xterm+pcc0
+usr/share/terminfo/x/xterm+pcc1
+usr/share/terminfo/x/xterm+pcc2
+usr/share/terminfo/x/xterm+pcc3
 usr/share/terminfo/x/xterm+pcfkeys
 usr/share/terminfo/x/xterm+sl
 usr/share/terminfo/x/xterm+sl-twm
@@ -8968,7 +9061,6 @@ usr/share/terminfo/z/zt-1
 usr/share/terminfo/z/ztx
 usr/share/terminfo/z/ztx-1-a
 usr/share/terminfo/z/ztx11
-usr/tmp
 var/lib/rpm/conflictsindex.rpm
 var/lib/rpm/fileindex.rpm
 var/lib/rpm/groupindex.rpm
@@ -8994,10 +9086,12 @@ var/mail
 @dirrm var/lib/misc
 @dirrm var/lib/games
 @dirrm var/lib
+@dirrm var/games
 @dirrm var/empty
 @dirrm var/db
 @dirrm var/cache
 @dirrm var
+@dirrm usr/tmp
 @dirrm usr/src
 @dirrm usr/share/xsessions
 @dirrm usr/share/terminfo/z
@@ -9054,236 +9148,1162 @@ var/mail
 @dirrm usr/share/man/pl/man1
 @dirrm usr/share/man/pl
 @dirrm usr/share/man/mann
+@dirrm usr/share/man/man9x
 @dirrm usr/share/man/man9
+@dirrm usr/share/man/man8x
 @dirrm usr/share/man/man8
+@dirrm usr/share/man/man7x
 @dirrm usr/share/man/man7
+@dirrm usr/share/man/man6x
 @dirrm usr/share/man/man6
+@dirrm usr/share/man/man5x
 @dirrm usr/share/man/man5
+@dirrm usr/share/man/man4x
 @dirrm usr/share/man/man4
+@dirrm usr/share/man/man3x
 @dirrm usr/share/man/man3
+@dirrm usr/share/man/man2x
 @dirrm usr/share/man/man2
+@dirrm usr/share/man/man1x
 @dirrm usr/share/man/man1
 @dirrm usr/share/man/ja/man8
 @dirrm usr/share/man/ja
 @dirrm usr/share/man
+@dirrm usr/share/locale/zun/LC_MESSAGES
+@dirrm usr/share/locale/zun
+@dirrm usr/share/locale/zu/LC_MESSAGES
+@dirrm usr/share/locale/zu
+@dirrm usr/share/locale/znd/LC_MESSAGES
+@dirrm usr/share/locale/znd
 @dirrm usr/share/locale/zh_TW/LC_TIME
 @dirrm usr/share/locale/zh_TW/LC_MESSAGES
 @dirrm usr/share/locale/zh_TW
+@dirrm usr/share/locale/zh_HK/LC_MESSAGES
+@dirrm usr/share/locale/zh_HK
 @dirrm usr/share/locale/zh_CN/LC_TIME
 @dirrm usr/share/locale/zh_CN/LC_MESSAGES
-@dirrm usr/share/locale/zh_CN.GB2312/LC_MESSAGES
-@dirrm usr/share/locale/zh_CN.GB2312
 @dirrm usr/share/locale/zh_CN
 @dirrm usr/share/locale/zh/LC_MESSAGES
 @dirrm usr/share/locale/zh
+@dirrm usr/share/locale/zen/LC_MESSAGES
+@dirrm usr/share/locale/zen
+@dirrm usr/share/locale/zap/LC_MESSAGES
+@dirrm usr/share/locale/zap
+@dirrm usr/share/locale/za/LC_MESSAGES
+@dirrm usr/share/locale/za
+@dirrm usr/share/locale/ypk/LC_MESSAGES
+@dirrm usr/share/locale/ypk
+@dirrm usr/share/locale/yo/LC_MESSAGES
+@dirrm usr/share/locale/yo
 @dirrm usr/share/locale/yi/LC_MESSAGES
 @dirrm usr/share/locale/yi
+@dirrm usr/share/locale/yap/LC_MESSAGES
+@dirrm usr/share/locale/yap
+@dirrm usr/share/locale/yao/LC_MESSAGES
+@dirrm usr/share/locale/yao
 @dirrm usr/share/locale/xh/LC_MESSAGES
 @dirrm usr/share/locale/xh
+@dirrm usr/share/locale/xal/LC_MESSAGES
+@dirrm usr/share/locale/xal
+@dirrm usr/share/locale/wo/LC_MESSAGES
+@dirrm usr/share/locale/wo
+@dirrm usr/share/locale/wen/LC_MESSAGES
+@dirrm usr/share/locale/wen
+@dirrm usr/share/locale/was/LC_MESSAGES
+@dirrm usr/share/locale/was
+@dirrm usr/share/locale/war/LC_MESSAGES
+@dirrm usr/share/locale/war
+@dirrm usr/share/locale/wal/LC_MESSAGES
+@dirrm usr/share/locale/wal
+@dirrm usr/share/locale/wak/LC_MESSAGES
+@dirrm usr/share/locale/wak
 @dirrm usr/share/locale/wa/LC_MESSAGES
 @dirrm usr/share/locale/wa
+@dirrm usr/share/locale/vot/LC_MESSAGES
+@dirrm usr/share/locale/vot
+@dirrm usr/share/locale/vo/LC_MESSAGES
+@dirrm usr/share/locale/vo
+@dirrm usr/share/locale/vi/LC_TIME
 @dirrm usr/share/locale/vi/LC_MESSAGES
 @dirrm usr/share/locale/vi
+@dirrm usr/share/locale/ve/LC_MESSAGES
+@dirrm usr/share/locale/ve
+@dirrm usr/share/locale/vai/LC_MESSAGES
+@dirrm usr/share/locale/vai
 @dirrm usr/share/locale/uz@Latn/LC_MESSAGES
 @dirrm usr/share/locale/uz@Latn
 @dirrm usr/share/locale/uz/LC_MESSAGES
 @dirrm usr/share/locale/uz
+@dirrm usr/share/locale/ur/LC_MESSAGES
+@dirrm usr/share/locale/ur
+@dirrm usr/share/locale/und/LC_MESSAGES
+@dirrm usr/share/locale/und
+@dirrm usr/share/locale/umb/LC_MESSAGES
+@dirrm usr/share/locale/umb
+@dirrm usr/share/locale/uk_UA/LC_MESSAGES
+@dirrm usr/share/locale/uk_UA
 @dirrm usr/share/locale/uk/LC_MESSAGES
 @dirrm usr/share/locale/uk
+@dirrm usr/share/locale/uga/LC_MESSAGES
+@dirrm usr/share/locale/uga
+@dirrm usr/share/locale/ug/LC_MESSAGES
+@dirrm usr/share/locale/ug
+@dirrm usr/share/locale/udm/LC_MESSAGES
+@dirrm usr/share/locale/udm
+@dirrm usr/share/locale/tyv/LC_MESSAGES
+@dirrm usr/share/locale/tyv
+@dirrm usr/share/locale/ty/LC_MESSAGES
+@dirrm usr/share/locale/ty
+@dirrm usr/share/locale/tw/LC_MESSAGES
+@dirrm usr/share/locale/tw
+@dirrm usr/share/locale/tvl/LC_MESSAGES
+@dirrm usr/share/locale/tvl
+@dirrm usr/share/locale/tut/LC_MESSAGES
+@dirrm usr/share/locale/tut
+@dirrm usr/share/locale/tup/LC_MESSAGES
+@dirrm usr/share/locale/tup
+@dirrm usr/share/locale/tum/LC_MESSAGES
+@dirrm usr/share/locale/tum
+@dirrm usr/share/locale/tt/LC_MESSAGES
+@dirrm usr/share/locale/tt
+@dirrm usr/share/locale/tsi/LC_MESSAGES
+@dirrm usr/share/locale/tsi
+@dirrm usr/share/locale/ts/LC_MESSAGES
+@dirrm usr/share/locale/ts
 @dirrm usr/share/locale/tr/LC_TIME
 @dirrm usr/share/locale/tr/LC_MESSAGES
 @dirrm usr/share/locale/tr
+@dirrm usr/share/locale/tpi/LC_MESSAGES
+@dirrm usr/share/locale/tpi
+@dirrm usr/share/locale/tog/LC_MESSAGES
+@dirrm usr/share/locale/tog
+@dirrm usr/share/locale/to/LC_MESSAGES
+@dirrm usr/share/locale/to
+@dirrm usr/share/locale/tn/LC_MESSAGES
+@dirrm usr/share/locale/tn
+@dirrm usr/share/locale/tmh/LC_MESSAGES
+@dirrm usr/share/locale/tmh
+@dirrm usr/share/locale/tli/LC_MESSAGES
+@dirrm usr/share/locale/tli
+@dirrm usr/share/locale/tlh/LC_MESSAGES
+@dirrm usr/share/locale/tlh
 @dirrm usr/share/locale/tl/LC_MESSAGES
 @dirrm usr/share/locale/tl
+@dirrm usr/share/locale/tkl/LC_MESSAGES
+@dirrm usr/share/locale/tkl
 @dirrm usr/share/locale/tk/LC_MESSAGES
 @dirrm usr/share/locale/tk
+@dirrm usr/share/locale/tiv/LC_MESSAGES
+@dirrm usr/share/locale/tiv
+@dirrm usr/share/locale/tig/LC_MESSAGES
+@dirrm usr/share/locale/tig
+@dirrm usr/share/locale/ti/LC_MESSAGES
+@dirrm usr/share/locale/ti
 @dirrm usr/share/locale/th/LC_MESSAGES
 @dirrm usr/share/locale/th
+@dirrm usr/share/locale/tg/LC_MESSAGES
+@dirrm usr/share/locale/tg
+@dirrm usr/share/locale/tet/LC_MESSAGES
+@dirrm usr/share/locale/tet
+@dirrm usr/share/locale/ter/LC_MESSAGES
+@dirrm usr/share/locale/ter
+@dirrm usr/share/locale/tem/LC_MESSAGES
+@dirrm usr/share/locale/tem
 @dirrm usr/share/locale/te/LC_MESSAGES
 @dirrm usr/share/locale/te
+@dirrm usr/share/locale/tai/LC_MESSAGES
+@dirrm usr/share/locale/tai
 @dirrm usr/share/locale/ta/LC_MESSAGES
 @dirrm usr/share/locale/ta
+@dirrm usr/share/locale/syr/LC_MESSAGES
+@dirrm usr/share/locale/syr
+@dirrm usr/share/locale/sw/LC_MESSAGES
+@dirrm usr/share/locale/sw
+@dirrm usr/share/locale/sv_SE/LC_MESSAGES
+@dirrm usr/share/locale/sv_SE
 @dirrm usr/share/locale/sv/LC_TIME
 @dirrm usr/share/locale/sv/LC_MESSAGES
 @dirrm usr/share/locale/sv
+@dirrm usr/share/locale/sux/LC_MESSAGES
+@dirrm usr/share/locale/sux
+@dirrm usr/share/locale/sus/LC_MESSAGES
+@dirrm usr/share/locale/sus
+@dirrm usr/share/locale/suk/LC_MESSAGES
+@dirrm usr/share/locale/suk
+@dirrm usr/share/locale/su/LC_MESSAGES
+@dirrm usr/share/locale/su
+@dirrm usr/share/locale/st/LC_MESSAGES
+@dirrm usr/share/locale/st
+@dirrm usr/share/locale/ssa/LC_MESSAGES
+@dirrm usr/share/locale/ssa
+@dirrm usr/share/locale/ss/LC_MESSAGES
+@dirrm usr/share/locale/ss
+@dirrm usr/share/locale/srr/LC_MESSAGES
+@dirrm usr/share/locale/srr
+@dirrm usr/share/locale/srn/LC_MESSAGES
+@dirrm usr/share/locale/srn
 @dirrm usr/share/locale/sr@ije/LC_MESSAGES
 @dirrm usr/share/locale/sr@ije
 @dirrm usr/share/locale/sr@Latn/LC_MESSAGES
 @dirrm usr/share/locale/sr@Latn
 @dirrm usr/share/locale/sr/LC_MESSAGES
 @dirrm usr/share/locale/sr
+@dirrm usr/share/locale/sq_AL/LC_MESSAGES
+@dirrm usr/share/locale/sq_AL
 @dirrm usr/share/locale/sq/LC_MESSAGES
 @dirrm usr/share/locale/sq
+@dirrm usr/share/locale/son/LC_MESSAGES
+@dirrm usr/share/locale/son
+@dirrm usr/share/locale/sog/LC_MESSAGES
+@dirrm usr/share/locale/sog
+@dirrm usr/share/locale/so/LC_MESSAGES
+@dirrm usr/share/locale/so
+@dirrm usr/share/locale/snk/LC_MESSAGES
+@dirrm usr/share/locale/snk
+@dirrm usr/share/locale/sn/LC_MESSAGES
+@dirrm usr/share/locale/sn
+@dirrm usr/share/locale/sms/LC_MESSAGES
+@dirrm usr/share/locale/sms
+@dirrm usr/share/locale/smn/LC_MESSAGES
+@dirrm usr/share/locale/smn
+@dirrm usr/share/locale/smj/LC_MESSAGES
+@dirrm usr/share/locale/smj
+@dirrm usr/share/locale/smi/LC_MESSAGES
+@dirrm usr/share/locale/smi
+@dirrm usr/share/locale/sma/LC_MESSAGES
+@dirrm usr/share/locale/sma
+@dirrm usr/share/locale/sm/LC_MESSAGES
+@dirrm usr/share/locale/sm
+@dirrm usr/share/locale/sla/LC_MESSAGES
+@dirrm usr/share/locale/sla
+@dirrm usr/share/locale/sl_SI/LC_MESSAGES
+@dirrm usr/share/locale/sl_SI
 @dirrm usr/share/locale/sl/LC_TIME
 @dirrm usr/share/locale/sl/LC_MESSAGES
 @dirrm usr/share/locale/sl
 @dirrm usr/share/locale/sk/LC_TIME
 @dirrm usr/share/locale/sk/LC_MESSAGES
 @dirrm usr/share/locale/sk
+@dirrm usr/share/locale/sit/LC_MESSAGES
+@dirrm usr/share/locale/sit
+@dirrm usr/share/locale/sio/LC_MESSAGES
+@dirrm usr/share/locale/sio
+@dirrm usr/share/locale/sid/LC_MESSAGES
+@dirrm usr/share/locale/sid
+@dirrm usr/share/locale/si/LC_MESSAGES
+@dirrm usr/share/locale/si
+@dirrm usr/share/locale/shn/LC_MESSAGES
+@dirrm usr/share/locale/shn
+@dirrm usr/share/locale/sgn/LC_MESSAGES
+@dirrm usr/share/locale/sgn
+@dirrm usr/share/locale/sga/LC_MESSAGES
+@dirrm usr/share/locale/sga
+@dirrm usr/share/locale/sg/LC_MESSAGES
+@dirrm usr/share/locale/sg
+@dirrm usr/share/locale/sem/LC_MESSAGES
+@dirrm usr/share/locale/sem
+@dirrm usr/share/locale/sel/LC_MESSAGES
+@dirrm usr/share/locale/sel
+@dirrm usr/share/locale/se/LC_MESSAGES
+@dirrm usr/share/locale/se
+@dirrm usr/share/locale/sd/LC_MESSAGES
+@dirrm usr/share/locale/sd
+@dirrm usr/share/locale/sco/LC_MESSAGES
+@dirrm usr/share/locale/sco
+@dirrm usr/share/locale/scn/LC_MESSAGES
+@dirrm usr/share/locale/scn
+@dirrm usr/share/locale/sc/LC_MESSAGES
+@dirrm usr/share/locale/sc
+@dirrm usr/share/locale/sat/LC_MESSAGES
+@dirrm usr/share/locale/sat
+@dirrm usr/share/locale/sas/LC_MESSAGES
+@dirrm usr/share/locale/sas
+@dirrm usr/share/locale/sam/LC_MESSAGES
+@dirrm usr/share/locale/sam
+@dirrm usr/share/locale/sal/LC_MESSAGES
+@dirrm usr/share/locale/sal
+@dirrm usr/share/locale/sai/LC_MESSAGES
+@dirrm usr/share/locale/sai
+@dirrm usr/share/locale/sah/LC_MESSAGES
+@dirrm usr/share/locale/sah
+@dirrm usr/share/locale/sad/LC_MESSAGES
+@dirrm usr/share/locale/sad
+@dirrm usr/share/locale/sa/LC_MESSAGES
+@dirrm usr/share/locale/sa
+@dirrm usr/share/locale/rw/LC_TIME
 @dirrm usr/share/locale/rw/LC_MESSAGES
 @dirrm usr/share/locale/rw
+@dirrm usr/share/locale/rup/LC_MESSAGES
+@dirrm usr/share/locale/rup
+@dirrm usr/share/locale/ru_RU/LC_MESSAGES
+@dirrm usr/share/locale/ru_RU
 @dirrm usr/share/locale/ru/LC_TIME
 @dirrm usr/share/locale/ru/LC_MESSAGES
 @dirrm usr/share/locale/ru
+@dirrm usr/share/locale/rom/LC_MESSAGES
+@dirrm usr/share/locale/rom
+@dirrm usr/share/locale/roa/LC_MESSAGES
+@dirrm usr/share/locale/roa
 @dirrm usr/share/locale/ro/LC_MESSAGES
 @dirrm usr/share/locale/ro
+@dirrm usr/share/locale/rn/LC_MESSAGES
+@dirrm usr/share/locale/rn
+@dirrm usr/share/locale/rm/LC_MESSAGES
+@dirrm usr/share/locale/rm
+@dirrm usr/share/locale/rar/LC_MESSAGES
+@dirrm usr/share/locale/rar
+@dirrm usr/share/locale/rap/LC_MESSAGES
+@dirrm usr/share/locale/rap
+@dirrm usr/share/locale/raj/LC_MESSAGES
+@dirrm usr/share/locale/raj
+@dirrm usr/share/locale/qu/LC_MESSAGES
+@dirrm usr/share/locale/qu
+@dirrm usr/share/locale/pt_PT/LC_MESSAGES
+@dirrm usr/share/locale/pt_PT
 @dirrm usr/share/locale/pt_BR/LC_TIME
 @dirrm usr/share/locale/pt_BR/LC_MESSAGES
 @dirrm usr/share/locale/pt_BR
 @dirrm usr/share/locale/pt/LC_TIME
 @dirrm usr/share/locale/pt/LC_MESSAGES
 @dirrm usr/share/locale/pt
+@dirrm usr/share/locale/ps/LC_MESSAGES
+@dirrm usr/share/locale/ps
+@dirrm usr/share/locale/pro/LC_MESSAGES
+@dirrm usr/share/locale/pro
+@dirrm usr/share/locale/pra/LC_MESSAGES
+@dirrm usr/share/locale/pra
+@dirrm usr/share/locale/pon/LC_MESSAGES
+@dirrm usr/share/locale/pon
+@dirrm usr/share/locale/pl_PL/LC_MESSAGES
+@dirrm usr/share/locale/pl_PL
 @dirrm usr/share/locale/pl/LC_TIME
 @dirrm usr/share/locale/pl/LC_MESSAGES
 @dirrm usr/share/locale/pl
+@dirrm usr/share/locale/pi/LC_MESSAGES
+@dirrm usr/share/locale/pi
+@dirrm usr/share/locale/phn/LC_MESSAGES
+@dirrm usr/share/locale/phn
+@dirrm usr/share/locale/phi/LC_MESSAGES
+@dirrm usr/share/locale/phi
+@dirrm usr/share/locale/peo/LC_MESSAGES
+@dirrm usr/share/locale/peo
+@dirrm usr/share/locale/pau/LC_MESSAGES
+@dirrm usr/share/locale/pau
+@dirrm usr/share/locale/pap/LC_MESSAGES
+@dirrm usr/share/locale/pap
+@dirrm usr/share/locale/pam/LC_MESSAGES
+@dirrm usr/share/locale/pam
+@dirrm usr/share/locale/pal/LC_MESSAGES
+@dirrm usr/share/locale/pal
+@dirrm usr/share/locale/pag/LC_MESSAGES
+@dirrm usr/share/locale/pag
+@dirrm usr/share/locale/paa/LC_MESSAGES
+@dirrm usr/share/locale/paa
 @dirrm usr/share/locale/pa/LC_MESSAGES
 @dirrm usr/share/locale/pa
+@dirrm usr/share/locale/oto/LC_MESSAGES
+@dirrm usr/share/locale/oto
+@dirrm usr/share/locale/ota/LC_MESSAGES
+@dirrm usr/share/locale/ota
+@dirrm usr/share/locale/osa/LC_MESSAGES
+@dirrm usr/share/locale/osa
+@dirrm usr/share/locale/os/LC_MESSAGES
+@dirrm usr/share/locale/os
 @dirrm usr/share/locale/or/LC_MESSAGES
 @dirrm usr/share/locale/or
+@dirrm usr/share/locale/om/LC_MESSAGES
+@dirrm usr/share/locale/om
+@dirrm usr/share/locale/oj/LC_MESSAGES
+@dirrm usr/share/locale/oj
+@dirrm usr/share/locale/oc/LC_MESSAGES
+@dirrm usr/share/locale/oc
+@dirrm usr/share/locale/nzi/LC_MESSAGES
+@dirrm usr/share/locale/nzi
+@dirrm usr/share/locale/nyo/LC_MESSAGES
+@dirrm usr/share/locale/nyo
+@dirrm usr/share/locale/nyn/LC_MESSAGES
+@dirrm usr/share/locale/nyn
+@dirrm usr/share/locale/nym/LC_MESSAGES
+@dirrm usr/share/locale/nym
+@dirrm usr/share/locale/ny/LC_MESSAGES
+@dirrm usr/share/locale/ny
+@dirrm usr/share/locale/nwc/LC_MESSAGES
+@dirrm usr/share/locale/nwc
+@dirrm usr/share/locale/nv/LC_MESSAGES
+@dirrm usr/share/locale/nv
+@dirrm usr/share/locale/nub/LC_MESSAGES
+@dirrm usr/share/locale/nub
 @dirrm usr/share/locale/nso/LC_MESSAGES
 @dirrm usr/share/locale/nso
+@dirrm usr/share/locale/nr/LC_MESSAGES
+@dirrm usr/share/locale/nr
+@dirrm usr/share/locale/nqo/LC_MESSAGES
+@dirrm usr/share/locale/nqo
+@dirrm usr/share/locale/non/LC_MESSAGES
+@dirrm usr/share/locale/non
+@dirrm usr/share/locale/nog/LC_MESSAGES
+@dirrm usr/share/locale/nog
 @dirrm usr/share/locale/no/LC_TIME
 @dirrm usr/share/locale/no/LC_MESSAGES
 @dirrm usr/share/locale/no
 @dirrm usr/share/locale/nn/LC_MESSAGES
 @dirrm usr/share/locale/nn
+@dirrm usr/share/locale/nl_NL/LC_MESSAGES
+@dirrm usr/share/locale/nl_NL
+@dirrm usr/share/locale/nl_BE/LC_MESSAGES
+@dirrm usr/share/locale/nl_BE
 @dirrm usr/share/locale/nl/LC_TIME
 @dirrm usr/share/locale/nl/LC_MESSAGES
 @dirrm usr/share/locale/nl
+@dirrm usr/share/locale/niu/LC_MESSAGES
+@dirrm usr/share/locale/niu
+@dirrm usr/share/locale/nic/LC_MESSAGES
+@dirrm usr/share/locale/nic
+@dirrm usr/share/locale/nia/LC_MESSAGES
+@dirrm usr/share/locale/nia
+@dirrm usr/share/locale/ng/LC_MESSAGES
+@dirrm usr/share/locale/ng
+@dirrm usr/share/locale/new/LC_MESSAGES
+@dirrm usr/share/locale/new
 @dirrm usr/share/locale/ne/LC_MESSAGES
 @dirrm usr/share/locale/ne
+@dirrm usr/share/locale/nds@NFE/LC_MESSAGES
+@dirrm usr/share/locale/nds@NFE
+@dirrm usr/share/locale/nds/LC_MESSAGES
+@dirrm usr/share/locale/nds
+@dirrm usr/share/locale/nd/LC_MESSAGES
+@dirrm usr/share/locale/nd
+@dirrm usr/share/locale/nb_NO/LC_MESSAGES
+@dirrm usr/share/locale/nb_NO
 @dirrm usr/share/locale/nb/LC_TIME
 @dirrm usr/share/locale/nb/LC_MESSAGES
 @dirrm usr/share/locale/nb
+@dirrm usr/share/locale/nap/LC_MESSAGES
+@dirrm usr/share/locale/nap
+@dirrm usr/share/locale/nai/LC_MESSAGES
+@dirrm usr/share/locale/nai
+@dirrm usr/share/locale/nah/LC_MESSAGES
+@dirrm usr/share/locale/nah
+@dirrm usr/share/locale/na/LC_MESSAGES
+@dirrm usr/share/locale/na
+@dirrm usr/share/locale/myv/LC_MESSAGES
+@dirrm usr/share/locale/myv
+@dirrm usr/share/locale/myn/LC_MESSAGES
+@dirrm usr/share/locale/myn
+@dirrm usr/share/locale/my_MM/LC_MESSAGES
+@dirrm usr/share/locale/my_MM
+@dirrm usr/share/locale/my/LC_MESSAGES
+@dirrm usr/share/locale/my
+@dirrm usr/share/locale/mwr/LC_MESSAGES
+@dirrm usr/share/locale/mwr
+@dirrm usr/share/locale/mwl/LC_MESSAGES
+@dirrm usr/share/locale/mwl
+@dirrm usr/share/locale/mus/LC_MESSAGES
+@dirrm usr/share/locale/mus
+@dirrm usr/share/locale/mun/LC_MESSAGES
+@dirrm usr/share/locale/mun
+@dirrm usr/share/locale/mul/LC_MESSAGES
+@dirrm usr/share/locale/mul
+@dirrm usr/share/locale/mt/LC_MESSAGES
+@dirrm usr/share/locale/mt
 @dirrm usr/share/locale/ms/LC_TIME
 @dirrm usr/share/locale/ms/LC_MESSAGES
 @dirrm usr/share/locale/ms
 @dirrm usr/share/locale/mr/LC_MESSAGES
 @dirrm usr/share/locale/mr
+@dirrm usr/share/locale/mos/LC_MESSAGES
+@dirrm usr/share/locale/mos
+@dirrm usr/share/locale/moh/LC_MESSAGES
+@dirrm usr/share/locale/moh
+@dirrm usr/share/locale/mo/LC_MESSAGES
+@dirrm usr/share/locale/mo
+@dirrm usr/share/locale/mno/LC_MESSAGES
+@dirrm usr/share/locale/mno
+@dirrm usr/share/locale/mni/LC_MESSAGES
+@dirrm usr/share/locale/mni
+@dirrm usr/share/locale/mnc/LC_MESSAGES
+@dirrm usr/share/locale/mnc
 @dirrm usr/share/locale/mn/LC_MESSAGES
 @dirrm usr/share/locale/mn
 @dirrm usr/share/locale/ml/LC_MESSAGES
 @dirrm usr/share/locale/ml
+@dirrm usr/share/locale/mkh/LC_MESSAGES
+@dirrm usr/share/locale/mkh
 @dirrm usr/share/locale/mk/LC_MESSAGES
 @dirrm usr/share/locale/mk
+@dirrm usr/share/locale/mis/LC_MESSAGES
+@dirrm usr/share/locale/mis
+@dirrm usr/share/locale/min/LC_MESSAGES
+@dirrm usr/share/locale/min
+@dirrm usr/share/locale/mic/LC_MESSAGES
+@dirrm usr/share/locale/mic
 @dirrm usr/share/locale/mi/LC_MESSAGES
 @dirrm usr/share/locale/mi
+@dirrm usr/share/locale/mh/LC_MESSAGES
+@dirrm usr/share/locale/mh
+@dirrm usr/share/locale/mga/LC_MESSAGES
+@dirrm usr/share/locale/mga
+@dirrm usr/share/locale/mg/LC_MESSAGES
+@dirrm usr/share/locale/mg
+@dirrm usr/share/locale/men/LC_MESSAGES
+@dirrm usr/share/locale/men
+@dirrm usr/share/locale/mdr/LC_MESSAGES
+@dirrm usr/share/locale/mdr
+@dirrm usr/share/locale/mdf/LC_MESSAGES
+@dirrm usr/share/locale/mdf
+@dirrm usr/share/locale/mas/LC_MESSAGES
+@dirrm usr/share/locale/mas
+@dirrm usr/share/locale/map/LC_MESSAGES
+@dirrm usr/share/locale/map
+@dirrm usr/share/locale/man/LC_MESSAGES
+@dirrm usr/share/locale/man
+@dirrm usr/share/locale/mak/LC_MESSAGES
+@dirrm usr/share/locale/mak
+@dirrm usr/share/locale/mai/LC_MESSAGES
+@dirrm usr/share/locale/mai
+@dirrm usr/share/locale/mag/LC_MESSAGES
+@dirrm usr/share/locale/mag
+@dirrm usr/share/locale/mad/LC_MESSAGES
+@dirrm usr/share/locale/mad
 @dirrm usr/share/locale/lv/LC_MESSAGES
 @dirrm usr/share/locale/lv
+@dirrm usr/share/locale/lus/LC_MESSAGES
+@dirrm usr/share/locale/lus
+@dirrm usr/share/locale/luo/LC_MESSAGES
+@dirrm usr/share/locale/luo
+@dirrm usr/share/locale/lun/LC_MESSAGES
+@dirrm usr/share/locale/lun
+@dirrm usr/share/locale/lui/LC_MESSAGES
+@dirrm usr/share/locale/lui
+@dirrm usr/share/locale/lua/LC_MESSAGES
+@dirrm usr/share/locale/lua
+@dirrm usr/share/locale/lu/LC_MESSAGES
+@dirrm usr/share/locale/lu
 @dirrm usr/share/locale/lt/LC_MESSAGES
 @dirrm usr/share/locale/lt
+@dirrm usr/share/locale/loz/LC_MESSAGES
+@dirrm usr/share/locale/loz
+@dirrm usr/share/locale/lol/LC_MESSAGES
+@dirrm usr/share/locale/lol
+@dirrm usr/share/locale/lo/LC_MESSAGES
+@dirrm usr/share/locale/lo
+@dirrm usr/share/locale/ln/LC_MESSAGES
+@dirrm usr/share/locale/ln
 @dirrm usr/share/locale/li/LC_MESSAGES
 @dirrm usr/share/locale/li
 @dirrm usr/share/locale/lg/LC_TIME
 @dirrm usr/share/locale/lg/LC_MESSAGES
 @dirrm usr/share/locale/lg
+@dirrm usr/share/locale/lez/LC_MESSAGES
+@dirrm usr/share/locale/lez
+@dirrm usr/share/locale/lb/LC_MESSAGES
+@dirrm usr/share/locale/lb
+@dirrm usr/share/locale/lam/LC_MESSAGES
+@dirrm usr/share/locale/lam
+@dirrm usr/share/locale/lah/LC_MESSAGES
+@dirrm usr/share/locale/lah
+@dirrm usr/share/locale/lad/LC_MESSAGES
+@dirrm usr/share/locale/lad
+@dirrm usr/share/locale/la/LC_MESSAGES
+@dirrm usr/share/locale/la
+@dirrm usr/share/locale/ky/LC_MESSAGES
+@dirrm usr/share/locale/ky
+@dirrm usr/share/locale/kw/LC_MESSAGES
+@dirrm usr/share/locale/kw
+@dirrm usr/share/locale/kv/LC_MESSAGES
+@dirrm usr/share/locale/kv
+@dirrm usr/share/locale/kut/LC_MESSAGES
+@dirrm usr/share/locale/kut
+@dirrm usr/share/locale/kum/LC_MESSAGES
+@dirrm usr/share/locale/kum
+@dirrm usr/share/locale/ku/LC_MESSAGES
+@dirrm usr/share/locale/ku
+@dirrm usr/share/locale/ks/LC_MESSAGES
+@dirrm usr/share/locale/ks
+@dirrm usr/share/locale/kru/LC_MESSAGES
+@dirrm usr/share/locale/kru
+@dirrm usr/share/locale/kro/LC_MESSAGES
+@dirrm usr/share/locale/kro
+@dirrm usr/share/locale/krl/LC_MESSAGES
+@dirrm usr/share/locale/krl
+@dirrm usr/share/locale/krc/LC_MESSAGES
+@dirrm usr/share/locale/krc
+@dirrm usr/share/locale/kr/LC_MESSAGES
+@dirrm usr/share/locale/kr
+@dirrm usr/share/locale/kpe/LC_MESSAGES
+@dirrm usr/share/locale/kpe
+@dirrm usr/share/locale/kos/LC_MESSAGES
+@dirrm usr/share/locale/kos
+@dirrm usr/share/locale/kok/LC_MESSAGES
+@dirrm usr/share/locale/kok
+@dirrm usr/share/locale/ko_KR/LC_MESSAGES
+@dirrm usr/share/locale/ko_KR
 @dirrm usr/share/locale/ko/LC_TIME
 @dirrm usr/share/locale/ko/LC_MESSAGES
 @dirrm usr/share/locale/ko
 @dirrm usr/share/locale/kn/LC_MESSAGES
 @dirrm usr/share/locale/kn
+@dirrm usr/share/locale/kmb/LC_MESSAGES
+@dirrm usr/share/locale/kmb
+@dirrm usr/share/locale/km/LC_MESSAGES
+@dirrm usr/share/locale/km
+@dirrm usr/share/locale/kl/LC_MESSAGES
+@dirrm usr/share/locale/kl
+@dirrm usr/share/locale/kk/LC_MESSAGES
+@dirrm usr/share/locale/kk
+@dirrm usr/share/locale/kj/LC_MESSAGES
+@dirrm usr/share/locale/kj
+@dirrm usr/share/locale/ki/LC_MESSAGES
+@dirrm usr/share/locale/ki
+@dirrm usr/share/locale/kho/LC_MESSAGES
+@dirrm usr/share/locale/kho
+@dirrm usr/share/locale/khi/LC_MESSAGES
+@dirrm usr/share/locale/khi
+@dirrm usr/share/locale/kha/LC_MESSAGES
+@dirrm usr/share/locale/kha
+@dirrm usr/share/locale/kg/LC_MESSAGES
+@dirrm usr/share/locale/kg
+@dirrm usr/share/locale/kbd/LC_MESSAGES
+@dirrm usr/share/locale/kbd
+@dirrm usr/share/locale/kaw/LC_MESSAGES
+@dirrm usr/share/locale/kaw
+@dirrm usr/share/locale/kar/LC_MESSAGES
+@dirrm usr/share/locale/kar
+@dirrm usr/share/locale/kam/LC_MESSAGES
+@dirrm usr/share/locale/kam
+@dirrm usr/share/locale/kac/LC_MESSAGES
+@dirrm usr/share/locale/kac
+@dirrm usr/share/locale/kab/LC_MESSAGES
+@dirrm usr/share/locale/kab
+@dirrm usr/share/locale/kaa/LC_MESSAGES
+@dirrm usr/share/locale/kaa
+@dirrm usr/share/locale/ka/LC_MESSAGES
+@dirrm usr/share/locale/ka
+@dirrm usr/share/locale/jv/LC_MESSAGES
+@dirrm usr/share/locale/jv
+@dirrm usr/share/locale/jrb/LC_MESSAGES
+@dirrm usr/share/locale/jrb
+@dirrm usr/share/locale/jpr/LC_MESSAGES
+@dirrm usr/share/locale/jpr
+@dirrm usr/share/locale/jbo/LC_MESSAGES
+@dirrm usr/share/locale/jbo
+@dirrm usr/share/locale/ja_JP/LC_MESSAGES
+@dirrm usr/share/locale/ja_JP
 @dirrm usr/share/locale/ja/LC_TIME
 @dirrm usr/share/locale/ja/LC_MESSAGES
 @dirrm usr/share/locale/ja
+@dirrm usr/share/locale/iu/LC_MESSAGES
+@dirrm usr/share/locale/iu
+@dirrm usr/share/locale/it_IT/LC_MESSAGES
+@dirrm usr/share/locale/it_IT
+@dirrm usr/share/locale/it_CH/LC_MESSAGES
+@dirrm usr/share/locale/it_CH
 @dirrm usr/share/locale/it/LC_TIME
 @dirrm usr/share/locale/it/LC_MESSAGES
 @dirrm usr/share/locale/it
 @dirrm usr/share/locale/is/LC_MESSAGES
 @dirrm usr/share/locale/is
+@dirrm usr/share/locale/iro/LC_MESSAGES
+@dirrm usr/share/locale/iro
+@dirrm usr/share/locale/ira/LC_MESSAGES
+@dirrm usr/share/locale/ira
+@dirrm usr/share/locale/io/LC_MESSAGES
+@dirrm usr/share/locale/io
+@dirrm usr/share/locale/inh/LC_MESSAGES
+@dirrm usr/share/locale/inh
+@dirrm usr/share/locale/ine/LC_MESSAGES
+@dirrm usr/share/locale/ine
+@dirrm usr/share/locale/inc/LC_MESSAGES
+@dirrm usr/share/locale/inc
+@dirrm usr/share/locale/ilo/LC_MESSAGES
+@dirrm usr/share/locale/ilo
+@dirrm usr/share/locale/ik/LC_MESSAGES
+@dirrm usr/share/locale/ik
+@dirrm usr/share/locale/ijo/LC_MESSAGES
+@dirrm usr/share/locale/ijo
+@dirrm usr/share/locale/ii/LC_MESSAGES
+@dirrm usr/share/locale/ii
+@dirrm usr/share/locale/ig/LC_MESSAGES
+@dirrm usr/share/locale/ig
+@dirrm usr/share/locale/ie/LC_MESSAGES
+@dirrm usr/share/locale/ie
 @dirrm usr/share/locale/id/LC_MESSAGES
 @dirrm usr/share/locale/id
+@dirrm usr/share/locale/iba/LC_MESSAGES
+@dirrm usr/share/locale/iba
 @dirrm usr/share/locale/ia/LC_MESSAGES
 @dirrm usr/share/locale/ia
+@dirrm usr/share/locale/hz/LC_MESSAGES
+@dirrm usr/share/locale/hz
 @dirrm usr/share/locale/hy/LC_MESSAGES
 @dirrm usr/share/locale/hy
+@dirrm usr/share/locale/hup/LC_MESSAGES
+@dirrm usr/share/locale/hup
+@dirrm usr/share/locale/hu_HU/LC_MESSAGES
+@dirrm usr/share/locale/hu_HU
 @dirrm usr/share/locale/hu/LC_TIME
 @dirrm usr/share/locale/hu/LC_MESSAGES
 @dirrm usr/share/locale/hu
+@dirrm usr/share/locale/ht/LC_MESSAGES
+@dirrm usr/share/locale/ht
+@dirrm usr/share/locale/hsb/LC_MESSAGES
+@dirrm usr/share/locale/hsb
+@dirrm usr/share/locale/hr_HR/LC_MESSAGES
+@dirrm usr/share/locale/hr_HR
+@dirrm usr/share/locale/hr/LC_TIME
 @dirrm usr/share/locale/hr/LC_MESSAGES
 @dirrm usr/share/locale/hr
+@dirrm usr/share/locale/ho/LC_MESSAGES
+@dirrm usr/share/locale/ho
+@dirrm usr/share/locale/hmn/LC_MESSAGES
+@dirrm usr/share/locale/hmn
+@dirrm usr/share/locale/hit/LC_MESSAGES
+@dirrm usr/share/locale/hit
+@dirrm usr/share/locale/him/LC_MESSAGES
+@dirrm usr/share/locale/him
+@dirrm usr/share/locale/hil/LC_MESSAGES
+@dirrm usr/share/locale/hil
 @dirrm usr/share/locale/hi/LC_MESSAGES
 @dirrm usr/share/locale/hi
+@dirrm usr/share/locale/he_IL/LC_MESSAGES
+@dirrm usr/share/locale/he_IL
 @dirrm usr/share/locale/he/LC_MESSAGES
 @dirrm usr/share/locale/he
+@dirrm usr/share/locale/haw/LC_MESSAGES
+@dirrm usr/share/locale/haw
+@dirrm usr/share/locale/hai/LC_MESSAGES
+@dirrm usr/share/locale/hai
+@dirrm usr/share/locale/ha/LC_MESSAGES
+@dirrm usr/share/locale/ha
+@dirrm usr/share/locale/gwi/LC_MESSAGES
+@dirrm usr/share/locale/gwi
+@dirrm usr/share/locale/gv/LC_MESSAGES
+@dirrm usr/share/locale/gv
 @dirrm usr/share/locale/gu/LC_MESSAGES
 @dirrm usr/share/locale/gu
+@dirrm usr/share/locale/gsw/LC_MESSAGES
+@dirrm usr/share/locale/gsw
+@dirrm usr/share/locale/grc/LC_MESSAGES
+@dirrm usr/share/locale/grc
+@dirrm usr/share/locale/grb/LC_MESSAGES
+@dirrm usr/share/locale/grb
+@dirrm usr/share/locale/got/LC_MESSAGES
+@dirrm usr/share/locale/got
+@dirrm usr/share/locale/gor/LC_MESSAGES
+@dirrm usr/share/locale/gor
+@dirrm usr/share/locale/gon/LC_MESSAGES
+@dirrm usr/share/locale/gon
+@dirrm usr/share/locale/goh/LC_MESSAGES
+@dirrm usr/share/locale/goh
+@dirrm usr/share/locale/gn/LC_MESSAGES
+@dirrm usr/share/locale/gn
+@dirrm usr/share/locale/gmh/LC_MESSAGES
+@dirrm usr/share/locale/gmh
 @dirrm usr/share/locale/gl/LC_TIME
 @dirrm usr/share/locale/gl/LC_MESSAGES
 @dirrm usr/share/locale/gl
+@dirrm usr/share/locale/gil/LC_MESSAGES
+@dirrm usr/share/locale/gil
+@dirrm usr/share/locale/gez/LC_MESSAGES
+@dirrm usr/share/locale/gez
+@dirrm usr/share/locale/gem/LC_MESSAGES
+@dirrm usr/share/locale/gem
+@dirrm usr/share/locale/gd/LC_MESSAGES
+@dirrm usr/share/locale/gd
+@dirrm usr/share/locale/gba/LC_MESSAGES
+@dirrm usr/share/locale/gba
+@dirrm usr/share/locale/gay/LC_MESSAGES
+@dirrm usr/share/locale/gay
+@dirrm usr/share/locale/gaa/LC_MESSAGES
+@dirrm usr/share/locale/gaa
 @dirrm usr/share/locale/ga/LC_TIME
 @dirrm usr/share/locale/ga/LC_MESSAGES
 @dirrm usr/share/locale/ga
+@dirrm usr/share/locale/fy/LC_MESSAGES
+@dirrm usr/share/locale/fy
+@dirrm usr/share/locale/fur/LC_MESSAGES
+@dirrm usr/share/locale/fur
+@dirrm usr/share/locale/frs/LC_MESSAGES
+@dirrm usr/share/locale/frs
+@dirrm usr/share/locale/frr/LC_MESSAGES
+@dirrm usr/share/locale/frr
+@dirrm usr/share/locale/fro/LC_MESSAGES
+@dirrm usr/share/locale/fro
+@dirrm usr/share/locale/frm/LC_MESSAGES
+@dirrm usr/share/locale/frm
+@dirrm usr/share/locale/fr_FR/LC_MESSAGES
+@dirrm usr/share/locale/fr_FR
+@dirrm usr/share/locale/fr_CH/LC_MESSAGES
+@dirrm usr/share/locale/fr_CH
+@dirrm usr/share/locale/fr_CA/LC_MESSAGES
+@dirrm usr/share/locale/fr_CA
+@dirrm usr/share/locale/fr_BE/LC_MESSAGES
+@dirrm usr/share/locale/fr_BE
 @dirrm usr/share/locale/fr/LC_TIME
 @dirrm usr/share/locale/fr/LC_MESSAGES
 @dirrm usr/share/locale/fr
+@dirrm usr/share/locale/fon/LC_MESSAGES
+@dirrm usr/share/locale/fon
+@dirrm usr/share/locale/fo/LC_MESSAGES
+@dirrm usr/share/locale/fo
+@dirrm usr/share/locale/fj/LC_MESSAGES
+@dirrm usr/share/locale/fj
+@dirrm usr/share/locale/fiu/LC_MESSAGES
+@dirrm usr/share/locale/fiu
+@dirrm usr/share/locale/fil/LC_MESSAGES
+@dirrm usr/share/locale/fil
 @dirrm usr/share/locale/fi/LC_TIME
 @dirrm usr/share/locale/fi/LC_MESSAGES
 @dirrm usr/share/locale/fi
+@dirrm usr/share/locale/ff/LC_MESSAGES
+@dirrm usr/share/locale/ff
+@dirrm usr/share/locale/fat/LC_MESSAGES
+@dirrm usr/share/locale/fat
+@dirrm usr/share/locale/fan/LC_MESSAGES
+@dirrm usr/share/locale/fan
+@dirrm usr/share/locale/fa_IR/LC_MESSAGES
+@dirrm usr/share/locale/fa_IR
 @dirrm usr/share/locale/fa/LC_MESSAGES
 @dirrm usr/share/locale/fa
+@dirrm usr/share/locale/ewo/LC_MESSAGES
+@dirrm usr/share/locale/ewo
 @dirrm usr/share/locale/eu_ES/LC_MESSAGES
 @dirrm usr/share/locale/eu_ES
+@dirrm usr/share/locale/eu/LC_TIME
 @dirrm usr/share/locale/eu/LC_MESSAGES
 @dirrm usr/share/locale/eu
+@dirrm usr/share/locale/et_EE/LC_MESSAGES
+@dirrm usr/share/locale/et_EE
 @dirrm usr/share/locale/et/LC_TIME
 @dirrm usr/share/locale/et/LC_MESSAGES
 @dirrm usr/share/locale/et
+@dirrm usr/share/locale/es_VE/LC_MESSAGES
+@dirrm usr/share/locale/es_VE
+@dirrm usr/share/locale/es_UY/LC_MESSAGES
+@dirrm usr/share/locale/es_UY
+@dirrm usr/share/locale/es_SV/LC_MESSAGES
+@dirrm usr/share/locale/es_SV
+@dirrm usr/share/locale/es_PR/LC_MESSAGES
+@dirrm usr/share/locale/es_PR
+@dirrm usr/share/locale/es_PE/LC_MESSAGES
+@dirrm usr/share/locale/es_PE
+@dirrm usr/share/locale/es_PA/LC_MESSAGES
+@dirrm usr/share/locale/es_PA
+@dirrm usr/share/locale/es_NI/LC_MESSAGES
+@dirrm usr/share/locale/es_NI
+@dirrm usr/share/locale/es_MX/LC_MESSAGES
+@dirrm usr/share/locale/es_MX
+@dirrm usr/share/locale/es_HN/LC_MESSAGES
+@dirrm usr/share/locale/es_HN
+@dirrm usr/share/locale/es_GT/LC_MESSAGES
+@dirrm usr/share/locale/es_GT
+@dirrm usr/share/locale/es_ES/LC_MESSAGES
+@dirrm usr/share/locale/es_ES
+@dirrm usr/share/locale/es_EC/LC_MESSAGES
+@dirrm usr/share/locale/es_EC
+@dirrm usr/share/locale/es_DO/LC_MESSAGES
+@dirrm usr/share/locale/es_DO
+@dirrm usr/share/locale/es_CR/LC_MESSAGES
+@dirrm usr/share/locale/es_CR
+@dirrm usr/share/locale/es_CO/LC_MESSAGES
+@dirrm usr/share/locale/es_CO
+@dirrm usr/share/locale/es_CL/LC_MESSAGES
+@dirrm usr/share/locale/es_CL
+@dirrm usr/share/locale/es_AR/LC_MESSAGES
+@dirrm usr/share/locale/es_AR
 @dirrm usr/share/locale/es/LC_TIME
 @dirrm usr/share/locale/es/LC_MESSAGES
 @dirrm usr/share/locale/es
 @dirrm usr/share/locale/eo/LC_MESSAGES
 @dirrm usr/share/locale/eo
+@dirrm usr/share/locale/enm/LC_MESSAGES
+@dirrm usr/share/locale/enm
+@dirrm usr/share/locale/en_US/LC_MESSAGES
+@dirrm usr/share/locale/en_US
 @dirrm usr/share/locale/en_GB/LC_MESSAGES
 @dirrm usr/share/locale/en_GB
 @dirrm usr/share/locale/en_CA/LC_MESSAGES
 @dirrm usr/share/locale/en_CA
+@dirrm usr/share/locale/en_AU/LC_MESSAGES
+@dirrm usr/share/locale/en_AU
 @dirrm usr/share/locale/en@quot/LC_MESSAGES
 @dirrm usr/share/locale/en@quot
 @dirrm usr/share/locale/en@boldquot/LC_MESSAGES
 @dirrm usr/share/locale/en@boldquot
 @dirrm usr/share/locale/en/LC_MESSAGES
 @dirrm usr/share/locale/en
+@dirrm usr/share/locale/elx/LC_MESSAGES
+@dirrm usr/share/locale/elx
+@dirrm usr/share/locale/el_GR/LC_MESSAGES
+@dirrm usr/share/locale/el_GR
 @dirrm usr/share/locale/el/LC_TIME
 @dirrm usr/share/locale/el/LC_MESSAGES
 @dirrm usr/share/locale/el
+@dirrm usr/share/locale/eka/LC_MESSAGES
+@dirrm usr/share/locale/eka
+@dirrm usr/share/locale/egy/LC_MESSAGES
+@dirrm usr/share/locale/egy
+@dirrm usr/share/locale/efi/LC_MESSAGES
+@dirrm usr/share/locale/efi
+@dirrm usr/share/locale/ee/LC_MESSAGES
+@dirrm usr/share/locale/ee
+@dirrm usr/share/locale/dz/LC_MESSAGES
+@dirrm usr/share/locale/dz
+@dirrm usr/share/locale/dyu/LC_MESSAGES
+@dirrm usr/share/locale/dyu
+@dirrm usr/share/locale/dv/LC_MESSAGES
+@dirrm usr/share/locale/dv
+@dirrm usr/share/locale/dum/LC_MESSAGES
+@dirrm usr/share/locale/dum
+@dirrm usr/share/locale/dua/LC_MESSAGES
+@dirrm usr/share/locale/dua
+@dirrm usr/share/locale/dsb/LC_MESSAGES
+@dirrm usr/share/locale/dsb
+@dirrm usr/share/locale/dra/LC_MESSAGES
+@dirrm usr/share/locale/dra
+@dirrm usr/share/locale/doi/LC_MESSAGES
+@dirrm usr/share/locale/doi
+@dirrm usr/share/locale/din/LC_MESSAGES
+@dirrm usr/share/locale/din
+@dirrm usr/share/locale/dgr/LC_MESSAGES
+@dirrm usr/share/locale/dgr
+@dirrm usr/share/locale/den/LC_MESSAGES
+@dirrm usr/share/locale/den
+@dirrm usr/share/locale/del/LC_MESSAGES
+@dirrm usr/share/locale/del
+@dirrm usr/share/locale/de_DE/LC_MESSAGES
+@dirrm usr/share/locale/de_DE
+@dirrm usr/share/locale/de_CH/LC_MESSAGES
+@dirrm usr/share/locale/de_CH
+@dirrm usr/share/locale/de_AT/LC_MESSAGES
+@dirrm usr/share/locale/de_AT
 @dirrm usr/share/locale/de/LC_TIME
 @dirrm usr/share/locale/de/LC_MESSAGES
 @dirrm usr/share/locale/de
+@dirrm usr/share/locale/day/LC_MESSAGES
+@dirrm usr/share/locale/day
+@dirrm usr/share/locale/dar/LC_MESSAGES
+@dirrm usr/share/locale/dar
+@dirrm usr/share/locale/dak/LC_MESSAGES
+@dirrm usr/share/locale/dak
 @dirrm usr/share/locale/da/LC_TIME
 @dirrm usr/share/locale/da/LC_MESSAGES
 @dirrm usr/share/locale/da
 @dirrm usr/share/locale/cy/LC_MESSAGES
 @dirrm usr/share/locale/cy
+@dirrm usr/share/locale/cv/LC_MESSAGES
+@dirrm usr/share/locale/cv
+@dirrm usr/share/locale/cus/LC_MESSAGES
+@dirrm usr/share/locale/cus
+@dirrm usr/share/locale/cu/LC_MESSAGES
+@dirrm usr/share/locale/cu
+@dirrm usr/share/locale/csb/LC_MESSAGES
+@dirrm usr/share/locale/csb
+@dirrm usr/share/locale/cs_CZ/LC_MESSAGES
+@dirrm usr/share/locale/cs_CZ
 @dirrm usr/share/locale/cs/LC_TIME
 @dirrm usr/share/locale/cs/LC_MESSAGES
 @dirrm usr/share/locale/cs
+@dirrm usr/share/locale/crp/LC_MESSAGES
+@dirrm usr/share/locale/crp
+@dirrm usr/share/locale/crh/LC_MESSAGES
+@dirrm usr/share/locale/crh
+@dirrm usr/share/locale/cr/LC_MESSAGES
+@dirrm usr/share/locale/cr
+@dirrm usr/share/locale/cpp/LC_MESSAGES
+@dirrm usr/share/locale/cpp
+@dirrm usr/share/locale/cpf/LC_MESSAGES
+@dirrm usr/share/locale/cpf
+@dirrm usr/share/locale/cpe/LC_MESSAGES
+@dirrm usr/share/locale/cpe
+@dirrm usr/share/locale/cop/LC_MESSAGES
+@dirrm usr/share/locale/cop
+@dirrm usr/share/locale/co/LC_MESSAGES
+@dirrm usr/share/locale/co
+@dirrm usr/share/locale/cmc/LC_MESSAGES
+@dirrm usr/share/locale/cmc
+@dirrm usr/share/locale/chy/LC_MESSAGES
+@dirrm usr/share/locale/chy
+@dirrm usr/share/locale/chr/LC_MESSAGES
+@dirrm usr/share/locale/chr
+@dirrm usr/share/locale/chp/LC_MESSAGES
+@dirrm usr/share/locale/chp
+@dirrm usr/share/locale/cho/LC_MESSAGES
+@dirrm usr/share/locale/cho
+@dirrm usr/share/locale/chn/LC_MESSAGES
+@dirrm usr/share/locale/chn
+@dirrm usr/share/locale/chm/LC_MESSAGES
+@dirrm usr/share/locale/chm
+@dirrm usr/share/locale/chk/LC_MESSAGES
+@dirrm usr/share/locale/chk
+@dirrm usr/share/locale/chg/LC_MESSAGES
+@dirrm usr/share/locale/chg
+@dirrm usr/share/locale/chb/LC_MESSAGES
+@dirrm usr/share/locale/chb
+@dirrm usr/share/locale/ch/LC_MESSAGES
+@dirrm usr/share/locale/ch
+@dirrm usr/share/locale/cel/LC_MESSAGES
+@dirrm usr/share/locale/cel
+@dirrm usr/share/locale/ceb/LC_MESSAGES
+@dirrm usr/share/locale/ceb
+@dirrm usr/share/locale/ce/LC_MESSAGES
+@dirrm usr/share/locale/ce
+@dirrm usr/share/locale/cau/LC_MESSAGES
+@dirrm usr/share/locale/cau
+@dirrm usr/share/locale/car/LC_MESSAGES
+@dirrm usr/share/locale/car
+@dirrm usr/share/locale/cai/LC_MESSAGES
+@dirrm usr/share/locale/cai
+@dirrm usr/share/locale/cad/LC_MESSAGES
+@dirrm usr/share/locale/cad
+@dirrm usr/share/locale/ca_ES@valencian/LC_MESSAGES
+@dirrm usr/share/locale/ca_ES@valencian
+@dirrm usr/share/locale/ca_ES/LC_MESSAGES
+@dirrm usr/share/locale/ca_ES
 @dirrm usr/share/locale/ca/LC_TIME
 @dirrm usr/share/locale/ca/LC_MESSAGES
 @dirrm usr/share/locale/ca
+@dirrm usr/share/locale/byn/LC_MESSAGES
+@dirrm usr/share/locale/byn
+@dirrm usr/share/locale/bug/LC_MESSAGES
+@dirrm usr/share/locale/bug
+@dirrm usr/share/locale/bua/LC_MESSAGES
+@dirrm usr/share/locale/bua
+@dirrm usr/share/locale/btk/LC_MESSAGES
+@dirrm usr/share/locale/btk
 @dirrm usr/share/locale/bs/LC_MESSAGES
 @dirrm usr/share/locale/bs
+@dirrm usr/share/locale/bra/LC_MESSAGES
+@dirrm usr/share/locale/bra
 @dirrm usr/share/locale/br/LC_MESSAGES
 @dirrm usr/share/locale/br
+@dirrm usr/share/locale/bo/LC_MESSAGES
+@dirrm usr/share/locale/bo
+@dirrm usr/share/locale/bnt/LC_MESSAGES
+@dirrm usr/share/locale/bnt
+@dirrm usr/share/locale/bn_IN/LC_MESSAGES
+@dirrm usr/share/locale/bn_IN
 @dirrm usr/share/locale/bn/LC_MESSAGES
 @dirrm usr/share/locale/bn
+@dirrm usr/share/locale/bm/LC_MESSAGES
+@dirrm usr/share/locale/bm
+@dirrm usr/share/locale/bla/LC_MESSAGES
+@dirrm usr/share/locale/bla
+@dirrm usr/share/locale/bin/LC_MESSAGES
+@dirrm usr/share/locale/bin
+@dirrm usr/share/locale/bik/LC_MESSAGES
+@dirrm usr/share/locale/bik
+@dirrm usr/share/locale/bi/LC_MESSAGES
+@dirrm usr/share/locale/bi
+@dirrm usr/share/locale/bho/LC_MESSAGES
+@dirrm usr/share/locale/bho
+@dirrm usr/share/locale/bh/LC_MESSAGES
+@dirrm usr/share/locale/bh
+@dirrm usr/share/locale/bg/LC_TIME
 @dirrm usr/share/locale/bg/LC_MESSAGES
 @dirrm usr/share/locale/bg
+@dirrm usr/share/locale/ber/LC_MESSAGES
+@dirrm usr/share/locale/ber
+@dirrm usr/share/locale/bem/LC_MESSAGES
+@dirrm usr/share/locale/bem
+@dirrm usr/share/locale/bej/LC_MESSAGES
+@dirrm usr/share/locale/bej
 @dirrm usr/share/locale/be/LC_TIME
 @dirrm usr/share/locale/be/LC_MESSAGES
 @dirrm usr/share/locale/be
+@dirrm usr/share/locale/bat/LC_MESSAGES
+@dirrm usr/share/locale/bat
+@dirrm usr/share/locale/bas/LC_MESSAGES
+@dirrm usr/share/locale/bas
+@dirrm usr/share/locale/ban/LC_MESSAGES
+@dirrm usr/share/locale/ban
+@dirrm usr/share/locale/bal/LC_MESSAGES
+@dirrm usr/share/locale/bal
+@dirrm usr/share/locale/bai/LC_MESSAGES
+@dirrm usr/share/locale/bai
+@dirrm usr/share/locale/bad/LC_MESSAGES
+@dirrm usr/share/locale/bad
+@dirrm usr/share/locale/ba/LC_MESSAGES
+@dirrm usr/share/locale/ba
 @dirrm usr/share/locale/az_IR/LC_MESSAGES
 @dirrm usr/share/locale/az_IR
 @dirrm usr/share/locale/az/LC_MESSAGES
 @dirrm usr/share/locale/az
+@dirrm usr/share/locale/ay/LC_MESSAGES
+@dirrm usr/share/locale/ay
+@dirrm usr/share/locale/awa/LC_MESSAGES
+@dirrm usr/share/locale/awa
+@dirrm usr/share/locale/av/LC_MESSAGES
+@dirrm usr/share/locale/av
+@dirrm usr/share/locale/aus/LC_MESSAGES
+@dirrm usr/share/locale/aus
+@dirrm usr/share/locale/ath/LC_MESSAGES
+@dirrm usr/share/locale/ath
+@dirrm usr/share/locale/ast_ES/LC_MESSAGES
+@dirrm usr/share/locale/ast_ES
+@dirrm usr/share/locale/ast/LC_MESSAGES
+@dirrm usr/share/locale/ast
 @dirrm usr/share/locale/as/LC_MESSAGES
 @dirrm usr/share/locale/as
+@dirrm usr/share/locale/arw/LC_MESSAGES
+@dirrm usr/share/locale/arw
+@dirrm usr/share/locale/art/LC_MESSAGES
+@dirrm usr/share/locale/art
+@dirrm usr/share/locale/arp/LC_MESSAGES
+@dirrm usr/share/locale/arp
+@dirrm usr/share/locale/arn/LC_MESSAGES
+@dirrm usr/share/locale/arn
+@dirrm usr/share/locale/arc/LC_MESSAGES
+@dirrm usr/share/locale/arc
 @dirrm usr/share/locale/ar/LC_MESSAGES
 @dirrm usr/share/locale/ar
+@dirrm usr/share/locale/apa/LC_MESSAGES
+@dirrm usr/share/locale/apa
+@dirrm usr/share/locale/anp/LC_MESSAGES
+@dirrm usr/share/locale/anp
+@dirrm usr/share/locale/ang/LC_MESSAGES
+@dirrm usr/share/locale/ang
+@dirrm usr/share/locale/an/LC_MESSAGES
+@dirrm usr/share/locale/an
+@dirrm usr/share/locale/am_ET/LC_MESSAGES
+@dirrm usr/share/locale/am_ET
 @dirrm usr/share/locale/am/LC_MESSAGES
 @dirrm usr/share/locale/am
+@dirrm usr/share/locale/alt/LC_MESSAGES
+@dirrm usr/share/locale/alt
+@dirrm usr/share/locale/alg/LC_MESSAGES
+@dirrm usr/share/locale/alg
+@dirrm usr/share/locale/ale/LC_MESSAGES
+@dirrm usr/share/locale/ale
+@dirrm usr/share/locale/akk/LC_MESSAGES
+@dirrm usr/share/locale/akk
+@dirrm usr/share/locale/ak/LC_MESSAGES
+@dirrm usr/share/locale/ak
+@dirrm usr/share/locale/ain/LC_MESSAGES
+@dirrm usr/share/locale/ain
+@dirrm usr/share/locale/afh/LC_MESSAGES
+@dirrm usr/share/locale/afh
+@dirrm usr/share/locale/afa/LC_MESSAGES
+@dirrm usr/share/locale/afa
+@dirrm usr/share/locale/af_ZA/LC_MESSAGES
+@dirrm usr/share/locale/af_ZA
 @dirrm usr/share/locale/af/LC_TIME
 @dirrm usr/share/locale/af/LC_MESSAGES
 @dirrm usr/share/locale/af
+@dirrm usr/share/locale/ae/LC_MESSAGES
+@dirrm usr/share/locale/ae
+@dirrm usr/share/locale/ady/LC_MESSAGES
+@dirrm usr/share/locale/ady
+@dirrm usr/share/locale/ada/LC_MESSAGES
+@dirrm usr/share/locale/ada
+@dirrm usr/share/locale/ach/LC_MESSAGES
+@dirrm usr/share/locale/ach
+@dirrm usr/share/locale/ace/LC_MESSAGES
+@dirrm usr/share/locale/ace
+@dirrm usr/share/locale/ab/LC_MESSAGES
+@dirrm usr/share/locale/ab
+@dirrm usr/share/locale/aa/LC_MESSAGES
+@dirrm usr/share/locale/aa
 @dirrm usr/share/locale
 @dirrm usr/share/info
 @dirrm usr/share/i18n/locales
@@ -9294,56 +10314,44 @@ var/mail
 @dirrm usr/share/firstboot
 @dirrm usr/share/eula
 @dirrm usr/share/empty
-@dirrm usr/share/doc/zlib-1.2.2.2
-@dirrm usr/share/doc/setup-2.5.44
+@dirrm usr/share/doc/zlib-1.2.3
+@dirrm usr/share/doc/slang-2.0.6
+@dirrm usr/share/doc/setup-2.6.1.1
 @dirrm usr/share/doc/setserial-2.17
-@dirrm usr/share/doc/rpm-4.4.1
-@dirrm usr/share/doc/pcre-5.0
-@dirrm usr/share/doc/ncurses-5.4
-@dirrm usr/share/doc/libgcc-4.0.2
+@dirrm usr/share/doc/rpm-4.4.2
+@dirrm usr/share/doc/pcre-6.6
+@dirrm usr/share/doc/ncurses-5.5
+@dirrm usr/share/doc/libgcc-4.1.1
+@dirrm usr/share/doc/info-4.8
 @dirrm usr/share/doc/grep-2.5.1
-@dirrm usr/share/doc/glibc-common-%%GLIBCVER%%/examples.threads
 @dirrm usr/share/doc/glibc-common-%%GLIBCVER%%
 @dirrm usr/share/doc/glibc-%%GLIBCVER%%
-@dirrm usr/share/doc/glib-1.2.10
+@dirrm usr/share/doc/glib2-2.12.9
 @dirrm usr/share/doc/gdbm-1.8.0
-@dirrm usr/share/doc/freetype-2.1.9/docs/tutorial
-@dirrm usr/share/doc/freetype-2.1.9/docs/reference
-@dirrm usr/share/doc/freetype-2.1.9/docs/glyphs
-@dirrm usr/share/doc/freetype-2.1.9/docs/freetype2
-@dirrm usr/share/doc/freetype-2.1.9/docs/design
-@dirrm usr/share/doc/freetype-2.1.9/docs
-@dirrm usr/share/doc/freetype-2.1.9
-@dirrm usr/share/doc/fedora-release-4/stylesheet-images
-@dirrm usr/share/doc/fedora-release-4/figs
-@dirrm usr/share/doc/fedora-release-4
-@dirrm usr/share/doc/e2fsprogs-1.38
-@dirrm usr/share/doc/db4-4.3.27
-@dirrm usr/share/doc/coreutils-5.2.1/textutils
-@dirrm usr/share/doc/coreutils-5.2.1/sh-utils
-@dirrm usr/share/doc/coreutils-5.2.1/fileutils
-@dirrm usr/share/doc/coreutils-5.2.1
+@dirrm usr/share/doc/freetype-2.2.1
+@dirrm usr/share/doc/fedora-release-6
+@dirrm usr/share/doc/e2fsprogs-1.39
+@dirrm usr/share/doc/db4-4.3.29
+@dirrm usr/share/doc/coreutils-5.97/textutils
+@dirrm usr/share/doc/coreutils-5.97/sh-utils
+@dirrm usr/share/doc/coreutils-5.97/fileutils
+@dirrm usr/share/doc/coreutils-5.97
 @dirrm usr/share/doc/compat-db-4.2.52/db-4.2.52
 @dirrm usr/share/doc/compat-db-4.2.52/db-4.1.25
 @dirrm usr/share/doc/compat-db-4.2.52
-@dirrm usr/share/doc/bzip2-1.0.2
-@dirrm usr/share/doc/bash-3.0/startup-files/apple
-@dirrm usr/share/doc/bash-3.0/startup-files
-@dirrm usr/share/doc/bash-3.0/scripts.v2
-@dirrm usr/share/doc/bash-3.0/scripts.noah
-@dirrm usr/share/doc/bash-3.0/scripts
-@dirrm usr/share/doc/bash-3.0/misc
-@dirrm usr/share/doc/bash-3.0/loadables/perl
-@dirrm usr/share/doc/bash-3.0/loadables
-@dirrm usr/share/doc/bash-3.0/functions
-@dirrm usr/share/doc/bash-3.0/complete
-@dirrm usr/share/doc/bash-3.0/bashdb
-@dirrm usr/share/doc/bash-3.0
-@dirrm usr/share/doc/HTML/stylesheet-images
-@dirrm usr/share/doc/HTML/img
-@dirrm usr/share/doc/HTML/figs
-@dirrm usr/share/doc/HTML/css
-@dirrm usr/share/doc/HTML
+@dirrm usr/share/doc/bzip2-1.0.3
+@dirrm usr/share/doc/bash-3.1/startup-files/apple
+@dirrm usr/share/doc/bash-3.1/startup-files
+@dirrm usr/share/doc/bash-3.1/scripts.v2
+@dirrm usr/share/doc/bash-3.1/scripts.noah
+@dirrm usr/share/doc/bash-3.1/scripts
+@dirrm usr/share/doc/bash-3.1/misc
+@dirrm usr/share/doc/bash-3.1/loadables/perl
+@dirrm usr/share/doc/bash-3.1/loadables
+@dirrm usr/share/doc/bash-3.1/functions
+@dirrm usr/share/doc/bash-3.1/complete
+@dirrm usr/share/doc/bash-3.1/bashdb
+@dirrm usr/share/doc/bash-3.1
 @dirrm usr/share/doc
 @dirrm usr/share/dict
 @dirrm usr/share/applications
@@ -9351,10 +10359,8 @@ var/mail
 @dirrm usr/sbin
 @dirrm usr/libexec/getconf
 @dirrm usr/libexec
-@dirrm usr/lib/tls/i686
-@dirrm usr/lib/tls/i586
-@dirrm usr/lib/tls/i486
 @dirrm usr/lib/tls
+@dirrm usr/lib/sse2
 @dirrm usr/lib/rpm/pentium4-linux
 @dirrm usr/lib/rpm/pentium3-linux
 @dirrm usr/lib/rpm/noarch-linux
@@ -9430,6 +10436,10 @@ var/mail
 @dirrm usr/lib/locale/tr_TR.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/tr_TR.utf8
 @dirrm usr/lib/locale/tr_TR
+@dirrm usr/lib/locale/tr_CY/LC_MESSAGES
+@dirrm usr/lib/locale/tr_CY.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/tr_CY.utf8
+@dirrm usr/lib/locale/tr_CY
 @dirrm usr/lib/locale/tn_ZA/LC_MESSAGES
 @dirrm usr/lib/locale/tn_ZA
 @dirrm usr/lib/locale/tl_PH/LC_MESSAGES
@@ -9472,6 +10482,8 @@ var/mail
 @dirrm usr/lib/locale/st_ZA
 @dirrm usr/lib/locale/ss_ZA/LC_MESSAGES
 @dirrm usr/lib/locale/ss_ZA
+@dirrm usr/lib/locale/sr_ME/LC_MESSAGES
+@dirrm usr/lib/locale/sr_ME
 @dirrm usr/lib/locale/sr_CS/LC_MESSAGES
 @dirrm usr/lib/locale/sr_CS.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/sr_CS.utf8
@@ -9538,8 +10550,12 @@ var/mail
 @dirrm usr/lib/locale/pl_PL.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/pl_PL.utf8
 @dirrm usr/lib/locale/pl_PL
+@dirrm usr/lib/locale/pa_PK/LC_MESSAGES
+@dirrm usr/lib/locale/pa_PK
 @dirrm usr/lib/locale/pa_IN/LC_MESSAGES
 @dirrm usr/lib/locale/pa_IN
+@dirrm usr/lib/locale/or_IN/LC_MESSAGES
+@dirrm usr/lib/locale/or_IN
 @dirrm usr/lib/locale/om_KE/LC_MESSAGES
 @dirrm usr/lib/locale/om_KE.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/om_KE.utf8
@@ -9552,6 +10568,8 @@ var/mail
 @dirrm usr/lib/locale/oc_FR
 @dirrm usr/lib/locale/nso_ZA/LC_MESSAGES
 @dirrm usr/lib/locale/nso_ZA
+@dirrm usr/lib/locale/nr_ZA/LC_MESSAGES
+@dirrm usr/lib/locale/nr_ZA
 @dirrm usr/lib/locale/no_NO/LC_MESSAGES
 @dirrm usr/lib/locale/no_NO.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/no_NO.utf8
@@ -9604,6 +10622,8 @@ var/mail
 @dirrm usr/lib/locale/mg_MG.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/mg_MG.utf8
 @dirrm usr/lib/locale/mg_MG
+@dirrm usr/lib/locale/mai_IN/LC_MESSAGES
+@dirrm usr/lib/locale/mai_IN
 @dirrm usr/lib/locale/lv_LV/LC_MESSAGES
 @dirrm usr/lib/locale/lv_LV.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/lv_LV.utf8
@@ -9674,6 +10694,10 @@ var/mail
 @dirrm usr/lib/locale/id_ID.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/id_ID.utf8
 @dirrm usr/lib/locale/id_ID
+@dirrm usr/lib/locale/hy_AM/LC_MESSAGES
+@dirrm usr/lib/locale/hy_AM.armscii8/LC_MESSAGES
+@dirrm usr/lib/locale/hy_AM.armscii8
+@dirrm usr/lib/locale/hy_AM
 @dirrm usr/lib/locale/hu_HU/LC_MESSAGES
 @dirrm usr/lib/locale/hu_HU.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/hu_HU.utf8
@@ -9722,6 +10746,8 @@ var/mail
 @dirrm usr/lib/locale/ga_IE.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/ga_IE.utf8
 @dirrm usr/lib/locale/ga_IE
+@dirrm usr/lib/locale/fy_NL/LC_MESSAGES
+@dirrm usr/lib/locale/fy_NL
 @dirrm usr/lib/locale/fr_LU@euro/LC_MESSAGES
 @dirrm usr/lib/locale/fr_LU@euro
 @dirrm usr/lib/locale/fr_LU/LC_MESSAGES
@@ -9918,6 +10944,12 @@ var/mail
 @dirrm usr/lib/locale/el_GR.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/el_GR.utf8
 @dirrm usr/lib/locale/el_GR
+@dirrm usr/lib/locale/el_CY/LC_MESSAGES
+@dirrm usr/lib/locale/el_CY.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/el_CY.utf8
+@dirrm usr/lib/locale/el_CY
+@dirrm usr/lib/locale/dz_BT/LC_MESSAGES
+@dirrm usr/lib/locale/dz_BT
 @dirrm usr/lib/locale/de_LU@euro/LC_MESSAGES
 @dirrm usr/lib/locale/de_LU@euro
 @dirrm usr/lib/locale/de_LU/LC_MESSAGES
@@ -9956,16 +10988,30 @@ var/mail
 @dirrm usr/lib/locale/cy_GB.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/cy_GB.utf8
 @dirrm usr/lib/locale/cy_GB
+@dirrm usr/lib/locale/csb_PL/LC_MESSAGES
+@dirrm usr/lib/locale/csb_PL
 @dirrm usr/lib/locale/cs_CZ/LC_MESSAGES
 @dirrm usr/lib/locale/cs_CZ.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/cs_CZ.utf8
 @dirrm usr/lib/locale/cs_CZ
+@dirrm usr/lib/locale/ca_IT/LC_MESSAGES
+@dirrm usr/lib/locale/ca_IT.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/ca_IT.utf8
+@dirrm usr/lib/locale/ca_IT
+@dirrm usr/lib/locale/ca_FR/LC_MESSAGES
+@dirrm usr/lib/locale/ca_FR.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/ca_FR.utf8
+@dirrm usr/lib/locale/ca_FR
 @dirrm usr/lib/locale/ca_ES@euro/LC_MESSAGES
 @dirrm usr/lib/locale/ca_ES@euro
 @dirrm usr/lib/locale/ca_ES/LC_MESSAGES
 @dirrm usr/lib/locale/ca_ES.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/ca_ES.utf8
 @dirrm usr/lib/locale/ca_ES
+@dirrm usr/lib/locale/ca_AD/LC_MESSAGES
+@dirrm usr/lib/locale/ca_AD.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/ca_AD.utf8
+@dirrm usr/lib/locale/ca_AD
 @dirrm usr/lib/locale/byn_ER/LC_MESSAGES
 @dirrm usr/lib/locale/byn_ER
 @dirrm usr/lib/locale/bs_BA/LC_MESSAGES
@@ -9994,6 +11040,8 @@ var/mail
 @dirrm usr/lib/locale/be_BY
 @dirrm usr/lib/locale/az_AZ.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/az_AZ.utf8
+@dirrm usr/lib/locale/as_IN.utf8/LC_MESSAGES
+@dirrm usr/lib/locale/as_IN.utf8
 @dirrm usr/lib/locale/ar_YE/LC_MESSAGES
 @dirrm usr/lib/locale/ar_YE.utf8/LC_MESSAGES
 @dirrm usr/lib/locale/ar_YE.utf8
@@ -10085,47 +11133,37 @@ var/mail
 @dirrm usr/lib/locale/aa_DJ.utf8
 @dirrm usr/lib/locale/aa_DJ
 @dirrm usr/lib/locale
+@dirrm usr/lib/krb5/plugins
+@dirrm usr/lib/krb5
 @dirrm usr/lib/gconv
 @dirrm usr/lib/gcc-lib
 @dirrm usr/lib/games
+@dirrm usr/lib/X11
 @dirrm usr/lib
-@dirrm usr/include
+@dirrm usr/kerberos/share/gnats
 @dirrm usr/kerberos/share/examples/krb5
 @dirrm usr/kerberos/share/examples
-@dirrm usr/kerberos/share/gnats
 @dirrm usr/kerberos/share
 @dirrm usr/kerberos
+@dirrm usr/include
 @dirrm usr/games
 @dirrm usr/etc
-@dirrm usr/doc
 @dirrm usr/bin
-@dirrm usr/X11R6/share
-@dirrm usr/X11R6/man
-@dirrm usr/X11R6/lib/tls
-@dirrm usr/X11R6/lib
-@dirrm usr/X11R6/include
-@dirrm usr/X11R6/bin
-@dirrm usr/X11R6
 @dirrm usr
 @dirrm sys
 @dirrm srv
 @dirrm selinux
 @dirrm sbin
-@dirrmtry proc
+@dirrm proc
 @dirrm opt
 @dirrm mnt
 @dirrm media
-@dirrm lib/tls/i686
-@dirrm lib/tls/i586
-@dirrm lib/tls/i486
 @dirrm lib/tls
-@dirrm lib/obsolete/linuxthreads
-@dirrm lib/obsolete
+@dirrm lib/rtkaio
 @dirrm lib/modules
 @dirrm lib
 @dirrm etc/yum.repos.d
 @dirrm etc/xinetd.d
-@dirrm etc/sysconfig/rhn
 @dirrm etc/sysconfig
 @dirrm etc/skel
 @dirrm etc/rpm
@@ -10138,8 +11176,8 @@ var/mail
 @dirrm etc/ld.so.conf.d
 @dirrm etc/default
 @dirrm etc/cron.daily
+@dirrm etc/blkid
 @dirrm etc/X11/sysconfig
-@dirrm etc/X11/starthere
 @dirrm etc/X11/serverconfig
 @dirrm etc/X11/applnk
 @dirrm etc/X11
