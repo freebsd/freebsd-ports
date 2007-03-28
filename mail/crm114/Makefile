@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	crm114
-PORTVERSION=	20061103
+PORTVERSION=	20070301
 # WARNING change versionname in CRM114RELEASENAME too.
 # portlint didn't like this variable at this place.
 # So I have to put it down in this file.
@@ -25,7 +25,7 @@ LIB_DEPENDS=	tre.6:${PORTSDIR}/textproc/libtre
 # there is no other then formail on this planet
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
-CRM114RELEASENAME=BlameDalkey
+CRM114RELEASENAME=BlameBaltar
 
 USE_GETTEXT=	yes
 USE_ICONV=	yes
@@ -44,7 +44,7 @@ CRM_FILES=	mailfilter.crm mailtrainer.crm procmailrc.recipe mailfilter.cf \
 		priolist.mfp whitelist.mfp blacklist.mfp classifytest.crm \
 		exectest.crm inserttest_a.crm inserttest_b.crm learntest.crm \
 		matchtest.crm overalterisolatedtest.crm windowtest.crm \
-		mailreaver.crm maillib.crm
+		mailreaver.crm shuffle.crm maillib.crm
 
 post-patch:
 	@${REINPLACE_CMD} -Ee 's,^((LD|C)FLAGS),#\1,;;s,^(prefix=),#\1,;;s,^(.*-install),#\1,' \
