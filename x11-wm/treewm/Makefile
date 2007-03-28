@@ -12,7 +12,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	freebsd-dr@durchnull.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window Manager that arranges the windows in a tree
 
 BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
