@@ -522,6 +522,7 @@
     SUBDIR += openttd
     SUBDIR += openyahtzee
     SUBDIR += orbital_eunuchs_sniper
+    SUBDIR += outerspace
     SUBDIR += p5-Algorithm-Pair-Best
     SUBDIR += p5-Algorithm-Pair-Swiss
     SUBDIR += p5-Baseball-Sabermetrics
