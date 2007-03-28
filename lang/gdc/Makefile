@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdc
-PORTVERSION=	0.21
+PORTVERSION=	0.23
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/dgcc/g:S/$/:gdc/g}
@@ -18,7 +18,7 @@ DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}:gdc \
 MAINTAINER=	ozawa@ongs.co.jp
 COMMENT=	D Front End for GCC
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 USE_BISON=	yes
 USE_BZIP2=	yes
@@ -42,23 +42,6 @@ PLIST_SUB=	GCC_VER=${GCC_VERSION} CONF_TARGET=${CONFIGURE_TARGET}
 
 MAN1=		gdc.1 gdmd.1
 
-.ifndef TARGET_GCC
-TARGET_GCC=	3.4	# default
-.elif ${TARGET_GCC} != 3.4 && ${TARGET_GCC} != 4.0
-.error it cannot be specified as TARGET_GCC other than 3.4 or 4.0
-.endif
-
-.if ${TARGET_GCC} == 4.0
-GCC_VERSION=	4.0.4
-GCC_REVISION=	20061228
-GCC_VERSIONSTRING=	4.0-${GCC_REVISION}
-GCC_MASTER_SITE_SUBDIR=	snapshots/${GCC_VERSIONSTRING}
-.else
-GCC_VERSION=	3.4.6
-GCC_VERSIONSTRING=	${GCC_VERSION}
-GCC_MASTER_SITE_SUBDIR=	releases/gcc-${GCC_VERSIONSTRING}
-.endif
-
 GCCDIR=		${SRCDIR}/gcc
 GDC_INC=	${PREFIX}/include/d/${GCC_VERSION}
 
@@ -69,20 +52,46 @@ GDC_INC=	${PREFIX}/include/d/${GCC_VERSION}
 IGNORE=		it is supported on FreeBSD 5.x and later
 .endif
 
+.ifndef TARGET_GCC
+.if ${OSVERSION} >= 700000
+TARGET_GCC=	4.1
+.else
+TARGET_GCC=	3.4
+.endif
+.elif ${TARGET_GCC} != 3.4 && ${TARGET_GCC} != 4.0 && ${TARGET_GCC} != 4.1
+.error it cannot be specified as TARGET_GCC other than 3.4, 4.0 or 4.1
+.endif
+
+.if ${TARGET_GCC} == 4.1
+GCC_VERSION=	4.1.3
+GCC_REVISION=	20070312
+GCC_VERSIONSTRING=	4.1-${GCC_REVISION}
+GCC_MASTER_SITE_SUBDIR=	snapshots/gcc-${GCC_VERSIONSTRING}
+.elif ${TARGET_GCC} == 4.0
+GCC_VERSION=	4.0.4
+GCC_VERSIONSTRING=	${GCC_VERSION}
+GCC_MASTER_SITE_SUBDIR=	releases/gcc-${GCC_VERSIONSTRING}
+.else
+GCC_VERSION=	3.4.6
+GCC_VERSIONSTRING=	${GCC_VERSION}
+GCC_MASTER_SITE_SUBDIR=	releases/gcc-${GCC_VERSIONSTRING}
+.endif
+
 .if ${ARCH} == "amd64"
-# I hope the GDC will support amd64.
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .endif
 
 pre-fetch:
 	@${ECHO_CMD}
-	@${ECHO_CMD} "======================================================="
+	@${ECHO_CMD} "========================================================="
 	@${ECHO_CMD}
 	@${ECHO_CMD} "GDC is built with GCC version '${TARGET_GCC}'."
 	@${ECHO_CMD}
-	@${ECHO_CMD} "You can set 'TARGET_GCC' variable to '3.4' or '4.0'."
+	@${ECHO_CMD} "You can set one of the following variables as TARGET_GCC."
 	@${ECHO_CMD}
-	@${ECHO_CMD} "======================================================="
+	@${ECHO_CMD} " '3.4' , '4.0' , '4.1'"
+	@${ECHO_CMD}
+	@${ECHO_CMD} "========================================================="
 	@${ECHO_CMD}
 
 post-extract:
@@ -104,13 +113,13 @@ pre-configure:
 
 post-build:
 	@${ECHO_CMD}
-	@${ECHO_CMD} "======================================================="
+	@${ECHO_CMD} "========================================================="
 	@${ECHO_CMD}
 	@${ECHO_CMD} "To test the Phobos run-time library run 'make check'."
 	@${ECHO_CMD}
 	@${ECHO_CMD} "Note that some tests will fail."
 	@${ECHO_CMD}
-	@${ECHO_CMD} "======================================================="
+	@${ECHO_CMD} "========================================================="
 	@${ECHO_CMD}
 
 do-install:
