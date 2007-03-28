@@ -155,7 +155,7 @@ check_dep_core()
 	deps=`grep -E "${pkgname}" ${INDEX} |grep -vE "^(${rmpkgs})" || :`
 	if [ -n "${deps}" ] ; then
 		log "${catport}: some port(s) depend on ${pkgname}:"
-		printf "%s\n" "${deps}" >&2
+		echo "${deps}" >&2
 		err=1
 	fi
 
@@ -170,7 +170,7 @@ check_dep_core()
 			echo >&2
 		fi
 		log "${catport}: some Makefiles mention ${portdir_grep}:"
-		printf "%s\n" "${r}" >&2
+		echo "${r}" >&2
 		err=1
 	fi
 
@@ -194,7 +194,7 @@ check_dep()
 			break
 		fi
 
-		printf "%s" "${res}" |${PAGER:-less}
+		echo "${res}" |${PAGER:-less}
 
 		if [ ${persist} -eq 0 ] ; then
 			break
