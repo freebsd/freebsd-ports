@@ -12358,6 +12358,7 @@ puf		ports/ftp/puf
 puff		ports/editors/puff
 pugs		ports/lang/pugs
 pulseaudio	ports/audio/pulseaudio
+pumperweb	ports/www/pumperweb
 punbb		ports/www/punbb
 pup		ports/print/pup
 puppet		ports/sysutils/puppet
