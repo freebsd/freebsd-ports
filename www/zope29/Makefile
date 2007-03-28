@@ -7,6 +7,7 @@
 
 PORTNAME=	zope29
 PORTVERSION=	2.9.7
+PORTREVISION=	1
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-final
