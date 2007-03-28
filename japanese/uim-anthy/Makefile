@@ -21,8 +21,6 @@ USE_GNOME=	gtk20
 LIB_DEPENDS=	anthy.1:${PORTSDIR}/japanese/anthy \
 		uim.4:${PORTSDIR}/textproc/uim
 
-BROKEN=		Incomplete pkg-plist
-
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
 CONFIGURE_ARGS=	--with-anthy
