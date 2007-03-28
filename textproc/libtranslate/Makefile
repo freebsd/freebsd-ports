@@ -19,7 +19,7 @@ USE_GETOPT_LONG=	yes
 USE_GNOME=		glib20 gnomehack intlhack
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
-INSTALLS_SHLIB=		yes
+USE_LDCONFIG=		yes
 CPPFLAGS=		-I${LOCALBASE}/include
 LDFLAGS=		-L${LOCALBASE}/lib
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -49,5 +49,8 @@ PLIST_SUB+=		TALKFILTERS="@comment "
 PLIST_SUB+=		TALKFILTERS=""
 LIB_DEPENDS+=		talkfilters:${PORTSDIR}/misc/talkfilters
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

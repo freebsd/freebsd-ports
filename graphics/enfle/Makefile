@@ -36,6 +36,7 @@ MAN1=		enfle.1
 post-patch:
 	${PERL} -pi -e 's/^(.*_la_LDFLAGS = -module)$$/\1 -avoid-version/' \
 		${WRKSRC}/plugins/*/*/Makefile.in
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/ltconfig
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/enfle.1 ${PREFIX}/man/man1
