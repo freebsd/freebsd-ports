@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Frame
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -34,10 +34,4 @@ MAN3=		Net::Frame.3 Net::Frame::Layer.3 \
 		Net::Frame::Layer::TCP.3 \
 		Net::Frame::Layer::UDP.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
