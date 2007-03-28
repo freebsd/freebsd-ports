@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	IPC-Run3
-PORTVERSION=	0.036
-PORTREVISION=	1
+PORTVERSION=	0.037
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IPC
@@ -27,10 +26,4 @@ MAN3=		IPC::Run3.3 \
 		IPC::Run3::ProfPP.3 \
 		IPC::Run3::ProfReporter.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
