@@ -1,0 +1,41 @@
+%%PYTHON_SITELIBDIR%%/app_service.py
+%%PYTHON_SITELIBDIR%%/app_service.pyc
+%%PYTHON_SITELIBDIR%%/app_service.pyo
+%%PYTHON_SITELIBDIR%%/atom.py
+%%PYTHON_SITELIBDIR%%/atom.pyc
+%%PYTHON_SITELIBDIR%%/atom.pyo
+%%PYTHON_SITELIBDIR%%/gbase.py
+%%PYTHON_SITELIBDIR%%/gbase.pyc
+%%PYTHON_SITELIBDIR%%/gbase.pyo
+%%PYTHON_SITELIBDIR%%/gbase_service.py
+%%PYTHON_SITELIBDIR%%/gbase_service.pyc
+%%PYTHON_SITELIBDIR%%/gbase_service.pyo
+%%PYTHON_SITELIBDIR%%/gcalendar.py
+%%PYTHON_SITELIBDIR%%/gcalendar.pyc
+%%PYTHON_SITELIBDIR%%/gcalendar.pyo
+%%PYTHON_SITELIBDIR%%/gcalendar_service.py
+%%PYTHON_SITELIBDIR%%/gcalendar_service.pyc
+%%PYTHON_SITELIBDIR%%/gcalendar_service.pyo
+%%PYTHON_SITELIBDIR%%/gdata.py
+%%PYTHON_SITELIBDIR%%/gdata.pyc
+%%PYTHON_SITELIBDIR%%/gdata.pyo
+%%PYTHON_SITELIBDIR%%/gdata_client.py
+%%PYTHON_SITELIBDIR%%/gdata_client.pyc
+%%PYTHON_SITELIBDIR%%/gdata_client.pyo
+%%PYTHON_SITELIBDIR%%/gdata_service.py
+%%PYTHON_SITELIBDIR%%/gdata_service.pyc
+%%PYTHON_SITELIBDIR%%/gdata_service.pyo
+%%PYTHON_SITELIBDIR%%/gspreadsheet.py
+%%PYTHON_SITELIBDIR%%/gspreadsheet.pyc
+%%PYTHON_SITELIBDIR%%/gspreadsheet.pyo
+%%PYTHON_SITELIBDIR%%/gspreadsheet_service.py
+%%PYTHON_SITELIBDIR%%/gspreadsheet_service.pyc
+%%PYTHON_SITELIBDIR%%/gspreadsheet_service.pyo
+%%EXAMPLESDIR%%/base/baseQueryExample.py
+%%EXAMPLESDIR%%/base/dryRunInsert.py
+%%EXAMPLESDIR%%/calendar/calendarExample.py
+%%EXAMPLESDIR%%/spreadsheets/spreadsheetExample.py
+@dirrm %%EXAMPLESDIR%%/spreadsheets
+@dirrm %%EXAMPLESDIR%%/calendar
+@dirrm %%EXAMPLESDIR%%/base
+@dirrm %%EXAMPLESDIR%%
