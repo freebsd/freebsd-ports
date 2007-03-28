@@ -35,20 +35,16 @@ share/locale/es/LC_MESSAGES/kooldock.mo
 share/locale/fr/LC_MESSAGES/kooldock.mo
 share/locale/pl/LC_MESSAGES/kooldock.mo
 share/locale/sv/LC_MESSAGES/kooldock.mo
-share/nls/POSIX
-share/nls/en_US.US-ASCII
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/icons/crystalsvg/64x64/apps
-@dirrmtry share/icons/crystalsvg/64x64
-@dirrmtry share/icons/crystalsvg/32x32/apps
-@dirrmtry share/icons/crystalsvg/32x32
-@dirrmtry share/icons/crystalsvg/16x16/apps
-@dirrmtry share/icons/crystalsvg/16x16
-@dirrmtry share/icons/crystalsvg/128x128/apps
-@dirrmtry share/icons/crystalsvg/128x128
-@dirrmtry share/icons/crystalsvg
-@dirrmtry share/icons
+@dirrm share/icons/crystalsvg/64x64/apps
+@dirrm share/icons/crystalsvg/64x64
+@dirrm share/icons/crystalsvg/32x32/apps
+@dirrm share/icons/crystalsvg/32x32
+@dirrm share/icons/crystalsvg/16x16/apps
+@dirrm share/icons/crystalsvg/16x16
+@dirrm share/icons/crystalsvg/128x128/apps
+@dirrm share/icons/crystalsvg/128x128
+@dirrm share/icons/crystalsvg
+@dirrm share/icons
 @dirrm share/apps/kooldock/icons/crystalsvg/64x64/apps
 @dirrm share/apps/kooldock/icons/crystalsvg/64x64
 @dirrm share/apps/kooldock/icons/crystalsvg/32x32/apps
@@ -69,4 +65,4 @@ share/nls/en_US.US-ASCII
 @dirrm share/apps/kooldock/backgrounds/border-black
 @dirrm share/apps/kooldock/backgrounds
 @dirrm share/apps/kooldock
-@dirrmtry share/apps
+@dirrm share/apps
