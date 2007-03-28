@@ -128,6 +128,7 @@
     SUBDIR += freenet6
     SUBDIR += freenx
     SUBDIR += freeradius
+    SUBDIR += freeradius-mysql
     SUBDIR += freevrrpd
     SUBDIR += freewais-sf
     SUBDIR += frickin
