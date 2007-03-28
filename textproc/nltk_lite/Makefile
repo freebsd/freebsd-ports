@@ -7,13 +7,15 @@
 #
 
 PORTNAME=	nltk_lite
-PORTVERSION=	0.6.6
+PORTVERSION=	0.7.1
 CATEGORIES=	textproc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:C/_.*//}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Lightweight Natural language toolkit written in python
+
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
