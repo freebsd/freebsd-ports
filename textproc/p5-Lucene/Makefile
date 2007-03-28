@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Lucene
-PORTVERSION=	0.09
+PORTVERSION=	0.13
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/T/TB/TBUSCH
@@ -23,4 +23,10 @@ CONFIGURE_ARGS+="INC=-I${LOCALBASE}/include -I${LOCALBASE}/lib"
 
 MAN3=	Lucene.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
