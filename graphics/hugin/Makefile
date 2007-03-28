@@ -30,6 +30,8 @@ USE_BZIP2=	yes
 USE_AUTOTOOLS=	autoconf:259:env autoheader:259:env aclocal:19:env \
 		automake:19:env libtool:15:env
 
+IS_INTERACTIVE=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} WXRC=${WXRC_CMD}

@@ -1,5 +1,5 @@
 --- bootstrap.orig	Mon Aug 21 01:19:33 2006
-+++ bootstrap	Thu Mar 22 12:59:45 2007
++++ bootstrap	Wed Mar 28 22:25:54 2007
 @@ -42,7 +42,7 @@
  	gettextize_version=`$GETTEXTIZE --version | sed 's/^[^0-9]*\([0-9.][0-9.]*\).*/\1/'`
  #	echo gettextize version: $gettextize_version
@@ -9,51 +9,3 @@
  		have_gettextize=true
  		;;
  	esac
-@@ -106,15 +106,17 @@
-     mkdir -p ./config
- fi
- 
--echo
--echo "*** WARNING ***"
--echo "*** We're about to run \"gettextize\" which may spew a few paragraphs"
--echo "*** at you and ask you to acknowledge it.  If it does this,"
--echo "*** just hit return to acknowledge gettext.  You DO NOT need to do"
--echo "*** anything that it asks of you except hitting return."
--echo
--
--$GETTEXTIZE --copy --force || exit $?
-+# we do not run gettextize since it is interactive and it seems that it
-+# is not mandatory - the gettext infrastructure is already present
-+#echo
-+#echo "*** WARNING ***"
-+#echo "*** We're about to run \"gettextize\" which may spew a few paragraphs"
-+#echo "*** at you and ask you to acknowledge it.  If it does this,"
-+#echo "*** just hit return to acknowledge gettext.  You DO NOT need to do"
-+#echo "*** anything that it asks of you except hitting return."
-+#echo
-+#
-+#$GETTEXTIZE --copy --force || exit $?
- 
- # Now we have to do a bit of hackery to setup for hugin
- # first reverse the changes to configure.ac etc.
-@@ -130,14 +132,14 @@
- 
- # then copy and move changes in srcdir/po to srcdir/src/hugin/po and srcdir/src/nona_gui/po
- # but be careful about POTFILES.in
--rm -f ./po/POTFILES.in
--cp -f ./po/* ./src/hugin/po
--mv -f ./po/* ./src/nona_gui/po
-+#rm -f ./po/POTFILES.in
-+#cp -f ./po/* ./src/hugin/po
-+#mv -f ./po/* ./src/nona_gui/po
- 
- #finally clean up
--rm -rf `find ./src/hugin/po ./src/nona_gui/po ./m4 -name *~`
--rm -rf ./m4/Makefile.am
--rm -rf ./m4/Makefile.in
-+#rm -rf `find ./src/hugin/po ./src/nona_gui/po ./m4 -name *~`
-+#rm -rf ./m4/Makefile.am
-+#rm -rf ./m4/Makefile.in
- 
- $ACLOCAL -I m4 || exit $?
- 
