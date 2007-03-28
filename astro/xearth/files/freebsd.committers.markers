@@ -85,7 +85,8 @@
  55.406124,	11.3397291,	"phk"				# Slagelse, Denmark
  48.095,	11.296,		"harti"				# Gilching, Germany
  48.16,		11.26,		"rse"				# Dachau, Germany
- 59.92,		10.75,		"eivind,des,tegge,anders"	# Oslo, Norway
+ 59.92,		10.75,		"eivind,anders"			# Oslo, Norway
+ 59.940,	10.775,		"des"				# Oslo, Norway
  43.71,		10.40,		"luigi"				# Pisa, Italy
  54.231,	10.291		"miwi"				# Preetz, Germany
  57.2,		10.2,		"sos"				# Klokkerholm, Denmark
