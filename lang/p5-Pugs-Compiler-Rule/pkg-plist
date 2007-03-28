@@ -3,6 +3,7 @@
 %%SITE_PERL%%/Pugs/Compiler/Rule.pm
 %%SITE_PERL%%/Pugs/Compiler/Token.pm
 %%SITE_PERL%%/Pugs/Emitter/Rule/Perl5.pm
+%%SITE_PERL%%/Pugs/Emitter/Rule/Perl5/CharClass.pm
 %%SITE_PERL%%/Pugs/Emitter/Rule/Perl5/Ratchet.pm
 %%SITE_PERL%%/Pugs/Grammar/Base.pm
 %%SITE_PERL%%/Pugs/Grammar/Precedence.pm
