@@ -948,6 +948,7 @@
     SUBDIR += pserv
     SUBDIR += pubcookie-login-server
     SUBDIR += publicfile
+    SUBDIR += pumperweb
     SUBDIR += punbb
     SUBDIR += pwebstats
     SUBDIR += py-HTMLgen
