@@ -23,6 +23,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,bjc250/} \
 		http://www.linuxprinting.org/download/printing/samsung-gdi/:gdi \
 		http://www.linuxprinting.org/download/printing/:lxm3200 \
 		http://homepage.powerup.com.au/~pbwest/lexmark/:lx5000 \
+		http://www.openprinting.org/download/printing/ghostscript-8.x/drivers/hl1250/:hl1250 \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/GPL/gs${GS_VERSION:S/.//}/:gs_srcs
 MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs,ports_jp_gs \
 			bjc250gs/:bjc250 \
@@ -46,7 +47,8 @@ DISTFILES=	${GS_SRCS}:gs_srcs \
 		${GDI_SRCS}:gdi \
 		${LXM3200_SRCS}:lxm3200 \
 		${LX5000_SRCS}:lx5000 \
-		${LEX7000_SRCS}:lx5000
+		${LEX7000_SRCS}:lx5000 \
+		${HL1250_SRCS}:hl1250
 DIST_SUBDIR=	ghostscript
 EXTRACT_ONLY=	${GS_SRCS}
 
@@ -226,6 +228,10 @@ LX5000_SRCS=	gdevlx50.c
 LEX7000=	lex7000
 LEX7000_SRCS=	gs6.0.lexmark7000.patch
 
+# HL1250 - additional driver for Brother HL-1050/1070/1250/1270N/1030/1240
+HL1250=		hl1250
+HL1250_SRCS=	gdevhl12.c
+
 # contributed uniprint profiles
 CONTRIB_UPP=	lqx70ch.upp lqx70cl.upp lqx70cm.upp \
 		stc740ih.upp stc740p.upp stc740pl.upp
@@ -317,6 +323,11 @@ post-extract:
 		${PATCH} -d ${WRKSRC}/${LEX7000} -f -s -N -E -p1 \
 		2>/dev/null || ${TRUE}
 
+# for HL1250 driver
+	${ECHO_MSG} ">>>   extracting ${HL1250_SRCS} ..."
+	${MKDIR} ${WRKSRC}/${HL1250}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${HL1250_SRCS} ${WRKSRC}/src
+
 post-patch:
 	${REINPLACE_CMD} -e 's|^DEVICE_DEVS|#DEVICE_DEVS|g' \
 		${WRKSRC}/src/unix-gcc.mak
@@ -400,6 +411,11 @@ pre-configure:
 # for LEX7000 driver
 	${ECHO_MSG} ">>>   adding ${LEX7000} driver to contrib.mak ..."
 	${CAT} ${FILESDIR}/lex7000.contrib.mak \
+		>> ${WRKSRC}/src/contrib.mak
+
+# for HL1250 driver
+	${ECHO_MSG} ">>>   adding ${HL1250} driver to contrib.mak ..."
+	${CAT} ${FILESDIR}/gdevhl12-hl1250.mak \
 		>> ${WRKSRC}/src/contrib.mak
 
 post-configure:

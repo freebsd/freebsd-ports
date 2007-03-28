@@ -52,3 +52,6 @@ SIZE (ghostscript/gdevlx50.c) = 99428
 MD5 (ghostscript/gs6.0.lexmark7000.patch) = fd5018c18351bf64805fe5727be196de
 SHA256 (ghostscript/gs6.0.lexmark7000.patch) = 509dfc02436639ce6b9f98465ec306dd2e7f9342feded043c78b0c9cf44021df
 SIZE (ghostscript/gs6.0.lexmark7000.patch) = 27361
+MD5 (ghostscript/gdevhl12.c) = 277c5ddac9c6fb0e2897e95265eb1ff1
+SHA256 (ghostscript/gdevhl12.c) = 0abaa60cbe950b9c923753a687181b775910ecff0848917641e281737f03527a
+SIZE (ghostscript/gdevhl12.c) = 22001
