@@ -1,14 +1,14 @@
---- youtube-dl.orig	Sat Jan 20 02:44:25 2007
-+++ youtube-dl	Sat Jan 20 23:53:11 2007
-@@ -167,6 +167,7 @@
- cmdl_parser.add_option('-s', '--simulate', action='store_true', dest='simulate', help='do not download video')
+--- youtube-dl.orig	Wed Mar 28 22:12:49 2007
++++ youtube-dl	Wed Mar 28 22:11:38 2007
+@@ -203,6 +203,7 @@
  cmdl_parser.add_option('-t', '--title', action='store_true', dest='use_title', help='use title in file name')
+ cmdl_parser.add_option('-l', '--literal', action='store_true', dest='use_literal', help='use literal title in file name')
  cmdl_parser.add_option('-n', '--netrc', action='store_true', dest='use_netrc', help='use .netrc authentication data')
 +cmdl_parser.add_option('-a', '--avi', action='store_true', dest='use_avi', help='output file in avi format')
+ cmdl_parser.add_option('-g', '--get-url', action='store_true', dest='get_url', help='print final video URL only')
  (cmdl_opts, cmdl_args) = cmdl_parser.parse_args()
  
- # Get video URL
-@@ -232,19 +233,30 @@
+@@ -275,13 +276,21 @@
  
  # Get output file name 
  if cmdl_opts.outfile is None:
@@ -16,7 +16,7 @@
 +	if cmdl_opts.use_avi:
 +		ext = 'avi'
 +	else:
-+		ext='flv'
++		ext = 'flv'
 +	video_filename = '%s.%s' % (video_url_id,ext)
  else:
  	video_filename = cmdl_opts.outfile
@@ -32,28 +32,29 @@
 +		sys.stderr.write('Warning: video file name does not end in .flv\n')
  
  # Test writable file
- if not cmdl_opts.simulate:
- 	try:
--		disk_test = open(video_filename, 'wb')
--		disk_test.close()
-+		if cmdl_opts.use_avi:
-+			video_file = os.popen('ffmpeg -y -i - "%s" > %s 2> %s' % (video_filename, os.path.devnull, os.path.devnull), 'wb')
-+		else:
-+			disk_test = open(video_filename, 'wb')
-+			disk_test.close()
+ if not (cmdl_opts.simulate or cmdl_opts.get_url):
+@@ -328,7 +337,10 @@
+ 	if cmdl_opts.simulate or cmdl_opts.get_url:
+ 		sys.exit()
  
- 	except (OSError, IOError):
- 		sys.exit('Error: unable to open %s for writing.' % video_filename)
-@@ -317,7 +329,11 @@
- # Rename video file if needed
- if cmdl_opts.use_title:
+-	video_file = open(video_filename, 'wb')
++	if cmdl_opts.use_avi:
++		video_file = os.popen('ffmpeg -y -i - "%s" > %s 2> %s' % (video_filename, os.path.devnull, os.path.devnull), 'wb')
++	else:
++		video_file = open(video_filename, 'wb')
  	try:
--		final_filename = '%s-%s.flv' % (title_string_norm(video_title), video_url_id)
+ 		video_len = long(video_data.info()['Content-length'])
+ 		video_len_str = format_bytes(video_len)
+@@ -382,7 +394,11 @@
+ 			prefix = title_string_norm(video_title)
+ 		else:
+ 			prefix = title_string_touch(video_title)
+-		final_filename = '%s-%s.flv' % (prefix, video_url_id)
 +		if cmdl_opts.use_avi:
 +			ext = 'avi'
 +		else:
 +			ext = 'flv'
-+		final_filename = '%s-%s.%s' % (title_string_norm(video_title), video_url_id, ext)
++		final_filename = '%s-%s.%s' % (prefix, video_url_id, ext)		
  		os.rename(video_filename, final_filename)
  		cond_print('Video file renamed to %s\n' % final_filename)
  	
