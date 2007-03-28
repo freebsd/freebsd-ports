@@ -4941,13 +4941,10 @@ ja-foldoc-fpw	ports/japanese/foldoc-fpw
 ja-freepwing	ports/japanese/freepwing
 ja-fumeikai-fpw	ports/japanese/fumeikai-fpw
 ja-gaim		ports/japanese/gaim
-ja-gal		ports/japanese/gal
 ja-gawk		ports/japanese/gawk
 ja-gd		ports/japanese/gd
 ja-ghostscript-gnu-jpnfont	ports/japanese/ghostscript-gnu-jpnfont
 ja-gicq		ports/japanese/gicq
-ja-gnome	ports/japanese/gnome
-ja-gnomelibs	ports/japanese/gnomelibs
 ja-gorua	ports/japanese/gorua
 ja-gqmpeg	ports/japanese/gqmpeg
 ja-grep		ports/japanese/grep
