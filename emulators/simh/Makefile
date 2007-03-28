@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sim
+PORTNAME=	simh
 PORTVERSION=	3.7
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/
-DISTNAME=	${PORTNAME}hv37-0
+DISTNAME=	${PORTNAME}v37-0
 
 MAINTAINER=	trasz@pin.if.uz.zgora.pl
 COMMENT=	Emulates classic DEC, HP, GRI, IBM, Altair, SDS, Honeywell, and others
@@ -30,7 +30,7 @@ BIN_FILES=	altair    h316   ibm1130 nova  pdp15 pdp9 vax780 \
 
 PORTDOCS=	0readme_37.txt 0readme_ethernet.txt
 
-PLIST_FILES=	${BIN_FILES:S/^/bin\//g} %%DATADIR%%/ka655x.bin bin/sim-eclipse
+PLIST_FILES=	${BIN_FILES:S/^/bin\//g} %%DATADIR%%/ka655x.bin bin/simh-eclipse
 PLIST_DIRS=	%%DATADIR%%
 
 SUB_FILES+=	pkg-message
@@ -51,8 +51,8 @@ do-install:
 .for file in ${BIN_FILES}
 	${INSTALL_PROGRAM} ${WRKDIR}/BIN/${file} ${PREFIX}/bin
 .endfor
-# eclipse conflicts with java/eclipse, install it as sim-eclipse
-	${INSTALL_PROGRAM} ${WRKDIR}/BIN/eclipse ${PREFIX}/bin/sim-eclipse
+# eclipse conflicts with java/eclipse, install it as simh-eclipse
+	${INSTALL_PROGRAM} ${WRKDIR}/BIN/eclipse ${PREFIX}/bin/simh-eclipse
 
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/VAX/ka655x.bin ${DATADIR}

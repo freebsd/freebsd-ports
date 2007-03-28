@@ -116,7 +116,7 @@
     SUBDIR += rtc
     SUBDIR += sdlmame
     SUBDIR += sdlmess
-    SUBDIR += sim
+    SUBDIR += simh
     SUBDIR += sim6811
     SUBDIR += ski
     SUBDIR += skyeye
