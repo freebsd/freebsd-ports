@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	exaile
-DISTVERSION=	0.2.9b
+DISTVERSION=	0.2.9
 CATEGORIES=	audio
 MASTER_SITES=	http://www.exaile.org/files/ GENTOO/distfiles
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -21,6 +21,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_SITELIBDIR}/gtk-2.0/sexy.so:${PORTSDIR}/x11-toolkits/py-sexy \
 		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23
 
+USE_GETTEXT=	yes
 USE_GNOME=	pygtk2 pygnomeextras
 USE_GSTREAMER=	python
 USE_PYTHON=	yes
