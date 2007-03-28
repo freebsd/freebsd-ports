@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	openxpki-deployment
-PORTVERSION=	0.9.720
+PORTVERSION=	0.9.781
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openxpki
 PKGNAMEPREFIX=	p5-
 DIST_SUBDIR=	openxpki
 
-MAINTAINER=	svysh@cryptocom.ru
+MAINTAINER=	svysh@pn.sinp.msu.ru
 COMMENT=	Perl based enterprise class trustcenter software for PKI
 
 BUILD_DEPENDS=	\
