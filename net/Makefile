@@ -593,6 +593,7 @@
     SUBDIR += pear-SOAP
     SUBDIR += pear-XML_RPC
     SUBDIR += pecl-cvsclient
+    SUBDIR += pecl-geoip
     SUBDIR += pecl-radius
     SUBDIR += pecl-yaz
     SUBDIR += pen
