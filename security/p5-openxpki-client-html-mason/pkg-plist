@@ -1,15 +1,23 @@
 %%SITE_PERL%%/OpenXPKI/Client/HTML/Mason.pm
 %%SITE_PERL%%/OpenXPKI/Client/HTML/Mason/ApacheHandler.pm
+%%SITE_PERL%%/OpenXPKI/Client/HTML/Mason/CRR.pm
+%%SITE_PERL%%/OpenXPKI/Client/HTML/Mason/Config.pm
 %%SITE_PERL%%/OpenXPKI/Client/HTML/Mason/Javascript.pm
 %%SITE_PERL%%/OpenXPKI/Client/HTML/Mason/Menu.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/HTML/Mason/.packlist
 %%EXAMPLESDIR%%/eg/openxpki-mason-cgi.conf
 %%EXAMPLESDIR%%/eg/openxpki-mason-mod_perl.conf
 %%DATADIR%%/bin/openxpki.cgi
+%%DATADIR%%/htdocs/Menu/Query/index.html
+%%DATADIR%%/htdocs/Renderer/Command/default.mhtml
+%%DATADIR%%/htdocs/Renderer/Service/GET_AUTHENTICATION_STACK.mhtml
+%%DATADIR%%/htdocs/Renderer/Service/default.mhtml
+%%DATADIR%%/htdocs/Request/index.html
 %%DATADIR%%/htdocs/authentication/auth_stack.mhtml
 %%DATADIR%%/htdocs/authentication/autohandler
 %%DATADIR%%/htdocs/authentication/close_form.mhtml
 %%DATADIR%%/htdocs/authentication/dhandler
+%%DATADIR%%/htdocs/authentication/login.mas
 %%DATADIR%%/htdocs/authentication/open_form.mhtml
 %%DATADIR%%/htdocs/authentication/passwd.mhtml
 %%DATADIR%%/htdocs/authentication/pki_realm.mhtml
@@ -17,6 +25,7 @@
 %%DATADIR%%/htdocs/authentication/session.mhtml
 %%DATADIR%%/htdocs/authentication/shibboleth.mhtml
 %%DATADIR%%/htdocs/authentication/sso.mhtml
+%%DATADIR%%/htdocs/authentication/x509.mhtml
 %%DATADIR%%/htdocs/autohandler
 %%DATADIR%%/htdocs/binary/autohandler
 %%DATADIR%%/htdocs/binary/dhandler
@@ -29,6 +38,7 @@
 %%DATADIR%%/htdocs/css/openxpki.css
 %%DATADIR%%/htdocs/css/sinorcaish-print.css
 %%DATADIR%%/htdocs/css/sinorcaish-screen.css
+%%DATADIR%%/htdocs/favicon.ico
 %%DATADIR%%/htdocs/images/openxpki_logo.png
 %%DATADIR%%/htdocs/images/openxpki_sinorcaish.png
 %%DATADIR%%/htdocs/images/search.png
@@ -37,14 +47,20 @@
 %%DATADIR%%/htdocs/lib/field_to_i18n.mhtml
 %%DATADIR%%/htdocs/lib/get_deep_error.mhtml
 %%DATADIR%%/htdocs/lib/get_menu.mhtml
+%%DATADIR%%/htdocs/lib/getsession.mhtml
 %%DATADIR%%/htdocs/lib/html/a.mhtml
 %%DATADIR%%/htdocs/lib/html/hidden.mhtml
 %%DATADIR%%/htdocs/lib/html/input.mhtml
 %%DATADIR%%/htdocs/lib/html/safe.mhtml
 %%DATADIR%%/htdocs/lib/html/select.mhtml
+%%DATADIR%%/htdocs/lib/html/select_date.mhtml
 %%DATADIR%%/htdocs/lib/init_menu.mhtml
 %%DATADIR%%/htdocs/lib/javascript.mhtml
 %%DATADIR%%/htdocs/lib/language.mhtml
+%%DATADIR%%/htdocs/lib/paging.mhtml
+%%DATADIR%%/htdocs/lib/process_response.mhtml
+%%DATADIR%%/htdocs/lib/send_command_msg.mhtml
+%%DATADIR%%/htdocs/lib/send_service_msg.mhtml
 %%DATADIR%%/htdocs/lib/url.mhtml
 %%DATADIR%%/htdocs/service/api/ca_cert_info.html
 %%DATADIR%%/htdocs/service/api/cert_full_info.html
@@ -63,16 +79,17 @@
 %%DATADIR%%/htdocs/service/api/set_secret.html
 %%DATADIR%%/htdocs/service/autohandler
 %%DATADIR%%/htdocs/service/close_form.mhtml
-%%DATADIR%%/htdocs/service/create_crr/get_certificate.mhtml
-%%DATADIR%%/htdocs/service/create_crr/get_compromise_time.mhtml
-%%DATADIR%%/htdocs/service/create_crr/get_reason.mhtml
-%%DATADIR%%/htdocs/service/create_crr/get_workflow_type.mhtml
+%%DATADIR%%/htdocs/service/create_crr/error.mhtml
+%%DATADIR%%/htdocs/service/create_crr/form.html
+%%DATADIR%%/htdocs/service/create_crr/highlight_error.mhtml
 %%DATADIR%%/htdocs/service/create_crr/index.html
+%%DATADIR%%/htdocs/service/create_crr/search.mhtml
 %%DATADIR%%/htdocs/service/create_csr/create_workflow.mhtml
 %%DATADIR%%/htdocs/service/create_csr/get_ie_pkcs10.mhtml
 %%DATADIR%%/htdocs/service/create_csr/get_info.mhtml
 %%DATADIR%%/htdocs/service/create_csr/get_keygen.mhtml
-%%DATADIR%%/htdocs/service/create_csr/get_keysettings.mhtml
+%%DATADIR%%/htdocs/service/create_csr/get_keyparameters.mhtml
+%%DATADIR%%/htdocs/service/create_csr/get_keytype.mhtml
 %%DATADIR%%/htdocs/service/create_csr/get_password.mhtml
 %%DATADIR%%/htdocs/service/create_csr/get_pkcs10.mhtml
 %%DATADIR%%/htdocs/service/create_csr/get_profile.mhtml
@@ -108,8 +125,12 @@
 %%DATADIR%%/htdocs/service/smartcard_personalization/success.mhtml
 %%DATADIR%%/htdocs/service/smartcard_personalization/waiting_for_approval.mhtml
 %%DATADIR%%/htdocs/service/smartcard_personalization/waiting_for_issuance.mhtml
+%%DATADIR%%/htdocs/service/workflow/activity/approve_crr.html
 %%DATADIR%%/htdocs/service/workflow/activity/approve_csr.html
+%%DATADIR%%/htdocs/service/workflow/activity/cancel_crr_approval.html
 %%DATADIR%%/htdocs/service/workflow/activity/cancel_csr_approval.html
+%%DATADIR%%/htdocs/service/workflow/activity/change_crr_invalidity_time.html
+%%DATADIR%%/htdocs/service/workflow/activity/change_crr_reason.html
 %%DATADIR%%/htdocs/service/workflow/activity/change_csr_info.html
 %%DATADIR%%/htdocs/service/workflow/activity/change_csr_profile.html
 %%DATADIR%%/htdocs/service/workflow/activity/change_csr_role.html
@@ -117,18 +138,25 @@
 %%DATADIR%%/htdocs/service/workflow/activity/change_csr_subject_alt_name.html
 %%DATADIR%%/htdocs/service/workflow/activity/change_csr_subject_style.html
 %%DATADIR%%/htdocs/service/workflow/activity/continue.html
+%%DATADIR%%/htdocs/service/workflow/activity/continue_issuance.html
 %%DATADIR%%/htdocs/service/workflow/activity/dhandler
 %%DATADIR%%/htdocs/service/workflow/activity/execute_csr.html
 %%DATADIR%%/htdocs/service/workflow/activity/export_csr.html
+%%DATADIR%%/htdocs/service/workflow/activity/fail_workflow.html
 %%DATADIR%%/htdocs/service/workflow/activity/persist_csr.html
 %%DATADIR%%/htdocs/service/workflow/activity/persist_csrs.html
+%%DATADIR%%/htdocs/service/workflow/activity/reject_crr.html
 %%DATADIR%%/htdocs/service/workflow/activity/reject_csr.html
+%%DATADIR%%/htdocs/service/workflow/activity/revoke_certificate.html
+%%DATADIR%%/htdocs/service/workflow/bulk_approval.html
 %%DATADIR%%/htdocs/service/workflow/create_instance.html
 %%DATADIR%%/htdocs/service/workflow/get_workflow_instance_info.html
 %%DATADIR%%/htdocs/service/workflow/list_instances.html
 %%DATADIR%%/htdocs/service/workflow/list_types.html
 %%DATADIR%%/htdocs/service/workflow/search_instances.html
+%%DATADIR%%/htdocs/service/workflow/show_csr_brief.html
 %%DATADIR%%/htdocs/service/workflow/show_instance.html
+%%DATADIR%%/htdocs/service/workflow/show_pending_requests.html
 %%DATADIR%%/htdocs/service/workflow/start_data_exchange_export.html
 %%DATADIR%%/htdocs/syshandler
 @dirrmtry %%DATADIR%%/htdocs/service/workflow/activity
@@ -145,6 +173,12 @@
 @dirrmtry %%DATADIR%%/htdocs/css
 @dirrmtry %%DATADIR%%/htdocs/binary
 @dirrmtry %%DATADIR%%/htdocs/authentication
+@dirrmtry %%DATADIR%%/htdocs/Request
+@dirrmtry %%DATADIR%%/htdocs/Renderer/Service
+@dirrmtry %%DATADIR%%/htdocs/Renderer/Command
+@dirrmtry %%DATADIR%%/htdocs/Renderer
+@dirrmtry %%DATADIR%%/htdocs/Menu/Query
+@dirrmtry %%DATADIR%%/htdocs/Menu
 @dirrmtry %%DATADIR%%/htdocs
 @dirrmtry %%DATADIR%%/bin
 @dirrmtry %%DATADIR%%
