@@ -8,14 +8,11 @@
 PORTNAME=	poseidon
 PORTVERSION=	4.2.1
 CATEGORIES=	java devel
-MASTER_SITES=	ftp://ftp.gentleware.org/ \
-		http://download.gentleware.org/ \
-		ftp://download.gentleware.biz/ \
-		http://download.gentleware.biz/ \
-		ftp://ftp.beine-computer.de/pub/distfiles/
+MASTER_SITES=	ftp://88.198.45.102/ \
+		http://88.198.45.102:81/
 DISTNAME=	${PORTNAME}${EDITION}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemoliu@gmail.com
 COMMENT=	A popular UML CASE tool
 
 USE_ZIP=	yes
