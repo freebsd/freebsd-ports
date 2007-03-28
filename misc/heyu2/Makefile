@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	heyu2
-PORTVERSION=	2.0.b.8.1
+PORTVERSION=	2.0.b.9
 CATEGORIES=	misc
 MASTER_SITES=	http://www.heyu.org/download/
-DISTNAME=	heyu-2.0beta.8.1
+DISTNAME=	heyu-2.0beta.9
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mstowe@chicago.us.mensa.org
@@ -19,7 +19,7 @@ CONFLICTS=	heyu-[0-9]*
 
 #IS_INTERACTIVE=	yes
 ALL_TARGET=	all
-WRKSRC=		${WRKDIR}/heyu-2.0beta.8.1
+WRKSRC=		${WRKDIR}/heyu-2.0beta.9
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	freebsd
