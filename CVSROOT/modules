@@ -3031,6 +3031,7 @@ freenx		ports/net/freenx
 freepops	ports/mail/freepops
 freera		ports/games/freera
 freeradius	ports/net/freeradius
+freeradius-mysql	ports/net/freeradius-mysql
 freeride	ports/devel/freeride
 freesbie	ports/sysutils/freesbie
 freesci		ports/games/freesci
