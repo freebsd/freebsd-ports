@@ -1,0 +1,29 @@
+--- ./tools/etc/buildmagic/build-common.xml.orig	Sun Mar 25 20:25:52 2007
++++ ./tools/etc/buildmagic/build-common.xml	Sun Mar 25 20:27:18 2007
+@@ -2,7 +2,7 @@
+ 
+   <!-- Make sure we have the right version of Ant -->
+   <property name="buildmagic.ant16.baseversion" value="1.6"/>
+-
++  <property name="buildmagic.ant17.baseversion" value="1.7"/>
+   <!--
+      | Add new conditions for other supported Ant versions when they
+      | become avaialble.
+@@ -12,13 +12,16 @@
+     <or>
+       <contains string="${ant.version}" 
+ 	        substring="Ant version ${buildmagic.ant16.baseversion}"/>
++      <contains string="${ant.version}"
++        substring="Ant version ${buildmagic.ant17.baseversion}"/>
+     </or>
+   </condition>
+ 
+   <fail unless="buildmagic.ant.compatible">
+   Unsupported Ant version:
+     ${ant.version}
+-  Please install a version which is compatible with Ant ${buildmagic.ant16.baseversion}.
++  Please install a version which is compatible with Ant ${buildmagic.ant16.baseversion}
++  or ${buildmagic.ant17.baseversion}.
+   </fail>
+ 
+   <!-- JDK Detection -->

@@ -1,28 +1,32 @@
-# ports collection makefile for: jboss2
-# Date created:                  16 April 2002
-# Whom:                          Ernst de Haan <znerd@FreeBSD.org>
+# ports collection makefile for: jboss5
+# Date created:                  7 May 2007
+# Whom:                          nemoliu@gmail.com <nemoliu@gmail.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	${APP_TITLE:L}
-PORTVERSION=	4.0.5.GA
+PORTVERSION=	5.0.0.b1
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}.Beta1-src
 
-MAINTAINER=	jonc@chen.org.nz
-COMMENT=	Open-source J2EE application server (4.x family)
+MAINTAINER=	nemoliu@gmail.com
+COMMENT=	Open-source J2EE application server (5.x family)
 
 BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant
 
-LATEST_LINK=	jboss4
+LATEST_LINK=	jboss5
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
+USE_ANT=	yes
 
-USE_RC_SUBR=	YES
+MAKE_ARGS=	-buildfile build/build.xml
+
+USE_RC_SUBR=	jboss5.sh
+SUB_FILES=	pkg-install pkg-deinstall pkg-message daemonctl.1 daemonctl.c
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
@@ -48,55 +52,47 @@ PID_FILE=	/var/run/${APP_SHORTNAME}.pid
 JAVA_OPTS=
 JAVA_CP=	bin/run.jar:${JAVA_HOME}/lib/tools.jar
 JAVA_MAIN=	org.jboss.Main
-DAEMONCTL_DIR=	${FILESDIR}
-DAEMONCTL_FILES=daemonctl.c daemonctl.1 startup.sh pkg-message
 MAN1=		${CONTROL_SCRIPT_NAME}.1
 
-JBOSSOUTPUT=	${WRKSRC}/build/output/${PORTNAME}-${PORTVERSION:S/.s/SP/}
+JBOSSOUTPUT=	${WRKSRC}/build/output/${PORTNAME}-${PORTVERSION:R}.Beta1
 APP_HOME_FILES=	bin client lib server
 
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 PLIST_FILES=	${CONTROL_SCRIPT:S,^${PREFIX}/,,} \
-		${STARTUP_SCRIPT:S,^${PREFIX}/,,} \
 		${STDOUT_LOG:S,^${PREFIX}/,,} \
 		${STDERR_LOG:S,^${PREFIX}/,,}
 
-PKGMESSAGE=	${WRKDIR}/pkg-message.fmt
+SUB_LIST=	APP_HOME=${APP_HOME} \
+		APP_SHORTNAME=${APP_SHORTNAME} \
+		APP_TITLE=${APP_TITLE} \
+		CONTROL_SCRIPT=${CONTROL_SCRIPT} \
+		CONTROL_SCRIPT_MANPAGE_TITLE=${CONTROL_SCRIPT_MANPAGE_TITLE} \
+		CONTROL_SCRIPT_NAME=${CONTROL_SCRIPT_NAME} \
+		GROUP=${GROUP} \
+		JAVA=${JAVA} \
+		JAVA_CP=${JAVA_CP} \
+		JAVA_HOME=${JAVA_HOME} \
+		JAVA_MAIN=${JAVA_MAIN} \
+		JAVA_OPTS=${JAVA_OPTS} \
+		JAVA_PORT_VERSION=${JAVA_PORT_VERSION} \
+		JAVA_PORT_OS_DESCRIPTION=${JAVA_PORT_OS_DESCRIPTION} \
+		JAR_FILE=${JAR_FILE} \
+		LOG_DIR=${LOG_DIR} \
+		PID_FILE=${PID_FILE} \
+		PKGNAME=${PKGNAME} \
+		PORTNAME=${PORTNAME} \
+		PORTVERSION=${PORTVERSION} \
+		PREFIX=${PREFIX} \
+		STARTUP_SCRIPT=${STARTUP_SCRIPT} \
+		STDERR_LOG=${STDERR_LOG} \
+		STDOUT_LOG=${STDOUT_LOG} \
+		STOP_TIMEOUT=${STOP_TIMEOUT} \
+		USER=${USER}
 
 .include <bsd.port.pre.mk>
 
-do-configure:
-	@(cd ${DAEMONCTL_DIR} && ${CP} ${DAEMONCTL_FILES} ${WRKDIR})
-	@(cd ${WRKDIR} && ${REINPLACE_CMD} \
-		-e "s|%%RC_SUBR%%|${RC_SUBR}|g;" \
-		-e "s|%%APP_HOME%%|${APP_HOME}|g;" \
-		-e "s|%%APP_SHORTNAME%%|${APP_SHORTNAME}|g;" \
-		-e "s|%%APP_TITLE%%|${APP_TITLE}|g;" \
-		-e "s|%%CONTROL_SCRIPT%%|${CONTROL_SCRIPT}|g;" \
-		-e "s|%%CONTROL_SCRIPT_MANPAGE_TITLE%%|${CONTROL_SCRIPT_MANPAGE_TITLE}|g;" \
-		-e "s|%%CONTROL_SCRIPT_NAME%%|${CONTROL_SCRIPT_NAME}|g;" \
-		-e "s|%%GROUP%%|${GROUP}|g;" \
-		-e "s|%%JAVA%%|${JAVA}|g;" \
-		-e "s|%%JAVA_CP%%|${JAVA_CP}|g;" \
-		-e "s|%%JAVA_HOME%%|${JAVA_HOME}|g;" \
-		-e "s|%%JAVA_MAIN%%|${JAVA_MAIN}|g;" \
-		-e "s|%%JAVA_OPTS%%|${JAVA_OPTS}|g;" \
-		-e "s|%%JAVA_PORT_VERSION%%|${JAVA_PORT_VERSION}|g;" \
-		-e "s|%%JAVA_PORT_OS_DESCRIPTION%%|${JAVA_PORT_OS_DESCRIPTION}|g;" \
-		-e "s|%%JAR_FILE%%|${JAR_FILE}|g;" \
-		-e "s|%%LOG_DIR%%|${LOG_DIR}|g;" \
-		-e "s|%%PID_FILE%%|${PID_FILE}|g;" \
-		-e "s|%%PKGNAME%%|${PKGNAME}|g;" \
-		-e "s|%%PORTNAME%%|${PORTNAME}|g;" \
-		-e "s|%%PORTVERSION%%|${PORTVERSION}|g;" \
-		-e "s|%%PREFIX%%|${PREFIX}|g;" \
-		-e "s|%%STARTUP_SCRIPT%%|${STARTUP_SCRIPT}|g;" \
-		-e "s|%%STDERR_LOG%%|${STDERR_LOG}|g;" \
-		-e "s|%%STDOUT_LOG%%|${STDOUT_LOG}|g;" \
-		-e "s|%%STOP_TIMEOUT%%|${STOP_TIMEOUT}|g;" \
-		-e "s|%%USER%%|${USER}|g;" ${DAEMONCTL_FILES})
-	@${FMT} -s 80 ${WRKDIR}/pkg-message >${PKGMESSAGE}
-
-post-configure:
+pre-patch:
 	@${ECHO_MSG} "Installation settings:"
 	@${ECHO_MSG} "   Destination directory:    ${APP_HOME}"
 	@${ECHO_MSG} "   Control program location: ${CONTROL_SCRIPT}"
@@ -110,21 +106,17 @@ post-configure:
 	@${ECHO_MSG} "   Starting after install:   ${AUTO_START}"
 	@${ECHO_MSG} "   Stop time-out:            ${STOP_TIMEOUT} sec."
 
-do-build:
-	(cd ${WRKDIR} && ${CC} ${CFLAGS} -o ${CONTROL_SCRIPT_NAME} daemonctl.c)
-	(cd ${WRKSRC}/build && ${SETENV} JAVA_HOME="${JAVA_HOME}" PATH="${JAVA_HOME}/bin:${PATH}" ${SH} build.sh)
-
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
+	cd ${WRKDIR} && ${CC} ${CFLAGS} -o ${CONTROL_SCRIPT_NAME} daemonctl.c
 	${MKDIR} ${APP_HOME} && ${CHOWN} ${USER}:${GROUP} ${APP_HOME}
 	${MKDIR} ${LOG_DIR} && ${CHOWN} ${USER}:${GROUP} ${LOG_DIR}
 	(cd ${JBOSSOUTPUT} && ${FIND} ${APP_HOME_FILES} |\
 		${CPIO} -pdmu -R ${USER}:${GROUP} ${APP_HOME})
 	${INSTALL} -o ${USER} -g ${GROUP} -m 06754\
 		${WRKDIR}/${CONTROL_SCRIPT_NAME} ${CONTROL_SCRIPT}
-	${INSTALL_SCRIPT} ${WRKDIR}/startup.sh ${STARTUP_SCRIPT}
 	${INSTALL} -o ${USER} -g ${GROUP} -m 0640 /dev/null ${STDOUT_LOG}
 	${INSTALL} -o ${USER} -g ${GROUP} -m 0640 /dev/null ${STDERR_LOG}
 	${INSTALL} -o ${USER} -g ${GROUP} -m 0640 /dev/null ${PID_FILE}
