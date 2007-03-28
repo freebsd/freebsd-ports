@@ -2,7 +2,7 @@
 #
 # %%APP_TITLE%% startup script.
 #
-# $FreeBSD: /tmp/pcvs/ports/java/jboss5/files/Attic/startup.sh,v 1.4 2006-06-13 17:43:14 glewis Exp $
+# $FreeBSD$
 #
 
 # PROVIDE: %%APP_SHORTNAME%%

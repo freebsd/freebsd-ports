@@ -5,7 +5,7 @@
 # * Checks if the JBoss PID file exists. If it does, it kills the
 #   JBoss process and removes the PID file.
 #
-# $FreeBSD: /tmp/pcvs/ports/java/jboss5/Attic/pkg-deinstall,v 1.2 2003-07-14 10:03:13 des Exp $
+# $FreeBSD$
 #
 
 # Make sure we're in the right stage of the process

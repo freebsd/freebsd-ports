@@ -3,7 +3,7 @@
 # Checks if the 'www' user and group exist. If they don't, then
 # an attempt is made to create both.
 #
-# $FreeBSD: /tmp/pcvs/ports/java/jboss5/Attic/pkg-install,v 1.1 2002-04-26 21:54:15 znerd Exp $
+# $FreeBSD$
 #
 
 # Make sure we're called during the 'make install' process
