@@ -40,9 +40,8 @@ CONFIGURE_ARGS+=	--enable-gtkspell
 CONFIGURE_ARGS+=	--disable-gtkspell
 .endif
 
-.if ${OSVERSION} < 500000
-BROKEN=	Doesn't build on 4.x
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

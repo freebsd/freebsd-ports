@@ -20,7 +20,7 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gdkpixbuf libglade
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-gtkgl=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

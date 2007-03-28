@@ -36,6 +36,9 @@ EG_DST_DIR=	${PREFIX}/share/examples/py-gtk
 
 CONFLICTS=	py*-gtk-2* py*-gobject-[0-9]*
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${EG_DST_DIR}
