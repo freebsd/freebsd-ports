@@ -8,12 +8,11 @@
 
 PORTNAME=		fc6
 PORTVERSION=		6
+PORTREVISION=		1
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LINUX_RPM_ARCH}/os/Fedora/RPMS \
-			updates/${PORTVERSION}/${LINUX_RPM_ARCH} \
-			${PORTVERSION}/source/SRPMS \
-			updates/${PORTVERSION}/SRPMS
+			updates/${PORTVERSION}/${LINUX_RPM_ARCH}
 PKGNAMEPREFIX=		linux_base-
 DISTFILES=		${BIN_DISTFILES} ${SRC_DISTFILES}
 DIST_SUBDIR=		rpm/${LINUX_RPM_ARCH}/fedora/${PORTVERSION}
@@ -32,7 +31,7 @@ BIN_DISTFILES=	basesystem-8.0-5.1.1.noarch.rpm \
 		coreutils-5.97-12.3.fc6.${LINUX_RPM_ARCH}.rpm \
 		db4-4.3.29-9.fc6.${LINUX_RPM_ARCH}.rpm \
 		e2fsprogs-1.39-7.fc6.${LINUX_RPM_ARCH}.rpm \
-		elfutils-libelf-0.125-1.fc6.${LINUX_RPM_ARCH}.rpm \
+		elfutils-libelf-0.126-1.fc6.${LINUX_RPM_ARCH}.rpm \
 		fedora-release-6-4.noarch.rpm \
 		filesystem-2.4.0-1.${LINUX_RPM_ARCH}.rpm \
 		freetype-2.2.1-16.fc6.${LINUX_RPM_ARCH}.rpm \
@@ -63,6 +62,9 @@ BIN_DISTFILES=	basesystem-8.0-5.1.1.noarch.rpm \
 
 .if defined(PACKAGE_BUILDING)
 
+MASTER_SITE_SUBDIR+=	${PORTVERSION}/source/SRPMS \
+			updates/${PORTVERSION}/SRPMS
+
 SRC_DISTFILES+=	acl-2.2.39-1.1.src.rpm \
 		attr-2.4.32-1.1.src.rpm \
 		basesystem-8.0-5.1.1.src.rpm \
@@ -72,7 +74,7 @@ SRC_DISTFILES+=	acl-2.2.39-1.1.src.rpm \
 		coreutils-5.97-12.3.fc6.src.rpm \
 		db4-4.3.29-9.fc6.src.rpm \
 		e2fsprogs-1.39-7.fc6.src.rpm \
-		elfutils-0.125-1.fc6.src.rpm \
+		elfutils-0.126-1.fc6.src.rpm \
 		fedora-release-6-4.src.rpm \
 		filesystem-2.4.0-1.src.rpm \
 		freetype-2.2.1-16.fc6.src.rpm \
