@@ -34,5 +34,6 @@ post-patch:
 		-e "s/libnpflash.so.0.0.0/libnpflash.so.0/"	\
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' ${WRKSRC}/npapi.h
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${CONFIGURE_WRKSRC}/configure ${CONFIGURE_WRKSRC}/ltconfig
 
 .include <bsd.port.mk>

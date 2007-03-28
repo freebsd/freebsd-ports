@@ -59,6 +59,7 @@ include/lapackpp/vd.h
 include/lapackpp/vf.h
 include/lapackpp/vi.h
 include/lapackpp/vli.h
+lib/liblapackpp.a
 lib/liblapackpp.la
 lib/liblapackpp.so
 lib/liblapackpp.so.15

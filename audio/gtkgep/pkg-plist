@@ -30,7 +30,6 @@ lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/lowpass4.so
 lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/ngexp.la
 lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/ngexp.so
 lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/noisegate.la
-lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/noisegate.la
 lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/noisegate.so
 lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/overdrive.la
 lib/%%PORTNAME%%-%%PORTVERSION%%/plugins/overdrive.so

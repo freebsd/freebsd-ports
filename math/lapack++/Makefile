@@ -7,7 +7,7 @@
 
 PORTNAME=	lapack++
 PORTVERSION=	2.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE} \
 		http://math.nist.gov/lapack++/:doc
@@ -40,7 +40,7 @@ BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
 FC=		gfortran42
 F77=		gfortran42
 
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 .if defined(WITH_ATLAS)
 BLAS_LIB=	-L${LOCALBASE}/lib -lf77blas -latlas

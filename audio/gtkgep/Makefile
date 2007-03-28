@@ -20,4 +20,7 @@ GNU_CONFIGURE=  yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -fPIC" LDFLAGS="${PTHREAD_LIBS}"
 PLIST_SUB=	PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+
 .include <bsd.port.mk>
