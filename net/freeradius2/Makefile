@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	freeradius
-PORTVERSION=	1.1.4
-PORTREVISION=	1
+PORTVERSION?=	1.1.5
+PORTREVISION?=	0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/ \
@@ -16,14 +16,25 @@ MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		ftp://ftp.freeradius.org/pub/radius/old/ \
 		http://freeradius.portal-to-web.de/
 
-MAINTAINER=	david@wood2.org.uk
-COMMENT=	A free RADIUS server implementation
+MAINTAINER?=	david@wood2.org.uk
+COMMENT?=	A free RADIUS server implementation
+
+USE_BZIP2=	yes
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 LOGDIR?=	/var/log
 
+# If FREERADIUS_SLAVE_MYSQL is defined, we want to build the
+# freeradius-mysql slave port
+
 CONFLICTS=	gnu-radius-1.* openradius-0.* radiusd-cistron-1.*
+.ifdef(FREERADIUS_SLAVE_MYSQL)
+CONFLICTS+=	freeradius-1.*
+PKGNAMESUFFIX=	-mysql
+.else
+CONFLICTS+=	freeradius-mysql-1.*
+.endif
 
 USE_RC_SUBR=	radiusd.sh
 USE_AUTOTOOLS=	libltdl:15 libtool:15
@@ -36,15 +47,25 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 OPTIONS=	KERBEROS	"With Kerberos support" off \
 		HEIMDAL		"With Heimdal Kerberos support" off \
-		LDAP		"With LDAP user database" off \
-		MYSQL		"With MySQL user database" off \
-		PGSQL		"With PostgreSQL use database" off \
+		LDAP		"With LDAP database support" off
+.ifndef(FREERADIUS_SLAVE_MYSQL)
+OPTIONS+=	MYSQL		"With MySQL database support" off
+.endif
+OPTIONS+=	PGSQL		"With PostgreSQL database support" off \
+		FIREBIRD	"With Firebird database support (EXPERIMENTAL)" off \
 		SNMP		"With SNMP support" off \
 		EDIR		"With Novell eDirectory support" off \
 		NOPERL		"Do not require perl (use only if necessary)" off \
 		EXPERIMENTAL	"Build experimental modules" off
 
 .include <bsd.port.pre.mk>
+
+# Default requirements for rc script
+_REQUIRE=	NETWORKING SERVERS
+
+.ifdef(FREERADIUS_SLAVE_MYSQL)
+WITH_MYSQL=	yes
+.endif
 
 CONFIGURE_ARGS=	--quiet \
 		--prefix=${PREFIX} \
@@ -56,10 +77,12 @@ CONFIGURE_ARGS=	--quiet \
 		--with-large-files \
 		--with-openssl-includes=${OPENSSLINC} \
 		--with-openssl-libraries=${OPENSSLLIB} \
-		--without-rlm_sql_unixodbc \
-		--without-rlm_sql_oracle \
+		--without-rlm_sql_db2 \
+		--without-rlm_sql_freetds \
 		--without-rlm_sql_iodbc \
-		--without-rlm_sql_db2
+		--without-rlm_sql_oracle \
+		--without-rlm_sql_sybase \
+		--without-rlm_sql_unixodbc
 
 .if ${OSVERSION} < 500000 && ${OPENSSLBASE} == "/usr"
 PLIST_SUB+=	4SSL="@comment "
@@ -97,6 +120,7 @@ WITH_LDAP=	yes
 .ifdef(WITH_LDAP)
 USE_OPENLDAP=	YES
 PLIST_SUB+=	LDAP=""
+_REQUIRE+=	slapd
 .else
 CONFIGURE_ARGS+=--without-rlm_ldap
 PLIST_SUB+=	LDAP="@comment "
@@ -108,7 +132,9 @@ CONFIGURE_ARGS+=--with-edir
 
 .ifdef(WITH_MYSQL)
 USE_MYSQL=	YES
+CONFIGURE_ARGS+=--with-rlm_sql_mysql
 PLIST_SUB+=	MYSQL=""
+_REQUIRE+=	mysql
 .else
 CONFIGURE_ARGS+=--without-rlm_sql_mysql
 PLIST_SUB+=	MYSQL="@comment "
@@ -116,10 +142,26 @@ PLIST_SUB+=	MYSQL="@comment "
 
 .ifdef(WITH_PGSQL)
 USE_PGSQL=	YES
+CONFIGURE_ARGS+=--with-rlm_sql_postgresql
 PLIST_SUB+=	PGSQL=""
+_REQUIRE+=	postgresql
 .else
 CONFIGURE_ARGS+=--without-rlm_sql_postgresql
 PLIST_SUB+=	PGSQL="@comment "
+.endif
+
+.ifdef(WITH_FIREBIRD)
+USE_FIREBIRD=	YES
+CONFIGURE_ARGS+=--with-rlm_sql_firebird
+PLIST_SUB+=	FIREBIRD=""
+.else
+CONFIGURE_ARGS+=--without-rlm_sql_firebird
+PLIST_SUB+=	FIREBIRD="@comment "
+.endif
+
+# Firebird module is still experimental
+.if defined(WITH_FIREBIRD) && !defined(WITH_EXPERIMENTAL)
+WITH_EXPERIMENTAL=	yes
 .endif
 
 .ifdef(WITH_SNMP)
@@ -169,7 +211,7 @@ MAN8=		radiusd.8 radrelay.8 radsqlrelay.8 radwatch.8 rlm_ippool_tool.8
 DICTS=		dictionary.3com dictionary.3gpp dictionary.3gpp2 dictionary.acc \
 		dictionary.airespace dictionary.alcatel dictionary.alteon \
 		dictionary.altiga dictionary.alvarion dictionary.aptis \
-		dictionary.aruba dictionary.ascend dictionary.avaya \
+		dictionary.aruba dictionary.ascend dictionary.asn dictionary.avaya \
 		dictionary.bay dictionary.bintec dictionary.bristol \
 		dictionary.cablelabs dictionary.cabletron dictionary.cisco \
 		dictionary.cisco.bbsm dictionary.cisco.vpn3000 dictionary.cisco.vpn5000 \
@@ -199,12 +241,16 @@ DICTS=		dictionary.3com dictionary.3gpp dictionary.3gpp2 dictionary.acc \
 		dictionary.versanet dictionary.walabi dictionary.waverider \
 		dictionary.wispr dictionary.xedia dictionary.xylan dictionary.zyxel
 
+SUB_LIST+=	REQUIRE="${_REQUIRE}"
+
 post-patch:
-	@${RM} ${WRKSRC}/doc/Makefile.orig
-# rlm_sql_firebird in 1.1.4 makes configure fail with experimental modules enabled,
-# even though the port implicitly issues --without-rlm_sql_firebird. Delete the module
-# until it is fixed
-	@${RM} -r ${WRKSRC}/src/modules/rlm_sql/drivers/rlm_sql_firebird
+# Patch Makefile / Makefile.in throughout the source tree to install in EXAMPLESDIR not raddb
+	@for i in `${FIND} -E ${WRKSRC} -regex '.*Makefile(\.in)?$$' -print` ; do \
+		${REINPLACE_CMD} -e "s:\$$(R)\$$(raddbdir):${EXAMPLESDIR}/raddb:g" $${i}; \
+	done
+	@for i in `${FIND} -E ${WRKSRC} -regex '.*Makefile(\.in)?\.(orig|bak)$$' -print` ; do \
+		${RM} $${i}; \
+	done
 .if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} -e 's/-DNO_OPENSSL//' ${WRKSRC}/configure
 .endif
@@ -214,9 +260,17 @@ post-install:
 .for dict in ${DICTS}
 	${INSTALL_DATA} ${WRKSRC}/share/${dict} ${DATADIR}/${dict}
 .endfor
-	for i in `${FIND} ${PREFIX}/etc/raddb -maxdepth 1 -regex '.*\.sample' -print \
-	| ${SED} -e 's/\.sample//g'`; do \
-		if [ ! -f $${i} ]; then ${CP} -p $${i}.sample $${i}; fi; \
+	for i in `${FIND} ${EXAMPLESDIR}/raddb/ -type d -mindepth 1 -print \
+	| ${SED} -e 's:^${EXAMPLESDIR}/raddb/::g'`; do \
+		if [ ! -d ${PREFIX}/etc/raddb/$${i} ]; then \
+			${MKDIR} ${PREFIX}/etc/raddb/$${i}; \
+		fi; \
+	done
+	for i in `${FIND} ${EXAMPLESDIR}/raddb/ -type f -print \
+	| ${SED} -e 's:^${EXAMPLESDIR}/raddb/::g'`; do \
+		if [ ! -f ${PREFIX}/etc/raddb/$${i} ]; then \
+			${CP} -p ${EXAMPLESDIR}/raddb/$${i} ${PREFIX}/etc/raddb/$${i}; \
+		fi; \
 	done
 
 .include <bsd.port.post.mk>
