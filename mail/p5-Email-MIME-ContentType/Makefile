@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Email-MIME-ContentType
-PORTVERSION=	1.01.2
+PORTVERSION=	1.01.4
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Email
@@ -20,11 +20,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Email::MIME::ContentType.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} <= 500503
-post-patch:
-	${PERL} -pi -e '$$_ = "" if /use 5.006;/;' \
-		    -e '$$_ = "(" if /ABSTRACT_FROM/;' \
-		${WRKSRC}/Makefile.PL
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
