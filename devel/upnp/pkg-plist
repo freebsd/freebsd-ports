@@ -21,5 +21,5 @@ lib/libupnp.la
 lib/libupnp.so
 lib/libupnp.so.2
 libdata/pkgconfig/libupnp.pc
-@dirrm share/doc/libupnp-1.4.2
+@dirrm share/doc/libupnp-1.4.3
 @dirrm include/upnp
