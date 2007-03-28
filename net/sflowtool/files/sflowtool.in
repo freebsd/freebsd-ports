@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# PROVIDE: sflowtool
+# REQUIRE: DAEMON
+
+.  %%RC_SUBR%%
+
+name="sflowtool"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/bin/sflowtool"
+
+load_rc_config $name
+# Set defaults
+: ${sflowtool_enable="NO"}
+: ${sflowtool_flags=""}
+: ${sflowtool_pidfile="/var/run/${name}.pid"}
+
+start_cmd="/usr/sbin/daemon -f -p ${sflowtool_pidfile} ${command} ${sflowtool_flags}"
+start_postcmd="echo Starting ${name}."
+
+run_rc_command "$1"
