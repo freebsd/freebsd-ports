@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	flowviewer
-PORTVERSION=	3.0
+PORTVERSION=	3.2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://ensight.eos.nasa.gov/FlowViewer/
 DISTNAME=	FlowViewer_${DISTVERSION}
@@ -52,6 +52,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/FlowViewer.cgi ${FLOWVIEWERDIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/FlowViewer_Main.cgi ${FLOWVIEWERDIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/FlowViewer_Save.cgi ${FLOWVIEWERDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/FlowTracker_Group.cgi ${FLOWVIEWERDIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/FlowViewer_Utilities.pm ${FLOWVIEWERDIR}
 	@${INSTALL_DATA} ${WRKSRC}/FlowViewer_Configuration.pm ${FLOWVIEWERDIR}/FlowViewer_Configuration.pm.dist
 	@${INSTALL_SCRIPT} ${WRKSRC}/FlowTracker_Collector ${FLOWVIEWERDIR}
@@ -59,10 +60,9 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/FlowGrapher_Colors ${FLOWVIEWERDIR}
 	@${INSTALL_DATA} ${WRKSRC}/FlowGrapher.png ${FLOWVIEWERDIR}
 	@${INSTALL_DATA} ${WRKSRC}/FlowTracker.png ${FLOWVIEWERDIR}
-	@${INSTALL_DATA} ${WRKSRC}/FlowTracker_Links.png ${FLOWVIEWERDIR}
 	@${INSTALL_DATA} ${WRKSRC}/FlowViewer.png ${FLOWVIEWERDIR}
 	@${MKDIR} ${FLOWVIEWERDIR}/tmp ${FLOWVIEWERDIR}/reports \
-	${FLOWVIEWERDIR}/graphs ${FLOWVIEWERDIR}/tracker 
+	${FLOWVIEWERDIR}/graphs ${FLOWVIEWERDIR}/tracker
 	@${CHOWN} ${WWWOWN}:${WWWGRP} ${FLOWVIEWERDIR}/tmp \
 	${FLOWVIEWERDIR}/reports ${FLOWVIEWERDIR}/graphs \
 	${FLOWVIEWERDIR}/tracker
