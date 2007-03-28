@@ -74,6 +74,7 @@
     SUBDIR += linux_dist-gentoo-stage2
     SUBDIR += linux_dist-gentoo-stage3
     SUBDIR += linux_base-fc4
+    SUBDIR += linux_base-fc6
     SUBDIR += linux_base-gentoo-stage1
     SUBDIR += linux_base-gentoo-stage2
     SUBDIR += linux_base-gentoo-stage3
