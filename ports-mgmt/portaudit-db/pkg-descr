@@ -1,4 +1,4 @@
-In contrast to security/portaudit, which is designed to be an
+In contrast to ports-mgmt/portaudit, which is designed to be an
 install-and-forget solution, portaudit-db requires a current
 ports tree and generates a database that can be used locally
 or distributed over a network.
