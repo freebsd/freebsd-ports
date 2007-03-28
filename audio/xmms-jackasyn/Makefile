@@ -32,6 +32,7 @@ SUB_FILES=	pkg-message
 PLIST_FILES=	lib/xmms/Output/libjackxmms.so
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|OSS Driver configuration|Jackasyn Driver configuration|g' ${WRKSRC}/configure.c
 
 do-install:
