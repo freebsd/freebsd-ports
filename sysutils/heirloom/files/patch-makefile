@@ -1,19 +1,11 @@
---- ./makefile.orig	Sun Jan 22 22:48:04 2006
-+++ ./makefile	Thu Jul 27 01:01:57 2006
-@@ -87,14 +87,14 @@
+--- makefile.orig	Tue Feb 27 00:03:01 2007
++++ makefile	Wed Mar 28 11:02:49 2007
+@@ -70,7 +70,7 @@
  		cpio -pdm $(PKGROOT)/usr/share/doc/heirloom
  	rm -f $(PKGPROTO)
  	echo 'i pkginfo' >$(PKGPROTO)
--	(cd $(PKGROOT) && find . -print | pkgproto) | >>$(PKGPROTO) sed '\
-+	(cd $(PKGROOT) && find . -print | pkgproto) | >>$(PKGPROTO) sed " \
- 		s:^\([df] [^ ]* [^ ]* [^ ]*\) .*:\1 root root:; \
- 		s:^\(f [^ ]* [^ ]*/ps \).*:\14755 root root:; \
- 		s:^\(f [^ ]* [^ ]*/shl \).*:\12755 root adm:; \
- 		s:^\(f [^ ]* [^ ]*/su \).*:\14755 root root:; \
- 		s:^f\( [^ ]* etc/\):v \1:; \
- 		s:^f\( [^ ]* var/\):v \1:; \
--		s:^\(s [^ ]* [^ ]*=\)\([^/]\):\1./\2:'
-+		s:^\(s [^ ]* [^ ]*=\)\([^/]\):\1./\2:"
- 	rm -rf $(PKGTEMP)/heirloom
- 	pkgmk -a `uname -m` -d $(PKGTEMP) -r $(PKGROOT) -f $(PKGPROTO) heirloom
- 	pkgtrans -o -s $(PKGTEMP) `pwd`/heirloom.pkg heirloom
+-	(cd $(PKGROOT) && find . -print | pkgproto) | >>$(PKGPROTO) sed 's:^\([df] [^ ]* [^ ]* [^ ]*\) .*:\1 root root:; s:^\(f [^ ]* [^ ]*/ps \).*:\14755 root root:; s:^\(f [^ ]* [^ ]*/shl \).*:\12755 root adm:; s:^\(f [^ ]* [^ ]*/su \).*:\14755 root root:; s:^f\( [^ ]* etc/\):v \1:; s:^f\( [^ ]* var/\):v \1:; s:^\(s [^ ]* [^ ]*=\)\([^/]\):\1./\2:'
++	(cd $(PKGROOT) && find . -print | pkgproto) | >>$(PKGPROTO) sed "s:^\([df] [^ ]* [^ ]* [^ ]*\) .*:\1 root root:; s:^\(f [^ ]* [^ ]*/ps \).*:\14755 root root:; s:^\(f [^ ]* [^ ]*/shl \).*:\12755 root adm:; s:^\(f [^ ]* [^ ]*/su \).*:\14755 root root:; s:^f\( [^ ]* etc/\):v \1:; s:^f\( [^ ]* var/\):v \1:; s:^\(s [^ ]* [^ ]*=\)\([^/]\):\1./\2:"
+ 	rm -rf $(PKGTEMP)/$@
+ 	pkgmk -a `uname -m` -d $(PKGTEMP) -r $(PKGROOT) -f $(PKGPROTO) $@
+ 	pkgtrans -o -s $(PKGTEMP) `pwd`/$@ $@
