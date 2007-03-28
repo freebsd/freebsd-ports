@@ -24,6 +24,7 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-libiconv-prefix="${LOCALBASE}" \
 		--with-ogg="${LOCALBASE}" \
 		--with-xmms-prefix="${X11BASE}"
+MAKE_ARGS=	LIBTOOL="${LIBTOOL} --tag=disable-static"
 MAKE_ENV=	MAKEOBJDIR=/nonexistent		# ignore ${WRKSRC}/obj
 MAKEFILE=	${FILESDIR}/Makefile
 
