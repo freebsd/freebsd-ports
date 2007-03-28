@@ -60,8 +60,11 @@ CONFIGURE_ARGS+=	--enable-prefer-ape
 
 .if defined(WITH_ENCODINGS_PATCH)
 USE_ICONV=	yes
+.endif
 
 post-patch::
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+.if defined(WITH_ENCODINGS_PATCH)
 	@${PATCH} ${PATCH_ARGS} -p1 < ${FILESDIR}/extra-encodings-patch
 .endif
 
