@@ -33,7 +33,6 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		xmms:${PORTSDIR}/multimedia/xmms \
 		mpg123:${PORTSDIR}/audio/mpg123 \
 		ogg123:${PORTSDIR}/audio/vorbis-tools \
-		gs:${PORTSDIR}/print/ghostscript-gnu \
 		sswf:${PORTSDIR}/graphics/sswf \
 		${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
 
@@ -44,6 +43,7 @@ USE_PERL5=	yes
 USE_CDRTOOLS=	yes
 USE_GNOME=	gtk20
 USE_GETTEXT=	yes
+USE_GHOSTSCRIPT_RUN=	yes
 USE_SDL=	yes
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} -g -fPIC
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
