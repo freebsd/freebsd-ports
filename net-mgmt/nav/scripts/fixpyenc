@@ -1,12 +1,33 @@
-#! /bin/sh
+#!/usr/bin/perl
 
-encstr="# -*- coding: ISO8859-1 -*-"
+use strict;
 
-if [ -z "`head -1 $1 | egrep '#.*!.*python'`" ]
-then
-	(echo $encstr; cat $1) >$1.tmp
-else
-	(head -1 $1; echo $encstr; tail +2 $1) >$1.tmp
-fi
-cp $1.tmp $1
-rm -f $1.tmp
+MAIN:{
+	my $encstr = "# -*- coding: ISO8859-1 -*-\n";
+	local *FILE;
+
+	foreach my $fn (@ARGV) {
+		open(FILE, "<", $fn)
+			or die("$fn: $!\n");
+		my @lines = <FILE>;
+		close(FILE);
+
+		my $interpreter = "";
+		if ($lines[0] =~ m/^\#!/) {
+			($interpreter = shift(@lines)) =~
+			    s|!\s+/usr/bin/env\s+python|!$ENV{'PYTHON_CMD'}|;
+		}
+		if ($lines[0] =~ m/^\#.*-\*-.*coding/) {
+			# leave untouched
+		} else {
+			unshift(@lines, $encstr);
+		}
+
+		open(FILE, ">", "$fn.new")
+			or die("$fn.new: $!\n");
+		print(FILE $interpreter, @lines);
+		close(FILE);
+		link("$fn", "$fn.orig");
+		rename("$fn.new", "$fn");
+	}
+}
