@@ -14101,7 +14101,7 @@ silky		ports/net/silky
 silkymail	ports/mail/silkymail
 silo		ports/x11/silo
 silvercity	ports/textproc/silvercity
-sim		ports/emulators/sim
+simh		ports/emulators/simh
 sim-im		ports/net-im/sim-im
 sim-im-devel	ports/net-im/sim-im-devel
 sim4		ports/biology/sim4
