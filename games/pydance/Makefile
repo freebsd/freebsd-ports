@@ -17,7 +17,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz ${SONGS}
 DIST_SUBDIR=	pydance
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 
-MAINTAINER=	freebsd-dr@durchnull.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dancing simulation game similar to the kind in arcades
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
