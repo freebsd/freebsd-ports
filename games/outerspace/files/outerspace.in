@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+
+import sys
+import os.path
+
+#Program path
+package_dir = os.path.join("%%PROGRAM_DIR%%")
+
+#Change current work directory
+os.chdir(package_dir)
+
+#Add package_dir to python path
+sys.path.append(package_dir)
+
+#Launch the program!
+execfile(os.path.join(package_dir, "outerspace"))
