@@ -1,9 +1,9 @@
 @comment $FreeBSD$
 @unexec if cmp -s %D/etc/dovecot-example.conf %D/etc/dovecot.conf; then rm -f %D/etc/dovecot.conf; fi
 etc/dovecot-example.conf
-etc/dovecot-ldap-example.conf
-etc/dovecot-sql-example.conf
 @exec if [ ! -f %D/etc/dovecot.conf ] ; then cp -p %D/%F %B/dovecot.conf; fi
+%%PORTDOCS%%etc/dovecot-ldap-example.conf
+%%PORTDOCS%%etc/dovecot-sql-example.conf
 @dirrmtry include/dovecot
 lib/dovecot/imap/lib01_acl_plugin.so
 lib/dovecot/imap/lib02_lazy_expunge_plugin.so
