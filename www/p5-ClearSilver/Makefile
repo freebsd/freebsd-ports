@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ClearSilver
-PORTVERSION=	0.10.3
+PORTVERSION=	0.10.4
 CATEGORIES=	www perl5
 MASTER_SITES=	http://www.clearsilver.net/downloads/
 PKGNAMEPREFIX=	p5-
