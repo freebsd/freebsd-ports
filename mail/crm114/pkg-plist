@@ -25,6 +25,7 @@ bin/osbf-util
 %%EXAMPLESDIR%%/mailreaver.crm
 %%EXAMPLESDIR%%/maillib.crm
 %%EXAMPLESDIR%%/mailtrainer.crm
+%%EXAMPLESDIR%%/shuffle.crm
 %%EXAMPLESDIR%%/matchtest.crm
 %%EXAMPLESDIR%%/overalterisolatedtest.crm
 %%EXAMPLESDIR%%/windowtest.crm
