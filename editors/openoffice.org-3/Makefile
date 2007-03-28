@@ -8,8 +8,7 @@
 PORTNAME?=	openoffice.org
 PORTVERSION?=	${OOOVERSION}
 CATEGORIES+=	editors java
-MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/${OOOVERSION}/&,} \
-		http://openoffice.lunarshells.com/sources/ \
+MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/cws/:cws \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
@@ -30,12 +29,12 @@ MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
 .if defined(WITH_CWS)
-PORTNAME:=    openoffice.org-${OOOVERSION}-${WITH_CWS}
-DISTFILES+=   ${CWSARCHIVE}:cws
+PORTNAME:=	openoffice.org-${OOOVERSION}-${WITH_CWS}
+DISTFILES+=	${CWSARCHIVE}:cws
 .endif
-CWSARCHIVE=   ${WITH_CWS}.tar.gz
+CWSARCHIVE=	${WITH_CWS}.tar.gz
 
-OOOVERSION=	2.1.0
+OOOVERSION=	2.2.0
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20
 MOZILLA_VERSION=	1.7.5
@@ -71,12 +70,12 @@ GCC_TARGET=		x86_64-portbld-freebsd${OSREL}
 FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 .else
 GCC_TARGET=		${ARCH}-portbld-freebsd${OSREL}
-FREEBSD_ENV_SET=	FreeBSDIntelEnv.Set
+FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
 CODELINE=		680
-MILESTONE?=		6
-OOOTAG?=		OOE680_m${MILESTONE}
+MILESTONE?=		14
+OOOTAG?=		OOF680_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOVERSION}
 EXECBASE?=		openoffice.org-${OOOVERSION}
