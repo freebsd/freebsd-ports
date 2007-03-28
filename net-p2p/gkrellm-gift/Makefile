@@ -27,6 +27,9 @@ USE_X_PREFIX=	yes
 PLIST_FILES=	libexec/gkrellm2/plugins/gift.la \
 		libexec/gkrellm2/plugins/gift.so
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+
 post-install:
 	${STRIP_CMD} ${PREFIX}/libexec/gkrellm2/plugins/${PORTNAME}.so
 
