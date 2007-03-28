@@ -131,6 +131,7 @@ share/festival/lib/tobi_rules.scm
 share/festival/lib/token.scm
 share/festival/lib/tokenpos.scm
 share/festival/lib/tts.scm
+share/festival/lib/unilex_phones.scm
 share/festival/lib/voices.scm
 share/festival/lib/web.scm
 @dirrmtry share/festival/lib/voices/spanish
