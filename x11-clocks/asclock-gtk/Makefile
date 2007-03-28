@@ -7,7 +7,7 @@
 
 PORTNAME=	asclock-gtk
 PORTVERSION=	2.1.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-clocks afterstep windowmaker
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama
@@ -22,6 +22,9 @@ ALL_TARGET=	asclock
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 HAS_CONFIGURE=	yes
+
+post-patch:
+	${FIND} ${WRKSRC} -name '*.orig' | ${XARGS} ${RM}
 
 .if defined(BATCH)
 do-configure:
