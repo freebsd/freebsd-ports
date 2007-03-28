@@ -24,7 +24,7 @@ else
 		$svgalibdevs \
 		md2k md5k \
 		md50Mono md50Eco md1xMono \
-		appledmp iwhi iwlo iwlq hl7x0 bj10e \
+		appledmp iwhi iwlo iwlq hl7x0 hl1250 bj10e \
 		bj10v bj10vh bj200 bjc600 bjc800 \
 		bjccmyk bjccolor bjcgray bjcmono \
 		lbp8 \
@@ -118,6 +118,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "iwlo"     "Apple Imagewriter, low-resolution mode" "$status_iwlo" \
   "iwlq"     "Apple Imagewriter LQ in 320 x 216 dpi mode" "$status_iwlq" \
   "hl7x0"    "Brother HL720 and HL730 (HL760=PCL), MFC6550MC Fax Machine" "$status_hl7x0" \
+  "hl1250"   "Brother HL-1030/1050/1070/1250/1270N/14x0" "$status_hl1250" \
   "bj10e"    "Canon BubbleJet BJ-10e" "$status_bj10e" \
   "bj10v"    "Canon BubbleJet BJ-10v [BJ10V]" "$status_bj10v" \
   "bj10vh"   "Canon BubbleJet BJ-10v, high-mergin [BJ10V]" "$status_bj10vh" \
