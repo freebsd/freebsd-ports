@@ -15,14 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	A command-line tool for converting pdf-files into html
 
-.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
-
-RUN_DEPENDS+=	${LOCALBASE}/bin/gs:${PORTSDIR}/${GSPORT}
-
+USE_GHOSTSCRIPT_RUN=	yes
 USE_GMAKE=	yes
 USE_MOTIF=	yes
 
