@@ -69,63 +69,6 @@ share/NAnt/bin/lib/net/2.0/nunit.framework.dll
 share/NAnt/bin/lib/net/2.0/nunit.util.dll
 share/NAnt/bin/log4net.dll
 share/NAnt/bin/scvs.exe
-%%PORTDOCS%%%%EXAMPLESDIR%%/Filters/ReplaceCharacter/ReplaceCharacter.cs
-%%PORTDOCS%%%%EXAMPLESDIR%%/Filters/ReplaceCharacter/default.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWindowsForms/HelloWindowsForms.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWindowsForms/HelloWindowsForms.vbproj
-%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWindowsForms/MainForm.resx
-%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWindowsForms/MainForm.vb
-%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWorld/HelloWorld.cs
-%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWorld/HelloWorld.js
-%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWorld/HelloWorld.vb
-%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWorld/default.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/ScriptTask/script-sample.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/Simple/Simple.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/Simple/Simple.cs
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/AssemblyInfo.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/Form1.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/Form1.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/Form1.resX
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/ReadMe.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/WinForms.sln
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/WinForms.vcproj
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/app.ico
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/app.rc
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/cpp.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/resource.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/stdafx.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/stdafx.h
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/default.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/WinForms/App.ico
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/WinForms/AssemblyInfo.cs
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/WinForms/Form1.cs
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/WinForms/Form1.resx
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/WinForms/WinForms.csproj
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/WinForms/WinForms.sln
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/WinForms/cs.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/default.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vb/WinForms/AssemblyInfo.vb
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vb/WinForms/Form1.resx
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vb/WinForms/Form1.vb
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vb/WinForms/WinForms.sln
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vb/WinForms/WinForms.vbproj
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vb/WinForms/vb.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vb/default.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/AssemblyInfo.jsl
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/Form1.jsl
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/Form1.resx
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/WinForms.sln
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/WinForms.vjsproj
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/vjs.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vjs/default.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject/SimpleExtension.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject/SimpleExtension.cs
-%%PORTDOCS%%%%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject/SimpleExtension.dll
-%%PORTDOCS%%%%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject/circle.xsl
-%%PORTDOCS%%%%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject/circles.xml
-%%PORTDOCS%%%%EXAMPLESDIR%%/UserTask/UserTask.cs
-%%PORTDOCS%%%%EXAMPLESDIR%%/UserTask/default.build
-%%PORTDOCS%%%%EXAMPLESDIR%%/examples.build
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.DataTypeBase.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Filters.ChainableReader.html
 %%PORTDOCS%%%%DOCSDIR%%/help/elements/NAnt.Core.Filters.Filter.html
@@ -186,8 +129,10 @@ share/NAnt/bin/scvs.exe
 %%PORTDOCS%%%%DOCSDIR%%/help/filters/replacetokens.html
 %%PORTDOCS%%%%DOCSDIR%%/help/filters/tabstospaces.html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/assembly.get-full-name.html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/assembly.get-location.html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/assembly.get-name.html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/assembly.load-from-file.html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/assembly.load.html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/assemblyname.get-assembly-name.html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/assemblyname.get-codebase.html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/assemblyname.get-escaped-codebase.html
@@ -201,9 +146,6 @@ share/NAnt/bin/scvs.exe
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/convert.to-double.html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/convert.to-int.html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/convert.to-string.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/assembly.load.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/assembly.get-location.html
-%%PORTDOCS%%%%DOCSDIR%%/help/functions/task.get-assembly.html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/cygpath.get-dos-path.html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/cygpath.get-unix-path.html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/cygpath.get-windows-path.html
@@ -328,6 +270,7 @@ share/NAnt/bin/scvs.exe
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/target.get-current-target.html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/target.has-executed.html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/task.exists.html
+%%PORTDOCS%%%%DOCSDIR%%/help/functions/task.get-assembly.html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.from-days.html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.from-hours.html
 %%PORTDOCS%%%%DOCSDIR%%/help/functions/timespan.from-milliseconds.html
@@ -377,7 +320,6 @@ share/NAnt/bin/scvs.exe
 %%PORTDOCS%%%%DOCSDIR%%/help/introduction/installation.html
 %%PORTDOCS%%%%DOCSDIR%%/help/style.css
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/al.html
-%%PORTDOCS%%%%DOCSDIR%%/help/tasks/regasm.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/asminfo.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/attrib.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/available.html
@@ -428,6 +370,7 @@ share/NAnt/bin/scvs.exe
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/property.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/rc.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/readregistry.html
+%%PORTDOCS%%%%DOCSDIR%%/help/tasks/regasm.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/regex.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/regsvcs.html
 %%PORTDOCS%%%%DOCSDIR%%/help/tasks/resgen.html
@@ -467,16 +410,65 @@ share/NAnt/bin/scvs.exe
 %%PORTDOCS%%%%DOCSDIR%%/help/types/zipfileset.html
 %%PORTDOCS%%%%DOCSDIR%%/license.html
 %%PORTDOCS%%%%DOCSDIR%%/releasenotes.html
-@dirrm share/NAnt/bin/lib/net/2.0
-@dirrm share/NAnt/bin/lib/net/1.1
-@dirrm share/NAnt/bin/lib/net/1.0
-@dirrm share/NAnt/bin/lib/net
-@dirrm share/NAnt/bin/lib/mono/2.0
-@dirrm share/NAnt/bin/lib/mono/1.0
-@dirrm share/NAnt/bin/lib/mono
-@dirrm share/NAnt/bin/lib
-@dirrm share/NAnt/bin
-@dirrm share/NAnt
+%%PORTDOCS%%%%EXAMPLESDIR%%/Filters/ReplaceCharacter/ReplaceCharacter.cs
+%%PORTDOCS%%%%EXAMPLESDIR%%/Filters/ReplaceCharacter/default.build
+%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWindowsForms/HelloWindowsForms.build
+%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWindowsForms/HelloWindowsForms.vbproj
+%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWindowsForms/MainForm.resx
+%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWindowsForms/MainForm.vb
+%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWorld/HelloWorld.cs
+%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWorld/HelloWorld.js
+%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWorld/HelloWorld.vb
+%%PORTDOCS%%%%EXAMPLESDIR%%/HelloWorld/default.build
+%%PORTDOCS%%%%EXAMPLESDIR%%/ScriptTask/script-sample.build
+%%PORTDOCS%%%%EXAMPLESDIR%%/Simple/Simple.build
+%%PORTDOCS%%%%EXAMPLESDIR%%/Simple/Simple.cs
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/AssemblyInfo.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/Form1.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/Form1.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/Form1.resX
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/ReadMe.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/WinForms.sln
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/WinForms.vcproj
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/app.ico
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/app.rc
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/cpp.build
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/resource.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/stdafx.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/WinForms/stdafx.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cpp/default.build
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/WinForms/App.ico
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/WinForms/AssemblyInfo.cs
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/WinForms/Form1.cs
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/WinForms/Form1.resx
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/WinForms/WinForms.csproj
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/WinForms/WinForms.sln
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/WinForms/cs.build
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/cs/default.build
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vb/WinForms/AssemblyInfo.vb
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vb/WinForms/Form1.resx
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vb/WinForms/Form1.vb
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vb/WinForms/WinForms.sln
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vb/WinForms/WinForms.vbproj
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vb/WinForms/vb.build
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vb/default.build
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/AssemblyInfo.jsl
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/Form1.jsl
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/Form1.resx
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/WinForms.sln
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/WinForms.vjsproj
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vjs/WinForms/vjs.build
+%%PORTDOCS%%%%EXAMPLESDIR%%/Solution/vjs/default.build
+%%PORTDOCS%%%%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject/SimpleExtension.build
+%%PORTDOCS%%%%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject/SimpleExtension.cs
+%%PORTDOCS%%%%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject/SimpleExtension.dll
+%%PORTDOCS%%%%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject/circle.xsl
+%%PORTDOCS%%%%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject/circles.xml
+%%PORTDOCS%%%%EXAMPLESDIR%%/UserTask/UserTask.cs
+%%PORTDOCS%%%%EXAMPLESDIR%%/UserTask/default.build
+%%PORTDOCS%%%%EXAMPLESDIR%%/examples.build
+@dirrm share/nls/en_US.US-ASCII
+@dirrm share/nls/POSIX
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/UserTask
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/StyleTask/SimpleExtensionObject
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/StyleTask
@@ -507,3 +499,13 @@ share/NAnt/bin/scvs.exe
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/help/elements
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/help
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/NAnt/bin/lib/net/2.0
+@dirrm share/NAnt/bin/lib/net/1.1
+@dirrm share/NAnt/bin/lib/net/1.0
+@dirrm share/NAnt/bin/lib/net
+@dirrm share/NAnt/bin/lib/mono/2.0
+@dirrm share/NAnt/bin/lib/mono/1.0
+@dirrm share/NAnt/bin/lib/mono
+@dirrm share/NAnt/bin/lib
+@dirrm share/NAnt/bin
+@dirrm share/NAnt

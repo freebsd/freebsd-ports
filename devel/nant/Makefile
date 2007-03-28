@@ -11,9 +11,9 @@ DISTVERSION=	0.85
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${DISTVERSION}-src
+DISTNAME=	${PORTNAME}-0.85-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemoliu@gmail.com
 COMMENT=	A .NET build tool inspired by Ant
 
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
@@ -41,5 +41,5 @@ post-install:
 	@${CHMOD} -R ugo-w,ugo+rX ${EXAMPLESDIR}
 .endif
 
-.include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
+.include "${PORTSDIR}/lang/mono/bsd.mono.mk"
 .include <bsd.port.mk>
