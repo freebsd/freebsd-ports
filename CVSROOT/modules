@@ -11441,6 +11441,7 @@ pecl-expect	ports/devel/pecl-expect
 pecl-fileinfo	ports/sysutils/pecl-fileinfo
 pecl-filter	ports/security/pecl-filter
 pecl-fribidi	ports/converters/pecl-fribidi
+pecl-geoip	ports/net/pecl-geoip
 pecl-gnupg	ports/security/pecl-gnupg
 pecl-hash	ports/security/pecl-hash
 pecl-hidef	ports/devel/pecl-hidef
