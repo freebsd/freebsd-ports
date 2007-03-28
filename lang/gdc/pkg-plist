@@ -45,6 +45,7 @@ include/d/%%GCC_VER%%/std/loader.d
 include/d/%%GCC_VER%%/std/math.d
 include/d/%%GCC_VER%%/std/math2.d
 include/d/%%GCC_VER%%/std/md5.d
+include/d/%%GCC_VER%%/std/metastrings.d
 include/d/%%GCC_VER%%/std/mmfile.d
 include/d/%%GCC_VER%%/std/moduleinit.d
 include/d/%%GCC_VER%%/std/openrj.d
@@ -85,7 +86,6 @@ include/d/%%GCC_VER%%/std/c/stdio.d
 include/d/%%GCC_VER%%/std/c/stdlib.d
 include/d/%%GCC_VER%%/std/c/string.d
 include/d/%%GCC_VER%%/std/c/time.d
-include/d/%%GCC_VER%%/std/c/darwin/darwin.d
 include/d/%%GCC_VER%%/std/c/darwin/ldblcompat.d
 include/d/%%GCC_VER%%/std/c/linux/ldblcompat.d
 include/d/%%GCC_VER%%/std/c/linux/linux.d
@@ -101,12 +101,10 @@ include/d/%%GCC_VER%%/std/c/windows/stat.d
 include/d/%%GCC_VER%%/std/c/windows/windows.d
 include/d/%%GCC_VER%%/std/c/windows/winsock.d
 include/d/%%GCC_VER%%/std/typeinfo/ti_AC.d
-include/d/%%GCC_VER%%/std/typeinfo/ti_Aa.d
 include/d/%%GCC_VER%%/std/typeinfo/ti_Abit.d
 include/d/%%GCC_VER%%/std/typeinfo/ti_Acdouble.d
 include/d/%%GCC_VER%%/std/typeinfo/ti_Acfloat.d
 include/d/%%GCC_VER%%/std/typeinfo/ti_Acreal.d
-include/d/%%GCC_VER%%/std/typeinfo/ti_Adchar.d
 include/d/%%GCC_VER%%/std/typeinfo/ti_Adouble.d
 include/d/%%GCC_VER%%/std/typeinfo/ti_Afloat.d
 include/d/%%GCC_VER%%/std/typeinfo/ti_Ag.d
@@ -114,11 +112,6 @@ include/d/%%GCC_VER%%/std/typeinfo/ti_Aint.d
 include/d/%%GCC_VER%%/std/typeinfo/ti_Along.d
 include/d/%%GCC_VER%%/std/typeinfo/ti_Areal.d
 include/d/%%GCC_VER%%/std/typeinfo/ti_Ashort.d
-include/d/%%GCC_VER%%/std/typeinfo/ti_Aubyte.d
-include/d/%%GCC_VER%%/std/typeinfo/ti_Auint.d
-include/d/%%GCC_VER%%/std/typeinfo/ti_Aulong.d
-include/d/%%GCC_VER%%/std/typeinfo/ti_Aushort.d
-include/d/%%GCC_VER%%/std/typeinfo/ti_Awchar.d
 include/d/%%GCC_VER%%/std/typeinfo/ti_C.d
 include/d/%%GCC_VER%%/std/typeinfo/ti_bit.d
 include/d/%%GCC_VER%%/std/typeinfo/ti_byte.d
@@ -155,7 +148,6 @@ include/d/%%GCC_VER%%/%%CONF_TARGET%%/gcc/config.d
 include/d/%%GCC_VER%%/%%CONF_TARGET%%/gcc/configunix.d
 include/d/%%GCC_VER%%/%%CONF_TARGET%%/phobos-ver-syms
 lib/libgphobos.a
-lib/libgphobos.spec
 %%PORTDOCS%%%%DOCSDIR%%/GDC.html
 %%PORTDOCS%%%%DOCSDIR%%/README.gdc
 @dirrm include/d/%%GCC_VER%%/etc/c/zlib
