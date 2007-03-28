@@ -100,10 +100,13 @@ upgrades.
 
   As a result of the upgrade to gettext-0.16.1, the shared library version
   of libintl has changed, so you will need to rebuild all ports that
-  depend on gettext (ie: most of them, sorry).
+  depend on gettext (ie: most of them, sorry):
 
-  portupgrade -rf gettext
-  portmaster -r gettext
+    portupgrade -rf gettext
+
+  or
+
+    portmaster -r gettext
 
   In addition, if you have multimedia/vlc installed, you should deinstall
   it *before* either of the above commands, and reinstall it manually
