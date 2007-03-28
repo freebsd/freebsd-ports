@@ -16693,6 +16693,7 @@ ytalk		ports/net/ytalk
 ytnef		ports/converters/ytnef
 ytree		ports/misc/ytree
 yudit		ports/editors/yudit
+yui		ports/editors/yui
 yuzu		ports/mail/yuzu
 yydecode	ports/news/yydecode
 z80-asm		ports/devel/z80-asm
