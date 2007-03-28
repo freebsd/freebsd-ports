@@ -17,8 +17,9 @@ DISTFILES+=	${OOOBUILD_SOURCE} \
 	${OOO_LIBWPS}:libwps
 
 MAINTAINER=	maho@FreeBSD.org
-
 COMMENT=	Community enhanced/bug fixed version of OpenOffice.org
+
+BROKEN=		new version of ooo-build is not yet available
 
 DESCR=		${.CURDIR}/pkg-descr
 
