@@ -7,12 +7,21 @@ share/openxpki/templates/default/auth.xml
 share/openxpki/templates/default/config.xml
 share/openxpki/templates/default/database.xml
 share/openxpki/templates/default/log.conf
+share/openxpki/templates/default/log_database.xml
+share/openxpki/templates/default/notification.xml
+share/openxpki/templates/default/notification/en/certificate_issued_correspond.txt
+share/openxpki/templates/default/notification/en/csr_approvals_canceled_comment.txt
+share/openxpki/templates/default/notification/en/csr_approved_comment.txt
+share/openxpki/templates/default/notification/en/csr_created_comment.txt
+share/openxpki/templates/default/notification/en/csr_created_correspond.txt
+share/openxpki/templates/default/notification/en/csr_rejected_correspond.txt
 share/openxpki/templates/default/openxpki.conf
 share/openxpki/templates/default/profile.xml
 share/openxpki/templates/default/token.xml
 share/openxpki/templates/default/workflow.xml
 share/openxpki/templates/default/workflow_activity.xml
 share/openxpki/templates/default/workflow_activity_certificate_issuance.xml
+share/openxpki/templates/default/workflow_activity_certificate_ldap_publishing.xml
 share/openxpki/templates/default/workflow_activity_certificate_revocation_request.xml
 share/openxpki/templates/default/workflow_activity_certificate_signing_request.xml
 share/openxpki/templates/default/workflow_activity_crl_issuance.xml
@@ -22,6 +31,7 @@ share/openxpki/templates/default/workflow_activity_scep_request.xml
 share/openxpki/templates/default/workflow_activity_smartcard_personalization.xml
 share/openxpki/templates/default/workflow_condition.xml
 share/openxpki/templates/default/workflow_def_certificate_issuance.xml
+share/openxpki/templates/default/workflow_def_certificate_ldap_publishing.xml
 share/openxpki/templates/default/workflow_def_certificate_revocation_request.xml
 share/openxpki/templates/default/workflow_def_certificate_revocation_request_offline_ca.xml
 share/openxpki/templates/default/workflow_def_certificate_signing_request.xml
@@ -34,6 +44,36 @@ share/openxpki/templates/default/workflow_def_scep_request.xml
 share/openxpki/templates/default/workflow_def_smartcard_personalization.xml
 share/openxpki/templates/default/workflow_validator_certificate_revocation_request.xml
 share/openxpki/templates/default/workflow_validator_certificate_signing_request.xml
+share/openxpki/templates/quickstart/acl.xml
+share/openxpki/templates/quickstart/auth.xml
+share/openxpki/templates/quickstart/config.xml
+share/openxpki/templates/quickstart/database.xml
+share/openxpki/templates/quickstart/log.conf
+share/openxpki/templates/quickstart/log_database.xml
+share/openxpki/templates/quickstart/notification.xml
+share/openxpki/templates/quickstart/openxpki.conf
+share/openxpki/templates/quickstart/profile.xml
+share/openxpki/templates/quickstart/token.xml
+share/openxpki/templates/quickstart/workflow.xml
+share/openxpki/templates/quickstart/workflow_activity_certificate_issuance.xml
+share/openxpki/templates/quickstart/workflow_activity_certificate_revocation_request.xml
+share/openxpki/templates/quickstart/workflow_activity_certificate_signing_request.xml
+share/openxpki/templates/quickstart/workflow_activity_crl_issuance.xml
+share/openxpki/templates/quickstart/workflow_activity_null.xml
+share/openxpki/templates/quickstart/workflow_condition.xml
+share/openxpki/templates/quickstart/workflow_def_certificate_issuance.xml
+share/openxpki/templates/quickstart/workflow_def_certificate_revocation_request.xml
+share/openxpki/templates/quickstart/workflow_def_certificate_revocation_request_offline_ca.xml
+share/openxpki/templates/quickstart/workflow_def_certificate_signing_request.xml
+share/openxpki/templates/quickstart/workflow_def_certificate_signing_request_dataonly.xml
+share/openxpki/templates/quickstart/workflow_def_certificate_signing_request_offline_ca.xml
+share/openxpki/templates/quickstart/workflow_def_crl_issuance.xml
+share/openxpki/templates/quickstart/workflow_validator_certificate_revocation_request.xml
+share/openxpki/templates/quickstart/workflow_validator_certificate_signing_request.xml
+@dirrmtry share/openxpki/templates/quickstart/notification
+@dirrmtry share/openxpki/templates/quickstart
+@dirrmtry share/openxpki/templates/default/notification/en
+@dirrmtry share/openxpki/templates/default/notification
 @dirrmtry share/openxpki/templates/default
 @dirrmtry share/openxpki/templates
 @dirrmtry share/openxpki
