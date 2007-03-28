@@ -8366,6 +8366,7 @@ otk		ports/x11-toolkits/otk
 otrs		ports/devel/otrs
 otter		ports/misc/otter
 ourmon		ports/net-mgmt/ourmon
+outerspace	ports/games/outerspace
 outguess	ports/security/outguess
 ovt		ports/science/ovt
 p-interp	ports/emulators/p-interp
