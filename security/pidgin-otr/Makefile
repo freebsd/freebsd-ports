@@ -28,4 +28,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libotr-prefix=${LOCALBASE}/lib \
 		--with-libotr-inc-prefix=${LOCALBASE}/include
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+
 .include <bsd.port.mk>

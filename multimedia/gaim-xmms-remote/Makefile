@@ -28,5 +28,6 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} \
 		-e 's#\([@(]\)GAIM_LIBDIR\([@)]\)#\1libdir\2#' \
 		-e 's#\([@(]\)GAIM_DATADIR\([@)]\)#\1datadir\2#'
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

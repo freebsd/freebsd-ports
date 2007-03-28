@@ -77,6 +77,8 @@ post-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|`$$CC -print-multi-os-directory 2>/dev/null`|elf|' \
 		${WRKSRC}/libffi/configure ${WRKSRC}/libffi/configure.in
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/ltconfig \
+		${WRKSRC}/libgc/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
