@@ -19,14 +19,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configuration Tool for LPRng
 
-USE_GHOSTSCRIPT_AFPL=	yes
-USE_GHOSTSCRIPT_BUILD=	yes
-
-BUILD_DEPENDS=	\
-	wish8.3:${PORTSDIR}/x11-toolkits/tk83 \
-	a2ps:${PORTSDIR}/print/a2ps-letter
+BUILD_DEPENDS=	a2ps:${PORTSDIR}/print/a2ps-letter \
+		wish:${PORTSDIR}/lang/tk-wrapper
 
 #RUN_DEPENDS=	ifhp:${PORTSDIR}/print/ifhp
+
+USE_GHOSTSCRIPT_BUILD=	yes
+USE_TK_BUILD=	yes
 
 .if defined(SYSCONFDIR)
 PLIST_SUB+=	CWD="" SYSCONFDIR="${SYSCONFDIR:S,^/,,}"
@@ -41,7 +40,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	--with-spool_directory=/var/spool/lpd \
 			--with-sysconfdir="${SYSCONFDIR}"
 
-MAN1=lprngtool.1
+MAN1=		lprngtool.1
 
 pre-everything::
 	@${ECHO_MSG} "If you want to replace the default printing system with LPRng, use:"
