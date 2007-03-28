@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hte
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,6 @@ DISTNAME=	ht-${PORTVERSION}
 MAINTAINER=	mva@sysfault.org
 COMMENT=	A file editor/viewer/analyzer for executables
 
-USE_GCC=	4.1+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
