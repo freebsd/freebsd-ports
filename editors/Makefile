@@ -195,6 +195,7 @@
     SUBDIR += xvile
     SUBDIR += xxe
     SUBDIR += yudit
+    SUBDIR += yui
     SUBDIR += zed
     SUBDIR += zile
     SUBDIR += zim
