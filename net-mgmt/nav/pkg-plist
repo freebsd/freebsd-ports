@@ -1,23 +1,28 @@
-etc/apache2/Includes/nav.conf.sample
+%%APACHEETCDIR%%/Includes/nav.conf.sample
 nav/apache/tools/alertprofiles.tool
 nav/apache/tools/arnold.tool
-nav/apache/tools/cricket.tool
 nav/apache/tools/devicemanagement.tool
 nav/apache/tools/editdb.tool
 nav/apache/tools/ipinfo.tool
 nav/apache/tools/l2trace.tool
 nav/apache/tools/logger.tool
 nav/apache/tools/machinetracker.tool
+nav/apache/tools/maintenance.tool
 nav/apache/tools/messages.tool
 nav/apache/tools/navAdmin.tool
 nav/apache/tools/report.tool
+nav/apache/tools/stats.tool
 nav/apache/tools/status.tool
 nav/apache/tools/useradmin.tool
 nav/apache/tools/vlanPlot.tool
 nav/apache/webapps/navAdmin.war
 nav/apache/webapps/vPServer.war
 nav/apache/webroot/.htaccess
+nav/apache/webroot/about/.htaccess
+nav/apache/webroot/about/about.html
+nav/apache/webroot/about/about.py
 nav/apache/webroot/alertprofiles/.htaccess
+nav/apache/webroot/alertprofiles/Makefile.in.bak
 nav/apache/webroot/alertprofiles/auth.php
 nav/apache/webroot/alertprofiles/check_syntax.function.php
 nav/apache/webroot/alertprofiles/config.php
@@ -162,13 +167,13 @@ nav/apache/webroot/images/lys/green.png
 nav/apache/webroot/images/lys/red.png
 nav/apache/webroot/images/lys/yellow.png
 nav/apache/webroot/images/main/.htaccess
-nav/apache/webroot/images/main/background-fill-nologo.gif
-nav/apache/webroot/images/main/background-fill.gif
+nav/apache/webroot/images/main/background-navbar.gif
+nav/apache/webroot/images/main/background-navlogo.gif
 nav/apache/webroot/images/main/navbar-separator.gif
-nav/apache/webroot/images/main/navlogo+background.gif
 nav/apache/webroot/images/main/quicklink-end.gif
 nav/apache/webroot/images/main/quicklink-fill.gif
 nav/apache/webroot/images/main/quicklink-start.gif
+nav/apache/webroot/images/ntnu.jpg
 nav/apache/webroot/images/pilned.png
 nav/apache/webroot/images/pilopp.png
 nav/apache/webroot/images/ragen/.htaccess
@@ -211,28 +216,38 @@ nav/apache/webroot/images/toolbox/tools/cricket.gif
 nav/apache/webroot/images/toolbox/tools/devbrowser.gif
 nav/apache/webroot/images/toolbox/tools/devman.gif
 nav/apache/webroot/images/toolbox/tools/editdb.gif
-nav/apache/webroot/images/toolbox/tools/emotd.gif
 nav/apache/webroot/images/toolbox/tools/ipinfo.png
 nav/apache/webroot/images/toolbox/tools/l2trace.png
+nav/apache/webroot/images/toolbox/tools/machinetracker.png
+nav/apache/webroot/images/toolbox/tools/maintenance.png
+nav/apache/webroot/images/toolbox/tools/messages.png
 nav/apache/webroot/images/toolbox/tools/network-explorer.gif
 nav/apache/webroot/images/toolbox/tools/ragen.gif
 nav/apache/webroot/images/toolbox/tools/searchtools.gif
-nav/apache/webroot/images/toolbox/tools/stat.gif
+nav/apache/webroot/images/toolbox/tools/stats.png
 nav/apache/webroot/images/toolbox/tools/status.gif
 nav/apache/webroot/images/toolbox/tools/syslog-analyzer.gif
 nav/apache/webroot/images/toolbox/tools/useradmin.png
-nav/apache/webroot/images/toolbox/tools/vlanplot.gif
+nav/apache/webroot/images/toolbox/tools/vlanplot.png
+nav/apache/webroot/images/uninett.png
 nav/apache/webroot/images/wrench.gif
 nav/apache/webroot/index.py
 nav/apache/webroot/ipinfo/.htaccess
+nav/apache/webroot/js/.htaccess
+nav/apache/webroot/js/DeviceBrowserTemplate.js
+nav/apache/webroot/js/EditTemplate.js
+nav/apache/webroot/js/default.js
+nav/apache/webroot/js/editdbTemplate.js
+nav/apache/webroot/js/table.js
 nav/apache/webroot/l2trace/.htaccess
 nav/apache/webroot/l2trace/l2trace.py
 nav/apache/webroot/logger/.htaccess
 nav/apache/webroot/logger/loggerhandler.py
 nav/apache/webroot/machinetracker/.htaccess
 nav/apache/webroot/machinetracker/machinetracker.py
+nav/apache/webroot/maintenance/.htaccess
 nav/apache/webroot/messages/.htaccess
-nav/apache/webroot/messages/messageshandler.py
+nav/apache/webroot/mysms/.htaccess
 nav/apache/webroot/navAdmin/.htaccess
 nav/apache/webroot/navAdmin/index
 nav/apache/webroot/preferences/.htaccess
@@ -246,24 +261,30 @@ nav/apache/webroot/report/Generator.py
 nav/apache/webroot/report/Matrix.py
 nav/apache/webroot/report/Report.py
 nav/apache/webroot/report/reporthandler.py
-nav/apache/webroot/source/arnold.svg
-nav/apache/webroot/source/devman-toolicon.psd
-nav/apache/webroot/source/editdb-toolicon.psd
-nav/apache/webroot/source/editdb.svg
-nav/apache/webroot/source/l2trace.svg
-nav/apache/webroot/source/navbar-separator.psd
-nav/apache/webroot/source/navlogo.svg
-nav/apache/webroot/source/network-explorer-toolicon.psd
-nav/apache/webroot/source/ntnu-toolicon.psd
-nav/apache/webroot/source/router.svg
-nav/apache/webroot/source/status.svg
-nav/apache/webroot/source/toolicon-background.psd
-nav/apache/webroot/source/useradmin.svg
+nav/apache/webroot/stats/.htaccess
 nav/apache/webroot/status/.htaccess
 nav/apache/webroot/status/StatusDefaultPrefs.py
 nav/apache/webroot/status/StatusPrefs.py
 nav/apache/webroot/status/StatusSections.py
 nav/apache/webroot/status/status.py
+nav/apache/webroot/style/.htaccess
+nav/apache/webroot/style/DeviceBrowserTemplate.css
+nav/apache/webroot/style/FrontpageTemplate.css
+nav/apache/webroot/style/MatrixScopesTemplate.css
+nav/apache/webroot/style/MatrixTemplate.css
+nav/apache/webroot/style/UserInfo.css
+nav/apache/webroot/style/calendar.css
+nav/apache/webroot/style/default.css
+nav/apache/webroot/style/deviceManagement.css
+nav/apache/webroot/style/editdbTemplate.css
+nav/apache/webroot/style/form.css
+nav/apache/webroot/style/ipinfo.css
+nav/apache/webroot/style/l2trace.css
+nav/apache/webroot/style/machinetracker.css
+nav/apache/webroot/style/messages.css
+nav/apache/webroot/style/table.css
+nav/apache/webroot/style/tabs.css
+nav/apache/webroot/style/tabs2.css
 nav/apache/webroot/toolbox/.htaccess
 nav/apache/webroot/toolbox/toolbox.py
 nav/apache/webroot/useradmin.py
@@ -289,6 +310,7 @@ nav/apache/webroot/vlanPlot/icons/tildelt.gif
 nav/apache/webroot/vlanPlot/icons/undef.gif
 nav/apache/webroot/vlanPlot/icons/vpn-orig.png
 nav/apache/webroot/vlanPlot/index.py
+nav/apache/webroot/vlanPlot/index.py.orig
 nav/apache/webroot/vlanPlot/omvlanplot.html
 nav/apache/webroot/vlanPlot/vlanPlot.jar
 nav/bin/alertdaemon.pl
@@ -311,13 +333,10 @@ nav/bin/makecricketconfig.pl
 nav/bin/nav
 nav/bin/navTemplate.py
 nav/bin/navclean.py
-nav/bin/navenv.sh
 nav/bin/networkDiscovery.sh
-nav/bin/pg_backup.pl
 nav/bin/pping.py
-nav/bin/safe_smsd.pl
 nav/bin/servicemon.py
-nav/bin/smsd.pl
+nav/bin/smsd.py
 nav/bin/start_arnold.pl
 nav/bin/t1000.pl
 nav/bin/thresholdMon.py
@@ -325,22 +344,17 @@ nav/bin/vprrd.py
 nav/doc/cricket/README
 nav/doc/cricket/cricket-config/.nav
 nav/doc/cricket/cricket-config/Defaults
-nav/doc/cricket/cricket-config/router-interfaces-snmpv1-and-giga/.nav
-nav/doc/cricket/cricket-config/router-interfaces-snmpv1-and-giga/Defaults
 nav/doc/cricket/cricket-config/router-interfaces/.nav
 nav/doc/cricket/cricket-config/router-interfaces/Defaults
 nav/doc/cricket/cricket-config/routers/.nav
 nav/doc/cricket/cricket-config/routers/Defaults
 nav/doc/cricket/cricket-config/servers/.nav
 nav/doc/cricket/cricket-config/servers/Defaults
-nav/doc/cricket/cricket-config/switch-ports-snmpv1-and-giga/.nav
-nav/doc/cricket/cricket-config/switch-ports-snmpv1-and-giga/Defaults
 nav/doc/cricket/cricket-config/switch-ports/.nav
 nav/doc/cricket/cricket-config/switch-ports/Defaults
 nav/doc/cricket/cricket-config/switches/.nav
 nav/doc/cricket/cricket-config/switches/Defaults
 nav/doc/cricket/cricket/subtree-sets
-nav/doc/cricket/cricket/view-groups
 nav/doc/cricket/public_html/cricket.css
 nav/doc/getting-started.txt
 nav/doc/sql/README
@@ -349,10 +363,13 @@ nav/doc/sql/logger.sql
 nav/doc/sql/manage.sql
 nav/doc/sql/navprofiles.sql
 nav/doc/sql/snmpoid.sql
+nav/doc/sql/types.sql
 nav/doc/sql/upgrades/3.0_beta10.sql
 nav/doc/sql/upgrades/3.0_beta7.sql
 nav/doc/sql/upgrades/3.0_beta8.sql
 nav/doc/sql/upgrades/3.0_rc1.sql
+nav/doc/sql/upgrades/3.1.0.sql
+nav/doc/sql/upgrades/3.2.0.sql
 nav/doc/sql/upgrades/README
 nav/etc/alertengine.cfg
 nav/etc/alertmsg.conf
@@ -361,14 +378,12 @@ nav/etc/arnold/mailtemplates/README
 nav/etc/arnold/nonblock.cfg
 nav/etc/cricket-views.conf
 nav/etc/cricketoids.txt
-nav/etc/cron.d/backup
 nav/etc/cron.d/cricket
 nav/etc/cron.d/iptrace
 nav/etc/cron.d/logengine
 nav/etc/cron.d/mactrace
 nav/etc/cron.d/maintengine
 nav/etc/cron.d/networkDiscovery
-nav/etc/cron.d/safe_smsd
 nav/etc/cron.d/thresholdMon
 nav/etc/db.conf
 nav/etc/devbrowser.conf
@@ -388,7 +403,6 @@ nav/etc/l2trace.conf
 nav/etc/logger.conf
 nav/etc/machinetracker.conf
 nav/etc/nav.conf
-nav/etc/pg_backup.conf
 nav/etc/pping.conf
 nav/etc/report/front.html
 nav/etc/report/matrix.conf
@@ -396,6 +410,7 @@ nav/etc/report/report.conf
 nav/etc/rrdBrowser.conf
 nav/etc/servicemon.conf
 nav/etc/smsd.conf
+nav/etc/sortedStats.conf
 nav/etc/vPServer.conf
 nav/etc/webfront/contact-information.txt
 nav/etc/webfront/external-links.txt
@@ -464,7 +479,9 @@ nav/lib/perl/NetAddr/IP.pm
 nav/lib/python/nav/Snmp.py
 nav/lib/python/nav/__init__.py
 nav/lib/python/nav/auth.py
+nav/lib/python/nav/buildconf.py
 nav/lib/python/nav/config.py
+nav/lib/python/nav/daemon.py
 nav/lib/python/nav/database.py
 nav/lib/python/nav/db/__init__.py
 nav/lib/python/nav/db/forgotten/__init__.py
@@ -477,10 +494,19 @@ nav/lib/python/nav/dump.py
 nav/lib/python/nav/errors.py
 nav/lib/python/nav/event.py
 nav/lib/python/nav/getstatus.py
+nav/lib/python/nav/logconfig.py
+nav/lib/python/nav/maintenance.py
+nav/lib/python/nav/messages.py
 nav/lib/python/nav/path.py
 nav/lib/python/nav/pwhash.py
 nav/lib/python/nav/rrd/__init__.py
 nav/lib/python/nav/rrd/presenter.py
+nav/lib/python/nav/smsd/__init__.py
+nav/lib/python/nav/smsd/boostdispatcher.py
+nav/lib/python/nav/smsd/dispatcher.py
+nav/lib/python/nav/smsd/gammudispatcher.py
+nav/lib/python/nav/smsd/navdbqueue.py
+nav/lib/python/nav/smsd/uninettmaildispatcher.py
 nav/lib/python/nav/startstop.py
 nav/lib/python/nav/statemon/DEQueue.py
 nav/lib/python/nav/statemon/DNS/Base.py
@@ -560,6 +586,7 @@ nav/lib/python/nav/web/TreeSelect.py
 nav/lib/python/nav/web/URI.py
 nav/lib/python/nav/web/__init__.py
 nav/lib/python/nav/web/auth.py
+nav/lib/python/nav/web/cycler.py
 nav/lib/python/nav/web/devBrowser/__init__.py
 nav/lib/python/nav/web/devBrowser/dispatcher.py
 nav/lib/python/nav/web/devBrowser/module.py
@@ -571,10 +598,12 @@ nav/lib/python/nav/web/devBrowser/servicetable.py
 nav/lib/python/nav/web/ipinfo/__init__.py
 nav/lib/python/nav/web/ipinfo/config.py
 nav/lib/python/nav/web/ldapAuth.py
+nav/lib/python/nav/web/maintenance/__init__.py
+nav/lib/python/nav/web/maintenance/handler.py
 nav/lib/python/nav/web/messages/__init__.py
-nav/lib/python/nav/web/messages/conf.py
-nav/lib/python/nav/web/messages/lib.py
-nav/lib/python/nav/web/messages/menu.py
+nav/lib/python/nav/web/messages/handler.py
+nav/lib/python/nav/web/mysms/__init__.py
+nav/lib/python/nav/web/mysms/handler.py
 nav/lib/python/nav/web/preferences.py
 nav/lib/python/nav/web/pyproxy/__init__.py
 nav/lib/python/nav/web/pyproxy/proxy.py
@@ -582,36 +611,37 @@ nav/lib/python/nav/web/pyproxy/vlanPlot.py
 nav/lib/python/nav/web/sci_exp.py
 nav/lib/python/nav/web/selectTree.py
 nav/lib/python/nav/web/serviceHelper.py
+nav/lib/python/nav/web/sortedStats.py
 nav/lib/python/nav/web/state.py
 nav/lib/python/nav/web/tableview.py
 nav/lib/python/nav/web/templates/ArnoldTemplate.py
 nav/lib/python/nav/web/templates/ChangeLinkTemplate.py
 nav/lib/python/nav/web/templates/DeviceBrowserTemplate.py
-nav/lib/python/nav/web/templates/EditTemplate.py
-nav/lib/python/nav/web/templates/EmotdFrontpage.py
-nav/lib/python/nav/web/templates/EmotdMessageTemplate.py
-nav/lib/python/nav/web/templates/EmotdStandardTemplate.py
-nav/lib/python/nav/web/templates/EmotdTemplate.py
-nav/lib/python/nav/web/templates/FeederTemplate.py
 nav/lib/python/nav/web/templates/FrontpageTemplate.py
 nav/lib/python/nav/web/templates/IPInfo.py
 nav/lib/python/nav/web/templates/LoggerTemplate.py
 nav/lib/python/nav/web/templates/LoginTemplate.py
 nav/lib/python/nav/web/templates/MachineTrackerTemplate.py
 nav/lib/python/nav/web/templates/MainTemplate.py
-nav/lib/python/nav/web/templates/MaintListTemplate.py
-nav/lib/python/nav/web/templates/MaintTimeTemplate.py
+nav/lib/python/nav/web/templates/MaintenanceCalTemplate.py
+nav/lib/python/nav/web/templates/MaintenanceListTemplate.py
+nav/lib/python/nav/web/templates/MaintenanceNewTemplate.py
 nav/lib/python/nav/web/templates/MaintenanceTemplate.py
 nav/lib/python/nav/web/templates/MatrixScopesTemplate.py
 nav/lib/python/nav/web/templates/MatrixTemplate.py
+nav/lib/python/nav/web/templates/MessagesFeedTemplate.py
+nav/lib/python/nav/web/templates/MessagesListTemplate.py
+nav/lib/python/nav/web/templates/MessagesNewTemplate.py
+nav/lib/python/nav/web/templates/MessagesTemplate.py
+nav/lib/python/nav/web/templates/MySMSTemplate.py
 nav/lib/python/nav/web/templates/NavbarPreferencesTemplate.py
 nav/lib/python/nav/web/templates/ReportTemplate.py
 nav/lib/python/nav/web/templates/SearchBoxTemplate.py
+nav/lib/python/nav/web/templates/SortedStatsTemplate.py
 nav/lib/python/nav/web/templates/StatusTemplate.py
 nav/lib/python/nav/web/templates/ToolboxTemplate.py
 nav/lib/python/nav/web/templates/TreeSelectTemplate.py
 nav/lib/python/nav/web/templates/UserInfo.py
-nav/lib/python/nav/web/templates/ViewMessageTemplate.py
 nav/lib/python/nav/web/templates/__init__.py
 nav/lib/python/nav/web/templates/deviceManagementTemplate.py
 nav/lib/python/nav/web/templates/editdbTemplate.py
@@ -626,27 +656,39 @@ nav/lib/python/nav/web/templates/useradmin/UserAdmin.py
 nav/lib/python/nav/web/templates/useradmin/__init__.py
 nav/lib/python/nav/web/toolbox.py
 nav/lib/python/nav/web/urlbuilder.py
-nav/lib/python/rotater.py
-@exec install -d -m 0755 -o navcron -g nav %D/nav/var/rrd %D/nav/var/run %D/nav/var/pg_backup %D/nav/var/log
-@unexec rm %D/nav/var/log/thresholdMon.log 2>/dev/null || true
+@exec install -d -m 0755 -o navcron -g nav %D/nav/var
+@exec install -d -m 0755 -o navcron -g nav %D/nav/var/log
+@exec install -d -m 0755 -o navcron -g nav %D/nav/var/log/arnold
+@exec install -d -m 0755 -o navcron -g nav %D/nav/var/log/eventEngine
+@exec install -d -m 0755 -o navcron -g nav %D/nav/var/log/getDeviceData
+@exec install -d -m 0755 -o navcron -g nav %D/nav/var/log/networkDiscovery
+@exec install -d -m 0755 -o navcron -g nav %D/nav/var/pg_backup
+@exec install -d -m 0755 -o navcron -g nav %D/nav/var/rrd
+@exec install -d -m 0755 -o navcron -g nav %D/nav/var/run
 @unexec rm %D/nav/var/run/*.pid 2>/dev/null || true
-@dirrmtry nav/var/log/*
-@dirrmtry nav/var/log
-@dirrmtry nav/var/rrd
 @dirrmtry nav/var/run
+@dirrmtry nav/var/rrd
 @dirrmtry nav/var/pg_backup
+@dirrmtry nav/var/log/networkDiscovery
+@dirrmtry nav/var/log/getDeviceData
+@dirrmtry nav/var/log/eventEngine
+@dirrmtry nav/var/log/arnold
+@dirrmtry nav/var/log
 @dirrmtry nav/var
 @unexec find %D/nav/lib/python/nav -type f -name "*.pyc" -delete 2>/dev/null || true
 @dirrm nav/lib/python/nav/web/templates/useradmin
 @dirrm nav/lib/python/nav/web/templates
 @dirrm nav/lib/python/nav/web/pyproxy
+@dirrm nav/lib/python/nav/web/mysms
 @dirrm nav/lib/python/nav/web/messages
+@dirrm nav/lib/python/nav/web/maintenance
 @dirrm nav/lib/python/nav/web/ipinfo
 @dirrm nav/lib/python/nav/web/devBrowser
 @dirrm nav/lib/python/nav/web
 @dirrm nav/lib/python/nav/statemon/checker
 @dirrm nav/lib/python/nav/statemon/DNS
 @dirrm nav/lib/python/nav/statemon
+@dirrm nav/lib/python/nav/smsd
 @dirrm nav/lib/python/nav/rrd
 @dirrm nav/lib/python/nav/db/forgotten
 @dirrm nav/lib/python/nav/db
@@ -677,11 +719,9 @@ nav/lib/python/rotater.py
 @dirrm nav/doc/sql
 @dirrm nav/doc/cricket/public_html
 @dirrm nav/doc/cricket/cricket-config/switches
-@dirrm nav/doc/cricket/cricket-config/switch-ports-snmpv1-and-giga
 @dirrm nav/doc/cricket/cricket-config/switch-ports
 @dirrm nav/doc/cricket/cricket-config/servers
 @dirrm nav/doc/cricket/cricket-config/routers
-@dirrm nav/doc/cricket/cricket-config/router-interfaces-snmpv1-and-giga
 @dirrm nav/doc/cricket/cricket-config/router-interfaces
 @dirrm nav/doc/cricket/cricket-config
 @dirrm nav/doc/cricket/cricket
@@ -693,16 +733,20 @@ nav/lib/python/rotater.py
 @dirrm nav/apache/webroot/vlanPlot
 @dirrm nav/apache/webroot/vPServer
 @dirrm nav/apache/webroot/toolbox
+@dirrm nav/apache/webroot/style
 @dirrm nav/apache/webroot/status
-@dirrm nav/apache/webroot/source
+@dirrm nav/apache/webroot/stats
 @dirrm nav/apache/webroot/report
 @dirrm nav/apache/webroot/preferences/navigation
 @dirrm nav/apache/webroot/preferences
 @dirrm nav/apache/webroot/navAdmin
+@dirrm nav/apache/webroot/mysms
 @dirrm nav/apache/webroot/messages
+@dirrm nav/apache/webroot/maintenance
 @dirrm nav/apache/webroot/machinetracker
 @dirrm nav/apache/webroot/logger
 @dirrm nav/apache/webroot/l2trace
+@dirrm nav/apache/webroot/js
 @dirrm nav/apache/webroot/ipinfo
 @dirrm nav/apache/webroot/images/toolbox/tools
 @dirrm nav/apache/webroot/images/toolbox
@@ -730,6 +774,7 @@ nav/lib/python/rotater.py
 @dirrm nav/apache/webroot/alertprofiles/documents
 @dirrm nav/apache/webroot/alertprofiles/css
 @dirrm nav/apache/webroot/alertprofiles
+@dirrm nav/apache/webroot/about
 @dirrm nav/apache/webroot
 @dirrm nav/apache/webapps
 @dirrm nav/apache/tools
