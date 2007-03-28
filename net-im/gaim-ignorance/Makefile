@@ -27,7 +27,7 @@ SUB_FILES=	pkg-message
 PORTDOCS=	README
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-g3||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-g3|| ; s|echo aout|echo elf|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s/ignorance.conf/ignorance.conf.sample/g" ${WRKSRC}/Makefile.in
 	@${MV} ${WRKSRC}/ignorance.conf ${WRKSRC}/ignorance.conf.sample
 

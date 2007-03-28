@@ -23,4 +23,7 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	lib/gaim/se.la lib/gaim/se.so
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+
 .include <bsd.port.mk>

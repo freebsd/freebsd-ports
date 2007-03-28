@@ -26,6 +26,6 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	lib/gaim/bangexec.la lib/gaim/bangexec.so
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-g3||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-g3|| ; s|echo aout|echo elf|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
