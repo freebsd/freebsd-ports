@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openxpki
-PORTVERSION=	0.9.724
+PORTVERSION=	0.9.781
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,11 +14,11 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	OpenXPKI-${PORTVERSION}
 DIST_SUBDIR=	openxpki
 
-MAINTAINER=	svysh@cryptocom.ru
+MAINTAINER=	svysh@pn.sinp.msu.ru
 COMMENT=	Perl based trustcenter software for PKI: core for server
 
 BUILD_DEPENDS=	\
-	${SITE_PERL}/Workflow.pm:${PORTSDIR}/devel/p5-Workflow \
+	p5-Workflow>=0.26:${PORTSDIR}/devel/p5-Workflow \
 	${SITE_PERL}/CGI/Session.pm:${PORTSDIR}/www/p5-CGI-Session \
 	${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
 	${SITE_PERL}/Locale/Recode.pm:${PORTSDIR}/devel/p5-Locale-libintl \
@@ -35,7 +35,9 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/Class/Std.pm:${PORTSDIR}/devel/p5-Class-Std \
 	${SITE_PERL}/Mail/RFC822/Address.pm:${PORTSDIR}/mail/p5-Mail-RFC822-Address \
 	${SITE_PERL}/${PERL_ARCH}/Proc/ProcessTable.pm:${PORTSDIR}/devel/p5-Proc-ProcessTable \
-	${SITE_PERL}/Sys/SigAction.pm:${PORTSDIR}/devel/p5-Sys-SigAction
+	${SITE_PERL}/Sys/SigAction.pm:${PORTSDIR}/devel/p5-Sys-SigAction \
+	${SITE_PERL}/Data/Password.pm:${PORTSDIR}/security/p5-Data-Password \
+	${SITE_PERL}/RT/Client/REST.pm:${PORTSDIR}/www/p5-RT-Client-REST
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 MAN3=	OpenXPKI.3 \
@@ -64,6 +66,7 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Command::is_prime.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Command::issue_cert.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Command::issue_crl.3 \
+	OpenXPKI::Crypto::Backend::OpenSSL::Command::list_algorithms.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Command::pkcs7_decrypt.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Command::pkcs7_encrypt.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Command::pkcs7_get_chain.3 \
@@ -74,6 +77,7 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Engine.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Engine::GOST.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Engine::OpenSSL.3 \
+	OpenXPKI::Crypto::Backend::OpenSSL::Engine::PKCS11.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::Engine::nCipher.3 \
 	OpenXPKI::Crypto::Backend::OpenSSL::XS.3 \
 	OpenXPKI::Crypto::CLI.3 \
@@ -153,6 +157,10 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Init.3 \
 	OpenXPKI::Server::Log.3 \
 	OpenXPKI::Server::Log::Appender::DBI.3 \
+	OpenXPKI::Server::Log::NOOP.3 \
+	OpenXPKI::Server::Notification.3 \
+	OpenXPKI::Server::Notification::Dispatcher.3 \
+	OpenXPKI::Server::Notification::RT.3 \
 	OpenXPKI::Server::Session.3 \
 	OpenXPKI::Server::Session::Mock.3 \
 	OpenXPKI::Server::Workflow.3 \
@@ -162,7 +170,6 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Workflow::Activity::CRLIssuance::IssueCRL.3 \
 	OpenXPKI::Server::Workflow::Activity::CRLIssuance::PublishCRL.3 \
 	OpenXPKI::Server::Workflow::Activity::CRR::PersistRequest.3 \
-	OpenXPKI::Server::Workflow::Activity::CRR::RevokeCertificate.3 \
 	OpenXPKI::Server::Workflow::Activity::CSR::GenerateKey.3 \
 	OpenXPKI::Server::Workflow::Activity::CSR::GeneratePKCS10.3 \
 	OpenXPKI::Server::Workflow::Activity::CSR::PersistRequest.3 \
@@ -170,6 +177,8 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Workflow::Activity::CertIssuance::ImportCertData.3 \
 	OpenXPKI::Server::Workflow::Activity::CertIssuance::Issue.3 \
 	OpenXPKI::Server::Workflow::Activity::CertIssuance::PersistCertificate.3 \
+	OpenXPKI::Server::Workflow::Activity::CertLdapPublish::AddMissingNode.3 \
+	OpenXPKI::Server::Workflow::Activity::CertLdapPublish::PublicCertLdap.3 \
 	OpenXPKI::Server::Workflow::Activity::DataExchange::Cleanup.3 \
 	OpenXPKI::Server::Workflow::Activity::DataExchange::ExportLogs.3 \
 	OpenXPKI::Server::Workflow::Activity::DataExchange::ExportWorkflowInstances.3 \
@@ -201,17 +210,17 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::DetermineIssuingCA.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::Export.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::ForkWorkflowInstance.3 \
+	OpenXPKI::Server::Workflow::Activity::Tools::Notification.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::SetErrorCode.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::SetSource.3 \
 	OpenXPKI::Server::Workflow::Activity::Tools::Sleep.3 \
 	OpenXPKI::Server::Workflow::Condition::ACL.3 \
 	OpenXPKI::Server::Workflow::Condition::AlwaysFalse.3 \
 	OpenXPKI::Server::Workflow::Condition::AlwaysTrue.3 \
-	OpenXPKI::Server::Workflow::Condition::ApprovalNeeded.3 \
 	OpenXPKI::Server::Workflow::Condition::Approved.3 \
 	OpenXPKI::Server::Workflow::Condition::CRLSigningCAsLeft.3 \
+	OpenXPKI::Server::Workflow::Condition::CertificateNotYetRevoked.3 \
 	OpenXPKI::Server::Workflow::Condition::CheckCertTestResult.3 \
-	OpenXPKI::Server::Workflow::Condition::ContextParameterExistence.3 \
 	OpenXPKI::Server::Workflow::Condition::CorrectNumberOfValidCerts.3 \
 	OpenXPKI::Server::Workflow::Condition::CorrectTiming.3 \
 	OpenXPKI::Server::Workflow::Condition::InitialEnrollmentOrRenewal.3 \
@@ -219,23 +228,30 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Workflow::Condition::IsServerKeyGeneration.3 \
 	OpenXPKI::Server::Workflow::Condition::IsValidSignatureWithRequestedDN.3 \
 	OpenXPKI::Server::Workflow::Condition::Key.3 \
+	OpenXPKI::Server::Workflow::Condition::LdapDnAvailable.3 \
 	OpenXPKI::Server::Workflow::Condition::MoreCSRsToCreate.3 \
 	OpenXPKI::Server::Workflow::Condition::MoreCertsToTest.3 \
 	OpenXPKI::Server::Workflow::Condition::Server.3 \
 	OpenXPKI::Server::Workflow::Condition::SignedUsingOriginalCertOrSelfSigned.3 \
+	OpenXPKI::Server::Workflow::Condition::UseLdap.3 \
 	OpenXPKI::Server::Workflow::Condition::ValidCSRSerialPresent.3 \
 	OpenXPKI::Server::Workflow::Condition::WorkflowChildrenFailure.3 \
 	OpenXPKI::Server::Workflow::Condition::WorkflowChildrenSuccessfullyFinished.3 \
 	OpenXPKI::Server::Workflow::Observer::Debug.3 \
+	OpenXPKI::Server::Workflow::Observer::Log.3 \
 	OpenXPKI::Server::Workflow::Persister::DBI.3 \
 	OpenXPKI::Server::Workflow::Persister::DBI::SequenceId.3 \
+	OpenXPKI::Server::Workflow::Validator::ApprovalSignature.3 \
 	OpenXPKI::Server::Workflow::Validator::CertProfile.3 \
 	OpenXPKI::Server::Workflow::Validator::CertRole.3 \
 	OpenXPKI::Server::Workflow::Validator::CertSubject.3 \
 	OpenXPKI::Server::Workflow::Validator::CertSubjectAltName.3 \
 	OpenXPKI::Server::Workflow::Validator::Creator.3 \
+	OpenXPKI::Server::Workflow::Validator::InvalidityTime.3 \
+	OpenXPKI::Server::Workflow::Validator::KeyReuse.3 \
 	OpenXPKI::Server::Workflow::Validator::PKCS10.3 \
 	OpenXPKI::Server::Workflow::Validator::PasswordQuality.3 \
+	OpenXPKI::Server::Workflow::Validator::ReasonCode.3 \
 	OpenXPKI::Server::Workflow::Validator::SPKAC.3 \
 	OpenXPKI::Service.3 \
 	OpenXPKI::Service::Default.3 \
@@ -256,10 +272,25 @@ USE_OPENSSL=	yes
 WITH_OPENSSL_BETA=	yes
 PERL_CONFIGURE=	yes
 
-post-install:
-	${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
+OPTIONS=	DEVELOPER	"Install development tools for OpenXPKI?" off
+# These tools include docbook, Java and Xorg libraries.
+# They are needed only if you plan to fetch development svn snapshot,
+# then edit XML prototypes for collection of OpenXPKI guides, and then
+# compile the collection into HTML or PDF forms.
+# If you want to read OpenXPKI documentation, these tools are not needed.
+# Just visit http://www.openxpki.org/docs/
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_DEVELOPER)
+RUN_DEPENDS+=	fop:${PORTSDIR}/textproc/fop \
+		xsltproc:${PORTSDIR}/textproc/libxslt \
+		${LOCALBASE}/share/xsl/docbook/html/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
+		${LOCALBASE}/share/java/jai/lib/libmlib_jai.so:${PORTSDIR}/java/jai
+.endif
+
+post-install:
+	${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
 
 .if ${PERL_LEVEL} < 500806
 IGNORE=	requires newer Perl, but you can install required old additional perl modules from CPAN instead
