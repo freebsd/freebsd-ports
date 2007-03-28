@@ -181,6 +181,8 @@ post-patch:
 		-e 's|api.mpt||' \
 		-e 's|^(install-man.*)install-manm|\1|' \
 		${WRKSRC}/doc/mp4v2/Makefile.in
+# objformat
+	@${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} -e 's|echo aout|echo elf|'
 
 post-install:
 	@${MKDIR} ${DATADIR}

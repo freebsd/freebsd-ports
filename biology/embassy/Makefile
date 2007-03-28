@@ -89,6 +89,9 @@ do-extract:
 	  fi
 .endfor
 
+post-patch:
+	@${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} -e 's|echo aout|echo elf|'
+
 do-configure:
 .for app in ${APPLIST}
 	@ cd ${${app}_WRKSRC} && \
