@@ -12525,6 +12525,7 @@ py-game		ports/devel/py-game
 py-gamin	ports/devel/py-gamin
 py-gato		ports/math/py-gato
 py-gd		ports/graphics/py-gd
+py-gdata	ports/devel/py-gdata
 py-gdbm		ports/databases/py-gdbm
 py-gdchart	ports/graphics/py-gdchart
 py-gdchart2	ports/graphics/py-gdchart2
