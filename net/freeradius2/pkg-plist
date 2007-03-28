@@ -12,52 +12,58 @@ bin/rlm_dbm_cat
 bin/rlm_dbm_parser
 bin/rlm_ippool_tool
 bin/smbencrypt
-@unexec for i in `find %D/etc/raddb -maxdepth 1 -regex '.*\.sample' -print | sed -e 's/\.sample//g'`; do if [ -f ${i} ]; then if cmp -s ${i}.sample ${i}; then rm -f ${i}; fi; fi; done
-etc/raddb/acct_users.sample
-etc/raddb/attrs.sample
-etc/raddb/certs/README
-etc/raddb/certs/cert-clt.der
-etc/raddb/certs/cert-clt.p12
-etc/raddb/certs/cert-clt.pem
-etc/raddb/certs/cert-srv.der
-etc/raddb/certs/cert-srv.p12
-etc/raddb/certs/cert-srv.pem
-etc/raddb/certs/demoCA/cacert.pem
-etc/raddb/certs/demoCA/index.txt
-etc/raddb/certs/demoCA/index.txt.old
-etc/raddb/certs/demoCA/serial
-etc/raddb/certs/demoCA/serial.old
-etc/raddb/certs/dh
-etc/raddb/certs/newcert.pem
-etc/raddb/certs/newreq.pem
-etc/raddb/certs/random
-etc/raddb/certs/root.der
-etc/raddb/certs/root.p12
-etc/raddb/certs/root.pem
-etc/raddb/clients.conf.sample
-etc/raddb/clients.sample
-etc/raddb/dictionary.sample
-etc/raddb/eap.conf.sample
-etc/raddb/example.pl
-etc/raddb/experimental.conf.sample
-etc/raddb/hints.sample
-etc/raddb/huntgroups.sample
-etc/raddb/ldap.attrmap.sample
-etc/raddb/mssql.conf.sample
-etc/raddb/naslist.sample
-etc/raddb/naspasswd.sample
-etc/raddb/oraclesql.conf.sample
-etc/raddb/otp.conf.sample
-etc/raddb/postgresql.conf.sample
-etc/raddb/preproxy_users.sample
-etc/raddb/proxy.conf.sample
-etc/raddb/radiusd.conf.sample
-etc/raddb/realms.sample
-etc/raddb/snmp.conf.sample
-etc/raddb/sql.conf.sample
-etc/raddb/sqlippool.conf.sample
-etc/raddb/users.sample
-@exec for i in `find %D/etc/raddb -maxdepth 1 -regex '.*\.sample' -print | sed -e 's/\.sample//g'`; do if [ ! -f ${i} ]; then cp -p ${i}.sample ${i}; fi; done
+@unexec for i in `find %D/%%EXAMPLESDIR%%/raddb/ -type f -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/::g'`; do if [ -f %D/%%EXAMPLESDIR%%/raddb/${i} ]; then if cmp -s %D/%%EXAMPLESDIR%%/raddb/${i} %D/etc/raddb/${i}; then rm -f %D/etc/raddb/${i}; fi; fi; done
+@unexec for i in `find -d %D/%%EXAMPLESDIR%%/raddb/ -type d -mindepth 1 -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/::g'`; do if [ -d %D/etc/raddb/${i} ]; then rmdir %D/etc/raddb/${i} 2>/dev/null || true; fi; done
+%%EXAMPLESDIR%%/raddb/acct_users
+%%EXAMPLESDIR%%/raddb/attrs
+%%EXAMPLESDIR%%/raddb/certs/README
+%%EXAMPLESDIR%%/raddb/certs/cert-clt.der
+%%EXAMPLESDIR%%/raddb/certs/cert-clt.p12
+%%EXAMPLESDIR%%/raddb/certs/cert-clt.pem
+%%EXAMPLESDIR%%/raddb/certs/cert-srv.der
+%%EXAMPLESDIR%%/raddb/certs/cert-srv.p12
+%%EXAMPLESDIR%%/raddb/certs/cert-srv.pem
+%%EXAMPLESDIR%%/raddb/certs/demoCA/cacert.pem
+%%EXAMPLESDIR%%/raddb/certs/demoCA/index.txt
+%%EXAMPLESDIR%%/raddb/certs/demoCA/index.txt.old
+%%EXAMPLESDIR%%/raddb/certs/demoCA/serial
+%%EXAMPLESDIR%%/raddb/certs/demoCA/serial.old
+%%EXAMPLESDIR%%/raddb/certs/dh
+%%EXAMPLESDIR%%/raddb/certs/newcert.pem
+%%EXAMPLESDIR%%/raddb/certs/newreq.pem
+%%EXAMPLESDIR%%/raddb/certs/random
+%%EXAMPLESDIR%%/raddb/certs/root.der
+%%EXAMPLESDIR%%/raddb/certs/root.p12
+%%EXAMPLESDIR%%/raddb/certs/root.pem
+%%EXAMPLESDIR%%/raddb/clients.conf
+%%EXAMPLESDIR%%/raddb/clients
+%%EXAMPLESDIR%%/raddb/dictionary
+%%EXAMPLESDIR%%/raddb/eap.conf
+%%EXAMPLESDIR%%/raddb/example.pl
+%%EXAMPLESDIR%%/raddb/experimental.conf
+%%EXAMPLESDIR%%/raddb/hints
+%%EXAMPLESDIR%%/raddb/huntgroups
+%%EXAMPLESDIR%%/raddb/ldap.attrmap
+%%EXAMPLESDIR%%/raddb/mssql.conf
+%%EXAMPLESDIR%%/raddb/naslist
+%%EXAMPLESDIR%%/raddb/naspasswd
+%%EXAMPLESDIR%%/raddb/oraclesql.conf
+%%EXAMPLESDIR%%/raddb/otp.conf
+%%EXAMPLESDIR%%/raddb/postgresql.conf
+%%EXAMPLESDIR%%/raddb/preproxy_users
+%%EXAMPLESDIR%%/raddb/proxy.conf
+%%EXAMPLESDIR%%/raddb/radiusd.conf
+%%EXAMPLESDIR%%/raddb/realms
+%%EXAMPLESDIR%%/raddb/snmp.conf
+%%EXAMPLESDIR%%/raddb/sql.conf
+%%EXAMPLESDIR%%/raddb/sqlippool.conf
+%%EXAMPLESDIR%%/raddb/users
+@exec for i in `find %D/%%EXAMPLESDIR%%/raddb/ -type d -mindepth 1 -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/::g'`; do if [ ! -d %D/etc/raddb/${i} ]; then mkdir -p %D/etc/raddb/${i}; fi; done
+@exec for i in `find %D/%%EXAMPLESDIR%%/raddb/ -type f -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/::g'`; do if [ ! -f %D/etc/raddb/${i} ]; then cp -p %D/%%EXAMPLESDIR%%/raddb/${i} %D/etc/raddb/${i}; fi; done
+@dirrm %%EXAMPLESDIR%%/raddb/certs/demoCA
+@dirrm %%EXAMPLESDIR%%/raddb/certs
+@dirrm %%EXAMPLESDIR%%/raddb
+@dirrm %%EXAMPLESDIR%%
 lib/libeap-%%PORTVERSION%%.la
 lib/libeap-%%PORTVERSION%%.so
 lib/libeap.a
@@ -278,6 +284,10 @@ lib/rlm_sql-%%PORTVERSION%%.so
 lib/rlm_sql.a
 lib/rlm_sql.la
 lib/rlm_sql.so
+%%FIREBIRD%%lib/rlm_sql_firebird-%%PORTVERSION%%.so
+%%FIREBIRD%%lib/rlm_sql_firebird.a
+%%FIREBIRD%%lib/rlm_sql_firebird.la
+%%FIREBIRD%%lib/rlm_sql_firebird.so
 lib/rlm_sql_log-%%PORTVERSION%%.la
 lib/rlm_sql_log-%%PORTVERSION%%.so
 lib/rlm_sql_log.a
@@ -296,6 +306,16 @@ lib/rlm_sqlcounter-%%PORTVERSION%%.so
 lib/rlm_sqlcounter.a
 lib/rlm_sqlcounter.la
 lib/rlm_sqlcounter.so
+%%EXPM%%lib/rlm_sqlhpwippool-%%PORTVERSION%%.la
+%%EXPM%%lib/rlm_sqlhpwippool-%%PORTVERSION%%.so
+%%EXPM%%lib/rlm_sqlhpwippool.a
+%%EXPM%%lib/rlm_sqlhpwippool.la
+%%EXPM%%lib/rlm_sqlhpwippool.so
+%%EXPM%%lib/rlm_sqlippool-%%PORTVERSION%%.la
+%%EXPM%%lib/rlm_sqlippool-%%PORTVERSION%%.so
+%%EXPM%%lib/rlm_sqlippool.a
+%%EXPM%%lib/rlm_sqlippool.la
+%%EXPM%%lib/rlm_sqlippool.so
 lib/rlm_unix-%%PORTVERSION%%.la
 lib/rlm_unix-%%PORTVERSION%%.so
 lib/rlm_unix.a
@@ -411,6 +431,7 @@ sbin/rc.radiusd
 %%DATADIR%%/dictionary.aptis
 %%DATADIR%%/dictionary.aruba
 %%DATADIR%%/dictionary.ascend
+%%DATADIR%%/dictionary.asn
 %%DATADIR%%/dictionary.avaya
 %%DATADIR%%/dictionary.bay
 %%DATADIR%%/dictionary.bintec
@@ -498,11 +519,11 @@ sbin/rc.radiusd
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm etc/raddb/certs/demoCA
-@dirrm etc/raddb/certs
 @exec mkdir -p /var/log/raddb
 @exec chmod -R og= /var/log/raddb
 @exec mkdir -p /var/run/radiusd
 @unexec rm -fr /var/run/radiusd
+@dirrmtry etc/raddb/certs/demoCA
+@dirrmtry etc/raddb/certs
 @dirrmtry etc/raddb
 @unexec if [ -d %D/etc/raddb ]; then echo "You should remove %D/etc/raddb if you don't need it anymore."; fi

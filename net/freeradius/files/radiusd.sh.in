@@ -1,8 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: radiusd
-# REQUIRE: NETWORKING SERVERS
-# BEFORE: DAEMON
+# REQUIRE: %%REQUIRE%%
 # KEYWORD: shutdown
 
 #
