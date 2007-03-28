@@ -1,5 +1,5 @@
 bin/munger
-lib/libmunger.so.16
+lib/libmunger.so.17
 %%DKNS_BIN%%
 %%DATADIR%%/echo.munger
 %%DATADIR%%/msh.munger
