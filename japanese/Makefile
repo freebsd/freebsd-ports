@@ -80,13 +80,10 @@
     SUBDIR += freepwing
     SUBDIR += fumeikai-fpw
     SUBDIR += gaim
-    SUBDIR += gal
     SUBDIR += gawk
     SUBDIR += gd
     SUBDIR += ghostscript-gnu-jpnfont
     SUBDIR += gicq
-    SUBDIR += gnome
-    SUBDIR += gnomelibs
     SUBDIR += gorua
     SUBDIR += gqmpeg
     SUBDIR += grep

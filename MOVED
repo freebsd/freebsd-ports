@@ -2888,3 +2888,6 @@ www/drupal-textile|www/drupal4-textile|2007-03-25|rename for drupal5
 security/drupal-ldap_integration|security/drupal4-ldap_integration|2007-03-25|rename for drupal5
 devel/xdg-user-dirs-gtk||2007-03-25|Not all dependencies are in ports yet
 net/pcs|net/py-pcs|2007-03-26|Renamed to fit python module naming convention
+japanese/gal||2007-03-28|Has expired: Broken on all supported versions of FreeBSD
+japanese/gnome||2007-03-28|Has expired: Broken on all supported versions of FreeBSD
+japanese/gnomelibs||2007-03-28|Has expired: Broken on all supported versions of FreeBSD
