@@ -1,3 +1,12 @@
+share/locale/ca/LC_MESSAGES/exaile.mo
+share/locale/de_DE/LC_MESSAGES/exaile.mo
+share/locale/en_GB/LC_MESSAGES/exaile.mo
+share/locale/es_ES/LC_MESSAGES/exaile.mo
+share/locale/pl/LC_MESSAGES/exaile.mo
+share/locale/pt_BR/LC_MESSAGES/exaile.mo
+share/locale/ru/LC_MESSAGES/exaile.mo
+share/locale/sv/LC_MESSAGES/exaile.mo
+share/locale/zh_CN/LC_MESSAGES/exaile.mo
 bin/exaile
 share/applications/exaile.desktop
 %%DATADIR%%/exaile.glade
@@ -40,9 +49,9 @@ share/applications/exaile.desktop
 %%DATADIR%%/plugins/console.py
 %%DATADIR%%/plugins/desktopcover.py
 %%DATADIR%%/plugins/exailenotify.py
-%%DATADIR%%/plugins/gajim_status.py
 %%DATADIR%%/plugins/gossip_status.py
 %%DATADIR%%/plugins/gui.py
+%%DATADIR%%/plugins/imstatus.py
 %%DATADIR%%/plugins/ipoddriver.py
 %%DATADIR%%/plugins/manager.py
 %%DATADIR%%/plugins/massstoragedriver.py
@@ -51,6 +60,7 @@ share/applications/exaile.desktop
 %%DATADIR%%/plugins/plugins.glade
 %%DATADIR%%/plugins/resume.py
 %%DATADIR%%/plugins/serp.py
+%%DATADIR%%/plugins/sound-juicer.py
 %%DATADIR%%/plugins/streamripper.py
 %%DATADIR%%/po/ca.po
 %%DATADIR%%/po/de_DE.po
@@ -76,7 +86,9 @@ share/applications/exaile.desktop
 %%DATADIR%%/xl/media/flac.py
 %%DATADIR%%/xl/media/m4a.py
 %%DATADIR%%/xl/media/mp3.py
+%%DATADIR%%/xl/media/mpc.py
 %%DATADIR%%/xl/media/ogg.py
+%%DATADIR%%/xl/media/wav.py
 %%DATADIR%%/xl/media/wma.py
 %%DATADIR%%/xl/panels.py
 %%DATADIR%%/xl/player.py
@@ -95,5 +107,13 @@ share/pixmaps/exaile.png
 @dirrm %%DATADIR%%/xl/media
 @dirrm %%DATADIR%%/xl
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
+@dirrmtry share/locale/de_DE/LC_MESSAGES
+@dirrmtry share/locale/de_DE
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
 @dirrmtry share/applications
 @dirrmtry share/pixmaps
