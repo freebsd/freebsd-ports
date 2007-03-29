@@ -23,6 +23,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -L${LOCALBASE}/lib ${PTHREAD_CFLAGS}" \
 		LIBS="${LIBS} ${PTHREAD_LIBS}"
@@ -32,5 +33,6 @@ post-patch:
 		's|^CFLAGS =|CFLAGS = @CFLAGS@|; \
 		s|LIBS = @AUDIOFILE_LIBS@|LIBS = @AUDIOFILE_LIBS@ @LIBS@|' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
