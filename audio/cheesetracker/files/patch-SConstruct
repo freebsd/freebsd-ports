@@ -1,0 +1,11 @@
+--- SConstruct.orig	Tue Mar 27 22:35:53 2007
++++ SConstruct	Tue Mar 27 22:36:54 2007
+@@ -87,7 +87,7 @@
+ env.optimize_resampler_hack=0
+ 
+ if (env['optimize']):
+-	env.Append(CXXFLAGS=['-O3','-ffast-math']);
++	env.Append(CXXFLAGS="%%CFLAGS%%");
+ 	env.optimize_resampler_hack=0
+ 
+ profile=0;
