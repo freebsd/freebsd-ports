@@ -22,5 +22,9 @@ PLIST_FILES=	lib/xmms/Input/libfc.so lib/xmms/Input/libfc.la
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
+USE_LDCONFIG=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
