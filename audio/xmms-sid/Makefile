@@ -23,11 +23,13 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS = -O2 -W -Wall|CFLAGS = @CFLAGS@ |; \
 		s|-lstdc++||; \
 		s|^LIBS = -lsidplay|LIBS = -lsidplay -lstdc++|' \
 		${BUILD_WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
