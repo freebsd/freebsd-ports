@@ -1,20 +1,20 @@
 @comment $FreeBSD$
-lib/python2.4/site-packages/pythk/__init__.py
-lib/python2.4/site-packages/pythk/conveniences.py
-lib/python2.4/site-packages/pythk/svg2js.py
-lib/python2.4/site-packages/pythk/tourist.py
-lib/python2.4/site-packages/pythk/types.py
-lib/python2.4/site-packages/pythk/xhtml2js.py
-lib/python2.4/site-packages/pythk/__init__.pyc
-lib/python2.4/site-packages/pythk/conveniences.pyc
-lib/python2.4/site-packages/pythk/svg2js.pyc
-lib/python2.4/site-packages/pythk/tourist.pyc
-lib/python2.4/site-packages/pythk/types.pyc
-lib/python2.4/site-packages/pythk/xhtml2js.pyc
-lib/python2.4/site-packages/pythk/__init__.pyo
-lib/python2.4/site-packages/pythk/conveniences.pyo
-lib/python2.4/site-packages/pythk/svg2js.pyo
-lib/python2.4/site-packages/pythk/tourist.pyo
-lib/python2.4/site-packages/pythk/types.pyo
-lib/python2.4/site-packages/pythk/xhtml2js.pyo
-@dirrmtry lib/python2.4/site-packages/pythk
+%%PYTHON_SITELIBDIR%%/pythk/__init__.py
+%%PYTHON_SITELIBDIR%%/pythk/conveniences.py
+%%PYTHON_SITELIBDIR%%/pythk/svg2js.py
+%%PYTHON_SITELIBDIR%%/pythk/tourist.py
+%%PYTHON_SITELIBDIR%%/pythk/types.py
+%%PYTHON_SITELIBDIR%%/pythk/xhtml2js.py
+%%PYTHON_SITELIBDIR%%/pythk/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pythk/conveniences.pyc
+%%PYTHON_SITELIBDIR%%/pythk/svg2js.pyc
+%%PYTHON_SITELIBDIR%%/pythk/tourist.pyc
+%%PYTHON_SITELIBDIR%%/pythk/types.pyc
+%%PYTHON_SITELIBDIR%%/pythk/xhtml2js.pyc
+%%PYTHON_SITELIBDIR%%/pythk/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pythk/conveniences.pyo
+%%PYTHON_SITELIBDIR%%/pythk/svg2js.pyo
+%%PYTHON_SITELIBDIR%%/pythk/tourist.pyo
+%%PYTHON_SITELIBDIR%%/pythk/types.pyo
+%%PYTHON_SITELIBDIR%%/pythk/xhtml2js.pyo
+@dirrmtry %%PYTHON_SITELIBDIR%%/pythk
