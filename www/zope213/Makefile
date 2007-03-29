@@ -6,15 +6,11 @@
 #
 
 PORTNAME=	zope210
-PORTVERSION=	2.10.2
-PORTREVISION=	1
+PORTVERSION=	2.10.3
 CATEGORIES=	www python zope
-MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/ \
-		http://www.zope.org/Products/Zope/Hotfix-2007-03-20/Hotfix-20070320/:hotfix
-DISTNAME=	Zope-${PORTVERSION}
+MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
+DISTNAME=	Zope-${PORTVERSION}-final
 EXTRACT_SUFX=	.tgz
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		Hotfix_20070320.tgz:hotfix
 DIST_SUBDIR=	zope
 
 MAINTAINER=	yasi@yasi.to
@@ -22,8 +18,6 @@ COMMENT=	An object-based web application platform
 
 USE_PYTHON=	2.4
 USE_RC_SUBR=	${PORTNAME}.sh zeo210.sh
-
-WRKSRC=		${WRKDIR}/${DISTNAME}-final
 
 # Note: the notes that follow reflect the decisions of prior maintainers
 # of this port. IOW, don't blame me if you don't like the way it's done.
@@ -79,7 +73,6 @@ post-configure:
 
 post-build:
 	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/
-	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKDIR}/Hotfix_20070320/
 
 post-install:
 	${MV} ${ZOPEBASEDIR}/skel/etc/zope.conf.in \
@@ -88,7 +81,6 @@ post-install:
 	${MKDIR} ${ZOPEBASEDIR}/Products
 	${CP} ${FILESDIR}/Products_00readme-freebsd.txt \
 		${ZOPEBASEDIR}/Products/00readme-freebsd.txt
-	${CP} -R ${WRKDIR}/Hotfix_20070320 ${ZOPEBASEDIR}/Products/
 
 	${FIND} ${ZOPEBASEDIR} -type f -print0 | ${XARGS} -0 -- ${CHMOD} a-w+r
 
