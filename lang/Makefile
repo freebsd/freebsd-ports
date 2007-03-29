@@ -309,7 +309,6 @@
     SUBDIR += tcl-tk-wrapper
     SUBDIR += tcl-wrapper
     SUBDIR += tcl80
-    SUBDIR += tcl81-thread
     SUBDIR += tcl82
     SUBDIR += tcl83
     SUBDIR += tcl84
