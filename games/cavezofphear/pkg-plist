@@ -1,0 +1,19 @@
+bin/phear
+%%DATADIR%%/data/gover
+%%DATADIR%%/data/htext
+%%DATADIR%%/data/levels/01
+%%DATADIR%%/data/levels/02
+%%DATADIR%%/data/levels/03
+%%DATADIR%%/data/levels/04
+%%DATADIR%%/data/levels/05
+%%DATADIR%%/data/levels/06
+%%DATADIR%%/data/levels/07
+%%DATADIR%%/data/levels/08
+%%DATADIR%%/data/levels/09
+%%DATADIR%%/data/levels/10
+%%DATADIR%%/data/levels/11
+%%DATADIR%%/data/spgraf
+%%DATADIR%%/data/tdesc
+@dirrm %%DATADIR%%/data/levels
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
