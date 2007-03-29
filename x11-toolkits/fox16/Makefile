@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		http://fresh.t-systems-sfr.com/unix/src/misc/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER?=	alecn2002@yandex.ru
+MAINTAINER?=	araujo@bsdmail.org
 COMMENT=	Fast and extensive C++ GUI toolkit -- ver.1.6
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -21,7 +21,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
-CONFLICTS=	fox-1.0.* fox-1.4.* fox-1.2.*
+CONFLICTS=	fox-1.0.* fox-1.2.* fox-1.4.*
+
 LATEST_LINK=	fox16
 
 MAJORVER=	1.6
@@ -91,12 +92,6 @@ CXXFLAGS+=	-O2 -Wuninitialized -ffast-math -finline-functions -fomit-frame-point
 .if defined(WITH_PROFILING)
 CONFIGURE_ARGS+=	--with-profiling=gprof
 .endif
-#
-.if defined(NOPORTDOCS)
-MAKE_ARGS+=	DOC=
-.else
-MAKE_ARGS+=	DOC=doc
-.endif
 
 post-patch:
 # CXXFLAGS safeness
@@ -115,6 +110,11 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		's|^(screenshotsdir).*$$|\1=${DOCSDIR}/html|' \
 		${WRKSRC}/doc/screenshots/Makefile.in
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e \
+		'/^SUBDIRS/s/ doc//' \
+		${WRKSRC}/Makefile.in
+.endif
 .if !defined(WITH_FOX_APPLICATIONS)
 	@${REINPLACE_CMD} -E -e \
 		's,^(SUBDIRS.*)adie,\1,; \
