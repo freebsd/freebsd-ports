@@ -1,11 +1,11 @@
-Unicode::Unihan - The Unihan Data Base 3.2.0
+Unicode::Unihan - The Unihan Data Base 5.0.0
 
   use Unicode::Unihan;
   my $db = new Unicode::Unihan;
   print join("," => $db->Mandarin("\x{5c0f}\x{98fc}\x{5f3e}"), "\n";
 
 This module provides a user-friendly interface to the Unicode Unihan
-Database 3.2. With this module, the Unihan database is as easy as shown in
+Database 5.0.0. With this module, the Unihan database is as easy as shown in
 above.
 
 WWW: http://search.cpan.org/dist/Unicode-Unihan/
