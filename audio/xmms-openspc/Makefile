@@ -28,4 +28,7 @@ ONLY_FOR_ARCHS=	i386	# contains x86 assembler code
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
+
 .include <bsd.port.mk>
