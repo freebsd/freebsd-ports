@@ -34,6 +34,7 @@ PLIST_FILES=	lib/xmms/Input/libnsf.a \
 post-patch:
 	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|' \
 		${WRKSRC}/src/nes/nestypes.h
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/ltconfig
 
 post-install:
 	@${SED} -e 's|%%VERSION%%|${PORTVERSION}|' ${PKGMESSAGE}
