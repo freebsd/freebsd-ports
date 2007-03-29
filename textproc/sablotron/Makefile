@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Sablot
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://download-1.gingerall.cz/download/sablot/
 
@@ -23,7 +22,7 @@ OPTIONS=	DISABLE_META "Do not output the META html tag" off \
 		CHECK_LEAKS "Enable memory leaks checking" off \
 		DEBUGGER "Enable debugger" off
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 SHLIB_MAJOR=	70	# API changes counter
 PLIST_SUB+=	SHLIB_MAJOR="${SHLIB_MAJOR}"
