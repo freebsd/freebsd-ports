@@ -21,6 +21,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
+CONFLICTS=	fox-1.2.* fox-1.4.* fox-1.6.*
+
 LATEST_LINK=	fox10
 
 USE_AUTOTOOLS=	libtool:15
@@ -74,12 +76,6 @@ CXXFLAGS+=	-Wuninitialized ${SPECFLAGS}
 .if defined(WITH_PROFILING)
 CONFIGURE_ARGS+=--with-profiling=gprof
 .endif
-#
-.if defined(NOPORTDOCS)
-MAKE_ARGS+=	DOC=
-.else
-MAKE_ARGS+=	DOC=doc
-.endif
 
 post-patch:
 # Remove additional flags
@@ -109,6 +105,11 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		's|^(screenshotsdir).*$$|\1=${DOCSDIR}/html|' \
 		${WRKSRC}/doc/screenshots/Makefile.in
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e \
+		'/^SUBDIRS/s/ doc//' \
+		${WRKSRC}/Makefile.in
+.endif
 .if !defined(WITH_FOX_APPLICATIONS)
 	@${REINPLACE_CMD} -E -e \
 		's,^(SUBDIRS.*)adie,\1,; \

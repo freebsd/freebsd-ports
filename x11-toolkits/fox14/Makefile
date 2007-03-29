@@ -20,7 +20,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
-CONFLICTS=	fox-1.0.*
+CONFLICTS=	fox-1.0.* fox-1.2.* fox-1.6.*
 
 LATEST_LINK=	fox14
 
@@ -96,12 +96,6 @@ CXXFLAGS+=	-O2 -Wuninitialized -ffast-math -finline-functions -fomit-frame-point
 .if defined(WITH_PROFILING)
 CONFIGURE_ARGS+=	--with-profiling=gprof
 .endif
-#
-.if defined(NOPORTDOCS)
-MAKE_ARGS+=	DOC=
-.else
-MAKE_ARGS+=	DOC=doc
-.endif
 
 post-patch:
 # CXXFLAGS safeness
@@ -120,6 +114,11 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		's|^(screenshotsdir).*$$|\1=${DOCSDIR}/html|' \
 		${WRKSRC}/doc/screenshots/Makefile.in
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e \
+		'/^SUBDIRS/s/ doc//' \
+		${WRKSRC}/Makefile.in
+.endif
 .if !defined(WITH_FOX_APPLICATIONS)
 	@${REINPLACE_CMD} -E -e \
 		's,^(SUBDIRS.*)adie,\1,; \
