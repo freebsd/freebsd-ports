@@ -32,7 +32,7 @@ DDIR=		${PYTHON_SITELIBDIR}/xmpp/irc
 
 post-patch:
 	@${GREP} -lr '/usr/bin/python' ${WRKSRC} | \
-		${XARGS} ${REINPLACE_CMD} -e "s./usr/bin/python.${PYTHON_CMD}." \
+		${XARGS} ${REINPLACE_CMD} -e "s,/usr/bin/python,${PYTHON_CMD}," \
 			-e "s!/etc/jabber/jabber-irc.conf!${PREFIX}/etc/${PORTNAME:S.-..}.conf!"
 
 do-install:
