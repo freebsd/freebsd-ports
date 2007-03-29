@@ -16490,6 +16490,7 @@ xpn		ports/news/xpn
 xpns		ports/misc/xpns
 xpostit		ports/deskutils/xpostit
 xpostitPlus	ports/deskutils/xpostitPlus
+xpp		ports/print/xpp
 xpp3		ports/textproc/xpp3
 xppaut		ports/math/xppaut
 xprobe		ports/net/xprobe
