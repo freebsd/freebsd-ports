@@ -24,6 +24,7 @@ USE_X_PREFIX=   yes
 USE_GNOME=      gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=  yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	LIBS="-lGL -lXext ${LIBS}"
 CFLAGS+=	-I${X11BASE}/include -L${X11BASE}/lib
@@ -34,5 +35,6 @@ post-patch:
 		s|-lpthreads|${PTHREAD_LIBS:S/"//g}|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/ltconfig
 
 .include <bsd.port.mk>

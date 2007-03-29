@@ -21,11 +21,14 @@ PLIST_FILES=	lib/xmms/Visualization/gdancer.so
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 gdkpixbuf
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--enable-pixbuf
+
+post-patch:
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
 
 post-install:
 	-${RM} ${PREFIX}/lib/xmms/Visualization/gdancer.la

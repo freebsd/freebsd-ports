@@ -25,9 +25,12 @@ CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include/libxml2/libxml"
 
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/ltconfig
 
 .include <bsd.port.mk>
