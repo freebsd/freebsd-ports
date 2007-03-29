@@ -34,6 +34,7 @@
     SUBDIR += fxscintilla
     SUBDIR += fxscintilla-fox10
     SUBDIR += fxscintilla-fox12
+    SUBDIR += fxscintilla-fox14
     SUBDIR += gai
     SUBDIR += gal
     SUBDIR += gal2
