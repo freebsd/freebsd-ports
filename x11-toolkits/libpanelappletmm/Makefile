@@ -26,8 +26,8 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.4
 USE_GNOME=	gnomehack lthack gnomepanel
-GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_AUTOTOOLS=	libtool:15
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static
 
 PLIST_SUB=	VERSION="2.6" API_VERSION="2.6"

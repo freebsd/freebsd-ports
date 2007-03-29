@@ -29,7 +29,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,-pthread,${PTHREAD_LIBS},g' \
+	@${REINPLACE_CMD} -e 's,-pthread,${PTHREAD_LIBS},g ; s|echo aout|echo elf|' \
 		${WRKSRC}/configure
 
 .include <bsd.port.mk>

@@ -27,4 +27,7 @@ CONFIGURE_ARGS+=	--with-librapi=${LOCALBASE} \
 			--with-librra=${LOCALBASE} \
 			--with-multisync-include=${LOCALBASE}/include/multisync
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+
 .include <bsd.port.mk>
