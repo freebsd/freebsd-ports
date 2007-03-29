@@ -27,4 +27,7 @@ CONFIGURE_ENV=	JAVA_HOME=${JAVA_HOME}
 PREFIX=		${JAVA_HOME}/jre
 NO_MTREE=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure ${WRKSRC}/ltconfig
+
 .include <bsd.port.mk>
