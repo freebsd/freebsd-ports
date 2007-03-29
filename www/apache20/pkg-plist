@@ -164,6 +164,7 @@ libexec/apache2/httpd.exp
 %%MOD_DEFLATE%%libexec/apache2/mod_deflate.so
 %%MOD_DIR%%libexec/apache2/mod_dir.so
 %%MOD_DISK_CACHE%%libexec/apache2/mod_disk_cache.so
+%%MOD_DUMPIO%%libexec/apache2/mod_dumpio.so
 %%MOD_ENV%%libexec/apache2/mod_env.so
 %%MOD_EXPIRES%%libexec/apache2/mod_expires.so
 %%MOD_EXT_FILTER%%libexec/apache2/mod_ext_filter.so
