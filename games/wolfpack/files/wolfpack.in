@@ -1,7 +1,9 @@
 #!/bin/sh
+
+# PROVIDE: wolfpack
 #
-# Add the following line to /etc/rc.conf to enable wolfpack:
-#
+# Add the following line to /etc/rc.conf.local or /etc/rc.conf
+# to enable the wolfpack game server:
 # wolfpack_enable="YES"
 #
 
@@ -10,15 +12,14 @@
 name=wolfpack
 rcvar=`set_rcvar`
 
-wolfdir="%%PREFIX%%/wolfpack"
-
-command="$wolfdir/bin/emp_server"
-pidfile="$wolfdir/data/server.pid"
-
-wolfpack_enable=${wolfpack_enable:-"NO"}
-wolfpack_user=${wolfpack_user:-"wolfpack"}
-
 load_rc_config $name
+
+: ${wolfpack_enable="NO"}
+: ${wolfpack_user="wolfpack"}
+
+wolfdir="%%PREFIX%%/wolfpack"
+pidfile="$wolfdir/data/server.pid"
+command="$wolfdir/bin/emp_server"
 
 run_rc_command "$1"
 
