@@ -16,6 +16,7 @@ bin/weechat-curses
 %%DOCSDIR%%/weechat_quickstart.ru.txt
 %%DOCSDIR%%/weechat_quickstart.pl.txt
 %%DOCSDIR%%/weechat_quickstart.cs.txt
+%%DOCSDIR%%/weechat_quickstart.sco.txt
 %%NLS%%share/locale/de/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/es/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/weechat.mo
