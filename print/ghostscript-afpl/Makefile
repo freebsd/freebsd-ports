@@ -59,6 +59,9 @@ RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print
 
 NO_CDROM=	Can only be distributed for free
 
+DEPRECATED=	the leading edge of Ghostscript development is now under GPL license, use print/ghostscript-gpl instead
+EXPIRATION_DATE=	2007-07-01
+
 CONFLICTS=	ghostscript-gnu* ghostscript-gpl*
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -213,6 +216,7 @@ LEX7000=	lex7000
 LEX7000_SRCS=	gs6.0.lexmark7000.patch
 
 # HL1250 - additional driver for Brother HL-1050/1070/1250/1270N/1030/1240
+# XXX FIXME
 HL1250=		hl1250
 HL1250_SRCS=	gdevhl12.c
 

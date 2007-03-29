@@ -24,7 +24,7 @@ else
 		$svgalibdevs \
 		md2k md5k \
 		md50Mono md50Eco md1xMono \
-		appledmp iwhi iwlo iwlq hl7x0 hl1250 bj10e \
+		appledmp iwhi iwlo iwlq hl7x0 bj10e \
 		bj10v bj10vh bj200 bjc600 bjc800 \
 		bjccmyk bjccolor bjcgray bjcmono \
 		lbp8 \
