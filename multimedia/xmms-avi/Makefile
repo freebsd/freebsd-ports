@@ -26,12 +26,16 @@ USE_X_PREFIX=	yes
 USE_SDL=	sdl
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-win32-path=${LOCALBASE}/lib/win32
 
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|-lc_r|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} \
+		-e "s|-lc_r|${PTHREAD_LIBS}|g" \
+		-e '/objformat=/s|=.*|=elf|' \
+			${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-march=i586|@CXXFLAGS@|g ; \
 		 s|-O2||g ; \
