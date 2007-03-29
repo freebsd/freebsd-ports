@@ -19,7 +19,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_X_PREFIX=	yes
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -31,5 +31,6 @@ PLIST_FILES=	lib/xmms/General/libreal_random.la \
 post-patch:
 	@${REINPLACE_CMD} -e 's#-lpthread#${PTHREAD_LIBS}#' \
 		-e 's#gcc#$${CC}#' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
