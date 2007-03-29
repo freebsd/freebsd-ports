@@ -1,9 +1,9 @@
 #! /bin/sh
 
-# $FreeBSD#
-
-PATH=/bin:/usr/sbin
-INSTDIR=${PKG_PREFIX}/wolfpack
+PATH=/bin:/usr/bin:/usr/sbin
+INSTDIR=${PKG_PREFIX}/share/wolfpack
+DATADIR=${PKG_PREFIX}/var/wolfpack
+CONFDIR=${PKG_PREFIX}/etc/wolfpack
 
 USER=wolfpack
 GROUP=${USER}
@@ -41,32 +41,12 @@ PRE-INSTALL)
 	;;
 
 POST-INSTALL)
-	chown -R ${USER}:${GROUP} ${INSTDIR}
-	chmod -R u+w,o-rx ${INSTDIR}
-	;;
-
-
-POST-DEINSTALL)
-	if pw group show "${GROUP}" 2>/dev/null; then
-		if pw groupdel ${GROUP}; then
-			echo "Removed group \"${GROUP}\"."
-		else
-			echo "Removing group \"${GROUP}\" failed..."
-			exit 1
-		fi
-	else
-		echo "Group \"${GROUP}\" doesn't exist!"
+	mkdir -p ${DATADIR}
+	${PKG_PREFIX}/lib/wolfpack/pconfig > ${CONFDIR}/econfig.orig
+	if [ ! -f ${CONFDIR}/econfig ] ; then
+		 cp -p ${CONFDIR}/econfig.orig ${CONFDIR}/econfig
 	fi
-
-	if pw user show "${USER}" 2>/dev/null; then
-		if pw userdel ${USER}; then
-			echo "Removed user \"${USER}\"."
-		else
-			echo "Removing user \"${USER}\" failed..."
-			exit 1
-		fi
-	else
-		echo "User \"${USER}\" doesn't exist!"
-	fi
+	chown -R ${USER}:${GROUP} ${INSTDIR} ${DATADIR} ${CONFDIR}
+	chmod -R u+w,o-rx ${INSTDIR} ${DATADIR} ${CONFDIR}
 	;;
 esac

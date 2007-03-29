@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	wolfpack
-PORTVERSION=	4.2.21
+PORTVERSION=	4.3.8
 CATEGORIES=	games
-MASTER_SITES=	http://www.wolfpackempire.com/Downloads/server/ \
-		http://empire.gletsjer.net/Downloads/server/ \
+MASTER_SITES=	http://rc.wolfpackempire.com/Downloads/server/ \
+		http://empire-rc.gletsjer.net/Downloads/server/ \
+		http://www.wolfpackempire.com/Downloads/server/ \
 		http://www.wolfpackempire.com/Downloads/server/oldversions/ \
 		http://empire.gletsjer.net/Downloads/server/oldversions/
 DISTNAME=	empire-${PORTVERSION}
@@ -17,56 +18,35 @@ DISTNAME=	empire-${PORTVERSION}
 MAINTAINER=	johans@stack.nl
 COMMENT=	Long term multiplayer strategy game
 
-.if !defined(BATCH)
-IS_INTERACTIVE=	yes     # configure script asks questions
-.endif
-ALL_TARGET=	freebsd
+MAKEFILE=	GNUmakefile
+USE_GMAKE=	yes
+USE_PERL5_BUILD=	yes
+GNU_CONFIGURE=	yes
+BINDIR=		${PREFIX}/lib/${PORTNAME}
+CONFIGURE_ARGS+=	--bindir=${BINDIR} --sbindir=${BINDIR}
 
 USE_RC_SUBR=	wolfpack
+SUB_FILES+=	pkg-message
 
 MAN1=		fairland.1 files.1 pconfig.1
-MAN6=		emp_client.6 emp_server.6
-
-MAKE_ARGS=	PREFIX=${PREFIX}
+MAN6=		empire.6 emp_server.6
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "ia64"
-BROKEN=		Does not compile on ia64
-.endif
-
-PKGDEINSTALL=	${PKGINSTALL}
-
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
-		RC_SUBR=${RC_SUBR}
-
 post-patch:
-	@${REINPLACE_CMD} -e 's/defined(FBSD)/& \&\& !defined(__ia64__)/' \
-		${WRKSRC}/src/lib/lwp/arch.c
-
-pre-configure:
-	${MKDIR} ${WRKSRC}/data
+	${REINPLACE_CMD} -e '/^econfig/,/^$$/s|/empire|/${PORTNAME}|' \
+		${WRKSRC}/Make.mk
 
 pre-install:
-	${MKDIR} ${PREFIX}/wolfpack
-	${MKDIR} ${PREFIX}/wolfpack/data
-	@ ${SETENV} PKG_PREFIX=${PREFIX} \
+	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 
 post-install:
-	${CHMOD} 750 ${PREFIX}/wolfpack/data
-	${TAR} -C ${WRKSRC} -cf - info.nr scripts doc | ${TAR} -C ${PREFIX}/wolfpack -xf -
-	${CHMOD} 755 ${PREFIX}/wolfpack/info.nr
-	${CHMOD} 644 ${PREFIX}/wolfpack/info.nr/*
-	${CHOWN} -R root:wheel ${PREFIX}/wolfpack
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/wolfpack
-	${INSTALL_MAN} ${WRKSRC}/man/fairland.1 ${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/man/files.1 ${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/man/pconfig.1 ${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/man/emp_client.6 ${PREFIX}/man/man6/
-	${INSTALL_MAN} ${WRKSRC}/man/emp_server.6 ${PREFIX}/man/man6/
-	@${CAT} ${FILESDIR}/post-install-info
-	@ ${SETENV} PKG_PREFIX=${PREFIX} \
+	@${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}
+	@${LN} -s ${BINDIR}/emp_server ${PREFIX}/bin/emp_server
+	@${LN} -s ${BINDIR}/empire ${PREFIX}/bin/emp_client
+	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
+	@${CAT} ${WRKDIR}/pkg-message
 
 .include <bsd.port.post.mk>
