@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	Email-FolderType-Net
-PORTVERSION=	1.04
+PORTVERSION=	1.04.1
 CATEGORIES=	mail perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Email
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Recognize folder types for network based message protocols
 
-BUILD_DEPENDS=	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/Email/FolderType.pm:${PORTSDIR}/mail/p5-Email-FolderType
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-URI>=1.35:${PORTSDIR}/net/p5-URI \
+		p5-Email-FolderType>=0.8:${PORTSDIR}/mail/p5-Email-FolderType
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
