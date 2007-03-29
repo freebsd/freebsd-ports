@@ -7,6 +7,7 @@
 
 PORTNAME?=	${MASTERPORTNAME}
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +26,7 @@ NO_BUILD=	yes
 # IF >>>>>>
 
 .if ${PORTNAME} == ${MASTERPORTNAME}
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/fox12.so:${PORTSDIR}/x11-toolkits/ruby-fox-devel \
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/fox12.so:${PORTSDIR}/x11-toolkits/ruby-fox12 \
 		${RUBY_SITELIBDIR}/freebase/freebase.rb:${PORTSDIR}/devel/freebase \
 		${RUBY_SITEARCHLIBDIR}/rrb_ripper.so:${PORTSDIR}/devel/ruby-rrb
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	mondrian
 PORTVERSION=	1.0.b8
+PORTREVISION=	1
 CATEGORIES=	editors ruby
 MASTER_SITES=	http://www.mondrian-ide.com/download/ \
 		LOCAL/nivit/${PORTNAME}/
@@ -15,7 +16,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION:S/.b/beta/}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Mondrian Ruby IDE
 
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/fox12.so:${PORTSDIR}/x11-toolkits/ruby-fox-devel
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/fox12.so:${PORTSDIR}/x11-toolkits/ruby-fox12
 
 NO_BUILD=	yes
 USE_RUBY=	yes
