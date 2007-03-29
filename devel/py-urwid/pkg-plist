@@ -22,12 +22,13 @@
 %%PYTHON_SITELIBDIR%%/urwid/listbox.py
 %%PYTHON_SITELIBDIR%%/urwid/listbox.pyc
 %%PYTHON_SITELIBDIR%%/urwid/listbox.pyo
+%%PYTHON_SITELIBDIR%%/urwid/old_str_util.py
+%%PYTHON_SITELIBDIR%%/urwid/old_str_util.pyc
+%%PYTHON_SITELIBDIR%%/urwid/old_str_util.pyo
 %%PYTHON_SITELIBDIR%%/urwid/raw_display.py
 %%PYTHON_SITELIBDIR%%/urwid/raw_display.pyc
 %%PYTHON_SITELIBDIR%%/urwid/raw_display.pyo
-%%PYTHON_SITELIBDIR%%/urwid/utable.py
-%%PYTHON_SITELIBDIR%%/urwid/utable.pyc
-%%PYTHON_SITELIBDIR%%/urwid/utable.pyo
+%%PYTHON_SITELIBDIR%%/urwid/str_util.so
 %%PYTHON_SITELIBDIR%%/urwid/util.py
 %%PYTHON_SITELIBDIR%%/urwid/util.pyc
 %%PYTHON_SITELIBDIR%%/urwid/util.pyo
