@@ -4335,4 +4335,5 @@ share/foomatic/db/source/printer/Xerox-WorkCentre_XK35c.xml
 @dirrm share/foomatic/db/source/PPD
 @dirrm share/foomatic/db/source
 @dirrm share/foomatic/db
-@dirrm share/foomatic
+@dirrmtry share/foomatic
+@unexec unlink %D/share/cups/model/foomatic-db-ppds > /dev/null 2>&1 || true
