@@ -1,5 +1,5 @@
---- scripts/ping.pl.orig	Sat Apr 15 22:26:44 2006
-+++ scripts/ping.pl	Sat Apr 15 22:27:16 2006
+--- cacti-0.8.6j/scripts/ping.pl.orig	Sat Apr 15 22:26:44 2006
++++ cacti-0.8.6j/scripts/ping.pl	Sat Apr 15 22:27:16 2006
 @@ -1,6 +1,6 @@
  #!/usr/bin/perl 
  

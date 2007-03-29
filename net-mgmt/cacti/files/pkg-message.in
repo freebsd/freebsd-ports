@@ -20,4 +20,16 @@ Alias /cacti "%%PREFIX%%/%%CACTIDIR%%/"
 If you update cacti, open a login page, an updating process
 will start automatically.
 
+If you are using PLUGIN option set, in file
+%%PREFIX%%/%%CACTIDIR%%/include/config.php
+change the follow line
+
+$config["url_path"] = '/';
+
+with location where your cacti is available. E.g.:
+
+$config["url_path"] = '/cacti/';
+
+if your URL is http://yoursite.com/cacti
+
 =======================================================================

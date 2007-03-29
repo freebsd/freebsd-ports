@@ -1,5 +1,5 @@
---- include/config.php.orig	Fri Jan  6 00:27:51 2006
-+++ include/config.php	Fri Jan  6 00:28:39 2006
+--- cacti-0.8.6j/include/config.php.orig	Fri Jan  6 00:27:51 2006
++++ cacti-0.8.6j/include/config.php	Fri Jan  6 00:28:39 2006
 @@ -24,7 +24,11 @@
   +-------------------------------------------------------------------------+
  */

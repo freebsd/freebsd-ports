@@ -3,10 +3,10 @@
 PW=/usr/sbin/pw
 UID=107
 GID=${UID}
-CACTIUSER=%%CACTIUSER%%
-CACTIGROUP=%%CACTIGROUP%%
-CACTIDIR=%%CACTIDIR%%
-PREFIX=%%PREFIX%%
+CACTIUSER="%%CACTIUSER%%"
+CACTIGROUP="%%CACTIGROUP%%"
+CACTIDIR="%%CACTIDIR%%"
+PREFIX="%%PREFIX%%"
 
 case $2 in
 
@@ -39,9 +39,10 @@ PRE-INSTALL)
 
 POST-INSTALL)
 
-	chown ${CACTIUSER}:${CACTIGROUP} ${PREFIX}/${CACTIDIR}/rra/
-	chown -R ${CACTIUSER}:${CACTIGROUP} ${PREFIX}/${CACTIDIR}/log/
-	chmod -R a+r ${PREFIX}/${CACTIDIR}/scripts/
+	chown ${CACTIUSER}:${CACTIGROUP} "${PREFIX}/${CACTIDIR}/rra/"
+	[ -d "${PREFIX}/${CACTIDIR}/log/" ] || mkdir -p "${PREFIX}/${CACTIDIR}/log/"
+	chown -R ${CACTIUSER}:${CACTIGROUP} "${PREFIX}/${CACTIDIR}/log/"
+	chmod -R a+r "${PREFIX}/${CACTIDIR}/scripts/"
 	;;
 *)
 	exit 1

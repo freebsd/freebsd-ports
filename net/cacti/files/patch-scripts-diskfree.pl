@@ -1,5 +1,5 @@
---- scripts/diskfree.pl.orig	Wed Jan  4 06:08:30 2006
-+++ scripts/diskfree.pl	Fri Jan  6 00:16:58 2006
+--- cacti-0.8.6j/scripts/diskfree.pl.orig	Wed Jan  4 06:08:30 2006
++++ cacti-0.8.6j/scripts/diskfree.pl	Fri Jan  6 00:16:58 2006
 @@ -1,5 +1,5 @@
  #!/usr/bin/perl
 -open(PROCESS,"df --block-size=1024 -P $ARGV[0] | grep -v Filesystem |");

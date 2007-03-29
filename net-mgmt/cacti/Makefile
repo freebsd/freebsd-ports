@@ -7,28 +7,27 @@
 
 PORTNAME=	cacti
 PORTVERSION=	0.8.6j${PATCHLEVEL}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net www
 MASTER_SITES=	http://www.cacti.net/downloads/
-DISTNAME=	${PORTNAME}-${SITEDISTVERSION}
-
-MAINTAINER=	sem@FreeBSD.org
-COMMENT=	Web-driven graphing interface for RRDTool
+DISTFILES=	${PORTNAME}-${SITEDISTVERSION}${EXTRACT_SUFX}
 
 # Vendor's patches
 PATCH_SITES=	http://www.cacti.net/downloads/patches/${SITEDISTVERSION}/
 PATCHFILES=	ping_php_version4_snmpgetnext.patch \
 		tree_console_missing_hosts.patch \
 		thumbnail_graphs_not_working.patch
-PATCHLEVEL=	.3
-SITEDISTVERSION=	${PORTVERSION:S/${PATCHLEVEL}$//}
+PATCH_DIST_STRIP=	-p1
 
-PATCH_DIST_STRIP=-p1
+MAINTAINER=	sem@FreeBSD.org
+COMMENT=	Web-driven graphing interface for RRDTool
 
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool
 
+PATCHLEVEL=	.3
+PATCH_STRIP=	-p1
 USE_MYSQL=	yes
-USE_PHP=	mysql pcre session snmp xml
+USE_PHP=	mysql pcre session sockets snmp xml
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -38,11 +37,32 @@ SUB_FILES=	pkg-message pkg-install
 CACTIDIR?=	share/cacti
 CACTIUSER?=	cacti
 CACTIGROUP?=	${CACTIUSER}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${SITEDISTVERSION}
+
+OPTIONS=	PLUGIN_ARCH "With plugin architecture" Off
+
+.include <bsd.port.pre.mk>
+
+SITEDISTVERSION=	${PORTVERSION:S/${PATCHLEVEL}$//}
+
+# Extra patches
+.if defined(WITH_PLUGIN_ARCH)
+MASTER_SITES+=	http://cactiusers.net/downloads/plugins/:plugin
+DISTFILES+=	cacti-plugin-arch.tar.gz:plugin
+EXTRA_PATCHES+=	${WRKDIR}/${PORTNAME}-plugin-${SITEDISTVERSION}.diff
+PLIST_SUB+=	PLUGIN=""
+.else
+PLIST_SUB+=	PLUGIN="@comment "
+.endif
+
 PLIST_SUB+=	CACTIDIR=${CACTIDIR}
 SUB_LIST+=	CACTIDIR=${CACTIDIR} CACTIUSER=${CACTIUSER} \
 		CACTIGROUP=${CACTIGROUP}
 
-.include <bsd.port.pre.mk>
+.if defined(WITH_PLUGIN_ARCH)
+post-extract:
+	@${CP} ${WRKDIR}/cacti-plugin-arch/${PORTNAME}-plugin-${SITEDISTVERSION}.diff ${WRKDIR}
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete; \
@@ -50,7 +70,7 @@ post-patch:
 	${MV} ${WRKSRC}/include/config.php ${WRKSRC}/include/config.php.orig
 
 pre-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL; \
+	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
 	@${MKDIR} ${PREFIX}/${CACTIDIR}; \

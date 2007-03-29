@@ -144,6 +144,8 @@
 @unexec cmp -s %D/%%CACTIDIR%%/include/db-settings.php.orig %D/%%CACTIDIR%%/include/db-settings.php && rm -f %D/%%CACTIDIR%%/include/db-settings.php || true
 %%CACTIDIR%%/include/db-settings.php.orig
 @exec [ -f %D/%%CACTIDIR%%/include/db-settings.php ] || cp %D/%%CACTIDIR%%/include/db-settings.php.orig %D/%%CACTIDIR%%/include/db-settings.php
+%%PLUGIN%%%%CACTIDIR%%/include/plugins.php
+%%PLUGIN%%%%CACTIDIR%%/plugins/index.php
 %%CACTIDIR%%/include/html/inc_data_source_filter_table.php
 %%CACTIDIR%%/include/html/inc_data_template_filter_table.php
 %%CACTIDIR%%/include/html/inc_device_filter_table.php
@@ -418,6 +420,7 @@
 @dirrm %%CACTIDIR%%/include/jscalendar
 @dirrm %%CACTIDIR%%/include/html
 @dirrmtry %%CACTIDIR%%/include
+%%PLUGIN%%@dirrmtry %%CACTIDIR%%/plugins
 @dirrm %%CACTIDIR%%/images
 @dirrm %%CACTIDIR%%/docs/text
 @dirrm %%CACTIDIR%%/docs/pdf
