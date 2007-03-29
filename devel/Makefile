@@ -2068,6 +2068,7 @@
     SUBDIR += spin
     SUBDIR += splint
     SUBDIR += st
+    SUBDIR += stfl
     SUBDIR += stlfilt
     SUBDIR += stlport
     SUBDIR += str
