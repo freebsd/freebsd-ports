@@ -27,13 +27,14 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gdkpixbuf
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}_${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+BROKEN=		Does not compile on !i386
 .endif
 
 post-patch:
@@ -41,5 +42,6 @@ post-patch:
 		s|-lgtk|`${GTK_CONFIG} --libs`|g; \
 		s|-O9||' \
 		${BUILD_WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/ltconfig
 
 .include <bsd.port.post.mk>

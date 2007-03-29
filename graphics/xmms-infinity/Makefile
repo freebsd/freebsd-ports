@@ -25,5 +25,9 @@ USE_SDL=	sdl
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
+USE_LDCONFIG=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/ltconfig
 
 .include <bsd.port.mk>

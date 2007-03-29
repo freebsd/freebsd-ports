@@ -23,5 +23,9 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	lib/xmms/Visualization/libjess.so lib/xmms/Visualization/libjess.la
 USE_GNOME=	glib12
 USE_X_PREFIX=	yes
+USE_LDCONFIG=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
