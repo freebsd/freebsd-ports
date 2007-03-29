@@ -27,12 +27,6 @@ MAN6=		compcal.6 ggzap.6 keepalivecontrol.6 \
 		kggz.6 kgrubby.6 shadowbridge.6
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}| ; s|echo aout|echo elf|' ${WRKSRC}/configure
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	depends on libggz which does not build on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
