@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Wed Mar 28 14:47:22 2007
++++ Makefile.in	Wed Mar 28 14:48:40 2007
+@@ -66,7 +66,9 @@
+ 	install -d $(DESTDIR)$(LIBDIR)/db/source/opt
+ 	install -d $(DESTDIR)$(LIBDIR)/db/source/PPD
+ 	cp db/oldprinterids $(DESTDIR)$(LIBDIR)/db
+-	cp db/source/printer/*.xml $(DESTDIR)$(LIBDIR)/db/source/printer
++	( for file in `find db/source/printer/ -name \*.xml`; do \
++	   cp $$file $(DESTDIR)$(LIBDIR)/db/source/printer; \
++	  done )
+ 	( cd db/source/driver/; \
+ 	  for d in $(DRIVERXMLS); do \
+ 	    cp $$d $(DESTDIR)$(LIBDIR)/db/source/driver; \
