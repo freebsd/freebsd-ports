@@ -6,25 +6,27 @@
 #
 
 PORTNAME=	fxscintilla
-PORTVERSION=	1.63
-PORTREVISION=	2
+PORTVERSION=	1.71
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	alecn2002@yandex.ru
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	A Fox toolkit reimplementation of Scintilla editing widget
 
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS+=	--enable-shared --disable-static
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
-OPTIONS=	FOX10 "FOX1.0 support (FOX1.4 by default)" off
-OPTIONS+=	FOX12 "FOX1.2 support (FOX1.4 by default)" off
+OPTIONS=	FOX10 "FOX1.0 support (FOX1.6 by default)" off
+OPTIONS+=	FOX12 "FOX1.2 support (FOX1.6 by default)" off
+OPTIONS+=	FOX14 "FOX1.4 support (FOX1.6 by default)" off
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FOX10)
+BROKEN=		does not compile
+
 FOX_LIB_VER=	1.0.0
 LIB_DEPENDS+=	FOX-${FOX_LIB_VER}:${PORTSDIR}/x11-toolkits/fox10
 CONFIGURE_ARGS+=	--with-fox-1-0
@@ -32,10 +34,14 @@ CONFIGURE_ARGS+=	--with-fox-1-0
 FOX_LIB_VER=	1.2
 LIB_DEPENDS+=	FOX-${FOX_LIB_VER}:${PORTSDIR}/x11-toolkits/fox12
 CONFIGURE_ARGS+=	--with-fox-1-2
-.else
+.elif defined(WITH_FOX14)
 FOX_LIB_VER=	1.4
 LIB_DEPENDS+=	FOX-${FOX_LIB_VER}:${PORTSDIR}/x11-toolkits/fox14
 CONFIGURE_ARGS+=	--with-fox-1-4
+.else
+FOX_LIB_VER=	1.6
+LIB_DEPENDS+=	FOX-${FOX_LIB_VER}:${PORTSDIR}/x11-toolkits/fox16
+CONFIGURE_ARGS+=	--with-fox-1-6
 .endif
 
 post-patch:

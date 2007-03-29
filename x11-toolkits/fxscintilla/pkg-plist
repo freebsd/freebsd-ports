@@ -4,5 +4,5 @@ include/fxscintilla/Scintilla.h
 lib/libfxscintilla.a
 lib/libfxscintilla.la
 lib/libfxscintilla.so
-lib/libfxscintilla.so.17
+lib/libfxscintilla.so.19
 @dirrm include/fxscintilla
