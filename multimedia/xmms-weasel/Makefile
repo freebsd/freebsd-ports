@@ -21,8 +21,12 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/xmms/General/libweasel.la \
 		lib/xmms/General/libweasel.so
+
+post-patch:
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
