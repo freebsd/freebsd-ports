@@ -25,8 +25,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	CPPFLAGS="${CPPFLAGS}"
 USE_AUTOTOOLS=	autoconf:259
 CPPFLAGS+=	"-I${LOCALBASE}/include"
+USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/xmms/Input/libxmms-mac.so
+
+post-patch:
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/aclocal.m4
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/.libs/libxmms-mac.so ${PREFIX}/lib/xmms/Input
