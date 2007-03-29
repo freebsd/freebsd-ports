@@ -91,6 +91,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
 		${GREP} -l "^examplesdir" | ${XARGS} ${REINPLACE_CMD} -e \
 		"s;[(]pkgdatadir[)]/examples;(datadir)/examples/@PACKAGE@;"
+	@${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} -e 's|echo aout|echo elf|'
 	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} \
 		${GREP} -l "<malloc\.h>" | ${XARGS} ${REINPLACE_CMD} \
 		-e "s,<malloc\.h>,<stdlib.h>,"

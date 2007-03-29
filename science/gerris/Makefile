@@ -42,6 +42,7 @@ USE_GETOPT_LONG=	yes
 CONFIGURE_ARGS+=	--disable-mpi
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|'	\
 		${WRKSRC}/src/Makefile.in
 
