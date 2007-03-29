@@ -110,7 +110,8 @@ DAV_MODULES=		dav dav_fs
 EXPERIMENTAL_MODULES=	bucketeer case_filter case_filter_in ext_filter charset_lite \
 			optional_hook_export optional_hook_import \
 			optional_fn_import optional_fn_export \
-			cache file_cache disk_cache mem_cache
+			cache file_cache disk_cache mem_cache \
+			dumpio
 LDAP_MODULES=		ldap auth_ldap
 MISC_MODULES=		actions alias asis autoindex cache cern_meta \
 			cgi charset_lite deflate dir disk_cache env expires \
