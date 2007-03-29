@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmms-shn
-PORTVERSION=	2.4.0
-PORTREVISION=	1
+PORTVERSION=	2.4.1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.etree.org/shnutils/xmms-shn/dist/src/
 
@@ -20,10 +19,6 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
