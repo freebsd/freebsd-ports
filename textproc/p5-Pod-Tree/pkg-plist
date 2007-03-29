@@ -1,5 +1,4 @@
 bin/perl2html
-%%POD2HTML%%bin/pod2html
 bin/pods2html
 %%SITE_PERL%%/Pod/Tree.pm
 %%SITE_PERL%%/Pod/Tree/HTML.pm

@@ -7,18 +7,18 @@
 #
 
 PORTNAME=	Pod-Tree
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Pod
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create a static syntax tree for a POD
 
-BUILD_DEPENDS=	${SITE_PERL}/HTML/Stream.pm:${PORTSDIR}/www/p5-HTML-Stream \
+RUN_DEPENDS=	${SITE_PERL}/HTML/Stream.pm:${PORTSDIR}/www/p5-HTML-Stream \
 		${SITE_PERL}/Pod/Escapes.pm:${PORTSDIR}/textproc/p5-Pod-Escapes
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -35,18 +35,9 @@ MAN3=		Pod::Tree.3 \
 		Pod::Tree::PerlTop.3 \
 		Pod::Tree::Pod.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 500600
-PLIST_SUB+=	POD2HTML="@comment "
-.else
-MAN1+=		pod2html.1
-PLIST_SUB+=	POD2HTML=""
-.endif
-
+# conflict with pod2html in perl 5.6 or above
 post-patch:
-.if ${PERL_LEVEL} >= 500600
 	${REINPLACE_CMD} -e 's/pod2html //g' ${WRKSRC}/Makefile.PL
-.endif
+	${RM} ${WRKSRC}/t/pod2html.t
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
