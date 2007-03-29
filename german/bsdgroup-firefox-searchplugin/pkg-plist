@@ -1,4 +1,6 @@
 lib/firefox/searchplugins/bsdgroup.src
 lib/firefox/searchplugins/bsdgroup.png
+lib/firefox/searchplugins/bsdgroup-wiki.src
+lib/firefox/searchplugins/bsdgroup-wiki.png
 @dirrmtry lib/firefox/searchplugins
 @dirrmtry lib/firefox

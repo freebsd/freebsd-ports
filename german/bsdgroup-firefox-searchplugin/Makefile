@@ -7,6 +7,7 @@
 
 PORTNAME=	bsdgroup-firefox-searchplugin
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	german www
 MASTER_SITES=	http://www.crashmail.de/files/
 DISTFILES=	bsdgroup.src bsdgroup.png bsdgroup-wiki.src bsdgroup-wiki.png
