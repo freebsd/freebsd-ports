@@ -14725,7 +14725,6 @@ tcl-tk-wrapper	ports/lang/tcl-tk-wrapper
 tcl-trf		ports/devel/tcl-trf
 tcl-wrapper	ports/lang/tcl-wrapper
 tcl80		ports/lang/tcl80
-tcl81-thread	ports/lang/tcl81-thread
 tcl82		ports/lang/tcl82
 tcl83		ports/lang/tcl83
 tcl84		ports/lang/tcl84
