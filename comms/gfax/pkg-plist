@@ -2,8 +2,8 @@ bin/gfax
 bin/gfaxlpr
 lib/gfax/gfax.exe
 share/gnome/applications/gfax.desktop
-share/gnome/libgnomeprint/2.12.1/models/GNOME-GFAX-PS.xml
-share/gnome/libgnomeprint/2.12.1/printers/GFAX.xml
+share/gnome/libgnomeprint/2.18.0/models/GNOME-GFAX-PS.xml
+share/gnome/libgnomeprint/2.18.0/printers/GFAX.xml
 share/gnome/pixmaps/gfax.png
 share/gnome/pixmaps/send.png
 @dirrm lib/gfax
