@@ -15,12 +15,3 @@
  
  bool Sound_Driver_OSS::does_perform_disk_write() {
  
-@@ -154,7 +162,7 @@
- 
- 
- 
--	(void*)audiobuffer=calloc(1,buffinf.fragsize);
-+	audiobuffer=(Sint8*)calloc(1,buffinf.fragsize);
- 
- 	if ( audiobuffer==NULL ) {
- 
