@@ -1,0 +1,11 @@
+--- SConstruct.orig	Thu Mar 29 10:35:45 2007
++++ SConstruct	Thu Mar 29 10:36:06 2007
+@@ -10,7 +10,7 @@
+ opts = Options ('oregano.py');
+ opts.Add (BoolOption ('RunUpdateMimeDatabase', 'Set to no if you don\'t want to run update-mime-database', 1));
+ opts.Add (BoolOption ('Debug', 'Set to yes you want to compile with debug symbolse', 0));
+-opts.Add (PathOption ('PREFIX', 'System base prefix path', '/usr/local'));
++opts.Add (PathOption ('PREFIX', 'System base prefix path', '/usr/local', PathOption.PathIsDirCreate));
+ opts.Add (PackageOption ('DESTDIR', 'System base installation path', '/'));
+ 
+ # Dependencies #
