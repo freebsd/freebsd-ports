@@ -2891,3 +2891,5 @@ net/pcs|net/py-pcs|2007-03-26|Renamed to fit python module naming convention
 japanese/gal||2007-03-28|Has expired: Broken on all supported versions of FreeBSD
 japanese/gnome||2007-03-28|Has expired: Broken on all supported versions of FreeBSD
 japanese/gnomelibs||2007-03-28|Has expired: Broken on all supported versions of FreeBSD
+x11-toolkits/ruby-fox|x11-toolkits/ruby-fox10|2007-03-29|rename for supporting multiple fox version
+x11-toolkits/ruby-fox-devel|x11-toolkits/ruby-fox12|2007-03-29|rename for supporting multiple fox version

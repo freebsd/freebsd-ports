@@ -13540,8 +13540,8 @@ ruby-filemagic	ports/devel/ruby-filemagic
 ruby-flexmock	ports/devel/ruby-flexmock
 ruby-format	ports/textproc/ruby-format
 ruby-formvalidator	ports/textproc/ruby-formvalidator
-ruby-fox	ports/x11-toolkits/ruby-fox
-ruby-fox-devel	ports/x11-toolkits/ruby-fox-devel
+ruby-fox10	ports/x11-toolkits/ruby-fox10
+ruby-fox12	ports/x11-toolkits/ruby-fox12
 ruby-freedb	ports/audio/ruby-freedb
 ruby-game	ports/devel/ruby-game
 ruby-gconf2	ports/devel/ruby-gconf2
