@@ -21,6 +21,7 @@ LIB_DEPENDS?=	xmms.4:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
 
 USE_X_PREFIX=	yes
+USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 PLUGDIR?=	lib/xmms/Input
 PLIST_FILES=	${PLUGDIR}/libmodplugxmms.so
@@ -30,6 +31,9 @@ PLIST_FILES=	${PLUGDIR}/libmodplugxmms.so
 .if ${OSVERSION} < 500000
 BROKEN=		Does not compile on FreeBSD 4.x
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/modplugxmms/.libs/libmodplugxmms.so ${PREFIX}/${PLUGDIR}/

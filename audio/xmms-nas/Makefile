@@ -20,9 +20,13 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/xmms/Output/libnas.a \
 		lib/xmms/Output/libnas.la \
 		lib/xmms/Output/libnas.so
+
+post-patch:
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/ltconfig
 
 .include <bsd.port.mk>
