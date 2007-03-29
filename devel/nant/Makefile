@@ -25,6 +25,8 @@ USE_GMAKE=	yes
 MAKE_ENV=	MONO_PATH=${WRKSRC}/lib
 INSTALL_TARGET=	install prefix=${PREFIX}
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${FIND} ${WRKSRC}/src  ${WRKSRC}/tests -name '*.build' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|warnaserror="true"|warnaserror="false"|g;'
@@ -42,4 +44,4 @@ post-install:
 .endif
 
 .include "${PORTSDIR}/lang/mono/bsd.mono.mk"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
