@@ -7,7 +7,7 @@
 
 PORTNAME=	fox
 PORTVERSION=	1.0.29
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fxruby
@@ -22,8 +22,10 @@ COMMENT=	Ruby extension module to use FOX, aka FXRuby
 LIB_DEPENDS=	FOX-1.0.0:${PORTSDIR}/x11-toolkits/fox10 \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		fxscintilla.17:${PORTSDIR}/x11-toolkits/fxscintilla-fox10 \
+		fxscintilla.19:${PORTSDIR}/x11-toolkits/fxscintilla-fox10 \
 		glut.4:${PORTSDIR}/graphics/libglut
+
+LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}10
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
