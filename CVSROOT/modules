@@ -14522,6 +14522,7 @@ stellarium	ports/astro/stellarium
 stepbill	ports/games/stepbill
 steptalk	ports/lang/steptalk
 stepulator	ports/math/stepulator
+stfl		ports/devel/stfl
 sting		ports/net-mgmt/sting
 stk		ports/lang/STk
 stklos		ports/lang/stklos
