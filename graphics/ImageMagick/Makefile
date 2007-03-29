@@ -181,8 +181,9 @@ PLIST_SUB+=		JPEG2000="@comment "
 
 # GraphViz dot graphs
 .if defined(WITH_IMAGEMAGICK_DOT)
-BUILD_DEPENDS+=		dot:${PORTSDIR}/graphics/graphviz
-RUN_DEPENDS+=		dot:${PORTSDIR}/graphics/graphviz
+LIB_DEPENDS+=		gvc.3:${PORTSDIR}/graphics/graphviz
+CFLAGS+=		-I${LOCALBASE}/include/graphviz
+LDFLAGS+=		-L${LOCALBASE}/lib/graphviz
 .else
 CONFIGURE_ARGS+=	--without-dot --without-gvc
 .endif
