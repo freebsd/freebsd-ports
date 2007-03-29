@@ -4,8 +4,8 @@
 @exec chown root:cups /var/cache/cups
 @exec mkdir -p /var/log/cups || true
 @exec chown cups:daemon /var/log/cups
-@exec mkdir %D/etc/cups/ppd || true
-@exec mkdir %D/etc/cups/interfaces || true
+@exec mkdir -p %D/etc/cups/ppd || true
+@exec mkdir -p %D/etc/cups/interfaces || true
 @unexec rm -rf /var/spool/cups 2>/dev/null || true
 @unexec rm -rf /var/cache/cups 2>/dev/null || true
 @unexec rmdir /var/cache 2>/dev/null || true
