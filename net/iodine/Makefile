@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iodine
-PORTVERSION=	0.3.4
+PORTVERSION=	0.4.0
 CATEGORIES=	net
 MASTER_SITES=	http://code.kryo.se/iodine/
 
@@ -17,15 +17,19 @@ PLIST_FILES=	bin/iodine sbin/iodined
 
 PORTDOCS=	CHANGELOG README TODO
 
+MAN8=		iodine.8
+
 .include <bsd.port.pre.mk>
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,^CC =,CC ?=,' -e 's,^CFLAGS =,CFLAGS +=,' \
-		${WRKSRC}/Makefile
+do-build:
+	@cd ${WRKSRC}/src; ${MAKE} all
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/iodine ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/iodined ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/iodine ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/iodined ${PREFIX}/sbin
+.for m in ${MAN8}
+	${INSTALL_MAN} ${WRKSRC}/man/${m} ${MANPREFIX}/man/man8
+.endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
