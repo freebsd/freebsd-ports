@@ -1,0 +1,9 @@
+--- util/startfluxbox.in	2006/10/27 07:04:51	4600
++++ util/startfluxbox.in	2007/03/28 02:56:21	4798
+@@ -86,5 +86,5 @@
+     ) > "$startup"
+     fi
+     chmod 644 "$startup"
+-    exec "$startup"
++    exec sh "$startup"
+ fi

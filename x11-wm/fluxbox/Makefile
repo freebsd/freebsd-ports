@@ -7,7 +7,7 @@
 
 PORTNAME=	fluxbox
 PORTVERSION=	1.0rc3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -167,8 +167,6 @@ post-patch:
 			${WRKSRC}/util/fluxbox-generate_menu.in
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
 		s|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/util/fbsetbg
-	@${REINPLACE_CMD} -e 's|644|755|g' \
-		${WRKSRC}/util/startfluxbox.in
 .if defined(WITHOUT_NLS)
 	@${REINPLACE_CMD} -e 's|HAVE_ICONV=yes|HAVE_ICONV=no|g' \
 		${WRKSRC}/configure
