@@ -21,8 +21,13 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -L${LOCALBASE}/lib"
+
+PLIST_FILES=	lib/xmms/Input/libcdread.so lib/xmms/Input/libcdread.la
+
+post-patch:
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/ltconfig
 
 .include <bsd.port.mk>
