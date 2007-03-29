@@ -7,6 +7,7 @@
 
 PORTNAME=	lives
 DISTVERSION=	0.9.8.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.xs4all.nl/%7Esalsaman/lives/current/ CENKES
 DISTNAME=	LiVES-${DISTVERSION}
@@ -52,6 +53,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 LC_MESSAGES_NAMES=	lives
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|i<FX_KEYS_MAX_VIRTUAL|i<prefs->rte_keys_virtual|' ${WRKSRC}/src/rte_window.c
 	@${REINPLACE_CMD} -e '/test.*==/s|==|=|g' -e '/LIBS/s|-ldl ||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/LDFLAGS/s|-ldld||;s|-ldl||'\
 		${WRKSRC}/lives-plugins/weed-plugins/Makefile.in
