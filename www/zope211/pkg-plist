@@ -1,12 +1,4 @@
 %%ZOPEBASEDIR%%/Products/00readme-freebsd.txt
-%%ZOPEBASEDIR%%/Products/Hotfix_20070320/README.txt
-%%ZOPEBASEDIR%%/Products/Hotfix_20070320/__init__.py
-%%ZOPEBASEDIR%%/Products/Hotfix_20070320/__init__.pyc
-%%ZOPEBASEDIR%%/Products/Hotfix_20070320/tests/__init__.py
-%%ZOPEBASEDIR%%/Products/Hotfix_20070320/tests/__init__.pyc
-%%ZOPEBASEDIR%%/Products/Hotfix_20070320/tests/test_hotfix.py
-%%ZOPEBASEDIR%%/Products/Hotfix_20070320/tests/test_hotfix.pyc
-%%ZOPEBASEDIR%%/Products/Hotfix_20070320/version.txt
 %%ZOPEBASEDIR%%/bin/README.txt
 %%ZOPEBASEDIR%%/bin/analyze.py
 %%ZOPEBASEDIR%%/bin/analyze.pyc
@@ -141,6 +133,9 @@
 %%ZOPEBASEDIR%%/lib/python/AccessControl/interfaces.pyc
 %%ZOPEBASEDIR%%/lib/python/AccessControl/logger_wrapper.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/logger_wrapper.pyc
+%%ZOPEBASEDIR%%/lib/python/AccessControl/requestmethod.py
+%%ZOPEBASEDIR%%/lib/python/AccessControl/requestmethod.pyc
+%%ZOPEBASEDIR%%/lib/python/AccessControl/requestmethod.txt
 %%ZOPEBASEDIR%%/lib/python/AccessControl/securitySuite/README
 %%ZOPEBASEDIR%%/lib/python/AccessControl/securitySuite/ResultObject.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/securitySuite/ResultObject.pyc
@@ -200,6 +195,8 @@
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testZopeGuards.pyc
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testZopeSecurityPolicy.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testZopeSecurityPolicy.pyc
+%%ZOPEBASEDIR%%/lib/python/AccessControl/tests/test_requestmethod.py
+%%ZOPEBASEDIR%%/lib/python/AccessControl/tests/test_requestmethod.pyc
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/test_safeiter.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/test_safeiter.pyc
 %%ZOPEBASEDIR%%/lib/python/AccessControl/unauthorized.py
@@ -724,6 +721,7 @@
 %%ZOPEBASEDIR%%/lib/python/OFS/subscribers.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/__init__.py
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/events.zcml
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/mime.types-1
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/mime.types-2
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/test.gif
@@ -733,6 +731,8 @@
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testApplication.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testCopySupport.py
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testCopySupport.pyc
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/testCopySupportEvents.py
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/testCopySupportEvents.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testCopySupportHooks.py
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testCopySupportHooks.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testFTPInterface.py
@@ -1722,6 +1722,7 @@
 %%ZOPEBASEDIR%%/lib/python/Products/PythonScripts/tests/tscripts/global_is_declaration.ps
 %%ZOPEBASEDIR%%/lib/python/Products/PythonScripts/tests/tscripts/mutate_literals.ps
 %%ZOPEBASEDIR%%/lib/python/Products/PythonScripts/tests/tscripts/ns_bind.ps
+%%ZOPEBASEDIR%%/lib/python/Products/PythonScripts/tests/tscripts/ns_bind_invalid.ps
 %%ZOPEBASEDIR%%/lib/python/Products/PythonScripts/tests/tscripts/simple_print.ps
 %%ZOPEBASEDIR%%/lib/python/Products/PythonScripts/tests/tscripts/subversive_except.ps
 %%ZOPEBASEDIR%%/lib/python/Products/PythonScripts/tests/tscripts/try_except.ps
@@ -9862,7 +9863,5 @@
 @dirrm %%ZOPEBASEDIR%%/skel/etc/package-includes
 @dirrm %%ZOPEBASEDIR%%/skel/etc
 @dirrm %%ZOPEBASEDIR%%/skel
-@dirrm %%ZOPEBASEDIR%%/Products/Hotfix_20070320/tests
-@dirrm %%ZOPEBASEDIR%%/Products/Hotfix_20070320
 @dirrmtry %%ZOPEBASEDIR%%/Products
 @dirrmtry %%ZOPEBASEDIR%%
