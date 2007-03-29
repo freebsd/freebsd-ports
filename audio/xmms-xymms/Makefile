@@ -22,6 +22,7 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
+USE_LDCONFIG=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 
@@ -33,6 +34,7 @@ PLIST_DIRS=	%%EXAMPLESDIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D_REENTRANT||' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/ltconfig
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
