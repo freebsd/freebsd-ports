@@ -298,6 +298,7 @@
     SUBDIR += xfce4-print
     SUBDIR += xmbibtex
     SUBDIR += xmltex
+    SUBDIR += xpp
     SUBDIR += xtexsh
     SUBDIR += yatex
     SUBDIR += yatex-mule
