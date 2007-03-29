@@ -1,13 +1,13 @@
 %%SITE_PERL%%/Unicode/Unihan.pm
 %%SITE_PERL%%/Unicode/Unihan/AccountingNumeric.db
-%%SITE_PERL%%/Unicode/Unihan/AlternateKangXi.db
-%%SITE_PERL%%/Unicode/Unihan/AlternateMorohashi.db
 %%SITE_PERL%%/Unicode/Unihan/BigFive.db
 %%SITE_PERL%%/Unicode/Unihan/CCCII.db
 %%SITE_PERL%%/Unicode/Unihan/CNS1986.db
 %%SITE_PERL%%/Unicode/Unihan/CNS1992.db
 %%SITE_PERL%%/Unicode/Unihan/Cangjie.db
 %%SITE_PERL%%/Unicode/Unihan/Cantonese.db
+%%SITE_PERL%%/Unicode/Unihan/CheungBauer.db
+%%SITE_PERL%%/Unicode/Unihan/CheungBauerIndex.db
 %%SITE_PERL%%/Unicode/Unihan/CihaiT.db
 %%SITE_PERL%%/Unicode/Unihan/CompatibilityVariant.db
 %%SITE_PERL%%/Unicode/Unihan/Cowles.db
@@ -15,6 +15,8 @@
 %%SITE_PERL%%/Unicode/Unihan/Definition.db
 %%SITE_PERL%%/Unicode/Unihan/EACC.db
 %%SITE_PERL%%/Unicode/Unihan/Fenn.db
+%%SITE_PERL%%/Unicode/Unihan/FennIndex.db
+%%SITE_PERL%%/Unicode/Unihan/FourCornerCode.db
 %%SITE_PERL%%/Unicode/Unihan/Frequency.db
 %%SITE_PERL%%/Unicode/Unihan/GB0.db
 %%SITE_PERL%%/Unicode/Unihan/GB1.db
@@ -22,11 +24,16 @@
 %%SITE_PERL%%/Unicode/Unihan/GB5.db
 %%SITE_PERL%%/Unicode/Unihan/GB7.db
 %%SITE_PERL%%/Unicode/Unihan/GB8.db
+%%SITE_PERL%%/Unicode/Unihan/GSR.db
 %%SITE_PERL%%/Unicode/Unihan/GradeLevel.db
+%%SITE_PERL%%/Unicode/Unihan/HDZRadBreak.db
 %%SITE_PERL%%/Unicode/Unihan/HKGlyph.db
 %%SITE_PERL%%/Unicode/Unihan/HKSCS.db
 %%SITE_PERL%%/Unicode/Unihan/HanYu.db
+%%SITE_PERL%%/Unicode/Unihan/Hangul.db
+%%SITE_PERL%%/Unicode/Unihan/HanyuPinlu.db
 %%SITE_PERL%%/Unicode/Unihan/IBMJapan.db
+%%SITE_PERL%%/Unicode/Unihan/IICore.db
 %%SITE_PERL%%/Unicode/Unihan/IRGDaeJaweon.db
 %%SITE_PERL%%/Unicode/Unihan/IRGDaiKanwaZiten.db
 %%SITE_PERL%%/Unicode/Unihan/IRGHanyuDaZidian.db
@@ -37,6 +44,7 @@
 %%SITE_PERL%%/Unicode/Unihan/IRG_KPSource.db
 %%SITE_PERL%%/Unicode/Unihan/IRG_KSource.db
 %%SITE_PERL%%/Unicode/Unihan/IRG_TSource.db
+%%SITE_PERL%%/Unicode/Unihan/IRG_USource.db
 %%SITE_PERL%%/Unicode/Unihan/IRG_VSource.db
 %%SITE_PERL%%/Unicode/Unihan/JIS0213.db
 %%SITE_PERL%%/Unicode/Unihan/JapaneseKun.db
@@ -61,6 +69,7 @@
 %%SITE_PERL%%/Unicode/Unihan/Phonetic.db
 %%SITE_PERL%%/Unicode/Unihan/PrimaryNumeric.db
 %%SITE_PERL%%/Unicode/Unihan/PseudoGB1.db
+%%SITE_PERL%%/Unicode/Unihan/RSAdobe_Japan1_6.db
 %%SITE_PERL%%/Unicode/Unihan/RSJapanese.db
 %%SITE_PERL%%/Unicode/Unihan/RSKanWa.db
 %%SITE_PERL%%/Unicode/Unihan/RSKangXi.db
