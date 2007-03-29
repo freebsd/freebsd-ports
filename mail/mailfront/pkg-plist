@@ -29,6 +29,7 @@ libexec/mailfront/protocol-qmqp.so
 libexec/mailfront/protocol-qmtp.so
 libexec/mailfront/protocol-smtp.so
 @dirrmtry libexec/mailfront
+@dirrm include/mailfront
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
