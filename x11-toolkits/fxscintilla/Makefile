@@ -18,9 +18,11 @@ USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS+=	--enable-shared --disable-static
 USE_LDCONFIG=	yes
 
+.if !defined(MASTERDIR)
 OPTIONS=	FOX10 "FOX1.0 support (FOX1.6 by default)" off
 OPTIONS+=	FOX12 "FOX1.2 support (FOX1.6 by default)" off
 OPTIONS+=	FOX14 "FOX1.4 support (FOX1.6 by default)" off
+.endif
 
 .include <bsd.port.pre.mk>
 
