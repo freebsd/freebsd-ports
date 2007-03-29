@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xshttpd
-DISTVERSION=	3.5b04
+DISTVERSION=	3.5b05
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 		ftp://mud.stack.nl/pub/xs-httpd/release/
@@ -36,7 +36,7 @@ OPTIONS=	SSL "Enable https support" On \
 		M4_CONFIG "Enable m4 configuration preprocessor" Off \
 		PERSISTENT_PERL "Enable persistent perl interpreter" Off
 
-PORTDOCS=	README BUGS COPYING ChangeLog
+PORTDOCS=	README COPYING ChangeLog
 
 # By default XS-HTTPD stores its data in ${PREFIX}/lib/httpd
 WWWDIR?=	${PREFIX}/www

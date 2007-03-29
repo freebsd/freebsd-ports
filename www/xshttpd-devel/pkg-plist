@@ -47,26 +47,26 @@ bin/xspasswd
 %%WWWDIR%%/gfxcount/largecol8.ppm
 %%WWWDIR%%/gfxcount/largecol9.ppm
 %%WWWDIR%%/httpd.conf.sample
-%%WWWDIR%%/icons/xs-audio.gif
-%%WWWDIR%%/icons/xs-back.gif
-%%WWWDIR%%/icons/xs-base.gif
-%%WWWDIR%%/icons/xs-bin.gif
-%%WWWDIR%%/icons/xs-dir.gif
-%%WWWDIR%%/icons/xs-gif.gif
-%%WWWDIR%%/icons/xs-html.gif
-%%WWWDIR%%/icons/xs-image.gif
-%%WWWDIR%%/icons/xs-jpeg.gif
-%%WWWDIR%%/icons/xs-ps.gif
-%%WWWDIR%%/icons/xs-tar.gif
-%%WWWDIR%%/icons/xs-txt.gif
-%%WWWDIR%%/icons/xs-unknown.gif
-%%WWWDIR%%/icons/xs-video.gif
-%%WWWDIR%%/icons/xs-zip.gif
+%%WWWDIR%%/htdocs/icons/xs-audio.gif
+%%WWWDIR%%/htdocs/icons/xs-back.gif
+%%WWWDIR%%/htdocs/icons/xs-base.gif
+%%WWWDIR%%/htdocs/icons/xs-bin.gif
+%%WWWDIR%%/htdocs/icons/xs-dir.gif
+%%WWWDIR%%/htdocs/icons/xs-gif.gif
+%%WWWDIR%%/htdocs/icons/xs-html.gif
+%%WWWDIR%%/htdocs/icons/xs-image.gif
+%%WWWDIR%%/htdocs/icons/xs-jpeg.gif
+%%WWWDIR%%/htdocs/icons/xs-ps.gif
+%%WWWDIR%%/htdocs/icons/xs-tar.gif
+%%WWWDIR%%/htdocs/icons/xs-txt.gif
+%%WWWDIR%%/htdocs/icons/xs-unknown.gif
+%%WWWDIR%%/htdocs/icons/xs-video.gif
+%%WWWDIR%%/htdocs/icons/xs-zip.gif
 %%WWWDIR%%/mime.index
 %%WWWDIR%%/script.methods.sample
 @dirrm %%WWWDIR%%/contrib
 @dirrm %%WWWDIR%%/gfxcount
-@dirrm %%WWWDIR%%/icons
 @dirrmtry %%WWWDIR%%/cgi-bin
+@dirrmtry %%WWWDIR%%/htdocs/icons
 @dirrmtry %%WWWDIR%%/htdocs
 @dirrmtry %%WWWDIR%%/logs
