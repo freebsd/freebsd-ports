@@ -13,7 +13,7 @@ MASTER_SITES=	http://tobias.eyedacor.org/typespeed/ \
 		http://critical.ch/distfiles/ \
 		http://energy.critical.ch/distfiles/
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Test your typing speed, and get your fingers\' CPS
 
 USE_GETOPT_LONG=yes
