@@ -19,7 +19,6 @@ USE_AUTOTOOLS=	libtool:15
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/ -ldl//g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e '/objformat/s/aout/elf/g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 MAN3=		umem_alloc.3 umem_cache_create.3 umem_debug.3
 
