@@ -22,13 +22,16 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
 LIBDIR?=	${PREFIX}/lib/xmms/General
 SRCLIBDIR?=	src/.libs
 
-INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%X11BASE%%/lib/xmms/General
 PLIST_FILES=	lib/xmms/General/libinfopipe.so
+
+post-patch:
+	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
 
 do-install:
 	cd ${WRKSRC}/${SRCLIBDIR};\
