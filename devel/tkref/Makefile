@@ -17,6 +17,9 @@ COMMENT=	A programmer's GUI reference for Tcl/Tk and major packages
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
+DEPRECATED=	is seriously outdated, take a look at http://www.tcl.tk/doc/ for TCL/TK documentation
+EXPIRATION_DATE=	2007-05-15
+
 PLIST_FILES=	bin/TkRef
 
 NO_BUILD=	yes
