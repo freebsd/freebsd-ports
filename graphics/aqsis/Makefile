@@ -34,13 +34,7 @@ CFLAGS+=	-fPIC
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
-
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "ia64"
-BROKEN=		"Does not compile on ${MACHINE_ARCH} (needs -fPIC)"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|PLUGIN_FLAGS=|#PLUGIN_FLAGS=|g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
