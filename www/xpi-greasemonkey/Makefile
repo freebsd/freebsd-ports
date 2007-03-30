@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	greasemonkey
-PORTVERSION=	0.6.7.20070131.0
-DISTVERSIONSUFFIX=	-fx
+PORTVERSION=	0.6.8.20070314.0
+DISTVERSIONSUFFIX=	-firefox
 CATEGORIES=	www
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Add bits of DHTML to any web page to change its behavior
 
 XPI_ID=		{e4a8a97b-f2ed-450b-b12d-ee082ba24781}
+XPI_NUM=	748
+
+post-extract:
+	@${TOUCH} ${WRKSRC}/chrome/chromeFiles/content/MochiKit/.empty
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
