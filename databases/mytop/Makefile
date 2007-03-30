@@ -1,13 +1,12 @@
 # New ports collection makefile for:	mytop
 # Date created:				28 Augest 2000
-# Whom:	      				Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
+# Whom:	      				Yen-Ming Lee <leeym@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	mytop
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.6
 CATEGORIES=	databases
 MASTER_SITES=	http://jeremy.zawodny.com/mysql/mytop/
 
@@ -26,11 +25,6 @@ MAN1=		mytop.1
 
 .if ${PERL_LEVEL} < 500805
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
-.endif
-
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	@${REINPLACE_CMD} -e 's, -P , B<-P> ,g' ${WRKSRC}/mytop
 .endif
 
 .include <bsd.port.post.mk>

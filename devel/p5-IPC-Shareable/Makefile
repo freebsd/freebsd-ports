@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-IPC-Shareable
 # Date created:				May 25th 2000
-# Whom:	      				Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
+# Whom:	      				Yen-Ming Lee <leeym@FreeBSD.org>
 #
 # $FreeBSD$
 #
