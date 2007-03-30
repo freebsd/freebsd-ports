@@ -1,11 +1,11 @@
---- makefile.orig	Fri Jul 14 08:16:12 2006
-+++ makefile	Fri Jul 14 08:17:26 2006
-@@ -1349,7 +1349,7 @@
- FreeBSD:
- 	@./tools/buildasm.sh $(AS) $(OBJPATH)
- 	make $(DEFINES) EXTRAOBJS="$(ASMOBJS)" CFLAGS="$(CFLAGS) -DUSE_ASM \
--		-fomit-frame-pointer -O3 -pthread"
-+		%%CFLAGS%% %%PTHREAD_CFLAGS%%"
- NetBSD:
- 	@./tools/buildasm.sh $(AS) $(OBJPATH)
- 	make $(DEFINES) EXTRAOBJS="$(ASMOBJS)" CFLAGS="$(CFLAGS) -DUSE_ASM \
+--- makefile.orig	Sat Jan 27 22:14:40 2007
++++ makefile	Fri Mar 30 14:40:47 2007
+@@ -1340,7 +1340,7 @@
+ 	@if uname -m | grep "i[3,4,5,6]86" > /dev/null; then \
+ 		./tools/buildasm.sh $(AS) $(OBJPATH) ; \
+ 		make $(DEFINES) EXTRAOBJS="$(ASMOBJS)" CFLAGS="$(CFLAGS) -DUSE_ASM \
+-			-fomit-frame-pointer -O3 -pthread" ; \
++			%%CFLAGS%% %%PTHREAD_CFLAGS%%" ; \
+ 	else \
+ 		make $(DEFINES) EXTRAOBJS="$(ASMOBJS)" CFLAGS="$(CFLAGS) -DUSE_ASM \
+ 			-fomit-frame-pointer -O3 -pthread" ; \
