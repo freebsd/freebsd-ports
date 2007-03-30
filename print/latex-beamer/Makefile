@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	latex-beamer
-PORTVERSION=	3.06
+PORTVERSION=	3.07
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -13,11 +13,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX class to create a beamer presentation
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${TEXMFDIR_LSR}:${PORTSDIR}/print/tex-texmflocal
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		${LOCALBASE}/${TEXMFDIR}/tex/latex/pgf/basiclayer/pgf.sty:${PORTSDIR}/print/latex-pgf \
-		${TEXMFDIR_LSR}:${PORTSDIR}/print/tex-texmflocal
+		${LOCALBASE}/${TEXMFDIR}/tex/latex/pgf/basiclayer/pgf.sty:${PORTSDIR}/print/latex-pgf
 
 NO_BUILD=	YES
 PLIST=		${WRKDIR}/pkg-plist
