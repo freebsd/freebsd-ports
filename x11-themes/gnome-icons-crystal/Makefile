@@ -13,8 +13,10 @@ PORTNAME=	crystal
 PORTVERSION=	1.2.0
 PORTREVISION=	2
 CATEGORIES=	x11-themes gnome
-MASTER_SITES=	http://files.customize.org/gicons/
-DISTNAME=	CrystalSVGforGnomeIcons1-2-0_1082838150
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	crystalforgnome
+DISTNAME=	CrystalSVG-${PORTVERSION}
+EXTRACT_SUFX=	.bz2
 
 MAINTAINER=	tmclaugh@FreeBSD.org
 COMMENT=	Crystal SVG Icons for Gnome
@@ -22,7 +24,7 @@ COMMENT=	Crystal SVG Icons for Gnome
 RESTRICTED=	${REASON}
 
 USE_BZIP2=	yes
-WRKSRC=		"${WRKDIR}/${PORTNAME}"
+WRKSRC=		${WRKDIR}/CfG-Crystal-SVG-${PORTVERSION}
 
 .include "${.CURDIR}/../gnome-icons/bsd.gnome-icons.mk"
 .include <bsd.port.mk>
