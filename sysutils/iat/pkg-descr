@@ -1,0 +1,5 @@
+iat (Iso9660 Analyzer Tool) is a tool for detecting the structure
+of many types of CD-ROM image file formats, such as BIN, MDF, PDI,
+CDI, NRG, and B5I, and converting them into ISO-9660.
+
+WWW: http://iat.berlios.de/
