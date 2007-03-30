@@ -19,10 +19,6 @@ COMMENT=	Standard Python binding to the SQLite3 library
 
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
 
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2007-04-10
-
 PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/_sqlite3.so
 DIST_SUBDIR=	python
 USE_PYTHON=	2.5+
