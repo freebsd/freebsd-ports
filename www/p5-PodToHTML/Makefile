@@ -6,6 +6,7 @@
 
 PORTNAME=	PodToHTML
 PORTVERSION=	0.06
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Pod
@@ -24,6 +25,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN1=		podtohtml.1
-MAN3=		Pod::HTML_Elements.3
+MAN3=		Pod::HTML_Elements.3 \
+		Pod::Links.3
 
 .include <bsd.port.mk>
