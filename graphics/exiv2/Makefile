@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	exiv2
-PORTVERSION=	0.14
+PORTVERSION=	0.12
+PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.exiv2.org/
 
@@ -14,7 +15,6 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Exif and Iptc metadata manipulation library and tools
 
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 MAN1=		exiv2.1

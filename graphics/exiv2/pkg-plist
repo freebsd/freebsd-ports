@@ -1,4 +1,5 @@
 bin/exiv2
+bin/exiv2-config
 include/exiv2/basicio.hpp
 include/exiv2/canonmn.hpp
 include/exiv2/cr2image.hpp
@@ -6,6 +7,7 @@ include/exiv2/crwimage.hpp
 include/exiv2/datasets.hpp
 include/exiv2/error.hpp
 include/exiv2/exif.hpp
+include/exiv2/exiv2_version.h
 include/exiv2/exv_conf.h
 include/exiv2/exv_msvc.h
 include/exiv2/fujimn.hpp
@@ -25,7 +27,6 @@ include/exiv2/olympusmn.hpp
 include/exiv2/panasonicmn.hpp
 include/exiv2/pngchunk.hpp
 include/exiv2/pngimage.hpp
-include/exiv2/rafimage.hpp
 include/exiv2/rcsid.hpp
 include/exiv2/sigmamn.hpp
 include/exiv2/sonymn.hpp
@@ -37,16 +38,9 @@ include/exiv2/tiffparser.hpp
 include/exiv2/tiffvisitor.hpp
 include/exiv2/types.hpp
 include/exiv2/value.hpp
-include/exiv2/version.hpp
 lib/libexiv2.a
 lib/libexiv2.la
 lib/libexiv2.so
 lib/libexiv2.so.0
 libdata/pkgconfig/exiv2.pc
-share/locale/de/LC_MESSAGES/exiv2.mo
-share/locale/es/LC_MESSAGES/exiv2.mo
-share/locale/fi/LC_MESSAGES/exiv2.mo
-share/locale/fr/LC_MESSAGES/exiv2.mo
-share/locale/pl/LC_MESSAGES/exiv2.mo
-share/locale/ru/LC_MESSAGES/exiv2.mo
 @dirrm include/exiv2
