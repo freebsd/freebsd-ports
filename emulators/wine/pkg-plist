@@ -766,6 +766,7 @@ lib/wine/shlwapi.dll.so
 lib/wine/snmpapi.dll.so
 lib/wine/sound.drv16
 lib/wine/spoolss.dll.so
+lib/wine/spoolsv.exe.so
 lib/wine/start.exe.so
 lib/wine/stdole2.tlb.so
 lib/wine/stdole32.tlb.so
@@ -850,6 +851,7 @@ lib/wine/wprocs.dll16
 lib/wine/ws2_32.dll.so
 lib/wine/wsock32.dll.so
 lib/wine/wtsapi32.dll.so
+lib/wine/xcopy.exe.so
 share/aclocal/wine.m4
 share/applications/wine.desktop
 share/wine/wine.inf
