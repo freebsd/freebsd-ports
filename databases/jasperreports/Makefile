@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jasperreports
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	databases print java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ COMMENT=	JasperReports is a powerful open source Java reporting tool
 RUN_DEPENDS=	${JAVALIBDIR}/itext.jar:${PORTSDIR}/devel/itext		\
 		${JAVALIBDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j	\
 		${JAVALIBDIR}/poi.jar:${PORTSDIR}/textproc/jakarta-poi	\
-		${JAVALIBDIR}/jfreechart.jar:${PORTSDIR}/java/jfreechart	\
+		${JAVALIBDIR}/jfreechart.jar:${PORTSDIR}/java/jfreechart\
 		${JAVALIBDIR}/commons-digester.jar:${PORTSDIR}/textproc/jakarta-commons-digester
 
 .if !defined(WITHOUT_MYSQL)
