@@ -1,6 +1,16 @@
 bin/tel
+lib/tel/cmdoptparse.py
+lib/tel/cmdoptparse.pyc
+lib/tel/cmdoptparse.pyo
+lib/tel/consoleiface.py
+lib/tel/consoleiface.pyc
+lib/tel/consoleiface.pyo
+lib/tel/phonebook.py
+lib/tel/phonebook.pyc
+lib/tel/phonebook.pyo
+lib/tel/tel.py
+lib/tel/tel.pyc
+lib/tel/tel.pyo
 share/locale/de/LC_MESSAGES/tel.mo
 share/locale/en/LC_MESSAGES/tel.mo
-%%DATADIR%%/tel.py
-%%DATADIR%%/tel.pyc
-@dirrm %%DATADIR%%
+@dirrm lib/tel
