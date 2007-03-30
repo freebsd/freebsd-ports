@@ -35,6 +35,8 @@ RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS+=	gifsicle:${PORTSDIR}/graphics/gifsicle
 .endif
 
+MASTER_SITES_BACKUP=	http://pompo.net/ports/
+
 USE_XLIB=	yes
 REINPLACE_ARGS=	-i ""
 FETCH_CMD=	/usr/bin/fetch
@@ -66,7 +68,8 @@ CFLAGS+=	-malign-double
 do-fetch:
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 	${FETCH_CMD} ${FETCH_BEFORE_ARGS}			\
-		${MASTER_SITES}download.php?file=${DISTFILES}
+		${MASTER_SITES}download.php?file=${DISTFILES}	\
+	|| ${FETCH_CMD} ${FETCH_BEFORE_ARGS} ${MASTER_SITES_BACKUP}${DISTFILES}
 .endif
 
 post-patch:
