@@ -9,6 +9,7 @@ amavis_p0fanalyzer_enable="${amavis_p0fanalyzer_enable-NO}"
 amavis_p0fanalyzer_p0f_filter="${amavis_p0fanalyzer_p0f_filter-"tcp dst port 25"}"
 amavis_p0fanalyzer_pidfile1="${amavis_p0fanalyzer_pidfile1-/var/run/p0fanalyzer1.pid}"
 amavis_p0fanalyzer_pidfile2="${amavis_p0fanalyzer_pidfile2-/var/run/p0fanalyzer2.pid}"
+amavis_p0f_daemon_flags="${amavis_p0f_daemon_flags--l}"
 amavis_p0fanalyzer_flags="${amavis_p0fanalyzer_flags-2345}"
 
 . /etc/rc.subr
@@ -23,7 +24,7 @@ p0fanalyzer_start() {
 	echo "Starting p0f-analyzer." && \
 	  %%DAEMON%% ${amavis_p0fanalyzer_pidfile1} \
 	  %%PREFIX%%/bin/p0f ${amavis_p0f_daemon_flags} \
-	  -l "${amavis_p0fanalyzer_p0f_filter}" 2>&1 | \
+	  "${amavis_p0fanalyzer_p0f_filter}" 2>&1 | \
 	  %%DAEMON%% ${amavis_p0fanalyzer_pidfile2} \
 	  %%PREFIX%%/sbin/p0f-analyzer.pl ${amavis_p0fanalyzer_flags}
 }
