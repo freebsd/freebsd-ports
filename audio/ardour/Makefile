@@ -42,10 +42,6 @@ CFLAGS+=	-O3 -fomit-frame-pointer -ffast-math -fstrength-reduce
 
 CFLAGS:=	${CFLAGS:N-fno-strict-aliasing}
 
-.if ${OSVERSION} < 600000
-BROKEN=		Does not compile on 5.x
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e "s|%%CFLAGS%%|${CFLAGS}|" ${WRKSRC}/SConstruct
 	${REINPLACE_CMD} -e "s|alsa_pcm|oss|g" ${WRKSRC}/templates/*.template
