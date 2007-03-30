@@ -4559,6 +4559,7 @@ iSiloXC		ports/palm/iSiloXC
 ia-aspell	ports/textproc/ia-aspell
 ia64sim		ports/emulators/ia64sim
 iaikpkcs11wrapper	ports/security/iaikpkcs11wrapper
+iat		ports/sysutils/iat
 iaxmodem	ports/net/iaxmodem
 ibsh		ports/shells/ibsh
 ical		ports/deskutils/ical
