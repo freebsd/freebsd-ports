@@ -1,3 +1,4 @@
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/MochiKit/.empty
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/accelimation.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/browser.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/browser.xul
@@ -10,6 +11,8 @@
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/manage.xul
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/menucommander.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/miscapis.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/newscript.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/newscript.xul
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/pages-overlay.xul
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/prefmanager.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/scriptdownloader.js
@@ -35,12 +38,21 @@
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/eu/gm-browser.properties
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/eu/gm-manage.properties
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/eu/greasemonkey.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/fi-FI/gm-browser.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/fi-FI/gm-manage.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/fi-FI/greasemonkey.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ja-JP/gm-browser.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ja-JP/gm-manage.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ja-JP/greasemonkey.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/nl-NL/gm-browser.properties
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/nl-NL/gm-manage.properties
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/nl-NL/greasemonkey.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR/gm-browser.properties
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR/gm-manage.properties
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR/greasemonkey.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU/gm-browser.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU/gm-manage.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU/greasemonkey.dtd
 %%XPI_XPIDIR%%/chrome/icons/default/greasemonkey.ico
 %%XPI_XPIDIR%%/chrome/icons/default/greasemonkey.xpm
 %%XPI_XPIDIR%%/chrome.manifest
@@ -58,8 +70,11 @@
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/en-US
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/es-ES
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/eu
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/fi-FI
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ja-JP
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/nl-NL
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles
 @dirrm %%XPI_XPIDIR%%/chrome/icons/default
