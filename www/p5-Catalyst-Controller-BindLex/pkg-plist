@@ -1,2 +1,3 @@
-lib/perl5/site_perl/5.8.8/Catalyst/Controller/BindLex.pm
-@dirrmtry lib/perl5/site_perl/5.8.8/Catalyst/Controller
+%%SITE_PERL%%/Catalyst/Controller/BindLex.pm
+@dirrmtry %%SITE_PERL%%/Catalyst/Controller
+@dirrmtry %%SITE_PERL%%/Catalyst
