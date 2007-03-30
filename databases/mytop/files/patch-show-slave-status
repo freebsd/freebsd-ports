@@ -1,0 +1,45 @@
+--- mytop-1.6.orig	2007-03-30 00:52:47.581910821 +0200
++++ mytop	2007-03-30 02:19:05.114300408 +0200
+@@ -369,6 +369,10 @@
+         require Data::Dumper;
+         print Data::Dumper::Dumper([\%config]);
+         ReadKey(0);
++
++		if (-M $0) { # restart application, if it was modified - for debugging
++			exec('perl', $0, @ARGV);
++		}
+     }
+ 
+     ## m - mode swtich to qps
+@@ -889,8 +893,30 @@
+                make_short(($STATUS{Bytes_received} - $OLD_STATUS{Bytes_received}) / $t_delta ),
+                make_short(($STATUS{Bytes_sent} - $OLD_STATUS{Bytes_sent}) / $t_delta ))
+           if ($t_delta);
+-        print "\n\n";
++        print "\n";
++
++        my @slave_status = Hashes("show slave status");
++        if (@slave_status)
++        {
++			my $line_prefix = " Slave: ";
++			foreach my $s (@slave_status) {
++				print $line_prefix, BOLD(),
++					($s->{Slave_IO_Running} eq 'Yes'
++						&& $s->{Slave_SQL_Running} eq 'Yes'
++						&& $s->{Last_Errno} == 0
++						? ($s->{Seconds_Behind_Master} > 60 ? BOLD('WARN') : GREEN('OK  ')) : RED('ERR ')
++					), RESET(),
++					" Delay: ",
++					sprintf('%03d:%02d', int($s->{Seconds_Behind_Master} / 60), $s->{Seconds_Behind_Master} % 60),
++					" $s->{Master_User}\@$s->{Master_Host}: ",
++					"$s->{Master_Log_File}/$s->{Read_Master_Log_Pos} ",
++					"\n";
++				#$line_prefix = ' ' x length($line_prefix);
++				$lines_left--;
++			}
++		}
+ 
++        print "\n";
+         $lines_left--;
+     }
+ 

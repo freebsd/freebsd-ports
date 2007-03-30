@@ -1,0 +1,11 @@
+--- mytop-1.6.orig	2007-03-30 00:52:47.581910821 +0200
++++ mytop	2007-03-30 00:59:04.174550184 +0200
+@@ -377,7 +377,7 @@
+     {
+         $config{mode} = 'qps';
+         Clear() unless $config{batchmode};
+-        print "Queries Per Second [hit q to exit this mode]\n";
++        print "Queries Per Second [hit q to exit, hit t for top mode]\n";
+         next;
+     }
+ 
