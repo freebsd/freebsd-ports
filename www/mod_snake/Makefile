@@ -25,10 +25,4 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-apxs="${APXS}"
 USE_GMAKE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-BROKEN=		"Does not compile on amd64 or ia64"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
