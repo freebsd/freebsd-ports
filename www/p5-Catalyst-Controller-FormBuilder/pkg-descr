@@ -1,0 +1,9 @@
+This base controller merges the functionality of CGI::FormBuilder with
+Catalyst and the following templating systems: Template Toolkit, Mason and
+HTML::Template. This gives you access to all of FormBuilder's niceties,
+such as controllablefield stickiness, multilingual support, and Javascript
+generation. For more details, see CGI::FormBuilder or the website at:
+
+    http://www.formbuilder.org
+
+WWW: http://search.cpan.org/~nuffin/Catalyst-Controller-FormBuilder/
