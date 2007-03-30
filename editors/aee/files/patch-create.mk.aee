@@ -1,0 +1,11 @@
+--- create.mk.aee	Mon Sep 23 06:16:04 2002
++++ create.mk.aee	Sat Mar 17 10:52:41 2007
+@@ -172,7 +172,7 @@
+ # make decisions about use of new_curse.c (use of new_curse is recommended 
+ # rather than local curses)
+ 
+-if [ -n "$terminfo_exists" -a -z "$termcap_exists" ]
++if true
+ then
+ 	echo "Neither terminfo or termcap are on this system!  "
+ 	if [ -f /usr/include/curses.h ]
