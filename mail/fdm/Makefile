@@ -36,10 +36,4 @@ post-install:
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 601000
-BROKEN=	needs strtonum(3)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
