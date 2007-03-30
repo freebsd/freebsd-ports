@@ -8709,6 +8709,7 @@ p5-Carp-Clan	ports/devel/p5-Carp-Clan
 p5-Carp-Datum	ports/devel/p5-Carp-Datum
 p5-Catalyst-Action-RenderView	ports/www/p5-Catalyst-Action-RenderView
 p5-Catalyst-Controller-BindLex	ports/www/p5-Catalyst-Controller-BindLex
+p5-Catalyst-Controller-FormBuilder	ports/www/p5-Catalyst-Controller-FormBuilder
 p5-Catalyst-Devel	ports/www/p5-Catalyst-Devel
 p5-Catalyst-Engine-Apache	ports/www/p5-Catalyst-Engine-Apache
 p5-Catalyst-Enzyme	ports/www/p5-Catalyst-Enzyme
