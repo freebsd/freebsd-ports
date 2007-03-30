@@ -5,19 +5,17 @@
 # $FreeBSD$
 
 PORTNAME=	latex-pgf
-PORTVERSION=	1.01
+PORTVERSION=	1.10
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	latex-beamer
+MASTER_SITE_SUBDIR=	pgf
 DISTNAME=	${PORTNAME:S/^latex-//}-${PORTVERSION}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package for TeX Portable Graphic Format
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${TEXMFDIR_LSR}:${PORTSDIR}/print/tex-texmflocal
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		${TEXMFDIR_LSR}:${PORTSDIR}/print/tex-texmflocal
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 
 NO_BUILD=	YES
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
@@ -31,7 +29,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}-${PORTVERSION}
 CLASSDIR=	${TEXMFDIR}/tex
 
 do-install:
-.for C in generic latex plain
+.for C in context generic latex plain
 	${MKDIR} ${PREFIX}/${CLASSDIR}/${C}/${PORTNAME:S/^latex-//}
 	${CP} -R ${WRKSRC}/${C}/pgf/* \
 		${PREFIX}/${CLASSDIR}/${C}/${PORTNAME:S/^latex-//}
