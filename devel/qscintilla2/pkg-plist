@@ -42,6 +42,8 @@ share/qt4/qsci/api/python/Python-2.5.api
 %%DOCS%%%%DOCSDIR%%/html/classQsciLexerCSS.html
 %%DOCS%%%%DOCSDIR%%/html/classQsciLexerCSharp-members.html
 %%DOCS%%%%DOCSDIR%%/html/classQsciLexerCSharp.html
+%%DOCS%%%%DOCSDIR%%/html/classQsciLexerD.html
+%%DOCS%%%%DOCSDIR%%/html/classQsciLexerD-members.html
 %%DOCS%%%%DOCSDIR%%/html/classQsciLexerDiff-members.html
 %%DOCS%%%%DOCSDIR%%/html/classQsciLexerDiff.html
 %%DOCS%%%%DOCSDIR%%/html/classQsciLexerHTML-members.html
@@ -173,6 +175,7 @@ share/qt4/qsci/api/python/Python-2.5.api
 %%HEADERS%%include/Qsci/qscilexercpp.h
 %%HEADERS%%include/Qsci/qscilexercsharp.h
 %%HEADERS%%include/Qsci/qscilexercss.h
+%%HEADERS%%include/Qsci/qscilexerd.h
 %%HEADERS%%include/Qsci/qscilexerdiff.h
 %%HEADERS%%include/Qsci/qscilexerhtml.h
 %%HEADERS%%include/Qsci/qscilexeridl.h
