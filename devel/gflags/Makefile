@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gflags
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	devel
 MASTER_SITES=	http://google-gflags.googlecode.com/files/
 

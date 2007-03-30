@@ -1,6 +1,6 @@
 # New ports collection makefile for:	autosig
 # Date created:				23 April 2001
-# Whom:	      				Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
+# Whom:	      				Yen-Ming Lee <leeym@FreeBSD.org>
 #
 # $FreeBSD$
 #

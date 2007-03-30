@@ -1,6 +1,6 @@
 # New ports collection makefile for:	jumpgate
 # Date created:				20 March 2001
-# Whom:	      				Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
+# Whom:	      				Yen-Ming Lee <leeym@FreeBSD.org>
 #
 # $FreeBSD$
 #

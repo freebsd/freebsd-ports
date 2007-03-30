@@ -1,6 +1,6 @@
 # New ports collection makefile for:	ubench
 # Date created:				6 June 2000
-# Whom:	      				Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
+# Whom:	      				Yen-Ming Lee <leeym@FreeBSD.org>
 #
 # $FreeBSD$
 #
