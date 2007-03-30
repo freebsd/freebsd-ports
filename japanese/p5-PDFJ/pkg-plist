@@ -22,6 +22,7 @@ bin/xpdfj.pl
 %%EXAMPLESDIR%%/demo.pdf
 %%EXAMPLESDIR%%/demo.pl
 %%EXAMPLESDIR%%/demo.xp
+%%EXAMPLESDIR%%/feedback.xp
 %%EXAMPLESDIR%%/frame.jpg
 %%EXAMPLESDIR%%/kof2002.inc
 %%EXAMPLESDIR%%/kof2002.xp
@@ -37,9 +38,13 @@ bin/xpdfj.pl
 %%EXAMPLESDIR%%/stdmacro.xp.pdf
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDFJ/.packlist
 %%SITE_PERL%%/PDFJ.pm
+%%SITE_PERL%%/PDFJ/CFF.pm
 %%SITE_PERL%%/PDFJ/E2U.pm
+%%SITE_PERL%%/PDFJ/Form.pm
 %%SITE_PERL%%/PDFJ/Matrix.pm
+%%SITE_PERL%%/PDFJ/OTF.pm
 %%SITE_PERL%%/PDFJ/Object.pm
+%%SITE_PERL%%/PDFJ/PNG.pm
 %%SITE_PERL%%/PDFJ/S2U.pm
 %%SITE_PERL%%/PDFJ/Shape.pm
 %%SITE_PERL%%/PDFJ/TTF.pm
