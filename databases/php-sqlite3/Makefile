@@ -17,7 +17,7 @@ EXTRACT_SUFX=		.tgz
 MAINTAINER=		simoncpu@infoweapons.com
 COMMENT=		A port for the PHP sqlite3 extension
 
-BUILD_DEPENDS=		sqlite>=3.0:${PORTSDIR}/databases/sqlite3
+BUILD_DEPENDS=		sqlite3>=3.0:${PORTSDIR}/databases/sqlite3
 
 CONFIGURE_ARGS=		--with-sqlite3=${LOCALBASE}
 USE_PHP=		yes
