@@ -18,5 +18,9 @@ XPI_FILES=	chrome/Io.js chrome/contents.rdf chrome/overlay.xul chrome.manifest \
 		defaults/preferences/user.js install.rdf
 XPI_DIRS=	chrome defaults/preferences defaults
 
+post-patch:
+	@${REINPLACE_CMD} -e '/maxVersion/s|>.*<|>3.*<|' ${WRKSRC}/install.rdf
+	@${RM} -f ${WRKSRC}/install.rdf.bak
+
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
