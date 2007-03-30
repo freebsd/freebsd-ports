@@ -8,7 +8,7 @@
 
 PORTNAME=	libqrencode
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://megaui.net/fukuchi/works/qrencode/
 DISTNAME=	qrencode-${PORTVERSION}
@@ -19,7 +19,7 @@ COMMENT=	A C library for encoding data in a QR Code symbol
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_GETOPT_LONG=	yes
-USE_GNOME=	gnometarget gnomehack
+USE_GNOME=	gnometarget gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 CFLAGS+=	-I${LOCALBASE}/include
