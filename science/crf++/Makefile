@@ -8,7 +8,9 @@
 PORTNAME=	crf++
 PORTVERSION=	0.47
 CATEGORIES=	science math
-MASTER_SITES=	http://chasen.org/~taku/software/CRF++/src/
+MASTER_SITES=	http://chasen.org/~taku/software/CRF++/src/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	clsung/${PORTNAME}
 DISTNAME=	CRF++-${PORTVERSION}
 
 MAINTAINER=	clsung@FreeBSD.org
