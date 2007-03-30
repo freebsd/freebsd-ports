@@ -107,11 +107,13 @@ share/gnome/control-center-2.0/capplets/scim-setup.desktop
 share/gnome/pixmaps/scim-setup.png
 share/locale/cs/LC_MESSAGES/scim.mo
 share/locale/de/LC_MESSAGES/scim.mo
+share/locale/fi/LC_MESSAGES/scim.mo
 share/locale/fr/LC_MESSAGES/scim.mo
 share/locale/it/LC_MESSAGES/scim.mo
 share/locale/ja/LC_MESSAGES/scim.mo
 share/locale/ko/LC_MESSAGES/scim.mo
 share/locale/pa/LC_MESSAGES/scim.mo
+share/locale/sv/LC_MESSAGES/scim.mo
 share/locale/zh_CN/LC_MESSAGES/scim.mo
 share/locale/zh_TW/LC_MESSAGES/scim.mo
 %%DATADIR%%/icons/down.png
