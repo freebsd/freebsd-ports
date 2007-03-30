@@ -1,0 +1,132 @@
+--- src/corelib/tools/qstring.cpp
++++ src/corelib/tools/qstring.cpp
+@@ -3342,6 +3342,7 @@ QString QString::fromUtf8(const char *st
+     result.resize(size); // worst case
+     ushort *qch = result.d->data;
+     uint uc = 0;
++    uint min_uc = 0;
+     int need = 0;
+     int error = -1;
+     uchar ch;
+@@ -3359,6 +3360,12 @@ QString QString::fromUtf8(const char *st
+                         ushort low = uc%0x400 + 0xdc00;
+                         *qch++ = high;
+                         *qch++ = low;
++                    } else if ((uc < min_uc) || (uc >= 0xd800 && uc <= 0xdfff) || (uc >= 0xfffe)) {
++			// overlong seqence, UTF16 surrogate or BOM
++                        i = error;
++                        qch = addOne(qch, result);
++                        *qch++ = 0xdbff;
++                        *qch++ = 0xde00 + ((uchar)str[i]);
+                     } else {
+                         *qch++ = uc;
+                     }
+@@ -3381,14 +3388,17 @@ QString QString::fromUtf8(const char *st
+                 uc = ch & 0x1f;
+                 need = 1;
+                 error = i;
++                min_uc = 0x80;
+             } else if ((ch & 0xf0) == 0xe0) {
+                 uc = ch & 0x0f;
+                 need = 2;
+                 error = i;
++                min_uc = 0x800;
+             } else if ((ch&0xf8) == 0xf0) {
+                 uc = ch & 0x07;
+                 need = 3;
+                 error = i;
++                min_uc = 0x10000;
+             } else {
+                 // Error
+                 qch = addOne(qch, result);
+--- src/corelib/codecs/qutfcodec.cpp
++++ src/corelib/codecs/qutfcodec.cpp
+@@ -117,15 +117,19 @@ QString QUtf8Codec::convertToUnicode(con
+     bool headerdone = false;
+     QChar replacement = QChar::ReplacementCharacter;
+     int need = 0;
++    int error = -1;
+     uint uc = 0;
++    uint min_uc = 0;
+     if (state) {
+         if (state->flags & IgnoreHeader)
+             headerdone = true;
+         if (state->flags & ConvertInvalidToNull)
+             replacement = QChar::Null;
+         need = state->remainingChars;
+-        if (need)
++        if (need) {
+             uc = state->state_data[0];
++            min_uc = state->state_data[1];
++        }
+     }
+     if (!headerdone && len > 3
+         && (uchar)chars[0] == 0xef && (uchar)chars[1] == 0xbb && (uchar)chars[2] == 0xbf) {
+@@ -142,7 +146,7 @@ QString QUtf8Codec::convertToUnicode(con
+     int invalid = 0;
+ 
+     for (int i=0; i<len; i++) {
+-        ch = *chars++;
++        ch = chars[i];
+         if (need) {
+             if ((ch&0xc0) == 0x80) {
+                 uc = (uc << 6) | (ch & 0x3f);
+@@ -153,14 +157,27 @@ QString QUtf8Codec::convertToUnicode(con
+                         uc -= 0x10000;
+                         unsigned short high = uc/0x400 + 0xd800;
+                         unsigned short low = uc%0x400 + 0xdc00;
++
++                        // resize if necessary
++                        long where = qch - result.unicode();
++                        if (where + 2 >= result.size()) {
++                            result.resize(where + 2);
++                            qch = result.data() + where;
++                        }
++
+                         *qch++ = QChar(high);
+                         *qch++ = QChar(low);
++                    } else if ((uc < min_uc) || (uc >= 0xd800 && uc <= 0xdfff) || (uc >= 0xfffe)) {
++                        // error
++                        *qch++ = QChar::ReplacementCharacter;
++                        ++invalid;
+                     } else {
+                         *qch++ = uc;
+                     }
+                 }
+             } else {
+                 // error
++                i = error;
+                 *qch++ = QChar::ReplacementCharacter;
+                 ++invalid;
+                 need = 0;
+@@ -171,12 +188,22 @@ QString QUtf8Codec::convertToUnicode(con
+             } else if ((ch & 0xe0) == 0xc0) {
+                 uc = ch & 0x1f;
+                 need = 1;
++                error = i;
++                min_uc = 0x80;
+             } else if ((ch & 0xf0) == 0xe0) {
+                 uc = ch & 0x0f;
+                 need = 2;
++                error = i;
++                min_uc = 0x800;
+             } else if ((ch&0xf8) == 0xf0) {
+                 uc = ch & 0x07;
+                 need = 3;
++                error = i;
++                min_uc = 0x10000;
++            } else {
++                // error
++                *qch++ = QChar::ReplacementCharacter;
++                ++invalid;
+             }
+         }
+     }
+@@ -187,6 +214,7 @@ QString QUtf8Codec::convertToUnicode(con
+         if (headerdone)
+             state->flags |= IgnoreHeader;
+         state->state_data[0] = need ? uc : 0;
++        state->state_data[1] = need ? min_uc : 0;
+     }
+     return result;
+ }
