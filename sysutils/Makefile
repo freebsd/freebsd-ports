@@ -290,6 +290,7 @@
     SUBDIR += hoz
     SUBDIR += httplog
     SUBDIR += i855vidctl10
+    SUBDIR += iat
     SUBDIR += idled
     SUBDIR += iextract
     SUBDIR += installwatch
