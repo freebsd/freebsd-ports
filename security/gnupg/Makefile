@@ -65,13 +65,13 @@ CONFIGURE_ARGS+=--disable-ldap
 PLIST_SUB+=	LDAP="@comment "
 .endif
 
-.if defined(WITH_NLS)
+#.if defined(WITH_NLS)
 CONFIGURE_ARGS+=--enable-nls
 PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+#.else
+#CONFIGURE_ARGS+=--disable-nls
+#PLIST_SUB+=	NLS="@comment "
+#.endif
 
 .if defined(WITH_SCDAEMON)
 CONFIGURE_ARGS+=--enable-scdaemon
