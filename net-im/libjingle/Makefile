@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Google Talk's implementation of Jingle and Jingle-Audio
 
+BROKEN=		does not compile with new speex
+
 BUILD_DEPENDS=	\
 		pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	\
@@ -92,14 +94,6 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 600000
-BROKEN=		does not compile on 4.X or 5.X
-.endif
-
-.if ${OSVERSION} >= 700014
-BROKEN=		does not compile on FreeBSD >= 7.0
-.endif
 
 LDFLAGS+=-L${LOCALBASE}/lib -L${OPENSSLLIB} ${PTHREAD_LIBS}
 PKG_CONFIG?=${LOCALBASE}/bin/pkg-config
