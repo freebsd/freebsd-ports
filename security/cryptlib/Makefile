@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		cryptlib
-PORTVERSION=		3.3
-PORTREVISION=		1
+PORTVERSION=		3.3.1
 CATEGORIES=		security
 MASTER_SITES=		ftp://ftp.franken.de/pub/crypt/cryptlib/
 DISTNAME=		cl${PORTVERSION:S/.//g}
@@ -43,9 +42,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/%%PTHREAD_LIBS%%/${PTHREAD_LIBS}/' ${WRKSRC}/tools/getlibs.sh
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/libcl.a ${WRKSRC}/libcl.so.${PORTVERSION}.0 \
+	${INSTALL_DATA} ${WRKSRC}/libcl.a ${WRKSRC}/libcl.so.3.3.0 \
 		${PREFIX}/lib
-	${LN} -sf ${PREFIX}/lib/libcl.so.${PORTVERSION}.0 ${PREFIX}/lib/libcl.so.3
+	${LN} -sf ${PREFIX}/lib/libcl.so.3.3.0 ${PREFIX}/lib/libcl.so.3
 	${LN} -sf ${PREFIX}/lib/libcl.so.3 ${PREFIX}/lib/libcl.so
 	${INSTALL_DATA} ${WRKSRC}/cryptlib.h ${PREFIX}/include
 
