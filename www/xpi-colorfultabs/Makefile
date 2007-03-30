@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	colorfultabs
-PORTVERSION=	1.9
-DISTVERSIONSUFFIX=	-fx
+PORTVERSION=	2.0.1
+DISTVERSIONSUFFIX=	-firefox
 CATEGORIES=	www
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Colors every tab in a different color
 
-XPI_DISTNAME=	colorful_tabs
 XPI_ID=		{0545b830-f0aa-4d7e-8820-50a4629a56fe}
+XPI_NUM=	1368
 XPI_FILES=	chrome/clrtabs.jar chrome.manifest defaults/preferences/defaults.js install.js \
 		install.rdf
 XPI_DIRS=	chrome defaults/preferences defaults
