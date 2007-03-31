@@ -7,7 +7,7 @@
 %%SITE_PERL%%/HTML/Widget/Constraint/All.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/AllOrNone.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Any.pm
-%%SITE_PERL%%/HTML/Widget/Constraint/Boll.pm
+%%SITE_PERL%%/HTML/Widget/Constraint/Bool.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Callback.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/CallbackOnce.pm
 %%SITE_PERL%%/HTML/Widget/Constraint/Date.pm

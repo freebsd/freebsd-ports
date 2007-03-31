@@ -7,6 +7,7 @@
 
 PORTNAME=	HTML-Widget
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -25,8 +26,6 @@ RUN_DEPENDS=	p5-HTML-Tree>=3.22:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid \
 		p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
 BUILD_DEPENDS=	${RUN_DEPENDS}
-
-BROKEN=		Incorrect pkg-plist
 
 PERL_CONFIGURE=	yes
 
