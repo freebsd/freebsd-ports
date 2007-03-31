@@ -1540,6 +1540,7 @@ share/locale/zh_CN/LC_MESSAGES/wesnoth.mo
 %%DATADIR%%/data/languages/gl_ES.cfg
 %%DATADIR%%/data/languages/he_IL.cfg
 %%DATADIR%%/data/languages/hu_HU.cfg
+%%DATADIR%%/data/languages/id_ID.cfg
 %%DATADIR%%/data/languages/it_IT.cfg
 %%DATADIR%%/data/languages/ja_JP.cfg
 %%DATADIR%%/data/languages/ko_KR.cfg
