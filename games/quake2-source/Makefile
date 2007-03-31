@@ -7,6 +7,7 @@
 
 PORTNAME=	source
 PORTVERSION=	3.21
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/quake2/files/:icc \
 		${MASTER_SITE_IDSOFTWARE:S|$|quake2/source/:id|}
