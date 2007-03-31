@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	pinot
-PORTVERSION=	0.70
+PORTVERSION=	0.71
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
-#		http://www.chez.com/colinf/pinot/	\
+#MASTER_SITES=	http://www.chez.com/colinf/pinot/	\
 #		http://amra.dyndns.org/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
@@ -61,8 +61,7 @@ INSTALLS_ICONS=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-MAN1=		pinot-collect.1 pinot-dbus-daemon.1 pinot-index.1	\
-		pinot-search.1 pinot.1
+MAN1=		pinot-dbus-daemon.1 pinot-index.1 pinot-search.1 pinot.1
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO
 
