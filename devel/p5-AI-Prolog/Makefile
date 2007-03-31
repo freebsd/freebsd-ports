@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	AI-Prolog
-PORTVERSION=	0.736
+PORTVERSION=	0.737
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for logic programming
 
-BUILD_DEPENDS=	p5-aliased>=0.11:${PORTSDIR}/devel/p5-aliased \
+RUN_DEPENDS=	p5-aliased>=0.11:${PORTSDIR}/devel/p5-aliased \
 		p5-Clone>=0.15:${PORTSDIR}/devel/p5-Clone \
 		p5-Exporter-Tidy>=0.06:${PORTSDIR}/devel/p5-Exporter-Tidy \
 		p5-Hash-AsObject>=0.05:${PORTSDIR}/devel/p5-Hash-AsObject \
@@ -27,7 +27,7 @@ BUILD_DEPENDS=	p5-aliased>=0.11:${PORTSDIR}/devel/p5-aliased \
 		p5-Text-Balanced>=1.95:${PORTSDIR}/textproc/p5-Text-Balanced \
 		p5-Text-Quote>=0.03:${PORTSDIR}/textproc/p5-Text-Quote \
 		p5-Term-ReadKey>=2.21:${PORTSDIR}/devel/p5-Term-ReadKey
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=</dev/null
