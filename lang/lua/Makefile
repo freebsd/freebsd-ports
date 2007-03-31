@@ -1,6 +1,6 @@
 # New ports collection makefile for: 	lua
 # Date created:				27 June 1999
-# Whom:					Richard Kiss <him@richardkiss.com>
+# Whom:					Richard Kiss
 #
 # $FreeBSD$
 #
@@ -16,7 +16,7 @@ MASTER_SITES=	http://www.lua.org/ftp/ \
 		ftp://ftp.uni-trier.de/pub/languages/lua/ \
 		ftp://ftp.gwdg.de/pub/languages/lua/
 
-MAINTAINER=	him@richardkiss.com
+MAINTAINER=	andrew+ports@fubar.geek.nz
 COMMENT=	Small, compilable scripting language providing easy access to C code
 
 USE_LUA=	5.1
