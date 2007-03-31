@@ -1,0 +1,13 @@
+Index: src/Makefile.in
+diff -u src/Makefile.in.orig src/Makefile.in
+--- src/Makefile.in.orig	Mon Dec 18 16:40:22 2006
++++ src/Makefile.in	Sat Mar 31 05:10:37 2007
+@@ -262,7 +262,7 @@
+ 	scim_tomoe_prefs.h \
+ 	scim_tomoe_prefs_widget.h
+ 
+-moduledir = @SCIM_MODULEDIR@/`pkg-config --variable=scim_binary_version scim`/Helper
++moduledir = @SCIM_MODULEDIR@/Helper
+ module_LTLIBRARIES = tomoe.la
+ tomoe_la_SOURCES = \
+ 	scim_tomoe.cpp \
