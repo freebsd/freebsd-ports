@@ -17,17 +17,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::Shark.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/XSLoader.pm:${PORTSDIR}/devel/p5-XSLoader
-RUN_DEPENDS+=	${SITE_PERL}/XSLoader.pm:${PORTSDIR}/devel/p5-XSLoader
-EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-Shark.xs
-
-post-patch:
-	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' ${WRKSRC}/Shark.pm
-	${PERL} -pi -e 's/void/int argc, char**argv, char**env/ if m{int main}' ${WRKSRC}/_shark.c
-	${PERL} -pi -e '$$_="" if m{warnings}' ${WRKSRC}/Shark.pm ${WRKSRC}/t/*.t
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

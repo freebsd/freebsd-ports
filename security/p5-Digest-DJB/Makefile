@@ -17,14 +17,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Digest::DJB.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-EXTRA_PATCHES=	${PATCHDIR}/extrapatch-DJB.xs
-
-post-patch:
-	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' ${WRKSRC}/DJB.pm
-	${PERL} -pi -e '$$_="" if m{5.006|warnings}' ${WRKSRC}/DJB.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

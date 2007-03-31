@@ -21,12 +21,4 @@ MAN3=		Crypt::X509.3
 
 WRKSRC=		${WRKDIR}/Crypt-X509
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' ${WRKSRC}/lib/Crypt/X509.pm
-	${PERL} -pi -e '$$_="" if m{warnings}' ${WRKSRC}/lib/Crypt/X509.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
