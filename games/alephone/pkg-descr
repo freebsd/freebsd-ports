@@ -1,19 +1,18 @@
 Aleph One is the open source version of Bungie's Marathon game.
 
-Marathon is a three-part, first-person shooter series that was published
-by Bungie Software.  The complete Marathon trilogy consists of Marathon,
-Marathon 2: Durandal, and Marathon Infinity.  The hallmark of the series
+Marathon is a three-part, first-person shooter series that was published by
+Bungie Software. The complete Marathon trilogy consists of "Marathon",
+"Marathon 2: Durandal", and "Marathon Infinity". The hallmark of the series
 is the detailed story-line that unfolds throughout the game.
 
-After Bungie released the source code to the Mac OS version of Marathon,
-the Aleph One project was created to enhance the software and port it to
-other operating systems.  The project's home page and news site is found
-at http://source.bungie.org.  As AlephOne has matured, so have the user-
-contributed scenarios, some which far surpass the original Marathon game
-scenarios themselves.
+After Bungie released the source code to the Mac OS version of Marathon, the
+Aleph One project was created to enhance the software and port it to other
+operating systems. As AlephOne has matured, so have the user-contributed
+scenarios, some which far surpass the original Marathon game scenarios
+themselves.
 
-Aleph One is OpenGL-accelerated, but performs well without OpenGL if you
-do not have a graphics card with the appropriate functionality (you need
-to use the -g/--nogl option).
+Aleph One is OpenGL-accelerated, but performs well without OpenGL if you do
+not have a graphics card with the appropriate functionality (you need to use
+the -g/--nogl option).
 
 WWW: http://source.bungie.org/

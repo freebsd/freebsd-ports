@@ -1,24 +1,21 @@
-************************************************************************
+==============================================================================
 
-This package does not include any Aleph One data files.  There are a few
-ways of getting a fully-playable version of Aleph One:
+Aleph One has been installed.
 
-  * Install the `alephone-data' port.  This port includes the data files
-    from Marathon Infinity.
+This package does not include any Aleph One data files. To obtain the original
+ones use the "games/alephone-data" port. The "games/alephone-scenarios" port
+contains more (unofficial) scenarios. In addition, you can search for data
+files here:
 
-  * Get a copy of Marathon 2 or Marathon Infinity and convert those data
-    files into the appropriate AlephOne format (http://source.bungie.org
-    has more information). You can get any of the Marathon series (and
-    AlephOne conversions of Marathon 2 and Marathon Infinity) from
-    http://trilogyrelease.bungie.org/.
+* http://archives.bungie.org/
 
-  * Go to http://archives.bungie.org and download one or more of the SDL
-    scenarios.
+* http://fileball.net/marathon/
 
-  * The games/marathon2-data port contains the AlephOne versions of the
-    "Marathon 2: Durandal" data files.
+* http://orbitalarm.bungie.org/downloads/alephone.html
 
-AlephOne works best with OpenGL; if you do not have an OpenGL-savvy card
-and the game is sluggish, try using the -g option to disable OpenGL.
+* http://marathon.bungie.org/scenarionews/
 
-************************************************************************
+Aleph One works best with OpenGL. If you do not have an OpenGL card and the
+game is sluggish, try using the "-g" option to disable OpenGL.
+
+==============================================================================
