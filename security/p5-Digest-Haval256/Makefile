@@ -20,15 +20,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Digest::Haval256.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-EXTRA_PATCHES=	${PATCHDIR}/extrapatch-Haval256.xs
-
-post-patch:
-	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' ${WRKSRC}/Haval256.pm
-	${PERL} -pi -e '$$_="" if m{warnings}' ${WRKSRC}/Haval256.pm ${WRKSRC}/t/*.t
-	${PERL} -pi -e 's/\)/, char **env\)/ if m{int main}' ${WRKSRC}/_haval.c
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

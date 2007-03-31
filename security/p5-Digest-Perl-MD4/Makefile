@@ -20,11 +20,4 @@ MAN3=	Digest::Perl::Digest-MD4.3 \
 
 WRKSRC=	${WRKDIR}/MD4
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	${PERL} -pi -e '$$_ = "" if m{warnings}' ${WRKSRC}/MD4.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
