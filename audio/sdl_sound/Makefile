@@ -15,79 +15,71 @@ DISTNAME=	SDL_sound-${PORTVERSION}
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A SDL audio library and player for some popular sound file formats
 
-USE_SDL=	sdl
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
+USE_SDL=	sdl
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+
+OPTIONS=	FLAC "Enable flac support" on \
+		MIKMOD "Enable mikmod support" on \
+		PHYSFS "Enable physfs support" on \
+		SMPEG "Enable smpeg support" on \
+		SPEEX "Enable speex support" on \
+		MIDI "Enable MIDI support" on \
+		VORBIS "Enable Ogg Vorbis support" on
 
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_FLAC)
 LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
 .else
-CONFIGURE_ARGS+=	--disable-flac
+CONFIGURE_ARGS+=--disable-flac
 .endif
 
 .if !defined(WITHOUT_MIKMOD)
 LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
 .else
-CONFIGURE_ARGS+=	--disable-mikmod
+CONFIGURE_ARGS+=--disable-mikmod
 .endif
 
 .if !defined(WITHOUT_PHYSFS)
 LIB_DEPENDS+=	physfs-1.0.1:${PORTSDIR}/devel/physfs
 .else
-CONFIGURE_ARGS+=	--disable-physfs
+CONFIGURE_ARGS+=--disable-physfs
 .endif
 
 .if !defined(WITHOUT_SMPEG)
 LIB_DEPENDS+=	smpeg.1:${PORTSDIR}/multimedia/smpeg
+CONFIGURE_ARGS+=--disable-mpglib
 .else
-CONFIGURE_ARGS+=	--disable-smpeg
+CONFIGURE_ARGS+=--disable-smpeg
 .endif
 
 .if !defined(WITHOUT_SPEEX)
 LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
 .else
-CONFIGURE_ARGS+=	--disable-speex
+CONFIGURE_ARGS+=--disable-speex
 .endif
 
 .if !defined(WITHOUT_MIDI)
 RUN_DEPENDS+=	${LOCALBASE}/lib/timidity/goemon.cfg:${PORTSDIR}/audio/timidity
 BUILD_DEPENDS+=	${LOCALBASE}/lib/timidity/goemon.cfg:${PORTSDIR}/audio/timidity
 .else
-CONFIGURE_ARGS+=	--disable-midi
+CONFIGURE_ARGS+=--disable-midi
 .endif
 
 .if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 .else
-CONFIGURE_ARGS+=	--disable-ogg
+CONFIGURE_ARGS+=--disable-ogg
 .endif
 
-pre-extract:
-.if !defined(WITHOUT_FLAC)
-	@${ECHO_MSG} "You can disable support for flac by defining WITHOUT_FLAC."
-.endif
-.if !defined(WITHOUT_MIKMOD)
-	@${ECHO_MSG} "You can disable support for mikmod by defining WITHOUT_MIKMOD."
-.endif
-.if !defined(WITHOUT_PHYSFS)
-	@${ECHO_MSG} "You can disable support for physfs by defining WITHOUT_PHYSFS."
-.endif
-.if !defined(WITHOUT_SMPEG)
-	@${ECHO_MSG} "You can disable support for smpeg by defining WITHOUT_SMPEG."
-.endif
-.if !defined(WITHOUT_SPEEX)
-	@${ECHO_MSG} "You can disable support for speex by defining WITHOUT_SPEEX."
-.endif
-.if !defined(WITHOUT_MIDI)
-	@${ECHO_MSG} "You can disable support for midi by defining WITHOUT_MIDI."
-.endif
-.if !defined(WITHOUT_VORBIS)
-	@${ECHO_MSG} "You can disable support for vorbis by defining WITHOUT_VORBIS."
+.if defined(WITHOUT_SMPEG)
+pre-everything::
+	@${ECHO_CMD}
+	@${ECHO_CMD} "WARNING: the built-in MP3 support is currently broken, consider enabling the SMPEG option to use that library instead." | ${FMT}
+	@${ECHO_CMD}
 .endif
 
 .include <bsd.port.post.mk>
