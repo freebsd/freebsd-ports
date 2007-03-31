@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	pan
-PORTVERSION=	0.125
-PORTREVISION=	1
+PORTVERSION=	0.126
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/source/
 DIST_SUBDIR=	gnome2
@@ -31,10 +30,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 OPTIONS=	GTKSPELL "Enable spell checking support" on
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	does not build on 4.X
-.endif
 
 .if defined(WITHOUT_GTKSPELL)
 CONFIGURE_ARGS+=	--without-gtkspell
