@@ -1,9 +1,9 @@
-lib/scim-1.0/IMEngine/pinyin.a
-lib/scim-1.0/IMEngine/pinyin.la
-lib/scim-1.0/IMEngine/pinyin.so
-lib/scim-1.0/SetupUI/pinyin-imengine-setup.a
-lib/scim-1.0/SetupUI/pinyin-imengine-setup.la
-lib/scim-1.0/SetupUI/pinyin-imengine-setup.so
+lib/scim-1.0/1.4.0/IMEngine/pinyin.a
+lib/scim-1.0/1.4.0/IMEngine/pinyin.la
+lib/scim-1.0/1.4.0/IMEngine/pinyin.so
+lib/scim-1.0/1.4.0/SetupUI/pinyin-imengine-setup.a
+lib/scim-1.0/1.4.0/SetupUI/pinyin-imengine-setup.la
+lib/scim-1.0/1.4.0/SetupUI/pinyin-imengine-setup.so
 share/locale/de/LC_MESSAGES/scim-pinyin.mo
 share/locale/fr/LC_MESSAGES/scim-pinyin.mo
 share/locale/ko/LC_MESSAGES/scim-pinyin.mo
@@ -32,8 +32,6 @@ share/scim/icons/smart-pinyin.png
 %%SKIM%%share/locale/ko/LC_MESSAGES/skim-scim-pinyin.mo
 %%SKIM%%share/apps/skim/pics/smart-pinyin.png
 %%SKIM%%@cwd %%PREFIX%%
-@dirrmtry lib/scim-1.0/IMEngine
-@dirrmtry lib/scim-1.0/SetupUI
 @dirrm share/scim/pinyin
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
