@@ -18,6 +18,8 @@ COMMENT=	Open 802.11 Authentication Gateway
 RUN_DEPENDS= \
 	${LOCALBASE}/bin/gpgv:${PORTSDIR}/security/gnupg1
 
+IGNORE=		uses a UID registered to another port
+
 CONFLICTS=	nocatauth-server-*
 
 USE_PERL5_RUN=	yes
