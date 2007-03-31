@@ -14,6 +14,7 @@ network:*:69:
 pgsql:*:70:
 ircd:*:72:
 simscan:*:74:
+hybserv:*:76:
 audit:*:77:
 virtuoso:*:79:
 www:*:80:

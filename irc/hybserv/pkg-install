@@ -6,7 +6,7 @@ fi
 
 	USER=hybserv
 	GROUP=${USER}
-	UID=73
+	UID=76
 	GID=${UID}
 	if pw group show "${GROUP}" 2>/dev/null; then
 		echo "You already have a group \"${GROUP}\", so I will use it."

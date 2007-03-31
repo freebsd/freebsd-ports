@@ -14,9 +14,6 @@ MASTER_SITE_SUBDIR=	hybserv2
 MAINTAINER=	laszlof@FreeBSD.org
 COMMENT=	HybServ2 IRCD Services
 
-# uses a uid registered to the ircservices user
-CONFLICT=	ircservices-*
-
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
