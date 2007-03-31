@@ -19,8 +19,4 @@ MAN3=		Crypt::Imail.3
 
 WRKSRC=		${WRKDIR}/Imail
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} <= 500503
-IGNORE= requires Perl 5.6. Intall lang/perl5 or lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
