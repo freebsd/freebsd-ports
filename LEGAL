@@ -49,7 +49,10 @@ adom-*			games/adom		Copy of CD must be sent to
 						author
 aestats-*		games/aestats		Commercial use is prohibited
 AGSatellite0520*	net-p2p/linux-agsatellite	Unsure of licensing issues
-infinity.*		games/alephone-data	Bungie/Microsoft do not
+alephone/M1A1.zip	games/alephone-data	Bungie/Microsoft do not
+						allow charging for Marathon
+						data files
+alephone/Marathon*.zip	games/alephone-data	Bungie/Microsoft do not
 						allow charging for Marathon
 						data files
 ads-java-novm-*		databases/adstudio	Free for personal or educational
@@ -392,12 +395,6 @@ l_cc_p*_*.*.*.tar	lang/icc7		No redistribution allowed
 l_fc_p*_*.*.*.tar	lang/ifc7		No redistribution allowed
 l_fc_p*_*.*.*.tar.gz	lang/ifc		No redistribution allowed
 macopix-*.tar.gz	games/macopix		Contains commercial character data
-MarathonEvil-*.tar.gz	games/marathon-evil	Bungie/Microsoft do not
-						allow charging for Marathon data
-						files
-marathon2.zip		games/marathon2-data	Bungie/Microsoft do not
-						allow charging for Marathon data
-						files.
 mathfonts-4.1/*		x11-fonts/mathfonts	No redistribution allowed
 MB339-PAN.zip		games/flightgear-mb339-pan	Redistribution prohibited
 mbrola-freebsd/*	audio/mbrola		No commercial, military use
