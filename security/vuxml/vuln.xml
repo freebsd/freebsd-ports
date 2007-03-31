@@ -108,36 +108,6 @@ Note:  Please add new entries to the beginning of this file.
     </dates>
   </vuln>
 
-  <vuln vid="f951cf4a-a1fe-11db-98f9-0004aca3703d">
-    <topic>cacti -- remote injection exploit</topic>
-    <affects>
-      <package>
-	<name>cacti</name>
-	<range><lt>cacti-0.8.6i_1</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<blockquote cite="http://forums.cacti.net/viewtopic.php?p=88599">
-	  <p>There has been an exploit published that affect Cacti
-	    0.8.6x.  Two patches have been released for Cacti versions
-	    0.8.6h and 0.8.6i.  These patches are available on the
-	    Cacti Web Site at
-	    <a href="http://www.cacti.net/patches">http://www.cacti.net/patches</a>
-	  </p>
-	</blockquote>
-      </body>
-    </description>
-    <references>
-      <freebsdpr>ports/1078357</freebsdpr>
-      <url>http://www.cacti.net/download_patches.php?version=0.8.6i</url>
-    </references>
-    <dates>
-      <discovery>2007-01-03</discovery>
-      <entry>2007-03-16</entry>
-    </dates>
-  </vuln>
-
   <vuln vid="f235fe7a-b9ca-11db-bf0f-0013720b182d">
     <topic>samba -- potential Denial of Service bug in smbd</topic>
     <affects>
