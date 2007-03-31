@@ -23,6 +23,8 @@ RUN_DEPENDS=	${SITE_PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 
 		${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
 		${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate
 
+IGNORE=		uses a UID registered to another port
+
 SITE_PERL_ARCH=	${SITE_PERL}/${PERL_ARCH}
 
 HAS_CONFIGURE=	yes
