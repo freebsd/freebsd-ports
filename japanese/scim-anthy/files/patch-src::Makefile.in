@@ -1,0 +1,13 @@
+Index: src/Makefile.in
+diff -u src/Makefile.in.orig src/Makefile.in
+--- src/Makefile.in.orig	Mon Nov 13 11:42:58 2006
++++ src/Makefile.in	Sat Mar 31 05:05:47 2007
+@@ -389,7 +389,7 @@
+ # Helper Program
+ #
+ @SCIM_BUILD_HELPER_TRUE@HELPER_MODULE = anthy-imengine-helper.la
+-helpermoduledir = @SCIM_MODULEDIR@/`pkg-config --variable=scim_binary_version scim`/Helper
++helpermoduledir = @SCIM_MODULEDIR@/Helper
+ helpermodule_LTLIBRARIES = $(HELPER_MODULE)
+ anthy_imengine_helper_la_SOURCES = scim_anthy_helper.cpp
+ anthy_imengine_helper_la_CFLAGS = @GTK2_CFLAGS@ \
