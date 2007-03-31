@@ -16,9 +16,11 @@ DISTNAME=	MarathonEvil-3
 MAINTAINER=	bmah@freebsd.org
 COMMENT=	Marathon-Evil scenario for use with AlephOne
 
+DEPRECATED=	Installed by games/alephone-scenarios with wrapper script
+EXPIRATION_DATE=2007-04-28
+
 RUN_DEPENDS=	alephone:${PORTSDIR}/games/alephone
 
-USE_X_PREFIX=	yes
 NO_CDROM=	Bungie/Microsoft do not allow charging for Marathon data files.
 
 WRKSRC=		${WRKDIR}/MarathonEvil
