@@ -10,7 +10,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lpn.rnbhq.org/download/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	josh@tcbug.org
 COMMENT=	Decrypts and copies DVD .vob files
 
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
