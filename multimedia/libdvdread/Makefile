@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	rnoland@2hip.net
 COMMENT=	This is needed by ogle, which is a DVD player that supports DVD menus
 
 LIB_DEPENDS=	dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
