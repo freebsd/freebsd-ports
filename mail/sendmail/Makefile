@@ -93,9 +93,7 @@ CONFLICTS+=	sendmail-sasl-8.* sendmail-sasl2-8.* sendmail-tls-8.*
 USE_OPENLDAP=	yes
 .endif
 .if defined(SENDMAIL_WITH_SASL) && !defined(SENDMAIL_WITH_SASL2)
-SASL_SUFFIX?=	+sasl1
-CONFLICTS+=	sendmail-ldap-8.* sendmail-sasl2-8.* sendmail-tls-8.*
-LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
+SENDMAIL_WITH_SASL2=	yes
 .endif
 .if defined(SENDMAIL_WITH_SASL2)
 SASL_SUFFIX?=	+sasl2
@@ -130,9 +128,6 @@ SITE+=	${FILESDIR}/site.config.m4
 .endif
 .if !defined(SENDMAIL_WITHOUT_IPV6)
 SITE+=	${FILESDIR}/site.config.m4.ipv6
-.endif
-.if defined(SENDMAIL_WITH_SASL)
-SITE+=	${FILESDIR}/site.config.m4.sasl
 .endif
 .if defined(SENDMAIL_WITH_SASL2)
 SITE+=	${FILESDIR}/site.config.m4.sasl2
