@@ -7,18 +7,18 @@
 #
 
 PORTNAME=	yasm
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 CATEGORIES=	devel lang
 MASTER_SITES=	http://www.tortall.net/projects/yasm/releases/
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	johnson.peter@gmail.com
 COMMENT=	A complete rewrite of the NASM assembler
 
 USE_ICONV=	yes
-USE_AUTOTOOLS=	autoconf:259 libltdl:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 
 .include <bsd.port.pre.mk>
 
@@ -35,7 +35,7 @@ USE_GETTEXT=	yes
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET=	install install-man
 MAN1=		yasm.1
-MAN7=		yasm_arch.7
+MAN7=		yasm_arch.7 yasm_dbgfmts.7 yasm_objfmts.7 yasm_parsers.7
 .endif
 
 .include <bsd.port.post.mk>
