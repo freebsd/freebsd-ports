@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	lioux
 PKGNAMESUFFIX=	-devel
 DISTNAME=	FFMpeg-${RELEASE_DATE}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Hyper fast realtime audio/video encoder/converter, streaming server
 
 HAS_CONFIGURE=	yes
