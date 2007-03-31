@@ -326,6 +326,7 @@ aldo		ports/comms/aldo
 ale		ports/graphics/ale
 alephone	ports/games/alephone
 alephone-data	ports/games/alephone-data
+alephone-scenarios	ports/games/alephone-scenarios
 alevt		ports/misc/alevt
 alexandria	ports/deskutils/alexandria
 alf		ports/devel/alf
