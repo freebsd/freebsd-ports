@@ -8,6 +8,7 @@ share/locale/ca/LC_MESSAGES/pan.mo
 share/locale/cs/LC_MESSAGES/pan.mo
 share/locale/da/LC_MESSAGES/pan.mo
 share/locale/de/LC_MESSAGES/pan.mo
+share/locale/dz/LC_MESSAGES/pan.mo
 share/locale/el/LC_MESSAGES/pan.mo
 share/locale/en_CA/LC_MESSAGES/pan.mo
 share/locale/en_GB/LC_MESSAGES/pan.mo
@@ -72,6 +73,8 @@ share/pixmaps/pan.png
 @dirrmtry share/locale/fi
 @dirrmtry share/locale/el/LC_MESSAGES
 @dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrmtry share/locale/cs/LC_MESSAGES
 @dirrmtry share/locale/cs
 @dirrmtry share/locale/ca/LC_MESSAGES
