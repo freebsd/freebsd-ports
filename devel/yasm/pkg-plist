@@ -1,5 +1,6 @@
 bin/yasm
 include/libyasm.h
+include/libyasm-stdint.h
 include/libyasm/arch.h
 include/libyasm/assocdat.h
 include/libyasm/bc-int.h
@@ -15,12 +16,12 @@ include/libyasm/file.h
 include/libyasm/floatnum.h
 include/libyasm/hamt.h
 include/libyasm/intnum.h
-include/libyasm/linemgr.h
+include/libyasm/inttree.h
+include/libyasm/linemap.h
 include/libyasm/listfmt.h
 include/libyasm/md5.h
 include/libyasm/module.h
 include/libyasm/objfmt.h
-include/libyasm/optimizer.h
 include/libyasm/parser.h
 include/libyasm/phash.h
 include/libyasm/preproc.h
