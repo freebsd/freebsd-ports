@@ -115,19 +115,6 @@ diff -u -r1.2 sv_main.c
  
  	// force the IP key/value pair so the game can filter based on ip
  	Info_SetValueForKey (userinfo, "ip", NET_AdrToString(net_from));
-@@ -317,8 +318,11 @@
- 		{
- 			if (NET_CompareBaseAdr (net_from, svs.challenges[i].adr))
- 			{
--				if (challenge == svs.challenges[i].challenge)
-+				// sku - ignore zero challenges
-+				if( svs.challenges[i].challenge && challenge == svs.challenges[i].challenge ) {
-+					svs.challenges[i].challenge = 0;
- 					break;		// good
-+				}
- 				Netchan_OutOfBandPrint (NS_SERVER, adr, "print\nBad challenge.\n");
- 				return;
- 			}
 @@ -342,6 +346,11 @@
  			&& ( cl->netchan.qport == qport 
  			|| adr.port == cl->netchan.remote_address.port ) )
