@@ -7,12 +7,13 @@
 
 PORTNAME=	Net-Delicious
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
-MAINTAINER=	perl@@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	OOP for managing posts on del.icio.us
 
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
@@ -46,10 +47,4 @@ MAN3=		Net::Delicious.3 \
 		Net::Delicious::Tag.3 \
 		Net::Delicious::User.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600 # inherited from www/p5-libwww
-IGNORE=	requires at least Perl 5.6 due to dependencies.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
