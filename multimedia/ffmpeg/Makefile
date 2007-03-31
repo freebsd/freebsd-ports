@@ -12,7 +12,7 @@ CATEGORIES=	multimedia audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	ffmpeg
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Hyper fast realtime audio/video encoder/converter, streaming server
 
 USE_GETOPT_LONG=	yes
