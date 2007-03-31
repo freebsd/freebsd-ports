@@ -6,10 +6,9 @@
 #
 
 PORTNAME?=	django
-PORTVERSION?=	0.95.1
-PORTREVISION?=	1
+PORTVERSION?=	0.96
 CATEGORIES=	www python
-MASTER_SITES?=	http://media.djangoproject.com/releases/${PORTVERSION:R}/
+MASTER_SITES?=	http://media.djangoproject.com/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Django-${PORTVERSION}
 DIST_SUBDIR=	python
@@ -17,22 +16,11 @@ DIST_SUBDIR=	python
 MAINTAINER?=	python@FreeBSD.org
 COMMENT=	High-level Python Web framework
 
-BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 USE_GETTEXT=	yes
-USE_PYTHON=	2.3+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-EASY_INSTALL_CMD?=	easy_install-${PYTHON_VER}
-
 DOCSDIR=	${PREFIX}/share/doc/py-django
-
-PYDJANGO_EGG=	Django-${PORTVERSION}-py${PYTHON_VER}.egg
-
-PLIST_SUB=	EASY_INSTALL_CMD=${EASY_INSTALL_CMD} \
-		PYDJANGO_EGG=${PYDJANGO_EGG} \
-		PYDJANGO_EGG_VER="Django==${PORTVERSION}"
 
 OPTIONS=	MOD_PYTHON3	"Install Apache2 with mod_python3"	off \
 		POSTGRESQL	"PostgreSQL support"	off \

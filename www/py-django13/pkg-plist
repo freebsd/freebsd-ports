@@ -1,1113 +1,1275 @@
-@unexec %%EASY_INSTALL_CMD%% -q -x -m -S %D/%%PYTHON_SITELIBDIR%% %%PYDJANGO_EGG_VER%%
 bin/django-admin.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/EGG-INFO/PKG-INFO
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/EGG-INFO/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/EGG-INFO/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/EGG-INFO/not-zip-safe
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/EGG-INFO/scripts/django-admin.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/EGG-INFO/top_level.txt
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/compile-messages.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/compile-messages.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/compile-messages.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/daily_cleanup.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/daily_cleanup.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/daily_cleanup.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/django-admin.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/django-admin.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/django-admin.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/make-messages.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/make-messages.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/make-messages.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/profiling/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/profiling/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/profiling/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/profiling/gather_profile_stats.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/profiling/gather_profile_stats.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/profiling/gather_profile_stats.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/unique-messages.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/unique-messages.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/unique-messages.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/app_template/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/app_template/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/app_template/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/app_template/models.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/app_template/models.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/app_template/models.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/app_template/views.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/app_template/views.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/app_template/views.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/global_settings.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/global_settings.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/global_settings.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ar/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ar/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ar/LC_MESSAGES/djangojs.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ar/LC_MESSAGES/djangojs.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/bn/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/bn/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/cs/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/cs/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/cs/LC_MESSAGES/djangojs.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/cs/LC_MESSAGES/djangojs.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/cy/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/cy/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/cy/LC_MESSAGES/djangojs.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/cy/LC_MESSAGES/djangojs.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/da/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/da/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/de/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/de/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/de/LC_MESSAGES/djangojs.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/de/LC_MESSAGES/djangojs.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/el/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/el/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/en/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/en/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/en/LC_MESSAGES/djangojs.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/en/LC_MESSAGES/djangojs.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/es/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/es/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/es/LC_MESSAGES/djangojs.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/es/LC_MESSAGES/djangojs.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/es_AR/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/es_AR/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/es_AR/LC_MESSAGES/djangojs.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/es_AR/LC_MESSAGES/djangojs.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/fr/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/fr/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/fr/LC_MESSAGES/djangojs.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/fr/LC_MESSAGES/djangojs.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/gl/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/gl/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/gl/LC_MESSAGES/djangojs.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/gl/LC_MESSAGES/djangojs.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/he/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/he/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/he/LC_MESSAGES/djangojs.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/he/LC_MESSAGES/djangojs.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/hu/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/hu/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/hu/LC_MESSAGES/djangojs.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/hu/LC_MESSAGES/djangojs.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/is/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/is/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/is/LC_MESSAGES/djangojs.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/is/LC_MESSAGES/djangojs.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/it/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/it/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/it/LC_MESSAGES/djangojs.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/it/LC_MESSAGES/djangojs.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ja/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ja/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ja/LC_MESSAGES/djangojs.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ja/LC_MESSAGES/djangojs.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/nl/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/nl/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/nl/LC_MESSAGES/djangojs.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/nl/LC_MESSAGES/djangojs.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/no/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/no/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/no/LC_MESSAGES/djangojs.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/no/LC_MESSAGES/djangojs.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/pl/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/pl/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/pt_BR/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/pt_BR/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/pt_BR/LC_MESSAGES/djangojs.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/pt_BR/LC_MESSAGES/djangojs.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ro/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ro/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ru/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ru/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ru/LC_MESSAGES/djangojs.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ru/LC_MESSAGES/djangojs.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/sk/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/sk/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/sk/LC_MESSAGES/djangojs.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/sk/LC_MESSAGES/djangojs.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/sl/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/sl/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/sr/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/sr/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/sr/LC_MESSAGES/djangojs.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/sr/LC_MESSAGES/djangojs.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/sv/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/sv/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/sv/LC_MESSAGES/djangojs.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/sv/LC_MESSAGES/djangojs.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ta/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ta/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/uk/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/uk/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/zh_CN/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/zh_CN/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/zh_CN/LC_MESSAGES/djangojs.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/zh_CN/LC_MESSAGES/djangojs.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/zh_TW/LC_MESSAGES/django.mo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/zh_TW/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/project_template/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/project_template/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/project_template/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/project_template/manage.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/project_template/manage.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/project_template/manage.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/project_template/settings.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/project_template/settings.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/project_template/settings.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/project_template/urls.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/project_template/urls.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/project_template/urls.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/urls/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/urls/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/urls/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/urls/admin_password_reset.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/urls/admin_password_reset.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/urls/admin_password_reset.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/urls/defaults.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/urls/defaults.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/urls/defaults.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/urls/i18n.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/urls/i18n.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/urls/i18n.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/urls/registration.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/urls/registration.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/urls/registration.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/urls/shortcut.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/urls/shortcut.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/urls/shortcut.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/filterspecs.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/filterspecs.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/filterspecs.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/css/base.css
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/css/changelists.css
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/css/dashboard.css
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/css/forms.css
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/css/global.css
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/css/layout.css
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/css/login.css
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/css/patch-iewin.css
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/css/rtl.css
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/css/widgets.css
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/arrow-down.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/arrow-up.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/changelist-bg.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/chooser-bg.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/chooser_stacked-bg.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/default-bg-reverse.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/default-bg.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/deleted-overlay.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/icon-no.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/icon-unknown.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/icon-yes.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/icon_addlink.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/icon_alert.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/icon_calendar.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/icon_clock.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/icon_changelink.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/icon_deletelink.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/icon_error.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/icon_searchbox.png
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/icon_success.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/inline-delete-8bit.png
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/inline-delete.png
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/inline-restore-8bit.png
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/inline-restore.png
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/inline-splitter-bg.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/nav-bg-grabber.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/nav-bg-reverse.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/nav-bg.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/selector-add.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/selector-addall.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/selector-remove.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/selector-removeall.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/selector-search.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/selector_stacked-add.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/selector_stacked-remove.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/tool-left.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/tool-left_over.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/tool-right.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/tool-right_over.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/tooltag-add.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/tooltag-add_over.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/tooltag-arrowright.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin/tooltag-arrowright_over.gif
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/js/SelectBox.js
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/js/SelectFilter.js
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/js/SelectFilter2.js
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/js/admin/CollapsedFieldsets.js
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/js/admin/DateTimeShortcuts.js
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/js/admin/RelatedObjectLookups.js
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/js/admin/ordering.js
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/js/calendar.js
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/js/core.js
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/js/dateparse.js
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/js/getElementsBySelector.js
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/js/timeparse.js
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/js/urlify.js
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/models.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/models.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/models.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin/404.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin/500.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin/base.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin/base_site.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin/change_form.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin/change_list.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin/change_list_results.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin/date_hierarchy.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin/delete_confirmation.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin/edit_inline_stacked.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin/edit_inline_tabular.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin/field_line.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin/filter.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin/filters.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin/index.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin/invalid_setup.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin/login.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin/object_history.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin/pagination.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin/search_form.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin/submit_line.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin/template_validator.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin_doc/bookmarklets.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin_doc/index.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin_doc/missing_docutils.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin_doc/model_detail.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin_doc/model_index.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin_doc/template_detail.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin_doc/template_filter_index.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin_doc/template_tag_index.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin_doc/view_detail.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin_doc/view_index.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/registration/logged_out.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/registration/password_change_done.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/registration/password_change_form.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/registration/password_reset_done.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/registration/password_reset_email.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/registration/password_reset_form.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/widget/date_time.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/widget/default.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/widget/file.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/widget/foreign.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/widget/many_to_many.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/widget/one_to_one.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templatetags/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templatetags/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templatetags/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templatetags/admin_list.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templatetags/admin_list.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templatetags/admin_list.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templatetags/admin_modify.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templatetags/admin_modify.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templatetags/admin_modify.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templatetags/adminapplist.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templatetags/adminapplist.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templatetags/adminapplist.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templatetags/adminmedia.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templatetags/adminmedia.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templatetags/adminmedia.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templatetags/log.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templatetags/log.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templatetags/log.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/urls.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/urls.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/urls.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/utils.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/utils.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/utils.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/views/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/views/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/views/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/views/decorators.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/views/decorators.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/views/decorators.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/views/doc.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/views/doc.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/views/doc.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/views/main.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/views/main.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/views/main.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/views/template.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/views/template.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/views/template.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/backends.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/backends.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/backends.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/create_superuser.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/create_superuser.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/create_superuser.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/decorators.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/decorators.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/decorators.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/forms.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/forms.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/forms.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/handlers/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/handlers/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/handlers/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/handlers/modpython.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/handlers/modpython.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/handlers/modpython.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/management.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/management.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/management.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/middleware.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/middleware.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/middleware.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/models.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/models.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/models.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/views.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/views.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/views.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/feeds.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/feeds.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/feeds.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/models.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/models.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/models.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/templates/comments/form.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/templates/comments/freeform.html
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/templatetags/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/templatetags/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/templatetags/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/templatetags/comments.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/templatetags/comments.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/templatetags/comments.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/urls/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/urls/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/urls/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/urls/comments.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/urls/comments.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/urls/comments.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/views/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/views/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/views/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/views/comments.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/views/comments.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/views/comments.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/views/karma.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/views/karma.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/views/karma.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/views/userflags.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/views/userflags.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/views/userflags.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/contenttypes/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/contenttypes/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/contenttypes/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/contenttypes/management.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/contenttypes/management.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/contenttypes/management.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/contenttypes/models.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/contenttypes/models.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/contenttypes/models.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/csrf/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/csrf/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/csrf/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/csrf/middleware.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/csrf/middleware.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/csrf/middleware.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/flatpages/README.TXT
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/flatpages/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/flatpages/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/flatpages/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/flatpages/middleware.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/flatpages/middleware.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/flatpages/middleware.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/flatpages/models.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/flatpages/models.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/flatpages/models.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/flatpages/urls.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/flatpages/urls.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/flatpages/urls.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/flatpages/views.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/flatpages/views.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/flatpages/views.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/humanize/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/humanize/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/humanize/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/humanize/templatetags/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/humanize/templatetags/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/humanize/templatetags/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/humanize/templatetags/humanize.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/humanize/templatetags/humanize.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/humanize/templatetags/humanize.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/markup/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/markup/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/markup/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/markup/templatetags/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/markup/templatetags/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/markup/templatetags/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/markup/templatetags/markup.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/markup/templatetags/markup.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/markup/templatetags/markup.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/redirects/README.TXT
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/redirects/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/redirects/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/redirects/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/redirects/middleware.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/redirects/middleware.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/redirects/middleware.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/redirects/models.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/redirects/models.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/redirects/models.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/sessions/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/sessions/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/sessions/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/sessions/middleware.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/sessions/middleware.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/sessions/middleware.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/sessions/models.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/sessions/models.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/sessions/models.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/sites/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/sites/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/sites/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/sites/management.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/sites/management.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/sites/management.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/sites/managers.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/sites/managers.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/sites/managers.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/sites/models.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/sites/models.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/sites/models.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/syndication/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/syndication/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/syndication/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/syndication/feeds.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/syndication/feeds.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/syndication/feeds.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/syndication/views.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/syndication/views.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/syndication/views.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/base.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/base.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/base.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/db.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/db.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/db.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/dummy.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/dummy.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/dummy.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/filebased.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/filebased.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/filebased.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/locmem.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/locmem.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/locmem.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/memcached.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/memcached.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/memcached.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/simple.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/simple.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends/simple.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/context_processors.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/context_processors.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/context_processors.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/exceptions.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/exceptions.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/exceptions.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/handler.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/handler.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/handler.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/handlers/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/handlers/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/handlers/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/handlers/base.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/handlers/base.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/handlers/base.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/handlers/modpython.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/handlers/modpython.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/handlers/modpython.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/handlers/profiler-hotshot.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/handlers/profiler-hotshot.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/handlers/profiler-hotshot.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/handlers/wsgi.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/handlers/wsgi.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/handlers/wsgi.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/mail.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/mail.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/mail.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/management.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/management.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/management.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/paginator.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/paginator.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/paginator.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/serializers/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/serializers/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/serializers/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/serializers/base.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/serializers/base.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/serializers/base.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/serializers/json.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/serializers/json.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/serializers/json.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/serializers/python.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/serializers/python.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/serializers/python.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/serializers/xml_serializer.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/serializers/xml_serializer.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/serializers/xml_serializer.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/servers/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/servers/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/servers/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/servers/basehttp.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/servers/basehttp.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/servers/basehttp.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/servers/fastcgi.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/servers/fastcgi.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/servers/fastcgi.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/signals.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/signals.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/signals.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/template_loader.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/template_loader.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/template_loader.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/urlresolvers.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/urlresolvers.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/urlresolvers.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/validators.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/validators.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/validators.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/xheaders.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/xheaders.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/xheaders.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/ado_mssql/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/ado_mssql/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/ado_mssql/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/ado_mssql/base.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/ado_mssql/base.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/ado_mssql/base.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/ado_mssql/client.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/ado_mssql/client.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/ado_mssql/client.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/ado_mssql/creation.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/ado_mssql/creation.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/ado_mssql/creation.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/ado_mssql/introspection.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/ado_mssql/introspection.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/ado_mssql/introspection.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/dummy/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/dummy/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/dummy/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/dummy/base.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/dummy/base.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/dummy/base.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/dummy/client.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/dummy/client.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/dummy/client.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/dummy/creation.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/dummy/creation.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/dummy/creation.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/dummy/introspection.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/dummy/introspection.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/dummy/introspection.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/mysql/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/mysql/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/mysql/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/mysql/base.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/mysql/base.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/mysql/base.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/mysql/client.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/mysql/client.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/mysql/client.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/mysql/creation.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/mysql/creation.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/mysql/creation.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/mysql/introspection.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/mysql/introspection.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/mysql/introspection.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/oracle/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/oracle/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/oracle/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/oracle/base.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/oracle/base.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/oracle/base.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/oracle/client.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/oracle/client.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/oracle/client.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/oracle/creation.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/oracle/creation.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/oracle/creation.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/oracle/introspection.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/oracle/introspection.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/oracle/introspection.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql/base.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql/base.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql/base.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql/client.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql/client.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql/client.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql/creation.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql/creation.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql/creation.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql/introspection.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql/introspection.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql/introspection.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql_psycopg2/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql_psycopg2/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql_psycopg2/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql_psycopg2/base.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql_psycopg2/base.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql_psycopg2/base.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql_psycopg2/client.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql_psycopg2/client.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql_psycopg2/client.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql_psycopg2/creation.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql_psycopg2/creation.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql_psycopg2/creation.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql_psycopg2/introspection.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql_psycopg2/introspection.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql_psycopg2/introspection.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/sqlite3/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/sqlite3/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/sqlite3/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/sqlite3/base.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/sqlite3/base.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/sqlite3/base.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/sqlite3/client.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/sqlite3/client.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/sqlite3/client.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/sqlite3/creation.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/sqlite3/creation.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/sqlite3/creation.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/sqlite3/introspection.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/sqlite3/introspection.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/sqlite3/introspection.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/util.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/util.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/util.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/base.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/base.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/base.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/fields/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/fields/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/fields/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/fields/generic.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/fields/generic.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/fields/generic.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/fields/related.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/fields/related.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/fields/related.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/loading.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/loading.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/loading.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/manager.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/manager.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/manager.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/manipulators.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/manipulators.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/manipulators.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/options.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/options.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/options.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/query.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/query.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/query.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/related.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/related.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/related.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/signals.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/signals.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/signals.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/transaction.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/transaction.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/transaction.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/dispatch/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/dispatch/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/dispatch/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/dispatch/dispatcher.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/dispatch/dispatcher.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/dispatch/dispatcher.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/dispatch/errors.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/dispatch/errors.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/dispatch/errors.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/dispatch/robust.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/dispatch/robust.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/dispatch/robust.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/dispatch/robustapply.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/dispatch/robustapply.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/dispatch/robustapply.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/dispatch/saferef.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/dispatch/saferef.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/dispatch/saferef.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/forms/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/forms/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/forms/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/http/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/http/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/http/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/cache.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/cache.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/cache.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/common.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/common.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/common.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/doc.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/doc.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/doc.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/gzip.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/gzip.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/gzip.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/http.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/http.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/http.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/locale.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/locale.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/locale.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/transaction.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/transaction.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware/transaction.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/shortcuts/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/shortcuts/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/shortcuts/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/context.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/context.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/context.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/defaultfilters.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/defaultfilters.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/defaultfilters.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/defaulttags.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/defaulttags.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/defaulttags.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/loader.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/loader.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/loader.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/loader_tags.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/loader_tags.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/loader_tags.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/loaders/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/loaders/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/loaders/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/loaders/app_directories.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/loaders/app_directories.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/loaders/app_directories.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/loaders/eggs.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/loaders/eggs.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/loaders/eggs.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/loaders/filesystem.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/loaders/filesystem.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/loaders/filesystem.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/templatetags/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/templatetags/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/templatetags/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/templatetags/i18n.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/templatetags/i18n.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/templatetags/i18n.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/_threading_local.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/_threading_local.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/_threading_local.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/autoreload.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/autoreload.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/autoreload.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/cache.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/cache.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/cache.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/daemonize.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/daemonize.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/daemonize.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/datastructures.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/datastructures.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/datastructures.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/dateformat.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/dateformat.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/dateformat.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/dates.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/dates.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/dates.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/decorators.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/decorators.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/decorators.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/feedgenerator.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/feedgenerator.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/feedgenerator.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/functional.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/functional.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/functional.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/html.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/html.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/html.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/images.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/images.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/images.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/simplejson/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/simplejson/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/simplejson/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/simplejson/decoder.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/simplejson/decoder.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/simplejson/decoder.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/simplejson/encoder.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/simplejson/encoder.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/simplejson/encoder.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/simplejson/scanner.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/simplejson/scanner.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/simplejson/scanner.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/stopwords.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/stopwords.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/stopwords.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/synch.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/synch.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/synch.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/termcolors.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/termcolors.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/termcolors.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/text.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/text.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/text.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/timesince.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/timesince.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/timesince.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/translation/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/translation/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/translation/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/translation/trans_null.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/translation/trans_null.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/translation/trans_null.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/translation/trans_real.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/translation/trans_real.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/translation/trans_real.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/tzinfo.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/tzinfo.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/tzinfo.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/xmlutils.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/xmlutils.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/xmlutils.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/debug.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/debug.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/debug.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/decorators/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/decorators/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/decorators/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/decorators/cache.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/decorators/cache.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/decorators/cache.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/decorators/gzip.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/decorators/gzip.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/decorators/gzip.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/decorators/http.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/decorators/http.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/decorators/http.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/decorators/vary.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/decorators/vary.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/decorators/vary.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/defaults.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/defaults.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/defaults.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/generic/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/generic/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/generic/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/generic/create_update.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/generic/create_update.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/generic/create_update.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/generic/date_based.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/generic/date_based.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/generic/date_based.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/generic/list_detail.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/generic/list_detail.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/generic/list_detail.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/generic/simple.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/generic/simple.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/generic/simple.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/i18n.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/i18n.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/i18n.pyo
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/static.py
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/static.pyc
-%%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/static.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin/profiling
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/bin
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/app_template
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/project_template
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/urls
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ar/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ar
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/bn/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/bn
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/cs/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/cs
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/cy/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/cy
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/da/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/da
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/de/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/de
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/el/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/el
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/en/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/en
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/es/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/es
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/es_AR/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/es_AR
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/fr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/fr
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/gl/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/gl
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/hu/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/hu
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/he/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/he
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/is/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/is
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/it/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/it
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ja/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ja
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/nl/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/nl
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/no/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/no
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/pl/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/pl
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/pt_BR/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/pt_BR
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ro/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ro
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ru/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ru
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/sk/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/sk
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/sl/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/sl
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/sr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/sr
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/sv/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/sv
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ta/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/ta
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/uk/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/uk
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/zh_CN/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/zh_CN
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/zh_TW/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale/zh_TW
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf/locale
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/conf
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templatetags
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/views
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/admin_doc
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/registration
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates/widget
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/templates
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/css
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img/admin
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/img
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/js/admin
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media/js
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin/media
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/admin
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth/handlers
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/auth
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/templatetags
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/urls
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/views
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/templates/comments
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments/templates
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/comments
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/contenttypes
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/csrf
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/flatpages
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/humanize/templatetags
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/humanize
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/markup/templatetags
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/markup
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/redirects
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/sessions
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/sites
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib/syndication
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/contrib
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache/backends
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/cache
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/handlers
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/serializers
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core/servers
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/core
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/ado_mssql
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/dummy
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/mysql
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/oracle
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/postgresql_psycopg2
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends/sqlite3
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/backends
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models/fields
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db/models
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/db
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/dispatch
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/forms
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/http
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/middleware
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/shortcuts
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template/loaders
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/template
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/templatetags
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/simplejson
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils/translation
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/utils
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/decorators
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views/generic
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django/views
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/django
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/EGG-INFO/scripts
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%/EGG-INFO
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYDJANGO_EGG%%
+%%PYTHON_SITELIBDIR%%/django/__init__.py
+%%PYTHON_SITELIBDIR%%/django/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/bin/__init__.py
+%%PYTHON_SITELIBDIR%%/django/bin/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/bin/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/bin/compile-messages.py
+%%PYTHON_SITELIBDIR%%/django/bin/compile-messages.pyc
+%%PYTHON_SITELIBDIR%%/django/bin/compile-messages.pyo
+%%PYTHON_SITELIBDIR%%/django/bin/daily_cleanup.py
+%%PYTHON_SITELIBDIR%%/django/bin/daily_cleanup.pyc
+%%PYTHON_SITELIBDIR%%/django/bin/daily_cleanup.pyo
+%%PYTHON_SITELIBDIR%%/django/bin/django-admin.py
+%%PYTHON_SITELIBDIR%%/django/bin/django-admin.pyc
+%%PYTHON_SITELIBDIR%%/django/bin/django-admin.pyo
+%%PYTHON_SITELIBDIR%%/django/bin/make-messages.py
+%%PYTHON_SITELIBDIR%%/django/bin/make-messages.pyc
+%%PYTHON_SITELIBDIR%%/django/bin/make-messages.pyo
+%%PYTHON_SITELIBDIR%%/django/bin/profiling/__init__.py
+%%PYTHON_SITELIBDIR%%/django/bin/profiling/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/bin/profiling/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/bin/profiling/gather_profile_stats.py
+%%PYTHON_SITELIBDIR%%/django/bin/profiling/gather_profile_stats.pyc
+%%PYTHON_SITELIBDIR%%/django/bin/profiling/gather_profile_stats.pyo
+%%PYTHON_SITELIBDIR%%/django/bin/unique-messages.py
+%%PYTHON_SITELIBDIR%%/django/bin/unique-messages.pyc
+%%PYTHON_SITELIBDIR%%/django/bin/unique-messages.pyo
+%%PYTHON_SITELIBDIR%%/django/conf/__init__.py
+%%PYTHON_SITELIBDIR%%/django/conf/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/conf/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/conf/app_template/__init__.py
+%%PYTHON_SITELIBDIR%%/django/conf/app_template/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/conf/app_template/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/conf/app_template/models.py
+%%PYTHON_SITELIBDIR%%/django/conf/app_template/models.pyc
+%%PYTHON_SITELIBDIR%%/django/conf/app_template/models.pyo
+%%PYTHON_SITELIBDIR%%/django/conf/app_template/views.py
+%%PYTHON_SITELIBDIR%%/django/conf/app_template/views.pyc
+%%PYTHON_SITELIBDIR%%/django/conf/app_template/views.pyo
+%%PYTHON_SITELIBDIR%%/django/conf/global_settings.py
+%%PYTHON_SITELIBDIR%%/django/conf/global_settings.pyc
+%%PYTHON_SITELIBDIR%%/django/conf/global_settings.pyo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ar/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ar/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ar/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ar/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/bn/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/bn/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ca/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ca/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ca/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ca/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/cs/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/cs/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/cs/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/cs/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/cy/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/cy/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/cy/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/cy/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/da/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/da/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/de/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/de/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/de/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/de/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/el/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/el/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/el/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/el/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/en/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/en/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/en/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/en/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/es/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/es/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/es/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/es/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/es_AR/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/es_AR/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/es_AR/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/es_AR/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/fi/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/fi/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/fi/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/fi/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/fr/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/fr/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/fr/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/fr/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/gl/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/gl/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/gl/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/gl/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/he/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/he/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/he/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/he/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/hu/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/hu/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/hu/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/hu/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/is/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/is/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/is/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/is/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/it/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/it/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/it/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/it/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ja/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ja/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ja/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ja/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/kn/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/kn/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/kn/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/kn/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/lv/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/lv/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/lv/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/lv/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/mk/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/mk/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/mk/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/mk/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/nl/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/nl/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/nl/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/nl/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/no/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/no/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/no/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/no/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/pl/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/pl/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/pl/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/pl/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/pt/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/pt/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/pt/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/pt/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/pt_BR/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/pt_BR/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/pt_BR/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/pt_BR/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ro/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ro/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ru/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ru/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ru/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ru/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/sk/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/sk/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/sk/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/sk/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/sl/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/sl/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/sr/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/sr/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/sr/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/sr/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/sv/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/sv/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/sv/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/sv/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ta/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ta/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ta/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/ta/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/te/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/te/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/te/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/te/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/tr/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/tr/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/tr/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/tr/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/uk/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/uk/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/zh_CN/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/zh_CN/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/zh_CN/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/zh_CN/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/zh_TW/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/zh_TW/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/project_template/__init__.py
+%%PYTHON_SITELIBDIR%%/django/conf/project_template/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/conf/project_template/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/conf/project_template/manage.py
+%%PYTHON_SITELIBDIR%%/django/conf/project_template/manage.pyc
+%%PYTHON_SITELIBDIR%%/django/conf/project_template/manage.pyo
+%%PYTHON_SITELIBDIR%%/django/conf/project_template/settings.py
+%%PYTHON_SITELIBDIR%%/django/conf/project_template/settings.pyc
+%%PYTHON_SITELIBDIR%%/django/conf/project_template/settings.pyo
+%%PYTHON_SITELIBDIR%%/django/conf/project_template/urls.py
+%%PYTHON_SITELIBDIR%%/django/conf/project_template/urls.pyc
+%%PYTHON_SITELIBDIR%%/django/conf/project_template/urls.pyo
+%%PYTHON_SITELIBDIR%%/django/conf/urls/__init__.py
+%%PYTHON_SITELIBDIR%%/django/conf/urls/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/conf/urls/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/conf/urls/defaults.py
+%%PYTHON_SITELIBDIR%%/django/conf/urls/defaults.pyc
+%%PYTHON_SITELIBDIR%%/django/conf/urls/defaults.pyo
+%%PYTHON_SITELIBDIR%%/django/conf/urls/i18n.py
+%%PYTHON_SITELIBDIR%%/django/conf/urls/i18n.pyc
+%%PYTHON_SITELIBDIR%%/django/conf/urls/i18n.pyo
+%%PYTHON_SITELIBDIR%%/django/conf/urls/shortcut.py
+%%PYTHON_SITELIBDIR%%/django/conf/urls/shortcut.pyc
+%%PYTHON_SITELIBDIR%%/django/conf/urls/shortcut.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/filterspecs.py
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/filterspecs.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/filterspecs.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/css/base.css
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/css/changelists.css
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/css/dashboard.css
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/css/forms.css
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/css/global.css
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/css/layout.css
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/css/login.css
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/css/patch-iewin.css
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/css/rtl.css
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/css/widgets.css
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/arrow-down.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/arrow-up.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/changelist-bg.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/chooser-bg.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/chooser_stacked-bg.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/default-bg-reverse.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/default-bg.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/deleted-overlay.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/icon-no.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/icon-unknown.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/icon-yes.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/icon_addlink.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/icon_alert.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/icon_calendar.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/icon_changelink.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/icon_clock.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/icon_deletelink.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/icon_error.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/icon_searchbox.png
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/icon_success.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/inline-delete-8bit.png
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/inline-delete.png
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/inline-restore-8bit.png
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/inline-restore.png
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/inline-splitter-bg.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/nav-bg-grabber.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/nav-bg-reverse.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/nav-bg.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/selector-add.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/selector-addall.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/selector-remove.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/selector-removeall.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/selector-search.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/selector_stacked-add.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/selector_stacked-remove.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/tool-left.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/tool-left_over.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/tool-right.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/tool-right_over.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/tooltag-add.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/tooltag-add_over.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/tooltag-arrowright.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin/tooltag-arrowright_over.gif
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/SelectBox.js
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/SelectFilter.js
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/SelectFilter2.js
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/admin/CollapsedFieldsets.js
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/admin/DateTimeShortcuts.js
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/admin/RelatedObjectLookups.js
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/admin/ordering.js
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/calendar.js
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/core.js
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/dateparse.js
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/getElementsBySelector.js
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/timeparse.js
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/urlify.js
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/models.py
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/models.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/models.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/404.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/500.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/auth/user/add_form.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/auth/user/change_password.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/base.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/base_site.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/change_form.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/change_list.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/change_list_results.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/date_hierarchy.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/delete_confirmation.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/edit_inline_stacked.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/edit_inline_tabular.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/field_line.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/filter.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/filters.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/index.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/invalid_setup.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/login.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/object_history.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/pagination.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/search_form.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/submit_line.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/template_validator.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin_doc/bookmarklets.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin_doc/index.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin_doc/missing_docutils.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin_doc/model_detail.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin_doc/model_index.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin_doc/template_detail.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin_doc/template_filter_index.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin_doc/template_tag_index.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin_doc/view_detail.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin_doc/view_index.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/registration/logged_out.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/registration/password_change_done.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/registration/password_change_form.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/registration/password_reset_done.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/registration/password_reset_email.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/registration/password_reset_form.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/widget/date_time.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/widget/default.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/widget/file.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/widget/foreign.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/widget/many_to_many.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/widget/one_to_one.html
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templatetags/admin_list.py
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templatetags/admin_list.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templatetags/admin_list.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templatetags/admin_modify.py
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templatetags/admin_modify.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templatetags/admin_modify.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templatetags/adminapplist.py
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templatetags/adminapplist.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templatetags/adminapplist.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templatetags/adminmedia.py
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templatetags/adminmedia.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templatetags/adminmedia.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templatetags/log.py
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templatetags/log.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/templatetags/log.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/urls.py
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/urls.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/urls.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/utils.py
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/utils.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/utils.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/views/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/views/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/views/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/views/auth.py
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/views/auth.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/views/auth.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/views/decorators.py
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/views/decorators.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/views/decorators.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/views/doc.py
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/views/doc.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/views/doc.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/views/main.py
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/views/main.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/views/main.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/views/template.py
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/views/template.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/admin/views/template.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/backends.py
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/backends.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/backends.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/create_superuser.py
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/create_superuser.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/create_superuser.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/decorators.py
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/decorators.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/decorators.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/forms.py
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/forms.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/forms.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/handlers/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/handlers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/handlers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/handlers/modpython.py
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/handlers/modpython.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/handlers/modpython.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/management.py
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/management.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/management.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/middleware.py
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/middleware.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/middleware.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/models.py
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/models.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/models.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/views.py
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/views.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/auth/views.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/feeds.py
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/feeds.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/feeds.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/models.py
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/models.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/models.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/templates/comments/form.html
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/templates/comments/freeform.html
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/templatetags/comments.py
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/templatetags/comments.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/templatetags/comments.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/urls/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/urls/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/urls/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/urls/comments.py
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/urls/comments.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/urls/comments.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/views/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/views/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/views/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/views/comments.py
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/views/comments.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/views/comments.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/views/karma.py
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/views/karma.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/views/karma.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/views/userflags.py
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/views/userflags.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/comments/views/userflags.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/contenttypes/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/contenttypes/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/contenttypes/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/contenttypes/management.py
+%%PYTHON_SITELIBDIR%%/django/contrib/contenttypes/management.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/contenttypes/management.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/contenttypes/models.py
+%%PYTHON_SITELIBDIR%%/django/contrib/contenttypes/models.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/contenttypes/models.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/csrf/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/csrf/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/csrf/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/csrf/middleware.py
+%%PYTHON_SITELIBDIR%%/django/contrib/csrf/middleware.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/csrf/middleware.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/middleware.py
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/middleware.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/middleware.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/models.py
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/models.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/models.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/urls.py
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/urls.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/urls.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/views.py
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/views.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/flatpages/views.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/formtools/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/formtools/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/formtools/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/formtools/preview.py
+%%PYTHON_SITELIBDIR%%/django/contrib/formtools/preview.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/formtools/preview.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/formtools/templates/formtools/form.html
+%%PYTHON_SITELIBDIR%%/django/contrib/formtools/templates/formtools/preview.html
+%%PYTHON_SITELIBDIR%%/django/contrib/humanize/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/humanize/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/humanize/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/humanize/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/humanize/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/humanize/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/humanize/templatetags/humanize.py
+%%PYTHON_SITELIBDIR%%/django/contrib/humanize/templatetags/humanize.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/humanize/templatetags/humanize.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/uk/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/uk/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/uk/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/uk/forms.py
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/uk/forms.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/uk/forms.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/usa/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/usa/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/usa/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/usa/forms.py
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/usa/forms.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/usa/forms.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/usa/us_states.py
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/usa/us_states.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/usa/us_states.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/markup/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/markup/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/markup/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/markup/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/markup/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/markup/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/markup/templatetags/markup.py
+%%PYTHON_SITELIBDIR%%/django/contrib/markup/templatetags/markup.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/markup/templatetags/markup.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/redirects/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/redirects/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/redirects/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/redirects/middleware.py
+%%PYTHON_SITELIBDIR%%/django/contrib/redirects/middleware.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/redirects/middleware.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/redirects/models.py
+%%PYTHON_SITELIBDIR%%/django/contrib/redirects/models.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/redirects/models.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/sessions/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/sessions/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/sessions/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/sessions/middleware.py
+%%PYTHON_SITELIBDIR%%/django/contrib/sessions/middleware.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/sessions/middleware.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/sessions/models.py
+%%PYTHON_SITELIBDIR%%/django/contrib/sessions/models.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/sessions/models.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/templates/sitemap.xml
+%%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/templates/sitemap_index.xml
+%%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/views.py
+%%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/views.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/views.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/sites/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/sites/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/sites/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/sites/management.py
+%%PYTHON_SITELIBDIR%%/django/contrib/sites/management.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/sites/management.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/sites/managers.py
+%%PYTHON_SITELIBDIR%%/django/contrib/sites/managers.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/sites/managers.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/sites/models.py
+%%PYTHON_SITELIBDIR%%/django/contrib/sites/models.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/sites/models.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/syndication/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/syndication/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/syndication/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/syndication/feeds.py
+%%PYTHON_SITELIBDIR%%/django/contrib/syndication/feeds.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/syndication/feeds.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/syndication/views.py
+%%PYTHON_SITELIBDIR%%/django/contrib/syndication/views.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/syndication/views.pyo
+%%PYTHON_SITELIBDIR%%/django/core/__init__.py
+%%PYTHON_SITELIBDIR%%/django/core/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/core/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/core/cache/__init__.py
+%%PYTHON_SITELIBDIR%%/django/core/cache/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/core/cache/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/__init__.py
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/base.py
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/base.pyc
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/base.pyo
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/db.py
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/db.pyc
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/db.pyo
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/dummy.py
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/dummy.pyc
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/dummy.pyo
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/filebased.py
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/filebased.pyc
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/filebased.pyo
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/locmem.py
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/locmem.pyc
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/locmem.pyo
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/memcached.py
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/memcached.pyc
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/memcached.pyo
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/simple.py
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/simple.pyc
+%%PYTHON_SITELIBDIR%%/django/core/cache/backends/simple.pyo
+%%PYTHON_SITELIBDIR%%/django/core/context_processors.py
+%%PYTHON_SITELIBDIR%%/django/core/context_processors.pyc
+%%PYTHON_SITELIBDIR%%/django/core/context_processors.pyo
+%%PYTHON_SITELIBDIR%%/django/core/exceptions.py
+%%PYTHON_SITELIBDIR%%/django/core/exceptions.pyc
+%%PYTHON_SITELIBDIR%%/django/core/exceptions.pyo
+%%PYTHON_SITELIBDIR%%/django/core/handler.py
+%%PYTHON_SITELIBDIR%%/django/core/handler.pyc
+%%PYTHON_SITELIBDIR%%/django/core/handler.pyo
+%%PYTHON_SITELIBDIR%%/django/core/handlers/__init__.py
+%%PYTHON_SITELIBDIR%%/django/core/handlers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/core/handlers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/core/handlers/base.py
+%%PYTHON_SITELIBDIR%%/django/core/handlers/base.pyc
+%%PYTHON_SITELIBDIR%%/django/core/handlers/base.pyo
+%%PYTHON_SITELIBDIR%%/django/core/handlers/modpython.py
+%%PYTHON_SITELIBDIR%%/django/core/handlers/modpython.pyc
+%%PYTHON_SITELIBDIR%%/django/core/handlers/modpython.pyo
+%%PYTHON_SITELIBDIR%%/django/core/handlers/profiler-hotshot.py
+%%PYTHON_SITELIBDIR%%/django/core/handlers/profiler-hotshot.pyc
+%%PYTHON_SITELIBDIR%%/django/core/handlers/profiler-hotshot.pyo
+%%PYTHON_SITELIBDIR%%/django/core/handlers/wsgi.py
+%%PYTHON_SITELIBDIR%%/django/core/handlers/wsgi.pyc
+%%PYTHON_SITELIBDIR%%/django/core/handlers/wsgi.pyo
+%%PYTHON_SITELIBDIR%%/django/core/mail.py
+%%PYTHON_SITELIBDIR%%/django/core/mail.pyc
+%%PYTHON_SITELIBDIR%%/django/core/mail.pyo
+%%PYTHON_SITELIBDIR%%/django/core/management.py
+%%PYTHON_SITELIBDIR%%/django/core/management.pyc
+%%PYTHON_SITELIBDIR%%/django/core/management.pyo
+%%PYTHON_SITELIBDIR%%/django/core/paginator.py
+%%PYTHON_SITELIBDIR%%/django/core/paginator.pyc
+%%PYTHON_SITELIBDIR%%/django/core/paginator.pyo
+%%PYTHON_SITELIBDIR%%/django/core/serializers/__init__.py
+%%PYTHON_SITELIBDIR%%/django/core/serializers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/core/serializers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/core/serializers/base.py
+%%PYTHON_SITELIBDIR%%/django/core/serializers/base.pyc
+%%PYTHON_SITELIBDIR%%/django/core/serializers/base.pyo
+%%PYTHON_SITELIBDIR%%/django/core/serializers/json.py
+%%PYTHON_SITELIBDIR%%/django/core/serializers/json.pyc
+%%PYTHON_SITELIBDIR%%/django/core/serializers/json.pyo
+%%PYTHON_SITELIBDIR%%/django/core/serializers/python.py
+%%PYTHON_SITELIBDIR%%/django/core/serializers/python.pyc
+%%PYTHON_SITELIBDIR%%/django/core/serializers/python.pyo
+%%PYTHON_SITELIBDIR%%/django/core/serializers/pyyaml.py
+%%PYTHON_SITELIBDIR%%/django/core/serializers/pyyaml.pyc
+%%PYTHON_SITELIBDIR%%/django/core/serializers/pyyaml.pyo
+%%PYTHON_SITELIBDIR%%/django/core/serializers/xml_serializer.py
+%%PYTHON_SITELIBDIR%%/django/core/serializers/xml_serializer.pyc
+%%PYTHON_SITELIBDIR%%/django/core/serializers/xml_serializer.pyo
+%%PYTHON_SITELIBDIR%%/django/core/servers/__init__.py
+%%PYTHON_SITELIBDIR%%/django/core/servers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/core/servers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/core/servers/basehttp.py
+%%PYTHON_SITELIBDIR%%/django/core/servers/basehttp.pyc
+%%PYTHON_SITELIBDIR%%/django/core/servers/basehttp.pyo
+%%PYTHON_SITELIBDIR%%/django/core/servers/fastcgi.py
+%%PYTHON_SITELIBDIR%%/django/core/servers/fastcgi.pyc
+%%PYTHON_SITELIBDIR%%/django/core/servers/fastcgi.pyo
+%%PYTHON_SITELIBDIR%%/django/core/signals.py
+%%PYTHON_SITELIBDIR%%/django/core/signals.pyc
+%%PYTHON_SITELIBDIR%%/django/core/signals.pyo
+%%PYTHON_SITELIBDIR%%/django/core/template_loader.py
+%%PYTHON_SITELIBDIR%%/django/core/template_loader.pyc
+%%PYTHON_SITELIBDIR%%/django/core/template_loader.pyo
+%%PYTHON_SITELIBDIR%%/django/core/urlresolvers.py
+%%PYTHON_SITELIBDIR%%/django/core/urlresolvers.pyc
+%%PYTHON_SITELIBDIR%%/django/core/urlresolvers.pyo
+%%PYTHON_SITELIBDIR%%/django/core/validators.py
+%%PYTHON_SITELIBDIR%%/django/core/validators.pyc
+%%PYTHON_SITELIBDIR%%/django/core/validators.pyo
+%%PYTHON_SITELIBDIR%%/django/core/xheaders.py
+%%PYTHON_SITELIBDIR%%/django/core/xheaders.pyc
+%%PYTHON_SITELIBDIR%%/django/core/xheaders.pyo
+%%PYTHON_SITELIBDIR%%/django/db/__init__.py
+%%PYTHON_SITELIBDIR%%/django/db/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/db/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/__init__.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/ado_mssql/__init__.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/ado_mssql/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/ado_mssql/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/ado_mssql/base.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/ado_mssql/base.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/ado_mssql/base.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/ado_mssql/client.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/ado_mssql/client.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/ado_mssql/client.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/ado_mssql/creation.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/ado_mssql/creation.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/ado_mssql/creation.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/ado_mssql/introspection.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/ado_mssql/introspection.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/ado_mssql/introspection.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/dummy/__init__.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/dummy/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/dummy/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/dummy/base.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/dummy/base.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/dummy/base.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/dummy/client.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/dummy/client.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/dummy/client.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/dummy/creation.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/dummy/creation.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/dummy/creation.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/dummy/introspection.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/dummy/introspection.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/dummy/introspection.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql/__init__.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql/base.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql/base.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql/base.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql/client.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql/client.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql/client.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql/creation.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql/creation.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql/creation.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql/introspection.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql/introspection.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql/introspection.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql_old/__init__.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql_old/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql_old/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql_old/base.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql_old/base.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql_old/base.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql_old/client.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql_old/client.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql_old/client.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql_old/creation.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql_old/creation.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql_old/creation.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql_old/introspection.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql_old/introspection.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/mysql_old/introspection.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/oracle/__init__.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/oracle/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/oracle/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/oracle/base.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/oracle/base.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/oracle/base.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/oracle/client.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/oracle/client.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/oracle/client.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/oracle/creation.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/oracle/creation.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/oracle/creation.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/oracle/introspection.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/oracle/introspection.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/oracle/introspection.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql/__init__.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql/base.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql/base.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql/base.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql/client.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql/client.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql/client.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql/creation.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql/creation.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql/creation.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql/introspection.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql/introspection.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql/introspection.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql_psycopg2/__init__.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql_psycopg2/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql_psycopg2/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql_psycopg2/base.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql_psycopg2/base.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql_psycopg2/base.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql_psycopg2/client.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql_psycopg2/client.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql_psycopg2/client.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql_psycopg2/creation.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql_psycopg2/creation.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql_psycopg2/creation.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql_psycopg2/introspection.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql_psycopg2/introspection.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/postgresql_psycopg2/introspection.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/sqlite3/__init__.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/sqlite3/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/sqlite3/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/sqlite3/base.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/sqlite3/base.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/sqlite3/base.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/sqlite3/client.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/sqlite3/client.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/sqlite3/client.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/sqlite3/creation.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/sqlite3/creation.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/sqlite3/creation.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/sqlite3/introspection.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/sqlite3/introspection.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/sqlite3/introspection.pyo
+%%PYTHON_SITELIBDIR%%/django/db/backends/util.py
+%%PYTHON_SITELIBDIR%%/django/db/backends/util.pyc
+%%PYTHON_SITELIBDIR%%/django/db/backends/util.pyo
+%%PYTHON_SITELIBDIR%%/django/db/models/__init__.py
+%%PYTHON_SITELIBDIR%%/django/db/models/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/db/models/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/db/models/base.py
+%%PYTHON_SITELIBDIR%%/django/db/models/base.pyc
+%%PYTHON_SITELIBDIR%%/django/db/models/base.pyo
+%%PYTHON_SITELIBDIR%%/django/db/models/fields/__init__.py
+%%PYTHON_SITELIBDIR%%/django/db/models/fields/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/db/models/fields/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/db/models/fields/generic.py
+%%PYTHON_SITELIBDIR%%/django/db/models/fields/generic.pyc
+%%PYTHON_SITELIBDIR%%/django/db/models/fields/generic.pyo
+%%PYTHON_SITELIBDIR%%/django/db/models/fields/related.py
+%%PYTHON_SITELIBDIR%%/django/db/models/fields/related.pyc
+%%PYTHON_SITELIBDIR%%/django/db/models/fields/related.pyo
+%%PYTHON_SITELIBDIR%%/django/db/models/loading.py
+%%PYTHON_SITELIBDIR%%/django/db/models/loading.pyc
+%%PYTHON_SITELIBDIR%%/django/db/models/loading.pyo
+%%PYTHON_SITELIBDIR%%/django/db/models/manager.py
+%%PYTHON_SITELIBDIR%%/django/db/models/manager.pyc
+%%PYTHON_SITELIBDIR%%/django/db/models/manager.pyo
+%%PYTHON_SITELIBDIR%%/django/db/models/manipulators.py
+%%PYTHON_SITELIBDIR%%/django/db/models/manipulators.pyc
+%%PYTHON_SITELIBDIR%%/django/db/models/manipulators.pyo
+%%PYTHON_SITELIBDIR%%/django/db/models/options.py
+%%PYTHON_SITELIBDIR%%/django/db/models/options.pyc
+%%PYTHON_SITELIBDIR%%/django/db/models/options.pyo
+%%PYTHON_SITELIBDIR%%/django/db/models/query.py
+%%PYTHON_SITELIBDIR%%/django/db/models/query.pyc
+%%PYTHON_SITELIBDIR%%/django/db/models/query.pyo
+%%PYTHON_SITELIBDIR%%/django/db/models/related.py
+%%PYTHON_SITELIBDIR%%/django/db/models/related.pyc
+%%PYTHON_SITELIBDIR%%/django/db/models/related.pyo
+%%PYTHON_SITELIBDIR%%/django/db/models/signals.py
+%%PYTHON_SITELIBDIR%%/django/db/models/signals.pyc
+%%PYTHON_SITELIBDIR%%/django/db/models/signals.pyo
+%%PYTHON_SITELIBDIR%%/django/db/transaction.py
+%%PYTHON_SITELIBDIR%%/django/db/transaction.pyc
+%%PYTHON_SITELIBDIR%%/django/db/transaction.pyo
+%%PYTHON_SITELIBDIR%%/django/dispatch/__init__.py
+%%PYTHON_SITELIBDIR%%/django/dispatch/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/dispatch/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/dispatch/dispatcher.py
+%%PYTHON_SITELIBDIR%%/django/dispatch/dispatcher.pyc
+%%PYTHON_SITELIBDIR%%/django/dispatch/dispatcher.pyo
+%%PYTHON_SITELIBDIR%%/django/dispatch/errors.py
+%%PYTHON_SITELIBDIR%%/django/dispatch/errors.pyc
+%%PYTHON_SITELIBDIR%%/django/dispatch/errors.pyo
+%%PYTHON_SITELIBDIR%%/django/dispatch/robust.py
+%%PYTHON_SITELIBDIR%%/django/dispatch/robust.pyc
+%%PYTHON_SITELIBDIR%%/django/dispatch/robust.pyo
+%%PYTHON_SITELIBDIR%%/django/dispatch/robustapply.py
+%%PYTHON_SITELIBDIR%%/django/dispatch/robustapply.pyc
+%%PYTHON_SITELIBDIR%%/django/dispatch/robustapply.pyo
+%%PYTHON_SITELIBDIR%%/django/dispatch/saferef.py
+%%PYTHON_SITELIBDIR%%/django/dispatch/saferef.pyc
+%%PYTHON_SITELIBDIR%%/django/dispatch/saferef.pyo
+%%PYTHON_SITELIBDIR%%/django/forms/__init__.py
+%%PYTHON_SITELIBDIR%%/django/forms/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/forms/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/http/__init__.py
+%%PYTHON_SITELIBDIR%%/django/http/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/http/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/middleware/__init__.py
+%%PYTHON_SITELIBDIR%%/django/middleware/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/middleware/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/middleware/cache.py
+%%PYTHON_SITELIBDIR%%/django/middleware/cache.pyc
+%%PYTHON_SITELIBDIR%%/django/middleware/cache.pyo
+%%PYTHON_SITELIBDIR%%/django/middleware/common.py
+%%PYTHON_SITELIBDIR%%/django/middleware/common.pyc
+%%PYTHON_SITELIBDIR%%/django/middleware/common.pyo
+%%PYTHON_SITELIBDIR%%/django/middleware/doc.py
+%%PYTHON_SITELIBDIR%%/django/middleware/doc.pyc
+%%PYTHON_SITELIBDIR%%/django/middleware/doc.pyo
+%%PYTHON_SITELIBDIR%%/django/middleware/gzip.py
+%%PYTHON_SITELIBDIR%%/django/middleware/gzip.pyc
+%%PYTHON_SITELIBDIR%%/django/middleware/gzip.pyo
+%%PYTHON_SITELIBDIR%%/django/middleware/http.py
+%%PYTHON_SITELIBDIR%%/django/middleware/http.pyc
+%%PYTHON_SITELIBDIR%%/django/middleware/http.pyo
+%%PYTHON_SITELIBDIR%%/django/middleware/locale.py
+%%PYTHON_SITELIBDIR%%/django/middleware/locale.pyc
+%%PYTHON_SITELIBDIR%%/django/middleware/locale.pyo
+%%PYTHON_SITELIBDIR%%/django/middleware/transaction.py
+%%PYTHON_SITELIBDIR%%/django/middleware/transaction.pyc
+%%PYTHON_SITELIBDIR%%/django/middleware/transaction.pyo
+%%PYTHON_SITELIBDIR%%/django/newforms/__init__.py
+%%PYTHON_SITELIBDIR%%/django/newforms/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/newforms/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/newforms/extras/__init__.py
+%%PYTHON_SITELIBDIR%%/django/newforms/extras/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/newforms/extras/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/newforms/extras/widgets.py
+%%PYTHON_SITELIBDIR%%/django/newforms/extras/widgets.pyc
+%%PYTHON_SITELIBDIR%%/django/newforms/extras/widgets.pyo
+%%PYTHON_SITELIBDIR%%/django/newforms/fields.py
+%%PYTHON_SITELIBDIR%%/django/newforms/fields.pyc
+%%PYTHON_SITELIBDIR%%/django/newforms/fields.pyo
+%%PYTHON_SITELIBDIR%%/django/newforms/forms.py
+%%PYTHON_SITELIBDIR%%/django/newforms/forms.pyc
+%%PYTHON_SITELIBDIR%%/django/newforms/forms.pyo
+%%PYTHON_SITELIBDIR%%/django/newforms/models.py
+%%PYTHON_SITELIBDIR%%/django/newforms/models.pyc
+%%PYTHON_SITELIBDIR%%/django/newforms/models.pyo
+%%PYTHON_SITELIBDIR%%/django/newforms/util.py
+%%PYTHON_SITELIBDIR%%/django/newforms/util.pyc
+%%PYTHON_SITELIBDIR%%/django/newforms/util.pyo
+%%PYTHON_SITELIBDIR%%/django/newforms/widgets.py
+%%PYTHON_SITELIBDIR%%/django/newforms/widgets.pyc
+%%PYTHON_SITELIBDIR%%/django/newforms/widgets.pyo
+%%PYTHON_SITELIBDIR%%/django/oldforms/__init__.py
+%%PYTHON_SITELIBDIR%%/django/oldforms/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/oldforms/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/shortcuts/__init__.py
+%%PYTHON_SITELIBDIR%%/django/shortcuts/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/shortcuts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/template/__init__.py
+%%PYTHON_SITELIBDIR%%/django/template/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/template/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/template/context.py
+%%PYTHON_SITELIBDIR%%/django/template/context.pyc
+%%PYTHON_SITELIBDIR%%/django/template/context.pyo
+%%PYTHON_SITELIBDIR%%/django/template/defaultfilters.py
+%%PYTHON_SITELIBDIR%%/django/template/defaultfilters.pyc
+%%PYTHON_SITELIBDIR%%/django/template/defaultfilters.pyo
+%%PYTHON_SITELIBDIR%%/django/template/defaulttags.py
+%%PYTHON_SITELIBDIR%%/django/template/defaulttags.pyc
+%%PYTHON_SITELIBDIR%%/django/template/defaulttags.pyo
+%%PYTHON_SITELIBDIR%%/django/template/loader.py
+%%PYTHON_SITELIBDIR%%/django/template/loader.pyc
+%%PYTHON_SITELIBDIR%%/django/template/loader.pyo
+%%PYTHON_SITELIBDIR%%/django/template/loader_tags.py
+%%PYTHON_SITELIBDIR%%/django/template/loader_tags.pyc
+%%PYTHON_SITELIBDIR%%/django/template/loader_tags.pyo
+%%PYTHON_SITELIBDIR%%/django/template/loaders/__init__.py
+%%PYTHON_SITELIBDIR%%/django/template/loaders/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/template/loaders/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/template/loaders/app_directories.py
+%%PYTHON_SITELIBDIR%%/django/template/loaders/app_directories.pyc
+%%PYTHON_SITELIBDIR%%/django/template/loaders/app_directories.pyo
+%%PYTHON_SITELIBDIR%%/django/template/loaders/eggs.py
+%%PYTHON_SITELIBDIR%%/django/template/loaders/eggs.pyc
+%%PYTHON_SITELIBDIR%%/django/template/loaders/eggs.pyo
+%%PYTHON_SITELIBDIR%%/django/template/loaders/filesystem.py
+%%PYTHON_SITELIBDIR%%/django/template/loaders/filesystem.pyc
+%%PYTHON_SITELIBDIR%%/django/template/loaders/filesystem.pyo
+%%PYTHON_SITELIBDIR%%/django/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/django/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/templatetags/i18n.py
+%%PYTHON_SITELIBDIR%%/django/templatetags/i18n.pyc
+%%PYTHON_SITELIBDIR%%/django/templatetags/i18n.pyo
+%%PYTHON_SITELIBDIR%%/django/test/__init__.py
+%%PYTHON_SITELIBDIR%%/django/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/test/client.py
+%%PYTHON_SITELIBDIR%%/django/test/client.pyc
+%%PYTHON_SITELIBDIR%%/django/test/client.pyo
+%%PYTHON_SITELIBDIR%%/django/test/doctest.py
+%%PYTHON_SITELIBDIR%%/django/test/doctest.pyc
+%%PYTHON_SITELIBDIR%%/django/test/doctest.pyo
+%%PYTHON_SITELIBDIR%%/django/test/signals.py
+%%PYTHON_SITELIBDIR%%/django/test/signals.pyc
+%%PYTHON_SITELIBDIR%%/django/test/signals.pyo
+%%PYTHON_SITELIBDIR%%/django/test/simple.py
+%%PYTHON_SITELIBDIR%%/django/test/simple.pyc
+%%PYTHON_SITELIBDIR%%/django/test/simple.pyo
+%%PYTHON_SITELIBDIR%%/django/test/testcases.py
+%%PYTHON_SITELIBDIR%%/django/test/testcases.pyc
+%%PYTHON_SITELIBDIR%%/django/test/testcases.pyo
+%%PYTHON_SITELIBDIR%%/django/test/utils.py
+%%PYTHON_SITELIBDIR%%/django/test/utils.pyc
+%%PYTHON_SITELIBDIR%%/django/test/utils.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/__init__.py
+%%PYTHON_SITELIBDIR%%/django/utils/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/_threading_local.py
+%%PYTHON_SITELIBDIR%%/django/utils/_threading_local.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/_threading_local.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/autoreload.py
+%%PYTHON_SITELIBDIR%%/django/utils/autoreload.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/autoreload.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/cache.py
+%%PYTHON_SITELIBDIR%%/django/utils/cache.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/cache.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/daemonize.py
+%%PYTHON_SITELIBDIR%%/django/utils/daemonize.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/daemonize.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/datastructures.py
+%%PYTHON_SITELIBDIR%%/django/utils/datastructures.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/datastructures.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/dateformat.py
+%%PYTHON_SITELIBDIR%%/django/utils/dateformat.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/dateformat.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/dates.py
+%%PYTHON_SITELIBDIR%%/django/utils/dates.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/dates.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/decorators.py
+%%PYTHON_SITELIBDIR%%/django/utils/decorators.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/decorators.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/feedgenerator.py
+%%PYTHON_SITELIBDIR%%/django/utils/feedgenerator.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/feedgenerator.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/functional.py
+%%PYTHON_SITELIBDIR%%/django/utils/functional.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/functional.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/html.py
+%%PYTHON_SITELIBDIR%%/django/utils/html.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/html.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/images.py
+%%PYTHON_SITELIBDIR%%/django/utils/images.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/images.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/itercompat.py
+%%PYTHON_SITELIBDIR%%/django/utils/itercompat.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/itercompat.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/simplejson/__init__.py
+%%PYTHON_SITELIBDIR%%/django/utils/simplejson/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/simplejson/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/simplejson/decoder.py
+%%PYTHON_SITELIBDIR%%/django/utils/simplejson/decoder.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/simplejson/decoder.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/simplejson/encoder.py
+%%PYTHON_SITELIBDIR%%/django/utils/simplejson/encoder.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/simplejson/encoder.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/simplejson/jsonfilter.py
+%%PYTHON_SITELIBDIR%%/django/utils/simplejson/jsonfilter.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/simplejson/jsonfilter.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/simplejson/scanner.py
+%%PYTHON_SITELIBDIR%%/django/utils/simplejson/scanner.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/simplejson/scanner.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/stopwords.py
+%%PYTHON_SITELIBDIR%%/django/utils/stopwords.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/stopwords.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/synch.py
+%%PYTHON_SITELIBDIR%%/django/utils/synch.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/synch.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/termcolors.py
+%%PYTHON_SITELIBDIR%%/django/utils/termcolors.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/termcolors.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/text.py
+%%PYTHON_SITELIBDIR%%/django/utils/text.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/text.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/timesince.py
+%%PYTHON_SITELIBDIR%%/django/utils/timesince.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/timesince.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/translation/__init__.py
+%%PYTHON_SITELIBDIR%%/django/utils/translation/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/translation/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/translation/trans_null.py
+%%PYTHON_SITELIBDIR%%/django/utils/translation/trans_null.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/translation/trans_null.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/translation/trans_real.py
+%%PYTHON_SITELIBDIR%%/django/utils/translation/trans_real.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/translation/trans_real.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/tzinfo.py
+%%PYTHON_SITELIBDIR%%/django/utils/tzinfo.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/tzinfo.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/xmlutils.py
+%%PYTHON_SITELIBDIR%%/django/utils/xmlutils.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/xmlutils.pyo
+%%PYTHON_SITELIBDIR%%/django/views/__init__.py
+%%PYTHON_SITELIBDIR%%/django/views/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/views/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/views/debug.py
+%%PYTHON_SITELIBDIR%%/django/views/debug.pyc
+%%PYTHON_SITELIBDIR%%/django/views/debug.pyo
+%%PYTHON_SITELIBDIR%%/django/views/decorators/__init__.py
+%%PYTHON_SITELIBDIR%%/django/views/decorators/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/views/decorators/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/views/decorators/cache.py
+%%PYTHON_SITELIBDIR%%/django/views/decorators/cache.pyc
+%%PYTHON_SITELIBDIR%%/django/views/decorators/cache.pyo
+%%PYTHON_SITELIBDIR%%/django/views/decorators/gzip.py
+%%PYTHON_SITELIBDIR%%/django/views/decorators/gzip.pyc
+%%PYTHON_SITELIBDIR%%/django/views/decorators/gzip.pyo
+%%PYTHON_SITELIBDIR%%/django/views/decorators/http.py
+%%PYTHON_SITELIBDIR%%/django/views/decorators/http.pyc
+%%PYTHON_SITELIBDIR%%/django/views/decorators/http.pyo
+%%PYTHON_SITELIBDIR%%/django/views/decorators/vary.py
+%%PYTHON_SITELIBDIR%%/django/views/decorators/vary.pyc
+%%PYTHON_SITELIBDIR%%/django/views/decorators/vary.pyo
+%%PYTHON_SITELIBDIR%%/django/views/defaults.py
+%%PYTHON_SITELIBDIR%%/django/views/defaults.pyc
+%%PYTHON_SITELIBDIR%%/django/views/defaults.pyo
+%%PYTHON_SITELIBDIR%%/django/views/generic/__init__.py
+%%PYTHON_SITELIBDIR%%/django/views/generic/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/views/generic/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/views/generic/create_update.py
+%%PYTHON_SITELIBDIR%%/django/views/generic/create_update.pyc
+%%PYTHON_SITELIBDIR%%/django/views/generic/create_update.pyo
+%%PYTHON_SITELIBDIR%%/django/views/generic/date_based.py
+%%PYTHON_SITELIBDIR%%/django/views/generic/date_based.pyc
+%%PYTHON_SITELIBDIR%%/django/views/generic/date_based.pyo
+%%PYTHON_SITELIBDIR%%/django/views/generic/list_detail.py
+%%PYTHON_SITELIBDIR%%/django/views/generic/list_detail.pyc
+%%PYTHON_SITELIBDIR%%/django/views/generic/list_detail.pyo
+%%PYTHON_SITELIBDIR%%/django/views/generic/simple.py
+%%PYTHON_SITELIBDIR%%/django/views/generic/simple.pyc
+%%PYTHON_SITELIBDIR%%/django/views/generic/simple.pyo
+%%PYTHON_SITELIBDIR%%/django/views/i18n.py
+%%PYTHON_SITELIBDIR%%/django/views/i18n.pyc
+%%PYTHON_SITELIBDIR%%/django/views/i18n.pyo
+%%PYTHON_SITELIBDIR%%/django/views/static.py
+%%PYTHON_SITELIBDIR%%/django/views/static.pyc
+%%PYTHON_SITELIBDIR%%/django/views/static.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/django/views/generic
+@dirrm %%PYTHON_SITELIBDIR%%/django/views/decorators
+@dirrm %%PYTHON_SITELIBDIR%%/django/views
+@dirrm %%PYTHON_SITELIBDIR%%/django/utils/translation
+@dirrm %%PYTHON_SITELIBDIR%%/django/utils/simplejson
+@dirrm %%PYTHON_SITELIBDIR%%/django/utils
+@dirrm %%PYTHON_SITELIBDIR%%/django/test
+@dirrm %%PYTHON_SITELIBDIR%%/django/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/django/template/loaders
+@dirrm %%PYTHON_SITELIBDIR%%/django/template
+@dirrm %%PYTHON_SITELIBDIR%%/django/shortcuts
+@dirrm %%PYTHON_SITELIBDIR%%/django/oldforms
+@dirrm %%PYTHON_SITELIBDIR%%/django/newforms/extras
+@dirrm %%PYTHON_SITELIBDIR%%/django/newforms
+@dirrm %%PYTHON_SITELIBDIR%%/django/middleware
+@dirrm %%PYTHON_SITELIBDIR%%/django/http
+@dirrm %%PYTHON_SITELIBDIR%%/django/forms
+@dirrm %%PYTHON_SITELIBDIR%%/django/dispatch
+@dirrm %%PYTHON_SITELIBDIR%%/django/db/models/fields
+@dirrm %%PYTHON_SITELIBDIR%%/django/db/models
+@dirrm %%PYTHON_SITELIBDIR%%/django/db/backends/sqlite3
+@dirrm %%PYTHON_SITELIBDIR%%/django/db/backends/postgresql_psycopg2
+@dirrm %%PYTHON_SITELIBDIR%%/django/db/backends/postgresql
+@dirrm %%PYTHON_SITELIBDIR%%/django/db/backends/oracle
+@dirrm %%PYTHON_SITELIBDIR%%/django/db/backends/mysql_old
+@dirrm %%PYTHON_SITELIBDIR%%/django/db/backends/mysql
+@dirrm %%PYTHON_SITELIBDIR%%/django/db/backends/dummy
+@dirrm %%PYTHON_SITELIBDIR%%/django/db/backends/ado_mssql
+@dirrm %%PYTHON_SITELIBDIR%%/django/db/backends
+@dirrm %%PYTHON_SITELIBDIR%%/django/db
+@dirrm %%PYTHON_SITELIBDIR%%/django/core/servers
+@dirrm %%PYTHON_SITELIBDIR%%/django/core/serializers
+@dirrm %%PYTHON_SITELIBDIR%%/django/core/handlers
+@dirrm %%PYTHON_SITELIBDIR%%/django/core/cache/backends
+@dirrm %%PYTHON_SITELIBDIR%%/django/core/cache
+@dirrm %%PYTHON_SITELIBDIR%%/django/core
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/syndication
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/sites
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/templates
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/sitemaps
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/sessions
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/redirects
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/markup/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/markup
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/usa
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/uk
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/localflavor
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/humanize/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/humanize
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/formtools/templates/formtools
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/formtools/templates
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/formtools
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/flatpages
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/csrf
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/contenttypes
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/comments/views
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/comments/urls
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/comments/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/comments/templates/comments
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/comments/templates
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/comments
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/auth/handlers
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/auth
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/admin/views
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/admin/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/widget
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/registration
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin_doc
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/auth/user
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin/auth
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/admin/templates/admin
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/admin/templates
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js/admin
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/js
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img/admin
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/img
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/admin/media/css
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/admin/media
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/admin
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/urls
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/project_template
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/zh_TW/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/zh_TW
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/zh_CN/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/zh_CN
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/uk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/uk
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/tr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/tr
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/te/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/te
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/ta/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/ta
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/sv/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/sv
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/sr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/sr
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/sl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/sl
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/sk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/sk
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/ru/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/ru
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/ro/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/ro
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/pt_BR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/pt_BR
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/pt/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/pt
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/pl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/pl
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/no/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/no
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/nl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/nl
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/mk/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/mk
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/lv/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/lv
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/kn/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/kn
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/ja/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/ja
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/it/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/it
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/is/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/is
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/hu/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/hu
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/he/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/he
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/gl/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/gl
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/fr/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/fr
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/fi/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/fi
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/es_AR/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/es_AR
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/es/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/es
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/en/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/en
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/el/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/el
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/de/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/de
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/da/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/da
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/cy/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/cy
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/cs/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/cs
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/ca/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/ca
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/bn/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/bn
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/ar/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/ar
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/app_template
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf
+@dirrm %%PYTHON_SITELIBDIR%%/django/bin/profiling
+@dirrm %%PYTHON_SITELIBDIR%%/django/bin
+@dirrm %%PYTHON_SITELIBDIR%%/django
 %%PORTDOCS%%%%DOCSDIR%%/add_ons.txt
 %%PORTDOCS%%%%DOCSDIR%%/admin_css.txt
 %%PORTDOCS%%%%DOCSDIR%%/apache_auth.txt
@@ -1116,9 +1278,12 @@ bin/django-admin.py
 %%PORTDOCS%%%%DOCSDIR%%/cache.txt
 %%PORTDOCS%%%%DOCSDIR%%/contributing.txt
 %%PORTDOCS%%%%DOCSDIR%%/csrf.txt
+%%PORTDOCS%%%%DOCSDIR%%/databases.txt
 %%PORTDOCS%%%%DOCSDIR%%/db-api.txt
 %%PORTDOCS%%%%DOCSDIR%%/design_philosophies.txt
+%%PORTDOCS%%%%DOCSDIR%%/distributions.txt
 %%PORTDOCS%%%%DOCSDIR%%/django-admin.txt
+%%PORTDOCS%%%%DOCSDIR%%/documentation.txt
 %%PORTDOCS%%%%DOCSDIR%%/email.txt
 %%PORTDOCS%%%%DOCSDIR%%/faq.txt
 %%PORTDOCS%%%%DOCSDIR%%/fastcgi.txt
@@ -1131,20 +1296,24 @@ bin/django-admin.py
 %%PORTDOCS%%%%DOCSDIR%%/middleware.txt
 %%PORTDOCS%%%%DOCSDIR%%/model-api.txt
 %%PORTDOCS%%%%DOCSDIR%%/modpython.txt
+%%PORTDOCS%%%%DOCSDIR%%/newforms.txt
 %%PORTDOCS%%%%DOCSDIR%%/outputting_csv.txt
 %%PORTDOCS%%%%DOCSDIR%%/outputting_pdf.txt
 %%PORTDOCS%%%%DOCSDIR%%/overview.txt
 %%PORTDOCS%%%%DOCSDIR%%/redirects.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_0.95.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_0.96.txt
 %%PORTDOCS%%%%DOCSDIR%%/request_response.txt
 %%PORTDOCS%%%%DOCSDIR%%/serialization.txt
 %%PORTDOCS%%%%DOCSDIR%%/sessions.txt
 %%PORTDOCS%%%%DOCSDIR%%/settings.txt
+%%PORTDOCS%%%%DOCSDIR%%/sitemaps.txt
 %%PORTDOCS%%%%DOCSDIR%%/sites.txt
 %%PORTDOCS%%%%DOCSDIR%%/static_files.txt
 %%PORTDOCS%%%%DOCSDIR%%/syndication_feeds.txt
 %%PORTDOCS%%%%DOCSDIR%%/templates.txt
 %%PORTDOCS%%%%DOCSDIR%%/templates_python.txt
+%%PORTDOCS%%%%DOCSDIR%%/testing.txt
 %%PORTDOCS%%%%DOCSDIR%%/transactions.txt
 %%PORTDOCS%%%%DOCSDIR%%/tutorial01.txt
 %%PORTDOCS%%%%DOCSDIR%%/tutorial02.txt
@@ -1152,4 +1321,3 @@ bin/django-admin.py
 %%PORTDOCS%%%%DOCSDIR%%/tutorial04.txt
 %%PORTDOCS%%%%DOCSDIR%%/url_dispatch.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec %%EASY_INSTALL_CMD%% -q -x -N -S %D/%%PYTHON_SITELIBDIR%% %%PYDJANGO_EGG_VER%%
