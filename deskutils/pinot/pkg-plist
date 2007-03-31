@@ -1,5 +1,4 @@
 bin/pinot
-bin/pinot-collect
 bin/pinot-dbus-daemon
 bin/pinot-index
 bin/pinot-search
@@ -19,10 +18,17 @@ lib/pinot/filters/libtaglibfilter.so
 lib/pinot/filters/libtaglibfilter.so.0
 share/applications/pinot.desktop
 share/dbus-1/services/de.berlios.Pinot.service
+share/icons/hicolor/16x16/apps/pinot.png
+share/icons/hicolor/22x22/apps/pinot.png
+share/icons/hicolor/24x24/apps/pinot.png
+share/icons/hicolor/32x32/apps/pinot.png
 share/icons/hicolor/48x48/apps/pinot.png
+share/locale/de/LC_MESSAGES/pinot.mo
 share/locale/es/LC_MESSAGES/pinot.mo
 share/locale/fr/LC_MESSAGES/pinot.mo
+share/locale/it/LC_MESSAGES/pinot.mo
 share/locale/nl/LC_MESSAGES/pinot.mo
+share/locale/pt/LC_MESSAGES/pinot.mo
 share/locale/pt_BR/LC_MESSAGES/pinot.mo
 share/locale/ru/LC_MESSAGES/pinot.mo
 share/locale/sv/LC_MESSAGES/pinot.mo
