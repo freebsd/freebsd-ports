@@ -1,0 +1,723 @@
+%%DURANDAL%%bin/alephone-durandal
+%%INFINITY%%bin/alephone-infinity
+%%MARATHON%%bin/alephone-marathon
+%%SHOTS_FIRED%%%%DATADIR%%/Scripts/Shots.mml
+%%SHOTS_FIRED%%%%DATADIR%%/Scripts/Transparent_Sprites.mml
+%%DURANDAL%%%%DATADIR%%/durandal/Fonts
+%%DURANDAL%%%%DATADIR%%/durandal/Images.imgA
+%%LANDSCAPES%%%%DURANDAL%%%%DATADIR%%/durandal/Landscapes/.DS_Store
+%%LANDSCAPES%%%%DURANDAL%%%%DATADIR%%/durandal/Landscapes/1.jpg
+%%LANDSCAPES%%%%DURANDAL%%%%DATADIR%%/durandal/Landscapes/2.jpg
+%%LANDSCAPES%%%%DURANDAL%%%%DATADIR%%/durandal/Landscapes/3.jpg
+%%LANDSCAPES%%%%DURANDAL%%%%DATADIR%%/durandal/Landscapes/4.jpg
+%%DURANDAL%%%%DATADIR%%/durandal/Map.sceA
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/00.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/01.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/02.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/03.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/04.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/05.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/06.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/07.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/08.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/09.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/10.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/11.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/12.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/13.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/14.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/15.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/16.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/17.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/18.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/19.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/20.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/21.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/22.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/23.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/24.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/25.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/26.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/27.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/28.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/17 Water/29.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/00.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/01.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/02.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/03.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/04.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/05.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/06.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/07.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/08.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/09.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/10.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/11.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/12.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/13.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/14.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/15.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/16.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/17.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/18.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/19.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/20.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/21.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/22.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/23.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/24.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/25.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/26.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/27.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/28.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/29.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/18 Lava/29m.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/00.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/01.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/02.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/03.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/04.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/05.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/06.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/07.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/08.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/09.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/10.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/11.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/12.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/13.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/14.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/15.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/16.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/17.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/18.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/19.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/20.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/21.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/22.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/23.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/24.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/25.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/26.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/27.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/28.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage/29.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/00.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/01.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/02.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/03.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/04.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/05.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/06.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/07.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/08.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/09.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/10.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/11.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/12.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/13.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/14.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/15.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/16.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/17.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/18.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/19.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/20.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/21.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/22.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/23.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/24.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/25.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/26.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/27.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/28.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor/29.dds
+%%DURANDAL%%%%DATADIR%%/durandal/Music.aif
+%%DURANDAL%%%%DATADIR%%/durandal/Physics Models/Standard.phyA
+%%DURANDAL%%%%DATADIR%%/durandal/Scripts/Filenames.mml
+%%DURANDAL%%%%DATADIR%%/durandal/Scripts/M2 landscapes
+%%DURANDAL%%%%DATADIR%%/durandal/Scripts/Marathon 2.mml
+%%TEXTURES%%%%DURANDAL%%%%DATADIR%%/durandal/Scripts/Textures M2
+%%DURANDAL%%%%DATADIR%%/durandal/Scripts/Transparent_Liquids.mml
+%%DURANDAL%%%%DATADIR%%/durandal/Scripts/Transparent_Sprites.mml
+%%DURANDAL%%%%DATADIR%%/durandal/Shapes.shpA
+%%DURANDAL%%%%DATADIR%%/durandal/Sounds.sndA
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/button_c.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/button_l.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/button_r.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/frame_b.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/frame_bl.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/frame_br.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/frame_l.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/frame_r.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/frame_t.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/frame_tl.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/frame_tr.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/list_b.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/list_bl.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/list_br.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/list_l.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/list_r.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/list_t.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/list_tl.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/list_tr.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/resources
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/slider.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/slider_c.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/slider_l.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/slider_r.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/theme.mml
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/thumb_b.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/thumb_bc.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/thumb_c.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/thumb_t.bmp
+%%DURANDAL%%%%DATADIR%%/durandal/Themes/Default/thumb_tc.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Fonts
+%%INFINITY%%%%DATADIR%%/infinity/Images.imgA
+%%LANDSCAPES%%%%INFINITY%%%%DATADIR%%/infinity/Landscapes/.DS_Store
+%%LANDSCAPES%%%%INFINITY%%%%DATADIR%%/infinity/Landscapes/1.jpg
+%%LANDSCAPES%%%%INFINITY%%%%DATADIR%%/infinity/Landscapes/2.jpg
+%%LANDSCAPES%%%%INFINITY%%%%DATADIR%%/infinity/Landscapes/3.jpg
+%%LANDSCAPES%%%%INFINITY%%%%DATADIR%%/infinity/Landscapes/4.jpg
+%%INFINITY%%%%DATADIR%%/infinity/Map.sceA
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/00.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/01.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/02.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/03.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/04.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/05.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/06.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/07.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/08.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/09.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/10.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/11.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/12.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/13.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/14.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/15.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/16.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/17.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/18.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/19.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/20.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/21.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/22.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/23.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/24.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/25.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/26.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/27.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/28.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/17 Water/29.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/00.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/01.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/02.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/03.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/04.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/05.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/06.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/07.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/08.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/09.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/10.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/11.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/12.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/13.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/14.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/15.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/16.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/17.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/18.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/19.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/20.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/21.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/22.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/23.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/24.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/25.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/26.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/27.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/28.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava/29.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/00.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/01.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/02.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/03.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/04.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/05.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/06.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/07.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/08.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/09.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/10.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/11.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/12.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/13.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/14.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/15.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/16.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/17.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/18.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/19.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/20.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/21.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/22.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/23.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/24.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/25.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/26.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/27.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/28.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage/29.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/00.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/01.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/02.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/03.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/04.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/05.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/06.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/07.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/08.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/09.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/10.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/11.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/12.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/13.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/14.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/15.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/16.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/17.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/18.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/19.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/20.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/21.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/22.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/23.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/24.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/25.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/26.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/27.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/28.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/29.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/30.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/31.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/32.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/33.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro/34.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/00.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/01.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/02.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/03.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/04.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/05.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/06.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/07.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/08.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/09.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/10.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/11.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/12.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/13.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/14.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/15.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/16.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/17.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/18.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/19.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/20.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/21.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/22.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/23.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/24.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/25.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/26.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/27.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/28.dds
+%%INFINITY%%%%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor/29.dds
+%%INFINITY%%%%DATADIR%%/infinity/Music.aif
+%%INFINITY%%%%DATADIR%%/infinity/Physics Models/Standard.phyA
+%%INFINITY%%%%DATADIR%%/infinity/Scripts/Filenames.mml
+%%INFINITY%%%%DATADIR%%/infinity/Scripts/Infinity landscapes
+%%INFINITY%%%%DATADIR%%/infinity/Scripts/Marathon Infinity.mml
+%%TEXTURES%%%%INFINITY%%%%DATADIR%%/infinity/Scripts/Textures Moo
+%%INFINITY%%%%DATADIR%%/infinity/Scripts/Transparent_Liquids.mml
+%%INFINITY%%%%DATADIR%%/infinity/Scripts/Transparent_Sprites.mml
+%%INFINITY%%%%DATADIR%%/infinity/Shapes.shpA
+%%INFINITY%%%%DATADIR%%/infinity/Sounds.sndA
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/button_c.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/button_l.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/button_r.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/frame_b.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/frame_bl.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/frame_br.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/frame_l.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/frame_r.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/frame_t.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/frame_tl.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/frame_tr.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/list_b.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/list_bl.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/list_br.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/list_l.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/list_r.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/list_t.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/list_tl.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/list_tr.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/resources
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/slider.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/slider_c.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/slider_l.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/slider_r.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/theme.mml
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/thumb_b.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/thumb_bc.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/thumb_c.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/thumb_t.bmp
+%%INFINITY%%%%DATADIR%%/infinity/Themes/Default/thumb_tc.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Fonts
+%%MARATHON%%%%DATADIR%%/marathon/M1A1 Images.imgA
+%%MARATHON%%%%DATADIR%%/marathon/M1A1 Map.sceA
+%%MARATHON%%%%DATADIR%%/marathon/M1A1 Music.aif
+%%MARATHON%%%%DATADIR%%/marathon/M1A1 Shapes.shpA
+%%MARATHON%%%%DATADIR%%/marathon/M1A1 Sounds.sndA
+%%MARATHON%%%%DATADIR%%/marathon/Read Me M1A1.html
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/general/controlpanels01.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/general/controlpanels02.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/general/controlpanels03.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/general/controlpanels04.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/general/herringbone.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/general/rechargers01.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/general/rechargers02.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/general/rechargers03.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/general/rechargers04.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/general/rechargers05.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/general/rechargers06.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/general/special01.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/general/special02.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/general/special03.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/general/starscape.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/general/stripes.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/general/teleporter.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/general/terminal01.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/general/terminal02.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/general/terminal03.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/general/terminal04.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/general/terminal05.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/general/terminal06.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/grendel/grendel11.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/grendel/grendel12.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/grendel/grendel13.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/grendel/grendel51.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/grendel/grendel52.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/grendel/grendel53.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/grendel/grendel54.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/grendel/grendel55.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/grendel/grendel56.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/grendel/grendel57.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/grendel/grendel58.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/grendel/grendel59.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/grendel/grendel60.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/grendel/grendel_night.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/grendel/grendel_noon.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava05.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava06.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava07.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava08.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava09.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava10.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava11.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava12.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava14.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava15.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava16.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava17.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava18.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava19.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava20.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava21.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava22.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava23.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava24.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava25.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava26.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava27.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava28.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava29.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava30.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava31.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava32.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/lava/lava33.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor00.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor01.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor02.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor03.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor04.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor05.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor06.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor07.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor08.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor09.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor11.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor12.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor13.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor14.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor15.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor16.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor17.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor18.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor19.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor20.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor21.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor22.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor23.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor24.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor25.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor26.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor27.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor28.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor29.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor30.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor31.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor32.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor33.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor34.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor35.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor36.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor37.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor38.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor39.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor40.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor41.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor42.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor43.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor44.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor45.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor46.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor47.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor48.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pfhor/pfhor49.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pid/pid37.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pid/pid38.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pid/pid39.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pid/pid40.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pid/pid41.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/pid/pid63.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage05.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage06.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage07.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage08.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage09.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage10.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage11.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage14.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage15.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage16.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage17.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage18.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage19.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage20.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage21.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage22.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage23.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage24.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage25.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage26.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage28.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage29.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage30.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage31.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage32.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage33.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage34.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage36.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage42.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage43.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/sewage/sewage55.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water06.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water07.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water08.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water09.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water10.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water11.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water13.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water14.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water15.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water16.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water17.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water18.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water19.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water20.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water21.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water22.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water23.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water24.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water25.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water26.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water27.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water28.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water29.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water31.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water32.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water33.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water34.dds
+%%MARATHON%%%%DATADIR%%/marathon/Revival DDS/water/water35.dds
+%%MARATHON%%%%DATADIR%%/marathon/Scripts/M1A1.mml
+%%TEXTURES%%%%MARATHON%%%%DATADIR%%/marathon/Scripts/Textures M1
+%%MARATHON%%%%DATADIR%%/marathon/Scripts/havoc.mml
+%%MARATHON%%%%DATADIR%%/marathon/Scripts/monsters.mml
+%%MARATHON%%%%DATADIR%%/marathon/Scripts/scenery.mml
+%%MARATHON%%%%DATADIR%%/marathon/Scripts/settings.mml
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/button_c.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/button_l.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/button_r.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/frame_b.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/frame_bl.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/frame_br.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/frame_l.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/frame_r.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/frame_t.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/frame_tl.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/frame_tr.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/list_b.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/list_bl.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/list_br.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/list_l.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/list_r.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/list_t.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/list_tl.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/list_tr.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/resources
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/slider.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/slider_c.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/slider_l.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/slider_r.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/theme.mml
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/thumb_b.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/thumb_bc.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/thumb_c.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/thumb_t.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Themes/Default/thumb_tc.bmp
+%%MARATHON%%%%DATADIR%%/marathon/Tracks/aliensagain.mp3
+%%MARATHON%%%%DATADIR%%/marathon/Tracks/chomber.mp3
+%%MARATHON%%%%DATADIR%%/marathon/Tracks/fatman.mp3
+%%MARATHON%%%%DATADIR%%/marathon/Tracks/flippant.mp3
+%%MARATHON%%%%DATADIR%%/marathon/Tracks/flowersinheaven.mp3
+%%MARATHON%%%%DATADIR%%/marathon/Tracks/freedom.mp3
+%%MARATHON%%%%DATADIR%%/marathon/Tracks/guardians.mp3
+%%MARATHON%%%%DATADIR%%/marathon/Tracks/landing.mp3
+%%MARATHON%%%%DATADIR%%/marathon/Tracks/leela.mp3
+%%MARATHON%%%%DATADIR%%/marathon/Tracks/newpacific.mp3
+%%MARATHON%%%%DATADIR%%/marathon/Tracks/newpacific_reprise.mp3
+%%MARATHON%%%%DATADIR%%/marathon/Tracks/rapture.mp3
+%%MARATHON%%%%DATADIR%%/marathon/Tracks/rushing.mp3
+%%MARATHON%%%%DATADIR%%/marathon/Tracks/splash_marathon.mp3
+%%MARATHON%%%%DATADIR%%/marathon/Tracks/swirls.mp3
+%%MARATHON%%%%DATADIR%%/marathon/Tracks/whataboutbob.mp3
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/00.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/01.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/02.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/03.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_25.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_25_1.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_25_3.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_26.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_26_1.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_26_3.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_27.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_27_1.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_27_3.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_28.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_28_1.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_28_3.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_29.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_29_1.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_29_3.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_30.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_30_1.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_30_3.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_31.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_31_1.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_31_3.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_32.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_32_1.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_32_3.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_33.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_33_1.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_33_3.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_34.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_34_1.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/16_34_3.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/25.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/26.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/27.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/28.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/29.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/30.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/31.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/34.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/35.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/36.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/37.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/48.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/49.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/50.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/51.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/56.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/57.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/58.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/59.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/60.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/61.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/62.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/74.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/75.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/76.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/9_61.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/9_65.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/9_67.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/9_68.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/9_69.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/9_70.dds
+%%SHOTS_FIRED%%%%DATADIR%%/tex/shots/9_71.dds
+%%SHOTS_FIRED%%@dirrm %%DATADIR%%/tex/shots
+%%SHOTS_FIRED%%@dirrm %%DATADIR%%/tex
+%%MARATHON%%@dirrm %%DATADIR%%/marathon/Tracks
+%%MARATHON%%@dirrm %%DATADIR%%/marathon/Themes/Default
+%%MARATHON%%@dirrm %%DATADIR%%/marathon/Themes
+%%MARATHON%%@dirrm %%DATADIR%%/marathon/Scripts
+%%MARATHON%%@dirrm %%DATADIR%%/marathon/Revival DDS/water
+%%MARATHON%%@dirrm %%DATADIR%%/marathon/Revival DDS/sewage
+%%MARATHON%%@dirrm %%DATADIR%%/marathon/Revival DDS/pid
+%%MARATHON%%@dirrm %%DATADIR%%/marathon/Revival DDS/pfhor
+%%MARATHON%%@dirrm %%DATADIR%%/marathon/Revival DDS/lava
+%%MARATHON%%@dirrm %%DATADIR%%/marathon/Revival DDS/grendel
+%%MARATHON%%@dirrm %%DATADIR%%/marathon/Revival DDS/general
+%%MARATHON%%@dirrm %%DATADIR%%/marathon/Revival DDS
+%%MARATHON%%@dirrm %%DATADIR%%/marathon
+%%INFINITY%%@dirrm %%DATADIR%%/infinity/Themes/Default
+%%INFINITY%%@dirrm %%DATADIR%%/infinity/Themes
+%%TEXTURES%%%%INFINITY%%@dirrm %%DATADIR%%/infinity/Textures
+%%INFINITY%%@dirrm %%DATADIR%%/infinity/Scripts
+%%INFINITY%%@dirrm %%DATADIR%%/infinity/Physics Models
+%%INFINITY%%@dirrm %%DATADIR%%/infinity/Marathon Infinity Textures/21 Pfhor
+%%INFINITY%%@dirrm %%DATADIR%%/infinity/Marathon Infinity Textures/20 Jjaro
+%%INFINITY%%@dirrm %%DATADIR%%/infinity/Marathon Infinity Textures/19 Sewage
+%%INFINITY%%@dirrm %%DATADIR%%/infinity/Marathon Infinity Textures/18 Lava
+%%INFINITY%%@dirrm %%DATADIR%%/infinity/Marathon Infinity Textures/17 Water
+%%INFINITY%%@dirrm %%DATADIR%%/infinity/Marathon Infinity Textures
+%%LANDSCAPES%%%%INFINITY%%@dirrm %%DATADIR%%/infinity/Landscapes
+%%INFINITY%%@dirrm %%DATADIR%%/infinity
+%%DURANDAL%%@dirrm %%DATADIR%%/durandal/Themes/Default
+%%DURANDAL%%@dirrm %%DATADIR%%/durandal/Themes
+%%TEXTURES%%%%DURANDAL%%@dirrm %%DATADIR%%/durandal/Textures
+%%DURANDAL%%@dirrm %%DATADIR%%/durandal/Scripts
+%%DURANDAL%%@dirrm %%DATADIR%%/durandal/Physics Models
+%%DURANDAL%%@dirrm %%DATADIR%%/durandal/Marathon 2 Textures/21 Pfhor
+%%DURANDAL%%@dirrm %%DATADIR%%/durandal/Marathon 2 Textures/19 Sewage
+%%DURANDAL%%@dirrm %%DATADIR%%/durandal/Marathon 2 Textures/18 Lava
+%%DURANDAL%%@dirrm %%DATADIR%%/durandal/Marathon 2 Textures/17 Water
+%%DURANDAL%%@dirrm %%DATADIR%%/durandal/Marathon 2 Textures
+%%LANDSCAPES%%%%DURANDAL%%@dirrm %%DATADIR%%/durandal/Landscapes
+%%DURANDAL%%@dirrm %%DATADIR%%/durandal
+%%SHOTS_FIRED%%@dirrm %%DATADIR%%/Scripts
