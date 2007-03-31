@@ -2,6 +2,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/.packlist
 %%SITE_PERL%%/XML/Compile.pm
 %%SITE_PERL%%/XML/Compile.pod
+%%SITE_PERL%%/XML/Compile/Dumper.pm
+%%SITE_PERL%%/XML/Compile/Dumper.pod
 %%SITE_PERL%%/XML/Compile/SOAP/Operation.pm
 %%SITE_PERL%%/XML/Compile/SOAP/Operation.pod
 %%SITE_PERL%%/XML/Compile/Schema.pm
