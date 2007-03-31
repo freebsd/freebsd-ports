@@ -30,6 +30,7 @@
     SUBDIR += airrox
     SUBDIR += alephone
     SUBDIR += alephone-data
+    SUBDIR += alephone-scenarios
     SUBDIR += alienarena
     SUBDIR += alienarena-data
     SUBDIR += alienblaster

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export ALEPHONE_DATA="%%DATADIR%%:%%DATADIR%%/%%GAMEDIR%%"
+
+exec alephone "$@"
