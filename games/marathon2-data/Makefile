@@ -14,9 +14,11 @@ DISTNAME=	marathon2
 MAINTAINER=	evantd@yahoo.com
 COMMENT=	Data files for the alephone port from Marathon 2
 
+DEPRECATED=	Installed by games/alephone-data with wrapper script
+EXPIRATION_DATE=2007-04-28
+
 RUN_DEPENDS=	alephone:${PORTSDIR}/games/alephone
 
-USE_X_PREFIX=	yes
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_CDROM=	Bungie/Microsoft do not allow charging for Marathon data files.
