@@ -1,0 +1,13 @@
+The FreeCol team aims to create an Open Source version of
+Colonization (released under the GPL). At first we'll try
+to make an exact clone of Colonization. The visuals will
+be brought up to date with more recent standards but will
+remain clean, simple and functional. Certain new 'features'
+will be implemented but the gameplay and the rules will be
+exactly the same as the original game. Examples of modern
+features are: an isometric map and multiplayer support.
+
+WWW: http://freecol.org/
+
+- Alex Dupre
+ale@FreeBSD.org
