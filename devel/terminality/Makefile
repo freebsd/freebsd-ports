@@ -16,9 +16,9 @@ MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	A cross-platform terminal manipulation library
 
 do-install:
-	@${MKDIR} ${TARGETDIR}/include/tn
-	${INSTALL_DATA} ${WRKSRC}/*.h ${TARGETDIR}/include/tn
-	${INSTALL_DATA} ${WRKSRC}/libtn.a ${TARGETDIR}/lib
+	@${MKDIR} ${PREFIX}/include/tn
+	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/tn
+	${INSTALL_DATA} ${WRKSRC}/libtn.a ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/screenshot
 	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}

@@ -27,11 +27,11 @@ MAN1=		gsed.1
 
 # Local variables
 PATCH_SUBDIRS=	. doc lib sed
-DATADIR=	${TARGETDIR}/share/${PKGBASE}
+DATADIR=	${PREFIX}/share/${PKGBASE}
 SAMP_FILES=	binary*.sed dc.sed
-EXAMPLESDIR=	${TARGETDIR}/share/examples/${PKGBASE}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGBASE}
 PORTDOCS=	AUTHORS BUGS COPYING COPYING.DOC NEWS README THANKS
-DOCSDIR=	${TARGETDIR}/share/doc/${PKGBASE}
+DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 
 .include <bsd.port.pre.mk>
 

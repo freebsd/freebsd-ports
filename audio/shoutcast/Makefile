@@ -41,11 +41,11 @@ post-patch:
 		${WRKSRC}/sc_serv.conf
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/sc_serv ${TARGETDIR}/sbin
-	@${MKDIR} ${TARGETDIR}/etc/shoutcast
-	@${INSTALL_DATA} ${WRKSRC}/sc_serv.conf ${TARGETDIR}/etc/shoutcast/sc_serv.conf.sample
-	@[ -f ${TARGETDIR}/etc/shoutcast/sc_serv.conf ] || \
-		${INSTALL_DATA} ${WRKSRC}/sc_serv.conf ${TARGETDIR}/etc/shoutcast/sc_serv.conf
+	@${INSTALL_PROGRAM} ${WRKSRC}/sc_serv ${PREFIX}/sbin
+	@${MKDIR} ${PREFIX}/etc/shoutcast
+	@${INSTALL_DATA} ${WRKSRC}/sc_serv.conf ${PREFIX}/etc/shoutcast/sc_serv.conf.sample
+	@[ -f ${PREFIX}/etc/shoutcast/sc_serv.conf ] || \
+		${INSTALL_DATA} ${WRKSRC}/sc_serv.conf ${PREFIX}/etc/shoutcast/sc_serv.conf
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README.TXT ${DOCSDIR}

@@ -24,7 +24,7 @@ PLIST_FILES=	bin/cryptcat
 PORTDOCS=	README.cryptcat
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cryptcat ${TARGETDIR}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/cryptcat ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
