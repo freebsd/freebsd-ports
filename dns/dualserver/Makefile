@@ -28,7 +28,7 @@ do-build:
 	${CXX} -o ${WRKSRC}/dualserver ${WRKSRC}/dualserver.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dualserver ${TARGETDIR}/sbin
-	${INSTALL_DATA} ${WRKSRC}/dualserver.ini ${TARGETDIR}/etc/dualserver.conf.sample
+	${INSTALL_PROGRAM} ${WRKSRC}/dualserver ${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/dualserver.ini ${PREFIX}/etc/dualserver.conf.sample
 
 .include <bsd.port.post.mk>

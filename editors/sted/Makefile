@@ -27,8 +27,8 @@ post-patch:
 	@${REINPLACE_CMD} "s|<curses.h>|<ncurses.h>|" ${WRKSRC}/sted.c
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/sted ${TARGETDIR}/bin
-	@ ${INSTALL_MAN} ${WRKSRC}/sted.1 ${TARGETDIR}/man/man1
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/sted ${PREFIX}/bin
+	@ ${INSTALL_MAN} ${WRKSRC}/sted.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
