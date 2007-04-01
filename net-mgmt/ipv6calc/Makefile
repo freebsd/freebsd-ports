@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipv6calc
-PORTVERSION=	0.61.0
+PORTVERSION=	0.70.0
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	ftp://ftp.bieringer.de/pub/linux/IPv6/ipv6calc/
 
@@ -16,6 +16,8 @@ COMMENT=	Convert, change and calculate with IPv6 addresses
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+
+PLIST_FILES=	bin/ipv6calc bin/ipv6logconv bin/ipv6logstats
 
 MAN8=		ipv6calc.8 ipv6logconv.8 ipv6logstats.8
 
