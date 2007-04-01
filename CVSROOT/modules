@@ -8236,6 +8236,7 @@ openbox		ports/x11-wm/openbox
 openbox-themes	ports/x11-themes/openbox-themes
 openbsm		ports/security/openbsm
 opencascade	ports/cad/opencascade
+opencascade-tutorial	ports/cad/opencascade-tutorial
 opencdk		ports/security/opencdk
 openclipart	ports/graphics/openclipart
 openct		ports/security/openct
