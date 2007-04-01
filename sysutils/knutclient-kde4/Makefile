@@ -10,7 +10,7 @@ PORTVERSION=	0.8.6
 CATEGORIES=	sysutils kde
 MASTER_SITES=	ftp://ftp.buzuluk.cz/pub/alo/knutclient/stable/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	A visual client for UPS system NUT
 
 USE_KDELIBS_VER=3
