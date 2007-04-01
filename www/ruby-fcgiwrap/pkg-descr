@@ -1,0 +1,6 @@
+FastCGI Wrapper (fcgiwrap) is a handy FastCGI wrapper library for
+Ruby, with which you can easily write a FastCGI wrapper script for an
+existing CGI script written in Ruby.
+
+Author:	Tatsuki Sugiura <sugi@nemui.org>
+WWW:	http://rubyforge.org/projects/fcgi/

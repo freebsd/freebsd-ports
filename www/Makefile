@@ -1026,6 +1026,7 @@
     SUBDIR += ruby-borges
     SUBDIR += ruby-div
     SUBDIR += ruby-fcgi
+    SUBDIR += ruby-fcgiwrap
     SUBDIR += ruby-google
     SUBDIR += ruby-gtkhtml2
     SUBDIR += ruby-gtkmozembed
