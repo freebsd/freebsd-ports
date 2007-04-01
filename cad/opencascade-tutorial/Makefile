@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		opencascade-tutorial
-PORTVERSION=		6.1
+PORTVERSION=		6.2
 CATEGORIES=		cad
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	thierry
@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	--with-gl-include=${X11BASE}/include	\
 		--with-qt-dir=${QTDIR}			\
 		--enable-qt-mt				\
 		--with-cascade-dir=${CASROOT}
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 
 WRKSRC=		${WRKDIR}/opencascade-${PORTVERSION}/samples/tutorial
 CONFIGURE_LOG=	adm/${OPSYS}/config.log
@@ -43,6 +44,7 @@ SUB_LIST=	INSTDIR=${INSTDIR}
 PLIST_SUB=	INSTDIR=${LINSTDIR}
 
 pre-configure:
+	${CHMOD} a+x ${WRKSRC}/${CONFIGURE_SCRIPT}
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|'	\
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 
