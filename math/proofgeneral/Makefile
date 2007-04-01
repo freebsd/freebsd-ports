@@ -50,10 +50,6 @@ USE_PERL5=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN="Does not build on amd64"
-.endif
-
 MAKE_ARGS+=	EMACS_NAME=${EMACS_NAME} EMACS_SITE_LISPDIR=${EMACS_SITE_LISPDIR}
 
 SUB_FILES=	pkg-message
