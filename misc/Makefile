@@ -483,6 +483,7 @@
     SUBDIR += xbiso
     SUBDIR += xd
     SUBDIR += xdelta
+    SUBDIR += xdelta3
     SUBDIR += xenmenu
     SUBDIR += xfce4-appfinder
     SUBDIR += xfce4-artwork
