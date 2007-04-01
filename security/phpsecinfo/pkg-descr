@@ -1,0 +1,18 @@
+### WHAT IS PHPSECINFO?
+PHPSecInfo is a PHP environment security auditing tool modeled after the
+phpsecinfo() function.  From a single function call, PHPSecInfo runs a
+series of tests on your PHP environment to identify potential security
+issues and offer suggestions.  It can be useful as part of a multilayered
+security approach.
+
+
+#### WHAT IS PHPSECINFO NOT?
+* It is not a replacement for secure coding practices
+* It does not audit PHP code
+* It is not comprehensive test for either your hosting environment
+  or your web application
+* It is not the "final word."  PHPSecInfo identifies *potential* problems
+  and offers suggestions for improvement.  Your environment may _require_
+  certain settings that trigger cautions or warnings.
+
+WWW: http://phpsec.org/projects/phpsecinfo/
