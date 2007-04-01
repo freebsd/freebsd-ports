@@ -18,6 +18,9 @@ COMMENT=	The cyrus ACAP (Application Configuration Access Protocol) server
 LIB_DEPENDS=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 BUILD_DEPENDS=	sml:${PORTSDIR}/lang/sml-nj
 
+DEPRECATED=	this software is obsolete
+EXPIRATION_DATE=	2007-04-07
+
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-sasldir=${LOCALBASE}/lib
