@@ -15,4 +15,6 @@ GST_PLUGIN=	swfdec
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
+BROKEN=		Does not compile
+
 .include "${MASTERDIR}/Makefile"
