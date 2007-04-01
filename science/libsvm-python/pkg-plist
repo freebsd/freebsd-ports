@@ -1,0 +1,6 @@
+%%EXAMPLESDIR%%/cross_validation.py
+%%EXAMPLESDIR%%/svm_test.py
+%%EXAMPLESDIR%%/test_cross_validation.py
+%%PYTHON_SITELIBDIR%%/svm.py
+%%PYTHON_SITELIBDIR%%/svmc.so
+@dirrm %%EXAMPLESDIR%%

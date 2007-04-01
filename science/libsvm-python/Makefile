@@ -11,6 +11,6 @@ MAINTAINER=	rafan@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../../science/libsvm
 
-WITH_PYTHON=	yes
+PLIST=		${.CURDIR}/pkg-plist
 
 .include "${MASTERDIR}/Makefile"

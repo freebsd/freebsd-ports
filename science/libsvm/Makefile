@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libsvm
-PORTVERSION=	2.83
-PORTREVISION=	0
+PORTVERSION=	2.84
 PORTEPOCH=	1
 CATEGORIES=	science math
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/libsvm/ \
@@ -18,18 +17,24 @@ COMMENT=	A library for Support Vector Machines
 
 USE_ZIP=	yes
 
-.if defined(WITH_PYTHON)
+.if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} == "-python"
 CATEGORIES+=	python
+
 USE_PYTHON=	yes
-PLIST_SUB+=	LIBSVM_PYTHON=""
+
+MAKE_ARGS=	PYTHON_INCLUDEDIR=${PYTHON_INCLUDEDIR}
+
 PYEXAMPLES=	python/cross_validation.py \
 		python/svm_test.py \
 		python/test_cross_validation.py
-.else
-PLIST_SUB+=	LIBSVM_PYTHON="@comment "
-.endif
 
-TXT_DOCS=	COPYRIGHT README FAQ.html README.python
+TXT_DOCS=	README.python
+
+BUILD_WRKSRC=	${WRKSRC}/python
+
+.else
+
+TXT_DOCS=	COPYRIGHT README FAQ.html README.tools
 .if !defined(NOPORTDOCS)
 PORTDOCS=	${TXT_DOCS}
 .endif
@@ -38,50 +43,52 @@ TOOLS=		tools/grid.py tools/easy.py tools/subset.py
 SUB_FILES=	pkg-message
 SUB_LIST=	DATADIR=${DATADIR}
 
+.endif
+
 .include <bsd.port.pre.mk>
 
-pre-everything::
-.if defined(WITH_PYTHON)
-	@${ECHO_CMD} "Build with Python interface."
-.else
-	@${ECHO_CMD} "You can enable Python interface by defining WITH_PYTHON."
-.endif
-
 post-patch:
-.if defined(WITH_PYTHON)
-	@${REINPLACE_CMD} -e "s,%%PYTHON_INCLUDEDIR%%,${PYTHON_INCLUDEDIR}," ${WRKSRC}/python/Makefile
+
+post-extract:
+.if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} == "-python"
+	@${CP} ${WRKSRC}/python/README ${WRKSRC}/README.python
+.else
+	@${CP} ${WRKSRC}/tools/README ${WRKSRC}/README.tools
 .endif
 
-post-build:
-.if defined(WITH_PYTHON)
-	cd ${WRKSRC}/python; ${MAKE}
-.endif
-
+.if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} == "-python"
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/svm-train ${TARGETDIR}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/svm-predict ${TARGETDIR}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/svm-scale ${TARGETDIR}/bin/
-.if defined(WITH_PYTHON)
 	${INSTALL_SCRIPT} ${WRKSRC}/python/svm.py ${PYTHON_SITELIBDIR}/
 	${INSTALL_PROGRAM} ${WRKSRC}/python/svmc.so ${PYTHON_SITELIBDIR}/
 	${MKDIR} ${EXAMPLESDIR}
 	for f in ${PYEXAMPLES}; do \
 	  ${INSTALL_DATA} ${WRKSRC}/$$f ${EXAMPLESDIR}; \
 	done
-.endif
+
+.else
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/svm-train ${TARGETDIR}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/svm-predict ${TARGETDIR}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/svm-scale ${TARGETDIR}/bin/
 	${MKDIR} ${DATADIR}
 	for f in ${TOOLS}; do \
 	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DATADIR}; \
 	done
+
+.endif
+
+post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${CP} ${WRKSRC}/python/README ${WRKSRC}/README.python
+	@${MKDIR} ${DOCSDIR}
 	for f in ${TXT_DOCS}; do \
 	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
 	done
 .endif
-	@${ECHO_CMD} ""
+.if defined(PKGNAMESUFFIX) && ${PKGNAMESUFFIX} != "-python"
+	@${ECHO_MSG} ""
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD} ""
+	@${ECHO_MSG} ""
+.endif
 
 .include <bsd.port.post.mk>
