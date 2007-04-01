@@ -36,12 +36,6 @@ CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/incl
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=	does not build
-WITHOUT_GPAC=	yes
-WITHOUT_GTK2=	yes
-.endif
-
 .if !defined(WITHOUT_GTK2) || ${HAVE_GNOME:Mgtk20}!=""
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20
