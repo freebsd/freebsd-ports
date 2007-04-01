@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	OpenDivX decoding engine from Project Mayo
 
 USE_AUTOTOOLS=	libtool:15

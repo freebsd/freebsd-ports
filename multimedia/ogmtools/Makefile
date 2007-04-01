@@ -10,7 +10,7 @@ PORTVERSION=	1.5
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/ogmtools/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Tools to extract from/get info about/create OGG media streams
 
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis

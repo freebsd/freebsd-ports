@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.projectmayo.com/dnload/divxcore/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	encore${PORTVERSION:E}src
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	OpenDivX encoding engine from Project Mayo
 
 ONLY_FOR_ARCHS=	i386

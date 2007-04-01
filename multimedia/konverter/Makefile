@@ -11,7 +11,7 @@ PORTREVISION=	9
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://www.tr0ll.net/kraus.tk/projects/konverter/sources/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	KDE MEncoder frontend
 
 BUILD_DEPENDS=	avimerge:${PORTSDIR}/multimedia/transcode \

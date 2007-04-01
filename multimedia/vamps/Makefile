@@ -11,7 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	vamps
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	High performance tool to transcode DVD videos to a smaller size
 
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread

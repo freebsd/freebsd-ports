@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Convert DVD subtitles into text format (subrip srt) or VobSub format
 
 LIB_DEPENDS=	netpbm:${PORTSDIR}/graphics/netpbm \

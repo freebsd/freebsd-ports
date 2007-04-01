@@ -13,7 +13,7 @@ MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	decore${PORTVERSION:E}src
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	OpenDivX decoding engine from Project Mayo (development version)
 
 ONLY_FOR_ARCHS=	i386

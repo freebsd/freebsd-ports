@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Gui, which shall simplify shrinking a DVD-9 to a DVD-5
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk

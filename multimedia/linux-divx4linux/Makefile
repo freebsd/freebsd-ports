@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.divx.com/divx/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-std-${RELEASE_DATE}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Linux binary release of DivX (TM) Codec
 
 RESTRICTED=	unsure of licensing issues

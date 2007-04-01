@@ -11,7 +11,7 @@ CATEGORIES=	multimedia audio
 MASTER_SITES=	http://dl.matroska.org/downloads/libmatroska/ \
 		http://www.bunkus.org/videotools/mkvtoolnix/sources/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Extensible Multimedia Container Format
 
 LIB_DEPENDS=	ebml.0:${PORTSDIR}/textproc/libebml
