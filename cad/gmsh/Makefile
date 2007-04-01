@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmsh
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -36,8 +36,6 @@ TETGEN_PORTDIR=		${PORTSDIR}/math/tetgen
 TETGEN_SRC=		predicates.cxx tetgen.cxx tetgen.h
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-fltk-prefix=${X11BASE} \
@@ -46,13 +44,71 @@ CONFIGURE_ARGS=	--with-fltk-prefix=${X11BASE} \
 		--with-png-prefix=${LOCALBASE}
 ALL_TARGET=	all utils
 
+.if !defined(WITHOUT_HDF5) && !defined(WITHOUT_OCC)
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
+.endif
+
+.if !defined(WITHOUT_MED)
+LIB_DEPENDS+=		med.2:${PORTSDIR}/french/med
+CONFIGURE_ARGS+=	--enable-med --with-med-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--disable-med
+.endif
+
+.if !defined(WITHOUT_HDF5)
+LIB_DEPENDS+=		hdf5.0:${PORTSDIR}/science/hdf5
+CONFIGURE_ARGS+=	--enable-hdf5 --with-hdf5-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--disable-hdf5
+.endif
+
+.if !defined(WITHOUT_CGNS)
+LIB_DEPENDS+=		cgns.0:${PORTSDIR}/science/cgnslib
+CONFIGURE_ARGS+=	--enable-cgns --with-cgns-prefix=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--disable-cgns
+.endif
+
+.if !defined(WITHOUT_OCC)
+LIB_DEPENDS+=		TKernel.0:${PORTSDIR}/cad/opencascade
+CONFIGURE_ARGS+=	--enable-occ --with-occ-prefix=${LOCALBASE}/OpenCAS/ros
+CONFIGURE_ENV+=		ARCH="${ARCH}"
+.else
+CONFIGURE_ARGS+=	--disable-occ
+.endif
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 MAN1=		gmsh.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-CONFIGURE_ARGS+=	--disable-netgen	# Problem with Netgen & gcc-295
-BROKEN=		Does not compile with gcc-295
+pre-everything::
+	@${ECHO_MSG} ""
+.if !defined(WITHOUT_TRIANGLE)
+	@${ECHO_MSG} "Define WITHOUT_TRIANGLE to disable Triangle as an alternative"
+	@${ECHO_MSG} "isotropic 2D mesh generator."
+	@${ECHO_MSG} ""
+.endif
+.if !defined(WITHOUT_TETGEN)
+	@${ECHO_MSG} "Define WITHOUT_TETGEN to disable Tetgen as an alternative"
+	@${ECHO_MSG} "3D mesh generator."
+	@${ECHO_MSG} ""
+.endif
+.if !defined(WITHOUT_MED)
+	@${ECHO_MSG} "Define WITHOUT_MED to disable MED support."
+	@${ECHO_MSG} ""
+.endif
+.if !defined(WITHOUT_MED)
+	@${ECHO_MSG} "Define WITHOUT_HDF5 to disable HDF5 support."
+	@${ECHO_MSG} ""
+.endif
+.if !defined(WITHOUT_CGNS)
+	@${ECHO_MSG} "Define WITHOUT_CGNS to disable CGNS support."
+	@${ECHO_MSG} ""
+.endif
+.if !defined(WITHOUT_OCC)
+	@${ECHO_MSG} "Define WITHOUT_OCC to disable STEP, IGES and BREP support"
+	@${ECHO_MSG} "(through OpenCascade)."
+	@${ECHO_MSG} ""
 .endif
 
 post-extract:
@@ -86,4 +142,4 @@ do-install:
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
