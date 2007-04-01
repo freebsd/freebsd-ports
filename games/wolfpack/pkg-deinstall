@@ -1,0 +1,41 @@
+#! /bin/sh
+
+PATH=/bin:/usr/bin:/usr/sbin
+INSTDIR=${PKG_PREFIX}/share/wolfpack
+DATADIR=${PKG_PREFIX}/var/wolfpack
+CONFDIR=${PKG_PREFIX}/etc/wolfpack
+
+USER=wolfpack
+GROUP=${USER}
+
+case $2 in
+DEINSTALL)
+	if cmp -s ${CONFDIR}/econfig ${CONFDIR}/econfig.orig; then
+		rm -f ${CONFDIR}/econfig
+	fi
+	;;
+
+POST-DEINSTALL)
+	if pw group show "${GROUP}" 2>/dev/null; then
+		if pw groupdel ${GROUP}; then
+			echo "Removed group \"${GROUP}\"."
+		else
+			echo "Removing group \"${GROUP}\" failed..."
+			exit 1
+		fi
+	else
+		echo "Group \"${GROUP}\" doesn't exist!"
+	fi
+
+	if pw user show "${USER}" 2>/dev/null; then
+		if pw userdel ${USER}; then
+			echo "Removed user \"${USER}\"."
+		else
+			echo "Removing user \"${USER}\" failed..."
+			exit 1
+		fi
+	else
+		echo "User \"${USER}\" doesn't exist!"
+	fi
+	;;
+esac
