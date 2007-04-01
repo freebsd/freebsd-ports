@@ -13543,6 +13543,7 @@ ruby-exmars	ports/games/ruby-exmars
 ruby-extensions	ports/lang/ruby-extensions
 ruby-fam	ports/devel/ruby-fam
 ruby-fcgi	ports/www/ruby-fcgi
+ruby-fcgiwrap	ports/www/ruby-fcgiwrap
 ruby-fftw3	ports/math/ruby-fftw3
 ruby-filelock	ports/devel/ruby-filelock
 ruby-filemagic	ports/devel/ruby-filemagic
