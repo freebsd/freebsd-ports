@@ -9,8 +9,4 @@
 
   echo dovecot_enable="YES" >> /etc/rc.conf
  
- Further information on configuration can be found at:
- 
-  http://wiki.dovecot.org/
-
 ---------------------------------------------------------------------
