@@ -1,0 +1,11 @@
+--- ros/adm/make/DRAWEXE/Makefile.in.orig	Thu Mar 22 00:32:41 2007
++++ ros/adm/make/DRAWEXE/Makefile.in	Sat Mar 24 10:20:03 2007
+@@ -255,7 +255,7 @@
+ 	done
+ DRAWEXE$(EXEEXT): $(DRAWEXE_OBJECTS) $(DRAWEXE_DEPENDENCIES) 
+ 	@rm -f DRAWEXE$(EXEEXT)
+-	$(CXXLINK) $(DRAWEXE_LDFLAGS) $(DRAWEXE_OBJECTS) $(DRAWEXE_LDADD) $(LIBS)
++	$(CXXLINK) $(DRAWEXE_LDFLAGS) $(DRAWEXE_OBJECTS) $(DRAWEXE_LDADD) $(LIBS) $(PTHREAD_LIBS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core

@@ -1,0 +1,41 @@
+--- ros/src/WOKBuilderDef/LINKSHR.edl.orig	Tue Jul  6 22:05:28 2004
++++ ros/src/WOKBuilderDef/LINKSHR.edl	Thu Aug 10 16:03:17 2006
+@@ -239,6 +239,38 @@
+    $%CSF_LINKER %CSF_LINKER_CheckOpt %CSF_LINKER_CheckOut \
+   @end;
+ 
++ @if ( %Station == "bsd" ) then
++  @set %LINKSHR_Footer          = "LINKSHR_Footer";
++  @set %LINKSHR_ArchiveFullPath = "LINKSHR_ArchiveFullPath";
++
++  @template LINKSHR_ArchiveFullPath () is
++   $\^
++  @end;
++
++  @template LINKSHR_Header (%CSF_CXX_COMPILERLINKER, %Target, %LINKSHR_DBMSOpt, %CSF_LINKER_SysShared ) is
++   $%CSF_CXX_COMPILERLINKER %CSF_LINKER_SysShared %LINKSHR_DBMSOpt -o %Target \
++  @end;
++
++  @template LINKSHR_Footer (%CSF_LINKER_SysLib) is
++   $ %CSF_LINKER_SysLib;
++   $ set ld_status=$status
++   $ if ( $?LD_LIBRARY_PATH ) then
++   $  set ld_library_path=$LD_LIBRARY_PATH
++   $ endif
++  @end;
++
++  @template LINKSHR_CheckUndefHeader (
++             %Target, %LINKSHR_DBMSOpt, %LD_LIBRARY_PATH, %CSF_LINKER_CheckOpt, %CSF_LINKER_CheckOut, %CSF_LINKER
++       ) is
++   $if ( $?LD_LIBRARY_PATH ) then
++   $ setenv LD_LIBRARY_PATH %LD_LIBRARY_PATH:${LD_LIBRARY_PATH}
++   $else
++   $ setenv LD_LIBRARY_PATH %LD_LIBRARY_PATH
++   $endif
++   $echo "Check of undefined symbols with LD_LIBRARY_PATH : $LD_LIBRARY_PATH"
++   $%CSF_LINKER %CSF_LINKER_CheckOpt %CSF_LINKER_CheckOut \
++  @end;
++
+   @template LINKSHR_CheckUndefFooter () is
+     $ ;
+     $ if ( $status ) then

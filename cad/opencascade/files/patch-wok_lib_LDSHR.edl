@@ -1,0 +1,37 @@
+--- wok/lib/LDSHR.edl.orig	Fri Sep 21 10:07:40 2001
++++ wok/lib/LDSHR.edl	Thu Aug 10 15:57:59 2006
+@@ -75,6 +75,34 @@
+  @endif;
+ 
+ 
++ @if ( %Station == "bsd" ) then
++  @set %LDSHR_Footer          = "LDSHR_Footer";
++  @set %LDSHR_ArchiveFullPath = "LDSHR_ArchiveFullPath";
++
++  @template LDSHR_ArchiveFullPath ( %LibDir, %LibName ) is
++   $\^
++  @end;
++
++  @template LDSHR_Header ( %Target, %LDSHR_DBMSOpt, %CSF_LINKER_SysShared ) is
++   $/usr/bin/g++ %CSF_LINKER_SysShared %LDSHR_DBMSOpt -o %Target \
++  @end;
++
++  @template LDSHR_Footer () is
++   $ ;
++   $ set ld_status=$status;
++  @end;
++
++  @template LDSHR_CheckUndefHeader ( %Target, %LDSHR_DBMSOpt,%CSF_LINKER_CheckOpt ) is
++   $/usr/bin/ld  %CSF_LINKER_CheckOpt  %LDSHR_DBMSOpt -o %Target \
++  @end;
++
++  @template LDSHR_CheckUndefFooter () is
++   $ ;
++   $ set status=$ld_status;
++  @end;
++ @endif;
++
++
+  @if( %Station == "sun" ) then 
+   @set %LDSHR_Footer          = "LDSHR_Footer";
+   @set %LDSHR_ArchiveFullPath = "LDSHR_ArchiveFullPath";

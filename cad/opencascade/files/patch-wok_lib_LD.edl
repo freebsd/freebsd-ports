@@ -1,0 +1,16 @@
+--- wok/lib/LD.edl.orig	Fri Sep 21 10:07:39 2001
++++ wok/lib/LD.edl	Wed Aug  9 23:56:04 2006
+@@ -70,6 +70,13 @@
+  @endif;
+ 
+ 
++-- Definition du Link FreeBSD
++ @if ( %Station == "bsd" ) then
++    @template LD_Footer ( %Station ) is
++     $ ;
++    @end;
++ @endif;
++
+ -- Definition du Link Sun/Solaris 2.4
+ 
+   @if ( %Station == "sun" ) then 

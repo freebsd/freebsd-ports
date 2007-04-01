@@ -52,6 +52,7 @@
     SUBDIR += mars
     SUBDIR += netgen
     SUBDIR += ngspice_rework
+    SUBDIR += opencascade
     SUBDIR += oregano
     SUBDIR += pcb
     SUBDIR += pdnmesh

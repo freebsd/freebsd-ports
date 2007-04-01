@@ -1,0 +1,13 @@
+--- ros/src/jcas/jcas_CMPLRS.edl.orig	Fri Jan 28 20:30:11 2005
++++ ros/src/jcas/jcas_CMPLRS.edl	Thu Aug 10 23:20:02 2006
+@@ -6,6 +6,10 @@
+     @string %CMPLRS_CXX_Options += " -I" %CSF_JavaHome "/include/solaris";
+ @endif;
+ 
++@if ( %Station == "bsd" ) then
++    @string %CMPLRS_CXX_Options += " -I" %CSF_JavaHome "/include/freebsd";
++@endif;
++
+ @if ( %Station == "lin" ) then
+     @string %CMPLRS_CXX_Options += " -I" %CSF_JavaHome "/include/linux";
+ @endif;

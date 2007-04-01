@@ -1,0 +1,163 @@
+--- wok/lib/CMPLRS.edl.orig	Fri Mar  5 18:48:48 2004
++++ wok/lib/CMPLRS.edl	Wed Aug  9 23:27:51 2006
+@@ -483,6 +483,160 @@
+ 
+ 
+ 
++--     ######   #####  ######       --
++--     #     # #     # #     #      --
++--     #     # #       #     #      --
++--     ######   #####  #     #      --
++--     #     #       # #     #      --
++--     #     # #     # #     #      --
++--     ######   #####  ######       --
++
++
++ @if ( %Station == "bsd" ) then
++
++    @template CMPLRS_C_DTmpFile (%TmpFile) is
++     $>& %TmpFile \
++    @end;
++
++    @template CMPLRS_CXX_DTmpFile (%TmpFile) is
++     $>& %TmpFile \
++    @end;
++
++    @template CMPLRS_F77_DTmpFile (%TmpFile) is
++     $ \
++    @end;
++
++    @if ( %DebugMode == "True" ) then
++       @set %CMPLRS_CXX_ModeOpt = "-g -O0 -DDEB -D_DEBUG";
++       @set %CMPLRS_C_ModeOpt   = "-g -O0 -DDEB -D_DEBUG";
++       @set %CMPLRS_F77_ModeOpt = "-g     -DDEB -D_DEBUG";
++    @else
++       @set %CMPLRS_CXX_ModeOpt = "%%CXXFLAGS%% -DNDEBUG -DNo_Exception";
++       @set %CMPLRS_C_ModeOpt   = "%%CFLAGS%% -DNDEBUG -DNo_Exception";
++       @set %CMPLRS_F77_ModeOpt = "%%FFLAGS%% -DNDEBUG -DNo_Exception";
++    @endif;
++
++    @set %CMPLRS_CXX_WOKDirectives = "-MD ";
++    @set %CMPLRS_C_WOKDirectives   = "-MD ";
++    @set %CMPLRS_F77_WOKDirectives = "";
++
++
++    @template CMPLRS_F77_OptLine (
++                                       %CMPLRS_F77_COMPILER ,
++                                       %CMPLRS_F77_SysOptions ,
++                                       %CMPLRS_F77_ModeOpt
++                                        ) is
++    $Following parameters make up F77 compilation command in this order:
++    $CMPLRS_F77_COMPILER   = %CMPLRS_F77_COMPILER
++    $CMPLRS_F77_SysOptions = %CMPLRS_F77_SysOptions
++    $CMPLRS_F77_ModeOpt    = %CMPLRS_F77_ModeOpt
++    @end;
++
++   @template CMPLRS_F77_CmdLine ( %CMPLRS_F77_COMPILER , %CMPLRS_F77_SysOptions , %CMPLRS_F77_ModeOpt ,
++                                   %CMPLRS_F77_WOKDirectives , %Source , %OutputDir ,    %BaseName , %Entity ) is
++    $%CMPLRS_F77_COMPILER %CMPLRS_F77_SysOptions %CMPLRS_F77_ModeOpt %CMPLRS_F77_WOKDirectives  -c %Source -o %OutputDir/%BaseName.o
++    $echo '$F77_COMPILER %CMPLRS_F77_SysOptions %CMPLRS_F77_ModeOpt $INCDIRS  -c $SOURCE -o $OBJECT' > %OutputDir/../%Entity/.adm/f77.compile
++    $ touch %OutputDir/%BaseName.m
++    @end;
++
++
++    @template CMPLRS_C_OptLine (%CMPLRS_C_COMPILER ,
++                                              %CMPLRS_C_SysOptions ,
++                                              %CMPLRS_C_Options ,
++                                              %CMPLRS_C_ModeOpt ,
++                                              %CMPLRS_C_INCLUDE ,
++					      %IncDirectives ,
++                                              %CMPLRS_Unit_C_Options ,
++                                              %CMPLRS_C_WOKDirectives ,
++                                              %Entity ) is
++    $Following parameters make up C compilation command in this order:
++    $CMPLRS_C_COMPILER     = %CMPLRS_C_COMPILER
++    $CMPLRS_C_SysOptions   = %CMPLRS_C_SysOptions
++    $CMPLRS_C_Options      = %CMPLRS_C_Options
++    $CMPLRS_Unit_C_Options = %CMPLRS_Unit_C_Options
++    $CMPLRS_C_INCLUDE      = %CMPLRS_C_INCLUDE
++    $CMPLRS_C_WOKDirectives= %CMPLRS_C_WOKDirectives
++    $Dynamic include directives are :
++    $%IncDirectives
++    @end;
++    @template CMPLRS_C_CmdLine ( %CMPLRS_C_COMPILER ,
++                                              %CMPLRS_C_SysOptions ,
++                                              %CMPLRS_C_Options ,
++                                              %CMPLRS_C_ModeOpt ,
++	    				      %CMPLRS_CXX_DBMSOpt ,
++--                                              %C_Export ,
++					      %CMPLRS_C_INCLUDE ,
++                                              %IncDirectives ,
++                                              %CMPLRS_Unit_C_Options ,
++                                              %CMPLRS_C_WOKDirectives ,
++                                              %Source ,
++					      %BaseName,
++					      %OutputDir ,
++                                              %TmpFile , %Entity ) is
++      $cd %OutputDir &&  %CMPLRS_C_COMPILER %CMPLRS_C_SysOptions %CMPLRS_C_Options %CMPLRS_C_ModeOpt %CMPLRS_C_INCLUDE %CMPLRS_CXX_DBMSOpt  %IncDirectives %CMPLRS_Unit_C_Options %CMPLRS_C_WOKDirectives -c %Source -o %OutputDir/%BaseName.o
++      $set stat = $status
++      $echo '$C_COMPILER  %CMPLRS_C_SysOptions %CMPLRS_C_Options $INCDIRS %CMPLRS_C_ModeOpt %CMPLRS_C_INCLUDE %CMPLRS_CXX_DBMSOpt %CMPLRS_Unit_C_Options %CMPLRS_C_WOKDirectives -c $SOURCE -o $OBJECT' > %OutputDir/../%Entity/.adm/c.compile
++      $if ( $stat == 0 ) then
++      $  if ( -e %OutputDir/%BaseName.d ) then
++      $   sed -e '/:/d' -e 's/\\/ /g'  %OutputDir/%BaseName.d | tr ' ' '\012' | sort -u > %OutputDir/%BaseName.m
++      $  endif
++      $endif
++      $set status = $stat
++    @end;
++
++    @template CMPLRS_CXX_OptLine (%CMPLRS_CXX_COMPILER,
++						%CMPLRS_CXX_SysOptions ,
++                                                %CMPLRS_CXX_Options ,
++                                                %CMPLRS_CXX_ModeOpt , %CMPLRS_CXX_DBMSOpt ,
++						%CMPLRS_CXX_INCLUDE ,
++						%CMPLRS_CXX_WOKDirectives ,
++                                                %IncDirectives ,
++                                                %DBDirectives ,
++                                                %Entity ) is
++    $Following parameters make up C++ compilation command in this order:
++    $CMPLRS_CXX_COMPILER      = %CMPLRS_CXX_COMPILER
++    $CMPLRS_CXX_SysOptions    = %CMPLRS_CXX_SysOptions
++    $CMPLRS_CXX_Options       = %CMPLRS_CXX_Options
++    $CMPLRS_CXX_ModeOpt       = %CMPLRS_CXX_ModeOpt
++    $CMPLRS_CXX_DBMSOpt       = %CMPLRS_CXX_DBMSOpt
++    $CMPLRS_CXX_INCLUDE       = %CMPLRS_CXX_INCLUDE
++    $CMPLRS_CXX_WOKDirectives = %CMPLRS_CXX_WOKDirectives
++    $Dynamic include directives are :
++    $%IncDirectives
++    @end;
++
++    @template CMPLRS_CXX_CmdLine ( %CMPLRS_CXX_COMPILER,
++						%CMPLRS_CXX_SysOptions ,
++                                                %CMPLRS_CXX_Options ,
++                                                %CMPLRS_CXX_ModeOpt ,
++						%CMPLRS_CXX_DBMSOpt ,
++						%CMPLRS_CXX_INCLUDE ,
++						%CMPLRS_CXX_WOKDirectives ,
++                                                %IncDirectives ,
++                                                %DBDirectives ,
++                                                %Source,
++						%BaseName,
++                                                %OutputDir ,
++                                                %TmpFile , %Entity ) is
++      $cd %OutputDir && %CMPLRS_CXX_COMPILER %CMPLRS_CXX_SysOptions %CMPLRS_CXX_Options %CMPLRS_CXX_INCLUDE %CMPLRS_CXX_DBMSOpt %CMPLRS_CXX_ModeOpt %IncDirectives %DBDirectives %CMPLRS_CXX_WOKDirectives -c %Source -o %OutputDir/%BaseName.o  >& %TmpFile
++      $set stat = $status
++
++      $if ( $stat == 0 ) then
++      $  if ( -e %OutputDir/%BaseName.d ) then
++      $    sed -e '/:/d' -e 's/\\/ /g'  %OutputDir/%BaseName.d | tr ' ' '\012' | sort -u > %OutputDir/%BaseName.m
++      $  endif
++      $endif
++      $if( -e %TmpFile ) grep ':' %TmpFile
++      $/bin/rm -f %TmpFile
++      $set status = $stat
++
++    @end;
++
++
++ @endif;
++
++
++
+ --      #####  #     # #     #      --
+ --     #     # #     # ##    #      --
+ --     #       #     # # #   #      --

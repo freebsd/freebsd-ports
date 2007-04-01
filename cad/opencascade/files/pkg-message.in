@@ -1,0 +1,21 @@
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+License warning: in short, Open CASCADE Technology Public License is LGPL-like
+with certain differences. You are permitted to use Open CASCADE Technology
+within commercial environments and you are obliged to acknowledge its use.
+You are also obliged to send your modifications of the original source code (if
+you have made any) to the Initial Developer (i.e. Open CASCADE S.A.S.).
+
+Open CASCADE has been installed under %%OCCROOT%%
+and CASROOT must be set to %%OCCROOT%%/ros.
+
+You should then install the following ports:
+
+- cad/%%PORTNAME%%-tutorial
+- cad/%%PORTNAME%%-samples-qt
+- cad/%%PORTNAME%%-samples-java
+
+To get started, please read the documentation:
+file://%%OCCROOT%%/doc/index.htm
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

@@ -1,0 +1,13 @@
+--- wok/lib/JAVA.edl.orig	Tue Nov 13 18:01:22 2001
++++ wok/lib/JAVA.edl	Wed Aug  9 23:53:21 2006
+@@ -32,6 +32,10 @@
+     @string %CXX_JAVA += " -I" %CSF_JavaHome "/include/solaris ";
+ @endif;
+ 
++@if ( %Station == "bsd" ) then
++    @string %CXX_JAVA += " -I" %CSF_JavaHome "/include/freebsd ";
++@endif;
++
+ @if ( %Station == "lin" ) then
+     @string %CXX_JAVA += " -I" %CSF_JavaHome "/include/linux ";
+ @endif;

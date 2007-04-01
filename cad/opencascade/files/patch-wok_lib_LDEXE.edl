@@ -1,0 +1,14 @@
+--- ./wok/lib/LDEXE.edl.orig	Thu Nov 27 09:40:28 2003
++++ ./wok/lib/LDEXE.edl	Thu Aug 10 00:01:39 2006
+@@ -83,5 +83,11 @@
+   @end;
+  @endif;
+ 
++ @if( %Station == "bsd" ) then
++  @template LDEXE_Header ( %Target , %STLPortLib ) is
++   $/usr/bin/g++ -o %Target %STLPortLib \
++  @end;
++ @endif;
++
+ @endif;
+ 
