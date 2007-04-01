@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://cr.yp.to/djbfft/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	An extremely fast library for floating-point convolution
 
 RESTRICTED=	Forbidden to redistribute - we have patches to the distribution.
