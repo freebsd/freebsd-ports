@@ -24,6 +24,7 @@ PLIST_FILES=	bin/nettop
 PORTDOCS=	README THANKS ChangeLog
 
 post-patch:
+	${REINPLACE_CMD} -e '/count.*size/s/(int) //g' ${WRKSRC}/nettop.c
 .if !exists(/usr/lib/libpthread.so)
 	${REINPLACE_CMD} -e 's/lpthread/lc_r/g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
