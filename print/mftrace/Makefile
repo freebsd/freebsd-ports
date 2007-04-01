@@ -12,7 +12,7 @@ CATEGORIES=	print
 MASTER_SITES=	LOCAL/chinsan \
 		http://lilypond.org/download/sources/mftrace/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Scalable PostScript (Type1) Fonts for MetaFont
 
 RUN_DEPENDS=	mktextfm:${PORTSDIR}/print/teTeX \
