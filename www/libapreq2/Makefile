@@ -14,14 +14,11 @@ MASTER_SITE_SUBDIR=libapreq
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Generic Apache2 Request Library
 
-BROKEN=		Incorrect pkg-plist
-
 USE_APACHE=	2.0+
-USE_LDCONFIG=yes
-GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	autoconf:259 libtool:15
 CONFIGURE_ARGS+=	--with-apache2-apxs=${APXS} --with-expat=${LOCALBASE}
 
-SHLIB_MAJOR=	9
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
 .if defined (WITH_MODPERL2)
@@ -57,4 +54,12 @@ post-patch:
 PLIST_SUB+=	WITH_MODPERL2="@comment "
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${APACHE_VERSION} == 20
+SHLIB_MAJOR=	8
+.else
+SHLIB_MAJOR=	9
+.endif
+
+.include <bsd.port.post.mk>
