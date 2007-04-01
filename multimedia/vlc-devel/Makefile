@@ -10,7 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.8.6a
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	2
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
@@ -182,7 +182,7 @@ CONFIGURE_ARGS+=--disable-loader
 .endif
 
 .if !defined(WITHOUT_WXGTK)
-USE_WX=		2.6
+USE_WX=		2.8
 WX_UNICODE=	yes
 CONFIGURE_ARGS+=--enable-wxwidgets
 .else
