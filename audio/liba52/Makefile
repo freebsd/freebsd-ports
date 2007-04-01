@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://liba52.sourceforge.net/files/
 DISTNAME=	a52dec-${PORTVERSION:S/.b/b/}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A free library for decoding ATSC A/52 streams, aka AC-3
 
 USE_AUTOTOOLS=	libtool:15
