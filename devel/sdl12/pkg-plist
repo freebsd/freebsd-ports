@@ -298,4 +298,4 @@ share/aclocal/sdl.m4
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm include/SDL
+@dirrm include/SDL
