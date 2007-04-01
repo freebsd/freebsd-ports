@@ -1,0 +1,13 @@
+--- Makefile.orig	Sat Mar 31 18:39:10 2007
++++ Makefile	Sat Mar 31 18:40:08 2007
+@@ -13,8 +13,8 @@
+ mk_lang_d = $(mk_source_d)language/
+ mk_lang_src_d = $(mk_lang_d)eng/
+ 
+-mk_CallC = gcc
+-mk_COptions = -c -Wall -Wmissing-prototypes -Wstrict-prototypes -Wno-uninitialized -Os -I$(mk_config_d)
++mk_CallC = cc
++mk_COptions = -c $(CFLAGS) -I$(mk_config_d)
+ 
+ TheApplication : $(mk_built_program)
+ 
