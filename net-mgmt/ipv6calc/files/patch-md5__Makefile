@@ -1,0 +1,11 @@
+--- md5/Makefile.orig	Mon Apr  2 08:25:54 2007
++++ md5/Makefile	Mon Apr  2 08:26:00 2007
+@@ -6,7 +6,7 @@
+ all: md5.o
+ 
+ md5.o: md5.c
+-	${CC} ${CFLAGS} -I.. -fPIC -o md5.o -c -s md5.c
++	${CC} ${CFLAGS}. -I.. -fPIC -o md5.o -c -s md5.c
+ 
+ clean:
+ 	rm -f *.o *.so.1 *.a
