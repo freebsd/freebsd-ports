@@ -53,12 +53,14 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imexttypes.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imio.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imperl.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/imrender.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/iolayer.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/iolayert.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/log.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/plug.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/ppport.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/regmach.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/rendert.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/include/stackmach.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/interface.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Imager/regmach.pod
