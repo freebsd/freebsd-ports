@@ -1,0 +1,86 @@
+--- wok/lib/CSF.edl.orig	Wed Mar 22 18:48:06 2006
++++ wok/lib/CSF.edl	Thu Aug 10 17:47:19 2006
+@@ -181,6 +181,83 @@
+    @endif;
+ 
+    --
++   -- For FreeBSD platforms
++   --
++   @if ( %Station == "bsd" ) then
++      @if ( %DBMS == "OBJS" ) then
++	 @set %CSF_OODBLibs = "";
++      @endif;
++
++      --<< TODO : If applicable , modify the location of the C++ compiler.
++      @set %CSF_CXX_COMPILER = "/usr/bin/g++ ";
++      -->> END TODO
++      @set %STLPortHome = "";
++      @if ( %STLPortHome != "") then
++        @string %STLPortInclude = "-I" %STLPortHome "/stlport ";
++	@string %STLPortLib = "-L" %STLPortHome "/lib -lstlport_%%STL_COMPILER%%";
++      @else
++        @set %STLPortInclude = "%%LOCALBASE%%/include/stlport";
++	@string %STLPortLib = "-L%%LOCALBASE%%/lib -lstlport_%%STL_COMPILER%%";
++      @endif;
++      @set %CSF_CXX_SysOptions  = "%%CXXFLAGS%% -fPIC -funsigned-char -Wall -fmessage-length=0";
++      @string %CSF_CXX_Options  = "-DLIN -DLININTEL -DNO_CXX_EXCEPTION " %STLPortInclude;
++
++      --<< TODO : If applicable , modify the location of the C compiler.
++      @set %CSF_C_COMPILER = "/usr/bin/gcc ";
++      @string %CSF_C_INCLUDE +=  "";
++      -->> END TODO
++
++      @set %CSF_C_SysOptions  = "%%CFLAGS%% -fPIC -funsigned-char -Wall";
++      @set %CSF_C_Options  = "-DLIN -DLININTEL ";
++
++      --<< TODO : If applicable , modify the location of the Fortran compiler.
++      @set %CSF_F77_COMPILER = "/usr/bin/f77 ";
++      -->> END TODO
++
++      @set %CSF_F77_SysOptions  = "%%FFLAGS%% -fPIC ";
++
++      @set %CSF_LINKER = "/usr/bin/ld ";
++      @set %CSF_CXX_COMPILERLINKER = %CSF_CXX_COMPILER ;
++      @set %CSF_LINKER_DBMSOpt = "";
++      @set %CSF_LINKER_SysShared = "-shared ";
++      @set %CSF_LINKER_SysExe = "";
++      @set %CSF_LINKER_SysOpt = "";
++      @set %CSF_LINKER_SysLib = "-ldl -lc ";
++      @set %CSF_LINKER_CheckOpt = " -nostartfiles ";
++      @set %CSF_LINKER_CheckOut = " -o /dev/null ";
++      @set %CSF_SOCKETLibs = " -ldl" ;
++
++      --<< TODO : If applicable , modify the root location where TCL is installed.
++      @set %CSF_TCL_HOME = "%%LOCALBASE%%";
++      -->> END TODO
++
++      @string %CSF_TCL_INCLUDE = "%%TCL_INCDIR%% ";
++
++      --<< TODO : If applicable , modify the root location where Java is installed.
++      @set %CSF_JavaHome        = "%%JAVA_HOME%%";
++      -->> END TODO
++
++      @string %CSF_JAVA_INCLUDE = "-I" %CSF_JavaHome "/include -I"  %CSF_JavaHome "/include/freebsd ";
++      @set %CSF_JAVA_COMPILER   = "javac";
++      @set %CSF_JAVA_JNI        = "javah";
++
++      @set %CSF_DOXIGEN          = "%%LOCALBASE%%/bin/doxygen";
++      @set %CSF_GRAPHVIZ_HOME    = "%%LOCALBASE%%/lib/graphviz";
++
++      @set %CSF_X11_INCLUDE = "-I/usr/X11R6/include ";
++      @set %CSF_OPENGL_INCLUDE = "-I/usr/X11R6/include ";
++
++      @set %X11_LIB = "/usr/X11R6/lib";
++
++      @string %CSF_XwLibs = "-L" %X11_LIB " -lX11 -lXext -lXmu -lXi ";
++
++      @string %CSF_OpenGlLibs = "-L" %X11_LIB " -lGLU -lGL " ;
++
++      @string %CSF_TclLibs = "-L" %CSF_TCL_HOME "/lib  -ltcl ";
++      @string %CSF_TclTkLibs = "-L" %CSF_TCL_HOME "/lib  -ltk -L" %X11_LIB " -lX11";
++   @endif;
++
++   --
+    -- For SunOS platforms
+    --
+    @if ( %Station == "sun" ) then

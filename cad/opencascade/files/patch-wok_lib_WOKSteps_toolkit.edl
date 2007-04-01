@@ -1,0 +1,28 @@
+--- wok/lib/WOKSteps_toolkit.edl.orig	Fri Sep 21 10:08:26 2001
++++ wok/lib/WOKSteps_toolkit.edl	Thu Aug 10 16:21:08 2006
+@@ -97,7 +97,24 @@
+ 
+ 	@endif;
+   @endif;
+-  
++
++  @if ( %Station == "bsd" ) then
++   @string %WOKSteps_LibGroup  += " lib.arx ";
++   @set    %WOKSteps_lib_build  = "WOKStep_DynamicLibrary(lib.list,lib.arx)";
++
++   @ifnotdefined ( %WOKSteps_LinkShr ) then
++    @string %WOKSteps_LibGroup  += " lib.build ";
++    @set    %WOKSteps_lib_build  = "WOKStep_DynamicLibrary(lib.list,lib.arx)";
++   @else
++    @string %WOKSteps_LibGroup += " lib.libs ";
++    @string %WOKSteps_LibGroup += " lib.tks ";
++    @string %WOKSteps_LibGroup += " lib.build ";
++    @set    %WOKSteps_lib_libs  = "WOKStep_DirectLinkList(obj.idep,lib.list,lib.arx)";
++    @set    %WOKSteps_lib_tks   = "*WOKStep_DirectTKReplace(lib.libs)";
++    @set    %WOKSteps_lib_build = "WOKStep_LibLink(lib.tks)";
++   @endif;
++  @endif;
++
+   @if ( %Station == "lin" ) then
+    @string %WOKSteps_LibGroup  += " lib.arx ";
+    @set    %WOKSteps_lib_build  = "WOKStep_DynamicLibrary(lib.list,lib.arx)";

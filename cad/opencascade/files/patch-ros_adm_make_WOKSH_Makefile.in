@@ -1,0 +1,11 @@
+--- ./ros/adm/make/WOKSH/Makefile.in.orig	Wed Mar 21 22:14:26 2007
++++ ./ros/adm/make/WOKSH/Makefile.in	Sun Mar 25 11:56:25 2007
+@@ -91,7 +91,7 @@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+ LDFLAGS = @LDFLAGS@
+ LIBOBJS = @LIBOBJS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ $(PTHREAD_LIBS)
+ LIBTOOL = @LIBTOOL@
+ LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@

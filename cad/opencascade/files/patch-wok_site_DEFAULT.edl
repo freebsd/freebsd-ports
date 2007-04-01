@@ -1,0 +1,22 @@
+--- wok/site/DEFAULT.edl.orig	Wed Mar 22 18:55:40 2006
++++ wok/site/DEFAULT.edl	Thu Aug 10 17:15:23 2006
+@@ -17,7 +17,7 @@
+ @end;
+ 
+ @template DEFAULT_Stations ( %Entity ) is
+-$sun lin wnt\^
++$sun bsd lin wnt\^
+ @end;
+ 
+ @template DEFAULT_DBMSystems ( %Entity ) is
+@@ -37,6 +37,10 @@
+ @end;
+ 
+ @template DEFAULT_DFLT  ( %Entity_Home ) is
++$%Entity_Home\^
++@end;
++
++@template DEFAULT_DFLT_bsd  ( %Entity_Home ) is
+ $%Entity_Home\^
+ @end;
+ 

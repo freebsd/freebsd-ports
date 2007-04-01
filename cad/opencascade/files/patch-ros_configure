@@ -1,0 +1,23 @@
+--- ./ros/configure.orig	Wed Mar 21 22:14:31 2007
++++ ./ros/configure	Thu Mar 22 00:04:44 2007
+@@ -12479,7 +12479,9 @@
+ 
+ case $platform in
+ 	Linux*) CXXFLAGS="$CXXFLAGS -DLIN -DLININTEL -D_GNU_SOURCE=1"
+ 		CFLAGS="$CFLAGS -DLIN -DLININTEL -fexceptions";;
++	FreeBSD*) CXXFLAGS="$CXXFLAGS -DFREEBSD -D$ARCH -D_GNU_SOURCE=1"
++		CFLAGS="$CFLAGS -DFREEBSD -D$ARCH -fexceptions";;
+ 	SunOS*) CXXFLAGS="$CXXFLAGS -Usun -DSOLARIS"
+ 		CFLAGS="$CFLAGS -Usun -DSOLARIS";;
+         OSF1*)  CXXFLAGS="$CXXFLAGS -DDECOSF1 -D__USE_STD_IOSTREAM -D_RWSTD_NO_EXCEPTIONS"
+@@ -14722,8 +14724,8 @@
+ INCLUDE="$STLPort_INCLUDES $INCLUDE"
+ CPPFLAGS_save=$CPPFLAGS
+ CPPFLAGS="$INCLUDE $CPPFLAGS"
+-CXXFLAGS_save=$CPPFLAGS
+-CXXFLAGS="$INCLUDE $CPPFLAGS"
++CXXFLAGS_save=$CXXFLAGS
++CXXFLAGS="$INCLUDE $CXXFLAGS"
+ LDFLAGS_save=$LDFLAGS
+ if test -d "${with_stlport_library}"  ; then
+   STLPort_LIB="-L`(cd  ${with_stlport_library}; pwd)` -l$STLPort_LIB_CC"
