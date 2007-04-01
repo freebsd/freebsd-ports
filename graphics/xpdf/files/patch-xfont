@@ -1,6 +1,6 @@
---- xpdf/XPDFViewer.cc.orig	2004-10-12 12:24:57.055068037 +0200
-+++ xpdf/XPDFViewer.cc	2004-10-12 12:24:47.707449614 +0200
-@@ -1742,7 +1742,7 @@
+--- xpdf/XPDFViewer.cc.orig	Tue Feb 27 14:05:52 2007
++++ xpdf/XPDFViewer.cc
+@@ -2791,7 +2791,7 @@
    aboutBigFont =
      createFontList("-*-times-bold-i-normal--20-*-*-*-*-*-iso8859-1");
    aboutVersionFont =

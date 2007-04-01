@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	xpdf
-PORTVERSION=	3.01
-PORTREVISION=	3
+PORTVERSION=	3.02
+PORTREVISION=	0
 CATEGORIES=	graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/xpdf
 
 PATCH_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
-PATCHFILES=	xpdf-3.01pl2.patch
+PATCHFILES=	
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	nork@FreeBSD.org
@@ -30,11 +30,20 @@ USE_AUTOTOOLS=	autoconf:259
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-gzip --enable-opi \
+CONFIGURE_ARGS=	--enable-opi \
 		--with-t1-library="${LOCALBASE}/lib" \
 		--with-t1-includes="${LOCALBASE}/include" \
 		--with-freetype2-library="${LOCALBASE}/lib" \
 		--with-freetype2-includes="${LOCALBASE}/include/freetype2"
+
+.if defined(WITH_LIBPAPER)
+LIB_DEPENDS+=	paper.2:${PORTSDIR}/print/libpaper
+CONFIGURE_ARGS+=--with-libpaper-library="${LOCALBASE}/lib" \
+		--with-libpaper-includes="${LOCALBASE}/include"
+.else
+CONFIGURE_ARGS+=--without-libpaper-library
+.endif
+
 .if defined(A4)
 CONFIGURE_ARGS+=	--enable-a4-paper
 .endif
