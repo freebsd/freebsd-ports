@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	azureus_${PORTVERSION}_source
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	rnoland@2hip.net
 COMMENT=	A BitTorrent client written in Java
 
 BUILD_DEPENDS=	\
