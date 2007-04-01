@@ -1,5 +1,5 @@
---- mytop-1.6.orig	2007-03-30 00:52:47.581910821 +0200
-+++ mytop	2007-03-30 02:19:05.114300408 +0200
+--- mytop.orig	Sun Apr  1 08:26:56 2007
++++ mytop	Sun Apr  1 08:27:00 2007
 @@ -369,6 +369,10 @@
          require Data::Dumper;
          print Data::Dumper::Dumper([\%config]);
@@ -11,17 +11,38 @@
      }
  
      ## m - mode swtich to qps
-@@ -889,8 +893,30 @@
+@@ -377,7 +381,7 @@
+     {
+         $config{mode} = 'qps';
+         Clear() unless $config{batchmode};
+-        print "Queries Per Second [hit q to exit this mode]\n";
++        print "Queries Per Second [hit q to exit, hit t for top mode]\n";
+         next;
+     }
+ 
+@@ -889,8 +893,42 @@
                 make_short(($STATUS{Bytes_received} - $OLD_STATUS{Bytes_received}) / $t_delta ),
                 make_short(($STATUS{Bytes_sent} - $OLD_STATUS{Bytes_sent}) / $t_delta ))
            if ($t_delta);
 -        print "\n\n";
 +        print "\n";
 +
++        my @master_status = Hashes("show master status");
++        if (@master_status)
++        {
++			foreach my $m (@master_status) {
++				print " Master: $m->{File}/$m->{Position} ",
++					"do: ", GREEN(), "$m->{Binlog_Do_DB} ", RESET(),
++					 "ign: ", MAGENTA(), $m->{Binlog_Ignore_DB}, RESET(), "\n";
++				#$line_prefix = ' ' x length($line_prefix);
++				$lines_left--;
++			}
++		}
++
 +        my @slave_status = Hashes("show slave status");
 +        if (@slave_status)
 +        {
-+			my $line_prefix = " Slave: ";
++			my $line_prefix = "  Slave: ";
 +			foreach my $s (@slave_status) {
 +				print $line_prefix, BOLD(),
 +					($s->{Slave_IO_Running} eq 'Yes'
@@ -42,4 +63,15 @@
 +        print "\n";
          $lines_left--;
      }
+ 
+@@ -1099,8 +1137,8 @@
+     my @data = Hashes("SHOW INNODB STATUS");
+ 
+     open P, "|$config{pager}" or die "$!";
+-    print keys %{$data[0]};
+-    print $data[0]->{Status},"\n";
++    print P keys %{$data[0]};
++    print P $data[0]->{Status},"\n";
+     close P;
+ }
  
