@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.jar
 DIST_SUBDIR=	eclipse
 EXTRACT_ONLY=
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Jad Java decompiler plugin for the Eclipse IDE
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse \
