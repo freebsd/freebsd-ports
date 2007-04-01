@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Nagios/Plugin.pm
+%%SITE_PERL%%/Nagios/Plugin/Config.pm
 %%SITE_PERL%%/Nagios/Plugin/ExitResult.pm
 %%SITE_PERL%%/Nagios/Plugin/Functions.pm
 %%SITE_PERL%%/Nagios/Plugin/Getopt.pm

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		Nagios-Plugin
-PORTVERSION=		0.15
+PORTVERSION=		0.17
 CATEGORIES=		net-mgmt perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/G/GA/GAVINC
@@ -22,6 +22,7 @@ BUILD_DEPENDS=		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Access
 RUN_DEPENDS=		${BUILD_DEPENDS}
 
 MAN3=			Nagios::Plugin.3 \
+			Nagios::Plugin::Config.3 \
 			Nagios::Plugin::ExitResult.3 \
 			Nagios::Plugin::Functions.3 \
 			Nagios::Plugin::Getopt.3 \
