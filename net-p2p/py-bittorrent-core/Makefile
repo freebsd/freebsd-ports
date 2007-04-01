@@ -14,8 +14,4 @@ WITHOUT_GUI=	yes
 
 MASTERDIR=	${.CURDIR}/../py-bittorrent
 
-BROKEN=		Fails to patch
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2007-04-10
-
 .include "${MASTERDIR}/Makefile"
