@@ -1,16 +1,16 @@
---- Tomboy/Utils.cs.orig	Tue Oct 17 18:50:40 2006
-+++ Tomboy/Utils.cs	Thu Aug 10 09:12:49 2006
-@@ -767,24 +767,9 @@
- 			RegisterSignalHandlers ();
+--- Tomboy/Utils.cs.orig	Sun Feb 25 02:24:01 2007
++++ Tomboy/Utils.cs	Mon Mar 26 20:06:25 2007
+@@ -801,23 +801,12 @@
  		}
  
--		[DllImport("libc")]
+ 		[DllImport("libc")]
 -		private static extern int prctl (int option, 
 -						 byte [] arg2, 
 -						 IntPtr arg3, 
 -						 IntPtr arg4, 
 -						 IntPtr arg5);
--
++		private static extern void setproctitle(byte [] fmt, byte [] str_arg);
+ 
  		// From Banshee: Banshee.Base/Utilities.cs
  		public static void SetProcessName (string name)
  		{
@@ -22,6 +22,7 @@
 -				throw new ApplicationException (
 -					"Error setting process name: " +
 -					Mono.Unix.Native.Stdlib.GetLastError ());
++			setproctitle(Encoding.ASCII.GetBytes("%s\0"), Encoding.ASCII.GetBytes(name + "\0"));
  		}
  
  		static void RegisterSignalHandlers ()
