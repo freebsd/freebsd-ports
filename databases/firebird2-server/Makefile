@@ -6,13 +6,12 @@
 #
 
 PORTNAME?=	firebird
-PORTVERSION=	2.0.0
-PORTREVISION?=	4
+PORTVERSION=	2.0.1
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=firebird
 PKGNAMESUFFIX?=	-server
-DISTNAME=	Firebird-2.0.0.12748
+DISTNAME=	Firebird-2.0.1.12855-0
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT?=	Firebird-2 relational database (server)
@@ -42,8 +41,6 @@ STRIP=
 
 ONLY_FOR_ARCHS=	i386 amd64
 CONFLICTS=	firebird-client-1* firebird-server-1*
-
-WRKSRC=		${WRKDIR}/${DISTNAME:C/^F/f/}
 
 INSTALL_FB=	${INSTALL} ${COPY} -g firebird
 
@@ -86,7 +83,7 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 FB_DOCS_FILES=	WhatsNew README.* Firebird* ReleaseNotes.pdf ambiguity.txt \
-                ods11-index-structure.html
+		ods11-index-structure.html
 FB_DOCS_DIRS=	sql.extensions license upgrade
 .endif
 .endif
@@ -99,6 +96,7 @@ post-extract:
 post-patch:
 	@${MKDIR} ${WRKSRC}/m4
 	${CP} ${FILESDIR}/*.m4 ${WRKSRC}/m4
+	${FIND} ${WRKSRC} -name "*.sh" -exec ${CHMOD} +x {} \+
 
 .include <bsd.port.pre.mk>
 
