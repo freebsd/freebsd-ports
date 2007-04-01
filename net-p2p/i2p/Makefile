@@ -17,6 +17,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/libgmp4 \
 		${LOCALBASE}/sbin/jettyctl:${PORTSDIR}/www/jetty
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
+BROKEN=		Does not build
+
 USE_BZIP2=	yes
 USE_RC_SUBR=	i2p.sh
 
