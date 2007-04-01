@@ -1,0 +1,7 @@
+%%HDF5%%bin/adf2hdf
+%%HDF5%%bin/hdf2adf
+include/cgnslib.h
+include/cgnswin_f.h
+include/cgnslib_f.h
+lib/libcgns.so
+lib/libcgns.so.0

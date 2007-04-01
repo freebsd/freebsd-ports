@@ -1,0 +1,11 @@
+--- tests/rundbtest.orig	Sat May  7 03:11:17 2005
++++ tests/rundbtest	Sat Mar 24 21:41:06 2007
+@@ -5,7 +5,7 @@
+ values="1 10 100 1000 10000 100000"
+ for z in $zones ; do
+   for v in $values ; do
+-    dbtest $z $v
++    ./dbtest $z $v
+   done
+ done
+ exit
