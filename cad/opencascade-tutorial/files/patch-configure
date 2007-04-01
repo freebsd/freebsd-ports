@@ -1,0 +1,38 @@
+--- configure.orig	Wed Oct  5 13:45:26 2005
++++ configure	Thu Mar 15 23:27:32 2007
+@@ -436,6 +436,8 @@
+      case $host in
+        Linux*) #ac_station=lin
+ 	       ac_c_flags="-DLIN -DLININTEL";;
++     FreeBSD*) #ac_station=bsd
++	       ac_c_flags="-DFREEBSD" ;;
+         IRIX*) #ac_station=sil
+ 	       ac_c_flags="-DIRIX" ;;
+        SunOS*) #ac_station=sun
+@@ -1271,7 +1273,7 @@
+ fi
+ 
+ 
+-LIBS="$LIBS -lm -ldl -lc"
++LIBS="$LIBS -lm -lc"
+ 
+ if test -n "$x_includes"; then
+   X_INCLUDES="-I$x_includes"
+@@ -1824,7 +1826,7 @@
+ 
+ echo $ac_n "checking for CasCade""... $ac_c" 1>&6
+ echo "configure:1813: checking for CasCade" >&5
+-LIBOCC="-lTKernel -ldl"
++LIBOCC="-lTKernel"
+ ac_occ_includes=NO
+ ac_occ_libraries=NO
+ occ_libraries=""
+@@ -1928,6 +1930,8 @@
+ 	 LIBSTL="-l$STLPortLib_CC"
+     else
+ 	if test "$host" = "Linux"; then
++	    LIBSTL="-lstlport_gcc"
++	elif test "$host" = "FreeBSD"; then
+ 	    LIBSTL="-lstlport_gcc"
+ 	else
+ 	    LIBSTL="-lstlport_cc"
