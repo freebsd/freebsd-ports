@@ -2,12 +2,12 @@ lib/libhonoka_plugin.a
 lib/libhonoka_plugin.la
 lib/libhonoka_plugin.so
 lib/libhonoka_plugin.so.0
-lib/scim-1.0/IMEngine/honoka.a
-lib/scim-1.0/IMEngine/honoka.la
-lib/scim-1.0/IMEngine/honoka.so
-lib/scim-1.0/SetupUI/honoka-imengine-setup.a
-lib/scim-1.0/SetupUI/honoka-imengine-setup.la
-lib/scim-1.0/SetupUI/honoka-imengine-setup.so
+lib/scim-1.0/1.4.0/IMEngine/honoka.a
+lib/scim-1.0/1.4.0/IMEngine/honoka.la
+lib/scim-1.0/1.4.0/IMEngine/honoka.so
+lib/scim-1.0/1.4.0/SetupUI/honoka-imengine-setup.a
+lib/scim-1.0/1.4.0/SetupUI/honoka-imengine-setup.la
+lib/scim-1.0/1.4.0/SetupUI/honoka-imengine-setup.so
 share/scim/icons/honoka.png
 include/honoka/convertor.h
 include/honoka/honokapluginbase.h
@@ -21,8 +21,6 @@ include/honoka/honokastatus.h
 include/honoka/preeditor.h
 share/locale/ja/LC_MESSAGES/honoka.mo
 libdata/pkgconfig/honoka.pc
-@dirrmtry lib/scim-1.0/IMEngine
-@dirrmtry lib/scim-1.0/SetupUI
-@dirrmtry lib/scim-1.0/honoka
+@dirrmtry lib/scim-1.0/1.4.0/honoka
 @dirrmtry share/scim-1.0/icons
 @dirrmtry include/honoka

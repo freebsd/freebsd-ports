@@ -1,6 +1,6 @@
-lib/scim-1.0/honoka/plugin-wnn.a
-lib/scim-1.0/honoka/plugin-wnn.la
-lib/scim-1.0/honoka/plugin-wnn.so
+lib/scim-1.0/1.4.0/honoka/plugin-wnn.a
+lib/scim-1.0/1.4.0/honoka/plugin-wnn.la
+lib/scim-1.0/1.4.0/honoka/plugin-wnn.so
 share/locale/ja/LC_MESSAGES/honoka-plugin-wnn.mo
-@dirrmtry lib/scim-1.0/honoka
+@dirrmtry lib/scim-1.0/1.4.0/honoka
 @dirrmtry share/scim/honoka
