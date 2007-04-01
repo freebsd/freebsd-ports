@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://dl.matroska.org/downloads/libebml/ \
 		http://www.bunkus.org/videotools/mkvtoolnix/sources/old/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	EBML (Extensible Binary Meta Language), sort of binary version of XML
 
 USE_BZIP2=	yes

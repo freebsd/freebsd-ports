@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	lioux
 PKGNAMESUFFIX=	-devel
 DISTNAME=	FFMpeg-${DISTFILE_DATE}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A free library for decoding ATSC A/52 streams, aka AC-3
 
 OPTIONS=	DJBFFT "Adds support for fast djbfft fft library" ON \
