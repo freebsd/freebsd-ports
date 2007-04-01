@@ -11747,6 +11747,7 @@ phppdflib	ports/print/phppdflib
 phppgadmin	ports/databases/phppgadmin
 phprojekt	ports/deskutils/phprojekt
 phproxy		ports/www/phproxy
+phpsecinfo	ports/security/phpsecinfo
 phpsurveyor	ports/www/phpsurveyor
 phpsview	ports/graphics/phpsview
 phptags		ports/devel/phptags
