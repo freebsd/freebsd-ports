@@ -1,6 +1,6 @@
---- xpdf/Makefile.in.orig	Thu Dec  1 17:10:20 2005
-+++ xpdf/Makefile.in	Thu Dec  1 17:10:34 2005
-@@ -109,7 +109,7 @@
+--- xpdf/Makefile.in.orig	Tue Feb 27 14:05:52 2007
++++ xpdf/Makefile.in
+@@ -110,7 +110,7 @@
  	pdffonts$(EXE) pdftoppm$(EXE) pdfimages$(EXE)
  
  all-no-x: pdftops$(EXE) pdftotext$(EXE) pdfinfo$(EXE) pdffonts$(EXE) \

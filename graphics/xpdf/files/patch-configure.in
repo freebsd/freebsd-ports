@@ -1,6 +1,6 @@
---- configure.in.orig	Thu Dec  1 17:05:11 2005
-+++ configure.in	Thu Dec  1 17:05:25 2005
-@@ -341,6 +341,6 @@
+--- configure.in.orig	Tue Feb 27 14:05:51 2007
++++ configure.in
+@@ -348,6 +348,6 @@
    if test "x$smr_have_freetype2_library" != xyes; then
      AC_MSG_WARN([Couldn't find FreeType]);
    fi

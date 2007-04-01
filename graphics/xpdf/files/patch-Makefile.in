@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu Dec  1 17:04:10 2005
-+++ Makefile.in	Thu Dec  1 17:04:31 2005
+--- Makefile.in.orig	Tue Feb 27 14:05:51 2007
++++ Makefile.in
 @@ -82,7 +82,7 @@
  	$(INSTALL_PROGRAM) xpdf/pdftotext$(EXE) $(DESTDIR)@bindir@/pdftotext$(EXE)
  	$(INSTALL_PROGRAM) xpdf/pdfinfo$(EXE) $(DESTDIR)@bindir@/pdfinfo$(EXE)

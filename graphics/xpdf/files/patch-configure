@@ -1,6 +1,6 @@
---- configure.orig	Thu Dec  1 17:06:03 2005
-+++ configure	Thu Dec  1 17:06:25 2005
-@@ -11776,8 +11776,8 @@
+--- configure.orig	Tue Feb 27 14:05:51 2007
++++ configure
+@@ -11798,8 +11798,8 @@
      { echo "$as_me:$LINENO: WARNING: Couldn't find FreeType" >&5
  echo "$as_me: WARNING: Couldn't find FreeType" >&2;};
    fi
