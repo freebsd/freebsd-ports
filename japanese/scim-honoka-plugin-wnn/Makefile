@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-honoka-plugin-wnn
 PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese
 MASTER_SITES=	http://nop.net-p.org/files/honoka/
 DISTNAME=	honoka-plugin-wnn-${PORTVERSION}
@@ -16,11 +16,11 @@ MAINTAINER=	chiba.masashi@gmail.com
 COMMENT=	Honoka plugin for using wnn7
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim \
-		${LOCALBASE}/lib/scim-1.0/IMEngine/honoka.so:${PORTSDIR}/japanese/scim-honoka
+		${LOCALBASE}/lib/scim-1.0/1.4.0/IMEngine/honoka.so:${PORTSDIR}/japanese/scim-honoka
 LIB_DEPENDS=	wnn7.1:${PORTSDIR}/japanese/Wnn7-lib
 RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim \
-		${LOCALBASE}/lib/scim-1.0/IMEngine/honoka.so:${PORTSDIR}/japanese/scim-honoka \
-		${LOCALBASE}/lib/scim-1.0/honoka/plugin-romkan.so:${PORTSDIR}/japanese/scim-honoka-plugin-romkan
+		${LOCALBASE}/lib/scim-1.0/1.4.0/IMEngine/honoka.so:${PORTSDIR}/japanese/scim-honoka \
+		${LOCALBASE}/lib/scim-1.0/1.4.0/honoka/plugin-romkan.so:${PORTSDIR}/japanese/scim-honoka-plugin-romkan
 
 USE_GETTEXT=	yes
 USE_GNOME=	lthack gnomehack
