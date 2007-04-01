@@ -53,6 +53,7 @@
     SUBDIR += netgen
     SUBDIR += ngspice_rework
     SUBDIR += opencascade
+    SUBDIR += opencascade-tutorial
     SUBDIR += oregano
     SUBDIR += pcb
     SUBDIR += pdnmesh
