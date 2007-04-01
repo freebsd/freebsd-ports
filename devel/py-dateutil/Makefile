@@ -13,7 +13,7 @@ MASTER_SITES=	http://labix.org/download/python-dateutil/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-dateutil-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Provides powerful extensions to the standard datetime module
 
 USE_BZIP2=		yes

@@ -11,7 +11,7 @@ CATEGORIES=	math benchmarks net
 MASTER_SITES=	ftp://mersenne.org/gimps/
 DISTNAME=	sprime${PORTVERSION:S/^0.0.//:S/.//}-freebsd
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	mersenne.org distributed Great Internet Mersenne Prime Search
 
 ONLY_FOR_ARCHS=	i386
