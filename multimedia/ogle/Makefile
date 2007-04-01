@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Open DVD player that supports DVD menus
 
 LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \

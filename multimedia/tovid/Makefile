@@ -11,7 +11,7 @@ PORTREVISION=	8
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://download.berlios.de/tovid/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A collection of video disc authoring tools
 
 BUILD_DEPENDS=	\

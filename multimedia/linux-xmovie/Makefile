@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}.i386.rpm
 EXTRACT_SUFX=
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A movie player for AVI, MPEG-2/4 and MOV movies
 
 EXTRACT_DEPENDS=rpm2cpio:${PORTSDIR}/archivers/rpm

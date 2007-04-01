@@ -10,7 +10,7 @@ PORTVERSION=	2.0.2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ CSME
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Tools to extract from/get info about/create Matroska media streams
 
 LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \

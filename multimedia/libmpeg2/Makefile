@@ -11,7 +11,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://libmpeg2.sourceforge.net/files/
 DISTNAME=	mpeg2dec-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A free library for decoding mpeg-2 and mpeg-1 video streams
 
 USE_XLIB=	yes

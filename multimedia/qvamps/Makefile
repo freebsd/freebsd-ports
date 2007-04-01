@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	vamps
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Dvd rip gui written in qt that uses vamps and dvdauthor
 
 BUILD_DEPENDS=	puic:${PORTSDIR}/x11-toolkits/p5-qt \
