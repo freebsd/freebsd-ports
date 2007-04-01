@@ -2141,6 +2141,50 @@
 %%EVIL%%%%DATADIR%%/evil/Themes/Default/thumb_c.bmp
 %%EVIL%%%%DATADIR%%/evil/Themes/Default/thumb_t.bmp
 %%EVIL%%%%DATADIR%%/evil/Themes/Default/thumb_tc.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/thumb_tc.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/list_l.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/list_r.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/list_t.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/theme.mml~
+%%RED%%%%DATADIR%%/red/Themes/Default/button_c.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/button_l.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/button_r.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/thumb_b.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/thumb_c.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/thumb_t.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/slider.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/theme.mml
+%%RED%%%%DATADIR%%/red/Themes/Default/frame_bl.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/frame_br.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/list_bl.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/list_br.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/thumb_bc.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/resources
+%%RED%%%%DATADIR%%/red/Themes/Default/frame_b.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/frame_l.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/frame_r.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/frame_t.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/frame_tl.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/slider_c.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/frame_tr.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/slider_l.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/list_tl.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/slider_r.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/list_tr.bmp
+%%RED%%%%DATADIR%%/red/Themes/Default/list_b.bmp
+%%RED%%%%DATADIR%%/red/Scripts/Transparent_Sprites.mml
+%%RED%%%%DATADIR%%/red/Scripts/Red_Text_Strings.mml
+%%RED%%%%DATADIR%%/red/Scripts/Transparent_Liquids.mml
+%%RED%%%%DATADIR%%/red/Scripts/Interface_Rects.mml
+%%RED%%%%DATADIR%%/red/Scripts/Red Scenario.mml
+%%RED%%%%DATADIR%%/red/RED Music.aif
+%%RED%%%%DATADIR%%/red/RED Physics.phyA
+%%RED%%%%DATADIR%%/red/RED Shapes.shpA
+%%RED%%%%DATADIR%%/red/Fonts
+%%RED%%%%DATADIR%%/red/NET Physics.phyA
+%%RED%%%%DATADIR%%/red/RED Images.imgA
+%%RED%%%%DATADIR%%/red/RED Sounds.sndA
+%%RED%%%%DATADIR%%/red/RED Map.sceA
 %%RUBICON%%%%DATADIR%%/rubicon/.DS_Store
 %%RUBICON%%%%DATADIR%%/rubicon/Fonts
 %%RUBICON%%%%DATADIR%%/rubicon/MML
@@ -3549,6 +3593,10 @@
 %%RUBICON%%@dirrm %%DATADIR%%/rubicon/Rubicon Data/Graphics
 %%RUBICON%%@dirrm %%DATADIR%%/rubicon/Rubicon Data
 %%RUBICON%%@dirrm %%DATADIR%%/rubicon
+%%RED%%@dirrm %%DATADIR%%/red/Themes/Default
+%%RED%%@dirrm %%DATADIR%%/red/Themes
+%%RED%%@dirrm %%DATADIR%%/red/Scripts
+%%RED%%@dirrm %%DATADIR%%/red
 %%EVIL%%@dirrm %%DATADIR%%/evil/Themes/Default
 %%EVIL%%@dirrm %%DATADIR%%/evil/Themes
 %%EVIL%%@dirrm %%DATADIR%%/evil/Scripts
