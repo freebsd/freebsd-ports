@@ -16012,6 +16012,7 @@ xdaliclock	ports/x11-clocks/xdaliclock
 xdd		ports/sysutils/xdd
 xdeblock	ports/games/xdeblock
 xdelta		ports/misc/xdelta
+xdelta3		ports/misc/xdelta3
 xdemineur	ports/games/xdemineur
 xdesktopwaves	ports/games/xdesktopwaves
 xdeview		ports/converters/xdeview
