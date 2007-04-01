@@ -20,6 +20,8 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		exif.12:${PORTSDIR}/graphics/libexif \
 		iptcdata.3:${PORTSDIR}/graphics/libiptcdata
 
+BROKEN=		Does not build
+
 CONFLICTS=	gnome-commander-*
 
 USE_BZIP2=	yes
