@@ -1,0 +1,18 @@
+--- ./make.defs.in.orig	Thu May 12 06:55:51 2005
++++ ./make.defs.in	Sat Mar 24 21:33:14 2007
+@@ -48,7 +48,7 @@
+ CFLAGS = @CFLAGS@ @SYSCFLAGS@
+ COOUT  = @COOUT@
+ CEOUT  = @CEOUT@
+-CLIBS  = @LIBS@
++CLIBS  = @LIBS@ $(PTHREAD_LIBS)
+ 
+ #------------------------------------------------------------------------
+ # F2CFLAGS defines the type of Fortran to C interface.
+@@ -122,5 +122,5 @@
+ F77    = @F77@
+ FFLAGS = @FFLAGS@ @SYSFFLAGS@
+ FEOUT  = @FEOUT@
+-FLIBS  = @FLIBS@
++FLIBS  = @FLIBS@ $(PTHREAD_LIBS)
+ 
