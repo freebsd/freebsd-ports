@@ -1,5 +1,5 @@
---- system.mk.orig	Tue Feb 20 21:06:40 2007
-+++ system.mk	Tue Feb 20 21:14:47 2007
+--- system.mk.orig	Sun Mar 18 21:32:12 2007
++++ system.mk	Sat Mar 31 22:49:58 2007
 @@ -7,7 +7,7 @@
  ## Installation paths
  ##
@@ -53,24 +53,24 @@
  # SunOS/Solaris
  #X11_PREFIX=/usr/openwin
  
-@@ -84,7 +84,7 @@
- # XFree86 libraries up to 4.3.0 have a bug that will cause Ion to segfault
- # if Opera is used when i18n support is enabled. The following setting
- # should work around that situation.
+@@ -83,7 +83,7 @@
+ 
+ # XFree86 libraries up to 4.3.0 have a bug that can cause a segfault.
+ # The following setting  should  work around that situation.
 -DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WORKAROUND
 +#DEFINES += -DCF_XFREE86_TEXTPROP_BUG_WORKAROUND
  
- # Use the Xutf8 routines (XFree86 extension) instead of Xmb routines in
- # an UTF8 locale.
-@@ -103,7 +103,7 @@
+ # Use the Xutf8 routines (XFree86 extension) instead of the Xmb routines
+ # in an UTF-8 locale. (No, you don't need this in UTF-8 locales, and 
+@@ -104,7 +104,7 @@
  # asprintf and vasprintf in the c library. (gnu libc has.)
  # If HAS_SYSTEM_ASPRINTF is not defined, an implementation
  # in sprintf_2.2/ is used.
 -#HAS_SYSTEM_ASPRINTF=1
 +HAS_SYSTEM_ASPRINTF=1
  
- 
  # If you're on an archaic system (such as relatively recent *BSD releases)
+ # without even dummy multibyte/widechar and localisation support, you may 
 @@ -112,24 +112,24 @@
  #DEFINES += -DCF_NO_LOCALE
  
