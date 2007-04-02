@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	formencode
-PORTVERSION=	0.7
+PORTVERSION=	0.7.1
 CATEGORIES=	www python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/F/FormEncode/ \
 		${MASTER_SITE_LOCAL} \
