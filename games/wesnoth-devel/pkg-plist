@@ -185,6 +185,16 @@ share/locale/hu/LC_MESSAGES/wesnoth-tsg.mo
 share/locale/hu/LC_MESSAGES/wesnoth-tutorial.mo
 share/locale/hu/LC_MESSAGES/wesnoth-utbs.mo
 share/locale/hu/LC_MESSAGES/wesnoth.mo
+share/locale/id/LC_MESSAGES/wesnoth.mo
+share/locale/id/LC_MESSAGES/wesnoth-editor.mo
+share/locale/id/LC_MESSAGES/wesnoth-lib.mo
+share/locale/id/LC_MESSAGES/wesnoth-tutorial.mo
+share/locale/id/LC_MESSAGES/wesnoth-httt.mo
+share/locale/id/LC_MESSAGES/wesnoth-ei.mo
+share/locale/id/LC_MESSAGES/wesnoth-trow.mo
+share/locale/id/LC_MESSAGES/wesnoth-tb.mo
+share/locale/id/LC_MESSAGES/wesnoth-tsg.mo
+share/locale/id/LC_MESSAGES/wesnoth-utbs.mo
 share/locale/it/LC_MESSAGES/wesnoth-editor.mo
 share/locale/it/LC_MESSAGES/wesnoth-ei.mo
 share/locale/it/LC_MESSAGES/wesnoth-httt.mo
