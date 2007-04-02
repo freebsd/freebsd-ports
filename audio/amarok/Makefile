@@ -19,8 +19,6 @@ LIB_DEPENDS=	tag.5:${PORTSDIR}/audio/taglib \
 		mp4v2:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2 \
 		xine.1:${PORTSDIR}/multimedia/libxine
 
-BROKEN=		Incomplete pkg-plist
-
 MIN_OPTIONS_VER=	${PORTNAME}-1.4.1
 
 USE_BZIP2=	yes
