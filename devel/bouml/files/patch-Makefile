@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Mar 28 22:15:16 2007
-+++ Makefile	Mon Apr  2 21:08:04 2007
+--- Makefile.orig	Mon Apr  2 18:29:38 2007
++++ Makefile	Mon Apr  2 21:22:54 2007
 @@ -1,19 +1,19 @@
  # The directory where all the bouml files will be installed, you
  # can change it for instance because you don't have root permission
@@ -24,12 +24,3 @@
  
  # for packaging purpose, useless by default
  # DESTDIR = 
-@@ -98,7 +98,7 @@
- 		done \
- 	fi
- 	for i in $(PROGS); do cp -p $$i "$(DESTDIR)$(BOUML_LIB)" ; done
--	tar cf - empty genpro html rose singleton cpp_utilities xmi xmi2 xmi2import sm_generator usecase_wizard sort FileControl deploy GlobalChange | (cd $(DESTDIR)$(BOUML_LIB); tar xf -)
-+	cd plugouts && tar cf - empty genpro html rose singleton cpp_utilities xmi xmi2 xmi2import sm_generator usecase_wizard sort FileControl deploy GlobalChange | (cd $(DESTDIR)$(BOUML_LIB); tar xf -)
- 	echo "#!/bin/sh" >$(DESTDIR)$(BOUML_DIR)/bouml
- 	echo "PATH=$(BOUML_LIB):$$"PATH >>$(DESTDIR)$(BOUML_DIR)/bouml
- 	echo "exec $(BOUML_LIB)/bouml \"$$"@"\"" >>$(DESTDIR)$(BOUML_DIR)/bouml
