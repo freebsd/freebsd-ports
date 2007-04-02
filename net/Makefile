@@ -302,6 +302,7 @@
     SUBDIR += micro_inetd
     SUBDIR += micro_proxy
     SUBDIR += minisapserver
+    SUBDIR += miniupnpd
     SUBDIR += miredo
     SUBDIR += mknbi
     SUBDIR += mmucl
