@@ -18,12 +18,6 @@ PERL_CONFIGURE=	yes
 
 MAN3=		WWWdb::Base.3 WWWdb::DbSession.3 WWWdb::List.3 \
 		WWWdb::Session.3 WWWdb::Plugin.3 WWWdb::Hash.3 \
-		WWWdb::HTML.3
+		WWWdb::HTML.3 WWWdb::ConfigFile.3 WWWdb::ConfigPool.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 500600
-MAN3+=		WWWdb::ConfigFile.3 WWWdb::ConfigPool.3
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

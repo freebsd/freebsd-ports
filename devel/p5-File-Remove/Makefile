@@ -20,10 +20,4 @@ PERL_CONFIGURE=	YES
 
 MAN3=		File::Remove.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires File::Glob, which is only available in perl 5.6.0 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

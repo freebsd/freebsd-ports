@@ -55,10 +55,6 @@ CONFIGURE_ARGS+=--with-kde-support=no
 PLIST_SUB+=	WITH_KDE="@comment "
 .endif
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		Perl > 5.6 is required
-.endif
-
 .if defined(SESSION_MANAGER)
 BROKEN=		please unset SESSION_MANAGER
 .endif
