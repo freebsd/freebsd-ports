@@ -2246,6 +2246,7 @@ eclipse-devel	ports/java/eclipse-devel
 eclipse-drjava	ports/java/eclipse-drjava
 eclipse-emf	ports/java/eclipse-emf
 eclipse-examples	ports/java/eclipse-examples
+eclipse-findbugs	ports/java/eclipse-findbugs
 eclipse-gef	ports/java/eclipse-gef
 eclipse-gef-examples	ports/java/eclipse-gef-examples
 eclipse-jad	ports/java/eclipse-jad
