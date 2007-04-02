@@ -25,11 +25,4 @@ PERL_CONFIGURE=	yes
 MAN1=	adsquery.1
 MAN3=	Astro::ADS.3 Astro::ADS::Query.3 Astro::ADS::Result.3 Astro::ADS::Result::Paper.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-post-patch:
-	@${PERL} -pi -e 's/(\$$self->\$$method);/$$1();/' ${WRKSRC}/Result/Paper/Paper.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

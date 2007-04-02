@@ -25,10 +25,4 @@ MAN3=	Astro::FITS::Header.3 \
 	Astro::FITS::Header::Item.3 \
 	Astro::FITS::Header::NDF.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires at least Perl 5.6. Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
