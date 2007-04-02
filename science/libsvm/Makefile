@@ -33,16 +33,17 @@ TXT_DOCS=	README.python
 BUILD_WRKSRC=	${WRKSRC}/python
 
 .else
-
 TXT_DOCS=	COPYRIGHT README FAQ.html README.tools
-.if !defined(NOPORTDOCS)
-PORTDOCS=	${TXT_DOCS}
-.endif
+
 TOOLS=		tools/grid.py tools/easy.py tools/subset.py
 
 SUB_FILES=	pkg-message
 SUB_LIST=	DATADIR=${DATADIR}
 
+.endif
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	${TXT_DOCS}
 .endif
 
 .include <bsd.port.pre.mk>
