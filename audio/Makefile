@@ -510,6 +510,7 @@
     SUBDIR += py-ogg
     SUBDIR += py-openal
     SUBDIR += py-sdl_mixer
+    SUBDIR += py-speex
     SUBDIR += py-taglib
     SUBDIR += py-tagpy
     SUBDIR += py-vorbis
