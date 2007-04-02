@@ -1,17 +1,17 @@
---- Makefile.in.orig	Tue Feb 20 14:15:56 2007
-+++ Makefile.in	Thu Feb 22 13:47:30 2007
-@@ -430,8 +430,8 @@
+--- Makefile.in.orig	Fri Mar 30 16:17:46 2007
++++ Makefile.in	Mon Apr  2 10:39:02 2007
+@@ -462,8 +462,8 @@
  target_vendor = @target_vendor@
  DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc --without-system-ltdl
  ACLOCAL_AMFLAGS = -I m4 -I libmissing/m4
--@HAVE_SYSTEM_LIBLTDL_FALSE@SUBDIRS = libmissing m4 src prelude-adduser bindings docs
--@HAVE_SYSTEM_LIBLTDL_TRUE@SUBDIRS = libltdl libmissing m4 src prelude-adduser bindings docs
-+@HAVE_SYSTEM_LIBLTDL_FALSE@SUBDIRS = libmissing m4 src prelude-adduser bindings
-+@HAVE_SYSTEM_LIBLTDL_TRUE@SUBDIRS = libltdl libmissing m4 src prelude-adduser bindings
+-@HAVE_SYSTEM_LIBLTDL_FALSE@SUBDIRS = libltdl libmissing m4 src prelude-adduser bindings docs
+-@HAVE_SYSTEM_LIBLTDL_TRUE@SUBDIRS = libmissing m4 src prelude-adduser bindings docs
++@HAVE_SYSTEM_LIBLTDL_FALSE@SUBDIRS = libltdl libmissing m4 src prelude-adduser bindings
++@HAVE_SYSTEM_LIBLTDL_TRUE@SUBDIRS = libmissing m4 src prelude-adduser bindings
  EXTRA_DIST = HACKING.README LICENSE.README client.conf global.conf idmef-client.conf tls.conf
  bin_SCRIPTS = $(top_builddir)/libprelude-config
  distuninstallcheck_listfiles = find . -type f -print | grep -v 'perl' | grep -v '3pm'
-@@ -953,61 +953,10 @@
+@@ -985,61 +985,10 @@
  	$(INSTALL) -d -m 755 $(DESTDIR)$(prelude_config_dir);
  	$(INSTALL) -d -m 755 $(DESTDIR)$(prelude_config_dir)/default;
  	$(INSTALL) -d -m 755 $(DESTDIR)$(prelude_config_dir)/profile;
