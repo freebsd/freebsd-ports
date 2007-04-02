@@ -2354,7 +2354,6 @@ emacs-wiki	ports/textproc/emacs-wiki
 emacs.app	ports/editors/emacs.app
 emacs19		ports/editors/emacs19
 emacs20		ports/editors/emacs20
-emacs20-dl	ports/editors/emacs20-dl
 embassy		ports/biology/embassy
 ember		ports/games/ember
 emboss		ports/biology/emboss
@@ -2823,7 +2822,6 @@ flim		ports/editors/flim
 flim-emacs20	ports/editors/flim-emacs20
 flim-xemacs21-mule	ports/editors/flim-xemacs21-mule
 flim113		ports/editors/flim113
-flim113-emacs20	ports/editors/flim113-emacs20
 flip		ports/graphics/flip
 flite		ports/audio/flite
 floatator	ports/misc/floatator
@@ -13994,7 +13992,6 @@ semi		ports/editors/semi
 semi-emacs20	ports/editors/semi-emacs20
 semi-xemacs21-mule	ports/editors/semi-xemacs21-mule
 semi113		ports/editors/semi113
-semi113-emacs20	ports/editors/semi113-emacs20
 sendemail	ports/net/sendemail
 sendfile	ports/net/sendfile
 sendip		ports/net-mgmt/sendip
