@@ -12,7 +12,7 @@ CATEGORIES=	science astro java
 MASTER_SITES=	# http://ovt.irfu.se/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_${OVTBUILD}-src
 
-MAINTAINER=	ko@nest.irfu.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Orbit Visualization Tool
 
 LIB_DEPENDS=	vtkCommonJava:${PORTSDIR}/math/vtk-java
