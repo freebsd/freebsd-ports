@@ -1,0 +1,6 @@
+Hinversi is a version of Reversi or Othello, a board game. It was written
+from the beginning thinking on modularity, to ease the process of changing
+and improving the AI engine.
+
+WWW: http://asturio.gmxhome.de/hinversi.html
+Author: Claudio Clemens <asturio@gmx.net>

@@ -326,6 +326,7 @@
     SUBDIR += hex-a-hop
     SUBDIR += hexxagon
     SUBDIR += highmoon
+    SUBDIR += hinversi
     SUBDIR += hlserver-admin
     SUBDIR += hlserver-cs
     SUBDIR += hlserver-dod
