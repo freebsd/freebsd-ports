@@ -24,10 +24,6 @@ PLIST_FILES=	bin/mp3riot
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-RUN_DEPENDS+=	${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long
-.endif
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mp3riot ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
