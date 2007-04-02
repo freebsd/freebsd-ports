@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox-showcase
-PORTVERSION=	0.9.2.2
+PORTVERSION=	0.9.2.3
 DISTVERSIONSUFFIX=	-fx+fl
 CATEGORIES=	www
 
@@ -14,6 +14,7 @@ MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Easily locate and select any open browser window
 
 XPI_DISTNAME=	firefox_showcase
+XPI_NUM=	1810
 XPI_ID=		{89506680-e3f4-484c-a2c0-ed711d481eda}
 XPI_FILES=	chrome/showcase.jar components/showcase-clhandler.js defaults/preferences/showcase.js \
 		install.rdf chrome.manifest LICENSE
