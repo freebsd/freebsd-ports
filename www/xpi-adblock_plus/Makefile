@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	adblock_plus
-PORTVERSION=	0.7.1.2
-DISTVERSIONSUFFIX=	-fx+fl+zm
+PORTVERSION=	0.7.2.4
+DISTVERSIONSUFFIX=	-fx+fl+zm+tb
 CATEGORIES=	www
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A content filtering extension
 
+XPI_NUM=	1865
 XPI_ID=		{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}
 XPI_FILES=	chrome/adblockplus.jar chrome.manifest components/nsAdblockPlus.js \
 		components/nsAdblockPlus.xpt defaults/preferences/adblockplus.js \
