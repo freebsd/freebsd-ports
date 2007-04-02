@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+
+# PROVIDE: blocksshd
+# REQUIRE: NETWORKING
+# BEFORE: securelevel
+# KEYWORD: shutdown
+
+. %%RC_SUBR%%
+
+name="blocksshd"
+rcvar="`set_rcvar`"
+command="%%PREFIX%%/bin/${name}"
+command_interpreter="/usr/bin/perl"
+pidfile="/var/run/${name}.pid"
+blocksshd_flags="--start"
+stop_precmd=blocksshd_stop
+
+blocksshd_stop () {
+        ${command} --stop
+}
+
+load_rc_config $name
+run_rc_command "$1"

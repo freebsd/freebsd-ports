@@ -7,6 +7,7 @@
 
 PORTNAME=	blocksshd
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	security sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	blocksshd
@@ -21,11 +22,15 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS/Resolver.pm:${PORTSDIR}/dns/p5-Ne
 MAKE_ARGS=	PREFIX="${PREFIX}" SYSCONFDIR="${PREFIX}/etc"
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
+USE_RC_SUBR=	blocksshd
+USE_DOS2UNIX=	blocksshd blocksshd.conf
 
 MAN1=		blocksshd.1
 
-post-patch:
+post-extract:
 	@${CHMOD} 755 ${WRKSRC}/init
+
+post-patch:
 	@${REINPLACE_CMD} -e 's|^MANCOMPRESS = .gz||g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|/etc/blocksshd.conf|${PREFIX}/etc/blocksshd.conf|g' ${WRKSRC}/blocksshd
 
