@@ -13,7 +13,7 @@ CATEGORIES=	multimedia graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Dump frames from mpeg movies
 
 LIB_DEPENDS=	smpeg:${PORTSDIR}/multimedia/smpeg

@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.nocrew.org/software/vcdpad/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A program to pad vcd mpegs
 
 PLIST_FILES=	bin/vcdpad

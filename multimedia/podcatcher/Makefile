@@ -12,7 +12,7 @@ CATEGORIES=	multimedia ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Podcast client for the command line
 
 USE_RUBY=	yes
