@@ -21,6 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/src
 post-patch:
 	${REINPLACE_CMD} -e 's,service_type_t,script_type_t,g' ${WRKSRC}/service.c
 	${REINPLACE_CMD} -e 's,/usr/sbin,/sbin,g' ${WRKSRC}/l4ip.conf
+	${REINPLACE_CMD} -e '/^CC/d' ${WRKSRC}/${MAKEFILE} ${WRKSRC}/../lion/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/l4ip ${PREFIX}/sbin
