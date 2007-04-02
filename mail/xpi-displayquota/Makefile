@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	displayquota
-PORTVERSION=	0.1.10
+PORTVERSION=	0.1.10.2
 DISTVERSIONSUFFIX=	-tb
 CATEGORIES=	mail
 
 MAINTAINER=	alexbl@FreeBSD.org
-COMMENT=	An extension that displays your IMAP quota in statusbar
+COMMENT=	Displays your IMAP quota in statusbar
 
 XPI_DISTNAME=	display_quota
+XPI_NUM=	881
 XPI_ID=		{c1ac4523-76c2-9995-adbd-d93bf5141bea}
 XPI_FILES=	chrome/DisplayQuota.jar defaults/preferences/displayquota.js install.rdf chrome.manifest
 XPI_DIRS=	chrome defaults/preferences defaults
