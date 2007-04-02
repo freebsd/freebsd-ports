@@ -23,14 +23,21 @@ share/doc/HTML/de/k3b/select_audiofiles.png
 share/doc/HTML/de/k3b/select_project.png
 share/doc/HTML/de/k3b/video-encoding.docbook
 share/doc/HTML/es/k3b/audiocd-howto.docbook
-share/doc/HTML/es/k3b/cdcloning_dialog.png
-share/doc/HTML/es/k3b/cdcloning_reading.png
+share/doc/HTML/es/k3b/burndialog_audio.png
+share/doc/HTML/es/k3b/burndialog_progress.png
 share/doc/HTML/es/k3b/cdcopy-howto.docbook
+share/doc/HTML/es/k3b/cdcopy_done.png
 share/doc/HTML/es/k3b/cdcopy_reading.png
+share/doc/HTML/es/k3b/cdcopy_settings.png
+share/doc/HTML/es/k3b/cdcopy_writing.png
 share/doc/HTML/es/k3b/commands.docbook
 share/doc/HTML/es/k3b/common
+share/doc/HTML/es/k3b/dcop.docbook
 share/doc/HTML/es/k3b/index.cache.bz2
 share/doc/HTML/es/k3b/index.docbook
+share/doc/HTML/es/k3b/select_audiofiles.png
+share/doc/HTML/es/k3b/select_project.png
+share/doc/HTML/es/k3b/video-encoding.docbook
 share/doc/HTML/et/k3b/audiocd-howto.docbook
 share/doc/HTML/et/k3b/cdcopy-howto.docbook
 share/doc/HTML/et/k3b/commands.docbook
@@ -141,14 +148,14 @@ share/locale/af/LC_MESSAGES/k3b.mo
 share/locale/af/LC_MESSAGES/k3bsetup.mo
 share/locale/af/LC_MESSAGES/libk3b.mo
 share/locale/af/LC_MESSAGES/libk3bdevice.mo
+share/locale/ar/LC_MESSAGES/k3b.mo
+share/locale/ar/LC_MESSAGES/k3bsetup.mo
+share/locale/ar/LC_MESSAGES/libk3b.mo
+share/locale/ar/LC_MESSAGES/libk3bdevice.mo
 share/locale/bg/LC_MESSAGES/k3b.mo
 share/locale/bg/LC_MESSAGES/k3bsetup.mo
 share/locale/bg/LC_MESSAGES/libk3b.mo
 share/locale/bg/LC_MESSAGES/libk3bdevice.mo
-share/locale/bn/LC_MESSAGES/k3b.mo
-share/locale/bn/LC_MESSAGES/k3bsetup.mo
-share/locale/bn/LC_MESSAGES/libk3b.mo
-share/locale/bn/LC_MESSAGES/libk3bdevice.mo
 share/locale/br/LC_MESSAGES/k3b.mo
 share/locale/br/LC_MESSAGES/k3bsetup.mo
 share/locale/br/LC_MESSAGES/libk3b.mo
@@ -197,6 +204,10 @@ share/locale/eu/LC_MESSAGES/k3b.mo
 share/locale/eu/LC_MESSAGES/k3bsetup.mo
 share/locale/eu/LC_MESSAGES/libk3b.mo
 share/locale/eu/LC_MESSAGES/libk3bdevice.mo
+share/locale/fa/LC_MESSAGES/k3b.mo
+share/locale/fa/LC_MESSAGES/k3bsetup.mo
+share/locale/fa/LC_MESSAGES/libk3b.mo
+share/locale/fa/LC_MESSAGES/libk3bdevice.mo
 share/locale/fi/LC_MESSAGES/k3b.mo
 share/locale/fi/LC_MESSAGES/k3bsetup.mo
 share/locale/fi/LC_MESSAGES/libk3b.mo
@@ -209,6 +220,10 @@ share/locale/ga/LC_MESSAGES/k3b.mo
 share/locale/ga/LC_MESSAGES/k3bsetup.mo
 share/locale/ga/LC_MESSAGES/libk3b.mo
 share/locale/ga/LC_MESSAGES/libk3bdevice.mo
+share/locale/gl/LC_MESSAGES/k3b.mo
+share/locale/gl/LC_MESSAGES/k3bsetup.mo
+share/locale/gl/LC_MESSAGES/libk3b.mo
+share/locale/gl/LC_MESSAGES/libk3bdevice.mo
 share/locale/he/LC_MESSAGES/k3b.mo
 share/locale/he/LC_MESSAGES/k3bsetup.mo
 share/locale/he/LC_MESSAGES/libk3b.mo
@@ -233,10 +248,10 @@ share/locale/ja/LC_MESSAGES/k3b.mo
 share/locale/ja/LC_MESSAGES/k3bsetup.mo
 share/locale/ja/LC_MESSAGES/libk3b.mo
 share/locale/ja/LC_MESSAGES/libk3bdevice.mo
-share/locale/km/LC_MESSAGES/k3b.mo
-share/locale/km/LC_MESSAGES/k3bsetup.mo
-share/locale/km/LC_MESSAGES/libk3b.mo
-share/locale/km/LC_MESSAGES/libk3bdevice.mo
+share/locale/ka/LC_MESSAGES/k3b.mo
+share/locale/ka/LC_MESSAGES/k3bsetup.mo
+share/locale/ka/LC_MESSAGES/libk3b.mo
+share/locale/ka/LC_MESSAGES/libk3bdevice.mo
 share/locale/lt/LC_MESSAGES/k3b.mo
 share/locale/lt/LC_MESSAGES/k3bsetup.mo
 share/locale/lt/LC_MESSAGES/libk3b.mo
@@ -281,22 +296,22 @@ share/locale/pt_BR/LC_MESSAGES/k3b.mo
 share/locale/pt_BR/LC_MESSAGES/k3bsetup.mo
 share/locale/pt_BR/LC_MESSAGES/libk3b.mo
 share/locale/pt_BR/LC_MESSAGES/libk3bdevice.mo
-share/locale/ro/LC_MESSAGES/k3b.mo
-share/locale/ro/LC_MESSAGES/k3bsetup.mo
-share/locale/ro/LC_MESSAGES/libk3b.mo
-share/locale/ro/LC_MESSAGES/libk3bdevice.mo
 share/locale/ru/LC_MESSAGES/k3b.mo
 share/locale/ru/LC_MESSAGES/k3bsetup.mo
 share/locale/ru/LC_MESSAGES/libk3b.mo
 share/locale/ru/LC_MESSAGES/libk3bdevice.mo
+share/locale/rw/LC_MESSAGES/k3b.mo
+share/locale/rw/LC_MESSAGES/k3bsetup.mo
+share/locale/rw/LC_MESSAGES/libk3b.mo
+share/locale/rw/LC_MESSAGES/libk3bdevice.mo
 share/locale/se/LC_MESSAGES/k3b.mo
 share/locale/se/LC_MESSAGES/k3bsetup.mo
 share/locale/se/LC_MESSAGES/libk3b.mo
 share/locale/se/LC_MESSAGES/libk3bdevice.mo
-share/locale/sl/LC_MESSAGES/k3b.mo
-share/locale/sl/LC_MESSAGES/k3bsetup.mo
-share/locale/sl/LC_MESSAGES/libk3b.mo
-share/locale/sl/LC_MESSAGES/libk3bdevice.mo
+share/locale/sk/LC_MESSAGES/k3b.mo
+share/locale/sk/LC_MESSAGES/k3bsetup.mo
+share/locale/sk/LC_MESSAGES/libk3b.mo
+share/locale/sk/LC_MESSAGES/libk3bdevice.mo
 share/locale/sr/LC_MESSAGES/k3b.mo
 share/locale/sr/LC_MESSAGES/k3bsetup.mo
 share/locale/sr/LC_MESSAGES/libk3b.mo
@@ -321,6 +336,10 @@ share/locale/uk/LC_MESSAGES/k3b.mo
 share/locale/uk/LC_MESSAGES/k3bsetup.mo
 share/locale/uk/LC_MESSAGES/libk3b.mo
 share/locale/uk/LC_MESSAGES/libk3bdevice.mo
+share/locale/uz/LC_MESSAGES/k3b.mo
+share/locale/uz/LC_MESSAGES/k3bsetup.mo
+share/locale/uz/LC_MESSAGES/libk3b.mo
+share/locale/uz/LC_MESSAGES/libk3bdevice.mo
 share/locale/zh_CN/LC_MESSAGES/k3b.mo
 share/locale/zh_CN/LC_MESSAGES/k3bsetup.mo
 share/locale/zh_CN/LC_MESSAGES/libk3b.mo
@@ -333,16 +352,18 @@ share/locale/zh_TW/LC_MESSAGES/libk3bdevice.mo
 @dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/zh_CN/LC_MESSAGES
 @dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/uz/LC_MESSAGES
+@dirrmtry share/locale/uz
 @dirrmtry share/locale/uk/LC_MESSAGES
 @dirrmtry share/locale/uk
 @dirrmtry share/locale/sr/LC_MESSAGES
 @dirrmtry share/locale/sr
-@dirrmtry share/locale/sl/LC_MESSAGES
-@dirrmtry share/locale/sl
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
 @dirrmtry share/locale/se/LC_MESSAGES
 @dirrmtry share/locale/se
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/ro
+@dirrmtry share/locale/rw/LC_MESSAGES
+@dirrmtry share/locale/rw
 @dirrmtry share/locale/pt/LC_MESSAGES
 @dirrmtry share/locale/pt
 @dirrmtry share/locale/pl/LC_MESSAGES
@@ -351,8 +372,8 @@ share/locale/zh_TW/LC_MESSAGES/libk3bdevice.mo
 @dirrmtry share/locale/nn
 @dirrmtry share/locale/nds/LC_MESSAGES
 @dirrmtry share/locale/nds
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
+@dirrmtry share/locale/gl/LC_MESSAGES
+@dirrmtry share/locale/gl
 @dirrmtry share/locale/fi/LC_MESSAGES
 @dirrmtry share/locale/fi
 @dirrmtry share/locale/el/LC_MESSAGES
