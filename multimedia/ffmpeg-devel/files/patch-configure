@@ -1,48 +1,44 @@
---- configure.orig	Sun Mar 19 01:31:55 2006
-+++ configure	Thu Sep 28 20:27:49 2006
-@@ -138,7 +138,7 @@
-     cpu="x86"
-   ;;
-   x86_64|amd64)
--    cpu="x86"
-+    cpu="x86_64"
-     canon_arch="`cc -dumpmachine | sed -e 's,\([^-]*\)-.*,\1,'`"
-     if [ x"$canon_arch" = x"x86_64" -o x"$canon_arch" = x"amd64" ]; then
-       if [ -z "`echo $CFLAGS | grep -- -m32`"  ]; then
-@@ -1107,6 +1107,8 @@
- builtin_vector=no
- if $cc -msse -o $TMPO $TMPC 2> /dev/null ; then
-   builtin_vector=yes
-+else
-+  builtin_vector=no
- fi
- 
- # test for mm3dnow.h
-@@ -1597,13 +1599,13 @@
-   echo "#define BUILD_SHARED_AV 1" >> $TMPH
+--- configure.orig	Sat Mar 31 00:25:05 2007
++++ configure	Sun Apr  1 18:59:07 2007
+@@ -1966,15 +1966,15 @@
+ if enabled shared; then
    echo "BUILD_SHARED=yes" >> config.mak
    echo "PIC=-fPIC -DPIC" >> config.mak
--  echo "SPPMAJOR=${lavc_version%%.*}" >> config.mak
--  echo "SPPVERSION=$lavc_version" >> config.mak
--  echo "LAVCMAJOR=${lavc_version%%.*}" >> config.mak
+-  echo "SPPMAJOR=${pp_version%%.*}" >> config.mak
 +  echo "SPPMAJOR=1" >> config.mak
-+  echo "SPPVERSION=1" >> config.mak
-+  echo "LAVCMAJOR=1" >> config.mak
+   echo "SPPVERSION=$pp_version" >> config.mak
+-  echo "LAVCMAJOR=${lavc_version%%.*}" >> config.mak
++  echo "LAVCMAJOR=%%SHLIB_VER%%" >> config.mak
    echo "LAVCVERSION=$lavc_version" >> config.mak
 -  echo "LAVFMAJOR=${lavf_version%%.*}" >> config.mak
-+  echo "LAVFMAJOR=1" >> config.mak
++  echo "LAVFMAJOR=%%SHLIB_VER%%" >> config.mak
    echo "LAVFVERSION=$lavf_version" >> config.mak
 -  echo "LAVUMAJOR=${lavu_version%%.*}" >> config.mak
-+  echo "LAVUMAJOR=1" >> config.mak
++  echo "LAVUMAJOR=%%SHLIB_VER%%" >> config.mak
    echo "LAVUVERSION=$lavu_version" >> config.mak
+-  echo "SWSMAJOR=${sws_version%%.*}" >> config.mak
++  echo "SWSMAJOR=%%SHLIB_VER%%" >> config.mak
+   echo "SWSVERSION=$sws_version" >> config.mak
    echo "SLIBNAME=${SLIBNAME}" >> config.mak
    echo "SLIBNAME_WITH_VERSION=${SLIBNAME_WITH_VERSION}" >> config.mak
-@@ -2075,7 +2077,7 @@
- Requires:
+@@ -2103,8 +2103,8 @@
+ Version: $version
+ Requires: $requires
  Conflicts:
- Libs: -L\${libdir} -lpostproc
--Cflags: -I\${includedir} -I\${includedir}/postproc
-+Cflags: -I\${includedir} -I\${includedir}/ffmpeg/postproc
+-Libs: -L\${libdir} $libs
+-Cflags: -I\${includedir} -I\${includedir}/$include
++Libs: -L\${libdir} $libs -L%%LOCALBASE%%/lib
++Cflags: -I\${includedir} -I\${includedir}/$include -I%%LOCALBASE%%/include
  EOF
+ }
  
- cat <<EOF >libpostproc-uninstalled.pc
+@@ -2127,7 +2127,8 @@
+ Requires: $requires
+ Conflicts:
+ Libs: \${libdir}/${LIBPREF}${shortname}${LIBSUF} $libs
+-Cflags: -I\${includedir}
++Ldflags: -L%%LOCALBASE%%/lib
++Cflags: -I\${includedir} -I%%LOCALBASE%%/include
+ EOF
+ }
+ 
