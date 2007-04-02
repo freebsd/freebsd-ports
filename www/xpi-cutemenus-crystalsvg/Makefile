@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	cutemenus-crystalsvg
-PORTVERSION=	1.2.5
-DISTVERSIONSUFFIX=	-fx+fl+ns+nv+sb+tb
+PORTVERSION=	1.8.2.1
+DISTVERSIONSUFFIX=	-fx+fl+ns+nv+zm+sb+tb
 CATEGORIES=	www
 
 MAINTAINER=	lapo@lapo.it
-COMMENT=	An extension that adds cute icons to menus
+COMMENT=	Adds cute icons to menus
 
 XPI_DISTNAME=	cutemenus_-_crystal_svg
+XPI_NUM=	1330
 XPI_ID=		{63df8e21-711c-4074-a257-b065cadc28d8}
-XPI_FILES=	chrome/cutemenus.jar chrome.manifest install.js install.rdf
-XPI_DIRS=	chrome
+XPI_FILES=	chrome/cutemenus.jar chrome.manifest components/cutemenus.js\
+		defaults/preferences/cutemenus.js install.js install.rdf
+XPI_DIRS=	chrome components defaults/preferences defaults
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
