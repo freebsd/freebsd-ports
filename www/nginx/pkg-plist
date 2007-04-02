@@ -5,15 +5,15 @@ etc/nginx/koi-win
 etc/nginx/win-utf
 @unexec if cmp -s %D/etc/nginx/mime.types %D/etc/nginx/mime.types-dist; then rm -f %D/etc/nginx/mime.types; fi
 etc/nginx/mime.types-dist
-@exec [ -f %B/mime.types ] || cp %B/%f %B/mime.types
+@exec [ -f %D/mime.types ] || cp %D/%f %D/mime.types
 @unexec if cmp -s %D/etc/nginx/nginx.conf %D/etc/nginx/nginx.conf-dist; then rm -f %D/etc/nginx/nginx.conf; fi
 etc/nginx/nginx.conf-dist
-@exec [ -f %B/nginx.conf ] || cp %B/%f %B/nginx.conf
+@exec [ -f %D/nginx.conf ] || cp %D/%f %D/nginx.conf
 @dirrmtry etc/nginx
 %%WWWDATA%%@exec mkdir -p -m 755 www/nginx-dist
 @comment @unexec chmod u+w www/nginx-dist
 %%WWWDATA%%www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
-%%WWWDATA%%@exec [ -d %D/www/nginx/ ] || ln -fs %B %D/www/nginx
+%%WWWDATA%%@exec [ -d %D/www/nginx/ ] || ln -fs %D %D/www/nginx
 %%WWWDATA%%www/nginx-dist/index.html
 %%WWWDATA%%www/nginx-dist/50x.html
 %%WWWDATA%%@exec chmod a-w www/nginx-dist
