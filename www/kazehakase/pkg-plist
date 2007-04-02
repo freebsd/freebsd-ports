@@ -12,9 +12,10 @@ etc/kazehakase/smartbookmarks.xml
 lib/kazehakase/libkazehakase.la
 lib/kazehakase/libkazehakase.so
 lib/kazehakase/libkazehakase.so.0
-lib/kazehakase/search/libhyperestraier.la
-lib/kazehakase/search/libhyperestraier.so
-lib/kazehakase/search/libhyperestraier.so.1
+lib/kazehakase/embed/gecko.la
+lib/kazehakase/embed/gecko.so
+lib/kazehakase/search/hyper-estraier.la
+lib/kazehakase/search/hyper-estraier.so
 share/gnome/applications/kazehakase.desktop
 share/gnome/kazehakase/icons/autoscroll.xpm
 share/gnome/kazehakase/icons/kz-anchor.png
@@ -69,6 +70,7 @@ share/locale/ru/LC_MESSAGES/kazehakase.mo
 @dirrm share/gnome/kazehakase/icons
 @dirrm share/gnome/kazehakase
 @dirrm lib/kazehakase/search
+@dirrm lib/kazehakase/embed
 @dirrm lib/kazehakase
 @dirrm etc/kazehakase/mozilla
 @dirrm etc/kazehakase
