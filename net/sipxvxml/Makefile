@@ -7,7 +7,7 @@
 
 PORTNAME=	sipxvxml
 PORTVERSION=	3.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.sipfoundry.org/pub/sipX/3.6/SRC/
 

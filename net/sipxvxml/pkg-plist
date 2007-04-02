@@ -50,7 +50,9 @@ include/src/jsutil.h
 include/src/jsxdrapi.h
 include/src/prmjtime.h
 include/src/resource.h
+@exec mkdir -p %D/www/sipX/conf
 @dirrm www/sipX/conf
+@exec mkdir -p %D/www/sipX
 @dirrm www/sipX
 @dirrm include/src/fdlibm
 @dirrm include/src

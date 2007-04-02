@@ -1168,6 +1168,7 @@ www/sipX/doc/vm_vxml/savemessage_no_operator.vxml.in
 @dirrm www/sipX/doc/adminui
 @dirrm www/sipX/doc/aa_vxml
 @dirrm www/sipX/doc
+@exec mkdir -p %D/www/sipX/conf
 @dirrm www/sipX/conf
 @dirrm www/sipX/cgi-bin/voicemail
 @dirrm www/sipX/cgi-bin/replication
