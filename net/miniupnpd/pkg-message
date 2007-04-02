@@ -1,0 +1,18 @@
+
+*** !!WARNING!! !!WARNING!! !!WARNING!! ***
+This port allows machines within your network to create holes in your
+firewall.  Please ensure this is really what you want!
+*** !!WARNING!! !!WARNING!! !!WARNING!! ***
+
+For this daemon to work, you must modify your pf rules to add an anchor
+in both the NAT and rules section.  Both must be called 'miniupnpd'.
+Example:
+
+# NAT section
+# UPnPd rdr anchor
+rdr-anchor "miniupnpd"
+
+# Rules section
+# uPnPd rule anchor
+anchor "miniupnpd"
+

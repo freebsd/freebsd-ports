@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: miniupnpd
+# REQUIRE: NETWORKING SERVERS DAEMON ldconfig resolv
+
+. %%RC_SUBR%%
+
+miniupnpd_enable=${miniupnpd_enable:-"NO"}
+miniupnpd_config=${miniupnpd_config:-"%%PREFIX%%/etc/miniupnpd.conf"}
+miniupnpd_flags=${miniupnpd_flags}
+
+name=miniupnpd
+rcvar=`set_rcvar`
+load_rc_config $name
+
+command="%%PREFIX%%/sbin/miniupnpd"
+pidfile="/var/run/${name}.pid"
+command_args="-f $miniupnpd_config"
+
+required_files=$miniupnpd_config
+
+run_rc_command "$1"
+
