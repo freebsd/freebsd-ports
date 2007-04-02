@@ -64,11 +64,15 @@ OPTIONS=	X11				"X11 support" on \
 		IMAGEMAGICK_DOT		"GraphViz dot graphs support" off \
 		IMAGEMAGICK_WMF			"WMF format support" off \
 		IMAGEMAGICK_SVG			"SVG format support" off \
-		IMAGEMAGICK_PDF			"PDF format support" off \
+		IMAGEMAGICK_PDF			"PDF format support" on \
 		IMAGEMAGICK_MPEG2		"MPEG2 format support" on \
 		IMAGEMAGICK_GSLIB	"libgs (Postscript SHLIB) support" off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_GHOSTSCRIPT_GNU)
+IGNORE=		requires newer version of ghostscript
+.endif
 
 .if !defined(WITHOUT_IMAGEMAGICK_PERL)
 CONFIGURE_ARGS+=	--with-perl=${PERL5}
@@ -142,7 +146,6 @@ PLIST_SUB+=		TIFF="@comment "
 .if defined(WITH_IMAGEMAGICK_GSLIB)
 CONFIGURE_ARGS+=	--with-gslib
 USE_GHOSTSCRIPT=	yes
-WITH_GHOSTSCRIPT_AFPL=	yes
 .else
 CONFIGURE_ARGS+=	--without-gslib
 .endif
@@ -249,9 +252,8 @@ CONFIGURE_ARGS+=	--without-rsvg
 .endif
 
 # PDF (Adobe Portable Document Format) support
-.if defined(WITH_IMAGEMAGICK_PDF)
+.if !defined(WITHOUT_IMAGEMAGICK_PDF)
 USE_GHOSTSCRIPT=	yes
-WITH_GHOSTSCRIPT_AFPL=	yes
 .endif
 
 .if defined(WITHOUT_X11)
