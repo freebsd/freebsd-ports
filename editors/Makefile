@@ -44,7 +44,6 @@
     SUBDIR += emacs.app
     SUBDIR += emacs19
     SUBDIR += emacs20
-    SUBDIR += emacs20-dl
     SUBDIR += etoile-typewriter
     SUBDIR += f4l
     SUBDIR += fb
@@ -52,7 +51,6 @@
     SUBDIR += flim-emacs20
     SUBDIR += flim-xemacs21-mule
     SUBDIR += flim113
-    SUBDIR += flim113-emacs20
     SUBDIR += fpc-ide
     SUBDIR += fte
     SUBDIR += gate
@@ -139,7 +137,6 @@
     SUBDIR += semi-emacs20
     SUBDIR += semi-xemacs21-mule
     SUBDIR += semi113
-    SUBDIR += semi113-emacs20
     SUBDIR += setedit
     SUBDIR += slime
     SUBDIR += softmaker-office
