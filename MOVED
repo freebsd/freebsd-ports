@@ -2894,3 +2894,6 @@ japanese/gnomelibs||2007-03-28|Has expired: Broken on all supported versions of 
 x11-toolkits/ruby-fox|x11-toolkits/ruby-fox10|2007-03-29|rename for supporting multiple fox version
 x11-toolkits/ruby-fox-devel|x11-toolkits/ruby-fox12|2007-03-29|rename for supporting multiple fox version
 lang/tcl81-thread||2007-03-29|Remove an ancient, unused tcl version
+editors/emacs20-dl||2007-04-02|Has expired: unfetchable, obsolete
+editors/flim113-emacs20||2007-04-02|Has expired: unfetchable, obsolete
+editors/semi113-emacs20||2007-04-02|Has expired: unfetchable, obsolete
