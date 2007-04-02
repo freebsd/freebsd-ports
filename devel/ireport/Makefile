@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ireport
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	devel databases java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -40,8 +40,9 @@ JARFILES=	JasperBabylon-1.0.0.jar LICENSE.asm-attr.txt LICENSE.asm.txt	\
 		cincom-jr-xmla.jar commons-javaflow-20060411.jar ehcache-1.1.jar\
 		eigenbase-properties.jar eigenbase-resgen.jar eigenbase-xom.jar	\
 		flexdock-0.4.1.jar groovy-all-1.0-beta-10.jar hibernate3.jar	\
-		iReport.jar javacup.jar jdt-compiler-3.1.1.jar jpa.jar		\
-		jr-bsh-compiler.jar jsmoothgen-ant-0.9.7.jar jta.jar jxl-2.6.jar\
+		iReport.jar jasperreports-extensions-1.3.1.jar javacup.jar	\
+		jdt-compiler-3.1.1.jar jpa.jar jr-bsh-compiler.jar		\
+		jsmoothgen-ant-0.9.7.jar jta.jar jxl-2.6.jar			\
 		microba-0.4.1-bin.jar mondrian-2.0.1.jar nsisant-1.1.jar	\
 		png-encoder-1.5.jar rex-20070125.jar saaj-api-1.3.jar		\
 		servlet.jar spring-2.0-m2.jar spring-context-2.0-m2.jar		\
@@ -56,14 +57,14 @@ CLSSPTH=	JasperBabylon-1.0.0 antlr asm-attrs asm barbecue-1.1 bsh	\
 		commons-logging commons-logging-api commons-pool dom4j		\
 		ehcache-1.1 eigenbase-properties eigenbase-resgen eigenbase-xom	\
 		flexdock-0.4.1 groovy-all-1.0-beta-10 hibernate3 iReport itext	\
-		bcel jasperreports javacup jcmdline jcommon jdt-compiler-3.1.1	\
-		jfreechart jpa jr-bsh-compiler jsmoothgen-ant-0.9.7 jta jxl-2.6	\
-		log4j looks microba-0.4.1-bin mondrian-2.0.1			\
-		mysql-connector-java nsisant-1.1 png-encoder-1.5 poi postgresql	\
-		rex-20070125 saaj-api-1.3 servlet spring-2.0-m2			\
-		spring-context-2.0-m2 spring-hibernate3-2.0-m2			\
-		sqleonardo-2007.03 tinylaf toniclf xalan xercesImpl xml-apis	\
-		${CLSSHSQLDB}
+		bcel jasperreports jasperreports-extensions-1.3.1 javacup	\
+		jcmdline jcommon jdt-compiler-3.1.1 jfreechart jpa		\
+		jr-bsh-compiler jsmoothgen-ant-0.9.7 jta jxl-2.6 log4j looks	\
+		microba-0.4.1-bin mondrian-2.0.1 mysql-connector-java		\
+		nsisant-1.1 png-encoder-1.5 poi postgresql rex-20070125		\
+		saaj-api-1.3 servlet spring-2.0-m2 spring-context-2.0-m2	\
+		spring-hibernate3-2.0-m2 sqleonardo-2007.03 tinylaf toniclf	\
+		xalan xercesImpl xml-apis ${CLSSHSQLDB}
 
 .include <bsd.port.pre.mk>
 
