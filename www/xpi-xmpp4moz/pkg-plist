@@ -1,0 +1,18 @@
+%%XPI_XPIDIR%%/chrome/xmpp4moz.jar
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/components/Makefile
+%%XPI_XPIDIR%%/components/XMPPClientService.js
+%%XPI_XPIDIR%%/components/XMPPClientSession.js
+%%XPI_XPIDIR%%/components/XMPPTransport.js
+%%XPI_XPIDIR%%/components/nsIXMPPClientService.idl
+%%XPI_XPIDIR%%/components/nsIXMPPClientService.xpt
+%%XPI_XPIDIR%%/components/nsIXMPPClientSession.idl
+%%XPI_XPIDIR%%/components/nsIXMPPClientSession.xpt
+%%XPI_XPIDIR%%/components/nsIXMPPTransport.idl
+%%XPI_XPIDIR%%/components/nsIXMPPTransport.xpt
+%%XPI_XPIDIR%%/defaults/preferences/xmpp4moz.js
+%%XPI_XPIDIR%%/install.rdf
+@dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/components
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults
