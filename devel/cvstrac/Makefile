@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvstrac
-PORTVERSION=	1.2.1
+PORTVERSION=	2.0.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cvstrac.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -15,7 +15,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-Based Bug And Patch-Set Tracking System For CVS
 
-LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite2
+USE_SQLITE=	yes
 
 USE_GMAKE=	yes
 
