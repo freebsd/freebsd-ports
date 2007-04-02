@@ -7,6 +7,7 @@
 
 PORTNAME=	libhoard
 PORTVERSION=	3.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cs.umass.edu/~emery/hoard/hoard-${PORTVERSION}/
 DISTNAME=	hoard-36
@@ -14,6 +15,7 @@ DISTNAME=	hoard-36
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Fast, scalable and memory-efficient allocator for MP
 
+ONLY_FOR_ARCHS=	i386
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
