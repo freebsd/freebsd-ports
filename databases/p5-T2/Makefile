@@ -27,10 +27,4 @@ PERL_CONFIGURE=	yes
 MAN3=		T2.3 T2::Association.3 T2::Attribute.3 T2::Class.3 \
 		T2::DBSetup.3 T2::Schema.3 T2::Storage.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6 or newer. Install lang/perl5.8 and try again.
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -17,13 +17,7 @@ EXTRACT_ONLY=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert a MySQL dump to a PostgreSQL dump
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg-13
-.else
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
-.endif
 
 PATCH_WRKSRC=	${WRKDIR}
 PLIST_FILES=	bin/mysql2pgsql
@@ -37,4 +31,4 @@ do-extract:
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/mysql2pgsql ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

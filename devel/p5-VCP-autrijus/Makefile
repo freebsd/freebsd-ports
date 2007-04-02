@@ -38,10 +38,6 @@ RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 
 PERL_CONFIGURE=	yes
 
-.if ${PERL_LEVEL} < 500600
-BROKEN=		"Does not compile with perl ${PERL_VERSION}"
-.endif
-
 MAN1=		vcp.1
 MAN3=		RevML::Doctype.3 \
 		RevML::Writer.3 \
