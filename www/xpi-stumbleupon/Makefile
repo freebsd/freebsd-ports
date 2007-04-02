@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	stumbleupon
-PORTVERSION=	3.03
-DISTVERSIONSUFFIX=	-fx+fl+mz+ns+zm
+PORTVERSION=	3.04
+DISTVERSIONSUFFIX=	-firefox+mozilla+seamonkey
 CATEGORIES=	www
 
 MAINTAINER=	lapo@lapo.it
 COMMENT=	A collaborative surfing tool extension
 
+XPI_NUM=	138
 XPI_ID=		{AE93811A-5C9A-4d34-8462-F7B864FC4696}
 XPI_FILES=	chrome/stumbleupon.jar install.js install.rdf chrome.manifest
 XPI_DIRS=	chrome
