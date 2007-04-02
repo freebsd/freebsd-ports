@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk frontend to xanim
 
 RUN_DEPENDS=	xanim:${PORTSDIR}/multimedia/xanim
-USE_TK=		yes
+USE_TK_RUN=	yes
 
 WRKSRC=		${WRKDIR}/Tkxanim
 

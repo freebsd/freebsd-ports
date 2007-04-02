@@ -32,8 +32,8 @@ BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_GNOME=	gtk20 pygtk2
-USE_TCL=	yes
-USE_TK=	yes
+USE_TCL_RUN=	yes
+USE_TK_RUN=	yes
 CFLAGS+=	-I${X11BASE}/include
 
 EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}

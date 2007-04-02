@@ -36,8 +36,8 @@ USE_APACHE=	yes
 
 USE_PHP=	yes
 
-USE_TCL=	yes
-USE_TK=		yes
+USE_TCL_RUN=	yes
+USE_TK_RUN=	yes
 
 USE_XLIB=	yes
 USE_PERL5=	yes

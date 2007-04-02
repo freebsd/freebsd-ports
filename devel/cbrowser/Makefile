@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	jkoshy@freebsd.org
 COMMENT=	Graphical front end for cscope and cscope clones
 
-USE_TK=		yes
+USE_TK_RUN=	yes
 NO_BUILD=	yes
 
 # Private variables

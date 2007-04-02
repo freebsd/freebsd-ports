@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/tix8.1/Tix.tcl:${PORTSDIR}/x11-toolkits/tix
 
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
-USE_TK=	84
+USE_TK_RUN=	84
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-1.00
 

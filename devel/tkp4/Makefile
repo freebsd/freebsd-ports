@@ -17,7 +17,7 @@ RUN_DEPENDS=	p4:${PORTSDIR}/devel/perforce
 
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ""
-USE_TK=		yes
+USE_TK_RUN=	yes
 
 do-install:
 	${MKDIR} ${DATADIR}

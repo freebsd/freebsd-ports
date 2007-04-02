@@ -17,7 +17,7 @@ COMMENT=	Small demo for tkgeomap
 LIB_DEPENDS=	tkgeomap.0:${PORTSDIR}/astro/tkgeomap
 
 USE_XLIB=	yes
-USE_TK=		yes
+USE_TK_RUN=	yes
 NO_BUILD=	yes
 DATA_FILES=	README cities land.xdr rivers.xdr water.xdr
 PLIST_FILES=	bin/${PORTNAME} ${DATA_FILES:S,^,%%DATADIR%%/,}

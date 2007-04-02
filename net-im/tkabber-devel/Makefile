@@ -25,8 +25,8 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BZIP2=	yes
-USE_TCL=	yes
-USE_TK=		yes
+USE_TCL_RUN=	yes
+USE_TK_RUN=	yes
 
 SUBDIRS=	emoticons ifacetk jabberlib-tclxml mclistbox msgs pixmaps \
 		plugins sounds trans

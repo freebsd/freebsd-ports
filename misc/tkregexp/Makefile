@@ -15,7 +15,7 @@ DISTNAME=	visual_regexp-${PORTVERSION}
 MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	An interactive regexp design tool
 
-USE_TK=		yes
+USE_TK_RUN=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/tkregexp
 

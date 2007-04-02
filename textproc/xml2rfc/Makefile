@@ -13,10 +13,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lennox@cs.columbia.edu
 COMMENT=	A tool to create RFCs and related documents from XML, as per RFC2629
 
-USE_TCL=yes
+USE_TCL_RUN=	yes
 
 .if !defined(WITHOUT_X11)
-USE_TK=yes
+USE_TK_RUN=	yes
 .endif
 
 PATCH_TCL_SCRIPTS=xml2rfc.tcl

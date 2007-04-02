@@ -15,8 +15,6 @@ MASTER_SITES=	CSME
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Native drag and drop capabilities
 
-LIB_DEPENDS=	tk${USE_TK}.1:${PORTSDIR}/x11-toolkits/tk${USE_TK}
-
 USE_BZIP2=	yes
 USE_TK=		yes
 GNU_CONFIGURE=	yes

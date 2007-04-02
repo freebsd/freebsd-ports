@@ -13,19 +13,17 @@ MASTER_SITES=	SF
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Multi-column hierarchical listbox widget
 
-LIB_DEPENDS=	tk${USE_TK}.1:${PORTSDIR}/x11-toolkits/tk${USE_TK}
-
 USE_TK=		yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
-		--with-tk=${LOCALBASE}/lib/tk${TK_VER} \
+CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
+		--with-tk=${TK_LIBDIR} \
 		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include \
 		--mandir=${MANPREFIX}/man \
 		--exec-prefix=${PREFIX} --enable-shared
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${TCL_INCLUDES} ${TK_INCLUDES}"
-TCL_INCLUDES=	-I${LOCALBASE}/include/tcl${TK_VER} -I${LOCALBASE}/include/tcl${TK_VER}/generic
-TK_INCLUDES=	-I${LOCALBASE}/include/tk${TK_VER} -I${LOCALBASE}/include/tk${TK_VER}/generic \
-		-I${LOCALBASE}/include/tk${TK_VER}/unix
+TCL_INCLUDES=	-I${TCL_INCLUDEDIR} -I${TCL_INCLUDEDIR}/generic
+TK_INCLUDES=	-I${TK_INCLUDEDIR} -I${TK_INCLUDEDIR}/generic \
+		-I${TK_INCLUDEDIR}/unix
 TKPKG=		treectrl${PORTVERSION}
 TKLIBVER=	2.2
 PLIST_SUB=	VER=${PORTVERSION} TKPKG=${TKPKG} TKLIBVER=${TKLIBVER}

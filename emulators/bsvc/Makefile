@@ -18,7 +18,7 @@ COMMENT=	An extensible hardware simulation framework with MC68K support
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKE_ENV=	PROJECT_BASE=${PREFIX} WRKSRC=${WRKSRC}
-USE_TK=		yes
+USE_TK_RUN=	yes
 
 .include <bsd.port.pre.mk>
 

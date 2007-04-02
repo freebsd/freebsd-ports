@@ -17,7 +17,7 @@ COMMENT=	Displays U.S. Census Burea populated places on a map
 LIB_DEPENDS=	tkgeomap.0:${PORTSDIR}/astro/tkgeomap
 
 USE_XLIB=	yes
-USE_TK=		yes
+USE_TK_RUN=	yes
 NO_BUILD=	yes
 
 post-patch:

@@ -17,8 +17,11 @@ COMMENT=	A solitaire game for X11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --datadir=${PREFIX}/share/games \
 		--mandir=${PREFIX}/man
-CONFIGURE_ENV=	WISHX=${PREFIX}/bin/wish8.4
-USE_TK=		yes
+USE_TK_RUN=	yes
 MAN6=		klondike.6
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+CONFIGURE_ENV=	WISHX=${WISH}
+
+.include <bsd.port.post.mk>

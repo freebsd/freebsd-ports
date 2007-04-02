@@ -13,12 +13,11 @@ MASTER_SITES=	SF/tktable
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Themed widget set for Tk
 
-LIB_DEPENDS=	tk${USE_TK}.1:${PORTSDIR}/x11-toolkits/tk${USE_TK}
-
 USE_TK=		yes
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
-		--with-tk=${LOCALBASE}/lib/tk${TK_VER} \
+CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
+		--with-tk=${TK_LIBDIR} \
 		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include \
 		--exec-prefix=${PREFIX} --enable-shared
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${TCL_INCLUDES} ${TK_INCLUDES}"

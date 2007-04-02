@@ -13,8 +13,6 @@ MASTER_SITES=	SF/tkgeomap
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Read, manipulate and display geo data
 
-LIB_DEPENDS=	tcl${USE_TCL}.1:${PORTSDIR}/lang/tcl${USE_TCL}
-
 USE_TCL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} --with-tclinclude=${TCL_INCLUDEDIR} \
