@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	k3b
-PORTVERSION=	0.12.17
+PORTVERSION=	1.0
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,7 +33,8 @@ OPTIONS=	FLAC "Add audio/flac decoder" On \
 		LAME "Add audio/lame encoder (for mp3 files)" On \
 		FFMPEG "Add multimedia/ffmpeg decoder (for wma files)" Off \
 		MUSICBRAINZ "Use audio/libmusicbrainz music meta database" Off \
-		MPC "Add audio/libmpcdec decoder (for musepack file)" Off
+		MPC "Add audio/libmpcdec decoder (for musepack file)" Off \
+		LIBDVDREAD "Use libdvdread (for video dvd ripping)" On
 
 pre-configure:
 	${RM} ${WRKSRC}/admin/cvs.sh
@@ -47,10 +48,6 @@ showinfo:
 	more ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500000
-PKGMESSAGE=	${PKGDIR}/pkg-message5
-.endif
 
 .if defined(WITH_FLAC)
 PLIST_SUB+=	FLAC=""
@@ -90,6 +87,14 @@ LIB_DEPENDS+=	mpcdec:${PORTSDIR}/audio/libmpcdec
 .else
 PLIST_SUB+=	MPC="@comment "
 CONFIGURE_ARGS+=	--without-musepack
+.endif
+
+.if defined(WITH_LIBDVDREAD)
+PLIST_SUB+=	LIBDVDREAD=""
+LIB_DEPENDS+=	dvdread:${PORTSDIR}/multimedia/libdvdread
+.else
+PLIST_SUB+=	LIBDVDREAD="@comment "
+CONFIGURE_ARGS+=	--without-libdvdread
 .endif
 
 .include <bsd.port.post.mk>

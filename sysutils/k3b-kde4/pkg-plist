@@ -1,4 +1,6 @@
 bin/k3b
+include/k3b_export.h
+include/k3bactivepipe.h
 include/k3baudiocdtrackdrag.h
 include/k3baudiocdtracksource.h
 include/k3baudiocuefilewritingjob.h
@@ -22,6 +24,7 @@ include/k3bcdrdaowriter.h
 include/k3bcdrecordwriter.h
 include/k3bcdtext.h
 include/k3bcdtextvalidator.h
+include/k3bchecksumpipe.h
 include/k3bclonejob.h
 include/k3bcore.h
 include/k3bcuefileparser.h
@@ -29,8 +32,10 @@ include/k3bcutcombobox.h
 include/k3bdatadoc.h
 include/k3bdataitem.h
 include/k3bdatajob.h
+include/k3bdebug.h
 include/k3bdefaultexternalprograms.h
 include/k3bdevice.h
+include/k3bdevice_export.h
 include/k3bdevicecombobox.h
 include/k3bdeviceglobals.h
 include/k3bdevicehandler.h
@@ -38,6 +43,7 @@ include/k3bdevicemanager.h
 include/k3bdeviceselectiondialog.h
 include/k3bdevicetypes.h
 include/k3bdiritem.h
+include/k3bdirsizejob.h
 include/k3bdiskinfo.h
 include/k3bdoc.h
 include/k3bdvdcopyjob.h
@@ -47,10 +53,14 @@ include/k3bdvdjob.h
 include/k3bexceptions.h
 include/k3bexternalbinmanager.h
 include/k3bfileitem.h
+include/k3bfilesplitter.h
+include/k3bfilesysteminfo.h
 include/k3bglobals.h
 include/k3bglobalsettings.h
 include/k3bgrowisofswriter.h
+include/k3bimagefilereader.h
 include/k3binffilewriter.h
+include/k3bintmapcombobox.h
 include/k3bintvalidator.h
 include/k3biso9660.h
 include/k3biso9660backend.h
@@ -71,6 +81,7 @@ include/k3bmovixjob.h
 include/k3bmsf.h
 include/k3bmsfedit.h
 include/k3bmultichoicedialog.h
+include/k3bpipe.h
 include/k3bplugin.h
 include/k3bpluginconfigwidget.h
 include/k3bpluginfactory.h
@@ -80,10 +91,12 @@ include/k3bprogressdialog.h
 include/k3bprojectplugin.h
 include/k3bpushbutton.h
 include/k3bradioaction.h
+include/k3brichtextlabel.h
 include/k3bsignalwaiter.h
-include/k3bsimplejob.h
+include/k3bsimplejobhandler.h
 include/k3bstdguiitems.h
 include/k3bstringutils.h
+include/k3btempfile.h
 include/k3bthread.h
 include/k3bthreadjob.h
 include/k3bthreadwidget.h
@@ -91,16 +104,33 @@ include/k3bthroughputestimator.h
 include/k3btoc.h
 include/k3btocfilewriter.h
 include/k3btoolbox.h
+include/k3btoolbutton.h
 include/k3btrack.h
 include/k3bvalidators.h
 include/k3bvcddoc.h
 include/k3bvcdjob.h
 include/k3bvcdoptions.h
+include/k3bverificationjob.h
 include/k3bversion.h
+%%LIBDVDREAD%%include/k3bvideodvd.h
+%%LIBDVDREAD%%include/k3bvideodvdaudiostream.h
 include/k3bvideodvddoc.h
 include/k3bvideodvdjob.h
+%%LIBDVDREAD%%include/k3bvideodvdptt.h
+%%LIBDVDREAD%%include/k3bvideodvdsubpicturestream.h
+%%LIBDVDREAD%%include/k3bvideodvdtime.h
+%%LIBDVDREAD%%include/k3bvideodvdtitle.h
+%%LIBDVDREAD%%include/k3bvideodvdtitledetectclippingjob.h
+%%LIBDVDREAD%%include/k3bvideodvdtitletranscodingjob.h
+%%LIBDVDREAD%%include/k3bvideodvdvideostream.h
 include/k3bwavefilewriter.h
 include/kcutlabel.h
+lib/kde3/kfile_k3b.a
+lib/kde3/kfile_k3b.la
+lib/kde3/kfile_k3b.so
+lib/kde3/kio_videodvd.a
+lib/kde3/kio_videodvd.la
+lib/kde3/kio_videodvd.so
 lib/kde3/libk3bartsoutputplugin.a
 lib/kde3/libk3bartsoutputplugin.la
 lib/kde3/libk3bartsoutputplugin.so
@@ -146,11 +176,11 @@ lib/kde3/libk3bwavedecoder.so
 lib/libk3b.a
 lib/libk3b.la
 lib/libk3b.so
-lib/libk3b.so.2
+lib/libk3b.so.3
 lib/libk3bdevice.a
 lib/libk3bdevice.la
 lib/libk3bdevice.so
-lib/libk3bdevice.so.2
+lib/libk3bdevice.so.5
 share/applications/kde/k3b.desktop
 share/applnk/.hidden/k3b-cue.desktop
 share/applnk/.hidden/k3b-iso.desktop
@@ -269,6 +299,24 @@ share/apps/k3b/pics/73lab/project_left.png
 share/apps/k3b/pics/73lab/project_right.png
 share/apps/k3b/pics/73lab/splash.png
 share/apps/k3b/pics/73lab/welcome_bg.png
+share/apps/k3b/pics/RobsTheme/dialog_left.png
+share/apps/k3b/pics/RobsTheme/dialog_right.png
+share/apps/k3b/pics/RobsTheme/k3b.theme
+share/apps/k3b/pics/RobsTheme/media_audio.png
+share/apps/k3b/pics/RobsTheme/media_data.png
+share/apps/k3b/pics/RobsTheme/media_empty.png
+share/apps/k3b/pics/RobsTheme/media_left.png
+share/apps/k3b/pics/RobsTheme/media_mixed.png
+share/apps/k3b/pics/RobsTheme/media_none.png
+share/apps/k3b/pics/RobsTheme/media_video.png
+share/apps/k3b/pics/RobsTheme/progress_fail.png
+share/apps/k3b/pics/RobsTheme/progress_right.png
+share/apps/k3b/pics/RobsTheme/progress_success.png
+share/apps/k3b/pics/RobsTheme/progress_working.png
+share/apps/k3b/pics/RobsTheme/project_left.png
+share/apps/k3b/pics/RobsTheme/project_right.png
+share/apps/k3b/pics/RobsTheme/splash.png
+share/apps/k3b/pics/RobsTheme/welcome_bg.png
 share/apps/k3b/pics/crystal/dialog_left.png
 share/apps/k3b/pics/crystal/dialog_right.png
 share/apps/k3b/pics/crystal/k3b.theme
@@ -288,6 +336,24 @@ share/apps/k3b/pics/crystal/project_left.png
 share/apps/k3b/pics/crystal/project_right.png
 share/apps/k3b/pics/crystal/splash.png
 share/apps/k3b/pics/crystal/welcome_bg.png
+share/apps/k3b/pics/quant/dialog_left.png
+share/apps/k3b/pics/quant/dialog_right.png
+share/apps/k3b/pics/quant/k3b.theme
+share/apps/k3b/pics/quant/media_audio.png
+share/apps/k3b/pics/quant/media_data.png
+share/apps/k3b/pics/quant/media_empty.png
+share/apps/k3b/pics/quant/media_left.png
+share/apps/k3b/pics/quant/media_mixed.png
+share/apps/k3b/pics/quant/media_none.png
+share/apps/k3b/pics/quant/media_video.png
+share/apps/k3b/pics/quant/progress_fail.png
+share/apps/k3b/pics/quant/progress_right.png
+share/apps/k3b/pics/quant/progress_success.png
+share/apps/k3b/pics/quant/progress_working.png
+share/apps/k3b/pics/quant/project_left.png
+share/apps/k3b/pics/quant/project_right.png
+share/apps/k3b/pics/quant/splash.png
+share/apps/k3b/pics/quant/welcome_bg.png
 share/apps/k3b/plugins/k3bartsoutputplugin.plugin
 share/apps/k3b/plugins/k3baudiometainforenamerplugin.plugin
 share/apps/k3b/plugins/k3baudioprojectcddbplugin.plugin
@@ -302,12 +368,18 @@ share/apps/k3b/plugins/k3boggvorbisdecoder.plugin
 share/apps/k3b/plugins/k3boggvorbisencoder.plugin
 share/apps/k3b/plugins/k3bsoxencoder.plugin
 share/apps/k3b/plugins/k3bwavedecoder.plugin
+share/apps/k3b/servicemenus/k3b_create_audio_cd.desktop
+share/apps/k3b/servicemenus/k3b_create_data_cd.desktop
+share/apps/k3b/servicemenus/k3b_create_data_dvd.desktop
+share/apps/k3b/servicemenus/k3b_create_video_cd.desktop
+share/apps/k3b/servicemenus/k3b_write_bin_image.desktop
+share/apps/k3b/servicemenus/k3b_write_iso_image.desktop
 share/apps/k3b/tips
-share/apps/konqueror/servicemenus/k3b_create_audio_cd.desktop
-share/apps/konqueror/servicemenus/k3b_create_data_cd.desktop
-share/apps/konqueror/servicemenus/k3b_create_video_cd.desktop
-share/apps/konqueror/servicemenus/k3b_write_bin_image.desktop
-share/apps/konqueror/servicemenus/k3b_write_iso_image.desktop
+share/apps/konqsidebartng/virtual_folders/services/videodvd.desktop
+share/apps/konqueror/servicemenus/k3b_audiocd_rip.desktop
+share/apps/konqueror/servicemenus/k3b_cd_copy.desktop
+share/apps/konqueror/servicemenus/k3b_dvd_copy.desktop
+share/apps/konqueror/servicemenus/k3b_videodvd_rip.desktop
 share/doc/HTML/en/k3b/audiocd-howto.docbook
 share/doc/HTML/en/k3b/burndialog_audio.png
 share/doc/HTML/en/k3b/burndialog_progress.png
@@ -325,7 +397,6 @@ share/doc/HTML/en/k3b/index.cache.bz2
 share/doc/HTML/en/k3b/index.docbook
 share/doc/HTML/en/k3b/select_audiofiles.png
 share/doc/HTML/en/k3b/select_project.png
-share/doc/HTML/en/k3b/video-encoding.docbook
 share/icons/hicolor/128x128/apps/k3b.png
 share/icons/hicolor/16x16/apps/k3b.png
 share/icons/hicolor/22x22/apps/k3b.png
@@ -333,12 +404,17 @@ share/icons/hicolor/32x32/apps/k3b.png
 share/icons/hicolor/48x48/apps/k3b.png
 share/icons/hicolor/64x64/apps/k3b.png
 share/mimelnk/application/x-k3b.desktop
+share/services/kfile_k3b.desktop
+share/services/videodvd.protocol
 share/sounds/k3b_error1.wav
 share/sounds/k3b_success1.wav
 share/sounds/k3b_wait_media1.wav
 @dirrm share/doc/HTML/en/k3b
+@dirrm share/apps/k3b/servicemenus
 @dirrm share/apps/k3b/plugins
+@dirrm share/apps/k3b/pics/quant
 @dirrm share/apps/k3b/pics/crystal
+@dirrm share/apps/k3b/pics/RobsTheme
 @dirrm share/apps/k3b/pics/73lab
 @dirrm share/apps/k3b/pics
 @dirrm share/apps/k3b/icons/hicolor/scalable/actions
