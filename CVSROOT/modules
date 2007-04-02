@@ -12784,6 +12784,7 @@ py-soapy	ports/net/py-soapy
 py-soya3d	ports/graphics/py-soya3d
 py-spambayes	ports/mail/py-spambayes
 py-spark	ports/devel/py-spark
+py-speex	ports/audio/py-speex
 py-spf		ports/mail/py-spf
 py-spreadmodule	ports/net/py-spreadmodule
 py-sqlalchemy	ports/databases/py-sqlalchemy
