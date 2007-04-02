@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.5.15
+PORTVERSION=	0.5.17
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -52,9 +52,9 @@ NGINX_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-http_ssl_module
 .endif
 
-.if defined(WITH_IMAP_MODULE)
+.if defined(WITH_MAIL_MODULE) || defined(WITH_IMAP_MODULE)
 NGINX_OPENSSL=	yes
-CONFIGURE_ARGS+=--with-imap --with-imap_ssl_module
+CONFIGURE_ARGS+=--with-mail --with-mail_ssl_module
 .endif
 
 .if defined(NGINX_OPENSSL)
@@ -80,6 +80,14 @@ PLIST_SUB+=	WWWDATA=""
 .endif
 
 PLIST_SUB+=	NGINX_TMPDIR=${NGINX_TMPDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+
+pre-fetch:
+.if defined(WITH_IMAP_MODULE)
+	@${ECHO_MSG}
+	@${ECHO_MSG} WITH_IMAP_MODULE knob deprecated.
+	@${ECHO_MSG} Please use WITH_MAIL_MODULE knob instead.
+	@${ECHO_MSG}
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's!%%HTTP_PORT%%!${HTTP_PORT}!; \
