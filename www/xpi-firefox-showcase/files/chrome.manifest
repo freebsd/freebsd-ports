@@ -20,6 +20,8 @@ locale	showcase	es-ES	jar:chrome/showcase.jar!/locale/es-ES/showcase/
 
 locale	showcase	fa-IR	jar:chrome/showcase.jar!/locale/fa-IR/showcase/
 
+locale	showcase	fi-FI	jar:chrome/showcase.jar!/locale/fi-FI/showcase/
+
 locale	showcase	fr-FR	jar:chrome/showcase.jar!/locale/fr-FR/showcase/
 
 locale	showcase	hu-HU	jar:chrome/showcase.jar!/locale/hu-HU/showcase/
