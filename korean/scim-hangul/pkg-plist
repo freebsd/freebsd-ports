@@ -1,7 +1,7 @@
-lib/scim-1.0/IMEngine/hangul.la
-lib/scim-1.0/IMEngine/hangul.so
-lib/scim-1.0/SetupUI/hangul-imengine-setup.la
-lib/scim-1.0/SetupUI/hangul-imengine-setup.so
+lib/scim-1.0/1.4.0/IMEngine/hangul.la
+lib/scim-1.0/1.4.0/IMEngine/hangul.so
+lib/scim-1.0/1.4.0/SetupUI/hangul-imengine-setup.la
+lib/scim-1.0/1.4.0/SetupUI/hangul-imengine-setup.so
 share/locale/de/LC_MESSAGES/scim-hangul.mo
 share/locale/fr/LC_MESSAGES/scim-hangul.mo
 share/locale/ja/LC_MESSAGES/scim-hangul.mo
@@ -9,8 +9,6 @@ share/locale/ko/LC_MESSAGES/scim-hangul.mo
 share/locale/zh_CN/LC_MESSAGES/scim-hangul.mo
 share/scim/icons/scim-hangul.png
 @dirrmtry share/scim/icons
-@dirrmtry lib/scim-1.0/IMEngine
-@dirrmtry lib/scim-1.0/SetupUI
 @dirrmtry share/locale/zh_CN/LC_MESSAGES
 @dirrmtry share/locale/zh_CN
 @dirrmtry share/locale/ko/LC_MESSAGES
