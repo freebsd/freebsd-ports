@@ -1273,7 +1273,13 @@ UNIQUENAME?=	${PKGNAMEPREFIX}${PORTNAME}
 OPTIONSFILE?=	${PORT_DBDIR}/${UNIQUENAME}/options
 _OPTIONSFILE!=	${ECHO_CMD} "${OPTIONSFILE}"
 .if defined(OPTIONS)
-.	if defined(PACKAGE_BUILDING) || (defined(BATCH) && !exists(${_OPTIONSFILE}))
+# include OPTIONSFILE first if exists
+.	if exists(${_OPTIONSFILE}) && !make(rmconfig)
+.	include "${_OPTIONSFILE}"
+.	endif
+.	if exists(${_OPTIONSFILE}.local)
+.	include "${_OPTIONSFILE}.local"
+.	endif
 WITHOUT:=
 WITH:=
 .	if defined(OPTIONS)
@@ -1289,23 +1295,21 @@ WITH:=		${WITH} ${OPT}
 OPT:=${RO}
 .	endfor
 .	endif
+# define only if NO WITH/WITHOUT_${W} is defined
 .	for W in ${WITH}
+.   if !defined(WITH_${W}) && !defined(WITHOUT_${W})
 WITH_${W}:=	true
+.   endif
 .	endfor
 .	for W in ${WITHOUT}
+.   if !defined(WITH_${W}) && !defined(WITHOUT_${W})
 WITHOUT_${W}:=	true
+.   endif
 .	endfor
 .	undef WITH
 .	undef WITHOUT
 .	undef RO
 .	undef REALOPTIONS
-.	endif
-.	if exists(${_OPTIONSFILE}) && !make(rmconfig)
-.	include "${_OPTIONSFILE}"
-.	endif
-.	if exists(${_OPTIONSFILE}.local)
-.	include "${_OPTIONSFILE}.local"
-.	endif
 .endif
 
 .endif
