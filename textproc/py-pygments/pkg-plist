@@ -1,0 +1,128 @@
+@comment $FreeBSD$
+@unexec %%EASY_INSTALL_CMD%% -q -x -N -m -S %D/%%PYTHON_SITELIBDIR%% %%PORTNAME%%==%%PORTVERSION%%
+bin/pygmentize
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/EGG-INFO/scripts/pygmentize
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/cmdline.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/cmdline.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/console.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/console.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/filter.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/filter.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/filters/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/filters/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/formatter.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/formatter.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/formatters/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/formatters/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/formatters/_mapping.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/formatters/_mapping.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/formatters/bbcode.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/formatters/bbcode.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/formatters/html.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/formatters/html.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/formatters/latex.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/formatters/latex.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/formatters/other.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/formatters/other.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/formatters/rtf.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/formatters/rtf.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/formatters/terminal.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/formatters/terminal.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexer.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexer.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/_luabuiltins.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/_luabuiltins.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/_mapping.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/_mapping.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/_phpbuiltins.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/_phpbuiltins.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/agile.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/agile.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/compiled.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/compiled.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/dotnet.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/dotnet.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/other.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/other.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/special.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/special.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/templates.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/templates.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/text.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/text.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/web.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers/web.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/plugin.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/plugin.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/scanner.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/scanner.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/style.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/style.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/autumn.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/autumn.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/borland.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/borland.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/colorful.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/colorful.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/default.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/default.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/friendly.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/friendly.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/fruity.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/fruity.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/manni.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/manni.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/murphy.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/murphy.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/native.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/native.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/pastie.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/pastie.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/perldoc.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/perldoc.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/trac.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles/trac.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/token.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/token.pyc
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/util.py
+%%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/util.pyc
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/styles
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/lexers
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/formatters
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments/filters
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/pygments
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/EGG-INFO/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYPYGMENTS_EGG%%
+%%PORTDOCS%%%%DOCSDIR%%/api.html
+%%PORTDOCS%%%%DOCSDIR%%/authors.html
+%%PORTDOCS%%%%DOCSDIR%%/changelog.html
+%%PORTDOCS%%%%DOCSDIR%%/cmdline.html
+%%PORTDOCS%%%%DOCSDIR%%/filterdevelopment.html
+%%PORTDOCS%%%%DOCSDIR%%/filters.html
+%%PORTDOCS%%%%DOCSDIR%%/formatterdevelopment.html
+%%PORTDOCS%%%%DOCSDIR%%/formatters.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/lexerdevelopment.html
+%%PORTDOCS%%%%DOCSDIR%%/lexers.html
+%%PORTDOCS%%%%DOCSDIR%%/moinmoin.html
+%%PORTDOCS%%%%DOCSDIR%%/plugins.html
+%%PORTDOCS%%%%DOCSDIR%%/quickstart.html
+%%PORTDOCS%%%%DOCSDIR%%/rstdirective.html
+%%PORTDOCS%%%%DOCSDIR%%/styles.html
+%%PORTDOCS%%%%DOCSDIR%%/tokens.html
+%%PORTDOCS%%%%DOCSDIR%%/unicode.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec %%EASY_INSTALL_CMD%% -N -x -S %D/%%PYTHON_SITELIBDIR%% %%PORTNAME%%==%%PORTVERSION%%

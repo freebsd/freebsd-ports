@@ -758,6 +758,7 @@
     SUBDIR += py-ltxml
     SUBDIR += py-lucene
     SUBDIR += py-markdown
+    SUBDIR += py-pygments
     SUBDIR += py-pyx12
     SUBDIR += py-qt4-xml
     SUBDIR += py-rdflib
