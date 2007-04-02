@@ -16,7 +16,7 @@ MAINTAINER=	david@catwhisker.org
 COMMENT=	A Tcl/Tk-based GPS management utility
 
 #RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
-USE_TK=		84
+USE_TK_RUN=	84
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes

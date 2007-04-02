@@ -33,9 +33,9 @@ TX_SHELL=	wish
 TX_PORT=	tk
 TX_PORT_U=	Tk
 TX_CAT=		x11-toolkits
-USE_TK=		yes
+USE_TK_RUN=	yes
 .else
-USE_TCL=	yes
+USE_TCL_RUN=	yes
 .endif
 
 TX_CONF=	${TX_SHELL}.conf

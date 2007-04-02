@@ -15,7 +15,7 @@ DISTNAME=	tkMOO-light-${PORTVERSION}
 MAINTAINER=	adam-ports@blacktabby.org
 COMMENT=	Tk-based M** client with scripting support
 
-USE_TK=		yes
+USE_TK_RUN=	yes
 MAKE_ENV+=	TKMOO_LIB_DIR="${DATADIR}" \
 		TKMOO_BIN_DIR="${PREFIX}/bin" WISH8.3="${WISH}"
 

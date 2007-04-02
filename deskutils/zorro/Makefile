@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}-1.1p8
 MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	A simple to-do list manager
 
-USE_TK=		yes
+USE_TK_RUN=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/zorro
 PORTDOCS=	DOTzorrorc

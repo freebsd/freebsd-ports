@@ -17,9 +17,8 @@ COMMENT=	Password Gorilla is cross-platform Password Manager
 LIB_DEPENDS=	itcl.3:${PORTSDIR}/lang/itcl
 RUN_DEPENDS=	${LOCALBASE}/lib/bwidget/init.tcl:${PORTSDIR}/x11-toolkits/bwidget
 
-USE_TCL=	yes
+USE_TCL_RUN=	yes
 USE_TK=		yes
-USE_TK_BUILD=	yes
 GNU_CONFIGURE=	yes
 NO_BUILD=	yes
 

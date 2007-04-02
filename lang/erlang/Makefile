@@ -45,7 +45,7 @@ SCRIPT_ENV+=	PATH=${PATH}:${JAVA_HOME}/bin
 .endif
 
 .if !defined(WITHOUT_X11)
-USE_TK=		yes
+USE_TK_RUN=	yes
 .endif
 
 .include <bsd.port.pre.mk>

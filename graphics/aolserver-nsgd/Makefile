@@ -28,13 +28,8 @@ PLIST_SUB+=	AOLSERVERBASE=${AOLSERVERBASE:S/${PREFIX}\///}
 
 USE_GMAKE=	yes
 
-USE_TCL_VER?=	84
-
-.if ${USE_TCL_VER} != 84 && ${USE_TCL_VER} != 85
-IGNORE=		supported values for USE_TCL_VER are only 84 and 85
-.endif
-
-USE_TCL_BUILD=	${USE_TCL_VER}-thread
+USE_TCL=	84+
+USE_TCL_THREADS=	yes
 
 .include <bsd.port.pre.mk>
 

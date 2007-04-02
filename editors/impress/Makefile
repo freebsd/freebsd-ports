@@ -17,7 +17,7 @@ DISTNAME=	imp${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Publishing and presentation tool
 
-USE_TK=		84
+USE_TK_RUN=	84
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

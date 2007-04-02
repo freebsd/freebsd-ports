@@ -18,7 +18,7 @@ COMMENT=	GUI for managing and running ssh and related utilities
 RUN_DEPENDS=	ssh-askpass:${PORTSDIR}/security/openssh-askpass
 
 USE_X_PREFIX=	yes
-USE_TK=		84
+USE_TK_RUN=	84
 
 NO_BUILD=	yes
 

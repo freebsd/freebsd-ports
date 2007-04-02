@@ -77,10 +77,10 @@ PLIST_SUB+=	WITH_RUBY="@comment "
 .endif
 .if defined(WITH_TCL)
 .if defined(WITH_TCL83)
-USE_TCL=	83
+USE_TCL_RUN=	83
 TCL_LONG_V=	8.3
 .else
-USE_TCL=	84
+USE_TCL_RUN=	84
 TCL_LONG_V=	8.4
 .endif
 PLIST_SUB+=	WITH_TCL=""

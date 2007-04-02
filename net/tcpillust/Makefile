@@ -16,7 +16,6 @@ COMMENT=	A graphical TCP connection analysis tool
 
 USE_TCL=	yes
 USE_TK=		yes
-USE_TK_BUILD=	yes
 USE_XLIB=	yes
 USE_MOTIF=	yes
 

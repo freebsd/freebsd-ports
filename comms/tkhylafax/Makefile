@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tcl/tk interface to Sam Leffler's fax package
 
 USE_GHOSTSCRIPT_RUN=	yes
-USE_TK=		yes
+USE_TK_RUN=	yes
 
 RUN_DEPENDS=	sendfax:${PORTSDIR}/comms/hylafax \
 		gv:${PORTSDIR}/print/gv

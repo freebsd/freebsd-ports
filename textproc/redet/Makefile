@@ -17,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/iwidgets/iwidgets.tcl:${PORTSDIR}/x11-toolkits/iwi
 
 NO_BUILD=	yes
 USE_BZIP2=	yes
-USE_TK=		84
+USE_TK_RUN=	84
 
 PORTDOCS=	AUTHORS COPYING CREDITS LICENSE NEWS README-General ChangeLog
 MAN1=		redet.1

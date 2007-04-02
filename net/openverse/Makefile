@@ -14,8 +14,8 @@ DISTNAME=	${PORTNAME}-0.8-7
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A visual chat program written in Tcl/Tk
 
-USE_TK=		yes
-USE_TCL=	yes
+USE_TK_RUN=	yes
+USE_TCL_RUN=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/OpenVerse
 

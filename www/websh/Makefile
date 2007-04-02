@@ -15,8 +15,6 @@ EXTRACT_SUFX=	-src.tar.gz
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Embeds a TCL8 interpreter in the Apache server
 
-LIB_DEPENDS=	tcl${TCL_DVER}:${PORTSDIR}/lang/tcl${TCL_DVER}
-
 OPTIONS=	WSMDEBUG "memory(n) and checkmem(n) commands in web-scripts" on
 OPTIONS+=	WSSTATIC "Link the objects into the module statically" off
 

@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk frontends to CVS, Subversion and diff
 
 NO_BUILD=	yes
-USE_TK=		84
+USE_TK_RUN=	84
 
 MAN1=		tkcvs.1
 PORTDOCS=	CHANGELOG COPYING FAQ INSTALL vendor5readme.pdf

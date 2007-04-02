@@ -19,7 +19,7 @@ COMMENT?=	Tcl/tk-based presentation tool
 .if defined(KANJI)
 RUN_DEPENDS=	wish8.0jp:${PORTSDIR}/japanese/tk80
 .else
-USE_TK=		yes
+USE_TK_RUN=	yes
 .endif
 
 NO_BUILD=	yes

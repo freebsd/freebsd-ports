@@ -17,7 +17,7 @@ COMMENT=	A GUI for the ircII Internet Relay Chat client
 
 RUN_DEPENDS=	irc:${PORTSDIR}/irc/ircII
 
-USE_TK=		yes
+USE_TK_RUN=	yes
 WRKSRC=		${WRKDIR}/tkirc2
 NO_BUILD=	yes
 

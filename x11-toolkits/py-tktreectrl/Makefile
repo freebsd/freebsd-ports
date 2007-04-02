@@ -19,7 +19,7 @@ LIB_DEPENDS=	treectrl.0:${PORTSDIR}/x11-toolkits/tktreectrl
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/Pmw/__init__.py:${PORTSDIR}/x11-toolkits/pmw
 
-USE_TK=		yes
+USE_TK_RUN=	yes
 USE_ZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes

@@ -13,8 +13,7 @@ MASTER_SITES=	SF
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Read, manipulate and display geo data
 
-LIB_DEPENDS=	tclgeomap.0:${PORTSDIR}/astro/tclgeomap \
-		tk${USE_TK}.1:${PORTSDIR}/x11-toolkits/tk${USE_TK}
+LIB_DEPENDS=	tclgeomap.0:${PORTSDIR}/astro/tclgeomap
 
 CONFIGURE_ARGS=	--with-tclgeomap-include=${LOCALBASE}/include/tclgeomap --with-x \
 		--with-tcl=${TCL_LIBDIR} --with-tclinclude=${TCL_INCLUDEDIR} \

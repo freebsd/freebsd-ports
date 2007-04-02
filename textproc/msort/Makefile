@@ -21,7 +21,7 @@ RUN_DEPENDS=	iwidgets>=0:${PORTSDIR}/x11-toolkits/iwidgets
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV+=	INCLUDES="-I${LOCALBASE}/include"
 GNU_CONFIGURE=	yes
-USE_TK=		yes
+USE_TK_RUN=	yes
 
 PLIST_FILES=	bin/msg bin/msort
 

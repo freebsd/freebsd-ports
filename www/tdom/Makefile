@@ -17,14 +17,8 @@ COMMENT=	High performance XML data processing with Tcl (ARGS for OpenACS)
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/unix
 TDOMBASE=	${PREFIX}/lib/tdom${PORTVERSION}
 
-USE_TCL_VER?=	84
-
-.if ${USE_TCL_VER} != 84 && ${USE_TCL_VER} != 85
-IGNORE=		supported values for USE_TCL_VER are only 84 and 85
-.endif
-
-# by default we want a threaded build
-LIB_DEPENDS=	tcl${USE_TCL_VER}-threads:${PORTSDIR}/lang/tcl${USE_TCL_VER}-thread
+USE_TCL=	84+
+USE_TCL_THREADS=	yes
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
@@ -45,8 +39,8 @@ HTMLDOCS=	category-index.html dom.html domDoc.html domNode.html \
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--enable-threads --disable-tdomalloc \
-		--with-tcl=${LOCALBASE}/lib/tcl${USE_TCL_VER:S/8/8./}-threads \
-		--with-tclinclude=${LOCALBASE}/include/tcl${USE_TCL_VER:S/8/8./} --prefix=${PREFIX}
+		--with-tcl=${TCL_LIBDIR} \
+		--with-tclinclude=${TCL_INCLUDEDIR} --prefix=${PREFIX}
 
 post-install:
 .if !defined(NOPORTDOCS)
