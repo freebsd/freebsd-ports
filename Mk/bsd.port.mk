@@ -2766,8 +2766,8 @@ VALID_CATEGORIES+= accessibility afterstep arabic archivers astro audio \
 	palm parallel pear perl5 plan9 polish portuguese ports-mgmt \
 	print python ruby rubygems russian \
 	scheme science security shells spanish sysutils \
-	tcl80 tcl81 tcl82 tcl83 tcl84 textproc \
-	tk80 tk82 tk83 tk84 tkstep80 \
+	tcl tcl80 tcl82 tcl83 tcl84 textproc \
+	tk tk80 tk82 tk83 tk84 tkstep80 \
 	ukrainian vietnamese windowmaker www \
 	x11 x11-clocks x11-fm x11-fonts x11-servers x11-themes x11-toolkits \
 	x11-wm xfce zope
