@@ -1236,6 +1236,7 @@
     SUBDIR += xpi-quick-locale-switcher
     SUBDIR += xpi-quickproxy
     SUBDIR += xpi-resurrectpages
+    SUBDIR += xpi-sameplace
     SUBDIR += xpi-savegenpage
     SUBDIR += xpi-searchstatus
     SUBDIR += xpi-server_switcher
