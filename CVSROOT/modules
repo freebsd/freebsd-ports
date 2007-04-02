@@ -16471,6 +16471,7 @@ xpi-preferential	ports/www/xpi-preferential
 xpi-quick-locale-switcher	ports/www/xpi-quick-locale-switcher
 xpi-quickproxy	ports/www/xpi-quickproxy
 xpi-resurrectpages	ports/www/xpi-resurrectpages
+xpi-sameplace	ports/www/xpi-sameplace
 xpi-savegenpage	ports/www/xpi-savegenpage
 xpi-searchstatus	ports/www/xpi-searchstatus
 xpi-server_switcher	ports/www/xpi-server_switcher
