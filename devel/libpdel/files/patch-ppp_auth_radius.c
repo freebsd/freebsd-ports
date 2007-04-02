@@ -9,3 +9,14 @@
  #include <poll.h>
  #include <radlib.h>
  #include <radlib_vs.h>
+--- ppp/ppp_auth_radius.c.orig	Sun Apr  1 23:13:10 2007
++++ ppp/ppp_auth_radius.c	Sun Apr  1 23:16:01 2007
+@@ -462,7 +462,7 @@
+ 
+ 		/* Compensate for broken servers that leave out the ID byte */
+ 		if (len > 0 && (len < 3 || ((const char *)data)[1] != '=')) {
+-			((const char *)data)++;
++			data = (const char *)data + 1;
+ 			len--;
+ 		}
+ 
