@@ -3167,8 +3167,7 @@ DEPENDS_ARGS+=	NOCLEANDEPENDS=yes
 #
 ################################################################
 .if (!defined(OPTIONS) || defined(CONFIG_DONE) || \
-	defined(PACKAGE_BUILDING) || defined(BATCH) || \
-	exists(${_OPTIONSFILE}) || exists(${_OPTIONSFILE}.local))
+	defined(PACKAGE_BUILDING) || defined(BATCH))
 _OPTIONS_OK=yes
 .endif
 
@@ -4149,7 +4148,7 @@ fetch: ${_FETCH_DEP} ${_FETCH_SEQ}
 .if !target(${target}) && defined(_OPTIONS_OK)
 ${target}: ${${target:U}_COOKIE}
 .elif !target(${target})
-${target}: config
+${target}: config-conditional
 	@cd ${.CURDIR} && ${MAKE} CONFIG_DONE=1 ${__softMAKEFLAGS} ${${target:U}_COOKIE}
 .elif target(${target}) && defined(IGNORE)
 .endif
@@ -5708,8 +5707,34 @@ config-recursive:
 
 .if !target(config-conditional)
 config-conditional:
-.if defined(OPTIONS) && !exists(${_OPTIONSFILE})
+.if defined(OPTIONS)
+.if exists(${_OPTIONSFILE})
+# scan saved options and invalidate them, if the set of options does not match
+	@. ${_OPTIONSFILE}; \
+	set ${OPTIONS} XXX; \
+	while [ $$# -gt 3 ]; do \
+		withvar=WITH_$$1; \
+		withoutvar=WITHOUT_$$1; \
+		withval=$$(eval ${ECHO_CMD} $$\{$${withvar}\}); \
+		withoutval=$$(eval ${ECHO_CMD} $$\{$${withoutvar}\}); \
+		if [ ! -z "$${withval}" ]; then \
+			val=on; \
+		elif [ ! -z "$${withoutval}" ]; then \
+			val=off; \
+		else \
+			val=missing; \
+		fi; \
+		if [ "$${val}" = "missing" ]; then \
+			OPTIONS_INVALID=yes; \
+		fi; \
+		shift 3; \
+	done; \
+	if [ "$${OPTIONS_INVALID}" = "yes" ]; then \
+		cd ${.CURDIR} && ${MAKE} config; \
+	fi;
+.else
 	cd ${.CURDIR} && ${MAKE} config;
+.endif
 .endif
 .endif
 
