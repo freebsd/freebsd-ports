@@ -12,7 +12,7 @@ PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://people.freenet.de/for_Ki/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	An MPEG-1 video player
 
 LIB_DEPENDS=	smpeg:${PORTSDIR}/multimedia/smpeg
