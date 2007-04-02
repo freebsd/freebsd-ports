@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070402:
+  AFFECTS: users of devel/cvstrac
+  AUTHOR: nkoch@demig.de
+
+  cvstrac is changed to use SQLite 3, users should backup their database
+  then restore after upgrading. For example,
+
+  mv cvstrac.db cvstrac_2.db
+  sqlite cvstrac_2.db .dump | sqlite3 cvstrac.db
+
 20070327:
   AFFECTS: users of emulators/linux_base-fc6
   AUTHOR: bsam@FreeBSD.org
