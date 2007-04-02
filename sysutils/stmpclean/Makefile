@@ -10,7 +10,7 @@ PORTVERSION=	0.3
 CATEGORIES=	sysutils security
 MASTER_SITES=	http://www.internet2.edu/~shalunov/stmpclean/
 
-MAINTAINER=	shalunov@internet2.edu
+MAINTAINER=	shalunov@shlang.com
 COMMENT=	Remove old files from temporary directories
 
 MAN8=		stmpclean.8
