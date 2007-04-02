@@ -27,6 +27,7 @@
     SUBDIR += eclipse-drjava
     SUBDIR += eclipse-emf
     SUBDIR += eclipse-examples
+    SUBDIR += eclipse-findbugs
     SUBDIR += eclipse-gef
     SUBDIR += eclipse-gef-examples
     SUBDIR += eclipse-jad
