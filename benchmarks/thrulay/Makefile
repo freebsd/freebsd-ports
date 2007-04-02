@@ -11,7 +11,7 @@ MASTER_SITES=	http://unc.dl.sourceforge.net/sourceforge/thrulay/ \
 		http://internap.dl.sourceforge.net/sourceforge/thrulay/ \
 		http://www.internet2.edu/~shalunov/thrulay/
 
-MAINTAINER=	shalunov@internet2.edu
+MAINTAINER=	shalunov@shlang.com
 COMMENT=	Network capacity tester
 
 MAN1=		thrulay.1
