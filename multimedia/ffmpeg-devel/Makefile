@@ -7,6 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	2007-03-31
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -232,6 +233,8 @@ pre-everything::
 .endif
 
 post-patch:
+# Faad compat
+	@${REINPLACE_CMD} -e 's|faacD|NeAACD|' ${WRKSRC}/libavcodec/faad.c
 # {C,LD}FLAGS safeness
 # fix x264 math, use correct log base 2 from math(3)
 .if ${OSVERSION} <= 601000
