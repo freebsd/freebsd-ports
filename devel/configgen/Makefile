@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	configgen
-PORTVERSION=	1.15
+PORTVERSION=	1.20
 CATEGORIES=	devel
 MASTER_SITES=	http://www.marcuscom.com:8080/cgi-bin/cvsweb.cgi/portstools/
 DISTNAME=	${PORTNAME}.sh?rev=${PORTVERSION}
@@ -17,10 +17,12 @@ COMMENT=	Script that makes life a little easier with gnu-autotools
 
 PLIST_FILES=	bin/${PORTNAME}.sh
 NO_BUILD=	yes
+WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_GNUTOOLS)
+USE_GNOME=	glib20
 .for tool in autoconf213 autoconf253 autoconf259 automake14 automake15 automake19
 RUN_DEPENDS+=	${tool}:${PORTSDIR}/devel/${tool}
 .endfor
