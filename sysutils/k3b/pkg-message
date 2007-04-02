@@ -1,10 +1,10 @@
-Notes for FreeBSD 4.x users:
+Notes for FreeBSD 5.x and onwards users:
 1. The FreeBSD k3b port supports SCSI drives only. If you have IDE CD or DVD
    drives, use them through the cam system. See Chapter 12.5.9 of the handbook
    (http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/creating-cds.html#ATAPICAM)
 2. Your CD and DVD drives must have a mount point in /etc/fstab. They have
    to be accessed through their atapicam device if possible. I.e. the drives
-   have to be adressed by e.g. /dev/cd0c instead of /dev/acd0c.
+   have to be adressed by e.g. /dev/cd0 instead of /dev/acd0.
 3. k3b has to be started from a root console, which is not recommended.
    Alternatively do ALL of the following:
 3a. set the suid flag on cdrecord and cdrdao. The 'Notes' chapter of
@@ -16,14 +16,31 @@ Notes for FreeBSD 4.x users:
         /dev/cd0c  /usr/home/XXX/cdrom  cd9660  ro,noauto,nodev,nosuid  0  0
       Furthermore allow user mounts as described in topic 9.22 of the FAQ:
       http://www.freebsd.org/doc/en_US.ISO8859-1/books/faq/disks.html#USER-FLOPPYMOUNT
+      To make the chmod's to /dev/cdX permanent, do the following:
+        * add 'devd_enable="YES"' to /etc/rc.conf
+        * add a 'perm cdX 666' to /etc/devfs.conf for each cd/dvd device. X 
+          is the device number. If you prefer allow access for a group only, 
+          add a 'perm cdX 660' instead, followed by an 'own cdX root:XXX' 
+          where XXX is the group name.
+          Alternatively (especially if you are using hot plug capable CD or 
+          DVD drives) you could add an 'add path 'cd*' mode 666' or an 
+          'add path 'cd*' mode 660 group XXX' to your /etc/devfs.rules
+          under '[system=10]'. To enable it, add a 'devfs_system_ruleset="system"'
+          to your /etc/rc.conf.
     - or just give mount and umount the suid flag, which is a security leak.
 3c. Every user who should be able to use k3b must have read and write access
     to all pass through devices connected with CD and DVD drives and to the 
     /dev/xpt0 device. Run 'camcontrol devlist' to identify those devices (seek 
-    string 'passX' at the end of each line and modify the rights of /dev/passX). 
-    Note, that this is a security leak as well but that there is no alternative!
-4. Check, that dma is activated for atapi devices: 'sysctl hw.ata.atapi_dma'
-   If not, set it to 1 and put a 'hw.ata.atapi_dma=1' into /boot/loader.conf   
+    string 'passX' at the end of each line and modify the rights of 
+    /dev/passX). Note, that this is a security leak as well but that there is 
+    no alternative! To make this changes permanent, add 'devd_enable="YES"' 
+    to /etc/rc.conf as described above. Furthermore add a 'perm passX 666' 
+    for each pass device and a 'perm xpt0 666'. If you prefer to bind the 
+    access rights to a group, use the own command as described above. If you
+    prefer to set this rights dynamically, add a line 'add path 'pass*' ...'
+    to your /etc/devfs.rules as described above.
+4. Check, that DMA is activated for atapi devices: 'sysctl hw.ata.atapi_dma'
+   If not, set it to 1 and put a 'hw.ata.atapi_dma=1' into /boot/loader.conf.
 5. Create a directory on a partition, which has enough disk space to hold a CDs
    or DVDs content (usually below /usr). Enter this directory in Settings->
    Configure K3b...->Misc.
@@ -34,15 +51,11 @@ Notes for FreeBSD 4.x users:
    See http://cdrdao.sourceforge.net/drives.html.
 7. To burn video CDs install the port multimedia/vcdimager.
 8. To rip DVDs additionally install the ports multimedia/transcode,
-   multimedia/libdvdread and multimedia/xvid. Note that k3b does NOT work with
-   transcode 0.6.12. 0.6.10 is the last known working version. The ripping 
-   process itself is described in 
-   http://k3b.plainblack.com/index.pl/videoencoding.
+   multimedia/libdvdread and multimedia/xvid.The ripping process itself is described 
+   in http://k3b.plainblack.com/videoencoding.
 9. To burn bootable video CDs, install the port multimedia/emovix.
 10. To burn DVDs, install the port sysutils/dvd+rw-tools.
 11. To normalize the volumes of audio cds, install the port audio/normalize.
 12. To rip into more audio formats, install the port audio/sox.
-
-UPGRADERS FROM 0.11.6 OR BELOW SHOULD NOTE THE CHANGED TOPIC 3C!!!
 
 To read this instructions again, type 'make showinfo' in the k3b port directory
