@@ -180,6 +180,8 @@
 %%DRUPAL_BASE%%/scripts/cron-curl.sh
 %%DRUPAL_BASE%%/scripts/cron-lynx.sh
 %%DRUPAL_BASE%%/sites/all/README.txt
+%%DRUPAL_BASE%%/sites/all/modules/.keepme
+%%DRUPAL_BASE%%/sites/all/themes/.keepme
 %%DRUPAL_BASE%%/sites/default/settings.php
 %%DRUPAL_BASE%%/sites/default/settings.php-dist
 %%DRUPAL_BASE%%/themes/bluemarine/block.tpl.php
