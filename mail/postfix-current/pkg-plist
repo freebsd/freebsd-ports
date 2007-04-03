@@ -63,11 +63,12 @@ sbin/postmap
 sbin/postqueue
 sbin/postsuper
 sbin/sendmail
-%%SUB_TEST%%sbin/qmqp-sink
-%%SUB_TEST%%sbin/qmqp-source
-%%SUB_TEST%%sbin/smtp-sink
-%%SUB_TEST%%sbin/smtp-source
+%%SUB_TEST%%bin/qmqp-sink
+%%SUB_TEST%%bin/qmqp-source
+%%SUB_TEST%%bin/smtp-sink
+%%SUB_TEST%%bin/smtp-source
 bin/rmail
+bin/qshape
 bin/newaliases
 bin/mailq
 %%PORTDOCS%%%%DOCSDIR%%/AAAREADME
