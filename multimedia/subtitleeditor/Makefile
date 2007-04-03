@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	subtitleeditor
-PORTVERSION=	0.13.2
-PORTREVISION=	1
+PORTVERSION=	0.13.4
 CATEGORIES=	multimedia
-MASTER_SITES=	http://kitone.free.fr/subtitleeditor/files/ CSME
+MASTER_SITES=	http://kitone.free.fr/subtitleeditor/files/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Subtitle editor
