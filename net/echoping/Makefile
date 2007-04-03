@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	echoping
-PORTVERSION=	5.99.0
-PORTREVISION=	2
+PORTVERSION=	6.0.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.internatif.org/pub/unix/echoping/
-MASTER_SITE_SUBDIR=		${PORTNAME}
-DISTNAME=	echoping-6.0-BETA
 
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	A ping-like program that uses tcp and/or http
@@ -22,7 +19,8 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-http --enable-icp --enable-smtp --with-ssl \
-		--enable-ttcp --enable-tos --with-libidn=${LOCALBASE}
+		--enable-ttcp --enable-tos --with-libidn=${LOCALBASE} \
+		--mandir=${LOCALBASE}/man
 
 PING_PLUGINS=	dns random whois
 
