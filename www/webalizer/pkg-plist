@@ -17,6 +17,7 @@ etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
 %%WITH_GEOIP%%share/geolizer/at.png
 %%WITH_GEOIP%%share/geolizer/au.png
 %%WITH_GEOIP%%share/geolizer/aw.png
+%%WITH_GEOIP%%share/geolizer/ax.png
 %%WITH_GEOIP%%share/geolizer/az.png
 %%WITH_GEOIP%%share/geolizer/ba.png
 %%WITH_GEOIP%%share/geolizer/bb.png
@@ -82,6 +83,7 @@ etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
 %%WITH_GEOIP%%share/geolizer/gd.png
 %%WITH_GEOIP%%share/geolizer/ge.png
 %%WITH_GEOIP%%share/geolizer/gf.png
+%%WITH_GEOIP%%share/geolizer/gg.png
 %%WITH_GEOIP%%share/geolizer/gh.png
 %%WITH_GEOIP%%share/geolizer/gi.png
 %%WITH_GEOIP%%share/geolizer/gl.png
@@ -110,6 +112,7 @@ etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
 %%WITH_GEOIP%%share/geolizer/ir.png
 %%WITH_GEOIP%%share/geolizer/is.png
 %%WITH_GEOIP%%share/geolizer/it.png
+%%WITH_GEOIP%%share/geolizer/je.png
 %%WITH_GEOIP%%share/geolizer/jm.png
 %%WITH_GEOIP%%share/geolizer/jo.png
 %%WITH_GEOIP%%share/geolizer/jp.png
