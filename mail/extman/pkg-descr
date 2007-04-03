@@ -1,0 +1,7 @@
+ExtMan -- Web interface to manage Virtual Accounts
+
+It was written in pure perl, support account store in mysql/ldap, can easily
+customize accroding html template, other backend support will be available
+soon
+
+WWW: http://www.extmail.org
