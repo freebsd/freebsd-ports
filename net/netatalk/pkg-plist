@@ -53,6 +53,9 @@ etc/afpd.conf.dist
 @unexec if cmp -s %D/etc/atalkd.conf %D/etc/atalkd.conf.dist; then rm -f %D/etc/atalkd.conf; fi
 etc/atalkd.conf.dist
 @exec [ ! -f %B/atalkd.conf ] && cp %B/%f %B/atalkd.conf
+@unexec if cmp -s %D/etc/netatalk.conf %D/etc/netatalk.conf.dist; then rm -f %D/etc/netatalk.conf; fi
+etc/netatalk.conf.dist
+@exec [ ! -f %B/netatalk.conf ] && cp %B/%f %B/netatalk.conf
 @unexec if cmp -s %D/etc/papd.conf %D/etc/papd.conf.dist; then rm -f %D/etc/papd.conf; fi
 etc/papd.conf.dist
 @exec [ ! -f %B/papd.conf ] && cp %B/%f %B/papd.conf
