@@ -90,7 +90,6 @@ bin/penguin-command
 %%DATADIR%%/sound/datajack.s3m
 %%DATADIR%%/sound/icefront.s3m
 %%DATADIR%%/sound/missex.wav
-%%DATADIR%%/sound/pennight.mod
 %%DATADIR%%/sound/ramagard.s3m
 @dirrm %%DATADIR%%/sound
 @dirrm %%DATADIR%%/gfx

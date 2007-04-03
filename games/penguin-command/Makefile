@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	penguin-command
-PORTVERSION=	1.6.10
-PORTREVISION=	1
+PORTVERSION=	1.6.11
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +19,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 USE_SDL=	mixer image sdl
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-prefix=""
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man --program-prefix=""
 
 MAN6=		penguin-command.6 penguin-command.ja.6
 
