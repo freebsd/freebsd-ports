@@ -613,6 +613,7 @@
     SUBDIR += toshctl
     SUBDIR += tracker
     SUBDIR += tree
+    SUBDIR += ts
     SUBDIR += tss
     SUBDIR += ttyload
     SUBDIR += tua
