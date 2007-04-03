@@ -6,6 +6,7 @@ lib/xemacs/site-lisp/ruby-mode.el
 lib/xemacs/site-lisp/rubydb3x.el
 %%RUBY_ELISPDIR%%/README
 %%RUBY_ELISPDIR%%/inf-ruby.el
+%%RUBY_ELISPDIR%%/rdebug.el
 %%RUBY_ELISPDIR%%/ruby-electric.el
 %%RUBY_ELISPDIR%%/ruby-mode.el
 %%RUBY_ELISPDIR%%/rubydb2x.el
