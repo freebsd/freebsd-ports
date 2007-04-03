@@ -26,6 +26,7 @@ lib/rhythmbox/plugins/audiocd/libaudiocd.a
 lib/rhythmbox/plugins/audiocd/libaudiocd.la
 lib/rhythmbox/plugins/audiocd/libaudiocd.so
 lib/rhythmbox/plugins/audiocd/multiple-album.glade
+lib/rhythmbox/plugins/audioscrobbler/as-icon.svg
 lib/rhythmbox/plugins/audioscrobbler/audioscrobbler-prefs.glade
 lib/rhythmbox/plugins/audioscrobbler/audioscrobbler-ui.xml
 lib/rhythmbox/plugins/audioscrobbler/audioscrobbler.rb-plugin
