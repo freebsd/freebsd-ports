@@ -8590,6 +8590,7 @@ p5-Baseball-Sabermetrics	ports/games/p5-Baseball-Sabermetrics
 p5-Benchmark-Forking	ports/benchmarks/p5-Benchmark-Forking
 p5-Benchmark-Stopwatch	ports/benchmarks/p5-Benchmark-Stopwatch
 p5-BerkeleyDB	ports/databases/p5-BerkeleyDB
+p5-Best		ports/devel/p5-Best
 p5-Bigtop	ports/www/p5-Bigtop
 p5-Bio-ASN1-EntrezGene	ports/biology/p5-Bio-ASN1-EntrezGene
 p5-Bio-Das	ports/biology/p5-Bio-Das
