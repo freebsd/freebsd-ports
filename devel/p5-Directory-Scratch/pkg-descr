@@ -1,0 +1,7 @@
+It's often inconvenient to correctly create a platform-independent
+temporary storage space, manipulate files inside it, then clean it up.
+
+This module aims to eliminate that problem by making it easy to do
+things right.
+
+WWW: http://search.cpan.org/dist/Directory-Scratch/
