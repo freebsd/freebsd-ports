@@ -1,0 +1,23 @@
+bin/mtpaint
+share/locale/cs/LC_MESSAGES/mtpaint.mo
+share/locale/de_DE/LC_MESSAGES/mtpaint.mo
+share/locale/es/LC_MESSAGES/mtpaint.mo
+share/locale/fr/LC_MESSAGES/mtpaint.mo
+share/locale/pl/LC_MESSAGES/mtpaint.mo
+share/locale/pt/LC_MESSAGES/mtpaint.mo
+share/locale/pt_BR/LC_MESSAGES/mtpaint.mo
+share/locale/sk/LC_MESSAGES/mtpaint.mo
+share/locale/tr/LC_MESSAGES/mtpaint.mo
+share/locale/zh_TW/LC_MESSAGES/mtpaint.mo
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/de_DE/LC_MESSAGES
+@dirrmtry share/locale/de_DE
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW

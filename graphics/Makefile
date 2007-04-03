@@ -418,6 +418,7 @@
     SUBDIR += mirage
     SUBDIR += morpheus
     SUBDIR += moth
+    SUBDIR += mtpaint
     SUBDIR += multivideo
     SUBDIR += mxp
     SUBDIR += netpbm
