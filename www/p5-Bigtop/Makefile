@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bigtop
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Bigtop
@@ -43,6 +43,8 @@ MAN3=		Bigtop.3 Bigtop::Backend::CGI.3 \
 		Bigtop::Backend::SQL::SQLite.3 \
 		Bigtop::Backend::SiteLook::GantryDefault.3 \
 		Bigtop::Deparser.3 Bigtop::Docs::About.3 \
+		Bigtop::Docs::AutoBackends.3 \
+		Bigtop::Docs::AutoKeywords.3 \
 		Bigtop::Docs::Cookbook.3 Bigtop::Docs::Keywords.3 \
 		Bigtop::Docs::Modules.3 Bigtop::Docs::QuickRef.3 \
 		Bigtop::Docs::QuickStart.3 \
@@ -52,15 +54,9 @@ MAN3=		Bigtop.3 Bigtop::Backend::CGI.3 \
 		Bigtop::Grammar.3 Bigtop::Keywords.3 Bigtop::Parser.3 \
 		Bigtop::ScriptHelp.3 \
 		Bigtop::ScriptHelp::Style.3 \
-		Bigtop::ScriptHelp::Style::Original.3 \
+		Bigtop::ScriptHelp::Style::Kickstart.3 \
 		Bigtop::ScriptHelp::Style::Pg8Live.3 \
 		Bigtop::TentMaker.3 \
 		Bigtop::TentMakerPath.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6.0 or newer. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
