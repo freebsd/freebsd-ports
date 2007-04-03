@@ -8411,6 +8411,7 @@ p5-Algorithm-Dependency	ports/devel/p5-Algorithm-Dependency
 p5-Algorithm-Dependency-Objects	ports/devel/p5-Algorithm-Dependency-Objects
 p5-Algorithm-Diff	ports/devel/p5-Algorithm-Diff
 p5-Algorithm-Evolutionary	ports/devel/p5-Algorithm-Evolutionary
+p5-Algorithm-IncludeExclude	ports/devel/p5-Algorithm-IncludeExclude
 p5-Algorithm-Interval2Prefix	ports/devel/p5-Algorithm-Interval2Prefix
 p5-Algorithm-LCS	ports/devel/p5-Algorithm-LCS
 p5-Algorithm-LUHN	ports/devel/p5-Algorithm-LUHN
