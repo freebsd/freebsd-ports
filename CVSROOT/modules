@@ -15147,6 +15147,7 @@ trustedqsl	ports/comms/trustedqsl
 truthtable	ports/math/truthtable
 tryst		ports/net/tryst
 tryst-examples	ports/net/tryst-examples
+ts		ports/sysutils/ts
 tsclient	ports/net/tsclient
 tse3		ports/audio/tse3
 tshark		ports/net/tshark
