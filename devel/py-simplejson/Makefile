@@ -20,15 +20,21 @@ RUN_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-PYSIMPLEJSON_EGG=	${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}-freebsd-${OSRELEASE}-${ARCH}.egg
+PYSIMPLEJSON_EGG=	${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}-${OSINFOS}.egg
+OSINFOS=	${OPSYS:L}-${OSRELEASE}-${ARCH}
 
-PLIST_SUB+=	PYSIMPLEJSON_EGG=${PYSIMPLEJSON_EGG} \
-		EGG_VER="${PORTNAME}==${PORTVERSION}"
+PLIST_SUB+=	PYSIMPLEJSON_EGG=${PYSIMPLEJSON_EGG}
 
 .if !defined(NOPORTDOCS)
 DOCSDIR=	${TARGETDIR}/share/doc/py-${PORTNAME}
 PORTDOCS=	*
 .endif
+
+pre-build:
+	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py setopt -c build -o build-platlib -s lib.${OSINFOS}
+	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py setopt -c build -o build-temp -s temp.${OSINFOS}-${PYTHON_VER}
+	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py setopt -c bdist_egg -o plat-name -s ${OSINFOS}
+	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py setopt -c bdist -o plat-name -s ${OSINFOS}
 
 post-install:
 .if !defined(NOPORTDOCS)
