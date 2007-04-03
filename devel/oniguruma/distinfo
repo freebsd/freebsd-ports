@@ -1,3 +1,6 @@
 MD5 (ruby/onigd2_5_8.tar.gz) = 82cd47ded85f854149ae620a9fa728e5
 SHA256 (ruby/onigd2_5_8.tar.gz) = 11aa092d7cb1c21b7fb60980e9c5a9b931e670c29553ea9444927a8a468e526b
 SIZE (ruby/onigd2_5_8.tar.gz) = 218187
+MD5 (ruby/ruby186.patch) = 07b39a49b4339db6ce6d57822ccff901
+SHA256 (ruby/ruby186.patch) = 11b4fc0138edb43425649c10cde5e3c712c8d65c7b9ab52daca09d47a020f803
+SIZE (ruby/ruby186.patch) = 8434
