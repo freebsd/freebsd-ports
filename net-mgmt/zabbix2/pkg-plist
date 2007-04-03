@@ -1,24 +1,4 @@
 %%DATADIR%%/create/data/data.sql
-%%DATADIR%%/create/data/images/Hub.png
-%%DATADIR%%/create/data/images/Hub_small.png
-%%DATADIR%%/create/data/images/Network.png
-%%DATADIR%%/create/data/images/Network_small.png
-%%DATADIR%%/create/data/images/Notebook.png
-%%DATADIR%%/create/data/images/Notebook_small.png
-%%DATADIR%%/create/data/images/Phone.png
-%%DATADIR%%/create/data/images/Phone_small.png
-%%DATADIR%%/create/data/images/Printer.png
-%%DATADIR%%/create/data/images/Printer_small.png
-%%DATADIR%%/create/data/images/Router.png
-%%DATADIR%%/create/data/images/Router_small.png
-%%DATADIR%%/create/data/images/Satellite.png
-%%DATADIR%%/create/data/images/Satellite_small.png
-%%DATADIR%%/create/data/images/Server.png
-%%DATADIR%%/create/data/images/Server_small.png
-%%DATADIR%%/create/data/images/UPS.png
-%%DATADIR%%/create/data/images/UPS_small.png
-%%DATADIR%%/create/data/images/Workstation.png
-%%DATADIR%%/create/data/images/Workstation_small.png
 %%DATADIR%%/create/data/images.sql
 %%DATADIR%%/create/data/images_oracle.sql
 %%DATADIR%%/create/data/images_pgsql.sql
@@ -286,7 +266,6 @@
 %%DATADIR%%/php/triggers.php
 %%DATADIR%%/php/users.php
 %%DATADIR%%/php/vtext.php
-@dirrm %%DATADIR%%/create/data/images
 @dirrm %%DATADIR%%/create/data
 @dirrm %%DATADIR%%/create/mysql
 @dirrm %%DATADIR%%/create/oracle
