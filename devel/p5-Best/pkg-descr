@@ -1,0 +1,9 @@
+Often there are several possible providers of some functionality your
+program needs, but you don't know which is available at the run site.
+For example, one of the modules may be implemented with XS, or not in
+the core Perl distribution and thus not necessarily installed.
+
+Best.pm attempts to load modules from a list, stopping at the first
+successful load and failing only if no alternative was found.
+
+WWW: http://search.cpan.org/dist/Best/

@@ -856,6 +856,7 @@
     SUBDIR += p5-BFD
     SUBDIR += p5-BSD-Resource
     SUBDIR += p5-BSD-stat
+    SUBDIR += p5-Best
     SUBDIR += p5-Bundle-Perl6
     SUBDIR += p5-C-Scan
     SUBDIR += p5-CPAN-DistnameInfo
