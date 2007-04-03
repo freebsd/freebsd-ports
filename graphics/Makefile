@@ -604,6 +604,7 @@
     SUBDIR += reallyslick
     SUBDIR += recoverjpeg
     SUBDIR += renderpark
+    SUBDIR += rgbpaint
     SUBDIR += robot
     SUBDIR += ruby-cairo
     SUBDIR += ruby-edje

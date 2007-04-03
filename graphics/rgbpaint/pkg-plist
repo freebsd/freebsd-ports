@@ -1,0 +1,20 @@
+bin/rgbpaint
+share/locale/cs/LC_MESSAGES/rgbpaint.mo
+share/locale/de_DE/LC_MESSAGES/rgbpaint.mo
+share/locale/es/LC_MESSAGES/rgbpaint.mo
+share/locale/fr/LC_MESSAGES/rgbpaint.mo
+share/locale/pl/LC_MESSAGES/rgbpaint.mo
+share/locale/pt/LC_MESSAGES/rgbpaint.mo
+share/locale/pt_BR/LC_MESSAGES/rgbpaint.mo
+share/locale/tr/LC_MESSAGES/rgbpaint.mo
+share/locale/zh_TW/LC_MESSAGES/rgbpaint.mo
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
+@dirrmtry share/locale/de_DE/LC_MESSAGES
+@dirrmtry share/locale/de_DE
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/pt/LC_MESSAGES
+@dirrmtry share/locale/pt
+@dirrmtry share/locale/zh_TW/LC_MESSAGES
+@dirrmtry share/locale/zh_TW

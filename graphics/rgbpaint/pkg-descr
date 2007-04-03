@@ -1,0 +1,8 @@
+rgbPaint is a very basic GTK+2.6 (or later) based program designed for
+editing pixel based images. It is a fork of mtPaint 3.09.  It can only
+edit and save RGB images to PNG, JPEG, or ICO files.  It can read PNG,
+JPEG, TIFF, GIF, ICO, files and possibly others like TGA, PCX, and SVGi
+if they are installed with your version of GTK+2.
+
+WWW: http://mtpaint.sourceforge.net/
+Author: Dmitry Groshev <wjaguar@users.sourceforge.net>
