@@ -7,6 +7,7 @@
 
 PORTNAME=	x264
 PORTVERSION=	0.0.20070402
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245
