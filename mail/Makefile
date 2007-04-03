@@ -125,6 +125,7 @@
     SUBDIR += exipick
     SUBDIR += exmh2
     SUBDIR += extmail
+    SUBDIR += extman
     SUBDIR += ezmlm
     SUBDIR += ezmlm-idx
     SUBDIR += ezmlm-web

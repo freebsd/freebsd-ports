@@ -1,0 +1,3 @@
+Please run this script, from extmail to copy PMs :
+    %%PREFIX%%/www/extman/lib/Ext/buildpkg.sh
+
