@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mlmmj
-PORTVERSION=	1.2.13
+PORTVERSION=	1.2.14
 CATEGORIES=	mail
 MASTER_SITES=	http://mlmmj.mmj.dk/files/ \
 		${MASTER_SITE_LOCAL}
