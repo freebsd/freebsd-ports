@@ -15,6 +15,8 @@ MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	The wiki engine used by Wikipedia
 
 CONFLICTS=	mediawiki-1.[0-68-9].*
+DEPRECATED=	No longer supported, please upgrade your wiki installation
+EXPIRES=	2007-05-31
 
 NO_LATEST_LINK=	yes
 
