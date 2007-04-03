@@ -9,10 +9,10 @@ PORTNAME=	jakarta-tomcat
 PORTVERSION=	5.0.30
 PORTREVISION=	5
 CATEGORIES=	www java
-MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
+MASTER_SITES=	${MASTER_SITE_APACHE_TOMCAT}
 MASTER_SITE_SUBDIR=	tomcat-5/v${PORTVERSION}/bin
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemoliu@gmail.com
 COMMENT=	Open-source Java web server by Apache, 5.0.x branch
 
 USE_JAVA=	yes
