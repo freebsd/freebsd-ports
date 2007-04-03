@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	ktorrent
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	net-p2p kde
-MASTER_SITES=	http://ktorrent.pwsp.net/downloads/${PORTVERSION}/
+MASTER_SITES=	http://ktorrent.pwsp.net/downloads/${PORTVERSION}/ \
+		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	BitTorrent client for KDE
@@ -24,10 +25,5 @@ USE_GMAKE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|zeroconf||' ${WRKSRC}/plugins/Makefile.in
-	@${FIND} ${WRKSRC} -name Makefile.in | \
-		${XARGS} ${REINPLACE_CMD} \
-		-e '/^INCLUDES =/{:loop' -e '/\\$$/{N;bloop' \
-		-e '};/$$(all_includes)/{s///;s/$$/ $$(all_includes)/' \
-		-e '}' -e '}'
 
 .include <bsd.port.mk>
