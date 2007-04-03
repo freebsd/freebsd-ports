@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Algorithm/IncludeExclude.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/IncludeExclude/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/IncludeExclude
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
+@dirrmtry %%SITE_PERL%%/Algorithm

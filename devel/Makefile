@@ -815,6 +815,7 @@
     SUBDIR += p5-Algorithm-Dependency-Objects
     SUBDIR += p5-Algorithm-Diff
     SUBDIR += p5-Algorithm-Evolutionary
+    SUBDIR += p5-Algorithm-IncludeExclude
     SUBDIR += p5-Algorithm-Interval2Prefix
     SUBDIR += p5-Algorithm-LCS
     SUBDIR += p5-Algorithm-LUHN
