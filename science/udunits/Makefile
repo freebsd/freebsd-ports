@@ -8,7 +8,7 @@
 PORTNAME=	udunits
 PORTVERSION=	1.12.4
 CATEGORIES=	science math
-MASTER_SITES=	ftp://unidata.ucar.edu/pub/${PORTNAME}/ \
+MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/${PORTNAME}/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/udunits|}
 EXTRACT_SUFX=	.tar.Z
 
