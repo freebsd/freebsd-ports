@@ -1,0 +1,5 @@
+Railsbench is a small collection of ruby scripts which make measuring
+raw performance of rails apps a snap. All tests are run from the
+command prompt, making performance regression testing easy.
+
+WWW: http://rubyforge.org/projects/railsbench/
