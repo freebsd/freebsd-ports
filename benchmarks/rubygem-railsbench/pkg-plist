@@ -1,0 +1,55 @@
+bin/railsbench
+%%GEM_CACHE%%
+%%GEM_SPEC%%
+%%GEM_LIB_DIR%%/BUGS
+%%GEM_LIB_DIR%%/CHANGELOG
+%%GEM_LIB_DIR%%/INSTALL
+%%GEM_LIB_DIR%%/install.rb
+%%GEM_LIB_DIR%%/postinstall.rb
+%%GEM_LIB_DIR%%/LICENSE
+%%GEM_LIB_DIR%%/Manifest.txt
+%%GEM_LIB_DIR%%/PROBLEMS
+%%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/setup.rb
+%%GEM_LIB_DIR%%/ruby184gc.patch
+%%GEM_LIB_DIR%%/ruby185gc.patch
+%%GEM_LIB_DIR%%/bin/railsbench
+%%GEM_LIB_DIR%%/lib/railsbench/version.rb
+%%GEM_LIB_DIR%%/lib/railsbench/gc_info.rb
+%%GEM_LIB_DIR%%/lib/railsbench/perf_info.rb
+%%GEM_LIB_DIR%%/lib/railsbench/perf_utils.rb
+%%GEM_LIB_DIR%%/lib/railsbench/write_headers_only.rb
+%%GEM_LIB_DIR%%/lib/railsbench/railsbenchmark.rb
+%%GEM_LIB_DIR%%/lib/railsbench/benchmark_specs.rb
+%%GEM_LIB_DIR%%/lib/benchmark.rb
+%%GEM_LIB_DIR%%/script/generate_benchmarks
+%%GEM_LIB_DIR%%/script/convert_raw_data_files
+%%GEM_LIB_DIR%%/script/perf_bench
+%%GEM_LIB_DIR%%/script/perf_comp
+%%GEM_LIB_DIR%%/script/perf_comp_gc
+%%GEM_LIB_DIR%%/script/perf_diff
+%%GEM_LIB_DIR%%/script/perf_diff_gc
+%%GEM_LIB_DIR%%/script/perf_html
+%%GEM_LIB_DIR%%/script/perf_plot
+%%GEM_LIB_DIR%%/script/perf_plot_gc
+%%GEM_LIB_DIR%%/script/perf_prof
+%%GEM_LIB_DIR%%/script/perf_run
+%%GEM_LIB_DIR%%/script/perf_run_gc
+%%GEM_LIB_DIR%%/script/perf_table
+%%GEM_LIB_DIR%%/script/perf_tex
+%%GEM_LIB_DIR%%/script/perf_times
+%%GEM_LIB_DIR%%/script/perf_times_gc
+%%GEM_LIB_DIR%%/script/run_urls
+%%GEM_LIB_DIR%%/config/benchmarking.rb
+%%GEM_LIB_DIR%%/config/benchmarks.rb
+%%GEM_LIB_DIR%%/config/benchmarks.yml
+%%GEM_LIB_DIR%%/test/railsbench_test.rb
+@dirrm %%GEM_LIB_DIR%%/test
+@dirrm %%GEM_LIB_DIR%%/config
+@dirrm %%GEM_LIB_DIR%%/script
+@dirrm %%GEM_LIB_DIR%%/lib/railsbench
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%/bin
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%
