@@ -20,6 +20,8 @@
 %%SITE_PERL%%/Bigtop/Backend/SiteLook/GantryDefault.pm
 %%SITE_PERL%%/Bigtop/Deparser.pm
 %%SITE_PERL%%/Bigtop/Docs/About.pod
+%%SITE_PERL%%/Bigtop/Docs/AutoBackends.pod
+%%SITE_PERL%%/Bigtop/Docs/AutoKeywords.pod
 %%SITE_PERL%%/Bigtop/Docs/Cookbook.pod
 %%SITE_PERL%%/Bigtop/Docs/Keywords.pod
 %%SITE_PERL%%/Bigtop/Docs/Modules.pod
@@ -36,8 +38,8 @@
 %%SITE_PERL%%/Bigtop/Parser.pm
 %%SITE_PERL%%/Bigtop/ScriptHelp.pm
 %%SITE_PERL%%/Bigtop/ScriptHelp/Style.pm
+%%SITE_PERL%%/Bigtop/ScriptHelp/Style/Kickstart.pm
 %%SITE_PERL%%/Bigtop/ScriptHelp/Style/Pg8Live.pm
-%%SITE_PERL%%/Bigtop/ScriptHelp/Style/Original.pm
 %%SITE_PERL%%/Bigtop/TentMaker.pm
 %%SITE_PERL%%/Bigtop/TentMakerPath.pm
 bin/bigtop
