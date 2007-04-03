@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ode
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	pyode
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyODE-${PORTVERSION}
@@ -24,12 +24,16 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-post-patch:
-	@${REINPLACE_CMD} -e '/^#ODE_BASE/ s|.*|ODE_BASE="${X11BASE}"|' ${WRKSRC}/setup.py
-# gcc4x compatibility
-	@${REINPLACE_CMD} -e 's|((PyObject *\*)__pyx_v_sp) = |__pyx_v_sp = (struct __pyx_obj_3ode_SpaceBase*)|' ${WRKSRC}/ode_notrimesh.c
-	@${REINPLACE_CMD} -e 's|((PyObject *\*)__pyx_v_m) = |__pyx_v_m = (struct __pyx_obj_3ode_Mass*)|' ${WRKSRC}/ode_notrimesh.c
-	@${REINPLACE_CMD} -e 's|((PyObject *\*)__pyx_v_jg) = |__pyx_v_jg = (struct __pyx_obj_3ode_JointGroup*)|' ${WRKSRC}/ode_notrimesh.c
-	@${REINPLACE_CMD} -e 's|((PyObject *\*)__pyx_v_cont) = |__pyx_v_cont = (struct __pyx_obj_3ode_Contact*)|' ${WRKSRC}/ode_notrimesh.c
+OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-.include <bsd.port.mk>
+OPTIONS=	TRIMESH	"Trimesh support (sync with OPCODE opt of devel/ode)"	on
+
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${X11BASE}|' ${WRKSRC}/setup.py
+.if defined(WITHOUT_TRIMESH)
+	@${REINPLACE_CMD} -e '/TRIMESH_ENABLE/ s|True|False|' ${WRKSRC}/setup.py
+.endif
+
+.include <bsd.port.post.mk>
