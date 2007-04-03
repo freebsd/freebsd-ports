@@ -1,5 +1,5 @@
 --- sys/dev/ltmdm/ltmdmsio.c.orig	Tue Mar 12 04:47:31 2002
-+++ sys/dev/ltmdm/ltmdmsio.c	Wed Jan 18 16:43:17 2006
++++ sys/dev/ltmdm/ltmdmsio.c	Tue Apr  3 00:24:20 2007
 @@ -60,7 +60,9 @@
  #include <sys/proc.h>
  #include <sys/module.h>
@@ -199,7 +199,27 @@
          data = pci_read_config(dev, com->iorid[i], 4);
          if (((data &  0x01UL) == 0x01) &&
              ((data & ~0x03UL) != 0   )) {
-@@ -1295,8 +1346,11 @@
+@@ -1232,6 +1283,9 @@
+ 
+     if (intr_type & INTR_TYPE_FAST) {
+         ret = bus_setup_intr(dev, com->irqres, intr_type,
++#if __FreeBSD_version >= 700031
++			     NULL,
++#endif
+                              siointr, com, &com->cookie);
+         if (ret != 0)
+             intr_type &= ~INTR_TYPE_FAST;
+@@ -1240,6 +1294,9 @@
+     }
+     if (ret != 0) {
+         ret = bus_setup_intr(dev, com->irqres, intr_type,
++#if __FreeBSD_version >= 700031
++			     NULL,
++#endif
+                              siointr, com, &com->cookie);
+         if (ret == 0 && (ltmdm_intr_type & INTR_TYPE_FAST)) {
+             device_printf(dev, "could not activate interrupt in fast mode\n");
+@@ -1295,8 +1352,11 @@
      DPRINTF(1,("  x_chip_version    = %d\n", x_chip_version));
  
      com->flags = flags;
@@ -211,7 +231,7 @@
  
      /*
       * initialize the device registers as follows:
-@@ -1368,11 +1422,16 @@
+@@ -1368,11 +1428,16 @@
      write_vuart_port(UART_FIFO, 0);
      printf("\n");
  
@@ -229,7 +249,7 @@
  #else
      if (!sio_registered) {
          register_swi(ltmdm_swi_type, siopoll);
-@@ -1415,7 +1474,7 @@
+@@ -1415,7 +1480,7 @@
          return EBUSY;
  
      com->gone = 1;
@@ -238,7 +258,7 @@
      if (sio_fast_ih != NULL) {
          ithread_remove_handler(sio_fast_ih);
          sio_fast_ih = NULL;
-@@ -1424,6 +1483,15 @@
+@@ -1424,6 +1489,15 @@
          ithread_remove_handler(sio_slow_ih);
          sio_slow_ih = NULL;
      }
@@ -254,7 +274,7 @@
  #else
      if (sio_registered) {
          unregister_swi(ltmdm_swi_type, siopoll);
-@@ -1433,11 +1501,19 @@
+@@ -1433,11 +1507,19 @@
  
      s = splfunc();
      if (tp) {
@@ -274,7 +294,7 @@
      }
      vxdPortClose();
      siosettimeout();
-@@ -1470,7 +1546,11 @@
+@@ -1470,7 +1552,11 @@
  }
  
  static int
@@ -286,7 +306,7 @@
  {
      struct com_s    *com;
      int     error;
-@@ -1488,7 +1568,11 @@
+@@ -1488,7 +1574,11 @@
          return (ENXIO);
      if (mynor & CONTROL_MASK)
          return (0);
@@ -298,7 +318,7 @@
      s = splfunc();
      /*
       * We jump to this label after all non-interrupted sleeps to pick
-@@ -1610,7 +1694,11 @@
+@@ -1610,7 +1700,11 @@
           * the true carrier.
           */
          if (com->prev_modem_status & MSR_DCD || mynor & CALLOUT_MASK)
@@ -310,7 +330,7 @@
      }
      /*
       * Wait for DCD if necessary.
-@@ -1626,7 +1714,11 @@
+@@ -1626,7 +1720,11 @@
              goto out;
          goto open_top;
      }
@@ -322,7 +342,7 @@
      disc_optim(tp, &tp->t_termios, com);
      if (tp->t_state & TS_ISOPEN && mynor & CALLOUT_MASK)
          com->active_out = TRUE;
-@@ -1639,7 +1731,11 @@
+@@ -1639,7 +1737,11 @@
  }
  
  static int
@@ -334,7 +354,7 @@
  {
      struct com_s    *com;
      int     mynor;
-@@ -1654,11 +1750,19 @@
+@@ -1654,11 +1756,19 @@
          return (ENODEV);
      tp = com->tp;
      s = splfunc();
@@ -354,7 +374,7 @@
      siosettimeout();
      splx(s);
      if (com->gone) {
-@@ -1685,7 +1789,9 @@
+@@ -1685,7 +1795,9 @@
      s = splfunc();
      com->do_timestamp = FALSE;
      com->do_dcd_timestamp = FALSE;
@@ -364,7 +384,7 @@
      write_vuart_port(UART_CFCR, com->cfcr_image &= ~CFCR_SBREAK);
      {
          write_vuart_port(UART_IER, 0);
-@@ -1724,7 +1830,11 @@
+@@ -1724,7 +1836,11 @@
  }
  
  static int
@@ -376,7 +396,7 @@
  {
      int     mynor;
      struct com_s    *com;
-@@ -1735,11 +1845,19 @@
+@@ -1735,11 +1851,19 @@
      com = com_addr(MINOR_TO_UNIT(mynor));
      if (com == NULL || com->gone)
          return (ENODEV);
@@ -396,7 +416,7 @@
  {
      int     mynor;
      struct com_s    *com;
-@@ -1754,7 +1872,11 @@
+@@ -1754,7 +1878,11 @@
      if (com == NULL || com->gone)
          return (ENODEV);
  
@@ -408,7 +428,7 @@
  }
  
  static void
-@@ -1860,7 +1982,11 @@
+@@ -1860,7 +1988,11 @@
                  if (line_status & LSR_PE)
                      recv_data |= TTY_PE;
              }
@@ -420,7 +440,7 @@
              lt_disable_intr();
          } while (buf < com->iptr);
      }
-@@ -1894,23 +2020,34 @@
+@@ -1894,23 +2026,34 @@
      u_char  recv_data;
      u_char  int_ctl;
      u_char  int_ctl_new;
@@ -455,7 +475,7 @@
          line_status = read_vuart_port(UART_LSR);
  
          /* input event? (check first to help avoid overruns) */
-@@ -1948,7 +2085,11 @@
+@@ -1948,7 +2091,11 @@
                      recv_data = 0;
              }
              ++com->bytes_in;
@@ -467,7 +487,7 @@
                  setsofttty();
              ioptr = com->iptr;
              if (ioptr >= com->ibufend)
-@@ -2053,17 +2194,23 @@
+@@ -2053,17 +2200,23 @@
  }
  
  static int
@@ -491,7 +511,7 @@
  
      mynor = minor(dev);
      com = com_addr(MINOR_TO_UNIT(mynor));
-@@ -2103,6 +2250,7 @@
+@@ -2103,6 +2256,7 @@
          }
      }
      tp = com->tp;
@@ -499,7 +519,7 @@
  #if defined(COMPAT_43) || defined(COMPAT_SUNOS)
      term = tp->t_termios;
      oldcmd = cmd;
-@@ -2112,6 +2260,7 @@
+@@ -2112,6 +2266,7 @@
      if (cmd != oldcmd)
          data = (caddr_t)&term;
  #endif
@@ -507,7 +527,7 @@
      if (cmd == TIOCSETA || cmd == TIOCSETAW || cmd == TIOCSETAF) {
          int cc;
          struct termios *dt = (struct termios *)data;
-@@ -2134,7 +2283,11 @@
+@@ -2134,7 +2289,11 @@
          if (lt->c_ospeed != 0)
              dt->c_ospeed = tp->t_ospeed;
      }
@@ -519,7 +539,7 @@
      if (error != ENOIOCTL)
          return (error);
      s = splfunc();
-@@ -2189,13 +2342,17 @@
+@@ -2189,13 +2348,17 @@
          com->do_timestamp = TRUE;
          *(struct timeval *)data = com->timestamp;
          break;
@@ -537,7 +557,7 @@
          if (error == ENODEV)
              error = ENOTTY;
          return (error);
-@@ -2257,8 +2414,13 @@
+@@ -2257,8 +2420,13 @@
              com->state &= ~CS_CHECKMSR;
              lt_enable_intr();
              if (delta_modem_status & MSR_DCD)
@@ -551,7 +571,7 @@
          }
          if (com->state & CS_ODONE) {
              lt_disable_intr();
-@@ -2270,7 +2432,11 @@
+@@ -2270,7 +2438,11 @@
                  sio_busycheck_handle = timeout(siobusycheck, com, hz / 100);
                  com->extra_state |= CSE_BUSYCHECK;
              }
@@ -563,7 +583,7 @@
          }
          if (com_events == 0)
              break;
-@@ -2769,11 +2935,21 @@
+@@ -2769,11 +2941,21 @@
          && (!(t->c_iflag & PARMRK)
          || (t->c_iflag & (IGNPAR | IGNBRK)) == (IGNPAR | IGNBRK))
          && !(t->c_lflag & (ECHO | ICANON | IEXTEN | ISIG | PENDIN))
@@ -585,7 +605,7 @@
  }
  
  #ifdef KLD_MODULE
-@@ -2796,7 +2972,7 @@
+@@ -2796,7 +2978,7 @@
  #endif
  
  DRIVER_MODULE(ltmdm, pci, ltmdm_pci_driver, ltmdm_devclass, ltmdm_event, 0);
