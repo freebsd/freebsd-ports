@@ -78,7 +78,7 @@ USE_XLIB=		yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|; \
-		s|-lpthread|${PTHREAD_LIBS}|' \
+		s|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|; \
 		s|$${libdir}/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
