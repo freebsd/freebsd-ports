@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gpa
-PORTVERSION=	0.7.4
-PORTREVISION=	2
+PORTVERSION=	0.7.5
 CATEGORIES=	security
-MASTER_SITES=	http://wald.intevation.org/frs/download.php/241/
+MASTER_SITES=	http://wald.intevation.org/frs/download.php/324/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical frontend for the GNU Privacy Guard
