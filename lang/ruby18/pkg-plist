@@ -20,15 +20,13 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_DOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_DOCDIR%%/ChangeLog-1.8.0
 %%PORTDOCS%%%%RUBY_DOCDIR%%/LEGAL
-%%PORTDOCS%%%%RUBY_DOCDIR%%/NEWS
+%%PORTDOCS%%%%RUBY_DOCDIR%%/NEWS-1.8.0
 %%PORTDOCS%%%%RUBY_DOCDIR%%/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/README.EXT
 %%PORTDOCS%%%%RUBY_DOCDIR%%/README.EXT.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/README.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bigdecimal/bigdecimal_en.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bigdecimal/bigdecimal_ja.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/digest/digest.txt
-%%PORTDOCS%%%%RUBY_DOCDIR%%/digest/digest.txt.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dl/dl.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/enumerator/enumerator.txt
 %%PORTDOCS%%%%RUBY_DOCDIR%%/etc/etc.txt
@@ -56,7 +54,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/etc
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/enumerator
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/dl
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/digest
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/bigdecimal
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/README
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bigdecimal/linear.rb
@@ -247,6 +244,8 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/date2.rb
 %%RUBY_LIBDIR%%/debug.rb
 %%RUBY_LIBDIR%%/delegate.rb
+%%RUBY_LIBDIR%%/digest/sha2.rb
+%%RUBY_LIBDIR%%/digest.rb
 %%RUBY_LIBDIR%%/dl/import.rb
 %%RUBY_LIBDIR%%/dl/struct.rb
 %%RUBY_LIBDIR%%/dl/types.rb
@@ -281,10 +280,12 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/curses.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/dbm.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/defines.h
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/digest/bubblebabble.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/digest/md5.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/digest/rmd160.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/digest/sha1.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/digest/sha2.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/digest.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/digest.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/dl.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/dl.so
@@ -320,6 +321,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/strscan.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/syck.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/syslog.so
+%%RUBY_LIBDIR%%/%%RUBY_ARCH%%/thread.so
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/util.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/version.h
 %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/zlib.so
@@ -864,6 +866,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 @dirrm %%RUBY_LIBDIR%%/%%RUBY_ARCH%%
 @dirrm %%RUBY_LIBDIR%%/drb
 @dirrm %%RUBY_LIBDIR%%/dl
+@dirrm %%RUBY_LIBDIR%%/digest
 @dirrm %%RUBY_LIBDIR%%/date
 @dirrm %%RUBY_LIBDIR%%/cgi/session
 @dirrm %%RUBY_LIBDIR%%/cgi

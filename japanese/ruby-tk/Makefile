@@ -7,7 +7,7 @@
 
 CATEGORIES=	japanese
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Ruby interface to the Japanized Tk widget set
 
 TK_VERSION?=	8.0jp

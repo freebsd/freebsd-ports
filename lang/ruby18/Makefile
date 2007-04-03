@@ -29,6 +29,7 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${RUBY_DISTVERSION}
 
 RUBY_VER=		1.8
+USE_BZIP2=		yes
 USE_RUBY=		yes
 RUBY_NO_BUILD_DEPENDS=	yes
 RUBY_NO_RUN_DEPENDS=	yes
@@ -115,7 +116,6 @@ EXTSAMPLES=	bigdecimal/sample/*.rb	\
 		pty/shl.rb
 
 EXTDOCS=	bigdecimal/bigdecimal_*.html	\
-		digest/digest.txt*		\
 		dl/doc/dl.txt			\
 		enumerator/enumerator.txt	\
 		etc/etc.txt*			\
@@ -156,7 +156,8 @@ post-patch:
 pre-configure:
 .if defined(WITH_ONIGURUMA)
 	cd ${ONIGURUMA_WRKSRC}; ./configure; \
-		${MAKE} -f Makefile ${RUBY_VER:S/.//} RUBYDIR="${WRKSRC}"
+		${MAKE} -f Makefile ${RUBY_RELVERSION:S/.//g} \
+		RUBYDIR="${WRKSRC}"
 .endif
 	${TOUCH} ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
