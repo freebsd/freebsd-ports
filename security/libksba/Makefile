@@ -6,6 +6,7 @@
 
 PORTNAME=	libksba
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,10 +23,10 @@ INSTALLS_SHLIB=	yes
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
+		--infodir=${PREFIX}/${INFO_PATH}
 USE_PERL5_BUILD=yes
 
-INFO_PATH=	share/info
-INFO=	ksba
+INFO=		ksba
 
 .include <bsd.port.mk>
