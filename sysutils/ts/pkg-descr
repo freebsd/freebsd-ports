@@ -1,0 +1,10 @@
+task spooler is a Unix batch system where the tasks spooled run one
+after the other. Each user in each system has his own job queue. The
+tasks are run in the correct context (that of enqueue) from any
+shell/process, and its output/results can be easily watched. It is
+very useful when you know that your commands depend on a lot of RAM,
+a lot of disk use, give a lot of output, or for whatever reason it's
+better not to run them at the same time.
+
+WWW: http://vicerveza.homeunix.net/~viric/soft/ts/
+Author: Lluis Batlle i Rossell <viric_at_vicerveza_dot_homeunix_dot_net>
