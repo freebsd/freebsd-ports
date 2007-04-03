@@ -7625,6 +7625,7 @@ mtl		ports/math/mtl
 mtools		ports/emulators/mtools
 mtoolsfm	ports/x11-fm/mtoolsfm
 mtop		ports/databases/mtop
+mtpaint		ports/graphics/mtpaint
 mtr		ports/net/mtr
 mtrace		ports/net-mgmt/mtrace
 mtrxmath	ports/math/mtrxmath
