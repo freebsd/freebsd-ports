@@ -1120,6 +1120,7 @@
     SUBDIR += p5-ExtUtils-XSBuilder
     SUBDIR += p5-FSA-Rules
     SUBDIR += p5-File-Append-TempFile
+    SUBDIR += p5-File-Attributes
     SUBDIR += p5-File-BaseDir
     SUBDIR += p5-File-BasicFlock
     SUBDIR += p5-File-Binary
