@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-DISTVERSION=	2.5-20070328
+DISTVERSION=	2.5-20070402
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -21,7 +21,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
-CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-46-9].* \
+CONFLICTS=	courier-0.* postfix-1.* postfix-2.* postfix-current-2.[0-46-9]* \
 		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 
 USE_SUBMAKE=	yes
@@ -46,7 +46,8 @@ OPTIONS=	PCRE		"Perl Compatible Regular Expressions" 			on \
 		TEST		"SMTP/LMTP test server and generator"			off
 
 MAN1=	postalias.1 postcat.1 postconf.1 postdrop.1 postfix.1 postkick.1 \
-	postlock.1 postlog.1 postmap.1 postqueue.1 postsuper.1 sendmail.1
+	postlock.1 postlog.1 postmap.1 postqueue.1 postsuper.1 sendmail.1 \
+	qshape.1
 
 MAN5=	access.5 aliases.5 bounce.5 canonical.5 cidr_table.5 generic.5 \
 	header_checks.5 ldap_table.5 master.5 mysql_table.5 nisplus_table.5 \
@@ -266,8 +267,11 @@ do-install:
 
 	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/rmail/rmail ${PREFIX}/bin/rmail
 
+	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/qshape/qshape.pl ${PREFIX}/bin/qshape
+	${INSTALL_MAN} ${WRKSRC}/man/man1/qshape.1 ${MANPREFIX}/man/man1
+
 .for f in ${BINTEST}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${PREFIX}/bin
 .endfor
 .for f in ${MANTEST}
 	${INSTALL_MAN} ${WRKSRC}/man/man1/${f} ${MANPREFIX}/man/man1
