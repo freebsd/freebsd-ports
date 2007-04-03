@@ -31,7 +31,6 @@ include/magick/PreRvIcccm.h
 include/magick/animate.h
 include/magick/annotate.h
 include/magick/api.h
-include/magick/attribute.h
 include/magick/blob.h
 include/magick/cache.h
 include/magick/cache-view.h
@@ -68,6 +67,7 @@ include/magick/magick-config.h
 include/magick/magick-type.h
 include/magick/memory_.h
 include/magick/methods.h
+include/magick/mime.h
 include/magick/module.h
 include/magick/monitor.h
 include/magick/montage.h
@@ -449,6 +449,7 @@ libdata/pkgconfig/Wand.pc
 %%DATADIR%%/config/coder.xml
 %%DATADIR%%/config/log.xml
 %%DATADIR%%/config/magic.xml
+%%DATADIR%%/config/mime.xml
 %%DATADIR%%/config/sRGB.icm
 %%DATADIR%%/config/thresholds.xml
 %%DATADIR%%-%%PORTVERSION%%/LICENSE
@@ -491,6 +492,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/images/wand.ico
 %%PORTDOCS%%%%DOCSDIR%%/images/white-highlight.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/www/ImageMagickObject.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Blob.html
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Cache.fig
 %%PORTDOCS%%%%DOCSDIR%%/www/Magick++/Cache.png
@@ -536,7 +538,6 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/architecture.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/animate.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/annotate.html
-%%PORTDOCS%%%%DOCSDIR%%/www/api/attribute.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/blob.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/cache.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/color.html
@@ -559,6 +560,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/api/magick.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/magick-image.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/magick-property.php
+%%PORTDOCS%%%%DOCSDIR%%/www/api/magick-property.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/memory.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/module.html
 %%PORTDOCS%%%%DOCSDIR%%/www/api/monitor.html

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.3.2-0
-PORTREVISION=	2
+DISTVERSION=	6.3.3-5
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
@@ -243,6 +242,9 @@ CONFIGURE_ARGS+=	--with-xml
 CONFIGURE_ARGS+=	--without-xml
 .endif
 .if defined(WITH_IMAGEMAGICK_SVG)
+.if defined(WITHOUT_X11)
+IGNORE=			SVG support requires X11 libraries, please unset WITHOUT_X11
+.endif
 LIB_DEPENDS+=		rsvg-2.2:${PORTSDIR}/graphics/librsvg2
 CONFIGURE_ARGS+=	--with-rsvg
 CONFIGURE_ENV+=		RSVG_CFLAGS="-I${X11BASE}/include/librsvg-2" \

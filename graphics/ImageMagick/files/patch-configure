@@ -1,6 +1,6 @@
---- configure.bak	Fri Feb  6 09:19:49 2004
-+++ configure	Wed Apr 21 16:47:25 2004
-@@ -23161,6 +23161,7 @@
+--- configure.orig	Tue Apr  3 21:30:12 2007
++++ configure	Tue Apr  3 21:31:01 2007
+@@ -18904,6 +18904,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,3 +8,30 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -34622,7 +34623,7 @@
+ #define HasFONTCONFIG 1
+ _ACEOF
+ 
+-    if test "$with_modules" == 'no' ; then
++    if test "$with_modules" = 'no' ; then
+     CPPFLAGS="$FONTCONFIG_CFLAGS $CPPFLAGS"
+     fi
+ fi
+@@ -36794,7 +36795,7 @@
+ #define HasGVC 1
+ _ACEOF
+ 
+-    if test "$with_modules" == 'no' ; then
++    if test "$with_modules" = 'no' ; then
+         CPPFLAGS="$GVC_CFLAGS $CPPFLAGS"
+     fi
+ fi
+@@ -37337,7 +37338,7 @@
+ #define HasRSVG 1
+ _ACEOF
+ 
+-    if test "$with_modules" == 'no' ; then
++    if test "$with_modules" = 'no' ; then
+         CPPFLAGS="$RSVG_CFLAGS $CPPFLAGS"
+     fi
+ fi

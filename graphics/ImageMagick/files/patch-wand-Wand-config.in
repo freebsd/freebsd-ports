@@ -1,0 +1,11 @@
+--- wand/Wand-config.in.orig	Tue Apr  3 22:32:19 2007
++++ wand/Wand-config.in	Tue Apr  3 22:31:54 2007
+@@ -21,7 +21,7 @@
+       pkg-config --variable exec_prefix Wand
+       ;;
+     --version)
+-      pkg-config --modversion Wan
++      pkg-config --modversion Wand
+       ;;
+     --cflags)
+       pkg-config --cflags Wand
