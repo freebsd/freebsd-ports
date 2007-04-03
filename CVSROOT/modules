@@ -2594,6 +2594,7 @@ exslt		ports/textproc/exslt
 extace		ports/audio/extace
 extipl		ports/sysutils/extipl
 extmail		ports/mail/extmail
+extman		ports/mail/extman
 extrackt	ports/sysutils/extrackt
 extract-xiso	ports/emulators/extract-xiso
 exult		ports/games/exult
