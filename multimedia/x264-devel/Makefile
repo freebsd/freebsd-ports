@@ -6,7 +6,7 @@
 #      $Id: Makefile 30 2006-10-30 22:15:26Z buhnux $
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20070331
+PORTVERSION=	0.0.20070402
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245
@@ -51,11 +51,10 @@ MAKE_ENV+=	ARCH_X86="1"
 .endif
 
 .if ${ARCH}=="amd64" || ${ARCH}=="sparc64"
-BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
-MAKE_ENV+=	ARCH_X86_64="1"
+BUILD_DEPENDS+=	yasm>=0.6.0:${PORTSDIR}/devel/yasm
 .endif
 
-MAKE_ARGS+=	ARCH=${ARCH}
+MAKE_ENV+=	ARCH=${ARCH}
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
