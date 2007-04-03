@@ -1,4 +1,4 @@
 @comment $FreeBSD$
-@unexec easy_install -q -m -S %D/%%PYTHON_SITELIBDIR%% %%EGG_VER%%
+@unexec easy_install -q -N -m %D/%%PYTHON_SITELIBDIR%%/%%PYSIMPLEJSON_EGG%%
 %%PYTHON_SITELIBDIR%%/%%PYSIMPLEJSON_EGG%%
-@exec easy_install -q -N -S %D/%%PYTHON_SITELIBDIR%% %%EGG_VER%%
+@exec easy_install -N %D/%%PYTHON_SITELIBDIR%%/%%PYSIMPLEJSON_EGG%%
