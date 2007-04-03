@@ -1,0 +1,8 @@
+%%SITE_PERL%%/File/Attributes.pm
+%%SITE_PERL%%/File/Attributes/Base.pm
+%%SITE_PERL%%/File/Attributes/Simple.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Attributes/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Attributes
+@dirrmtry %%SITE_PERL%%/File/Attributes
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
+@dirrmtry %%SITE_PERL%%/File
