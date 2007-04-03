@@ -7,7 +7,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	2.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	net print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -52,7 +52,7 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 USE_PERL5=	yes
 FILES=		AppleVolumes.default AppleVolumes.system afpd.conf \
-		atalkd.conf papd.conf
+		atalkd.conf papd.conf netatalk.conf
 LINKS=		unbin unhex unsingle hqx2bin single2bin macbinary \
 		binheader nadheader
 MAN1=		achfile.1 aecho.1 afile.1 afppasswd.1 getzones.1 \
@@ -94,7 +94,7 @@ post-patch:
 post-install:
 	@${RM} -f ${PREFIX}/bin/nu ${PREFIX}/bin/lp2pap.sh \
 		${PREFIX}/bin/test_parse_mtab \
-		${PREFIX}/bin/afpd-mtab.pl ${PREFIX}/etc/netatalk.conf.dist
+		${PREFIX}/bin/afpd-mtab.pl
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/macusers/macusers \
 		${PREFIX}/bin/macusers
 .for i in ${FILES}
