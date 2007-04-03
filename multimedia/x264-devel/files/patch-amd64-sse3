@@ -1,0 +1,36 @@
+--- common/amd64/quant-a.asm.orig	Tue Apr  3 12:50:00 2007
++++ common/amd64/quant-a.asm	Tue Apr  3 12:50:17 2007
+@@ -45,9 +45,11 @@
+ cglobal x264_quant_4x4_core15_mmx
+ cglobal x264_quant_8x8_core15_mmx
+ 
++%ifdef HAVE_SSE3
+ cglobal x264_quant_4x4_dc_core15_ssse3
+ cglobal x264_quant_4x4_core15_ssse3
+ cglobal x264_quant_8x8_core15_ssse3
++%endif
+ 
+ cglobal x264_quant_2x2_dc_core16_mmxext
+ cglobal x264_quant_4x4_dc_core16_mmxext
+--- common/amd64/pixel-sse2.asm.orig	Tue Apr  3 12:53:31 2007
++++ common/amd64/pixel-sse2.asm	Tue Apr  3 12:54:29 2007
+@@ -50,15 +50,19 @@
+ cglobal x264_pixel_satd_16x8_sse2
+ cglobal x264_pixel_satd_8x16_sse2
+ cglobal x264_pixel_satd_16x16_sse2
++%ifdef HAVE_SSE3
+ cglobal x264_pixel_satd_8x4_ssse3
+ cglobal x264_pixel_satd_8x8_ssse3
+ cglobal x264_pixel_satd_16x8_ssse3
+ cglobal x264_pixel_satd_8x16_ssse3
+ cglobal x264_pixel_satd_16x16_ssse3
++%endif
+ cglobal x264_pixel_sa8d_8x8_sse2
+ cglobal x264_pixel_sa8d_16x16_sse2
++%ifdef HAVE_SSE3
+ cglobal x264_pixel_sa8d_8x8_ssse3
+ cglobal x264_pixel_sa8d_16x16_ssse3
++%endif
+ cglobal x264_intra_sa8d_x3_8x8_core_sse2
+ cglobal x264_pixel_ssim_4x4x2_core_sse2
+ cglobal x264_pixel_ssim_end4_sse2
