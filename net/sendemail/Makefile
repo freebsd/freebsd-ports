@@ -7,13 +7,13 @@
 # $Tecnik: ports/net/sendemail/Makefile,v 1.1 2005/12/17 01:22:24 itetcu Exp $
 
 PORTNAME=	sendEmail
-PORTVERSION=	1.54
+PORTVERSION=	1.55
 CATEGORIES=	net
 MASTER_SITES=	http://caspian.dotconf.net/menu/Software/SendEmail/ \
 		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	itetcu@people.tecnik93.com
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Lightweight, completly command line based, SMTP email agent
 
 NO_BUILD=	yes
