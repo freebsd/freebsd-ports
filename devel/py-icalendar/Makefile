@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	iCalendar-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Parser and generator of iCalender files for Python
 
 BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
