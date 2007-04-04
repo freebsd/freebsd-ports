@@ -18,8 +18,8 @@ command=%%PREFIX%%/sbin/openpbx
 
 load_rc_config $name
 
-pidfile=${asterisk_pidfile:-"/var/run/openpbx.pid"}
+pidfile=${openpbx_pidfile:-"/var/run/openpbx.pid"}
 
-asterisk_enable=${asterisk_enable:-"NO"}
+openpbx_enable=${openpbx_enable:-"NO"}
 
 run_rc_command "$1"
