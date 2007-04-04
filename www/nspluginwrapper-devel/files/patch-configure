@@ -1,0 +1,53 @@
+--- ./configure.orig	Sun Mar  4 23:01:22 2007
++++ ./configure	Wed Apr  4 20:20:59 2007
+@@ -6,13 +6,8 @@
+ PACKAGE=nspluginwrapper
+ 
+ # set temporary file name
+-if test ! -z "$TMPDIR" ; then
+-    TMPDIR1="${TMPDIR}"
+-elif test ! -z "$TEMPDIR" ; then
+-    TMPDIR1="${TEMPDIR}"
+-else
+-    TMPDIR1="/tmp"
+-fi
++mkdir -p tmp
++TMPDIR1="./tmp"
+ 
+ TMPC="${TMPDIR1}/npw-conf-${RANDOM}-$$-${RANDOM}.c"
+ TMPO="${TMPDIR1}/npw-conf-${RANDOM}-$$-${RANDOM}.o"
+@@ -75,6 +70,9 @@
+ --prefix=*)
+     prefix=`echo $opt | cut -d '=' -f 2`
+     ;;
++--x11=*)
++    x_base_dirs=`echo $opt | cut -d '=' -f 2`
++    ;;
+ --pkglibdir=*)
+     pkglibdir=`echo $opt | cut -d '=' -f 2`
+     ;;
+@@ -279,10 +277,12 @@
+ fi
+ 
+ # check for X11 base dir
+-x_base_dirs='
+-/usr
+-/usr/X11R6
+-/usr/local/X11R6'
++if test -z "$x_base_dirs"; then
++	x_base_dirs='
++	/usr
++	/usr/X11R6
++	/usr/local'
++fi
+ for dir in $x_base_dirs; do
+     x_include_dir="$dir/include"
+     if test -f $x_include_dir/X11/Intrinsic.h; then
+@@ -407,6 +407,7 @@
+ echo "  --target-os=OS              build plugin support for target OS [$target_os]"
+ echo "  --target-cpu=CPU            build plugin support for target CPU [$target_cpu]"
+ echo "  --with-viewer               build viewer [$build_viewer]"
++echo "  --x11=PREFIX                path to X11 base"
+ echo ""
+ echo "Advanced options (experts only):"
+ echo "  --source-path=PATH          path of source code [$source_path]"

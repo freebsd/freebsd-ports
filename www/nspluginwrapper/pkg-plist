@@ -1,0 +1,14 @@
+bin/nspluginwrapper
+%%LIBDIR%%/%%ARCH%%/freebsd/npconfig
+%%LIBDIR%%/%%ARCH%%/freebsd/npwrapper.so
+%%LIBDIR%%/i386/linux/npviewer.bin
+%%LIBDIR%%/i386/linux/npviewer
+%%LIBDIR%%/i386/linux/libxpcom.so
+%%LIBDIR%%/noarch/mkruntime
+%%LIBDIR%%/noarch/npviewer
+@dirrm %%LIBDIR%%/%%ARCH%%/freebsd
+@dirrmtry %%LIBDIR%%/%%ARCH%%
+@dirrm %%LIBDIR%%/i386/linux
+@dirrmtry %%LIBDIR%%/i386
+@dirrm %%LIBDIR%%/noarch
+@dirrm %%LIBDIR%%
