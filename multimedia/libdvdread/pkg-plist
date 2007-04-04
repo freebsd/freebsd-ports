@@ -1,7 +1,3 @@
-lib/libdvdread.a
-lib/libdvdread.la
-lib/libdvdread.so
-lib/libdvdread.so.3
 include/dvdread/dvd_reader.h
 include/dvdread/ifo_types.h
 include/dvdread/ifo_read.h
@@ -9,10 +5,15 @@ include/dvdread/ifo_print.h
 include/dvdread/nav_types.h
 include/dvdread/nav_read.h
 include/dvdread/nav_print.h
-%%PORTDOCS%%share/doc/libdvdread/AUTHORS
-%%PORTDOCS%%share/doc/libdvdread/COPYING
-%%PORTDOCS%%share/doc/libdvdread/NEWS
-%%PORTDOCS%%share/doc/libdvdread/README
-%%PORTDOCS%%share/doc/libdvdread/TODO
-%%PORTDOCS%%@dirrm share/doc/libdvdread
+include/dvdread/cmd_print.h
+lib/libdvdread.so.5
+lib/libdvdread.so
+lib/libdvdread.la
+lib/libdvdread.a
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/dvdread
