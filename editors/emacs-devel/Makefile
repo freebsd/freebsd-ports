@@ -28,9 +28,10 @@ CONFLICTS=	emacs-19.* emacs-21.* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
 
-EMACS_VER=	22.0.93
+EMACS_VER=	22.0.97
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+ALL_TARGET=	bootfast
 .if !defined(WITHOUT_X11)
 .if !defined(WITHOUT_GTK)
 USE_GNOME=	gtk20
@@ -57,11 +58,8 @@ CONFIGURE_ARGS+=	--infodir='$${prefix}/info' --mandir='$${prefix}/man'
 
 MAN1=		ctags.1 emacs.1 emacsclient.1 etags.1
 PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET}
-.if defined(WITHOUT_GTK)
-PLIST_SUB+=	DOC2=""
-.else
-PLIST_SUB+=	DOC2="@comment "
-.endif
+
+MAKE_ENV=	LC_ALL=C
 
 INFO=		ada-mode autotype calc ccmode cl dired-x ebrowse ediff \
 		efaq eintr elisp emacs-mime emacs erc eshell eudc \
@@ -85,11 +83,7 @@ pre-everything::
 	@${ECHO_MSG} "====>"
 .endif
 
-pre-install:
-	(cd ${WRKSRC}/lisp ; \
-	 ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} recompile ; \
-	 ${RM} ${WRKSRC}/src/emacs ${WRKSRC}/src/emacs-${EMACS_VER}.[0-9]* ; \
-	 cd ${WRKSRC}/src ; \
-	 ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+post-patch:
+	@${RM} -f ${WRKSRC}/info/*
 
 .include <bsd.port.post.mk>
