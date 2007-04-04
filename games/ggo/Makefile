@@ -8,13 +8,17 @@
 PORTNAME=	ggo
 PORTVERSION=	1.0
 CATEGORIES=	games java
-MASTER_SITES=	http://www.pandanet.co.jp/java/gGo/download/
+MASTER_SITES=	http://panda-igs.joyjoy.net/java/gGo/download/ \
+		http://www.pandanet.co.jp/java/gGo/download/
 DISTNAME=	gGo-${PORTVERSION}
 
 MAINTAINER=	jonc@chen.org.nz
 COMMENT=	PandaNet's IGS Client, GNU Go Client and SGF Editor
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
+
+DEPRECATED=	developer's focus have moved elsewhere
+EXPIRATION_DATE=2007-10-03
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
