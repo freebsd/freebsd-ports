@@ -25,9 +25,9 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/etc/DEVEL.HUMOR
 %%DATADIR%%/%%EMACS_VER%%/etc/DISTRIB
 %%DATADIR%%/%%EMACS_VER%%/etc/DOC-%%EMACS_VER%%.1
-%%DOC2%%%%DATADIR%%/%%EMACS_VER%%/etc/DOC-%%EMACS_VER%%.2
 %%DATADIR%%/%%EMACS_VER%%/etc/ERC-NEWS
 %%DATADIR%%/%%EMACS_VER%%/etc/ETAGS.EBNF
+%%DATADIR%%/%%EMACS_VER%%/etc/ETAGS.README
 %%DATADIR%%/%%EMACS_VER%%/etc/FTP
 %%DATADIR%%/%%EMACS_VER%%/etc/GNU
 %%DATADIR%%/%%EMACS_VER%%/etc/GNUS-NEWS
@@ -47,7 +47,6 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.20
 %%DATADIR%%/%%EMACS_VER%%/etc/NEWS.21
 %%DATADIR%%/%%EMACS_VER%%/etc/ORDERS
-%%DATADIR%%/%%EMACS_VER%%/etc/OTHER.EMACSES
 %%DATADIR%%/%%EMACS_VER%%/etc/PROBLEMS
 %%DATADIR%%/%%EMACS_VER%%/etc/README
 %%DATADIR%%/%%EMACS_VER%%/etc/SERVICE
@@ -59,6 +58,7 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/etc/TUTORIAL.cn
 %%DATADIR%%/%%EMACS_VER%%/etc/TUTORIAL.cs
 %%DATADIR%%/%%EMACS_VER%%/etc/TUTORIAL.de
+%%DATADIR%%/%%EMACS_VER%%/etc/TUTORIAL.eo
 %%DATADIR%%/%%EMACS_VER%%/etc/TUTORIAL.es
 %%DATADIR%%/%%EMACS_VER%%/etc/TUTORIAL.fr
 %%DATADIR%%/%%EMACS_VER%%/etc/TUTORIAL.it
@@ -76,7 +76,6 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/etc/TUTORIAL.translators
 %%DATADIR%%/%%EMACS_VER%%/etc/TUTORIAL.zh
 %%DATADIR%%/%%EMACS_VER%%/etc/WHY-FREE
-%%DATADIR%%/%%EMACS_VER%%/etc/Xkeymap.txt
 %%DATADIR%%/%%EMACS_VER%%/etc/calccard.ps
 %%DATADIR%%/%%EMACS_VER%%/etc/calccard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/celibacy.1
@@ -103,7 +102,6 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/etc/emacs.csh
 %%DATADIR%%/%%EMACS_VER%%/etc/emacs.icon
 %%DATADIR%%/%%EMACS_VER%%/etc/emacs.py
-%%DATADIR%%/%%EMACS_VER%%/etc/emacs.xbm
 %%DATADIR%%/%%EMACS_VER%%/etc/emacsclient.1
 %%DATADIR%%/%%EMACS_VER%%/etc/emacstool.1
 %%DATADIR%%/%%EMACS_VER%%/etc/enriched.doc
@@ -114,12 +112,14 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/etc/fr-refcard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/fr-survival.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/future-bug
-%%DATADIR%%/%%EMACS_VER%%/etc/gnu.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/gnus-booklet.ps
 %%DATADIR%%/%%EMACS_VER%%/etc/gnus-logo.eps
+%%DATADIR%%/%%EMACS_VER%%/etc/gnus-refcard.ps
 %%DATADIR%%/%%EMACS_VER%%/etc/gnus-refcard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/gnus-tut.txt
 %%DATADIR%%/%%EMACS_VER%%/etc/gnus.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/grep.txt
+%%DATADIR%%/%%EMACS_VER%%/etc/images/README
 %%DATADIR%%/%%EMACS_VER%%/etc/images/attach.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/attach.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/back-arrow.pbm
@@ -145,6 +145,7 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/etc/images/disconnect.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/exit.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/exit.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/ezimage/README
 %%DATADIR%%/%%EMACS_VER%%/etc/images/ezimage/bits.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/ezimage/bitsbang.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/ezimage/box-minus.xpm
@@ -174,13 +175,11 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/etc/images/ezimage/unlock.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/fwd-arrow.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/fwd-arrow.xpm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/bar.xbm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/bar.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/README
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/catchup.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/catchup.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/cu-exit.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/cu-exit.xpm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/dead.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/describe-group.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/describe-group.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/exit-gnus.pbm
@@ -217,7 +216,6 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/reply-wo.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/reply.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/reply.xpm
-%%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/reverse-smile.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/rot13.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/rot13.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/save-aif.pbm
@@ -234,6 +232,7 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/uu-decode.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/uu-post.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gnus/uu-post.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/gud/README
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gud/break.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gud/break.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/gud/cont.pbm
@@ -274,6 +273,7 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/etc/images/help.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/home.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/home.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/icons/README
 %%DATADIR%%/%%EMACS_VER%%/etc/images/icons/emacs_16.png
 %%DATADIR%%/%%EMACS_VER%%/etc/images/icons/emacs_24.png
 %%DATADIR%%/%%EMACS_VER%%/etc/images/icons/emacs_32.png
@@ -289,6 +289,7 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/etc/images/lock-broken.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/lock-ok.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/lock.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/low-color/README
 %%DATADIR%%/%%EMACS_VER%%/etc/images/low-color/back-arrow.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/low-color/copy.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/low-color/cut.xpm
@@ -313,6 +314,7 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/etc/images/low-color/undo.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/low-color/up-arrow.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/low-color/up-node.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/mail/README
 %%DATADIR%%/%%EMACS_VER%%/etc/images/mail/compose.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/mail/compose.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/mail/copy.xpm
@@ -374,10 +376,12 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/etc/images/separator.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/show.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/show.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/smilies/README
 %%DATADIR%%/%%EMACS_VER%%/etc/images/smilies/blink.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/smilies/blink.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/smilies/braindamaged.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/smilies/cry.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/images/smilies/dead.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/smilies/evil.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/smilies/forced.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/images/smilies/frown.pbm
@@ -408,7 +412,6 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/etc/images/zoom-out.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/letter.pbm
 %%DATADIR%%/%%EMACS_VER%%/etc/letter.xpm
-%%DATADIR%%/%%EMACS_VER%%/etc/ms-7bkermit
 %%DATADIR%%/%%EMACS_VER%%/etc/ms-kermit
 %%DATADIR%%/%%EMACS_VER%%/etc/orgcard.ps
 %%DATADIR%%/%%EMACS_VER%%/etc/orgcard.tex
@@ -436,6 +439,7 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/etc/spook.lines
 %%DATADIR%%/%%EMACS_VER%%/etc/survival.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/termcap.src
+%%DATADIR%%/%%EMACS_VER%%/etc/tree-widget/default/README
 %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget/default/close.png
 %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget/default/close.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget/default/empty.png
@@ -454,6 +458,7 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget/default/no-handle.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget/default/open.png
 %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget/default/open.xpm
+%%DATADIR%%/%%EMACS_VER%%/etc/tree-widget/folder/README
 %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget/folder/close.png
 %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget/folder/close.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget/folder/empty.png
@@ -472,7 +477,6 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget/folder/no-handle.xpm
 %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget/folder/open.png
 %%DATADIR%%/%%EMACS_VER%%/etc/tree-widget/folder/open.xpm
-%%DATADIR%%/%%EMACS_VER%%/etc/ulimit.hack
 %%DATADIR%%/%%EMACS_VER%%/etc/vipcard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/viperCard.tex
 %%DATADIR%%/%%EMACS_VER%%/etc/yow.lines
