@@ -1,8 +1,8 @@
 bin/roxirc
-share/doc/roxirc/bindings-example
-share/doc/roxirc/config-example
-share/doc/roxirc/menus-example
-share/doc/roxirc/prefs-initial
-share/doc/roxirc/startup-example
-share/doc/roxirc/help
-@dirrm share/doc/roxirc
+%%PORTDOCS%%%%DOCSDIR%%/bindings-example
+%%PORTDOCS%%%%DOCSDIR%%/config-example
+%%PORTDOCS%%%%DOCSDIR%%/menus-example
+%%PORTDOCS%%%%DOCSDIR%%/prefs-initial
+%%PORTDOCS%%%%DOCSDIR%%/startup-example
+%%PORTDOCS%%%%DOCSDIR%%/help
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
