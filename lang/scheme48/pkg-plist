@@ -1,15 +1,17 @@
-bin/scheme48
 bin/scheme-r5rs
 bin/scheme-srfi-7
+bin/scheme48
 include/scheme48.h
 include/scheme48write-barrier.h
 lib/scheme48/big/array.scm
 lib/scheme48/big/big-util.scm
 lib/scheme48/big/callback.scm
+lib/scheme48/big/compact-table.scm
 lib/scheme48/big/compose-cont.scm
 lib/scheme48/big/defrecord.scm
 lib/scheme48/big/destructure.scm
 lib/scheme48/big/dump.scm
+lib/scheme48/big/dynamic-external.scm
 lib/scheme48/big/either.scm
 lib/scheme48/big/enum-set.scm
 lib/scheme48/big/external.scm
@@ -19,6 +21,8 @@ lib/scheme48/big/format.scm
 lib/scheme48/big/general-table.scm
 lib/scheme48/big/hilbert.scm
 lib/scheme48/big/import-def.scm
+lib/scheme48/big/inversion-list-check.scm
+lib/scheme48/big/inversion-list.scm
 lib/scheme48/big/iterate.scm
 lib/scheme48/big/linked-queue.scm
 lib/scheme48/big/lock.scm
@@ -32,12 +36,16 @@ lib/scheme48/big/pp.scm
 lib/scheme48/big/queue.scm
 lib/scheme48/big/random.scm
 lib/scheme48/big/receive.scm
+lib/scheme48/big/reinitializer.scm
 lib/scheme48/big/search-tree.scm
+lib/scheme48/big/shared-object.scm
 lib/scheme48/big/socket.scm
 lib/scheme48/big/strong.scm
+lib/scheme48/big/text-codec-util.scm
+lib/scheme48/big/unicode-normalization-info.scm
+lib/scheme48/big/unicode-normalization.scm
 lib/scheme48/big/value-pipe.scm
-lib/scheme48/big/dynamic-external.scm
-lib/scheme48/big/shared-object.scm
+lib/scheme48/big/vararg.scm
 lib/scheme48/cml/async-channel.scm
 lib/scheme48/cml/channel.scm
 lib/scheme48/cml/interfaces.scm
@@ -52,6 +60,7 @@ lib/scheme48/env/basic-command.scm
 lib/scheme48/env/build.scm
 lib/scheme48/env/command-level.scm
 lib/scheme48/env/command.scm
+lib/scheme48/env/condition.scm
 lib/scheme48/env/debug.scm
 lib/scheme48/env/debuginfo.scm
 lib/scheme48/env/disasm.scm
@@ -60,23 +69,26 @@ lib/scheme48/env/dispcond.scm
 lib/scheme48/env/flatload.scm
 lib/scheme48/env/init-defpackage.scm
 lib/scheme48/env/inspect.scm
+lib/scheme48/env/io-condition.scm
 lib/scheme48/env/jar-assem.scm
 lib/scheme48/env/list-interface.scm
 lib/scheme48/env/load-package.scm
 lib/scheme48/env/menu.scm
 lib/scheme48/env/pacman.scm
+lib/scheme48/env/parse-bytecode.scm
 lib/scheme48/env/pedit.scm
 lib/scheme48/env/profile.scm
 lib/scheme48/env/read-command.scm
 lib/scheme48/env/shadow.scm
+lib/scheme48/env/signal.scm
 lib/scheme48/env/space.scm
 lib/scheme48/env/start.scm
 lib/scheme48/env/traverse.scm
+lib/scheme48/env/unicode-category.scm
+lib/scheme48/env/unicode-charmap.scm
+lib/scheme48/env/unicode-info.scm
 lib/scheme48/env/user.scm
 lib/scheme48/env/version-info.scm
-lib/scheme48/env/condition.scm
-lib/scheme48/env/io-condition.scm
-lib/scheme48/env/signal.scm
 lib/scheme48/link/data.scm
 lib/scheme48/link/generate-c-header.scm
 lib/scheme48/link/generate-old-c-header.scm
@@ -84,6 +96,9 @@ lib/scheme48/link/link.scm
 lib/scheme48/link/loadc.scm
 lib/scheme48/link/reify.scm
 lib/scheme48/link/transport.scm
+lib/scheme48/link/unicode-data-packages.scm
+lib/scheme48/link/unicode-data.scm
+lib/scheme48/link/write-byte.scm
 lib/scheme48/link/write-image.scm
 lib/scheme48/misc/annotate.scm
 lib/scheme48/misc/doodl.scm
@@ -130,7 +145,6 @@ lib/scheme48/sort/delndups.scm
 lib/scheme48/sort/interfaces.scm
 lib/scheme48/sort/lmsort.scm
 lib/scheme48/sort/packages.scm
-lib/scheme48/sort/sort-support-macs.scm
 lib/scheme48/sort/sort.scm
 lib/scheme48/sort/sortp.scm
 lib/scheme48/sort/test.scm
@@ -143,9 +157,13 @@ lib/scheme48/srfi/packages.scm
 lib/scheme48/srfi/srfi-1.scm
 lib/scheme48/srfi/srfi-11.scm
 lib/scheme48/srfi/srfi-13.scm
+lib/scheme48/srfi/srfi-14-base-char-sets.scm
+lib/scheme48/srfi/srfi-14-char-sets.scm
+lib/scheme48/srfi/srfi-14-check.scm
 lib/scheme48/srfi/srfi-14.scm
 lib/scheme48/srfi/srfi-16.scm
 lib/scheme48/srfi/srfi-17.scm
+lib/scheme48/srfi/srfi-19-check.scm
 lib/scheme48/srfi/srfi-19.scm
 lib/scheme48/srfi/srfi-2.scm
 lib/scheme48/srfi/srfi-25.scm
@@ -153,10 +171,24 @@ lib/scheme48/srfi/srfi-26.scm
 lib/scheme48/srfi/srfi-27.scm
 lib/scheme48/srfi/srfi-28.scm
 lib/scheme48/srfi/srfi-37.scm
+lib/scheme48/srfi/srfi-39.scm
+lib/scheme48/srfi/srfi-4.scm
+lib/scheme48/srfi/srfi-40.scm
 lib/scheme48/srfi/srfi-42.scm
+lib/scheme48/srfi/srfi-43.scm
 lib/scheme48/srfi/srfi-45.scm
 lib/scheme48/srfi/srfi-5.scm
+lib/scheme48/srfi/srfi-60.scm
+lib/scheme48/srfi/srfi-61.scm
+lib/scheme48/srfi/srfi-63.scm
+lib/scheme48/srfi/srfi-66.scm
+lib/scheme48/srfi/srfi-67.scm
 lib/scheme48/srfi/srfi-7.scm
+lib/scheme48/srfi/srfi-71.scm
+lib/scheme48/srfi/srfi-74.scm
+lib/scheme48/srfi/srfi-78.scm
+@dirrm share/nls/en_US.US-ASCII
+@dirrm share/nls/POSIX
 @dirrm lib/scheme48/srfi
 @dirrm lib/scheme48/sort
 @dirrm lib/scheme48/rts

@@ -5,13 +5,16 @@ machine.  The name derives from our desire to have an implementation
 that is simple and lucid enough that it looks as if it were written in
 just 48 hours.  We don't claim to have reached that stage yet; much
 more simplification is necessary.
-
-Scheme 48 tries to be faithful to the upcoming Revised^5 Scheme
-Report, providing neither more nor less in the initial user
-environment.  (This is not to say that more isn't available in other
-environments.)  Support for numbers is weak: bignums are slow and
-floating point is almost nonexistent.  DEFINE-SYNTAX, LET-SYNTAX,
-LETREC-SYNTAX, and SYNTAX-RULES are supported, but not the rest of
-the Revised^4 Scheme macro proposal.
+Scheme 48 is an implementation of the Scheme programming language as described
+in the Revised5 Report on the Algorithmic Language Scheme [6]. It is based on
+a compiler and interpreter for a virtual Scheme machine. Scheme 48 tries to be
+faithful to the Revised5 Scheme Report, providing neither more nor less in the
+initial user environment. (This is not to say that more isn't available in
+other environments; see below.)
+Scheme 48 is under continual development. Please report bugs, especially in
+the VM, especially core dumps, to scheme-48-bugs@s48.org. Include the version
+number x.yy from the "Welcome to Scheme 48 x.yy" greeting message in your bug
+report. It is a goal of this project to produce a bullet-proof system; we want
+no bugs and, especially, no crashes.
 
 WWW: http://www.s48.org
