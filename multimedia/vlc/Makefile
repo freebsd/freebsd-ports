@@ -68,8 +68,11 @@ BROKEN=	Does not compile with perl ${PERL_VERSION}
 
 .if exists(${LOCALBASE}/libdata/pkgconfig/libavcodec.pc) || !exists(${LOCALBASE}/lib/libavformat.a)
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel
+FFMPEG=	new
 .else
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG=	old
+EXTRA_PATCHES=	${PATCHDIR}/old-ffmpeg-patch
 .endif
 
 # compatible knobs.

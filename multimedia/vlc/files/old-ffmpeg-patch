@@ -1,0 +1,54 @@
+--- modules/codec/ffmpeg/ffmpeg.c.orig	Fri May 13 07:48:21 2005
++++ modules/codec/ffmpeg/ffmpeg.c	Fri May 13 13:28:17 2005
+@@ -42,11 +42,9 @@
+ 
+ #include "ffmpeg.h"
+ 
+-#ifdef LIBAVCODEC_PP
++#if defined(LIBAVCODEC_PP) && LIBAVCODEC_BUILD > 4750
+ #   ifdef HAVE_POSTPROC_POSTPROCESS_H
+-#       include <postproc/postprocess.h>
+-#   else
+-#       include <libpostproc/postprocess.h>
++#       include <ffmpeg/postproc/postprocess.h>
+ #   endif
+ #endif
+ 
+@@ -105,7 +103,7 @@
+         VLC_TRUE );
+         change_integer_range( 0, 2 );
+ 
+-#ifdef LIBAVCODEC_PP
++#if defined(LIBAVCODEC_PP) && LIBAVCODEC_BUILD > 4750
+     add_integer( "ffmpeg-pp-q", 0, NULL, PP_Q_TEXT, PP_Q_LONGTEXT, VLC_FALSE );
+     add_string( "ffmpeg-pp-name", "default", NULL, LIBAVCODEC_PP_TEXT,
+         LIBAVCODEC_PP_LONGTEXT, VLC_TRUE );
+--- modules/stream_out/switcher.c.orig	Wed Mar 23 03:57:15 2005
++++ modules/stream_out/switcher.c	Wed Mar 23 03:57:50 2005
+@@ -44,7 +44,7 @@
+ #ifdef HAVE_POSTPROC_POSTPROCESS_H
+ #   include <postproc/postprocess.h>
+ #else
+-#   include <libpostproc/postprocess.h>
++#   include <ffmpeg/postproc/postprocess.h>
+ #endif
+ 
+ #define SOUT_CFG_PREFIX "sout-switcher-"
+--- modules/codec/ffmpeg/postprocess.c.orig	Fri May 13 07:48:21 2005
++++ modules/codec/ffmpeg/postprocess.c	Sat May 14 00:11:53 2005
+@@ -35,13 +35,9 @@
+ 
+ #include "ffmpeg.h"
+ 
+-#ifdef LIBAVCODEC_PP
++#if defined(LIBAVCODEC_PP) && LIBAVCODEC_BUILD > 4750
+ 
+-#ifdef HAVE_POSTPROC_POSTPROCESS_H
+-#   include <postproc/postprocess.h>
+-#else
+-#   include <libpostproc/postprocess.h>
+-#endif
++#include <ffmpeg/postproc/postprocess.h>
+ 
+ #ifndef PP_CPU_CAPS_ALTIVEC
+ #   define PP_CPU_CAPS_ALTIVEC 0
