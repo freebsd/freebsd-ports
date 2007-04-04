@@ -6,25 +6,29 @@
 #
 
 PORTNAME=	roxirc
-PORTVERSION=	1.72
-CATEGORIES=	irc tk83
+PORTVERSION=	2.0
+CATEGORIES=	irc tk84
 MASTER_SITES=	http://roxirc.lighter.net/download/
 
 MAINTAINER=	rox@fearme.com
 COMMENT=	A tcl/tk irc client
 
-RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
-
+USE_TK=		yes
 NO_BUILD=	yes
 
+post-patch:
+	@${REINPLACE_CMD} 's|if \[ -x .*|${WISH} "$$0" "$$@"|' ${WRKSRC}/roxirc
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/roxirc	  ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/doc/roxirc
-	${INSTALL_DATA} ${WRKSRC}/config ${PREFIX}/share/doc/roxirc/config-example
-	${INSTALL_DATA} ${WRKSRC}/menus ${PREFIX}/share/doc/roxirc/menus-example
-	${INSTALL_DATA} ${WRKSRC}/bindings ${PREFIX}/share/doc/roxirc/bindings-example
-	${INSTALL_DATA} ${WRKSRC}/prefs ${PREFIX}/share/doc/roxirc/prefs-initial
-	${INSTALL_DATA} ${WRKSRC}/startup ${PREFIX}/share/doc/roxirc/startup-example
-	${INSTALL_DATA} ${WRKSRC}/help ${PREFIX}/share/doc/roxirc/help
+	${INSTALL_SCRIPT} ${WRKSRC}/roxirc ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/config ${DOCSDIR}/config-example
+	${INSTALL_DATA} ${WRKSRC}/menus ${DOCSDIR}/menus-example
+	${INSTALL_DATA} ${WRKSRC}/bindings ${DOCSDIR}/bindings-example
+	${INSTALL_DATA} ${WRKSRC}/prefs ${DOCSDIR}/prefs-initial
+	${INSTALL_DATA} ${WRKSRC}/startup ${DOCSDIR}/startup-example
+	${INSTALL_DATA} ${WRKSRC}/help ${DOCSDIR}/help
+.endif
 
 .include <bsd.port.mk>
