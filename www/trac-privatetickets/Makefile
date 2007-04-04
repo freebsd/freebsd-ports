@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	privatetickets
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/T/TracPrivateTickets/
 PKGNAMEPREFIX=	trac-
