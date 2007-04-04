@@ -15,8 +15,6 @@ EXTRACT_ONLY=	${DISTFILES}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A handy utility to show codepoint information of given characters
 
-RUN_DEPENDS=	${_RUN_DEPENDS}
-
 USE_PERL5=	yes
 
 NO_WRKSUBDIR=	yes
@@ -28,12 +26,10 @@ MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		This port requires perl 5.6.0 or later
-.elif ${PERL_LEVEL} < 500800
-_RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
+.if ${PERL_LEVEL} < 500800
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
 .else
-_RUN_DEPENDS=	${SITE_PERL}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
+RUN_DEPENDS=	${SITE_PERL}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
 .endif
 
 do-extract:

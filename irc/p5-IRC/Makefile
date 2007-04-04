@@ -22,14 +22,4 @@ MAN3=		Net::Connection.3 \
 		Net::Event.3 \
 		Net::IRC.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/INET.pm:${PORTSDIR}/devel/p5-IO
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/INET.pm:${PORTSDIR}/devel/p5-IO
-post-patch:
-	@${PERL} -pi -e '$$_ = "" if /(use|no) warnings/' ${WRKSRC}/EventQueue.pm
-	@${PERL} -pi -e 's/^our (\S+);/use vars qw($$1);/' ${WRKSRC}/Event.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

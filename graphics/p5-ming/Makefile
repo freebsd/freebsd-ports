@@ -38,12 +38,6 @@ MAN3=		SWF.3 \
 		SWF::TextField.3 \
 		SWF::VideoStream.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	Perl 5.6 or newer required. Install lang/perl5 or lang/perl5.8 and try again.
-.endif
-
 post-patch:
 	@${ECHO_CMD} -n > ${WRKSRC}/../configure.in
 	@${LN} -sf ${LOCALBASE}/include/ming ${WRKSRC}/../src
@@ -54,4 +48,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/*.* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
