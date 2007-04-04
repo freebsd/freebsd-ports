@@ -24,7 +24,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--program-prefix=''
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		lineak_xosdplugin.1
 MAN_COMPRESSED=	yes
@@ -41,5 +41,6 @@ BROKEN=		Configure fails to find lineakd
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
