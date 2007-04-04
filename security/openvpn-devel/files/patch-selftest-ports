@@ -1,0 +1,26 @@
+--- sample-config-files/loopback-client.orig	Mon Oct 16 00:30:20 2006
++++ sample-config-files/loopback-client	Wed Apr  4 00:51:31 2007
+@@ -9,8 +9,8 @@
+ #  ./openvpn --config sample-config-files/loopback-client  (In one window) 
+ #  ./openvpn --config sample-config-files/loopback-server  (Simultaneously in another window) 
+ 
+-rport 16000
+-lport 16001
++rport 16100
++lport 16101
+ remote localhost
+ local localhost
+ dev null
+--- sample-config-files/loopback-server.orig	Mon Oct 16 00:30:20 2006
++++ sample-config-files/loopback-server	Wed Apr  4 00:51:31 2007
+@@ -9,8 +9,8 @@
+ #  ./openvpn --config sample-config-files/loopback-client  (In one window) 
+ #  ./openvpn --config sample-config-files/loopback-server  (Simultaneously in another window) 
+ 
+-rport 16001
+-lport 16000
++rport 16101
++lport 16100
+ remote localhost
+ local localhost
+ dev null
