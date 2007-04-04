@@ -8,6 +8,7 @@
 PORTNAME=	openpbx.org
 PORTVERSION=	1.2
 DISTVERSION=	1.2_rc3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.openpbx.org/releases/
 
