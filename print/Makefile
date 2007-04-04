@@ -105,6 +105,7 @@
     SUBDIR += guitartex
     SUBDIR += gutenprint
     SUBDIR += gutenprint-cups
+    SUBDIR += gutenprint-foomatic
     SUBDIR += gv
     SUBDIR += hp2xx
     SUBDIR += hpijs
