@@ -11,7 +11,7 @@ CATEGORIES=	games net
 MASTER_SITES=	http://www.bearnip.com/ftp/mud/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
-MAINTAINER=	glewis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modern version of the LPMud game driver
 
 GNU_CONFIGURE=	yes

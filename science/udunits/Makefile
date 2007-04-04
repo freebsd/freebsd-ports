@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.unidata.ucar.edu/pub/${PORTNAME}/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/udunits|}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	glewis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for manipulating units of physical quantities
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
