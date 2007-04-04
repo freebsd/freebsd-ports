@@ -23,12 +23,6 @@ post-extract:
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	@${PERL} -pi -e '$$_ = "" if /use warnings/;' \
-		${WRKSRC}/Radius/Dictionary.pm
-.endif
-
 .if ${PERL_LEVEL} < 500800
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 BUILD_DEPENDS=	${RUN_DEPENDS}

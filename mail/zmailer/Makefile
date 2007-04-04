@@ -26,10 +26,6 @@ CONFIGURE_ARGS=	--without-openssl
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.006 or better
-.endif
-
 .if ${OSVERSION} >= 500000
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-EAI_NODATA
 .endif

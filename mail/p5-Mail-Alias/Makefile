@@ -17,12 +17,6 @@ COMMENT=	Mail::Alias
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
+MAN3=		Mail::Alias.3
 
-.if ${PERL_LEVEL} < 500100
-IGNORE=	"This port requires perl 5.1 or newer.  Install lang/perl5 or lang/perl5.8 and try again."
-.endif
-
-MAN3=	Mail::Alias.3
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -24,10 +24,6 @@ MAN3=		Error.3 Error::Simple.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires at least Perl 5.6.  Please install lang/perl5.8 and try again
-.endif
-
 .if ${PERL_LEVEL} < 500702
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
 .endif

@@ -27,10 +27,4 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 INFO=		pspp
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-BROKEN=		needs at least Perl 5.6
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

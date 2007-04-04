@@ -24,10 +24,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Video::OpenQuicktime.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} <= 500600
-IGNORE=		Perl 5.6 or higher is required for this port
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
