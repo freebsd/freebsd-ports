@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	20070208
+PORTVERSION=	20070402
 CATEGORIES=	net-im
 MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-2007-02-08
+DISTNAME=	${PORTNAME}-2007-04-02
 
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	Gajim is a Jabber client based on a plugin system
@@ -35,7 +35,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.11.0.2
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.11.1.0
 
 MAN1=		gajim.1 gajim-remote.1
 
@@ -76,7 +76,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=	doesn't install
+BROKEN=		doesn\'t install
 .endif
 
 .if ${PYTHON_REL} >= 250
