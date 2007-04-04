@@ -1,40 +1,64 @@
 bin/free-sa
-etc/free-sa/downloads
-etc/free-sa/sa.conf
-share/free-sa/English
-share/free-sa/Russian
-share/free-sa/RussianMail
-share/doc/free-sa-1.0.2/COPYING
-share/doc/free-sa-1.0.2/INSTALL
-share/doc/free-sa-1.0.2/README
-share/doc/free-sa-1.0.2/README.DEV
-www/free-sa/d.png
-www/free-sa/g.png
-www/free-sa/gsa.css
-www/free-sa/lsa.css
-www/free-sa/rsa.css
-www/free-sa/themes/default
-www/free-sa/themes/rbsec/d.png
-www/free-sa/themes/rbsec/g.png
-www/free-sa/themes/rbsec/gsa.css
-www/free-sa/themes/rbsec/lsa.css
-www/free-sa/themes/rbsec/rsa.css
-www/free-sa/themes/sarg/d.png
-www/free-sa/themes/sarg/g.png
-www/free-sa/themes/sarg/gsa.css
-www/free-sa/themes/sarg/lsa.css
-www/free-sa/themes/sarg/rsa.css
-www/free-sa/themes/silver/d.png
-www/free-sa/themes/silver/g.png
-www/free-sa/themes/silver/gsa.css
-www/free-sa/themes/silver/lsa.css
-www/free-sa/themes/silver/rsa.css
-www/free-sa/themes/sa.js
+etc/free-sa/downloads-archives.sample
+etc/free-sa/downloads-cddvd.sample
+etc/free-sa/downloads-office.sample
+etc/free-sa/downloads-audio.sample
+etc/free-sa/downloads-code.sample
+etc/free-sa/downloads-video.sample
+etc/free-sa/downloads.sample
+etc/free-sa/free-sa.conf.sample
+share/free-sa/Russian.KOI8-R
+share/free-sa/RussianMail.KOI8-R
+share/free-sa/German.UTF8
+share/free-sa/GermanMail.UTF8
+share/free-sa/Czech.ISO8859-2
+share/free-sa/CzechMail.ISO8859-2
+share/free-sa/Belarusian.CP1251
+share/free-sa/BelarusianMail.CP1251
+share/free-sa/English.ISO8859-1
+share/free-sa/EnglishMail.ISO8859-1
+share/free-sa/Estonian.UTF8
+share/free-sa/EstonianMail.UTF8
+share/free-sa/Italian.ISO8859-1
+share/free-sa/ItalianMail.ISO8859-1
+share/free-sa/Slovak.UTF8
+share/free-sa/SlovakMail.UTF8
+share/doc/free-sa-1.2.0/COPYING
+share/doc/free-sa-1.2.0/INSTALL
+share/doc/free-sa-1.2.0/README
+share/doc/free-sa-1.2.0/README.DEV
+share/doc/free-sa-1.2.0/ChangeLog     
+share/doc/free-sa-1.2.0/FAQ
+share/doc/free-sa-1.2.0/TRANSLATIONS
+www/data/free-sa/sa.js
+www/data/free-sa/d.png
+www/data/free-sa/g.png
+www/data/free-sa/gsa.css
+www/data/free-sa/lsa.css
+www/data/free-sa/rsa.css
+www/data/free-sa/themes/default
+www/data/free-sa/themes/rbsec/d.png
+www/data/free-sa/themes/rbsec/g.png
+www/data/free-sa/themes/rbsec/gsa.css
+www/data/free-sa/themes/rbsec/lsa.css
+www/data/free-sa/themes/rbsec/rsa.css
+www/data/free-sa/themes/sarg/d.png
+www/data/free-sa/themes/sarg/g.png
+www/data/free-sa/themes/sarg/gsa.css
+www/data/free-sa/themes/sarg/lsa.css
+www/data/free-sa/themes/sarg/rsa.css
+www/data/free-sa/themes/silver/d.png
+www/data/free-sa/themes/silver/g.png
+www/data/free-sa/themes/silver/gsa.css
+www/data/free-sa/themes/silver/lsa.css
+www/data/free-sa/themes/silver/rsa.css
+www/data/free-sa/themes/sa.js
 @dirrm etc/free-sa
 @dirrm share/free-sa
-@dirrm share/doc/free-sa-1.0.2
-@dirrm www/free-sa/themes/rbsec
-@dirrm www/free-sa/themes/sarg
-@dirrm www/free-sa/themes/silver
-@dirrm www/free-sa/themes
-@dirrm www/free-sa
+@dirrm share/doc/free-sa-1.2.0
+@dirrm www/data/free-sa/themes/rbsec
+@dirrm www/data/free-sa/themes/sarg
+@dirrm www/data/free-sa/themes/silver
+@dirrm www/data/free-sa/themes
+@dirrm www/data/free-sa
+@dirrmtry www/data
