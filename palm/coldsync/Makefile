@@ -14,7 +14,15 @@ MASTER_SITES=	http://www.coldsync.org/download/
 MAINTAINER=	arensb+freebsd-ports@ooblick.com
 COMMENT=	Synchronize a PalmPilot with a Unix workstation
 
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--without-i18n
+PLIST_SUB+=	NLS="@comment "
+.else
+CONFIGURE_ARGS+=	--with-i18n
 USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
+
 REINPLACE_ARGS=	-i "" -E
 
 USE_LDCONFIG=	yes
@@ -47,7 +55,7 @@ INFO=		conduits
 .include <bsd.port.pre.mk>
 
 CFLAGS+=	-D__BSD_VISIBLE=1
-CONFIGURE_ARGS+=	--with-i18n --disable-pedantic --without-perl
+CONFIGURE_ARGS+=	--disable-pedantic --without-perl
 
 # I don't know how to test for a version of {Net,Open}BSD that supports USB.
 .if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 400000
