@@ -14,6 +14,7 @@ etc/nikto.conf.sample
 %%DATADIR%%/nikto_core.plugin
 %%DATADIR%%/nikto_headers.plugin
 %%DATADIR%%/nikto_plugin_order.txt
+%%DATADIR%%/nikto_put_del_test.plugin
 %%DATADIR%%/nikto_realms.plugin
 %%DATADIR%%/nikto_robots.plugin
 %%DATADIR%%/nikto_user_enum_apache.plugin
