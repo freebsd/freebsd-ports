@@ -1,30 +1,16 @@
---- Makefile.orig	Thu Mar 22 19:06:58 2007
-+++ Makefile	Fri Mar 23 22:21:04 2007
-@@ -9,7 +9,7 @@
- # etc dir
- ETCDIR = $(PREFIX)/etc/$(PROGLNAME)
- # where put reports (you can change it later via sa.conf configuration file)
--WWWDIR = $(PREFIX)/var/www/htdocs/$(PROGLNAME)
-+WWWDIR = $(PREFIX)/www/$(PROGLNAME)
- # temporary parent dir for sorting (you can change it later via sa.conf configuration file)
- TMPDIR = /tmp
- # where log file lives (you can change it later via sa.conf configuration file)
-@@ -18,9 +18,6 @@
- # C compiler
- CC = gcc
- 
--# Optimisations flags
--OPTIM = -pipe -O3 -march=$(MARCH) -fomit-frame-pointer
--
- # Warnings flags
- WARNS = -Wall -Wredundant-decls -Wnested-externs -Wstrict-prototypes \
- 	-Wmissing-prototypes -Wpointer-arith -Winline -Wcast-qual
-@@ -48,7 +45,7 @@
-        -DPROGNAME=\"$(PROGNAME)\" -DPROGVERSION=\"$(PROGVERSION)\" -DPROGURL=\"$(PROGURL)\"
- 
- # All compiling flags
--CFLAGS = $(OPTIM) -I. -I.. $(WARNS) $(CSTDF) $(DEFS)
-+CFLAGS += -I. -I.. $(WARNS) $(CSTDF) $(DEFS)
- 
- # All linking flags
- LDFLAGS += $(LIBS) $(CFLAGS)
+--- Makefile.orig	Mon Apr  2 14:45:41 2007
++++ Makefile	Mon Apr  2 14:46:20 2007
+@@ -14,11 +14,9 @@
+ install:
+ 	$(MAKEDIRS)
+ 	@(										\
+-	$(INSTALLDIR) $(PREFIX);							\
+-	$(INSTALLDIR) $(PREFIX)/doc;							\
+-	$(INSTALLDIR) $(PREFIX)/doc/$(PROGLNAME)-$(PROGVERSION);			\
++	$(INSTALLDIR) $(PREFIX)/share/doc/$(PROGLNAME)-$(PROGVERSION);			\
+ 	$(INSTALLODR) $(TMPDIR);							\
+ 	for IDOCFILE in COPYING ChangeLog FAQ INSTALL README README.DEV TRANSLATIONS; do\
+-	    $(INSTALLFIL) $$IDOCFILE $(PREFIX)/doc/$(PROGLNAME)-$(PROGVERSION);		\
++	    $(INSTALLFIL) $$IDOCFILE $(PREFIX)/share/doc/$(PROGLNAME)-$(PROGVERSION);		\
+ 	done										\
+ 	)

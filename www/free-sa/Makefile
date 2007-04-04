@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	free-sa
-PORTVERSION=	1.0.2
+PORTVERSION=	1.2.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +17,6 @@ COMMENT=	Statistic analyzer for daemons log files similar to SARG
 USE_GMAKE=	yes
 
 MAN1=	free-sa.1
-MAN5=	sa.conf.5
+MAN5=	free-sa.conf.5
 
 .include <bsd.port.mk>
