@@ -6,32 +6,26 @@
 #
 
 PORTNAME=	westhawksnmp
-PORTVERSION=	4.13
-CATEGORIES=	java devel net-mgmt
+PORTVERSION=	5.1
+CATEGORIES=	java net-mgmt devel
 MASTER_SITES=	http://snmp.westhawk.co.uk/
 DISTNAME=	${PORTNAME:S/westhawk//}${PORTVERSION:S/./_/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemoliu@gmail.com
 COMMENT=	Lightweight SNMP stack for Java
 
-NO_BUILD=	yes
 USE_JAVA=	yes
 USE_ZIP=	yes
 NO_BUILD=	yes
-
-CLASSDIR=	${PREFIX}/share/java/classes
 NO_WRKSUBDIR=	yes
 
 do-install:
-	${INSTALL} -d -o root -g wheel -m 0755 ${CLASSDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/snmp4_13.jar ${CLASSDIR}/snmp.jar
-	${INSTALL_DATA} ${WRKSRC}/snmpOracle4_13.jar ${CLASSDIR}/snmpOracle.jar
-	${INSTALL_DATA} ${WRKSRC}/tablelayout.jar ${CLASSDIR}/
-	${CP} -R ${WRKSRC}/org ${WRKSRC}/stubs ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/lib/snmp5_1.jar ${JAVAJARDIR}/snmp.jar
+	${INSTALL_DATA} ${WRKSRC}/lib/snmpOracle5_1.jar ${JAVAJARDIR}/snmpOracle.jar
+	${INSTALL_DATA} ${WRKSRC}/lib/tablelayout.jar ${JAVAJARDIR}/
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.html ${WRKSRC}/*.txt ${DOCSDIR}/
-	${CP} -R ${WRKSRC}/javadoc ${WRKSRC}/uk ${DOCSDIR}/
+	${CP} -R ${WRKSRC}/doc ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
