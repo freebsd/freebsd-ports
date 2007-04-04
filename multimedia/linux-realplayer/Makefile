@@ -9,17 +9,16 @@ PORTNAME=	linux-realplayer
 DISTVERSION=	10.0.8.805-20060718
 CATEGORIES=	multimedia audio linux
 MASTER_SITES=	https://helixcommunity.org/download.php/2152/:player \
-		ftp://rpmfind.net/linux/sourceforge/m/mp/mplayer-tru/:codecs
-DISTFILES=	RealPlayer-${DISTVERSION}.i586.rpm:player \
+		http://ftp.nluug.nl/ftp/pub/os/Linux/distr/pardusrepo/sources/:playeralt \
+		ftp://fr2.rpmfind.net/linux/sourceforge/m/mp/mplayer-tru/:codecs
+DISTFILES=	RealPlayer-${DISTVERSION}.i586.rpm:player,playeralt \
 		mplayer-codecs-linux-real-20040626-1.i386.rpm:codecs
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Linux RealPlayer 10 from RealNetworks
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-x11-2.0.so.0:${PORTSDIR}/x11-toolkits/linux-gtk2
-
-BROKEN=		Size mismatch
 
 WRKSRC=		${WRKDIR}/usr/local/RealPlayer
 ONLY_FOR_ARCHS=	i386 amd64
