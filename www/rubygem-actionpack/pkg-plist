@@ -64,6 +64,7 @@
 %%GEM_LIB_DIR%%/lib/action_controller/cgi_ext/cgi_methods.rb
 %%GEM_LIB_DIR%%/lib/action_controller/cgi_ext/cookie_performance_fix.rb
 %%GEM_LIB_DIR%%/lib/action_controller/cgi_ext/raw_post_data_fix.rb
+%%GEM_LIB_DIR%%/lib/action_controller/cgi_ext/session_performance_fix.rb
 %%GEM_LIB_DIR%%/lib/action_controller/macros/auto_complete.rb
 %%GEM_LIB_DIR%%/lib/action_controller/macros/in_place_editing.rb
 %%GEM_LIB_DIR%%/lib/action_controller/session/active_record_store.rb
@@ -319,6 +320,7 @@
 %%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/cgi_ext/cgi_methods_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/cgi_ext/cookie_performance_fix_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/cgi_ext/raw_post_data_fix_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/cgi_ext/session_performance_fix_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/macros/auto_complete_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/macros/in_place_editing_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/action_controller/session/active_record_store_rb.html
