@@ -168,7 +168,9 @@
 %%GEM_LIB_DIR%%/test/fixtures/keyboard.rb
 %%GEM_LIB_DIR%%/test/fixtures/legacy_thing.rb
 %%GEM_LIB_DIR%%/test/fixtures/legacy_things.yml
+%%GEM_LIB_DIR%%/test/fixtures/mixed_case_monkey.rb
 %%GEM_LIB_DIR%%/test/fixtures/mixin.rb
+%%GEM_LIB_DIR%%/test/fixtures/mixed_case_monkeys.yml
 %%GEM_LIB_DIR%%/test/fixtures/mixins.yml
 %%GEM_LIB_DIR%%/test/fixtures/movie.rb
 %%GEM_LIB_DIR%%/test/fixtures/movies.yml
