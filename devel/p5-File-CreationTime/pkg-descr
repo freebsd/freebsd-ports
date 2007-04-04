@@ -1,0 +1,9 @@
+Keeps track of creation times on filesystems that don't normally provide
+such information.
+
+    use File::CreationTime;
+
+    my $file = '/path/to/file';
+    print "$file was created: ". creation_time($file). "\n";
+
+WWW: http://search.cpan.org/dist/File-CreationTime/

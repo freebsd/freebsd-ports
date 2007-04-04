@@ -1,0 +1,5 @@
+%%SITE_PERL%%/File/CreationTime.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/CreationTime/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/CreationTime
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
+@dirrmtry %%SITE_PERL%%/File
