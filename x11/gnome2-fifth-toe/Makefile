@@ -6,7 +6,7 @@
 #   $MCom: ports/x11/gnome2-fifth-toe/Makefile,v 1.83 2007/04/03 01:14:24 ahze Exp $
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 PKGNAMESUFFIX=	-fifth-toe
 
@@ -32,8 +32,8 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan \
 		nautilus-sendto:${PORTSDIR}/deskutils/nautilus-sendto \
 		goobox:${PORTSDIR}/audio/goobox \
 		inkscape:${PORTSDIR}/graphics/inkscape \
-		atomix:${PORTSDIR}/games/atomix
-#		straw:${PORTSDIR}/net/straw
+		atomix:${PORTSDIR}/games/atomix \
+		straw:${PORTSDIR}/net/straw
 
 MASTERDIR=	${.CURDIR}/../gnome2
 GNOME_SLAVE=	yes
