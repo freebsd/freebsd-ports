@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DirComp
-PORTVERSION=	1.3.01
+PORTVERSION=	1.3.03
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -14,10 +14,10 @@ MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Compare two directories
 
 .ifndef WITHOUT_X11
-LIB_DEPENDS=	XGP-0.8.10.0:${PORTSDIR}/devel/libXGP
+LIB_DEPENDS=	XGP.0:${PORTSDIR}/devel/libXGP
 PLIST_FILES+=	bin/XDirComp
 .else
-LIB_DEPENDS=	YGP-0.8.10.0:${PORTSDIR}/devel/libYGP
+LIB_DEPENDS=	YGP.0:${PORTSDIR}/devel/libYGP
 MK_PATCH+=	s/@MYSUBDIRS@/Common/g;
 .endif
 
@@ -25,7 +25,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --disable-rpath
 PLIST_FILES+=	bin/DirComp \
 		share/locale/de/LC_MESSAGES/DirComp.mo \
 		share/locale/en/LC_MESSAGES/DirComp.mo \
