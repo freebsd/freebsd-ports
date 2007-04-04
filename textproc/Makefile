@@ -702,6 +702,7 @@
     SUBDIR += par
     SUBDIR += pardiff
     SUBDIR += pcrs
+    SUBDIR += pdfoutline
     SUBDIR += pdftohtml
     SUBDIR += pear-Numbers_Roman
     SUBDIR += pear-Numbers_Words

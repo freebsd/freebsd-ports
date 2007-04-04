@@ -1,0 +1,7 @@
+pdfoutline adds outlines (aka bookmarks) to PDF files. It reads input
+file given as first argument, adds outlines from text file given as
+second argument, and saves result to file with name given as third
+argument.
+
+WWW: http://sourceforge.net/projects/fntsample/
+Author: Eugeniy Meshcheryakov <eugeniy@users.sourceforge.net>
