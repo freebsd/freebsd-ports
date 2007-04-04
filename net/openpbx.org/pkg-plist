@@ -1,42 +1,80 @@
 bin/streamplayer
-etc/openpbx.org/adsi.conf
-etc/openpbx.org/adtranvofr.conf
-etc/openpbx.org/agents.conf
-etc/openpbx.org/cdr.conf
-etc/openpbx.org/cdr_custom.conf
-etc/openpbx.org/cdr_manager.conf
-etc/openpbx.org/cdr_tds.conf
-etc/openpbx.org/codecs.conf
-etc/openpbx.org/dnsmgr.conf
-etc/openpbx.org/dundi.conf
-etc/openpbx.org/enum.conf
-etc/openpbx.org/extconfig.conf
-etc/openpbx.org/extensions.ael
-etc/openpbx.org/extensions.conf
-etc/openpbx.org/features.conf
-etc/openpbx.org/iax.conf
-etc/openpbx.org/indications.conf
-etc/openpbx.org/logger.conf
-etc/openpbx.org/manager.conf
-etc/openpbx.org/meetme.conf
-etc/openpbx.org/mgcp.conf
-etc/openpbx.org/modem.conf
-etc/openpbx.org/modules.conf
-etc/openpbx.org/musiconhold.conf
-etc/openpbx.org/muted.conf
-etc/openpbx.org/openpbx.adsi
-etc/openpbx.org/openpbx.conf
-etc/openpbx.org/osp.conf
-etc/openpbx.org/privacy.conf
-etc/openpbx.org/queues.conf
-etc/openpbx.org/rpt.conf
-etc/openpbx.org/rtp.conf
-etc/openpbx.org/sip.conf
-etc/openpbx.org/sip_notify.conf
-etc/openpbx.org/udptl.conf
-etc/openpbx.org/voicemail.conf
-etc/openpbx.org/woomera.conf
-%%WITH_ZAPTEL%%etc/openpbx.org/zapata.conf
+@unexec if cmp -s %D/etc/openpbx.org/adsi.conf %D/etc/openpbx.org/adsi.conf.sample; then rm -f %D/etc/openpbx.org/adsi.conf; fi
+etc/openpbx.org/adsi.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/adtranvofr.conf %D/etc/openpbx.org/adtranvofr.conf.sample; then rm -f %D/etc/openpbx.org/adtranvofr.conf; fi
+etc/openpbx.org/adtranvofr.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/agents.conf %D/etc/openpbx.org/agents.conf.sample; then rm -f %D/etc/openpbx.org/agents.conf; fi
+etc/openpbx.org/agents.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/cdr.conf %D/etc/openpbx.org/cdr.conf.sample; then rm -f %D/etc/openpbx.org/cdr.conf; fi
+etc/openpbx.org/cdr.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/cdr_custom.conf %D/etc/openpbx.org/cdr_custom.conf.sample; then rm -f %D/etc/openpbx.org/cdr_custom.conf; fi
+etc/openpbx.org/cdr_custom.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/cdr_manager.conf %D/etc/openpbx.org/cdr_manager.conf.sample; then rm -f %D/etc/openpbx.org/cdr_manager.conf; fi
+etc/openpbx.org/cdr_manager.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/cdr_tds.conf %D/etc/openpbx.org/cdr_tds.conf.sample; then rm -f %D/etc/openpbx.org/cdr_tds.conf; fi
+etc/openpbx.org/cdr_tds.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/codecs.conf %D/etc/openpbx.org/codecs.conf.sample; then rm -f %D/etc/openpbx.org/codecs.conf; fi
+etc/openpbx.org/codecs.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/dnsmgr.conf %D/etc/openpbx.org/dnsmgr.conf.sample; then rm -f %D/etc/openpbx.org/dnsmgr.conf; fi
+etc/openpbx.org/dnsmgr.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/dundi.conf %D/etc/openpbx.org/dundi.conf.sample; then rm -f %D/etc/openpbx.org/dundi.conf; fi
+etc/openpbx.org/dundi.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/enum.conf %D/etc/openpbx.org/enum.conf.sample; then rm -f %D/etc/openpbx.org/enum.conf; fi
+etc/openpbx.org/enum.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/extconfig.conf %D/etc/openpbx.org/extconfig.conf.sample; then rm -f %D/etc/openpbx.org/extconfig.conf; fi
+etc/openpbx.org/extconfig.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/extensions.ael %D/etc/openpbx.org/extensions.ael.sample; then rm -f %D/etc/openpbx.org/extensions.ael; fi
+etc/openpbx.org/extensions.ael.sample
+@unexec if cmp -s %D/etc/openpbx.org/extensions.conf %D/etc/openpbx.org/extensions.conf.sample; then rm -f %D/etc/openpbx.org/extensions.conf; fi
+etc/openpbx.org/extensions.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/features.conf %D/etc/openpbx.org/features.conf.sample; then rm -f %D/etc/openpbx.org/features.conf; fi
+etc/openpbx.org/features.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/iax.conf %D/etc/openpbx.org/iax.conf.sample; then rm -f %D/etc/openpbx.org/iax.conf; fi
+etc/openpbx.org/iax.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/indications.conf %D/etc/openpbx.org/indications.conf.sample; then rm -f %D/etc/openpbx.org/indications.conf; fi
+etc/openpbx.org/indications.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/logger.conf %D/etc/openpbx.org/logger.conf.sample; then rm -f %D/etc/openpbx.org/logger.conf; fi
+etc/openpbx.org/logger.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/manager.conf %D/etc/openpbx.org/manager.conf.sample; then rm -f %D/etc/openpbx.org/manager.conf; fi
+etc/openpbx.org/manager.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/meetme.conf %D/etc/openpbx.org/meetme.conf.sample; then rm -f %D/etc/openpbx.org/meetme.conf; fi
+etc/openpbx.org/meetme.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/mgcp.conf %D/etc/openpbx.org/mgcp.conf.sample; then rm -f %D/etc/openpbx.org/mgcp.conf; fi
+etc/openpbx.org/mgcp.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/modem.conf %D/etc/openpbx.org/modem.conf.sample; then rm -f %D/etc/openpbx.org/modem.conf; fi
+etc/openpbx.org/modem.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/modules.conf %D/etc/openpbx.org/modules.conf.sample; then rm -f %D/etc/openpbx.org/modules.conf; fi
+etc/openpbx.org/modules.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/musiconhold.conf %D/etc/openpbx.org/musiconhold.conf.sample; then rm -f %D/etc/openpbx.org/musiconhold.conf; fi
+etc/openpbx.org/musiconhold.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/muted.conf %D/etc/openpbx.org/muted.conf.sample; then rm -f %D/etc/openpbx.org/muted.conf; fi
+etc/openpbx.org/muted.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/openpbx.adsi %D/etc/openpbx.org/openpbx.adsi.sample; then rm -f %D/etc/openpbx.org/openpbx.adsi; fi
+etc/openpbx.org/openpbx.adsi.sample
+@unexec if cmp -s %D/etc/openpbx.org/openpbx.conf %D/etc/openpbx.org/openpbx.conf.sample; then rm -f %D/etc/openpbx.org/openpbx.conf; fi
+etc/openpbx.org/openpbx.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/osp.conf %D/etc/openpbx.org/osp.conf.sample; then rm -f %D/etc/openpbx.org/osp.conf; fi
+etc/openpbx.org/osp.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/privacy.conf %D/etc/openpbx.org/privacy.conf.sample; then rm -f %D/etc/openpbx.org/privacy.conf; fi
+etc/openpbx.org/privacy.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/queues.conf %D/etc/openpbx.org/queues.conf.sample; then rm -f %D/etc/openpbx.org/queues.conf; fi
+etc/openpbx.org/queues.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/rpt.conf %D/etc/openpbx.org/rpt.conf.sample; then rm -f %D/etc/openpbx.org/rpt.conf; fi
+etc/openpbx.org/rpt.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/rtp.conf %D/etc/openpbx.org/rtp.conf.sample; then rm -f %D/etc/openpbx.org/rtp.conf; fi
+etc/openpbx.org/rtp.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/sip.conf %D/etc/openpbx.org/sip.conf.sample; then rm -f %D/etc/openpbx.org/sip.conf; fi
+etc/openpbx.org/sip.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/sip_notify.conf %D/etc/openpbx.org/sip_notify.conf.sample; then rm -f %D/etc/openpbx.org/sip_notify.conf; fi
+etc/openpbx.org/sip_notify.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/udptl.conf %D/etc/openpbx.org/udptl.conf.sample; then rm -f %D/etc/openpbx.org/udptl.conf; fi
+etc/openpbx.org/udptl.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/voicemail.conf %D/etc/openpbx.org/voicemail.conf.sample; then rm -f %D/etc/openpbx.org/voicemail.conf; fi
+etc/openpbx.org/voicemail.conf.sample
+@unexec if cmp -s %D/etc/openpbx.org/woomera.conf %D/etc/openpbx.org/woomera.conf.sample; then rm -f %D/etc/openpbx.org/woomera.conf; fi
+etc/openpbx.org/woomera.conf.sample
+%%WITH_ZAPTEL%%@unexec if cmp -s %D/etc/openpbx.org/zapata.conf %D/etc/openpbx.org/zapata.conf.sample; then rm -f %D/etc/openpbx.org/zapata.conf; fi
+%%WITH_ZAPTEL%%etc/openpbx.org/zapata.conf.sample
 include/openpbx/acl.h
 include/openpbx/adsi.h
 include/openpbx/aes.h
@@ -245,17 +283,22 @@ lib/openpbx.org/modules/res_ogi.so
 %%WITH_ODBC%%lib/openpbx.org/modules/res_odbc.so
 %%WITH_ODBC%%lib/openpbx.org/modules/res_config_odbc.so
 %%WITH_ODBC%%lib/openpbx.org/modules/cdr_odbc.so
-%%WITH_ODBC%%etc/openpbx.org/res_odbc.conf
+%%WITH_ODBC%%@unexec if cmp -s %D/etc/openpbx.org/res_odbc.conf %D/etc/openpbx.org/res_odbc.conf.sample; then rm -f %D/etc/openpbx.org/res_odbc.conf; fi
+%%WITH_ODBC%%etc/openpbx.org/res_odbc.conf.sample
 %%WITH_MYSQL%%lib/openpbx.org/modules/cdr_mysql.so
 %%WITH_MYSQL%%lib/openpbx.org/modules/app_sql_mysql.so
 %%WITH_MYSQL%%lib/openpbx.org/modules/res_config_mysql.so
-%%WITH_MYSQL%%etc/openpbx.org/res_mysql.conf
-%%WITH_MYSQL%%etc/openpbx.org/cdr_mysql.conf
+%%WITH_MYSQL%%@unexec if cmp -s %D/etc/openpbx.org/res_mysql.conf %D/etc/openpbx.org/res_mysql.conf.sample; then rm -f %D/etc/openpbx.org/res_mysql.conf; fi
+%%WITH_MYSQL%%etc/openpbx.org/res_mysql.conf.sample
+%%WITH_MYSQL%%@unexec if cmp -s %D/etc/openpbx.org/cdr_mysql.conf %D/etc/openpbx.org/cdr_mysql.conf.sample; then rm -f %D/etc/openpbx.org/cdr_mysql.conf; fi
+%%WITH_MYSQL%%etc/openpbx.org/cdr_mysql.conf.sample
 %%WITH_POSTGRES%%lib/openpbx.org/modules/app_sql_postgres.so
 %%WITH_POSTGRES%%lib/openpbx.org/modules/res_config_pgsql.so
 %%WITH_POSTGRES%%lib/openpbx.org/modules/cdr_pgsql.so
-%%WITH_POSTGRES%%etc/openpbx.org/cdr_pgsql.conf
-%%WITH_POSTGRES%%etc/openpbx.org/res_pgsql.conf
+%%WITH_POSTGRES%%@unexec if cmp -s %D/etc/openpbx.org/cdr_pgsql.conf %D/etc/openpbx.org/cdr_pgsql.conf.sample; then rm -f %D/etc/openpbx.org/cdr_pgsql.conf; fi
+%%WITH_POSTGRES%%etc/openpbx.org/cdr_pgsql.conf.sample
+%%WITH_POSTGRES%%@unexec if cmp -s %D/etc/openpbx.org/res_pgsql.conf %D/etc/openpbx.org/res_pgsql.conf.sample; then rm -f %D/etc/openpbx.org/res_pgsql.conf; fi
+%%WITH_POSTGRES%%etc/openpbx.org/res_pgsql.conf.sample
 sbin/openpbx
 share/openpbx.org/ogi/eogi-sphinx-test
 share/openpbx.org/ogi/eogi-test
