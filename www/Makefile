@@ -435,6 +435,7 @@
     SUBDIR += npapi-xine
     SUBDIR += npc
     SUBDIR += nscache
+    SUBDIR += nspluginwrapper
     SUBDIR += nvu
     SUBDIR += ocaml-net
     SUBDIR += ocaml-wdialog
