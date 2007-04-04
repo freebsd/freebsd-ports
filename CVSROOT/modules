@@ -8280,6 +8280,7 @@ openoffice.org-2	ports/editors/openoffice.org-2
 openoffice.org-2-RC	ports/editors/openoffice.org-2-RC
 openoffice.org-2-devel	ports/editors/openoffice.org-2-devel
 openospfd	ports/net/openospfd-devel
+openpbx.org	ports/net/openpbx.org
 openproducer	ports/graphics/openproducer
 openquicktime	ports/multimedia/openquicktime
 openradius	ports/net/openradius
