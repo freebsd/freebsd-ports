@@ -569,6 +569,7 @@
     SUBDIR += py-gd
     SUBDIR += py-gdchart
     SUBDIR += py-gdchart2
+    SUBDIR += py-gimp
     SUBDIR += py-glewpy
     SUBDIR += py-goocanvas
     SUBDIR += py-graphviz
