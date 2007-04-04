@@ -10,7 +10,7 @@ PORTVERSION=	2.5.1
 CATEGORIES=	math
 MASTER_SITES=	http://www.cs.nyu.edu/acsys/cvcl/download/
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	An automatic theorem prover for the SMT problem
 
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4

@@ -13,7 +13,7 @@ MASTER_SITES=	http://code-bear.com/code/parsedatetime/ \
 		http://parsedatetime.googlecode.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Python module for parsing 'human readable' date/time expressions
 
 BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools

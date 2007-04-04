@@ -13,7 +13,7 @@ MASTER_SITES=	http://cobweb.ecn.purdue.edu/~kak/dist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	BitVector-${PORTVERSION}
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	A pure-Python memory-efficient packed representation for bit arrays
 
 USE_PYTHON=	yes

@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}.py
 EXTRACT_SUFX=	#
 DIST_SUBDIR=	python
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	A very initial effort to Python code metrics
 
 USE_DOS2UNIX=	yes

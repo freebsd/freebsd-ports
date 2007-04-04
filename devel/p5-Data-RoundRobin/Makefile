@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Serve data in a round robin manner
 
 PERL_CONFIGURE=	yes

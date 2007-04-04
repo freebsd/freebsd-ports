@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.cs.nyu.edu/acsys/cvc3/download/${PORTVERSION}/ \
 		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	An automatic theorem prover for the SMT problem
 
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4

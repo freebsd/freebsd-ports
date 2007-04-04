@@ -11,7 +11,7 @@ CATEGORIES=	ftp python
 MASTER_SITES=	# http://ftputil.sschwarzer.net/trac/attachment/wiki/Download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High-level FTP client library
 
 USE_PYTHON=	yes

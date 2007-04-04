@@ -12,7 +12,7 @@ MASTER_SITES=	http://pycallgraph.slowchop.com/files/download/ \
 		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	A Python library that creates call graphs for Python programs
 
 RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz

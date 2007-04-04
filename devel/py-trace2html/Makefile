@@ -11,7 +11,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/t/trace2html/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	HTML coverage report generator for trace.py
 
 BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools

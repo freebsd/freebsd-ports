@@ -14,7 +14,7 @@ DISTNAME=	PythonTidy-${PORTVERSION}.python
 EXTRACT_SUFX=	#
 DIST_SUBDIR=	python
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Cleans up, regularizes, and reformats the text of Python scripts
 
 USE_PYTHON=	yes

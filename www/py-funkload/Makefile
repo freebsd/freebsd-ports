@@ -12,7 +12,7 @@ MASTER_SITES=	http://funkload.nuxeo.org/ \
 		http://cheeseshop.python.org/packages/source/f/funkload/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	FunkLoad is a functional and load web tester
 
 BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools

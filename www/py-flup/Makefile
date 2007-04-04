@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.saddi.com/software/flup/dist/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	flup-${PORTVERSION:E}
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Random assortment of WSGI servers, middleware
 
 BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	pysearch
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pYsearch-${PORTVERSION}
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Yahoo Search Web Services SDK for Python
 
 USE_PYTHON=	yes

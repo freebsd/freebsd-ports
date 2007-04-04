@@ -12,7 +12,7 @@ MASTER_SITES=	http://cheeseshop.python.org/packages/source/T/TracPrivateTickets/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	TracPrivateTickets-${PORTVERSION}
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Modified ticket security for Trac
 
 BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools

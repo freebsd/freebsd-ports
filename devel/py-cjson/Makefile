@@ -12,7 +12,7 @@ MASTER_SITES=	http://cheeseshop.python.org/packages/source/p/python-cjson/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-cjson-${PORTVERSION}
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Fast JSON encoder/decoder for Python
 
 USE_PYTHON=	yes

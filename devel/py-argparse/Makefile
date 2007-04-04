@@ -11,7 +11,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/a/argparse/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	An optparse-inspired command-line parsing library
 
 USE_ZIP=	yes

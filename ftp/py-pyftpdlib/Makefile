@@ -12,7 +12,7 @@ MASTER_SITES=	http://pyftpdlib.googlecode.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Python FTP server library
 
 USE_PYTHON=	yes
