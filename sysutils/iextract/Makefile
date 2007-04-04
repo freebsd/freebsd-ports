@@ -6,23 +6,19 @@
 #
 
 PORTNAME=	IExtract
-PORTVERSION=	0.8.11
+PORTVERSION=	0.9.01
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Extract meta-information from files
 
-LIB_DEPENDS=	YGP-0.8.10.0:${PORTSDIR}/devel/libYGP
+LIB_DEPENDS=	YGP.0:${PORTSDIR}/devel/libYGP
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
-PLIST_FILES=	bin/IExtract \
-		share/locale/de/LC_MESSAGES/IExtract.mo \
-		share/locale/en/LC_MESSAGES/IExtract.mo \
-		share/locale/es/LC_MESSAGES/IExtract.mo
+CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --disable-rpath
 
 .include <bsd.port.mk>
