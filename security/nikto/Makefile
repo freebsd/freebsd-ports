@@ -8,11 +8,11 @@
 #
 
 PORTNAME=	nikto
-PORTVERSION=	1.35
-PORTREVISION=	2
+PORTVERSION=	1.36
 CATEGORIES=	security www
 MASTER_SITES=	http://www.cirt.net/${PORTNAME}/ \
 		http://www.mirrors.wiretapped.net/security/vulnerability-assessment/${PORTNAME}/ \
+		http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/ \
 		http://people.tecnik93.com/~itetcu/FreeBSD/ports/${PORTNAME}/sources/
 
 MAINTAINER=	itetcu@FreeBSD.org
@@ -48,7 +48,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's:\$NIKTO{plugindir}/../docs/CHANGES.txt:\$NIKTO{plugindir}/../docs/nikto/CHANGES.txt:' \
 		-e 's:\$NIKTO{plugindir}/../CHANGES.txt:\$NIKTO{plugindir}/../docs/nikto/CHANGES.txt:' \
 		${WRKSRC}/plugins/nikto_core.plugin
-	@${MV} ${WRKSRC}/docs/nikto-1.34.man ${WRKSRC}/docs/nikto.1
+	@${MV} ${WRKSRC}/docs/${PORTNAME}-${PORTVERSION}.man ${WRKSRC}/docs/${PORTNAME}.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/nikto.pl ${TARGETDIR}/bin/nikto
