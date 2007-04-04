@@ -310,7 +310,6 @@ libexec/gimp/2.2/plug-ins/png
 libexec/gimp/2.2/plug-ins/pnm
 libexec/gimp/2.2/plug-ins/polar
 libexec/gimp/2.2/plug-ins/postscript
-%%PRINT%%libexec/gimp/2.2/plug-ins/print
 libexec/gimp/2.2/plug-ins/procedure-browser
 libexec/gimp/2.2/plug-ins/psd
 libexec/gimp/2.2/plug-ins/psd_save
