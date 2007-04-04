@@ -106,6 +106,7 @@
     SUBDIR += gutenprint
     SUBDIR += gutenprint-cups
     SUBDIR += gutenprint-foomatic
+    SUBDIR += gutenprint-ijs
     SUBDIR += gv
     SUBDIR += hp2xx
     SUBDIR += hpijs
