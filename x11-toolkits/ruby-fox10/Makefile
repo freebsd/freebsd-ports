@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	FXRuby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Ruby extension module to use FOX, aka FXRuby
 
 #BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
