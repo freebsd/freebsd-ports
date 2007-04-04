@@ -1,0 +1,20 @@
+--- ./popt.3.orig	Wed Apr  4 12:24:38 2007
++++ ./popt.3	Wed Apr  4 12:25:14 2007
+@@ -24,7 +24,7 @@
+ .sp
+ .BI "const char ** poptGetArgs(poptContext " con );
+ .sp
+-.BI "const char *const poptStrerror(const int " error );
++.BI "const char * poptStrerror(const int " error );
+ .sp
+ .BI "const char * poptBadOption(poptContext " con ", int " flags );
+ .sp
+@@ -491,7 +491,7 @@
+ good error messages.
+ .HP
+ .nf
+-.BI "const char *const poptStrerror(const int " error ");"
++.BI "const char * poptStrerror(const int " error ");"
+ .fi
+ This function takes a popt error code and returns a string describing
+ .RB "the error, just as with the standard " strerror() " function."

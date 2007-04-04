@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sat Aug 31 15:22:18 2002
-+++ Makefile.in	Sat Jun 26 22:12:19 2004
+--- ./Makefile.in.orig	Sat Aug 31 17:22:18 2002
++++ ./Makefile.in	Wed Apr  4 12:24:18 2007
 @@ -124,7 +124,7 @@
  	popt.ps
  
