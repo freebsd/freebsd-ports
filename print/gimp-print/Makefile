@@ -14,6 +14,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	GIMP Print Printer Driver
 
+DEPRECATED=	gimp-print has been renamed gutenprint (print/gutenprint), please \
+		consider using it.
+EXPIRATION_DATE=2007-07-15
+
 USE_AUTOTOOLS=	libtool:15
 USE_GETTEXT=	yes
 USE_GETOPT_LONG=	yes
