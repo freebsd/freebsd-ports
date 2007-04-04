@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	swt-devel
-PORTVERSION=	3.3M4
+PORTVERSION=	3.3M6
 CATEGORIES=	x11-toolkits devel java
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
-MASTER_SITE_SUBDIR=	S-${PORTVERSION}-200612141445
+MASTER_SITE_SUBDIR=	S-${PORTVERSION}-200703231616
 DISTNAME=	swt-${PORTVERSION}-${DIST_EXT}
 
 MAINTAINER=	rnoland@2hip.net
@@ -17,7 +17,7 @@ COMMENT=	Standard Widget Toolkit for Java
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-SWT_VERSION=	3320
+SWT_VERSION=	3333
 OUTPUT_JAR=	swt-devel.jar
 
 USE_ZIP=	yes
@@ -38,7 +38,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/${OUTPUT_JAR} \
 		lib/libswt-glx-gtk-%%BUILD%%.so \
 		lib/libswt-pi-gtk-%%BUILD%%.so
 
-WRKSRC=		${WRKDIR}/swt-I20061214-1445-${DIST_EXT}
+NO_WRKSUBDIR=	yes
 
 OPTIONS=	CAIRO "Cairo Support" on \
 		GNOMEVFS "Gnome VFS Support" on \
@@ -80,7 +80,6 @@ DIST_EXT=	gtk-linux-x86
 post-extract:
 	@(cd ${WRKSRC} && ${UNZIP_CMD} -qo "*.zip")
 	@${RM} -f ${WRKSRC}/*.o ${WRKSRC}/*.so ${WRKSRC}/*.jar
-	@${CP} ${WRKSRC}/make_linux.mak ${WRKSRC}/make_freebsd.mak
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|mozilla-|${GECKO}-|' \
