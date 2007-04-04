@@ -9,8 +9,7 @@ PORTNAME=	freelibiberty
 PORTVERSION=	0.2
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.vocito.com/downloads/software/libiberty/ \
-		ftp://ftp.vocito.com/pub/vocito.com/software/libiberty/
+MASTER_SITES=	http://www.vocito.com/downloads/software/libiberty/
 DISTNAME=	libiberty-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
