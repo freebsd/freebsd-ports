@@ -1,5 +1,5 @@
---- configure.orig	Sat Aug 31 15:22:20 2002
-+++ configure	Sat May  8 11:00:06 2004
+--- ./configure.orig	Sat Aug 31 17:22:20 2002
++++ ./configure	Wed Apr  4 12:24:18 2007
 @@ -8327,6 +8327,7 @@
  
  # This can be used to rebuild libtool when needed
