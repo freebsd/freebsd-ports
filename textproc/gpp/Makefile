@@ -8,7 +8,7 @@
 PORTNAME=	gpp
 PORTVERSION=	2.24
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.nothingisreal.com/gpp/
+MASTER_SITES=	http://files.nothingisreal.com/software/gpp/
 
 MAINTAINER=	jos@catnook.com
 COMMENT=	The Generic Preprocessor
