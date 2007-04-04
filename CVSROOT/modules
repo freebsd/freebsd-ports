@@ -11268,6 +11268,7 @@ pdflib		ports/print/pdflib
 pdflib-perl	ports/print/pdflib-perl
 pdfmap		ports/misc/pdfmap
 pdfmerge	ports/print/pdfmerge
+pdfoutline	ports/textproc/pdfoutline
 pdftk		ports/print/pdftk
 pdftohtml	ports/textproc/pdftohtml
 pdixtract	ports/sysutils/pdixtract
