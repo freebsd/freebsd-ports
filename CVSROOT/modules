@@ -3446,6 +3446,7 @@ gimmie		ports/deskutils/gimmie
 gimp		ports/graphics/gimp
 gimp-devel	ports/graphics/gimp-devel
 gimp-greycstoration	ports/graphics/gimp-greycstoration
+gimp-gutenprint	ports/print/gimp-gutenprint
 gimp-help	ports/graphics/gimp-help
 gimp-manual-html	ports/graphics/gimp-manual-html
 gimp-manual-pdf		ports/graphics/gimp-manual-pdf
