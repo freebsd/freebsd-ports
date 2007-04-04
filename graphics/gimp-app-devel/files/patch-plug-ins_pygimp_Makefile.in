@@ -1,0 +1,97 @@
+--- plug-ins/pygimp/Makefile.in.orig	Sun Dec 31 22:19:08 2006
++++ plug-ins/pygimp/Makefile.in	Sun Dec 31 22:22:17 2006
+@@ -64,10 +64,9 @@
+ 	"$(DESTDIR)$(pygimpdir)"
+ pygimpLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(pygimp_LTLIBRARIES)
+-am__DEPENDENCIES_1 =  \
+-	$(top_builddir)/libgimp/libgimp-$(GIMP_API_VERSION).la
+-am__DEPENDENCIES_2 = $(top_builddir)/libgimpcolor/libgimpcolor-$(GIMP_API_VERSION).la
+-am__DEPENDENCIES_3 = $(top_builddir)/libgimpbase/libgimpbase-$(GIMP_API_VERSION).la
++am__DEPENDENCIES_1 = 
++am__DEPENDENCIES_2 = 
++am__DEPENDENCIES_3 = 
+ am__DEPENDENCIES_4 =
+ _gimpenums_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_2) $(am__DEPENDENCIES_3) \
+@@ -75,11 +74,10 @@
+ 	$(am__DEPENDENCIES_4)
+ am__gimpenums_la_OBJECTS = gimpenumsmodule.lo
+ _gimpenums_la_OBJECTS = $(am__gimpenums_la_OBJECTS)
+-am__DEPENDENCIES_5 =  \
+-	$(top_builddir)/libgimp/libgimpui-$(GIMP_API_VERSION).la
+-am__DEPENDENCIES_6 = $(top_builddir)/libgimpwidgets/libgimpwidgets-$(GIMP_API_VERSION).la
+-am__DEPENDENCIES_7 = $(top_builddir)/libgimpconfig/libgimpconfig-$(GIMP_API_VERSION).la
+-am__DEPENDENCIES_8 = $(top_builddir)/libgimpmath/libgimpmath-$(GIMP_API_VERSION).la
++am__DEPENDENCIES_5 =
++am__DEPENDENCIES_6 = 
++am__DEPENDENCIES_7 = 
++am__DEPENDENCIES_8 = 
+ _gimpui_la_DEPENDENCIES = $(am__DEPENDENCIES_5) $(am__DEPENDENCIES_6) \
+ 	$(am__DEPENDENCIES_7) $(am__DEPENDENCIES_8) \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2) \
+@@ -99,7 +97,7 @@
+ 	$(am__DEPENDENCIES_4) $(am__DEPENDENCIES_4)
+ am_gimpcolor_la_OBJECTS = gimpcolormodule.lo pygimp-colors.lo
+ gimpcolor_la_OBJECTS = $(am_gimpcolor_la_OBJECTS)
+-am__DEPENDENCIES_9 = $(top_builddir)/libgimpthumb/libgimpthumb-$(GIMP_API_VERSION).la
++am__DEPENDENCIES_9 = 
+ gimpthumb_la_DEPENDENCIES = $(am__DEPENDENCIES_9) \
+ 	$(am__DEPENDENCIES_4) $(am__DEPENDENCIES_4)
+ am_gimpthumb_la_OBJECTS = gimpthumbmodule.lo gimpthumb.lo
+@@ -531,9 +529,7 @@
+ 	-export-symbols-regex initgimp
+ 
+ gimp_la_LIBADD = \
+-	$(libgimp)		\
+-	$(libgimpcolor)		\
+-	$(libgimpbase)		\
++	%%GIMP_LIBS%%		\
+ 	$(GLIB_LIBS)		\
+ 	$(PYLINK_LIBS)		\
+ 	$(RT_LIBS)
+@@ -545,9 +541,7 @@
+ 	-export-symbols-regex init_gimpenums
+ 
+ _gimpenums_la_LIBADD = \
+-	$(libgimp)		\
+-	$(libgimpcolor)		\
+-	$(libgimpbase)		\
++	%%GIMP_LIBS%%		\
+ 	$(GLIB_LIBS)		\
+ 	$(PYLINK_LIBS)		\
+ 	$(RT_LIBS)
+@@ -562,7 +556,7 @@
+ 	-export-symbols-regex initgimpcolor
+ 
+ gimpcolor_la_LIBADD = \
+-	$(libgimpcolor)		\
++	%%GIMP_LIBS%%		\
+ 	$(GLIB_LIBS)		\
+ 	$(PYLINK_LIBS)
+ 
+@@ -574,13 +568,8 @@
+ 	-export-symbols-regex init_gimpui
+ 
+ _gimpui_la_LIBADD = \
+-	$(libgimpui)		\
+-	$(libgimpwidgets)	\
+-	$(libgimpconfig)	\
+-	$(libgimpmath)		\
+-	$(libgimp)		\
+-	$(libgimpcolor)		\
+-	$(libgimpbase)		\
++	%%GIMP_LIBS%%		\
++	%%GIMP_UI_LIBS%%	\
+ 	$(GTK_LIBS)		\
+ 	$(PYLINK_LIBS)		\
+ 	$(RT_LIBS)		\
+@@ -594,7 +583,7 @@
+ 	-export-symbols-regex initgimpthumb
+ 
+ gimpthumb_la_LIBADD = \
+-	$(libgimpthumb)		\
++	%%GIMP_THUMB_LIBS%%	\
+ 	$(GDK_PIXBUF_LIBS)	\
+ 	$(PYLINK_LIBS)
+ 

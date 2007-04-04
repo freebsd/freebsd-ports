@@ -1,6 +1,6 @@
---- configure.orig	Sun Mar  6 15:30:12 2005
-+++ configure	Sun Mar  6 15:33:57 2005
-@@ -25925,6 +25925,7 @@
+--- configure.orig	Thu Nov 23 15:16:53 2006
++++ configure	Sun Dec 31 19:29:32 2006
+@@ -29404,6 +29404,7 @@
      if test "x$enable_gtktest" = "xyes" ; then
        ac_save_CFLAGS="$CFLAGS"
        ac_save_LIBS="$LIBS"
@@ -8,9 +8,18 @@
        CFLAGS="$CFLAGS $GTK_CFLAGS"
        LIBS="$GTK_LIBS $LIBS"
        rm -f conf.gtktest
-@@ -33865,9 +33866,9 @@
+@@ -35211,7 +35212,7 @@
+   fi
+   { echo "$as_me:$LINENO: result: $have_exif_0_6" >&5
+ echo "${ECHO_T}$have_exif_0_6" >&6; }
+-  if test x$have_exif_0_6 == xyes; then
++  if test x$have_exif_0_6 = xyes; then
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_EXIF_0_6 1
+@@ -38514,9 +38515,9 @@
  fi
- fi;
+ 
  
 -gimpdatadir="$datadir/$PACKAGE/2.0"
 -gimpplugindir="$libdir/$PACKAGE/2.0"
@@ -19,5 +28,5 @@
 +gimpplugindir="$libexecdir/$PACKAGE/2.2"
 +gimpsysconfdir="$sysconfdir/$PACKAGE/2.2"
  
- localedir='${prefix}/${DATADIRNAME}/locale'
+ 
  

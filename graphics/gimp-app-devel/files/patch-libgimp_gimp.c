@@ -1,15 +1,6 @@
---- libgimp/gimp.c.orig	Fri Jun  2 08:04:39 2006
-+++ libgimp/gimp.c	Fri Jun  9 11:24:56 2006
-@@ -21,7 +21,7 @@
- 
- #include "config.h"
- 
--#define _POSIX_SOURCE  /* all the sigaction stuff is POSIX */
-+#define __XSI_VISIBLE  /* all the sigaction stuff is POSIX */
- #define _SVID_SOURCE   /* except for SA_RESTART, it seems  */
- 
- #include <errno.h>
-@@ -30,6 +30,7 @@
+--- libgimp/gimp.c.orig	Fri Sep  1 06:14:32 2006
++++ libgimp/gimp.c	Sun Dec 31 15:56:37 2006
+@@ -29,6 +29,7 @@
  #include <stdlib.h>
  #include <string.h>
  #include <sys/types.h>
@@ -17,7 +8,7 @@
  
  #ifdef HAVE_SYS_TIME_H
  #include <sys/time.h>
-@@ -292,6 +293,9 @@
+@@ -291,6 +292,9 @@
    gimp_env_init (TRUE);
  
    progname = argv[0];

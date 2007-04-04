@@ -1,7 +1,3 @@
-
-$FreeBSD$
-  $MCom: ports/graphics/gimp-devel/files/patch-gimptool-2.0.in,v 1.3 2005/06/28 05:40:04 adamw Exp $
-
 --- gimptool-2.0.in.orig	Tue Jan 15 12:21:05 2002
 +++ gimptool-2.0.in	Fri May 17 20:46:18 2002
 @@ -215,19 +215,19 @@
