@@ -46,9 +46,6 @@ RUN_DEPENDS+=		${SITE_PERL}/${PERL_ARCH}/IPC/ShareLite.pm:${PORTSDIR}/devel/p5-I
 RUN_DEPENDS+=		${SITE_PERL}/DB_File/Lock.pm:${PORTSDIR}/devel/p5-DB_File-Lock
 .endif
 .if !defined(WITHOUT_WIKICKER_MEMCACHED)
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires Perl 5.6 or newer to run. Either install new Perl or define WITHOUT_WIKICKER_MEMCACHED
-.endif
 RUN_DEPENDS+=		${SITE_PERL}/Cache/Memcached.pm:${PORTSDIR}/databases/p5-Cache-Memcached
 .endif
 
