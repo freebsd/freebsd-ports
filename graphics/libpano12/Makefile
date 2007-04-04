@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	panotools
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Panorama Tools to make panorama pictures
 
-BUILD_DEPENDS=	${LOCALBASE}/include/gimp-2.0/libgimp/gimp.h:${PORTSDIR}/graphics/gimp
+BUILD_DEPENDS=	gimp>0:${PORTSDIR}/graphics/gimp
 RUN_DEPENDS=	${BUILD_DEPENDS}
 LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
 		png:${PORTSDIR}/graphics/png \
