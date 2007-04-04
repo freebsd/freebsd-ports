@@ -6,10 +6,10 @@ lib/libpconn.so.0
 lib/libpdb.a
 lib/libpdb.so
 lib/libpdb.so.0
-share/locale/cs/LC_MESSAGES/coldsync.mo
-share/locale/de/LC_MESSAGES/coldsync.mo
-share/locale/fr/LC_MESSAGES/coldsync.mo
-share/locale/it/LC_MESSAGES/coldsync.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/coldsync.mo
+%%NLS%%share/locale/de/LC_MESSAGES/coldsync.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/coldsync.mo
+%%NLS%%share/locale/it/LC_MESSAGES/coldsync.mo
 include/palm.h
 include/pdb.h
 include/pconn/util.h
