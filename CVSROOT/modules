@@ -8049,6 +8049,7 @@ nserver		ports/misc/nserver
 nsf		ports/misc/nsf
 nslint		ports/dns/nslint
 nsping		ports/dns/nsping
+nspluginwrapper	ports/www/nspluginwrapper
 nspmod		ports/audio/nspmod
 nspr		ports/devel/nspr
 nss		ports/security/nss
