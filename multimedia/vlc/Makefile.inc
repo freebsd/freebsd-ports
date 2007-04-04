@@ -254,8 +254,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/' \
 		-e 's/-lc_r/${PTHREAD_LIBS}/' \
 		-e 's|-mcpu=pentiumpro||' \
-		-e 's|postproc/postprocess.h|ffmpeg/postproc/postprocess.h|' \
 		${WRKSRC}/configure
+.if ${FFMPEG:L}=="old"
+	@${REINPLACE_CMD} -e 's|postproc/postprocess.h|ffmpeg/postproc/postprocess.h|' \
+			${WRKSRC}/configure
+.endif
 # cdrom/dvd support
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|; \
 		s|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
