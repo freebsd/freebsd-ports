@@ -1,0 +1,10 @@
+include/uriparser.h
+include/uriparser/Uri.h
+include/uriparser/UriBase.h
+include/uriparser/UriDefsAnsi.h
+include/uriparser/UriDefsConfig.h
+include/uriparser/UriDefsUnicode.h
+include/uriparser/UriIp4.h
+include/uriparser/UriIp4Base.h
+lib/liburiparser.a
+@dirrm include/uriparser
