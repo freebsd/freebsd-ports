@@ -11,7 +11,9 @@ upgrades.
   AUTHOR: ahze@FreeBSD.org
 
   The gimp[-devel] port is now a meta-port so users will need to upgrade via
-  one of the following examples
+  one of the following examples. Gimp now depends on gutenprint instead of
+  gimp-print, if you have gimp-print installed you will need to 
+  pkg_delete gimp-print before you install or upgrade the gimp.
 
   portmaster users:
    (gimp)
@@ -31,7 +33,8 @@ upgrades.
   AUTHOR: ahze@FreeBSD.org
 
   The gutenprint port is now a meta-port so users will need to upgrade via
-  one of the following examples
+  one of the following examples. If you have gimp-print installed you 
+  will need to pkg_delete gimp-print before installing gutenprint.
 
   portmaster users:
   portmaster -o print/gutenprint-base gutenprint
