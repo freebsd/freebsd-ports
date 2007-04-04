@@ -33,10 +33,4 @@ MAN3=	P2P::pDonkey::Met.3 \
 	P2P::pDonkey::Util.3 \
 	P2P::pDonkey::Meta.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

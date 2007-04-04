@@ -22,11 +22,4 @@ PERL_MODBUILD=	yes
 
 MAN3=		AI::Perceptron.3
 
-.include <bsd.port.pre.mk>
-
-# p5-accessors requires 5.6.0
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

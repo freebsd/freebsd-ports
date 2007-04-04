@@ -18,7 +18,7 @@ bin/lamwipe
 bin/mpiCC
 bin/mpic++
 bin/mpicc
-%%WANT_MPIEXEC%%bin/mpiexec
+bin/mpiexec
 bin/mpif77
 bin/mpimsg
 bin/mpirun
