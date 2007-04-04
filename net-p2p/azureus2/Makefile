@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	azureus
-PORTVERSION=	2.5.0.4
+PORTVERSION=	3.0.0.8
 #PORTREVISION=	1
 CATEGORIES=	net-p2p java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	azureus_${PORTVERSION}_source
+DISTNAME=	Azureus_${PORTVERSION}_source
 
 MAINTAINER=	rnoland@2hip.net
 COMMENT=	A BitTorrent client written in Java
@@ -19,8 +19,7 @@ COMMENT=	A BitTorrent client written in Java
 BUILD_DEPENDS=	\
 		${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j \
 		${JAVALIBDIR}/commons-cli.jar:${PORTSDIR}/java/jakarta-commons-cli \
-		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
-		${JAVALIBDIR}/seda.jar:${PORTSDIR}/net/seda
+		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -37,7 +36,6 @@ USE_DOS2UNIX=	org/gudy/azureus2/ui/swt/test/PrintTransferTypes.java \
 		org/gudy/azureus2/ui/swt/Messages.java \
 		org/gudy/azureus2/ui/swt/views/configsections/ConfigSectionPlugins.java \
 		org/gudy/azureus2/ui/swt/shells/MessageSlideShell.java \
-		org/gudy/azureus2/ui/swt/views/TableView.java \
 		org/gudy/azureus2/ui/swt/Utils.java \
 		org/gudy/azureus2/platform/macosx/access/jnilib/OSXAccess.java \
 		com/aelitis/azureus/core/networkmanager/impl/TransportHelperFilterStream.java
@@ -46,7 +44,7 @@ NO_WRKSUBDIR=	yes
 
 JARFILE=	${PORTNAME}.jar
 
-OPTIONS=	SWTDEVEL "Use SWT Development port" off
+OPTIONS=	SWTDEVEL "Use SWT Development port" on
 
 # build classpath from BUILD_DEPENDS
 MAKE_ENV=	LANG=C
