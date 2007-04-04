@@ -3,14 +3,16 @@
 # Whom: dgilbert@velocet.ca
 #
 # $FreeBSD$
-#    $MCom: ports/print/gutenprint/Makefile,v 1.3 2006/02/25 00:13:44 marcus Exp $
+#    $MCom: ports/print/gutenprint-base/Makefile,v 1.8 2007/03/30 16:45:02 ahze Exp $
 #
 
-PORTNAME=	gutenprint
-PORTVERSION=	5.0.0
+PORTNAME?=	gutenprint
+PORTVERSION=	5.1.0
+PORTREVISION?=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gimp-print
+PKGNAMESUFFIX?=	-base
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	GutenPrint Printer Driver
@@ -24,51 +26,84 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--with-gimp=no --with-gimp2=no \
-		--without-foomatic
-INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS=--with-gimp=no --with-gimp2=no \
+		--with-mandir=${PREFIX}/man
+USE_LDCONFIG=	yes
 
-MAN1=	escputil.1 ijsgutenprint.1
-
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
+CPPFLAGS=	-I${LOCALBASE}/include -I${PREFIX}/include
+LDFLAGS=	-L${LOCALBASE}/lib -L${PREFIX}/lib
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_CUPS) && !defined(WITHOUT_CUPS)
+.if ${SLAVE_PORT}=="yes"
+LIB_DEPENDS+=	gutenprintui2.1:${PORTSDIR}/print/gutenprint-base
+PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
+GUTENPRINTUI2_LIBS=`${PKG_CONFIG} --libs gutenprintui2`
+.else
+MAN1+=		escputil.1
+.endif
+
+.if defined(GUT_SLAVE) && ${GUT_SLAVE}=="gimp"
+LIB_DEPENDS+=	gimp-2.0.0:${PORTSDIR}/graphics/gimp-app \
+		gutenprint.2:${PORTSDIR}/print/gutenprint
+CONFIGURE_ARGS=--with-gimp2=yes # Override CONFIGURE_ARGS
+BUILD_WRKSRC=	${WRKSRC}/src/gimp2
+INSTALL_WRKSRC=	${WRKSRC}/src/gimp2
+.else
+CONFIGURE_ARGS+=--without-gimp2
+.endif
+
+.if defined(GUT_SLAVE) && ${GUT_SLAVE}=="cups"
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 RUN_DEPENDS+=	espgs:${PORTSDIR}/print/cups-pstoraster
-CONFIGURE_ARGS+=	--with-cups=${PREFIX}
-PLIST_SUB+=	CUPS=""
-MAN8=	cups-calibrate.8 cups-genppd.8 cups-genppdconfig.8 \
+CONFIGURE_ARGS+=	--with-cups=${PREFIX} \
+			--enable-cups-ppds \
+			--enable-cups-level3-ppds
+MAN8+=	cups-calibrate.8 cups-genppd.8 cups-genppdconfig.8 \
 	cups-genppdupdate.8
+BUILD_WRKSRC=	${WRKSRC}/src/cups
+INSTALL_WRKSRC=	${WRKSRC}/src/cups
 .else
-PLIST_SUB+=	CUPS="@comment "
 CONFIGURE_ARGS+=	--without-cups
 .endif
 
-.if defined(WITHOUT_IJS)
-PLIST_SUB+=	IJS="@comment "
-.else
+.if defined(GUT_SLAVE) && ${GUT_SLAVE}=="ijs"
 LIB_DEPENDS+=	ijs.1:${PORTSDIR}/print/libijs
-CONFIGURE_ARGS+=	--with-ijs=yes
-PLIST_SUB+=	IJS=""
+CONFIGURE_ARGS+=--with-ijs=yes
+MAN1+=		ijsgutenprint.1
+BUILD_WRKSRC=	${WRKSRC}/src/ghost
+INSTALL_WRKSRC=	${WRKSRC}/src/ghost
+.else
+CONFIGURE_ARGS+=--without-ghostscript
+.endif
+
+.if defined(GUT_SLAVE) && ${GUT_SLAVE}=="foomatic"
+BUILD_DEPENDS+=	foomatic-combo-xml:${PORTSDIR}/print/foomatic-db-engine
+RUN_DEPENDS+=	foomatic-combo-xml:${PORTSDIR}/print/foomatic-db-engine \
+		foomatic-db>0:${PORTSDIR}/print/foomatic-db
+CONFIGURE_ARGS+=--with-foomatic=yes --with-foomatic3=yes
+BUILD_WRKSRC=	${WRKSRC}/src/foomatic
+INSTALL_WRKSRC=	${WRKSRC}/src/foomatic
+.else
+CONFIGURE_ARGS+=--without-foomatic
 .endif
 
 .if defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--with-user-guide=no
 .endif
 
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You may use the following build options:"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "	WITH_CUPS=yes		build with CUPS driver"
-	@${ECHO_MSG} "	WITHOUT_IJS=yes 	build without IJS-based Ghostscript driver"
-	@${ECHO_MSG}
-
 post-patch:
+	@${REINPLACE_CMD} -e 's|%%GUTENPRINTUI2_LIBS%%|${GUTENPRINTUI2_LIBS}|' \
+		${WRKSRC}/src/gimp2/Makefile.in
 	@${REINPLACE_CMD} -e 's|$$libdir/gimp/1.2/plug-ins||g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|@mandir@|${PREFIX}/man|' ${WRKSRC}/man/Makefile.in
+	@${REINPLACE_CMD} -e 's|= $$(pkglibdir)|= ${PREFIX}/libexec/cups|' \
+		${WRKSRC}/src/cups/Makefile.in
+
+post-install:
+.if ${SLAVE_PORT}=="yes"
+	@(cd ${WRKSRC}/man && ${GMAKE} ${INSTALL_TARGET})
+.endif
 
 .include <bsd.port.post.mk>

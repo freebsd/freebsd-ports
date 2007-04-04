@@ -1,0 +1,23 @@
+--- src/gimp2/Makefile.in.orig	Sun Dec 31 22:50:59 2006
++++ src/gimp2/Makefile.in	Sun Dec 31 22:51:31 2006
+@@ -66,8 +66,7 @@
+ am_gutenprint_OBJECTS = $(am__objects_1) print-gutenprint.$(OBJEXT)
+ gutenprint_OBJECTS = $(am_gutenprint_OBJECTS)
+ am__DEPENDENCIES_1 =
+-am__DEPENDENCIES_2 =  \
+-	$(top_builddir)/src/gutenprintui2/libgutenprintui2.la
++am__DEPENDENCIES_2 = 
+ am__DEPENDENCIES_3 = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+ am_print_OBJECTS = $(am__objects_1) print-print.$(OBJEXT)
+ print_OBJECTS = $(am_print_OBJECTS)
+@@ -340,8 +339,8 @@
+ 	print_gimp.h
+ 
+ print_SOURCES = $(COMMON_PRINT_SOURCES) print-print.c
+-print_LDADD = $(GIMP2_LIBS) $(GUTENPRINTUI2_LIBS)
+-print_DEPENDENCIES = $(GUTENPRINTUI2_LIBS) $(GUTENPRINT_LIBS)
++print_LDADD = $(GIMP2_LIBS) %%GUTENPRINTUI2_LIBS%%
++print_DEPENDENCIES = 
+ gutenprint_SOURCES = $(COMMON_PRINT_SOURCES) print-gutenprint.c
+ gutenprint_LDADD = $(print_LDADD)
+ gutenprint_DEPENDENCIES = $(print_DEPENDENCIES)
