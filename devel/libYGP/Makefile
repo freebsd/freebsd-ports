@@ -6,16 +6,15 @@
 #
 
 PORTNAME?=	libYGP
-PORTVERSION=	0.8.10
+PORTVERSION=	0.8.22
 CATEGORIES=	devel
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	libymp
+MASTER_SITES=	SF/libymp
 DISTNAME=	libYGP-${PORTVERSION}
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Yet another General Purpose library
 
-LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -23,25 +22,28 @@ USE_GNOME=	pkgconfig gnomehack
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --with-gmp
+CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --with-gmp\
+		--disable-static --disable-rpath
 
 .if ${PORTNAME:M*XGP}
 LIB_DEPENDS+=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		YGP-${PORTVERSION}.0:${PORTSDIR}/devel/libYGP
-PLIST_SUB+=	YGP="@comment " XGP=""
-USE_GGNOME+=	gtkhtml3
-CFG_PATCH+=	s/mozembed/mozembedNO/g;
-XGP_PATCH+=	s/(^@AM.*)?GtkMozViewer(.lo|.c|.Plo@am__quote@)//;
-MKIN_PATCH+=	s/^(SUBDIRS = ).*$$/\1XGP/;
+		YGP.0:${PORTSDIR}/devel/libYGP
+PLIST_SUB=	YGP="@comment " XGP=""
+CFG_PATCH=	s/mozembed/mozembedNO/g;
+XGP_PATCH=	s/(^@AM.*)?GtkMozViewer(.lo|.c|.Plo@am__quote@)//;
+MKIN_PATCH=	s/^(SUBDIRS = ).*$$/\1XGP/;
 .else
-PLIST_SUB+=	XGP="@comment " YGP=""
-MKIN_PATCH+=	s/@MYSUBDIRS@/YGP/;
+PLIST_SUB=	XGP="@comment " YGP=""
+MKIN_PATCH=	s/@MYSUBDIRS@/YGP/;
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -Ee 's/(test.*)==/\1=/g;${CFG_PATCH}' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/test.*==/s|==|=|g;/LIBRELEASE=/s|=.*|=0|;${CFG_PATCH}' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -Ee '${XGP_PATCH}' ${WRKSRC}/XGP/Makefile.in
-	@${REINPLACE_CMD} -Ee '${MKIN_PATCH}' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -Ee '/include_HEADERS/s|config.h||;${MKIN_PATCH}' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/^#include/s|malloc.h|stdlib.h|' ${WRKSRC}/XGP/GTKViewer.c
+	@${REINPLACE_CMD} -e '/^typedef int socklen_t;/d' ${WRKSRC}/YGP/Socket.cpp
+	@${REINPLACE_CMD} -e '/^#.*define sleep/d' ${WRKSRC}/YGP/Tests/Thread.cpp
 .if ${PORTNAME:M*XGP}
 	@${FIND} ${WRKSRC} -type f -print0 | \
 		${XARGS} -0 ${REINPLACE_CMD} -e 's/ygp-cfg/xgp-cfg/g'
@@ -52,13 +54,6 @@ post-patch:
 .endif
 
 post-install:
-	@${LN} -sf ${PREFIX}/lib/${PORTNAME}-${PORTVERSION}.so \
-		${PREFIX}/lib/${PORTNAME}-${PORTVERSION}.so.0
+	@${LN} -sf ${PREFIX}/lib/${PORTNAME}-0.so ${PREFIX}/lib/${PORTNAME}.so.0
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	does not compile on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
