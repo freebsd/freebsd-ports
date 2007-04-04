@@ -17,7 +17,7 @@ COMMENT=	Exploit-Framework for Penetration-Testing
 
 RUN_DEPENDS=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion \
 		${LOCALBASE}/bin/gem:${PORTSDIR}/devel/ruby-gems \
-		${LOCALBASE}/lib/ruby/gems/1.8/specifications/activerecord-1.15.2.gemspec:${PORTSDIR}/databases/rubygem-activerecord
+		${LOCALBASE}/lib/ruby/gems/1.8/specifications/activerecord-1.15.3.gemspec:${PORTSDIR}/databases/rubygem-activerecord
 
 SCRIPTS=	msfcli msfconsole msfd msfencode msflicense msfopcode \
 		msfpayload msfpescan msfweb
