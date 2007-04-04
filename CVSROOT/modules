@@ -9335,6 +9335,7 @@ p5-Fax-Hylafax-Client	ports/comms/p5-Fax-Hylafax-Client
 p5-Feed-Find	ports/www/p5-Feed-Find
 p5-File-Append-TempFile	ports/devel/p5-File-Append-TempFile
 p5-File-Attributes	ports/devel/p5-File-Attributes
+p5-File-Attributes-Recursive	ports/devel/p5-File-Attributes-Recursive
 p5-File-BaseDir	ports/devel/p5-File-BaseDir
 p5-File-BasicFlock	ports/devel/p5-File-BasicFlock
 p5-File-Binary	ports/devel/p5-File-Binary
