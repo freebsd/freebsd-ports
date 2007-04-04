@@ -104,6 +104,7 @@
     SUBDIR += gtklp
     SUBDIR += guitartex
     SUBDIR += gutenprint
+    SUBDIR += gutenprint-base
     SUBDIR += gutenprint-cups
     SUBDIR += gutenprint-foomatic
     SUBDIR += gutenprint-ijs
