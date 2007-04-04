@@ -26,6 +26,7 @@ lib/gajim/trayicon.so
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/gajim.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gajim.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gajim.mo
 share/applications/gajim.desktop
@@ -133,6 +134,7 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/glade/chat_control_popup_menu.glade
 %%DATADIR%%/data/glade/choose_gpg_key_dialog.glade
 %%DATADIR%%/data/glade/data_form_window.glade
+%%DATADIR%%/data/glade/dubbleinput_dialog.glade
 %%DATADIR%%/data/glade/edit_groups_dialog.glade
 %%DATADIR%%/data/glade/filetransfers.glade
 %%DATADIR%%/data/glade/gajim_themes_window.glade
@@ -163,6 +165,8 @@ share/pixmaps/gajim_about.png
 %%DATADIR%%/data/glade/single_message_window.glade
 %%DATADIR%%/data/glade/subscription_request_popup_menu.glade
 %%DATADIR%%/data/glade/subscription_request_window.glade
+%%DATADIR%%/data/glade/synchronise_select_account_dialog.glade
+%%DATADIR%%/data/glade/synchronise_select_contacts_dialog.glade
 %%DATADIR%%/data/glade/systray_context_menu.glade
 %%DATADIR%%/data/glade/vcard_information_window.glade
 %%DATADIR%%/data/glade/xml_console_window.glade
