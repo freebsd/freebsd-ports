@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.bitkipper.net/bytes/pynotifier/source/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}_${PORTVERSION}-1
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	A generic notifier/event scheduler abstraction
 
 USE_PYTHON=	yes

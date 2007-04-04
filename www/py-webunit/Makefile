@@ -13,7 +13,7 @@ MASTER_SITES=	http://cheeseshop.python.org/packages/source/w/webunit/ \
 		http://funkload.nuxeo.org/3dparty/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Unit test your websites with code that acts like a web browser
 
 USE_PYTHON=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	http://cheeseshop.python.org/packages/source/e/ezpyinline/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Easy embedded Inline C for Python
 
 USE_PYTHON=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	www python
 MASTER_SITES=	http://bitworking.org/projects/httplib2/dist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	A comprehensive HTTP client library
 
 USE_PYTHON=	yes

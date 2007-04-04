@@ -11,7 +11,7 @@ CATEGORIES=	math python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/i/igraph/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High performance graph data structures and algorithms
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2

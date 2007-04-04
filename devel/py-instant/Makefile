@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	pyinstant
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Instant-${PORTVERSION}
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Python module for instant inlining of C and C++ code in Python
 
 RUN_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13

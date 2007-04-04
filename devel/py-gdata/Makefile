@@ -12,7 +12,7 @@ MASTER_SITES=	http://gdata-python-client.googlecode.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	gdata.py.${PORTVERSION}
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	GData Python Client Library
 
 USE_PYTHON=	yes
