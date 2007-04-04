@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memcache
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.2
 CATEGORIES=	databases
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,7 +16,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Memcached extension
 
-USE_PHP=	zlib
+USE_PHP=	zlib session
 USE_PHPEXT=	yes
 PHP_MODNAME=	memcache
 
