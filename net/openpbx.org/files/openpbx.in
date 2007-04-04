@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# PROVIDE: openpbx
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable openpbx:
+#
+# openpbx_enable="YES"
+#
+
+. %%RC_SUBR%%
+
+name=openpbx
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/openpbx
+
+load_rc_config $name
+
+pidfile=${asterisk_pidfile:-"/var/run/openpbx.pid"}
+
+asterisk_enable=${asterisk_enable:-"NO"}
+
+run_rc_command "$1"

@@ -395,6 +395,7 @@
     SUBDIR += openmpi
     SUBDIR += openntpd
     SUBDIR += openospfd-devel
+    SUBDIR += openpbx.org
     SUBDIR += openradius
     SUBDIR += openser
     SUBDIR += openslp
