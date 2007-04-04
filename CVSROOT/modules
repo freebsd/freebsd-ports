@@ -4267,6 +4267,7 @@ gutenmark	ports/textproc/gutenmark
 gutenprint	ports/print/gutenprint
 gutenprint-cups	ports/print/gutenprint-cups
 gutenprint-foomatic	ports/print/gutenprint-foomatic
+gutenprint-ijs	ports/print/gutenprint-ijs
 gv		ports/print/gv
 gv-aspell	ports/textproc/gv-aspell
 gview		ports/graphics/gview
