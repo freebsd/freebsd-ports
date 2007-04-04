@@ -23,7 +23,7 @@ POSIXRULES=	America/New_York
 # Prevent packages if on the FreeBSD building cluster. This because
 # it overwrites system files and directories.
 .if defined(PACKAGE_BUILDING)
-NO_PACKAGE=	yes
+NO_PACKAGE=	Overwrites files in the base system
 .endif
 
 .include <bsd.port.pre.mk>
