@@ -61,7 +61,11 @@
 14.0,	101.0,	"ftp.nectec.or.th"		# Bangkok?
 22.0,	114.0,	"ftp.hk.super.net"		# Hong Kong 
 32.1,	34.8,	"orgchem.weizmann.ac.il"	# Tel Aviv?, Israel
-#		"nctuccca.edu.tw"		# Taiwan
+24.7871,120.9974,"ftp.tw.freebsd.org"		# Hsinchu, Taiwan (NCTU)
+23.10,	120.28,	"ftp2.tw.freebsd.org"		# Kaohsiung, Taiwan (NSYSU)
+25.0209,121.5397,"ftp6.tw.freebsd.org"		# Taipei, Taiwan (NTU)
+25.0110,121.3230,"ftp11.tw.freebsd.org"		# Taipei, Taiwan (NTU)
+25.2506,121.3402,"ftp15.tw.freebsd.org"		# Taipei, Taiwan
 #
 # Africa
 #
