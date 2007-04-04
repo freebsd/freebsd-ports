@@ -6,7 +6,6 @@
 #
 
 PORTNAME=	libXGP
-PORTREVISION=	1
 MASTERDIR=	${.CURDIR}/../libYGP
 
 .include "${MASTERDIR}/Makefile"
