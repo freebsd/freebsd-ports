@@ -6,6 +6,41 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070404:
+  AFFECTS: users of graphics/gimp and graphics/gimp-devel
+  AUTHOR: ahze@FreeBSD.org
+
+  The gimp[-devel] port is now a meta-port so users will need to upgrade via
+  one of the following examples
+
+  portmaster users:
+   (gimp)
+  portmaster -o graphics/gimp-app gimp
+  portmaster -u graphics/gimp
+   (gimp-devel)
+  portmaster -o graphics/gimp-app-devel gimp-devel
+  portmaster -u graphics/gimp-devel
+
+  portupgrade users:
+   (gimp)
+  portupgrade -o graphics/gimp-app gimp
+  portupgrade -u graphics/gimp
+
+20070404:
+  AFFECTS: users of print/gutenprint
+  AUTHOR: ahze@FreeBSD.org
+
+  The gutenprint port is now a meta-port so users will need to upgrade via
+  one of the following examples
+
+  portmaster users:
+  portmaster -o print/gutenprint-base gutenprint
+  portmaster -u print/gutenprint
+
+  portupgrade users:
+  portupgrade -o print/gutenprint-base gutenprint
+  portupgrade -u print/gutenprint
+  
 20070402:
   AFFECTS: users of devel/cvstrac
   AUTHOR: nkoch@demig.de
