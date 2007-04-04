@@ -36,20 +36,16 @@ CONFIGURE_ARGS=	--with-libz=/usr \
 		--with-jasper=${LOCALBASE} \
 		--with-python
 MAKEFILE=	GNUmakefile
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		gdal-config.1 gdal_utilities.1 gdalwarp.1 ogrtindex.1 \
 		gdal_contour.1 gdaladdo.1 ogr2ogr.1 pct2rgb.py.1 \
 		gdal_merge.py.1 gdalinfo.1 ogr_utilities.1 rgb2pct.py.1 \
 		gdal_translate.1 gdaltindex.1 ogrinfo.1
 
-post-patch:
-		@${REINPLACE_CMD} -e 's|6LIBZ|6|;;s|lgif|lungif|' ${WRKSRC}/configure
-
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-CONFIGURE_ARGS+=--without-pcraster
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's|6LIBZ|6|;;s|lgif|lungif|' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
