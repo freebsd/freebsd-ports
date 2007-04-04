@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libdvdread
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.7
 PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
@@ -18,7 +18,9 @@ LIB_DEPENDS=	dvdcss.${DVDCSS_LIBVERSION}:${PORTSDIR}/multimedia/libdvdcss
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
+
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 DOC_FILES=	AUTHORS COPYING NEWS README TODO
 
@@ -50,24 +52,4 @@ post-install:
 .endif
 
 .include <bsd.port.pre.mk>
-
-# FreeBSD byteswap optimized routines
-.if ${ARCH} == "i386"
-. if (defined(MACHINE_CPU) && ${MACHINE_CPU:Mi486} == "i486")
-WITH_OPTIMIZED_BYTESWAP=yes
-. endif
-
-. if defined(WITH_OPTIMIZED_BYTESWAP)
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-dvdread::bswap.h
-. endif
-.endif
-
-pre-everything::
-.ifndef(WITH_OPTIMIZED_BYTESWAP)
-	@${ECHO_MSG} '===>'
-	@${ECHO_MSG} '===> Define WITH_OPTIMIZED_BYTESWAP to use optimized byteswap'
-	@${ECHO_MSG} '===> routines. This works only in the i386 architecture, and'
-	@${ECHO_MSG} '===> only with 486 processors and above.'
-.endif
-
 .include <bsd.port.post.mk>
