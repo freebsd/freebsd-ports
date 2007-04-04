@@ -1,0 +1,42 @@
+#! /bin/sh
+
+# $FreeBSD: /tmp/pcvs/ports/net/openpbx.org/Attic/pkg-install,v 1.1 2007-04-04 08:35:09 sobomax Exp $
+
+PATH=/bin:/usr/sbin
+OPENPBXUSER=openpbx
+
+case $2 in
+PRE-INSTALL)
+	USER=${OPENPBXUSER}
+	GROUP=${USER}
+
+	if pw group show "${GROUP}" 2>/dev/null; then
+		echo "You already have a group \"${GROUP}\", so I will use it."
+	else
+		if pw groupadd ${GROUP} ; then
+			echo "Added group \"${GROUP}\"."
+		else
+			echo "Adding group \"${GROUP}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if pw user show "${USER}" 2>/dev/null; then
+		echo "You already have a user \"${USER}\", so I will use it."
+	else
+		if pw useradd ${USER} -g ${GROUP} -h - \
+			-d / -c "OpennPBX Daemon"
+		then
+			echo "Added user \"${USER}\"."
+		else
+			echo "Adding user \"${USER}\" failed..."
+			exit 1
+		fi
+	fi
+
+	;;
+
+BACKUPWARNING)
+	true
+	;;
+esac
