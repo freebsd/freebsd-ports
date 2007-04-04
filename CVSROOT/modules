@@ -4265,6 +4265,7 @@ guspat		ports/audio/guspat
 gutenfetch	ports/net/gutenfetch
 gutenmark	ports/textproc/gutenmark
 gutenprint	ports/print/gutenprint
+gutenprint-cups	ports/print/gutenprint-cups
 gv		ports/print/gv
 gv-aspell	ports/textproc/gv-aspell
 gview		ports/graphics/gview
