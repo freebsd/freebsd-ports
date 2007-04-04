@@ -44,7 +44,7 @@ MAN1+=		escputil.1
 .endif
 
 .if defined(GUT_SLAVE) && ${GUT_SLAVE}=="gimp"
-LIB_DEPENDS+=	gimp-2.0.0:${PORTSDIR}/graphics/gimp-app \
+LIB_DEPENDS+=	gimp-2.0:${PORTSDIR}/graphics/gimp-app \
 		gutenprint.2:${PORTSDIR}/print/gutenprint
 CONFIGURE_ARGS=--with-gimp2=yes # Override CONFIGURE_ARGS
 BUILD_WRKSRC=	${WRKSRC}/src/gimp2
