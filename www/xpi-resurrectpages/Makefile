@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	resurrectpages
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.7
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
@@ -15,6 +15,9 @@ COMMENT=	Resurrects pages from big page caches/mirrors
 
 XPI_DISTNAME=	resurrect_pages
 XPI_ID=		{0c8fbd76-bdeb-4c52-9b24-d587ce7b9dc3}
+XPI_FILES=	chrome/resurrect.jar chrome.manifest defaults/preferences/resurrect.js\
+		install.rdf
+XPI_DIRS=	chrome defaults/preferences defaults
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
