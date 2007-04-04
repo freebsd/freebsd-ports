@@ -1,17 +1,6 @@
---- build.sh.orig	Mon Nov 21 23:48:16 2005
-+++ build.sh	Wed Jan 10 14:36:04 2007
-@@ -31,6 +31,10 @@
- 		SWT_OS=solaris
- 		MAKEFILE=make_solaris.mak
- 		;;
-+	"FreeBSD")
-+		SWT_OS=freebsd
-+		MAKEFILE=make_freebsd.mak
-+		;;
- 	*)
- 		SWT_OS=`uname -s | tr -s '[:upper:]' '[:lower:]'`
- 		MAKEFILE=make_linux.mak
-@@ -61,7 +65,7 @@
+--- build.sh.orig	Fri Feb  2 17:43:50 2007
++++ build.sh	Fri Mar  2 23:12:01 2007
+@@ -65,7 +65,7 @@
  esac
  
  # For 64-bit CPUs, we have a switch
@@ -20,7 +9,7 @@
  	SWT_PTR_CFLAGS=-DSWT_PTR_SIZE_64
  	export SWT_PTR_CFLAGS
  	if [ -d /lib64 ]; then
-@@ -70,6 +74,7 @@
+@@ -74,6 +74,7 @@
  	fi
  fi
  
@@ -28,7 +17,7 @@
  if [ x`pkg-config --exists gnome-vfs-module-2.0 libgnome-2.0 libgnomeui-2.0 && echo YES` = "xYES" ]; then
  	echo "libgnomeui-2.0 found, compiling SWT program support using GNOME"
  	MAKE_GNOME=make_gnome
-@@ -77,7 +82,9 @@
+@@ -81,7 +82,9 @@
  	echo "libgnome-2.0 and libgnomeui-2.0 not found:"
  	echo "    *** SWT Program support for GNOME will not be compiled."
  fi
@@ -38,18 +27,18 @@
  if [ x`pkg-config --exists cairo && echo YES` = "xYES" ]; then
  	echo "Cairo found, compiling SWT support for the cairo graphics library."
  	MAKE_CAIRO=make_cairo
-@@ -85,7 +92,9 @@
+@@ -89,7 +92,9 @@
  	echo "Cairo not found:"
  	echo "    *** Advanced graphics support using cairo will not be compiled."
  fi
 +fi
  
 +if [ x${MAKE_MOZILLA} = "xmake_mozilla" ]; then
- if [ -z "${GECKO_INCLUDES}" -a -z "${GECKO_LIBS}" ]; then
+ if [ -z "${MOZILLA_INCLUDES}" -a -z "${MOZILLA_LIBS}" ]; then
  	if [ x`pkg-config --exists mozilla-xpcom && echo YES` = "xYES" ]; then
- 		GECKO_INCLUDES=`pkg-config --cflags mozilla-xpcom`
-@@ -97,6 +106,7 @@
- 		echo "Mozilla/XPCOM libraries not found:"
+ 		MOZILLA_INCLUDES=`pkg-config --cflags mozilla-xpcom`
+@@ -107,6 +112,7 @@
+ 		echo "Mozilla/XPCOM or Firefox/XPCOM libraries not found:"
  		echo "    *** Mozilla embedding support will not be compiled."
  	fi
 +fi
