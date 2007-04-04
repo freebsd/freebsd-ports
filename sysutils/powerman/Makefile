@@ -10,7 +10,7 @@ CATEGORIES=	sysutils parallel
 MASTER_SITES=	ftp://ftp.llnl.gov/pub/linux/powerman/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	glewis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PowerMan is a tool for doing remote power control
 
 USE_BISON=	yes

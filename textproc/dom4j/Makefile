@@ -11,7 +11,7 @@ CATEGORIES=	textproc java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dom4j
 
-MAINTAINER=	glewis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source XML framework for Java
 
 USE_JAVA=	yes

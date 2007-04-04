@@ -18,7 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
 		${DOCFILES:C/$/:doc/g}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	glewis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hierarchical Data Format library (from NCSA)
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
