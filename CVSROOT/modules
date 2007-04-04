@@ -12517,6 +12517,7 @@ py-ez_web	ports/www/py-ez_web
 py-ez_xml	ports/devel/py-ez_xml
 py-ezpyinline	ports/devel/py-ezpyinline
 py-fam		ports/devel/py-fam
+py-fastaudio	ports/audio/py-fastaudio
 py-fcgi		ports/www/py-fcgi
 py-fchksum	ports/security/py-fchksum
 py-feedparser	ports/textproc/py-feedparser
