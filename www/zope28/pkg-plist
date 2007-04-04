@@ -109,6 +109,9 @@
 %%ZOPEBASEDIR%%/lib/python/AccessControl/dtml/userFolderProps.dtml
 %%ZOPEBASEDIR%%/lib/python/AccessControl/interfaces.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/interfaces.pyc
+%%ZOPEBASEDIR%%/lib/python/AccessControl/requestmethod.py
+%%ZOPEBASEDIR%%/lib/python/AccessControl/requestmethod.pyc
+%%ZOPEBASEDIR%%/lib/python/AccessControl/requestmethod.txt
 %%ZOPEBASEDIR%%/lib/python/AccessControl/securitySuite/README
 %%ZOPEBASEDIR%%/lib/python/AccessControl/securitySuite/ResultObject.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/securitySuite/ResultObject.pyc
@@ -164,6 +167,8 @@
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testZopeGuards.pyc
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testZopeSecurityPolicy.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/testZopeSecurityPolicy.pyc
+%%ZOPEBASEDIR%%/lib/python/AccessControl/tests/test_requestmethod.py
+%%ZOPEBASEDIR%%/lib/python/AccessControl/tests/test_requestmethod.pyc
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/test_safeiter.py
 %%ZOPEBASEDIR%%/lib/python/AccessControl/tests/test_safeiter.pyc
 %%ZOPEBASEDIR%%/lib/python/AccessControl/unauthorized.py
@@ -688,6 +693,8 @@
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testContentTypes.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testCopySupport.py
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testCopySupport.pyc
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/testCopySupportHooks.py
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/testCopySupportHooks.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testFileAndImage.py
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testFileAndImage.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testFolder.py
@@ -706,6 +713,8 @@
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testRanges.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testTraverse.py
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/testTraverse.pyc
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/test_Uninstalled.py
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/test_Uninstalled.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/test_XMLExportImport.py
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/test_XMLExportImport.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/www/ControlPanel_icon.gif
@@ -939,18 +948,6 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Five/viewable.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Five/zcml.py
 %%ZOPEBASEDIR%%/lib/python/Products/Five/zcml.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20060821/README.txt
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20060821/__init__.py
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20060821/__init__.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20060821/version.txt
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20070320/README.txt
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20070320/__init__.py
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20070320/__init__.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20070320/tests/__init__.py
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20070320/tests/__init__.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20070320/tests/test_hotfix.py
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20070320/tests/test_hotfix.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20070320/version.txt
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/MIMETag.py
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/MIMETag.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/MIMETools/README.txt
@@ -2909,6 +2906,8 @@
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testPublish.pyc
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testTaintedString.py
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testTaintedString.pyc
+%%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/test_Converters.py
+%%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/test_Converters.pyc
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/test_xmlrpc.py
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/test_xmlrpc.pyc
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/xmlrpc.py
@@ -6846,9 +6845,6 @@
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZReST/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZReST/www
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZReST
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20070320/tests
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20070320
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Hotfix_20060821
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/MIMETools
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/StandardCacheManagers/tests
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/StandardCacheManagers/help
