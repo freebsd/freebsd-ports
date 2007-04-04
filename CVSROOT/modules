@@ -4266,6 +4266,7 @@ gutenfetch	ports/net/gutenfetch
 gutenmark	ports/textproc/gutenmark
 gutenprint	ports/print/gutenprint
 gutenprint-cups	ports/print/gutenprint-cups
+gutenprint-foomatic	ports/print/gutenprint-foomatic
 gv		ports/print/gv
 gv-aspell	ports/textproc/gv-aspell
 gview		ports/graphics/gview
