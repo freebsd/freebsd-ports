@@ -1,6 +1,6 @@
---- src/xfce-taskmanager-freebsd.c.orig	Thu Jan  1 01:00:00 1970
-+++ src/xfce-taskmanager-freebsd.c	Thu Feb  1 12:17:27 2007
-@@ -0,0 +1,171 @@
+--- src/xfce-taskmanager-freebsd.c.orig	Thu Mar  1 16:17:09 2007
++++ src/xfce-taskmanager-freebsd.c	Thu Mar  1 16:18:01 2007
+@@ -0,0 +1,172 @@
 +/*
 + Copyright (c) 2006 Oliver Lehmann <oliver@FreeBSD.org>
 + All rights reserved.
@@ -170,5 +170,6 @@
 +		}
 +
 +	}
++	kvm_close(kd);
 +	return task_list;
 +}
