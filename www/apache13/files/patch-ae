@@ -1,11 +1,26 @@
---- src/Configure.bak	Thu Sep 16 03:45:17 2004
-+++ src/Configure	Mon Oct 25 17:59:48 2004
-@@ -456,7 +456,7 @@
+--- src/Configure.orig	Wed Jul 12 12:16:05 2006
++++ src/Configure	Wed Apr  4 19:03:41 2007
+@@ -457,7 +457,7 @@
      	PLATOSVERS=`echo $PLAT | sed 's/^.*freebsd//'`
  	OS="FreeBSD $PLATOSVERS"
  	case "$PLATOSVERS" in
 -	    [2345]*)
-+	    [2-9]*)
++	    *)
  		DEF_WANTHSREGEX=no
  		CFLAGS="$CFLAGS -funsigned-char"
  		;;
+@@ -1083,14 +1083,8 @@
+ 	    CFLAGS_SHLIB="-fpic"
+ 	    LDFLAGS_SHLIB="-shared"
+ 	    LDFLAGS_MOD_SHLIB=$LDFLAGS_SHLIB
+-	    OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout` 
+-	    if [ "x$OBJFORMAT" = "xelf" ]; then
+ 		LDFLAGS_SHLIB_EXPORT="-Wl,-E"
+ 		SHLIB_SUFFIX_DEPTH=0
+-	    else
+-		LDFLAGS_SHLIB_EXPORT=""
+-		SHLIB_SUFFIX_DEPTH=2
+-	    fi  
+ 	    ;;
+ 	*-openbsd*)
+ 	    PLATOSVERS=`echo $PLAT | sed 's/^.*openbsd//'`
