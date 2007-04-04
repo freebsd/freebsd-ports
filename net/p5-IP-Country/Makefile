@@ -7,6 +7,7 @@
 
 PORTNAME=	IP-Country
 PORTVERSION=	2.23
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/N/NW/NWETTERS
@@ -14,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	dikshie@lapi.itb.ac.id
 COMMENT=	Fast lookup of country codes from IP addresses
+
+BUILD_DEPENDS=	${SITE_PERL}/Geography/Countries.pm:${PORTSDIR}/misc/p5-Geography-Countries
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
