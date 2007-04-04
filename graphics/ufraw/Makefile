@@ -14,11 +14,12 @@ MASTER_SITES=	SF
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Read and manipulate raw images from digital cameras
 
+BUILD_DEPENDS=	gimp>0:${PORTSDIR}/graphics/gimp
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png \
-		gimpui-2.0:${PORTSDIR}/graphics/gimp \
 		lcms.1:${PORTSDIR}/graphics/lcms
+RUN_DEPENDS=	gimp>0:${PORTSDIR}/graphics/gimp
 
 GCONF_SCHEMAS=	${PORTNAME}.schemas
 GNU_CONFIGURE=	yes

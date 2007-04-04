@@ -16,7 +16,9 @@ PKGNAMEPREFIX=	gimp-
 MAINTAINER=	b3k@mail.ru
 COMMENT=	Gimp plugin used for noise reduction
 
-BUILD_DEPENDS=	gimp:${PORTSDIR}/graphics/gimp \
+BUILD_DEPENDS=	gimp>0:${PORTSDIR}/graphics/gimp \
+	${SITE_PERL}/mach/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+RUN_DEPENDS=	gimp>0:${PORTSDIR}/graphics/gimp \
 	${SITE_PERL}/mach/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
 GNU_CONFIGURE=	yes

@@ -3,7 +3,7 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome2-fifth-toe/Makefile,v 1.81 2007/03/14 21:39:30 marcus Exp $
+#   $MCom: ports/x11/gnome2-fifth-toe/Makefile,v 1.83 2007/04/03 01:14:24 ahze Exp $
 #
 
 PORTREVISION=	0
@@ -14,7 +14,7 @@ COMMENT=	Additional GNOME 2 applications not included in the core desktop
 
 RUN_DEPENDS=	pan:${PORTSDIR}/news/pan \
 		xchat:${PORTSDIR}/irc/xchat \
-		gimp-2.2:${PORTSDIR}/graphics/gimp \
+		gimp>0:${PORTSDIR}/graphics/gimp \
 		sodipodi:${PORTSDIR}/graphics/sodipodi \
 		gnomeicu:${PORTSDIR}/net-im/gnomeicu \
 		gthumb:${PORTSDIR}/graphics/gthumb \
