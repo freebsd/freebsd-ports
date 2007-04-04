@@ -867,6 +867,7 @@
     SUBDIR += uplog
     SUBDIR += uproxy
     SUBDIR += urelay
+    SUBDIR += uriparser
     SUBDIR += urlendec
     SUBDIR += ushare
     SUBDIR += utftpd
