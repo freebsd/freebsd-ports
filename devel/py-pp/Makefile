@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pp
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.parallelpython.com/downloads/pp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	lwhsu@lwhsu.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Parallel python execution server
 
 USE_PYTHON=	yes
