@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fntsample
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF http://unicode.org/Public/5.0.0/ucd/:unidata
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} Blocks.txt:unidata
@@ -17,8 +17,10 @@ COMMENT=	Show Unicode coverage of a font
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		freetype.9:${PORTSDIR}/print/freetype2
+RUN_DEPENDS=	pdfoutline:${PORTSDIR}/textproc/pdfoutline
 
 USE_GNOME=	glib20 pkgconfig
+USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 PLIST_FILES=	bin/${PORTNAME}
@@ -29,5 +31,9 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/unicode|${WRKSRC}|' ${WRKSRC}/configure
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.mk>
