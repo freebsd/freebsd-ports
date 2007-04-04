@@ -15355,6 +15355,7 @@ upx		ports/archivers/upx
 uqm		ports/games/uqm
 urchin5		ports/www/urchin5
 urelay		ports/net/urelay
+uriparser	ports/net/uriparser
 urlendec	ports/net/urlendec
 urlgfe		ports/ftp/urlgfe
 urlview		ports/textproc/urlview
