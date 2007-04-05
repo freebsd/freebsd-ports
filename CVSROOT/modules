@@ -9105,6 +9105,7 @@ p5-Data-Entropy	ports/security/p5-Data-Entropy
 p5-Data-Float	ports/math/p5-Data-Float
 p5-Data-Flow	ports/devel/p5-Data-Flow
 p5-Data-FormValidator	ports/textproc/p5-Data-FormValidator
+p5-Data-GUID	ports/devel/p5-Data-GUID
 p5-Data-HexDump	ports/devel/p5-Data-HexDump
 p5-Data-Hexdumper	ports/devel/p5-Data-Hexdumper
 p5-Data-Hierarchy	ports/devel/p5-Data-Hierarchy
