@@ -1,0 +1,7 @@
+Pktstat listens to the network and shows the bandwidth being consumed
+by packets of various kinds in realtime. It understands some protocols
+(including FTP, HTTP, and X11) and adds a descriptive name next to the
+entry.
+
+WWW: http://www.adaptive-enterprises.com.au/~d/software/pktstat/
+Author: David Leonard <leonard at users.sourceforge.net>
