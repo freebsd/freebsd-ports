@@ -7,6 +7,7 @@
 
 PORTNAME=	gdc
 PORTVERSION=	0.23
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/dgcc/g:S/$/:gdc/g}
@@ -53,7 +54,7 @@ IGNORE=		it is supported on FreeBSD 5.x and later
 .endif
 
 .ifndef TARGET_GCC
-.if ${OSVERSION} >= 700000
+.if ${OSVERSION} >= 700000 || ${ARCH} == "amd64"
 TARGET_GCC=	4.1
 .else
 TARGET_GCC=	3.4
