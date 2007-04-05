@@ -1,0 +1,5 @@
+%%SITE_PERL%%/HTML/SBC.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/SBC/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/SBC
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/HTML
