@@ -11891,6 +11891,7 @@ pkg_tree	ports/ports-mgmt/pkg_tree
 pkgfe		ports/ports-mgmt/pkgfe
 pkpgcounter	ports/print/pkpgcounter
 pks		ports/security/pks
+pktstat		ports/net-mgmt/pktstat
 pktsuckers	ports/security/pktsuckers
 pl-aspell	ports/polish/aspell
 pl-ekg		ports/polish/ekg
