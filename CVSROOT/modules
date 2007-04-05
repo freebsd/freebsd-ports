@@ -9540,6 +9540,7 @@ p5-HTML-Prototype	ports/www/p5-HTML-Prototype
 p5-HTML-QuickCheck	ports/www/p5-HTML-QuickCheck
 p5-HTML-RSSAutodiscovery	ports/www/p5-HTML-RSSAutodiscovery
 p5-HTML-ResolveLink	ports/www/p5-HTML-ResolveLink
+p5-HTML-SBC	ports/textproc/p5-HTML-SBC
 p5-HTML-Scrubber	ports/www/p5-HTML-Scrubber
 p5-HTML-Seamstress	ports/www/p5-HTML-Seamstress
 p5-HTML-SimpleLinkExtor	ports/www/p5-HTML-SimpleLinkExtor
