@@ -8,7 +8,7 @@
 PORTNAME=	postgrey
 PORTVERSION=	1.27
 CATEGORIES=	mail
-MASTER_SITES=	http://isg.ee.ethz.ch/tools/postgrey/pub/
+MASTER_SITES=	http://postgrey.schweikert.ch/pub/
 
 MAINTAINER=	haroldp@internal.org
 COMMENT=	Greylisting policy server for Postfix
