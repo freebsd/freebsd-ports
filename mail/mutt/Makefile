@@ -37,6 +37,7 @@ WITH_SLANG=	yes
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell \
 		urlview:${PORTSDIR}/textproc/urlview
+USE_GMAKE=	yes
 .endif
 .if defined (MUTT_LITE)
 PKGNAMESUFFIX=	-lite
