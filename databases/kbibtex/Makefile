@@ -6,6 +6,7 @@
 
 PORTNAME=	kbibtex
 PORTVERSION=	0.1.5
+PORTREVISION=	1
 CATEGORIES=	databases kde
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~fischer/${PORTNAME}/download/
 
