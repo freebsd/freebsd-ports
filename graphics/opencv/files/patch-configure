@@ -1,12 +1,30 @@
---- configure.orig      Thu Aug 19 03:46:49 2004
-+++ configure   Mon Feb 28 17:16:51 2005
-@@ -21218,7 +21218,7 @@
-
-
- have_v4l=no
--if test x$os_name=xLinux; then
-+if test x$os_name = xLinux; then
-
- cat >>confdefs.h <<\_ACEOF
- #define HAVE_CAMV4L
-
+--- configure.orig	Wed Mar  7 19:49:27 2007
++++ configure	Wed Mar  7 19:49:52 2007
+@@ -22958,13 +22958,13 @@
+ 
+ 
+ if test x"$have_png" = "xyes"; then
+-    echo "$as_me:$LINENO: checking for png_read_image in -lpng12" >&5
+-echo $ECHO_N "checking for png_read_image in -lpng12... $ECHO_C" >&6
++    echo "$as_me:$LINENO: checking for png_read_image in -lpng" >&5
++echo $ECHO_N "checking for png_read_image in -lpng... $ECHO_C" >&6
+ if test "${ac_cv_lib_png12_png_read_image+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpng12  $LIBS"
++LIBS="-lpng  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -23030,8 +23030,8 @@
+ #define HAVE_PNG
+ _ACEOF
+ 
+-                   IMAGELIBS="-lpng12 $IMAGELIBS"
+-                   LIBS="-lpng12 $LIBS"
++                   IMAGELIBS="-lpng $IMAGELIBS"
++                   LIBS="-lpng $LIBS"
+ 
+ 
+ for ac_func in png_get_valid png_set_tRNS_to_alpha
