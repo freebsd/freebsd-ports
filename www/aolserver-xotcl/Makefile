@@ -1,6 +1,6 @@
 # New ports collection makefile for:	aolserver-xotcl
 # Date created:				28 February 2007
-# Whom:					Martin Matuska <martin@matuska.org>
+# Whom:					Martin Matuska <mm@FreeBSD.org>
 #
 # $FreeBSD$
 #

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	adodb
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Database library for PHP
 
 USE_PHP=	pcre

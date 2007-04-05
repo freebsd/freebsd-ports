@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	dns
 MASTER_SITES=	http://www.djmnet.org/sw/dist/
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Programs that process web logs to get DNS and domain ownership info
 
 LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns

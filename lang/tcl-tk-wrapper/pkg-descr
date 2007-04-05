@@ -9,4 +9,4 @@ To make use of the "wish" wrapper, users need to install tk.
 Recommended tk ports: x11-toolkits/tk84 x11-toolkits/tk85
 
 - Martin Matuska
-martin@matuska.org
+mm@FreeBSD.org

@@ -1,6 +1,6 @@
 # New ports collection makefile for:   smake
 # Date created:        22 February 2005
-# Whom:                Martin Matuska <martin@matuska.org>
+# Whom:                Martin Matuska <mm@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.berlios.de/pub/smake/alpha/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./a/}
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Highly portable make program with automake features
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/.a.*//g}

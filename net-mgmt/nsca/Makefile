@@ -11,7 +11,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nagios
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Nagios Service Check Acceptor
 
 .if !defined(WITHOUT_SERVER)

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	tcl8.5
 # Date created:		17 January 2007
-# Whom:			martin@matuska.org
+# Whom:			Martin Matuska <mm@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	tcl
 PKGNAMESUFFIX?=		${THREADS_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.a./a/}-src
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Tool Command Language (development version)
 
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} -E ${PATCH_DIST_STRIP}

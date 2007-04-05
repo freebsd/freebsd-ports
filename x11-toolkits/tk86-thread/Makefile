@@ -1,6 +1,6 @@
 # New ports collection makefile for:	tk85-thread
 # Date created:				09 March 2007
-# Whom:					Martin Matuska <martin@matuska.org>
+# Whom:					Martin Matuska <mm@FreeBSD.org>
 #
 # $FreeBSD$
 #

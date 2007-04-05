@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xotcl
 # Date created:				Mon Sep 25 15:31:00 CET 2006
-# Whom:					Martin Matuska <martin@matuska.org>
+# Whom:					Martin Matuska <mm@FreeBSD.org>
 #
 # $FreeBSD$
 #

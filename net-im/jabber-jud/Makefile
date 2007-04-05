@@ -13,7 +13,7 @@ MASTER_SITES=	http://jud.jabberstudio.org/ \
 PKGNAMEPREFIX=	jabber-
 DIST_SUBDIR=	jabber
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Jabber User Directory module
 
 LIB_DEPENDS=	jabberd.1:${PORTSDIR}/net-im/jabber

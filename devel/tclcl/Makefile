@@ -12,7 +12,7 @@ CATEGORIES=	devel tcl84 tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	otcl-tclcl
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Tcl/C++ interface used by ns and nam
 
 LIB_DEPENDS=	otcl:${PORTSDIR}/lang/otcl

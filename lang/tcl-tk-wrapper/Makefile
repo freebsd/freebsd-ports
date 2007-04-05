@@ -1,6 +1,6 @@
 # Ports collection makefile for:	tcl-tk-wrapper
 # Date created:			4 March 2007
-# Whom:	      			martin@matuska.org
+# Whom:	      			Martin Matuska <mm@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	tcl-tk-
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Shell wrapper for tclsh and wish (Tcl/Tk)
 
 NO_BUILD=	yes

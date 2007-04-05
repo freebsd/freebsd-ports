@@ -1,6 +1,6 @@
 # New ports collection makefile for:	tclmkziplib
 # Date created:				4 Jan 2007
-# Whom:					martin@matuska.org
+# Whom:					Martin Matuska <mm@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	archivers tcl83 tcl84
 MASTER_SITES=	http://mkextensions.sourceforge.net/
 DISTNAME=	mkZiplib${PORTVERSION:S/.//}
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	GZIP and ZIP support for TCL; dynamicly loadable
 
 TCL_VER?=	8.4

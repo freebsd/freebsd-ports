@@ -1,7 +1,7 @@
 # vim:ts=8
 # New ports collection makefile for:	p5-Math-VecStat
 # Date created:				25 Februar 2005
-# Whom:					Martin Matuska <martin@matuska.org>
+# Whom:					Martin Matuska <mm@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Basic statistics on vectors
 
 PERL_CONFIGURE=	yes

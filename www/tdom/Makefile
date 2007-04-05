@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.tdom.org/files/
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	High performance XML data processing with Tcl (ARGS for OpenACS)
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/unix

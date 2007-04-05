@@ -1,6 +1,6 @@
 # Ports collection makefile for: tcl-wrapper
 # Date created:			4 March 2007
-# Whom:	      			martin@matuska.org
+# Whom:	      			Martin Matuska <mm@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${TX_PORT}-
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Shell wrapper for ${TX_SHELL} (${TX_PORT_U})
 
 NO_BUILD=	yes
