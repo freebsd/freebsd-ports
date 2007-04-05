@@ -3304,7 +3304,7 @@ check-vulnerable:
 
 # set alg to any of SIZE, MD5, SHA256 (or any other checksum algorithm):
 DISTINFO_DATA?=	DIR=${DIST_SUBDIR}; ${AWK} -v alg=$$alg \
-    -v file=$${DIR:+$$DIR/}$${file\#\#*/}	\
+    -v file=$${DIR:+$$DIR/}$${file}	\
 		'$$1 == alg && $$2 == "(" file ")" {print $$4}' ${MD5_FILE}
 
 # Fetch
@@ -4588,13 +4588,14 @@ checksum: fetch check-checksum-algorithms
 		cd ${DISTDIR}; OK="";\
 		for file in ${_CKSUMFILES}; do \
 			ignored="true"; \
+			_file=$${file#${DIST_SUBDIR}/*};	\
 			for alg in ${CHECKSUM_ALGORITHMS:U}; do \
 				ignore="false"; \
 				eval alg_executable=\$$$$alg; \
 				\
 				if [ $$alg_executable != "NO" ]; then \
 					MKSUM=`$$alg_executable < $$file`; \
-					CKSUM=`${DISTINFO_DATA}`; \
+					CKSUM=`file=$$_file; ${DISTINFO_DATA}`; \
 				else \
 					ignore="true"; \
 				fi; \
@@ -4639,6 +4640,7 @@ checksum: fetch check-checksum-algorithms
 		done; \
 		\
 		for file in ${_IGNOREFILES}; do \
+			_file=$${file#${DIST_SUBDIR}/*};	\
 			ignored="true"; \
 			alreadymatched="false"; \
 			for alg in ${CHECKSUM_ALGORITHMS:U}; do \
@@ -4646,7 +4648,7 @@ checksum: fetch check-checksum-algorithms
 				eval alg_executable=\$$$$alg; \
 				\
 				if [ $$alg_executable != "NO" ]; then \
-					CKSUM=`${DISTINFO_DATA}`; \
+					CKSUM=`file=$$_file; ${DISTINFO_DATA}`; \
 				else \
 					ignore="true"; \
 				fi; \
