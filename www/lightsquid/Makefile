@@ -40,7 +40,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/var/www/html/${PORTNAME}/lang|${DATADIR}/lang|' \
 		-e 's|/var/www/html/${PORTNAME}\"|${PREFIX}/etc/${PORTNAME}\"|' \
 		-e 's|/var/www/html/${PORTNAME}/ip2name|${PREFIX}/libexec/${PORTNAME}|' \
-		-e 's|/var/www/html/${PORTNAME}|${PREFIX}/www/${PORTNAME}|' \
+		-e 's|/var/www/html/${PORTNAME}|${WWWDIR}|' \
 		${WRKSRC}/lightsquid.cfg
 	@${FIND} -E ${WRKSRC} -maxdepth 1 -regex '.*\.(cgi|pl)' | \
 		${XARGS} ${REINPLACE_CMD} \
@@ -63,18 +63,18 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/etc/${PORTNAME}/
 .endif
 .endfor
-	${MKDIR} ${PREFIX}/www/${PORTNAME}/report
-	${MKDIR} ${PREFIX}/www/${PORTNAME}/tpl
+	${MKDIR} ${WWWDIR}/report
+	${MKDIR} ${WWWDIR}/tpl
 	cd ${WRKSRC}/tpl && \
 	${FIND} . -type d ! -empty -exec \
-		${MKDIR} "${PREFIX}/www/${PORTNAME}/tpl/{}" \; && \
+		${MKDIR} "${WWWDIR}/tpl/{}" \; && \
 	${FIND} . -type f -exec \
-		${INSTALL_DATA} "{}" "${PREFIX}/www/${PORTNAME}/tpl/{}" \;
+		${INSTALL_DATA} "{}" "${WWWDIR}/tpl/{}" \;
 	cd ${WRKSRC} && \
 	${FIND} -E . -maxdepth 1 -regex '.*\.(cgi|pl)' -exec \
-		${INSTALL_SCRIPT} "{}" "${PREFIX}/www/${PORTNAME}/{}" \; && \
-		${INSTALL_DATA} .htaccess ${PREFIX}/www/${PORTNAME}/
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/www/${PORTNAME}
+		${INSTALL_SCRIPT} "{}" "${WWWDIR}/{}" \; && \
+		${INSTALL_DATA} .htaccess ${WWWDIR}/
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
