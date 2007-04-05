@@ -4,11 +4,9 @@
 #
 # $FreeBSD$
 #
-# $Tecnik: ports/sysutils/apcupsd/Makefile,v 1.9 2006/04/30 11:36:52 itetcu Exp $
 
 PORTNAME=	apcupsd
-PORTVERSION=	3.12.4
-PORTREVISION=	1
+PORTVERSION=	3.14.0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:src_sf/g} \
 		http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/:src_bk \
@@ -39,7 +37,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib" \
 
 MAN8=		apcupsd.8
 
-OPTIONS=	CLIENT_ONLY "Build apcupsd client only (no network server)" off \
+OPTIONS=	CLIENT_ONLY "Build NIS client only (no network server)" off \
 		CGI "Compile with CGI programms to show status" off \
 		USB "Compile with USB Support (READ MANUAL!)" on \
 		SNMP "Compile with SNMP Support (READ MANUAL!)" on
@@ -51,8 +49,6 @@ PORTDOCS=	${PORTNAME}.pdf
 
 .if defined(WITH_CLIENT_ONLY)
 CONFIGURE_ARGS+=	--enable-net
-.else
-CONFIGURE_ARGS+=	--enable-master-slave
 .endif
 
 .if defined(WITH_CGI)
@@ -92,8 +88,6 @@ post-install:
 	done
 	@${ECHO_CMD} "@unexec if [ -d %D/etc/apcupsd ]; then ${ECHO_CMD} \"If you are permanently removing this port, you should do a ``rm -rf ${PREFIX}/etc/apcupsd`` to remove config files left.\" | ${FMT} ; fi" >> ${TMPPLIST}
 #	Install sample startup script
-	${INSTALL_DATA} ${FILESDIR}/apcupsd.conf.net-master.sample ${PREFIX}/etc/apcupsd/
-	${INSTALL_DATA} ${FILESDIR}/apcupsd.conf.net-slave.sample ${PREFIX}/etc/apcupsd/
 #	If there is already a config file it is installed as ...new
 	for na in apcupsd.conf apcupsd.css hosts.conf multimon.conf; do \
 		if [ -f ${PREFIX}/etc/apcupsd/$$na ]; then \
