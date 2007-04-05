@@ -7,25 +7,119 @@
 #
 
 PORTNAME=	opencv
-PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	opencvlibrary
-DISTNAME=	opencv-${PORTVERSION}
 
 MAINTAINER=	msabramo@yahoo.com
 COMMENT=	Open Source Computer Vision Library from Intel
 
+CFLAGS+=	-I${LOCALBASE}/include/OpenEXR
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/OpenEXR
+LDFLAGS+=	-L${LOCALBASE}/lib
 USE_AUTOTOOLS=	libtool:15
-HAS_CONFIGURE=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
-
-LDFLAGS=	${PTHREAD_LIBS}
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
-
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--without-v4l --without-quicktime --without-carbon \
+				--without-1394libs \
+				--without-swig # I don't know anything about swig ...
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
+				png:${PORTSDIR}/graphics/png \
+				tiff:${PORTSDIR}/graphics/tiff \
+				jasper:${PORTSDIR}/graphics/jasper \
+				IlmImf:${PORTSDIR}/graphics/OpenEXR
+USE_GNOME=
 
-.include <bsd.port.mk>
+OPTIONS=	GTK "Enable GTK+-2.0 support" Off \
+			XINE "Enable XINE support" Off \
+			FFMPEG "Enable FFMPEG support" Off \
+			PYTHON "Enable PYTHON support" Off \
+			DEBUG "Build debugging symbols" Off \
+			DEMO "Build demo apps" Off
+# XXX:
+# I cannot disable the following features if they have been installed,
+# thus they should be enable now ...
+#
+#			JPEG "Enable JPEG support" On \
+#			PNG	"Enable PNG support" On \
+#			TIFF "Enable TIFF support" On \
+#			JASPER "Enable JASPER support" Off \
+#			OPENEXR "Enable OpenEXR support" Off \
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_GTK)
+USE_XLIB=	yes
+USE_GNOME=	gtk20
+CONFIGURE_ARGS+=--with-gtk
+.else
+CONFIGURE_ARGS+=--without-gtk
+.endif
+
+#.if !defined(WITHOUT_JPEG)
+#LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
+#.endif
+#
+#.if !defined(WITHOUT_PNG)
+#LIB_DEPENDS+=	png:${PORTSDIR}/graphics/png
+#.endif
+#
+#.if !defined(WITHOUT_TIFF)
+#LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
+#.endif
+#
+#.if defined(WITH_JASPER)
+#LIB_DEPENDS+=	jasper:${PORTSDIR}/graphics/jasper
+#.endif
+#
+#.if defined(WITH_OPENEXR)
+#LIB_DEPENDS+=	libIlmImf:${PORTSDIR}/graphics/OpenEXR
+#CFLAGS+=	-I${LOCALBASE}/include/OpenEXR
+#CPPFLAGS+=	-I${LOCALBASE}/include/OpenEXR
+#.endif
+
+.if defined(WITH_XINE)
+CFLAGS+=	-I${X11BASE}/include
+CPPFLAGS+=	-I${X11BASE}/include
+LDFLAGS+=	-L${X11BASE}/lib
+LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
+CONFIGURE_ARGS+=--with-xine
+.else
+CONFIGURE_ARGS+=--without-xine
+.endif
+
+.if defined(WITH_FFMPEG)
+LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
+CONFIGURE_ARGS+=--with-ffmpeg
+.else
+CONFIGURE_ARGS+=--without-ffmpeg
+.endif
+
+.if defined(WITH_PYTHON)
+USE_PYTHON=	yes
+CONFIGURE_ARGS+=--with-python
+PLIST_SUB+=	PYTHON=""
+.else
+CONFIGURE_ARGS+=--without-python
+PLIST_SUB+=	PYTHON="@comment "
+.endif
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=--enable-debug
+.else
+CONFIGURE_ARGS+=--disable-debug
+.endif
+
+.if defined(WITH_DEMO)
+CONFIGURE_ARGS+=--enable-apps
+PLIST_SUB+=	DEMO=""
+.else
+CONFIGURE_ARGS+=--disable-apps
+PLIST_SUB+=	DEMO="@comment "
+.endif
+
+.include <bsd.port.post.mk>

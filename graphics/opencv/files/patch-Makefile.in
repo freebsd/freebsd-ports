@@ -1,11 +1,11 @@
---- Makefile.in.orig	Thu Dec 29 14:20:44 2005
-+++ Makefile.in	Thu Dec 29 14:21:13 2005
-@@ -194,7 +194,7 @@
- 
- # All the rest of the distributed files
- EXTRA_DIST = THANKS COPYING INSTALL README NEWS ChangeLog opencv.spec opencv.spec.in opencv.pc.in opencv.pc autogen.sh _make utils
+--- Makefile.in.orig	Sun Mar  4 22:34:16 2007
++++ Makefile.in	Sun Mar  4 22:34:35 2007
+@@ -270,7 +270,7 @@
+ #EXTRA_DIST = THANKS TODO \
+ #             opencv.spec opencv.spec.in opencv.pc.in opencv.pc \
+ #             _make apps filters
 -pkgconfigdir = $(libdir)/pkgconfig
-+pkgconfigdir = $(libdir)data/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
  pkgconfig_DATA = opencv.pc
- all: cvconfig.h
- 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+ 
+ # The directory where the include files will be installed
