@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	multitail
-PORTVERSION=	4.3.0
+PORTVERSION=	5.0.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.vanheusden.com/multitail/
 EXTRACT_SUFX=	.tgz
@@ -19,13 +19,6 @@ USE_GMAKE=	yes
 MAN1=		multitail.1
 PLIST_FILES=	bin/multitail etc/multitail.conf.sample
 PORTDOCS=	readme.txt license.txt
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-config.c ${FILESDIR}/extra-patch-cv.c \
-		${FILESDIR}/extra-patch-stripstring.c
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/multitail.conf,${PREFIX}/etc/multitail.conf,' \
@@ -41,4 +34,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/license.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
