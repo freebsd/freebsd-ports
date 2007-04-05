@@ -7,7 +7,7 @@
 
 PORTNAME=	handbrake
 PORTVERSION=	0.6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/ \
 		http://www.mirrors.ausmac.net/ftp/AudioVisual-SW/HandBrake/ \
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam \
 LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \
-		dvdread.3:${PORTSDIR}/multimedia/libdvdread \
+		dvdread.5:${PORTSDIR}/multimedia/libdvdread \
 		faac.0:${PORTSDIR}/audio/faac \
 		mp3lame.0:${PORTSDIR}/audio/lame \
 		mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2 \

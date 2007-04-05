@@ -7,7 +7,7 @@
 
 PORTNAME=	qvamps
 PORTVERSION=	0.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	vamps
@@ -17,7 +17,7 @@ COMMENT=	Dvd rip gui written in qt that uses vamps and dvdauthor
 
 BUILD_DEPENDS=	puic:${PORTSDIR}/x11-toolkits/p5-qt \
 		swig1.3:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread
 RUN_DEPENDS=	\
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \

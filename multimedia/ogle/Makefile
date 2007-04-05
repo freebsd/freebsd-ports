@@ -7,7 +7,7 @@
 
 PORTNAME=	ogle
 PORTVERSION=	0.9.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 
@@ -15,7 +15,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Open DVD player that supports DVD menus
 
 LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
-		dvdread.3:${PORTSDIR}/multimedia/libdvdread \
+		dvdread.5:${PORTSDIR}/multimedia/libdvdread \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		mad.2:${PORTSDIR}/audio/libmad \
 		xml2.5:${PORTSDIR}/textproc/libxml2

@@ -7,7 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.0.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dl.fkb.wormulon.net/transcode/ \
 		http://dl.kel.wormulon.net/transcode/ \
@@ -17,7 +17,7 @@ MASTER_SITES=	http://dl.fkb.wormulon.net/transcode/ \
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A text-console utility for video stream processing
 
-LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread \
+LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 BUILD_DEPENDS=	${LOCALBASE}/bin/ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
