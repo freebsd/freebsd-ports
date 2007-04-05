@@ -3,6 +3,7 @@ include/spiff/ProjectOpus/ProjectOpusPlaylistExtensionReader.h
 include/spiff/ProjectOpus/ProjectOpusPlaylistExtensionWriter.h
 include/spiff/Spiff.h
 include/spiff/SpiffData.h
+include/spiff/SpiffDataWriter.h
 include/spiff/SpiffDefines.h
 include/spiff/SpiffExtension.h
 include/spiff/SpiffExtensionReader.h
@@ -19,6 +20,7 @@ include/spiff/SpiffStack.h
 include/spiff/SpiffToolbox.h
 include/spiff/SpiffTrack.h
 include/spiff/SpiffTrackWriter.h
+include/spiff/SpiffVersion.h
 include/spiff/SpiffWriter.h
 include/spiff/SpiffXmlFormatter.h
 include/spiff/spiff_c.h
