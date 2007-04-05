@@ -7,13 +7,14 @@
 
 PORTNAME=	vobcopy
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lpn.rnbhq.org/download/
 
 MAINTAINER=	josh@tcbug.org
 COMMENT=	Decrypts and copies DVD .vob files
 
-LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread
 
 USE_BZIP2=	yes
 USE_GETOPT_LONG=	yes

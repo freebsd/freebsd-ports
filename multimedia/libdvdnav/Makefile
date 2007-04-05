@@ -7,7 +7,7 @@
 
 PORTNAME=	libdvdnav
 PORTVERSION=	0.1.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dvd
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	dvd
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	The library for the xine-dvdnav plugin
 
-LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread
 
 CONFIGURE_ENV=	THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		THREAD_LIBS="${PTHREAD_LIBS}"

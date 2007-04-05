@@ -7,13 +7,14 @@
 
 PORTNAME=	streamdvd
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.badabum.de/down/
 
 MAINTAINER=	serge.gagnon@b2b2c.ca
 COMMENT=	A fast tool to backup Video DVDs 'on the fly'
 
-LIB_DEPENDS=	dvdread:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread
 
 WRKSRC=		${WRKDIR}/StreamDVD-${PORTVERSION}
 

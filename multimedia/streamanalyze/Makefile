@@ -7,13 +7,14 @@
 
 PORTNAME=	streamanalyze
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.badabum.de/down/
 
 MAINTAINER=	h.eichmann@gmx.de
 COMMENT=	Shrink-factor calculator for StreamDVD
 
-LIB_DEPENDS=	dvdread:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread
 
 WRKSRC=		${WRKDIR}/StreamAnalyze
 
