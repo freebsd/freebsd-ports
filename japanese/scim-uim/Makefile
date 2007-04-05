@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-uim
 PORTVERSION=	0.1.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://freedesktop.org/~suzhe/sources/
@@ -19,8 +19,6 @@ COMMENT=	SCIM IMEngine module using UIM input method library
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 LIB_DEPENDS=	uim:${PORTSDIR}/textproc/uim
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		Does not compile
 
 USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	lthack
@@ -34,12 +32,13 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 
 .include <bsd.port.pre.mk>
 
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-aa ${FILESDIR}/extra-patch-ab
 .if ${OSVERSION} < 500035
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include -I${LOCALBASE}/include/stlport" \
 		LDFLAGS="-L${LOCALBASE}/lib -lstlport_gcc -lintl ${PTHREAD_LIBS}"
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-4-stable
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-4-stable
 .else
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include -D__STDC_ISO_10646__" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"

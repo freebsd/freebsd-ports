@@ -1,0 +1,42 @@
+--- src/scim_uim_imengine.cpp.orig	Mon Aug  8 12:08:34 2005
++++ src/scim_uim_imengine.cpp	Mon Mar 26 17:12:57 2007
+@@ -823,39 +823,6 @@
+     }
+ }
+ 
+-void
+-UIMInstance::uim_surrounding_text_request_cb (void *ptr)
+-{
+-    UIMInstance *this_ptr = static_cast <UIMInstance *> (ptr);
+-    if (this_ptr) {
+-
+-        SCIM_DEBUG_IMENGINE(2) << "uim_surrounding_text_request_cb.\n";
+-
+-        WideString wstr;
+-        int cursor;
+-
+-        if (this_ptr->get_surrounding_text (wstr, cursor)) {
+-            String str = utf8_wcstombs (wstr);
+-            uim_set_surrounding_text (this_ptr->m_uc, str.c_str (), cursor, wstr.length ());
+-        }
+-    }
+-}
+-
+-int
+-UIMInstance::uim_surrounding_text_delete_cb  (void *ptr, int offset, int len)
+-{
+-    UIMInstance *this_ptr = static_cast <UIMInstance *> (ptr);
+-    int ret = -1;
+-
+-    if (this_ptr) {
+-        SCIM_DEBUG_IMENGINE(2) << "uim_surrounding_text_delete_cb.\n";
+-        
+-        if (this_ptr->delete_surrounding_text (offset, len))
+-            ret = 0;
+-    }
+-
+-    return ret;
+-}
+ /*
+ vi:ts=4:nowrap:ai:expandtab
+ */
