@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Data/GUID.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/GUID/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/GUID
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrmtry %%SITE_PERL%%/Data
