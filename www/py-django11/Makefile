@@ -5,20 +5,22 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	django
-PORTVERSION?=	0.96
+PORTNAME=	django
+PORTVERSION=	0.96
 CATEGORIES=	www python
-MASTER_SITES?=	http://media.djangoproject.com/releases/${PORTVERSION}/
+MASTER_SITES=	http://media.djangoproject.com/releases/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Django-${PORTVERSION}
 DIST_SUBDIR=	python
 
-MAINTAINER?=	python@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	High-level Python Web framework
 
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+
+CONFLICTS=	py2[0-9]-django-devel-[0-9]*
 
 DOCSDIR=	${PREFIX}/share/doc/py-django
 
