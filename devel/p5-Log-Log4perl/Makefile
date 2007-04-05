@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Log4perl
-PORTVERSION=	1.09
+PORTVERSION=	1.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Log
@@ -15,9 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Log4j implementation for Perl
 
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
-		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS+=	p5-Storable>0:${PORTSDIR}/devel/p5-Storable \
+		p5-PathTools>0:${PORTSDIR}/devel/p5-PathTools
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
