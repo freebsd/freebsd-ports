@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	redet
-PORTVERSION=	8.20
+PORTVERSION=	8.21
 CATEGORIES=	textproc tk84
-MASTER_SITES=	http://www.billposer.org/Software/Downloads/ CSME
+MASTER_SITES=	http://www.billposer.org/Software/Downloads/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Visual regexp development and execution
