@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Catalyst/Helper/View/Jemplate.pm
+%%SITE_PERL%%/Catalyst/View/Jemplate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/Jemplate/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/Jemplate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper/View
+@dirrmtry %%SITE_PERL%%/Catalyst/Helper
+@dirrmtry %%SITE_PERL%%/Catalyst/View
+@dirrmtry %%SITE_PERL%%/Catalyst

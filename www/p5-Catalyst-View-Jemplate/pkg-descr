@@ -1,0 +1,4 @@
+Catalyst::View::Jemplate is a Catalyst View plugin to automatically
+compile TT files into JavaScript, using ingy's Jemplate.
+
+WWW: http://search.cpan.org/dist/Catalyst-View-Jemplate/
