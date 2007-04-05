@@ -7,6 +7,4 @@ MAN=	ffs2recov.8
 DPADD=	${LIBUFS}
 LDADD=	-lufs
 
-WARNS?= 3
-
 .include <bsd.prog.mk>
