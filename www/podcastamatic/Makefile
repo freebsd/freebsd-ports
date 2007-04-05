@@ -9,8 +9,8 @@ PORTNAME=	podcastamatic
 PORTVERSION=	1.3
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://bradley.chicago.il.us/projects/podcastamatic/ \
-		http://larseggert.de/distfiles/
+MASTER_SITES=	http://kenwardtown.com/projects/podcastamatic/ \
+		http://people.nokia.net/~lars/distfiles/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
 
 MAINTAINER=	lars.eggert@gmx.net
@@ -18,8 +18,6 @@ COMMENT=	Automates creation of webpage and RSS feed for a podcast
 
 RUN_DEPENDS=	${SITE_PERL}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
 		${SITE_PERL}/MP4/Info.pm:${PORTSDIR}/multimedia/p5-MP4-Info
-
-BROKEN=		Checksum mismatch
 
 USE_ZIP=	yes
 USE_PERL5_RUN=	yes
