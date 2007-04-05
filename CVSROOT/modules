@@ -8787,6 +8787,7 @@ p5-Catalyst-View-GraphViz	ports/www/p5-Catalyst-View-GraphViz
 p5-Catalyst-View-HTML-Template	ports/www/p5-Catalyst-View-HTML-Template
 p5-Catalyst-View-HTML-Template-Compiled	ports/www/p5-Catalyst-View-HTML-Template-Compiled
 p5-Catalyst-View-JSON	ports/www/p5-Catalyst-View-JSON
+p5-Catalyst-View-Jemplate	ports/www/p5-Catalyst-View-Jemplate
 p5-Catalyst-View-Mason	ports/www/p5-Catalyst-View-Mason
 p5-Catalyst-View-TT	ports/www/p5-Catalyst-View-TT
 p5-Catalyst-View-TT-ControllerLocal	ports/www/p5-Catalyst-View-TT-ControllerLocal
