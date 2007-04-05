@@ -3,16 +3,12 @@ sbin/apcaccess
 sbin/apctest
 sbin/smtp
 %%POWERFL%%sbin/powerflute
-etc/apcupsd/apcupsd.conf.net-master.sample
-etc/apcupsd/apcupsd.conf.net-slave.sample
 @unexec if cmp -s %D/etc/apcupsd/apcupsd.conf.sample %D/etc/apcupsd/apcupsd.conf; then rm -f %D/etc/apcupsd/apcupsd.conf; fi
 etc/apcupsd/apcupsd.conf.sample
 etc/apcupsd/apccontrol
 etc/apcupsd/changeme
 etc/apcupsd/commfailure
 etc/apcupsd/commok
-etc/apcupsd/masterconnect
-etc/apcupsd/mastertimeout
 etc/apcupsd/onbattery
 etc/apcupsd/offbattery
 %%CGI%%@unexec if cmp -s %D/etc/apcupsd/apcupsd.css.sample %D/etc/apcupsd/apcupsd.css; then rm -f %D/etc/apcupsd/apcupsd.css; fi
