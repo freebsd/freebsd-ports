@@ -634,6 +634,7 @@
     SUBDIR += libvanessa_socket
     SUBDIR += libvc
     SUBDIR += libvolume_id
+    SUBDIR += libwfut
     SUBDIR += libxalloc
     SUBDIR += libytnef
     SUBDIR += libzrtpcpp
