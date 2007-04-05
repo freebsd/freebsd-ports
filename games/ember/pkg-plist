@@ -6,7 +6,6 @@ etc/ember/plugins.cfg
 etc/ember/resources.cfg
 etc/ember/terrain.cfg
 share/applications/ember.desktop
-share/ember/WFUT.jar
 share/ember/carpenter/blockspec/adapters.blockspec.xml
 share/ember/carpenter/blockspec/fences.blockspec.xml
 share/ember/carpenter/blockspec/floors.blockspec.xml
@@ -469,13 +468,14 @@ share/ember/media/user/materials/textures/water.png
 share/ember/media/user/modeldefinitions/buildingelements.modeldef.xml
 share/ember/media/user/modeldefinitions/buildings.modeldef
 share/ember/media/user/modeldefinitions/characters.modeldef.xml
+share/ember/media/user/modeldefinitions/common.areadef.xml
 share/ember/media/user/modeldefinitions/creatures.modeldef.xml
-share/ember/media/user/modeldefinitions/creatures.modeldef.xml~
 share/ember/media/user/modeldefinitions/edibles.modeldef
 share/ember/media/user/modeldefinitions/environment.modeldef.xml
 share/ember/media/user/modeldefinitions/furniture.modeldef
 share/ember/media/user/modeldefinitions/items.modeldef.xml
 share/ember/media/user/modeldefinitions/male.modeldef
+share/ember/media/user/modeldefinitions/modeldefinition.xsd
 share/ember/media/user/modeldefinitions/modelmappings.modelmap.xml
 share/ember/media/user/modeldefinitions/outdoor_structures.modeldef
 share/ember/media/user/modeldefinitions/placeholder.modeldef.xml
@@ -501,6 +501,7 @@ share/ember/media/user/models/fireball.mesh
 share/ember/media/user/models/fish.mesh
 share/ember/media/user/models/fish.skeleton
 share/ember/media/user/models/placeholder.mesh
+share/ember/media/user/models/test.mesh
 share/ember/media/user/packs/Caelum.zip
 share/ember/media/user/particle/smoke.particle
 share/ember/media/user/particle/sun.particle

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ember
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://amber.worldforge.org/ember/releases/stable/
@@ -23,7 +23,8 @@ LIB_DEPENDS=	sigc-2.0:${PORTSDIR}/devel/libsigc++20 \
 		varconf-1.0.6:${PORTSDIR}/devel/varconf \
 		mercator-0.2.4:${PORTSDIR}/devel/mercator \
 		openal.0:${PORTSDIR}/audio/openal \
-		alut.1:${PORTSDIR}/audio/freealut
+		alut.1:${PORTSDIR}/audio/freealut \
+		wfut-0.1.0:${PORTSDIR}/devel/libwfut
 
 CONFIGURE_ARGS=	--with-png-prefix=${LOCALBASE} --enable-binreloc --program-transform-name= --disable-cppunit --enable-debug
 USE_SDL=	sdl
