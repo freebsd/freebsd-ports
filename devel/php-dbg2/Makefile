@@ -12,16 +12,14 @@ MASTER_SITES=	http://dd.cron.ru/dbg/dnld/
 PKGNAMEPREFIX=	php-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	josh@tcbug.org
 COMMENT=	Debugger for PHP4
-
-BROKEN=		Does not compile
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2007-04-10
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_PHP=	yes
 USE_PHPIZE=	yes
+DEFAULT_PHP_VER=4
+IGNORE_WITH_PHP=5
 CONFIGURE_ARGS=	--enable-dbg=shared --with-dbg-profiler
 #CONFIGURE_ENV=	with_dbg_trace=1
 PKGMESSAGE=	${WRKDIR}/pkg-message
