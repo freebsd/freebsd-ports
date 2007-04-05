@@ -44,6 +44,9 @@ OPTIONS=	PTHREADS "Enable pthreads support (may break some apps)" off \
 
 .include <bsd.port.pre.mk>
 
+# PORTEPOCH hack
+_SUF2=	,${PORTEPOCH}
+
 PKGNAMESUFFIX=	#empty
 CFLAGS+=	${PTHREAD_CFLAGS}	# Keep this, else ruby will fail to load
 LDFLAGS+=	${PTHREAD_LIBS}		# libraries dependent op libpthread.
