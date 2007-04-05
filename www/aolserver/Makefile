@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	aolserver
 DIST_SUBDIR=	aolserver
 DISTVERSIONSUFFIX=	-src
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	A multithreaded web server with embedded TCL interpreter
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
@@ -37,14 +37,10 @@ SUB_VARS=	AOLSERVERUSER=${AOLSERVERUSER} \
 SUB_LIST+=	${SUB_VARS} AOLSERVERBASE=${AOLSERVERBASE}
 PLIST_SUB+=	${SUB_VARS} AOLSERVERBASE=${AOLSERVERBASE:S/${TARGETDIR}\///}
 
-USE_TCL_VER?=	84
+USE_TCL=		84+
+USE_TCL_THREADS=	yes
+
 ONLY_FOR_ARCHS=	i386 amd64
-
-.if ${USE_TCL_VER} != 84 && ${USE_TCL_VER} != 85
-IGNORE=		supported values for USE_TCL_VER are only 84 and 85
-.endif
-
-LIB_DEPENDS+=	tcl${USE_TCL_VER}-threads:${PORTSDIR}/lang/tcl${USE_TCL_VER}-thread
 
 OPTIONS=	HTMLDOCS "Install HTML documentation" off \
 		TESTS "Install tests in examples directory" off
@@ -55,9 +51,9 @@ OPTIONS=	HTMLDOCS "Install HTML documentation" off \
 BROKEN=		does not compile on ia64
 .endif
 
-CONFIGURE_ENV+=		TCLSH=${LOCALBASE}/bin/tclsh${USE_TCL_VER:S/8/8./}-threads
+CONFIGURE_ENV+=		TCLSH=${TCLSH}
 CONFIGURE_ARGS+=	--prefix=${AOLSERVERBASE} \
-			--with-tcl=${LOCALBASE}/lib/tcl${USE_TCL_VER:S/8/8./}-threads
+			--with-tcl=${TCL_LIBDIR}
 
 .if !defined(NO_INSTALL_MANPAGES)
 INSTALL_TARGET=	install install-man

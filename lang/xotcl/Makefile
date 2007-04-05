@@ -11,16 +11,12 @@ PORTREVISION=	4
 CATEGORIES?=	lang tcl84
 MASTER_SITES=	http://media.wu-wien.ac.at/download/
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Object-oriented scripting language based on Tcl
 
-USE_TCL_VER?=	84
+USE_TCL=		84+
+USE_TCL_THREADS=	yes
 
-.if ${USE_TCL_VER} != 84 && ${USE_TCL_VER} != 85
-IGNORE=	supported values for USE_TCL_VER are only 84 and 85
-.endif
-
-LIB_DEPENDS+=	tcl${USE_TCL_VER}-threads:${PORTSDIR}/lang/tcl${USE_TCL_VER}-thread
 INSTALL_TARGET=	install
 ALL_TARGET=	all test-nohttp
 USE_GMAKE=	yes
@@ -70,12 +66,12 @@ MAN1=			xotclsh.1
 CONFIGURE_ARGS+=	--exec-prefix=${PREFIX} \
 			--libdir=${PREFIX}/lib \
 			--enable-threads \
-			--with-tcl=${LOCALBASE}/lib/tcl${USE_TCL_VER:S/8/8./}-threads \
-			--with-tclinclude=${LOCALBASE}/include/tcl${USE_TCL_VER:S/8/8./}/generic/ \
+			--with-tcl=${TCL_LIBDIR} \
+			--with-tclinclude=${TCL_INCLUDEDIR}/generic/ \
 			--with-xotclsh
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$${TCL_MINOR_VERSION}$${TCL_DBGX}|$${TCL_MINOR_VERSION}$${TCL_DBGX}-threads|g' \
+	@${REINPLACE_CMD} -e 's|TCLSH_PROG=".*"|TCLSH_PROG="${TCLSH}"|g' \
 		${WRKSRC}/configure
 
 .if defined(AOLSERVER_XOTCL) # Install for aolserver module
