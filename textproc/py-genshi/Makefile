@@ -14,7 +14,7 @@ MASTER_SITES=	http://ftp.edgewall.com/pub/${PORTNAME:L}/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME:L}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	nivit@email.it
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python toolkit for stream-based generation of output for the web
 
 BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
