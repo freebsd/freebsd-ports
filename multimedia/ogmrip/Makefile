@@ -7,6 +7,7 @@
 
 PORTNAME=	ogmrip
 DISTVERSION=	0.10.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +24,7 @@ RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		ogmmerge:${PORTSDIR}/multimedia/ogmtools \
 		lame:${PORTSDIR}/audio/lame
-LIB_DEPENDS=	dvdread:${PORTSDIR}/multimedia/libdvdread \
+LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread \
 		x264:${PORTSDIR}/multimedia/x264
 
 USE_LDCONFIG=	yes

@@ -10,7 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.8.5
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${PORTVERSION}/ \
@@ -218,7 +218,7 @@ CONFIGURE_ARGS+=--disable-dvdnav
 .endif
 
 .if defined(WITH_DVDREAD) && !defined(WITHOUT_DVDREAD)
-LIB_DEPENDS+=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS+=	dvdread.5:${PORTSDIR}/multimedia/libdvdread
 CONFIGURE_ARGS+=--enable-dvdread
 .else
 CONFIGURE_ARGS+=--disable-dvdread

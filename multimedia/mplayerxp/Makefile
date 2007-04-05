@@ -7,6 +7,7 @@
 
 PORTNAME=	mplayerxp
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -128,7 +129,7 @@ CONFIGURE_ARGS+=	--disable-cdparanoia
 .endif
 # dvd support
 .if defined(WITH_DVD)
-LIB_DEPENDS+=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS+=	dvdread.5:${PORTSDIR}/multimedia/libdvdread
 
 CONFIGURE_ARGS+=	--with-csslibdir=${LOCALBASE}/lib
 PLIST_SUB+=	DVD=''

@@ -7,6 +7,7 @@
 
 PORTNAME=	lxdvdrip
 PORTVERSION=	1.62
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.berlios.de/lxdvdrip/ \
 		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
@@ -16,7 +17,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Command Line Tool to make a copy from a Video DVD
 
 LIB_DEPENDS=	dvdnav.4:${PORTSDIR}/multimedia/libdvdnav \
-		dvdread.3:${PORTSDIR}/multimedia/libdvdread
+		dvdread.5:${PORTSDIR}/multimedia/libdvdread
 RUN_DEPENDS=	buffer:${PORTSDIR}/misc/buffer \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \

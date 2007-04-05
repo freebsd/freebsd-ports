@@ -6,6 +6,7 @@
 
 PORTNAME=	k9copy
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -13,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	triosoft@triosoft.com.ua
 COMMENT=	A DVD-9 to DVD-5 shrinking application for KDE
 
-LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread
 RUN_DEPENDS=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		vamps:${PORTSDIR}/multimedia/vamps
