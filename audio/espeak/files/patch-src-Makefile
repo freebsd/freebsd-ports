@@ -1,5 +1,5 @@
---- src/Makefile	Fri Jan 26 10:20:06 2007
-+++ src/Makefile.port	Fri Jan 26 23:38:04 2007
+--- src/Makefile	Wed Apr  4 14:39:47 2007
++++ src/Makefile.port	Thu Apr  5 13:09:53 2007
 @@ -1,7 +1,7 @@
 -BINDIR=/usr/bin
 -INCDIR=/usr/include/espeak
@@ -10,30 +10,31 @@
 +LIBDIR=%%PREFIX%%/lib
 +DATADIR=%%DATADIR%%/espeak-data
  
- RELEASE = 1.19
+ RELEASE = 1.22
  BIN_NAME = speak
 @@ -28,17 +28,17 @@
  
  SRCS1=$(speak_SOURCES)
  OBJS1=$(patsubst %.cpp,%.o,$(SRCS1))
 -LIBS1=-lstdc++ -lportaudio -lpthread
-+LIBS1=-lstdc++ -L%%LOCALBASE%%/lib -lportaudio -lpthread
++LIBS1=-lstdc++ -L%%LOCALBASE%%/lib -lportaudio $(PTHREAD_LIBS)
  
  SRCS2=$(libespeak_SOURCES)
  OBJS2=$(patsubst %.cpp,x_%.o,$(SRCS2))
 -LIBS2=-lstdc++ -lportaudio -lpthread
-+LIBS2=-lstdc++ -L%%LOCALBASE%%/lib -lportaudio -lpthread
++LIBS2=-lstdc++ -L%%LOCALBASE%%/lib -lportaudio $(PTHREAD_LIBS)
  
  SRCS3 = espeak.cpp
  OBJS3=$(patsubst %.cpp,%.o,$(SRCS3))
- LIBS3=-lstdc++ ./libespeak.so
+-LIBS3=-lstdc++ ./libespeak.so
++LIBS3=-lstdc++ ./libespeak.so $(PTHREAD_LIBS)
  
 -CXXFLAGS=-O2
 +#CXXFLAGS=-O2
  ifeq ($(shell uname -m), ppc)
  	CXXFLAGS += -D ARCH_BIG
  endif
-@@ -48,22 +48,22 @@
+@@ -48,7 +48,7 @@
  	mv $(LIB_NAME) $(LIB_NAME).$(LIBTAG)
  
  .cpp.o:
@@ -41,13 +42,8 @@
 +	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(PTHREAD_CFLAGS) -D PATH_ESPEAK_DATA=\"$(DATADIR)\" -Wall -pedantic -I. -c -fno-exceptions $<
  
  $(BIN_NAME): $(OBJS1)
--	$(CXX) -o $@ $(OBJS1) $(LIBS1)
-+	$(CXX) $(PTHREAD_LIB) -o $@ $(OBJS1) $(LIBS1)
- 
- $(BIN2_NAME): $(OBJS3) $(LIB_NAME)
--	$(CXX) -o $@ $(OBJS3) $(LIBS3)
-+	$(CXX) $(PTHREAD_LIBS) -o $@ $(OBJS3) $(LIBS3)
- 
+ 	$(CXX) -o $@ $(OBJS1) $(LIBS1)
+@@ -59,7 +59,7 @@
  
  
  x_%.o: %.cpp
@@ -56,8 +52,19 @@
  	-I. -D LIBRARY -c -fno-exceptions $<  -o x_$*.o
  
  $(LIB_NAME): $(OBJS2)
--	$(CXX) -shared -Wl,-soname,$(LIB_NAME).$(LIB_VERSION) -o $@ $(OBJS2) $(LIBS2)
-+	$(CXX) $(PTHREAD_LIBS) -shared -Wl,-soname,$(LIB_NAME).$(LIB_VERSION) -o $@ $(OBJS2) $(LIBS2)
+@@ -75,7 +75,7 @@
  
- clean:
- 	rm -f *.o *~
+ install: all
+ 	# Create directories
+-	rm -r $(DESTDIR)$(DATADIR)
++	#rm -r $(DESTDIR)$(DATADIR)
+ 	$(MKDIR) $(DESTDIR)$(BINDIR)
+ 	$(MKDIR) $(DESTDIR)$(LIBDIR)
+ 	$(MKDIR) $(DESTDIR)$(INCDIR)
+@@ -89,5 +89,5 @@
+ 	# Install development headers
+ 	$(INSTALL) -pm 644 speak_lib.h $(DESTDIR)$(INCDIR)
+ 	# Install data files
+-	cp -prf ../espeak-data/* $(DESTDIR)$(DATADIR)
++	cp -pRf ../espeak-data/* $(DESTDIR)$(DATADIR)
+ 

@@ -1,3 +1,6 @@
+eSpeak is a compact open source software speech synthesizer for English
+and other languages. 
+
 eSpeak produces good quality English speech. It uses a different
 synthesis method from other open source TTS engines, and sounds quite
 different. It's perhaps not as natural or "smooth", but I find the
