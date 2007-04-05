@@ -7,6 +7,7 @@
 
 PORTNAME=	vstrip
 DISTVERSION=	0.8f
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://files.digital-digest.com/downloads/files/encode/
 DISTNAME=	vStrip_${DISTVERSION:C/\.//g}
@@ -14,7 +15,7 @@ DISTNAME=	vStrip_${DISTVERSION:C/\.//g}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A VOB de-multiplexing tool, splitter and VOB/IFO files processor
 
-LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread
 
 USE_ZIP=	yes
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"

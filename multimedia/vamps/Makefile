@@ -7,6 +7,7 @@
 
 PORTNAME=	vamps
 PORTVERSION=	0.99.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	vamps
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	vamps
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	High performance tool to transcode DVD videos to a smaller size
 
-LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread
 
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	dvdauthor
 PORTVERSION=	0.6.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,7 @@ MAINTAINER=	pb@FreeBSD.org
 COMMENT=	Makes a DVD file structure from one or more MPEG2 streams
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
-LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread \
+LIB_DEPENDS=	dvdread.5:${PORTSDIR}/multimedia/libdvdread \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_GETOPT_LONG=yes
