@@ -173,6 +173,7 @@
     SUBDIR += php5-snmp
     SUBDIR += phpip
     SUBDIR += pixilate
+    SUBDIR += pktstat
     SUBDIR += pmacct
     SUBDIR += portmon
     SUBDIR += py-flowtools
