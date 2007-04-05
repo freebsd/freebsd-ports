@@ -36,11 +36,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_SITELIBDIR}
 .endfor
 
-post-install: doc-install
-
-.include <bsd.port.mk>
-
-doc-install:
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
@@ -50,3 +46,5 @@ doc-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
+
+.include <bsd.port.mk>

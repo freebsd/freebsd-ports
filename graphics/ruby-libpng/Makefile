@@ -36,11 +36,7 @@ EXAMPLES_EN=	es.png		png.rb		pngtest.rb	pngtest.sh	\
 		sample/4.png	sample/5.png	sample/6.png	sample/7.png	\
 		sample/8.png	sample/9.png	sample/pngcat.rb
 
-post-install: doc-install
-
-.include <bsd.port.mk>
-
-doc-install:
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES_EN}
@@ -51,3 +47,5 @@ doc-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
+
+.include <bsd.port.mk>

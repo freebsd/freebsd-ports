@@ -34,11 +34,7 @@ DOCS_JA=	README.ja
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} configure.rb ${CONFIGURE_ARGS}
 
-post-install: doc-install
-
-.include <bsd.port.mk>
-
-doc-install:
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${RUBY_MODEXAMPLESDIR}/
@@ -50,3 +46,6 @@ doc-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
+
+.include <bsd.port.mk>
+

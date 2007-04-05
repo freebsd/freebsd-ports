@@ -33,11 +33,7 @@ DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/image_size.rb ${RUBY_SITELIBDIR}/
 
-post-install: doc-install
-
-.include <bsd.port.mk>
-
-doc-install:
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
@@ -47,3 +43,5 @@ doc-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
+
+.include <bsd.port.mk>

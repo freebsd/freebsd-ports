@@ -41,11 +41,7 @@ EXAMPLES_EN=	hello.rb	pdfclock.rb	pdfgraph.rb \
 		pdfimage.rb	text2pdf.rb
 EXAMPLES_JA=	jtext2pdf.rb
 
-post-install: doc-install
-
-.include <bsd.port.mk>
-
-doc-install:
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}/ja
 .for f in ${EXAMPLES_EN}
@@ -62,3 +58,5 @@ doc-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
+
+.include <bsd.port.mk>
