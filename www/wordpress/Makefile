@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.stu.edu.tw/pub/wordpress/ \
