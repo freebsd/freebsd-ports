@@ -1,0 +1,12 @@
+--- Makefile.in.orig	Thu Apr  5 13:12:00 2007
++++ Makefile.in	Thu Apr  5 13:12:25 2007
+@@ -214,6 +214,9 @@
+ 185: cpruby
+ 	patch -d $(RUBYDIR) -p0 < $(srcdir)/ruby185.patch
+ 
++186: cpruby
++	patch -d $(RUBYDIR) -p0 < $(srcdir)/ruby186.patch
++
+ 18: 185
+ 
+ # backup file suffix
