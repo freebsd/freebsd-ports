@@ -32,54 +32,54 @@ libexec/lightsquid/ip2name.squidlist2
 %%DATADIR%%/lang/ru.lng
 %%DATADIR%%/lang/sp.lng
 %%DATADIR%%/lang/ua.lng
-www/lightsquid/tpl/base/bigfiles.html
-www/lightsquid/tpl/base/day_detail.html
-www/lightsquid/tpl/base/graph.html
-www/lightsquid/tpl/base/group_detail.html
-www/lightsquid/tpl/base/index.html
-www/lightsquid/tpl/base/month_detail.html
-www/lightsquid/tpl/base/topsites.html
-www/lightsquid/tpl/base/user_detail.html
-www/lightsquid/tpl/base/user_month.html
-www/lightsquid/tpl/base/user_time.html
-www/lightsquid/tpl/base/whousesite.html
-www/lightsquid/tpl/base/images/datetime.png
-www/lightsquid/tpl/base/images/flag_red.png
-www/lightsquid/tpl/base/images/graph.png
-www/lightsquid/tpl/base/images/printer.png
-www/lightsquid/tpl/text/bigfiles.html
-www/lightsquid/tpl/text/user_detail.html
-www/lightsquid/tpl/text/index.html
-www/lightsquid/tpl/text/group_detail.html
-www/lightsquid/tpl/text/user_month.html
-www/lightsquid/tpl/text/whousesite.html
-www/lightsquid/tpl/text/topsites.html
-www/lightsquid/tpl/text/month_detail.html
-www/lightsquid/tpl/text/day_detail.html
-www/lightsquid/bigfiles.cgi
-www/lightsquid/day_detail.cgi
-www/lightsquid/fixreport.pl
-www/lightsquid/get.cgi
-www/lightsquid/graph.cgi
-www/lightsquid/group_detail.cgi
-www/lightsquid/index.cgi
-www/lightsquid/month_detail.cgi
-www/lightsquid/topsites.cgi
-www/lightsquid/user_detail.cgi
-www/lightsquid/user_month.cgi
-www/lightsquid/user_time.cgi
-www/lightsquid/whousesite.cgi
-www/lightsquid/.htaccess
-www/lightsquid/check-setup.pl
-www/lightsquid/common.pl
-www/lightsquid/lightparser.pl
+%%WWWDIR%%/tpl/base/bigfiles.html
+%%WWWDIR%%/tpl/base/day_detail.html
+%%WWWDIR%%/tpl/base/graph.html
+%%WWWDIR%%/tpl/base/group_detail.html
+%%WWWDIR%%/tpl/base/index.html
+%%WWWDIR%%/tpl/base/month_detail.html
+%%WWWDIR%%/tpl/base/topsites.html
+%%WWWDIR%%/tpl/base/user_detail.html
+%%WWWDIR%%/tpl/base/user_month.html
+%%WWWDIR%%/tpl/base/user_time.html
+%%WWWDIR%%/tpl/base/whousesite.html
+%%WWWDIR%%/tpl/base/images/datetime.png
+%%WWWDIR%%/tpl/base/images/flag_red.png
+%%WWWDIR%%/tpl/base/images/graph.png
+%%WWWDIR%%/tpl/base/images/printer.png
+%%WWWDIR%%/tpl/text/bigfiles.html
+%%WWWDIR%%/tpl/text/user_detail.html
+%%WWWDIR%%/tpl/text/index.html
+%%WWWDIR%%/tpl/text/group_detail.html
+%%WWWDIR%%/tpl/text/user_month.html
+%%WWWDIR%%/tpl/text/whousesite.html
+%%WWWDIR%%/tpl/text/topsites.html
+%%WWWDIR%%/tpl/text/month_detail.html
+%%WWWDIR%%/tpl/text/day_detail.html
+%%WWWDIR%%/bigfiles.cgi
+%%WWWDIR%%/day_detail.cgi
+%%WWWDIR%%/fixreport.pl
+%%WWWDIR%%/get.cgi
+%%WWWDIR%%/graph.cgi
+%%WWWDIR%%/group_detail.cgi
+%%WWWDIR%%/index.cgi
+%%WWWDIR%%/month_detail.cgi
+%%WWWDIR%%/topsites.cgi
+%%WWWDIR%%/user_detail.cgi
+%%WWWDIR%%/user_month.cgi
+%%WWWDIR%%/user_time.cgi
+%%WWWDIR%%/whousesite.cgi
+%%WWWDIR%%/.htaccess
+%%WWWDIR%%/check-setup.pl
+%%WWWDIR%%/common.pl
+%%WWWDIR%%/lightparser.pl
 @dirrmtry etc/lightsquid
 @dirrmtry libexec/lightsquid
 @dirrmtry %%DATADIR%%/lang
 @dirrmtry %%DATADIR%%
-@dirrmtry www/lightsquid/tpl/base/images
-@dirrmtry www/lightsquid/tpl/base
-@dirrmtry www/lightsquid/tpl/text
-@dirrmtry www/lightsquid/tpl
-@dirrmtry www/lightsquid/report
-@dirrmtry www/lightsquid
+@dirrmtry %%WWWDIR%%/tpl/base/images
+@dirrmtry %%WWWDIR%%/tpl/base
+@dirrmtry %%WWWDIR%%/tpl/text
+@dirrmtry %%WWWDIR%%/tpl
+@dirrmtry %%WWWDIR%%/report
+@dirrmtry %%WWWDIR%%
