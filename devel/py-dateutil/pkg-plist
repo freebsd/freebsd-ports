@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/dateutil/__init__.py
 %%PYTHON_SITELIBDIR%%/dateutil/__init__.pyc
 %%PYTHON_SITELIBDIR%%/dateutil/__init__.pyo
@@ -22,7 +23,7 @@
 %%PYTHON_SITELIBDIR%%/dateutil/zoneinfo/__init__.py
 %%PYTHON_SITELIBDIR%%/dateutil/zoneinfo/__init__.pyc
 %%PYTHON_SITELIBDIR%%/dateutil/zoneinfo/__init__.pyo
-%%PYTHON_SITELIBDIR%%/dateutil/zoneinfo/zoneinfo-2005k.tar.gz
+%%PYTHON_SITELIBDIR%%/dateutil/zoneinfo/zoneinfo-2005q.tar.gz
 @dirrm %%PYTHON_SITELIBDIR%%/dateutil/zoneinfo
 @dirrm %%PYTHON_SITELIBDIR%%/dateutil
 @dirrmtry %%PYTHON_SITELIBDIR%%
