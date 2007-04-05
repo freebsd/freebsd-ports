@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dateutil
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://labix.org/download/python-dateutil/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +18,5 @@ COMMENT=	Provides powerful extensions to the standard datetime module
 USE_BZIP2=		yes
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
-
-#FETCH_BEFORE_ARGS=	-o ${DISTNAME}${EXTRACT_SUFX}
 
 .include <bsd.port.mk>
