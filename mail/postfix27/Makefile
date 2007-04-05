@@ -200,9 +200,8 @@ _REQUIRE+=		ypserv
 .endif
 
 .if defined(WITH_VDA)
-BROKEN=			Does not apply. Waiting to a new version
-PATCH_SITES+=		http://vda.sourceforge.net/VDA/
-PATCHFILES+=		postfix-2.3.7-vda.patch.gz
+PATCH_SITES+=		http://vda.cvs.sourceforge.net/*checkout*/vda/VDA/
+PATCHFILES+=		postfix-2.4.0-vda.patch
 PATCH_DIST_STRIP=	-p1
 .endif
 
