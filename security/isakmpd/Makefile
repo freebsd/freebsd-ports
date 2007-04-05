@@ -12,7 +12,7 @@ CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	simon
 
-MAINTAINER=	simon@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenBSD IKE daemon
 
 # this is not compatible with cross build - there's no other way
