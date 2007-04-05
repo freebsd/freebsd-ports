@@ -1,0 +1,9 @@
+bin/jemplate
+%%SITE_PERL%%/%%PERL_ARCH%%/Jemplate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Jemplate/Directive.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Jemplate/Grammar.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Jemplate/Parser.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jemplate/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Jemplate/Jemplate.js
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jemplate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Jemplate
