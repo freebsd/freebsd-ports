@@ -357,6 +357,7 @@
     SUBDIR += p5-HTML-EscapeEvil
     SUBDIR += p5-HTML-Format
     SUBDIR += p5-HTML-Fraction
+    SUBDIR += p5-HTML-SBC
     SUBDIR += p5-HTML-TagFilter
     SUBDIR += p5-HTML-Tidy
     SUBDIR += p5-HTML-Truncate

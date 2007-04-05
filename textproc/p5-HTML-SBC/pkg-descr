@@ -1,0 +1,6 @@
+Simple Blog Code is a simple markup language. You can use it for guest
+books, blogs, wikis, boards and various other web applications. It
+produces valid and semantic (X)HTML from input and is patterned on that
+tiny usenet markups like *bold* and _underline_.
+
+WWW: http://search.cpan.org/dist/HTML-SBC/
