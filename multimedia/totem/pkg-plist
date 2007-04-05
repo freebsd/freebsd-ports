@@ -98,7 +98,6 @@ share/gnome/help/totem/uk/figures/totem_show_playlist_button.png
 share/gnome/help/totem/uk/figures/totem_start_window.png
 share/gnome/help/totem/uk/figures/totem_volume_maximum_button.png
 share/gnome/help/totem/uk/figures/totem_volume_mute_button.png
-share/gnome/help/totem/uk/legal.xml
 share/gnome/help/totem/uk/totem.xml
 share/gnome/omf/totem/totem-C.omf
 share/gnome/omf/totem/totem-bg.omf
@@ -136,6 +135,7 @@ share/locale/am/LC_MESSAGES/totem.mo
 share/locale/ar/LC_MESSAGES/totem.mo
 share/locale/az/LC_MESSAGES/totem.mo
 share/locale/be/LC_MESSAGES/totem.mo
+share/locale/be@latin/LC_MESSAGES/totem.mo
 share/locale/bg/LC_MESSAGES/totem.mo
 share/locale/bn/LC_MESSAGES/totem.mo
 share/locale/bn_IN/LC_MESSAGES/totem.mo
@@ -289,5 +289,7 @@ share/locale/zh_TW/LC_MESSAGES/totem.mo
 @dirrmtry share/locale/ca
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
 @dirrmtry share/locale/be/LC_MESSAGES
 @dirrmtry share/locale/be
