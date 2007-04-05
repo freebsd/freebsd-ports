@@ -33,7 +33,7 @@ CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -Wl,--rpath,${PREFIX}/lib/gnash" \
 
 CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/gnash" \
 		--with-plugindir=${PLUGIN_DIR} \
-		--enable-jpeg
+		--enable-jpeg --disable-klash
 
 MAN1=		gnash.1
 
