@@ -6,6 +6,7 @@
 
 PORTNAME=		gnomebaker
 PORTVERSION=		0.6.1
+PORTREVISION=		1
 CATEGORIES=		sysutils gnome
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnomebaker
@@ -27,7 +28,7 @@ USE_GCC=		3.4+
 USE_GETTEXT=		yes
 USE_GSTREAMER=		vorbis mad flac
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -export-dynamic"
 
 .include <bsd.port.pre.mk>
 
