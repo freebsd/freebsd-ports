@@ -1,6 +1,6 @@
 # New ports collection makefile for:	tk
 # Date created:		17 January 2007
-# Whom:			Martin Matuska <martin@matuska.org>
+# Whom:			Martin Matuska <mm@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	tcl
 PKGNAMESUFFIX?=	${THREADS_SUFFIX}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.a./a/}-src
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Graphical toolkit for TCL
 
 LATEST_LINK?=	tk85

@@ -12,7 +12,7 @@ CATEGORIES=	www tcl84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Tool for issuing HTTP requests and dealing with the result
 
 RUN_DEPENDS=	tclsh:${PORTSDIR}/lang/tcl-wrapper

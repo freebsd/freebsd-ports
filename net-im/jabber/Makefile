@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.jabberd.org/jabberd14/
 DISTNAME=	jabberd14-${PORTVERSION}
 DIST_SUBDIR=	jabber
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	XMPP/Jabber server daemon
 
 LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth-hard \

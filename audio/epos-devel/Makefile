@@ -1,6 +1,6 @@
 # New ports collection makefile for:    epos-devel
 # Date created:         3 September 2005
-# Whom:                 martin@matuska.org
+# Whom:                 Martin Matuska <mm@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	epos
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Text-to-Speech system
 
 GNU_CONFIGURE=	yes

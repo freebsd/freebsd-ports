@@ -1,6 +1,6 @@
 # New ports collection makefile for:    nsca-client
 # Date created:         Sun Apr 30 17:23:00 CET 2006
-# Whom:                 Martin Matuska <martin@matuska.org>
+# Whom:                 Martin Matuska <mm@FreeBSD.org>
 #
 # $FreeBSD$
 #

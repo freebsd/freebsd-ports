@@ -1,6 +1,6 @@
 # New ports collection makefile for:	aolserver-nsopenssl
 # Date created:		12 Oct 2006
-# Whom:			Martin Matuska <martin@matuska.org>
+# Whom:			Martin Matuska <mm@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	aolserver
 DISTFILES=	nsopenssl-3.0beta26-src.tar.gz
 DIST_SUBDIR=	aolserver
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	OpenSSL socket encryption module for AOLserver
 
 WRKSRC=		${WRKDIR}/nsopenssl-3.0beta26

@@ -10,7 +10,7 @@ PORTVERSION=	2.2.1
 MASTER_SITES=	http://openacs.org/projects/dotlrn/download/download/
 EXTRACT_SUFX=	.tgz?revision_id=559791
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	OpenACS-based e-learning platform for high-traffic communities
 
 OPENACS_USER?=  dotlrn

@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-Apache-Clean
 # Date created:				Sep 09 2003
-# Whom:	      				Martin Matuska <martin@matuska.org>
+# Whom:	      				Martin Matuska <mm@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache/GEOFF
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	A mod_perl interface into HTML::Clean
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache.pm:${PORTSDIR}/www/mod_perl \

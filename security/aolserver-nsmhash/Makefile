@@ -1,6 +1,6 @@
 # New ports collection makefile for:	aolserver-nsmhash
 # Date created:		12 Oct 2006
-# Whom:			Martin Matuska <martin@matuska.org>
+# Whom:			Martin Matuska <mm@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	aolserver-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	aolserver
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	AOLserver interface to mhash library
 
 WRKSRC=		${WRKDIR}

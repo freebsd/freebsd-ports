@@ -1,6 +1,6 @@
 # New ports collection makefile for:	aolserver-nsmysql
 # Date created:		12 Oct 2006
-# Whom:			Martin Matuska <martin@matuska.org>
+# Whom:			Martin Matuska <mm@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	aolserver
 DISTFILES=	nsmysql_v1.tar.gz
 DIST_SUBDIR=	aolserver
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Internal MySQL database driver for AOLserver
 
 WRKSRC=		${WRKDIR}/nsmysql_v1

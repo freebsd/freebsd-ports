@@ -1,6 +1,6 @@
 # New ports collection makefile for:	aolserver-nszlib
 # Date created:		12 Oct 2006
-# Whom:			Martin Matuska <martin@matuska.org>
+# Whom:			Martin Matuska <mm@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	aolserver
 DISTNAME=	nszlib
 DIST_SUBDIR=	aolserver
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Zlib library interface for AOLserver
 
 AOLSERVERBASE?=	${PREFIX}/aolserver

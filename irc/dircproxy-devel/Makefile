@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-beta/g}
 PKGNAMESUFFIX=	-devel
 EXTRACT_SUFX=	.tar.bz
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	A detachable irc proxy server with many features
 
 USE_BZIP2=	yes

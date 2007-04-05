@@ -1,6 +1,6 @@
 # New ports collection makefile for:	star-devel
 # Date created:				19.06.2004 22:27:00 CEST
-# Whom:					Martin Matuska <martin@matuska.org>
+# Whom:					Martin Matuska <mm@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ DISTVERSION=	1.5a76
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.berlios.de/pub/star/alpha/
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Unique standard tape archiver with many enhancements
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/smake:${PORTSDIR}/devel/smake
