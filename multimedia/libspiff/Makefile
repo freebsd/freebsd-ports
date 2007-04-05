@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libspiff
-DISTVERSION=	0.6.1rc1
+PORTVERSION=	0.6.3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libspiff
@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	libspiff
 MAINTAINER=	ed@fxq.nl
 COMMENT=	An XSPF parsing library
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/liburiparser.a:${PORTSDIR}/net/uriparser
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
