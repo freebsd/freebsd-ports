@@ -1,0 +1,12 @@
+--- src/scim_uim_imengine.h.orig	Mon Mar 26 17:12:19 2007
++++ src/scim_uim_imengine.h	Mon Mar 26 17:12:55 2007
+@@ -104,9 +104,6 @@
+     static void uim_cand_select_cb       (void *ptr, int index);
+     static void uim_cand_shift_page_cb   (void *ptr, int dir);
+     static void uim_cand_deactive_cb     (void *ptr);
+-
+-    static void uim_surrounding_text_request_cb (void *ptr);
+-    static int  uim_surrounding_text_delete_cb  (void *ptr, int offset, int len);
+ };
+ #endif
+ /*
