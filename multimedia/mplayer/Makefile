@@ -174,6 +174,7 @@ OPTIONS+=	LIRC "Enable lirc support" off
 OPTIONS+=	LIBCDIO "Enable libcdio support" off
 OPTIONS+=	CDPARANOIA "Enable cdparanoia support" off
 OPTIONS+=	LIBLZO "Enable external liblzo library" off
+OPTIONS+=	JOYSTICK "Enable joystick support" off
 .endif
 
 WANT_GNOME=	yes
@@ -584,6 +585,13 @@ DEFAULT_CDROM_DEVICE=/dev/acd0
 DEFAULT_KERN_HZ=${WITH_KERN_HZ}
 .else
 DEFAULT_KERN_HZ=1024
+.endif
+
+.if defined(WITH_JOYSTICK)
+BUILD_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
+CONFIGURE_ARGS+=--enable-joystick
+.else
+CONFIGURE_ARGS+=--disable-joystick
 .endif
 
 # "enable" build for other archs
