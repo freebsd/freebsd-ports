@@ -16,7 +16,6 @@ COMMENT=	Gimp print plug-in
 MASTERDIR=	${.CURDIR}/../../print/gutenprint-base
 
 GUT_SLAVE=	gimp
-PLIST=	# empty
-PLIST_FILES=	libexec/gimp/2.2/plug-ins/print
+PLIST=		${.CURDIR}/pkg-plist
 
 .include "${MASTERDIR}/Makefile"
