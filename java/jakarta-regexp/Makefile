@@ -5,12 +5,12 @@
 #
 
 PORTNAME=	jakarta-regexp
-PORTVERSION=	1.4
-CATEGORIES=	java
+PORTVERSION=	1.5
+CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	regexp/binaries
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemoliu@gmail.com
 COMMENT=	Regular expressions for Java
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
