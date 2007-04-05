@@ -27,7 +27,7 @@ NO_BUILD=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::
-	@if [ -n "`${PKG_INFO} -xI '^gimp-*[0-9].[0-9].[0-9]*' 2>/dev/null`" ]; then \
+	@if [ -n "`${PKG_INFO} -xI '^gimp[-gnome]*[0-9].[0-9].[0-9]*' 2>/dev/null`" ]; then \
 		${ECHO_CMD} "${PKGNAME}: Old version of gimp detected! Please see ${PORTSDIR}/UPDATING for information on upgrading ${PKGNAME}" ; \
 		${FALSE}; \
 	fi
