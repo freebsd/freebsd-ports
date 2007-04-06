@@ -1,0 +1,839 @@
+--- berkeleydb/db-4.2.52.patch	Thu Apr  5 14:04:49 2007
++++ berkeleydb/db-4.2.52.patch	Thu Apr  5 14:26:49 2007
+@@ -552,6 +552,23 @@
+   	test "$with_gnu_ld" != no && break
+   	;;
+ ***************
++*** 9328,9334 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 9328,9334 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
+ *** 11180,11186 ****
+       # linker, instead of GNU ld.  If possible, this setting should
+       # overridden to take advantage of the native linker features on
+@@ -568,6 +585,57 @@
+     fi
+   
+     # Commands to make compiler produce verbose output that lists
++***************
++*** 12872,12878 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 12872,12878 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
++*** 15849,15855 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 15849,15855 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
++*** 18114,18120 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 18114,18120 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
+ ***************
+ *** 28556,28561 ****
+ --- 28556,28606 ----
+--- curl/curl-7.12.2.patch	25 Sep 2006 13:33:49 -0000	1.9
++++ curl/curl-7.12.2.patch	5 Apr 2007 00:01:20 -0000
+@@ -1,3 +1,73 @@
++*** misc/curl-7.12.2/configure	Sun Oct 17 18:22:10 2004
++--- misc/build/curl-7.12.2/configure	Wed Apr  4 19:56:30 2007
++***************
++*** 9456,9462 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 9456,9462 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
++*** 13154,13160 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 13154,13160 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
++*** 16303,16309 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 16303,16309 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
++*** 18650,18656 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 18650,18656 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
+ *** misc/curl-7.12.2/ltmain.sh	Mon Aug  9 13:12:17 2004
+ --- misc/build/curl-7.12.2/ltmain.sh	Thu Jun 22 13:07:14 2006
+ ***************
+--- freetype/freetype-2.2.1.patch	3 Aug 2006 14:58:26 -0000	1.2
++++ freetype/freetype-2.2.1.patch	5 Apr 2007 00:07:40 -0000
+@@ -1,5 +1,75 @@
+-*** misc/freetype-2.2.1/include/freetype/config/ftmodule.h	Mon Jan 30 17:49:42 2006
+---- misc/build/freetype-2.2.1/include/freetype/config/ftmodule.h	Thu Jul 13 16:04:27 2006
++*** misc/freetype-2.2.1/builds/unix/configure	Fri May 12 11:12:27 2006
++--- misc/build/freetype-2.2.1/builds/unix/configure	Wed Apr  4 20:05:15 2007
++***************
++*** 10644,10650 ****
++  freebsd* | dragonfly*)
++    # DragonFly does not have aout.  When/if they implement a new
++    # versioning mechanism, adjust this.
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 10644,10650 ----
++  freebsd* | dragonfly*)
++    # DragonFly does not have aout.  When/if they implement a new
++    # versioning mechanism, adjust this.
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
++*** 14420,14426 ****
++  freebsd* | dragonfly*)
++    # DragonFly does not have aout.  When/if they implement a new
++    # versioning mechanism, adjust this.
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 14420,14426 ----
++  freebsd* | dragonfly*)
++    # DragonFly does not have aout.  When/if they implement a new
++    # versioning mechanism, adjust this.
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
++*** 17684,17690 ****
++  freebsd* | dragonfly*)
++    # DragonFly does not have aout.  When/if they implement a new
++    # versioning mechanism, adjust this.
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 17684,17690 ----
++  freebsd* | dragonfly*)
++    # DragonFly does not have aout.  When/if they implement a new
++    # versioning mechanism, adjust this.
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
++*** 20153,20159 ****
++  freebsd* | dragonfly*)
++    # DragonFly does not have aout.  When/if they implement a new
++    # versioning mechanism, adjust this.
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 20153,20159 ----
++  freebsd* | dragonfly*)
++    # DragonFly does not have aout.  When/if they implement a new
++    # versioning mechanism, adjust this.
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++*** misc/freetype-2.2.1/include/freetype/config/ftmodule.h	Mon Jan 30 11:49:42 2006
++--- misc/build/freetype-2.2.1/include/freetype/config/ftmodule.h	Wed Apr  4 20:04:02 2007
+ ***************
+ *** 17,24 ****
+ --- 17,26 ----
+--- libwpd/libwpd-0.8.8.diff	19 Jan 2007 15:57:46 -0000	1.1.4.1
++++ libwpd/libwpd-0.8.8.diff	5 Apr 2007 00:13:31 -0000
+@@ -1,3 +1,73 @@
++*** misc/libwpd-0.8.8/configure	Tue Jan  9 05:35:10 2007
++--- misc/build/libwpd-0.8.8/configure	Wed Apr  4 20:10:49 2007
++***************
++*** 8089,8095 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 8089,8095 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
++*** 11808,11814 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 11808,11814 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
++*** 14978,14984 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 14978,14984 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
++*** 17346,17352 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 17346,17352 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
+ *** misc/libwpd-0.8.8/src/lib/WP1Part.cpp	2007-01-03 14:07:55.000000000 +0100
+ --- misc/build/libwpd-0.8.8/src/lib/WP1Part.cpp	2007-01-13 00:18:52.000000000 +0100
+ ***************
+--- libxml2/libxml2-2.6.17.patch	Thu Jan 19 13:23:31 2006
++++ libxml2/libxml2-2.6.17.patch	Wed Apr  4 18:38:01 2007
+@@ -1,6 +1,40 @@
+ *** misc/libxml2-2.6.17/configure	2005-01-16 20:24:22.000000000 +0100
+ --- misc/build/libxml2-2.6.17/configure	2005-02-02 17:41:10.751412243 +0100
+ ***************
++*** 8547,8553 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 8547,8553 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
++*** 15436,15442 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 15436,15442 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
+ *** 26339,26347 ****
+   
+   echo "$as_me:$LINENO: checking for setsockopt" >&5
+--- libxmlsec/xmlsec1-1.2.6.patch	24 Oct 2006 13:31:14 -0000	1.16
++++ libxmlsec/xmlsec1-1.2.6.patch	5 Apr 2007 00:47:31 -0000
+@@ -17,8 +17,25 @@
+   
+   .SUFFIXES:
+   .SUFFIXES: .c .lo .o .obj
+-*** misc/xmlsec1-1.2.6/configure	Thu Aug 26 08:00:34 2004
+---- misc/build/xmlsec1-1.2.6/configure	Thu Sep 28 18:00:38 2006
++*** misc/xmlsec1-1.2.6/configure	Thu Aug 26 02:00:34 2004
++--- misc/build/xmlsec1-1.2.6/configure	Wed Apr  4 20:43:24 2007
++***************
++*** 7778,7784 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 7778,7784 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
+ ***************
+ *** 9046,9052 ****
+         ;;
+@@ -37,6 +54,57 @@
+       # Don't fix this by using the ld -exported_symbols_list flag, it doesn't exist in older darwin ld's
+       archive_expsym_cmds='sed -e "s,#.*,," -e "s,^[    ]*,," -e "s,^\(..*\),_&," < $export_symbols > $output_objdir/${libname}-symbols.expsym~$CC -dynamiclib $allow_undefined_flag  -o $lib $libobjs $deplibs$compiler_flags -install_name $rpath/$soname $verstring~nmedit -s $output_objdir/${libname}-symbols.expsym ${lib}'
+ ***************
++*** 11497,11503 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 11497,11503 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
++*** 14667,14673 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 14667,14673 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
++*** 17035,17041 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 17035,17041 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
+ *** 24598,24604 ****
+   fi
+   
+--- moz/mozilla-source-1.7.5.patch	Wed Apr  4 19:22:49 2007
++++ moz/mozilla-source-1.7.5.patch	Wed Apr  4 21:08:38 2007
+@@ -134,6 +134,23 @@
+ *** misc/mozilla/configure	2004-10-12 06:13:29.000000000 +0200
+ --- misc/build/mozilla/configure	2006-02-24 09:41:55.000000000 +0100
+ ***************
++*** 5228,5234 ****
++      ;;
++  
++  *-freebsd*)
++!     if test `test -x /usr/bin/objformat && /usr/bin/objformat || echo aout` != "elf"; then
++  	DLL_SUFFIX=".so.1.0"
++  	DSO_LDOPTS="-shared"
++      fi
++--- 5228,5234 ----
++      ;;
++  
++  *-freebsd*)
++!     if test `test -x /usr/bin/objformat && /usr/bin/objformat || echo elf` != "elf"; then
++  	DLL_SUFFIX=".so.1.0"
++  	DSO_LDOPTS="-shared"
++      fi
++***************
+ *** 5895,5901 ****
+          MKCSHLIB='$(CC) $(CFLAGS) $(DSO_PIC_FLAGS) -G -Wl,-z -Wl,muldefs -o $@'
+          MKSHLIB_FORCE_ALL='-Qoption ld -z,allextract'
+@@ -174,6 +202,23 @@
+ *** misc/mozilla/configure.in	2004-10-12 06:13:29.000000000 +0200
+ --- misc/build/mozilla/configure.in	2006-02-24 09:41:55.000000000 +0100
+ ***************
++*** 1006,1012 ****
++      ;;
++  
++  *-freebsd*)
++!     if test `test -x /usr/bin/objformat && /usr/bin/objformat || echo aout` != "elf"; then
++  	DLL_SUFFIX=".so.1.0"
++  	DSO_LDOPTS="-shared"
++      fi
++--- 1006,1012 ----
++      ;;
++  
++  *-freebsd*)
++!     if test `test -x /usr/bin/objformat && /usr/bin/objformat || echo elf` != "elf"; then
++  	DLL_SUFFIX=".so.1.0"
++  	DSO_LDOPTS="-shared"
++      fi
++***************
+ *** 1536,1542 ****
+          MKCSHLIB='$(CC) $(CFLAGS) $(DSO_PIC_FLAGS) -G -Wl,-z -Wl,muldefs -o $@'
+          MKSHLIB_FORCE_ALL='-Qoption ld -z,allextract'
+@@ -211,6 +267,25 @@
+       CC="\$(CYGWIN_WRAPPER) $CC"
+       CXX="\$(CYGWIN_WRAPPER) $CXX"
+       CPP="\$(CYGWIN_WRAPPER) $CPP"
++*** misc/mozilla/directory/c-sdk/config/FreeBSD.mk	Tue Mar 26 16:51:46 2002
++--- misc/build/mozilla/directory/c-sdk/config/FreeBSD.mk	Wed Apr  4 20:56:05 2007
++***************
++*** 66,72 ****
++  
++  ARCH			= freebsd
++  
++! MOZ_OBJFORMAT          := $(shell test -x /usr/bin/objformat && /usr/bin/objformat || echo aout)
++  
++  ifeq ($(MOZ_OBJFORMAT),elf)
++  DLL_SUFFIX		= so
++--- 66,72 ----
++  
++  ARCH			= freebsd
++  
++! MOZ_OBJFORMAT          := $(shell test -x /usr/bin/objformat && /usr/bin/objformat || echo elf)
++  
++  ifeq ($(MOZ_OBJFORMAT),elf)
++  DLL_SUFFIX		= so
+ *** misc/mozilla/directory/c-sdk/config/cygwin-wrapper	2003-04-03 01:22:39.000000000 +0200
+ --- misc/build/mozilla/directory/c-sdk/config/cygwin-wrapper	2006-02-24 09:41:55.000000000 +0100
+ ***************
+@@ -341,6 +416,23 @@
+ *** misc/mozilla/directory/c-sdk/configure	2004-09-14 23:14:38.000000000 +0200
+ --- misc/build/mozilla/directory/c-sdk/configure	2006-02-24 09:41:55.000000000 +0100
+ ***************
++*** 3465,3471 ****
++  EOF
++  
++      CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
++!     MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++      if test "$MOZ_OBJFORMAT" = "elf"; then
++          DLL_SUFFIX=so
++      else
++--- 3465,3471 ----
++  EOF
++  
++      CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
++!     MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++      if test "$MOZ_OBJFORMAT" = "elf"; then
++          DLL_SUFFIX=so
++      else
++***************
+ *** 3832,3837 ****
+ --- 3832,3838 ----
+       MKSHLIB='$(CC) $(DSO_LDOPTS) -o $@'
+@@ -363,6 +455,23 @@
+ *** misc/mozilla/directory/c-sdk/configure.in	2004-09-14 23:14:38.000000000 +0200
+ --- misc/build/mozilla/directory/c-sdk/configure.in	2006-02-24 09:41:55.000000000 +0100
+ ***************
++*** 896,902 ****
++      AC_DEFINE(FREEBSD)
++      AC_DEFINE(HAVE_BSD_FLOCK)
++      CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
++!     MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++      if test "$MOZ_OBJFORMAT" = "elf"; then
++          DLL_SUFFIX=so
++      else
++--- 896,902 ----
++      AC_DEFINE(FREEBSD)
++      AC_DEFINE(HAVE_BSD_FLOCK)
++      CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
++!     MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++      if test "$MOZ_OBJFORMAT" = "elf"; then
++          DLL_SUFFIX=so
++      else
++***************
+ *** 1144,1149 ****
+ --- 1144,1150 ----
+       MKSHLIB='$(CC) $(DSO_LDOPTS) -o $@'
+@@ -6830,6 +6939,44 @@
+   
+       switch (name) {
+       case MAX_CONNECTIONS:
++*** misc/mozilla/nsprpub/configure	Tue Sep 14 17:14:38 2004
++--- misc/build/mozilla/nsprpub/configure	Wed Apr  4 20:56:33 2007
++***************
++*** 3407,3413 ****
++  EOF
++  
++      CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
++!     MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++      if test "$MOZ_OBJFORMAT" = "elf"; then
++          DLL_SUFFIX=so
++      else
++--- 3407,3413 ----
++  EOF
++  
++      CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
++!     MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++      if test "$MOZ_OBJFORMAT" = "elf"; then
++          DLL_SUFFIX=so
++      else
++*** misc/mozilla/nsprpub/configure.in	Tue Sep 14 17:14:38 2004
++--- misc/build/mozilla/nsprpub/configure.in	Wed Apr  4 20:56:40 2007
++***************
++*** 922,928 ****
++      AC_DEFINE(HAVE_BSD_FLOCK)
++      AC_DEFINE(HAVE_SOCKLEN_T)
++      CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
++!     MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++      if test "$MOZ_OBJFORMAT" = "elf"; then
++          DLL_SUFFIX=so
++      else
++--- 922,928 ----
++      AC_DEFINE(HAVE_BSD_FLOCK)
++      AC_DEFINE(HAVE_SOCKLEN_T)
++      CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
++!     MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++      if test "$MOZ_OBJFORMAT" = "elf"; then
++          DLL_SUFFIX=so
++      else
+ *** misc/mozilla/nsprpub/build/cygwin-wrapper	2003-04-03 01:22:38.000000000 +0200
+ --- misc/build/mozilla/nsprpub/build/cygwin-wrapper	2006-02-24 09:41:55.000000000 +0100
+ ***************
+@@ -7060,6 +7207,25 @@
+       gDirServiceProvider->SetProfileDir(profileDir);  
+       mCurrentProfileName.Assign(aCurrentProfile);    
+       gProfileDataAccess->SetCurrentProfile(aCurrentProfile);
++*** misc/mozilla/security/coreconf/FreeBSD.mk	Wed Mar 26 20:17:25 2003
++--- misc/build/mozilla/security/coreconf/FreeBSD.mk	Wed Apr  4 20:56:48 2007
++***************
++*** 63,69 ****
++  
++  ARCH			= freebsd
++  
++! MOZ_OBJFORMAT		:= $(shell test -x /usr/bin/objformat && /usr/bin/objformat || echo aout)
++  
++  ifeq ($(MOZ_OBJFORMAT),elf)
++  DLL_SUFFIX		= so
++--- 63,69 ----
++  
++  ARCH			= freebsd
++  
++! MOZ_OBJFORMAT		:= $(shell test -x /usr/bin/objformat && /usr/bin/objformat || echo elf)
++  
++  ifeq ($(MOZ_OBJFORMAT),elf)
++  DLL_SUFFIX		= so
+ *** misc/mozilla/security/coreconf/command.mk	2002-02-15 23:53:12.000000000 +0100
+ --- misc/build/mozilla/security/coreconf/command.mk	2006-02-24 09:41:55.000000000 +0100
+ ***************
+--- neon/neon.patch	Tue Feb  6 09:08:59 2007
++++ neon/neon.patch	Thu Apr  5 14:36:14 2007
+@@ -1,5 +1,24 @@
+-*** misc/neon-0.24.7/src/config.h	Tue Jan 30 16:51:33 2007
+---- misc/build/neon-0.24.7/src/config.h	Tue Jan 30 16:51:05 2007
++*** misc/neon-0.24.7/configure	Mon Jul  5 14:35:21 2004
++--- misc/build/neon-0.24.7/configure	Thu Apr  5 14:31:11 2007
++***************
++*** 6344,6350 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 6344,6350 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++*** misc/neon-0.24.7/src/config.h	Thu Apr  5 14:35:31 2007
++--- misc/build/neon-0.24.7/src/config.h	Thu Apr  5 14:30:40 2007
+ ***************
+ *** 1 ****
+ ! dummy
+--- sablot/Sablot-0.52.patch	19 Jun 2006 17:27:11 -0000	1.20
++++ sablot/Sablot-0.52.patch	5 Apr 2007 00:24:32 -0000
+@@ -632,3 +632,22 @@
+       };
+       return cnt;
+   }
++*** misc/Sablot-0.52/tools/ltconfig	Fri Apr 13 05:50:59 2001
++--- misc/build/Sablot-0.52/tools/ltconfig	Wed Apr  4 20:22:37 2007
++***************
++*** 1887,1893 ****
++    ;;
++    
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case "$version_type" in
++      freebsd-elf*)
++--- 1887,1893 ----
++    ;;
++    
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case "$version_type" in
++      freebsd-elf*)
+--- sndfile/libsndfile-1.0.9.patch	3 Feb 2006 17:31:46 -0000	1.3
++++ sndfile/libsndfile-1.0.9.patch	5 Apr 2007 00:31:26 -0000
+@@ -83,6 +83,23 @@
+     shlibpath_var=DYLD_LIBRARY_PATH
+     shrext='$(test .$module = .yes && echo .so || echo .dylib)'
+ ***************
++*** 7871,7877 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 7878,7884 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
+ *** 9111,9120 ****
+         ;;
+       esac
+@@ -143,6 +160,23 @@
+       module_expsym_cmds_CXX='sed -e "s,#.*,," -e "s,^[    ]*,," -e "s,^\(..*\),_&," < $export_symbols > $output_objdir/${libname}-symbols.expsym~$CC $allow_undefined_flag  -o $lib -bundle $libobjs $deplibs$compiler_flags~nmedit -s $output_objdir/${libname}-symbols.expsym ${lib}'
+       hardcode_direct_CXX=no
+ ***************
++*** 11560,11566 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 11567,11573 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
+ *** 14069,14084 ****
+       	  lt_int_apple_cc_single_mod=yes
+       	fi
+@@ -178,6 +212,23 @@
+             module_expsym_cmds_F77='sed -e "s,#.*,," -e "s,^[    ]*,," -e "s,^\(..*\),_&," < $export_symbols > $output_objdir/${libname}-symbols.expsym~$CC $allow_undefined_flag  -o $lib -bundle $libobjs $deplibs$compiler_flags~nmedit -s $output_objdir/${libname}-symbols.expsym ${lib}'
+         hardcode_direct_F77=no
+ ***************
++*** 14700,14706 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 14707,14713 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
+ *** 16414,16429 ****
+       	  lt_int_apple_cc_single_mod=yes
+       	fi
+@@ -212,6 +263,23 @@
+           fi
+             module_expsym_cmds_GCJ='sed -e "s,#.*,," -e "s,^[    ]*,," -e "s,^\(..*\),_&," < $export_symbols > $output_objdir/${libname}-symbols.expsym~$CC $allow_undefined_flag  -o $lib -bundle $libobjs $deplibs$compiler_flags~nmedit -s $output_objdir/${libname}-symbols.expsym ${lib}'
+         hardcode_direct_GCJ=no
++***************
++*** 17045,17051 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 17052,17058 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
+ *** misc/libsndfile-1.0.9/ltmain.sh	Sat Mar 27 05:02:07 2004
+ --- misc/build/libsndfile-1.0.9/ltmain.sh	Mon Jan 23 20:13:31 2006
+ ***************
+--- vigra/vigra1.4.0.patch	12 Oct 2006 10:35:19 -0000	1.3
++++ vigra/vigra1.4.0.patch	5 Apr 2007 00:40:20 -0000
+@@ -1,3 +1,42 @@
++diff -uprN misc/vigra1.4.0/configure misc/build/vigra1.4.0/configure
++--- misc/vigra1.4.0/configure	Tue Dec 20 23:53:28 2005
+++++ misc/build/vigra1.4.0/configure	Wed Apr  4 20:35:48 2007
++@@ -7259,7 +7259,7 @@ kfreebsd*-gnu)
++   ;;
++ 
++ freebsd*)
++-  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+++  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++   version_type=freebsd-$objformat
++   case $version_type in
++     freebsd-elf*)
++@@ -10961,7 +10961,7 @@ kfreebsd*-gnu)
++   ;;
++ 
++ freebsd*)
++-  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+++  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++   version_type=freebsd-$objformat
++   case $version_type in
++     freebsd-elf*)
++@@ -14110,7 +14110,7 @@ kfreebsd*-gnu)
++   ;;
++ 
++ freebsd*)
++-  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+++  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++   version_type=freebsd-$objformat
++   case $version_type in
++     freebsd-elf*)
++@@ -16461,7 +16461,7 @@ kfreebsd*-gnu)
++   ;;
++ 
++ freebsd*)
++-  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+++  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++   version_type=freebsd-$objformat
++   case $version_type in
++     freebsd-elf*)
+ diff -uprN misc/vigra1.4.0/include/vigra/array_vector.hxx misc/build/vigra1.4.0/include/vigra/array_vector.hxx
+ --- misc/vigra1.4.0/include/vigra/array_vector.hxx	2005-12-21 05:53:30.000000000 +0100
+ +++ misc/build/vigra1.4.0/include/vigra/array_vector.hxx	2006-08-31 12:08:15.172679000 +0200
