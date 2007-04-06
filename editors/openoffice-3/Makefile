@@ -302,8 +302,8 @@ post-install:
 		for app in base calc draw impress math printeradmin writer; do \
 			if [ -r ${ICONS}/hicolor/$${dir}/apps/$${app}.png ]; then \
 				${CP} ${ICONS}/hicolor/$${dir}/apps/$${app}.png \
-				    ${PREFIX}/share/icons/hicolor/$${dir}/apps/openofficeorg-21-$${app}.png ; \
-				${ECHO_CMD} "share/icons/hicolor/$${dir}/apps/openofficeorg-21-$${app}.png" >> ${TMPPLIST} ; \
+				    ${PREFIX}/share/icons/hicolor/$${dir}/apps/openofficeorg22-$${app}.png ; \
+				${ECHO_CMD} "share/icons/hicolor/$${dir}/apps/openofficeorg22-$${app}.png" >> ${TMPPLIST} ; \
 			fi \
 		done ; \
 		for file in `cd ${ICONS}/hicolor/$${dir}/mimetypes; ls *.png`; do \
