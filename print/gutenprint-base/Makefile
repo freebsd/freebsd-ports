@@ -93,6 +93,9 @@ CONFIGURE_ARGS+=	--with-user-guide=no
 .endif
 
 post-patch:
+.if ${SLAVE_PORT}=="no" || ${GUT_SLAVE}!="cups"
+	@${REINPLACE_CMD} -e 's|cups	||' ${WRKSRC}/src/Makefile.in
+.endif
 	@${REINPLACE_CMD} -e 's|%%GUTENPRINTUI2_LIBS%%|${GUTENPRINTUI2_LIBS}|' \
 		${WRKSRC}/src/gimp2/Makefile.in
 	@${REINPLACE_CMD} -e 's|$$libdir/gimp/1.2/plug-ins||g' \
