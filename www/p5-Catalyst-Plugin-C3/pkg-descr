@@ -1,0 +1,12 @@
+*** WARNING *** THIS MODULE IS STILL EXPERIMENTAL !!!
+
+This module is related to the possible transition of Catalyst from NEXT
+to Class::C3.  This transition hasn't happened yet, and might not for
+a while.
+
+This module is only intended for use by Catalyst module developers at
+this time.  You would know it if you should be using this module.
+
+*** END WARNING ***
+
+WWW: http://search.cpan.org/dist/Catalyst-Plugin-C3/
