@@ -46,7 +46,7 @@ OPTIONS=	IPV6 "Use IPv6" off \
 		LDAP "Use LDAP" off \
 		LDAP_TLS "Use LDAP TLS (Requires LDAP)" off\
 		MYSQL "Use MySQL" off \
-		POSTGRESQL "Use Postgres" off \
+		PGSQL "Use Postgres" off \
 		OPENSSL "Include mod_tls" off \
 		QUOTA "Include mod_quota" off \
 		IFSESSION "Include mod_ifsession" on \
@@ -155,7 +155,7 @@ LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
-MODULES:=${MODULES}:mod_sql:mod_sql_mysql
+MODULES:=${MODULES}:mod_sql_mysql
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include:${LOCALBASE}/include/mysql
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib/mysql
 PLIST_SUB+=	MYSQL=""
@@ -163,11 +163,15 @@ PLIST_SUB+=	MYSQL=""
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
-.if defined(WITH_POSTGRESQL)
+.if defined(WITH_PGSQL)
 USE_PGSQL=	yes
-MODULES:=${MODULES}:mod_sql:mod_sql_postgres
+MODULES:=${MODULES}:mod_sql_postgres
 INCLUDEDIRS:=${INCLUDEDIRS}:${LOCALBASE}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
+.endif
+
+.if ${MODULES:M*mod_sql_*}
+MODULES:=${MODULES}:mod_sql
 .endif
 
 .if defined(WITH_OPENSSL)
@@ -193,7 +197,7 @@ MODULES:=${MODULES}:mod_quotatab:mod_quotatab_file
 .if defined(WITH_LDAP)
 MODULES:=${MODULES}:mod_quotatab_ldap
 .endif
-.if defined(WITH_POSTGRESQL) || defined(WITH_MYSQL)
+.if defined(WITH_PGSQL) || defined(WITH_MYSQL)
 MODULES:=${MODULES}:mod_quotatab_sql
 .endif
 .endif
