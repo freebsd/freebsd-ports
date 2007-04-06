@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nspluginwrapper
-PORTVERSION=	0.9.91.3
+PORTVERSION=	0.9.91.4
 CATEGORIES=	www linux emulators
 MASTER_SITES=	http://gwenole.beauchesne.info/projects/nspluginwrapper/files/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${RPMFILE}
@@ -33,7 +33,7 @@ USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} --target-os=linux --target-cpu=i386 \
-		--x11=${X11BASE} --with-cc=${CC} --with-cxx=${CXX}
+		--with-x11-prefix=${X11BASE} --with-cc=${CC} --with-cxx=${CXX}
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
