@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bitflu
-PORTVERSION=	0.32
+PORTVERSION=	0.33
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://bitflu.workaround.ch/bitflu/ CSME
+MASTER_SITES=	http://bitflu.workaround.ch/bitflu/ CENKES
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	infofarmer@FreeBSD.org
