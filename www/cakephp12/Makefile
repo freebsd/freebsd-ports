@@ -7,6 +7,7 @@
 
 PORTNAME=	cakephp
 PORTVERSION=	1.1.13.4450
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://cakeforge.org/frs/download.php/326/
 DISTNAME=	cake_${PORTVERSION}
@@ -24,10 +25,9 @@ SLAVE_PORT_MODULES=	rewrite
 
 NO_BUILD=	yes
 USE_PHP=	pcre session
-WANT_PHP_MOD=	yes
+WANT_PHP_WEB=	yes
 
 SUB_FILES=	pkg-message
-SUB_LIST=	DATADIR=${DATADIR}
 
 WRKSRC=		${WRKDIR}/cake_${DISTVERSION}
 
@@ -36,21 +36,35 @@ OPTIONS=	PROD "Install for production server (see: make confighelp)" Off \
 		PGSQL "Check for/install PostgreSQL support in PHP" Off \
 		SQLITE "Check for/install SQLite support in PHP" Off
 
-.if !defined(NOPORTDOCS)
-INSTALL_TARGET=	install install-docs
-.endif
+PLIST_SUB+=	CONFDIR=${CONFDIR_REL}
+
+CONFDIR=	${PREFIX}/${CONFDIR_REL}
+CONFDIR_REL=	${APACHEETCDIR}/Includes
 
 .include <bsd.port.pre.mk>
 
+WITH_PHP_CGI?=	/cgi-bin/php
+
+.if ${PHP_SAPI:Mcgi} == "cgi" && ${PHP_SAPI:Mmod} == ""
+CGI_EXT=	-cgi
+.else
+CGI_EXT=
+.endif
+
 DEFAULT_PHP_VER=5
-IGNORE_WITH_PHP=4.0 4.1 4.2 4.3.1
+IGNORE_WITH_PHP=4
+
+SUB_LIST+=	PHPCGI=${WITH_PHP_CGI}
 
 .if defined(WITH_PROD)
-SUB_FILES+=	cakephp-production.conf
+PROD=		production
 .else
-SUB_FILES+=	cakephp-development.conf
+PROD=		development
 EXTRA_PATCHES=	${FILESDIR}/development-app-config-core.php.patch
 .endif
+
+CONF=		cakephp-${PROD}${CGI_EXT}.conf 
+SUB_FILES+=	${CONF}
 
 DB_DEFINED=	no
 
@@ -106,23 +120,31 @@ do-install:
 	${FIND} ${DATADIR} -type d -print | ${XARGS} -n1 ${CHMOD} 755
 
 post-install:
-.if exists(${PREFIX}/etc/apache2/Includes)
-.if defined(WITH_PROD)
-	@${CP} ${WRKDIR}/cakephp-production.conf ${PREFIX}/etc/apache2/Includes/cakephp.conf
-.else
-	@${CP} ${WRKDIR}/cakephp-development.conf ${PREFIX}/etc/apache2/Includes/cakephp.conf
-.endif
-.else
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Please check your Apache 2.x installation -"
-	@${ECHO_MSG} "${PREFIX}/etc/apache2/Includes doesn't exist,"
-	@${ECHO_MSG} "so I cannot install cakephp.conf there!"
-	@${ECHO_MSG} ""
-.endif
+	@if [ -d "${CONFDIR}" ]; then \
+	  ${CP} ${WRKDIR}/${CONF} ${CONFDIR}/cakephp.conf; \
+	else \
+	  ${ECHO_MSG} "" ; \
+	  ${ECHO_MSG} "Please check your Apache 2.x installation -" ; \
+	  ${ECHO_MSG} "${CONFDIR} doesn't exist," ; \
+	  ${ECHO_MSG} "so I cannot install cakephp.conf there!" ; \
+	  ${ECHO_MSG} "" ; \
+	  ${FALSE} ; \
+	fi
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/docs/*.txt ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
+.if ${CGI_EXT} == "-cgi"
+	@${ECHO_MSG}	""
+	@${ECHO_MSG}	"Your CakePHP installation was configured to use the PHP CGI binary."
+	@${ECHO_MSG}	"The PHP CGI binary is expected to be referenced by the URL:"
+	@${ECHO_MSG}	""
+	@${ECHO_MSG}	"	${WITH_PHP_CGI}"
+	@${ECHO_MSG}	""
+	@${ECHO_MSG}	"If this is incorrect, reinstall the port with the WITH_PHP_CGI knob"
+	@${ECHO_MSG}	"set to the correct URL."
+.endif
+	@${ECHO_MSG}	"*********************************************************************"
 
 .include <bsd.port.post.mk>
