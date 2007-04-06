@@ -5,10 +5,9 @@
 # $FreeBSD$
 #    $MCom: ports/graphics/py-gimp/Makefile,v 1.2 2007/01/01 22:40:46 ahze Exp $
 
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	0
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-PKGNAMESUFFIX=	# empty
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GIMP python plugin
@@ -24,6 +23,6 @@ PLIST=	${.CURDIR}/pkg-plist
 BUILD_WRKSRC=	${WRKSRC}/plug-ins/pygimp
 INSTALL_WRKSRC=	${WRKSRC}/plug-ins/pygimp
 
-MASTERDIR=	${.CURDIR}/../../graphics/gimp-app
+MASTERDIR=	${.CURDIR}/../../graphics/gimp-app-devel
 
 .include "${MASTERDIR}/Makefile"

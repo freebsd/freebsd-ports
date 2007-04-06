@@ -5,7 +5,7 @@
 # $FreeBSD$
 #    $MCom: ports/graphics/gimp-app/Makefile,v 1.12 2007/03/30 18:22:45 ahze Exp $
 
-PORTNAME=	gimp
+PORTNAME=	gimp-app
 PORTVERSION=	2.2.13
 PORTREVISION=	2
 PORTEPOCH=	1
@@ -18,6 +18,7 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		http://www.mirrorservice.org/sites/ftp.gimp.org/pub/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/%SUBDIR%,}
 MASTER_SITE_SUBDIR=	gimp/v${PORTVERSION:R}
+DISTNAME=	gimp-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNU Image Manipulation Program
@@ -51,8 +52,6 @@ CONFIGURE_ARGS=	--disable-perl \
 		--disable-print
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-
-GIMP_DISTFILE=	${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAN1=	gimp.1 gimp-2.2.1 gimp-remote.1 gimp-remote-2.2.1 gimptool-2.0.1
 MAN5=	gimprc.5 gimprc-2.2.5
@@ -98,7 +97,6 @@ CONFIGURE_ARGS+=	--enable-mp
 USE_GNOME+=		gnomepanel desktopfileutils
 CONFIGURE_ARGS+=	--with-desktop-dir=${LOCALBASE}/share/gnome
 CONFIGURE_ENV+=		GIMP_THREAD_LIBS=${PTHREAD_LIBS}
-PKGNAMESUFFIX:=		-gnome
 PLIST_SUB+=		GNOMEPANEL:=""
 GNOME_ENABLED=		yes
 .else

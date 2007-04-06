@@ -6,7 +6,7 @@
 #   $MCom: ports/graphics/gimp-app-devel/Makefile,v 1.12 2007/04/03 17:41:42 ahze Exp $
 #
 
-PORTNAME=	gimp
+PORTNAME=	gimp-app
 PORTVERSION=	2.3.15
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		http://www.mirrorservice.org/sites/ftp.gimp.org/pub/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/%SUBDIR%,}
 MASTER_SITE_SUBDIR=	gimp/v${PORTVERSION:R}
-PKGNAMESUFFIX?=	-app-devel
+DISTNAME=	gimp-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNU Image Manipulation Program development version
@@ -55,7 +55,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		GIMP_THREAD_LIBS=${PTHREAD_LIBS}
 
 .if !defined(GIMP_SLAVE)
-OPTIONS=	DEBUG "debugging" off \
+OPTIONS?=	DEBUG "debugging" off \
 		MP "multiple processor support" off \
 		RSVG "SVG format support" on
 .endif
