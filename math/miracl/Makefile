@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	miracl
-PORTVERSION=	5.22
-PORTREVISION=	1
+PORTVERSION=	5.23
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.computing.dcu.ie/pub/crypto/
 DISTNAME=	${PORTNAME}
-DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}_${PORTREVISION}
+DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiprecision Integer and Rational Arithmetic C/C++ Library
