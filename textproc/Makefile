@@ -755,6 +755,7 @@
     SUBDIR += py-feedparser
     SUBDIR += py-genshi
     SUBDIR += py-hyperestraier
+    SUBDIR += py-hyperestraier-python
     SUBDIR += py-jaxml
     SUBDIR += py-libxml2
     SUBDIR += py-libxslt
