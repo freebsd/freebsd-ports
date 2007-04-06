@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MySQLdb
-DISTVERSION=	1.2.1_p2
+DISTVERSION=	1.2.2
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mysql-python
@@ -29,7 +29,7 @@ OPTIONS=	MYSQLCLIENT_R "Use libmysqlclient_r (thread safe)" on
 
 .include <bsd.port.pre.mk>
 
-post-patch:
+pre-configure:
 .if defined(WITHOUT_MYSQLCLIENT_R)
 	@${REINPLACE_CMD} -E -e "s|(threadsafe.*)True|\1 False|" \
 		${WRKSRC}/site.cfg
