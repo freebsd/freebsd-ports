@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.3.13
+PORTVERSION=	3.3.14
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 .if defined(USE_THOL)
@@ -16,6 +16,8 @@ DISTNAME=	sqlite-${PORTVERSION}
 
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT?=	An SQL database engine in a C library w/ Tcl wrapper
+
+SLAVEDIRS=	databases/sqlite3-threads
 
 USE_GMAKE=	YES
 USE_GNOME=	pkgconfig
@@ -45,8 +47,6 @@ CONFIGURE_ARGS+=	--enable-threadsafe --enable-threads-override-locks
 PLIST_SUB+=	THOL=""
 CONFLICTS=	sqlite-3*
 .endif
-
-SLAVEDIRS=	databases/sqlite3-threads
 
 .include <bsd.port.pre.mk>
 
