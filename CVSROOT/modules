@@ -8742,6 +8742,7 @@ p5-Catalyst-Model-DBIC	ports/www/p5-Catalyst-Model-DBIC
 p5-Catalyst-Model-DBIC-Plain	ports/www/p5-Catalyst-Model-DBIC-Plain
 p5-Catalyst-Model-DBIC-Schema	ports/www/p5-Catalyst-Model-DBIC-Schema
 p5-Catalyst-Model-Oryx	ports/www/p5-Catalyst-Model-Oryx
+p5-Catalyst-Model-XML-Feed	ports/www/p5-Catalyst-Model-XML-Feed
 p5-Catalyst-Model-Xapian	ports/www/p5-Catalyst-Model-Xapian
 p5-Catalyst-Plugin-Authentication	ports/www/p5-Catalyst-Plugin-Authentication
 p5-Catalyst-Plugin-Authentication-CDBI	ports/www/p5-Catalyst-Plugin-Authentication-CDBI
