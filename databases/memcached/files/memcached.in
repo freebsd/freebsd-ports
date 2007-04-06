@@ -28,4 +28,6 @@ load_rc_config ${name}
 command=%%PREFIX%%/bin/memcached
 command_args="-d -u ${memcached_user}"
 
+unset memcached_user
+
 run_rc_command "$1"

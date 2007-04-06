@@ -1,3 +1,3 @@
-MD5 (memcached-1.2.0.tar.gz) = 6555a7b13b2c4ffa231b6043d13cc5ef
-SHA256 (memcached-1.2.0.tar.gz) = cadb9fb565c8d5695fcec7381094d47215c8c9956a677d5af0b259e0284e5aa7
-SIZE (memcached-1.2.0.tar.gz) = 143082
+MD5 (memcached-1.2.1.tar.gz) = 6ff64fb974d131fdb7f9d5fdf955dc9a
+SHA256 (memcached-1.2.1.tar.gz) = d489c1e8f9b149d7cde2bb1cb2c509ca6acedc32baed4e9b5f9e17d722c78c86
+SIZE (memcached-1.2.1.tar.gz) = 148755

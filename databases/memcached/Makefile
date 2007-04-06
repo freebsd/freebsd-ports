@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	memcached
-PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTVERSION=	1.2.1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.danga.com/memcached/dist/ \
 		${MASTER_SITE_GENTOO}
@@ -16,7 +15,7 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	mnag@FreeBSD.org
 COMMENT=	High-performance distributed memory object cache system
 
-LIB_DEPENDS=	event-1.2a:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.3b:${PORTSDIR}/devel/libevent
 
 USE_RC_SUBR=	memcached
 GNU_CONFIGURE=	YES
