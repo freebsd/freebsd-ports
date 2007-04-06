@@ -37,9 +37,10 @@ milterdkim_socket=${milterdkim_socket:-"local:/var/run/milterdkim/filter"}
 milterdkim_domain=${milterdkim_domain:-"example.com"}
 milterdkim_key=${milterdkim_key:-"/var/db/domainkeys/default.key.pem"}
 milterdkim_selector=${milterdkim_selector:-"default"}
-milterdkim_alg=${milterdkim_alg:-"rsa-sha1"}
-## milterdkim_flags expands escaped variables later.
-milterdkim_flags=${milterdkim_flags:-'-d ${milterdkim_domain} -c simple -m MSA -s ${milterdkim_selector} -k ${milterdkim_key} -S ${milterdkim_alg}'}
+milterdkim_alg=${milterdkim_alg:-}
+# Options other than above can be set with $milterdkim_flags.
+# see dkim-milter documentation for detail.
+milterdkim_flags=${milterdkim_flags:-"-b sv -c simple/simple -m MSA"}
 
 . %%RC_SUBR%%
 
@@ -66,8 +67,22 @@ if [ -n "$2" ]; then
 	fi
 	eval milterdkim_domain="\${milterdkim_${profile}_domain:-${milterdkim_domain}}"
 	eval milterdkim_key="\${milterdkim_${profile}_key:-${milterdkim_key}}"
+	eval milterdkim_selector="\${milterdkim_${profile}_selector:-${milterdkim_selector}}"
+	eval milterdkim_alg="\${milterdkim_${profile}_alg:-${milterdkim_alg}}"
 	eval milterdkim_flags="\${milterdkim_${profile}_flags:-${milterdkim_flags}}"
-	command_args="-l -p ${milterdkim_socket} -u ${milterdkim_uid} -P ${pidfile} -d ${milterdkim_domain} -k ${milterdkim_key} -s ${milterdkim_selector} -S ${milterdkim_alg}"
+	if [ "x${milterdkim_domain}" != "x" ];then
+	    milterdkim_domain="-d ${milterdkim_domain}"
+	fi
+	if [ "x${milterdkim_key}" != "x" ];then
+	    milterdkim_key="-k ${milterdkim_key}"
+	fi
+	if [ "x${milterdkim_selector}" != "x" ];then
+	    milterdkim_selector="-s ${milterdkim_selector}"
+	fi
+	if [ "x${milterdkim_alg}" != "x" ];then
+	    milterdkim_alg="-S ${milterdkim_alg}"
+	fi
+	command_args="-l -p ${milterdkim_socket} -u ${milterdkim_uid} -P ${pidfile} ${milterdkim_domain} ${milterdkim_key} ${milterdkim_selector} ${milterdkim_alg}"
     else
 	echo "$0: extra argument ignored"
     fi
@@ -89,8 +104,19 @@ else
 	    restart_precmd=""
 	fi
     else
-	milterdkim_flags=${milterdkim_flags}
-	command_args="-l -p ${milterdkim_socket} -u ${milterdkim_uid} -P ${pidfile} -d ${milterdkim_domain} -k ${milterdkim_key} -s ${milterdkim_selector} -S ${milterdkim_alg}"
+	if [ "x${milterdkim_domain}" != "x" ];then
+	    milterdkim_domain="-d ${milterdkim_domain}"
+	fi
+	if [ "x${milterdkim_key}" != "x" ];then
+	    milterdkim_key="-k ${milterdkim_key}"
+	fi
+	if [ "x${milterdkim_selector}" != "x" ];then
+	    milterdkim_selector="-s ${milterdkim_selector}"
+	fi
+	if [ "x${milterdkim_alg}" != "x" ];then
+	    milterdkim_alg="-S ${milterdkim_alg}"
+	fi
+	command_args="-l -p ${milterdkim_socket} -u ${milterdkim_uid} -P ${pidfile} ${milterdkim_domain} ${milterdkim_key} ${milterdkim_selector} ${milterdkim_alg}"
     fi
 fi
 
