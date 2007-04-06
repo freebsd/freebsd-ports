@@ -3394,7 +3394,6 @@ gfont		ports/graphics/gfont
 gfontview	ports/print/gfontview
 gforge		ports/www/gforge
 gforth		ports/lang/gforth
-gfortran	ports/lang/gfortran
 gfslicer	ports/sysutils/gfslicer
 gftp		ports/ftp/gftp
 ggiterm		ports/x11/ggiterm
