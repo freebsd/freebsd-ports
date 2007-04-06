@@ -8757,6 +8757,7 @@ p5-Catalyst-Plugin-Cache-FileCache	ports/www/p5-Catalyst-Plugin-Cache-FileCache
 p5-Catalyst-Plugin-Cache-Memcached	ports/www/p5-Catalyst-Plugin-Cache-Memcached
 p5-Catalyst-Plugin-Cache-Store-FastMmap	ports/www/p5-Catalyst-Plugin-Cache-Store-FastMmap
 p5-Catalyst-Plugin-ConfigLoader	ports/www/p5-Catalyst-Plugin-ConfigLoader
+p5-Catalyst-Plugin-ConfigLoader-Environment	ports/www/p5-Catalyst-Plugin-ConfigLoader-Environment
 p5-Catalyst-Plugin-DefaultEnd	ports/www/p5-Catalyst-Plugin-DefaultEnd
 p5-Catalyst-Plugin-FillInForm	ports/www/p5-Catalyst-Plugin-FillInForm
 p5-Catalyst-Plugin-FormBuilder	ports/www/p5-Catalyst-Plugin-FormBuilder
