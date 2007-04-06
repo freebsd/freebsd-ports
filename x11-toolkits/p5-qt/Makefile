@@ -38,10 +38,6 @@ MAN3=	Qt.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		"This port needs Perl 5.6.0 or greater, please upgrade your Perl!"
-.endif
-
 .if ${ARCH} == "ia64"
 BROKEN=		"Does not link on ia64"
 .endif

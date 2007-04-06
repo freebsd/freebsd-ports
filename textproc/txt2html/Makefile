@@ -22,10 +22,4 @@ PERL_MODBUILD=	yes
 MAN1=	txt2html.1
 MAN3=	HTML::TextToHTML.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE="Need at least perl 5.6.1 to build"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

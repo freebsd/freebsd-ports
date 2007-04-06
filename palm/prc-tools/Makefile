@@ -64,12 +64,6 @@ MAN1=		cccp.1 m68k-palmos-g++.1 m68k-palmos-gcc.1 \
 		cpp.1 gcov.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/Pod/Man.pm:${PORTSDIR}/textproc/p5-podlators
-.endif
-
 CFLAGS:=	${CFLAGS:C/-m[-=0-9a-z]*//g}
 
 post-extract:
@@ -131,4 +125,4 @@ post-install:
 	${RM} ${PREFIX}/pilot/bin/m68k-palmos-c++filt
 	${RM} ${PREFIX}/pilot/lib/libiberty.a
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

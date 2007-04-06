@@ -34,10 +34,4 @@ MAN3=	XML::XBEL.3 \
 	XML::XBEL::thingy.3 \
 	XML::XBEL::url.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600 #inherited from Module::Build
-IGNORE=	requires at least Perl 5.6 due to dependencies.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

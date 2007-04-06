@@ -21,11 +21,4 @@ MAN3=		Unix::GroupFile.3 Unix::AliasFile.3 \
 		Unix::ConfigFile.3 \
 		Unix::PasswdFile.3 Unix::AutomountFile.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-post-patch:
-	@cd ${WRKSRC} && ${PATCH} < ${PATCHDIR}/extra-patch-perl5.005
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

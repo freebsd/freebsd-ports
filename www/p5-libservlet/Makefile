@@ -61,10 +61,4 @@ MAN3=	Servlet.3 \
 	Servlet::SingleThreadModel.3 \
 	Servlet::UnavailableException.3 \
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		"needs at least perl 5.6.1 to build"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
