@@ -6,7 +6,7 @@
 
 PORTNAME=	pftpx
 PORTVERSION=	0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.sentia.org/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	sullrich@gmail.com
 COMMENT=	Much enhanced ftp proxy for pf that supports most ftp protocols
 
-LIB_DEPENDS=	event-1.2a:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.3b:${PORTSDIR}/devel/libevent
 
 MAN8=		pftpx.8
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	io
 PORTVERSION=	0.0.2006.05.02
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://io.urbanape.com/release/ \
 		http://www.sigusr1.org/~steve/
@@ -17,7 +17,7 @@ MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Small prototype-based programming language
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
-		event-1.2a:${PORTSDIR}/devel/libevent
+		event-1.3b:${PORTSDIR}/devel/libevent
 
 USE_GMAKE=	yes
 

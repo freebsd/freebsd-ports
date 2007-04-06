@@ -7,14 +7,14 @@
 
 PORTNAME=	crawl
 PORTVERSION=	0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.monkey.org/~provos/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small, efficient web crawler with advanced features
 
-LIB_DEPENDS=	event-1.2a:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.3b:${PORTSDIR}/devel/libevent
 
 USE_BDB=	yes
 GNU_CONFIGURE=	yes
