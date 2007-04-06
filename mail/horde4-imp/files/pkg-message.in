@@ -5,16 +5,14 @@ configuration files.
 Horde must be configured and the tables created; if not, see
 `pkg_info -D -x horde'.
 
-Then, you might have to tune the configuration files located in
-%%CONFDIR%%/, specially the file servers.php.
+Then, you have to tune the configuration files located in
+%%CONFDIR%%/, specially the file servers.php to define your mailserver.
 
 Then, you must login to Horde as a Horde Administrator to finish the
 configuration. Please read %%DOCSDIR%%/INSTALL.
 
 Warning: if you are upgrading from IMP 4.0.x, please read
 %%DOCSDIR%%/UPGRADING.
-
-To protect your configuration files, you have to restart Apache.
 
 To secure your installation, it is at least recommended that you change
 the default database password used by horde and imp.
