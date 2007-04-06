@@ -9,14 +9,13 @@
 %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Convertors/HTML.html
 %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Convertors/HTML.src/M000003.html
 %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Default.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Default.src/M000018.html
+%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Default.src/M000010.html
 %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Ruby.html
 %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Ruby.src/M000008.html
 %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Ruby.src/M000009.html
 %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Token.html
 %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Token.src/M000020.html
 %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Tokenizer.html
-%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Tokenizer.src/M000010.html
 %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Tokenizer.src/M000011.html
 %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Tokenizer.src/M000012.html
 %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Tokenizer.src/M000013.html
@@ -24,6 +23,7 @@
 %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Tokenizer.src/M000015.html
 %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Tokenizer.src/M000016.html
 %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Tokenizer.src/M000017.html
+%%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Tokenizer.src/M000018.html
 %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/Version.html
 %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/XML.html
 %%DOC_DIR%%/syntax-%%PORTVERSION%%/rdoc/classes/Syntax/XML.src/M000006.html
