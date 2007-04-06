@@ -1,4 +1,3 @@
-%%HORDE_INC%%/httpd-horde.conf
 %%HORDESBIN%%/horde_set_perms.sh
 %%HORDEDIR%%/admin/cmdshell.php
 %%HORDEDIR%%/admin/datatree.php
@@ -1714,4 +1713,3 @@
 @dirrm %%HORDEDIR%%/admin/locale
 @dirrm %%HORDEDIR%%/admin
 @dirrmtry %%HORDEDIR%%
-%%RMDIRINC%%@dirrmtry %%HORDE_INC%%

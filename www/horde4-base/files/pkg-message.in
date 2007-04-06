@@ -27,14 +27,8 @@ Select a log driver; if you keep 'file', do not forget to add a line
 in /etc/newsyslog.conf.
 Then select and configure a preferences driver.
 
-Your %%APACHE_CONF%% has been updated,
-you have to restart Apache.
-
 When everything is OK, you should be able to access Horde from
 <http://localhost/horde/>.
-(If <http://localhost/horde/> does not run, but
- <http://localhost/horde/index.php> is OK, then you have
- to define index.php as a DirectoryIndex in %%APACHE_CONF%%.)
 
 There is a testing script at <http://localhost/horde/test.php>.
 ************************************************************************

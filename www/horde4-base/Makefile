@@ -7,6 +7,7 @@
 
 PORTNAME=	horde
 DISTVERSION=	3.1.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	HORDE
 PKGNAMESUFFIX=	-base
@@ -80,7 +81,6 @@ RUN_DEPENDS+=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
 CONFLICTS=	horde-2.*
 
 NO_BUILD=	yes
-USE_APACHE=	1.3+
 USE_GETTEXT=	yes	# Already implied by USE_PHP =gettext, to pet portlint
 USE_PHP=	ctype gettext session
 SUB_FILES=	pkg-message pkg-deinstall pkg-install
@@ -206,16 +206,14 @@ SUB_DIRS=	admin config js lib locale po scripts services templates themes util
 LHORDEDIR?=	www/horde
 LHORDESBIN?=	sbin
 
-PLIST_SUB=	HORDEDIR=${LHORDEDIR} HORDESBIN=${LHORDESBIN}	\
-		HORDE_INC=${LHORDE_INC}
-SUB_LIST+=	HORDEDIR=${HORDEDIR} APACHE_CONF=${APACHE_CONF}	\
-		HORDESBIN=${HORDESBIN} HORDEADMUSR=${HORDEADMUSR} HORDEGRP=${WWWGRP}
+PLIST_SUB=	HORDEDIR=${LHORDEDIR} HORDESBIN=${LHORDESBIN}
+SUB_LIST+=	HORDEDIR=${HORDEDIR} HORDESBIN=${HORDESBIN}	\
+		HORDEADMUSR=${HORDEADMUSR} HORDEGRP=${WWWGRP}
 
 HORDEDIR=	${PREFIX}/${LHORDEDIR}
 HORDESBIN=	${PREFIX}/${LHORDESBIN}
 CONFDIR=	${HORDEDIR}/config
 
-APACHE_CONF=	${APACHE_CNFDIR}/httpd.conf
 PEARDIR?=	${LOCALBASE}/share/pear
 LOG_FILE?=	/var/log/horde.log
 
@@ -235,35 +233,13 @@ USE_PHP+=	mcal
 . endif
 .endif
 
-.if ${APACHE_VERSION} >= 20
-APACHE_CNFDIR=	${LOCALBASE}/etc/apache${APACHE_VERSION:S/20/2/}
-HORDE_INC=	${APACHE_CNFDIR}/Includes
-LHORDE_INC=	${HORDE_INC:S|^${LOCALBASE}/||}
-PLIST_SUB+=	RMDIRINC="@comment "
-.else
-APACHE_CNFDIR=	${LOCALBASE}/etc/apache
-HORDE_INC=	${PREFIX}/etc/horde
-LHORDE_INC=	${HORDE_INC:S|^${PREFIX}/||}
-PLIST_SUB+=	RMDIRINC=""
-.endif
-
 post-extract:
 	@${MV} ${WRKSRC}/README ${WRKSRC}/docs/
 
 pre-configure:
 	@${RM} ${PATCHES2RM:S|^|${WRKSRC}/|:S|$|.orig|}
-	@${SED} -e "s:/home/httpd/html/horde:${HORDEDIR}:"				\
-		-e "s:php_value auto_prepend_file:# php_value auto_prepend_file:"	\
-		-e "s:/home/httpd/phplib:${PEARDIR}:"					\
-		${FILESDIR}/httpd.conf.horde > ${WRKDIR}/httpd-horde.conf
-.if ${PHP_VER} == 5
-	@${REINPLACE_CMD} -e "s:mod_php4.c:mod_php5.c:" ${WRKDIR}/httpd-horde.conf
-.endif
-.if ${APACHE_VERSION} >= 22
-	@${REINPLACE_CMD} -e "s:IfModule mod_\([^ ]*\)\.c:IfModule \1_module:" \
-	                  ${WRKDIR}/httpd-horde.conf
-.endif
-	@${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" ${WRKSRC}/config/mime_drivers.php.dist
+		@${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:"\
+		 ${WRKSRC}/config/mime_drivers.php.dist
 .if !defined(WITHOUT_X11)
 . if !defined(WITHOUT_WV)
 	@${REINPLACE_CMD} -e "s://UNCOMMENTIFWV::" ${WRKSRC}/config/mime_drivers.php.dist
@@ -335,31 +311,22 @@ pre-install:
 
 do-install:
 	@${MKDIR}  ${HORDEDIR}
-.for REP in ${SUB_DIRS}
-	@${CP} -Rp ${WRKSRC}/${REP} ${HORDEDIR}
-.endfor
+	@${CP} -Rp ${SUB_DIRS:S|^|${WRKSRC}/|} ${HORDEDIR}/
 	@${CP} -p  ${WRKSRC}/*.php ${HORDEDIR}
-
 	@${CP} ${WRKSRC}/scripts/set_perms.sh ${HORDESBIN}/horde_set_perms.sh
 	@${CHMOD} u+x ${HORDESBIN}/horde_set_perms.sh
-.if ${APACHE_VERSION} >= 20
-	${INSTALL_DATA} ${WRKDIR}/httpd-horde.conf ${HORDE_INC}
-.else
-	@${MKDIR} ${HORDE_INC}
-	@${INSTALL_DATA} ${WRKDIR}/httpd-horde.conf ${HORDE_INC}
-. if !defined(PACKAGE_BUILDING)
-	@(if [ -f ${APACHE_CONF} ] ; then \
-		${ECHO_MSG} "===> Updating ${APACHE_CONF}..." ; \
-		${CP} -p ${APACHE_CONF} ${APACHE_CONF}.beforeHorde ; \
-		${ECHO_CMD} "# Horde's include directory" >> ${APACHE_CONF} ; \
-		${ECHO_CMD} "Include ${HORDE_INC}" >> ${APACHE_CONF} ; \
-	fi)
-. endif
-.endif
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${HORDEDIR}
-	@${CHMOD} -R o-rwx ${CONFDIR}
-	@${TOUCH} ${LOG_FILE}
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${LOG_FILE}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${HORDEDIR}/
+	@${CHMOD} -R o-rwx ${HORDEDIR}/
+	${ECHO_CMD} @exec ${CHOWN} -R ${WWWOWN}:${WWWGRP}\
+		%D/${HORDEDIR:S|^${PREFIX}/||}/ >> ${TMPPLIST}
+	${ECHO_CMD} @exec ${CHMOD} -R o-rwx\
+		%D/${HORDEDIR:S|^${PREFIX}/||}/ >> ${TMPPLIST}
+	${TOUCH} ${LOG_FILE}
+	${CHOWN} ${WWWOWN}:${WWWGRP} ${LOG_FILE}
+	${ECHO_CMD} "@exec ${TOUCH} ${LOG_FILE};${CHOWN} ${WWWOWN}:${WWWGRP} ${LOG_FILE}"\
+		>> ${TMPPLIST}
+	${ECHO_CMD} "@unexec if [ ! -s ${LOG_FILE} ];then ${RM} -f ${LOG_FILE};fi"\
+		>> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}/
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${DOCSDIR}/
