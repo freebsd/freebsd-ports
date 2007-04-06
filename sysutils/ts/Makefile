@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	ts
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://vicerveza.homeunix.net/~viric/soft/ts/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Serial task spooler
 
-WRKSRC=		${WRKDIR}/ts
-ALL_TARGET=	ts
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	OBJECTIVES PROTOCOL README TRICKS Changelog
 MAN1=		${PORTNAME}.1
