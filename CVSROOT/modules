@@ -8780,6 +8780,7 @@ p5-Catalyst-Plugin-Session-Store-Delegate	ports/www/p5-Catalyst-Plugin-Session-S
 p5-Catalyst-Plugin-Session-Store-FastMmap	ports/www/p5-Catalyst-Plugin-Session-Store-FastMmap
 p5-Catalyst-Plugin-Session-Store-File	ports/www/p5-Catalyst-Plugin-Session-Store-File
 p5-Catalyst-Plugin-Session-Store-Memcached	ports/www/p5-Catalyst-Plugin-Session-Store-Memcached
+p5-Catalyst-Plugin-Setenv	ports/www/p5-Catalyst-Plugin-Setenv
 p5-Catalyst-Plugin-Singleton	ports/www/p5-Catalyst-Plugin-Singleton
 p5-Catalyst-Plugin-StackTrace	ports/www/p5-Catalyst-Plugin-StackTrace
 p5-Catalyst-Plugin-Static	ports/www/p5-Catalyst-Plugin-Static
