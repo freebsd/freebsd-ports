@@ -15,5 +15,6 @@ A flexible digital photo gallery tool. Features include:
  o CSS is used for fonts/styles.
  o Can handle many image file formats
  o Pages pass W3C specs.
+ o NEW! Supports video files
 
 WWW: http://www.edwinh.org/imageindex/
