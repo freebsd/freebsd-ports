@@ -1,0 +1,3 @@
+This store plugin is a bit of a wrapper for Cache::FastMmap
+
+WWW: http://search.cpan.org/dist/Catalyst-Plugin-Cache-Store-FastMmap/
