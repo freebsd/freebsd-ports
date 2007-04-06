@@ -7,6 +7,7 @@
 
 PORTNAME=	MySQLdb
 DISTVERSION=	1.2.2b2
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mysql-python
@@ -24,6 +25,7 @@ USE_MYSQL=		yes
 CONFLICTS=	py*-MySQLdb-[0-9]*
 
 PORTDOCS=	*
+BROKEN=		Latest version are in databases/py-MySQLdb
 
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}/options
 OPTIONS=	MYSQLCLIENT_R "Use libmysqlclient_r (thread safe)" on
