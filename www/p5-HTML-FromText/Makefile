@@ -26,11 +26,4 @@ PERL_CONFIGURE=		yes
 MAN1=			text2html.1
 MAN3=			HTML::FromText.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	@${PERL} -pi -e 's/_ foreach/_() foreach/' ${WRKSRC}/lib/HTML/FromText.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

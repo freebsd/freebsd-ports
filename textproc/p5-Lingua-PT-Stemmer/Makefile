@@ -19,10 +19,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=	Lingua::GL::Stemmer.3 Lingua::PT::Stemmer.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=	p5-Lingua-PT-Stemmer requires perl 5.6.1.  Instal lang/perl5 and then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

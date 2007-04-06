@@ -151,16 +151,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500601
-IGNORE=		This program only support perl 5.6.1 or above
-.endif
-
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
-.if ${PERL_LEVEL} == 500601
-BUILD_DEPENDS+=	${SITE_PERL}/Encode/compat.pm:${PORTSDIR}/converters/p5-Encode-compat \
-		${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv
-.endif
 .endif
 
 .include <bsd.port.post.mk>

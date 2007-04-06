@@ -27,13 +27,7 @@ MAN3=		Kwiki::Edit::RequireUserName.3
 post-patch:
 	${FIND} ${WRKSRC} -name '*.orig' -print0 | ${XARGS} -0 ${RM}
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		This port requires perl 5.6.x or later. Install lang/perl5 then try again
-.endif
-
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

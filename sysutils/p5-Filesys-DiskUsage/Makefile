@@ -19,15 +19,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Filesys::DiskUsage.3
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${RM} ${WRKSRC}/lib/Filesys/DiskUsage.pm.orig
-.if ${PERL_LEVEL} < 500600
-	@${PERL} -pi -e '$$_ = "" if /use warnings;/;' \
-		-e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' \
-		${WRKSRC}/lib/Filesys/DiskUsage.pm \
-		${WRKSRC}/Makefile.PL
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

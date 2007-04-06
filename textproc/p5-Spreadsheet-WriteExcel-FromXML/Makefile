@@ -26,16 +26,4 @@ MAN3=		Spreadsheet::WriteExcel::FromXML::Workbook.3 \
 		Spreadsheet::WriteExcel::FromXML::Worksheet.3 \
 		Spreadsheet::WriteExcel::FromXML.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	@${PERL} -pi -e 's/^our (\S+)/use vars qw{$$1};$$1/;' \
-		-e 's/\$$fh/FH/g;' -e 's/(open FH, [^,]+),/$$1 ./g;' \
-		-e '$$_ = "" if /my FH/;' -e 's/\( FH \)/( \*FH )/;' \
-		${WRKSRC}/lib/Spreadsheet/WriteExcel/FromXML.pm \
-		${WRKSRC}/lib/Spreadsheet/WriteExcel/FromXML/Worksheet.pm \
-		${WRKSRC}/lib/Spreadsheet/WriteExcel/FromXML/Workbook.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

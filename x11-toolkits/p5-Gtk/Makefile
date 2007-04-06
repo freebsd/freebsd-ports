@@ -30,10 +30,4 @@ MAN3=		Gtk.3pm \
 		Gtk::objects.3pm \
 		Gtk::reference.3pm
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		This port requires perl 5.6.0 or later. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

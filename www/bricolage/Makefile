@@ -90,12 +90,6 @@ BUILD_DEPENDS+=	${SITE_PERL}/HTML/Template/Expr.pm:${PORTSDIR}/www/p5-HTML-Templ
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
 .endif
 
-.if ${PERL_LEVEL} >= 500600 && ${PERL_LEVEL} < 500800
-.if exists(${SITE_PERL}/Encode/compat.pm)
-BUILD_DEPENDS+=	${SITE_PERL}/Encode/compat.pm:${PORTSDIR}/converters/p5-Encode-compat
-.endif
-.endif
-
 .if exists(${SITE_PERL}/Test/Pod.pm)
 BUILD_DEPENDS+=	${SITE_PERL}/Test/Pod.pm:${PORTSDIR}/devel/p5-Test-Pod
 # Test::Pod depends on Pod::Simple

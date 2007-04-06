@@ -31,12 +31,6 @@ IGNORE=	WITH_MOD_PERL must be either '1' or '2', or undefined
 .endif
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	"Perl 5.6 or newer required. Install lang/perl5.[6,8] and try again"
-.endif
-
 pre-fetch:
 	@${ECHO_CMD}
 .if defined(WITH_MOD_PERL)
@@ -58,4 +52,5 @@ pre-fetch:
 	@${ECHO_CMD} "  WITH_MOD_PERL=2  Enables unofficial, experimental mod_perl 2.x support"
 .endif
 	@${ECHO_CMD}
-.include <bsd.port.post.mk>
+
+.include <bsd.port.mk>

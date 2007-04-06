@@ -43,14 +43,10 @@ CONFIGURE_ARGS+=	--enable-multiharmonic
 .include <bsd.port.pre.mk>
 
 .if !defined(NOPORTDOCS)
-. if ${PERL_LEVEL} < 500600
-NOPORTDOCS=	yes
-. else
 ALL_TARGET=	all doc
 BUILD_DEPENDS+=	texi2pdf:${PORTSDIR}/print/teTeX-base	\
 		dvips:${PORTSDIR}/print/dvipsk-tetex
 USE_PERL5_BUILD=	yes
-. endif
 .endif
 
 post-install:

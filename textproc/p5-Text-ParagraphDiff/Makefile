@@ -28,12 +28,6 @@ EXAMPLES=	diff.html new.txt old.txt
 EXAMPLESDIR=	${PREFIX}/share/examples/p5-Text-ParagraphDiff
 MAN3=		Text::ParagraphDiff.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		This port requires perl 5.6.1 or later. Install lang/perl5 then try again
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
@@ -43,4 +37,4 @@ post-install:
 	${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

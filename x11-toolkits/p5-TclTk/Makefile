@@ -32,10 +32,4 @@ do-configure:
 	@cd ${CONFIGURE_WRKSRC} && \
 		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601 # lang/p5-Tcl does
-IGNORE=         requires perl 5.6.x or later. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

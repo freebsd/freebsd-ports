@@ -28,10 +28,4 @@ MAN3=	RDF::Simple.3 \
 	RDF::Simple::Parser.3 \
 	RDF::Simple::Serialiser.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600 #inherited from security/p5-Authen-SASL
-IGNORE=	requires at least Perl 5.6 due to dependencies.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

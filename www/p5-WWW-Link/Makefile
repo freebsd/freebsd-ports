@@ -48,14 +48,4 @@ MAN3=	WWW::Link.3 \
 	WWW::Link::Tester::Complex.3 \
 	WWW::Link::Tester::Simple.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-post-patch:
-	${PERL} -pi \
-		-e 's/^\s*our\s+\(?\s*([\$$\@]\w+)\s*\)?/use vars qw($$1);$$1/;' \
-		-e '$$_="" if /use warnings/;' \
-		$$(${FIND} ${WRKSRC}/lib -name '*.pm')
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
