@@ -59,6 +59,9 @@
 %%PYTHON_SITELIBDIR%%/M2Crypto/m2urllib.py
 %%PYTHON_SITELIBDIR%%/M2Crypto/m2urllib.pyc
 %%PYTHON_SITELIBDIR%%/M2Crypto/m2urllib.pyo
+%%PYTHON_SITELIBDIR%%/M2Crypto/m2urllib2.py
+%%PYTHON_SITELIBDIR%%/M2Crypto/m2urllib2.pyc
+%%PYTHON_SITELIBDIR%%/M2Crypto/m2urllib2.pyo
 %%PYTHON_SITELIBDIR%%/M2Crypto/m2xmlrpclib.py
 %%PYTHON_SITELIBDIR%%/M2Crypto/m2xmlrpclib.pyc
 %%PYTHON_SITELIBDIR%%/M2Crypto/m2xmlrpclib.pyo
