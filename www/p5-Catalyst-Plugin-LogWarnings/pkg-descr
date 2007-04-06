@@ -1,0 +1,9 @@
+In MyApp.pm:
+
+    use Catalyst qw/LogWarnings/;
+
+After that, any warn statement that's executed during action
+processing is sent to the log $c->log as a warning (instead of
+being dumped to STDERR).
+
+WWW: http://search.cpan.org/dist/Catalyst-Plugin-LogWarnings/
