@@ -32,6 +32,7 @@ include/gmime-2.0/gmime/gmime-multipart-signed.h
 include/gmime-2.0/gmime/gmime-multipart.h
 include/gmime-2.0/gmime/gmime-object.h
 include/gmime-2.0/gmime/gmime-param.h
+include/gmime-2.0/gmime/gmime-parse-utils.h
 include/gmime-2.0/gmime/gmime-parser.h
 include/gmime-2.0/gmime/gmime-part.h
 include/gmime-2.0/gmime/gmime-session-simple.h
