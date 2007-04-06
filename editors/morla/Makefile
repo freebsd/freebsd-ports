@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	morla
-PORTVERSION=	0.10.2
+PORTVERSION=	0.11
 CATEGORIES=	editors textproc
 MASTER_SITES=	http://www2.autistici.org/bakunin/morla/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
