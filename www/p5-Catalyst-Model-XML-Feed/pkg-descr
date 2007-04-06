@@ -1,0 +1,7 @@
+Catalyst::Model::XML::Feed allows you to use XML feeds in your
+Catalyst application.  To use a feed, you need to register it with
+the "register" method.
+
+Once a feed is registered, it's automatically cached for you.
+
+WWW: http://search.cpan.org/dist/Catalyst-Model-XML-Feed/
