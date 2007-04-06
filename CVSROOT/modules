@@ -3446,6 +3446,8 @@ gillo		ports/games/gillo
 gimageview	ports/graphics/gimageview
 gimmie		ports/deskutils/gimmie
 gimp		ports/graphics/gimp
+gimp-app	ports/graphics/gimp-app
+gimp-app-devel	ports/graphics/gimp-app-devel
 gimp-devel	ports/graphics/gimp-devel
 gimp-greycstoration	ports/graphics/gimp-greycstoration
 gimp-gutenprint	ports/print/gimp-gutenprint
