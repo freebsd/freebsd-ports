@@ -8751,6 +8751,7 @@ p5-Catalyst-Plugin-Authentication-Store-Htpasswd	ports/www/p5-Catalyst-Plugin-Au
 p5-Catalyst-Plugin-Authorization-ACL	ports/www/p5-Catalyst-Plugin-Authorization-ACL
 p5-Catalyst-Plugin-Authorization-Roles	ports/www/p5-Catalyst-Plugin-Authorization-Roles
 p5-Catalyst-Plugin-C3	ports/www/p5-Catalyst-Plugin-C3
+p5-Catalyst-Plugin-Cache	ports/www/p5-Catalyst-Plugin-Cache
 p5-Catalyst-Plugin-Cache-FastMmap	ports/www/p5-Catalyst-Plugin-Cache-FastMmap
 p5-Catalyst-Plugin-Cache-FileCache	ports/www/p5-Catalyst-Plugin-Cache-FileCache
 p5-Catalyst-Plugin-Cache-Memcached	ports/www/p5-Catalyst-Plugin-Cache-Memcached
