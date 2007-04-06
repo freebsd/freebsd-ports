@@ -1241,6 +1241,7 @@
     SUBDIR += xpi-resurrectpages
     SUBDIR += xpi-sameplace
     SUBDIR += xpi-savegenpage
+    SUBDIR += xpi-scrapbook
     SUBDIR += xpi-searchstatus
     SUBDIR += xpi-server_switcher
     SUBDIR += xpi-sessionmanager
