@@ -13,7 +13,7 @@
 ## base system, building this port may fail.
 
 PORTNAME=	dkim-milter
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
