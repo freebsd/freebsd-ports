@@ -1,13 +1,13 @@
---- configure.orig	Wed Aug 10 17:42:42 2005
-+++ configure	Wed Sep 14 08:29:30 2005
-@@ -6145,81 +6145,12 @@
+--- configure.orig	Thu Apr  5 08:38:09 2007
++++ configure	Thu Apr  5 08:47:12 2007
+@@ -5087,81 +5087,12 @@
  
      if $search_ncurses
      then
 -        if test -f /usr/include/ncurses.h
 -	then
--	    echo "$as_me:$LINENO: result: Found ncurses on /usr/include/ncurses.h" >&5
--echo "${ECHO_T}Found ncurses on /usr/include/ncurses.h" >&6
+-	    { echo "$as_me:$LINENO: result: Found ncurses on /usr/include/ncurses.h" >&5
+-echo "${ECHO_T}Found ncurses on /usr/include/ncurses.h" >&6; }
 - 	    CURSES_LIBS="-lncurses"
 -	    CURSES_INCLUDEDIR=""
 -	    search_ncurses=false
@@ -29,8 +29,8 @@
 -    then
 -        if test -f /usr/include/ncurses/ncurses.h
 -	then
--	    echo "$as_me:$LINENO: result: Found ncurses on /usr/include/ncurses/ncurses.h" >&5
--echo "${ECHO_T}Found ncurses on /usr/include/ncurses/ncurses.h" >&6
+-	    { echo "$as_me:$LINENO: result: Found ncurses on /usr/include/ncurses/ncurses.h" >&5
+-echo "${ECHO_T}Found ncurses on /usr/include/ncurses/ncurses.h" >&6; }
 - 	    CURSES_LIBS="-lncurses"
 -	    CURSES_INCLUDEDIR="-I/usr/include/ncurses"
 -	    search_ncurses=false
@@ -52,8 +52,8 @@
 -    then
 -        if test -f /usr/local/include/ncurses.h
 -	then
--	    echo "$as_me:$LINENO: result: Found ncurses on /usr/local/include/ncurses.h" >&5
--echo "${ECHO_T}Found ncurses on /usr/local/include/ncurses.h" >&6
+-	    { echo "$as_me:$LINENO: result: Found ncurses on /usr/local/include/ncurses.h" >&5
+-echo "${ECHO_T}Found ncurses on /usr/local/include/ncurses.h" >&6; }
 - 	    CURSES_LIBS="-L/usr/local/lib -lncurses"
 -	    CURSES_INCLUDEDIR="-I/usr/local/include"
 -	    search_ncurses=false
@@ -75,11 +75,11 @@
 -    then
          if test -f /usr/local/include/ncurses/ncurses.h
  	then
- 	    echo "$as_me:$LINENO: result: Found ncurses on /usr/local/include/ncurses/ncurses.h" >&5
- echo "${ECHO_T}Found ncurses on /usr/local/include/ncurses/ncurses.h" >&6
+ 	    { echo "$as_me:$LINENO: result: Found ncurses on /usr/local/include/ncurses/ncurses.h" >&5
+ echo "${ECHO_T}Found ncurses on /usr/local/include/ncurses/ncurses.h" >&6; }
 - 	    CURSES_LIBS="-L/usr/local/lib -L/usr/local/lib/ncurses -lncurses"
 -	    CURSES_INCLUDEDIR="-I/usr/local/include/ncurses"
-+ 	    CURSES_LIBS="-L/usr/local/lib -L/usr/local/lib/ncurses -Wl,-rpath,/usr/local/lib -lncurses"
++	    CURSES_LIBS="-L/usr/local/lib -L/usr/local/lib/ncurses -Wl,-rpath,/usr/local/lib -lncurses"
 +	    CURSES_INCLUDEDIR="-I/usr/local/include -I/usr/local/include/ncurses"
  	    search_ncurses=false
  	    screen_manager="ncurses on /usr/local/include/ncurses"
