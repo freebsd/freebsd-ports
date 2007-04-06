@@ -603,6 +603,7 @@
     SUBDIR += p5-Catalyst-Plugin-FormValidator-Simple
     SUBDIR += p5-Catalyst-Plugin-HTML-Widget
     SUBDIR += p5-Catalyst-Plugin-I18N
+    SUBDIR += p5-Catalyst-Plugin-LogWarnings
     SUBDIR += p5-Catalyst-Plugin-PageCache
     SUBDIR += p5-Catalyst-Plugin-Params-Nested
     SUBDIR += p5-Catalyst-Plugin-Pluggable
