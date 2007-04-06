@@ -143,9 +143,7 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%DATADIR%%/index.php
 %%DATADIR%%/.htaccess
-etc/apache2/Includes/cakephp.conf
-share/nls/POSIX
-share/nls/en_US.US-ASCII
+%%CONFDIR%%/cakephp.conf
 @exec mkdir -p %D/%%DATADIR%%/vendors
 @exec mkdir -p %D/%%DATADIR%%/cake/scripts/templates/skel/webroot/files
 @exec mkdir -p %D/%%DATADIR%%/cake/scripts/templates/skel/views/pages

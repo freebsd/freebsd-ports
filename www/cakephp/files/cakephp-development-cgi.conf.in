@@ -1,0 +1,13 @@
+AddType application/x-httpd-php .php
+AddType application/x-httpd-php-source .phps
+
+Action php-script %%PHPCGI%%
+AddHandler php-script .php
+
+Alias /cakephp %%DATADIR%%
+
+<Location /cakephp>
+    DirectoryIndex index.php
+    Order deny,allow
+    Allow from all
+</Location>
