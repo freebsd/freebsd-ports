@@ -2897,3 +2897,4 @@ lang/tcl81-thread||2007-03-29|Remove an ancient, unused tcl version
 editors/emacs20-dl||2007-04-02|Has expired: unfetchable, obsolete
 editors/flim113-emacs20||2007-04-02|Has expired: unfetchable, obsolete
 editors/semi113-emacs20||2007-04-02|Has expired: unfetchable, obsolete
+lang/gfortran|lang/gcc42|2007-04-06|Superseded by and equivalent to gcc42

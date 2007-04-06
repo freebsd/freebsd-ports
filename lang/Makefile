@@ -87,7 +87,6 @@
     SUBDIR += gcl
     SUBDIR += gdc
     SUBDIR += gforth
-    SUBDIR += gfortran
     SUBDIR += ghc
     SUBDIR += ghc-doc
     SUBDIR += ghc5
