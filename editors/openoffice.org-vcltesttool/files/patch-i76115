@@ -1,0 +1,102 @@
+Sync amd64 bridge with sixtyfour10 CWS.
+
+--- bridges/source/cpp_uno/gcc3_freebsd_x86-64/uno2cpp.cxx.orig	Sat Sep 16 11:47:13 2006
++++ bridges/source/cpp_uno/gcc3_freebsd_x86-64/uno2cpp.cxx	Tue Apr  3 20:36:13 2007
+@@ -49,6 +49,7 @@
+ #include "bridges/cpp_uno/shared/unointerfaceproxy.hxx"
+ #include "bridges/cpp_uno/shared/vtables.hxx"
+ 
++#include "abi.hxx"
+ #include "share.hxx"
+ 
+ using namespace ::rtl;
+@@ -122,7 +123,7 @@
+                 // value verbatim, as a double without conversion.
+ 				pFPR[nr_fpr++] = *reinterpret_cast<double *>( pSV++ );
+ 			else
+-				*pDS++ = *reinterpret_cast<double *>( pSV++ );
++				*pDS++ = *pSV++;
+ 			break;
+ 
+ 		case 'H': // 64-bit Word
+@@ -165,7 +166,7 @@
+ 
+ //==================================================================================================
+ static void callVirtualMethod(void * pThis, sal_uInt32 nVtableIndex,
+-							  void * pRegisterReturn, typelib_TypeClass eReturnType,
++							  void * pRegisterReturn, typelib_TypeDescription * pReturnTypeDescr, bool bSimpleReturn,
+ 							  char * pPT, sal_uInt64 * pStackLongs, sal_uInt32 nStackLongs)
+ {
+ 	sal_uInt32 nr_gpr, nr_fpr, nr_stack;
+@@ -175,8 +176,6 @@
+ 	if (nr_stack)
+ 		nr_stack = (nr_stack + 1) & ~1;
+ 	
+-	bool bReturnsSimpleType = bridges::cpp_uno::shared::isSimpleType( eReturnType );
+-
+ #if OSL_DEBUG_LEVEL > 1
+ 	// Let's figure out what is really going on here
+ 	fprintf(stderr,"callVirtualMethod() parameters string is %s\n", pPT);
+@@ -244,7 +243,7 @@
+ #undef ARG_GPR
+     }
+ 
+-	if ( bReturnsSimpleType )
++	if ( bSimpleReturn )
+ 		a0 = (sal_uInt64) pThis;
+ 	else
+ 		a1 = (sal_uInt64) pThis;
+@@ -275,7 +274,7 @@
+ 	// Perform the call
+ 	ReturnValue aRet = ( ( FunctionCall ) pMethod )( a0, a1, a2, a3, a4, a5 );
+ 
+-	switch (eReturnType)
++	switch (pReturnTypeDescr->eTypeClass)
+ 	{
+ 	case typelib_TypeClass_HYPER:
+ 	case typelib_TypeClass_UNSIGNED_HYPER:
+@@ -301,6 +300,15 @@
+ 	case typelib_TypeClass_DOUBLE:
+ 		*reinterpret_cast<double *>( pRegisterReturn ) = *reinterpret_cast<double*>( &aRet.f.xmm0 );
+ 		break;
++    default: {
++        sal_Int32 const nRetSize = pReturnTypeDescr->nSize;
++        if (bSimpleReturn && nRetSize <= 16 && nRetSize > 0) {
++            if (nRetSize > 8)
++                static_cast<sal_uInt64 *>(pRegisterReturn)[1] = aRet.i.rdx;
++            static_cast<sal_uInt64 *>(pRegisterReturn)[0] = aRet.i.rax;
++        }
++        break;
++    }
+ 	}
+ }
+ 
+@@ -327,13 +335,15 @@
+ 	OSL_ENSURE( pReturnTypeDescr, "### expected return type description!" );
+ 	
+ 	void * pCppReturn = 0; // if != 0 && != pUnoReturn, needs reconversion
+-	
++
++	bool bSimpleReturn = true;	
+ 	if (pReturnTypeDescr)
+ 	{
+-		if (bridges::cpp_uno::shared::isSimpleType( pReturnTypeDescr ))
+-		{
++		if ( x86_64::return_in_hidden_param( pReturnTypeRef ) )
++			bSimpleReturn = false;
++
++		if (bSimpleReturn)
+ 			pCppReturn = pUnoReturn; // direct way for simple types
+-		}
+ 		else
+ 		{
+ 			// complex return via ptr
+@@ -458,7 +468,7 @@
+ 		OSL_ENSURE( !( (pCppStack - pCppStackStart ) & 7), "UNALIGNED STACK !!! (Please DO panic)" );
+ 		callVirtualMethod(
+ 			pAdjustedThisPtr, aVtableSlot.index,
+-			pCppReturn, pReturnTypeDescr->eTypeClass, pParamType,
++			pCppReturn, pReturnTypeDescr, bSimpleReturn, pParamType,
+ 			(sal_uInt64 *)pCppStackStart, (pCppStack - pCppStackStart) / sizeof(sal_uInt64) );
+ 		// NO exception occured...
+ 		*ppUnoExc = 0;
