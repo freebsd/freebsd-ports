@@ -7,7 +7,8 @@
 PORTNAME=	zoneinfo
 DISTVERSION=	2007e
 CATEGORIES=	misc
-MASTER_SITES=	ftp://elsie.nci.nih.gov/pub/
+MASTER_SITES=	ftp://elsie.nci.nih.gov/pub/ \
+		http://people.freebsd.org/~edwin/
 DISTNAME=	tzdata${DISTVERSION}
 
 MAINTAINER=	edwin@mavetju.org
