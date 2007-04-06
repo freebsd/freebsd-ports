@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	fdm
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	mail
 MASTER_SITES=	SFE
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Fetches and delivers mail
 
-PLIST_FILES=	bin/fdm etc/fdm.conf.sample %%EXAMPLESDIR%%/n-marriott.conf \
-		%%EXAMPLESDIR%%/w-maier.conf
+PLIST_FILES=	bin/fdm etc/fdm.conf.sample ${CFGEXAMPLES:S|^|%%EXAMPLESDIR%%/|:S|$|.conf|}
 PLIST_DIRS=	%%EXAMPLESDIR%%
 PORTDOCS=	CHANGES README MANUAL
+CFGEXAMPLES=	n-marriott f-terbeck t-ulmer w-maier
 
 CFLAGS=	-I/usr/include/openssl
 
@@ -28,8 +28,7 @@ post-patch:
 
 post-install:
 	@${INSTALL} -d ${EXAMPLESDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/examples/n-marriott.conf ${EXAMPLESDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/examples/w-maier.conf ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${CFGEXAMPLES:S|^|${WRKSRC}/examples/|:S|$|.conf|} ${EXAMPLESDIR}/
 	@${LN} -sf ${EXAMPLESDIR}/n-marriott.conf ${PREFIX}/etc/fdm.conf.sample
 .ifndef NOPORTDOCS
 	@${INSTALL} -d ${DOCSDIR}/
