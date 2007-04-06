@@ -2,8 +2,8 @@ bin/event_rpcgen.py
 include/event.h
 include/evhttp.h
 include/evdns.h
-lib/libevent-1.2a.so
-lib/libevent-1.2a.so.1
+lib/libevent-1.3b.so
+lib/libevent-1.3b.so.1
 lib/libevent.a
 lib/libevent.la
 lib/libevent.so
