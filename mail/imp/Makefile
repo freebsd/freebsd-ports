@@ -8,6 +8,7 @@
 PORTNAME=	imp
 PORTVERSION=	4.1.4
 DISTVERSIONPREFIX=	h3-
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	HORDE
 
@@ -33,28 +34,7 @@ COMMENT=	Webmail system for IMAP/POP3 mailboxes
 #
 # - WITH_VALID_CERT	: if you own a valid SSL certificate;
 #
-# - WITHOUT_INGO	: if you don't need filters management;
-#
-# - WITHOUT_NAG		: if you don't want tasks management;
-#
-# - WITHOUT_TURBA	: if you do not want adressbooks;
-#
 # - WITH_HTML		: enable HTML composition mode;
-#
-# - WITH_IMAPSERVER	: if you to depend on an IMAP server;
-#
-# or you can select to work with one of these servers:
-#
-# - WITH_CYRUS-IMAPD	: IMP will work with cyrus-imapd;
-#
-# - WITH_IMAP-UW	: IMP will work with imap-uw;
-#
-# - WITH_DOVECOT	: IMP will work with dovecot;
-#
-# - WITH_COURIER-IMAP	: IMP will work with courier-imap.
-#
-# These choices are mutually exclusive, and imap-uw is the default.
-#
 #-----------------------------------------------------------------------
 
 RUN_DEPENDS+=	${PEARDIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL
@@ -62,22 +42,11 @@ RUN_DEPENDS+=	${PEARDIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL
 CONFLICTS=	imp-3.*
 
 USE_PHP=	imap
-.if defined(WITHOUT_TURBA)
 . if !defined(WITHOUT_LDAP)
 USE_PHP+=	ldap
 . endif
+
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde-base
-.else
-RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/turba/minisearch.php:${PORTSDIR}/mail/turba
-.endif
-
-.if !defined(WITHOUT_INGO)
-RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/ingo/filters.php:${PORTSDIR}/mail/ingo
-.endif
-
-.if !defined(WITHOUT_NAG)
-RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/nag/data.php:${PORTSDIR}/deskutils/nag
-.endif
 
 .if !defined(WITHOUT_SMIME)
 USE_PHP+=	openssl
@@ -98,7 +67,6 @@ RUN_DEPENDS+=	${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
 .endif
 
 NO_BUILD=	yes
-USE_APACHE=	1.3+	# needed to test APACHE_VERSION
 USE_GETTEXT=	yes
 REINPLACE_ARGS=	-i.beforeIMP
 
@@ -130,40 +98,6 @@ PATCH2RM=	prefs.php.dist.orig servers.php.dist.orig conf.xml.orig	\
 		conf.xml.beforeIMP servers.php.dist.beforeIMP
 
 .include <bsd.port.pre.mk>
-
-# I have no report about the support of dkimap4 by IMP,
-# but I shall be happy to add it if someone report success with it.
-# If an IMAP server is already installed, we just record the dependence,
-# else we shall install imap-uw.
-# IMAP servers are ordered according to my tastes, if several are
-# installed, we just record the first one.
-.if defined(WITH_IMAPSERVER)
-. if defined(WITH_IMAP-UW) || exists(${LOCALBASE}/libexec/imapd)
-RUN_DEPENDS+=	${LOCALBASE}/libexec/imapd:${PORTSDIR}/mail/imap-uw
-. elif defined(WITH_CYRUS-IMAPD) || exists(${LOCALBASE}/cyrus/bin/master)
-RUN_DEPENDS+=	${LOCALBASE}/cyrus/bin/master:${PORTSDIR}/mail/cyrus-imapd23
-. elif defined(WITH_COURIER-IMAP) || exists(${LOCALBASE}/bin/deliverquota)
-RUN_DEPENDS+=	${LOCALBASE}/bin/deliverquota:${PORTSDIR}/mail/courier-imap
-. elif defined(WITH_DOVECOT) || exists(${LOCALBASE}/libexec/dovecot/imap)
-RUN_DEPENDS+=	${LOCALBASE}/libexec/dovecot/imap:${PORTSDIR}/mail/dovecot
-. else
-RUN_DEPENDS+=	${LOCALBASE}/libexec/imapd:${PORTSDIR}/mail/imap-uw
-. endif
-.endif
-
-.if ${APACHE_VERSION} >= 20
-HORDE_INC=	${LOCALBASE}/etc/apache${APACHE_VERSION:S/20/2/}/Includes/
-.else
-HORDE_INC=	${LOCALBASE}/etc/horde/
-.endif
-
-pre-everything::
-.if !defined(WITHOUT_IMAPSERVER)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Press CTRL-C and define WITHOUT_IMAPSERVER"
-	@${ECHO_MSG} "if you intend to run an IMAP server on an other machine."
-	@${ECHO_MSG} ""
-.endif
 
 post-extract:
 	@${MV} ${WRKSRC}/README ${WRKSRC}/docs/
@@ -201,8 +135,7 @@ pre-configure:
 		${WRKSRC}/config/servers.php.dist
 . endif
 .endif
-	@${SED} -e "s:/home/httpd/html/horde/imp:${IMPDIR}:"		\
-		${FILESDIR}/httpd.conf.imp > ${WRKDIR}/httpd-imp.conf
+
 .for fc in ${PATCH2RM}
 	@${RM} ${WRKSRC}/config/${fc}
 .endfor
@@ -223,9 +156,12 @@ do-install:
 	@${CP} -Rp ${SUB_DIRS:S|^|${WRKSRC}/|} ${IMPDIR}/
 	@${CP} -p ${WRKSRC}/*.php ${IMPDIR}/
 	@${INSTALL_DATA} ${WRKSRC}/config/conf.xml ${CONFDIR}/
-	@${INSTALL_DATA} ${WRKDIR}/httpd-imp.conf ${HORDE_INC}/
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${IMPDIR}/
-	@${CHMOD} -R o-rwx ${CONFDIR}/
+	@${CHMOD} -R o-rwx ${IMPDIR}/
+	${ECHO_CMD} @exec ${CHOWN} -R ${WWWOWN}:${WWWGRP}\
+		%D/${IMPDIR:S|^${PREFIX}/||}/ >> ${TMPPLIST}
+	${ECHO_CMD} @exec ${CHMOD} -R o-rwx\
+		%D/${IMPDIR:S|^${PREFIX}/||}/ >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}/
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${DOCSDIR}/
