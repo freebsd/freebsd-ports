@@ -12592,6 +12592,7 @@ py-hashlib	ports/security/py-hashlib
 py-htmltestcase	ports/www/py-htmltestcase
 py-httplib2	ports/www/py-httplib2
 py-hyperestraier	ports/textproc/py-hyperestraier
+py-hyperestraier-python	ports/textproc/py-hyperestraier-python
 py-icalendar	ports/devel/py-icalendar
 py-ice		ports/devel/py-ice
 py-iconv	ports/converters/py-iconv
