@@ -7,7 +7,7 @@
 
 PORTNAME=	event
 PORTVERSION=	0.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.xs4all.nl/~mmzeeman/ocaml/
 PKGNAMEPREFIX=	ocaml-
@@ -17,7 +17,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	An ocaml wrapper for the libevent API
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
-LIB_DEPENDS=	event-1.2a:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.3b:${PORTSDIR}/devel/libevent
 
 ALL_TARGET=	all allopt
 USE_GMAKE=	yes

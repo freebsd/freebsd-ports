@@ -7,7 +7,7 @@
 
 PORTNAME=	stegdetect
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.outguess.org/ \
 		http://distfiles.master.finkmirrors.net/
@@ -16,7 +16,7 @@ MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	Automated tool for detecting steganographic content in JPEGs
 
 .if !defined(WITHOUT_X11)
-LIB_DEPENDS=	event-1.2a:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.3b:${PORTSDIR}/devel/libevent
 .endif
 
 # Note: stegdetect includes a modified version of jpeg-6b linked statically

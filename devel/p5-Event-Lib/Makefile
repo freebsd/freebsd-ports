@@ -7,6 +7,7 @@
 
 PORTNAME=	Event-Lib
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Event
@@ -15,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	fk@fabiankeil.de
 COMMENT=	Makes libevent(3) accessible with Perl
 
-LIB_DEPENDS=	event-1.2a:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	event-1.3b:${PORTSDIR}/devel/libevent
 
 PERL_CONFIGURE=	yes
 
