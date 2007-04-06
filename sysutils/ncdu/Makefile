@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ncdu
-PORTVERSION=	0.3
+PORTVERSION=	1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://dev.yorhel.nl/download/ CSME
+MASTER_SITES=	http://dev.yorhel.nl/download/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Ncurses du(1)
