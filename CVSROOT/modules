@@ -10156,6 +10156,7 @@ p5-Net-SFTP	ports/net/p5-Net-SFTP
 p5-Net-SFTP-Foreign	ports/net/p5-Net-SFTP-Foreign
 p5-Net-SIP	ports/net/p5-Net-SIP
 p5-Net-SMPP	ports/net/p5-Net-SMPP
+p5-Net-SMS-PChome	ports/net/p5-Net-SMS-PChome
 p5-Net-SMTP-Server	ports/mail/p5-Net-SMTP-Server
 p5-Net-SMTP-TLS	ports/mail/p5-Net-SMTP-TLS
 p5-Net-SMTP_auth	ports/mail/p5-Net-SMTP_auth
