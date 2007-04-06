@@ -47,7 +47,7 @@ INSTALL_TARGET=	install-strip
 IGNORE=		not supported on FreeBSD versions before 5.2.1-RELEASE
 .endif
 
-.if ${OSVERSION} > 700032
+.if ${OSVERSION} > 700032 || (${OSVERSION} < 700000 && ${OSVERSION} > 602106)
 CPPFLAGS+=	-D_XOPEN_SOURCE_EXTENDED
 .elif exists(${LOCALBASE}/include/ncurses/ncurses.h) || defined(WITH_NCURSESW)
 CPPFLAGS+=	-I${WRKDIR} -D_XOPEN_SOURCE_EXTENDED

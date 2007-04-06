@@ -75,7 +75,7 @@ CONFIGURE_ARGS+=--disable-doxygen
 IGNORE=	does not build on 4.X
 .endif
 
-.if ${OSVERSION} > 700032
+.if ${OSVERSION} > 700032 || (${OSVERSION} < 700000 && ${OSVERSION} > 602106)
 CFLAGS+=	-D_XOPEN_SOURCE_EXTENDED
 .endif
 
