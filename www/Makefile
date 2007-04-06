@@ -595,6 +595,7 @@
     SUBDIR += p5-Catalyst-Plugin-Cache-Memcached
     SUBDIR += p5-Catalyst-Plugin-Cache-Store-FastMmap
     SUBDIR += p5-Catalyst-Plugin-ConfigLoader
+    SUBDIR += p5-Catalyst-Plugin-ConfigLoader-Environment
     SUBDIR += p5-Catalyst-Plugin-DefaultEnd
     SUBDIR += p5-Catalyst-Plugin-FillInForm
     SUBDIR += p5-Catalyst-Plugin-FormBuilder

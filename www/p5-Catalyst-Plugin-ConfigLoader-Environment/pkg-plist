@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Catalyst/Plugin/ConfigLoader/Environment.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/ConfigLoader/Environment/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/ConfigLoader/Environment
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/ConfigLoader
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin/ConfigLoader
+@dirrmtry %%SITE_PERL%%/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/Catalyst
