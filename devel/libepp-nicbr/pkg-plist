@@ -1,5 +1,5 @@
 bin/shepp
-lib/libepp-nicbr-1.3.a
+lib/libepp-nicbr-%%VER%%.a
 include/libepp_nicbr/Action.H
 include/libepp_nicbr/BeautifierHandlers.H
 include/libepp_nicbr/BrDomainCheck.H
@@ -58,6 +58,7 @@ include/libepp_nicbr/DomainRenew.H
 include/libepp_nicbr/DomainRenewCmd.H
 include/libepp_nicbr/DomainRenewRsp.H
 include/libepp_nicbr/DomainUpdate.H
+include/libepp_nicbr/DSInfo.H
 include/libepp_nicbr/FileUtil.H
 include/libepp_nicbr/DomainUpdateCmd.H
 include/libepp_nicbr/EppException.H
@@ -89,6 +90,7 @@ share/libepp_nicbr/schemas/domain-1.0.xsd
 share/libepp_nicbr/schemas/epp-1.0.xsd
 share/libepp_nicbr/schemas/eppcom-1.0.xsd
 share/libepp_nicbr/schemas/host-1.0.xsd
+share/libepp_nicbr/schemas/secDNS-1.0.xsd
 share/libepp_nicbr/ssl/root.pem
 share/libepp_nicbr/ssl/client.pem
 share/libepp_nicbr/templates/br_domain_check.xml

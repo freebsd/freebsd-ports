@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libepp-nicbr
-PORTVERSION=	1.3
+PORTVERSION=	1.5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.registro.br/pub/libepp-nicbr/
 
@@ -17,6 +17,8 @@ LIB_DEPENDS=	xerces-c:${PORTSDIR}/textproc/xerces-c2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+
+PLIST_SUB=	VER=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
