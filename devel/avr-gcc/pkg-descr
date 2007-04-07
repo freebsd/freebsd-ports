@@ -12,12 +12,12 @@ Locally added support for the following AVR devices:
   ATtiny24/ATtiny44/ATtiny84
   ATtiny25/ATtiny45/ATtiny85      ATtiny261/ATtiny461/ATtiny861
   ATmega164P/ATmega324P/ATmega644/ATmega644P
-  ATmega165P/ATmega169P
-  ATmega329/ATmega3290/ATmega649/ATmega6490
+  ATmega165P/ATmega169P/ATmega325P/ATmega3250P
+  ATmega329/ATmega3290/ATmega649/ATmega6490, including their "P" variants
   ATmega406
   ATmega640/ATmega1280/ATmega1281
-  AT90PWM2/AT90PWM3               AT90CAN32/64
-  AT90USB646/647/1286/1287
+  AT90PWM1/PWM2/AT90PWM3          AT90CAN32/64
+  AT90USB82/162/646/647/1286/1287
   ATmega2560/ATmega2561 (beta test)
 
 WWW: http://gcc.gnu.org/
