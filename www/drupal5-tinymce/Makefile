@@ -7,8 +7,9 @@
 
 PORTNAME=	tinymce
 DISTVERSION=	5.x-1.x-dev
-PORTREVISION=	20070306
+PORTREVISION=	20070331
 CATEGORIES=	www
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav/drupal
 
 MAINTAINER=	nick@foobar.org
@@ -19,9 +20,7 @@ TINYMCE_MODDIR=	${PORTNAME:C|^|${DRUPAL_MODDIR}/|}
 
 RUN_DEPENDS+=	${PREFIX}/${TINYMCEDIR}/jscripts/tiny_mce/tiny_mce.js:${PORTSDIR}/www/tinymce
 
-SUB_FILES+=	pkg-message
-SUB_LIST+=	TINYMCEDIR="${PREFIX}/${TINYMCEDIR}" \
-		TINYMCE_MODDIR="${TINYMCE_MODDIR:C|^|${PREFIX}/|}"
+PLIST_FILES+=	${DRUPAL_MODDIR}/tinymce
 
 DRUPAL5_MODULE=	yes
 
@@ -42,7 +41,7 @@ MODULE_FILES=	plugins/drupalbreak/images/drupalbreak.gif \
 DOC_FILES=	CHANGELOG.TXT INSTALL.txt LICENSE.txt README.TXT
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${LN} -s ${PREFIX}/${TINYMCEDIR} ${PREFIX}/${TINYMCE_MODDIR}
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../www/drupal5/bsd.drupal.mk"
