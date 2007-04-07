@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	josh@tcbug.org
 COMMENT=	Ruby interface to Berkeley DB revision 1.8x with full feature support
 
 USE_RUBY=	yes
