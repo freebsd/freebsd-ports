@@ -7,6 +7,7 @@
 
 PORTNAME=	mnemo
 PORTVERSION=	2.1.1
+DISTVERSIONPREFIX=	h3-
 PORTREVISION=	1
 CATEGORIES=	deskutils www
 MASTER_SITES=	HORDE
@@ -18,18 +19,17 @@ COMMENT=	Mnemo is the Horde notes and memos application
 RUN_DEPENDS=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde-base
 
 NO_BUILD=	yes
-USE_APACHE=	1.3+	# needed to test APACHE_VERSION
 USE_GETTEXT=	yes
 
-PLIST_SUB=	MNEMODIR=${LMNEMODIR} HORDE_INC=${HORDE_INC:S|^${LOCALBASE}/||}
+PLIST_SUB=	MNEMODIR=${LMNEMODIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES=	pkg-message pkg-install pkg-deinstall
 SUB_LIST=	MNEMODIR=${MNEMODIR}
 
 REINPLACE_ARGS=	-i ""
-DOCS=		LICENSE README docs/CHANGES docs/CREDITS docs/INSTALL	\
-		docs/RELEASE_NOTES  docs/TODO docs/UPGRADING
+PORTDOCS=	README CHANGES CREDITS INSTALL	\
+		RELEASE_NOTES  TODO UPGRADING
 CONFFILE=	prefs.php
 SUB_DIRS=	config js lib locale po scripts templates themes
 
@@ -41,34 +41,28 @@ CONFDIR=	${MNEMODIR}/config
 
 .include <bsd.port.pre.mk>
 
-.if ${APACHE_VERSION} >= 20
-HORDE_INC=	${LOCALBASE}/etc/apache${APACHE_VERSION:S/20/2/}/Includes
-.else
-HORDE_INC=	${LOCALBASE}/etc/horde
-.endif
+post-extract:
+	@${MV} ${WRKSRC}/README ${WRKSRC}/docs/
 
 pre-configure:
 	@(cd ${WRKSRC}/scripts &&	\
 		${FIND} . -name "*.php" -exec	\
 		${REINPLACE_CMD} -e "s:/usr/local/bin/php: ${LOCALBASE}/bin/php:;s:/usr/bin/php: ${LOCALBASE}/bin/php:" {} \; )
-	@${SED} -e "s:/home/httpd/html/horde/mnemo:${MNEMODIR}:g"	\
-		${FILESDIR}/httpd.conf.mnemo > ${WRKDIR}/httpd-mnemo.conf
 
 do-install:
-	@${MKDIR}  ${MNEMODIR}
-.for REP in ${SUB_DIRS}
-	@${CP} -Rp ${WRKSRC}/${REP} ${MNEMODIR}
-.endfor
-	@${CP} -p  ${WRKSRC}/*.php ${MNEMODIR}
-
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${MNEMODIR}
-	@${CHMOD} -R o-rwx ${CONFDIR}
-	@${INSTALL_DATA} ${WRKDIR}/httpd-mnemo.conf ${HORDE_INC}
+	@${INSTALL} -d ${MNEMODIR}/
+	@${CP} -Rp ${SUB_DIRS:S|^|${WRKSRC}/|} ${MNEMODIR}/
+	@${CP} -p ${WRKSRC}/*.php ${MNEMODIR}/
+	@${INSTALL_DATA} ${WRKSRC}/config/conf.xml ${CONFDIR}/
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${MNEMODIR}/
+	@${CHMOD} -R o-rwx ${MNEMODIR}/
+	${ECHO_CMD} @exec ${CHOWN} -R ${WWWOWN}:${WWWGRP}\
+		%D/${MNEMODIR:S|^${PREFIX}/||}/ >> ${TMPPLIST}
+	${ECHO_CMD} @exec ${CHMOD} -R o-rwx\
+		%D/${MNEMODIR:S|^${PREFIX}/||}/ >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for FILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.endfor
+	@${INSTALL} -d ${DOCSDIR}/
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${DOCSDIR}/
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 

@@ -18,5 +18,4 @@ You have to create a table in your database; please see
 %%TURBADIR%%/scripts/.
 You might create a LDAP schema: please see the doc LDAP.
 
-To protect your configuration files, you have to restart Apache.
 ************************************************************************

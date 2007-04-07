@@ -121,7 +121,6 @@
 %%INGODIR%%/themes/screen.css
 %%INGODIR%%/vacation.php
 %%INGODIR%%/whitelist.php
-%%HORDE_INC%%/httpd-ingo.conf
 @dirrm %%INGODIR%%/themes/graphics
 @dirrm %%INGODIR%%/themes
 @dirrm %%INGODIR%%/templates/whitelist

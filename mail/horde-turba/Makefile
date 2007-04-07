@@ -8,29 +8,17 @@
 PORTNAME=	turba
 PORTVERSION=	2.1.4
 DISTVERSIONPREFIX=	h3-
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	HORDE
 
 MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	The Horde contact management application
 
-#-----------------------------------------------------------------------
-# You may define this option:
-#
-# - WITHOUT_LDAP        : if you do not need OpenLDAP;
-#
-# - WITH_IMSP		: run IMSP cyrus-imspd.
-#
-#-----------------------------------------------------------------------
-
 RUN_DEPENDS+=	${LOCALBASE}/${LHORDEDIR}/rpc.php:${PORTSDIR}/www/horde-base
 
-.if !defined(WITHOUT_LDAP)
 USE_PHP=	ldap
-.endif
-
 NO_BUILD=	yes
-USE_APACHE=	1.3+	# needed to test APACHE_VERSION
 USE_GETTEXT=	yes
 
 REINPLACE_ARGS=	-i ""
@@ -42,7 +30,7 @@ SUB_DIRS=	config lib locale po scripts templates themes
 LHORDEDIR?=	www/horde
 LTURBADIR?=	${LHORDEDIR}/turba
 
-PLIST_SUB=	TURBADIR=${LTURBADIR} HORDE_INC=${HORDE_INC:S|^${LOCALBASE}/||}
+PLIST_SUB=	TURBADIR=${LTURBADIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES=	pkg-message pkg-install pkg-deinstall
@@ -53,40 +41,25 @@ CONFDIR=	${TURBADIR}/config
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/sbin/imspd)
-WITH_IMSP=	yes
-.endif
-.if defined(WITH_IMSP)
-RUN_DEPENDS+=	imspd:${PORTSDIR}/databases/cyrus-imspd
-.endif
-
-.if ${APACHE_VERSION} >= 20
-HORDE_INC=	${LOCALBASE}/etc/apache${APACHE_VERSION:S/20/2/}/Includes
-.else
-HORDE_INC=	${LOCALBASE}/etc/horde
-.endif
-
 post-extract:
 	@${MV} ${WRKSRC}/README ${WRKSRC}/docs/
 
 pre-configure:
 	@${RM} ${WRKSRC}/config/sources.php.dist.orig
-	@${SED} -e "s:/home/httpd/html/horde/turba:${TURBADIR}:g"	\
-		${FILESDIR}/httpd.conf.turba > ${WRKDIR}/httpd-turba.conf
 	@${REINPLACE_CMD} -e "s:/usr/bin/ldapadd:${LOCALBASE}/bin/ldapadd:"	\
 		${WRKSRC}/scripts/ldap/addou.pl
-.if defined(WITH_IMSP)
-	@${REINPLACE_CMD} -e "s://UNCOMMENTIFIMSP ::" ${WRKSRC}/config/sources.php.dist
-.endif
 
 do-install:
 	@${INSTALL} -d ${TURBADIR}/
 	@${CP} -Rp ${SUB_DIRS:S|^|${WRKSRC}/|} ${TURBADIR}/
 	@${CP} -p ${WRKSRC}/*.php ${TURBADIR}/
 	@${INSTALL_DATA} ${WRKSRC}/config/conf.xml ${CONFDIR}/
-	@${INSTALL_DATA} ${WRKDIR}/httpd-turba.conf ${HORDE_INC}/
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${TURBADIR}/
-	@${CHMOD} -R o-rwx ${CONFDIR}/
+	@${CHMOD} -R o-rwx ${TURBADIR}/
+	${ECHO_CMD} @exec ${CHOWN} -R ${WWWOWN}:${WWWGRP}\
+		%D/${TURBADIR:S|^${PREFIX}/||}/ >> ${TMPPLIST}
+	${ECHO_CMD} @exec ${CHMOD} -R o-rwx\
+		%D/${TURBADIR:S|^${PREFIX}/||}/ >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}/
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${DOCSDIR}/
