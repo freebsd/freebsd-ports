@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Nov 29 00:03:23 2006
-+++ Makefile	Wed Nov 29 00:03:36 2006
+--- Makefile.orig	Sat Dec 30 18:23:03 2006
++++ Makefile	Sat Apr  7 10:38:43 2007
 @@ -15,11 +15,11 @@
  PREFIX = /usr
  EXEC_PREFIX = $(PREFIX)
@@ -14,3 +14,12 @@
  DESTDIR =
  
  all:	$(APPNAME).1$(MANCOMPRESS)
+@@ -29,7 +29,7 @@
+ 	$(INSTALL) -m 755 -d $(DESTDIR)$(SYSCONFDIR)
+ 	$(INSTALL) -m 755 -d $(DESTDIR)$(MAN1DIR)
+ 	$(INSTALL) -m 755 $(APPNAME) $(DESTDIR)$(BINDIR)
+-	$(INSTALL) -m 755 $(CONF) $(DESTDIR)$(SYSCONFDIR)
++	$(INSTALL) -m 755 $(CONF) $(DESTDIR)$(SYSCONFDIR)/$(CONF).sample
+ 	$(INSTALL) -m 644 $(APPNAME).1$(MANCOMPRESS) $(DESTDIR)$(MAN1DIR)
+ 
+ init:

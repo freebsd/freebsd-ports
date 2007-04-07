@@ -1,3 +1,5 @@
 @comment $FreeBSD$
 bin/blocksshd
-etc/blocksshd.conf
+@unexec if cmp -s %D/etc/blocksshd.conf %D/etc/blocksshd.conf.sample; then rm -f %D/etc/blocksshd.conf; fi
+etc/blocksshd.conf.sample
+@exec if [ ! -f %D/etc/blocksshd.conf ]; then cp -p %D/%F %D/etc/blocksshd.conf; fi
