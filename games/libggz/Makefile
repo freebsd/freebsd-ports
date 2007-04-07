@@ -7,13 +7,8 @@
 #
 
 PORTNAME=	libggz
-PORTVERSION=	0.0.13
-PORTREVISION=	2
+PORTVERSION=	${GGZ_VERSION}
 CATEGORIES=	games
-MASTER_SITES=	http://mirrors.dotsrc.org/ggzgamingzone/ggz/%SUBDIR%/ \
-		http://ftp.ggzgamingzone.org/pub/ggz/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION}
-DIST_SUBDIR=	ggz
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	The GGZ Gaming Zone - Base Library
@@ -22,7 +17,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_GNOME=	gnomehack gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--disable-debug
+CONFIGURE_ARGS=	--disable-debug --mandir="${MANPREFIX}/man"
 USE_LDCONFIG=	yes
 
 MAN3=	ggz.h.3
@@ -39,9 +34,5 @@ CONFIGURE_ARGS+=	--with-tls=OpenSSL
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
-.endif
-
+.include "${PORTSDIR}/games/libggz/bsd.ggz.mk"
 .include <bsd.port.post.mk>
