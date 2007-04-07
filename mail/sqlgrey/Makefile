@@ -18,14 +18,6 @@ RUN_DEPENDS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
 		${SITE_PERL}/IO/Multiplex.pm:${PORTSDIR}/devel/p5-IO-Multiplex \
 		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser
 
-.if defined(WITH_PGSQL)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
-.elif defined(WITH_MYSQL)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
-.elif defined(WITH_SQLITE)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
-.endif
-
 USE_PERL5_RUN=	yes
 USE_RC_SUBR=	sqlgrey.sh
 USE_BZIP2=	yes
@@ -50,9 +42,28 @@ MAN1=	sqlgrey.1
 PORTDOCS=	Changelog FAQ HOWTO README TODO
 .endif
 
-pre-everything::
-	@${ECHO_MSG} "You can choose which database to depend on by using"
-	@${ECHO_MSG} "  WITH_PGSQL, WITH_MYSQL, or WITH_SQLITE"
+OPTIONS=	PGSQL "PostgreSQL backend" off \
+		MYSQL "MySQL backend" off \
+		SQLITE "SQLite backend" off \
+		STATS "Depend on Date::Calc for logstats.pl script" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PGSQL)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+.endif
+
+.if defined(WITH_MYSQL)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+.endif
+
+.if defined(WITH_SQLITE)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
+.endif
+
+.if defined(WITH_STATS)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's-#!/usr/bin/perl-#!${PERL}-' -e 's!/etc/sqlgrey!${PREFIX}/${ETCDIR}!g' ${WRKSRC}/sqlgrey
@@ -77,4 +88,4 @@ do-install:
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
