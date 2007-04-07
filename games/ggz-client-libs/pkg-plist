@@ -1,3 +1,4 @@
+bin/ggz
 bin/ggz-config
 bin/ggz-wrapper
 etc/xdg/menus/applications-merged/ggz.merge.menu
@@ -8,11 +9,11 @@ lib/ggz/ggzwrap
 lib/libggzcore.a
 lib/libggzcore.la
 lib/libggzcore.so
-lib/libggzcore.so.8
+lib/libggzcore.so.9
 lib/libggzmod.a
 lib/libggzmod.la
 lib/libggzmod.so
-lib/libggzmod.so.4
+lib/libggzmod.so.5
 share/desktop-directories/ggz-games.directory
 share/desktop-directories/ggz.directory
 %%NLS%%share/locale/de/LC_MESSAGES/ggz-config.mo

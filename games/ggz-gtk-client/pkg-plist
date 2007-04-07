@@ -1,31 +1,33 @@
 bin/ggz-gtk
 include/ggz-embed.h
 include/ggz-gtk.h
-lib/libggz-gtk.so.0
+lib/libggz-gtk.so.1
 lib/libggz-gtk.so
 lib/libggz-gtk.la
 lib/libggz-gtk.a
 share/applications/ggz-gtk.desktop
-share/ggz/ggz-gtk/about_bg.png
-share/ggz/ggz-gtk/ggz_gtk_admin.svg
-share/ggz/ggz-gtk/ggz_gtk_guest.svg
-share/ggz/ggz-gtk/ggz_gtk_registered.svg
-share/ggz/ggz-gtk/ggz_gtk_bot.svg
-share/ggz/ggz-gtk/ggz_gtk_lag0.svg
-share/ggz/ggz-gtk/ggz_gtk_lag1.svg
-share/ggz/ggz-gtk/ggz_gtk_lag2.svg
-share/ggz/ggz-gtk/ggz_gtk_lag3.svg
-share/ggz/ggz-gtk/ggz_gtk_lag4.svg
-share/ggz/ggz-gtk/ggz_gtk_lag5.svg
-share/ggz/ggz-gtk/help/ggz-gtk-handbook.html
-share/ggz/ggz-gtk/help/ggz-gtk-login.png
-share/ggz/ggz-gtk/help/ggz-gtk-chat.png
-share/ggz/ggz-gtk/help/ggz-gtk-launch.png
+share/ggz/ggz-gtk-client/about_bg.png
+share/ggz/ggz-gtk-client/ggz_gtk_admin.svg
+share/ggz/ggz-gtk-client/ggz_gtk_bot.svg
+share/ggz/ggz-gtk-client/ggz_gtk_guest.svg
+share/ggz/ggz-gtk-client/ggz_gtk_lag0.svg
+share/ggz/ggz-gtk-client/ggz_gtk_lag1.svg
+share/ggz/ggz-gtk-client/ggz_gtk_lag2.svg
+share/ggz/ggz-gtk-client/ggz_gtk_lag3.svg
+share/ggz/ggz-gtk-client/ggz_gtk_lag4.svg
+share/ggz/ggz-gtk-client/ggz_gtk_lag5.svg
+share/ggz/ggz-gtk-client/ggz_gtk_registered.svg
+share/ggz/help/ggz-gtk-chat.png
+share/ggz/help/ggz-gtk-handbook.html
+share/ggz/help/ggz-gtk-launch.png
+share/ggz/help/ggz-gtk-login.png
 %%NLS%%share/locale/de/LC_MESSAGES/ggz-gtk.mo
 %%NLS%%share/locale/es/LC_MESSAGES/ggz-gtk.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/ggz-gtk.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/ggz-gtk.mo
+@dirrm share/ggz/help
 @dirrm share/ggz/ggz-gtk/help
+@dirrm share/ggz/ggz-gtk-client
 @dirrm share/ggz/ggz-gtk
 @dirrmtry share/applications
 @dirrmtry share/ggz
