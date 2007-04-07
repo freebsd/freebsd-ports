@@ -15,8 +15,11 @@ MAINTAINER=	snowfly@yuntech.edu.tw
 COMMENT=	A textbased (console) MSN client
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 
 PLIST_FILES=	bin/tmsnc
+
+MAN1=		tmsnc.1
 
 .include <bsd.port.pre.mk>
 
