@@ -2084,6 +2084,7 @@ drupal4-taxonomy_access	ports/www/drupal4-taxonomy_access
 drupal4-textile	ports/www/drupal4-textile
 drupal5		ports/www/drupal5
 drupal5-adsense	ports/www/drupal5-adsense
+drupal5-google_analytics	ports/www/drupal5-google_analytics
 drupal5-gsitemap	ports/www/drupal5-gsitemap
 drupal5-taxonomy_access	ports/www/drupal5-taxonomy_access
 drupal5-tinymce	ports/www/drupal5-tinymce
