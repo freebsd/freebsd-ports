@@ -297,6 +297,14 @@ bin/tracd
 %%PYTHON_SITELIBDIR%%/trac/wiki/web_ui.py
 %%PYTHON_SITELIBDIR%%/trac/wiki/web_ui.pyc
 %%PYTHON_SITELIBDIR%%/trac/wiki/web_ui.pyo
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/bugzilla2trac.py
+%%EXAMPLESDIR%%/emailfilter.py
+%%EXAMPLESDIR%%/htdigest.py
+%%EXAMPLESDIR%%/migrateticketmodel.py
+%%EXAMPLESDIR%%/sourceforge2trac.py
+%%EXAMPLESDIR%%/trac-post-commit-hook
+%%EXAMPLESDIR%%/trac-pre-commit-hook
 %%DATADIR%%/cgi-bin/trac.cgi
 %%DATADIR%%/cgi-bin/trac.fcgi
 %%DATADIR%%/htdocs/README
@@ -433,6 +441,7 @@ bin/tracd
 @dirrm %%DATADIR%%/conf
 @dirrm %%DATADIR%%/cgi-bin
 @dirrm %%DATADIR%%
+@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/trac/wiki
 @dirrm %%PYTHON_SITELIBDIR%%/trac/web
 @dirrm %%PYTHON_SITELIBDIR%%/trac/versioncontrol/web_ui

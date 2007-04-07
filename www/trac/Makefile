@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	trac
-PORTVERSION=	0.10.3.1
+PORTVERSION=	0.10.3
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 		ftp://ftp.edgewall.com/pub/trac/
@@ -36,10 +37,13 @@ x-generate-plist:
 		;s,@dirrm share/man(/.*)?$$,,g \
 		;s,${PYTHON_SITELIBDIR:S,^${PYTHONBASE}/,,},%%PYTHON_SITELIBDIR%%,g \
 		;s,share/trac,%%DATADIR%%,g \
+		;s,share/examples/trac,%%EXAMPLESDIR%%,g \
 		;s,@dirrm (%%PYTHON_SITELIBDIR%%|${PYTHON_LIBDIR:S,${PYTHONBASE}/,,})$$,,g \
 		' | ${TR} -s '\n') > temp-pkg-plist
 
 post-install:
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/contrib/* ${EXAMPLESDIR}
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
