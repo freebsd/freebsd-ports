@@ -1,5 +1,5 @@
---- global.mk.orig	Mon Apr  2 03:51:16 2007
-+++ global.mk	Wed Apr  4 17:44:24 2007
+--- global.mk.orig	Wed Apr  4 15:43:18 2007
++++ global.mk	Wed Apr  4 15:43:35 2007
 @@ -10,7 +10,7 @@
  # etc dir
  ETCDIR = $(PREFIX)/etc/$(PROGLNAME)
