@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/%SUBDIR%/ \
 		ftp://ftp.sunfreeware.com/pub/freeware/SOURCES/
 MASTER_SITE_SUBDIR=	rpm-4.1.x
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	josh@tcbug.org
 COMMENT=	A getopt(3) like library with a number of enhancements, from Redhat
 
 GNU_CONFIGURE=	yes
