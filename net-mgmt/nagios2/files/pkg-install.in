@@ -6,6 +6,8 @@
 NAGIOSDIR=%%NAGIOSDIR%%
 NAGIOSUSER=%%NAGIOSUSER%%
 NAGIOSGROUP=%%NAGIOSGROUP%%
+NAGIOSUID=%%NAGIOSUID%%
+NAGIOSGID=%%NAGIOSGID%%
 
 ask() {
   local question default answer
@@ -46,7 +48,8 @@ if [ "$2" = "PRE-INSTALL" ]; then
   else
     echo "You need a \"${NAGIOSGROUP}\" group."
     if yesno "Would you like me to create it" "YES"; then
-      /usr/sbin/pw groupadd "${NAGIOSGROUP}" -h - || exit
+      /usr/sbin/pw groupadd "${NAGIOSGROUP}" -g "${NAGIOSGID}" -h - || \
+        /usr/sbin/pw groupadd "${NAGIOSGROUP}" -h - || exit
       echo "Done."
     else
       echo "Please create the \"${NAGIOSGROUP}\" group manually and try again."
@@ -59,7 +62,9 @@ if [ "$2" = "PRE-INSTALL" ]; then
   else
     echo "You need a \"${NAGIOSUSER}\" user."
     if yesno "Would you like me to create it" "YES"; then
-      /usr/sbin/pw useradd "${NAGIOSUSER}" -g "${NAGIOSGROUP}" -h - -d "${NAGIOSDIR}" \
+      /usr/sbin/pw useradd "${NAGIOSUSER}" -u "${NAGIOSUID}" -g "${NAGIOSGROUP}" -h - -d "${NAGIOSDIR}" \
+        -s /sbin/nologin -c "Nagios pseudo-user" || \
+        /usr/sbin/pw useradd "${NAGIOSUSER}" -g "${NAGIOSGROUP}" -h - -d "${NAGIOSDIR}" \
         -s /sbin/nologin -c "Nagios pseudo-user" || exit
     else
       echo "Please create the \"${NAGIOSUSER}\" user manually and try again."
