@@ -8,7 +8,8 @@
 PORTNAME=	argparse
 PORTVERSION=	0.7.0
 CATEGORIES=	devel python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/a/argparse/
+MASTER_SITES=	http://cheeseshop.python.org/packages/source/a/argparse/ \
+		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
