@@ -1,15 +1,5 @@
 --- configure.orig	Wed Apr 26 15:28:47 2006
 +++ configure	Wed Apr 26 15:28:56 2006
-@@ -24212,6 +24212,9 @@
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
- 
-+#ifdef HAVE_SYS_TYPES_H
-+#include <sys/types.h>
-+#endif
- 		#include <openssl/sha.h>
- 
- int
 @@ -25122,6 +25122,74 @@
  fi
  
