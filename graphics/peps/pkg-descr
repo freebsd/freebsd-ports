@@ -1,8 +1,8 @@
-peps is a utility to Print Encapsulated PostScript files.
-Specifically, it allows you to convert an EPS file into an anti-aliased
-PGM bitmap (with a variable resolution and anti-aliasing level).
-If the -p option is specified, the resulting bitmap is piped through
-pnmtopng to create a PNG image.
+Peps will preprocess encapsulated Postscript files for conversion by
+Ghostscript into bitmaps.  It provides variable levels of resolution and
+anti-aliasing.  You can use it as a stand-alone Postscript-to-bitmap
+conversion program, or use it on-line to create bitmaps on the fly and send
+them out to a web browser, even compressing them if the browser supports
+gzip compression.
 
-- Pete
-petef@databits.net
+WWW: http://peps.redprince.net/peps/

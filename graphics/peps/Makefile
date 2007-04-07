@@ -6,33 +6,27 @@
 #
 
 PORTNAME=	peps
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	petef
+MASTER_SITES=	ftp://ftp.peps.redprince.net/unix/peps/ \
+		http://www.peps.redprince.net/peps/2.0/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Converts EPS images to anti-aliased PGM bitmaps
+COMMENT=	Converts EPS images to anti-aliased bitmaps
 
-PLIST_FILES=	bin/peps
+MAN1=		peps.1
+PLIST_FILES=	bin/peps \
+		etc/peps.mime \
+		share/doc/${DISTNAME}/peps.pdf
+PLIST_DIRS=	share/doc/${DISTNAME}
 
 USE_GHOSTSCRIPT_RUN=	yes
+MAKE_ENV=	DOCDIR=${PREFIX}/share/doc MAN1DIR=${MANPREFIX}/man/man1 \
+		ETC=${PREFIX}/etc XBINDIR=${PREFIX}/bin
 
-RUN_DEPENDS=	pnmtopng:${PORTSDIR}/graphics/netpbm
-
-pre-fetch:
-.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
-	@${ECHO} ""
-	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
-	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
-	@${ECHO} ""
+.if !defined(WITHOUT_X11)
+PLIST_FILES+=	bin/xpeps
+INSTALL_TARGET=	install xinstall
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's!cc -O3!${CC} ${CFLAGS}!' ${WRKSRC}/Makefile
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/peps ${PREFIX}/bin
 
 .include <bsd.port.mk>
