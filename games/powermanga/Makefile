@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		powermanga
-PORTVERSION=		0.79
-PORTREVISION=		2
+PORTVERSION=		0.80
 CATEGORIES=		games
 MASTER_SITES=		http://linux.tlk.fr/games/Powermanga/download/
 EXTRACT_SUFX=		.tgz
@@ -15,7 +14,7 @@ EXTRACT_SUFX=		.tgz
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		An arcade 2D shoot-em-up
 
-USE_X_PREFIX=		yes
+USE_XLIB=		yes
 USE_SDL=		sdl mixer
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--program-prefix=""
