@@ -9,8 +9,7 @@ PORTNAME=	webunit
 PORTVERSION=	1.3.9
 CATEGORIES=	www python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/w/webunit/ \
-		http://mechanicalcat.net/tech/webunit/ \
-		http://funkload.nuxeo.org/3dparty/
+		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
