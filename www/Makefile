@@ -118,6 +118,7 @@
     SUBDIR += drupal4-textile
     SUBDIR += drupal5
     SUBDIR += drupal5-adsense
+    SUBDIR += drupal5-google_analytics
     SUBDIR += drupal5-gsitemap
     SUBDIR += drupal5-taxonomy_access
     SUBDIR += drupal5-tinymce
