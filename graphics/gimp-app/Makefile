@@ -33,6 +33,8 @@ LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf \
 
 CONFLICTS=	gimp-1.* gimpshop-[0-9]* gimp-app-devel-[0-9]*
 
+DATADIR=	${PREFIX}/share/gimp
+DOCSDIR=	${PREFIX}/share/doc/gimp
 SHLIBVER?=	200
 
 USE_BZIP2=	yes
