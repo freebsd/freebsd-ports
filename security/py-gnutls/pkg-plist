@@ -1,0 +1,58 @@
+%%PYTHON_SITELIBDIR%%/gnutls/__init__.py
+%%PYTHON_SITELIBDIR%%/gnutls/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gnutls/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gnutls/connection.py
+%%PYTHON_SITELIBDIR%%/gnutls/connection.pyc
+%%PYTHON_SITELIBDIR%%/gnutls/connection.pyo
+%%PYTHON_SITELIBDIR%%/gnutls/constants.py
+%%PYTHON_SITELIBDIR%%/gnutls/constants.pyc
+%%PYTHON_SITELIBDIR%%/gnutls/constants.pyo
+%%PYTHON_SITELIBDIR%%/gnutls/crypto.py
+%%PYTHON_SITELIBDIR%%/gnutls/crypto.pyc
+%%PYTHON_SITELIBDIR%%/gnutls/crypto.pyo
+%%PYTHON_SITELIBDIR%%/gnutls/errors.py
+%%PYTHON_SITELIBDIR%%/gnutls/errors.pyc
+%%PYTHON_SITELIBDIR%%/gnutls/errors.pyo
+%%PYTHON_SITELIBDIR%%/gnutls/interfaces/__init__.py
+%%PYTHON_SITELIBDIR%%/gnutls/interfaces/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gnutls/interfaces/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gnutls/interfaces/twisted/__init__.py
+%%PYTHON_SITELIBDIR%%/gnutls/interfaces/twisted/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gnutls/interfaces/twisted/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gnutls/library/__init__.py
+%%PYTHON_SITELIBDIR%%/gnutls/library/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gnutls/library/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gnutls/library/_gnutls_init.so
+%%PYTHON_SITELIBDIR%%/gnutls/library/constants.py
+%%PYTHON_SITELIBDIR%%/gnutls/library/constants.pyc
+%%PYTHON_SITELIBDIR%%/gnutls/library/constants.pyo
+%%PYTHON_SITELIBDIR%%/gnutls/library/errors.py
+%%PYTHON_SITELIBDIR%%/gnutls/library/errors.pyc
+%%PYTHON_SITELIBDIR%%/gnutls/library/errors.pyo
+%%PYTHON_SITELIBDIR%%/gnutls/library/functions.py
+%%PYTHON_SITELIBDIR%%/gnutls/library/functions.pyc
+%%PYTHON_SITELIBDIR%%/gnutls/library/functions.pyo
+%%PYTHON_SITELIBDIR%%/gnutls/library/types.py
+%%PYTHON_SITELIBDIR%%/gnutls/library/types.pyc
+%%PYTHON_SITELIBDIR%%/gnutls/library/types.pyo
+%%PYTHON_SITELIBDIR%%/gnutls/validators.py
+%%PYTHON_SITELIBDIR%%/gnutls/validators.pyc
+%%PYTHON_SITELIBDIR%%/gnutls/validators.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/gnutls/library
+@dirrm %%PYTHON_SITELIBDIR%%/gnutls/interfaces/twisted
+@dirrm %%PYTHON_SITELIBDIR%%/gnutls/interfaces
+@dirrm %%PYTHON_SITELIBDIR%%/gnutls
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/certs/ca.pem
+%%EXAMPLESDIR%%/certs/crl.pem
+%%EXAMPLESDIR%%/certs/revoked.crt
+%%EXAMPLESDIR%%/certs/revoked.key
+%%EXAMPLESDIR%%/certs/valid.crt
+%%EXAMPLESDIR%%/certs/valid.key
+%%EXAMPLESDIR%%/client.py
+%%EXAMPLESDIR%%/crypto.py
+%%EXAMPLESDIR%%/server.py
+%%EXAMPLESDIR%%/twisted-client.py
+%%EXAMPLESDIR%%/twisted-server.py
+@dirrm %%EXAMPLESDIR%%/certs
+@dirrm %%EXAMPLESDIR%%
