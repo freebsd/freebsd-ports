@@ -1,11 +1,14 @@
-Index: gas/config/tc-avr.c
-===================================================================
-RCS file: /cvs/src/src/gas/config/tc-avr.c,v
-retrieving revision 1.34
-diff -u -r1.34 tc-avr.c
---- gas/config/tc-avr.c	7 Jun 2006 11:27:57 -0000	1.34
-+++ gas/config/tc-avr.c	18 Jun 2006 09:18:52 -0000
-@@ -115,13 +115,15 @@
+--- gas/config/tc-avr.c.orig	Fri Apr  6 23:27:21 2007
++++ gas/config/tc-avr.c	Fri Apr  6 23:31:21 2007
+@@ -111,27 +111,36 @@
+   {"atmega88",   AVR_ISA_PWMx,    bfd_mach_avr4},
+   {"atmega8515", AVR_ISA_M8,      bfd_mach_avr4},
+   {"atmega8535", AVR_ISA_M8,      bfd_mach_avr4},
++  {"at90pwm1",   AVR_ISA_PWMx,    bfd_mach_avr4},
+   {"at90pwm2",   AVR_ISA_PWMx,    bfd_mach_avr4},
+   {"at90pwm3",   AVR_ISA_PWMx,    bfd_mach_avr4},
++  {"at90usb82",  AVR_ISA_PWMx,    bfd_mach_avr4},
+   {"atmega16",   AVR_ISA_M323,    bfd_mach_avr5},
    {"atmega161",  AVR_ISA_M161,    bfd_mach_avr5},
    {"atmega162",  AVR_ISA_M323,    bfd_mach_avr5},
    {"atmega163",  AVR_ISA_M161,    bfd_mach_avr5},
@@ -21,9 +24,14 @@ diff -u -r1.34 tc-avr.c
 -  {"atmega324",  AVR_ISA_M323,    bfd_mach_avr5},
 +  {"atmega324p", AVR_ISA_M323,    bfd_mach_avr5},
    {"atmega325",  AVR_ISA_M323,    bfd_mach_avr5},
++  {"atmega325p", AVR_ISA_M323,    bfd_mach_avr5},
    {"atmega329",  AVR_ISA_M323,    bfd_mach_avr5},
++  {"atmega329p", AVR_ISA_M323,    bfd_mach_avr5},
    {"atmega3250", AVR_ISA_M323,    bfd_mach_avr5},
-@@ -130,6 +132,7 @@
++  {"atmega3250p",AVR_ISA_M323,    bfd_mach_avr5},
+   {"atmega3290", AVR_ISA_M323,    bfd_mach_avr5},
++  {"atmega3290p",AVR_ISA_M323,    bfd_mach_avr5},
+   {"atmega406",  AVR_ISA_M323,    bfd_mach_avr5},
    {"atmega64",   AVR_ISA_M323,    bfd_mach_avr5},
    {"atmega640",  AVR_ISA_M323,    bfd_mach_avr5},
    {"atmega644",  AVR_ISA_M323,    bfd_mach_avr5},
@@ -31,3 +39,11 @@ diff -u -r1.34 tc-avr.c
    {"atmega128",  AVR_ISA_M128,    bfd_mach_avr5},
    {"atmega1280", AVR_ISA_M128,    bfd_mach_avr5},
    {"atmega1281", AVR_ISA_M128,    bfd_mach_avr5},
+@@ -142,6 +151,7 @@
+   {"at90can32" , AVR_ISA_M323,    bfd_mach_avr5},
+   {"at90can64" , AVR_ISA_M323,    bfd_mach_avr5},
+   {"at90can128", AVR_ISA_M128,    bfd_mach_avr5},
++  {"at90usb162", AVR_ISA_M323,    bfd_mach_avr5},
+   {"at90usb646", AVR_ISA_M323,    bfd_mach_avr5},
+   {"at90usb647", AVR_ISA_M323,    bfd_mach_avr5},
+   {"at90usb1286",AVR_ISA_M128,    bfd_mach_avr5},

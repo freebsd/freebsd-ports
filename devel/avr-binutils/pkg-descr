@@ -10,6 +10,9 @@ http://www.sax.de/~joerg/README.coff-avr-patch
 In addition to the stock binutils-2.17 distribution, support for the
 following AVR devices has been added by a private patch:
 
+  AT90PWM1
+  AT90USB82/162
   ATmega164P/324P/644P
   ATmega165P/169P
+  ATmega325P/3250P/329P/3290P
   ATmega2560/2561
