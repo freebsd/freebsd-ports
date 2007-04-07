@@ -6,6 +6,23 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070407:
+  AFFECTS: users of net-mgmt/nagios
+  AUTHOR: jarrod@netleader.com.au
+
+  nagios now uses the registered uid/gid 181 for a fresh installation.
+  To switch to the new scheme, the following may help:
+
+  # /usr/local/etc/rc.d/nagios stop
+  Stopping nagios.
+  # find / -user nagios -exec chown 181 {} \;
+  # find / -group nagios -exec chgrp 181 {} \;
+  # pw usermod nagios -u 181
+  # pw groupmod nagios -g 181
+  # /usr/local/etc/rc.d/nagios start
+  Performing sanity check of nagios configuration: OK
+  Starting nagios.
+
 20070405:
   AFFECTS: users of print/ghostscript-*
   AUTHOR: rafan@FreeBSD.org
