@@ -12588,6 +12588,7 @@ py-gnome-extras	ports/x11-toolkits/py-gnome-extras
 py-gnome2	ports/x11-toolkits/py-gnome2
 py-gnupg	ports/security/py-gnupg
 py-gnuplot	ports/math/py-gnuplot
+py-gnutls	ports/security/py-gnutls
 py-gobject	ports/devel/py-gobject
 py-goocanvas	ports/graphics/py-goocanvas
 py-google	ports/net/py-google
