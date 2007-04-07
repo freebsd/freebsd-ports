@@ -4,7 +4,8 @@ are adjusted by one mouseclick (compression, port-forwarding, etc.).
 It also manages the SSH-agent. SecPanel works with ssh 1.2.x and
 OpenSSH.
 
-WWW: http://www.pingx.net/secpanel/
+WWW: http://secpanel.mymediahost.de/
+Author: Steffen Leich <leich at web dot de>
 
 - Pete
 petef@databits.net
