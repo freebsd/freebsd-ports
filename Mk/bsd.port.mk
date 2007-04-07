@@ -3303,8 +3303,8 @@ check-vulnerable:
 .endif
 
 # set alg to any of SIZE, MD5, SHA256 (or any other checksum algorithm):
-DISTINFO_DATA?=	DIR=${DIST_SUBDIR}; ${AWK} -v alg=$$alg \
-    -v file=$${DIR:+$$DIR/}$${file}	\
+DISTINFO_DATA?=	if [ \( -n "${DISABLE_SIZE}" -a -n "${NO_CHECKSUM}" \) -o ! -f "${MD5_FILE}" ]; then exit; fi; \
+	DIR=${DIST_SUBDIR}; ${AWK} -v alg=$$alg -v file=$${DIR:+$$DIR/}$${file}	\
 		'$$1 == alg && $$2 == "(" file ")" {print $$4}' ${MD5_FILE}
 
 # Fetch
