@@ -64,6 +64,8 @@ PLIST_FILES=	${PRIV_FILES:S|^|%%DATADIR%%/dist/|}
 
 SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	RC_FILES="${RC_FILES}"
+
+OPTIONS=	FIXED_MOUNTPOINTS "use fixed mountpoints" off
 .else # Slave port stuff
 LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
@@ -95,6 +97,10 @@ NEEDS_MEDIA=	yes
 PLIST_SUB+=	MEDIA=""
 .else
 PLIST_SUB+=	MEDIA="@comment "
+.endif
+
+.if defined(WITH_FIXED_MOUNTPOINTS)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-tools_hal-storage-mount.c
 .endif
 .endif
 
