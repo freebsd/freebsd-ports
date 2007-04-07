@@ -136,7 +136,6 @@
 %%NAGDIR%%/themes/graphics/za.png
 %%NAGDIR%%/themes/screen.css
 %%NAGDIR%%/view.php
-%%HORDE_INC%%/httpd-nag.conf
 @dirrm %%NAGDIR%%/themes/graphics
 @dirrm %%NAGDIR%%/themes
 @dirrm %%NAGDIR%%/templates/view

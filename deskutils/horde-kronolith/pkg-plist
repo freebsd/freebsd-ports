@@ -1,10 +1,3 @@
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
 %%KRONOLITHDIR%%/addevent.php
 %%KRONOLITHDIR%%/addeventaction.php
 %%KRONOLITHDIR%%/attend.php
@@ -215,8 +208,6 @@
 %%KRONOLITHDIR%%/week.php
 %%KRONOLITHDIR%%/workweek.php
 %%KRONOLITHDIR%%/year.php
-%%HORDE_INC%%/httpd-kronolith.conf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%KRONOLITHDIR%%/themes/simplex
 @dirrm %%KRONOLITHDIR%%/themes/print
 @dirrm %%KRONOLITHDIR%%/themes/mozilla

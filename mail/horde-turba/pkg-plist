@@ -177,7 +177,6 @@
 %%TURBADIR%%/themes/screen.css
 %%TURBADIR%%/vcard.php
 %%TURBADIR%%/view.php
-%%HORDE_INC%%/httpd-turba.conf
 @dirrm %%TURBADIR%%/themes/ideas
 @dirrm %%TURBADIR%%/themes/graphics/menu
 @dirrm %%TURBADIR%%/themes/graphics
