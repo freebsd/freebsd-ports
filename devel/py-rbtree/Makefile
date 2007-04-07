@@ -8,7 +8,8 @@
 PORTNAME=	rbtree
 PORTVERSION=	0.8.0
 CATEGORIES=	devel python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/r/rbtree/
+MASTER_SITES=	http://cheeseshop.python.org/packages/source/r/rbtree/ \
+		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python
 
@@ -41,7 +42,6 @@ pre-build:
 	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py setopt -c build -o build-temp -s temp.${OSINFOS}-${PYTHON_VER}
 	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py setopt -c bdist_egg -o plat-name -s ${OSINFOS}
 	@cd ${WRKSRC} && ${PYTHON_CMD} setup.py setopt -c bdist -o plat-name -s ${OSINFOS}
-
 
 post-install:
 .if !defined(NOPORTDOCS)
