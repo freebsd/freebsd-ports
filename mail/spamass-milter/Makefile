@@ -49,11 +49,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 WITH_SENDMAIL_BASE=yes
 .endif
 
-.if defined(WITH_SENDMAIL_BASE) && exists(/usr/lib/libmilter.a)
+.if defined(WITH_SENDMAIL_BASE)
+.if exists(/usr/lib/libmilter.a)
 MILTERBASE=	/usr
 .else
-.if !exists(/usr/lib/libmilter.a)
-BROKEN=	Base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes
+IGNORE=	Base system sendmail not found or too old, rebuild with WITH_SENDMAIL_PORT=yes
 .endif
 .endif
 
