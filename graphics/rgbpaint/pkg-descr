@@ -4,5 +4,5 @@ edit and save RGB images to PNG, JPEG, or ICO files.  It can read PNG,
 JPEG, TIFF, GIF, ICO, files and possibly others like TGA, PCX, and SVGi
 if they are installed with your version of GTK+2.
 
-WWW: http://mtpaint.sourceforge.net/
-Author: Dmitry Groshev <wjaguar@users.sourceforge.net>
+WWW: http://mtpaint.sourceforge.net/rgbpaint.html
+Author: Mark Tyler <marktyler@users.sourceforge.net>
