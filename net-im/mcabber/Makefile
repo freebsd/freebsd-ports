@@ -8,13 +8,12 @@
 PORTNAME=	mcabber
 PORTVERSION=	0.9.1
 CATEGORIES=	net-im
-MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/ CSME
+MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Small Jabber console client
 
-LIB_DEPENDS=	ncursesw.5:${PORTSDIR}/devel/ncurses \
-		gpgme.17:${PORTSDIR}/security/gpgme
+LIB_DEPENDS=	gpgme.17:${PORTSDIR}/security/gpgme
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -34,6 +33,10 @@ MAN1=		mcabber.1
 
 .if ${OSVERSION} < 503000
 BROKEN=	Unicoded ncurses require 5.3
+.endif
+
+.if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
+LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
 .endif
 
 post-patch:
