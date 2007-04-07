@@ -588,6 +588,7 @@
     SUBDIR += py-cryptkit
     SUBDIR += py-fchksum
     SUBDIR += py-gnupg
+    SUBDIR += py-gnutls
     SUBDIR += py-hashlib
     SUBDIR += py-m2crypto
     SUBDIR += py-mcrypt
