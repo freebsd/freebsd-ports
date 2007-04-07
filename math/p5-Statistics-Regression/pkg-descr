@@ -1,0 +1,13 @@
+Regression.pm is a multivariate linear regression package. 
+That is, it estimates the c coefficients for a line-fit of the type
+
+      y= c(0)*x(0) + c(1)*x1 + c(2)*x2 + ... + c(k)*xk
+
+given a data set of N observations, each with k independent x variables
+and one y variable. Naturally, N must be greater than k---and preferably
+considerably greater. Any reasonable undergraduate statistics book will
+explain what a regression is. Most of the time, the user will provide a
+constant ('1') as x(0) for each observation in order to allow the
+regression package to fit an intercept.
+
+WWW: http://search.cpan.org/dist/Statistics-Regression/

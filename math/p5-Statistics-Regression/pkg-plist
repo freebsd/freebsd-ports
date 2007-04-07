@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Regression/.packlist
+%%SITE_PERL%%/Statistics/Regression.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Regression
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics
+@dirrmtry %%SITE_PERL%%/Statistics
