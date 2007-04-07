@@ -57,6 +57,7 @@
     SUBDIR += p5-Encode-JIS2K
     SUBDIR += p5-Encode-compat
     SUBDIR += p5-JSON
+    SUBDIR += p5-JSON-Any
     SUBDIR += p5-JSON-DWIW
     SUBDIR += p5-JSON-XS
     SUBDIR += p5-MIME-Base32
