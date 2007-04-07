@@ -9,7 +9,7 @@ PORTNAME=	gcube
 PORTVERSION=	0.4
 PORTREVISION=	1
 CATEGORIES=	emulators
-MASTER_SITES=	http://gcube.exemu.net/downloads/
+MASTER_SITES=	http://www.liquidx.org/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	tlp@liquidx.org
