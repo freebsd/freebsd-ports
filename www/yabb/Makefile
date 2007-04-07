@@ -15,6 +15,11 @@ DISTNAME=	YaBB_${PORTVERSION}
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	The original free open-source forum written in Perl
 
+RUN_DEPENDS=	p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm \
+		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes \
+		p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
+		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC
+
 NO_PACKAGE=	complicated (de)installation paradigm
 USE_ZIP=	yes
 USE_PERL5_RUN=	yes
@@ -26,18 +31,17 @@ PLIST_SUB=	YABBDIR=${YABBDIR}
 DIR=		${PREFIX}/${YABBDIR}
 WDIR=		${WRKDIR}/public_html/yabbfiles
 WCGI=		${WRKDIR}/cgi-bin/yabb2
-
-RUN_DEPENDS+=	sha256:${PORTSDIR}/sysutils/freebsd-sha256
-RUN_DEPENDS+=	${SITE_PERL}/CGI/Util.pm:${PORTSDIR}/www/p5-CGI.pm \
-	${SITE_PERL}/mach/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
-	${SITE_PERL}/mach/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-	${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC
-
 SUB_FILES=	pkg-message
 SUB_LIST=	DIR=${DIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 ISOFILES=	Setup.pl Admin/ManageTemplates.pl Languages/English/Admin.lng \
 	Languages/English/Main.lng Templates/default/AdminCentre.template
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600021 && ( ${OSVERSION} < 504102 || ${OSVERSION} > 599999 )
+RUN_DEPENDS+=	sha256:${PORTSDIR}/sysutils/freebsd-sha256
+.endif
 
 post-extract:
 	@${RM} -rf ${WCGI}/Convert ${WCGI}/Modules ${WCGI}/FixFile.pl
@@ -75,4 +79,4 @@ pre-clean:
 #echo '@unexec i='\'$i\''; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi'
 #@cd ${DIR} && ${SHA256} -r `${FIND} * -not -type d` > checksum.sha256
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
