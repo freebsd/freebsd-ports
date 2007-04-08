@@ -1,0 +1,37 @@
+*** Makefile.orig	Sat Mar 31 18:00:00 2007
+--- Makefile	Thu Apr  5 14:17:48 2007
+***************
+*** 13,26 ****
+  	mv html docs
+  
+  install:
+! 	mkdir -p $(DESTDIR)/{include/xyssl,lib}
+! 	cp -v -r include $(DESTDIR)/include
+! 	cp -v library/libxyssl.a $(DESTDIR)/lib
+! 	
+! 	mkdir -p $(DESTDIR)/bin
+! 	for i in programs/*; do test -x $i && \
+! 	    cp -v $i $(DESTDIR)/xyssl_$i;   \
+! 	done
+  
+  clean:
+  	cd library  && make clean && cd ..
+--- 13,30 ----
+  	mv html docs
+  
+  install:
+! 	/usr/bin/install -d -v -m 0755 $(DESTDIR)/include/xyssl
+! 	/usr/bin/install -v -m 0644 include/xyssl/* $(DESTDIR)/include/xyssl/
+! 	/usr/bin/install -v -m 0644 library/libxyssl.a $(DESTDIR)/lib
+! 
+! 	/usr/bin/install -v -m 0755 programs/benchmark $(DESTDIR)/bin/xyssl_benchmark
+! 	/usr/bin/install -v -m 0755 programs/filecrypt $(DESTDIR)/bin/xyssl_filecrypt
+! 	/usr/bin/install -v -m 0755 programs/hello $(DESTDIR)/bin/xyssl_hello
+! 	/usr/bin/install -v -m 0755 programs/mpi_demo $(DESTDIR)/bin/xyssl_mpi_demo
+! 	/usr/bin/install -v -m 0755 programs/selftest $(DESTDIR)/bin/xyssl_selftest
+! 	/usr/bin/install -v -m 0755 programs/ssl_client1 $(DESTDIR)/bin/xyssl_ssl_client1
+! 	/usr/bin/install -v -m 0755 programs/ssl_client2 $(DESTDIR)/bin/xyssl_ssl_client2
+! 	/usr/bin/install -v -m 0755 programs/ssl_server $(DESTDIR)/bin/xyssl_ssl_server
+  
+  clean:
+  	cd library  && make clean && cd ..
