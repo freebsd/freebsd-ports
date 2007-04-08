@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier-authlib
-PORTVERSION=	0.59.1
+PORTVERSION=	0.59.2
 PORTREVISION=	0
 CATEGORIES?=	security mail
 .if defined(PKGNAMESUFFIX)
