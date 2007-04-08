@@ -23,6 +23,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_FILES=	sbin/eject share/examples/mcweject/eject.allow
 PLIST_DIRS=	share/examples/mcweject
 
+FORBIDDEN=	contains exploitable buffer overflow (CVE-2007-1719)
+
 do-install:
 	${MKDIR} ${PREFIX}/share/examples/mcweject
 	${INSTALL_DATA} ${WRKSRC}/eject.allow.sample \
