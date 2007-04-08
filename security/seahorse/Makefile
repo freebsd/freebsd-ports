@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	seahorse
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	security gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -46,10 +45,8 @@ OPTIONS=	NAUTILUS "Enable the Nautilus component" on \
 		NOTIFY "Enable libnotify support" on \
 		APPLET "Enable clipboard encryption applet" on \
 		KEYRING "Enable GNOME Keyring support" on \
-		MDNS "Enable mDNS key sharing" on
-#		EPIPHANY "Enable Epiphany plug-in support" on
-## BROKEN
-WITHOUT_EPIPHANY=	yes
+		MDNS "Enable mDNS key sharing" on \
+		EPIPHANY "Enable Epiphany plug-in support" on
 
 .include <bsd.port.pre.mk>
 
