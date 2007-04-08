@@ -7,7 +7,7 @@
 
 PORTNAME=	quake2lnx
 PORTVERSION=	0.16.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games ipv6
 MASTER_SITES=	http://offload1.icculus.org/quake2/files/
 DISTNAME=	quake2-r${PORTVERSION}
@@ -31,7 +31,7 @@ OPTIONS=	X11		"Build X11 software driver" on \
 		AA		"Build ASCII software renderer" off \
 		CLIENT		"Build client executable" on \
 		SERVER		"Build dedicated server executable" on \
-		GAME		"Build a main game .so file" on \
+		GAME		"Build a main game .so file" off \
 		CTF		"Build Capture The Flag mod" off \
 		RETEXTURE	"Enable support of retextured graphics" off \
 		JOYSTICK	"Enable joystick support" off \
