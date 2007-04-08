@@ -51,6 +51,8 @@
 %%LISPDIR%%/auctex/style/virtex.el
 %%LISPDIR%%/auctex/style/plfonts.el
 %%LISPDIR%%/auctex/style/plhb.el
+%%LISPDIR%%/auctex/style/polish.el
+%%LISPDIR%%/auctex/style/polski.el
 %%LISPDIR%%/auctex/style/harvard.el
 %%LISPDIR%%/auctex/style/swedish.el
 %%LISPDIR%%/auctex/style/danish.el
@@ -114,6 +116,8 @@
 %%LISPDIR%%/auctex/style/amsbook.elc
 %%LISPDIR%%/auctex/style/epsf.elc
 %%LISPDIR%%/auctex/style/psfig.elc
+%%LISPDIR%%/auctex/style/polish.elc
+%%LISPDIR%%/auctex/style/polski.elc
 %%LISPDIR%%/auctex/style/latexinfo.elc
 %%LISPDIR%%/auctex/style/dutch.elc
 %%LISPDIR%%/auctex/style/german.elc
