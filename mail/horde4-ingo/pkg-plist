@@ -1,195 +1,196 @@
-%%INGODIR%%/blacklist.php
-%%INGODIR%%/config/.htaccess
-%%INGODIR%%/config/backends.php.dist
-%%INGODIR%%/config/conf.xml
-%%INGODIR%%/config/fields.php.dist
-%%INGODIR%%/config/prefs.php.dist
-%%INGODIR%%/filters.php
-%%INGODIR%%/forward.php
-%%INGODIR%%/index.php
-%%INGODIR%%/js/stripe.js
-%%INGODIR%%/lib/Block/overview.php
-%%INGODIR%%/lib/Driver.php
-%%INGODIR%%/lib/Driver/ldap.php
-%%INGODIR%%/lib/Driver/null.php
-%%INGODIR%%/lib/Driver/timsieved.php
-%%INGODIR%%/lib/Driver/vfs.php
-%%INGODIR%%/lib/IMAP/Search.php
-%%INGODIR%%/lib/Ingo.php
-%%INGODIR%%/lib/Script.php
-%%INGODIR%%/lib/Script/imap.php
-%%INGODIR%%/lib/Script/maildrop.php
-%%INGODIR%%/lib/Script/procmail.php
-%%INGODIR%%/lib/Script/sieve.php
-%%INGODIR%%/lib/Session.php
-%%INGODIR%%/lib/Storage.php
-%%INGODIR%%/lib/Storage/prefs.php
-%%INGODIR%%/lib/api.php
-%%INGODIR%%/lib/base.php
-%%INGODIR%%/lib/version.php
-%%INGODIR%%/locale/ca_ES/LC_MESSAGES/ingo.mo
-%%INGODIR%%/locale/ca_ES/help.xml
-%%INGODIR%%/locale/cs_CZ/LC_MESSAGES/ingo.mo
-%%INGODIR%%/locale/da_DK/LC_MESSAGES/ingo.mo
-%%INGODIR%%/locale/de_DE/LC_MESSAGES/ingo.mo
-%%INGODIR%%/locale/de_DE/help.xml
-%%INGODIR%%/locale/en_US/help.xml
-%%INGODIR%%/locale/el_GR/LC_MESSAGES/ingo.mo
-%%INGODIR%%/locale/es_ES/LC_MESSAGES/ingo.mo
-%%INGODIR%%/locale/es_ES/help.xml
-%%INGODIR%%/locale/et_EE/LC_MESSAGES/ingo.mo
-%%INGODIR%%/locale/fi_FI/LC_MESSAGES/ingo.mo
-%%INGODIR%%/locale/fi_FI/help.xml
-%%INGODIR%%/locale/fr_FR/LC_MESSAGES/ingo.mo
-%%INGODIR%%/locale/fr_FR/help.xml
-%%INGODIR%%/locale/hu_HU/LC_MESSAGES/ingo.mo
-%%INGODIR%%/locale/it_IT/LC_MESSAGES/ingo.mo
-%%INGODIR%%/locale/ko_KR/LC_MESSAGES/ingo.mo
-%%INGODIR%%/locale/lt_LT/LC_MESSAGES/ingo.mo
-%%INGODIR%%/locale/lv_LV/LC_MESSAGES/ingo.mo
-%%INGODIR%%/locale/lv_LV/help.xml
-%%INGODIR%%/locale/nb_NO/LC_MESSAGES/ingo.mo
-%%INGODIR%%/locale/nl_NL/LC_MESSAGES/ingo.mo
-%%INGODIR%%/locale/pl_PL/LC_MESSAGES/ingo.mo
-%%INGODIR%%/locale/pt_BR/LC_MESSAGES/ingo.mo
-%%INGODIR%%/locale/pt_PT/LC_MESSAGES/ingo.mo
-%%INGODIR%%/locale/ro_RO/LC_MESSAGES/ingo.mo
-%%INGODIR%%/locale/sl_SI/LC_MESSAGES/ingo.mo
-%%INGODIR%%/locale/sv_SE/LC_MESSAGES/ingo.mo
-%%INGODIR%%/locale/tr_TR/LC_MESSAGES/ingo.mo
-%%INGODIR%%/locale/zh_TW/LC_MESSAGES/ingo.mo
-%%INGODIR%%/po/README
-%%INGODIR%%/po/ca_ES.po
-%%INGODIR%%/po/cs_CZ.po
-%%INGODIR%%/po/da_DK.po
-%%INGODIR%%/po/de_DE.po
-%%INGODIR%%/po/el_GR.po
-%%INGODIR%%/po/es_ES.po
-%%INGODIR%%/po/et_EE.po
-%%INGODIR%%/po/fi_FI.po
-%%INGODIR%%/po/fr_FR.po
-%%INGODIR%%/po/hu_HU.po
-%%INGODIR%%/po/ingo.pot
-%%INGODIR%%/po/it_IT.po
-%%INGODIR%%/po/ko_KR.po
-%%INGODIR%%/po/lt_LT.po
-%%INGODIR%%/po/lv_LV.po
-%%INGODIR%%/po/nb_NO.po
-%%INGODIR%%/po/nl_NL.po
-%%INGODIR%%/po/pl_PL.po
-%%INGODIR%%/po/pt_BR.po
-%%INGODIR%%/po/pt_PT.po
-%%INGODIR%%/po/ro_RO.po
-%%INGODIR%%/po/sl_SI.po
-%%INGODIR%%/po/sv_SE.po
-%%INGODIR%%/po/tr_TR.po
-%%INGODIR%%/po/zh_TW.po
-%%INGODIR%%/rule.php
-%%INGODIR%%/script.php
-%%INGODIR%%/scripts/.htaccess
-%%INGODIR%%/scripts/convert_imp_filters.php
-%%INGODIR%%/templates/blacklist/blacklist.inc
-%%INGODIR%%/templates/common-header.inc
-%%INGODIR%%/templates/filters/filter-none.inc
-%%INGODIR%%/templates/filters/filter.html
-%%INGODIR%%/templates/filters/footer.inc
-%%INGODIR%%/templates/filters/header.inc
-%%INGODIR%%/templates/filters/settings.inc
-%%INGODIR%%/templates/forward/forward.inc
-%%INGODIR%%/templates/javascript/new_folder.js
-%%INGODIR%%/templates/menu.inc
-%%INGODIR%%/templates/rule/filter.inc
-%%INGODIR%%/templates/rule/footer.inc
-%%INGODIR%%/templates/rule/header.inc
-%%INGODIR%%/templates/script/activate.inc
-%%INGODIR%%/templates/script/footer.inc
-%%INGODIR%%/templates/script/header.inc
-%%INGODIR%%/templates/script/script.inc
-%%INGODIR%%/templates/vacation/vacation.inc
-%%INGODIR%%/templates/whitelist/whitelist.inc
-%%INGODIR%%/test.php
-%%INGODIR%%/themes/graphics/blacklist.png
-%%INGODIR%%/themes/graphics/copy.png
-%%INGODIR%%/themes/graphics/disable.png
-%%INGODIR%%/themes/graphics/enable.png
-%%INGODIR%%/themes/graphics/favicon.ico
-%%INGODIR%%/themes/graphics/forward.png
-%%INGODIR%%/themes/graphics/ingo.png
-%%INGODIR%%/themes/graphics/script.png
-%%INGODIR%%/themes/graphics/vacation.png
-%%INGODIR%%/themes/graphics/whitelist.png
-%%INGODIR%%/themes/screen.css
-%%INGODIR%%/vacation.php
-%%INGODIR%%/whitelist.php
-@dirrm %%INGODIR%%/themes/graphics
-@dirrm %%INGODIR%%/themes
-@dirrm %%INGODIR%%/templates/whitelist
-@dirrm %%INGODIR%%/templates/vacation
-@dirrm %%INGODIR%%/templates/script
-@dirrm %%INGODIR%%/templates/rule
-@dirrm %%INGODIR%%/templates/javascript
-@dirrm %%INGODIR%%/templates/forward
-@dirrm %%INGODIR%%/templates/filters
-@dirrm %%INGODIR%%/templates/blacklist
-@dirrm %%INGODIR%%/templates
-@dirrm %%INGODIR%%/scripts
-@dirrm %%INGODIR%%/po
-@dirrm %%INGODIR%%/locale/zh_TW/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/zh_TW
-@dirrm %%INGODIR%%/locale/tr_TR/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/tr_TR
-@dirrm %%INGODIR%%/locale/sv_SE/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/sv_SE
-@dirrm %%INGODIR%%/locale/sl_SI/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/sl_SI
-@dirrm %%INGODIR%%/locale/ro_RO/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/ro_RO
-@dirrm %%INGODIR%%/locale/pt_PT/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/pt_PT
-@dirrm %%INGODIR%%/locale/pt_BR/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/pt_BR
-@dirrm %%INGODIR%%/locale/pl_PL/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/pl_PL
-@dirrm %%INGODIR%%/locale/nl_NL/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/nl_NL
-@dirrm %%INGODIR%%/locale/nb_NO/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/nb_NO
-@dirrm %%INGODIR%%/locale/lv_LV/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/lv_LV
-@dirrm %%INGODIR%%/locale/lt_LT/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/lt_LT
-@dirrm %%INGODIR%%/locale/ko_KR/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/ko_KR
-@dirrm %%INGODIR%%/locale/it_IT/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/it_IT
-@dirrm %%INGODIR%%/locale/hu_HU/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/hu_HU
-@dirrm %%INGODIR%%/locale/fr_FR/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/fr_FR
-@dirrm %%INGODIR%%/locale/fi_FI/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/fi_FI
-@dirrm %%INGODIR%%/locale/et_EE/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/et_EE
-@dirrm %%INGODIR%%/locale/es_ES/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/es_ES
-@dirrm %%INGODIR%%/locale/en_US
-@dirrm %%INGODIR%%/locale/el_GR/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/el_GR
-@dirrm %%INGODIR%%/locale/de_DE/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/de_DE
-@dirrm %%INGODIR%%/locale/da_DK/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/da_DK
-@dirrm %%INGODIR%%/locale/cs_CZ/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/cs_CZ
-@dirrm %%INGODIR%%/locale/ca_ES/LC_MESSAGES
-@dirrm %%INGODIR%%/locale/ca_ES
-@dirrm %%INGODIR%%/locale
-@dirrm %%INGODIR%%/js
-@dirrm %%INGODIR%%/lib/Storage
-@dirrm %%INGODIR%%/lib/Script
-@dirrm %%INGODIR%%/lib/IMAP
-@dirrm %%INGODIR%%/lib/Driver
-@dirrm %%INGODIR%%/lib/Block
-@dirrm %%INGODIR%%/lib
-@dirrmtry %%INGODIR%%/config
-@dirrmtry %%INGODIR%%
+%%HORDIR%%/blacklist.php
+%%HORDIR%%/config/.htaccess
+%%HORDIR%%/config/backends.php.dist
+%%HORDIR%%/config/conf.xml
+%%HORDIR%%/config/fields.php.dist
+%%HORDIR%%/config/prefs.php.dist
+%%HORDIR%%/filters.php
+%%HORDIR%%/forward.php
+%%HORDIR%%/index.php
+%%HORDIR%%/js/stripe.js
+%%HORDIR%%/lib/Block/overview.php
+%%HORDIR%%/lib/Driver/ldap.php
+%%HORDIR%%/lib/Driver/null.php
+%%HORDIR%%/lib/Driver/timsieved.php
+%%HORDIR%%/lib/Driver/vfs.php
+%%HORDIR%%/lib/Driver.php
+%%HORDIR%%/lib/IMAP/Search.php
+%%HORDIR%%/lib/Ingo.php
+%%HORDIR%%/lib/Script/imap.php
+%%HORDIR%%/lib/Script/maildrop.php
+%%HORDIR%%/lib/Script/procmail.php
+%%HORDIR%%/lib/Script/sieve.php
+%%HORDIR%%/lib/Script.php
+%%HORDIR%%/lib/Session.php
+%%HORDIR%%/lib/Storage/prefs.php
+%%HORDIR%%/lib/Storage.php
+%%HORDIR%%/lib/api.php
+%%HORDIR%%/lib/base.php
+%%HORDIR%%/lib/version.php
+%%HORDIR%%/locale/ca_ES/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/ca_ES/help.xml
+%%HORDIR%%/locale/cs_CZ/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/da_DK/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/de_DE/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/de_DE/help.xml
+%%HORDIR%%/locale/el_GR/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/en_US/help.xml
+%%HORDIR%%/locale/es_ES/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/es_ES/help.xml
+%%HORDIR%%/locale/et_EE/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/fi_FI/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/fi_FI/help.xml
+%%HORDIR%%/locale/fr_FR/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/fr_FR/help.xml
+%%HORDIR%%/locale/hu_HU/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/it_IT/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/ko_KR/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/lt_LT/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/lv_LV/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/lv_LV/help.xml
+%%HORDIR%%/locale/nb_NO/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/nl_NL/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/pl_PL/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/pt_BR/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/pt_PT/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/ro_RO/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/sl_SI/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/sv_SE/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/tr_TR/LC_MESSAGES/ingo.mo
+%%HORDIR%%/locale/zh_TW/LC_MESSAGES/ingo.mo
+%%HORDIR%%/po/README
+%%HORDIR%%/po/ca_ES.po
+%%HORDIR%%/po/cs_CZ.po
+%%HORDIR%%/po/da_DK.po
+%%HORDIR%%/po/de_DE.po
+%%HORDIR%%/po/el_GR.po
+%%HORDIR%%/po/es_ES.po
+%%HORDIR%%/po/et_EE.po
+%%HORDIR%%/po/fi_FI.po
+%%HORDIR%%/po/fr_FR.po
+%%HORDIR%%/po/hu_HU.po
+%%HORDIR%%/po/ingo.pot
+%%HORDIR%%/po/it_IT.po
+%%HORDIR%%/po/ko_KR.po
+%%HORDIR%%/po/lt_LT.po
+%%HORDIR%%/po/lv_LV.po
+%%HORDIR%%/po/nb_NO.po
+%%HORDIR%%/po/nl_NL.po
+%%HORDIR%%/po/pl_PL.po
+%%HORDIR%%/po/pt_BR.po
+%%HORDIR%%/po/pt_PT.po
+%%HORDIR%%/po/ro_RO.po
+%%HORDIR%%/po/sl_SI.po
+%%HORDIR%%/po/sv_SE.po
+%%HORDIR%%/po/tr_TR.po
+%%HORDIR%%/po/zh_TW.po
+%%HORDIR%%/rule.php
+%%HORDIR%%/script.php
+%%HORDIR%%/scripts/.htaccess
+%%HORDIR%%/scripts/convert_imp_filters.php
+%%HORDIR%%/templates/blacklist/blacklist.inc
+%%HORDIR%%/templates/common-header.inc
+%%HORDIR%%/templates/filters/filter-none.inc
+%%HORDIR%%/templates/filters/filter.html
+%%HORDIR%%/templates/filters/footer.inc
+%%HORDIR%%/templates/filters/header.inc
+%%HORDIR%%/templates/filters/settings.inc
+%%HORDIR%%/templates/forward/forward.inc
+%%HORDIR%%/templates/javascript/new_folder.js
+%%HORDIR%%/templates/menu.inc
+%%HORDIR%%/templates/rule/filter.inc
+%%HORDIR%%/templates/rule/footer.inc
+%%HORDIR%%/templates/rule/header.inc
+%%HORDIR%%/templates/script/activate.inc
+%%HORDIR%%/templates/script/footer.inc
+%%HORDIR%%/templates/script/header.inc
+%%HORDIR%%/templates/script/script.inc
+%%HORDIR%%/templates/vacation/vacation.inc
+%%HORDIR%%/templates/whitelist/whitelist.inc
+%%HORDIR%%/test.php
+%%HORDIR%%/themes/graphics/blacklist.png
+%%HORDIR%%/themes/graphics/copy.png
+%%HORDIR%%/themes/graphics/disable.png
+%%HORDIR%%/themes/graphics/enable.png
+%%HORDIR%%/themes/graphics/favicon.ico
+%%HORDIR%%/themes/graphics/forward.png
+%%HORDIR%%/themes/graphics/ingo.png
+%%HORDIR%%/themes/graphics/script.png
+%%HORDIR%%/themes/graphics/vacation.png
+%%HORDIR%%/themes/graphics/whitelist.png
+%%HORDIR%%/themes/screen.css
+%%HORDIR%%/vacation.php
+%%HORDIR%%/whitelist.php
+@dirrmtry %%HORDIR%%/config
+@dirrm %%HORDIR%%/js
+@dirrm %%HORDIR%%/lib/Block
+@dirrm %%HORDIR%%/lib/Driver
+@dirrm %%HORDIR%%/lib/IMAP
+@dirrm %%HORDIR%%/lib/Script
+@dirrm %%HORDIR%%/lib/Storage
+@dirrm %%HORDIR%%/lib
+@dirrm %%HORDIR%%/locale/ca_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ca_ES
+@dirrm %%HORDIR%%/locale/cs_CZ/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/cs_CZ
+@dirrm %%HORDIR%%/locale/da_DK/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/da_DK
+@dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/de_DE
+@dirrm %%HORDIR%%/locale/el_GR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/el_GR
+@dirrm %%HORDIR%%/locale/en_US
+@dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/es_ES
+@dirrm %%HORDIR%%/locale/et_EE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/et_EE
+@dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fi_FI
+@dirrm %%HORDIR%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fr_FR
+@dirrm %%HORDIR%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/hu_HU
+@dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/it_IT
+@dirrm %%HORDIR%%/locale/ko_KR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ko_KR
+@dirrm %%HORDIR%%/locale/lt_LT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/lt_LT
+@dirrm %%HORDIR%%/locale/lv_LV/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/lv_LV
+@dirrm %%HORDIR%%/locale/nb_NO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nb_NO
+@dirrm %%HORDIR%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nl_NL
+@dirrm %%HORDIR%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pl_PL
+@dirrm %%HORDIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pt_BR
+@dirrm %%HORDIR%%/locale/pt_PT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pt_PT
+@dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ro_RO
+@dirrm %%HORDIR%%/locale/sl_SI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sl_SI
+@dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sv_SE
+@dirrm %%HORDIR%%/locale/tr_TR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/tr_TR
+@dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/zh_TW
+@dirrm %%HORDIR%%/locale
+@dirrm %%HORDIR%%/po
+@dirrm %%HORDIR%%/scripts
+@dirrm %%HORDIR%%/templates/blacklist
+@dirrm %%HORDIR%%/templates/filters
+@dirrm %%HORDIR%%/templates/forward
+@dirrm %%HORDIR%%/templates/javascript
+@dirrm %%HORDIR%%/templates/rule
+@dirrm %%HORDIR%%/templates/script
+@dirrm %%HORDIR%%/templates/vacation
+@dirrm %%HORDIR%%/templates/whitelist
+@dirrm %%HORDIR%%/templates
+@dirrm %%HORDIR%%/themes/graphics
+@dirrm %%HORDIR%%/themes
+@dirrmtry %%HORDIR%%
+@dirrmtry %%HORBAS%%

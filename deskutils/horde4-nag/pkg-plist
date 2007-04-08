@@ -1,223 +1,224 @@
-%%NAGDIR%%/config/.htaccess
-%%NAGDIR%%/config/conf.xml
-%%NAGDIR%%/config/menu.php.dist
-%%NAGDIR%%/config/prefs.php.dist
-%%NAGDIR%%/data.php
-%%NAGDIR%%/ics.php
-%%NAGDIR%%/index.php
-%%NAGDIR%%/js/fixUnstyledOptions.js
-%%NAGDIR%%/js/tables.js
-%%NAGDIR%%/js/prototype.js
-%%NAGDIR%%/lib/.htaccess
-%%NAGDIR%%/lib/Block/summary.php
-%%NAGDIR%%/lib/Driver.php
-%%NAGDIR%%/lib/Driver/kolab.php
-%%NAGDIR%%/lib/Driver/sql.php
-%%NAGDIR%%/lib/Nag.php
-%%NAGDIR%%/lib/Notification/Listener/status.php
-%%NAGDIR%%/lib/Widgets.php
-%%NAGDIR%%/lib/api.php
-%%NAGDIR%%/lib/base.php
-%%NAGDIR%%/lib/prefs.php
-%%NAGDIR%%/lib/version.php
-%%NAGDIR%%/list.php
-%%NAGDIR%%/locale/ar_SY/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/bg_BG/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/ca_ES/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/ca_ES/help.xml
-%%NAGDIR%%/locale/cs_CZ/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/da_DK/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/de_DE/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/de_DE/help.xml
-%%NAGDIR%%/locale/el_GR/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/en_US/help.xml
-%%NAGDIR%%/locale/es_ES/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/es_ES/help.xml
-%%NAGDIR%%/locale/fi_FI/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/fi_FI/help.xml
-%%NAGDIR%%/locale/fr_FR/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/hu_HU/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/hu_HU/help.xml
-%%NAGDIR%%/locale/id_ID/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/it_IT/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/ja_JP/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/ko_KR/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/lt_LT/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/lv_LV/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/lv_LV/help.xml
-%%NAGDIR%%/locale/nb_NO/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/nl_NL/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/nl_NL/help.xml
-%%NAGDIR%%/locale/nn_NO/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/pl_PL/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/pt_BR/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/pt_PT/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/ro_RO/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/ru_RU/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/sk_SK/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/sk_SK/help.xml
-%%NAGDIR%%/locale/sl_SI/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/sv_SE/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/tr_TR/help.xml
-%%NAGDIR%%/locale/zh_CN/LC_MESSAGES/nag.mo
-%%NAGDIR%%/locale/zh_TW/LC_MESSAGES/nag.mo
-%%NAGDIR%%/po/README
-%%NAGDIR%%/po/ar_SY.po
-%%NAGDIR%%/po/bg_BG.po
-%%NAGDIR%%/po/ca_ES.po
-%%NAGDIR%%/po/cs_CZ.po
-%%NAGDIR%%/po/da_DK.po
-%%NAGDIR%%/po/de_DE.po
-%%NAGDIR%%/po/el_GR.po
-%%NAGDIR%%/po/es_ES.po
-%%NAGDIR%%/po/fi_FI.po
-%%NAGDIR%%/po/fr_FR.po
-%%NAGDIR%%/po/hu_HU.po
-%%NAGDIR%%/po/id_ID.po
-%%NAGDIR%%/po/it_IT.po
-%%NAGDIR%%/po/ja_JP.po
-%%NAGDIR%%/po/ko_KR.po
-%%NAGDIR%%/po/lt_LT.po
-%%NAGDIR%%/po/lv_LV.po
-%%NAGDIR%%/po/nag.pot
-%%NAGDIR%%/po/nb_NO.po
-%%NAGDIR%%/po/nl_NL.po
-%%NAGDIR%%/po/nn_NO.po
-%%NAGDIR%%/po/pl_PL.po
-%%NAGDIR%%/po/pt_BR.po
-%%NAGDIR%%/po/pt_PT.po
-%%NAGDIR%%/po/ro_RO.po
-%%NAGDIR%%/po/ru_RU.po
-%%NAGDIR%%/po/sk_SK.po
-%%NAGDIR%%/po/sl_SI.po
-%%NAGDIR%%/po/sv_SE.po
-%%NAGDIR%%/po/zh_CN.po
-%%NAGDIR%%/po/zh_TW.po
-%%NAGDIR%%/pref_api.php
-%%NAGDIR%%/scripts/.htaccess
-%%NAGDIR%%/scripts/import_vtodos.php
-%%NAGDIR%%/scripts/sql/nag.mssql.sql
-%%NAGDIR%%/scripts/sql/nag.oci8.sql
-%%NAGDIR%%/scripts/sql/nag.sql
-%%NAGDIR%%/scripts/sql/nag.xml
-%%NAGDIR%%/scripts/upgrades/1.1_to_2.0.mysql.sql
-%%NAGDIR%%/scripts/upgrades/1.1_to_2.0.oci8.sql
-%%NAGDIR%%/scripts/upgrades/1.1_to_2.0.pgsql.sql
-%%NAGDIR%%/scripts/upgrades/2004-09-13_add_uid_field.php
-%%NAGDIR%%/search.php
-%%NAGDIR%%/task.php
-%%NAGDIR%%/tasklists.php
-%%NAGDIR%%/templates/common-header.inc
-%%NAGDIR%%/templates/data/export.inc
-%%NAGDIR%%/templates/data/import.inc
-%%NAGDIR%%/templates/list/empty.inc
-%%NAGDIR%%/templates/list/header.inc
-%%NAGDIR%%/templates/list/task_footers.inc
-%%NAGDIR%%/templates/list/task_headers.inc
-%%NAGDIR%%/templates/list/task_summaries.inc
-%%NAGDIR%%/templates/menu.inc
-%%NAGDIR%%/templates/prefs/tasklistselect.inc
-%%NAGDIR%%/templates/search/search.inc
-%%NAGDIR%%/templates/task/task.inc
-%%NAGDIR%%/templates/tasklists/tasklists.inc
-%%NAGDIR%%/templates/view/task.inc
-%%NAGDIR%%/themes/categoryCSS.php
-%%NAGDIR%%/themes/graphics/add.png
-%%NAGDIR%%/themes/graphics/alarm.png
-%%NAGDIR%%/themes/graphics/alarm_small.png
-%%NAGDIR%%/themes/graphics/az.png
-%%NAGDIR%%/themes/graphics/checkbox.png
-%%NAGDIR%%/themes/graphics/checked.png
-%%NAGDIR%%/themes/graphics/favicon.ico
-%%NAGDIR%%/themes/graphics/nag.png
-%%NAGDIR%%/themes/graphics/note.png
-%%NAGDIR%%/themes/graphics/tasklists.png
-%%NAGDIR%%/themes/graphics/unchecked.png
-%%NAGDIR%%/themes/graphics/za.png
-%%NAGDIR%%/themes/screen.css
-%%NAGDIR%%/view.php
-@dirrm %%NAGDIR%%/themes/graphics
-@dirrm %%NAGDIR%%/themes
-@dirrm %%NAGDIR%%/templates/view
-@dirrm %%NAGDIR%%/templates/tasklists
-@dirrm %%NAGDIR%%/templates/task
-@dirrm %%NAGDIR%%/templates/search
-@dirrm %%NAGDIR%%/templates/prefs
-@dirrm %%NAGDIR%%/templates/list
-@dirrm %%NAGDIR%%/templates/data
-@dirrm %%NAGDIR%%/templates
-@dirrm %%NAGDIR%%/scripts/upgrades
-@dirrm %%NAGDIR%%/scripts/sql
-@dirrm %%NAGDIR%%/scripts
-@dirrm %%NAGDIR%%/po
-@dirrm %%NAGDIR%%/locale/zh_TW/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/zh_TW
-@dirrm %%NAGDIR%%/locale/zh_CN/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/zh_CN
-@dirrm %%NAGDIR%%/locale/tr_TR
-@dirrm %%NAGDIR%%/locale/sv_SE/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/sv_SE
-@dirrm %%NAGDIR%%/locale/sk_SK/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/sk_SK
-@dirrm %%NAGDIR%%/locale/sl_SI/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/sl_SI
-@dirrm %%NAGDIR%%/locale/ru_RU/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/ru_RU
-@dirrm %%NAGDIR%%/locale/ro_RO/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/ro_RO
-@dirrm %%NAGDIR%%/locale/pt_PT/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/pt_PT
-@dirrm %%NAGDIR%%/locale/pt_BR/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/pt_BR
-@dirrm %%NAGDIR%%/locale/pl_PL/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/pl_PL
-@dirrm %%NAGDIR%%/locale/nn_NO/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/nn_NO
-@dirrm %%NAGDIR%%/locale/nl_NL/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/nl_NL
-@dirrm %%NAGDIR%%/locale/nb_NO/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/nb_NO
-@dirrm %%NAGDIR%%/locale/lv_LV/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/lv_LV
-@dirrm %%NAGDIR%%/locale/lt_LT/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/lt_LT
-@dirrm %%NAGDIR%%/locale/ko_KR/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/ko_KR
-@dirrm %%NAGDIR%%/locale/ja_JP/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/ja_JP
-@dirrm %%NAGDIR%%/locale/it_IT/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/it_IT
-@dirrm %%NAGDIR%%/locale/id_ID/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/id_ID
-@dirrm %%NAGDIR%%/locale/hu_HU/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/hu_HU
-@dirrm %%NAGDIR%%/locale/fr_FR/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/fr_FR
-@dirrm %%NAGDIR%%/locale/fi_FI/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/fi_FI
-@dirrm %%NAGDIR%%/locale/es_ES/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/es_ES
-@dirrm %%NAGDIR%%/locale/en_US
-@dirrm %%NAGDIR%%/locale/el_GR/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/el_GR
-@dirrm %%NAGDIR%%/locale/de_DE/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/de_DE
-@dirrm %%NAGDIR%%/locale/da_DK/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/da_DK
-@dirrm %%NAGDIR%%/locale/cs_CZ/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/cs_CZ
-@dirrm %%NAGDIR%%/locale/ca_ES/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/ca_ES
-@dirrm %%NAGDIR%%/locale/bg_BG/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/bg_BG
-@dirrm %%NAGDIR%%/locale/ar_SY/LC_MESSAGES
-@dirrm %%NAGDIR%%/locale/ar_SY
-@dirrm %%NAGDIR%%/locale
-@dirrm %%NAGDIR%%/lib/Notification/Listener
-@dirrm %%NAGDIR%%/lib/Notification
-@dirrm %%NAGDIR%%/lib/Driver
-@dirrm %%NAGDIR%%/lib/Block
-@dirrm %%NAGDIR%%/lib
-@dirrm %%NAGDIR%%/js
-@dirrmtry %%NAGDIR%%/config
-@dirrmtry %%NAGDIR%%
+%%HORDIR%%/config/.htaccess
+%%HORDIR%%/config/conf.xml
+%%HORDIR%%/config/menu.php.dist
+%%HORDIR%%/config/prefs.php.dist
+%%HORDIR%%/data.php
+%%HORDIR%%/ics.php
+%%HORDIR%%/index.php
+%%HORDIR%%/js/fixUnstyledOptions.js
+%%HORDIR%%/js/prototype.js
+%%HORDIR%%/js/tables.js
+%%HORDIR%%/lib/.htaccess
+%%HORDIR%%/lib/Block/summary.php
+%%HORDIR%%/lib/Driver/kolab.php
+%%HORDIR%%/lib/Driver/sql.php
+%%HORDIR%%/lib/Driver.php
+%%HORDIR%%/lib/Nag.php
+%%HORDIR%%/lib/Notification/Listener/status.php
+%%HORDIR%%/lib/Widgets.php
+%%HORDIR%%/lib/api.php
+%%HORDIR%%/lib/base.php
+%%HORDIR%%/lib/prefs.php
+%%HORDIR%%/lib/version.php
+%%HORDIR%%/list.php
+%%HORDIR%%/locale/ar_SY/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/bg_BG/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/ca_ES/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/ca_ES/help.xml
+%%HORDIR%%/locale/cs_CZ/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/da_DK/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/de_DE/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/de_DE/help.xml
+%%HORDIR%%/locale/el_GR/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/en_US/help.xml
+%%HORDIR%%/locale/es_ES/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/es_ES/help.xml
+%%HORDIR%%/locale/fi_FI/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/fi_FI/help.xml
+%%HORDIR%%/locale/fr_FR/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/hu_HU/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/hu_HU/help.xml
+%%HORDIR%%/locale/id_ID/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/it_IT/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/ja_JP/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/ko_KR/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/lt_LT/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/lv_LV/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/lv_LV/help.xml
+%%HORDIR%%/locale/nb_NO/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/nl_NL/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/nl_NL/help.xml
+%%HORDIR%%/locale/nn_NO/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/pl_PL/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/pt_BR/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/pt_PT/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/ro_RO/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/ru_RU/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/sk_SK/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/sk_SK/help.xml
+%%HORDIR%%/locale/sl_SI/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/sv_SE/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/tr_TR/help.xml
+%%HORDIR%%/locale/zh_CN/LC_MESSAGES/nag.mo
+%%HORDIR%%/locale/zh_TW/LC_MESSAGES/nag.mo
+%%HORDIR%%/po/README
+%%HORDIR%%/po/ar_SY.po
+%%HORDIR%%/po/bg_BG.po
+%%HORDIR%%/po/ca_ES.po
+%%HORDIR%%/po/cs_CZ.po
+%%HORDIR%%/po/da_DK.po
+%%HORDIR%%/po/de_DE.po
+%%HORDIR%%/po/el_GR.po
+%%HORDIR%%/po/es_ES.po
+%%HORDIR%%/po/fi_FI.po
+%%HORDIR%%/po/fr_FR.po
+%%HORDIR%%/po/hu_HU.po
+%%HORDIR%%/po/id_ID.po
+%%HORDIR%%/po/it_IT.po
+%%HORDIR%%/po/ja_JP.po
+%%HORDIR%%/po/ko_KR.po
+%%HORDIR%%/po/lt_LT.po
+%%HORDIR%%/po/lv_LV.po
+%%HORDIR%%/po/nag.pot
+%%HORDIR%%/po/nb_NO.po
+%%HORDIR%%/po/nl_NL.po
+%%HORDIR%%/po/nn_NO.po
+%%HORDIR%%/po/pl_PL.po
+%%HORDIR%%/po/pt_BR.po
+%%HORDIR%%/po/pt_PT.po
+%%HORDIR%%/po/ro_RO.po
+%%HORDIR%%/po/ru_RU.po
+%%HORDIR%%/po/sk_SK.po
+%%HORDIR%%/po/sl_SI.po
+%%HORDIR%%/po/sv_SE.po
+%%HORDIR%%/po/zh_CN.po
+%%HORDIR%%/po/zh_TW.po
+%%HORDIR%%/pref_api.php
+%%HORDIR%%/scripts/.htaccess
+%%HORDIR%%/scripts/import_vtodos.php
+%%HORDIR%%/scripts/sql/nag.mssql.sql
+%%HORDIR%%/scripts/sql/nag.oci8.sql
+%%HORDIR%%/scripts/sql/nag.sql
+%%HORDIR%%/scripts/sql/nag.xml
+%%HORDIR%%/scripts/upgrades/1.1_to_2.0.mysql.sql
+%%HORDIR%%/scripts/upgrades/1.1_to_2.0.oci8.sql
+%%HORDIR%%/scripts/upgrades/1.1_to_2.0.pgsql.sql
+%%HORDIR%%/scripts/upgrades/2004-09-13_add_uid_field.php
+%%HORDIR%%/search.php
+%%HORDIR%%/task.php
+%%HORDIR%%/tasklists.php
+%%HORDIR%%/templates/common-header.inc
+%%HORDIR%%/templates/data/export.inc
+%%HORDIR%%/templates/data/import.inc
+%%HORDIR%%/templates/list/empty.inc
+%%HORDIR%%/templates/list/header.inc
+%%HORDIR%%/templates/list/task_footers.inc
+%%HORDIR%%/templates/list/task_headers.inc
+%%HORDIR%%/templates/list/task_summaries.inc
+%%HORDIR%%/templates/menu.inc
+%%HORDIR%%/templates/prefs/tasklistselect.inc
+%%HORDIR%%/templates/search/search.inc
+%%HORDIR%%/templates/task/task.inc
+%%HORDIR%%/templates/tasklists/tasklists.inc
+%%HORDIR%%/templates/view/task.inc
+%%HORDIR%%/themes/categoryCSS.php
+%%HORDIR%%/themes/graphics/add.png
+%%HORDIR%%/themes/graphics/alarm.png
+%%HORDIR%%/themes/graphics/alarm_small.png
+%%HORDIR%%/themes/graphics/az.png
+%%HORDIR%%/themes/graphics/checkbox.png
+%%HORDIR%%/themes/graphics/checked.png
+%%HORDIR%%/themes/graphics/favicon.ico
+%%HORDIR%%/themes/graphics/nag.png
+%%HORDIR%%/themes/graphics/note.png
+%%HORDIR%%/themes/graphics/tasklists.png
+%%HORDIR%%/themes/graphics/unchecked.png
+%%HORDIR%%/themes/graphics/za.png
+%%HORDIR%%/themes/screen.css
+%%HORDIR%%/view.php
+@dirrmtry %%HORDIR%%/config
+@dirrm %%HORDIR%%/js
+@dirrm %%HORDIR%%/lib/Block
+@dirrm %%HORDIR%%/lib/Driver
+@dirrm %%HORDIR%%/lib/Notification/Listener
+@dirrm %%HORDIR%%/lib/Notification
+@dirrm %%HORDIR%%/lib
+@dirrm %%HORDIR%%/locale/ar_SY/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ar_SY
+@dirrm %%HORDIR%%/locale/bg_BG/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/bg_BG
+@dirrm %%HORDIR%%/locale/ca_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ca_ES
+@dirrm %%HORDIR%%/locale/cs_CZ/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/cs_CZ
+@dirrm %%HORDIR%%/locale/da_DK/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/da_DK
+@dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/de_DE
+@dirrm %%HORDIR%%/locale/el_GR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/el_GR
+@dirrm %%HORDIR%%/locale/en_US
+@dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/es_ES
+@dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fi_FI
+@dirrm %%HORDIR%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fr_FR
+@dirrm %%HORDIR%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/hu_HU
+@dirrm %%HORDIR%%/locale/id_ID/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/id_ID
+@dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/it_IT
+@dirrm %%HORDIR%%/locale/ja_JP/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ja_JP
+@dirrm %%HORDIR%%/locale/ko_KR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ko_KR
+@dirrm %%HORDIR%%/locale/lt_LT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/lt_LT
+@dirrm %%HORDIR%%/locale/lv_LV/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/lv_LV
+@dirrm %%HORDIR%%/locale/nb_NO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nb_NO
+@dirrm %%HORDIR%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nl_NL
+@dirrm %%HORDIR%%/locale/nn_NO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nn_NO
+@dirrm %%HORDIR%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pl_PL
+@dirrm %%HORDIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pt_BR
+@dirrm %%HORDIR%%/locale/pt_PT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pt_PT
+@dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ro_RO
+@dirrm %%HORDIR%%/locale/ru_RU/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ru_RU
+@dirrm %%HORDIR%%/locale/sk_SK/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sk_SK
+@dirrm %%HORDIR%%/locale/sl_SI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sl_SI
+@dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sv_SE
+@dirrm %%HORDIR%%/locale/tr_TR
+@dirrm %%HORDIR%%/locale/zh_CN/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/zh_CN
+@dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/zh_TW
+@dirrm %%HORDIR%%/locale
+@dirrm %%HORDIR%%/po
+@dirrm %%HORDIR%%/scripts/sql
+@dirrm %%HORDIR%%/scripts/upgrades
+@dirrm %%HORDIR%%/scripts
+@dirrm %%HORDIR%%/templates/data
+@dirrm %%HORDIR%%/templates/list
+@dirrm %%HORDIR%%/templates/prefs
+@dirrm %%HORDIR%%/templates/search
+@dirrm %%HORDIR%%/templates/task
+@dirrm %%HORDIR%%/templates/tasklists
+@dirrm %%HORDIR%%/templates/view
+@dirrm %%HORDIR%%/templates
+@dirrm %%HORDIR%%/themes/graphics
+@dirrm %%HORDIR%%/themes
+@dirrmtry %%HORDIR%%
+@dirrmtry %%HORBAS%%

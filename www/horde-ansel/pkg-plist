@@ -1,170 +1,170 @@
-%%ANSDIR%%/config/.cvsignore
-%%ANSDIR%%/config/conf.xml
-%%ANSDIR%%/config/prefs.php.dist
-%%ANSDIR%%/gallery.php
-%%ANSDIR%%/gallery/captions.php
-%%ANSDIR%%/gallery/delete.php
-%%ANSDIR%%/gallery/index.php
-%%ANSDIR%%/gallery/sort.php
-%%ANSDIR%%/group.php
-%%ANSDIR%%/image.php
-%%ANSDIR%%/img/download.php
-%%ANSDIR%%/img/ecard.php
-%%ANSDIR%%/img/full.php
-%%ANSDIR%%/img/index.php
-%%ANSDIR%%/img/mini.php
-%%ANSDIR%%/img/screen.php
-%%ANSDIR%%/img/thumb.php
-%%ANSDIR%%/img/upload.php
-%%ANSDIR%%/index.php
-%%ANSDIR%%/js/controls.js
-%%ANSDIR%%/js/dragdrop.js
-%%ANSDIR%%/js/effects.js
-%%ANSDIR%%/js/scriptaculous.js
-%%ANSDIR%%/js/slideshow.js
-%%ANSDIR%%/js/src/controls.js
-%%ANSDIR%%/js/src/dragdrop.js
-%%ANSDIR%%/js/src/effects.js
-%%ANSDIR%%/js/src/scriptaculous.js
-%%ANSDIR%%/js/src/slideshow.js
-%%ANSDIR%%/lib/Ansel.php
-%%ANSDIR%%/lib/Block/gallery.php
-%%ANSDIR%%/lib/Block/random_gallery.php
-%%ANSDIR%%/lib/Block/random_photo.php
-%%ANSDIR%%/lib/Exif.php
-%%ANSDIR%%/lib/Exif/canon.php
-%%ANSDIR%%/lib/Exif/fujifilm.php
-%%ANSDIR%%/lib/Exif/gps.php
-%%ANSDIR%%/lib/Exif/nikon.php
-%%ANSDIR%%/lib/Exif/olympus.php
-%%ANSDIR%%/lib/Exif/sanyo.php
-%%ANSDIR%%/lib/Forms/Ecard.php
-%%ANSDIR%%/lib/Forms/Upload.php
-%%ANSDIR%%/lib/Views/Abstract.php
-%%ANSDIR%%/lib/Views/Gallery.php
-%%ANSDIR%%/lib/Views/Image.php
-%%ANSDIR%%/lib/XPPublisher.php
-%%ANSDIR%%/lib/api.php
-%%ANSDIR%%/lib/base.php
-%%ANSDIR%%/lib/version.php
-%%ANSDIR%%/list.php
-%%ANSDIR%%/locale/de_DE/LC_MESSAGES/ansel.mo
-%%ANSDIR%%/locale/en_US/help.xml
-%%ANSDIR%%/locale/es_ES/LC_MESSAGES/ansel.mo
-%%ANSDIR%%/locale/fi_FI/LC_MESSAGES/ansel.mo
-%%ANSDIR%%/locale/fi_FI/help.xml
-%%ANSDIR%%/locale/it_IT/LC_MESSAGES/ansel.mo
-%%ANSDIR%%/locale/lt_LT/LC_MESSAGES/ansel.mo
-%%ANSDIR%%/locale/sl_SI/LC_MESSAGES/ansel.mo
-%%ANSDIR%%/locale/sv_SE/LC_MESSAGES/ansel.mo
-%%ANSDIR%%/locale/zh_TW/LC_MESSAGES/ansel.mo
-%%ANSDIR%%/perms.php
-%%ANSDIR%%/po/.cvsignore
-%%ANSDIR%%/po/README
-%%ANSDIR%%/po/ansel.pot
-%%ANSDIR%%/po/de_DE.po
-%%ANSDIR%%/po/es_ES.po
-%%ANSDIR%%/po/fi_FI.po
-%%ANSDIR%%/po/it_IT.po
-%%ANSDIR%%/po/lt_LT.po
-%%ANSDIR%%/po/sl_SI.po
-%%ANSDIR%%/po/sv_SE.po
-%%ANSDIR%%/po/zh_TW.po
-%%ANSDIR%%/scripts/.htaccess
-%%ANSDIR%%/scripts/ansel.php
-%%ANSDIR%%/scripts/garbage_collection.php
-%%ANSDIR%%/scripts/recursive_import.php
-%%ANSDIR%%/scripts/sql/ansel.sql
-%%ANSDIR%%/scripts/upgrades/2006-11-27_cleanup.php
-%%ANSDIR%%/scripts/upgrades/2006-11-27_datatree_to_sql_renames.php
-%%ANSDIR%%/scripts/upgrades/2006-11-27_fix_default_images.php
-%%ANSDIR%%/scripts/upgrades/2006-11-27_sql_images.php
-%%ANSDIR%%/templates/captions/captions.inc
-%%ANSDIR%%/templates/common-header.inc
-%%ANSDIR%%/templates/gallery/delete_confirmation.inc
-%%ANSDIR%%/templates/gallery/gallery.inc
-%%ANSDIR%%/templates/group/category.inc
-%%ANSDIR%%/templates/group/footer.inc
-%%ANSDIR%%/templates/group/header.inc
-%%ANSDIR%%/templates/group/owner.inc
-%%ANSDIR%%/templates/group/pager.inc
-%%ANSDIR%%/templates/image/edit_image.inc
-%%ANSDIR%%/templates/image/preview_image.inc
-%%ANSDIR%%/templates/list/filler.inc
-%%ANSDIR%%/templates/list/footer.inc
-%%ANSDIR%%/templates/list/gallery_footers.inc
-%%ANSDIR%%/templates/list/gallery_headers.inc
-%%ANSDIR%%/templates/list/gallery_summaries.inc
-%%ANSDIR%%/templates/list/header.inc
-%%ANSDIR%%/templates/list/images.inc
-%%ANSDIR%%/templates/list/pager.inc
-%%ANSDIR%%/templates/menu.inc
-%%ANSDIR%%/templates/view/gallery.inc
-%%ANSDIR%%/templates/view/image.inc
-%%ANSDIR%%/templates/view/subgallery_header.inc
-%%ANSDIR%%/templates/xppublish/javascript.inc
-%%ANSDIR%%/templates/xppublish/list.inc
-%%ANSDIR%%/templates/xppublish/login.inc
-%%ANSDIR%%/templates/xppublish/new.inc
-%%ANSDIR%%/test.php
-%%ANSDIR%%/themes/graphics/add.png
-%%ANSDIR%%/themes/graphics/ansel.png
-%%ANSDIR%%/themes/graphics/favicon.ico
-%%ANSDIR%%/themes/graphics/mini-error.png
-%%ANSDIR%%/themes/graphics/mygalleries.png
-%%ANSDIR%%/themes/graphics/mypics.png
-%%ANSDIR%%/themes/graphics/resize.png
-%%ANSDIR%%/themes/graphics/screen-error.png
-%%ANSDIR%%/themes/graphics/slideshow_next.png
-%%ANSDIR%%/themes/graphics/slideshow_pause.png
-%%ANSDIR%%/themes/graphics/slideshow_play.png
-%%ANSDIR%%/themes/graphics/slideshow_prev.png
-%%ANSDIR%%/themes/graphics/text.png
-%%ANSDIR%%/themes/graphics/thumb-error.png
-%%ANSDIR%%/themes/screen.css
-%%ANSDIR%%/view.php
-%%ANSDIR%%/xppublish.php
-%%HORDE_INC%%httpd-ansel.conf
-@dirrm %%ANSDIR%%/themes/graphics
-@dirrm %%ANSDIR%%/themes
-@dirrm %%ANSDIR%%/templates/xppublish
-@dirrm %%ANSDIR%%/templates/view
-@dirrm %%ANSDIR%%/templates/list
-@dirrm %%ANSDIR%%/templates/image
-@dirrm %%ANSDIR%%/templates/group
-@dirrm %%ANSDIR%%/templates/gallery
-@dirrm %%ANSDIR%%/templates/captions
-@dirrm %%ANSDIR%%/templates
-@dirrm %%ANSDIR%%/scripts/upgrades
-@dirrm %%ANSDIR%%/scripts/sql
-@dirrm %%ANSDIR%%/scripts
-@dirrm %%ANSDIR%%/po
-@dirrm %%ANSDIR%%/locale/zh_TW/LC_MESSAGES
-@dirrm %%ANSDIR%%/locale/zh_TW
-@dirrm %%ANSDIR%%/locale/sv_SE/LC_MESSAGES
-@dirrm %%ANSDIR%%/locale/sv_SE
-@dirrm %%ANSDIR%%/locale/sl_SI/LC_MESSAGES
-@dirrm %%ANSDIR%%/locale/sl_SI
-@dirrm %%ANSDIR%%/locale/lt_LT/LC_MESSAGES
-@dirrm %%ANSDIR%%/locale/lt_LT
-@dirrm %%ANSDIR%%/locale/it_IT/LC_MESSAGES
-@dirrm %%ANSDIR%%/locale/it_IT
-@dirrm %%ANSDIR%%/locale/fi_FI/LC_MESSAGES
-@dirrm %%ANSDIR%%/locale/fi_FI
-@dirrm %%ANSDIR%%/locale/es_ES/LC_MESSAGES
-@dirrm %%ANSDIR%%/locale/es_ES
-@dirrm %%ANSDIR%%/locale/en_US
-@dirrm %%ANSDIR%%/locale/de_DE/LC_MESSAGES
-@dirrm %%ANSDIR%%/locale/de_DE
-@dirrm %%ANSDIR%%/locale
-@dirrm %%ANSDIR%%/lib/Views
-@dirrm %%ANSDIR%%/lib/Forms
-@dirrm %%ANSDIR%%/lib/Exif
-@dirrm %%ANSDIR%%/lib/Block
-@dirrm %%ANSDIR%%/lib
-@dirrm %%ANSDIR%%/js/src
-@dirrm %%ANSDIR%%/js
-@dirrm %%ANSDIR%%/img
-@dirrm %%ANSDIR%%/gallery
-@dirrm %%ANSDIR%%/config
-@dirrm %%ANSDIR%%
+%%HORDIR%%/config/.cvsignore
+%%HORDIR%%/config/conf.xml
+%%HORDIR%%/config/prefs.php.dist
+%%HORDIR%%/gallery/captions.php
+%%HORDIR%%/gallery/delete.php
+%%HORDIR%%/gallery/index.php
+%%HORDIR%%/gallery/sort.php
+%%HORDIR%%/gallery.php
+%%HORDIR%%/group.php
+%%HORDIR%%/image.php
+%%HORDIR%%/img/download.php
+%%HORDIR%%/img/ecard.php
+%%HORDIR%%/img/full.php
+%%HORDIR%%/img/index.php
+%%HORDIR%%/img/mini.php
+%%HORDIR%%/img/screen.php
+%%HORDIR%%/img/thumb.php
+%%HORDIR%%/img/upload.php
+%%HORDIR%%/index.php
+%%HORDIR%%/js/controls.js
+%%HORDIR%%/js/dragdrop.js
+%%HORDIR%%/js/effects.js
+%%HORDIR%%/js/scriptaculous.js
+%%HORDIR%%/js/slideshow.js
+%%HORDIR%%/js/src/controls.js
+%%HORDIR%%/js/src/dragdrop.js
+%%HORDIR%%/js/src/effects.js
+%%HORDIR%%/js/src/scriptaculous.js
+%%HORDIR%%/js/src/slideshow.js
+%%HORDIR%%/lib/Ansel.php
+%%HORDIR%%/lib/Block/gallery.php
+%%HORDIR%%/lib/Block/random_gallery.php
+%%HORDIR%%/lib/Block/random_photo.php
+%%HORDIR%%/lib/Exif/canon.php
+%%HORDIR%%/lib/Exif/fujifilm.php
+%%HORDIR%%/lib/Exif/gps.php
+%%HORDIR%%/lib/Exif/nikon.php
+%%HORDIR%%/lib/Exif/olympus.php
+%%HORDIR%%/lib/Exif/sanyo.php
+%%HORDIR%%/lib/Exif.php
+%%HORDIR%%/lib/Forms/Ecard.php
+%%HORDIR%%/lib/Forms/Upload.php
+%%HORDIR%%/lib/Views/Abstract.php
+%%HORDIR%%/lib/Views/Gallery.php
+%%HORDIR%%/lib/Views/Image.php
+%%HORDIR%%/lib/XPPublisher.php
+%%HORDIR%%/lib/api.php
+%%HORDIR%%/lib/base.php
+%%HORDIR%%/lib/version.php
+%%HORDIR%%/list.php
+%%HORDIR%%/locale/de_DE/LC_MESSAGES/ansel.mo
+%%HORDIR%%/locale/en_US/help.xml
+%%HORDIR%%/locale/es_ES/LC_MESSAGES/ansel.mo
+%%HORDIR%%/locale/fi_FI/LC_MESSAGES/ansel.mo
+%%HORDIR%%/locale/fi_FI/help.xml
+%%HORDIR%%/locale/it_IT/LC_MESSAGES/ansel.mo
+%%HORDIR%%/locale/lt_LT/LC_MESSAGES/ansel.mo
+%%HORDIR%%/locale/sl_SI/LC_MESSAGES/ansel.mo
+%%HORDIR%%/locale/sv_SE/LC_MESSAGES/ansel.mo
+%%HORDIR%%/locale/zh_TW/LC_MESSAGES/ansel.mo
+%%HORDIR%%/perms.php
+%%HORDIR%%/po/.cvsignore
+%%HORDIR%%/po/README
+%%HORDIR%%/po/ansel.pot
+%%HORDIR%%/po/de_DE.po
+%%HORDIR%%/po/es_ES.po
+%%HORDIR%%/po/fi_FI.po
+%%HORDIR%%/po/it_IT.po
+%%HORDIR%%/po/lt_LT.po
+%%HORDIR%%/po/sl_SI.po
+%%HORDIR%%/po/sv_SE.po
+%%HORDIR%%/po/zh_TW.po
+%%HORDIR%%/scripts/.htaccess
+%%HORDIR%%/scripts/ansel.php
+%%HORDIR%%/scripts/garbage_collection.php
+%%HORDIR%%/scripts/recursive_import.php
+%%HORDIR%%/scripts/sql/ansel.sql
+%%HORDIR%%/scripts/upgrades/2006-11-27_cleanup.php
+%%HORDIR%%/scripts/upgrades/2006-11-27_datatree_to_sql_renames.php
+%%HORDIR%%/scripts/upgrades/2006-11-27_fix_default_images.php
+%%HORDIR%%/scripts/upgrades/2006-11-27_sql_images.php
+%%HORDIR%%/templates/captions/captions.inc
+%%HORDIR%%/templates/common-header.inc
+%%HORDIR%%/templates/gallery/delete_confirmation.inc
+%%HORDIR%%/templates/gallery/gallery.inc
+%%HORDIR%%/templates/group/category.inc
+%%HORDIR%%/templates/group/footer.inc
+%%HORDIR%%/templates/group/header.inc
+%%HORDIR%%/templates/group/owner.inc
+%%HORDIR%%/templates/group/pager.inc
+%%HORDIR%%/templates/image/edit_image.inc
+%%HORDIR%%/templates/image/preview_image.inc
+%%HORDIR%%/templates/list/filler.inc
+%%HORDIR%%/templates/list/footer.inc
+%%HORDIR%%/templates/list/gallery_footers.inc
+%%HORDIR%%/templates/list/gallery_headers.inc
+%%HORDIR%%/templates/list/gallery_summaries.inc
+%%HORDIR%%/templates/list/header.inc
+%%HORDIR%%/templates/list/images.inc
+%%HORDIR%%/templates/list/pager.inc
+%%HORDIR%%/templates/menu.inc
+%%HORDIR%%/templates/view/gallery.inc
+%%HORDIR%%/templates/view/image.inc
+%%HORDIR%%/templates/view/subgallery_header.inc
+%%HORDIR%%/templates/xppublish/javascript.inc
+%%HORDIR%%/templates/xppublish/list.inc
+%%HORDIR%%/templates/xppublish/login.inc
+%%HORDIR%%/templates/xppublish/new.inc
+%%HORDIR%%/test.php
+%%HORDIR%%/themes/graphics/add.png
+%%HORDIR%%/themes/graphics/ansel.png
+%%HORDIR%%/themes/graphics/favicon.ico
+%%HORDIR%%/themes/graphics/mini-error.png
+%%HORDIR%%/themes/graphics/mygalleries.png
+%%HORDIR%%/themes/graphics/mypics.png
+%%HORDIR%%/themes/graphics/resize.png
+%%HORDIR%%/themes/graphics/screen-error.png
+%%HORDIR%%/themes/graphics/slideshow_next.png
+%%HORDIR%%/themes/graphics/slideshow_pause.png
+%%HORDIR%%/themes/graphics/slideshow_play.png
+%%HORDIR%%/themes/graphics/slideshow_prev.png
+%%HORDIR%%/themes/graphics/text.png
+%%HORDIR%%/themes/graphics/thumb-error.png
+%%HORDIR%%/themes/screen.css
+%%HORDIR%%/view.php
+%%HORDIR%%/xppublish.php
+@dirrmtry %%HORDIR%%/config
+@dirrm %%HORDIR%%/gallery
+@dirrm %%HORDIR%%/img
+@dirrm %%HORDIR%%/js/src
+@dirrm %%HORDIR%%/js
+@dirrm %%HORDIR%%/lib/Block
+@dirrm %%HORDIR%%/lib/Exif
+@dirrm %%HORDIR%%/lib/Forms
+@dirrm %%HORDIR%%/lib/Views
+@dirrm %%HORDIR%%/lib
+@dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/de_DE
+@dirrm %%HORDIR%%/locale/en_US
+@dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/es_ES
+@dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fi_FI
+@dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/it_IT
+@dirrm %%HORDIR%%/locale/lt_LT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/lt_LT
+@dirrm %%HORDIR%%/locale/sl_SI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sl_SI
+@dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sv_SE
+@dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/zh_TW
+@dirrm %%HORDIR%%/locale
+@dirrm %%HORDIR%%/po
+@dirrm %%HORDIR%%/scripts/sql
+@dirrm %%HORDIR%%/scripts/upgrades
+@dirrm %%HORDIR%%/scripts
+@dirrm %%HORDIR%%/templates/captions
+@dirrm %%HORDIR%%/templates/gallery
+@dirrm %%HORDIR%%/templates/group
+@dirrm %%HORDIR%%/templates/image
+@dirrm %%HORDIR%%/templates/list
+@dirrm %%HORDIR%%/templates/view
+@dirrm %%HORDIR%%/templates/xppublish
+@dirrm %%HORDIR%%/templates
+@dirrm %%HORDIR%%/themes/graphics
+@dirrm %%HORDIR%%/themes
+@dirrmtry %%HORDIR%%
+@dirrmtry %%HORBAS%%

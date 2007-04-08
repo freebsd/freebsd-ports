@@ -1,120 +1,117 @@
-%%MIMPDIR%%/compose.php
-%%MIMPDIR%%/config/.htaccess
-%%MIMPDIR%%/config/conf.xml
-%%MIMPDIR%%/config/filter.txt.dist
-%%MIMPDIR%%/config/header.php.dist
-%%MIMPDIR%%/config/menu.php.dist
-%%MIMPDIR%%/config/mime_drivers.php.dist
-%%MIMPDIR%%/config/motd.php.dist
-%%MIMPDIR%%/config/prefs.php.dist
-%%MIMPDIR%%/config/servers.php.dist
-%%MIMPDIR%%/config/trailer.txt.dist
-%%MIMPDIR%%/config/conf.xml.beforeMIMP
-%%MIMPDIR%%/config/servers.php.dist.beforeMIMP
-%%MIMPDIR%%/folders.php
-%%MIMPDIR%%/index.php
-%%MIMPDIR%%/lib/Auth/mimp.php
-%%MIMPDIR%%/lib/base.php
-%%MIMPDIR%%/lib/Compose.php
-%%MIMPDIR%%/lib/Folder.php
-%%MIMPDIR%%/lib/IMAP.php
-%%MIMPDIR%%/lib/IMAP/Client.php
-%%MIMPDIR%%/lib/IMAP/Sort.php
-%%MIMPDIR%%/lib/IMAP/Tree.php
-%%MIMPDIR%%/lib/Identity/mimp.php
-%%MIMPDIR%%/lib/MIME/Contents.php
-%%MIMPDIR%%/lib/MIME/Headers.php
-%%MIMPDIR%%/lib/MIME/Viewer/alternative.php
-%%MIMPDIR%%/lib/MIME/Viewer/html.php
-%%MIMPDIR%%/lib/MIME/Viewer/multipart.php
-%%MIMPDIR%%/lib/MIME/Viewer/plain.php
-%%MIMPDIR%%/lib/MIME/Viewer/related.php
-%%MIMPDIR%%/lib/MIME/Headers.php.beforeMIMP
-%%MIMPDIR%%/lib/Mailbox.php
-%%MIMPDIR%%/lib/Message.php
-%%MIMPDIR%%/lib/MIMP.php
-%%MIMPDIR%%/lib/Session.php
-%%MIMPDIR%%/lib/api.php
-%%MIMPDIR%%/lib/prefs.php
-%%MIMPDIR%%/lib/version.php
-%%MIMPDIR%%/locale/ca_ES/LC_MESSAGES/mimp.mo
-%%MIMPDIR%%/locale/de_DE/LC_MESSAGES/mimp.mo
-%%MIMPDIR%%/locale/es_ES/LC_MESSAGES/mimp.mo
-%%MIMPDIR%%/locale/fi_FI/LC_MESSAGES/mimp.mo
-%%MIMPDIR%%/locale/fr_FR/LC_MESSAGES/mimp.mo
-%%MIMPDIR%%/locale/hu_HU/LC_MESSAGES/mimp.mo
-%%MIMPDIR%%/locale/it_IT/LC_MESSAGES/mimp.mo
-%%MIMPDIR%%/locale/lt_LT/LC_MESSAGES/mimp.mo
-%%MIMPDIR%%/locale/nl_NL/LC_MESSAGES/mimp.mo
-%%MIMPDIR%%/locale/pt_PT/LC_MESSAGES/mimp.mo
-%%MIMPDIR%%/locale/ro_RO/LC_MESSAGES/mimp.mo
-%%MIMPDIR%%/login.php
-%%MIMPDIR%%/mailbox.php
-%%MIMPDIR%%/message.php
-%%MIMPDIR%%/po/README
-%%MIMPDIR%%/po/mimp.pot
-%%MIMPDIR%%/po/ca_ES.po
-%%MIMPDIR%%/po/de_DE.po
-%%MIMPDIR%%/po/es_ES.po
-%%MIMPDIR%%/po/fi_FI.po
-%%MIMPDIR%%/po/fr_FR.po
-%%MIMPDIR%%/po/hu_HU.po
-%%MIMPDIR%%/po/it_IT.po
-%%MIMPDIR%%/po/lt_LT.po
-%%MIMPDIR%%/po/nl_NL.po
-%%MIMPDIR%%/po/pt_PT.po
-%%MIMPDIR%%/po/ro_RO.po
-%%MIMPDIR%%/redirect.php
-%%MIMPDIR%%/templates/common-header.inc
-%%MIMPDIR%%/templates/compose/compose.inc
-%%MIMPDIR%%/templates/compose/redirect.inc
-%%MIMPDIR%%/templates/index/notconfigured.inc
-%%MIMPDIR%%/templates/login/login.inc
-%%MIMPDIR%%/templates/mailbox/mailbox.inc
-%%MIMPDIR%%/templates/prefs/sentmailselect.inc
-%%MIMPDIR%%/test.php
-%%MIMPDIR%%/themes/graphics/favicon.ico
-%%MIMPDIR%%/themes/graphics/mimp.png
-%%MIMPDIR%%/themes/graphics/horde-power2.png
-%%MIMPDIR%%/themes/graphics/horde-power2.wbmp
-%%HORDE_INC%%httpd-mimp.conf
-@dirrm %%MIMPDIR%%/themes/graphics
-@dirrm %%MIMPDIR%%/themes
-@dirrm %%MIMPDIR%%/templates/prefs
-@dirrm %%MIMPDIR%%/templates/mailbox
-@dirrm %%MIMPDIR%%/templates/login
-@dirrm %%MIMPDIR%%/templates/index
-@dirrm %%MIMPDIR%%/templates/compose
-@dirrm %%MIMPDIR%%/templates
-@dirrm %%MIMPDIR%%/po
-@dirrm %%MIMPDIR%%/locale/ro_RO/LC_MESSAGES
-@dirrm %%MIMPDIR%%/locale/ro_RO
-@dirrm %%MIMPDIR%%/locale/pt_PT/LC_MESSAGES
-@dirrm %%MIMPDIR%%/locale/pt_PT
-@dirrm %%MIMPDIR%%/locale/nl_NL/LC_MESSAGES
-@dirrm %%MIMPDIR%%/locale/nl_NL
-@dirrm %%MIMPDIR%%/locale/lt_LT/LC_MESSAGES
-@dirrm %%MIMPDIR%%/locale/lt_LT
-@dirrm %%MIMPDIR%%/locale/it_IT/LC_MESSAGES
-@dirrm %%MIMPDIR%%/locale/it_IT
-@dirrm %%MIMPDIR%%/locale/hu_HU/LC_MESSAGES
-@dirrm %%MIMPDIR%%/locale/hu_HU
-@dirrm %%MIMPDIR%%/locale/fr_FR/LC_MESSAGES
-@dirrm %%MIMPDIR%%/locale/fr_FR
-@dirrm %%MIMPDIR%%/locale/fi_FI/LC_MESSAGES
-@dirrm %%MIMPDIR%%/locale/fi_FI
-@dirrm %%MIMPDIR%%/locale/es_ES/LC_MESSAGES
-@dirrm %%MIMPDIR%%/locale/es_ES
-@dirrm %%MIMPDIR%%/locale/de_DE/LC_MESSAGES
-@dirrm %%MIMPDIR%%/locale/de_DE
-@dirrm %%MIMPDIR%%/locale/ca_ES/LC_MESSAGES
-@dirrm %%MIMPDIR%%/locale/ca_ES
-@dirrm %%MIMPDIR%%/locale
-@dirrm %%MIMPDIR%%/lib/MIME/Viewer
-@dirrm %%MIMPDIR%%/lib/MIME
-@dirrm %%MIMPDIR%%/lib/Identity
-@dirrm %%MIMPDIR%%/lib/IMAP
-@dirrm %%MIMPDIR%%/lib/Auth
-@dirrm %%MIMPDIR%%/lib
-@dirrmtry %%MIMPDIR%%/config
-@dirrmtry %%MIMPDIR%%
+%%HORDIR%%/compose.php
+%%HORDIR%%/config/.htaccess
+%%HORDIR%%/config/conf.xml
+%%HORDIR%%/config/filter.txt.dist
+%%HORDIR%%/config/header.php.dist
+%%HORDIR%%/config/menu.php.dist
+%%HORDIR%%/config/mime_drivers.php.dist
+%%HORDIR%%/config/motd.php.dist
+%%HORDIR%%/config/prefs.php.dist
+%%HORDIR%%/config/servers.php.dist
+%%HORDIR%%/config/trailer.txt.dist
+%%HORDIR%%/folders.php
+%%HORDIR%%/index.php
+%%HORDIR%%/lib/Auth/mimp.php
+%%HORDIR%%/lib/Compose.php
+%%HORDIR%%/lib/Folder.php
+%%HORDIR%%/lib/IMAP/Client.php
+%%HORDIR%%/lib/IMAP/Sort.php
+%%HORDIR%%/lib/IMAP/Tree.php
+%%HORDIR%%/lib/IMAP.php
+%%HORDIR%%/lib/Identity/mimp.php
+%%HORDIR%%/lib/MIME/Contents.php
+%%HORDIR%%/lib/MIME/Headers.php
+%%HORDIR%%/lib/MIME/Viewer/alternative.php
+%%HORDIR%%/lib/MIME/Viewer/html.php
+%%HORDIR%%/lib/MIME/Viewer/multipart.php
+%%HORDIR%%/lib/MIME/Viewer/plain.php
+%%HORDIR%%/lib/MIME/Viewer/related.php
+%%HORDIR%%/lib/MIMP.php
+%%HORDIR%%/lib/Mailbox.php
+%%HORDIR%%/lib/Message.php
+%%HORDIR%%/lib/Session.php
+%%HORDIR%%/lib/api.php
+%%HORDIR%%/lib/base.php
+%%HORDIR%%/lib/prefs.php
+%%HORDIR%%/lib/version.php
+%%HORDIR%%/locale/ca_ES/LC_MESSAGES/mimp.mo
+%%HORDIR%%/locale/de_DE/LC_MESSAGES/mimp.mo
+%%HORDIR%%/locale/es_ES/LC_MESSAGES/mimp.mo
+%%HORDIR%%/locale/fi_FI/LC_MESSAGES/mimp.mo
+%%HORDIR%%/locale/fr_FR/LC_MESSAGES/mimp.mo
+%%HORDIR%%/locale/hu_HU/LC_MESSAGES/mimp.mo
+%%HORDIR%%/locale/it_IT/LC_MESSAGES/mimp.mo
+%%HORDIR%%/locale/lt_LT/LC_MESSAGES/mimp.mo
+%%HORDIR%%/locale/nl_NL/LC_MESSAGES/mimp.mo
+%%HORDIR%%/locale/pt_PT/LC_MESSAGES/mimp.mo
+%%HORDIR%%/locale/ro_RO/LC_MESSAGES/mimp.mo
+%%HORDIR%%/login.php
+%%HORDIR%%/mailbox.php
+%%HORDIR%%/message.php
+%%HORDIR%%/po/README
+%%HORDIR%%/po/ca_ES.po
+%%HORDIR%%/po/de_DE.po
+%%HORDIR%%/po/es_ES.po
+%%HORDIR%%/po/fi_FI.po
+%%HORDIR%%/po/fr_FR.po
+%%HORDIR%%/po/hu_HU.po
+%%HORDIR%%/po/it_IT.po
+%%HORDIR%%/po/lt_LT.po
+%%HORDIR%%/po/mimp.pot
+%%HORDIR%%/po/nl_NL.po
+%%HORDIR%%/po/pt_PT.po
+%%HORDIR%%/po/ro_RO.po
+%%HORDIR%%/redirect.php
+%%HORDIR%%/templates/common-header.inc
+%%HORDIR%%/templates/compose/compose.inc
+%%HORDIR%%/templates/compose/redirect.inc
+%%HORDIR%%/templates/index/notconfigured.inc
+%%HORDIR%%/templates/login/login.inc
+%%HORDIR%%/templates/mailbox/mailbox.inc
+%%HORDIR%%/templates/prefs/sentmailselect.inc
+%%HORDIR%%/test.php
+%%HORDIR%%/themes/graphics/favicon.ico
+%%HORDIR%%/themes/graphics/horde-power2.png
+%%HORDIR%%/themes/graphics/horde-power2.wbmp
+%%HORDIR%%/themes/graphics/mimp.png
+@dirrmtry %%HORDIR%%/config
+@dirrm %%HORDIR%%/lib/Auth
+@dirrm %%HORDIR%%/lib/IMAP
+@dirrm %%HORDIR%%/lib/Identity
+@dirrm %%HORDIR%%/lib/MIME/Viewer
+@dirrm %%HORDIR%%/lib/MIME
+@dirrm %%HORDIR%%/lib
+@dirrm %%HORDIR%%/locale/ca_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ca_ES
+@dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/de_DE
+@dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/es_ES
+@dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fi_FI
+@dirrm %%HORDIR%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fr_FR
+@dirrm %%HORDIR%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/hu_HU
+@dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/it_IT
+@dirrm %%HORDIR%%/locale/lt_LT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/lt_LT
+@dirrm %%HORDIR%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nl_NL
+@dirrm %%HORDIR%%/locale/pt_PT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pt_PT
+@dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ro_RO
+@dirrm %%HORDIR%%/locale
+@dirrm %%HORDIR%%/po
+@dirrm %%HORDIR%%/templates/compose
+@dirrm %%HORDIR%%/templates/index
+@dirrm %%HORDIR%%/templates/login
+@dirrm %%HORDIR%%/templates/mailbox
+@dirrm %%HORDIR%%/templates/prefs
+@dirrm %%HORDIR%%/templates
+@dirrm %%HORDIR%%/themes/graphics
+@dirrm %%HORDIR%%/themes
+@dirrmtry %%HORDIR%%
+@dirrmtry %%HORBAS%%

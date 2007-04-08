@@ -1,128 +1,128 @@
-%%VACDIR%%/config/.htaccess
-%%VACDIR%%/config/conf.xml
-%%VACDIR%%/files/empty.btree.bin
-%%VACDIR%%/files/empty.empty.bin
-%%VACDIR%%/files/empty.gdbm.bin
-%%VACDIR%%/files/empty.hash.bin
-%%VACDIR%%/files/empty.hash3.bin
-%%VACDIR%%/index.php
-%%VACDIR%%/lib/AliasDriver/ftp.php
-%%VACDIR%%/lib/AliasDriver/none.php
-%%VACDIR%%/lib/Block/summary.php
-%%VACDIR%%/lib/AliasDriver.php
-%%VACDIR%%/lib/base.php
-%%VACDIR%%/lib/Driver.php
-%%VACDIR%%/lib/Driver/forwards.php
-%%VACDIR%%/lib/Driver/ldap.php
-%%VACDIR%%/lib/Driver/qmail.php
-%%VACDIR%%/lib/Driver/sql.php
-%%VACDIR%%/lib/.htaccess
-%%VACDIR%%/lib/version.php
-%%VACDIR%%/locale/bg_BG/LC_MESSAGES/vacation.mo
-%%VACDIR%%/locale/cs_CZ/LC_MESSAGES/vacation.mo
-%%VACDIR%%/locale/da_DK/LC_MESSAGES/vacation.mo
-%%VACDIR%%/locale/de_DE/LC_MESSAGES/vacation.mo
-%%VACDIR%%/locale/el_GR/LC_MESSAGES/vacation.mo
-%%VACDIR%%/locale/en_US/help.xml
-%%VACDIR%%/locale/es_ES/LC_MESSAGES/vacation.mo
-%%VACDIR%%/locale/es_ES/help.xml
-%%VACDIR%%/locale/fa_IR/LC_MESSAGES/vacation.mo
-%%VACDIR%%/locale/fa_IR/help.xml
-%%VACDIR%%/locale/fi_FI/LC_MESSAGES/vacation.mo
-%%VACDIR%%/locale/fi_FI/help.xml
-%%VACDIR%%/locale/fr_FR/LC_MESSAGES/vacation.mo
-%%VACDIR%%/locale/gl_ES/LC_MESSAGES/vacation.mo
-%%VACDIR%%/locale/hu_HU/LC_MESSAGES/vacation.mo
-%%VACDIR%%/locale/it_IT/LC_MESSAGES/vacation.mo
-%%VACDIR%%/locale/nl_NL/LC_MESSAGES/vacation.mo
-%%VACDIR%%/locale/nl_NL/help.xml
-%%VACDIR%%/locale/nn_NO/LC_MESSAGES/vacation.mo
-%%VACDIR%%/locale/pl_PL/LC_MESSAGES/vacation.mo
-%%VACDIR%%/locale/pt_BR/LC_MESSAGES/vacation.mo
-%%VACDIR%%/locale/ro_RO/LC_MESSAGES/vacation.mo
-%%VACDIR%%/locale/sv_SE/LC_MESSAGES/vacation.mo
-%%VACDIR%%/locale/zh_TW/LC_MESSAGES/vacation.mo
-%%VACDIR%%/main.php
-%%VACDIR%%/po/README
-%%VACDIR%%/po/.htaccess
-%%VACDIR%%/po/bg_BG.po
-%%VACDIR%%/po/cs_CZ.po
-%%VACDIR%%/po/da_DK.po
-%%VACDIR%%/po/de_DE.po
-%%VACDIR%%/po/el_GR.po
-%%VACDIR%%/po/es_ES.po
-%%VACDIR%%/po/fa_IR.po
-%%VACDIR%%/po/fi_FI.po
-%%VACDIR%%/po/fr_FR.po
-%%VACDIR%%/po/gl_ES.po
-%%VACDIR%%/po/hu_HU.po
-%%VACDIR%%/po/it_IT.po
-%%VACDIR%%/po/nl_NL.po
-%%VACDIR%%/po/nn_NO.po
-%%VACDIR%%/po/pl_PL.po
-%%VACDIR%%/po/pt_BR.po
-%%VACDIR%%/po/ro_RO.po
-%%VACDIR%%/po/sv_SE.po
-%%VACDIR%%/po/vacation.pot
-%%VACDIR%%/po/zh_TW.po
-%%VACDIR%%/scripts/.htaccess
-%%VACDIR%%/scripts/create-db-files.pl
-%%VACDIR%%/templates/common-header.inc
-%%VACDIR%%/templates/.htaccess
-%%VACDIR%%/templates/main/main.inc
-%%VACDIR%%/themes/graphics/favicon.ico
-%%VACDIR%%/themes/graphics/vacation.png
-%%HORDE_INC%%httpd-vacation.conf
-@dirrm %%VACDIR%%/themes/graphics
-@dirrm %%VACDIR%%/themes
-@dirrm %%VACDIR%%/templates/main
-@dirrm %%VACDIR%%/templates
-@dirrm %%VACDIR%%/scripts
-@dirrm %%VACDIR%%/po
-@dirrm %%VACDIR%%/locale/zh_TW/LC_MESSAGES
-@dirrm %%VACDIR%%/locale/zh_TW
-@dirrm %%VACDIR%%/locale/sv_SE/LC_MESSAGES
-@dirrm %%VACDIR%%/locale/sv_SE
-@dirrm %%VACDIR%%/locale/ro_RO/LC_MESSAGES
-@dirrm %%VACDIR%%/locale/ro_RO
-@dirrm %%VACDIR%%/locale/pt_BR/LC_MESSAGES
-@dirrm %%VACDIR%%/locale/pt_BR
-@dirrm %%VACDIR%%/locale/pl_PL/LC_MESSAGES
-@dirrm %%VACDIR%%/locale/pl_PL
-@dirrm %%VACDIR%%/locale/nn_NO/LC_MESSAGES
-@dirrm %%VACDIR%%/locale/nn_NO
-@dirrm %%VACDIR%%/locale/nl_NL/LC_MESSAGES
-@dirrm %%VACDIR%%/locale/nl_NL
-@dirrm %%VACDIR%%/locale/it_IT/LC_MESSAGES
-@dirrm %%VACDIR%%/locale/it_IT
-@dirrm %%VACDIR%%/locale/hu_HU/LC_MESSAGES
-@dirrm %%VACDIR%%/locale/hu_HU
-@dirrm %%VACDIR%%/locale/gl_ES/LC_MESSAGES
-@dirrm %%VACDIR%%/locale/gl_ES
-@dirrm %%VACDIR%%/locale/fr_FR/LC_MESSAGES
-@dirrm %%VACDIR%%/locale/fr_FR
-@dirrm %%VACDIR%%/locale/fi_FI/LC_MESSAGES
-@dirrm %%VACDIR%%/locale/fi_FI
-@dirrm %%VACDIR%%/locale/fa_IR/LC_MESSAGES
-@dirrm %%VACDIR%%/locale/fa_IR
-@dirrm %%VACDIR%%/locale/es_ES/LC_MESSAGES
-@dirrm %%VACDIR%%/locale/es_ES
-@dirrm %%VACDIR%%/locale/en_US
-@dirrm %%VACDIR%%/locale/el_GR/LC_MESSAGES
-@dirrm %%VACDIR%%/locale/el_GR
-@dirrm %%VACDIR%%/locale/de_DE/LC_MESSAGES
-@dirrm %%VACDIR%%/locale/de_DE
-@dirrm %%VACDIR%%/locale/da_DK/LC_MESSAGES
-@dirrm %%VACDIR%%/locale/da_DK
-@dirrm %%VACDIR%%/locale/cs_CZ/LC_MESSAGES
-@dirrm %%VACDIR%%/locale/cs_CZ
-@dirrm %%VACDIR%%/locale/bg_BG/LC_MESSAGES
-@dirrm %%VACDIR%%/locale/bg_BG
-@dirrm %%VACDIR%%/locale
-@dirrm %%VACDIR%%/lib/Driver
-@dirrm %%VACDIR%%/lib/Block
-@dirrm %%VACDIR%%/lib/AliasDriver
-@dirrm %%VACDIR%%/lib
-@dirrm %%VACDIR%%/files
-@dirrmtry %%VACDIR%%/config
-@dirrmtry %%VACDIR%%
+%%HORDIR%%/config/.htaccess
+%%HORDIR%%/config/conf.xml
+%%HORDIR%%/files/empty.btree.bin
+%%HORDIR%%/files/empty.empty.bin
+%%HORDIR%%/files/empty.gdbm.bin
+%%HORDIR%%/files/empty.hash.bin
+%%HORDIR%%/files/empty.hash3.bin
+%%HORDIR%%/index.php
+%%HORDIR%%/lib/.htaccess
+%%HORDIR%%/lib/AliasDriver/ftp.php
+%%HORDIR%%/lib/AliasDriver/none.php
+%%HORDIR%%/lib/AliasDriver.php
+%%HORDIR%%/lib/Block/summary.php
+%%HORDIR%%/lib/Driver/forwards.php
+%%HORDIR%%/lib/Driver/ldap.php
+%%HORDIR%%/lib/Driver/qmail.php
+%%HORDIR%%/lib/Driver/sql.php
+%%HORDIR%%/lib/Driver.php
+%%HORDIR%%/lib/base.php
+%%HORDIR%%/lib/version.php
+%%HORDIR%%/locale/bg_BG/LC_MESSAGES/vacation.mo
+%%HORDIR%%/locale/cs_CZ/LC_MESSAGES/vacation.mo
+%%HORDIR%%/locale/da_DK/LC_MESSAGES/vacation.mo
+%%HORDIR%%/locale/de_DE/LC_MESSAGES/vacation.mo
+%%HORDIR%%/locale/el_GR/LC_MESSAGES/vacation.mo
+%%HORDIR%%/locale/en_US/help.xml
+%%HORDIR%%/locale/es_ES/LC_MESSAGES/vacation.mo
+%%HORDIR%%/locale/es_ES/help.xml
+%%HORDIR%%/locale/fa_IR/LC_MESSAGES/vacation.mo
+%%HORDIR%%/locale/fa_IR/help.xml
+%%HORDIR%%/locale/fi_FI/LC_MESSAGES/vacation.mo
+%%HORDIR%%/locale/fi_FI/help.xml
+%%HORDIR%%/locale/fr_FR/LC_MESSAGES/vacation.mo
+%%HORDIR%%/locale/gl_ES/LC_MESSAGES/vacation.mo
+%%HORDIR%%/locale/hu_HU/LC_MESSAGES/vacation.mo
+%%HORDIR%%/locale/it_IT/LC_MESSAGES/vacation.mo
+%%HORDIR%%/locale/nl_NL/LC_MESSAGES/vacation.mo
+%%HORDIR%%/locale/nl_NL/help.xml
+%%HORDIR%%/locale/nn_NO/LC_MESSAGES/vacation.mo
+%%HORDIR%%/locale/pl_PL/LC_MESSAGES/vacation.mo
+%%HORDIR%%/locale/pt_BR/LC_MESSAGES/vacation.mo
+%%HORDIR%%/locale/ro_RO/LC_MESSAGES/vacation.mo
+%%HORDIR%%/locale/sv_SE/LC_MESSAGES/vacation.mo
+%%HORDIR%%/locale/zh_TW/LC_MESSAGES/vacation.mo
+%%HORDIR%%/main.php
+%%HORDIR%%/po/.htaccess
+%%HORDIR%%/po/README
+%%HORDIR%%/po/bg_BG.po
+%%HORDIR%%/po/cs_CZ.po
+%%HORDIR%%/po/da_DK.po
+%%HORDIR%%/po/de_DE.po
+%%HORDIR%%/po/el_GR.po
+%%HORDIR%%/po/es_ES.po
+%%HORDIR%%/po/fa_IR.po
+%%HORDIR%%/po/fi_FI.po
+%%HORDIR%%/po/fr_FR.po
+%%HORDIR%%/po/gl_ES.po
+%%HORDIR%%/po/hu_HU.po
+%%HORDIR%%/po/it_IT.po
+%%HORDIR%%/po/nl_NL.po
+%%HORDIR%%/po/nn_NO.po
+%%HORDIR%%/po/pl_PL.po
+%%HORDIR%%/po/pt_BR.po
+%%HORDIR%%/po/ro_RO.po
+%%HORDIR%%/po/sv_SE.po
+%%HORDIR%%/po/vacation.pot
+%%HORDIR%%/po/zh_TW.po
+%%HORDIR%%/scripts/.htaccess
+%%HORDIR%%/scripts/create-db-files.pl
+%%HORDIR%%/templates/.htaccess
+%%HORDIR%%/templates/common-header.inc
+%%HORDIR%%/templates/main/main.inc
+%%HORDIR%%/themes/graphics/favicon.ico
+%%HORDIR%%/themes/graphics/vacation.png
+@dirrmtry %%HORDIR%%/config
+@dirrm %%HORDIR%%/files
+@dirrm %%HORDIR%%/lib/AliasDriver
+@dirrm %%HORDIR%%/lib/Block
+@dirrm %%HORDIR%%/lib/Driver
+@dirrm %%HORDIR%%/lib
+@dirrm %%HORDIR%%/locale/bg_BG/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/bg_BG
+@dirrm %%HORDIR%%/locale/cs_CZ/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/cs_CZ
+@dirrm %%HORDIR%%/locale/da_DK/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/da_DK
+@dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/de_DE
+@dirrm %%HORDIR%%/locale/el_GR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/el_GR
+@dirrm %%HORDIR%%/locale/en_US
+@dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/es_ES
+@dirrm %%HORDIR%%/locale/fa_IR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fa_IR
+@dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fi_FI
+@dirrm %%HORDIR%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fr_FR
+@dirrm %%HORDIR%%/locale/gl_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/gl_ES
+@dirrm %%HORDIR%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/hu_HU
+@dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/it_IT
+@dirrm %%HORDIR%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nl_NL
+@dirrm %%HORDIR%%/locale/nn_NO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nn_NO
+@dirrm %%HORDIR%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pl_PL
+@dirrm %%HORDIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pt_BR
+@dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ro_RO
+@dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sv_SE
+@dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/zh_TW
+@dirrm %%HORDIR%%/locale
+@dirrm %%HORDIR%%/po
+@dirrm %%HORDIR%%/scripts
+@dirrm %%HORDIR%%/templates/main
+@dirrm %%HORDIR%%/templates
+@dirrm %%HORDIR%%/themes/graphics
+@dirrm %%HORDIR%%/themes
+@dirrmtry %%HORDIR%%
+@dirrmtry %%HORBAS%%

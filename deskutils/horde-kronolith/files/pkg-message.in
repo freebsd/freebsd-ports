@@ -1,16 +1,16 @@
 **************************************************************************
-Kronolith has been installed in %%KRONOLITHDIR%% with your
+Kronolith has been installed in %%HORDIR%% with your
 blank configuration files.
 
-Horde must be configured; if not, see `pkg_info -D -x horde'.
+Horde must be configured; if not, see `pkg_info -Dx horde-base'.
 
 Then you have to create some tables from the SQL scripts in
-%%KRONOLITHDIR%%/scripts/sql.
+%%HORDIR%%/scripts/sql.
 
 WARNING! Please note that the MCAL back-end has been deprecated!
 ********
          To migrate from MCAL to SQL, you can use the provided script
-         %%KRONOLITHDIR%%/scripts/migrate_to_sql_driver.php
+         %%HORDIR%%/scripts/migrate_to_sql_driver.php
 
 Finally, you must login to Horde as a Horde Administrator to finish the
 configuration.

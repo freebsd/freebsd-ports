@@ -1,274 +1,275 @@
-%%TURBADIR%%/add.php
-%%TURBADIR%%/addressbooks.php
-%%TURBADIR%%/browse.php
-%%TURBADIR%%/config/.htaccess
-%%TURBADIR%%/config/attributes.php.dist
-%%TURBADIR%%/config/conf.xml
-%%TURBADIR%%/config/menu.php.dist
-%%TURBADIR%%/config/mime_drivers.php.dist
-%%TURBADIR%%/config/prefs.php.dist
-%%TURBADIR%%/config/sources.php.dist
-%%TURBADIR%%/data.php
-%%TURBADIR%%/delete.php
-%%TURBADIR%%/display.php
-%%TURBADIR%%/edit.php
-%%TURBADIR%%/index.php
-%%TURBADIR%%/lib/.htaccess
-%%TURBADIR%%/lib/Block/minisearch.php
-%%TURBADIR%%/lib/Block/tree_menu.php
-%%TURBADIR%%/lib/Driver.php
-%%TURBADIR%%/lib/Driver/imsp.php
-%%TURBADIR%%/lib/Driver/kolab.php
-%%TURBADIR%%/lib/Driver/ldap.php
-%%TURBADIR%%/lib/Driver/null.php
-%%TURBADIR%%/lib/Driver/prefs.php
-%%TURBADIR%%/lib/Driver/sql.php
-%%TURBADIR%%/lib/Group.php
-%%TURBADIR%%/lib/List.php
-%%TURBADIR%%/lib/ListView.php
-%%TURBADIR%%/lib/Object.php
-%%TURBADIR%%/lib/Object/Group.php
-%%TURBADIR%%/lib/ObjectView.php
-%%TURBADIR%%/lib/Renderer.php
-%%TURBADIR%%/lib/tests/tovcard.phpt
-%%TURBADIR%%/lib/Turba.php
-%%TURBADIR%%/lib/api.php
-%%TURBADIR%%/lib/base.php
-%%TURBADIR%%/lib/prefs.php
-%%TURBADIR%%/lib/version.php
-%%TURBADIR%%/locale/.htaccess
-%%TURBADIR%%/locale/ar_SY/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/bg_BG/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/ca_ES/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/ca_ES/help.xml
-%%TURBADIR%%/locale/cs_CZ/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/da_DK/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/de_DE/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/de_DE/help.xml
-%%TURBADIR%%/locale/el_GR/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/en_US/help.xml
-%%TURBADIR%%/locale/es_ES/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/es_ES/help.xml
-%%TURBADIR%%/locale/et_EE/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/fa_IR/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/fa_IR/help.xml
-%%TURBADIR%%/locale/fi_FI/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/fi_FI/help.xml
-%%TURBADIR%%/locale/fr_FR/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/fr_FR/help.xml
-%%TURBADIR%%/locale/gl_ES/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/hu_HU/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/is_IS/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/it_IT/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/ja_JP/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/ko_KR/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/lt_LT/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/lv_LV/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/mk_MK/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/nb_NO/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/nl_NL/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/nn_NO/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/pl_PL/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/pt_BR/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/pt_BR/help.xml
-%%TURBADIR%%/locale/pt_PT/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/pt_PT/help.xml
-%%TURBADIR%%/locale/ro_RO/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/ru_RU/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/sk_SK/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/sk_SK/help.xml
-%%TURBADIR%%/locale/sl_SI/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/sv_SE/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/tr_TR/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/tr_TR/help.xml
-%%TURBADIR%%/locale/uk_UA/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/zh_CN/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/zh_TW/LC_MESSAGES/turba.mo
-%%TURBADIR%%/minisearch.php
-%%TURBADIR%%/po/.htaccess
-%%TURBADIR%%/po/README
-%%TURBADIR%%/po/ar_SY.po
-%%TURBADIR%%/po/bg_BG.po
-%%TURBADIR%%/po/ca_ES.po
-%%TURBADIR%%/po/cs_CZ.po
-%%TURBADIR%%/po/da_DK.po
-%%TURBADIR%%/po/de_DE.po
-%%TURBADIR%%/po/el_GR.po
-%%TURBADIR%%/po/es_ES.po
-%%TURBADIR%%/po/et_EE.po
-%%TURBADIR%%/po/fa_IR.po
-%%TURBADIR%%/po/fi_FI.po
-%%TURBADIR%%/po/fr_FR.po
-%%TURBADIR%%/po/gl_ES.po
-%%TURBADIR%%/po/hu_HU.po
-%%TURBADIR%%/po/is_IS.po
-%%TURBADIR%%/po/it_IT.po
-%%TURBADIR%%/po/ja_JP.po
-%%TURBADIR%%/po/ko_KR.po
-%%TURBADIR%%/po/lt_LT.po
-%%TURBADIR%%/po/lv_LV.po
-%%TURBADIR%%/po/mk_MK.po
-%%TURBADIR%%/po/nb_NO.po
-%%TURBADIR%%/po/nl_NL.po
-%%TURBADIR%%/po/nn_NO.po
-%%TURBADIR%%/po/pl_PL.po
-%%TURBADIR%%/po/pt_BR.po
-%%TURBADIR%%/po/pt_PT.po
-%%TURBADIR%%/po/ro_RO.po
-%%TURBADIR%%/po/ru_RU.po
-%%TURBADIR%%/po/sk_SK.po
-%%TURBADIR%%/po/sl_SI.po
-%%TURBADIR%%/po/sv_SE.po
-%%TURBADIR%%/po/tr_TR.po
-%%TURBADIR%%/po/turba.pot
-%%TURBADIR%%/po/uk_UA.po
-%%TURBADIR%%/po/zh_CN.po
-%%TURBADIR%%/po/zh_TW.po
-%%TURBADIR%%/scripts/.htaccess
-%%TURBADIR%%/scripts/Turba.reg
-%%TURBADIR%%/scripts/import_vcards.php
-%%TURBADIR%%/scripts/ldap/addou
-%%TURBADIR%%/scripts/ldap/addou.pl
-%%TURBADIR%%/scripts/ldap/core.schema.patch
-%%TURBADIR%%/scripts/ldap/rfc2739.schema
-%%TURBADIR%%/scripts/sql/turba_objects.mssql.sql
-%%TURBADIR%%/scripts/sql/turba_objects.mysql.sql
-%%TURBADIR%%/scripts/sql/turba_objects.oci8.sql
-%%TURBADIR%%/scripts/sql/turba_objects.pgsql.sql
-%%TURBADIR%%/scripts/sql/turba_objects.sql
-%%TURBADIR%%/scripts/sql/turba.xml
-%%TURBADIR%%/scripts/sql/turba_weddingguests.sql
-%%TURBADIR%%/scripts/upgrades/create_default_histories.php
-%%TURBADIR%%/scripts/upgrades/1.2_to_2.0.oci8.sql
-%%TURBADIR%%/scripts/upgrades/1.1_to_1.2.sql
-%%TURBADIR%%/scripts/upgrades/1.2_to_2.0.sql
-%%TURBADIR%%/scripts/upgrades/public_to_horde_share.php
-%%TURBADIR%%/search.php
-%%TURBADIR%%/templates/.htaccess
-%%TURBADIR%%/templates/addressbooks.inc
-%%TURBADIR%%/templates/block/minisearch.inc
-%%TURBADIR%%/templates/browse/actions.inc
-%%TURBADIR%%/templates/browse/column_footers.inc
-%%TURBADIR%%/templates/browse/column_headers.inc
-%%TURBADIR%%/templates/browse/contactrow.inc
-%%TURBADIR%%/templates/browse/footer.inc
-%%TURBADIR%%/templates/browse/footerAlpha.inc
-%%TURBADIR%%/templates/browse/header.inc
-%%TURBADIR%%/templates/browse/javascript.inc
-%%TURBADIR%%/templates/browse/row.inc
-%%TURBADIR%%/templates/browse/search.inc
-%%TURBADIR%%/templates/browse/search_criteria.inc
-%%TURBADIR%%/templates/common-header.inc
-%%TURBADIR%%/templates/data/export.inc
-%%TURBADIR%%/templates/data/import.inc
-%%TURBADIR%%/templates/menu.inc
-%%TURBADIR%%/templates/prefs/addressbookselect.inc
-%%TURBADIR%%/templates/prefs/columnselect.inc
-%%TURBADIR%%/templates/prefs/imsp_opt.inc
-%%TURBADIR%%/test.php
-%%TURBADIR%%/themes/graphics/contact.png
-%%TURBADIR%%/themes/graphics/favicon.ico
-%%TURBADIR%%/themes/graphics/group.png
-%%TURBADIR%%/themes/graphics/menu/browse.png
-%%TURBADIR%%/themes/graphics/menu/new.png
-%%TURBADIR%%/themes/graphics/new.png
-%%TURBADIR%%/themes/graphics/turba.png
-%%TURBADIR%%/themes/ideas/screen.css
-%%TURBADIR%%/themes/screen.css
-%%TURBADIR%%/vcard.php
-%%TURBADIR%%/view.php
-@dirrm %%TURBADIR%%/themes/ideas
-@dirrm %%TURBADIR%%/themes/graphics/menu
-@dirrm %%TURBADIR%%/themes/graphics
-@dirrm %%TURBADIR%%/themes
-@dirrm %%TURBADIR%%/templates/prefs
-@dirrm %%TURBADIR%%/templates/data
-@dirrm %%TURBADIR%%/templates/browse
-@dirrm %%TURBADIR%%/templates/block
-@dirrm %%TURBADIR%%/templates
-@dirrm %%TURBADIR%%/scripts/upgrades
-@dirrm %%TURBADIR%%/scripts/sql
-@dirrm %%TURBADIR%%/scripts/ldap
-@dirrm %%TURBADIR%%/scripts
-@dirrm %%TURBADIR%%/po
-@dirrm %%TURBADIR%%/locale/zh_TW/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/zh_TW
-@dirrm %%TURBADIR%%/locale/zh_CN/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/zh_CN
-@dirrm %%TURBADIR%%/locale/uk_UA/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/uk_UA
-@dirrm %%TURBADIR%%/locale/tr_TR/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/tr_TR
-@dirrm %%TURBADIR%%/locale/sv_SE/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/sv_SE
-@dirrm %%TURBADIR%%/locale/sl_SI/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/sl_SI
-@dirrm %%TURBADIR%%/locale/sk_SK/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/sk_SK
-@dirrm %%TURBADIR%%/locale/ru_RU/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/ru_RU
-@dirrm %%TURBADIR%%/locale/ro_RO/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/ro_RO
-@dirrm %%TURBADIR%%/locale/pt_PT/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/pt_PT
-@dirrm %%TURBADIR%%/locale/pt_BR/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/pt_BR
-@dirrm %%TURBADIR%%/locale/pl_PL/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/pl_PL
-@dirrm %%TURBADIR%%/locale/nn_NO/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/nn_NO
-@dirrm %%TURBADIR%%/locale/nl_NL/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/nl_NL
-@dirrm %%TURBADIR%%/locale/nb_NO/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/nb_NO
-@dirrm %%TURBADIR%%/locale/mk_MK/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/mk_MK
-@dirrm %%TURBADIR%%/locale/lv_LV/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/lv_LV
-@dirrm %%TURBADIR%%/locale/lt_LT/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/lt_LT
-@dirrm %%TURBADIR%%/locale/ko_KR/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/ko_KR
-@dirrm %%TURBADIR%%/locale/ja_JP/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/ja_JP
-@dirrm %%TURBADIR%%/locale/it_IT/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/it_IT
-@dirrm %%TURBADIR%%/locale/is_IS/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/is_IS
-@dirrm %%TURBADIR%%/locale/hu_HU/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/hu_HU
-@dirrm %%TURBADIR%%/locale/gl_ES/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/gl_ES
-@dirrm %%TURBADIR%%/locale/fr_FR/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/fr_FR
-@dirrm %%TURBADIR%%/locale/fi_FI/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/fi_FI
-@dirrm %%TURBADIR%%/locale/fa_IR/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/fa_IR
-@dirrm %%TURBADIR%%/locale/et_EE/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/et_EE
-@dirrm %%TURBADIR%%/locale/es_ES/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/es_ES
-@dirrm %%TURBADIR%%/locale/en_US
-@dirrm %%TURBADIR%%/locale/el_GR/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/el_GR
-@dirrm %%TURBADIR%%/locale/de_DE/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/de_DE
-@dirrm %%TURBADIR%%/locale/da_DK/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/da_DK
-@dirrm %%TURBADIR%%/locale/cs_CZ/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/cs_CZ
-@dirrm %%TURBADIR%%/locale/ca_ES/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/ca_ES
-@dirrm %%TURBADIR%%/locale/bg_BG/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/bg_BG
-@dirrm %%TURBADIR%%/locale/ar_SY/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/ar_SY
-@dirrm %%TURBADIR%%/locale
-@dirrm %%TURBADIR%%/lib/tests
-@dirrm %%TURBADIR%%/lib/Object
-@dirrm %%TURBADIR%%/lib/Driver
-@dirrm %%TURBADIR%%/lib/Block
-@dirrm %%TURBADIR%%/lib
-@dirrmtry %%TURBADIR%%/config
-@dirrmtry %%TURBADIR%%
+%%HORDIR%%/add.php
+%%HORDIR%%/addressbooks.php
+%%HORDIR%%/browse.php
+%%HORDIR%%/config/.htaccess
+%%HORDIR%%/config/attributes.php.dist
+%%HORDIR%%/config/conf.xml
+%%HORDIR%%/config/menu.php.dist
+%%HORDIR%%/config/mime_drivers.php.dist
+%%HORDIR%%/config/prefs.php.dist
+%%HORDIR%%/config/sources.php.dist
+%%HORDIR%%/data.php
+%%HORDIR%%/delete.php
+%%HORDIR%%/display.php
+%%HORDIR%%/edit.php
+%%HORDIR%%/index.php
+%%HORDIR%%/lib/.htaccess
+%%HORDIR%%/lib/Block/minisearch.php
+%%HORDIR%%/lib/Block/tree_menu.php
+%%HORDIR%%/lib/Driver/imsp.php
+%%HORDIR%%/lib/Driver/kolab.php
+%%HORDIR%%/lib/Driver/ldap.php
+%%HORDIR%%/lib/Driver/null.php
+%%HORDIR%%/lib/Driver/prefs.php
+%%HORDIR%%/lib/Driver/sql.php
+%%HORDIR%%/lib/Driver.php
+%%HORDIR%%/lib/Group.php
+%%HORDIR%%/lib/List.php
+%%HORDIR%%/lib/ListView.php
+%%HORDIR%%/lib/Object/Group.php
+%%HORDIR%%/lib/Object.php
+%%HORDIR%%/lib/ObjectView.php
+%%HORDIR%%/lib/Renderer.php
+%%HORDIR%%/lib/Turba.php
+%%HORDIR%%/lib/api.php
+%%HORDIR%%/lib/base.php
+%%HORDIR%%/lib/prefs.php
+%%HORDIR%%/lib/tests/tovcard.phpt
+%%HORDIR%%/lib/version.php
+%%HORDIR%%/locale/.htaccess
+%%HORDIR%%/locale/ar_SY/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/bg_BG/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/ca_ES/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/ca_ES/help.xml
+%%HORDIR%%/locale/cs_CZ/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/da_DK/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/de_DE/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/de_DE/help.xml
+%%HORDIR%%/locale/el_GR/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/en_US/help.xml
+%%HORDIR%%/locale/es_ES/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/es_ES/help.xml
+%%HORDIR%%/locale/et_EE/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/fa_IR/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/fa_IR/help.xml
+%%HORDIR%%/locale/fi_FI/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/fi_FI/help.xml
+%%HORDIR%%/locale/fr_FR/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/fr_FR/help.xml
+%%HORDIR%%/locale/gl_ES/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/hu_HU/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/is_IS/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/it_IT/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/ja_JP/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/ko_KR/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/lt_LT/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/lv_LV/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/mk_MK/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/nb_NO/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/nl_NL/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/nn_NO/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/pl_PL/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/pt_BR/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/pt_BR/help.xml
+%%HORDIR%%/locale/pt_PT/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/pt_PT/help.xml
+%%HORDIR%%/locale/ro_RO/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/ru_RU/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/sk_SK/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/sk_SK/help.xml
+%%HORDIR%%/locale/sl_SI/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/sv_SE/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/tr_TR/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/tr_TR/help.xml
+%%HORDIR%%/locale/uk_UA/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/zh_CN/LC_MESSAGES/turba.mo
+%%HORDIR%%/locale/zh_TW/LC_MESSAGES/turba.mo
+%%HORDIR%%/minisearch.php
+%%HORDIR%%/po/.htaccess
+%%HORDIR%%/po/README
+%%HORDIR%%/po/ar_SY.po
+%%HORDIR%%/po/bg_BG.po
+%%HORDIR%%/po/ca_ES.po
+%%HORDIR%%/po/cs_CZ.po
+%%HORDIR%%/po/da_DK.po
+%%HORDIR%%/po/de_DE.po
+%%HORDIR%%/po/el_GR.po
+%%HORDIR%%/po/es_ES.po
+%%HORDIR%%/po/et_EE.po
+%%HORDIR%%/po/fa_IR.po
+%%HORDIR%%/po/fi_FI.po
+%%HORDIR%%/po/fr_FR.po
+%%HORDIR%%/po/gl_ES.po
+%%HORDIR%%/po/hu_HU.po
+%%HORDIR%%/po/is_IS.po
+%%HORDIR%%/po/it_IT.po
+%%HORDIR%%/po/ja_JP.po
+%%HORDIR%%/po/ko_KR.po
+%%HORDIR%%/po/lt_LT.po
+%%HORDIR%%/po/lv_LV.po
+%%HORDIR%%/po/mk_MK.po
+%%HORDIR%%/po/nb_NO.po
+%%HORDIR%%/po/nl_NL.po
+%%HORDIR%%/po/nn_NO.po
+%%HORDIR%%/po/pl_PL.po
+%%HORDIR%%/po/pt_BR.po
+%%HORDIR%%/po/pt_PT.po
+%%HORDIR%%/po/ro_RO.po
+%%HORDIR%%/po/ru_RU.po
+%%HORDIR%%/po/sk_SK.po
+%%HORDIR%%/po/sl_SI.po
+%%HORDIR%%/po/sv_SE.po
+%%HORDIR%%/po/tr_TR.po
+%%HORDIR%%/po/turba.pot
+%%HORDIR%%/po/uk_UA.po
+%%HORDIR%%/po/zh_CN.po
+%%HORDIR%%/po/zh_TW.po
+%%HORDIR%%/scripts/.htaccess
+%%HORDIR%%/scripts/Turba.reg
+%%HORDIR%%/scripts/import_vcards.php
+%%HORDIR%%/scripts/ldap/addou
+%%HORDIR%%/scripts/ldap/addou.pl
+%%HORDIR%%/scripts/ldap/core.schema.patch
+%%HORDIR%%/scripts/ldap/rfc2739.schema
+%%HORDIR%%/scripts/sql/turba.xml
+%%HORDIR%%/scripts/sql/turba_objects.mssql.sql
+%%HORDIR%%/scripts/sql/turba_objects.mysql.sql
+%%HORDIR%%/scripts/sql/turba_objects.oci8.sql
+%%HORDIR%%/scripts/sql/turba_objects.pgsql.sql
+%%HORDIR%%/scripts/sql/turba_objects.sql
+%%HORDIR%%/scripts/sql/turba_weddingguests.sql
+%%HORDIR%%/scripts/upgrades/1.1_to_1.2.sql
+%%HORDIR%%/scripts/upgrades/1.2_to_2.0.oci8.sql
+%%HORDIR%%/scripts/upgrades/1.2_to_2.0.sql
+%%HORDIR%%/scripts/upgrades/create_default_histories.php
+%%HORDIR%%/scripts/upgrades/public_to_horde_share.php
+%%HORDIR%%/search.php
+%%HORDIR%%/templates/.htaccess
+%%HORDIR%%/templates/addressbooks.inc
+%%HORDIR%%/templates/block/minisearch.inc
+%%HORDIR%%/templates/browse/actions.inc
+%%HORDIR%%/templates/browse/column_footers.inc
+%%HORDIR%%/templates/browse/column_headers.inc
+%%HORDIR%%/templates/browse/contactrow.inc
+%%HORDIR%%/templates/browse/footer.inc
+%%HORDIR%%/templates/browse/footerAlpha.inc
+%%HORDIR%%/templates/browse/header.inc
+%%HORDIR%%/templates/browse/javascript.inc
+%%HORDIR%%/templates/browse/row.inc
+%%HORDIR%%/templates/browse/search.inc
+%%HORDIR%%/templates/browse/search_criteria.inc
+%%HORDIR%%/templates/common-header.inc
+%%HORDIR%%/templates/data/export.inc
+%%HORDIR%%/templates/data/import.inc
+%%HORDIR%%/templates/menu.inc
+%%HORDIR%%/templates/prefs/addressbookselect.inc
+%%HORDIR%%/templates/prefs/columnselect.inc
+%%HORDIR%%/templates/prefs/imsp_opt.inc
+%%HORDIR%%/test.php
+%%HORDIR%%/themes/graphics/contact.png
+%%HORDIR%%/themes/graphics/favicon.ico
+%%HORDIR%%/themes/graphics/group.png
+%%HORDIR%%/themes/graphics/menu/browse.png
+%%HORDIR%%/themes/graphics/menu/new.png
+%%HORDIR%%/themes/graphics/new.png
+%%HORDIR%%/themes/graphics/turba.png
+%%HORDIR%%/themes/ideas/screen.css
+%%HORDIR%%/themes/screen.css
+%%HORDIR%%/vcard.php
+%%HORDIR%%/view.php
+@dirrmtry %%HORDIR%%/config
+@dirrm %%HORDIR%%/lib/Block
+@dirrm %%HORDIR%%/lib/Driver
+@dirrm %%HORDIR%%/lib/Object
+@dirrm %%HORDIR%%/lib/tests
+@dirrm %%HORDIR%%/lib
+@dirrm %%HORDIR%%/locale/ar_SY/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ar_SY
+@dirrm %%HORDIR%%/locale/bg_BG/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/bg_BG
+@dirrm %%HORDIR%%/locale/ca_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ca_ES
+@dirrm %%HORDIR%%/locale/cs_CZ/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/cs_CZ
+@dirrm %%HORDIR%%/locale/da_DK/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/da_DK
+@dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/de_DE
+@dirrm %%HORDIR%%/locale/el_GR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/el_GR
+@dirrm %%HORDIR%%/locale/en_US
+@dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/es_ES
+@dirrm %%HORDIR%%/locale/et_EE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/et_EE
+@dirrm %%HORDIR%%/locale/fa_IR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fa_IR
+@dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fi_FI
+@dirrm %%HORDIR%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fr_FR
+@dirrm %%HORDIR%%/locale/gl_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/gl_ES
+@dirrm %%HORDIR%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/hu_HU
+@dirrm %%HORDIR%%/locale/is_IS/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/is_IS
+@dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/it_IT
+@dirrm %%HORDIR%%/locale/ja_JP/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ja_JP
+@dirrm %%HORDIR%%/locale/ko_KR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ko_KR
+@dirrm %%HORDIR%%/locale/lt_LT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/lt_LT
+@dirrm %%HORDIR%%/locale/lv_LV/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/lv_LV
+@dirrm %%HORDIR%%/locale/mk_MK/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/mk_MK
+@dirrm %%HORDIR%%/locale/nb_NO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nb_NO
+@dirrm %%HORDIR%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nl_NL
+@dirrm %%HORDIR%%/locale/nn_NO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nn_NO
+@dirrm %%HORDIR%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pl_PL
+@dirrm %%HORDIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pt_BR
+@dirrm %%HORDIR%%/locale/pt_PT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pt_PT
+@dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ro_RO
+@dirrm %%HORDIR%%/locale/ru_RU/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ru_RU
+@dirrm %%HORDIR%%/locale/sk_SK/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sk_SK
+@dirrm %%HORDIR%%/locale/sl_SI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sl_SI
+@dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sv_SE
+@dirrm %%HORDIR%%/locale/tr_TR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/tr_TR
+@dirrm %%HORDIR%%/locale/uk_UA/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/uk_UA
+@dirrm %%HORDIR%%/locale/zh_CN/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/zh_CN
+@dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/zh_TW
+@dirrm %%HORDIR%%/locale
+@dirrm %%HORDIR%%/po
+@dirrm %%HORDIR%%/scripts/ldap
+@dirrm %%HORDIR%%/scripts/sql
+@dirrm %%HORDIR%%/scripts/upgrades
+@dirrm %%HORDIR%%/scripts
+@dirrm %%HORDIR%%/templates/block
+@dirrm %%HORDIR%%/templates/browse
+@dirrm %%HORDIR%%/templates/data
+@dirrm %%HORDIR%%/templates/prefs
+@dirrm %%HORDIR%%/templates
+@dirrm %%HORDIR%%/themes/graphics/menu
+@dirrm %%HORDIR%%/themes/graphics
+@dirrm %%HORDIR%%/themes/ideas
+@dirrm %%HORDIR%%/themes
+@dirrmtry %%HORDIR%%
+@dirrmtry %%HORBAS%%

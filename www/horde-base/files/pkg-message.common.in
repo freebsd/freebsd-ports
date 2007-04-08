@@ -1,0 +1,9 @@
+************************************************************************
+%%PORTNAME%% has been installed in %%HORDIR%% with
+blank configuration files.
+
+Horde must be configured; if not, see `pkg_info -Dx horde-base'.
+
+Finally, you must login to Horde as an Administrator to finish the
+configuration.
+************************************************************************

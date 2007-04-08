@@ -1,12 +1,12 @@
 ************************************************************************
-Horde has been installed in %%HORDEDIR%% with your blank
+Horde has been installed in %%HORDIR%% with your blank
 configuration files.
 
 WARNING! the first user will get logged in as an administrator!
 ********
 
 If you want Horde to access a database, you have to run the
-appropriate scripts located in %%HORDEDIR%%/scripts/sql.
+appropriate scripts located in %%HORDIR%%/scripts/sql.
 It is recommended that you change the password of the 'hordemgr'
 user used to connect to the horde database.
 Horde is setup by default to access MySQL.

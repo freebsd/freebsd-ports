@@ -1,86 +1,86 @@
-%%NICDIR%%/config/.cvsignore
-%%NICDIR%%/config/conf.xml
-%%NICDIR%%/config/devices.php.dist
-%%NICDIR%%/config/prefs.php.dist
-%%NICDIR%%/graph.php
-%%NICDIR%%/index.php
-%%NICDIR%%/lib/Device.php
-%%NICDIR%%/lib/Device/SNMP.php
-%%NICDIR%%/lib/Device/SNMPCustom.php
-%%NICDIR%%/lib/Device/apache.php
-%%NICDIR%%/lib/Device/dns.php
-%%NICDIR%%/lib/Device/imap.php
-%%NICDIR%%/lib/Device/jetdirect.php
-%%NICDIR%%/lib/Device/mysql.php
-%%NICDIR%%/lib/Device/pop3.php
-%%NICDIR%%/lib/Device/smtp.php
-%%NICDIR%%/lib/Device/squid.php
-%%NICDIR%%/lib/Device/win2k.php
-%%NICDIR%%/lib/Device/www.php
-%%NICDIR%%/lib/Device/www_secure.php
-%%NICDIR%%/lib/Device/xi1510.php
-%%NICDIR%%/lib/Nic.php
-%%NICDIR%%/lib/Status.php
-%%NICDIR%%/lib/Status/sql.php
-%%NICDIR%%/lib/Storage.php
-%%NICDIR%%/lib/Storage/rrd.php
-%%NICDIR%%/lib/Storage/sql.php
-%%NICDIR%%/lib/base.php
-%%NICDIR%%/lib/version.php
-%%NICDIR%%/locale/de_DE/LC_MESSAGES/nic.mo
-%%NICDIR%%/locale/en_US/help.xml
-%%NICDIR%%/locale/es_ES/LC_MESSAGES/nic.mo
-%%NICDIR%%/locale/fi_FI/LC_MESSAGES/nic.mo
-%%NICDIR%%/po/de_DE.po
-%%NICDIR%%/po/es_ES.po
-%%NICDIR%%/po/fi_FI.po
-%%NICDIR%%/po/nic.pot
-%%NICDIR%%/rrdgraph.php
-%%NICDIR%%/rrdviews.php
-%%NICDIR%%/scripts/.htaccess
-%%NICDIR%%/scripts/createRRDFiles.php
-%%NICDIR%%/scripts/sql/nic.sql
-%%NICDIR%%/scripts/statusMonitor.php
-%%NICDIR%%/status.php
-%%NICDIR%%/subsystem.php
-%%NICDIR%%/templates/common-header.inc
-%%NICDIR%%/templates/device/footer.inc
-%%NICDIR%%/templates/device/header.inc
-%%NICDIR%%/templates/device/row-graph.inc
-%%NICDIR%%/templates/device/row.inc
-%%NICDIR%%/templates/device/rrd-graph.inc
-%%NICDIR%%/templates/menu.inc
-%%NICDIR%%/templates/status/header.inc
-%%NICDIR%%/templates/status/list-footer.inc
-%%NICDIR%%/templates/status/list-header.inc
-%%NICDIR%%/templates/status/list-row.inc
-%%NICDIR%%/templates/subsystem/footer.inc
-%%NICDIR%%/templates/subsystem/subsystem.inc
-%%NICDIR%%/test.php
-%%NICDIR%%/themes/graphics/favicon.ico
-%%NICDIR%%//themes/graphics/nic.png
-%%NICDIR%%/themes/screen.css
-%%HORDE_INC%%httpd-nic.conf
-@dirrm %%NICDIR%%/themes/graphics
-@dirrm %%NICDIR%%/themes
-@dirrm %%NICDIR%%/templates/subsystem
-@dirrm %%NICDIR%%/templates/status
-@dirrm %%NICDIR%%/templates/device
-@dirrm %%NICDIR%%/templates
-@dirrm %%NICDIR%%/scripts/sql
-@dirrm %%NICDIR%%/scripts
-@dirrm %%NICDIR%%/po
-@dirrm %%NICDIR%%/locale/fi_FI/LC_MESSAGES
-@dirrm %%NICDIR%%/locale/fi_FI
-@dirrm %%NICDIR%%/locale/es_ES/LC_MESSAGES
-@dirrm %%NICDIR%%/locale/es_ES
-@dirrm %%NICDIR%%/locale/en_US
-@dirrm %%NICDIR%%/locale/de_DE/LC_MESSAGES
-@dirrm %%NICDIR%%/locale/de_DE
-@dirrm %%NICDIR%%/locale
-@dirrm %%NICDIR%%/lib/Storage
-@dirrm %%NICDIR%%/lib/Status
-@dirrm %%NICDIR%%/lib/Device
-@dirrm %%NICDIR%%/lib
-@dirrm %%NICDIR%%/config
-@dirrm %%NICDIR%%
+%%HORDIR%%/config/.cvsignore
+%%HORDIR%%/config/conf.xml
+%%HORDIR%%/config/devices.php.dist
+%%HORDIR%%/config/prefs.php.dist
+%%HORDIR%%/graph.php
+%%HORDIR%%/index.php
+%%HORDIR%%/lib/Device/SNMP.php
+%%HORDIR%%/lib/Device/SNMPCustom.php
+%%HORDIR%%/lib/Device/apache.php
+%%HORDIR%%/lib/Device/dns.php
+%%HORDIR%%/lib/Device/imap.php
+%%HORDIR%%/lib/Device/jetdirect.php
+%%HORDIR%%/lib/Device/mysql.php
+%%HORDIR%%/lib/Device/pop3.php
+%%HORDIR%%/lib/Device/smtp.php
+%%HORDIR%%/lib/Device/squid.php
+%%HORDIR%%/lib/Device/win2k.php
+%%HORDIR%%/lib/Device/www.php
+%%HORDIR%%/lib/Device/www_secure.php
+%%HORDIR%%/lib/Device/xi1510.php
+%%HORDIR%%/lib/Device.php
+%%HORDIR%%/lib/Nic.php
+%%HORDIR%%/lib/Status/sql.php
+%%HORDIR%%/lib/Status.php
+%%HORDIR%%/lib/Storage/rrd.php
+%%HORDIR%%/lib/Storage/sql.php
+%%HORDIR%%/lib/Storage.php
+%%HORDIR%%/lib/base.php
+%%HORDIR%%/lib/version.php
+%%HORDIR%%/locale/de_DE/LC_MESSAGES/nic.mo
+%%HORDIR%%/locale/en_US/help.xml
+%%HORDIR%%/locale/es_ES/LC_MESSAGES/nic.mo
+%%HORDIR%%/locale/fi_FI/LC_MESSAGES/nic.mo
+%%HORDIR%%/po/de_DE.po
+%%HORDIR%%/po/es_ES.po
+%%HORDIR%%/po/fi_FI.po
+%%HORDIR%%/po/nic.pot
+%%HORDIR%%/rrdgraph.php
+%%HORDIR%%/rrdviews.php
+%%HORDIR%%/scripts/.htaccess
+%%HORDIR%%/scripts/createRRDFiles.php
+%%HORDIR%%/scripts/sql/nic.sql
+%%HORDIR%%/scripts/statusMonitor.php
+%%HORDIR%%/status.php
+%%HORDIR%%/subsystem.php
+%%HORDIR%%/templates/common-header.inc
+%%HORDIR%%/templates/device/footer.inc
+%%HORDIR%%/templates/device/header.inc
+%%HORDIR%%/templates/device/row-graph.inc
+%%HORDIR%%/templates/device/row.inc
+%%HORDIR%%/templates/device/rrd-graph.inc
+%%HORDIR%%/templates/menu.inc
+%%HORDIR%%/templates/status/header.inc
+%%HORDIR%%/templates/status/list-footer.inc
+%%HORDIR%%/templates/status/list-header.inc
+%%HORDIR%%/templates/status/list-row.inc
+%%HORDIR%%/templates/subsystem/footer.inc
+%%HORDIR%%/templates/subsystem/subsystem.inc
+%%HORDIR%%/test.php
+%%HORDIR%%/themes/graphics/favicon.ico
+%%HORDIR%%/themes/graphics/nic.png
+%%HORDIR%%/themes/screen.css
+@dirrmtry %%HORDIR%%/config
+@dirrm %%HORDIR%%/lib/Device
+@dirrm %%HORDIR%%/lib/Status
+@dirrm %%HORDIR%%/lib/Storage
+@dirrm %%HORDIR%%/lib
+@dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/de_DE
+@dirrm %%HORDIR%%/locale/en_US
+@dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/es_ES
+@dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fi_FI
+@dirrm %%HORDIR%%/locale
+@dirrm %%HORDIR%%/po
+@dirrm %%HORDIR%%/scripts/sql
+@dirrm %%HORDIR%%/scripts
+@dirrm %%HORDIR%%/templates/device
+@dirrm %%HORDIR%%/templates/status
+@dirrm %%HORDIR%%/templates/subsystem
+@dirrm %%HORDIR%%/templates
+@dirrm %%HORDIR%%/themes/graphics
+@dirrm %%HORDIR%%/themes
+@dirrmtry %%HORDIR%%
+@dirrmtry %%HORBAS%%

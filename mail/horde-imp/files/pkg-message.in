@@ -1,12 +1,13 @@
 ************************************************************************
-IMP has been installed in %%IMPDIR%% with your blank
+IMP has been installed in %%HORDIR%%/ with your blank
 configuration files.
 
 Horde must be configured and the tables created; if not, see
-`pkg_info -D -x horde'.
+`pkg_info -Dx horde-base'.
 
 Then, you have to tune the configuration files located in
-%%CONFDIR%%/, specially the file servers.php to define your mailserver.
+%%HORCFG%%/, especially the file servers.php
+to define your mailserver.
 
 Then, you must login to Horde as a Horde Administrator to finish the
 configuration. Please read %%DOCSDIR%%/INSTALL.
