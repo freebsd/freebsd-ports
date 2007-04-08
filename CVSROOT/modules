@@ -16927,6 +16927,7 @@ zmailer		ports/mail/zmailer
 zmtx-zmrx	ports/comms/zmtx-zmrx
 znavigator	ports/www/znavigator
 znibbles	ports/games/znibbles
+zniper		ports/net/zniper
 zodb3		ports/databases/zodb3
 zoidberg	ports/shells/zoidberg
 zoinks		ports/editors/zoinks
