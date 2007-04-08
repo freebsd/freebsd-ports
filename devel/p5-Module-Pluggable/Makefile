@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-Pluggable
-PORTVERSION=	3.5
+PORTVERSION=	3.6
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,8 +23,4 @@ MAN3=		Devel::InnerPackage.3 \
 		Module::Pluggable.3 \
 		Module::Pluggable::Object.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6 or later. Please install lang/perl5 or lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
