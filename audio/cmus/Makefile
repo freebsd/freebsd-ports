@@ -15,8 +15,6 @@ MASTER_SITES=	http://onion.dynserv.net/~timo/files/ \
 MAINTAINER=	simon@olofsson.de
 COMMENT=	Console-based music player with really cool features
 
-LIB_DEPENDS=	ncursesw.5:${PORTSDIR}/devel/ncurses
-
 USE_BZIP2=	yes
 USE_GCC=	3.2+
 USE_GMAKE=	yes
@@ -40,8 +38,8 @@ OPTIONS=	FLAC "FLAC (Free Lossless Audio Codec) support" Off \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile on FreeBSD 4.X
+.if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
+LIB_DEPENDS=	ncursesw.5:${PORTSDIR}/devel/ncurses
 .endif
 
 .if defined(WITH_FLAC)
