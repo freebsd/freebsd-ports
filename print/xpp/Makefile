@@ -28,5 +28,6 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|$$(all_includes)|-I ${PREFIX}/include|' \
 	    ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|CFLAGS =|CFLAGS +=|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|printFiles::get|get|' ${WRKSRC}/xpp.h
 
 .include <bsd.port.mk>
