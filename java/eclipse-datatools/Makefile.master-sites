@@ -1,0 +1,32 @@
+MASTER_SITES+= \
+	http://download.actuatechina.com/eclipse/datatools/downloads/%SUBDIR%/ \
+	http://mirrors.nsa.co.il/eclipse/datatools/downloads/%SUBDIR%/ \
+	http://ftp.jaist.ac.jp/pub/eclipse/datatools/downloads/%SUBDIR%/ \
+	ftp://ftp.u-aizu.ac.jp/pub/eclipse/datatools/downloads/%SUBDIR%/ \
+	http://mirrors.gamevil.com/pub/eclipse/datatools/downloads/%SUBDIR%/ \
+	http://mirror.in.th/eclipse/datatools/downloads/%SUBDIR%/ \
+	http://mirror.pacific.net.au/eclipse/datatools/downloads/%SUBDIR%/ \
+	http://eclipse.planetmirror.com/datatools/downloads/%SUBDIR%/ \
+	http://eclipse.prolet.org/datatools/downloads/%SUBDIR%/ \
+	http://ftp.sh.cvut.cz/MIRRORS/eclipse/datatools/downloads/%SUBDIR%/ \
+	http://ftp.wh2.tu-dresden.de/pub/mirrors/eclipse/datatools/downloads/%SUBDIR%/ \
+	http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/datatools/downloads/%SUBDIR%/ \
+	http://ftp.ntua.gr/mirror/eclipse/datatools/downloads/%SUBDIR%/ \
+	http://eclipse.i-logic.hu//datatools/downloads/%SUBDIR%/ \
+	ftp://mirror.isir.is/eclipse/datatools/downloads/%SUBDIR%/ \
+	http://rm.mirror.garr.it/mirrors/eclipse/datatools/downloads/%SUBDIR%/ \
+	ftp://ftp.uninett.no/pub/eclipse/datatools/downloads/%SUBDIR%/ \
+	ftp://ftp.man.szczecin.pl/pub/eclipse/datatools/downloads/%SUBDIR%/ \
+	http://ftp.roedu.net/mirrors/eclipse.org/datatools/downloads/%SUBDIR%/ \
+	ftp://mirror.mix.su/eclipse/datatools/downloads/%SUBDIR%/ \
+	http://mirror.switch.ch/eclipse/datatools/downloads/%SUBDIR%/ \
+	http://eclipse.ulak.net.tr/eclipseMirror/datatools/downloads/%SUBDIR%/ \
+	http://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/datatools/downloads/%SUBDIR%/ \
+	http://mirrors.cat.pdx.edu/eclipse/datatools/downloads/%SUBDIR%/ \
+	http://www.gtlib.gatech.edu/pub/eclipse/datatools/downloads/%SUBDIR%/ \
+	http://mirrors.ibiblio.org/pub/mirrors/eclipse/datatools/downloads/%SUBDIR%/ \
+	http://ftp.ussg.iu.edu/eclipse/datatools/downloads/%SUBDIR%/ \
+	http://ftp.osuosl.org/pub/eclipse/datatools/downloads/%SUBDIR%/ \
+	ftp://ftp.cse.buffalo.edu/pub/Eclipse/datatools/downloads/%SUBDIR%/ \
+	ftp://ftp.cise.ufl.edu/pub/mirrors/eclipse/datatools/downloads/%SUBDIR%/ \
+	http://download.eclipse.org/datatools/downloads/%SUBDIR%/

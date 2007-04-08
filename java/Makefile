@@ -23,6 +23,7 @@
     SUBDIR += eclipse-cdt
     SUBDIR += eclipse-checkstyle
     SUBDIR += eclipse-clay-core
+    SUBDIR += eclipse-datatools
     SUBDIR += eclipse-devel
     SUBDIR += eclipse-drjava
     SUBDIR += eclipse-emf
