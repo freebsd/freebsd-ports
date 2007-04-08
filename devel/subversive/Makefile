@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	subversive
-DISTVERSION=	1.1.0
+DISTVERSION=	1.1.1
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.polarion.org/projects/subversive/download/1.1/builds/
-DISTNAME=	Subversive_${DISTVERSION}.Release-LocalUpdateSite
+DISTNAME=	Subversive_${DISTVERSION}-LocalUpdateSite
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	An Eclipse plug-in that provides Subversion support
