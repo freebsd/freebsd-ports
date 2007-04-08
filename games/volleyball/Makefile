@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	volleyball
-PORTVERSION=	0.8.5
-PORTREVISION=	1
+PORTVERSION=	0.8.6
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/volleyball/descargas/ \
 		http://www.amdmi3.ru/distfiles/
@@ -17,18 +16,18 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	amdmi3@amdmi3.ru
 COMMENT=	A game similar to GNU Arcade Volleyball
 
-USE_SDL=	sdl image
+USE_SDL=	sdl image mixer
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lintl"
-CONFIGURE_ARGS=	--disable-nls # strangeness in nls support
+CONFIGURE_ARGS=	--mandir="${MANPREFIX}/man" --disable-nls # strangeness in nls support
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GCC=	3.4+
 
 PORTDOCS=	README
 MAN6=		volleyball.6
 
-DATAVERSION=	0.8.4
+DATAVERSION=	0.8.5
 
 post-configure:
 	cd ${WRKDIR}/${PORTNAME}-data-${DATAVERSION} && \
