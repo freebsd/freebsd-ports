@@ -2246,6 +2246,7 @@ eclipse-EPIC	ports/java/eclipse-EPIC
 eclipse-cdt	ports/java/eclipse-cdt
 eclipse-checkstyle	ports/java/eclipse-checkstyle
 eclipse-clay-core	ports/java/eclipse-clay-core
+eclipse-datatools	ports/java/eclipse-datatools
 eclipse-devel	ports/java/eclipse-devel
 eclipse-drjava	ports/java/eclipse-drjava
 eclipse-emf	ports/java/eclipse-emf
