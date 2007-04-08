@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-All
-PORTVERSION=	0.36
+PORTVERSION=	0.37
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IO
@@ -17,6 +17,7 @@ COMMENT=	IO::All combines all of the best Perl IO modules
 
 RUN_DEPENDS=	${SITE_PERL}/Tie/File.pm:${PORTSDIR}/devel/p5-Tie-File \
 		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
