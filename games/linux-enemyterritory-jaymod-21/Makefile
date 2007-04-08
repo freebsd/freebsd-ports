@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jaymod
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	games linux
 MASTER_SITES=	http://jaymod.clanfu.org/lib/downloads/ \
 		http://budjb.com/lib/downloads/ \
