@@ -23,7 +23,7 @@ USE_RC_SUBR=	yes
 DIST_SUBDIR=	zope
 HOTFIX=		Hotfix_20060821
 
-FORBIDDEN=	contains cross-site scripting vulnerability
+FORBIDDEN=	contains cross-site scripting vulnerability http://VuXML.FreeBSD.org/34414a1e-e377-11db-b8ab-000c76189c4c.html
 
 # Note: the notes that follow reflect the decisions of prior maintainers
 # of this port. IOW, don't blame me if you don't like the way it's done.
