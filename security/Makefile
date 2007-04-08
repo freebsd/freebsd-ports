@@ -738,6 +738,7 @@
     SUBDIR += xmlsec
     SUBDIR += xmlsec1
     SUBDIR += xspy
+    SUBDIR += xyssl
     SUBDIR += yafic
     SUBDIR += yersinia
     SUBDIR += zebedee
