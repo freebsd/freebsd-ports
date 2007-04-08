@@ -8,17 +8,13 @@ PORTNAME=	hdoc
 PORTVERSION=	0.8.3
 PORTREVISION=	1
 CATEGORIES=	devel haskell
-MASTER_SITES=	http://www.fmi.uni-passau.de/~groessli/hdoc/
+MASTER_SITES=	http://staff.fmi.uni-passau.de/~groessli/hdoc/
 PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	HTML documentation tool for Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
-
-BROKEN=	does not fetch, ${MASTER_SITES} is gone
-DEPRECATED=	"${BROKEN}"
-EXPIRATION_DATE=2007-06-08
 
 PLIST_FILES=	bin/hdoc
 GNU_CONFIGURE=	yes
