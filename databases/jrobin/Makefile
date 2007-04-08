@@ -7,19 +7,20 @@
 #
 
 PORTNAME=	jrobin
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.4
 CATEGORIES=	net java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	JRobin-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemoliu@gmail.com
 COMMENT=	A pure Java alternative to RRDTool
 
 USE_JAVA=	yes
 USE_ANT=	yes
-ALL_TARGET=	all-libs
-WRKSRC=		${WRKDIR}/${DISTNAME:L}
+JAVA_VERSION=	1.5+
+ALL_TARGET=	dist
+WRKSRC=		${WRKDIR}/JRobinLite-${PORTVERSION}
 BUILD_WRKSRC=	${WRKSRC}/ant
 
 .if !defined(NOPORTDOCS)
@@ -27,7 +28,7 @@ ALL_TARGET+=	javadoc
 PORTDOCS=	*
 .endif
 
-CLASSES=	jrobin jrobin-demo convertor inspector mrtg-client mrtg-server
+CLASSES=	jrobin convertor inspector
 
 do-install:
 .for c in ${CLASSES}
