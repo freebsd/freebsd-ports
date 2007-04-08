@@ -1,3 +1,9 @@
+Version 4.58.9_2
+================
+- clamav-wrapper contained options unarj, unace and zoo. unace
+  seems to be dead and the other options are corrected to be
+  arj and unzoo.
+
 Version 4.58.9
 ================
 - Upgrade to MailScanner 4.58
