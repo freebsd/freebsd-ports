@@ -6,6 +6,7 @@
 
 PORTNAME=	platex-jsclasses
 PORTVERSION=	1.0.20060212
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	http://oku.edu.mie-u.ac.jp/~okumura/jsclasses/:0 \
 		http://oku.edu.mie-u.ac.jp/~okumura/texfaq/:1
@@ -18,7 +19,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	New document class files for pLaTeX
 
 RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
-		ptex:${PORTSDIR}/japanese/ptex-tetex
+		ptex:${PORTSDIR}/japanese/ptex
 
 USE_ZIP=	YES
 NO_BUILD=	YES

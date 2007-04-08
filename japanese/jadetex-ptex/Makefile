@@ -7,7 +7,7 @@
 
 PORTNAME=		jadetex
 PORTVERSION=		3.13
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		japanese print
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,9 +17,9 @@ DISTNAME=		jadetex-${PORTVERSION}
 MAINTAINER=		hrs@FreeBSD.org
 COMMENT=		A pTeX backend for Jade, for typesetting SGML documents
 
-BUILD_DEPENDS=		ptex:${PORTSDIR}/japanese/ptex-tetex
+BUILD_DEPENDS=		ptex:${PORTSDIR}/japanese/ptex
 LIB_DEPENDS=		png.5:${PORTSDIR}/graphics/png
-RUN_DEPENDS=		ptex:${PORTSDIR}/japanese/ptex-tetex
+RUN_DEPENDS=		ptex:${PORTSDIR}/japanese/ptex
 
 PKGMESSAGE=		${WRKDIR}/pkg-message
 PKGMESSAGE_SUB=		LOCALBASE=${LOCALBASE}

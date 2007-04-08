@@ -1,17 +1,7 @@
 This is pTeX, TeX system with Japanese support.  This package installs
 Japanese specific executables and other files.
 
-This system is based on teTeX 2.0.1 which contains TeX, LaTeX2e, and
+This system depends on teTeX 3.0, which contains TeX, LaTeX2e, and
 various other TeX related programs.  
 
-Note: Some of the features provided by teTeX may not work with
-Japanese language, even though the TeX and LaTeX2e are able to handle
-Japanese.  Use ptex and platex respectively.
-
-Note: xdvi, dvips, and dvipdfm, which are part of teTeX package, are
-not included in this package since they are not localized for
-Japanese.  Use corresponding ports/packages in the japanese or print
-category.
-
-- Max
 WWW: http://www.ascii.co.jp/pb/ptex/

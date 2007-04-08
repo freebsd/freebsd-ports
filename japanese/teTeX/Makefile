@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	teTeX
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	japanese print
 MASTER_SITES=	# empty
 PKGNAMEPREFIX=	ja-
@@ -18,7 +18,7 @@ COMMENT=	A meta port for teTeX suite for Japanese (including pTeX and JTeX)
 RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		tex:${PORTSDIR}/print/teTeX-base \
-		ptex:${PORTSDIR}/japanese/ptex-tetex \
+		ptex:${PORTSDIR}/japanese/ptex \
 		dvips:${PORTSDIR}/japanese/dvipsk \
 		jtex:${PORTSDIR}/japanese/texfamily \
 		${JTEXVF}:${PORTSDIR}/japanese/texfamily-vfn2a

@@ -1,8 +1,0 @@
-Files that are not specific to Japanese pTeX have been installed.
-Now, you need to install japanese/ptex, which provides files necessary
-for Japanese processing.
-
-Note that the files installed by the ptex port can process all three
-character codes, i.e. EUC, JIS, and Shift-JIS by specifying a
-command-line option at runtime.  You can specify the default character
-code if you are installing it using the port.
