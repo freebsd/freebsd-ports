@@ -549,6 +549,7 @@
 %%SUGARCRMDIR%%/include/utils/external_cache.php
 %%SUGARCRMDIR%%/include/utils/user_utils.php
 %%SUGARCRMDIR%%/include/generic/SugarWidgets/SugarWidgetSubPanelConcat.php
+%%SUGARCRMDIR%%/include/generic/SugarWidgets/SugarWidgetSubPanelTopCreateCampaignLogEntryButton.php
 %%SUGARCRMDIR%%/include/generic/SugarWidgets/SugarWidgetFielduser_name.php
 %%SUGARCRMDIR%%/include/generic/SugarWidgets/SugarWidgetSubPanelTopSummaryButton.php
 %%SUGARCRMDIR%%/include/generic/SugarWidgets/SugarWidgetSubPanelTopButtonQuickCreate.php
@@ -615,6 +616,7 @@
 %%SUGARCRMDIR%%/include/javascript/yui/assets/blck16_1.gif
 %%SUGARCRMDIR%%/include/javascript/yui/assets/close12_1.gif
 %%SUGARCRMDIR%%/include/javascript/yui/assets/hlp16_1.gif
+%%SUGARCRMDIR%%/include/javascript/yui/assets/rel_interstitial_loading.gif
 %%SUGARCRMDIR%%/include/javascript/yui/assets/reset.css
 %%SUGARCRMDIR%%/include/javascript/yui/assets/info16_1.gif
 %%SUGARCRMDIR%%/include/javascript/yui/ext/data/XMLChildDataModel.js
@@ -2285,6 +2287,7 @@
 %%SUGARCRMDIR%%/modules/Studio/ajax/relatedfiles.php
 %%SUGARCRMDIR%%/modules/Studio/ajax/editcustomfield.php
 %%SUGARCRMDIR%%/modules/Studio/ajax/customfieldview.php
+%%SUGARCRMDIR%%/modules/Studio/language/en_us.Portal.html
 %%SUGARCRMDIR%%/modules/Studio/language/en_us.help.wizard.html
 %%SUGARCRMDIR%%/modules/Studio/language/en_us.lang.php
 %%SUGARCRMDIR%%/modules/Studio/language/en_us.help.index.html
@@ -2377,6 +2380,7 @@
 %%SUGARCRMDIR%%/modules/ACL/install_actions.php
 %%SUGARCRMDIR%%/modules/ACL/vardefs.php
 %%SUGARCRMDIR%%/modules/ACL/Popup.php
+%%SUGARCRMDIR%%/modules/ACL/remove_actions.php
 %%SUGARCRMDIR%%/modules/ACL/test_actions.php
 %%SUGARCRMDIR%%/modules/Emails/Dashlets/MyEmailsDashlet/MyEmailsDashlet.meta.php
 %%SUGARCRMDIR%%/modules/Emails/Dashlets/MyEmailsDashlet/MyEmailsDashlet.php
@@ -7864,5 +7868,5 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE.TXT
 %%PORTDOCS%%%%DOCSDIR%%/%%USERDOCFILE%%
-%%PORTDOCS%%%%DOCSDIR%%/%%INSTALLDOCFILE%%
+%%PORTDOCS%%%%DOCSDIR%%/%%RELEASENOTESFILE%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
