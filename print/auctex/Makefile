@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		auctex
-PORTVERSION=		11.83
+PORTVERSION=		11.84
 PORTREVISION=		0
 CATEGORIES=		print elisp
 MASTER_SITES=		${MASTER_SITE_GNU}
@@ -22,7 +22,8 @@ USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lispdir=${PREFIX}/${LISPDIR} \
 		--with-auto-dir=${PREFIX}/${LISPDIR}/auctex/auto \
-		--with-texmf-dir=${PREFIX}/${TEXMFDIR}
+		--with-texmf-dir=${PREFIX}/${TEXMFDIR} \
+		--infodir=${PREFIX}/info
 
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
