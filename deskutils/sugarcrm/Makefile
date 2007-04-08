@@ -5,14 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	sugarcrm
-PORTVERSION=	4.5.1
+PORTVERSION=	4.5.1b
 CATEGORIES=	deskutils www
-MASTER_SITES=	${SCRM_DISPATCHER}/SugarOS4.5.1Latest/SugarOS4.5.1/:src \
-		${DOC_DISPATCHER}/User_Guides/Sugar_Open_Source_User_Guide_4.5.1/:userdoc \
-		${DOC_DISPATCHER}/Administration_Guides/Sugar_Open_Source_Administration_Guide_4.5.1/:admindoc \
-		${DOC_DISPATCHER}/Installation_Guides/Sugar_Open_Source_Installation_Guide_4.5.1/:installdoc
+MASTER_SITES=	${SCRM_DISPATCHER}/:src \
+		${DOC_DISPATCHER}/:userdoc \
+		${DOC_DISPATCHER}/:admindoc \
+		${DOC_DISPATCHER}/:releasenotesdoc
 DISTFILES=	${USERDOCFILE}:userdoc \
-		${INSTALLDOCFILE}:installdoc \
+		${RELEASENOTESFILE}:releasenotesdoc \
 		${ADMINDOCFILE}:admindoc \
 		${SRCNAME}${EXTRACT_SUFX}:src
 DIST_SUBDIR=	${PORTNAME}
@@ -34,13 +34,13 @@ OPTIONS=	IMAP "Install with IMAP module (For email campaign support)" on
 USE_PHP+=	imap
 .endif
 
-SCRM_DISPATCHER=	http://dl.sugarforge.org/sugarcrm
-DOC_DISPATCHER=		http://www.sugarcrm.com/network/help/OS/4.5.1
+SCRM_DISPATCHER=	http://dl.sugarforge.org/sugarcrm/SugarOS4.5.1Latest/SugarOS4.5.1
+DOC_DISPATCHER=		${SCRM_DISPATCHER}
 
 SRCNAME=	SugarOS-${PORTVERSION}
-USERDOCFILE=	Sugar_OpenSource_UserGuide_4.5.1.pdf
-INSTALLDOCFILE=	OpenSource_InstallationGuide_4.5.1.pdf
-ADMINDOCFILE=	Sugar_OpenSource_AdministrationGuide_4.5.1.pdf
+USERDOCFILE=	Sugar_OpenSource_UserGuide_${PORTVERSION}.pdf
+RELEASENOTESFILE= Sugar_OpenSource_ReleaseNotes_${PORTVERSION}.pdf
+ADMINDOCFILE=	Sugar_OpenSource_AdministrationGuide_${PORTVERSION}.pdf
 
 INSTFILES=	HandleAjaxCall.php SugarSecurity.php TreeData.php \
 		WebToLeadCapture.php acceptDecline.php campaign_tracker.php \
@@ -70,7 +70,7 @@ PLIST_SUB+=	SUGARCRMDIR="${SUGARCRMDIR}" \
 		WWWOWN="${WWWOWN}" \
 		WWWFILES="${WWWFILES}" \
 		USERDOCFILE="${USERDOCFILE}" \
-		INSTALLDOCFILE="${INSTALLDOCFILE}"
+		RELEASENOTESFILE="${RELEASENOTESFILE}"
 
 do-install:
 	@${MKDIR} ${PREFIX}/${SUGARCRMDIR}
@@ -90,8 +90,8 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${USERDOCFILE} \
 		${DOCSDIR}/${USERDOCFILE}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${INSTALLDOCFILE} \
-		${DOCSDIR}/${INSTALLDOCFILE}
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${RELEASENOTESFILE} \
+		${DOCSDIR}/${RELEASENOTESFILE}
 .for i in ${INSTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
