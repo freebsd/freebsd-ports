@@ -6,6 +6,7 @@ lib/audacious/Container/libstdio.so
 lib/audacious/Effect/libaudiocompress.so
 lib/audacious/Effect/libladspa.so
 lib/audacious/Effect/libecho.so
+lib/audacious/Effect/libsndstretch.so
 lib/audacious/Effect/libstereo.so
 lib/audacious/Effect/libvoice_removal.so
 lib/audacious/General/libalarm.so
@@ -87,6 +88,7 @@ share/audacious-plugins/paranormal/Presets/ticpu_-_colored_beat-o-scope.pnv
 %%NLS%%share/locale/de/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/audacious-plugins.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/audacious-plugins.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/audacious-plugins.mo
 share/audacious/images/audioscrobbler.png
 share/audacious/images/audioscrobbler_badge.png
