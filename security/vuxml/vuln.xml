@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="84d3fbb2-e607-11db-8a32-000c76189c4c">
+    <topic>mcweject -- exploitable buffer overflow</topic>
+    <affects>
+      <package>
+	<name>mcweject</name>
+	<range><le>0.9</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>CVE reports:</p>
+	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1719">
+          <p>Buffer overflow in eject.c in Jason W. Bacon mcweject 0.9 on
+          FreeBSD, and possibly other versions, allows local users to execute
+          arbitrary code via a long command line argument, possibly involving
+          the device name.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+    <freebsdpr>ports/111365</freebsdpr>
+    <url>http://www.milw0rm.com/exploits/3578</url>
+    <cvename>CVE-2007-1719</cvename>
+    </references>
+    <dates>
+      <discovery>2007-03-27</discovery>
+      <entry>2007-04-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="72999d57-d6f6-11db-961b-005056847b26">
     <topic>webcalendar -- "noSet" variable overwrite vulnerability</topic>
     <affects>
