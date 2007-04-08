@@ -1,0 +1,51 @@
+--- ./Makefile.orig	Fri Oct  8 17:20:57 2004
++++ ./Makefile	Sun Apr  8 00:36:49 2007
+@@ -55,20 +55,26 @@
+ # comunicacao.o \
+ #
+ 
++CXX ?= g++
++X11BASE ?= /usr/X11R6
++
+ # bibliotecas para Linux
+-LIBSLINUX = -L/usr/X11R6/lib -lGL -lGLU -lglut -L/usr/lib -lSDL_mixer -lSDL -lpthread `sdl-config --cflags --libs` -lSDL_net
++LIBSLINUX = -L$(X11BASE)/lib -lGL -lGLU -lglut `sdl-config --libs` -lSDL_mixer -lSDL_net
+ 
+ # bibliotecas para Windows
+ LIBSWIN = -lopengl32 -lglu32 -lglut32 -lmingw32 -lSDLmain -lSDL -lSDL_mixer -mwindows -L$(DEVCPP_PATH)\lib -lSDL_net
+ 
+-
+ # executavel gerado pelo Linux
+ BINLINUX  = air
+ # executavel gerado pelo Windows
+ BINWIN = $(BINLINUX).exe
+ 
+ # flags (otimizacao e nao exibir warnings)
+-FLAGS = -O2 -DREENTRANT -DHAVE_OPENGL #-g 
++FLAGS = $(CFLAGS) -DREENTRANT -DHAVE_OPENGL -I$(X11BASE)/include
++
++ifdef OPTIMIZED_CFLAGS
++FLAGS += -O2
++endif
+ 
+ INCLUDEWIN = -I$(DEVCPP_PATH)\include -I$(DEVCPP_PATH)\include\c++ -I$(DEVCPP_PATH)\include\c++\mingw32 -I$(DEVCPP_PATH)\include\c++\backward
+ 
+@@ -77,15 +83,15 @@
+ 
+ # Linkagem: Linux (target padrao)
+ linux: $(OBJS)
+-	g++ $? -o $(BINLINUX) -L/usr/X11R6/lib $(LIBSLINUX) $(FLAGS)
++	$(CXX) $? -o $(BINLINUX) -L/usr/X11R6/lib $(LIBSLINUX) $(FLAGS)
+ 
+ # Linkagem: Windows
+ win: $(OBJS)
+-	g++ $? -o $(BINWIN) $(LIBSWIN) $(FLAGS)
++	$(CXX) $? -o $(BINWIN) $(LIBSWIN) $(FLAGS)
+ 
+ # Compilacao (Linux e Windows)
+ $(OBJS): %.o: %.cpp
+-	g++ -c $< -o $@ $(FLAGS) $(INCLUDEWIN)
++	$(CXX) -c $< -o $@ $(FLAGS)
+ 
+ # Apagar objetos pra comecar do zero
+ clean:
