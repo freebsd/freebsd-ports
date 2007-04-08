@@ -7,6 +7,7 @@
 
 PORTNAME=	dynamips
 DISTVERSION=	0.2.7-RC1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.ipflow.utc.fr/dynamips/
 PKGNAMESUFFIX=	-devel
@@ -53,7 +54,7 @@ do-install:
 .if ${ARCH} == "i386"
 DYNAMIPS_ARCH=	"x86"
 .elif ${ARCH} == "amd64"
-DYNAMIPS_ARCH=	"nojit"	# JIT does not work on amd64 for some reason
+DYNAMIPS_ARCH=	"amd64"
 .else
 DYNAMIPS_ARCH=	"nojit"
 .endif
