@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	Config-Auto
-PORTVERSION=	0.18
+PORTVERSION=	0.20
 CATEGORIES=	devel perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Config
 PKGNAMEPREFIX=	p5-
 
@@ -31,14 +31,5 @@ RUN_DEPENDS+=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
 PERL_CONFIGURE=	yes
 
 MAN3=		Config::Auto.3
-
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	@${PERL} -pi -e 's/^our (\$$\w+)/use vars qw($$1); $$1/;' \
-		     -e '$$_ = "" if (/5.006/);' \
-		     -e '$$_ = "" if (/(use|no) warnings/);' \
-		 ${WRKSRC}/lib/Config/Auto.pm \
-		 ${WRKSRC}/t/*.t
-.endif
 
 .include <bsd.port.post.mk>
