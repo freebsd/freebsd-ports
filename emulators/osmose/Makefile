@@ -19,6 +19,8 @@ COMMENT=	Sega Master System emulator
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	uses i386 assembly code
+USE_DOS2UNIX=	yes
 USE_ZIP=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
@@ -31,23 +33,8 @@ PORTDOCS=	readme.txt
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-freebsd4
-.endif
-
-post-patch:
-# Fix Makefile.
-	@${REINPLACE_CMD} -e 's|\(-Dlinux\)|${CFLAGS} \1| ; \
-		s|sdl-config|${SDL_CONFIG}|' \
-		${WRKSRC}/${MAKEFILE}
-
-# Fix SDL include statement.
-	@${REINPLACE_CMD} -e 's|\(#include.*\)SDL/\(SDL.*\)|\1\2|' \
-		${WRKSRC}/*.h
-
-# Enable/disable compilation optimizations.
-.if defined(WITHOUT_OPTIMIZED_CFLAGS)
-	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/${MAKEFILE}
+.if !defined(WITHOUT_OPTIMIZED_CFLAGS)
+MAKE_ENV+=	OPTIMIZED_CFLAGS=yes
 .endif
 
 do-install:
