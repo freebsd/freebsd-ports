@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Pod-Tree
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Pod
@@ -17,6 +17,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Create a static syntax tree for a POD
 
 RUN_DEPENDS=	${SITE_PERL}/HTML/Stream.pm:${PORTSDIR}/www/p5-HTML-Stream \
+		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
 		${SITE_PERL}/Pod/Escapes.pm:${PORTSDIR}/textproc/p5-Pod-Escapes
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
@@ -38,6 +39,7 @@ MAN3=		Pod::Tree.3 \
 # conflict with pod2html in perl 5.6 or above
 post-patch:
 	${REINPLACE_CMD} -e 's/pod2html //g' ${WRKSRC}/Makefile.PL
+	${REINPLACE_CMD} -e '/pod2html/d' ${WRKSRC}/MANIFEST
 	${RM} ${WRKSRC}/t/pod2html.t
 
 .include <bsd.port.mk>
