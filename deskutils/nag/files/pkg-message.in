@@ -1,11 +1,11 @@
 ************************************************************************
-Nag has been installed in %%NAGDIR%% with your blank
+Nag has been installed in %%HORDIR%% with your blank
 configuration files.
 
-Horde must be configured; if not, see `pkg_info -D -x horde'.
+Horde must be configured; if not, see `pkg_info -Dx horde-base'.
 
 Then, you have to create the table nag_tasks, from the SQL script
-%%NAGDIR%%/scripts/sql/nag.sql.
+%%HORDIR%%/scripts/sql/nag.sql.
 For example, if your database is MySQL, you may run
 mysql --user=root --password=yourpass horde < nag.sql
 

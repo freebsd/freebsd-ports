@@ -1,11 +1,11 @@
 ************************************************************************
-Turba has been installed in %%TURBADIR%% with your blank
+Turba has been installed in %%HORDIR%% with your blank
 configuration files.
 
-Horde must be configured; if not, see `pkg_info -D -x horde'.
+Horde must be configured; if not, see `pkg_info -Dx horde'.
 
 Then, you might have to tune the configuration files located in
-%%CONFDIR%%/, specially the file sources.php.
+%%HORCFG%%/, specially the file sources.php.
 
 Warning: if you don't use some source, deactivate it, or you could
 ******** experience bad response times!
@@ -15,7 +15,7 @@ Then, you must login to Horde as a Horde Administrator to finish the
 configuration.
 
 You have to create a table in your database; please see
-%%TURBADIR%%/scripts/.
+%%HORDIR%%/scripts/.
 You might create a LDAP schema: please see the doc LDAP.
 
 ************************************************************************

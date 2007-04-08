@@ -7,13 +7,13 @@
 
 PORTNAME=	horde
 DISTVERSION=	3.1.4
+DISTVERSIONPREFIX=
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	HORDE
 PKGNAMESUFFIX=	-base
 
 MAINTAINER=	beech@alaskaparadise.com
-COMMENT=	A common code-base used by Horde applications, written in PHP
+COMMENT=	Common code-base used by Horde applications, written in PHP
 
 #----------------------------------------------------------------------------
 # You may define these options:
@@ -80,13 +80,8 @@ RUN_DEPENDS+=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
 
 CONFLICTS=	horde-2.*
 
-NO_BUILD=	yes
 USE_GETTEXT=	yes	# Already implied by USE_PHP =gettext, to pet portlint
 USE_PHP=	ctype gettext session
-SUB_FILES=	pkg-message pkg-deinstall pkg-install
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .if defined(WITH_SUPHP) && !defined(WITHOUT_SUPHP)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/suphp:${PORTSDIR}/www/suphp
@@ -197,30 +192,8 @@ RUN_DEPENDS+=	${PEARDIR}/Services/Weather.php:${PORTSDIR}/misc/pear-Services_Wea
 RUN_DEPENDS+=	${LOCALBASE}/share/GeoIP/GeoIP.dat:${PORTSDIR}/net/GeoIP
 .endif
 
-REINPLACE_ARGS=	-i.beforeHorde
 PORTDOCS=	README CHANGES CODING_STANDARDS CONTRIBUTING CREDITS HACKING INSTALL \
 		PERFORMANCE RELEASE_NOTES SECURITY TODO TRANSLATIONS UPGRADING
-CONFFILE=	conf.php hooks.php mime_drivers.php motd.php nls.php prefs.php registry.php
-SUB_DIRS=	admin config js lib locale po scripts services templates themes util
-
-LHORDEDIR?=	www/horde
-LHORDESBIN?=	sbin
-
-PLIST_SUB=	HORDEDIR=${LHORDEDIR} HORDESBIN=${LHORDESBIN}
-SUB_LIST+=	HORDEDIR=${HORDEDIR} HORDESBIN=${HORDESBIN}	\
-		HORDEADMUSR=${HORDEADMUSR} HORDEGRP=${WWWGRP}
-
-HORDEDIR=	${PREFIX}/${LHORDEDIR}
-HORDESBIN=	${PREFIX}/${LHORDESBIN}
-CONFDIR=	${HORDEDIR}/config
-
-PEARDIR?=	${LOCALBASE}/share/pear
-LOG_FILE?=	/var/log/horde.log
-
-PATCHES2RM=	po/translation.php config/conf.xml scripts/sql/README	\
-		config/mime_drivers.php.dist config/registry.php.dist
-SEDIN2RM=	lib/Horde/Auth/mcal.php config/conf.xml docs/INSTALL	\
-		config/mime_drivers.php.dist
 
 .include <bsd.port.pre.mk>
 
@@ -233,13 +206,7 @@ USE_PHP+=	mcal
 . endif
 .endif
 
-post-extract:
-	@${MV} ${WRKSRC}/README ${WRKSRC}/docs/
-
-pre-configure:
-	@${RM} ${PATCHES2RM:S|^|${WRKSRC}/|:S|$|.orig|}
-		@${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:"\
-		 ${WRKSRC}/config/mime_drivers.php.dist
+pre-patch:
 .if !defined(WITHOUT_X11)
 . if !defined(WITHOUT_WV)
 	@${REINPLACE_CMD} -e "s://UNCOMMENTIFWV::" ${WRKSRC}/config/mime_drivers.php.dist
@@ -267,16 +234,10 @@ pre-configure:
 	@${REINPLACE_CMD} -e "s:GeoIP lookup will not be performed.\"/>:GeoIP lookup will not be performed.\">${LOCALBASE}/share/GeoIP/GeoIP.dat</configstring>:" \
 		${WRKSRC}/config/conf.xml
 .endif
-	@${REINPLACE_CMD} -e "s:/tmp/horde.log:${LOG_FILE}:" ${WRKSRC}/config/conf.xml
 	@${REINPLACE_CMD} -e "s:/etc/mpasswd:${LOCALBASE}/etc/mpasswd:g"	\
 		${WRKSRC}/lib/Horde/Auth/mcal.php
 	@${REINPLACE_CMD} -e "s:/usr/local/apache/htdocs:${PREFIX}/www:g"	\
-		${WRKSRC}/docs/INSTALL
-	@${RM} ${SEDIN2RM:S|^|${WRKSRC}/|:S|$|.beforeHorde|}
-	@(cd ${WRKSRC}/scripts &&	\
-		${FIND} . -name "*.php" -exec	\
-		${REINPLACE_CMD} -e "s:/usr/local/bin/php: ${LOCALBASE}/bin/php:;s:/usr/bin/php: ${LOCALBASE}/bin/php:" {} \; && \
-		${FIND} . -name "*.beforeHorde" -delete)
+		${WRKDIR}/docs/INSTALL
 
 pre-install:
 .if !defined(WITHOUT_SUPPORTED_DB) && exists(${LOCALBASE}/bin/php)
@@ -302,41 +263,5 @@ pre-install:
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .endif
 
-#	Copy RCSID tag from conf.xml into conf.php to stop Horde complaining
-	@if ! ${GREP} -q -e "$$Horde.*conf\.xml" ${WRKSRC}/config/conf.php.dist; then \
-	  ${GREP} -h "$$Horde.*conf\.xml" ${WRKSRC} ${WRKSRC}/config/conf.xml \
-	    | ${SED} -e 's#^ *<!--#//#' -e 's# *--> *$$##g' \
-	    >> ${WRKSRC}/config/conf.php.dist; \
-	fi
-
-do-install:
-	@${MKDIR}  ${HORDEDIR}
-	@${CP} -Rp ${SUB_DIRS:S|^|${WRKSRC}/|} ${HORDEDIR}/
-	@${CP} -p  ${WRKSRC}/*.php ${HORDEDIR}
-	@${CP} ${WRKSRC}/scripts/set_perms.sh ${HORDESBIN}/horde_set_perms.sh
-	@${CHMOD} u+x ${HORDESBIN}/horde_set_perms.sh
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${HORDEDIR}/
-	@${CHMOD} -R o-rwx ${HORDEDIR}/
-	${ECHO_CMD} @exec ${CHOWN} -R ${WWWOWN}:${WWWGRP}\
-		%D/${HORDEDIR:S|^${PREFIX}/||}/ >> ${TMPPLIST}
-	${ECHO_CMD} @exec ${CHMOD} -R o-rwx\
-		%D/${HORDEDIR:S|^${PREFIX}/||}/ >> ${TMPPLIST}
-	${TOUCH} ${LOG_FILE}
-	${CHOWN} ${WWWOWN}:${WWWGRP} ${LOG_FILE}
-	${ECHO_CMD} "@exec ${TOUCH} ${LOG_FILE};${CHOWN} ${WWWOWN}:${WWWGRP} ${LOG_FILE}"\
-		>> ${TMPPLIST}
-	${ECHO_CMD} "@unexec if [ ! -s ${LOG_FILE} ];then ${RM} -f ${LOG_FILE};fi"\
-		>> ${TMPPLIST}
-.if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}/
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${DOCSDIR}/
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.endif
-
-post-install:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
-
+.include "${.CURDIR}/../../www/horde-base/bsd.horde.mk"
 .include <bsd.port.post.mk>

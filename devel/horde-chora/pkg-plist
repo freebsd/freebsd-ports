@@ -1,160 +1,152 @@
-%%HORDE_INC%%/httpd-chora.conf
-%%PORTDOCS%%%%DOCSDIR%%/BUGS
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%CHORADIR%%/annotate.php
-%%CHORADIR%%/browse.php
-%%CHORADIR%%/co.php
-%%CHORADIR%%/config/.htaccess
-%%CHORADIR%%/config/conf.xml
-%%CHORADIR%%/config/cvsgraph.conf.dist
-%%CHORADIR%%/config/longIntro.txt.dist
-%%CHORADIR%%/config/mime_drivers.php.dist
-%%CHORADIR%%/config/prefs.php.dist
-%%CHORADIR%%/config/sourceroots.php.dist
-%%CHORADIR%%/cvs.php
-%%CHORADIR%%/cvsgraph.php
-%%CHORADIR%%/diff.php
-%%CHORADIR%%/history.php
-%%CHORADIR%%/index.php
-%%CHORADIR%%/lib/.htaccess
-%%CHORADIR%%/lib/Chora.php
-%%CHORADIR%%/lib/base.php
-%%CHORADIR%%/lib/version.php
-%%CHORADIR%%/locale/.htaccess
-%%CHORADIR%%/locale/cs_CZ/LC_MESSAGES/chora.mo
-%%CHORADIR%%/locale/de_DE/LC_MESSAGES/chora.mo
-%%CHORADIR%%/locale/de_DE/help.xml
-%%CHORADIR%%/locale/en_US/help.xml
-%%CHORADIR%%/locale/es_ES/LC_MESSAGES/chora.mo
-%%CHORADIR%%/locale/es_ES/help.xml
-%%CHORADIR%%/locale/fi_FI/LC_MESSAGES/chora.mo
-%%CHORADIR%%/locale/fi_FI/help.xml
-%%CHORADIR%%/locale/fr_FR/LC_MESSAGES/chora.mo
-%%CHORADIR%%/locale/nb_NO/LC_MESSAGES/chora.mo
-%%CHORADIR%%/locale/nl_NL/LC_MESSAGES/chora.mo
-%%CHORADIR%%/locale/pl_PL/LC_MESSAGES/chora.mo
-%%CHORADIR%%/locale/pt_BR/LC_MESSAGES/chora.mo
-%%CHORADIR%%/locale/ro_RO/LC_MESSAGES/chora.mo
-%%CHORADIR%%/locale/ru_RU/LC_MESSAGES/chora.mo
-%%CHORADIR%%/locale/sk_SK/LC_MESSAGES/chora.mo
-%%CHORADIR%%/locale/sv_SE/LC_MESSAGES/chora.mo
-%%CHORADIR%%/locale/zh_CN/LC_MESSAGES/chora.mo
-%%CHORADIR%%/locale/zh_TW/LC_MESSAGES/chora.mo
-%%CHORADIR%%/patchsets.php
-%%CHORADIR%%/po/.htaccess
-%%CHORADIR%%/po/README
-%%CHORADIR%%/po/chora.pot
-%%CHORADIR%%/po/cs_CZ.po
-%%CHORADIR%%/po/de_DE.po
-%%CHORADIR%%/po/es_ES.po
-%%CHORADIR%%/po/fi_FI.po
-%%CHORADIR%%/po/fr_FR.po
-%%CHORADIR%%/po/nb_NO.po
-%%CHORADIR%%/po/nl_NL.po
-%%CHORADIR%%/po/pl_PL.po
-%%CHORADIR%%/po/pt_BR.po
-%%CHORADIR%%/po/ro_RO.po
-%%CHORADIR%%/po/ru_RU.po
-%%CHORADIR%%/po/sk_SK.po
-%%CHORADIR%%/po/sv_SE.po
-%%CHORADIR%%/po/zh_CN.po
-%%CHORADIR%%/po/zh_TW.po
-%%CHORADIR%%/stats.php
-%%CHORADIR%%/templates/.htaccess
-%%CHORADIR%%/templates/annotate/footer.inc
-%%CHORADIR%%/templates/annotate/header.inc
-%%CHORADIR%%/templates/annotate/line.inc
-%%CHORADIR%%/templates/checkout/checkout.inc
-%%CHORADIR%%/templates/common-header.inc
-%%CHORADIR%%/templates/cvsgraph/cvsgraph.inc
-%%CHORADIR%%/templates/diff/hr/add.inc
-%%CHORADIR%%/templates/diff/hr/change.inc
-%%CHORADIR%%/templates/diff/hr/empty.inc
-%%CHORADIR%%/templates/diff/hr/footer.inc
-%%CHORADIR%%/templates/diff/hr/header.inc
-%%CHORADIR%%/templates/diff/hr/nochange.inc
-%%CHORADIR%%/templates/diff/hr/remove.inc
-%%CHORADIR%%/templates/diff/hr/row.inc
-%%CHORADIR%%/templates/directory/back.inc
-%%CHORADIR%%/templates/directory/dir.inc
-%%CHORADIR%%/templates/directory/file.inc
-%%CHORADIR%%/templates/directory/footer.inc
-%%CHORADIR%%/templates/directory/header.inc
-%%CHORADIR%%/templates/error_page.inc
-%%CHORADIR%%/templates/headerbar.inc
-%%CHORADIR%%/templates/history/blank.inc
-%%CHORADIR%%/templates/history/branch_cell.inc
-%%CHORADIR%%/templates/history/footer.inc
-%%CHORADIR%%/templates/history/header.inc
-%%CHORADIR%%/templates/history/rev.inc
-%%CHORADIR%%/templates/history/row_end.inc
-%%CHORADIR%%/templates/history/row_start.inc
-%%CHORADIR%%/templates/log/request.inc
-%%CHORADIR%%/templates/log/rev.inc
-%%CHORADIR%%/templates/menu.inc
-%%CHORADIR%%/templates/patchsets/ps.inc
-%%CHORADIR%%/templates/stats/stats.inc
-%%CHORADIR%%/themes/burntorange/screen.css
-%%CHORADIR%%/themes/graphics/back.png
-%%CHORADIR%%/themes/graphics/chora.png
-%%CHORADIR%%/themes/graphics/deleted.png
-%%CHORADIR%%/themes/graphics/favicon.ico
-%%CHORADIR%%/themes/graphics/folder.png
-%%CHORADIR%%/themes/screen.css
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%CHORADIR%%/themes/graphics
-@dirrm %%CHORADIR%%/themes/burntorange
-@dirrm %%CHORADIR%%/themes
-@dirrm %%CHORADIR%%/templates/stats
-@dirrm %%CHORADIR%%/templates/patchsets
-@dirrm %%CHORADIR%%/templates/log
-@dirrm %%CHORADIR%%/templates/history
-@dirrm %%CHORADIR%%/templates/directory
-@dirrm %%CHORADIR%%/templates/diff/hr
-@dirrm %%CHORADIR%%/templates/diff
-@dirrm %%CHORADIR%%/templates/cvsgraph
-@dirrm %%CHORADIR%%/templates/checkout
-@dirrm %%CHORADIR%%/templates/annotate
-@dirrm %%CHORADIR%%/templates
-@dirrm %%CHORADIR%%/po
-@dirrm %%CHORADIR%%/locale/zh_TW/LC_MESSAGES
-@dirrm %%CHORADIR%%/locale/zh_TW
-@dirrm %%CHORADIR%%/locale/zh_CN/LC_MESSAGES
-@dirrm %%CHORADIR%%/locale/zh_CN
-@dirrm %%CHORADIR%%/locale/sv_SE/LC_MESSAGES
-@dirrm %%CHORADIR%%/locale/sv_SE
-@dirrm %%CHORADIR%%/locale/sk_SK/LC_MESSAGES
-@dirrm %%CHORADIR%%/locale/sk_SK
-@dirrm %%CHORADIR%%/locale/ru_RU/LC_MESSAGES
-@dirrm %%CHORADIR%%/locale/ru_RU
-@dirrm %%CHORADIR%%/locale/ro_RO/LC_MESSAGES
-@dirrm %%CHORADIR%%/locale/ro_RO
-@dirrm %%CHORADIR%%/locale/pt_BR/LC_MESSAGES
-@dirrm %%CHORADIR%%/locale/pt_BR
-@dirrm %%CHORADIR%%/locale/pl_PL/LC_MESSAGES
-@dirrm %%CHORADIR%%/locale/pl_PL
-@dirrm %%CHORADIR%%/locale/nl_NL/LC_MESSAGES
-@dirrm %%CHORADIR%%/locale/nl_NL
-@dirrm %%CHORADIR%%/locale/nb_NO/LC_MESSAGES
-@dirrm %%CHORADIR%%/locale/nb_NO
-@dirrm %%CHORADIR%%/locale/fr_FR/LC_MESSAGES
-@dirrm %%CHORADIR%%/locale/fr_FR
-@dirrm %%CHORADIR%%/locale/fi_FI/LC_MESSAGES
-@dirrm %%CHORADIR%%/locale/fi_FI
-@dirrm %%CHORADIR%%/locale/es_ES/LC_MESSAGES
-@dirrm %%CHORADIR%%/locale/es_ES
-@dirrm %%CHORADIR%%/locale/en_US
-@dirrm %%CHORADIR%%/locale/de_DE/LC_MESSAGES
-@dirrm %%CHORADIR%%/locale/de_DE
-@dirrm %%CHORADIR%%/locale/cs_CZ/LC_MESSAGES
-@dirrm %%CHORADIR%%/locale/cs_CZ
-@dirrm %%CHORADIR%%/locale
-@dirrm %%CHORADIR%%/lib
-@dirrmtry %%CHORADIR%%/config
-@dirrmtry %%CHORADIR%%
+%%HORDIR%%/.htaccess
+%%HORDIR%%/annotate.php
+%%HORDIR%%/browse.php
+%%HORDIR%%/co.php
+%%HORDIR%%/config/.htaccess
+%%HORDIR%%/config/conf.xml
+%%HORDIR%%/config/cvsgraph.conf.dist
+%%HORDIR%%/config/longIntro.txt.dist
+%%HORDIR%%/config/mime_drivers.php.dist
+%%HORDIR%%/config/prefs.php.dist
+%%HORDIR%%/config/sourceroots.php.dist
+%%HORDIR%%/cvs.php
+%%HORDIR%%/cvsgraph.php
+%%HORDIR%%/diff.php
+%%HORDIR%%/history.php
+%%HORDIR%%/index.php
+%%HORDIR%%/lib/.htaccess
+%%HORDIR%%/lib/Chora.php
+%%HORDIR%%/lib/base.php
+%%HORDIR%%/lib/version.php
+%%HORDIR%%/locale/.htaccess
+%%HORDIR%%/locale/cs_CZ/LC_MESSAGES/chora.mo
+%%HORDIR%%/locale/de_DE/LC_MESSAGES/chora.mo
+%%HORDIR%%/locale/de_DE/help.xml
+%%HORDIR%%/locale/en_US/help.xml
+%%HORDIR%%/locale/es_ES/LC_MESSAGES/chora.mo
+%%HORDIR%%/locale/es_ES/help.xml
+%%HORDIR%%/locale/fi_FI/LC_MESSAGES/chora.mo
+%%HORDIR%%/locale/fi_FI/help.xml
+%%HORDIR%%/locale/fr_FR/LC_MESSAGES/chora.mo
+%%HORDIR%%/locale/nb_NO/LC_MESSAGES/chora.mo
+%%HORDIR%%/locale/nl_NL/LC_MESSAGES/chora.mo
+%%HORDIR%%/locale/pl_PL/LC_MESSAGES/chora.mo
+%%HORDIR%%/locale/pt_BR/LC_MESSAGES/chora.mo
+%%HORDIR%%/locale/ro_RO/LC_MESSAGES/chora.mo
+%%HORDIR%%/locale/ru_RU/LC_MESSAGES/chora.mo
+%%HORDIR%%/locale/sk_SK/LC_MESSAGES/chora.mo
+%%HORDIR%%/locale/sv_SE/LC_MESSAGES/chora.mo
+%%HORDIR%%/locale/zh_CN/LC_MESSAGES/chora.mo
+%%HORDIR%%/locale/zh_TW/LC_MESSAGES/chora.mo
+%%HORDIR%%/patchsets.php
+%%HORDIR%%/po/.htaccess
+%%HORDIR%%/po/README
+%%HORDIR%%/po/chora.pot
+%%HORDIR%%/po/cs_CZ.po
+%%HORDIR%%/po/de_DE.po
+%%HORDIR%%/po/es_ES.po
+%%HORDIR%%/po/fi_FI.po
+%%HORDIR%%/po/fr_FR.po
+%%HORDIR%%/po/nb_NO.po
+%%HORDIR%%/po/nl_NL.po
+%%HORDIR%%/po/pl_PL.po
+%%HORDIR%%/po/pt_BR.po
+%%HORDIR%%/po/ro_RO.po
+%%HORDIR%%/po/ru_RU.po
+%%HORDIR%%/po/sk_SK.po
+%%HORDIR%%/po/sv_SE.po
+%%HORDIR%%/po/zh_CN.po
+%%HORDIR%%/po/zh_TW.po
+%%HORDIR%%/stats.php
+%%HORDIR%%/templates/.htaccess
+%%HORDIR%%/templates/annotate/footer.inc
+%%HORDIR%%/templates/annotate/header.inc
+%%HORDIR%%/templates/annotate/line.inc
+%%HORDIR%%/templates/checkout/checkout.inc
+%%HORDIR%%/templates/common-header.inc
+%%HORDIR%%/templates/cvsgraph/cvsgraph.inc
+%%HORDIR%%/templates/diff/hr/add.inc
+%%HORDIR%%/templates/diff/hr/change.inc
+%%HORDIR%%/templates/diff/hr/empty.inc
+%%HORDIR%%/templates/diff/hr/footer.inc
+%%HORDIR%%/templates/diff/hr/header.inc
+%%HORDIR%%/templates/diff/hr/nochange.inc
+%%HORDIR%%/templates/diff/hr/remove.inc
+%%HORDIR%%/templates/diff/hr/row.inc
+%%HORDIR%%/templates/directory/back.inc
+%%HORDIR%%/templates/directory/dir.inc
+%%HORDIR%%/templates/directory/file.inc
+%%HORDIR%%/templates/directory/footer.inc
+%%HORDIR%%/templates/directory/header.inc
+%%HORDIR%%/templates/error_page.inc
+%%HORDIR%%/templates/headerbar.inc
+%%HORDIR%%/templates/history/blank.inc
+%%HORDIR%%/templates/history/branch_cell.inc
+%%HORDIR%%/templates/history/footer.inc
+%%HORDIR%%/templates/history/header.inc
+%%HORDIR%%/templates/history/rev.inc
+%%HORDIR%%/templates/history/row_end.inc
+%%HORDIR%%/templates/history/row_start.inc
+%%HORDIR%%/templates/log/request.inc
+%%HORDIR%%/templates/log/rev.inc
+%%HORDIR%%/templates/menu.inc
+%%HORDIR%%/templates/patchsets/ps.inc
+%%HORDIR%%/templates/stats/stats.inc
+%%HORDIR%%/themes/burntorange/screen.css
+%%HORDIR%%/themes/graphics/back.png
+%%HORDIR%%/themes/graphics/chora.png
+%%HORDIR%%/themes/graphics/deleted.png
+%%HORDIR%%/themes/graphics/favicon.ico
+%%HORDIR%%/themes/graphics/folder.png
+%%HORDIR%%/themes/screen.css
+@dirrmtry %%HORDIR%%/config
+@dirrm %%HORDIR%%/lib
+@dirrm %%HORDIR%%/locale/cs_CZ/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/cs_CZ
+@dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/de_DE
+@dirrm %%HORDIR%%/locale/en_US
+@dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/es_ES
+@dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fi_FI
+@dirrm %%HORDIR%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fr_FR
+@dirrm %%HORDIR%%/locale/nb_NO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nb_NO
+@dirrm %%HORDIR%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nl_NL
+@dirrm %%HORDIR%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pl_PL
+@dirrm %%HORDIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pt_BR
+@dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ro_RO
+@dirrm %%HORDIR%%/locale/ru_RU/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ru_RU
+@dirrm %%HORDIR%%/locale/sk_SK/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sk_SK
+@dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sv_SE
+@dirrm %%HORDIR%%/locale/zh_CN/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/zh_CN
+@dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/zh_TW
+@dirrm %%HORDIR%%/locale
+@dirrm %%HORDIR%%/po
+@dirrm %%HORDIR%%/templates/annotate
+@dirrm %%HORDIR%%/templates/checkout
+@dirrm %%HORDIR%%/templates/cvsgraph
+@dirrm %%HORDIR%%/templates/diff/hr
+@dirrm %%HORDIR%%/templates/diff
+@dirrm %%HORDIR%%/templates/directory
+@dirrm %%HORDIR%%/templates/history
+@dirrm %%HORDIR%%/templates/log
+@dirrm %%HORDIR%%/templates/patchsets
+@dirrm %%HORDIR%%/templates/stats
+@dirrm %%HORDIR%%/templates
+@dirrm %%HORDIR%%/themes/burntorange
+@dirrm %%HORDIR%%/themes/graphics
+@dirrm %%HORDIR%%/themes
+@dirrmtry %%HORDIR%%
+@dirrmtry %%HORBAS%%
