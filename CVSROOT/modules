@@ -5262,6 +5262,7 @@ ja-typist	ports/japanese/typist
 ja-uim-anthy	ports/japanese/uim-anthy
 ja-uim-canna	ports/japanese/uim-canna
 ja-uim-prime	ports/japanese/uim-prime
+ja-uim-tomoe-gtk	ports/japanese/uim-tomoe-gtk
 ja-vera-fpw	ports/japanese/vera-fpw
 ja-vflib	ports/japanese/vflib
 ja-vftool	ports/japanese/vftool
