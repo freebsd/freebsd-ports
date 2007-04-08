@@ -22,12 +22,17 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/xpp
+PLIST_FILES=	bin/xpp share/doc/xpp/README
+PLIST_DIRS=	share/doc/xpp
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|$$(all_includes)|-I ${PREFIX}/include|' \
 	    ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|CFLAGS =|CFLAGS +=|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|printFiles::get|get|' ${WRKSRC}/xpp.h
+
+post-install:	 
+	${MKDIR} ${PREFIX}/share/doc/xpp
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xpp
 
 .include <bsd.port.mk>
