@@ -1,0 +1,11 @@
+--- artsc/artsdsp.in.orig	Sun Apr  8 15:27:00 2007
++++ artsc/artsdsp.in	Sun Apr  8 15:27:10 2007
+@@ -109,7 +109,7 @@
+        arch_libdir=lib
+        ;;
+     64-bit)
+-       arch_libdir=lib64
++       arch_libdir=lib
+        ;;
+     *)
+        exit 1
