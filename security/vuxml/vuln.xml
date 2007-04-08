@@ -44,19 +44,19 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>CVE reports:</p>
+	<p>CVE reports:</p>
 	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1719">
-          <p>Buffer overflow in eject.c in Jason W. Bacon mcweject 0.9 on
-          FreeBSD, and possibly other versions, allows local users to execute
-          arbitrary code via a long command line argument, possibly involving
-          the device name.</p>
-        </blockquote>
+	  <p>Buffer overflow in eject.c in Jason W. Bacon mcweject 0.9 on
+	    FreeBSD, and possibly other versions, allows local users to execute
+	    arbitrary code via a long command line argument, possibly involving
+	    the device name.</p>
+	</blockquote>
       </body>
     </description>
     <references>
-    <freebsdpr>ports/111365</freebsdpr>
-    <url>http://www.milw0rm.com/exploits/3578</url>
-    <cvename>CVE-2007-1719</cvename>
+      <cvename>CVE-2007-1719</cvename>
+      <freebsdpr>ports/111365</freebsdpr>
+      <url>http://www.milw0rm.com/exploits/3578</url>
     </references>
     <dates>
       <discovery>2007-03-27</discovery>
@@ -100,7 +100,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="34414a1e-e377-11db-b8ab-000c76189c4c">
-    <topic>Zope2 -- Cross-site scripting vulnerability</topic>
+    <topic>zope -- cross-site scripting vulnerability</topic>
     <affects>
       <package>
 	<name>zope</name>
@@ -112,23 +112,24 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-        <p>The Zope Team reports:</p>
-        <blockquote cite="http://www.zope.org/Products/Zope/Hotfix-2007-03-20/announcement/view">
-          <p>A vulnerability has been discovered in Zope, where by certain types
-          of misuse of HTTP GET, an attacker could gain elevated privileges. All
-          Zope versions up to and including 2.10.2 are affected.</p>
-        </blockquote>
+	<p>The Zope Team reports:</p>
+	<blockquote cite="http://www.zope.org/Products/Zope/Hotfix-2007-03-20/announcement/view">
+	  <p>A vulnerability has been discovered in Zope, where by certain types
+	    of misuse of HTTP GET, an attacker could gain elevated privileges. All
+	    Zope versions up to and including 2.10.2 are affected.</p>
+	</blockquote>
       </body>
     </description>
     <references>
-    <freebsdpr>ports/111119</freebsdpr>
-    <url>http://www.zope.org/Products/Zope/Hotfix-2007-03-20/announcement/view</url>
-    <cvename>CVE-2007-0240</cvename>
-    <bid>23084</bid>
+      <bid>23084</bid>
+      <cvename>CVE-2007-0240</cvename>
+      <freebsdpr>ports/111119</freebsdpr>
+      <url>http://www.zope.org/Products/Zope/Hotfix-2007-03-20/announcement/view</url>
     </references>
     <dates>
       <discovery>2007-01-16</discovery>
       <entry>2007-04-05</entry>
+      <modified>2007-04-08</modified>
     </dates>
   </vuln>
 
