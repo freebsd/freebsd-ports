@@ -53,4 +53,8 @@ with a web browser, fill the web form. Please place the downloaded\n\
 ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}\n\n
 .endif
 
+.if ${OSVERSION} < 700037
+IGNORE=			needs CAM sg
+.endif
+
 .include <bsd.port.post.mk>
