@@ -1,0 +1,3 @@
+sbin/st
+%%PORTDOCS%%%%DOCSDIR%%/sthelp.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

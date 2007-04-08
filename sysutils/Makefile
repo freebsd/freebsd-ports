@@ -553,6 +553,7 @@
     SUBDIR += screenie
     SUBDIR += sdd
     SUBDIR += searchmonkey
+    SUBDIR += seatools
     SUBDIR += sec
     SUBDIR += sensors-applet
     SUBDIR += serpentine
