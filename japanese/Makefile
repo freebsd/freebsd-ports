@@ -40,7 +40,6 @@
     SUBDIR += drpl
     SUBDIR += dvi2dvi
     SUBDIR += dvi2tty
-    SUBDIR += dvipdfm
     SUBDIR += dvipsk
     SUBDIR += e2ps
     SUBDIR += easypr
