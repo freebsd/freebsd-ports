@@ -23,6 +23,8 @@ USE_RC_SUBR=	yes
 DIST_SUBDIR=	zope
 HOTFIX=		Hotfix_20060821
 
+FORBIDDEN=	contains cross-site scripting vulnerability
+
 # Note: the notes that follow reflect the decisions of prior maintainers
 # of this port. IOW, don't blame me if you don't like the way it's done.
 # Exceptions to this are marked as such.
