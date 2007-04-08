@@ -16,6 +16,10 @@ COMMENT=	HTML documentation tool for Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
+BROKEN=	does not fetch, ${MASTER_SITES} is gone
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=2007-06-08
+
 PLIST_FILES=	bin/hdoc
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
