@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="72999d57-d6f6-11db-961b-005056847b26">
+    <topic>webcalendar -- "noSet" variable overwrite vulnerability</topic>
+    <affects>
+      <package>
+	<name>WebCalendar</name>
+	<range><lt>1.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/24403/">
+	  <p>A vulnerability has been discovered in WebCalendar,
+	    which can be exploited by malicious people to compromise
+	    a vulnerable system.</p>
+	  <p>Input passed to unspecified parameters is not properly
+	    verified before being used with the "noSet" parameter set.
+	    This can be exploited to overwrite certain variables, and
+	    allows e.g. the inclusion of arbitrary PHP files from internal
+	    or external resources.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-1343</cvename>
+      <bid>22834</bid>
+      <url>http://sourceforge.net/project/shownotes.php?release_id=491130</url>
+      <url>http://xforce.iss.net/xforce/xfdb/32832</url>
+    </references>
+    <dates>
+      <discovery>2007-03-04</discovery>
+      <entry>2007-04-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="34414a1e-e377-11db-b8ab-000c76189c4c">
     <topic>Zope2 -- Cross-site scripting vulnerability</topic>
     <affects>
