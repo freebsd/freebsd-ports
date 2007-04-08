@@ -1,5 +1,5 @@
---- ../MailScanner-install-4.42.9.orig/lib/clamav-wrapper	Wed Jun  1 11:24:25 2005
-+++ lib/clamav-wrapper	Wed Jun  1 11:31:57 2005
+--- ../MailScanner-install-4.58.9.orig/lib/clamav-wrapper	Fri Mar 30 11:55:30 2007
++++ lib/clamav-wrapper	Fri Mar 30 11:55:54 2007
 @@ -51,6 +51,9 @@
  
  # You may want to check this script for bash-isms
@@ -10,7 +10,7 @@
  TempDir="/tmp/clamav.$$"
  ClamUser="clamav"
  ClamGroup="clamav"
-@@ -98,23 +101,23 @@
+@@ -98,23 +101,19 @@
  # LESS COMMON unpackers, which probably aren't installed by default
  # (hence disabled)
  # Uncomment ONE of the following lines if you have unrar installed
@@ -20,14 +20,13 @@
  
  # Uncomment ONE of the following lines if you have unarj installed
 -#ExtraScanOptions="$ExtraScanOptions --unarj"  
-+ExtraScanOptions="$ExtraScanOptions --unarj"  
++ExtraScanOptions="$ExtraScanOptions --arj"  
  #ExtraScanOptions="$ExtraScanOptions --unarj=/path/to/unarj" 
  
- # Uncomment ONE of the following lines if you have unace installed
+-# Uncomment ONE of the following lines if you have unace installed
 -#ExtraScanOptions="$ExtraScanOptions --unace"  
-+ExtraScanOptions="$ExtraScanOptions --unace"  
- #ExtraScanOptions="$ExtraScanOptions --unace=/path/to/unace" 
- 
+-#ExtraScanOptions="$ExtraScanOptions --unace=/path/to/unace" 
+-
  # Uncomment ONE of the following lines if you have lha installed
 -#ExtraScanOptions="$ExtraScanOptions --lha"  
 +ExtraScanOptions="$ExtraScanOptions --lha"  
@@ -35,7 +34,7 @@
  
  # Uncomment ONE of the following lines if you have zoo installed
 -#ExtraScanOptions="$ExtraScanOptions --zoo"  
-+ExtraScanOptions="$ExtraScanOptions --zoo"  
++ExtraScanOptions="$ExtraScanOptions --unzoo"  
  #ExtraScanOptions="$ExtraScanOptions --zoo=/path/to/unzoo" 
  
- # Uncomment next line if you need to disable Clam's DoS protection
+ # Now increase the allowed expansion size of zip files
