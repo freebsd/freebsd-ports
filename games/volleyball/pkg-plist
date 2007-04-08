@@ -21,8 +21,15 @@ bin/volleyball
 %%DATADIR%%/main_menu.png
 %%DATADIR%%/pointer.png
 %%DATADIR%%/select.png
+%%DATADIR%%/sounds/0.wav
+%%DATADIR%%/sounds/1.wav
+%%DATADIR%%/sounds/2.wav
+%%DATADIR%%/sounds/3.wav
+%%DATADIR%%/sounds/4.wav
+%%DATADIR%%/sounds/5.wav
 %%DATADIR%%/stage1.png
 %%DATADIR%%/title.png
+@dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/characters/turtle
 @dirrm %%DATADIR%%/characters/pingu
 @dirrm %%DATADIR%%/characters/matar
