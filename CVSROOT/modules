@@ -14021,6 +14021,7 @@ seahaven	ports/games/seahaven
 seahorse	ports/security/seahorse
 seamonkey	ports/www/seamonkey
 searchmonkey	ports/sysutils/searchmonkey
+seatools	ports/sysutils/seatools
 seaview		ports/biology/seaview
 sec		ports/sysutils/sec
 secpanel	ports/security/secpanel
