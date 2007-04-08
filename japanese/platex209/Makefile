@@ -7,7 +7,7 @@
 
 PORTNAME=	platex209
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/platex/
 DISTNAME=	${PORTNAME}
@@ -15,10 +15,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Old version of ASCII Japanese pLaTeX (based on LaTeX 2.09)
 
-BUILD_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex-tetex
-RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex-tetex
-
-CONFLICTS=	ja-ptex-[0-9]*
+BUILD_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex
+RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex
 
 TEXMFDIR=	share/texmf
 WEB2CDIR=	${TEXMFDIR}/web2c/ptex

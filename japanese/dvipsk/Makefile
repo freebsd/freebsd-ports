@@ -7,7 +7,7 @@
 
 PORTNAME=	dvipsk
 PORTVERSION=	5.95b
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%,hrs/teTeX,:S,$,:udvipspatch,}
@@ -27,11 +27,11 @@ COMMENT=	A DVI to PostScript translator + Japanese patch
 BUILD_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex-tetex
+		${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex
 RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex-tetex
+		${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
@@ -62,8 +62,7 @@ CONFIGURE_ARGS= --disable-multiplatform \
 		--with-system-t1lib --with-t1lib-libdir=${LIBT1_PREFIX}/lib \
 		--with-t1lib-include=${LIBT1_PREFIX}/include \
 		--without-xdvik --without-oxdvik
-CONFLICTS=	ja-ptex-base-[0-9]* \
-		dvipsk-tetex-[0-9]* \
+CONFLICTS=	dvipsk-tetex-[0-9]* \
 		dvips-[0-9]*
 
 MAN1=		dvips.1 afm2tfm.1

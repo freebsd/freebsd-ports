@@ -2898,3 +2898,5 @@ editors/emacs20-dl||2007-04-02|Has expired: unfetchable, obsolete
 editors/flim113-emacs20||2007-04-02|Has expired: unfetchable, obsolete
 editors/semi113-emacs20||2007-04-02|Has expired: unfetchable, obsolete
 lang/gfortran|lang/gcc42|2007-04-06|Superseded by and equivalent to gcc42
+japanese/ptex-tetex|japanese/ptex|2007-04-08|Merged into japanese/ptex
+japanese/ptex-base|japanese/ptex|2007-04-08|Merged into japanese/ptex

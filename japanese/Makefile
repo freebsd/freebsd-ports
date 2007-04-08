@@ -305,8 +305,6 @@
     SUBDIR += prime-el
     SUBDIR += prn
     SUBDIR += ptex
-    SUBDIR += ptex-base
-    SUBDIR += ptex-tetex
     SUBDIR += py-kanjilib
     SUBDIR += pycodec
     SUBDIR += pycodec-zope

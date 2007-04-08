@@ -7,7 +7,7 @@
 
 PORTNAME=	xdvik
 PORTVERSION=	${VERSION_XDVIK}.${VERSION_JPATCH}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xdvi
@@ -28,9 +28,9 @@ BUILD_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex-tetex \
-		${X11BASE}/${TTFMINCHO}:${PORTSDIR}/japanese/kochi-ttfonts \
-		${X11BASE}/${TTFGOTHIC}:${PORTSDIR}/japanese/kochi-ttfonts
+		${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex \
+		${X11BASE}/${TTFMINCHO}:${PORTSDIR}/japanese/ipa-ttfonts \
+		${X11BASE}/${TTFGOTHIC}:${PORTSDIR}/japanese/ipa-ttfonts
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
@@ -67,6 +67,7 @@ MAN1=		xdvi.1 xdvizilla.1 t1mapper.1
 INSTALL_WRKSRC=	${WRKSRC}/texk/xdvik
 PLIST_SUB=	TEXMFDIR=${TEXMFDIR} MKTEXLSR=${MKTEXLSR} \
 		XDVIETCDIR=${XDVIETCDIR}
+CONFLICTS=	xdvi-[0-9]* xdvi-*-[0-9]* xdvik-[0-9]*
 
 VERSION_XDVIK=	22.40y1
 VERSION_JPATCH=	1.21
@@ -81,8 +82,8 @@ XDVIETCDIR=	${TEXMFDIR}/xdvi/ptex
 MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
 
 CIDFONTDIR=	${TEXMFDIR}/dvipdfm/CIDFont
-TTFMINCHO=	lib/X11/fonts/TrueType/kochi-mincho-subst.ttf
-TTFGOTHIC=	lib/X11/fonts/TrueType/kochi-gothic-subst.ttf
+TTFMINCHO=	lib/X11/fonts/TrueType/ipam.ttf
+TTFGOTHIC=	lib/X11/fonts/TrueType/ipag.ttf
 VFONTCAPFT_SRC=	${WRKSRC}/vfontmap.freetype
 VFONTCAPFT_SUB=	CIDFONTDIR=${LOCALBASE}/${CIDFONTDIR} \
 		TTFMINCHO=${X11BASE}/${TTFMINCHO} \

@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070408:
+  AFFECTS: users of japanese/ptex{,-base,-tetex}
+  AUTHOR: hrs@FreeBSD.org
+
+  The japanese/ptex has been removed and japanese/ptex-tetex has been
+  renamed with japanese/ptex.  A pair of ptex and ptex-base and
+  ptex-tetex are basically the same with each other, so there should
+  be no functionality regression.
+
 20070407:
   AFFECTS: users of net-mgmt/nagios
   AUTHOR: jarrod@netleader.com.au

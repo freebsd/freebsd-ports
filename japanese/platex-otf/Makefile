@@ -6,6 +6,7 @@
 
 PORTNAME=	platex-otf
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	hrs
@@ -16,11 +17,11 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A pLaTeX package for OpenType font support
 
 BUILD_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		mktexlsr:${PORTSDIR}/japanese/ptex-tetex \
+		mktexlsr:${PORTSDIR}/japanese/ptex \
 		ovp2ovf-old:${PORTSDIR}/print/tex-omegaware-old \
-		pltotf-ptex:${PORTSDIR}/japanese/ptex-tetex
+		pltotf-ptex:${PORTSDIR}/japanese/ptex
 RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		platex:${PORTSDIR}/japanese/ptex-tetex \
+		platex:${PORTSDIR}/japanese/ptex \
 		udvips:${PORTSDIR}/japanese/dvipsk \
 		dvipdfmx:${PORTSDIR}/print/dvipdfmx
 
