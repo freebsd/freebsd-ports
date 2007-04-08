@@ -16699,6 +16699,7 @@ xxgdb		ports/devel/xxgdb
 xxkb		ports/x11/xxkb
 xxl		ports/devel/xxl
 xye		ports/games/xye
+xyssl		ports/security/xyssl
 xzgv		ports/graphics/xzgv
 xzip		ports/games/xzip
 xzoom		ports/x11/xzoom
