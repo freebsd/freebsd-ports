@@ -939,6 +939,7 @@
     SUBDIR += zebra
     SUBDIR += zebra-server
     SUBDIR += zillion
+    SUBDIR += zniper
     SUBDIR += zsync
     SUBDIR += ztelnet
 
