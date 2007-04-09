@@ -1,17 +1,17 @@
---- ./makefile.orig	Sun Feb 18 22:23:18 2007
-+++ ./makefile	Fri Feb 23 01:26:35 2007
-@@ -50,7 +50,7 @@
- #
- # NOTE: this makefile now works for MinGW/win32 builds as well!
- #
+--- ./makefile.orig	Fri Mar 30 04:03:29 2007
++++ ./makefile	Sun Apr  8 19:44:17 2007
+@@ -52,7 +52,7 @@
+ # for SDLMAME, set this to linux, freebsd, win32, or macosx (lowercase is important!)
+ #------------------------------------------------------------------------------------
+ 
 -SUBARCH = linux
 +SUBARCH = freebsd
  
  
  #-------------------------------------------------
-@@ -61,11 +61,13 @@
+@@ -63,11 +63,13 @@
  # uncomment next line to include the debugger
- #DEBUG = 1    
+ # DEBUG = 1    
   
 +ifeq ($(ARCH),i386)
  # uncomment next line to use DRC MIPS3 engine
@@ -23,7 +23,7 @@
  
  #-------------------------------------------------
  # specify build options; see each option below 
-@@ -172,8 +174,8 @@
+@@ -174,8 +176,8 @@
  
  # compiler, linker and utilities
  AR = @ar
@@ -34,7 +34,7 @@
  MD = -mkdir
  RM = @rm -f
  
-@@ -189,53 +191,12 @@
+@@ -191,53 +193,12 @@
  endif
  
  # by default, don't compile for a specific target CPU
@@ -90,7 +90,7 @@
  endif
  
  EMULATOR = $(NAME)$(EXE)
-@@ -273,7 +234,7 @@
+@@ -275,7 +236,7 @@
  # compile and linking flags
  #-------------------------------------------------
  
@@ -99,7 +99,7 @@
  	$(OPT_FLAGS) \
  	-std=gnu89 \
  	-I$(SRC)/$(TARGET) \
-@@ -284,6 +245,7 @@
+@@ -287,6 +248,7 @@
  	-I$(SRC)/lib/util \
  	-I$(SRC)/osd \
  	-I$(SRC)/osd/$(MAMEOS) \
@@ -107,7 +107,7 @@
  
  ifdef MESS
  CFLAGS += \
-@@ -302,7 +264,7 @@
+@@ -305,7 +267,7 @@
  endif	# PPC
  endif	# SYMBOLS
  
@@ -116,7 +116,7 @@
  	-Wall \
  	-Wpointer-arith \
  	-Wbad-function-cast \
-@@ -314,7 +276,7 @@
+@@ -317,7 +279,7 @@
  	-Wdeclaration-after-statement
  
  ifneq ($(OPTIMIZE),0)
@@ -125,7 +125,7 @@
  endif
  
  CFLAGS += -O$(OPTIMIZE)
-@@ -322,11 +284,9 @@
+@@ -325,11 +287,9 @@
  # extra options needed *only* for the osd files
  CFLAGSOSDEPEND = $(CFLAGS)
  

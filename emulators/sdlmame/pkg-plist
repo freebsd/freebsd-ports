@@ -3,8 +3,13 @@ bin/sdlmame
 libexec/sdlmame/chdman
 libexec/sdlmame/file2str
 libexec/sdlmame/jedutil
+libexec/sdlmame/makemeta
 libexec/sdlmame/mame
+libexec/sdlmame/png2bdc
+libexec/sdlmame/regrep
 libexec/sdlmame/romcmp
+libexec/sdlmame/srcclean
+libexec/sdlmame/testkeys
 %%PORTDOCS%%%%DOCSDIR%%/SDLMAME.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/license.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/mame.txt
