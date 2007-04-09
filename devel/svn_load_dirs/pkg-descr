@@ -1,0 +1,9 @@
+This Perl script is designed to load a number of directories into
+Subversion.  This is useful if you have a number of .zip's or
+tar.{Z,gz,bz2}'s for a particular package and want to load them into
+Subversion.
+
+This script is part of the Subversion distribution and it is assumed
+that it can be used under the same license terms as Subversion itself.
+
+WWW:	http://subversion.tigris.org/tools_contrib.html#client_side
