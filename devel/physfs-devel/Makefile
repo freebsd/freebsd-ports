@@ -37,7 +37,7 @@ post-patch:
 		 s|CHECK_LIBRARY_EXISTS("readline" "history.*|SET(HAVE_LIBHISTORY TRUE)|g; \
 		 s|" " \(readline curses\)|\1|' ${WRKSRC}/CMakeLists.txt
 
-	@${REINPLACE_CMD} -e 's|define SIZEOF_INT |&9999|g' \
+	@${REINPLACE_CMD} -e 's|\(define SIZEOF_INT\) 4|\1 (LONG_BIT/8)|g' \
 		${WRKSRC}/platform/unix.c
 
 do-configure::
