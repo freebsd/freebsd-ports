@@ -14668,6 +14668,7 @@ svgviewer	ports/graphics/svgviewer
 svk		ports/devel/svk
 svmlight	ports/science/svmlight
 svn2cl		ports/textproc/svn2cl
+svn_load_dirs	ports/devel/svn_load_dirs
 svndelta	ports/devel/svndelta
 svnmailer	ports/mail/svnmailer
 svnkit		ports/devel/svnkit
