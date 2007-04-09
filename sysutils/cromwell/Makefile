@@ -7,20 +7,23 @@
 
 PORTNAME=	cromwell
 PORTVERSION=	20060308
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://rink.nu/downloads/xbox/
 DISTNAME=	cromwell-snapshot-${PORTVERSION}
 
-# This patch allows Cromwell to load kernels directly from UFS partitions
+# cromwell-ufs:  suppor for reading kernels directly from UFS partitions
+# cromwell-kenv: support for passing kenv(1) options by putting
+#                'append foo1=bar1,foo2=bar2' in the linuxboot.cfg entry
+# cromwell-gcc4: adds missing prototypes so it will compile using gcc 4
 PATCH_SITES=		http://rink.nu/downloads/xbox-patches/
-PATCHFILES=		cromwell-ufs.diff
+PATCHFILES=		cromwell-ufs.diff cromwell-kenv.diff cromwell-gcc4.diff
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	rink@FreeBSD.org
 COMMENT=	Linux (and FreeBSD :-) BIOS images for the Microsoft Xbox
 
 USE_PERL5_BUILD=	yes
-USE_GCC=		3.4
 
 SUB_FILES=	pkg-message
 
