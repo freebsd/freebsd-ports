@@ -5,49 +5,49 @@ bin/avr-c++
 bin/avr-cpp
 bin/avr-g++
 bin/avr-gcc
-bin/avr-gcc-4.1.1
+bin/avr-gcc-4.1.2
 bin/avr-gccbug
-lib/gcc/avr/4.1.1/avr3/libgcc.a
-lib/gcc/avr/4.1.1/avr3/libgcov.a
-lib/gcc/avr/4.1.1/avr4/libgcc.a
-lib/gcc/avr/4.1.1/avr4/libgcov.a
-lib/gcc/avr/4.1.1/avr5/libgcc.a
-lib/gcc/avr/4.1.1/avr5/libgcov.a
-lib/gcc/avr/4.1.1/avr6/libgcc.a
-lib/gcc/avr/4.1.1/avr6/libgcov.a
-lib/gcc/avr/4.1.1/include/README
-lib/gcc/avr/4.1.1/include/fixed
-lib/gcc/avr/4.1.1/include/float.h
-lib/gcc/avr/4.1.1/include/iso646.h
-lib/gcc/avr/4.1.1/include/limits.h
-lib/gcc/avr/4.1.1/include/stdarg.h
-lib/gcc/avr/4.1.1/include/stdbool.h
-lib/gcc/avr/4.1.1/include/stddef.h
-lib/gcc/avr/4.1.1/include/syslimits.h
-lib/gcc/avr/4.1.1/include/unwind.h
-lib/gcc/avr/4.1.1/include/varargs.h
-lib/gcc/avr/4.1.1/install-tools/gsyslimits.h
-lib/gcc/avr/4.1.1/install-tools/include/README
-lib/gcc/avr/4.1.1/install-tools/include/float.h
-lib/gcc/avr/4.1.1/install-tools/include/iso646.h
-lib/gcc/avr/4.1.1/install-tools/include/limits.h
-lib/gcc/avr/4.1.1/install-tools/include/stdarg.h
-lib/gcc/avr/4.1.1/install-tools/include/stdbool.h
-lib/gcc/avr/4.1.1/install-tools/include/stddef.h
-lib/gcc/avr/4.1.1/install-tools/include/unwind.h
-lib/gcc/avr/4.1.1/install-tools/include/varargs.h
-lib/gcc/avr/4.1.1/install-tools/macro_list
-lib/gcc/avr/4.1.1/install-tools/mkheaders.conf
-lib/gcc/avr/4.1.1/libgcc.a
-lib/gcc/avr/4.1.1/libgcov.a
-libexec/gcc/avr/4.1.1/cc1
-libexec/gcc/avr/4.1.1/cc1plus
-libexec/gcc/avr/4.1.1/collect2
-libexec/gcc/avr/4.1.1/install-tools/fix-header
-libexec/gcc/avr/4.1.1/install-tools/fixinc.sh
-libexec/gcc/avr/4.1.1/install-tools/fixincl
-libexec/gcc/avr/4.1.1/install-tools/fixproto
-libexec/gcc/avr/4.1.1/install-tools/mkheaders
+lib/gcc/avr/4.1.2/avr3/libgcc.a
+lib/gcc/avr/4.1.2/avr3/libgcov.a
+lib/gcc/avr/4.1.2/avr4/libgcc.a
+lib/gcc/avr/4.1.2/avr4/libgcov.a
+lib/gcc/avr/4.1.2/avr5/libgcc.a
+lib/gcc/avr/4.1.2/avr5/libgcov.a
+lib/gcc/avr/4.1.2/avr6/libgcc.a
+lib/gcc/avr/4.1.2/avr6/libgcov.a
+lib/gcc/avr/4.1.2/include/README
+lib/gcc/avr/4.1.2/include/fixed
+lib/gcc/avr/4.1.2/include/float.h
+lib/gcc/avr/4.1.2/include/iso646.h
+lib/gcc/avr/4.1.2/include/limits.h
+lib/gcc/avr/4.1.2/include/stdarg.h
+lib/gcc/avr/4.1.2/include/stdbool.h
+lib/gcc/avr/4.1.2/include/stddef.h
+lib/gcc/avr/4.1.2/include/syslimits.h
+lib/gcc/avr/4.1.2/include/unwind.h
+lib/gcc/avr/4.1.2/include/varargs.h
+lib/gcc/avr/4.1.2/install-tools/gsyslimits.h
+lib/gcc/avr/4.1.2/install-tools/include/README
+lib/gcc/avr/4.1.2/install-tools/include/float.h
+lib/gcc/avr/4.1.2/install-tools/include/iso646.h
+lib/gcc/avr/4.1.2/install-tools/include/limits.h
+lib/gcc/avr/4.1.2/install-tools/include/stdarg.h
+lib/gcc/avr/4.1.2/install-tools/include/stdbool.h
+lib/gcc/avr/4.1.2/install-tools/include/stddef.h
+lib/gcc/avr/4.1.2/install-tools/include/unwind.h
+lib/gcc/avr/4.1.2/install-tools/include/varargs.h
+lib/gcc/avr/4.1.2/install-tools/macro_list
+lib/gcc/avr/4.1.2/install-tools/mkheaders.conf
+lib/gcc/avr/4.1.2/libgcc.a
+lib/gcc/avr/4.1.2/libgcov.a
+libexec/gcc/avr/4.1.2/cc1
+libexec/gcc/avr/4.1.2/cc1plus
+libexec/gcc/avr/4.1.2/collect2
+libexec/gcc/avr/4.1.2/install-tools/fix-header
+libexec/gcc/avr/4.1.2/install-tools/fixinc.sh
+libexec/gcc/avr/4.1.2/install-tools/fixincl
+libexec/gcc/avr/4.1.2/install-tools/fixproto
+libexec/gcc/avr/4.1.2/install-tools/mkheaders
 share/locale/be/LC_MESSAGES/cpplib.mo
 share/locale/be/LC_MESSAGES/gcc.mo
 share/locale/ca/LC_MESSAGES/cpplib.mo
@@ -79,17 +79,17 @@ share/locale/zh_TW/LC_MESSAGES/cpplib.mo
 share/locale/zh_TW/LC_MESSAGES/gcc.mo
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
-@dirrm lib/gcc/avr/4.1.1/avr3
-@dirrm lib/gcc/avr/4.1.1/avr4
-@dirrm lib/gcc/avr/4.1.1/avr5
-@dirrm lib/gcc/avr/4.1.1/avr6
-@dirrm lib/gcc/avr/4.1.1/include
-@dirrm lib/gcc/avr/4.1.1/install-tools/include
-@dirrm lib/gcc/avr/4.1.1/install-tools
-@dirrm lib/gcc/avr/4.1.1
+@dirrm lib/gcc/avr/4.1.2/avr3
+@dirrm lib/gcc/avr/4.1.2/avr4
+@dirrm lib/gcc/avr/4.1.2/avr5
+@dirrm lib/gcc/avr/4.1.2/avr6
+@dirrm lib/gcc/avr/4.1.2/include
+@dirrm lib/gcc/avr/4.1.2/install-tools/include
+@dirrm lib/gcc/avr/4.1.2/install-tools
+@dirrm lib/gcc/avr/4.1.2
 @dirrm lib/gcc/avr
 @dirrm lib/gcc
-@dirrm libexec/gcc/avr/4.1.1/install-tools
-@dirrm libexec/gcc/avr/4.1.1
+@dirrm libexec/gcc/avr/4.1.2/install-tools
+@dirrm libexec/gcc/avr/4.1.2
 @dirrm libexec/gcc/avr
 @dirrm libexec/gcc
