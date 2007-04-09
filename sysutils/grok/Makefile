@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	grok
-PORTVERSION=	20070224
+PORTVERSION=	20070402
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.semicomplete.com/projects/grok/ \
+MASTER_SITES=	http://www.semicomplete.com/files/grok/ \
 		http://www.atarininja.org/~wxs/distfiles/
 
 MAINTAINER=	wxs@atarininja.org
