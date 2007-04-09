@@ -1,166 +1,159 @@
-%%HORDE_INC%%/httpd-gollem.conf
-%%GOLLEMDIR%%/clipboard.php
-%%GOLLEMDIR%%/config/backends.php.dist
-%%GOLLEMDIR%%/config/conf.xml
-%%GOLLEMDIR%%/config/credentials.php.dist
-%%GOLLEMDIR%%/config/menu.php.dist
-%%GOLLEMDIR%%/config/mime_drivers.php.dist
-%%GOLLEMDIR%%/config/motd.php.dist
-%%GOLLEMDIR%%/config/prefs.php.dist
-%%GOLLEMDIR%%/index.php
-%%GOLLEMDIR%%/js/stripe.js
-%%GOLLEMDIR%%/lib/Auth/gollem.php
-%%GOLLEMDIR%%/lib/Block/tree_menu.php
-%%GOLLEMDIR%%/lib/Gollem.php
-%%GOLLEMDIR%%/lib/MIME/Viewer/images.php
-%%GOLLEMDIR%%/lib/Session.php
-%%GOLLEMDIR%%/lib/api.php
-%%GOLLEMDIR%%/lib/base.php
-%%GOLLEMDIR%%/lib/prefs.php
-%%GOLLEMDIR%%/lib/version.php
-%%GOLLEMDIR%%/locale/bg_BG/LC_MESSAGES/gollem.mo
-%%GOLLEMDIR%%/locale/cs_CZ/LC_MESSAGES/gollem.mo
-%%GOLLEMDIR%%/locale/da_DK/LC_MESSAGES/gollem.mo
-%%GOLLEMDIR%%/locale/de_DE/LC_MESSAGES/gollem.mo
-%%GOLLEMDIR%%/locale/en_US/help.xml
-%%GOLLEMDIR%%/locale/es_ES/LC_MESSAGES/gollem.mo
-%%GOLLEMDIR%%/locale/es_ES/help.xml
-%%GOLLEMDIR%%/locale/fi_FI/LC_MESSAGES/gollem.mo
-%%GOLLEMDIR%%/locale/fi_FI/help.xml
-%%GOLLEMDIR%%/locale/fr_FR/LC_MESSAGES/gollem.mo
-%%GOLLEMDIR%%/locale/hu_HU/LC_MESSAGES/gollem.mo
-%%GOLLEMDIR%%/locale/hu_HU/help.xml
-%%GOLLEMDIR%%/locale/it_IT/LC_MESSAGES/gollem.mo
-%%GOLLEMDIR%%/locale/ko_KR/LC_MESSAGES/gollem.mo
-%%GOLLEMDIR%%/locale/lv_LV/LC_MESSAGES/gollem.mo
-%%GOLLEMDIR%%/locale/nl_NL/LC_MESSAGES/gollem.mo
-%%GOLLEMDIR%%/locale/nn_NO/LC_MESSAGES/gollem.mo
-%%GOLLEMDIR%%/locale/pl_PL/LC_MESSAGES/gollem.mo
-%%GOLLEMDIR%%/locale/ro_RO/LC_MESSAGES/gollem.mo
-%%GOLLEMDIR%%/locale/ru_RU/LC_MESSAGES/gollem.mo
-%%GOLLEMDIR%%/locale/sv_SE/LC_MESSAGES/gollem.mo
-%%GOLLEMDIR%%/locale/zh_TW/LC_MESSAGES/gollem.mo
-%%GOLLEMDIR%%/locale/zh_TW/help.xml
-%%GOLLEMDIR%%/login.php
-%%GOLLEMDIR%%/manager.php
-%%GOLLEMDIR%%/permissions.php
-%%GOLLEMDIR%%/po/README
-%%GOLLEMDIR%%/po/bg_BG.po
-%%GOLLEMDIR%%/po/cs_CZ.po
-%%GOLLEMDIR%%/po/da_DK.po
-%%GOLLEMDIR%%/po/de_DE.po
-%%GOLLEMDIR%%/po/es_ES.po
-%%GOLLEMDIR%%/po/fi_FI.po
-%%GOLLEMDIR%%/po/fr_FR.po
-%%GOLLEMDIR%%/po/gollem.pot
-%%GOLLEMDIR%%/po/hu_HU.po
-%%GOLLEMDIR%%/po/it_IT.po
-%%GOLLEMDIR%%/po/ko_KR.po
-%%GOLLEMDIR%%/po/lv_LV.po
-%%GOLLEMDIR%%/po/nl_NL.po
-%%GOLLEMDIR%%/po/nn_NO.po
-%%GOLLEMDIR%%/po/pl_PL.po
-%%GOLLEMDIR%%/po/ro_RO.po
-%%GOLLEMDIR%%/po/ru_RU.po
-%%GOLLEMDIR%%/po/sv_SE.po
-%%GOLLEMDIR%%/po/zh_TW.po
-%%GOLLEMDIR%%/quota.php
-%%GOLLEMDIR%%/redirect.php
-%%GOLLEMDIR%%/selectlist.php
-%%GOLLEMDIR%%/templates/clipboard/clipboard.html
-%%GOLLEMDIR%%/templates/common-header.inc
-%%GOLLEMDIR%%/templates/javascript/open_quota_win.js
-%%GOLLEMDIR%%/templates/javascript/open_selectlist_win.js
-%%GOLLEMDIR%%/templates/login/javascript.inc
-%%GOLLEMDIR%%/templates/login/login.html
-%%GOLLEMDIR%%/templates/manager/javascript.inc
-%%GOLLEMDIR%%/templates/manager/manager.html
-%%GOLLEMDIR%%/templates/menu.html
-%%GOLLEMDIR%%/templates/prefs/columnselect.html
-%%GOLLEMDIR%%/templates/prefs/columnselect.inc
-%%GOLLEMDIR%%/templates/prefs/columnselect.js
-%%GOLLEMDIR%%/templates/quota/quota.html
-%%GOLLEMDIR%%/templates/selectlist/javascript.inc
-%%GOLLEMDIR%%/templates/selectlist/selectlist.html
-%%GOLLEMDIR%%/test.php
-%%GOLLEMDIR%%/themes/brown/screen.css
-%%GOLLEMDIR%%/themes/graphics/cd.png
-%%GOLLEMDIR%%/themes/graphics/clipboard.png
-%%GOLLEMDIR%%/themes/graphics/copy.png
-%%GOLLEMDIR%%/themes/graphics/cut.png
-%%GOLLEMDIR%%/themes/graphics/favicon.ico
-%%GOLLEMDIR%%/themes/graphics/gollem.png
-%%GOLLEMDIR%%/themes/graphics/home.png
-%%GOLLEMDIR%%/themes/graphics/manager/folder.png
-%%GOLLEMDIR%%/themes/graphics/manager/symlink.png
-%%GOLLEMDIR%%/themes/graphics/mkdir.png
-%%GOLLEMDIR%%/themes/purple/screen.css
-%%GOLLEMDIR%%/themes/screen.css
-%%GOLLEMDIR%%/view.php
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-@dirrm %%GOLLEMDIR%%/themes/purple
-@dirrm %%GOLLEMDIR%%/themes/graphics/manager
-@dirrm %%GOLLEMDIR%%/themes/graphics
-@dirrm %%GOLLEMDIR%%/themes/brown
-@dirrm %%GOLLEMDIR%%/themes
-@dirrm %%GOLLEMDIR%%/templates/selectlist
-@dirrm %%GOLLEMDIR%%/templates/quota
-@dirrm %%GOLLEMDIR%%/templates/prefs
-@dirrm %%GOLLEMDIR%%/templates/manager
-@dirrm %%GOLLEMDIR%%/templates/login
-@dirrm %%GOLLEMDIR%%/templates/javascript
-@dirrm %%GOLLEMDIR%%/templates/clipboard
-@dirrm %%GOLLEMDIR%%/templates
-@dirrm %%GOLLEMDIR%%/po
-@dirrm %%GOLLEMDIR%%/locale/zh_TW/LC_MESSAGES
-@dirrm %%GOLLEMDIR%%/locale/zh_TW
-@dirrm %%GOLLEMDIR%%/locale/sv_SE/LC_MESSAGES
-@dirrm %%GOLLEMDIR%%/locale/sv_SE
-@dirrm %%GOLLEMDIR%%/locale/ru_RU/LC_MESSAGES
-@dirrm %%GOLLEMDIR%%/locale/ru_RU
-@dirrm %%GOLLEMDIR%%/locale/ro_RO/LC_MESSAGES
-@dirrm %%GOLLEMDIR%%/locale/ro_RO
-@dirrm %%GOLLEMDIR%%/locale/pl_PL/LC_MESSAGES
-@dirrm %%GOLLEMDIR%%/locale/pl_PL
-@dirrm %%GOLLEMDIR%%/locale/nn_NO/LC_MESSAGES
-@dirrm %%GOLLEMDIR%%/locale/nn_NO
-@dirrm %%GOLLEMDIR%%/locale/nl_NL/LC_MESSAGES
-@dirrm %%GOLLEMDIR%%/locale/nl_NL
-@dirrm %%GOLLEMDIR%%/locale/lv_LV/LC_MESSAGES
-@dirrm %%GOLLEMDIR%%/locale/lv_LV
-@dirrm %%GOLLEMDIR%%/locale/ko_KR/LC_MESSAGES
-@dirrm %%GOLLEMDIR%%/locale/ko_KR
-@dirrm %%GOLLEMDIR%%/locale/it_IT/LC_MESSAGES
-@dirrm %%GOLLEMDIR%%/locale/it_IT
-@dirrm %%GOLLEMDIR%%/locale/hu_HU/LC_MESSAGES
-@dirrm %%GOLLEMDIR%%/locale/hu_HU
-@dirrm %%GOLLEMDIR%%/locale/fr_FR/LC_MESSAGES
-@dirrm %%GOLLEMDIR%%/locale/fr_FR
-@dirrm %%GOLLEMDIR%%/locale/fi_FI/LC_MESSAGES
-@dirrm %%GOLLEMDIR%%/locale/fi_FI
-@dirrm %%GOLLEMDIR%%/locale/es_ES/LC_MESSAGES
-@dirrm %%GOLLEMDIR%%/locale/es_ES
-@dirrm %%GOLLEMDIR%%/locale/en_US
-@dirrm %%GOLLEMDIR%%/locale/de_DE/LC_MESSAGES
-@dirrm %%GOLLEMDIR%%/locale/de_DE
-@dirrm %%GOLLEMDIR%%/locale/da_DK/LC_MESSAGES
-@dirrm %%GOLLEMDIR%%/locale/da_DK
-@dirrm %%GOLLEMDIR%%/locale/cs_CZ/LC_MESSAGES
-@dirrm %%GOLLEMDIR%%/locale/cs_CZ
-@dirrm %%GOLLEMDIR%%/locale/bg_BG/LC_MESSAGES
-@dirrm %%GOLLEMDIR%%/locale/bg_BG
-@dirrm %%GOLLEMDIR%%/locale
-@dirrm %%GOLLEMDIR%%/lib/MIME/Viewer
-@dirrm %%GOLLEMDIR%%/lib/MIME
-@dirrm %%GOLLEMDIR%%/lib/Block
-@dirrm %%GOLLEMDIR%%/lib/Auth
-@dirrm %%GOLLEMDIR%%/lib
-@dirrm %%GOLLEMDIR%%/js
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry %%GOLLEMDIR%%/config
-@dirrmtry %%GOLLEMDIR%%
+%%HORDIR%%/clipboard.php
+%%HORDIR%%/config/backends.php.dist
+%%HORDIR%%/config/conf.xml
+%%HORDIR%%/config/credentials.php.dist
+%%HORDIR%%/config/menu.php.dist
+%%HORDIR%%/config/mime_drivers.php.dist
+%%HORDIR%%/config/motd.php.dist
+%%HORDIR%%/config/prefs.php.dist
+%%HORDIR%%/index.php
+%%HORDIR%%/js/stripe.js
+%%HORDIR%%/lib/Auth/gollem.php
+%%HORDIR%%/lib/Block/tree_menu.php
+%%HORDIR%%/lib/Gollem.php
+%%HORDIR%%/lib/MIME/Viewer/images.php
+%%HORDIR%%/lib/Session.php
+%%HORDIR%%/lib/api.php
+%%HORDIR%%/lib/base.php
+%%HORDIR%%/lib/prefs.php
+%%HORDIR%%/lib/version.php
+%%HORDIR%%/locale/bg_BG/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/cs_CZ/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/da_DK/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/de_DE/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/en_US/help.xml
+%%HORDIR%%/locale/es_ES/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/es_ES/help.xml
+%%HORDIR%%/locale/fi_FI/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/fi_FI/help.xml
+%%HORDIR%%/locale/fr_FR/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/hu_HU/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/hu_HU/help.xml
+%%HORDIR%%/locale/it_IT/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/ko_KR/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/lv_LV/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/nl_NL/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/nn_NO/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/pl_PL/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/ro_RO/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/ru_RU/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/sv_SE/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/zh_TW/LC_MESSAGES/gollem.mo
+%%HORDIR%%/locale/zh_TW/help.xml
+%%HORDIR%%/login.php
+%%HORDIR%%/manager.php
+%%HORDIR%%/permissions.php
+%%HORDIR%%/po/README
+%%HORDIR%%/po/bg_BG.po
+%%HORDIR%%/po/cs_CZ.po
+%%HORDIR%%/po/da_DK.po
+%%HORDIR%%/po/de_DE.po
+%%HORDIR%%/po/es_ES.po
+%%HORDIR%%/po/fi_FI.po
+%%HORDIR%%/po/fr_FR.po
+%%HORDIR%%/po/gollem.pot
+%%HORDIR%%/po/hu_HU.po
+%%HORDIR%%/po/it_IT.po
+%%HORDIR%%/po/ko_KR.po
+%%HORDIR%%/po/lv_LV.po
+%%HORDIR%%/po/nl_NL.po
+%%HORDIR%%/po/nn_NO.po
+%%HORDIR%%/po/pl_PL.po
+%%HORDIR%%/po/ro_RO.po
+%%HORDIR%%/po/ru_RU.po
+%%HORDIR%%/po/sv_SE.po
+%%HORDIR%%/po/zh_TW.po
+%%HORDIR%%/quota.php
+%%HORDIR%%/redirect.php
+%%HORDIR%%/selectlist.php
+%%HORDIR%%/templates/clipboard/clipboard.html
+%%HORDIR%%/templates/common-header.inc
+%%HORDIR%%/templates/javascript/open_quota_win.js
+%%HORDIR%%/templates/javascript/open_selectlist_win.js
+%%HORDIR%%/templates/login/javascript.inc
+%%HORDIR%%/templates/login/login.html
+%%HORDIR%%/templates/manager/javascript.inc
+%%HORDIR%%/templates/manager/manager.html
+%%HORDIR%%/templates/menu.html
+%%HORDIR%%/templates/prefs/columnselect.html
+%%HORDIR%%/templates/prefs/columnselect.inc
+%%HORDIR%%/templates/prefs/columnselect.js
+%%HORDIR%%/templates/quota/quota.html
+%%HORDIR%%/templates/selectlist/javascript.inc
+%%HORDIR%%/templates/selectlist/selectlist.html
+%%HORDIR%%/test.php
+%%HORDIR%%/themes/brown/screen.css
+%%HORDIR%%/themes/graphics/cd.png
+%%HORDIR%%/themes/graphics/clipboard.png
+%%HORDIR%%/themes/graphics/copy.png
+%%HORDIR%%/themes/graphics/cut.png
+%%HORDIR%%/themes/graphics/favicon.ico
+%%HORDIR%%/themes/graphics/gollem.png
+%%HORDIR%%/themes/graphics/home.png
+%%HORDIR%%/themes/graphics/manager/folder.png
+%%HORDIR%%/themes/graphics/manager/symlink.png
+%%HORDIR%%/themes/graphics/mkdir.png
+%%HORDIR%%/themes/purple/screen.css
+%%HORDIR%%/themes/screen.css
+%%HORDIR%%/view.php
+@dirrmtry %%HORDIR%%/config
+@dirrm %%HORDIR%%/js
+@dirrm %%HORDIR%%/lib/Auth
+@dirrm %%HORDIR%%/lib/Block
+@dirrm %%HORDIR%%/lib/MIME/Viewer
+@dirrm %%HORDIR%%/lib/MIME
+@dirrm %%HORDIR%%/lib
+@dirrm %%HORDIR%%/locale/bg_BG/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/bg_BG
+@dirrm %%HORDIR%%/locale/cs_CZ/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/cs_CZ
+@dirrm %%HORDIR%%/locale/da_DK/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/da_DK
+@dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/de_DE
+@dirrm %%HORDIR%%/locale/en_US
+@dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/es_ES
+@dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fi_FI
+@dirrm %%HORDIR%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fr_FR
+@dirrm %%HORDIR%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/hu_HU
+@dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/it_IT
+@dirrm %%HORDIR%%/locale/ko_KR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ko_KR
+@dirrm %%HORDIR%%/locale/lv_LV/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/lv_LV
+@dirrm %%HORDIR%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nl_NL
+@dirrm %%HORDIR%%/locale/nn_NO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nn_NO
+@dirrm %%HORDIR%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pl_PL
+@dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ro_RO
+@dirrm %%HORDIR%%/locale/ru_RU/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ru_RU
+@dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sv_SE
+@dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/zh_TW
+@dirrm %%HORDIR%%/locale
+@dirrm %%HORDIR%%/po
+@dirrm %%HORDIR%%/templates/clipboard
+@dirrm %%HORDIR%%/templates/javascript
+@dirrm %%HORDIR%%/templates/login
+@dirrm %%HORDIR%%/templates/manager
+@dirrm %%HORDIR%%/templates/prefs
+@dirrm %%HORDIR%%/templates/quota
+@dirrm %%HORDIR%%/templates/selectlist
+@dirrm %%HORDIR%%/templates
+@dirrm %%HORDIR%%/themes/brown
+@dirrm %%HORDIR%%/themes/graphics/manager
+@dirrm %%HORDIR%%/themes/graphics
+@dirrm %%HORDIR%%/themes/purple
+@dirrm %%HORDIR%%/themes
+@dirrmtry %%HORDIR%%
+@dirrmtry %%HORBAS%%

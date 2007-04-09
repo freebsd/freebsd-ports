@@ -1,17 +1,17 @@
 ************************************************************************
-horde-passwd has been installed in %%PWDDIR%%
+horde-passwd has been installed in %%HORDIR%%
 with your blank configuration files.
 
-Horde must be configured; if not, see `pkg_info -D -x horde'.
+Horde must be configured; if not, see `pkg_info -Dx horde-base'.
 
 horde-passwd requires a password changing mechanism. Probably the easier
 one is the port mail/poppassd, but it uses clear text password
 transmissions! Choose one and change the configuration file backends.php
-located in %%CONFDIR%%/
+located in %%HORCFG%%/
 
 To enable horde-passwd at your Horde installation, replace its status
 from 'inactive' to 'active' in the Horde registry file, at
-%%HORDEDIR%%/config/registry.php
+%%HORBAS%%/config/registry.php
 
 Finally, you must login to Horde as a Horde Administrator to finish the
 configuration.
