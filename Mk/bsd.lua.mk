@@ -172,22 +172,22 @@ _LUA_PORT_pty_5.1=		devel/lua-pty
 .	for comp in ${_LUA_COMPS_ALL}
 _LUA_COMP=				${comp}
 .		for ver in ${_LUA_VERS_ALL}
+# XXX The hardcoded values here have to match LUA_* variables (later), and
+# are here only to allow autodetection of installed versions.
 .			if ${_LUA_COMP} == "lua"
-_LUA_LIB_${comp}_${ver}=	lua-${LUA_VER}.${LUA_VER_SH}
-_LUA_SHVER_${comp}_${ver}=	${LUA_VER_SH}
-_LUA_FILE_${comp}_${ver}=	${LUA_LIBDIR}/liblua.a
+_LUA_LIB_${comp}_${ver}=	lua-${ver}.${_LUA_SHVER_${comp}_${ver}}
+_LUA_SHVER_${comp}_${ver}=	${ver:C/[[:digit:]]\.([[:digit:]])/\1/}
+_LUA_FILE_${comp}_${ver}=	${LOCALBASE}/lib/lua${ver:S/.//g}/liblua.a
 .			elif ${_LUA_COMP} == "tolua"
-_LUA_FILE_${comp}_${ver}=	${LUA_LIBDIR}/libtolua.a
+_LUA_FILE_${comp}_${ver}=	${LOCALBASE}/lib/lua${ver:S/.//g}/libtolua.a
 _LUA_DEPTYPE_${comp}_${ver}=build
 .			elif ${_LUA_COMP} == "ruby"
-_LUA_FILE_${comp}_${ver}=	${RUBY_SITEARCHLIBDIR}/lua-${LUA_VER}.so
+_LUA_FILE_${comp}_${ver}=	${RUBY_SITEARCHLIBDIR}/lua-${ver}.so
 _LUA_DEPTYPE_${comp}_${ver}=lib
-.			else
-.				if !defined(_LUA_FILE_${comp}_${ver})
-_LUA_FILE_${comp}_${ver}=	${LUA_MODSHAREDIR}/${comp}.lua
-.				endif
-_LUA_DEPTYPE_${comp}_${ver}=run
+.			elif !defined(_LUA_FILE_${comp}_${ver})
+_LUA_FILE_${comp}_${ver}=	${LOCALBASE}/share/lua/${ver}/${comp}.lua
 .			endif
+_LUA_DEPTYPE_${comp}_${ver}=run
 .		endfor
 .	endfor
 .endif
@@ -257,7 +257,7 @@ HAVE_LUA:=				${_HAVE_LUA}
 
 # Used for autodetection of installed versions.
 
-.if defined(_WX_Need_Version)
+.if defined(_LUA_Need_Version)
 _LUA_VER_INSTALLED:=	${_HAVE_LUA:Mlua-*:S/lua-//}
 .endif
 
@@ -390,7 +390,7 @@ IGNORE?=				selected Lua versions (${_LUA_WRONG_VERS}) which do not have the sel
 # 4) _LUA_VER_FINAL		- Available versions.
 #
 
-.for list in _LUA_VER_FINAL ${_LUA_LISTS_ORDER}
+.for list in _LUA_VER_FINAL ${_LUA_VERS_LISTS}
 .	if defined(${list})
 .		for ver in ${${list}}
 .			if ${_LUA_VER_FINAL:M${ver}} != ""
