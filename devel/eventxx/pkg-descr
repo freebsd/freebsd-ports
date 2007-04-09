@@ -1,0 +1,7 @@
+eventxx is a simple, direct, one-header inline C++ wrapper for libevent.
+
+It's designed to be as close to use to libevent (without compromising modern
+C++ programming techniques) and efficient (since all implementation is trivial
+and inline, theoretically, it imposes no overhead at all) as possible.
+
+WWW: http://www.llucax.com.ar/~luca/eventxx/

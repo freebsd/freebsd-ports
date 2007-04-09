@@ -291,6 +291,7 @@
     SUBDIR += etoile-collectionkit
     SUBDIR += etoile-foundation
     SUBDIR += etoile-unitkit
+    SUBDIR += eventxx
     SUBDIR += evfs
     SUBDIR += evolution-gconf-tools
     SUBDIR += excalibur-configuration
