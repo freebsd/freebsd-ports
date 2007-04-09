@@ -60,10 +60,8 @@ EXTRA_PATCHES+=	${WRKSRC}/patches/flags.diff
 .endif
 
 .if defined(WITH_ACLSP)
-.if ${OSVERSION} >= 500000
-EXTRA_PATCHES+=	${WRKSRC}/patches/acls.diff
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patches-acls.diff ${WRKSRC}/patches/acls.diff
 CONFIGURE_ARGS+=--enable-acl-support
-.endif
 
 .if defined(WITH_FLAGSP)
 IGNORE=		can't be built: Flags and ACLs patches can't be both enabled at the same time. Please rerun 'make config' and disable one of them
