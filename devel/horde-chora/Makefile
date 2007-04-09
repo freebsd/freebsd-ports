@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	chora
-PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTVERSION=	2.0.2
 CATEGORIES=	devel www
+DIST_SUBDIR=	horde
 
 MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	The Horde CVS web-viewer
