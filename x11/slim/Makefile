@@ -7,6 +7,7 @@
 
 PORTNAME=	slim
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_BERLIOS} \
 		http://depot.fsck.ch/mirror/distfiles/
