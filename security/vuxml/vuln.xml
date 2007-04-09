@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f1c4d133-e6d3-11db-99ea-0060084a00e5">
+    <topic>fetchmail -- insecure APOP authentication</topic>
+    <affects>
+      <package>
+	<name>fetchmail</name>
+	<range><lt>6.3.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthias Andree reports:</p>
+	<blockquote cite="http://fetchmail.berlios.de/fetchmail-SA-2007-01.txt">
+	  <p>The POP3 standard, currently RFC-1939, has specified an optional,
+	    MD5-based authentication scheme called "APOP" which no longer
+	    should be considered secure.</p>
+	  <p>Additionally, fetchmail's POP3 client implementation has been
+	    validating the APOP challenge too lightly and accepted random
+	    garbage as a POP3 server's APOP challenge. This made it easier
+	    than necessary for man-in-the-middle attackers to retrieve by
+	    several probing and guessing the first three characters of the
+	    APOP secret, bringing brute forcing the remaining characters well
+	    within reach.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-1558</cvename>
+      <url>http://fetchmail.berlios.de/fetchmail-SA-2007-01.txt</url>
+    </references>
+    <dates>
+      <discovery>2007-04-06</discovery>
+      <entry>2007-04-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="84d3fbb2-e607-11db-8a32-000c76189c4c">
     <topic>mcweject -- exploitable buffer overflow</topic>
     <affects>
