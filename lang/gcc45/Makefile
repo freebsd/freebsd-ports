@@ -135,6 +135,15 @@ PLIST_SUB+=	JAVA="@comment "
 
 pre-everything::
 	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
+.if ! defined(WITHOUT_JAVA)
+	@DSIZ=700000; DSIZBYTE=734003200; \
+	if [ `ulimit -d` -lt $$DSIZ ]; then \
+	  echo "You need to increase the datasize limit to at least $$DSIZ \
+	    (and set kern.maxdsiz=\"$$DSIZBYTE\" in /boot/loader.conf) to \
+	    build with Java support." | ${FMT} -s; \
+	  exit 1; \
+	fi
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
