@@ -1,0 +1,109 @@
+%%HORDIR%%/config/.htaccess
+%%HORDIR%%/config/conf.xml
+%%HORDIR%%/index.php
+%%HORDIR%%/lib/.htaccess
+%%HORDIR%%/lib/Block/summary.php
+%%HORDIR%%/lib/Driver/customsql.php
+%%HORDIR%%/lib/Driver/forwards.php
+%%HORDIR%%/lib/Driver/ldap.php
+%%HORDIR%%/lib/Driver/mdaemon.php
+%%HORDIR%%/lib/Driver/qmail.php
+%%HORDIR%%/lib/Driver/soap.php
+%%HORDIR%%/lib/Driver/sql.php
+%%HORDIR%%/lib/Driver.php
+%%HORDIR%%/lib/base.php
+%%HORDIR%%/lib/version.php
+%%HORDIR%%/locale/cs_CZ/LC_MESSAGES/forwards.mo
+%%HORDIR%%/locale/da_DK/LC_MESSAGES/forwards.mo
+%%HORDIR%%/locale/de_DE/LC_MESSAGES/forwards.mo
+%%HORDIR%%/locale/en_US/help.xml
+%%HORDIR%%/locale/es_ES/LC_MESSAGES/forwards.mo
+%%HORDIR%%/locale/es_ES/help.xml
+%%HORDIR%%/locale/fa_IR/LC_MESSAGES/forwards.mo
+%%HORDIR%%/locale/fa_IR/help.xml
+%%HORDIR%%/locale/fi_FI/LC_MESSAGES/forwards.mo
+%%HORDIR%%/locale/fi_FI/help.xml
+%%HORDIR%%/locale/fr_FR/LC_MESSAGES/forwards.mo
+%%HORDIR%%/locale/gl_ES/LC_MESSAGES/forwards.mo
+%%HORDIR%%/locale/hu_HU/LC_MESSAGES/forwards.mo
+%%HORDIR%%/locale/it_IT/LC_MESSAGES/forwards.mo
+%%HORDIR%%/locale/nn_NO/LC_MESSAGES/forwards.mo
+%%HORDIR%%/locale/pl_PL/LC_MESSAGES/forwards.mo
+%%HORDIR%%/locale/pt_BR/LC_MESSAGES/forwards.mo
+%%HORDIR%%/locale/pt_PT/LC_MESSAGES/forwards.mo
+%%HORDIR%%/locale/ro_RO/LC_MESSAGES/forwards.mo
+%%HORDIR%%/locale/ru_RU/LC_MESSAGES/forwards.mo
+%%HORDIR%%/locale/zh_TW/LC_MESSAGES/forwards.mo
+%%HORDIR%%/main.php
+%%HORDIR%%/po/.htaccess
+%%HORDIR%%/po/README
+%%HORDIR%%/po/cs_CZ.po
+%%HORDIR%%/po/da_DK.po
+%%HORDIR%%/po/de_DE.po
+%%HORDIR%%/po/es_ES.po
+%%HORDIR%%/po/fa_IR.po
+%%HORDIR%%/po/fi_FI.po
+%%HORDIR%%/po/forwards.pot
+%%HORDIR%%/po/fr_FR.po
+%%HORDIR%%/po/gl_ES.po
+%%HORDIR%%/po/hu_HU.po
+%%HORDIR%%/po/it_IT.po
+%%HORDIR%%/po/nn_NO.po
+%%HORDIR%%/po/pl_PL.po
+%%HORDIR%%/po/pt_BR.po
+%%HORDIR%%/po/pt_PT.po
+%%HORDIR%%/po/ro_RO.po
+%%HORDIR%%/po/ru_RU.po
+%%HORDIR%%/po/zh_TW.po
+%%HORDIR%%/templates/.htaccess
+%%HORDIR%%/templates/common-header.inc
+%%HORDIR%%/templates/main/main.inc
+%%HORDIR%%/themes/graphics/favicon.ico
+%%HORDIR%%/themes/graphics/forwards.png
+@dirrmtry %%HORDIR%%/config
+@dirrm %%HORDIR%%/lib/Block
+@dirrm %%HORDIR%%/lib/Driver
+@dirrm %%HORDIR%%/lib
+@dirrm %%HORDIR%%/locale/cs_CZ/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/cs_CZ
+@dirrm %%HORDIR%%/locale/da_DK/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/da_DK
+@dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/de_DE
+@dirrm %%HORDIR%%/locale/en_US
+@dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/es_ES
+@dirrm %%HORDIR%%/locale/fa_IR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fa_IR
+@dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fi_FI
+@dirrm %%HORDIR%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fr_FR
+@dirrm %%HORDIR%%/locale/gl_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/gl_ES
+@dirrm %%HORDIR%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/hu_HU
+@dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/it_IT
+@dirrm %%HORDIR%%/locale/nn_NO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nn_NO
+@dirrm %%HORDIR%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pl_PL
+@dirrm %%HORDIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pt_BR
+@dirrm %%HORDIR%%/locale/pt_PT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pt_PT
+@dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ro_RO
+@dirrm %%HORDIR%%/locale/ru_RU/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ru_RU
+@dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/zh_TW
+@dirrm %%HORDIR%%/locale
+@dirrm %%HORDIR%%/po
+@dirrm %%HORDIR%%/templates/main
+@dirrm %%HORDIR%%/templates
+@dirrm %%HORDIR%%/themes/graphics
+@dirrm %%HORDIR%%/themes
+@dirrmtry %%HORDIR%%
+@dirrmtry %%HORBAS%%

@@ -1,0 +1,9 @@
+Forwards is a Horde module for setting user email forwards via the .forward
+mechanism supported by several popular mailers.
+
+Right now, Forwards provides fairly complete support for setting .forward style
+forwards on Sendmail, Courier, or Qmail mail based systems via an FTP transport.
+It now also has drivers for Mdaemon, Exim SQL, Exim LDAP, Custom SQL, and SOAP
+based systems.
+
+WWW: http://www.horde.org/forwards/
