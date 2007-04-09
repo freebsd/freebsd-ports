@@ -459,6 +459,7 @@
     SUBDIR += p5-Net-Google
     SUBDIR += p5-Net-Google-Calendar
     SUBDIR += p5-Net-Gopher
+    SUBDIR += p5-Net-Growl
     SUBDIR += p5-Net-HL7
     SUBDIR += p5-Net-Ident
     SUBDIR += p5-Net-Interface

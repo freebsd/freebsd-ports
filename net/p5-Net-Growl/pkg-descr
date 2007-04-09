@@ -1,0 +1,5 @@
+Net::Growl provieds simple interface to send
+Mac OS X Growl notifications across the network.
+
+Author:	Nathan McFarland <nathan.mcfarland@nmcfarl.org>
+WWW:	http://search.cpan.org/~nmcfarl/Net-Growl-0.99/
