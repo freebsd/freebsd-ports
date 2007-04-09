@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+bin/ucp.py
 %%PYTHON_SITELIBDIR%%/ll/__init__.py
 %%PYTHON_SITELIBDIR%%/ll/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ll/__init__.pyo
@@ -22,6 +23,10 @@
 %%PYTHON_SITELIBDIR%%/ll/misc.py
 %%PYTHON_SITELIBDIR%%/ll/misc.pyc
 %%PYTHON_SITELIBDIR%%/ll/misc.pyo
+%%PYTHON_SITELIBDIR%%/ll/scripts/__init__.py
+%%PYTHON_SITELIBDIR%%/ll/scripts/__init__.pyc
+%%PYTHON_SITELIBDIR%%/ll/scripts/__init__.pyo
+%%PYTHON_SITELIBDIR%%/ll/scripts/ucp.py
 %%PYTHON_SITELIBDIR%%/ll/sisyphus.py
 %%PYTHON_SITELIBDIR%%/ll/sisyphus.pyc
 %%PYTHON_SITELIBDIR%%/ll/sisyphus.pyo
@@ -31,4 +36,5 @@
 %%PYTHON_SITELIBDIR%%/ll/xpit.py
 %%PYTHON_SITELIBDIR%%/ll/xpit.pyc
 %%PYTHON_SITELIBDIR%%/ll/xpit.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/ll/scripts
 @dirrm %%PYTHON_SITELIBDIR%%/ll
