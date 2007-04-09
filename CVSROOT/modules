@@ -2538,6 +2538,7 @@ evas		ports/graphics/evas
 eventlog	ports/sysutils/eventlog
 eventum		ports/www/eventum
 eventwatcher	ports/sysutils/eventwatcher
+eventxx		ports/devel/eventxx
 everygui	ports/deskutils/everygui
 evfs		ports/devel/evfs
 evidence	ports/x11-fm/evidence
