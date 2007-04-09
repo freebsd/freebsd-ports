@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail_Mime
-PORTVERSION=	1.4.0a1
+PORTVERSION=	1.4.0a3
 CATEGORIES=	mail www pear
 
 MAINTAINER=	bg1tpt@gmail.com
