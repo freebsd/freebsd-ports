@@ -7,7 +7,7 @@
 
 PORTNAME=	morebalance
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://morebalance.coolprojects.org/
 
@@ -16,7 +16,7 @@ COMMENT=	A modular open source user-space load balancing system
 
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre \
 		gnutls.15:${PORTSDIR}/security/gnutls \
-		ggz.4:${PORTSDIR}/games/libggz
+		ggz.5:${PORTSDIR}/games/libggz
 
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 MAKE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
