@@ -25,7 +25,7 @@
  			if (atom_prec == 0)
  				m_Artificial = true;
 -			delta += pow10 (-atom_prec) * (*i).second;
-+			delta += pow (10, -atom_prec) * (*i).second;
++			delta += pow (10.0, -atom_prec) * (*i).second;
  			m_Weight += atom_weight * (*i).second;
  		}
  		m_WeightPrec = (int) ceil (-log10 (delta) - 1e-5);
