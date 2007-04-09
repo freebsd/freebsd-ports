@@ -1,0 +1,4 @@
+bin/moodbar
+lib/gstreamer-%%VERSION%%/libmoodbar.a
+lib/gstreamer-%%VERSION%%/libmoodbar.la
+lib/gstreamer-%%VERSION%%/libmoodbar.so

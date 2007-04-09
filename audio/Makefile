@@ -244,6 +244,7 @@
     SUBDIR += gstreamer-plugins-mad
     SUBDIR += gstreamer-plugins-mad80
     SUBDIR += gstreamer-plugins-mikmod80
+    SUBDIR += gstreamer-plugins-moodbar
     SUBDIR += gstreamer-plugins-musepack
     SUBDIR += gstreamer-plugins-musepack80
     SUBDIR += gstreamer-plugins-musicbrainz
