@@ -5,7 +5,7 @@
  			if (prec < 0) {
  				// round the value to replace not significant figures by 0s.
 -				double offs = pow10 (prec);
-+				double offs = pow (10, prec);
++				double offs = pow (10.0, prec);
  				weight = rint (weight * offs) / offs;
  			}
  			format = artificial? g_strdup ("(%.0f)"): g_strdup ("%.0f");
