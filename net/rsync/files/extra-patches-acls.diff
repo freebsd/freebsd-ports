@@ -1,0 +1,26 @@
+--- strip/patches/acls.diff.orig	Tue Nov  7 05:41:54 2006
++++ strip/patches/acls.diff	Mon Apr  9 15:50:06 2007
+@@ -1399,7 +1399,7 @@
+  		file->mode = tweak_mode(file->mode, chmod_modes);
+  
+ +#ifdef SUPPORT_ACLS
+-+	if (preserve_acls) {
+++	if (preserve_acls && f >= 0) {
+ +		sx.st.st_mode = file->mode;
+ +		sx.acc_acl = sx.def_acl = NULL;
+ +		if (get_acl(fname, &sx) < 0)
+@@ -1415,12 +1415,12 @@
+  		flist->files[flist->count++] = file;
+  		send_file_entry(file, f);
+ +#ifdef SUPPORT_ACLS
+-+		if (preserve_acls)
+++		if (preserve_acls && f >= 0)
+ +			send_acl(&sx, f);
+ +#endif
+ +	} else {
+ +#ifdef SUPPORT_ACLS
+-+		if (preserve_acls)
+++		if (preserve_acls && f >= 0)
+ +			free_acl(&sx);
+ +#endif
+  	}
