@@ -5,6 +5,8 @@
 %%HORDIR%%/files/empty.gdbm.bin
 %%HORDIR%%/files/empty.hash.bin
 %%HORDIR%%/files/empty.hash3.bin
+%%HORDIR%%/files/empty.hash4.bin
+%%HORDIR%%/files/empty.hash4b.bin
 %%HORDIR%%/index.php
 %%HORDIR%%/lib/.htaccess
 %%HORDIR%%/lib/AliasDriver/ftp.php
@@ -40,6 +42,7 @@
 %%HORDIR%%/locale/pl_PL/LC_MESSAGES/vacation.mo
 %%HORDIR%%/locale/pt_BR/LC_MESSAGES/vacation.mo
 %%HORDIR%%/locale/ro_RO/LC_MESSAGES/vacation.mo
+%%HORDIR%%/locale/sl_SI/LC_MESSAGES/vacation.mo
 %%HORDIR%%/locale/sv_SE/LC_MESSAGES/vacation.mo
 %%HORDIR%%/locale/zh_TW/LC_MESSAGES/vacation.mo
 %%HORDIR%%/main.php
@@ -62,6 +65,7 @@
 %%HORDIR%%/po/pl_PL.po
 %%HORDIR%%/po/pt_BR.po
 %%HORDIR%%/po/ro_RO.po
+%%HORDIR%%/po/sl_SI.po
 %%HORDIR%%/po/sv_SE.po
 %%HORDIR%%/po/vacation.pot
 %%HORDIR%%/po/zh_TW.po
@@ -72,6 +76,7 @@
 %%HORDIR%%/templates/main/main.inc
 %%HORDIR%%/themes/graphics/favicon.ico
 %%HORDIR%%/themes/graphics/vacation.png
+%%HORDIR%%/themes/screen.css
 @dirrmtry %%HORDIR%%/config
 @dirrm %%HORDIR%%/files
 @dirrm %%HORDIR%%/lib/AliasDriver
@@ -113,6 +118,8 @@
 @dirrm %%HORDIR%%/locale/pt_BR
 @dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/ro_RO
+@dirrm %%HORDIR%%/locale/sl_SI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sl_SI
 @dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/sv_SE
 @dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
