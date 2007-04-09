@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	arsptr@internode.on.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy to set up wiki clone implemented in ruby
 
 LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
