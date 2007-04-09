@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/CGI/FCKeditor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/FCKeditor/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/FCKeditor
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
+@dirrmtry %%SITE_PERL%%/CGI
