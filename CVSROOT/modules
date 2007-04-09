@@ -5376,6 +5376,7 @@ jalview		ports/biology/jalview
 jam		ports/devel/jam
 jama		ports/math/jama
 jamboree	ports/audio/jamboree
+james		ports/mail/james
 jamin		ports/audio/jamin
 jamlib		ports/mail/jamlib
 jargon		ports/misc/jargon
