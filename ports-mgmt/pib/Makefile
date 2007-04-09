@@ -7,15 +7,16 @@
 
 PORTNAME=	pib
 PORTVERSION=	1.2
-CATEGORIES=	ports-mgmt tk82
+PORTREVISION=	1
+CATEGORIES=	ports-mgmt tk84
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	msmith
 
 MAINTAINER=	.@babolo.ru
 COMMENT=	GUI Ports Collection management tool
 
-BUILD_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
-RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
+USE_TK=		yes
+USE_TK_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 

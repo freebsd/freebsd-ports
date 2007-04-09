@@ -1,6 +1,6 @@
---- Makefile	Sat Oct 28 12:55:08 2000
-+++ Makefile	Mon Oct 21 04:40:15 2002
-@@ -8,7 +8,6 @@
+--- Makefile.orig	Sat Oct 28 10:55:08 2000
++++ Makefile	Thu Mar 15 20:10:02 2007
+@@ -8,13 +8,12 @@
  X11BASE?=	/usr/X11R6
  
  LIB=		TkSteal
@@ -8,3 +8,19 @@
  SHLIB_MAJOR=	2
  SHLIB_MINOR=	0
  NOPROFILE=	yes
+ 
+ .if defined(OBJFORMAT) && ${OBJFORMAT} == elf
+-LDADD=		-L${PREFIX}/lib -ltk82
++LDADD=		-L${PREFIX}/lib -ltk84
+ .endif
+ 
+ SRCS=		tkXAccess.c
+@@ -25,7 +24,7 @@
+ PAXFILES=	${SRCS} ${TCL_SRCS} ${HDRS} ${OTHER}
+ PAXNAME=	pib-1.1
+ 
+-CFLAGS+=	-I${PREFIX}/include/tcl8.2 -I${PREFIX}/include/tk8.2 \
++CFLAGS+=	-I${PREFIX}/include/tcl8.4 -I${PREFIX}/include/tk8.4 \
+ 		-I${X11BASE}/include \
+ 		-DUSE_XACCESS -DHAVE_UNISTD_H=1 -DHAVE_LIMITS_H=1 \
+ 		-DSTDC_HEADERS=1 -DTK_FILE_COUNT=_r -DNEED_MATHERR=1 \
