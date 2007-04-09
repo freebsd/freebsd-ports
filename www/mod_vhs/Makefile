@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_vhs
-PORTVERSION=	1.0.30
+PORTVERSION=	1.0.32
 CATEGORIES=	www
 MASTER_SITES=	http://www.oav.net/projects/mod_vhs/
 DIST_SUBDIR=	apache2
@@ -23,10 +23,6 @@ WANT_PHP_MOD=	yes
 WANT_APACHE=	2
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
-
-.if defined(PACKAGE_BUILDING)
-IGNORE=		This port cannot be build as package because lang/php4 requires apache2
-.endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -47,5 +43,8 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .   endfor
 .endif
+
+# TODO :
+#   Add suphp support
 
 .include <bsd.port.post.mk>
