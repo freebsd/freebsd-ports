@@ -37,6 +37,13 @@ CONFIGURE_ARGS+=	--enable-evolution2=yes
 USE_GNOME+=		glib20
 .endif
 
+.if defined(WITH_SYSTEM_FREETYPE)
+LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2
+CONFIGURE_ARGS+=	--with-system-freetype=yes
+.else
+CONFIGURE_ARGS+=	--with-system-freetype=no
+.endif
+
 .if defined(ALL_LOCALIZED_LANGS)
 CONFIGURE_ARGS+=	--with-lang=ALL
 .else
@@ -85,6 +92,10 @@ pre-fetch:
 	@${ECHO} "You can compile OOo without gnome VFS support with"
 	@${ECHO} "make -DWITHOUT_GNOMEVFS"
 .endif
+.if !defined(WITH_SYSTEM_FREETYPE)
+	@${ECHO}
+	@${ECHO} "You can compile OOo with freetype2 from ports with"
+	@${ECHO} "make -DWITH_SYSTEM_FREETYPE"
 .if !defined(WITH_TTF_BYTECODE_ENABLED)
 	@${ECHO}
 	@${ECHO} "You may get better quality of glyphs"
@@ -93,6 +104,7 @@ pre-fetch:
 	@${ECHO} "US05155805 US05159668 and US05325479, with"
 	@${ECHO} "make -DWITH_TTF_BYTECODE_ENABLED"
 	@${ECHO} "See http://www.freetype.org/patents.html for details"
+.endif
 .endif
 .if !defined(LOCALIZED_LANG)
 	@${ECHO}
