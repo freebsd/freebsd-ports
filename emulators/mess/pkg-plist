@@ -1,10 +1,16 @@
 bin/sdlmess
 libexec/chdman
+libexec/dat2html
 libexec/file2str
 libexec/imgtool
+libexec/jedutil
+libexec/makemeta
 libexec/mess
 libexec/messdocs
 libexec/messtest
+libexec/regrep
+libexec/romcmp
+libexec/testkeys
 %%PORTDOCS%%%%DOCSDIR%%/SDLMESS.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/credits.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs/faq.htm

@@ -1,18 +1,18 @@
---- ./makefile.sdl.orig	Wed Feb  7 15:35:34 2007
-+++ ./makefile.sdl	Fri Feb 23 01:26:06 2007
-@@ -37,7 +37,7 @@
- #
- # for SDLMESS, set this to linux or macosx (lowercase is important!)
- #
+--- ./makefile.sdl.orig	Fri Mar  9 01:10:42 2007
++++ ./makefile.sdl	Sun Apr  8 20:07:08 2007
+@@ -52,7 +52,7 @@
+ # for SDLMAME, set this to linux, freebsd, win32, or macosx (lowercase is important!)
+ #------------------------------------------------------------------------------------
+ 
 -SUBARCH = linux
 +SUBARCH = freebsd
  
  
  #-------------------------------------------------
-@@ -48,11 +48,13 @@
+@@ -63,11 +63,13 @@
  # uncomment next line to include the debugger
- # DEBUG = 1
- 
+ #DEBUG = 1    
+  
 +ifeq ($(ARCH),i386)
  # uncomment next line to use DRC MIPS3 engine
  X86_MIPS3_DRC = 1
@@ -23,22 +23,40 @@
  
  #-------------------------------------------------
  # specify build options; see each option below 
-@@ -155,8 +157,8 @@
+@@ -128,17 +130,6 @@
+ PPC = 1
+ endif
+ 
+-ifdef PPC
+-X86_MIPS3_DRC =
+-X86_PPC_DRC =
+-endif
+-
+-# disable DRC cores for 64-bit builds
+-ifdef PTR64
+-X86_MIPS3_DRC =
+-X86_PPC_DRC =
+-endif
+-
+ # Mac builds always need EXPAT and ZLIB built
+ ifeq ($(SUBARCH),macosx)
+ BUILD_EXPAT = 1
+@@ -174,8 +165,8 @@
  
  # compiler, linker and utilities
  AR = @ar
 -CC = @gcc
--LD = gcc
+-LD = @gcc
 +CC := @$(CC)
 +LD = $(CC)
  MD = -mkdir
  RM = @rm -f
  
-@@ -167,49 +169,8 @@
- #-------------------------------------------------
+@@ -191,49 +182,8 @@
+ endif
  
  # by default, don't compile for a specific target CPU
--NAME = sdl$(PREFIX)$(TARGET)
+-NAME = $(PREFIX)$(TARGET)
 -ARCH = 
 -
 -# architecture-specific builds get extra options
@@ -85,16 +103,54 @@
  
  # debug builds just get the 'd' suffix and nothing more
  ifdef DEBUG
-@@ -255,7 +216,7 @@
- MESSTEST = messtest$(EXE)
- MESSDOCS = messdocs$(EXE)
+@@ -253,18 +203,22 @@
+ # compile-time definitions
+ #-------------------------------------------------
  
--CFLAGS = $(OPT_FLAGS) -std=gnu89 -Imess -Isrc -Isrc/includes -Isrc/$(MAMEOS) -I$(OBJ)/mess/layout -I$(OBJ)/layout -Imess/$(MAMEOS)
-+CFLAGS += $(OPT_FLAGS) -std=gnu89 -Imess -Isrc -Isrc/includes -Isrc/$(MAMEOS) -I$(OBJ)/mess/layout -I$(OBJ)/layout -Imess/$(MAMEOS) -I$(LOCALBASE)/include -I$(X11BASE)/include
+-ifdef PPC
+-DEFS = -DPPC_ASM -DINLINE="static __inline__" -Dasm=__asm__ -DPI=M_PI -Dstrnicmp=strncasecmp -D_scalb=scalb -DCRLF=2 -DGL_GLEXT_PROTOTYPES=1 -Dbool=int
+-else
+-ifdef PTR64
+ DEFS = -DLSB_FIRST -DINLINE="static __inline__" -Dasm=__asm__ -DPI=M_PI -Dstrnicmp=strncasecmp -D_scalb=scalb -DCRLF=2 -DGL_GLEXT_PROTOTYPES=1
+-else
+-DEFS = -DX86_ASM -DLSB_FIRST -DINLINE="static __inline__" -Dasm=__asm__ -DPI=M_PI -Dstrnicmp=strncasecmp -D_scalb=scalb -DCRLF=2 -DGL_GLEXT_PROTOTYPES=1
++
++ifeq ($(ARCH),i386)
++DEFS += -DX86_ASM
++endif
++
++ifeq ($(ARCH),powerpc)
++DEFS += -DPPC_ASM -Dbool=int
+ endif
++
++ifneq ($(shell echo $(ARCH) | grep -v 64),)
++PTR64 = yes
+ endif
  
- ifdef SYMBOLS
- ifdef PPC
-@@ -267,7 +228,7 @@
+ ifdef PTR64
+-DEFS += -DPTR64
++DEFS += -DLSB_FIRST -DPTR64
+ endif
+ 
+ ifdef DEBUG
+@@ -275,7 +229,7 @@
+ # compile and linking flags
+ #-------------------------------------------------
+ 
+-CFLAGS = \
++CFLAGS += \
+ 	$(OPT_FLAGS) \
+ 	-std=gnu89 \
+ 	-I$(SRC)/$(TARGET) \
+@@ -286,6 +240,7 @@
+ 	-I$(SRC)/lib/util \
+ 	-I$(SRC)/osd \
+ 	-I$(SRC)/osd/$(MAMEOS) \
++	-I$(LOCALBASE)/include -I$(X11BASE)/include
+ 
+ ifdef MESS
+ CFLAGS += \
+@@ -304,7 +259,7 @@
  endif	# PPC
  endif	# SYMBOLS
  
@@ -103,7 +159,7 @@
  	-Wall \
  	-Wpointer-arith \
  	-Wbad-function-cast \
-@@ -279,7 +240,7 @@
+@@ -316,7 +271,7 @@
  	-Wdeclaration-after-statement
  
  ifneq ($(OPTIMIZE),0)
@@ -112,22 +168,22 @@
  endif
  
  CFLAGS += -O$(OPTIMIZE)
-@@ -287,11 +248,9 @@
+@@ -329,11 +284,9 @@
  # extra options needed *only* for the osd files
  CFLAGSOSDEPEND = $(CFLAGS)
  
 -LDFLAGS = -WO
-+LDFLAGS += -WO -L$(LOCALBASE)/lib -L$(X11BASE)/lib
++LDFLAGS = -WO -L$(LOCALBASE)/lib -L$(X11BASE)/lib
  
 -ifdef SYMBOLS
--LDFLAGS =
+-LDFLAGS = 
 -else
 +ifndef SYMBOLS
  LDFLAGS += -s
  endif
  
-@@ -404,6 +363,10 @@
- # add SDLMAME subarch definitions
+@@ -402,6 +355,10 @@
+ 
  ifeq ($(SUBARCH),linux)
  CFLAGS += -DSDLMAME_LINUX
 +endif
@@ -136,4 +192,4 @@
 +CFLAGS += -DSDLMAME_FREEBSD -DSDLMAME_NO64BITIO
  endif
  
- ifeq ($(SUBARCH),macosx)
+ ifeq ($(SUBARCH),freebsd)
