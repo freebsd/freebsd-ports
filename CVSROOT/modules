@@ -4434,6 +4434,7 @@ honeyd		ports/net/honeyd
 hope		ports/lang/hope
 horde-ansel	ports/www/horde-ansel
 horde-base	ports/www/horde-base
+horde-forwards	ports/mail/horde-forwards
 horde-meta	ports/www/horde-meta
 horde-nic	ports/net-mgmt/horde-nic
 horde-passwd	ports/www/horde-passwd
