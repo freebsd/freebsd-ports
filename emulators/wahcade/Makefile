@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wahcade
-PORTVERSION=	0.16
+PORTVERSION=	0.19
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.anti-particle.com/projects/wahcade/
 
@@ -24,6 +24,8 @@ OPTIONS=	MPLAYER "Install mplayer for movie playback" off \
 
 SUB_FILES=	pkg-message
 
+WRAPPERS=	wahcade wahcade-layout-editor wahcade-setup
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MPLAYER)
@@ -35,13 +37,17 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
 .endif
 
 do-build:
+.for f in ${WRAPPERS}
 	@(${ECHO_CMD} "#!${SH}"; \
 	  ${ECHO_CMD} "cd ${DATADIR} || exit 1"; \
-	  ${ECHO_CMD} 'exec ${PYTHON_CMD} ${PORTNAME}.py "$$@"') \
-	  > ${WRKSRC}/${PORTNAME}
+	  ${ECHO_CMD} 'exec ${PYTHON_CMD} ${f}.py "$$@"') \
+	  > ${WRKSRC}/${f}
+.endfor
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+.for f in ${WRAPPERS}
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin
+.endfor
 	${MKDIR} ${DATADIR}
 .for f in *.py config.dist glade locale pixmaps templates
 	${CP} -R ${WRKSRC}/${f} ${DATADIR}

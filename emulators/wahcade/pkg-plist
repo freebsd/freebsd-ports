@@ -1,4 +1,6 @@
 bin/wahcade
+bin/wahcade-layout-editor
+bin/wahcade-setup
 share/applications/wahcade.desktop
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -53,7 +55,9 @@ share/applications/wahcade.desktop
 %%DATADIR%%/layout_editor.py
 %%DATADIR%%/layout_props.py
 %%DATADIR%%/layout_scr_props.py
+%%DATADIR%%/locale/en/LC_MESSAGES/wahcade.mo
 %%DATADIR%%/locale/en_GB/LC_MESSAGES/wahcade.mo
+%%DATADIR%%/locale/sv/LC_MESSAGES/wahcade.mo
 %%DATADIR%%/mamewah_ini.py
 %%DATADIR%%/mplayer.py
 %%DATADIR%%/pixmaps/empty.png
@@ -76,16 +80,20 @@ share/applications/wahcade.desktop
 %%DATADIR%%/wc_common.py
 %%DATADIR%%/wc_setup.py
 %%DATADIR%%/win_cpviewer.py
+%%DATADIR%%/win_filter.py
 %%DATADIR%%/win_history.py
 %%DATADIR%%/win_main.py
 %%DATADIR%%/win_message.py
 %%DATADIR%%/win_options.py
 %%DATADIR%%/win_scrsaver.py
-@dirrmtry share/applications
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/locale/sv/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/sv
 @dirrm %%DATADIR%%/locale/en_GB/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/en_GB
+@dirrm %%DATADIR%%/locale/en/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/en
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%/config.dist/layouts/histview
@@ -102,3 +110,4 @@ share/applications/wahcade.desktop
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/xmame
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/file_formats
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/applications
