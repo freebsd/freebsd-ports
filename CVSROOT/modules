@@ -8687,6 +8687,7 @@ p5-CGI-Cache	ports/www/p5-CGI-Cache
 p5-CGI-Cookie-Splitter	ports/www/p5-CGI-Cookie-Splitter
 p5-CGI-Ex	ports/www/p5-CGI-Ex
 p5-CGI-Expand	ports/www/p5-CGI-Expand
+p5-CGI-FCKeditor	ports/www/p5-CGI-FCKeditor
 p5-CGI-FastTemplate	ports/www/p5-CGI-FastTemplate
 p5-CGI-FormBuilder	ports/www/p5-CGI-FormBuilder
 p5-CGI-Framework	ports/www/p5-CGI-Framework
