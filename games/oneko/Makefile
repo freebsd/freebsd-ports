@@ -9,7 +9,7 @@ PORTNAME=	oneko
 PORTVERSION=	2.0b
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	http://www02.so-net.ne.jp/~nsasaki/oneko/ \
+MASTER_SITES=	http://www.3bit.co.jp/~sasaki/oneko/ \
 		http://www.net24.ne.jp/~ryo2/archives/:ryo2 \
 		http://www2u.biglobe.ne.jp/~hsaka/distfiles/:hsaka
 DISTFILES=	oneko-2.0b.tar.gz \
