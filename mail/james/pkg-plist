@@ -1,0 +1,129 @@
+%%T%%/LICENSE.txt
+%%T%%/NOTICE.txt
+%%T%%/README.txt
+%%T%%/UPGRADE.txt
+%%T%%/apps/dummy.txt
+%%T%%/apps/james.sar
+%%T%%/bin/Wrapper.LICENSE
+%%T%%/bin/Wrapper.dll
+%%T%%/bin/derby.properties
+%%T%%/bin/lib/excalibur-cli-1.0.jar
+%%T%%/bin/lib/excalibur-extension-1.0a.jar
+%%T%%/bin/lib/excalibur-instrument-manager-1.0.jar
+%%T%%/bin/lib/excalibur-io-1.1.jar
+%%T%%/bin/lib/excalibur-logger-2.1.jar
+%%T%%/bin/lib/excalibur-monitor-2.1.jar
+%%T%%/bin/lib/jakarta-oro-2.0.8.jar
+%%T%%/bin/lib/mx4j-jmx.jar
+%%T%%/bin/lib/mx4j-tools.jar
+%%T%%/bin/lib/mx4j.LICENSE
+%%T%%/bin/lib/phoenix-engine.jar
+%%T%%/bin/lib/spice-classman-1.0.jar
+%%T%%/bin/lib/spice-loggerstore-0.5.jar
+%%T%%/bin/lib/spice-salt-0.8.jar
+%%T%%/bin/lib/spice-xmlpolicy-1.0.jar
+%%T%%/bin/lib/spice.LICENSE
+%%T%%/bin/phoenix-loader.jar
+%%T%%/bin/phoenix.sh
+%%T%%/bin/run.sh
+%%T%%/bin/sendmail.py
+%%T%%/bin/wrapper.jar
+%%T%%/conf/kernel.xml
+%%T%%/conf/phoenix-service.xml
+%%T%%/conf/wrapper.conf
+%%T%%/docs/adding_users.html
+%%T%%/docs/announcement.html
+%%T%%/docs/architecture.html
+%%T%%/docs/build_instructions.html
+%%T%%/docs/changelog.html
+%%T%%/docs/custom_mailet.html
+%%T%%/docs/custom_matcher.html
+%%T%%/docs/design_objectives.html
+%%T%%/docs/dns_configuration.html
+%%T%%/docs/fetchmail_configuration.html
+%%T%%/docs/images/james-logo.jpg
+%%T%%/docs/images/james_config_load_balance.png
+%%T%%/docs/images/james_config_secondary.png
+%%T%%/docs/images/james_config_smart_host.png
+%%T%%/docs/images/void.gif
+%%T%%/docs/index.html
+%%T%%/docs/install.html
+%%T%%/docs/installation_instructions.html
+%%T%%/docs/mailet_api.html
+%%T%%/docs/mailing_lists.html
+%%T%%/docs/migrating_datasource.html
+%%T%%/docs/nntp_configuration.html
+%%T%%/docs/pop3_configuration.html
+%%T%%/docs/provided_mailets.html
+%%T%%/docs/provided_matchers.html
+%%T%%/docs/remotemanager_configuration.html
+%%T%%/docs/repositories.html
+%%T%%/docs/serverwide_configuration.html
+%%T%%/docs/smtp_auth.html
+%%T%%/docs/smtp_configuration.html
+%%T%%/docs/spoolmanager.html
+%%T%%/docs/spoolmanager_configuration.html
+%%T%%/docs/stylesheet.css
+%%T%%/docs/stylesheets/project.html
+%%T%%/docs/summary.html
+%%T%%/docs/upgrade_instructions.html
+%%T%%/docs/using_database.html
+%%T%%/ext/README.txt
+%%T%%/lib/avalon-framework-api-4.3.jar
+%%T%%/lib/avalon-framework-impl-4.3.jar
+%%T%%/lib/avalon-logkit-2.1.jar
+%%T%%/lib/commons-collections-2.1.1.jar
+%%T%%/lib/concurrent-1.3.4.jar
+%%T%%/lib/excalibur-cli-1.0.jar
+%%T%%/lib/excalibur-extension-1.0a.jar
+%%T%%/lib/excalibur-instrument-api-2.1.jar
+%%T%%/lib/excalibur-instrument-manager-1.0.jar
+%%T%%/lib/excalibur-io-1.1.jar
+%%T%%/lib/excalibur-logger-2.1.jar
+%%T%%/lib/excalibur-monitor-2.1.jar
+%%T%%/lib/excalibur-pool-api-2.1.jar
+%%T%%/lib/excalibur-pool-impl-2.1.jar
+%%T%%/lib/excalibur-thread-api-2.1.jar
+%%T%%/lib/excalibur-thread-impl-2.1.jar
+%%T%%/lib/jakarta-oro-2.0.8.jar
+%%T%%/lib/mx4j-jmx.jar
+%%T%%/lib/mx4j-tools.jar
+%%T%%/lib/mx4j.LICENSE
+%%T%%/lib/phoenix-client.jar
+%%T%%/lib/phoenix-engine.jar
+%%T%%/lib/spice-classman-1.0.jar
+%%T%%/lib/spice-loggerstore-0.5.jar
+%%T%%/lib/spice-salt-0.8.jar
+%%T%%/lib/spice-xmlpolicy-1.0.jar
+%%T%%/lib/spice.LICENSE
+%%T%%/lib/tools.jar
+%%T%%/logs/readme.txt
+%%T%%/tools/lib/excalibur-i18n-1.0.jar
+%%T%%/tools/lib/isorelax-20020414.jar
+%%T%%/tools/lib/isorelax.LICENSE
+%%T%%/tools/lib/msv-20020414.jar
+%%T%%/tools/lib/msv.LICENSE
+%%T%%/tools/lib/phoenix-tools.jar
+%%T%%/tools/lib/qdox-1.1.jar
+%%T%%/tools/lib/qdox.LICENSE
+%%T%%/tools/lib/relaxngDatatype-20020414.jar
+%%T%%/tools/lib/relaxngDatatype.LICENSE
+%%T%%/tools/lib/spice-configkit-1.1.2.jar
+%%T%%/tools/lib/spice.LICENSE
+%%T%%/tools/lib/xsdlib-20020414.jar
+%%T%%/tools/lib/xsdlib.LICENSE
+@dirrm share/nls/en_US.US-ASCII
+@dirrm share/nls/POSIX
+@dirrm %%T%%/tools/lib
+@dirrm %%T%%/tools
+@dirrm %%T%%/logs
+@dirrm %%T%%/lib
+@dirrm %%T%%/ext
+@dirrm %%T%%/docs/stylesheets
+@dirrm %%T%%/docs/images
+@dirrm %%T%%/docs
+@dirrm %%T%%/conf
+@dirrm %%T%%/bin/lib
+@dirrm %%T%%/bin
+@dirrm %%T%%/apps
+@dirrm %%T%%
