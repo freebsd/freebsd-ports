@@ -7,6 +7,7 @@
 
 PORTNAME=	simh
 PORTVERSION=	3.7
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://simh.trailing-edge.com/sources/
 DISTNAME=	${PORTNAME}v37-0
@@ -46,6 +47,9 @@ MAKE_ENV=	USE_NETWORK=1
 
 pre-patch:
 	@${MKDIR} ${WRKSRC}/BIN
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/VAX/vax_sysdev.c
 
 do-install:
 .for file in ${BIN_FILES}
