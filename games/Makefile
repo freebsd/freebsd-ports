@@ -375,7 +375,6 @@
     SUBDIR += kcheckers
     SUBDIR += kdegames3
     SUBDIR += kfreerings
-    SUBDIR += kgeography
     SUBDIR += kiki
     SUBDIR += kimboot
     SUBDIR += klavaro
