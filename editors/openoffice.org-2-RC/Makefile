@@ -185,8 +185,7 @@ EXTRA_PATCHES+=	${FILESDIR}/rtld-workaround-i66667
 .if defined(WITH_GNUGCJ)
 EXTRA_PATCHES+=	${FILESDIR}/gcj-fbsdworkaround
 .endif
-
-.if defined(WITH_TTF_BYTECODE_ENABLED)
+.if !defined(WITH_SYSTEM_FREETYPE) && defined(WITH_TTF_BYTECODE_ENABLED)
 EXTRA_PATCHES+=	 ${FILESDIR}/optpatch-freetype
 .endif
 
