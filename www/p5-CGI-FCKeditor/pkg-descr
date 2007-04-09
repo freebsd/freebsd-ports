@@ -1,0 +1,5 @@
+CGI::FCKeditor is FCKeditor(http://www.fckeditor.net/) Controller for Perl OOP.
+FCKeditor(http://www.fckeditor.net/) is necessary though it is natural.
+
+Author:	Kazuma Shiraiwa <cyberlib@gmail.com>
+WWW:	http://search.cpan.org/dist/CGI-FCKeditor/
