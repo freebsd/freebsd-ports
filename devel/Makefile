@@ -2093,6 +2093,7 @@
     SUBDIR += subversive
     SUBDIR += sunterlib
     SUBDIR += svk
+    SUBDIR += svn_load_dirs
     SUBDIR += svndelta
     SUBDIR += svnkit
     SUBDIR += swig11
