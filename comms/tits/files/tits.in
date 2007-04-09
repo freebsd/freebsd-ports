@@ -1,0 +1,33 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: tits
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Define these tits_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/tits
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+tits_enable="${tits_enable-NO}"
+#tits_pidfile="/var/run/tits.pid"
+
+. %%RC_SUBR%%
+
+name="tits"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/tits"
+
+load_rc_config $name
+
+: ${tits_config="%%PREFIX%%/etc/tits.conf"}
+: ${tits_flags="${tits_config}"}
+
+#pidfile="${tits_pidfile}"
+required_files="${tits_config}"
+
+run_rc_command "$1"
