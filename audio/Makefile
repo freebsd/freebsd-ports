@@ -322,6 +322,7 @@
     SUBDIR += libcdaudio
     SUBDIR += libcddb
     SUBDIR += libcddb-doc
+    SUBDIR += libconvolve
     SUBDIR += libdssialsacompat
     SUBDIR += libgpod
     SUBDIR += libid3tag
