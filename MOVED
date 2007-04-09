@@ -2901,3 +2901,4 @@ lang/gfortran|lang/gcc42|2007-04-06|Superseded by and equivalent to gcc42
 japanese/ptex-tetex|japanese/ptex|2007-04-08|Merged into japanese/ptex
 japanese/ptex-base|japanese/ptex|2007-04-08|Merged into japanese/ptex
 games/kgeography|misc/kdeedu3|2007-04-09|Merged into kdeedu
+games/bos|games/boswars|2007-04-09|Project name changed
