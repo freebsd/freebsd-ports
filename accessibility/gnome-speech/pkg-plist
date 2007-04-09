@@ -1,3 +1,4 @@
+%%ESPEAK:%%bin/espeak-synthesis-driver
 bin/festival-synthesis-driver
 bin/test-speech
 include/gnome-speech-1.0/gnome-speech/GNOME_Speech.h
@@ -10,6 +11,7 @@ lib/libgnomespeech.so.7
 lib/orbit-2.0/GNOME_Speech_module.a
 lib/orbit-2.0/GNOME_Speech_module.la
 lib/orbit-2.0/GNOME_Speech_module.so
+%%ESPEAK:%%libdata/bonobo/servers/GNOME_Speech_SynthesisDriver_Espeak.server
 libdata/bonobo/servers/GNOME_Speech_SynthesisDriver_Festival.server
 libdata/pkgconfig/gnome-speech-1.0.pc
 share/idl/gnome-speech-1.0/GNOME_Speech.idl

@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-speech
 PORTVERSION=	0.4.10
+PORTREVISION=	1
 CATEGORIES=	accessibility audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -27,12 +28,28 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 .include <bsd.port.pre.mk>
 
+.if exists(${LOCALBASE}/lib/libespeak.so)
+WITH_ESPEAK=	yes
+.endif
+
 .if exists(${LOCALBASE}/bin/festival)
 WITH_FESTIVAL=	yes
 .endif
 
-.if defined(WITH_FESTIVAL)
-RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival
+.if defined(WITH_ESPEAK)
+LIB_DEPENDS+=	espeak.1:${PORTSDIR}/audio/espeak
+CONFIGURE_ARGS+=--with-espeak-dir=${LOCALBASE}
+PLIST_SUB+=	ESPEAK:=""
+.else
+PLIST_SUB+=	ESPEAK:="@comment "
 .endif
+
+.if defined(WITH_FESTIVAL)
+RUN_DEPENDS+=	festival:${PORTSDIR}/audio/festival
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|== x|= x|g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
