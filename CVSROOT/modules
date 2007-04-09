@@ -4073,6 +4073,7 @@ gstreamer-plugins-mad		ports/audio/gstreamer-plugins-mad
 gstreamer-plugins-mad80		ports/audio/gstreamer-plugins-mad80
 gstreamer-plugins-mikmod80	ports/audio/gstreamer-plugins-mikmod80
 gstreamer-plugins-mpeg2enc	ports/multimedia/gstreamer-plugins-mpeg2enc
+gstreamer-plugins-moodbar	ports/audio/gstreamer-plugins-moodbar
 gstreamer-plugins-mpeg2dec	ports/multimedia/gstreamer-plugins-mpeg2dec
 gstreamer-plugins-mpeg2dec80	ports/multimedia/gstreamer-plugins-mpeg2dec80
 gstreamer-plugins-mplex80	ports/multimedia/gstreamer-plugins-mplex80
