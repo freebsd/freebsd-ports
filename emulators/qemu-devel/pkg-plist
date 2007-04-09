@@ -2,6 +2,8 @@ bin/qemu
 bin/qemu-img
 bin/qemu-system-arm
 bin/qemu-system-mips
+bin/qemu-system-mips64
+bin/qemu-system-mips64el
 bin/qemu-system-mipsel
 bin/qemu-system-ppc
 bin/qemu-system-ppc64
