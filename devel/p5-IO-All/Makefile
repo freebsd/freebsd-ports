@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-All
-PORTVERSION=	0.37
+PORTVERSION=	0.38
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IO
@@ -34,10 +34,4 @@ MAN3=		IO::All.3 \
 		IO::All::String.3 \
 		IO::All::Temp.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.1 or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
