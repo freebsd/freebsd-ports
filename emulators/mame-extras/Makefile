@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	mame
-PORTVERSION=	0.112
+PORTVERSION=	0.114
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.mame.net/:mame \
-		${MASTER_SITE_LOCAL:S|$|alepulver/:mameinfo|} \
+		http://www.mameworld.net/mameinfo/update/:mameinfo \
 		http://zemamu.free.fr/:icons \
 		http://cheat.retrogames.com/:cheats \
 		http://www.mameworld.net/highscore/:hiscore \
@@ -105,7 +105,7 @@ PLIST_SUB+=	ICONS="@comment "
 .if !defined(WITHOUT_MAMEINFO)
 EXTRACT_DEPENDS+=	7z:${PORTSDIR}/archivers/p7zip
 MAMEINFO=	Mameinfo${PORTVERSION:S/.//}
-MAMEINFO_N_UP=	1 2
+MAMEINFO_N_UP=	#
 . for f in ${MAMEINFO_N_UP}
 MAMEINFO_UP+=	update${PORTVERSION:S/.//}u${f}/Update
 . endfor
