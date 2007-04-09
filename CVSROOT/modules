@@ -6213,6 +6213,7 @@ libcii		ports/devel/libcii
 libcomprex	ports/archivers/libcomprex
 libconfuse	ports/devel/libconfuse
 libconnect	ports/net/libconnect
+libconvolve	ports/audio/libconvolve
 libcoro		ports/devel/libcoro
 libcoyotl	ports/devel/libcoyotl
 libcroco	ports/textproc/libcroco
