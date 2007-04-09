@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ZendFramework
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.1b
 CATEGORIES=	www
 MASTER_SITES=	http://framework.zend.com/releases/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/-Beta/}
 
 MAINTAINER=	glarkin@sourcehosting.net
 COMMENT=	A framework for developing PHP web applications
@@ -24,7 +24,7 @@ USE_GETTEXT=	yes
 SUB_FILES=	pkg-message
 SUB_LIST=	DATADIR=${DATADIR} LOCALBASE=${LOCALBASE}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 OPTIONS=	MYSQL "Install MySQL PDO support" Off \
 		DBLIB "Install DBLIB PDO support" Off \
@@ -71,6 +71,9 @@ DB_DEFINED=	yes
 USE_PHP+=	pdo
 RUN_DEPENDS+=	${DB_DEPENDS}
 .endif
+
+# Fix USE_PHP after bsd.port.pre.mk
+.include "${PORTSDIR}/Mk/bsd.php.mk"
 
 do-install:
 	@${MKDIR} ${DATADIR}
