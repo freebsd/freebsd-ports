@@ -1,11 +1,11 @@
---- config/gdm.conf.in.orig	Fri Apr  7 15:47:20 2006
-+++ config/gdm.conf.in	Wed Apr 12 01:53:30 2006
-@@ -156,11 +156,11 @@ StandardXServer=@X_SERVER@
- #FlexiReapDelayMinutes=5
- # The X nest command.
- Xnest=@X_XNEST_PATH@/Xnest @X_XNEST_CONFIG_OPTIONS@
+--- config/gdm.conf.in.orig	Mon Apr  9 01:15:16 2007
++++ config/gdm.conf.in	Mon Apr  9 09:38:08 2007
+@@ -174,11 +174,11 @@
+ # using this Xnest, the value should be true.
+ XnestUnscaledFontPath=@X_XNEST_UNSCALED_FONTPATH@
+ 
 -# Automatic VT allocation.  Right now only works on Linux.  This way we force
-+# Automatic VT allocation.  This way
++# Automatic VT allocation.  This way we force
  # X to use specific vts.  turn VTAllocation to false if this is causing
  # problems.
 -#FirstVT=7
@@ -15,7 +15,7 @@
  # Should double login be treated with a warning (and possibility to change VT's
  # on Linux and FreeBSD systems for console logins)
  #DoubleLoginWarning=true
-@@ -283,7 +283,7 @@ Enable=false
+@@ -305,7 +305,7 @@
  # The specific gtkrc file we use.  It should be the full path to the gtkrc that
  # we need.  Unless you need a specific gtkrc that doesn't correspond to a
  # specific theme, then just use the GtkTheme key.
