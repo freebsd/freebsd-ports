@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	delegate
-PORTVERSION=	9.3.2
+PORTVERSION=	9.5.6
 CATEGORIES=	net www
 MASTER_SITES=	ftp://www.delegate.org/pub/DeleGate/ \
-		ftp://ftp.delegate.org/pub/DeleGate/ \
-		http://www.is-root.com/myports/
+		ftp://ftp.delegate.org/pub/DeleGate/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	nivo+kw+ports.bfa274@is-root.com
