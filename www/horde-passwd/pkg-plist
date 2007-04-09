@@ -1,170 +1,161 @@
-@unexec /usr/bin/cmp %%PWDDIR%%/config/backends.php %%PWDDIR%%/config/backends.php.dist && /bin/rm -f %%PWDDIR%%/config/backends.php || ${TRUE}
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%LPWDDIR%%/config/.htaccess
-%%LPWDDIR%%/config/backends.php.dist
-%%LPWDDIR%%/config/conf.xml
-%%LPWDDIR%%/index.php
-%%LPWDDIR%%/lib/.htaccess
-%%LPWDDIR%%/lib/Driver.php
-%%LPWDDIR%%/lib/Driver/adsi.php
-%%LPWDDIR%%/lib/Driver/composite.php
-%%LPWDDIR%%/lib/Driver/expect.php
-%%LPWDDIR%%/lib/Driver/kolab.php
-%%LPWDDIR%%/lib/Driver/ldap.php
-%%LPWDDIR%%/lib/Driver/pine.php
-%%LPWDDIR%%/lib/Driver/poppassd.php
-%%LPWDDIR%%/lib/Driver/procopen.php
-%%LPWDDIR%%/lib/Driver/pspasswd.php
-%%LPWDDIR%%/lib/Driver/servuftp.php
-%%LPWDDIR%%/lib/Driver/smbldap.php
-%%LPWDDIR%%/lib/Driver/smbpasswd.php
-%%LPWDDIR%%/lib/Driver/sql.php
-%%LPWDDIR%%/lib/Driver/vmailmgr.php
-%%LPWDDIR%%/lib/Driver/vpopmail.php
-%%LPWDDIR%%/lib/Passwd.php
-%%LPWDDIR%%/lib/base.php
-%%LPWDDIR%%/lib/version.php
-%%LPWDDIR%%/locale/ar_SY/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/bg_BG/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/ca_ES/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/cs_CZ/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/da_DK/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/de_DE/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/de_DE/help.xml
-%%LPWDDIR%%/locale/en_US/help.xml
-%%LPWDDIR%%/locale/es_ES/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/et_EE/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/fa_IR/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/fa_IR/help.xml
-%%LPWDDIR%%/locale/fi_FI/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/fi_FI/help.xml
-%%LPWDDIR%%/locale/fr_FR/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/gl_ES/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/hu_HU/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/hu_HU/help.xml
-%%LPWDDIR%%/locale/id_ID/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/it_IT/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/lt_LT/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/nl_NL/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/nl_NL/help.xml
-%%LPWDDIR%%/locale/nn_NO/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/pl_PL/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/pt_BR/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/ro_RO/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/ru_RU/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/ru_RU/help.xml
-%%LPWDDIR%%/locale/sk_SK/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/sv_SE/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/zh_CN/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/locale/zh_TW/LC_MESSAGES/passwd.mo
-%%LPWDDIR%%/main.php
-%%LPWDDIR%%/po/.htaccess
-%%LPWDDIR%%/po/README
-%%LPWDDIR%%/po/ar_SY.po
-%%LPWDDIR%%/po/bg_BG.po
-%%LPWDDIR%%/po/ca_ES.po
-%%LPWDDIR%%/po/cs_CZ.po
-%%LPWDDIR%%/po/da_DK.po
-%%LPWDDIR%%/po/de_DE.po
-%%LPWDDIR%%/po/es_ES.po
-%%LPWDDIR%%/po/et_EE.po
-%%LPWDDIR%%/po/fa_IR.po
-%%LPWDDIR%%/po/fi_FI.po
-%%LPWDDIR%%/po/fr_FR.po
-%%LPWDDIR%%/po/gl_ES.po
-%%LPWDDIR%%/po/hu_HU.po
-%%LPWDDIR%%/po/id_ID.po
-%%LPWDDIR%%/po/it_IT.po
-%%LPWDDIR%%/po/lt_LT.po
-%%LPWDDIR%%/po/nl_NL.po
-%%LPWDDIR%%/po/nn_NO.po
-%%LPWDDIR%%/po/passwd.pot
-%%LPWDDIR%%/po/pl_PL.po
-%%LPWDDIR%%/po/pt_BR.po
-%%LPWDDIR%%/po/ro_RO.po
-%%LPWDDIR%%/po/ru_RU.po
-%%LPWDDIR%%/po/sk_SK.po
-%%LPWDDIR%%/po/sv_SE.po
-%%LPWDDIR%%/po/zh_CN.po
-%%LPWDDIR%%/po/zh_TW.po
-%%LPWDDIR%%/scripts/.htaccess
-%%LPWDDIR%%/scripts/kpasswd_expect
-%%LPWDDIR%%/scripts/passwd_expect
-%%LPWDDIR%%/templates/.htaccess
-%%LPWDDIR%%/templates/common-header.inc
-%%LPWDDIR%%/templates/main/main.inc
-%%LPWDDIR%%/test.php
-%%LPWDDIR%%/themes/graphics/favicon.ico
-%%LPWDDIR%%/themes/graphics/passwd.png
-%%HORDE_INC%%/httpd-pwd.conf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%LPWDDIR%%/themes/graphics
-@dirrm %%LPWDDIR%%/themes
-@dirrm %%LPWDDIR%%/templates/main
-@dirrm %%LPWDDIR%%/templates
-@dirrm %%LPWDDIR%%/scripts
-@dirrm %%LPWDDIR%%/po
-@dirrm %%LPWDDIR%%/locale/zh_TW/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/zh_TW
-@dirrm %%LPWDDIR%%/locale/zh_CN/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/zh_CN
-@dirrm %%LPWDDIR%%/locale/sv_SE/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/sv_SE
-@dirrm %%LPWDDIR%%/locale/sk_SK/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/sk_SK
-@dirrm %%LPWDDIR%%/locale/ru_RU/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/ru_RU
-@dirrm %%LPWDDIR%%/locale/ro_RO/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/ro_RO
-@dirrm %%LPWDDIR%%/locale/pt_BR/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/pt_BR
-@dirrm %%LPWDDIR%%/locale/pl_PL/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/pl_PL
-@dirrm %%LPWDDIR%%/locale/nn_NO/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/nn_NO
-@dirrm %%LPWDDIR%%/locale/nl_NL/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/nl_NL
-@dirrm %%LPWDDIR%%/locale/lt_LT/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/lt_LT
-@dirrm %%LPWDDIR%%/locale/it_IT/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/it_IT
-@dirrm %%LPWDDIR%%/locale/id_ID/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/id_ID
-@dirrm %%LPWDDIR%%/locale/hu_HU/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/hu_HU
-@dirrm %%LPWDDIR%%/locale/gl_ES/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/gl_ES
-@dirrm %%LPWDDIR%%/locale/fr_FR/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/fr_FR
-@dirrm %%LPWDDIR%%/locale/fi_FI/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/fi_FI
-@dirrm %%LPWDDIR%%/locale/fa_IR/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/fa_IR
-@dirrm %%LPWDDIR%%/locale/et_EE/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/et_EE
-@dirrm %%LPWDDIR%%/locale/es_ES/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/es_ES
-@dirrm %%LPWDDIR%%/locale/en_US
-@dirrm %%LPWDDIR%%/locale/de_DE/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/de_DE
-@dirrm %%LPWDDIR%%/locale/da_DK/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/da_DK
-@dirrm %%LPWDDIR%%/locale/cs_CZ/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/cs_CZ
-@dirrm %%LPWDDIR%%/locale/ca_ES/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/ca_ES
-@dirrm %%LPWDDIR%%/locale/bg_BG/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/bg_BG
-@dirrm %%LPWDDIR%%/locale/ar_SY/LC_MESSAGES
-@dirrm %%LPWDDIR%%/locale/ar_SY
-@dirrm %%LPWDDIR%%/locale
-@dirrm %%LPWDDIR%%/lib/Driver
-@dirrm %%LPWDDIR%%/lib
-@dirrmtry %%LPWDDIR%%/config
-@dirrmtry %%LPWDDIR%%
+%%HORDIR%%/config/.htaccess
+%%HORDIR%%/config/backends.php.dist
+%%HORDIR%%/config/conf.xml
+%%HORDIR%%/index.php
+%%HORDIR%%/lib/.htaccess
+%%HORDIR%%/lib/Driver/adsi.php
+%%HORDIR%%/lib/Driver/composite.php
+%%HORDIR%%/lib/Driver/expect.php
+%%HORDIR%%/lib/Driver/kolab.php
+%%HORDIR%%/lib/Driver/ldap.php
+%%HORDIR%%/lib/Driver/pine.php
+%%HORDIR%%/lib/Driver/poppassd.php
+%%HORDIR%%/lib/Driver/procopen.php
+%%HORDIR%%/lib/Driver/pspasswd.php
+%%HORDIR%%/lib/Driver/servuftp.php
+%%HORDIR%%/lib/Driver/smbldap.php
+%%HORDIR%%/lib/Driver/smbpasswd.php
+%%HORDIR%%/lib/Driver/sql.php
+%%HORDIR%%/lib/Driver/vmailmgr.php
+%%HORDIR%%/lib/Driver/vpopmail.php
+%%HORDIR%%/lib/Driver.php
+%%HORDIR%%/lib/Passwd.php
+%%HORDIR%%/lib/base.php
+%%HORDIR%%/lib/version.php
+%%HORDIR%%/locale/ar_SY/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/bg_BG/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/ca_ES/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/cs_CZ/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/da_DK/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/de_DE/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/de_DE/help.xml
+%%HORDIR%%/locale/en_US/help.xml
+%%HORDIR%%/locale/es_ES/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/et_EE/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/fa_IR/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/fa_IR/help.xml
+%%HORDIR%%/locale/fi_FI/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/fi_FI/help.xml
+%%HORDIR%%/locale/fr_FR/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/gl_ES/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/hu_HU/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/hu_HU/help.xml
+%%HORDIR%%/locale/id_ID/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/it_IT/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/lt_LT/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/nl_NL/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/nl_NL/help.xml
+%%HORDIR%%/locale/nn_NO/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/pl_PL/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/pt_BR/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/ro_RO/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/ru_RU/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/ru_RU/help.xml
+%%HORDIR%%/locale/sk_SK/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/sv_SE/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/zh_CN/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/zh_TW/LC_MESSAGES/passwd.mo
+%%HORDIR%%/main.php
+%%HORDIR%%/po/.htaccess
+%%HORDIR%%/po/README
+%%HORDIR%%/po/ar_SY.po
+%%HORDIR%%/po/bg_BG.po
+%%HORDIR%%/po/ca_ES.po
+%%HORDIR%%/po/cs_CZ.po
+%%HORDIR%%/po/da_DK.po
+%%HORDIR%%/po/de_DE.po
+%%HORDIR%%/po/es_ES.po
+%%HORDIR%%/po/et_EE.po
+%%HORDIR%%/po/fa_IR.po
+%%HORDIR%%/po/fi_FI.po
+%%HORDIR%%/po/fr_FR.po
+%%HORDIR%%/po/gl_ES.po
+%%HORDIR%%/po/hu_HU.po
+%%HORDIR%%/po/id_ID.po
+%%HORDIR%%/po/it_IT.po
+%%HORDIR%%/po/lt_LT.po
+%%HORDIR%%/po/nl_NL.po
+%%HORDIR%%/po/nn_NO.po
+%%HORDIR%%/po/passwd.pot
+%%HORDIR%%/po/pl_PL.po
+%%HORDIR%%/po/pt_BR.po
+%%HORDIR%%/po/ro_RO.po
+%%HORDIR%%/po/ru_RU.po
+%%HORDIR%%/po/sk_SK.po
+%%HORDIR%%/po/sv_SE.po
+%%HORDIR%%/po/zh_CN.po
+%%HORDIR%%/po/zh_TW.po
+%%HORDIR%%/scripts/.htaccess
+%%HORDIR%%/scripts/kpasswd_expect
+%%HORDIR%%/scripts/passwd_expect
+%%HORDIR%%/templates/.htaccess
+%%HORDIR%%/templates/common-header.inc
+%%HORDIR%%/templates/main/main.inc
+%%HORDIR%%/test.php
+%%HORDIR%%/themes/graphics/favicon.ico
+%%HORDIR%%/themes/graphics/passwd.png
+@dirrmtry %%HORDIR%%/config
+@dirrm %%HORDIR%%/lib/Driver
+@dirrm %%HORDIR%%/lib
+@dirrm %%HORDIR%%/locale/ar_SY/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ar_SY
+@dirrm %%HORDIR%%/locale/bg_BG/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/bg_BG
+@dirrm %%HORDIR%%/locale/ca_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ca_ES
+@dirrm %%HORDIR%%/locale/cs_CZ/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/cs_CZ
+@dirrm %%HORDIR%%/locale/da_DK/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/da_DK
+@dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/de_DE
+@dirrm %%HORDIR%%/locale/en_US
+@dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/es_ES
+@dirrm %%HORDIR%%/locale/et_EE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/et_EE
+@dirrm %%HORDIR%%/locale/fa_IR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fa_IR
+@dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fi_FI
+@dirrm %%HORDIR%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fr_FR
+@dirrm %%HORDIR%%/locale/gl_ES/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/gl_ES
+@dirrm %%HORDIR%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/hu_HU
+@dirrm %%HORDIR%%/locale/id_ID/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/id_ID
+@dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/it_IT
+@dirrm %%HORDIR%%/locale/lt_LT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/lt_LT
+@dirrm %%HORDIR%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nl_NL
+@dirrm %%HORDIR%%/locale/nn_NO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nn_NO
+@dirrm %%HORDIR%%/locale/pl_PL/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pl_PL
+@dirrm %%HORDIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pt_BR
+@dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ro_RO
+@dirrm %%HORDIR%%/locale/ru_RU/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ru_RU
+@dirrm %%HORDIR%%/locale/sk_SK/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sk_SK
+@dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sv_SE
+@dirrm %%HORDIR%%/locale/zh_CN/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/zh_CN
+@dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/zh_TW
+@dirrm %%HORDIR%%/locale
+@dirrm %%HORDIR%%/po
+@dirrm %%HORDIR%%/scripts
+@dirrm %%HORDIR%%/templates/main
+@dirrm %%HORDIR%%/templates
+@dirrm %%HORDIR%%/themes/graphics
+@dirrm %%HORDIR%%/themes
+@dirrmtry %%HORDIR%%
+@dirrmtry %%HORBAS%%
