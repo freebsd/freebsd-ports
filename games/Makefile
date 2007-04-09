@@ -83,7 +83,7 @@
     SUBDIR += bomberinstinct
     SUBDIR += bombermaze
     SUBDIR += bomns
-    SUBDIR += bos
+    SUBDIR += boswars
     SUBDIR += braincurses
     SUBDIR += briquolo
     SUBDIR += brutalchess

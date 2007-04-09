@@ -1,8 +1,4 @@
-bin/bos
-%%DATADIR%%/CHANGELOG
-%%DATADIR%%/COPYRIGHT.txt
-%%DATADIR%%/LICENSE.txt
-%%DATADIR%%/README.txt
+bin/boswars
 %%DATADIR%%/campaigns/elites/campaign.lua
 %%DATADIR%%/campaigns/elites/level01.smp
 %%DATADIR%%/campaigns/elites/level01.sms
@@ -103,13 +99,16 @@ bin/bos
 %%DATADIR%%/graphics/ui/rosace1.png
 %%DATADIR%%/graphics/ui/x_startpoint.png
 %%DATADIR%%/languages/bg.po
+%%DATADIR%%/languages/bos-da.po
 %%DATADIR%%/languages/bos-de.po
 %%DATADIR%%/languages/bos-en.po
 %%DATADIR%%/languages/bos-fi.po
 %%DATADIR%%/languages/bos-fr.po
 %%DATADIR%%/languages/bos.pot
+%%DATADIR%%/languages/da.po
 %%DATADIR%%/languages/de.po
 %%DATADIR%%/languages/en.po
+%%DATADIR%%/languages/engine.pot
 %%DATADIR%%/languages/fi.po
 %%DATADIR%%/languages/fr.po
 %%DATADIR%%/languages/genpot.sh
@@ -210,6 +209,8 @@ bin/bos
 %%DATADIR%%/maps/wetlands01/wetlands01.png
 %%DATADIR%%/maps/wetlands01/wetlands01.sms
 %%DATADIR%%/scripts/ai.lua
+%%DATADIR%%/scripts/ais/passive.lua
+%%DATADIR%%/scripts/ais/rush.lua
 %%DATADIR%%/scripts/anim.lua
 %%DATADIR%%/scripts/bos.lua
 %%DATADIR%%/scripts/buttons.lua
@@ -547,8 +548,38 @@ bin/bos
 %%DATADIR%%/units/vehiclefactory/vehicle_factory_i.png
 %%DATADIR%%/units/vehiclefactory/vehicle_factory_s.png
 %%DATADIR%%/units/vehiclefactory/vehiclefactory.lua
-%%DATADIR%%/video/bos_intro.ogg
-%%DATADIR%%/video/stratagus_intro.ogg
+%%DATADIR%%/video/boswars_intro.ogg
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/README-SDL.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/development.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/gpl.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/guichan-copyright.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/install.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/media.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/ai.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/config.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/findlua.py
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/game.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/index.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/magic.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/makeindex.py
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/mappresentation.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/mapsetup.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/research.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/savegame.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/showindex.py
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/sound.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/tileset.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/triggers.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/ui.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/scripts/unittype.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/stratagus-changelog.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/scripts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/video
 @dirrm %%DATADIR%%/units/vehiclefactory
 @dirrm %%DATADIR%%/units/vault
@@ -594,8 +625,8 @@ bin/bos
 @dirrm %%DATADIR%%/scripts/tilesets
 @dirrm %%DATADIR%%/scripts/menus/ingame
 @dirrm %%DATADIR%%/scripts/menus
+@dirrm %%DATADIR%%/scripts/ais
 @dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/music
 @dirrm %%DATADIR%%/maps/wetlands01
 @dirrm %%DATADIR%%/maps/tutorial
 @dirrm %%DATADIR%%/maps/river

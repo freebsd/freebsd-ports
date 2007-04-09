@@ -954,7 +954,7 @@ boost		ports/devel/boost
 boost-python		ports/devel/boost-python
 bopm		ports/irc/bopm
 borzoi		ports/security/borzoi
-bos		ports/games/bos
+boswars		ports/games/boswars
 botan		ports/security/botan
 bottlerocket	ports/misc/bottlerocket
 bouml		ports/devel/bouml

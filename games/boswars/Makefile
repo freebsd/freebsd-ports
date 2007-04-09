@@ -5,28 +5,52 @@
 # $FreeBSD$
 #
 
-PORTNAME=	bos
-PORTVERSION=	2.0.1
+PORTNAME=	boswars
+PORTVERSION=	2.3
 CATEGORIES=	games
 MASTER_SITES=	http://www.boswars.org/releases/
-DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A real-time strategy game
 
-RUN_DEPENDS=	stratagus:${PORTSDIR}/games/stratagus
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		theora.2:${PORTSDIR}/multimedia/libtheora \
+		vorbis.3:${PORTSDIR}/audio/libvorbis
 
-NO_WRKSUBDIR=	yes
+USE_LUA=	5.0
+USE_SDL=	sdl
+USE_SCONS=	yes
+CPPPATH=	${LOCALBASE}/include ${LUA_INCDIR}
+LIBPATH=	${LOCALBASE}/lib ${LUA_LIBDIR}
+CFLAGS+=	-DSTRATAGUS_LIB_PATH='"\"${DATADIR}\""'
 
-do-build:
-	@(${ECHO_CMD} "#!${SH}"; \
-	  ${ECHO_CMD} 'exec stratagus -d ${DATADIR} "$$@"') \
-	  > ${WRKDIR}/${PORTNAME}
+OPTIONS=	GL "Enable OpenGL support" on \
+		OPTIMIZED_CFLAGS "Enable compilation optimizations" on
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_GL)
+USE_GL=		yes
+SCONS_ARGS+=	opengl=1
+CPPPATH+=	${X11BASE}/include
+LIBPATH+=	${X11BASE}/lib
+.endif
+
+.if !defined(WITH_OPTIMIZED_CFLAGS)
+SCONS_ARGS+=	optimized_cflags=1
+.endif
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-	cd ${WRKSRC}/data.bos && \
-		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
-		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${MKDIR} ${DATADIR}
+.for f in campaigns graphics languages maps scripts sounds units video
+	${CP} -R ${WRKSRC}/${f} ${DATADIR}
+.endfor
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${WRKSRC}/README.txt ${DOCSDIR}
+	${CP} -R ${WRKSRC}/doc ${DOCSDIR}
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

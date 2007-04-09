@@ -1,0 +1,38 @@
+--- ./SConstruct.orig	Sun Mar  4 10:14:23 2007
++++ ./SConstruct	Mon Apr  9 11:15:01 2007
+@@ -33,12 +33,12 @@
+ 
+ def DefineOptions(filename, args):
+    opts = Options(filename, args)
+-   opts.Add('CPPPATH', 'Additional preprocessor paths')
++   opts.Add('CPPPATH', 'Additional preprocessor paths', Split(''))
+    opts.Add('CPPFLAGS', 'Additional preprocessor flags')
+    opts.Add('CPPDEFINES', 'defined constants', Split(''))
+-   opts.Add('LIBPATH', 'Additional library paths')
++   opts.Add('LIBPATH', 'Additional library paths', Split(''))
+    opts.Add('LIBS', 'Additional libraries')
+-   opts.Add('CCFLAGS', 'C Compiler flags', Split(ccflags))
++   opts.Add('CCFLAGS', 'C Compiler flags', Split(''))
+    opts.Add('LINKFLAGS', 'Linker Compiler flags')
+    opts.Add('CC', 'C Compiler')
+    opts.Add('CXX', 'C++ Compiler')
+@@ -52,6 +52,9 @@
+ opts = DefineOptions("build_options.py", ARGUMENTS)
+ env = Environment(ENV = {'PATH':os.environ['PATH']}) # for an unknown reason Environment(options=opts) doesnt work well
+ opts.Update(env) # Needed as Environment(options=opts) doesnt seem to work
++env['CCFLAGS'] = Split(ccflags) + Split(env['CCFLAGS'])
++env['CPPPATH'] = Split(env['CPPPATH'])
++env['LIBPATH'] = Split(env['LIBPATH'])
+ Help(opts.GenerateHelpText(env))
+ optionsChanged = True
+ if os.path.exists('build_options.py'):
+@@ -144,9 +147,6 @@
+      Exit(1)
+   if not conf.CheckLibWithHeader('z', 'zlib.h', 'c'):
+      print 'Did not find the zlib library or headers, exiting!'
+-     Exit(1)
+-  if not conf.CheckLib('dl'):
+-     print 'Did not find dl library or header which is needed on some systems for lua. Exiting!'
+      Exit(1)
+   if not CheckLuaLib(env, conf):
+      print 'Did not find required lua library. Exiting!'
