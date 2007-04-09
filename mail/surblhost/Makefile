@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	surblhost
-PORTVERSION=	0.6.2
+PORTVERSION=	0.8.0
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
@@ -19,10 +19,4 @@ PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1
 CONFIGURE_ARGS=	--mandir=${MAN1PREFIX}/man
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	does not compile on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
