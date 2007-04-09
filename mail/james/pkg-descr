@@ -1,0 +1,17 @@
+The Apache Java Enterprise Mail Server (a.k.a. Apache James) is a 100% pure
+Java SMTP and POP3 Mail server and NNTP News server. We have designed James
+to be a complete and portable enterprise mail engine solution based on
+currently available open protocols.
+
+James is also a mail application platform. We have developed a Java API to
+let you write Java code to process emails that we call the mailet API. A
+mailet can generate an automatic reply, update a database, prevent spam,
+build a message archive, or whatever you can imagine. A matcher determines
+whether your mailet should process an email in the server. The James project
+hosts the Mailet API, and James provides an implementation of this mail appli
+-cation platform API.
+
+James is based upon the Apache Avalon application framework, formerly a
+product of the Apache Avalon project.
+
+WWW: http://james.apache.org/

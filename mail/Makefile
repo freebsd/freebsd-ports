@@ -173,6 +173,7 @@
     SUBDIR += isoqlog
     SUBDIR += isync
     SUBDIR += itraxp
+    SUBDIR += james
     SUBDIR += jamlib
     SUBDIR += jboss-mailservices
     SUBDIR += junkfilter
