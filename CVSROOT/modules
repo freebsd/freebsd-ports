@@ -5750,7 +5750,6 @@ kf		ports/net-im/kf
 kfile-plugins	ports/misc/kfile-plugins
 kfreerings	ports/games/kfreerings
 kftpgrabber	ports/ftp/kftpgrabber
-kgeography	ports/games/kgeography
 kgpg		ports/security/kgpg
 khacc		ports/finance/khacc
 kiax		ports/net/kiax
