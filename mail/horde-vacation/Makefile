@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	vacation
-PORTVERSION=	3.0
+PORTVERSION=	3.0.1
 CATEGORIES=	mail www
 PKGNAMEPREFIX=	horde-
+DIST_SUBDIR=	horde
 
 MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	E-mail auto-responder
