@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	obfuscatejs
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.5
 CATEGORIES=	devel java
-MASTER_SITES=	http://tools.2vi.nl/ \
-		http://nivi.interfree.it/distfiles/${DIST_SUBDIR}/
+MASTER_SITES=	http://nivi.interfree.it/distfiles/${DIST_SUBDIR}/ \
+		http://tools.2vi.nl/
 DISTNAME=	consyntools
 EXTRACT_SUFX=	.jar
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
