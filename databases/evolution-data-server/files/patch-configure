@@ -1,8 +1,8 @@
---- configure.orig	Sun Dec 25 01:57:35 2005
-+++ configure	Sun Dec 25 01:58:23 2005
-@@ -23542,6 +23542,14 @@
-     SOFTOKN3_LIB=''
-     LIBEXECDIR_IN_SERVER_FILE='../../../libexec'
+--- configure.orig	Tue Apr 10 14:17:30 2007
++++ configure	Tue Apr 10 14:18:20 2007
+@@ -24550,6 +24550,14 @@ case "$host" in
+     # AC_CACHE_VAL(have_addrinfo, [have_addrinfo=yes])
+     # AC_DEFINE(_WIN32_WINNT, 0x501, [To get getaddrinfo etc declarations])
      ;;
 +*freebsd*)
 +    os_win32=no
@@ -15,7 +15,7 @@
  *)  os_win32=no
      NO_UNDEFINED=''
      SOCKET_LIBS=''
-@@ -27317,7 +27325,7 @@
+@@ -28749,7 +28757,7 @@ cat >>conftest.$ac_ext <<_ACEOF
  		#include <sys/socket.h>
  		#include <netinet/in.h>
  		#include <netdb.h>
@@ -24,17 +24,17 @@
  
  int
  main ()
-@@ -27565,7 +27573,7 @@
+@@ -29039,7 +29047,7 @@ if test "x${with_krb5}" != "xno"; then
  	LDFLAGS_save="$LDFLAGS"
  
  	mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
 -	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi"
 +	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi -lcrypt"
- 	echo "$as_me:$LINENO: checking for Kerberos 5" >&5
- echo $ECHO_N "checking for Kerberos 5... $ECHO_C" >&6
+ 	{ echo "$as_me:$LINENO: checking for Kerberos 5" >&5
+ echo $ECHO_N "checking for Kerberos 5... $ECHO_C" >&6; }
  if test "${ac_cv_lib_kerberos5+set}" = set; then
-@@ -31483,7 +31491,7 @@
- imagesdir="$datadir/pixmaps/evolution-data-server-$BASE_VERSION"
+@@ -33857,7 +33865,7 @@ idldir='${datadir}'/idl/evolution-data-s
+ imagesdir='${datadir}'/pixmaps/evolution-data-server
  
  
 -serverdir="$libdir/bonobo/servers"
