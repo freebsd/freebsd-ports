@@ -415,6 +415,7 @@
     SUBDIR += meshviewer
     SUBDIR += metacam
     SUBDIR += metapixel
+    SUBDIR += mhgui
     SUBDIR += ming
     SUBDIR += mingplot
     SUBDIR += mirage

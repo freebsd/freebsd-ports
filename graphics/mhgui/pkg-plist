@@ -1,0 +1,35 @@
+include/mhgui/AbstractListener.h
+include/mhgui/CGUtilities.h
+include/mhgui/Camera.h
+include/mhgui/Component.h
+include/mhgui/Console.h
+include/mhgui/Image.h
+include/mhgui/ImageData.h
+include/mhgui/ImageSlider.h
+include/mhgui/ImageSliderSysListener.h
+include/mhgui/ImageSysListener.h
+include/mhgui/Label.h
+include/mhgui/Panel.h
+include/mhgui/Point.h
+include/mhgui/Rect.h
+include/mhgui/Size.h
+include/mhgui/TextEntry.h
+include/mhgui/TextEntrySysListener.h
+include/mhgui/Texture.h
+include/mhgui/Tooltip.h
+include/mhgui/Widget.h
+include/mhgui/Window.h
+lib/libmhgui.a
+lib/libmhgui.la
+lib/libmhgui.so
+lib/libmhgui.so.0
+libdata/pkgconfig/mhgui.pc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/mhgui
