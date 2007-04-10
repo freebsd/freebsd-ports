@@ -1,0 +1,7 @@
+Animorph is a morphing engine responsible for calculating and then
+executing all the real time changes to the MakeHuman basemesh, as
+required by the user's morph target selections and those target's value
+settings.  Naturally, it also loads and saves character body setting
+(.bs) files.
+
+WWW: http://www.dedalo-3d.com/index.php
