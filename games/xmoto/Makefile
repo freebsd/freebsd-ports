@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xmoto
-PORTVERSION=	0.2.6
+PORTVERSION=	0.2.7
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://download.tuxfamily.org/xmoto/xmoto/${PORTVERSION}/ \
+		http://www.amdmi3.ru/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	amdmi3@amdmi3.ru
@@ -22,7 +22,6 @@ BUILD_DEPENDS=	${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GL=		yes
 USE_LUA=	5.1
 USE_SDL=	sdl mixer
 USE_DOS2UNIX=	src/*.cpp src/*.h
@@ -40,7 +39,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	README ChangeLog
 
 OPTIONS=	WWW	"Online high-scores and new levels download support"	on \
-		ZOOM	"Enable zooming"	off
+		ZOOM	"Enable zooming"	off \
+		SDL_GFX	"Use sdl_gfx rendering instead of OpenGL"	off
 
 MAN6=		xmoto.6
 
@@ -57,6 +57,14 @@ CONFIGURE_ARGS+=	--with-enable-www=0
 CONFIGURE_ARGS+=	--with-enable-zoom=1
 .else
 CONFIGURE_ARGS+=	--with-enable-zoom=0
+.endif
+
+.if defined(WITH_SDL_GFX)
+USE_SDL+=	gfx
+CONFIGURE_ARGS+=--with-renderer-sdlGfx=1 --with-renderer-openGl=0
+.else
+USE_GL=		yes
+CONFIGURE_ARGS+=--with-renderer-sdlGfx=0 --with-renderer-openGl=1
 .endif
 
 .if !defined(WITHOUT_NLS)
