@@ -9889,7 +9889,6 @@ p5-Mail-Audit	ports/mail/p5-Mail-Audit
 p5-Mail-Audit-Attach	ports/mail/p5-Mail-Audit-Attach
 p5-Mail-Box	ports/mail/p5-Mail-Box
 p5-Mail-Box-Parser-C	ports/mail/p5-Mail-Box-Parser-C
-p5-Mail-Box1	ports/mail/p5-Mail-Box1
 p5-Mail-Bulkmail	ports/mail/p5-Mail-Bulkmail
 p5-Mail-CClient	ports/mail/p5-Mail-CClient
 p5-Mail-CheckUser	ports/mail/p5-Mail-CheckUser
