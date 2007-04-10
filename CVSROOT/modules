@@ -387,6 +387,7 @@ angband		ports/games/angband
 angst		ports/net-mgmt/angst
 animenfo-client	ports/databases/animenfo-client
 animenfo-client-gtk	ports/databases/animenfo-client-gtk
+animorph	ports/graphics/animorph
 anjuta		ports/devel/anjuta
 annelid		ports/games/annelid
 annextools	ports/net-mgmt/annextools
