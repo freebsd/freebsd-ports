@@ -22,7 +22,7 @@
  
  # flags (otimizacao e nao exibir warnings)
 -FLAGS = -O2 -DREENTRANT -DHAVE_OPENGL #-g 
-+FLAGS = $(CFLAGS) -DREENTRANT -DHAVE_OPENGL -I$(X11BASE)/include
++FLAGS = $(CFLAGS) -DREENTRANT -DHAVE_OPENGL -I$(X11BASE)/include `sdl-config --cflags`
 +
 +ifdef OPTIMIZED_CFLAGS
 +FLAGS += -O2
