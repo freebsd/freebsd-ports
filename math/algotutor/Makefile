@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	algotutor
-PORTVERSION=	0.8.5
-PORTREVISION=	1
+PORTVERSION=	0.8.6
 CATEGORIES=	math
 MASTER_SITES=	http://saturn.stu.edu.tw/~ckhung/dl/
 EXTRACT_SUFX=	.tgz
@@ -24,9 +23,9 @@ NO_BUILD=	yes
 MAN1=		algotutor.1 gen_at_graph.1
 BINFILES=	algotutor gen_at_graph
 LIBFILES=	BST.pm Board.pm Collection.pm Configurable.pm DCEdge.pm \
-		Edge.pm Graph.pm Heap.pm PQueue.pm RBTree.pm RecCanvas.pm \
-		RecDialog.pm TreeNode.pm Vector.pm Vertex.pm basic.pl \
-		utilalgo
+		Edge.pm Graph.pm Heap.pm Line.pm PQueue.pm RBTree.pm \
+		RecCanvas.pm RecDialog.pm TreeNode.pm Vector.pm Vector2.pm \
+		Vector3.pm Vertex.pm basic.pl utilalgo
 
 post-patch:
 	${REINPLACE_CMD}  -e 's,#!/usr/bin/perl,#!${PERL},' ${WRKSRC}/algotutor

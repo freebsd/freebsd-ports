@@ -8,12 +8,15 @@ bin/gen_at_graph
 %%SITE_PERL%%/algotutor/Edge.pm
 %%SITE_PERL%%/algotutor/Graph.pm
 %%SITE_PERL%%/algotutor/Heap.pm
+%%SITE_PERL%%/algotutor/Line.pm
 %%SITE_PERL%%/algotutor/PQueue.pm
 %%SITE_PERL%%/algotutor/RBTree.pm
 %%SITE_PERL%%/algotutor/RecCanvas.pm
 %%SITE_PERL%%/algotutor/RecDialog.pm
 %%SITE_PERL%%/algotutor/TreeNode.pm
 %%SITE_PERL%%/algotutor/Vector.pm
+%%SITE_PERL%%/algotutor/Vector2.pm
+%%SITE_PERL%%/algotutor/Vector3.pm
 %%SITE_PERL%%/algotutor/Vertex.pm
 %%SITE_PERL%%/algotutor/basic.pl
 %%SITE_PERL%%/algotutor/cgeom/dom

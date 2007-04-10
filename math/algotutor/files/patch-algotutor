@@ -1,5 +1,5 @@
---- algotutor.orig	Tue Apr 12 21:35:39 2005
-+++ algotutor	Wed Apr 13 11:50:11 2005
+--- algotutor.orig	Tue Apr 10 18:55:36 2007
++++ algotutor	Tue Apr 10 18:56:10 2007
 @@ -4,7 +4,7 @@
  
  use strict;
@@ -9,12 +9,12 @@
  
  BEGIN {
      my ($path) = $0 =~ m#(.*/)#;
-@@ -33,7 +33,7 @@
-     dynprog($opts{a});
- }
- 
--die "need exactly one data file. Example:\n\talgotutor -a bst /usr/share/algotutor/data/countries.gr\n" 
-+die "need exactly one data file. Example:\n\talgotutor -a bst !!PREFIX!!/share/algotutor/data/countries.gr\n" 
-     unless $#ARGV == 0;
- $dfn = $ARGV[0];
- die "cannot read data file '$dfn'.\nDoes it exist and do you have read permissions?\n" unless -r $dfn;
+@@ -58,7 +58,7 @@
+     $tab->{$algo}{run}();
+ } else {
+     # algorithms other than dynamic programming
+-    die "need exactly one data file. Example:\n\talgotutor -a bst /usr/share/algotutor/data/countries.gr\n" 
++    die "need exactly one data file. Example:\n\talgotutor -a bst !!PREFIX!!/share/algotutor/data/countries.gr\n" 
+ 	unless $#ARGV == 0;
+     $dfn = $ARGV[0];
+     die "cannot read data file '$dfn'.\nDoes it exist and do you have read permissions?\n" unless -r $dfn;
