@@ -16,15 +16,7 @@ COMMENT=	Decompress data compressed with PKWARE Data Compression Library
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
+USE_GNOME=	gnometarget
+USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|' \
-		${WRKSRC}/lib/libdynamite.c
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
