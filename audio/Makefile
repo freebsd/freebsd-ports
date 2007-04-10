@@ -376,7 +376,6 @@
     SUBDIR += madplay
     SUBDIR += malint
     SUBDIR += maplay
-    SUBDIR += marlin
     SUBDIR += mbox
     SUBDIR += mbrola
     SUBDIR += mbrolavox
@@ -661,7 +660,6 @@
     SUBDIR += wsoundprefs
     SUBDIR += wsoundserver
     SUBDIR += x11amp
-    SUBDIR += x4x
     SUBDIR += xanalyser
     SUBDIR += xaylet
     SUBDIR += xcd

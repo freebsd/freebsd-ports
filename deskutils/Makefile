@@ -211,7 +211,6 @@
     SUBDIR += xpostitPlus
     SUBDIR += xrolo
     SUBDIR += xwrits
-    SUBDIR += yank
     SUBDIR += zorro
 
 .include <bsd.port.subdir.mk>

@@ -1,5 +1,0 @@
-Paradox is an extension to read and write Paradox .DB and .PX files.
-It can handle almost all field types and binary large objects stored
-in .MB files.
-
-WWW: http://pecl.php.net/package/paradox
