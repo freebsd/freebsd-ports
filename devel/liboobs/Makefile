@@ -6,7 +6,7 @@
 #    $MCom: ports/devel/liboobs/Makefile,v 1.18 2007/03/12 12:34:37 ahze Exp $
 
 PORTNAME=	liboobs
-PORTVERSION=	2.18.0
+PORTVERSION=	2.18.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
