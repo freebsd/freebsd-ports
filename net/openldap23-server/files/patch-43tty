@@ -1,0 +1,22 @@
+--- include/ac/termios.h	Tue Jan  2 22:43:47 2007
++++ include/ac/termios.h	Fri Mar 16 13:48:00 2007
+@@ -17,7 +17,7 @@
+ #ifndef _AC_TERMIOS_H
+ #define _AC_TERMIOS_H
+ 
+-#ifdef HAVE_POSIX_TERMIOS
++#ifdef HAVE_TERMIOS_H
+ #include <termios.h>
+ 
+ #ifdef GCWINSZ_IN_SYS_IOCTL
+--- libraries/liblutil/getpass.c	Tue Jan  2 22:43:52 2007
++++ libraries/liblutil/getpass.c	Fri Mar 16 13:47:52 2007
+@@ -60,7 +60,7 @@
+ char *
+ lutil_getpass( const char *prompt )
+ {
+-#if !defined(HAVE_POSIX_TERMIOS) && !defined(HAVE_SGTTY_H)
++#if !defined(HAVE_TERMIOS_H) && !defined(HAVE_SGTTY_H)
+ 	static char buf[256];
+ 	int i, c;
+ 
