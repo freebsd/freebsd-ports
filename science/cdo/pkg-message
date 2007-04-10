@@ -1,4 +1,4 @@
-In CDO version 1.0.6, three new environment variables were introduced:
+Since CDO version 1.0.6, three new environment variables were introduced:
 - CDO_DISABLE_HISTORY:
   If set to 1, the netCDF history attribute of input datasets is not used.
 - CDO_DISABLE_FILESUFFIX:

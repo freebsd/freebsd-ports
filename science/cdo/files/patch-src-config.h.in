@@ -1,11 +1,10 @@
---- src/config.h.in.orig	Wed Dec 13 21:30:19 2006
-+++ src/config.h.in	Mon Dec 18 10:41:13 2006
-@@ -1,5 +1,8 @@
- /* src/config.h.in.  Generated from configure.ac by autoheader.  */
+--- src/config.h.in.orig	Tue Dec 19 19:07:07 2006
++++ src/config.h.in	Sat Apr  7 04:00:39 2007
+@@ -107,3 +107,7 @@
  
-+#include <unistd.h>
-+#include <sys/param.h>
+ /* Define for large files, on AIX-style hosts. */
+ #undef _LARGE_FILES
 +
- /* Compiler */
- #undef COMPILER
- 
++#if defined (HAVE_UNISTD_H)
++#include <unistd.h>
++#endif
