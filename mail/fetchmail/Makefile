@@ -12,7 +12,7 @@
 PORTNAME=	fetchmail
 PORTVERSION=	6.3.8
 CATEGORIES=	mail ipv6
-MASTER_SITES=	${MASTER_SITE_BERLIOS}/%SUBDIR%/ \
+MASTER_SITES=	${MASTER_SITE_BERLIOS}/ \
 		http://home.pages.de/~mandree/%SUBDIR%/ \
 		http://home.leo.org/~barner/freebsd/distfiles/
 MASTER_SITE_SUBDIR=	fetchmail
