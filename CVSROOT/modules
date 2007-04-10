@@ -1569,6 +1569,7 @@ csv2latex	ports/textproc/csv2latex
 csv2xml		ports/textproc/csv2xml
 csvdiff		ports/textproc/csvdiff
 ct		ports/net/ct
+ctemplate	ports/www/ctemplate
 cthumb		ports/graphics/cthumb
 ctorrent	ports/net-p2p/ctorrent
 ctpp		ports/textproc/ctpp
