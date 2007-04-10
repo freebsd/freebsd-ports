@@ -1,5 +1,6 @@
 bin/cups-calibrate
 etc/cups/command.types
+libexec/cups/driver/gutenprint.5.1
 libexec/cups/filter/commandtocanon
 libexec/cups/filter/commandtoepson
 libexec/cups/filter/rastertogutenprint.5.1
@@ -13354,3 +13355,4 @@ share/cups/model/gutenprint/5.1/zh_TW/stp-xerox-wc_m118.5.1.ppd.gz
 @dirrm share/cups/model/gutenprint/5.1/C
 @dirrm share/cups/model/gutenprint/5.1
 @dirrm share/cups/model/gutenprint
+@dirrmtry libexec/cups/driver
