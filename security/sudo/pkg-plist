@@ -1,6 +1,7 @@
 @unexec if cmp -s %D/etc/sudoers %D/etc/sudoers.default; then rm -f %D/etc/sudoers; fi
 bin/sudo
 bin/sudoedit
+etc/pam.d/sudo
 etc/sudoers.default
 etc/sudoers.sample
 libexec/sudo_noexec.so
