@@ -7,6 +7,7 @@
 
 PORTNAME=	REminiscence
 PORTVERSION=	0.1.9
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://cyxdown.free.fr/reminiscence/ \
 		http://www.amdmi3.ru/distfiles/
@@ -20,6 +21,9 @@ USE_SDL=	sdl
 
 ALL_TARGET=	rs
 MAKE_ENV=	CXX="${CXX}"
+
+PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
 
 PORTDOCS=	README
 
