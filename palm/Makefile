@@ -15,7 +15,6 @@
     SUBDIR += jpilot-db
     SUBDIR += libmal
     SUBDIR += makeztxt
-    SUBDIR += malsync
     SUBDIR += mdbconv
     SUBDIR += p5-Palm
     SUBDIR += p5-Palm-PalmDoc

@@ -9,7 +9,6 @@
     SUBDIR += aspell
     SUBDIR += cyrproxy
     SUBDIR += d1489
-    SUBDIR += elm.language
     SUBDIR += fortuneru
     SUBDIR += kde3-i18n
     SUBDIR += koffice-i18n
@@ -26,7 +25,6 @@
     SUBDIR += p5-cyrillic
     SUBDIR += pgp.language
     SUBDIR += php_doc
-    SUBDIR += pine.language
     SUBDIR += prawda
     SUBDIR += pscyr
     SUBDIR += rubygem-rutils

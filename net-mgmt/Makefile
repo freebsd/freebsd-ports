@@ -207,10 +207,8 @@
     SUBDIR += slate
     SUBDIR += snmptt
     SUBDIR += softflowd
-    SUBDIR += sting
     SUBDIR += subcalc
     SUBDIR += sysmon
-    SUBDIR += tas
     SUBDIR += tcpreplay
     SUBDIR += tcptrack
     SUBDIR += tknetmon

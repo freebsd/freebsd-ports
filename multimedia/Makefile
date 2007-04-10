@@ -203,7 +203,6 @@
     SUBDIR += qdvdauthor
     SUBDIR += quodlibet
     SUBDIR += quark
-    SUBDIR += qvamps
     SUBDIR += recmpeg
     SUBDIR += replex
     SUBDIR += rox-videothumbnail
