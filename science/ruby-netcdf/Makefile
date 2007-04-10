@@ -7,6 +7,7 @@
 
 PORTNAME=	netcdf
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	math ruby
 MASTER_SITES=	http://ruby.gfd-dennou.org/products/ruby-netcdf/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -17,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby interface to the NetCDF scientific IO library
 
 BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray
-LIB_DEPENDS=	netcdf.1:${PORTSDIR}/science/netcdf
+LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray
 
 USE_RUBY=	yes

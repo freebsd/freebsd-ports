@@ -17,7 +17,7 @@
 
 PORTNAME=	minc
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science biology
 MASTER_SITES=	http://www.bic.mni.mcgill.ca/software/distribution/packages/ \
 		http://www.neuro.mcw.edu/~bacon/Ports/distfiles/
@@ -25,7 +25,7 @@ MASTER_SITES=	http://www.bic.mni.mcgill.ca/software/distribution/packages/ \
 MAINTAINER=	bacon@smithers.neuro.mcw.edu
 COMMENT=	Medical Imaging NetCDF
 
-LIB_DEPENDS=	netcdf.1:${PORTSDIR}/science/netcdf
+LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf
 
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_SHLIB=	yes

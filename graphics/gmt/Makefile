@@ -7,6 +7,7 @@
 
 PORTNAME=	gmt
 PORTVERSION=	3.4.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://gmt.soest.hawaii.edu/pub/gmt/ \
 		ftp://falcon.grdl.noaa.gov/pub/gmt/ \
@@ -23,7 +24,7 @@ EXTRACT_ONLY=	${DISTNAME}_progs${EXTRACT_SUFX} \
 MAINTAINER=	sec@42.org
 COMMENT=	The Generic Mapping Tools data processing and display software package
 
-LIB_DEPENDS=	netcdf.1:${PORTSDIR}/science/netcdf
+LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf
 
 EXTRACT_SUB=	GMT_share${EXTRACT_SUFX}
 
