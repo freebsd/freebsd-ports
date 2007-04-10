@@ -46,6 +46,8 @@ share/gnome/help/services-admin/sv/services-admin.xml
 share/gnome/help/shares-admin/C/figures/shares-tool.png
 share/gnome/help/shares-admin/C/legal.xml
 share/gnome/help/shares-admin/C/shares-admin.xml
+share/gnome/help/shares-admin/fr/figures/shares-tool.png
+share/gnome/help/shares-admin/fr/shares-admin.xml
 share/gnome/help/shares-admin/sv/figures/shares-tool.png
 share/gnome/help/shares-admin/sv/shares-admin.xml
 share/gnome/help/time-admin/C/figures/time-map.png
@@ -101,6 +103,8 @@ share/gnome/omf/services-admin/services-admin-es.omf
 share/gnome/omf/services-admin/services-admin-fr.omf
 share/gnome/omf/services-admin/services-admin-sv.omf
 share/gnome/omf/shares-admin/shares-admin-C.omf
+share/gnome/omf/shares-admin/shares-admin-fr.omf
+
 share/gnome/omf/shares-admin/shares-admin-sv.omf
 share/gnome/omf/time-admin/time-admin-C.omf
 share/gnome/omf/time-admin/time-admin-es.omf
@@ -263,6 +267,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-system-tools.mo
 @dirrm share/gnome/help/time-admin
 @dirrm share/gnome/help/shares-admin/sv/figures
 @dirrm share/gnome/help/shares-admin/sv
+@dirrm share/gnome/help/shares-admin/fr/figures
+@dirrm share/gnome/help/shares-admin/fr
 @dirrm share/gnome/help/shares-admin/C/figures
 @dirrm share/gnome/help/shares-admin/C
 @dirrm share/gnome/help/shares-admin

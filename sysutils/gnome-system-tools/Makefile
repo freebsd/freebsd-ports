@@ -6,7 +6,7 @@
 #    $MCom: ports/sysutils/gnome-system-tools/Makefile,v 1.59 2007/03/12 12:55:31 ahze Exp $
 
 PORTNAME=	gnome-system-tools
-PORTVERSION=	2.18.0
+PORTVERSION=	2.18.1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-system-tools/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
