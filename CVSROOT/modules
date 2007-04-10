@@ -10738,6 +10738,7 @@ p5-Test-WWW-Mechanize-Catalyst	ports/devel/p5-Test-WWW-Mechanize-Catalyst
 p5-Test-Warn		ports/devel/p5-Test-Warn
 p5-Test-XML	ports/devel/p5-Test-XML
 p5-Test-XML-Valid	ports/devel/p5-Test-XML-Valid
+p5-Test-YAML-Valid	ports/devel/p5-Test-YAML-Valid
 p5-Test-use-ok	ports/devel/p5-Test-use-ok
 p5-TestGen4Web-Runner	ports/www/p5-TestGen4Web-Runner
 p5-Text-ASCIITable	ports/textproc/p5-Text-ASCIITable
