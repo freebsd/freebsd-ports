@@ -97,7 +97,7 @@ pre-everything::
 	@${ECHO_MSG} "Define WITHOUT_MED to disable MED support."
 	@${ECHO_MSG} ""
 .endif
-.if !defined(WITHOUT_MED)
+.if !defined(WITHOUT_HDF5)
 	@${ECHO_MSG} "Define WITHOUT_HDF5 to disable HDF5 support."
 	@${ECHO_MSG} ""
 .endif
