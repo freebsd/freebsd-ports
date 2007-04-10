@@ -7,6 +7,7 @@
 
 PORTNAME=	gri
 PORTVERSION=	2.12.12
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	christopher.illies@ki.se
 COMMENT=	An extensible plotting language for producing scientific graphs
 
-LIB_DEPENDS=	netcdf.1:${PORTSDIR}/science/netcdf
+LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick	\

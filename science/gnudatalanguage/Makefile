@@ -7,7 +7,7 @@
 
 PORTNAME=	gnudatalanguage
 PORTVERSION=	0.8.11
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -69,7 +69,7 @@ CONFIGURE_ARGS+=--with-hdf5=no
 .endif
 
 .if !defined(WITHOUT_NETCDF)
-LIB_DEPENDS+=	netcdf.1:${PORTSDIR}/science/netcdf
+LIB_DEPENDS+=	netcdf.4:${PORTSDIR}/science/netcdf
 CONFIGURE_ARGS+=--with-netcdf=${LOCALBASE} --with-hdf=no
 .else
 CONFIGURE_ARGS+=--with-netcdf=no

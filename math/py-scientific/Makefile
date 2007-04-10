@@ -7,6 +7,7 @@
 
 PORTNAME=	scientific
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://sourcesup.cru.fr/frs/download.php/1034/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ MAINTAINER=	tg@FreeBSD.org
 COMMENT=	Collection of Python modules for scientific computing
 
 BUILD_DEPENDS=	${PYNUMERIC}
-LIB_DEPENDS=	netcdf.1:${PORTSDIR}/science/netcdf
+LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf
 RUN_DEPENDS=	${PYNUMERIC}
 
 USE_PYTHON=	yes

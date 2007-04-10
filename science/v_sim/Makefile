@@ -6,6 +6,7 @@
 
 PORTNAME=	v_sim
 PORTVERSION=	3.3.0
+PORTREVERSION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www-drfmc.cea.fr/sp2m/L_Sim/V_Sim/download/
 
@@ -29,7 +30,7 @@ PLIST_SUB+=	NLS=""
 .endif
 
 .if !defined(WITHOUT_CDF)
-LIB_DEPENDS+=	netcdf.1:${PORTSDIR}/science/netcdf
+LIB_DEPENDS+=	netcdf.4:${PORTSDIR}/science/netcdf
 CONFIGURE_ARGS+=--with-nanoquanta --with-nanoquanta-path=${LOCALBASE}
 PLIST_SUB+=	CDF=""
 .else
