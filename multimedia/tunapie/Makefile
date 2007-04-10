@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tunapie
-PORTVERSION=	1.3.3.3
+PORTVERSION=	1.4
 CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,9 +23,9 @@ USE_WX=	2.6
 WX_COMPS=	python:run
 
 OPTIONS=	ADULT	"non-censored TV listings" off \
-		XINE	"use xine instead of mplayer as default" off \
-		AUDACIOUS	"use audacious instead of xmms as default" off \
-		BEEP_MEDIA_PLAYER	"use beep-media-player instead of xmms as default" off
+		XINE	"use xine instead of mplayer" off \
+		AUDACIOUS	"use audacious instead of xmms" off \
+		BEEP_MEDIA_PLAYER	"use beep-media-player instead of xmms" off
 
 MAN1=	tunapie.1
 PLIST_SUB+=	DESKTOPDIR="${DESKTOPDIR:S,^${PREFIX}/,,}"
@@ -46,9 +46,9 @@ post-patch:
 		-e 's|%%X11BASE%%|${X11BASE}|g' {} ";"
 
 do-install:
-	${MKDIR} ${DATADIR} ${DATADIR}/pixmaps
-	${MKDIR} ${DESKTOPDIR}
-	cd ${WRKSRC} && ./install.sh ${ADULT_TVLIST}
+	@${MKDIR} ${DATADIR} ${DATADIR}/pixmaps
+	@${MKDIR} ${DESKTOPDIR}
+	@cd ${WRKSRC} && ./install.sh ${ADULT_TVLIST}
 
 .include <bsd.port.pre.mk>
 
