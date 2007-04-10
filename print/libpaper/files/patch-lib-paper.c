@@ -1,5 +1,5 @@
---- lib/paper.c.orig	Sun Nov 16 19:56:24 2003
-+++ lib/paper.c	Sun Nov 16 19:56:29 2003
+--- lib/paper.c.orig	Mon Apr  9 10:46:01 2007
++++ lib/paper.c	Mon Apr  9 10:47:01 2007
 @@ -14,7 +14,6 @@
  #include <sys/stat.h>
  
