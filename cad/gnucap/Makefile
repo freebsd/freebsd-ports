@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnucap
-PORTVERSION=	2007.02.21
+PORTVERSION=	2007.03.29
 CATEGORIES=	cad
 MASTER_SITES=	http://www.gnucap.org/devel/ \
 		http://www.geda.seul.org/dist/
