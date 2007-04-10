@@ -9,7 +9,8 @@
 PORTNAME=	unix2tcp
 PORTVERSION=	0.8.2
 CATEGORIES=	net
-MASTER_SITES=	http://ahriman.bucharest.roedu.net/unix2tcp/
+MASTER_SITES=	http://freebsdcluster.org/~mich/software/ \
+		http://ahriman.bucharest.roedu.net/unix2tcp/
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A connection forwarder that converts Unix sockets into TCP sockets

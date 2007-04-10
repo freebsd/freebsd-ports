@@ -8,7 +8,8 @@
 PORTNAME=	remarp
 PORTVERSION=	0.05
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.raccoon.kiev.ua/projects/remarp/
+MASTER_SITES=	http://freebsdcluster.org/~mich/software/ \
+		http://www.raccoon.kiev.ua/projects/remarp/
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	An SNMP-based ARP watcher
