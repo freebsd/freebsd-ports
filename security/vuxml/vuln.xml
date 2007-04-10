@@ -13681,11 +13681,12 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2005-0366</cvename>
       <url>http://eprint.iacr.org/2005/033</url>
       <url>http://lists.gnupg.org/pipermail/gnupg-announce/2005q1/000191.html</url>
+      <url>http://www.pgp.com/newsroom/ctocorner/openpgp.html</url>
     </references>
     <dates>
       <discovery>2005-02-08</discovery>
       <entry>2005-07-31</entry>
-      <modified>2005-08-03</modified>
+      <modified>2007-04-10</modified>
     </dates>
   </vuln>
 
