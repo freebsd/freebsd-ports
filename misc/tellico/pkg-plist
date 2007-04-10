@@ -7,6 +7,7 @@ share/apps/tellico/MARC21slimUtils.xsl
 share/apps/tellico/UNIMARC2MODS3.xsl
 share/apps/tellico/amazon2tellico.xsl
 share/apps/tellico/bibtex-translation.xml
+share/apps/tellico/bluray-logo.png
 share/apps/tellico/cassette-logo.png
 share/apps/tellico/cd-logo.png
 share/apps/tellico/data-sources/dark_horse_comics.py
@@ -21,6 +22,7 @@ share/apps/tellico/entry-templates/Compact.xsl
 share/apps/tellico/entry-templates/Default.xsl
 share/apps/tellico/entry-templates/Fancy.xsl
 share/apps/tellico/entry-templates/Video.xsl
+share/apps/tellico/hddvd-logo.png
 share/apps/tellico/isbndb2tellico.xsl
 share/apps/tellico/mods2tellico.xsl
 share/apps/tellico/pics/README.icons
