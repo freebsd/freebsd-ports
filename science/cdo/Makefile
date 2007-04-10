@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cdo
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	science
 MASTER_SITES=	http://www.mpimet.mpg.de/fileadmin/software/cdo/ \
 		http://sunpoet.net/distfiles/
@@ -28,6 +28,12 @@ PLIST_FILES=	bin/cdo bin/cdotest
 OPTIONS=	HDF5	"HDF5 support" off \
 		NETCDF	"NETCDF support" off
 
+.include <bsd.port.pre.mk>
+
+.if (${OSVERSION} > 700000) || (${ARCH} != "sparc64" && ${OSVERSION} > 600000)
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -DPTHREAD_MUTEXATTR_CONDATTR"
+.endif
+
 .if defined(WITH_HDF5)
 CONFIGURE_ARGS+=	--with-hdf5=${LOCALBASE}
 LIB_DEPENDS+=		hdf5.0:${PORTSDIR}/science/hdf5
@@ -35,10 +41,10 @@ LIB_DEPENDS+=		hdf5.0:${PORTSDIR}/science/hdf5
 
 .if defined(WITH_NETCDF)
 CONFIGURE_ARGS+=	--with-netcdf=${LOCALBASE}
-LIB_DEPENDS+=		netcdf.1:${PORTSDIR}/science/netcdf
+LIB_DEPENDS+=		netcdf.4:${PORTSDIR}/science/netcdf
 .endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

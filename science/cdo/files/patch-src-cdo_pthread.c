@@ -1,10 +1,10 @@
 --- src/cdo_pthread.c.orig	Wed Mar 22 22:04:18 2006
-+++ src/cdo_pthread.c	Mon Dec 18 10:01:00 2006
++++ src/cdo_pthread.c	Sat Apr  7 01:07:02 2007
 @@ -32,8 +32,10 @@
  {
  #if  defined  (HAVE_LIBPTHREAD)
    pthread_attr_t attr;
-+#if __FreeBSD_version >= 600000
++#if defined (PTHREAD_MUTEXATTR_CONDATTR)
    pthread_mutexattr_t m_attr;
    pthread_condattr_t c_attr;
 +#endif
@@ -15,7 +15,7 @@
    print_pthread_attr("Default pthread attr", &attr);
    pthread_attr_destroy(&attr);
  
-+#if __FreeBSD_version >= 600000
++#if defined (PTHREAD_MUTEXATTR_CONDATTR)
    pthread_mutexattr_init(&m_attr);
    print_pthread_mutexattr("Default pthread mutexattr", &m_attr);
    pthread_mutexattr_destroy(&m_attr);
