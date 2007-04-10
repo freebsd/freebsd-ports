@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides access to PostgreSQL databases through the DBI
 
+DEPRECATED=	Use databases/p5-DBD-Pg instead
+EXPIRATION_DATE=	2007-05-10
+
 CONFLICTS=	p5-DBD-Pg-1.[4-9]*
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}-13
 
@@ -25,16 +28,6 @@ PERL_CONFIGURE=	yes
 MAN3=		DBD::Pg.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
-post-patch:
-	@${PERL} -i -pe '$$_ = "" if /5.006001/' \
-		${WRKSRC}/Pg.pm ${WRKSRC}/Makefile.PL
-.else
-IGNORE=		You should use databases/p5-DBD-Pg.
-.endif
 
 PG_CONFIG=	${LOCALBASE}/bin/pg_config
 CONFIGURE_ENV+=	POSTGRES_INCLUDE=`${PG_CONFIG} --includedir` \
