@@ -9,12 +9,12 @@ PORTNAME=	gstreamer-plugins-moodbar
 PORTVERSION=	0.1.2
 CATEGORIES=	audio
 MASTER_SITES=	http://pwsp.net/~qbob/
+		http://redundancy.redundancy.org/mirror/
 DISTNAME=	moodbar-0.1.2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Shows the "moods" of audio tracks in Amarok
 
-RUN_DEPENDS=	amarok>=1.4.4:${PORTSDIR}/audio/amarok
 LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float
 
 USE_GSTREAMER=	yes good
