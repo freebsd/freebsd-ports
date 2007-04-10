@@ -121,7 +121,7 @@ PLIST=			pkg-plist
 
 .include <bsd.port.pre.mk>
 
-LINUX_OSRELEASE!=	${SYSCTL} -n compat.linux.osrelease
+LINUX_OSRELEASE!=	${ECHO} `${SYSCTL} -n compat.linux.osrelease 2>/dev/null`
 
 .if ${LINUX_OSRELEASE} == "2.4.2"
 IGNORE=	compat.linux.osrelease: 2.4.2 is not supported
