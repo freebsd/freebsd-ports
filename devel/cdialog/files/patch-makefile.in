@@ -1,37 +1,43 @@
---- makefile.in.orig	Wed Jan 18 20:42:18 2006
-+++ makefile.in	Fri May 19 13:08:20 2006
-@@ -135,14 +135,14 @@
- 	$(RM) samples/install/makefile
+--- makefile.in.orig	Sun Mar 25 22:23:30 2007
++++ makefile.in	Sun Apr  8 18:46:09 2007
+@@ -153,7 +153,7 @@
+ 	@echo "made $@"
  
- install :: $(PROG) $(bindir)
--	$(INSTALL_PROGRAM) $(PROG) $(bindir)
-+	$(INSTALL_PROGRAM) $(PROG) $(bindir)/c${PROG}
+ install-strip :: $(PROG) $(BINDIR)
+-	$(INSTALL_PROGRAM) -s $(PROG) $(BINDIR)
++	$(INSTALL_PROGRAM) -s $(PROG) $(BINDIR)/c${PROG}
  
- install-strip :: $(PROG) $(bindir)
--	$(INSTALL_PROGRAM) -s $(PROG) $(bindir)
-+	$(INSTALL_PROGRAM) -s $(PROG) $(bindir)/c${PROG}
+ uninstall :: uninstall-bin uninstall-man
+ 	@echo "made $@"
+@@ -168,7 +168,7 @@
+ 	$(RM) $(BINDIR)/$(PACKAGE)$x
  
- install-strip \
- install :: $(MAN1DIR)
--	$(INSTALL_DATA) $(srcdir)/dialog.1 $(MAN1DIR)
-+	$(INSTALL_DATA) $(srcdir)/dialog.1 $(MAN1DIR)/cdialog.1
+ install-man :: $(MAN1DIR)
+-	$(INSTALL_DATA) $(srcdir)/dialog.1 $(MAN1DIR)/$(PACKAGE).1
++	$(INSTALL_DATA) $(srcdir)/dialog.1 $(MAN1DIR)/c$(PACKAGE).1
  
- uninstall ::
- 	$(RM) $(bindir)/$(PROG)
-@@ -151,14 +151,14 @@
+ uninstall-man ::
+ 	$(RM) $(MAN1DIR)/$(PACKAGE).1
+@@ -176,11 +176,11 @@
  # most users do not want/need the library, so the install rules are distinct.
- install-lib :: $(LIB_DIRS) headers.sed
- 	@ echo "** installing library in $(libdir)"
--	$(LIBTOOL_INSTALL) $(INSTALL_DATA) $(LIB) $(libdir)
-+	$(LIBTOOL_INSTALL) $(INSTALL_DATA) $(LIB) $(libdir)/@LIB_PREFIX@cdialog$a
- 	@ echo "** installing headers in $(includedir)"
- 	@ $(SHELL) $(srcdir)/headers.sh $(INSTALL_DATA) $(includedir) $(srcdir) dialog.h
- 	@ $(SHELL) $(srcdir)/headers.sh $(INSTALL_DATA) $(includedir) $(srcdir) dlg_colors.h
- 	@ $(SHELL) $(srcdir)/headers.sh $(INSTALL_DATA) $(includedir) $(srcdir) dlg_keys.h
- 	@ $(SHELL) $(srcdir)/headers.sh $(INSTALL_DATA) $(includedir) .         dlg_config.h
- 	@ echo "** installing manpage"
--	$(INSTALL_DATA) $(srcdir)/dialog.3 $(MAN3DIR)
-+	$(INSTALL_DATA) $(srcdir)/dialog.3 $(MAN3DIR)/cdialog.3
+ install-lib :: $(BINDIR) dialog-config
+ 	@ echo "** installing config script in $(BINDIR)"
+-	@ $(INSTALL_SCRIPT) dialog-config $(BINDIR)
++	@ $(INSTALL_SCRIPT) dialog-config $(BINDIR)/cdialog-config
  
- uninstall-lib :: $(LIB_DIRS)
- 	- $(LIBTOOL_UNINSTALL) $(RM) $(libdir)/$(LIB)
+ install-lib :: $(LIB_DIRS) $(LIB) headers.sed
+ 	@ echo "** installing library in $(LIBDIR)"
+-	@ $(LIBTOOL_INSTALL) $(INSTALL_DATA) $(LIB) $(LIBDIR)
++	@ $(LIBTOOL_INSTALL) $(INSTALL_DATA) $(LIB) $(LIBDIR)/@LIB_PREFIX@cdialog$a
+ 	@ echo "** installing headers in $(INCLUDEDIR)"
+ 	@ $(SHELL) $(srcdir)/headers.sh $(INSTALL_DATA) $(INCLUDEDIR) $(srcdir) dialog.h
+ 	@ $(SHELL) $(srcdir)/headers.sh $(INSTALL_DATA) $(INCLUDEDIR) $(srcdir) dlg_colors.h
+@@ -198,7 +198,7 @@
+ 	$(RM) $(INCLUDEDIR)/dlg_config.h
+ 
+ install-lib :: $(MAN3DIR)
+-	$(INSTALL_DATA) $(srcdir)/dialog.3 $(MAN3DIR)/$(PACKAGE).3
++	$(INSTALL_DATA) $(srcdir)/dialog.3 $(MAN3DIR)/c$(PACKAGE).3
+ 
+ uninstall-lib ::
+ 	$(RM) $(MAN3DIR)/$(PACKAGE).3
