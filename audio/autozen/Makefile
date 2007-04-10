@@ -9,7 +9,7 @@ PORTNAME=	autozen
 PORTVERSION=	2.1
 PORTREVISION=	0
 CATEGORIES=	audio
-MASTER_SITES=	http://www.linux.edu/download/
+MASTER_SITES=	ftp://ftp.springdaemons.com/soft/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Adjust brain waves with sound
