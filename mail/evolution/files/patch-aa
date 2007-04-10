@@ -1,6 +1,6 @@
---- configure.orig	Tue Nov 15 17:58:33 2005
-+++ configure	Tue Nov 15 18:02:37 2005
-@@ -23732,6 +23732,15 @@
+--- configure.orig	Tue Apr 10 14:45:04 2007
++++ configure	Tue Apr 10 14:45:37 2007
+@@ -24916,6 +24916,15 @@ case "$host" in
      SOFTOKN3_LIB=''
      HAL_REQUIREMENT=''
      ;;
@@ -16,25 +16,25 @@
  *)  os_win32=no
      NO_UNDEFINED=''
      SOEXT='.so'
-@@ -26280,6 +26289,7 @@
+@@ -26594,6 +26603,7 @@ cat >>conftest.$ac_ext <<_ACEOF
  		#include <sys/socket.h>
  		#include <netinet/in.h>
  		#include <netdb.h>
 +		#include <stdio.h>
  
+ 		#define BUFSIZE (sizeof(struct hostent)+10)
  
- int
-@@ -27980,7 +27990,7 @@
+@@ -30819,7 +30829,7 @@ if test "x${with_krb5}" != "xno"; then
  	LDFLAGS_save="$LDFLAGS"
  
  	mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
 -	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi"
 +	heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi -lcrypt"
- 	echo "$as_me:$LINENO: checking for Kerberos 5" >&5
- echo $ECHO_N "checking for Kerberos 5... $ECHO_C" >&6
+ 	{ echo "$as_me:$LINENO: checking for Kerberos 5" >&5
+ echo $ECHO_N "checking for Kerberos 5... $ECHO_C" >&6; }
  if test "${ac_cv_lib_kerberos5+set}" = set; then
-@@ -33143,7 +33153,7 @@
- idldir="$datadir/idl/evolution-$BASE_VERSION"
+@@ -37148,7 +37158,7 @@ componentdir="$privlibdir/components"
+ idldir='${datadir}'/idl/evolution-$BASE_VERSION
  
  
 -serverdir="$libdir/bonobo/servers"
