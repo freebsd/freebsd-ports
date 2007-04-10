@@ -334,7 +334,6 @@
     SUBDIR += p5-Mail-Audit-Attach
     SUBDIR += p5-Mail-Box
     SUBDIR += p5-Mail-Box-Parser-C
-    SUBDIR += p5-Mail-Box1
     SUBDIR += p5-Mail-Bulkmail
     SUBDIR += p5-Mail-CClient
     SUBDIR += p5-Mail-CheckUser
