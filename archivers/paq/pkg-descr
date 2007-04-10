@@ -1,0 +1,20 @@
+For those who *must* cram their data into the smallest possible archives, 
+paq is an archiver with the best lossless compression ratios now available
+across a wide variety of test data, according to several benchmarks.  
+It uses adaptive weighting of context models to obtain archives that are
+typically about 65%-85% of the size of the corresponding best-performance 
+gzip archives. This comes at the expense of increased memory usage
+(30MB - 1650MB, depending upon the user-specified level of compression),
+and lower speeds(compression and decompression are often tens of times 
+slower than bzip2 or gzip, and can be as much as several hundreds of times
+slower). 
+
+The command-line interface permits compression, decompression, and viewing
+of the contents of archives.  Compression preserves directory structure
+but not file attributes.  There are no commands to update an existing 
+archive or to extract part of an archive.  Files and archives larger than
+2GB are not supported (but might work on 64-bit machines, not tested).
+File names with nonprintable characters are not supported (spaces
+are OK).
+
+WWW: http://www.cs.fit.edu/~mmahoney/compression/
