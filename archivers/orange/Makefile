@@ -22,19 +22,9 @@ LIB_DEPENDS=	synce.0:${PORTSDIR}/palm/synce-libsynce \
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GNOME=	gnometarget
 CONFIGURE_ARGS=	--with-libsynce=${LOCALBASE}
 USE_ICONV=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-Werror||' \
-		${WRKSRC}/lib/Makefile.in \
-		${WRKSRC}/src/Makefile.in
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|' ${WRKSRC}/lib/inno.h
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
