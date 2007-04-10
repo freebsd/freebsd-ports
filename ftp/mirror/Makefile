@@ -9,9 +9,8 @@ PORTNAME=	mirror
 PORTVERSION=	2.9
 PORTREVISION=	1
 CATEGORIES=	ftp
-MASTER_SITES=	ftp://sunsite.org.uk/old-sunsite/mirror/ \
-		ftp://src.doc.ic.ac.uk/old-sunsite/mirror/ \
-		ftp://ftp.cs.columbia.edu/archives/perl/mirror/
+MASTER_SITES=	http://ry.ca/mirror/mirror/ \
+		ftp://sunsite.ualberta.ca/pub/Mirror/mirror/
 
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	ftp.pl_wupatch

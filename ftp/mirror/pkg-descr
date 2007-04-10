@@ -4,6 +4,6 @@ remote host.  It avoids copying files unnecessarily by comparing the
 file timestamps and sizes before transferring.  Amongst other things
 Mirror can optionally compress, gzip, and split files.
 
-WWW: http://www.sunsite.org.uk/packages/mirror/
+WWW: http://ry.ca/mirror/mirror/
 
 - Ryan Thompson <ryan@sasknow.com>
