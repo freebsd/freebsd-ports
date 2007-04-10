@@ -20,3 +20,35 @@
  
  env.Replace(CXXFILESUFFIX=".cpp")
  
+@@ -48,7 +48,7 @@
+ 
+ env.Replace(CXXFILESUFFIX=".cpp")
+ 
+-env.Append(CPPDEFINES={"_FILE_OFFSET_BITS": "64", "_LARGEFILE_SOURCE": None})
++env.Append(CPPDEFINES=[("_FILE_OFFSET_BITS", "64"), "_LARGEFILE_SOURCE"])
+ 
+ for v in ("CXX","LINK"):
+   if (v in os.environ):
+@@ -62,11 +62,11 @@
+ 
+ if (not env.GetOption('clean')):
+   if (conf.TryAction('pkg-config --exists ao')[0]):
+-    conf.env.Append(CPPDEFINES={"HAVE_LIB_AO":None})
++    conf.env.Append(CPPDEFINES="HAVE_LIB_AO")
+     conf.env.ParseConfig('pkg-config --cflags --libs ao')
+     print "Checking for libao... found"
+   elif (conf.CheckLibWithHeader('ao', 'ao/ao.h', 'C')):
+-    conf.env.Append(CPPDEFINES={"HAVE_LIB_AO":None})
++    conf.env.Append(CPPDEFINES="HAVE_LIB_AO")
+     conf.env.Append(LIBS=['ao'])
+     print "Checking for libao... found"
+   else:
+@@ -85,7 +85,7 @@
+ env.Replace(QT_LIB=qtlib)
+ 
+ if (debug<=0):
+-  env.Append(CPPDEFINES={"QT_NO_DEBUG": None})
++  env.Append(CPPDEFINES="QT_NO_DEBUG")
+ 
+ ### FFMPEG
+ 

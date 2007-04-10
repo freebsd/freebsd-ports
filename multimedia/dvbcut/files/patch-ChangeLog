@@ -1,0 +1,73 @@
+--- ChangeLog~	Fri Dec 16 20:17:16 2005
++++ ChangeLog	Mon Apr  9 16:55:43 2007
+@@ -1,3 +1,70 @@
++2007-03-06	Michael Riepe  <too-tired@users.sourceforge.net>
++
++	* Report missing frames in GOP while indexing.
++
++2007-02-12	Michael Riepe  <too-tired@users.sourceforge.net>
++
++	* Write proper GOP time_code values when exporting.
++
++2007-01-30	Michael Riepe  <too-tired@users.sourceforge.net>
++
++	* Added workaround for div/0 bug in ffmpeg.
++
++	* Added missing ChangeLog entry. :-)
++
++2007-01-28  Sven Over  <svenover@svenover.de>
++
++	* Applied patch for SConstruct file by Ingo Saitz, as forwarded to me
++	by Christian Marillat.
++
++	* Fixed 2 compiler warnings in mpegmuxer.cpp.
++
++	* Christian Marillat reported build problems on alpha, where the
++	__bswap_constant_xx macros seem not to be available. Changed defines
++	in defines.h not to use them anymore.
++
++2007-01-26	Michael Riepe  <too-tired@users.sourceforge.net>
++
++	* Integrated Windows port by Olivier Raoul.
++
++	* Added XML generation feature by Ralph Glasstetter.
++
++2006-09-24  Michael Riepe  <too-tired@users.sourceforge.net>
++
++	* Moved global settings to a separate class.
++
++	* Changed jog_offset to type double. The default is now 0.4.
++
++	* Updated ChangeLog ;-)
++
++	* Added configurable jog slider patch from Ralph Glasstetter.
++
++2006-09-23  Michael Riepe  <too-tired@users.sourceforge.net>
++
++	* Added more configuration settings.
++
++2006-09-22  Michael Riepe  <too-tired@users.sourceforge.net>
++
++	* Made mouse wheel resolution configurable.
++
++2006-09-21  Michael Riepe  <too-tired@users.sourceforge.net>
++
++	* Added selectable resolutions for the mouse wheel (via
++	modifier keys).
++
++2006-09-18  Michael Riepe  <too-tired@users.sourceforge.net>
++
++	* Fixed yesterday's patch. The messages should be gone now.
++
++2006-09-17  Michael Riepe  <too-tired@users.sourceforge.net>
++
++	* Modified the indexer to suppress most "inconsistent video
++	PTS (-1696)" message.
++
++2006-09-05  Michael Riepe  <too-tired@users.sourceforge.net>
++
++	* Added all existing bug fixes from http://www.mr511.de/dvbcut.
++
+ 2005-12-16  Sven Over  <svenover@svenover.de>
+ 
+ 	* Release 0.5.3.

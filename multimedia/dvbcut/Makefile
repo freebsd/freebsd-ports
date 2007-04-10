@@ -7,6 +7,7 @@
 
 PORTNAME=	dvbcut
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=dvbcut
@@ -20,8 +21,6 @@ BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 LIB_DEPENDS=	avutil.1:${PORTSDIR}/multimedia/ffmpeg-devel \
 		ao.3:${PORTSDIR}/audio/libao
-
-BROKEN=		Does not build
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
