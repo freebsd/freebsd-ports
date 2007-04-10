@@ -552,6 +552,9 @@ share/gnome/help/gnect/C/legal.xml
 share/gnome/help/gnect/en_GB/figures/mainwindow.png
 share/gnome/help/gnect/en_GB/figures/tileset.png
 share/gnome/help/gnect/en_GB/gnect.xml
+share/gnome/help/gnect/fr/figures/mainwindow.png
+share/gnome/help/gnect/fr/figures/tileset.png
+share/gnome/help/gnect/fr/gnect.xml
 share/gnome/help/gnect/sv/figures/mainwindow.png
 share/gnome/help/gnect/sv/figures/tileset.png
 share/gnome/help/gnect/sv/gnect.xml
@@ -628,6 +631,9 @@ share/gnome/help/same-gnome/C/same-gnome.xml
 share/gnome/help/same-gnome/en_GB/figures/play.png
 share/gnome/help/same-gnome/en_GB/figures/start-up.png
 share/gnome/help/same-gnome/en_GB/same-gnome.xml
+share/gnome/help/same-gnome/fr/figures/play.png
+share/gnome/help/same-gnome/fr/figures/start-up.png
+share/gnome/help/same-gnome/fr/same-gnome.xml
 share/gnome/help/same-gnome/ru/figures/play.png
 share/gnome/help/same-gnome/ru/figures/start-up.png
 share/gnome/help/same-gnome/ru/same-gnome.xml
@@ -642,6 +648,7 @@ share/gnome/omf/glines/glines-ru.omf
 share/gnome/omf/glines/glines-sv.omf
 share/gnome/omf/gnect/gnect-C.omf
 share/gnome/omf/gnect/gnect-en_GB.omf
+share/gnome/omf/gnect/gnect-fr.omf
 share/gnome/omf/gnect/gnect-sv.omf
 share/gnome/omf/gnome-games/aisleriot-C.omf
 share/gnome/omf/gnome-games/aisleriot-fr.omf
@@ -661,6 +668,7 @@ share/gnome/omf/gnome-games/iagno-C.omf
 share/gnome/omf/gnome-games/mahjongg-C.omf
 share/gnome/omf/same-gnome/same-gnome-C.omf
 share/gnome/omf/same-gnome/same-gnome-en_GB.omf
+share/gnome/omf/same-gnome/same-gnome-fr.omf
 share/gnome/omf/same-gnome/same-gnome-ru.omf
 share/gnome/omf/same-gnome/same-gnome-sv.omf
 share/gnome/pixmaps/blackjack/baize.png
@@ -1001,6 +1009,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/help/same-gnome/sv
 @dirrm share/gnome/help/same-gnome/ru/figures
 @dirrm share/gnome/help/same-gnome/ru
+@dirrm share/gnome/help/same-gnome/fr/figures
+@dirrm share/gnome/help/same-gnome/fr
 @dirrm share/gnome/help/same-gnome/en_GB/figures
 @dirrm share/gnome/help/same-gnome/en_GB
 @dirrm share/gnome/help/same-gnome/C/figures
@@ -1041,6 +1051,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/help/gnibbles
 @dirrm share/gnome/help/gnect/sv/figures
 @dirrm share/gnome/help/gnect/sv
+@dirrm share/gnome/help/gnect/fr/figures
+@dirrm share/gnome/help/gnect/fr
 @dirrm share/gnome/help/gnect/en_GB/figures
 @dirrm share/gnome/help/gnect/en_GB
 @dirrm share/gnome/help/gnect/C/figures
