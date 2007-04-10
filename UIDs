@@ -74,6 +74,7 @@ rbldns:*:153:153:rbldnsd pseudo-user:/nonexistent:/sbin/nologin
 sfs:*:171:171:Self-Certifying File System:/nonexistent:/sbin/nologin
 agk:*:172:172:AquaGateKeeper:/nonexistent:/nonexistent
 polipo:*:173:173:polipo web cache:/nonexistent:/sbin/nologin
+flowtools:*:174:174:Flow-tools collector pseudo-user:/nonexistent:/sbin/nologin
 nagios:*:181:181:Nagios pseudo-user:/var/spool/nagios:/sbin/nologin
 moinmoin:*:192:192:MoinMoin User:/nonexistent:/sbin/nologin
 cups:*:193:193:Cups Owner:/nonexistent:/sbin/nologin

@@ -8,6 +8,8 @@ PATH=/bin:/usr/sbin:/usr/bin:/usr/sbin
 FLOW_CAPTURE_SPOOL="%%FLOW_CAPTURE_SPOOL%%"
 FLOW_CAPTURE_USER="%%FLOW_CAPTURE_USER%%"
 FLOW_CAPTURE_GROUP="%%FLOW_CAPTURE_GROUP%%"
+FLOW_CAPTURE_UID="%%FLOW_CAPTURE_UID%%"
+FLOW_CAPTURE_GID="%%FLOW_CAPTURE_GID%%"
 FLOW_CAPTURE_PIDDIR="%%FLOW_CAPTURE_PIDDIR%%"
 
 if [ -x /usr/sbin/nologin ]; then
@@ -23,7 +25,7 @@ pre-install() {
 	pw groupshow ${FLOW_CAPTURE_GROUP} > /dev/null 2>&1
 	if [ $? -ne 0 ]; then
 		echo -n "Creating '${FLOW_CAPTURE_GROUP}' group... "
-		pw groupadd ${FLOW_CAPTURE_GROUP} -q
+		pw groupadd -n ${FLOW_CAPTURE_GROUP} -g ${FLOW_CAPTURE_GID} -q
 
 		if  [ $? -eq 0 ]; then
 			echo "ok"
@@ -44,6 +46,7 @@ pre-install() {
 	if [ $? -ne 0 ]; then
 		echo -n "Creating '${FLOW_CAPTURE_USER}' user... "
 		pw useradd -n ${FLOW_CAPTURE_USER} -g ${FLOW_CAPTURE_GROUP} \
+			-u ${FLOW_CAPTURE_UID} \
 			-c "Flow-tools collector pseudo-user" \
 			-d "/var/empty" -s "${NOLOGIN}" -h - -q
 
