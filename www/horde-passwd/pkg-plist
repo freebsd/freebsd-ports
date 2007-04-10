@@ -42,16 +42,19 @@
 %%HORDIR%%/locale/hu_HU/help.xml
 %%HORDIR%%/locale/id_ID/LC_MESSAGES/passwd.mo
 %%HORDIR%%/locale/it_IT/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/ja_JP/LC_MESSAGES/passwd.mo
 %%HORDIR%%/locale/lt_LT/LC_MESSAGES/passwd.mo
 %%HORDIR%%/locale/nl_NL/LC_MESSAGES/passwd.mo
 %%HORDIR%%/locale/nl_NL/help.xml
 %%HORDIR%%/locale/nn_NO/LC_MESSAGES/passwd.mo
 %%HORDIR%%/locale/pl_PL/LC_MESSAGES/passwd.mo
 %%HORDIR%%/locale/pt_BR/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/pt_PT/LC_MESSAGES/passwd.mo
 %%HORDIR%%/locale/ro_RO/LC_MESSAGES/passwd.mo
 %%HORDIR%%/locale/ru_RU/LC_MESSAGES/passwd.mo
 %%HORDIR%%/locale/ru_RU/help.xml
 %%HORDIR%%/locale/sk_SK/LC_MESSAGES/passwd.mo
+%%HORDIR%%/locale/sl_SI/LC_MESSAGES/passwd.mo
 %%HORDIR%%/locale/sv_SE/LC_MESSAGES/passwd.mo
 %%HORDIR%%/locale/zh_CN/LC_MESSAGES/passwd.mo
 %%HORDIR%%/locale/zh_TW/LC_MESSAGES/passwd.mo
@@ -73,15 +76,18 @@
 %%HORDIR%%/po/hu_HU.po
 %%HORDIR%%/po/id_ID.po
 %%HORDIR%%/po/it_IT.po
+%%HORDIR%%/po/ja_JP.po
 %%HORDIR%%/po/lt_LT.po
 %%HORDIR%%/po/nl_NL.po
 %%HORDIR%%/po/nn_NO.po
 %%HORDIR%%/po/passwd.pot
 %%HORDIR%%/po/pl_PL.po
 %%HORDIR%%/po/pt_BR.po
+%%HORDIR%%/po/pt_PT.po
 %%HORDIR%%/po/ro_RO.po
 %%HORDIR%%/po/ru_RU.po
 %%HORDIR%%/po/sk_SK.po
+%%HORDIR%%/po/sl_SI.po
 %%HORDIR%%/po/sv_SE.po
 %%HORDIR%%/po/zh_CN.po
 %%HORDIR%%/po/zh_TW.po
@@ -128,6 +134,8 @@
 @dirrm %%HORDIR%%/locale/id_ID
 @dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/it_IT
+@dirrm %%HORDIR%%/locale/ja_JP/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ja_JP
 @dirrm %%HORDIR%%/locale/lt_LT/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/lt_LT
 @dirrm %%HORDIR%%/locale/nl_NL/LC_MESSAGES
@@ -138,12 +146,16 @@
 @dirrm %%HORDIR%%/locale/pl_PL
 @dirrm %%HORDIR%%/locale/pt_BR/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/pt_BR
+@dirrm %%HORDIR%%/locale/pt_PT/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pt_PT
 @dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/ro_RO
 @dirrm %%HORDIR%%/locale/ru_RU/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/ru_RU
 @dirrm %%HORDIR%%/locale/sk_SK/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/sk_SK
+@dirrm %%HORDIR%%/locale/sl_SI/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sl_SI
 @dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%HORDIR%%/locale/sv_SE
 @dirrm %%HORDIR%%/locale/zh_CN/LC_MESSAGES
