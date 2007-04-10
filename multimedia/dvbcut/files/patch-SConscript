@@ -1,0 +1,17 @@
+--- src/SConscript~	Sat Dec 10 18:44:26 2005
++++ src/SConscript	Mon Apr  9 16:55:43 2007
+@@ -17,6 +17,7 @@
+   progresswindow.cpp
+   psfile.cpp
+   pts.cpp
++  settings.cpp
+   streamdata.cpp
+   tsfile.cpp
+   dvbcutbase.ui
+@@ -31,4 +32,4 @@
+ env.bin_targets.append(env.Program("../bin/dvbcut",sources))
+ 
+  
+- 
+\ No newline at end of file
++ 
