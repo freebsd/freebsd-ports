@@ -1,8 +1,0 @@
-The Mail::Box folder is a modern mail-folder manager (at least on the
-moment of this writing).  It is written to replace Mail::Folder,
-although it interface is different.
-
-Author: Mark Overmeer <mark@overmeer.net>
-WWW: http://search.cpan.org/dist/Mail-Box/
-
---will
