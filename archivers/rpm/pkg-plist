@@ -47,9 +47,9 @@ lib/rpm/perl.prov
 lib/rpm/perl.req
 lib/rpm/rpmdiff
 lib/rpm/rpmdiff.cgi
-lib/rpm/rpmgettext
+%%NLS%%lib/rpm/rpmgettext
 lib/rpm/rpmpopt
-lib/rpm/rpmputtext
+%%NLS%%lib/rpm/rpmputtext
 lib/rpm/rpmrc
 lib/rpm/u_pkg.sh
 lib/rpm/vpkg-provides.sh
