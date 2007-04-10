@@ -1,4 +1,5 @@
 bin/cdialog
+bin/cdialog-config
 include/cdialog/dialog.h
 include/cdialog/dlg_colors.h
 include/cdialog/dlg_config.h
@@ -45,7 +46,11 @@ lib/libcdialog.a
 %%EXAMPLESDIR%%/copifuncs/ifpatch
 %%EXAMPLESDIR%%/copismall
 %%EXAMPLESDIR%%/debian.rc
+%%EXAMPLESDIR%%/dselect
 %%EXAMPLESDIR%%/dialog.py
+%%EXAMPLESDIR%%/editbox
+%%EXAMPLESDIR%%/editbox-utf8
+%%EXAMPLESDIR%%/editbox2
 %%EXAMPLESDIR%%/form1
 %%EXAMPLESDIR%%/form1-both
 %%EXAMPLESDIR%%/form1-extra
@@ -111,6 +116,9 @@ lib/libcdialog.a
 %%EXAMPLESDIR%%/menubox7
 %%EXAMPLESDIR%%/menubox8
 %%EXAMPLESDIR%%/menubox9
+%%EXAMPLESDIR%%/mixedform
+%%EXAMPLESDIR%%/mixedform2
+%%EXAMPLESDIR%%/mixedgauge
 %%EXAMPLESDIR%%/msgbox
 %%EXAMPLESDIR%%/msgbox-help
 %%EXAMPLESDIR%%/msgbox1
@@ -137,6 +145,7 @@ lib/libcdialog.a
 %%EXAMPLESDIR%%/radiolist4
 %%EXAMPLESDIR%%/rotated-data
 %%EXAMPLESDIR%%/slackware.rc
+%%EXAMPLESDIR%%/suse.rc
 %%EXAMPLESDIR%%/sourcemage.rc
 %%EXAMPLESDIR%%/tailbox
 %%EXAMPLESDIR%%/tailboxbg

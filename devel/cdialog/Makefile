@@ -2,21 +2,21 @@
 # Date created:		2003-01-11
 # Whom:			AlanE <alane@freebsd.org>
 #
+# $Carpetsmoker: ports/cdialog/Makefile,v 1.1 2007/04/08 17:19:30 carpetsmoker Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	cdialog
-PORTVERSION=	1.0.20060221
+PORTVERSION=	1.1.20070325
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://invisible-island.net/dialog/
 DISTNAME=	${PORTNAME:S|^c||}-${PORTVERSION:R}-${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	carpetsmoker@xs4all.nl
 COMMENT=	An enhanced version of 'dialog' to work with ncurses
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -26,11 +26,19 @@ MAN1=		cdialog.1
 MAN3=		cdialog.3
 MANCOMPRESSED=	no
 
-INSTALL_TARGET=	install-strip install-lib
+INSTALL_TARGET=	install-strip install-man install-lib
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/samples && ${FIND} . | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 700032 || (${OSVERSION} < 700000 && ${OSVERSION} > 602106)
+CONFIGURE_ARGS+=	--with-ncursesw --enable-widec
+.else
+CONFIGURE_ARGS+=	--with-ncurses
+.endif
+
+.include <bsd.port.post.mk>
