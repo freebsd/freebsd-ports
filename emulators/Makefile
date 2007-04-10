@@ -54,7 +54,6 @@
     SUBDIR += ines
     SUBDIR += its
     SUBDIR += klh10
-    SUBDIR += kmamerun
     SUBDIR += kqemu-kmod
     SUBDIR += lib765
     SUBDIR += libspectrum

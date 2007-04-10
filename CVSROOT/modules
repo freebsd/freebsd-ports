@@ -4427,7 +4427,6 @@ hlstatsx	ports/games/hlstatsx
 hmap		ports/security/hmap
 hmmer		ports/biology/hmmer
 hnb		ports/editors/hnb
-hobbes-icons-xpm	ports/graphics/hobbes-icons-xpm
 hohlin		ports/games/hohlin
 holotz-castle	ports/games/holotz-castle
 holyshout	ports/audio/holyshout
@@ -4720,7 +4719,6 @@ initutil	ports/devel/initutil
 inkscape	ports/graphics/inkscape
 inn		ports/news/inn
 inn-current	ports/news/inn-current
-inn-stable	ports/news/inn-stable
 innerspace	ports/x11/innerspace
 innotop		ports/databases/innotop
 inplace		ports/misc/inplace
@@ -4955,7 +4953,6 @@ ja-eterm	ports/japanese/eterm
 ja-ewipe	ports/japanese/ewipe
 ja-exmh2	ports/japanese/exmh2
 ja-expect	ports/japanese/expect
-ja-firefox-ja	ports/japanese/firefox-ja
 ja-flower-fpw	ports/japanese/flower-fpw
 ja-foldoc-fpw	ports/japanese/foldoc-fpw
 ja-freepwing	ports/japanese/freepwing
@@ -5063,7 +5060,6 @@ ja-linux-JM	ports/japanese/linux-JM
 ja-lipsf	ports/japanese/lipsf
 ja-lookup	ports/japanese/lookup
 ja-lookup-emacs20	ports/japanese/lookup-emacs20
-ja-lookup-xemacs	ports/japanese/lookup-xemacs
 ja-ls		ports/japanese/jls
 ja-lsd-fpw	ports/japanese/lsd-fpw
 ja-lynx		ports/japanese/lynx
@@ -5793,7 +5789,6 @@ klondike	ports/games/klondike
 klone		ports/lang/klone
 kludge3d	ports/graphics/kludge3d
 kluje		ports/deskutils/kluje
-kmamerun	ports/emulators/kmamerun
 kmastermind	ports/games/kmastermind
 kmatrix3d	ports/deskutils/kmatrix3d
 kmenc15		ports/multimedia/kmenc15
@@ -6735,7 +6730,6 @@ linux-gtk	ports/x11-toolkits/linux-gtk
 linux-gtk-bluecurve-theme	ports/x11-themes/linux-gtk-bluecurve-theme
 linux-gtk2	ports/x11-toolkits/linux-gtk2
 linux-hicolor-icon-theme	ports/x11-themes/linux-hicolor-icon-theme
-linux-hla	ports/lang/linux-hla
 linux-imlib	ports/graphics/linux-imlib
 linux-j		ports/lang/linux-j
 linux-jigdo	ports/net-p2p/linux-jigdo
@@ -7035,7 +7029,6 @@ maketeidtd	ports/textproc/maketeidtd
 maketool	ports/devel/maketool
 makeztxt	ports/palm/makeztxt
 malint		ports/audio/malint
-malsync		ports/palm/malsync
 mambo		ports/www/mambo
 mame-extras	ports/emulators/mame-extras
 man.el		ports/misc/man.el
@@ -11629,7 +11622,6 @@ php4-bcmath	ports/math/php4-bcmath
 php4-bz2	ports/archivers/php4-bz2
 php4-calendar	ports/misc/php4-calendar
 php4-crack	ports/security/php4-crack
-php4-cryptopp	ports/security/php4-cryptopp
 php4-ctype	ports/textproc/php4-ctype
 php4-curl	ports/ftp/php4-curl
 php4-dba	ports/databases/php4-dba
@@ -12806,7 +12798,6 @@ py-samba	ports/net/py-samba
 py-scgi		ports/www/py-scgi
 py-scientific	ports/math/py-scientific
 py-scipy	ports/science/py-scipy
-py-scipy03	ports/science/py-scipy03
 py-scriptaculous	ports/www/py-scriptaculous
 py-sdl_mixer	ports/audio/py-sdl_mixer
 py-sendfile	ports/devel/py-sendfile
@@ -13213,7 +13204,6 @@ quodlibet	ports/multimedia/quodlibet
 quoted		ports/net/quoted
 quotes		ports/misc/quotes
 quranref	ports/misc/quranref
-qvamps		ports/multimedia/qvamps
 qvplay		ports/graphics/qvplay
 qvwm		ports/x11-wm/qvwm
 qwdtools	ports/games/qwdtools
@@ -13500,7 +13490,6 @@ ru-aspell	ports/russian/aspell
 ru-cyrproxy	ports/russian/cyrproxy
 ru-d1489	ports/russian/d1489
 ru-elm		ports/russian/elm.language
-ru-elm.language	ports/russian/elm.language
 ru-fortuneru	ports/russian/fortuneru
 ru-kde3-i18n	ports/russian/kde3-i18n
 ru-koffice-i18n	ports/russian/koffice-i18n
@@ -13516,7 +13505,6 @@ ru-p5-XML-Parser-encodings	ports/russian/p5-XML-Parser-encodings
 ru-p5-cyrillic	ports/russian/p5-cyrillic
 ru-pgp.language	ports/russian/pgp.language
 ru-pine		ports/russian/pine.language
-ru-pine.language	ports/russian/pine.language
 ru-prawda	ports/russian/prawda
 ru-pscyr	ports/russian/pscyr
 ru-ru_pscyr	ports/russian/pscyr
@@ -14587,7 +14575,6 @@ stepbill	ports/games/stepbill
 steptalk	ports/lang/steptalk
 stepulator	ports/math/stepulator
 stfl		ports/devel/stfl
-sting		ports/net-mgmt/sting
 stk		ports/lang/STk
 stklos		ports/lang/stklos
 stl2pov		ports/graphics/stl2pov
@@ -14774,7 +14761,6 @@ tank		ports/games/tank
 tap-plugins	ports/audio/tap-plugins
 tapidbus	ports/net/tapidbus
 tardy		ports/archivers/tardy
-tas		ports/net-mgmt/tas
 taskjuggler	ports/deskutils/taskjuggler
 taskstep	ports/deskutils/taskstep
 taucs		ports/math/taucs
@@ -15481,7 +15467,6 @@ ventrilo-server	ports/audio/ventrilo-server
 vera		ports/misc/vera
 verbiste	ports/french/verbiste
 verlihub	ports/net-p2p/verlihub
-verlihub-plugins	ports/net-p2p/verlihub-plugins
 versuch		ports/net/versuch
 vertex		ports/graphics/vertex
 vexim		ports/mail/vexim
@@ -15557,7 +15542,6 @@ vlog		ports/security/vlog
 vls		ports/net/vls
 vm		ports/mail/vm
 vm-pop3d	ports/mail/vm-pop3d
-vmailmgr	ports/mail/vmailmgr
 vmd		ports/science/vmd
 vmips		ports/emulators/vmips
 vmsbackup	ports/emulators/vmsbackup

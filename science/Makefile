@@ -87,7 +87,6 @@
     SUBDIR += psi3
     SUBDIR += py-paida
     SUBDIR += py-scipy
-    SUBDIR += py-scipy03
     SUBDIR += qcl
     SUBDIR += ruby-dcl
     SUBDIR += ruby-gphys

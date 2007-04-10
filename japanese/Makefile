@@ -73,7 +73,6 @@
     SUBDIR += ewipe
     SUBDIR += exmh2
     SUBDIR += expect
-    SUBDIR += firefox-ja
     SUBDIR += flower-fpw
     SUBDIR += foldoc-fpw
     SUBDIR += freepwing
@@ -183,7 +182,6 @@
     SUBDIR += lipsf
     SUBDIR += lookup
     SUBDIR += lookup-emacs20
-    SUBDIR += lookup-xemacs
     SUBDIR += lsd-fpw
     SUBDIR += lynx
     SUBDIR += lynx-current
