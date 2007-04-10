@@ -1,0 +1,50 @@
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/PHPMailer/PHPMailer.html
+%%PORTDOCS%%%%DOCSDIR%%/PHPMailer/SMTP.html
+%%PORTDOCS%%%%DOCSDIR%%/PHPMailer/_class_phpmailer_php.html
+%%PORTDOCS%%%%DOCSDIR%%/PHPMailer/_class_smtp_php.html
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/blank.html
+%%PORTDOCS%%%%DOCSDIR%%/classtrees_PHPMailer.html
+%%PORTDOCS%%%%DOCSDIR%%/elementindex.html
+%%PORTDOCS%%%%DOCSDIR%%/elementindex_PHPMailer.html
+%%PORTDOCS%%%%DOCSDIR%%/errors.html
+%%PORTDOCS%%%%DOCSDIR%%/extending.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/li_PHPMailer.html
+%%PORTDOCS%%%%DOCSDIR%%/media/banner.css
+%%PORTDOCS%%%%DOCSDIR%%/media/stylesheet.css
+%%PORTDOCS%%%%DOCSDIR%%/packages.html
+%%PORTDOCS%%%%DOCSDIR%%/timeoutfix.diff
+%%DATADIR%%/class.phpmailer.php
+%%DATADIR%%/class.smtp.php
+%%DATADIR%%/language/phpmailer.lang-br.php
+%%DATADIR%%/language/phpmailer.lang-ca.php
+%%DATADIR%%/language/phpmailer.lang-cz.php
+%%DATADIR%%/language/phpmailer.lang-de.php
+%%DATADIR%%/language/phpmailer.lang-dk.php
+%%DATADIR%%/language/phpmailer.lang-en.php
+%%DATADIR%%/language/phpmailer.lang-es.php
+%%DATADIR%%/language/phpmailer.lang-fi.php
+%%DATADIR%%/language/phpmailer.lang-fo.php
+%%DATADIR%%/language/phpmailer.lang-fr.php
+%%DATADIR%%/language/phpmailer.lang-hu.php
+%%DATADIR%%/language/phpmailer.lang-it.php
+%%DATADIR%%/language/phpmailer.lang-ja.php
+%%DATADIR%%/language/phpmailer.lang-nl.php
+%%DATADIR%%/language/phpmailer.lang-no.php
+%%DATADIR%%/language/phpmailer.lang-pl.php
+%%DATADIR%%/language/phpmailer.lang-ro.php
+%%DATADIR%%/language/phpmailer.lang-ru.php
+%%DATADIR%%/language/phpmailer.lang-se.php
+%%DATADIR%%/language/phpmailer.lang-tr.php
+%%DATADIR%%/test/phpmailer_test.php
+%%DATADIR%%/test/phpunit.php
+%%DATADIR%%/test/test.png
+@dirrm %%DATADIR%%/test
+@dirrm %%DATADIR%%/language
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/media
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/PHPMailer
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
