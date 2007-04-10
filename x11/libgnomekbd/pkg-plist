@@ -21,10 +21,27 @@ libdata/pkgconfig/libgnomekbdui.pc
 share/gnome/applications/gkbd-indicator-plugins-capplet.desktop
 share/gnome/libgnomekbd/glade/gkbd-indicator-plugins.glade
 share/icons/hicolor/48x48/apps/gkbd-indicator-plugins-capplet.png
+share/locale/ar/LC_MESSAGES/libgnomekbd.mo
 share/locale/bg/LC_MESSAGES/libgnomekbd.mo
+share/locale/ca/LC_MESSAGES/libgnomekbd.mo
+share/locale/da/LC_MESSAGES/libgnomekbd.mo
+share/locale/dz/LC_MESSAGES/libgnomekbd.mo
+share/locale/el/LC_MESSAGES/libgnomekbd.mo
+share/locale/en_GB/LC_MESSAGES/libgnomekbd.mo
+share/locale/es/LC_MESSAGES/libgnomekbd.mo
+share/locale/fr/LC_MESSAGES/libgnomekbd.mo
+share/locale/gl/LC_MESSAGES/libgnomekbd.mo
+share/locale/hu/LC_MESSAGES/libgnomekbd.mo
+share/locale/it/LC_MESSAGES/libgnomekbd.mo
 share/locale/ja/LC_MESSAGES/libgnomekbd.mo
+share/locale/ko/LC_MESSAGES/libgnomekbd.mo
+share/locale/mk/LC_MESSAGES/libgnomekbd.mo
 share/locale/nb/LC_MESSAGES/libgnomekbd.mo
+share/locale/pt/LC_MESSAGES/libgnomekbd.mo
+share/locale/pt_BR/LC_MESSAGES/libgnomekbd.mo
 share/locale/ru/LC_MESSAGES/libgnomekbd.mo
+share/locale/sv/LC_MESSAGES/libgnomekbd.mo
+share/locale/uk/LC_MESSAGES/libgnomekbd.mo
 @dirrm share/gnome/libgnomekbd/glade
 @dirrm share/gnome/libgnomekbd
 @dirrm include/libgnomekbd
