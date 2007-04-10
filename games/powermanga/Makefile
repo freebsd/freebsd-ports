@@ -7,6 +7,7 @@
 
 PORTNAME=		powermanga
 PORTVERSION=		0.80
+PORTREVISION=		1
 CATEGORIES=		games
 MASTER_SITES=		http://linux.tlk.fr/games/Powermanga/download/
 EXTRACT_SUFX=		.tgz
@@ -38,9 +39,16 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|SDL/||' \
 		${WRKSRC}/src/powermanga.hpp \
 		${WRKSRC}/src/sdl_mixer.cpp
+	@${REINPLACE_CMD} -e 's|Lang=fr|Lang=en|' \
+		${WRKSRC}/texts/config.ini
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${MKDIR} ${DATADIR}/texts
+	@cd ${WRKSRC}/texts && \
+	  (for i in *.ini *.txt; do \
+	    ${INSTALL_DATA} $${i} ${DATADIR}/texts; \
+	  done)
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} \
