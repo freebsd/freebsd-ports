@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	passwd
-PORTVERSION=	3.0
-PORTREVISION=	2
+PORTVERSION=	3.0.1
 CATEGORIES=	www mail
 PKGNAMEPREFIX=	horde-
 DIST_SUBDIR=	horde
 
 MAINTAINER=	beech@alaskaparadise.com
-COMMENT=	A password changing module for Horde
+COMMENT=	Password changing module for Horde
 
 USE_HORDE=	base
 USE_GETTEXT=	yes
