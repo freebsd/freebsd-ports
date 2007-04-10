@@ -19,7 +19,6 @@
     SUBDIR += courier-authlib-userdb
     SUBDIR += courier-authlib-usergdbm
     SUBDIR += cyrus-imspd
-    SUBDIR += cyrus-smlacapd
     SUBDIR += db
     SUBDIR += db2
     SUBDIR += db3

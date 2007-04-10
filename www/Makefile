@@ -414,7 +414,6 @@
     SUBDIR += mod_webkit
     SUBDIR += mod_xmlns
     SUBDIR += mod_xsendfile
-    SUBDIR += mod_zap
     SUBDIR += moinmoin
     SUBDIR += momspider
     SUBDIR += monkey
@@ -1063,7 +1062,6 @@
     SUBDIR += rubygem-rubyfulsoup
     SUBDIR += rubygem-scrapi
     SUBDIR += rubygem-scrubyt
-    SUBDIR += sahana2
     SUBDIR += sams
     SUBDIR += sarg
     SUBDIR += sbox-dtc
@@ -1148,7 +1146,6 @@
     SUBDIR += typo3
     SUBDIR += udmsearch
     SUBDIR += ump
-    SUBDIR += urchin5
     SUBDIR += usermanager
     SUBDIR += validator
     SUBDIR += varnish

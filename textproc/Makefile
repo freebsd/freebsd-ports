@@ -321,7 +321,6 @@
     SUBDIR += ny-aspell
     SUBDIR += ocaml-expat
     SUBDIR += ocaml-pxp
-    SUBDIR += ocaml-yaxi
     SUBDIR += ocaml-yaxpo
     SUBDIR += odt2txt
     SUBDIR += openfts

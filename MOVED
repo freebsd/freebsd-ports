@@ -2928,3 +2928,10 @@ russian/elm.language||2007-04-10|Has expired: Leaves behind files on deinstall
 russian/pine.language||2007-04-10|Has expired: Leaves behind config file on deinstall
 science/py-scipy03||2007-04-10|Has expired: Replaced by py-scipy
 security/php4-cryptopp||2007-04-10|Has expired: Does not compile
+sysutils/tct||2007-04-10|Has expired: this port is obsolete, please use sysutils/sleuthkit instead
+textproc/ocaml-yaxi||2007-04-10|Has expired: Does not build
+ukrainian/pine.language||2007-04-10|Has expired: Leaves behind config file on deinstall
+www/mod_zap||2007-04-10|Has expired: Incomplete pkg-plist
+www/sahana2||2007-04-10|Has expired: Conflicting dependencies: php4 vs php5
+www/urchin5||2007-04-10|Has expired: Does not install
+databases/cyrus-smlacapd||2007-04-10|Has expired: this software is obsolete
