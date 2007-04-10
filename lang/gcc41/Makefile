@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.1.3
-PORTREVISION=	20070402
+PORTREVISION=	20070409
 CATEGORIES=	lang java
 VERSIONSTRING=	4.1-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -25,9 +25,6 @@ COMMENT?=	GNU Compiler Collection 4.1
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		mpfr.1:${PORTSDIR}/math/mpfr
 .endif
-.if defined(WITH_JAVA_AWT)
-LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
-.endif
 
 SUFFIX=		41
 LATEST_LINK?=	gcc${SUFFIX}${PKGNAMESUFFIX}
@@ -37,9 +34,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
-.if defined(WITH_JAVA_AWT)
-USE_GNOME=	gtk20 libartlgpl2
-.endif
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
@@ -68,13 +62,6 @@ CONFIGURE_ARGS+=	--disable-nls \
 		--libdir=${TARGLIB} \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/ \
 		--infodir=${PREFIX}/${INFO_PATH}/gcc${SUFFIX}
-.if defined(WITH_JAVA_AWT)
-CONFIGURE_ARGS+=	--enable-java-awt=gtk,xlib \
-			--enable-gtk-cairo
-.if defined(WITHOUT_JAVA)
-BROKEN=		Does not compile gcj
-.endif
-.endif
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 ALL_TARGET=	bootstrap-lean
 USE_LDCONFIG=	${TARGLIB}
@@ -124,6 +111,14 @@ PLIST_SUB+=	JAVA=""
 .else
 CONFIGURE_ARGS+=--disable-libgcj
 PLIST_SUB+=	JAVA="@comment "
+
+.if defined(WITH_JAVA_AWT)
+LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
+USE_GNOME=	gtk20 libartlgpl2
+CONFIGURE_ARGS+=	--enable-java-awt=gtk,xlib \
+			--enable-gtk-cairo
+.endif
+
 .endif
 
 pre-everything::
