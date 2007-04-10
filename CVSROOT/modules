@@ -7065,7 +7065,6 @@ maradns		ports/dns/maradns
 marathon-evil	ports/games/marathon-evil
 marathon2-data	ports/games/marathon2-data
 markdown	ports/textproc/markdown
-marlin		ports/audio/marlin
 mars		ports/cad/mars
 mars_nwe	ports/net/mars_nwe
 marsnomercy	ports/games/marsnomercy
@@ -7160,7 +7159,6 @@ meqcc		ports/games/meqcc
 mercator	ports/devel/mercator
 mercurial	ports/devel/mercurial
 mercury		ports/net-im/mercury
-mergeant	ports/databases/mergeant
 mergelog	ports/www/mergelog
 merlin		ports/games/merlin
 merlinmon	ports/net/merlinmon
@@ -11509,7 +11507,6 @@ pecl-mailparse	ports/mail/pecl-mailparse
 pecl-memcache	ports/databases/pecl-memcache
 pecl-mnogosearch	ports/www/pecl-mnogosearch
 pecl-operator	ports/devel/pecl-operator
-pecl-paradox	ports/databases/pecl-paradox
 pecl-pdflib	ports/print/pecl-pdflib
 pecl-pecl_http	ports/www/pecl-pecl_http
 pecl-perl	ports/lang/pecl-perl
@@ -15970,7 +15967,6 @@ x2vnc		ports/x11-servers/x2vnc
 x2x		ports/x11-servers/x2x
 x3270		ports/x11/x3270
 x48		ports/emulators/x48
-x4x		ports/audio/x4x
 x86info		ports/sysutils/x86info
 xabacus		ports/games/xabacus
 xacpim		ports/sysutils/xacpim
@@ -16736,7 +16732,6 @@ yamcha		ports/textproc/yamcha
 yammi		ports/audio/yammi
 yamsweeper	ports/games/yamsweeper
 yamt		ports/audio/yamt
-yank		ports/deskutils/yank
 yap		ports/graphics/yap
 yape		ports/emulators/yape
 yaph		ports/net/yaph
@@ -16898,7 +16893,6 @@ zh-scim-chewing	ports/chinese/scim-chewing
 zh-scim-pinyin	ports/chinese/scim-pinyin
 zh-scim-tables	ports/chinese/scim-tables
 zh-srecite	ports/chinese/srecite
-zh-tatter-tools	ports/chinese/tatter-tools
 zh-tcl		ports/chinese/tcl83
 zh-tcl83	ports/chinese/tcl83
 zh-telnet	ports/chinese/telnet
@@ -16913,7 +16907,6 @@ zh-unrar	ports/chinese/unrar
 zh-unzip	ports/chinese/unzip
 zh-ve		ports/chinese/ve
 zh-vflib	ports/chinese/vflib
-zh-vim-scdoc	ports/chinese/vim-scdoc
 zh-wangttf	ports/chinese/wangttf
 zh-wenju	ports/chinese/wenju
 zh-xemacs	ports/chinese/xemacs

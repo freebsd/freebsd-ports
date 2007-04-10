@@ -122,7 +122,6 @@
     SUBDIR += mantis
     SUBDIR += mdbtools
     SUBDIR += memcached
-    SUBDIR += mergeant
     SUBDIR += metakit
     SUBDIR += mird
     SUBDIR += mrtg-mysql-load
@@ -329,7 +328,6 @@
     SUBDIR += pear-MDB2_Schema
     SUBDIR += pear-MDB_QueryTool
     SUBDIR += pecl-memcache
-    SUBDIR += pecl-paradox
     SUBDIR += pecl-sqlite
     SUBDIR += pgaccess
     SUBDIR += pgadmin3
