@@ -7,10 +7,11 @@
 
 PORTNAME=	instiki
 PORTVERSION=	0.11.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-0.11.pl1
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -40,6 +41,7 @@ do-build:
 	  rake environment RAILS_ENV=production migrate )
 
 do-install:
+	@${FIND} -E ${WRKSRC} -type f -iregex ".*\._.+" -exec ${RM} "{}" \;
 	${CP} -pR ${WRKSRC}/ ${PREFIX}/${INSTIKIDIR}
 	${CP} ${PREFIX}/${INSTIKIDIR}/db/production.db.sqlite3 \
 		${PREFIX}/${INSTIKIDIR}/db/default.db.sqlite3

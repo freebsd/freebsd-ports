@@ -61,9 +61,9 @@
 %%INSTIKIDIR%%db/default.db.sqlite3
 %%INSTIKIDIR%%db/schema.rb
 %%INSTIKIDIR%%instiki
+%%INSTIKIDIR%%instiki.bat
 %%INSTIKIDIR%%instiki.cmd
 %%INSTIKIDIR%%instiki.rb
-%%INSTIKIDIR%%instiki.sh
 %%INSTIKIDIR%%lib/bluecloth_tweaked.rb
 %%INSTIKIDIR%%lib/chunks/category.rb
 %%INSTIKIDIR%%lib/chunks/chunk.rb
@@ -74,15 +74,17 @@
 %%INSTIKIDIR%%lib/chunks/test.rb
 %%INSTIKIDIR%%lib/chunks/uri.rb
 %%INSTIKIDIR%%lib/chunks/wiki.rb
+%%INSTIKIDIR%%lib/db_structure.rb
 %%INSTIKIDIR%%lib/diff.rb
 %%INSTIKIDIR%%lib/instiki_errors.rb
-%%INSTIKIDIR%%lib/native/linux/libsqlite3.so
 %%INSTIKIDIR%%lib/native/win32/sqlite3.dll
 %%INSTIKIDIR%%lib/native/win32/sqlite3_api.so
+%%INSTIKIDIR%%lib/node.rb
 %%INSTIKIDIR%%lib/page_renderer.rb
 %%INSTIKIDIR%%lib/rdocsupport.rb
 %%INSTIKIDIR%%lib/redcloth.rb
 %%INSTIKIDIR%%lib/redcloth_for_tex.rb
+%%INSTIKIDIR%%lib/sanitize.rb
 %%INSTIKIDIR%%lib/url_generator.rb
 %%INSTIKIDIR%%lib/wiki_content.rb
 %%INSTIKIDIR%%lib/wiki_words.rb
@@ -127,6 +129,7 @@
 %%INSTIKIDIR%%script/benchmarker
 %%INSTIKIDIR%%script/breakpointer
 %%INSTIKIDIR%%script/console
+%%INSTIKIDIR%%script/create_db
 %%INSTIKIDIR%%script/destroy
 %%INSTIKIDIR%%script/generate
 %%INSTIKIDIR%%script/import_storage
@@ -153,6 +156,7 @@
 %%INSTIKIDIR%%test/unit/page_renderer_test.rb
 %%INSTIKIDIR%%test/unit/page_test.rb
 %%INSTIKIDIR%%test/unit/redcloth_for_tex_test.rb
+%%INSTIKIDIR%%test/unit/sanitize_test.rb
 %%INSTIKIDIR%%test/unit/uri_test.rb
 %%INSTIKIDIR%%test/unit/web_test.rb
 %%INSTIKIDIR%%test/unit/wiki_file_test.rb

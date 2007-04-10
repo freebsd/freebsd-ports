@@ -1,12 +1,12 @@
---- lib/chunks/engines.rb.orig	Sun Mar 12 15:57:24 2006
-+++ lib/chunks/engines.rb	Tue Jun  6 22:45:16 2006
-@@ -35,7 +35,8 @@
- 
-   class Markdown < AbstractEngine
+--- lib/chunks/engines.rb.orig	Wed Feb 28 06:09:26 2007
++++ lib/chunks/engines.rb	Mon Apr  9 22:22:51 2007
+@@ -40,7 +40,8 @@
+     require_dependency 'sanitize'
+     include Sanitize
      def mask
 -      require_dependency 'bluecloth_tweaked'
 +      require_dependency 'rubygems'
 +      require_gem 'BlueCloth'
-       BlueCloth.new(@content, @content.options[:engine_opts]).to_html
+       html = BlueCloth.new(@content, @content.options[:engine_opts]).to_html
+       sanitize_html(html)
      end
-   end
