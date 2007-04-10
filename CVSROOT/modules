@@ -7212,6 +7212,7 @@ mgv		ports/print/mgv
 mhash		ports/security/mhash
 mhc		ports/deskutils/mhc
 mhc-emacs20	ports/deskutils/mhc-emacs20
+mhgui		ports/graphics/mhgui
 mhonarc		ports/www/mhonarc
 mhwaveedit	ports/audio/mhwaveedit
 mi-aspell	ports/textproc/mi-aspell
