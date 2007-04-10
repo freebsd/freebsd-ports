@@ -6,23 +6,22 @@
 #
 
 PORTNAME=	libpaper
-PORTVERSION=	1.1.14.3
-PORTREVISION=	1
+PORTVERSION=	1.1.21
+PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/libp/libpaper
-DISTNAME=	${PORTNAME}_${PORTVERSION:S/.3/-3/}
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	lofi@freebsd.org
 COMMENT=	A library providing routines for paper size management
 
 USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
-USE_GETOPT_LONG=yes
-CONFIGURE_ARGS=	--build=${CONFIGURE_TARGET}
+USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--build=${CONFIGURE_TARGET} --mandir=${PREFIX}/man
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.3//}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=	paperconf.1
 MAN3=	defaultpapername.3 defaultpapersizefile.3 paperdone.3 paperfirst.3 \
