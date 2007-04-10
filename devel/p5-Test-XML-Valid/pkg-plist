@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Test/XML/Valid.pm
+@dirrmtry %%SITE_PERL%%/Test/XML
+@dirrmtry %%SITE_PERL%%/Test

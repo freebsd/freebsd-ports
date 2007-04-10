@@ -1,0 +1,5 @@
+Tests for Valid XHTML (using XML::LibXML). If the XML is not valid,
+a message will be generated  with specific details about where the
+parser failed.
+
+WWW: http://search.cpan.org/dist/Test-XML-Valid/
