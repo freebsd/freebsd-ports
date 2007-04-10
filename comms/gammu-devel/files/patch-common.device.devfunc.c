@@ -1,9 +1,9 @@
---- common/device/devfunc.c.orig	Sun Nov 20 22:01:18 2005
-+++ common/device/devfunc.c	Thu Jan 19 18:35:48 2006
-@@ -17,6 +17,8 @@
-  */
+--- common/device/devfunc.c.orig	Fri Feb 23 23:50:01 2007
++++ common/device/devfunc.c	Tue Apr 10 23:46:39 2007
+@@ -18,6 +18,8 @@
  
  #include <string.h>
+ #include <fcntl.h>
 +#include <sys/stat.h>
 +#include <sys/socket.h>
  #ifdef WIN32
