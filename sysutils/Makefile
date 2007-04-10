@@ -593,7 +593,6 @@
     SUBDIR += system-tools-backends
     SUBDIR += sysupdate
     SUBDIR += tcplist
-    SUBDIR += tct
     SUBDIR += tdir
     SUBDIR += tenshi
     SUBDIR += tentakel

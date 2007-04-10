@@ -1672,7 +1672,6 @@ cyrus-sasl	ports/security/cyrus-sasl
 cyrus-sasl2	ports/security/cyrus-sasl2
 cyrus-sasl2-ldapdb	ports/security/cyrus-sasl2-ldapdb
 cyrus-sasl2-saslauthd	ports/security/cyrus-sasl2-saslauthd
-cyrus-smlacapd	ports/databases/cyrus-smlacapd
 cyrus2courier	ports/mail/cyrus2courier
 d2x		ports/games/d2x
 da-aspell	ports/textproc/da-aspell
@@ -7472,7 +7471,6 @@ mod_webapp	ports/www/mod_webapp
 mod_webkit	ports/www/mod_webkit
 mod_xmlns	ports/www/mod_xmlns
 mod_xsendfile	ports/www/mod_xsendfile
-mod_zap		ports/www/mod_zap
 mode-info	ports/editors/mode-info
 modlogan	ports/textproc/modlogan
 modplugplay	ports/audio/modplugplay
@@ -8164,7 +8162,6 @@ ocaml-ulex	ports/devel/ocaml-ulex
 ocaml-wdialog	ports/www/ocaml-wdialog
 ocaml-xstr	ports/devel/ocaml-xstr
 ocaml-xstrp4	ports/devel/ocaml-xstrp4
-ocaml-yaxi	ports/textproc/ocaml-yaxi
 ocaml-yaxpo	ports/textproc/ocaml-yaxpo
 ocaml-zip	ports/archivers/ocaml-zip
 ocamlduce	ports/lang/ocamlduce
@@ -13861,7 +13858,6 @@ safesh		ports/security/safesh
 safestr		ports/devel/safestr
 sagasu		ports/textproc/sagasu
 sage		ports/graphics/sage
-sahana2		ports/www/sahana2
 saint		ports/security/saint
 salias		ports/misc/salias
 sam		ports/editors/sam
@@ -14828,7 +14824,6 @@ tcpxtract	ports/net/tcpxtract
 tcsh-bofh	ports/shells/tcsh-bofh
 tcsh_nls	ports/shells/tcsh_nls
 tcshrc		ports/shells/tcshrc
-tct		ports/sysutils/tct
 tdb		ports/databases/tdb
 tdetect		ports/net/tdetect
 tdfsb		ports/x11-fm/tdfsb
@@ -15318,7 +15313,6 @@ uk-kde3-i18n	ports/ukrainian/kde3-i18n
 uk-koffice-i18n	ports/ukrainian/koffice-i18n
 uk-monacofonts	ports/ukrainian/monacofonts
 uk-phone	ports/misc/uk-phone
-uk-pine.language	ports/ukrainian/pine.language
 uk-postcodes	ports/misc/uk-postcodes
 uk-webalizer	ports/ukrainian/webalizer
 ulxmlrpcpp	ports/net/ulxmlrpcpp
@@ -15383,7 +15377,6 @@ uptimec		ports/sysutils/uptimec
 uptimed		ports/sysutils/uptimed
 upx		ports/archivers/upx
 uqm		ports/games/uqm
-urchin5		ports/www/urchin5
 urelay		ports/net/urelay
 uriparser	ports/net/uriparser
 urlendec	ports/net/urlendec

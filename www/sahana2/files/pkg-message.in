@@ -1,9 +1,0 @@
-==============================================================================
-
-1. Create a symbolic link to "%%PREFIX%%/%%SAHANADIR%%/www".
-2. You will need to run the web installer.
-3. You will need to give write permission to
-   "%%PREFIX%%/%%SAHANADIR%%/www/tmp" if you decided to upload
-   pictures of missing people.
-
-==============================================================================
