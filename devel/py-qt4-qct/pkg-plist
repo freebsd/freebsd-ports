@@ -1,0 +1,51 @@
+bin/qct
+lib/python2.4/site-packages/qctlib/ui_dialog.py
+lib/python2.4/site-packages/qctlib/gui_logic.py
+lib/python2.4/site-packages/qctlib/ui_preferences.py
+lib/python2.4/site-packages/qctlib/__init__.py
+lib/python2.4/site-packages/qctlib/version.py
+lib/python2.4/site-packages/qctlib/utils.py
+lib/python2.4/site-packages/qctlib/vcs/cg.py
+lib/python2.4/site-packages/qctlib/vcs/hg.py
+lib/python2.4/site-packages/qctlib/vcs/p4.py
+lib/python2.4/site-packages/qctlib/vcs/bzr.py
+lib/python2.4/site-packages/qctlib/vcs/cvs.py
+lib/python2.4/site-packages/qctlib/vcs/git.py
+lib/python2.4/site-packages/qctlib/vcs/mtn.py
+lib/python2.4/site-packages/qctlib/vcs/svn.py
+lib/python2.4/site-packages/qctlib/vcs/__init__.py
+lib/python2.4/site-packages/qctlib/vcs/cg.pyc
+lib/python2.4/site-packages/qctlib/vcs/hg.pyc
+lib/python2.4/site-packages/qctlib/vcs/p4.pyc
+lib/python2.4/site-packages/qctlib/vcs/bzr.pyc
+lib/python2.4/site-packages/qctlib/vcs/cvs.pyc
+lib/python2.4/site-packages/qctlib/vcs/git.pyc
+lib/python2.4/site-packages/qctlib/vcs/mtn.pyc
+lib/python2.4/site-packages/qctlib/vcs/svn.pyc
+lib/python2.4/site-packages/qctlib/vcs/__init__.pyc
+lib/python2.4/site-packages/qctlib/vcs/cg.pyo
+lib/python2.4/site-packages/qctlib/vcs/hg.pyo
+lib/python2.4/site-packages/qctlib/vcs/p4.pyo
+lib/python2.4/site-packages/qctlib/vcs/bzr.pyo
+lib/python2.4/site-packages/qctlib/vcs/cvs.pyo
+lib/python2.4/site-packages/qctlib/vcs/git.pyo
+lib/python2.4/site-packages/qctlib/vcs/mtn.pyo
+lib/python2.4/site-packages/qctlib/vcs/svn.pyo
+lib/python2.4/site-packages/qctlib/vcs/__init__.pyo
+lib/python2.4/site-packages/qctlib/ui_dialog.pyc
+lib/python2.4/site-packages/qctlib/gui_logic.pyc
+lib/python2.4/site-packages/qctlib/ui_preferences.pyc
+lib/python2.4/site-packages/qctlib/__init__.pyc
+lib/python2.4/site-packages/qctlib/version.pyc
+lib/python2.4/site-packages/qctlib/utils.pyc
+lib/python2.4/site-packages/qctlib/ui_dialog.pyo
+lib/python2.4/site-packages/qctlib/gui_logic.pyo
+lib/python2.4/site-packages/qctlib/ui_preferences.pyo
+lib/python2.4/site-packages/qctlib/__init__.pyo
+lib/python2.4/site-packages/qctlib/version.pyo
+lib/python2.4/site-packages/qctlib/utils.pyo
+@dirrm lib/python2.4/site-packages/qctlib/vcs
+@dirrm lib/python2.4/site-packages/qctlib
+@comment port's docs
+%%PORTDOCS%%%%DOCSDIR%%/qct.1.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
