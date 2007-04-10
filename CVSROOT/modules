@@ -11785,6 +11785,7 @@ phpip		ports/net-mgmt/phpip
 phpldapadmin	ports/net/phpldapadmin
 phpldapadmin098	ports/net/phpldapadmin098
 phplot		ports/graphics/phplot
+phpmailer	ports/mail/phpmailer
 phpminiadmin	ports/databases/phpminiadmin
 phpmp		ports/www/phpmp
 phpmyadmin	ports/databases/phpmyadmin
