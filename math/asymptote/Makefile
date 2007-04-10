@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asymptote
-PORTVERSION=	1.23
+PORTVERSION=	1.25
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,8 +33,9 @@ USE_GMAKE=	yes
 USE_PYTHON=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-latex=${LOCALBASE}/share/texmf-local/tex/latex --enable-gc=system
+CONFIGURE_ARGS=	--with-latex=${LOCALBASE}/share/texmf-local/tex/latex
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include $${CPPFLAGS}" LFLAGS="-L${LOCALBASE}/lib $${LFLAGS}" CFLAGS="-I${LOCALBASE}/include $${CFLAGS}" LDFLAGS="-L${LOCALBASE}/lib $${LDFLAGS}"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ENV+=	${CONFIGURE_ENV}
 
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr

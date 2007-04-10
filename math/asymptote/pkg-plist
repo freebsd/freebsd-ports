@@ -24,6 +24,7 @@ bin/xasy
 %%DATADIR%%/graph3.asy
 %%DATADIR%%/graph_settings.asy
 %%DATADIR%%/grid3.asy
+%%DATADIR%%/interpolate.asy
 %%DATADIR%%/labelpath.asy
 %%DATADIR%%/latin1.asy
 %%DATADIR%%/light.asy
@@ -56,6 +57,7 @@ bin/xasy
 %%DATADIR%%/solids.asy
 %%DATADIR%%/stats.asy
 %%DATADIR%%/surface.asy
+%%DATADIR%%/syzygy.asy
 %%DATADIR%%/texcolors.asy
 %%DATADIR%%/three.asy
 %%DATADIR%%/tree.asy
@@ -85,6 +87,7 @@ bin/xasy
 %%EXAMPLESDIR%%/GaussianSurface.asy
 %%EXAMPLESDIR%%/Gouraud.asy
 %%EXAMPLESDIR%%/Gouraudcontour.asy
+%%EXAMPLESDIR%%/Klein.asy
 %%EXAMPLESDIR%%/Pythagoras.asy
 %%EXAMPLESDIR%%/PythagoreanTree.asy
 %%EXAMPLESDIR%%/Sierpinski.asy
@@ -160,9 +163,11 @@ bin/xasy
 %%EXAMPLESDIR%%/imagecontour.asy
 %%EXAMPLESDIR%%/imagehistogram.asy
 %%EXAMPLESDIR%%/integraltest.asy
+%%EXAMPLESDIR%%/interpolate1.asy
 %%EXAMPLESDIR%%/intro.asy
 %%EXAMPLESDIR%%/join.asy
 %%EXAMPLESDIR%%/join3.asy
+%%EXAMPLESDIR%%/knots.asy
 %%EXAMPLESDIR%%/labelbox.asy
 %%EXAMPLESDIR%%/labelsquare.asy
 %%EXAMPLESDIR%%/laserlattice.asy
