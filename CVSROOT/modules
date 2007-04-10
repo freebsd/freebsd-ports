@@ -10705,6 +10705,7 @@ p5-Test-Exception	ports/devel/p5-Test-Exception
 p5-Test-Expect	ports/devel/p5-Test-Expect
 p5-Test-File	ports/devel/p5-Test-File
 p5-Test-File-Contents	ports/devel/p5-Test-File-Contents
+p5-Test-Group	ports/devel/p5-Test-Group
 p5-Test-HTML-Tidy	ports/devel/p5-Test-HTML-Tidy
 p5-Test-HTTP-Server-Simple	ports/www/p5-Test-HTTP-Server-Simple
 p5-Test-Harness	ports/devel/p5-Test-Harness
