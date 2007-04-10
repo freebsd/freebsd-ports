@@ -1,5 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Storable.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Storable/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Storable/BIN_VERSION_NV.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Storable/BIN_WRITE_VERSION_NV.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Storable/CAN_FLOCK.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Storable/Storable.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Storable/Storable.so
@@ -9,6 +11,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Storable/_store_fd.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Storable/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Storable/fd_retrieve.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Storable/file_magic.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Storable/freeze.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Storable/lock_nstore.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Storable/lock_retrieve.al
@@ -24,4 +27,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Storable/store.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Storable/store_fd.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Storable/thaw.al
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Storable
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Storable
