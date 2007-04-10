@@ -9,10 +9,11 @@ bin/gammu
 libdata/pkgconfig/gammu.pc
 lib/libGammu.a
 lib/libGammu.so
-lib/libGammu.so.0
+lib/libGammu.so.1
 include/gammu/config.h
 include/gammu/gammu.h
 include/gammu/gsmcomon.h
+include/gammu/gsmerror.h
 include/gammu/gsmstate.h
 include/gammu/device/devfunc.h
 include/gammu/device/bluetoth/affix.h

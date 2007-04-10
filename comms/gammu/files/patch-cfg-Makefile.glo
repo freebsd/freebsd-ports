@@ -1,18 +1,18 @@
---- cfg/Makefile.glo.orig	Tue Apr 12 10:26:08 2005
-+++ cfg/Makefile.glo	Tue Sep  6 08:38:21 2005
-@@ -122,7 +122,7 @@
- 	@echo Making $<
- 	@$(CC) -c $(CFLAGS) -I$(TOPDIR)/common/ $(CPPFLAGS) $*.c -o $*.o
+--- cfg/Makefile.glo.orig	Fri Feb 23 23:50:00 2007
++++ cfg/Makefile.glo	Tue Apr 10 23:43:11 2007
+@@ -126,7 +126,7 @@
+ # Add special flags for gammu binary
+ 	@$(CC) -c $(CFLAGS) $(CPPFLAGS) $*.c -o $*.o $(if $(subst gammu/gammu.c,,$<),,$(GAMMU_CFLAGS))
  
 -all: gammu
 +all: gammu shared
  
  $(TOPDIR)/gammu/gammu: $(COMMON) $(GAMMU)
  	@echo Linking gammu
-@@ -225,12 +225,14 @@
- 	@$(INSTALL) -m 0644 $(TOPDIR)/changelog $(DESTDIR)$(INSTALL_DOC_DIR)
- 	@$(INSTALL) -m 0644 $(TOPDIR)/readme.txt $(DESTDIR)$(INSTALL_DOC_DIR)
- 	@$(INSTALL) -m 0644 $(TOPDIR)/copying $(DESTDIR)$(INSTALL_DOC_DIR)
+@@ -234,12 +234,14 @@
+ 	@$(INSTALL) -m 0644 $(TOPDIR)/ChangeLog $(DESTDIR)$(INSTALL_DOC_DIR)
+ 	@$(INSTALL) -m 0644 $(TOPDIR)/README $(DESTDIR)$(INSTALL_DOC_DIR)
+ 	@$(INSTALL) -m 0644 $(TOPDIR)/COPYING $(DESTDIR)$(INSTALL_DOC_DIR)
 +
 +installman:
  	@echo Installing man to $(DESTDIR)$(INSTALL_MAN_DIR)
@@ -25,7 +25,7 @@
  
  installonly: all
  	@echo Installing binaries to $(DESTDIR)$(INSTALL_BIN_DIR)
-@@ -238,7 +240,7 @@
+@@ -247,7 +249,7 @@
  	@$(INSTALL) -m 0755 $(TOPDIR)/gammu/gammu $(DESTDIR)$(INSTALL_BIN_DIR)
  
  installshared: installlib
@@ -34,17 +34,17 @@
  
  installlibonly: shared
  	@echo Installing binaries to $(DESTDIR)$(INSTALL_BIN_DIR)
-@@ -247,8 +249,7 @@
+@@ -256,8 +258,7 @@
  
  	@echo Installing shared library to $(DESTDIR)$(INSTALL_LIB_DIR)
  	@$(INSTALL) -m 0755 -d $(DESTDIR)$(INSTALL_LIB_DIR)
--	@$(INSTALL) -m 0644 $(TOPDIR)/common/libGammu.so.$(SONAME_MAJOR).$(SONAME_MINOR) $(DESTDIR)$(INSTALL_LIB_DIR)
--	@$(LN) -s libGammu.so.$(SONAME_MAJOR).$(SONAME_MINOR) $(DESTDIR)$(INSTALL_LIB_DIR)/libGammu.so.$(SONAME_MAJOR)
-+	@$(INSTALL) -m 0644 $(TOPDIR)/common/libGammu.so.$(SONAME_MAJOR).$(SONAME_MINOR) $(DESTDIR)$(INSTALL_LIB_DIR)/libGammu.so.$(SONAME_MAJOR)
- 	@$(LN) -s libGammu.so.$(SONAME_MAJOR) $(DESTDIR)$(INSTALL_LIB_DIR)/libGammu.so
+-	@$(INSTALL) -m 0755 $(TOPDIR)/common/$(LIBGAMMU_FULLNAME) $(DESTDIR)$(INSTALL_LIB_DIR)
+-	@$(LN) -s $(LIBGAMMU_FULLNAME) $(DESTDIR)$(INSTALL_LIB_DIR)/$(LIBGAMMU_MJR_NAME)
++	@$(INSTALL) -m 0755 $(TOPDIR)/common/$(LIBGAMMU_FULLNAME) $(DESTDIR)$(INSTALL_LIB_DIR)/libGammu.so.$(SONAME_MAJOR)
+ 	@$(LN) -s $(LIBGAMMU_MJR_NAME) $(DESTDIR)$(INSTALL_LIB_DIR)/$(LIBGAMMU_SHRTNAME)
   
  	@echo Installing static library to $(DESTDIR)$(INSTALL_LIB_DIR)
-@@ -267,8 +268,8 @@
+@@ -276,8 +277,8 @@
  	@$(INSTALL) -m 0644 cfg/config.h $(DESTDIR)$(INSTALL_H_DIR)/config.h
  
  	@echo Installing pkgconfig file
