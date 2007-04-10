@@ -144,10 +144,8 @@
     SUBDIR += kde-icons-outline
     SUBDIR += kde-icons-realistic
     SUBDIR += kde-icons-sky
-    SUBDIR += kde-icons-sparkling
     SUBDIR += kde-icons-steel
     SUBDIR += kde-icons-umicons
-    SUBDIR += kde-icons-wasp
     SUBDIR += kde-style-comix
     SUBDIR += kde-style-lipstik
     SUBDIR += kde-style-polyester
