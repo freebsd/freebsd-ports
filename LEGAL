@@ -594,8 +594,6 @@ uppaal-*.zip		devel/uppaal		Downloading requires completion
 upsmon*			sysutils/upsmon		Redistribute only with
 						original source code
 ut_linux_mgr_*		sysutils/linux-megamgr	Redistribution prohibited
-urchin*.tar.gz		www/urchin5		Commercial software, also comes
-						bundled with Apache-SSL
 linux-ut/*		games/linux-ut		Redistribution limited
 ut2004-lnx-*		games/linux-ut2004-demo	Redistribution limited
 uzap.tar.gz             editors/uzap		Restrictive copyright
