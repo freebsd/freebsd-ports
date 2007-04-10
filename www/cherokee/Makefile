@@ -7,39 +7,38 @@
 
 PORTNAME=	cherokee
 PORTVERSION=	0.5.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
-MASTER_SITES=	http://www.cherokee-project.com/download/%SUBDIR%/ \
-		http://www.alaskaparadise.com/freebsd/
-MASTER_SITE_SUBDIR=	${PORTVERSION:R}/${PORTVERSION}
+MASTER_SITES=	http://www.cherokee-project.com/download/${PORTVERSION:R}/${PORTVERSION}/ \
+		CENKES http://www.alaskaparadise.com/freebsd/
 
 MAINTAINER=	beech@alaskaparadise.com
 COMMENT=	An extremely fast and flexible web server
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
+CONFLICTS=	cherokee-devel-[0-9]*
 USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_LDCONFIG=	yes
 USE_RC_SUBR=	cherokee.sh
 USE_GCC=	3.4+
 USE_BISON=	yes
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
-		--with-wwwroot=${PREFIX}/www
+		--with-wwwroot=${PREFIX}/www \
+		--disable-static
 
 OPTIONS=	GNUTLS	"TLS/SSL Use gnutls"	on \
 		OPENSSL	"TLS/SSL Use openssl"	off \
 		NOTLS	"No TLS/SSL"		off \
 		NOIPV6	"No IPv6"		off
 
-USE_LDCONFIG=	yes
-
 MAN1=		cget.1 cherokee-config.1 cherokee.1 cherokee_logrotate.1
-
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
@@ -75,23 +74,14 @@ pre-build:
 		 s:%prefix%:${PREFIX}:g' < ${file}.sample.pre > ${file}.sample
 .endfor
 
-pre-install:
-	@if [ ! -f ${PREFIX}/www ]; then \
-		${MKDIR} ${PREFIX}/www;\
-	fi
-	@if [ ! -f ${PREFIX}/www/data ] ; then \
-		${MKDIR} ${PREFIX}/www/data;\
-	fi
-	@${ECHO_MSG} " `pwd` "
-
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/images/*.png ${DOCSDIR}
+	@${INSTALL} -d ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/images/*.png ${DOCSDIR}/
 .endif
-	${INSTALL_DATA} ${WRKSRC}/doc/develop/Intro.txt ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/develop/Intro.txt ${DATADIR}/
 	@${ECHO_MSG} " "
 	@${ECHO_MSG} " Dont forget to read the doc "
 	@${ECHO_MSG} " ${PREFIX}/share/cherokee/Intro.txt"
