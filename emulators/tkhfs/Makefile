@@ -7,7 +7,8 @@
 
 PORTNAME=	tkhfs
 PORTVERSION=	1.27
-CATEGORIES=	emulators tk82
+PORTREVISION=	1
+CATEGORIES=	emulators tk84
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jmz
 DISTNAME=	${PORTNAME}
@@ -15,8 +16,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	A Tcl/Tk front end to the hfs program
 
+USE_TK=		yes
 PLIST_FILES=	bin/tkhfs
-RUN_DEPENDS=	hfs:${PORTSDIR}/emulators/hfs \
-		wish8.2:${PORTSDIR}/x11-toolkits/tk82
+RUN_DEPENDS=	hfs:${PORTSDIR}/emulators/hfs
 
 .include <bsd.port.mk>
