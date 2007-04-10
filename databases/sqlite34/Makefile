@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.3.14
+PORTVERSION=	3.3.15
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 .if defined(USE_THOL)
@@ -105,13 +105,13 @@ post-install:
 		libtclsqlite3.la ${PREFIX}/lib/sqlite/)
 	@${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/sqlite/
 	@${INSTALL_PROGRAM} ${WRKSRC}/.libs/tclsqlite3 ${PREFIX}/bin
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${FILESDIR}/example.tcl ${EXAMPLESDIR}
 .endif
 .if !defined(NOPORTDOCS) && !defined(WITHOUT_DOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${FILESDIR}/example.tcl ${EXAMPLESDIR}
 .if defined(USE_THOL)
 	@${MKDIR} ${DATADIR}
 	@${TOUCH} ${DATADIR}/sqlite3_with_threads-override-locks
