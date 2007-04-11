@@ -16,6 +16,7 @@ otrs/bin/PostMasterDaemon.pl
 otrs/bin/PostMasterPOP3.pl
 otrs/bin/RebuildTicketIndex.pl
 otrs/bin/SetPermissions.sh
+otrs/bin/StatsExportToOPM.pl
 otrs/bin/UnlockTickets.pl
 otrs/bin/XMLMaster.pl
 otrs/bin/mkStats.pl
@@ -587,6 +588,7 @@ otrs/Kernel/System/Ticket/Number/DateChecksum.pm
 otrs/Kernel/System/Ticket/Number/Random.pm
 otrs/Kernel/System/Ticket/Permission/GroupCheck.pm
 otrs/Kernel/System/Ticket/Permission/OwnerCheck.pm
+otrs/Kernel/System/Ticket/Permission/ResponsibleCheck.pm
 otrs/Kernel/System/User/Preferences/DB.pm
 otrs/Kernel/System/Web/InterfaceAgent.pm
 otrs/Kernel/System/Web/InterfaceCustomer.pm
