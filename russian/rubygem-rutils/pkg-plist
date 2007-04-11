@@ -1,7 +1,33 @@
 bin/gilensize
 bin/rutilize
-%%GEM_SPEC%%
 %%GEM_CACHE%%
+%%GEM_SPEC%%
+%%GEM_LIB_DIR%%/bin/gilensize
+%%GEM_LIB_DIR%%/bin/rutilize
+%%GEM_LIB_DIR%%/test/run_tests.rb
+%%GEM_LIB_DIR%%/test/t_datetime.rb
+%%GEM_LIB_DIR%%/test/t_gilenson.rb
+%%GEM_LIB_DIR%%/test/t_integration.rb
+%%GEM_LIB_DIR%%/test/t_pluralize.rb
+%%GEM_LIB_DIR%%/test/t_rutils_base.rb
+%%GEM_LIB_DIR%%/test/t_transliteration.rb
+%%GEM_LIB_DIR%%/test/t_typografica.rb
+%%GEM_LIB_DIR%%/lib/rutils.rb
+%%GEM_LIB_DIR%%/lib/countries/countries.rb
+%%GEM_LIB_DIR%%/lib/datetime/datetime.rb
+%%GEM_LIB_DIR%%/lib/gilenson/gilenson.rb
+%%GEM_LIB_DIR%%/lib/gilenson/gilenson_port.rb
+%%GEM_LIB_DIR%%/lib/integration/blue_cloth_override.rb
+%%GEM_LIB_DIR%%/lib/integration/integration.rb
+%%GEM_LIB_DIR%%/lib/integration/rails_date_helper_override.rb
+%%GEM_LIB_DIR%%/lib/integration/red_cloth_override.rb
+%%GEM_LIB_DIR%%/lib/pluralizer/pluralizer.rb
+%%GEM_LIB_DIR%%/lib/transliteration/bidi.rb
+%%GEM_LIB_DIR%%/lib/transliteration/simple.rb
+%%GEM_LIB_DIR%%/lib/transliteration/transliteration.rb
+%%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/TODO
+%%GEM_LIB_DIR%%/CHANGELOG
 %%GEM_DOC_DIR%%/rdoc/created.rid
 %%GEM_DOC_DIR%%/rdoc/rdoc-style.css
 %%GEM_DOC_DIR%%/rdoc/files/lib/transliteration/bidi_rb.src/M000001.html
@@ -24,9 +50,9 @@ bin/rutilize
 %%GEM_DOC_DIR%%/rdoc/files/README.html
 %%GEM_DOC_DIR%%/rdoc/files/TODO.html
 %%GEM_DOC_DIR%%/rdoc/files/CHANGELOG.html
+%%GEM_DOC_DIR%%/rdoc/classes/Time.src/M000005.html
 %%GEM_DOC_DIR%%/rdoc/classes/Date.src/M000006.html
 %%GEM_DOC_DIR%%/rdoc/classes/Date.src/M000007.html
-%%GEM_DOC_DIR%%/rdoc/classes/Time.src/M000005.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils.src/M000008.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils.src/M000009.html
 %%GEM_DOC_DIR%%/rdoc/classes/RuTils.src/M000010.html
@@ -83,70 +109,44 @@ bin/rutilize
 %%GEM_DOC_DIR%%/rdoc/fr_class_index.html
 %%GEM_DOC_DIR%%/rdoc/fr_method_index.html
 %%GEM_DOC_DIR%%/rdoc/index.html
-%%GEM_LIB_DIR%%/bin/gilensize
-%%GEM_LIB_DIR%%/bin/rutilize
-%%GEM_LIB_DIR%%/test/run_tests.rb
-%%GEM_LIB_DIR%%/test/t_datetime.rb
-%%GEM_LIB_DIR%%/test/t_gilenson.rb
-%%GEM_LIB_DIR%%/test/t_integration.rb
-%%GEM_LIB_DIR%%/test/t_pluralize.rb
-%%GEM_LIB_DIR%%/test/t_rutils_base.rb
-%%GEM_LIB_DIR%%/test/t_transliteration.rb
-%%GEM_LIB_DIR%%/test/t_typografica.rb
-%%GEM_LIB_DIR%%/lib/rutils.rb
-%%GEM_LIB_DIR%%/lib/countries/countries.rb
-%%GEM_LIB_DIR%%/lib/datetime/datetime.rb
-%%GEM_LIB_DIR%%/lib/gilenson/gilenson.rb
-%%GEM_LIB_DIR%%/lib/gilenson/gilenson_port.rb
-%%GEM_LIB_DIR%%/lib/integration/blue_cloth_override.rb
-%%GEM_LIB_DIR%%/lib/integration/integration.rb
-%%GEM_LIB_DIR%%/lib/integration/rails_date_helper_override.rb
-%%GEM_LIB_DIR%%/lib/integration/red_cloth_override.rb
-%%GEM_LIB_DIR%%/lib/pluralizer/pluralizer.rb
-%%GEM_LIB_DIR%%/lib/transliteration/bidi.rb
-%%GEM_LIB_DIR%%/lib/transliteration/simple.rb
-%%GEM_LIB_DIR%%/lib/transliteration/transliteration.rb
-%%GEM_LIB_DIR%%/README
-%%GEM_LIB_DIR%%/TODO
-%%GEM_LIB_DIR%%/CHANGELOG
-@dirrmtry %%GEM_LIB_DIR%%/test
-@dirrmtry %%GEM_LIB_DIR%%/lib/transliteration
-@dirrmtry %%GEM_LIB_DIR%%/lib/pluralizer
-@dirrmtry %%GEM_LIB_DIR%%/lib/integration
-@dirrmtry %%GEM_LIB_DIR%%/lib/gilenson
-@dirrmtry %%GEM_LIB_DIR%%/lib/datetime
-@dirrmtry %%GEM_LIB_DIR%%/lib/countries
-@dirrmtry %%GEM_LIB_DIR%%/lib
-@dirrmtry %%GEM_LIB_DIR%%/bin
-@dirrmtry %%GEM_LIB_DIR%%
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/files/lib/transliteration/simple_rb.src
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/files/lib/transliteration/bidi_rb.src
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/files/lib/transliteration
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/files/lib/pluralizer
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/files/lib/integration
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/files/lib/gilenson
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/files/lib/datetime
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/files/lib/countries
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/files/lib
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/files
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/classes/Date.src
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/classes/Time.src
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Transliteration/StringFormatting.src
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Transliteration
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Pluralization/NumericFormatting.src
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Pluralization/FloatFormatting.src
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Pluralization
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/StringFormatting.src
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/Obsolete.src
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/Formatter.src
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/classes/RuTils/DateTime.src
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/classes/RuTils.src
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/classes/RuTils
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/classes/Object/ActionView/Helpers/DateHelper.src
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/classes/Object/ActionView/Helpers
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/classes/Object/ActionView
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/classes/Object
-@dirrmtry %%GEM_DOC_DIR%%/rdoc/classes
-@dirrmtry %%GEM_DOC_DIR%%/rdoc
-@dirrmtry %%GEM_DOC_DIR%%
+@dirrm %%GEM_LIB_DIR%%/lib/transliteration
+@dirrm %%GEM_LIB_DIR%%/lib/pluralizer
+@dirrm %%GEM_LIB_DIR%%/lib/integration
+@dirrm %%GEM_LIB_DIR%%/lib/gilenson
+@dirrm %%GEM_LIB_DIR%%/lib/datetime
+@dirrm %%GEM_LIB_DIR%%/lib/countries
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%/test
+@dirrm %%GEM_LIB_DIR%%/bin
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Object/ActionView/Helpers/DateHelper.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Object/ActionView/Helpers
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Object/ActionView
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Object
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RuTils/DateTime.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/Formatter.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/Obsolete.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson/StringFormatting.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Gilenson
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Pluralization/FloatFormatting.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Pluralization/NumericFormatting.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Pluralization
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Transliteration/StringFormatting.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RuTils/Transliteration
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RuTils
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/RuTils.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Date.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Time.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/pluralizer
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/integration
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/gilenson
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/datetime
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/countries
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/transliteration/simple_rb.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/transliteration/bidi_rb.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/transliteration
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
+@dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc
+@dirrm %%GEM_DOC_DIR%%
