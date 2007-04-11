@@ -3,6 +3,14 @@
 
 case "$2" in
 PRE-INSTALL)
+	if [ "`/sbin/sysctl -n compat.linux.osrelease`"x = "x" ]; then
+		echo 'linuxulator is not (kld)loaded, exiting'
+		exit 1
+	fi
+	if [ "`/sbin/sysctl -n compat.linux.osrelease`" = "2.4.2" ]; then
+		echo 'compat.linux.osrelease: 2.4.2 is not supported, exiting'
+		exit 1
+	fi
 	if [ -z "`kldstat -v | grep -E 'linux(aout|elf)'`" ]; then
 		echo 'Linux mode is not enabled.'
 		echo 'Loading linux kernel module now...'
