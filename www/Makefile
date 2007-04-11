@@ -1270,6 +1270,7 @@
     SUBDIR += xpi-xpcom-component-viewer
     SUBDIR += xshttpd
     SUBDIR += xshttpd-devel
+    SUBDIR += xsm
     SUBDIR += xulrunner
     SUBDIR += yabb
     SUBDIR += yaws
