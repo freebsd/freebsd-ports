@@ -48,14 +48,14 @@
    ** (S/MIME only)
    */
    { "smime_verify_command", 	DT_STR, R_NONE, UL &SmimeVerifyCommand, 0},
---- Makefile.am.orig	Wed Aug 30 14:30:28 2006
-+++ Makefile.am	Wed Aug 30 14:31:49 2006
+--- Makefile.am.orig	Mon Apr  9 15:21:50 2007
++++ Makefile.am	Mon Apr  9 15:24:06 2007
 @@ -13,7 +13,7 @@
  
  bin_SCRIPTS = muttbug flea @SMIMEAUX_TARGET@
  
--BUILT_SOURCES = keymap_defs.h patchlist.c
-+BUILT_SOURCES = keymap_defs.h patchlist.c Muttrc
+-BUILT_SOURCES = keymap_defs.h patchlist.c reldate.h hcversion.h
++BUILT_SOURCES = keymap_defs.h patchlist.c reldate.h hcversion.h Muttrc
  
  bin_PROGRAMS = mutt @DOTLOCK_TARGET@ @PGPAUX_TARGET@
  mutt_SOURCES = $(BUILT_SOURCES) \
