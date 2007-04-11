@@ -1,5 +1,5 @@
---- mytop.orig	Sun Apr  1 08:26:56 2007
-+++ mytop	Sun Apr  1 08:27:00 2007
+--- mytop.orig	Thu Apr 12 07:42:22 2007
++++ mytop	Thu Apr 12 07:42:24 2007
 @@ -369,6 +369,10 @@
          require Data::Dumper;
          print Data::Dumper::Dumper([\%config]);
@@ -51,7 +51,7 @@
 +						? ($s->{Seconds_Behind_Master} > 60 ? BOLD('WARN') : GREEN('OK  ')) : RED('ERR ')
 +					), RESET(),
 +					" Delay: ",
-+					sprintf('%03d:%02d', int($s->{Seconds_Behind_Master} / 60), $s->{Seconds_Behind_Master} % 60),
++					defined($s->{Seconds_Behind_Master}) ? sprintf('%03d:%02d', int($s->{Seconds_Behind_Master} / 60), $s->{Seconds_Behind_Master} % 60) : '---:--',
 +					" $s->{Master_User}\@$s->{Master_Host}: ",
 +					"$s->{Master_Log_File}/$s->{Read_Master_Log_Pos} ",
 +					"\n";
