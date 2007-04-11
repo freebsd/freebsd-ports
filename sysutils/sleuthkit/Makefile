@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sleuthkit
-PORTVERSION=	2.07
+PORTVERSION=	2.08
 CATEGORIES=	sysutils security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,7 +28,7 @@ PROGS=		dcalc dcat disk_sreset disk_stat dls dstat ffind \
 		fls fsstat hfind icat ifind ils img_cat img_stat istat \
 		jcat jls md5 mmls mmstat sha1 sigfind srch_strings
 SCRIPTS=	mactime sorter
-DOCS=		CHANGES.txt README.txt docs/*
+DOCS=		CHANGES.txt README.txt docs/*.txt docs/api-doc/*
 MAN1=		dcalc.1 dcat.1 disk_sreset.1 disk_stat.1 dls.1 \
 		dstat.1 ffind.1 fls.1 fsstat.1 hfind.1 icat.1 ifind.1 \
 		ils.1 img_cat.1 img_stat.1 istat.1 jcat.1 jls.1 mactime.1 \
@@ -46,8 +46,9 @@ post-patch:
 
 do-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/api-doc
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS:M*.txt} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS:N*.txt} ${DOCSDIR}/api-doc
 .endif
 	cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} ${PROGS} ${PREFIX}/bin
 	cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin
