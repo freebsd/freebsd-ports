@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	security python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/p/python-gnutls/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
