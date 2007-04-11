@@ -1,11 +1,11 @@
---- gnome-mount.schemas.in.orig	Wed Jun 21 22:45:53 2006
-+++ gnome-mount.schemas.in	Sun Dec 31 15:38:28 2006
+--- gnome-mount.schemas.in.orig	Tue Apr 10 18:50:12 2007
++++ gnome-mount.schemas.in	Wed Apr 11 12:12:20 2007
 @@ -6,7 +6,7 @@
          <applyto>/system/storage/default_options/vfat/mount_options</applyto>
          <type>list</type>
          <list_type>string</list_type>
--        <default>[shortname=winnt,uid=]</default>
-+        <default>[longnames,-u=]</default>
+-        <default>[shortname=lower,uid=]</default>
++        <default>[longnames,uid=]</default>
          <locale name="C">
            <short>Default mount options for vfat fs</short>
            <long>A list of default mount options for volumes formatted with the vfat file system.</long>
@@ -32,7 +32,7 @@
          <type>list</type>
          <list_type>string</list_type>
 -        <default>[umask=222]</default>
-+        <default>[-m=222]</default>
++        <default>[-m=755]</default>
          <locale name="C">
            <short>Default mount options for ntfs fs</short>
            <long>A list of default mount options for volumes formatted with the ntfs file system.</long>

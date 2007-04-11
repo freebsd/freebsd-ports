@@ -6,13 +6,28 @@ lib/nautilus/extensions-1.0/libgnome-mount.la
 lib/nautilus/extensions-1.0/libgnome-mount.so
 libdata/pkgconfig/gnome-mount.pc
 share/gnome/gnome-mount/gnome-mount-properties.glade
+share/locale/ar/LC_MESSAGES/gnome-mount.mo
+share/locale/be/LC_MESSAGES/gnome-mount.mo
+share/locale/ca/LC_MESSAGES/gnome-mount.mo
+share/locale/da/LC_MESSAGES/gnome-mount.mo
+share/locale/dz/LC_MESSAGES/gnome-mount.mo
 share/locale/en_GB/LC_MESSAGES/gnome-mount.mo
 share/locale/es/LC_MESSAGES/gnome-mount.mo
+share/locale/fi/LC_MESSAGES/gnome-mount.mo
+share/locale/fr/LC_MESSAGES/gnome-mount.mo
+share/locale/hu/LC_MESSAGES/gnome-mount.mo
 share/locale/it/LC_MESSAGES/gnome-mount.mo
 share/locale/ja/LC_MESSAGES/gnome-mount.mo
 share/locale/mk/LC_MESSAGES/gnome-mount.mo
 share/locale/nb/LC_MESSAGES/gnome-mount.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-mount.mo
 share/locale/ru/LC_MESSAGES/gnome-mount.mo
 share/locale/sv/LC_MESSAGES/gnome-mount.mo
 share/locale/vi/LC_MESSAGES/gnome-mount.mo
 @dirrm share/gnome/gnome-mount
+@dirrm share/locale/dz/LC_MESSAGES
+@dirrm share/locale/dz
+@dirrm share/locale/ca/LC_MESSAGES
+@dirrm share/locale/ca
+@dirrm share/locale/be/LC_MESSAGES
+@dirrm share/locale/be
