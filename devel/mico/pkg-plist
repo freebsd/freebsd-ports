@@ -20,7 +20,6 @@ bin/mkdepend
 %%MICO_SERVICE%%bin/nsd
 %%MICO_SERVICE%%bin/propertyd
 %%MICO_SERVICE%%bin/timed
-%%FLEX%%include/FlexLexer.h
 include/CORBA-SMALL.h
 include/CORBA.h
 include/coss/CompoundExternalization_impl.h
