@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	dictd
-PORTVERSION=	1.10.4
+PORTVERSION=	1.10.8
 CATEGORIES+=	net textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=		dict
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	clsung@FreeBSD.org
 COMMENT=	Dict protocol (RFC 2229) server
 
 MAN1=		dictzip.1
@@ -20,9 +20,10 @@ MAN8=		dictd.8
 
 USE_RC_SUBR=	${PORTNAME}.sh
 USE_BISON=	yes
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}" \
-		--without-local-zlib
+		--without-local-zlib --mandir="${PREFIX}/man"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -43,7 +44,6 @@ post-patch:
 post-install:
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" < ${FILESDIR}/${PORTNAME}.conf > ${PREFIX}/etc/${PORTNAME}.conf.sample
 	@[ -f ${PREFIX}/etc/${PORTNAME}.conf ] || ${CP} ${PREFIX}/etc/${PORTNAME}.conf.sample ${PREFIX}/etc/${PORTNAME}.conf
-	#@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/etc/rc.d
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
