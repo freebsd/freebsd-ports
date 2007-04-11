@@ -6,22 +6,24 @@
 #
 
 PORTNAME=	servlet-api
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	www java
-MASTER_SITES=	http://www.ibiblio.org/maven/servletapi/jars/
+MASTER_SITES=	http://fisheye5.cenqua.com/browse/~raw,r=1.1.1.3/glassfish/repo/javax.servlet/jars/
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemoliu@gmail.com
 COMMENT=	The Servlet API
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
 do-install:
-	${INSTALL_DATA} ${_DISTDIR}/${DISTFILES} ${JAVAJARDIR}/${PORTNAME}.jar
+	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
+	@${INSTALL_DATA} ${_DISTDIR}/${DISTFILES} ${JAVAJARDIR}/${PORTNAME}.jar
+	@${ECHO_MSG} " [ DONE ]"
 
 .include <bsd.port.mk>
