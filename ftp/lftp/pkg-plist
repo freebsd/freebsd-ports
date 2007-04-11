@@ -5,15 +5,15 @@ etc/lftp.conf.sample
 @exec if [ ! -f %D/etc/lftp.conf ]; then cp %B/%f %D/etc/lftp.conf; fi
 lib/liblftp-jobs.a
 lib/liblftp-tasks.a
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/FAQ
-%%DOCSDIR%%/FEATURES
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/README.debug-levels
-%%DOCSDIR%%/README.modules
-%%DOCSDIR%%/THANKS
-%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/FEATURES
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.debug-levels
+%%PORTDOCS%%%%DOCSDIR%%/README.modules
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%DATADIR%%/convert-netscape-cookies
 %%DATADIR%%/import-ncftp
 %%DATADIR%%/import-netscape
@@ -29,5 +29,5 @@ lib/liblftp-tasks.a
 %%NLS%%share/locale/ru/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lftp.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lftp.mo
-@dirrm %%DATADIR%%
+@dirrm %%PORTDOCS%%%%DATADIR%%
 @dirrm %%DOCSDIR%%
