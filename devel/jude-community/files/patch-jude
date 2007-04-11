@@ -3,7 +3,7 @@
 @@ -3,13 +3,14 @@
  #Remove "#" from following two lines, if you'd like to use j2sdk.
  #JAVA_HOME=/usr/lib/j2sdk1.4/;export JAVA_HOME
- #PATH=$JAVA_HOME/bin; export PATH
+ #PATH=$JAVA_HOME/bin:$PATH; export PATH
 +PATH=%%DATADIR%%:$PATH
  
 -#JUDE_HOME=/usr/local/share/jude_community
