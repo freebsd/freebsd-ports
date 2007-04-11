@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-notes-plugin
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4

@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-dict-plugin
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	textproc xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4

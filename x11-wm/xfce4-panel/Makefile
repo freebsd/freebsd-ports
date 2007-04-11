@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-panel
-PORTVERSION=	4.4.0
+PORTVERSION=	4.4.1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITES_XFCE}
 DIST_SUBDIR=	xfce4
@@ -45,8 +45,5 @@ CONFIGURE_ARGS+=--enable-startup-notification
 .else
 CONFIGURE_ARGS+=--disable-startup-notification
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-mcs-manager
-PORTVERSION=	4.4.0
+PORTVERSION=	4.4.1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITES_XFCE}
 DISTNAME=	xfce-mcs-manager-${PORTVERSION}

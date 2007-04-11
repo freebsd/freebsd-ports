@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-session
-PORTVERSION=	4.4.0
+PORTVERSION=	4.4.1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITES_XFCE}
 DIST_SUBDIR=	xfce4
@@ -28,8 +28,5 @@ USE_XFCE=	configenv libgui libmcs libutil mcsmanager
 USE_XLIB=	yes
 
 MAN1=		xfce4-session.1 xfce4-session-logout.1
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

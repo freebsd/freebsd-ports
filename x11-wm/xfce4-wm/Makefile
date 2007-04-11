@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-wm
-PORTVERSION=	4.4.0
+PORTVERSION=	4.4.1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITES_XFCE}
 DISTNAME=	xfwm4-${PORTVERSION}
@@ -24,6 +24,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libmcs libutil libgui mcsmanager panel
+
 USE_XLIB=	yes
 
 OPTIONS=	COMPOSITE	"Support the experimental X11 Composite extension"	on \
@@ -45,6 +46,7 @@ CONFIGURE_ARGS+=--disable-startup-notification
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|\(#define ShapeInput 2\);|\1|' \
+		${WRKSRC}/src/frame.c
 
 .include <bsd.port.post.mk>

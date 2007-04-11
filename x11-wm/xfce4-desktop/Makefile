@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xfce4-desktop
-PORTVERSION=	4.4.0
-PORTREVISION=	1
+PORTVERSION=	4.4.1
+PORTREVISION=	0
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITES_XFCE}
 DISTNAME=	xfdesktop-${PORTVERSION}
@@ -45,8 +45,5 @@ CONFIGURE_ARGS+=--disable-thunar-vfs --disable-thunarx --disable-exo
 .if !defined(WITHOUT_FAM)
 .else
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

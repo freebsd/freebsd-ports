@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk-xfce-engine
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	x11-themes xfce
 MASTER_SITES=	${MASTER_SITES_XFCE}
 DIST_SUBDIR=	xfce4
@@ -19,8 +19,5 @@ USE_BZIP2=	yes
 USE_GNOME=	glib20 gnomehack gtk20 pkgconfig
 USE_XLIB=	yes
 USE_XFCE=	configenv	# to get MASTER_SITE_SUBDIR something has to be defined
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

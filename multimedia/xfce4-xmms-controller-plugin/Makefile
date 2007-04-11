@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-xmms-controller-plugin
 PORTVERSION=	1.4.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia audio xfce
 MASTER_SITES=	http://eoin.angrystickman.com/files/
 DIST_SUBDIR=	xfce4
