@@ -25,25 +25,6 @@ etc/xdg/menus/gnomecc.menu
 include/gnome-settings-daemon-2.0/gnome-settings-daemon/gnome-settings-client.h
 include/gnome-window-settings-2.0/gnome-window-manager.h
 include/gnome-window-settings-2.0/gnome-wm-manager.h
-include/slab/app-resizer.h
-include/slab/app-shell-startup.h
-include/slab/app-shell.h
-include/slab/application-tile.h
-include/slab/directory-tile.h
-include/slab/document-tile.h
-include/slab/gnome-utils.h
-include/slab/nameplate-tile.h
-include/slab/nld-marshal.c
-include/slab/nld-marshal.h
-include/slab/search-bar.h
-include/slab/search-context-picker.h
-include/slab/search-entry-watermark.h
-include/slab/search-entry.h
-include/slab/shell-window.h
-include/slab/slab-gnome-util.h
-include/slab/slab-section.h
-include/slab/system-tile.h
-include/slab/tile.h
 lib/gnome-vfs-2.0/modules/libfont-method.a
 lib/gnome-vfs-2.0/modules/libfont-method.la
 lib/gnome-vfs-2.0/modules/libfont-method.so
@@ -54,10 +35,6 @@ lib/libgnome-window-settings.a
 lib/libgnome-window-settings.la
 lib/libgnome-window-settings.so
 lib/libgnome-window-settings.so.1
-lib/libslab.a
-lib/libslab.la
-lib/libslab.so
-lib/libslab.so.0
 lib/nautilus/extensions-1.0/libnautilus-fontilus.a
 lib/nautilus/extensions-1.0/libnautilus-fontilus.la
 lib/nautilus/extensions-1.0/libnautilus-fontilus.so
@@ -69,7 +46,6 @@ lib/window-manager-settings/libmetacity.la
 lib/window-manager-settings/libmetacity.so
 libdata/pkgconfig/gnome-settings-daemon.pc
 libdata/pkgconfig/gnome-window-settings-2.0.pc
-libdata/pkgconfig/libslab.pc
 libexec/gnome-settings-daemon
 share/dbus-1/services/org.gnome.SettingsDaemon.service
 share/gnome/applications/accessibility-keyboard.desktop
@@ -349,7 +325,6 @@ share/mime/packages/gnome-theme-package.xml
 @dirrmtry share/gnome/control-center/icons
 @dirrm share/gnome/control-center/glade
 @dirrm lib/window-manager-settings
-@dirrm include/slab
 @dirrm include/gnome-window-settings-2.0
 @dirrm include/gnome-settings-daemon-2.0/gnome-settings-daemon
 @dirrm include/gnome-settings-daemon-2.0
