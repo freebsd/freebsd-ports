@@ -1681,6 +1681,7 @@ daaplib		ports/audio/daaplib
 dact		ports/archivers/dact
 dadadodo	ports/textproc/dadadodo
 daedalus	ports/sysutils/daedalus
+daemonlogger	ports/net/daemonlogger
 daemontools	ports/sysutils/daemontools
 daemontools53	ports/sysutils/daemontools53
 dagrab		ports/audio/dagrab
