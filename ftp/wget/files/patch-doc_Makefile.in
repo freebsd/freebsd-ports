@@ -1,0 +1,20 @@
+--- doc/Makefile.in.orig	Mon Jun  6 23:42:17 2005
++++ doc/Makefile.in	Wed Apr 11 22:18:59 2007
+@@ -22,7 +22,7 @@
+ SHELL = /bin/sh
+ 
+ # Program to format Texinfo source into Info files.
+-MAKEINFO = @MAKEINFO@
++MAKEINFO = @MAKEINFO@ --no-split
+ # Program to format Texinfo source into DVI files.
+ TEXI2DVI = texi2dvi
+ # Program to convert DVI files to PostScript
+@@ -51,7 +51,7 @@
+ TEXI2POD     = texi2pod.pl
+ POD2MAN      = @POD2MAN@
+ MAN          = wget.$(manext)
+-WGETRC       = $(sysconfdir)/wgetrc
++WGETRC       = $(sysconfdir)/wgetrc.sample
+ SAMPLERCTEXI = sample.wgetrc.munged_for_texi_inclusion
+ 
+ #
