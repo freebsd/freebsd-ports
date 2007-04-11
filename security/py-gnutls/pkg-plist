@@ -52,6 +52,8 @@
 %%EXAMPLESDIR%%/client.py
 %%EXAMPLESDIR%%/crypto.py
 %%EXAMPLESDIR%%/server.py
+%%EXAMPLESDIR%%/tc.py
+%%EXAMPLESDIR%%/ts.py
 %%EXAMPLESDIR%%/twisted-client.py
 %%EXAMPLESDIR%%/twisted-server.py
 @dirrm %%EXAMPLESDIR%%/certs
