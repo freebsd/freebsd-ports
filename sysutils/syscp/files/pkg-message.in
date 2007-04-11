@@ -1,0 +1,22 @@
+
+------------------------------------------------------
+
+Now that SysCP is ready to go, let's add an alias for
+Apache so you can access the SysCP control panel...
+
+Create and put the following lines into your
+%%PREFIX%%/etc/apache22/Includes/aliases.conf file:
+
+
+<IfModule alias_module>
+
+   Alias /syscp "%%PREFIX%%/www/syscp/"
+
+   <Directory "%%PREFIX%%/www/syscp">
+      AllowOverride None
+   </Directory>
+
+</IfModule>
+
+------------------------------------------------------
+

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+/bin/echo ""
+/bin/echo "To delete SysCP permanently: rm -rf /usr/local/www/syscp"
+/bin/echo ""
+
+exit 0
