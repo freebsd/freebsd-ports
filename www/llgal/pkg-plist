@@ -1,5 +1,4 @@
 bin/llgal
-etc/llgal/llgalrc
 %%SITE_PERL%%/Llgal/Config.pm
 %%SITE_PERL%%/Llgal/Utils.pm
 %%SITE_PERL%%/Llgal/Templates.pm
