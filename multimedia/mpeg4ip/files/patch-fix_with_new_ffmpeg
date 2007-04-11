@@ -1,0 +1,22 @@
+--- player/plugin/audio/ffmpeg/ffmpeg.cpp.orig	Sun Apr  8 16:21:30 2007
++++ player/plugin/audio/ffmpeg/ffmpeg.cpp	Sun Apr  8 16:22:05 2007
+@@ -166,7 +166,7 @@
+     break;
+   }
+   if (userdata) {
+-    ffmpeg->m_c->extradata = (void *)userdata;
++    ffmpeg->m_c->extradata = (uint8_t *)userdata;
+     ffmpeg->m_c->extradata_size = ud_size;
+   }
+   if (avcodec_open(ffmpeg->m_c, ffmpeg->m_codec) < 0) {
+--- player/plugin/video/ffmpeg/ffmpeg.cpp.orig	Sun Apr  8 16:22:49 2007
++++ player/plugin/video/ffmpeg/ffmpeg.cpp	Sun Apr  8 16:23:20 2007
+@@ -255,7 +255,7 @@
+   }
+     break;
+   case CODEC_ID_SVQ3:
+-    ffmpeg->m_c->extradata = (void *)userdata;
++    ffmpeg->m_c->extradata = (uint8_t *)userdata;
+     ffmpeg->m_c->extradata_size = ud_size;
+     if (vinfo != NULL) {
+       ffmpeg->m_c->width = vinfo->width;

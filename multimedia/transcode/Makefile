@@ -35,7 +35,8 @@ CPPFLAGS=	-I${X11BASE}/include -I${LOCALBASE}/include
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		SDL_CONFIG="${SDL_CONFIG}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--with-ffmpeg_libs-prefix=${LOCALBASE} \
+CONFIGURE_ARGS+=	--with-libavcodec-includes=${LOCALBASE}/include/ffmpeg \
+			--with-libavcodec-libs=${LOCALBASE}/lib \
 			--with-libdvdread-prefix=${LOCALBASE} \
 			--with-libiconv-prefix=${LOCALBASE} \
 			--enable-oss
@@ -396,8 +397,9 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's|(seek)64|\1|' ${WRKSRC}/avilib/avidump.c
 	@${REINPLACE_CMD} -E -e 's|<SDL/|<|' ${WRKSRC}/filter/preview/display.h
 
-	@${REINPLACE_CMD} -E -e 's|(-la52)|\1 ${LIBA52_DEP_LIBS}|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -E -e 's|(-la52)|\1 ${LIBA52_DEP_LIBS}|g ; \
+		s|FFMPEG_VERSION|LIBAVCODEC_IDENT|g' \
+			${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 pre-configure:
 	@${REINPLACE_CMD} -E -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
