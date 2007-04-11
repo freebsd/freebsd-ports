@@ -2935,3 +2935,4 @@ www/mod_zap||2007-04-10|Has expired: Incomplete pkg-plist
 www/sahana2||2007-04-10|Has expired: Conflicting dependencies: php4 vs php5
 www/urchin5||2007-04-10|Has expired: Does not install
 databases/cyrus-smlacapd||2007-04-10|Has expired: this software is obsolete
+databases/mysql-administrator||2007-04-11|Removed
