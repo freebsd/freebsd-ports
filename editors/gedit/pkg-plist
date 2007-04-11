@@ -186,10 +186,10 @@ share/gnome/gedit-2/plugins/filebrowser/gedit-file-browser-widget-ui.xml
 %%PYTHON%%share/gnome/gedit-2/plugins/tools/open-terminal-here
 %%PYTHON%%share/gnome/gedit-2/plugins/tools/remove-trailing-spaces
 %%PYTHON%%share/gnome/gedit-2/plugins/tools/run-command
-share/gnome/gedit-2/taglist/HTML.tags
-share/gnome/gedit-2/taglist/Latex.tags
-share/gnome/gedit-2/taglist/XSLT.tags
-share/gnome/gedit-2/taglist/XUL.tags
+share/gnome/gedit-2/taglist/HTML.tags.gz
+share/gnome/gedit-2/taglist/Latex.tags.gz
+share/gnome/gedit-2/taglist/XSLT.tags.gz
+share/gnome/gedit-2/taglist/XUL.tags.gz
 share/gnome/gedit-2/ui/gedit-ui.xml
 share/gnome/help/gedit/C/figures/gedit_format_bold.png
 share/gnome/help/gedit/C/figures/gedit_format_italic.png
@@ -274,6 +274,14 @@ share/gnome/help/gedit/sv/figures/gedit_recent_files_menu_icon.png
 share/gnome/help/gedit/sv/figures/gedit_window.png
 share/gnome/help/gedit/sv/gedit.xml
 share/gnome/help/gedit/sv/legal.xml
+share/gnome/help/gedit/uk/figures/gedit_format_bold.png
+share/gnome/help/gedit/uk/figures/gedit_format_italic.png
+share/gnome/help/gedit/uk/figures/gedit_format_strikethrough.png
+share/gnome/help/gedit/uk/figures/gedit_format_underline.png
+share/gnome/help/gedit/uk/figures/gedit_recent_files_menu_icon.png
+share/gnome/help/gedit/uk/figures/gedit_window.png
+share/gnome/help/gedit/uk/gedit.xml
+share/gnome/help/gedit/uk/legal.xml
 share/gnome/help/gedit/zh_CN/figures/gedit_format_bold.png
 share/gnome/help/gedit/zh_CN/figures/gedit_format_italic.png
 share/gnome/help/gedit/zh_CN/figures/gedit_format_strikethrough.png
@@ -310,6 +318,7 @@ share/gnome/omf/gedit/gedit-ko.omf
 share/gnome/omf/gedit/gedit-ro.omf
 share/gnome/omf/gedit/gedit-ru.omf
 share/gnome/omf/gedit/gedit-sv.omf
+share/gnome/omf/gedit/gedit-uk.omf
 share/gnome/omf/gedit/gedit-zh_CN.omf
 share/gnome/omf/gedit/gedit-zh_HK.omf
 share/gnome/omf/gedit/gedit-zh_TW.omf
@@ -400,6 +409,8 @@ share/locale/zh_TW/LC_MESSAGES/gedit.mo
 @dirrm share/gnome/help/gedit/zh_HK
 @dirrm share/gnome/help/gedit/zh_CN/figures
 @dirrm share/gnome/help/gedit/zh_CN
+@dirrm share/gnome/help/gedit/uk/figures
+@dirrm share/gnome/help/gedit/uk
 @dirrm share/gnome/help/gedit/sv/figures
 @dirrm share/gnome/help/gedit/sv
 @dirrm share/gnome/help/gedit/ru/figures
