@@ -1,5 +1,5 @@
 bin/wget
-etc/wgetrc
+etc/wgetrc.sample
 %%NLS%%share/locale/bg/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/wget.mo
