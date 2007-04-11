@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	digitizer
-PORTVERSION=	4.0
+PORTVERSION=	4.1
 CATEGORIES=	math graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ COMMENT=	Engauge Digitizer - Digitizing software to convert graphs into numbers
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	fftw3.4:${PORTSDIR}/math/fftw3
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/engauge
 
 USE_QT_VER=	3
 QTDIR?=		${QT_PREFIX}
