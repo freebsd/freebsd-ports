@@ -7,9 +7,9 @@ include/nautilus/libnautilus-extension/nautilus-extension-types.h
 include/nautilus/libnautilus-extension/nautilus-file-info.h
 include/nautilus/libnautilus-extension/nautilus-info-provider.h
 include/nautilus/libnautilus-extension/nautilus-location-widget-provider.h
-include/nautilus/libnautilus-extension/nautilus-menu.h
 include/nautilus/libnautilus-extension/nautilus-menu-item.h
 include/nautilus/libnautilus-extension/nautilus-menu-provider.h
+include/nautilus/libnautilus-extension/nautilus-menu.h
 include/nautilus/libnautilus-extension/nautilus-property-page-provider.h
 include/nautilus/libnautilus-extension/nautilus-property-page.h
 lib/libnautilus-extension.a
@@ -90,8 +90,8 @@ share/locale/be/LC_MESSAGES/nautilus.mo
 share/locale/bg/LC_MESSAGES/nautilus.mo
 share/locale/bn/LC_MESSAGES/nautilus.mo
 share/locale/bn_IN/LC_MESSAGES/nautilus.mo
-share/locale/bs/LC_MESSAGES/nautilus.mo
 share/locale/br/LC_MESSAGES/nautilus.mo
+share/locale/bs/LC_MESSAGES/nautilus.mo
 share/locale/ca/LC_MESSAGES/nautilus.mo
 share/locale/cs/LC_MESSAGES/nautilus.mo
 share/locale/cy/LC_MESSAGES/nautilus.mo
