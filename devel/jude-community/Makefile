@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jude-community
-PORTVERSION=	3.1.1
+PORTVERSION=	3.2.1
 CATEGORIES=	devel java
 MASTER_SITES=	# you have to register yourself as a member to download
 DISTNAME=	${PORTNAME}-${PORTVERSION:S!.!_!g}
@@ -19,6 +19,7 @@ USE_ZIP=	yes
 USE_JAVA=	yes
 # HTML export doesn't work with JDK 5.0.
 # Expect that, Jude Community 3.1 works fine with JDK 5.0
+# work around to use JDK 5.0: symlink or copy tools.jar from JDK 1.4.
 JAVA_VERSION=	1.4
 # It doesn't work well with linux-sun-jdk14
 # I haven't tested with the jdks of blackdown or ibm
