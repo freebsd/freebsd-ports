@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	funionfs
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://funionfs.apiou.org/file/
 PKGNAMEPREFIX=	fusefs-
