@@ -30,7 +30,8 @@ CONFIGURE_ARGS=	--bindir=/sbin/ \
 		--mandir=/man/ \
 		--logdir=/var/log/ \
 		--cgidir=/www/cgi-bin/ \
-		--piddir=/var/run/
+		--piddir=/var/run/ \
+		--gccver=3
 
 MAN8=		dansguardian.8
 NOMANCOMPRESSED=	yes
@@ -44,13 +45,6 @@ CONFDIR=	${PREFIX}/etc/dansguardian
 RESTRICTED=	Redistribution and commercial download is restricted.  Check ${DG_URL} for more info
 
 .include <bsd.port.pre.mk>
-
-# Set which version of GCC to compile the port with
-.if ${OSVERSION} > 500000
-CONFIGURE_ARGS+=	--gccver=3
-.else
-CONFIGURE_ARGS+=	--gccver=2
-.endif
 
 .if !defined(WITHOUT_DG_APACHE)
 USE_APACHE=	1.3+
@@ -77,10 +71,6 @@ post-install:
 .else
 	@${ECHO_MSG} "===>   Skipping installation of phraselists."
 .endif
-
-# Install startup script
-#	@${ECHO_MSG} "===>   Installing startup script into ${PREFIX}/etc/rc.d"
-#	@${INSTALL_SCRIPT} ${WRKSRC}/dansguardian.sh ${PREFIX}/etc/rc.d/start-dg.sh
 
 # Display post-install message
 	@${CAT} pkg-message
