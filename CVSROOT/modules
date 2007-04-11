@@ -7715,7 +7715,6 @@ myphpmoney	ports/finance/myphpmoney
 mysar		ports/www/mysar
 mysql++		ports/databases/mysql++
 mysql++1	ports/databases/mysql++1
-mysql-administrator	ports/databases/mysql-administrator
 mysql-connector-java	ports/databases/mysql-connector-java
 mysql-connector-odbc	ports/databases/mysql-connector-odbc
 mysql-editor	ports/databases/mysql-editor
