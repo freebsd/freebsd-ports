@@ -85,6 +85,7 @@
     SUBDIR += cvsupchk
     SUBDIR += cvsync
     SUBDIR += cyphesis
+    SUBDIR += daemonlogger
     SUBDIR += danamics
     SUBDIR += dante
     SUBDIR += datapipe
