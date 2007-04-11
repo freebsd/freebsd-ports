@@ -14723,6 +14723,7 @@ synergy		ports/sysutils/synergy
 synonym		ports/mail/synonym
 sysbench	ports/benchmarks/sysbench
 sysconftool	ports/devel/sysconftool
+syscp		ports/sysutils/syscp
 sysgather	ports/sysutils/sysgather
 syslog-ng	ports/sysutils/syslog-ng
 syslog-ng2	ports/sysutils/syslog-ng2
