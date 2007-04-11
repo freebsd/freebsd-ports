@@ -101,16 +101,13 @@
 # If you want to enable the reverse_reply option define:
 #  WITH_MUTT_REVERSE_REPLY_PATCH
 #
-# If you want to enable the assumed_charset option define:
-#  WITH_MUTT_ASSUMED_CHARSET_PATCH
-#
 # If you want to enable the `greeting' option define:
 #  WITH_MUTT_GREETING_PATCH
 #
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.5.14
-PORTREVISION?=	1
+PORTVERSION=	1.5.15
+PORTREVISION?=	0
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -199,11 +196,6 @@ WITH_MUTT_IMAP_HEADER_CACHE=	yes
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
 .if defined(WITH_MUTT_NNTP)
 IGNORE=	cannot install: the WITH_MUTT_SIDEBAR_PATCH and WITH_MUTT_NNTP are not compatible
-.endif
-.endif
-.if defined(WITH_MUTT_ASSUMED_CHARSET_PATCH)
-.if defined(WITH_MUTT_NNTP)
-IGNORE=	cannot install: the WITH_MUTT_ASSUMED_CHARSET_PATCH and WITH_MUTT_NNTP are not compatible
 .endif
 .endif
 
@@ -319,6 +311,7 @@ post-patch::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-smime-outlook
 .endif
 .if defined(WITH_MUTT_SIGNATURE_MENU)
+IGNORE=	The WITH_MUTT_SIGNATURE_MENU does not work at the moment.
 XML_NEEDED=	yes
 post-patch::
 	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-signature-menu
@@ -431,7 +424,7 @@ pre-patch::
 PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
-SIDEBAR_PATCH=	patch-1.5.14.sidebar.20070223.txt
+SIDEBAR_PATCH=	patch-1.5.15.sidebar.20070408.txt
 DISTFILES+=	${SIDEBAR_PATCH}:tchan
 XML_NEEDED=	yes
 pre-patch::
@@ -439,9 +432,6 @@ pre-patch::
 	@${REINPLACE_CMD} -E '/^diff.*\/Makefile.in$$/,/^diff/d' \
 		 ${WRKDIR}/patch-sidebar
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-sidebar
-.endif
-.if defined(WITH_MUTT_ASSUMED_CHARSET_PATCH)
-PATCHFILES+=	patch-${AC_PATCH_VERSION}.tt.assumed_charset.2.gz:jp
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
