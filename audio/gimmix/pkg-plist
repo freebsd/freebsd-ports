@@ -1,0 +1,12 @@
+bin/gimmix
+share/applications/gimmix.desktop
+%%DATADIR%%/gimmix.glade
+%%DATADIR%%/gimmix_firstrun.png
+share/pixmaps/gimmix.png
+share/pixmaps/gimmix_logo_small.png
+share/pixmaps/gimmix_playlist.png
+@dirrmtry share/pixmaps
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
