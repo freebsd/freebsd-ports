@@ -1,0 +1,9 @@
+bin/convertxdccfile
+bin/iroffer
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/WHATSNEW
+%%PORTDOCS%%%%EXAMPLESDIR%%/dynip.sh
+%%PORTDOCS%%%%EXAMPLESDIR%%/iroffer.cron
+%%PORTDOCS%%%%EXAMPLESDIR%%/sample.config
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
