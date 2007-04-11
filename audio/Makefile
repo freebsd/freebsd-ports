@@ -180,6 +180,7 @@
     SUBDIR += gdam
     SUBDIR += gdrdao
     SUBDIR += ghostess
+    SUBDIR += gimmix
     SUBDIR += gkrellmms
     SUBDIR += gkrellmms2
     SUBDIR += gkrellmss
