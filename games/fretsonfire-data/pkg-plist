@@ -16,8 +16,6 @@
 %%DATADIR%%/fiba4.ogg
 %%DATADIR%%/fiba5.ogg
 %%DATADIR%%/fiba6.ogg
-%%DATADIR%%/flame1.svg
-%%DATADIR%%/flame2.svg
 %%DATADIR%%/ghmidimap.txt
 %%DATADIR%%/glow.svg
 %%DATADIR%%/icon.png
@@ -32,6 +30,9 @@
 %%DATADIR%%/keyboard.svg
 %%DATADIR%%/label.dae
 %%DATADIR%%/left.svg
+%%DATADIR%%/library.dae
+%%DATADIR%%/library_label.dae
+%%DATADIR%%/loading.svg
 %%DATADIR%%/logo.svg
 %%DATADIR%%/menu.ogg
 %%DATADIR%%/mods/Chilly/flame1.svg
@@ -39,6 +40,49 @@
 %%DATADIR%%/mods/Chilly/logo.svg
 %%DATADIR%%/mods/Chilly/neck.svg
 %%DATADIR%%/mods/Chilly/theme.ini
+%%DATADIR%%/mods/LightGraphics/2x.png
+%%DATADIR%%/mods/LightGraphics/2x.svg
+%%DATADIR%%/mods/LightGraphics/3x.png
+%%DATADIR%%/mods/LightGraphics/3x.svg
+%%DATADIR%%/mods/LightGraphics/4x.png
+%%DATADIR%%/mods/LightGraphics/4x.svg
+%%DATADIR%%/mods/LightGraphics/ball1.png
+%%DATADIR%%/mods/LightGraphics/ball1.svg
+%%DATADIR%%/mods/LightGraphics/ball2.png
+%%DATADIR%%/mods/LightGraphics/ball2.svg
+%%DATADIR%%/mods/LightGraphics/cassette.png
+%%DATADIR%%/mods/LightGraphics/cassette.svg
+%%DATADIR%%/mods/LightGraphics/editor.png
+%%DATADIR%%/mods/LightGraphics/editor.svg
+%%DATADIR%%/mods/LightGraphics/flame1.png
+%%DATADIR%%/mods/LightGraphics/flame1.svg
+%%DATADIR%%/mods/LightGraphics/flame2.png
+%%DATADIR%%/mods/LightGraphics/flame2.svg
+%%DATADIR%%/mods/LightGraphics/glow.png
+%%DATADIR%%/mods/LightGraphics/glow.svg
+%%DATADIR%%/mods/LightGraphics/keyboard.png
+%%DATADIR%%/mods/LightGraphics/keyboard.svg
+%%DATADIR%%/mods/LightGraphics/left.png
+%%DATADIR%%/mods/LightGraphics/left.svg
+%%DATADIR%%/mods/LightGraphics/light.png
+%%DATADIR%%/mods/LightGraphics/light.svg
+%%DATADIR%%/mods/LightGraphics/loading.png
+%%DATADIR%%/mods/LightGraphics/loading.svg
+%%DATADIR%%/mods/LightGraphics/logo.png
+%%DATADIR%%/mods/LightGraphics/logo.svg
+%%DATADIR%%/mods/LightGraphics/neck.png
+%%DATADIR%%/mods/LightGraphics/neck.svg
+%%DATADIR%%/mods/LightGraphics/pose.png
+%%DATADIR%%/mods/LightGraphics/pose.svg
+%%DATADIR%%/mods/LightGraphics/right.png
+%%DATADIR%%/mods/LightGraphics/right.svg
+%%DATADIR%%/mods/LightGraphics/stage.ini
+%%DATADIR%%/mods/LightGraphics/star.png
+%%DATADIR%%/mods/LightGraphics/star.svg
+%%DATADIR%%/mods/LightGraphics/star1.png
+%%DATADIR%%/mods/LightGraphics/star1.svg
+%%DATADIR%%/mods/LightGraphics/star2.png
+%%DATADIR%%/mods/LightGraphics/star2.svg
 %%DATADIR%%/myhero.ogg
 %%DATADIR%%/neck.svg
 %%DATADIR%%/note.dae
@@ -71,6 +115,18 @@
 %%DATADIR%%/songs/twibmpg/notes.mid
 %%DATADIR%%/songs/twibmpg/song.ini
 %%DATADIR%%/songs/twibmpg/song.ogg
+%%DATADIR%%/stage.ini
+%%DATADIR%%/stage_audience1.svg
+%%DATADIR%%/stage_audience2.svg
+%%DATADIR%%/stage_background.svg
+%%DATADIR%%/stage_bassdrum.svg
+%%DATADIR%%/stage_drums.svg
+%%DATADIR%%/stage_light.svg
+%%DATADIR%%/stage_lights1.svg
+%%DATADIR%%/stage_lights2.svg
+%%DATADIR%%/stage_logo.svg
+%%DATADIR%%/stage_speaker_cones.svg
+%%DATADIR%%/stage_speakers.svg
 %%DATADIR%%/star1.svg
 %%DATADIR%%/star2.svg
 %%DATADIR%%/start.ogg
@@ -85,11 +141,12 @@
 %%DATADIR%%/translations/spanish.mo
 %%DATADIR%%/translations/swedish.mo
 @dirrm %%DATADIR%%/mods/Chilly
+@dirrm %%DATADIR%%/mods/LightGraphics
 @dirrm %%DATADIR%%/mods
-@dirrm %%DATADIR%%/songs/defy
-@dirrm %%DATADIR%%/songs/bangbang
 @dirrm %%DATADIR%%/songs/twibmpg
 @dirrm %%DATADIR%%/songs/tutorial
+@dirrm %%DATADIR%%/songs/defy
+@dirrm %%DATADIR%%/songs/bangbang
 @dirrm %%DATADIR%%/songs
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%
