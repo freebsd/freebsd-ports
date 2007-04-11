@@ -1,5 +1,5 @@
---- configure.orig	Tue Apr 10 14:17:30 2007
-+++ configure	Tue Apr 10 14:18:20 2007
+--- configure.orig	Tue Apr 10 23:42:25 2007
++++ configure	Wed Apr 11 00:04:30 2007
 @@ -24550,6 +24550,14 @@ case "$host" in
      # AC_CACHE_VAL(have_addrinfo, [have_addrinfo=yes])
      # AC_DEFINE(_WIN32_WINNT, 0x501, [To get getaddrinfo etc declarations])
@@ -15,7 +15,33 @@
  *)  os_win32=no
      NO_UNDEFINED=''
      SOCKET_LIBS=''
-@@ -28749,7 +28757,7 @@ cat >>conftest.$ac_ext <<_ACEOF
+@@ -25232,7 +25240,7 @@ fi
+ 
+ if test "x${dynamic_libdb}" = "xyes"; then
+         DB_CFLAGS="-I$withval/include"
+-        DB_LIBS="-L$withval/lib -ldb"
++        DB_LIBS="-L$withval/lib -ldb41"
+ 
+         { echo "$as_me:$LINENO: checking Berkeley DB" >&5
+ echo $ECHO_N "checking Berkeley DB... $ECHO_C" >&6; }
+@@ -25364,6 +25372,7 @@ int main (int argc, char **argv)
+ {
+ 	iconv_t cd;
+ 	cd = iconv_open ("UTF-8", "ISO-8859-1");
++	return (0);
+ }
+ 
+ _ACEOF
+@@ -26601,7 +26610,7 @@ Please specify the path to libnss3.a
+ Example: --with-nspr-libs=/usr/lib/mozilla" >&2;}
+    { (exit 1); exit 1; }; }
+ 				else
+-					nsslibs="-ldb1 $with_nss_libs/libnssckfw.a $with_nss_libs/libasn1.a $with_nss_libs/libcrmf.a $with_nss_libs/libswfci.a $with_nss_libs/libjar.a $with_nss_libs/libpkcs12.a $with_nss_libs/libpkcs7.a $with_nss_libs/libpki1.a $with_nss_libs/libsmime.a $with_nss_libs/libssl.a $with_nss_libs/libnss.a $with_nss_libs/libpk11wrap.a $with_nss_libs/libsoftokn.a $with_nss_libs/libfreebl.a $with_nss_libs/libnsspki.a $with_nss_libs/libnssdev.a $with_nss_libs/libcryptohi.a $with_nss_libs/libcerthi.a $with_nss_libs/libcertdb.a $with_nss_libs/libsecutil.a $with_nss_libs/libnssb.a"
++					nsslibs="-ldb411 $with_nss_libs/libnssckfw.a $with_nss_libs/libasn1.a $with_nss_libs/libcrmf.a $with_nss_libs/libswfci.a $with_nss_libs/libjar.a $with_nss_libs/libpkcs12.a $with_nss_libs/libpkcs7.a $with_nss_libs/libpki1.a $with_nss_libs/libsmime.a $with_nss_libs/libssl.a $with_nss_libs/libnss.a $with_nss_libs/libpk11wrap.a $with_nss_libs/libsoftokn.a $with_nss_libs/libfreebl.a $with_nss_libs/libnsspki.a $with_nss_libs/libnssdev.a $with_nss_libs/libcryptohi.a $with_nss_libs/libcerthi.a $with_nss_libs/libcertdb.a $with_nss_libs/libsecutil.a $with_nss_libs/libnssb.a"
+ 					case "$host" in
+ 						*solaris*)
+ 						nsslibs="$nsslibs $with_nss_libs/libfreebl.a"
+@@ -28749,7 +28758,7 @@ cat >>conftest.$ac_ext <<_ACEOF
  		#include <sys/socket.h>
  		#include <netinet/in.h>
  		#include <netdb.h>
@@ -24,7 +50,7 @@
  
  int
  main ()
-@@ -29039,7 +29047,7 @@ if test "x${with_krb5}" != "xno"; then
+@@ -29039,7 +29048,7 @@ if test "x${with_krb5}" != "xno"; then
  	LDFLAGS_save="$LDFLAGS"
  
  	mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
@@ -33,7 +59,7 @@
  	{ echo "$as_me:$LINENO: checking for Kerberos 5" >&5
  echo $ECHO_N "checking for Kerberos 5... $ECHO_C" >&6; }
  if test "${ac_cv_lib_kerberos5+set}" = set; then
-@@ -33857,7 +33865,7 @@ idldir='${datadir}'/idl/evolution-data-s
+@@ -33857,7 +33866,7 @@ idldir='${datadir}'/idl/evolution-data-s
  imagesdir='${datadir}'/pixmaps/evolution-data-server
  
  
