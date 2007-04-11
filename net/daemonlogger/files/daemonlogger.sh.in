@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# PROVIDE: daemonlogger
+# REQUIRE: NETWORKING
+
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf to enable daemonlogger:
+# daemonlogger_enable (bool):            Set to "NO" by default.
+#                                Set it to "YES" to enable daemonlogger 
+# daemonlogger_flags (string):           Set to "-d -l" by default.
+
+. %%RC_SUBR%%
+
+name="daemonlogger"
+rcvar=`set_rcvar`
+
+command_args=" > /dev/null 2>&1"
+
+load_rc_config $name
+
+: ${daemonlogger_enable:="NO"}
+: ${daemonlogger_flags:="-d -l /var/log"}
+
+command=%%PREFIX%%/bin/daemonlogger
+
+run_rc_command "$1"

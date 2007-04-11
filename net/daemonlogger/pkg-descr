@@ -1,0 +1,9 @@
+A packet sniffer designed to run as a daemon with automatic log rotation.
+It will also act as a software tap injecting packets onto a second
+interface if configured as such.
+
+WWW: http://www.snort.org/dl/daemonlogger/
+
+-- WXS
+Wesley Shields
+wxs@csh.rit.edu
