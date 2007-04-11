@@ -24,9 +24,6 @@ COMMENT?=	GNU Compiler Collection 4.3
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
 		mpfr.1:${PORTSDIR}/math/mpfr
-.if defined(WITH_JAVA_AWT)
-LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
-.endif
 
 SUFFIX=		43
 LATEST_LINK?=	gcc${SUFFIX}${PKGNAMESUFFIX}
@@ -36,19 +33,12 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
-.if defined(WITH_JAVA_AWT)
-USE_GNOME=	gtk20 libartlgpl2
-.endif
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 502102
-CONFIGURE_ARGS+=	--disable-libgomp
-.endif
 
 .if ${ARCH} != i386
 WITHOUT_JAVA=	yes
@@ -58,6 +48,10 @@ WITHOUT_JAVA=	yes
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .else
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
+.endif
+
+.if ${OSVERSION} < 502102
+CONFIGURE_ARGS+=	--disable-libgomp
 .endif
 
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
@@ -72,10 +66,6 @@ CONFIGURE_ARGS+=	--disable-nls \
 		--libdir=${TARGLIB} \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/ \
 		--infodir=${PREFIX}/${INFO_PATH}/gcc${SUFFIX}
-.if defined(WITH_JAVA_AWT)
-CONFIGURE_ARGS+=	--enable-java-awt=gtk,xlib \
-			--enable-gtk-cairo
-.endif
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 ALL_TARGET=	bootstrap-lean
 USE_LDCONFIG=	${TARGLIB}
@@ -131,6 +121,14 @@ PLIST_SUB+=	JAVA=""
 .else
 CONFIGURE_ARGS+=--disable-libgcj
 PLIST_SUB+=	JAVA="@comment "
+
+.if defined(WITH_JAVA_AWT)
+LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
+USE_GNOME=	gtk20 libartlgpl2
+CONFIGURE_ARGS+=	--enable-java-awt=gtk,xlib \
+			--enable-gtk-cairo
+.endif
+
 .endif
 
 pre-everything::
