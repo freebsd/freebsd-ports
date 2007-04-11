@@ -8,7 +8,7 @@
 
 PORTNAME=	centericq
 PORTVERSION=	4.21.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-im
 MASTER_SITES=	http://centericq.de/archive/source/releases/ \
 		http://thekonst.net/download/
@@ -44,6 +44,11 @@ MAN1=	cicqconv.1 cicqsync.1
 PORTDOCS=	FAQ README
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+# Don't use optimization since it sefgaults in some cases otherwise.
+CFLAGS:=	${CFLAGS:C/-O[0123456789]*/-O0/}
+.endif
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
