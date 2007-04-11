@@ -587,6 +587,7 @@
     SUBDIR += symlinks
     SUBDIR += symon
     SUBDIR += synergy
+    SUBDIR += syscp
     SUBDIR += sysgather
     SUBDIR += syslog-ng
     SUBDIR += syslog-ng2

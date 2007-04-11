@@ -1,0 +1,243 @@
+www/syscp/COPYING
+www/syscp/admin_admins.php
+www/syscp/admin_configfiles.php
+www/syscp/admin_customers.php
+www/syscp/admin_domains.php
+www/syscp/admin_index.php
+www/syscp/admin_ipsandports.php
+www/syscp/admin_settings.php
+www/syscp/admin_templates.php
+www/syscp/customer_domains.php
+www/syscp/customer_email.php
+www/syscp/customer_extras.php
+www/syscp/customer_ftp.php
+www/syscp/customer_index.php
+www/syscp/customer_mysql.php
+www/syscp/images/ball.gif
+www/syscp/images/changelanguage.gif
+www/syscp/images/endsection.gif
+www/syscp/images/error.gif
+www/syscp/images/footer.gif
+www/syscp/images/header.gif
+www/syscp/images/header_r.gif
+www/syscp/images/login.gif
+www/syscp/images/logininternal.gif
+www/syscp/images/order_asc.gif
+www/syscp/images/order_desc.gif
+www/syscp/images/section.gif
+www/syscp/images/shadow.gif
+www/syscp/images/subsection.gif
+www/syscp/images/title.gif
+www/syscp/images/valid-css.gif
+www/syscp/images/valid-xhtml10.gif
+www/syscp/index.php
+www/syscp/install/install.php
+www/syscp/install/lng/english.lng.php
+www/syscp/install/lng/french.lng.php
+www/syscp/install/lng/german.lng.php
+www/syscp/install/scripts/htpasswd-htaccess-remover.php
+www/syscp/install/scripts/language-check.php
+www/syscp/install/syscp.sql
+www/syscp/install/updatesql.php
+www/syscp/install/updatesql_1.0-1.2.inc.php
+www/syscp/install/updatesql_1.0.inc.php
+www/syscp/install/updatesql_1.2.inc.php
+www/syscp/lib/class_idna_convert_wrapper.php
+www/syscp/lib/class_mysqldb.php
+www/syscp/lib/class_paging.php
+www/syscp/lib/functions.php
+www/syscp/lib/idna_convert.class.php
+www/syscp/lib/init.php
+www/syscp/lib/tables.inc.php
+www/syscp/lng/bulgarian.lng.php
+www/syscp/lng/catalan.lng.php
+www/syscp/lng/danish.lng.php
+www/syscp/lng/dutch.lng.php
+www/syscp/lng/english.lng.php
+www/syscp/lng/french.lng.php
+www/syscp/lng/german.lng.php
+www/syscp/lng/hungarian.lng.php
+www/syscp/lng/italian.lng.php
+www/syscp/lng/portugues.lng.php
+www/syscp/lng/russian.lng.php
+www/syscp/lng/slovak.lng.php
+www/syscp/lng/spanish.lng.php
+www/syscp/lng/zh-cn.lng.php
+www/syscp/scripts/cron_tasks.php
+www/syscp/scripts/cron_traffic.php
+www/syscp/scripts/cronscript.php
+www/syscp/templates/admin/admins/admins.tpl
+www/syscp/templates/admin/admins/admins_add.tpl
+www/syscp/templates/admin/admins/admins_admin.tpl
+www/syscp/templates/admin/admins/admins_edit.tpl
+www/syscp/templates/admin/configfiles/choose.tpl
+www/syscp/templates/admin/configfiles/choose_daemon.tpl
+www/syscp/templates/admin/configfiles/choose_distribution.tpl
+www/syscp/templates/admin/configfiles/configfiles.tpl
+www/syscp/templates/admin/configfiles/configfiles_file.tpl
+www/syscp/templates/admin/customers/customers.tpl
+www/syscp/templates/admin/customers/customers_add.tpl
+www/syscp/templates/admin/customers/customers_customer.tpl
+www/syscp/templates/admin/customers/customers_edit.tpl
+www/syscp/templates/admin/domains/domains.tpl
+www/syscp/templates/admin/domains/domains_add.tpl
+www/syscp/templates/admin/domains/domains_domain.tpl
+www/syscp/templates/admin/domains/domains_edit.tpl
+www/syscp/templates/admin/index/change_language.tpl
+www/syscp/templates/admin/index/change_password.tpl
+www/syscp/templates/admin/index/index.tpl
+www/syscp/templates/admin/ipsandports/ipsandports.tpl
+www/syscp/templates/admin/ipsandports/ipsandports_add.tpl
+www/syscp/templates/admin/ipsandports/ipsandports_edit.tpl
+www/syscp/templates/admin/ipsandports/ipsandports_ipandport.tpl
+www/syscp/templates/admin/settings/settings.tpl
+www/syscp/templates/admin/templates/templates.tpl
+www/syscp/templates/admin/templates/templates_add_1.tpl
+www/syscp/templates/admin/templates/templates_add_2.tpl
+www/syscp/templates/admin/templates/templates_edit.tpl
+www/syscp/templates/admin/templates/templates_template.tpl
+www/syscp/templates/customer/domains/domainlist.tpl
+www/syscp/templates/customer/domains/domains.tpl
+www/syscp/templates/customer/domains/domains_add.tpl
+www/syscp/templates/customer/domains/domains_delimiter.tpl
+www/syscp/templates/customer/domains/domains_domain.tpl
+www/syscp/templates/customer/domains/domains_edit.tpl
+www/syscp/templates/customer/email/account_add.tpl
+www/syscp/templates/customer/email/account_changepw.tpl
+www/syscp/templates/customer/email/email.tpl
+www/syscp/templates/customer/email/emails.tpl
+www/syscp/templates/customer/email/emails_add.tpl
+www/syscp/templates/customer/email/emails_domain.tpl
+www/syscp/templates/customer/email/emails_edit.tpl
+www/syscp/templates/customer/email/emails_edit_forwarder.tpl
+www/syscp/templates/customer/email/emails_email.tpl
+www/syscp/templates/customer/email/forwarder_add.tpl
+www/syscp/templates/customer/extras/extras.tpl
+www/syscp/templates/customer/extras/htaccess.tpl
+www/syscp/templates/customer/extras/htaccess_add.tpl
+www/syscp/templates/customer/extras/htaccess_edit.tpl
+www/syscp/templates/customer/extras/htaccess_htaccess.tpl
+www/syscp/templates/customer/extras/htpasswds.tpl
+www/syscp/templates/customer/extras/htpasswds_add.tpl
+www/syscp/templates/customer/extras/htpasswds_edit.tpl
+www/syscp/templates/customer/extras/htpasswds_htpasswd.tpl
+www/syscp/templates/customer/ftp/accounts.tpl
+www/syscp/templates/customer/ftp/accounts_account.tpl
+www/syscp/templates/customer/ftp/accounts_add.tpl
+www/syscp/templates/customer/ftp/accounts_edit.tpl
+www/syscp/templates/customer/ftp/ftp.tpl
+www/syscp/templates/customer/index/change_language.tpl
+www/syscp/templates/customer/index/change_password.tpl
+www/syscp/templates/customer/index/index.tpl
+www/syscp/templates/customer/mysql/mysql.tpl
+www/syscp/templates/customer/mysql/mysqls.tpl
+www/syscp/templates/customer/mysql/mysqls_add.tpl
+www/syscp/templates/customer/mysql/mysqls_database.tpl
+www/syscp/templates/customer/mysql/mysqls_edit.tpl
+www/syscp/templates/footer.tpl
+www/syscp/templates/header.tpl
+www/syscp/templates/login/login.tpl
+www/syscp/templates/main.css
+www/syscp/templates/misc/configfiles/debian_etch/bind/etc_bind_default.zone
+www/syscp/templates/misc/configfiles/debian_etch/courier/etc_courier_authdaemonrc
+www/syscp/templates/misc/configfiles/debian_etch/courier/etc_courier_authmysqlrc
+www/syscp/templates/misc/configfiles/debian_etch/cron/etc_cron.d_syscp
+www/syscp/templates/misc/configfiles/debian_etch/cron/etc_php4_syscpcron_php.ini
+www/syscp/templates/misc/configfiles/debian_etch/postfix/etc_postfix_main.cf
+www/syscp/templates/misc/configfiles/debian_etch/postfix/etc_postfix_mysql-virtual_alias_maps.cf
+www/syscp/templates/misc/configfiles/debian_etch/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf
+www/syscp/templates/misc/configfiles/debian_etch/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf
+www/syscp/templates/misc/configfiles/debian_etch/postfix/etc_postfix_sasl_smtpd.conf
+www/syscp/templates/misc/configfiles/debian_etch/proftpd/etc_proftpd_modules.conf
+www/syscp/templates/misc/configfiles/debian_etch/proftpd/etc_proftpd_proftpd.conf
+www/syscp/templates/misc/configfiles/debian_sarge/bind/etc_bind_default.zone
+www/syscp/templates/misc/configfiles/debian_sarge/courier/etc_courier_authdaemonrc
+www/syscp/templates/misc/configfiles/debian_sarge/courier/etc_courier_authmysqlrc
+www/syscp/templates/misc/configfiles/debian_sarge/cron/etc_cron.d_syscp
+www/syscp/templates/misc/configfiles/debian_sarge/cron/etc_php4_syscpcron_php.ini
+www/syscp/templates/misc/configfiles/debian_sarge/postfix/etc_postfix_main.cf
+www/syscp/templates/misc/configfiles/debian_sarge/postfix/etc_postfix_mysql-virtual_alias_maps.cf
+www/syscp/templates/misc/configfiles/debian_sarge/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf
+www/syscp/templates/misc/configfiles/debian_sarge/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf
+www/syscp/templates/misc/configfiles/debian_sarge/postfix/etc_postfix_sasl_smtpd.conf
+www/syscp/templates/misc/configfiles/debian_sarge/proftpd/etc_proftpd.conf
+www/syscp/templates/misc/configfiles/freebsd_release/bind/etc_bind_default.zone
+www/syscp/templates/misc/configfiles/freebsd_release/cron/etc_cron.d_syscp
+www/syscp/templates/misc/configfiles/freebsd_release/cron/etc_php4_syscpcron_php.ini
+www/syscp/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot_conf
+www/syscp/templates/misc/configfiles/freebsd_release/dovecot/etc_dovecot_sql
+www/syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_main.cf
+www/syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_alias_maps.cf
+www/syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf
+www/syscp/templates/misc/configfiles/freebsd_release/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf
+www/syscp/templates/misc/configfiles/freebsd_release/proftpd/etc_proftpd.conf
+www/syscp/templates/misc/configfiles/suse_linux_10_0/bind/etc_bind_default.zone
+www/syscp/templates/misc/configfiles/suse_linux_10_0/courier/etc_authlib_authdaemonrc
+www/syscp/templates/misc/configfiles/suse_linux_10_0/courier/etc_authlib_authmysqlrc
+www/syscp/templates/misc/configfiles/suse_linux_10_0/cron/etc_cron.d_syscp
+www/syscp/templates/misc/configfiles/suse_linux_10_0/cron/etc_php5_syscpcron_php.ini
+www/syscp/templates/misc/configfiles/suse_linux_10_0/postfix/etc_postfix_main.cf
+www/syscp/templates/misc/configfiles/suse_linux_10_0/postfix/etc_postfix_mysql-virtual_alias_maps.cf
+www/syscp/templates/misc/configfiles/suse_linux_10_0/postfix/etc_postfix_mysql-virtual_mailbox_domains.cf
+www/syscp/templates/misc/configfiles/suse_linux_10_0/postfix/etc_postfix_mysql-virtual_mailbox_maps.cf
+www/syscp/templates/misc/configfiles/suse_linux_10_0/postfix/usr_lib_sasl2_smtpd.conf
+www/syscp/templates/misc/configfiles/suse_linux_10_0/proftpd/etc_proftpd_modules.conf
+www/syscp/templates/misc/configfiles/suse_linux_10_0/proftpd/etc_proftpd_proftpd.conf
+www/syscp/templates/misc/error.tpl
+www/syscp/templates/misc/question_yesno.tpl
+www/syscp/templates/misc/standardcustomer/index.html
+www/syscp/templates/navigation_element.tpl
+www/syscp/templates/navigation_link.tpl
+@dirrm www/syscp/templates/misc/standardcustomer
+@dirrm www/syscp/templates/misc/configfiles/suse_linux_10_0/proftpd
+@dirrm www/syscp/templates/misc/configfiles/suse_linux_10_0/postfix
+@dirrm www/syscp/templates/misc/configfiles/suse_linux_10_0/cron
+@dirrm www/syscp/templates/misc/configfiles/suse_linux_10_0/courier
+@dirrm www/syscp/templates/misc/configfiles/suse_linux_10_0/bind
+@dirrm www/syscp/templates/misc/configfiles/suse_linux_10_0
+@dirrm www/syscp/templates/misc/configfiles/freebsd_release/proftpd
+@dirrm www/syscp/templates/misc/configfiles/freebsd_release/postfix
+@dirrm www/syscp/templates/misc/configfiles/freebsd_release/dovecot
+@dirrm www/syscp/templates/misc/configfiles/freebsd_release/cron
+@dirrm www/syscp/templates/misc/configfiles/freebsd_release/bind
+@dirrm www/syscp/templates/misc/configfiles/freebsd_release
+@dirrm www/syscp/templates/misc/configfiles/debian_sarge/proftpd
+@dirrm www/syscp/templates/misc/configfiles/debian_sarge/postfix
+@dirrm www/syscp/templates/misc/configfiles/debian_sarge/cron
+@dirrm www/syscp/templates/misc/configfiles/debian_sarge/courier
+@dirrm www/syscp/templates/misc/configfiles/debian_sarge/bind
+@dirrm www/syscp/templates/misc/configfiles/debian_sarge
+@dirrm www/syscp/templates/misc/configfiles/debian_etch/proftpd
+@dirrm www/syscp/templates/misc/configfiles/debian_etch/postfix
+@dirrm www/syscp/templates/misc/configfiles/debian_etch/cron
+@dirrm www/syscp/templates/misc/configfiles/debian_etch/courier
+@dirrm www/syscp/templates/misc/configfiles/debian_etch/bind
+@dirrm www/syscp/templates/misc/configfiles/debian_etch
+@dirrm www/syscp/templates/misc/configfiles
+@dirrm www/syscp/templates/misc
+@dirrm www/syscp/templates/login
+@dirrm www/syscp/templates/customer/mysql
+@dirrm www/syscp/templates/customer/index
+@dirrm www/syscp/templates/customer/ftp
+@dirrm www/syscp/templates/customer/extras
+@dirrm www/syscp/templates/customer/email
+@dirrm www/syscp/templates/customer/domains
+@dirrm www/syscp/templates/customer
+@dirrm www/syscp/templates/admin/templates
+@dirrm www/syscp/templates/admin/settings
+@dirrm www/syscp/templates/admin/ipsandports
+@dirrm www/syscp/templates/admin/index
+@dirrm www/syscp/templates/admin/domains
+@dirrm www/syscp/templates/admin/customers
+@dirrm www/syscp/templates/admin/configfiles
+@dirrm www/syscp/templates/admin/admins
+@dirrm www/syscp/templates/admin
+@dirrm www/syscp/templates
+@dirrm www/syscp/scripts
+@dirrm www/syscp/lng
+@dirrm www/syscp/lib
+@dirrm www/syscp/install/scripts
+@dirrm www/syscp/install/lng
+@dirrm www/syscp/install
+@dirrm www/syscp/images
+@dirrm www/syscp
