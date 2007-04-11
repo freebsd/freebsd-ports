@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	prewikka
-PORTVERSION=	0.9.9
+PORTVERSION=	0.9.10
 CATEGORIES=	www security python
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -22,10 +22,21 @@ LIB_DEPENDS=	prelude.11:${PORTSDIR}/security/libprelude \
 USE_PYTHON=		2.3+
 USE_PYDISTUTILS=	yes
 
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=		yes
+PLIST_SUB+=		NLS=""
+.else
+PLIST_SUB+=		NLS="@comment "
+.endif
+
 post-patch:
 	${MV} ${WRKSRC}/conf/prewikka.conf ${WRKSRC}/conf/prewikka.conf-dist
 	${REINPLACE_CMD} 's,conf/prewikka.conf,conf/prewikka.conf-dist,' \
 	   ${WRKSRC}/setup.py
+.if defined(WITHOUT_NLS)
+	${REINPLACE_CMD} 's,\(.*self.data_files.extend(self._compile_po_files())\),#\1,' \
+	   ${WRKSRC}/setup.py
+.endif
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/prewikka/prewikka.conf ]; then \

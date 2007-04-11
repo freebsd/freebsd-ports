@@ -4,7 +4,6 @@ etc/prewikka/prewikka.conf-dist
 bin/prewikka-httpd
 %%PYTHON_SITELIBDIR%%/prewikka/Database.py
 %%PYTHON_SITELIBDIR%%/prewikka/User.py
-%%PYTHON_SITELIBDIR%%/prewikka/ParametersNormalizer.py
 %%PYTHON_SITELIBDIR%%/prewikka/Log.py
 %%PYTHON_SITELIBDIR%%/prewikka/Auth.py
 %%PYTHON_SITELIBDIR%%/prewikka/DataSet.py
@@ -12,6 +11,7 @@ bin/prewikka-httpd
 %%PYTHON_SITELIBDIR%%/prewikka/Core.py
 %%PYTHON_SITELIBDIR%%/prewikka/Request.py
 %%PYTHON_SITELIBDIR%%/prewikka/ModPythonHandler.py
+%%PYTHON_SITELIBDIR%%/prewikka/locale.py
 %%PYTHON_SITELIBDIR%%/prewikka/view.py
 %%PYTHON_SITELIBDIR%%/prewikka/CheetahFilters.py
 %%PYTHON_SITELIBDIR%%/prewikka/Config.py
@@ -23,34 +23,34 @@ bin/prewikka-httpd
 %%PYTHON_SITELIBDIR%%/prewikka/utils.py
 %%PYTHON_SITELIBDIR%%/prewikka/views/commands.py
 %%PYTHON_SITELIBDIR%%/prewikka/views/filter.py
+%%PYTHON_SITELIBDIR%%/prewikka/views/heartbeatlisting.py
 %%PYTHON_SITELIBDIR%%/prewikka/views/messagesummary.py
 %%PYTHON_SITELIBDIR%%/prewikka/views/misc.py
 %%PYTHON_SITELIBDIR%%/prewikka/views/messagelisting.py
+%%PYTHON_SITELIBDIR%%/prewikka/views/alertlisting.py
 %%PYTHON_SITELIBDIR%%/prewikka/views/usermanagement.py
 %%PYTHON_SITELIBDIR%%/prewikka/views/sensor.py
 %%PYTHON_SITELIBDIR%%/prewikka/views/__init__.py
 %%PYTHON_SITELIBDIR%%/prewikka/views/messagedetails.py
 %%PYTHON_SITELIBDIR%%/prewikka/views/commands.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/views/filter.pyc
+%%PYTHON_SITELIBDIR%%/prewikka/views/heartbeatlisting.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/views/messagesummary.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/views/misc.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/views/messagelisting.pyc
+%%PYTHON_SITELIBDIR%%/prewikka/views/alertlisting.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/views/usermanagement.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/views/sensor.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/views/__init__.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/views/messagedetails.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/views/commands.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/views/filter.pyo
+%%PYTHON_SITELIBDIR%%/prewikka/views/heartbeatlisting.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/views/messagesummary.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/views/misc.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/views/messagelisting.pyo
-%%PYTHON_SITELIBDIR%%/prewikka/views/usermanagement.pyo
-%%PYTHON_SITELIBDIR%%/prewikka/views/heartbeatlisting.py
-%%PYTHON_SITELIBDIR%%/prewikka/views/heartbeatlisting.pyc
-%%PYTHON_SITELIBDIR%%/prewikka/views/heartbeatlisting.pyo
-%%PYTHON_SITELIBDIR%%/prewikka/views/alertlisting.py
-%%PYTHON_SITELIBDIR%%/prewikka/views/alertlisting.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/views/alertlisting.pyo
+%%PYTHON_SITELIBDIR%%/prewikka/views/usermanagement.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/views/sensor.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/views/__init__.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/views/messagedetails.pyo
@@ -139,15 +139,15 @@ bin/prewikka-httpd
 %%PYTHON_SITELIBDIR%%/prewikka/modules/__init__.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/modules/__init__.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/Database.pyc
-%%PYTHON_SITELIBDIR%%/prewikka/User.pyc
-%%PYTHON_SITELIBDIR%%/prewikka/ParametersNormalizer.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/Log.pyc
+%%PYTHON_SITELIBDIR%%/prewikka/User.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/Auth.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/DataSet.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/IDMEFDatabase.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/Core.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/Request.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/ModPythonHandler.pyc
+%%PYTHON_SITELIBDIR%%/prewikka/locale.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/view.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/CheetahFilters.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/Config.pyc
@@ -159,7 +159,6 @@ bin/prewikka-httpd
 %%PYTHON_SITELIBDIR%%/prewikka/utils.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/Database.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/User.pyo
-%%PYTHON_SITELIBDIR%%/prewikka/ParametersNormalizer.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/Log.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/Auth.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/DataSet.pyo
@@ -167,6 +166,7 @@ bin/prewikka-httpd
 %%PYTHON_SITELIBDIR%%/prewikka/Core.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/Request.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/ModPythonHandler.pyo
+%%PYTHON_SITELIBDIR%%/prewikka/locale.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/view.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/CheetahFilters.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/Config.pyo
@@ -176,6 +176,7 @@ bin/prewikka-httpd
 %%PYTHON_SITELIBDIR%%/prewikka/MyConfigParser.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/siteconfig.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/utils.pyo
+%%NLS%%share/locale/fr/LC_MESSAGES/prewikka.mo
 %%DATADIR%%/cgi-bin/prewikka.cgi
 %%DATADIR%%/htdocs/images/prelude-logo.gif
 %%DATADIR%%/htdocs/images/prelude-logo.png
@@ -190,13 +191,13 @@ bin/prewikka-httpd
 %%DATADIR%%/htdocs/images/led_Y.gif
 %%DATADIR%%/htdocs/css/style.css
 %%DATADIR%%/htdocs/js/functions.js
-%%DATADIR%%/database/mysql2pgsql.sh
 %%DATADIR%%/database/sqlite.sql
 %%DATADIR%%/database/mysql-update-0.9.1.sql
 %%DATADIR%%/database/pgsql.sql
 %%DATADIR%%/database/pgsql-update-0.9.1.sql
 %%DATADIR%%/database/mysql.sql
 %%DATADIR%%/database/mysql2sqlite.sh
+%%DATADIR%%/database/mysql2pgsql.sh
 @dirrmtry %%PYTHON_SITELIBDIR%%/prewikka/modules/auth/cgi
 @dirrmtry %%PYTHON_SITELIBDIR%%/prewikka/modules/auth/loginpassword
 @dirrmtry %%PYTHON_SITELIBDIR%%/prewikka/modules/auth
