@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	evince
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -31,7 +31,8 @@ USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui libgnomeprintui \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-GCONF_SCHEMAS=	evince.schemas evince-thumbnailer.schemas
+GCONF_SCHEMAS=	evince.schemas evince-thumbnailer.schemas \
+		evince-thumbnailer-ps.schemas
 
 MAN1=		evince.1
 
