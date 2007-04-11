@@ -121,7 +121,7 @@ PLIST=			pkg-plist
 
 .include <bsd.port.pre.mk>
 
-LINUX_OSRELEASE!=	${ECHO} `${SYSCTL} -n compat.linux.osrelease 2>/dev/null`
+LINUX_OSRELEASE!=	${ECHO_CMD} `${SYSCTL} -n compat.linux.osrelease 2>/dev/null`
 
 .if ${LINUX_OSRELEASE}x == "x"
 IGNORE=			linuxulator is not (kld)loaded
