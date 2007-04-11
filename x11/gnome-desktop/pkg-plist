@@ -20,11 +20,14 @@ share/gnome/gnome-about/headers/header-bg-mountains01.png
 share/gnome/gnome-about/headers/header-bg-snow01.png
 share/gnome/gnome-about/headers/header-bg-sunset01.png
 share/gnome/help/fdl/C/fdl.xml
+share/gnome/help/fdl/ar/fdl.xml
 share/gnome/help/fdl/es/fdl.xml
 share/gnome/help/fdl/fr/fdl.xml
 share/gnome/help/fdl/sv/fdl.xml
 share/gnome/help/fdl/uk/fdl.xml
 share/gnome/help/gpl/C/gpl.xml
+share/gnome/help/gpl/ar/gpl.xml
+share/gnome/help/gpl/ca/gpl.xml
 share/gnome/help/gpl/es/gpl.xml
 share/gnome/help/gpl/fi/gpl.xml
 share/gnome/help/gpl/fr/gpl.xml
@@ -34,6 +37,7 @@ share/gnome/help/gpl/uk/gpl.xml
 share/gnome/help/gpl/vi/gpl.xml
 share/gnome/help/gpl/zh_CN/gpl.xml
 share/gnome/help/lgpl/C/lgpl.xml
+share/gnome/help/lgpl/ar/lgpl.xml
 share/gnome/help/lgpl/es/lgpl.xml
 share/gnome/help/lgpl/fr/lgpl.xml
 share/gnome/help/lgpl/pa/lgpl.xml
@@ -41,11 +45,14 @@ share/gnome/help/lgpl/sv/lgpl.xml
 share/gnome/help/lgpl/uk/lgpl.xml
 share/gnome/help/lgpl/zh_CN/lgpl.xml
 share/gnome/omf/fdl/fdl-C.omf
+share/gnome/omf/fdl/fdl-ar.omf
 share/gnome/omf/fdl/fdl-es.omf
 share/gnome/omf/fdl/fdl-fr.omf
 share/gnome/omf/fdl/fdl-sv.omf
 share/gnome/omf/fdl/fdl-uk.omf
 share/gnome/omf/gpl/gpl-C.omf
+share/gnome/omf/gpl/gpl-ar.omf
+share/gnome/omf/gpl/gpl-ca.omf
 share/gnome/omf/gpl/gpl-es.omf
 share/gnome/omf/gpl/gpl-fi.omf
 share/gnome/omf/gpl/gpl-fr.omf
@@ -55,6 +62,7 @@ share/gnome/omf/gpl/gpl-uk.omf
 share/gnome/omf/gpl/gpl-vi.omf
 share/gnome/omf/gpl/gpl-zh_CN.omf
 share/gnome/omf/lgpl/lgpl-C.omf
+share/gnome/omf/lgpl/lgpl-ar.omf
 share/gnome/omf/lgpl/lgpl-es.omf
 share/gnome/omf/lgpl/lgpl-fr.omf
 share/gnome/omf/lgpl/lgpl-pa.omf
