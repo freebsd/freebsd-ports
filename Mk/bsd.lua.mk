@@ -187,7 +187,9 @@ _LUA_DEPTYPE_${comp}_${ver}=lib
 .			elif !defined(_LUA_FILE_${comp}_${ver})
 _LUA_FILE_${comp}_${ver}=	${LOCALBASE}/share/lua/${ver}/${comp}.lua
 .			endif
+.			if !defined(_LUA_DEPTYPE_${comp}_${ver})
 _LUA_DEPTYPE_${comp}_${ver}=run
+.			endif
 .		endfor
 .	endfor
 .endif
