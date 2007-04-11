@@ -152,9 +152,9 @@
  
  MULTILIB_EXCEPTIONS =
  
---- gcc/config/avr/avr.h.orig	Sat Apr  7 00:28:34 2007
-+++ gcc/config/avr/avr.h	Sat Apr  7 00:36:14 2007
-@@ -763,12 +763,66 @@
+--- gcc/config/avr/avr.h.orig	Wed Apr 11 17:36:15 2007
++++ gcc/config/avr/avr.h	Wed Apr 11 17:41:25 2007
+@@ -763,12 +763,67 @@
  #define ASM_SPEC "%{mmcu=*:-mmcu=%*}"
  
  #define LINK_SPEC " %{!mmcu*:-m avr2}\
@@ -189,16 +189,17 @@
 +  mmcu=at76*:-m avr3}\
 +%{mmcu=atmega8*|\
 +  mmcu=atmega48|\
-+  mmcu=at90pwm1|\
-+  mmcu=at90pwm2|\
-+  mmcu=at90pwm3:-m avr4}\
++  mmcu=at90pwm*|\
++  mmcu=at90usb82:-m avr4}\
 +%{mmcu=atmega16*|\
 +  mmcu=atmega32*|\
 +  mmcu=atmega406|\
 +  mmcu=atmega64*|\
 +  mmcu=atmega128*|\
 +  mmcu=at90can*|\
-+  mmcu=at90usb*|\
++  mmcu=at90usb162|\
++  mmcu=at90usb64*|\
++  mmcu=at90usb128*|\
 +  mmcu=at94k:-m avr5}\
 +%{mmcu=atmega324*|\
 +  mmcu=atmega325*|\
@@ -227,7 +228,7 @@
  
  #define LIB_SPEC \
    "%{!mmcu=at90s1*:%{!mmcu=attiny11:%{!mmcu=attiny12:%{!mmcu=attiny15:%{!mmcu=attiny28: -lc }}}}}"
-@@ -804,6 +858,15 @@
+@@ -804,6 +859,15 @@
  %{mmcu=at86rf401:crt86401.o%s} \
  %{mmcu=attiny13:crttn13.o%s} \
  %{mmcu=attiny2313:crttn2313.o%s} \
@@ -243,7 +244,7 @@
  %{mmcu=atmega103|mmcu=avr3:crtm103.o%s} \
  %{mmcu=atmega603:crtm603.o%s} \
  %{mmcu=at43usb320:crt43320.o%s} \
-@@ -814,22 +877,51 @@
+@@ -814,22 +878,51 @@
  %{mmcu=atmega88:crtm88.o%s} \
  %{mmcu=atmega8515:crtm8515.o%s} \
  %{mmcu=atmega8535:crtm8535.o%s} \
