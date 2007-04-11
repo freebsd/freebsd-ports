@@ -1,8 +1,0 @@
---- mysql-administrator/source/linux/mysql-administrator.orig	Sat Apr 29 00:34:21 2006
-+++ mysql-administrator/source/linux/mysql-administrator	Sat Apr 29 00:34:44 2006
-@@ -1,3 +1,5 @@
-+#!/bin/sh
-+
- PRG="$0"
-                                                                                                     
- # need this for relative symlinks
