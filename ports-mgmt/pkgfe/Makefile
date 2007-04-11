@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pkgfe
-# Date created:		2006-01-14
-# Whom:			Sulev-Madis Silber <madis555@hot.ee>
+# Date created:				2006-01-14
+# Whom:					Sulev-Madis Silber <madis555@hot.ee>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	pkgfe
-PORTVERSION=	20070208
+PORTVERSION=	20070411
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://kodu.neti.ee/~madis555/pkgfe/releases/ \
 		http://ketas.si.pri.ee/pkgfe/releases/ \
