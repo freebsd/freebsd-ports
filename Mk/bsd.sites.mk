@@ -116,6 +116,11 @@ MASTER_SITE_CENKES+=	\
 	http://bsd3.cenkes.org/%SUBDIR%/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_CHEESESHOP)
+MASTER_SITE_CHEESESHOP+=	\
+	http://cheeseshop.python.org/packages/%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_COMP_SOURCES)
 MASTER_SITE_COMP_SOURCES+=	\
 	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.%SUBDIR%/ \
@@ -1340,6 +1345,7 @@ MASTER_SITES_SUBDIRS=	\
 			APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
 			BERLIOS:${PORTNAME:L} \
 			CENKES:myports \
+			CHEESESHOP:source/${DISTNAME:C/(.).*/\1/}/${DISTNAME:C/(.*)-[0-9].*/\1/} \
 			CSME:myports \
 			DEBIAN:pool/main/${PORTNAME:C/^((lib)?.).*$/\1/}/${PORTNAME} \
 			GCC:releases/${DISTNAME} \
