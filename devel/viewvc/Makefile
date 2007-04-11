@@ -6,18 +6,15 @@
 #
 
 PORTNAME=	viewvc
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	devel python
-MASTER_SITES=	http://viewvc.tigris.org/files/documents/3330/34803/
+MASTER_SITES=	http://viewvc.tigris.org/files/documents/3330/37319/
 
 MAINTAINER=	jbq@caraldi.com
 COMMENT=	Web-based Version Control Repository Browsing
 
-FETCH_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 RUN_DEPENDS=	${PYTHON_LIBDIR}/site-packages/svn/__init__.py:${PORTSDIR}/devel/subversion-python
 
-DISABLE_SIZE=	yes	# Need because -S are not recognized by wget
-FETCH_CMD=	${LOCALBASE}/bin/wget -c
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
@@ -28,7 +25,7 @@ INSTDIR?=	${PORTNAME}
 PLIST_SUB=	INSTDIR=${INSTDIR}
 
 do-install:
-	(cd ${WRKSRC} && ${PYTHON_CMD} viewvc-install --prefix=${PREFIX}/${INSTDIR} --destdir="")
+	(cd ${WRKSRC} && ${PYTHON_CMD} viewvc-install --prefix=${PREFIX}/${INSTDIR} --destdir="" --clean-mode=false)
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

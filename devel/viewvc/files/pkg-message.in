@@ -5,12 +5,5 @@ you need to do is modify the configuration file, located at
 %%INSTDIR%%/viewvc.conf, to note where your
 CVSROOT is, and then copy the actual CGI (located at
 %%INSTDIR%%/bin/cgi/viewvc.cgi) to your cgi-bin.
-Please notice that  configuration files are installed as
-".dist" and must be copied to their actual names prior to
-be edited, e.g.:
-$ cd %%INSTDIR%%
-$ cp viewvc.conf.dist viewvc.conf
-$ cp cvsgraph.conf.dist cvsgraph.conf
-It's up to you to check the ".dist" files after upgrades.
 
 *****************************************************************
