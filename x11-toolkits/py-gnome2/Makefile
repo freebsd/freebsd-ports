@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome
-PORTVERSION=	2.18.0
+PORTVERSION=	2.18.1
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-python/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
