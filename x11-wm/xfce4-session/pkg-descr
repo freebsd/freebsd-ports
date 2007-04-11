@@ -1,3 +1,6 @@
-Session manager for the Xfce desktop environment.
+The session manager allows the user to save sessions and restore them
+after login. It is capable of saving several different sessions. It
+comes with three splash screen engines. And at last it helps you to
+log out, reboot, and shutdown the system.
 
-WWW: http://www.xfce4.org/
+WWW: http://www.xfce.org/projects/xfce4-session/

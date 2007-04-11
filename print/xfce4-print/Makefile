@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-print
-PORTVERSION=	4.4.0
+PORTVERSION=	4.4.1
 CATEGORIES=	print xfce
 MASTER_SITES=	${MASTER_SITES_XFCE}
 DISTNAME=	xfprint-${PORTVERSION}
@@ -65,6 +65,5 @@ RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-a4
 post-patch:
 	@${REINPLACE_CMD} -e 's/@LDFLAGS@/& -Wl,-E/' ${WRKSRC}/xfprint/Makefile.in \
 		 ${WRKSRC}/xfprint-manager/Makefile.in
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

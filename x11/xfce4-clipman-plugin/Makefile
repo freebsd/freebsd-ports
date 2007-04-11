@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-clipman-plugin
 PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4

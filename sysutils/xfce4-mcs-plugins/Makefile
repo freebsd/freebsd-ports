@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-mcs-plugins
-PORTVERSION=	4.4.0
+PORTVERSION=	4.4.1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITES_XFCE}
 DISTNAME=	xfce-mcs-plugins-${PORTVERSION}
@@ -22,8 +22,5 @@ USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libgui mcsmanager
 USE_XLIB=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
