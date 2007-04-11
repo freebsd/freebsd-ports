@@ -18,14 +18,14 @@ POST-INSTALL)
 		fi
 	fi
 
-	/usr/bin/touch /etc/mail/access;
+	${TOUCH} /etc/mail/access;
 
 	mkdir -p ${PREF}/raqdevil/ui/web/base/sitestats/img;
 	chown www:wheel ${PREF}/raqdevil/ui/web/base/sitestats/img;
 	mkdir -p ${PREF}/raqdevil/sessions;
 
-	/usr/bin/touch ${PREF}/etc/apache2/httpd.local.conf
-	/usr/bin/touch ${PREF}/etc/apache2/httpd.raqdevil.conf
+	${TOUCH} ${PREF}/etc/apache2/httpd.local.conf
+	${TOUCH} ${PREF}/etc/apache2/httpd.raqdevil.conf
 
 	# generate certificates if required
 	CERTPATH=${PREF}/admserv/certs

@@ -4,12 +4,12 @@
 @exec chmod 0777 %D/raqdevil/ui/web/base/sitestats/img
 @exec mkdir -p %D/raqdevil/ui/style
 @exec chmod 0777 %D/raqdevil/ui/style
-@unexec rm -rf %D/raqdevil/ui/web/base/sitestats/img 2>&1 >/dev/null || true
+@unexec rm -rf %D/raqdevil/ui/web/base/sitestats/img/* 2>&1 >/dev/null || true
 @unexec rm -rf %D/admserv/run/admserv.pid 2>&1 > /dev/null || true
 @exec touch /etc/mail/access
 @exec mkdir -p /var/log/admserv
 @unexec rm -rf /var/log/admserv 2>&1 >/dev/null || true
-@exec echo "Updating crontab"; cp /etc/crontab /etc/crontab.bak; (grep -v "%D/sbin/swatch" /etc/crontab.bak; echo "*/15	*	*	*	*	root %D/sbin/swatch -c %D/etc/swatch.conf") > /etc/crontab; rm -f /etc/crontab.bak
+@exec echo "Updating crontab"; cp /etc/crontab /etc/crontab.bak; (grep -v "%D/sbin/swatch" /etc/crontab.bak; echo "*/15 *   **       *       root %D/sbin/swatch -c %D/etc/swatch.conf") > /etc/crontab; rm -f /etc/crontab.bak
 @unexec echo "Updating crontab"; cp /etc/crontab /etc/crontab.bak; (grep -v "%D/sbin/swatch" /etc/crontab.bak;) > /etc/crontab; rm -f /etc/crontab.bak
 @exec echo "Updating /etc/ssh/sshd_config"; cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak; (grep -v "Banner %D/etc/ssh_banner" /etc/ssh/sshd_config.bak; echo "Banner %D/etc/ssh_banner") > /etc/ssh/sshd_config; rm -f /etc/ssh/sshd_config.bak
 @unexec echo "Updating /etc/ssh/sshd_config"; cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak; (grep -v "Banner %D/etc/ssh_banner" /etc/ssh/sshd_config.bak) > /etc/ssh/sshd_config; rm -f /etc/ssh/sshd_config.bak
@@ -17,6 +17,9 @@
 @unexec echo "Updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v /usr/sbin/nologin /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
 @exec touch etc/apache2/httpd.raqdevil.conf
 @exec touch etc/apache2/httpd.local.conf
+admserv/certs/certificate
+admserv/certs/key
+admserv/certs/request
 admserv/conf.d/php.conf
 admserv/conf.d/ssl.conf
 admserv/conf/admserv.conf
@@ -24,43 +27,13 @@ admserv/conf/magic
 admserv/conf/php.ini
 admserv/libexec
 bin/clamfilter.pl
-bin/generateGraph.pl
-etc/apache2/httpd.conf
-etc/apache2/ssl.conf
+etc/apache2
 etc/build
-etc/ccewrap.conf
-etc/analog.cfg
-etc/analog.cfg.tmpl
 etc/pam.d/cced
-etc/proftpd.conf
 etc/rc.d/admserv.sh
-etc/rc.d/cced.sh
-etc/ssh_banner
 etc/snmp/snmpd.conf
+etc/ssh_banner
 etc/swatch.conf
-etc/xinetd.conf
-etc/xinetd/xinetd.d/imap
-etc/xinetd/xinetd.d/imaps
-etc/xinetd/xinetd.d/pop3
-etc/xinetd/xinetd.d/pop3s
-etc/xinetd/xinetd.d/proftpd
-%%SITE_PERL%%/%%PERL_ARCH%%/UnixAuth.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/UnixAuth/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/UnixAuth/UnixAuth.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/UnixAuth/UnixAuth.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/UnixAuth/autosplit.ix
-lib/php/20020429/cce.so
-lib/php/20020429/i18n.so
-lib/security/pam_cce.so
-libexec/apache2/mod_raqdevil.so
-raqdevil/bin/cce_construct
-raqdevil/bin/ccewrap
-raqdevil/bin/i18n_get
-raqdevil/bin/i18n_locales
-raqdevil/bin/i18n_translate
-raqdevil/bin/i18nmail.pl
-raqdevil/bin/pperl
-raqdevil/bin/pperld
 raqdevil/ccewrap/cce_lock.xml
 raqdevil/ccewrap/swatch.xml
 raqdevil/conf/base/am/am.conf
@@ -122,7 +95,6 @@ raqdevil/handlers/base/apache/regen_httpd_locales
 raqdevil/handlers/base/apache/reload.pl
 raqdevil/handlers/base/apache/reload_httpd.pl
 raqdevil/handlers/base/apache/restart_httpd.pl
-raqdevil/handlers/base/apache/ssl_web_scripting.pl
 raqdevil/handlers/base/apache/vhost_addrem.pl
 raqdevil/handlers/base/apache/vhost_destroy_cleanup.pl
 raqdevil/handlers/base/apache/vhost_suspend.pl
@@ -153,6 +125,7 @@ raqdevil/handlers/base/email/Email.pm
 raqdevil/handlers/base/email/access.pl
 raqdevil/handlers/base/email/apop.pl
 raqdevil/handlers/base/email/apop_pw.pl
+raqdevil/handlers/base/email/create.pl
 raqdevil/handlers/base/email/default_state.pl
 raqdevil/handlers/base/email/demand.pl
 raqdevil/handlers/base/email/enable.pl
@@ -288,16 +261,9 @@ raqdevil/handlers/base/vsite/update_site_admins.pl
 raqdevil/handlers/base/vsite/vsite_create.pl
 raqdevil/handlers/base/vsite/vsite_destroy.pl
 raqdevil/handlers/base/vsite/watch_disk.pl
-raqdevil/include/cce/c6.h
-raqdevil/include/cce/cce.h
-raqdevil/include/cce/i18n.h
 raqdevil/include/libdebug.h
-raqdevil/lib/libcce.so
-raqdevil/lib/libcce.so.0
 raqdevil/lib/libdebug.a
-raqdevil/lib/libi18n.a
-raqdevil/lib/libi18n.so
-raqdevil/lib/libi18n.so.0
+raqdevil/perl/AM/Util.pm
 raqdevil/perl/Base/Disk.pm
 raqdevil/perl/Base/Group.pm
 raqdevil/perl/Base/HomeDir.pm
@@ -306,11 +272,9 @@ raqdevil/perl/Base/Nettest.pm
 raqdevil/perl/Base/User.pm
 raqdevil/perl/Base/User/Capabilities.pm
 raqdevil/perl/Base/Vsite.pm
-raqdevil/perl/CCE.pm
 raqdevil/perl/I18n.pm
 raqdevil/perl/I18nMail.pm
 raqdevil/perl/JConv.pl
-raqdevil/perl/AM/Util.pm
 raqdevil/perl/Sauce/Config.pm
 raqdevil/perl/Sauce/Service.pm
 raqdevil/perl/Sauce/Service/Client.pm
@@ -326,10 +290,9 @@ raqdevil/rules/base/vsite/user_defaults.pl
 raqdevil/sbin/am_disk.pl
 raqdevil/sbin/am_disk.sh
 raqdevil/sbin/cce_lock.pl
-raqdevil/sbin/cced
 raqdevil/sbin/get_quotas.pl
-raqdevil/sbin/ssl_import.pl
 raqdevil/sbin/ssl_get.pl
+raqdevil/sbin/ssl_import.pl
 raqdevil/sbin/update.php
 raqdevil/sbin/vacation.pl
 raqdevil/sbin/vsite_destroy.pl
@@ -338,6 +301,7 @@ raqdevil/schemas/base/am/am.schema
 raqdevil/schemas/base/am/am_base.schema
 raqdevil/schemas/base/am/apache-am.schema
 raqdevil/schemas/base/am/dns-am.schema
+raqdevil/schemas/base/am/email-am.schema
 raqdevil/schemas/base/am/fans-am.schema
 raqdevil/schemas/base/am/ftp-am.schema
 raqdevil/schemas/base/am/network-am.schema
@@ -346,8 +310,8 @@ raqdevil/schemas/base/apache/apache.schema
 raqdevil/schemas/base/apache/apache_caps.schema
 raqdevil/schemas/base/apache/vsite_services.schema
 raqdevil/schemas/base/backupcontrol/backupcontrol.schema
-raqdevil/schemas/base/disk/disk.schema
 raqdevil/schemas/base/disk/disk-am.schema
+raqdevil/schemas/base/disk/disk.schema
 raqdevil/schemas/base/dns/dns.schema
 raqdevil/schemas/base/email/email.schema
 raqdevil/schemas/base/email/email_alias.schema
@@ -389,16 +353,16 @@ raqdevil/skel/dot.procmailrc
 raqdevil/skel/quarantine
 raqdevil/skel/spam
 raqdevil/skel/web/bsd.gif
-raqdevil/skel/web/grad.gif
-raqdevil/skel/web/index.html
-raqdevil/skel/web/raqdevil-logo.png
-raqdevil/skel/web/style.css
 raqdevil/skel/web/error/401-authorization.html
 raqdevil/skel/web/error/403-forbidden.html
 raqdevil/skel/web/error/404-file-not-found.html
 raqdevil/skel/web/error/500-internal-server-error.html
 raqdevil/skel/web/error/index.html
 raqdevil/skel/web/error/warning.gif
+raqdevil/skel/web/grad.gif
+raqdevil/skel/web/index.html
+raqdevil/skel/web/raqdevil-logo.png
+raqdevil/skel/web/style.css
 raqdevil/swatch/bin/am_admserv.exp
 raqdevil/swatch/bin/am_apache.exp
 raqdevil/swatch/bin/am_cpu.sh
@@ -444,15 +408,11 @@ raqdevil/ui/extensions/shell.System/20_SSH.php
 raqdevil/ui/libPhp/ArrayPacker.php
 raqdevil/ui/libPhp/AutoFeatures.php
 raqdevil/ui/libPhp/Capabilities.php
-raqdevil/ui/libPhp/CceClient.php
-raqdevil/ui/libPhp/CceError.php
 raqdevil/ui/libPhp/CobaltUI.php
 raqdevil/ui/libPhp/Collator.php
 raqdevil/ui/libPhp/ConfigFile.php
 raqdevil/ui/libPhp/DirTree.php
-raqdevil/ui/libPhp/EncodingConv.php
 raqdevil/ui/libPhp/Error.php
-raqdevil/ui/libPhp/I18n.php
 raqdevil/ui/libPhp/JsLibrary.php
 raqdevil/ui/libPhp/Meta.php
 raqdevil/ui/libPhp/Product.php
@@ -462,7 +422,6 @@ raqdevil/ui/libPhp/SiteMap.php
 raqdevil/ui/libPhp/System.php
 raqdevil/ui/libPhp/UIExtension.php
 raqdevil/ui/libPhp/User.php
-raqdevil/ui/libPhp/update.php
 raqdevil/ui/libPhp/uifc/AddButton.php
 raqdevil/ui/libPhp/uifc/BackButton.php
 raqdevil/ui/libPhp/uifc/Bar.php
@@ -536,6 +495,7 @@ raqdevil/ui/libPhp/uifc/UrlList.php
 raqdevil/ui/libPhp/uifc/UserName.php
 raqdevil/ui/libPhp/uifc/UserNameList.php
 raqdevil/ui/libPhp/uifc/VerticalCompositeFormField.php
+raqdevil/ui/libPhp/update.php
 raqdevil/ui/libPhp/utils/browser.php
 raqdevil/ui/libPhp/utils/file.php
 raqdevil/ui/libPhp/utils/page.php
@@ -610,11 +570,11 @@ raqdevil/ui/menu/base/vsite/vsite_general.xml
 raqdevil/ui/menu/palette/logout.xml
 raqdevil/ui/menu/palette/palette_attachments.xml
 raqdevil/ui/style/trueBlue.xml
-raqdevil/ui/style/trueBlue.xml.en
-raqdevil/ui/style/trueBlue.xml.ja
-raqdevil/ui/style/trueBlue.xml.fr
 raqdevil/ui/style/trueBlue.xml.de
+raqdevil/ui/style/trueBlue.xml.en
 raqdevil/ui/style/trueBlue.xml.es
+raqdevil/ui/style/trueBlue.xml.fr
+raqdevil/ui/style/trueBlue.xml.ja
 raqdevil/ui/web/base/alpine/adminredirect.html
 raqdevil/ui/web/base/alpine/license.php
 raqdevil/ui/web/base/alpine/splashPersonal.php
@@ -1025,30 +985,33 @@ raqdevil/ui/web/test_i18n.php
 raqdevil/ui/web/uiLog.php
 raqdevil/ui/web/uifc/MultiFileUpload.php
 raqdevil/ui/web/uifc/MultiFileUploadHandler.php
-sbin/ftplog2commonlog
-sbin/grab_logs.pl
-sbin/maillog2commonlog.pl
-sbin/split_logs
 sbin/swatch
 share/locale/de/LC_MESSAGES/base-am.mo
 share/locale/de/LC_MESSAGES/base-apache.mo
 share/locale/de/LC_MESSAGES/base-cce.mo
 share/locale/de/LC_MESSAGES/base-disk.mo
+share/locale/de/LC_MESSAGES/base-dns.mo
 share/locale/de/LC_MESSAGES/base-documentation.mo
 share/locale/de/LC_MESSAGES/base-email.mo
 share/locale/de/LC_MESSAGES/base-ftp.mo
+share/locale/de/LC_MESSAGES/base-import.mo
+share/locale/de/LC_MESSAGES/base-maillist.mo
 share/locale/de/LC_MESSAGES/base-memory.mo
 share/locale/de/LC_MESSAGES/base-network.mo
 share/locale/de/LC_MESSAGES/base-power.mo
 share/locale/de/LC_MESSAGES/base-product.mo
+share/locale/de/LC_MESSAGES/base-raid.mo
 share/locale/de/LC_MESSAGES/base-sauce-basic.mo
+share/locale/de/LC_MESSAGES/base-services.mo
 share/locale/de/LC_MESSAGES/base-snmp.mo
 share/locale/de/LC_MESSAGES/base-ssl.mo
 share/locale/de/LC_MESSAGES/base-swupdate.mo
 share/locale/de/LC_MESSAGES/base-system.mo
 share/locale/de/LC_MESSAGES/base-telnet.mo
 share/locale/de/LC_MESSAGES/base-time.mo
+share/locale/de/LC_MESSAGES/base-trueblue.mo
 share/locale/de/LC_MESSAGES/base-user.mo
+share/locale/de/LC_MESSAGES/base-wizard.mo
 share/locale/de/LC_MESSAGES/palette.mo
 share/locale/de/LC_MESSAGES/swatch.mo
 share/locale/de/LC_MESSAGES/trueBlue.mo
@@ -1056,14 +1019,17 @@ share/locale/en/LC_MESSAGES/base-alpine.mo
 share/locale/en/LC_MESSAGES/base-am.mo
 share/locale/en/LC_MESSAGES/base-apache.mo
 share/locale/en/LC_MESSAGES/base-backupcontrol.mo
+share/locale/en/LC_MESSAGES/base-bandwidth.mo
 share/locale/en/LC_MESSAGES/base-cce.mo
 share/locale/en/LC_MESSAGES/base-disk.mo
+share/locale/en/LC_MESSAGES/base-dma.mo
 share/locale/en/LC_MESSAGES/base-dns.mo
 share/locale/en/LC_MESSAGES/base-documentation.mo
 share/locale/en/LC_MESSAGES/base-email.mo
 share/locale/en/LC_MESSAGES/base-ftp.mo
 share/locale/en/LC_MESSAGES/base-ftpsitestats.mo
 share/locale/en/LC_MESSAGES/base-import.mo
+share/locale/en/LC_MESSAGES/base-maillist.mo
 share/locale/en/LC_MESSAGES/base-mailsitestats.mo
 share/locale/en/LC_MESSAGES/base-memory.mo
 share/locale/en/LC_MESSAGES/base-mypackage.mo
@@ -1071,14 +1037,17 @@ share/locale/en/LC_MESSAGES/base-netsitestats.mo
 share/locale/en/LC_MESSAGES/base-network.mo
 share/locale/en/LC_MESSAGES/base-power.mo
 share/locale/en/LC_MESSAGES/base-product.mo
+share/locale/en/LC_MESSAGES/base-raid.mo
 share/locale/en/LC_MESSAGES/base-sauce-basic.mo
 share/locale/en/LC_MESSAGES/base-schedule.mo
 share/locale/en/LC_MESSAGES/base-services.mo
 share/locale/en/LC_MESSAGES/base-shell.mo
 share/locale/en/LC_MESSAGES/base-sitestats.mo
+share/locale/en/LC_MESSAGES/base-smart.mo
 share/locale/en/LC_MESSAGES/base-snmp.mo
 share/locale/en/LC_MESSAGES/base-ssh.mo
 share/locale/en/LC_MESSAGES/base-ssl.mo
+share/locale/en/LC_MESSAGES/base-storage.mo
 share/locale/en/LC_MESSAGES/base-swupdate.mo
 share/locale/en/LC_MESSAGES/base-system.mo
 share/locale/en/LC_MESSAGES/base-telnet.mo
@@ -1086,27 +1055,39 @@ share/locale/en/LC_MESSAGES/base-time.mo
 share/locale/en/LC_MESSAGES/base-user.mo
 share/locale/en/LC_MESSAGES/base-vsite.mo
 share/locale/en/LC_MESSAGES/base-websitestats.mo
+share/locale/en/LC_MESSAGES/base-wizard.mo
 share/locale/en/LC_MESSAGES/palette.mo
 share/locale/en/LC_MESSAGES/swatch.mo
 share/locale/en/LC_MESSAGES/trueBlue.mo
 share/locale/es/LC_MESSAGES/base-am.mo
 share/locale/es/LC_MESSAGES/base-apache.mo
+share/locale/es/LC_MESSAGES/base-backupcontrol.mo
 share/locale/es/LC_MESSAGES/base-cce.mo
 share/locale/es/LC_MESSAGES/base-disk.mo
+share/locale/es/LC_MESSAGES/base-dns.mo
+share/locale/es/LC_MESSAGES/base-documentation.mo
 share/locale/es/LC_MESSAGES/base-email.mo
 share/locale/es/LC_MESSAGES/base-ftp.mo
+share/locale/es/LC_MESSAGES/base-import.mo
+share/locale/es/LC_MESSAGES/base-maillist.mo
 share/locale/es/LC_MESSAGES/base-memory.mo
 share/locale/es/LC_MESSAGES/base-network.mo
 share/locale/es/LC_MESSAGES/base-power.mo
 share/locale/es/LC_MESSAGES/base-product.mo
+share/locale/es/LC_MESSAGES/base-raid.mo
 share/locale/es/LC_MESSAGES/base-sauce-basic.mo
+share/locale/es/LC_MESSAGES/base-services.mo
+share/locale/es/LC_MESSAGES/base-shell.mo
 share/locale/es/LC_MESSAGES/base-snmp.mo
 share/locale/es/LC_MESSAGES/base-ssl.mo
 share/locale/es/LC_MESSAGES/base-swupdate.mo
 share/locale/es/LC_MESSAGES/base-system.mo
 share/locale/es/LC_MESSAGES/base-telnet.mo
 share/locale/es/LC_MESSAGES/base-time.mo
+share/locale/es/LC_MESSAGES/base-trueblue.mo
 share/locale/es/LC_MESSAGES/base-user.mo
+share/locale/es/LC_MESSAGES/base-vsite.mo
+share/locale/es/LC_MESSAGES/base-wizard.mo
 share/locale/es/LC_MESSAGES/palette.mo
 share/locale/es/LC_MESSAGES/swatch.mo
 share/locale/es/LC_MESSAGES/trueBlue.mo
@@ -1114,31 +1095,87 @@ share/locale/fr/LC_MESSAGES/base-am.mo
 share/locale/fr/LC_MESSAGES/base-apache.mo
 share/locale/fr/LC_MESSAGES/base-cce.mo
 share/locale/fr/LC_MESSAGES/base-disk.mo
+share/locale/fr/LC_MESSAGES/base-dns.mo
 share/locale/fr/LC_MESSAGES/base-documentation.mo
 share/locale/fr/LC_MESSAGES/base-email.mo
 share/locale/fr/LC_MESSAGES/base-ftp.mo
+share/locale/fr/LC_MESSAGES/base-import.mo
+share/locale/fr/LC_MESSAGES/base-maillist.mo
 share/locale/fr/LC_MESSAGES/base-memory.mo
+share/locale/fr/LC_MESSAGES/base-network.mo
 share/locale/fr/LC_MESSAGES/base-power.mo
 share/locale/fr/LC_MESSAGES/base-product.mo
+share/locale/fr/LC_MESSAGES/base-raid.mo
 share/locale/fr/LC_MESSAGES/base-sauce-basic.mo
+share/locale/fr/LC_MESSAGES/base-services.mo
 share/locale/fr/LC_MESSAGES/base-snmp.mo
 share/locale/fr/LC_MESSAGES/base-ssl.mo
 share/locale/fr/LC_MESSAGES/base-swupdate.mo
 share/locale/fr/LC_MESSAGES/base-system.mo
 share/locale/fr/LC_MESSAGES/base-telnet.mo
 share/locale/fr/LC_MESSAGES/base-time.mo
+share/locale/fr/LC_MESSAGES/base-trueblue.mo
 share/locale/fr/LC_MESSAGES/base-user.mo
+share/locale/fr/LC_MESSAGES/base-wizard.mo
 share/locale/fr/LC_MESSAGES/palette.mo
 share/locale/fr/LC_MESSAGES/swatch.mo
 share/locale/fr/LC_MESSAGES/trueBlue.mo
+share/locale/ja/LC_MESSAGES/base-alpine.mo
+share/locale/ja/LC_MESSAGES/base-am.mo
+share/locale/ja/LC_MESSAGES/base-apache.mo
+share/locale/ja/LC_MESSAGES/base-backupcontrol.mo
+share/locale/ja/LC_MESSAGES/base-bandwidth.mo
+share/locale/ja/LC_MESSAGES/base-cce.mo
+share/locale/ja/LC_MESSAGES/base-disk.mo
+share/locale/ja/LC_MESSAGES/base-dma.mo
+share/locale/ja/LC_MESSAGES/base-dns.mo
+share/locale/ja/LC_MESSAGES/base-documentation.mo
+share/locale/ja/LC_MESSAGES/base-email.mo
+share/locale/ja/LC_MESSAGES/base-ftp.mo
+share/locale/ja/LC_MESSAGES/base-ftpsitestats.mo
+share/locale/ja/LC_MESSAGES/base-import.mo
+share/locale/ja/LC_MESSAGES/base-maillist.mo
+share/locale/ja/LC_MESSAGES/base-mailsitestats.mo
+share/locale/ja/LC_MESSAGES/base-memory.mo
+share/locale/ja/LC_MESSAGES/base-netsitestats.mo
+share/locale/ja/LC_MESSAGES/base-network.mo
+share/locale/ja/LC_MESSAGES/base-power.mo
+share/locale/ja/LC_MESSAGES/base-product.mo
+share/locale/ja/LC_MESSAGES/base-raid.mo
+share/locale/ja/LC_MESSAGES/base-sauce-basic.mo
+share/locale/ja/LC_MESSAGES/base-schedule.mo
+share/locale/ja/LC_MESSAGES/base-services.mo
+share/locale/ja/LC_MESSAGES/base-shell.mo
+share/locale/ja/LC_MESSAGES/base-sitestats.mo
+share/locale/ja/LC_MESSAGES/base-smart.mo
+share/locale/ja/LC_MESSAGES/base-snmp.mo
+share/locale/ja/LC_MESSAGES/base-ssh.mo
+share/locale/ja/LC_MESSAGES/base-ssl.mo
+share/locale/ja/LC_MESSAGES/base-storage.mo
+share/locale/ja/LC_MESSAGES/base-swupdate.mo
+share/locale/ja/LC_MESSAGES/base-system.mo
+share/locale/ja/LC_MESSAGES/base-telnet.mo
+share/locale/ja/LC_MESSAGES/base-time.mo
+share/locale/ja/LC_MESSAGES/base-trueblue.mo
+share/locale/ja/LC_MESSAGES/base-user.mo
+share/locale/ja/LC_MESSAGES/base-vsite.mo
+share/locale/ja/LC_MESSAGES/base-websitestats.mo
+share/locale/ja/LC_MESSAGES/base-wizard.mo
+share/locale/ja/LC_MESSAGES/palette.mo
+share/locale/ja/LC_MESSAGES/swatch.mo
+share/locale/ja/LC_MESSAGES/trueBlue.mo
+share/nls/POSIX
+share/nls/en_US.US-ASCII
 @dirrm raqdevil/ui/web/uifc
 @dirrm raqdevil/ui/web/nav
+@dirrm raqdevil/ui/web/manuals
 @dirrm raqdevil/ui/web/login
 @dirrm raqdevil/ui/web/libJs/uifc
 @dirrm raqdevil/ui/web/libJs
 @dirrm raqdevil/ui/web/libImage
 @dirrm raqdevil/ui/web/hello
 @dirrm raqdevil/ui/web/error
+@dirrm raqdevil/ui/web/base/wizard
 @dirrm raqdevil/ui/web/base/vsite
 @dirrm raqdevil/ui/web/base/user
 @dirrm raqdevil/ui/web/base/time
@@ -1168,8 +1205,10 @@ share/locale/fr/LC_MESSAGES/trueBlue.mo
 @dirrm raqdevil/ui/web
 @dirrm raqdevil/ui/style
 @dirrm raqdevil/ui/menu/palette
+@dirrm raqdevil/ui/menu/base/wizard
 @dirrm raqdevil/ui/menu/base/vsite
 @dirrm raqdevil/ui/menu/base/user
+@dirrm raqdevil/ui/menu/base/time
 @dirrm raqdevil/ui/menu/base/telnet
 @dirrm raqdevil/ui/menu/base/system
 @dirrm raqdevil/ui/menu/base/swupdate
@@ -1180,11 +1219,14 @@ share/locale/fr/LC_MESSAGES/trueBlue.mo
 @dirrm raqdevil/ui/menu/base/services
 @dirrm raqdevil/ui/menu/base/power
 @dirrm raqdevil/ui/menu/base/network
+@dirrm raqdevil/ui/menu/base/maillist
 @dirrm raqdevil/ui/menu/base/import
 @dirrm raqdevil/ui/menu/base/ftp
 @dirrm raqdevil/ui/menu/base/email
+@dirrm raqdevil/ui/menu/base/documentation
 @dirrm raqdevil/ui/menu/base/dns
 @dirrm raqdevil/ui/menu/base/disk
+@dirrm raqdevil/ui/menu/base/backupcontrol
 @dirrm raqdevil/ui/menu/base/apache
 @dirrm raqdevil/ui/menu/base/am
 @dirrm raqdevil/ui/menu/base/alpine
@@ -1245,9 +1287,9 @@ share/locale/fr/LC_MESSAGES/trueBlue.mo
 @dirrm raqdevil/perl/Sauce
 @dirrm raqdevil/perl/Base/User
 @dirrm raqdevil/perl/Base
+@dirrm raqdevil/perl/AM
 @dirrm raqdevil/perl
 @dirrm raqdevil/lib
-@dirrm raqdevil/include/cce
 @dirrm raqdevil/include
 @dirrm raqdevil/handlers/base/vsite
 @dirrm raqdevil/handlers/base/user
@@ -1281,6 +1323,7 @@ share/locale/fr/LC_MESSAGES/trueBlue.mo
 @dirrm raqdevil/constructor/base/network
 @dirrm raqdevil/constructor/base/ftp
 @dirrm raqdevil/constructor/base/disk
+@dirrm raqdevil/constructor/base/bluequartz
 @dirrm raqdevil/constructor/base/apache
 @dirrm raqdevil/constructor/base/am
 @dirrm raqdevil/constructor/base/alpine
@@ -1309,8 +1352,8 @@ share/locale/fr/LC_MESSAGES/trueBlue.mo
 @dirrm raqdevil/conf/base
 @dirrm raqdevil/conf
 @dirrm raqdevil/ccewrap
-@dirrm raqdevil/bin
 @dirrm raqdevil
+@dirrm etc/snmp
 @dirrm admserv/run
 @dirrm admserv/conf.d
 @dirrm admserv/conf

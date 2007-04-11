@@ -7,7 +7,7 @@
 
 PORTNAME=	raqdevil
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www sysutils
 MASTER_SITES=	http://www.raqdevil.com/
 
@@ -47,10 +47,6 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/sendmail:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
 		analog:${PORTSDIR}/www/analog
 BUILD_DEPENDS=	re2c:${PORTSDIR}/devel/re2c
 
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2007-05-10
-
 USE_GNOME=	glib20
 USE_PHP=	pcre session xml
 USE_GMAKE=	yes
@@ -60,8 +56,9 @@ USE_APACHE=	yes
 WITHOUT_X11=	yes
 WITH_APACHE2=	yes
 REINPLACE_ARGS=	-i""
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	${PREFIX}/raqdevil/lib
+NO_PACKAGE=	Workaround for Pointyhat and Tinderbox.
 
 .include <bsd.port.pre.mk>
 
