@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tunapie
-PORTVERSION=	1.4
+PORTVERSION=	1.4.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -46,7 +46,6 @@ post-patch:
 		-e 's|%%X11BASE%%|${X11BASE}|g' {} ";"
 
 do-install:
-	@${MKDIR} ${DATADIR} ${DATADIR}/pixmaps
 	@${MKDIR} ${DESKTOPDIR}
 	@cd ${WRKSRC} && ./install.sh ${ADULT_TVLIST}
 
@@ -67,7 +66,7 @@ VIDEOPLAYER=	${LOCALBASE}/bin/mplayer
 
 # default AUDIOPLAYER
 .if defined(WITH_AUDACIOUS)
-RUN_DEPENDS+=	audacious:${PORTSDIR}/multimedia/audacious
+RUN_DEPENDS+=	${PREFIX}/lib/audacious/Container/libpls.so:${PORTSDIR}/multimedia/audacious-plugins
 AUDIOPLAYER=	${LOCALBASE}/bin/audacious
 .elifdef(WITH_BEEP_MEDIA_PLAYER)
 RUN_DEPENDS+=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player
