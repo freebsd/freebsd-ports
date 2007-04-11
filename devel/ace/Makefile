@@ -36,10 +36,6 @@ MAN1=		ace-gperf.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		does not support FreeBSD 4.x
-.endif
-
 .if ${OSVERSION} >= 700015 || (${OSVERSION} < 700000 && ${OSVERSION} >= 601103)
 EXTRA_PATCHES=	${FILESDIR}/extra-ace-OS_NS_netdb.inl
 .endif
