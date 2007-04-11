@@ -15,15 +15,6 @@
  *)  os_win32=no
      NO_UNDEFINED=''
      SOCKET_LIBS=''
-@@ -25232,7 +25240,7 @@ fi
- 
- if test "x${dynamic_libdb}" = "xyes"; then
-         DB_CFLAGS="-I$withval/include"
--        DB_LIBS="-L$withval/lib -ldb"
-+        DB_LIBS="-L$withval/lib -ldb41"
- 
-         { echo "$as_me:$LINENO: checking Berkeley DB" >&5
- echo $ECHO_N "checking Berkeley DB... $ECHO_C" >&6; }
 @@ -25364,6 +25372,7 @@ int main (int argc, char **argv)
  {
  	iconv_t cd;
@@ -32,15 +23,6 @@
  }
  
  _ACEOF
-@@ -26601,7 +26610,7 @@ Please specify the path to libnss3.a
- Example: --with-nspr-libs=/usr/lib/mozilla" >&2;}
-    { (exit 1); exit 1; }; }
- 				else
--					nsslibs="-ldb1 $with_nss_libs/libnssckfw.a $with_nss_libs/libasn1.a $with_nss_libs/libcrmf.a $with_nss_libs/libswfci.a $with_nss_libs/libjar.a $with_nss_libs/libpkcs12.a $with_nss_libs/libpkcs7.a $with_nss_libs/libpki1.a $with_nss_libs/libsmime.a $with_nss_libs/libssl.a $with_nss_libs/libnss.a $with_nss_libs/libpk11wrap.a $with_nss_libs/libsoftokn.a $with_nss_libs/libfreebl.a $with_nss_libs/libnsspki.a $with_nss_libs/libnssdev.a $with_nss_libs/libcryptohi.a $with_nss_libs/libcerthi.a $with_nss_libs/libcertdb.a $with_nss_libs/libsecutil.a $with_nss_libs/libnssb.a"
-+					nsslibs="-ldb411 $with_nss_libs/libnssckfw.a $with_nss_libs/libasn1.a $with_nss_libs/libcrmf.a $with_nss_libs/libswfci.a $with_nss_libs/libjar.a $with_nss_libs/libpkcs12.a $with_nss_libs/libpkcs7.a $with_nss_libs/libpki1.a $with_nss_libs/libsmime.a $with_nss_libs/libssl.a $with_nss_libs/libnss.a $with_nss_libs/libpk11wrap.a $with_nss_libs/libsoftokn.a $with_nss_libs/libfreebl.a $with_nss_libs/libnsspki.a $with_nss_libs/libnssdev.a $with_nss_libs/libcryptohi.a $with_nss_libs/libcerthi.a $with_nss_libs/libcertdb.a $with_nss_libs/libsecutil.a $with_nss_libs/libnssb.a"
- 					case "$host" in
- 						*solaris*)
- 						nsslibs="$nsslibs $with_nss_libs/libfreebl.a"
 @@ -28749,7 +28758,7 @@ cat >>conftest.$ac_ext <<_ACEOF
  		#include <sys/socket.h>
  		#include <netinet/in.h>
