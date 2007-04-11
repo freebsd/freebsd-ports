@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freehdl
-PORTVERSION=	0.0.3
+PORTVERSION=	0.0.4
 CATEGORIES=	cad
 MASTER_SITES=	http://cran.mit.edu/~enaroska/
 
@@ -19,7 +19,9 @@ USE_PERL5=	yes
 USE_XLIB=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib \
-		--prefix=${PREFIX}
+		--prefix=${PREFIX} \
+		--mandir=${PREFIX}/man \
+		--infodir=${PREFIX}/info
 
 MAN1=		freehdl-config.1 \
 		freehdl-gennodes.1 \
@@ -42,7 +44,10 @@ plist: build
 	@${RM} ${PLIST}
 	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} \
-		prefix=${PLIST_TMP} ${INSTALL_TARGET}
+		prefix=${PLIST_TMP} \
+		mandir=${PLIST_TMP}/man \
+		infodir=${PLIST_TMP}/info \
+		${INSTALL_TARGET}
 	@${RM} -rf ${PLIST_TMP}/man ${PLIST_TMP}/info
 	@${FIND} -d ${PLIST_TMP} -not -type d \
 		| ${SED} "s|${PLIST_TMP}||1" \
@@ -52,10 +57,4 @@ plist: build
 		| ${PLIST_REPL} >> ${PLIST}
 	@${RM} -rf ${PLIST_TMP}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	doesn't link
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
