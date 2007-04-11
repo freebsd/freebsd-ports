@@ -3450,6 +3450,7 @@ gigabase	ports/databases/gigabase
 gillo		ports/games/gillo
 gimageview	ports/graphics/gimageview
 gimmie		ports/deskutils/gimmie
+gimmix		ports/audio/gimmix
 gimp		ports/graphics/gimp
 gimp-app	ports/graphics/gimp-app
 gimp-app-devel	ports/graphics/gimp-app-devel
