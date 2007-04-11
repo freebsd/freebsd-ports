@@ -1,3 +1,5 @@
+@unexec if cmp -s %D/%%INSTDIR%%/cvsgraph.conf %D/%%INSTDIR%%/cvsgraph.conf.dist; then rm -f %D/%%INSTDIR%%/cvsgraph.conf; fi
+@unexec if cmp -s %D/%%INSTDIR%%/viewvc.conf %D/%%INSTDIR%%/viewvc.conf.dist; then rm -f %D/%%INSTDIR%%/viewvc.conf; fi
 %%INSTDIR%%/bin/cgi/query.cgi
 %%INSTDIR%%/bin/cgi/viewvc.cgi
 %%INSTDIR%%/bin/cvsdbadmin
@@ -10,6 +12,7 @@
 %%INSTDIR%%/bin/standalone.py
 %%INSTDIR%%/bin/svndbadmin
 %%INSTDIR%%/cvsgraph.conf.dist
+@exec [ -f %B/cvsgraph.conf ] || cp %B/%f %B/cvsgraph.conf
 %%INSTDIR%%/lib/PyFontify.py
 %%INSTDIR%%/lib/PyFontify.pyc
 %%INSTDIR%%/lib/accept.py
@@ -120,6 +123,7 @@
 %%INSTDIR%%/templates/roots.ezt
 %%INSTDIR%%/templates/rss.ezt
 %%INSTDIR%%/viewvc.conf.dist
+@exec [ -f %B/viewvc.conf ] || cp %B/%f %B/viewvc.conf
 @dirrm %%INSTDIR%%/templates/include
 @dirrm %%INSTDIR%%/templates/docroot/images
 @dirrm %%INSTDIR%%/templates/docroot
