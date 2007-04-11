@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	shirshegsm@gmail.com
 COMMENT=	TSP (Tunnel Setup Protocol) client from Freenet6
 
+DEPRECATED=	development is discontinued
+EXPIRATION_DATE=	2007-05-11
+
 WRKSRC=		${WRKDIR}/tspc2
 MAN5=		tspc.conf.5
 MAN8=		tspc.8
