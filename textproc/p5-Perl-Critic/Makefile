@@ -8,6 +8,7 @@
 
 PORTNAME=	Perl-Critic
 PORTVERSION=	1.05
+PORTREVISION=	1
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Perl
@@ -17,13 +18,14 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Critique Perl source for style and standards
 
-BUILD_DEPENDS=	${SITE_PERL}/Config/Tiny.pm:${PORTSDIR}/devel/p5-Config-Tiny \
-		${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils \
-		${SITE_PERL}/PPI.pm:${PORTSDIR}/textproc/p5-PPI \
-		${SITE_PERL}/String/Format.pm:${PORTSDIR}/textproc/p5-String-Format \
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils \
+		${SITE_PERL}/B/Keywords.pm:${PORTSDIR}/devel/p5-B-Keywords \
+		${SITE_PERL}/Config/Tiny.pm:${PORTSDIR}/devel/p5-Config-Tiny \
 		${SITE_PERL}/Module/Pluggable.pm:${PORTSDIR}/devel/p5-Module-Pluggable \
-		${SITE_PERL}/Perl/Tidy.pm:${PORTSDIR}/devel/perltidy
-RUN_DEPENDS=	${BUILD_DEPENDS}
+		${SITE_PERL}/PPI.pm:${PORTSDIR}/textproc/p5-PPI \
+		${SITE_PERL}/Perl/Tidy.pm:${PORTSDIR}/devel/perltidy \
+		${SITE_PERL}/String/Format.pm:${PORTSDIR}/textproc/p5-String-Format
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	yes
 
