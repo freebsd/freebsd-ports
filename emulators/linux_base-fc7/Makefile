@@ -8,7 +8,7 @@
 
 PORTNAME=		fc6
 PORTVERSION=		6
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LINUX_RPM_ARCH}/os/Fedora/RPMS \
@@ -123,8 +123,10 @@ PLIST=			pkg-plist
 
 LINUX_OSRELEASE!=	${ECHO} `${SYSCTL} -n compat.linux.osrelease 2>/dev/null`
 
-.if ${LINUX_OSRELEASE} == "2.4.2"
-IGNORE=	compat.linux.osrelease: 2.4.2 is not supported
+.if ${LINUX_OSRELEASE}x == "x"
+IGNORE=			linuxulator is not (kld)loaded
+.elif ${LINUX_OSRELEASE} == "2.4.2"
+IGNORE=			compat.linux.osrelease: 2.4.2 is not supported
 .endif
 
 REMOVE_DIRS=		boot dev home initrd root tmp var/log var/run var/tmp \
