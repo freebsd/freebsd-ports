@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dk-milter
-PORTVERSION=	0.4.1
-PORTREVISION=	4
+PORTVERSION=	0.4.2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dk-milter
@@ -16,6 +15,11 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Domainkeys milter for Sendmail
 
 USE_RC_SUBR=	milter-dk.sh
+
+IPCCHECK!=	ipcrm -q 0 2>&1 || true
+.if ${IPCCHECK:Mimplemented}
+IGNORE=		your system does not support sysvipc
+.endif
 
 .if defined(WITH_POSTFIX_MILTER) || defined(WITH_POSTFIX) || defined(WITH_POSTFIX_CURRENT)
 SENDMAIL_MILTER_IN_BASE=	yes
