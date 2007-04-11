@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	xpp3
-DISTVERSION=	1.1.3_8
+DISTVERSION=	1.1.4c
 PORTEPOCH=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	http://www.extreme.indiana.edu/dist/java-repository/xpp3/distributions/
 DISTNAME=	${PORTNAME}-${DISTVERSION}_src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemoliu@gmail.com
 COMMENT=	XML Pull Parser 3rd Edition (XPP3)
 
 BUILD_DEPENDS=	${JAVAJARDIR}/xmlpull.jar:${PORTSDIR}/textproc/xmlpull
 RUN_DEPENDS=	${JAVAJARDIR}/xmlpull.jar:${PORTSDIR}/textproc/xmlpull
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.4+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
