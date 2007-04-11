@@ -16599,6 +16599,7 @@ xskewb		ports/games/xskewb
 xskyroot	ports/x11/xskyroot
 xslide.el	ports/textproc/xslide.el
 xslint		ports/textproc/xslint
+xsm		ports/www/xsm
 xsmbrowser	ports/net/xsmbrowser
 xsnow		ports/x11/xsnow
 xsokoban	ports/games/xsokoban
