@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-power-manager
-PORTVERSION=	2.18.1
+PORTVERSION=	2.18.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
