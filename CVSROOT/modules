@@ -4814,6 +4814,7 @@ ireport		ports/devel/ireport
 irit		ports/graphics/irit
 iriverter	ports/multimedia/iriverter
 iroffer		ports/irc/iroffer
+iroffer-lamm	ports/irc/iroffer-lamm
 ironpython	ports/lang/ironpython
 irrd		ports/net/irrd
 irrlicht	ports/x11-toolkits/irrlicht
