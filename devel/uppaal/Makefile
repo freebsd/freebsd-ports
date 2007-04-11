@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uppaal
-PORTVERSION=	4.0.2
+PORTVERSION=	4.0.6
 CATEGORIES=	devel java linux
 
 MAINTAINER=	timbob@bigpond.com
@@ -30,6 +30,12 @@ MANCOMPRESSED=	no
 RESTRICTED=	Downloading requires completion of a license agreement
 
 .include <bsd.port.pre.mk>
+
+LINUX_OSRELEASE!=	${SYSCTL} -n compat.linux.osrelease
+
+.if ${LINUX_OSRELEASE} == "2.4.2" || ${OSVERSION} < 700000
+IGNORE=requires compat.linux.osrelease of at least 2.6.16 (needs 7.0 or later)
+.endif
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 ECHO_MSG=/usr/bin/printf
