@@ -7,12 +7,14 @@ WWWOWN="www"
 WWWGRP="www"
 OTRS_USER="otrs"
 OTRS_GROUP="otrs"
+OTRS_UID=121
+OTRS_GID=121
 
 case $2 in
 PRE-INSTALL)
 
 	if ! pw groupshow -n ${OTRS_GROUP} >/dev/null 2>&1; then
-		if pw groupadd -n ${OTRS_GROUP}; then
+		if pw groupadd -n ${OTRS_GROUP} -g ${OTRS_GID}; then
 			echo "Added group \"${OTRS_GROUP}\"."
 		else
 			echo "Adding group \"${OTRS_GROUP}\" failed..."
@@ -22,7 +24,7 @@ PRE-INSTALL)
 
 	if ! id -u ${OTRS_USER} >/dev/null 2>&1; then
 		if pw useradd -n ${OTRS_USER} -g ${OTRS_GROUP} \
-		-G ${WWWGRP} -h - -s /bin/csh \
+		-u ${OTRS_UID} -G ${WWWGRP} -h - -s /bin/csh \
 		-d ${PKG_PREFIX}/otrs -c "OTRS Administrator" ; then
 			echo "Added user \"${OTRS_USER}\"."
 		else
