@@ -7,7 +7,7 @@
 
 PORTNAME=	xotcl
 PORTVERSION=	1.5.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES?=	lang tcl84
 MASTER_SITES=	http://media.wu-wien.ac.at/download/
 
@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .if !defined(AOLSERVER_XOTCL)
-USE_LDCONFIG=	${PREFIX}/xotcl${PORTVERSION}
+USE_LDCONFIG=	${PREFIX}/lib/xotcl${PORTVERSION}
 GNU_CONFIGURE=	yes
 
 OPTIONS=	ACTIWEB		"Include actiweb"		on \
