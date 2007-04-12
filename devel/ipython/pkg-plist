@@ -37,6 +37,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/clearcmd.py
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/clearcmd.pyc
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/clearcmd.pyo
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/envpersist.py
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/envpersist.pyc
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/envpersist.pyo
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ext_rehashdir.py
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ext_rehashdir.pyc
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ext_rehashdir.pyo
@@ -46,12 +49,24 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ibrowse.py
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ibrowse.pyc
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ibrowse.pyo
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/igrid.py
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/igrid.pyc
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/igrid.pyo
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipipe.py
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipipe.pyc
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipipe.pyo
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_completers.py
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_completers.pyc
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_completers.pyo
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_defaults.py
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_defaults.pyc
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_defaults.pyo
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_gnuglobal.py
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_gnuglobal.pyc
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_gnuglobal.pyo
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_p4.py
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_p4.pyc
+%%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_p4.pyo
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_pydb.py
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_pydb.pyc
 %%PYTHON_SITELIBDIR%%/IPython/Extensions/ipy_pydb.pyo
@@ -151,12 +166,15 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/excolors.py
 %%PYTHON_SITELIBDIR%%/IPython/excolors.pyc
 %%PYTHON_SITELIBDIR%%/IPython/excolors.pyo
-%%PYTHON_SITELIBDIR%%/IPython/external/simplegeneric.py
-%%PYTHON_SITELIBDIR%%/IPython/external/simplegeneric.pyc
-%%PYTHON_SITELIBDIR%%/IPython/external/simplegeneric.pyo
 %%PYTHON_SITELIBDIR%%/IPython/external/__init__.py
 %%PYTHON_SITELIBDIR%%/IPython/external/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IPython/external/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/external/simplegeneric.py
+%%PYTHON_SITELIBDIR%%/IPython/external/simplegeneric.pyc
+%%PYTHON_SITELIBDIR%%/IPython/external/simplegeneric.pyo
+%%PYTHON_SITELIBDIR%%/IPython/external/thread2.py
+%%PYTHON_SITELIBDIR%%/IPython/external/thread2.pyc
+%%PYTHON_SITELIBDIR%%/IPython/external/thread2.pyo
 %%PYTHON_SITELIBDIR%%/IPython/genutils.py
 %%PYTHON_SITELIBDIR%%/IPython/genutils.pyc
 %%PYTHON_SITELIBDIR%%/IPython/genutils.pyo
@@ -217,7 +235,9 @@ bin/pycolor
 %%PYTHON_SITELIBDIR%%/IPython/winconsole.py
 %%PYTHON_SITELIBDIR%%/IPython/winconsole.pyc
 %%PYTHON_SITELIBDIR%%/IPython/winconsole.pyo
+@dirrm IPython/Extensions
+@dirrm IPython
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/external
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/UserConfig
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/Extensions
-@dirrm %%PYTHON_SITELIBDIR%%/IPython/external
 @dirrm %%PYTHON_SITELIBDIR%%/IPython
