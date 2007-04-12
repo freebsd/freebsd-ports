@@ -1,10 +1,32 @@
-%%PYTHON_SITELIBDIR%%/_pyproj.so
-%%PYTHON_SITELIBDIR%%/pyproj.py
-%%PYTHON_SITELIBDIR%%/pyproj.pyc
-%%PYTHON_SITELIBDIR%%/pyproj.pyo
+%%PYTHON_SITELIBDIR%%/pyproj/__init__.py
+%%PYTHON_SITELIBDIR%%/pyproj/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyproj/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyproj/_geod.so
+%%PYTHON_SITELIBDIR%%/pyproj/_proj.so
+%%PYTHON_SITELIBDIR%%/pyproj/data/GL27
+%%PYTHON_SITELIBDIR%%/pyproj/data/README
+%%PYTHON_SITELIBDIR%%/pyproj/data/epsg
+%%PYTHON_SITELIBDIR%%/pyproj/data/esri
+%%PYTHON_SITELIBDIR%%/pyproj/data/esri.extra
+%%PYTHON_SITELIBDIR%%/pyproj/data/nad.lst
+%%PYTHON_SITELIBDIR%%/pyproj/data/nad27
+%%PYTHON_SITELIBDIR%%/pyproj/data/nad83
+%%PYTHON_SITELIBDIR%%/pyproj/data/ntv2_out.dist
+%%PYTHON_SITELIBDIR%%/pyproj/data/other.extra
+%%PYTHON_SITELIBDIR%%/pyproj/data/pj_out27.dist
+%%PYTHON_SITELIBDIR%%/pyproj/data/pj_out83.dist
+%%PYTHON_SITELIBDIR%%/pyproj/data/proj_def.dat
+%%PYTHON_SITELIBDIR%%/pyproj/data/td_out.dist
+%%PYTHON_SITELIBDIR%%/pyproj/data/test27
+%%PYTHON_SITELIBDIR%%/pyproj/data/test83
+%%PYTHON_SITELIBDIR%%/pyproj/data/testntv2
+%%PYTHON_SITELIBDIR%%/pyproj/data/testvarious
+%%PYTHON_SITELIBDIR%%/pyproj/data/world
 %%EXAMPLESDIR%%/datum_shift.py
 %%EXAMPLESDIR%%/sample.out
 %%EXAMPLESDIR%%/test.py
 %%EXAMPLESDIR%%/test2.py
 %%EXAMPLESDIR%%/test_transform.py
 @dirrm %%EXAMPLESDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/pyproj/data
+@dirrm %%PYTHON_SITELIBDIR%%/pyproj
