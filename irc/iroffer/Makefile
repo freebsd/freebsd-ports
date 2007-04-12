@@ -17,6 +17,7 @@ COMMENT=	An IRC "bot" that makes sharing files via DCC extremely easy
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
+CONFLICTS=	iroffer-lamm-1.*
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/convertxdccfile ${PREFIX}/bin/
