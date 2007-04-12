@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	wrapper
-PORTVERSION=	1.0
-CATEGORIES=	lang tcl84 tk84
+PORTVERSION=	1.1
+CATEGORIES=	lang tcl84
 MASTER_SITES=	# empty
 PKGNAMEPREFIX=	${TX_PORT}-
 DISTFILES=	# none
@@ -16,7 +16,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Shell wrapper for ${TX_SHELL} (${TX_PORT_U})
 
-NO_BUILD=	yes
+BUILD_DEPENDS=	shc:${PORTSDIR}/misc/shc
 
 SUB_FILES=	wrapper conf.sample pkg-message pkg-install pkg-deinstall
 
@@ -34,6 +34,7 @@ TX_PORT=	tk
 TX_PORT_U=	Tk
 TX_CAT=		x11-toolkits
 USE_TK_RUN=	yes
+CATEGORIES=	x11-toolkits tk84
 .else
 USE_TCL_RUN=	yes
 .endif
@@ -58,8 +59,11 @@ SUB_LIST+=	ECHO_CMD="${ECHO_CMD}" GREP="${GREP}" LS="${LS}" \
 		TX_CAT="${TX_CAT}" TX_VER="${TX_VER}" TX_CONF="${TX_CONF}" \
 		TX_CONF_FULL="${TX_CONF_FULL}"
 
+do-build: apply-slist
+	${MAKE_ENV} ${LOCALBASE}/bin/shc -r -T -f ${WRKDIR}/wrapper
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/wrapper ${PREFIX}/bin/${TX_SHELL}
+	${INSTALL_PROGRAM} ${WRKDIR}/wrapper.x ${PREFIX}/bin/${TX_SHELL}
 	${INSTALL_DATA} ${WRKDIR}/conf.sample ${PREFIX}/etc/${TX_CONF}.sample
 
 post-install:
