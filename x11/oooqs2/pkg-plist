@@ -1,5 +1,6 @@
 bin/oooqs2
 share/applnk/Utilities/oooqs2.desktop
+share/autostart/oooqs2.desktop
 %%DOCSDIR%%/de/oooqs2/common
 %%DOCSDIR%%/de/oooqs2/index.cache.bz2
 %%DOCSDIR%%/de/oooqs2/index.docbook
