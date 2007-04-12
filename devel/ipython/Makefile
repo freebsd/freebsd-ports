@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	ipython
-PORTVERSION=	0.7.3
+PORTVERSION=	0.8.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://ipython.scipy.org/dist/ \
+		${MASTER_SITE_LOCAL} \
 		http://dryice.name/computer/FreeBSD/distfiles/
+MASTER_SITE_SUBDIR=	dryice
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	An enhanced Interactive Python shell
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pexpect.py:${PORTSDIR}/misc/py-pexpect
@@ -22,13 +24,13 @@ MANCOMPRESSED=	yes
 
 PORTDOCS=	*
 
-USE_PYTHON=	2.3+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-BROKEN=		Coredump during build on alpha 4.x
+.if ${PYTHON_REL} < 250
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_ctypes.so:${PORTSDIR}/devel/py-ctypes
 .endif
 
 .include <bsd.port.post.mk>
