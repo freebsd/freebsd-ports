@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tmda
-PORTVERSION=	1.1.5
-PORTREVISION=	1
+PORTVERSION=	1.1.11
 CATEGORIES=	mail python
 MASTER_SITES=	ftp://tmda.net/pub/tmda/releases/ \
 		http://tmda.sourceforge.net/releases/ \
@@ -32,8 +31,7 @@ USE_PYTHON=	2.3+
 
 SUB_FILES=	pkg-message
 
-DOCS=		CODENAMES CRYPTO README THANKS NEWS UPGRADE \
-		htdocs/README htdocs/*.html htdocs/*.css
+DOCS=		CODENAMES CRYPTO README THANKS NEWS UPGRADE
 SAMPLES=	tmda.el tofmipd.sysconfig vtmdarc
 SCRIPTS=	collectaddys def2html printcdb printdbm sendit.sh \
 	 	smtp-check-sender tofmipd.init tofmipd.sysconfig \
@@ -45,9 +43,15 @@ do-build:
 
 do-install:
 	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/TMDA/pythonlib/email
+	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/TMDA/pythonlib/email/mime
+	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/TMDA/Queue
 	${INSTALL_SCRIPT} ${WRKSRC}/TMDA/*.py* ${PYTHONPREFIX_SITELIBDIR}/TMDA
 	${INSTALL_SCRIPT} ${WRKSRC}/TMDA/pythonlib/email/*.py* \
 		${PYTHONPREFIX_SITELIBDIR}/TMDA/pythonlib/email
+	${INSTALL_SCRIPT} ${WRKSRC}/TMDA/pythonlib/email/mime/*.py* \
+		${PYTHONPREFIX_SITELIBDIR}/TMDA/pythonlib/email/mime
+	${INSTALL_SCRIPT} ${WRKSRC}/TMDA/Queue/*.py* \
+		${PYTHONPREFIX_SITELIBDIR}/TMDA/Queue
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/templates/*.txt ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/tmda-* ${PREFIX}/bin
@@ -60,9 +64,9 @@ do-install:
 		${INSTALL_DATA} filters/* ${EXAMPLESDIR}/dot-tmda/filters && \
 		${INSTALL_DATA} lists/* ${EXAMPLESDIR}/dot-tmda/lists
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/img
+	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/html ${DOCSDIR}/pdf
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR} && \
-		${INSTALL_DATA} htdocs/img/* ${DOCSDIR}/img
+		${CP} -r doc/html doc/pdf ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
