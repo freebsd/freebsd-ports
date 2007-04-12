@@ -24,10 +24,11 @@ PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 .if defined (WITH_MODPERL2)
 PKGNAMEPREFIX+=	p5-
 
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
+P5_APREQ_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
 		${SITE_PERL}/ExtUtils/XSBuilder:${PORTSDIR}/devel/p5-ExtUtils-XSBuilder \
 		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+BUILD_DEPENDS+=	${P5_APREQ_DEPENDS}
+RUN_DEPENDS+=	${P5_APREQ_DEPENDS}
 
 USE_PERL5=	yes
 CONFIGURE_ARGS+=	--enable-perl-glue --with-perl=${PERL5}
