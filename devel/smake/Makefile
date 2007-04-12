@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smake
-PORTVERSION=	1.2.a.40
+PORTVERSION=	1.2.a.41
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.berlios.de/pub/smake/alpha/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./a/}
@@ -22,6 +22,9 @@ MAKE_ARGS=	INS_BASE=${PREFIX}
 
 MAN1=		smake.1
 MAN5=		makefiles.5 makerules.5
+
+RULEUSED=	"`${WRKSRC}/conf/oarch.sh`"
+PLIST_SUB=	RULESUSED="${RULEUSED}"
 
 .include <bsd.port.pre.mk>
 

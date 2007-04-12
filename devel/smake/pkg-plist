@@ -1,6 +1,9 @@
 bin/smake
-include/align.h
-include/avoffset.h
+include/schily/%%RULESUSED%%/align.h
+include/schily/%%RULESUSED%%/avoffset.h
+include/schily/%%RULESUSED%%/xconfig.h
+lib/defaults.smk
 lib/libschily.a
 lib/libschily_p.a
-lib/defaults.smk
+@dirrm include/schily/%%RULESUSED%%
+@dirrm include/schily
