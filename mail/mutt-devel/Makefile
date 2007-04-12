@@ -107,7 +107,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.15
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -397,7 +397,7 @@ pre-patch::
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-compressed
 .endif
 .if defined(WITH_MUTT_NNTP)
-DISTFILES+=	patch-${VVV_PATCH_VERSION}.vvv.nntp.gz:vvv
+DISTFILES+=	patch-${VVV_PATCH_VERSION}.vvv.nntp.2.gz:vvv
 CONFIGURE_ARGS+=	--enable-nntp
 XML_NEEDED=	yes
 pre-patch::
