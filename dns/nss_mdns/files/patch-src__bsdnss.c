@@ -1,6 +1,6 @@
---- src/bsdnss.c.orig	Sat Jan 20 17:38:27 2007
-+++ src/bsdnss.c	Sat Jan 20 18:12:24 2007
-@@ -0,0 +1,462 @@
+--- src/bsdnss.c.orig	Tue Apr 10 12:16:00 2007
++++ src/bsdnss.c	Tue Apr 10 12:21:42 2007
+@@ -0,0 +1,428 @@
 +/* rcs tags go here when pushed upstream */
 +/* Original author: Bruce M. Simpson <bms@FreeBSD.org> */
 +
@@ -86,26 +86,6 @@
 +			    char *buffer, size_t buflen, int *errnop,
 +			    int *h_errnop);
 +extern enum nss_status _nss_mdns_gethostbyaddr_r (struct in_addr * addr, int len, int type,
-+			   struct hostent * result, char *buffer,
-+			   size_t buflen, int *errnop, int *h_errnop);
-+extern enum nss_status _nss_mdns4_gethostbyname_r (const char *name, struct hostent * result,
-+			   char *buffer, size_t buflen, int *errnop,
-+			   int *h_errnop);
-+
-+extern enum nss_status _nss_mdns4_gethostbyname2_r (const char *name, int af, struct hostent * result,
-+			    char *buffer, size_t buflen, int *errnop,
-+			    int *h_errnop);
-+extern enum nss_status _nss_mdns4_gethostbyaddr_r (struct in_addr * addr, int len, int type,
-+			   struct hostent * result, char *buffer,
-+			   size_t buflen, int *errnop, int *h_errnop);
-+extern enum nss_status _nss_mdns6_gethostbyname_r (const char *name, struct hostent * result,
-+			   char *buffer, size_t buflen, int *errnop,
-+			   int *h_errnop);
-+
-+extern enum nss_status _nss_mdns6_gethostbyname2_r (const char *name, int af, struct hostent * result,
-+			    char *buffer, size_t buflen, int *errnop,
-+			    int *h_errnop);
-+extern enum nss_status _nss_mdns6_gethostbyaddr_r (struct in_addr * addr, int len, int type,
 +			   struct hostent * result, char *buffer,
 +			   size_t buflen, int *errnop, int *h_errnop);
 +
@@ -213,26 +193,12 @@
 +	psa = (struct sockaddr *)(ai + 1);
 +
 +	/*
-+	 * 1. Select which function to call based on the address family.
++	 * 1. Call the nss_mdns internal gethostbyname function.
 +	 * 2. Map hostent to addrinfo.
 +	 * 3. Hand-off buffer to libc.
 +	 */
-+	switch (pai->ai_family) {
-+	case AF_UNSPEC:
-+		status = _nss_mdns_gethostbyname_r(name, hp, buffer, mbuflen,
-+						   &_errno, &_h_errno);
-+		break;
-+	case AF_INET:
-+		status = _nss_mdns4_gethostbyname_r(name, hp, buffer, mbuflen,
-+						    &_errno, &_h_errno);
-+		break;
-+	case AF_INET6:
-+		status = _nss_mdns6_gethostbyname_r(name, hp, buffer, mbuflen,
-+						    &_errno, &_h_errno);
-+		break;
-+	default:
-+		break;
-+	}
++	status = _nss_mdns_gethostbyname_r(name, hp, buffer, mbuflen,
++					   &_errno, &_h_errno);
 +	status = __nss_compat_result(status, _errno);
 +
 +	if (status == NS_SUCCESS) {
