@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	12.4
+PORTVERSION=	12.5
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lafn.org/~av832/ CENKES
 PKGNAMEPREFIX=	health-
