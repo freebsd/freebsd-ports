@@ -116,7 +116,8 @@ MAN1+=		gappletviewer${SUFFIX}.1 \
 		jcf-dump${SUFFIX}.1 \
 		jv-scan${SUFFIX}.1 jv-convert${SUFFIX}.1 \
 		rmic${SUFFIX}.1 rmiregistry${SUFFIX}.1
-INFO+=		gcc${SUFFIX}/gcj
+INFO+=		gcc${SUFFIX}/cp-tools \
+		gcc${SUFFIX}/gcj
 PLIST_SUB+=	JAVA=""
 .else
 CONFIGURE_ARGS+=--disable-libgcj
