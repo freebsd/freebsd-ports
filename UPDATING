@@ -26,8 +26,8 @@ upgrades.
   Stopping nagios.
   # find / -user nagios -exec chown 181 {} \;
   # find / -group nagios -exec chgrp 181 {} \;
-  # pw usermod nagios -u 181
   # pw groupmod nagios -g 181
+  # pw usermod nagios -u 181 -g 181
   # /usr/local/etc/rc.d/nagios start
   Performing sanity check of nagios configuration: OK
   Starting nagios.
