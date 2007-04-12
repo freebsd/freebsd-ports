@@ -10,7 +10,7 @@ PORTVERSION=		3.1.0
 CATEGORIES=		www java
 MASTER_SITES=		http://www.caucho.com/download/
 
-MAINTAINER=		jbq@caraldi.com
+MAINTAINER=		boris@tagnet.ru
 COMMENT=		Resin, a Java-based Application Server, 3.x branch
 
 USE_JAVA=		yes
