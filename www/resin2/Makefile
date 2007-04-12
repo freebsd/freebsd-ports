@@ -11,7 +11,7 @@ PORTREVISION=		2
 CATEGORIES=		www java
 MASTER_SITES=		http://www.caucho.com/download/
 
-MAINTAINER=		jbq@caraldi.com
+MAINTAINER=		boris@tagnet.ru
 COMMENT=		Resin, a Java-based Application Server, 2.x branch
 
 USE_JAVA=		yes
