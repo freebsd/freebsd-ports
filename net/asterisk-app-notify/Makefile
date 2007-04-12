@@ -7,6 +7,7 @@
 
 PORTNAME=	app_notify
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.mezzo.net/asterisk/ \
 		http://static.oyam.ca/freebsd/ports/
@@ -15,8 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	mayo@oyam.ca
 COMMENT=	Notify application module for the Asterisk PBX
 
-BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
-RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
+BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk12
+RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk12
 
 USE_GMAKE=	yes
 
