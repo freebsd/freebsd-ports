@@ -7,8 +7,11 @@
 
 PORTNAME=	qct
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	http://qct.sourceforge.net/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://qct.sourceforge.net/
+MASTER_SITE_SUBDIR=	qct
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt4-
 
 MAINTAINER=	bsam@FreeBSD.org
@@ -19,18 +22,12 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=yes
 
+DOCSDIR=	${TARGETDIR}/share/doc/py-qt4-${PORTNAME}
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/qct.1.txt ${DOCSDIR}/qct.1.txt
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if defined(NOPORTDOCS)
-PLIST_SUB+=	PORTDOCS="@comment "
-.else
-PLIST_SUB+=	PORTDOCS=
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
