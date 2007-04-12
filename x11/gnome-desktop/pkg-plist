@@ -318,6 +318,7 @@ share/locale/zu/LC_MESSAGES/gnome-desktop-2.0.mo
 @dirrm share/gnome/help/lgpl/pa
 @dirrm share/gnome/help/lgpl/fr
 @dirrm share/gnome/help/lgpl/es
+@dirrm share/gnome/help/lgpl/ar
 @dirrm share/gnome/help/gpl/zh_CN
 @dirrm share/gnome/help/gpl/vi
 @dirrm share/gnome/help/gpl/uk
@@ -326,10 +327,13 @@ share/locale/zu/LC_MESSAGES/gnome-desktop-2.0.mo
 @dirrm share/gnome/help/gpl/fr
 @dirrm share/gnome/help/gpl/fi
 @dirrm share/gnome/help/gpl/es
+@dirrm share/gnome/help/gpl/ca
+@dirrm share/gnome/help/gpl/ar
 @dirrm share/gnome/help/fdl/uk
 @dirrm share/gnome/help/fdl/sv
 @dirrm share/gnome/help/fdl/fr
 @dirrm share/gnome/help/fdl/es
+@dirrm share/gnome/help/fdl/ar
 @dirrm share/gnome/gnome-about/headers
 @dirrm include/gnome-desktop-2.0/libgnomeui
 @dirrm include/gnome-desktop-2.0/libgnome
