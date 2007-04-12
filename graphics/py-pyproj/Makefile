@@ -6,22 +6,19 @@
 #
 
 PORTNAME=	pyproj
-PORTVERSION=	1.8.1a
+PORTVERSION=	1.8.2
 CATEGORIES=	graphics python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/p/pyproj/
+MASTER_SITES=	http://pyproj.googlecode.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	fmysh@iijmio-mail.jp
 COMMENT=	Pyrex wrapper to provide python interfaces to PROJ.4
 
-LIB_DEPENDS=	proj.5:${PORTSDIR}/graphics/proj
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.8.1
+WRKSRC=		${WRKDIR}/${DISTNAME:C/[a-z]$//}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-MAKE_ENV=	PROJ_DIR=${LOCALBASE}
 
-PORTDOCS=	Changelog README README.html
+PORTDOCS=	Changelog README README.html LICENSE_proj4
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
