@@ -7,7 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.5.a.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -35,7 +35,6 @@ SUB_FILES=	pkgIndex.tcl
 
 .if !defined(BUILDING_TK_THREADS)
 USE_TCL=	${SHORT_TK_VER}
-USE_TCL_BUILD=	${SHORT_TK_VER}
 
 OPTIONS=	TK85_MAN "Install tk 8.5 manpages" off
 .else
@@ -54,9 +53,12 @@ CONFIGURE_ARGS+=	--enable-threads --with-tcl=${LOCALBASE}/lib/tcl${TK_VER}${THRE
 CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			ac_cv_path_tclsh="${LOCALBASE}/bin/tclsh${TK_VER}${THREADS_SUFFIX}"
 LATEST_LINK=		tk85${THREADS_SUFFIX}
+SUB_LIST+=		TK_PROVIDE="; package provide Tk-threads ${TK_VER}"
 .else
 CONFIGURE_ARGS+=	--disable-threads --with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
 			ac_cv_path_tclsh="${TCLSH}"
+
+SUB_LIST+=		TK_PROVIDE=""
 
 .if defined(NO_INSTALL_MANPAGES) || !defined(WITH_TK84_MAN)
 
