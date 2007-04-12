@@ -7,7 +7,7 @@
 
 PORTNAME=	nss_mdns
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://0pointer.de/lennart/projects/nss-mdns/
 DISTNAME=	nss-mdns-${PORTVERSION}
