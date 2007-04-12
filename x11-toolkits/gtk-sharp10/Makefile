@@ -8,7 +8,7 @@
 
 PORTNAME=	gtk-sharp
 PORTVERSION=	1.0.10
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://go-mono.com/sources/${PORTNAME}/
 
@@ -23,7 +23,8 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_PERL5_RUN=	yes
-USE_GNOME=	gnomehack gtkhtml3 vte librsvg2
+USE_GNOME=	gnomehack gtkhtml3 vte librsvg2 libgnomecanvas \
+		libgnomeprintui libglade2
 
 MAKE_ENV=MONO_SHARED_DIR=${WRKDIR}
 
