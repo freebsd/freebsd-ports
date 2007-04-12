@@ -162,7 +162,7 @@ QT4_VERSION=	4.2.3
 
 _QT_COMPONENTS_ALL=	accessible assistant codecs-cn codecs-jp codecs-kr \
 			codecs-tw corelib designer doc gui iconengines \
-			imageformats inputformats assistantclient \
+			imageformats inputmethods assistantclient \
 			linguist moc network opengl pixeltool porting \
 			qmake qt3support qtconfig qtestlib qvfb rcc sql svg \
 			uic uic3 xml
@@ -179,7 +179,7 @@ doc_DEPENDS=		misc/qt4-doc
 gui_DEPENDS=		x11-toolkits/qt4-gui
 iconengines_DEPENDS=	graphics/qt4-iconengines
 imageformats_DEPENDS=	graphics/qt4-imageformats
-inputformats_DEPENDS=	x11/qt4-inputformats
+inputmethods_DEPENDS=	x11/qt4-inputmethods
 assistantclient_DEPENDS=devel/qt4-libqtassistantclient
 assistantclient_NAME=	libQtAssistantClient
 linguist_DEPENDS=	devel/qt4-linguist
