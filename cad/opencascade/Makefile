@@ -44,7 +44,6 @@ ITK_MM=		3.3
 TIX_VER=	8184.1
 TIX_MM=		8.1
 LIB_TCLX=	${LOCALBASE}/lib/tclx${TCL_VER}/libtclx${TCL_VER}.so
-THRSH=		${TCLSH}-threads
 
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 WRKSRC=		${WRKDIR}/${DISTNAME}/ros
@@ -156,8 +155,6 @@ pre-everything::
 
 pre-configure:
 	${CHMOD} a+x ${WRKSRC}/${CONFIGURE_SCRIPT}
-	${REINPLACE_CMD} -e 's|tclConfig.sh|tclConfig-threads.sh|'	\
-		${WRKSRC}/${CONFIGURE_SCRIPT}
 	${REINPLACE_CMD} -e 's|%%CASROOT%%|${CASROOT}|'	\
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|'	\
 		-e 's|%%TCL_LIBDIR%%|${TCL_LIBDIR}|'	\
@@ -178,11 +175,11 @@ pre-configure:
 		${WRKSRC}/src/OS/ApplicationFramework.tcl
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|'\
 		-e 's|/usr/X11R6|${X11BASE}|'		\
-		-e 's|/usr/local/bin/tclsh8.4|${THRSH}|'\
+		-e 's|/usr/local/bin/tclsh8.4|${TCLSH}|'\
 		${PATCH_WRKSRC}/wok/site/wokinit.csh	\
 		${WRKSRC}/src/WOKsite/wokinit.csh	\
 		${WRKSRC}/src/OS/WOK.tcl
-	${REINPLACE_CMD} -e 's|$${TCLBIN}/tclsh|${THRSH}|'	\
+	${REINPLACE_CMD} -e 's|$${TCLBIN}/tclsh|${TCLSH}|'	\
 		${PATCH_WRKSRC}/wok/site/wok.csh		\
 		${WRKSRC}/src/WOKsite/wok.csh
 	${REINPLACE_CMD} -e 's|/usr/bin/g++|${CXX}|'	\
