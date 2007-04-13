@@ -320,6 +320,7 @@
     SUBDIR += mod_auth_remote
     SUBDIR += mod_auth_useragent
     SUBDIR += mod_authenticache
+    SUBDIR += mod_authnz_external
     SUBDIR += mod_backhand
     SUBDIR += mod_bandwidth
     SUBDIR += mod_bf
