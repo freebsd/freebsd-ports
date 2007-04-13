@@ -13808,6 +13808,7 @@ rubygem-needle	ports/devel/rubygem-needle
 rubygem-net-sftp	ports/security/rubygem-net-sftp
 rubygem-net-ssh	ports/security/rubygem-net-ssh
 rubygem-openid	ports/net/rubygem-openid
+rubygem-parsetree	ports/devel/rubygem-parsetree
 rubygem-pdfwriter	ports/print/rubygem-pdfwriter
 rubygem-rails	ports/www/rubygem-rails
 rubygem-rails-app-installer	ports/www/rubygem-rails-app-installer
