@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	0.90.1
-PORTREVISION=	1
+PORTVERSION=	0.90.2
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -47,7 +46,6 @@ CONFIGURE_ARGS=	--with-dbdir=${DBDIR} \
 		--disable-clamuko \
 		--disable-clamav \
 		--enable-bigstack \
-		--disable-gethostbyname_r \
 		--enable-readdir_r \
 		--disable-dependency-tracking
 CPPFLAGS+=	-I${LOCALBASE}/include \
@@ -98,6 +96,12 @@ PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 		CLAMAVGROUP=${CLAMAVGROUP}
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+CONFIGURE_ARGS+=	--disable-gethostbyname_r
+.else
+CONFIGURE_ARGS+=	--enable-gethostbyname_r
+.endif
 
 # This port has a problem with -pthread,
 # force to use -lthr until it's not fixed.
@@ -159,6 +163,7 @@ pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
+	@${INSTALL_DATA} ${WRKSRC}/clamav-config.h ${PREFIX}/include
 .for c in clamd freshclam
 	@[ -f ${PREFIX}/etc/${c}.conf ] || \
 		${CP} ${PREFIX}/etc/${c}.conf.default ${PREFIX}/etc/${c}.conf

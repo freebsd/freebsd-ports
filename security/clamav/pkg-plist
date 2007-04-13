@@ -8,6 +8,7 @@ bin/sigtool
 %%CLAMAV-MILTER%%sbin/clamav-milter
 sbin/clamd
 include/clamav.h
+include/clamav-config.h
 lib/libclamav.so.2
 lib/libclamav.so
 lib/libclamav.a

@@ -35,11 +35,23 @@ start_precmd()
 		rm "$clamav_milter_socket"
 	fi
 	rc_flags="--pidfile ${pidfile} ${flags:-$clamav_milter_flags} $clamav_milter_socket"
-	for a in 1 2 3 4 5 6 7 8 9 10
+	
+	echo -n "Waiting for clamd socket.. "
+	i=${clamav_milter_socktimeout}
+	while [ $i -ne 0 ]
 	do
 		[ -S "$clamav_clamd_socket" ] && break
+		if [ `expr $i % 10` -eq 0 ]; then
+			echo -n "${i}.. "
+		fi
 		sleep 1
+		i=$(($i-1))
 	done
+	echo
+	if [ $i -eq 0 ]; then
+		echo "There is no clamd socket (${clamav_clamd_socket})!"
+		exit 1
+	fi
 }
 
 # read settings, set default values
@@ -48,5 +60,6 @@ load_rc_config $name
 : ${clamav_milter_socket="%%CLAMAV_MILTER_SOCKET%%"}
 : ${clamav_clamd_socket="%%CLAMAV_CLAMD_SOCKET%%"}
 : ${clamav_milter_flags="--postmaster-only --local --outgoing --timeout=0 --max-children=50"}
+: ${clamav_milter_socktimeout="60"}
 
 run_rc_command "$1"
