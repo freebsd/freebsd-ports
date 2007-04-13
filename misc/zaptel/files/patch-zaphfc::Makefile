@@ -3,12 +3,6 @@ $FreeBSD$
 
 --- zaphfc/Makefile.orig
 +++ zaphfc/Makefile
-@@ -1,4 +1,4 @@
--# $Id$
-+# $Id: Makefile,v 1.1 2006/07/06 05:51:19 root Exp root $
- 
- 
- # CWARNFLAGS= -D__nothing_because_have_cplusplus_comments__
 @@ -7,9 +7,7 @@
  KMOD=	zaphfc
  SRCS=	zaphfc.c zaphfc_freebsd.c

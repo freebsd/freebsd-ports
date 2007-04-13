@@ -1,5 +1,5 @@
 
-$FreeBSD$
+$FreeBSD: /tmp/pcvs/ports/net/zaptel12/files/Attic/patch-zaptel::Makefile.orig,v 1.1 2007-04-13 06:43:57 sobomax Exp $
 
 --- zaptel/Makefile
 +++ zaptel/Makefile

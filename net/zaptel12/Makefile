@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zaptel
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2.13
 CATEGORIES=	misc
 MASTER_SITES=	http://www.pbxpress.com/~gonzo/
 DISTNAME=	${PORTNAME}-bsd-${PORTVERSION}
