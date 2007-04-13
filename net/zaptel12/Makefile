@@ -46,6 +46,7 @@ pre-su-install:
 	@${MKDIR} ${PREFIX}/lib/zaptel
 
 post-install:
+	@${LN} -sfh ${PREFIX}/include ${PREFIX}/include/zaptel
 	@${TOUCH} ${PREFIX}/lib/zaptel/linker.hints
 	@${CAT} ${PKGMESSAGE}
 
