@@ -1,0 +1,34 @@
+bin/cog.py
+bin/test_cog.py
+%%PYTHON_SITELIBDIR%%/cogapp/cogapp.py
+%%PYTHON_SITELIBDIR%%/cogapp/makefiles.py
+%%PYTHON_SITELIBDIR%%/cogapp/test_cogapp.py
+%%PYTHON_SITELIBDIR%%/cogapp/test_makefiles.py
+%%PYTHON_SITELIBDIR%%/cogapp/test_whiteutils.py
+%%PYTHON_SITELIBDIR%%/cogapp/whiteutils.py
+%%PYTHON_SITELIBDIR%%/cogapp/__init__.py
+%%PYTHON_SITELIBDIR%%/cogapp/cogapp.pyc
+%%PYTHON_SITELIBDIR%%/cogapp/makefiles.pyc
+%%PYTHON_SITELIBDIR%%/cogapp/test_cogapp.pyc
+%%PYTHON_SITELIBDIR%%/cogapp/test_makefiles.pyc
+%%PYTHON_SITELIBDIR%%/cogapp/test_whiteutils.pyc
+%%PYTHON_SITELIBDIR%%/cogapp/whiteutils.pyc
+%%PYTHON_SITELIBDIR%%/cogapp/__init__.pyc
+%%PYTHON_SITELIBDIR%%/cogapp/cogapp.pyo
+%%PYTHON_SITELIBDIR%%/cogapp/makefiles.pyo
+%%PYTHON_SITELIBDIR%%/cogapp/test_cogapp.pyo
+%%PYTHON_SITELIBDIR%%/cogapp/test_makefiles.pyo
+%%PYTHON_SITELIBDIR%%/cogapp/test_whiteutils.pyo
+%%PYTHON_SITELIBDIR%%/cogapp/whiteutils.pyo
+%%PYTHON_SITELIBDIR%%/cogapp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/handyxml/handyxml.py
+%%PYTHON_SITELIBDIR%%/handyxml/test_handyxml.py
+%%PYTHON_SITELIBDIR%%/handyxml/__init__.py
+%%PYTHON_SITELIBDIR%%/handyxml/handyxml.pyc
+%%PYTHON_SITELIBDIR%%/handyxml/test_handyxml.pyc
+%%PYTHON_SITELIBDIR%%/handyxml/__init__.pyc
+%%PYTHON_SITELIBDIR%%/handyxml/handyxml.pyo
+%%PYTHON_SITELIBDIR%%/handyxml/test_handyxml.pyo
+%%PYTHON_SITELIBDIR%%/handyxml/__init__.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/cogapp
+@dirrm %%PYTHON_SITELIBDIR%%/handyxml

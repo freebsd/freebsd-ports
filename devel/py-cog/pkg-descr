@@ -1,0 +1,7 @@
+Cog transforms files in a very simple way: it finds chunks of Python code
+embedded in them, executes the Python code, and inserts its output back into
+the original file. The file can contain whatever text you like around the
+Python code. It will usually be source code.
+
+Author: Ned Batchelder
+WWW: http://www.nedbatchelder.com/code/cog/index.html
