@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c110eda2-e995-11db-a944-0012f06707f0">
+    <topic>freeradius -- EAP-TTLS Tunnel Memory Leak Remote DOS Vulnerability</topic>
+    <affects>
+      <package>
+	<name>freeradius</name>
+	<range><le>1.1.5</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The freeradius development team reports:</p>
+	<blockquote cite="http://www.freeradius.org/security.html">
+	  <p>A malicous 802.1x supplicant could send malformed Diameter format
+	     attributes inside of an EAP-TTLS tunnel. The server would reject
+	     the authentication request, but would leak one VALUE_PAIR data
+	     structure, of approximately 300 bytes. If an attacker performed
+	     the attack many times (e.g. thousands or more over a period of
+	     minutes to hours), the server could leak megabytes of memory,
+	     potentially leading to an "out of memory" condition, and early
+	     process exit.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>23466</bid>
+      <url>http://www.freeradius.org/security.html</url>
+    </references>
+    <dates>
+      <discovery>2007-04-10</discovery>
+      <entry>2007-04-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f1c4d133-e6d3-11db-99ea-0060084a00e5">
     <topic>fetchmail -- insecure APOP authentication</topic>
     <affects>
