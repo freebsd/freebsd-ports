@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-earth
-PORTVERSION=	4.0.2414
+PORTVERSION=	4.0.2735
 CATEGORIES=	astro deskutils
 MASTER_SITES=	http://dl.google.com/earth/GE${PORTVERSION:C/\..*//g}/
 DISTFILES=	${TARGET_DISTFILE}
@@ -15,13 +15,8 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Explore, Search and Discover
 
-BUILD_DEPENDS=	unmakeself:${PORTSDIR}/archivers/unmakeself
+EXTRACT_DEPENDS=	unmakeself:${PORTSDIR}/archivers/unmakeself
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
-
-# Current version of Google Earth might not be vulnerable anymore.
-# Use NO_IGNORE=yes and DISABLE_VULNERABILITIES=yes if you're using portaudit
-# to bypass the security checks.
-FORBIDDEN=	Buffer-overflow vulnerability: http://vuxml.FreeBSD.org/5c9a2769-5ade-11db-a5ae-00508d6a62df.html
 
 RESTRICTED=	Not sure about redistribution rights
 
@@ -52,17 +47,21 @@ do-fetch:
 		${FETCH_CMD} ${FETCH_BEFORE_ARGS} -1 ${MASTER_SITES:S|$|${REAL_DISTFILE}|g} ${FETCH_AFTER_ARGS}; \
 	fi
 
-do-build:
+do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
 	@cd ${WRKSRC} && ${UNMAKESELF} ${DISTFILES} && ${RM} -f ${DISTFILES}
 	@cd ${WRKSRC} && ${TAR} xf googleearth-data.tar && ${RM} -f googleearth-data.tar
 	@cd ${WRKSRC} && ${TAR} xf googleearth-linux-x86.tar && ${RM} -f googleearth-linux-x86.tar
+
+do-patch:
 	@${REINPLACE_CMD} -i "" -e 's|^# Set the home.*|GOOGLEEARTH_DATA_PATH=${DATADIR}|' ${WRKSRC}/bin/googleearth
 	@${REINPLACE_CMD} -i "" -e "s|^# Let's boogie.*|rm -f \$${HOME}/.googleearth/instance-running-lock|" ${WRKSRC}/bin/googleearth
 	@${REINPLACE_CMD} -i "" -e 's/^TMPPATH.*/exit 0/' ${WRKSRC}/postinstall.sh
 	@${REINPLACE_CMD} -i "" -e 's|\"\$$SETUP_INSTALLPATH/|\"${WRKSRC}/|' ${WRKSRC}/postinstall.sh
 	@${REINPLACE_CMD} -i "" -e 's|\$$SETUP_INSTALLPATH/googleearth |${PREFIX}/bin/googleearth |' ${WRKSRC}/postinstall.sh
+
+do-build:
 	@${SETENV} SETUP_INSTALLPATH=${DATADIR} ${WRKSRC}/postinstall.sh
 	@cd ${WRKSRC} && ${RM} -rf setup.* preuninstall.sh postinstall.sh
 	@${CHOWN} -R ${SHAREDOWN}:${SHAREDGRP} ${WRKSRC}
@@ -71,9 +70,8 @@ do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/googleearth-mimetypes.xml ${PREFIX}/share/mime/packages/
 	${INSTALL_DATA} ${WRKSRC}/googleearth.desktop ${PREFIX}/share/applications/
-	${CP} -r ${WRKSRC}/* ${DATADIR}
-	@${RM} -f ${DATADIR}/googleearth-mimetypes.xml
-	@${RM} -f ${DATADIR}/googleearth.desktop
+	${CP} -rp ${WRKSRC}/* ${DATADIR}
+	${RM} -f ${DATADIR}/googleearth-mimetypes.xml ${DATADIR}/googleearth.desktop
 	${LN} -sf ${DATADIR}/bin/googleearth ${PREFIX}/bin/
 	-@update-mime-database ${PREFIX}/share/mime
 	-@update-desktop-database
