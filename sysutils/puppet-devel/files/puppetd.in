@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+
+# PROVIDE: puppetd
+# REQUIRE: NETWORK
+
+# Add the following lines to /etc/rc.conf to enable puppetd:
+#
+# puppetmasterd_enable="YES"
+
+. %%RC_SUBR%%
+
+name="puppetd"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/${name}"
+command_interpreter="${prefix}/bin/ruby18"
+
+load_rc_config "$name"
+: ${puppetd_enable="NO"}
+: ${puppetd_confdir="%%PREFIX%%/etc/puppet"}
+: ${puppetd_pid="/var/run/puppet/${name}.pid"}
+: ${puppetd_flags="--confdir $puppetd_confdir "}
+command_args="$puppetd_flags"
+pidfile="$puppetd_pid"
+
+run_rc_command "$1"
