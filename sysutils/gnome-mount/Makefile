@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-mount
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://people.freedesktop.org/~david/dist/
 

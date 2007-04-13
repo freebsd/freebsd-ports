@@ -5,7 +5,7 @@
          <type>list</type>
          <list_type>string</list_type>
 -        <default>[shortname=lower,uid=]</default>
-+        <default>[longnames,uid=]</default>
++        <default>[longnames,-u=]</default>
          <locale name="C">
            <short>Default mount options for vfat fs</short>
            <long>A list of default mount options for volumes formatted with the vfat file system.</long>
