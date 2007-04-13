@@ -8,7 +8,7 @@
 PORTNAME=		glob2
 PORTVERSION=		0.8.22
 CATEGORIES=		games
-MASTER_SITES=		http://globulation2.org/releases/${PORTVERSION}/:src	\
+MASTER_SITES=		http://dl.sv.nongnu.org/releases/glob2/${PORTVERSION}/:src	\
 			${MASTER_SITE_LOCAL:S|$|:data|:S|%SUBDIR%|${MASTER_SITE_SUBDIR}|}
 MASTER_SITE_SUBDIR=	thierry
 DISTFILES=		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src	\
