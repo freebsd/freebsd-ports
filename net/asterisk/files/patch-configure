@@ -1,0 +1,32 @@
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
+@@ -23776,7 +23776,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lodbc ${pbxlibdir} -lltdl $LIBS"
++LIBS="-lodbc ${pbxlibdir} $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -23855,7 +23855,7 @@
+ 
+ 
+    if test "${AST_UNIXODBC_FOUND}" = "yes"; then
+-      UNIXODBC_LIB="-lodbc -lltdl"
++      UNIXODBC_LIB="-lodbc"
+       UNIXODBC_HEADER_FOUND="1"
+       if test "x${UNIXODBC_DIR}" != "x"; then
+          UNIXODBC_LIB="${pbxlibdir} ${UNIXODBC_LIB}"
+@@ -28065,7 +28065,7 @@
+ 
+ 	fi
+ 
+-	PLATFORM_OPENH323="h323_${PWLIB_PLATFORM}_${OPENH323_SUFFIX}"
++	PLATFORM_OPENH323="h323_${OPENH323_SUFFIX}"
+ 
+ 	if test "${HAS_OPENH323:-unset}" != "unset"; then
+ 	   { echo "$as_me:$LINENO: checking OpenH323 installation validity" >&5
