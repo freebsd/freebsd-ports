@@ -2023,6 +2023,7 @@
     SUBDIR += rubygem-hoe
     SUBDIR += rubygem-inline
     SUBDIR += rubygem-needle
+    SUBDIR += rubygem-parsetree
     SUBDIR += rubygem-rake
     SUBDIR += rubygem-rapt
     SUBDIR += rubygem-rgl

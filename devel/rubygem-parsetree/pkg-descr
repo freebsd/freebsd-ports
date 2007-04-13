@@ -1,0 +1,6 @@
+ParseTree is a C extension (using RubyInline) that extracts 
+the parse tree for an entire class or a specific method and 
+returns it as a s-expression (aka sexp) using ruby's arrays, 
+strings, symbols, and integers.
+
+WWW: http://rubyforge.org/projects/parsetree/
