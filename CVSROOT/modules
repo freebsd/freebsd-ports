@@ -11496,6 +11496,7 @@ pecl-hash	ports/security/pecl-hash
 pecl-hidef	ports/devel/pecl-hidef
 pecl-htscanner	ports/devel/pecl-htscanner
 pecl-id3	ports/audio/pecl-id3
+pecl-imagick	ports/graphics/pecl-imagick
 pecl-imlib2	ports/graphics/pecl-imlib2
 pecl-json	ports/devel/pecl-json
 pecl-lzf	ports/archivers/pecl-lzf
