@@ -11,6 +11,24 @@ in the port directory:
 make extract;  more `find . -type f -maxdepth 2 -name UPGRADING`
 
 ###########################################################################
+# dspam-devel-3.8.0,1
+#
+
+- Official "stable" release
+- fixed message corruption problems with direct delivery (when using direct
+delivery (e.g. DeliveryHost), certain servers require a linefeed after
+carriage return otherwise the message will become malformatted).
+- added a patch to fix CRLF pairs that are not correctly stripped out when
+saving the message to the quarantine mbox file; useful if using LMTP or
+SMTP (as opposed to running the client directly from a delivery script),
+*AND* you are using the quarantine feature [1] I'm interested if anything
+breaks in the WebUI if you're not using either SMTP or LMTP.
+
+[1] patch from John Peacock <jpeacock@rowman.com> 
+    http://mailing-list.nuclearelephant.com/6023.html
+
+
+###########################################################################
 # dspam-devel-3.6.8.20061010.1118_1,1
 #
 
@@ -18,7 +36,7 @@ Port changes:
 - added safecat as LDA [1]
 - give user the possibility to configure where dspam.conf is [1]
 - bump PORTEPOCH to fix a stupid mistake (which had no real impact on the
-port but there's noo ther way ot do it - on 2006-12-17)
+port but there's no other way to do it - on 2006-12-17)
 
 [1] patch from Emil Isberg <emil@pyttemjuk.se> [1]
 
