@@ -1,0 +1,3 @@
+@unexec easy_install -q -N -m %D/%%PYTHON_SITELIBDIR%%/%%PYTWITTER_EGG%%
+%%PYTHON_SITELIBDIR%%/%%PYTWITTER_EGG%%
+@exec easy_install -N %D/%%PYTHON_SITELIBDIR%%/%%PYTWITTER_EGG%%
