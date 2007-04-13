@@ -42,13 +42,15 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		ODBC		"Enable ODBC support" on \
 		POSTGRES	"Enable PostgreSQL support" on \
 		RADIUS		"Enable RADIUS accounting support" on \
-		SNMP		"Enable SNMP support" on
+		SNMP		"Enable SNMP support" on \
+		H323		"Enable H.323 support" on
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-OPTIONS+=	H323		"Enable H.323 support" on \
-		ZAPTEL		"Enable Zaptel support" on
+OPTIONS+=	ZAPTEL		"Enable Zaptel support" on
+.else
+WITHOUT_ZAPTEL=	yes
 .endif
 
 .if defined(WITHOUT_H323)
