@@ -23,5 +23,5 @@ MD5 (mutt/patch-1.5.15.sidebar.20070408.txt) = 8fcae5ea38eac45616762d76f7cadacf
 SHA256 (mutt/patch-1.5.15.sidebar.20070408.txt) = 3b61cd21cbe5bd5851a5441ce049ace3329f710bf5224064a6293d379d14c5f8
 SIZE (mutt/patch-1.5.15.sidebar.20070408.txt) = 51101
 MD5 (mutt/zh-mutt-1.5.15-20060703.diff.gz) = d6fccb601ac3521c4b23d3871736e7d7
-SHA256 (mutt/zh-mutt-1.5.15-20060703.diff.gz) = 2acba93f80753f5f96096a7f8521bf5b
+SHA256 (mutt/zh-mutt-1.5.15-20060703.diff.gz) = 2acba93f80753f5f96096a7f8521bf5bd873a09da3f6b39df446b109a1f05308
 SIZE (mutt/zh-mutt-1.5.15-20060703.diff.gz) = 4851
