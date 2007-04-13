@@ -12880,6 +12880,7 @@ py-twistedSNMP	ports/net-mgmt/py-twistedSNMP
 py-twistedWeb	ports/www/py-twistedWeb
 py-twistedWeb2	ports/www/py-twistedWeb2
 py-twistedWords	ports/net-im/py-twistedWords
+py-twitter	ports/net/py-twitter
 py-twofish	ports/security/py-twofish
 py-unit		ports/devel/py-unit
 py-urlimport	ports/devel/py-urlimport
