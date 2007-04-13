@@ -507,6 +507,7 @@
     SUBDIR += pear-Image_Canvas
     SUBDIR += pear-Image_Color
     SUBDIR += pear-Image_Graph
+    SUBDIR += pecl-imagick
     SUBDIR += pecl-imlib2
     SUBDIR += pecomato
     SUBDIR += peps
