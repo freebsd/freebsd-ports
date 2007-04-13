@@ -130,6 +130,7 @@ DarwinStreamingSrvr*-Source.tar net/DarwinStreamingServer Server License restric
 						See http://www.opensource.apple.com/apsl/
 vbsd*e.tar.Z		security/vscan		Restricted to the license
 						terms set for VirusScan
+dbvis			java/dbvis		Redistribution is not permitted
 dc3play-*		graphics/dc3play	No redistribution due to
 						beta status
 dcl-*-C.tar.gz		science/cdcl		No commercial use
