@@ -1,7 +1,17 @@
-diff -uN -r src/baz/libarch/pfs.c src/baz/libarch/pfs.c
---- src/baz/libarch/pfs.c	2005-06-20 23:59:37.000000000 +0200
-+++ src/baz/libarch/pfs.c	2006-01-14 17:12:24.000000000 +0100
-@@ -520,6 +520,66 @@
+--- src/baz/libarch/pfs.c.orig	Mon Jun 20 23:59:37 2005
++++ src/baz/libarch/pfs.c	Thu Apr  5 09:23:25 2007
+@@ -513,13 +513,73 @@
+     char *at_pos = str_chr_index (parsed_uri->host, '@');
+     if (!at_pos)
+         return;
+-    parsed_uri->authinfo = str_replace (parsed_uri->authinfo, 
+-					str_alloc_cat (0, parsed_uri->authinfo, "@"));
+-    parsed_uri->authinfo = str_replace (parsed_uri->authinfo, 
+-					str_alloc_cat_n (0, parsed_uri->authinfo, parsed_uri->host, at_pos - parsed_uri->host));
++    parsed_uri->userinfo = str_replace (parsed_uri->userinfo, 
++					str_alloc_cat (0, parsed_uri->userinfo, "@"));
++    parsed_uri->userinfo = str_replace (parsed_uri->userinfo, 
++					str_alloc_cat_n (0, parsed_uri->userinfo, parsed_uri->host, at_pos - parsed_uri->host));
      parsed_uri->host = str_replace (parsed_uri->host, str_save (0, at_pos + 1));
  }
  

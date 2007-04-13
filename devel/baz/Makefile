@@ -7,7 +7,7 @@
 
 PORTNAME=	bazaar
 PORTVERSION=	1.4.2
-PORTREVISION?=	4
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	http://bazaar-vcs.org/releases/src/obsolete/
 DISTNAME=	bazaar_${PORTVERSION}
@@ -15,8 +15,7 @@ DISTNAME=	bazaar_${PORTVERSION}
 MAINTAINER=	lulf@kerneled.org
 COMMENT=	An implementation of the GNU Arch RCS protocol in C by Canonical
 
-BUILD_DEPENDS=	gmake:${PORTSDIR}/devel/gmake \
-		gpatch:${PORTSDIR}/devel/patch \
+BUILD_DEPENDS=	gpatch:${PORTSDIR}/devel/patch \
 		gdiff:${PORTSDIR}/textproc/diffutils \
 		gtar:${PORTSDIR}/archivers/gtar
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -28,8 +27,6 @@ USE_GETTEXT=	yes
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 
-BROKEN=		does not build with www/neon 0.26.x
-
 MAN1=		baz.1
 
 MAJORVERSION=	1.4
@@ -40,10 +37,6 @@ LDFLAGS+=	-L ${LOCALBASE}/lib
 CFLAGS+=	-I ${LOCALBASE}/include ${LDFLAGS}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		does not compile (missing va_copy)
-.endif
 
 pre-patch:
 	${MKDIR} ${WRKSRC}
