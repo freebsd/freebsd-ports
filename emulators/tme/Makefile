@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://theory.lcs.mit.edu/~fredette/tme/
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	Emulator for Sun 2/120 and Sun 3/150 machines
 
 GNU_CONFIGURE=	yes

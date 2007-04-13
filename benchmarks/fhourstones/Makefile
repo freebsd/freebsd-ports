@@ -11,7 +11,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	http://homepages.cwi.nl/~tromp/c4/
 DISTNAME=	Fhourstones
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	The Fhourstones Benchmark
 
 NO_WRKSUBDIR=	yes

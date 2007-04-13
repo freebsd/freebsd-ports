@@ -10,7 +10,7 @@ PORTVERSION=	0.78
 CATEGORIES=	emulators
 MASTER_SITES=	http://nonpareil.brouhaha.com/download/
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	Simulator for many HP calculators
 
 BUILD_DEPENDS=	pnmtopng:${PORTSDIR}/graphics/netpbm \

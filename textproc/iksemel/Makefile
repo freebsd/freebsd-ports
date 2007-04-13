@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://jabberstudio.2nw.net/iksemel/
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	XML parser library mainly designed for Jabber applications
 
 LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls

@@ -10,7 +10,7 @@ DISTVERSION=	6.0b6.0
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.daionet.gr.jp/~masa/archives/
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	OpenGL spinning pocket watch demo and benchmark utility
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut

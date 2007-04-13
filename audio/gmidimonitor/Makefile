@@ -10,7 +10,7 @@ PORTVERSION=	3.1
 CATEGORIES=	audio
 MASTER_SITES=	https://files.bountysource.com/file/download/583/
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	GTK+ application that shows MIDI events
 
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \

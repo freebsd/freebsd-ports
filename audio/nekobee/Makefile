@@ -10,7 +10,7 @@ PORTVERSION=	0.1.5
 CATEGORIES=	audio
 MASTER_SITES=	http://static.nekosynth.co.uk/releases/
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	DSSI plugin that emulates the sound of the TB-303 Bassline
 
 LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \

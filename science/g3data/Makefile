@@ -10,7 +10,7 @@ PORTVERSION=	1.5.1
 CATEGORIES=	science
 MASTER_SITES=	http://www.frantz.fi/software/
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	Utility for extracting data from graphs
 
 BUILD_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade \

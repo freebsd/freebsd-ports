@@ -10,7 +10,7 @@ PORTVERSION=	0.3.1
 CATEGORIES=	audio
 MASTER_SITES=	http://plugin.org.uk/timemachine/
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	JACK audio capture tool
 
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \

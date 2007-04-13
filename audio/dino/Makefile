@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	dino
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	A pattern-based MIDI sequencer
 
 LIB_DEPENDS=	glademm-2.4:${PORTSDIR}/devel/libglademm24 \

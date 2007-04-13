@@ -10,7 +10,7 @@ PORTVERSION=	0.8.7
 CATEGORIES=	net-im
 MASTER_SITES=	http://camaya.net/download/
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	Jabber/XMPP client library
 
 LIB_DEPENDS=	iksemel.3:${PORTSDIR}/textproc/iksemel \
