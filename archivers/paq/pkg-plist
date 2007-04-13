@@ -2,4 +2,3 @@ bin/%%DISTNAME%%
 %%PORTDOCS%%%%DOCSDIR%%/%%DISTNAME%%.cpp
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry bin
