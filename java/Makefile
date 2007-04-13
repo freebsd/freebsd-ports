@@ -14,6 +14,7 @@
     SUBDIR += collections
     SUBDIR += cos
     SUBDIR += cryptix-jce
+    SUBDIR += dbvis
     SUBDIR += diablo-jdk15
     SUBDIR += diablo-jre15
     SUBDIR += drexelsnmp
