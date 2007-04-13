@@ -31,7 +31,7 @@ RESTRICTED=	Downloading requires completion of a license agreement
 
 .include <bsd.port.pre.mk>
 
-LINUX_OSRELEASE!=	${SYSCTL} -n compat.linux.osrelease
+LINUX_OSRELEASE!=	${ECHO_CMD} `${SYSCTL} -n compat.linux.osrelease 2>/dev/null`
 
 .if ${LINUX_OSRELEASE} == "2.4.2" || ${OSVERSION} < 700000
 IGNORE=requires compat.linux.osrelease of at least 2.6.16 (needs 7.0 or later)
