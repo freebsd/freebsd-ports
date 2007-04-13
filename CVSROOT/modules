@@ -1747,6 +1747,7 @@ dbus-qt3	ports/devel/dbus-qt3
 dbus-qt4	ports/devel/dbus-qt4
 dbus-sharp	ports/devel/dbus-sharp
 dbview		ports/databases/dbview
+dbvis		ports/java/dbvis
 dc20ctrl	ports/graphics/dc20ctrl
 dc20pack	ports/graphics/dc20pack
 dc3play		ports/graphics/dc3play
