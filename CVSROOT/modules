@@ -15126,6 +15126,7 @@ tr2latex	ports/print/tr2latex
 trac		ports/www/trac
 trac-accountmanager	ports/www/trac-accountmanager
 trac-addcomment	ports/www/trac-addcomment
+trac-bzr	ports/www/trac-bzr
 trac-ctxtnavadd	ports/www/trac-ctxtnavadd
 trac-down	ports/www/trac-down
 trac-gantt	ports/www/trac-gantt
