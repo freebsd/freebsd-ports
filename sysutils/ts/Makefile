@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ts
-PORTVERSION=	0.3.2
+PORTVERSION=	0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://vicerveza.homeunix.net/~viric/soft/ts/ CENKES
 
@@ -18,7 +18,7 @@ PORTDOCS=	OBJECTIVES PROTOCOL README TRICKS Changelog
 MAN1=		${PORTNAME}.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$^|$${.ALLSRC}|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|$$^|$${.ALLSRC}|;/^GLIBCFLAGS/d;/^CFLAGS/d' ${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
