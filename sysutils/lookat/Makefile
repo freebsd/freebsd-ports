@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	lookat
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.wagemakers.be/uploads/37/7/
+MASTER_SITES=	http://www.wagemakers.be/uploads/37/16/
 DISTNAME=	${PORTNAME}_bekijk-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Lookat is a program to view Un*x text files and manual pages
+COMMENT=	A program to view Un*x text files and manual pages
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -27,10 +27,10 @@ post-patch:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/lookat ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/lookat.1 ${PREFIX}/man/man1
-	@${INSTALL_DATA} ${WRKSRC}/lookat.conf ${PREFIX}/etc/lookat.conf.sample
+	@${INSTALL_DATA} ${WRKSRC}/lookat.conf.default ${PREFIX}/etc
 	@${ECHO} "------------------------------------------------------------"
 	@${ECHO} "Sample of configuration file placed at"
-	@${ECHO} "${PREFIX}/etc/lookat.conf.sample"
+	@${ECHO} "${PREFIX}/etc/lookat.conf.default"
 	@${ECHO} "------------------------------------------------------------
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
