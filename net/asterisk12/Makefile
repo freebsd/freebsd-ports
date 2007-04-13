@@ -50,7 +50,6 @@ MAN8=		asterisk.8 astgenkey.8 autosupport.8 safe_asterisk.8
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-WITHOUT_H323=	1
 WITHOUT_ZAPTEL=	1
 .endif
 
