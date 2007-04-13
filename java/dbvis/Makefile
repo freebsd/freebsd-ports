@@ -1,0 +1,39 @@
+# Ports collection makefile for:	DbVisualizer
+# Date created:			April 08, 2007
+# Whom:				Anton Yudin (<contact@toha.org.ua>)
+#
+# $FreeBSD$
+#
+
+PORTNAME=	dbvis
+PORTVERSION=	5.1.1
+CATEGORIES=	java devel
+MASTER_SITES=	http://www.dbvis.com/product_download/dbvis/media/
+DISTNAME=	dbvis_unix_5_1_1
+
+MAINTAINER=	contact@toha.org.ua
+COMMENT=	DbVisualizer database tool
+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
+NO_BUILD=	yes
+RESTRICTED=	Redistribution is not permitted
+
+PLIST_FILES=	bin/dbvis
+WRKSRC=		DbVisualizer-5.1.1
+
+do-install:
+	cd ${WRKDIR}/${WRKSRC} \
+	  && ${FIND} . -type d -exec ${MKDIR} ${DATADIR}/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \; \
+	  && ${LN} -s ${DATADIR}/dbvis ${PREFIX}/bin/dbvis \
+	  && ${CHMOD} a+x ${DATADIR}/dbvis
+
+post-install:
+	cd ${WRKDIR}/${WRKSRC} && \
+	${FIND} ${DATADIR} -not -type d \
+	  | ${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
+	${FIND} -d ${DATADIR} -type d \
+	  | ${SED} -ne 's,^${PREFIX},@dirrm ,p' >> ${TMPPLIST}
+
+.include <bsd.port.mk>
