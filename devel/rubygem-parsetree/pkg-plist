@@ -1,0 +1,253 @@
+bin/parse_tree_abc
+bin/parse_tree_audit
+bin/parse_tree_deps
+bin/parse_tree_show
+%%GEM_CACHE%%
+%%GEM_SPEC%%
+%%GEM_LIB_DIR%%/History.txt
+%%GEM_LIB_DIR%%/Manifest.txt
+%%GEM_LIB_DIR%%/README.txt
+%%GEM_LIB_DIR%%/Rakefile
+%%GEM_LIB_DIR%%/bin/parse_tree_abc
+%%GEM_LIB_DIR%%/bin/parse_tree_audit
+%%GEM_LIB_DIR%%/bin/parse_tree_deps
+%%GEM_LIB_DIR%%/bin/parse_tree_show
+%%GEM_LIB_DIR%%/demo/printer.rb
+%%GEM_LIB_DIR%%/lib/composite_sexp_processor.rb
+%%GEM_LIB_DIR%%/lib/parse_tree.rb
+%%GEM_LIB_DIR%%/lib/sexp.rb
+%%GEM_LIB_DIR%%/lib/sexp_processor.rb
+%%GEM_LIB_DIR%%/lib/unique.rb
+%%GEM_LIB_DIR%%/test/pt_testcase.rb
+%%GEM_LIB_DIR%%/test/something.rb
+%%GEM_LIB_DIR%%/test/test_all.rb
+%%GEM_LIB_DIR%%/test/test_composite_sexp_processor.rb
+%%GEM_LIB_DIR%%/test/test_parse_tree.rb
+%%GEM_LIB_DIR%%/test/test_sexp.rb
+%%GEM_LIB_DIR%%/test/test_sexp_processor.rb
+%%GEM_LIB_DIR%%/validate.sh
+@dirrm %%GEM_LIB_DIR%%/test
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%/demo
+@dirrm %%GEM_LIB_DIR%%/bin
+@dirrm %%GEM_LIB_DIR%%
+%%GEM_DOC_DIR%%/rdoc/classes/CompositeSexpProcessor.html
+%%GEM_DOC_DIR%%/rdoc/classes/CompositeSexpProcessor.src/M000057.html
+%%GEM_DOC_DIR%%/rdoc/classes/CompositeSexpProcessor.src/M000058.html
+%%GEM_DOC_DIR%%/rdoc/classes/CompositeSexpProcessor.src/M000059.html
+%%GEM_DOC_DIR%%/rdoc/classes/Examples.html
+%%GEM_DOC_DIR%%/rdoc/classes/Examples.src/M000130.html
+%%GEM_DOC_DIR%%/rdoc/classes/FakeProcessor1.html
+%%GEM_DOC_DIR%%/rdoc/classes/FakeProcessor1.src/M000128.html
+%%GEM_DOC_DIR%%/rdoc/classes/FakeProcessor1.src/M000129.html
+%%GEM_DOC_DIR%%/rdoc/classes/NotEmptyError.html
+%%GEM_DOC_DIR%%/rdoc/classes/Object.html
+%%GEM_DOC_DIR%%/rdoc/classes/Object.src/M000132.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParseTree.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParseTree.src/M000091.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParseTree.src/M000092.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParseTree.src/M000093.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParseTree.src/M000094.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParseTree.src/M000095.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParseTree.src/M000096.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParseTree.src/M000097.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParseTree.src/M000098.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParseTreeTestCase.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParseTreeTestCase.src/M000038.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParseTreeTestCase.src/M000039.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParseTreeTestCase.src/M000040.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParseTreeTestCase.src/M000041.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParseTreeTestCase.src/M000042.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParseTreeTestCase.src/M000043.html
+%%GEM_DOC_DIR%%/rdoc/classes/ParseTreeTestCase.src/M000044.html
+%%GEM_DOC_DIR%%/rdoc/classes/Sexp.html
+%%GEM_DOC_DIR%%/rdoc/classes/Sexp.src/M000135.html
+%%GEM_DOC_DIR%%/rdoc/classes/Sexp.src/M000136.html
+%%GEM_DOC_DIR%%/rdoc/classes/Sexp.src/M000137.html
+%%GEM_DOC_DIR%%/rdoc/classes/Sexp.src/M000138.html
+%%GEM_DOC_DIR%%/rdoc/classes/Sexp.src/M000139.html
+%%GEM_DOC_DIR%%/rdoc/classes/Sexp.src/M000140.html
+%%GEM_DOC_DIR%%/rdoc/classes/Sexp.src/M000141.html
+%%GEM_DOC_DIR%%/rdoc/classes/Sexp.src/M000142.html
+%%GEM_DOC_DIR%%/rdoc/classes/Sexp.src/M000143.html
+%%GEM_DOC_DIR%%/rdoc/classes/Sexp.src/M000144.html
+%%GEM_DOC_DIR%%/rdoc/classes/Sexp.src/M000145.html
+%%GEM_DOC_DIR%%/rdoc/classes/Sexp.src/M000146.html
+%%GEM_DOC_DIR%%/rdoc/classes/Sexp.src/M000147.html
+%%GEM_DOC_DIR%%/rdoc/classes/SexpAny.html
+%%GEM_DOC_DIR%%/rdoc/classes/SexpAny.src/M000089.html
+%%GEM_DOC_DIR%%/rdoc/classes/SexpAny.src/M000090.html
+%%GEM_DOC_DIR%%/rdoc/classes/SexpMatchSpecial.html
+%%GEM_DOC_DIR%%/rdoc/classes/SexpMatchSpecials.html
+%%GEM_DOC_DIR%%/rdoc/classes/SexpMatchSpecials.src/M000148.html
+%%GEM_DOC_DIR%%/rdoc/classes/SexpProcessor.html
+%%GEM_DOC_DIR%%/rdoc/classes/SexpProcessor.src/M000112.html
+%%GEM_DOC_DIR%%/rdoc/classes/SexpProcessor.src/M000113.html
+%%GEM_DOC_DIR%%/rdoc/classes/SexpProcessor.src/M000114.html
+%%GEM_DOC_DIR%%/rdoc/classes/SexpProcessor.src/M000115.html
+%%GEM_DOC_DIR%%/rdoc/classes/SexpProcessor.src/M000116.html
+%%GEM_DOC_DIR%%/rdoc/classes/SexpProcessor.src/M000117.html
+%%GEM_DOC_DIR%%/rdoc/classes/SexpProcessor.src/M000118.html
+%%GEM_DOC_DIR%%/rdoc/classes/SexpProcessorError.html
+%%GEM_DOC_DIR%%/rdoc/classes/SexpTestCase.html
+%%GEM_DOC_DIR%%/rdoc/classes/SexpTestCase.src/M000035.html
+%%GEM_DOC_DIR%%/rdoc/classes/SexpTestCase.src/M000036.html
+%%GEM_DOC_DIR%%/rdoc/classes/SexpTestCase.src/M000037.html
+%%GEM_DOC_DIR%%/rdoc/classes/SexpTypeError.html
+%%GEM_DOC_DIR%%/rdoc/classes/Something.html
+%%GEM_DOC_DIR%%/rdoc/classes/Something.src/M000105.html
+%%GEM_DOC_DIR%%/rdoc/classes/Something.src/M000106.html
+%%GEM_DOC_DIR%%/rdoc/classes/Something.src/M000107.html
+%%GEM_DOC_DIR%%/rdoc/classes/Something.src/M000108.html
+%%GEM_DOC_DIR%%/rdoc/classes/Something.src/M000109.html
+%%GEM_DOC_DIR%%/rdoc/classes/Something.src/M000110.html
+%%GEM_DOC_DIR%%/rdoc/classes/Something.src/M000111.html
+%%GEM_DOC_DIR%%/rdoc/classes/SomethingWithInitialize.html
+%%GEM_DOC_DIR%%/rdoc/classes/SomethingWithInitialize.src/M000055.html
+%%GEM_DOC_DIR%%/rdoc/classes/SomethingWithInitialize.src/M000056.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestCompositeSexpProcessor.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestCompositeSexpProcessor.src/M000099.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestCompositeSexpProcessor.src/M000100.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestCompositeSexpProcessor.src/M000101.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestCompositeSexpProcessor.src/M000102.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestCompositeSexpProcessor.src/M000103.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestCompositeSexpProcessor.src/M000104.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestParseTree.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestParseTree.src/M000121.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestParseTree.src/M000122.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestParseTree.src/M000123.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestParseTree.src/M000124.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestParseTree.src/M000125.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestParseTree.src/M000126.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestParseTree.src/M000127.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestProcessor.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestProcessor.src/M000045.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestProcessor.src/M000046.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestProcessor.src/M000047.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestProcessor.src/M000048.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestProcessor.src/M000049.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestProcessor.src/M000050.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestProcessor.src/M000051.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestProcessor.src/M000052.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestProcessor.src/M000053.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestProcessor.src/M000054.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestProcessorDefault.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestProcessorDefault.src/M000033.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestProcessorDefault.src/M000034.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000060.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000061.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000062.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000063.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000064.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000065.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000066.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000067.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000068.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000069.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000070.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000071.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000072.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000073.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000074.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000075.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000076.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000077.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000078.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000079.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000080.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000081.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000082.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000083.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000084.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000085.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000086.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000087.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src/M000088.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpAny.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpAny.src/M000119.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpAny.src/M000120.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000002.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000003.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000004.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000005.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000006.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000007.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000008.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000009.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000010.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000011.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000012.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000013.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000014.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000015.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000016.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000017.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000018.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000019.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000020.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000021.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000022.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000023.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000024.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000025.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000026.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000027.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000028.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000029.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000030.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000031.html
+%%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src/M000032.html
+%%GEM_DOC_DIR%%/rdoc/classes/Unique.html
+%%GEM_DOC_DIR%%/rdoc/classes/Unique.src/M000133.html
+%%GEM_DOC_DIR%%/rdoc/classes/Unique.src/M000134.html
+%%GEM_DOC_DIR%%/rdoc/classes/UnknownNodeError.html
+%%GEM_DOC_DIR%%/rdoc/classes/UnsupportedNodeError.html
+%%GEM_DOC_DIR%%/rdoc/created.rid
+%%GEM_DOC_DIR%%/rdoc/files/lib/composite_sexp_processor_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/parse_tree_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/sexp_processor_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/sexp_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/sexp_rb.src/M000001.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/unique_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/pt_testcase_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/something_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/test_all_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/test_composite_sexp_processor_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/test_parse_tree_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/test_sexp_processor_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/test/test_sexp_rb.html
+%%GEM_DOC_DIR%%/rdoc/fr_class_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_file_index.html
+%%GEM_DOC_DIR%%/rdoc/fr_method_index.html
+%%GEM_DOC_DIR%%/rdoc/index.html
+%%GEM_DOC_DIR%%/rdoc/rdoc-style.css
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/test
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib/sexp_rb.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/files/lib
+@dirrm %%GEM_DOC_DIR%%/rdoc/files
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Unique.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestSexpProcessor.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestSexpAny.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestSexp.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestProcessorDefault.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestProcessor.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestParseTree.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/TestCompositeSexpProcessor.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/SomethingWithInitialize.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Something.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/SexpTestCase.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/SexpProcessor.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/SexpMatchSpecials.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/SexpAny.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Sexp.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ParseTreeTestCase.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/ParseTree.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Object.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/FakeProcessor1.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/Examples.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes/CompositeSexpProcessor.src
+@dirrm %%GEM_DOC_DIR%%/rdoc/classes
+@dirrm %%GEM_DOC_DIR%%/rdoc
+@dirrm %%GEM_DOC_DIR%%
