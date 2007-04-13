@@ -275,45 +275,49 @@ bin/puppetmasterd
 @dirrmtry %%RUBY_SITELIBDIR%%/puppet/external
 @dirrmtry %%RUBY_SITELIBDIR%%/puppet/client
 @dirrmtry %%RUBY_SITELIBDIR%%/puppet
-%%DOCSDIR%%/CHANGELOG
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/README
-%%DOCSDIR%%/LICENSE
-%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/root/bin/sleeper
-%%EXAMPLESDIR%%/root/etc/init.d/sleeper
-%%EXAMPLESDIR%%/root/etc/puppet/puppetd.conf
-%%EXAMPLESDIR%%/root/etc/puppet/fileserver.conf
-%%EXAMPLESDIR%%/root/etc/puppet/puppetmasterd.conf
-%%EXAMPLESDIR%%/root/etc/puppet/namespaceauth.conf
-%%EXAMPLESDIR%%/root/etc/puppet/tagmail.conf
-%%EXAMPLESDIR%%/root/etc/otherfile
-%%EXAMPLESDIR%%/root/etc/configfile
-%%EXAMPLESDIR%%/root/etc/debian-passwd
-%%EXAMPLESDIR%%/root/etc/debian-syslog.conf
-%%EXAMPLESDIR%%/code/allatonce
-%%EXAMPLESDIR%%/code/head
-%%EXAMPLESDIR%%/code/selectors
-%%EXAMPLESDIR%%/code/execs
-%%EXAMPLESDIR%%/code/nodes
-%%EXAMPLESDIR%%/code/filerecursion
-%%EXAMPLESDIR%%/code/components
-%%EXAMPLESDIR%%/code/file.bl
-%%EXAMPLESDIR%%/code/groups
-%%EXAMPLESDIR%%/code/functions
-%%EXAMPLESDIR%%/code/fileparsing
-%%EXAMPLESDIR%%/code/svncommit
-%%EXAMPLESDIR%%/code/filedefaults
-%%EXAMPLESDIR%%/code/simpletests
-%%EXAMPLESDIR%%/code/assignments
-%%EXAMPLESDIR%%/code/relationships
-%%EXAMPLESDIR%%/code/importing
-%%EXAMPLESDIR%%/code/one
-@dirrmtry %%EXAMPLESDIR%%/root/bin
-@dirrmtry %%EXAMPLESDIR%%/root/etc/init.d
-@dirrmtry %%EXAMPLESDIR%%/root/etc/puppet
-@dirrmtry %%EXAMPLESDIR%%/root/etc
-@dirrmtry %%EXAMPLESDIR%%/root
-@dirrmtry %%EXAMPLESDIR%%/code
-@dirrmtry %%EXAMPLESDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/root/bin/sleeper
+%%PORTDOCS%%%%EXAMPLESDIR%%/root/etc/init.d/sleeper
+%%PORTDOCS%%%%EXAMPLESDIR%%/root/etc/puppet/puppetd.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/root/etc/puppet/fileserver.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/root/etc/puppet/puppetmasterd.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/root/etc/puppet/namespaceauth.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/root/etc/puppet/tagmail.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/root/etc/otherfile
+%%PORTDOCS%%%%EXAMPLESDIR%%/root/etc/configfile
+%%PORTDOCS%%%%EXAMPLESDIR%%/root/etc/debian-passwd
+%%PORTDOCS%%%%EXAMPLESDIR%%/root/etc/debian-syslog.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/code/allatonce
+%%PORTDOCS%%%%EXAMPLESDIR%%/code/head
+%%PORTDOCS%%%%EXAMPLESDIR%%/code/selectors
+%%PORTDOCS%%%%EXAMPLESDIR%%/code/execs
+%%PORTDOCS%%%%EXAMPLESDIR%%/code/nodes
+%%PORTDOCS%%%%EXAMPLESDIR%%/code/filerecursion
+%%PORTDOCS%%%%EXAMPLESDIR%%/code/components
+%%PORTDOCS%%%%EXAMPLESDIR%%/code/file.bl
+%%PORTDOCS%%%%EXAMPLESDIR%%/code/groups
+%%PORTDOCS%%%%EXAMPLESDIR%%/code/functions
+%%PORTDOCS%%%%EXAMPLESDIR%%/code/fileparsing
+%%PORTDOCS%%%%EXAMPLESDIR%%/code/svncommit
+%%PORTDOCS%%%%EXAMPLESDIR%%/code/filedefaults
+%%PORTDOCS%%%%EXAMPLESDIR%%/code/simpletests
+%%PORTDOCS%%%%EXAMPLESDIR%%/code/assignments
+%%PORTDOCS%%%%EXAMPLESDIR%%/code/relationships
+%%PORTDOCS%%%%EXAMPLESDIR%%/code/importing
+%%PORTDOCS%%%%EXAMPLESDIR%%/code/one
+%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%/root/bin
+%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%/root/etc/init.d
+%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%/root/etc/puppet
+%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%/root/etc
+%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%/root
+%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%/code
+%%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%
+etc/puppet/puppet.conf-dist
+@dirrmtry etc/puppet/ssl
+@dirrmtry etc/puppet/manifests
+@dirrmtry etc/puppet

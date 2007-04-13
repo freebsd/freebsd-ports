@@ -7,6 +7,7 @@
 
 PORTNAME=	puppet
 PORTVERSION=	0.22.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.reductivelabs.com/downloads/puppet/
 EXTRACT_SUFX=	.tgz
@@ -19,6 +20,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 NO_BUILD=	yes
 USE_RUBY=	yes
+USE_RC_SUBR=	puppetmasterd puppetd
 
 DOCS=	CHANGELOG TODO README LICENSE COPYING
 
@@ -35,7 +37,18 @@ do-install:
 .endfor
 	${INSTALL} -d ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
-	@${CHOWN} -R root:wheel ${EXAMPLESDIR}
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
+
+post-install:
+	${INSTALL} -d ${PREFIX}/etc/${PORTNAME}
+.for DIR in ssl manifests
+	${INSTALL} -d ${PREFIX}/etc/${PORTNAME}/${DIR}
+.endfor
+	${RUBY} ${PREFIX}/bin/puppetmasterd \
+		--confdir=${PREFIX}/etc/${PORTNAME} \
+		--genconfig | \
+		${SED} -e 's/genconfig = true/# genconfig = false/' \
+		> ${PREFIX}/etc/${PORTNAME}/${PORTNAME}.conf-dist
 
 .include <bsd.port.post.mk>
