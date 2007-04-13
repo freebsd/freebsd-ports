@@ -25,7 +25,7 @@ INSTALL_TARGET=	install install.man
 MANCOMPRESSED=	yes
 MAN1=		afterstep.1 Animate.1 Audio.1 Auto.1 Banner.1 Pager.1 Wharf.1
 CONFLICTS?=	afterstep-2*
-PORTSCOUT=	limit:^1\.[0-9.]*$
+PORTSCOUT=	limit:^1\.[0-9.]*$$
 
 SRCDIRS=	afterstep \
 		modules/Animate modules/Audio modules/Auto \

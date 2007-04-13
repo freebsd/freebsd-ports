@@ -39,7 +39,7 @@ MAKEFILE=	GNUmakefile
 INSTALL_TARGET=	install.bin install.lib install.data install-dev
 USE_LDCONFIG=	yes
 .if !defined(WITH_NETPBM_DEVEL)
-PORTSCOUT=	limit:^1\.26\.
+PORTSCOUT=	limit:^10\.26\.
 .endif
 
 MAN1=		netpbm.1
