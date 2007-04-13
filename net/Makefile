@@ -675,6 +675,7 @@
     SUBDIR += py-spreadmodule
     SUBDIR += py-tofu
     SUBDIR += py-twistedPair
+    SUBDIR += py-twitter
     SUBDIR += py-xmlrpc
     SUBDIR += py-xmlrpclib
     SUBDIR += py-yadis
