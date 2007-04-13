@@ -401,7 +401,7 @@ DISTFILES+=	patch-${VVV_PATCH_VERSION}.vvv.nntp.2.gz:vvv
 CONFIGURE_ARGS+=	--enable-nntp
 XML_NEEDED=	yes
 pre-patch::
-	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/patch-${VVV_PATCH_VERSION}.vvv.nntp.gz > ${WRKDIR}/patch-nntp
+	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/patch-${VVV_PATCH_VERSION}.vvv.nntp.2.gz > ${WRKDIR}/patch-nntp
 	@${REINPLACE_CMD} -E '/^diff.*\/doc\/manual.txt$$/,/^diff/d' \
 		${WRKDIR}/patch-nntp
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-nntp
