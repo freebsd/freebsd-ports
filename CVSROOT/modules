@@ -7383,6 +7383,7 @@ mod_auth_pwcheck	ports/www/mod_auth_pwcheck
 mod_auth_remote	ports/www/mod_auth_remote
 mod_auth_useragent	ports/www/mod_auth_useragent
 mod_authenticache	ports/www/mod_authenticache
+mod_authnz_external	ports/www/mod_authnz_external
 mod_backhand	ports/www/mod_backhand
 mod_bandwidth	ports/www/mod_bandwidth
 mod_bf		ports/www/mod_bf
