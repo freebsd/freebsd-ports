@@ -4,6 +4,7 @@ bin/ztmonitor
 bin/zttest
 bin/zttool
 include/tonezone.h
+include/zaptel
 include/zaptel.h
 lib/libtonezone.a
 lib/zaptel/linker.hints
