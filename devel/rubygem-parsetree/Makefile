@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	ParseTree-${PORTVERSION}
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	Heckle is a mutation tester
+COMMENT=	Ruby parse tree tools
 
 BUILD_DEPENDS=	rubygem-inline>=3.2.0:${PORTSDIR}/devel/rubygem-inline
 RUN_DEPENDS=	${BUILD_DEPENDS}
