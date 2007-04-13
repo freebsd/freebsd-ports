@@ -2942,7 +2942,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>google-earth</name>
-	<range><ge>0</ge></range>
+	<range><lt>4.0.2414</lt></range>
       </package>
     </affects>
     <description>
@@ -2962,6 +2962,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2006-10-10</discovery>
       <entry>2006-10-14</entry>
+      <modified>2007-04-13</modified>
     </dates>
   </vuln>
 
