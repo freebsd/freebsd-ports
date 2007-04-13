@@ -8,6 +8,7 @@ include/torrent/data/block_transfer.h
 include/torrent/data/file.h
 include/torrent/data/file_list.h
 include/torrent/data/file_list_iterator.h
+include/torrent/data/file_manager.h
 include/torrent/data/file_utils.h
 include/torrent/data/piece.h
 include/torrent/data/transfer_list.h
