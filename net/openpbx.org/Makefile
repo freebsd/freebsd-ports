@@ -39,6 +39,8 @@ OPTIONS=	SPEEX		"Enable speex codec" on \
 
 .if ${ARCH} == "i386"
 OPTIONS+=	ZAPTEL		"Enable Zaptel hardware support" on
+.else
+WITHOUT_ZAPTEL=	yes
 .endif
 
 .if defined(WITHOUT_ZAPTEL)
