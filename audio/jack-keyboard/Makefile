@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://pin.if.uz.zgora.pl/~trasz/jack-keyboard/ \
 		http://freebsd.unixfreunde.de/sources/
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	Virtual keyboard for JACK MIDI
 
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack

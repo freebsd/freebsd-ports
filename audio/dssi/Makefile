@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dssi
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	API for audio processing plugins
 
 LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \

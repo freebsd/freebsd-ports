@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.openjpeg.org/
 DISTNAME=	openjpeg_v1_1_1
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	An open-source JPEG 2000 codec
 
 USE_GMAKE=	yes

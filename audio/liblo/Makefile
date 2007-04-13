@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	liblo
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	Lightweight Open Sound Control implementation
 
 GNU_CONFIGURE=	yes

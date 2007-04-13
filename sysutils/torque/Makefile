@@ -10,7 +10,7 @@ PORTVERSION=	2.1.8
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://www.clusterresources.com/downloads/torque/
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	Open source resource manager
 
 USE_AUTOTOOLS=	libtool:15

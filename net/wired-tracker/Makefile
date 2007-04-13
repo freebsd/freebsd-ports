@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.zankasoftware.com/dist/
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	Wired tracker
 
 # This is an artificial dependancy - net/wired and net/wired-tracker

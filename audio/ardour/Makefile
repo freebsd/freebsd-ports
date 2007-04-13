@@ -10,7 +10,7 @@ DISTVERSION=	2.0beta12
 CATEGORIES=	audio
 MASTER_SITES=	http://ardour.org/files/releases/
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	Ardour - a digital audio workstation
 
 LIB_DEPENDS=	lrdf.2:${PORTSDIR}/textproc/liblrdf \

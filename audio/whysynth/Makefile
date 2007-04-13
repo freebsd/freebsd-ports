@@ -10,7 +10,7 @@ PORTVERSION=	20060122
 CATEGORIES=	audio
 MASTER_SITES=	http://home.jps.net/~musound/
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	Versatile softsynth implemented as a DSSI plugin
 
 LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \

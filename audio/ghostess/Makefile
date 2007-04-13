@@ -10,7 +10,7 @@ PORTVERSION=	20061127
 CATEGORIES=	audio
 MASTER_SITES=	http://home.jps.net/~musound/
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	Graphical DSSI host with JACK MIDI support
 
 LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \

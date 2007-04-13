@@ -12,7 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://xhomer.isani.org/xhomer/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	Emulator for the DEC Pro 350 computer
 
 USE_GMAKE=	yes

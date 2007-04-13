@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	itetcu
 DISTNAME=	327191_327191
 EXTRACT_SUFX=	.gz
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	Intel MPI Benchmark
 
 WRKSRC=		${WRKDIR}/IMB_3.0/src/

@@ -13,7 +13,7 @@ MASTER_SITES=	http://gwenole.beauchesne.info/projects/basilisk2/files/
 MASTER_SITE_SUBDIR=	basilisk
 DISTNAME=	BasiliskII_src_01052006
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	A free, portable, Open Source 68k Mac emulator
 
 WRKSRC=		${WRKDIR}/BasiliskII-${PORTVERSION}/src/Unix

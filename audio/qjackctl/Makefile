@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	qjackctl
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	Qt Interface for the JACK Audio Connection Kit
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

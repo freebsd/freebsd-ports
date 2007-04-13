@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://arg0.net/users/vgough/download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	trasz@pin.if.uz.zgora.pl
+MAINTAINER=	trasz@freebsd.org
 COMMENT=	A flexible message logging facility for C++
 
 USE_AUTOTOOLS=	libtool:15
