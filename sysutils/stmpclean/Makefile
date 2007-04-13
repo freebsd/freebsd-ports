@@ -8,7 +8,7 @@
 PORTNAME=	stmpclean
 PORTVERSION=	0.3
 CATEGORIES=	sysutils security
-MASTER_SITES=	http://www.internet2.edu/~shalunov/stmpclean/
+MASTER_SITES=	http://shlang.com/stmpclean/
 
 MAINTAINER=	shalunov@shlang.com
 COMMENT=	Remove old files from temporary directories
