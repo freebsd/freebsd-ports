@@ -39,6 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>freeradius</name>
+	<name>freeradius-mysql</name>
 	<range><le>1.1.5</le></range>
       </package>
     </affects>
