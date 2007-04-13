@@ -107,7 +107,7 @@ upgrades.
   1. Remove the current linux base port.
   2. Add to your /etc/make.conf "OVERRIDE_LINUX_BASE_PORT=fc6".
   3. Make sure no linux application is running.
-  4. Set apropriate sysctl (compat.linux.osrelease=2.6.16).
+  4. Set appropriate sysctl (compat.linux.osrelease=2.6.16).
   5. Install emulation/linux_base-fc6.
   5a. Those who use linux ports with automatic plist building should
       apply the following patch:
