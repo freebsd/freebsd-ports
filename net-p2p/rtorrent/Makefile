@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	rtorrent
-PORTVERSION?=	0.7.1
-PORTREVISION?=	1
+PORTVERSION?=	0.7.4
+PORTREVISION?=	0
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/ \
 		${MASTER_SITE_LOCAL}
@@ -18,9 +18,8 @@ COMMENT?=	BitTorrent Client written in C++
 
 LIB_DEPENDS?=	# empty
 
-# Libtorrent 0.11.{0,1} are both libtorrent.10, explicitely depend on 0.11.1+.
-BUILD_DEPENDS?=	libtorrent>=0.11.1:${PORTSDIR}/net-p2p/libtorrent
-RUN_DEPENDS?=	libtorrent>=0.11.1:${PORTSDIR}/net-p2p/libtorrent
+BUILD_DEPENDS?=	libtorrent>=0.11.3:${PORTSDIR}/net-p2p/libtorrent
+RUN_DEPENDS?=	libtorrent>=0.11.3:${PORTSDIR}/net-p2p/libtorrent
 LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
 
 CONFLICTS?=	rtorrent-devel-[0-9]*
