@@ -1129,6 +1129,7 @@
     SUBDIR += trac
     SUBDIR += trac-accountmanager
     SUBDIR += trac-addcomment
+    SUBDIR += trac-bzr
     SUBDIR += trac-ctxtnavadd
     SUBDIR += trac-down
     SUBDIR += trac-gantt
