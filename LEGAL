@@ -675,3 +675,4 @@ tw_cli-*		sysutils/tw_cli		Redistribution forbidden by
 lha-1.14i-ac*		archivers/lha-ac	No Redistribution
 GotoBLAS*		math/gotoblas		No Redistribution
 gamess.*/gamess*	science/gamess		No Redistribution
+vst_sdk2_3.zip		audio/ardour		Redistribution of the VST PlugIns SDK is not allowed
