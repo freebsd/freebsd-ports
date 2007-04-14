@@ -1,0 +1,8 @@
+--- src/GnomeSubtitles/Execution/gnome-subtitles.in.orig	Sat Mar 24 10:30:55 2007
++++ src/GnomeSubtitles/Execution/gnome-subtitles.in	Sat Mar 24 10:31:09 2007
+@@ -1,3 +1,3 @@
+-#!/bin/bash
+-exec -a gnome-subtitles @MONO@ @prefix@/lib/gnome-subtitles/gnome-subtitles.exe "$@"
++#!/bin/sh
++exec @MONO@ @prefix@/lib/gnome-subtitles/gnome-subtitles.exe "$@"
+ 
