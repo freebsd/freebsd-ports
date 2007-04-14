@@ -42,8 +42,9 @@ OPTIONS=	OPTIMIZED_CFLAGS "Builds with compiler optimizations" on \
 
 .if defined(WITH_VST)
 # Yes, 'PlugIns' is not a typo.
-RESTRICTED=	Redistribution of the VST PlugIns SDK is not allowed
 VST_DIST+=	vst_sdk2_3.zip
+RESTRICTED=	Redistribution of the VST PlugIns SDK is not allowed
+RESTRICTED_FILES=	${VST_DIST}
 DISTFILES+=	${VST_DIST}
 SCONS_ENV+=	VST=yes
 BUILD_DEPENDS+=	winegcc:${PORTSDIR}/emulators/wine \
