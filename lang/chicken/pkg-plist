@@ -17,7 +17,6 @@ lib/libuchicken.a
 lib/libuchicken.la
 lib/libuchicken.so
 lib/libuchicken.so.0
-%%DATADIR%%/banner.scm
 %%DATADIR%%/chicken-ffi-macros.scm
 %%DATADIR%%/chicken-more-macros.scm
 %%DATADIR%%/eval.exports
@@ -34,6 +33,11 @@ lib/libuchicken.so.0
 %%DATADIR%%/srfi-4.exports
 %%DATADIR%%/tcp.exports
 %%DATADIR%%/utils.exports
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/boyer.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/browse.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/conform.scm
@@ -71,9 +75,9 @@ lib/libuchicken.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/traverse.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/travinit.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/triangl.scm
-%%PORTDOCS%%@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/others
-%%PORTDOCS%%@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks/options
-%%PORTDOCS%%@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%/benchmarks
-%%PORTDOCS%%@dirrm %%PORTDOCS%%%%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/benchmarks/others
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/benchmarks
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
 @dirrm lib/chicken
