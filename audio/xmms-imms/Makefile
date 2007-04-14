@@ -43,16 +43,7 @@ USE_LDCONFIG=	yes
 BROKEN=		Does not compile
 .endif
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' ${WRKSRC}/vars.mk.in
-.if ${OSVERSION} < 500000
-	@cd ${WRKSRC} && \
-	    ${REINPLACE_CMD} 's:#include.<stdint\.h>:#include <sys/types.h>:' \
-		players/xmms/plugin.h analyzer/spectrum.h analyzer/analyzer.cc
-.endif
 
 .include <bsd.port.post.mk>

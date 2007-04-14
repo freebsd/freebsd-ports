@@ -25,12 +25,6 @@ CXXFLAGS+=	-I../lib -I${LOCALBASE}/include ${CPPFLAGS} \
 		-DHAVE_DECL_GETOPT -fPIC
 LDFLAGS=	-L../lib -L${LOCALBASE}/lib -lintl
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-BROKEN=		Linker error on alpha 4.x
-.endif
-
 post-patch:
 	@${FIND} ${WRKSRC} -name "makefile" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|make |$$(MAKE) |g ; \
@@ -57,4 +51,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/quelcom.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -22,13 +22,7 @@ USE_GMAKE=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD 4.X
-.endif
-
 do-build:
 	@cd ${WRKSRC} && ${GMAKE} build
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

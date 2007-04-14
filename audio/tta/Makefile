@@ -24,12 +24,6 @@ PROGRAM=	ttaenc
 PORTDOCS=	Readme
 PLIST_FILES=	bin/ttaenc
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		Requires FreeBSD 5.x or higher for wide character support
-.endif
-
 do-build:
 	${CC} ${CFLAGS} -c ${WRKSRC}/${PROGRAM}.c -o ${WRKSRC}/${PROGRAM}.o
 	${CC} ${LDFLAGS} -o ${WRKSRC}/${PROGRAM} ${WRKSRC}/${PROGRAM}.o
@@ -42,4 +36,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
