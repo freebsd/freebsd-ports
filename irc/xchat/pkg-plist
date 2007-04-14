@@ -8,6 +8,7 @@ bin/xchat
 share/applications/xchat.desktop
 %%DBUS%%share/dbus-1/services/org.xchat.service.service
 share/locale/be/LC_MESSAGES/xchat.mo
+share/locale/ca/LC_MESSAGES/xchat.mo
 share/locale/cs/LC_MESSAGES/xchat.mo
 share/locale/de/LC_MESSAGES/xchat.mo
 share/locale/el/LC_MESSAGES/xchat.mo
@@ -27,7 +28,9 @@ share/locale/ru/LC_MESSAGES/xchat.mo
 share/locale/sq/LC_MESSAGES/xchat.mo
 share/locale/sr/LC_MESSAGES/xchat.mo
 share/locale/sv/LC_MESSAGES/xchat.mo
+share/locale/uk/LC_MESSAGES/xchat.mo
 share/locale/vi/LC_MESSAGES/xchat.mo
+share/locale/zh_CN/LC_MESSAGES/xchat.mo
 share/locale/zh_TW/LC_MESSAGES/xchat.mo
 share/pixmaps/xchat.png
 @dirrmtry share/applications
@@ -37,6 +40,10 @@ share/pixmaps/xchat.png
 @dirrm lib/xchat
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
+@dirrmtry share/locale/zh_CN/LC_MESSAGES
+@dirrmtry share/locale/zh_CN
+@dirrmtry share/locale/uk/LC_MESSAGES
+@dirrmtry share/locale/uk
 @dirrmtry share/locale/sr/LC_MESSAGES
 @dirrmtry share/locale/sr
 @dirrmtry share/locale/pt/LC_MESSAGES
@@ -51,5 +58,7 @@ share/pixmaps/xchat.png
 @dirrmtry share/locale/el
 @dirrmtry share/locale/cs/LC_MESSAGES
 @dirrmtry share/locale/cs
+@dirrmtry share/locale/ca/LC_MESSAGES
+@dirrmtry share/locale/ca
 @dirrmtry share/locale/be/LC_MESSAGES
 @dirrmtry share/locale/be
