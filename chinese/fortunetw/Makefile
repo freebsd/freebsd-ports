@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	fortunetw
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	chinese
-MASTER_SITES=	LOCAL/chinsan
+MASTER_SITES=	LOCAL/chinsan \
+		http://chinsan2.twbbs.org/distfiles/
 DISTNAME=	zh-fortunetw-${PORTVERSION}
 
 MAINTAINER=	chinsan@FreeBSD.org
@@ -20,6 +21,7 @@ STRCMD=		/usr/games/strfile
 
 do-install:
 	@${MKDIR} ${TARGETDIR}/share/games/fortune
+	@${INSTALL_DATA} ${WRKSRC}/bsdchat ${TARGETDIR}/share/games/fortune
 	@${INSTALL_DATA} ${WRKSRC}/folksong ${TARGETDIR}/share/games/fortune
 	@${INSTALL_DATA} ${WRKSRC}/liuyong ${TARGETDIR}/share/games/fortune
 	@${INSTALL_DATA} ${WRKSRC}/stephehchow ${TARGETDIR}/share/games/fortune
@@ -34,6 +36,7 @@ pre-install:
 .endif
 
 post-install:
+	@${STRCMD} ${TARGETDIR}/share/games/fortune/bsdchat
 	@${STRCMD} ${TARGETDIR}/share/games/fortune/folksong
 	@${STRCMD} ${TARGETDIR}/share/games/fortune/liuyong
 	@${STRCMD} ${TARGETDIR}/share/games/fortune/stephehchow
@@ -42,6 +45,7 @@ post-install:
 	@${STRCMD} ${TARGETDIR}/share/games/fortune/yijing
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Usage:"
+	@${ECHO_MSG} "${STRCMD} ${TARGETDIR}/share/games/fortune/bsdchat"
 	@${ECHO_MSG} "${STRCMD} ${TARGETDIR}/share/games/fortune/folksong"
 	@${ECHO_MSG} "${STRCMD} ${TARGETDIR}/share/games/fortune/liuyong"
 	@${ECHO_MSG} "${STRCMD} ${TARGETDIR}/share/games/fortune/stephehchow"
