@@ -1,46 +1,37 @@
-*** settatr.c.orig	Sat Sep 24 00:47:17 1994
---- settatr.c	Sat Sep 24 00:49:46 1994
-***************
-*** 15,21 ****
-  	ioctl ( 0, TIOCGETP, &sg );
-  	if (access(".stty", 0) == -1) {	/* not already set up */
-  		sg.sg_erase = '';
-! 		sg.sg_kill  = '';
-  		sg.sg_flags |= XTABS;
-  	}
-  	sg.sg_flags |= ECHO;
---- 15,21 ----
-  	ioctl ( 0, TIOCGETP, &sg );
-  	if (access(".stty", 0) == -1) {	/* not already set up */
-  		sg.sg_erase = '';
-! 		sg.sg_kill  = 21; /* ^U */
-  		sg.sg_flags |= XTABS;
-  	}
-  	sg.sg_flags |= ECHO;
-***************
-*** 25,36 ****
-  	ioctl ( 0, TIOCSETP, &sg );
-  
-  	ioctl ( 0, TIOCGETC, &tc );
-! 	tc.t_intrc  = '';
-  	ioctl ( 0, TIOCSETC, &tc );
-  
-  	ioctl ( 0, TIOCGLTC, &lt );
-! 	lt.t_werasc = '';
-! 	lt.t_rprntc = '';
-  	ioctl ( 0, TIOCSLTC, &lt );
-  #endif
-  #ifdef SYSV
---- 25,36 ----
-  	ioctl ( 0, TIOCSETP, &sg );
-  
-  	ioctl ( 0, TIOCGETC, &tc );
-! 	tc.t_intrc  = 3; /* ^C */
-  	ioctl ( 0, TIOCSETC, &tc );
-  
-  	ioctl ( 0, TIOCGLTC, &lt );
-! 	lt.t_werasc = 23; /* ^W */
-! 	lt.t_rprntc = 18; /* ^R */
-  	ioctl ( 0, TIOCSLTC, &lt );
-  #endif
-  #ifdef SYSV
+--- settatr.c.orig	Mon Mar 26 14:59:01 2007
++++ settatr.c	Mon Mar 26 15:00:41 2007
+@@ -4,7 +4,7 @@
+ 
+ set_terminal_attributes()
+ {
+-#ifdef BSD
++#if 0
+ 	struct sgttyb  sg;
+ 	struct tchars  tc;
+ 	struct ltchars lt;
+@@ -33,20 +33,19 @@
+ 	lt.t_rprntc = '';
+ 	ioctl ( 0, TIOCSLTC, &lt );
+ #endif
+-#ifdef SYSV
+-	struct termio t;
++#if 1
++	struct termios t;
+ 
+-	ioctl ( 0, TCGETA, &t );
++	tcgetattr(0, &t);
+ 
+ 	t.c_cc[VINTR] = '\003';
+ 	t.c_cc[VERASE] = '\b';
+ 	t.c_cc[VKILL] = '\025';
+ 	t.c_iflag = IGNBRK | IGNPAR | ICRNL | IXON ;
+-	t.c_oflag = OPOST | ONLCR ;
++	t.c_oflag = OPOST | ONLCR | OXTABS;
+ 	t.c_lflag = ISIG | ICANON | ECHO | ECHOE | ECHOK ;
+-	t.c_cflag |= TAB3;
+ 
+-	ioctl ( 0, TCSETA, &t );
++	tcsetattr(0, TCSANOW, &t);
+ #endif
+ }
+ set_resource_limits()

@@ -1,11 +1,13 @@
 --- mshell.h.orig	Sun Oct 20 16:15:25 2002
 +++ mshell.h	Sun Oct 20 16:14:30 2002
-@@ -5,7 +5,7 @@
+@@ -5,8 +5,8 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #ifdef BSD
 -#include <sys/dir.h>		/* accessing the directory structure	*/
+-#include <sgtty.h>		/* struct for terminal attributes       */
 +#include <dirent.h>		/* accessing the directory structure	*/
- #include <sgtty.h>		/* struct for terminal attributes       */
++#include <termios.h>		/* struct for terminal attributes       */
  #endif
  #ifdef SYSV
+ #define index	strchr
