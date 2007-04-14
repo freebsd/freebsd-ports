@@ -7,6 +7,7 @@
 
 PORTNAME=	gnuplot
 PORTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	math graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,16 +17,18 @@ COMMENT=	A command-driven interactive function plotting program
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--without-tutorial \
-		--without-linux-vga \
+CONFIGURE_ARGS= --with-kpsexpand \
 		--with-lasergnu \
+		--with-readline=gnu \
+		--without-linux-vga \
 		--without-lisp-files \
-		--with-readline=gnu
+		--without-tutorial
 
 BUILD_DEPENDS+=latex:${PORTSDIR}/print/teTeX-base
 
 OPTIONS=	GD		"Enable GD support"		on \
-		PDF		"Enable PDF support"		on
+		PDF		"Enable PDF support"		on \
+		PLOT		"Enable plot support"		on
 
 MAN1=		gnuplot.1 lasergnu.1
 INFO=		gnuplot
@@ -50,6 +53,13 @@ CONFIGURE_ARGS+=	--without-pdf
 .else
 LIB_DEPENDS+=		pdf.8:${PORTSDIR}/print/pdflib
 CONFIGURE_ARGS+=	--with-pdf=${LOCALBASE}
+.endif
+
+.if defined(WITHOUT_PLOT)
+CONFIGURE_ARGS+=	--without-plot
+.else
+LIB_DEPENDS+=		plot.4:${PORTSDIR}/graphics/plotutils
+CONFIGURE_ARGS+=	--with-plot=${LOCALBASE}
 .endif
 
 post-patch:
