@@ -1,5 +1,5 @@
---- install.sh.orig	Thu Sep 21 22:27:04 2006
-+++ install.sh	Thu Sep 21 22:38:24 2006
+--- install.sh.orig	Mon Apr  9 10:57:12 2007
++++ install.sh	Fri Apr 13 20:17:57 2007
 @@ -805,10 +805,9 @@
      case "${machine}:${os}" in
  	x86:Linux|x86_64:Linux|x86:AnyBSD|x86_64:AnyBSD|x86:OpenBSD)
@@ -14,7 +14,7 @@
  	    wrapper_sunjava_machine="i386"
  	;;
  
-@@ -838,7 +837,7 @@
+@@ -838,10 +837,19 @@
  		error 'os'
  	;;
      esac
@@ -23,7 +23,19 @@
  
      wrapper_contain="#!/bin/sh
  
-@@ -901,6 +900,10 @@
++# Required to check on shm_allow_removed if it is disable then set the
++# OPERA_NUM_XSHM to 0 or it will causing Opera to halt or/and give strange
++# behavior.
++if [ \`/sbin/sysctl -n kern.ipc.shm_allow_removed\` -eq 0 ]; then
++	OPERA_NUM_XSHM=\"0\"
++	export OPERA_NUM_XSHM
++	echo \"shm_allow_removed is disable, set OPERA_NUM_XSHM to 0 to disable shared memory.\"
++fi
++
+ # Required for Session Management
+ case \$0 in /*) OPERA_SCRIPT_PATH=\$0;; *) OPERA_SCRIPT_PATH=`/bin/pwd`/\$0;; esac
+ export OPERA_SCRIPT_PATH
+@@ -901,6 +909,10 @@
  OPERA_LD_PRELOAD=\"\${LD_PRELOAD}\"
  export OPERA_LD_PRELOAD
  
@@ -34,7 +46,7 @@
  # Native Java enviroment
  if test -f \"\${OPERA_PERSONALDIR}/javapath.txt\"; then
      INIJAVA=\`cat \${OPERA_PERSONALDIR}/javapath.txt\`
-@@ -908,8 +911,8 @@
+@@ -908,8 +920,8 @@
  fi
  
  if test ! \"\${OPERA_JAVA_DIR}\"; then
@@ -45,7 +57,7 @@
          if test -f \"\${INIJAVA}/libjava.so\"; then OPERA_JAVA_DIR=\"\${INIJAVA}\"; fi
      fi
  fi
-@@ -924,69 +927,16 @@
+@@ -924,69 +936,16 @@
  
  if test ! \"\${OPERA_JAVA_DIR}\"; then
  
@@ -123,7 +135,7 @@
  	; do
  	for PREFIX in \${PREFIXES}; do
  	    if test -f \"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}/libjava.so\"; then OPERA_JAVA_DIR=\"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}\" && break; fi
-@@ -1037,11 +987,8 @@
+@@ -1037,11 +996,8 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -137,7 +149,7 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1063,13 +1010,6 @@
+@@ -1063,13 +1019,6 @@
  done"
  
  case "${os}" in
@@ -151,7 +163,7 @@
      SunOS)
  wrapper_contain="${wrapper_contain}
  
-@@ -1098,7 +1038,7 @@
+@@ -1098,7 +1047,7 @@
  };
  
  // Opera package classes get all permissions
@@ -160,7 +172,7 @@
  	permission java.security.AllPermission;
  };
  
-@@ -1167,7 +1107,7 @@
+@@ -1167,7 +1116,7 @@
      chop "${OPERADESTDIR}" "str_localdirshare"
      chop "${OPERADESTDIR}" "str_localdirplugin"
  
@@ -169,7 +181,7 @@
  
      # Executable
      debug_msg 1 "Executable"
-@@ -1201,7 +1141,7 @@
+@@ -1201,7 +1150,7 @@
  
      #cp $cpv $cpf wrapper.sh $wrapper_dir/opera
      generate_wrapper
@@ -178,7 +190,7 @@
  
      # Manual page
      debug_msg 1 "Manual page"
-@@ -1210,7 +1150,7 @@
+@@ -1210,7 +1159,7 @@
      chmod $chmodv 755 ${man_dir}
      mkdir $mkdirv $mkdirp ${man_dir}/man1
      chmod $chmodv 755 ${man_dir}/man1
@@ -187,7 +199,7 @@
  
      # Documentation
      debug_msg 1 "Documentation"
-@@ -1242,13 +1182,6 @@
+@@ -1242,13 +1191,6 @@
  	mkdir $mkdirv $mkdirp $share_dir/ini/
  	chmod $chmodv 755 $share_dir/ini
  	cp $cpv $cpf $cpR ini/* $share_dir/ini/
@@ -201,7 +213,7 @@
      fi
  
      mkdir $mkdirv $mkdirp $share_dir/locale/
-@@ -1340,43 +1273,11 @@
+@@ -1340,43 +1282,11 @@
  
      if test -z "${OPERADESTDIR}"
      then
@@ -246,7 +258,7 @@
  	fi
  
      fi # OPERADESTDIR
-@@ -1428,19 +1329,19 @@
+@@ -1428,19 +1338,19 @@
      # arg1 = location
      # arg2 = type
  
@@ -269,7 +281,7 @@
  Name[af]=opera
  Name[eo]=Opero
  Name[zu]=I Opera
-@@ -1464,7 +1365,7 @@
+@@ -1464,7 +1374,7 @@
  GenericName[ven]=Buronza ya Webu
  GenericName[xh]=Umkhangeli Zincwadi Zokubhaliweyo
  GenericName[zu]=Umkhangeli zincwadi we Web
@@ -278,7 +290,7 @@
  Terminal=false"
  
  # Application is not a category, according to
-@@ -1479,25 +1380,26 @@
+@@ -1479,25 +1389,26 @@
  	if test "${2}" = "xdg"; then
  	    desktop_contain="${desktop_contain}
  Categories=Application;Qt;Network;WebBrowser;X-Ximian-Main;X-Ximian-Toplevel
@@ -311,7 +323,7 @@
  
      echo "${desktop_contain}" > ${desktop_file}
      chmod $chmodv 644 ${desktop_file}
-@@ -1528,55 +1430,28 @@
+@@ -1528,55 +1439,28 @@
  
      debug_msg 0 "in icons()"
  
@@ -328,26 +340,19 @@
 -    fi
 -
 -    if test ! -d /usr/share/pixmaps
-+    if test ! -d %%LOCALBASE%%/share/pixmaps/
-     then
+-    then
 -	if test -w /usr/share
-+	if test -w %%LOCALBASE%%/share
- 	then
+-	then
 -	    mkdir $mkdirv $mkdirp /usr/share/pixmaps/
 -	    chmod $chmodv 755 /usr/share/pixmaps
 -	    cp $cpv $share_dir/images/opera.xpm /usr/share/pixmaps/opera.xpm
-+	    mkdir $mkdirv $mkdirp %%LOCALBASE%%/share/pixmaps/
-+	    chmod $chmodv 755 %%LOCALBASE%%/share/pixmaps
-+	    cp $cpv $share_dir/images/opera_48x48.png %%LOCALBASE%%/share/pixmaps/linux-opera.png
- 	fi
+-	fi
 -    elif test -w /usr/share/pixmaps/
 -    then cp $cpv $share_dir/images/opera.xpm /usr/share/pixmaps/opera.xpm
-+    elif test -w %%LOCALBASE%%/share/pixmaps/
-+    then cp $cpv $share_dir/images/opera_48x48.png %%LOCALBASE%%/share/pixmaps/linux-opera.png
-     fi
- 
+-    fi
+-
 -    if test ! -d /etc/X11/wmconfig/
-+    if test ! -d %%LOCALBASE%%/share/applications/
++    if test ! -d %%LOCALBASE%%/share/pixmaps/
      then
 -	if test -w /etc/X11
 +	if test -w %%LOCALBASE%%/share
@@ -355,15 +360,22 @@
 -	    mkdir $mkdirv $mkdirp /etc/X11/wmconfig/
 -	    chmod $chmodv 755 /etc/X11/wmconfig
 -	    generate_wmconfig /etc/X11/wmconfig
--	fi
++	    mkdir $mkdirv $mkdirp %%LOCALBASE%%/share/pixmaps/
++	    chmod $chmodv 755 %%LOCALBASE%%/share/pixmaps
++	    cp $cpv $share_dir/images/opera_48x48.png %%LOCALBASE%%/share/pixmaps/linux-opera.png
+ 	fi
 -    elif test -w /etc/X11/wmconfig/
 -    then generate_wmconfig /etc/X11/wmconfig
--    fi
--
++    elif test -w %%LOCALBASE%%/share/pixmaps/
++    then cp $cpv $share_dir/images/opera_48x48.png %%LOCALBASE%%/share/pixmaps/linux-opera.png
+     fi
+ 
 -    if test -d /etc/X11/applnk/
--    then
++    if test ! -d %%LOCALBASE%%/share/applications/
+     then
 -	if test ! -d /etc/X11/applnk/Internet/
--	then
++	if test -w %%LOCALBASE%%/share
+ 	then
 -	    if test -w /etc/X11/applnk
 -	    then
 -		mkdir $mkdirv $mkdirp /etc/X11/applnk/Internet/
