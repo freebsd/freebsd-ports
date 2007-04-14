@@ -6,9 +6,12 @@
 #
 
 PORTNAME=	ifstated
-PORTVERSION=	20050505
+PORTVERSION=	3.7
+PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	http://skreuzer.f2o.org/mirror/ifstated/
+MASTER_SITES=	http://skreuzer.f2o.org/mirror/ifstated/ \
+		http://www.atarininja.org/~wxs/distfiles/ \
+		http://www.pkix.net/mirror/f2o.org/ifstated/
 
 MAINTAINER=	skreuzer@f2o.org
 COMMENT=	Interface State daemon
