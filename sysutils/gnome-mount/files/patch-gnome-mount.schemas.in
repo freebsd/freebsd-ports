@@ -1,5 +1,5 @@
 --- gnome-mount.schemas.in.orig	Tue Apr 10 18:50:12 2007
-+++ gnome-mount.schemas.in	Wed Apr 11 12:12:20 2007
++++ gnome-mount.schemas.in	Sat Apr 14 14:49:22 2007
 @@ -6,7 +6,7 @@
          <applyto>/system/storage/default_options/vfat/mount_options</applyto>
          <type>list</type>
@@ -36,3 +36,12 @@
          <locale name="C">
            <short>Default mount options for ntfs fs</short>
            <long>A list of default mount options for volumes formatted with the ntfs file system.</long>
+@@ -52,7 +52,7 @@
+         <key>/schemas/system/storage/default_options/ntfs/fstype_override</key>
+         <applyto>/system/storage/default_options/ntfs/fstype_override</applyto>
+         <type>string</type>
+-        <default>ntfs-3g</default>
++        <default></default>
+         <locale name="C">
+           <short>When 'ntfs' is detected, what file system driver to use by default</short>
+           <long>The name of the file system driver to use by default when 'ntfs' is detected. This is useful for configuring the system to use the 'ntfs-3g' driver for all 'ntfs' file systems by default. User can still choose to use the 'ntfs' file system driver by overriding it per-volume or on the command line.</long>
