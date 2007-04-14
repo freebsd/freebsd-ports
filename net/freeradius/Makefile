@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freeradius
-PORTVERSION?=	1.1.5
+PORTVERSION?=	1.1.6
 PORTREVISION?=	0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
@@ -30,10 +30,10 @@ LOGDIR?=	/var/log
 
 CONFLICTS=	gnu-radius-1.* openradius-0.* radiusd-cistron-1.*
 .ifdef(FREERADIUS_SLAVE_MYSQL)
-CONFLICTS+=	freeradius-1.*
+CONFLICTS+=	freeradius-[0-9].* freeradius-mysql-[02-9].*
 PKGNAMESUFFIX=	-mysql
 .else
-CONFLICTS+=	freeradius-mysql-1.*
+CONFLICTS+=	freeradius-mysql-[0-9].* freeradius-[02-9].*
 .endif
 
 USE_RC_SUBR=	radiusd.sh
@@ -71,9 +71,15 @@ CONFIGURE_ARGS=	--quiet \
 		--prefix=${PREFIX} \
 		--localstatedir=/var \
 		--mandir=${PREFIX}/man \
-		--with-system-libtool \
-		--with-docdir=${DOCSDIR} \
-		--with-logdir=${LOGDIR} \
+		--with-system-libtool
+.ifdef(NOPORTDOCS)
+CONFIGURE_ARGS+=--without-docdir
+PLIST_SUB+=	PORTDOCS="@comment "
+.else
+CONFIGURE_ARGS+=--with-docdir=${DOCSDIR}
+PLIST_SUB+=	PORTDOCS=""
+.endif
+CONFIGURE_ARGS+=--with-logdir=${LOGDIR} \
 		--with-large-files \
 		--with-openssl-includes=${OPENSSLINC} \
 		--with-openssl-libraries=${OPENSSLLIB} \
@@ -193,10 +199,6 @@ CONFIGURE_ARGS+=--with-rlm_perl
 PLIST_SUB+=	RLMPERL=""
 .endif
 
-.if defined(NOPORTDOCS)
-MAKE_ENV+=	NOPORTDOCS=yes
-.endif
-
 USE_LDCONFIG=	yes
 
 MAN1=		radclient.1 radeapclient.1 radlast.1 radtest.1 radwho.1 \
@@ -205,72 +207,42 @@ MAN5=		acct_users.5 clients.5 clients.conf.5 dictionary.5 naslist.5 \
 		radiusd.conf.5 rlm_acct_unique.5 rlm_always.5 \
 		rlm_attr_filter.5 rlm_attr_rewrite.5 rlm_chap.5 rlm_counter.5 \
 		rlm_detail.5 rlm_expr.5 rlm_files.5 rlm_mschap.5 rlm_pap.5 \
-		rlm_passwd.5 rlm_realm.5 rlm_sql.5 rlm_sql_log.5 rlm_unix.5 users.5
+		rlm_passwd.5 rlm_realm.5 rlm_sql.5 rlm_sql_log.5 rlm_unix.5 \
+		users.5
 MAN8=		radiusd.8 radrelay.8 radsqlrelay.8 radwatch.8 rlm_ippool_tool.8
-
-DICTS=		dictionary.3com dictionary.3gpp dictionary.3gpp2 dictionary.acc \
-		dictionary.airespace dictionary.alcatel dictionary.alteon \
-		dictionary.altiga dictionary.alvarion dictionary.aptis \
-		dictionary.aruba dictionary.ascend dictionary.asn dictionary.avaya \
-		dictionary.bay dictionary.bintec dictionary.bristol \
-		dictionary.cablelabs dictionary.cabletron dictionary.cisco \
-		dictionary.cisco.bbsm dictionary.cisco.vpn3000 dictionary.cisco.vpn5000 \
-		dictionary.colubris dictionary.columbia_university dictionary.compat \
-		dictionary.cosine dictionary.digium dictionary.epygi \
-		dictionary.ericsson dictionary.erx dictionary.extreme \
-		dictionary.fortinet dictionary.foundry dictionary.freeradius \
-		dictionary.freeradius.internal dictionary.gandalf dictionary.garderos \
-		dictionary.gemtek dictionary.hp dictionary.ipunplugged dictionary.issanni \
-		dictionary.itk dictionary.juniper dictionary.karlnet \
-		dictionary.livingston dictionary.localweb dictionary.lucent \
-		dictionary.merit dictionary.microsoft dictionary.mikrotik \
-		dictionary.motorola dictionary.navini dictionary.netscreen \
-		dictionary.nokia dictionary.nomadix dictionary.nortel dictionary.ntua \
-		dictionary.packeteer dictionary.patton \
-		dictionary.propel dictionary.quintum \
-		dictionary.redback dictionary.redcreek \
-		dictionary.rfc2865 dictionary.rfc2866 dictionary.rfc2867 \
-		dictionary.rfc2868 dictionary.rfc2869 dictionary.rfc3162 \
-		dictionary.rfc3576 dictionary.rfc3580 dictionary.rfc4590 \
-		dictionary.riverstone dictionary.roaringpenguin \
-		dictionary.schulzrinne-sipping dictionary.shasta dictionary.shiva \
-		dictionary.sofaware dictionary.sonicwall \
-		dictionary.springtide dictionary.starent dictionary.t_systems_nova \
-		dictionary.telebit dictionary.trapeze dictionary.tropos \
-		dictionary.unix dictionary.usr dictionary.valemount \
-		dictionary.versanet dictionary.walabi dictionary.waverider \
-		dictionary.wispr dictionary.xedia dictionary.xylan dictionary.zyxel
 
 SUB_LIST+=	REQUIRE="${_REQUIRE}"
 
 post-patch:
-# Patch Makefile / Makefile.in throughout the source tree to install in EXAMPLESDIR not raddb
-	@for i in `${FIND} -E ${WRKSRC} -regex '.*Makefile(\.in)?$$' -print` ; do \
-		${REINPLACE_CMD} -e "s:\$$(R)\$$(raddbdir):${EXAMPLESDIR}/raddb:g" $${i}; \
-	done
-	@for i in `${FIND} -E ${WRKSRC} -regex '.*Makefile(\.in)?\.(orig|bak)$$' -print` ; do \
-		${RM} $${i}; \
-	done
+# Patch Makefile / Makefile.in throughout the source tree to install raddb
+# contents in ${EXAMPLESDIR}/raddb rather than the raddbdir from configure
+	@${FIND} -E ${WRKSRC} -regex '.*/Makefile(\.in)?$$' -exec \
+		${REINPLACE_CMD} -e "s:\$$(R)\$$(raddbdir):${EXAMPLESDIR}/raddb:g" {} \;
+# Clean up after the last operation (so as not to get unwanted files when installing doc/)
+	@${FIND} -E ${WRKSRC} -regex '.*/Makefile(\.in)?\.(orig|bak)$$' -delete
 .if ${OSVERSION} < 500000
 	@${REINPLACE_CMD} -e 's/-DNO_OPENSSL//' ${WRKSRC}/configure
 .endif
 
 post-install:
-	@${MKDIR} ${PREFIX}/etc/raddb ${DATADIR}
-.for dict in ${DICTS}
-	${INSTALL_DATA} ${WRKSRC}/share/${dict} ${DATADIR}/${dict}
-.endfor
-	for i in `${FIND} ${EXAMPLESDIR}/raddb/ -type d -mindepth 1 -print \
-	| ${SED} -e 's:^${EXAMPLESDIR}/raddb/::g'`; do \
-		if [ ! -d ${PREFIX}/etc/raddb/$${i} ]; then \
-			${MKDIR} ${PREFIX}/etc/raddb/$${i}; \
+# Create (if necessary) ${PREFIX}/etc/raddb and subdirectories using
+# ${EXAMPLESDIR}/raddb as the model layout
+	@for i in `${FIND} ${EXAMPLESDIR}/raddb/ -type d -print \
+	| ${SED} -e 's:^${EXAMPLESDIR}/raddb::g'`; do \
+		if [ ! -d ${PREFIX}/etc/raddb$${i} ]; then \
+			${MKDIR} ${PREFIX}/etc/raddb$${i}; \
 		fi; \
 	done
-	for i in `${FIND} ${EXAMPLESDIR}/raddb/ -type f -print \
+# Copy all files from ${EXAMPLESDIR}/raddb to ${PREFIX}/etc/raddb if they
+# don't already exist in the destination location
+	@for i in `${FIND} ${EXAMPLESDIR}/raddb/ -type f -print \
 	| ${SED} -e 's:^${EXAMPLESDIR}/raddb/::g'`; do \
 		if [ ! -f ${PREFIX}/etc/raddb/$${i} ]; then \
 			${CP} -p ${EXAMPLESDIR}/raddb/$${i} ${PREFIX}/etc/raddb/$${i}; \
 		fi; \
 	done
+# Set ${PREFIX}/etc/raddb and all the files and folders in it to g-w,o-rwx
+# (FreeRADIUS will probably complain if this is not done)
+	@${CHMOD} -R g-w,o-rwx ${PREFIX}/etc/raddb
 
 .include <bsd.port.post.mk>
