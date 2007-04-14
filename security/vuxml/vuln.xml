@@ -34,6 +34,69 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5678da43-ea99-11db-a802-000fea2763ce">
+    <topic>lighttpd -- DOS when access files with mtime 0</topic>
+    <affects>
+      <package>
+	<name>lighttpd</name>
+	<range><lt>1.4.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Lighttpd SA:</p>
+	<blockquote cite="http://www.lighttpd.net/assets/2007/4/13/lighttpd_sa2007_02.txt">
+	  <p>Lighttpd caches the rendered string for mtime. The cache key has
+	    as a default value 0.  At that point the pointer to the string are
+	    still NULL. If a file with an mtime of 0 is requested it tries to
+	    access the pointer and crashes.</p>
+	  <p>The bug requires that a malicious user can either upload files or
+	    manipulate the mtime of the files.</p>
+	  <p>The bug was reported by cubiq and fixed by Marcus Rueckert.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-1870</cvename>
+      <url>http://www.lighttpd.net/assets/2007/4/13/lighttpd_sa2007_02.txt</url>
+    </references>
+    <dates>
+      <discovery>2007-01-14</discovery>
+      <entry>2007-04-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d2b48d30-ea97-11db-a802-000fea2763ce">
+    <topic>lighttpd -- Remote DOS in CRLF parsing</topic>
+    <affects>
+      <package>
+	<name>lighttpd</name>
+	<range><gt>1.4.11</gt><lt>1.4.13_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Lighttpd SA:</p>
+	<blockquote cite="http://www.lighttpd.net/assets/2007/4/13/lighttpd_sa2007_01.txt">
+	  <p>If the connection aborts during parsing "\r\n\r\n" the server
+	    might get into a infinite loop and use 100% of the CPU time.
+	    lighttpd still responses to other requests. This can be repeated
+	    until either the server limit for concurrent connections or file
+	    descriptors is reached.</p>
+	  <p>The bug was reported and fixed by Robert Jakabosky.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-1869</cvename>
+      <url>http://www.lighttpd.net/assets/2007/4/13/lighttpd_sa2007_01.txt</url>
+    </references>
+    <dates>
+      <discovery>2006-12-15</discovery>
+      <entry>2007-04-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c110eda2-e995-11db-a944-0012f06707f0">
     <topic>freeradius -- EAP-TTLS Tunnel Memory Leak Remote DOS Vulnerability</topic>
     <affects>
