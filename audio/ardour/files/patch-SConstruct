@@ -1,5 +1,5 @@
 --- SConstruct.orig	Fri Mar 16 22:45:44 2007
-+++ SConstruct	Sun Mar 18 09:53:00 2007
++++ SConstruct	Fri Mar 30 17:32:20 2007
 @@ -38,7 +38,7 @@
      BoolOption('FPU_OPTIMIZATION', 'Build runtime checked assembler code', 1),
      BoolOption('LIBLO', 'Compile with support for liblo library', 1),
@@ -9,6 +9,15 @@
      BoolOption('SURFACES', 'Build support for control surfaces', 1),
      BoolOption('SYSLIBS', 'USE AT YOUR OWN RISK: CANCELS ALL SUPPORT FROM ARDOUR AUTHORS: Use existing system versions of various libraries instead of internal ones', 0),
      BoolOption('UNIVERSAL', 'Compile as universal binary.  Requires that external libraries are already universal.', 0),
+@@ -381,7 +381,7 @@
+ # Make sure they know what they are doing
+ #
+ 
+-if env['VST']:
++if False:
+     sys.stdout.write ("Are you building Ardour for personal use (rather than distribution to others)? [no]: ")
+     answer = sys.stdin.readline ()
+     answer = answer.rstrip().strip()
 @@ -660,13 +660,7 @@
  # prepend boiler plate optimization flags
  #
@@ -24,94 +33,36 @@
  
  if env['DEBUG'] == 1:
      env.Append(CCFLAGS=" ".join (debug_flags))
-@@ -754,9 +748,9 @@
+@@ -752,6 +746,7 @@
+ if env['LIBLO']:
+     libraries['lo'] = LibraryInfo ()
      prep_libcheck(env, libraries['lo'])
++    libraries['lo'].Append(CCFLAGS="-I/usr/local/include", LINKFLAGS="-L/usr/local/lib")
  
      conf = Configure (libraries['lo'])
--    if conf.CheckLib ('lo', 'lo_server_new') == False:
--        print "liblo does not appear to be installed."
--        sys.exit (1)
-+#    if conf.CheckLib ('lo', 'lo_server_new') == False:
-+#        print "liblo does not appear to be installed."
-+#        sys.exit (1)
-     
-     libraries['lo'] = conf.Finish ()
+     if conf.CheckLib ('lo', 'lo_server_new') == False:
+@@ -765,6 +760,7 @@
  
-@@ -796,8 +790,10 @@
+ libraries['dmalloc'] = LibraryInfo ()
+ prep_libcheck(env, libraries['dmalloc'])
++libraries['dmalloc'].Append(CCFLAGS="-I/usr/local/include", LINKFLAGS="-L/usr/local/lib")
+ 
+ #
+ # look for the threaded version
+@@ -796,8 +792,10 @@
      subst_dict['%MIDITAG%'] = "ardour"
      subst_dict['%MIDITYPE%'] = "coremidi"
  else:
 -    print "It appears you don't have the required MIDI libraries installed. For Linux this means you are missing the development package for ALSA libraries."
 -    sys.exit (1)
-+    libraries['sysmidi'] = LibraryInfo (LIBS='lo')
++    libraries['sysmidi'] = LibraryInfo ()
 +    env['SYSMIDI'] = 'none'
 +    subst_dict['%MIDITAG%'] = "none"
 +    subst_dict['%MIDITYPE%'] = "none"
  
  env = conf.Finish()
  
-@@ -1021,33 +1017,33 @@
- # i18n support
- #
- 
--conf = Configure (env)
--if env['NLS']:
--    nls_error = 'This system is not configured for internationalized applications.  An english-only version will be built:'
--    print 'Checking for internationalization support ...'
--    have_gettext = conf.TryAction(Action('xgettext --version'))
--    if have_gettext[0] != 1:
--        nls_error += ' No xgettext command.'
--        env['NLS'] = 0
--    else:
--        print "Found xgettext"
--    
--    have_msgmerge = conf.TryAction(Action('msgmerge --version'))
--    if have_msgmerge[0] != 1:
--        nls_error += ' No msgmerge command.'
--        env['NLS'] = 0
--    else:
--        print "Found msgmerge"
--    
--    if not conf.CheckCHeader('libintl.h'):
--        nls_error += ' No libintl.h.'
--        env['NLS'] = 0
--        
--    if env['NLS'] == 0:
--        print nls_error
--    else:
--        print "International version will be built."
--env = conf.Finish()
-+#conf = Configure (env)
-+#if env['NLS']:
-+#    nls_error = 'This system is not configured for internationalized applications.  An english-only version will be built:'
-+#    print 'Checking for internationalization support ...'
-+#    have_gettext = conf.TryAction(Action('xgettext --version'))
-+#    if have_gettext[0] != 1:
-+#        nls_error += ' No xgettext command.'
-+#        env['NLS'] = 0
-+#    else:
-+#        print "Found xgettext"
-+#    
-+#    have_msgmerge = conf.TryAction(Action('msgmerge --version'))
-+#    if have_msgmerge[0] != 1:
-+#        nls_error += ' No msgmerge command.'
-+#        env['NLS'] = 0
-+#    else:
-+#        print "Found msgmerge"
-+#    
-+#    if not conf.CheckCHeader('libintl.h'):
-+#        nls_error += ' No libintl.h.'
-+#        env['NLS'] = 0
-+#        
-+#    if env['NLS'] == 0:
-+#        print nls_error
-+#    else:
-+#        print "International version will be built."
-+#env = conf.Finish()
- 
- if env['NLS'] == 1:
-     env.Append(CCFLAGS="-DENABLE_NLS")
-@@ -1064,8 +1060,8 @@
+@@ -1064,8 +1062,8 @@
      subst_dict['%JACK_INPUT%'] = "coreaudio:Built-in Audio:in"
      subst_dict['%JACK_OUTPUT%'] = "coreaudio:Built-in Audio:out"
  else:

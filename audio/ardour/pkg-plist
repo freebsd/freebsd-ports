@@ -1,10 +1,13 @@
-bin/ardour2
+%%NO_VST%%bin/ardour2
+%%VST%%bin/ardourvst
 lib/ardour2/libsndfile-ardour.so
 lib/ardour2/libpbd.so
 lib/ardour2/libmidi++.so
 lib/ardour2/libardour.so
+%%NO_VST%%lib/ardour2/ardour-%%DISTVERSION%%
+%%VST%%lib/ardour2/ardour_vst.exe.so
+%%VST%%lib/ardour2/libardourgtk.so
 lib/ardour2/libgtkmm2ext.so
-lib/ardour2/ardour-%%DISTVERSION%%
 lib/ardour2/libardour_cp.so
 lib/ardour2/surfaces/libardour_genericmidi.so
 lib/ardour2/surfaces/libardour_mackie.so
