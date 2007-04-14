@@ -7,7 +7,7 @@
 
 PORTNAME=	gnuplot
 PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +16,7 @@ MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	A command-driven interactive function plotting program
 
 GNU_CONFIGURE=	yes
+WANT_WX=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS= --with-kpsexpand \
 		--with-lasergnu \
@@ -28,7 +29,8 @@ BUILD_DEPENDS+=latex:${PORTSDIR}/print/teTeX-base
 
 OPTIONS=	GD		"Enable GD support"		on \
 		PDF		"Enable PDF support"		on \
-		PLOT		"Enable plot support"		on
+		PLOT		"Enable plot support"		on \
+		WX		"Enable WX support"		off
 
 MAN1=		gnuplot.1 lasergnu.1
 INFO=		gnuplot
@@ -62,6 +64,14 @@ CONFIGURE_ARGS+=	--without-plot
 .else
 LIB_DEPENDS+=		plot.4:${PORTSDIR}/graphics/plotutils
 CONFIGURE_ARGS+=	--with-plot=${LOCALBASE}
+.endif
+
+.if defined(WITHOUT_WX)
+CONFIGURE_ARGS+=	--disable-wxwidgets
+.else
+USE_WX=			2.4+
+WX_COMPS=		wx
+CONFIGURE_ARGS+=	--with-wx-config=${WXCONFIG}
 .endif
 
 post-patch:
