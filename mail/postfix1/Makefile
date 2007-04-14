@@ -35,7 +35,6 @@ USE_RC_SUBR=	postfix.sh
 PATCH_STRIP=	-p1
 
 OPTIONS=	PCRE		"Perl Compatible Regular Expressions"			on \
-		SASL		"Cyrus SASLv1 (Simple Auth. and Sec. Layer)"		off \
 		TLS		"Enable SSL and TLS support"				off \
 		DB3		"Berkeley DB3 (required if SASL built with DB3)"	off \
 		MYSQL		"MySQL maps lookups"					off \
@@ -78,12 +77,6 @@ POSTFIX_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
 .else
 POSTFIX_CCARGS+=	-DNO_PCRE
-.endif
-
-.if defined(WITH_SASL)
-LIB_DEPENDS+=		sasl.8:${PORTSDIR}/security/cyrus-sasl
-POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -I${LOCALBASE}/include
-POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl -lpam -lcrypt
 .endif
 
 .if defined(WITH_TLS)
