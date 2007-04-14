@@ -32,6 +32,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/paster_templates.pyc
 %%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/paster_templates.pyo
 %%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/paster_templates/paste_deploy/docs/devel_config.ini_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/paster_templates/paste_deploy/+package+/sampleapp.py_tmpl
+%%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/paster_templates/paste_deploy/+package+/wsgiapp.py_tmpl
 %%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/util/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/util/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/util/__init__.pyo
@@ -43,6 +45,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/util/threadinglocal.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/util
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/paster_templates/paste_deploy/docs
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/paster_templates/paste_deploy/+package+
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/paster_templates/paste_deploy
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy/paster_templates
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYPASTEDEPLOY_EGG%%/paste/deploy
