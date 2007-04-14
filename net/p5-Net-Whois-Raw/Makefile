@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Whois-Raw
-PORTVERSION=	1.20
+PORTVERSION=	1.21
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -24,10 +24,4 @@ PERL_CONFIGURE=	yes
 MAN3=		Net::Whois::Raw.3
 MAN1=		pwhois.1
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
