@@ -36,6 +36,9 @@ lib/lighttpd/mod_evhost.so
 lib/lighttpd/mod_expire.a
 lib/lighttpd/mod_expire.la
 lib/lighttpd/mod_expire.so
+lib/lighttpd/mod_extforward.a
+lib/lighttpd/mod_extforward.la
+lib/lighttpd/mod_extforward.so
 lib/lighttpd/mod_fastcgi.a
 lib/lighttpd/mod_fastcgi.la
 lib/lighttpd/mod_fastcgi.so
