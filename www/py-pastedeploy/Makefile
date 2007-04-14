@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PasteDeploy
-PORTVERSION=	1.1
+PORTVERSION=	1.3
 CATEGORIES=	www python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/P/PasteDeploy/ \
 		${MASTER_SITE_LOCAL} \
