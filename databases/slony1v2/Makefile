@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	slony1
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.9
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/1215/:main \
-		http://pgfoundry.org/frs/download.php/1216/:docs
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:main \
-		${PORTNAME}-${PORTVERSION}-docs${EXTRACT_SUFX}:docs
+MASTER_SITES=	http://main.slony.info/downloads/1.2/source/
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-${PORTVERSION}-docs${EXTRACT_SUFX}
 
 MAINTAINER=	vivek@khera.org
 COMMENT=	PostgreSQL master to multiple replicas replication system
@@ -66,6 +65,10 @@ PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | \
 PGSQL_VER=	${DEFAULT_PGSQL_VER}
 .endif
 
+.if ! defined(NO_INSTALL_MANPAGES)
+MAN1=	slon.1 slonik.1
+.endif
+
 post-install:
 .if ! defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -75,6 +78,9 @@ post-install:
 #	${INSTALL_DATA} ${WRKSRC}/doc/*/*.pdf ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/howto/*.txt ${WRKSRC}/doc/howto/*.html ${DOCSDIR}/howto/
 	${INSTALL_DATA} ${WRKSRC}/doc/adminguide/*.html ${WRKSRC}/doc/adminguide/*.png ${DOCSDIR}/adminguide/
+.endif
+.if ! defined(NO_INSTALL_MANPAGES)
+	${INSTALL_MAN} ${WRKSRC}/doc/adminguide/man1/*.1 ${MAN1PREFIX}/man/man1
 .endif
 	@${INSTALL_SCRIPT} ${WRKDIR}/slon-mkservice.sh ${PREFIX}/sbin/slon-mkservice
 	@${INSTALL_DATA} ${FILESDIR}/slon.conf-sample ${PREFIX}/etc/
