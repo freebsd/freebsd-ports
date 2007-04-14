@@ -30,7 +30,6 @@ USE_RC_SUBR=	postfix.sh
 
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
 OPTIONS=	PCRE		"Perl Compatible Regular Expressions" 			on \
-		SASL		"Cyrus SASLv1 (Simple Auth. and Sec. Layer)"		off \
 		SASL2		"Cyrus SASLv2 (Simple Auth. and Sec. Layer)"		off \
 		DOVECOT		"Dovecot SASL authentication method"			off \
 		SASLKRB		"If your SASL req. Kerberos select this option"		off \
@@ -91,17 +90,8 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
 POSTFIX_CCARGS+=	-DNO_PCRE
 .endif
 
-.if defined(WITH_SASL)
-.if defined(WITH_SASL2) || defined(WITH_DOVECOT)
-BROKEN=			Select only one SASL authentication method
-.endif
-LIB_DEPENDS+=		sasl.8:${PORTSDIR}/security/cyrus-sasl
-POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I${LOCALBASE}/include -I${LOCALBASE}/include/sasl1
-POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl -lpam -lcrypt
-.endif
-
 .if defined(WITH_SASL2)
-.if defined(WITH_SASL) || defined(WITH_DOVECOT)
+.if defined(WITH_DOVECOT)
 BROKEN=			Select only one SASL authentication method
 .endif
 LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
@@ -110,7 +100,7 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2 -lpam -lcrypt
 .endif
 
 .if defined(WITH_DOVECOT)
-.if defined(WITH_SASL) || defined(WITH_SASL2)
+.if defined(WITH_SASL2)
 BROKEN=			Select only one SASL authentication method
 .endif
 RUN_DEPENDS+=		dovecot:${PORTSDIR}/mail/dovecot
@@ -204,17 +194,6 @@ READMEDIR=${PREFIX}/share/doc/postfix
 SUB_LIST+=	REQUIRE="${_REQUIRE}"
 
 pre-patch:
-.if defined(WITH_SASL) && !defined(WITH_MYSQL) && exists(${LOCALBASE}/lib/libsasl.a)
-	@if /usr/bin/nm ${LOCALBASE}/lib/libsasl.a | ${GREP} -wq "mysql_init"; then \
-		${ECHO_MSG}; \
-		${ECHO_MSG} "Your SASL library it's compiled with MYSQL"; \
-		${ECHO_MSG} "If you use MYSQL in ${PORTNAME} consider CTRL+C and"; \
-		${ECHO_MSG} "select MYSQL OPTION in config menu."; \
-		${ECHO_MSG} "# make clean config"; \
-		${ECHO_MSG}; \
-		sleep 5; \
-	fi
-.endif
 .if defined(WITH_SASL2) && !defined(WITH_MYSQL) && exists(${LOCALBASE}/lib/libsasl2.a)
 	@if /usr/bin/nm ${LOCALBASE}/lib/libsasl2.a | ${GREP} -wq "mysql_init"; then \
 		${ECHO_MSG}; \

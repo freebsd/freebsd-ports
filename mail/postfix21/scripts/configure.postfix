@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix21/scripts/Attic/configure.postfix,v 1.64 2006-10-07 18:23:11 mnag Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix21/scripts/Attic/configure.postfix,v 1.65 2007-04-14 16:45:08 mnag Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -20,7 +20,6 @@ if [ -z "${BATCH}" ]; then
 		--checklist "\n\
 Please select desired options:" -1 -1 16 \
 NOPCRE		"DISABLE Perl Compatible Regular Expressions" "$status_NOPCRE" \
-SASL		"Cyrus SASLv1 (Simple Authentication and Security Layer)" "$status_SASL" \
 SASL2		"Cyrus SASLv2 (Simple Authentication and Security Layer)" "$status_SASL2" \
 SASLKRB		"If your SASL requires Kerberos select this option" "$status_SASLKRB" \
 SASLKRB5	"If your SASL requires Kerberos5 select this option" "$status_SASLKRB5" \
@@ -73,20 +72,6 @@ while [ "$1" ]; do
 			echo "WITHOUT_PCRE=	yes"
 			echo "NOPCRE_SUFFIX=	+nopcre"
 			SUB_NOPCRE=""
-			;;
-		SASL)
-			echo "LIB_DEPENDS+=	sasl.8:\${PORTSDIR}/security/cyrus-sasl"
-			echo "POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -I\${LOCALBASE}/include -I\${LOCALBASE}/include/sasl1"
-			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -lsasl -lpam -lcrypt"
-			echo "SASL_SUFFIX=	+sasl"
-			if [ -f ${PREFIX}/lib/libsasl.a ]; then
-				if nm ${PREFIX}/lib/libsasl.a | grep -wq "mysql_verify_password"; then
-					echo "USE_MYSQL=YES"
-					echo "POSTFIX_CCARGS+=	-DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
-					echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
-				fi
-			fi
-			SUB_SASL=""
 			;;
 		SASL2)
 			echo "LIB_DEPENDS+=	sasl2.2:\${PORTSDIR}/security/cyrus-sasl2"
