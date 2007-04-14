@@ -130,7 +130,6 @@
     SUBDIR += mylibrary
     SUBDIR += mysql++
     SUBDIR += mysql++1
-    SUBDIR += mysql-administrator
     SUBDIR += mysql-connector-java
     SUBDIR += mysql-connector-odbc
     SUBDIR += mysql-editor
