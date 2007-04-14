@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lighttpd
-PORTVERSION=	1.4.13
-PORTREVISION=	2
+PORTVERSION=	1.4.15
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/ \
 		http://mirrors.cat.pdx.edu/lighttpd/
@@ -17,11 +16,11 @@ COMMENT=	A secure, fast, compliant, and very flexible Web Server
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
-USE_AUTOTOOLS=	autoconf:259 libtool:15
+USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 USE_GNOME=	lthack
 USE_RC_SUBR=	lighttpd.sh
-CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/lighttpd
+CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/lighttpd --mandir=${PREFIX}/man
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
