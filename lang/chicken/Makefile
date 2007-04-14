@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chicken
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.call-with-current-continuation.org/
 
@@ -15,21 +15,17 @@ COMMENT=	A Scheme-to-C compiler
 
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+
+OPTIONS=	PCRE "Enable PCRE support" off
 
 MAN1=		chicken-profile.1 chicken-setup.1 chicken.1 csc.1 csi.1
-
-OPTIONS=	PCRE "With PCRE support" off
-
-.if !defined(NOPORTDOCS)
-PORTDOCS=	ChangeLog INSTALL LICENSE NEWS README
-.endif
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
-BROKEN=		coredump during build on ia64
+#BROKEN=		coredump during build on ia64
 .endif
 
 .if defined(WITH_PCRE)
@@ -47,10 +43,9 @@ post-install:
 	@${MKDIR} ${PREFIX}/lib/${PORTNAME}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
+	cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog INSTALL LICENSE NEWS README \
+		${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}/benchmarks
-	@${MKDIR} ${EXAMPLESDIR}/benchmarks/options
-	@${MKDIR} ${EXAMPLESDIR}/benchmarks/others
 	${CP} -R ${WRKSRC}/benchmarks/* ${EXAMPLESDIR}/benchmarks/
 .endif
 
