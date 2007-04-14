@@ -1,0 +1,80 @@
+--- src/fcfreetype.c.orig	Sat Apr 14 01:46:21 2007
++++ src/fcfreetype.c	Sat Apr 14 01:48:33 2007
+@@ -2413,6 +2413,19 @@ FcGlyphNameToUcs4 (FcChar8 *name)
+ }
+ 
+ /*
++* Work around a bug in some FreeType versions which fail
++* to correctly bounds check glyph name buffers and overwrite
++* the stack. As Postscript names have a limit of 127 characters,
++* this should be sufficient.
++*/
++
++#if FC_GLYPHNAME_MAXLEN < 127
++# define FC_GLYPHNAME_BUFLEN 127
++#else
++# define FC_GLYPHNAME_BUFLEN FC_GLYPHNAME_MAXLEN
++#endif
++
++/*
+  * Search through a font for a glyph by name.  This is
+  * currently a linear search as there doesn't appear to be
+  * any defined order within the font
+@@ -2421,11 +2434,11 @@ static FT_UInt
+ FcFreeTypeGlyphNameIndex (FT_Face face, const FcChar8 *name)
+ {
+     FT_UInt gindex;
+-    FcChar8 name_buf[FC_GLYPHNAME_MAXLEN + 2];
++    FcChar8 name_buf[FC_GLYPHNAME_BUFLEN + 2];
+ 
+     for (gindex = 0; gindex < (FT_UInt) face->num_glyphs; gindex++)
+     {
+-	if (FT_Get_Glyph_Name (face, gindex, name_buf, FC_GLYPHNAME_MAXLEN+1) == 0)
++	if (FT_Get_Glyph_Name (face, gindex, name_buf, FC_GLYPHNAME_BUFLEN+1) == 0)
+ 	    if (!strcmp ((char *) name, (char *) name_buf))
+ 		return gindex;
+     }
+@@ -2715,11 +2728,11 @@ FcFreeTypeCharSetAndSpacing (FT_Face fac
+      */
+     if (FcFreeTypeUseNames (face))
+     {
+-	FcChar8 name_buf[FC_GLYPHNAME_MAXLEN + 2];
++	FcChar8 name_buf[FC_GLYPHNAME_BUFLEN + 2];
+ 
+ 	for (glyph = 0; glyph < (FT_UInt) face->num_glyphs; glyph++)
+ 	{
+-	    if (FT_Get_Glyph_Name (face, glyph, name_buf, FC_GLYPHNAME_MAXLEN+1) == 0)
++	    if (FT_Get_Glyph_Name (face, glyph, name_buf, FC_GLYPHNAME_BUFLEN+1) == 0)
+ 	    {
+ 		ucs4 = FcGlyphNameToUcs4 (name_buf);
+ 		if (ucs4 != 0xffff && 
+--- fc-glyphname/fc-glyphname.c.orig	Sat Apr 14 01:49:42 2007
++++ fc-glyphname/fc-glyphname.c	Sat Apr 14 01:49:55 2007
+@@ -206,7 +206,7 @@ insert (FcGlyphName *gn, FcGlyphName **t
+     i = (int) (h % hash);
+     while (table[i])
+     {
+-	if (!r) r = (int) (h % rehash);
++	if (!r) r = (int) (h % rehash + 1);
+ 	i += r;
+ 	if (i >= hash)
+ 	    i -= hash;
+--- src/fcpat.c.orig	Sat Apr 14 01:51:00 2007
++++ src/fcpat.c	Sat Apr 14 01:52:23 2007
+@@ -925,10 +925,13 @@ FcPatternDuplicate (const FcPattern *ori
+     for (i = 0; i < orig->num; i++)
+     {
+ 	for (l = FcPatternEltValues(e + i); l; l = FcValueListNext(l))
+-	    if (!FcPatternObjectAdd (new, e[i].object,
+-				     FcValueCanonicalize(&l->value),
+-				     FcTrue))
++	{
++	    if (!FcPatternObjectAddWithBinding (new, e[i].object,
++	                                        FcValueCanonicalize(&l->value),
++						l->binding,
++						FcTrue))
+ 		goto bail1;
++	}
+     }
+ 
+     return new;
