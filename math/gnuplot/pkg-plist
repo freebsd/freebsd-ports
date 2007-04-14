@@ -1,9 +1,20 @@
 bin/gnuplot
 bin/lasergnu
-%%X11%%libexec/gnuplot_x11
+lib/X11/app-defaults/Gnuplot.app-defaults
+libexec/gnuplot/4.2/gnuplot_x11
+%%PORTDOCS%%%%DOCSDIR%%/gnuplot.dvi
+%%PORTDOCS%%%%DOCSDIR%%/gnuplot.ps
+%%PORTDOCS%%%%DOCSDIR%%/gnuplot.txt
+%%PORTDOCS%%%%DOCSDIR%%/psdoc/README
+%%PORTDOCS%%%%DOCSDIR%%/psdoc/ps_file.doc
+%%PORTDOCS%%%%DOCSDIR%%/psdoc/ps_fontfile_doc.tex
+%%PORTDOCS%%%%DOCSDIR%%/psdoc/ps_guide.ps
+%%PORTDOCS%%%%DOCSDIR%%/psdoc/ps_symbols.gpi
 %%PORTDOCS%%%%EXAMPLESDIR%%/1.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/2.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/3.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/GM1_bonds.r3d
+%%PORTDOCS%%%%EXAMPLESDIR%%/GM1_sugar.pdb
 %%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/Makefile.am
 %%PORTDOCS%%%%EXAMPLESDIR%%/Makefile.am.in
@@ -11,8 +22,10 @@ bin/lasergnu
 %%PORTDOCS%%%%EXAMPLESDIR%%/airfoil.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/all.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/animate.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/animate2.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/arrowstyle.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/arrowstyle.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/asciimat.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/battery.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/big_peak.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/binary.dem
@@ -20,97 +33,140 @@ bin/lasergnu
 %%PORTDOCS%%%%EXAMPLESDIR%%/binary2
 %%PORTDOCS%%%%EXAMPLESDIR%%/binary3
 %%PORTDOCS%%%%EXAMPLESDIR%%/bivariat.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/blutux.rgb
 %%PORTDOCS%%%%EXAMPLESDIR%%/borders.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/candlesticks.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/candlesticks.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/charset.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/clip14in.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/colorwheel.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/contours.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/controls.dem
-%%HISTOGRAMS%%%%PORTDOCS%%%%EXAMPLESDIR%%/ctg-y2.dat
-%%HISTOGRAMS%%%%PORTDOCS%%%%EXAMPLESDIR%%/datastrings.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/ctg-y2.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/dashcolor.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/datastrings.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/demo.edf
 %%PORTDOCS%%%%EXAMPLESDIR%%/density.fnc
 %%PORTDOCS%%%%EXAMPLESDIR%%/discrete.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/electron.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/enhancedtext.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/epslatex.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/fillbetween.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/fillcrvs.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/fillstyle.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/finance.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/finance.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/fit.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/fontfile.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/fontfile_latex.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/glass.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/gnuplot.cfg
 %%PORTDOCS%%%%EXAMPLESDIR%%/gnuplot.rot
 %%PORTDOCS%%%%EXAMPLESDIR%%/hemisphr.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/hexa.fnc
 %%PORTDOCS%%%%EXAMPLESDIR%%/hidden.dem
-%%HISTOGRAMS%%%%PORTDOCS%%%%EXAMPLESDIR%%/histograms.dem
-%%HISTOGRAMS%%%%PORTDOCS%%%%EXAMPLESDIR%%/histograms2.dem
-%%HISTOGRAMS%%%%PORTDOCS%%%%EXAMPLESDIR%%/immigration.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/hidden2.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/histograms.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/histograms2.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/html/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/html/gnuplot_demo.css
+%%PORTDOCS%%%%EXAMPLESDIR%%/html/index.save
+%%PORTDOCS%%%%EXAMPLESDIR%%/html/webify.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/image.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/immigration.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/key.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/klein.dat
-%%HISTOGRAMS%%%%PORTDOCS%%%%EXAMPLESDIR%%/labelplot.pdb
+%%PORTDOCS%%%%EXAMPLESDIR%%/labelplot.pdb
+%%PORTDOCS%%%%EXAMPLESDIR%%/layout.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/lcdemo.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/line.fnc
+%%PORTDOCS%%%%EXAMPLESDIR%%/macros.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/mgr.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/molecule.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/moli3.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/mouselab_1.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/mouselab_2.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/mouselabels.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/mousevariables.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/multimsh.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/multiplt.dem
-%%HISTOGRAMS%%%%PORTDOCS%%%%EXAMPLESDIR%%/nearmap.csv
+%%PORTDOCS%%%%EXAMPLESDIR%%/nearmap.csv
 %%PORTDOCS%%%%EXAMPLESDIR%%/param.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/pm3d.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/pm3dcolors.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/pm3dgamma.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/pointsize.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/polar.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/poldat.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/prob.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/prob2.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/rainbow.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/random.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/rectangle.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/reflect.fnc
-%%PORTDOCS%%%%EXAMPLESDIR%%/reread.bor
+%%PORTDOCS%%%%EXAMPLESDIR%%/rgb_variable.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/rgb_variable.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/scatter.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/scatter2.bin
 %%PORTDOCS%%%%EXAMPLESDIR%%/scatter2.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/silver.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/simple.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/sine.bin
 %%PORTDOCS%%%%EXAMPLESDIR%%/singulr.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/sound.par
 %%PORTDOCS%%%%EXAMPLESDIR%%/sound2.par
 %%PORTDOCS%%%%EXAMPLESDIR%%/soundvel.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/spline.dem
-%%HISTOGRAMS%%%%PORTDOCS%%%%EXAMPLESDIR%%/starmap.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/srl.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/starmap.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/start.par
 %%PORTDOCS%%%%EXAMPLESDIR%%/stat.inc
 %%PORTDOCS%%%%EXAMPLESDIR%%/steps.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/steps.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/stringvar.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/surface1.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/surface2.dem
-%%HISTOGRAMS%%%%PORTDOCS%%%%EXAMPLESDIR%%/table.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/table.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/textcolor.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/textrotate.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/tics.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/timedat.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/timedat.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/triangle.dat
+%%PORTDOCS%%%%EXAMPLESDIR%%/using.bin
 %%PORTDOCS%%%%EXAMPLESDIR%%/using.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/using.dem
+%%PORTDOCS%%%%EXAMPLESDIR%%/utf8.dem
 %%PORTDOCS%%%%EXAMPLESDIR%%/vector.dem
-%%PORTDOCS%%%%EXAMPLESDIR%%/webify.pl
 %%PORTDOCS%%%%EXAMPLESDIR%%/whale.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/world.cor
 %%PORTDOCS%%%%EXAMPLESDIR%%/world.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/world.dem
-%%PORTDOCS%%%%DOCSDIR%%/psdoc/README
-%%PORTDOCS%%%%DOCSDIR%%/psdoc/ps_file.doc
-%%PORTDOCS%%%%DOCSDIR%%/psdoc/ps_fontfile_doc.tex
-%%PORTDOCS%%%%DOCSDIR%%/psdoc/ps_guide.ps
-%%PORTDOCS%%%%DOCSDIR%%/psdoc/ps_symbols.gpi
-%%PORTDOCS%%%%DOCSDIR%%/gnuplot.dvi
-%%PORTDOCS%%%%DOCSDIR%%/gnuplot.html
-%%PORTDOCS%%%%DOCSDIR%%/gnuplot.ps
-%%PORTDOCS%%%%DOCSDIR%%/gnuplot.txt
-%%EMACS_SITE_LISPDIR%%/gnuplot-gui.el
-%%EMACS_SITE_LISPDIR%%/gnuplot.el
-%%DATADIR%%/4.0/gnuplot.gih
-@dirrm %%DATADIR%%/4.0
+%%PORTDOCS%%%%EXAMPLESDIR%%/world2.dem
+%%DATADIR%%/4.2/PostScript/8859-1.ps
+%%DATADIR%%/4.2/PostScript/8859-15.ps
+%%DATADIR%%/4.2/PostScript/8859-2.ps
+%%DATADIR%%/4.2/PostScript/cp1250.ps
+%%DATADIR%%/4.2/PostScript/cp437.ps
+%%DATADIR%%/4.2/PostScript/cp850.ps
+%%DATADIR%%/4.2/PostScript/cp852.ps
+%%DATADIR%%/4.2/PostScript/koi8r.ps
+%%DATADIR%%/4.2/PostScript/koi8u.ps
+%%DATADIR%%/4.2/PostScript/prologue.ps
+%%DATADIR%%/4.2/gnuplot.gih
+share/texmf-local/tex/latex/gnuplot/gnuplot.cfg
+@dirrm share/texmf-local/tex/latex/gnuplot
+@dirrm share/texmf-local/tex/latex
+@dirrm share/texmf-local/tex
+@dirrm share/texmf-local
+@dirrm %%DATADIR%%/4.2/PostScript
+@dirrm %%DATADIR%%/4.2
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/html
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/psdoc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm libexec/gnuplot/4.2
+@dirrm libexec/gnuplot
+@dirrm lib/X11/app-defaults
+@dirrm lib/X11
