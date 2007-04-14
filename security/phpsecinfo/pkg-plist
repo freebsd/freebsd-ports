@@ -73,6 +73,7 @@
 %%WWWDIR%%/docs/PhpSecInfo/_PhpSecInfo_Test_Test_Curl_php.html
 %%WWWDIR%%/docs/PhpSecInfo/_PhpSecInfo_Test_Test_Session_php.html
 %%WWWDIR%%/docs/PhpSecInfo/_PhpSecInfo_Test_Test_php.html
+%%WWWDIR%%/docs/PhpSecInfo/_branches_0.2.0_index_php.html
 %%WWWDIR%%/docs/PhpSecInfo/_index_php.html
 %%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__PhpSecInfoPhpSecInfo.php.html
 %%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__PhpSecInfoTestCGIforce_redirect.php.html
@@ -98,7 +99,32 @@
 %%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__PhpSecInfoTestTest_Core.php.html
 %%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__PhpSecInfoTestTest_Curl.php.html
 %%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__PhpSecInfoTestTest_Session.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__branches0.2.0PhpSecInfoPhpSecInfo.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__branches0.2.0index.php.html
 %%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__index.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__trunkPhpSecInfoTestCGIforce_redirect.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__trunkPhpSecInfoTestCoreallow_url_fopen.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__trunkPhpSecInfoTestCoreallow_url_include.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__trunkPhpSecInfoTestCoredisplay_errors.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__trunkPhpSecInfoTestCoreexpose_php.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__trunkPhpSecInfoTestCorefile_uploads.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__trunkPhpSecInfoTestCoregid.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__trunkPhpSecInfoTestCoremagic_quotes_gpc.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__trunkPhpSecInfoTestCorememory_limit.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__trunkPhpSecInfoTestCoreopen_basedir.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__trunkPhpSecInfoTestCorepost_max_size.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__trunkPhpSecInfoTestCoreregister_globals.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__trunkPhpSecInfoTestCoreuid.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__trunkPhpSecInfoTestCoreupload_max_filesize.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__trunkPhpSecInfoTestCoreupload_tmp_dir.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__trunkPhpSecInfoTestCurlfile_support.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__trunkPhpSecInfoTestSessionsave_path.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__trunkPhpSecInfoTestSessionuse_trans_sid.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__trunkPhpSecInfoTestTest.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__trunkPhpSecInfoTestTest_Cgi.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__trunkPhpSecInfoTestTest_Core.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__trunkPhpSecInfoTestTest_Curl.php.html
+%%WWWDIR%%/docs/__filesource/fsource_PhpSecInfo__trunkPhpSecInfoTestTest_Session.php.html
 %%WWWDIR%%/docs/blank.html
 %%WWWDIR%%/docs/classtrees_PhpSecInfo.html
 %%WWWDIR%%/docs/elementindex.html
@@ -111,7 +137,6 @@
 %%WWWDIR%%/docs/packages.html
 %%WWWDIR%%/docs/todolist.html
 %%WWWDIR%%/index.php
-%%WWWDIR%%/phpdoc-build.conf
 @dirrm %%WWWDIR%%/PhpSecInfo/Test/CGI
 @dirrm %%WWWDIR%%/PhpSecInfo/Test/Core
 @dirrm %%WWWDIR%%/PhpSecInfo/Test/Curl

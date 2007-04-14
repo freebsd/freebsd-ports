@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpsecinfo
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	security www
 MASTER_SITES=	LOCAL/chinsan
 
@@ -18,7 +18,7 @@ USE_PHP=	pcre
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-20070406
 TEMP_PLIST=	${WRKDIR}/temp-pkg-plist
 
 do-install:
@@ -28,7 +28,7 @@ do-install:
 
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:
-	@make makesum
+	@make makesum extract
 	@cd ${WRKSRC} && ${FIND} -s . -type f | \
 		${SED} -e 's|^./||;s|^|%%WWWDIR%%/|' > ${TEMP_PLIST} \
 		&& ${FIND} -d * -type d | \
