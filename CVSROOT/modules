@@ -3714,6 +3714,7 @@ gnome-speech	ports/accessibility/gnome-speech
 gnome-spell	ports/textproc/gnome-spell
 gnome-splashscreen-manager	ports/x11-themes/gnome-splashscreen-manager
 gnome-ssh-askpass	ports/security/gnome-ssh-askpass
+gnome-subtitles	ports/multimedia/gnome-subtitles
 gnome-swallow	ports/x11/gnome-swallow
 gnome-system-monitor	ports/sysutils/gnome-system-monitor
 gnome-system-tools	ports/sysutils/gnome-system-tools
