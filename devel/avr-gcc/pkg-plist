@@ -66,6 +66,7 @@ share/locale/ja/LC_MESSAGES/cpplib.mo
 share/locale/ja/LC_MESSAGES/gcc.mo
 share/locale/nl/LC_MESSAGES/cpplib.mo
 share/locale/nl/LC_MESSAGES/gcc.mo
+share/locale/ru/LC_MESSAGES/gcc.mo
 share/locale/rw/LC_MESSAGES/cpplib.mo
 share/locale/rw/LC_MESSAGES/gcc.mo
 share/locale/sv/LC_MESSAGES/cpplib.mo
