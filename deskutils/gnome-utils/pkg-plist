@@ -92,6 +92,12 @@ share/gnome/help/baobab/sv/figures/baobab_prefs.png
 share/gnome/help/baobab/sv/figures/baobab_remote.png
 share/gnome/help/baobab/sv/figures/baobab_treemaps.png
 share/gnome/help/baobab/sv/figures/baobab_window.png
+share/gnome/help/baobab/uk/baobab.xml
+share/gnome/help/baobab/uk/figures/baobab_fullscan.png
+share/gnome/help/baobab/uk/figures/baobab_prefs.png
+share/gnome/help/baobab/uk/figures/baobab_remote.png
+share/gnome/help/baobab/uk/figures/baobab_treemaps.png
+share/gnome/help/baobab/uk/figures/baobab_window.png
 share/gnome/help/gnome-dictionary/C/figures/gnome-dictionary-add-source.png
 share/gnome/help/gnome-dictionary/C/figures/gnome-dictionary-applet-window.png
 share/gnome/help/gnome-dictionary/C/figures/gnome-dictionary-applet.png
@@ -198,6 +204,7 @@ share/gnome/omf/baobab/baobab-en_GB.omf
 share/gnome/omf/baobab/baobab-es.omf
 share/gnome/omf/baobab/baobab-fr.omf
 share/gnome/omf/baobab/baobab-sv.omf
+share/gnome/omf/baobab/baobab-uk.omf
 share/gnome/omf/gnome-dictionary/gnome-dictionary-C.omf
 share/gnome/omf/gnome-dictionary/gnome-dictionary-el.omf
 share/gnome/omf/gnome-dictionary/gnome-dictionary-es.omf
@@ -345,6 +352,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-utils-2.0.mo
 @dirrm share/gnome/help/gnome-dictionary/C/figures
 @dirrm share/gnome/help/gnome-dictionary/C
 @dirrm share/gnome/help/gnome-dictionary
+@dirrm share/gnome/help/baobab/uk/figures
+@dirrm share/gnome/help/baobab/uk
 @dirrm share/gnome/help/baobab/sv/figures
 @dirrm share/gnome/help/baobab/sv
 @dirrm share/gnome/help/baobab/fr/figures
