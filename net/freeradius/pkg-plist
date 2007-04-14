@@ -60,6 +60,7 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/users
 @exec for i in `find %D/%%EXAMPLESDIR%%/raddb/ -type d -mindepth 1 -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/::g'`; do if [ ! -d %D/etc/raddb/${i} ]; then mkdir -p %D/etc/raddb/${i}; fi; done
 @exec for i in `find %D/%%EXAMPLESDIR%%/raddb/ -type f -print | sed -e 's:^%D/%%EXAMPLESDIR%%/raddb/::g'`; do if [ ! -f %D/etc/raddb/${i} ]; then cp -p %D/%%EXAMPLESDIR%%/raddb/${i} %D/etc/raddb/${i}; fi; done
+@exec chmod -R g-w,o-rwx %D/etc/raddb
 @dirrm %%EXAMPLESDIR%%/raddb/certs/demoCA
 @dirrm %%EXAMPLESDIR%%/raddb/certs
 @dirrm %%EXAMPLESDIR%%/raddb
@@ -491,7 +492,10 @@ sbin/rc.radiusd
 %%DATADIR%%/dictionary.rfc3162
 %%DATADIR%%/dictionary.rfc3576
 %%DATADIR%%/dictionary.rfc3580
+%%DATADIR%%/dictionary.rfc4372
 %%DATADIR%%/dictionary.rfc4590
+%%DATADIR%%/dictionary.rfc4675
+%%DATADIR%%/dictionary.rfc4679
 %%DATADIR%%/dictionary.riverstone
 %%DATADIR%%/dictionary.roaringpenguin
 %%DATADIR%%/dictionary.schulzrinne-sipping
