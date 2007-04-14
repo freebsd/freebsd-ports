@@ -33,6 +33,8 @@ OPTIONS=	GD		"Enable GD support"		on \
 MAN1=		gnuplot.1 lasergnu.1
 INFO=		gnuplot
 
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_X11)
 USE_XLIB=		yes
 PLIST_SUB+=		X11=""
@@ -84,4 +86,4 @@ post-install:
 	cd ${WRKSRC}/docs/psdoc && ${INSTALL_DATA} README ps_* ${DOCSDIR}/psdoc
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
