@@ -25,12 +25,6 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libglade2
 USE_XLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		Does not build on 4.X.
-.endif
-
 BASH?=		${LOCALBASE}/bin/bash
 
 do-build:
@@ -39,4 +33,4 @@ do-build:
 do-install:
 	@cd ${WRKSRC} && ${BASH} build.sh --install --prefix '${PREFIX}'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

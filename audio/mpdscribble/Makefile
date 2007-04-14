@@ -20,10 +20,4 @@ GNU_CONFIGURE=	yes
 MAN1=		mpdscribble.1
 PLIST_FILES=	bin/mpdscribble
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not build on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

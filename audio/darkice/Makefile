@@ -33,10 +33,6 @@ PLIST_FILES=	bin/darkice etc/darkice.cfg
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile on 4.x
-.endif
-
 .if defined(WITHOUT_VORBIS)
 CONFIGURE_ARGS+=	--without-vorbis
 .else
