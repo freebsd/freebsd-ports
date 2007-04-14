@@ -8,7 +8,7 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.4.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH?=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://fontconfig.org/release/
