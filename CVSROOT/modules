@@ -1533,9 +1533,6 @@ cromwell	ports/sysutils/cromwell
 cronolog	ports/sysutils/cronolog
 crossfire-client	ports/games/crossfire-client
 crossfire-server	ports/games/crossfire-server
-crossgo32	ports/devel/crossgo32
-crossgo32-djgpp2	ports/devel/crossgo32-djgpp2
-crossgo32-djgpp2-pdcurses	ports/devel/crossgo32-djgpp2-pdcurses
 crossip		ports/dns/crossip
 crosspad	ports/misc/crosspad
 crp		ports/www/crp
