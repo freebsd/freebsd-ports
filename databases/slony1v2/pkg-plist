@@ -7,10 +7,14 @@ sbin/slon-mkservice
 share/postgresql/slony1_base.sql
 share/postgresql/slony1_base.v74.sql
 share/postgresql/slony1_base.v80.sql
+share/postgresql/slony1_base.v81.sql
 share/postgresql/slony1_funcs.sql
 share/postgresql/slony1_funcs.v74.sql
 share/postgresql/slony1_funcs.v80.sql
+share/postgresql/slony1_funcs.v81.sql
+share/postgresql/xxid.v74.sql
 share/postgresql/xxid.v80.sql
+share/postgresql/xxid.v81.sql
 %%PERLTOOLS%%sbin/show_configuration
 %%PERLTOOLS%%sbin/slon_kill
 %%PERLTOOLS%%sbin/slon_start
@@ -174,7 +178,7 @@ share/postgresql/xxid.v80.sql
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/function.upgradeschema-text.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/hdrcmds.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/help.html
-%%PORTDOCS%%%%DOCSDIR%%/adminguide/i11220.html
+%%PORTDOCS%%%%DOCSDIR%%/adminguide/i11381.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/index.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/installation.html
 %%PORTDOCS%%%%DOCSDIR%%/adminguide/listenpaths.html
