@@ -20,10 +20,16 @@ USE_DOS2UNIX=	YES
 
 PLIST_FILES=	include/asm-xml.h lib/libasm-xml.a
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		Does not build on amd64
+.endif
+
 post-extract:
 	${RM} -rf ${WRKSRC}/obj
 
 post-patch:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
