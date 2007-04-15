@@ -18,6 +18,7 @@ COMMENT=	A fork of the mutt with the goal to incorporate all the patches
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
+USE_GMAKE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-fcntl --sysconfdir=${PREFIX}/etc \
