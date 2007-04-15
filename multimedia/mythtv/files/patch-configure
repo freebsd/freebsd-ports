@@ -1,6 +1,24 @@
---- configure.orig	Tue Aug 29 01:48:08 2006
-+++ configure	Sun Nov 12 13:25:22 2006
-@@ -712,7 +712,7 @@
+--- configure.really-orig	Fri Mar 16 18:11:46 2007
++++ configure	Thu Mar 29 16:18:29 2007
+@@ -463,6 +463,17 @@
+     fi 
+ fi 
+ 
++# BSD.
++if uname -s | grep BSD > 0; then
++    dmesg=/var/run/dmesg.boot
++    if test -f $dmesg ; then
++        processor=`grep ^CPU: $dmesg`
++# processor_flags is used only to determine whether the processor
++# supports MMX.  The script expexts lower-case 'mmx'.  Give it to it.
++        processor_flags=`grep '^  Features=' $dmesg | tr "[:upper:]" "[:lower:]"`
++    fi
++fi
++
+ # These have to be looked up early for some types of cross-compiling to work
+ cpu_overide="no"
+ for opt do
+@@ -712,14 +723,14 @@
  ;;
  FreeBSD)
  joystick_menu="no"
@@ -9,3 +27,11 @@
  bktr="yes"
  audio_oss="yes"
  dv1394="no"
+ make="gmake"
+ backend="yes"
+ v4l="yes"
+-CFLAGS="$CFLAGS -pthread"
++CFLAGS="$CFLAGS -pthread -I/usr/local/include"
+ CCONFIG="$CCONFIG freebsd"
+ ;;
+ GNU/kFreeBSD)
