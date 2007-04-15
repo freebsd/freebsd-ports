@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	WebService-YouTube
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -32,10 +32,4 @@ MAN3=	WebService::YouTube.3 \
 	WebService::YouTube::Video.3 \
 	WebService::YouTube::Videos.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-BROKEN=		Does not compile with perl ${PERL_VERSION}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
