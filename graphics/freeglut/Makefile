@@ -35,12 +35,7 @@ DOCS=	download.html freeglut.html freeglut_logo.png		\
 	progress.html structure.html
 BINS=	CallbackMaker Fractals Fractals_random Lorenz One shapes
 
-.include <bsd.port.pre.mk>
-
 pre-configure:
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e "s|-Werror||" ${WRKSRC}/configure
-.endif
 .for fract in /fractals.c _random/fractals_random.c
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g"		\
 		${WRKSRC}/progs/demos/Fractals${fract}
@@ -72,4 +67,4 @@ post-install:
 			-e "s|/usr/X11R6|${X11BASE}|"
 	@${ECHO_MSG}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

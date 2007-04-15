@@ -25,12 +25,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/tools-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-USE_GCC=	3.3+
-.endif
-
 do-install:
 .for i in compress_queen compress_saga compress_scumm_bun compress_scumm_sou compress_simon compress_sword1 compress_sword2 extract_kyra extract_loom_tg16 extract_mm_c64 extract_mm_nes extract_scumm_mac extract_simon1_amiga extract_zak_c64 dekyra descumm desword2
 	@${INSTALL_PROGRAM} ${WRKSRC}/$i ${PREFIX}/bin
@@ -43,9 +37,5 @@ do-install:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's@:= -g -O@+= ${CFLAGS}@' ${WRKSRC}/Makefile
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's/gcc/${CC}/g' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's/g\+\+/g\+\+32/g' ${WRKSRC}/Makefile
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

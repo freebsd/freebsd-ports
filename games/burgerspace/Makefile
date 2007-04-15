@@ -27,14 +27,8 @@ CONFIGURE_ARGS+=	--with-gengameng-prefix="${X11BASE}"
 MAN6=		burgerspace.6
 PLIST_FILES=	bin/burgerspace
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD 4.x
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/burgerspace ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/burgerspace.6 ${PREFIX}/man/man6
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

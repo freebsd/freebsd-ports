@@ -37,10 +37,6 @@ PLIST_SUB=	WITH_EXAMPLES="@comment "
 PLIST_SUB=	WITH_EXAMPLES=""
 .endif
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
 .ifndef (WITH_EXAMPLES)
 pre-everything::
 	@${ECHO_CMD} ""
