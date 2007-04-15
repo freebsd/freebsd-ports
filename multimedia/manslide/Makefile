@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	manslide
-DISTVERSION=	1.5
-DISTVERSIONSUFFIX=	rc4
+DISTVERSION=	1.5.1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://csgib36.ifrance.com/Manslide/
 
@@ -19,10 +18,12 @@ RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		mjpegtools>=1.8.0:${PORTSDIR}/multimedia/mjpegtools \
 		ImageMagick>=6.2.9:${PORTSDIR}/graphics/ImageMagick \
+		xvid4conf:${PORTSDIR}/multimedia/xvid4conf \
 		transcode:${PORTSDIR}/multimedia/transcode
 
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui moc opengl qmake rcc uic
+QT_COMPONENTS=	corelib gui moc opengl qmake rcc uic \
+		imageformats inputmethods iconengines
 MANSLIDEDIR=	${PREFIX}/share/manslide
 
 MAKE_ENV?=	QTDIR=${QT_PREFIX}
@@ -30,7 +31,7 @@ QMAKE?=		${LOCALBASE}/bin/qmake-qt4
 QMAKESPEC?=	${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
 WRKSRC=		${WRKDIR}/Manslide-${PORTVERSION}
 LANGUAGE_FILES=	_ca _en _pl _it _ru
-EFFECTS=	Explode Film Fire France Gun Record Smoke Sunset
+EFFECTS=	Explode Film Fire France Record Smoke Sunset
 
 DESKTOP_ENTRIES=	"Manslide" \
   			"Create your slideshow" \
@@ -70,5 +71,8 @@ pre-install:
 .endfor
 
 	${LN} -fs ${MANSLIDEDIR}/Manslide ${PREFIX}/bin/
+
+post-install:
+	${FILESDIR}/testsox.sh
 
 .include <bsd.port.mk>
