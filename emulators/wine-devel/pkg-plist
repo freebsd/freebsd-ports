@@ -662,6 +662,7 @@ lib/wine/libws2_32.def
 lib/wine/libwsock32.def
 lib/wine/libwtsapi32.def
 lib/wine/localspl.dll.so
+lib/wine/localui.dll.so
 lib/wine/lz32.dll.so
 lib/wine/lzexpand.dll16
 lib/wine/mapi32.dll.so
@@ -806,7 +807,6 @@ lib/wine/win87em.dll16
 lib/wine/winaspi.dll16
 lib/wine/windebug.dll16
 lib/wine/winealsa.drv.so
-lib/wine/winearts.drv.so
 lib/wine/wineaudioio.drv.so
 lib/wine/wineboot.exe.so
 lib/wine/winebrowser.exe.so
