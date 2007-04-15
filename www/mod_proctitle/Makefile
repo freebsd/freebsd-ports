@@ -1,0 +1,25 @@
+# New ports collection makefile for:	mod_proctitle
+# Date created:				15 April 2007
+# Whom:					stas
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mod_proctitle
+PORTVERSION=	0.2
+CATEGORIES=	www
+MASTER_SITES=	ftp://ftp.springdaemons.com/soft/
+
+MAINTAINER=	stas@FreeBSD.org
+COMMENT=	Set httpd process titles to reflect currently processed request
+
+USE_APACHE?=	2.0+
+GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
+PLIST_FILES=	${APACHEMODDIR}/${PORTNAME}.so
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/.libs/mod_proctitle.so \
+		${PREFIX}/${APACHEMODDIR}/
+
+.include <bsd.port.mk>
