@@ -1,6 +1,6 @@
 --- spice/common/src/include/os_bsd.h.orig	Sat Jan 29 19:14:37 1994
 +++ spice/common/src/include/os_bsd.h	Thu Jan  6 12:33:20 2000
-@@ -6,14 +6,22 @@
+@@ -6,20 +6,40 @@
   *	BSD and derivative systems
   */
  
@@ -24,8 +24,13 @@
 -#define HAS_INDEX		/* index( ) instead of strchr( )	*/
  #define HAS_BCOPY		/* bcopy( ), bzero( )			*/
  #define HAS_BSDRANDOM		/* srandom( ) and random( )		*/
++#ifdef __FreeBSD__
++#define HAS_POSIXTTY		/* <termios.h>				*/
++#else
  #define HAS_BSDTTY		/* <sgtty.h>				*/
-@@ -22,4 +30,12 @@
++#endif
+ #define HAS_BSDDIRS		/* <sys/dir.h>				*/
+ #define HAS_BSDRUSAGE		/* getrusage( )				*/
  #define HAS_BSDRLIMIT		/* getrlimit( )				*/
  #define HAS_DUP2
  #define HAS_GETWD		/* getwd(buf)				*/
