@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	herrie
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6
 CATEGORIES=	audio
-MASTER_SITES=	http://g-rave.nl/projects/herrie/distfiles/ \
+MASTER_SITES=	http://herrie.info/distfiles/ \
 		http://www.il.fontys.nl/~ed/projects/herrie/distfiles/ \
 		http://www.stack.nl/~ed/projects/herrie/distfiles/
 
@@ -20,16 +20,17 @@ LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV+=	PREFIX=${PREFIX}
 
+USE_BZIP2=	yes
 USE_OPENSSL=	yes
 USE_GNOME=	glib20
-USE_GETTEXT=	yes
 
 OPTIONS=	MAD "MAD MP3 support" on \
 		VORBIS "Ogg Vorbis support" on \
 		SNDFILE "libsndfile support" on \
 		MODPLUG "libmodplug support" off \
 		LIBAO "LibAO support (breaks chroot)" off \
-		XCURSES "Build XCurses version" off
+		XCURSES "Build XCurses version" off \
+		XSPF "Support for XSPF playlists" on
 
 MAN1=		herrie.1
 MANCOMPRESSED=	yes
@@ -64,6 +65,20 @@ CONFIGURE_ARGS+=ao
 .if !defined(WITHOUT_XCURSES)
 LIB_DEPENDS+=	XCurses.2:${PORTSDIR}/devel/pdcurses
 CONFIGURE_ARGS+=xcurses
+.endif
+.if !defined(WITHOUT_XSPF)
+# We need 0.6.3, which has proper C bindings
+BUILD_DEPENDS+=	libspiff>=0.6.3:${PORTSDIR}/multimedia/libspiff
+RUN_DEPENDS+=	libspiff>=0.6.3:${PORTSDIR}/multimedia/libspiff
+.else
+CONFIGURE_ARGS+=no_xspf
+.endif
+.if !defined(WITHOUT_NLS)
+PLIST_SUB+=	NLS=""
+USE_GETTEXT=	yes
+.else
+PLIST_SUB+=	NLS="@comment "
+CONFIGURE_ARGS+=no_trans
 .endif
 
 .include <bsd.port.post.mk>
