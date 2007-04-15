@@ -1,0 +1,6 @@
+Lingua::JA::Summarize::Extract is a summary generator for
+Japanese text. The extraction method can be changed with
+the plug-in mechanism.
+
+Author:	Kazuhiro Osawa <ko@yappo.ne.jp>
+WWW:	http://search.cpan.org/~yappo/Lingua-JA-Summarize-Extract-0.01/
