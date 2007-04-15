@@ -141,6 +141,7 @@
     SUBDIR += etoile-rsskit
     SUBDIR += eventum
     SUBDIR += evolution-webcal
+    SUBDIR += extsm
     SUBDIR += eyeos
     SUBDIR += eyeos-themes
     SUBDIR += fcgi
@@ -1274,7 +1275,6 @@
     SUBDIR += xpi-xpcom-component-viewer
     SUBDIR += xshttpd
     SUBDIR += xshttpd-devel
-    SUBDIR += xsm
     SUBDIR += xulrunner
     SUBDIR += yabb
     SUBDIR += yaws

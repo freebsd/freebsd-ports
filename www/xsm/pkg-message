@@ -1,9 +1,0 @@
-
-===========================================================================
-Note, that XSM webapp should have rights to write to the directory "custom"
-within its context.
-
-For further installation instructions look at
-http://www.rectang.com/Software/XSM/
-===========================================================================
-
