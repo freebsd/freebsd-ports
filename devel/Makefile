@@ -1082,6 +1082,7 @@
     SUBDIR += p5-Devel-Pointer
     SUBDIR += p5-Devel-Profile
     SUBDIR += p5-Devel-Profiler
+    SUBDIR += p5-Devel-Required
     SUBDIR += p5-Devel-RingBuffer
     SUBDIR += p5-Devel-STrace
     SUBDIR += p5-Devel-SimpleTrace
