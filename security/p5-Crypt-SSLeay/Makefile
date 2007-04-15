@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt-SSLeay
-PORTVERSION=	0.53
+PORTVERSION=	0.54
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
@@ -22,7 +22,7 @@ PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	${OPENSSLBASE}
 USE_OPENSSL=	yes
 
-MAN3=		Crypt::SSLeay.3
+MAN3=		Crypt::SSLeay.3 Net::SSL.3
 
 .include <bsd.port.pre.mk>
 
