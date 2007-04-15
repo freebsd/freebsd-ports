@@ -1,43 +1,35 @@
-===================================================================
-RCS file: makefile.in,v
-retrieving revision 1.1
-diff -u -r1.1 makefile.in
---- makefile.in	2004/02/11 01:50:15	1.1
-+++ makefile.in	2004/02/11 01:53:41
-@@ -362,22 +362,18 @@
- 		if test "$(COMPRESS_PROG)" != "" ; then \
- 			(cd $(HELPDIR) && $(COMPRESS_PROG) $$files ) \
- 		fi'
--	@echo Updating $(libdir)/lynx.cfg
--	@ECHO_CC@$(SHELL) -c 'if test -f $(LIBDIR)/lynx.cfg ; then \
--		mv $(LIBDIR)/lynx.cfg $(LIBDIR)/lynx.tmp ; \
--	else \
--		cp $(srcdir)/lynx.cfg $(LIBDIR)/lynx.tmp ; \
--	fi'
--	@echo Updating $(libdir)/lynx.cfg to point to installed help-files
-+	@echo Updating $(libdir)/lynx.cfg.default
-+	cp $(srcdir)/lynx.cfg $(LIBDIR)/lynx.tmp
-+	@echo Updating $(libdir)/lynx.cfg.default to point to installed help-files
+--- makefile.in.orig	Mon Sep  4 07:25:39 2006
++++ makefile.in	Fri Apr 13 16:35:28 2007
+@@ -366,7 +366,9 @@
+ 	else \
+ 		cp $(srcdir)/lynx.cfg $(SYSCONFDIR)/lynx.tmp ; \
+ 	fi'
+-	@echo Updating $(sysconfdir)/lynx.cfg to point to installed help-files
++	@echo Updating $(srcdir)/lynx.cfg.default
++	@cp $(srcdir)/lynx.cfg $(srcdir)/lynx.tmp
++	@echo Updating $(srcdir)/lynx.cfg.default to point to installed help-files
  	@ECHO_CC@sed	-e '/^HELPFILE:http/s!^!#!' \
  		-e '/^#HELPFILE:file/s!#!!' \
- 		-e '/^HELPFILE:file/s!/PATH_TO/lynx_help!$(helpdir)!' \
- 		-e '/^[A-Z_]*:/s!/PATH_TO/lynx_doc!$(docdir)!' \
- 		-e '/^HELPFILE:file/s!$$!$(COMPRESS_EXT)!' \
+ 		$(SYSCONFDIR)/lynx.tmp | \
+@@ -374,9 +376,10 @@
+ 	$(SHELL) $(scripts_dir)/cfg_path.sh lynx_doc  $(helpdir) | \
+ 	sed	-e '/^HELPFILE:file/s!$$!$(COMPRESS_EXT)!' \
  		-e '/^HELPFILE:file/s!$(COMPRESS_EXT)$(COMPRESS_EXT)$$!$(COMPRESS_EXT)!' \
--		$(LIBDIR)/lynx.tmp >$(LIBDIR)/lynx.cfg
--	chmod 644 $(LIBDIR)/lynx.cfg
-+		$(LIBDIR)/lynx.tmp >$(LIBDIR)/lynx.cfg.default
- 	-rm -f $(LIBDIR)/lynx.tmp
-+	-[ ! -f $(LIBDIR)/lynx.cfg ] && $(INSTALL_DATA) $(LIBDIR)/lynx.cfg.default $(LIBDIR)/lynx.cfg
+-		>$(SYSCONFDIR)/lynx.cfg
+-	chmod 644 $(SYSCONFDIR)/lynx.cfg
++		>$(SYSCONFDIR)/lynx.cfg.default
++	chmod 644 $(SYSCONFDIR)/lynx.cfg.default
+ 	-rm -f $(SYSCONFDIR)/lynx.tmp
++	-[ ! -f $(SYSCONFDIR)/lynx.cfg ] && $(INSTALL_DATA) $(SYSCONFDIR)/lynx.cfg.default $(SYSCONFDIR)/lynx.cfg
  
  LYHelp.h : help_files.sed LYHelp.hin
  	@echo Creating $@
-@@ -399,7 +395,7 @@
- 	$(SHELL) -c 'SHELL=$(SHELL) $(SHELL) $(srcdir)/cfg_defs.sh $(srcdir)'
+@@ -398,7 +401,7 @@
+ 	$(SHELL) -c 'SHELL=$(SHELL) $(SHELL) $(scripts_dir)/cfg_defs.sh $(srcdir)'
  
- install-cfg : $(LIBDIR)
--	@$(SHELL) -c '$(srcdir)/scripts/install-cfg.sh "$(INSTALL_DATA)" $(srcdir)/lynx.cfg $(LIBDIR)/lynx.cfg'
-+	@$(SHELL) -c '$(srcdir)/scripts/install-cfg.sh "$(INSTALL_DATA)" $(srcdir)/lynx.cfg $(LIBDIR)/lynx.cfg.default'
+ install-cfg : $(SYSCONFDIR)
+-	@$(SHELL) $(scripts_dir)/install-cfg.sh "$(INSTALL_DATA)" $(srcdir)/lynx.cfg $(SYSCONFDIR)/lynx.cfg
++	@$(SHELL) $(scripts_dir)/install-cfg.sh "$(INSTALL_DATA)" $(srcdir)/lynx.cfg $(SYSCONFDIR)/lynx.cfg.default
  
- install-lss : $(LIBDIR)
- 	-mv -f $(LIBDIR)/lynx.lss $(LIBDIR)/lynx.oldlss
+ install-lss : $(SYSCONFDIR)
+ 	-mv -f $(SYSCONFDIR)/lynx.lss $(SYSCONFDIR)/lynx.oldlss
