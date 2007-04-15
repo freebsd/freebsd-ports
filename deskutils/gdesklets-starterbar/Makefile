@@ -28,18 +28,8 @@ DATADIR=	${PREFIX}/share/gnome
 PKGMESSAGE=	${WRKDIR}/pkg-message
 LANG=		ca cs de es fr hr nl pt pt_BR sq sr sr@Latn sv
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-RUN_DEPENDS+=	uuid:${PORTSDIR}/misc/ossp-uuid
-.endif
-
 do-build:
 	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|uuidgen|uuid|g' \
-		${WRKSRC}/${NAME}/IconSet.py
-.endif
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
@@ -67,4 +57,4 @@ post-install:
 		${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -29,12 +29,7 @@ MAN1=		cooledit.1 coolman.1 smalledit.1
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
 CFLAGS+=	-DHAVE_MBRTOWC
-.endif
 
 .if defined(WITH_NEXT_LOOK)
 CONFIGURE_ARGS+=	--enable-NeXT-look
@@ -43,4 +38,4 @@ CONFIGURE_ARGS+=	--enable-NeXT-look
 post-patch:
 	@${REINPLACE_CMD} -e 's|po pixmap man|po man|g' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

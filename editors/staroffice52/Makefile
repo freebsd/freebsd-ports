@@ -92,17 +92,6 @@ pre-fetch:
 	@${ECHO} -----------------------------------------------------------
 	@${FALSE}
 .endif
-.if ${OSVERSION} < 410000
-	@${ECHO}
-	@${ECHO} OS-VERSION ${OSVERSION}
-	@${ECHO}
-	@${ECHO} Staroffice depends on a scripting fix for
-	@${ECHO} /usr/src/sys/i386/linux/linux_sysvec.c
-	@${ECHO}
-	@${ECHO} Please upgrade to FreeBSD 4.1 or later.
-	@${ECHO}
-	@${FALSE}
-.endif
 .if ${SIZE} < 250000
 	@${ECHO}
 	@${ECHO} There is too few free disk space in your port

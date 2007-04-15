@@ -34,10 +34,8 @@ BROKEN=		Does not build with CC or CXX set
 post-patch:
 	@${REINPLACE_CMD} -e 's|CFLAGS=".*"|CFLAGS="${CFLAGS}"|; \
 		s|CXXFLAGS=".*"|CXXFLAGS="${CXXFLAGS}"|' ${WRKSRC}/configure
-.if ${OSVERSION} >= 500000
 	@${REINPLACE_CMD} -e '/prefix=/ s|expr $$1|expr -- $$1|' \
 		${WRKSRC}/configure
-.endif
 	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/src/ccmalloc.in
 
 post-install:
