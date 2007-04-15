@@ -380,6 +380,7 @@
     SUBDIR += mod_ntlm
     SUBDIR += mod_perl
     SUBDIR += mod_perl2
+    SUBDIR += mod_proctitle
     SUBDIR += mod_proxy_add_forward
     SUBDIR += mod_proxy_html
     SUBDIR += mod_proxy_xml
