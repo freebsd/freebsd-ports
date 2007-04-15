@@ -31,12 +31,6 @@ MAN1=		figtoipe.1 ipe.1 ipe5toxml.1 ipetoipe.1 ipetopng.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-# the problem is a little more subtle, really. It requires gcc 3
-USE_GCC=	3.4
-BROKEN=		Does not compile on 4.x
-.endif
-
 QTDIR?=		${QT_PREFIX}
 QMAKE?=		${LOCALBASE}/bin/qmake
 

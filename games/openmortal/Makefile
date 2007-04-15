@@ -27,10 +27,4 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 post-patch:
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

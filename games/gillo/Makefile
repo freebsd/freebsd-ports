@@ -27,12 +27,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 JAM?=		${LOCALBASE}/bin/jam
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|SDL/||g' ${WRKSRC}/src/*
 	@${REINPLACE_CMD} -e 's|%%SDL_CFLAGS%%|`${SDL_CONFIG} --cflags`|' \
@@ -50,4 +44,4 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/data/*.* ${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -37,12 +37,6 @@ PIXIE_SHLIBS=	file framebuffer rgbe
 
 SUB_LIST+=	PORTNAME=${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-NOT_FOR_ARCHS=	alpha
-.endif
-
 post-patch:
 	@${FIND} -X ${WRKSRC} -name '*.cpp' -or -name '*.h' | \
 		${XARGS} ${REINPLACE_CMD} -i '' -e 's|malloc\.h|stdlib\.h|g'
@@ -100,4 +94,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

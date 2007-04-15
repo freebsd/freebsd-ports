@@ -23,18 +23,13 @@ USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_MOTIF=	yes
 USE_LDCONFIG=	yes
+USE_GCC=	2.95
+NOT_FOR_ARCHS=	amd64 sparc64 ia64
 
 .if !defined(WITH_EXAMPLES)
 PLIST_SUB=	WITH_EXAMPLES="@comment "
 .else
 PLIST_SUB=	WITH_EXAMPLES=""
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500000
-USE_GCC=	2.95
-NOT_FOR_ARCHS=	amd64 sparc64 ia64
 .endif
 
 .ifndef (WITH_EXAMPLES)
@@ -102,4 +97,4 @@ do-install:
 	${LN} -sf VRML97 ${DOCSDIR}/VRML
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

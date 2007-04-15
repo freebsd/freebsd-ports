@@ -70,18 +70,6 @@ pre-fetch:
 	@${ECHO} -----------------------------------------------------------
 	@${FALSE}
 .endif
-.if ${OSVERSION} < 410000
-	@${ECHO}
-	@${ECHO} OS-VERSION ${OSVERSION}
-	@${ECHO}
-	@${ECHO} "Staroffice dépend d\'une modification du script"
-	@${ECHO} "/usr/src/sys/i386/linux/linux_sysvec.c Celui-ci"
-	@${ECHO} "Doit être au moins en révision 1.55.2.1."
-	@${ECHO}
-	@${ECHO} "Veuillez mettre à jour vers FreeBSD 4.1 SVP"
-	@${ECHO}
-	@${FALSE}
-.endif
 .if ${SIZE} < 250000
 	@${ECHO}
 	@${ECHO} "Le répertoire /usr/ports ne contient pas suffisament"

@@ -22,13 +22,4 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 INSTALLS_ICONS=	yes
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's/return false/return QString::null/g ; \
-		 s/ or / || /g ; \
-		 s/ and / \&\& /g' ${WRKSRC}/kbarcode/tec.cpp
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

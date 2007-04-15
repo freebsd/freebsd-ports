@@ -26,12 +26,6 @@ MAKEFILE=	makefile
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		does not compile on FreeBSD 4.X
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|g++|${CXX}|; s|gcc|${CXX}|; \
@@ -60,4 +54,4 @@ do-install:
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

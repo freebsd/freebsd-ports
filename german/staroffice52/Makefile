@@ -70,16 +70,6 @@ pre-fetch:
 	@${ECHO} -----------------------------------------------------------
 	@${FALSE}
 .endif
-.if ${OSVERSION} < 410000
-	@${ECHO}
-	@${ECHO} OS-VERSION ${OSVERSION}
-	@${ECHO}
-	@${ECHO} Staroffice benoetigt einen System-Patch der erst
-	@${ECHO} seit FreeBSD 4.1 verfuegbar ist. Bitte bringen Sie ihr
-	@${ECHO} System auf den neuesten Stand.
-	@${ECHO}
-	@${FALSE}
-.endif
 .if ${SIZE} < 250000
 	@${ECHO}
 	@${ECHO} In Ihrem Ports-Verzeichnis ist zuwenig Platz

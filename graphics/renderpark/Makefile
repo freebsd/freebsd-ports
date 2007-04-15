@@ -31,13 +31,8 @@ WRKSRC2=	${WRKDIR}/Scenes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_MOTIF=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500000
 USE_GCC=	2.95
 NOT_FOR_ARCHS=	amd64 sparc64 ia64
-.endif
 
 .if !defined(WITH_SCENES)
 PLIST_SUB=	WITH_SCENES="@comment "
@@ -100,4 +95,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/DOC/UserGuide/* ${DOCSDIR}/UserGuide
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

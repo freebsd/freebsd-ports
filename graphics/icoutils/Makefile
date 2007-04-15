@@ -39,10 +39,4 @@ post-patch:
 		-e 's|stdint\.h|inttypes\.h|g' \
 		-e 's|/usr/bin/perl|${PERL5}|'
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-USE_GCC=3.4
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -35,12 +35,6 @@ BASH?=		${LOCALBASE}/bin/bash
 QMAKE?=		${LOCALBASE}/bin/qmake
 QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not build on FreeBSD 4.x
-.endif
-
 post-patch:
 .for file in VERSION configure
 	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!${BASH}|g' ${WRKSRC}/${file}
@@ -58,4 +52,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

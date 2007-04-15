@@ -46,10 +46,4 @@ post-patch:
 pre-install:
 	${MKDIR} ${PREFIX}/share/applications
 
-.include <bsd.port.pre.mk>
-
-.if (${OSVERSION} < 500000)
-BROKEN=		requires a newer libc (with wide character functions)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

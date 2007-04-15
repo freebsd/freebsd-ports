@@ -46,10 +46,6 @@ BASH2FIX=	src/linux/torcs.in src/tools/accc/accc.in src/tools/nfsperf/nfsperf.in
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD-4.
-.endif
-
 .if ${OSVERSION} < 500041
 CPPFLAGS+=	-I${X11BASE}/include
 .else
