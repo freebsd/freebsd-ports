@@ -19,6 +19,9 @@
 %%PYTHON_SITELIBDIR%%/hachoir_parser/archive/gzip_parser.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/archive/gzip_parser.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/archive/gzip_parser.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_parser/archive/mar.py
+%%PYTHON_SITELIBDIR%%/hachoir_parser/archive/mar.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_parser/archive/mar.pyo
 %%PYTHON_SITELIBDIR%%/hachoir_parser/archive/rar.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/archive/rar.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/archive/rar.pyo
@@ -85,6 +88,9 @@
 %%PYTHON_SITELIBDIR%%/hachoir_parser/common/win32.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/common/win32.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/common/win32.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_parser/common/win32_lang_id.py
+%%PYTHON_SITELIBDIR%%/hachoir_parser/common/win32_lang_id.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_parser/common/win32_lang_id.pyo
 %%PYTHON_SITELIBDIR%%/hachoir_parser/container/__init__.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/container/__init__.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/container/__init__.pyo
@@ -196,6 +202,9 @@
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/__init__.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/__init__.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/__init__.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/chm.py
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/chm.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/chm.pyo
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/common.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/common.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/common.pyo
@@ -205,6 +214,24 @@
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/file_3ds.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/file_3ds.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/file_3ds.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/lnk.py
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/lnk.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/lnk.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/msoffice.py
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/msoffice.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/msoffice.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/msoffice_summary.py
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/msoffice_summary.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/msoffice_summary.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/ole2.py
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/ole2.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/ole2.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/pcf.py
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/pcf.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/pcf.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/pdf.py
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/pdf.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_parser/misc/pdf.pyo
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/torrent.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/torrent.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/misc/torrent.pyo
@@ -214,18 +241,15 @@
 %%PYTHON_SITELIBDIR%%/hachoir_parser/network/__init__.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/network/__init__.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/network/__init__.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_parser/network/common.py
+%%PYTHON_SITELIBDIR%%/hachoir_parser/network/common.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_parser/network/common.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_parser/network/ouid.py
+%%PYTHON_SITELIBDIR%%/hachoir_parser/network/ouid.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_parser/network/ouid.pyo
 %%PYTHON_SITELIBDIR%%/hachoir_parser/network/tcpdump.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/network/tcpdump.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/network/tcpdump.pyo
-%%PYTHON_SITELIBDIR%%/hachoir_parser/office/__init__.py
-%%PYTHON_SITELIBDIR%%/hachoir_parser/office/__init__.pyc
-%%PYTHON_SITELIBDIR%%/hachoir_parser/office/__init__.pyo
-%%PYTHON_SITELIBDIR%%/hachoir_parser/office/msoffice.py
-%%PYTHON_SITELIBDIR%%/hachoir_parser/office/msoffice.pyc
-%%PYTHON_SITELIBDIR%%/hachoir_parser/office/msoffice.pyo
-%%PYTHON_SITELIBDIR%%/hachoir_parser/office/pdf.py
-%%PYTHON_SITELIBDIR%%/hachoir_parser/office/pdf.pyc
-%%PYTHON_SITELIBDIR%%/hachoir_parser/office/pdf.pyo
 %%PYTHON_SITELIBDIR%%/hachoir_parser/parser.py
 %%PYTHON_SITELIBDIR%%/hachoir_parser/parser.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_parser/parser.pyo
@@ -295,7 +319,6 @@
 @dirrm %%PYTHON_SITELIBDIR%%/hachoir_parser/image
 @dirrm %%PYTHON_SITELIBDIR%%/hachoir_parser/misc
 @dirrm %%PYTHON_SITELIBDIR%%/hachoir_parser/network
-@dirrm %%PYTHON_SITELIBDIR%%/hachoir_parser/office
 @dirrm %%PYTHON_SITELIBDIR%%/hachoir_parser/program
 @dirrm %%PYTHON_SITELIBDIR%%/hachoir_parser/video
 @dirrm %%PYTHON_SITELIBDIR%%/hachoir_parser
