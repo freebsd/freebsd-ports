@@ -1,0 +1,23 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/JA/Summarize/Extract/.packlist
+%%SITE_PERL%%/Lingua/JA/Summarize/Extract.pm
+%%SITE_PERL%%/Lingua/JA/Summarize/Extract/Plugin.pm
+%%SITE_PERL%%/Lingua/JA/Summarize/Extract/ResultSet.pm
+%%SITE_PERL%%/Lingua/JA/Summarize/Extract/Plugin/Parser/Trim.pm
+%%SITE_PERL%%/Lingua/JA/Summarize/Extract/Plugin/Parser/Ngram.pm
+%%SITE_PERL%%/Lingua/JA/Summarize/Extract/Plugin/Parser/NgramSimple.pm
+%%SITE_PERL%%/Lingua/JA/Summarize/Extract/Plugin/Sentence/Base.pm
+%%SITE_PERL%%/Lingua/JA/Summarize/Extract/Plugin/Sentence/Tiny.pm
+%%SITE_PERL%%/Lingua/JA/Summarize/Extract/Plugin/Scoring/Base.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/JA/Summarize/Extract
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/JA/Summarize
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/JA
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
+@dirrmtry %%SITE_PERL%%/Lingua/JA/Summarize/Extract/Plugin/Sentence
+@dirrmtry %%SITE_PERL%%/Lingua/JA/Summarize/Extract/Plugin/Scoring
+@dirrmtry %%SITE_PERL%%/Lingua/JA/Summarize/Extract/Plugin/Parser
+@dirrmtry %%SITE_PERL%%/Lingua/JA/Summarize/Extract/Plugin
+@dirrmtry %%SITE_PERL%%/Lingua/JA/Summarize/Extract
+@dirrmtry %%SITE_PERL%%/Lingua/JA/Summarize
+@dirrmtry %%SITE_PERL%%/Lingua/JA
+@dirrmtry %%SITE_PERL%%/Lingua
