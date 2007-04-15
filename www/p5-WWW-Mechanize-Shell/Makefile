@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	WWW-Mechanize-Shell
-PORTVERSION=	0.40
+PORTVERSION=	0.41
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -53,10 +53,4 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${EXAMPLESDIR}."
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		only support perl 5.6.1 or above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
