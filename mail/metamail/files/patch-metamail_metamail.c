@@ -9,6 +9,17 @@
  #include <ctype.h>
  #include <sys/types.h>
  #include <sys/stat.h>
+@@ -46,8 +48,8 @@
+ #include <signal.h>
+ 
+ #ifndef AMIGA
+-#ifdef SYSV
+-#include <termio.h>
++#if 1
++#include <termios.h>
+ #include <unistd.h>
+ #else /* SYSV */
+ #include <sgtty.h>
 @@ -83,7 +85,7 @@
  #define MAX_FILE_NAME_SIZE 256
  #define WRITE_BINARY	"w"
@@ -116,3 +127,34 @@
      } else {
          /* What follows is REALLY bogus, but all my encoding stuff is pipe-oriented right now... */
          MkTmpFileName(TmpFile);
+@@ -2375,8 +2387,8 @@
+ 
+ int HasSavedTtyState=0;
+ #if !defined(AMIGA) && !defined(MSDOS)
+-#ifdef SYSV
+-static struct termio MyTtyStateIn, MyTtyStateOut;
++#if 1
++static struct termios MyTtyStateIn, MyTtyStateOut;
+ #else
+ static struct sgttyb MyTtyStateIn, MyTtyStateOut;
+ #endif
+@@ -2681,15 +2693,15 @@
+ 
+ StartRawStdin() {
+ #if !defined(AMIGA) && !defined(MSDOS)
+-#ifdef SYSV
+-    struct termio   orterm, fterm;
+-    ioctl(0, TCGETA, &orterm);	/* get current (i.e. cooked) termio */
++#if 1
++    struct termios   orterm, fterm;
++    tcgetattr(0, &orterm);
+     fterm = orterm;		/* get termio to modify */
+ 
+     fterm.c_lflag &= ~ICANON;	/* clear ICANON giving raw mode */
+     fterm.c_cc[VMIN] = 1;	/* set MIN char count to 1 */
+     fterm.c_cc[VTIME] = 0;	/* set NO time limit */
+-    return ioctl(0, TCSETAW, &fterm);	/* modify termio for raw mode */
++    return tcsetattr(0, TCSANOW, &fterm);	/* modify termio for raw mode */
+ #else
+     struct sgttyb ts;
+     gtty(fileno(stdin), &ts);
