@@ -8,7 +8,7 @@
 PORTNAME=	memtest86
 PORTVERSION=	3.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.memtest86.com/
+MASTER_SITES=	http://www.memtest86.com/download/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}.iso.zip
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
