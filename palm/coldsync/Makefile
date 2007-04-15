@@ -55,18 +55,12 @@ INFO=		conduits
 .include <bsd.port.pre.mk>
 
 CFLAGS+=	-D__BSD_VISIBLE=1
-CONFIGURE_ARGS+=	--disable-pedantic --without-perl
+CONFIGURE_ARGS+=	--disable-pedantic --without-perl --with-usb
 
-# I don't know how to test for a version of {Net,Open}BSD that supports USB.
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 400000
-CONFIGURE_ARGS+=	--with-usb
-.if ${OSVERSION} >= 450000
 post-patch:
 	${REINPLACE_CMD} -e 's,udi\.([A-Za-z0-9]+),udi.udi_\1,g;' \
 		-e 's,ur\.([A-Za-z0-9]+),ur.ucr_\1,g;' \
 		${WRKSRC}/configure ${WRKSRC}/libpconn/PConnection_usb.c
-.endif
-.endif
 
 post-configure:
 	${REINPLACE_CMD} -e 's,-fpic,-fPIC,g' ${WRKSRC}/Make.rules
