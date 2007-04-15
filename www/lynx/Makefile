@@ -6,18 +6,12 @@
 #
 
 PORTNAME=	lynx
-PORTVERSION=	2.8.5
-PORTREVISION=	2
+PORTVERSION=	2.8.6
+PORTREVISION=	4
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/ \
-		ftp://lynx.isc.org/lynx2.8.5/patches/:patches
-DISTNAME=	${PORTNAME}2.8.5rel.1
-
-PATCH_SITES=	ftp://lynx.isc.org/lynx2.8.5/patches/
-.for i in 2 3 4
-PATCHFILES+=	2.8.5rel.${i}.patch.gz
-.endfor
-PATCH_DIST_STRIP=	-p1
+		ftp://lynx.isc.org/lynx${PORTVERSION}/patches/:patches
+DISTNAME=	${PORTNAME}${PORTVERSION}rel.${PORTREVISION}
 
 MAINTAINER?=	jharris@widomaker.com
 COMMENT?=	A non-graphical, text-based World-Wide Web client
@@ -25,7 +19,7 @@ COMMENT?=	A non-graphical, text-based World-Wide Web client
 CONFLICTS?=	lynx-ssl* lynx-current*
 
 USE_BZIP2=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}2-8-5
+WRKSRC=		${WRKDIR}/${PORTNAME}2-8-6
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-persistent-cookies \

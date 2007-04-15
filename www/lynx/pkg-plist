@@ -5,9 +5,13 @@ etc/lynx.cfg.default
 @exec mkdir -p %D/share/lynx_help
 %%DOCSDIR%%/CHANGES
 %%DOCSDIR%%/COPYHEADER
+%%DOCSDIR%%/COPYHEADER.asc
 @exec ln -sf %D/%F %D/share/lynx_help
+@unexec rm -f %D/share/lynx_help/COPYHEADER.asc
 %%DOCSDIR%%/COPYING
+%%DOCSDIR%%/COPYING.asc
 @exec ln -sf %D/%F %D/share/lynx_help
+@unexec rm -f %D/share/lynx_help/COPYING.asc
 %%DOCSDIR%%/PROBLEMS
 %%DOCSDIR%%/README
 %%DOCSDIR%%/docs/CHANGES2.3
@@ -16,7 +20,6 @@ etc/lynx.cfg.default
 %%DOCSDIR%%/docs/CHANGES2.6
 %%DOCSDIR%%/docs/CHANGES2.7
 %%DOCSDIR%%/docs/CHANGES2.8
-%%DOCSDIR%%/docs/CMU.announce
 %%DOCSDIR%%/docs/CRAWL.announce
 %%DOCSDIR%%/docs/FM.announce
 %%DOCSDIR%%/docs/IBMPC-charsets.announce
@@ -25,6 +28,7 @@ etc/lynx.cfg.default
 %%DOCSDIR%%/docs/README.chartrans
 %%DOCSDIR%%/docs/README.defines
 %%DOCSDIR%%/docs/README.jp
+%%DOCSDIR%%/docs/README.metrics
 %%DOCSDIR%%/docs/README.rootcerts
 %%DOCSDIR%%/docs/README.ssl
 %%DOCSDIR%%/docs/README.sslcerts
@@ -50,19 +54,23 @@ etc/lynx.cfg.default
 %%DOCSDIR%%/samples/mailto-form.pl
 %%DOCSDIR%%/samples/mild-colors.lss
 %%DOCSDIR%%/samples/mime.types
+%%DOCSDIR%%/samples/oldlynx
 %%DOCSDIR%%/test/ALT88592.html
 %%DOCSDIR%%/test/ISO_LATIN1_test.html
 %%DOCSDIR%%/test/README.txt
 %%DOCSDIR%%/test/TestComment.html
 %%DOCSDIR%%/test/c1.html
-%%DOCSDIR%%/test/iso8859-1.html
-%%DOCSDIR%%/test/iso88592.html
+%%DOCSDIR%%/test/iso-8859-1.html
+%%DOCSDIR%%/test/iso-8859-2.html
 %%DOCSDIR%%/test/koi8-r.html
 %%DOCSDIR%%/test/quickbrown.html
 %%DOCSDIR%%/test/raw8bit.html
 %%DOCSDIR%%/test/sgml.html
 %%DOCSDIR%%/test/spaces.html
+%%DOCSDIR%%/test/special_urls.html
+%%DOCSDIR%%/test/tags.html
 %%DOCSDIR%%/test/tabtest.html
+%%DOCSDIR%%/test/test-styles.html
 %%DOCSDIR%%/test/unicode.html
 %%DOCSDIR%%/test/utf-8-demo.html
 share/lynx_help/COPYHEADER
