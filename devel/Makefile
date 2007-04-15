@@ -688,6 +688,7 @@
     SUBDIR += maketool
     SUBDIR += maven
     SUBDIR += maven2
+    SUBDIR += mcpp
     SUBDIR += memcheck
     SUBDIR += menhir
     SUBDIR += mercator
