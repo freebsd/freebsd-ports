@@ -18,7 +18,7 @@
  /* unless you are on VMS define one of these... */
  #define UNIX
  /* #define TURBO_C */
-@@ -35,16 +46,16 @@
+@@ -35,8 +46,8 @@
  /* then if you defined UNIX you must use one of these ways to do non-blocking
   * tty reads
   */
@@ -29,16 +29,24 @@
  /* #define USE_ATTSELECT */
  /* #define USE_BSDSELECT */
  
- /* and then if you defined UNIX you must also use one of these ways to control
-  * the tty modes.
-  */
--#define USE_TERMIO
--/* #define USE_SGTTY */
-+/* #define USE_TERMIO */
-+#define USE_SGTTY
- 
- /* if you defined TURBO_C you might want this too if screen io looks garbled */
- /* #define USE_ANSISYS */
+@@ -56,7 +67,7 @@
+ #ifdef UNIX
+ #include <signal.h>
+ #ifdef USE_TERMIO
+-#include <termio.h>
++#include <termios.h>
+ #endif
+ #ifdef USE_SGTTY
+ #include <sgtty.h>
+@@ -73,7 +84,7 @@
+ static int tloaded;
+ static int ttysetup;
+ #ifdef USE_TERMIO
+-static struct termio orig_tio;
++static struct termios orig_tio;
+ #endif
+ #ifdef USE_SGTTY
+ static struct sgttyb orig_sgtty;
 @@ -199,11 +210,19 @@
  	    seqa[0] = c;
  	    if (l > 1) {
@@ -60,3 +68,32 @@
  		alarm(0);
  		if (got_alrm)
  		    return (c);
+@@ -232,7 +251,7 @@
+ 	}
+ 
+ #ifdef USE_TERMIO
+-	ioctl (0, TCSETA, &orig_tio);
++	tcsetattr(0, TCSANOW, &orig_tio);
+ #endif
+ #ifdef USE_SGTTY
+ 	ioctl (0, TIOCSETP, &orig_sgtty);
+@@ -321,16 +340,16 @@
+ setuptty()
+ {
+ #ifdef USE_TERMIO
+-	struct termio tio;
++	struct termios tio;
+ 
+-	ioctl (0, TCGETA, &orig_tio);
++	tcgetattr(0, &orig_tio);
+ 	tio = orig_tio;
+ 	tio.c_iflag &= ~ICRNL;	/* leave CR unchanged */
+ 	tio.c_oflag &= ~OPOST;	/* no output processing */
+ 	tio.c_lflag &= ~(ICANON|ECHO); /* no input processing, no echo */
+ 	tio.c_cc[VMIN] = 1;	/* return after each char */
+ 	tio.c_cc[VTIME] = 0;	/* no read timeout */
+-	ioctl (0, TCSETA, &tio);
++	tcsetattr(0, TCSANOW, &tio);
+ #endif
+ #ifdef USE_SGTTY
+ 	struct sgttyb sg;
