@@ -21,7 +21,7 @@ USE_BZIP2=	yes
 USE_SDL=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_GCC=	3.4+
+USE_GCC=	3.4
 
 # Dies with bus error unless building debug version
 CXXFLAGS=	-g
