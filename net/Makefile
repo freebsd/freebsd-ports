@@ -38,6 +38,7 @@
     SUBDIR += astfax
     SUBDIR += atmsupport
     SUBDIR += avahi
+    SUBDIR += avahi-qt3
     SUBDIR += avahi-sharp
     SUBDIR += b2bua
     SUBDIR += balance
