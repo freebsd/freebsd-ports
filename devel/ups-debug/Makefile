@@ -17,6 +17,10 @@ DISTNAME=	ups-3.38-beta1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X based source level debugger for C, C++, and Fortran
 
+DEPRECATED=	only runs on FreeBSD 4.X/386
+EXPIRATION_DATE=	2007-05-15
+IGNORE=		only runs on FreeBSD 4.X/386
+
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -27,12 +31,6 @@ DOCS=		CHANGES FAQ README
 
 ONLY_FOR_ARCHS=	i386
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-IGNORE=		does not currently support FreeBSD 5.x or newer
-.endif
-
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/Ups ${X11BASE}/lib/X11/app-defaults
 .if !defined(NOPORTDOCS)
@@ -40,4 +38,4 @@ post-install:
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
