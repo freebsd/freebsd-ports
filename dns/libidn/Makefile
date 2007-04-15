@@ -39,6 +39,8 @@ PLIST_SUB+=	NLS="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|@image{components}||g' \
 		${WRKSRC}/doc/libidn.texi
+	@${REINPLACE_CMD} -e 's|$$(AUTOMAKE)|${TRUE}|' \
+		${WRKSRC}/doc/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
