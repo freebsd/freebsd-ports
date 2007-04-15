@@ -1,0 +1,5 @@
+%%SITE_PERL%%/mach/auto/Devel/Required/.packlist
+%%SITE_PERL%%/Devel/Required.pm
+@dirrmtry %%SITE_PERL%%/mach/auto/Devel/Required
+@dirrmtry %%SITE_PERL%%/mach/auto/Devel
+@dirrmtry %%SITE_PERL%%/Devel
