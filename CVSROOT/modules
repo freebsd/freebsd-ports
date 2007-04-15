@@ -7110,6 +7110,7 @@ mcal		ports/deskutils/mcal
 mcast-tools	ports/net/mcast-tools
 mcatalog	ports/deskutils/mcatalog
 mcl		ports/mbone/mcl
+mcpp		ports/devel/mcpp
 mcron		ports/sysutils/mcron
 mcrypt		ports/security/mcrypt
 mcstas		ports/science/mcstas
