@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wzdftpd
-PORTVERSION=	0.7.2
-PORTREVISION=	3
+PORTVERSION=	0.8.1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +19,7 @@ USE_RC_SUBR=	wzdftpd.sh
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	pkgconfig
+USE_GNOME=	pkgconfig ltverhack
 CONFIGURE_ARGS+=	--without-pam --disable-pgsql --disable-bonjour --mandir=${MANPREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="${CPPLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
@@ -127,11 +126,5 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
-	@if test ! -f ${PREFIX}/etc/wzdftpd/wzd.cfg; then \
-		${CP} ${PREFIX}/etc/wzdftpd/wzd.cfg.sample ${PREFIX}/etc/wzdftpd/wzd.cfg; \
-	fi
-	@if test ! -f ${PREFIX}/etc/wzdftpd/users; then \
-		${CP} ${PREFIX}/etc/wzdftpd/users.sample ${PREFIX}/etc/wzdftpd/users; \
-	fi
 
 .include <bsd.port.post.mk>

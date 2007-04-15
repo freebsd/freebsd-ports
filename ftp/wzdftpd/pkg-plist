@@ -3,17 +3,17 @@ bin/siteconfig
 bin/siteuptime
 bin/sitewho
 bin/wzd-config
-etc/wzdftpd/wzd.pem
-etc/wzdftpd/file_ginfo.txt
-etc/wzdftpd/file_help.txt
-etc/wzdftpd/file_swho.txt
-etc/wzdftpd/file_user.txt
-etc/wzdftpd/file_group.txt
-etc/wzdftpd/file_rules.txt
-etc/wzdftpd/file_users.txt
-etc/wzdftpd/file_vfs.txt
-etc/wzdftpd/file_who.txt
-etc/wzdftpd/file_groups.txt
+etc/wzd.pem
+etc/file_ginfo.txt
+etc/file_help.txt
+etc/file_swho.txt
+etc/file_user.txt
+etc/file_group.txt
+etc/file_rules.txt
+etc/file_users.txt
+etc/file_vfs.txt
+etc/file_who.txt
+etc/file_groups.txt
 include/wzdftpd/libwzd-auth/wzd_auth.h
 include/wzdftpd/libwzd-auth/wzd_base64.h
 include/wzdftpd/libwzd-auth/wzd_crypt.h
@@ -27,6 +27,7 @@ include/wzdftpd/libwzd-base/dlist.h
 include/wzdftpd/libwzd-base/hash.h
 include/wzdftpd/libwzd-base/list.h
 include/wzdftpd/libwzd-base/stack.h
+include/wzdftpd/libwzd-base/strpcpy.h
 include/wzdftpd/libwzd-base/wzd_strlcat.h
 include/wzdftpd/libwzd-base/wzd_strtok_r.h
 include/wzdftpd/libwzd-core/arch/bsd.h
@@ -48,15 +49,18 @@ include/wzdftpd/libwzd-core/wzd_dir.h
 include/wzdftpd/libwzd-core/wzd_events.h
 include/wzdftpd/libwzd-core/wzd_file.h
 include/wzdftpd/libwzd-core/wzd_fs.h
+include/wzdftpd/libwzd-core/wzd_group.h
 include/wzdftpd/libwzd-core/wzd_hardlimits.h
 include/wzdftpd/libwzd-core/wzd_ip.h
 include/wzdftpd/libwzd-core/wzd_libmain.h
+include/wzdftpd/libwzd-core/wzd_login.h
 include/wzdftpd/libwzd-core/wzd_log.h
 include/wzdftpd/libwzd-core/wzd_messages.h
 include/wzdftpd/libwzd-core/wzd_misc.h
 include/wzdftpd/libwzd-core/wzd_mod.h
 include/wzdftpd/libwzd-core/wzd_mutex.h
 include/wzdftpd/libwzd-core/wzd_perm.h
+include/wzdftpd/libwzd-core/wzd_protocol.h
 include/wzdftpd/libwzd-core/wzd_ratio.h
 include/wzdftpd/libwzd-core/wzd_section.h
 include/wzdftpd/libwzd-core/wzd_shm.h
@@ -69,21 +73,24 @@ include/wzdftpd/libwzd-core/wzd_structs.h
 include/wzdftpd/libwzd-core/wzd_threads.h
 include/wzdftpd/libwzd-core/wzd_tls.h
 include/wzdftpd/libwzd-core/wzd_types.h
+include/wzdftpd/libwzd-core/wzd_user.h
 include/wzdftpd/libwzd-core/wzd_utf8.h
 include/wzdftpd/libwzd-core/wzd_vars.h
 include/wzdftpd/libwzd-core/wzd_vfs.h
 include/wzdftpd/libwzd.h
+include/wzdftpd/libwzd_codes.h
+include/wzdftpd/libwzd_err.h
 include/wzdftpd/libwzd_pv.h
 include/wzdftpd/libwzd_socket.h
 include/wzdftpd/libwzd_tls.h
 lib/libwzd_core.a
 lib/libwzd_core.la
 lib/libwzd_core.so
-lib/libwzd_core.so.700
+lib/libwzd_core.so.0
 lib/libwzd.a
 lib/libwzd.la
 lib/libwzd.so
-lib/libwzd.so.700
+lib/libwzd.so.0
 share/aclocal/wzd.m4
 sbin/wzdftpd
 %%DATADIR%%/backends/libwzdplaintext.a
@@ -115,8 +122,6 @@ sbin/wzdftpd
 @dirrm include/wzdftpd/libwzd-core/arch
 @dirrm include/wzdftpd/libwzd-core
 @dirrm include/wzdftpd
-@unexec if cmp -s %D/etc/wzdftpd/wzd.cfg %D/etc/wzdftpd/wzd.cfg.sample; then rm -f %D/etc/wzdftpd/wzd.cfg; fi
-@unexec if cmp -s %D/etc/wzdftpd/users %D/etc/wzdftpd/users.sample; then rm -f %D/etc/wzdftpd/users; fi
-etc/wzdftpd/wzd.cfg.sample
-etc/wzdftpd/users.sample
+etc/wzd.cfg.sample
+etc/users.sample
 @dirrmtry etc/wzdftpd
