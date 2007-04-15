@@ -9226,6 +9226,7 @@ p5-Devel-Peek	ports/devel/p5-Devel-Peek
 p5-Devel-Pointer	ports/devel/p5-Devel-Pointer
 p5-Devel-Profile	ports/devel/p5-Devel-Profile
 p5-Devel-Profiler	ports/devel/p5-Devel-Profiler
+p5-Devel-Required	ports/devel/p5-Devel-Required
 p5-Devel-RingBuffer	ports/devel/p5-Devel-RingBuffer
 p5-Devel-STrace	ports/devel/p5-Devel-STrace
 p5-Devel-SimpleTrace	ports/devel/p5-Devel-SimpleTrace
