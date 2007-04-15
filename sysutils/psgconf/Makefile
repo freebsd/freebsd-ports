@@ -195,8 +195,8 @@ PKGDEINSTALL=	${WRKSRC}/postinstall
 post-patch:
 	${FIND} ${WRKSRC} -name "*.orig" -delete
 
-.if ${ARCH} == "amd64"
-# Does not work because Proc::ProcessTable is broken
+.if ${OSVERSION} > 599999
+# Does not work because Proc::ProcessTable is broken in 5.x
 post-build:
 	cd ${WRKSRC} && ${MAKE} test
 .endif
