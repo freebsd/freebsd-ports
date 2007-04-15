@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	smalltalk
-PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTVERSION=	2.3.3
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	GNU Smalltalk
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
@@ -45,12 +44,8 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386" && ${ARCH} != "alpha"
-BROKEN=		does not compile on !i386 and !alpha
-.endif
-
-.if ${OSVERSION} < 500000 || exists(${LOCALBASE}/lib/libreadline.so.5)
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
+.if ${OSVERSION} < 600000
+BROKEN=		requires C99 math functions for long doubles
 .endif
 
 .if defined(WITHOUT_TCLTK)
@@ -65,7 +60,13 @@ PLIST_SUB+=	TCLTK=""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
-	${WRKSRC}/configure
+		-e 's/ia64-\*-\* /&|amd64-*-* /' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's/x86_64-\*-freebsd\* /&| amd64-*-freebsd* / ' \
+		${WRKSRC}/libffi/configure
+	@${REINPLACE_CMD} -e 's/lrintl (truncl/lroundl (truncl/' \
+		${WRKSRC}/libgst/prims.def \
+		${WRKSRC}/libgst/prims.inl
 
 post-build:
 	@${SED} -e 's|@bindir@|${PREFIX}/bin|g' \
