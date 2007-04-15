@@ -5,15 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xsm
+PORTNAME=	extsm
 PORTVERSION=	1.0
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=rxsm
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	xsm_${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
-COMMENT=	Extensible Site Manager
+COMMENT=	Extensible Site Manager (XSM)
 
 RUN_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
 
