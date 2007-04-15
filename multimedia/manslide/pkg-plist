@@ -458,44 +458,6 @@ bin/Manslide
 %%DATADIR%%/Effects/France/France000247.jpg
 %%DATADIR%%/Effects/France/France000248.jpg
 %%DATADIR%%/Effects/France/France000249.jpg
-%%DATADIR%%/Effects/Gun/Gun000001.jpg
-%%DATADIR%%/Effects/Gun/Gun000002.jpg
-%%DATADIR%%/Effects/Gun/Gun000003.jpg
-%%DATADIR%%/Effects/Gun/Gun000004.jpg
-%%DATADIR%%/Effects/Gun/Gun000005.jpg
-%%DATADIR%%/Effects/Gun/Gun000006.jpg
-%%DATADIR%%/Effects/Gun/Gun000007.jpg
-%%DATADIR%%/Effects/Gun/Gun000008.jpg
-%%DATADIR%%/Effects/Gun/Gun000009.jpg
-%%DATADIR%%/Effects/Gun/Gun000010.jpg
-%%DATADIR%%/Effects/Gun/Gun000011.jpg
-%%DATADIR%%/Effects/Gun/Gun000012.jpg
-%%DATADIR%%/Effects/Gun/Gun000013.jpg
-%%DATADIR%%/Effects/Gun/Gun000014.jpg
-%%DATADIR%%/Effects/Gun/Gun000015.jpg
-%%DATADIR%%/Effects/Gun/Gun000016.jpg
-%%DATADIR%%/Effects/Gun/Gun000017.jpg
-%%DATADIR%%/Effects/Gun/Gun000018.jpg
-%%DATADIR%%/Effects/Gun/Gun000019.jpg
-%%DATADIR%%/Effects/Gun/Gun000020.jpg
-%%DATADIR%%/Effects/Gun/Gun000021.jpg
-%%DATADIR%%/Effects/Gun/Gun000022.jpg
-%%DATADIR%%/Effects/Gun/Gun000023.jpg
-%%DATADIR%%/Effects/Gun/Gun000024.jpg
-%%DATADIR%%/Effects/Gun/Gun000025.jpg
-%%DATADIR%%/Effects/Gun/Gun000026.jpg
-%%DATADIR%%/Effects/Gun/Gun000027.jpg
-%%DATADIR%%/Effects/Gun/Gun000028.jpg
-%%DATADIR%%/Effects/Gun/Gun000029.jpg
-%%DATADIR%%/Effects/Gun/Gun000030.jpg
-%%DATADIR%%/Effects/Gun/Gun000031.jpg
-%%DATADIR%%/Effects/Gun/Gun000032.jpg
-%%DATADIR%%/Effects/Gun/Gun000033.jpg
-%%DATADIR%%/Effects/Gun/Gun000034.jpg
-%%DATADIR%%/Effects/Gun/Gun000035.jpg
-%%DATADIR%%/Effects/Gun/Gun000036.jpg
-%%DATADIR%%/Effects/Gun/Gun000037.jpg
-%%DATADIR%%/Effects/Gun/Gun000038.jpg
 %%DATADIR%%/Effects/Record/Record000001.jpg
 %%DATADIR%%/Effects/Record/Record000002.jpg
 %%DATADIR%%/Effects/Record/Record000003.jpg
@@ -779,6 +741,7 @@ bin/Manslide
 %%DATADIR%%/Interface/fadein.png
 %%DATADIR%%/Interface/fadeout.png
 %%DATADIR%%/Interface/fin.png
+%%DATADIR%%/Interface/fond.png
 %%DATADIR%%/Interface/font.png
 %%DATADIR%%/Interface/from.png
 %%DATADIR%%/Interface/gimp.png
@@ -799,6 +762,7 @@ bin/Manslide
 %%DATADIR%%/Interface/reload.png
 %%DATADIR%%/Interface/render.png
 %%DATADIR%%/Interface/renderer.png
+%%DATADIR%%/Interface/rotate.png
 %%DATADIR%%/Interface/rotateX.png
 %%DATADIR%%/Interface/rotateY.png
 %%DATADIR%%/Interface/rotateZ.png
@@ -809,10 +773,12 @@ bin/Manslide
 %%DATADIR%%/Interface/soundtrack.png
 %%DATADIR%%/Interface/start.png
 %%DATADIR%%/Interface/to.png
+%%DATADIR%%/Interface/swap.png
 %%DATADIR%%/Interface/toolbar.PNG
 %%DATADIR%%/Interface/top_bandeau.png
 %%DATADIR%%/Interface/tux.png
 %%DATADIR%%/Interface/volume.png
+%%DATADIR%%/Interface/vague.png
 %%DATADIR%%/Interface/zoom+.png
 %%DATADIR%%/Interface/zoom-.png
 %%DATADIR%%/Interface/zoom.png
@@ -827,7 +793,6 @@ bin/Manslide
 @dirrm %%DATADIR%%/Effects/Sunset
 @dirrm %%DATADIR%%/Effects/Smoke
 @dirrm %%DATADIR%%/Effects/Record
-@dirrm %%DATADIR%%/Effects/Gun
 @dirrm %%DATADIR%%/Effects/France
 @dirrm %%DATADIR%%/Effects/Fire
 @dirrm %%DATADIR%%/Effects/Film
