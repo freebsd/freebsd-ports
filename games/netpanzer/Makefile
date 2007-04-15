@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	netpanzer
-PORTVERSION=	0.8
-PORTREVISION=	4
+PORTVERSION=	0.8.1
 CATEGORIES=	games
-MASTER_SITES=	http://download.berlios.de/netpanzer/
+MASTER_SITES=	${MASTER_SITE_BERLIOS}/${PORTNAME}/
 
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Real time, isometric view, tank multiplayer strategy game
