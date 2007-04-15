@@ -8,11 +8,10 @@
 # this port.  You need a patched version of mysql server for that.
 
 PORTNAME=	sphinxsearch
-PORTVERSION=	0.9.7.r2
-PORTREVISION=	1
+PORTVERSION=	0.9.7
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://www.sphinxsearch.com/downloads/
-DISTNAME=	sphinx-${PORTVERSION:C@\.r([0-9]+)$@-rc\1@}
+DISTNAME=	sphinx-${PORTVERSION}
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	Sphinx Full-Text Search Engine
