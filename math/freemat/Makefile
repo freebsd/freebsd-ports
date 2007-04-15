@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		FreeMat
-PORTVERSION=		3.0
+PORTVERSION=		3.1
 CATEGORIES=		math science
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
@@ -17,7 +17,8 @@ PKGNAMESUFFIX=		-mpi
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		An environment for rapid engineering and scientific processing
 
-LIB_DEPENDS=		lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS=		lapack.4:${PORTSDIR}/math/lapack	\
+			pcre.0:${PORTSDIR}/devel/pcre
 BUILD_DEPENDS=		pkg-config:${PORTSDIR}/devel/pkg-config
 
 .ifdef WITH_MPI
@@ -33,7 +34,7 @@ FFLAGS+=		-O2
 USE_GL=			yes
 USE_QT_VER=		4
 USE_GMAKE=		yes
-QT_COMPONENTS=		gui network opengl moc rcc uic
+QT_COMPONENTS=		gui network opengl moc rcc uic xml
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-blas="${BLAS}"
@@ -98,5 +99,11 @@ pre-everything::
 
 pre-configure:
 	${REINPLACE_CMD} -e 's| == x| = x|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+
+post-install:
+	@${ECHO_MSG}
+	@${ECHO_MSG} "===> Initializing..."
+	${PREFIX}/bin/FreeMat -i ${DATADIR}
+	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
