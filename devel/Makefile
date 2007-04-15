@@ -2016,6 +2016,7 @@
     SUBDIR += rubygem-activesupport
     SUBDIR += rubygem-builder
     SUBDIR += rubygem-daemons
+    SUBDIR += rubygem-eventmachine
     SUBDIR += rubygem-fastercsv
     SUBDIR += rubygem-fastthread
     SUBDIR += rubygem-gem_plugin
