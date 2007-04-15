@@ -730,6 +730,7 @@
     SUBDIR += ruby-tcpsocketpipe
     SUBDIR += ruby-tserver
     SUBDIR += rubygem-openid
+    SUBDIR += rubygem-twitter
     SUBDIR += rubygem-yadis
     SUBDIR += rude
     SUBDIR += rwhoisd
