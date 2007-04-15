@@ -8,18 +8,18 @@
 
 PORTNAME=	mythtv
 PORTVERSION=	0.20
+PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.mythtv.org/mc/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://chuggalug.clues.com/mythtv/
+DISTNAME=	mythtv-fixes-0.20-13053
 
 MAINTAINER=	grog@FreeBSD.org
 COMMENT=	MythTV is a homebrew PVR project
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake \
-		${SITE_PERL}/${PERL_ARCH}/XML/Parser/Expat.pm:${PORTSDIR}/textproc/p5-XML-SAX-Expat
 
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		freetype.9:${PORTSDIR}/print/freetype2
-
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake \
+		${SITE_PERL}/${PERL_ARCH}/XML/Parser/Expat.pm:${PORTSDIR}/textproc/p5-XML-SAX-Expat
 RUN_DEPENDS=	tv_check:${PORTSDIR}/textproc/p5-xmltv \
 		${X11BASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt-mysql-plugin \
 		wget:${PORTSDIR}/ftp/wget
@@ -34,8 +34,11 @@ CONFIGURE_ENV=	QMAKESPEC="${QMAKESPEC}" \
 MAKE_ENV=	QTDIR="${QT_PREFIX}" QMAKESPEC="${QMAKESPEC}"
 USE_RC_SUBR=	mythbackend
 
-CONFIGURE_ARGS=	--with-qt-dir=${LOCALBASE}
-# CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIG=		--enable-xvmc --enable-opengl-vsync \
+		--disable-xvmc-pro --disable-xvmc-vld --disable-xvmcw  \
+		--prefix=${PREFIX} --extra-cflags=-g --extra-cxxflags=-g
+
+CONFIGURE_ARGS=	--with-qt-dir=${LOCALBASE} ${CONFIG}
 
 QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
@@ -61,9 +64,7 @@ post-extract:
 		${ECHO_CMD} export QMAKESPEC=${QMAKESPEC}
 
 do-configure:
-		@cd ${WRKSRC} && QMAKESPEC=${QMAKESPEC} \
-			./configure --enable-memalign-hack --prefix=${PREFIX} \
-			--extra-cflags=-g --extra-cxxflags=-g
+		@cd ${WRKSRC} && QMAKESPEC=${QMAKESPEC} ./configure ${CONFIG}
 		@${ECHO_CMD} MAKE_ENV: ${MAKE_ENV}
 		@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
 			-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ mythtv.pro

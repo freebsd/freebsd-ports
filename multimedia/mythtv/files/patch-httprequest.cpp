@@ -1,5 +1,5 @@
---- libs/libmythupnp/httprequest.cpp~	Tue Nov 14 12:29:06 2006
-+++ libs/libmythupnp/httprequest.cpp	Tue Nov 14 12:59:13 2006
+--- libs/libmythupnp/httprequest.cpp~	Fri Mar 16 08:25:39 2007
++++ libs/libmythupnp/httprequest.cpp	Fri Mar 16 08:40:32 2007
 @@ -21,8 +21,12 @@
  #ifdef CONFIG_DARWIN
  #include "darwin-sendfile.h"
@@ -13,14 +13,13 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <unistd.h>
-@@ -281,7 +285,30 @@
-     {
+@@ -289,6 +293,24 @@
          __off64_t offset = llStart;
          int       file   = open( sFileName.ascii(), O_RDONLY | O_LARGEFILE );
--        sendfile64( getSocketHandle(), file, &offset, llSize );
-+        int error;
-+
+         ssize_t   sent   = 0;  
 +#ifdef __FreeBSD__
++
++	int error;
 +        error = sendfile (file,
 +                          getSocketHandle (),
 +                          offset,
@@ -28,20 +27,22 @@
 +                          NULL,
 +                          NULL,
 +                          NULL );
-+#else
-+        error = sendfile64( getSocketHandle(), file, &offset, llSize );
-+#endif
-+
-+        /*
-+         * Yes, this isn't needed for portability, but I can't stand the sight
-+         * of a call not checked for error conditions.
-+         */
 +        if (error)
 +          fprintf (stderr,
 +                   "Can't transfer %s: %s (%d)\n",
 +                   sFileName.ascii(),
 +                   strerror (errno),
 +                   errno );
-
++
++#else
+ 
+         do 
+         {  
+@@ -301,6 +319,7 @@
+             llSize -= sent;  
+         } 
+         while (( sent >= 0 ) && ( llSize > 0 ));  
++#endif
+ 
          close( file );
      }
