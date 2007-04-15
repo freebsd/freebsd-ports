@@ -41,10 +41,6 @@ PLIST_SUB+=	COMPILER=${COMPILER}
 INSTALL_TARGET=	install_unix
 USE_LDCONFIG=	yes
 
-.if ${OSVERSION} < 440000
-BROKEN=		"Not supported on systems prior to FreeBSD 4.4"
-.endif
-
 .if ${COMPILER} == icc
 CC=		icc
 CXX=		icpc
@@ -56,13 +52,7 @@ CFLAGS=		-O -pipe
 CXXFLAGS=	${CFLAGS}
 .endif
 
-.if ${COMPILER} == gcc && ${OSVERSION} < 460000
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} "There may be a bug in your version of gcc's exception"
-	@${ECHO_MSG} "handling code.  Consider upgrading to FreeBSD 4.6"
-	@${ECHO_MSG} "or above."
-.elif ${COMPILER} == gcc && ${OSVERSION} >= 502126
+.if ${COMPILER} == gcc && ${OSVERSION} >= 502126
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "If you have encounted a compiler internal error"
@@ -87,7 +77,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/../doc/images/* ${DOCSDIR}/images
 .endif
 
-.if ${OSVERSION} >= 46000 || ${COMPILER} == icc
+.if ${COMPILER} == icc
 post-build:	test
 .endif
 

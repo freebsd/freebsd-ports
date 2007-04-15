@@ -115,7 +115,7 @@ ALLDOCS=	${GENERALDOCS} ${XMESSDOCS}
 BROKEN=		internal gcc error on FreeBSD < 6.x
 .endif
 
-.if (${MAMEMESS} == "mess" && ${OSVERSION} >= 500000)
+.if (${MAMEMESS} == "mess")
 USE_GCC=	3.4+
 .endif
 

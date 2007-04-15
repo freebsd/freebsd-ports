@@ -34,16 +34,10 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 INSTALLS_ICONS=	yes
 
-.include <bsd.port.pre.mk>
-
-.if (${OSVERSION} < 500000)
-BROKEN=		doesn't play well with 4.X.
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-update-mime-database|true|g' ${WRKSRC}/Makefile.in
 
 post-install:
 	@-update-mime-database ${PREFIX}/share/mime
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

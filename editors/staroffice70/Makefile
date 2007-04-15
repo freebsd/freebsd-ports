@@ -84,19 +84,6 @@ pre-fetch:
 .else
 	@${ECHO} Check if ${LINUXBASE}/etc/mtab exists: YES
 .endif
-.if ${OSVERSION} < 450000
-	@${ECHO}
-	@${ECHO} ERROR:
-	@${ECHO}
-	@${ECHO} OS-VERSION ${OSVERSION}
-	@${ECHO}
-	@${ECHO} Staroffice depends on a scripting fix for
-	@${ECHO} /usr/src/sys/i386/linux/linux_sysvec.c
-	@${ECHO}
-	@${ECHO} Please upgrade to FreeBSD 4.5 or later.
-	@${ECHO}
-	@${FALSE}
-.endif
 .if ${SIZE} < 400000
 	@${ECHO}
 	@${ECHO} ERROR:

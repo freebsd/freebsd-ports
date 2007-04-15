@@ -55,10 +55,4 @@ pre-configure:
 x-generate-plist:
 	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX}|${GREP} regexxer) > temp-pkg-plist
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

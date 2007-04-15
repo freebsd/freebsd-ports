@@ -27,12 +27,6 @@ USE_PYTHON=	yes
 USE_GNOME=	gnomehack glib20 libxml2
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not build on FreeBSD 4.x
-.endif
-
 pre-everything::
 	@${ECHO_MSG} "NOTE: You may want to avoid extra dependencies"
 	@${ECHO_MSG} " from devel/swig13 by building with the following"
@@ -46,4 +40,4 @@ post-patch:
 		${WRKSRC}/osengine/Makefile.in
 	${REINPLACE_CMD} -e "s,echo aout, echo elf,g" ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

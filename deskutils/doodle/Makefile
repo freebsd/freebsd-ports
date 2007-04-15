@@ -33,10 +33,4 @@ post-patch:
 		 s|,\$$PTHREAD_LIBS,|,${PTHREAD_LIBS},|; \
 		 s|,\$$PTHREAD_LDFLAGS,|,,|;' ${WRKSRC}/configure
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
