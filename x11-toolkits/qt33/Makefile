@@ -8,7 +8,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.3.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	x11-toolkits ipv6
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-free-${PORTVERSION}
@@ -179,6 +179,8 @@ post-configure:
 	@${REINPLACE_CMD} -e \
 		's|/lib/pkgconfig/|/libdata/pkgconfig/|g' \
 			${WRKSRC}/src/Makefile
+	@${REINPLACE_CMD} -e \
+		's|^prefix=.*|prefix=${PREFIX}|g' ${WRKSRC}/lib/qt-mt.pc
 
 post-build:
 .for tool in makeqpf mergetr msg2qm qembed qvfb
