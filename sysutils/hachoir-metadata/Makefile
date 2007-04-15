@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	hachoir-metadata
-PORTVERSION=	0.9.0
+PORTVERSION=	0.10.0
 CATEGORIES=	sysutils python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/h/${PORTNAME}/ CSME
+MASTER_SITES=	CHEESESHOP CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Extract metadata from files

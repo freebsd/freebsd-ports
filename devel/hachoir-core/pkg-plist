@@ -103,6 +103,9 @@
 %%PYTHON_SITELIBDIR%%/hachoir_core/log.py
 %%PYTHON_SITELIBDIR%%/hachoir_core/log.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_core/log.pyo
+%%PYTHON_SITELIBDIR%%/hachoir_core/memory.py
+%%PYTHON_SITELIBDIR%%/hachoir_core/memory.pyc
+%%PYTHON_SITELIBDIR%%/hachoir_core/memory.pyo
 %%PYTHON_SITELIBDIR%%/hachoir_core/stream/__init__.py
 %%PYTHON_SITELIBDIR%%/hachoir_core/stream/__init__.pyc
 %%PYTHON_SITELIBDIR%%/hachoir_core/stream/__init__.pyo

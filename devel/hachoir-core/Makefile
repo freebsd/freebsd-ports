@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	hachoir-core
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.0
 CATEGORIES=	devel python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/h/${PORTNAME}/ CSME
+MASTER_SITES=	CHEESESHOP CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Hachoir core parser
