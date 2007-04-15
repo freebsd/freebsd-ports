@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xtide
-PORTVERSION=	2.9.1
+PORTVERSION=	2.9.2
 CATEGORIES=	astro
 MASTER_SITES=	ftp://ftp.flaterco.com/xtide/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
