@@ -316,7 +316,6 @@
     SUBDIR += tclX
     SUBDIR += tcltutor
     SUBDIR += tinycobol
-    SUBDIR += tk-wrapper
     SUBDIR += tolua
     SUBDIR += tolua++
     SUBDIR += tolua4
