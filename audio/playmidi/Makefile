@@ -17,12 +17,6 @@ COMMENT=	MIDI player
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.4
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500014
-EXTRA_PATCHES=	${FILESDIR}/extra-*
-.endif
-
 ONLY_FOR_ARCHS=	i386
 IS_INTERACTIVE=	YES	# asks what devices you want to support
 HAS_CONFIGURE=	YES
@@ -31,4 +25,4 @@ CONFIGURE_ENV=	PREFIX=${PREFIX}
 INSTALL_TARGET=	install.lame install.man
 MAN1=		playmidi.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
