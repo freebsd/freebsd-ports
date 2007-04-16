@@ -20,7 +20,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configuration Tool for LPRng
 
 BUILD_DEPENDS=	a2ps:${PORTSDIR}/print/a2ps-letter \
-		wish:${PORTSDIR}/lang/tk-wrapper
+		wish:${PORTSDIR}/x11-toolkits/tk-wrapper
 
 #RUN_DEPENDS=	ifhp:${PORTSDIR}/print/ifhp
 
