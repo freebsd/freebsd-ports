@@ -14,13 +14,7 @@ MASTER_SITE_SUBDIR=	apps/sound/mixers
 MAINTAINER=	jerry@freebsd.se
 COMMENT=	A ncurses-based console mixer
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400010
-LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-.endif
-
-MAN1=	rexima.1
+MAN1=		rexima.1
 PLIST_FILES=	bin/rexima
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
