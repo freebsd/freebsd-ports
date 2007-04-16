@@ -75,6 +75,7 @@
     SUBDIR += libicq2000
     SUBDIR += libjingle
     SUBDIR += libmsn
+    SUBDIR += libtelepathy
     SUBDIR += libyahoo2
     SUBDIR += licq
     SUBDIR += licq-console
