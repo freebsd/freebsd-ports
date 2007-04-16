@@ -6,7 +6,7 @@
 
 PORTNAME=	libcdio
 PORTVERSION=	0.77
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libcdio
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	libcdio
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Compact Disc Input and Control Library
 
-LIB_DEPENDS=	cddb.3:${PORTSDIR}/audio/libcddb \
+LIB_DEPENDS=	cddb.4:${PORTSDIR}/audio/libcddb \
 		popt.0:${PORTSDIR}/devel/popt
 
 GNU_CONFIGURE=	yes
