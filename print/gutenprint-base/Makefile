@@ -1,4 +1,4 @@
-# ports collection makefile for: gimp-print
+# ports collection makefile for: [Jgimp-print
 # Date Created: 2002 01 02
 # Whom: dgilbert@velocet.ca
 #
@@ -45,7 +45,7 @@ MAN1+=		escputil.1
 
 .if defined(GUT_SLAVE) && ${GUT_SLAVE}=="gimp"
 LIB_DEPENDS+=	gimp-2.0:${PORTSDIR}/graphics/gimp-app \
-		gutenprint.2:${PORTSDIR}/print/gutenprint
+		gutenprint.2:${PORTSDIR}/print/gutenprint-base
 CONFIGURE_ARGS=--with-gimp2=yes # Override CONFIGURE_ARGS
 BUILD_WRKSRC=	${WRKSRC}/src/gimp2
 INSTALL_WRKSRC=	${WRKSRC}/src/gimp2
