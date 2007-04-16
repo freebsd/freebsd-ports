@@ -7,6 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.90.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -97,7 +98,7 @@ PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
+.if ${OSVERSION} < 601103
 CONFIGURE_ARGS+=	--disable-gethostbyname_r
 .else
 CONFIGURE_ARGS+=	--enable-gethostbyname_r
