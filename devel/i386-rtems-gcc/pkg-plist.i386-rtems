@@ -244,7 +244,6 @@ lib/gcc-lib/i386-rtems/%%GCCVERSION%%/athlon/crtbegin.o
 lib/gcc-lib/i386-rtems/%%GCCVERSION%%/athlon/crtend.o
 lib/gcc-lib/i386-rtems/%%GCCVERSION%%/jc1
 lib/gcc-lib/i386-rtems/%%GCCVERSION%%/jvgenmain
-lib/charset.alias
 share/locale/fr/LC_MESSAGES/gcc.mo
 share/locale/tr/LC_MESSAGES/gcc.mo
 share/locale/ja/LC_MESSAGES/gcc.mo

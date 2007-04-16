@@ -374,7 +374,6 @@ mips-rtems/include/sys/lock.h
 mips-rtems/include/sys/queue.h
 mips-rtems/include/sys/stdio.h
 mips-rtems/include/sys/syslimits.h
-lib/charset.alias
 share/locale/fr/LC_MESSAGES/gcc.mo
 share/locale/tr/LC_MESSAGES/gcc.mo
 share/locale/ja/LC_MESSAGES/gcc.mo

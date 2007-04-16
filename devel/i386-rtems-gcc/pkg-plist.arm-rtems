@@ -233,7 +233,6 @@ lib/gcc-lib/arm-rtems/%%GCCVERSION%%/thumb/fpu/crti.o
 lib/gcc-lib/arm-rtems/%%GCCVERSION%%/thumb/fpu/crtn.o
 lib/gcc-lib/arm-rtems/%%GCCVERSION%%/jc1
 lib/gcc-lib/arm-rtems/%%GCCVERSION%%/jvgenmain
-lib/charset.alias
 share/locale/fr/LC_MESSAGES/gcc.mo
 share/locale/tr/LC_MESSAGES/gcc.mo
 share/locale/ja/LC_MESSAGES/gcc.mo

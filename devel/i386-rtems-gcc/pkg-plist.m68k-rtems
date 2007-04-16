@@ -259,7 +259,6 @@ lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/msoft-float/crtn.o
 lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/msoft-float/libgcc.a
 lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/jc1
 lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/jvgenmain
-lib/charset.alias
 share/locale/fr/LC_MESSAGES/gcc.mo
 share/locale/tr/LC_MESSAGES/gcc.mo
 share/locale/ja/LC_MESSAGES/gcc.mo

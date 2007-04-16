@@ -331,7 +331,6 @@ i960-rtems/include/sys/features.h
 i960-rtems/include/sys/sched.h
 i960-rtems/include/limits.h
 i960-rtems/include/pthread.h
-lib/charset.alias
 share/locale/fr/LC_MESSAGES/gcc.mo
 share/locale/tr/LC_MESSAGES/gcc.mo
 share/locale/ja/LC_MESSAGES/gcc.mo
