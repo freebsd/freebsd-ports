@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	jackit
-PORTVERSION=	0.102.28.20061216
-PORTREVISION=	1
+PORTVERSION=	0.103.0
 CATEGORIES=	audio
-MASTER_SITES=	http://www.rncbc.org/jack/ \
-		http://freebsd.unixfreunde.de/sources/
-DISTNAME=	jack-0.102.28.svn20061216
+MASTER_SITES=	SF
+DISTNAME=	jack-audio-connection-kit-${PORTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A low-latency audio server
