@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+#
+# PROVIDE: socks5
+# REQUIRE: DAEMON 
+#
+# Add the following line to /etc/rc.conf to enable socks5
+#
+# socks5_enable="YES"
+#
+
+socks5_enable=${socks5_enable-"NO"}
+
+. /etc/rc.subr
+
+name=socks5
+rcvar=`set_rcvar`
+pidfile="/var/run/$name.pid-1080"
+
+command=%%PREFIX%%/bin/socks5
+
+stop_cmd=socks5_stop
+
+socks5_stop()
+{
+	echo "Stopping socks5."
+	kill -9 `cat ${pidfile}`
+	rm ${pidfile}
+}
+
+load_rc_config ${name}
+
+run_rc_command "$1"

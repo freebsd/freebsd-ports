@@ -7,7 +7,7 @@
 
 PORTNAME=	socks5
 PORTVERSION=	1.0.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net security
 MASTER_SITES=	http://freeware.sgi.com/source/socks5/
 DISTNAME=	socks5-v1.0r11
@@ -15,6 +15,7 @@ DISTNAME=	socks5-v1.0r11
 MAINTAINER=	josh@tcbug.org
 COMMENT=	SOCKS v5 application layer gateway and clients
 
+USE_RC_SUBR=	${PORTNAME}.sh
 NO_CDROM=	"NEC has a funky license for this software"
 RESTRICTED=	"no commercial use"
 
@@ -31,6 +32,7 @@ CONFLICTS=	dante-[0-9]*
 WRKSRC=		${WRKDIR}/${DISTNAME}
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
+CFLAGS+=	-DHAVE_VSNPRINTF
 CONFIGURE_ARGS=	--with-libconffile=${PREFIX}/etc/libsocks5.conf \
 		--with-srvconffile=${PREFIX}/etc/socks5.conf \
 		--with-srvpidfile=/var/run/socks5.pid \
