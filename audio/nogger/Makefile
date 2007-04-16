@@ -18,11 +18,7 @@ LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_GNOME=	gtk20
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-IGNORE=	just makes a humming noise
-.endif
+IGNORE=		just makes a humming noise
 
 PLIST_FILES=	bin/nogger
 .ifndef(NOPORTDOCS)
@@ -43,4 +39,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
