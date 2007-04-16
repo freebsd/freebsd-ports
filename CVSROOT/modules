@@ -12792,6 +12792,7 @@ py-repl		ports/devel/py-repl
 py-reportlab	ports/print/py-reportlab
 py-reportlab2	ports/print/py-reportlab2
 py-resourcepackage	ports/devel/py-resourcepackage
+py-restclient	ports/www/py-restclient
 py-reverend	ports/textproc/py-reverend
 py-reverse	ports/devel/py-reverse
 py-rijndael	ports/security/py-rijndael
