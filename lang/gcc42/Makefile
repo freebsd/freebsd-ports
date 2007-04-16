@@ -109,9 +109,6 @@ MAN1+=		gcj${SUFFIX}.1 \
 		rmic${SUFFIX}.1 rmiregistry${SUFFIX}.1
 INFO+=		gcc${SUFFIX}/gcj
 PLIST_SUB+=	JAVA=""
-.else
-CONFIGURE_ARGS+=--disable-libgcj
-PLIST_SUB+=	JAVA="@comment "
 
 .if defined(WITH_JAVA_AWT)
 LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
@@ -120,6 +117,9 @@ CONFIGURE_ARGS+=	--enable-java-awt=gtk,xlib \
 			--enable-gtk-cairo
 .endif
 
+.else
+CONFIGURE_ARGS+=--disable-libgcj
+PLIST_SUB+=	JAVA="@comment "
 .endif
 
 pre-everything::
