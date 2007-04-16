@@ -64,6 +64,9 @@ share/gnome/sounds/gossip/chat2.wav
 share/gnome/sounds/gossip/offline.wav
 share/gnome/sounds/gossip/online.wav
 share/gnome/sounds/gossip/send.wav
+share/icons/hicolor/16x16/apps/gossip.png
+share/icons/hicolor/22x22/apps/gossip.png
+share/icons/hicolor/32x32/apps/gossip.png
 share/icons/hicolor/48x48/apps/gossip.png
 share/icons/hicolor/scalable/apps/gossip.svg
 share/locale/ar/LC_MESSAGES/gossip.mo
@@ -136,6 +139,8 @@ share/locale/zh_TW/LC_MESSAGES/gossip.mo
 @dirrmtry share/locale/ne
 @dirrmtry share/locale/fi/LC_MESSAGES
 @dirrmtry share/locale/fi
+@dirrmtry share/locale/el/LC_MESSAGES
+@dirrmtry share/locale/el
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/cs/LC_MESSAGES
