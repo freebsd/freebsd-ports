@@ -23,10 +23,4 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500036
-EXTRA_PATCHES+=	${PATCHDIR}/extra-*
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
