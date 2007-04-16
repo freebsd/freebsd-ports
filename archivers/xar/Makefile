@@ -29,10 +29,4 @@ GNU_CONFIGURE=	yes
 
 MAN1=		xar.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Does not build on FreeBSD < 5.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
