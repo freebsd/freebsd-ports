@@ -509,6 +509,7 @@
     SUBDIR += pear-Image_Graph
     SUBDIR += pecl-imagick
     SUBDIR += pecl-imlib2
+    SUBDIR += pecl-qrencode
     SUBDIR += pecomato
     SUBDIR += peps
     SUBDIR += pgperl
