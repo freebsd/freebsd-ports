@@ -7,7 +7,7 @@
 
 PORTNAME=	aqualung
 DISTVERSION=	0.9beta7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -31,7 +31,7 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		mp3lame.0:${PORTSDIR}/audio/lame \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel \
 		strfunc.9:${PORTSDIR}/devel/libstrfunc \
-		cddb.3:${PORTSDIR}/audio/libcddb
+		cddb.4:${PORTSDIR}/audio/libcddb
 
 USE_GETTEXT=	yes
 USE_GNOME=	pkgconfig gtk20 libxml2

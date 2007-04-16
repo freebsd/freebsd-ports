@@ -7,6 +7,7 @@
 
 PORTNAME=	cdrtools
 PORTVERSION=	2.01.01a11
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
@@ -59,7 +60,7 @@ IGNORE=		does not work with mlockall(2) on your version of FreeBSD 5.x. Please u
 
 .if exists(${LOCALBASE}/lib/libcdio.a) || defined(WITH_CDDB)
 WITH_CDDB=	yes
-LIB_DEPENDS+=	cddb.3:${PORTSDIR}/audio/libcddb \
+LIB_DEPENDS+=	cddb.4:${PORTSDIR}/audio/libcddb \
 		cdio.7:${PORTSDIR}/sysutils/libcdio
 .endif
 
