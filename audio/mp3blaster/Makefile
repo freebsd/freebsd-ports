@@ -38,10 +38,6 @@ PORTDOCS=	AUTHORS CREDITS ChangeLog FAQ README TODO
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 400010
-LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-.endif
-
 .if defined(WITH_LIRC)
 LIB_DEPENDS+=	lirc_client.0:${PORTSDIR}/comms/lirc
 CONFIGURE_ARGS+=	--with-lirc
