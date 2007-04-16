@@ -58,10 +58,4 @@ post-install:
 		-exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		requires iswdigit(3)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
