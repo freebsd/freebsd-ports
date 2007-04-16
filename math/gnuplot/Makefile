@@ -70,8 +70,7 @@ CONFIGURE_ARGS+=	--with-plot=${LOCALBASE}
 CONFIGURE_ARGS+=	--disable-wxwidgets
 .else
 USE_WX=			2.4+
-WX_COMPS=		wx
-CONFIGURE_ARGS+=	--with-wx-config=${WXCONFIG}
+WX_CONF_ARGS=		absolute
 .endif
 
 post-patch:
