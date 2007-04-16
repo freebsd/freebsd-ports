@@ -34,12 +34,6 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${CPPFLAGS}" \
 INFO=		libadplug
 MAN1=		adplugdb.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not build on 4.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -E 's#<(binfile.h|binio.h|binstr.h)>#<libbinio/\1>#' \
 		${WRKSRC}/adplugdb/adplugdb.cpp \
@@ -56,4 +50,4 @@ post-patch:
 		${WRKSRC}/Makefile.in \
 		${WRKSRC}/Makefile.am
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
