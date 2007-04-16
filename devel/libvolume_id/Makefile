@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvolume_id
-PORTVERSION=	0.71.0
-PORTREVISION=	1
+PORTVERSION=	0.75.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.marcuscom.com/downloads/
 
@@ -27,10 +26,6 @@ PLIST_FILES=	include/libvolume_id.h \
 		libdata/pkgconfig/libvolume_id.pc
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	not supported on 4.X
-.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/libdata/pkgconfig
