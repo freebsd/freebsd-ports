@@ -32,15 +32,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 WRKSRC=		${WRKDIR}/trigger-${PORTVERSION}-src
 DATASRC=	${WRKDIR}/trigger-${DATAVERSION}-data
 
-DESKTOP_ENTRIES="Trigger" "Car racing game" "" \
-		"trigger" "" false
-
-.include <bsd.port.pre.mk>
 DATAVERSION=	0.5.2
 
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4
-.endif
+DESKTOP_ENTRIES="Trigger" "Car racing game" "" \
+		"trigger" "" false
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|SDL/||' \
@@ -75,4 +70,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
