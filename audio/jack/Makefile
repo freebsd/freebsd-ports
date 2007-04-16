@@ -49,16 +49,11 @@ CONFIGURE_ENV+=	ac_cv_prog_HAVE_DOXYGEN="false"
 PLIST_SUB+=	DOCS="@comment "
 .endif
 
-.if ${OSVERSION} < 500000
-CONFIGURE_ENV+=	ac_cv_func_clock_gettime=no
-CFLAGS+=	-Duintmax_t=uintptr_t
-.endif
-
-.if (${OSVERSION} > 500000 ) && (${OSVERSION} < 502102 )
+.if (${OSVERSION} < 502102 )
 BROKEN=		Does not compile
 .endif
 
-.if ${OSVERSION} < 500018 || exists(${LOCALBASE}/lib/libreadline.so.5)
+.if exists(${LOCALBASE}/lib/libreadline.so.5)
 LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif
 
