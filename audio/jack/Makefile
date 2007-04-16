@@ -65,6 +65,8 @@ pre-everything::
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|define USE_MLOCK|undef USE_MLOCK|' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},"  \
 		${WRKSRC}/configure ${WRKSRC}/libjack/Makefile.in \
 		${WRKSRC}/jackd/Makefile.in \
