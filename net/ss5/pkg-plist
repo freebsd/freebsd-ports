@@ -1,0 +1,30 @@
+etc/ss5/ss5.conf
+etc/ss5/ss5.passwd
+lib/ss5/mod_authentication.so
+lib/ss5/mod_authorization.so
+lib/ss5/mod_balance.so
+lib/ss5/mod_bandwidth.so
+lib/ss5/mod_dump.so
+lib/ss5/mod_filter.so
+lib/ss5/mod_log.so
+lib/ss5/mod_proxy.so
+lib/ss5/mod_socks4.so
+lib/ss5/mod_socks5.so
+lib/ss5/mod_statistics.so
+sbin/ss5
+%%DATADIR%%/SS5Logo.jpg
+%%DATADIR%%/balamgr.cgi
+%%DATADIR%%/statmgr.cgi
+%%EXAMPLESDIR%%/entries.ldif
+%%EXAMPLESDIR%%/slapd.conf
+%%EXAMPLESDIR%%/ss5.pam
+%%DOCSDIR%%/License
+%%DOCSDIR%%/README.balamgr
+%%DOCSDIR%%/README.ldap
+%%DOCSDIR%%/README.pam
+%%DOCSDIR%%/README.statmgr
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%
+@dirrmtry etc/ss5
+@dirrm lib/ss5
