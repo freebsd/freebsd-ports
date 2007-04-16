@@ -34,10 +34,6 @@ ALL_TARGET=	7za 7zr sfx
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500039
-IGNORE=		requires wchar functions (mbrtowc(3) etc.) for compilation
-.endif
-
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
 .endif
