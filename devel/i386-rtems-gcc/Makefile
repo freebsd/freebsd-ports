@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	newlib \
 			${PORTNAME}/${GCCNAME}/:gcc
 DISTFILES=		${NEWLIBNAME}.tar.gz \
 			${GCCNAME}.tar.gz:gcc
+
 PATCHFILES=	${GCCNAME}-rtems-20030507a.diff \
 		${NEWLIBNAME}-rtems-20030605.diff
 PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/snapshots/c_tools/source/ \
@@ -53,9 +54,9 @@ NEWLIBNAME=	newlib-1.11.0
 PLIST=		${PKGDIR}/pkg-plist.${LCLTARGET}
 USE_GETTEXT=	yes
 
-BUILD_DEPENDS=	${LCLTARGET}-as:${PORTSDIR}/devel/${LCLTARGET}-binutils \
+BUILD_DEPENDS+=	${LCLTARGET}-as:${PORTSDIR}/devel/${LCLTARGET}-binutils \
 		${LCLTARGET}-ld:${PORTSDIR}/devel/${LCLTARGET}-binutils
-RUN_DEPENDS=	${LCLTARGET}-as:${PORTSDIR}/devel/${LCLTARGET}-binutils \
+RUN_DEPENDS+=	${LCLTARGET}-as:${PORTSDIR}/devel/${LCLTARGET}-binutils \
 		${LCLTARGET}-ld:${PORTSDIR}/devel/${LCLTARGET}-binutils
 
 PKGNAMEPREFIX=	${LCLTARGET}-

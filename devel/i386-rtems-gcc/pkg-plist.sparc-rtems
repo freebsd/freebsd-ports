@@ -222,7 +222,6 @@ lib/gcc-lib/sparc-rtems/%%GCCVERSION%%/libgcc.a
 lib/gcc-lib/sparc-rtems/%%GCCVERSION%%/v8/libgcc.a
 lib/gcc-lib/sparc-rtems/%%GCCVERSION%%/jc1
 lib/gcc-lib/sparc-rtems/%%GCCVERSION%%/jvgenmain
-lib/charset.alias
 share/locale/fr/LC_MESSAGES/gcc.mo
 share/locale/tr/LC_MESSAGES/gcc.mo
 share/locale/ja/LC_MESSAGES/gcc.mo

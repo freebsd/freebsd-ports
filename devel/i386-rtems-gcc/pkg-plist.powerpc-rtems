@@ -545,7 +545,6 @@ lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/ncrtn.o
 lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/crtsavres.o
 lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/jc1
 lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/jvgenmain
-lib/charset.alias
 share/locale/fr/LC_MESSAGES/gcc.mo
 share/locale/tr/LC_MESSAGES/gcc.mo
 share/locale/ja/LC_MESSAGES/gcc.mo

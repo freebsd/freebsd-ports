@@ -225,7 +225,6 @@ lib/gcc-lib/sh-rtems/%%GCCVERSION%%/m4-single/libgcc.a
 lib/gcc-lib/sh-rtems/%%GCCVERSION%%/m4/libgcc.a
 lib/gcc-lib/sh-rtems/%%GCCVERSION%%/jc1
 lib/gcc-lib/sh-rtems/%%GCCVERSION%%/jvgenmain
-lib/charset.alias
 share/locale/fr/LC_MESSAGES/gcc.mo
 share/locale/tr/LC_MESSAGES/gcc.mo
 share/locale/ja/LC_MESSAGES/gcc.mo
