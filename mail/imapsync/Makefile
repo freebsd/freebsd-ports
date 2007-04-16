@@ -8,7 +8,8 @@
 PORTNAME=	imapsync
 PORTVERSION=	1.219
 CATEGORIES=	mail perl5
-MASTER_SITES=	http://www.linux-france.org/prj/imapsync/dist/
+MASTER_SITES=	http://www.linux-france.org/prj/imapsync/dist/ \
+		http://christianserving.org/ports/mail/imapsync/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@christianserving.org
@@ -27,15 +28,9 @@ POD2MAN?=	pod2man
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		${PORTNAME}.1
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6 or newer. Install lang/perl5.8 and try again
-.endif
-
 do-install:
 	${POD2MAN} ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.1
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
