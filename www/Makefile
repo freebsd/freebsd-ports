@@ -1004,6 +1004,7 @@
     SUBDIR += py-pysearch
     SUBDIR += py-qp
     SUBDIR += py-qpy
+    SUBDIR += py-restclient
     SUBDIR += py-scgi
     SUBDIR += py-scriptaculous
     SUBDIR += py-slimmer
