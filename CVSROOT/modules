@@ -14527,6 +14527,7 @@ srmt		ports/sysutils/srmt
 srp		ports/security/srp
 srvx		ports/irc/srvx
 ss		ports/math/ss
+ss5		ports/net/ss5
 ssam		ports/editors/ssam
 ssamtse		ports/games/ssamtse
 ssc		ports/games/ssc
