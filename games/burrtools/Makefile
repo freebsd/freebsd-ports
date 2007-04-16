@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	burrtools
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -20,5 +20,9 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
+
+PLIST_FILES=	bin/burrGui bin/burrTxt
+
+PORTDOCS=	*
 
 .include <bsd.port.mk>
