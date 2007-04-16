@@ -59,16 +59,12 @@ pre-patch:
 	${CP} ${SPEECHTOOLS}/config/config-dist ${SPEECHTOOLS}/config/config
 	${CHMOD} u+w ${FESTIVAL}/config/config ${SPEECHTOOLS}/config/config
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-.if ${OSVERSION} > 500112
 .for ii in compilers/gcc27.mak config config-dist
 	@${MV} ${SPEECHTOOLS}/config/${ii} ${SPEECHTOOLS}/config/${ii}.orig
 	@${SED} -e "s:= gcc:= gcc295:g" < ${SPEECHTOOLS}/config/${ii}.orig \
 		> ${SPEECHTOOLS}/config/${ii}
 .endfor
-.endif
 	@${CP} ${FILESDIR}/top-Makefile ${WRKSRC}/Makefile
 	@${CP} ${FILESDIR}/FreeBSD.mak ${SPEECHTOOLS}/config/systems/FreeBSD.mak
 .for i in 4 5
@@ -108,4 +104,4 @@ do-install:
 	${INSTALL_MAN} ${FESTIVAL}/doc/${ii} ${PREFIX}/man/man1/
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
