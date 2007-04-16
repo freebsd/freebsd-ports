@@ -29,8 +29,6 @@ USE_RUBY=	yes
 PORTDOCS=	*
 .endif
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|--std=gnu99|--std=gnu99 ${CFLAGS} ${PTHREAD_CFLAGS}|; \
 		s|-Iinclude|-Iinclude -I${LOCALBASE}/include|; \
@@ -55,10 +53,4 @@ do-install:
 .endfor
 .endif
 
-.if ${OSVERSION} < 501100
-
-IGNORE=	"ignored: FreeBSD before 5.1 lacks the wordexp interface"
-
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
