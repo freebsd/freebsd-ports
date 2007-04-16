@@ -310,10 +310,6 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can enable libtheora support by defining WITH_THEORA."
 .endif
-.if !defined(WITH_JPEGMMX)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You can enable JPEG with MMX by defining WITH_JPEGMMX."
-.endif
 .if !defined(WITH_MJPEG)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can enable MJPEG portions by defining WITH_JPEGMMX."
