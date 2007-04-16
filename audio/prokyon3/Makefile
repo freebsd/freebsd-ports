@@ -28,14 +28,9 @@ USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-qtdir=${X11BASE} --with-id3-libs=${LOCALBASE}\
 	 	--with-ogg-libs=${LOCALBASE} --with-vorbis-libs=${LOCALBASE} \
 		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500041
 QT_NONSTANDARD=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include \
 		-I${QT_PREFIX}/include"
-.endif
 
 .if defined(WITH_BURN)
 USE_CDRTOOLS=	yes
@@ -57,4 +52,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@sleep 5
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
