@@ -6,6 +6,7 @@
 
 PORTNAME=		ekg
 PORTVERSION=		1.7.r3
+PORTREVISION=		1
 PORTEPOCH=		2
 CATEGORIES=		polish net-im
 MASTER_SITES=		http://ekg.chmurka.net/
@@ -14,18 +15,23 @@ DISTNAME=		${PORTNAME}-1.7rc3
 MAINTAINER=		alex@bsdguru.org
 COMMENT=		Text-mode Gadu-Gadu client
 
-LIB_DEPENDS=		gadu.3:${PORTSDIR}/polish/libgadu
+LIB_DEPENDS=		execinfo.1:${PORTSDIR}/devel/libexecinfo \
+			gadu.3:${PORTSDIR}/polish/libgadu
 
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 USE_GNOME=		gnomehack pkgconfig
 CONFIGURE_ARGS+=	--disable-shared \
 			--disable-static \
-			--enable-dynamic
+			--enable-dynamic \
+			--without-openssl \
+			--disable-libgadu-openssl \
+			--without-libungif \
+			--without-libjpeg
 
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lexecinfo"
 
 OPTIONS=	ASPELL "Build with ASPELL support" off
 
