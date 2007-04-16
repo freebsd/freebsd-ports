@@ -12,6 +12,6 @@ include/cddb/version.h
 lib/libcddb.a
 lib/libcddb.la
 lib/libcddb.so
-lib/libcddb.so.3
+lib/libcddb.so.4
 libdata/pkgconfig/libcddb.pc
 @dirrm include/cddb
