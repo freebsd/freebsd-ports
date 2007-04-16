@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	dinoex.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Collection of over 3000 icons in XPM3 format
 
 USE_X_PREFIX=	yes
