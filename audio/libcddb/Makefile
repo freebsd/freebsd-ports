@@ -22,11 +22,4 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--without-cdio
 CONFIGURE_ENV=	CPPFLAGS="-DICONV_CONST=\"const\""
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES+=	${PATCHDIR}/cddb.h-systypes-patch \
-		${PATCHDIR}/cddb_ni.h-systypes-patch
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

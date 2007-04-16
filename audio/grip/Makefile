@@ -48,11 +48,7 @@ ISO_LOCALES=	de es fr pt_BR
 .if defined(WITH_CDROM_DEVICE)
 DEFAULT_CDROM_DEVICE=${WITH_CDROM_DEVICE}
 .else
-.if ${OSVERSION} < 500000
-DEFAULT_CDROM_DEVICE=/dev/acd0c
-.else
 DEFAULT_CDROM_DEVICE=/dev/acd0
-.endif
 .endif
 
 .if !defined(WITHOUT_CDPARANOIA)
