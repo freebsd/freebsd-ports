@@ -10,6 +10,11 @@ share/gnome/help/sound-juicer/el/figures/prefs.png
 share/gnome/help/sound-juicer/el/figures/startup.png
 share/gnome/help/sound-juicer/el/legal.xml
 share/gnome/help/sound-juicer/el/sound-juicer.xml
+share/gnome/help/sound-juicer/en_GB/fdl-appendix.xml
+share/gnome/help/sound-juicer/en_GB/figures/prefs.png
+share/gnome/help/sound-juicer/en_GB/figures/startup.png
+share/gnome/help/sound-juicer/en_GB/legal.xml
+share/gnome/help/sound-juicer/en_GB/sound-juicer.xml
 share/gnome/help/sound-juicer/es/fdl-appendix.xml
 share/gnome/help/sound-juicer/es/figures/prefs.png
 share/gnome/help/sound-juicer/es/figures/startup.png
@@ -37,6 +42,7 @@ share/gnome/help/sound-juicer/uk/legal.xml
 share/gnome/help/sound-juicer/uk/sound-juicer.xml
 share/gnome/omf/sound-juicer/sound-juicer-C.omf
 share/gnome/omf/sound-juicer/sound-juicer-el.omf
+share/gnome/omf/sound-juicer/sound-juicer-en_GB.omf
 share/gnome/omf/sound-juicer/sound-juicer-es.omf
 share/gnome/omf/sound-juicer/sound-juicer-fr.omf
 share/gnome/omf/sound-juicer/sound-juicer-nl.omf
@@ -131,6 +137,8 @@ share/locale/zh_TW/LC_MESSAGES/sound-juicer.mo
 @dirrm share/gnome/help/sound-juicer/es
 @dirrm share/gnome/help/sound-juicer/el/figures
 @dirrm share/gnome/help/sound-juicer/el
+@dirrm share/gnome/help/sound-juicer/en_GB/figures
+@dirrm share/gnome/help/sound-juicer/en_GB
 @dirrm share/gnome/help/sound-juicer/C/figures
 @dirrm share/gnome/help/sound-juicer/C
 @dirrm share/gnome/help/sound-juicer
