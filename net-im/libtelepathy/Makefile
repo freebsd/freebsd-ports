@@ -7,7 +7,7 @@
 
 PORTNAME=	libtelepathy
 PORTVERSION=	0.0.53
-CATEGORIES=	devel
+CATEGORIES=	net-im devel
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/libtelepathy/
 
 MAINTAINER=	flz@FreeBSD.org
