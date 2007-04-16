@@ -39,10 +39,6 @@ OPTIONS=	JACK "JACK support" off \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		requires C99 string functions in libc
-.endif
-
 .if defined(WITH_JACK)
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 .else
