@@ -2939,3 +2939,4 @@ devel/crossgo32||2007-04-14|Has expired: Archaic port
 devel/crossgo32-djgpp2||2007-04-14|Removed, Archaic port
 devel/crossgo32-djgpp2-pdcurses||2007-04-14|Removed, Archaic port
 www/xsm|www/extsm|2007-04-16|was moved to resolve conflict with x11/xsm import
+lang/tk-wrapper|x11-toolkits/tk-wrapper|2007-04-16|Moved to correct category
