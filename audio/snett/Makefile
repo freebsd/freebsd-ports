@@ -20,13 +20,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_RUBY=	yes
 NO_BUILD=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD 4.x
-.endif
-
 do-install:
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/rake PREFIX=${PREFIX}/ ${INSTALL_TARGET}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
