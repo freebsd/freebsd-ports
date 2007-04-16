@@ -68,12 +68,6 @@ PLIST_SUB+=	PORTVERSION=${RELEASE} \
 		WIDEC_EXAMPLESDIR=${WIDEC_EXAMPLESDIR:S,${TARGETDIR}/,,} \
 		NOWIDEC_EXAMPLESDIR=${NOWIDEC_EXAMPLESDIR:S,${TARGETDIR}/,,}
 
-MANCOMPRESSED=	yes
-MAN1=	captoinfo.1m clear.1 infocmp.1m infotocap.1m reset.1 tack.1 \
-	tic.1m toe.1m tput.1 tset.1
-MAN5=	term.5 terminfo.5
-MAN7=	term.7
-
 PORTDOCS=	*
 
 DOCS=	ANNOUNCE INSTALL NEWS README TO-DO doc/html/announce.html \
@@ -94,7 +88,7 @@ EXAMPLES_CPP=	Makefile NEWS PROBLEMS README-first cursesapp.cc \
 
 .include <bsd.port.pre.mk>
 
-MAN3!=	${CAT} ${FILESDIR}/man3
+.include "${.CURDIR}/Makefile.man"
 
 .if ${OSVERSION} < 503000
 WITHOUT_WIDEC=	yes
