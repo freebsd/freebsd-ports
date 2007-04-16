@@ -29,6 +29,6 @@ pre-install:
 do-install:
 	${MKDIR} ${WWWDIR}
 	${CP} -R ${WRKSRC}/* ${WWWDIR}/
-	${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/templates_c ${WWWDIR}/conf/pgmgt.conf.php
+	${CHOWN} ${WWWOWN}:${WWWGRP} ${WWWDIR}/templates_c ${WWWDIR}/conf/pgmgt.conf.php.sample
 
 .include <bsd.port.mk>
