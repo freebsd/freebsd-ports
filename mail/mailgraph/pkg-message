@@ -1,13 +1,11 @@
 Edit /etc/rc.conf and set
 
-mailgraph_enable="YES"
+  mailgraph_enable="YES"
 
-to enable mailgraph.
+to enable mailgraph. 
 
 Make sure this script should be invoked with privilege to read
-/var/log/maillog.
+/var/log/maillog. For example, you may change the permission of
+maillog to be 644. Another way is to make maillog owned by
+the mail group, and put mailgraph_user in that group. 
 
-*** WARNING ***
-
-The rrd database has been moved to %%DATADIR%%.
-If you have previous ones, please move them to %%DATADIR%%.
