@@ -281,6 +281,7 @@ lib/asterisk/modules/cdr_manager.so
 %%WITH_RADIUS%%lib/asterisk/modules/cdr_radius.so
 lib/asterisk/modules/chan_agent.so
 lib/asterisk/modules/chan_features.so
+%%WITH_JABBER%%lib/asterisk/modules/chan_gtalk.so
 lib/asterisk/modules/chan_iax2.so
 lib/asterisk/modules/chan_local.so
 lib/asterisk/modules/chan_mgcp.so
@@ -347,6 +348,7 @@ lib/asterisk/modules/res_convert.so
 lib/asterisk/modules/res_crypto.so
 lib/asterisk/modules/res_features.so
 lib/asterisk/modules/res_indications.so
+%%WITH_JABBER%%lib/asterisk/modules/res_jabber.so
 lib/asterisk/modules/res_monitor.so
 lib/asterisk/modules/res_musiconhold.so
 lib/asterisk/modules/res_smdi.so

@@ -43,7 +43,8 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		POSTGRES	"Enable PostgreSQL support" on \
 		RADIUS		"Enable RADIUS accounting support" on \
 		SNMP		"Enable SNMP support" on \
-		H323		"Enable H.323 support" on
+		H323		"Enable H.323 support" on \
+		JABBER		"Enable Jabber and Gtalk support" on
 
 .include <bsd.port.pre.mk>
 
@@ -121,6 +122,15 @@ CONFIGURE_ARGS+= --without-netsnmp
 PLIST_SUB+=	WITH_SNMP=""
 CONFIGURE_ARGS+= --with-netsnmp
 LIB_DEPENDS+=	netsnmp.10:${PORTSDIR}/net-mgmt/net-snmp
+.endif
+
+.if defined(WITHOUT_JABBER)
+PLIST_SUB+=	WITH_JABBER="@comment "
+CONFIGURE_ARGS+= --without-iksemel
+.else
+PLIST_SUB+=	WITH_JABBER=""
+CONFIGURE_ARGS+= --with-iksemel
+LIB_DEPENDS+=	iksemel.3:${PORTSDIR}/textproc/iksemel
 .endif
 
 post-patch:
