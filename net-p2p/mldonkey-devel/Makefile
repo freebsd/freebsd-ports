@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.8.3
+PORTVERSION=	2.8.4
 CATEGORIES+=	net-p2p
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
 		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-PKGNAMESUFFIX=	-devel
+PKGNAMESUFFIX?=	-devel
 
 MAINTAINER?=	lioux@FreeBSD.org
 COMMENT?=	A OCAML client for multiple peer-to-peer networks
@@ -19,15 +19,15 @@ COMMENT?=	A OCAML client for multiple peer-to-peer networks
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 NO_LATEST_LINK=	yes
-CONFLICTS=	mldonkey-[0-9]*
+CONFLICTS=	mldonkey{-{core,gui},}-[0-9]*
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
-USE_RC_SUBR=	mlnet
 USE_AUTOTOOLS=	autoconf:259:env
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	opt
+MAKE_ENV+=	OCAMLRUNPARAM="l=256M"
 
 CONFIGURE_ARGS+=\
 		--enable-ocamlver=3 \
@@ -49,41 +49,53 @@ LIB_DEPENDS+=	bz2:${PORTSDIR}/archivers/bzip2
 ###
 ## Options activation
 ###
-.if defined(WITHOUT_GUI)
-.if defined(WITHOUT_CORE)
+.if defined(WITHOUT_GUI) && defined(WITHOUT_CORE)
 IGNORE=	cannot install: you defined both WITHOUT_GUI and WITHOUT_CORE. I think I'll do nothing
 .endif
-# have no 'without-' flag
+
+.if !(defined(WITHOUT_GUI) || defined(WITHOUT_CORE))
+CONFLICTS+=	mldonkey-core-devel-[0.9]*
+CONFLICTS+=	mldonkey-gui-devel-[0.9]*
+
+PLIST_SUB+=	CORE="" GUI="" GUICORE=""
+.else # (defined(WITHOUT_GUI) || defined(WITHOUT_CORE))
+
+. if defined(WITHOUT_GUI)
+PKGNAMESUFFIX=	-core-devel
+
+CONFLICTS+=	mldonkey-gui-devel-[0.9]*
+
 CONFIGURE_ARGS+=--disable-gui
 PLIST_SUB+=	CORE="" GUI="@comment " GUICORE="@comment "
-CONFLICTS+=	mldonkey-core-[0.9]* mldonkey-core-stable-[0.9]* \
-		mldonkey-devel-[0-9]*
-PKGNAMESUFFIX=	-core-devel
-.else
-PLIST_SUB+=	GUI=""
-CONFLICTS+=	mldonkey-gui-[0.9]*
-.if !defined(WITHOUT_CORE)
-CONFLICTS+=	mldonkey-devel-[0-9]*
-.endif
+. endif # defined(WITHOUT_GUI)
+
+. if defined(WITHOUT_CORE)
+PKGNAMESUFFIX=	-gui-devel
+
+CONFLICTS+=	mldonkey-core-devel-[0.9]*
+
+PLIST_SUB+=	CORE="@comment " GUI="" GUICORE="@comment "
+. endif # defined(WITHOUT_CORE)
+
+.endif # !(defined(WITHOUT_GUI) || defined(WITHOUT_CORE))
+
+.if !defined(WITHOUT_GUI)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/ocaml/lablgtk2/lablrsvg.cma:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 LIB_DEPENDS+=	rsvg-2.2:${PORTSDIR}/graphics/librsvg2
 
 CONFIGURE_ARGS+=--enable-gui=newgui2
 # we don't need lablgtk as RUN dependency, but we need gtk+glib
 USE_GNOME=	gtk20
+.endif # !defined(WITHOUT_GUI)
 
-MAKE_ENV+=	OCAMLRUNPARAM="l=256M"
-.if defined(WITHOUT_CORE)
-PKGNAMESUFFIX=	-gui-devel
-PLIST_SUB+=	CORE="@comment " GUICORE="@comment "
-.else
-PLIST_SUB+=	CORE=""	GUICORE=""
-.endif
-.endif
-.if defined(WITHOUT_GD)
-CONFIGURE_ARGS+=--disable-gd
-.elif !defined(WITHOUT_CORE)
+.if !defined(WITHOUT_CORE)
+USE_RC_SUBR=	mlnet
+
+. if !defined(WITHOUT_GD)
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
+. else
+CONFIGURE_ARGS+=--disable-gd
+. endif
 .endif
 
 DOCFILES=	Authors.txt Bugs.txt ChangeLog Developers.txt \

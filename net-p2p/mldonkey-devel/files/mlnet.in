@@ -49,18 +49,20 @@ start_cmd()
 {
   if [ -n "${mlnet_logfile}" ]; then
     mlnet_logcommand="-log_file ${mlnet_logfile}"
+  else
+    mlnet_logfile="/dev/null"
   fi
 
   if [ "x${mlnet_user}" = "x$(whoami)" ]; then
     eval "${command} \
 	${mlnet_logcommand} \
 	${mlnet_flags} \
-	>/dev/null &"
+	>> ${mlnet_logfile} 2>&1 &"
   else
     su -l ${mlnet_user} -c "${command} \
 	${mlnet_logcommand} \
 	${mlnet_flags} \
-	>/dev/null &"
+	>> ${mlnet_logfile} 2>&1 &"
   fi
 }
 
