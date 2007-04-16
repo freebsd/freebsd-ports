@@ -22,12 +22,6 @@ PLIST_SUB=	ARCH=${ARCH}
 # Do not strip binaries
 STRIP=
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} <= 500036
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-ucontext
-.endif
-
 do-install:
 	${MKDIR} ${DATADIR}
 	${MKDIR} ${DATADIR}/bin
@@ -43,4 +37,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/libmicro-bench ${PREFIX}/bin/libmicro-bench
 	${INSTALL_SCRIPT} ${WRKSRC}/multiview ${PREFIX}/bin/multiview
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
