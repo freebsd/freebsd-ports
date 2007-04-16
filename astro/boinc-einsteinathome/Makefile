@@ -19,11 +19,6 @@ COMMENT=	Search for gravitational waves, a distributed computing project
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-# Binary is built for 5.X :
-.if ${OSVERSION} < 500000
-IGNORE=		only supports FreeBSD 5.X and newer
-.endif
-
 .if ${OSVERSION} >= 600000
 LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
 .endif
