@@ -23,7 +23,7 @@ PROGRAMS=	counter hybridize normalize random_clip random_line
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
+.if ${ARCH} == "alpha"
 BROKEN=		"Does not compile"
 .endif
 
