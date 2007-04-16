@@ -6,7 +6,7 @@
 #
 
 PORTVERSION=	2.01.${PATCHDATE}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils chinese japanese korean audio
 PKGNAMEPREFIX=	cjk-
 
