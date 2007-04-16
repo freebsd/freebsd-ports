@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wikindx
-PORTVERSION=	3.5
+PORTVERSION=	3.6
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wikindx
@@ -19,20 +19,22 @@ USE_PHP=	session mysql
 
 NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/wikindx3
-WIKINDX?=	www/wikindx
-PLIST_SUB+=	WIKINDX=${WIKINDX}
+WWWDIR?=	www/wikindx
 ROOTFILES=	config.php index.php rss.php
 ROOTDIRS=	attachments core docs files languages modules \
 		papers styles templates update
 DOCFILES=	CHANGELOG CUSTOMIZATION DISCLAIMER INSTALL \
 		LICENSE README README_RSS UPDATEWIKINDX
 
+pre-install:
+	@${ECHO} ${WWWDIR}
+
 do-install:
-	-${MKDIR} ${PREFIX}/${WIKINDX}
-	(cd ${WRKSRC} && ${CP} ${ROOTFILES} ${PREFIX}/${WIKINDX}/ )
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${WIKINDX}
+	-${MKDIR} ${PREFIX}/${WWWDIR}
+	(cd ${WRKSRC} && ${CP} ${ROOTFILES} ${PREFIX}/${WWWDIR}/ )
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${WWWDIR}
 .for i in ${ROOTDIRS}
-	@(cd ${WRKSRC} && ${CP} -R ${i} ${PREFIX}/${WIKINDX}/ )
+	@(cd ${WRKSRC} && ${CP} -R ${i} ${PREFIX}/${WWWDIR}/ )
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
