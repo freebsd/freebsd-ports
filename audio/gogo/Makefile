@@ -41,11 +41,7 @@ PORTDOCS=	cdda2mp3.gogo.en cdda2mp3.gogo.ja
 MAKE_ARGS+=	"USE_MT=no"
 .else
 MAKE_ARGS+=	"USE_MT=yes"
-.if ${OSVERSION} >= 500035
 LIB_DEPENDS=	lthread.3:${PORTSDIR}/devel/linuxthreads
-.else
-LIB_DEPENDS=	lthread.2:${PORTSDIR}/devel/linuxthreads
-.endif
 .endif
 
 do-install:
