@@ -4277,6 +4277,7 @@ guspat		ports/audio/guspat
 gutenfetch	ports/net/gutenfetch
 gutenmark	ports/textproc/gutenmark
 gutenprint	ports/print/gutenprint
+gutenprint-base	ports/print/gutenprint-base
 gutenprint-cups	ports/print/gutenprint-cups
 gutenprint-foomatic	ports/print/gutenprint-foomatic
 gutenprint-ijs	ports/print/gutenprint-ijs
