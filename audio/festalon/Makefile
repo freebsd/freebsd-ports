@@ -28,10 +28,6 @@ ONLY_FOR_ARCHS=	i386 ppc
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD 4.x
-.endif
-
 .if ${PKGNAMEPREFIX} == ""
 
 USE_SDL=	yes
