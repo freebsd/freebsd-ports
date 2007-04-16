@@ -7,6 +7,7 @@
 
 PORTNAME=	pgpool
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/1254/
 
@@ -17,6 +18,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 USE_RC_SUBR=	pgpool
+CONFLICTS=	pgpool-II-1.*
 
 PORTDOCS=	README AUTHORS COPYING ChangeLog INSTALL NEWS TODO README.euc_jp
 
