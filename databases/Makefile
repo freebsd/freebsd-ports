@@ -333,6 +333,7 @@
     SUBDIR += pgbash
     SUBDIR += pgcluster
     SUBDIR += pgpool
+    SUBDIR += pgpool-II
     SUBDIR += pgtop
     SUBDIR += pgworksheet
     SUBDIR += php-sqlite3

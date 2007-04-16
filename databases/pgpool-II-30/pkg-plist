@@ -1,4 +1,19 @@
 @comment $FreeBSD$
+bin/pcp_attach_node
+bin/pcp_detach_node
+bin/pcp_node_count
+bin/pcp_node_info
+bin/pcp_proc_count
+bin/pcp_proc_info
+bin/pcp_stop_pgpool
+bin/pcp_systemdb_info
+bin/pg_md5
 bin/pgpool
+etc/pcp.conf.sample
 etc/pgpool.conf.sample
-etc/pool_hba.conf.sample
+include/pcp.h
+include/pool_type.h
+lib/libpcp.a
+lib/libpcp.la
+lib/libpcp.so.0.0
+%%DATADIR%%/system_db.sql
