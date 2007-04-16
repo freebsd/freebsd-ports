@@ -8,17 +8,3 @@
  #include <pwd.h>
  #include <signal.h>
  #include <pthread.h>
-@@ -285,7 +286,13 @@
-     if ((e = getenv("HOME")))
-         return pa_strlcpy(s, e, l);
- 
-+#ifdef HAVE_GETPWUID_R
-     if (getpwuid_r(getuid(), &pw, buf, sizeof(buf), &r) != 0 || !r) {
-+#else
-+       /* XXX Not thead-safe, but needed on OSes (e.g. FreeBSD 4.X)
-+        * that do not support getpwuid_r. */
-+       if ((r = getpwuid(getuid())) == NULL) {
-+#endif
-         pa_log(__FILE__": getpwuid_r() failed\n");
-         return NULL;
-     }
