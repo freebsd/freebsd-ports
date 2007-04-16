@@ -18,11 +18,9 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-IGNORE=		is too unstable on FreeBSD >= 5.x
-.endif
+BROKEN=		is too unstable on FreeBSD >= 5.x
+DEPRECATED=	Doesn't work on FreeBSD 5.0 and higher
+EXPIRATION_DATE=2007-06-01
 
 pre-build:
 	@${REINPLACE_CMD} -E -e 's|-g[[:space:]]+-O6|${CFLAGS}|; \
@@ -42,4 +40,4 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/freebirth/raw
 	${INSTALL_DATA} ${WRKSRC}/raw/*.raw ${PREFIX}/share/freebirth/raw
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
