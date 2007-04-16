@@ -47,10 +47,6 @@ OPTIONS=	SDL	"Build with SDL output support"	off
 USE_SDL=	sdl mixer
 .endif
 
-.if ${OSVERSION} < 500000
-BROKEN=		depends on audio/libadplug
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(adplug_data_dir.*\)/.*|\1|' \
 		${WRKSRC}/src/Makefile.in
