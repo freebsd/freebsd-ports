@@ -261,6 +261,7 @@
     SUBDIR += guilib
     SUBDIR += gview
     SUBDIR += gwenview
+    SUBDIR += hobbes-icons-xpm
     SUBDIR += hpoj
     SUBDIR += hppsmtools
     SUBDIR += hs-hgl
