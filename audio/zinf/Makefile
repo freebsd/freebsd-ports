@@ -45,14 +45,6 @@ CONFIGURE_ARGS+=	--disable-x86opts
 CPPFLAGS+=	"-D_M_ALPHA"
 .endif
 
-.if ${OSVERSION} < 500035
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-CFLAGS+=	-O0
-CPPFLAGS+=	-I${LOCALBASE}/include/stlport
-LDFLAGS+=	-lstlport_gcc
-.endif
-
 .if ${HAVE_GNOME:Mesound}!="" || defined(WITH_ALL_PLUGINS)
 USE_GNOME+=	esound
 PLIST_SUB+=	ESOUND=""
