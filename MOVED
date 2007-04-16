@@ -2913,7 +2913,6 @@ databases/mergeant||2007-04-10|Has expired: does not build with new libgnomedb
 databases/pecl-paradox||2007-04-10|Has expired: Does not compile
 deskutils/yank||2007-04-10|Has expired: Incomplete pkg-plist
 emulators/kmamerun||2007-04-10|Has expired: Project was abandoned 4 years ago and expects an old version of XMAME, please use other frontends instead (like gxmame)
-graphics/hobbes-icons-xpm||2007-04-10|Has expired: Archaic port
 japanese/firefox-ja||2007-04-10|Has expired: Incomplete pkg-plist
 japanese/lookup-xemacs||2007-04-10|Has expired: Does not install
 lang/linux-hla||2007-04-10|Has expired: Does not compile
