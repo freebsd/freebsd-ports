@@ -11599,6 +11599,7 @@ pgplot		ports/graphics/pgplot
 pgpmoose	ports/news/pgpmoose
 pgpool		ports/databases/pgpool
 pgpool-II	ports/databases/pgpool-II
+pgpoolAdmin	ports/databases/pgpoolAdmin
 pgpsendmail	ports/mail/pgpsendmail
 pgtop		ports/databases/pgtop
 pgworksheet	ports/databases/pgworksheet
