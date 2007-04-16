@@ -27,6 +27,7 @@ COMMENT=	Command-line player for mpeg layer 1, 2 and 3 audio
 
 WANT_GNOME=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+MAKE_ENV=	USE_INET6=yes
 
 .if defined(WITH_ICONV)
 MAKE_ARGS+=	WITH_ICONV=yes
@@ -46,10 +47,6 @@ MAN1=		mpg123.1
 PLIST_FILES=	bin/mpg123
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 400014
-MAKE_ENV+=	USE_INET6=yes
-.endif
 
 .if ${HAVE_GNOME:Mesound}!=""
 USE_GNOME+=	esound
