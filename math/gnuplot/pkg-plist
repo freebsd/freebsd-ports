@@ -156,9 +156,9 @@ libexec/gnuplot/4.2/gnuplot_x11
 %%DATADIR%%/4.2/gnuplot.gih
 share/texmf-local/tex/latex/gnuplot/gnuplot.cfg
 @dirrm share/texmf-local/tex/latex/gnuplot
-@dirrm share/texmf-local/tex/latex
-@dirrm share/texmf-local/tex
-@dirrm share/texmf-local
+@dirrmtry share/texmf-local/tex/latex
+@dirrmtry share/texmf-local/tex
+@dirrmtry share/texmf-local
 @dirrm %%DATADIR%%/4.2/PostScript
 @dirrm %%DATADIR%%/4.2
 @dirrm %%DATADIR%%

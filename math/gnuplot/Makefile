@@ -17,15 +17,14 @@ COMMENT=	A command-driven interactive function plotting program
 
 GNU_CONFIGURE=	yes
 WANT_WX=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS= --with-kpsexpand \
+CONFIGURE_ARGS+=--with-kpsexpand \
 		--with-lasergnu \
 		--with-readline=gnu \
 		--without-linux-vga \
 		--without-lisp-files \
 		--without-tutorial
 
-BUILD_DEPENDS+=latex:${PORTSDIR}/print/teTeX-base
+BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base
 
 OPTIONS=	GD		"Enable GD support"		on \
 		PDF		"Enable PDF support"		on \
