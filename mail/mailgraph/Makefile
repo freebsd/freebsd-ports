@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	mailgraph
-PORTVERSION=	1.12
-PORTREVISION=	1
+PORTVERSION=	1.13
 CATEGORIES=	mail
-MASTER_SITES=	http://people.ee.ethz.ch/~dws/software/mailgraph/pub/ \
-		http://people.ee.ethz.ch/~dws/software/mailgraph/pub/old/
+MASTER_SITES=	http://mailgraph.schweikert.ch/pub/ \
+		http://mailgraph.schweikert.ch/pub/old/
 
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	A RRDtool frontend for Postfix statistics
@@ -30,14 +29,19 @@ SUB_LIST+=	MAILGRAPH_USER=${MAILGRAPH_USER} MAILGRAPH_GROUP=${MAILGRAPH_GROUP}
 MSG_FILE=	${PKGDIR}/pkg-message
 PKGMESSAGE=	${WRKSRC}/pkg-message
 
+DOCS=		README CHANGES
+.if !defined(NOPORTDOCS)
+PORTDOCS=	${DOCS}
+.endif
+
 pre-everything::
-	@${ECHO_MSG}
+	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may set following options:"
-	@${ECHO_MSG}
+	@${ECHO_MSG} ""
 	@${ECHO_MSG} "DATADIR=/var/db/mailgraph		Where do you put RRD databases?"
 	@${ECHO_MSG} "MAILGRAPH_USER=www			User to run mailgraph (Default: ${WWWOWN})"
 	@${ECHO_MSG} "MAILGRAPH_GROUP=www			Group to run mailgraph (Default: ${WWWGRP})"
-	@${ECHO_MSG}
+	@${ECHO_MSG} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%DATADIR%%,${DATADIR}," ${WRKSRC}/mailgraph.cgi
@@ -49,10 +53,16 @@ do-install:
 	@${CHOWN} -R ${MAILGRAPH_USER}:${MAILGRAPH_GROUP} ${DATADIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/mailgraph.pl ${TARGETDIR}/sbin
 	@${INSTALL_SCRIPT} ${WRKSRC}/mailgraph.cgi ${TARGETDIR}/www/cgi-bin
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	for f in ${DOCS}; do \
+	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
+	done
+.endif
 
 post-install:
-	@${ECHO}
+	@${ECHO_MSG} ""
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO}
+	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>
