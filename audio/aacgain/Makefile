@@ -9,12 +9,11 @@ PORTNAME=	aacgain
 PORTVERSION=	1.6
 CATEGORIES=	audio
 MASTER_SITES=	http://altosdesign.com/aacgain/
-EXTRACT_SUFX=	.tar.bz2 # tar+gzip but uses .bz2
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Normalizes the volume of mp3 and AAC (mp4/m4a/QuickTime) media files
 
-#USE_BZIP2=	yes
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/aacgain
 
