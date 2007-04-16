@@ -34,10 +34,6 @@ USE_PERL5=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		doesn't work on 4.x: Missing SHM_LOCK
-.endif
-
 .if ${PERL_LEVEL} < 500600
 PERLCOREDIR=	/usr/libdata/perl/${PERL_VERSION}/mach/CORE
 .else
