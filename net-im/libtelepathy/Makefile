@@ -7,8 +7,9 @@
 
 PORTNAME=	libtelepathy
 PORTVERSION=	0.0.53
+PORTREVISION=	1
 CATEGORIES=	net-im devel
-MASTER_SITES=	http://telepathy.freedesktop.org/releases/libtelepathy/
+MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Flexible Communications Framework
@@ -24,7 +25,7 @@ RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack pkgconfig
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
