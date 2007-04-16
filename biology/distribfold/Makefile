@@ -15,6 +15,8 @@ DISTNAME=	distribfold-current-FreeBSD-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	distributedfolding.org distributed protein folding project
 
+LIB_DEPENDS=	c_r.4:${PORTSDIR}/misc/compat4x
+
 ONLY_FOR_ARCHS=	i386
 USE_BZIP2=	yes
 NO_BUILD=	yes
@@ -53,8 +55,8 @@ do-install:
 	@${RM} -f ${WRKSRC}/*.${ext}
 .endfor
 # strip binaries
-.for file in ${PROGRAM_FILES}
-	@${STRIP_CMD} ${WRKSRC}/${file}
+.for f in ${PROGRAM_FILES}
+	@${STRIP_CMD} ${WRKSRC}/${f}
 .endfor
 # install startup script
 	@${INSTALL_SCRIPT} ${WRKDIR}/distribfold.sh ${PREFIX}/etc/rc.d
@@ -68,20 +70,14 @@ do-install:
 		${CHMOD} g+w $${DESTINATION_DIR} ; \
 		${CHOWN} ${DNETFOLD_USER} $${DESTINATION_DIR}/* ; \
 		${CHMOD} u+w $${DESTINATION_DIR}/* ; \
-		for file in ${PROGRAM_FILES} ${SCRIPT_FILES} ; do \
-			${CHMOD} 0755 $${DESTINATION_DIR}/$${file} ; \
+		for f in ${PROGRAM_FILES} ${SCRIPT_FILES} ; do \
+			${CHMOD} 0755 $${DESTINATION_DIR}/$${f} ; \
 		done ; \
 	done
 # display package message
 	@${CAT} ${PKGMESSAGE}
 
 post-install: cook-install-plist fix-startup-scripts
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
-.endif
 
 pre-everything::
 .if ${WITH_NCPU} < 1
@@ -118,8 +114,8 @@ cook-install-plist: generate-plist
 		${SED} -e "s|cpu0|cpu$${dir}|" ${WRKDIR}/plist >> ${WRKDIR}/plistN ; \
 	done
 	@${CP} /dev/null ${TMPPLIST}
-.for file in plistN plist.end
-	@${CAT} ${WRKDIR}/${file} >> ${TMPPLIST}
+.for f in plistN plist.end
+	@${CAT} ${WRKDIR}/${f} >> ${TMPPLIST}
 .endfor
 .endif
 
@@ -134,4 +130,4 @@ fix-startup-scripts:
 	done
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
