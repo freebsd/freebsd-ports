@@ -13963,6 +13963,7 @@ scimark2c	ports/benchmarks/scimark2c
 scintilla	ports/x11-toolkits/scintilla
 scite		ports/editors/scite
 scli		ports/net-mgmt/scli
+scloader	ports/www/scloader
 scm		ports/lang/scm
 scmail		ports/mail/scmail
 scmxx		ports/comms/scmxx
