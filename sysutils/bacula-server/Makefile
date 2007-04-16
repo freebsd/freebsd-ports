@@ -146,7 +146,7 @@ DBTYPE=			postgresql
 SUB_LIST+=		REQ_MYSQL="" REQ_PGSQL=postgresql
 .elif defined(WITH_SQLITE3)
 CONFIGURE_ARGS+=	--with-sqlite3=yes
-LIB_DEPENDS+=		sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=		sqlite3-threads>=0:${PORTSDIR}/databases/sqlite3-threads
 DBTYPE=			sqlite3
 .else
 CONFIGURE_ARGS+=	--with-sqlite=yes
@@ -221,7 +221,7 @@ post-patch:
 .if defined(WITH_AUTOSETEOT)
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/eotmodel-src-stored-dev.c.patch
 .endif
-	
+
 
 pre-install:
 	if [ ! -d "${BACULA_DIR}" ]; then \
