@@ -29,6 +29,9 @@ bin/glchess
 %%PYTHON_SITELIBDIR%%/glchess/chess/san.py
 %%PYTHON_SITELIBDIR%%/glchess/chess/san.pyc
 %%PYTHON_SITELIBDIR%%/glchess/chess/san.pyo
+%%PYTHON_SITELIBDIR%%/glchess/chess/bitboard.py
+%%PYTHON_SITELIBDIR%%/glchess/chess/bitboard.pyc
+%%PYTHON_SITELIBDIR%%/glchess/chess/bitboard.pyo
 %%PYTHON_SITELIBDIR%%/glchess/chess/fics/__init__.py
 %%PYTHON_SITELIBDIR%%/glchess/chess/fics/__init__.pyc
 %%PYTHON_SITELIBDIR%%/glchess/chess/fics/__init__.pyo
