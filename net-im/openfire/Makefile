@@ -5,23 +5,23 @@
 # $FreeBSD$
 #
 
-PORTNAME=       wildfire
-PORTVERSION=    3.2.3
-CATEGORIES=     net-im java
-MASTER_SITES=   http://www.igniterealtime.org/downloadServlet?filename=wildfire/
+PORTNAME=	wildfire
+PORTVERSION=	3.2.4
+CATEGORIES=	net-im java
+MASTER_SITES=	http://www.igniterealtime.org/downloadServlet?filename=wildfire/
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
 
-MAINTAINER=     quetzal@zone3000.net
-COMMENT=        Openfire (formerly Wildfire) is an enterprise instant messaging server
+MAINTAINER=	quetzal@zone3000.net
+COMMENT=	Openfire (formerly Wildfire) is an enterprise instant messaging server
 
-RUN_DEPENDS=    classpath:${PORTSDIR}/java/javavmwrapper
-USE_JAVA=       yes
-JAVA_VERSION=   1.5+
+RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
+USE_JAVA=	yes
+JAVA_VERSION=	1.5+
 
-USE_ANT=        yes
+USE_ANT=	yes
 
 USE_RC_SUBR=	wildfire
-ALL_TARGET=     wildfire
+ALL_TARGET=	wildfire
 
 SUB_FILES=	pkg-message
 
