@@ -34,13 +34,7 @@ MAN1=		dekagen.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/dekagen
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-DEFAULT_CDROM_DEVICE?=	/dev/acd0c
-.else
 DEFAULT_CDROM_DEVICE?=	/dev/acd0
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -52,4 +46,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/dekagen ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/dekagen.1.gz ${PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
