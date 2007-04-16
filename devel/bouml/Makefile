@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bouml
-PORTVERSION=	2.23.1
+PORTVERSION=	2.24
 CATEGORIES=	devel
 MASTER_SITES=	http://bouml.free.fr/
 DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
@@ -34,12 +34,6 @@ IGNOREFILES+=	doc${EXTRACT_SUFX}
 PORTDOCS=	*
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Does not compile with gcc-2.95
-.endif
-
 pre-configure:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|'	\
 		-e 's|%%DESKTOPDIR%%|${DESKTOPDIR}|' ${WRKSRC}/${MAKEFILE}
@@ -56,4 +50,4 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
