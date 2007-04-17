@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cpphs
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.cs.york.ac.uk/fp/cpphs/
 PKGNAMEPREFIX=	hs-
