@@ -8,7 +8,7 @@
 PORTNAME=	netbeans55
 PORTVERSION=	5.5
 CATEGORIES=	java devel
-MASTER_SITES=	http://us2.mirror.netbeans.org/download/5_5/mlfcs/200612070100/
+MASTER_SITES=	http://us1.mirror.netbeans.org/download/5_5/mlfcs/200612070100/
 DISTNAME=	netbeans-5_5
 
 MAINTAINER=	nemoliu@gmail.com
