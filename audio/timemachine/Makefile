@@ -26,8 +26,4 @@ USE_GNOME=	gtk20
 LIB_DEPENDS+=	lash.2:${PORTSDIR}/audio/lash
 .endif
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
 .include <bsd.port.post.mk>
