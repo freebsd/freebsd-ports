@@ -44,8 +44,8 @@ lib/ocp/playogg.so
 lib/ocp/aytype.so
 lib/ocp/playay.so
 %%ADPLUG%%lib/ocp/playopl.so
-%%LIBSIDPLAY%%lib/ocp/playsid.so
-%%LIBSIDPLAY%%lib/ocp/sidtype.so
+lib/ocp/playsid.so
+lib/ocp/sidtype.so
 lib/ocp/playwav.so
 lib/ocp/playxm.so
 lib/ocp/plrbase.so
