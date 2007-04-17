@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	qt
-PORTVERSION=	20070220
+PORTVERSION=	3.17.1
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/Snapshots/PyQt3/ \
+MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyQt3/GPL/ \
 		http://freebsd.ricin.com/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PyQt-x11-gpl-3-snapshot-${PORTVERSION}
+DISTNAME=	PyQt-x11-gpl-${PORTVERSION}
 
 MAINTAINER=	danny@ricin.com
 COMMENT=	Python bindings for the Qt toolkit
