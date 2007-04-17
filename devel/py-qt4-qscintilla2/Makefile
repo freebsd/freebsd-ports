@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	qscintilla2
-PORTVERSION=	20070318
+PORTVERSION=	20070410
 CATEGORIES=	devel
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/Snapshots/QScintilla2/ \
 		http://freebsd.ricin.com/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt4-
-DISTNAME=	QScintilla-1.72-gpl-2-snapshot-${PORTVERSION}
+DISTNAME=	QScintilla-1.73-gpl-2-snapshot-${PORTVERSION}
 
 MAINTAINER=	danny@ricin.com
 COMMENT=	Python bindings for QScintilla2 (PyQt4), QSci module

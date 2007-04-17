@@ -5,12 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	qscintilla2
-PORTVERSION=	20070318
-PORTREVISION=	1
+PORTVERSION=	20070410
 CATEGORIES=	devel
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/Snapshots/QScintilla2/ \
 		http://freebsd.ricin.com/ports/distfiles/
-DISTNAME=	QScintilla-1.72-gpl-2-snapshot-${PORTVERSION}
+DISTNAME=	QScintilla-1.73-gpl-2-snapshot-${PORTVERSION}
 
 MAINTAINER=	danny@ricin.com
 COMMENT=	Qt4 port of the Scintilla C++ editor class
