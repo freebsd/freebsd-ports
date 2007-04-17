@@ -28,10 +28,4 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^install-data-am/s!install-data-local!!' ${WRKSRC}/doc/Makefile.in
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	does not compile on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
