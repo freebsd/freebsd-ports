@@ -153,6 +153,7 @@
     SUBDIR += p5-Tk-Autoscroll
     SUBDIR += p5-Tk-ColourChooser
     SUBDIR += p5-Tk-Contrib
+    SUBDIR += p5-Tk-DKW
     SUBDIR += p5-Tk-Date
     SUBDIR += p5-Tk-DynaTabFrame
     SUBDIR += p5-Tk-Enscript

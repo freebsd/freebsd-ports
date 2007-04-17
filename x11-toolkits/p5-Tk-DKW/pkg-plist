@@ -1,0 +1,18 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/DKW/.packlist
+%%SITE_PERL%%/Tk/CheckBox.pm
+%%SITE_PERL%%/Tk/ChildNotification.pm
+%%SITE_PERL%%/Tk/Columns.pm
+%%SITE_PERL%%/Tk/ComboEntry.pm
+%%SITE_PERL%%/Tk/CornerBox.pm
+%%SITE_PERL%%/Tk/DockFrame.pm
+%%SITE_PERL%%/Tk/IconCanvas.pm
+%%SITE_PERL%%/Tk/Menustrip.pm
+%%SITE_PERL%%/Tk/ProgressIndicator.pm
+%%SITE_PERL%%/Tk/Signals.pm
+%%SITE_PERL%%/Tk/SplitFrame.pm
+%%SITE_PERL%%/Tk/TabFrame.pm
+%%SITE_PERL%%/Tk/TabbedForm.pm
+%%SITE_PERL%%/Tk/TableEdit.pm
+@dirrmtry %%SITE_PERL%%/Tk
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/DKW
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk
