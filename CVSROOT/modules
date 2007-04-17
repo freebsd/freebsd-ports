@@ -14341,6 +14341,7 @@ snd		ports/audio/snd
 snd-music-duplicates	ports/multimedia/snd-music-duplicates
 snes9express	ports/emulators/snes9express
 snes9x		ports/emulators/snes9x
+snespp		ports/emulators/snespp
 snett		ports/audio/snett
 sng		ports/graphics/sng
 sniff		ports/security/sniff
