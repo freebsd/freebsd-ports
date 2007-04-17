@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.1.3
-PORTREVISION=	20070409
+PORTREVISION=	20070416
 CATEGORIES=	lang java
 VERSIONSTRING=	4.1-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -109,9 +109,6 @@ MAN1+=		fastjar${SUFFIX}.1 \
 		rmic${SUFFIX}.1 rmiregistry${SUFFIX}.1
 INFO+=		gcc${SUFFIX}/gcj gcc${SUFFIX}/fastjar
 PLIST_SUB+=	JAVA=""
-.else
-CONFIGURE_ARGS+=--disable-libgcj
-PLIST_SUB+=	JAVA="@comment "
 
 .if defined(WITH_JAVA_AWT)
 LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
@@ -120,6 +117,9 @@ CONFIGURE_ARGS+=	--enable-java-awt=gtk,xlib \
 			--enable-gtk-cairo
 .endif
 
+.else
+CONFIGURE_ARGS+=--disable-libgcj
+PLIST_SUB+=	JAVA="@comment "
 .endif
 
 pre-everything::
