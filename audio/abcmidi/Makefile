@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abcmidi
-PORTVERSION=	2007.01.02
+PORTVERSION=	2007.03.18
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	abc
@@ -27,7 +27,7 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DANSILIBS -c" LNK="${CC}"
 MAN1=		abc2abc.1 abc2midi.1 mftext.1 midi2abc.1 midicopy.1 yaps.1
 
 do-install:
-.for FILE in abc2abc abc2midi mftext midi2abc midicopy yaps
+.for FILE in abc2abc abc2midi abcmatch mftext midi2abc midicopy yaps
 	${INSTALL_PROGRAM} ${WRKSRC}/${FILE} ${PREFIX}/bin
 .endfor
 .for FILE in ${MAN1}
