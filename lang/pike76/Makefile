@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	pike76
-PORTVERSION=	7.6.104
+PORTVERSION=	7.6.108
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
+		http://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
 		ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
+		http://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		ftp://ftp.oav.net/pike/7.6/ \
-		ftp://ftp.caudium.net/pike/official_releases/${PORTVERSION}/ \
-		ftp://ftp.us.caudium.net/pub/pike/7.6/ \
-		ftp://ftp.us.caudium.net/pub/pike/official_releases/${PORTVERSION}/
+		ftp://ftp.caudium.net/pike/official_releases/${PORTVERSION}/
 DISTNAME=	Pike-v${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
@@ -22,7 +22,6 @@ COMMENT=	A dynamic programming language with a syntax similar to C++
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
-		fftw.2:${PORTSDIR}/math/fftw \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		nettle.2:${PORTSDIR}/security/nettle \
 		mird.1:${PORTSDIR}/databases/mird
@@ -38,7 +37,8 @@ OPTIONS=	TTF "Add FreeType 1 support" on \
 		SANE "Add SANE support" off \
 		PDF "Add PDF support" off \
 		SVG2 "Add SVG2 support" off \
-		TDS "Add FreeTDS (Sybase and MSSQL) support" off
+		TDS "Add FreeTDS (Sybase and MSSQL) support" off \
+		FFTW "Add libFFTW support" off
 
 MAN1=		pike.1
 
@@ -128,6 +128,10 @@ LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=	--with-ffmpeg
 .else
 CONFIGURE_ARGS+=	--without-ffmpeg
+.endif
+
+.if defined(WITH_FFTW)
+LIB_DEPENDS+=	fftw.2:${PORTSDIR}/math/fftw
 .endif
 
 .if defined(WITH_TTF)
