@@ -7,6 +7,7 @@
 
 PORTNAME=	wmnd
 PORTVERSION=	0.4.12
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.yuv.info/wmnd/releases/
 
