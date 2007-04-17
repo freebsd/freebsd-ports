@@ -1,0 +1,50 @@
+#!/bin/sh
+# $FreeBSD$
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+	exit 0
+fi
+
+if [ -d %%PREFIX%%/etc/mediatomb ]; then
+    ETC_EXISTS=yes
+else
+    ETC_EXISTS=
+fi
+
+if [ -d %%MEDIATOMB_DIR%% ]; then
+    HOME_EXISTS=yes
+else
+    HOME_EXISTS=
+fi
+
+if pw usershow "%%MEDIATOMB_USER%%" 2>/dev/null 1>&2; then
+    USER_EXISTS=yes
+else
+    USER_EXISTS=
+fi
+
+if pw groupshow "%%MEDIATOMB_GROUP%%" 2>/dev/null 1>&2; then
+    GROUP_EXISTS=yes
+else
+    GROUP_EXISTS=
+fi
+
+if [ "$ETC_EXISTS" = "yes" -o "$HOME_EXISTS" = "yes" -o "$USER_EXISTS" = "yes" -o "$GROUP_EXISTS" = "yes" ]; then
+    
+    echo
+    echo "===================================================="
+    echo
+    echo "If you want remove MediaTomb permanently from your"
+    echo "system execute following commands as root:"
+    echo
+    [ "$ETC_EXISTS" = "yes" ] && echo " # rm -rf %%PREFIX%%/etc/mediatomb"
+    [ "$HOME_EXISTS" = "yes" ] && echo " # rm -rf %%MEDIATOMB_DIR%%"
+    [ "$USER_EXISTS" = "yes" ] && echo " # pw userdel %%MEDIATOMB_USER%%"
+    [ "$GROUP_EXISTS" = "yes" ] && echo " # pw groupdel %%MEDIATOMB_GROUP%%"
+    echo
+    echo "===================================================="
+    echo
+
+fi
+
+exit 0

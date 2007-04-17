@@ -1,0 +1,11 @@
+--- configure.orig	Thu Mar 29 23:04:32 2007
++++ configure	Thu Mar 29 23:24:30 2007
+@@ -23239,7 +23239,7 @@
+ echo "$as_me:$LINENO: result: $ac_cv_lib_extractor_EXTRACTOR_getKeywords" >&5
+ echo "${ECHO_T}$ac_cv_lib_extractor_EXTRACTOR_getKeywords" >&6
+ if test $ac_cv_lib_extractor_EXTRACTOR_getKeywords = yes; then
+-  LDFLAGS="-L$EXTRACTOR_SEARCH_LIBS -lextractor"
++   EXTRACTOR_LIBS="-L$EXTRACTOR_SEARCH_LIBS -lextractor"
+ else
+ 
+                     { { echo "$as_me:$LINENO: error: extractor libraries not found in requested location $EXTRACTOR_SEARCH_LIBS" >&5
