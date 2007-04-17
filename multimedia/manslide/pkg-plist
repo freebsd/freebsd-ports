@@ -687,6 +687,8 @@ bin/Manslide
 %%DATADIR%%/Interface/CPU.png
 %%DATADIR%%/Interface/Options.png
 %%DATADIR%%/Interface/Transitions/bandes.png
+%%DATADIR%%/Interface/Transitions/carrelage.png
+%%DATADIR%%/Interface/Transitions/clock.png
 %%DATADIR%%/Interface/Transitions/coinbasdroit.png
 %%DATADIR%%/Interface/Transitions/coinbasgauche.png
 %%DATADIR%%/Interface/Transitions/coinhautdroit.png
@@ -694,6 +696,8 @@ bin/Manslide
 %%DATADIR%%/Interface/Transitions/crossfade.png
 %%DATADIR%%/Interface/Transitions/doubleh.png
 %%DATADIR%%/Interface/Transitions/doublev.png
+%%DATADIR%%/Interface/Transitions/girl.png
+%%DATADIR%%/Interface/Transitions/invasion.png
 %%DATADIR%%/Interface/Transitions/nulltrans.png
 %%DATADIR%%/Interface/Transitions/random.png
 %%DATADIR%%/Interface/Transitions/recouvrementbas.png
@@ -702,6 +706,8 @@ bin/Manslide
 %%DATADIR%%/Interface/Transitions/recouvrementhaut.png
 %%DATADIR%%/Interface/Transitions/rideauh.png
 %%DATADIR%%/Interface/Transitions/rideauv.png
+%%DATADIR%%/Interface/Transitions/spirale.png
+%%DATADIR%%/Interface/Transitions/swirl.png
 %%DATADIR%%/Interface/ajouter.png
 %%DATADIR%%/Interface/ajouterdiapo.png
 %%DATADIR%%/Interface/auto.png
@@ -782,6 +788,12 @@ bin/Manslide
 %%DATADIR%%/Interface/zoom+.png
 %%DATADIR%%/Interface/zoom-.png
 %%DATADIR%%/Interface/zoom.png
+%%DATADIR%%/Luma/luma_001.pgm
+%%DATADIR%%/Luma/luma_002.pgm
+%%DATADIR%%/Luma/luma_003.pgm
+%%DATADIR%%/Luma/luma_004.pgm
+%%DATADIR%%/Luma/luma_005.pgm
+%%DATADIR%%/Luma/luma_006.pgm
 %%DATADIR%%/Manslide
 %%DATADIR%%/manslide_ca.qm
 %%DATADIR%%/manslide_en.qm
@@ -798,4 +810,5 @@ bin/Manslide
 @dirrm %%DATADIR%%/Effects/Film
 @dirrm %%DATADIR%%/Effects/Explode
 @dirrm %%DATADIR%%/Effects
+@dirrm %%DATADIR%%/Luma
 @dirrm share/manslide
