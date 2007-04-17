@@ -1,6 +1,8 @@
 lib/claws-mail/plugins/attachwarner.so
 lib/claws-mail/plugins/attachwarner.la
 lib/claws-mail/plugins/attachwarner.a
+share/locale/cs/LC_MESSAGES/attachwarner.mo
+share/locale/sr/LC_MESSAGES/attachwarner.mo
 share/locale/de/LC_MESSAGES/attachwarner.mo
 share/locale/es/LC_MESSAGES/attachwarner.mo
 share/locale/fr/LC_MESSAGES/attachwarner.mo
