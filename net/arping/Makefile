@@ -7,29 +7,29 @@
 
 PORTNAME=	arping
 PORTVERSION=	2.05
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.habets.pp.se/pub/synscan/
 
 MAINTAINER=	gavin.atkinson@ury.york.ac.uk
 COMMENT=	ARP level "ping" utility
 
-BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
 LDFLAGS+=	-lpcap
 
 MAN8=		arping.8
 PLIST_FILES=	sbin/arping
 
-LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
+LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 do-build:
 	cd ${WRKSRC} &&  \
 	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib \
-	-DUSE_NETIF=1  -DFREEBSD=1 -c `${LIBNET_CONFIG} --defines` \
-	`${LIBNET_CONFIG} --cflags` ${PORTNAME}.c && \
+	-c `${LIBNET_CONFIG} --defines` \
+	`${LIBNET_CONFIG} --cflags` ${PORTNAME}-2/${PORTNAME}.c && \
 	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib \
-	-DUSE_NETIF=1 -DFREEBSD=1 -o ${PORTNAME} ${PORTNAME}.o \
+	-o ${PORTNAME} ${PORTNAME}.o \
 	`${LIBNET_CONFIG} --libs` ${LDFLAGS}
 
 do-install:
