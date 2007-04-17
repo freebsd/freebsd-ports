@@ -43,10 +43,4 @@ do-install:
 		${INSTALL_DATA} -m0755 ${WRKSRC}/plugins/$$plugin ${PREFIX}/lib/madman/plugins; \
 	done
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Doesn't build on FreeBSD < 5.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
