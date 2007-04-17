@@ -43,10 +43,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	"Doesn't build on < 5.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
