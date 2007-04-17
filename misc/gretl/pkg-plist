@@ -45,6 +45,7 @@ include/gretl/nls.h
 include/gretl/nonparam.h
 include/gretl/objstack.h
 include/gretl/options.h
+include/gretl/plotspec.h
 include/gretl/plugins.h
 include/gretl/printout.h
 include/gretl/pvalues.h
