@@ -1,10 +1,10 @@
---- ../examples/sslSocket.h.orig	Fri Mar 17 16:32:41 2006
-+++ ../examples/sslSocket.h	Fri Mar 17 16:32:59 2006
-@@ -50,6 +50,7 @@
+--- ../examples/sslSocket.h.orig	Tue Apr 17 18:22:16 2007
++++ ../examples/sslSocket.h	Tue Apr 17 18:22:39 2007
+@@ -49,6 +49,7 @@
+ 	#define		WOULD_BLOCK	WSAEWOULDBLOCK
  	#define		getSocketError()  WSAGetLastError()
  #elif LINUX
- 	#include	<sys/socket.h>
 +	#include	<sys/types.h>
+ 	#include	<sys/socket.h>
  	#include	<netinet/in.h>
  	#include	<netinet/tcp.h>
- 	#include	<arpa/inet.h>

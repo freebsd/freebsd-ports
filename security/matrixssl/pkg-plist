@@ -2,12 +2,13 @@ include/matrixCommon.h
 include/matrixSsl.h
 lib/libmatrixssl.so
 lib/libmatrixsslstatic.a
+%%PORTDOCS%%%%DOCSDIR%%/MatrixSSLReadme.pdf
 %%PORTDOCS%%%%DOCSDIR%%/MatrixSSLApi.pdf
 %%PORTDOCS%%%%DOCSDIR%%/MatrixSSLDeveloperGuide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/MatrixSSLKeyGeneration.pdf
 %%PORTDOCS%%%%DOCSDIR%%/MatrixSSLPortingGuide.pdf
-%%PORTDOCS%%%%DOCSDIR%%/MatrixSSLQuickStart.pdf
 %%PORTDOCS%%%%DOCSDIR%%/MatrixSSLSocketApi.pdf
+%%PORTDOCS%%%%DOCSDIR%%/MatrixSSL1.8ReleaseNotes.pdf
 %%PORTDOCS%%%%EXAMPLESDIR%%/CAcertSrv.pem
 %%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/certSrv.p12
@@ -17,5 +18,8 @@ lib/libmatrixsslstatic.a
 %%PORTDOCS%%%%EXAMPLESDIR%%/privkeySrv.pem
 %%PORTDOCS%%%%EXAMPLESDIR%%/sslSocket.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/sslSocket.h
+%%PORTDOCS%%%%EXAMPLESDIR%%/CAcertSrv.der
+%%PORTDOCS%%%%EXAMPLESDIR%%/privkeySrv.der
+%%PORTDOCS%%%%EXAMPLESDIR%%/certSrv.der
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

@@ -1,66 +1,10 @@
---- Makefile.orig	Thu Aug 18 02:20:28 2005
-+++ Makefile	Fri Mar 17 17:06:22 2006
-@@ -5,11 +5,11 @@
- #	Copyright (c) PeerSec Networks, 2002-2005. All Rights Reserved.
+--- Makefile.orig	Tue Apr 17 18:14:59 2007
++++ Makefile	Tue Apr 17 18:15:10 2007
+@@ -5,7 +5,6 @@
+ #	Copyright (c) PeerSec Networks, 2002-2007. All Rights Reserved.
  #
  
 -CC      = gcc
  STRIP   = strip
  AR      = ar
  RANLIB  = ranlib
- O       = .o
-+SOBJ    = .O
- SO      = .so
- A       = .a
- E       =
-@@ -37,6 +37,26 @@
- 		pki/rsaPki$(O) \
- 		pki/x509$(O)
- 
-+SOBJECTS	= \
-+		cipherSuite$(SOBJ) \
-+		matrixSsl$(SOBJ) \
-+		sslDecode$(SOBJ) \
-+		sslEncode$(SOBJ) \
-+		sslv3$(SOBJ) \
-+		os/debug$(SOBJ) \
-+		os/linux/linux$(SOBJ)	\
-+		crypto/peersec/arc4$(SOBJ) \
-+		crypto/peersec/base64$(SOBJ) \
-+		crypto/peersec/des3$(SOBJ) \
-+		crypto/peersec/md5$(SOBJ) \
-+		crypto/peersec/md2$(SOBJ) \
-+		crypto/peersec/mpi$(SOBJ) \
-+		crypto/peersec/rsa$(SOBJ) \
-+		crypto/peersec/sha1$(SOBJ) \
-+		pki/asn1$(SOBJ) \
-+		pki/rsaPki$(SOBJ) \
-+		pki/x509$(SOBJ)
-+
- #
- #	Debug flags (Define MATRIXSSL_DEBUG in shell to build debug)
- #	bash:	export MATRIXSSL_DEBUG=1
-@@ -69,8 +89,8 @@
- #	Compile options
- #
- SHARED	= -shared
--CFLAGS  = $(DFLAGS) -DLINUX -I./
--LDFLAGS = -lc -lpthread
-+CFLAGS  += -DLINUX -I./ ${PTHREAD_CFLAGS}
-+LDFLAGS += ${PTHREAD_LIBS}
- 
- #
- #	Override variables for compilation on Mac OS X (Darwin)
-@@ -110,7 +130,11 @@
- #
- # Build the library
- #
--$(LIBRARY): $(OBJECTS)
-+%.O: %.c
-+	$(CC) -c $(CFLAGS) -fPIC -o $@ $^
-+
-+
-+$(LIBRARY): $(SOBJECTS)
- 	$(CC) $(SHARED) -o $@ $^ $(LDFLAGS)
- 	$(STRIP) $(LIBRARY)
- 
