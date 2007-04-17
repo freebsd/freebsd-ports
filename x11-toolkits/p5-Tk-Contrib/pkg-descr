@@ -1,0 +1,11 @@
+Files in Tk-Contrib have been contributed by various people at
+various times.
+
+Included widgets:
+
+Tk::Axis - Canvas with Axes
+Tk::Dial - an alternative to the Scale widget
+Tk::OlWm - Interface to OpenLook properties of Toplevel widget
+Tk::TiedListbox - gang together Listboxes
+
+WWW: http://search.cpan.org/dist/Tk-Contrib/

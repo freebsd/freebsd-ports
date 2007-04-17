@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Contrib/.packlist
+%%SITE_PERL%%/Tk/Axis.pm
+%%SITE_PERL%%/Tk/Dial.pm
+%%SITE_PERL%%/Tk/OlWm.pm
+%%SITE_PERL%%/Tk/TiedListbox.pm
+@dirrmtry %%SITE_PERL%%/Tk
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Contrib
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk
