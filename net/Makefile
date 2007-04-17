@@ -301,6 +301,7 @@
     SUBDIR += mars_nwe
     SUBDIR += mcast-tools
     SUBDIR += mediaproxy
+    SUBDIR += mediatomb
     SUBDIR += merlinmon
     SUBDIR += mgen
     SUBDIR += micro_inetd
