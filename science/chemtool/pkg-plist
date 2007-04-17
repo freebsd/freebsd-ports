@@ -25,7 +25,6 @@ bin/cht
 %%EXAMPLESDIR%%/kdo.cht
 %%EXAMPLESDIR%%/krebs.cht
 %%EXAMPLESDIR%%/labeltest
-%%EXAMPLESDIR%%/labeltest.svg
 %%EXAMPLESDIR%%/pagodan.cht
 %%EXAMPLESDIR%%/penicillin_v.cht
 %%EXAMPLESDIR%%/pteridin.cht

@@ -5,24 +5,29 @@
 # $FreeBSD$
 
 PORTNAME=	chemtool
-PORTVERSION=	1.6.9
+PORTVERSION=	1.6.10
 CATEGORIES=	science
 MASTER_SITES=	http://ruby.chemie.uni-freiburg.de/~martin/chemtool/
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Draw organic molecules easily and store them
 
-LIB_DEPENDS=	EMF.1:${PORTSDIR}/graphics/libemf
 RUN_DEPENDS=	transfig:${PORTSDIR}/print/transfig
 
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:259
 GNU_CONFIGURE=	yes
-CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libEMF
+CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CFLAGS+="${CFLAGS}" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CFLAGS+="${CFLAGS}" CPPFLAGS+="${CFLAGS}" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-emf=yes --with-localedir=${PREFIX}
+
+.include <bsd.port.pre.mk>
+
+#isolate libEMF stuff
+LIB_DEPENDS+=	EMF.1:${PORTSDIR}/graphics/libemf
+CFLAGS+=	 -I${LOCALBASE}/include/libEMF
 
 MAN1=	chemtool.1 cht.1
 
@@ -42,4 +47,4 @@ do-install:
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
