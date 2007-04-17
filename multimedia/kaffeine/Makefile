@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kaffeine
-PORTVERSION=	0.8.3
-PORTREVISION=	3
+PORTVERSION=	0.8.4
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kaffeine
@@ -28,7 +27,7 @@ CONFIGURE_TARGET=
 DVB_HEADERS=		ca.h dmx.h frontend.h net.h
 
 .ifdef (WITH_GSTREAMER)
-USE_GSTREAMER80=	yes
+USE_GSTREAMER=		yes
 PLIST_SUB+=		NOGSTREAMER=""
 .else
 PLIST_SUB+=		NOGSTREAMER="@comment "
@@ -64,5 +63,8 @@ post-patch:
 	${MKDIR} ${WRKSRC}/linux/dvb
 	cd ${FILESDIR}; ${CP} ${DVB_HEADERS} ${WRKSRC}/linux/dvb
 .endif
+
+post-install:
+	${RM} ${PREFIX}/share/doc/HTML/en/doc/CMakeLists.txt
 
 .include <bsd.port.post.mk>
