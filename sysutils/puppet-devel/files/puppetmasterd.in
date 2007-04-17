@@ -1,6 +1,7 @@
-:#!/bin/sh
+#!/bin/sh
 #
-
+# $FreeBSD$
+#
 # PROVIDE: puppetmasterd
 # REQUIRE: NETWORK
 
@@ -14,14 +15,13 @@ name="puppetmasterd"
 rcvar=`set_rcvar`
 
 command="%%PREFIX%%/bin/${name}"
-command_interpreter="${prefix}/bin/ruby18"
+command_interpreter="%%PREFIX%%/bin/ruby18"
 
 load_rc_config "$name"
 : ${puppetmasterd_enable="NO"}
 : ${puppetmasterd_confdir="%%PREFIX%%/etc/puppet"}
-: ${puppetmasterd_pid="/var/run/puppet/${name}.pid"}
-: ${puppetmasterd_flags="--confdir $puppetmasterd_confdir "}
-command_args="$puppetmasterd_flags"
+: ${puppetmasterd_pid="/var/run/${name}.pid"}
+: ${puppetmasterd_flags="--confdir $puppetmasterd_confdir --rundir /var/run"}
 pidfile="$puppetmasterd_pid"
 
 run_rc_command "$1"

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	puppet
-PORTVERSION=	0.22.1
-PORTREVISION=	1
+PORTVERSION=	0.22.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.reductivelabs.com/downloads/puppet/
 EXTRACT_SUFX=	.tgz
@@ -47,8 +46,9 @@ post-install:
 .endfor
 	${RUBY} ${PREFIX}/bin/puppetmasterd \
 		--confdir=${PREFIX}/etc/${PORTNAME} \
+		--rundir=/var/run \
 		--genconfig | \
 		${SED} -e 's/genconfig = true/# genconfig = false/' \
-		> ${PREFIX}/etc/${PORTNAME}/${PORTNAME}.conf-dist
+		> ${PREFIX}/etc/${PORTNAME}/puppetmasterd.conf-dist
 
 .include <bsd.port.post.mk>
