@@ -1,5 +1,6 @@
 bin/abc2abc
 bin/abc2midi
+bin/abcmatch
 bin/mftext
 bin/midi2abc
 bin/midicopy
