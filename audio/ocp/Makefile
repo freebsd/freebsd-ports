@@ -18,7 +18,8 @@ COMMENT=	The legendary Open Cubic Player
 
 LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag \
 		mad.2:${PORTSDIR}/audio/libmad \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+		vorbis.3:${PORTSDIR}/audio/libvorbis \
+		sidplay.1:${PORTSDIR}/audio/libsidplay
 
 ONLY_FOR_ARCHS=	i386
 
@@ -45,13 +46,6 @@ TIMIDITY_CFG=	${LOCALBASE}/share/timidity/timidity.cfg
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500000
-LIB_DEPENDS+=	sidplay.1:${PORTSDIR}/audio/libsidplay
-PLIST_SUB+=	LIBSIDPLAY=""
-.else
-PLIST_SUB+=	LIBSIDPLAY="@comment "
-.endif
-
 .if exists(${TIMIDITY_CFG}) || !defined(WITHOUT_MIDI)
 RUN_DEPENDS+=	${TIMIDITY_CFG}:${PORTSDIR}/audio/eawpats
 .endif
@@ -65,7 +59,7 @@ CONFIGURE_ARGS+=	--with-x11=yes
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--with-debug
 .endif
-.if defined(WITH_ADPLUG) && ${OSVERSION} > 500000
+.if defined(WITH_ADPLUG)
 LIB_DEPENDS+=		adplug-2.0.1.0:${PORTSDIR}/audio/libadplug
 CONFIGURE_ARGS+=	--without-x11 --with-adplug
 PLIST_SUB+=		ADPLUG=""
