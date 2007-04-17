@@ -1,4 +1,6 @@
 @comment $FreeBSD$
+share/games/fortune/rus/advert
+share/games/fortune/rus/advert.dat
 share/games/fortune/rus/beer-murphy
 share/games/fortune/rus/beer-murphy.dat
 share/games/fortune/rus/comp
@@ -7,10 +9,16 @@ share/games/fortune/rus/enciklopedy
 share/games/fortune/rus/enciklopedy.dat
 share/games/fortune/rus/fomenko
 share/games/fortune/rus/fomenko.dat
+share/games/fortune/rus/guberman
+share/games/fortune/rus/guberman.dat
 share/games/fortune/rus/ipnet_users
 share/games/fortune/rus/ipnet_users.dat
 share/games/fortune/rus/life
 share/games/fortune/rus/life.dat
+share/games/fortune/rus/life_f
+share/games/fortune/rus/life_f.dat
+share/games/fortune/rus/life_m
+share/games/fortune/rus/life_m.dat
 share/games/fortune/rus/marazm
 share/games/fortune/rus/marazm.dat
 share/games/fortune/rus/murphy
@@ -19,28 +27,32 @@ share/games/fortune/rus/nodes
 share/games/fortune/rus/nodes.dat
 share/games/fortune/rus/offencive
 share/games/fortune/rus/offencive.dat
+share/games/fortune/rus/offencive_f
+share/games/fortune/rus/offencive_f.dat
+share/games/fortune/rus/offencive_m
+share/games/fortune/rus/offencive_m.dat
 share/games/fortune/rus/pavlenka
 share/games/fortune/rus/pavlenka.dat
 share/games/fortune/rus/police
 share/games/fortune/rus/police.dat
 share/games/fortune/rus/speed-info
 share/games/fortune/rus/speed-info.dat
-share/games/fortune/rus/vishevsky
-share/games/fortune/rus/vishevsky.dat
-share/games/fortune/rus/voronezj
-share/games/fortune/rus/voronezj.dat
-share/games/fortune/rus/windows_errors
-share/games/fortune/rus/windows_errors.dat
-share/games/fortune/rus/guberman
-share/games/fortune/rus/guberman.dat
+share/games/fortune/rus/speed-info_f
+share/games/fortune/rus/speed-info_f.dat
+share/games/fortune/rus/speed-info_m
+share/games/fortune/rus/speed-info_m.dat
 share/games/fortune/rus/strug
 share/games/fortune/rus/strug.dat
 share/games/fortune/rus/usenet
 share/games/fortune/rus/usenet.dat
 share/games/fortune/rus/verse
 share/games/fortune/rus/verse.dat
-share/games/fortune/rus/hokku
-share/games/fortune/rus/hokku.dat
-@dirrm share/games/fortune/rus
+share/games/fortune/rus/vishevsky
+share/games/fortune/rus/vishevsky.dat
+share/games/fortune/rus/voronezj
+share/games/fortune/rus/voronezj.dat
+share/games/fortune/rus/windows_errors
+share/games/fortune/rus/windows_errors.dat
+@dirrmtry share/games/fortune/rus
 @dirrmtry share/games/fortune
 @dirrmtry share/games
