@@ -5,6 +5,7 @@
 %%DOCSDIR%%/default.css
 %%DOCSDIR%%/html/assistant-manual.html
 %%DOCSDIR%%/html/classes.html
+%%DOCSDIR%%/html/images/alphachannelimage.png
 %%DOCSDIR%%/html/images/alphafill.png
 %%DOCSDIR%%/html/images/assistant-assistant.png
 %%DOCSDIR%%/html/images/assistant-docwindow.png
@@ -26,6 +27,7 @@
 %%DOCSDIR%%/html/images/buttonbox-winlayout-vertical.png
 %%DOCSDIR%%/html/images/cde-lcdnumber.png
 %%DOCSDIR%%/html/images/cleanlooks-calendarwidget.png
+%%DOCSDIR%%/html/images/cleanlooks-pushbutton-menu.png
 %%DOCSDIR%%/html/images/containerextension-example.png
 %%DOCSDIR%%/html/images/cursor-arrow.png
 %%DOCSDIR%%/html/images/cursor-busy.png
@@ -57,6 +59,7 @@
 %%DOCSDIR%%/html/images/graphicsview-polygonitem.png
 %%DOCSDIR%%/html/images/graphicsview-rectitem.png
 %%DOCSDIR%%/html/images/graphicsview-view.png
+%%DOCSDIR%%/html/images/graphicsview-zorder.png
 %%DOCSDIR%%/html/images/gridlayout.png
 %%DOCSDIR%%/html/images/httpstack.png
 %%DOCSDIR%%/html/images/icon.png
@@ -81,8 +84,8 @@
 %%DOCSDIR%%/html/images/macintosh-tabwidget.png
 %%DOCSDIR%%/html/images/macintosh-timeedit.png
 %%DOCSDIR%%/html/images/macintosh-treeview.png
-%%DOCSDIR%%/html/images/mainwindow-contextmenu.png
 %%DOCSDIR%%/html/images/mainwindow-docks.png
+%%DOCSDIR%%/html/images/mainwindowlayout.png
 %%DOCSDIR%%/html/images/modelindex-no-parent.png
 %%DOCSDIR%%/html/images/modelview-begin-append-columns.png
 %%DOCSDIR%%/html/images/modelview-begin-append-rows.png
@@ -113,6 +116,7 @@
 %%DOCSDIR%%/html/images/plastique-progressbar.png
 %%DOCSDIR%%/html/images/plastique-progressdialog.png
 %%DOCSDIR%%/html/images/plastique-pushbutton.png
+%%DOCSDIR%%/html/images/plastique-pushbutton-menu.png
 %%DOCSDIR%%/html/images/plastique-radiobutton.png
 %%DOCSDIR%%/html/images/plastique-sizegrip.png
 %%DOCSDIR%%/html/images/plastique-slider.png
