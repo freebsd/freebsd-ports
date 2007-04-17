@@ -2,6 +2,7 @@ bin/linphone
 libdata/bonobo/servers/GNOME_LinphoneApplet.server
 libexec/linphone_applet
 share/gnome/applications/linphone.desktop
+share/gnome/applications/linphone_applet.desktop
 share/gnome/gnome-2.0/ui/GNOME_LinphoneApplet.xml
 share/gnome/pixmaps/linphone/linphone.png
 share/gnome/pixmaps/linphone/linphone2.png
