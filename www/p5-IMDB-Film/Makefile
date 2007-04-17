@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IMDB-Film
-PORTVERSION=	0.26
+PORTVERSION=	0.27
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/S/ST/STEPANOV
@@ -20,6 +20,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Di
 		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
 		p5-HTML-Parser>=3.34:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-libwww>=5.800:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	</dev/null
