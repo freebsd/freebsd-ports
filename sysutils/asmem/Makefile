@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asmem
-PORTVERSION=	1.10
+PORTVERSION=	1.12
 CATEGORIES=	sysutils afterstep
 MASTER_SITES=	http://www.tigr.net/afterstep/download/asmem/
 
