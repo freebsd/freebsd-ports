@@ -1,0 +1,7 @@
+lib/claws-mail/plugins/notification_plugin.a
+lib/claws-mail/plugins/notification_plugin.la
+lib/claws-mail/plugins/notification_plugin.so
+share/locale/hu/LC_MESSAGES/notification_plugin.mo
+share/locale/pt_BR/LC_MESSAGES/notification_plugin.mo
+share/locale/ca/LC_MESSAGES/notification_plugin.mo
+share/locale/cs/LC_MESSAGES/notification_plugin.mo
