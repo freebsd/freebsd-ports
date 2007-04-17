@@ -1,72 +1,20 @@
---- configure.orig	Mon May  9 16:11:35 2005
-+++ configure	Mon May  9 16:13:00 2005
-@@ -37743,7 +37743,7 @@
+--- configure.orig	Mon Apr 16 18:08:01 2007
++++ configure	Tue Apr 17 12:42:31 2007
+@@ -37538,7 +37538,7 @@
    for l in $a52_ll ; do
      case $l in
        -L*) lpaths="$lpaths $l" ;;
 -      -l*) test x"$l" != x"-la52" && xlibs="$xlibs $l" ;;
-+      -l*) test x"$l" != x"-la52  -L/usr/local/lib -ldjbfft -lm" && xlibs="$xlibs $l" ;;
++      -l*) test x"$l" != x"-la52  -L%%LOCALBASE%%/lib -lm" && xlibs="$xlibs $l" ;;
          *) xlf="$xlf $l" ;;
      esac
    done
-@@ -37759,13 +37759,13 @@
-   if test x"a52" != x"none" ; then
-     save_LDFLAGS="$LDFLAGS"
-     LDFLAGS="$LDFLAGS $a52_ll"
--    echo "$as_me:$LINENO: checking for a52_init in -la52" >&5
--echo $ECHO_N "checking for a52_init in -la52... $ECHO_C" >&6
-+    echo "$as_me:$LINENO: checking for a52_init in -la52  -L/usr/local/lib -ldjbfft -lm" >&5
-+echo $ECHO_N "checking for a52_init in -la52  -L/usr/local/lib -ldjbfft -lm... $ECHO_C" >&6
- if test "${ac_cv_lib_a52_a52_init+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-la52 $A52_EXTRA_LIBS $LIBS"
-+LIBS="-la52  -L/usr/local/lib -ldjbfft -lm $A52_EXTRA_LIBS $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -37824,7 +37824,7 @@
- echo "$as_me:$LINENO: result: $ac_cv_lib_a52_a52_init" >&5
- echo "${ECHO_T}$ac_cv_lib_a52_a52_init" >&6
+@@ -37616,7 +37616,7 @@
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_a52_a52_init" >&5
+ echo "${ECHO_T}$ac_cv_lib_a52_a52_init" >&6; }
  if test $ac_cv_lib_a52_a52_init = yes; then
 -  A52_LIBS="$a52_ll -la52 $A52_EXTRA_LIBS"
-+  A52_LIBS="$a52_ll -la52  -L/usr/local/lib -ldjbfft -lm $A52_EXTRA_LIBS"
- else
- 
- tc_pkg_err="yes"
-@@ -41429,7 +41429,7 @@
-   for l in $gtk_ll ; do
-     case $l in
-       -L*) lpaths="$lpaths $l" ;;
--      -l*) test x"$l" != x"-lgtk" && xlibs="$xlibs $l" ;;
-+      -l*) test x"$l" != x"-lgtk-12" && xlibs="$xlibs $l" ;;
-         *) xlf="$xlf $l" ;;
-     esac
-   done
-@@ -41445,13 +41445,13 @@
-   if test x"gtk" != x"none" ; then
-     save_LDFLAGS="$LDFLAGS"
-     LDFLAGS="$LDFLAGS $gtk_ll"
--    echo "$as_me:$LINENO: checking for gtk_init in -lgtk" >&5
--echo $ECHO_N "checking for gtk_init in -lgtk... $ECHO_C" >&6
-+    echo "$as_me:$LINENO: checking for gtk_init in -lgtk-12" >&5
-+echo $ECHO_N "checking for gtk_init in -lgtk-12... $ECHO_C" >&6
- if test "${ac_cv_lib_gtk_gtk_init+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lgtk $GTK_EXTRA_LIBS $LIBS"
-+LIBS="-lgtk-12 $GTK_EXTRA_LIBS $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -41510,7 +41510,7 @@
- echo "$as_me:$LINENO: result: $ac_cv_lib_gtk_gtk_init" >&5
- echo "${ECHO_T}$ac_cv_lib_gtk_gtk_init" >&6
- if test $ac_cv_lib_gtk_gtk_init = yes; then
--  GTK_LIBS="$gtk_ll -lgtk $GTK_EXTRA_LIBS"
-+  GTK_LIBS="$gtk_ll -lgtk-12 $GTK_EXTRA_LIBS"
++  A52_LIBS="$a52_ll -la52  -L%%LOCALBASE%%/lib -lm $A52_EXTRA_LIBS"
  else
  
  tc_pkg_err="yes"
