@@ -1,6 +1,6 @@
---- configure.py.orig	Mon Mar 19 04:33:57 2007
-+++ configure.py	Mon Mar 19 20:02:07 2007
-@@ -133,21 +133,21 @@
+--- configure.py.orig	Tue Apr 10 17:59:52 2007
++++ configure.py	Thu Apr 12 21:36:39 2007
+@@ -138,26 +138,26 @@
          }
  
      def check_modules(self):
@@ -23,7 +23,12 @@
 +        #check_module("QtTest", "QtTest", "QTest::qSleep(0)")
 +        #check_module("QtXml", "qdom.h", "new QDomDocument()")
 +        #check_module("QtAssistant", "qassistantclient.h", "new QAssistantClient(\"foo\")")
-         check_module("QtDesigner", "QExtensionFactory", "new QExtensionFactory()")
+ 
+         if sipcfg.universal:
+             sipconfig.inform("QtDesigner module disabled with universal binaries")
+         else:
+             check_module("QtDesigner", "QExtensionFactory", "new QExtensionFactory()")
+ 
 -        check_module("QAxContainer", "qaxobject.h", "new QAxObject()", "QAxContainer")
 +        #check_module("QAxContainer", "qaxobject.h", "new QAxObject()", "QAxContainer")
  
@@ -34,7 +39,7 @@
  
      def code(self):
          # Note that the order of the dependent modules is important.
-@@ -201,31 +201,31 @@
+@@ -211,31 +211,31 @@
              generate_code("QAxContainer", ["QAxContainer", "QtGui", "QtCore"])
  
          # Generate the consolidated module.
@@ -81,7 +86,7 @@
  
      def qpylibs(self):
          # See which QPy libraries to build.
-@@ -278,7 +278,7 @@
+@@ -308,7 +308,7 @@
              tool.append("dbus")
  
          # Only include ElementTree for older versions of Python.
@@ -90,7 +95,7 @@
              sipconfig.inform("Creating elementtree Makefile...")
  
              makefile = sipconfig.PythonModuleMakefile(
-@@ -309,7 +309,7 @@
+@@ -339,7 +339,7 @@
          )
  
          makefile.generate()
@@ -99,7 +104,7 @@
  
          if "QtXml" in pyqt_modules:
              sipconfig.inform("Creating pylupdate4 Makefile...")
-@@ -344,7 +344,8 @@
+@@ -376,7 +376,8 @@
              makefile.generate()
              tool.append("pyrcc")
          else:
@@ -109,7 +114,7 @@
  
          if "QtDesigner" in pyqt_modules:
              enabled = True
-@@ -364,7 +365,10 @@
+@@ -396,7 +397,10 @@
                      # We need to work out how to specify the right framework
                      # version.
                      link = "-framework Python"
@@ -121,15 +126,20 @@
                        glob.glob("%s/lib/libpython%d.%d*" % (ducfg["prefix"], py_major, py_minor))):
                      link = "-L%s/lib -lpython%d.%d" % (ducfg["prefix"], py_major, py_minor)
                  else:
-@@ -420,16 +424,16 @@
+@@ -458,19 +462,19 @@
      sipconfig.inform("The %s Qt library is in %s." % (qt_lib, qt_libdir))
      sipconfig.inform("The Qt binaries are in %s." % qt_bindir)
      sipconfig.inform("The Qt mkspecs directory is in %s." % qt_datadir)
 -    sipconfig.inform("These PyQt modules will be built: %s." % string.join(pyqt_modules))
-+    #sipconfig.inform("These PyQt modules will be built: %s." % string.join(pyqt_modules))
- 
 -    sipconfig.inform("The PyQt modules will be installed in %s." % opt_pyqtmoddir)
++    #sipconfig.inform("These PyQt modules will be built: %s." % string.join(pyqt_modules))
 +    #sipconfig.inform("The PyQt modules will be installed in %s." % opt_pyqtmoddir)
+     sipconfig.inform("The Designer plugin will be installed in %s." % os.path.join(opt_plugindir, "designer"))
+ 
+-    if opt_api:
+-        sipconfig.inform("The QScintilla API file will be installed in %s." % os.path.join(opt_qscidir, "api", "python"))
++    #if opt_api:
++    #    sipconfig.inform("The QScintilla API file will be installed in %s." % os.path.join(opt_qscidir, "api", "python"))
  
      if pydbusmoddir:
          sipconfig.inform("The dbus support module will be installed in %s." % pydbusmoddir)
@@ -142,7 +152,7 @@
  
      if opt_vendorcheck:
          sipconfig.inform("PyQt will only be usable with signed interpreters.")
-@@ -767,7 +771,8 @@
+@@ -808,7 +812,8 @@
      sipfiles = []
  
      for s in glob.glob("sip/" + mname + "/*.sip"):
@@ -152,7 +162,7 @@
  
      installs.append([sipfiles, os.path.join(opt_pyqtsipdir, mname)])
  
-@@ -831,7 +836,7 @@
+@@ -873,7 +878,7 @@
              sipconfig.error("This version of PyQt and the %s edition of Qt have incompatible licenses." % qted)
  
      # Confirm the license.
@@ -161,7 +171,7 @@
      print "Type 'L' to view the license."
      print "Type 'yes' to accept the terms of the license."
      print "Type 'no' to decline the terms of the license."
-@@ -853,7 +858,7 @@
+@@ -895,7 +900,7 @@
  
          if resp == "l":
              os.system("more LICENSE")
@@ -170,14 +180,14 @@
      # If there should be a license file then check it is where it should be.
      if lfile:
          if os.access(os.path.join("sip", lfile), os.F_OK):
-@@ -1372,17 +1377,17 @@
+@@ -1433,17 +1438,17 @@
  
-     scidir = os.path.join(qt_datadir, "qsci")
+     installs=[(pyqt.module_installs(), opt_pyqtmoddir)]
  
--    if opt_api or os.path.isdir(scidir):
--        installs.append(("PyQt4.api", os.path.join(scidir, "api", "python")))
-+    #if opt_api or os.path.isdir(scidir):
-+    #    installs.append(("PyQt4.api", os.path.join(scidir, "api", "python")))
+-    if opt_api:
+-        installs.append(("PyQt4.api", os.path.join(opt_qscidir, "api", "python")))
++    #if opt_api:
++    #    installs.append(("PyQt4.api", os.path.join(opt_qscidir, "api", "python")))
  
      sipconfig.ParentMakefile(
          configuration=sipcfg,
