@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mangos
-PORTVERSION=	3389
+PORTVERSION=	3431
 CATEGORIES=	games
 MASTER_SITES=	http://neon.heavennet.ru/mangos/
 
@@ -20,9 +20,10 @@ OPTIONS=	SCRIPTDEV2	"ScriptDev2"	on \
 
 .include <bsd.port.pre.mk>
 
+SCRIPTDEV2REV=	32
 DISTFILES=${PORTNAME}-${PORTVERSION}.tar.gz
 .if defined(WITH_SCRIPTDEV2)
-    DISTFILES+= ScriptDev2-29.tar.gz
+    DISTFILES+= ScriptDev2-${SCRIPTDEV2REV}.tar.gz
 .endif
 
 .if defined(WITH_DBC)
@@ -43,16 +44,16 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX}/etc --datadir=${PREFIX
 .endif
 
 .if defined(WITH_CLI)
-    CONFIGURE_ARGS+= --with-cli
+    CONFIGURE_ARGS+= --enable-cli
 .endif
 
 .if defined(WITH_RA)
-    CONFIGURE_ARGS+= --with-ra
+    CONFIGURE_ARGS+= --enable-ra
 .endif
 
 post-extract:
 .if defined(WITH_SCRIPTDEV2)
-	@(${MV} ${WRKDIR}/ScriptDev2-29  ${WRKDIR}/${PORTNAME}-${PORTVERSION}/src/bindings/ScriptDev2)
+	@(${MV} ${WRKDIR}/ScriptDev2-${SCRIPTDEV2REV}  ${WRKDIR}/${PORTNAME}-${PORTVERSION}/src/bindings/ScriptDev2)
 .endif
 	${LN} -s ${LTMAIN} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/
 	@${REINPLACE_CMD} -e "s|@MANGOSD_CONFIG@|${PREFIX}/etc/mangosd.conf|g" ${WRKDIR}/${PORTNAME}-${PORTVERSION}/src/shared/SystemConfig.h.in
