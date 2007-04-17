@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pdf_viewer
-PORTVERSION=	0.2
-PORTREVISION?=	1
+PORTVERSION=	0.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
