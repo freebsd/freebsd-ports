@@ -20,13 +20,7 @@ EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		does not build on FreeBSD 4.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
