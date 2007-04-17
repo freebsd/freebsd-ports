@@ -121,6 +121,7 @@
     SUBDIR += skyeye
     SUBDIR += snes9express
     SUBDIR += snes9x
+    SUBDIR += snespp
     SUBDIR += spim
     SUBDIR += stella
     SUBDIR += stonx
