@@ -13,7 +13,7 @@ MASTER_SITES=	http://get.bitlbee.org/src/
 
 PATCH_SITES=	http://get.bitlbee.org/patches/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lasg@lasg.dk
 COMMENT=	An IRC to other chat networks gateway
 
 SUB_FILES=	pkg-message
