@@ -21,16 +21,10 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		does not compile on 4.x due to missing multibyte string functions in libc
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3||' ${WRKSRC}/configure
 #	@${REINPLACE_CMD} -e '/GetInfo/s|intptr_t|long|g' ${WRKSRC}/src/MACLib/*.*
 #	@${REINPLACE_CMD} -e 's|wcsnicmp|wcsncmp|g;s|wcsicmp|wcscmp|g;s|_wcsicmp|wcscmp|g;s|\.__pos||g' \
 #		${WRKSRC}/src/MACLib/*.* ${WRKSRC}/src/Shared/*.*
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
