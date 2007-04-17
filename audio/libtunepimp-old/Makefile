@@ -14,7 +14,7 @@ MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/ \
 		ftp://ftp.au.musicbrainz.org/pub/musicbrainz/
 DISTNAME=	libtunepimp-${PORTVERSION}
 
-MAINTAINER=	clsung@FreeBSD.org
+MAINTAINER=	fluffy@ael.ru
 COMMENT=	Client library for musicbrainz
 
 LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
