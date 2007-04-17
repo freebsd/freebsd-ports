@@ -10,6 +10,7 @@ PORTVERSION=	4.6.7
 CATEGORIES=	security
 MASTER_SITES=	http://files.f-prot.com/files/bsd-x86/trial/
 DISTNAME=	fp-freebsd-ms.trial
+IGNOREFILES=	${DISTFILES}${EXTRACT_SUFX}
 
 MAINTAINER=	swhetzel@gmail.com
 COMMENT=	F-Prot Antivirus for BSD Mail Server
@@ -18,8 +19,6 @@ RUN_DEPENDS=	${LOCALBASE}/f-prot/f-prot:${PORTSDIR}/security/f-prot \
 		${SITE_PERL}/Anomy/Sanitizer/FProt.pm:${PORTSDIR}/mail/anomy-sanitizer
 
 RESTRICTED=	Restrictive 60 day evaluation license
-
-BROKEN=		Unfetchable
 
 WRKSRC=		${WRKDIR}/f-prot
 NO_BUILD=	yes
