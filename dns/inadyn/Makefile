@@ -7,9 +7,10 @@
 
 PORTNAME=	inadyn
 PORTVERSION=	1.96
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://inadyn.ina-tech.net/
-DISTNAME=	inadyn.v1.96
+DISTNAME=	inadyn.v1.96.2
 EXTRACT_SUFX=	.zip
 
 MAINTAINER=	samm@os2.kiev.ua
