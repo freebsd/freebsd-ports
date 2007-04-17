@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mplayerxp
-PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTVERSION=	0.6.2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -72,6 +71,8 @@ CFLAGS+=	-DPRId64=\\\"lld\\\"
 CFLAGS+=	-DPRIu64=\\\"llu\\\"
 CFLAGS+=	-DPRIx64=\\\"llx\\\"
 CFLAGS+=	-DPRIX64=\\\"llX\\\"
+CFLAGS+=	-DPRIdFAST16=\\\"d\\\"
+CFLAGS+=	-DPRIdFAST32=\\\"d\\\"
 .endif
 
 ##
