@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	musicpd
-PORTVERSION=	0.12.1
-PORTREVISION=	1
+PORTVERSION=	0.12.2
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://musicpd.org/uploads/files/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -31,12 +30,19 @@ OPTIONS=	FLAC "Support for FLAC Audio" on \
 		MOD "Support for MOD Audio" off \
 		ICONV "Support for international characters" on \
 	        ID3TAG "Support for id3v1 tag encoding" off \
-		IPV6 "Support for IPV6" on
+		IPV6 "Support for IPV6" on \
+		AO "Support for libao" off
+
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--disable-pulse \
+		--disable-shout \
+		--mandir=${MANPREFIX}/man
 
 .include <bsd.port.pre.mk>
 
 .ifdef(WITHOUT_FLAC)
-CONFIGURE_ARGS+=--disable-flac
+CONFIGURE_ARGS+=--disable-flac \
+		--disable-oggflac
 .else
 LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
 .endif
@@ -83,6 +89,11 @@ CONFIGURE_ARGS+=--enable-mpd-id3tag
 
 .ifdef(WITHOUT_IPV6)
 CONFIGURE_ARGS+=--disable-ipv6
+.endif
+
+.ifdef(WITH_AO)
+CONFIGURE_ARGS+=--enable-ao
+LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
 .endif
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
