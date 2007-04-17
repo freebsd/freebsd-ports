@@ -8,6 +8,7 @@
 
 PORTNAME=	qwtplot3d
 PORTVERSION=	0.2.6
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,11 +20,9 @@ COMMENT=	A 3D plotting widget for scientific data and mathematical expressions
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 USE_QT_VER=	3
-USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAKE_ENV=	QTDIR=${QT_PREFIX} \
-		MOC=${MOC}
-INSTALLS_SHLIB=	yes
+MAKE_ENV=	QTDIR=${QT_PREFIX}
+USE_LDCONFIG=	yes
 
 pre-build:
 	@cd ${WRKSRC}; qmake -spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ ${PORTNAME}.pro
@@ -34,12 +33,8 @@ do-install:
 	${LN} -fs ${PREFIX}/lib/libqwtplot3d.so.${PORTVERSION} ${PREFIX}/lib/libqwtplot3d.so.0
 	${LN} -fs ${PREFIX}/lib/libqwtplot3d.so.${PORTVERSION} ${PREFIX}/lib/libqwtplot3d.so
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
-	@${FIND} ${EXAMPLESDIR} ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${EXAMPLESDIR} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	${MKDIR} ${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
