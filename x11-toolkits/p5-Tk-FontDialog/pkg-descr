@@ -1,0 +1,10 @@
+Tk::FontDialog implements a font dialog widget.
+
+The dialog is displayed by calling the Show method. The returned value
+is either the selected font (if the dialog was closed with the Ok
+button) or undef (otherwise). The exact type of the return value is
+either a Tk::Font object (in Tk800) or a font name string (usually
+something like font1). Both can be used as values in Tk -font options.
+
+WWW: http://search.cpan.org/dist/Tk-FontDialog/
+Author: Slaven Rezic <slaven@rezic.de>
