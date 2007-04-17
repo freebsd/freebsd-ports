@@ -9,6 +9,7 @@
 %%SIPFILES%%%%SIPDIR%%/Qsci/qscilexercpp.sip
 %%SIPFILES%%%%SIPDIR%%/Qsci/qscilexercsharp.sip
 %%SIPFILES%%%%SIPDIR%%/Qsci/qscilexercss.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscilexerd.sip
 %%SIPFILES%%%%SIPDIR%%/Qsci/qscilexerdiff.sip
 %%SIPFILES%%%%SIPDIR%%/Qsci/qscilexerhtml.sip
 %%SIPFILES%%%%SIPDIR%%/Qsci/qscilexeridl.sip
@@ -28,6 +29,8 @@
 %%SIPFILES%%%%SIPDIR%%/Qsci/qscimod4.sip
 %%SIPFILES%%%%SIPDIR%%/Qsci/qscimodcommon.sip
 %%SIPFILES%%%%SIPDIR%%/Qsci/qsciprinter.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscilexercmake.sip
+%%SIPFILES%%%%SIPDIR%%/Qsci/qscilexervhdl.sip
 %%SIPFILES%%%%SIPDIR%%/Qsci/qsciscintilla.sip
 %%SIPFILES%%%%SIPDIR%%/Qsci/qsciscintillabase3.sip
 %%SIPFILES%%%%SIPDIR%%/Qsci/qsciscintillabase4.sip
