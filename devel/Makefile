@@ -2015,6 +2015,7 @@
     SUBDIR += ruby-wirble
     SUBDIR += ruby-zoom
     SUBDIR += rubygem-activesupport
+    SUBDIR += rubygem-analogger
     SUBDIR += rubygem-builder
     SUBDIR += rubygem-daemons
     SUBDIR += rubygem-eventmachine

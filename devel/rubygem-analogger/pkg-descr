@@ -1,0 +1,10 @@
+The Swiftcore Analogger implements a fast asynchronous logging system
+for Ruby programs as well as client library for sending logging messages
+to the Analogger process.
+
+Analogger will accept logs from multiple sources and can have multiple
+logging destinations. Currently, logging to a file, to STDOUT, or to
+STDERR is supported. A future revision may support logging to a
+database destination, as well.
+
+WWW: http://analogger.swiftcore.org
