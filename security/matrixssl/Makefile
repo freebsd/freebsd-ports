@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	matrixssl
-PORTVERSION=	1.7.3
+PORTVERSION=	1.8.3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
@@ -15,7 +15,7 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Small alternative SSL implementation
 
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/matrixssl/src
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
 INSTALLS_SHLIB=	yes
 
 do-install:
@@ -26,7 +26,7 @@ do-install:
 	${CP} ${WRKSRC}/../doc/* ${DOCSDIR}
 	${MKDIR} ${EXAMPLESDIR}
 	${CP} ${WRKSRC}/../examples/* ${EXAMPLESDIR}
-	cd ${EXAMPLESDIR}; ${RM} *.vcproj *.sln *.orig
+	-cd ${EXAMPLESDIR}; ${RM} *.vcproj *.sln *.orig
 .endif
 
 .include <bsd.port.mk>
