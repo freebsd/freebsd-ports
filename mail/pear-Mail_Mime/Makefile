@@ -6,8 +6,9 @@
 #
 
 PORTNAME=	Mail_Mime
-PORTVERSION=	1.4.0a3
+PORTVERSION=	1.4.0r1
 CATEGORIES=	mail www pear
+DISTNAME=	Mail_Mime-1.4.0RC1
 
 MAINTAINER=	bg1tpt@gmail.com
 COMMENT=	PEAR classes to create and decode MIME messages
