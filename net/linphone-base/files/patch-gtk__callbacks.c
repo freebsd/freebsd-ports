@@ -1,6 +1,6 @@
---- gnome/callbacks.c.orig	Sat Jul  9 22:32:24 2005
-+++ gnome/callbacks.c	Thu Aug 25 23:44:43 2005
-@@ -595,9 +595,10 @@
+--- gtk/callbacks.c.orig	Wed Feb  7 18:11:10 2007
++++ gtk/callbacks.c	Fri Apr 13 03:42:46 2007
+@@ -626,9 +626,10 @@
                                          gpointer         user_data)
  {
  	gchar *sipurl;

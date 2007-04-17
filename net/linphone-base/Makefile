@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linphone
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.0
 PORTEPOCH=	1
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:S/$/:linphone/} \
@@ -21,17 +21,18 @@ COMMENT=	A web phone that supports SIP protocol
 
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
+		portaudio.0:${PORTSDIR}/audio/portaudio \
 		speex.1:${PORTSDIR}/audio/speex \
-		osip2.3:${PORTSDIR}/net/libosip2
+		osip2.3:${PORTSDIR}/net/libosip2 \
+		ortp.5:${PORTSDIR}/net/ortp
 
 USE_GNOME=	glib20 gnomehack gnometarget intlhack pkgconfig
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-LIBTOOLFILES=	configure mediastreamer2/configure oRTP/configure
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		PKG_CONFIG="${LOCALBASE}/bin/pkg-config"
-CONFIGURE_ARGS=	--disable-ipv6 --disable-gtk-doc --disable-ewarning \
-		--without-ilbc --disable-strict --disable-video \
+LIBTOOLFILES=	configure mediastreamer2/configure
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--disable-ipv6 --disable-manual --disable-ewarning \
+		--disable-strict --disable-video --enable-external-ortp \
 		--with-osip=${LOCALBASE}
 MAKE_ENV=	SUBDIRS="${SUBDIRS}"
 USE_LDCONFIG=	yes
@@ -59,19 +60,19 @@ LDFLAGS+=	-lintl
 .endif
 
 .if defined(LINPHONE_GUI)
-LIB_DEPENDS+=	linphone.7:${PORTSDIR}/net/linphone-base
+LIB_DEPENDS+=	linphone.8:${PORTSDIR}/net/linphone-base
 DESCR=		${PKGDIR}/pkg-descr.gui
 PLIST=		${PKGDIR}/pkg-plist.gui
 USE_GNOME+=	gnomepanel gnomeprefix
 MAN1=		linphone.1
 DATA_PATH=	share/gnome
-SUBDIRS=	pixmaps gnome
+SUBDIRS=	pixmaps gtk
 .else
 PKGNAMESUFFIX=	-base
-CONFIGURE_ARGS+=	--enable-gnome_ui=no
+CONFIGURE_ARGS+=	--enable-gtk_ui=no
 MAN1=		linphonec.1 sipomatic.1
 DATA_PATH=	share
-SUBDIRS=	po oRTP gsmlib mediastreamer2 media_api exosip coreapi console
+SUBDIRS=	po gsmlib mediastreamer2 media_api exosip coreapi console
 .endif
 
 post-extract:
@@ -82,12 +83,15 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS =/s| =| ?=|g' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e '/^SUBDIRS =/s|docs||g' ${WRKSRC}/oRTP/Makefile.in
+	@${REINPLACE_CMD} -e '/^imgdir =/s|(datadir)|(pkgdatadir)|g' \
+		${WRKSRC}/mediastreamer2/src/Makefile.in
 
 post-install:
 .if defined(LINPHONE_GUI)
 	${INSTALL_MAN} ${WRKSRC}/share/C/linphone.1 ${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/share/linphone.desktop \
+		${PREFIX}/share/gnome/applications
+	${INSTALL_DATA} ${WRKSRC}/share/linphone_applet.desktop \
 		${PREFIX}/share/gnome/applications
 .else
 	${INSTALL_MAN} ${WRKSRC}/share/C/linphonec.1 ${MANPREFIX}/man/man1

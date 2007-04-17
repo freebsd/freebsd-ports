@@ -1,0 +1,36 @@
+--- gtk/Makefile.in.orig	Tue Apr 10 05:06:20 2007
++++ gtk/Makefile.in	Fri Apr 13 03:49:05 2007
+@@ -73,7 +73,6 @@
+ am__DEPENDENCIES_1 =
+ @BUILD_GTK_TRUE@linphone_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+ @BUILD_GTK_TRUE@	$(am__DEPENDENCIES_1) \
+-@BUILD_GTK_TRUE@	$(top_builddir)/coreapi/liblinphone.la \
+ @BUILD_GTK_TRUE@	$(am__DEPENDENCIES_1)
+ am__linphone_applet_SOURCES_DIST = linphone.c linphone.h gui_utils.c \
+ 	gui_utils.h support.c support.h interface.c interface.h \
+@@ -95,7 +94,6 @@
+ linphone_applet_OBJECTS = $(am_linphone_applet_OBJECTS)
+ @BUILD_GNOME_APPLET_TRUE@linphone_applet_DEPENDENCIES =  \
+ @BUILD_GNOME_APPLET_TRUE@	$(am__DEPENDENCIES_1) \
+-@BUILD_GNOME_APPLET_TRUE@	$(top_builddir)/coreapi/liblinphone.la \
+ @BUILD_GNOME_APPLET_TRUE@	$(am__DEPENDENCIES_1)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+@@ -335,7 +333,7 @@
+ @BUILD_GTK_TRUE@	$(linphone_common_sources)
+ 
+ @BUILD_GTK_TRUE@linphone_LDADD = $(LIBGTK_LIBS) $(INTLLIBS) \
+-@BUILD_GTK_TRUE@				$(top_builddir)/coreapi/liblinphone.la \
++@BUILD_GTK_TRUE@				-llinphone \
+ @BUILD_GTK_TRUE@				$(OSIP_LIBS)
+ 
+ AM_CFLAGS = $(STRICT_OPTIONS) $(LIBGTK_CFLAGS) $(IPV6_CFLAGS)	
+@@ -347,7 +345,7 @@
+ @BUILD_GNOME_APPLET_TRUE@linphone_applet_CFLAGS = $(AM_CFLAGS) $(GNOME_APPLETS_CFLAGS) -DLINPHONE_APPLET
+ @BUILD_GNOME_APPLET_TRUE@linphone_applet_LDADD = \
+ @BUILD_GNOME_APPLET_TRUE@				$(GNOME_APPLETS_LIBS) \
+-@BUILD_GNOME_APPLET_TRUE@				$(top_builddir)/coreapi/liblinphone.la \
++@BUILD_GNOME_APPLET_TRUE@				-llinphone \
+ @BUILD_GNOME_APPLET_TRUE@				$(OSIP_LIBS)
+ 
+ @BUILD_GNOME_APPLET_TRUE@serverdir = $(libdir)/bonobo/servers
