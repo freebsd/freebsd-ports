@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/FontDialog/.packlist
+%%SITE_PERL%%/Tk/FontDialog.pm
+@dirrmtry %%SITE_PERL%%/Tk
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/FontDialog
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk
