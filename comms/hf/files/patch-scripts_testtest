@@ -1,8 +1,0 @@
---- scripts/testtest.orig	Mon Jul 31 00:29:38 2006
-+++ scripts/testtest	Mon Jul 31 00:29:01 2006
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/usr/local/bin/bash
- # test for test and grep and tail ....
- grepstring=`ps -a | grep hfkernel  | grep -v grep | tail -n 1 | tail -c -9`
- echo grepstring = $grepstring

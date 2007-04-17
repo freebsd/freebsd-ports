@@ -1,20 +1,11 @@
---- scripts/Makefile.in.orig	Sun Mar 27 13:18:15 2005
-+++ scripts/Makefile.in	Sun Jul 30 23:14:54 2006
-@@ -157,7 +157,7 @@
- target_cpu = @target_cpu@
- target_os = @target_os@
- target_vendor = @target_vendor@
--configdir = /etc
-+configdir = /usr/local/etc
- scripts = hf hftcp ratetry 
- configfiles = hf.conf
- EXTRA_DIST = $(configfiles) $(scripts) testtest htmlup
-@@ -314,7 +314,7 @@
+--- scripts/Makefile.in.orig	Mon Apr 16 09:53:29 2007
++++ scripts/Makefile.in	Mon Apr 16 09:55:04 2007
+@@ -288,7 +288,7 @@
+ 
  install:
  	$(mkinstalldirs) $(DESTDIR)$(configdir)
- 
 -	$(INSTALL_DATA) $(configfiles) $(DESTDIR)$(configdir)
-+	$(INSTALL_DATA) $(configfiles) $(DESTDIR)$(configdir)/hf.conf.samp
++	$(INSTALL_DATA) $(configfiles) $(DESTDIR)$(configdir)/calibrations.samp
  	$(mkinstalldirs) $(DESTDIR)$(bindir)
  	$(INSTALL) $(scripts) $(DESTDIR)$(bindir)
  # Tell versions [3.59,3.63) of GNU make to not export all variables.

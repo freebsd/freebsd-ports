@@ -17,10 +17,7 @@ bin/portecho
 bin/ratecal1
 bin/ratetry
 bin/reffreq
-etc/hf.conf.samp
-man/de.ISO8859-1/man1/hf.1
-man/de.ISO8859-1/man1/hfkernel.1
-man/de.ISO8859-1/man1/hfterm.1
+etc/calibrations.samp
 %%DATADIR%%/hf-examplefiles/fix.01
 %%DATADIR%%/hf-examplefiles/fix.02
 %%DATADIR%%/hf-examplefiles/fix.03
@@ -34,8 +31,6 @@ man/de.ISO8859-1/man1/hfterm.1
 %%DATADIR%%/hf-examplefiles/fix.11
 %%DATADIR%%/hf-examplefiles/fix.12
 %%DATADIR%%/hf-examplefiles/gag
-%%DATADIR%%/hf-examplefiles/hfterm.brag
-%%DATADIR%%/hf-examplefiles/littleman.ascii
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/DE-HF-HOWTO.txt
@@ -48,14 +43,11 @@ man/de.ISO8859-1/man1/hfterm.1
 %%PORTDOCS%%%%DOCSDIR%%/chan_formulas.tex
 %%PORTDOCS%%%%DOCSDIR%%/dcf77.txt
 %%PORTDOCS%%%%DOCSDIR%%/english.txt
-%%PORTDOCS%%%%DOCSDIR%%/hf.spec
-%%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/lfconv.jpg
 %%PORTDOCS%%%%DOCSDIR%%/mt63.txt
 %%PORTDOCS%%%%DOCSDIR%%/pactor.ps
 %%PORTDOCS%%%%DOCSDIR%%/pactor.txt
 %%PORTDOCS%%%%DOCSDIR%%/pactor_statediag.fig
-%%PORTDOCS%%%%DOCSDIR%%/su1.priv.txt
 @dirrm %%DATADIR%%/hf-examplefiles
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
