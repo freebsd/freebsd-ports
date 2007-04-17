@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ja2
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	games
 MASTER_SITES=	http://deponie.yamagi.org/freebsd/distfiles/ \
 		http://ja2.dragonriders.de/files/
@@ -56,7 +56,7 @@ IGNORE=	no language has been chosen. Please choose the appropriate language for 
 
 MAKE_ARGS+=	NO_DEPS=yes # For a single full build dependency calculation is unnecessary
 
-MAKE_ARGS+=	DATADIR=${DATADIR}
+MAKE_ARGS+=	SGPDATADIR=${DATADIR}
 
 MAN6=	ja2.6
 
