@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	code-browser
-PORTVERSION=	2.12
+PORTVERSION=	2.13
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,7 +26,8 @@ PORTDOCS=	code-browser.chm doc.css doc.html
 PLIST_FILES=	bin/code-browser \
 		%%DATADIR%%/config/preferences.cbc \
 		%%DATADIR%%/config-default/preferences.cbc \
-		%%DATADIR%%/config-optional/perforce.cbc
+		%%DATADIR%%/config-optional/perforce.cbc \
+		%%DATADIR%%/config-optional/torque.cbc
 PLIST_DIRS=	%%DATADIR%%/config-optional \
 		%%DATADIR%%/config-default \
 		%%DATADIR%%/config \
@@ -38,7 +39,7 @@ PLIST_DIRS=	%%DATADIR%%/config-optional \
 BROKEN=		does not build on ${ARCH}; signal 11 errors during build
 .endif
 
-.if ${ARCH} == "amd64"
+.if ${ARCH} != "i386"
 MAKE_ARGS+=	MODE=64
 .endif
 
