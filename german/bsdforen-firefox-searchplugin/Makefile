@@ -7,9 +7,10 @@
 
 PORTNAME=	bsdforen-firefox-searchplugin
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	german www
-MASTER_SITES=	http://www.crashmail.de/files/
+MASTER_SITES=	http://www.crashmail.de/files/ \
+		http://people.bsdgroup.de/~steve/files/
 DISTFILES=	bsdforen.src bsdforen.png bsdforen-wiki.src bsdforen-wiki.png
 EXTRACT_ONLY=	yes
 
