@@ -69,6 +69,7 @@ MAN3=	\
 	gnutls_certificate_set_x509_trust_mem.3 \
 	gnutls_certificate_type_get.3 \
 	gnutls_certificate_type_get_name.3 \
+	gnutls_certificate_type_list.3 \
 	gnutls_certificate_type_set_priority.3 \
 	gnutls_certificate_verify_peers.3 \
 	gnutls_certificate_verify_peers2.3 \
@@ -76,10 +77,13 @@ MAN3=	\
 	gnutls_cipher_get.3 \
 	gnutls_cipher_get_key_size.3 \
 	gnutls_cipher_get_name.3 \
+	gnutls_cipher_list.3 \
 	gnutls_cipher_set_priority.3 \
 	gnutls_cipher_suite_get_name.3 \
+	gnutls_cipher_suite_info.3 \
 	gnutls_compression_get.3 \
 	gnutls_compression_get_name.3 \
+	gnutls_compression_list.3 \
 	gnutls_compression_set_priority.3 \
 	gnutls_credentials_clear.3 \
 	gnutls_credentials_set.3 \
@@ -147,9 +151,11 @@ MAN3=	\
 	gnutls_init.3 \
 	gnutls_kx_get.3 \
 	gnutls_kx_get_name.3 \
+	gnutls_kx_list.3 \
 	gnutls_kx_set_priority.3 \
 	gnutls_mac_get.3 \
 	gnutls_mac_get_name.3 \
+	gnutls_mac_list.3 \
 	gnutls_mac_set_priority.3 \
 	gnutls_malloc.3 \
 	gnutls_openpgp_key_check_hostname.3 \
@@ -228,6 +234,7 @@ MAN3=	\
 	gnutls_prf_raw.3 \
 	gnutls_protocol_get_name.3 \
 	gnutls_protocol_get_version.3 \
+	gnutls_protocol_list.3 \
 	gnutls_protocol_set_priority.3 \
 	gnutls_psk_allocate_client_credentials.3 \
 	gnutls_psk_allocate_server_credentials.3 \
@@ -423,8 +430,11 @@ MAN3=	\
         gnutls_x509_crt_check_revocation.3 \
         gnutls_x509_crt_get_ca_status.3 \
         gnutls_x509_crt_get_extension_by_oid.3 \
-        gnutls_x509_crt_init.3 \
+        gnutls_x509_crt_get_subject.3 \
+	gnutls_x509_crt_get_issuer.3 \
+	gnutls_x509_crt_init.3 \
         gnutls_x509_crt_set_crq.3 \
         gnutls_x509_crt_set_version.3 \
         gnutls_x509_crt_sign.3 \
-        gnutls_x509_crt_verify_data.3
+        gnutls_x509_crt_verify_data.3 \
+	gnutls_x509_dn_get_rdn_ava.3

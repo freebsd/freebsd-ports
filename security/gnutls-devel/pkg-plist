@@ -37,6 +37,7 @@ share/aclocal/libgnutls-extra.m4
 share/aclocal/libgnutls.m4
 %%EXAMPLESDIR%%/ex-alert.c
 %%EXAMPLESDIR%%/ex-cert-select.c
+%%EXAMPLESDIR%%/ex-client-authz.c
 %%EXAMPLESDIR%%/ex-client-resume.c
 %%EXAMPLESDIR%%/ex-client-srp.c
 %%EXAMPLESDIR%%/ex-client-tlsia.c
@@ -46,6 +47,7 @@ share/aclocal/libgnutls.m4
 %%EXAMPLESDIR%%/ex-pkcs12.c
 %%EXAMPLESDIR%%/ex-rfc2818.c
 %%EXAMPLESDIR%%/ex-serv-anon.c
+%%EXAMPLESDIR%%/ex-serv-authz.c
 %%EXAMPLESDIR%%/ex-serv-export.c
 %%EXAMPLESDIR%%/ex-serv-pgp.c
 %%EXAMPLESDIR%%/ex-serv-srp.c
