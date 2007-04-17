@@ -60,10 +60,6 @@ INSTALL_TARGET+=	install-doc
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		depends on net/avahi
-.endif
-
 .if ( ${ARCH} == "amd64" )
 BUILD_DEPENDS+=	boehm-gc=6.8:${PORTSDIR}/devel/boehm-gc
 CONFIGURE_ARGS+=	--enable-gc=system
