@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	manslide
-DISTVERSION=	1.5.1
+DISTVERSION=	1.5.2
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://csgib36.ifrance.com/Manslide/
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 		mencoder:${PORTSDIR}/multimedia/mplayer \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		mjpegtools>=1.8.0:${PORTSDIR}/multimedia/mjpegtools \
-		ImageMagick>=6.2.9:${PORTSDIR}/graphics/ImageMagick \
+		ImageMagick>=6.3.2.9:${PORTSDIR}/graphics/ImageMagick \
 		xvid4conf:${PORTSDIR}/multimedia/xvid4conf \
 		transcode:${PORTSDIR}/multimedia/transcode
 
@@ -54,6 +54,7 @@ do-configure:
 
 pre-install:
 	${MKDIR} ${MANSLIDEDIR}/Interface/Transitions
+	${MKDIR} ${MANSLIDEDIR}/Luma
 	${INSTALL_PROGRAM} ${WRKSRC}/Manslide ${MANSLIDEDIR}/
 
 .for effects in ${EFFECTS}
@@ -65,6 +66,7 @@ pre-install:
 	${INSTALL_DATA} ${WRKSRC}/Interface/*PNG ${MANSLIDEDIR}/Interface/
 
 	${INSTALL_DATA} ${WRKSRC}/Interface/*png ${MANSLIDEDIR}/Interface
+	${INSTALL_DATA} ${WRKSRC}/Luma/*pgm ${MANSLIDEDIR}/Luma
 
 .for lang in ${LANGUAGE_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}${lang}.qm ${MANSLIDEDIR}
@@ -73,6 +75,6 @@ pre-install:
 	${LN} -fs ${MANSLIDEDIR}/Manslide ${PREFIX}/bin/
 
 post-install:
-	${FILESDIR}/testsox.sh
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
