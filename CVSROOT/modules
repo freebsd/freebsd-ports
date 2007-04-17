@@ -7136,6 +7136,7 @@ mdpop3d		ports/mail/mdpop3d
 meanwhile	ports/net-im/meanwhile
 meanwhile-gaim	ports/net-im/meanwhile-gaim
 mediaproxy	ports/net/mediaproxy
+mediatomb	ports/net/mediatomb
 mediawiki	ports/www/mediawiki
 mediawiki16	ports/www/mediawiki16
 mediawiki17	ports/www/mediawiki17
