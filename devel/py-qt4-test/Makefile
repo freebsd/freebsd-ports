@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	test
-PORTVERSION=	20070318
+PORTVERSION=	4.2
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/Snapshots/PyQt4/ \
+MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyQt4/GPL/ \
 		http://freebsd.ricin.com/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}qt4-
-DISTNAME=	PyQt-x11-gpl-4-snapshot-${PORTVERSION}
+DISTNAME=	PyQt-x11-gpl-${PORTVERSION}
 
 MAINTAINER=	danny@ricin.com
 COMMENT=	Python bindings for the Qt4 toolkit, QtTest module
