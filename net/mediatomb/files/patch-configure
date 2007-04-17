@@ -1,5 +1,14 @@
---- configure.orig	Thu Mar 29 23:04:32 2007
-+++ configure	Thu Mar 29 23:24:30 2007
+--- configure.orig	Wed Apr 18 00:30:20 2007
++++ configure	Wed Apr 18 00:35:27 2007
+@@ -17349,7 +17349,7 @@
+ 
+ if test "x$SQLITE3_OK" = xyes; then
+     if test -n "$SQLITE3_SEARCH_LIBS"; then
+-        LDFLAGS="-L$SQLITE3_SEARCH_LIBS $RT_LIBS"
++        LDFLAGS="$LDFLAGS -L$SQLITE3_SEARCH_LIBS $RT_LIBS"
+         { echo "$as_me:$LINENO: Will search for sqlite3 libraries in $withval" >&5
+ echo "$as_me: Will search for sqlite3 libraries in $withval" >&6;}
+         echo "$as_me:$LINENO: checking for sqlite3_open in -lsqlite3" >&5
 @@ -23239,7 +23239,7 @@
  echo "$as_me:$LINENO: result: $ac_cv_lib_extractor_EXTRACTOR_getKeywords" >&5
  echo "${ECHO_T}$ac_cv_lib_extractor_EXTRACTOR_getKeywords" >&6
