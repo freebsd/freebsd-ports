@@ -1,0 +1,22 @@
+Tk::CheckBox    - A radio button style widget that uses a
+		  check mark in a box. Useful as a boolean field.
+Tk::Columns     - A multicolumn list widget with resizeable borders
+		  and sorting by column.
+Tk::ComboEntry  - A Drop down listbox + entry widget with nice keyboard
+		  equivalent behaviour
+Tk::IconCanvas  - A canvas implementing a moveable iconic interface.
+		  Allows attaching menus to icons and to background.
+Tk::SplitFrame  - A sliding separator for two child widgets. Allows either
+		  horizontal or vertical separation between the two widgets.
+		  Can work in concert as horizontal inside vertical or
+		  vice-versa.
+Tk::TabFrame    - A tabbed frame geometry manager (like NoteBook).
+Tk::DockFrame   - A dockable widget management widget hierarchy.
+Tk::CornerBox   - A textured window resizing widget (like in Win95)
+Tk::Signals     - A publish and subscribe object signalling method like
+		  that found in QT. Very useful when widgets that are not
+		  in the same hierarchy need to alert each other to various
+		  application level events.
+
+WWW: http://search.cpan.org/dist/Tk-DKW/
+Author: Damion K. Wilson <dkw@rcm.bm>
