@@ -113,6 +113,8 @@
 %%EXAMPLESDIR%%/graphicsview/elasticnodes.py
 %%EXAMPLESDIR%%/graphicsview/elasticnodes.pyc
 %%EXAMPLESDIR%%/itemviews/README
+%%EXAMPLESDIR%%/itemviews/basicsortfiltermodel.py
+%%EXAMPLESDIR%%/itemviews/basicsortfiltermodel.pyc
 %%EXAMPLESDIR%%/itemviews/chart/chart.py
 %%EXAMPLESDIR%%/itemviews/chart/chart.pyc
 %%EXAMPLESDIR%%/itemviews/chart/chart.qrc
@@ -142,12 +144,6 @@
 %%EXAMPLESDIR%%/itemviews/simpletreemodel/simpletreemodel.qrc
 %%EXAMPLESDIR%%/itemviews/simpletreemodel/simpletreemodel_rc.py
 %%EXAMPLESDIR%%/itemviews/simpletreemodel/simpletreemodel_rc.pyc
-%%EXAMPLESDIR%%/itemviews/sortingmodel/default.txt
-%%EXAMPLESDIR%%/itemviews/sortingmodel/sortingmodel.py
-%%EXAMPLESDIR%%/itemviews/sortingmodel/sortingmodel.pyc
-%%EXAMPLESDIR%%/itemviews/sortingmodel/sortingmodel.qrc
-%%EXAMPLESDIR%%/itemviews/sortingmodel/sortingmodel_rc.py
-%%EXAMPLESDIR%%/itemviews/sortingmodel/sortingmodel_rc.pyc
 %%EXAMPLESDIR%%/itemviews/spinboxdelegate.py
 %%EXAMPLESDIR%%/itemviews/spinboxdelegate.pyc
 %%EXAMPLESDIR%%/layouts/README
