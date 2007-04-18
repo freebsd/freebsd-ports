@@ -32,21 +32,18 @@ MLINKS=		fcatcmd.1 fcat.1 fcdcmd.1 fcd.1 fducmd.1 fdu.1 \
 		fhostcmd.1 fhost.1 flscmd.1 fls.1 fprocmd.1 fpro.1 \
 		frmdircmd.1 frmdir.1 fstatcmd.1 fstat.1 fmvcmd.1 fmv.1 \
 		fsetupcmd.1 fsetup.1
-PLIST_FILES=	bin/fspd bin/fspscan etc/fspd.conf.sample
-OPTIONS=	NOCLIENTS "Omit client commands" off \
-		INFINITE  "Infinite retry in client commands" off
+
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
+
+OPTIONS=	NOCLIENTS "Omit client commands" off \
+		INFINITE  "Infinite retry in client commands" off
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_INFINITE)
 CONFIGURE_ARGS+=	--disable-timeout
-.endif
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on 4.x"
 .endif
 
 .if !defined(WITH_NOCLIENTS)
@@ -81,4 +78,4 @@ do-install:
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/man/${MAN7} ${PREFIX}/man/man7
 
-.include <bsd.port.post.mk>
+.include <bsd.port.pre.mk>
