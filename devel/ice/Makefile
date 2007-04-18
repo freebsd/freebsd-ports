@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	Ice
-PORTVERSION=	3.1.1
+PORTVERSION=	3.2.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.zeroc.com/download/Ice/3.1/
+MASTER_SITES=	http://www.zeroc.com/download/Ice/3.2/
 
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	A modern alternative to object middleware such as CORBA/COM/DCOM/COM+
@@ -58,7 +58,7 @@ post-patch:
 		${WRKSRC}/config/Make.rules
 	${REINPLACE_CMD} 's|prefix|install_slicedir|g' ${WRKSRC}/config/Makefile
 	${REINPLACE_CMD} 's|prefix|install_slicedir|g; \
-		s|INSTALL_PROGRAM|INSTALL_DATA|g' ${WRKSRC}/config/ca/Makefile
+		s|INSTALL_PROGRAM|INSTALL_DATA|g' ${WRKSRC}/src/ca/Makefile
 	${FIND} ${WRKSRC} -name Makefile -exec ${REINPLACE_CMD} 's|-lIceSSL|-lIceSSL -lIceXML|' {} \;
 
 .include <bsd.port.post.mk>
