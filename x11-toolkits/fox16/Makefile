@@ -26,7 +26,7 @@ CONFLICTS=	fox-1.0.* fox-1.2.* fox-1.4.*
 LATEST_LINK=	fox16
 
 MAJORVER=	1.6
-SHVER=		21
+SHVER=		25
 PLIST_SUB+=	MAJORVER=${MAJORVER} SHVER=${SHVER}
 
 USE_GNOME=	lthack
@@ -41,11 +41,15 @@ MAN1=		shutterbug.1 reswrap.1
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
-.include <bsd.port.pre.mk>
+OPTIONS=	XFT	"Enable Xft support" on \
+		SHM	"Enable Shared Memory support" on \
+		CUPS	"Enable CUPS support" off \
+		DEBUG	"Build with DEBUG support" off \
+		FOX_APPLICATIONS	"Install sample applications" off \
+		OPTIMIZED_CXXFLAGS	"Enable additional optimizations" off \
+		PROFILING	"Build with PROFILING support" off
 
-.if ${OSVERSION} < 500000
-IGNORE=		Does not compile at 4.x
-.endif
+.include <bsd.port.pre.mk>
 
 ##
 ## Additional Options
@@ -122,37 +126,5 @@ post-patch:
 		s,^(SUBDIRS.*)calculator,\1,' \
 		${WRKSRC}/Makefile.in
 .endif
-
-pre-everything::
-.if !defined(WITH_OPTIMIZED_CXXFLAGS)
-	@${ECHO_MSG}
-	@${ECHO_MSG} 'You can enable additional compilation optimizations'
-	@${ECHO_MSG} 'by defining WITH_OPTIMIZED_CXXFLAGS'
-.endif
-.if !defined(WITH_CUPS)
-	@${ECHO_MSG}
-	@${ECHO_MSG} 'You can enable CUPS support by defining WITH_CUPS'
-.endif
-.if !defined(WITH_DEBUG)
-	@${ECHO_MSG}
-	@${ECHO_MSG} 'You can build DEBUG support by defining WITH_DEBUG'
-.endif
-.if !defined(WITH_FOX_APPLICATIONS)
-	@${ECHO_MSG}
-	@${ECHO_MSG} 'You can install FOX sample applications by defining WITH_FOX_APPLICATIONS"
-.endif
-.if !defined(WITH_PROFILING)
-	@${ECHO_MSG}
-	@${ECHO_MSG} 'You can build PROFILING support by defining WITH_PROFILING'
-.endif
-.if !defined(WITHOUT_SHM)
-	@${ECHO_MSG}
-	@${ECHO_MSG} 'You can disable Shared Memory support by defining WITHOUT_SHM'
-.endif
-.if !defined(WITHOUT_XFT)
-	@${ECHO_MSG}
-	@${ECHO_MSG} 'You can disable Xft support by defining WITHOUT_XFT'
-.endif
-	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
