@@ -226,6 +226,7 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/medit.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/mesh.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/movemesh.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/nl-elast-neo-Hookean.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/nolinear-elas.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/onde.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/periodic4.edp
