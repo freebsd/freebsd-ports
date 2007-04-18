@@ -2,16 +2,16 @@
 bin/snort
 @unexec if cmp  -s %D/etc/snort/classification.config-sample %D/etc/snort/classification.config; then rm -f %D/etc/snort/classification.config; fi
 etc/snort/classification.config-sample
-@exec if [ ! -f %D/etc/snort/classification.config ] ; then cp -p %D/%F %B/snort/classification.config; fi
+@exec if [ ! -f %D/etc/snort/classification.config ] ; then cp -p %D/%F %B/classification.config; fi
 @unexec if cmp  -s %D/etc/snort/gen-msg.map-sample %D/etc/snort/gen-msg.map; then rm -f %D/etc/snort/gen-msg.map; fi
 etc/snort/gen-msg.map-sample
-@exec if [ ! -f %D/etc/snort/gen-msg.map ] ; then cp -p %D/%F %B/snort/gen-msg.map; fi
+@exec if [ ! -f %D/etc/snort/gen-msg.map ] ; then cp -p %D/%F %B/gen-msg.map; fi
 @unexec if cmp  -s %D/etc/snort/generators-sample %D/etc/snort/generators; then rm -f %D/etc/snort/generators; fi
 etc/snort/generators-sample
-@exec if [ ! -f %D/etc/snort/generators ] ; then cp -p %D/%F %B/snort/generators; fi
+@exec if [ ! -f %D/etc/snort/generators ] ; then cp -p %D/%F %B/generators; fi
 @unexec if cmp  -s %D/etc/snort/reference.config-sample %D/etc/snort/reference.config; then rm -f %D/etc/snort/reference.config; fi
 etc/snort/reference.config-sample
-@exec if [ ! -f %D/etc/snort/reference.config ] ; then cp -p %D/%F %B/snort/reference.config; fi
+@exec if [ ! -f %D/etc/snort/reference.config ] ; then cp -p %D/%F %B/reference.config; fi
 @unexec if cmp -s %D/etc/snort/sid-sample %D/etc/snort/sid; then rm -f %D/etc/snort/sid; fi
 etc/snort/sid-sample
 @exec if [ ! -f %D/etc/snort/sid ] ; then cp -p %D/%F %B/sid; fi
@@ -20,13 +20,13 @@ etc/snort/sid-msg.map-sample
 @exec if [ ! -f %D/etc/snort/sid-msg.map ] ; then cp -p %D/%F %B/sid-msg.map; fi
 @unexec if cmp  -s %D/etc/snort/snort.conf-sample %D/etc/snort/snort.conf; then rm -f %D/etc/snort/snort.conf; fi
 etc/snort/snort.conf-sample
-@exec if [ ! -f %D/etc/snort/snort.conf ] ; then cp -p %D/%F %B/snort/snort.conf; fi
+@exec if [ ! -f %D/etc/snort/snort.conf ] ; then cp -p %D/%F %B/snort.conf; fi
 @unexec if cmp  -s %D/etc/snort/threshold.conf-sample %D/etc/snort/threshold.conf; then rm -f %D/etc/snort/threshold.conf; fi
 etc/snort/threshold.conf-sample
-@exec if [ ! -f %D/etc/snort/threshold.conf ] ; then cp -p %D/%F %B/snort/threshold.conf; fi
+@exec if [ ! -f %D/etc/snort/threshold.conf ] ; then cp -p %D/%F %B/threshold.conf; fi
 @unexec if cmp  -s %D/etc/snort/unicode.map-sample %D/etc/snort/unicode.map; then rm -f %D/etc/snort/unicode.map; fi
 etc/snort/unicode.map-sample
-@exec if [ ! -f %D/etc/snort/unicode.map ] ; then cp -p %D/%F %B/snort/unicode.map; fi
+@exec if [ ! -f %D/etc/snort/unicode.map ] ; then cp -p %D/%F %B/unicode.map; fi
 @dirrmtry etc/snort/rules
 @dirrmtry etc/snort
 %%DYNAMIC%%src/snort_dynamicsrc/bitop.h
