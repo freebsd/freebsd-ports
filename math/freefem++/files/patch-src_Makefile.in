@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	Mon May 15 19:03:38 2006
-+++ src/Makefile.in	Mon May 15 21:13:28 2006
-@@ -150,8 +150,9 @@
+--- src/Makefile.in.orig	Wed Apr 18 12:01:44 2007
++++ src/Makefile.in	Wed Apr 18 21:30:10 2007
+@@ -154,8 +154,9 @@
  ff_wget = @ff_wget@
  install_sh = @install_sh@
  
 +# FreeBSD patch: don't install bamg, which is available as math/bamg
- SUBDIRS = bamglib femlib iml Graphics Algo umfpack lglib fflib std x11	\
+ SUBDIRS = bamglib femlib  Graphics Algo lglib fflib std x11	\
 -nw mpi agl glx ide bamg bin-win32 
 +nw mpi agl glx ide bin-win32 
  
