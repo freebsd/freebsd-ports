@@ -1,4 +1,4 @@
-[B# New ports collection makefile for:	ja-mutt
+# New ports collection makefile for:	ja-mutt
 # Date created:		4 Sep 2000
 # Whom:			IWASHITA Yoji <shuna@pop16.odn.ne.jp>
 #
