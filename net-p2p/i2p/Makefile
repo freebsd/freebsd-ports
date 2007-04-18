@@ -6,18 +6,21 @@
 #
 
 PORTNAME=	i2p
-PORTVERSION=	0.6.1.27
+PORTVERSION=	0.6.1.28
 CATEGORIES=	net-p2p java security
-MASTER_SITES=	http://dev.i2p.net/i2p/
+MASTER_SITES=	http://dev.i2p.net/i2p/:i2p \
+		${MASTER_SITE_SOURCEFORGE:S/$/:jetty/}
+MASTER_SITE_SUBDIR=	jetty/:jetty
+DISTFILES=	\
+		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
+		${JETTY_DISTFILE}:jetty
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	An anonymous network
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/libgmp4 \
-		${LOCALBASE}/sbin/jettyctl:${PORTSDIR}/www/jetty
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-
-BROKEN=		Does not build
 
 USE_BZIP2=	yes
 USE_RC_SUBR=	i2p.sh
@@ -51,7 +54,6 @@ DOC_FILES=	\
 		overview-summary.html \
 		overview-tree.html \
 		package-list \
-		packages.html \
 		serialized-form.html \
 		stylesheet.css
 DOC_DIRS=	\
@@ -73,15 +75,12 @@ PLIST_FILES=	\
 		%%DATADIR%%/i2p.tar.bz2 \
 		%%DATADIR%%/i2pupdate.zip
 
-JETTY_JAR_FILES=	\
-		ext/ant.jar \
-		ext/commons-el.jar \
-		ext/commons-logging.jar \
-		ext/jasper-compiler.jar \
-		ext/jasper-runtime.jar \
-		ext/xercesImpl.jar \
-		lib/javax.servlet.jar \
-		lib/org.mortbay.jetty.jar
+JETTY_DISTFILE=	jetty-5.1.12.zip
+
+post-extract:
+	@${MKDIR} ${WRKSRC}/apps/jetty/
+	@${CP} -f ${DISTDIR}/${JETTY_DISTFILE} ${WRKSRC}/apps/jetty/
+	@cd ${WRKSRC}/apps/jetty && ${ANT} doExtract
 
 post-patch:
 	@${SED} \
@@ -91,13 +90,6 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|./i2prouter[[:space:]]+start||' \
 		${WRKSRC}/installer/resources/postinstall.sh
-
-pre-build:
-# copy jetty jars instead of fetching/building
-	@${MKDIR} ${WRKSRC}/apps/jetty/jettylib
-.for file in ${JETTY_JAR_FILES}
-	@${CP} ${JAVASHAREDIR}/jetty/${file} ${WRKSRC}/apps/jetty/jettylib
-.endfor
 
 do-install:
 	@${MKDIR} ${DATADIR}
