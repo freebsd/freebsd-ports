@@ -1,0 +1,86 @@
+# Makefile.features
+# Author:			Hirohisa Yamaguchi <umq@ueo.co.jp>
+#
+# This file is used to tune build time options.
+# Please refer FEATURES file distributed with the source for details.
+#
+# $FreeBSD$
+#
+
+.if defined(WITH_ALLMAN_SSP_02) && !defined(WITHOUT_ALLMAN_SSP_02)
+	@${REINPLACE_CMD} -e '/-D_FFR_ALLMAN_SSP_02/s|^dnl ||' \
+		${WRKSRC}/dkim-filter/Makefile.m4 \
+		${WRKSRC}/libdkim/Makefile.m4
+.endif
+
+.if defined(WITH_ANTICIPATE_SENDMAIL_MUNGE) && !defined(WITHOUT_ANTICIPATE_SENDMAIL_MUNGE)
+	@${REINPLACE_CMD} -e '/-D_FFR_ANTICIPATE_SENDMAIL_MUNGE/s|^dnl ||' \
+		${WRKSRC}/dkim-filter/Makefile.m4
+.endif
+
+.if defined(WITH_FLUSH_HEADERS) && !defined(WITHOUT_FLUSH_HEADERS)
+	@${REINPLACE_CMD} -e '/-D_FFR_FLUSH_HEADERS/s|^dnl ||' \
+		${WRKSRC}/dkim-filter/Makefile.m4
+.endif
+
+.if defined(WITH_LOG_SSL_ERRORS) && !defined(WITHOUT_LOG_SSL_ERRORS)
+	@${REINPLACE_CMD} -e '/-D_FFR_LOG_SSL_ERRORS/s|^dnl ||' \
+		${WRKSRC}/dkim-filter/Makefile.m4
+.endif
+
+.if defined(WITH_MULTIPLE_KEYS) && !defined(WITHOUT_MULTIPLE_KEYS)
+	@${REINPLACE_CMD} -e '/-D_FFR_MULTIPLE_KEYS/s|^dnl ||' \
+		${WRKSRC}/dkim-filter/Makefile.m4
+.endif
+
+.if defined(WITH_OMIT_HEADERS) && !defined(WITHOUT_OMIT_HEADERS)
+	@${REINPLACE_CMD} -e '/-D_FFR_OMIT_HEADERS/s|^dnl ||' \
+		${WRKSRC}/dkim-filter/Makefile.m4
+.endif
+
+.if defined(WITH_QUERY_FILE) && !defined(WITHOUT_QUERY_FILE)
+	@${REINPLACE_CMD} -e '/-D_FFR_QUERY_FILE/s|^dnl ||' \
+		${WRKSRC}/libdkim/Makefile.m4
+.endif
+
+.if defined(WITH_QUARANTINE) && !defined(WITHOUT_QUARANTINE)
+	@${REINPLACE_CMD} -e '/-D_FFR_QUARANTINE/s|^dnl ||' \
+		${WRKSRC}/dkim-filter/Makefile.m4
+.endif
+
+.if defined(WITH_REPORTINFO) && !defined(WITHOUT_REPORTINFO)
+	@${REINPLACE_CMD} -e '/-D_FFR_REPORTINFO/s|^dnl ||' \
+		${WRKSRC}/dkim-filter/Makefile.m4
+.endif
+
+.if defined(WITH_REQUIRED_HEADERS) && !defined(WITHOUT_REQUIRED_HEADERS)
+	@${REINPLACE_CMD} -e '/-D_FFR_REQUIRED_HEADERS/s|^dnl ||' \
+		${WRKSRC}/dkim-filter/Makefile.m4
+.endif
+
+.if defined(WITH_SELECT_CANONICALIZATION) && !defined(WITHOUT_SELECT_CANONICALIZATION)
+	@${REINPLACE_CMD} -e '/-D_FFR_SELECT_CANONICALIZATION/s|^dnl ||' \
+		${WRKSRC}/dkim-filter/Makefile.m4
+.endif
+
+.if defined(WITH_SELECT_SIGN_HEADERS) && !defined(WITHOUT_SELECT_SIGN_HEADERS)
+	@${REINPLACE_CMD} -e '/-D_FFR_SELECT_SIGN_HEADERS/s|^dnl ||' \
+		${WRKSRC}/dkim-filter/Makefile.m4
+.endif
+
+.if defined(WITH_SET_DNS_CALLBACK) && !defined(WITHOUT_SET_DNS_CALLBACK)
+	@${REINPLACE_CMD} -e '/-D_FFR_SET_DNS_CALLBACK/s|^dnl ||' \
+		${WRKSRC}/dkim-filter/Makefile.m4 \
+		${WRKSRC}/libdkim/Makefile.m4
+.endif
+
+.if defined(WITH_SET_REPLY) && !defined(WITHOUT_SET_REPLY)
+	@${REINPLACE_CMD} -e '/-D_FFR_SET_REPLY/s|^dnl ||' \
+		${WRKSRC}/dkim-filter/Makefile.m4
+.endif
+
+.if defined(WITH_VBR) && !defined(WITHOUT_VBR)
+	@${REINPLACE_CMD} -e '/-D_FFR_VBR/s|^dnl ||' \
+		${WRKSRC}/dkim-filter/Makefile.m4 \
+		${WRKSRC}/libdkim/Makefile.m4
+.endif

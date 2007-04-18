@@ -13,7 +13,7 @@
 ## base system, building this port may fail.
 
 PORTNAME=	dkim-milter
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,6 +22,7 @@ MAINTAINER=	umq@ueo.co.jp
 COMMENT=	Domainkeys Identified Mail (DKIM) milter
 
 USE_RC_SUBR=	milter-dkim.sh
+USE_OPENSSL=	yes
 
 .if defined(WITH_POSTFIX_MILTER) || defined(WITH_POSTFIX) || defined(WITH_POSTFIX_CURRENT)
 SENDMAIL_MILTER_IN_BASE=	yes
@@ -75,6 +76,10 @@ pre-fetch:
 	@${FALSE}
 .endif
 	@${ECHO_MSG}
+	@${ECHO_MSG} "If you do not have OpenSSL 0.9.8 or later installed,"
+	@${ECHO_MSG} "set WITH_OPENSSL_PORT=yes to support rsa-sha256 algorithm"
+	@${ECHO_MSG} "which is requied in the latest specification."
+	@${ECHO_MSG}
 	@${ECHO_MSG} "dkim-milter has the following tunable option(s):"
 #	@${ECHO_MSG} " WITH_VERIFY_DOMAINKEYS=yes	Verify DomainKeys using dk-milter's libdk"
 	@${ECHO_MSG} " SENDMAIL_MILTER_IN_BASE=yes	Build to run with base sendmail"
@@ -93,6 +98,8 @@ post-patch:
 		${WRKSRC}/devtools/OS/FreeBSD
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
+		-e "s|%%OPENSSLINC%%|${OPENSSLINC}|g" \
+		-e "s|%%OPENSSLLIB%%|${OPENSSLLIB}|g" \
 		${SITE} > ${WCONF}/site.config.m4
 
 .if defined(WITH_VERIFY_DOMAINKEYS) && !defined(WITHOUT_VERIFY_DOMAINKEYS)
@@ -102,6 +109,8 @@ post-patch:
 		${WRKSRC}/dkim-filter/Makefile.m4
 	${LN} -s ${LIBDK_PATH} ${WRKSRC}/
 .endif
+
+.include "${.CURDIR}/Makefile.features"
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/libexec/dkim-filter
