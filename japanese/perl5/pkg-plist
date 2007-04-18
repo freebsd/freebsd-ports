@@ -536,8 +536,8 @@ lib/perl5/%%JPERL_VERSION%%/vars.pm
 @dirrmtry lib/perl5/site_perl/%%JPERL_VER%%
 @dirrmtry lib/perl5/site_perl
 @dirrmtry lib/perl5/%%JPERL_VERSION%%/pod
-%%NOTON4%%@dirrmtry lib/perl5/%%JPERL_VERSION%%/man/man3
-%%NOTON4%%@dirrmtry lib/perl5/%%JPERL_VERSION%%/man
+@dirrmtry lib/perl5/%%JPERL_VERSION%%/man/man3
+@dirrmtry lib/perl5/%%JPERL_VERSION%%/man
 @dirrmtry lib/perl5/%%JPERL_VERSION%%/%%JPERL_ARCH%%/auto/sdbm
 @dirrmtry lib/perl5/%%JPERL_VERSION%%/%%JPERL_ARCH%%/auto/re
 @dirrmtry lib/perl5/%%JPERL_VERSION%%/%%JPERL_ARCH%%/auto/attrs
@@ -608,5 +608,5 @@ lib/perl5/%%JPERL_VERSION%%/vars.pm
 @dirrmtry lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/CORE
 @dirrmtry lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/B
 @dirrmtry lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%
-%%NOTON4%%@dirrmtry lib/perl5/%%JPERL_VERSION%%
+@dirrmtry lib/perl5/%%JPERL_VERSION%%
 @dirrmtry lib/perl5

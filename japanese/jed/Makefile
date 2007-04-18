@@ -47,11 +47,6 @@ CONFIGURE_ARGS+=	--with-canna=yes
 LIBDEP_CANNA=		canna.1:${PORTSDIR}/japanese/Canna
 .endif
 
-# XJED core dumps on 3.x-STABLE for the present.
-.if ${OSVERSION} < 400000
-XJED_BROKEN=	yes
-.endif
-
 .if defined(WITHOUT_X11)
 WITHOUT_XJED=	yes
 .endif

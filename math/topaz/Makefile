@@ -19,13 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_XLIB=	yes
 MAKEFILE=	Makefile.freebsd
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400010
-LIB_DEPENDS+=	ncurses:${PORTSDIR}/devel/ncurses
-.endif
-
 post-install:
 	${LN} -sf ${PREFIX}/lib/topaz/topaz.sh ${PREFIX}/bin/topaz
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

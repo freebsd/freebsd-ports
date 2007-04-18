@@ -95,12 +95,6 @@ CONFIGURE_ARGS+=	--disable-itcl --disable-tcl --disable-tk
 PLIST_SUB+=	TCLTK="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		incorrectly generates pkg-config files
-.endif
-
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "PLplot has the following tunable options:"
@@ -136,4 +130,4 @@ post-install:
 		${DOCSDIR}/README.1st.csa
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

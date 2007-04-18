@@ -87,21 +87,11 @@ pre-build:
 .endif
 .endif
 
-# formatting groff.info requires texinfo 4.2
-.if ${OSVERSION} < 470000
-WITHOUT_INFO=	yes
-.endif
-
 .if defined(WITHOUT_INFO)
 PLIST_SUB+=	INFO="@comment "
 .else
 INFO=		groff
 PLIST_SUB+=	INFO=""
-.endif
-
-# wchar.h is exist since 4.4-RELEASE
-.if ${OSVERSION} < 440000
-WITHOUT_WCHAR_H=	yes
 .endif
 
 POST_INSTALL_SEQ=	install-links

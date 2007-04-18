@@ -29,13 +29,7 @@ LDFLAGS=	${PTHREAD_LIBS}
 CFLAGS+=	-O2 -fno-strict-aliasing
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

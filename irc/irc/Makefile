@@ -36,9 +36,11 @@ GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/ircd
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/ircd.sh
 
+OPTIONS=	IPV6	"Enable IPv6 support"	on
+
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 400014
+.if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ip6
 .endif
 

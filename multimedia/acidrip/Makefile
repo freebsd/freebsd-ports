@@ -23,16 +23,10 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 MAN1=		acidrip.1
 
-.include <bsd.port.pre.mk>
-
 .if defined(WITH_DVD_DEVICE)
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
 .else
-.if ${OSVERSION} < 500000
-DEFAULT_DVD_DEVICE=/dev/acd0c
-.else
 DEFAULT_DVD_DEVICE=/dev/acd0
-.endif
 .endif
 
 pre-everything::
@@ -47,4 +41,4 @@ post-patch:
 		${WRKSRC}/AcidRip/acidrip.pm
 	@${RM} ${WRKSRC}/AcidRip/*.bak
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

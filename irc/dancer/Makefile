@@ -19,6 +19,7 @@ PATCH_WRKSRC=		${WRKDIR}/${DISTNAME}
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	yes
 MAKE_ARGS+=	CSPECIAL="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+LDFLAGS+=	-lm
 
 do-install:
 	@${MKDIR} ${DATADIR}
@@ -27,10 +28,4 @@ do-install:
 		dancer.config dancer.users \
 		dancer.funcs dancer.explain ${DATADIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500000
-LDFLAGS+=	-lm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

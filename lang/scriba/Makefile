@@ -32,10 +32,6 @@ OPTIONS=	BDB	"Berkeley DB extension"		off \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"coredumps a lot"
-.endif
-
 .if ${ARCH} == "ia64"
 BROKEN=		"fails to compile"
 .endif

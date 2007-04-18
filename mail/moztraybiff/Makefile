@@ -38,13 +38,7 @@ PLIST_DIRS=	share/${PORTNAME}
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e "s|-fshort-wchar||" \
-		${WRKSRC}/components/Makefile
-.endif
 	@${REINPLACE_CMD} -e "s|^#!/bin/bash|#!/bin/sh|" \
 		${WRKSRC}/get-platform
 
@@ -57,4 +51,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

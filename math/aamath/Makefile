@@ -22,15 +22,7 @@ MAN1=		aamath.1
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 LDFLAGS=	-lreadline
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS=	${LOCALBASE}/lib/libreadline.so
-.endif
-
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/aamath ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

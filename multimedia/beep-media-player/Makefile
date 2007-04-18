@@ -78,7 +78,7 @@ PLIST_SUB+=	ESDPLUGIN:="@comment "
 WITHOUT_3DNOW=	yes
 .endif
 
-.if !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
+.if !defined(WITHOUT_3DNOW)
 CONFIGURE_ARGS+=	--enable-3dnow
 .endif
 

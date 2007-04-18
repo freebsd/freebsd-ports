@@ -38,15 +38,9 @@ PLIST_DIRS=	%%DATADIR%%
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile on 4.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CPPFLAGS=|#CPPFLAGS=|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|config 3rdparty|config|g ; \
 		 s|^install-data-am:|install-data-am:#|g' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

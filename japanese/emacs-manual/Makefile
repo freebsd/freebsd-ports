@@ -49,14 +49,6 @@ TEXINFO=	emacs.texi
 EMACS_ARGS=	-batch -nw --multibyte -no-init-file -no-site-file
 EMACS_LOADLIBS=	--load=texinfmt.el --load=PORT_TEXIFMT.MK
 
-.include <bsd.port.pre.mk>
-
-.if defined(PACKAGE_BUILDING)
-.if ${OSVERSION} < 500000
-IGNORE=		is broken: hangs during build
-.endif
-.endif
-
 post-extract:
 	${CP} ${FILESDIR}/PORT_TEXIFMT.MK ${WRKSRC}
 	@(cd ${WRKDIR} && \
@@ -91,4 +83,4 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/info/$i.info ${PREFIX}/${INFO_PATH}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

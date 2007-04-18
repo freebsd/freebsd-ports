@@ -97,10 +97,8 @@ lib/libILEngine.a
 lib/libILImage.a
 lib/libILLink.a
 lib/libILSupport.a
-%%I386%%%%IS4X%%lib/pnet/elf/libffi.a
-%%I386%%%%IS4X%%lib/pnet/elf/libffi.la
-%%I386%%%%ISNOT4X%%lib/pnet/libffi.a
-%%I386%%%%ISNOT4X%%lib/pnet/libffi.la
+%%I386%%lib/pnet/elf/libffi.a
+%%I386%%lib/pnet/elf/libffi.la
 %%I386%%lib/pnet/libgc.a
 %%I386%%lib/pnet/libgc.la
 %%I386%%lib/pnet/libgc.so
@@ -139,7 +137,7 @@ lib/libILSupport.a
 %%I386%%share/gc/tree.html
 %%I386%%@dirrm include/pnet/gc
 @dirrm include/pnet
-%%I386%%%%IS4X%%@dirrm lib/pnet/elf
+%%I386%%@dirrm lib/pnet/elf
 %%I386%%@dirrm lib/pnet
 @dirrm lib/cscc/plugins
 @dirrmtry lib/cscc

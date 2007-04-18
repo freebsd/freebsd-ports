@@ -24,13 +24,6 @@ CONFIGURE_ARGS=	--with-readline \
 MAN1=		pinfo.1
 INFO=		pinfo
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400010
-LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-CONFIGURE_ARGS+=	--with-ncurses=${LOCALBASE}
-.endif
-
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
@@ -39,4 +32,4 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

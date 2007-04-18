@@ -39,10 +39,6 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 .endif
 
-.if ${OSVERSION} < 500000
-BROKEN=	does not compile on 4.x: bad C++ code
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} "s|LOCALBASE|${LOCALBASE}|" ${WRKSRC}/src/scim_skk_prefs.h
 

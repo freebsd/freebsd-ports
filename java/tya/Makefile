@@ -27,12 +27,8 @@ CONFIGURE_ARGS+=	--with-jdk=${JAVADIR}
 JAVADIR?=	${LOCALBASE}/jdk1.1.8
 JAVALIBDIR=	${PREFIX}/lib/tya
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
 post-patch:
 	@${REINPLACE_CMD} -e "s|-malign|-falign|g" ${WRKSRC}/Makefile.in
-.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/README
@@ -48,4 +44,4 @@ do-install:
 	@${ECHO_MSG} ""
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
