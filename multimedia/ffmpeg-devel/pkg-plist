@@ -27,11 +27,11 @@ include/postproc/postprocess.h
 lib/libavcodec.a
 lib/libavcodec.so
 lib/libavcodec.so.%%SHLIB_VER%%
-lib/libavcodec.so.51.40.2
+lib/libavcodec.so.51.40.3
 lib/libavformat.a
 lib/libavformat.so
 lib/libavformat.so.%%SHLIB_VER%%
-lib/libavformat.so.51.11.0
+lib/libavformat.so.51.12.1
 lib/libavutil.a
 lib/libavutil.so
 lib/libavutil.so.%%SHLIB_VER%%
