@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	forks
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../../authors/id/R/RY/RYBSKEJ
+MASTER_SITE_SUBDIR=	SOAP/RYBSKEJ
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Drop-in replacement for Perl threads using fork()
 
-RUN_DEPENDS=	${SITE_PERL}/reaper.pm:${PORTSDIR}/devel/p5-reaper
+RUN_DEPENDS=	${SITE_PERL}/reaper.pm:${PORTSDIR}/devel/p5-reaper \
+		p5-Devel-Required>=0:${PORTSDIR}/devel/p5-Devel-Required \
+		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -27,10 +29,6 @@ MAN3=		forks.3 forks::shared.3 \
 		threads::shared::scalar.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 then try again
-.endif
 
 .if ${PERL_LEVEL} < 500702
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
