@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.6.1.3
+PORTVERSION=	2.6.1.4
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/current/
 
