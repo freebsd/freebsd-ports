@@ -27,16 +27,10 @@ DOCS=		BUGS README TODO
 
 MAN1=		dumpelf.1 pspax.1 scanelf.1
 
-.include <bsd.port.pre.mk>
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/dumpelf ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/pspax ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/scanelf ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/* ${PREFIX}/man/man1
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
