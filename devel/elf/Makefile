@@ -9,7 +9,7 @@ PORTNAME=	elf
 PORTVERSION=	0.5.4p1
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.kerneled.org/files/FreeBSD-ports/
+MASTER_SITES=	http://samy.kerneled.org/projects/
 
 MAINTAINER=	sbahra@gwu.edu
 COMMENT=	A commandline based ELF header analyzer
