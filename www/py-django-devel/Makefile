@@ -16,7 +16,7 @@ DISTNAME=	Django-${PORTVERSION}
 DIST_SUBDIR=	python
 SNAPSHOT=	20070404
 
-MAINTAINER=	python@FreeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High-level Python Web framework
 
 USE_GETTEXT=	yes

@@ -9,12 +9,13 @@ PORTNAME=	icalendar
 PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	devel python
-MASTER_SITES=	http://codespeak.net/icalendar/
+MASTER_SITES=	http://codespeak.net/icalendar/ \
+		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	iCalendar-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	python@FreeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Parser and generator of iCalender files for Python
 
 BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools

@@ -9,11 +9,12 @@
 PORTNAME=	mechanize
 PORTVERSION=	0.1.6.b
 CATEGORIES=	www python
-MASTER_SITES=	http://wwwsearch.sourceforge.net/mechanize/src/
+MASTER_SITES=	http://wwwsearch.sourceforge.net/mechanize/src/ \
+		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
-MAINTAINER=	python@FreeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Stateful programmatic web browsing in Python
 
 BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools \
