@@ -41,5 +41,8 @@ include/telepathy-1.0/libtelepathy/tp-props-iface-gen.h
 include/telepathy-1.0/libtelepathy/tp-props-iface.h
 lib/libtelepathy.a
 lib/libtelepathy.la
+lib/libtelepathy.so
 lib/libtelepathy.so.3
 libdata/pkgconfig/libtelepathy.pc
+@dirrmtry include/telepathy-1.0/libtelepathy
+@dirrmtry include/telepathy-1.0
