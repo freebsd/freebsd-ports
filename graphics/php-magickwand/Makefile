@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.magickwand.org/download/php/
 PKGNAMEPREFIX=	php-
 DISTNAME=	MagickWandForPHP-${PORTVERSION}
 
-MAINTAINER=	mark@goodstorm.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PHP extension to manipulate images
 
 LIB_DEPENDS=	Magick.10:${PORTSDIR}/graphics/ImageMagick
