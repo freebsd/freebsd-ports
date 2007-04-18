@@ -1,7 +1,6 @@
 $FreeBSD$
-
---- bin/forrest	Sun Jun 19 11:54:14 2005
-+++ bin/forrest.port	Thu Jun 30 14:16:09 2005
+--- bin/forrest	Tue Apr 10 18:17:55 2007
++++ bin/forrest.port	Mon Apr 16 14:24:52 2007
 @@ -20,6 +20,7 @@
  
  cygwin=false;
@@ -15,34 +14,34 @@ $FreeBSD$
             fi
             ;;
 +  FreeBSD*) freebsd=true
-+	    if [ -z "$JAVA_HOME" ] ; then
-+		JAVA_HOME=%%JAVA_HOME%%
-+	    fi
-+	    ;;
++	   if [ -z "$JAVA_HOME" ]; then
++	     JAVA_HOME=%%JAVA_HOME%%
++	   fi
++	   ;;
  esac
-+export JAVA_HOME;
++export JAVA_HOME
  
  if [ "$cygwin" = "true" ] ; then
    PROJECT_HOME=`cygpath -w "$PWD"`
-@@ -72,6 +79,12 @@
-   FORREST_DOT_HOME=$FORREST_HOME
+@@ -35,6 +42,12 @@
+   PROJECT_HOME=`pwd`
  fi
  
 +if [ -z "$DISPLAY" ]; then
-+	JAVA_AWT_HEADLESS="-Dforrest.jvmargs=-Djava.awt.headless=true"
++       JAVA_AWT_HEADLESS="-Dforrest.jvmargs=-Djava.awt.headless=true"
 +else
-+	JAVA_AWT_HEADLESS=''
++       JAVA_AWT_HEADLESS=''
 +fi
 +
- # set the ant file to use
- ANTFILE="$FORREST_DOT_HOME/main/forrest.build.xml"
+ if [ -z "$FORREST_HOME" ] ; then
+   # use the location of this script to infer $FORREST_HOME
  
-@@ -94,7 +107,7 @@
+@@ -97,7 +110,7 @@
  echo "Apache Forrest.  Run 'forrest -projecthelp' to list options"
  echo
  export FORREST_HOME
--"$ANT_HOME/bin/ant" --noconfig -buildfile "$ANTFILE" -Dbasedir="$PROJECT_HOME" -emacs $@
-+"$ANT_HOME/bin/ant" --noconfig -buildfile "$ANTFILE" -Dbasedir="$PROJECT_HOME" ${JAVA_AWT_HEADLESS} -emacs $@
+-"$ANT_HOME/bin/ant" --noconfig -buildfile "$ANTFILE" -Dbasedir="$PROJECT_HOME" -emacs "$@"
++"$ANT_HOME/bin/ant" --noconfig -buildfile "$ANTFILE" -Dbasedir="$PROJECT_HOME" ${JAVA_AWT_HEADLESS} -emacs "$@"
  RESULT=$?
  
  # ---- Restore Classpath
