@@ -44,10 +44,6 @@ MAN5=		libsocks5.conf.5 socks5.conf.5 socks5.passwd.5
 CONFIGURE_ENV=	LIBS=-lcrypt
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/rc.d/socks5.sh ]; then \
-		${ECHO} "Creating ${PREFIX}/etc/rc.d/socks5.sh startup file."; \
-		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/socks5.sh.sample ${PREFIX}/etc/rc.d/socks5.sh; \
-	 fi
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
