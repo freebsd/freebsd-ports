@@ -1,4 +1,4 @@
-@stopdaemon
+@stopdaemon mysql-server
 bin/comp_err
 bin/isamchk
 bin/isamlog
