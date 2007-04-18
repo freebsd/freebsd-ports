@@ -36,6 +36,10 @@ MAN6=		empire.6 emp_server.6
 post-patch:
 	${REINPLACE_CMD} -e '/^econfig/,/^$$/s|/empire|/${PORTNAME}|' \
 		${WRKSRC}/Make.mk
+.if ${ARCH} == "sparc64"
+	${REINPLACE_CMD} -e '/ucontext\.h/p; s|ucontext\.h|sys/types.h|' \
+		${WRKSRC}/src/lib/lwp/lwpint.h
+.endif
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
