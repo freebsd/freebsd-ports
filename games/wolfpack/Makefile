@@ -37,7 +37,7 @@ post-patch:
 	${REINPLACE_CMD} -e '/^econfig/,/^$$/s|/empire|/${PORTNAME}|' \
 		${WRKSRC}/Make.mk
 .if ${ARCH} == "sparc64"
-	${REINPLACE_CMD} -e '/ucontext\.h/p; s|ucontext\.h|sys/types.h|' \
+	${REINPLACE_CMD} -e '/ucontext\.h/ { h; s|ucontext|sys/types|; G; }' \
 		${WRKSRC}/src/lib/lwp/lwpint.h
 .endif
 
