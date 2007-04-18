@@ -10,7 +10,7 @@ PORTVERSION=	4.6.7
 CATEGORIES=	security
 MASTER_SITES=	http://files.f-prot.com/files/bsd-x86/trial/
 DISTNAME=	fp-freebsd-ms.trial
-IGNOREFILES=	${DISTFILES}${EXTRACT_SUFX}
+IGNOREFILES=	${DISTFILES}
 
 MAINTAINER=	swhetzel@gmail.com
 COMMENT=	F-Prot Antivirus for BSD Mail Server
