@@ -44,6 +44,7 @@ lib/yorick/i/test1.i
 lib/yorick/i/sysafe.i
 lib/yorick/i/style.i
 lib/yorick/i/string.i
+lib/yorick/i/splinef.i
 lib/yorick/i/spline.i
 lib/yorick/i/slice3.i
 lib/yorick/i/silo.i
@@ -63,7 +64,9 @@ lib/yorick/i/plwf.i
 lib/yorick/i/plclab.i
 lib/yorick/i/plato.i
 lib/yorick/i/pl3d.i
+lib/yorick/i/pkg_mngr.i
 lib/yorick/i/pixels.i
+lib/yorick/i/pathfun.i
 lib/yorick/i/netcdf.i
 lib/yorick/i/multi.i
 lib/yorick/i/msort.i
@@ -100,12 +103,14 @@ lib/yorick/i/convol.i
 lib/yorick/i/color.i
 lib/yorick/i/collec.i
 lib/yorick/i/cheby.i
+lib/yorick/i/calendar.i
 lib/yorick/i/button.i
 lib/yorick/i/bowtie.i
 lib/yorick/i/bessel.i
 lib/yorick/i/basfix.i
 lib/yorick/include/yio.h
 lib/yorick/include/ydata.h
+lib/yorick/include/yapi.h
 lib/yorick/include/yasync.h
 lib/yorick/include/prmtyp.h
 lib/yorick/include/parse.h
