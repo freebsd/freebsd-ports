@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		apache-forrest
-PORTVERSION=		0.7
+PORTVERSION=		0.8
 CATEGORIES=		www java
 MASTER_SITES=		${MASTER_SITE_APACHE} \
 			http://mirror.tomato.it/apache/forrest/ \

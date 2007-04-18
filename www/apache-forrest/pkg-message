@@ -11,10 +11,10 @@
 
       1)  $ mkdir mysite; cd mysite
       2)  $ forrest seed
-      3)  $ forrest
-      4)  see results in ./build/site/index.html with your web browser
+      3)  $ forrest run
+      4)  point your web browser to http://localhost:8888
 
-  To avoid any issue with old classes being loaded, run a 'forrest clean'
+  To avoid any issue with old classes being loaded, run a 'forrest clean-work'
   in your project directory, after you upgraded to this version (%%PORTVERSION%%)
 
 *************************************************************************
