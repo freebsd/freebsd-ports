@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--cc="${CC}" --prefix="${PREFIX}" \
 		--extra-libs="${PTHREAD_LIBS}" \
 		--disable-bktr \
 		--enable-gpl
+CONFIGURE_ENV+=	LANG=C
 MAKE_ENV=	INSTALL="${INSTALL}"
 SHLIB_VER=	1
 PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
