@@ -20,12 +20,6 @@ PLIST_FILES=	bin/xdd bin/timeserver bin/gettime
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(c|cpp|h)
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Doesn't build on 4.x
-.endif
-
 post-extract:
 	${CP} ${FILESDIR}/freebsd.makefile ${WRKSRC}
 
@@ -37,4 +31,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/timeserver.freebsd ${PREFIX}/bin/timeserver
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/gettime.freebsd ${PREFIX}/bin/gettime
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
