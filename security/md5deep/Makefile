@@ -24,14 +24,8 @@ MLINKS=		md5deep.1 sha1deep.1 md5deep.1 sha256deep.1 \
 PLIST_FILES=	bin/md5deep bin/sha1deep bin/sha256deep \
 		bin/whirlpooldeep bin/tigerdeep
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD 4.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's!/usr/local!${PREFIX}!' \
 	-e 's!-Wall -W -O3!${CFLAGS}!' ${WRKSRC}/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
