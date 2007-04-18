@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	Ice
-PORTVERSION=	3.1.0
+PORTVERSION=	3.2.0
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.zeroc.com/download/Ice/3.1/
+MASTER_SITES=	http://www.zeroc.com/download/Ice/3.2/
 PKGNAMEPREFIX=	py-
 DISTNAME=	IcePy-${PORTVERSION}
 

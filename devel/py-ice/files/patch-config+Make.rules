@@ -1,5 +1,5 @@
---- config/Make.rules.orig	Thu Jul  6 20:35:10 2006
-+++ config/Make.rules	Thu Aug  3 21:15:07 2006
+--- config/Make.rules.orig	Thu Mar  1 20:11:25 2007
++++ config/Make.rules	Fri Apr 13 19:42:32 2007
 @@ -7,6 +7,8 @@
  #
  # **********************************************************************
@@ -7,9 +7,9 @@
 +ICE_HOME		= %%LOCALBASE%%
 +
  ifndef ICE_HOME
-     $(error ICE_HOME is not defined)
- endif
-@@ -16,7 +18,7 @@
+    ifneq ($(shell test -f /usr/include/Ice/Ice.h && echo 0),0)
+       $(error Ice installation not found, please set ICE_HOME!)
+@@ -18,7 +20,7 @@
  # if it does not exist.
  #
  
@@ -17,42 +17,26 @@
 +prefix			= %%PREFIX%%
  
  #
- # When creating an executable, shall we add install_libdir to the
-@@ -68,13 +70,13 @@
+ # The "root directory" for runpath embedded in executables. Can be unset
+@@ -69,13 +71,13 @@
      # version used for building the Ice extension, then set PYTHON_VERSION
      # to "python2.3" or "python2.4".
      #
--    PYTHON_VERSION	?= $(word 1,$(notdir $(wildcard /usr/include/python2.[34]*)))
-+    PYTHON_VERSION	?= $(word 1,$(notdir $(wildcard %%LOCALBASE%%/include/python2.[34]*)))
+-    PYTHON_VERSION	?= $(word 1,$(notdir $(wildcard /usr/include/python2.[345]*)))
++    PYTHON_VERSION	?= $(word 1,$(notdir $(wildcard %%LOCALBASE%%/include/python2.[345]*)))
      ifeq ($(PYTHON_VERSION),)
        python_darwin_home = /System/Library/Frameworks/Python.framework/Versions/Current
-       PYTHON_VERSION 	= $(word 1,$(notdir $(wildcard $(python_darwin_home)/include/python2.[34]*)))
+       PYTHON_VERSION 	= $(word 1,$(notdir $(wildcard $(python_darwin_home)/include/python2.[345]*)))
      endif
 -    PYTHON_INCLUDE_DIR	= /usr/include/$(PYTHON_VERSION)
 -    PYTHON_LIB_DIR	= /usr/lib/$(PYTHON_VERSION)/config
 +    PYTHON_INCLUDE_DIR	= %%LOCALBASE%%/include/$(PYTHON_VERSION)
-+    PYTHON_LIB_DIR	= %%LOCALBASE%%/lib/$(PYTHON_VERSION)
++    PYTHON_LIB_DIR	= %%LOCALBASE%%/lib/$(PYTHON_VERSION)/config
  endif
  
  ifeq ($(PYTHON_VERSION),)
-@@ -109,21 +111,21 @@
-     slicedir		= $(ICE_HOME)/slice
- endif
- 
--ifeq ($(LP64),yes)
-+#ifeq ($(LP64),yes)
- #
- # TODO: Where should the shared library be installed if it is a 64 bit
- # build.
- #
--    install_libdir	= $(prefix)/python
--else
--    install_libdir	= $(prefix)/python
--endif
-+#    install_libdir	= $(prefix)/python
-+#else
-+    install_libdir	= %%PYTHON_SITELIBDIR%%/Ice
-+#endif
+@@ -102,10 +104,10 @@
+ libdir			= $(top_srcdir)/python
  
  install_slicedir	= $(prefix)/slice
 -install_pythondir	= $(prefix)/python
@@ -65,3 +49,18 @@
  INSTALL_LIBRARY		= ${INSTALL}
  INSTALL_DATA		= ${INSTALL}
  
+@@ -136,12 +138,12 @@
+ endif
+ 
+ ifneq ($(ICE_HOME),)
+-    slicedir		= $(ICE_HOME)/slice
++    slicedir		= $(ICE_HOME)/share/Ice
+ else
+     slicedir		= /usr/share/Ice-$(VERSION)/slice
+ endif
+ 
+-install_libdir	        = $(prefix)/python
++install_libdir	        = %%PYTHON_SITELIBDIR%%/Ice
+ 
+ ifneq ($(embedded_runpath_prefix),)
+    ifeq ($(LP64),yes)
