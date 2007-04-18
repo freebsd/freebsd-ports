@@ -106,7 +106,6 @@ post-install:
 .endif
 
 replace:
-.if ${OSVERSION} >= 400014
 	@${ECHO_MSG} "===> Activating smail in /etc/mail/mailer.conf"
 	${MV} -f /etc/mail/mailer.conf /etc/mail/mailer.conf.bak
 	@${ECHO_CMD} "#" > /etc/mail/mailer.conf
@@ -117,38 +116,5 @@ replace:
 	@${ECHO_CMD} "send-mail	${PREFIX}/bin/smail" >> /etc/mail/mailer.conf
 	@${ECHO_CMD} "mailq		${PREFIX}/bin/smail" >> /etc/mail/mailer.conf
 	@${ECHO_CMD} "newaliases	${PREFIX}/bin/smail" >> /etc/mail/mailer.conf
-.else
-	@${ECHO_MSG} "===> Replacing sendmail programs"
-	if [ -e /usr/sbin/sendmail ]; then \
-		${MV} -f /usr/sbin/sendmail /usr/sbin/sendmail.BAK; \
-		if [ -f /usr/sbin/sendmail.BAK ]; then \
-			${CHMOD} 0 /usr/sbin/sendmail.BAK; \
-		fi;\
-	fi
-	if [ -e ${PREFIX}/bin/smail ]; then \
-		${LN} -s ${PREFIX}/bin/smail /usr/sbin/sendmail; \
-	fi
-	if [ -f /usr/sbin/mailstats ]; then \
-		${CHMOD} 0 /usr/sbin/mailstats; \
-	fi
-	if [ -e /usr/bin/newaliases ]; then \
-		${MV} -f /usr/bin/newaliases /usr/bin/newaliases.BAK; \
-		if [ -f /usr/bin/newaliases.BAK ]; then \
-			${CHMOD} 0 /usr/bin/newaliases.BAK; \
-		fi;\
-	fi
-	if [ -e ${PREFIX}/bin/newaliases ]; then \
-		${LN} -s ${PREFIX}/bin/newaliases /usr/bin/newaliases; \
-	fi
-	if [ -e /usr/bin/mailq ]; then \
-		${MV} -f /usr/bin/mailq /usr/bin/mailq.BAK; \
-		if [ -f /usr/bin/mailq.BAK ]; then \
-			${CHMOD} 0 /usr/bin/mailq.BAK; \
-		fi;\
-	fi
-	if [ -e ${PREFIX}/bin/mailq ]; then \
-		${LN} -s ${PREFIX}/bin/mailq /usr/bin/mailq; \
-	fi
-.endif
 
 .include <bsd.port.post.mk>

@@ -22,9 +22,11 @@ CONFIGURE_ARGS=	--enable-pam --enable-apop --enable-bulletins \
 		--enable-last --enable-mapping --enable-nonip --enable-connect
 CONFIGURE_ENV=	LDFLAGS="-lmd"
 
+OPTIONS=	IPV6	"Enable IPv6 support"	On
+
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 400014
+.if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 

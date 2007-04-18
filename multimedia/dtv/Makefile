@@ -18,10 +18,4 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 NOT_FOR_ARCHS=	sparc64
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-IGNORE=		"cannot be build on alpha 4.x, which does not have bktr hardware support"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

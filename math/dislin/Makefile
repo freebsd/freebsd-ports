@@ -35,11 +35,9 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500000 && ${OSVERSION} < 600000
+.if ${OSVERSION} < 600000
 BINVER=		-5.4
-.endif
-
-.if ${OSVERSION} >= 600000
+.else
 BINVER=		-6.0
 .endif
 

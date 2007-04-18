@@ -50,12 +50,6 @@ FIX_VAR_FILES=	${WRKSRC}/packaging_tools/perl/GPT/Localize.pm \
 		${WRKSRC}/packaging_tools/perl/scripts/gpt-config \
 		${WRKSRC}/tools/testArchiveTar
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not build
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|@@PERL@@|${PERL}|g" ${WRKSRC}/build_gpt
 	@${REINPLACE_CMD} -e 's|$$gpath/var/lib/perl|/var/db/gpt|g' ${FIX_VAR_FILES}
@@ -65,4 +59,4 @@ do-install:
 	@cd ${WRKSRC}; \
 	GPT_LOCATION=${PREFIX} ./build_gpt --with-perl=${PERL}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

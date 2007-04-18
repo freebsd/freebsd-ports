@@ -25,11 +25,7 @@ USE_GMAKE=	YES
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-REGR_LOG=	log.run-4stable
-.else
 REGR_LOG=	log.run-5current
-.endif
 
 RUN_RESULT=	${WRKSRC}/run.result
 LOCAL_REGR_LOG=	${WRKSRC}/regression.result

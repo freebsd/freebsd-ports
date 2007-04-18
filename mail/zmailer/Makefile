@@ -26,10 +26,6 @@ CONFIGURE_ARGS=	--without-openssl
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-EAI_NODATA
-.endif
-
 CONFIGURE_ARGS+=--prefix=${PREFIX}/ \
 		--with-mailbin=${PREFIX}/sbin \
 		--with-mailbox=/var/mail \

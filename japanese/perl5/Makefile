@@ -55,12 +55,6 @@ PERL_SHLIBVER=	1
 PLIST_SUB=	JPERL_VERSION=${JPERL_VERSION} JPERL_VER=${JPERL_VER} \
 		JPERL_ARCH=${JPERL_ARCH}
 
-.if ${OSVERSION} < 500000
-PLIST_SUB+=	NOTON4="@comment "
-.else
-PLIST_SUB+=	NOTON4=""
-.endif
-
 MAN1= 	a2p.1 c2ph.1 h2ph.1 h2xs.1 perl.1 perl5004delta.1 \
 	perlapio.1 perlbook.1 perlbot.1 perlbug.1 perlcall.1 \
 	perldata.1 perldebug.1 perldelta.1 perldiag.1 perldoc.1 \

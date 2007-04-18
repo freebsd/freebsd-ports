@@ -23,7 +23,8 @@ HAS_CONFIGURE=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 
-CONFIGURE_ARGS=	--with-libdb=3
+CONFIGURE_ARGS=	--with-libdb=3 \
+		--with-readline
 CPPFLAGS=	-I${LOCALBASE}/include
 CFLAGS+=		${CPPFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib
@@ -37,11 +38,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/info/*.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-# doesn't work with readline on FreeBSD 4.x
-.if ${OSVERSION} >= 500000
-CONFIGURE_ARGS+=	--with-readline
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -62,12 +62,6 @@ PLIST_SUB=	I386="@comment "
 PLIST_SUB=	I386=""
 .endif
 
-.if ${OSVERSION} < 500000
-PLIST_SUB+=	IS4X="@comment " ISNOT4X=""
-.else
-PLIST_SUB+=	IS4X="" ISNOT4X="@comment "
-.endif
-
 post-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG} "Define optimized CFLAGS with"

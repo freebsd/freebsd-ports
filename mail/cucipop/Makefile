@@ -14,21 +14,17 @@ PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.informatik.rwth-aachen.de/pub/packages/cucipop/
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 400014
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/ \
 		ftp://ftp.pasta.cs.uit.no/pub/IPv6/misc/
 PATCHFILES=	cucipop-1.31-v6-20010223.diff.gz
 PATCH_DIST_STRIP=	-p1
-.endif
-
-#BUILD_DEPENDS=  ${PREFIX}/include/db2/db.h:${PORTSDIR}/databases/db2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cubic Circle's POP3 daemon (fully RFC1939 compliant)
 
+#BUILD_DEPENDS=  ${PREFIX}/include/db2/db.h:${PORTSDIR}/databases/db2
+
 MAN8=		cucipop.8 #makevpopdb.8
 PLIST_FILES=	libexec/cucipop
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

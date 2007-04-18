@@ -25,6 +25,8 @@ USE_GMAKE=	yes
 MAKE_FLAGS=	-e
 MAN1=		fxtv.1
 
+ONLY_FOR_ARCHS=	alpha i386 ia64 amd64
+
 OPTIONS=	EXTRA "Extra programs required to record/playback/save" off
 
 .include <bsd.port.pre.mk>
@@ -37,13 +39,6 @@ RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox \
 		mpeg_musicin:${PORTSDIR}/audio/mpegaudio \
 		mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
 		mplex:${PORTSDIR}/multimedia/mplex
-.endif
-
-pre-everything::
-.if ${OSVERSION} < 500000
-ONLY_FOR_ARCHS=	i386
-.else
-ONLY_FOR_ARCHS=	alpha i386 ia64 amd64
 .endif
 
 pre-install:

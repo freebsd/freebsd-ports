@@ -59,22 +59,6 @@ MAKE_ARGS+=	CC="${CC}" LD="${LD}"
 CFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-fomit-frame-pointer
 
-.if ${OSVERSION} < 500000
-CFLAGS+=	-Dint_fast8_t=int8_t
-CFLAGS+=	-Dint_fast16_t=int16_t
-CFLAGS+=	-Dint_fast32_t=int32_t
-CFLAGS+=	-Duint_fast8_t=uint8_t
-CFLAGS+=	-Duint_fast16_t=uint16_t
-CFLAGS+=	-Duint_fast32_t=uint32_t
-CFLAGS+=	-Duint_fast64_t=uint64_t
-CFLAGS+=	-DPRId64=\\\"lld\\\"
-CFLAGS+=	-DPRIu64=\\\"llu\\\"
-CFLAGS+=	-DPRIx64=\\\"llx\\\"
-CFLAGS+=	-DPRIX64=\\\"llX\\\"
-CFLAGS+=	-DPRIdFAST16=\\\"d\\\"
-CFLAGS+=	-DPRIdFAST32=\\\"d\\\"
-.endif
-
 ##
 ## Feature detection
 ##
