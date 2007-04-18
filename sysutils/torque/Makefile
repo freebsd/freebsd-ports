@@ -53,14 +53,8 @@ MAN8=		pbs_mom.8 pbsnodes.8 pbs_sched_basl.8 pbs_sched_cc.8 \
 MLINKS=		pbs_sched_cc.8 pbs_sched.8 \
 		pbs_resources_freebsd.7 pbs_resources.7
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Doesn't build on 4.x
-.endif
-
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/torque.setup ${EXAMPLESDIR}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include	<bsd.port.mk>
