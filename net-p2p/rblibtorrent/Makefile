@@ -26,7 +26,9 @@ CONFIGURE_ARGS=	--disable-debug
 CONFIGURE_ENV=	CXXFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-CONFLICTS=	libtorrent-[0-9]*
+CONFLICTS=	libtorrent-[0-9]* \
+		libtorrent-devel-[0-9]* \
+		rblibtorrent-devel-[0-9]*
 
 .include <bsd.port.pre.mk>
 

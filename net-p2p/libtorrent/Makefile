@@ -18,7 +18,9 @@ COMMENT?=	BitTorrent Library written in C++
 
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
 
-CONFLICTS?=	libtorrent-devel-[0-9]*
+CONFLICTS?=	libtorrent-devel-[0-9]* \
+		rblibtorrent-[0-9]* \
+		rblibtorrent-devel-[0-9]*
 
 USE_AUTOTOOLS=	libtool:15
 USE_GCC=	3.4

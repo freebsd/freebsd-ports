@@ -18,7 +18,9 @@ MD5_FILE=	${.CURDIR}/distinfo
 PLIST=		${.CURDIR}/pkg-plist
 DESCR=		${MASTERDIR}/pkg-descr
 
-CONFLICTS=	libtorrent-[0-9]*
+CONFLICTS=	libtorrent-[0-9]* \
+		rblibtorrent-[0-9]* \
+		rblibtorrent-devel-[0-9]*
 
 EXTRA_PATCHES=	${.CURDIR}/files/devel-*
 
