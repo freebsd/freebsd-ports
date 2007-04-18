@@ -9,7 +9,7 @@ PORTNAME=	fdmf
 DISTVERSION=	0.0.9r
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://w140.com/audio/ CSME
+MASTER_SITES=	http://w140.com/audio/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Find similar music by perceptual hashing

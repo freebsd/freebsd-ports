@@ -8,14 +8,13 @@
 PORTNAME=	htx
 DISTVERSION=	0.7.7a
 CATEGORIES=	converters www
-MASTER_SITES=	http://stuff.myrealm.co.uk/htx/ CSME
+MASTER_SITES=	http://stuff.myrealm.co.uk/htx/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	HTML to XHTML converter
 
 USE_PERL5=	yes
 NO_BUILD=	yes
-
 PLIST_FILES=	bin/htx
 
 post-patch:

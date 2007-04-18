@@ -9,7 +9,7 @@ PORTNAME=	frei0r
 PORTVERSION=	1.1.19
 DISTVERSIONPREFIX=	plugins-
 CATEGORIES=	graphics
-MASTER_SITES=	http://frei0r.kexbox.org/download/source/ CSME
+MASTER_SITES=	http://frei0r.kexbox.org/download/source/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Minimalistic plugin API for video effects

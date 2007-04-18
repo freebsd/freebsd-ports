@@ -9,7 +9,7 @@ PORTNAME=	durep
 PORTVERSION=	0.9
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.hibernaculum.net/download/ CSME
+MASTER_SITES=	http://www.hibernaculum.net/download/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Utility for monitoring disk usage in a more visual way than du
@@ -17,7 +17,6 @@ COMMENT=	Utility for monitoring disk usage in a more visual way than du
 RUN_DEPENDS=	${SITE_PERL}/MLDBM.pm:${PORTSDIR}/databases/p5-MLDBM
 
 USE_PERL5=	yes
-
 MAN1=		durep.1
 WWW_FILES=	durep.cgi style.css bar.png
 PLIST_FILES=	bin/durep ${WWW_FILES:S,^,${WWWDIR_REL}/,}
@@ -28,7 +27,7 @@ do-build:
 	pod2man --center="Disk Usage Report Generator" --release="durep version ${PORTVERSION}" ${WRKSRC}/durep.pod > ${WRKSRC}/durep.1
 
 do-install:
-	${INSTALL} -d ${WWWDIR}
+	${INSTALL} -d ${WWWDIR}/
 	${INSTALL_SCRIPT} ${WRKSRC}/durep ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/durep.1 ${MAN1PREFIX}/man/man1/
 	${INSTALL_SCRIPT} ${WRKSRC}/durep.cgi ${WWWDIR}/

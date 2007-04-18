@@ -8,7 +8,7 @@
 PORTNAME=	linkification
 PORTVERSION=	1.3.3
 CATEGORIES=	www
-MASTER_SITES=	CSME
+MASTER_SITES=	CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Converts text links into genuine, clickable links

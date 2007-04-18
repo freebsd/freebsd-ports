@@ -8,7 +8,7 @@
 PORTNAME=	hachoir-wx
 PORTVERSION=	0.1.2
 CATEGORIES=	sysutils python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/h/${PORTNAME}/ CSME
+MASTER_SITES=	http://cheeseshop.python.org/packages/source/h/${PORTNAME}/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Hachoir GUI

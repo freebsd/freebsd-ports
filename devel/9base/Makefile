@@ -8,7 +8,7 @@
 PORTNAME=	9base
 DISTVERSION=	b20060209
 CATEGORIES=	devel
-MASTER_SITES=	CSME
+MASTER_SITES=	CENKES
 #http://www.suckless.org/cgi-bin/hgwebdir.cgi/9base/
 
 MAINTAINER=	infofarmer@FreeBSD.org

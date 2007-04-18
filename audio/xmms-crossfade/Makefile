@@ -8,7 +8,7 @@
 PORTNAME=	crossfade
 PORTVERSION=	0.3.12
 CATEGORIES=	audio
-MASTER_SITES=	http://www.eisenlohr.org/xmms-crossfade/ CSME
+MASTER_SITES=	http://www.eisenlohr.org/xmms-crossfade/ CENKES
 PKGNAMEPREFIX=	${APP}-
 DISTNAME=	xmms-${PORTNAME}-${PORTVERSION}
 
@@ -43,7 +43,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/.libs/libcrossfade.so ${PREFIX}/${PLUGDIR}/
 .ifndef NOPORTDOCS
-	${INSTALL_DATA} -d -m 555 ${DOCSDIR}/
+	${INSTALL} -d ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 .endif
 

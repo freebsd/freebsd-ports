@@ -8,7 +8,7 @@
 PORTNAME=	tktreectrl
 PORTVERSION=	0.6
 CATEGORIES=	x11-toolkits tk84
-MASTER_SITES=	http://klappnase.zexxo.net/TkinterTreectrl/ CSME
+MASTER_SITES=	http://klappnase.zexxo.net/TkinterTreectrl/ CENKES
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TkinterTreectrl-${DISTVERSION}
 

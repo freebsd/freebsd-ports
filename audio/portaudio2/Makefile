@@ -8,7 +8,7 @@
 PORTNAME=	portaudio
 PORTVERSION=	19.b${SNAPREV}
 CATEGORIES=	audio
-MASTER_SITES=	CSME
+MASTER_SITES=	CENKES
 # svn export -rSNAPREV https://www.portaudio.com/repos/portaudio/branches/v19-devel
 LATEST_LINK=	${PORTNAME}2
 

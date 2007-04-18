@@ -8,7 +8,7 @@
 PORTNAME=	cjc
 PORTVERSION=	1.0.0.675
 CATEGORIES=	net-im python
-MASTER_SITES=	CSME http://jabberstudio.2nw.net/cjc/
+MASTER_SITES=	CENKES http://jabberstudio.2nw.net/cjc/
 # svn export -r675 http://cjc.jajcus.net/svn/cjc/trunk cjc
 
 MAINTAINER=	infofarmer@FreeBSD.org

@@ -8,7 +8,7 @@
 PORTNAME=	tktray
 PORTVERSION=	1.1
 CATEGORIES=	x11-toolkits tk84
-MASTER_SITES=	http://www.sw4me.com/ CSME
+MASTER_SITES=	http://www.sw4me.com/ CENKES
 DISTNAME=	${TKPKG}
 
 MAINTAINER=	infofarmer@FreeBSD.org
@@ -32,10 +32,4 @@ post-patch:
 post-install:
 	@${LN} -sf ${USE_LDCONFIG}/lib${TKPKG}.so ${USE_LDCONFIG}/lib${TKPKG}.so.0
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	does not compile on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -8,7 +8,7 @@
 PORTNAME=	openssl-proxy
 PORTVERSION=	0.1
 CATEGORIES=	www security
-MASTER_SITES=	http://richard.jones.name/google-hacks/gmail-filesystem/ CSME
+MASTER_SITES=	http://richard.jones.name/google-hacks/gmail-filesystem/ CENKES
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyOpenSSLProxy-${PORTVERSION}
 

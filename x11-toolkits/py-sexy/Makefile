@@ -9,7 +9,7 @@ PORTNAME=	sexy
 PORTVERSION=	0.1.9
 DISTVERSIONPREFIX=	python-
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://releases.chipx86.com/libsexy/sexy-python/ CSME
+MASTER_SITES=	http://releases.chipx86.com/libsexy/sexy-python/ CENKES
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	infofarmer@FreeBSD.org

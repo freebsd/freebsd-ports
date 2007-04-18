@@ -8,7 +8,7 @@
 PORTNAME=	gzstream
 DISTVERSION=	1.5
 CATEGORIES=	devel
-MASTER_SITES=	CSME
+MASTER_SITES=	CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Provides zlib functionality in an iostream
