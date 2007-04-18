@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-OpenSearch
-PORTVERSION=	0.09
+PORTVERSION=	0.11
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -24,16 +24,12 @@ RUN_DEPENDS=	p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
 PERL_CONFIGURE=	yes
 
 MAN3=		WWW::OpenSearch.3 \
+		WWW::OpenSearch::Agent.3 \
 		WWW::OpenSearch::Description.3 \
 		WWW::OpenSearch::Image.3 \
 		WWW::OpenSearch::Query.3 \
 		WWW::OpenSearch::Response.3 \
+		WWW::OpenSearch::Request.3 \
 		WWW::OpenSearch::Url.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500701
-IGNORE=		requires perl 5.7.1 or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
