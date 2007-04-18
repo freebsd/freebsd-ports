@@ -7,7 +7,7 @@
 
 PORTNAME=	uvscan
 PORTVERSION=	5.10e
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://download.nai.com/products/evaluation/virusscan/english/cmdline/bsd/v5.10/
 DISTNAME=	vbsd510e
@@ -28,7 +28,8 @@ USE_LDCONFIG32=	${PREFIX}/lib32
 LDCONFIG=	/sbin/ldconfig -32
 .else
 UVSCAN_LIB32=
-INSTALLS_SHLIB=	YES
+USE_LDCONFIG=	YES
+
 .endif
 
 .if defined(WITHOUT_COMPAT3)
