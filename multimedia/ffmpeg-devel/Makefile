@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ffmpeg
-DISTVERSION=	2007-03-31
-PORTREVISION=	1
+DISTVERSION=	2007-04-18
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -50,6 +49,10 @@ DOC_DOCFILES=	TODO faq.html ffmpeg-doc.html \
 PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH}=="amd64"
+EXTRA_PATCHES=	${PATCHDIR}/amd64-patch
+.endif
 
 ## sse hardware vector support
 .if (defined(MACHINE_CPU) && ${MACHINE_CPU:Msse} == "sse")
@@ -121,7 +124,7 @@ LIB_DEPENDS+=		mp3lame.0:${PORTSDIR}/audio/lame
 CONFIGURE_ARGS+=	--enable-libmp3lame
 .endif
 ## ogg
-.ifdef(WITH_OGG) || exists(${LOCALBASE}/lib/libogg.so)
+.ifndef(WITHOUT_OGG) || exists(${LOCALBASE}/lib/libogg.so)
 LIB_DEPENDS+=		ogg.5:${PORTSDIR}/audio/libogg
 
 CONFIGURE_ARGS+=	--enable-libogg
