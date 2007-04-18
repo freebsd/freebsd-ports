@@ -9,7 +9,7 @@ PORTNAME=	sdpa
 PORTVERSION=	6.2.1
 PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	http://grid.r.dendai.ac.jp/sdpa/files/
+MASTER_SITES=	http://sdpa.indsys.chuo-u.ac.jp/sdpa/files/
 DISTFILES=	${PORTNAME}.${PORTVERSION}.src.tar.gz
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${PORTNAME}.${OLDVERSION}.manual.ps.gz \
