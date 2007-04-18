@@ -39,6 +39,7 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/Manual/FAQ.pod
 %%SITE_PERL%%/DBIx/Class/Manual/Glossary.pod
 %%SITE_PERL%%/DBIx/Class/Manual/Intro.pod
+%%SITE_PERL%%/DBIx/Class/Manual/Joining.pod
 %%SITE_PERL%%/DBIx/Class/Manual/Troubleshooting.pod
 %%SITE_PERL%%/DBIx/Class/Ordered.pm
 %%SITE_PERL%%/DBIx/Class/PK.pm
