@@ -3,13 +3,10 @@
 # Whom:			IWASHITA Yoji <shuna@pop16.odn.ne.jp>
 #
 # $FreeBSD$
-#
-# WITH_MUTT_CYRUS_SASL:	if defined, 'Cyrus sasl' support.
-#
 
 PORTNAME=	mutt
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese mail
 MASTER_SITES=	http://www.emaillab.org/mutt/1.4/ \
 		http://my.reset.jp/~iwashita/mutt/distfiles/ \
@@ -28,9 +25,6 @@ LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 
 USE_GETTEXT=	yes
-.if defined(WITH_MUTT_CYRUS_SASL)
-LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
-.endif
 
 VERSION=	1.4.2.1
 JP_VERSION=	1
@@ -54,9 +48,6 @@ CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
 		--with-docdir=${DOCSDIR} \
 		--enable-pop --enable-imap \
 		--enable-default-japanese
-.if defined(WITH_MUTT_CYRUS_SASL)
-CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
-.endif
 
 NOMANCOMPRESS=	yes
 MAN1=		flea.1 mutt.1 muttbug.1 mutt_dotlock.1
