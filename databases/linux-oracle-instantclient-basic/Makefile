@@ -7,7 +7,7 @@
 
 PORTNAME=		instantclient
 PORTVERSION=		${ORACLEVERSION}.${DISTDATE}
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		databases
 MASTER_SITES=		#http://www.oracle.com/technology/software/tech/oci/instantclient/
 PKGNAMEPREFIX=		linux-oracle-
@@ -25,6 +25,7 @@ MD5_FILE=		${MASTERDIR}/distinfo.${ARCH}
 RESTRICTED=		Packaging prohibited by Oracle license
 
 USE_ZIP=		yes
+USE_LINUX=		yes
 USE_LINUX_PREFIX=	yes
 
 ORACLEVERSION=		10.2.0.3
