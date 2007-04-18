@@ -6,7 +6,7 @@ www/punbb/docs/faq.html
 www/punbb/docs/index.html
 www/punbb/docs/install.html
 www/punbb/docs/style/docs.css
-www/punbb/extras/12_to_1214_update.php
+www/punbb/extras/12_to_1215_update.php
 www/punbb/extras/example_config.php
 www/punbb/extras/turn_off_maintenance_mode.php
 www/punbb/upload/admin_bans.php
@@ -67,6 +67,59 @@ www/punbb/upload/include/template/maintenance.tpl
 www/punbb/upload/include/template/redirect.tpl
 www/punbb/upload/index.php
 www/punbb/upload/install.php
+www/punbb/upload/lang/English/common.php
+www/punbb/upload/lang/English/delete.php
+www/punbb/upload/lang/English/forum.php
+www/punbb/upload/lang/English/help.php
+www/punbb/upload/lang/English/index.html
+www/punbb/upload/lang/English/index.php
+www/punbb/upload/lang/English/login.php
+www/punbb/upload/lang/English/mail_templates/activate_email.tpl
+www/punbb/upload/lang/English/mail_templates/activate_password.tpl
+www/punbb/upload/lang/English/mail_templates/form_email.tpl
+www/punbb/upload/lang/English/mail_templates/index.html
+www/punbb/upload/lang/English/mail_templates/new_reply.tpl
+www/punbb/upload/lang/English/mail_templates/new_reply_full.tpl
+www/punbb/upload/lang/English/mail_templates/welcome.tpl
+www/punbb/upload/lang/English/misc.php
+www/punbb/upload/lang/English/post.php
+www/punbb/upload/lang/English/prof_reg.php
+www/punbb/upload/lang/English/profile.php
+www/punbb/upload/lang/English/register.php
+www/punbb/upload/lang/English/search.php
+www/punbb/upload/lang/English/stopwords.txt
+www/punbb/upload/lang/English/topic.php
+www/punbb/upload/lang/English/userlist.php
+www/punbb/upload/lang/index.html
+www/punbb/upload/login.php
+www/punbb/upload/misc.php
+www/punbb/upload/moderate.php
+www/punbb/upload/plugins/AMP_Example.php
+www/punbb/upload/plugins/index.html
+www/punbb/upload/post.php
+www/punbb/upload/profile.php
+www/punbb/upload/register.php
+www/punbb/upload/search.php
+www/punbb/upload/style/Cobalt.css
+www/punbb/upload/style/Lithium.css
+www/punbb/upload/style/Mercury.css
+www/punbb/upload/style/Oxygen.css
+www/punbb/upload/style/Radium.css
+www/punbb/upload/style/Sulfur.css
+www/punbb/upload/style/imports/Cobalt_cs.css
+www/punbb/upload/style/imports/Lithium_cs.css
+www/punbb/upload/style/imports/Mercury_cs.css
+www/punbb/upload/style/imports/Oxygen_cs.css
+www/punbb/upload/style/imports/Radium_cs.css
+www/punbb/upload/style/imports/Sulfur_cs.css
+www/punbb/upload/style/imports/base.css
+www/punbb/upload/style/imports/base_admin.css
+www/punbb/upload/style/imports/index.html
+www/punbb/upload/style/imports/minmax.js
+www/punbb/upload/style/index.html
+www/punbb/upload/userlist.php
+www/punbb/upload/viewforum.php
+www/punbb/upload/viewtopic.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Arabic/common.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Arabic/delete.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Arabic/forum.php
@@ -115,6 +168,7 @@ www/punbb/upload/install.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Bosnian/profile.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Bosnian/register.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Bosnian/search.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Bosnian/stopwords.txt
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Bosnian/topic.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Bosnian/userlist.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Brazilian_Portuguese/common.php
@@ -186,11 +240,11 @@ www/punbb/upload/install.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Catalan/stopwords.txt
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Catalan/topic.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Catalan/userlist.php
-%%LANGUAGE_PACK%%www/punbb/upload/lang/Czech/calendar.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Czech/common.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Czech/delete.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Czech/forum.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Czech/help.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Czech/index.html
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Czech/index.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Czech/login.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Czech/mail_templates/activate_email.tpl
@@ -202,14 +256,14 @@ www/punbb/upload/install.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Czech/mail_templates/welcome.tpl
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Czech/misc.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Czech/pms.php
-%%LANGUAGE_PACK%%www/punbb/upload/lang/Czech/poll.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Czech/polls.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Czech/post.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Czech/prof_reg.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Czech/profile.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Czech/register.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Czech/reputation.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Czech/search.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Czech/topic.php
-%%LANGUAGE_PACK%%www/punbb/upload/lang/Czech/uploads.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Czech/userlist.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Danish/common.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Danish/delete.php
@@ -257,29 +311,6 @@ www/punbb/upload/install.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Dutch/stopwords.txt
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Dutch/topic.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Dutch/userlist.php
-www/punbb/upload/lang/English/common.php
-www/punbb/upload/lang/English/delete.php
-www/punbb/upload/lang/English/forum.php
-www/punbb/upload/lang/English/help.php
-www/punbb/upload/lang/English/index.html
-www/punbb/upload/lang/English/index.php
-www/punbb/upload/lang/English/login.php
-www/punbb/upload/lang/English/mail_templates/activate_email.tpl
-www/punbb/upload/lang/English/mail_templates/activate_password.tpl
-www/punbb/upload/lang/English/mail_templates/form_email.tpl
-www/punbb/upload/lang/English/mail_templates/index.html
-www/punbb/upload/lang/English/mail_templates/new_reply.tpl
-www/punbb/upload/lang/English/mail_templates/new_reply_full.tpl
-www/punbb/upload/lang/English/mail_templates/welcome.tpl
-www/punbb/upload/lang/English/misc.php
-www/punbb/upload/lang/English/post.php
-www/punbb/upload/lang/English/prof_reg.php
-www/punbb/upload/lang/English/profile.php
-www/punbb/upload/lang/English/register.php
-www/punbb/upload/lang/English/search.php
-www/punbb/upload/lang/English/stopwords.txt
-www/punbb/upload/lang/English/topic.php
-www/punbb/upload/lang/English/userlist.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Estonian/common.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Estonian/delete.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Estonian/forum.php
@@ -443,6 +474,29 @@ www/punbb/upload/lang/English/userlist.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Hebrew/stopwords.txt
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Hebrew/topic.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Hebrew/userlist.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Hindi/common.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Hindi/delete.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Hindi/forum.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Hindi/help.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Hindi/index.html
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Hindi/index.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Hindi/login.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Hindi/mail_templates/activate_email.tpl
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Hindi/mail_templates/activate_password.tpl
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Hindi/mail_templates/form_email.tpl
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Hindi/mail_templates/index.html
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Hindi/mail_templates/new_reply.tpl
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Hindi/mail_templates/new_reply_full.tpl
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Hindi/mail_templates/welcome.tpl
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Hindi/misc.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Hindi/post.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Hindi/prof_reg.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Hindi/profile.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Hindi/register.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Hindi/search.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Hindi/stopwords.txt
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Hindi/topic.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Hindi/userlist.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Hrvatski/_easysmilies.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Hrvatski/chatbox.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Hrvatski/common.php
@@ -979,6 +1033,7 @@ www/punbb/upload/lang/English/userlist.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Ukrainian/delete.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Ukrainian/forum.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Ukrainian/help.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Ukrainian/index.html
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Ukrainian/index.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Ukrainian/login.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Ukrainian/mail_templates/activate_email.tpl
@@ -996,6 +1051,29 @@ www/punbb/upload/lang/English/userlist.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Ukrainian/search.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Ukrainian/topic.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Ukrainian/userlist.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Urdu/common.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Urdu/delete.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Urdu/forum.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Urdu/help.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Urdu/index.html
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Urdu/index.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Urdu/login.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Urdu/mail_templates/activate_email.tpl
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Urdu/mail_templates/activate_password.tpl
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Urdu/mail_templates/form_email.tpl
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Urdu/mail_templates/index.html
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Urdu/mail_templates/new_reply.tpl
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Urdu/mail_templates/new_reply_full.tpl
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Urdu/mail_templates/welcome.tpl
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Urdu/misc.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Urdu/post.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Urdu/prof_reg.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Urdu/profile.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Urdu/register.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Urdu/search.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Urdu/stopwords.txt
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Urdu/topic.php
+%%LANGUAGE_PACK%%www/punbb/upload/lang/Urdu/userlist.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Vietnamese/common.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Vietnamese/delete.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Vietnamese/forum.php
@@ -1016,132 +1094,106 @@ www/punbb/upload/lang/English/userlist.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Vietnamese/search.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Vietnamese/topic.php
 %%LANGUAGE_PACK%%www/punbb/upload/lang/Vietnamese/userlist.php
-www/punbb/upload/lang/index.html
-www/punbb/upload/login.php
-www/punbb/upload/misc.php
-www/punbb/upload/moderate.php
-www/punbb/upload/plugins/AMP_Example.php
-www/punbb/upload/plugins/index.html
-www/punbb/upload/post.php
-www/punbb/upload/profile.php
-www/punbb/upload/register.php
-www/punbb/upload/search.php
-www/punbb/upload/style/Cobalt.css
-www/punbb/upload/style/Lithium.css
-www/punbb/upload/style/Mercury.css
-www/punbb/upload/style/Oxygen.css
-www/punbb/upload/style/Radium.css
-www/punbb/upload/style/Sulfur.css
-www/punbb/upload/style/imports/Cobalt_cs.css
-www/punbb/upload/style/imports/Lithium_cs.css
-www/punbb/upload/style/imports/Mercury_cs.css
-www/punbb/upload/style/imports/Oxygen_cs.css
-www/punbb/upload/style/imports/Radium_cs.css
-www/punbb/upload/style/imports/Sulfur_cs.css
-www/punbb/upload/style/imports/base.css
-www/punbb/upload/style/imports/base_admin.css
-www/punbb/upload/style/imports/index.html
-www/punbb/upload/style/imports/minmax.js
-www/punbb/upload/style/index.html
-www/punbb/upload/userlist.php
-www/punbb/upload/viewforum.php
-www/punbb/upload/viewtopic.php
-@dirrmtry www/punbb/docs/style
-@dirrmtry www/punbb/docs
-@dirrmtry www/punbb/extras
-@dirrmtry www/punbb/upload/cache
-@dirrmtry www/punbb/upload/img/smilies
-@dirrmtry www/punbb/upload/img/avatars
-@dirrmtry www/punbb/upload/img
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Vietnamese/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Vietnamese
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Urdu/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Urdu
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Ukrainian/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Ukrainian
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Turkish/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Turkish
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Traditional_Chinese/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Traditional_Chinese
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Swedish/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Swedish
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Spanish/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Spanish
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Slovenian/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Slovenian
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Slovak/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Slovak
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Simplified_Chinese/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Simplified_Chinese
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Serbian/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Serbian
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Russian/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Russian
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Romanian/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Romanian
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Portuguese/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Portuguese
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Polish/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Polish
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Norwegian/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Norwegian
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Lithuanian/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Lithuanian
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Latvian/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Latvian
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Kurdish/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Kurdish
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Korean/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Korean
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Japanese/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Japanese
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Italian/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Italian
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Indonesian/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Indonesian
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Icelandic/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Icelandic
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Hungarian/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Hungarian
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Hrvatski/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Hrvatski
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Hindi/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Hindi
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Hebrew/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Hebrew
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Greek/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Greek
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/German/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/German
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/French/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/French
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Finnish/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Finnish
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Farsi/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Farsi
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Estonian/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Estonian
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Dutch/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Dutch
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Danish/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Danish
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Czech/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Czech
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Catalan/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Catalan
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Bulgarian/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Bulgarian
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Brazilian_Portuguese/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Brazilian_Portuguese
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Bosnian/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Bosnian
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Arabic/mail_templates
+%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Arabic
+@dirrmtry www/punbb/upload/style/imports
+@dirrmtry www/punbb/upload/style
+@dirrmtry www/punbb/upload/plugins
+@dirrmtry www/punbb/upload/lang/English/mail_templates
+@dirrmtry www/punbb/upload/lang/English
+@dirrmtry www/punbb/upload/lang
 @dirrmtry www/punbb/upload/include/user
 @dirrmtry www/punbb/upload/include/template
 @dirrmtry www/punbb/upload/include/dblayer
 @dirrmtry www/punbb/upload/include
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Arabic/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Arabic
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Bosnian/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Bosnian
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Brazilian_Portuguese/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Brazilian_Portuguese
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Bulgarian/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Bulgarian
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Catalan/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Catalan
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Czech/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Czech
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Danish/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Danish
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Dutch/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Dutch
-@dirrmtry www/punbb/upload/lang/English/mail_templates
-@dirrmtry www/punbb/upload/lang/English
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Estonian/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Estonian
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Farsi/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Farsi
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Finnish/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Finnish
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/French/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/French
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/German/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/German
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Greek/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Greek
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Hebrew/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Hebrew
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Hrvatski/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Hrvatski
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Hungarian/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Hungarian
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Icelandic/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Icelandic
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Indonesian/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Indonesian
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Italian/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Italian
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Japanese/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Japanese
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Korean/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Korean
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Kurdish/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Kurdish
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Latvian/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Latvian
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Lithuanian/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Lithuanian
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Norwegian/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Norwegian
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Polish/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Polish
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Portuguese/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Portuguese
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Romanian/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Romanian
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Russian/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Russian
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Serbian/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Serbian
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Simplified_Chinese/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Simplified_Chinese
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Slovak/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Slovak
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Slovenian/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Slovenian
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Spanish/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Spanish
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Swedish/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Swedish
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Traditional_Chinese/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Traditional_Chinese
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Turkish/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Turkish
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Ukrainian/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Ukrainian
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Vietnamese/mail_templates
-%%LANGUAGE_PACK%%@dirrmtry www/punbb/upload/lang/Vietnamese
-@dirrmtry www/punbb/upload/lang
-@dirrmtry www/punbb/upload/plugins
-@dirrmtry www/punbb/upload/style/imports
-@dirrmtry www/punbb/upload/style
+@dirrmtry www/punbb/upload/img/smilies
+@dirrmtry www/punbb/upload/img/avatars
+@dirrmtry www/punbb/upload/img
+@dirrmtry www/punbb/upload/cache
 @dirrmtry www/punbb/upload
+@dirrmtry www/punbb/extras
+@dirrmtry www/punbb/docs/style
+@dirrmtry www/punbb/docs
 @dirrmtry www/punbb

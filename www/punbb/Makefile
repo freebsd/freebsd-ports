@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	punbb
-PORTVERSION=	1.2.14
+PORTVERSION=	1.2.15
 CATEGORIES=	www
 MASTER_SITES=	http://www.punbb.org/download/ \
 		http://mirror.ordo.dk/punbb.org/ \
 		http://punbb.mirrors.typhon.net/ \
 		http://punbb.4any.org/ \
-		http://freebsd.csie.nctu.edu.tw/~gslin/files/punbb-1.2.14/:lang
+		http://freebsd.csie.nctu.edu.tw/~gslin/files/punbb-${PORTVERSION}/:lang
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${LANGFILES:S/$/:lang/}
 EXTRACT_ONLY=	# none
@@ -32,47 +32,52 @@ OPTIONS=	LANGUAGE_PACK "Install language packs" on
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_LANGUAGE_PACK)
-LANGFILES+=	lang_packs-1.2.14/Arabic.zip \
-		lang_packs-1.2.14/Bosnian.zip \
-		lang_packs-1.2.14/Brazilian_Portuguese.zip \
-		lang_packs-1.2.14/Bulgarian.zip \
-		lang_packs-1.2.14/Bulgarian_UTF8.zip \
-		lang_packs-1.2.14/Catalan.zip \
-		lang_packs-1.2.14/Czech.zip \
-		lang_packs-1.2.14/Danish.zip \
-		lang_packs-1.2.14/Dutch.zip \
-		lang_packs-1.2.14/Estonian.zip \
-		lang_packs-1.2.14/Farsi.zip \
-		lang_packs-1.2.14/Finnish.zip \
-		lang_packs-1.2.14/French.zip \
-		lang_packs-1.2.14/German.zip \
-		lang_packs-1.2.14/Greek.zip \
-		lang_packs-1.2.14/Hebrew.zip \
-		lang_packs-1.2.14/Hrvatski.zip \
-		lang_packs-1.2.14/Hungarian.zip \
-		lang_packs-1.2.14/Icelandic.zip \
-		lang_packs-1.2.14/Indonesian.zip \
-		lang_packs-1.2.14/Italian.zip \
-		lang_packs-1.2.14/Japanese.zip \
-		lang_packs-1.2.14/Korean.zip \
-		lang_packs-1.2.14/Kurdish.zip \
-		lang_packs-1.2.14/Latvian.zip \
-		lang_packs-1.2.14/Lithuanian.zip \
-		lang_packs-1.2.14/Norwegian.zip \
-		lang_packs-1.2.14/Polish.zip \
-		lang_packs-1.2.14/Portuguese.zip \
-		lang_packs-1.2.14/Romanian.zip \
-		lang_packs-1.2.14/Russian.zip \
-		lang_packs-1.2.14/Serbian.zip \
-		lang_packs-1.2.14/Simplified_Chinese.zip \
-		lang_packs-1.2.14/Slovak.zip \
-		lang_packs-1.2.14/Slovenian.zip \
-		lang_packs-1.2.14/Spanish.zip \
-		lang_packs-1.2.14/Swedish.zip \
-		lang_packs-1.2.14/Traditional_Chinese.zip \
-		lang_packs-1.2.14/Turkish.zip \
-		lang_packs-1.2.14/Ukrainian.zip \
-		lang_packs-1.2.14/Vietnamese.zip
+LANGFILES+=	lang_packs-${PORTVERSION}/Arabic.zip \
+		lang_packs-${PORTVERSION}/Bosnian.zip \
+		lang_packs-${PORTVERSION}/Brazilian_Portuguese.zip \
+		lang_packs-${PORTVERSION}/Bulgarian.zip \
+		lang_packs-${PORTVERSION}/Bulgarian_UTF8.zip \
+		lang_packs-${PORTVERSION}/Catalan.zip \
+		lang_packs-${PORTVERSION}/Czech.zip \
+		lang_packs-${PORTVERSION}/Czech_UTF8.zip \
+		lang_packs-${PORTVERSION}/Danish.zip \
+		lang_packs-${PORTVERSION}/Dutch.zip \
+		lang_packs-${PORTVERSION}/Estonian.zip \
+		lang_packs-${PORTVERSION}/Farsi.zip \
+		lang_packs-${PORTVERSION}/Finnish.zip \
+		lang_packs-${PORTVERSION}/French.zip \
+		lang_packs-${PORTVERSION}/German.zip \
+		lang_packs-${PORTVERSION}/Greek.zip \
+		lang_packs-${PORTVERSION}/Hebrew.zip \
+		lang_packs-${PORTVERSION}/Hindi.zip \
+		lang_packs-${PORTVERSION}/Hrvatski.zip \
+		lang_packs-${PORTVERSION}/Hungarian.zip \
+		lang_packs-${PORTVERSION}/Icelandic.zip \
+		lang_packs-${PORTVERSION}/Indonesian.zip \
+		lang_packs-${PORTVERSION}/Italian.zip \
+		lang_packs-${PORTVERSION}/Japanese.zip \
+		lang_packs-${PORTVERSION}/Korean.zip \
+		lang_packs-${PORTVERSION}/Kurdish.zip \
+		lang_packs-${PORTVERSION}/Latvian.zip \
+		lang_packs-${PORTVERSION}/Lithuanian.zip \
+		lang_packs-${PORTVERSION}/Norwegian.zip \
+		lang_packs-${PORTVERSION}/Polish.zip \
+		lang_packs-${PORTVERSION}/Polish_UTF8.zip \
+		lang_packs-${PORTVERSION}/Portuguese.zip \
+		lang_packs-${PORTVERSION}/Romanian.zip \
+		lang_packs-${PORTVERSION}/Russian.zip \
+		lang_packs-${PORTVERSION}/Serbian.zip \
+		lang_packs-${PORTVERSION}/Simplified_Chinese.zip \
+		lang_packs-${PORTVERSION}/Slovak.zip \
+		lang_packs-${PORTVERSION}/Slovenian.zip \
+		lang_packs-${PORTVERSION}/Spanish.zip \
+		lang_packs-${PORTVERSION}/Swedish.zip \
+		lang_packs-${PORTVERSION}/Traditional_Chinese.zip \
+		lang_packs-${PORTVERSION}/Turkish.zip \
+		lang_packs-${PORTVERSION}/Ukrainian.zip \
+		lang_packs-${PORTVERSION}/Ukrainian_UTF8.zip \
+		lang_packs-${PORTVERSION}/Urdu.zip \
+		lang_packs-${PORTVERSION}/Vietnamese.zip
 PLIST_SUB+=	LANGUAGE_PACK=""
 .else
 PLIST_SUB+=	LANGUAGE_PACK="@comment "
