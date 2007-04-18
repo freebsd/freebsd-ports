@@ -5739,6 +5739,7 @@ kdirstat	ports/sysutils/kdirstat
 kdissert	ports/deskutils/kdissert
 kdmtheme	ports/x11-themes/kdmtheme
 kedpm		ports/security/kedpm
+keep		ports/sysutils/keep
 keepalived	ports/net/keepalived
 keepassx	ports/security/keepassx
 keitairc	ports/irc/keitairc
