@@ -35,8 +35,8 @@ milterdkim_uid=${milterdkim_uid:-"mailnull"}
 milterdkim_profiles=${milterdkim_profiles:-}
 milterdkim_socket=${milterdkim_socket:-"local:/var/run/milterdkim/filter"}
 milterdkim_domain=${milterdkim_domain:-"example.com"}
-milterdkim_key=${milterdkim_key:-"/var/db/domainkeys/default.key.pem"}
-milterdkim_selector=${milterdkim_selector:-"default"}
+milterdkim_key=${milterdkim_key:-}
+milterdkim_selector=${milterdkim_selector:-}
 milterdkim_alg=${milterdkim_alg:-}
 # Options other than above can be set with $milterdkim_flags.
 # see dkim-milter documentation for detail.
