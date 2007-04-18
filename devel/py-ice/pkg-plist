@@ -22,12 +22,15 @@
 %%PYTHON_SITELIBDIR%%/Ice/IceGrid_Descriptor_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/IceGrid_Exception_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/IceGrid_FileParser_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/IceGrid_Locator_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/IceGrid_Observer_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/IceGrid_Query_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/IceGrid_Registry_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/IceGrid_Session_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/IceGrid_UserAccountMapper_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_Identity_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_ImplicitContextF_ice.py
+%%PYTHON_SITELIBDIR%%/Ice/Ice_ImplicitContext_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_LocalException_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_LocatorF_ice.py
 %%PYTHON_SITELIBDIR%%/Ice/Ice_Locator_ice.py
