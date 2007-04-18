@@ -1,4 +1,4 @@
-# New ports collection makefile for:	ja-mutt
+[B# New ports collection makefile for:	ja-mutt
 # Date created:		4 Sep 2000
 # Whom:			IWASHITA Yoji <shuna@pop16.odn.ne.jp>
 #
@@ -9,57 +9,68 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese mail
-MASTER_SITES=	http://www.emaillab.org/mutt/1.5/ \
-		http://my.reset.jp/~iwashita/mutt/distfiles/ \
-		http://ha4.seikyou.ne.jp/home/Kohtaro.Hitomi/mutt/ \
+MASTER_SITES=	http://www.emaillab.org/mutt/${VERSION}/ \
+		http://www.emaillab.org/mutt/1.5/doc/:ja_doc \
+		http://133.16.174.22/mutt/ \
 		http://mutt-j.sourceforge.jp/ \
 		ftp://ftp.mutt.org/mutt/devel/
-DISTNAME=	mutt-${VERSION}i
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${DISTNAME}-ja.${JP_VERSION}${EXTRACT_SUFX} \
+PKGNAMEPREFIX=	ja-
+DISTNAME=	mutt-${VERSION}
+DISTFILES=	${EXTRACT_ONLY} \
+		README.JA-PATCH.ja.html:ja_doc \
+		README.JA-PATCH.ja:ja_doc \
+		INSTALL.JA-PATCH.ja.html:ja_doc \
+		INSTALL.JA-PATCH.ja:ja_doc \
+		manual-ja-patch.ja.html:ja_doc \
+		manual-ja-patch.ja.txt:ja_doc \
+		usage-japanese.ja.html:ja_doc \
+		usage-japanese.ja.txt:ja_doc
+DIST_SUBDIR=	mutt
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		manual_ja-${MANUALVERSION}i-1${EXTRACT_SUFX} \
 		manual.ja-${MANJADATE}${EXTRACT_SUFX}
-DIST_SUBDIR=	mutt
+
+PATCH_SITES=	http://www.emaillab.org/mutt/${VERSION}/:ja_patch
+PATCHFILES=	patch-${VERSION}.mutt-j.ja.${JP_VERSION}.gz:ja_patch
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	st@be.to
 COMMENT=	Text-based mail client (Japanised development version)
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
-RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
+RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview \
+		${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 .endif
 .if defined(WITH_MUTT_CYRUS_SASL)
-LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
+LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 .endif
 .if defined(WITH_MUTT_IDN)
 LIB_DEPENDS+=	idn.16:${PORTSDIR}/dns/libidn
 .endif
 
 .if defined(WITH_MUTT_HEADER_CACHE)
-PATCH_SITES+=	http://wwwcip.informatik.uni-erlangen.de/~sithglan/mutt/:hcache
-PATCHFILES+=	patch-${VERSION}.tg.hcache.12:hcache
-PATCH_DIST_STRIP+=	-p1
-
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
+CONFIGURE_ARGS+=	--enable-hcache
 .endif
 
 CONFLICTS=	mutt-* ja-mutt-1.[024]*
 
-VERSION=	1.5.6
+VERSION=	1.5.14
 JP_VERSION=	1
 MANUALVERSION=	1.4
-MANJADATE=	20040808
+MANJADATE=	20050813
 
 FETCH_BEFORE_ARGS=	-A	# ha4.seikyou.ne.jp is running broken httpd
 
 NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_AUTOTOOLS=	automake:14 autoconf:213
+USE_AUTOTOOLS=	automake:19 autoconf:259
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/mutt-${VERSION}
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -97,13 +108,7 @@ CONFIGURE_ARGS+=	--without-idn
 
 NOMANCOMPRESS=	yes
 MAN1=		flea.1 mutt.1 muttbug.1 mutt_dotlock.1
-MAN5=		muttrc.5 mbox.5
-
-DIFFDIR=	${WRKDIR}/${DISTNAME}-ja.${JP_VERSION}
-DIFFNAME=	patch-${VERSION}.tt.ja.${JP_VERSION}
-
-pre-patch:
-	(cd ${WRKSRC}; ${PATCH} -p1 < ${DIFFDIR}/${DIFFNAME})
+MAN5=		muttrc.5 mbox.5 mmdf.5
 
 pre-configure:
 .if defined(NOPORTDOCS)
@@ -122,24 +127,14 @@ post-configure:
 
 .if !defined(NOPORTDOCS)
 post-install:
-	${INSTALL_DATA} ${DIFFDIR}/INSTALL.JA-PATCH.ja ${DOCSDIR}
-	${INSTALL_DATA} ${DIFFDIR}/INSTALL.ja ${DOCSDIR}
-	${INSTALL_DATA} ${DIFFDIR}/NEWS.ja ${DOCSDIR}
-	${INSTALL_DATA} ${DIFFDIR}/PGP-Notes.ja.txt ${DOCSDIR}
-	${INSTALL_DATA} ${DIFFDIR}/README.JA-PATCH.ja ${DOCSDIR}
-	${INSTALL_DATA} ${DIFFDIR}/README.SECURITY.ja ${DOCSDIR}
-	${INSTALL_DATA} ${DIFFDIR}/README.SSL.ja ${DOCSDIR}
-	${INSTALL_DATA} ${DIFFDIR}/README.ja ${DOCSDIR}
-	${INSTALL_DATA} ${DIFFDIR}/applying-patches.ja.txt ${DOCSDIR}
-	${INSTALL_DATA} ${DIFFDIR}/smime-notes.ja.txt ${DOCSDIR}
-	${INSTALL_DATA} ${DIFFDIR}/html/INSTALL.JA-PATCH.ja.html ${DOCSDIR}/html
-	${INSTALL_DATA} ${DIFFDIR}/html/README.JA-PATCH.ja.html ${DOCSDIR}/html
-	${INSTALL_DATA} ${DIFFDIR}/html/manual-ja-patch.en.html ${DOCSDIR}/html
-	${INSTALL_DATA} ${DIFFDIR}/html/manual-ja-patch.ja.html ${DOCSDIR}/html
-	${INSTALL_DATA} ${DIFFDIR}/html/usage-japanese.ja.html ${DOCSDIR}/html
-	${INSTALL_DATA} ${DIFFDIR}/samples/mutt-en.rc ${DOCSDIR}/samples
-	${INSTALL_DATA} ${DIFFDIR}/samples/mutt-ja.rc ${DOCSDIR}/samples
-	${INSTALL_DATA} ${DIFFDIR}/samples/sample.muttrc-tt ${DOCSDIR}/samples
+	${INSTALL_DATA} ${_DISTDIR}/INSTALL.JA-PATCH.ja ${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}/README.JA-PATCH.ja ${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}/manual-ja-patch.ja.txt ${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}/usage-japanese.ja.txt ${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}/INSTALL.JA-PATCH.ja.html ${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}/README.JA-PATCH.ja.html ${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}/manual-ja-patch.ja.html ${DOCSDIR}
+	${INSTALL_DATA} ${_DISTDIR}/usage-japanese.ja.html ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/manual_ja.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/manual_ja.tex ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/manual_ja.html ${DOCSDIR}
