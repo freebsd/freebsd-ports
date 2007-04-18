@@ -23,14 +23,8 @@ GNU_CONFIGURE=	yes
 
 MAN1=	gdmap.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Doesn't build on FreeBSD < 5.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,<sys/vfs.h>,<sys/statvfs.h>,' \
 		${WRKSRC}/src/gui_main.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
