@@ -78,4 +78,4 @@ do-install:
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/man/${MAN7} ${PREFIX}/man/man7
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.post.mk>
