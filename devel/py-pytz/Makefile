@@ -8,11 +8,11 @@
 PORTNAME=	pytz
 PORTVERSION=	2007d
 CATEGORIES=	devel python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/p/pytz/ \
+MASTER_SITES=	CHEESESHOP \
 		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	python@FreeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	World Timezone Definitions for Python
 
 BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools

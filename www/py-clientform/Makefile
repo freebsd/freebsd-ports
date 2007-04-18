@@ -8,11 +8,12 @@
 PORTNAME=	clientform
 PORTVERSION=	0.2.6
 CATEGORIES=	www python
-MASTER_SITES=	http://wwwsearch.sourceforge.net/ClientForm/src/
+MASTER_SITES=	http://wwwsearch.sourceforge.net/ClientForm/src/ \
+		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	ClientForm-${PORTVERSION}
 
-MAINTAINER=	python@FreeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Client-side HTTP Form for Python
 
 BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
