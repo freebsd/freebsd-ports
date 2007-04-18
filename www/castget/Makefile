@@ -8,7 +8,7 @@
 PORTNAME=	castget
 PORTVERSION=	0.9.6
 CATEGORIES=	www
-MASTER_SITES=	SAVANNAH CSME
+MASTER_SITES=	SAVANNAH CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Command-line podcast downloader

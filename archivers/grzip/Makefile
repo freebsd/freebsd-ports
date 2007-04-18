@@ -8,7 +8,7 @@
 PORTNAME=	grzip
 PORTVERSION=	0.3.0
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/compression/ CSME
+MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/compression/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Efficient file compressor

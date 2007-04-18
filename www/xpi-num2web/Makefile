@@ -8,7 +8,7 @@
 PORTNAME=	num2web
 PORTVERSION=	0.1
 CATEGORIES=	www
-MASTER_SITES=	http://www.e164.org/${PORTNAME}/ CSME
+MASTER_SITES=	http://www.e164.org/${PORTNAME}/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Enum lookups support

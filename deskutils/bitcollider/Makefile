@@ -13,17 +13,11 @@ MASTER_SITES=	SF
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A Bitzi metadata generator
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD 4.x
-.endif
-
 HAS_CONFIGURE=	yes
 CFLAGS+=	-lm
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

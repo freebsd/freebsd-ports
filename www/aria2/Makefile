@@ -31,10 +31,4 @@ PLIST_FILES=	bin/aria2c \
 		share/locale/ru/LC_MESSAGES/aria2c.mo
 MAN1=		aria2c.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Does not build on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

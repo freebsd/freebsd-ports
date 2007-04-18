@@ -8,7 +8,7 @@
 PORTNAME=	when
 PORTVERSION=	1.1.0
 CATEGORIES=	deskutils
-MASTER_SITES=	CSME
+MASTER_SITES=	CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A very simple personal calendar

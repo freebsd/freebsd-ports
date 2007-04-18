@@ -8,7 +8,7 @@
 PORTNAME=	gaupol
 PORTVERSION=	0.7.2
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.gna.org/gaupol/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/ CSME
+MASTER_SITES=	http://download.gna.org/gaupol/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Subtitle editor

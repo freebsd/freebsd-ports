@@ -8,7 +8,7 @@
 PORTNAME=	shim
 DISTVERSION=	1.1b
 CATEGORIES=	graphics
-MASTER_SITES=	http://corp.efnet.net/~lamer/pegasosppc/download/ CSME
+MASTER_SITES=	http://corp.efnet.net/~lamer/pegasosppc/download/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Show images of various formats

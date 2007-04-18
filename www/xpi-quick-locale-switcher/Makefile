@@ -9,7 +9,7 @@ PORTNAME=	quick-locale-switcher
 PORTVERSION=	1.5.0.1
 DISTVERSIONSUFFIX=	-fx+fl+mz+ns+nv+zm+sb+tb
 CATEGORIES=	www
-MASTER_SITES=	CSME
+MASTER_SITES=	CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Quickly change and apply a different locale from the tools menu

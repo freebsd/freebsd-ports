@@ -8,7 +8,7 @@
 PORTNAME=	laudio
 PORTVERSION=	0.4
 CATEGORIES=	audio linux
-MASTER_SITES=	http://www.lossless-audio.com/ CSME
+MASTER_SITES=	http://www.lossless-audio.com/ CENKES
 DISTNAME=	la04
 
 MAINTAINER=	infofarmer@FreeBSD.org
@@ -25,7 +25,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKDIR}/la ${PREFIX}/bin/laudio
 	@${BRANDELF} -t Linux ${PREFIX}/bin/laudio
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${INSTALL} -d ${DOCSDIR}/
 	@${INSTALL_DATA} ${WRKDIR}/readme.txt ${DOCSDIR}
 .endif
 

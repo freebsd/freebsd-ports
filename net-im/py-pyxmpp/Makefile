@@ -8,7 +8,7 @@
 PORTNAME=	pyxmpp
 PORTVERSION=	1.0.0.664
 CATEGORIES=	net-im python
-MASTER_SITES=	CSME http://jabberstudio.2nw.net/pyxmpp/
+MASTER_SITES=	CENKES http://jabberstudio.2nw.net/pyxmpp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 # svn export -r664 http://pyxmpp.jajcus.net/svn/pyxmpp/trunk pyxmpp
 

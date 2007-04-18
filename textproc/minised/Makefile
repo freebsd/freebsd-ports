@@ -8,7 +8,7 @@
 PORTNAME=	minised
 PORTVERSION=	1.12
 CATEGORIES=	textproc
-MASTER_SITES=	http://dl.exactcode.de/oss/minised/ CSME
+MASTER_SITES=	http://dl.exactcode.de/oss/minised/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Smaller, cheaper, faster sed implementation

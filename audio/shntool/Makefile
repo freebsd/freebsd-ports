@@ -1,6 +1,6 @@
 # New ports collection makefile for:	shntool
 # Date created:		2 November 2000
-# Whom:			Bill Fenner <fenner@FreeBSD.Org>
+# Whom:			Bill Fenner <fenner@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -8,9 +8,9 @@
 PORTNAME=	shntool
 PORTVERSION=	3.0.2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.etree.org/shnutils/shntool/dist/src/ CSME LOCAL/fenner
+MASTER_SITES=	http://www.etree.org/shnutils/shntool/dist/src/ CENKES
 
-MAINTAINER=	infofarmer@FreeBSD.Org
+MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Multi-purpose .wav processing utility
 
 GNU_CONFIGURE=	yes

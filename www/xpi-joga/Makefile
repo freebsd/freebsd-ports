@@ -8,7 +8,7 @@
 PORTNAME=	joga
 PORTVERSION=	1.5
 CATEGORIES=	www
-MASTER_SITES=	CSME
+MASTER_SITES=	CENKES
 # The unversioned dist is at http://dl.google.com/firefox/joga/companion.xpi
 # The update RDF is at http://tools.google.com/firefox/joga/update.rdf
 

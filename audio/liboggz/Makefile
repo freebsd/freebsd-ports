@@ -8,7 +8,7 @@
 PORTNAME=	liboggz
 DISTVERSION=	0.9.5
 CATEGORIES=	audio
-MASTER_SITES=	http://www.annodex.net/software/liboggz/download/ CSME
+MASTER_SITES=	http://www.annodex.net/software/liboggz/download/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Simple Ogg API

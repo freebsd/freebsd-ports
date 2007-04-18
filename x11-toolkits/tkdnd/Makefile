@@ -9,7 +9,7 @@ PORTNAME=	tkdnd
 PORTVERSION=	1.0
 DISTVERSION=	1.0.20040304
 CATEGORIES=	x11-toolkits tk84
-MASTER_SITES=	CSME
+MASTER_SITES=	CENKES
 # Distfile prepared from SourceForge CVS
 
 MAINTAINER=	infofarmer@FreeBSD.org

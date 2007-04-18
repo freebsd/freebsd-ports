@@ -8,7 +8,7 @@
 PORTNAME=	libgfx
 DISTVERSION=	1.1.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://graphics.cs.uiuc.edu/~garland/dist/ CSME
+MASTER_SITES=	http://graphics.cs.uiuc.edu/~garland/dist/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	OpenGL/FLTK development
@@ -33,10 +33,4 @@ do-install:
 	@${CP} -R ${WRKSRC}/include/gfx ${PREFIX}/include/
 	@${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}.a ${PREFIX}/lib/
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	does not compile on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

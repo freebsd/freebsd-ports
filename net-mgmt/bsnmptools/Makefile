@@ -10,7 +10,7 @@ PORTVERSION=	0.0.20060818
 DISTVERSION=	20060818-01
 PORTREVISION=	2
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.ringlet.net/~shteryana/snmp/ CSME
+MASTER_SITES=	http://www.ringlet.net/~shteryana/snmp/ CENKES
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	infofarmer@FreeBSD.org

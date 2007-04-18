@@ -8,7 +8,7 @@
 PORTNAME=	lpac
 PORTVERSION=	1.40
 CATEGORIES=	audio linux
-MASTER_SITES=	CSME
+MASTER_SITES=	CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Lossless audio codec
