@@ -6,32 +6,26 @@
 #
 
 PORTNAME=	libtorrent
-PORTVERSION=	0.11
-PORTREVISION=	1
+DISTVERSION=	0.12rc3
 CATEGORIES=	net-p2p
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=libtorrent
+MASTER_SITES=	http://www.rasterbar.com/products/libtorrent/
 PKGNAMEPREFIX=	rb
+PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	johan@stromnet.se
+MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A C++ library implementing a BitTorrent client
 
-LIB_DEPENDS=	boost_date_time.3:${PORTSDIR}/devel/boost \
-		boost_filesystem.3:${PORTSDIR}/devel/boost \
-		boost_thread.3:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	boost_date_time.3:${PORTSDIR}/devel/boost
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-debug
-CONFIGURE_ENV=	CXXFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/rc[[:digit:]]//}
 
-CONFLICTS=	libtorrent-[0-9]*
+CONFLICTS=	libtorrent-[0-9]* \
+		libtorrent-devel-[0-9]* \
+		rblibtorrent-[0-9]*
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	is unsupported on FreeBSD < 5
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

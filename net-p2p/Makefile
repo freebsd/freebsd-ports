@@ -110,6 +110,7 @@
     SUBDIR += qtella
     SUBDIR += qtorrent
     SUBDIR += rblibtorrent
+    SUBDIR += rblibtorrent-devel
     SUBDIR += rtorrent
     SUBDIR += rtorrent-devel
     SUBDIR += squall
