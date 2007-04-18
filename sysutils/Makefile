@@ -314,6 +314,7 @@
     SUBDIR += kcube
     SUBDIR += kdeadmin3
     SUBDIR += kdirstat
+    SUBDIR += keep
     SUBDIR += kkbswitch
     SUBDIR += kkeyled
     SUBDIR += klaptopdaemon
