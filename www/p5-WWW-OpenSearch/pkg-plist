@@ -1,11 +1,13 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/OpenSearch/.packlist
-%%SITE_PERL%%/WWW/OpenSearch/Url.pm
-%%SITE_PERL%%/WWW/OpenSearch/Response.pm
-%%SITE_PERL%%/WWW/OpenSearch/Query.pm
-%%SITE_PERL%%/WWW/OpenSearch/Image.pm
-%%SITE_PERL%%/WWW/OpenSearch/Description.pm
 %%SITE_PERL%%/WWW/OpenSearch.pm
+%%SITE_PERL%%/WWW/OpenSearch/Agent.pm
+%%SITE_PERL%%/WWW/OpenSearch/Description.pm
+%%SITE_PERL%%/WWW/OpenSearch/Image.pm
+%%SITE_PERL%%/WWW/OpenSearch/Query.pm
+%%SITE_PERL%%/WWW/OpenSearch/Request.pm
+%%SITE_PERL%%/WWW/OpenSearch/Response.pm
+%%SITE_PERL%%/WWW/OpenSearch/Url.pm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/OpenSearch
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 @dirrmtry %%SITE_PERL%%/WWW/OpenSearch
