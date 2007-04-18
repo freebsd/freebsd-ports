@@ -107,6 +107,7 @@
     SUBDIR += p5-Net-BitTorrent-PeerPacket
     SUBDIR += p5-WWW-BitTorrent
     SUBDIR += p5-pdonkey
+    SUBDIR += qbittorrent
     SUBDIR += qtella
     SUBDIR += qtorrent
     SUBDIR += rblibtorrent
