@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.07005
+PORTVERSION=	0.07006
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBIx
@@ -46,6 +46,7 @@ MAN3=	DBIx::Class.3 \
 	DBIx::Class::Manual::FAQ.3 \
 	DBIx::Class::Manual::Glossary.3 \
 	DBIx::Class::Manual::Intro.3 \
+	DBIx::Class::Manual::Joining.3 \
 	DBIx::Class::Manual::Troubleshooting.3 \
 	DBIx::Class::Ordered.3 \
 	DBIx::Class::PK.3 \
