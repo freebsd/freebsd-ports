@@ -1,0 +1,9 @@
+moo is a simple calculator that accepts C-like syntax as input.
+Calculations are done on expr, if given. Otherwise, the standard input is used.
+
+Numbers can be entered in hexadecimal (0xbeef), decimal (1984), octal (007),
+and binary (0b1001). All numerical operators (+, -, *, /, %), bit operators
+(|, ^, &, ~, <<, >>), and logical operators (==, !=, <, >, <=, >=, !, &&, ||)
+are supported.
+
+WWW: http://cyth.net/~ray/moo/
