@@ -36,10 +36,6 @@ CFLAGS+=	-DCHECK
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
 .if exists(${LOCALBASE}/mpi/openmpi/bin/mpirun)
 WITH_OPENMPI=	yes
 .endif
