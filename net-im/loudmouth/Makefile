@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	loudmouth
-PORTVERSION=	1.0.5
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	net-im gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITES=	http://ftp.imendio.com/pub/imendio/loudmouth/src/ \
+		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
 
 MAINTAINER=	gnome@FreeBSD.org
