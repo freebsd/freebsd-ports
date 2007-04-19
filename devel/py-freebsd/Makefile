@@ -26,10 +26,4 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/freebsd.so \
 		%%PYTHON_SITELIBDIR%%/freebsd_compat02.pyc \
 		%%PYTHON_SITELIBDIR%%/freebsd_compat02.pyo
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		requires GEOM which is only present on FreeBSD 5.x and above
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
