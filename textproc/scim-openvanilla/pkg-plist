@@ -1,3 +1,4 @@
-lib/scim-1.0/1.4.0/IMEngine/OVLoader-SCIM.a
-lib/scim-1.0/1.4.0/IMEngine/OVLoader-SCIM.la
-lib/scim-1.0/1.4.0/IMEngine/OVLoader-SCIM.so
+lib/scim-1.0/IMEngine/OVLoader-SCIM.a
+lib/scim-1.0/IMEngine/OVLoader-SCIM.la
+lib/scim-1.0/IMEngine/OVLoader-SCIM.so
+@dirrmtry lib/scim-1.0/IMEngine
