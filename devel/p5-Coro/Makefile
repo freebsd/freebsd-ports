@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Coro
-PORTVERSION=	3.5.5
+PORTVERSION=	3.6.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -27,8 +27,8 @@ PERL_CONFIGURE=	yes
 MAN3=		Coro.3 Coro::AIO.3 Coro::Channel.3 Coro::Handle.3 \
 		Coro::LWP.3 Coro::MakeMaker.3 Coro::RWLock.3 Coro::Select.3 \
 		Coro::Semaphore.3 Coro::SemaphoreSet.3 Coro::Signal.3 \
-		Coro::Socket.3 Coro::Specific.3 Coro::State.3 Coro::Timer.3 \
-		Coro::Util.3 Coro::Event.3
+		Coro::Socket.3 Coro::Specific.3 Coro::State.3 Coro::Storable.3 \
+		Coro::Timer.3 Coro::Util.3 Coro::Event.3
 
 .include <bsd.port.pre.mk>
 
