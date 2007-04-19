@@ -25,7 +25,7 @@ MAN3=	Test::YAML::Valid.3
 
 OPTIONS=	YAMLSYCK "Use YAML::Syck for testing" OFF
 
-post-configure:
+post-patch:
 	${PERL} -pi -e '$$_="" if /auto_install/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.pre.mk>
