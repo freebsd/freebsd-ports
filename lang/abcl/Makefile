@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abcl
-DISTVERSION=	0.0.9
+DISTVERSION=	0.0.10
 CATEGORIES=	lang lisp java
 MASTER_SITES=	http://armedbear.org/
 
@@ -19,7 +19,7 @@ SUB_LIST=	JAVA=${JAVA} ABCL_JAR=${JAVAJARDIR}/abcl.jar
 USE_GCC=	3.3+
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 do-build: ${WRKSRC}/abcl-src.jar ${WRKSRC}/libabcl.so
 
