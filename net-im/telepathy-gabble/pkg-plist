@@ -1,0 +1,5 @@
+bin/telepathy-gabble
+share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.gabble.service
+share/telepathy/managers/gabble.manager
+@dirrmtry share/telepathy/managers
+@dirrmtry share/telepathy
