@@ -17,7 +17,7 @@ USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-PORTDOCS=	 AUTHORS COPYING ChangeLog INSTALL NEWS README gflags.html
+PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README gflags.html
 
 post-patch:
 	${REINPLACE_CMD} -e 's|^docdir.*|docdir = ${DOCSDIR}|' ${WRKSRC}/Makefile.in
@@ -25,10 +25,4 @@ post-patch:
 	${REINPLACE_CMD} -e '/^install/s/ install-dist_docDATA//' ${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Do not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
