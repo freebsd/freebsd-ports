@@ -39,10 +39,6 @@ OPTIONS=	GPOD "iPod support" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES+=	${PATCHDIR}/extra-amarok_src_expression.h
-.endif
-
 CONFIGURE_ARGS+=--without-exscalibar \
 		--with-mp4v2 \
 		--with-mp4v2-dir=${PREFIX} \
