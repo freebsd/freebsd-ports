@@ -14896,6 +14896,7 @@ telak		ports/graphics/telak
 telbook		ports/misc/telbook
 telepathy-gabble	ports/net-im/telepathy-gabble
 telepathy-glib	ports/net-im/telepathy-glib
+telepathy-salut	ports/net-im/telepathy-salut
 tellico		ports/misc/tellico
 telserv		ports/net/telserv
 tempcontrol	ports/misc/tempcontrol
