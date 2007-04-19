@@ -186,10 +186,10 @@ post-build:
 .for tool in makeqpf mergetr msg2qm qembed qvfb
 	@cd ${WRKSRC}/tools/${tool}; ${SETENV} ${MAKE_ENV} ${MAKE}
 .endfor
-	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${GREP} --mmap -F -l -- \
-		"${PLATFORM}" | ${XARGS} ${REINPLACE_CMD} -e "s,${PLATFORM}/qmake.conf,," \
-		-e "s,${PLATFORM},,"
 	@${RM} -f ${WRKSRC}/doc/html/qmake*
+	${REINPLACE_CMD} -e 's|${PREFIX}/include/q.*h||g' \
+			-e 's|${PREFIX}/include/private/q.*h||g' \
+		${WRKSRC}/src/Makefile
 
 # Work around qmake generated dependencies
 pre-su-install:
