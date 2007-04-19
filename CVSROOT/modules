@@ -12870,6 +12870,7 @@ py-taglib	ports/audio/py-taglib
 py-tagpy	ports/audio/py-tagpy
 py-tarfile	ports/archivers/py-tarfile
 py-tconfpy	ports/devel/py-tconfpy
+py-telepathy-butterfly	ports/net-im/telepathy-butterfly
 py-telepathy-python	ports/net-im/telepathy-python
 py-testgears	ports/devel/py-testgears
 py-testoob	ports/devel/py-testoob
