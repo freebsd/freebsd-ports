@@ -1,0 +1,11 @@
+--- support-files/Makefile.in.orig	Thu Apr 19 09:31:48 2007
++++ support-files/Makefile.in	Thu Apr 19 09:33:03 2007
+@@ -419,7 +419,7 @@
+ 
+ pkgdata_SCRIPTS = mysql.server
+ aclocaldir = $(datadir)/aclocal
+-aclocal_DATA = mysql.m4
++aclocal_DATA =
+ noinst_DATA = mysql-@VERSION@.spec \
+ 			MySQL-shared-compat.spec
+ 
