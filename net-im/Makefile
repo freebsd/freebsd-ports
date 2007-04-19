@@ -10,6 +10,7 @@
     SUBDIR += bsflite
     SUBDIR += ccmsn
     SUBDIR += centericq
+    SUBDIR += centerim
     SUBDIR += cicquin
     SUBDIR += cjc
     SUBDIR += cli-msn
