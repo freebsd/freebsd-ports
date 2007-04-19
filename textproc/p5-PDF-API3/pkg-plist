@@ -6,7 +6,6 @@
 %%SITE_PERL%%/PDF/API2/Win32.pm
 %%SITE_PERL%%/PDF/API2/HOWTO.pod
 %%SITE_PERL%%/PDF/API2/Outline.pm
-%%SITE_PERL%%/PDF/API2/IOString.pm
 %%SITE_PERL%%/PDF/API2/NamedDestination.pm
 %%SITE_PERL%%/PDF/API2/Annotation.pm
 %%SITE_PERL%%/PDF/API2/Matrix.pm
