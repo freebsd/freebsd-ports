@@ -15,11 +15,6 @@ MASTER_SITES=	http://www.magnicomp.com/download/rdist/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A network file distribution/synchronisation utility
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 400000
-BROKEN=		Not supported for pre-4.0 FreeBSD
-.endif
-
 # To avoid confusion with /usr/bin/rdist, you may prefer otherwise.
 RDIST_NAME?=	rdist6
 
@@ -33,4 +28,4 @@ post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/${RDIST_NAME}
 	@${STRIP_CMD} ${PREFIX}/bin/rdistd
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

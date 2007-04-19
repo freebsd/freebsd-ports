@@ -39,10 +39,6 @@ CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
-.endif
-
 .if !defined(WITHOUT_JPEG)
 USE_GNOME+=	gdkpixbuf
 .endif

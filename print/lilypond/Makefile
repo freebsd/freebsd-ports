@@ -59,10 +59,6 @@ CFLAGS+=	${CPPFLAGS}
 .include <bsd.port.pre.mk>
 ALL_TARGET=	all
 
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4
-.endif
-
 SCRIPTS_ENV+=	PORTVERSION=${PORTVERSION}
 
 .if defined(NOPORTDOCS)

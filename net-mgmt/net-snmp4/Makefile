@@ -71,6 +71,8 @@ CFLAGS+=	-DOPENSSL_DES_LIBDES_COMPATIBILITY
 SHLIB_VERSION=	4
 PLIST_SUB+=	shlib=${SHLIB_VERSION}
 
+OPTIONS=	IPV6	"Enable IPv6 support"	On
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 700019
@@ -81,7 +83,7 @@ BROKEN=		Does not compile on FreeBSD >= 7.0
 CFLAGS+=	-Dfreebsd5
 .endif
 
-.if ${OSVERSION} >= 400014
+.if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 

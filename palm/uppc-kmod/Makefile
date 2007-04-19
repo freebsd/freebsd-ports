@@ -22,12 +22,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 IGNORE=		Requires kernel source (/usr/src/sys) to build
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not build on FreeBSD 4.x"
-.endif
-
 post-build:
 	@${REINPLACE_CMD} -e 's|%%INITIAL_INSTALLDIR%%|${PREFIX}/lib|g' ${BUILD_WRKSRC}/uppcsetup
 	@${REINPLACE_CMD} -e 's|%%INITIAL_MODDIR%%|${KMODDIR}|g' ${WRKSRC}/uppcsetup
@@ -46,4 +40,4 @@ post-install:
 	@${ECHO_CMD} "       * and set up a connection.                                     *"
 	@${ECHO_CMD} "       ****************************************************************"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

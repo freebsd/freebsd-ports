@@ -18,12 +18,6 @@ COMMENT=	The networking library used in UNIX Network Programming Volume 1 2e
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
-BROKEN=		"Does not compile on alpha 4.x"
-.endif
-
 pre-patch:
 	@ ${CP} ${WRKSRC}/lib/wrapsock.c ${WRKSRC}/lib/wrapsock_r.c
 
@@ -40,4 +34,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/addrinfo.h ${PREFIX}/include/unp
 	${INSTALL_DATA} ${WRKSRC}/config.h ${PREFIX}/include/unp
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

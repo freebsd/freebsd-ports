@@ -25,15 +25,6 @@ USE_GCC=	3.2+
 PLIST_FILES=	bin/tt++
 PORTDOCS=	BUGS CREDITS FAQ README TODO tintin19.txt chat_protocol.txt
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
-CFLAGS+=	-I ${LOCALBASE}/include
-MAKE_ENV+=	LIBS="-L${LOCALBASE}/lib"
-MAKE_ARGS+=	LDFLAGS=${PTHREAD_LIBS}
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile.in
 
@@ -46,4 +37,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
