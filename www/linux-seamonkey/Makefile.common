@@ -39,6 +39,9 @@ DESKTOP_SUFFIX?=	(Linux)
 _A=	>> ${TMPPLIST}
 _Q=	2>/dev/null || true
 
+post-extract:
+	@${RM} -rf ${WRKSRC}/updates
+
 .if ${CATEGORIES:Mwww}
 post-patch:
 	@${ECHO} 'pref("general.useragent.vendor", "'${OPSYS}'");' >> ${PREFS_FILE}
