@@ -39,6 +39,7 @@ lib/%%APP_NAME%%/components/nsExtensionManager.js
 lib/%%APP_NAME%%/components/nsFilePicker.js
 lib/%%APP_NAME%%/components/nsHelperAppDlg.js
 lib/%%APP_NAME%%/components/nsInterfaceInfoToIDL.js
+lib/%%APP_NAME%%/components/nsLivemarkService.js
 lib/%%APP_NAME%%/components/nsMicrosummaryService.js
 lib/%%APP_NAME%%/components/nsProxyAutoConfig.js
 lib/%%APP_NAME%%/components/nsSafebrowsingApplication.js
