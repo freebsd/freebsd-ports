@@ -35,18 +35,22 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 GCONF_SCHEMAS=	gossip.schemas
 
-OPTIONS=	NOTIFY "Enable libnotify support" on
+OPTIONS=	NOTIFY "Enable libnotify support" on \
+		TELEPATHY "Enable telepathy support" off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	does not build on 4.X
-.endif
 
 .if !defined(WITHOUT_NOTIFY)
 LIB_DEPENDS+=		notify.1:${PORTSDIR}/devel/libnotify
 .else
 CONFIGURE_ARGS+=	--enable-libnotify=no
+.endif
+
+.if defined(WITH_TELEPATHY)
+LIB_DEPENDS+=		telepathy.3:${PORTSDIR}/net-im/libtelepathy
+CONFIGURE_ARGS+=	--enable-telepathy=yes
+.else
+CONFIGURE_ARGS+=	--enable-telepathy=no
 .endif
 
 .include <bsd.port.post.mk>
