@@ -25,7 +25,6 @@ include/mysql/my_list.h
 include/mysql/my_net.h
 include/mysql/my_no_pthread.h
 include/mysql/my_pthread.h
-include/mysql/my_semaphore.h
 include/mysql/my_sys.h
 include/mysql/my_xml.h
 include/mysql/mysql.h
@@ -54,6 +53,7 @@ lib/mysql/libmysqlclient_r.so.15
 %%ZLIB%%lib/mysql/libz.la
 %%ZLIB%%lib/mysql/libz.so
 %%ZLIB%%lib/mysql/libz.so.3
+share/aclocal/mysql.m4
 %%DATADIR%%/mysql_fix_privilege_tables.sql
 @dirrm include/mysql
 @dirrm lib/mysql

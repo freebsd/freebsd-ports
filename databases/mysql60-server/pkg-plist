@@ -1,11 +1,10 @@
-@unexec %D/etc/rc.d/mysql-server.sh stop > /dev/null 2>&1 || true
+@stopdaemon mysql-server
 bin/innochecksum
 bin/my_print_defaults
 bin/myisam_ftdump
 bin/myisamchk
 bin/myisamlog
 bin/myisampack
-bin/mysql_create_system_tables
 bin/mysql_install_db
 bin/mysql_tzinfo_to_sql
 bin/mysql_waitpid
@@ -128,6 +127,8 @@ libexec/mysqld
 %%DATADIR%%/my-large.cnf
 %%DATADIR%%/my-medium.cnf
 %%DATADIR%%/my-small.cnf
+%%DATADIR%%/mysql_system_tables.sql
+%%DATADIR%%/mysql_system_tables_data.sql
 %%DATADIR%%/mysql-log-rotate
 %%DATADIR%%/mysql.server
 %%DATADIR%%/ndb-config-2-node.ini
