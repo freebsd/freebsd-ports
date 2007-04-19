@@ -99,6 +99,7 @@
     SUBDIR += pork
     SUBDIR += py-msnp
     SUBDIR += py-pyxmpp
+    SUBDIR += pymsn
     SUBDIR += p5-DJabberd
     SUBDIR += p5-Jabber-Connection
     SUBDIR += p5-Jabber-SimpleSend
