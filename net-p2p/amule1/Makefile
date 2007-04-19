@@ -17,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The all-platform eMule p2p client
 
 DEPRECATED=	use net-p2p/amule2 if you are running OSVERSION > 500000
+EXPIRATION_DATE=	2007-05-09
 
 LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
 
