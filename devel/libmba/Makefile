@@ -33,22 +33,16 @@ MANCOMPRESSED=	yes
 
 SHLIB_MAJOR=	0
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|\$${PREFIX}|g ; \
 		 s|^CC|#CC|g ; \
 		 s|^MAJ|#MAJ|g ; \
 		 s|^MIN|#MIN|g ; \
-		 s|\.\$$(MAJVERSION)||g ; \
+		 s|\.\$${MAJVERSION}||g ; \
 		 s|^RPM_OPT_FLAGS|#RPM_OPT_FLAGS|g ; \
 		 s| -lc| \$${LDFLAGS}|g ; \
 		 s|install -m ...|\$${BSD_INSTALL_DATA}|g ; \
 		 s|-/sbin/ldconfig.*$$||g ; \
 		 s|-D_XOPEN_SOURCE=500||g' ${WRKSRC}/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
