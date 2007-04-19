@@ -181,7 +181,8 @@ post-install:
 .endif
 .if defined(WITH_DOCPDF)
 	@${MKDIR} ${DOCSDIR}/pdf
-	@${INSTALL_DATA} ${DISTDIR}/fluxbook.pdf ${DOCSDIR}/pdf/
+	@${INSTALL_DATA} ${DISTDIR}/fluxbook-${DOCSVERSION}.pdf \
+		${DOCSDIR}/pdf/
 .endif
 .if defined(WITH_DOCHTML)
 	@${MKDIR} ${DOCSDIR}/html

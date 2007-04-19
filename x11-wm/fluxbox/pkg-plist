@@ -105,7 +105,7 @@ bin/startfluxbox
 %%DOCHTML:%%%%DOCSDIR%%/html/x834.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x836.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x837.html
-%%DOCPDF:%%%%DOCSDIR%%/pdf/fluxbook.pdf
+%%DOCPDF:%%%%DOCSDIR%%/pdf/fluxbook-20060629.pdf
 %%DATADIR%%/init
 %%DATADIR%%/keys
 %%DATADIR%%/menu
