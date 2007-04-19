@@ -19,13 +19,7 @@ PLIST_FILES=	bin/makeztxt
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
 
-MAKE_ENV+=	USEPOSIX=1
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-MAKE_ENV+=	LONG_OPTS=1
-.endif
+MAKE_ENV+=	USEPOSIX=1 LONG_OPTS=1
 
 post-patch:
 	${REINPLACE_CMD} 's/-O2//' ${WRKSRC}/libztxt/Makefile
@@ -33,4 +27,4 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/makeztxt ${LOCALBASE}/bin/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

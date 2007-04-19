@@ -68,19 +68,6 @@ pre-fetch:
 	@${ECHO} -----------------------------------------------------------
 	@${FALSE}
 .endif
-.if ${OSVERSION} < 410000
-	@${ECHO}
-	@${ECHO} OS-VERSION ${OSVERSION}
-	@${ECHO}
-	@${ECHO} Staroffice depende de uma correção para
-	@${ECHO} linguagem script em
-	@${ECHO} /usr/src/sys/i386/linux/linux_sysvec.c
-	@${ECHO} \(revisão 1.55.2.1 ou maior\)
-	@${ECHO}
-	@${ECHO} Por favor, atualize seu sistema para FreeBSD 4.1
-	@${ECHO}
-	@${FALSE}
-.endif
 .if ${SIZE} < 250000
 	@${ECHO}
 	@${ECHO} Há pouco espaço livre em disco em seu diretório

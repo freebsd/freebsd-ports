@@ -16,12 +16,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-rc2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ncurses based front-end to manage the FreeBSD ports collection
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400000
-LIB_DEPENDS=	ncurses.5:${PORTSDIR}/devel/ncurses
-.endif
-
 MAN1=		portsman.1
 MAN5=		portsmanrc.5
 GNU_CONFIGURE=	yes
@@ -30,4 +24,4 @@ post-patch:
 	@${REINPLACE_CMD} -e "/^pmanrcdir/s|etc$$|etc/portsman|" \
 		${WRKSRC}/config/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

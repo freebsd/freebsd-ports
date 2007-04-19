@@ -53,10 +53,6 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not build
-.endif
-
 .if ${OSVERSION} >= 502122
 # allow nonconforming code to compile
 CFLAGS+=	-fpermissive

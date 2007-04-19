@@ -26,10 +26,6 @@ MAKE_ENV=	OSTYPE=${OPSYS}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 480100 || ${OSVERSION} >= 500000 && ${OSVERSION} < 501000
-IGNORE=		Systems prior to FreeBSD 4.9 & 5.1 are not supported
-.endif
-
 .if ${OSVERSION} >= 600021
 IGNORE=		nve support already exists in base
 .endif

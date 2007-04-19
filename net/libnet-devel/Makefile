@@ -32,16 +32,6 @@ EXAMPLES=	sample/*.c
 
 SHORT_VER=	113
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if ${OSVERSION} < 500000
-	${REINPLACE_CMD} -e "s|stdint\.h|inttypes.h|g" \
-		${WRKSRC}/include/libnet/libnet-types.h
-.else
-	${DO_NADA}
-.endif
-
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/libnet-config \
 		${PREFIX}/bin/libnet${SHORT_VER}-config
@@ -55,4 +45,4 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -20,10 +20,4 @@ GNU_CONFIGURE=	yes
 
 MAN8=		pads.8 pads-report.8 pads.conf.8
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

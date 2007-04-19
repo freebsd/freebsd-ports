@@ -185,7 +185,7 @@ MAN4=		CLOG_Init.4 CLOG_commtype.4 CLOG_cput.4 CLOG_csync.4			\
 
 # Use ssh instead of rsh
 .if !defined(WITHOUT_SSH)
-.if ${OSVERSION} >= 400016 && exists(/usr/bin/ssh)
+.if exists(/usr/bin/ssh)
 CONFIGURE_ENV+=	RSHCOMMAND="/usr/bin/ssh"
 .elif defined(WITH_SSH) || exists(${LOCALBASE}/bin/ssh)
 RUN_DEPENDS+=	${LOCALBASE}/bin/ssh:${PORTSDIR}/security/ssh
