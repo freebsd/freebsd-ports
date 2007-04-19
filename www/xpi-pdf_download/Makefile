@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pdf_download
-PORTVERSION=	0.7.9
+PORTVERSION=	0.8
 DISTVERSIONSUFFIX=	-fx+fl
 CATEGORIES=	www
 
@@ -14,6 +14,7 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	An extension to handle PDF files
 
 XPI_ID=		{37E4D8EA-8BDA-4831-8EA1-89053939A250}
+XPI_NUM=	636
 XPI_FILES=	chrome/pdfdownload.jar chrome.manifest install.rdf \
 		defaults/preferences/prefs.js
 XPI_DIRS=	chrome defaults/preferences defaults
