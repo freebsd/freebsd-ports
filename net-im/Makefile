@@ -124,6 +124,7 @@
     SUBDIR += sulci
     SUBDIR += telepathy-gabble
     SUBDIR += telepathy-glib
+    SUBDIR += telepathy-idle
     SUBDIR += telepathy-salut
     SUBDIR += tik
     SUBDIR += tkabber
