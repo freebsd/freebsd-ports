@@ -1,6 +1,8 @@
 bin/munger
-lib/libmunger.so.18
+lib/libmunger.so.19
 %%DKNS_BIN%%
+%%DATADIR%%/ipdatabase.munger
+%%DATADIR%%/ip2country.munger
 %%DATADIR%%/echo.munger
 %%DATADIR%%/msh.munger
 %%DATADIR%%/mbox2munger.munger
