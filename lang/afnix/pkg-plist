@@ -65,9 +65,16 @@ include/afnix/net/TcpSocket.hpp
 include/afnix/net/UdpClient.hpp
 include/afnix/net/UdpServer.hpp
 include/afnix/net/UdpSocket.hpp
+include/afnix/nwg/Cookie.hpp
+include/afnix/nwg/HttpProto.hpp
+include/afnix/nwg/HttpReply.hpp
+include/afnix/nwg/HttpRequest.hpp
+include/afnix/nwg/HttpResponse.hpp
 include/afnix/nwg/Libnwg.hpp
 include/afnix/nwg/Mime.hpp
+include/afnix/nwg/NwgCalls.hpp
 include/afnix/nwg/Prednwg.hpp
+include/afnix/nwg/Session.hpp
 include/afnix/nwg/Uri.hpp
 include/afnix/nwg/UriQuery.hpp
 include/afnix/pim/Appointer.hpp
@@ -120,6 +127,7 @@ include/afnix/std/Cons.hpp
 include/afnix/std/Cursor.hpp
 include/afnix/std/Date.hpp
 include/afnix/std/Exception.hpp
+include/afnix/std/Freeable.hpp
 include/afnix/std/HashTable.hpp
 include/afnix/std/Heap.hpp
 include/afnix/std/Input.hpp
@@ -149,6 +157,7 @@ include/afnix/std/Output.hpp
 include/afnix/std/OutputFile.hpp
 include/afnix/std/OutputString.hpp
 include/afnix/std/OutputTerm.hpp
+include/afnix/std/Pathname.hpp
 include/afnix/std/Plist.hpp
 include/afnix/std/PrintTable.hpp
 include/afnix/std/Property.hpp
@@ -176,6 +185,7 @@ include/afnix/std/Thread.hpp
 include/afnix/std/Thrmap.hpp
 include/afnix/std/Time.hpp
 include/afnix/std/Transcoder.hpp
+include/afnix/std/Trie.hpp
 include/afnix/std/Unicode.hpp
 include/afnix/std/Unimapper.hpp
 include/afnix/std/Unitabler.hpp
@@ -186,44 +196,57 @@ include/afnix/sys/Libsys.hpp
 include/afnix/sys/Predsys.hpp
 include/afnix/sys/SysCalls.hpp
 include/afnix/txt/Lexeme.hpp
+include/afnix/txt/Lexicon.hpp
 include/afnix/txt/Libtxt.hpp
 include/afnix/txt/Literate.hpp
 include/afnix/txt/Pattern.hpp
 include/afnix/txt/Predtxt.hpp
 include/afnix/txt/Scanner.hpp
-include/afnix/txt/Sort.hpp
-include/afnix/wam/Cookie.hpp
-include/afnix/wam/HttpReply.hpp
-include/afnix/wam/Libwam.hpp
-include/afnix/wam/Predwam.hpp
-include/afnix/wam/Session.hpp
-include/afnix/wam/XhtmlBody.hpp
-include/afnix/wam/XhtmlCaption.hpp
-include/afnix/wam/XhtmlCgr.hpp
-include/afnix/wam/XhtmlCol.hpp
-include/afnix/wam/XhtmlDiv.hpp
-include/afnix/wam/XhtmlHead.hpp
-include/afnix/wam/XhtmlHr.hpp
-include/afnix/wam/XhtmlHtml.hpp
-include/afnix/wam/XhtmlImg.hpp
-include/afnix/wam/XhtmlMeta.hpp
-include/afnix/wam/XhtmlPara.hpp
-include/afnix/wam/XhtmlRef.hpp
-include/afnix/wam/XhtmlRoot.hpp
-include/afnix/wam/XhtmlStyle.hpp
-include/afnix/wam/XhtmlTable.hpp
-include/afnix/wam/XhtmlTbody.hpp
-include/afnix/wam/XhtmlTd.hpp
-include/afnix/wam/XhtmlTelem.hpp
-include/afnix/wam/XhtmlTfoot.hpp
-include/afnix/wam/XhtmlTh.hpp
-include/afnix/wam/XhtmlThead.hpp
-include/afnix/wam/XhtmlTitle.hpp
-include/afnix/wam/XhtmlTr.hpp
+include/afnix/txt/TxtCalls.hpp
+include/afnix/txt/TxtUtils.hpp
+include/afnix/txt/Worder.hpp
+include/afnix/wax/Libwax.hpp
+include/afnix/wax/Predwax.hpp
+include/afnix/wax/XhtmlBody.hpp
+include/afnix/wax/XhtmlBr.hpp
+include/afnix/wax/XhtmlCaption.hpp
+include/afnix/wax/XhtmlCgr.hpp
+include/afnix/wax/XhtmlCol.hpp
+include/afnix/wax/XhtmlDiv.hpp
+include/afnix/wax/XhtmlEmph.hpp
+include/afnix/wax/XhtmlHead.hpp
+include/afnix/wax/XhtmlHr.hpp
+include/afnix/wax/XhtmlHtml.hpp
+include/afnix/wax/XhtmlImg.hpp
+include/afnix/wax/XhtmlLi.hpp
+include/afnix/wax/XhtmlLink.hpp
+include/afnix/wax/XhtmlMeta.hpp
+include/afnix/wax/XhtmlMime.hpp
+include/afnix/wax/XhtmlPara.hpp
+include/afnix/wax/XhtmlPre.hpp
+include/afnix/wax/XhtmlRef.hpp
+include/afnix/wax/XhtmlRoot.hpp
+include/afnix/wax/XhtmlScript.hpp
+include/afnix/wax/XhtmlStyle.hpp
+include/afnix/wax/XhtmlTable.hpp
+include/afnix/wax/XhtmlTbody.hpp
+include/afnix/wax/XhtmlTd.hpp
+include/afnix/wax/XhtmlTelem.hpp
+include/afnix/wax/XhtmlTfoot.hpp
+include/afnix/wax/XhtmlTh.hpp
+include/afnix/wax/XhtmlThead.hpp
+include/afnix/wax/XhtmlTitle.hpp
+include/afnix/wax/XhtmlTr.hpp
+include/afnix/wax/XhtmlTxtb.hpp
+include/afnix/wax/XhtmlTxti.hpp
+include/afnix/wax/XhtmlTxtt.hpp
+include/afnix/wax/XhtmlUl.hpp
+include/afnix/wax/XmlMime.hpp
 include/afnix/xml/Libxml.hpp
 include/afnix/xml/Predxml.hpp
 include/afnix/xml/XmlAttlist.hpp
 include/afnix/xml/XmlBuffer.hpp
+include/afnix/xml/XmlCalls.hpp
 include/afnix/xml/XmlComment.hpp
 include/afnix/xml/XmlCref.hpp
 include/afnix/xml/XmlData.hpp
@@ -242,10 +265,29 @@ include/afnix/xml/XmlReader.hpp
 include/afnix/xml/XmlRef.hpp
 include/afnix/xml/XmlRoot.hpp
 include/afnix/xml/XmlSection.hpp
-include/afnix/xml/XmlStream.hpp
 include/afnix/xml/XmlSystem.hpp
 include/afnix/xml/XmlTag.hpp
 include/afnix/xml/XmlText.hpp
+include/afnix/xml/XmlTexter.hpp
+include/afnix/xml/Xne.hpp
+include/afnix/xml/XneCond.hpp
+include/afnix/xml/XneTree.hpp
+include/afnix/xml/XsmBuffer.hpp
+include/afnix/xml/XsmDocument.hpp
+include/afnix/xml/XsmNode.hpp
+include/afnix/xml/XsmReader.hpp
+include/afnix/xml/XsoBuffer.hpp
+include/afnix/xml/XsoInfo.hpp
+include/afnix/xml/XsoStream.hpp
+include/afnix/xpe/Libxpe.hpp
+include/afnix/xpe/Predxpe.hpp
+include/afnix/xpe/XmlContent.hpp
+include/afnix/xpe/XmlFeature.hpp
+include/afnix/xpe/XmlInclude.hpp
+include/afnix/xpe/XmlProcessor.hpp
+lib/afnix/afnix-adp.axl
+lib/afnix/afnix-amd.axl
+lib/afnix/afnix-apx.axl
 lib/libafnix-eng.a
 lib/libafnix-eng.so
 lib/libafnix-eng.so.1
@@ -279,12 +321,15 @@ lib/libafnix-sys.so.1
 lib/libafnix-txt.a
 lib/libafnix-txt.so
 lib/libafnix-txt.so.1
-lib/libafnix-wam.a
-lib/libafnix-wam.so
-lib/libafnix-wam.so.1
+lib/libafnix-wax.a
+lib/libafnix-wax.so
+lib/libafnix-wax.so.1
 lib/libafnix-xml.a
 lib/libafnix-xml.so
 lib/libafnix-xml.so.1
+lib/libafnix-xpe.a
+lib/libafnix-xpe.so
+lib/libafnix-xpe.so.1
 @dirrm etc/afnix
 @dirrm include/afnix/cpy
 @dirrm include/afnix/eng
@@ -298,6 +343,8 @@ lib/libafnix-xml.so.1
 @dirrm include/afnix/std
 @dirrm include/afnix/sys
 @dirrm include/afnix/txt
-@dirrm include/afnix/wam
+@dirrm include/afnix/wax
 @dirrm include/afnix/xml
+@dirrm include/afnix/xpe
 @dirrm include/afnix
+@dirrm lib/afnix
