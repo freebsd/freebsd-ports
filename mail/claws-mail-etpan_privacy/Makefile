@@ -7,7 +7,7 @@
 
 PORTNAME=	etpan_privacy
 PORTVERSION=	0.15.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
