@@ -909,11 +909,17 @@ Note:  Please add new entries to the beginning of this file.
 	<range><lt>1.5.0.10</lt></range>
       </package>
       <package>
-	<name>firefox-ja</name>
 	<name>linux-firefox-devel</name>
+	<range><lt>3.0.a2007.04.18</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey-devel</name>
+	<range><lt>1.5.a2007.04.18</lt></range>
+      </package>
+      <package>
+	<name>firefox-ja</name>
 	<name>linux-mozilla-devel</name>
 	<name>linux-mozilla</name>
-	<name>linux-seamonkey-devel</name>
 	<name>mozilla</name>
 	<range><gt>0</gt></range>
       </package>
@@ -966,7 +972,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-02-23</discovery>
       <entry>2007-02-24</entry>
-      <modified>2007-03-01</modified>
+      <modified>2007-04-19</modified>
     </dates>
   </vuln>
 
