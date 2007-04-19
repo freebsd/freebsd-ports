@@ -8,6 +8,7 @@
 
 PORTNAME=	gimp-app
 PORTVERSION=	2.3.15
+PORTREVISION=	1
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -45,11 +46,12 @@ USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 CONFIGURE_ARGS?=--disable-perl \
-		--with-html-dir=${DOCSDIR} \
+		--with-html-dir=${PREFIX}/share/doc/gimp \
 		--disable-gtk-doc \
 		--without-print \
 		--disable-python \
-		--with-desktop-dir=${PREFIX}/share
+		--with-desktop-dir=${PREFIX}/share \
+		--docdir=${PREFIX}/share/doc/gimp
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		GIMP_THREAD_LIBS=${PTHREAD_LIBS}
