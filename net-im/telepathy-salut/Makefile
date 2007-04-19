@@ -10,7 +10,7 @@ PORTVERSION=	0.1.1
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Link-local Connection Manager for Telepathy Framework
 
 LIB_PC_DEPENDS=	gobject-2.0.pc:${PORTSDIR}/devel/glib20 \

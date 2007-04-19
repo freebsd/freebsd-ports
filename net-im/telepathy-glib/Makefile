@@ -10,7 +10,7 @@ PORTVERSION=	0.5.10
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GLib utility library for the Telepathy framework
 
 LIB_PC_DEPENDS=	gobject-2.0.pc:${PORTSDIR}/devel/glib20 \
