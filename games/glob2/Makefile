@@ -6,13 +6,10 @@
 #
 
 PORTNAME=		glob2
-PORTVERSION=		0.8.22
+PORTVERSION=		0.8.23
 CATEGORIES=		games
-MASTER_SITES=		http://dl.sv.nongnu.org/releases/glob2/${PORTVERSION}/:src	\
-			${MASTER_SITE_LOCAL:S|$|:data|:S|%SUBDIR%|${MASTER_SITE_SUBDIR}|}
+MASTER_SITES=		http://dl.sv.nongnu.org/releases/glob2/${PORTVERSION}/
 MASTER_SITE_SUBDIR=	thierry
-DISTFILES=		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:src	\
-			${PORTNAME}-data_from_CVS-${PORTVERSION}${EXTRACT_SUFX}:data
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Globulation 2 - a free and innovative strategy game
@@ -40,8 +37,8 @@ BROKEN=			Does not build on ${ARCH}
 pre-configure:
 	${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|"	\
 		${WRKSRC}/configure
-	${REINPLACE_CMD} -e "s|Icon=|Icon=${DATADIR}/pixmaps/|"	\
-		${WRKSRC}/data/glob2.desktop
+	${REINPLACE_CMD} -e "s|Icon=|Icon=${DATADIR}/pixmaps/|;	\
+		s|x48|x48.png|" ${WRKSRC}/data/glob2.desktop
 
 post-install:
 	${MKDIR} ${DESKTOPDIR}
