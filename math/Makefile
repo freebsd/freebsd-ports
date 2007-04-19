@@ -145,6 +145,7 @@
     SUBDIR += metis
     SUBDIR += metis-edf
     SUBDIR += miracl
+    SUBDIR += moo
     SUBDIR += mpexpr
     SUBDIR += mpfr
     SUBDIR += mprime

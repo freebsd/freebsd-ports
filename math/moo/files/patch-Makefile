@@ -1,0 +1,18 @@
+--- Makefile.orig	Thu Apr  5 14:13:26 2007
++++ Makefile	Thu Apr  5 14:14:06 2007
+@@ -3,14 +3,11 @@
+ PROG=		moo
+ SRCS=		moo.c scan.c
+ CPPFLAGS+=	-I${.CURDIR}
+-COPTS+=		-Wall -W -Wno-unused -Wshadow -pedantic
++COPTS+=		-Wall -W -Wno-unused -Wshadow
+ CLEANFILES+=	moo.c y.tab.h scan.c lex.yy.c
+ 
+ LOCALBASE?=/usr/local
+ BINDIR=${LOCALBASE}/bin
+ MANDIR=${LOCALBASE}/man/cat
+-
+-regress::
+-	cd ${.CURDIR}/regress && ${MAKE} MOO=${.OBJDIR}/moo
+ 
+ .include <bsd.prog.mk>
