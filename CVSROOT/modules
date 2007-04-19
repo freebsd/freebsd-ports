@@ -14894,6 +14894,7 @@ teknap		ports/audio/teknap
 tel		ports/deskutils/tel
 telak		ports/graphics/telak
 telbook		ports/misc/telbook
+telepathy-glib	ports/net-im/telepathy-glib
 tellico		ports/misc/tellico
 telserv		ports/net/telserv
 tempcontrol	ports/misc/tempcontrol
