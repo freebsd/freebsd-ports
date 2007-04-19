@@ -86,6 +86,5 @@ post-install:
 	@for d in `${CAT} ${WRKSRC}/dirs.txt`;do ${ECHO_CMD} @dirrm share/upp/$$d >> ${TMPPLIST};done;
 	@${ECHO_CMD} @dirrm share/upp >> ${TMPPLIST}
 	@${RM} ${WRKSRC}/*.txt
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
