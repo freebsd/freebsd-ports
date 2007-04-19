@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	herrie
-PORTVERSION=	1.6
+PORTVERSION=	1.6.1
 CATEGORIES=	audio
 MASTER_SITES=	http://herrie.info/distfiles/ \
 		http://www.il.fontys.nl/~ed/projects/herrie/distfiles/ \
@@ -36,6 +36,10 @@ MAN1=		herrie.1
 MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
+CONFIGURE_ARGS+=ncurses
+.endif
 
 .if !defined(WITHOUT_MAD)
 LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/mad \
@@ -78,7 +82,7 @@ PLIST_SUB+=	NLS=""
 USE_GETTEXT=	yes
 .else
 PLIST_SUB+=	NLS="@comment "
-CONFIGURE_ARGS+=no_trans
+CONFIGURE_ARGS+=no_nls
 .endif
 
 .include <bsd.port.post.mk>
