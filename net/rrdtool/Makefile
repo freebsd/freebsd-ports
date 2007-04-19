@@ -57,6 +57,7 @@ MAN3PREFIX=	${TARGETDIR}/lib/perl5/${PERL_VERSION}
 post-extract:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's/install-idocDATA install-ihtmlDATA//g' \
+		-e 's/^	cd .* rrdtool.html index.html/	#/' \
 		${WRKSRC}/doc/Makefile.in
 .endif
 
