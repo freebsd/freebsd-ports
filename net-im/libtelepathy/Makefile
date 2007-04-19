@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	net-im devel
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
-MAINTAINER=	flz@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Flexible Communications Framework
 
 LIB_PC_DEPENDS=	gobject-2.0.pc:${PORTSDIR}/devel/glib20 \
