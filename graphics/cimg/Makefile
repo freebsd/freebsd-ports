@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cimg
-DISTVERSION=	1-19
-PORTREVISION=	2
+PORTVERSION=	1.2.0
+PORTEPOCH=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -45,6 +45,9 @@ LIB_DEPENDS+=	png:${PORTSDIR}/graphics/png		\
 		tiff:${PORTSDIR}/graphics/tiff		\
 		Magick:${PORTSDIR}/graphics/ImageMagick	\
 		fftw3:${PORTSDIR}/math/fftw3
+ALL_TARGET=	oFreeBSD
+.else
+ALL_TARGET=	dFreeBSD
 . endif
 
 DOCBASE=	CHANGES.txt README.txt

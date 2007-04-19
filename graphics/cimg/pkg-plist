@@ -24,6 +24,7 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/img/logoODYSSEE.png
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard1.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/postcard3.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/project-support.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/screenshots_item.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_blobs.jpg
@@ -171,8 +172,10 @@ include/CImg.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/cimgmatlab_cannyderiche.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/cimgmatlab_cannyderiche.m
 %%PORTDOCS%%%%EXAMPLESDIR%%/dtmri_view.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/edge_explorer.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/fade_images.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/greycstoration.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/greycstoration4gimp.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/greycstoration4integration.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/hough_transform.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/image2ascii.cpp
