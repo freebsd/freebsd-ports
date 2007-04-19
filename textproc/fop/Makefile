@@ -6,39 +6,38 @@
 #
 
 PORTNAME=	fop
-PORTVERSION=	0.20.5
+PORTVERSION=	0.93
 CATEGORIES=	textproc java
-MASTER_SITES=	${MASTER_SITE_APACHE_XML}
-MASTER_SITE_SUBDIR=	fop
+MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:fop/} \
+	${MASTER_SITE_SOURCEFORGE:S/$/:hyph/}
+MASTER_SITE_SUBDIR=	xmlgraphics/fop/:fop offo/:hyph
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+#DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+DISTFILES=	${DISTNAME}.tar.gz:fop offo-hyphenation.zip:hyph
+EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print formatter driven by XSL formatting
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
-NO_BUILD=	yes
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
+USE_ANT=	yes
 
-SUB_FILES=	fop.sh
+post-extract:
+	cd ${WRKDIR} && unzip ${DISTDIR}/offo-hyphenation.zip
+	cp ${WRKDIR}/offo-hyphenation/hyph/*.xml ${WRKSRC}/hyph
 
 do-install:
-	${MKDIR} ${DATADIR}/build
+	${MKDIR} ${DATADIR}
 	cd ${WRKSRC}; \
-	  ${INSTALL_DATA} CHANGES LICENSE README ReleaseNotes.html STATUS ${DATADIR}/
-	${INSTALL_SCRIPT} ${WRKDIR}/fop.sh ${PREFIX}/bin/fop
+	  ${INSTALL_DATA} LICENSE README known-issues.xml status.xml build.xml ${DATADIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/fop ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/fop ${DATADIR}/fop
+	${LN} -s ${DATADIR}/fop ${PREFIX}/bin/fop
 	cd ${WRKSRC} \
-	  && ${FIND} conf lib -type d -exec ${MKDIR} ${DATADIR}/{} \; \
-	  && ${FIND} conf lib -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
-	cd ${WRKSRC}/src \
-	  && ${FIND} hyph -type d -exec ${MKDIR} ${DATADIR}/{} \; \
-	  && ${FIND} hyph -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
-	${INSTALL_DATA} ${WRKSRC}/build/fop.jar ${DATADIR}/build/
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/build/site \
-	  && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
-	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-.endif
+	  && ${FIND} conf lib hyph build -type d -exec ${MKDIR} ${DATADIR}/{} \; \
+	  && ${FIND} conf lib hyph build -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
 
 .include <bsd.port.mk>
