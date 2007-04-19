@@ -7,6 +7,7 @@
 
 PORTNAME=	cwtex
 PORTVERSION=	16.6
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	http://ftp.ussg.iu.edu/FreeBSD/distfiles/ \
 		http://ftp.nara.wide.ad.jp/pub/FreeBSD/distfiles/
@@ -29,10 +30,12 @@ do-install:
 	cd ${WRKSRC}/share && ${FIND} * \
 		| ${CPIO} -dpum --quiet -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin/
-	${CAT} ${FILESDIR}/config.ps >> ${PREFIX}/share/texmf/dvips/config/config.ps
+	${CAT} ${FILESDIR}/config.ps >> ${PSFONTSMAP}
 	mktexlsr
 
 .include <bsd.port.pre.mk>
+
+PSFONTSMAP!=	${LOCALBASE}/bin/kpsewhich -format 'dvips config' config.ps
 
 .if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
 BROKEN=		Does not install on ia64 or sparc64
