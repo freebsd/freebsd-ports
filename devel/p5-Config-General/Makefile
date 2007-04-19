@@ -15,9 +15,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for handling Apache-style configuration files
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 PERL_CONFIGURE=	YES
 
 MAN3=		Config::General::Extended.3 Config::General::Interpolated.3 \
