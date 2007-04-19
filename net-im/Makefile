@@ -123,6 +123,7 @@
     SUBDIR += sim-im
     SUBDIR += sim-im-devel
     SUBDIR += sulci
+    SUBDIR += telepathy-butterfly
     SUBDIR += telepathy-gabble
     SUBDIR += telepathy-glib
     SUBDIR += telepathy-idle

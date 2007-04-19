@@ -1,0 +1,21 @@
+bin/telepathy-butterfly
+%%PYTHON_SITELIBDIR%%/TelepathyButterfly/__init__.py
+%%PYTHON_SITELIBDIR%%/TelepathyButterfly/__init__.pyc
+%%PYTHON_SITELIBDIR%%/TelepathyButterfly/__init__.pyo
+%%PYTHON_SITELIBDIR%%/TelepathyButterfly/connection.py
+%%PYTHON_SITELIBDIR%%/TelepathyButterfly/connection.pyc
+%%PYTHON_SITELIBDIR%%/TelepathyButterfly/connection.pyo
+%%PYTHON_SITELIBDIR%%/TelepathyButterfly/connmgr.py
+%%PYTHON_SITELIBDIR%%/TelepathyButterfly/connmgr.pyc
+%%PYTHON_SITELIBDIR%%/TelepathyButterfly/connmgr.pyo
+%%PYTHON_SITELIBDIR%%/TelepathyButterfly/contacts.py
+%%PYTHON_SITELIBDIR%%/TelepathyButterfly/contacts.pyc
+%%PYTHON_SITELIBDIR%%/TelepathyButterfly/contacts.pyo
+%%PYTHON_SITELIBDIR%%/TelepathyButterfly/conversation.py
+%%PYTHON_SITELIBDIR%%/TelepathyButterfly/conversation.pyc
+%%PYTHON_SITELIBDIR%%/TelepathyButterfly/conversation.pyo
+share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.butterfly.service
+share/telepathy/managers/butterfly.manager
+@dirrm %%PYTHON_SITELIBDIR%%/TelepathyButterfly
+@dirrmtry share/telepathy/managers
+@dirrmtry share/telepathy
