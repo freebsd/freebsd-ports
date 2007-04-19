@@ -8,7 +8,7 @@
 
 PORTNAME=	designer
 PORTVERSION=	4.2.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -18,10 +18,10 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt ui editor
 
-BUILD_DEPENDS=	moc4:${PORTSDIR}/devel/qt4-moc \
+BUILD_DEPENDS=	moc-qt4:${PORTSDIR}/devel/qt4-moc \
 		qmake-qt4:${PORTSDIR}/devel/qmake4 \
 		rcc:${PORTSDIR}/devel/qt4-rcc \
-		uic4:${PORTSDIR}/devel/qt4-uic
+		uic-qt4:${PORTSDIR}/devel/qt4-uic
 LIB_DEPENDS=	QtAssistantClient:${PORTSDIR}/devel/qt4-libqtassistantclient \
 		Qt3Support:${PORTSDIR}/devel/qt4-qt3support \
 		QtCore:${PORTSDIR}/devel/qt4-corelib \
@@ -64,6 +64,7 @@ CONFIGURE_WRKSRC=${WRKSRC}/../../
 pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}	
 	${REINPLACE_CMD} -e 's|target.path.*|target.path=${PREFIX}/bin|g' \
+			-e 's|^TARGET.*|TARGET=designer-qt4|g' \
 		${WRKSRC}/src/designer/${PORTNAME}.pro
 	${REINPLACE_CMD} -e 's|target.path.*|target.path=${PREFIX}/lib/plugins|g' \
 		${WRKSRC}/src/plugins/plugins.pri
@@ -73,8 +74,8 @@ pre-configure:
 		${WRKSRC}/src/lib/lib.pro ${WRKSRC}/src/components/lib/lib.pro
 	${MKDIR} ${WRKSRC}/../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc4 ${WRKSRC}/../../bin/moc
-	${LN} -sf ${LOCALBASE}/bin/uic4 ${WRKSRC}/../../bin/uic
+	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../bin/moc
+	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/../../bin/uic
 	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/../../bin/rcc
 
 .include <bsd.port.post.mk>

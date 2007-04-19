@@ -8,6 +8,7 @@
 
 PORTNAME=	moc
 PORTVERSION=	4.2.3
+PORTREVISION=	1
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -54,7 +55,7 @@ CONFIGURE_WRKSRC=${WRKSRC}/../../../
 pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
 	${REINPLACE_CMD} -e 's|target.path.*|target.path=${PREFIX}/bin|g' \
-			-e 's|^TARGET.*|TARGET=moc4|g' \
+			-e 's|^TARGET.*|TARGET=moc-qt4|g' \
 		${WRKSRC}/${PORTNAME}.pro
 	${MKDIR} ${WRKSRC}/../../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../../bin/qmake

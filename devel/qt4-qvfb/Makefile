@@ -8,7 +8,7 @@
 
 PORTNAME=	qvfb
 PORTVERSION=	4.2.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -18,10 +18,10 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt virtual framebuffer utility
 
-BUILD_DEPENDS=	moc4:${PORTSDIR}/devel/qt4-moc \
+BUILD_DEPENDS=	moc-qt4:${PORTSDIR}/devel/qt4-moc \
 		qmake-qt4:${PORTSDIR}/devel/qmake4 \
 		rcc:${PORTSDIR}/devel/qt4-rcc \
-		uic4:${PORTSDIR}/devel/qt4-uic
+		uic-qt4:${PORTSDIR}/devel/qt4-uic
 LIB_DEPENDS=	QtCore:${PORTSDIR}/devel/qt4-corelib \
 		QtGui:${PORTSDIR}/x11-toolkits/qt4-gui \
 		QtOpenGL:${PORTSDIR}/x11/qt4-opengl
@@ -61,9 +61,11 @@ CONFIGURE_WRKSRC=${WRKSRC}/../../
 pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
 	${MKDIR} ${WRKSRC}/../../mkspecs
+	${REINPLACE_CMD} -e 's|^TARGET.*|TARGET=qvfb-qt4|g' \
+		${WRKSRC}/qvfb.pro
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc4 ${WRKSRC}/../../bin/moc
-	${LN} -sf ${LOCALBASE}/bin/uic4 ${WRKSRC}/../../bin/uic
+	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../bin/moc
+	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/../../bin/uic
 	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/../../bin/rcc
 
 post-install:

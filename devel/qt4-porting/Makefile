@@ -17,10 +17,10 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt utility to assist with porting Qt3 applications to Qt4
 
-BUILD_DEPENDS=	moc4:${PORTSDIR}/devel/qt4-moc \
+BUILD_DEPENDS=	moc-qt4:${PORTSDIR}/devel/qt4-moc \
 		qmake-qt4:${PORTSDIR}/devel/qmake4 \
 		rcc:${PORTSDIR}/devel/qt4-rcc \
-		uic4:${PORTSDIR}/devel/qt4-uic
+		uic-qt4:${PORTSDIR}/devel/qt4-uic
 LIB_DEPENDS=	QtCore:${PORTSDIR}/devel/qt4-corelib \
 		QtXml:${PORTSDIR}/textproc/qt4-xml
 
@@ -63,8 +63,8 @@ pre-configure:
 		${WRKSRC}/${PORTNAME}.pro ${WRKSRC}/src/src.pro
 	${MKDIR} ${WRKSRC}/../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc4 ${WRKSRC}/../../bin/moc
-	${LN} -sf ${LOCALBASE}/bin/uic4 ${WRKSRC}/../../bin/uic
+	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../bin/moc
+	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/../../bin/uic
 	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/../../bin/rcc
 
 .include <bsd.port.mk>

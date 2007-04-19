@@ -64,7 +64,7 @@ pre-configure:
 		${WRKSRC}/jp.pro
 	${MKDIR} ${WRKSRC}/../../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../../../bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc4 ${WRKSRC}/../../../../bin/moc
+	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../../../bin/moc
 
 post-configure:
 	${REINPLACE_CMD} -e 's|(test -z.*||g' ${WRKSRC}/Makefile

@@ -1,2 +1,2 @@
-bin/qtconfig
-bin/qtconfig.debug
+bin/qtconfig-qt4
+bin/qtconfig-qt4.debug

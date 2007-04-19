@@ -8,7 +8,7 @@
 
 PORTNAME=	linguist
 PORTVERSION=	4.2.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -19,10 +19,10 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt localisation tool
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libQtUiTools.a:${PORTSDIR}/devel/qt4-designer \
-		moc4:${PORTSDIR}/devel/qt4-moc \
+		moc-qt4:${PORTSDIR}/devel/qt4-moc \
 		qmake-qt4:${PORTSDIR}/devel/qmake4 \
 		rcc:${PORTSDIR}/devel/qt4-rcc \
-		uic4:${PORTSDIR}/devel/qt4-uic
+		uic-qt4:${PORTSDIR}/devel/qt4-uic
 LIB_DEPENDS=	QtAssistantClient:${PORTSDIR}/devel/qt4-libqtassistantclient \
 		QtGui:${PORTSDIR}/x11-toolkits/qt4-gui \
 		QtNetwork:${PORTSDIR}/net/qt4-network \
@@ -62,12 +62,13 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|target.path.*|target.path=${PREFIX}/bin|g' \
 		-e 's|phrasebooks.path.*|phrasebooks.path=${PREFIX}/share/qt4/phrasebooks|g' \
 		-e 's|linguisttranslations.path.*|linguisttranslations.path=${PREFIX}/share/qt4/translations|g' \
+		-E -e 's|^TARGET[[:blank:]]*=[[:blank:]]*([a-z]+)|TARGET=\1-qt4|g' \
 		${WRKSRC}/${PORTNAME}.pro ${WRKSRC}/${PORTNAME}/${PORTNAME}.pro \
 		${WRKSRC}/lrelease/lrelease.pro ${WRKSRC}/lupdate/lupdate.pro
 	${MKDIR} ${WRKSRC}/../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc4 ${WRKSRC}/../../bin/moc
-	${LN} -sf ${LOCALBASE}/bin/uic4 ${WRKSRC}/../../bin/uic
+	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../bin/moc
+	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/../../bin/uic
 	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/../../bin/rcc
 
 .include <bsd.port.mk>

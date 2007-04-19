@@ -1,5 +1,5 @@
-bin/designer
-bin/designer.debug
+bin/designer-qt4
+bin/designer-qt4.debug
 include/QtDesigner/QAbstractExtensionFactory
 include/QtDesigner/QAbstractExtensionManager
 include/QtDesigner/QAbstractFormBuilder

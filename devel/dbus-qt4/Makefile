@@ -18,7 +18,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt4 bindings for the D-BUS messaging system
 
-BUILD_DEPENDS=	moc4:${PORTSDIR}/devel/qt4-moc \
+BUILD_DEPENDS=	moc-qt4:${PORTSDIR}/devel/qt4-moc \
 		qmake-qt4:${PORTSDIR}/devel/qmake4
 LIB_DEPENDS=	QtCore:${PORTSDIR}/devel/qt4-corelib \
 		QtXml:${PORTSDIR}/textproc/qt4-xml \
@@ -66,7 +66,7 @@ pre-configure:
 		${WRKSRC}/src/src.pro
 	${MKDIR} ${WRKSRC}/../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc4 ${WRKSRC}/../../bin/moc
+	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../bin/moc
 
 post-configure:
 	${REINPLACE_CMD} -e 's|${PREFIX}/lib/QtDBus.pc|${PREFIX}/libdata/pkgconfig/QtDBus.pc|g' \

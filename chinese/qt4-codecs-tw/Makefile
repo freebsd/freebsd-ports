@@ -60,6 +60,6 @@ pre-configure:
 		${WRKSRC}/tw.pro
 	${MKDIR} ${WRKSRC}/../../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../../../bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc4 ${WRKSRC}/../../../../bin/moc
+	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../../../bin/moc
 
 .include <bsd.port.post.mk>
