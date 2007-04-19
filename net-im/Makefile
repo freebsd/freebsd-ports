@@ -122,6 +122,7 @@
     SUBDIR += sim-im
     SUBDIR += sim-im-devel
     SUBDIR += sulci
+    SUBDIR += telepathy-gabble
     SUBDIR += telepathy-glib
     SUBDIR += tik
     SUBDIR += tkabber
