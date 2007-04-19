@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ftp-proxy
-PORTVERSION=	4.0p0
-PORTREVISION=	1
+PORTVERSION=	4.1p1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.chrissicool.net/projects/ftp-proxy/distfiles/
 
@@ -19,14 +18,19 @@ LIB_DEPENDS=	event-1.3b:${PORTSDIR}/devel/libevent
 MAN8=		ftp-proxy.8
 MANCOMPRESSED=	yes
 
-PLIST_FILES=	sbin/ftp-proxy		\
-		etc/rc.d/ftp-proxy.sh
+PLIST_FILES=	sbin/ftp-proxy
+USE_RC_SUBR=	ftp-proxy
 
 CFLAGS+=	-I${PREFIX}/include
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 502106
+IGNORE=		only for 5.3 and above
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ftp-proxy ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${FILESDIR}/ftp-proxy.sh ${PREFIX}/etc/rc.d
 	${INSTALL_MAN} ${WRKSRC}/ftp-proxy.8.gz ${PREFIX}/man/man8
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
