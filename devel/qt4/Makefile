@@ -7,6 +7,7 @@
 
 PORTNAME=	qt4
 PORTVERSION=	4.2.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -23,17 +24,17 @@ RUN_DEPENDS=	${LOCALBASE}/lib/plugins/accessible/libqtaccessiblecompatwidgets.so
 		${LOCALBASE}/lib/libQtSql.so:${PORTSDIR}/databases/qt4-sql \
 		qdbus:${PORTSDIR}/devel/dbus-qt4 \
 		qmake-qt4:${PORTSDIR}/devel/qmake4 \
-		${LOCALBASE}/bin/assistant:${PORTSDIR}/devel/qt4-assistant \
+		${LOCALBASE}/bin/assistant-qt4:${PORTSDIR}/devel/qt4-assistant \
 		${LOCALBASE}/lib/libQtCore.so:${PORTSDIR}/devel/qt4-corelib \
-		${LOCALBASE}/bin/designer:${PORTSDIR}/devel/qt4-designer \
+		${LOCALBASE}/bin/designer-qt4:${PORTSDIR}/devel/qt4-designer \
 		${LOCALBASE}/lib/libQtAssistantClient.so:${PORTSDIR}/devel/qt4-libqtassistantclient \
-		${LOCALBASE}/bin/linguist:${PORTSDIR}/devel/qt4-linguist \
-		${LOCALBASE}/bin/moc4:${PORTSDIR}/devel/qt4-moc \
+		${LOCALBASE}/bin/linguist-qt4:${PORTSDIR}/devel/qt4-linguist \
+		${LOCALBASE}/bin/moc-qt4:${PORTSDIR}/devel/qt4-moc \
 		${LOCALBASE}/bin/qt3to4:${PORTSDIR}/devel/qt4-porting \
 		${LOCALBASE}/lib/libQt3Support.so:${PORTSDIR}/devel/qt4-qt3support \
 		${LOCALBASE}/bin/rcc:${PORTSDIR}/devel/qt4-rcc \
-		${LOCALBASE}/bin/qvfb:${PORTSDIR}/devel/qt4-qvfb \
-		${LOCALBASE}/bin/uic4:${PORTSDIR}/devel/qt4-uic \
+		${LOCALBASE}/bin/qvfb-qt4:${PORTSDIR}/devel/qt4-qvfb \
+		${LOCALBASE}/bin/uic-qt4:${PORTSDIR}/devel/qt4-uic \
 		${LOCALBASE}/bin/uic3:${PORTSDIR}/devel/qt4-uic3 \
 		${LOCALBASE}/lib/libQtTest.so:${PORTSDIR}/devel/qt4-qtestlib \
 		${LOCALBASE}/lib/plugins/imageformats/libqgif.so:${PORTSDIR}/graphics/qt4-imageformats \

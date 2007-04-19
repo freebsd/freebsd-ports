@@ -7,6 +7,7 @@
 
 PORTNAME=	qmake
 PORTVERSION=	4.2.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-opensource-src-${PORTVERSION}
@@ -52,8 +53,8 @@ post-patch:
 		-e 's|release|release thread|' \
 		-e 's|-pthread -D_THREAD_SAFE|${PTHREAD_CFLAGS}|' \
 		-e 's|-pthread|${PTHREAD_LIBS}|' \
-		-e 's|uic|uic4|' \
-		-e 's|moc|moc4|' \
+		-e 's|uic|uic-qt4|' \
+		-e 's|moc|moc-qt4|' \
 		${WRKSRC}/../mkspecs/freebsd-g++/qmake.conf \
 		${WRKSRC}/../mkspecs/freebsd-g++34/qmake.conf
 	@${REINPLACE_CMD} -e 's|@QMAKE_QTOBJS@||g' ${WRKSRC}/Makefile.unix

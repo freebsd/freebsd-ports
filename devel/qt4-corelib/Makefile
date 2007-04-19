@@ -18,7 +18,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER?=	kde@FreeBSD.org
 COMMENT?=	Qt core library
 
-BUILD_DEPENDS=	moc4:${PORTSDIR}/devel/qt4-moc \
+BUILD_DEPENDS=	moc-qt4:${PORTSDIR}/devel/qt4-moc \
 		qmake-qt4:${PORTSDIR}/devel/qmake4
 LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20
 
@@ -74,7 +74,7 @@ pre-configure:
 		${WRKSRC}/${PORTNAME}.pro ${WRKSRC}/../qt_install.pri
 	${MKDIR} ${WRKSRC}/../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc4 ${WRKSRC}/../../bin/moc
+	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../bin/moc
 post-configure:
 	${REINPLACE_CMD} -e 's|${PREFIX}/lib/QtCore.pc|${PREFIX}/libdata/pkgconfig/QtCore.pc|g' \
 		${WRKSRC}/Makefile

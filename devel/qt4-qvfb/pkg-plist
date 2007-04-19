@@ -1,5 +1,5 @@
-bin/qvfb
-bin/qvfb.debug
+bin/qvfb-qt4
+bin/qvfb-qt4.debug
 share/qvfb/ClamshellPhone.skin/ClamshellPhone.skin
 share/qvfb/ClamshellPhone.skin/ClamshellPhone1-5-closed.png
 share/qvfb/ClamshellPhone.skin/ClamshellPhone1-5-pressed.png

@@ -18,7 +18,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt accessibility widgets
 
-BUILD_DEPENDS=	moc4:${PORTSDIR}/devel/qt4-moc \
+BUILD_DEPENDS=	moc-qt4:${PORTSDIR}/devel/qt4-moc \
 		qmake-qt4:${PORTSDIR}/devel/qmake4
 LIB_DEPENDS=	Qt3Support:${PORTSDIR}/devel/qt4-qt3support \
 		QtCore:${PORTSDIR}/devel/qt4-corelib \
@@ -64,7 +64,7 @@ pre-configure:
 		${WRKSRC}/qaccessiblebase.pri
 	${MKDIR} ${WRKSRC}/../../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../../bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc4 ${WRKSRC}/../../../bin/moc
+	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../../bin/moc
 
 post-configure:
 	${REINPLACE_CMD} -e 's|(test -z.*||g' ${WRKSRC}/Makefile

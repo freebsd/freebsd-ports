@@ -18,7 +18,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt input method plugins
 
-BUILD_DEPENDS=	moc4:${PORTSDIR}/devel/qt4-moc \
+BUILD_DEPENDS=	moc-qt4:${PORTSDIR}/devel/qt4-moc \
 		qmake-qt4:${PORTSDIR}/devel/qmake4
 LIB_DEPENDS=	QtCore:${PORTSDIR}/devel/qt4-corelib \
 		QtGui:${PORTSDIR}/x11-toolkits/qt4-gui
@@ -62,6 +62,6 @@ pre-configure:
 		${WRKSRC}/imsw-multi/imsw-multi.pro
 	${MKDIR} ${WRKSRC}/../../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../../bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc4 ${WRKSRC}/../../../bin/moc
+	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../../bin/moc
 
 .include <bsd.port.post.mk>

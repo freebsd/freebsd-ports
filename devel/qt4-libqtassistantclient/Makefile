@@ -8,7 +8,7 @@
 
 PORTNAME=	libQtAssistantClient
 PORTVERSION=	4.2.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -18,7 +18,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt documentation browser integration library
 
-BUILD_DEPENDS=	moc4:${PORTSDIR}/devel/qt4-moc \
+BUILD_DEPENDS=	moc-qt4:${PORTSDIR}/devel/qt4-moc \
 		qmake-qt4:${PORTSDIR}/devel/qmake4
 
 LIB_DEPENDS=	QtCore:${PORTSDIR}/devel/qt4-corelib \
@@ -61,8 +61,10 @@ pre-configure:
 	${CP} ${.CURDIR}/../../devel/qt4/files/configure ${CONFIGURE_WRKSRC}
 	${REINPLACE_CMD} -e 's|target.path.*|target.path=${PREFIX}/lib|g' \
 		${WRKSRC}/lib.pro
+	${REINPLACE_CMD} -E -e 's|"(.*)assistant"|"\1assistant-qt4"|g' \
+		${WRKSRC}/qassistantclient.cpp
 	${MKDIR} ${WRKSRC}/../../../mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/../../../bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc4 ${WRKSRC}/../../../bin/moc
+	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../../bin/moc
 
 .include <bsd.port.mk>
