@@ -1,0 +1,10 @@
+--- hfkernel/Makefile.in.orig	Sun Apr 15 18:33:50 2007
++++ hfkernel/Makefile.in	Sun Apr 15 18:34:48 2007
+@@ -179,6 +179,7 @@
+ noinst_HEADERS = main.h msg.h 
+ hfkernel_SOURCES = main.c msg.c
+ hfkernel_DEPENDANCIES = $(noinst_HEADERS) $(hfkernel_SOURCES) $(MYLIBS)
++THRLIBS=	-lpthread
+ hfkernel_LDADD = $(MYLIBS) \
+ 	$(OSLIBS) $(SOCKLIBS) $(THRLIBS) $(SCHEDLIBS) $(ALSALIBS) -lstdc++
+ 
