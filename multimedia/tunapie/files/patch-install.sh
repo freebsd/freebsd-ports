@@ -1,3 +1,4 @@
+$FreeBSD$
 --- install.sh	Tue Apr 10 23:54:02 2007
 +++ install.sh.port	Wed Apr 11 09:15:43 2007
 @@ -1,14 +1,12 @@
