@@ -32,10 +32,6 @@ MAN3=		Coro.3 Coro::AIO.3 Coro::Channel.3 Coro::Handle.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		this port is for FreeBSD 5 or above
-.endif
-
 .if ${PERL_LEVEL} < 500800
 IGNORE=		requires perl 5.8.0 or later. Install lang/perl5.8 and try again
 .endif
