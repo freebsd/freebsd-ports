@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	zodb
-PORTVERSION=	3.2.3
+PORTVERSION=	3.6.0
 CATEGORIES=	databases
-MASTER_SITES=	http://www.zope.org/Products/ZODB3.2/${PORTVERSION}/
+MASTER_SITES=	http://www.zope.org/Products/ZODB3.6/ZODB%20${PORTVERSION}/
 PKGNAMESUFFIX=	-py${PYTHON_SUFFIX}
 DISTNAME=	ZODB3-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	The Z - Object Database for python
 
-CONFLICTS=	zodb-1.*
-USE_PYTHON=	2.1+
+USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>
