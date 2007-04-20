@@ -10880,6 +10880,7 @@ p5-TimeDate	ports/devel/p5-TimeDate
 p5-Tk		ports/x11-toolkits/p5-Tk
 p5-Tk-Autoscroll	ports/x11-toolkits/p5-Tk-Autoscroll
 p5-Tk-ColourChooser	ports/x11-toolkits/p5-Tk-ColourChooser
+p5-Tk-Contrib	ports/x11-toolkits/p5-Tk-Contrib
 p5-Tk-Date	ports/x11-toolkits/p5-Tk-Date
 p5-Tk-Enscript	ports/x11-toolkits/p5-Tk-Enscript
 p5-Tk-FileDialog	ports/x11-toolkits/p5-Tk-FileDialog
