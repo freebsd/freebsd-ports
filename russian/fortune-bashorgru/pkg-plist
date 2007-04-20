@@ -1,0 +1,7 @@
+share/games/fortune/rus/fortune-bashorgru
+share/games/fortune/rus/fortune-bashorgru.dat
+share/examples/fortune-bashorgru/fortune-update.sh
+@dirrmtry share/games/fortune/rus
+@dirrmtry share/examples/fortune-bashorgru
+@dirrmtry share/games/fortune
+@dirrmtry share/games
