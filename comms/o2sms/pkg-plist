@@ -1,4 +1,10 @@
+bin/aftsms
+bin/meteorsms
+bin/o2sms
+bin/vodasms
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/o2sms/.packlist
+%%SITE_PERL%%/WWW/SMS/IE/aftsms.action
+%%SITE_PERL%%/WWW/SMS/IE/aftsms.pm
 %%SITE_PERL%%/WWW/SMS/IE/iesms.pm
 %%SITE_PERL%%/WWW/SMS/IE/meteorsms.action
 %%SITE_PERL%%/WWW/SMS/IE/meteorsms.pm
@@ -6,9 +12,6 @@
 %%SITE_PERL%%/WWW/SMS/IE/o2sms.pm
 %%SITE_PERL%%/WWW/SMS/IE/vodasms.action
 %%SITE_PERL%%/WWW/SMS/IE/vodasms.pm
-bin/meteorsms
-bin/o2sms
-bin/vodasms
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/o2sms
 @dirrm %%SITE_PERL%%/WWW/SMS/IE
 @dirrmtry %%SITE_PERL%%/WWW/SMS
