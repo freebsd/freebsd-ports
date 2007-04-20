@@ -1,7 +1,6 @@
 bin/ekg2
 bin/ekg2-config
 include/ekg2/audio.h
-include/ekg2/char.h
 include/ekg2/commands.h
 include/ekg2/configfile.h
 include/ekg2/debug.h
@@ -24,6 +23,8 @@ include/ekg2/userlist.h
 include/ekg2/vars.h
 include/ekg2/windows.h
 include/ekg2/xmalloc.h
+include/ekg2/queries.h
+include/ekg2/win32.h
 lib/ekg2/plugins/gg.la
 lib/ekg2/plugins/gg.so
 lib/ekg2/plugins/ioctld.la
@@ -46,54 +47,109 @@ lib/ekg2/plugins/sim.la
 lib/ekg2/plugins/sim.so
 lib/ekg2/plugins/sms.la
 lib/ekg2/plugins/sms.so
+lib/ekg2/plugins/rot13.so
+lib/ekg2/plugins/rot13.la
+lib/ekg2/plugins/httprc_xajax.so
+lib/ekg2/plugins/httprc_xajax.la
+lib/ekg2/plugins/xmsg.so
+lib/ekg2/plugins/xmsg.la
+lib/ekg2/plugins/readline.so
+lib/ekg2/plugins/readline.la
+lib/ekg2/plugins/autoresponder.so
+lib/ekg2/plugins/autoresponder.la
 libexec/ioctld
-%%DATADIR%%/commands-pl-utf.txt
-%%DATADIR%%/commands-pl.txt
-%%DATADIR%%/plugins/gg/commands-en.txt
-%%DATADIR%%/plugins/gg/commands-pl-utf.txt
-%%DATADIR%%/plugins/gg/commands-pl.txt
-%%DATADIR%%/plugins/gg/session-en.txt
-%%DATADIR%%/plugins/gg/session-pl-utf.txt
-%%DATADIR%%/plugins/gg/session-pl.txt
-%%DATADIR%%/plugins/gg/vars-en.txt
-%%DATADIR%%/plugins/gg/vars-pl-utf.txt
-%%DATADIR%%/plugins/gg/vars-pl.txt
-%%DATADIR%%/plugins/ioctld/commands-pl-utf.txt
-%%DATADIR%%/plugins/ioctld/commands-pl.txt
-%%DATADIR%%/plugins/irc/commands-pl-utf.txt
-%%DATADIR%%/plugins/irc/commands-pl.txt
-%%DATADIR%%/plugins/irc/session-pl-utf.txt
-%%DATADIR%%/plugins/irc/session-pl.txt
-%%DATADIR%%/plugins/jabber/commands-en.txt
-%%DATADIR%%/plugins/jabber/commands-pl-utf.txt
-%%DATADIR%%/plugins/jabber/commands-pl.txt
-%%DATADIR%%/plugins/jabber/session-en.txt
-%%DATADIR%%/plugins/jabber/session-pl-utf.txt
-%%DATADIR%%/plugins/jabber/session-pl.txt
-%%DATADIR%%/plugins/logs/vars-pl-utf.txt
 %%DATADIR%%/plugins/logs/vars-pl.txt
+%%DATADIR%%/plugins/logs/vars-pl-utf.txt
+%%DATADIR%%/plugins/mail/vars-pl.txt
+%%DATADIR%%/plugins/mail/vars-pl-utf.txt
+%%DATADIR%%/plugins/rc/vars-pl.txt
+%%DATADIR%%/plugins/rc/vars-pl-utf.txt
+%%DATADIR%%/plugins/sms/vars-pl.txt
+%%DATADIR%%/plugins/sms/commands-pl.txt
+%%DATADIR%%/plugins/sms/vars-pl-utf.txt
+%%DATADIR%%/plugins/sms/commands-pl-utf.txt
+%%DATADIR%%/plugins/irc/commands-pl.txt
+%%DATADIR%%/plugins/irc/session-pl.txt
+%%DATADIR%%/plugins/irc/commands-pl-utf.txt
+%%DATADIR%%/plugins/irc/session-pl-utf.txt
+%%DATADIR%%/plugins/httprc_xajax/xajax_0.2.4.js
+%%DATADIR%%/plugins/httprc_xajax/ekg2.js
+%%DATADIR%%/plugins/httprc_xajax/ekg2.css
+%%DATADIR%%/plugins/httprc_xajax/xajax_0.2.4.js-utf.txt
+%%DATADIR%%/plugins/httprc_xajax/ekg2.js-utf.txt
+%%DATADIR%%/plugins/httprc_xajax/ekg2.css-utf.txt
+%%DATADIR%%/plugins/xmsg/session-pl.txt
+%%DATADIR%%/plugins/xmsg/session-en.txt
+%%DATADIR%%/plugins/xmsg/vars-pl.txt
+%%DATADIR%%/plugins/xmsg/vars-en.txt
+%%DATADIR%%/plugins/xmsg/session-pl-utf.txt
+%%DATADIR%%/plugins/xmsg/session-en-utf.txt
+%%DATADIR%%/plugins/xmsg/vars-pl-utf.txt
+%%DATADIR%%/plugins/xmsg/vars-en-utf.txt
+%%DATADIR%%/plugins/autoresponder/vars-pl.txt
+%%DATADIR%%/plugins/autoresponder/vars-en.txt
+%%DATADIR%%/plugins/autoresponder/vars-pl-utf.txt
+%%DATADIR%%/plugins/autoresponder/vars-en-utf.txt
+%%DATADIR%%/plugins/ioctld/commands-pl.txt
+%%DATADIR%%/plugins/ioctld/commands-pl-utf.txt
+%%DATADIR%%/plugins/gg/vars-pl.txt
+%%DATADIR%%/plugins/gg/commands-pl.txt
+%%DATADIR%%/plugins/gg/session-pl.txt
+%%DATADIR%%/plugins/gg/commands-en.txt
+%%DATADIR%%/plugins/gg/vars-en.txt
+%%DATADIR%%/plugins/gg/session-en.txt
+%%DATADIR%%/plugins/gg/vars-pl-utf.txt
+%%DATADIR%%/plugins/gg/commands-pl-utf.txt
+%%DATADIR%%/plugins/gg/session-pl-utf.txt
+%%DATADIR%%/plugins/gg/commands-en-utf.txt
+%%DATADIR%%/plugins/gg/vars-en-utf.txt
+%%DATADIR%%/plugins/gg/session-en-utf.txt
+%%DATADIR%%/plugins/sim/vars-pl.txt
+%%DATADIR%%/plugins/sim/commands-pl.txt
+%%DATADIR%%/plugins/sim/vars-pl-utf.txt
+%%DATADIR%%/plugins/sim/commands-pl-utf.txt
+%%DATADIR%%/plugins/jabber/commands-pl.txt
+%%DATADIR%%/plugins/jabber/session-pl.txt
+%%DATADIR%%/plugins/jabber/commands-en.txt
+%%DATADIR%%/plugins/jabber/session-en.txt
+%%DATADIR%%/plugins/jabber/commands-pl-utf.txt
+%%DATADIR%%/plugins/jabber/session-pl-utf.txt
+%%DATADIR%%/plugins/jabber/commands-en-utf.txt
+%%DATADIR%%/plugins/jabber/session-en-utf.txt
+%%DATADIR%%/plugins/ncurses/vars-pl.txt
 %%DATADIR%%/plugins/ncurses/vars-en.txt
 %%DATADIR%%/plugins/ncurses/vars-pl-utf.txt
-%%DATADIR%%/plugins/ncurses/vars-pl.txt
-%%DATADIR%%/plugins/rc/vars-pl.txt
-%%DATADIR%%/plugins/sim/commands-pl.txt
-%%DATADIR%%/plugins/sim/vars-pl.txt
-%%DATADIR%%/plugins/sms/commands-pl.txt
-%%DATADIR%%/plugins/sms/vars-pl.txt
-%%DATADIR%%/vars-pl-utf.txt
+%%DATADIR%%/plugins/ncurses/vars-en-utf.txt
+%%DATADIR%%/plugins/readline/vars-pl.txt
+%%DATADIR%%/plugins/readline/vars-pl-utf.txt
 %%DATADIR%%/vars-pl.txt
+%%DATADIR%%/commands-pl.txt
+%%DATADIR%%/session-pl.txt
+%%DATADIR%%/session-en.txt
+%%DATADIR%%/vars-pl-utf.txt
+%%DATADIR%%/commands-pl-utf.txt
+%%DATADIR%%/session-pl-utf.txt
+%%DATADIR%%/session-en-utf.txt
+%%DATADIR%%/themes/blue_sea_dragon.theme
+%%DATADIR%%/themes/irc-irssi.theme
 share/locale/pl/LC_MESSAGES/ekg2.mo
 @dirrmtry share/locale/pl/LC_MESSAGES
 @dirrmtry share/locale/pl
-@dirrm %%DATADIR%%/plugins/sms
-@dirrm %%DATADIR%%/plugins/sim
-@dirrm %%DATADIR%%/plugins/rc
-@dirrm %%DATADIR%%/plugins/ncurses
+@dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/plugins/logs
-@dirrm %%DATADIR%%/plugins/jabber
+@dirrm %%DATADIR%%/plugins/mail
+@dirrm %%DATADIR%%/plugins/rc
+@dirrm %%DATADIR%%/plugins/sms
 @dirrm %%DATADIR%%/plugins/irc
+@dirrm %%DATADIR%%/plugins/httprc_xajax
+@dirrm %%DATADIR%%/plugins/xmsg
+@dirrm %%DATADIR%%/plugins/autoresponder
 @dirrm %%DATADIR%%/plugins/ioctld
 @dirrm %%DATADIR%%/plugins/gg
+@dirrm %%DATADIR%%/plugins/sim
+@dirrm %%DATADIR%%/plugins/jabber
+@dirrm %%DATADIR%%/plugins/ncurses
+@dirrm %%DATADIR%%/plugins/readline
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%
 @dirrm lib/ekg2/plugins
