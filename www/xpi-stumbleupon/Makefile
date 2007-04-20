@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	stumbleupon
-PORTVERSION=	3.04
-DISTVERSIONSUFFIX=	-firefox+mozilla+seamonkey
+PORTVERSION=	3.05
+DISTVERSIONSUFFIX=	-fx+mz+ns+sm+fl
 CATEGORIES=	www
 
 MAINTAINER=	lapo@lapo.it
