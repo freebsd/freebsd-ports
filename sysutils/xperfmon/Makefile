@@ -20,6 +20,9 @@ USE_IMAKE=	yes
 MAN1=		xperfmon++.1
 WRKSRC=		${WRKDIR}/xperfmon++
 
+DEPRECATED=	irrelevant for supported FreeBSD releases
+EXPIRATION_DATE=	2007-05-19
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
