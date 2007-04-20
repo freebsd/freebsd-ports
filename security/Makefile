@@ -309,6 +309,7 @@
     SUBDIR += openvpn-devel
     SUBDIR += opieprint
     SUBDIR += osiris
+    SUBDIR += ossec-hids-client
     SUBDIR += ossec-hids-local
     SUBDIR += ossec-hids-server
     SUBDIR += osslsigncode
