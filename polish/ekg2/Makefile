@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ekg2
-PORTVERSION=	20060519
+PORTVERSION=	20070303
 CATEGORIES=	polish net-im
 MASTER_SITES=	http://www.ekg2.org/archive/
 

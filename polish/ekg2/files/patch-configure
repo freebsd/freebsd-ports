@@ -1,0 +1,12 @@
+--- configure.orig	Wed Apr  4 19:49:22 2007
++++ configure	Wed Apr  4 19:49:26 2007
+@@ -1923,9 +1923,6 @@
+ 
+ 
+ 
+-F77="no"
+-CXX="no"
+-
+ ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'
+ ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
