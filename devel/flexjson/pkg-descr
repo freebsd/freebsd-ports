@@ -1,0 +1,6 @@
+FlexJSON is a lightweight library to serialize objects out in Javascript Object
+Notation (JSON). The library serializes only immediately available fields by
+default, although it's fairly easy to add additional data such as collections
+through code or annotations.
+
+WWW: http://flexjson.sourceforge.net/

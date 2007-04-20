@@ -304,6 +304,7 @@
     SUBDIR += fib
     SUBDIR += fistgen
     SUBDIR += flatzebra
+    SUBDIR += flexjson
     SUBDIR += flick
     SUBDIR += florist
     SUBDIR += florist-gpl
