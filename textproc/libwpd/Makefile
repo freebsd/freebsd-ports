@@ -17,6 +17,8 @@ COMMENT=	Tools for importing and exporting WordPerfect(tm) documents
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack libgsf
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
+
+CONFIGURE_ARGS+=--without-docs
 
 .include <bsd.port.mk>
