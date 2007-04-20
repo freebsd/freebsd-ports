@@ -22,6 +22,8 @@ LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2 \
 RUN_DEPENDS=	\
 	${X11BASE}/lib/X11/fonts/artwiz-fonts:${PORTSDIR}/x11-fonts/artwiz-fonts
 
+BROKEN=		Does not compile
+
 DEPRECATED=	"Development ceased"
 
 USE_AUTOTOOLS=	libtool:15
