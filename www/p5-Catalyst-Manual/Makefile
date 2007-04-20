@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Manual
-PORTVERSION=	5.700501
+PORTVERSION=	5.700701
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Catalyst
@@ -22,6 +22,7 @@ MAN3=	Catalyst::Manual.3 \
 	Catalyst::Manual::Actions.3 \
 	Catalyst::Manual::Cookbook.3 \
 	Catalyst::Manual::DevelopmentProcess.3 \
+	Catalyst::Manual::ExtendingCatalyst.3 \
 	Catalyst::Manual::Internals.3 \
 	Catalyst::Manual::Intro.3 \
 	Catalyst::Manual::Plugins.3 \
@@ -34,8 +35,7 @@ MAN3=	Catalyst::Manual.3 \
 	Catalyst::Manual::Tutorial::CatalystBasics.3 \
 	Catalyst::Manual::Tutorial::Debugging.3 \
 	Catalyst::Manual::Tutorial::Intro.3 \
-	Catalyst::Manual::Tutorial::Testing.3 \
-	Catalyst::Manual::WritingPlugins.3
+	Catalyst::Manual::Tutorial::Testing.3
 
 post-extract:
 	@${PERL} -i.bak -ne 'print unless m,Test::,' ${WRKSRC}/Makefile.PL
