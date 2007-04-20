@@ -141,6 +141,7 @@ share/servicetypes/kaffeineaudioencoder.desktop
 @dirrm share/apps/kaffeine/pics
 @dirrm share/apps/kaffeine
 @dirrm share/doc/HTML/en/kaffeine
+@dirrm share/doc/HTML/en/doc
 @dirrmtry share/apps/konqueror/servicemenus
 @dirrmtry share/apps/konqueror
 @dirrmtry share/locale/km/LC_MESSAGES
