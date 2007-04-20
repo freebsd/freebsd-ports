@@ -74,7 +74,7 @@ CONFIGURE_ARGS+=--with-database=tree
 .endif
 
 .if defined(WITH_LIRC)
-LIB_DEPENDS+=	lirc_client.so:${PORTSDIR}/comms/lirc
+LIB_DEPENDS+=	lirc_client.1:${PORTSDIR}/comms/lirc
 PLIST_SUB+=	LIRC=""
 CONFIGURE_ARGS+=--enable-lirc
 .else
