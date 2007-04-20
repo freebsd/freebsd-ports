@@ -9,6 +9,7 @@
     SUBDIR += aspell
     SUBDIR += cyrproxy
     SUBDIR += d1489
+    SUBDIR += fortune-bashorgru
     SUBDIR += fortuneru
     SUBDIR += kde3-i18n
     SUBDIR += koffice-i18n
