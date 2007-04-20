@@ -6605,6 +6605,7 @@ libvmime	ports/mail/libvmime
 libvncserver	ports/net/libvncserver
 libvolume_id	ports/devel/libvolume_id
 libvorbis	ports/audio/libvorbis
+libwbxml	ports/textproc/libwbxml
 libwfut		ports/devel/libwfut
 libwhisker	ports/security/libwhisker
 libwmf		ports/graphics/libwmf
