@@ -11312,6 +11312,7 @@ pdb		ports/net/pdb
 pdbar		ports/palm/pdbar
 pdbc		ports/palm/pdbc
 pdcurses	ports/devel/pdcurses
+pdfcube		ports/print/pdfcube
 pdfjam		ports/print/pdfjam
 pdflib		ports/print/pdflib
 pdflib-perl	ports/print/pdflib-perl
