@@ -29,6 +29,7 @@ include/zzip/plugin.h
 include/zzip/stdint.h
 include/zzip/types.h
 include/zzip/wrap.h
+include/zzip/write.h
 include/zzip/zzip.h
 lib/libzzip.a
 lib/libzzip.la
