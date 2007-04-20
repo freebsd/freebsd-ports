@@ -3371,6 +3371,7 @@ gengetopt	ports/devel/gengetopt
 genius		ports/deskutils/genius
 genmenu		ports/x11-wm/genmenu
 genpak		ports/biology/genpak
+genplist	ports/ports-mgmt/genplist
 genproto	ports/devel/genproto
 gens		ports/emulators/gens
 gensig		ports/mail/gensig
