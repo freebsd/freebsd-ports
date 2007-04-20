@@ -20,12 +20,6 @@ USE_GMAKE=	yes
 PORTDOCS=	README ChangeLog
 PLIST_FILES=	bin/gqlplus
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400010
-LIB_DEPENDS+=	ncurses:${PORTSDIR}/devel/ncurses
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
@@ -33,4 +27,4 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
