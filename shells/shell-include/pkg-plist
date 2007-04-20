@@ -1,0 +1,9 @@
+bin/sh-include
+bin/bash-include
+libexec/shell-include/sh/random
+libexec/shell-include/sh/fileGetLine
+@dirrm libexec/shell-include/sh
+libexec/shell-include/bash/random
+libexec/shell-include/bash/fileGetLine
+@dirrm libexec/shell-include/bash
+@dirrm libexec/shell-include
