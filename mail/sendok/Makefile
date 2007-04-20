@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sendok
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	mail
 MASTER_SITES=	http://peff.net/sendok/ \
 		http://www.cs.virginia.edu/~jrk3g/sendok/
