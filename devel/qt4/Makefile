@@ -24,26 +24,26 @@ RUN_DEPENDS=	${LOCALBASE}/lib/plugins/accessible/libqtaccessiblecompatwidgets.so
 		${LOCALBASE}/lib/libQtSql.so:${PORTSDIR}/databases/qt4-sql \
 		qdbus:${PORTSDIR}/devel/dbus-qt4 \
 		qmake-qt4:${PORTSDIR}/devel/qmake4 \
-		${LOCALBASE}/bin/assistant-qt4:${PORTSDIR}/devel/qt4-assistant \
+		assistant-qt4:${PORTSDIR}/devel/qt4-assistant \
 		${LOCALBASE}/lib/libQtCore.so:${PORTSDIR}/devel/qt4-corelib \
-		${LOCALBASE}/bin/designer-qt4:${PORTSDIR}/devel/qt4-designer \
+		designer-qt4:${PORTSDIR}/devel/qt4-designer \
 		${LOCALBASE}/lib/libQtAssistantClient.so:${PORTSDIR}/devel/qt4-libqtassistantclient \
-		${LOCALBASE}/bin/linguist-qt4:${PORTSDIR}/devel/qt4-linguist \
-		${LOCALBASE}/bin/moc-qt4:${PORTSDIR}/devel/qt4-moc \
-		${LOCALBASE}/bin/qt3to4:${PORTSDIR}/devel/qt4-porting \
+		linguist-qt4:${PORTSDIR}/devel/qt4-linguist \
+		moc-qt4:${PORTSDIR}/devel/qt4-moc \
+		qt3to4:${PORTSDIR}/devel/qt4-porting \
 		${LOCALBASE}/lib/libQt3Support.so:${PORTSDIR}/devel/qt4-qt3support \
-		${LOCALBASE}/bin/rcc:${PORTSDIR}/devel/qt4-rcc \
-		${LOCALBASE}/bin/qvfb-qt4:${PORTSDIR}/devel/qt4-qvfb \
-		${LOCALBASE}/bin/uic-qt4:${PORTSDIR}/devel/qt4-uic \
-		${LOCALBASE}/bin/uic3:${PORTSDIR}/devel/qt4-uic3 \
+		rcc:${PORTSDIR}/devel/qt4-rcc \
+		qvfb-qt4:${PORTSDIR}/devel/qt4-qvfb \
+		uic-qt4:${PORTSDIR}/devel/qt4-uic \
+		uic3:${PORTSDIR}/devel/qt4-uic3 \
 		${LOCALBASE}/lib/libQtTest.so:${PORTSDIR}/devel/qt4-qtestlib \
 		${LOCALBASE}/lib/plugins/imageformats/libqgif.so:${PORTSDIR}/graphics/qt4-imageformats \
 		${LOCALBASE}/lib/libQtSvg.so:${PORTSDIR}/graphics/qt4-svg \
 		${LOCALBASE}/lib/plugins/iconengines/libqsvg.so:${PORTSDIR}/graphics/qt4-iconengines \
-		${LOCALBASE}/bin/pixeltool:${PORTSDIR}/graphics/qt4-pixeltool \
+		pixeltool:${PORTSDIR}/graphics/qt4-pixeltool \
 		${LOCALBASE}/lib/plugins/codecs/libqjpcodecs.so:${PORTSDIR}/japanese/qt4-codecs-jp \
 		${LOCALBASE}/lib/plugins/codecs/libqkrcodecs.so:${PORTSDIR}/korean/qt4-codecs-kr \
-		${LOCALBASE}/bin/qtconfig:${PORTSDIR}/misc/qt4-qtconfig \
+		qtconfig-qt4:${PORTSDIR}/misc/qt4-qtconfig \
 		${LOCALBASE}/lib/libQtNetwork.so:${PORTSDIR}/net/qt4-network \
 		${LOCALBASE}/lib/libQtXml.so:${PORTSDIR}/textproc/qt4-xml \
 		${LOCALBASE}/lib/libQtOpenGL.so:${PORTSDIR}/x11/qt4-opengl \
