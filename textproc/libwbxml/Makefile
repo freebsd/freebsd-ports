@@ -24,12 +24,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
-post-extract:
+patch-autotools:
 	@${CP} ${LOCALBASE}/share/libtool/ltmain.sh ${WRKSRC}/ltmain.sh
+	@${CAT} ${LOCALBASE}/share/aclocal/libtool.m4 >> ${WRKSRC}/aclocal.m4
 	@${TOUCH} ${WRKSRC}/config.h.in
 	@${REINPLACE_CMD} 's|^.*install_prog.*instname.*destdir.*$$||' ${WRKSRC}/ltmain.sh
-
-patch-autotools:
-	@${TRUE}
 
 .include <bsd.port.mk>
