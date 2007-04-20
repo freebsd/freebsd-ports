@@ -14156,6 +14156,7 @@ sharutils	ports/archivers/sharutils
 shc		ports/misc/shc
 sheerdns	ports/dns/sheerdns
 shell-fm	ports/multimedia/shell-fm
+shell-include	ports/shells/shell-include
 shellac		ports/audio/shellac
 shelldap	ports/net/shelldap
 shftool		ports/converters/shftool
