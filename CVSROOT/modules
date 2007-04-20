@@ -15374,6 +15374,7 @@ umark		ports/games/umark
 umatrix		ports/math/umatrix
 umem		ports/devel/umem
 umfpack		ports/math/umfpack
+umit		ports/security/umit
 umix		ports/audio/umix
 umodplayer	ports/audio/umodplayer
 umodunpack	ports/misc/umodunpack
