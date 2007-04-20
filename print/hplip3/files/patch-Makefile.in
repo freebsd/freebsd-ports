@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Dec 19 18:11:05 2006
-+++ Makefile.in	Mon Dec 25 02:30:25 2006
-@@ -414,7 +414,7 @@
+--- Makefile.in.orig	Fri Mar 23 16:39:45 2007
++++ Makefile.in	Wed Apr 18 17:00:46 2007
+@@ -434,7 +434,7 @@
  www243dir = $(docdir)/install/step4/suse
  dist_www243_DATA = $(wwwsrc)/install/step4/suse/*
  www251dir = $(docdir)/install/manual
@@ -8,8 +8,8 @@
 +dist_www251_DATA = $(wwwsrc)/install/manual/*.html
  www252dir = $(docdir)/install/manual/distros
  dist_www252_DATA = $(wwwsrc)/install/manual/distros/*
- www3dir = $(docdir)/styles
-@@ -424,12 +424,12 @@
+ www261dir = $(docdir)/install/install
+@@ -446,12 +446,12 @@
  www5dir = $(docdir)/supported_devices
  dist_www5_DATA = $(wwwsrc)/supported_devices/*
  www6dir = $(docdir)/tech_docs
@@ -25,7 +25,7 @@
  dist_hplip_SCRIPTS = hpssd.py __init__.py hplip.sh install.py hplip-install
  cmddir = $(hplipdir)
  dist_cmd_SCRIPTS = align.py info.py print.py toolbox.py clean.py colorcal.py unload.py testpage.py makeuri.py check.py fab.py levels.py \
-@@ -2562,20 +2562,9 @@
+@@ -2884,20 +2884,9 @@
  #
  #       If scanner build, install sane backend.
  	if [ "$(scan_build)" = "yes" ]; then \
@@ -49,21 +49,15 @@
  	fi
  
  install-data-hook: install-pcardext install-cupsext
-@@ -2618,63 +2607,42 @@
- 	   newname=$${i%.*}; \
- 	   mv $(DESTDIR)$(hplipdir)/$$i $(DESTDIR)$(hplipdir)/$$newname; \
- 	   if [ ! \( "$$newname" = "toolbox" -a "$(gui_build)" = "no" \) ]; then \
--	      ln -sf ../share/$(PACKAGE)/$$newname $(DESTDIR)$(bindir)/hp-$$newname; \
-+	      ln -sf $(prefix)/share/$(PACKAGE)/$$newname $(DESTDIR)$(bindir)/hp-$$newname; \
- 	   fi \
+@@ -2945,63 +2934,41 @@
  	done
  #
  #       Edit hpiod.conf in destdir.
 -	echo -e "\n[$(PACKAGE)]\nversion=$(VERSION)\njdprobe=0\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf
--	echo -e "[dirs]\nhome=$(hplipdir)\nrun=$(rundir)\nppd=$(hpppddir)\ndoc=$(docdir)\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf
+-	echo -e "[dirs]\nhome=$(hplipdir)\nrun=$(rundir)\nppd=$(hpppddir)\nppdbase=$(ppddir)\ndoc=$(docdir)\n" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf
 -	echo -e "# Following values are determined at configure time and cannot be changed.\n[configure]" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf
 +	echo -e "\n[$(PACKAGE)]\nversion=$(VERSION)\njdprobe=0\n" >> $(PACKAGE).conf
-+	echo -e "[dirs]\nhome=$(hplipdir)\nrun=$(rundir)\nppd=$(hpppddir)\ndoc=$(docdir)\n" >> $(PACKAGE).conf
++	echo -e "[dirs]\nhome=$(hplipdir)\nrun=$(rundir)\nppd=$(hpppddir)\nppdbase=$(ppddir)\ndoc=$(docdir)\n" >> $(PACKAGE).conf
 +	echo -e "# Following values are determined at configure time and cannot be changed.\n[configure]" >> $(PACKAGE).conf
  	if [ "$(network_build)" = "yes" ]; then \
 -	   echo -e "network-build=1" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
@@ -98,6 +92,13 @@
 +	   echo -e "fax-build=1" >> $(PACKAGE).conf; \
  	else \
 -	   echo -e "fax-build=0" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
++	   echo -e "fax-build=0" >> $(PACKAGE).conf; \
+ 	fi
+ 	if [ "$(cups11_build)" = "yes" ]; then \
+-	   echo -e "cups11-build=1" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
++	   echo -e "cups11-build=1" >> $(PACKAGE).conf; \
+ 	else \
+-	   echo -e "cups11-build=0" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf; \
 -	fi
 -	echo -e "installinitd=$(INSTALLINITD)\nchkconfig=$(CHKCONFIG)" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf
 -	echo -e "internal-tag=$(PACKAGE_BUGREPORT)" >> $(DESTDIR)$(hplipdir)/$(PACKAGE).conf
@@ -122,15 +123,14 @@
 -	   elif [ "$(CHKCONFIG)" != "" ]; then  \
 -	      $(CHKCONFIG) $(PACKAGE) reset; \
 -	   fi \
-+	   echo -e "fax-build=0" >> $(PACKAGE).conf; \
++	   echo -e "cups11-build=0" >> $(PACKAGE).conf; \
  	fi
 +	echo -e "installinitd=$(INSTALLINITD)\nchkconfig=$(CHKCONFIG)" >> $(PACKAGE).conf
 +	echo -e "internal-tag=$(PACKAGE_BUGREPORT)" >> $(PACKAGE).conf
-+
  #
  #       Install fax support. Let hpijs symlink hpppddir to cupsppddir.
  	if [ "$(fax_build)" = "yes" ]; then \
-@@ -2705,8 +2673,8 @@
+@@ -3032,8 +2999,8 @@
  	done
  #
  #       Remove hplip.conf and hplip start/stop script.
