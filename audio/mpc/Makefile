@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpc
-PORTVERSION=	0.12.0
+PORTVERSION=	0.12.1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://musicpd.org/uploads/files/
 
