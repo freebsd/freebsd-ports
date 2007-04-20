@@ -7,7 +7,7 @@
 
 PORTNAME=	libpaper
 PORTVERSION=	1.1.21
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/libp/libpaper
@@ -38,6 +38,7 @@ pre-configure:
 		${WRKSRC}/src/paperconfig.in
 
 post-configure:
-	@${REINPLACE_CMD} -e 's|$${prefix}|${PREFIX}|g' ${WRKSRC}/config.h
+	@${REINPLACE_CMD} -e 's|$${prefix}|${PREFIX}|g' ${WRKSRC}/config.h \
+			${WRKSRC}/src/paperconfig
 
 .include <bsd.port.mk>
