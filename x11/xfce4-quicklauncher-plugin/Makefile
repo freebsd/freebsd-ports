@@ -11,8 +11,6 @@ PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
-PATCH_SITES=	http://people.freebsd.org/~oliver/xfce/
-PATCHFILES=	gcc295-xfce4-quicklauncher-plugin-2.patch
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Quicklauncher plugin for xfce
