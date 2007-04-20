@@ -11,7 +11,6 @@ CATEGORIES=	japanese devel
 MASTER_SITES=	http://www.emaillab.org/mutt/tools/ \
 		http://my.reset.jp/~iwashita/mutt/distfiles/ \
 		http://www.actweb.ne.jp/k-yosino/
-
 DISTNAME=	slang-${VERSION}jp${JP_VERSION}
 
 MAINTAINER=	iwashita@cqmail.net
@@ -26,7 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/slang
 ALL_TARGET=	all elf
 INSTALL_TARGET=	install-elf
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/slang-j.doc ${PREFIX}/share/doc/slang
