@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	xanalyser
-PORTVERSION=	1.29
+PORTVERSION=	1.30
 CATEGORIES=	audio hamradio
-MASTER_SITES=	http://arvin.schnell-web.net/xanalyser/
+MASTER_SITES=	http://arvin.schnell-web.net/xanalyser/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	db
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Spectrum analyser
@@ -23,14 +25,11 @@ USE_AUTOTOOLS=	libtool:15
 MAN1=		xanalyser.1
 PLIST_FILES=	bin/xanalyser \
 		lib/X11/app-defaults/XAnalyser
-
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 500000
-BROKEN=	Does not compile
-.endif
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' \
 	-e 's|-lXm |${MOTIFLIB} |g' ${WRKSRC}/src/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
