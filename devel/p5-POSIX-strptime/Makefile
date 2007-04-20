@@ -19,10 +19,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=	POSIX::strptime.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	Perl 5.6 or newer required. Install lang/perl5.8 and try again.
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
