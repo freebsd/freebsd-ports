@@ -1,5 +1,5 @@
 bin/munger
-lib/libmunger.so.19
+lib/libmunger.so.20
 %%DKNS_BIN%%
 %%DATADIR%%/ipdatabase.munger
 %%DATADIR%%/ip2country.munger
