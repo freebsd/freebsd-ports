@@ -26,12 +26,6 @@ ALL_TARGET=	disktool
 MAN1=		disktool.1
 PLIST_FILES=	bin/disktool
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500000
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-disktool.c
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile
 
@@ -40,4 +34,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/disktool.man \
 	${PREFIX}/man/man1/disktool.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -42,13 +42,7 @@ PLIST_FILES+=	share/locale/fr/LC_MESSAGES/newpki-client.mo
 CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"does not compile (C++ libraries compiled with conflicting gcc versions)"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

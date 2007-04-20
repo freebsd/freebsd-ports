@@ -10,9 +10,12 @@ PORTVERSION=	0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	lioux
+DISTNAME=	${PORTNAME}-current-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetBSD's pgrep and pkill: find or signal processes matching criteria
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-current
 
 MAKE_ENV=	BINDIR=${PREFIX}/bin \
 		MANDIR=${PREFIX}/man/man
@@ -24,14 +27,6 @@ MAN1=		pgrep.1 pkill.1
 
 .if ${OSVERSION} >= 502110
 IGNORE=		"is included in the base system"
-.endif
-
-.if ${OSVERSION} >= 500000
-DISTNAME=	${PORTNAME}-current-${PORTVERSION}
-WRKSRC=		${WRKDIR}/${PORTNAME}-current
-.else
-DISTNAME=	${PORTNAME}-stable-${PORTVERSION}
-WRKSRC=		${WRKDIR}/${PORTNAME}-stable
 .endif
 
 .include <bsd.port.post.mk>

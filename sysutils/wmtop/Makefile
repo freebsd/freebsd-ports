@@ -26,13 +26,9 @@ PLIST_FILES=	bin/wmtop
 PORTDOCS=	BUGS CHANGES COPYING README TODO
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
 post-patch:
 	${REINPLACE_CMD} -e 's/^\(LIBS.*\)/\1 -lkvm/' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's/^\(FLAGS.*\)/\1 -DNO_PROCFS/' ${WRKSRC}/Makefile
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmtop ${PREFIX}/bin/
@@ -46,4 +42,4 @@ do-install:
 .endfor
 .endif # !NOPORTDOCS
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

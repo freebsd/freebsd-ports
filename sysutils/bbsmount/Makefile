@@ -21,13 +21,7 @@ PORTDOCS=	README BUGS NEWS AUTHORS ChangeLog
 
 MAN1=		bbsmount.1
 
-.include <bsd.port.pre.mk>
-
 post-patch:
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
-.endif
 	@${REINPLACE_CMD} -e 's|-O[012]||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|SUBDIRS = data|SUBDIRS =|' ${WRKSRC}/Makefile.in
 
@@ -46,4 +40,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/data/bbsmount.bb ${PREFIX}/share/bbtools/bbsmount.bb-sample
 	@${INSTALL_DATA} ${WRKSRC}/data/bbsmount.bb.ex ${EXAMPLESDIR}/bbsmount.bb.ex
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

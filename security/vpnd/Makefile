@@ -40,14 +40,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.pre.mk>
-
-post-install:
-.if ${OSVERSION} < 500000
-	@${ECHO} "================================================================================"
-	@${ECHO} "Make sure you set up a few IRQ's for random generation with rndcontrol before"
-	@${ECHO} "trying to generate a master key file."
-	@${ECHO} "================================================================================"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

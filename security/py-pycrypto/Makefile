@@ -18,13 +18,9 @@ COMMENT=	The Python Cryptography Toolkit
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
 LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
-.endif
 
 pre-configure:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|" ${WRKSRC}/setup.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

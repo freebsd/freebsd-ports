@@ -14,13 +14,6 @@ MASTER_SITES=	http://www.netsoc.ucd.ie/flash/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A ncurses-based restriction shell
 
-.include <bsd.port.pre.mk>
-
-# outdated version of ncurses in non-CURRENT
-.if ${OSVERSION} < 400000
-LIB_DEPENDS=	ncurses.5:${PORTSDIR}/devel/ncurses
-.endif
-
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -rdynamic" \
@@ -36,11 +29,6 @@ SCRIPT=		mailshell system.menu system.menu.9798 system.menu.oldlast \
 DATA=		system.bg.Netsoc.3 system.bg.Netsoc.4 system.flashlogin \
 		system.maillogin system.module system.module.9798 system.rc \
 		system.rc.mailshell
-
-.if ${OSVERSION} < 400000
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_NCURSES_NCURSES_H" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-.endif
 
 post-patch:
 .for file in ${SCRIPT}
@@ -72,4 +60,4 @@ post-install:
 	@${RM} /etc/shells.bak
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -31,10 +31,4 @@ PLIST_FILES=	bin/slmon
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -lncurses -lm
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400010
-LIB_DEPENDS+=	ncurses:${PORTSDIR}/devel/ncurses
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

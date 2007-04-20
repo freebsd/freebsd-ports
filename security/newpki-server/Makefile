@@ -46,10 +46,6 @@ CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4
-.endif
-
 .if ${OSVERSION} >= 700019
 BROKEN=		does not compile with OpenSSL 0.9.8b
 .endif

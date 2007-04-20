@@ -60,15 +60,13 @@ CONFIGURE_ARGS+=	--with-secureid
 CONFIGURE_ARGS+=	--without-idea
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500023
 LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
 MAKE_ENV+=	GMPINCDIR="${LOCALBASE}/include" \
 		GMPLIBDIR="${LOCALBASE}/lib"
-.endif
 
-.if (${OSVERSION} >= 400016 && !defined(REALLY_WANT_SSH))
+.include <bsd.port.pre.mk>
+
+.if !defined(REALLY_WANT_SSH)
 IGNORE=		is now deprecated: OpenSSH is a superior version of SSH which has been included in the FreeBSD base system since 4.0-RELEASE.  To override this warning set the REALLY_WANT_SSH environment variable and rebuild
 .endif
 
@@ -110,7 +108,7 @@ CONFIGURE_ARGS+=	--with-libwrap
 # ssh-1.2.27-IPv6-1.5-patch.gz
 # We still use WITH_INET6 here and try to support pre 4.0 machines with kame
 # IPv6 stack
-.if ${OSVERSION} >= 400014 || ( ${OSVERSION} < 400014 && defined(WITH_INET6) )
+.if defined(WITH_INET6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
