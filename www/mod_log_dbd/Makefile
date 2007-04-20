@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_log_dbd
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	www databases
 MASTER_SITES=	http://bfoz.net/projects/${PORTNAME}/release/
 
@@ -15,10 +15,9 @@ COMMENT=	Uses APR DBD to store Apache access logs in a database
 USE_APACHE=	2.2+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-mysql=${PREFIX} \
-		--with-apache=${PREFIX}
+CONFIGURE_ARGS=	--with-apache=${PREFIX}
 
 do-install:
-	$(APXS) -i -a -n log_dbd $(WRKSRC)/mod_log_dbd.la
+	${APXS} -i -a -n log_dbd ${WRKSRC}/mod_log_dbd.la
 
 .include <bsd.port.mk>
