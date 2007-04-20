@@ -1,4 +1,4 @@
 This package used to extract the revision and file information
-provided by the Subversion revision control system.
+provided by the Subversion and SVK revision control systems.
 
 WWW: http://www.brucker.ch/projects/svninfo/

@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	svninfo
-PORTVERSION=	0.6
+PORTVERSION=	0.7.1
 CATEGORIES=	print
 MASTER_SITES=	http://www.brucker.ch/projects/svninfo/download/ \
 		${MASTER_SITE_LOCAL}
