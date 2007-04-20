@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	o2sms
-PORTVERSION=	3.22
+PORTVERSION=	3.24
 CATEGORIES=	comms perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW/MACKERS
@@ -21,10 +21,12 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN1=		o2sms.1 \
+MAN1=		aftsms.1 \
+		o2sms.1 \
 		meteorsms.1 \
 		vodasms.1
-MAN3=		WWW::SMS::IE::iesms.3 \
+MAN3=		WWW::SMS::IE::aftsms.3 \
+		WWW::SMS::IE::iesms.3 \
 		WWW::SMS::IE::o2sms.3 \
 		WWW::SMS::IE::meteorsms.3 \
 		WWW::SMS::IE::vodasms.3
