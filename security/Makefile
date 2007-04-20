@@ -717,6 +717,7 @@
     SUBDIR += tripwire-131
     SUBDIR += tripwire12
     SUBDIR += tthsum
+    SUBDIR += umit
     SUBDIR += unicornscan
     SUBDIR += vida
     SUBDIR += vinetto
