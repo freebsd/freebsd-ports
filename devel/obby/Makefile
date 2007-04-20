@@ -31,13 +31,7 @@ PLIST_SUB+=		NLS="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} 's,^pkgconfigdir = .*,pkgconfigdir=$$(prefix)/libdata/pkgconfig,' \
+	@${REINPLACE_CMD} 's,^pkgconfigdir = .*,pkgconfigdir=$${prefix}/libdata/pkgconfig,' \
 		${WRKSRC}/Makefile.in
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	some dependencies does not run on FreeBSD < 5.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
