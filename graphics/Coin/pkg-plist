@@ -85,8 +85,6 @@ include/Inventor/SoPickedPoint.h
 include/Inventor/SoPrimitiveVertex.h
 include/Inventor/SoSceneManager.h
 include/Inventor/SoType.h
-include/Inventor/oivwin32.h
-include/Inventor/non_winsys.h
 include/Inventor/VRMLnodes/SoVRML.h
 include/Inventor/VRMLnodes/SoVRMLAnchor.h
 include/Inventor/VRMLnodes/SoVRMLAppearance.h
@@ -643,6 +641,8 @@ include/Inventor/nodes/SoVertexProperty.h
 include/Inventor/nodes/SoVertexShape.h
 include/Inventor/nodes/SoWWWAnchor.h
 include/Inventor/nodes/SoWWWInline.h
+include/Inventor/non_winsys.h
+include/Inventor/oivwin32.h
 include/Inventor/projectors/SbCylinderPlaneProjector.h
 include/Inventor/projectors/SbCylinderProjector.h
 include/Inventor/projectors/SbCylinderSectionProjector.h
@@ -668,6 +668,7 @@ include/Inventor/sensors/SoSensorManager.h
 include/Inventor/sensors/SoSensors.h
 include/Inventor/sensors/SoTimerQueueSensor.h
 include/Inventor/sensors/SoTimerSensor.h
+include/Inventor/system/gl-headers.h
 include/Inventor/system/gl.h
 include/Inventor/system/inttypes.h
 include/Inventor/threads/SbBarrier.h
@@ -708,6 +709,8 @@ lib/libCoin.so.44
 %%DATADIR%%/draggerDefaults/translate2Dragger.iv
 share/aclocal/coin.m4
 @dirrm %%DATADIR%%/draggerDefaults
+@dirrm %%DATADIR%%/conf
+@dirrm %%DATADIR%%
 @dirrm include/Inventor/threads
 @dirrm include/Inventor/system
 @dirrm include/Inventor/sensors
