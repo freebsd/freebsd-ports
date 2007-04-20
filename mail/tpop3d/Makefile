@@ -7,12 +7,12 @@
 
 PORTNAME=	tpop3d
 PORTVERSION=	1.5.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ex-parrot.com/~chris/tpop3d/
 
 MAINTAINER=	boris@tagnet.ru
-COMMENT=	Virtual-domain capable POP3 server supporting MySQL,PgSQL etc auth
+COMMENT=	Virtual-domain capable POP3 server supporting MySQL, PgSQL etc auth
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
@@ -103,9 +103,9 @@ post-patch:
 		${WRKSRC}/tpop3d.conf.5 ${WRKSRC}/tpop3d.8
 
 post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/tpop3d.conf.dist ${DEFAULT_CONFIG}
+	${INSTALL_DATA} ${FILESDIR}/tpop3d.conf.dist ${DEFAULT_CONFIG}
 	@if [ ! -f ${PREFIX}/etc/tpop3d.conf ]; then			\
-		${INSTALL_SCRIPT} ${FILESDIR}/tpop3d.conf.dist 		\
+		${INSTALL_DATA} ${FILESDIR}/tpop3d.conf.dist 		\
 			${PREFIX}/etc/tpop3d.conf ;			\
 	fi
 .if !defined(NOPORTDOCS)
