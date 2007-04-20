@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ldapscripts
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	net
 MASTER_SITES=	http://contribs.martymac.com/ldapscripts/ \
 				${MASTER_SITE_LOCAL}
@@ -34,7 +34,7 @@ MANCOMPRESSED=	no
 MAN1=	ldapaddgroup.1 ldapaddmachine.1 ldapadduser.1 ldapaddusertogroup.1 \
 		ldapdeletegroup.1 ldapdeleteuser.1 ldapdeleteuserfromgroup.1 \
 		ldaprenameuser.1 ldapsetprimarygroup.1 _lsldap.1 _ldaprenamemachine.1 \
-		_ldaprenamegroup.1 _ldapinit.1 _ldapdeletemachine.1 _ldappasswd.1
+		_ldaprenamegroup.1 _ldapinit.1 _ldapdeletemachine.1 _ldappasswd.1 _ldapfinger.1
 MAN5=	ldapscripts.5
 
 # Change /etc to ${LOCALBASE}/etc
@@ -66,6 +66,7 @@ do-install:
 	${CP} ${WRKSRC}/bin/_ldaprenamegroup ${PREFIX}/bin
 	${CP} ${WRKSRC}/bin/_ldaprenamemachine ${PREFIX}/bin
 	${CP} ${WRKSRC}/bin/_ldappasswd ${PREFIX}/bin
+	${CP} ${WRKSRC}/bin/_ldapfinger ${PREFIX}/bin
 
 	${MKDIR} ${LOCALBASE}/etc/ldapscripts
 	if [ -f ${LOCALBASE}/etc/ldapscripts/ldapscripts.conf ]; then \
@@ -73,6 +74,9 @@ do-install:
 	fi
 	${CP} ${WRKSRC}/etc/ldapscripts.conf ${LOCALBASE}/etc/ldapscripts
 	${CP} ${WRKSRC}/etc/runtime ${LOCALBASE}/etc/ldapscripts
+	${CP} ${WRKSRC}/etc/ldapaddgroup.template.sample ${LOCALBASE}/etc/ldapscripts
+	${CP} ${WRKSRC}/etc/ldapadduser.template.sample ${LOCALBASE}/etc/ldapscripts
+	${CP} ${WRKSRC}/etc/ldapaddmachine.template.sample ${LOCALBASE}/etc/ldapscripts
 	${CP} ${WRKSRC}/README ${LOCALBASE}/etc/ldapscripts
 	${CP} ${WRKSRC}/CHANGELOG ${LOCALBASE}/etc/ldapscripts
 	${CP} ${WRKSRC}/COPYING ${LOCALBASE}/etc/ldapscripts
