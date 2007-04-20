@@ -138,7 +138,6 @@ lib/fretsonfire/data/stage_drums.svg
 lib/fretsonfire/data/stage_light.svg
 lib/fretsonfire/data/stage_lights1.svg
 lib/fretsonfire/data/stage_lights2.svg
-lib/fretsonfire/data/stage_logo.svg
 lib/fretsonfire/data/stage_speaker_cones.svg
 lib/fretsonfire/data/stage_speakers.svg
 lib/fretsonfire/data/star1.svg
@@ -155,6 +154,7 @@ lib/fretsonfire/data/translations
 %%PORTDOCS%%%%DOCSDIR%%/html/private/Audio.Music-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/Audio.OggStream-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/Audio.Sound-class.html
+%%PORTDOCS%%%%DOCSDIR%%/html/private/Audio.StreamingOggSound-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/Audio.StreamingSound-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/AudioTest-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/private/AudioTest.AudioTest-class.html
@@ -598,6 +598,7 @@ lib/fretsonfire/data/translations
 %%PORTDOCS%%%%DOCSDIR%%/html/public/Audio.Music-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/Audio.OggStream-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/Audio.Sound-class.html
+%%PORTDOCS%%%%DOCSDIR%%/html/public/Audio.StreamingOggSound-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/Audio.StreamingSound-class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/AudioTest-module.html
 %%PORTDOCS%%%%DOCSDIR%%/html/public/AudioTest.AudioTest-class.html
