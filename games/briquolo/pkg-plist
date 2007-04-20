@@ -102,6 +102,7 @@ share/pixmaps/briquolo.svg
 %%NLS%%share/locale/nl/LC_MESSAGES/briquolo.mo
 %%NLS%%share/locale/de/LC_MESSAGES/briquolo.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/briquolo.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/briquolo.mo
 %%NLS%%share/locale/be/LC_MESSAGES/briquolo.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/briquolo.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/briquolo.mo
