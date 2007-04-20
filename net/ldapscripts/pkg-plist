@@ -1,5 +1,8 @@
 etc/ldapscripts/ldapscripts.conf
 etc/ldapscripts/runtime
+etc/ldapscripts/ldapaddgroup.template.sample
+etc/ldapscripts/ldapadduser.template.sample
+etc/ldapscripts/ldapaddmachine.template.sample
 etc/ldapscripts/README
 etc/ldapscripts/CHANGELOG
 etc/ldapscripts/COPYING
@@ -21,3 +24,4 @@ bin/ldaprenameuser
 bin/_ldaprenamemachine
 bin/_ldaprenamegroup
 bin/_ldappasswd
+bin/_ldapfinger
