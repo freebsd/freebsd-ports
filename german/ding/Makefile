@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ding
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	german tk84
 MASTER_SITES=	ftp://ftp.tu-chemnitz.de/pub/Local/urz/ding/
 
