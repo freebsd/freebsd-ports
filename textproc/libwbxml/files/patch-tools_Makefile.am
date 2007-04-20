@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- tools/Makefile.am
++++ tools/Makefile.am
+@@ -20,9 +20,7 @@
+ 	 -DWBXML_SUPPORT_SYNCML\
+ 	 -DWBXML_SUPPORT_WV\
+ 	 -DWBXML_SUPPORT_AIRSYNC\
+-	 -Wall -Wimplicit -Wreturn-type -Wunused -Wswitch -Wcomment -Wuninitialized -Wparentheses -Wpointer-arith -Wmissing-prototypes\
+-	 -O3\
+-	 -g
++	 -Wall -Wimplicit -Wreturn-type -Wunused -Wswitch -Wcomment -Wuninitialized -Wparentheses -Wpointer-arith -Wmissing-prototypes
+ 
+ bin_PROGRAMS = wbxml2xml xml2wbxml
+ 

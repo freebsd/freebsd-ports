@@ -262,6 +262,7 @@
     SUBDIR += libtranslate
     SUBDIR += libtre
     SUBDIR += libuninameslist
+    SUBDIR += libwbxml
     SUBDIR += libwpd
     SUBDIR += libxdiff
     SUBDIR += libxml
