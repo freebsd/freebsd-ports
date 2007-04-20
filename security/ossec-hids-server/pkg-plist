@@ -1,0 +1,85 @@
+ossec-hids/active-response/bin/disable-account.sh
+ossec-hids/active-response/bin/firewall-drop.sh
+ossec-hids/active-response/bin/host-deny.sh
+ossec-hids/active-response/bin/route-null.sh
+ossec-hids/bin/clear_stats
+ossec-hids/bin/list_agents
+ossec-hids/bin/manage_agents
+ossec-hids/bin/ossec-agentd
+ossec-hids/bin/ossec-analysisd
+ossec-hids/bin/ossec-control
+ossec-hids/bin/ossec-execd
+ossec-hids/bin/ossec-logcollector
+ossec-hids/bin/ossec-maild
+ossec-hids/bin/ossec-monitord
+ossec-hids/bin/ossec-remoted
+ossec-hids/bin/ossec-syscheckd
+ossec-hids/bin/syscheck_update
+ossec-hids/etc/decoder.xml
+ossec-hids/etc/internal_options.conf
+ossec-hids/etc/localtime
+@unexec if cmp -s %D/ossec-hids/etc/ossec.conf.sample %D/ossec-hids/etc/ossec.conf; then rm -f %D/ossec-hids/etc/ossec.conf; fi
+ossec-hids/etc/ossec.conf.sample
+@exec if [ ! -f %D/ossec-hids/etc/ossec.conf ] ; then cp -p %D/ossec-hids/etc/ossec.conf.sample %D/ossec-hids/etc/orbit.conf; fi
+ossec-hids/etc/shared/rootkit_files.txt
+ossec-hids/etc/shared/rootkit_trojans.txt
+ossec-hids/logs/ossec.log
+ossec-hids/rules/apache_rules.xml
+ossec-hids/rules/arpwatch_rules.xml
+ossec-hids/rules/attack_rules.xml
+ossec-hids/rules/firewall_rules.xml
+ossec-hids/rules/ftpd_rules.xml
+ossec-hids/rules/hordeimp_rules.xml
+ossec-hids/rules/ids_rules.xml
+ossec-hids/rules/imapd_rules.xml
+ossec-hids/rules/local_rules.xml
+ossec-hids/rules/mailscanner_rules.xml
+ossec-hids/rules/ms-exchange_rules.xml
+ossec-hids/rules/ms_ftpd_rules.xml
+ossec-hids/rules/msauth_rules.xml
+ossec-hids/rules/named_rules.xml
+ossec-hids/rules/netscreenfw_rules.xml
+ossec-hids/rules/ossec_rules.xml
+ossec-hids/rules/pam_rules.xml
+ossec-hids/rules/pix_rules.xml
+ossec-hids/rules/policy_rules.xml
+ossec-hids/rules/postfix_rules.xml
+ossec-hids/rules/proftpd_rules.xml
+ossec-hids/rules/pure-ftpd_rules.xml
+ossec-hids/rules/racoon_rules.xml
+ossec-hids/rules/rules_config.xml
+ossec-hids/rules/sendmail_rules.xml
+ossec-hids/rules/smbd_rules.xml
+ossec-hids/rules/spamd_rules.xml
+ossec-hids/rules/squid_rules.xml
+ossec-hids/rules/sshd_rules.xml
+ossec-hids/rules/symantec-av_rules.xml
+ossec-hids/rules/syslog_rules.xml
+ossec-hids/rules/telnetd_rules.xml
+ossec-hids/rules/vpn_concentrator_rules.xml
+ossec-hids/rules/vpopmail_rules.xml
+ossec-hids/rules/vsftpd_rules.xml
+ossec-hids/rules/web_rules.xml
+@dirrm ossec-hids/var/run
+@dirrm ossec-hids/var
+@dirrm ossec-hids/tmp
+@dirrm ossec-hids/stats
+@dirrm ossec-hids/rules
+@dirrm ossec-hids/queue/syscheck
+@dirrm ossec-hids/queue/rootcheck
+@dirrm ossec-hids/queue/rids
+@dirrm ossec-hids/queue/ossec
+@dirrm ossec-hids/queue/fts
+@dirrm ossec-hids/queue/alerts
+@dirrm ossec-hids/queue/agent-info
+@dirrm ossec-hids/queue
+@dirrm ossec-hids/logs/firewall
+@dirrm ossec-hids/logs/archives
+@dirrm ossec-hids/logs/alerts
+@dirrm ossec-hids/logs
+@dirrm ossec-hids/etc/shared
+@dirrm ossec-hids/etc
+@dirrm ossec-hids/bin
+@dirrm ossec-hids/active-response/bin
+@dirrm ossec-hids/active-response
+@dirrm ossec-hids

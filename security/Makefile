@@ -309,6 +309,7 @@
     SUBDIR += openvpn-devel
     SUBDIR += opieprint
     SUBDIR += osiris
+    SUBDIR += ossec-hids-server
     SUBDIR += osslsigncode
     SUBDIR += outguess
     SUBDIR += p5-Authen-Bitcard

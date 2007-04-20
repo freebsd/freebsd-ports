@@ -1,0 +1,35 @@
+ossec-hids/active-response/bin/disable-account.sh
+ossec-hids/active-response/bin/firewall-drop.sh
+ossec-hids/active-response/bin/firewalls/ipfw.sh
+ossec-hids/active-response/bin/firewalls/ipfw_mac.sh
+ossec-hids/active-response/bin/firewalls/pf.sh
+ossec-hids/active-response/bin/host-deny.sh
+ossec-hids/active-response/bin/route-null.sh
+ossec-hids/bin/manage_agents
+ossec-hids/bin/ossec-agentd
+ossec-hids/bin/ossec-control
+ossec-hids/bin/ossec-execd
+ossec-hids/bin/ossec-logcollector
+ossec-hids/bin/ossec-syscheckd
+ossec-hids/etc/internal_options.conf
+ossec-hids/etc/localtime
+ossec-hids/etc/shared/rootkit_trojans.txt
+ossec-hids/etc/shared/rootkit_files.txt
+ossec-hids/etc/ossec.conf
+ossec-hids/active-response/bin/firewalls
+ossec-hids/logs/ossec.log
+@dirrm ossec-hids/active-response/bin/firewalls
+@dirrm ossec-hids/active-response/bin
+@dirrm ossec-hids/active-response
+@dirrm ossec-hids/etc/shared
+@dirrm ossec-hids/etc/
+@dirrm ossec-hids/var/run
+@dirrm ossec-hids/var
+@dirrm ossec-hids/queue/syscheck
+@dirrm ossec-hids/queue/rids
+@dirrm ossec-hids/queue/ossec
+@dirrm ossec-hids/queue/alerts
+@dirrm ossec-hids/queue
+@dirrm ossec-hids/logs
+@dirrm ossec-hids/bin
+@dirrm ossec-hids

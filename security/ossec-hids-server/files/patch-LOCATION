@@ -1,0 +1,7 @@
+diff -ruN src/LOCATION.orig src/LOCATION
+--- src/LOCATION.orig	Tue Oct 25 18:18:50 2005
++++ src/LOCATION	Mon Apr  2 10:51:37 2007
+@@ -1,2 +1,2 @@
+-DIR="/var/ossec"
++DIR="PREFIX"
+ CC=gcc

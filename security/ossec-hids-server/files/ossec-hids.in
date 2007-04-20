@@ -1,0 +1,42 @@
+#!/bin/sh
+# 
+# PROVIDE: ossechids
+# REQUIRE: DAEMON
+# BEFORE:  LOGIN
+
+. %%RC_SUBR%%
+
+name="ossechids"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${ossechids_enable="NO"}
+: ${ossechids_user="ossec"}
+: ${ossechids_group="ossec"}
+
+start_cmd=${name}_start
+stop_cmd=${name}_stop
+restart_cmd=${name}_restart
+status_cmd=${name}_status
+
+command="%%PREFIX%%/bin/ossec-control"
+required_files="%%PREFIX%%/etc/ossec.conf"
+
+ossechids_start() {
+	$command start
+}
+
+ossechids_stop() {
+	$command stop
+}
+
+ossechids_restart() {
+	$command restart
+}
+
+ossechids_status() {
+	$command status
+}
+
+run_rc_command "$1"
