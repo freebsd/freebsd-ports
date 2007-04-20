@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- fofi/Makefile
++++ fofi/Makefile
+@@ -14,7 +14,7 @@
+ GOOSRCDIR = $(srcdir)/../goo
+ GOOLIBDIR = ../goo
+ 
+-CXXFLAGS =   -DHAVE_CONFIG_H -I.. -I$(GOOSRCDIR) -I$(srcdir)
++CXXFLAGS +=   -DHAVE_CONFIG_H -I.. -I$(GOOSRCDIR) -I$(srcdir)
+ 
+ CXX = g++
+ AR = ar rc
