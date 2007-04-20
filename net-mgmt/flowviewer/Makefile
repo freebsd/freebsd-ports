@@ -18,6 +18,8 @@ COMMENT=	Web-based user interface for the flow-tools NetFlow data
 RUN_DEPENDS=	${SITE_PERL}/GD/Graph/linespoints.pm:${PORTSDIR}/graphics/p5-GD-Graph \
 		flow-cat:${PORTSDIR}/net-mgmt/flow-tools
 
+BROKEN=		Size mismatch
+
 .ifndef WITHOUT_WWWDIR
 FLOWVIEWERDIR?=	${PREFIX}/www/flowviewer
 .else

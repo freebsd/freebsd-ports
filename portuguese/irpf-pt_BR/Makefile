@@ -16,6 +16,8 @@ DISTNAME=	irpf2007v1.0
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Programa do Imposto de Renda Pessoa Fisica 2007 versao Java
 
+BROKEN=		Size mismatch
+
 USE_ZIP=	yes
 
 USE_JAVA=	yes

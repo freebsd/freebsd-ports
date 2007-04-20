@@ -17,6 +17,8 @@ DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Frets on Fire data files
 
+BROKEN=		Size mismatch
+
 NO_BUILD=	yes
 DATADIR=	share/${PKGNAMEPREFIX:S/-//}
 RESTRICTED=	Only Unreal Voodoo site is allowed to distribute the music
