@@ -20,6 +20,8 @@ COMMENT=	Jaymod - An Enemy Territory Modification
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
+BROKEN=		Unfetchable
+
 USE_LINUX=	yes
 
 DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}
