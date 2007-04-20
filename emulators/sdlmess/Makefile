@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	SDL port of MESS (Multiple Emulator Super System)
 
+BROKEN=		Install fails
+
 USE_ZIP=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
