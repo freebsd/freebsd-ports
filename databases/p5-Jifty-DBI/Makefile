@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Jifty-DBI
-PORTVERSION=	0.34
+PORTVERSION=	0.41
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Jifty
@@ -32,12 +32,18 @@ BUILD_DEPENDS=	\
 		p5-DBIx-DBSchema>=0.29:${PORTSDIR}/databases/p5-DBIx-DBSchema \
 		p5-Test-Simple>=0.52:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-DBD-SQLite>0:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-Hash-Merge>0:${PORTSDIR}/textproc/p5-Hash-Merge \
+		p5-Object-Declare>=0.22:${PORTSDIR}/devel/p5-Object-Declare \
+		p5-Scalar-Defer>=0.10:${PORTSDIR}/devel/p5-Scalar-Defer \
+		p5-version>0:${PORTSDIR}/devel/p5-version \
+		p5-YAML-Syck>0:${PORTSDIR}/textproc/p5-YAML-Syck \
 		p5-Cache-Memcached>0:${PORTSDIR}/databases/p5-Cache-Memcached
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=	Jifty::DBI.3 \
+	Jifty::DBI::Class::Trigger.3 \
 	Jifty::DBI::Collection.3 \
 	Jifty::DBI::Collection::Union.3 \
 	Jifty::DBI::Collection::Unique.3 \
@@ -47,6 +53,8 @@ MAN3=	Jifty::DBI.3 \
 	Jifty::DBI::Filter::SaltHash.3 \
 	Jifty::DBI::Filter::Storable.3 \
 	Jifty::DBI::Filter::Time.3 \
+	Jifty::DBI::Filter::Truncate.3 \
+	Jifty::DBI::Filter::YAML.3 \
 	Jifty::DBI::Filter::base64.3 \
 	Jifty::DBI::Filter::utf8.3 \
 	Jifty::DBI::Handle.3 \
@@ -62,6 +70,7 @@ MAN3=	Jifty::DBI.3 \
 	Jifty::DBI::Record.3 \
 	Jifty::DBI::Record::Cachable.3 \
 	Jifty::DBI::Record::Memcached.3 \
+	Jifty::DBI::Record::Plugin.3 \
 	Jifty::DBI::Schema.3 \
 	Jifty::DBI::SchemaGenerator.3
 
