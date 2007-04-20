@@ -12736,7 +12736,7 @@ py-pastedeploy	ports/www/py-pastedeploy
 py-pastescript	ports/www/py-pastescript
 py-pcap		ports/net/py-pcap
 py-pcapy	ports/net/py-pcapy
-py-pcs		ports/net/pcs
+py-pcs		ports/net/py-pcs
 py-pefile	ports/devel/py-pefile
 py-period	ports/devel/py-period
 py-pexpect	ports/misc/py-pexpect
