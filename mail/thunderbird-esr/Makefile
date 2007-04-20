@@ -3,11 +3,11 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/mail/thunderbird/Makefile,v 1.18 2006/10/12 09:06:46 ahze Exp $
+#    $MCom: ports/mail/thunderbird/Makefile,v 1.25 2007/04/20 14:29:23 ahze Exp $
 #
 
 PORTNAME=	thunderbird
-DISTVERSION=	1.5.0.10
+DISTVERSION=	2.0.0.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	thunderbird/releases/${DISTVERSION}/source
@@ -43,24 +43,22 @@ OPTIONS=
 
 .include <bsd.port.pre.mk>
 
-.if ( ${ARCH} == "alpha" && ${OSVERSION} < 500035 )
-IGNORE=	core dumps at runtime
-.endif # ( ${ARCH} == "alpha" && ${OSVERSION} < 500035 )
+GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} pthread | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
 
 .if (${ARCH}=="sparc64" && ${OSVERSION} < 601101)
 IGNORE=	core dumps on ${ARCH}, kern.osreldate>=601101 needed
 .endif
-
-.if ${PERL_LEVEL} < 500600
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-config_make-jars.pl
-.endif # ${PERL_LEVEL} < 500600
 
 post-extract::
 	@${SED} -e 's|@PORTNAME_ICON@|${PORTNAME_ICON}|' \
 		<${FILESDIR}/${PORTNAME}.desktop.in >${WRKDIR}/${PORTNAME}.desktop
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/security/manager/ssl/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|--without-nss||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:C/-pthread/${GECKO_PTHREAD_LIBS}/}|' \
+		${WRKSRC}/storage/build/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/local/netscape|${LOCALBASE}|g' \
 		-e 's|/usr/local/lib/netscape|${LOCALBASE}/lib|g' \
 		${WRKSRC}/xpcom/*/SpecialSystemDirectory.cpp
@@ -73,8 +71,11 @@ post-patch:
 		${WRKSRC}/xpcom/io/nsNativeCharsetUtils.cpp
 
 port-pre-install:
+	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
+	${FAKEDIR}/bin/thunderbird-config ${FAKEDIR}/bin/thunderbird
+	${RM} -f ${FAKEDIR}/bin/*.bak
 	${MKDIR} ${FAKEDIR}/lib/${PORTNAME}/defaults
-	${CP} -RL ${WRKSRC}/dist/bin/defaults/isp \
+	${CP} -RL ${WRKSRC}/dist/bin/isp \
 		${FAKEDIR}/lib/${PORTNAME}/defaults
 
 pre-install:
