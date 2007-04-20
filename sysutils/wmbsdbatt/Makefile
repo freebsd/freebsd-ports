@@ -20,10 +20,4 @@ PLIST_FILES=	bin/wmbsdbatt
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmbsdbatt ${PREFIX}/bin
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		does not compile on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

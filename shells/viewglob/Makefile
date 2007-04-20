@@ -23,10 +23,4 @@ GNU_CONFIGURE=	yes
 
 MAN1=		vgd.1 vgseer.1 viewglob.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	does not compile on FreeBSD 4.x, it's missing posix_openpt and ptsname functions
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

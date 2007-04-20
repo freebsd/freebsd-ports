@@ -58,13 +58,6 @@ CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
 # Here, MANDIR is concetenated to DESTDIR which all forms the man install dir...
 MAKE_ENV+=	LIBDATADIR=${PREFIX}/libdata MANDIR=${MANPREFIX}/man/man CRYPTOLIBS="${CRYPTOLIBS}"
 
-.if ${OSVERSION} < 400014
-MAKE_ENV+=	COMPAT_GETADDRINFO=yes
-ADDME+=		netdb.h
-.else
-MAKE_ENV+=	INET6FLAGS=-DINET6
-.endif
-
 .if !exists(/usr/include/tcpd.h)
 MAKE_ENV+=	TCP_WRAPPERS=no
 .endif
@@ -125,20 +118,6 @@ pre-configure:
 	${SED} -e 's:__PREFIX__:${PREFIX}:g' \
 		${WRKSRC}/${i}.sed >${WRKSRC}/${i}
 .endfor
-
-.if ${OSVERSION} < 430000
-post-configure:
-.for i in ${FIXME}
-	@${MV} ${WRKSRC}/${i} ${WRKSRC}/${i}.sed
-	${SED} -e "s=KERBEROS[:]L=KERBEROS=" \
-		-e "s=KERBEROS5[:]L=KERBEROS5=" \
-		-e "s=AFS[:]L=AFS=" \
-		-e "s=TCP_WRAPPERS[:]L=TCP_WRAPPERS=" \
-		-e "s=SKEY[:]L=SKEY=" \
-		-e "s=PAM[:]L=PAM=" \
-		${WRKSRC}/${i}.sed >${WRKSRC}/${i}
-.endfor
-.endif
 
 pre-install:
 	-${MKDIR} ${EMPTYDIR}

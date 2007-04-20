@@ -25,19 +25,15 @@ CONFIGURE_ARGS+=--with-sfsuser=sfs \
 		--with-sfsgroup=sfs \
 		--with-sfsdir=/var/spool/sfs \
 		--with-etcdir=${PREFIX}/etc/sfs \
-		--disable-uvfs
+		--disable-uvfs \
+		--with-gmp=${LOCALBASE}
+
+LIB_DEPENDS+=   gmp.7:${PORTSDIR}/math/libgmp4
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
 IGNORE=		nfsmounter component fails to execute correctly on ${ARCH} systems
-.endif
-
-.if ${OSVERSION} > 500000
-LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
-CONFIGURE_ARGS+=--with-gmp=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-gmp=/usr
 .endif
 
 MAN1=	\

@@ -77,12 +77,6 @@ DOC_FILES=	CHANGES LICENSE/COPYING LICENSE/LICENSE LICENSE/LUCENT \
 #		more/NOTES nawk/NOTES oawk/EXPLAIN oawk/NOTES \
 #		oawk/README ps/NOTES shl/NOTES tar/NOTES
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		does not build on FreeBSD 4.x which is missing wide-characters
-.endif
-
 pre-configure:
 	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/build/mk.config ${WRKSRC}/su/su.dfl.in
@@ -102,4 +96,4 @@ install-doc:
 #. endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
