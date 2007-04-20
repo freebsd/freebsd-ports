@@ -13,6 +13,8 @@ MASTER_SITES=	http://smtptrapd.inodes.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RFC 2821 compliant SMTP service that always returns a 4xx soft error
 
+CFLAGS+=	${PTHREAD_CFLAGS} ${PTHREAD_LIBS}
+
 USE_RC_SUBR=	smtptrapd.sh
 
 PLIST_FILES=	bin/smtptrapd
