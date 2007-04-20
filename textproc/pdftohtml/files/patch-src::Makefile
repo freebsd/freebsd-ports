@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/Makefile
++++ src/Makefile
+@@ -11,7 +11,7 @@
+ SPLASHSRCDIR = ../splash
+ SPLASHLIBDIR = ../splash
+ 
+-CXXFLAGS =   -DHAVE_CONFIG_H -DHAVE_DIRENT_H=1  -I.. -DHAVE_REWINDDIR=1 -DHAVE_POPEN=1 -I.. -I$(GOOSRCDIR) -I$(XPDFSRCDIR) -I$(FOFISRCDIR) -I$(SPLASHSRCDIR) -I$(srcdir)           -I/usr/X11R6/include
++CXXFLAGS +=   -DHAVE_CONFIG_H -DHAVE_DIRENT_H=1  -I.. -DHAVE_REWINDDIR=1 -DHAVE_POPEN=1 -I.. -I$(GOOSRCDIR) -I$(XPDFSRCDIR) -I$(FOFISRCDIR) -I$(SPLASHSRCDIR) -I$(srcdir)           -I/usr/X11R6/include
+ 
+ LDFLAGS = 
+ 

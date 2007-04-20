@@ -8,6 +8,7 @@
 
 PORTNAME=	pdftohtml
 PORTVERSION=	0.39
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +18,6 @@ COMMENT=	A command-line tool for converting pdf-files into html
 
 USE_GHOSTSCRIPT_RUN=	yes
 USE_GMAKE=	yes
-USE_MOTIF=	yes
 
 PLIST_FILES=	bin/pdftohtml
 
