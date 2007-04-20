@@ -18,6 +18,8 @@ COMMENT=	Provides access to PostgreSQL databases through the DBI
 DEPRECATED=	Use databases/p5-DBD-Pg instead
 EXPIRATION_DATE=	2007-05-10
 
+BROKEN=		Does not build
+
 CONFLICTS=	p5-DBD-Pg-1.[4-9]*
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}-13
 
