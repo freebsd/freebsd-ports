@@ -187,6 +187,7 @@
     SUBDIR += passivetex
     SUBDIR += pcal
     SUBDIR += pclprint
+    SUBDIR += pdfcube
     SUBDIR += pdfjam
     SUBDIR += pdflib
     SUBDIR += pdflib-perl
