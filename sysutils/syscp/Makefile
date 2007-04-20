@@ -32,7 +32,8 @@ RUN_DEPENDS+=	mysql:${PORTSDIR}/databases/mysql50-server \
 		httpd:${PORTSDIR}/www/apache22 \
 		dovecot:${PORTSDIR}/mail/dovecot \
 		postfix:${PORTSDIR}/mail/postfix \
-		proftpd:${PORTSDIR}/ftp/proftpd-mysql
+		proftpd:${PORTSDIR}/ftp/proftpd-mysql \
+		webalizer:${PORTSDIR}/www/webalizer
 
 post-patch:
 		${FIND} ${WRKSRC}/${PORTNAME} -name '*.orig' -delete
