@@ -16,6 +16,8 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Memcached extension
 
+BROKEN=		Configure fails
+
 USE_PHP=	zlib session
 USE_PHPEXT=	yes
 PHP_MODNAME=	memcache
