@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-SIP
-PORTVERSION=	0.24
+PORTVERSION=	0.26
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -29,12 +29,6 @@ MAN3=		Net::SIP.3 Net::SIP::Debug.3 \
 		Net::SIP::Response.3 Net::SIP::SDP.3 \
 		Net::SIP::Simple.3 Net::SIP::Simple::Call.3 \
 		Net::SIP::Simple::RTP.3 Net::SIP::StatelessProxy.3 \
-		Net::SIP::Util.3
+		Net::SIP::Util.3 Net::SIP::Authorize.3 Net::SIP::ReceiveChain.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500801
-IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
