@@ -1,0 +1,25 @@
+
+$FreeBSD$
+
+--- src/Makefile.am
++++ src/Makefile.am
+@@ -3,7 +3,7 @@
+ INCLUDES =\
+ 	 -I. -I/usr/include
+ 
+-CFLAGS =\
++CFLAGS +=\
+ 	 -DHAVE_CONFIG_H\
+ 	 -DHAVE_EXPAT\
+ 	 -D_REENTRANT\
+@@ -20,9 +20,7 @@
+ 	 -DWBXML_SUPPORT_SYNCML\
+ 	 -DWBXML_SUPPORT_WV\
+ 	 -DWBXML_SUPPORT_AIRSYNC\
+-	 -Wall -Wimplicit -Wreturn-type -Wunused -Wswitch -Wcomment -Wuninitialized -Wparentheses -Wpointer-arith -Wmissing-prototypes\
+-	 -O3\
+-	 -g
++	 -Wall -Wimplicit -Wreturn-type -Wunused -Wswitch -Wcomment -Wuninitialized -Wparentheses -Wpointer-arith -Wmissing-prototypes
+ 
+ lib_LTLIBRARIES = libwbxml2.la
+ 
