@@ -7,7 +7,7 @@
 
 PORTNAME?=	openacs
 PORTVERSION?=	5.3.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	www
 MASTER_SITES?=	http://openacs.org/projects/openacs/download/download/
 EXTRACT_SUFX?=	.tgz?revision_id=583060
@@ -20,6 +20,7 @@ RUN_DEPENDS=	${AOLSERVERBASE}/bin/nscache.so:${PORTSDIR}/www/aolserver-nscache \
 		${AOLSERVERBASE}/bin/nsopenssl.so:${PORTSDIR}/security/aolserver-nsopenssl \
 		${AOLSERVERBASE}/bin/nssha1.so:${PORTSDIR}/security/aolserver-nssha1 \
 		${AOLSERVERBASE}/bin/nspostgres.so:${PORTSDIR}/databases/aolserver-nspostgres \
+		${AOLSERVERBASE}/modules/tcl/xotcl.tcl:${PORTSDIR}/www/aolserver-xotcl \
 		${LOCALBASE}/lib/tdomConfig.sh:${PORTSDIR}/www/tdom
 
 USE_RC_SUBR?=	${PORTNAME}
@@ -47,10 +48,14 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 .if !defined(NOPORTDOCS)
 PORTDOCS=	ChangeLog readme.txt license.txt
 .endif
-
-OPTIONS=	EXAMPLES "Install various example files" on
+OPTIONS=	EXAMPLES "Install various example files" on \
+		TCLWEBTEST "Require tclwebteset" on
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_TCLWEBTEST)
+RUN_DEPENDS+=	${LOCALBASE}/bin/tclwebtest:${PORTSDIR}/www/tclwebtest
+.endif
 
 post-patch:
 	@${SED} -e 's|service0|${OPENACS_USER}|' \
