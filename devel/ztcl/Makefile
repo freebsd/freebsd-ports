@@ -17,7 +17,7 @@ COMMENT=	A zlib extension library for the Tcl
 LIB_DEPENDS=	tclmore0.7:${PORTSDIR}/devel/tclmore
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_TCL=	yes
 USE_TCL_BUILD=	yes
@@ -33,13 +33,11 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I ${PREFIX}/include -I ${TCL_INCLUDEDIR}"
 MAKE_ENV+=	CPPFLAGS="${CPPFLAGS} -I ${PREFIX}/include -I ${TCL_INCLUDEDIR}" \
 		LDFLAGS="${LDFLAGS} -L ${PREFIX}/lib"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD 4.X
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
 .endif
 
 post-extract:
 	${MV} ${WRKSRC}/doc/zlib.texi ${WRKSRC}/doc/${PORTNAME}-zlib.texi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
