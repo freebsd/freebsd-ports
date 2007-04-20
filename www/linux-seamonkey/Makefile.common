@@ -39,15 +39,20 @@ DESKTOP_SUFFIX?=	(Linux)
 _A=	>> ${TMPPLIST}
 _Q=	2>/dev/null || true
 
+.if !target(post-extract)
 post-extract:
 	@${RM} -rf ${WRKSRC}/updates
+.endif
 
 .if ${CATEGORIES:Mwww}
+.if !target(post-patch)
 post-patch:
 	@${ECHO} 'pref("general.useragent.vendor", "'${OPSYS}'");' >> ${PREFS_FILE}
 	@${ECHO} 'pref("general.useragent.vendorSub", "'${ARCH}'");' >> ${PREFS_FILE}
 .endif
+.endif
 
+.if !target(do-install)
 do-install:
 	@${INSTALL} -d ${FDIR} ${PREFIX}/share/applications
 	@${INSTALL_DATA} ${WRKDIR}/${APP_NAME}.desktop ${PREFIX}/share/applications/
@@ -60,6 +65,7 @@ do-install:
 		${FDIR}/plugins/ ${_Q}
 	@${CP} -R ${LOCALBASE}/lib/xpi/symlinks/${APP_NAME}/ \
 		${FDIR}/extensions/ ${_Q}
+.endif
 
 # Maintainer section
 create-plist: build
