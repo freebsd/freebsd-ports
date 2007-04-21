@@ -7,6 +7,7 @@
 
 PORTNAME=	ossec-hids
 PORTVERSION=	1.1
+PORTREVISION?=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ossec.net/files/
 PKGNAMESUFFIX?=	-server

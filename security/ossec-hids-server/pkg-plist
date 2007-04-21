@@ -17,7 +17,6 @@ ossec-hids/bin/ossec-syscheckd
 ossec-hids/bin/syscheck_update
 ossec-hids/etc/decoder.xml
 ossec-hids/etc/internal_options.conf
-ossec-hids/etc/localtime
 @unexec if cmp -s %D/ossec-hids/etc/ossec.conf.sample %D/ossec-hids/etc/ossec.conf; then rm -f %D/ossec-hids/etc/ossec.conf; fi
 ossec-hids/etc/ossec.conf.sample
 @exec if [ ! -f %D/ossec-hids/etc/ossec.conf ] ; then cp -p %D/ossec-hids/etc/ossec.conf.sample %D/ossec-hids/etc/orbit.conf; fi
