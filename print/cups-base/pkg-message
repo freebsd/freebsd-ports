@@ -5,7 +5,7 @@ PLEASE NOTE:
 To enable printing with local printer you need to give group cups
 r/w access to printer device:
 
-1) Add following to /etc/devfs.rules (create if it doesn't exits):
+1) Add following to /etc/devfs.rules (create if it doesn't exist):
 
 [system=10]
 add path 'unlpt*' mode 0660 group cups
