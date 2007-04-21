@@ -33,6 +33,10 @@ QTSTYLESDIR=	${PREFIX}/lib/plugins/styles
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == amd64
+BROKEN=		Does not compile on amd64
+.endif
+
 .if ${MACHINE_CPU:Mmmx}
 CONFIGURE_ARGS+=	--enable-mmx
 .endif
