@@ -31,7 +31,8 @@ do-install:
 	${MKDIR} ${RUBY_MODDOCDIR}
 	@${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} -C ${RUBY_MODDOCDIR}
 	@${FIND} ${RUBY_MODDOCDIR}/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;
-	@${FIND} ${RUBY_MODDOCDIR}/ -type f -exec ${CHOWN} ${SHAREOWN} {} \;
+	@${FIND} ${RUBY_MODDOCDIR}/ -type d -exec ${CHMOD} 755 {} \;
+	@${FIND} ${RUBY_MODDOCDIR}/ -exec ${CHOWN} ${SHAREOWN}:${SHAREGRP} {} \;
 	@${FIND} -d ${RUBY_MODDOCDIR}/ -type f | \
 		${SED} -e 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} -d ${RUBY_MODDOCDIR}/ -type d | \
