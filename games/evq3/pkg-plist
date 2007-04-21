@@ -1,6 +1,11 @@
 bin/evq3
+bin/evq3-server
+%%GAMELIBS%%%%LIBDIR%%/baseq3/cgame.so
 %%LIBDIR%%/baseq3/pak-evq3.pk3
-%%PORTDOCS%%%%DOCSDIR%%/README.html
+%%GAMELIBS%%%%LIBDIR%%/baseq3/qagame.so
+%%GAMELIBS%%%%LIBDIR%%/baseq3/ui.so
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.txt
+%%PORTDOCS%%%%DOCSDIR%%/FEATURES.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%LIBDIR%%/baseq3
 @dirrm %%LIBDIR%%
