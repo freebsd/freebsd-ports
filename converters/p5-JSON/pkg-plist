@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Apache/JSONRPC.pm
 %%SITE_PERL%%/JSON.pm
 %%SITE_PERL%%/JSON/Converter.pm
+%%SITE_PERL%%/JSON/PP.pm
 %%SITE_PERL%%/JSON/Parser.pm
 %%SITE_PERL%%/JSONRPC.pm
 %%SITE_PERL%%/JSONRPC/Transport/HTTP.pm
