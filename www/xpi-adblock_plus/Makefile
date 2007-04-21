@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	adblock_plus
-PORTVERSION=	0.7.2.4
-DISTVERSIONSUFFIX=	-fx+fl+zm+tb
+PORTVERSION=	0.7.5
+DISTVERSIONSUFFIX=	-fx+tb+sm+fl
 CATEGORIES=	www
 
 MAINTAINER=	ale@FreeBSD.org
