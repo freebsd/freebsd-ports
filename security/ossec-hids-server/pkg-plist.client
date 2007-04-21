@@ -12,7 +12,6 @@ ossec-hids/bin/ossec-execd
 ossec-hids/bin/ossec-logcollector
 ossec-hids/bin/ossec-syscheckd
 ossec-hids/etc/internal_options.conf
-ossec-hids/etc/localtime
 ossec-hids/etc/shared/rootkit_trojans.txt
 ossec-hids/etc/shared/rootkit_files.txt
 ossec-hids/etc/ossec.conf
