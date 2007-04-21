@@ -8,6 +8,8 @@ bin/avahi-resolve
 bin/avahi-resolve-address
 bin/avahi-resolve-host-name
 bin/avahi-set-host-name
+%%GTK%%bin/zssh
+%%GTK%%bin/zvnc
 etc/avahi/avahi-daemon.conf
 etc/avahi/avahi-dnsconfd.action
 etc/avahi/hosts
@@ -61,6 +63,7 @@ include/avahi-core/publish.h
 include/avahi-core/rr.h
 include/avahi-glib/glib-malloc.h
 include/avahi-glib/glib-watch.h
+%%GTK%%include/avahi-ui/avahi-ui.h
 lib/libavahi-client.a
 lib/libavahi-client.la
 lib/libavahi-client.so
@@ -77,6 +80,10 @@ lib/libavahi-glib.a
 lib/libavahi-glib.la
 lib/libavahi-glib.so
 lib/libavahi-glib.so.1
+%%GTK%%lib/libavahi-ui.a
+%%GTK%%lib/libavahi-ui.la
+%%GTK%%lib/libavahi-ui.so
+%%GTK%%lib/libavahi-ui.so.0
 %%LIBDNS%%lib/libdns_sd.a
 %%LIBDNS%%lib/libdns_sd.la
 %%LIBDNS%%lib/libdns_sd.so
@@ -90,8 +97,11 @@ libdata/pkgconfig/avahi-compat-howl.pc
 %%LIBDNS%%libdata/pkgconfig/avahi-compat-libdns_sd.pc
 libdata/pkgconfig/avahi-core.pc
 libdata/pkgconfig/avahi-glib.pc
+%%GTK%%libdata/pkgconfig/avahi-ui.pc
 sbin/avahi-daemon
 sbin/avahi-dnsconfd
+%%GTK%%share/applications/zssh.desktop
+%%GTK%%share/applications/zvnc.desktop
 %%DATADIR%%/avahi-service.dtd
 %%GTK%%%%DATADIR%%/interfaces/avahi-discover.glade
 %%DATADIR%%/introspection/AddressResolver.introspect
@@ -107,6 +117,8 @@ sbin/avahi-dnsconfd
 @dirrm %%DATADIR%%/introspection
 %%GTK%%@dirrm %%DATADIR%%/interfaces
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
+%%GTK%%@dirrm include/avahi-ui
 @dirrm include/avahi-glib
 @dirrm include/avahi-core
 %%LIBDNS%%@dirrm include/avahi-compat-libdns_sd

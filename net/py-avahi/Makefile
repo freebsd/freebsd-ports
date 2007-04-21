@@ -44,6 +44,10 @@ CONFIGURE_ARGS=	--enable-python \
 
 MAN1=		avahi-bookmarks.1 avahi-discover.1
 
+pre-build:
+	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+	    	Makefile ${MAKE_ARGS} clean
+
 post-build:
 	@cd ${WRKSRC}/service-type-database && ${SETENV} ${MAKE_ENV} ${GMAKE} \
 		${MAKE_FLAGS} Makefile ${MAKE_ARGS} ${ALL_TARGET}
