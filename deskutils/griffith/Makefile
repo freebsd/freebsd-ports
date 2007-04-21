@@ -8,7 +8,7 @@
 PORTNAME=	griffith
 PORTVERSION=	0.9.2
 CATEGORIES=	deskutils
-MASTER_SITES=	BERLIOS
+MASTER_SITES=	CENKES BERLIOS
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A film collection manager
