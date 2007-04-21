@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	lzma
-PORTVERSION=	4.44
+PORTVERSION=	4.45
 CATEGORIES=	archivers
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	sevenzip
+MASTER_SITES=	SF/sevenzip
 DISTNAME=	7z${PORTVERSION:S/.//g}
 
 MAINTAINER=	infofarmer@FreeBSD.org
@@ -35,7 +34,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/lzma ${TARGETDIR}/bin/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${INSTALL} -d ${DOCSDIR}/
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/DOC/,} ${DOCSDIR}/
 .endif
 
