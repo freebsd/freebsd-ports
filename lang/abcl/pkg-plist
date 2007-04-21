@@ -1,3 +1,4 @@
 bin/abcl
+lib/libabcl.so
 share/java/classes/abcl-src.jar
 share/java/classes/abcl.jar
