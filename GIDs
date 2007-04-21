@@ -92,6 +92,7 @@ tiarra:*:398:
 drweb:*:426:
 courier:*:465:
 _bbstored:*:505:
+nullmail:*:522:
 dkimproxy:*:525:
 ejabberd:*:544:
 qtss:*:554:
