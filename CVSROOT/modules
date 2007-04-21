@@ -2299,6 +2299,7 @@ eggdrop		ports/irc/eggdrop
 egl		ports/games/egl
 egoboo		ports/games/egoboo
 egroupware	ports/deskutils/egroupware
+egypt		ports/devel/egypt
 ehnt		ports/net-mgmt/ehnt
 eiciel		ports/sysutils/eiciel
 eieio		ports/devel/eieio
