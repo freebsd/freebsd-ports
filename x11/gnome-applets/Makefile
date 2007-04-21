@@ -41,7 +41,7 @@ CONFIGURE_ARGS=	--with-gstreamer=0.10 \
 		--enable-stickynotes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-		FREEBSD_SYS=${FREEBSD_SYS}
+		OS_SYS="/usr/include"
 
 GCONF_SCHEMAS=	charpick.schemas drivemount.schemas geyes.schemas \
 		gswitchit.schemas gweather.schemas \
@@ -49,8 +49,6 @@ GCONF_SCHEMAS=	charpick.schemas drivemount.schemas geyes.schemas \
 		stickynotes.schemas
 
 OPTIONS=	MINI_COMMANDER "Enable mini-commander applet" off
-
-FREEBSD_SYS?=	/usr/src/sys
 
 .if defined(PACKAGE_BUILDING)
 .undef WITHOUT_GNOME
