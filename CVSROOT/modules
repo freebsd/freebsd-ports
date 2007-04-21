@@ -14517,6 +14517,7 @@ squidclients	ports/www/squidclients
 squidguard	ports/www/squidguard
 squidpurge	ports/www/squidpurge
 squidtimes	ports/www/squidtimes
+squidview	ports/www/squidview
 squirm		ports/www/squirm
 squirrel-sql	ports/databases/squirrel-sql
 squirrelmail	ports/mail/squirrelmail
