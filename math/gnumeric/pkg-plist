@@ -246,9 +246,9 @@ lib/gnumeric/%%VERSION%%/plugins/uihello/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/xbase/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/xbase/xbase.la
 lib/gnumeric/%%VERSION%%/plugins/xbase/xbase.so
-lib/goffice/0.3.7/plugins/gnumeric/gnumeric.la
-lib/goffice/0.3.7/plugins/gnumeric/gnumeric.so
-lib/goffice/0.3.7/plugins/gnumeric/plugin.xml
+lib/goffice/0.3.8/plugins/gnumeric/gnumeric.la
+lib/goffice/0.3.8/plugins/gnumeric/gnumeric.so
+lib/goffice/0.3.8/plugins/gnumeric/plugin.xml
 lib/libspreadsheet-%%VERSION%%.so
 lib/libspreadsheet.la
 lib/libspreadsheet.so
@@ -795,6 +795,8 @@ share/locale/da/LC_MESSAGES/gnumeric-functions.mo
 share/locale/da/LC_MESSAGES/gnumeric.mo
 share/locale/de/LC_MESSAGES/gnumeric-functions.mo
 share/locale/de/LC_MESSAGES/gnumeric.mo
+share/locale/dz/LC_MESSAGES/gnumeric-functions.mo
+share/locale/dz/LC_MESSAGES/gnumeric.mo
 share/locale/el/LC_MESSAGES/gnumeric-functions.mo
 share/locale/el/LC_MESSAGES/gnumeric.mo
 share/locale/en_CA/LC_MESSAGES/gnumeric-functions.mo
@@ -935,7 +937,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins
 @dirrm lib/gnumeric/%%VERSION%%
 @dirrm lib/gnumeric
-@dirrm lib/goffice/0.3.7/plugins/gnumeric
+@dirrm lib/goffice/0.3.8/plugins/gnumeric
 @dirrm include/libspreadsheet-1-7
 @unexec update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
@@ -972,6 +974,8 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrmtry share/locale/fi
 @dirrmtry share/locale/el/LC_MESSAGES
 @dirrmtry share/locale/el
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
 @dirrmtry share/locale/cs/LC_MESSAGES
 @dirrmtry share/locale/cs
 @dirrmtry share/locale/ca/LC_MESSAGES
