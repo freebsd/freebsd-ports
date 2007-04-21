@@ -15771,6 +15771,7 @@ whoson		ports/mail/whoson
 whowatch	ports/sysutils/whowatch
 whysynth	ports/audio/whysynth
 wide-dhcp	ports/net-mgmt/wide-dhcp
+widelands	ports/games/widelands
 widentd		ports/net/widentd
 widgetfactory	ports/x11/widgetfactory
 wikindx		ports/www/wikindx
