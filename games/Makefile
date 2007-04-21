@@ -793,6 +793,7 @@
     SUBDIR += warsow-data
     SUBDIR += warzone2100
     SUBDIR += wesnoth
+    SUBDIR += widelands
     SUBDIR += wmeyes
     SUBDIR += wmfortune
     SUBDIR += wmminichess
