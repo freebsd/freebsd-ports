@@ -61,6 +61,7 @@ smokeping:*:117:117:SmokePing Daemon:/nonexistent:/sbin/nologin
 ircproxyd:*:118:118:Night Light IRC Proxy:/nonexistent:/sbin/nologin
 mythtv:*:119:119:MythTV pseudo-user:/home/mythtv:/bin/sh
 pdns_recursor:*:120:120:pdns_recursor pseudo-user:/nonexistent:/sbin/nologin
+otrs:*:121:121:OTRS Administrator:/usr/local/otrs:/bin/csh
 _ntp:*:123:123:NTP Daemon:/var/empty:/sbin/nologin
 fetchmail:*:124:124:Fetchmail mail-retrieval daemon:/nonexistent:/sbin/nologin
 postfix:*:125:125:Postfix Mail System:/var/spool/postfix:/sbin/nologin
@@ -118,4 +119,3 @@ bopm:*:717:717:Blitzed Open Proxy Monitor:/nonexistent:/bin/sh
 openxpki:*:777:777:OpenXPKI Owner:/nonexistent:/usr/sbin/nologin
 netdisco:*:840:840:netdisco daemon:/nonexistent:/usr/sbin/nologin
 bacula:*:910:910:Bacula Daemon:/var/db/bacula:/sbin/nologin
-otrs:*:121:121:OTRS Administrator:/usr/local/otrs:/bin/csh
