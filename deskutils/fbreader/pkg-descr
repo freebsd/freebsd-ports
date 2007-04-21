@@ -1,0 +1,21 @@
+FBReader is a book reader. Main features:
+* Supported formats: fb2, HTML, CHM, plucker, Palmdoc, zTxt, TCR, RTF,
+  OEB, OpenReader, mobipocket, plain text.
+* Direct reading from tar, zip, gzip and bzip2 archives.
+* Supported encodings: utf-8, us-ascii, windows-1251, windows-1252,
+  koi8-r, ibm866, iso-8859-*, Big5, GBK.
+* Automatically generated contents table.
+* Embedded images support.
+* Footnotes/hyperlinks support.
+* Position indicator.
+* Keeps the last open book and the last read positions for all opened
+  books between runs.
+* List of last opened books.
+* Automatic hyphenations. Liang's algorithm is used. Patterns for Czech,
+  English, Esperanto, French, German and Russian are included in the
+  current version.
+* Text search.
+* Full-screen mode.
+* Screen rotation by 90, 180 and 270 degrees.
+
+WWW: http://only.mawhrin.net/fbreader/
