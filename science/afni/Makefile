@@ -16,14 +16,14 @@
 # Makefile.BSD, which is included in the source distribution.
 
 PORTNAME=	afni
-PORTVERSION=	2006.06.30.1332
+PORTVERSION=	2007.04.18.1830
 CATEGORIES=	science biology graphics
 MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/AFNI/${PORTVERSION}/ \
 		http://afni.nimh.nih.gov/pub/dist/tgz/
-DISTFILES=	afni_src.tgz afni_doc.tgz afni.1 \
+DISTFILES=	afni_src.tgz afni.1 \
 		TTatlas+tlrc.BRIK.gz TTatlas+tlrc.HEAD CA_EZ_v1.3c-May0806.tgz
 DIST_SUBDIR=	AFNI-${PORTVERSION}
-EXTRACT_ONLY=	afni_src.tgz afni_doc.tgz CA_EZ_v1.3c-May0806.tgz
+EXTRACT_ONLY=	afni_src.tgz CA_EZ_v1.3c-May0806.tgz
 
 MAINTAINER=	bacon@smithers.neuro.mcw.edu
 COMMENT=	Advanced Functional Neuro Imaging
@@ -31,12 +31,13 @@ COMMENT=	Advanced Functional Neuro Imaging
 RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg \
 		mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
 		whirlgif:${PORTSDIR}/graphics/whirlgif \
-		ppmtogif:${PORTSDIR}/graphics/netpbm
+		ppmtogif:${PORTSDIR}/graphics/netpbm \
+		endian:${PORTSDIR}/sysutils/endian
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=	Does not compile on sparc64: "undefined reference to `_mcount'"
+BROKEN=	Does not compile on sparc64: "undefined reference to '_mcount'"
 .endif
 
 USE_GETTEXT=	yes
@@ -54,89 +55,72 @@ ALL_TARGET=	vastness suma
 
 MAN1=	afni.1
 
-# these need not to be stripped
-SCRIPTS=\
-	@2dwarper \
-	@4Daverage \
-	@AfniOrient2RAImap \
-	@AfniOrientSign \
-	@Align_Centers \
-	@Center_Distance \
-	@CheckForAfniDset \
-	@CommandGlobb \
-	@DoPerRoi.py \
-	@DTI_studio_reposition \
-	@FromRAI \
-	@GetAfniOrient \
-	@GetAfniPrefix \
-	@GetAfniView \
-	@IsoMasks \
-	@NoExt \
-	@Purify_1D \
-	@RenamePanga \
-	@SUMA_AlignToExperiment \
-	@SUMA_Make_Spec_Caret \
-	@SUMA_Make_Spec_FS \
-	@SUMA_Make_Spec_SF \
-	@ToRAI \
-	@UpdateAfni \
-	@VolCenter \
-	@align_partial_oblique \
-	@auto_align \
-	@auto_tlrc \
-	@clip_volume \
-	@fix_FSsphere \
-	@make_stim_file \
-	@np \
-	@parse_afni_name \
-	@parse_name \
-	afni_base.py \
-	3dMax \
-	suma_change_spec
-
-PLIST_FILES+=	${SCRIPTS:S|^|bin/|}
-
 INSTALL_WRKSRC=	${WRKSRC}/BSD
-INSTALL_TEMP=	${WRKSRC}/Backup.BSD
+STAGE=		${WRKSRC}/stage
+
+X11R6_FILES=	coxplot/Makefile \
+		coxplot/Makefile.f2c \
+		3DEdge/src/Makefile \
+		SUMA/SUMA_Makefile \
+		edt_blur.c \
+		suma_datasets.c \
+		SUMA/SUMA_Load_Surface_Object.c \
+		SUMA/SUMA_MiscFunc.c \
+		SUMA/SUMA_ParseCommands.c \
+		SUMA/SUMA_StripPath.c \
+		SUMA/GLUT/libglut/glut_event.c \
+		SUMA/SUMA_Surface_IO.c
 
 post-extract:
-	${CP} -f ${FILESDIR}/Makefile.FreeBSD_PORT ${WRKSRC}
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/afni.1 ${WRKDIR}
-	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKDIR}/afni.1
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/Makefile.FreeBSD_PORT
+	@${CP} -f ${FILESDIR}/Makefile.FreeBSD_PORT ${WRKSRC}
+.for f in ${X11R6_FILES}
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|$${X11BASE}|g' ${WRKSRC}/${f}
+.endfor
 
-do-install:
-	${MKDIR} ${DATADIR} ${INSTALL_TEMP} \
-		${PREFIX}/lib/afni ${PREFIX}/include/afni
-	@${MV} ${INSTALL_WRKSRC}/libf2c.a ${INSTALL_TEMP}
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/*.so ${INSTALL_WRKSRC}/*.a \
-		${PREFIX}/lib/afni
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/*.h \
-		${PREFIX}/include/afni
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/*.jpg ${INSTALL_WRKSRC}/*.txt \
-		${DATADIR}
-	@${MV}	${INSTALL_WRKSRC}/*.so \
-		${INSTALL_WRKSRC}/*.a \
-		${INSTALL_WRKSRC}/*.h \
-		${INSTALL_WRKSRC}/*.jpg \
-		${INSTALL_WRKSRC}/*.txt \
-	 	${INSTALL_WRKSRC}/cjpeg \
+post-build:
+	${MKDIR} ${STAGE}/bin \
+		${STAGE}/scripts \
+		${STAGE}/lib \
+		${STAGE}/include \
+		${STAGE}/trash \
+		${STAGE}/doc \
+		${STAGE}/share
+	${MV}	${INSTALL_WRKSRC}/libf2c.a \
+		${INSTALL_WRKSRC}/cjpeg \
 		${INSTALL_WRKSRC}/djpeg \
 		${INSTALL_WRKSRC}/mpeg_encode \
 		${INSTALL_WRKSRC}/whirlgif \
-		${INSTALL_TEMP}
-.for f in ${SCRIPTS}
-		${INSTALL_SCRIPT} ${INSTALL_WRKSRC}/${f} ${PREFIX}/bin
-		@${MV} ${INSTALL_WRKSRC}/${f} ${INSTALL_TEMP}
-.endfor
-	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/* ${PREFIX}/bin
+		${STAGE}/trash
+	${MV}	${INSTALL_WRKSRC}/*.a \
+		${INSTALL_WRKSRC}/*.so \
+		${STAGE}/lib
+	${MV}	${INSTALL_WRKSRC}/*.jpg \
+		${INSTALL_WRKSRC}/*.txt \
+		${INSTALL_WRKSRC}/AFNI.*rc \
+		${STAGE}/share
+	${MV}	${INSTALL_WRKSRC}/*.h \
+		${STAGE}/include
+	${MV}	${INSTALL_WRKSRC}/README* \
+		${STAGE}/doc
+	for binary in `${FILE} ${INSTALL_WRKSRC}/* | fgrep 'ELF' | ${AWK} -F ':' ' { print $$1 }'` ; do \
+		${MV} $${binary} ${STAGE}/bin ; \
+	done
+	${MV}	${INSTALL_WRKSRC}/* \
+		${STAGE}/scripts
+
+do-install:
+	${MKDIR} ${DATADIR} ${PREFIX}/lib/afni ${PREFIX}/include/afni
+	${INSTALL_DATA} ${STAGE}/lib/* ${PREFIX}/lib/afni
+	${INSTALL_DATA} ${STAGE}/include/* ${PREFIX}/include/afni
+	${INSTALL_DATA} ${STAGE}/share/* ${DATADIR}
+	${INSTALL_PROGRAM} ${STAGE}/bin/* ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${STAGE}/scripts/* ${PREFIX}/bin
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/TTatlas* ${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/CA_EZ_v1.3c-May0806/* ${DATADIR}
-	${INSTALL_MAN} ${WRKDIR}/afni.1 ${PREFIX}/man/man1
-	@${MV} ${INSTALL_TEMP}/* ${INSTALL_WRKSRC}
+	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/afni.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/afni_doc/* ${DOCSDIR}
+	${INSTALL_DATA} ${STAGE}/doc/* ${DOCSDIR}
 .endif
 
 post-install:

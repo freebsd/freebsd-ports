@@ -62,15 +62,15 @@ CCMIN  = ${CC}
 CCD    = ${CC} ${CCDEBS}
 CCSVD  = ${CC} -O0
 
-IFLAGS = -I. -I/usr/X11R6/include -I/usr/local/include
-LFLAGS = -s -L. -L/usr/X11R6/lib
+IFLAGS = -I. -I${X11BASE}/include -I/usr/local/include
+LFLAGS = -s -L. -L${X11BASE}/lib
 
 MAKE   = gmake
 
 PLUGIN_SUFFIX = so
 PLUGIN_LFLAGS = -shared
 PLUGIN_CC     = ${CC}
-PLFLAGS       = -s -rdynamic -L. -L/usr/X11R6/lib
+PLFLAGS       = -s -rdynamic -L. -L${X11BASE}/lib
 
 AR     = /usr/bin/ar
 RANLIB = /usr/bin/ranlib
@@ -94,8 +94,8 @@ LLIBS  = -lmri -lXm -lXp -lXpm -lXext -lXmu -lXt -lX11 -lm $(LZLIB)
 
 # vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 # For suma (NO STATIC LINKING OF GL libs)
-SUMA_INCLUDE_PATH = -I/usr/X11R6/include -I/usr/local/include -I./ -I../ -I../niml/ -Igts/src 
-SUMA_LINK_PATH = -L/usr/lib -L/usr/X11R6/lib -L../
+SUMA_INCLUDE_PATH = -I${X11BASE}/include -I/usr/local/include -I./ -I../ -I../niml/ -Igts/src 
+SUMA_LINK_PATH = -L/usr/lib -L${X11BASE}/lib -L../
 #use -lGLw if you have libGLw.a or libGLw.so* or 
 #  -lMesaGLw if you have Mesa's version (libMesaGLw*) of libGLw
 SUMA_LINK_LIB = -lXm -lGLw -lGLU -lGL -lXmu -lXp -lXt -lXext -lX11 -lm $(LZLIB)
