@@ -17,6 +17,8 @@ COMMENT=	Sid themes pack for fluxbox
 
 RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox
 
+BROKEN=		Changes ownership on installed file
+
 USE_BZIP2=	yes
 USE_XLIB=	yes
 NO_BUILD=	yes
