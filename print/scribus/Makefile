@@ -40,6 +40,10 @@ MANLANG=	"" pl
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700029
+BROKEN=		Broken objformat handling
+.endif
+
 .if ${OSVERSION} < 500035
 CXXFLAGS+=	-fpermissive
 .endif
