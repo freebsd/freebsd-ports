@@ -37,4 +37,10 @@ do-install:
 	${INSTALL_PROGRAM} \
 		${WRKSRC}/src/.libs/libsmpeg_xmms.so ${PREFIX}/lib/xmms/Input
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700029
+BROKEN=		Does not build
+.endif
+
+.include <bsd.port.post.mk>
