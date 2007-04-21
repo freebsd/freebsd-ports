@@ -39,6 +39,10 @@ OPTIONS=	GAME		"Build a main game .so file"		off \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		Does not compile on !i386
+.endif
+
 .if !defined(WITHOUT_GAME)
 PLIST_SUB+=	GAME=""
 Q2GAMES+=	baseq2
