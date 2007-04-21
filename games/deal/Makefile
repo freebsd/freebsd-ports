@@ -27,6 +27,10 @@ do-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700029
+BROKEN=		Does not compile
+.endif
+
 .if ${ARCH} == "ia64"
 BROKEN=		Does not compile on ia64
 .endif
