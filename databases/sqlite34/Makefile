@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.3.15
+PORTVERSION=	3.3.16
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 .if defined(USE_THOL)
