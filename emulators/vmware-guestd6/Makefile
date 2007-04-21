@@ -47,7 +47,7 @@ RESTRICTED=	"Not sure if we can redistribute this."
 NO_PACKAGE=	${RESTRICTED}
 
 VMWARE_VER=	6.0.0
-BUILD_VER=	39849
+BUILD_VER=	44426
 
 .include <bsd.port.pre.mk>
 
@@ -70,9 +70,11 @@ BITS?=		32
 .else # ${ARCH} == amd64
 BITS?=		64
 .endif
-.if ${OSVERSION} < 600000
+.if ((${OSVERSION} >= 500000) && (${OSVERSION} < 530000)) || (${ARCH} == i386)
+OSSFX?=		-50
+.elif ${OSVERSION} < 600000
 OSSFX?=
-.else # ${OSVERSION >= 600000
+.else # ${OSVERSION} >= 600000
 OSSFX?=		-6
 .endif
 
@@ -114,16 +116,24 @@ VMWARE_VMXNET_PATH=	4.9/vmxnet.ko
 .elif (${OSVERSION} >= 500000) && (${OSVERSION} < 600000)
 PLIST_SUB+=	VMWARE_VMXNET=""
 .if ${BITS} == 32
-VMWARE_VMXNET_PATH=	5.3-i386/vmxnet.ko
+.if ${OSVERSION} < 530000
+VMWARE_VMXNET_PATH=	5.0-i386/vmxnet.ko
 .else
-VMWARE_VMXNET_PATH=	5.3-amd64/vmxnet.ko
+VMWARE_VMXNET_PATH=	5.3-i386/vmxnet.ko
+.endif
+.else
+# VMware doesn't provide 5.3-amd64/vmxnet.ko
+.undef WITH_VMWARE_VMXNET
+PLIST_SUB+=	VMWARE_VMXNET="@comment "
 .endif
 .elif (${OSVERSION} >= 600000) && (${OSVERSION} < 700000)
 PLIST_SUB+=	VMWARE_VMXNET=""
 .if ${BITS} == 32
 VMWARE_VMXNET_PATH=	6.0-i386/vmxnet.ko
 .else
-VMWARE_VMXNET_PATH=	6.0-amd64/vmxnet.ko
+# VMware doesn't provide 6.0-amd64/vmxnet.ko
+.undef WITH_VMWARE_VMXNET
+PLIST_SUB+=	VMWARE_VMXNET="@comment "
 .endif
 .else
 # VMware doesn't provide vmxnet.ko for other versions
