@@ -20,6 +20,8 @@ LIB_DEPENDS=	id3-3.8:${PORTSDIR}/audio/id3lib \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
+BROKEN=		Does not compile
+
 USE_QT_VER=	3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
