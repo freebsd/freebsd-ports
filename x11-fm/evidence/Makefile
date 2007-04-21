@@ -24,6 +24,8 @@ LIB_DEPENDS=	Imlib2.4:${PORTSDIR}/graphics/imlib2 \
 		eet.9:${PORTSDIR}/devel/eet \
 		pcre.0:${PORTSDIR}/devel/pcre
 
+BROKEN=		Does not compile
+
 USE_FAM=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
