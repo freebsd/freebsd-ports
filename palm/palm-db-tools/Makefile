@@ -24,4 +24,10 @@ PLIST_FILES=	lib/libpdbtools.so \
 		bin/csv2pdb \
 		bin/pdb2csv
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		Does not build on amd64
+.endif
+
+.include <bsd.port.post.mk>
