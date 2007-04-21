@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.3.0
-PORTREVISION=	20070413
+PORTREVISION=	20070420
 CATEGORIES=	lang java
 VERSIONSTRING=	4.3-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -120,9 +120,6 @@ MAN1+=		gappletviewer${SUFFIX}.1 \
 INFO+=		gcc${SUFFIX}/cp-tools \
 		gcc${SUFFIX}/gcj
 PLIST_SUB+=	JAVA=""
-.else
-CONFIGURE_ARGS+=--disable-libgcj
-PLIST_SUB+=	JAVA="@comment "
 
 .if defined(WITH_JAVA_AWT)
 LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
@@ -131,6 +128,9 @@ CONFIGURE_ARGS+=	--enable-java-awt=gtk,xlib \
 			--enable-gtk-cairo
 .endif
 
+.else
+CONFIGURE_ARGS+=--disable-libgcj
+PLIST_SUB+=	JAVA="@comment "
 .endif
 
 pre-everything::
