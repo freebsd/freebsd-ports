@@ -15,5 +15,7 @@ include/pcp.h
 include/pool_type.h
 lib/libpcp.a
 lib/libpcp.la
-lib/libpcp.so.0.0
+lib/libpcp.so
+lib/libpcp.so.0
 %%DATADIR%%/system_db.sql
+@dirrm %%DATADIR%%
