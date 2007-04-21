@@ -21,13 +21,18 @@ LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
 		jack.0:${PORTSDIR}/audio/jack
 
 USE_QT_VER=	3
-MAKE_ENV=	QTDIR="${QT_PREFIX}"
+MAKE_ENV+=	QTDIR="${QT_PREFIX}"
 USE_SCONS=	yes
+SCONS_ENV+=	CXX="${CXX}"
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
 BROKEN=		Does not compile on alpha
+.endif
+
+.if ${OSVERSION} < 600020
+BROKEN=		Requires MSG_NOSIGNAL
 .endif
 
 post-patch:
