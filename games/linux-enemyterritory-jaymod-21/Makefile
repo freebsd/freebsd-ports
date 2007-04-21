@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jaymod
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	games linux
 MASTER_SITES=	http://jaymod.clanfu.org/lib/downloads/ \
 		http://budjb.com/lib/downloads/ \
@@ -19,8 +19,6 @@ MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Jaymod - An Enemy Territory Modification
 
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
-
-BROKEN=		Unfetchable
 
 USE_LINUX=	yes
 
