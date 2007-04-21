@@ -29,6 +29,10 @@ OPTIONS=	BDB "Compile with support for Berkley DB" Off
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		Broken dependency on !i386
+.endif
+
 _GCC_LIBDIR!=	(cd ${PORTSDIR}/lang/gcc41;make -V TARGLIB)
 GCC_LIBDIR=	${_GCC_LIBDIR:S/${PREFIX}/${LOCALBASE}/}
 
