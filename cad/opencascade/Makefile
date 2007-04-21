@@ -63,7 +63,7 @@ CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR}				\
 		--with-stlport-libname=stlport_${STL_COMPILER}		\
 		--with-stlport-library=${LOCALBASE}/lib			\
 		--enable-production=yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${X11BASE}/include		\
+CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} ${GCC4WA} -I${X11BASE}/include	\
 		-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}" ARCH=${ARCH}
 # We strip the libs
 MAKE_ENV=	INSTALL_STRIP_FLAG=-s OCC_BUILDDIR="${PATCH_WRKSRC}"	\
@@ -94,6 +94,11 @@ DIR2INST+=	doc
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 700036 && defined(PACKAGE_BUILDING)
+# Work-around for gcc-41+
+GCC4WA=		-ffriend-injection -fpermissive
+.endif
 
 .if defined(MAINTAINER_MODE)	# Get the sources & roll the tarballs
 
