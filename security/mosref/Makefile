@@ -36,6 +36,10 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		Segfault during build on !i386
+.endif
+
 .if ${OSVERSION} < 500000
 BROKEN=		requires stdint.h
 .endif
