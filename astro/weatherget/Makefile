@@ -8,7 +8,7 @@
 PORTNAME=	weatherget
 PORTVERSION=	0.3.2
 CATEGORIES=	astro
-MASTER_SITES=	BERLIOS
+MASTER_SITES=	CENKES BERLIOS
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Command-line weather reporting tool

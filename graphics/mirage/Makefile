@@ -8,7 +8,7 @@
 PORTNAME=	mirage
 PORTVERSION=	0.8.3
 CATEGORIES=	graphics
-MASTER_SITES=	BERLIOS/mirageiv
+MASTER_SITES=	CENKES BERLIOS/mirageiv
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Fast and simple image viewer

@@ -8,7 +8,7 @@
 PORTNAME=	tel
 PORTVERSION=	0.1.7
 CATEGORIES=	deskutils
-MASTER_SITES=	BERLIOS
+MASTER_SITES=	CENKES BERLIOS
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Little console-based phone book manager
