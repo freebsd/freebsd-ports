@@ -71,6 +71,10 @@ LATEST_LINK=	emacs22
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64"
+BROKEN= Emacs 22.X does not currently build on ia64
+.endif
+
 pre-everything::
 .if !defined(WITHOUT_X11) && !defined(WITHOUT_GTK)
 	@${ECHO_MSG} "====>"
