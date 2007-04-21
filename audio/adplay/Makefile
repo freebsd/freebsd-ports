@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	adplay
-PORTVERSION=	1.5
-PORTREVISION=	4
+PORTVERSION=	1.6
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	adplug
@@ -18,7 +17,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	AdLib player using adplug library
 
-LIB_DEPENDS=	adplug-2.0.1.0:${PORTSDIR}/audio/libadplug
+LIB_DEPENDS=	adplug-2.1:${PORTSDIR}/audio/libadplug
 
 GNU_CONFIGURE=	yes
 WANT_SDL=	yes
@@ -45,6 +44,8 @@ OPTIONS=	SDL	"Build with SDL output support"	off
 
 .if defined(WITH_SDL)
 USE_SDL=	sdl mixer
+.else
+CONFIGURE_ARGS+=	--disable-output-sdl
 .endif
 
 post-patch:
