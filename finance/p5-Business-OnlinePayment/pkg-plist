@@ -2,8 +2,8 @@
 %%SITE_PERL%%/auto/Business/OnlinePayment/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
 @dirrmtry %%SITE_PERL%%/Business/OnlinePayment
-@dirrm %%SITE_PERL%%/Business
+@dirrmtry %%SITE_PERL%%/Business
 @dirrm %%SITE_PERL%%/auto/Business/OnlinePayment
 @dirrm %%SITE_PERL%%/auto/Business
