@@ -21,16 +21,10 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:19
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS+=	--without-conf --without-clucene
+CONFIGURE_ARGS+=	--without-conf --without-lucene
 USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
-
-.include <bsd.port.pre.mk>
-
-.if ( ${OSVERSION} >= 700000 )
-BROKEN=	does not build on 7.X
-.endif
 
 .if defined(WITHOUT_CURL)
 CONFIGURE_ARGS+=	--without-curl
@@ -51,7 +45,7 @@ post-patch:
 post-install:
 	@${MKDIR} ${PREFIX}/share/sword/mods.d
 .if !exists(${PREFIX}/etc/sword.conf)
-	@(cd ${WRKSRC} && make install_config)
+	@(cd ${WRKSRC} && ${GMAKE} install_config)
 .else
 	@${ECHO_CMD} "Config file not installed since ${PREFIX}/etc/sword.conf already exists."
 	@${ECHO_CMD} "Please check that DataPath points to your modules (default ${DATADIR}).";
@@ -60,6 +54,6 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 register:
-	@(cd ${WRKSRC} && make register)
+	@(cd ${WRKSRC} && ${GMAKE} register)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
