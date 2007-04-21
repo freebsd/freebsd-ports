@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	dpsearch
-PORTVERSION=	4.45.1
+PORTVERSION=	4.46
 CATEGORIES=	www
-MASTER_SITES=	http://dataparksearch.newsa.ru/ \
-		http://www.dataparksearch.org/
+MASTER_SITES=	http://www.dataparksearch.org/ \
+		http://dataparksearch.newsa.ru/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source search engine for Internet and Intranet sites
