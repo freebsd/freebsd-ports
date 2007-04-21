@@ -60,6 +60,17 @@ share/gnome/help/tomboy/fr/figures/tomboy-preferences-plugins.png
 share/gnome/help/tomboy/fr/figures/tomboy-tools.png
 share/gnome/help/tomboy/fr/legal.xml
 share/gnome/help/tomboy/fr/tomboy.xml
+share/gnome/help/tomboy/ru/figures/tomboy-tools.png
+share/gnome/help/tomboy/ru/figures/tomboy-preferences-plugins.png
+share/gnome/help/tomboy/ru/figures/tomboy-preferences-hotkeys.png
+share/gnome/help/tomboy/ru/figures/tomboy-preferences-editing.png
+share/gnome/help/tomboy/ru/figures/tomboy-pinup.png
+share/gnome/help/tomboy/ru/figures/tomboy-pindown.png
+share/gnome/help/tomboy/ru/figures/tomboy-panel.png
+share/gnome/help/tomboy/ru/figures/tomboy-new-note.png
+share/gnome/help/tomboy/ru/figures/tomboy-main-menu.png
+share/gnome/help/tomboy/ru/tomboy.xml
+share/gnome/help/tomboy/ru/legal.xml
 share/gnome/help/tomboy/sv/figures/tomboy-main-menu.png
 share/gnome/help/tomboy/sv/figures/tomboy-new-note.png
 share/gnome/help/tomboy/sv/figures/tomboy-panel.png
@@ -71,11 +82,24 @@ share/gnome/help/tomboy/sv/figures/tomboy-preferences-plugins.png
 share/gnome/help/tomboy/sv/figures/tomboy-tools.png
 share/gnome/help/tomboy/sv/legal.xml
 share/gnome/help/tomboy/sv/tomboy.xml
+share/gnome/help/tomboy/uk/figures/tomboy-tools.png
+share/gnome/help/tomboy/uk/figures/tomboy-preferences-plugins.png
+share/gnome/help/tomboy/uk/figures/tomboy-preferences-hotkeys.png
+share/gnome/help/tomboy/uk/figures/tomboy-preferences-editing.png
+share/gnome/help/tomboy/uk/figures/tomboy-pinup.png
+share/gnome/help/tomboy/uk/figures/tomboy-pindown.png
+share/gnome/help/tomboy/uk/figures/tomboy-panel.png
+share/gnome/help/tomboy/uk/figures/tomboy-new-note.png
+share/gnome/help/tomboy/uk/figures/tomboy-main-menu.png
+share/gnome/help/tomboy/uk/tomboy.xml
+share/gnome/help/tomboy/uk/legal.xml
 share/gnome/omf/tomboy/tomboy-C.omf
 share/gnome/omf/tomboy/tomboy-en_GB.omf
 share/gnome/omf/tomboy/tomboy-es.omf
 share/gnome/omf/tomboy/tomboy-fr.omf
+share/gnome/omf/tomboy/tomboy-ru.omf
 share/gnome/omf/tomboy/tomboy-sv.omf
+share/gnome/omf/tomboy/tomboy-uk.omf
 share/gnome/pixmaps/tomboy.png
 share/icons/hicolor/16x16/apps/tomboy-note.png
 share/icons/hicolor/16x16/apps/tomboy.png
@@ -183,8 +207,12 @@ share/locale/zh_TW/LC_MESSAGES/tomboy.mo
 @dirrmtry share/locale/be/LC_MESSAGES
 @dirrmtry share/locale/be
 @dirrm share/gnome/omf/tomboy
+@dirrm share/gnome/help/tomboy/uk/figures
+@dirrm share/gnome/help/tomboy/uk
 @dirrm share/gnome/help/tomboy/sv/figures
 @dirrm share/gnome/help/tomboy/sv
+@dirrm share/gnome/help/tomboy/ru/figures
+@dirrm share/gnome/help/tomboy/ru
 @dirrm share/gnome/help/tomboy/fr/figures
 @dirrm share/gnome/help/tomboy/fr
 @dirrm share/gnome/help/tomboy/es/figures
