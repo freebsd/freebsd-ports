@@ -25,4 +25,10 @@ USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700029
+BROKEN=		Incorrect pkg-plist (broken objformat handling)
+.endif
+
+.include <bsd.port.post.mk>
