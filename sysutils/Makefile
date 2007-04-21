@@ -392,6 +392,7 @@
     SUBDIR += modules
     SUBDIR += monit
     SUBDIR += monitord
+    SUBDIR += mono-kmod
     SUBDIR += most
     SUBDIR += mount.app
     SUBDIR += mountsmb2
