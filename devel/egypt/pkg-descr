@@ -1,0 +1,9 @@
+Egypt is a simple tool for creating call graphs of C programs. Egypt
+neither analyzes source code nor lays out graphs. Instead, it leaves
+the source code analysis to GCC and the graph layout to Graphviz, both
+of which are better at their respective jobs than egypt itself could
+ever hope to be. Egypt is simply a very small Perl script that glues
+these existing tools together.
+
+WWW: http://www.gson.org/egypt/
+Author: Andreas Gustafsson <gson@gson.org>
