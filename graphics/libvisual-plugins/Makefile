@@ -27,6 +27,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700029
+BROKEN=		Broken objformat handling
+.endif
+
 .if ${X_WINDOW_SYSTEM} == "xfree86-4"
 BUILD_DEPENDS=	mkdirhier:${PORTSDIR}/devel/imake-4
 .elif ${X_WINDOW_SYSTEM} == "xorg"
