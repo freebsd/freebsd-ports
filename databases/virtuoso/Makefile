@@ -26,6 +26,8 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}"\
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk
 LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc
 
+BROKEN=		Install fails
+
 OPTIONS=	IMAGEMAGICK "ImageMagick support" off\
 		KERBEROS "Kerberos extension" off\
 		OPENLDAP "OpenLDAP support" off
