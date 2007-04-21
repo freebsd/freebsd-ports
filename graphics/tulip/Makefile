@@ -48,6 +48,10 @@ LDFLAGS=	-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib \
 CFLAGS+=	-fPIC
 .endif
 
+.if ${OSVERSION} >= 700029
+BROKEN=		Does not compile
+.endif
+
 post-extract:
 	@${FIND} ${WRKSRC} -name "moc_*" -delete
 
