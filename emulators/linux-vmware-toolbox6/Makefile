@@ -35,7 +35,7 @@ RESTRICTED=	"Not sure if we can redistribute this."
 NO_PACKAGE=	${RESTRICTED}
 
 VMWARE_VER=	6.0.0
-BUILD_VER=	39849
+BUILD_VER=	44426
 
 .include <bsd.port.pre.mk>
 
