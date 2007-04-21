@@ -1,0 +1,8 @@
+bin/squidview
+%%PORTDOCS%%%%DOCSDIR%%/HOWTO
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/aliases
+%%DATADIR%%/users
+%%DATADIR%%/words
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

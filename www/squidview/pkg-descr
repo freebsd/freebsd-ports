@@ -1,0 +1,12 @@
+Squidview is a program that displays the squid proxy server log file in a nice
+fashion, providing the log file is in squid's native reporting fashion. It has
+features such as search, report generation, monitor mode and supports three log
+files.
+
+Thus, the program can be used to monitor Internet usage on a networked site.
+But please note squid has to be running first and this program is not a
+proactive resource controller. What it can do is tell you who and which sites
+are consuming the most bandwidth.
+
+Author:	Graeme Sheppard
+WWW:	http://www.rillion.net/squidview
