@@ -80,7 +80,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,^sndfile.c : .*,,' \
 		${WRKSRC}/lib-src/libsndfile/src/Makefile.in
 .if ${ARCH} != "i386" && ${ARCH} != "amd64"
-	@${REINPLACE_CMD} -e 's,-msse2?,,' \
+	@${REINPLACE_CMD} -E -e 's,-msse2?,,g' \
 		${WRKSRC}/lib-src/soundtouch/source/SoundTouch/Makefile.in
 .endif
 
