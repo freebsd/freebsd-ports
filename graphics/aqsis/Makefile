@@ -37,4 +37,10 @@ LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 post-patch:
 	@${REINPLACE_CMD} -e 's|PLUGIN_FLAGS=|#PLUGIN_FLAGS=|g' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700029
+BROKEN=		Incorrect pkg-plist (bad objformat handling)
+.endif
+
+.include <bsd.port.post.mk>
