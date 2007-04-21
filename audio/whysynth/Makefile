@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	whysynth
-PORTVERSION=	20060122
+PORTVERSION=	20070418
 CATEGORIES=	audio
 MASTER_SITES=	http://home.jps.net/~musound/
 

@@ -3,5 +3,6 @@ lib/dssi/whysynth.la
 lib/dssi/whysynth/WhySynth_gtk
 %%DATADIR%%/more_K4_interpretations.WhySynth
 %%DATADIR%%/version_20051005_patches.WhySynth
+%%DATADIR%%/version_20051231_patches.WhySynth
 @dirrm %%DATADIR%%
 @dirrm lib/dssi/whysynth
