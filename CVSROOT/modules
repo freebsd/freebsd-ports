@@ -7505,6 +7505,7 @@ monitord	ports/sysutils/monitord
 monkey		ports/www/monkey
 monkeybubble	ports/games/monkeybubble
 mono		ports/lang/mono
+mono-kmod	ports/sysutils/mono-kmod
 mono-tools	ports/devel/mono-tools
 monodoc		ports/devel/monodoc
 monopd		ports/games/monopd
