@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.chiark.greenend.org.uk/~sgtatham/ipbt/ \
 MAINTAINER=	matt_mills@btopenworld.com
 COMMENT=	A high-tech ttyrec player with improvements over ttyplay
 
+BROKEN=		Size mismatch
+
 USE_PERL5=	yes
 
 ALL_TARGET=	${PORTNAME}
