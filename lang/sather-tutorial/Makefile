@@ -25,6 +25,6 @@ do-install:
 	${MKDIR} ${DOCSDIR}
 	@${TAR} -xzf ${DISTDIR}/${DISTFILES} -C ${DOCSDIR}
 	@${FIND} ${DOCSDIR}/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;
-	${CHOWN} -R ${SHAREOWN} ${DOCSDIR}/
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/
 
 .include <bsd.port.mk>
