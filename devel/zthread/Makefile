@@ -21,15 +21,9 @@ CONFIGURE_ARGS=	--without-ftime --disable-static
 USE_GMAKE=	yes
 MAKE_ARGS+=	INSTALL_PROGRAM="${INSTALL_SCRIPT}"
 MAKE_ENV+=	SED=sed # req'd for LIBTOOL?!
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-USE_GCC=	3.3+
-.endif
 
 post-extract:
 	@${FIND} ${WRKSRC} -name CVS -type d -delete
@@ -43,4 +37,4 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
