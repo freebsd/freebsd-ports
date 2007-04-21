@@ -52,6 +52,7 @@ smokeping:*:117:
 ircproxyd:*:118:
 mythtv:*:119:
 pdns:*:120
+otrs:*:121:
 _ntp:*:123:
 fetchmail:*:124
 postfix:*:125:
@@ -109,4 +110,3 @@ bopm:*:717:
 openxpki:*:777:
 netdisco:*:840:
 bacula:*:910:
-otrs:*:121:
