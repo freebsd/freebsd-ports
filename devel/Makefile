@@ -265,6 +265,7 @@
     SUBDIR += ecgi
     SUBDIR += ecos-tools
     SUBDIR += eet
+    SUBDIR += egypt
     SUBDIR += eieio
     SUBDIR += eieio-emacs20
     SUBDIR += eiffelstudio
