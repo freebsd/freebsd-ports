@@ -1102,6 +1102,7 @@
     SUBDIR += squidguard
     SUBDIR += squidpurge
     SUBDIR += squidtimes
+    SUBDIR += squidview
     SUBDIR += squirm
     SUBDIR += squishdot
     SUBDIR += srg
