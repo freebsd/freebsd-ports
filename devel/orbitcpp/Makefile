@@ -23,4 +23,10 @@ USE_LDCONFIG=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(SUBDIRS =.*\)test\(.*\)|\1\2|' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700029
+BROKEN=		Segfault during build
+.endif
+
+.include <bsd.port.post.mk>
