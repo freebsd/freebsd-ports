@@ -15,9 +15,8 @@ DISTNAME=	moodbar-0.1.2
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Shows the "moods" of audio tracks in Amarok
 
-LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float
-
-BROKEN=		Does not compile
+LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float \
+		fftw3:${PORTSDIR}/math/fftw3
 
 USE_GSTREAMER=	yes good
 USE_GMAKE=	yes
@@ -31,7 +30,7 @@ OPTIONS=	MP3 "mp3 files support" on \
 		MUSEPACK "musepack files support" off \
 		WMA "wma files support" off
 
-CONFIGURE_ARGS+=--with-plugindir=${PREFIX}/lib/gstreamer-${GST_VERSION}
+CONFIGURE_ARGS+=	--with-plugindir=${PREFIX}/lib/gstreamer-${GST_VERSION}
 PLIST_SUB+=	VERSION="${GST_VERSION}"
 
 .include <bsd.port.pre.mk>
