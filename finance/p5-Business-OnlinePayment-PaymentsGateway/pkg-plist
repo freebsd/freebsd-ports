@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Business/OnlinePayment/PaymentsGateway.pm
-%%SITE_PERL%%/auto/Business/OnlinePayment/PaymentsGateway/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/PaymentsGateway/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/PaymentsGateway
-@dirrm %%SITE_PERL%%/auto/Business/OnlinePayment/PaymentsGateway
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
 @dirrmtry %%SITE_PERL%%/Business/OnlinePayment
+@dirrmtry %%SITE_PERL%%/Business
