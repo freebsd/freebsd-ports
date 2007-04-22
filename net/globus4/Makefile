@@ -23,6 +23,8 @@ COMMENT=	Grid computing toolkit
 BUILD_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
 RUN_DEPENDS=	${LOCALBASE}/bin/sudo:${PORTSDIR}/security/sudo
 
+BROKEN=		Does not build
+
 INSTALLER=	${DISTNAME}${EXTRACT_SUFX}
 BUNDLE_SUFX=	.tar.gz
 
