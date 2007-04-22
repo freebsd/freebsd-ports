@@ -164,9 +164,9 @@ PLIST_DIRS+=	${XPI_DIRS_${dist}:S!^!${_TD_${dist}}/!} ${_TD_${dist}}
 .if !target(do-install)
 do-install:
 	@${INSTALL} -d ${_TD_FULL} ${XPI_SLDIRS_ALL}
-	@${CP} -Rp ${WRKSRC}/ ${_TD_FULL}/
+	@${CP} -R ${WRKSRC}/ ${_TD_FULL}/
 	@if [ -d ${FILESDIR} -a -f ${FILESDIR}/chrome.manifest ] ; \
-		then ${CP} -p ${FILESDIR}/chrome.manifest ${_TD_FULL}/ ; fi
+		then ${CP} ${FILESDIR}/chrome.manifest ${_TD_FULL}/ ; fi
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${_TD_FULL}/
 	@${CHMOD} -R a+rX,go-w ${_TD_FULL}/
 	@for _dir in ${XPI_LINKFARMS} ; { ${LN} -sf ${_TD_FULL} $$_dir/ ${_Q} ; }
