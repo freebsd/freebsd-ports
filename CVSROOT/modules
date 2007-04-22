@@ -13854,6 +13854,7 @@ rubygem-net-ssh	ports/security/rubygem-net-ssh
 rubygem-openid	ports/net/rubygem-openid
 rubygem-parsetree	ports/devel/rubygem-parsetree
 rubygem-pdfwriter	ports/print/rubygem-pdfwriter
+rubygem-railroad	ports/graphics/rubygem-railroad
 rubygem-rails	ports/www/rubygem-rails
 rubygem-rails-app-installer	ports/www/rubygem-rails-app-installer
 rubygem-railsbench	ports/benchmarks/rubygem-railsbench
