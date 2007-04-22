@@ -33,6 +33,10 @@ OPTIONS=	DEBUG "Enable debugging information" off \
 BROKEN=		does not build
 .endif
 
+.if ${OSVERSION} < 600000
+BROKEN=		Does not build on 5.x
+.endif
+
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+=--enable-ipv6
 .if ${OSVERSION} < 500000
