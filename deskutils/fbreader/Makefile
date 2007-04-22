@@ -19,7 +19,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		enca.5:${PORTSDIR}/converters/enca
 
 USE_QT_VER=	4
-QT_COMPONENTS=	gui corelib
+QT_COMPONENTS=	gui corelib moc
 USE_GMAKE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lcompat
