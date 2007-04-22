@@ -37,4 +37,10 @@ post-install:
 	${INSTALL_DATA} ${THEMEDIR}/cleanice-dark/gtkrc \
 		${PREFIX}/share/themes/CleanIce-Dark/gtk-2.0
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700029
+BROKEN=		Incorrect objformat handling
+.endif
+
+.include <bsd.port.post.mk>

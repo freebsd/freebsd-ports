@@ -36,4 +36,10 @@ post-extract:
 	@${MKDIR} ${WRKDIR}/gnumeric
 	@${CP} ${FILESDIR}/GNOME_Gnumeric_Graph.idl ${WRKDIR}/gnumeric
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700029
+BROKEN=		Incorrect objformat handling
+.endif
+
+.include <bsd.port.post.mk>
