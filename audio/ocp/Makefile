@@ -12,7 +12,6 @@ CATEGORIES=	audio
 MASTER_SITES=	http://stian.lunafish.org/ocp/ \
 		http://critical.ch/distfiles/ \
 		http://energy.critical.ch/distfiles/
-DISTNAME=	${PORTNAME}-${DISTVERSION:C/\.rc/_rc/}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	The legendary Open Cubic Player
