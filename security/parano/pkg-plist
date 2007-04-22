@@ -13,5 +13,6 @@ share/pixmaps/parano-icon.png
 @dirrmtry share/applications
 @dirrmtry share/application-registry
 @dirrmtry share/mime-info
+@dirrmtry share/pixmaps
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
