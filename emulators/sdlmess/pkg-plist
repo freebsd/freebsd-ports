@@ -19,9 +19,7 @@ libexec/testkeys
 %%PORTDOCS%%%%DOCSDIR%%/docs/license.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/mame.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/messnew.txt
-%%PORTDOCS%%%%DOCSDIR%%/docs/messroms.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/newvideo.txt
-%%PORTDOCS%%%%DOCSDIR%%/docs/style.css
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/choice.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/compile.htm
@@ -66,12 +64,6 @@ libexec/testkeys
 %%DATADIR%%/artwork/pc1403.zip
 %%DATADIR%%/artwork/ssystem3.zip
 %%DATADIR%%/artwork/thomson.lay
-%%DATADIR%%/cfg/dir.txt
-%%DATADIR%%/ctrlr/hotrod.cfg
-%%DATADIR%%/ctrlr/hotrodse.cfg
-%%DATADIR%%/ctrlr/slikstik.cfg
-%%DATADIR%%/ctrlr/standard.cfg
-%%DATADIR%%/ctrlr/xarcade.cfg
 %%DATADIR%%/hash/a2600.hsi
 %%DATADIR%%/hash/a5200.hsi
 %%DATADIR%%/hash/a7800.hsi
@@ -104,7 +96,7 @@ libexec/testkeys
 %%DATADIR%%/hash/exidy.hsi
 %%DATADIR%%/hash/gameboy.hsi
 %%DATADIR%%/hash/gamegear.hsi
-%%DATADIR%%/hash/gen_usa.hsi
+%%DATADIR%%/hash/genesis.hsi
 %%DATADIR%%/hash/ibmpc.hsi
 %%DATADIR%%/hash/ibmpcjr.hsi
 %%DATADIR%%/hash/intv.hsi
@@ -143,22 +135,12 @@ libexec/testkeys
 %%DATADIR%%/hash/vectrex.hsi
 %%DATADIR%%/hash/vic20.hsi
 %%DATADIR%%/hash/wswan.hsi
-%%DATADIR%%/ini/dir.txt
-%%DATADIR%%/memcard/dir.txt
-%%DATADIR%%/nvram/dir.txt
-%%DATADIR%%/snap/dir.txt
-%%DATADIR%%/software/dir.txt
+%%DATADIR%%/keymaps/km-ch.txt
+%%DATADIR%%/keymaps/km-fr-OSX.txt
+%%DATADIR%%/keymaps/km-fr.txt
 %%DATADIR%%/sysinfo.dat
-%%DATADIR%%/tools/dir.txt
-@dirrm %%DATADIR%%/tools
-@dirrm %%DATADIR%%/software
-@dirrm %%DATADIR%%/snap
-@dirrm %%DATADIR%%/nvram
-@dirrm %%DATADIR%%/memcard
-@dirrm %%DATADIR%%/ini
+@dirrm %%DATADIR%%/keymaps
 @dirrm %%DATADIR%%/hash
-@dirrm %%DATADIR%%/ctrlr
-@dirrm %%DATADIR%%/cfg
 @dirrm %%DATADIR%%/artwork
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs/windows/images
