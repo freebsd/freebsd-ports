@@ -23,7 +23,7 @@ rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/syslogd
 pidfile=/var/run/syslog.pid
-required_files=%%PREFIX%%/etc/syslogd.conf
+required_files=%%PREFIX%%/etc/syslog.conf
 
 start_precmd=start_precmd
 stop_postcmd=stop_postcmd
