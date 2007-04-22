@@ -52,6 +52,10 @@ OPTIONS=	NEWTAB "Open external links in a new tab" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		Does not compile on !i386
+.endif
+
 GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 pthread | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
 
 MOZ_OPTIONS+=	--disable-svg
