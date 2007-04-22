@@ -58,6 +58,7 @@ share/mime/application/octet-stream.xml
 share/mime/application/oda.xml
 share/mime/application/ogg.xml
 share/mime/application/pdf.xml
+share/mime/application/pkcs10.xml
 share/mime/application/pgp-encrypted.xml
 share/mime/application/pgp-keys.xml
 share/mime/application/pgp-signature.xml
@@ -79,6 +80,8 @@ share/mime/application/vnd.mozilla.xul+xml.xml
 share/mime/application/vnd.ms-access.xml
 share/mime/application/vnd.ms-excel.xml
 share/mime/application/vnd.ms-powerpoint.xml
+share/mime/application/vnd.ms-tnef.xml
+share/mime/application/vnd.ms-xpsdocument.xml
 share/mime/application/vnd.oasis.opendocument.chart.xml
 share/mime/application/vnd.oasis.opendocument.database.xml
 share/mime/application/vnd.oasis.opendocument.formula.xml
@@ -189,6 +192,7 @@ share/mime/application/x-go-sgf.xml
 share/mime/application/x-graphite.xml
 share/mime/application/x-gtar.xml
 share/mime/application/x-gtktalog.xml
+share/mime/application/x-gz-font-linux-psf.xml
 share/mime/application/x-gzdvi.xml
 share/mime/application/x-gzip.xml
 share/mime/application/x-gzpdf.xml
@@ -240,6 +244,7 @@ share/mime/application/x-netscape-bookmarks.xml
 share/mime/application/x-object.xml
 share/mime/application/x-ole-storage.xml
 share/mime/application/x-oleo.xml
+share/mime/application/x-pak.xml
 share/mime/application/x-palm-database.xml
 share/mime/application/x-par2.xml
 share/mime/application/x-pef-executable.xml
@@ -286,6 +291,7 @@ share/mime/application/x-trash.xml
 share/mime/application/x-troff-man-compressed.xml
 share/mime/application/x-troff-man.xml
 share/mime/application/x-tzo.xml
+share/mime/application/x-ufraw.xml
 share/mime/application/x-ustar.xml
 share/mime/application/x-wais-source.xml
 share/mime/application/x-wpg.xml
@@ -308,7 +314,6 @@ share/mime/audio/mp4.xml
 share/mime/audio/mpeg.xml
 share/mime/audio/prs.sid.xml
 share/mime/audio/vnd.rn-realaudio.xml
-share/mime/audio/vnd.rn-realvideo.xml
 share/mime/audio/x-adpcm.xml
 share/mime/audio/x-aifc.xml
 share/mime/audio/x-aiff.xml
@@ -318,13 +323,15 @@ share/mime/audio/x-flac+ogg.xml
 share/mime/audio/x-flac.xml
 share/mime/audio/x-it.xml
 share/mime/audio/x-matroska.xml
+share/mime/audio/x-minipsf.xml
 share/mime/audio/x-mod.xml
 share/mime/audio/x-mp3-playlist.xml
-share/mime/audio/x-mpeg.xml
 share/mime/audio/x-mpegurl.xml
 share/mime/audio/x-ms-asx.xml
 share/mime/audio/x-ms-wma.xml
 share/mime/audio/x-musepack.xml
+share/mime/audio/x-psf.xml
+share/mime/audio/x-psflib.xml
 share/mime/audio/x-riff.xml
 share/mime/audio/x-s3m.xml
 share/mime/audio/x-scpls.xml
@@ -359,11 +366,15 @@ share/mime/image/vnd.dxf.xml
 share/mime/image/vnd.rn-realpix.xml
 share/mime/image/vnd.wap.wbmp.xml
 share/mime/image/x-3ds.xml
+share/mime/image/x-adobe-dng.xml
 share/mime/image/x-applix-graphics.xml
 share/mime/image/x-bzeps.xml
+share/mime/image/x-canon-cr2.xml
 share/mime/image/x-canon-crw.xml
 share/mime/image/x-cmu-raster.xml
 share/mime/image/x-compressed-xcf.xml
+share/mime/image/x-dcraw.xml
+share/mime/image/x-dds.xml
 share/mime/image/x-dib.xml
 share/mime/image/x-eps.xml
 share/mime/image/x-fits.xml
@@ -376,6 +387,7 @@ share/mime/image/x-iff.xml
 share/mime/image/x-ilbm.xml
 share/mime/image/x-jng.xml
 share/mime/image/x-kodak-dcr.xml
+share/mime/image/x-kodak-k25.xml
 share/mime/image/x-kodak-kdc.xml
 share/mime/image/x-lwo.xml
 share/mime/image/x-lws.xml
@@ -385,7 +397,9 @@ share/mime/image/x-msod.xml
 share/mime/image/x-niff.xml
 share/mime/image/x-nikon-nef.xml
 share/mime/image/x-olympus-orf.xml
+share/mime/image/x-panasonic-raw.xml
 share/mime/image/x-pcx.xml
+share/mime/image/x-pentax-pef.xml
 share/mime/image/x-photo-cd.xml
 share/mime/image/x-pict.xml
 share/mime/image/x-portable-anymap.xml
@@ -395,12 +409,17 @@ share/mime/image/x-portable-pixmap.xml
 share/mime/image/x-psd.xml
 share/mime/image/x-rgb.xml
 share/mime/image/x-sgi.xml
+share/mime/image/x-sigma-x3f.xml
+share/mime/image/x-sony-arw.xml
+share/mime/image/x-sony-sr2.xml
+share/mime/image/x-sony-srf.xml
 share/mime/image/x-sun-raster.xml
 share/mime/image/x-tga.xml
 share/mime/image/x-win-bitmap.xml
 share/mime/image/x-wmf.xml
 share/mime/image/x-xbitmap.xml
 share/mime/image/x-xcf.xml
+share/mime/image/x-xcursor.xml
 share/mime/image/x-xfig.xml
 share/mime/image/x-xpixmap.xml
 share/mime/image/x-xwindowdump.xml
@@ -516,6 +535,7 @@ share/mime/video/mp4.xml
 share/mime/video/mpeg.xml
 share/mime/video/quicktime.xml
 share/mime/video/vivo.xml
+share/mime/video/vnd.rn-realvideo.xml
 share/mime/video/wavelet.xml
 share/mime/video/x-anim.xml
 share/mime/video/x-flic.xml
