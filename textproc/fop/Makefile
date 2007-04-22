@@ -19,6 +19,8 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Print formatter driven by XSL formatting
 
+EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 
 USE_JAVA=	yes
@@ -26,8 +28,8 @@ JAVA_VERSION=	1.2+
 USE_ANT=	yes
 
 post-extract:
-	cd ${WRKDIR} && unzip ${DISTDIR}/offo-hyphenation.zip
-	cp ${WRKDIR}/offo-hyphenation/hyph/*.xml ${WRKSRC}/hyph
+	cd ${WRKDIR} && ${UNZIP_CMD} ${DISTDIR}/offo-hyphenation.zip
+	${CP} ${WRKDIR}/offo-hyphenation/hyph/*.xml ${WRKSRC}/hyph
 
 do-install:
 	${MKDIR} ${DATADIR}
