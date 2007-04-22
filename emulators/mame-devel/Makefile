@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdlmame
-PORTVERSION=	0.114
+PORTVERSION=	0.114u2
 CATEGORIES=	emulators
 MASTER_SITES=	http://rbelmont.mameworld.info/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
@@ -31,7 +31,7 @@ do-install:
 .endfor
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/ui.bdf ${DATADIR}
-	cd ${DATADIR} && ${MKDIR} artwork cfg comments diff ini nvram roms
+	${CP} -R ${WRKSRC}/keymaps ${DATADIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
