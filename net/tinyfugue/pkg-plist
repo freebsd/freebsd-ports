@@ -12,6 +12,7 @@ lib/%%DISTNAME%%-lib/changes.tf
 lib/%%DISTNAME%%-lib/color.tf
 lib/%%DISTNAME%%-lib/complete.tf
 lib/%%DISTNAME%%-lib/completion.tf
+lib/%%DISTNAME%%-lib/cylon.tf
 lib/%%DISTNAME%%-lib/examples.old
 lib/%%DISTNAME%%-lib/factoral.tf
 lib/%%DISTNAME%%-lib/factorial.tf
@@ -55,6 +56,7 @@ lib/%%DISTNAME%%-lib/textencode.tf
 lib/%%DISTNAME%%-lib/textutil.tf
 lib/%%DISTNAME%%-lib/tf-help
 lib/%%DISTNAME%%-lib/tf-help.idx
+lib/%%DISTNAME%%-lib/tf.gdb
 lib/%%DISTNAME%%-lib/tfrc
 lib/%%DISTNAME%%-lib/tfstatus.tf
 lib/%%DISTNAME%%-lib/tick.tf
