@@ -15,7 +15,7 @@ MASTER_SITES=	http://download.oracle.com/berkeley-db/	\
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Berkeley DB Java Edition
 
-OPTIONS=	TEST "Run the self-tests after building automatically" on
+OPTIONS=	TEST "Run the self-tests after building automatically" off
 
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 
