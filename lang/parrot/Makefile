@@ -75,6 +75,10 @@ PLIST_SUB+=	JIT=""
 PLIST_SUB+=	JIT="@comment "
 .endif
 
+.if ${ARCH} == ia64
+BROKEN=		Does not compile on ia64
+.endif
+
 .if ${PERL_LEVEL} < 500800
 IGNORE=	perl 5.8 or newer required. Install lang/perl5.8 and try again
 .endif
