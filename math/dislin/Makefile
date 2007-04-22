@@ -20,6 +20,8 @@ USE_XLIB=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+BROKEN=		Size mismatch
+
 MD5_FILE=	${MASTERDIR}/distinfo${BINVER}
 PLIST_SUB+=	VER=${PORTVERSION} MAJ=${MAJ}
 SUB_FILES=	dislin.sh pkg-message
