@@ -45,7 +45,8 @@ USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
 PLIST_SUB=	SHLIBVER="${SHLIBVER}"
 CONFIGURE_ARGS=	--disable-perl \
-		--with-html-dir=${DOCSDIR} \
+		--with-html-dir=${PREFIX}/share/doc/gimp \
+		--docdir=${PREFIX}/share/doc/gimp \
 		--disable-gtk-doc \
 		--enable-static \
 		--mandir=${PREFIX}/man \
