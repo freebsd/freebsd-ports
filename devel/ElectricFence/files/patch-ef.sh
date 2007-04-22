@@ -9,6 +9,7 @@
  # Set the environment to load eletric fence.
  (\
 -export LD_PRELOAD=libefence.so.0.0;\
+-exec $*;\
 +export LD_PRELOAD=libefence.so.0;\
- exec $*;\
++exec "$@";\
  )
