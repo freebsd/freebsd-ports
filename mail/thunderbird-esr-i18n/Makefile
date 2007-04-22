@@ -57,7 +57,7 @@ do-extract:
 
 do-install:
 	@${INSTALL} -d ${XPI_LIBDIR} ${XPI_SLDIRS_ALL}
-	@${CP} -Rp ${WRKSRC}/ ${XPI_LIBDIR}/
+	@${CP} -R ${WRKSRC}/ ${XPI_LIBDIR}/
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${XPI_LIBDIR}/${WDIR}/
 	@${CHMOD} -R a+rX,go-w ${XPI_LIBDIR}/${WDIR}/
 	@for _dir in ${XPI_LINKFARMS} ; { ${LN} -sf ${XPI_LIBDIR}/${WDIR} $$_dir/ ${_Q} ; }
