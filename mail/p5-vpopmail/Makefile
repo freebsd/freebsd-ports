@@ -25,4 +25,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		vpopmail.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		Does not build on ia64
+.endif
+
+.include <bsd.port.post.mk>
