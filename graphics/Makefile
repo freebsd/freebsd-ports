@@ -635,6 +635,7 @@
     SUBDIR += ruby-tgif
     SUBDIR += rubygem-captcha
     SUBDIR += rubygem-gruff
+    SUBDIR += rubygem-railroad
     SUBDIR += rubygem-scruffy
     SUBDIR += rubyphoto
     SUBDIR += s10sh
