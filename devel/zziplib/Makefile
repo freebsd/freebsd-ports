@@ -19,6 +19,7 @@ USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man
+USE_PYTHON_BUILD=	yes
 USE_LDCONFIG=	yes
 
 MAN3=		__zzip_fetch_disk_trailer.3 __zzip_parse_root_directory.3 __zzip_try_open.3 \

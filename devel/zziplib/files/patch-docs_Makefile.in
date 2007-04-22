@@ -1,0 +1,11 @@
+--- docs/Makefile.in.orig	Sun Apr 22 09:27:39 2007
++++ docs/Makefile.in	Sun Apr 22 09:27:53 2007
+@@ -431,7 +431,7 @@
+ 
+ 
+ all : all-am default
+-default : doc @MAINTAINER_MODE_FALSE@ mans
++default : @MAINTAINER_MODE_FALSE@ mans
+ clean-doc clean-docs : clean-unpack
+ 	- rm $(DISTCLEANFILES) 
+ 	- rm $(MAINTAINERCLEANFILES)
