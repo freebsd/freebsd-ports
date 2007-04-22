@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	sdlmess
-PORTVERSION=	0.113
+PORTVERSION=	0.114
 CATEGORIES=	emulators
 MASTER_SITES=	http://rbelmont.mameworld.info/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	SDL port of MESS (Multiple Emulator Super System)
-
-BROKEN=		Install fails
 
 USE_ZIP=	yes
 USE_GL=		yes
@@ -29,11 +27,10 @@ do-install:
 	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
 .for f in obj/sdlmess/file2str sdlmess testkeys dat2html messtest messdocs \
 	  imgtool romcmp chdman jedutil makemeta regrep
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/libexec/${f:S/sdl//}
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/libexec/${f:T:S/sdl//}
 .endfor
 	${MKDIR} ${DATADIR}
-.for f in artwork cfg ctrlr hash ini memcard nvram snap software tools \
-    sysinfo.dat
+.for f in artwork hash keymaps sysinfo.dat
 	${CP} -R ${WRKSRC}/${f} ${DATADIR}
 .endfor
 .if !defined(NOPORTDOCS)
