@@ -24,8 +24,8 @@ MAN1=		rtfx.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} <= 500035
-BROKEN=	does not build on 4.x
+.if ${ARCH} == sparc64
+BROKEN=		Does not compile on sparc64
 .endif
 
 .include <bsd.port.post.mk>
