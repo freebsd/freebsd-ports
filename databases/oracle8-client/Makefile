@@ -26,11 +26,4 @@ do-install:
 	@${MKDIR} ${ORACLE_HOME}
 	cd ${WRKSRC} && ${FIND} . -print0 | ${CPIO} -dump0 -R ${SHAREOWN}:${SHAREGRP} ${ORACLE_HOME}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-post-patch:
-	@cd ${WRKSRC}/freebsd && ${MAKE} all patch clean ORACLE_HOME=${WRKSRC}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
