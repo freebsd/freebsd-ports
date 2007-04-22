@@ -39,19 +39,15 @@ INSTALLS_ICONS=	yes
 CONFIGURE_ARGS+=CFLAGS=-I${LOCALBASE}/include/tunepimp-0.4 \
 		LDFLAGS=-L${LOCALBASE}/lib/tunepimp-0.4
 
+WANT_GSTREAMER=	yes
+
 .include <bsd.port.pre.mk>
 
-.if exists(${X11BASE}/lib/libgstplay-0.8.so)
-.	if !defined(WITH_GSTREAMER)
+.if  defined(WITH_GSTREAMER) || exists(${LOCALBASE}/lib/libgstreamer-0.10.so)
 GSTREAMER_OVERRIDE=yes
-WITH_GSTREAMER=	yes
-.	endif
+USE_GSTREAMER=	yes
 .endif
 
-.if defined(WITH_GSTREAMER)
-LIB_DEPENDS+=	gstreamer:${PORTSDIR}/multimedia/gstreamer80 \
-		gstplay:${PORTSDIR}/multimedia/gstreamer-plugins80
-.endif
 
 pre-everything::
 .if defined(GSTREAMER_OVERRIDE)
