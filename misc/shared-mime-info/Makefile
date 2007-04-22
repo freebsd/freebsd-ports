@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	shared-mime-info
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://people.freedesktop.org/~hadess/
 
@@ -17,6 +17,7 @@ GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib20 libxml2 intltool gnomehack intlhack
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
