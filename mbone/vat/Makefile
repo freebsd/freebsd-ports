@@ -34,6 +34,10 @@ PLIST_FILES=	bin/vat
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not build on sparc64
+.endif
+
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/vat
 
