@@ -24,6 +24,10 @@ CONFLICTS=	gtk-engines2-[0-9]*
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700029
+BROKEN=		Incorrect objformat handling
+.endif
+
 .if ${HAVE_GNOME:Mgtk20}!=""
 WITH_GTK2=	yes
 .endif
