@@ -25,6 +25,10 @@ MLVWMLIBDIR=	${PREFIX}/lib/X11/mlvwm
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 600100
+BROKEN=		Does not build
+.endif
+
 post-extract:
 	@${TAR} -C ${WRKSRC}/pixmap -xzf ${DISTDIR}/mini-icons.tar.gz
 
