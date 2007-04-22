@@ -8,7 +8,7 @@
 
 PORTNAME=	hal
 PORTVERSION=	${HALVERSION}.${SNAPVERSION}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	sysutils
 MASTER_SITES=	http://www.marcuscom.com/downloads/
 
