@@ -2039,6 +2039,7 @@
     SUBDIR += rubygem-stream
     SUBDIR += rubygem-transactionsimple
     SUBDIR += rubygem-tzinfo
+    SUBDIR += rubygem-zentest
     SUBDIR += rudiments
     SUBDIR += rvi
     SUBDIR += rvm

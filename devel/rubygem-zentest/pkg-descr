@@ -1,0 +1,19 @@
+ZenTest provides 4 different tools and 1 library: zentest, unit_diff,
+autotest, multiruby, and Test::Rails.
+
+ZenTest scans your target and unit-test code and writes your missing
+code based on simple naming rules, enabling XP at a much quicker
+pace. ZenTest only works with Ruby and Test::Unit.
+
+unit_diff is a command-line filter to diff expected results from 
+actual results and allow you to quickly see exactly what is wrong.
+
+autotest is a continous testing facility meant to be used during
+development. As soon as you save a file, autotest will run the
+corresponding dependent tests.
+
+multiruby runs anything you want on multiple versions of ruby.
+
+Test::Rails helps you build industrial-strength Rails code. 
+
+WWW: http://zentest.rubyforge.org/
