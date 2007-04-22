@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier glibwww libghttp libcapplet gal
 USE_GETTEXT=	yes
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--with-gconf=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
