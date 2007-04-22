@@ -13879,6 +13879,7 @@ rubygem-transactionsimple	ports/devel/rubygem-transactionsimple
 rubygem-twitter	ports/net/rubygem-twitter
 rubygem-tzinfo	ports/devel/rubygem-tzinfo
 rubygem-yadis	ports/net/rubygem-yadis
+rubygem-zentest	ports/devel/rubygem-zentest
 rubyphoto	ports/graphics/rubyphoto
 rude		ports/net/rude
 rudiments	ports/devel/rudiments
