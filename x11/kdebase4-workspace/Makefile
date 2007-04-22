@@ -104,7 +104,8 @@ pre-configure:
 	${REINPLACE_CMD} \
 		-e 's|-s|-u|g' \
 		${WRKSRC}/kioslave/media/services/media_safelyremove.desktop
-		
+	${REINPLACE_CMD} \
+		-e 's|kgamma.desktop||g' ${WRKSRC}/applnk/old_desktop_files
 
 post-configure:
 	${REINPLACE_CMD} -e "s@^\s*Exec=.*\$$@Exec=ElectricEyes@" \
