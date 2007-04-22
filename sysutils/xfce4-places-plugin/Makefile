@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-places-plugin
-PORTVERSION=	0.0.9
+PORTVERSION=	0.2.0
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
@@ -14,11 +14,12 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A file browser launcher for XFce4 panel plugin
 
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
-USE_XFCE=	configenv panel
+USE_XFCE=	configenv panel thunar
 USE_XLIB=	yes
 
 .include <bsd.port.mk>
