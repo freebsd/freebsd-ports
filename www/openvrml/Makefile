@@ -44,6 +44,10 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700029
+BROKEN=		Incorrect objformat handling
+.endif
+
 .if ${ARCH} == "sparc64"
 BROKEN=		Gets internal gcc error on ${ARCH}
 .endif
