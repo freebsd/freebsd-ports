@@ -41,10 +41,4 @@ post-install:
 	@${MV} ${PREFIX}/share/silk/rwfpd.conf ${PREFIX}/share/silk/rwfpd.conf.sample
 	@${MV} ${PREFIX}/share/silk/flowcap.conf ${PREFIX}/share/silk/flowcap.conf.sample
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Does not build on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
