@@ -31,6 +31,10 @@ SUB_LIST=	CONF_FILES="${CONF_FILES}" CONF_DIR="${PREFIX}/etc/dcd"
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 600000
+BROKEN=		Does not compile on 5.x
+.endif
+
 post-patch:
 .for f in dcd dcd.console
 	@${MV} ${WRKSRC}/doc/${f}.2 ${WRKSRC}/doc/${f}.8
