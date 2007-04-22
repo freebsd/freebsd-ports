@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p7zip
-PORTVERSION=	4.44
+PORTVERSION=	4.45
 CATEGORIES=	archivers
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src_all
@@ -17,12 +17,9 @@ COMMENT=	File archiver with high compression ratio
 USE_BZIP2=	yes
 MAKEFILE=	makefile
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
-PORTDOCS=	*
 MAN1=		7z.1 7za.1 7zr.1
-MANCOMPRESSED=	no
 
 DLLDIR=		${PREFIX}/libexec/p7zip
-
 PLIST_SUB=	MODULES=""
 ALL_TARGET=	7z 7za 7zr Client7z sfx
 7ZBIN=		7z 7za 7zr Client7z 7zCon.sfx
@@ -49,29 +46,26 @@ post-patch:
 	       ${WRKSRC}/makefile.freebsd > ${WRKSRC}/makefile.machine
 	${REINPLACE_CMD} -e 's|/usr/share/doc/p7zip/DOCS|${DOCSDIR}|' \
 		${WRKSRC}/man1/*
+	${MV} ${WRKSRC}/README ${WRKSRC}/DOCS/readme.unix
 
 do-install:
-	${INSTALL} -d ${DLLDIR}
-.for f in ${7ZBIN}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${DLLDIR}/
-.endfor
+	${INSTALL} -d ${DLLDIR}/
+	${INSTALL_PROGRAM} ${7ZBIN:S|^|${WRKSRC}/bin/|} ${DLLDIR}/
 	${INSTALL_SCRIPT} ${FILESDIR}/7z ${PREFIX}/bin/
 	${LN} -sf 7z ${PREFIX}/bin/7za
 	${LN} -sf 7z ${PREFIX}/bin/7zr
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/gzip-like_CLI_wrapper_for_7z/p7zip ${PREFIX}/bin/
 .if !defined(WITHOUT_MODULES)
-.for f in Codecs Formats
-	${INSTALL} -d ${DLLDIR}/${f}
-	${INSTALL_DATA} ${WRKSRC}/bin/${f}/* ${DLLDIR}/${f}/
-.endfor
+	${INSTALL} -d ${DLLDIR}/Codecs/
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/Codecs/Rar29.so ${DLLDIR}/Codecs/
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/7z.so ${DLLDIR}/
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/7za.so ${DLLDIR}/
 .endif
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${PAX} -rw -s,${WRKSRC}/DOCS,, ${WRKSRC}/DOCS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/readme.unix
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-	${FIND} ${DOCSDIR} -type d | ${XARGS} ${CHMOD} 755
-	${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	@${INSTALL} -d ${DOCSDIR}/
+	${CP} -R ${WRKSRC}/DOCS/ ${DOCSDIR}/
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/
+	${CHMOD} -R u=rwX,go=rX ${DOCSDIR}/
 .endif
 	${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/man1/,} ${MAN1PREFIX}/man/man1/
 
