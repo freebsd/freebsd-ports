@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tf
-PORTVERSION=	5.0b7
+PORTVERSION=	5.0b8
 CATEGORIES=	net games
-MASTER_SITES=	http://ftp.tcp.com/pub/mud/Clients/tinyfugue/ \
-		ftp://tf.tcp.com/pub/tinyfugue/
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	tinyfugue
 DISTVERSION=	${PORTVERSION:S/.//}
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 
@@ -20,7 +20,5 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-manpage --enable-version --enable-symlink --datadir=${PREFIX}/lib
 
 PLIST_SUB=	DISTNAME=${DISTNAME}
-
-#MAN1=		tf.1
 
 .include <bsd.port.mk>
