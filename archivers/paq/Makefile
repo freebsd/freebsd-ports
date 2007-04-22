@@ -14,8 +14,6 @@ DISTNAME=	paq8l
 MAINTAINER=	bf2006a@yahoo.com
 COMMENT=	An archiver with an extremely high compression ratio
 
-BROKEN=		Size mismatch
-
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 SUB_FILES=	pkg-message
