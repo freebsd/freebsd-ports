@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sysvipc
-PORTVERSION=	0.4
+PORTVERSION=	0.6
 CATEGORIES=	devel ruby
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,12 +19,9 @@ COMMENT=	Ruby interface to use System V IPC system calls
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-RUBY_RD_FILES=	sysvipc.rd
-
 INSTALL_TARGET=	site-install
 
-DOCS=		${RUBY_RD_FILES} \
-		${RUBY_RD_HTML_FILES}
+DOCS=		${RUBY_RD_HTML_FILES}
 
 .include <bsd.port.pre.mk>
 
