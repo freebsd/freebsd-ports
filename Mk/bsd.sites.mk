@@ -467,7 +467,6 @@ MASTER_SITE_GNU+=	\
 
 .if !defined(IGNORE_MASTER_SITE_GNUPG)
 MASTER_SITE_GNUPG+= 	\
-	http://ftp.sunsite.dk/pub/security/gcrypt/%SUBDIR%/ \
 	http://ftp.linux.it/pub/mirrors/gnupg/%SUBDIR%/ \
 	ftp://ftp.demon.nl/pub/mirrors/gnupg/%SUBDIR%/ \
 	ftp://sunsite.dk/pub/security/gcrypt/%SUBDIR%/ \
