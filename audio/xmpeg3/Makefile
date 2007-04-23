@@ -19,6 +19,7 @@ RUN_DEPENDS=	amp:${PORTSDIR}/audio/amp \
 		wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 IGNORE=		does not work
+DEPRECATED=	${IGNORE}
 EXPIRATION_DATE=	2007-04-19
 PLIST_FILES=	bin/xmpeg3
 
