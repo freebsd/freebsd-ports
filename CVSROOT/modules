@@ -1780,6 +1780,7 @@ de-bsdforen-firefox-searchplugin	ports/german/bsdforen-firefox-searchplugin
 de-bsdgroup-firefox-searchplugin	ports/german/bsdgroup-firefox-searchplugin
 de-bsdpaste	ports/german/bsdpaste
 de-citrix_ica	ports/german/citrix_ica
+de-de-py-qt4-eric4	ports/german/de-py-qt4-eric4
 de-dict		ports/german/dict
 de-digibux	ports/german/digibux
 de-ding		ports/german/ding
