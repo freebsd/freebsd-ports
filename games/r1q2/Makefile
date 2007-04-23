@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	r1q2
-PORTVERSION=	7187
+PORTVERSION=	7322
 CATEGORIES=	games
 MASTER_SITES=	http://www.r1ch.net/stuff/r1q2/src/
 DISTNAME=	${PORTNAME}-b${PORTVERSION}-src
@@ -18,7 +18,6 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 USE_ZIP=	yes
 USE_DOS2UNIX=	yes
-USE_GCC=	3.4+
 USE_GMAKE=	yes
 NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/binaries
@@ -77,10 +76,6 @@ PLIST_SUB+=	REF_GL="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|game$$(ARCH)|game|g' \
 		${BUILD_WRKSRC}/game/Makefile
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|<stdint\.h>|<inttypes.h>|' \
-		${WRKSRC}/game/q_shared.h
-.endif
 
 pre-build:
 	@${FIND} ${BUILD_WRKSRC} -type d -depth 1 -exec ${MKDIR} {}/.depends \;
