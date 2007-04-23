@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipcad
-PORTVERSION=	3.7
+PORTVERSION=	3.7.3
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} 	\
@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} 	\
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	vlm@lionet.info
-COMMENT=	IP accounting daemon with Cisco-like RSH and NetFlow export modes
+COMMENT=	IP accounting daemon with Cisco-like RSH and NetFlow export
 
 USE_RC_SUBR=	ipcad
 SUB_FILES=	pkg-message
