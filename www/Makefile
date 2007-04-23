@@ -438,6 +438,7 @@
     SUBDIR += netoffice
     SUBDIR += netrik
     SUBDIR += netstiff
+    SUBDIR += newsfeed
     SUBDIR += nginx
     SUBDIR += notftp
     SUBDIR += npapi-xine
