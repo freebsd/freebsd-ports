@@ -7949,6 +7949,7 @@ newpki-server	ports/security/newpki-server
 newportsversioncheck	ports/ports-mgmt/newportsversioncheck
 newsbot		ports/net-im/newsbot
 newscache	ports/news/newscache
+newsfeed	ports/www/newsfeed
 newsfetch	ports/news/newsfetch
 newsfish	ports/news/newsfish
 newsgrab	ports/news/newsgrab
