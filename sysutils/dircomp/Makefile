@@ -17,9 +17,9 @@ COMMENT=	Compare two directories
 LIB_DEPENDS=	XGP.0:${PORTSDIR}/devel/libXGP
 PLIST_FILES+=	bin/XDirComp
 .else
-LIB_DEPENDS=	YGP.0:${PORTSDIR}/devel/libYGP
 MK_PATCH+=	s/@MYSUBDIRS@/Common/g;
 .endif
+LIB_DEPENDS+=	YGP.0:${PORTSDIR}/devel/libYGP
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
