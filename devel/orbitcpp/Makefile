@@ -16,17 +16,12 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ bindings for ORBit, a CORBA 2.2-compliant ORB
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack lthack orbit2
+USE_GNOME=	gnomehack ltverhack orbit2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	libtool:15
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(SUBDIRS =.*\)test\(.*\)|\1\2|' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700029
-BROKEN=		Segfault during build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
