@@ -13533,7 +13533,6 @@ ru-artwiz-ru	ports/russian/artwiz-ru
 ru-aspell	ports/russian/aspell
 ru-cyrproxy	ports/russian/cyrproxy
 ru-d1489	ports/russian/d1489
-ru-elm		ports/russian/elm.language
 ru-fortune-bashorgru	ports/russian/fortune-bashorgru
 ru-fortuneru	ports/russian/fortuneru
 ru-kde3-i18n	ports/russian/kde3-i18n
@@ -13549,7 +13548,6 @@ ru-p5-Lingua-RU-Charset	ports/russian/p5-Lingua-RU-Charset
 ru-p5-XML-Parser-encodings	ports/russian/p5-XML-Parser-encodings
 ru-p5-cyrillic	ports/russian/p5-cyrillic
 ru-pgp.language	ports/russian/pgp.language
-ru-pine		ports/russian/pine.language
 ru-prawda	ports/russian/prawda
 ru-pscyr	ports/russian/pscyr
 ru-ru_pscyr	ports/russian/pscyr
