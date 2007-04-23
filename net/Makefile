@@ -675,6 +675,7 @@
     SUBDIR += py-soappy-devel
     SUBDIR += py-soapy
     SUBDIR += py-spreadmodule
+    SUBDIR += py-timeoutsocket
     SUBDIR += py-tofu
     SUBDIR += py-twistedPair
     SUBDIR += py-twitter
