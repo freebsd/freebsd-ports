@@ -21,12 +21,12 @@
  
  short ZLUnixTimeManager::hoursBySeconds(long seconds) const {
 -	return localtime(&seconds)->tm_hour;
-+	time_t st =3D seconds;
++	time_t st = seconds;
 +	return localtime(&st)->tm_hour;
  }
  
  short ZLUnixTimeManager::minutesBySeconds(long seconds) const {
 -	return localtime(&seconds)->tm_min;
-+	time_t st =3D seconds;
++	time_t st = seconds;
 +	return localtime(&st)->tm_min;
  }
