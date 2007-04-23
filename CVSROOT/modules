@@ -3345,7 +3345,6 @@ geda-examples	ports/cad/geda-examples
 geda-gattrib	ports/cad/geda-gattrib
 geda-gschem	ports/cad/geda-gschem
 geda-netlist	ports/cad/geda-netlist
-geda-projectmanager	ports/cad/geda-projectmanager
 geda-symbols	ports/cad/geda-symbols
 geda-symcheck	ports/cad/geda-symcheck
 geda-utils	ports/cad/geda-utils
@@ -16459,7 +16458,6 @@ xmoto		ports/games/xmoto
 xmountains	ports/graphics/xmountains
 xmove		ports/x11/xmove
 xmp		ports/audio/xmp
-xmpeg3		ports/audio/xmpeg3
 xmps		ports/multimedia/xmps
 xmps-win32-plugin	ports/multimedia/xmps-win32-plugin
 xmradio		ports/audio/xmradio

@@ -730,7 +730,6 @@
     SUBDIR += xmms2-scrobbler
     SUBDIR += xmmsctrl
     SUBDIR += xmp
-    SUBDIR += xmpeg3
     SUBDIR += xmradio
     SUBDIR += xsidplay
     SUBDIR += xsynth-dssi
