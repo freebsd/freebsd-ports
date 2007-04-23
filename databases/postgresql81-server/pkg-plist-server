@@ -150,6 +150,7 @@ share/postgresql/timezone/Africa/Abidjan
 share/postgresql/timezone/Africa/Accra
 share/postgresql/timezone/Africa/Addis_Ababa
 share/postgresql/timezone/Africa/Algiers
+share/postgresql/timezone/Africa/Asmara
 share/postgresql/timezone/Africa/Asmera
 share/postgresql/timezone/Africa/Bamako
 share/postgresql/timezone/Africa/Bangui
@@ -271,6 +272,7 @@ share/postgresql/timezone/America/Indiana/Marengo
 share/postgresql/timezone/America/Indiana/Petersburg
 share/postgresql/timezone/America/Indiana/Vevay
 share/postgresql/timezone/America/Indiana/Vincennes
+share/postgresql/timezone/America/Indiana/Winamac
 share/postgresql/timezone/America/Indianapolis
 share/postgresql/timezone/America/Inuvik
 share/postgresql/timezone/America/Iqaluit
@@ -318,6 +320,7 @@ share/postgresql/timezone/America/Puerto_Rico
 share/postgresql/timezone/America/Rainy_River
 share/postgresql/timezone/America/Rankin_Inlet
 share/postgresql/timezone/America/Recife
+share/postgresql/timezone/America/Resolute
 share/postgresql/timezone/America/Regina
 share/postgresql/timezone/America/Rio_Branco
 share/postgresql/timezone/America/Rosario
@@ -447,6 +450,7 @@ share/postgresql/timezone/Atlantic/Bermuda
 share/postgresql/timezone/Atlantic/Canary
 share/postgresql/timezone/Atlantic/Cape_Verde
 share/postgresql/timezone/Atlantic/Faeroe
+share/postgresql/timezone/Atlantic/Faroe
 share/postgresql/timezone/Atlantic/Jan_Mayen
 share/postgresql/timezone/Atlantic/Madeira
 share/postgresql/timezone/Atlantic/Reykjavik
@@ -460,6 +464,7 @@ share/postgresql/timezone/Australia/Broken_Hill
 share/postgresql/timezone/Australia/Canberra
 share/postgresql/timezone/Australia/Currie
 share/postgresql/timezone/Australia/Darwin
+share/postgresql/timezone/Australia/Eucla
 share/postgresql/timezone/Australia/Hobart
 share/postgresql/timezone/Australia/LHI
 share/postgresql/timezone/Australia/Lindeman
@@ -698,6 +703,7 @@ share/postgresql/timezone/Universal
 share/postgresql/timezone/W-SU
 share/postgresql/timezone/WET
 share/postgresql/timezone/Zulu
+share/postgresql/timezone/posixrules
 @dirrm share/postgresql/timezone/Africa
 @dirrm share/postgresql/timezone/America/Argentina
 @dirrm share/postgresql/timezone/America/Indiana

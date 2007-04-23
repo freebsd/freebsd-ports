@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.4.16
+PORTVERSION?=	7.4.17
 PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
@@ -197,11 +197,23 @@ MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 \
 		drop_sequence.7 \
 		drop_table.7 drop_trigger.7 drop_type.7 drop_user.7 \
 		drop_view.7 end.7 execute.7 explain.7 fetch.7 grant.7 insert.7 \
-		listen.7 load.7 lock.7 move.7 notify.7 prepare.7 reindex.7 \
+		listen.7 load.7 lock.7 move.7 notify.7 \
+		pg_conndefaults.7 pg_connect.7 pg_disconnect.7 pg_exec.7 \
+		pg_execute.7 pg_listen.7 pg_lo_close.7 pg_lo_creat.7 \
+		pg_lo_export.7 pg_lo_import.7 pg_lo_lseek.7 pg_lo_open.7 \
+		pg_lo_read.7 pg_lo_tell.7 pg_lo_unlink.7 pg_lo_write.7 \
+		pg_on_connection_loss.7 pg_result.7 pg_select.7 prepare.7 reindex.7 \
 		reset.7 revoke.7 rollback.7 select.7 select_into.7 \
 		set.7 set_constraints.7 set_transaction.7 show.7 \
-		set_session_authorization.7 start_transaction.7 \
-		truncate.7 unlisten.7 update.7 vacuum.7
+		set_session_authorization.7 \
+		spi_connect.7 spi_copytuple.7 spi_copytupledesc.7 \
+		spi_copytupleintoslot.7 spi_cursor_close.7 spi_cursor_fetch.7 \
+		spi_cursor_find.7 spi_cursor_move.7 spi_cursor_open.7 spi_exec.7 \
+		spi_execp.7 spi_finish.7 spi_fname.7 spi_fnumber.7 spi_freeplan.7 \
+		spi_freetuple.7 spi_freetuptable.7 spi_getbinval.7 spi_getrelname.7 \
+		spi_gettype.7 spi_gettypeid.7 spi_getvalue.7 spi_modifytuple.7 \
+		spi_palloc.7 spi_pfree.7 spi_prepare.7 spi_repalloc.7 spi_saveplan.7 \
+		start_transaction.7 truncate.7 unlisten.7 update.7 vacuum.7
 .endif
 
 .if defined(SERVER_ONLY)
