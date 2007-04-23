@@ -5,6 +5,7 @@
 
    SUBDIR += barry
    SUBDIR += bpm
+   SUBDIR += genplist
    SUBDIR += instant-tinderbox
    SUBDIR += jailaudit
    SUBDIR += kports
