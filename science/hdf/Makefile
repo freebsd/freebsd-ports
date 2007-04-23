@@ -9,8 +9,9 @@ PORTNAME=	hdf
 PORTVERSION=	4.2r1
 PORTREVISION=	2
 CATEGORIES=	science archivers graphics
-MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/HDF/HDF/HDF${PORTVERSION}/src/:src \
-		ftp://ftp.ncsa.uiuc.edu/HDF/HDF/Documentation/HDF4.2r0/:doc \
+MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF/HDF_Current/src/:src \
+		ftp://ftp.hdfgroup.org/HDF/Documentation/${PORTVERSION}/:doc \
+		ftp://ftp.hdfgroup.org/HDF/Documentation/HDF4.2r0/:doc \
 		http://hdf.ncsa.uiuc.edu/doc_resource/SZIP/:doc_szip
 DISTNAME=	HDF${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
@@ -25,6 +26,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		sz.2:${PORTSDIR}/science/szip
 
 CONFLICTS=	netcdf-*
+
+BROKEN=		libtool problem
 
 WANT_FORTRAN=   yes
 #USE_GCC=4.2+
