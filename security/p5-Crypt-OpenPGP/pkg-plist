@@ -1,0 +1,47 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenPGP/.packlist
+%%SITE_PERL%%/Crypt/OpenPGP.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Words.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Digest.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Key.pm
+%%SITE_PERL%%/Crypt/OpenPGP/KeyRing.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Cipher.pm
+%%SITE_PERL%%/Crypt/OpenPGP/S2k.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Armour.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Certificate.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Compressed.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Message.pm
+%%SITE_PERL%%/Crypt/OpenPGP/OnePassSig.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Util.pm
+%%SITE_PERL%%/Crypt/OpenPGP/SKSessionKey.pm
+%%SITE_PERL%%/Crypt/OpenPGP/MDC.pm
+%%SITE_PERL%%/Crypt/OpenPGP/CFB.pm
+%%SITE_PERL%%/Crypt/OpenPGP/PacketFactory.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Signature.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Marker.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Buffer.pm
+%%SITE_PERL%%/Crypt/OpenPGP/KeyBlock.pm
+%%SITE_PERL%%/Crypt/OpenPGP/ErrorHandler.pm
+%%SITE_PERL%%/Crypt/OpenPGP/KeyServer.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Config.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Key/Public.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Key/Secret.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Key/Secret/DSA.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Key/Secret/RSA.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Key/Secret/ElGamal.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Key/Public/RSA.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Key/Public/DSA.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Key/Public/ElGamal.pm
+%%SITE_PERL%%/Crypt/OpenPGP/SessionKey.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Constants.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Trust.pm
+%%SITE_PERL%%/Crypt/OpenPGP/UserID.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Plaintext.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Ciphertext.pm
+%%SITE_PERL%%/Crypt/OpenPGP/Signature/SubPacket.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenPGP
+@dirrm %%SITE_PERL%%/Crypt/OpenPGP/Key/Secret
+@dirrm %%SITE_PERL%%/Crypt/OpenPGP/Key/Public
+@dirrm %%SITE_PERL%%/Crypt/OpenPGP/Key
+@dirrm %%SITE_PERL%%/Crypt/OpenPGP/Signature
+@dirrm %%SITE_PERL%%/Crypt/OpenPGP
+@dirrmtry %%SITE_PERL%%/Crypt

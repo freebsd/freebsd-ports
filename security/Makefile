@@ -384,6 +384,7 @@
     SUBDIR += p5-Crypt-OFB
     SUBDIR += p5-Crypt-OICQ
     SUBDIR += p5-Crypt-OTP
+    SUBDIR += p5-Crypt-OpenPGP
     SUBDIR += p5-Crypt-OpenSSL-Bignum
     SUBDIR += p5-Crypt-OpenSSL-DSA
     SUBDIR += p5-Crypt-OpenSSL-RSA
