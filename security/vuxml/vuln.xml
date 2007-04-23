@@ -13776,7 +13776,7 @@ Note:  Please add new entries to the beginning of this file.
       </package>
       <package>
 	<name>p5-Crypt-OpenPGP</name>
-	<range><gt>0</gt></range>
+	<range><le>1.03</le></range>
       </package>
       <package>
 	<name>pgp</name>
@@ -13819,7 +13819,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2005-02-08</discovery>
       <entry>2005-07-31</entry>
-      <modified>2007-04-10</modified>
+      <modified>2007-04-23</modified>
     </dates>
   </vuln>
 
