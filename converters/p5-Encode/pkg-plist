@@ -31,6 +31,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/EBCDIC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/Encoder.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/Encoding.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Encode/GSM0338.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/Guess.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Encode/JP/H2Z.pm
