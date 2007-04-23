@@ -11,6 +11,7 @@
     SUBDIR += dico
     SUBDIR += eficas
     SUBDIR += facturier
+    SUBDIR += fr-py-qt4-eric4
     SUBDIR += geonext
     SUBDIR += gfaim
     SUBDIR += gibi
