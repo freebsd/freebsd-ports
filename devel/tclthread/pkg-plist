@@ -1,0 +1,13 @@
+lib/thread%%VERSION%%/libthread%%VERSION%%.so
+lib/thread%%VERSION%%/ttrace.tcl
+lib/thread%%VERSION%%/pkgIndex.tcl
+%%PORTDOCS%%%%DOCSDIR%%/license.terms
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/html/thread.html
+%%PORTDOCS%%%%DOCSDIR%%/html/tpool.html
+%%PORTDOCS%%%%DOCSDIR%%/html/tsv.html
+%%PORTDOCS%%%%DOCSDIR%%/html/ttrace.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/thread%%VERSION%%

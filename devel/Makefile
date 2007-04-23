@@ -2124,6 +2124,7 @@
     SUBDIR += tcllib
     SUBDIR += tclmore
     SUBDIR += tclreadline
+    SUBDIR += tclthread
     SUBDIR += tcltls
     SUBDIR += tclxml
     SUBDIR += tdl
