@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Template/Declare.pm
+%%SITE_PERL%%/Template/Declare/Buffer.pm
+%%SITE_PERL%%/Template/Declare/Tags.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Declare/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Declare
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
+@dirrmtry %%SITE_PERL%%/Template/Declare
+@dirrmtry %%SITE_PERL%%/Template

@@ -1,0 +1,11 @@
+Template::Declare is a pure-perl declarative HTML templating system.
+A few key features and buzzwords:
+
+- All templates are 100% pure perl code
+- Simple declarative syntax
+- No angle brackets
+- Mixins
+- Inheritance
+- Public and private templates
+
+WWW: http://search.cpan.org/dist/Template-Declare/
