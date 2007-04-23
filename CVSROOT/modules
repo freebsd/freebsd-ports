@@ -12642,6 +12642,7 @@ py-gtkglext	ports/x11-toolkits/py-gtkglext
 py-gtkscintilla	ports/x11-toolkits/py-gtkscintilla
 py-gui		ports/x11-toolkits/py-gui
 py-hashlib	ports/security/py-hashlib
+py-html2text	ports/textproc/py-html2text
 py-htmltestcase	ports/www/py-htmltestcase
 py-httplib2	ports/www/py-httplib2
 py-hyperestraier	ports/textproc/py-hyperestraier
