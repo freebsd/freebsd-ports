@@ -9019,6 +9019,7 @@ p5-Crypt-NULL	ports/security/p5-Crypt-NULL
 p5-Crypt-OFB	ports/security/p5-Crypt-OFB
 p5-Crypt-OICQ	ports/security/p5-Crypt-OICQ
 p5-Crypt-OTP	ports/security/p5-Crypt-OTP
+p5-Crypt-OpenPGP	ports/security/p5-Crypt-OpenPGP
 p5-Crypt-OpenSSL-Bignum	ports/security/p5-Crypt-OpenSSL-Bignum
 p5-Crypt-OpenSSL-DSA	ports/security/p5-Crypt-OpenSSL-DSA
 p5-Crypt-OpenSSL-RSA	ports/security/p5-Crypt-OpenSSL-RSA
