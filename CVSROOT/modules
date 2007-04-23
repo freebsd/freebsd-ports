@@ -12688,6 +12688,7 @@ py-lzma		ports/archivers/py-lzma
 py-m2crypto	ports/security/py-m2crypto
 py-mad		ports/audio/py-mad
 py-magic	ports/devel/py-magic
+py-mako		ports/textproc/py-mako
 py-mantissa	ports/net/py-mantissa
 py-markdown	ports/textproc/py-markdown
 py-matplotlib	ports/math/py-matplotlib
