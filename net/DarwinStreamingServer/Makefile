@@ -23,10 +23,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net
 USE_RC_SUBR=	streamingadminserver.sh darwin_streaming_server.sh
 SUB_LIST+=	PERL=${PERL}
 
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-IGNORE=		${RESTRICTED}
-.endif
-
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAKE_ENV+=	CC="${CC}"				\
