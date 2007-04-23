@@ -7,7 +7,9 @@
 PORTNAME=	libfec
 PORTVERSION=	3.0
 CATEGORIES=	comms astro hamradio math
-MASTER_SITES=	http://www.ka9q.net/code/fec/
+MASTER_SITES=	http://www.ka9q.net/code/fec/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	db
 DISTNAME=	fec-${PORTVERSION}
 
 MAINTAINER=	db@FreeBSD.org
@@ -21,14 +23,9 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 ONLY_FOR_ARCHS=	i386
+PLIST_FILES=	include/fec.h lib/libfec.so lib/libfec.a
 
 post-patch:
 	${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/makefile.in
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4+
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
