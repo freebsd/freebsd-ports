@@ -18,6 +18,10 @@ COMMENT=	Enable Kwiki to work under mod_perl
 BUILD_DEPENDS=	${SITE_PERL}/Kwiki.pm:${PORTSDIR}/www/p5-Kwiki
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+DEPRECATED=		Already bundled in www/p5-Kwiki (0.39 or latter)
+EXPIRATION_DATE=	2007-07-28
+BROKEN=		${DEPRECATED}
+
 PERL_CONFIGURE=	yes
 
 .if defined(WITH_APACHE2)

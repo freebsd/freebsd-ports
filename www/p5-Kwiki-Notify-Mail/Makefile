@@ -18,19 +18,16 @@ COMMENT=	Send email notification of topic updates
 RUN_DEPENDS=	${SITE_PERL}/Kwiki.pm:${PORTSDIR}/www/p5-Kwiki \
 		${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite
 BUILD_DEPENDS=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+
+DEPRECATED=		Already bundled in www/p5-Kwiki (0.39 or latter)
+EXPIRATION_DATE=	2007-07-28
+BROKEN=		${DEPRECATED}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Kwiki::Notify::Mail.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
-.endif
-
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
