@@ -70,9 +70,7 @@ lib/libspandsp.a
 lib/libspandsp.la
 lib/libspandsp.so
 lib/libspandsp.so.0
-share/spandsp/global-tones.xml
-share/spandsp/tones.dtd
+%%DATADIR%%/global-tones.xml
+%%DATADIR%%/tones.dtd
 @dirrm share/spandsp
-@dirrm share/nls/en_US.US-ASCII
-@dirrm share/nls/POSIX
 @dirrm include/spandsp
