@@ -34,6 +34,7 @@ bin/jifty
 %%SITE_PERL%%/Jifty/Manual/Actions.pod
 %%SITE_PERL%%/Jifty/Manual/Continuations.pod
 %%SITE_PERL%%/Jifty/Manual/Cookbook.pod
+%%SITE_PERL%%/Jifty/Manual/Deploying.pod
 %%SITE_PERL%%/Jifty/Manual/FAQ.pod
 %%SITE_PERL%%/Jifty/Manual/Glossary.pod
 %%SITE_PERL%%/Jifty/Manual/Models.pod
@@ -42,6 +43,7 @@ bin/jifty
 %%SITE_PERL%%/Jifty/Manual/RequestHandling.pod
 %%SITE_PERL%%/Jifty/Manual/Style.pod
 %%SITE_PERL%%/Jifty/Manual/Tutorial.pod
+%%SITE_PERL%%/Jifty/Manual/TutorialRest.pod
 %%SITE_PERL%%/Jifty/Manual/Tutorial_de.pod
 %%SITE_PERL%%/Jifty/Manual/Tutorial_ja.pod
 %%SITE_PERL%%/Jifty/Manual/Upgrading.pod
@@ -56,9 +58,40 @@ bin/jifty
 %%SITE_PERL%%/Jifty/Param.pm
 %%SITE_PERL%%/Jifty/Param/Schema.pm
 %%SITE_PERL%%/Jifty/Plugin.pm
+%%SITE_PERL%%/Jifty/Plugin/AdminUI.pm
+%%SITE_PERL%%/Jifty/Plugin/Authentication/Password.pm
+%%SITE_PERL%%/Jifty/Plugin/Authentication/Password/Action/ConfirmEmail.pm
+%%SITE_PERL%%/Jifty/Plugin/Authentication/Password/Action/GeneratePasswordToken.pm
+%%SITE_PERL%%/Jifty/Plugin/Authentication/Password/Action/Login.pm
+%%SITE_PERL%%/Jifty/Plugin/Authentication/Password/Action/Logout.pm
+%%SITE_PERL%%/Jifty/Plugin/Authentication/Password/Action/ResendConfirmation.pm
+%%SITE_PERL%%/Jifty/Plugin/Authentication/Password/Action/ResetLostPassword.pm
+%%SITE_PERL%%/Jifty/Plugin/Authentication/Password/Action/SendAccountConfirmation.pm
+%%SITE_PERL%%/Jifty/Plugin/Authentication/Password/Action/SendPasswordReminder.pm
+%%SITE_PERL%%/Jifty/Plugin/Authentication/Password/Action/Signup.pm
+%%SITE_PERL%%/Jifty/Plugin/Authentication/Password/Dispatcher.pm
+%%SITE_PERL%%/Jifty/Plugin/Authentication/Password/Mixin/Model/User.pm
+%%SITE_PERL%%/Jifty/Plugin/Authentication/Password/Notification/ConfirmEmail.pm
+%%SITE_PERL%%/Jifty/Plugin/Authentication/Password/Notification/ConfirmLostPassword.pm
+%%SITE_PERL%%/Jifty/Plugin/Authentication/Password/View.pm
 %%SITE_PERL%%/Jifty/Plugin/ClassLoader.pm
+%%SITE_PERL%%/Jifty/Plugin/CompressedCSSandJS.pm
+%%SITE_PERL%%/Jifty/Plugin/CompressedCSSandJS/Dispatcher.pm
+%%SITE_PERL%%/Jifty/Plugin/ErrorTemplates.pm
+%%SITE_PERL%%/Jifty/Plugin/ErrorTemplates/View.pm
+%%SITE_PERL%%/Jifty/Plugin/Halo.pm
+%%SITE_PERL%%/Jifty/Plugin/LetMe.pm
+%%SITE_PERL%%/Jifty/Plugin/LetMe/Dispatcher.pm
+%%SITE_PERL%%/Jifty/Plugin/OnlineDocs.pm
+%%SITE_PERL%%/Jifty/Plugin/OnlineDocs/Dispatcher.pm
 %%SITE_PERL%%/Jifty/Plugin/REST.pm
 %%SITE_PERL%%/Jifty/Plugin/REST/Dispatcher.pm
+%%SITE_PERL%%/Jifty/Plugin/SkeletonApp.pm
+%%SITE_PERL%%/Jifty/Plugin/SkeletonApp/Dispatcher.pm
+%%SITE_PERL%%/Jifty/Plugin/SkeletonApp/View.pm
+%%SITE_PERL%%/Jifty/Plugin/User.pm
+%%SITE_PERL%%/Jifty/Plugin/User/Mixin/Model/User.pm
+%%SITE_PERL%%/Jifty/Plugin/Yullio/View.pm
 %%SITE_PERL%%/Jifty/Record.pm
 %%SITE_PERL%%/Jifty/Request.pm
 %%SITE_PERL%%/Jifty/Request/Mapper.pm
@@ -67,16 +100,22 @@ bin/jifty
 %%SITE_PERL%%/Jifty/RightsFrom.pm
 %%SITE_PERL%%/Jifty/Script.pm
 %%SITE_PERL%%/Jifty/Script/Action.pm
+%%SITE_PERL%%/Jifty/Script/Adopt.pm
 %%SITE_PERL%%/Jifty/Script/App.pm
 %%SITE_PERL%%/Jifty/Script/Deps.pm
+%%SITE_PERL%%/Jifty/Script/Env.pm
 %%SITE_PERL%%/Jifty/Script/FastCGI.pm
 %%SITE_PERL%%/Jifty/Script/Help.pm
+%%SITE_PERL%%/Jifty/Script/ModPerl2.pm
 %%SITE_PERL%%/Jifty/Script/Model.pm
 %%SITE_PERL%%/Jifty/Script/Plugin.pm
 %%SITE_PERL%%/Jifty/Script/Po.pm
 %%SITE_PERL%%/Jifty/Script/Schema.pm
 %%SITE_PERL%%/Jifty/Script/Server.pm
 %%SITE_PERL%%/Jifty/Server.pm
+%%SITE_PERL%%/Jifty/Server/Fork.pm
+%%SITE_PERL%%/Jifty/Server/Prefork.pm
+%%SITE_PERL%%/Jifty/Server/Prefork/NetServer.pm
 %%SITE_PERL%%/Jifty/Subs.pm
 %%SITE_PERL%%/Jifty/Subs/Render.pm
 %%SITE_PERL%%/Jifty/Test.pm
@@ -85,6 +124,11 @@ bin/jifty
 %%SITE_PERL%%/Jifty/Upgrade.pm
 %%SITE_PERL%%/Jifty/Upgrade/Internal.pm
 %%SITE_PERL%%/Jifty/Util.pm
+%%SITE_PERL%%/Jifty/View/Declare.pm
+%%SITE_PERL%%/Jifty/View/Declare/BaseClass.pm
+%%SITE_PERL%%/Jifty/View/Declare/CoreTemplates.pm
+%%SITE_PERL%%/Jifty/View/Declare/Handler.pm
+%%SITE_PERL%%/Jifty/View/Declare/Helpers.pm
 %%SITE_PERL%%/Jifty/View/Mason/Handler.pm
 %%SITE_PERL%%/Jifty/View/Static/Handler.pm
 %%SITE_PERL%%/Jifty/Web.pm
@@ -111,11 +155,27 @@ bin/jifty
 %%SITE_PERL%%/Jifty/Web/PageRegion.pm
 %%SITE_PERL%%/Jifty/Web/Session.pm
 %%SITE_PERL%%/Jifty/Web/Session/ClientSide.pm
+%%SITE_PERL%%/Jifty/Web/Session/None.pm
 %%SITE_PERL%%/Jifty/YAML.pm
 %%SITE_PERL%%/auto/Jifty/dtd/xhtml-lat1.ent
 %%SITE_PERL%%/auto/Jifty/dtd/xhtml-special.ent
 %%SITE_PERL%%/auto/Jifty/dtd/xhtml-symbol.ent
 %%SITE_PERL%%/auto/Jifty/dtd/xhtml1-strict.dtd
+%%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/AdminUI/web/templates/__jifty/admin/_elements/nav
+%%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/AdminUI/web/templates/__jifty/admin/action/dhandler
+%%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/AdminUI/web/templates/__jifty/admin/autohandler
+%%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/AdminUI/web/templates/__jifty/admin/fragments/list/header
+%%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/AdminUI/web/templates/__jifty/admin/fragments/list/list
+%%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/AdminUI/web/templates/__jifty/admin/fragments/list/new_item
+%%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/AdminUI/web/templates/__jifty/admin/fragments/list/search
+%%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/AdminUI/web/templates/__jifty/admin/fragments/list/update
+%%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/AdminUI/web/templates/__jifty/admin/fragments/list/view
+%%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/AdminUI/web/templates/__jifty/admin/index.html
+%%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/AdminUI/web/templates/__jifty/admin/model/dhandler
+%%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/OnlineDocs/web/templates/__jifty/online_docs/autohandler
+%%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/OnlineDocs/web/templates/__jifty/online_docs/content.html
+%%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/OnlineDocs/web/templates/__jifty/online_docs/index.html
+%%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/OnlineDocs/web/templates/__jifty/online_docs/toc.html
 %%SITE_PERL%%/auto/Jifty/po/en.po
 %%SITE_PERL%%/auto/Jifty/po/fr.po
 %%SITE_PERL%%/auto/Jifty/po/ja.po
@@ -136,13 +196,28 @@ bin/jifty
 %%SITE_PERL%%/auto/Jifty/web/static/css/nav.css
 %%SITE_PERL%%/auto/Jifty/web/static/css/notices.css
 %%SITE_PERL%%/auto/Jifty/web/static/css/yui/calendar/calendar.css
+%%SITE_PERL%%/auto/Jifty/web/static/css/yui/menu/map.gif
+%%SITE_PERL%%/auto/Jifty/web/static/css/yui/menu/menu.css
+%%SITE_PERL%%/auto/Jifty/web/static/css/yui/menu/menuarodwn8_dim_1.gif
+%%SITE_PERL%%/auto/Jifty/web/static/css/yui/menu/menuarodwn8_hov_1.gif
+%%SITE_PERL%%/auto/Jifty/web/static/css/yui/menu/menuarodwn8_nrm_1.gif
+%%SITE_PERL%%/auto/Jifty/web/static/css/yui/menu/menuarorght8_dim_1.gif
+%%SITE_PERL%%/auto/Jifty/web/static/css/yui/menu/menuarorght8_hov_1.gif
+%%SITE_PERL%%/auto/Jifty/web/static/css/yui/menu/menuarorght8_nrm_1.gif
+%%SITE_PERL%%/auto/Jifty/web/static/css/yui/menu/menuaroup8_dim_1.gif
+%%SITE_PERL%%/auto/Jifty/web/static/css/yui/menu/menuaroup8_nrm_1.gif
+%%SITE_PERL%%/auto/Jifty/web/static/css/yui/menu/menuchk8_dim_1.gif
+%%SITE_PERL%%/auto/Jifty/web/static/css/yui/menu/menuchk8_hov_1.gif
+%%SITE_PERL%%/auto/Jifty/web/static/css/yui/menu/menuchk8_nrm_1.gif
 %%SITE_PERL%%/auto/Jifty/web/static/css/yui/tabview/border_tabs.css
 %%SITE_PERL%%/auto/Jifty/web/static/css/yui/tabview/tabs.css
+%%SITE_PERL%%/auto/Jifty/web/static/css/yui/tabview/tabview.css
 %%SITE_PERL%%/auto/Jifty/web/static/favicon.ico
 %%SITE_PERL%%/auto/Jifty/web/static/images/css/bullet_arrow_down.png
 %%SITE_PERL%%/auto/Jifty/web/static/images/css/bullet_arrow_up.png
 %%SITE_PERL%%/auto/Jifty/web/static/images/css/fieldbg-autocomplete.gif
 %%SITE_PERL%%/auto/Jifty/web/static/images/css/fieldbg.gif
+%%SITE_PERL%%/auto/Jifty/web/static/images/iepngfix/blank.gif
 %%SITE_PERL%%/auto/Jifty/web/static/images/pony.jpg
 %%SITE_PERL%%/auto/Jifty/web/static/images/silk/bullet_arrow_down.png
 %%SITE_PERL%%/auto/Jifty/web/static/images/silk/bullet_arrow_up.png
@@ -171,6 +246,7 @@ bin/jifty
 %%SITE_PERL%%/auto/Jifty/web/static/js/dom-drag.js
 %%SITE_PERL%%/auto/Jifty/web/static/js/formatDate.js
 %%SITE_PERL%%/auto/Jifty/web/static/js/halo.js
+%%SITE_PERL%%/auto/Jifty/web/static/js/iepngfix.htc
 %%SITE_PERL%%/auto/Jifty/web/static/js/jifty.js
 %%SITE_PERL%%/auto/Jifty/web/static/js/jifty_smoothscroll.js
 %%SITE_PERL%%/auto/Jifty/web/static/js/jifty_subs.js
@@ -197,23 +273,13 @@ bin/jifty
 %%SITE_PERL%%/auto/Jifty/web/static/js/yui/calendar.js
 %%SITE_PERL%%/auto/Jifty/web/static/js/yui/container.js
 %%SITE_PERL%%/auto/Jifty/web/static/js/yui/dom.js
+%%SITE_PERL%%/auto/Jifty/web/static/js/yui/element-beta.js
 %%SITE_PERL%%/auto/Jifty/web/static/js/yui/event.js
+%%SITE_PERL%%/auto/Jifty/web/static/js/yui/menu.js
 %%SITE_PERL%%/auto/Jifty/web/static/js/yui/tabview.js
 %%SITE_PERL%%/auto/Jifty/web/static/js/yui/yahoo.js
 %%SITE_PERL%%/auto/Jifty/web/templates/=/subs
-%%SITE_PERL%%/auto/Jifty/web/templates/__jifty/admin/_elements/nav
-%%SITE_PERL%%/auto/Jifty/web/templates/__jifty/admin/action/dhandler
-%%SITE_PERL%%/auto/Jifty/web/templates/__jifty/admin/autohandler
-%%SITE_PERL%%/auto/Jifty/web/templates/__jifty/admin/fragments/list/header
-%%SITE_PERL%%/auto/Jifty/web/templates/__jifty/admin/fragments/list/list
-%%SITE_PERL%%/auto/Jifty/web/templates/__jifty/admin/fragments/list/new_item
-%%SITE_PERL%%/auto/Jifty/web/templates/__jifty/admin/fragments/list/search
-%%SITE_PERL%%/auto/Jifty/web/templates/__jifty/admin/fragments/list/update
-%%SITE_PERL%%/auto/Jifty/web/templates/__jifty/admin/fragments/list/view
-%%SITE_PERL%%/auto/Jifty/web/templates/__jifty/admin/index.html
-%%SITE_PERL%%/auto/Jifty/web/templates/__jifty/admin/model/dhandler
 %%SITE_PERL%%/auto/Jifty/web/templates/__jifty/autocomplete.xml
-%%SITE_PERL%%/auto/Jifty/web/templates/__jifty/css/dhandler
 %%SITE_PERL%%/auto/Jifty/web/templates/__jifty/empty
 %%SITE_PERL%%/auto/Jifty/web/templates/__jifty/error/_elements/error_text
 %%SITE_PERL%%/auto/Jifty/web/templates/__jifty/error/_elements/wrapper
@@ -222,11 +288,6 @@ bin/jifty
 %%SITE_PERL%%/auto/Jifty/web/templates/__jifty/error/error.css
 %%SITE_PERL%%/auto/Jifty/web/templates/__jifty/error/mason_internal_error
 %%SITE_PERL%%/auto/Jifty/web/templates/__jifty/halo
-%%SITE_PERL%%/auto/Jifty/web/templates/__jifty/js/dhandler
-%%SITE_PERL%%/auto/Jifty/web/templates/__jifty/online_docs/autohandler
-%%SITE_PERL%%/auto/Jifty/web/templates/__jifty/online_docs/content.html
-%%SITE_PERL%%/auto/Jifty/web/templates/__jifty/online_docs/index.html
-%%SITE_PERL%%/auto/Jifty/web/templates/__jifty/online_docs/toc.html
 %%SITE_PERL%%/auto/Jifty/web/templates/__jifty/validator.xml
 %%SITE_PERL%%/auto/Jifty/web/templates/__jifty/webservices/json
 %%SITE_PERL%%/auto/Jifty/web/templates/__jifty/webservices/xml
@@ -242,6 +303,7 @@ bin/jifty
 %%SITE_PERL%%/auto/Jifty/web/templates/dhandler
 %%SITE_PERL%%/auto/Jifty/web/templates/helpers/calendar.html
 %%SITE_PERL%%/auto/Jifty/web/templates/index.html
+%%SITE_PERL%%/auto/Jifty/web/transform_templates
 @dirrmtry %%SITE_PERL%%/auto/Jifty/web/templates/helpers
 @dirrmtry %%SITE_PERL%%/auto/Jifty/web/templates/_elements
 @dirrmtry %%SITE_PERL%%/auto/Jifty/web/templates/__jifty/webservices
@@ -274,15 +336,35 @@ bin/jifty
 @dirrmtry %%SITE_PERL%%/auto/Jifty/web/static/images/yui/us
 @dirrmtry %%SITE_PERL%%/auto/Jifty/web/static/images/yui
 @dirrmtry %%SITE_PERL%%/auto/Jifty/web/static/images/silk
+@dirrmtry %%SITE_PERL%%/auto/Jifty/web/static/images/iepngfix
 @dirrmtry %%SITE_PERL%%/auto/Jifty/web/static/images/css
 @dirrmtry %%SITE_PERL%%/auto/Jifty/web/static/images
 @dirrmtry %%SITE_PERL%%/auto/Jifty/web/static/css/yui/tabview
+@dirrmtry %%SITE_PERL%%/auto/Jifty/web/static/css/yui/menu
 @dirrmtry %%SITE_PERL%%/auto/Jifty/web/static/css/yui/calendar
 @dirrmtry %%SITE_PERL%%/auto/Jifty/web/static/css/yui
 @dirrmtry %%SITE_PERL%%/auto/Jifty/web/static/css
 @dirrmtry %%SITE_PERL%%/auto/Jifty/web/static
 @dirrmtry %%SITE_PERL%%/auto/Jifty/web
 @dirrmtry %%SITE_PERL%%/auto/Jifty/po
+@dirrmtry %%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/OnlineDocs/web/templates/__jifty/online_docs
+@dirrmtry %%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/OnlineDocs/web/templates/__jifty
+@dirrmtry %%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/OnlineDocs/web/templates
+@dirrmtry %%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/OnlineDocs/web
+@dirrmtry %%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/OnlineDocs
+@dirrmtry %%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/AdminUI/web/templates/__jifty/admin/model
+@dirrmtry %%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/AdminUI/web/templates/__jifty/admin/fragments/list
+@dirrmtry %%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/AdminUI/web/templates/__jifty/admin/fragments
+@dirrmtry %%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/AdminUI/web/templates/__jifty/admin/action
+@dirrmtry %%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/AdminUI/web/templates/__jifty/admin/_elements
+@dirrmtry %%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/AdminUI/web/templates/__jifty/admin
+@dirrmtry %%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/AdminUI/web/templates/__jifty
+@dirrmtry %%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/AdminUI/web/templates
+@dirrmtry %%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/AdminUI/web
+@dirrmtry %%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin/AdminUI
+@dirrmtry %%SITE_PERL%%/auto/Jifty/plugins/Jifty/Plugin
+@dirrmtry %%SITE_PERL%%/auto/Jifty/plugins/Jifty
+@dirrmtry %%SITE_PERL%%/auto/Jifty/plugins
 @dirrmtry %%SITE_PERL%%/auto/Jifty/dtd
 @dirrmtry %%SITE_PERL%%/auto/Jifty
 @dirrmtry %%SITE_PERL%%/Jifty/Web/Session
@@ -291,14 +373,32 @@ bin/jifty
 @dirrmtry %%SITE_PERL%%/Jifty/Web
 @dirrmtry %%SITE_PERL%%/Jifty/View/Static
 @dirrmtry %%SITE_PERL%%/Jifty/View/Mason
+@dirrmtry %%SITE_PERL%%/Jifty/View/Declare
 @dirrmtry %%SITE_PERL%%/Jifty/View
 @dirrmtry %%SITE_PERL%%/Jifty/Upgrade
 @dirrmtry %%SITE_PERL%%/Jifty/Test/WWW
 @dirrmtry %%SITE_PERL%%/Jifty/Test
 @dirrmtry %%SITE_PERL%%/Jifty/Subs
+@dirrmtry %%SITE_PERL%%/Jifty/Server/Prefork
+@dirrmtry %%SITE_PERL%%/Jifty/Server
 @dirrmtry %%SITE_PERL%%/Jifty/Script
 @dirrmtry %%SITE_PERL%%/Jifty/Request
+@dirrmtry %%SITE_PERL%%/Jifty/Plugin/Yullio
+@dirrmtry %%SITE_PERL%%/Jifty/Plugin/User/Mixin/Model
+@dirrmtry %%SITE_PERL%%/Jifty/Plugin/User/Mixin
+@dirrmtry %%SITE_PERL%%/Jifty/Plugin/User
+@dirrmtry %%SITE_PERL%%/Jifty/Plugin/SkeletonApp
 @dirrmtry %%SITE_PERL%%/Jifty/Plugin/REST
+@dirrmtry %%SITE_PERL%%/Jifty/Plugin/OnlineDocs
+@dirrmtry %%SITE_PERL%%/Jifty/Plugin/LetMe
+@dirrmtry %%SITE_PERL%%/Jifty/Plugin/ErrorTemplates
+@dirrmtry %%SITE_PERL%%/Jifty/Plugin/CompressedCSSandJS
+@dirrmtry %%SITE_PERL%%/Jifty/Plugin/Authentication/Password/Notification
+@dirrmtry %%SITE_PERL%%/Jifty/Plugin/Authentication/Password/Mixin/Model
+@dirrmtry %%SITE_PERL%%/Jifty/Plugin/Authentication/Password/Mixin
+@dirrmtry %%SITE_PERL%%/Jifty/Plugin/Authentication/Password/Action
+@dirrmtry %%SITE_PERL%%/Jifty/Plugin/Authentication/Password
+@dirrmtry %%SITE_PERL%%/Jifty/Plugin/Authentication
 @dirrmtry %%SITE_PERL%%/Jifty/Plugin
 @dirrmtry %%SITE_PERL%%/Jifty/Param
 @dirrmtry %%SITE_PERL%%/Jifty/Module
