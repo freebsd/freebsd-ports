@@ -754,6 +754,7 @@
     SUBDIR += py-expat
     SUBDIR += py-feedparser
     SUBDIR += py-genshi
+    SUBDIR += py-html2text
     SUBDIR += py-hyperestraier
     SUBDIR += py-hyperestraier-python
     SUBDIR += py-jaxml
