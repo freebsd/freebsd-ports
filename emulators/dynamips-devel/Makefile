@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dynamips
-DISTVERSION=	0.2.7-RC1
-PORTREVISION=	1
+DISTVERSION=	0.2.7-RC2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.ipflow.utc.fr/dynamips/
 PKGNAMESUFFIX=	-devel
