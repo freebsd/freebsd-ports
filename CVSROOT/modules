@@ -8191,6 +8191,7 @@ ocamlduce	ports/lang/ocamlduce
 ocamlweb	ports/devel/ocamlweb
 ocp		ports/audio/ocp
 ocrad		ports/graphics/ocrad
+ocsigen		ports/www/ocsigen
 octave		ports/math/octave
 octave-devel	ports/math/octave-devel
 octave-forge	ports/math/octave-forge
