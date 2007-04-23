@@ -28,7 +28,6 @@
     SUBDIR += geda-gattrib
     SUBDIR += geda-gschem
     SUBDIR += geda-netlist
-    SUBDIR += geda-projectmanager
     SUBDIR += geda-symbols
     SUBDIR += geda-symcheck
     SUBDIR += geda-utils
