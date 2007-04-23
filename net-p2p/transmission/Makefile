@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	0.6.1
+PORTVERSION=	0.70
 PORTREVISION?=	0
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=mezz
-DISTNAME=	Transmission-${PORTVERSION}
+MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
+DISTNAME=	Transmission-${PORTVERSION:S/70/7/}
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT?=	A free BitTorrent client written from scratch in C
 
+WRKSRC=		${WRKDIR}/Transmission-${PORTVERSION}
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS?=--prefix=${PREFIX} \
@@ -24,8 +23,6 @@ CONFIGURE_ARGS?=--prefix=${PREFIX} \
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude beos \
 			--exclude macosx \
-			--exclude packageOSX.sh \
-			--exclude Sparkle.framework \
 			--exclude Transmission.xcodeproj
 
 DOCS=		AUTHORS LICENSE NEWS README
@@ -33,8 +30,6 @@ DOCS=		AUTHORS LICENSE NEWS README
 .if defined(SLAVE_TRANS)
 EXTRACT_AFTER_ARGS+=--exclude cli
 .else
-CFLAGS+=	${CPPFLAGS}
-USE_GETOPT_LONG=yes
 EXTRACT_AFTER_ARGS+=--exclude gtk
 MAN1=		transmissioncli.1
 .endif
@@ -49,8 +44,6 @@ pre-everything::
 .if !defined(WITHOUT_OPENSSL)
 	@${ECHO_MSG} "You may specify the following on the command line:"
 	@${ECHO_MSG} " "
-.endif
-.if !defined(WITHOUT_OPENSSL)
 	@${ECHO_MSG} "WITHOUT_OPENSSL=yes to disable OpenSSL support, using built-in SHA1 implementation. Warning, it is a bit slower if you use this option." | ${FMT} 75 75
 .endif
 
@@ -61,15 +54,19 @@ general-patch:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g ; \
 		s|-g -Wall -W -O3 -funroll-loops|-Wall -W|g' \
 			${WRKSRC}/mk/common.mk
+	@${REINPLACE_CMD} -e 's|) .install.misc|)|g' \
+		${WRKSRC}/mk/default.mk
 
 post-patch: general-patch
 
+general-install:
 .ifndef (NOPORTDOCS)
-post-install:
 	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
+
+post-install: general-install
 
 .include <bsd.port.mk>
