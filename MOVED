@@ -2381,7 +2381,6 @@ x11-wm/aewm++||2006-07-04|Has expired: The project is dead, a fork exists: xaewm
 emulators/linux_base-fc3||2006-07-04|Has expired: superseeded by linux_base-fc4 port
 misc/linux-opengroupware||2006-07-04|Has expired
 net/opengk||2006-07-04|Has expired: Latest version is from 2003-02-03. Use net/gatekeeper instead
-security/p5-Crypt-OpenPGP||2006-07-04|Has expired: Crypt-OpenPGP was abandoned in 2002, use security/gnupg instead
 textproc/sed_inplace||2006-07-04|Has expired: This port is not required anymore
 textproc/xml4j||2006-07-04|Has expired: it has been replaced by textproc/xerces-j 8 years ago
 www/sitemapgen|www/google-sitemapgen|2006-07-05|Duplicate port
