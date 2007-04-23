@@ -70,7 +70,7 @@ GIMP_LIBS=	`${PKG_CONFIG} --libs gimp-2.0`
 GIMP_THUMB_LIBS=`${PKG_CONFIG} --libs gimpthumb-2.0`
 GIMP_UI_LIBS=	`${PKG_CONFIG} --libs gimpui-2.0`
 
-LIB_DEPENDS+=	gimp-2.0.0:${PORTSDIR}/graphics/gimp-app
+LIB_DEPENDS+=	gimp-2.0.0:${PORTSDIR}/graphics/gimp-app-devel
 
 .else
 
