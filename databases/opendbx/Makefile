@@ -35,13 +35,6 @@ OPTIONS=	MYSQL	"Support for the MySQL database" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		doesn't build on FreeBSD < 5.x
-#post-patch:
-#	${REINPLACE_CMD} 's/stdint.h/inttypes.h/' ${WRKSRC}/lib/odbxlib.h
-#	${REINPLACE_CMD} 's/stdint.h/inttypes.h/' ${WRKSRC}/lib/odbx.h
-.endif
-
 .if !defined(WITH_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_SQLITE) && !defined(WITH_SQLITE3) && !defined(WITH_MSSQL)
 IGNORE=		needs at least one database backend
 .endif
