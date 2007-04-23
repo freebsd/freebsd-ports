@@ -1,5 +1,5 @@
 --- soundcard/ptt.c.orig	Sat Nov  9 10:31:53 2002
-+++ soundcard/ptt.c	Mon Nov  6 00:17:03 2006
++++ soundcard/ptt.c	Mon Apr 23 10:24:36 2007
 @@ -48,6 +48,9 @@
  
  #ifdef HAVE_LINUX_PPDEV_H
@@ -15,7 +15,7 @@
  struct modemparams pttparams[] = {
  	{ "file", "PTT Driver", "Path name of the serial or parallel port driver for outputting PTT", "none", MODEMPAR_COMBO, 
 +#ifdef __FreeBSD__
-+	  { c: { { "none", "/dev/ttyd0", "/dev/ttyd1", "/dev/lp0", "/dev/lp1" } } } },
++	  { c: { { "none", "/dev/ttyd0", "/dev/ttyd1", "/dev/ppi0", "/dev/ppi1" } } } },
 +#else
  	  { c: { { "none", "/dev/ttyS0", "/dev/ttyS1", "/dev/parport0", "/dev/parport1" } } } },
 +#endif
