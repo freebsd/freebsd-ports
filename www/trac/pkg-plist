@@ -159,6 +159,9 @@ bin/tracd
 %%PYTHON_SITELIBDIR%%/trac/upgrades/db19.py
 %%PYTHON_SITELIBDIR%%/trac/upgrades/db19.pyc
 %%PYTHON_SITELIBDIR%%/trac/upgrades/db19.pyo
+%%PYTHON_SITELIBDIR%%/trac/upgrades/db20.py
+%%PYTHON_SITELIBDIR%%/trac/upgrades/db20.pyc
+%%PYTHON_SITELIBDIR%%/trac/upgrades/db20.pyo
 %%PYTHON_SITELIBDIR%%/trac/upgrades/db3.py
 %%PYTHON_SITELIBDIR%%/trac/upgrades/db3.pyc
 %%PYTHON_SITELIBDIR%%/trac/upgrades/db3.pyo
@@ -304,6 +307,7 @@ bin/tracd
 %%EXAMPLESDIR%%/migrateticketmodel.py
 %%EXAMPLESDIR%%/sourceforge2trac.py
 %%EXAMPLESDIR%%/trac-post-commit-hook
+%%EXAMPLESDIR%%/trac-post-commit-hook.cmd
 %%EXAMPLESDIR%%/trac-pre-commit-hook
 %%DATADIR%%/cgi-bin/trac.cgi
 %%DATADIR%%/cgi-bin/trac.fcgi
