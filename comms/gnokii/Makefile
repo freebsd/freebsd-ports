@@ -18,7 +18,7 @@ COMMENT=	Tools to talk to GSM cellular phones
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE} --enable-security \
 			--with-xgnokiidir=${PREFIX}/share
@@ -42,20 +42,12 @@ WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD 4.x
-.endif
-
 .if exists(${LOCALBASE}/lib/libical.so.0)
 WITH_ICAL=	yes
 .endif
 
 .if defined(WITH_ICAL)
 LIB_DEPENDS+=	ical.0:${PORTSDIR}/devel/libical
-.endif
-
-.if ${OSVERSION} < 500000
-LIB_DEPENDS+=	krb5:${PORTSDIR}/security/heimdal
 .endif
 
 # If smsd is enabled check if MySQL or PostgreSQL are installed and
