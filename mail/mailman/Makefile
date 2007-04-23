@@ -7,7 +7,7 @@
 
 PORTNAME=	mailman
 DISTVERSION=	2.1.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.list.org/
@@ -88,7 +88,7 @@ MAIL_GID?=	mail
 .if defined(WITH_SENDMAIL) || defined(WITH_EXIM3) || defined(WITH_EXIM4)
 BROKEN=	choose only one MTA integration
 .endif
-MAIL_GID?=	nobody
+MAIL_GID?=	mailman
 .endif
 
 .if defined(WITH_CHINESE)
