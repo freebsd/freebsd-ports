@@ -983,6 +983,7 @@
     SUBDIR += py-django-devel
     SUBDIR += py-ez_web
     SUBDIR += py-fcgi
+    SUBDIR += py-feedfinder
     SUBDIR += py-flup
     SUBDIR += py-forgethtml
     SUBDIR += py-formencode
