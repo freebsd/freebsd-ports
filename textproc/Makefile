@@ -490,6 +490,7 @@
     SUBDIR += p5-Syntax-Highlight-Perl-Improved
     SUBDIR += p5-TeX-Encode
     SUBDIR += p5-TeX-Hyphen
+    SUBDIR += p5-Template-Declare
     SUBDIR += p5-Template-Extract
     SUBDIR += p5-Template-Magic
     SUBDIR += p5-Template-Plugin-Lingua-EN-Inflect
