@@ -1066,6 +1066,7 @@
     SUBDIR += rubygem-rubyfulsoup
     SUBDIR += rubygem-scrapi
     SUBDIR += rubygem-scrubyt
+    SUBDIR += rubygem-taggable
     SUBDIR += sams
     SUBDIR += sarg
     SUBDIR += sbox-dtc
