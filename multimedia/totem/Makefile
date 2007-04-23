@@ -8,7 +8,7 @@
 
 PORTNAME=	totem
 PORTVERSION=	2.18.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -81,11 +81,7 @@ LIB_DEPENDS+=	dvdnav.4:${PORTSDIR}/multimedia/libdvdnav
 .if defined(WITH_DVD_DEVICE)
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
 .else
-.if ${OSVERSION} < 500000
-DEFAULT_DVD_DEVICE=/dev/acd0c
-.else
 DEFAULT_DVD_DEVICE=/dev/acd0
-.endif
 .endif
 
 pre-everything::
@@ -101,10 +97,8 @@ post-patch:
 		${WRKSRC}/browser-plugin/idl/Makefile.in
 	@${REINPLACE_CMD} -e 's|dbus >= 0.61|dbus-1 >= 0.61|g' \
 	    	${WRKSRC}/configure
-.if defined(WITH_GSTREAMER)
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
 		${WRKSRC}/src/backend/bacon-video-widget-gst-0.10.c
-.endif
 
 post-install:
 	@-update-desktop-database
