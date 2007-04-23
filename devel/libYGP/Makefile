@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	libYGP
-PORTVERSION=	0.8.22
+PORTVERSION=	0.8.23
 CATEGORIES=	devel
 MASTER_SITES=	SF/libymp
 DISTNAME=	libYGP-${PORTVERSION}
@@ -26,8 +26,7 @@ CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} --with-gmp\
 		--disable-static --disable-rpath
 
 .if ${PORTNAME:M*XGP}
-LIB_DEPENDS+=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		YGP.0:${PORTSDIR}/devel/libYGP
+LIB_DEPENDS+=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 PLIST_SUB=	YGP="@comment " XGP=""
 CFG_PATCH=	s/mozembed/mozembedNO/g;
 XGP_PATCH=	s/(^@AM.*)?GtkMozViewer(.lo|.c|.Plo@am__quote@)//;
