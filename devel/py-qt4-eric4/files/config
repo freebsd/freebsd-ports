@@ -1,0 +1,22 @@
+# -*- coding: utf-8 -*-
+#
+# This module contains the configuration of the individual eric4 installation
+#
+
+cfg = {
+    'ericDir'              : 'PYTHON_SITELIBDIR/eric4',
+    'ericPixDir'           : 'PYTHON_SITELIBDIR/eric4',
+    'ericIconDir'          : 'PYTHON_SITELIBDIR/eric4',
+    'ericDTDDir'           : 'PYTHON_SITELIBDIR/eric4',
+    'ericCSSDir'           : 'PYTHON_SITELIBDIR/eric4',
+    'ericStylesDir'        : 'PYTHON_SITELIBDIR/eric4',
+    'ericDocDir'           : 'DOCSDIR',
+    'ericExamplesDir'      : 'EXAMPLESDIR',
+    'ericTranslationsDir'  : 'PYTHON_SITELIBDIR/eric4',
+    'ericWizardsDir'       : 'PYTHON_SITELIBDIR/eric4',
+    'ericTemplatesDir'     : 'PYTHON_SITELIBDIR/eric4',
+    'ericCodeTemplatesDir' : 'PYTHON_SITELIBDIR/eric4',
+    'ericOthersDir'        : 'PYTHON_SITELIBDIR/eric4',
+    'bindir'               : 'PREFIX/bin',
+    'mdir'                 : 'PREFIX/man'
+}
