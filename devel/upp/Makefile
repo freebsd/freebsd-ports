@@ -32,12 +32,6 @@ WRKSRC=	${WRKDIR}
 
 INSTALL_DIRS=	Common examples reference tutorial uppsrc
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Ultimate++ is not supported on FreeBSD 4.x
-.endif
-
 pre-everything::
 .if !defined(WITH_SDL)
 	@${ECHO_MSG} ""
@@ -87,4 +81,4 @@ post-install:
 	@${ECHO_CMD} @dirrm share/upp >> ${TMPPLIST}
 	@${RM} ${WRKSRC}/*.txt
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
