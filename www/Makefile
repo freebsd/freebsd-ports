@@ -1161,6 +1161,7 @@
     SUBDIR += usermanager
     SUBDIR += validator
     SUBDIR += varnish
+    SUBDIR += vee
     SUBDIR += visitors
     SUBDIR += vtiger
     SUBDIR += vtiger4
