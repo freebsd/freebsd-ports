@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	RTF-Tokenizer
-PORTVERSION=	1.09
+PORTVERSION=	1.10
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	RTF
@@ -18,5 +18,8 @@ COMMENT=	Perl module for reading RTF files
 PERL_CONFIGURE=	yes
 
 MAN3=	RTF::Tokenizer.3
+
+post-patch:
+	@${FIND} ${WRKSRC} -name ._Tokenizer.pm -delete
 
 .include <bsd.port.mk>
