@@ -803,6 +803,7 @@ bin/projectSynchro
 %%DATADIR%%/rose/rose.prj
 %%DATADIR%%/rose/stereotypes
 %%DATADIR%%/rose/tools
+%%DATADIR%%/roundtrip_body
 %%DATADIR%%/singleton/1024.bodies
 %%DATADIR%%/singleton/1152.bodies
 %%DATADIR%%/singleton/1280.bodies
