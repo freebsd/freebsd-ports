@@ -13560,6 +13560,7 @@ ru-p5-cyrillic	ports/russian/p5-cyrillic
 ru-pgp.language	ports/russian/pgp.language
 ru-prawda	ports/russian/prawda
 ru-pscyr	ports/russian/pscyr
+ru-ru-py-qt4-eric4	ports/russian/ru-py-qt4-eric4
 ru-ru_pscyr	ports/russian/pscyr
 ru-rubygem-rutils	ports/russian/rubygem-rutils
 ru-rus-ispell	ports/russian/rus-ispell
