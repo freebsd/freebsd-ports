@@ -12891,6 +12891,7 @@ py-telepathy-python	ports/net-im/telepathy-python
 py-testgears	ports/devel/py-testgears
 py-testoob	ports/devel/py-testoob
 py-tgwebservices	ports/www/py-tgwebservices
+py-timeoutsocket	ports/net/py-timeoutsocket
 py-tkinter	ports/x11-toolkits/py-tkinter
 py-tktreectrl	ports/x11-toolkits/py-tktreectrl
 py-tlslite	ports/security/py-tlslite
