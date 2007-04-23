@@ -7,6 +7,7 @@
 
 PORTNAME=	soundmodem
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.baycom.org/~tom/ham/soundmodem/ \
 		http://chronos.org.uk/distfiles/
@@ -40,9 +41,4 @@ post-patch:
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/soundmodem ${PREFIX}/etc/rc.d
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
