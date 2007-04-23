@@ -4680,6 +4680,7 @@ iiimf-x-lib	ports/textproc/iiimf-x-lib
 iip		ports/irc/iip
 ija		ports/news/ija
 ike-scan	ports/security/ike-scan
+ikiwiki		ports/www/ikiwiki
 iksemel		ports/textproc/iksemel
 ilbc		ports/net/ilbc
 ilias		ports/www/ilias
