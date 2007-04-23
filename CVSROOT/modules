@@ -12584,6 +12584,7 @@ py-fam		ports/devel/py-fam
 py-fastaudio	ports/audio/py-fastaudio
 py-fcgi		ports/www/py-fcgi
 py-fchksum	ports/security/py-fchksum
+py-feedfinder	ports/www/py-feedfinder
 py-feedparser	ports/textproc/py-feedparser
 py-fileutils	ports/devel/py-fileutils
 py-flac		ports/audio/py-flac
