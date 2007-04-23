@@ -39,6 +39,8 @@ lib/libdbi.so.0
 %%PORTDOCS%%%%DOCSDIR%%/programmers-guide/reference-query.html
 %%PORTDOCS%%%%DOCSDIR%%/programmers-guide/reference.html
 %%PORTDOCS%%%%DOCSDIR%%/programmers-guide/terminology.html
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/x267.html
+%%PORTDOCS%%%%DOCSDIR%%/programmers-guide/x278.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/programmers-guide
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/driver-guide
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
