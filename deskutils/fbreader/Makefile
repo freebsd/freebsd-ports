@@ -13,7 +13,7 @@ MASTER_SITES=	http://only.mawhrin.net/fbreader/ CENKES
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	infofarmer@FreeBSD.org
-COMMENT=	RSS feed reader for the text console
+COMMENT=	Powerful e-book reader
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		enca.5:${PORTSDIR}/converters/enca
