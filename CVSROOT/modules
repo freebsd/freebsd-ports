@@ -2988,6 +2988,7 @@ fr-aster	ports/french/aster
 fr-dico		ports/french/dico
 fr-eficas	ports/french/eficas
 fr-facturier	ports/french/facturier
+fr-fr-py-qt4-eric4	ports/french/fr-py-qt4-eric4
 fr-geonext	ports/french/geonext
 fr-gfaim	ports/french/gfaim
 fr-gibi		ports/french/gibi
