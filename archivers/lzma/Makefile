@@ -25,10 +25,11 @@ CFLAGS+=	-D_LZMA_SYSTEM_SIZE_T
 PORTDOCS=	7zC.txt 7zFormat.txt Methods.txt history.txt lzma.txt
 
 post-patch:
+	@${EGREP} -lr '(malloc.h|MyAlloc|MyFree)' ${WRKSRC}|\
+		${XARGS} ${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|'
 	@${REINPLACE_CMD} -e \
-		's|^CXX.*||; \
-		 s|CXX_C|CC|; \
-		 s|^CFLAGS =|CFLAGS +=|' \
+		's|^CXX.*||;s|CXX_C|CC|;s|^CFLAGS =|CFLAGS +=|;\
+		 s|Alloc.cpp|Alloc.c|;s|/Alloc.c|/C/Alloc.c|;/Alloc.c/s|CXX|CC|'\
 		${BUILD_WRKSRC}/${MAKEFILE}
 
 do-install:
