@@ -18,17 +18,15 @@ COMMENT=	Kwiki Theme with two/three column layout
 BUILD_DEPENDS=	${SITE_PERL}/Kwiki.pm:${PORTSDIR}/www/p5-Kwiki
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+DEPRECATED=		Already bundled in www/p5-Kwiki (0.39 or latter)
+EXPIRATION_DATE=	2007-07-28
+BROKEN=		${DEPRECATED}
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Kwiki::Theme::ColumnLayout.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
-.endif
-
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
