@@ -17,7 +17,7 @@ MAINTAINER=	matusita@FreeBSD.org
 COMMENT?=VMware guest OS supporting daemon (VMware Workstation 6.x, FreeBSD version)
 
 .if defined(VMWARE_X_PORTS)
-RUN_DEPENDS=	${LOCALBASE}/sbin/vmware-guestd:${PORTSDIR}/emulators/vmware-guestd5
+RUN_DEPENDS=	${LOCALBASE}/sbin/vmware-guestd:${PORTSDIR}/emulators/vmware-guestd6
 .endif
 
 DISTDIR=	${MOUNT_PT}
