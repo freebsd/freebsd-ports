@@ -1,40 +1,45 @@
---- Makefile.in.orig	Wed Feb 14 04:37:46 2007
-+++ Makefile.in	Thu Feb 22 19:52:33 2007
-@@ -4,17 +4,14 @@
+--- Makefile.in.orig	Tue Apr 10 14:08:58 2007
++++ Makefile.in	Sat Apr 21 23:23:50 2007
+@@ -4,7 +4,7 @@
  # Name the output files *.ol instead of *.o 
  # so we definitely know it is for Linux. 
  # (*.o files can be present by mistake) 
 -LCC	= gcc
-+LCC	= $(CC)
- # Use the mingw cross compiler for Windows
- # Name the output files *.ow instead of *.o 
++LCC	= ${CC}
+ WCC	= /usr/bin/i586-mingw32msvc-gcc
+ WINWCC  = C:\mingw\bin\mingw32-gcc
+ NASM	= nasm
+@@ -14,13 +14,10 @@
  # so we definitely know it is for Windows.
  # (*.o files can be present by mistake) 
- WCC	= /usr/bin/i586-mingw32msvc-gcc
  # Always use the same flags.
 -CFL	= -g -O -DOSNUM=1 -W -Wimplicit -Wreturn-type -Wformat \
---m32 -Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
+-@MEM@ -Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
 --Wparentheses -Wstrict-prototypes -Werror -ffast-math \
 --fomit-frame-pointer -c -o
-+CFL	= ${CFLAGS} -I/usr/X11R6/include -DOSNUM=1 -c -o
++CFL	= ${CFLAGS} -DOSNUM=1 -I${X11BASE}/include -c -o
  CFW	= -g -O -DOSNUM=2 -W -Wimplicit -Wreturn-type -Wformat \
  -Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
- -Wparentheses -Wstrict-prototypes -Werror -ffast-math \
-@@ -387,7 +384,7 @@
- meter_graph.ol fonts.ol screensub.ol membeg.ol lxsys.ol memend.ol
+--Wparentheses -Wstrict-prototypes -Werror -ffast-math \
++-Wparentheses -Wstrict-prototypes -ffast-math \
+ -fomit-frame-pointer -c -o
+ # Define dependencies for routines used both in Linux and Windows
+ 
+@@ -624,7 +621,7 @@
+ meter_graph.ol fonts.ol screensub.ol lxsys.ol 
  
  
 -	gcc -olinrad -lvgagl -lvga -lpthread -lm \
 +	$(CC) -olinrad -lvgagl -lvga -pthread -lm \
  -Wl,-Map,linrad.lmap,-warn-common \
- 	membeg.ol lmain.ol lvar.ol ui.ol lsetad.ol fft1.ol buf.ol \
+ 	lmain.ol lvar.ol ui.ol lsetad.ol fft1.ol buf.ol \
  mouse.ol wide_graph.ol getiq.ol fft0.ol adtest.ol hires_graph.ol \
-@@ -434,7 +431,7 @@
+@@ -671,7 +668,7 @@
  
  
  
 -	gcc -oxlinrad -L/usr/X11R6/lib -lX11 -lpthread -lm \
 +	$(CC) -oxlinrad -L/usr/X11R6/lib -lX11 -pthread -lm \
  -Wl,-Map,linrad.xmap,-warn-common \
- membeg.ol xmain.ol xvar.ol ui.ol lsetad.ol fft1.ol buf.ol lvar.ol \
+ xmain.ol xvar.ol ui.ol lsetad.ol fft1.ol buf.ol lvar.ol \
  mouse.ol wide_graph.ol getiq.ol fft0.ol adtest.ol hires_graph.ol \

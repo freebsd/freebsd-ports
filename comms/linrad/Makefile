@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	linrad
-PORTVERSION=	2.23
+PORTVERSION=	2.28
 CATEGORIES=	comms
 MASTER_SITES=	http://www.nitehawk.com/sm5bsz/linuxdsp/archive/\
 		http://g7rau.demon.co.uk/sm5bsz/linuxdsp/archive/\
 		http://www.sm5bsz.com/linuxdsp/archive/
-DISTNAME=	lir02-23
+DISTNAME=	lir02-28
 EXTRACT_SUFX=	.tbz
 DIST_SUBDIR=	${PORTNAME}
 
@@ -20,10 +20,11 @@ COMMENT=	Amateur Radio DSP utility (SDR)
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-02.23
+WRKSRC=		${WRKDIR}/${PORTNAME}-0${PORTVERSION}
 
-USE_AUTOTOOLS=	autoconf:253
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--prefix=${PREFIX} --sysconfdir=${PREFIX} --mandir=${PREFIX}/man
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 ALL_TARGET=	xlinrad
@@ -35,12 +36,6 @@ LINRAD_DOCFILES=	z_APM.txt z_BUFFERS.txt z_CALIBRATE.txt \
 			z_MOUSE.txt z_NETWORK.txt \
 			z_PARALLEL_PORT.txt z_SETTINGS.txt \
 			z_USERS_EXTRA.txt z_USERS_HWARE.txt
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD 4.x
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
@@ -70,4 +65,4 @@ do-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

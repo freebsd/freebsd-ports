@@ -1,5 +1,5 @@
---- lxsys.c.orig	Wed Feb 14 04:37:46 2007
-+++ lxsys.c	Thu Feb 22 18:44:17 2007
+--- lxsys.c.orig	Tue Apr 10 14:08:58 2007
++++ lxsys.c	Sat Apr 21 23:31:47 2007
 @@ -1,12 +1,14 @@
 -
 -#include <sys/io.h>
@@ -18,15 +18,23 @@
  #include <fcntl.h>
  #include <termios.h>
  #include "thrdef.h"
-@@ -17,6 +19,7 @@
- #include "ldef.h"
+@@ -18,8 +20,9 @@
  #include "hwaredef.h"
+ 
+ struct termios old_options;
+-char serport_name[]="/dev/ttyS?";
++char serport_name[]="/dev/ttyd?";
  
 +extern int saved_euid;
  
+ 
  void lirerr(int errcod)
+@@ -152,15 +155,13 @@
+ 
+ int lir_parport_permission(void)
  {
-@@ -60,11 +63,9 @@
+-int i;
++int i=0;
  // Get permission to write to the parallel port
  if(ui.parport < 0x400-4)
    {
@@ -41,7 +49,7 @@
    }
  if(i != 0)
    {
-@@ -209,11 +210,9 @@
+@@ -305,11 +306,9 @@
  int i;
  if(ui.parport < 0x400-4)
    {
@@ -56,7 +64,7 @@
    }
  if(i!=0)lirerr(764921);
  i=1000;
-@@ -226,11 +225,9 @@
+@@ -322,11 +321,9 @@
  int i;
  if(ui.parport < 0x400-4)
    {
