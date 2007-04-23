@@ -16,9 +16,12 @@ COMMENT=	Convert HTML into clean plain ASCII text
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-PLIST_FILES=	bin/${PORTNAME}.py
 
 post-patch:
 	@${REINPLACE_CMD} -e '1s|.*|#!${PYTHON_CMD}|' ${WRKSRC}/${PORTNAME}.py
+
+post-install:
+	@${CHMOD} 755 ${PYTHON_SITELIBDIR}/${PORTNAME}.py
+	@${LN} -sf ${PYTHON_SITELIBDIR}/${PORTNAME}.py ${PREFIX}/bin/
 
 .include <bsd.port.mk>
