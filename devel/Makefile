@@ -1831,6 +1831,7 @@
     SUBDIR += py-lxml
     SUBDIR += py-magic
     SUBDIR += py-mx-experimental
+    SUBDIR += py-myghtyutils
     SUBDIR += py-ncurses
     SUBDIR += py-nose
     SUBDIR += py-notifier
