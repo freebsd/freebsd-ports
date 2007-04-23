@@ -1,0 +1,11 @@
+--- modules/Makefile.orig	Thu Mar 15 12:27:54 2007
++++ modules/Makefile	Mon Apr 23 10:18:59 2007
+@@ -21,7 +21,7 @@
+ CAMLOPT = $(OCAMLFIND) ocamlopt $(DBG) $(LIB)
+ CAMLDEP = $(OCAMLFIND) ocamldep
+ LIB = -I ../lib
+-PP = -pp "camlp4o ../lib/xhtmlsyntax.cma -loc loc"
++PP = -pp "$(CAMLP4O) ../lib/xhtmlsyntax.cma -loc loc"
+ 
+ OBJS = $(FILES:.ml=.cmo)
+ 

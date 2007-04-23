@@ -1,0 +1,11 @@
+--- server/Makefile.orig	Thu Mar 15 12:27:55 2007
++++ server/Makefile	Mon Apr 23 10:19:29 2007
+@@ -41,7 +41,7 @@
+ CAMLDEP = $(OCAMLFIND) ocamldep
+ LIB = -thread -package netstring,$(NETSYS)ssl -I ../lib -I +camlp4
+ PP = 
+-PP2 = -pp "camlp4o ../lib/xhtmlsyntax.cma -- -loc loc"
++PP2 = -pp "$(CAMLP4O) ../lib/xhtmlsyntax.cma -- -loc loc"
+ 
+ CMAO = nums.cma dynlink.cma unix.cma \
+        ssl.cma pcre.cma $(NETSYSCMA) netstring.cma \
