@@ -1,7 +1,7 @@
 
 $FreeBSD$
 
---- modules/nathelper/nathelper.c
+--- modules/nathelper/nathelper.c.orig
 +++ modules/nathelper/nathelper.c
 @@ -110,14 +110,45 @@
   *
@@ -58,7 +58,7 @@ $FreeBSD$
  #include "../../parser/parse_to.h"
  #include "../../parser/parse_uri.h"
  #include "../../parser/parser_f.h"
-@@ -171,39 +203,31 @@
+@@ -171,39 +203,32 @@
  #define	NAT_UAC_TEST_S_1918	0x08
  #define	NAT_UAC_TEST_RPORT	0x10
  
@@ -84,6 +84,7 @@ $FreeBSD$
 -static char *send_rtpp_command(struct iovec *, int);
 +static int rtpp_test(struct rtpp_node*, int, int);
  static int unforce_rtp_proxy_f(struct sip_msg *, char *, char *);
++static int start_recording_f(struct sip_msg *, char *, char *);
  static int force_rtp_proxy0_f(struct sip_msg *, char *, char *);
  static int force_rtp_proxy1_f(struct sip_msg *, char *, char *);
  static int force_rtp_proxy2_f(struct sip_msg *, char *, char *);
@@ -104,7 +105,7 @@ $FreeBSD$
  struct socket_info* force_socket = 0;
  
  
-@@ -218,27 +242,51 @@
+@@ -218,27 +243,51 @@
  	{NULL, 0, 0}
  };
  
@@ -166,7 +167,7 @@ $FreeBSD$
  	{"unforce_rtp_proxy",  unforce_rtp_proxy_f,    0, 0,             REQUEST_ROUTE | ONREPLY_ROUTE | FAILURE_ROUTE },
  	{"force_rtp_proxy",    force_rtp_proxy0_f,     0, 0,             REQUEST_ROUTE | ONREPLY_ROUTE },
  	{"force_rtp_proxy",    force_rtp_proxy1_f,     1, 0,             REQUEST_ROUTE | ONREPLY_ROUTE },
-@@ -246,11 +294,16 @@
+@@ -246,11 +295,17 @@
  	{"nat_uac_test",       nat_uac_test_f,         1, fixup_str2int, REQUEST_ROUTE | ONREPLY_ROUTE | FAILURE_ROUTE },
  	{"fix_nated_register", fix_nated_register_f,   0, 0,             REQUEST_ROUTE },
  	{"add_rcv_param",      add_rcv_param_f,        0, 0,             REQUEST_ROUTE },
@@ -174,6 +175,7 @@ $FreeBSD$
 +	{"is_hold",		is_hold_f,	       0, 0,		 REQUEST_ROUTE | ONREPLY_ROUTE },
 +	{"start_moh",		start_moh_f,	       0, 0,		 REQUEST_ROUTE | ONREPLY_ROUTE },
 +	{"stop_moh",		stop_moh_f,	       0, 0,		 REQUEST_ROUTE | ONREPLY_ROUTE },
++	{"start_recording",	start_recording_f,     0, 0,		 REQUEST_ROUTE | ONREPLY_ROUTE },
  	{0, 0, 0, 0, 0}
  };
  
@@ -183,7 +185,7 @@ $FreeBSD$
  	{"ping_nated_only",       INT_PARAM, &ping_nated_only       },
  	{"rtpproxy_sock",         STR_PARAM, &rtpproxy_sock         },
  	{"rtpproxy_disable",      INT_PARAM, &rtpproxy_disable      },
-@@ -259,6 +312,10 @@
+@@ -259,6 +314,10 @@
  	{"rtpproxy_tout",         INT_PARAM, &rtpproxy_tout         },
  	{"received_avp",          INT_PARAM, &rcv_avp_no            },
  	{"force_socket",          STR_PARAM, &force_socket_str		},
@@ -194,7 +196,7 @@ $FreeBSD$
  	{0, 0, 0}
  };
  
-@@ -268,7 +325,7 @@
+@@ -268,7 +327,7 @@
  	params,
  	mod_init,
  	0, /* reply processing */
@@ -203,7 +205,7 @@ $FreeBSD$
  	0, /* on_break */
  	child_init
  };
-@@ -277,8 +334,6 @@
+@@ -277,8 +336,6 @@
  mod_init(void)
  {
  	int i;
@@ -212,7 +214,7 @@ $FreeBSD$
  	struct in_addr addr;
  	str socket_str;
  
-@@ -288,18 +343,9 @@
+@@ -288,18 +345,9 @@
  		force_socket=grep_sock_info(&socket_str,0,0);
  	}
  
@@ -234,7 +236,7 @@ $FreeBSD$
  	}
  
  	/* Prepare 1918 networks list */
-@@ -309,83 +355,154 @@
+@@ -309,83 +357,154 @@
  		nets_1918[i].netaddr = ntohl(addr.s_addr) & nets_1918[i].mask;
  	}
  
@@ -440,7 +442,7 @@ $FreeBSD$
  isnulladdr(str *sx, int pf)
  {
  	char *cp;
-@@ -440,7 +557,7 @@
+@@ -440,7 +559,7 @@
   * assumes the to header is already parsed, so
   * make sure it really is before calling this function
   */
@@ -449,7 +451,7 @@ $FreeBSD$
  get_to_tag(struct sip_msg* _m, str* _tag)
  {
  
-@@ -464,7 +581,7 @@
+@@ -464,7 +583,7 @@
  /*
   * Extract tag from From header field of a request
   */
@@ -458,7 +460,7 @@ $FreeBSD$
  get_from_tag(struct sip_msg* _m, str* _tag)
  {
  
-@@ -489,7 +606,7 @@
+@@ -489,7 +608,7 @@
   * (so make sure it is, before calling this function or
   *  it might fail even if the message _has_ a callid)
   */
@@ -467,7 +469,7 @@ $FreeBSD$
  get_callid(struct sip_msg* _m, str* _cid)
  {
  
-@@ -563,9 +680,13 @@
+@@ -563,9 +682,13 @@
  	if (anchor == 0)
  		return -1;
  
@@ -484,7 +486,7 @@ $FreeBSD$
  
  	cp = ip_addr2a(&msg->rcv.src_ip);
  	len = c->uri.len + strlen(cp) + 6 /* :port */ - hostport.len + 1;
-@@ -652,11 +773,22 @@
+@@ -652,11 +775,22 @@
  {
  	struct sip_uri uri;
  	contact_t* c;
@@ -508,7 +510,7 @@ $FreeBSD$
  }
  
  /*
-@@ -756,8 +888,8 @@
+@@ -756,8 +890,8 @@
  static int
  fix_nated_sdp_f(struct sip_msg* msg, char* str1, char* str2)
  {
@@ -519,7 +521,7 @@ $FreeBSD$
  	char *buf;
  	struct lump* anchor;
  
-@@ -804,37 +936,43 @@
+@@ -804,37 +938,43 @@
  	}
  
  	if (level & FIX_MEDIP) {
@@ -591,7 +593,7 @@ $FreeBSD$
  		}
  	}
  
-@@ -842,7 +980,7 @@
+@@ -842,7 +982,7 @@
  	return 1;
  }
  
@@ -600,7 +602,7 @@ $FreeBSD$
  extract_mediaip(str *body, str *mediaip, int *pf)
  {
  	char *cp, *cp1;
-@@ -856,7 +994,7 @@
+@@ -856,7 +996,7 @@
  		cp = cp1 + 2;
  	}
  	if (cp1 == NULL) {
@@ -609,7 +611,7 @@ $FreeBSD$
  		return -1;
  	}
  	mediaip->s = cp1 + 2;
-@@ -898,11 +1036,12 @@
+@@ -898,11 +1038,12 @@
  	return 1;
  }
  
@@ -624,7 +626,7 @@ $FreeBSD$
  
  	cp1 = NULL;
  	for (cp = body->s; (len = body->s + body->len - cp) > 0;) {
-@@ -915,32 +1054,62 @@
+@@ -915,32 +1056,62 @@
  		LOG(L_ERR, "ERROR: extract_mediaport: no `m=' in SDP\n");
  		return -1;
  	}
@@ -702,7 +704,7 @@ $FreeBSD$
  {
  	char *buf;
  	int offset;
-@@ -948,7 +1117,7 @@
+@@ -948,7 +1119,7 @@
  	str omip, nip, oip;
  
  	/* check that updating mediaip is really necessary */
@@ -711,7 +713,7 @@ $FreeBSD$
  		return 0;
  	if (newip->len == oldip->len &&
  	    memcmp(newip->s, oldip->s, newip->len) == 0)
-@@ -961,7 +1130,7 @@
+@@ -961,7 +1132,7 @@
  	 * another request comes.
  	 */
  #if 0
@@ -720,7 +722,7 @@ $FreeBSD$
  	 *  - alter_mediaip is called twice if 2 c= lines are present
  	 *    in the sdp (and we want to allow it)
  	 *  - the message flags are propagated in the on_reply_route
-@@ -976,7 +1145,7 @@
+@@ -976,7 +1147,7 @@
  	}
  #endif
  
@@ -729,7 +731,7 @@ $FreeBSD$
  		anchor = anchor_lump(msg, body->s + body->len - msg->buf, 0, 0);
  		if (anchor == NULL) {
  			LOG(L_ERR, "ERROR: alter_mediaip: anchor_lump failed\n");
-@@ -1052,7 +1221,7 @@
+@@ -1052,7 +1223,7 @@
  	return 0;
  }
  
@@ -738,7 +740,7 @@ $FreeBSD$
  alter_mediaport(struct sip_msg *msg, str *body, str *oldport, str *newport,
    int preserve)
  {
-@@ -1128,6 +1297,161 @@
+@@ -1128,6 +1299,161 @@
  	return 0;
  }
  
@@ -900,7 +902,7 @@ $FreeBSD$
  static char *
  gencookie()
  {
-@@ -1139,45 +1463,58 @@
+@@ -1139,45 +1465,58 @@
  }
  
  static int
@@ -980,7 +982,7 @@ $FreeBSD$
  {
  	struct sockaddr_un addr;
  	int fd, len, i;
-@@ -1187,10 +1524,10 @@
+@@ -1187,10 +1526,10 @@
  
  	len = 0;
  	cp = buf;
@@ -993,7 +995,7 @@ $FreeBSD$
  		    sizeof(addr.sun_path) - 1);
  #ifdef HAVE_SOCKADDR_SA_LEN
  		addr.sun_len = strlen(addr.sun_path);
-@@ -1199,12 +1536,12 @@
+@@ -1199,12 +1538,12 @@
  		fd = socket(AF_LOCAL, SOCK_STREAM, 0);
  		if (fd < 0) {
  			LOG(L_ERR, "ERROR: send_rtpp_command: can't create socket\n");
@@ -1008,7 +1010,7 @@ $FreeBSD$
  		}
  
  		do {
-@@ -1213,7 +1550,7 @@
+@@ -1213,7 +1552,7 @@
  		if (len <= 0) {
  			close(fd);
  			LOG(L_ERR, "ERROR: send_rtpp_command: can't send command to a RTP proxy\n");
@@ -1017,7 +1019,7 @@ $FreeBSD$
  		}
  		do {
  			len = read(fd, buf, sizeof(buf) - 1);
-@@ -1221,38 +1558,38 @@
+@@ -1221,38 +1560,38 @@
  		close(fd);
  		if (len <= 0) {
  			LOG(L_ERR, "ERROR: send_rtpp_command: can't read reply from a RTP proxy\n");
@@ -1063,7 +1065,7 @@ $FreeBSD$
  				}
  				if (len >= (v[0].iov_len - 1) &&
  				    memcmp(buf, v[0].iov_base, (v[0].iov_len - 1)) == 0) {
-@@ -1270,28 +1607,97 @@
+@@ -1270,28 +1609,97 @@
  		if (i == rtpproxy_retr) {
  			LOG(L_ERR, "ERROR: send_rtpp_command: "
  			    "timeout waiting reply from a RTP proxy\n");
@@ -1168,7 +1170,7 @@ $FreeBSD$
  	if (get_callid(msg, &callid) == -1 || callid.len == 0) {
  		LOG(L_ERR, "ERROR: unforce_rtp_proxy: can't get Call-Id field\n");
  		return -1;
-@@ -1307,29 +1713,139 @@
+@@ -1307,29 +1715,185 @@
  	STR2IOVEC(callid, v[3]);
  	STR2IOVEC(from_tag, v[5]);
  	STR2IOVEC(to_tag, v[7]);
@@ -1179,6 +1181,52 @@ $FreeBSD$
 +		return -1;
 +	}
 +	send_rtpp_command(node, v, (to_tag.len > 0) ? 8 : 6);
++
++	return 1;
++}
++
++static int
++start_recording_f(struct sip_msg* msg, char* str1, char* str2)
++{
++	int nitems;
++	str callid, from_tag, to_tag;
++	struct rtpp_node *node;
++	struct iovec v[1 + 4 + 3] = {{NULL, 0}, {"R", 1}, {" ", 1}, {NULL, 0}, {" ", 1}, {NULL, 0}, {" ", 1}, {NULL, 0}};
++						/* 1 */   /* 2 */   /* 3 */    /* 4 */   /* 5 */    /* 6 */   /* 1 */
++
++	if (get_callid(msg, &callid) == -1 || callid.len == 0) {
++		LOG(L_ERR, "ERROR: start_recording: can't get Call-Id field\n");
++		return -1;
++	}
++	if (get_to_tag(msg, &to_tag) == -1) {
++		LOG(L_ERR, "ERROR: start_recording: can't get To tag\n");
++		return -1;
++	}
++	if (get_from_tag(msg, &from_tag) == -1 || from_tag.len == 0) {
++		LOG(L_ERR, "ERROR: start_recording: can't get From tag\n");
++		return -1;
++	}
++	STR2IOVEC(callid, v[3]);
++	STR2IOVEC(from_tag, v[5]);
++	STR2IOVEC(to_tag, v[7]);
++	node = select_rtpp_node(callid, 1);
++	if (!node) {
++		LOG(L_ERR, "ERROR: start_recording: no available proxies\n");
++		return -1;
++	}
++	nitems = 8;
++	if (msg->first_line.type == SIP_REPLY) {
++		if (to_tag.len == 0)
++			return -1;
++		STR2IOVEC(to_tag, v[5]);
++		STR2IOVEC(from_tag, v[7]);
++	} else {
++		STR2IOVEC(from_tag, v[5]);
++		STR2IOVEC(to_tag, v[7]);
++		if (to_tag.len <= 0)
++			nitems = 6;
++	}
++	send_rtpp_command(node, v, nitems);
 +
 +	return 1;
 +}
@@ -1317,7 +1365,7 @@ $FreeBSD$
  
  	v[1].iov_base=opts;
  	asymmetric = flookup = force = real = 0;
-@@ -1374,13 +1890,6 @@
+@@ -1374,13 +1938,6 @@
  		}
  	}
  
@@ -1331,7 +1379,7 @@ $FreeBSD$
  	if (msg->first_line.type == SIP_REQUEST &&
  	    msg->first_line.u.request.method_value == METHOD_INVITE) {
  		create = 1;
-@@ -1409,14 +1918,7 @@
+@@ -1409,14 +1966,7 @@
  		LOG(L_ERR, "ERROR: force_rtp_proxy2: can't get From tag\n");
  		return -1;
  	}
@@ -1347,7 +1395,7 @@ $FreeBSD$
  	proxied = 0;
  	for (cp = body.s; (len = body.s + body.len - cp) >= ANORTPPROXY_LEN;) {
  		cp1 = ser_memmem(cp, ANORTPPROXY, len, ANORTPPROXY_LEN);
-@@ -1430,88 +1932,198 @@
+@@ -1430,88 +1980,207 @@
  	}
  	if (proxied != 0 && force == 0)
  		return -1;
@@ -1455,7 +1503,9 @@ $FreeBSD$
 +			create1 = create;
 +			if (flookup != 0) {
 +				if (!create || to_tag.len <= 0) {
++#if 0
 +					LOG(L_ERR, "force_rtp_proxy(): inappropriate 'l'\n");
++#endif
 +					return -1;
 +				}
 +				create1 = 0;
@@ -1533,7 +1583,14 @@ $FreeBSD$
 +			}
 +			port = atoi(argv[0]);
 +			if (port <= 0 || port > 65535) {
-+				LOG(L_ERR, "force_rtp_proxy2: incorrect port in reply from rtp proxy\n");
++				/*
++				 * In forced lookup mode absence of session indicated
++				 * by port number being zero is not an error condition
++				 * but merely of indication that there is no such
++				 * session in the proxy exists.
++				 */
++				if (port != 0 || flookup == 0)
++					LOG(L_ERR, "force_rtp_proxy2: incorrect port in reply from rtp proxy\n");
 +				return -1;
 +			}
  
@@ -1622,7 +1679,7 @@ $FreeBSD$
  
  	if (proxied == 0) {
  		cp = pkg_malloc(ANORTPPROXY_LEN * sizeof(char));
-@@ -1555,75 +2167,41 @@
+@@ -1555,75 +2224,41 @@
  	return force_rtp_proxy1_f(msg, arg, NULL);
  }
  
