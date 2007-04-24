@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	grace
-PORTVERSION=	5.1.20
-PORTREVISION=	2
+PORTVERSION=	5.1.21
 CATEGORIES=	math print
 #
 MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/stable/ \
@@ -27,30 +26,29 @@ LIB_DEPENDS=	Xbae:${PORTSDIR}/x11-toolkits/xbae 	\
 		jpeg.9:${PORTSDIR}/graphics/jpeg	\
 		png.5:${PORTSDIR}/graphics/png		\
 		t1:${PORTSDIR}/devel/t1lib		\
-		XmHTML.1:${PORTSDIR}/x11-toolkits/xmhtml \
+		XmHTML.1:${PORTSDIR}/x11-toolkits/xmhtml\
 		pdf.8:${PORTSDIR}/print/pdflib
 
 MAN1=		convcal.1 grace.1 xmgrace.1 gracebat.1 grconvert.1
 
-USE_X_PREFIX=	YES
 USE_GMAKE=	YES
 USE_MOTIF=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	\
 	--with-extra-incpath=${X11BASE}/include/X11:${LOCALBASE}/include \
 	--with-extra-ldpath=${LOCALBASE}/lib --without-bundled_xbae \
-	--enable-grace-home=${X11BASE}/lib/X11/grace
+	--enable-grace-home=${DATADIR}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 ALL_TARGET=	# empty
 INSTALL_TARGET=	install links
 
-post-patch:
+pre-configure:
 	@${REINPLACE_CMD} -e "s%-lXm %${MOTIFLIB} %" ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
 	if [ ! -e ${DOCSDIR} ]; then \
-	    ${LN} -s ${X11BASE}/lib/X11/grace/doc ${DOCSDIR}; \
+	    ${LN} -s ${DATADIR}/doc ${DOCSDIR}; \
 	fi
 .endif
 
