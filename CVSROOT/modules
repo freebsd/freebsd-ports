@@ -12901,6 +12901,7 @@ py-telepathy-butterfly	ports/net-im/telepathy-butterfly
 py-telepathy-python	ports/net-im/telepathy-python
 py-testgears	ports/devel/py-testgears
 py-testoob	ports/devel/py-testoob
+py-texttable	ports/textproc/py-texttable
 py-tgwebservices	ports/www/py-tgwebservices
 py-timeoutsocket	ports/net/py-timeoutsocket
 py-tkinter	ports/x11-toolkits/py-tkinter
