@@ -7,7 +7,7 @@
 
 PORTNAME=	tpop3d
 PORTVERSION=	1.5.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ex-parrot.com/~chris/tpop3d/
 
@@ -29,6 +29,7 @@ OPTIONS=	MYSQL		"Use MySQL authentication"			off \
 		PASSWDAUTH	"Use /etc/passwd authentication"		off \
 		FLATAUTH	"Use /etc/passwd-style flat file authentication"	off \
 		MAILDIR		"Compile Maildir support"			on \
+		MBOXINDICES	"Save Mbox indices"				off \
 		DRAC		"Enable DRAC RFC for POP-before-SMTP relaying"	off \
 		FIX_PERLAUTH	"Only try it if perl-auth coredumps"		off
 
@@ -72,8 +73,12 @@ CONFIGURE_ARGS+=	--enable-auth-flatfile
 CONFIGURE_ARGS+=	--enable-auth-passwd
 .endif
 
-.if !defined(WITHOUT_MAILDIR)
+.if defined(WITH_MAILDIR)
 CONFIGURE_ARGS+=	--enable-mbox-maildir
+.endif
+
+.if defined(WITH_MBOXINDICES)
+CONFIGURE_ARGS+=	--enable-mbox-bsd-save-indices
 .endif
 
 .if defined(WITH_DRAC)
