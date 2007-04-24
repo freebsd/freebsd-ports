@@ -150,10 +150,10 @@
     SUBDIR += ffproxy
     SUBDIR += fhttpd
     SUBDIR += firefox
-    SUBDIR += firefox15
     SUBDIR += firefox-devel
     SUBDIR += firefox-i18n
     SUBDIR += firefox-remote
+    SUBDIR += firefox15
     SUBDIR += flashplugin-mozilla
     SUBDIR += flat-frog
     SUBDIR += flock
@@ -228,9 +228,6 @@
     SUBDIR += jakarta-jmeter
     SUBDIR += jakarta-tomcat4
     SUBDIR += jakarta-tomcat5
-    SUBDIR += tomcat41
-    SUBDIR += tomcat55
-    SUBDIR += tomcat6
     SUBDIR += jdresolve
     SUBDIR += jesred
     SUBDIR += jetspeed
@@ -248,9 +245,9 @@
     SUBDIR += libgtkhtml
     SUBDIR += libhttpd-persistent
     SUBDIR += libwww
+    SUBDIR += lifetype
     SUBDIR += lightsquid
     SUBDIR += lighttpd
-    SUBDIR += lifetype
     SUBDIR += lilurl
     SUBDIR += linkcheck
     SUBDIR += linkchecker
@@ -331,13 +328,13 @@
     SUBDIR += mod_bunzip2
     SUBDIR += mod_bw
     SUBDIR += mod_cband
-    SUBDIR += mod_cplusplus
-    SUBDIR += mod_curb
     SUBDIR += mod_cfg_ldap
     SUBDIR += mod_cgi_debug
     SUBDIR += mod_chroot
     SUBDIR += mod_clamav
     SUBDIR += mod_color
+    SUBDIR += mod_cplusplus
+    SUBDIR += mod_curb
     SUBDIR += mod_cvs
     SUBDIR += mod_cvs2
     SUBDIR += mod_dav
@@ -1137,6 +1134,9 @@
     SUBDIR += tikiwiki
     SUBDIR += tinymce
     SUBDIR += tinyproxy
+    SUBDIR += tomcat41
+    SUBDIR += tomcat55
+    SUBDIR += tomcat6
     SUBDIR += trac
     SUBDIR += trac-accountmanager
     SUBDIR += trac-addcomment
@@ -1294,10 +1294,6 @@
     SUBDIR += ziproxy
     SUBDIR += znavigator
     SUBDIR += zope
-    SUBDIR += zope210
-    SUBDIR += zope28
-    SUBDIR += zope29
-    SUBDIR += zope3
     SUBDIR += zope-FileSystemSite
     SUBDIR += zope-annotations
     SUBDIR += zope-archetypes
@@ -1338,5 +1334,9 @@
     SUBDIR += zope-zmysqlda
     SUBDIR += zope-zsyncer
     SUBDIR += zope-zwiki
+    SUBDIR += zope210
+    SUBDIR += zope28
+    SUBDIR += zope29
+    SUBDIR += zope3
 
 .include <bsd.port.subdir.mk>
