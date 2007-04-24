@@ -20,10 +20,4 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 PLIST_SUB=	VER=${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
