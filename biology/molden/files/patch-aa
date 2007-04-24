@@ -1,5 +1,5 @@
---- makefile.orig	Mon Jul 10 13:48:03 2006
-+++ makefile	Sun Sep 17 14:53:34 2006
+--- makefile.orig	Thu Sep  7 19:55:00 2006
++++ makefile	Tue Apr 24 16:40:19 2007
 @@ -12,9 +12,27 @@
  #
  #	Disregard compiler warnings on rdmolf.f
@@ -47,20 +47,20 @@
  # 64 bit machines:
  #LIBS =  -L/usr/X11R6/lib64 -lX11 -lm
  #
-@@ -176,7 +194,7 @@
- # For The OpenGL Graphics library molden helper 'moldenogl'
- # (make moldenogl)
+@@ -178,7 +196,7 @@
+ # and the full opengl version of molden 'gmolden'
+ # (make gmolden)
  #
 -LIBSOGL = -lglut -lGLU -lGL -lXmu -lX11 -lm
 +LIBSOGL = -L${X11BASE}/lib -lglut -lGLU -lGL -lXmu -lX11 -lm
  #
  # on linux :
  #
-@@ -195,6 +213,8 @@
+@@ -201,7 +219,7 @@
  #
- #LIBSG = -L/usr/X11R6/lib -framework GLUT -framework OpenGL -framework Cocoa
- #
-+
+ #LIBSG = -L/usr/X11R6/lib -Wl,-framework -Wl,GLUT -Wl,-framework -Wl,OpenGL -Wl,-framework -Wl,Cocoa -lGLU -lGL -lXmu -lX11 -lm
+ 
+-
 +all: molden moldenogl
  
  molden:	$(OBJS) mpdum.o xwin.o 

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	molden
-PORTVERSION=	4.4
-PORTREVISION=	3
+PORTVERSION=	4.5
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.cmbi.kun.nl/pub/molgraph/molden/
 DISTNAME=	${PORTNAME}${PORTVERSION}
