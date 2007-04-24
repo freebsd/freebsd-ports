@@ -1009,6 +1009,7 @@
     SUBDIR += py-qp
     SUBDIR += py-qpy
     SUBDIR += py-restclient
+    SUBDIR += py-routes
     SUBDIR += py-scgi
     SUBDIR += py-scriptaculous
     SUBDIR += py-slimmer
