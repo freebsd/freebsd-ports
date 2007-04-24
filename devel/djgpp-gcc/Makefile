@@ -9,9 +9,9 @@ PORTNAME=	gcc
 PORTVERSION=	${GCCVERSION}
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.delorie.com/pub/djgpp/current/v2gnu/:djsource \
-		ftp://ftp.mirror.ac.uk/sites/www.delorie.com/current/v2/:djsource \
-		http://djgpp.linux-mirror.org/v2/:djsource \
-		http://djgpp.oss-mirror.org/v2/:djsource \
+		ftp://ftp.mirror.ac.uk/sites/www.delorie.com/current/v2gnu/:djsource \
+		http://djgpp.linux-mirror.org/v2gnu/:djsource \
+		http://djgpp.oss-mirror.org/v2gnu/:djsource \
 		${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTNAME}-${GCCVERSION}
 PKGNAMEPREFIX=	djgpp-
