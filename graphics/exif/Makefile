@@ -18,8 +18,16 @@ LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
 		popt.0:${PORTSDIR}/devel/popt
 
 GNU_CONFIGURE=	yes
-USE_ICONV=	yes
 CONFIGURE_ARGS=	--with-popt-prefix=${LOCALBASE}
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_ICONV=	yes
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 MAN1=		exif.1
 
