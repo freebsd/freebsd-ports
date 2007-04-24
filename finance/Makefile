@@ -7,6 +7,7 @@
     SUBDIR += aqmoney
     SUBDIR += cbb
     SUBDIR += expense
+    SUBDIR += gfp
     SUBDIR += gnofin
     SUBDIR += gnucash
     SUBDIR += gnucash-docs
