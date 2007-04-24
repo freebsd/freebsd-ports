@@ -7,7 +7,7 @@
 
 PORTNAME=	gsfonts
 PORTVERSION=	8.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print x11-fonts
 MASTER_SITES=	ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/fonts/ \
 		${MASTER_SITE_TEX_CTAN:S/$/:CTAN/}
@@ -60,6 +60,9 @@ install-fonts:
 	${INSTALL_DATA} ${WRKSRC}/fonts/fonts.scale ${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/fonts/fonts.scale.urw ${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/fonts/Fontmap ${FONTSDIR}
+	cd ${FONTSDIR} && \
+		${LN} -s -f ${LOCALBASE}/share/fonts/TrueType/ipam.ttf Ryumin-Light.ttf; \
+		${LN} -s -f ${LOCALBASE}/share/fonts/TrueType/ipag.ttf GothicBBB-Medium.ttf
 
 install-docs:
 .if !defined(NOPORTDOCS)

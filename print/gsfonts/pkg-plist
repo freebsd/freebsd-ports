@@ -152,6 +152,8 @@
 %%FONTSDIR%%/z003034l.afm
 %%FONTSDIR%%/z003034l.pfb
 %%FONTSDIR%%/z003034l.pfm
+%%FONTSDIR%%/Ryumin-Light.ttf
+%%FONTSDIR%%/GothicBBB-Medium.ttf
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.tweaks
