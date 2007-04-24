@@ -7320,9 +7320,9 @@
 @unexec rm -f  %D/%%TOOLDIR%%/onmetis
 @exec ln -sf %%LOCALBASE%%/bin/pmetis %D/%%TOOLDIR%%/
 @unexec rm -f  %D/%%TOOLDIR%%/pmetis
-%%GRACE%%@exec ln -sf %%X11BASE%%/bin/gracebat %D/%%TOOLDIR%%/
+%%GRACE%%@exec ln -sf %%LOCALBASE%%/bin/gracebat %D/%%TOOLDIR%%/
 %%GRACE%%@unexec rm -f  %D/%%TOOLDIR%%/gracebat
-%%GRACE%%@exec ln -sf %%X11BASE%%/bin/xmgrace %D/%%TOOLDIR%%/
+%%GRACE%%@exec ln -sf %%LOCALBASE%%/bin/xmgrace %D/%%TOOLDIR%%/
 %%GRACE%%@unexec rm -f  %D/%%TOOLDIR%%/xmgrace
 @unexec rm -rf  %D/%%TOOLDIR%% 2>&1 >/dev/null || true
 @dirrm %%ASTERDIR%%/materiau
