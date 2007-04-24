@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	tpp
-PORTVERSION=	1.3
+PORTVERSION=	1.3.1
 CATEGORIES=	misc
 MASTER_SITES=	http://synflood.at/tpp/
 
