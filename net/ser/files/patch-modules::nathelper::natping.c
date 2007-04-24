@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- /dev/null
 +++ modules/nathelper/natping.c
-@@ -0,0 +1,251 @@
+@@ -0,0 +1,252 @@
 +/* $Id: patch-modules::nathelper::natping.c,v 1.4 2005/04/27 13:35:34 sobomax Exp $
 + *
 + * Copyright (C) 2005 Porta Software Ltd
@@ -193,18 +193,16 @@ $FreeBSD$
 +			return;
 +		}
 +	}
-+	n = 0;
 +
 +	if (buf == NULL)
 +		return;
 +
 +	cp = buf;
++	n = 0;
 +	while (1) {
 +		memcpy(&(c.len), cp, sizeof(c.len));
 +		if (c.len == 0)
 +			break;
-+		if ((++n % 50) == 0)
-+			usleep(1);
 +		c.s = (char*)cp + sizeof(c.len);
 +		cp =  (char*)cp + sizeof(c.len) + c.len;
 +		if (parse_uri(c.s, c.len, &curi) < 0) {
@@ -213,6 +211,9 @@ $FreeBSD$
 +		}
 +		if (curi.proto != PROTO_UDP && curi.proto != PROTO_NONE)
 +			continue;
++
++		if ((++n % 50) == 0)
++			usleep(1);
 +
 +		if (natping_method != NULL) {
 +			p_method.s = natping_method;
