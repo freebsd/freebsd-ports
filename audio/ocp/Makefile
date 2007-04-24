@@ -7,7 +7,7 @@
 
 PORTNAME=	ocp
 PORTVERSION=	0.1.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://stian.lunafish.org/ocp/ \
 		http://critical.ch/distfiles/ \
@@ -19,7 +19,8 @@ COMMENT=	The legendary Open Cubic Player
 LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag \
 		mad.2:${PORTSDIR}/audio/libmad \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
-		sidplay.1:${PORTSDIR}/audio/libsidplay
+		sidplay.1:${PORTSDIR}/audio/libsidplay \
+		ncursesw.5:${PORTSDIR}/devel/ncurses
 
 ONLY_FOR_ARCHS=	i386
 
@@ -43,6 +44,16 @@ CONFIGURE_ARGS=	--with-dir-suffix="" \
 		--libdir=${LOCALBASE}/lib
 
 TIMIDITY_CFG=	${LOCALBASE}/share/timidity/timidity.cfg
+
+PFILES=		configure cpiface/cpianal.c cpiface/cpidots.c \
+		cpiface/cpiface.c cpiface/cpigraph.c cpiface/cpiinst.c \
+		cpiface/cpikube.c cpiface/cpilinks.c cpiface/cpimsg.c \
+		cpiface/cpiphase.c cpiface/cpiscope.c cpiface/cpitrack.c \
+		cpiface/mcpedit.c cpiface/volctrl.c filesel/cphlpfs.c \
+		filesel/pfilesel.c filesel/pfilesel.c.bak help/cphelper.c \
+		medialib/medialib.c playcda/cdapplay.c stuff/poutput-curses.c \
+		stuff/poutput-dga.c stuff/poutput-keyboard.c \
+		stuff/poutput-vcsa.c stuff/poutput-x11.c
 
 .include <bsd.port.pre.mk>
 
@@ -102,6 +113,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|<\(fnmatch.h\)>|"/usr/include/\1"|' \
 		${WRKSRC}/filesel/adb.c \
 		${WRKSRC}/filesel/pfilesel.c
+
+# use ncurses
+	@${REINPLACE_CMD} -e 's|-l\(curses\)|-ln\1w|' ${WRKSRC}/stuff/Makefile
+.for f in ${PFILES}
+	@${REINPLACE_CMD} -e \
+		's|#include.*<curses\.h.*|#include <ncurses/ncurses.h>|' \
+			${WRKSRC}/${f}
+.endfor
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ocp ${PREFIX}/bin
