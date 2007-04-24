@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ftp-proxy
-PORTVERSION=	4.1p1
+PORTVERSION=	4.1p2
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.chrissicool.net/projects/ftp-proxy/distfiles/
 
