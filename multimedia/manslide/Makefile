@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	manslide
-DISTVERSION=	1.5.2
+DISTVERSION=	1.5.5
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://csgib36.ifrance.com/Manslide/
 
@@ -18,8 +18,7 @@ RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 		mplayer:${PORTSDIR}/multimedia/mplayer \
 		mjpegtools>=1.8.0:${PORTSDIR}/multimedia/mjpegtools \
 		ImageMagick>=6.3.2.9:${PORTSDIR}/graphics/ImageMagick \
-		xvid4conf:${PORTSDIR}/multimedia/xvid4conf \
-		transcode:${PORTSDIR}/multimedia/transcode
+		xvid4conf:${PORTSDIR}/multimedia/xvid4conf
 
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui moc opengl qmake rcc uic \
@@ -27,8 +26,6 @@ QT_COMPONENTS=	corelib gui moc opengl qmake rcc uic \
 MANSLIDEDIR=	${PREFIX}/share/manslide
 
 MAKE_ENV?=	QTDIR=${QT_PREFIX}
-QMAKE?=		${LOCALBASE}/bin/qmake-qt4
-QMAKESPEC?=	${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
 WRKSRC=		${WRKDIR}/Manslide-${PORTVERSION}
 LANGUAGE_FILES=	_ca _en _pl _it _ru
 EFFECTS=	Explode Film Fire France Record Smoke Sunset
