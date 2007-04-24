@@ -773,6 +773,7 @@
     SUBDIR += py-rxp
     SUBDIR += py-sgrep
     SUBDIR += py-syck
+    SUBDIR += py-texttable
     SUBDIR += py-tvgrab
     SUBDIR += py-twistedLore
     SUBDIR += py-wordnet
