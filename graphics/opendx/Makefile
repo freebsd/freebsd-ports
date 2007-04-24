@@ -35,17 +35,17 @@ NO_MTREE=	yes
 PLIST_SUB=	ARCH=${OPSYS:L}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.if !defined(WITHOUT_HDF) && defined(WITH_NETCDF)
+.if defined(WITH_HDF) && !defined(WITHOUT_NETCDF)
 BROKEN=	HDF and NETCDF are conflicting
 .endif
 
-.if !defined(WITHOUT_HDF)
+.if defined(WITH_HDF)
 LIB_DEPENDS+=	mfhdf.2:${PORTSDIR}/science/hdf
 .else
 CONFIGURE_ARGS+=	--without-hdf
 .endif
 
-.if defined(WITH_NETCDF)
+.if !defined(WITHOUT_NETCDF)
 LIB_DEPENDS+=	netcdf.1:${PORTSDIR}/science/netcdf
 .else
 CONFIGURE_ARGS+=	--without-netcdf
