@@ -8,7 +8,9 @@
 PORTNAME=	xwota
 PORTVERSION=	0.4
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://people.fabaris.it/iz0ete/xwota/
+MASTER_SITES=	http://people.fabaris.it/iz0ete/xwota/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	db
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	X version of who is on the air
@@ -35,10 +37,4 @@ post-install:
 	@${ECHO} ""
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	does not build 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
