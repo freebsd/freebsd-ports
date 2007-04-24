@@ -711,7 +711,6 @@
     SUBDIR += xmms-osssurround
     SUBDIR += xmms-pipe
     SUBDIR += xmms-quix3dn
-    SUBDIR += xmms-real-random
     SUBDIR += xmms-sapplug
     SUBDIR += xmms-scrobbler
     SUBDIR += xmms-sexypsf

@@ -2943,3 +2943,4 @@ lang/gcc-objc|lang/gcc41|2007-04-21|Has expired, obsolete
 cad/geda-projectmanager||2007-04-23|Has expired: project dead
 audio/xmpeg3||2007-04-23|Has expired: does not work
 japanese/dvipdfm|print/dvipdfmx|2007-04-24|Obsolete
+audio/xmms-real-random||2007-04-24|Removed per maintainer's request, serious multimedia users have surely moved beyond xmms(1)
