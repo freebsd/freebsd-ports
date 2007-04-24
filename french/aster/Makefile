@@ -7,7 +7,7 @@
 
 PORTNAME=	aster
 DISTVERSION=	9.0.0-2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-full-src-${DISTVERSION}.noarch
@@ -108,7 +108,7 @@ PLIST_SUB+=	GMSH=""
 PLIST_SUB+=	GMSH="@comment "
 .endif
 .if !defined(WITHOUT_GRACE)
-RUN_DEPENDS+=	${X11BASE}/bin/xmgrace:${PORTSDIR}/math/grace
+RUN_DEPENDS+=	xmgrace:${PORTSDIR}/math/grace
 PLIST_SUB+=	GRACE=""
 .else
 PLIST_SUB+=	GRACE="@comment "
@@ -354,8 +354,8 @@ post-install:
 	${LN} -fs ${LOCALBASE}/bin/gmsh ${tools_dir}/
 .endif
 .if !defined(WITHOUT_GRACE)
-	${LN} -fs ${X11BASE}/bin/gracebat ${tools_dir}/
-	${LN} -fs ${X11BASE}/bin/xmgrace ${tools_dir}/
+	${LN} -fs ${LOCALBASE}/bin/gracebat ${tools_dir}/
+	${LN} -fs ${LOCALBASE}/bin/xmgrace ${tools_dir}/
 .endif
 	@${ECHO_MSG}
 	@${SED} -e "s#%%tools_dir%%#${tools_dir}#"	\
