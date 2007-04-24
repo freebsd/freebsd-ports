@@ -14,6 +14,13 @@ share/locale/ro/LC_MESSAGES/transmission-gtk.mo
 share/locale/ru/LC_MESSAGES/transmission-gtk.mo
 share/locale/sv/LC_MESSAGES/transmission-gtk.mo
 share/pixmaps/transmission.png
+@dirrmtry share/pixmaps
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/pl/LC_MESSAGES
+@dirrmtry share/locale/pl
+@dirrmtry share/locale/fi/LC_MESSAGES
+@dirrmtry share/locale/fi
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

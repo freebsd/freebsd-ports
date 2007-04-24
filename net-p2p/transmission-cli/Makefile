@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	0.70
+PORTVERSION=	0.71
 PORTREVISION?=	0
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
-DISTNAME=	Transmission-${PORTVERSION:S/70/7/}
+DISTNAME=	Transmission-${PORTVERSION}
 
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT?=	A free BitTorrent client written from scratch in C
 
-WRKSRC=		${WRKDIR}/Transmission-${PORTVERSION}
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS?=--prefix=${PREFIX} \
