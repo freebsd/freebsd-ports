@@ -7,7 +7,7 @@
 
 PORTNAME=	ser
 PORTVERSION=	0.9.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/ser/ \
 		http://download2.berlios.de/ser/
