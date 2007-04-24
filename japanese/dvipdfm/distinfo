@@ -1,6 +1,0 @@
-MD5 (dvipdfm-0.13.2c.tar.gz) = 82c2113261fad5c7f48d96c4515b731b
-SHA256 (dvipdfm-0.13.2c.tar.gz) = 2fa9be11385db74776f7ba229ec55ad558909b5e64fee49327486f9b07c5985c
-SIZE (dvipdfm-0.13.2c.tar.gz) = 216663
-MD5 (dvipdfm-0.13.2c-jpatch-p1c.diff.gz) = 688355ebe696af96451088c84970f0ec
-SHA256 (dvipdfm-0.13.2c-jpatch-p1c.diff.gz) = 815cf3f0a36c863f59c2f72ba1dbdcde7f11a7aa78fa96e04ae834c5459cb6eb
-SIZE (dvipdfm-0.13.2c-jpatch-p1c.diff.gz) = 15377
