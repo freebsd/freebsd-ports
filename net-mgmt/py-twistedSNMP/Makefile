@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:L}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedSNMP-${PORTVERSION}
 
-MAINTAINER=	v.velox@vvelox.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Twisted Python framework for doing SNMP stuff
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twistedCore \
