@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	crm114
-PORTVERSION=	20070301
+PORTVERSION=	20070406
 # WARNING change versionname in CRM114RELEASENAME too.
 # portlint didn't like this variable at this place.
 # So I have to put it down in this file.
@@ -25,7 +25,7 @@ LIB_DEPENDS=	tre.6:${PORTSDIR}/textproc/libtre
 # there is no other then formail on this planet
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
-CRM114RELEASENAME=BlameBaltar
+CRM114RELEASENAME=BlameSpamConf
 
 USE_GETTEXT=	yes
 USE_ICONV=	yes
@@ -47,8 +47,9 @@ CRM_FILES=	mailfilter.crm mailtrainer.crm procmailrc.recipe mailfilter.cf \
 		mailreaver.crm shuffle.crm maillib.crm
 
 post-patch:
-	@${REINPLACE_CMD} -Ee 's,^((LD|C)FLAGS),#\1,;;s,^(prefix=),#\1,;;s,^(.*-install),#\1,' \
-		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -Ee \
+	  's,^((LD|C)FLAGS),#\1,;;s,^(prefix=),#\1,;;s,^(.*-install),#\1,' \
+	  ${WRKSRC}/Makefile
 
 # Peter Jeremy recommended the use of b64decode and md5 20040302
 post-install:
@@ -56,14 +57,17 @@ post-install:
 		-e 's|/mewdecode/|/b64decode -pr/|' ${WRKSRC}/mailfilter.cf
 	@${REINPLACE_CMD} -e 's|/md5sum/|/md5 -r/|' \
 		-e 's|#!.*/usr/bin/crm.*|#!${PREFIX}/bin/crm|' \
-		${WRKSRC}/mailfilter.crm ${WRKSRC}/mailtrainer.crm ${WRKSRC}/mailreaver.crm
+		${WRKSRC}/mailfilter.crm ${WRKSRC}/mailtrainer.crm \
+		${WRKSRC}/mailreaver.crm ${WRKSRC}/shuffle.crm
 	@for i in priolist.mfp whitelist.mfp; do \
 		${CP} ${WRKSRC}/$${i}.example ${WRKSRC}/$${i}; \
 	done
 .ifdef(WITH_NORMALIZEMIME)
-	@${REINPLACE_CMD} -Ee 's|^#(.*/normalizemime/)|\1|' ${WRKSRC}/mailfilter.cf
+	@${REINPLACE_CMD} -Ee 's|^#(.*/normalizemime/)|\1|' \
+	  ${WRKSRC}/mailfilter.cf
 .else
-	@${REINPLACE_CMD} -Ee 's|^#(.*/b64decode -pr/)|\1|' ${WRKSRC}/mailfilter.cf
+	@${REINPLACE_CMD} -Ee 's|^#(.*/b64decode -pr/)|\1|' \
+	  ${WRKSRC}/mailfilter.cf
 .endif
 	@${MKDIR} ${EXAMPLESDIR}
 	@for i in ${CRM_FILES}; do \
