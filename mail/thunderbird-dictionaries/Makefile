@@ -8,7 +8,7 @@
 
 PORTNAME=	thunderbird-dictionaries
 PORTVERSION=	20060220
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZDEV}
 MASTER_SITE_SUBDIR=	dictionaries
@@ -18,7 +18,7 @@ DIST_SUBDIR=	thunderbird
 MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	Dictionaries for Mozilla Thunderbird
 
-RUN_DEPENDS=	thunderbird:${PORTSDIR}/mail/thunderbird
+RUN_DEPENDS=	thunderbird>=2.0.0.0:${PORTSDIR}/mail/thunderbird
 
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/dictionaries
@@ -168,23 +168,22 @@ do-build:
 
 # Install the requested dictionaries
 do-install:
-	@${MKDIR} ${PREFIX}/lib/thunderbird/components/myspell
 .for f in ${ALLDICTS}
 .ifdef(WITH_DICT_${f})
 .if ${BG_DICT}==${f}
 	@${INSTALL_DATA} \
 		${WRKSRC}/${${f}_FILE}/bin/components/myspell/${${f}_FILE:S/spell-//:S/xpi//}aff \
-		${PREFIX}/lib/thunderbird/components/myspell
+		${PREFIX}/lib/thunderbird/dictionaries
 	@${INSTALL_DATA} \
 		${WRKSRC}/${${f}_FILE}/bin/components/myspell/${${f}_FILE:S/spell-//:S/xpi//}dic \
-		${PREFIX}/lib/thunderbird/components/myspell
+		${PREFIX}/lib/thunderbird/dictionaries
 .else
 	@${INSTALL_DATA} \
 		${WRKSRC}/${${f}_FILE}/${${f}_FILE:S/spell-//:S/xpi//}aff \
-		${PREFIX}/lib/thunderbird/components/myspell
+		${PREFIX}/lib/thunderbird/dictionaries
 	@${INSTALL_DATA} \
 		${WRKSRC}/${${f}_FILE}/${${f}_FILE:S/spell-//:S/xpi//}dic \
-		${PREFIX}/lib/thunderbird/components/myspell
+		${PREFIX}/lib/thunderbird/dictionaries
 .endif
 .endif
 .endfor
