@@ -44,8 +44,6 @@ $FreeBSD$
 +/* Parameters from nathelper.c */
 +extern struct socket_info* force_socket;
 +
-+int natpinger_child_init(int);
-+int natpinger_cleanup(void);
 +/* Functions from nathelper.c */
 +int isnulladdr(str *, int);
 +int get_to_tag(struct sip_msg* _m, str* _tag);
@@ -67,6 +65,8 @@ $FreeBSD$
 +
 +/* Functions from natping.c */
 +int natpinger_init(void);
++int natpinger_child_init(int);
++int natpinger_cleanup(void);
 +
 +/* Variables from moh.c referenced from nathelper.c */
 +extern char *pname_audio;
