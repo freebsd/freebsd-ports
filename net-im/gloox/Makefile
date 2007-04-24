@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gloox
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.8
 CATEGORIES=	net-im
 MASTER_SITES=	http://camaya.net/download/
 
@@ -25,16 +25,10 @@ CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
 
-.include <bsd.port.pre.mk>
-
-.if (${OSVERSION} < 500000)
-BROKEN=		does not build on FreeBSD < 5.x
-.endif
-
 post-install:
 	@${FIND} ${PREFIX}/include/gloox ! -type d | \
 		${SED} "s,${PREFIX}/,," >> ${TMPPLIST}
 	@${FIND} ${PREFIX}/include/gloox -type d | ${SORT} -r | \
 		${SED} "s,${PREFIX}/,@dirrm ," >> ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
