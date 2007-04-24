@@ -8,7 +8,7 @@
 
 PORTNAME=	opendx
 PORTVERSION=	4.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics math
 MASTER_SITES=	http://opendx.npaci.edu/source/
 DISTNAME=	dx-${PORTVERSION}
@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	--without-hdf
 .endif
 
 .if !defined(WITHOUT_NETCDF)
-LIB_DEPENDS+=	netcdf.1:${PORTSDIR}/science/netcdf
+LIB_DEPENDS+=	netcdf.4:${PORTSDIR}/science/netcdf
 .else
 CONFIGURE_ARGS+=	--without-netcdf
 .endif
