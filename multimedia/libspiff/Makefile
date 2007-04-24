@@ -14,8 +14,8 @@ MASTER_SITE_SUBDIR=	libspiff
 MAINTAINER=	ed@fxq.nl
 COMMENT=	An XSPF parsing library
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/liburiparser.a:${PORTSDIR}/net/uriparser
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
+		uriparser.0:${PORTSDIR}/net/uriparser
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-expat=${LOCALBASE}
