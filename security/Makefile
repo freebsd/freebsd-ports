@@ -9,6 +9,7 @@
     SUBDIR += aafid2
     SUBDIR += acid
     SUBDIR += aescrypt
+    SUBDIR += aespipe
     SUBDIR += aide
     SUBDIR += aimsniff
     SUBDIR += altivore
