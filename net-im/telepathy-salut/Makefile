@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	telepathy-salut
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -14,8 +14,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Link-local Connection Manager for Telepathy Framework
 
 LIB_PC_DEPENDS=	gobject-2.0.pc:${PORTSDIR}/devel/glib20 \
-		dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib \
-		avahi-glib.pc:${PORTSDIR}/net/avahi
+		avahi-glib.pc:${PORTSDIR}/net/avahi \
+		telepathy-glib.pc:${PORTSDIR}/net-im/telepathy-glib
 
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
@@ -26,6 +26,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_OPENSSL=	yes
+USE_PYTHON_BUILD=	yes
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
