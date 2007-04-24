@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	imagezoom
-PORTVERSION=	0.2.7
+PORTVERSION=	0.3
 CATEGORIES=	www
-MASTER_SITES=	http://imagezoom.yellowgorilla.net/ CSME
+MASTER_SITES=	http://imagezoom.yellowgorilla.net/ CENKES
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	triosoft@triosoft.com.ua
