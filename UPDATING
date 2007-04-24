@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070423:
+  AFFECTS: users of www/p5-Kwiki
+  AUTHORS: clsung@FreeBSD.org
+
+  The current version of Kwiki contains all plugins.
+  To upgrade from old version ( prior to 0.39):
+
+  # cd <into your Kwiki site directory>
+  # rm index.cgi
+  # rm -rf ./lib  # Remove ./lib, if you have one
+  # kwiki -update
+
+  And you are safe to uninstall www/p5-Kwiki-*, which also means
+  you do not have to install www/p5-Kwiki-*.
+
 20070408:
   AFFECTS: users of japanese/ptex{,-base,-tetex}
   AUTHOR: hrs@FreeBSD.org
