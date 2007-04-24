@@ -8,15 +8,6 @@
  
  PLATFORM_WIN32 = 0
  PLATFORM_LINUX = 1
-@@ -117,7 +117,7 @@
- 	pyExtSuffix = '.pyd'
- elif platform == PLATFORM_LINUX:
- 	localIncPaths = [ 'cpp' ]
--	pyIncPaths = [ '/usr/include/python2.4' ]
-+	pyIncPaths = [ '/usr/local/include/python2.4' ]
- 	boostPyIncPaths = []
- 	standardIncPaths = []
- 	localLibPaths = [ '.' ]
 @@ -140,9 +140,24 @@
  
  extLibs = pyLibs + boostPyLibs + glLibs

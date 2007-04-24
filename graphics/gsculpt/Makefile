@@ -2,11 +2,12 @@
 # Date created:			Oct 10, 2001
 # Whom:				ijliao
 #
+# $Carpetsmoker: ports/gsculpt/Makefile,v 1.3 2007/04/22 12:24:12 carpetsmoker Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	gsculpt
-PORTVERSION=	0.99.39
+PORTVERSION=	0.99.39.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -35,7 +36,7 @@ USE_LDCONFIG=	${PREFIX}/lib/gSculpt
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/include/python2.4|/usr/local/include/python2.4|" \
+	@${REINPLACE_CMD} -e "s|/usr/include/python2.4|${LOCALBASE}/include/python2.4|" \
 		${WRKSRC}/SConstruct
 	@${REINPLACE_CMD} -e "s|gsculpt.py|${PYTHONPREFIX_SITELIBDIR}/gSculpt/gsculpt.py|" \
 		${WRKSRC}/gsculpt
