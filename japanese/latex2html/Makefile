@@ -7,7 +7,7 @@
 
 PORTNAME=	latex2html
 PORTVERSION=	${VERSION}j${JP_VERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/${PORTNAME}
@@ -23,7 +23,7 @@ COMMENT=	Japanese LaTeX2HTML with JA patch
 
 BUILD_DEPENDS=	platex:${PORTSDIR}/japanese/ptex \
 		dvips:${PORTSDIR}/japanese/dvipsk \
-		gs:${PORTSDIR}/japanese/ghostscript-gnu-jpnfont \
+		${LOCALBASE}/share/ipa-ttfonts/fonts/COPYING.font.ja:${PORTSDIR}/japanese/ipa-ttfonts \
 		anytopnm:${PORTSDIR}/graphics/netpbm
 
 CONFLICTS=	latex2html-[0-9]*
@@ -32,6 +32,7 @@ VERSION=	2002.2.1
 JP_VERSION=	2.0
 
 USE_PERL5=	yes
+USE_GHOSTSCRIPT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--shlibdir=${DATADIR} \
 		--enable-png \
