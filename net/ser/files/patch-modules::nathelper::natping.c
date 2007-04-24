@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- modules/nathelper/natping.c.orig
+--- /dev/null
 +++ modules/nathelper/natping.c
-@@ -0,0 +1,190 @@
+@@ -0,0 +1,251 @@
 +/* $Id: patch-modules::nathelper::natping.c,v 1.4 2005/04/27 13:35:34 sobomax Exp $
 + *
 + * Copyright (C) 2005 Porta Software Ltd
@@ -31,6 +31,8 @@ $FreeBSD$
 + *
 + */
 +
++#include <unistd.h>
++#include <signal.h>
 +#include "../usrloc/usrloc.h"
 +#include "../tm/tm_load.h"
 +#include "../../dprint.h"
@@ -50,6 +52,7 @@ $FreeBSD$
 + */
 +char *natping_method = NULL;
 +
++static pid_t aux_process = -1;
 +static usrloc_api_t ul;
 +/* TM bind */
 +static struct tm_binds tmb;
@@ -57,6 +60,7 @@ $FreeBSD$
 +static const char sbuf[4] = {0, 0, 0, 0};
 +
 +static void natping(unsigned int ticks, void *param);
++static void natping_cycle(void);
 +
 +int
 +natpinger_init(void)
@@ -92,16 +96,70 @@ $FreeBSD$
 +				return -1;
 +		}
 +
-+		register_timer(natping, NULL, natping_interval);
++		/*
++		 * Use timer only in single process. For forked SER,
++		 * use separate process (see natpinger_child_init())
++		 */
++		if (dont_fork)
++			register_timer(natping, NULL, natping_interval);
 +	}
 +
 +	return 0;
 +}
 +
++int
++natpinger_child_init(int rank)
++{
++
++	/* If forking is prohibited, use only timer. */
++	if (dont_fork)
++		return 0;
++
++	/* don't do anything for main process and TCP manager process */
++	if (rank == PROC_MAIN || rank == PROC_TCP_MAIN)
++		return 0;
++
++	/* only child 1 will fork the aux process */
++	if (rank != 1)
++		return 0;
++
++	aux_process = fork();
++	if (aux_process == -1) {
++		LOG(L_ERR, "natping_child_init(): fork: %s\n", strerror(errno));
++		return -1;
++	}
++	if (aux_process == 0) {
++		natping_cycle();
++		/*UNREACHED*/
++		_exit(1);
++	}
++	return 0;
++}
++
++int
++natpinger_cleanup(void)
++{
++
++	if (aux_process != -1)
++		kill(aux_process, SIGTERM);
++	return 0;
++}
++
++static void
++natping_cycle(void)
++{
++
++	signal(SIGTERM, SIG_DFL); /* no special treat */
++	for(;;) {
++		sleep(natping_interval);
++		natping(0, NULL);
++	}
++}
++
 +static void
 +natping(unsigned int ticks, void *param)
 +{
-+	int rval;
++	int rval, n;
 +	void *buf, *cp;
 +	str c;
 +	struct sip_uri curi;
@@ -135,6 +193,7 @@ $FreeBSD$
 +			return;
 +		}
 +	}
++	n = 0;
 +
 +	if (buf == NULL)
 +		return;
@@ -144,6 +203,8 @@ $FreeBSD$
 +		memcpy(&(c.len), cp, sizeof(c.len));
 +		if (c.len == 0)
 +			break;
++		if ((++n % 50) == 0)
++			usleep(1);
 +		c.s = (char*)cp + sizeof(c.len);
 +		cp =  (char*)cp + sizeof(c.len) + c.len;
 +		if (parse_uri(c.s, c.len, &curi) < 0) {
