@@ -7,6 +7,7 @@
 
 PORTNAME=		Text-MeCab
 PORTVERSION=		0.15
+PORTREVISION=		1
 CATEGORIES=		japanese textproc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
@@ -22,9 +23,20 @@ MAN3=			Text::MeCab.3 \
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	</dev/null
 
+# dictionary encoding (euc-jp, shift_jis, utf8)
+ENCODING?=	euc-jp
+
 post-patch:
-	# To prevent CCFLAGS value from being overwritten by the ports system
+# To prevent CCFLAGS value from being overwritten by the ports system
 	@${REINPLACE_CMD} -e 's|CCFLAGS|DEFINE|g' ${WRKSRC}/Makefile.PL
+
+.if ${ENCODING} == "shift_jis"
+	@${REINPLACE_CMD} -e '/my \$$encoding = /s/euc-jp/shift_jis/' \
+		${WRKSRC}/tools/probe_mecab.pl
+.elif ${ENCODING} == "utf8"
+	@${REINPLACE_CMD} -e '/my \$$encoding = /s/euc-jp/utf8/' \
+		${WRKSRC}/tools/probe_mecab.pl
+.endif
 
 .include <bsd.port.pre.mk>
 
