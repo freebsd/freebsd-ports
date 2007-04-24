@@ -47,10 +47,6 @@ ALL_TARGET=
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=${FILESDIR}/extra_patch-*
-.endif
-
 .if ${VSCAN_SAMBA_PORT} != "samba3"
 VFSDIR=lib/samba
 .endif
