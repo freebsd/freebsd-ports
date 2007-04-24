@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uriparser
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	uriparser
@@ -16,6 +16,7 @@ COMMENT=	URI parsing library
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-CFLAGS+=	-fPIC
+USE_AUTOTOOLS=	libtool:15
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

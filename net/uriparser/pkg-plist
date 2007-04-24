@@ -7,4 +7,7 @@ include/uriparser/UriDefsUnicode.h
 include/uriparser/UriIp4.h
 include/uriparser/UriIp4Base.h
 lib/liburiparser.a
+lib/liburiparser.la
+lib/liburiparser.so
+lib/liburiparser.so.0
 @dirrm include/uriparser
