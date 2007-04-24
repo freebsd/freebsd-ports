@@ -12835,6 +12835,7 @@ py-reverse	ports/devel/py-reverse
 py-rijndael	ports/security/py-rijndael
 py-rlcompleter2	ports/devel/py-rlcompleter2
 py-ro		ports/devel/py-ro
+py-routes	ports/www/py-routes
 py-roxlib	ports/devel/py-roxlib
 py-rrdpipe	ports/net/py-rrdpipe
 py-rrdtool_lgpl	ports/net/py-rrdtool_lgpl
