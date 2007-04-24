@@ -263,6 +263,7 @@ advi		ports/print/advi
 adzap		ports/www/adzap
 aee		ports/editors/aee
 aescrypt	ports/security/aescrypt
+aespipe		ports/security/aespipe
 aestats		ports/games/aestats
 aewan		ports/editors/aewan
 aewm		ports/x11-wm/aewm
