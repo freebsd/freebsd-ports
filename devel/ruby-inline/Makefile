@@ -21,6 +21,10 @@ USE_RUBY=	yes
 USE_GMAKE=	yes
 RUBY_SHEBANG_FILES=${WRKSRC}/inline_package
 
+DEPRECATED=		New versions only available in rubygems. Use devel/rubygem-inline instead.
+EXPIRATION_DATE=	2007-05-24
+BROKEN=		${DEPRECATED}
+
 NO_BUILD=	yes
 
 DOCS=		README.txt History.txt
