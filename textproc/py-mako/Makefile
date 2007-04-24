@@ -18,9 +18,9 @@ DISTNAME=	Mako-${PORTVERSION}
 MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	Super-fast templating language in Python
 
-BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools
-RUN_DEPENDS+=	${BUILD_DEPENDS} \
-		${PYTHON_PKGNAMEPREFIX}myghtyutils>=0.52:${PORTSDIR}/devel/py-myghtyutils \
+BUILD_DEPENDS=	${EASY_INSTALL_CMD}:${PORTSDIR}/devel/py-setuptools \
+		${PYTHON_PKGNAMEPREFIX}myghtyutils>=0.52:${PORTSDIR}/devel/py-myghtyutils
+RUN_DEPENDS+=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
