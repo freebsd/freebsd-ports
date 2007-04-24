@@ -8,6 +8,7 @@
 
 PORTNAME=	scapy
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://secdev.org/projects/scapy/files/
 
@@ -27,7 +28,11 @@ NO_BUILD=	yes
 
 OPTIONS=	PYX "Support for PostScript and PDF graphs drawing" off \
 		PYCRYPTO "Support for py-crypto for WEP decoding" off \
-		PYGNUPLOT "Support for py-gnuplot wrapper to plot graphs" off
+		PYGNUPLOT "Support for py-gnuplot wrapper to plot graphs" off \
+		P0F_BASE "Support for p0f OS signatures database" off \
+		QUESO_BASE "Support for queso OS signatures database" off \
+		NMAP "Support for nmap OS signatures database" off \
+		MANUF "Support for wireshark's MANUF MAC database" off
 
 .include <bsd.port.pre.mk>
 
@@ -41,6 +46,22 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-py
 
 .if defined(WITH_PYGNUPLOT)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot/__init__.py:${PORTSDIR}/math/py-gnuplot
+.endif
+
+.if defined(WITH_P0F_BASE)
+RUN_DEPENDS+=	${PREFIX}/etc/p0f/p0f.fp:${PORTSDIR}/net-mgmt/p0f
+.endif
+
+.if defined(WITH_QUESO_BASE)
+RUN_DEPENDS+=	${PREFIX}/etc/queso.conf:${PORTSDIR}/net/queso
+.endif
+
+.if defined(WITH_NMAP)
+RUN_DEPENDS+=	${PREFIX}/share/nmap/nmap-os-fingerprints:${PORTSDIR}/security/nmap
+.endif
+
+.if defined(WITH_MANUF)
+RUN_DEPENDS+=	${PREFIX}/share/wireshark/manuf:${PORTSDIR}/net/wireshark
 .endif
 
 do-install:
