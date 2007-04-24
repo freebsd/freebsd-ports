@@ -31,8 +31,8 @@ SUB_LIST=	CONF_FILES="${CONF_FILES}" CONF_DIR="${PREFIX}/etc/dcd"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 600000
-BROKEN=		Does not compile on 5.x
+.if ${OSVERSION} < 600020
+EXTRA_PATCHES=	${PATCHDIR}/extra-src-net.h
 .endif
 
 post-patch:
