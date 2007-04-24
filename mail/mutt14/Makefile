@@ -65,7 +65,7 @@ LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
 .if !defined (MUTT_LITE)
 .if defined(WITH_MUTT_CYRUS_SASL)
-LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
+IGNORE=	The SASL support for mutt has been withdrawn. Please use the mutt-devel port instead
 .endif
 .if defined(WITH_SGML_DOCS) && ${WITH_SGML_DOCS} != "no"
 BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
@@ -116,9 +116,6 @@ CONFIGURE_ARGS+=	--with-slang=${PREFIX}
 .elif defined(WITH_NCURSES_PORT)
 CONFIGURE_ARGS+=	--with-curses=${PREFIX}
 CFLAGS+=	-I${PREFIX}/include/ncurses -I${PREFIX}/include
-.endif
-.if defined(WITH_MUTT_CYRUS_SASL)
-CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 .endif
 .if !defined(WITHOUT_GSSAPI)
 .if exists(${LOCALBASE}/bin/krb5-config)
