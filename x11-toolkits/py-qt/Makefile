@@ -6,6 +6,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.17.1
+PORTEPOCH=	1
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyQt3/GPL/ \
 		http://freebsd.ricin.com/ports/distfiles/
