@@ -1,0 +1,18 @@
+bin/cpandb
+%%SITE_PERL%%/CPAN/SQLite.pm
+%%SITE_PERL%%/CPAN/SQLite/DBI.pm
+%%SITE_PERL%%/CPAN/SQLite/DBI/Index.pm
+%%SITE_PERL%%/CPAN/SQLite/DBI/Search.pm
+%%SITE_PERL%%/CPAN/SQLite/Index.pm
+%%SITE_PERL%%/CPAN/SQLite/Info.pm
+%%SITE_PERL%%/CPAN/SQLite/META.pm
+%%SITE_PERL%%/CPAN/SQLite/Populate.pm
+%%SITE_PERL%%/CPAN/SQLite/Search.pm
+%%SITE_PERL%%/CPAN/SQLite/State.pm
+%%SITE_PERL%%/CPAN/SQLite/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/SQLite/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/SQLite
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN
+@dirrm %%SITE_PERL%%/CPAN/SQLite/DBI
+@dirrm %%SITE_PERL%%/CPAN/SQLite
+@dirrmtry %%SITE_PERL%%/CPAN
