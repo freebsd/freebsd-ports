@@ -11451,6 +11451,7 @@ pear-Net_IPv6	ports/net/pear-Net_IPv6
 pear-Net_Ident	ports/net/pear-Net_Ident
 pear-Net_LDAP	ports/net/pear-Net_LDAP
 pear-Net_LMTP	ports/mail/pear-Net_LMTP
+pear-Net_MAC	ports/net/pear-Net_MAC
 pear-Net_NNTP	ports/net/pear-Net_NNTP
 pear-Net_POP3	ports/net/pear-Net_POP3
 pear-Net_Ping	ports/net/pear-Net_Ping
