@@ -1,32 +1,669 @@
 bin/jruby
-%%JRUBY_HOME%%/lib/LICENSE.ant
-%%JRUBY_HOME%%/lib/LICENSE.jakarta-oro
-%%JRUBY_HOME%%/lib/ant.jar
-%%JRUBY_HOME%%/lib/bsf.jar
-%%JRUBY_HOME%%/lib/gnu-regexp-1.1.4.jar
-%%JRUBY_HOME%%/lib/jakarta-oro-2.0.6.jar
-%%JRUBY_HOME%%/lib/jruby.jar
-%%JRUBY_HOME%%/lib/junit.jar
-%%JRUBY_HOME%%/lib/license.bsf.html
-@dirrm %%JRUBY_HOME%%/lib
-@dirrm %%JRUBY_HOME%%
-%%PORTDOCS%%share/doc/jruby/BeanScriptingFramework
-%%PORTDOCS%%share/doc/jruby/Glossary.txt
-%%PORTDOCS%%share/doc/jruby/Javasupport-highlevel.txt
-%%PORTDOCS%%share/doc/jruby/Javasupport-lowlevel.txt
-%%PORTDOCS%%share/doc/jruby/Javasupport-overview.txt
-%%PORTDOCS%%share/doc/jruby/README
-%%PORTDOCS%%share/doc/jruby/README.test
-%%PORTDOCS%%share/doc/jruby/TODO
-%%PORTDOCS%%share/doc/jruby/changelog.xml
-%%PORTDOCS%%share/doc/jruby/release-checklist.txt
-%%PORTDOCS%%@dirrm share/doc/jruby
-%%PORTDOCS%%share/examples/jruby/beer.rb
-%%PORTDOCS%%share/examples/jruby/error.rb
-%%PORTDOCS%%share/examples/jruby/eval.rb
-%%PORTDOCS%%share/examples/jruby/fib.rb
-%%PORTDOCS%%share/examples/jruby/java2.rb
-%%PORTDOCS%%share/examples/jruby/swing.rb
-%%PORTDOCS%%share/examples/jruby/swing2.rb
-%%PORTDOCS%%share/examples/jruby/thread.rb
-%%PORTDOCS%%@dirrm share/examples/jruby
+bin/jrubyc
+%%DATADIR%%/lib/asm-2.2.3.jar
+%%DATADIR%%/lib/asm-commons-2.2.3.jar
+%%DATADIR%%/lib/bsf.jar
+%%DATADIR%%/lib/emma.jar
+%%DATADIR%%/lib/emma_ant.jar
+%%DATADIR%%/lib/jarjar-0.7.jar
+%%DATADIR%%/lib/jline-0.9.91-SNAPSHOT.jar
+%%DATADIR%%/lib/jruby.jar
+%%DATADIR%%/lib/junit.jar
+%%DATADIR%%/lib/ruby/1.8/.document
+%%DATADIR%%/lib/ruby/1.8/English.rb
+%%DATADIR%%/lib/ruby/1.8/Env.rb
+%%DATADIR%%/lib/ruby/1.8/README
+%%DATADIR%%/lib/ruby/1.8/abbrev.rb
+%%DATADIR%%/lib/ruby/1.8/base64.rb
+%%DATADIR%%/lib/ruby/1.8/benchmark.rb
+%%DATADIR%%/lib/ruby/1.8/bigdecimal/jacobian.rb
+%%DATADIR%%/lib/ruby/1.8/bigdecimal/ludcmp.rb
+%%DATADIR%%/lib/ruby/1.8/bigdecimal/math.rb
+%%DATADIR%%/lib/ruby/1.8/bigdecimal/newton.rb
+%%DATADIR%%/lib/ruby/1.8/bigdecimal/util.rb
+%%DATADIR%%/lib/ruby/1.8/cgi-lib.rb
+%%DATADIR%%/lib/ruby/1.8/cgi.rb
+%%DATADIR%%/lib/ruby/1.8/cgi/.document
+%%DATADIR%%/lib/ruby/1.8/cgi/session.rb
+%%DATADIR%%/lib/ruby/1.8/cgi/session/pstore.rb
+%%DATADIR%%/lib/ruby/1.8/complex.rb
+%%DATADIR%%/lib/ruby/1.8/csv.rb
+%%DATADIR%%/lib/ruby/1.8/date.rb
+%%DATADIR%%/lib/ruby/1.8/date/format.rb
+%%DATADIR%%/lib/ruby/1.8/date2.rb
+%%DATADIR%%/lib/ruby/1.8/debug.rb
+%%DATADIR%%/lib/ruby/1.8/delegate.rb
+%%DATADIR%%/lib/ruby/1.8/drb.rb
+%%DATADIR%%/lib/ruby/1.8/drb/acl.rb
+%%DATADIR%%/lib/ruby/1.8/drb/drb.rb
+%%DATADIR%%/lib/ruby/1.8/drb/eq.rb
+%%DATADIR%%/lib/ruby/1.8/drb/extserv.rb
+%%DATADIR%%/lib/ruby/1.8/drb/extservm.rb
+%%DATADIR%%/lib/ruby/1.8/drb/gw.rb
+%%DATADIR%%/lib/ruby/1.8/drb/invokemethod.rb
+%%DATADIR%%/lib/ruby/1.8/drb/observer.rb
+%%DATADIR%%/lib/ruby/1.8/drb/ssl.rb
+%%DATADIR%%/lib/ruby/1.8/drb/timeridconv.rb
+%%DATADIR%%/lib/ruby/1.8/drb/unix.rb
+%%DATADIR%%/lib/ruby/1.8/e2mmap.rb
+%%DATADIR%%/lib/ruby/1.8/erb.rb
+%%DATADIR%%/lib/ruby/1.8/eregex.rb
+%%DATADIR%%/lib/ruby/1.8/fileutils.rb
+%%DATADIR%%/lib/ruby/1.8/finalize.rb
+%%DATADIR%%/lib/ruby/1.8/find.rb
+%%DATADIR%%/lib/ruby/1.8/forwardable.rb
+%%DATADIR%%/lib/ruby/1.8/ftools.rb
+%%DATADIR%%/lib/ruby/1.8/generator.rb
+%%DATADIR%%/lib/ruby/1.8/getoptlong.rb
+%%DATADIR%%/lib/ruby/1.8/getopts.rb
+%%DATADIR%%/lib/ruby/1.8/gserver.rb
+%%DATADIR%%/lib/ruby/1.8/importenv.rb
+%%DATADIR%%/lib/ruby/1.8/io/nonblock.rb
+%%DATADIR%%/lib/ruby/1.8/ipaddr.rb
+%%DATADIR%%/lib/ruby/1.8/irb.rb
+%%DATADIR%%/lib/ruby/1.8/irb/cmd/chws.rb
+%%DATADIR%%/lib/ruby/1.8/irb/cmd/fork.rb
+%%DATADIR%%/lib/ruby/1.8/irb/cmd/help.rb
+%%DATADIR%%/lib/ruby/1.8/irb/cmd/load.rb
+%%DATADIR%%/lib/ruby/1.8/irb/cmd/nop.rb
+%%DATADIR%%/lib/ruby/1.8/irb/cmd/pushws.rb
+%%DATADIR%%/lib/ruby/1.8/irb/cmd/subirb.rb
+%%DATADIR%%/lib/ruby/1.8/irb/completion.rb
+%%DATADIR%%/lib/ruby/1.8/irb/context.rb
+%%DATADIR%%/lib/ruby/1.8/irb/ext/change-ws.rb
+%%DATADIR%%/lib/ruby/1.8/irb/ext/history.rb
+%%DATADIR%%/lib/ruby/1.8/irb/ext/loader.rb
+%%DATADIR%%/lib/ruby/1.8/irb/ext/math-mode.rb
+%%DATADIR%%/lib/ruby/1.8/irb/ext/multi-irb.rb
+%%DATADIR%%/lib/ruby/1.8/irb/ext/save-history.rb
+%%DATADIR%%/lib/ruby/1.8/irb/ext/tracer.rb
+%%DATADIR%%/lib/ruby/1.8/irb/ext/use-loader.rb
+%%DATADIR%%/lib/ruby/1.8/irb/ext/workspaces.rb
+%%DATADIR%%/lib/ruby/1.8/irb/extend-command.rb
+%%DATADIR%%/lib/ruby/1.8/irb/frame.rb
+%%DATADIR%%/lib/ruby/1.8/irb/help.rb
+%%DATADIR%%/lib/ruby/1.8/irb/init.rb
+%%DATADIR%%/lib/ruby/1.8/irb/input-method.rb
+%%DATADIR%%/lib/ruby/1.8/irb/lc/error.rb
+%%DATADIR%%/lib/ruby/1.8/irb/lc/help-message
+%%DATADIR%%/lib/ruby/1.8/irb/lc/ja/error.rb
+%%DATADIR%%/lib/ruby/1.8/irb/lc/ja/help-message
+%%DATADIR%%/lib/ruby/1.8/irb/locale.rb
+%%DATADIR%%/lib/ruby/1.8/irb/notifier.rb
+%%DATADIR%%/lib/ruby/1.8/irb/output-method.rb
+%%DATADIR%%/lib/ruby/1.8/irb/ruby-lex.rb
+%%DATADIR%%/lib/ruby/1.8/irb/ruby-token.rb
+%%DATADIR%%/lib/ruby/1.8/irb/slex.rb
+%%DATADIR%%/lib/ruby/1.8/irb/version.rb
+%%DATADIR%%/lib/ruby/1.8/irb/workspace.rb
+%%DATADIR%%/lib/ruby/1.8/irb/ws-for-case-2.rb
+%%DATADIR%%/lib/ruby/1.8/irb/xmp.rb
+%%DATADIR%%/lib/ruby/1.8/jcode.rb
+%%DATADIR%%/lib/ruby/1.8/kconv.rb
+%%DATADIR%%/lib/ruby/1.8/logger.rb
+%%DATADIR%%/lib/ruby/1.8/mailread.rb
+%%DATADIR%%/lib/ruby/1.8/mathn.rb
+%%DATADIR%%/lib/ruby/1.8/matrix.rb
+%%DATADIR%%/lib/ruby/1.8/md5.rb
+%%DATADIR%%/lib/ruby/1.8/monitor.rb
+%%DATADIR%%/lib/ruby/1.8/mutex_m.rb
+%%DATADIR%%/lib/ruby/1.8/net/ftp.rb
+%%DATADIR%%/lib/ruby/1.8/net/ftptls.rb
+%%DATADIR%%/lib/ruby/1.8/net/http.rb
+%%DATADIR%%/lib/ruby/1.8/net/https.rb
+%%DATADIR%%/lib/ruby/1.8/net/imap.rb
+%%DATADIR%%/lib/ruby/1.8/net/pop.rb
+%%DATADIR%%/lib/ruby/1.8/net/protocol.rb
+%%DATADIR%%/lib/ruby/1.8/net/smtp.rb
+%%DATADIR%%/lib/ruby/1.8/net/telnet.rb
+%%DATADIR%%/lib/ruby/1.8/net/telnets.rb
+%%DATADIR%%/lib/ruby/1.8/observer.rb
+%%DATADIR%%/lib/ruby/1.8/open-uri.rb
+%%DATADIR%%/lib/ruby/1.8/open3.rb
+%%DATADIR%%/lib/ruby/1.8/optparse.rb
+%%DATADIR%%/lib/ruby/1.8/optparse/date.rb
+%%DATADIR%%/lib/ruby/1.8/optparse/shellwords.rb
+%%DATADIR%%/lib/ruby/1.8/optparse/time.rb
+%%DATADIR%%/lib/ruby/1.8/optparse/uri.rb
+%%DATADIR%%/lib/ruby/1.8/optparse/version.rb
+%%DATADIR%%/lib/ruby/1.8/ostruct.rb
+%%DATADIR%%/lib/ruby/1.8/parsearg.rb
+%%DATADIR%%/lib/ruby/1.8/parsedate.rb
+%%DATADIR%%/lib/ruby/1.8/pathname.rb
+%%DATADIR%%/lib/ruby/1.8/ping.rb
+%%DATADIR%%/lib/ruby/1.8/pp.rb
+%%DATADIR%%/lib/ruby/1.8/prettyprint.rb
+%%DATADIR%%/lib/ruby/1.8/profile.rb
+%%DATADIR%%/lib/ruby/1.8/profiler.rb
+%%DATADIR%%/lib/ruby/1.8/pstore.rb
+%%DATADIR%%/lib/ruby/1.8/racc/parser.rb
+%%DATADIR%%/lib/ruby/1.8/rational.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/README
+%%DATADIR%%/lib/ruby/1.8/rdoc/code_objects.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/diagram.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/dot/dot.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/generators/chm_generator.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/generators/html_generator.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/generators/ri_generator.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/generators/template/chm/chm.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/generators/template/html/hefss.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/generators/template/html/html.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/generators/template/html/kilmer.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/generators/template/html/old_html.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/generators/template/html/one_page_html.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/generators/template/xml/rdf.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/generators/template/xml/xml.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/generators/xml_generator.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/markup/.document
+%%DATADIR%%/lib/ruby/1.8/rdoc/markup/sample/rdoc2latex.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/markup/sample/sample.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/markup/simple_markup.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/markup/simple_markup/fragments.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/markup/simple_markup/inline.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/markup/simple_markup/lines.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/markup/simple_markup/preprocess.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/markup/simple_markup/to_flow.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/markup/simple_markup/to_html.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/markup/simple_markup/to_latex.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/markup/test/AllTests.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/markup/test/TestInline.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/markup/test/TestParse.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/options.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/parsers/parse_c.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/parsers/parse_f95.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/parsers/parse_rb.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/parsers/parse_simple.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/parsers/parserfactory.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/rdoc.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/ri/ri_cache.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/ri/ri_descriptions.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/ri/ri_display.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/ri/ri_driver.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/ri/ri_formatter.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/ri/ri_options.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/ri/ri_paths.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/ri/ri_reader.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/ri/ri_util.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/ri/ri_writer.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/template.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/tokenstream.rb
+%%DATADIR%%/lib/ruby/1.8/rdoc/usage.rb
+%%DATADIR%%/lib/ruby/1.8/readbytes.rb
+%%DATADIR%%/lib/ruby/1.8/resolv-replace.rb
+%%DATADIR%%/lib/ruby/1.8/resolv.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/attlistdecl.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/attribute.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/cdata.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/child.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/comment.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/doctype.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/document.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/dtd/attlistdecl.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/dtd/dtd.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/dtd/elementdecl.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/dtd/entitydecl.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/dtd/notationdecl.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/element.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/encoding.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/encodings/CP-1252.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/encodings/EUC-JP.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/encodings/ICONV.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/encodings/ISO-8859-1.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/encodings/ISO-8859-15.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/encodings/SHIFT-JIS.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/encodings/SHIFT_JIS.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/encodings/UNILE.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/encodings/US-ASCII.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/encodings/UTF-16.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/encodings/UTF-8.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/entity.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/functions.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/instruction.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/light/node.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/namespace.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/node.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/output.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/parent.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/parseexception.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/parsers/baseparser.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/parsers/lightparser.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/parsers/pullparser.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/parsers/sax2parser.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/parsers/streamparser.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/parsers/treeparser.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/parsers/ultralightparser.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/parsers/xpathparser.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/quickpath.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/rexml.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/sax2listener.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/source.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/streamlistener.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/syncenumerator.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/text.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/validation/relaxng.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/validation/validation.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/validation/validationexception.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/xmldecl.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/xmltokens.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/xpath.rb
+%%DATADIR%%/lib/ruby/1.8/rexml/xpath_parser.rb
+%%DATADIR%%/lib/ruby/1.8/rinda/rinda.rb
+%%DATADIR%%/lib/ruby/1.8/rinda/ring.rb
+%%DATADIR%%/lib/ruby/1.8/rinda/tuplespace.rb
+%%DATADIR%%/lib/ruby/1.8/rss.rb
+%%DATADIR%%/lib/ruby/1.8/rss/0.9.rb
+%%DATADIR%%/lib/ruby/1.8/rss/1.0.rb
+%%DATADIR%%/lib/ruby/1.8/rss/2.0.rb
+%%DATADIR%%/lib/ruby/1.8/rss/content.rb
+%%DATADIR%%/lib/ruby/1.8/rss/converter.rb
+%%DATADIR%%/lib/ruby/1.8/rss/dublincore.rb
+%%DATADIR%%/lib/ruby/1.8/rss/image.rb
+%%DATADIR%%/lib/ruby/1.8/rss/maker.rb
+%%DATADIR%%/lib/ruby/1.8/rss/maker/0.9.rb
+%%DATADIR%%/lib/ruby/1.8/rss/maker/1.0.rb
+%%DATADIR%%/lib/ruby/1.8/rss/maker/2.0.rb
+%%DATADIR%%/lib/ruby/1.8/rss/maker/base.rb
+%%DATADIR%%/lib/ruby/1.8/rss/maker/content.rb
+%%DATADIR%%/lib/ruby/1.8/rss/maker/dublincore.rb
+%%DATADIR%%/lib/ruby/1.8/rss/maker/image.rb
+%%DATADIR%%/lib/ruby/1.8/rss/maker/syndication.rb
+%%DATADIR%%/lib/ruby/1.8/rss/maker/taxonomy.rb
+%%DATADIR%%/lib/ruby/1.8/rss/maker/trackback.rb
+%%DATADIR%%/lib/ruby/1.8/rss/parser.rb
+%%DATADIR%%/lib/ruby/1.8/rss/rexmlparser.rb
+%%DATADIR%%/lib/ruby/1.8/rss/rss.rb
+%%DATADIR%%/lib/ruby/1.8/rss/syndication.rb
+%%DATADIR%%/lib/ruby/1.8/rss/taxonomy.rb
+%%DATADIR%%/lib/ruby/1.8/rss/trackback.rb
+%%DATADIR%%/lib/ruby/1.8/rss/utils.rb
+%%DATADIR%%/lib/ruby/1.8/rss/xml-stylesheet.rb
+%%DATADIR%%/lib/ruby/1.8/rss/xmlparser.rb
+%%DATADIR%%/lib/ruby/1.8/rss/xmlscanner.rb
+%%DATADIR%%/lib/ruby/1.8/rubyunit.rb
+%%DATADIR%%/lib/ruby/1.8/runit/assert.rb
+%%DATADIR%%/lib/ruby/1.8/runit/cui/testrunner.rb
+%%DATADIR%%/lib/ruby/1.8/runit/error.rb
+%%DATADIR%%/lib/ruby/1.8/runit/testcase.rb
+%%DATADIR%%/lib/ruby/1.8/runit/testresult.rb
+%%DATADIR%%/lib/ruby/1.8/runit/testsuite.rb
+%%DATADIR%%/lib/ruby/1.8/runit/topublic.rb
+%%DATADIR%%/lib/ruby/1.8/scanf.rb
+%%DATADIR%%/lib/ruby/1.8/set.rb
+%%DATADIR%%/lib/ruby/1.8/sha1.rb
+%%DATADIR%%/lib/ruby/1.8/shell.rb
+%%DATADIR%%/lib/ruby/1.8/shell/builtin-command.rb
+%%DATADIR%%/lib/ruby/1.8/shell/command-processor.rb
+%%DATADIR%%/lib/ruby/1.8/shell/error.rb
+%%DATADIR%%/lib/ruby/1.8/shell/filter.rb
+%%DATADIR%%/lib/ruby/1.8/shell/process-controller.rb
+%%DATADIR%%/lib/ruby/1.8/shell/system-command.rb
+%%DATADIR%%/lib/ruby/1.8/shell/version.rb
+%%DATADIR%%/lib/ruby/1.8/shellwords.rb
+%%DATADIR%%/lib/ruby/1.8/singleton.rb
+%%DATADIR%%/lib/ruby/1.8/soap/attachment.rb
+%%DATADIR%%/lib/ruby/1.8/soap/baseData.rb
+%%DATADIR%%/lib/ruby/1.8/soap/element.rb
+%%DATADIR%%/lib/ruby/1.8/soap/encodingstyle/aspDotNetHandler.rb
+%%DATADIR%%/lib/ruby/1.8/soap/encodingstyle/handler.rb
+%%DATADIR%%/lib/ruby/1.8/soap/encodingstyle/literalHandler.rb
+%%DATADIR%%/lib/ruby/1.8/soap/encodingstyle/soapHandler.rb
+%%DATADIR%%/lib/ruby/1.8/soap/generator.rb
+%%DATADIR%%/lib/ruby/1.8/soap/header/handler.rb
+%%DATADIR%%/lib/ruby/1.8/soap/header/handlerset.rb
+%%DATADIR%%/lib/ruby/1.8/soap/header/simplehandler.rb
+%%DATADIR%%/lib/ruby/1.8/soap/httpconfigloader.rb
+%%DATADIR%%/lib/ruby/1.8/soap/mapping.rb
+%%DATADIR%%/lib/ruby/1.8/soap/mapping/factory.rb
+%%DATADIR%%/lib/ruby/1.8/soap/mapping/mapping.rb
+%%DATADIR%%/lib/ruby/1.8/soap/mapping/registry.rb
+%%DATADIR%%/lib/ruby/1.8/soap/mapping/rubytypeFactory.rb
+%%DATADIR%%/lib/ruby/1.8/soap/mapping/typeMap.rb
+%%DATADIR%%/lib/ruby/1.8/soap/mapping/wsdlencodedregistry.rb
+%%DATADIR%%/lib/ruby/1.8/soap/mapping/wsdlliteralregistry.rb
+%%DATADIR%%/lib/ruby/1.8/soap/marshal.rb
+%%DATADIR%%/lib/ruby/1.8/soap/mimemessage.rb
+%%DATADIR%%/lib/ruby/1.8/soap/netHttpClient.rb
+%%DATADIR%%/lib/ruby/1.8/soap/parser.rb
+%%DATADIR%%/lib/ruby/1.8/soap/processor.rb
+%%DATADIR%%/lib/ruby/1.8/soap/property.rb
+%%DATADIR%%/lib/ruby/1.8/soap/rpc/cgistub.rb
+%%DATADIR%%/lib/ruby/1.8/soap/rpc/driver.rb
+%%DATADIR%%/lib/ruby/1.8/soap/rpc/element.rb
+%%DATADIR%%/lib/ruby/1.8/soap/rpc/httpserver.rb
+%%DATADIR%%/lib/ruby/1.8/soap/rpc/proxy.rb
+%%DATADIR%%/lib/ruby/1.8/soap/rpc/router.rb
+%%DATADIR%%/lib/ruby/1.8/soap/rpc/rpc.rb
+%%DATADIR%%/lib/ruby/1.8/soap/rpc/soaplet.rb
+%%DATADIR%%/lib/ruby/1.8/soap/rpc/standaloneServer.rb
+%%DATADIR%%/lib/ruby/1.8/soap/soap.rb
+%%DATADIR%%/lib/ruby/1.8/soap/streamHandler.rb
+%%DATADIR%%/lib/ruby/1.8/soap/wsdlDriver.rb
+%%DATADIR%%/lib/ruby/1.8/sync.rb
+%%DATADIR%%/lib/ruby/1.8/tempfile.rb
+%%DATADIR%%/lib/ruby/1.8/test/unit.rb
+%%DATADIR%%/lib/ruby/1.8/test/unit/assertionfailederror.rb
+%%DATADIR%%/lib/ruby/1.8/test/unit/assertions.rb
+%%DATADIR%%/lib/ruby/1.8/test/unit/autorunner.rb
+%%DATADIR%%/lib/ruby/1.8/test/unit/collector.rb
+%%DATADIR%%/lib/ruby/1.8/test/unit/collector/dir.rb
+%%DATADIR%%/lib/ruby/1.8/test/unit/collector/objectspace.rb
+%%DATADIR%%/lib/ruby/1.8/test/unit/error.rb
+%%DATADIR%%/lib/ruby/1.8/test/unit/failure.rb
+%%DATADIR%%/lib/ruby/1.8/test/unit/testcase.rb
+%%DATADIR%%/lib/ruby/1.8/test/unit/testresult.rb
+%%DATADIR%%/lib/ruby/1.8/test/unit/testsuite.rb
+%%DATADIR%%/lib/ruby/1.8/test/unit/ui/console/testrunner.rb
+%%DATADIR%%/lib/ruby/1.8/test/unit/ui/fox/testrunner.rb
+%%DATADIR%%/lib/ruby/1.8/test/unit/ui/gtk/testrunner.rb
+%%DATADIR%%/lib/ruby/1.8/test/unit/ui/gtk2/testrunner.rb
+%%DATADIR%%/lib/ruby/1.8/test/unit/ui/testrunnermediator.rb
+%%DATADIR%%/lib/ruby/1.8/test/unit/ui/testrunnerutilities.rb
+%%DATADIR%%/lib/ruby/1.8/test/unit/ui/tk/testrunner.rb
+%%DATADIR%%/lib/ruby/1.8/test/unit/util/backtracefilter.rb
+%%DATADIR%%/lib/ruby/1.8/test/unit/util/observable.rb
+%%DATADIR%%/lib/ruby/1.8/test/unit/util/procwrapper.rb
+%%DATADIR%%/lib/ruby/1.8/thread.rb
+%%DATADIR%%/lib/ruby/1.8/thwait.rb
+%%DATADIR%%/lib/ruby/1.8/time.rb
+%%DATADIR%%/lib/ruby/1.8/timeout.rb
+%%DATADIR%%/lib/ruby/1.8/tmpdir.rb
+%%DATADIR%%/lib/ruby/1.8/tracer.rb
+%%DATADIR%%/lib/ruby/1.8/tsort.rb
+%%DATADIR%%/lib/ruby/1.8/un.rb
+%%DATADIR%%/lib/ruby/1.8/uri.rb
+%%DATADIR%%/lib/ruby/1.8/uri/common.rb
+%%DATADIR%%/lib/ruby/1.8/uri/ftp.rb
+%%DATADIR%%/lib/ruby/1.8/uri/generic.rb
+%%DATADIR%%/lib/ruby/1.8/uri/http.rb
+%%DATADIR%%/lib/ruby/1.8/uri/https.rb
+%%DATADIR%%/lib/ruby/1.8/uri/ldap.rb
+%%DATADIR%%/lib/ruby/1.8/uri/mailto.rb
+%%DATADIR%%/lib/ruby/1.8/weakref.rb
+%%DATADIR%%/lib/ruby/1.8/webrick.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/accesslog.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/cgi.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/compat.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/config.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/cookie.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/htmlutils.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/httpauth.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/httpauth/authenticator.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/httpauth/basicauth.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/httpauth/digestauth.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/httpauth/htdigest.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/httpauth/htgroup.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/httpauth/htpasswd.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/httpauth/userdb.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/httpproxy.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/httprequest.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/httpresponse.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/https.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/httpserver.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/httpservlet.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/httpservlet/abstract.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/httpservlet/cgi_runner.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/httpservlet/cgihandler.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/httpservlet/erbhandler.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/httpservlet/filehandler.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/httpservlet/prochandler.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/httpstatus.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/httputils.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/httpversion.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/log.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/server.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/ssl.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/utils.rb
+%%DATADIR%%/lib/ruby/1.8/webrick/version.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/binding.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/data.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/definitions.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/documentation.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/import.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/importer.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/info.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/message.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/operation.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/operationBinding.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/param.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/parser.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/part.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/port.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/portType.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/service.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/soap/address.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/soap/binding.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/soap/body.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/soap/cgiStubCreator.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/soap/classDefCreator.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/soap/classDefCreatorSupport.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/soap/clientSkeltonCreator.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/soap/complexType.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/soap/data.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/soap/definitions.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/soap/driverCreator.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/soap/element.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/soap/fault.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/soap/header.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/soap/headerfault.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/soap/mappingRegistryCreator.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/soap/methodDefCreator.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/soap/operation.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/soap/servantSkeltonCreator.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/soap/standaloneServerStubCreator.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/soap/wsdl2ruby.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/types.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/wsdl.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/all.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/annotation.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/any.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/attribute.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/choice.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/complexContent.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/complexType.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/content.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/data.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/element.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/enumeration.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/import.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/importer.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/include.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/length.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/parser.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/pattern.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/schema.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/sequence.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/simpleContent.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/simpleExtension.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/simpleRestriction.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/simpleType.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/unique.rb
+%%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema/xsd2ruby.rb
+%%DATADIR%%/lib/ruby/1.8/xmlrpc/README.txt
+%%DATADIR%%/lib/ruby/1.8/xmlrpc/base64.rb
+%%DATADIR%%/lib/ruby/1.8/xmlrpc/client.rb
+%%DATADIR%%/lib/ruby/1.8/xmlrpc/config.rb
+%%DATADIR%%/lib/ruby/1.8/xmlrpc/create.rb
+%%DATADIR%%/lib/ruby/1.8/xmlrpc/datetime.rb
+%%DATADIR%%/lib/ruby/1.8/xmlrpc/httpserver.rb
+%%DATADIR%%/lib/ruby/1.8/xmlrpc/marshal.rb
+%%DATADIR%%/lib/ruby/1.8/xmlrpc/parser.rb
+%%DATADIR%%/lib/ruby/1.8/xmlrpc/server.rb
+%%DATADIR%%/lib/ruby/1.8/xmlrpc/utils.rb
+%%DATADIR%%/lib/ruby/1.8/xsd/charset.rb
+%%DATADIR%%/lib/ruby/1.8/xsd/codegen.rb
+%%DATADIR%%/lib/ruby/1.8/xsd/codegen/classdef.rb
+%%DATADIR%%/lib/ruby/1.8/xsd/codegen/commentdef.rb
+%%DATADIR%%/lib/ruby/1.8/xsd/codegen/gensupport.rb
+%%DATADIR%%/lib/ruby/1.8/xsd/codegen/methoddef.rb
+%%DATADIR%%/lib/ruby/1.8/xsd/codegen/moduledef.rb
+%%DATADIR%%/lib/ruby/1.8/xsd/datatypes.rb
+%%DATADIR%%/lib/ruby/1.8/xsd/datatypes1999.rb
+%%DATADIR%%/lib/ruby/1.8/xsd/iconvcharset.rb
+%%DATADIR%%/lib/ruby/1.8/xsd/mapping.rb
+%%DATADIR%%/lib/ruby/1.8/xsd/namedelements.rb
+%%DATADIR%%/lib/ruby/1.8/xsd/ns.rb
+%%DATADIR%%/lib/ruby/1.8/xsd/qname.rb
+%%DATADIR%%/lib/ruby/1.8/xsd/xmlparser.rb
+%%DATADIR%%/lib/ruby/1.8/xsd/xmlparser/parser.rb
+%%DATADIR%%/lib/ruby/1.8/xsd/xmlparser/rexmlparser.rb
+%%DATADIR%%/lib/ruby/1.8/xsd/xmlparser/xmlparser.rb
+%%DATADIR%%/lib/ruby/1.8/xsd/xmlparser/xmlscanner.rb
+%%DATADIR%%/lib/ruby/gems/1.8/cache/sources-0.0.1.gem
+%%DATADIR%%/lib/ruby/gems/1.8/gems/sources-0.0.1/lib/sources.rb
+%%DATADIR%%/lib/ruby/gems/1.8/specifications/sources-0.0.1.gemspec
+%%DATADIR%%/lib/ruby/site_ruby/1.8/gemconfigure.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rbconfig/datadir.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/builder.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/cmd_manager.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/command.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/config_file.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/dependency_list.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/doc_manager.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/format.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/gem_commands.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/gem_openssl.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/gem_runner.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/incremental_fetcher.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/installer.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/loadpath_manager.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/old_format.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/open-uri.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/package.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/remote_fetcher.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/remote_installer.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/rubygems_version.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/security.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/server.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/source_index.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/source_info_cache.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/source_info_cache_entry.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/specification.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/timer.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/user_interaction.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/validator.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems/version.rb
+%%DATADIR%%/lib/ruby/site_ruby/1.8/ubygems.rb
+@dirrm %%DATADIR%%/lib/ruby/site_ruby/1.8/rubygems
+@dirrm %%DATADIR%%/lib/ruby/site_ruby/1.8/rbconfig
+@dirrm %%DATADIR%%/lib/ruby/site_ruby/1.8
+@dirrm %%DATADIR%%/lib/ruby/site_ruby
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/specifications
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/sources-0.0.1/lib
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems/sources-0.0.1
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/gems
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8/cache
+@dirrm %%DATADIR%%/lib/ruby/gems/1.8
+@dirrm %%DATADIR%%/lib/ruby/gems
+@dirrm %%DATADIR%%/lib/ruby/1.8/xsd/xmlparser
+@dirrm %%DATADIR%%/lib/ruby/1.8/xsd/codegen
+@dirrm %%DATADIR%%/lib/ruby/1.8/xsd
+@dirrm %%DATADIR%%/lib/ruby/1.8/xmlrpc
+@dirrm %%DATADIR%%/lib/ruby/1.8/wsdl/xmlSchema
+@dirrm %%DATADIR%%/lib/ruby/1.8/wsdl/soap
+@dirrm %%DATADIR%%/lib/ruby/1.8/wsdl
+@dirrm %%DATADIR%%/lib/ruby/1.8/webrick/httpservlet
+@dirrm %%DATADIR%%/lib/ruby/1.8/webrick/httpauth
+@dirrm %%DATADIR%%/lib/ruby/1.8/webrick
+@dirrm %%DATADIR%%/lib/ruby/1.8/uri
+@dirrm %%DATADIR%%/lib/ruby/1.8/test/unit/util
+@dirrm %%DATADIR%%/lib/ruby/1.8/test/unit/ui/tk
+@dirrm %%DATADIR%%/lib/ruby/1.8/test/unit/ui/gtk2
+@dirrm %%DATADIR%%/lib/ruby/1.8/test/unit/ui/gtk
+@dirrm %%DATADIR%%/lib/ruby/1.8/test/unit/ui/fox
+@dirrm %%DATADIR%%/lib/ruby/1.8/test/unit/ui/console
+@dirrm %%DATADIR%%/lib/ruby/1.8/test/unit/ui
+@dirrm %%DATADIR%%/lib/ruby/1.8/test/unit/collector
+@dirrm %%DATADIR%%/lib/ruby/1.8/test/unit
+@dirrm %%DATADIR%%/lib/ruby/1.8/test
+@dirrm %%DATADIR%%/lib/ruby/1.8/soap/rpc
+@dirrm %%DATADIR%%/lib/ruby/1.8/soap/mapping
+@dirrm %%DATADIR%%/lib/ruby/1.8/soap/header
+@dirrm %%DATADIR%%/lib/ruby/1.8/soap/encodingstyle
+@dirrm %%DATADIR%%/lib/ruby/1.8/soap
+@dirrm %%DATADIR%%/lib/ruby/1.8/shell
+@dirrm %%DATADIR%%/lib/ruby/1.8/runit/cui
+@dirrm %%DATADIR%%/lib/ruby/1.8/runit
+@dirrm %%DATADIR%%/lib/ruby/1.8/rss/maker
+@dirrm %%DATADIR%%/lib/ruby/1.8/rss
+@dirrm %%DATADIR%%/lib/ruby/1.8/rinda
+@dirrm %%DATADIR%%/lib/ruby/1.8/rexml/validation
+@dirrm %%DATADIR%%/lib/ruby/1.8/rexml/parsers
+@dirrm %%DATADIR%%/lib/ruby/1.8/rexml/light
+@dirrm %%DATADIR%%/lib/ruby/1.8/rexml/encodings
+@dirrm %%DATADIR%%/lib/ruby/1.8/rexml/dtd
+@dirrm %%DATADIR%%/lib/ruby/1.8/rexml
+@dirrm %%DATADIR%%/lib/ruby/1.8/rdoc/ri
+@dirrm %%DATADIR%%/lib/ruby/1.8/rdoc/parsers
+@dirrm %%DATADIR%%/lib/ruby/1.8/rdoc/markup/test
+@dirrm %%DATADIR%%/lib/ruby/1.8/rdoc/markup/simple_markup
+@dirrm %%DATADIR%%/lib/ruby/1.8/rdoc/markup/sample
+@dirrm %%DATADIR%%/lib/ruby/1.8/rdoc/markup
+@dirrm %%DATADIR%%/lib/ruby/1.8/rdoc/generators/template/xml
+@dirrm %%DATADIR%%/lib/ruby/1.8/rdoc/generators/template/html
+@dirrm %%DATADIR%%/lib/ruby/1.8/rdoc/generators/template/chm
+@dirrm %%DATADIR%%/lib/ruby/1.8/rdoc/generators/template
+@dirrm %%DATADIR%%/lib/ruby/1.8/rdoc/generators
+@dirrm %%DATADIR%%/lib/ruby/1.8/rdoc/dot
+@dirrm %%DATADIR%%/lib/ruby/1.8/rdoc
+@dirrm %%DATADIR%%/lib/ruby/1.8/racc
+@dirrm %%DATADIR%%/lib/ruby/1.8/optparse
+@dirrm %%DATADIR%%/lib/ruby/1.8/net
+@dirrm %%DATADIR%%/lib/ruby/1.8/irb/lc/ja
+@dirrm %%DATADIR%%/lib/ruby/1.8/irb/lc
+@dirrm %%DATADIR%%/lib/ruby/1.8/irb/ext
+@dirrm %%DATADIR%%/lib/ruby/1.8/irb/cmd
+@dirrm %%DATADIR%%/lib/ruby/1.8/irb
+@dirrm %%DATADIR%%/lib/ruby/1.8/io
+@dirrm %%DATADIR%%/lib/ruby/1.8/drb
+@dirrm %%DATADIR%%/lib/ruby/1.8/date
+@dirrm %%DATADIR%%/lib/ruby/1.8/cgi/session
+@dirrm %%DATADIR%%/lib/ruby/1.8/cgi
+@dirrm %%DATADIR%%/lib/ruby/1.8/bigdecimal
+@dirrm %%DATADIR%%/lib/ruby/1.8
+@dirrm %%DATADIR%%/lib/ruby
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/BeanScriptingFramework
+%%PORTDOCS%%%%DOCSDIR%%/CodeConventions.txt
+%%PORTDOCS%%%%DOCSDIR%%/Glossary.txt
+%%PORTDOCS%%%%DOCSDIR%%/Javasupport-highlevel.txt
+%%PORTDOCS%%%%DOCSDIR%%/Javasupport-lowlevel.txt
+%%PORTDOCS%%%%DOCSDIR%%/Javasupport-overview.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENCE.bsf
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.ant
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.bouncycastle
+%%PORTDOCS%%%%DOCSDIR%%/README.coverage
+%%PORTDOCS%%%%DOCSDIR%%/README.rails
+%%PORTDOCS%%%%DOCSDIR%%/README.test
+%%PORTDOCS%%%%DOCSDIR%%/Readline-HOWTO.txt
+%%PORTDOCS%%%%DOCSDIR%%/getting_involved.html
+%%PORTDOCS%%%%DOCSDIR%%/jvyaml/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/jvyaml/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/jvyaml/README
+%%PORTDOCS%%%%DOCSDIR%%/patches/rails/rails-1.1.2-blockargs-fix.patch
+%%PORTDOCS%%%%DOCSDIR%%/patches/rubylib/ruby-1.8.4_fileutils_fu_windows_designator.patch
+%%PORTDOCS%%%%DOCSDIR%%/rbyaml/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/rbyaml/README
+%%PORTDOCS%%%%DOCSDIR%%/release-checklist.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/rbyaml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/patches/rubylib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/patches/rails
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/patches
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/jvyaml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/applet.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/beer.rb
+%%PORTDOCS%%%%EXAMPLESDIR%%/dom-applet.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/error.rb
+%%PORTDOCS%%%%EXAMPLESDIR%%/eval.rb
+%%PORTDOCS%%%%EXAMPLESDIR%%/fib.rb
+%%PORTDOCS%%%%EXAMPLESDIR%%/java2.rb
+%%PORTDOCS%%%%EXAMPLESDIR%%/swing.rb
+%%PORTDOCS%%%%EXAMPLESDIR%%/swing2.rb
+%%PORTDOCS%%%%EXAMPLESDIR%%/test_fib_compiler.rb
+%%PORTDOCS%%%%EXAMPLESDIR%%/thread.rb
+%%PORTDOCS%%%%EXAMPLESDIR%%/xslt.rb
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

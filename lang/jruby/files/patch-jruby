@@ -1,0 +1,18 @@
+--- bin/jruby.orig	Fri Apr  6 13:57:54 2007
++++ bin/jruby	Fri Apr  6 14:00:13 2007
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ # -----------------------------------------------------------------------------
+ # jruby.sh - Start Script for the JRuby interpreter
+ #
+@@ -26,6 +26,9 @@
+ esac
+ 
+ # ----- Verify and Set Required Environment Variables -------------------------
++JAVA_HOME=%%JAVA_HOME%%
++JRUBY_HOME=%%JRUBY_HOME%%
++
+ 
+ if [ -z "$JRUBY_HOME" ] ; then
+   ## resolve links - $0 may be a link to  home
