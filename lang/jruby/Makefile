@@ -6,41 +6,61 @@
 #
 
 PORTNAME=	jruby
-PORTVERSION=	0.5.3
+PORTVERSION=	0.9.8
 CATEGORIES=	lang ruby java
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://dist.codehaus.org/jruby/
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
-DIST_SUBDIR=	ruby
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemoliu@gmail.com
 COMMENT=	An implementation of Ruby Interpreter in Pure Java
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
 
+WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
 JRUBY_HOME?=	${PREFIX}/share/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+REPLACE_FILES=	${WRKSRC}/bin/jruby \
+		${WRKSRC}/bin/jrubyc
+REPLACE_LIST=	JRUBY_HOME=${JRUBY_HOME} \
+		JAVA_HOME=${JAVA_HOME}
+REPLACE_LIST_TEMP=	${REPLACE_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
 
-PLIST_SUB=	JRUBY_HOME="${JRUBY_HOME:S,^${PREFIX}/,,}"
+.include <bsd.port.pre.mk>
 
-post-extract:
-	${MV} ${WRKSRC}/README ${WRKSRC}/docs/
-	${RM} ${WRKSRC}/lib/COPYING.LIB
+pre-patch:
+	@${ECHO_MSG} "Installation settings:"
+	@${ECHO_MSG} "   JRUBY_HOME:    ${JRUBY_HOME}"
+	@${ECHO_MSG} "   JAVA_HOME:     ${JAVA_HOME}"
 
 post-patch:
-	${REINPLACE_CMD} -e 's,!!JRUBY_HOME!!,${JRUBY_HOME},g' \
-		${WRKSRC}/bin/jruby.sh
+	@${ECHO_MSG} -n ">> Removing unneeded files..."
+	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'` `${FIND} ${WRKSRC} -name '*.exe'`
+	@${ECHO_MSG} " [ DONE ]"
+.for file in ${REPLACE_FILES}
+	@${ECHO_MSG} -n ">> Customizing `basename ${file}`..."
+	@${SED} ${REPLACE_LIST_TEMP} ${file} > ${WRKDIR}/`basename ${file}`
+	@${ECHO_MSG} " [ DONE ]"
+.endfor
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/jruby.sh ${PREFIX}/bin/jruby
-	${MKDIR} ${JRUBY_HOME}/lib
-	${INSTALL_DATA} ${WRKSRC}/lib/* ${JRUBY_HOME}/lib/
+	@${ECHO_MSG} -n ">> Installation JRuby files..."
+	@${INSTALL_SCRIPT} ${WRKDIR}/jruby ${PREFIX}/bin/jruby
+	@${INSTALL_SCRIPT} ${WRKDIR}/jrubyc ${PREFIX}/bin/jrubyc
+	@cd ${WRKSRC}/lib \
+	  && ${FIND} . -type d -exec ${MKDIR} ${JRUBY_HOME}/lib/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${JRUBY_HOME}/lib/{} \;
+	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}/
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/* ${EXAMPLESDIR}/
+	@${ECHO_MSG} -n ">> Installation Documents files..."
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC}/docs \
+	  && ${COPYTREE_SHARE} \* ${DOCSDIR})
+	@${MKDIR} ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/samples \
+	  && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+	@${ECHO_MSG} " [ DONE ]"
 .endif
-	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
