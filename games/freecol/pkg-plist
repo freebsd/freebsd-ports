@@ -4,7 +4,6 @@ bin/freecol
 %%DATADIR%%/data/audio/sfx/03LoadCargo.wav
 %%DATADIR%%/data/audio/sfx/04SellCargo.wav
 %%DATADIR%%/data/audio/sfx/05Artillery.wav
-%%DATADIR%%/data/fonts/CloisterBlack.ttf
 %%DATADIR%%/data/fonts/Plakat-Fraktur.ttf
 %%DATADIR%%/data/fonts/README
 %%DATADIR%%/data/fonts/ShadowedBlack.ttf
@@ -27,6 +26,7 @@ bin/freecol
 %%DATADIR%%/data/images/colonies/Colony6.png
 %%DATADIR%%/data/images/colonies/Colony7.png
 %%DATADIR%%/data/images/colonies/Colony8.png
+%%DATADIR%%/data/images/colonies/Colony9.png
 %%DATADIR%%/data/images/forest/forest1.png
 %%DATADIR%%/data/images/forest/forest2.png
 %%DATADIR%%/data/images/forest/forest3.png
@@ -67,6 +67,11 @@ bin/freecol
 %%DATADIR%%/data/images/misc/Misc5.png
 %%DATADIR%%/data/images/misc/Misc6.png
 %%DATADIR%%/data/images/misc/Misc7.png
+%%DATADIR%%/data/images/misc/Misc8.png
+%%DATADIR%%/data/images/monarch/Monarch0.png
+%%DATADIR%%/data/images/monarch/Monarch1.png
+%%DATADIR%%/data/images/monarch/Monarch2.png
+%%DATADIR%%/data/images/monarch/Monarch3.png
 %%DATADIR%%/data/images/order-buttons/order-buttons00/button0.png
 %%DATADIR%%/data/images/order-buttons/order-buttons00/button1.png
 %%DATADIR%%/data/images/order-buttons/order-buttons00/button10.png
@@ -483,10 +488,8 @@ bin/freecol
 %%DATADIR%%/data/images/ui/bg.png
 %%DATADIR%%/data/images/ui/bg2.png
 %%DATADIR%%/data/images/ui/bg_europe.jpg
-%%DATADIR%%/data/images/ui/bg_europe.jpg.old
 %%DATADIR%%/data/images/ui/bg_map1.jpg
 %%DATADIR%%/data/images/ui/doi.png
-%%DATADIR%%/data/images/ui/doi.png.old
 %%DATADIR%%/data/images/ui/exploration.png
 %%DATADIR%%/data/images/ui/freecol.png
 %%DATADIR%%/data/images/ui/freecol2.png
@@ -510,7 +513,6 @@ bin/freecol
 %%DATADIR%%/data/images/ui/menuborder-w.png
 %%DATADIR%%/data/images/ui/military.png
 %%DATADIR%%/data/images/ui/minimap-skin.png
-%%DATADIR%%/data/images/ui/monarch.png
 %%DATADIR%%/data/images/ui/path-foot-illegal.png
 %%DATADIR%%/data/images/ui/path-foot-nextturn.png
 %%DATADIR%%/data/images/ui/path-foot.png
@@ -584,12 +586,15 @@ bin/freecol
 %%DATADIR%%/data/images/units/Unit58.png
 %%DATADIR%%/data/images/units/Unit59.png
 %%DATADIR%%/data/images/units/Unit6.png
+%%DATADIR%%/data/images/units/Unit60.png
+%%DATADIR%%/data/images/units/Unit61.png
+%%DATADIR%%/data/images/units/Unit62.png
 %%DATADIR%%/data/images/units/Unit7.png
 %%DATADIR%%/data/images/units/Unit8.png
 %%DATADIR%%/data/images/units/Unit9.png
 %%DATADIR%%/jars/higlayout.jar
 %%DATADIR%%/jars/jsr173_1.0_api.jar
-%%DATADIR%%/jars/wstx-lgpl-3.0.2.jar
+%%DATADIR%%/jars/wstx-lgpl-4.0pr1.jar
 @dirrm %%DATADIR%%/data/audio/sfx
 @dirrm %%DATADIR%%/data/audio
 @dirrm %%DATADIR%%/data/fonts
@@ -599,6 +604,7 @@ bin/freecol
 @dirrm %%DATADIR%%/data/images/goods
 @dirrm %%DATADIR%%/data/images/indians
 @dirrm %%DATADIR%%/data/images/misc
+@dirrm %%DATADIR%%/data/images/monarch
 @dirrm %%DATADIR%%/data/images/order-buttons/order-buttons00
 @dirrm %%DATADIR%%/data/images/order-buttons/order-buttons01
 @dirrm %%DATADIR%%/data/images/order-buttons/order-buttons02

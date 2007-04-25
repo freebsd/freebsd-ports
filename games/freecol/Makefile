@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freecol
-PORTVERSION=	0.5.3
+PORTVERSION=	0.6.0
 CATEGORIES=	games java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,9 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 
-post-extract:
-	@${RMDIR} ${WRKSRC}/data/fonts/CloisterBlack \
-		${WRKSRC}/data/fonts/Plakat\ Fraktur
+PORTDOCS=	*
 
 post-patch:
 	@${REINPLACE_CMD} 's|%%DATADIR%%|${DATADIR}|g' \
@@ -33,5 +31,9 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/FreeCol.jar ${DATADIR}/
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${DATADIR}/)
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} jars ${DATADIR}/)
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/FreeCol.pdf ${DOCSDIR}/
+.endif
 
 .include <bsd.port.mk>
