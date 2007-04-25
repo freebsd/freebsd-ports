@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	ntfs
-PORTVERSION=	1.0
+PORTVERSION=	1.417
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ntfs-3g.org/
 MASTER_SITE_SUBDIR=	fuse

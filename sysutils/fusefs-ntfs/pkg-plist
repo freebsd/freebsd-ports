@@ -31,5 +31,5 @@ include/ntfs-3g/volume.h
 lib/libntfs-3g.a
 lib/libntfs-3g.la
 lib/libntfs-3g.so
-lib/libntfs-3g.so.0
+lib/libntfs-3g.so.1
 @dirrm include/ntfs-3g
