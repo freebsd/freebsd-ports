@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gimp-app
-PORTVERSION=	2.3.15
-PORTREVISION=	1
+PORTVERSION=	2.3.16
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -39,7 +38,7 @@ USE_GETTEXT=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME=	gnomehack intltool intlhack gtk20 libartlgpl2 ltverhack desktopfileutils
+USE_GNOME=	gnomehack intltool intlhack gtk20 libartlgpl2 ltverhack desktopfileutils libgtkhtml
 WANT_GNOME=	yes
 USE_GCC=	3.4+
 USE_LDCONFIG=	yes
