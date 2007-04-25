@@ -6,10 +6,10 @@
 #    $MCom: ports/misc/pciids/Makefile,v 1.8 2006/10/26 16:14:10 ahze Exp $
 
 PORTNAME=	pciids
-PORTVERSION=	20070225
+PORTVERSION=	20070425
 CATEGORIES=	misc
-MASTER_SITES=	http://www.ahze.net/~ahze/distfiles/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://ahze.net/~ahze/distfiles/
 MASTER_SITE_SUBDIR=	ahze
 
 MAINTAINER=	gnome@FreeBSD.org
