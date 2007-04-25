@@ -1076,39 +1076,39 @@ share/doc/gimp/libgimpwidgets/style.css
 share/doc/gimp/libgimpwidgets/up.png
 share/gimp/brushes/10x10square.gbr
 share/gimp/brushes/10x10squareBlur.gbr
-share/gimp/brushes/11circle.gbr
-share/gimp/brushes/11fcircle.gbr
-share/gimp/brushes/13circle.gbr
-share/gimp/brushes/13fcircle.gbr
-share/gimp/brushes/15circle.gbr
-share/gimp/brushes/15fcircle.gbr
-share/gimp/brushes/17circle.gbr
-share/gimp/brushes/17fcircle.gbr
-share/gimp/brushes/19circle.gbr
-share/gimp/brushes/19fcircle.gbr
-share/gimp/brushes/1circle.gbr
 share/gimp/brushes/20x20square.gbr
 share/gimp/brushes/20x20squareBlur.gbr
-share/gimp/brushes/3circle.gbr
-share/gimp/brushes/3fcircle.gbr
-share/gimp/brushes/5circle.gbr
-share/gimp/brushes/5fcircle.gbr
 share/gimp/brushes/5x5square.gbr
 share/gimp/brushes/5x5squareBlur.gbr
-share/gimp/brushes/7circle.gbr
-share/gimp/brushes/7fcircle.gbr
-share/gimp/brushes/9circle.gbr
-share/gimp/brushes/9fcircle.gbr
-share/gimp/brushes/DStar11.gbr
-share/gimp/brushes/DStar17.gbr
-share/gimp/brushes/DStar25.gbr
+share/gimp/brushes/Calligraphic-Brush-0.vbr
+share/gimp/brushes/Calligraphic-Brush-1.vbr
+share/gimp/brushes/Calligraphic-Brush-2.vbr
+share/gimp/brushes/Calligraphic-Brush-3.vbr
+share/gimp/brushes/Circle-1.vbr
+share/gimp/brushes/Circle-3.vbr
+share/gimp/brushes/Circle-5.vbr
+share/gimp/brushes/Circle-7.vbr
+share/gimp/brushes/Circle-9.vbr
+share/gimp/brushes/Circle-11.vbr
+share/gimp/brushes/Circle-13.vbr
+share/gimp/brushes/Circle-15.vbr
+share/gimp/brushes/Circle-17.vbr
+share/gimp/brushes/Circle-19.vbr
+share/gimp/brushes/Circle-Fuzzy-3.vbr
+share/gimp/brushes/Circle-Fuzzy-5.vbr
+share/gimp/brushes/Circle-Fuzzy-7.vbr
+share/gimp/brushes/Circle-Fuzzy-9.vbr
+share/gimp/brushes/Circle-Fuzzy-11.vbr
+share/gimp/brushes/Circle-Fuzzy-13.vbr
+share/gimp/brushes/Circle-Fuzzy-15.vbr
+share/gimp/brushes/Circle-Fuzzy-17.vbr
+share/gimp/brushes/Circle-Fuzzy-19.vbr
+share/gimp/brushes/Diagonal-Star-11.vbr
+share/gimp/brushes/Diagonal-Star-17.vbr
+share/gimp/brushes/Diagonal-Star-25.vbr
 share/gimp/brushes/SketchBrush-16.gih
 share/gimp/brushes/SketchBrush-32.gih
 share/gimp/brushes/SketchBrush-64.gih
-share/gimp/brushes/callig1.gbr
-share/gimp/brushes/callig2.gbr
-share/gimp/brushes/callig3.gbr
-share/gimp/brushes/callig4.gbr
 share/gimp/brushes/confetti.gbr
 share/gimp/brushes/confetti.gih
 share/gimp/brushes/dunes.gbr
@@ -1119,9 +1119,7 @@ share/gimp/brushes/galaxy_small.gbr
 share/gimp/brushes/hsparks.gih
 share/gimp/brushes/pepper.gbr
 share/gimp/brushes/pixel.gbr
-share/gimp/brushes/thegimp.gbr
 share/gimp/brushes/vine.gih
-share/gimp/brushes/xcf.gbr
 share/gimp/fractalexplorer/Asteroid_Field
 share/gimp/fractalexplorer/Bar_Code_Label
 share/gimp/fractalexplorer/Beauty_of_Nature
@@ -1806,6 +1804,12 @@ share/locale/ja/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/ja/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/ja/LC_MESSAGES/gimp20-tips.mo
 share/locale/ja/LC_MESSAGES/gimp20.mo
+share/locale/km/LC_MESSAGES/gimp20.mo
+share/locale/km/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/km/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/km/LC_MESSAGES/gimp20-python.mo
+share/locale/km/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/km/LC_MESSAGES/gimp20-tips.mo
 share/locale/ko/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/ko/LC_MESSAGES/gimp20-python.mo
 share/locale/ko/LC_MESSAGES/gimp20-script-fu.mo
@@ -2042,6 +2046,8 @@ share/locale/zh_TW/LC_MESSAGES/gimp20.mo
 @dirrmtry share/locale/ne
 @dirrmtry share/locale/ko/LC_MESSAGES
 @dirrmtry share/locale/ko
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
 @dirrmtry share/locale/gl/LC_MESSAGES
 @dirrmtry share/locale/gl
 @dirrmtry share/locale/fi/LC_MESSAGES
