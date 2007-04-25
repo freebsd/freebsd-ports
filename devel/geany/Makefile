@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geany
-PORTVERSION=	0.9
+PORTVERSION=	0.10.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,15 +14,17 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	MrL0Lz@gmail.com
 COMMENT=	A fast and lightweight GTK+ IDE
 
-USE_X_PREFIX=	no
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
+USE_BZIP2=	yes
 USE_GNOME=	gtk20
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=--mandir="${MANPREFIX}/man"
 
-OPTIONS=	VTE "With vte" On
+OPTIONS=	VTE	"Enable Virtual Terminal Emulation support"	on \
+		NLS	"Enable Native Language support"		on
 
-MAN1=	geany.1
+MAN1=		geany.1
 
 .include <bsd.port.pre.mk>
 
@@ -34,11 +36,11 @@ CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if defined(WITHOUT_VTE)
-CONFIGURE_ARGS+=--disable-vte
-.else
+.if !defined(WITHOUT_VTE)
 USE_GNOME+=	vte
 CONFIGURE_ARGS+=--enable-vte
+.else
+CONFIGURE_ARGS+=--disable-vte
 .endif
 
 post-patch:
@@ -52,9 +54,6 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/geany.desktop ${PREFIX}/share/applications
-
-.if ${OSVERSION} < 500036
-EXTRA_PATCHES+=	${PATCHDIR}/extra-*
-.endif
+	${INSTALL_MAN} ${WRKSRC}/doc/geany.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.post.mk>

@@ -1,5 +1,7 @@
 bin/geany
 share/applications/geany.desktop
+share/pixmaps/geany.ico
+share/pixmaps/geany.png
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -28,20 +30,22 @@ share/applications/geany.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/ch03s07.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch03s08.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch03s09.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ch03s10.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch04.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch04s02.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch04s03.html
 %%PORTDOCS%%%%DOCSDIR%%/html/geany.css
-%%PORTDOCS%%%%DOCSDIR%%/html/images/find_dialog.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_edit.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_gen.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_interface.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_keys.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_templ.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_toolbar.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_tools.jpg
-%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_vte.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/find_dialog.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/find_in_files_dialog.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_edit.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_files.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_gen.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_interface.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_keys.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_templ.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_toolbar.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_tools.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/pref_dialog_vte.png
+%%PORTDOCS%%%%DOCSDIR%%/html/images/replace_dialog.png
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/manual.txt
 %%DATADIR%%/GPL-2
@@ -71,6 +75,7 @@ share/applications/geany.desktop
 %%DATADIR%%/filetypes.sh
 %%DATADIR%%/filetypes.sql
 %%DATADIR%%/filetypes.tcl
+%%DATADIR%%/filetypes.vhdl
 %%DATADIR%%/filetypes.xml
 %%DATADIR%%/global.tags
 %%DATADIR%%/html_entities.tags
@@ -82,16 +87,20 @@ share/applications/geany.desktop
 %%NLS%%share/locale/cs/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/de/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/es/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/it/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/geany.mo
-share/pixmaps/geany.ico
-share/pixmaps/geany.png
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/geany.mo
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%/html/images
-@dirrm %%DOCSDIR%%/html
-@dirrm %%DOCSDIR%%
-@dirrmtry share/pixmaps
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/html/images
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/html
+@dirrm %%PORTDOCS%%%%DOCSDIR%%
 @dirrmtry share/applications
+@dirrmtry share/pixmaps
