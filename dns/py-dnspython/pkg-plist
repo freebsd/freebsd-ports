@@ -118,6 +118,9 @@
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/SOA.py
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/SOA.pyc
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/SOA.pyo
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/SPF.py
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/SPF.pyc
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/SPF.pyo
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/SSHFP.py
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/SSHFP.pyc
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/ANY/SSHFP.pyo
@@ -139,6 +142,12 @@
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/IN/APL.py
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/IN/APL.pyc
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/IN/APL.pyo
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/IN/DHCID.py
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/IN/DHCID.pyc
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/IN/DHCID.pyo
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/IN/IPSECKEY.py
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/IN/IPSECKEY.pyc
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/IN/IPSECKEY.pyo
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/IN/KX.py
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/IN/KX.pyc
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/IN/KX.pyo
@@ -178,6 +187,9 @@
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/sigbase.py
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/sigbase.pyc
 %%PYTHON_SITELIBDIR%%/dns/rdtypes/sigbase.pyo
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/txtbase.py
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/txtbase.pyc
+%%PYTHON_SITELIBDIR%%/dns/rdtypes/txtbase.pyo
 %%PYTHON_SITELIBDIR%%/dns/renderer.py
 %%PYTHON_SITELIBDIR%%/dns/renderer.pyc
 %%PYTHON_SITELIBDIR%%/dns/renderer.pyo
