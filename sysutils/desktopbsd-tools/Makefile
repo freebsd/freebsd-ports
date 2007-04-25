@@ -19,7 +19,7 @@ RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm \
 		portupgrade:${PORTSDIR}/ports-mgmt/portupgrade \
 		portaudit:${PORTSDIR}/ports-mgmt/portaudit
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
 
@@ -32,10 +32,6 @@ DATADIR=	${PREFIX}/share/desktopbsd
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		requires FreeBSD 5 or newer
-.endif
-
 .if ${OSVERSION} < 601101 || ( ${OSVERSION} >= 700000 && ${OSVERSION} < 700015 )
 RUN_DEPENDS+=	csup:${PORTSDIR}/net/csup
 .endif
@@ -43,6 +39,11 @@ RUN_DEPENDS+=	csup:${PORTSDIR}/net/csup
 .if ${OSVERSION} < 504103 || ( ${OSVERSION} >= 600000 && ${OSVERSION} < 600033 )
 RUN_DEPENDS+=	portsnap:${PORTSDIR}/ports-mgmt/portsnap
 .endif
+
+post-extract:
+.for f in ${X11R6_FILES}
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|$${X11BASE}|g' ${WRKSRC}/${f}
+.endfor
 
 post-patch:
 	@${REINPLACE_CMD} -e \
