@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	m4
-PORTVERSION=	1.4.8
-PORTREVISION=	1
+PORTVERSION=	1.4.9
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	m4
@@ -33,7 +32,9 @@ EXAMPLESDIR=	share/examples/gm4
 
 .if ${OSVERSION} < 600000
 BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
-CONFIGURE_ENV+=	MAKEINFO=${LOCALBASE}/bin/makeinfo
+CONFIGURE_ENV+=	MAKEINFO="${LOCALBASE}/bin/makeinfo --no-split"
+.else
+CONFIGURE_ENV+=	MAKEINFO="makeinfo --no-split"
 .endif
 
 post-install:

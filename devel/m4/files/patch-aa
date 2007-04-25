@@ -1,7 +1,7 @@
---- doc/Makefile.in.orig	Mon Nov 20 06:25:48 2006
-+++ doc/Makefile.in	Sun Dec  3 17:13:56 2006
-@@ -158,3 +158,3 @@
- M4_LTLIBOBJS = @M4_LTLIBOBJS@
--MAKEINFO = @MAKEINFO@
-+MAKEINFO = @MAKEINFO@ --no-split
- MKDIR_P = @MKDIR_P@
+--- lib/Makefile.in.orig	Fri Mar 23 06:32:35 2007
++++ lib/Makefile.in	Wed Apr 25 02:48:45 2007
+@@ -564,3 +564,3 @@
+ install-am: all-am
+-	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
++	@$(MAKE) $(AM_MAKEFLAGS) install-data-am
+ 
