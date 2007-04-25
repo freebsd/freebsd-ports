@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	lifetype
-PORTVERSION=	1.1
+PORTVERSION=	1.2.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lifetype
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${PORTVERSION}__all_plugins${EXTRACT_SUFX} \
-		${PORTVERSION}__all_templates${EXTRACT_SUFX}
+		${CONTRIBE_VERSION}__all_plugins${EXTRACT_SUFX} \
+		${CONTRIBE_VERSION}__all_templates${EXTRACT_SUFX}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A PHP and MySQL based blogging platform
 
-IGNOREFILES=	${PORTVERSION}__all_plugins${EXTRACT_SUFX} \
-		${PORTVERSION}__all_templates${EXTRACT_SUFX}
+IGNOREFILES=	${CONTRIBE_VERSION}__all_plugins${EXTRACT_SUFX} \
+		${CONTRIBE_VERSION}__all_templates${EXTRACT_SUFX}
 
+CONTRIBE_VERSION=1.2
 NO_BUILD=	YES
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST=		${WRKDIR}/pkg-plist
@@ -51,7 +52,7 @@ pre-patch:
 
 post-extract:
 .for x in plugins templates
-	cd ${WRKSRC}/${x} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${PORTVERSION}__all_${x}${EXTRACT_SUFX}
+	cd ${WRKSRC}/${x} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${CONTRIBE_VERSION}__all_${x}${EXTRACT_SUFX}
 .endfor
 
 .if defined(WITH_BIG5)
