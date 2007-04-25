@@ -8,7 +8,9 @@
 PORTNAME=	Kwiki
 PORTVERSION=	0.39
 CATEGORIES=	www perl5
-MASTER_SITES=	http://www.kwiki.org/downloads/
+MASTER_SITES=	http://www.kwiki.org/downloads/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	clsung/${PORTNAME}
 PKGNAMEPREFIX=	p5-
 DISTNAME=	kwiki-trunk-20070327
 
