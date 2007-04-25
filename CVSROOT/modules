@@ -8728,6 +8728,7 @@ p5-CGI.pm	ports/www/p5-CGI.pm
 p5-CGI_Lite	ports/www/p5-CGI_Lite
 p5-CPAN-DistnameInfo	ports/devel/p5-CPAN-DistnameInfo
 p5-CPAN-Mini	ports/devel/p5-CPAN-Mini
+p5-CPAN-SQLite	ports/devel/p5-CPAN-SQLite
 p5-CPAN-YACSmoke	ports/devel/p5-CPAN-YACSmoke
 p5-CPANPLUS	ports/devel/p5-CPANPLUS
 p5-CPANPLUS-Dist-Build	ports/devel/p5-CPANPLUS-Dist-Build
