@@ -41,11 +41,15 @@ Note:  Please add new entries to the beginning of this file.
 	<name>mod_perl</name>
 	<range><lt>1.30</lt></range>
       </package>
+      <package>
+	<name>mod_perl2</name>
+	<range><ge>0</ge></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-    <p>CVE reports:</p>
-    <blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1349">
+    <p>Mandriva reports:</p>
+    <blockquote cite="http://www.mandriva.com/security/advisories?name=MDKSA-2007:083">
       <p>PerlRun.pm in Apache mod_perl 1.29 and earlier, and RegistryCooker.pm in
         mod_perl 2.x, does not properly escape PATH_INFO before use in a regular 
         expression, which allows remote attackers to cause a denial of service 
@@ -55,6 +59,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2007-1349</cvename>
+      <url>http://www.mandriva.com/security/advisories?name=MDKSA-2007:083</url>
       <url>http://secunia.com/advisories/24839</url>
     </references>
     <dates>
