@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	mod_perl
-PORTVERSION=	1.29
-PORTREVISION=	2
+PORTVERSION=	1.30
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
 
-MAINTAINER=	apache@FreeBSD.org
+MAINTAINER=	pgollucci@p6m7g8.com
 COMMENT=	Embeds a Perl interpreter in the Apache server
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_APACHE=	YES
+USE_APACHE=	yes
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	USE_APXS=1 EVERYTHING=1 INSTALLSITELIB=${SITE_PERL} \
 			INSTALLSITEARCH=${SITE_PERL}/${PERL_ARCH} \
@@ -37,7 +36,7 @@ MAN3=		Apache.3 Apache::Constants.3  Apache::ExtUtils.3 \
 		Bundle::Apache.3 \
 		Apache::Debug.3 mod_perl.3 Apache::SIG.3 Apache::Resource.3 \
 		Apache::RegistryLoader.3 Apache::StatINC.3 Apache::Include.3 \
-		Apache::PerlSections.3 cgi_to_mod_perl.3 \
+		Apache::PerlSections.3 Apache::fork.3 cgi_to_mod_perl.3 \
 		mod_perl_cvs.3 mod_perl_method_handlers.3 mod_perl_traps.3 \
 		mod_perl_tuning.3
 .if defined(APACHE_PORT)
