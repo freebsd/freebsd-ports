@@ -7,7 +7,7 @@
 
 PORTNAME=	ocp
 PORTVERSION=	0.1.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://stian.lunafish.org/ocp/ \
 		http://critical.ch/distfiles/ \
@@ -19,8 +19,7 @@ COMMENT=	The legendary Open Cubic Player
 LIB_DEPENDS=	id3tag.0:${PORTSDIR}/audio/libid3tag \
 		mad.2:${PORTSDIR}/audio/libmad \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
-		sidplay.1:${PORTSDIR}/audio/libsidplay \
-		ncursesw.5:${PORTSDIR}/devel/ncurses
+		sidplay.1:${PORTSDIR}/audio/libsidplay
 
 ONLY_FOR_ARCHS=	i386
 
@@ -79,6 +78,10 @@ PLIST_SUB+=		ADPLUG="@comment "
 CONFIGURE_ARGS+=	--without-adplug
 .endif
 
+.if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
+LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
+.endif
+
 pre-everything::
 .if !exists(${TIMIDITY_CFG}) && !defined(WITHOUT_MIDI)
 	@${ECHO_MSG} ""
@@ -114,13 +117,15 @@ post-patch:
 		${WRKSRC}/filesel/adb.c \
 		${WRKSRC}/filesel/pfilesel.c
 
-# use ncurses
+.if ${OSVERSION} < 602107 || (${OSVERSION} > 700000 && ${OSVERSION} < 700033)
+# use ncursesw from ports
 	@${REINPLACE_CMD} -e 's|-l\(curses\)|-ln\1w|' ${WRKSRC}/stuff/Makefile
 .for f in ${PFILES}
 	@${REINPLACE_CMD} -e \
 		's|#include.*<curses\.h.*|#include <ncurses/ncurses.h>|' \
 			${WRKSRC}/${f}
 .endfor
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ocp ${PREFIX}/bin
