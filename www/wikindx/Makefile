@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/g}
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Bibliographic and quotations/notes management system
 
-USE_PHP=	session mysql
+USE_PHP=	session mysql xml
 
 NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/wikindx3
