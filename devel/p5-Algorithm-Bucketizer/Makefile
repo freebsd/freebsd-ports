@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Algorithm-Bucketizer
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Algorithm
@@ -20,6 +20,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
+MAN1=		bucketize.1
 MAN3=		Algorithm::Bucketizer.3
 
 .include <bsd.port.pre.mk>
