@@ -533,6 +533,7 @@ share/doc/gimp/libgimpcolor/libgimpcolor-GimpColorSpace.html
 share/doc/gimp/libgimpcolor/libgimpcolor-GimpHSV.html
 share/doc/gimp/libgimpcolor/libgimpcolor-GimpRGB.html
 share/doc/gimp/libgimpcolor/libgimpcolor.devhelp
+share/doc/gimp/libgimpcolor/libgimpcolor.devhelp2
 share/doc/gimp/libgimpcolor/libgimpcolor.html
 share/doc/gimp/libgimpcolor/right.png
 share/doc/gimp/libgimpcolor/up.png
@@ -546,6 +547,7 @@ share/doc/gimp/libgimpmath/libgimpmath-GimpMath.html
 share/doc/gimp/libgimpmath/libgimpmath-GimpMatrix.html
 share/doc/gimp/libgimpmath/libgimpmath-GimpVector.html
 share/doc/gimp/libgimpmath/libgimpmath.devhelp
+share/doc/gimp/libgimpmath/libgimpmath.devhelp2
 share/doc/gimp/libgimpmath/libgimpmath.html
 share/doc/gimp/libgimpmath/right.png
 share/doc/gimp/libgimpmath/up.png
@@ -557,6 +559,7 @@ share/doc/gimp/libgimpmodule/index.sgml
 share/doc/gimp/libgimpmodule/left.png
 share/doc/gimp/libgimpmodule/style.css
 share/doc/gimp/libgimpmodule/libgimpmodule.devhelp
+share/doc/gimp/libgimpmodule/libgimpmodule.devhelp2
 share/doc/gimp/libgimpmodule/libgimpmodule.html
 share/doc/gimp/libgimpmodule/right.png
 share/doc/gimp/libgimpmodule/up.png
