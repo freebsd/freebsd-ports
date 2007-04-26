@@ -20,13 +20,7 @@ USE_LDCONFIG=	yes
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
 pre-patch:
 	@${MV} ${WRKSRC}/linux-settings.py ${WRKSRC}/freebsd-settings.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
