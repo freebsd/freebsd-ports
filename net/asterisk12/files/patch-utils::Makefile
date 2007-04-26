@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- utils/Makefile
-+++ utils/Makefile
-@@ -17,16 +17,16 @@
+--- utils/Makefile.orig	Wed Jan 24 19:43:50 2007
++++ utils/Makefile	Mon Apr 16 16:37:31 2007
+@@ -17,17 +17,17 @@
  CFLAGS+=-DNO_AST_MM
  
  ifeq ($(findstring BSD,${OSARCH}),BSD)
@@ -11,6 +8,7 @@ $FreeBSD$
 +  CFLAGS+=-I$(CROSS_COMPILE_TARGET)$(LOCALBASE)/include -L$(CROSS_COMPILE_TARGET)$(LOCALBASE)/lib
  endif
  
+ # to get check_expr, add it to the TARGET list
  TARGET=stereorize streamplayer
  
 -ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/popt.h)$(wildcard -f $(CROSS_COMPILE_TARGET)/usr/local/include/popt.h),)
@@ -23,7 +21,7 @@ $FreeBSD$
    TARGET+=astman
  endif
  
-@@ -40,7 +40,7 @@
+@@ -41,7 +41,7 @@
  install:
  	for x in $(TARGET); do \
  		if [ "$$x" != "none" ]; then \

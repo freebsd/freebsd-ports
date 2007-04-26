@@ -1,9 +1,22 @@
 
 $FreeBSD$
 
---- channels/chan_zap.c.orig	Tue Nov 29 20:24:39 2005
-+++ channels/chan_zap.c	Fri Jan 13 13:28:33 2006
-@@ -638,6 +638,7 @@ static struct zt_pvt {
+--- channels/chan_zap.c.orig
++++ channels/chan_zap.c
+@@ -51,10 +51,10 @@
+ #ifdef __linux__
+ #include <linux/zaptel.h>
+ #else
+-#include <zaptel.h>
++#include <zaptel/zaptel.h>
+ #endif /* __linux__ */
+ #include <math.h>
+-#include <tonezone.h>
++#include <zaptel/tonezone.h>
+ #include <ctype.h>
+ #ifdef ZAPATA_PRI
+ #include <libpri.h>
+@@ -792,6 +792,7 @@
  	int cidlen;
  	int ringt;
  	int ringt_base;
@@ -11,7 +24,7 @@ $FreeBSD$
  	int stripmsd;
  	int callwaitcas;
  	int callwaitrings;
-@@ -2308,6 +2309,19 @@ static int zt_hangup(struct ast_channel 
+@@ -2464,6 +2465,19 @@
  	}
  	
  	ast_mutex_lock(&p->lock);
@@ -31,7 +44,7 @@ $FreeBSD$
  	
  	index = zt_get_index(ast, p, 1);
  
-@@ -6129,7 +6143,37 @@ static void *ss_thread(void *data)
+@@ -6323,7 +6337,37 @@
  		ast_setstate(chan, AST_STATE_RING);
  		chan->rings = 1;
  		p->ringt = p->ringt_base;
@@ -69,7 +82,7 @@ $FreeBSD$
  		if (res) {
  			ast_hangup(chan);
  			ast_log(LOG_WARNING, "PBX exited non-zero\n");
-@@ -6431,7 +6475,7 @@ static void *do_monitor(void *data)
+@@ -6628,7 +6672,7 @@
  		i = iflist;
  		while(i) {
  			if ((i->subs[SUB_REAL].zfd > -1) && i->sig && (!i->radio)) {

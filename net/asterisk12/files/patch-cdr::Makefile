@@ -1,5 +1,8 @@
---- cdr/Makefile.orig	Thu Sep 21 17:18:19 2006
-+++ cdr/Makefile	Thu Oct 19 10:52:51 2006
+
+$FreeBSD$
+
+--- cdr/Makefile.orig
++++ cdr/Makefile
 @@ -21,8 +21,8 @@
  endif
  
@@ -11,14 +14,16 @@
  endif
  
  #The problem with sparc is the best stuff is in newer versions of gcc (post 3.0) only.
-@@ -38,21 +38,21 @@
+@@ -38,21 +38,23 @@
  #
  # unixODBC stuff...
  #
 -ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/odbcinst.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/include/odbcinst.h),)
++ifdef WITH_ODBC
 +ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/odbcinst.h)$(wildcard $(CROSS_COMPILE_TARGET)$(LOCALBASE)/include/odbcinst.h),)
    MODS+=cdr_odbc.so
  endif
++endif
  
  #
  # FreeTDS stuff...
@@ -38,16 +43,29 @@
          CFLAGS += -DFREETDS_0_62
        else
          CFLAGS += -DFREETDS_PRE_0_62
-@@ -65,7 +65,7 @@
+@@ -65,7 +67,7 @@
  #
  # PGSQL stuff...  Autoconf anyone??
  #
--ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/postgresql)$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/pgsql/include)$(wildcard $(CROSS_COMPILE_TARGET)/usr/include/pgsql)$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/include/pgsql)$(wildcard $(CROSS_COMPILE_TARGET)/opt/pgsql/include)$(wildcard $(CROSS_COMPILE_TARGET)/usr/include/libpq-fe.h),)
-+ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/postgresql)$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/pgsql/include)$(wildcard $(CROSS_COMPILE_TARGET)/usr/include/pgsql)$(wildcard $(CROSS_COMPILE_TARGET)$(LOCALBASE)/include/pgsql)$(wildcard $(CROSS_COMPILE_TARGET)/opt/pgsql/include)$(wildcard $(CROSS_COMPILE_TARGET)/usr/include/libpq-fe.h),)
+-ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/postgresql/libpq-fe.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/pgsql/include/libpq-fe.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/include/pgsql/libpq-fe.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/include/pgsql/libpq-fe.h)$(wildcard $(CROSS_COMPILE_TARGET)/opt/pgsql/include/libpq-fe.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/include/libpq-fe.h),)
++ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/postgresql/libpq-fe.h)$(wildcard $(CROSS_COMPILE_TARGET)$(LOCALBASE)/pgsql/include/libpq-fe.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/include/pgsql/libpq-fe.h)$(wildcard $(CROSS_COMPILE_TARGET)$(LOCALBASE)/include/pgsql/libpq-fe.h)$(wildcard $(CROSS_COMPILE_TARGET)/opt/pgsql/include/libpq-fe.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/include/libpq-fe.h),)
    MODS+=cdr_pgsql.so
  endif
  
-@@ -86,9 +86,9 @@
+@@ -76,9 +78,9 @@
+   MLFLAGS+=-L$(CROSS_COMPILE_TARGET)/usr/lib/postgresql
+ endif
+ 
+-ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/local/pgsql/include),)
+-  CFLAGS+=-I$(CROSS_COMPILE_TARGET)/usr/local/pgsql/include
+-  MLFLAGS+=-L$(CROSS_COMPILE_TARGET)/usr/local/pgsql/lib
++ifneq ($(wildcard $(CROSS_COMPILE_TARGET)$(LOCALBASE)/pgsql/include),)
++  CFLAGS+=-I$(CROSS_COMPILE_TARGET)$(LOCALBASE)/pgsql/include
++  MLFLAGS+=-L$(CROSS_COMPILE_TARGET)$(LOCALBASE)/pgsql/lib
+ endif
+ 
+ ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/pgsql),)
+@@ -86,9 +88,9 @@
    MLFLAGS+=-L$(CROSS_COMPILE_TARGET)/usr/lib/pgsql
  endif
  
@@ -60,7 +78,7 @@
  endif
  
  ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/opt/pgsql/include),)
-@@ -114,7 +114,7 @@
+@@ -114,7 +116,7 @@
  all: depend $(MODS)
  
  install: all

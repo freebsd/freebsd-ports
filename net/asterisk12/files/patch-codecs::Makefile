@@ -1,9 +1,18 @@
 
 $FreeBSD$
 
---- codecs/Makefile.orig	Tue Nov 29 20:24:39 2005
-+++ codecs/Makefile	Fri Jan 13 10:33:21 2006
-@@ -30,8 +30,8 @@
+--- codecs/Makefile.orig
++++ codecs/Makefile
+@@ -29,7 +29,7 @@
+ endif
+ 
+ ifndef WITHOUT_ZAPTEL
+-ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/linux/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/include/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/pkg/include/zaptel.h),)
++ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/linux/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)$(LOCALBASE)/include/zaptel/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/pkg/include/zaptel.h),)
+   ifeq (${OSARCH},NetBSD)
+     SOLINK+=-L$(CROSS_COMPILE_TARGET)/usr/pkg/lib
+   endif
+@@ -43,8 +43,8 @@
  
  UI_SPEEX=$(wildcard $(CROSS_COMPILE_TARGET)/usr/include/speex.h)
  UIS_SPEEX=$(wildcard $(CROSS_COMPILE_TARGET)/usr/include/speex/speex.h)
@@ -14,7 +23,7 @@ $FreeBSD$
  ifneq (${UI_SPEEX},)
    MODSPEEX=codec_speex.so
    LIBSPEEX+=-lspeex -lm
-@@ -43,14 +43,14 @@
+@@ -56,14 +56,14 @@
  endif
  ifneq (${ULI_SPEEX},)
    MODSPEEX=codec_speex.so
@@ -33,7 +42,7 @@ $FreeBSD$
    LIBSPEEX+=-lspeex -lm
  endif
  
-@@ -65,7 +65,7 @@
+@@ -78,7 +78,7 @@
  LIBLPC10=lpc10/liblpc10.a
  
  ifeq ($(findstring BSD,${OSARCH}),BSD)
@@ -42,7 +51,7 @@ $FreeBSD$
  endif
  
  CODECS+=$(MODG723) $(MODSPEEX) $(MODILBC) codec_gsm.so codec_lpc10.so  \
-@@ -126,7 +126,7 @@
+@@ -139,7 +139,7 @@
  endif
  
  install: all

@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.2.13
-PORTREVISION=	4
+PORTVERSION=	1.2.17
 PKGNAMESUFFIX=	12
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
 
-PATCHFILES=	asterisk-1.2.12.1-codec-negotiation-20061009.diff.gz
-PATCH_SITES=	http://unofficial.portaone.com/~bamby/public/
+PATCHFILES=	asterisk-1.2.17-codec-negotiation-20070416.diff.gz
+PATCH_SITES=	http://sobomax.homeunix.org/~sobomax/
 
 #		${PORTNAME}-1.2.4-${BRIVER}.patch.gz:bristuff
 #		${MASTER_SITE_LOCAL:S,$,:bristuff,}
@@ -67,9 +66,9 @@ PLIST_SUB+=	WITH_ZAPTEL="@comment "
 MAKE_ENV+=	WITHOUT_ZAPTEL=1
 .else
 BUILD_DEPENDS+=	libpri>=1.2.0:${PORTSDIR}/misc/libpri \
-		${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
+		${LOCALBASE}/include/zaptel/zaptel.h:${PORTSDIR}/misc/zaptel
 LIB_DEPENDS+=	pri.1:${PORTSDIR}/misc/libpri
-RUN_DEPENDS+=	${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
+RUN_DEPENDS+=	${LOCALBASE}/include/zaptel/zaptel.h:${PORTSDIR}/misc/zaptel
 PLIST_SUB+=	WITH_ZAPTEL=""
 MAKE_ENV+=	WITH_ZAPTEL=1
 .endif

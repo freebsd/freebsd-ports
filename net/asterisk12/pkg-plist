@@ -329,6 +329,7 @@ lib/asterisk/modules/codec_ilbc.so
 lib/asterisk/modules/codec_lpc10.so
 lib/asterisk/modules/codec_speex.so
 lib/asterisk/modules/codec_ulaw.so
+%%WITH_ZAPTEL%%lib/asterisk/modules/codec_zap.so
 lib/asterisk/modules/format_au.so
 lib/asterisk/modules/format_g723_1.so
 lib/asterisk/modules/format_g726.so
@@ -621,6 +622,16 @@ sbin/streamplayer
 %%DATADIR%%/sounds/queue-youarenext.gsm
 %%DATADIR%%/sounds/screen-callee-options.gsm
 %%DATADIR%%/sounds/seconds.gsm
+%%DATADIR%%/sounds/silence/1.gsm
+%%DATADIR%%/sounds/silence/10.gsm
+%%DATADIR%%/sounds/silence/2.gsm
+%%DATADIR%%/sounds/silence/3.gsm
+%%DATADIR%%/sounds/silence/4.gsm
+%%DATADIR%%/sounds/silence/5.gsm
+%%DATADIR%%/sounds/silence/6.gsm
+%%DATADIR%%/sounds/silence/7.gsm
+%%DATADIR%%/sounds/silence/8.gsm
+%%DATADIR%%/sounds/silence/9.gsm
 %%DATADIR%%/sounds/spy-agent.gsm
 %%DATADIR%%/sounds/spy-h323.gsm
 %%DATADIR%%/sounds/spy-iax.gsm
@@ -735,6 +746,7 @@ sbin/streamplayer
 %%DATADIR%%/sounds/vm-whichbox.gsm
 %%DATADIR%%/sounds/vm-youhave.gsm
 @exec mkdir -p %%DATADIR%%/sounds/priv-callerintros
+@dirrm %%DATADIR%%/sounds/silence
 @dirrm %%DATADIR%%/sounds/priv-callerintros
 @dirrm %%DATADIR%%/sounds/phonetic
 @dirrm %%DATADIR%%/sounds/letters

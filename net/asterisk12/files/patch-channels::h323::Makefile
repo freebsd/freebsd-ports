@@ -1,0 +1,20 @@
+--- channels/h323/Makefile.orig	Mon Apr 16 17:28:08 2007
++++ channels/h323/Makefile	Mon Apr 16 17:28:21 2007
+@@ -21,8 +21,7 @@
+ OPENH323DIR=$(HOME)/openh323
+ endif
+ 
+-clean:
+-	rm -f *.so *.o .depend
++include $(OPENH323DIR)/openh323u.mak
+ 
+ $(SOURCES)::	$(SOURCES:.cxx=.cpp)
+ 	ln -f $< $@
+@@ -31,7 +30,6 @@
+ 	touch $(SOURCES)
+ 
+ libchanh323.a:	$(OBJS)
+-	include $(OPENH323DIR)/openh323u.mak
+ 	ar crv $@ $(OBJS)
+ 
+ Makefile.ast:	FORCE
