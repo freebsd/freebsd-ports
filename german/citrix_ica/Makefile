@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	citrix_ica
-PORTVERSION=	9.15
+PORTVERSION=	10.0
 CATEGORIES=	german net comms linux
 MASTER_SITES=
 DISTNAME=	${PORTNAME}-linuxx86-de-${PORTVERSION}
@@ -16,7 +16,7 @@ COMMENT=	Citrix(R) Presentation Server(TM) client
 
 RUN_DEPENDS=	${LINUXBASE}${X11BASE}/lib/libXm.so.3:${PORTSDIR}/x11-toolkits/linux-openmotif
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
 RESTRICTED=	License prohibits redistribution
 IS_INTERACTIVE=	"Noisy license agreement ignores stdin"
@@ -46,12 +46,11 @@ IGNORE='The distribution file for this port may not be automatically fetched due
 do-fetch:
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 	@${ECHO} ""
-	@${ECHO} "You have to fetch the file manually after reading and"
-	@${ECHO} "agreeing to the license at:"
+	@${ECHO} "You have to fetch the file manually from"
 	@${ECHO} ""
-	@${ECHO} "http://www.citrix.com/download/bin/license.asp?client=linux"
+	@${ECHO} "http://www.citrix.com/site/SS/downloads/details.asp?dID=2755&downloadID=3323"
 	@${ECHO} ""
-	@${ECHO} "Once linuxx86.tar.gz has been downloaded move it to"
+	@${ECHO} "Once de.linuxx86.tar.gz has been downloaded move it to"
 	@${ECHO} "${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} and restart the build."
 	@${ECHO} ""
 	@${FALSE}

@@ -1,14 +1,14 @@
---- linuxx86/hinst.orig	Tue Dec  6 11:25:53 2005
-+++ linuxx86/hinst	Mon Jul 17 09:12:18 2006
-@@ -11,7 +11,6 @@
- #	Copyright 1998-2000 Citrix Systems, Inc. All rights reserved.
+--- linuxx86/hinst.orig	Tue Oct 31 08:31:50 2006
++++ linuxx86/hinst	Wed Apr 25 08:50:20 2007
+@@ -24,7 +24,6 @@
+ #	Copyright 1996-2000, 2006 Citrix Systems, Inc. All rights reserved.
  #
  ###############################################################################
 -
  # note: the INSTALLER_... strings should be in lowercase. The installer will then
  # accept lowercase or uppercase versions of them as input.
  INSTALLER_YES=ja
-@@ -73,7 +72,13 @@
+@@ -86,7 +85,13 @@
  fi
  
  #  Install in here by default.
@@ -23,53 +23,25 @@
  
  #  Default CDROM mount point
  DefaultCDSourceDir=/cdrom
-@@ -2175,7 +2180,7 @@
- 	tr_file $TR_FILE_KEY $PORT/$PORT.psf
- 	preen_files
+@@ -2226,7 +2231,7 @@
+ 	then
+ 		:
+ 	else
+-		/bin/false
++		/usr/bin/false
+ 		return 
+ 	fi
+ 
+@@ -2272,7 +2277,7 @@
+ 		fi
+ 	fi
  
 -	/bin/true
 +	/usr/bin/true
  }
  
  ###############################################################################
-@@ -2227,10 +2232,34 @@
- #
- ###############################################################################
- 
-+check_for_ns() {
-+        BIN=`/usr/bin/file $1/plugins/libnullplugin.so | /usr/bin/awk '{print $11}'`
-+        case ${BIN} in
-+        \(SYSV\),)
-+                NETSCAPE_DIR="$1"
-+                PLUGIN_PATH="$s/plugins"
-+                FOUND_NS="TRUE"
-+        esac
-+}
-+
-+NSCP="/usr/local/libexec/netscape \
-+        /usr/local/libexec/netscape-linux \
-+        /usr/local/netscape \
-+        /usr/local/netscape-linux \
-+        /usr/local/lib/netscape \
-+        /usr/local/lib/netscape-linux \
-+        /usr/local/lib/linux-mozilla \
-+        /usr/local/lib/mozilla \
-+        $MOZILLA_HOME"
-+
-+for dir in ${NSCP}; do
-+        if [ -e $dir/plugins/libnullplugin.so ]; then
-+                check_for_ns $dir;
-+        fi
-+done
-+
- INST_DIR=$ICAInstDir
- TMP_NAME=/tmp/ICAnetscape.$$
--NETSCAPE_DIR="/usr/local/lib/netscape"
--PLUGIN_PATH="/usr/local/netscape/plugins"
- PLUGIN_NAME=npica.so
- PLUGIN_CLASS=ICAClObj.class
- MAILCAP_FILE=mailcap
-@@ -2303,26 +2332,19 @@
+@@ -2397,26 +2402,19 @@
  
  netscape_integrate()
  {
@@ -100,7 +72,7 @@
  	user_prompt $integrate_netscape2
   	getyesno $INSTALLER_NO
  	if [ "$ANSWER" = "$INSTALLER_YES" ]
-@@ -2331,9 +2353,9 @@
+@@ -2425,9 +2423,9 @@
  	else
    		user_echo $integrate_netscape6
  	fi
@@ -112,7 +84,7 @@
      # Create utility script files in install root.
      create_wfica_script
      create_wfica_assoc_script
-@@ -2969,55 +2991,6 @@
+@@ -3063,55 +3061,6 @@
      echo "$BINDIR"
  }
  
@@ -168,7 +140,7 @@
  BROWSER_LIST_KEY="BROWSER_DIR"
  ################################################################################
  #
-@@ -3244,13 +3217,16 @@
+@@ -3337,13 +3286,16 @@
  XDG_TARGET_DIR="/usr/share/applications"
  TL_MENU_DIR="Vendor_menus/Applications"                    # TurboLinux
  TL_TOP_DIR="/usr/share/applnk/"$TL_MENU_DIR
