@@ -1,5 +1,5 @@
---- wmake/Makefile.orig	Tue Jun 21 18:10:23 2005
-+++ wmake/Makefile	Fri Mar 31 17:10:41 2006
+--- ./wmake/Makefile.orig	Mon Apr  2 10:24:58 2007
++++ ./wmake/Makefile	Thu Apr 12 22:08:30 2007
 @@ -60,8 +60,8 @@
  OBJECTS_DIR        = $(MAKE_DIR)/$(WM_OPTIONS)
  CLASSES_DIR        = $(MAKE_DIR)/classes
@@ -9,13 +9,13 @@
 +SYS_INC            = -I$(LOCALBASE)/include
 +SYS_LIBS           = -L$(LOCALBASE)/lib
  
- PROJECT_INC        = 
- PROJECT_LIBS       = 
+ PROJECT_INC        = -I$(LIB_SRC)/$(WM_PROJECT)/lnInclude
+ PROJECT_LIBS       = -l$(WM_PROJECT)
 @@ -143,6 +143,7 @@
  $(EXE):  $(OBJECTS)
- 	     $(WM_SCRIPTS)/mkObjectDir $(EXE)
+ 	     @$(WM_SCRIPTS)/mkObjectDir $(EXE)
  	     $(LINKEXE) $(OBJECTS) -L$(LIB_WM_OPTIONS_DIR) \
 +	     -rpath-link $(LIB_WM_OPTIONS_DIR) -rpath-link $(FOAM_MPI_LIBBIN) \
- 	     $(EXE_LIBS) -l$(WM_PROJECT) $(SYS_LIBS) $(LINK_LIBS) $(GLIBS) -o $(EXE)
+ 	     $(EXE_LIBS) $(PROJECT_LIBS) $(SYS_LIBS) $(LINK_LIBS) $(GLIBS) -o $(EXE)
  
  exe:     $(SEXE)
