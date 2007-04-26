@@ -1,0 +1,15 @@
+The Enhanced TightVNC Viewer package started as a project to add some patches
+to the long neglected Unix TightVNC Viewer. However, now the front-end GUI and
+wrapper scripts features dwarf the Unix TightVNC Viewer patches (see the lists
+below).
+
+It adds a GUI for Windows, Mac OS X, and Unix that automatically starts up
+STUNNEL SSL tunnel for SSL or SSH connections to x11vnc, and then launches the
+TightVNC Viewer to use the tunnel. It also enables SSL encrypted VNC
+connections to any other VNC Server running an SSL tunnel, such as STUNNEL, at
+their end. It can be used to perform SSH tunnelled connections to any VNC
+Server as well. The tool has many additional features (see below for a list).
+
+The short name for this project is "ssvnc" for SSL/SSH VNC Viewer.
+
+WWW: http://www.karlrunge.com/x11vnc/ssvnc.html

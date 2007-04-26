@@ -1,0 +1,6 @@
+bin/ssvnc
+bin/ssvnc-gui
+bin/ssvnc-stunnel
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/stunnel-server.conf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
