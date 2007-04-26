@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	qt
-PORTVERSION=	3.17.1
+PORTVERSION=	3.17.2
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyQt3/GPL/ \
