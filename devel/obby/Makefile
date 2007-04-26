@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	obby
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.4
 CATEGORIES=	devel
 MASTER_SITES=	http://releases.0x539.de/obby/ \
 		http://www.atarininja.org/~wxs/distfiles/
