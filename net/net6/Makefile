@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	net6
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	net devel
 MASTER_SITES=	http://releases.0x539.de/net6/ \
 		http://www.atarininja.org/~wxs/distfiles/
