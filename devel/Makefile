@@ -1172,6 +1172,7 @@
     SUBDIR += p5-File-Temp
     SUBDIR += p5-File-Tempdir
     SUBDIR += p5-File-Type
+    SUBDIR += p5-File-Util
     SUBDIR += p5-File-chdir
     SUBDIR += p5-File-pushd
     SUBDIR += p5-FileHandle-Unget
