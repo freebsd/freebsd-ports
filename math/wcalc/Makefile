@@ -1,0 +1,30 @@
+# New ports collection makefile for:	Wcalc
+# Date created:			25-Apr-2007
+# Whom:					Amarendra Godbole <amarendra.godbole@gmail.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Wcalc
+PORTVERSION=	2.2.2
+CATEGORIES=	math
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	w-calc
+
+MAINTAINER=	amarendra.godbole@gmail.com
+COMMENT=	A natural-expression command-line calculator
+
+LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4 \
+		mpfr.1:${PORTSDIR}/math/mpfr
+
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+
+MAN1=		wcalc.1
+
+PLIST_FILES=	bin/wcalc
+
+.include <bsd.port.mk>
