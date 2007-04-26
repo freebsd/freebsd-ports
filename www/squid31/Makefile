@@ -76,6 +76,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.6.12
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://ftp.vistech.net/pub/squid/%SUBDIR%/ \
@@ -279,6 +280,10 @@ CONFIGURE_ARGS+=	--enable-ssl \
 			--with-openssl="${OPENSSLBASE}"
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
+.if defined(WITH_SQUID_ICAP)
+IGNORE=		is currently broken with both ICAP and SSL support enabled because of conflicting patches. This will be resolved for Squid 2.6.13
+.endif
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-changeset_11375
 .endif
 .if defined(WITH_SQUID_PINGER)
 CONFIGURE_ARGS+=	--enable-icmp
