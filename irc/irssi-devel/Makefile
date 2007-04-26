@@ -12,7 +12,7 @@ MASTER_SITES=	http://coekie.404.be/irssi/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/irssi-devel/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	shaun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modular IRC client with many features
 
 CONFLICTS=	irssi-0.8*
