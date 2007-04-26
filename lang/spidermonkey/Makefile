@@ -8,17 +8,18 @@ PORTNAME=	spidermonkey
 DISTVERSION=	1.5
 PORTREVISION=	3
 CATEGORIES=	lang
-MASTER_SITES=	MOZILLA:src,older
-MASTER_SITE_SUBDIR=	js/:src js/older-packages/:older
+MASTER_SITES=	MOZILLA
+MASTER_SITE_SUBDIR=	js/older-packages/
 DISTNAME=	js-${DISTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src
 
 MAINTAINER=	citric@cubicone.tmetic.com
 COMMENT=	A standalone JavaScript interpreter from the Mozilla project
 
+LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr
+
 CONFLICTS=	njs-[0-9]*
 
-LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr
 MAKE_ARGS+=	JS_THREADSAFE=YES \
 		PROG_LIBS="-lreadline -ltermcap -lm ${PTHREAD_LIBS}" \
 		LDFLAGS="-L${LOCALBASE}/lib"
