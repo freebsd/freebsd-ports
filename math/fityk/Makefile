@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	fityk
-PORTVERSION=	0.7.8
+PORTVERSION=	0.8.1
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free peak fitting software
@@ -24,15 +23,21 @@ USE_GNOME=	gnometarget gtk20
 USE_WX=		2.6
 WX_CONF_ARGS=	absolute
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
+USE_LDCONFIG=	yes
 
 MAN1=		fityk.1
 PLIST_FILES=	bin/cfityk \
 		bin/fityk \
-		%%DATADIR%%/fityk_tips.txt \
-		%%DATADIR%%/fitykhelp.htb
+		include/fityk.h \
+		lib/libfityk.a \
+		lib/libfityk.la \
+		lib/libfityk.so \
+		lib/libfityk.so.0 \
+		%%DATADIR%%/fitykhelp.htb \
+		%%DATADIR%%/tips.txt
 PLIST_DIRS=	%%DATADIR%%
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
@@ -42,5 +47,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^CPPFLAGS=|#CPPFLAGS=|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|config 3rdparty|config|g ; \
 		 s|^install-data-am:|install-data-am:#|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|fityk_tips|tips|g' ${WRKSRC}/src/wxgui/gui.cpp
 
 .include <bsd.port.mk>
