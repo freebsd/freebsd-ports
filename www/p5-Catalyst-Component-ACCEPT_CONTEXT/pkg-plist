@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Catalyst/Component/ACCEPT_CONTEXT.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Component/ACCEPT_CONTEXT/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Component/ACCEPT_CONTEXT
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Component
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrmtry %%SITE_PERL%%/Catalyst/Component
+@dirrmtry %%SITE_PERL%%/Catalyst

@@ -1,0 +1,10 @@
+Make the current Catalyst request context available in Models and
+Views.
+
+Models and Views don't usually have access to the request object,
+since they probably don't really need it. Sometimes, however, having
+the request context available outside of Controllers makes your
+application cleaner. If that's the case, just use this module as a
+base class.
+
+WWW: http://search.cpan.org/dist/Catalyst-Component-ACCEPT_CONTEXT/
