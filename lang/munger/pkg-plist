@@ -1,5 +1,5 @@
 bin/munger
-lib/libmunger.so.20
+lib/libmunger.so.21
 %%DKNS_BIN%%
 %%DATADIR%%/ipdatabase.munger
 %%DATADIR%%/ip2country.munger
@@ -19,7 +19,6 @@ lib/libmunger.so.20
 %%DATADIR%%/ed.munger
 %%DATADIR%%/xmlquery.munger
 %%DATADIR%%/filter.munger
-%%DATADIR%%/tags.munger
 %%DATADIR%%/fcgi.munger
 %%DATADIR%%/cgi.munger
 %%DATADIR%%/client.fcgi
