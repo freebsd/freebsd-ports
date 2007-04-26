@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Var_Dump
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bg1tpt@gmail.com
 COMMENT=	Provides methods for dumping structured information about a variable
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
@@ -31,9 +31,6 @@ TESTS=		bug1321.phpt bug490.phpt bug3396.phpt bug3416.phpt ignore-list.phpt \
 		toString-float.phpt toString-int.phpt toString-null.phpt \
 		toString-object.phpt toString-resource.phpt
 _EXAMPLESDIR=	docs
-
-post-extract:
-	${MV} ${WRKSRC}/php/* ${WRKSRC}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
