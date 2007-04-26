@@ -924,6 +924,7 @@
     SUBDIR += p5-Class-Multimethods
     SUBDIR += p5-Class-Multimethods-Pure
     SUBDIR += p5-Class-NamedParms
+    SUBDIR += p5-Class-OOorNO
     SUBDIR += p5-Class-ObjectTemplate
     SUBDIR += p5-Class-ObjectTemplate-DB
     SUBDIR += p5-Class-Observable
