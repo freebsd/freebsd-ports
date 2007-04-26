@@ -507,6 +507,7 @@
     SUBDIR += libXGP
     SUBDIR += libYGP
     SUBDIR += libafterbase
+    SUBDIR += libarena
     SUBDIR += libassa
     SUBDIR += libassetml
     SUBDIR += libast

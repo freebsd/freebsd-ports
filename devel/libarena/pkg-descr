@@ -1,0 +1,17 @@
+libarena is a custom memory allocator interface and implementation. Four
+allocators are provided: flat LIFO arena allocator, object pool allocator
+and two malloc(3) wrappers: one which returns the pointers unadulterated
+and one which obeys the requested, arbitrary alignment. These can be used
+directly, or through their exported prototype interfaces.
+
+libarena is meant to provide a baseline interface so allocator's can be
+stacked, and to provide a simple and well defined interface for libraries
+and applications without becoming mired in features or capabilities. It is
+not meant to restrict or confine what custom allocators can actually
+accomplish. For instance, the included pool and arena allocators include a
+suite of string utilities which aren't available in the generic exportable
+interface. Note that these string utilities are built upon a generic
+interface (see util.h) which can take the prototypical allocation context,
+so they are also available to any 3rd party compatible allocators.
+
+WWW: http://www.25thandclement.com/~william/projects/libarena.html
