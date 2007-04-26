@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.digium.com/pub/libpri/ \
 		ftp://ftp.digium.com/pub/libpri/old/
 
-MAINTAINER=	gonzo@univ.kiev.ua
+MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A C implementation of the Primary Rate ISDN specification
 
 USE_GMAKE=	yes
