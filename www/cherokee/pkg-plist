@@ -2,16 +2,24 @@ bin/cget
 bin/cherokee-config
 bin/cherokee-panic
 bin/cherokee_logrotate
-etc/cherokee/advanced.conf
-etc/cherokee/cherokee.conf
-etc/cherokee/icons.conf
-etc/cherokee/mime.compression.types
-etc/cherokee/mime.types
-etc/cherokee/mods-available/admin
-etc/cherokee/mods-available/ssl
-etc/cherokee/sites-available/default
-etc/cherokee/sites-available/example.com
-etc/cherokee/sites-enabled/default
+@unexec for i in `find %D/etc/cherokee -name \*.default`;do if cmp -s $i ${i%%.default};then rm -f ${i%%.default};fi;done
+@unexec for i in `find %D/etc/cherokee -name \*.sample`;do if cmp -s $i ${i%%.sample};then rm -f ${i%%.sample};fi;done
+@unexec cd %D/etc/cherokee/sites-enabled/&&if [ -L default -a -z "`ls|grep -vx default`" ];then rm -f default;fi
+etc/cherokee/advanced.conf.default
+etc/cherokee/cherokee.conf.default
+etc/cherokee/icons.conf.default
+etc/cherokee/mime.compression.types.default
+etc/cherokee/mime.types.default
+etc/cherokee/mods-available/admin.sample
+etc/cherokee/mods-available/ssl.sample
+etc/cherokee/mods-enabled/.empty
+etc/cherokee/sites-available/default.sample
+etc/cherokee/sites-available/example.sample
+etc/cherokee/ssl/.empty
+@exec for i in `find %D/etc/cherokee -name \*.default`;do if [ ! -f ${i%%.default} ];then cp $i ${i%%.default};fi;done
+@exec for i in `find %D/etc/cherokee -name \*.sample`;do if [ ! -f ${i%%.sample} ];then cp $i ${i%%.sample};fi;done
+@exec if [ ! -d %D/etc/cherokee/sites-enabled ];then mkdir %D/etc/cherokee/sites-enabled;fi
+@exec cd %D/etc/cherokee/sites-enabled/&&if [ -z "`ls`" ];then ln -sf ../sites-available/default;fi
 include/cherokee/admin_client.h
 include/cherokee/buffer.h
 include/cherokee/cherokee-config.h
@@ -95,7 +103,6 @@ lib/libcherokee-server.so.0
 libdata/pkgconfig/cherokee.pc
 sbin/cherokee
 share/aclocal/cherokee.m4
-%%DATADIR%%/Intro.txt
 %%DATADIR%%/deps/combined.deps
 %%DATADIR%%/deps/common.deps
 %%DATADIR%%/deps/error_redir.deps
@@ -125,7 +132,6 @@ share/aclocal/cherokee.m4
 %%PORTDOCS%%%%DOCSDIR%%/Behavior_configuration.html
 %%PORTDOCS%%%%DOCSDIR%%/CGI_executing.html
 %%PORTDOCS%%%%DOCSDIR%%/Cget.html
-%%PORTDOCS%%%%DOCSDIR%%/Cherokee-icono.png
 %%PORTDOCS%%%%DOCSDIR%%/Combined_logger.html
 %%PORTDOCS%%%%DOCSDIR%%/Combined_logs.html
 %%PORTDOCS%%%%DOCSDIR%%/Common_behavior.html
@@ -137,7 +143,6 @@ share/aclocal/cherokee.m4
 %%PORTDOCS%%%%DOCSDIR%%/Directory_configuration.html
 %%PORTDOCS%%%%DOCSDIR%%/Directory_listing.html
 %%PORTDOCS%%%%DOCSDIR%%/Encoders.html
-%%PORTDOCS%%%%DOCSDIR%%/Exquisite-khelpcenter.png
 %%PORTDOCS%%%%DOCSDIR%%/Extension_configuration.html
 %%PORTDOCS%%%%DOCSDIR%%/FastCGI.html
 %%PORTDOCS%%%%DOCSDIR%%/File_sending.html
@@ -148,6 +153,7 @@ share/aclocal/cherokee.m4
 %%PORTDOCS%%%%DOCSDIR%%/Htdigest_validator.html
 %%PORTDOCS%%%%DOCSDIR%%/Htpasswd_validator.html
 %%PORTDOCS%%%%DOCSDIR%%/Icons_configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/Intro.txt
 %%PORTDOCS%%%%DOCSDIR%%/Jaws_and_Cherokee_with_FastCGI.html
 %%PORTDOCS%%%%DOCSDIR%%/Logging_system.html
 %%PORTDOCS%%%%DOCSDIR%%/Mime_types_configuration.html
@@ -160,7 +166,6 @@ share/aclocal/cherokee.m4
 %%PORTDOCS%%%%DOCSDIR%%/Request_configuration.html
 %%PORTDOCS%%%%DOCSDIR%%/Ruby_on_Rails_with_SCGI.html
 %%PORTDOCS%%%%DOCSDIR%%/SCGI.html
-%%PORTDOCS%%%%DOCSDIR%%/Server-conf-small.png
 %%PORTDOCS%%%%DOCSDIR%%/Server_configuration.html
 %%PORTDOCS%%%%DOCSDIR%%/U-Cherokee.html
 %%PORTDOCS%%%%DOCSDIR%%/Validators.html
@@ -169,20 +174,25 @@ share/aclocal/cherokee.m4
 %%PORTDOCS%%%%DOCSDIR%%/WebApplications.html
 %%PORTDOCS%%%%DOCSDIR%%/cherokee.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-www/images/cherokee-logo.png
-www/images/default-bg.png
-www/images/powered_by_cherokee.png
-www/index.html
+%%PORTDOCS%%%%DOCSDIR%%/images/Cherokee-icono.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Exquisite-khelpcenter.png
+%%PORTDOCS%%%%DOCSDIR%%/images/Server-conf-small.png
+www/cherokee/images/cherokee-logo.png
+www/cherokee/images/default-bg.png
+www/cherokee/images/powered_by_cherokee.png
+www/cherokee/index.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/deps
 @dirrm %%DATADIR%%
 @dirrm lib/cherokee
 @dirrm include/cherokee
-@dirrm etc/cherokee/ssl
-@dirrm etc/cherokee/sites-enabled
-@dirrm etc/cherokee/sites-available
-@dirrm etc/cherokee/mods-enabled
-@dirrm etc/cherokee/mods-available
-@dirrm etc/cherokee
-@dirrmtry www/images
+@dirrmtry etc/cherokee/ssl
+@dirrmtry etc/cherokee/sites-enabled
+@dirrmtry etc/cherokee/sites-available
+@dirrmtry etc/cherokee/mods-enabled
+@dirrmtry etc/cherokee/mods-available
+@dirrmtry etc/cherokee
+@dirrmtry www/cherokee/images
+@dirrmtry www/cherokee
