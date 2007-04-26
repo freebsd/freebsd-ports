@@ -20,6 +20,8 @@ RUN_DEPENDS=	${SITE_PERL}/mach/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLin
 		${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion
 
 CONFLICTS=	metasploit-3*
+DEPRECATED=	This port will soon be replaced by metasploit 3 (security/metasploit-devel)
+EXPIRATION_DATE=	2007-05-30
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
@@ -27,12 +29,6 @@ REINPLACE_ARGS=	-i ''
 
 SCRIPTS=	msfcli msfconsole msfelfscan msfencode msflogdump msfpayload \
 		msfpescan msfupdate msfweb msfdldebug
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl version 5.6.0 or higher
-.endif
 
 post-patch:
 .for f in ${SCRIPTS}
@@ -47,4 +43,4 @@ do-install:
 	${LN} -s ${DATADIR}/${f} ${PREFIX}/bin
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
