@@ -6,27 +6,27 @@
 #
 
 PORTNAME=	aircrack-ng
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://download.aircrack-ng.org/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
 
 MAINTAINER=	lars.engels@0x20.net
-COMMENT=	Aircrack-ng is the next generation of aircrack
+COMMENT=	Aircrack-ng is the next generation of aircrack with new features
 
-USE_GMAKE=	yes
-ALL_TARGET=	aircrack-ng airdecap-ng packetforge-ng ivstools kstats
+ALL_TARGET=	aircrack-ng airdecap-ng packetforge-ng ivstools kstats makeivs
 
 PLIST_FILES=	bin/aircrack-ng bin/airdecap-ng bin/packetforge-ng bin/ivstools \
-		bin/kstats
-MAN1=		aircrack-ng.1 airdecap-ng.1 packetforge-ng.1 ivstools.1
+		bin/kstats bin/makeivs
 
-SUB_FILES+=	pkg-message
+MAN1=		aircrack-ng.1 airdecap-ng.1 packetforge-ng.1 ivstools.1 makeivs.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
+.if ${OSVERSION} >= 700000
+ALL_TARGET+=	aireplay-ng airodump-ng airtun-ng
+PLIST_FILES+=	bin/aireplay-ng bin/airodump-ng bin/airtun-ng
+MAN1+=		aireplay-ng.1 airodump-ng.1 airtun-ng.1
 .endif
 
 post-patch:
@@ -39,11 +39,15 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/packetforge-ng ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/ivstools ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/kstats ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/makeivs ${PREFIX}/bin
+.if ${OSVERSION} >= 700000
+	${INSTALL_PROGRAM} ${WRKSRC}/aireplay-ng ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/airodump-ng ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/airtun-ng ${PREFIX}/bin
+.endif
+
 .for manpage in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/manpages/${manpage} ${PREFIX}/man/man1
 .endfor
-
-post-install:
-	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
