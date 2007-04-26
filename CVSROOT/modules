@@ -6187,6 +6187,7 @@ libaiff		ports/audio/libaiff
 libao		ports/audio/libao
 libapreq2	ports/www/libapreq2
 libarc		ports/archivers/libarc
+libarena	ports/devel/libarena
 libart		ports/graphics/libart
 libart_lgpl	ports/graphics/libart_lgpl
 libassa		ports/devel/libassa
