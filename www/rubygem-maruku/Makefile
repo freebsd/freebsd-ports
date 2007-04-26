@@ -1,0 +1,24 @@
+# Ports collection makefile for:	rubygem-maruku
+# Date created:				26 April 2007
+# Whom:					Alexander Logvinov <ports@logvinov.com>
+#
+# $FreeBSD$
+
+PORTNAME=	maruku
+PORTVERSION=	0.5.5
+CATEGORIES=	www rubygems
+MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	ports@logvinov.com
+COMMENT=	A Markdown and PHP Markdown extra interpreter for Ruby
+
+BUILD_DEPENDS=	rubygem-syntax>=1.0.0:${PORTSDIR}/textproc/rubygem-syntax
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+USE_RUBY=	yes
+USE_RUBY_FEATURES=	iconv
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/devel/ruby-gems/Makefile.common"
+.include <bsd.port.post.mk>
