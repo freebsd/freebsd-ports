@@ -1,7 +1,7 @@
---- Makefile.orig	Fri Dec 24 00:09:48 2004
-+++ Makefile	Tue Dec 28 15:23:07 2004
-@@ -1,11 +1,14 @@
- # $Id: Makefile,v 1.9 2004/12/23 23:09:48 max Exp $
+--- Makefile.orig	Mon Apr 23 20:29:18 2007
++++ Makefile	Wed Apr 25 20:41:52 2007
+@@ -1,8 +1,10 @@
+ # $Id: Makefile,v 1.11 2007/04/23 18:29:18 max Exp $
  # $FreeBSD$
  
 -BINDIR=		/usr/local/bin
@@ -13,7 +13,3 @@
  PROG=		obexapp
  MAN1=		obexapp.1
  
-+NO_WERROR=	yes
- WARNS?=		2
- 
- SRCS=		main.c client.c event.c sdp.c server.c stream.c \
