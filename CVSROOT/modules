@@ -15740,6 +15740,7 @@ wbar		ports/x11/wbar
 wbd		ports/mbone/wbd
 wbl		ports/mail/wbl
 wbxml2		ports/textproc/wbxml2
+wcalc		ports/math/wcalc
 wcol		ports/www/wcol
 wdiag		ports/net-mgmt/wdiag
 wdiff		ports/textproc/wdiff
