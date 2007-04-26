@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ctpp
-PORTVERSION=	1.8.4
+PORTVERSION=	1.8.5
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.reki.ru/products/ctpp/download/ \
 		${MASTER_SITE_LOCAL}
