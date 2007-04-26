@@ -762,7 +762,8 @@ share/asterisk/static-http/prototype.js
 %%WITH_ZAPTEL%%lib/asterisk/modules/app_zapscan.so
 %%WITH_ODBC%%lib/asterisk/modules/cdr_odbc.so
 %%WITH_H323%%lib/asterisk/modules/chan_h323.so
-@comment ---NEEDS NEWEST ZAPTEL--- %%WITH_ZAPTEL%%lib/asterisk/modules/chan_zap.so
+%%WITH_ZAPTEL%%lib/asterisk/modules/chan_zap.so
+%%WITH_ZAPTEL%%lib/asterisk/modules/codec_zap.so
 %%WITH_ODBC%%lib/asterisk/modules/res_config_odbc.so
 %%WITH_ODBC%%lib/asterisk/modules/res_odbc.so
 @dirrm share/asterisk/static-http

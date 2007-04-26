@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
@@ -71,9 +72,9 @@ CONFIGURE_ARGS+= --without-zaptel
 PLIST_SUB+=	WITH_ZAPTEL=""
 CONFIGURE_ARGS+= --with-zaptel
 BUILD_DEPENDS+=	libpri>=1.2.0:${PORTSDIR}/misc/libpri \
-		${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
+		${LOCALBASE}/include/zaptel/zaptel.h:${PORTSDIR}/misc/zaptel
 LIB_DEPENDS+=	pri.1:${PORTSDIR}/misc/libpri
-RUN_DEPENDS+=	${LOCALBASE}/include/zaptel.h:${PORTSDIR}/misc/zaptel
+RUN_DEPENDS+=	${LOCALBASE}/include/zaptel/zaptel.h:${PORTSDIR}/misc/zaptel
 .endif
 
 #
