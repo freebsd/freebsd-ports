@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	inplace
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
 		${MASTER_SITE_LOCAL}
