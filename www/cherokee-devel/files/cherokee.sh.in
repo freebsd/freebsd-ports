@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: cherokee
-# REQUIRE: %%REQUIRE%%
+# REQUIRE: DAEMON
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to enable cherokee:
@@ -29,13 +29,6 @@ command_args="-C ${cherokee_conf} -b"
 pidfile=/var/run/cherokee.pid
 required_files=${cherokee_conf}
 stop_postcmd=stop_postcmd
-restart_precmd="checkconfig"
-
-checkconfig()
-{
-	echo "Performing sanity check on ${name} configuration:"
-	eval "${command} ${command_args} -t"
-}
 
 stop_postcmd()
 {
