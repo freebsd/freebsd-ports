@@ -14607,6 +14607,7 @@ ssmping		ports/net/ssmping
 ssmtp		ports/mail/ssmtp
 ssserver	ports/www/ssserver
 sst		ports/security/sst
+ssvnc		ports/net/ssvnc
 sswf		ports/graphics/sswf
 ssync		ports/sysutils/ssync
 st		ports/devel/st
