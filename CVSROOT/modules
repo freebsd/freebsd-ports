@@ -3082,6 +3082,7 @@ frink		ports/devel/frink
 frodo		ports/emulators/frodo
 frontline	ports/graphics/frontline
 frost		ports/net-p2p/frost
+frostwire	ports/net-p2p/frostwire
 frotz		ports/games/frotz
 frox		ports/ftp/frox
 frozenbubble	ports/games/frozenbubble
