@@ -13861,6 +13861,7 @@ rubygem-hpricot	ports/www/rubygem-hpricot
 rubygem-htmltools	ports/textproc/rubygem-htmltools
 rubygem-inline	ports/devel/rubygem-inline
 rubygem-layout-yullio	ports/www/rubygem-layout-yullio
+rubygem-maruku	ports/www/rubygem-maruku
 rubygem-mechanize	ports/www/rubygem-mechanize
 rubygem-memcache-client	ports/databases/rubygem-memcache-client
 rubygem-mongrel	ports/www/rubygem-mongrel
