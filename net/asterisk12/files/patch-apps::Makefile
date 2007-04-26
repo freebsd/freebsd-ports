@@ -1,11 +1,14 @@
---- apps/Makefile.orig	Sun Apr 30 16:38:22 2006
-+++ apps/Makefile	Wed Jun 14 14:03:42 2006
+
+$FreeBSD$
+
+--- apps/Makefile.orig
++++ apps/Makefile
 @@ -45,25 +45,27 @@
  #APPS+=app_rpt.so
  
  ifndef WITHOUT_ZAPTEL
 -ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/linux/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/include/zaptel.h),)
-+ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/linux/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)$(LOCALBASE)/include/zaptel.h),)
++ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/linux/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)$(LOCALBASE)/include/zaptel/zaptel.h),)
    APPS+=app_zapras.so app_meetme.so app_flash.so app_zapbarge.so app_zapscan.so app_page.so
  endif
  endif # WITHOUT_ZAPTEL

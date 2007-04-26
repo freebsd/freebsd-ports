@@ -1,9 +1,27 @@
 
 $FreeBSD$
 
---- res/Makefile
+--- res/Makefile.orig
 +++ res/Makefile
-@@ -37,8 +37,8 @@
+@@ -13,7 +13,8 @@
+ 
+ MODS=res_indications.so res_monitor.so res_adsi.so res_agi.so res_features.so
+ 
+-ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/odbcinst.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/include/odbcinst.h),)
++ifdef WITH_ODBC
++ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/odbcinst.h)$(wildcard $(CROSS_COMPILE_TARGET)${LOCALBASE}/include/odbcinst.h),)
+   ifneq (${OSARCH},FreeBSD)
+     MODS+=res_config_odbc.so
+   else
+@@ -21,6 +22,7 @@
+   endif
+   MODS+=res_odbc.so
+ endif
++endif
+ 
+ ifneq ($(NOCRYPTO),yes)
+   MODS+=res_crypto.so
+@@ -37,8 +39,8 @@
  endif
  
  ifeq ($(findstring BSD,${OSARCH}),BSD)
@@ -14,7 +32,7 @@ $FreeBSD$
  endif
  
  ifeq (${OSARCH},CYGWIN)
-@@ -55,9 +55,7 @@
+@@ -55,9 +57,7 @@
  CFLAGS+=
  
  ifndef WITHOUT_ZAPTEL
@@ -24,7 +42,7 @@ $FreeBSD$
  endif # WITHOUT_ZAPTEL
  
  #
-@@ -75,7 +73,7 @@
+@@ -75,7 +75,7 @@
  	rm -f $(DESTDIR)$(ASTHEADERDIR)/parking.h
  	rm -f $(DESTDIR)$(MODULES_DIR)/app_agi.so 
  	rm -f $(DESTDIR)$(MODULES_DIR)/res_parking.so

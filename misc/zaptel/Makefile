@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zaptel
-PORTVERSION=	1.2.13
+PORTVERSION=	1.4.1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.pbxpress.com/~gonzo/
 DISTNAME=	${PORTNAME}-bsd-${PORTVERSION}
@@ -46,7 +46,6 @@ pre-su-install:
 	@${MKDIR} ${PREFIX}/lib/zaptel
 
 post-install:
-	@${LN} -sfh ${PREFIX}/include ${PREFIX}/include/zaptel
 	@${TOUCH} ${PREFIX}/lib/zaptel/linker.hints
 	@${CAT} ${PKGMESSAGE}
 

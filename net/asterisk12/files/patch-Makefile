@@ -1,5 +1,8 @@
---- Makefile.orig	Tue Sep 26 18:41:55 2006
-+++ Makefile	Tue Sep 26 18:47:32 2006
+
+$FreeBSD$
+
+--- Makefile.orig
++++ Makefile
 @@ -19,8 +19,8 @@
  # CROSS_COMPILE=/opt/montavista/pro/devkit/arm/xscale_be/bin/xscale_be-
  # CROSS_COMPILE_BIN=/opt/montavista/pro/devkit/arm/xscale_be/bin/
@@ -144,7 +147,7 @@
  ifndef WITHOUT_ZAPTEL
  
 -ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/linux/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/local/include/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/pkg/include/zaptel.h),)
-+ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/linux/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)$(LOCALBASE)/include/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/pkg/include/zaptel.h),)
++ifneq ($(wildcard $(CROSS_COMPILE_TARGET)/usr/include/linux/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)$(LOCALBASE)/include/zaptel/zaptel.h)$(wildcard $(CROSS_COMPILE_TARGET)/usr/pkg/include/zaptel.h),)
    ASTCFLAGS+=-DZAPTEL_OPTIMIZATIONS
  endif
  
@@ -219,18 +222,29 @@
  
  muted: muted.o
  	$(CC) $(AUDIO_LIBS) -o muted muted.o
-@@ -552,38 +549,38 @@
+@@ -552,12 +549,12 @@
  
  datafiles: all
  	if [ x`$(ID) -un` = xroot ]; then sh mkpkgconfig $(DESTDIR)/usr/lib/pkgconfig; fi
 -	mkdir -p $(DESTDIR)$(ASTVARLIBDIR)/sounds/digits
+-	mkdir -p $(DESTDIR)$(ASTVARLIBDIR)/sounds/silence
 -	mkdir -p $(DESTDIR)$(ASTVARLIBDIR)/sounds/priv-callerintros
 +	$(MKDIR) $(DESTDIR)$(ASTVARLIBDIR)/sounds/digits
++	$(MKDIR) $(DESTDIR)$(ASTVARLIBDIR)/sounds/silence
 +	$(MKDIR) $(DESTDIR)$(ASTVARLIBDIR)/sounds/priv-callerintros
  	for x in sounds/digits/*.gsm; do \
  		if $(GREP) -q "^%`basename $$x`%" sounds.txt; then \
 -			$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTVARLIBDIR)/sounds/digits ; \
 +			$(BSD_INSTALL_DATA) $$x $(DESTDIR)$(ASTVARLIBDIR)/sounds/digits ; \
+ 		else \
+ 			echo "No description for $$x"; \
+ 			exit 1; \
+@@ -565,34 +562,34 @@
+ 	done
+ 	for x in sounds/silence/*.gsm; do \
+ 		if $(GREP) -q "^%`basename $$x`%" sounds.txt; then \
+-			$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTVARLIBDIR)/sounds/silence ; \
++			$(BSD_INSTALL_DATA) $$x $(DESTDIR)$(ASTVARLIBDIR)/sounds/silence ; \
  		else \
  			echo "No description for $$x"; \
  			exit 1; \
@@ -267,7 +281,7 @@
  		else \
  			echo "No description for $$x"; \
  			exit 1; \
-@@ -591,18 +588,18 @@
+@@ -600,18 +597,18 @@
  	done
  	for x in sounds/demo-* sounds/vm-* sounds/transfer* sounds/pbx-* sounds/ss-* sounds/beep* sounds/dir-* sounds/conf-* sounds/agent-* sounds/invalid* sounds/tt-* sounds/auth-* sounds/privacy-* sounds/queue-* sounds/spy-* sounds/priv-* sounds/screen-* sounds/hello-* sounds/hours* sounds/minute* sounds/second* ; do \
  		if $(GREP) -q "^%`basename $$x`%" sounds.txt; then \
@@ -291,7 +305,7 @@
  
  update: 
  	@if [ -d .svn ]; then \
-@@ -631,47 +628,47 @@
+@@ -640,47 +637,47 @@
  OLDHEADERS=$(filter-out $(NEWHEADERS),$(notdir $(wildcard $(DESTDIR)$(ASTHEADERDIR)/*.h)))
  
  bininstall: all
@@ -371,7 +385,7 @@
  	else \
  		echo "You need to do cvs update -d not just cvs update" ; \
  	fi 
-@@ -701,46 +698,28 @@
+@@ -710,46 +707,28 @@
  		echo " WARNING WARNING WARNING" ;\
  	fi
  
@@ -425,7 +439,7 @@
  		if [ -f $(DESTDIR)$(ASTETCDIR)/`basename $$x .sample` ]; then \
  			if [ "$(OVERWRITE)" = "y" ]; then \
  				if cmp -s $(DESTDIR)$(ASTETCDIR)/`basename $$x .sample` $$x ; then \
-@@ -753,7 +732,7 @@
+@@ -762,7 +741,7 @@
  				continue; \
  			fi ;\
  		fi ; \
@@ -434,7 +448,7 @@
  	done
  	if [ "$(OVERWRITE)" = "y" ] || [ ! -f $(DESTDIR)$(ASTCONFPATH) ]; then \
  		( \
-@@ -813,25 +792,25 @@
+@@ -822,25 +801,25 @@
  		echo "; Default: strict"; \
  		echo ";"; \
  		echo ";translation_algorithm = strict"; \
@@ -466,7 +480,7 @@
  	:> $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/unavail.gsm
  	for x in vm-theperson digits/1 digits/2 digits/3 digits/4 vm-isunavail; do \
  		cat $(DESTDIR)$(ASTVARLIBDIR)/sounds/$$x.gsm >> $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/unavail.gsm ; \
-@@ -845,9 +824,9 @@
+@@ -854,9 +833,9 @@
  	@[ -d $(DESTDIR)$(HTTP_DOCSDIR)/ ] || ( printf "http docs directory not found.\nUpdate assignment of variable HTTP_DOCSDIR in Makefile!\n" && exit 1 )
  	@[ -d $(DESTDIR)$(HTTP_CGIDIR) ] || ( printf "cgi-bin directory not found.\nUpdate assignment of variable HTTP_CGIDIR in Makefile!\n" && exit 1 )
  	$(INSTALL) -m 4755 -o root -g root contrib/scripts/vmail.cgi $(DESTDIR)$(HTTP_CGIDIR)/vmail.cgi
@@ -478,7 +492,7 @@
  	done
  	@echo " +--------- Asterisk Web Voicemail ----------+"  
  	@echo " +                                           +"
-@@ -874,10 +853,10 @@
+@@ -883,10 +862,10 @@
  
  __rpm: include/asterisk/version.h spec
  	rm -rf /tmp/asterisk ; \

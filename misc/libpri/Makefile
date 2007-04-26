@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libpri
-PORTVERSION=	1.2.4
+PORTVERSION=	1.4.0
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.digium.com/pub/libpri/ \
 		ftp://ftp.digium.com/pub/libpri/old/
@@ -14,15 +14,9 @@ MASTER_SITES=	ftp://ftp.digium.com/pub/libpri/ \
 MAINTAINER=	gonzo@univ.kiev.ua
 COMMENT=	A C implementation of the Primary Rate ISDN specification
 
-#PATCHFILES=	${PORTNAME}-${PORTVERSION}-${BRIVER}.patch.gz
-#PATCH_SITES=	${MASTER_SITE_LOCAL}
-#PATCH_SITE_SUBDIR=	fjoe
-#PATCH_DIST_STRIP=	-p1
-#BRIVER=		bristuff-0.3.0-PRE-1l
-
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-PLIST_FILES=	include/libpri.h lib/libpri.a lib/libpri.a lib/libpri.so \
+PLIST_FILES=	include/libpri.h lib/libpri.a lib/libpri.so \
 		lib/libpri.so.1
 
 NOT_FOR_ARCHS=	alpha
