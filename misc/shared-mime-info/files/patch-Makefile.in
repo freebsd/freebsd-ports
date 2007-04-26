@@ -1,20 +1,11 @@
 --- Makefile.in.orig	Sat Feb 10 04:50:08 2007
 +++ Makefile.in	Sat Feb 10 04:52:30 2007
-@@ -251,7 +251,7 @@ EXTRA_DIST = \
- 
- CLEANFILES = freedesktop.org.xml po/stamp-it
- DISTCLEANFILES = intltool-extract intltool-merge intltool-update
--pkgconfigdir = $(datadir)/pkgconfig
-+pkgconfigdir = $(prefix)/libdata/pkgconfig
- pkgconfig_DATA = shared-mime-info.pc
- all: config.h
- 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
 @@ -871,7 +871,11 @@ $(pkgconfig_DATA): config.status
  @INTLTOOL_DESKTOP_RULE@
  
  install-data-hook: 
 -@ENABLE_UPDATE_MIMEDB_TRUE@	$(DESTDIR)"$(bindir)/update-mime-database" -V "$(DESTDIR)$(prefix)/share/mime"
-+@ENABLE_UPDATE_MIMEDB_TRUE@	for mdir in /usr/X11R6/share/gnome/mime  /usr/local/share/gnome/mime  /usr/X11R6/share/mime  /usr/local/share/mime  /usr/local/gnome2/shared-mime-info/share/mime  /usr/share/mime; do \
++@ENABLE_UPDATE_MIMEDB_TRUE@	for mdir in %%MIMEDIRS%%; do \
 +@ENABLE_UPDATE_MIMEDB_TRUE@		if [ -d $${mdir} ]; then \
 +@ENABLE_UPDATE_MIMEDB_TRUE@			$(DESTDIR)"$(bindir)/update-mime-database" "$${mdir}" ; \
 +@ENABLE_UPDATE_MIMEDB_TRUE@		fi; \
