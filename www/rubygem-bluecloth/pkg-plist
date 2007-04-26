@@ -1,25 +1,25 @@
-%%CACHE_DIR%%/%%DISTNAME%%.gem
-%%GEMS_DIR%%/%%DISTNAME%%/bin/bluecloth
-%%GEMS_DIR%%/%%DISTNAME%%/lib/bluecloth.rb
-%%GEMS_DIR%%/%%DISTNAME%%/CHANGES
-%%GEMS_DIR%%/%%DISTNAME%%/LICENSE
-%%GEMS_DIR%%/%%DISTNAME%%/README
-%%GEMS_DIR%%/%%DISTNAME%%/install.rb
-%%GEMS_DIR%%/%%DISTNAME%%/test.rb
-%%GEMS_DIR%%/%%DISTNAME%%/utils.rb
-%%GEMS_DIR%%/%%DISTNAME%%/tests/00_Class.tests.rb
-%%GEMS_DIR%%/%%DISTNAME%%/tests/05_Markdown.tests.rb
-%%GEMS_DIR%%/%%DISTNAME%%/tests/10_Bug.tests.rb
-%%GEMS_DIR%%/%%DISTNAME%%/tests/15_Contrib.tests.rb
-%%GEMS_DIR%%/%%DISTNAME%%/tests/bctestcase.rb
-%%GEMS_DIR%%/%%DISTNAME%%/tests/data/antsugar.txt
-%%GEMS_DIR%%/%%DISTNAME%%/tests/data/ml-announce.txt
-%%GEMS_DIR%%/%%DISTNAME%%/tests/data/re-overflow.txt
-%%GEMS_DIR%%/%%DISTNAME%%/tests/data/re-overflow2.txt
-%%SPEC_DIR%%/%%DISTNAME%%.gemspec
-@dirrm %%GEMS_DIR%%/%%DISTNAME%%/tests/data
-@dirrm %%GEMS_DIR%%/%%DISTNAME%%/tests
-@dirrm %%GEMS_DIR%%/%%DISTNAME%%/lib
-@dirrm %%GEMS_DIR%%/%%DISTNAME%%/bin
-@dirrm %%GEMS_DIR%%/%%DISTNAME%%
-@dirrm %%DOC_DIR%%/%%DISTNAME%%
+%%GEM_CACHE%%
+%%GEM_SPEC%%
+%%GEM_LIB_DIR%%/utils.rb
+%%GEM_LIB_DIR%%/tests/bctestcase.rb
+%%GEM_LIB_DIR%%/tests/00_Class.tests.rb
+%%GEM_LIB_DIR%%/tests/05_Markdown.tests.rb
+%%GEM_LIB_DIR%%/tests/10_Bug.tests.rb
+%%GEM_LIB_DIR%%/tests/15_Contrib.tests.rb
+%%GEM_LIB_DIR%%/tests/data/antsugar.txt
+%%GEM_LIB_DIR%%/tests/data/ml-announce.txt
+%%GEM_LIB_DIR%%/tests/data/re-overflow.txt
+%%GEM_LIB_DIR%%/tests/data/re-overflow2.txt
+%%GEM_LIB_DIR%%/test.rb
+%%GEM_LIB_DIR%%/README
+%%GEM_LIB_DIR%%/CHANGES
+%%GEM_LIB_DIR%%/LICENSE
+%%GEM_LIB_DIR%%/lib/bluecloth.rb
+%%GEM_LIB_DIR%%/install.rb
+%%GEM_LIB_DIR%%/bin/bluecloth
+@dirrm %%GEM_LIB_DIR%%/bin
+@dirrm %%GEM_LIB_DIR%%/lib
+@dirrm %%GEM_LIB_DIR%%/tests/data
+@dirrm %%GEM_LIB_DIR%%/tests
+@dirrm %%GEM_LIB_DIR%%
+@dirrm %%GEM_DOC_DIR%%
