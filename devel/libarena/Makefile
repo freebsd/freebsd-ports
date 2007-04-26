@@ -1,0 +1,27 @@
+# ex:ts=8
+# Ports collection makefile for:	libarena
+# Date created:			Apr 22, 2007
+# Whom:				ijliao
+#
+# $FreeBSD$
+#
+
+PORTNAME=	libarena
+PORTVERSION=	0.3.1
+CATEGORIES=	devel
+MASTER_SITES=	http://www.25thandclement.com/~william/projects/releases/
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	ijliao@FreeBSD.org
+COMMENT=	Custom Memory Allocator Interface
+
+USE_GMAKE=	yes
+
+PLIST_FILES=	include/arena/pool.h \
+		include/arena/proto.h \
+		include/arena/rbits.h \
+		include/arena/util.h \
+		lib/libarena.a
+PLIST_DIRS=	include/arena
+
+.include <bsd.port.mk>
