@@ -370,6 +370,7 @@
     SUBDIR += vtk-java
     SUBDIR += vtk-python
     SUBDIR += vtk-tcl
+    SUBDIR += wcalc
     SUBDIR += wfmath
     SUBDIR += wingz
     SUBDIR += wingz3
