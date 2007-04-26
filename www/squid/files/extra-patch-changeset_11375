@@ -1,0 +1,77 @@
+---------------------
+PatchSet 11375 
+Date: 2007/04/17 09:35:17
+Author: hno
+Branch: SQUID_2_6
+Tag: (none) 
+Log:
+MFC: Bug #1814: SSL memory leak on persistent SSL connections
+
+Memory leak when attemting to reuse SSL-negotiated outgoing connections.
+
+Mainly affects reverse proxy setups using SSL-enabled peers.
+
+Merged changes:
+2007/04/16 23:05:50 hno +8 -6 Bug #1814: SSL memory leak on persistent SSL connections
+
+Members: 
+	src/forward.c:1.120.2.2->1.120.2.3 
+
+Note: this patchset was slightly modified for the FreeBSD port
+      to make it apply cleanly (one hunk removed, path information stripped)
+
+Index: squid/src/forward.c
+===================================================================
+RCS file: /cvsroot/squid/squid/src/forward.c,v
+retrieving revision 1.120.2.2
+retrieving revision 1.120.2.3
+diff -u -r1.120.2.2 -r1.120.2.3
+--- src/forward.c	26 Mar 2007 23:14:09 -0000	1.120.2.2
++++ src/forward.c	17 Apr 2007 09:35:17 -0000	1.120.2.3
+@@ -319,6 +319,7 @@
+     fd_table[fd].ssl = ssl;
+     fd_table[fd].read_method = &ssl_read_method;
+     fd_table[fd].write_method = &ssl_write_method;
++    fd_note(fd, "Negotiating SSL");
+     fwdNegotiateSSL(fd, fwdState);
+ }
+ #endif
+@@ -357,10 +358,6 @@
+ 	comm_close(server_fd);
+     } else {
+ 	debug(17, 3) ("fwdConnectDone: FD %d: '%s'\n", server_fd, storeUrl(fwdState->entry));
+-	fd_note(server_fd, storeUrl(fwdState->entry));
+-	fd_table[server_fd].uses++;
+-	if (fd_table[server_fd].uses == 1 && fs->peer)
+-	    peerConnectSucceded(fs->peer);
+ #if USE_SSL
+ 	if ((fs->peer && fs->peer->use_ssl) ||
+ 	    (!fs->peer && request->protocol == PROTO_HTTPS)) {
+@@ -535,7 +532,7 @@
+ 		hierarchyNote(&fwdState->request->hier, fs->code, fd_table[fd].ipaddr);
+ 	    else
+ 		hierarchyNote(&fwdState->request->hier, fs->code, name);
+-	    fwdConnectDone(fd, COMM_OK, fwdState);
++	    fwdDispatch(fwdState);
+ 	    return;
+ 	} else {
+ 	    /* Discard the persistent connection to not cause
+@@ -653,6 +650,7 @@
+     StoreEntry *entry = fwdState->entry;
+     ErrorState *err;
+     int server_fd = fwdState->server_fd;
++    FwdServer *fs = fwdState->servers;
+     debug(17, 3) ("fwdDispatch: FD %d: Fetching '%s %s'\n",
+ 	fwdState->client_fd,
+ 	RequestMethodStr[request->method],
+@@ -667,6 +665,10 @@
+     assert(entry->ping_status != PING_WAITING);
+     assert(entry->lock_count);
+     EBIT_SET(entry->flags, ENTRY_DISPATCHED);
++    fd_note(server_fd, storeUrl(fwdState->entry));
++    fd_table[server_fd].uses++;
++    if (fd_table[server_fd].uses == 1 && fs->peer)
++	peerConnectSucceded(fs->peer);
+     netdbPingSite(request->host);
+     entry->mem_obj->refresh_timestamp = squid_curtime;
+     if (fwdState->servers && (p = fwdState->servers->peer)) {
