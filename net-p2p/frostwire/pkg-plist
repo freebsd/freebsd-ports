@@ -1,0 +1,43 @@
+bin/frostwire
+%%PORTDOCS%%%%DOCSDIR%%/changelog
+%%DATADIR%%/FrostWire.icns
+%%DATADIR%%/FrostWire.jar
+%%DATADIR%%/MessagesBundle.properties
+%%DATADIR%%/MessagesBundles.jar
+%%DATADIR%%/ProgressTabs.jar
+%%DATADIR%%/clink.jar
+%%DATADIR%%/commons-httpclient.jar
+%%DATADIR%%/commons-logging.jar
+%%DATADIR%%/commons-net.jar
+%%DATADIR%%/commons-pool.jar
+%%DATADIR%%/daap.jar
+%%DATADIR%%/hashes
+%%DATADIR%%/i18n.jar
+%%DATADIR%%/icu4j.jar
+%%DATADIR%%/id3v2.jar
+%%DATADIR%%/irc.jar
+%%DATADIR%%/jcraft.jar
+%%DATADIR%%/jdic.jar
+%%DATADIR%%/jdic_stub.jar
+%%DATADIR%%/jl011.jar
+%%DATADIR%%/jmdns.jar
+%%DATADIR%%/log4j.jar
+%%DATADIR%%/log4j.properties
+%%DATADIR%%/looks.jar
+%%DATADIR%%/mp3sp14.jar
+%%DATADIR%%/root/magnet10/badge.img
+%%DATADIR%%/root/magnet10/canHandle.img
+%%DATADIR%%/root/magnet10/limewire.gif
+%%DATADIR%%/root/magnet10/options.js
+%%DATADIR%%/root/magnet10/silentdetect.js
+%%DATADIR%%/spacer.gif
+%%DATADIR%%/themes.jar
+%%DATADIR%%/tritonus.jar
+%%DATADIR%%/update.ver
+%%DATADIR%%/vorbis.jar
+%%DATADIR%%/xml-apis.jar
+%%DATADIR%%/xml.war
+@dirrm %%DATADIR%%/root/magnet10
+@dirrm %%DATADIR%%/root
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
