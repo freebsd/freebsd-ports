@@ -7,8 +7,8 @@ bin/wrogue
 %%DATADIR%%/charact/human_f.nam
 %%DATADIR%%/charact/human_m.nam
 %%DATADIR%%/charact/imperium.rdb
+%%DATADIR%%/charact/perks.rdb
 %%DATADIR%%/charact/rebels.rdb
-%%DATADIR%%/charact/spawn.rdb
 %%DATADIR%%/config/keys.rdb
 %%DATADIR%%/config/options.rdb
 %%DATADIR%%/graphics/back.bmp
@@ -35,7 +35,6 @@ bin/wrogue
 %%DATADIR%%/text/movement.txt
 %%DATADIR%%/text/objects.txt
 %%DATADIR%%/text/parties.txt
-%%DATADIR%%/text/perks.txt
 %%DATADIR%%/text/powers.txt
 %%DATADIR%%/text/stats.txt
 %%DATADIR%%/text/status.txt
@@ -43,6 +42,16 @@ bin/wrogue
 %%DATADIR%%/text/terrain.txt
 %%DATADIR%%/text/timing.txt
 %%DATADIR%%/user/keep.me
+%%DATADIR%%/world/aship.rdb
+%%DATADIR%%/world/dcave.rdb
+%%DATADIR%%/world/fdoom.rdb
+%%DATADIR%%/world/h_cruor.rdb
+%%DATADIR%%/world/h_melkor.rdb
+%%DATADIR%%/world/lcave.rdb
+%%DATADIR%%/world/mcave.rdb
+%%DATADIR%%/world/scave.rdb
+%%DATADIR%%/world/wcave.rdb
+%%DATADIR%%/world/world.rdb
 @dirrm %%DATADIR%%/charact
 @dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%/graphics
@@ -50,4 +59,5 @@ bin/wrogue
 @dirrm %%DATADIR%%/terrain
 @dirrm %%DATADIR%%/text
 @dirrm %%DATADIR%%/user
+@dirrm %%DATADIR%%/world
 @dirrm %%DATADIR%%
