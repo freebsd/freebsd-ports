@@ -11,7 +11,7 @@ CATEGORIES=	games emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	freebsd.alex@trull.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical Adventure Game Virtual Machine
 
 USE_BZIP2=	yes
