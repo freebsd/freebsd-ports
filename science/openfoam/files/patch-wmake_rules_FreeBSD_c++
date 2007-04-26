@@ -1,5 +1,5 @@
---- wmake/rules/FreeBSD/c++.orig	Sun Apr 24 00:36:58 2005
-+++ wmake/rules/FreeBSD/c++	Sat Apr  1 00:25:06 2006
+--- ./wmake/rules/FreeBSD/c++.orig	Tue Nov  7 23:16:13 2006
++++ ./wmake/rules/FreeBSD/c++	Thu Apr 12 22:15:28 2007
 @@ -1,21 +1,19 @@
  .SUFFIXES: .C .cxx .cc .cpp
  
@@ -15,7 +15,7 @@
 -c++FLAGS    = $(GFLAGS) $(c++WARN) $(c++OPT) $(c++DBUG) $(ptFLAGS) $(LIB_HEADER_DIRS) -fPIC -pthread
 +c++FLAGS    = $(GFLAGS) $(c++WARN) $(c++OPT) $(c++DBUG) $(ptFLAGS) $(LIB_HEADER_DIRS) -fPIC $(PTHREAD_CFLAGS)
  
- Ctoo        = $(WM_CC_DRIVER) $(CC) $(c++FLAGS) -c $$SOURCE -o $@
+ Ctoo        = $(WM_SCHEDULER) $(CC) $(c++FLAGS) -c $$SOURCE -o $@
  cxxtoo      = $(Ctoo)
  cctoo       = $(Ctoo)
  cpptoo      = $(Ctoo)

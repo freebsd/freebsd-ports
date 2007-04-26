@@ -1,0 +1,16 @@
+--- wmake/wmake.orig	Mon Apr  2 10:24:58 2007
++++ wmake/wmake	Tue Apr 17 19:05:13 2007
+@@ -159,11 +159,11 @@
+ then
+     if [ -e Allwmake ]
+     then
+-        Allwmake
++        ./Allwmake
+         exit $?
+     elif [ ! -d $MakeDir ]
+     then
+-        $make -f $WM_DIR/MakefileApps FOAM_APPS="`find . -maxdepth 1 \( -type d -a ! -name "." -a ! -name "Make" \)  -printf "%f "`"
++        $make -f $WM_DIR/MakefileApps FOAM_APPS="`find . -maxdepth 1 \( -type d -a ! -name "." -a ! -name "Make" \)  -print`"
+         exit $?
+     fi
+ 

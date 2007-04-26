@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	${REALNAME:L}
-PORTVERSION=	1.3
-PORTREVISION=	4
+PORTVERSION=	1.4
 CATEGORIES=	science math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	foam
@@ -18,14 +17,19 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Open Field Operation and Manipulation - CFD Simulation Toolbox
 
 BUILD_DEPENDS=	micod:${PORTSDIR}/devel/mico						\
+		bash:${PORTSDIR}/shells/bash						\
 		cmake:${PORTSDIR}/devel/cmake						\
 		${X11BASE}/lib/libode.a:${PORTSDIR}/devel/ode				\
+		${LOCALBASE}/lib/parmetis/libmetis.a:${PORTSDIR}/math/parmetis		\
 		${PARAVIEW_LIB}/ParaViewConfig.cmake:${PORTSDIR}/science/paraview	\
 		${LOCALBASE}/share/java/java3d/jar/j3dutils.jar:${PORTSDIR}/java/java3d	\
 		${LOCALBASE}/include/libiberty/demangle.h:${PORTSDIR}/devel/gnulibiberty\
 		${LOCALBASE}/include/vtk/vtkDataSetSource.h:${PORTSDIR}/math/vtk-headers\
 		${X11BASE}/lib/X11/fonts/freefont-ttf/FreeSans.ttf:${PORTSDIR}/x11-fonts/freefont-ttf
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo	\
+		readline.5:${PORTSDIR}/devel/readline	\
+		metis.1:${PORTSDIR}/math/metis
+#		CGAL.0:${PORTSDIR}/math/cgal
 RUN_DEPENDS=	micod:${PORTSDIR}/devel/mico						\
 		dx:${PORTSDIR}/graphics/opendx						\
 		${LOCALBASE}/lib/libiberty.a:${PORTSDIR}/devel/gnulibiberty		\
@@ -37,7 +41,7 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen	\
 		dot:${PORTSDIR}/graphics/graphviz
 .endif
 
-USE_GCC=	3.4+
+USE_GCC=	3.4+	# Required to define GCC_VER
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 USE_GL=		yes
@@ -64,7 +68,7 @@ CSH=		/bin/csh
 REALNAME=	OpenFOAM
 PRECISION?=	DP
 COMPOPT?=	Opt
-PARAVIEW_VER?=	2.4.2
+PARAVIEW_VER?=	2.4.4
 PARAVIEW_LIB=	${LOCALBASE}/lib/paraview-${PARAVIEW_VER:R}
 GCC_VER=	${_GCCVERSION:S/0/-/:S/0/./g}
 
@@ -82,7 +86,12 @@ PARARC=		bashrc cshrc
 PS2FIX=		runFoamXHB patchTool foamJob killFoamX foamEndJob
 BASH2FIX=	wmake/bashScripts/makeFiles wmake/bashScripts/makeOptions wmake/bashScripts/addCompile	\
 		wmake/bashScripts/mkObjectDir .OpenFOAM-${PORTVERSION}/apps/ensightFoam/bashrc
-DIR2PRUNE=	applications/utilities/mesh/manipulation/setSet/readline-5.0/platforms
+MALLOC2FIX=	src/MGridGenGamgAgglomeration/ParMGridGen-1.0/MGridGen/IMlib/IMlib.h	\
+		src/MGridGenGamgAgglomeration/ParMGridGen-1.0/MGridGen/Lib/mgridgen.h
+LOCAL2FIX=	wmake/rules/General/CGAL wmake/rules/${OPSYS}/general			\
+		applications/utilities/parallelProcessing/decomposePar/Make/options	\
+		applications/utilities/parallelProcessing/redistributeMeshPar/Make/options\
+		applications/utilities/parallelProcessing/decompositionMethods/Make/options
 APPSUBDIR=	${OPSYS}${PRECISION}${COMPOPT}
 APPDIR=		applications/bin/${APPSUBDIR}
 
@@ -92,7 +101,7 @@ DOCS=		README doc/Guides-a4 doc/Guides-usletter
 BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/lam
 RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/lam
 MAKE_ENV+=	WM_MPLIB=LAM LAM_ARCH_PATH=${LOCALBASE}
-MPICH_VER=	1.0.4
+MPICH_VER=	1.0.5
 LAM_VER=	`${LOCALBASE}/bin/laminfo -version lam full | ${AWK} '{print $$2}'`
 MPI_LIB=	LAM
 PLIST_SUB+=	MPI="@comment " LAM="" LAM_VER=${LAM_VERSION}
@@ -100,6 +109,7 @@ PLIST_SUB+=	MPI="@comment " LAM="" LAM_VER=${LAM_VERSION}
 BUILD_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpicc:${PORTSDIR}/net/mpich2
 RUN_DEPENDS+=	${LOCALBASE}/mpich2/bin/mpirun:${PORTSDIR}/net/mpich2
 MAKE_ENV+=	WM_MPLIB=MPICH MPICH_ARCH_PATH=${LOCALBASE}/mpich2
+MPI_LIBPATH=	${LOCALBASE}/mpich2/lib
 MPICH_VER=	`${LOCALBASE}/mpich2/bin/mpich2version --version`
 LAM_VER=	7.1.2
 MPI_LIB=	MPICH
@@ -107,15 +117,6 @@ PLIST_SUB+=	MPI="" LAM="@comment " MPICH_VER=${MPICH_VERSION}
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	Does not compile with gcc-2.95
-.endif
-
-.if ${OSVERSION} <= 504103
-EXTRACT_DEPENDS+=	bsdtar:${PORTSDIR}/archivers/libarchive
-TAR=		${LOCALBASE}/bin/bsdtar
-.endif
 
 .if exists(${LOCALBASE}/bin/mico-config)
 MICO_VER=	`${LOCALBASE}/bin/mico-config --version`
@@ -142,6 +143,9 @@ OSVERMAJ=	${OSREL:R}
 post-extract:
 	${CP} -Rp ${WRKSRC}/wmake/rules/linux ${WRKSRC}/wmake/rules/${OPSYS}
 	${RM} ${WRKSRC}/wmake/rules/${OPSYS}/dirToString
+	${RM} -rf ${WRKSRC}/applications/utilities/mesh/manipulation/setSet/readline-5.0/platforms
+	${FIND} ${WRKSRC}/applications/utilities/mesh/conversion/ccm26ToFoam/libccmio	\
+		-name "\.#*" -delete
 
 pre-configure:
 	${FIND} ${DIR2CLEAN:S|^|${WRKSRC}/|} -name "*.orig" -delete
@@ -151,22 +155,23 @@ pre-configure:
 		${SHELLRC:S|^|${WRKSRC}/.${REALNAME}-${PORTVERSION}/|}
 	${REINPLACE_CMD} -e "s|%%JAVA_HOME%%|${JAVA_HOME}|"			\
 		-e "s|^#!/bin/bash|#! ${LOCALBASE}/bin/bash|"			\
-		-e "s|gcc-3.4.3|gcc${GCC_VER}|"					\
-		-e "s|2\.3\.11|${MICO_VER}|"					\
+		-e "s|2\.3\.12|${MICO_VER}|"					\
 		-e "s|\$$MICO_PATH/platforms/\$$WM_OPTIONS|${LOCALBASE}|"	\
 		-e "s|1\.2\.4|${MPICH_VER}|"					\
 		-e "s|\$$MPICH_PATH/platforms/\$$WM_OPTIONS|${LOCALBASE}/mpich2|"\
-		-e "s|7\.1\.1|${LAM_VER}|"					\
+		-e "s|7\.1\.2|${LAM_VER}|"					\
 		-e "s|\$$LAMHOME/platforms/\$$WM_OPTIONS|${LOCALBASE}|"		\
 		-e "s|^SOURCE |source |"					\
 		${BATCHRC:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e "s|-lGL|-L${X11BASE}/lib -lGL|"	\
 		${GL2FIX:S|^|${WRKSRC}/|}
-	${REINPLACE_CMD} -e "s|GCC_VERSION=4.1.0|GCC_VERSION=${GCC_VER:S/_//}|"	\
+	${REINPLACE_CMD} -e "s|GCC_VERSION=4.1.1|GCC_VERSION=${GCC_VER:S/_//}|"	\
 		-e "s|JAVA_VERSION=1.4.2+|JAVA_VERSION=${JAVA_PORT_VERSION}|"	\
 		${WRKSRC}/bin/foamInstallationTest
 	${REINPLACE_CMD} -e "s|#!/bin/bash|#! ${LOCALBASE}/bin/bash|"	\
 		${BASH2FIX:S|^|${WRKSRC}/|}
+	${REINPLACE_CMD} -e "s|<malloc.h>|<stdlib.h>|"	\
+		${MALLOC2FIX:S|^|${WRKSRC}/|}
 .for f in ${THRD2FIX}
 	${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|"	\
 		-e "s|-lpthread|${PTHREAD_LIBS}|"		\
@@ -186,10 +191,22 @@ pre-configure:
 .for f in ${PARARC}
 	${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|"		\
 		-e "s|#!/bin/bash|#!${LOCALBASE}/bin/bash|"		\
-		-e "s|2.4.2|${PARAVIEW_VER}|"				\
+		-e "s|2.4.4|${PARAVIEW_VER}|"				\
 		-e "s|paraview-2.4|paraview-${PARAVIEW_VER:R}|"		\
 		${WRKSRC}/.${REALNAME}-${PORTVERSION}/apps/paraview/${f}
 .endfor
+.for f in ${LOCAL2FIX}
+	${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|"	\
+		${WRKSRC}/${f}
+.endfor
+	${REINPLACE_CMD} -e	\
+		's|$$CURDIR/readline-5.0/platforms/$$WM_OPTIONS|${LOCALBASE}|'	\
+		${WRKSRC}/applications/utilities/mesh/manipulation/setSet/Allwmake
+.if defined(MPI_LIBPATH)
+	${REINPLACE_CMD} -e	\
+	'/LINKEXE/s|OPTIONS_DIR)|OPTIONS_DIR) -L${MPI_LIBPATH} -rpath-link ${MPI_LIBPATH}|'\
+		${WRKSRC}/wmake/Makefile
+.endif
 
 do-build:
 	(cd ${BUILD_WRKSRC};			\
@@ -214,7 +231,6 @@ do-install:
 	cd ${WRKSRC}/${APPDIR}					\
 	&& ${FIND} . -type f -exec ${INSTALL_PROGRAM} {}	\
 		${PREFIX}/${REALNAME}/${APPDIR}/{} \;
-	${RMDIR} ${DIR2PRUNE:S|^|${PREFIX}/${REALNAME}/|}
 	${TOUCH} ${PREFIX}/${REALNAME}/jobControl/.keepme
 .if !defined(NOPORTDOCS)
 	${CP} -R ${DOCS:S|^|${WRKSRC}/|} ${PREFIX}/${REALNAME}
