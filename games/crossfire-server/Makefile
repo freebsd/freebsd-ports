@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	crossfire
-PORTVERSION=	1.9.1
+PORTVERSION=	1.10.0
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	SF \
 		ftp://ftp.real-time.com/pub/games/crossfire/
-MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-server
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}.maps${EXTRACT_SUFX}
@@ -28,7 +27,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--without-check
+CONFIGURE_ARGS=	--disable-check
 
 MAN6=		crossedit.6 crossfire.6 crossfire-config.6 crossloop.6 \
 		crossloop.web.6
