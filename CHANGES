@@ -47,6 +47,15 @@ The following changes were made to the ports infrastructure:
     added for porter's convenience.  They contain the values of their
     respective non-REL variables, except relative to installation PREFIX.
 
+20070313:
+AUTHOR: portmgr@FreeBSD.org
+The following changes were made to the ports infrastructure:
+
+  * bsd.ocaml.mk and bsd.xfce.mk were added.
+
+  * The FETCH_CMD was refactored so that ports can override the command,
+    the arguments, or both.
+
 20070306:
 AUTHOR: portmgr@FreeBSD.org
 The following changes were made to the ports infrastructure:
