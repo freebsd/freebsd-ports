@@ -45,10 +45,6 @@ MAN1=	k3d.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
-.endif
-
 .if ${ARCH} == "amd64"
 BROKEN=		"Does not compile on amd64"
 .endif
