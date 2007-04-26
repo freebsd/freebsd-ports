@@ -1,4 +1,4 @@
-@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin password_forget; fi
+@unexec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --remove-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
 %%SQUIRRELDIR%%/plugins/password_forget/COPYING
 %%SQUIRRELDIR%%/plugins/password_forget/INSTALL
 %%SQUIRRELDIR%%/plugins/password_forget/README
@@ -8,4 +8,4 @@
 %%SQUIRRELDIR%%/plugins/password_forget/setup.php
 %%SQUIRRELDIR%%/plugins/password_forget/version
 @dirrmtry %%SQUIRRELDIR%%/plugins/password_forget
-@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin password_forget; fi
+@exec if [ -f %D/%%SQUIRRELDIR%%/config/config.php ]; then %D/%%SQUIRRELDIR%%/config/conf.pl --install-plugin %%SQUIRREL_PLUGIN_NAME%%; fi
