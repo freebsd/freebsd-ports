@@ -9,8 +9,8 @@ PORTNAME=	gpsdrive
 PORTVERSION=	2.09
 PORTREVISION=	5
 CATEGORIES=	astro
-MASTER_SITES=	http://www.gpsdrive.cc/           \
-		http://gpsdrive.teachlinux.com/
+MASTER_SITES=	http://www.ganter.at/software/ \
+		http://www.ostertag.name/gpsdrive.de/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GPS navigation system
