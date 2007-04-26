@@ -1,6 +1,6 @@
---- linuxx86/hinst.orig	Tue Dec  6 10:50:57 2005
-+++ linuxx86/hinst	Thu Jun  1 08:58:24 2006
-@@ -74,7 +74,7 @@
+--- linuxx86/hinst.orig	Thu Nov  2 08:55:48 2006
++++ linuxx86/hinst	Wed Apr 25 10:25:45 2007
+@@ -86,7 +86,7 @@
  fi
  
  #  Install in here by default.
@@ -9,53 +9,25 @@
  
  #  Default CDROM mount point
  DefaultCDSourceDir=/cdrom
-@@ -2172,7 +2172,7 @@
- 	tr_file $TR_FILE_KEY $PORT/$PORT.psf
- 	preen_files
+@@ -2221,7 +2221,7 @@
+ 	then
+ 		:
+ 	else
+-		/bin/false
++		/usr/bin/false
+ 		return 
+ 	fi
+ 
+@@ -2267,7 +2267,7 @@
+ 		fi
+ 	fi
  
 -	/bin/true
 +	/usr/bin/true
  }
  
  ###############################################################################
-@@ -2222,10 +2222,34 @@
- #
- ###############################################################################
- 
-+check_for_ns() {
-+        BIN=`/usr/bin/file $1/plugins/libnullplugin.so | /usr/bin/awk '{print $11}'`
-+        case ${BIN} in
-+        \(SYSV\),)
-+                NETSCAPE_DIR="$1"
-+                PLUGIN_PATH="$s/plugins"
-+                FOUND_NS="TRUE"
-+        esac
-+}
-+
-+NSCP="/usr/local/libexec/netscape \
-+        /usr/local/libexec/netscape-linux \
-+        /usr/local/netscape \
-+        /usr/local/netscape-linux \
-+        /usr/local/lib/netscape \
-+        /usr/local/lib/netscape-linux \
-+        /usr/local/lib/linux-mozilla \
-+        /usr/local/lib/mozilla \
-+        $MOZILLA_HOME"
-+
-+for dir in ${NSCP}; do
-+        if [ -e $dir/plugins/libnullplugin.so ]; then
-+                check_for_ns $dir;
-+        fi
-+done
-+
- INST_DIR=$ICAInstDir
- TMP_NAME=/tmp/ICAnetscape.$$
--NETSCAPE_DIR="/usr/local/lib/netscape"
--PLUGIN_PATH="/usr/local/netscape/plugins"
- PLUGIN_NAME=npica.so
- PLUGIN_CLASS=ICAClObj.class
- MAILCAP_FILE=mailcap
-@@ -2298,26 +2322,18 @@
+@@ -2390,26 +2390,18 @@
  
  netscape_integrate()
  {
@@ -86,7 +58,7 @@
  	user_prompt $integrate_netscape2
   	getyesno $INSTALLER_NO
  	if [ "$ANSWER" = "$INSTALLER_YES" ]
-@@ -2326,7 +2342,8 @@
+@@ -2418,7 +2410,8 @@
  	else
    		user_echo $integrate_netscape6
  	fi
@@ -96,7 +68,7 @@
    fi
  
      # Create utility script files in install root.
-@@ -2964,55 +2981,6 @@
+@@ -3056,55 +3049,6 @@
      echo "$BINDIR"
  }
  
@@ -152,7 +124,7 @@
  BROWSER_LIST_KEY="BROWSER_DIR"
  ################################################################################
  #
-@@ -3238,7 +3206,10 @@
+@@ -3330,7 +3274,10 @@
  XDG_TARGET_DIR="/usr/share/applications"
  TL_MENU_DIR="Vendor_menus/Applications"                    # TurboLinux
  TL_TOP_DIR="/usr/share/applnk/"$TL_MENU_DIR
