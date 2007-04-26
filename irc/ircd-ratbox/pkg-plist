@@ -71,13 +71,13 @@ lib/ircd-ratbox/modules/contrib/m_ojoin.so
 lib/ircd-ratbox/modules/contrib/m_okick.so
 lib/ircd-ratbox/modules/contrib/m_olist.so
 lib/ircd-ratbox/modules/contrib/m_opme.so
+lib/ircd-ratbox/modules/contrib/m_webirc.so
 lib/ircd-ratbox/modules/contrib/spy_admin_notice.so
 lib/ircd-ratbox/modules/contrib/spy_info_notice.so
 lib/ircd-ratbox/modules/contrib/spy_links_notice.so
 lib/ircd-ratbox/modules/contrib/spy_motd_notice.so
 lib/ircd-ratbox/modules/contrib/spy_stats_notice.so
 lib/ircd-ratbox/modules/contrib/spy_stats_p_notice.so
-lib/ircd-ratbox/modules/contrib/spy_trace_notice.so
 lib/ircd-ratbox/modules/contrib/spy_whois_notice.so
 lib/ircd-ratbox/modules/contrib/spy_whois_notice_global.so
 lib/ircd-ratbox/modules/m_die.so
