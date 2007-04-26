@@ -24,6 +24,10 @@ ALL_TARGET=	aircrack airdecap arpforge mergeivs pcap2ivs
 PLIST_FILES=	bin/aircrack bin/airdecap bin/arpforge bin/mergeivs bin/pcap2ivs
 PORTDOCS=	*
 
+IGNORE=		Please use net-mgmt/aircrack-ng.
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=	2007-06-26
+
 pre-fetch:
 	@${CAT} ${PKGMESSAGE}
 
