@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTVERSION=	1.4.3
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
@@ -24,7 +23,7 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 ONLY_FOR_ARCHS=	i386 sparc64 amd64
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --mandir=/usr/local/man
+CONFIGURE_ARGS= --mandir=${LOCALBASE}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
