@@ -1,0 +1,4 @@
+libevnet provides a suite of interfaces, all built around libevent, useful to
+network daemons.
+
+WWW: http://www.25thandclement.com/~william/projects/libevnet.html
