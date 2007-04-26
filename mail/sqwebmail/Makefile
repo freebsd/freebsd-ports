@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqwebmail
-PORTVERSION=	5.1.5
+PORTVERSION=	5.1.6
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -101,7 +101,7 @@ EXTRA_DOCS=	README README.logindomainlist.html README.pam sqwebmail/ChangeLog \
 
 INSTALL_TARGET=	install-strip install-configure
 
-.include <bsd.port.pre.mk>   
+.include <bsd.port.pre.mk>
 
 .if exists(${.CURDIR}/../../security/courier-authlib/Makefile.dep)
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.dep"
@@ -113,7 +113,7 @@ USE_FAM=	yes
 
 .if defined(WITH_RCORDER)
 USE_RCORDER=	sqwebmail-sqwebmaild
-.else   
+.else
 USE_RC_SUBR=	sqwebmail-sqwebmaild
 .endif
 
