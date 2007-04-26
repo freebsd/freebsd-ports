@@ -1,9 +1,0 @@
-======================================================================
-Currently only airdecap-ng, packetforge-ng, aircrack-ng, ivstools and 
-kstats can be compiled as aireplay-ng, airomon-ng and airodump-ng
-are too Linux-specific to be built on FreeBSD.
-However aircrack-ng can read  Kismet's dumpfile.
-
-If you manage to patch the port so that the missing tools can be built
-on FreeBSD, please contact the port's maintainer.
-======================================================================
