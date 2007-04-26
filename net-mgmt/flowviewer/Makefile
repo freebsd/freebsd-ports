@@ -6,7 +6,7 @@
 
 PORTNAME=	flowviewer
 PORTVERSION=	3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://ensight.eos.nasa.gov/FlowViewer/
 DISTNAME=	FlowViewer_${DISTVERSION}
@@ -17,8 +17,6 @@ COMMENT=	Web-based user interface for the flow-tools NetFlow data
 
 RUN_DEPENDS=	${SITE_PERL}/GD/Graph/linespoints.pm:${PORTSDIR}/graphics/p5-GD-Graph \
 		flow-cat:${PORTSDIR}/net-mgmt/flow-tools
-
-BROKEN=		Size mismatch
 
 .ifndef WITHOUT_WWWDIR
 FLOWVIEWERDIR?=	${PREFIX}/www/flowviewer
