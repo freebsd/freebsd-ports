@@ -23,22 +23,28 @@ MAN1=		mlvwm.1
 
 MLVWMLIBDIR=	${PREFIX}/lib/X11/mlvwm
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 600100
-BROKEN=		Does not build
-.endif
-
 post-extract:
 	@${TAR} -C ${WRKSRC}/pixmap -xzf ${DISTDIR}/mini-icons.tar.gz
 
 post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/sample_rc/Mlvwmrc*
+.for file in configure.h
+	@${REINPLACE_CMD} -e \
+		's|^.*CDEBUGFLAGS =.*$$||g ; \
+		 s|^ICONPATH =.*$$|ICONPATH = $$(INCROOT)/X11/pixmaps|g ; \
+		 s|-lxpg4||g' ${WRKSRC}/${file}
+.endfor
+.for file in Mlvwmrc Mlvwmrc-j
+	@${REINPLACE_CMD} -e \
+		's|^IconPath .*$$|IconPath ${MLVWMLIBDIR}/pixmap|g ; \
+		 s|kterm|xterm|g' ${WRKSRC}/sample_rc/${file}
+.endfor
 
 post-install:
-	@${RM} -f ${WRKSRC}/sample_rc/*.orig
+	@${MKDIR} ${MLVWMLIBDIR}
+.for file in Mlvwmrc Mlvwmrc-Kterm-j Mlvwmrc-Netscape Mlvwmrc-Xterm Mlvwmrc-j
+	${INSTALL_DATA} ${WRKSRC}/sample_rc/${file} ${MLVWMLIBDIR}
+.endfor
 	@${MKDIR} ${MLVWMLIBDIR}/pixmap
 	${INSTALL_DATA} ${WRKSRC}/pixmap/*.xpm ${MLVWMLIBDIR}/pixmap
-	${INSTALL_DATA} ${WRKSRC}/sample_rc/Mlvwmrc* ${MLVWMLIBDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
