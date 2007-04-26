@@ -29,6 +29,7 @@
     SUBDIR += fidelio
     SUBDIR += freenet
     SUBDIR += frost
+    SUBDIR += frostwire
     SUBDIR += gift
     SUBDIR += giftcurs
     SUBDIR += giftoxic
