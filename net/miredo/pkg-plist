@@ -3,23 +3,28 @@ sbin/miredo
 sbin/miredo-server
 sbin/miredo-checkconf
 sbin/isatapd
-lib/libteredo.so.2
+lib/libteredo.so.3
+lib/libteredo.a
 lib/libteredo.la
 lib/libteredo.so
 lib/libtun6.so.1
+lib/libtun6.a
 lib/libtun6.la
 lib/libtun6.so
 include/libteredo/teredo.h
 include/libteredo/teredo-udp.h
 include/libteredo/tunnel.h
 include/libtun6/tun6.h
-@unexec [ -f %%TARGETDIR%%/etc/miredo.conf ] && cmp -s %%TARGETDIR%%/etc/miredo.conf %%TARGETDIR%%/etc/miredo.conf-dist && rm %%TARGETDIR%%/etc/miredo.conf || exit 0
-etc/miredo.conf-dist
+@unexec [ -f %%TARGETDIR%%/etc/miredo.conf ] && cmp -s %%TARGETDIR%%/etc/miredo.conf %%DOCSDIR%%/examples/miredo.conf && rm %%TARGETDIR%%/etc/miredo.conf || exit 0
+etc/miredo.conf
 @exec [ -f %B/miredo.conf ] || cp %F %B/miredo.conf
-etc/miredo-server.conf-dist
-etc/isatapd.conf-dist
+%%DOCSDIR%%/examples/isatapd.conf
+%%DOCSDIR%%/examples/miredo-server.conf
+%%DOCSDIR%%/examples/miredo.conf
 %%NLS%%share/locale/en/LC_MESSAGES/miredo.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/miredo.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/miredo.mo
-@dirrm include/libteredo
+@dirrm %%DOCSDIR%%/examples
+@dirrm %%DOCSDIR%%
 @dirrm include/libtun6
+@dirrm include/libteredo

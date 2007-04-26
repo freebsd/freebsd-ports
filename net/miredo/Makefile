@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		miredo
-PORTVERSION=		0.9.8
+PORTVERSION=	 	1.0.6
 CATEGORIES=		net ipv6
 MASTER_SITES=		http://www.remlab.net/files/miredo/
 
@@ -16,7 +16,6 @@ COMMENT=		Opensource Teredo (IPv6 tunneling) implementation
 USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--mandir=${MANPREFIX}/man
-USE_GETOPT_LONG=	yes
 USE_LDCONFIG=		yes
 
 MAN1=			teredo-mire.1
@@ -42,10 +41,6 @@ PLIST_SUB=		NLS="@comment "
 
 .if ${ARCH} == sparc64
 BROKEN=		Does not compile on sparc64
-.endif
-
-.if ${OSVERSION} < 500000
-BROKEN=	Does not compile on 4.x
 .endif
 
 .include <bsd.port.post.mk>
