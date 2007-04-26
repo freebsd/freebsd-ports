@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	clamassassin
-PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTVERSION=	1.2.4
 CATEGORIES=	security
-MASTER_SITES=	http://drivel.com/clamassassin/ \
+MASTER_SITES=	http://jameslick.com/clamassassin/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 
 MAINTAINER=	shaun@FreeBSD.org
