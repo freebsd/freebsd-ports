@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	gurlchecker
-PORTVERSION=	0.8.3
-PORTREVISION=	2
+PORTVERSION=	0.10.1
 CATEGORIES=	www gnome
 MASTER_SITES=	http://labs.libre-entreprise.org/frs/download.php/%SUBDIR%/
-MASTER_SITE_SUBDIR=	423
+MASTER_SITE_SUBDIR=	547
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A Gnome program to check a page/website for broken links
 
 LIB_DEPENDS=	gnutls.15:${PORTSDIR}/security/gnutls \
@@ -26,10 +25,21 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^SUBDIRS/s|doc ui man|ui|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|-lresolv||g' ${WRKSRC}/src/Makefile.in
+.if defined(WITHOUT_NLS)
+	@${REINPLACE_CMD} -e \
+		'/^SUBDIRS/s|po ui|ui|g' ${WRKSRC}/Makefile.in
+.endif
 
 .include <bsd.port.mk>
