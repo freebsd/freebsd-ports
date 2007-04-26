@@ -811,6 +811,7 @@
     SUBDIR += ssltunnel-client
     SUBDIR += ssltunnel-server
     SUBDIR += ssmping
+    SUBDIR += ssvnc
     SUBDIR += stone
     SUBDIR += straw
     SUBDIR += stund
