@@ -70,7 +70,6 @@
     SUBDIR += lunar
     SUBDIR += mingunittf
     SUBDIR += miniChinput
-    SUBDIR += mldonkey-core
     SUBDIR += moefonts-cid
     SUBDIR += moettf
     SUBDIR += mplayer-fonts
