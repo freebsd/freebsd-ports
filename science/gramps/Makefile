@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gramps
-PORTVERSION=	2.2.6
-PORTREVISION=	1
+PORTVERSION=	2.2.7
 CATEGORIES=	science gnome python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gramps
@@ -27,6 +26,7 @@ USE_GNOME=	gnomehack pygnome2 pygnomeextras desktopfileutils gnomedocutils
 GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 MAN1=		gramps.1
 GCONF_SCHEMAS=	gramps.schemas
