@@ -7,7 +7,6 @@ bin/xspasswd
 %%WWWDIR%%/cgi-bin/error
 %%WWWDIR%%/cgi-bin/gfxcount
 %%WWWDIR%%/cgi-bin/imagemap
-%%WWWDIR%%/cgi-bin/xschpass
 %%WWWDIR%%/contrib/SSL-Makefile
 %%WWWDIR%%/contrib/agentstats.pl
 %%WWWDIR%%/contrib/caroot.pem
