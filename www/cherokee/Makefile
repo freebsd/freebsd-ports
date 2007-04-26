@@ -7,13 +7,13 @@
 
 PORTNAME=	cherokee
 PORTVERSION=	0.5.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/${PORTVERSION:R}/${PORTVERSION}/ \
 		CENKES http://www.alaskaparadise.com/freebsd/
 
 MAINTAINER=	beech@alaskaparadise.com
-COMMENT=	An extremely fast and flexible web server
+COMMENT=	Extremely fast and flexible web server
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
@@ -23,68 +23,75 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	cherokee.sh
 USE_GCC=	3.4+
 USE_BISON=	yes
-USE_GETOPT_LONG=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man \
-		--with-wwwroot=${PREFIX}/www \
+		--with-wwwroot=${PREFIX}/www/cherokee \
+		--enable-readdir_r \
 		--disable-static
-
-OPTIONS=	GNUTLS	"TLS/SSL Use gnutls"	on \
-		OPENSSL	"TLS/SSL Use openssl"	off \
-		NOTLS	"No TLS/SSL"		off \
-		NOIPV6	"No IPv6"		off
-
+DEFCONFS=	advanced.conf cherokee.conf icons.conf mime.compression.types mime.types
+CONFSUBDIRS=	ssl mods-available mods-enabled sites-available sites-enabled
 MAN1=		cget.1 cherokee-config.1 cherokee.1 cherokee_logrotate.1
+
+OPTIONS=	OPENSSL	"TLS/SSL support via openssl"	on \
+		GNUTLS	"TLS/SSL support via gnutls"	off \
+		IPV6	"IPv6 support"			on
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_GNUTLS)
-LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=	--enable-tls=gnutls
-.endif
-
-.if defined(WITH_OPENSSL)
-CFLAGS+=	-DHAVE_OPENSSL
+.ifndef WITHOUT_OPENSSL
 CONFIGURE_ARGS+=--enable-tls=openssl
-LDFLAGS+=	-lssl -lcrypto
-.endif
-
-.if defined(WITH_NOTLS)
+.elifdef WITH_GNUTLS
+LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls
+CONFIGURE_ARGS+=--enable-tls=gnutls
+.else
 CONFIGURE_ARGS+=--disable-tls
 .endif
 
-.if defined(WITH_NOIPV6)
+.ifdef WITHOUT_IPV6
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|@mkdir_p@|${MKDIR} --|g'
-
-pre-build:
-.for file in advanced.conf cherokee.conf mods-ssl sites-default sites-example
-	@cd ${BUILD_WRKSRC} && ${SED} -e \
-		's:%sysconfdir%:${PREFIX}/etc:g ; \
-		 s:%datadir%:${PREFIX}/share:g ; \
-		 s:%wwwroot%:${PREFIX}/www:g ; \
-		 s:%prefix%:${PREFIX}:g' < ${file}.sample.pre > ${file}.sample
-.endfor
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
+		${REINPLACE_CMD} -e 's|@mkdir_p@|${MKDIR} --|g'
+	@${REINPLACE_CMD} -e '/cherokee_replace.*%sysconfdir%/d;/^SUBDIRS/s|doc ||;\
+		/^install-data-am/s|install-data-local|install-data-local-config|'\
+		${WRKSRC}/Makefile.in
+	@for i in ${BUILD_WRKSRC}/*.sample.pre;do ${SED} -e \
+		's:%sysconfdir%:${PREFIX}/etc:g; \
+		s:%datadir%:${PREFIX}/share:g; \
+		s:%wwwroot%:${PREFIX}/www/cherokee:g; \
+		s:%prefix%:${PREFIX}:g; \
+		s:#.*User.*nobody:User www:g; \
+		s:#.*Group.*nogroup:Group www:g; \
+		s:#.*PollMethod.*poll:PollMethod kqueue:g' \
+		$$i > $${i%.pre};done
 
 post-install:
+	@${INSTALL} -d ${CONFSUBDIRS:S|^|${PREFIX}/etc/cherokee/|}
+	@for i in ${DEFCONFS};do\
+		${INSTALL_DATA} ${WRKSRC}/$$i.sample ${PREFIX}/etc/cherokee/$$i.default;done
+	@for i in ${WRKSRC}/mods-*.sample;do\
+		${INSTALL_DATA} $$i ${PREFIX}/etc/cherokee/mods-available/$${i#*mods-};done
+	@for i in ${WRKSRC}/sites-*.sample;do\
+		${INSTALL_DATA} $$i ${PREFIX}/etc/cherokee/sites-available/$${i#*sites-};done
+	@:>${PREFIX}/etc/cherokee/mods-enabled/.empty
+	@:>${PREFIX}/etc/cherokee/ssl/.empty
+	@for i in `${FIND} ${PREFIX}/etc/cherokee/ -name \*.default`;do\
+		if [ ! -f $${i%.default} ];then ${CP} $$i $${i%.default};fi;done
+	@for i in `${FIND} ${PREFIX}/etc/cherokee/ -name \*.sample`;do\
+		if [ ! -f $${i%.sample} ];then ${CP} $$i $${i%.sample};fi;done
+	@if [ -z "`${LS} ${PREFIX}/etc/cherokee/sites-enabled/`" ];then\
+		${LN} -sf ../sites-available/default ${PREFIX}/etc/cherokee/sites-enabled/;fi
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/doc/images/*.png ${DOCSDIR}/
+	@${INSTALL} -d ${DOCSDIR}/images/
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.png ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/doc/images/*.png ${DOCSDIR}/images/
+	@${INSTALL_DATA} ${WRKSRC}/doc/develop/Intro.txt ${DOCSDIR}/
 .endif
-	${INSTALL_DATA} ${WRKSRC}/doc/develop/Intro.txt ${DATADIR}/
-	@${ECHO_MSG} " "
-	@${ECHO_MSG} " Dont forget to read the doc "
-	@${ECHO_MSG} " ${PREFIX}/share/cherokee/Intro.txt"
-	@${ECHO_MSG} " "
 
 .include <bsd.port.post.mk>
