@@ -2,15 +2,17 @@
 # Date created:		2003-01-11
 # Whom:			AlanE <alane@freebsd.org>
 #
-# $Carpetsmoker: ports/cdialog/Makefile,v 1.1 2007/04/08 17:19:30 carpetsmoker Exp $
+# $Carpetsmoker: ports/cdialog/Makefile,v 1.4 2007/04/22 11:30:53 carpetsmoker Exp $
 # $FreeBSD$
 #
 
 PORTNAME=	cdialog
-PORTVERSION=	1.1.20070325
+PORTVERSION=	1.1.20070409
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://invisible-island.net/dialog/
+MASTER_SITES=	ftp://invisible-island.net/dialog/ \
+		http://www.carpetsmoker.net/distfiles/ \
+		http://www.xs4all.nl/~tournoij/distfiles/
 DISTNAME=	${PORTNAME:S|^c||}-${PORTVERSION:R}-${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 
@@ -27,6 +29,10 @@ MAN3=		cdialog.3
 MANCOMPRESSED=	no
 
 INSTALL_TARGET=	install-strip install-man install-lib
+
+post-patch:
+	@${FIND} ${WRKSRC}/samples/ -type f -exec ${REINPLACE_CMD} "s|dialog|cdialog|g" {} \;
+	@${FIND} ${WRKSRC}/samples/ -name "*.bak" -delete
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
