@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gobby
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	editors
 MASTER_SITES=	http://releases.0x539.de/gobby/ \
 		http://www.atarininja.org/~wxs/distfiles/
