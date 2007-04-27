@@ -1,0 +1,23 @@
+--- doc/msmtp.1.orig	Thu Apr 26 20:11:59 2007
++++ doc/msmtp.1	Thu Apr 26 20:31:22 2007
+@@ -332,6 +332,11 @@
+ .br
+ On Debian based systems, you can install the \fBca-certificates\fP package and
+ use the file \fB/etc/ssl/certs/ca-certificates.crt\fP.
++.br
++On FreeBSD based systems, you can install the \fBsecurity/ca-roots\fP port and
++use the file \fB/usr/local/share/certs/ca-root.crt\fP. Please note that if 
++you are installing msmtp from ports with OpenSSL or gnutls support, 
++the \fBsecurity/ca-roots\fP port will be installed automaticly.
+ .IP "tls_key_file [\fIfile\fP]"
+ This command (together with the \fBtls_cert_file\fP command) enables msmtp to
+ send a client certificate to the SMTP server if requested.
+@@ -418,7 +423,7 @@
+ .br
+ tls on
+ .br
+-tls_trust_file /etc/ssl/certs/ca-certificates.crt
++tls_trust_file /usr/local/share/certs/ca-root.crt
+ .br
+ logfile ~/.msmtp.log
+ .br

@@ -35,6 +35,10 @@ CONFIGURE_ARGS+=	--with-ssl=openssl
 CONFIGURE_ARGS+=	--without-ssl
 .endif
 
+.if defined(WITH_GNUTLS) || defined(WITH_OPENSSL)
+RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root.crt:${PORTSDIR}/security/ca-roots
+.endif
+
 .if defined(WITH_GSASL)
 LIB_DEPENDS+=	gsasl.9:${PORTSDIR}/security/gsasl
 .else
