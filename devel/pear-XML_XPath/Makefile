@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	XML_XPath
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.2.3
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class provided an XPath/DOM XML manipulation
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
