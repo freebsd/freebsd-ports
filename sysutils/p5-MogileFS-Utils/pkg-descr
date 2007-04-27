@@ -1,0 +1,6 @@
+This package contains two tools to manage MogileFS:
+
+mogadm - MogileFS admin tool
+mogtool - Inject/extract data to/from a MogileFS installation
+
+WWW:	http://search.cpan.org/dist/MogileFS-Utils/

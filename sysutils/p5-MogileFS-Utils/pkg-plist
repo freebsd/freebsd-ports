@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS-Utils/.packlist
+bin/mogadm
+bin/mogtool
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS-Utils
