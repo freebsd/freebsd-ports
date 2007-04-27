@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	MDB2_Schema
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.2
 CATEGORIES=	databases www pear
 
-MAINTAINER=	rafan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR XML based database schema manager
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
