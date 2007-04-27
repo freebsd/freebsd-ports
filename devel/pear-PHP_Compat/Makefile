@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	PHP_Compat
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Provides missing functionality for older versions of PHP
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
