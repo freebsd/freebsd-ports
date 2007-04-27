@@ -1,10 +1,5 @@
 bin/admsCheck
-bin/admsPreprocessor
 bin/admsXml
-lib/libadmsCheck.a
-lib/libadmsCheck.la
-lib/libadmsCheck.so
-lib/libadmsCheck.so.0
 lib/libadmsFile.a
 lib/libadmsFile.la
 lib/libadmsFile.so
@@ -21,7 +16,3 @@ lib/libadmsVeriloga.a
 lib/libadmsVeriloga.la
 lib/libadmsVeriloga.so
 lib/libadmsVeriloga.so.0
-lib/libadmsXml.a
-lib/libadmsXml.la
-lib/libadmsXml.so
-lib/libadmsXml.so.0
