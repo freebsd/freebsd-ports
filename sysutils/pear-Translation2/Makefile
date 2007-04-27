@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	Translation2
-DISTVERSION=	2.0.0beta6
+DISTVERSION=	2.0.0beta12
 PORTEPOCH=	1
 CATEGORIES=	sysutils devel pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class for multilingual applications management
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
