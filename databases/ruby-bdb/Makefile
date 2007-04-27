@@ -55,9 +55,6 @@ post-install:
 .for f in ${DOCS}
 	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
-.if ${RUBY_VER} >= 1.8
-	cd ${INSTALL_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ri-site
-.endif
 .endif
 
 .include <bsd.port.post.mk>
