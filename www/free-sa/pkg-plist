@@ -23,13 +23,15 @@ share/free-sa/Italian.ISO8859-1
 share/free-sa/ItalianMail.ISO8859-1
 share/free-sa/Slovak.UTF8
 share/free-sa/SlovakMail.UTF8
-share/doc/free-sa-1.2.1/COPYING
-share/doc/free-sa-1.2.1/INSTALL
-share/doc/free-sa-1.2.1/README
-share/doc/free-sa-1.2.1/README.DEV
-share/doc/free-sa-1.2.1/ChangeLog     
-share/doc/free-sa-1.2.1/FAQ
-share/doc/free-sa-1.2.1/TRANSLATIONS
+share/free-sa/French.ISO8859-1
+share/free-sa/FrenchMail.ISO8859-1
+share/doc/free-sa-1.2.4/COPYING
+share/doc/free-sa-1.2.4/INSTALL
+share/doc/free-sa-1.2.4/README
+share/doc/free-sa-1.2.4/README.DEV
+share/doc/free-sa-1.2.4/ChangeLog     
+share/doc/free-sa-1.2.4/FAQ
+share/doc/free-sa-1.2.4/TRANSLATIONS
 www/data/free-sa/sa.js
 www/data/free-sa/d.png
 www/data/free-sa/g.png
@@ -55,7 +57,7 @@ www/data/free-sa/themes/silver/rsa.css
 www/data/free-sa/themes/sa.js
 @dirrm etc/free-sa
 @dirrm share/free-sa
-@dirrm share/doc/free-sa-1.2.1
+@dirrm share/doc/free-sa-1.2.4
 @dirrm www/data/free-sa/themes/rbsec
 @dirrm www/data/free-sa/themes/sarg
 @dirrm www/data/free-sa/themes/silver
