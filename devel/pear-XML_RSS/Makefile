@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	XML_RSS
-PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTVERSION=	0.9.9
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR RSS parser
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
@@ -19,7 +18,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 
 CATEGORY=	XML
 FILES=		RSS.php
-TESTS=		test.rss 01-parse.phpt
+TESTS=		test.rss XML_RSS_Infrastructure_Test.php \
+		XML_RSS_Parsing_Test.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
