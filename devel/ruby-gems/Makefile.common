@@ -49,5 +49,5 @@ GEMFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 do-install:
 .for _D in ${GEMFILES}
-	${RUBYGEMBIN} install --no-ri --install-dir ${PREFIX}/lib/ruby/gems/${REV} ${DISTDIR}/${DIST_SUBDIR}/${_D}
+	${SETENV} ${GEM_ENV} ${RUBYGEMBIN} install --no-ri --install-dir ${PREFIX}/lib/ruby/gems/${REV} ${DISTDIR}/${DIST_SUBDIR}/${_D}
 .endfor
