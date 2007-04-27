@@ -1,5 +1,5 @@
---- src/Makefile	Wed Apr  4 14:39:47 2007
-+++ src/Makefile.port	Thu Apr  5 13:09:53 2007
+--- src/Makefile	Sat Apr 21 19:05:23 2007
++++ src/Makefile.port	Mon Apr 23 15:50:29 2007
 @@ -1,7 +1,7 @@
 -BINDIR=/usr/bin
 -INCDIR=/usr/include/espeak
@@ -10,9 +10,9 @@
 +LIBDIR=%%PREFIX%%/lib
 +DATADIR=%%DATADIR%%/espeak-data
  
- RELEASE = 1.22
+ RELEASE = 1.23
  BIN_NAME = speak
-@@ -28,17 +28,17 @@
+@@ -29,24 +29,24 @@
  
  SRCS1=$(speak_SOURCES)
  OBJS1=$(patsubst %.cpp,%.o,$(SRCS1))
@@ -31,10 +31,9 @@
  
 -CXXFLAGS=-O2
 +#CXXFLAGS=-O2
- ifeq ($(shell uname -m), ppc)
- 	CXXFLAGS += -D ARCH_BIG
- endif
-@@ -48,7 +48,7 @@
+ 
+ 
+ all: $(BIN_NAME) $(LIB_NAME) $(STATIC_LIB_NAME) $(BIN2_NAME)
  	mv $(LIB_NAME) $(LIB_NAME).$(LIBTAG)
  
  .cpp.o:
@@ -43,7 +42,7 @@
  
  $(BIN_NAME): $(OBJS1)
  	$(CXX) -o $@ $(OBJS1) $(LIBS1)
-@@ -59,7 +59,7 @@
+@@ -57,7 +57,7 @@
  
  
  x_%.o: %.cpp
@@ -52,16 +51,16 @@
  	-I. -D LIBRARY -c -fno-exceptions $<  -o x_$*.o
  
  $(LIB_NAME): $(OBJS2)
-@@ -75,7 +75,7 @@
+@@ -76,7 +76,7 @@
  
  install: all
  	# Create directories
--	rm -r $(DESTDIR)$(DATADIR)
-+	#rm -r $(DESTDIR)$(DATADIR)
+-	rm -rf $(DESTDIR)$(DATADIR)
++	#rm -rf $(DESTDIR)$(DATADIR)
  	$(MKDIR) $(DESTDIR)$(BINDIR)
  	$(MKDIR) $(DESTDIR)$(LIBDIR)
  	$(MKDIR) $(DESTDIR)$(INCDIR)
-@@ -89,5 +89,5 @@
+@@ -92,5 +92,5 @@
  	# Install development headers
  	$(INSTALL) -pm 644 speak_lib.h $(DESTDIR)$(INCDIR)
  	# Install data files
