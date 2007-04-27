@@ -14,6 +14,10 @@ sbin/pdns_server
 %%WITHSQLITE%%lib/libgsqlitebackend.la
 %%WITHSQLITE%%lib/libgsqlitebackend.so
 %%WITHSQLITE%%lib/libgsqlitebackend.so.0
+%%WITHSQLITE3%%lib/libgsqlite3backend.a
+%%WITHSQLITE3%%lib/libgsqlite3backend.la
+%%WITHSQLITE3%%lib/libgsqlite3backend.so
+%%WITHSQLITE3%%lib/libgsqlite3backend.so.0
 %%WITHOPENLDAP%%lib/libldapbackend.a
 %%WITHOPENLDAP%%lib/libldapbackend.la
 %%WITHOPENLDAP%%lib/libldapbackend.so
@@ -34,8 +38,9 @@ lib/libpipebackend.so.0
 etc/pdns/pdns.conf-dist
 @exec [ -f %B/pdns.conf ] || cp %B/%f %B/pdns.conf
 %%PORTDOCS%%share/examples/powerdns/pdns.conf
-%%PORTDOCS%%share/examples/powerdns/pdns_mysql.sql
-%%PORTDOCS%%share/examples/powerdns/pdns_postgresql.sql
-%%PORTDOCS%%share/examples/powerdns/pdns_sqlite.sql
+%%PORTDOCS%%share/examples/powerdns/tables-mssql_or_sybase.sql
+%%PORTDOCS%%share/examples/powerdns/tables-mysql.sql
+%%PORTDOCS%%share/examples/powerdns/tables-pgsql.sql
+%%PORTDOCS%%share/examples/powerdns/tables-sqlite.sql
 %%PORTDOCS%%@dirrm share/examples/powerdns
 @dirrmtry etc/pdns

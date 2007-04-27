@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	powerdns
-PORTVERSION=	2.9.20
-PORTREVISION=	6
+PORTVERSION=	2.9.21
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/ \
 		http://mirrors.evolva.ro/powerdns.com/releases/
@@ -27,7 +26,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-modules="pipe" \
 			--with-dynmodules="${CONFIGURE_MODULES}" \
-			--sysconfdir="${PREFIX}/etc/pdns"
+			--sysconfdir="${PREFIX}/etc/pdns" \
+			--mandir="${PREFIX}/man"
 #			--enable-debug
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		CURDIR2="${.CURDIR}" \
@@ -41,6 +41,7 @@ SUB_FILES=	pkg-message
 OPTIONS=	PGSQL           "PostgreSQL backend" on \
 		MYSQL           "MySQL backend" off \
 		SQLITE          "SQLite 2 backend" off \
+		SQLITE3         "SQLite 3 backend" off \
 		OPENDBX         "OpenDBX backend" off \
 		OPENLDAP        "OpenLDAP backend" off \
 		GEO             "Geo backend" off
@@ -97,6 +98,14 @@ PLIST_SUB+=		WITHSQLITE=""
 PLIST_SUB+=		WITHSQLITE="@comment "
 .endif
 
+.if defined(WITH_SQLITE3)
+USE_SQLITE?=		3
+CONFIGURE_MODULES+=	"gsqlite3"
+PLIST_SUB+=		WITHSQLITE3=""
+.else
+PLIST_SUB+=		WITHSQLITE3="@comment "
+.endif
+
 .if defined(WITH_OPENDBX)
 LIB_DEPENDS+=		opendbx.[1-2]:${PORTSDIR}/databases/opendbx
 CONFIGURE_MODULES+=	"opendbx"
@@ -126,7 +135,7 @@ post-install:
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR}
-.for i in pdns.conf pdns_mysql.sql pdns_postgresql.sql pdns_sqlite.sql
+.for i in pdns.conf tables-mssql_or_sybase.sql tables-mysql.sql tables-pgsql.sql tables-sqlite.sql
 	${INSTALL_DATA} ${FILESDIR}/$i ${EXAMPLESDIR}/
 .endfor
 .endif
