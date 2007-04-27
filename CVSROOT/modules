@@ -15306,6 +15306,7 @@ tunesbrowser	ports/audio/tunesbrowser
 turba		ports/mail/turba
 tux-aqfh	ports/games/tux-aqfh
 tuxcards	ports/deskutils/tuxcards
+tuxguitar	ports/audio/tuxguitar
 tuxkart		ports/games/tuxkart
 tuxmath		ports/games/tuxmath
 tuxnes		ports/emulators/tuxnes
