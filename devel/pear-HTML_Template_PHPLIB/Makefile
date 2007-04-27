@@ -6,25 +6,26 @@
 #
 
 PORTNAME=	HTML_Template_PHPLIB
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.3.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bg1tpt@gmail.com
 COMMENT=	PEAR template API ported from PHPLIB
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-CATEGORY=	HTML/Template
-FILES=		PHPLIB.php
+FILES=		HTML/Template/PHPLIB.php
 DOCS=		README
-EXAMPLES=	block.ihtml block.php ittest.php tpl1.ihtml tpl1.php
+EXAMPLES=	authors.php authors.tpl block.ihtml block.php ittest.php tpl1.ihtml tpl1.php
 _DOCSDIR=	examples
+TESTS=		AllTests.php file.tpl HTML_Template_PHPLIBTest.php
 
 do-install-tests-msg: .USE
 	@${ECHO_MSG} "     (These tests require PEAR::Benchmark - see"
 	@${ECHO_MSG} "     <http://pear.php.net/package-info.php?package=Benchmark>;;;)."
+	@${ECHO_MSG} "     (These tests also require PEAR::PHPUnit - see"
+	@${ECHO_MSG} "     <http://pear.php.net/package/PHPUnit>;;;)."
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
