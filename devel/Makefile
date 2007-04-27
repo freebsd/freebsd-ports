@@ -550,6 +550,7 @@
     SUBDIR += libfs++
     SUBDIR += libftdi
     SUBDIR += libg++
+    SUBDIR += libgalago
     SUBDIR += libgconf-java
     SUBDIR += libgetline
     SUBDIR += libghthash
