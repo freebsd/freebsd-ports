@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	PHP_Beautifier
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.12
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR beautifier for PHP
 
 BUILD_DEPENDS=	${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log
