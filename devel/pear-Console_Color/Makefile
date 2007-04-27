@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Console_Color
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
