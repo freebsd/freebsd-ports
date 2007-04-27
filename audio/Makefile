@@ -632,6 +632,7 @@
     SUBDIR += tta
     SUBDIR += tuneradio
     SUBDIR += tunesbrowser
+    SUBDIR += tuxguitar
     SUBDIR += twolame
     SUBDIR += ufmcontrol-i18n
     SUBDIR += umix
