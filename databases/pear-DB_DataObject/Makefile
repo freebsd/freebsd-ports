@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	DB_DataObject
-PORTVERSION=	1.8.4
+PORTVERSION=	1.8.5
 CATEGORIES=	databases pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	An SQL Builder, Object Interface to Database Tables
 
 BUILD_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB \
