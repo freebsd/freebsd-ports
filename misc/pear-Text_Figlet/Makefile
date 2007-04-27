@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	Text_Figlet
-PORTVERSION=	0.8.1
+PORTVERSION=	1.0.0
 CATEGORIES=	misc www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Render text using FIGlet fonts
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Text
-FILES=		Figlet.php
+FILES=		Text/Figlet.php fonts/3-d.flf fonts/alligator2.flf fonts/bell.flf \
+		fonts/block.flf fonts/contessa.flf fonts/cybermedium.flf fonts/isometric1.flf \
+		fonts/larry3d.flf fonts/script.flf fonts/slant.flf
 DOCS=		README.TXT
-EXAMPLES=	figlet.php 3-d.flf alligator2.flf bell.flf block.flf contessa.flf \
-		cybermedium.flf isometric1.flf larry3d.flf script.flf slant.flf
+EXAMPLES=	hello_world.php listfonts.php
 _EXAMPLESDIR=	docs/examples
 
 .include <bsd.port.pre.mk>
