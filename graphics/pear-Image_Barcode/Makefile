@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Image_Barcode
-PORTVERSION=	1.0.4
+PORTVERSION=	1.1.0
 CATEGORIES=	graphics www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class for barcode generation
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
