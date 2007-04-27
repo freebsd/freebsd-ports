@@ -6295,6 +6295,7 @@ libfwbuilder	ports/security/libfwbuilder
 libg++		ports/devel/libg++
 libgail-gnome	ports/x11-toolkits/libgail-gnome
 libgaim		ports/net-im/libgaim
+libgalago	ports/devel/libgalago
 libgconf-java	ports/devel/libgconf-java
 libgcrypt	ports/security/libgcrypt
 libgda		ports/databases/libgda
