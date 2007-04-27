@@ -1,31 +1,32 @@
---- configure.orig	Sat Jul 29 10:30:30 2006
-+++ configure	Sat Jul 29 10:31:30 2006
-@@ -1510,9 +1510,6 @@
-           ac_config_headers="$ac_config_headers config.h"
+--- configure.orig	Fri Apr 27 02:18:29 2007
++++ configure	Fri Apr 27 02:19:20 2007
+@@ -1943,10 +1943,6 @@
  
+ ac_config_headers="$ac_config_headers config.h"
  
+-
 -# force use of gnu compiler
 -CC=gcc
 -
  # specific configuration.
  ac_aux_dir=
- for ac_dir in auxconf $srcdir/auxconf; do
-@@ -4181,33 +4178,6 @@
-   echo "$as_me:$LINENO: result: no" >&5
- echo "${ECHO_T}no" >&6
+ for ac_dir in auxconf "$srcdir"/auxconf; do
+@@ -4112,41 +4108,6 @@
+   { echo "$as_me:$LINENO: result: no" >&5
+ echo "${ECHO_T}no" >&6; }
    SET_MAKE="MAKE=${MAKE-make}"
 -fi
 -
 -
 -#force use of flex/bison
--if test "x$LEX" != xflex; then
+-if test "x$LEX" != "xflex"; then
 -  { echo "$as_me:$LINENO: WARNING: Program flex not found (found $LEX)" >&5
 -echo "$as_me: WARNING: Program flex not found (found $LEX)" >&2;}
 -  { { echo "$as_me:$LINENO: error: Please install gnu flex from http://www.gnu.org/software/flex/" >&5
 -echo "$as_me: error: Please install gnu flex from http://www.gnu.org/software/flex/" >&2;}
 -   { (exit 1); exit 1; }; }
 -fi
--if test "x$YACC" != 'xbison -y'; then
+-if test "x$YACC" != "xbison -y"; then
 -  { echo "$as_me:$LINENO: WARNING: Program bison not found (found $YACC)" >&5
 -echo "$as_me: WARNING: Program bison not found (found $YACC)" >&2;}
 -  { { echo "$as_me:$LINENO: error: Please install gnu bison from http://www.gnu.org/software/bison/" >&5
@@ -34,7 +35,15 @@
 -fi
 -
 -#advice use of gcc
--if test "x$CC" != xgcc; then
+-if test "x$GCC" = "xyes"; then
+-  case "$CFLAGS" in
+-  *-Wall*)
+-    # already present
+-    ;;
+-  *)
+-    CFLAGS="$CFLAGS -Wall"
+-  esac
+-else
 -  { echo "$as_me:$LINENO: WARNING: Seems that the selected C-compiler is not gnu gcc C-compiler" >&5
 -echo "$as_me: WARNING: Seems that the selected C-compiler is not gnu gcc C-compiler" >&2;}
 -  { echo "$as_me:$LINENO: WARNING: We advice you to use gcc as C-compiler" >&5
