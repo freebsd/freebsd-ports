@@ -45,7 +45,7 @@ OPTIONS=	POPT_PORT "Use popt from devel/popt instead of bundled one" off \
 
 .if defined(WITH_POPT_PORT)
 LIB_DEPENDS+=	popt.0:${PORTSDIR}/devel/popt
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 .else
 CONFIGURE_ARGS+=	--with-included-popt
