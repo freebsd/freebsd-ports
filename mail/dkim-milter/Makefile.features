@@ -28,6 +28,11 @@
 		${WRKSRC}/dkim-filter/Makefile.m4
 .endif
 
+.if defined(WITH_HASH_BUFFERING) && !defined(WITHOUT_HASH_BUFFERING)
+	@${REINPLACE_CMD} -e '/-D_FFR_HASH_BUFFERING/s|^dnl ||' \
+		${WRKSRC}/libdkim/Makefile.m4
+.endif
+
 .if defined(WITH_LOG_SSL_ERRORS) && !defined(WITHOUT_LOG_SSL_ERRORS)
 	@${REINPLACE_CMD} -e '/-D_FFR_LOG_SSL_ERRORS/s|^dnl ||' \
 		${WRKSRC}/dkim-filter/Makefile.m4
@@ -88,6 +93,12 @@
 .if defined(WITH_SET_REPLY) && !defined(WITHOUT_SET_REPLY)
 	@${REINPLACE_CMD} -e '/-D_FFR_SET_REPLY/s|^dnl ||' \
 		${WRKSRC}/dkim-filter/Makefile.m4
+.endif
+
+.if defined(WITH_STATS) && !defined(WITHOUT_STATS)
+	@${REINPLACE_CMD} -e '/-D_FFR_STATS/s|^dnl ||' \
+		${WRKSRC}/dkim-filter/Makefile.m4 \
+		${WRKSRC}/libdkim/Makefile.m4
 .endif
 
 .if defined(WITH_VBR) && !defined(WITHOUT_VBR)
