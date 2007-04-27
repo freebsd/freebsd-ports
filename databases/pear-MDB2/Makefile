@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	MDB2
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.0
 CATEGORIES=	databases www pear
 
-MAINTAINER=	rafan@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR database abstraction layer
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
