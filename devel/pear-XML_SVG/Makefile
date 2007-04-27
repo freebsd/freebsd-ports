@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	XML_SVG
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR object-oriented API for building SVG documents
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
