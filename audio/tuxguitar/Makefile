@@ -24,6 +24,10 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 USE_ANT=	yes
 
+post-patch:
+	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' \
+	${WRKSRC}/build.properties
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/TuxGuitar.jar ${JAVAJARDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/tuxguitar ${PREFIX}/bin
