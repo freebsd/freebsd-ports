@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	Perlbal
-PORTVERSION=	1.56
-PORTREVISION=	1
+PORTVERSION=	1.57
 CATEGORIES=	www
 MASTER_SITES=	http://www.danga.com/dist/Perlbal/ \
 		http://www.powertrip.co.za/distfiles/danga/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Reverse-proxy load balancer and webserver
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
