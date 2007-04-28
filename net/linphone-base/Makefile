@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	linphone
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 PORTEPOCH=	1
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:S/$/:linphone/} \
@@ -56,7 +56,6 @@ PLIST_SUB+=	NLS="@comment "
 .else
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
-LDFLAGS+=	-lintl
 .endif
 
 .if defined(LINPHONE_GUI)
@@ -76,6 +75,7 @@ SUBDIRS=	po gsmlib mediastreamer2 media_api exosip coreapi console
 .endif
 
 post-extract:
+	@${CP} -f ${FILESDIR}/GNOME_LinphoneApplet.xml ${WRKSRC}/gtk
 	@${LN} -sf ${WRKDIR}/libosip2-2.2.2/src/osip2/osip_negotiation.c \
 		${WRKSRC}/exosip
 	@${LN} -sf ${WRKDIR}/libosip2-2.2.2/include/osip2 \
