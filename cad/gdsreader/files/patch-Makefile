@@ -1,0 +1,43 @@
+--- Makefile.orig	Thu Feb 24 12:15:23 2005
++++ Makefile	Sun Apr 29 01:04:11 2007
+@@ -1,10 +1,15 @@
+ 
+-CC = gcc
+-INSTROOT=/usr/local
++CC?= gcc
++INSTROOT?=${PREFIX}
+ BINDIR=$(INSTROOT)/bin
+-DOCDIR=$(INSTROOT)/doc/gdsreader-0.3.2
++DOCDIR=$(INSTROOT)/share/doc/gdsreader
++EXDIR=$(INSTROOT)/share/examples/gdsreader
+ MANDIR=$(INSTROOT)/man/man1
+ 
++INSTALL_PROGRAM?=	${BSD_INSTALL_PROGRAM}
++INSTALL_DATA?=	${BSD_INSTALL_DATA}
++INSTALL_MAN?=	${BSD_INSTALL_MAN}
++
+ #CFLAGS = -I. 
+ CFLAGS = -I. -Wall -g #-pg
+ LDFLAGS = #-pg
+@@ -19,11 +24,16 @@
+ 	${CC} ${LDFLAGS} -o gdsreader ${OBJS} -lm
+ 
+ install: gdsreader maptolayer
+-	mkdir -p $(DOCDIR) && cp -f COPYING README README.povray \
+-	 layers.config test.gds layers.config.7HP.5ML ChangeLog \
+-	 layers.config.5AM.4ML $(DOCDIR)
+-	mkdir -p $(BINDIR) && cp -f maptolayer gdsreader $(BINDIR)
+-	mkdir -p $(MANDIR) && cp -f maptolayer.1 gdsreader.1 $(MANDIR)
++	mkdir -p $(BINDIR) && ${INSTALL_PROGRAM} maptolayer gdsreader $(BINDIR)
++	mkdir -p $(MANDIR) && ${INSTALL_MAN} maptolayer.1 gdsreader.1 $(MANDIR)
++
++install-docs:
++	mkdir -p $(DOCDIR) && ${INSTALL_DATA} README README.povray \
++		ChangeLog $(DOCDIR)
++
++install-data:
++	mkdir -p $(EXDIR) && ${INSTALL_DATA} layers.config test.gds \
++		layers.config.7HP.5ML layers.config.5AM.4ML $(EXDIR)
+ 
+ maptolayer: maptolayer.c
+ 	$(CC) -o maptolayer maptolayer.c

@@ -22,6 +22,7 @@
     SUBDIR += fandango
     SUBDIR += feappv
     SUBDIR += freehdl
+    SUBDIR += gdsreader
     SUBDIR += geda
     SUBDIR += geda-docs
     SUBDIR += geda-examples
