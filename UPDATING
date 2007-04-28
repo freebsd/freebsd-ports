@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070428:
+  AFFECTS: users of print/ghostscript-gnu-{commfont,jpnfont,korfont}
+  AUTHOR: hrs@FreeBSD.org
+
+  These ports now use PostScript virtual fonts to handle CJK CID/TT-CID
+  emulated fonts.  CIDFnmap still works but note that if a font
+  is both in Resource/Font or Resource/CIDFont and in CIDFnmap,
+  the entry in Resource/* will be used.  For the actual font mapping, see
+  files in Resource/CIDFont/*.  This is just an internal structural
+  change; default font mapping has not been changed.
+
+  If you use CIDFnmap to change a font mapping already defined by
+  Resource/CIDFont/foo, you have to remove (or rename) the
+  Resource/CIDFont/foo file first.
+
 20070423:
   AFFECTS: users of www/p5-Kwiki
   AUTHORS: clsung@FreeBSD.org

@@ -154,6 +154,9 @@
 %%FONTSDIR%%/z003034l.pfm
 %%FONTSDIR%%/Ryumin-Light.ttf
 %%FONTSDIR%%/GothicBBB-Medium.ttf
+%%FONTSDIR%%/STHeiti-Regular.ttf
+%%FONTSDIR%%/STSong-Light.ttf
+%%FONTSDIR%%/MSung-Light.ttf
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.tweaks
