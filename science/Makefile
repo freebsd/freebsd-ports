@@ -73,6 +73,7 @@
     SUBDIR += mpqc
     SUBDIR += mpqc-mpich
     SUBDIR += netcdf
+    SUBDIR += nifticlib
     SUBDIR += oases
     SUBDIR += omnetpp
     SUBDIR += oof
