@@ -6,6 +6,9 @@ bin/clive
 %%PYTHON_SITELIBDIR%%/clive/cli.py
 %%PYTHON_SITELIBDIR%%/clive/cli.pyc
 %%PYTHON_SITELIBDIR%%/clive/cli.pyo
+%%PYTHON_SITELIBDIR%%/clive/login.py
+%%PYTHON_SITELIBDIR%%/clive/login.pyc
+%%PYTHON_SITELIBDIR%%/clive/login.pyo
 %%PYTHON_SITELIBDIR%%/clive/net.py
 %%PYTHON_SITELIBDIR%%/clive/net.pyc
 %%PYTHON_SITELIBDIR%%/clive/net.pyo
