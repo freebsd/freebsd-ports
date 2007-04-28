@@ -62,5 +62,16 @@ if [ ":$2" = ":POST-INSTALL" ]; then
             fi
         fi
     fi
+    if [ -f "/etc/rc.conf" ]; then
+        if [ `grep bsdstats_enable /etc/rc.conf | wc -l` = 0 ]; then
+            if yesno "Would you like to activate reporting on reboot in /etc/rc.conf" n; then
+                echo "bsdstats_enable=\"YES\"" >> /etc/rc.conf
+            fi
+        fi
+    elif [ ! -f "/etc/periodic.conf" ]; then
+        if yesno "Would you like to activate reporting on reboot in /etc/rc.conf" n; then
+            echo "bsdstats_enable=\"YES\"" >> /etc/rc.conf
+        fi
+    fi
 fi
 
