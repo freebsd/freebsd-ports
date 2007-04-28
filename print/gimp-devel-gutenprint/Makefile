@@ -7,7 +7,7 @@
 
 PORTREVISION=	0
 PORTEPOCH=	0
-PKGNAMEPREFIX=	gimp-
+PKGNAMEPREFIX=	gimp-devel-
 PKGNAMESUFFIX=	# empty
 
 MAINTAINER=	ahze@FreeBSD.org
@@ -15,7 +15,7 @@ COMMENT=	Gimp print plug-in
 
 MASTERDIR=	${.CURDIR}/../../print/gutenprint-base
 
-GUT_SLAVE=	gimp
+GUT_SLAVE=	gimp-devel
 PLIST=	${.CURDIR}/pkg-plist
 
 .include "${MASTERDIR}/Makefile"
