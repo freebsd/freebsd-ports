@@ -7,7 +7,7 @@
 
 PORTNAME=	gsfonts
 PORTVERSION=	8.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print x11-fonts
 MASTER_SITES=	ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/fonts/ \
 		${MASTER_SITE_TEX_CTAN:S/$/:CTAN/}
@@ -33,7 +33,11 @@ SUB_LIST=	FONTSDIR="${FONTSDIR}"
 FONTSDIR?=	${PREFIX}/share/ghostscript/fonts
 GS_FONTS_STD=	ghostscript-fonts-std-8.11.tar.gz
 GS_FONTS_OTHER=	ghostscript-fonts-other-6.0.tar.gz
-
+CJKFONTS?=	TrueType/ipam.ttf Ryumin-Light.ttf \
+		TrueType/ipag.ttf GothicBBB-Medium.ttf \
+		TrueType/bkai00mp.ttf STHeiti-Regular.ttf \
+		TrueType/gbsn00lp.ttf STSong-Light.ttf \
+		TrueType/bsmi00lp.ttf MSung-Light.ttf
 .SILENT:
 
 post-patch:
@@ -60,9 +64,14 @@ install-fonts:
 	${INSTALL_DATA} ${WRKSRC}/fonts/fonts.scale ${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/fonts/fonts.scale.urw ${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/fonts/Fontmap ${FONTSDIR}
-	cd ${FONTSDIR} && \
-		${LN} -s -f ${LOCALBASE}/share/fonts/TrueType/ipam.ttf Ryumin-Light.ttf; \
-		${LN} -s -f ${LOCALBASE}/share/fonts/TrueType/ipag.ttf GothicBBB-Medium.ttf
+	set -- ${CJKFONTS}; while :; do \
+	case $$# in \
+	0) break ;; \
+	*) LHS=$$1; shift; RHS=$$1; shift; \
+		cd ${FONTSDIR} \
+		&& ${LN} -s -f ${PREFIX}/share/fonts/$${LHS} $${RHS}; \
+	esac; \
+	done
 
 install-docs:
 .if !defined(NOPORTDOCS)
