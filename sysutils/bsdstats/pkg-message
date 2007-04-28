@@ -10,8 +10,11 @@ anything in the database that has been deemed as 'sensitive' (ie. IP of
 the reporting server, and hostname).
 
 ********************
-To enable the port, edit or create /etc/periodic.conf and add this line:
+To enable monthly reporting, edit or create /etc/periodic.conf and add this line:
 	monthly_statistics_enable="YES"
+
+To enable boottime reporting, edit or create /etc/rc.conf and add this line:
+	bsdstats_enable="YES"
 
 To enable device reporting, add this line:
 	monthly_statistics_report_devices="YES"
