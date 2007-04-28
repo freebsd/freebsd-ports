@@ -2782,6 +2782,7 @@ finance_pfpro	ports/finance/pfpro
 finchtv		ports/biology/finchtv
 find-zlib	ports/security/find-zlib
 find_ddos	ports/security/find_ddos
+findhier	ports/cad/findhier
 findmtu		ports/net/findmtu
 findutils	ports/misc/findutils
 finfo		ports/sysutils/finfo
