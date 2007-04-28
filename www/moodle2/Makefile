@@ -6,16 +6,39 @@
 #
 
 PORTNAME=	moodle
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8
 CATEGORIES=	www
-MASTER_SITES=	http://download.moodle.org/stable17/
+MASTER_SITES=	http://download.moodle.org/stable18/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jmrueda@diatel.upm.es
 COMMENT=	Course management system based on social constructionism
 
-USE_PHP=	session gd pcre
+USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml
 WRKSRC=		${WRKDIR}/moodle
+
+OPTIONS=	MYSQL   "Add support for a MySQL database server" Off \
+			PGSQL   "Add support for a PostgreSQL database server" Off \
+			MSSQL   "Add support for a MS SQL Server" Off \
+			ZLIB    "Add zip/unzip functionality" On \
+			NETWORK "Add Moodle Network functionality" Off \
+			LDAP    "Add LDAP authentication functionality" Off
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITH_MYSQL) && !defined(WITH_PGSQL) && !defined(WITH_MSSQL)
+pre-fetch:
+	@${ECHO_MSG} "
+	@${ECHO_MSG} "You didn't activate support for any database server!"
+	@${ECHO_MSG} "
+	@${ECHO_MSG} "If you want to reconsider, press Ctrl-C now to cancel"
+	@${ECHO_MSG} "the installation and run 'make config'"
+	@${ECHO_MSG} "
+	@${ECHO_MSG} "You can also add the required PHP module later, if that's"
+	@${ECHO_MSG} "what you prefer."
+	@${ECHO_MSG} "
+	@sleep 5
+.endif
 
 .if defined(WITH_MYSQL)
 USE_PHP+=	mysql
@@ -25,11 +48,21 @@ USE_PHP+=	mysql
 USE_PHP+=	pgsql
 .endif
 
+.if defined(WITH_MSSQL)
+USE_PHP+=	mssql
+.endif
+
+.if !defined(WITHOUT_ZLIB)
+USE_PHP+=	zlib
+.endif
+
+.if defined(WITH_NETWORK)
+USE_PHP+=	curl openssl
+.endif
+
 .if defined(WITH_LDAP)
 USE_PHP+=	ldap
 .endif
-
-.include <bsd.port.pre.mk>
 
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
@@ -39,14 +72,6 @@ SUB_LIST=	MOODLEDIR=${MOODLEDIR} \
 
 MOODLEDIR?=	www/moodle
 MOODLEDATADIR?=	www/moodledata
-
-pre-everything::
-	@${ECHO_CMD} "===> You can use the following options:"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "o WITH_MYSQL - Use a MySQL database"
-	@${ECHO_CMD} "o WITH_PGSQL - Use a pgSQL database"
-	@${ECHO_CMD} "o WITH_LDAP  - Ensure your PHP has ldap extension"
-	@${ECHO_CMD} ""
 
 pre-install:
 	@${FIND} -s -d ${WRKSRC} -type f | ${SED} "s?${WRKSRC}?${MOODLEDIR}?g" >${PLIST}
