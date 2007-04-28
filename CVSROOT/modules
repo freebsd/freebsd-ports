@@ -3465,6 +3465,7 @@ gimp		ports/graphics/gimp
 gimp-app	ports/graphics/gimp-app
 gimp-app-devel	ports/graphics/gimp-app-devel
 gimp-devel	ports/graphics/gimp-devel
+gimp-devel-gutenprint	ports/print/gimp-devel-gutenprint
 gimp-greycstoration	ports/graphics/gimp-greycstoration
 gimp-gutenprint	ports/print/gimp-gutenprint
 gimp-help	ports/graphics/gimp-help
