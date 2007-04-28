@@ -8,10 +8,11 @@
 PORTNAME=	lynx
 PORTVERSION=	2.8.6
 PORTREVISION=	4
+PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/ \
 		ftp://lynx.isc.org/lynx${PORTVERSION}/patches/:patches
-DISTNAME=	${PORTNAME}${PORTVERSION}rel.${PORTREVISION}
+DISTNAME=	${PORTNAME}${PORTVERSION}rel.4
 
 MAINTAINER?=	jharris@widomaker.com
 COMMENT?=	A non-graphical, text-based World-Wide Web client
