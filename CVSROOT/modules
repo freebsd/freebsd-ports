@@ -7991,6 +7991,7 @@ nickle		ports/lang/nickle
 nicotine	ports/net-p2p/nicotine
 nicotine-plus	ports/net-p2p/nicotine-plus
 nifmon		ports/net/nifmon
+nifticlib	ports/science/nifticlib
 nightfall	ports/astro/nightfall
 nighthawk	ports/games/nighthawk
 nikto		ports/security/nikto
