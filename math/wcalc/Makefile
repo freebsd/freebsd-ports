@@ -1,15 +1,16 @@
-# New ports collection makefile for:	Wcalc
+# New ports collection makefile for:	wcalc
 # Date created:			25-Apr-2007
-# Whom:					Amarendra Godbole <amarendra.godbole@gmail.com>
+# Whom:				Amarendra Godbole <amarendra.godbole@gmail.com>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	Wcalc
+PORTNAME=	wcalc
 PORTVERSION=	2.2.2
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	w-calc
+DISTNAME=	Wcalc-${PORTVERSION}
 
 MAINTAINER=	amarendra.godbole@gmail.com
 COMMENT=	A natural-expression command-line calculator
