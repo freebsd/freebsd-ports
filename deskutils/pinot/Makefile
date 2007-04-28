@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pinot
-PORTVERSION=	0.71
+PORTVERSION=	0.72
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 #MASTER_SITES=	http://www.chez.com/colinf/pinot/	\
