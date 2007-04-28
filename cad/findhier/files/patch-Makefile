@@ -1,0 +1,28 @@
+--- Makefile.orig	Mon Oct 16 00:58:34 1995
++++ Makefile	Sun Apr 29 00:58:54 2007
+@@ -9,7 +9,7 @@
+ 
+ #CFLAG = -pg
+ #CFLAG = -g
+-CFLAG = -O4
++CFLAG = -O ${CFLAGS}
+ LFLAG =
+ 
+ # Sparc with SunOS4.x
+@@ -51,13 +51,13 @@
+ OBJS = ${SRCS:c=o}
+ HEADERS = str.h findhier.h fstruct.h
+ 
+-.c.o: Makefile findhier.h fhstruct.h
++.c.o: Makefile findhier.h fstruct.h
+ 	${CC} -c ${CFLAG} $<
+ 
++all: fh
++
+ fh: ${OBJS}
+ 	${CC} -o $@ ${CFLAG} ${OBJS} ${LFLAG}
+-	#strip fh
+-	#mv fh ${HOME}/bin
+ 
+ lint:
+ 	${LINT} ${SRCS} | more

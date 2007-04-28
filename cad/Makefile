@@ -21,6 +21,7 @@
     SUBDIR += electric-ng
     SUBDIR += fandango
     SUBDIR += feappv
+    SUBDIR += findhier
     SUBDIR += freehdl
     SUBDIR += gdsreader
     SUBDIR += geda
