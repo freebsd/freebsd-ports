@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	yolk
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.7
 CATEGORIES=	misc python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/y/${PORTNAME}/ \
+MASTER_SITES=	${MASTER_SITE_CHEESESHOP} \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
+MASTER_SITE_SUBDIR=	source/y/${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -24,11 +25,8 @@ OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-.if !defined (NOPORTDOCS)
-DOCSDIR=	${TARGETDIR}/share/doc/py-${PORTNAME}
 .if !defined (NO_INSTALL_MAN)
 MAN1=	${PORTNAME}.1
-.endif
 .endif
 
 PYDISTUTILS_BUILD_TARGET=	bdist_egg
@@ -47,16 +45,12 @@ PYYOLK_EGG_VER=	"${PORTNAME}==${PORTVERSION}"
 .include <bsd.port.pre.mk>
 
 post-install:
-.if !defined (NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/docs && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} ";"
-	@cd ${WRKSRC}/docs && ${FIND} api -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} ";"
 .if !defined (NO_INSTALL_MAN)
 	@${INSTALL_DATA} ${WRKSRC}/docs/${PORTNAME}.1 ${MANPREFIX}/man/man1/${PORTNAME}.1
 .endif
-.endif
-.if !defined (WITHOUT_EXAMPLES)
+.if defined (WITH_EXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
+	@cd ${WRKSRC}/examples && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} ";"
 	@cd ${WRKSRC}/examples && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} ";"
 .endif
 
@@ -64,11 +58,11 @@ post-install:
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
 .endif
 
-.if defined (WITHOUT_EXAMPLES)
-PORTEXAMPLES=	"@comment "
-.else
+.if defined (WITH_EXAMPLES)
 EXAMPLESDIR=	${TARGETDIR}/share/examples/py-${PORTNAME}
 PORTEXAMPLES=	""
+.else
+PORTEXAMPLES=	"@comment "
 .endif
 
 .include <bsd.port.post.mk>
