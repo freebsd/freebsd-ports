@@ -5,8 +5,8 @@ POST-INSTALL CONFIGURATION FOR MOODLE
    its tables in (or choose an existing database).
    It doesn't matter what the database or user names are,
    as this will be configured in a later step.
-   NOTE: this package assumes that either the phpX-pgsql
-   or phpX-mysql packages are installed, as needed.
+   NOTE: this package assumes that either the phpX-pgsql,
+   phpX-mysql, or phpX-mssql packages are installed.
 
 2) Add the following to your Apache configuration, and
    restart the server:
@@ -47,10 +47,15 @@ For more information, see the INSTALL DOCUMENTATION:
 
    http://docs.moodle.org/en/Installing_Moodle
 
+It may be worth reading the installation docs even if Moodle seems
+to be working at first, to ensure your PHP settings and database
+configuration will allow Moodle to operate properly.
+
 If you are upgrading from an earlier version of Moodle, check out
 possible additional steps at:
 
-   http://docs.moodle.org/en/Upgrading_to_Moodle_1.7
+   http://docs.moodle.org/en/Upgrading
+   http://docs.moodle.org/en/Upgrading_to_Moodle_1.8
 
 If you have real trouble, please visit the Moodle course
 "Using Moodle" on moodle.org.
