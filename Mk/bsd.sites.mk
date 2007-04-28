@@ -209,7 +209,6 @@ MASTER_SITE_ECLIPSE+= \
 MASTER_SITE_EXIM+=	\
 	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/%SUBDIR%/ \
 	ftp://ftp.exim.org/pub/exim/%SUBDIR%/ \
-	http://public.planetmirror.com/pub/exim/exim/%SUBDIR%/ \
 	ftp://ftp.easynet.be/exim/exim/%SUBDIR%/ \
 	ftp://mirror.kn.vutbr.cz/pub/ftp.exim.org/exim/%SUBDIR%/ \
 	ftp://sunsite.auc.dk/pub/mail/exim/exim/%SUBDIR%/ \
@@ -299,7 +298,6 @@ MASTER_SITE_FEDORA_LINUX+= \
 	ftp://ftp.riken.go.jp/pub/Linux/fedora/core/%SUBDIR%/ \
 	http://ftp.isu.edu.tw/pub/Linux/Fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.isu.edu.tw/pub/Linux/Fedora/linux/core/%SUBDIR%/ \
-	http://public.planetmirror.com/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.planetmirror.com/pub/fedora/linux/core/%SUBDIR%/ \
 	http://www.las.ic.unicamp.br/pub/fedora/linux/core/%SUBDIR%/ \
 	ftp://www.las.ic.unicamp.br/pub/fedora/linux/core/%SUBDIR%/ \
@@ -383,7 +381,6 @@ MASTER_SITE_GENTOO+=	\
 	http://gentoo.inode.at/%SUBDIR%/ \
 	http://ftp.rhnet.is/pub/gentoo/%SUBDIR%/ \
 	http://gentoo.mirror.sdv.fr/%SUBDIR%/ \
-	http://public.planetmirror.com/pub/gentoo/%SUBDIR%/ \
 	http://ftp.gentoo.or.kr/%SUBDIR%/ \
 	http://mirror.gentoo.gr.jp/%SUBDIR%/ \
 	http://gentoo.gg3.net/%SUBDIR%/ \
@@ -442,7 +439,6 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.dti.ad.jp/pub/X/gnome/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/gnome/&,} \
 	ftp://ftp.kddlabs.co.jp/pub/GNOME/%SUBDIR%/ \
-	http://public.planetmirror.com/pub/gnome/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
 	http://ftp.gnome.org/pub/GNOME/%SUBDIR%/
 .endif
@@ -483,7 +479,6 @@ MASTER_SITE_GNUPG+= 	\
 
 .if !defined(IGNORE_MASTER_SITE_GNUSTEP)
 MASTER_SITE_GNUSTEP+= \
-	http://downloads.planetmirror.com/pub/gnustep/gnustep/%SUBDIR%/ \
 	ftp://ftp.planetmirror.com/pub/gnustep/gnustep/%SUBDIR%/ \
 	ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/ \
 	ftp://ftp.easynet.nl/mirror/GNUstep/pub/gnustep/%SUBDIR%/
@@ -499,8 +494,7 @@ MASTER_SITE_GNU_ALPHA+=	\
 	ftp://alpha.gnu.org/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/mirrors/alpha.gnu.org/gnu/%SUBDIR%/ \
 	ftp://ftp.lublin.pl/mirror/alpha.gnu.org/gnu/%SUBDIR%/ \
-	ftp://ftp.ps.pl/mirrors/alpha.gnu.org/pub/gnu/%SUBDIR%/ \
-	http://public.planetmirror.com/pub/gnu-alpha/%SUBDIR%/
+	ftp://ftp.ps.pl/mirrors/alpha.gnu.org/pub/gnu/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_HORDE)
@@ -512,8 +506,7 @@ MASTER_SITE_HORDE+=	\
 	ftp://ftp.it.horde.org/horde/pub/%SUBDIR%/ \
 	ftp://ftp.planetmirror.com/pub/horde/%SUBDIR%/ \
 	ftp://ftp.es.horde.org/pub/%SUBDIR%/ \
-	ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/%SUBDIR%/ \
-	http://downloads.planetmirror.com/pub/horde/%SUBDIR%/
+	ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_IDSOFTWARE)
@@ -642,7 +635,6 @@ MASTER_SITE_KDE+=	\
 	ftp://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	http://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.planetmirror.com/pub/kde/%SUBDIR%/ \
-	http://public.planetmirror.com/pub/kde/%SUBDIR%/ \
 	ftp://ftp.ussg.iu.edu/pub/kde/%SUBDIR%/ \
 	http://ftp.ussg.iu.edu/kde/%SUBDIR%/ \
 	ftp://carroll.aset.psu.edu/pub/kde/%SUBDIR%/ \
@@ -865,7 +857,6 @@ MASTER_SITE_PHP+= \
 .if !defined(IGNORE_MASTER_SITE_PYTHON)
 MASTER_SITE_PYTHON+= \
 	http://www.python.org/%SUBDIR%/ \
-	http://python.planetmirror.com/%SUBDIR%/ \
 	http://python.ilisys.com.au/%SUBDIR%/ \
 	http://ftp.easynet.be/python/%SUBDIR%/ \
 	http://www.linux.org.hk/mirror/python/%SUBDIR%/ \
@@ -1151,7 +1142,6 @@ MASTER_SITE_SUSE+= 	\
 	ftp://ftp.chg.ru/pub/Linux/SuSE/suse/%SUBDIR%/ \
 	http://mirror.pacific.net.au/linux/suse/%SUBDIR%/ \
 	ftp://ftp.planetmirror.com/pub/linux/suse/suse/%SUBDIR%/ \
-	http://public.planetmirror.com/pub/linux/suse/suse/%SUBDIR%/ \
 	ftp://mirror.aarnet.edu.au/pub/suse/%SUBDIR%/
 .endif
 
