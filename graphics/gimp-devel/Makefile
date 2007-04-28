@@ -8,6 +8,7 @@
 
 PORTNAME=	gimp
 PORTVERSION?=	2.3
+PORTREVISION=	1
 PORTEPOCH?=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES?=	# empty
@@ -43,7 +44,7 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/gimp/2.2/environ/pygimp.env:${PORTSDIR}/graph
 .endif
 
 .if !defined(WITHOUT_PRINT)
-RUN_DEPENDS+=	${LOCALBASE}/libexec/gimp/2.2/plug-ins/print:${PORTSDIR}/print/gimp-gutenprint
+RUN_DEPENDS+=	${LOCALBASE}/libexec/gimp/2.2/plug-ins/print:${PORTSDIR}/print/gimp-devel-gutenprint
 .endif
 
 do-install:	# empty
