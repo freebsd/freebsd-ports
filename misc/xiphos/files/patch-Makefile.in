@@ -1,0 +1,31 @@
+--- Makefile.in.orig	Tue Apr 24 13:34:53 2007
++++ Makefile.in	Tue Apr 24 13:39:06 2007
+@@ -69,8 +69,7 @@
+     *) f=$$p;; \
+   esac;
+ am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
+-am__installdirs = "$(DESTDIR)$(gnomemenudir)" \
+-	"$(DESTDIR)$(gnomesworddocdir)"
++am__installdirs = "$(DESTDIR)$(gnomemenudir)"
+ gnomemenuDATA_INSTALL = $(INSTALL_DATA)
+ gnomesworddocDATA_INSTALL = $(INSTALL_DATA)
+ DATA = $(gnomemenu_DATA) $(gnomesworddoc_DATA)
+@@ -690,7 +689,7 @@
+ all-am: Makefile $(DATA) config.h
+ installdirs: installdirs-recursive
+ installdirs-am:
+-	for dir in "$(DESTDIR)$(gnomemenudir)" "$(DESTDIR)$(gnomesworddocdir)"; do \
++	for dir in "$(DESTDIR)$(gnomemenudir)" do \
+ 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	done
+ install: install-recursive
+@@ -738,8 +737,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-data-local install-gnomemenuDATA \
+-	install-gnomesworddocDATA
++install-data-am: install-data-local install-gnomemenuDATA
+ 
+ install-exec-am:
+ 
