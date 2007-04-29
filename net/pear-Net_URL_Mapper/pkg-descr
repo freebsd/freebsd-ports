@@ -1,0 +1,10 @@
+Net_URL_Mapper provides a simple and flexible way to build nice URLs for your
+web applications.
+
+The URL syntax is similar to what can be found in Ruby on Rails or Python
+Routes module and as such, this package can be compared to what they call
+a router. Still, Net_URL_Mapper does not perform the dispatching like these
+frameworks and therefore can be used with your
+own router.
+
+WWW: http://pear.php.net/package/Net_URL_Mapper/
