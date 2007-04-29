@@ -3394,6 +3394,7 @@ geotrace	ports/net/geotrace
 gephex		ports/graphics/gephex
 geramik		ports/x11-themes/geramik
 gerbv		ports/cad/gerbv
+geronimo	ports/www/geronimo
 gerris		ports/science/gerris
 geta		ports/dns/geta
 getbdf		ports/x11-fonts/getbdf
