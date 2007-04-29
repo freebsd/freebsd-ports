@@ -8,27 +8,9 @@
 PORTNAME=	openoffice.org
 PORTVERSION=	1.1.5
 PORTREVISION=	4
-CATEGORIES+=	editors
-MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/1.1.5/&,} \
-		ftp://ftp.kddlabs.co.jp/office/openoffice/stable/1.1.5/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/stable/1.1.5/\
-		ftp://ftp.tu-chemnitz.de/pub/openoffice/stable/1.1.5/ \
-		ftp://ftp.stardiv.de/pub/OpenOffice.org/stable/1.1.5/ \
-		http://ftp.gwdg.de/pub/misc/openoffice/stable/1.1.5/ \
-		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
-		${MASTER_SITE_LOCAL:S/$/:moz/} \
-		${MASTER_SITE_MOZILLA:S/$/:mozsrc/} \
-		http://openoffice.lunarshells.com/sources/helpcontent/:help \
-		${MASTER_SITE_RINGSERVER:S/$/:help/} \
-		${MASTER_SITE_RINGSERVER:S/$/:help3/} \
-		ftp://ftp.kddlabs.co.jp/office/openoffice/contrib/helpcontent/:help \
-		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent/:help \
-		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help \
-		ftp://ftp.linux.cz/pub/localization/OpenOffice.org/1.1.5/build/Files/:help2
-MASTER_SITE_SUBDIR+=	maho/openoffice.org/:moz \
-		mozilla/releases/mozilla${MOZILLA_VERSION}/src/:mozsrc \
-		misc/openoffice/contrib/helpcontent/:help \
-		misc/openoffice/contrib/helpcontent-1.0/:help3
+CATEGORIES+=	editors java
+MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/1.1/ \
+		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc
 DISTFILES+=	OOo_${RELEASE_NR}_src.tar.gz
 .if defined(WITH_GPC)
 DISTFILES+=	gpc231.tar.Z:gpc
@@ -42,7 +24,7 @@ MOZILLA_PROJECT=	cws_srx645_mozooo.20040203.tar.gz
 MOZILLA_VERSION=	1.0
 MOZILLA_SOURCE=		mozilla-source-${MOZILLA_VERSION}.tar.gz
 .if !defined(WITHOUT_MOZILLA)
-DISTFILES+=	${MOZILLA_PROJECT}:moz ${MOZILLA_SOURCE}:mozsrc
+DISTFILES+=	${MOZILLA_PROJECT} ${MOZILLA_SOURCE}
 USE_GNOME+=	orbit
 .endif
 
@@ -71,15 +53,15 @@ L10NHELP?=     helpcontent_01_unix.tgz
 
 DISTFILES+=	${L10NHELP}:help
 .if defined(ALL_LOCALIZED_LANGS)
-DISTFILES+=	helpcontent_07_unix.tgz:help3 \
-		helpcontent_31_unix.tgz:help  helpcontent_33_unix.tgz:help \
-		helpcontent_34_unix.tgz:help  helpcontent_39_unix.tgz:help \
-		helpcontent_42_unix.tgz:help2 helpcontent_43_unix.tgz:help2 \
-		helpcontent_46_unix.tgz:help  helpcontent_49_unix.tgz:help \
-		helpcontent_50_unix.tgz:help2 helpcontent_55_unix.tgz:help \
-		helpcontent_81_unix.tgz:help  helpcontent_82_unix.tgz:help \
-		helpcontent_86_unix.tgz:help  helpcontent_88_unix.tgz:help \
-		helpcontent_90_unix.tgz:help
+DISTFILES+=	helpcontent_07_unix.tgz \
+		helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
+		helpcontent_34_unix.tgz helpcontent_39_unix.tgz \
+		helpcontent_42_unix.tgz helpcontent_43_unix.tgz \
+		helpcontent_46_unix.tgz helpcontent_49_unix.tgz \
+		helpcontent_50_unix.tgz helpcontent_55_unix.tgz \
+		helpcontent_81_unix.tgz helpcontent_82_unix.tgz \
+		helpcontent_86_unix.tgz helpcontent_88_unix.tgz \
+		helpcontent_90_unix.tgz
 L10NHELPS=	helpcontent_01_unix.tgz helpcontent_07_unix.tgz \
 		helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
 		helpcontent_34_unix.tgz helpcontent_39_unix.tgz \
