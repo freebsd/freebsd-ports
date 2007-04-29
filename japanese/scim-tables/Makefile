@@ -22,10 +22,6 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500035
-BROKEN=		No working scim-make-table command on 4.x. Install textproc/scim-table-imengine for details
-.endif
-
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl" \
 		SCIM_DATADIR=${PREFIX}/share/scim \
