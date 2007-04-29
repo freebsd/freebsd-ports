@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ragel
-PORTVERSION=	5.14
+PORTVERSION=	5.20
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cs.queensu.ca/home/thurston/ragel/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -23,8 +23,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ENV=	GPERF="${LOCALBASE}/bin/gperf"
 
-MAN1=		ragel.1 rlcodegen.1
-PLIST_FILES=	bin/ragel bin/rlcodegen
+MAN1=		ragel.1 rlgen-cd.1 rlgen-dot.1 rlgen-java.1 rlgen-ruby.1
+PLIST_FILES=	bin/ragel bin/rlgen-cd
 
 PORTDOCS=	${PORTNAME}-guide-${PORTVERSION}.pdf
 
@@ -41,13 +41,14 @@ post-patch:
 post-build:
 	@cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} \
 		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} \
-		ragel.1 rlcodegen.1
+		${MAN1}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ragel/ragel ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/rlcodegen/rlcodegen ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/ragel.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/rlcodegen.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/rlgen-cd/rlgen-cd ${PREFIX}/bin
+.for m in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/doc/${m} ${MAN1PREFIX}/man/man1
+.endfor
 
 post-install:
 .if !defined(NOPORTDOCS)
