@@ -2,4 +2,4 @@ A core event abstracter layer and X abstraction layer that makes doing
 selections, Xdnd, general X stuff, and event loops, timeouts and idle handlers
 fast, optimised, and convenient.
 
-WWW: http://enlightenment.sourceforege.net/Libraries/Ecore/
+WWW: http://enlightenment.sourceforge.net/Libraries/Ecore/
