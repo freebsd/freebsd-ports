@@ -1,5 +1,5 @@
 --- tables/Makefile.in.orig	Sun Oct 30 22:07:36 2005
-+++ tables/Makefile.in	Tue Nov  1 23:11:44 2005
++++ tables/Makefile.in	Tue Nov  1 22:49:16 2005
 @@ -234,7 +234,7 @@
  target_alias = @target_alias@
  MAINTAINERCLEANFILES = Makefile.in
