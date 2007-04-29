@@ -1123,6 +1123,10 @@ share/locale/xh/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
+@dirrmtry share/icons/hicolor/svgxsvg/apps
+@dirrmtry share/icons/hicolor/svgxsvg
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
 @dirrm share/gnome/pixmaps/stickynotes
 %%CPUFREQ%%@dirrm share/gnome/pixmaps/cpufreq-applet
 @dirrm share/gnome/pixmaps/accessx-status-applet
