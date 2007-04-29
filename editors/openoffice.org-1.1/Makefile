@@ -10,6 +10,7 @@ PORTVERSION=	1.1.5
 PORTREVISION=	4
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/1.1/ \
+		http://openoffice.lunarshells.com/sources/1.1/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc
 DISTFILES+=	OOo_${RELEASE_NR}_src.tar.gz
 .if defined(WITH_GPC)
@@ -243,4 +244,3 @@ solver:
 	@cd ${WRKSRC} ; ${TAR} cfz ${WRKDIR}/../${PACKAGE_BASENAME}_solver.tar.gz solver
 
 .include <bsd.port.post.mk>
-
