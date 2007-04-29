@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scim
-PORTVERSION=	1.4.5
-#PORTREVISION=	0
+PORTVERSION=	1.4.6
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
@@ -21,24 +20,16 @@ USE_AUTOTOOLS=	libtool:15
 USE_XLIB=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500035
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/stlport" \
-		LDFLAGS="-L${LOCALBASE}/lib -lstlport_gcc -lintl ${PTHREAD_LIBS}"
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-4-stable
-.else
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
-PLIST_SUB=	NOSTABLE=""
-.endif
 
 post-patch:
 	${REINPLACE_CMD} 's|$$(datadir)/pixmaps|$$(prefix)/share/gnome/pixmaps|' \
