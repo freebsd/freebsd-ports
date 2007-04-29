@@ -101,7 +101,6 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/etc/emacs.bash
 %%DATADIR%%/%%EMACS_VER%%/etc/emacs.csh
 %%DATADIR%%/%%EMACS_VER%%/etc/emacs.icon
-%%DATADIR%%/%%EMACS_VER%%/etc/emacs.py
 %%DATADIR%%/%%EMACS_VER%%/etc/emacsclient.1
 %%DATADIR%%/%%EMACS_VER%%/etc/emacstool.1
 %%DATADIR%%/%%EMACS_VER%%/etc/enriched.doc
@@ -1542,6 +1541,8 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/lisp/ielm.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/iimage.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/iimage.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/image-dired.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/image-dired.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/image-file.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/image-file.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/image-mode.el.gz
@@ -2221,8 +2222,6 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/prolog.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ps-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/ps-mode.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/python.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/python.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/scheme.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/scheme.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/sh-script.el.gz
@@ -2471,8 +2470,6 @@ libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/vcdiff
 %%DATADIR%%/%%EMACS_VER%%/lisp/tooltip.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/tree-widget.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/tree-widget.elc
-%%DATADIR%%/%%EMACS_VER%%/lisp/tumme.el.gz
-%%DATADIR%%/%%EMACS_VER%%/lisp/tumme.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/tutorial.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/tutorial.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/type-break.el.gz
