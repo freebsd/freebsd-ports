@@ -11391,6 +11391,7 @@ pear-DB_DataObject	ports/databases/pear-DB_DataObject
 pear-DB_DataObject_FormBuilder	ports/databases/pear-DB_DataObject_FormBuilder
 pear-DB_Pager	ports/databases/pear-DB_Pager
 pear-DB_QueryTool	ports/databases/pear-DB_QueryTool
+pear-DB_Sqlite_Tools	ports/databases/pear-DB_Sqlite_Tools
 pear-DB_Table	ports/databases/pear-DB_Table
 pear-DB_ldap	ports/databases/pear-DB_ldap
 pear-Date	ports/devel/pear-Date
