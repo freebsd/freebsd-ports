@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	VFS
-PORTVERSION=	0.0.5
+PORTVERSION=	0.1.0
 CATEGORIES=	devel pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bg1tpt@gmail.com
 COMMENT=	PEAR Virtual File System API
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
@@ -20,7 +20,7 @@ USE_PHP=	gettext
 
 FILES=		VFS.php VFS/Browser.php VFS/GC.php VFS/ListItem.php \
 		VFS/Object.php VFS/file.php VFS/ftp.php VFS/musql.php \
-		VFS/sql.php VFS/sql_file.php
+		VFS/sql.php VFS/sql_file.php VFS/smb.php VFS/ssh2.php
 DATA=		muvfs.sql vfs.oci8.sql vfs.pgsql.sql vfs.sql
 SCRIPTFILES=	vfs.php
 
