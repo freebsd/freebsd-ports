@@ -3340,6 +3340,7 @@ gdmap		ports/sysutils/gdmap
 gdome2		ports/textproc/gdome2
 gdrdao		ports/audio/gdrdao
 gdsreader	ports/cad/gdsreader
+gdt		ports/cad/gdt
 gdtclft		ports/graphics/gdtclft
 gdvrecv		ports/multimedia/gdvrecv
 geany		ports/devel/geany
