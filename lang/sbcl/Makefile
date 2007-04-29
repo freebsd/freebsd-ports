@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	lang lisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sbcl
@@ -34,28 +34,22 @@ INFODIR=	${PREFIX}/${INFO_PATH}
 .if defined(WITH_SBCL)
 LISP_CMD=	""
 .else
-BOOT_VERSION=	1.0.1
+BOOT_VERSION=	${PORTVERSION}
 .if make(makesum)
-BOOT_ARCH_OS_LIST=	x86-freebsd4 x86-64-freebsd5
+BOOT_ARCH_OS_LIST=	x86-freebsd x86-64-freebsd
 .elif ${ARCH} == i386
-BOOT_ARCH_OS_LIST=	x86-freebsd4
+BOOT_ARCH_OS_LIST=	x86-freebsd
 .elif ${ARCH} == amd64
-BOOT_ARCH_OS_LIST=	x86-64-freebsd5
+BOOT_ARCH_OS_LIST=	x86-64-freebsd
 .endif
 .for BOOT_ARCH_OS in ${BOOT_ARCH_OS_LIST}
 BOOT_DISTNAME=	${PORTNAME}-${BOOT_VERSION}-${BOOT_ARCH_OS}
 DISTFILES:=	${DISTFILES} ${BOOT_DISTNAME}-binary${EXTRACT_SUFX}
 .endfor
 LISP_CMD=	"${WRKDIR}/${BOOT_DISTNAME}/src/runtime/sbcl --core ${WRKDIR}/${BOOT_DISTNAME}/output/sbcl.core --disable-debugger --userinit /dev/null --sysinit /dev/null"
-.if ${ARCH} == i386 && ${OSVERSION} >= 500000
-BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libc.so.4:${PORTSDIR}/misc/compat4x
-.elif ${ARCH} == amd64 && ${OSVERSION} >= 600000
+.if ${OSVERSION} >= 600000
 BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libc.so.5:${PORTSDIR}/misc/compat5x
 .endif
-.endif
-
-.if defined(WITH_THREADS) && ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x with threading
 .endif
 
 .if ${ARCH} == i386
