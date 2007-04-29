@@ -1,0 +1,8 @@
+PEAR::DB_Sqlite_Tools is an object oriented interface to effectively
+manage and backup Sqlite databases.It extends the existing functionality
+by providing a comprehensive solution for database backup, live replication,
+export in XML format, performance optmization and other functionalities like
+the insertion and retrieval of encrypted data from an Sqlite database without
+any external extension.
+
+WWW: http://pear.php.net/package/DB_Sqlite_Tools/
