@@ -6,7 +6,8 @@ bin/jrubyc
 %%DATADIR%%/lib/emma.jar
 %%DATADIR%%/lib/emma_ant.jar
 %%DATADIR%%/lib/jarjar-0.7.jar
-%%DATADIR%%/lib/jline-0.9.91-SNAPSHOT.jar
+%%DATADIR%%/lib/jline-0.9.91.jar
+%%DATADIR%%/lib/backport-util-concurrent.jar
 %%DATADIR%%/lib/jruby.jar
 %%DATADIR%%/lib/junit.jar
 %%DATADIR%%/lib/ruby/1.8/.document
@@ -666,4 +667,6 @@ bin/jrubyc
 %%PORTDOCS%%%%EXAMPLESDIR%%/test_fib_compiler.rb
 %%PORTDOCS%%%%EXAMPLESDIR%%/thread.rb
 %%PORTDOCS%%%%EXAMPLESDIR%%/xslt.rb
+%%PORTDOCS%%%%EXAMPLESDIR%%/javascript.rb
+%%PORTDOCS%%%%EXAMPLESDIR%%/scripting.rb
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

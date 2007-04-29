@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jruby
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.9
 CATEGORIES=	lang ruby java
 MASTER_SITES=	http://dist.codehaus.org/jruby/
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
