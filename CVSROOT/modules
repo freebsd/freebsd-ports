@@ -9498,6 +9498,7 @@ p5-GD-SecurityImage	ports/security/p5-GD-SecurityImage
 p5-GD-TextUtil	ports/graphics/p5-GD-TextUtil
 p5-GD-Thumbnail	ports/graphics/p5-GD-Thumbnail
 p5-GDBM		ports/databases/p5-GDBM
+p5-GDS2		ports/cad/p5-GDS2
 p5-GIS-Distance	ports/math/p5-GIS-Distance
 p5-GPS		ports/astro/p5-GPS
 p5-GSSAPI	ports/security/p5-GSSAPI
