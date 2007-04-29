@@ -38,7 +38,7 @@ OPTIONS=	GTK	"Build with GTK frontend instead of the default TK" off
 
 .if defined(WITH_GTK)
 PKGNAMESUFFIX=	-gtk2
-USE_GNOME+=	gtk20
+USE_GNOME+=	gtk20 libgnomeui
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=	--with-gtk
 PLIST_SUB+=	NLS=""
