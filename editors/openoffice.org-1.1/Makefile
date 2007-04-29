@@ -51,7 +51,7 @@ LANG_EXT?=	01
 LANG_CONFIGURE_ARG?=	ENUS
 L10NHELP?=     helpcontent_01_unix.tgz
 
-DISTFILES+=	${L10NHELP}:help
+DISTFILES+=	${L10NHELP}
 .if defined(ALL_LOCALIZED_LANGS)
 DISTFILES+=	helpcontent_07_unix.tgz \
 		helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
