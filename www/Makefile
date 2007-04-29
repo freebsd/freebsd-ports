@@ -176,6 +176,7 @@
     SUBDIR += gekko-modules
     SUBDIR += geneweb
     SUBDIR += geolizer
+    SUBDIR += geronimo
     SUBDIR += gforge
     SUBDIR += glibwww
     SUBDIR += glpi
