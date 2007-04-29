@@ -35,7 +35,6 @@ GST_ALL_PLUGINS= \
 		ladspa \
 		lame \
 		lcs \
-		libcaca \
 		libdv \
 		libfame \
 		libfametest\
@@ -291,14 +290,6 @@ LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
 # audiofile
 .if ${GST_PLUGIN}=="audiofile"
 LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
-.endif
-
-# libcaca
-.if ${GST_PLUGIN}=="libcaca"
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libcaca.a:${PORTSDIR}/graphics/libcaca
-PLIST_FILES=	${GST_LIB_DIR}/libgstcacasink.so \
-		${GST_LIB_DIR}/libgstcacasink.a \
-		${GST_LIB_DIR}/libgstcacasink.la
 .endif
 
 # dv
