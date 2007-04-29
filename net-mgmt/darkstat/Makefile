@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	darkstat
-PORTVERSION=	3.0.540
+PORTVERSION=	3.0.619
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://dmr.ath.cx/net/darkstat/
 
@@ -16,6 +16,7 @@ COMMENT=	Network statistics gatherer and reporter
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
 MAN1=	darkstat.1
 DOCS=	AUTHORS INSTALL README THANKS
@@ -26,10 +27,4 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${PATCHDIR}/extra-*
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
