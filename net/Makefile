@@ -600,6 +600,7 @@
     SUBDIR += pear-Net_Sieve
     SUBDIR += pear-Net_Socket
     SUBDIR += pear-Net_URL
+    SUBDIR += pear-Net_URL_Mapper
     SUBDIR += pear-Net_UserAgent_Detect
     SUBDIR += pear-Net_UserAgent_Mobile
     SUBDIR += pear-Net_Whois
