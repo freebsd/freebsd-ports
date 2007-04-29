@@ -8,11 +8,11 @@
 PORTNAME=	servlet-api
 PORTVERSION=	2.5
 CATEGORIES=	www java
-MASTER_SITES=	http://fisheye5.cenqua.com/browse/~raw,r=1.1.1.3/glassfish/repo/javax.servlet/jars/
+MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/maven2/javax/servlet/servlet-api/2.5/
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	nemoliu@gmail.com
+MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	The Servlet API
 
 USE_JAVA=	yes
