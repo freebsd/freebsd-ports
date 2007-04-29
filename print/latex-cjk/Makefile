@@ -73,10 +73,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,c00kai.fd,c00bkai.fd,; s,{kai},{bkai},' ${WRKSRC}/texinput/Bg5/c00bkai.fd
 	@${FIND} -E ${WRKSRC} -regex '.*.(orig|bak)' -delete
 
-pre-install:
+pre-su-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
-post-install:
+post-su-install:
 .if !defined(NOPORTDOCS)
 	${RM} -fr ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc ${DOCSDIR}
