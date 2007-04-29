@@ -1,5 +1,5 @@
 #
-#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.63 2007-04-23 02:09:07 clsung Exp $
+#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.64 2007-04-29 08:27:32 clsung Exp $
 #
 #	bsd.emacs.mk - 19990829 Shigeyuki Fukushima.
 #
@@ -115,7 +115,7 @@ PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 # Emacs-22.x
 .elif (${EMACS_PORT_NAME} == "emacs22")
 EMACS_NAME=		emacs
-EMACS_VER=		22.0.98
+EMACS_VER=		22.0.99
 EMACS_MAJOR_VER=	22
 EMACS_LIBDIR?=		share/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	share/${EMACS_NAME}/${EMACS_VER}
