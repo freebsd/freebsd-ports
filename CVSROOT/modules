@@ -11486,6 +11486,7 @@ pear-Net_Sieve	ports/net/pear-Net_Sieve
 pear-Net_SmartIRC	ports/irc/pear-Net_SmartIRC
 pear-Net_Socket	ports/net/pear-Net_Socket
 pear-Net_URL	ports/net/pear-Net_URL
+pear-Net_URL_Mapper	ports/net/pear-Net_URL_Mapper
 pear-Net_UserAgent_Detect	ports/net/pear-Net_UserAgent_Detect
 pear-Net_UserAgent_Mobile	ports/net/pear-Net_UserAgent_Mobile
 pear-Net_Whois	ports/net/pear-Net_Whois
