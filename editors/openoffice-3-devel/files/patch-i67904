@@ -64,17 +64,16 @@ diff -u -r1.33 system.h
 Index: moz/mozilla-source-1.7.5.patch
 ===================================================================
 RCS file: /cvs/external/moz/mozilla-source-1.7.5.patch,v
-retrieving revision 1.11
-diff -u -r1.11 mozilla-source-1.7.5.patch
---- moz/mozilla-source-1.7.5.patch	19 Jul 2006 09:37:17 -0000	1.11
-+++ moz/mozilla-source-1.7.5.patch	29 Jul 2006 09:53:10 -0000
-@@ -7705,7 +7705,7 @@
-  
- -#if (defined(LINUX) && defined(__GLIBC__) && __GLIBC__ >= 2)
- +#if (defined(LINUX) && defined(__GLIBC__) && __GLIBC__ >= 2) || \
--+	(defined(__FreeBSD__) && __FreeBSD_version > 700016)
-++	(defined(__FreeBSD__) && __FreeBSD_version > 601103)
-  #define _PR_HAVE_GETPROTO_R
-  #define _PR_HAVE_5_ARG_GETPROTO_R
-  #endif
-
+retrieving revision 1.14
+diff -u -r1.14 mozilla-source-1.7.5.patch
+--- moz/mozilla-source-1.7.5.patch	17 Apr 2007 08:54:47 -0000	1.14
++++ moz/mozilla-source-1.7.5.patch	27 Apr 2007 05:57:10 -0000
+@@ -7821,7 +7821,7 @@
+   #endif
+   
+ ! #if (defined(LINUX) && defined(__GLIBC__) && __GLIBC__ >= 2) || \
+-! 	(defined(__FreeBSD__) && __FreeBSD_version > 700016)
++! 	(defined(__FreeBSD__) && __FreeBSD_version > 601103)
+   #define _PR_HAVE_GETPROTO_R
+   #define _PR_HAVE_5_ARG_GETPROTO_R
+   #endif
