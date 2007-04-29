@@ -28,8 +28,6 @@ EXTRACT_ONLY=	${OOOSRC}
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(release branch)
 
-IGNORE=		please use openoffice.org-2 port instead
-
 .if defined(WITH_CWS)
 PORTNAME:=	openoffice.org-${WITH_CWS}
 DISTFILES+=	${CWSARCHIVE}:cws
@@ -75,10 +73,10 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
 CODELINE=		680
-MILESTONE?=		14
+MILESTONE?=		15
 OOOTAG?=		OOF680_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
-SNAPDATE=		20070322
+SNAPDATE=		20070414
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 .if defined(WITH_CWS)
