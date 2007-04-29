@@ -52,6 +52,7 @@ PORTDOCS=	*
 
 .if ${ARCH}=="amd64"
 EXTRA_PATCHES=	${PATCHDIR}/amd64-patch
+BROKEN=		Does not build
 .endif
 
 ## sse hardware vector support
