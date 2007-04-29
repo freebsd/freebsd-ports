@@ -1,0 +1,12 @@
+--- Examples/gdsinfo.orig	Sun Apr 29 15:54:57 2007
++++ Examples/gdsinfo	Sun Apr 29 15:55:08 2007
+@@ -75,9 +75,6 @@
+ $topCellNames =~ s/\s+/ /g;
+ 
+ # help find gds2gdt
+-my $uname_s = `/bin/uname -s`; # OS name
+-chomp $uname_s;
+-$ENV{'PATH'} = "/bin:/usr/bin:/user/ic/gnu/$uname_s/bin:".$ENV{'PATH'};
+ my $gds2gdt = which("gds2gdt");
+ unless ($gds2gdt)
+ {

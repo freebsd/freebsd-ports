@@ -24,6 +24,7 @@
     SUBDIR += findhier
     SUBDIR += freehdl
     SUBDIR += gdsreader
+    SUBDIR += gdt
     SUBDIR += geda
     SUBDIR += geda-docs
     SUBDIR += geda-examples
