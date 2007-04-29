@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_proctitle
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.springdaemons.com/soft/
 
