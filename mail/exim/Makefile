@@ -28,7 +28,7 @@ MASTER_SITE_SUBDIR+=	sa-exim/:sa_exim
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 .endif
 
-EXIM_VERSION=	4.66
+EXIM_VERSION=	4.67
 SA_EXIM_VERSION=4.2
 
 .if !defined(EXIMON_ONLY)
