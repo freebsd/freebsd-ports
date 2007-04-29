@@ -923,6 +923,7 @@
     SUBDIR += pear-HTTP_Session
     SUBDIR += pear-HTTP_Upload
     SUBDIR += pear-Services_Delicious
+    SUBDIR += pear-Services_W3C_HTMLValidator
     SUBDIR += pear-Text_Wiki
     SUBDIR += pear-UDDI
     SUBDIR += pecl-APC
