@@ -11446,6 +11446,7 @@ pear-LiveUser_Admin	ports/security/pear-LiveUser_Admin
 pear-Log	ports/sysutils/pear-Log
 pear-MDB	ports/databases/pear-MDB
 pear-MDB2	ports/databases/pear-MDB2
+pear-MDB2_Driver_ibase	ports/databases/pear-MDB2_Driver_ibase
 pear-MDB2_Driver_mysql	ports/databases/pear-MDB2_Driver_mysql
 pear-MDB2_Driver_mysqli	ports/databases/pear-MDB2_Driver_mysqli
 pear-MDB2_Driver_pgsql	ports/databases/pear-MDB2_Driver_pgsql
