@@ -22,15 +22,10 @@ USE_RUBY_EXTCONF=	yes
 
 WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_MODDOCDIR}
 .endif
 
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

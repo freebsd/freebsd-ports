@@ -27,12 +27,6 @@ MAKE_ENV+=	LDLIBS="-lssl -lcrypto" USE_DIET=no
 MAN1=		webfsd.1
 MIMEFILE?=	${LOCALBASE}/etc/mime.types
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} <= 400000
-BROKEN=		"Requires FreeBSD 4.x or greater due to ipv6 support"
-.endif
-
 pre-everything::
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "==========================================="
@@ -53,4 +47,4 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/webfsd ${PREFIX}/sbin
 	@${INSTALL_MAN} ${WRKSRC}/webfsd.man ${PREFIX}/man/man1/webfsd.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

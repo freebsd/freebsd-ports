@@ -28,13 +28,9 @@ GNU_CONFIGURE=	yes
 
 PORTDOCS=	COPYING ChangeLog INSTALL README
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
 post-patch:
 	${REINPLACE_CMD} -e "s/inttypes\.h/stdint\.h/" \
 		${WRKSRC}/src/FbTk/Timer.hh
-.endif
 
 post-install:
 .ifndef (NOPORTDOCS)
@@ -44,4 +40,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
