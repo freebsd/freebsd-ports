@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	kdmtheme
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://beta.smileaf.org/files/kdmtheme/ \
 		${MASTER_SITE_GENTOO:S/%SUBDIR%/distfiles/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	makc@issp.ac.ru
 COMMENT=	KDM Theme Manager
 
 USE_KDEBASE_VER=3
