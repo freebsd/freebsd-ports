@@ -599,6 +599,7 @@
     SUBDIR += pear-Net_Server
     SUBDIR += pear-Net_Sieve
     SUBDIR += pear-Net_Socket
+    SUBDIR += pear-Net_Traceroute
     SUBDIR += pear-Net_URL
     SUBDIR += pear-Net_URL_Mapper
     SUBDIR += pear-Net_UserAgent_Detect
