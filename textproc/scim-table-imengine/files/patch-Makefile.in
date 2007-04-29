@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Feb 10 12:04:25 2006
-+++ Makefile.in	Fri Feb 10 12:09:21 2006
+--- Makefile.in.orig	Sun Oct  8 08:57:57 2006
++++ Makefile.in	Sat Apr 28 19:10:40 2007
 @@ -75,7 +75,7 @@
  	uninstall-recursive
  ETAGS = etags
@@ -15,7 +15,7 @@
  AUTOMAKE_OPTIONS = gnu
 -@SCIM_TABLES_ENABLE_SKIM_SUPPORT_TRUE@SKIM_SUBDIR = skim
 -SUBDIRS = docs intl icons m4 po src tables $(SKIM_SUBDIR)
-+@SCIM_TABLES_ENABLE_SKIM_SUPPORT_TRUE@SKIM_SUBDIR = 
++@SCIM_TABLES_ENABLE_SKIM_SUPPORT_TRUE@SKIM_SUBDIR =
 +SUBDIRS = docs intl icons m4 po src $(SKIM_SUBDIR)
  MAINTAINERCLEANFILES = Makefile.in aclocal.m4 configure $(AUX_DIST)
  CLEANFILES = *.bak 

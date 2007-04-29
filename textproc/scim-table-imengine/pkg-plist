@@ -1,10 +1,10 @@
 bin/scim-make-table
-lib/scim-1.0/1.4.0/IMEngine/table.a
-lib/scim-1.0/1.4.0/IMEngine/table.la
-lib/scim-1.0/1.4.0/IMEngine/table.so
-lib/scim-1.0/1.4.0/SetupUI/table-imengine-setup.a
-lib/scim-1.0/1.4.0/SetupUI/table-imengine-setup.la
-lib/scim-1.0/1.4.0/SetupUI/table-imengine-setup.so
+lib/scim-1.0/IMEngine/table.a
+lib/scim-1.0/IMEngine/table.la
+lib/scim-1.0/IMEngine/table.so
+lib/scim-1.0/SetupUI/table-imengine-setup.a
+lib/scim-1.0/SetupUI/table-imengine-setup.la
+lib/scim-1.0/SetupUI/table-imengine-setup.so
 share/scim/icons/table.png
 share/locale/zh_CN/LC_MESSAGES/scim-tables.mo
 share/locale/zh_TW/LC_MESSAGES/scim-tables.mo
@@ -39,3 +39,5 @@ share/locale/pa/LC_MESSAGES/scim-tables.mo
 @dirrmtry share/locale/zh_CN
 @dirrmtry share/locale/ko/LC_MESSAGES
 @dirrmtry share/locale/ko
+@dirrmtry lib/scim-1.0/SetupUI
+@dirrmtry lib/scim-1.0/IMEngine
