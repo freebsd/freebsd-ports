@@ -1,6 +1,6 @@
---- icons/Makefile.in.orig	Thu Jan 12 02:00:26 2006
-+++ icons/Makefile.in	Fri Feb 10 13:34:59 2006
-@@ -234,54 +234,7 @@
+--- icons/Makefile.in.orig	Wed Oct 11 08:55:05 2006
++++ icons/Makefile.in	Sat Apr 28 19:12:01 2007
+@@ -234,55 +234,7 @@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  MAINTAINERCLEANFILES = Makefile.in
@@ -42,6 +42,7 @@
 -			  Simplex.png   \
 -			  Tamil-inscript.png	\
 -			  Tamil-phonetic.png	\
+-			  Tamil-remington.png   \
 -			  Telugu-inscript.png	\
 -			  Thai.png	\
 -			  Viqr.png      \

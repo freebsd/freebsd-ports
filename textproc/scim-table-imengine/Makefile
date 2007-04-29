@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	scim-table-imengine
-PORTVERSION=	0.5.6
-PORTREVISION=	3
+PORTVERSION=	0.5.7
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
 DISTNAME=	scim-tables-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	SCIM table based input method engine
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
@@ -29,12 +28,10 @@ MAN1=		scim-make-table.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500035
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-4-stable-src-Makefile.in
-.endif
-
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+		LDFLAGS="-L${LOCALBASE}/lib -lintl" \
+		SCIM_DATADIR=${PREFIX}/share/scim \
+		SCIM_ICONDIR=${PREFIX}/share/scim/icons
 
 PLIST_SUB=	SKIM="@comment "
 
@@ -63,9 +60,6 @@ post-configure:
 .endif
 
 post-install:
-.if ${OSVERSION} < 500035
-	@${INSTALL_SCRIPT} ${FILESDIR}/scim-make-table.sh ${PREFIX}/bin/scim-make-table
-.endif
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO}
 	@${ECHO} To display this message again, type \`pkg_info -D ${PKGNAME}\'
