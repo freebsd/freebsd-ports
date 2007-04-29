@@ -53,15 +53,15 @@ lib/gtk-2.0/immodules/im-scim.so
 lib/libscim-1.0.a
 lib/libscim-1.0.la
 lib/libscim-1.0.so
-lib/libscim-1.0.so.9
+lib/libscim-1.0.so.10
 lib/libscim-gtkutils-1.0.a
 lib/libscim-gtkutils-1.0.la
 lib/libscim-gtkutils-1.0.so
-lib/libscim-gtkutils-1.0.so.9
+lib/libscim-gtkutils-1.0.so.10
 lib/libscim-x11utils-1.0.a
 lib/libscim-x11utils-1.0.la
 lib/libscim-x11utils-1.0.so
-lib/libscim-x11utils-1.0.so.9
+lib/libscim-x11utils-1.0.so.10
 lib/scim-1.0/1.4.0/Config/simple.a
 lib/scim-1.0/1.4.0/Config/simple.la
 lib/scim-1.0/1.4.0/Config/simple.so
@@ -112,6 +112,7 @@ share/locale/fr/LC_MESSAGES/scim.mo
 share/locale/it/LC_MESSAGES/scim.mo
 share/locale/ja/LC_MESSAGES/scim.mo
 share/locale/ko/LC_MESSAGES/scim.mo
+share/locale/nl/LC_MESSAGES/scim.mo
 share/locale/pa/LC_MESSAGES/scim.mo
 share/locale/sv/LC_MESSAGES/scim.mo
 share/locale/zh_CN/LC_MESSAGES/scim.mo
