@@ -83,7 +83,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
