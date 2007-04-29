@@ -104,6 +104,8 @@ avahi:*:558:
 tacacs:*:559:
 distcc:*:561:
 polkit:*:562:
+pulse:*:563:
+pulse-access:*:564:
 _xsi:*:600:
 bnetd:*:700:
 bopm:*:717:
