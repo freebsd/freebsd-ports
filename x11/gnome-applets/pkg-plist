@@ -332,6 +332,10 @@ share/gnome/help/char-palette/uk/figures/charpick_characters.png
 %%COMMANDER%%share/gnome/help/command-line/C/figures/prefs-macros.png
 %%COMMANDER%%share/gnome/help/command-line/C/figures/prefs.png
 %%COMMANDER%%share/gnome/help/command-line/C/legal.xml
+%%COMMANDER%%share/gnome/help/command-line/en_GB/command-line.xml
+%%COMMANDER%%share/gnome/help/command-line/en_GB/figures/command-line.png
+%%COMMANDER%%share/gnome/help/command-line/en_GB/figures/prefs-macros.png
+%%COMMANDER%%share/gnome/help/command-line/en_GB/figures/prefs.png
 %%COMMANDER%%share/gnome/help/command-line/es/command-line.xml
 %%COMMANDER%%share/gnome/help/command-line/es/figures/command-line.png
 %%COMMANDER%%share/gnome/help/command-line/es/figures/prefs-macros.png
@@ -786,6 +790,7 @@ share/gnome/omf/char-palette/char-palette-pt_BR.omf
 share/gnome/omf/char-palette/char-palette-sv.omf
 share/gnome/omf/char-palette/char-palette-uk.omf
 %%COMMANDER%%share/gnome/omf/command-line/command-line-C.omf
+%%COMMANDER%%share/gnome/omf/command-line/command-line-en_GB.omf
 %%COMMANDER%%share/gnome/omf/command-line/command-line-es.omf
 %%COMMANDER%%share/gnome/omf/command-line/command-line-fr.omf
 %%COMMANDER%%share/gnome/omf/command-line/command-line-pt_BR.omf
@@ -1087,8 +1092,8 @@ share/locale/mg/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/mk/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ml/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/mn/LC_MESSAGES/gnome-applets-2.0.mo
-share/locale/ms/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/mr/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/ms/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/nb/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ne/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-applets-2.0.mo
@@ -1118,12 +1123,6 @@ share/locale/xh/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
-@dirrmtry share/icons/hicolor/svgxsvg/apps
-@dirrmtry share/icons/hicolor/svgxsvg
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
 @dirrm share/gnome/pixmaps/stickynotes
 %%CPUFREQ%%@dirrm share/gnome/pixmaps/cpufreq-applet
 @dirrm share/gnome/pixmaps/accessx-status-applet
@@ -1304,6 +1303,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 %%COMMANDER%%@dirrm share/gnome/help/command-line/fr
 %%COMMANDER%%@dirrm share/gnome/help/command-line/es/figures
 %%COMMANDER%%@dirrm share/gnome/help/command-line/es
+%%COMMANDER%%@dirrm share/gnome/help/command-line/en_GB/figures
+%%COMMANDER%%@dirrm share/gnome/help/command-line/en_GB
 %%COMMANDER%%@dirrm share/gnome/help/command-line/C/figures
 %%COMMANDER%%@dirrm share/gnome/help/command-line/C
 %%COMMANDER%%@dirrm share/gnome/help/command-line
@@ -1375,6 +1376,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @dirrm share/gnome/gnome-applets/geyes/Bizarre
 @dirrm share/gnome/gnome-applets/geyes
 @dirrm share/gnome/gnome-applets
+%%COMMANDER%%@dirrm libexec/gnome-applets
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/invest
 @dirrm include/libgweather
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
