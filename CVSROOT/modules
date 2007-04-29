@@ -4079,7 +4079,6 @@ gstreamer-plugins-ladspa80	ports/audio/gstreamer-plugins-ladspa80
 gstreamer-plugins-lame		ports/audio/gstreamer-plugins-lame
 gstreamer-plugins-lame80	ports/audio/gstreamer-plugins-lame80
 gstreamer-plugins-libcaca	ports/graphics/gstreamer-plugins-libcaca
-gstreamer-plugins-libcaca80	ports/graphics/gstreamer-plugins-libcaca80
 gstreamer-plugins-libfame80	ports/multimedia/gstreamer-plugins-libfame80
 gstreamer-plugins-libmms	ports/net/gstreamer-plugins-libmms
 gstreamer-plugins-libmms80	ports/net/gstreamer-plugins-libmms80

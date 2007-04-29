@@ -242,7 +242,6 @@
     SUBDIR += gstreamer-plugins-jpeg
     SUBDIR += gstreamer-plugins-jpeg80
     SUBDIR += gstreamer-plugins-libcaca
-    SUBDIR += gstreamer-plugins-libcaca80
     SUBDIR += gstreamer-plugins-libmng80
     SUBDIR += gstreamer-plugins-libpng
     SUBDIR += gstreamer-plugins-libpng80
