@@ -310,6 +310,7 @@
     SUBDIR += p5-qdbm
     SUBDIR += p5-sqlrelay
     SUBDIR += pear-DB
+    SUBDIR += pear-DBA_Relational
     SUBDIR += pear-DB_DataObject
     SUBDIR += pear-DB_DataObject_FormBuilder
     SUBDIR += pear-DB_Pager
