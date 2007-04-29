@@ -1,6 +1,6 @@
---- icons/Makefile.in.orig	Sun Oct 30 22:07:35 2005
-+++ icons/Makefile.in	Tue Nov  1 23:11:26 2005
-@@ -234,52 +234,8 @@
+--- icons/Makefile.in.orig	Sat Apr 28 18:05:33 2007
++++ icons/Makefile.in	Sat Apr 28 18:06:16 2007
+@@ -234,54 +234,8 @@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  MAINTAINERCLEANFILES = Makefile.in
@@ -14,6 +14,7 @@
 -			  CangJie3.png	\
 -			  Cantonese.png \
 -			  CantonHK.png	\
+-			  CNS11643.png	\
 -			  Quick.png	\
 -			  Stroke5.png	\
 -			  Dayi.png      \
@@ -41,6 +42,7 @@
 -			  Simplex.png   \
 -			  Tamil-inscript.png	\
 -			  Tamil-phonetic.png	\
+-			  Tamil-remington.png   \
 -			  Telugu-inscript.png	\
 -			  Thai.png	\
 -			  Viqr.png      \
@@ -50,8 +52,8 @@
 -			  ZhuYin.png    \
 -			  Ziranma.png	\
 -		          IPA-X-SAMPA.png 
-+INST_ICONS =		  Hangul.png    \
-+			  Hanja.png
++INST_ICONS = Hangul.png    \
++		  Hanja.png
  
  EXTRA_DIST = $(INST_ICONS)
  icondir = $(SCIM_ICONDIR)

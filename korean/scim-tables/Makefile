@@ -6,13 +6,12 @@
 #    $MCom: ports/korean/scim-tables/Makefile,v 1.1 2006/09/30 03:44:11 ahze Exp $
 
 PORTNAME=	scim-tables
-PORTVERSION=	0.5.4
-PORTREVISION=	2
+PORTVERSION=	0.5.7
 CATEGORIES=	korean
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	SCIM table based Korean input methods
 
 BUILD_DEPENDS=	scim-make-table:${PORTSDIR}/textproc/scim-table-imengine
@@ -22,10 +21,6 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-BROKEN=		No working scim-make-table command on 4.x. Install textproc/scim-table-imengine for details
-.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
