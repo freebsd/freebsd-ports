@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
 		http://fresh.t-systems-sfr.com/unix/src/misc/
 
-MAINTAINER?=	shaun@FreeBSD.org
+MAINTAINER?=	araujo@bsdmail.org
 COMMENT=	Fast and extensive C++ GUI toolkit
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -25,7 +25,7 @@ CONFLICTS=	fox-1.0.* fox-1.2.* fox-1.6.*
 LATEST_LINK=	fox14
 
 MAJORVER=	1.4
-SHVER=		32
+SHVER=		35
 PLIST_SUB+=	MAJORVER=${MAJORVER} SHVER=${SHVER}
 
 USE_AUTOTOOLS=	libtool:15
@@ -34,7 +34,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-opengl --with-x --enable-threadsafe
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		shutterbug.1 reswrap.1
 
