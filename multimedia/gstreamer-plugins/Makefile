@@ -74,9 +74,6 @@ PLIST_SUB+=	VERSION="${VERSION}" \
 USE_GSTREAMER=	yes
 .endif
 
-.if ${OSVERSION} < 500000
-IGNORE=	many plugins don't build or even work on 4.x
-.endif
 .include "${MASTERDIR}/Makefile.common"
 
 .if ${DIST}=="base"
@@ -111,22 +108,14 @@ DISTFILES+=	${GOOD_DISTFILE}:good
 .ifdef(WITH_CDROM_DEVICE)
 DEFAULT_CDROM_DEVICE=${WITH_CDROM_DEVICE}
 .else
-. if ${OSVERSION} < 500000
-DEFAULT_CDROM_DEVICE=/dev/acd0c
-. else
 DEFAULT_CDROM_DEVICE=/dev/acd0
-. endif
 .endif
 
 # dvd default device
 .ifdef(WITH_DVD_DEVICE)
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
 .else
-. if ${OSVERSION} < 500000
-DEFAULT_DVD_DEVICE=/dev/acd0c
-. else
 DEFAULT_DVD_DEVICE=/dev/acd0
-. endif
 .endif
 
 post-patch:

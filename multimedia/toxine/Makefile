@@ -7,7 +7,7 @@
 
 PORTNAME=	toxine
 PORTVERSION=	0.6.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	toxine
@@ -44,6 +44,7 @@ PLIST_SUB+=	AALIB="@comment "
 
 .if !defined(WITHOUT_LIBCACA)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcaca.a:${PORTSDIR}/graphics/libcaca
+CONFIGURE_ARGS+=--disable-cacatest
 PLIST_SUB+=	LIBCACA=""
 .else
 PLIST_SUB+=	LIBCACA="@comment "

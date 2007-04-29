@@ -231,7 +231,7 @@ gst_lame_LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
 gst_lame_DIST=	ugly
 
 # libcaca
-gst_libcaca_BUILD_DEPENDS+=	${LOCALBASE}/lib/libcaca.a:${PORTSDIR}/graphics/libcaca
+gst_libcaca_LIB_DEPENDS+=	caca.0:${PORTSDIR}/graphics/libcaca
 gst_libcaca_PLIST_FILES=	${GST_LIB_DIR}/libgstcacasink.so \
 		${GST_LIB_DIR}/libgstcacasink.a \
 		${GST_LIB_DIR}/libgstcacasink.la
