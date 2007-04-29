@@ -25,12 +25,6 @@ LDFLAGS=	-lm -L${X11BASE}/lib -lXpm
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-CFLAGS+=	-Dintmax_t=u_int32_t -Duintmax_t=u_int32_t \
-		-Dstrtoimax=strtoll -Dstrtoumax=strtoull \
-		-DSIZE_MAX=UINT_MAX
-.endif
-
 LDFLAGS+=	-lXrandr
 .if defined(WITHOUT_XFT)
 CFLAGS+=	-DDISABLE_XFT
@@ -45,12 +39,6 @@ LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 CFLAGS+=	-DENABLE_STARTUP -DSN_API_NOT_YET_FROZEN \
 		`pkg-config --cflags libstartup-notification-1.0`
 LDFLAGS+=	`pkg-config --libs libstartup-notification-1.0`
-.endif
-
-post-patch:
-.if ${OSVERSION} < 500000
-	@${GREP} -lR "<stdint\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
-		's|<stdint\.h>|<inttypes.h>|g'
 .endif
 
 do-configure:

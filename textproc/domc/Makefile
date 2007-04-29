@@ -39,8 +39,4 @@ PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 IGNORE=		requires wchar functions to use the produced library
 .endif
 
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4
-.endif
-
 .include <bsd.port.post.mk>

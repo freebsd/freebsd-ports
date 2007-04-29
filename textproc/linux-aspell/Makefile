@@ -79,7 +79,7 @@ DICT_SUFFIX=	.tar.bz2
 
 .include <bsd.port.pre.mk>
 
-.if (${OSVERSION} < 500021) && (${OSVERSION} >= 500000 || ${OSVERSION} < 440000)
+.if ${OSVERSION} < 500021 
 BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 .endif
 
