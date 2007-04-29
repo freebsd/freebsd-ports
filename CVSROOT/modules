@@ -3773,6 +3773,7 @@ gnomemm		ports/x11-toolkits/gnomemm
 gnomephotoprinter	ports/print/gnomephotoprinter
 gnomermind	ports/games/gnomermind
 gnomesudoku	ports/games/gnomesudoku
+gnomesword	ports/misc/gnomesword
 gnometelnet	ports/net/gnometelnet
 gnomoradio	ports/audio/gnomoradio
 gnono		ports/games/gnono
