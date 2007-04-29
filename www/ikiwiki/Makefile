@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	1.50
+PORTVERSION=	1.51
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -51,11 +51,9 @@ PLIST_SUB=	W3M="@comment "
 .endif
 
 post-patch:
-	@${RM} ${WRKSRC}/IkiWiki/Rcs/svn.pm.orig
 	@${REINPLACE_CMD} -e "s|/usr/bin/markdown|${LOCALBASE}/bin/markdown|" \
 		${WRKSRC}/IkiWiki/Plugin/mdwn.pm
 	@${REINPLACE_CMD} \
-		-e 's|$$(CP) -a|$$(CP) -pPR|' \
 		-e 's|$$(PREFIX)/share/man|$$(PREFIX)/man|' \
 		-e 's|$$(PREFIX)/lib/w3m|$$(PREFIX)/libexec/w3m|' \
 		${WRKSRC}/Makefile.PL

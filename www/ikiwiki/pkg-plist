@@ -116,6 +116,7 @@
 %%SITE_PERL%%/IkiWiki/Plugin/table.pm
 %%SITE_PERL%%/IkiWiki/Plugin/tag.pm
 %%SITE_PERL%%/IkiWiki/Plugin/template.pm
+%%SITE_PERL%%/IkiWiki/Plugin/testpagespec.pm
 %%SITE_PERL%%/IkiWiki/Plugin/textile.pm
 %%SITE_PERL%%/IkiWiki/Plugin/toc.pm
 %%SITE_PERL%%/IkiWiki/Plugin/toggle.pm
