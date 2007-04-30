@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	downthemall
-PORTVERSION=	0.9.9.7
-DISTVERSIONSUFFIX=	-fx+fl+tb
+PORTVERSION=	0.9.9.8
+DISTVERSIONSUFFIX=	-fx+tb+fl
 CATEGORIES=	www
 
 MAINTAINER=	infofarmer@FreeBSD.org
@@ -15,9 +15,13 @@ COMMENT=	Lets you download all the links in a webpage and much more
 
 XPI_DISTNAME=	downthemall_
 XPI_ID=		{DDC359D1-844A-42a7-9AA1-88A850A938A8}
+XPI_NUM=	201
 XPI_FILES=	chrome/dta.jar chrome.manifest components/privacycontrol.js \
 		defaults/preferences/privacycontrol.js gpl.txt install.rdf notice.txt
 XPI_DIRS=	chrome components defaults/preferences defaults
+
+post-extract:
+	@${FIND} ${WRKSRC} -name .svn|${XARGS} ${RM} -rf
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
