@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# pkg-install : based off /usr/ports/mail/courier/files/pkg-install.in
+# pkg-install : based off ${PORTSDIR}/mail/courier/files/pkg-install.in
 #
 
 ask() {
@@ -45,7 +45,13 @@ if [ ":$2" = ":POST-INSTALL" ]; then
                     echo "monthly_statistics_report_ports=\"YES\"" >> /etc/periodic.conf
                 fi
                 if yesno "Would you like to run it now" y; then
-                   /usr/local/etc/periodic/monthly/300.statistics -nodelay
+                   ${LOCALBASE}/etc/periodic/monthly/300.statistics -nodelay
+                fi
+            fi
+        else
+            if [ `grep 'monthly_statistics_enable="YES"' /etc/periodic.conf | wc -l` = 1 ]; then
+                if [ `grep 'bsdstats_enable="YES"' /etc/rc.conf | wc -l` = 0 ]; then
+                    echo "bsdstats_enable=\"YES\"" >> /etc/rc.conf
                 fi
             fi
         fi
@@ -60,7 +66,7 @@ if [ ":$2" = ":POST-INSTALL" ]; then
                 echo "monthly_statistics_report_ports=\"YES\"" >> /etc/periodic.conf
             fi
             if yesno "Would you like to run it now" y; then
-               /usr/local/etc/periodic/monthly/300.statistics -nodelay
+               ${LOCALBASE}/etc/periodic/monthly/300.statistics -nodelay
             fi
         fi
     fi
