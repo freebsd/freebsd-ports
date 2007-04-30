@@ -37,7 +37,7 @@ DRIMODDIR=	${PREFIX}/lib/modules/dri
 .include <bsd.port.pre.mk>
 
 .if ${X_WINDOW_SYSTEM:L} != xorg
-IGNORE=	requires libGL from X.Org.
+IGNORE=	requires libGL from X.Org
 .endif
 
 do-install:
