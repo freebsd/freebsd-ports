@@ -1,6 +1,6 @@
 # New ports collection makefile for:	geronimo
 # Date created:		30 May 2007
-# Whom:			Nemo Liu <nemoliu@gmail.com>
+# Whom:			Nemo Liu <nemoliu@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	mail java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/server/binaries
 
-MAINTAINER=	nemoliu@gmail.com
+MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	Java SMTP and POP3 Mail server and NNTP News server
 
 USE_JAVA=	yes

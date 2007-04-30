@@ -1,6 +1,6 @@
 # Ports collection makefile for:	Jakarta Commons JXPATH
 # Date created:                         February 08, 2007
-# Whom:                                 Nemo Liu <nemoliu@gmail.com>
+# Whom:                                 Nemo Liu <nemoliu@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,-,/,}/binaries
 PKGNAMEPREFIX=	jakarta-
 
-MAINTAINER=	nemoliu@gmail.com
+MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	Utilities for manipulating Java Beans using the XPath syntax
 
 USE_JAVA=	yes

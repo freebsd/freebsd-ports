@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	commons/dbutils/source
 PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	nemoliu@gmail.com
+MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	JDBC helper library
 
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit

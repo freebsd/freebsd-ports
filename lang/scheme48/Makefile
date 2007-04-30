@@ -11,7 +11,7 @@ CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.s48.org/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nemoliu@gmail.com
+MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	The Scheme Underground's implementation of R5RS
 
 CONFLICTS=	scsh-*

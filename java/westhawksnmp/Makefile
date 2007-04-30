@@ -11,7 +11,7 @@ CATEGORIES=	java net-mgmt devel
 MASTER_SITES=	http://snmp.westhawk.co.uk/
 DISTNAME=	${PORTNAME:S/westhawk//}${PORTVERSION:S/./_/}
 
-MAINTAINER=	nemoliu@gmail.com
+MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	Lightweight SNMP stack for Java
 
 USE_JAVA=	yes

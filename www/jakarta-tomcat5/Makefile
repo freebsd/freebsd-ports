@@ -12,7 +12,7 @@ CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE_TOMCAT}
 MASTER_SITE_SUBDIR=	tomcat-5/v${PORTVERSION}/bin
 
-MAINTAINER=	nemoliu@gmail.com
+MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	Open-source Java web server by Apache, 5.0.x branch
 
 USE_JAVA=	yes

@@ -1,6 +1,6 @@
 # Ports collection makefile for:	FlexJson
 # Date created:			20 Apr 2006
-# Whom:				Nemo Liu <nemoliu@gmail.com>
+# Whom:				Nemo Liu <nemoliu@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	nemoliu@gmail.com
+MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	A lightweight Java library to write JSON
 
 USE_JAVA=	yes

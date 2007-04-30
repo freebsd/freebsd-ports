@@ -11,7 +11,7 @@ CATEGORIES=	lang ruby java
 MASTER_SITES=	http://dist.codehaus.org/jruby/
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
 
-MAINTAINER=	nemoliu@gmail.com
+MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	An implementation of Ruby Interpreter in Pure Java
 
 NO_BUILD=	yes

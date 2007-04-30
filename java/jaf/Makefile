@@ -11,7 +11,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	#
 DISTNAME=	${PORTNAME}-${PORTVERSION:S,.,_,g}-fr
 
-MAINTAINER=	nemoliu@gmail.com
+MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	JavaBeansTM Activation Framework
 
 USE_ZIP=	YES

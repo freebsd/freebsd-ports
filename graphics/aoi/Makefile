@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	aoi
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
-MAINTAINER=	nemoliu@gmail.com
+MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	An open source Java written 3D modelling and rendering studio
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
