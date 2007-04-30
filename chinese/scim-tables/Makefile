@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	scim-tables
-PORTVERSION=	0.5.4
-PORTREVISION=	3
+PORTVERSION=	0.5.7
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=scim
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	SCIM table based Chinese input methods
 
 BUILD_DEPENDS=	scim-make-table:${PORTSDIR}/textproc/scim-table-imengine
@@ -23,9 +22,12 @@ GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500035
-BROKEN=		"No working scim-make-table command on 4.x. Install textproc/scim-table-imengine for details"
-.endif
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
+		LDFLAGS="-L${LOCALBASE}/lib -lintl" \
+		SCIM_DATADIR=${PREFIX}/share/scim \
+		SCIM_ICONDIR=${PREFIX}/share/scim/icons
+
+CONFIGURE_ARGS+=	--disable-skim-support
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
