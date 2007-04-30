@@ -7,9 +7,9 @@
 
 PORTNAME=	fbreader
 DISTVERSIONPREFIX=	sources-
-DISTVERSION=	0.8.2a
+DISTVERSION=	0.8.2b
 CATEGORIES=	deskutils
-MASTER_SITES=	http://only.mawhrin.net/fbreader/ CENKES
+MASTER_SITES=	http://www.fbreader.org/ CENKES
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	infofarmer@FreeBSD.org
