@@ -30,6 +30,7 @@ MAN1=		scim-make-table.1
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl" \
+		PREFIX="${PREFIX}" \
 		SCIM_DATADIR=${PREFIX}/share/scim \
 		SCIM_ICONDIR=${PREFIX}/share/scim/icons
 
