@@ -1,4 +1,2 @@
 bin/star
 bin/ustar
-etc/default/star
-@dirrm etc/default

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	star
-DISTVERSION=	1.5a76
+DISTVERSION=	1.5a79
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.berlios.de/pub/star/alpha/
 
@@ -21,16 +21,22 @@ LATEST_LINK=	star-devel
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/.a.*//g}
 
 USE_BZIP2=	yes
+
+.if !defined(NO_INSTALL_MANPAGES)
 MAN1=		star.1
 MAN5=		star.5
 MLINKS=		star.1 ustar.1 star.5 ustar.5
-MAKE_ENV=	MAKEFLAGS=${MAKEFLAGS}
+.else
+XMKFLAGS=	XMK_FILE=""
+.endif
+
+MAKE_ENV+=	MAKEFLAGS=${MAKEFLAGS}
 
 do-build:
 	@cd ${WRKSRC} && ${MAKE_ENV} ${LOCALBASE}/bin/smake
 
 do-install:
-	@cd ${WRKSRC}/star && ${MAKE_ENV} ${LOCALBASE}/bin/smake ${INSTALL_TARGET} INS_BASE=${PREFIX}
-	@${STRIP_CMD} ${PREFIX}/bin/star_fat
+	@cd ${WRKSRC}/star && ${MAKE_ENV} ${LOCALBASE}/bin/smake ${INSTALL_TARGET} INS_BASE=${PREFIX} ${XMKFLAGS}
+	@${STRIP_CMD} ${PREFIX}/bin/star
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
---- star/Makefile.orig	Sun Nov  5 01:52:19 2006
-+++ star/Makefile	Mon Feb  5 10:17:54 2007
+--- star/Makefile.orig	Sun Feb  4 23:55:39 2007
++++ star/Makefile	Sun Apr 29 11:38:54 2007
 @@ -15,7 +15,7 @@
  INSDIR=		bin
  TARGET=		star
@@ -15,7 +15,7 @@
  LIBS=		-ldeflt -lrmt -lschily $(LIB_ACL) $(LIB_ATTR) $(LIB_SOCKET)
 -XMK_FILE=	Makefile.man starformatman.mk scpioman.mk gnutarman.mk \
 -		spaxman.mk suntarman.mk Makefile.dfl
-+XMK_FILE=	Makefile.man starformatman.mk Makefile.dfl
++XMK_FILE=	Makefile.man starformatman.mk
  
  star_fat.c: star.c
  	$(RM) $(RM_FORCE) $@; cp star.c $@
