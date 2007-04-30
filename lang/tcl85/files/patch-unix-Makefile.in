@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon Oct 23 15:41:32 2006
-+++ Makefile.in	Mon Mar 12 18:28:44 2007
-@@ -57,6 +57,8 @@
+--- Makefile.in.orig	Thu Apr 26 19:33:51 2007
++++ Makefile.in	Sun Apr 29 22:33:58 2007
+@@ -54,6 +54,8 @@
  
  # Directory in which to install the include file tcl.h:
  INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
@@ -9,7 +9,7 @@
  
  # Path to the private tcl header dir:
  PRIVATE_INCLUDE_DIR	= @PRIVATE_INCLUDE_DIR@
-@@ -102,7 +104,7 @@
+@@ -97,7 +99,7 @@
  #CFLAGS			= $(CFLAGS_DEBUG)
  #CFLAGS			= $(CFLAGS_OPTIMIZE)
  #CFLAGS			= $(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
@@ -18,7 +18,7 @@
  
  # Flags to pass to the linker
  LDFLAGS_DEBUG		= @LDFLAGS_DEBUG@
-@@ -546,7 +548,8 @@
+@@ -540,7 +542,8 @@
  
  all: binaries libraries doc
  
@@ -28,7 +28,7 @@
  
  libraries:
  
-@@ -557,6 +560,15 @@
+@@ -551,6 +554,15 @@
  ${LIB_FILE}: ${OBJS} ${STUB_LIB_FILE}
  	rm -f $@
  	@MAKE_LIB@
@@ -44,8 +44,8 @@
  
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
-@@ -706,7 +718,7 @@
- dltest.marker:
+@@ -699,7 +711,7 @@
+ dltest.marker: ${STUB_LIB_FILE}
  	cd dltest ; $(MAKE)
  
 -INSTALL_TARGETS = install-binaries install-libraries install-doc @EXTRA_INSTALL@
@@ -53,7 +53,7 @@
  
  install: $(INSTALL_TARGETS)
  
-@@ -735,6 +747,13 @@
+@@ -728,6 +740,13 @@
  	@echo "Installing $(LIB_FILE) to $(LIB_INSTALL_DIR)/"
  	@@INSTALL_LIB@
  	@chmod 555 $(LIB_INSTALL_DIR)/$(LIB_FILE)
@@ -67,7 +67,7 @@
  	@if test "$(TCL_BUILD_EXP_FILE)" != ""; then \
  	    echo "Installing $(TCL_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    $(INSTALL_DATA) $(TCL_BUILD_EXP_FILE) \
-@@ -742,8 +761,9 @@
+@@ -735,8 +754,9 @@
  	    fi
  	@echo "Installing tclsh as $(BIN_INSTALL_DIR)/tclsh$(VERSION)"
  	@$(INSTALL_PROGRAM) tclsh $(BIN_INSTALL_DIR)/tclsh$(VERSION)
@@ -79,17 +79,17 @@
  	@if test "$(STUB_LIB_FILE)" != "" ; then \
  	    echo "Installing $(STUB_LIB_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    @INSTALL_STUB_LIB@ ; \
-@@ -751,7 +771,8 @@
+@@ -744,7 +764,8 @@
  	@EXTRA_INSTALL_BINARIES@
  
- install-libraries: libraries install-tzdata install-msgs
+ install-libraries: libraries $(INSTALL_TZDATA) install-msgs
 -	@for i in $(INCLUDE_INSTALL_DIR) $(SCRIPT_INSTALL_DIR); \
 +	@for i in $(GENERIC_INCLUDE_INSTALL_DIR) $(UNIX_INCLUDE_INSTALL_DIR) \
 +		$(SCRIPT_INSTALL_DIR); \
  	    do \
  	    if [ ! -d $$i ] ; then \
  		echo "Making directory $$i"; \
-@@ -773,13 +794,17 @@
+@@ -766,13 +787,17 @@
  	    chmod +x $(SRC_DIR)/../unix/install-sh; \
  	    fi
  	@echo "Installing header files";
@@ -98,47 +98,40 @@
 -		$(GENERIC_DIR)/tclTomMath.h \
 -		$(GENERIC_DIR)/tclTomMathDecls.h ; \
 +	@for i in $(GENERIC_DIR)/*.h ; \
++	    do \
++	    $(INSTALL_DATA) $$i $(GENERIC_INCLUDE_INSTALL_DIR); \
++	    done;
++	@for i in $(UNIX_DIR)/*.h ; \
  	    do \
 -	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
-+	    $(INSTALL_DATA) $$i $(GENERIC_INCLUDE_INSTALL_DIR); \
- 	    done;
-+	@for i in $(UNIX_DIR)/*.h ; \
-+	    do \
 +	    $(INSTALL_DATA) $$i $(UNIX_INCLUDE_INSTALL_DIR); \
-+	    done;
+ 	    done;
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tcl.h $(INCLUDE_INSTALL_DIR)/tcl.h
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tclDecls.h $(INCLUDE_INSTALL_DIR)/tclDecls.h
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tclPlatDecls.h $(INCLUDE_INSTALL_DIR)/tclPlatDecls.h
  	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)";
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
  	    do \
-@@ -838,20 +863,23 @@
- 		else true; \
- 		fi; \
+@@ -839,18 +864,27 @@
  	    done;
--	@echo "Installing and cross-linking top-level (.1) docs";
--	@for i in $(TOP_DIR)/doc/*.1; do \
+ 	@echo "Installing and cross-linking top-level (.1) docs";
+ 	@for i in $(TOP_DIR)/doc/*.1; do \
 -	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i $(MAN1_INSTALL_DIR); \
--	done
--
--	@echo "Installing and cross-linking C API (.3) docs";
--	@for i in $(TOP_DIR)/doc/*.3; do \
++	    ${BSD_INSTALL_MAN} $$i $(MAN1_INSTALL_DIR); \
+ 	done
+ 
+ 	@echo "Installing and cross-linking C API (.3) docs";
+ 	@for i in $(TOP_DIR)/doc/*.3; do \
 -	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i $(MAN3_INSTALL_DIR); \
--	done
--
--	@echo "Installing and cross-linking command (.n) docs";
--	@for i in $(TOP_DIR)/doc/*.n; do \
++	    ${BSD_INSTALL_MAN} $$i $(MAN3_INSTALL_DIR); \
+ 	done
+ 
+ 	@echo "Installing and cross-linking command (.n) docs";
+ 	@for i in $(TOP_DIR)/doc/*.n; do \
 -	    $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i $(MANN_INSTALL_DIR); \
--	done
-+	@echo "Installing top-level (.1) docs";
-+	${BSD_INSTALL_MAN} $(TOP_DIR)/doc/*.1 $(MAN1_INSTALL_DIR)/
-+
-+	@echo "Installing C API (.3) docs";
-+	${BSD_INSTALL_MAN} $(TOP_DIR)/doc/*.3 $(MAN3_INSTALL_DIR)/
-+
-+	@echo "Installing command (.n) docs";
-+	${BSD_INSTALL_MAN} $(TOP_DIR)/doc/*.n $(MANN_INSTALL_DIR)/
-+
++	    ${BSD_INSTALL_MAN} $$i $(MANN_INSTALL_DIR); \
+ 	done
++	    
 +	@echo "**********"
 +	@echo "IMPORTANT:"
 +	@echo "**********"
