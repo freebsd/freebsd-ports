@@ -1,4 +1,4 @@
-PulseAudio, previously known as Polypaudio, is a sound server for POSIX and 
+PulseAudio, previously known as Polypaudio, is a sound server for POSIX and
 Win32 systems. A sound server is basically a proxy for your sound applications.
 It allows you to do advanced operations on your sound data as it passes between
 your application and your hardware. Things like transferring the audio to a

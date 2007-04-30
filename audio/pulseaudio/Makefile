@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pulseaudio
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
@@ -19,39 +19,61 @@ LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 
 CONFLICTS=	polypaudio-[1-9]*
 
-USE_GNOME=	gnometarget gnomehack glib20
-WANT_GNOME=	yes
+USE_GNOME=	gnometarget gnomehack glib20 ltverhack
 USE_XLIB=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libltdl:15
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libtool:15 libltdl:15
 USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		LIBS="-lm"
 
-CONFIGURE_ARGS+=	--disable-lirc # untested
+CONFIGURE_ARGS=	--localstatedir=/var \
+		--disable-lirc # untested
 
-OPTIONS=	JACK "JACK audio support" Off
+OPTIONS=	JACK "JACK audio support" Off \
+		AVAHI "Enable Avahi mDNS support" On \
+		HAL "Enable HAL support" On \
+		GCONF "Enable GConf support" On
+
+PULSE_VERSION=	${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+PLIST_SUB=	PULSE_VERSION=${PULSE_VERSION}
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_JACK) || exists(${LOCALBASE}/lib/libjack.la)
+.if defined(WITH_JACK)
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 PLIST_SUB+=	JACK=""
 .else
 PLIST_SUB+=	JACK="@comment "
+CONFIGURE_ARGS+=--disable-jack
 .endif
 
-.if (exists(${LOCALBASE}/lib/libavahi-core.a) || defined(PACKAGE_BUILDING) \
-	|| defined(WITH_AVAHI)) && !defined(WITHOUT_AVAHI)
+.if !defined(WITHOUT_AVAHI)
 LIB_DEPENDS+=	avahi-core.5:${PORTSDIR}/net/avahi
-CONFIGURE_ARGS+=	--enable-avahi
 PLIST_SUB+=	AVAHI=""
 .else
-CONFIGURE_ARGS+=	--disable-avahi
+CONFIGURE_ARGS+=--disable-avahi
 PLIST_SUB+=	AVAHI="@comment "
+.endif
+
+.if !defined(WITHOUT_HAL)
+LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+PLIST_SUB+=	HAL=""
+.else
+CONFIGURE_ARGS+=--disable-hal
+PLIST_SUB+=	HAL="@comment "
+.endif
+
+.if !defined(WITHOUT_GCONF)
+USE_GNOME+=	gconf2
+PLIST_SUB+=	GCONF=""
+.else
+CONFIGURE_ARGS+=--disable-gconf
+PLIST_SUB+=	GCONF="@comment "
 .endif
 
 post-patch:

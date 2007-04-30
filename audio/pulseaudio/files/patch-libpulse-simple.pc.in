@@ -1,0 +1,11 @@
+--- libpulse-simple.pc.in.orig	Sun Apr 29 19:26:00 2007
++++ libpulse-simple.pc.in	Sun Apr 29 19:26:18 2007
+@@ -6,6 +6,6 @@ includedir=${prefix}/include
+ Name: libpulse-simple
+ Description: Simplified Synchronous Client Interface to PulseAudio
+ Version: @PACKAGE_VERSION@
+-Libs: -L${libdir} -lpulse-simple
+-Cflags: -D_REENTRANT -I${includedir}
++Libs: -L${libdir} @PTHREAD_LIBS@ -lpulse-simple
++Cflags: -D_REENTRANT @PTHREAD_CFLAGS@ -I${includedir}
+ Requires: libpulse
