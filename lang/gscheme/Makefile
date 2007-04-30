@@ -21,6 +21,10 @@ USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 
+post-patch:
+	${REINPLACE_CMD} -e 's|setMark:|setMarkScheme:|' \
+		${WRKSRC}/SchemeTypes.h ${WRKSRC}/SchemeTypes.m
+
 post-install:
 	${RM} -f ${GNUSTEP_PREFIX}/Local/Applications/GScheme.app/Resources/library.scm~
 
