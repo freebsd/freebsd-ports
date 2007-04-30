@@ -7153,6 +7153,7 @@ mdh		ports/deskutils/mdh
 mdk		ports/lang/mdk
 mdnsd		ports/dns/mdnsd
 mdpop3d		ports/mail/mdpop3d
+mdtest		ports/benchmarks/mdtest
 meanwhile	ports/net-im/meanwhile
 meanwhile-gaim	ports/net-im/meanwhile-gaim
 mediaproxy	ports/net/mediaproxy
