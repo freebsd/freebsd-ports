@@ -1,5 +1,5 @@
---- ../tests/fCmd.test.orig	Wed Jan 17 13:13:58 2007
-+++ ../tests/fCmd.test	Wed Jan 17 13:07:49 2007
+--- ../tests/fCmd.test.orig	Mon Nov 13 20:46:35 2006
++++ ../tests/fCmd.test	Sun Apr 29 21:31:35 2007
 @@ -572,7 +572,7 @@
      set msg
  } {1 {error copying "td2" to "~/td1/td2": permission denied}}
@@ -13,8 +13,8 @@
      file attributes $td2name -permissions 0755
      file delete -force ~/td1
      set msg
--} "1 {error copying \"~/td1\" to \"td1\": \"[file join [file dirname ~] [file tail ~] td1 td2]\": permission denied}"
-+} -result "1 {error copying \"~/td1\" to \"td1\": \".*[file join td1 td2]\": permission denied}"
+-} "1 {error copying \"~/td1\" to \"td1\": \"[file join $::env(HOME) td1 td2]\": permission denied}"
++} -result "1 {error copying \"~/td1\" to \"td1\": \".*[file join $::env(HOME) td1 td2]\": permission denied}"
  test fCmd-6.27 {CopyRenameOneFile: TclpCopyDirectory failed} \
  	{unix notRoot xdev} {
      cleanup /tmp
