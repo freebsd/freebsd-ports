@@ -18,9 +18,9 @@ COMMENT=	Kwiki Page Archival Using RCS
 BUILD_DEPENDS=	p5-Kwiki>=0.38:${PORTSDIR}/www/p5-Kwiki
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-DEPRECATED=		Already bundled in www/p5-Kwiki (0.39 or latter)
+DEPRECATED=		already bundled in www/p5-Kwiki (0.39 or latter)
 EXPIRATION_DATE=	2007-07-28
-BROKEN=		${DEPRECATED}
+IGNORE=		${DEPRECATED}
 
 PERL_CONFIGURE=	yes
 

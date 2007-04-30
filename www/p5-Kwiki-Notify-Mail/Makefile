@@ -19,9 +19,9 @@ RUN_DEPENDS=	${SITE_PERL}/Kwiki.pm:${PORTSDIR}/www/p5-Kwiki \
 		${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-DEPRECATED=		Already bundled in www/p5-Kwiki (0.39 or latter)
+DEPRECATED=		already bundled in www/p5-Kwiki (0.39 or latter)
 EXPIRATION_DATE=	2007-07-28
-BROKEN=		${DEPRECATED}
+IGNORE=		${DEPRECATED}
 
 PERL_CONFIGURE=	yes
 
