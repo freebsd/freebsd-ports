@@ -1,10 +1,10 @@
---- conf/configure.in.tcl.orig	Fri Feb 23 13:11:09 2007
-+++ conf/configure.in.tcl	Fri Feb 23 13:11:32 2007
-@@ -188,7 +188,6 @@
- 
- NS_BEGIN_PACKAGE(tcl)
- NS_CHECK_HEADER_PATH(tcl.h,$TCL_H_PLACES,$d,$TCL_H_PLACES_D,V_INCLUDE_TCL,tcl)
--NS_CHECK_HEADER_PATH(tclInt.h,$TCL_H_PLACES,$d,$TCL_H_PLACES_D,V_INCLUDE_TCL,tcl)
- NS_CHECK_LIB_PATH(tcl$TCL_HI_VERS,$TCL_LIB_PLACES,$d,$TCL_LIB_PLACES_D,V_LIB_TCL,tcl)
- NS_CHECK_ANY_PATH(init.tcl,$TCL_TCL_PLACES,$d,$TCL_TCL_PLACES_D,V_LIBRARY_TCL,tcl)
- 
+--- conf/configure.in.tcl.orig	Sun Feb 18 23:16:52 2007
++++ conf/configure.in.tcl	Sun Apr 29 16:49:25 2007
+@@ -197,6 +197,7 @@
+ tcl_http_places=" \
+ 	$V_LIBRARY_TCL \
+ 	$V_LIBRARY_TCL/http \
++	$V_LIBRARY_TCL/http2.5 \
+ 	$V_LIBRARY_TCL/http2.4 \
+ 	$V_LIBRARY_TCL/http2.3 \
+ 	$V_LIBRARY_TCL/http2.1 \
