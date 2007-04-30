@@ -1,0 +1,10 @@
+--- Makefile.orig	Sun Apr 29 16:35:18 2007
++++ Makefile	Sun Apr 29 16:42:07 2007
+@@ -21,6 +21,7 @@
+ 
+ CC.AIX = mpcc_r -bmaxdata:0x80000000
+ CC.Linux = mpicc -Wall
++CC.FreeBSD = %%MPICC%% -Wall
+ 
+ # Requires GNU Make
+ OS=$(shell uname)

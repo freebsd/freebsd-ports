@@ -24,6 +24,7 @@
     SUBDIR += iperf
     SUBDIR += libmicro
     SUBDIR += lmbench
+    SUBDIR += mdtest
     SUBDIR += nbench
     SUBDIR += netio
     SUBDIR += netperf
