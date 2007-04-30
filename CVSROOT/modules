@@ -13904,6 +13904,7 @@ rubygem-rake	ports/devel/rubygem-rake
 rubygem-rapt	ports/devel/rubygem-rapt
 rubygem-redcloth	ports/www/rubygem-redcloth
 rubygem-rgl	ports/devel/rubygem-rgl
+rubygem-rrdtool	ports/net/rubygem-rrdtool
 rubygem-rscm	ports/devel/rubygem-rscm
 rubygem-rspec	ports/devel/rubygem-rspec
 rubygem-rtags	ports/devel/rubygem-rtags
