@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tclcl
-PORTVERSION=	1.18
+PORTVERSION=	1.19
 DISTVERSIONPREFIX=	src-
 CATEGORIES=	devel tcl84 tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -19,19 +19,34 @@ LIB_DEPENDS=	otcl:${PORTSDIR}/lang/otcl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_TK=		yes
-USE_TK_BUILD=	yes
 USE_AUTOTOOLS=	autoconf:259
 GNU_CONFIGURE=	yes
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	CHANGES.html
+PORTDOCS=	CHANGES.html TODO.html
 .endif
 
 .include <bsd.port.pre.mk>
 
+# We have to link against the same Tcl/Tk version as OTcl does
+.if exists(${LOCALBASE}/bin/otclsh)
+OTCL_TCLVER!=	${ECHO_CMD} puts \$$tcl_version | ${LOCALBASE}/bin/otclsh
+USE_TK=		${OTCL_TCLVER:S/.//}
+.else
+USE_TK=		80+
+.endif
+
+.include "${PORTSDIR}/Mk/bsd.tcl.mk"
+
 CONFIGURE_ARGS=	--with-tcl-ver=${TCL_VER} --with-tk-ver=${TK_VER} \
 		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|exec tclsh|exec ${TCLSH}|g' ${WRKSRC}/otcldoc
+	@${REINPLACE_CMD} -e 's|../lib/tcl$$TCL_HI_VERS|${TCL_LIBDIR}|g' \
+		-e 's|../include|${TCL_INCLUDEDIR}/generic|g' ${WRKSRC}/conf/configure.in.tcl
+	@${REINPLACE_CMD} -e 's|../lib/tk$$TK_HI_VERS|${TK_LIBDIR}|g' \
+		-e 's|../include|${TK_INCLUDEDIR}/generic|g' ${WRKSRC}/conf/configure.in.tk
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcl2c++ ${PREFIX}/bin
