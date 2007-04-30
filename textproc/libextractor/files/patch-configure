@@ -1,0 +1,29 @@
+--- configure.orig	Mon Apr 30 22:07:59 2007
++++ configure	Mon Apr 30 22:08:34 2007
+@@ -4415,7 +4415,7 @@
+ 
+ 
+ 
+-if test "x$HAVE_CXX" == "xyes"; then
++if test "x$HAVE_CXX" = "xyes"; then
+   HAVE_CXX_TRUE=
+   HAVE_CXX_FALSE='#'
+ else
+@@ -29082,7 +29082,7 @@
+ 
+ if test x$without_glib != xtrue
+ then
+-  if test $with_gnu_ld == yes
++  if test $with_gnu_ld = yes
+   then
+ # We need both GNU LD and GLIB here!
+ 
+@@ -29488,7 +29488,7 @@
+ xpdf=0
+ exiv2=0
+ 
+-if test "x$HAVE_CXX" == "xyes"
++if test "x$HAVE_CXX" = "xyes"
+ then
+ 
+ # check for Qt 4
