@@ -108,6 +108,9 @@ lib/tk%%TK_VER%%/demos/tclIndex
 lib/tk%%TK_VER%%/demos/tcolor
 lib/tk%%TK_VER%%/demos/text.tcl
 lib/tk%%TK_VER%%/demos/timer
+lib/tk%%TK_VER%%/demos/ttk_demo.tcl
+lib/tk%%TK_VER%%/demos/ttk_iconlib.tcl
+lib/tk%%TK_VER%%/demos/ttk_repeater.tcl
 lib/tk%%TK_VER%%/demos/twind.tcl
 lib/tk%%TK_VER%%/demos/unicodeout.tcl
 lib/tk%%TK_VER%%/demos/vscale.tcl
@@ -139,7 +142,6 @@ lib/tk%%TK_VER%%/msgs/en.msg
 lib/tk%%TK_VER%%/msgs/en_gb.msg
 lib/tk%%TK_VER%%/msgs/eo.msg
 lib/tk%%TK_VER%%/msgs/es.msg
-lib/tk%%TK_VER%%/msgs/es_ES.msg
 lib/tk%%TK_VER%%/msgs/fr.msg
 lib/tk%%TK_VER%%/msgs/it.msg
 lib/tk%%TK_VER%%/msgs/nl.msg
@@ -164,10 +166,36 @@ lib/tk%%TK_VER%%/tk.tcl
 lib/tk%%TK_VER%%/tkAppInit.c
 lib/tk%%TK_VER%%/tkConfig.sh
 lib/tk%%TK_VER%%/tkfbox.tcl
+lib/tk%%TK_VER%%/ttk/altTheme.tcl
+lib/tk%%TK_VER%%/ttk/aquaTheme.tcl
+lib/tk%%TK_VER%%/ttk/button.tcl
+lib/tk%%TK_VER%%/ttk/clamTheme.tcl
+lib/tk%%TK_VER%%/ttk/classicTheme.tcl
+lib/tk%%TK_VER%%/ttk/combobox.tcl
+lib/tk%%TK_VER%%/ttk/cursors.tcl
+lib/tk%%TK_VER%%/ttk/defaults.tcl
+lib/tk%%TK_VER%%/ttk/dialog.tcl
+lib/tk%%TK_VER%%/ttk/entry.tcl
+lib/tk%%TK_VER%%/ttk/fonts.tcl
+lib/tk%%TK_VER%%/ttk/icons.tcl
+lib/tk%%TK_VER%%/ttk/keynav.tcl
+lib/tk%%TK_VER%%/ttk/menubutton.tcl
+lib/tk%%TK_VER%%/ttk/notebook.tcl
+lib/tk%%TK_VER%%/ttk/panedwindow.tcl
+lib/tk%%TK_VER%%/ttk/progress.tcl
+lib/tk%%TK_VER%%/ttk/scale.tcl
+lib/tk%%TK_VER%%/ttk/scrollbar.tcl
+lib/tk%%TK_VER%%/ttk/sizegrip.tcl
+lib/tk%%TK_VER%%/ttk/treeview.tcl
+lib/tk%%TK_VER%%/ttk/ttk.tcl
+lib/tk%%TK_VER%%/ttk/utils.tcl
+lib/tk%%TK_VER%%/ttk/winTheme.tcl
+lib/tk%%TK_VER%%/ttk/xpTheme.tcl
 lib/tk%%TK_VER%%/unsupported.tcl
 lib/tk%%TK_VER%%/xmfbox.tcl
 %%INSTMAN%%%%DATADIR%%/man.macros
 %%INSTMAN%%@dirrm %%DATADIR%%
+@dirrm lib/tk%%TK_VER%%/ttk
 @dirrm lib/tk%%TK_VER%%/demos/images
 @dirrm lib/tk%%TK_VER%%/demos
 @dirrm lib/tk%%TK_VER%%/images
