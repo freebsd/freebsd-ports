@@ -1,4 +1,4 @@
-# New ports collection makefile for: qsf
+# New ports collection makefile for:	gtick
 # Date created:		10 February 2004
 # Whom:			liamfoy@sepulcrum.org
 #
@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gtick
-PORTVERSION=	0.3.13
+PORTVERSION=	0.3.14
 CATEGORIES=	audio
-MASTER_SITES=	http://www.antcom.de/gtick/download/
+MASTER_SITES=	http://www.antcom.de/gtick/download/ CENKES
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A metronome application
@@ -16,8 +16,6 @@ COMMENT=	A metronome application
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
 GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
-USE_GETOPT_LONG=yes
 USE_GNOME=	gtk20
 USE_GETTEXT=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
