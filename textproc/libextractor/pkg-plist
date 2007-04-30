@@ -45,6 +45,8 @@ lib/libextractor/libextractor_mpeg.la
 lib/libextractor/libextractor_mpeg.so
 lib/libextractor/libextractor_nsf.la
 lib/libextractor/libextractor_nsf.so
+lib/libextractor/libextractor_nsfe.la
+lib/libextractor/libextractor_nsfe.so
 %%VORBIS%%lib/libextractor/libextractor_ogg.la
 %%VORBIS%%lib/libextractor/libextractor_ogg.so
 lib/libextractor/libextractor_oo.la

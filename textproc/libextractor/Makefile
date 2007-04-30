@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libextractor
-PORTVERSION=	0.5.17a
+PORTVERSION=	0.5.18
 CATEGORIES=	textproc
 MASTER_SITES=	http://gnunet.org/libextractor/download/ \
 		${MASTER_SITE_GNU}
@@ -24,7 +24,7 @@ USE_AUTOTOOLS=	libltdl:15
 USE_DOS2UNIX=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/libextractor
-CONFIGURE_ARGS=	--disable-ltdl-install --mandir=${PREFIX}/man
+CONFIGURE_ARGS=	--disable-ltdl-install --mandir=${PREFIX}/man --enable-exiv2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
