@@ -12,8 +12,8 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gai
 
-MAINTAINER=	lx@redundancy.redundancy.org
-COMMENT=	A GAI dockapp for viewing xmms visualizations
+MAINTAINER=	lx@FreeBSD.org
+COMMENT=	A GAI dockapp that works with xmms to display album covers
 
 LIB_DEPENDS=	gai:${PORTSDIR}/x11-toolkits/gai \
 		xmms:${PORTSDIR}/multimedia/xmms
