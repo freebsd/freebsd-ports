@@ -1,6 +1,6 @@
 # ports collection makefile for: jboss5
 # Date created:                  7 May 2007
-# Whom:                          nemoliu@gmail.com <nemoliu@gmail.com>
+# Whom:                          nemoliu@FreeBSD.org <nemoliu@gmail.com>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}.Beta1-src
 
-MAINTAINER=	nemoliu@gmail.com
+MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	Open-source J2EE application server (5.x family)
 
 BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant

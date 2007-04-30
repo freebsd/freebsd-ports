@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=robocode
 DISTNAME=	${PORTNAME}-setup-${PORTVERSION}A
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	nemoliu@gmail.com
+MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	A game for learning Java[tm] programming language
 
 USE_JAVA=	yes

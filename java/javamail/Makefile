@@ -11,7 +11,7 @@ CATEGORIES=	java mail
 MASTER_SITES=	#
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 
-MAINTAINER=	nemoliu@gmail.com
+MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	A Reference Implementation of JSR 919
 
 RUN_DEPENDS=	${JAVALIBDIR}/activation.jar:${PORTSDIR}/java/jaf

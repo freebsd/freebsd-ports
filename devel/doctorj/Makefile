@@ -12,7 +12,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	nemoliu@gmail.com
+MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	A tool for analyzing Java code and documentation
 
 USE_JAVA=	yes

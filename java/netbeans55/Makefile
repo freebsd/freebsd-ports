@@ -1,6 +1,6 @@
 # New ports collection makefile for:	netbeans
 # Date Created:				15 May 2007
-# Whom:				 	Nemo Liu <nemoliu@gmail.com>
+# Whom:				 	Nemo Liu <nemoliu@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	http://us1.mirror.netbeans.org/download/5_5/mlfcs/200612070100/
 DISTNAME=	netbeans-5_5
 
-MAINTAINER=	nemoliu@gmail.com
+MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	A free and open-source IDE for Java
 
 USE_BZIP2=	yes
