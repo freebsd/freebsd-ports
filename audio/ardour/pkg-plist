@@ -120,6 +120,7 @@ share/locale/it_IT/LC_MESSAGES/libardour.mo
 share/locale/sv_SE/LC_MESSAGES/libardour.mo
 share/locale/el_GR/LC_MESSAGES/libardour.mo
 share/locale/ru_RU/LC_MESSAGES/libardour.mo
+share/locale/de_DE/LC_MESSAGES/libardour.mo
 share/locale/el_GR/LC_MESSAGES/libgtkmm2ext.mo
 share/locale/ru_RU/LC_MESSAGES/libgtkmm2ext.mo
 share/locale/pt_BR/LC_MESSAGES/libgtkmm2ext.mo
