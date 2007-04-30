@@ -25,7 +25,7 @@ USE_MYSQL=		yes
 CONFLICTS=	py*-MySQLdb-[0-9]*
 
 PORTDOCS=	*
-BROKEN=		Latest version are in databases/py-MySQLdb
+IGNORE=		in obsoleted by the latest version in databases/py-MySQLdb
 
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}/options
 OPTIONS=	MYSQLCLIENT_R "Use libmysqlclient_r (thread safe)" on

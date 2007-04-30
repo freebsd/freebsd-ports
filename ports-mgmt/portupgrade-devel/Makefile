@@ -21,7 +21,7 @@ OPTIONS=	BDB4 "Use Berkeley DB >=2 as backend" on \
 
 CONFLICTS=	portupgrade-[0-9]*
 
-BROKEN=		this version is a test of a new concept and don't ready for wide use
+IGNORE=		this version is a test of a new concept and don't ready for wide use
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
