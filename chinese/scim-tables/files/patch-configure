@@ -1,0 +1,13 @@
+--- configure.orig	Sat Apr 28 22:37:11 2007
++++ configure	Sat Apr 28 22:37:25 2007
+@@ -30244,10 +30244,6 @@
+   CXXFLAGS="$CXXFLAGS -g"
+ fi
+ 
+-SCIM_ICONDIR=`$PKG_CONFIG --variable=icondir scim`
+-SCIM_MODULEDIR=`$PKG_CONFIG --variable=moduledir scim`
+-SCIM_DATADIR=`$PKG_CONFIG --variable=scimdatadir scim`
+-
+ if test "x$SCIM_ICONDIR" = "x"; then
+   SCIM_ICONDIR=${datadir}/scim/icons
+ fi
