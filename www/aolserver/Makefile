@@ -7,7 +7,7 @@
 
 PORTNAME=	aolserver
 PORTVERSION=	4.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	aolserver
@@ -46,6 +46,9 @@ OPTIONS=	HTMLDOCS "Install HTML documentation" off \
 		TESTS "Install tests in examples directory" off
 
 .include <bsd.port.pre.mk>
+
+SUB_LIST+=	MKDIR="${MKDIR}" ECHO_CMD="${ECHO_CMD}" \
+		CHOWN="${CHOWN}" CHMOD="${CHMOD}"
 
 .if (${ARCH} == "ia64")
 BROKEN=		does not compile on ia64
