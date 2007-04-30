@@ -7,7 +7,7 @@
 
 PORTNAME=	xsane
 PORTVERSION=	0.991
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.xsane.org/download/ \
 		http://gd.tuwien.ac.at/hci/sane/xsane/ \
@@ -25,18 +25,27 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes
-USE_GETTEXT=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lintl"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		xsane.1
 
 #SUB_FILES+=	pkg-message
 
 OPTIONS=	GTK2 "Enable GTK2 support (use GTK1 if turned off)" on \
-		GIMP "Enable GIMP plugin support" off
+		GIMP "Enable GIMP plugin support" off \
+		NLS "Enable Native Language Support" on
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -lintl"
+.endif
 
 .if defined(WITHOUT_GTK2)
 USE_GNOME=	gtk12
@@ -51,7 +60,7 @@ SUB_FILES+=	pkg-message
 LIB_DEPENDS+=	gimp:${PORTSDIR}/graphics/gimp1
 CONFIGURE_ARGS+=	--disable-gimp2
 .else
-LIB_DEPENDS+=	gimp:${PORTSDIR}/graphics/gimp
+LIB_DEPENDS+=	gimp:${PORTSDIR}/graphics/gimp-app
 .endif # WITHOUT_GTK2
 .else
 CONFIGURE_ARGS+=	--disable-gimp
@@ -63,7 +72,7 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS:C/-O[0-9]*//g}"
 
 pre-patch:
 	@${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} \
-		-i "" -e 's|\$$(sbindir)||g'
+		-i "" -e 's|\$$(DESTDIR)\$$(sbindir)||g'
 
 post-install:
 .if defined(WITH_GIMP)
