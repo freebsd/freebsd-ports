@@ -1,6 +1,6 @@
---- configure.orig	Mon Oct 23 15:45:33 2006
-+++ configure	Tue Jan 30 11:19:37 2007
-@@ -3530,6 +3530,7 @@
+--- configure.orig	Thu Apr 26 23:02:27 2007
++++ configure	Mon Apr 30 10:30:24 2007
+@@ -3535,6 +3535,7 @@
  # Threads support - this auto-enables if Tcl was compiled threaded
  #------------------------------------------------------------------------
  
@@ -8,7 +8,7 @@
  
      # Check whether --enable-threads or --disable-threads was given.
  if test "${enable_threads+set}" = set; then
-@@ -5447,25 +5448,26 @@
+@@ -5697,25 +5698,26 @@
  	FreeBSD-*)
  	    # FreeBSD 3.* and greater have ELF.
  	    SHLIB_CFLAGS="-fPIC"

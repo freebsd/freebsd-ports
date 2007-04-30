@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tk
-PORTVERSION=	8.5.a.5
-PORTREVISION=	5
+PORTVERSION=	8.5.a.6
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -36,7 +35,8 @@ SUB_FILES=	pkgIndex.tcl
 .if !defined(BUILDING_TK_THREADS)
 USE_TCL=	${SHORT_TK_VER}
 
-OPTIONS=	TK85_MAN "Install tk 8.5 manpages" off
+OPTIONS=	TK85_MAN "Install tk 8.5 manpages" off \
+		XFT "Use Xft fonts" on
 .else
 USE_TK=		${SHORT_TK_VER}
 PLIST=		${PKGDIR}/pkg-plist.threads
@@ -47,6 +47,13 @@ LIB_DEPENDS=	tcl${SHORT_TK_VER}${THREADS_SUFFIX}:${PORTSDIR}/lang/tcl${SHORT_TK_
 SUB_LIST+=	THREADS_SUFFIX="${THREADS_SUFFIX}"
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_XFT)
+CONFIGURE_ARGS+=	--enable-xft
+LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+.else
+CONFIGURE_ARGS+=	--disable-xft
+.endif
 
 .if defined(BUILDING_TK_THREADS)
 CONFIGURE_ARGS+=	--enable-threads --with-tcl=${LOCALBASE}/lib/tcl${TK_VER}${THREADS_SUFFIX}
@@ -60,7 +67,7 @@ CONFIGURE_ARGS+=	--disable-threads --with-tcl=${LOCALBASE}/lib/tcl${TK_VER} \
 
 SUB_LIST+=		TK_PROVIDE=""
 
-.if defined(NO_INSTALL_MANPAGES) || !defined(WITH_TK84_MAN)
+.if defined(NO_INSTALL_MANPAGES) || !defined(WITH_TK85_MAN)
 
 PLIST_SUB+=	INSTMAN='@comment '
 
@@ -85,7 +92,8 @@ MAN3=	3DBorder.3 AddOption.3 BindTable.3 CanvPsY.3 CanvTkwin.3 \
 	Name.3 NameOfImg.3 OwnSelect.3 ParseArgv.3 QWinEvent.3 Restack.3 \
 	RestrictEv.3 SetAppName.3 SetCaret.3 SetClass.3 SetClassProcs.3 \
 	SetGrid.3 SetOptions.3 SetVisual.3 StrictMotif.3 TextLayout.3 \
-	Tk_Init.3 Tk_Main.3 TkInitStubs.3 WindowId.3
+	Tk_Init.3 Tk_Main.3 TkInitStubs.3 WindowId.3 ttk_Geometry.3 \
+	ttk_Theme.3
 
 MANN=	bell.n bind.n bindtags.n bitmap.n button.n canvas.n checkbutton.n \
 	chooseColor.n chooseDirectory.n clipboard.n colors.n console.n \
@@ -95,7 +103,12 @@ MANN=	bell.n bind.n bindtags.n bitmap.n button.n canvas.n checkbutton.n \
 	message.n messageBox.n option.n optionMenu.n options.n pack-old.n \
 	pack.n panedwindow.n palette.n photo.n place.n popup.n radiobutton.n \
 	raise.n scale.n scrollbar.n selection.n send.n spinbox.n text.n tk.n \
-	tkerror.n tkvars.n tkwait.n toplevel.n winfo.n wm.n
+	tkerror.n tkvars.n tkwait.n toplevel.n winfo.n wm.n \
+	ttk_button.n ttk_checkbutton.n ttk_combobox.n ttk_entry.n ttk_frame.n \
+	ttk_image.n ttk_intro.n ttk_label.n ttk_labelframe.n ttk_menubutton.n \
+	ttk_notebook.n ttk_panedwindow.n ttk_progressbar.n ttk_radiobutton.n \
+	ttk_scrollbar.n ttk_separator.n ttk_sizegrip.n ttk_style.n \
+	ttk_treeview.n ttk_widget.n
 
 # MLINKS generated via  awk '/ln/ {print "\t" $2,$3,"\\"}' unix/mkLinks
 MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
@@ -408,6 +421,7 @@ post-configure:
 	${REINPLACE_CMD} \
 		-e 's|${WRKDIRPREFIX}${.CURDIR}|$${WRKDIRPREFIX}${TKBASE}|' \
 		${WRKSRC}/tkConfig.sh
+	${REINPLACE_CMD} -e 's|-Wl,--rpath -Wl,/usr/local/lib||g' ${WRKSRC}/Makefile
 
 .if defined(BUILDING_TK_THREADS)
 do-install:
