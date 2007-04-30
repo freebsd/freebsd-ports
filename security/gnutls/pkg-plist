@@ -54,6 +54,7 @@ share/aclocal/libgnutls.m4
 %%EXAMPLESDIR%%/ex-verify.c
 %%EXAMPLESDIR%%/ex-x509-info.c
 %%EXAMPLESDIR%%/tcp.c
+%%NLS%%share/locale/de/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/en@boldquot/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/en@quot/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gnutls.mo
