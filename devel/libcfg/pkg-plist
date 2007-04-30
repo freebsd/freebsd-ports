@@ -1,0 +1,11 @@
+lib/libcfg+.a
+lib/libcfg+.so.0
+lib/libcfg+.so
+include/cfg.h
+include/cfg+.h
+include/platon/cfg.h
+include/platon/cfg+.h
+@dirrm include/platon
+%%EXAMPLES%%%%EXAMPLESDIR%%/example.c
+%%EXAMPLES%%%%EXAMPLESDIR%%/example.cfg
+%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%

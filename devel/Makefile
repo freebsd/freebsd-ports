@@ -522,6 +522,7 @@
     SUBDIR += libbonobomm
     SUBDIR += libcapsinetwork
     SUBDIR += libccid
+    SUBDIR += libcfg
     SUBDIR += libcheck
     SUBDIR += libchipcard
     SUBDIR += libchipcard-kde
