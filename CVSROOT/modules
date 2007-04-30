@@ -12056,6 +12056,7 @@ pmwiki		ports/www/pmwiki
 pnet		ports/lang/pnet
 pnet-base	ports/lang/pnet-base
 pnetc		ports/lang/pnetc
+pnetcdf		ports/science/pnetcdf
 pnetlib		ports/lang/pnetlib
 pnetmark	ports/benchmarks/pnetmark
 pnews		ports/www/pnews
