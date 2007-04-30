@@ -1,0 +1,11 @@
+--- libpulse-mainloop-glib.pc.in.orig	Sun Apr 29 19:27:05 2007
++++ libpulse-mainloop-glib.pc.in	Sun Apr 29 19:27:20 2007
+@@ -6,6 +6,6 @@ includedir=${prefix}/include
+ Name: libpulse-mainloop-glib
+ Description: GLIB 2.0 Main Loop Wrapper for PulseAudio
+ Version: @PACKAGE_VERSION@
+-Libs: -L${libdir} -lpulse-mainloop-glib
+-Cflags: -D_REENTRANT -I${includedir}
++Libs: -L${libdir} @PTHREAD_LIBS@ -lpulse-mainloop-glib
++Cflags: -D_REENTRANT @PTHREAD_CFLAGS@ -I${includedir}
+ Requires: libpulse glib-2.0

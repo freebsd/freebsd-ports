@@ -2,19 +2,60 @@
 
 case $2 in
 POST-INSTALL)
-	GROUP=realtime
-	GID=557
+	RGROUP=realtime
+	SUSER=pulse
+	SGROUP=${SUSER}
+	AGROUP=pulse-access
+	SUID=563
+	RGID=557
+	SGID=${SUID}
+	AGID=564
 	PW=/usr/sbin/pw
 
-	if ${PW} group show "${GROUP}" 2>/dev/null; then
-		echo "You already have a group \"${GROUP}\", so I will use it."
+	if ${PW} group show "${RGROUP}" 2>/dev/null; then
+		echo "You already have a group \"${RGROUP}\", so I will use it."
 	else
-		if ${PW} groupadd ${GROUP} -g ${GID}; then
-			echo "Added group \"${GROUP}\"."
+		if ${PW} groupadd ${RGROUP} -g ${RGID}; then
+			echo "Added group \"${RGROUP}\"."
 		else
-			echo "Adding group \"${GROUP}\" failed..."
+			echo "Adding group \"${RGROUP}\" failed..."
 			exit 1
 		fi
+	fi
+
+	if ${PW} group show "${SGROUP}" 2>/dev/null; then
+		echo "You already have a group \"${SGROUP}\", so I will use it."
+	else
+		if ${PW} groupadd ${SGROUP} -g ${SGID}; then
+			echo "Added group \"${SGROUP}\"."
+		else
+			echo "Adding group \"${SGROUP}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if ${PW} group show "${AGROUP}" 2>/dev/null; then
+		echo "You already have a group \"${AGROUP}\", so I will use it."
+	else
+		if ${PW} groupadd ${AGROUP} -g ${AGID}; then
+			echo "Added group \"${AGROUP}\"."
+		else
+			echo "Adding group \"${AGROUP}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if ${PW} user show "${SUSER}" 2>/dev/null; then
+	    echo "You already have a user \"${SUSER}\", so I will use it."
+	else
+	    if ${PW} useradd ${SUSER} -u ${SUID} -g ${SGROUP} -h - \
+		-d "/nonexistent" -s /sbin/nologin -c "PulseAudio System User"
+	    then
+		echo "Added user \"${SUSER}\"."
+	    else
+		echo "Adding user \"${SUSER}\" failed..."
+		exit 1
+	    fi
 	fi
 
 	exit 0
