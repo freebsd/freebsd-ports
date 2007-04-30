@@ -8,22 +8,9 @@
 PORTNAME=	openoffice.org
 PORTVERSION=	1.1.5.${SNAPDATE}
 CATEGORIES+=	editors
-MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
-		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
-		${MASTER_SITE_LOCAL:S/$/:moz/} \
-		${MASTER_SITE_MOZILLA:S/$/:mozsrc/} \
-		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
-		http://openoffice.lunarshells.com/sources/helpcontent/:help \
-		${MASTER_SITE_RINGSERVER:S/$/:help/} \
-		${MASTER_SITE_RINGSERVER:S/$/:help3/} \
-		ftp://ftp.kddlabs.co.jp/office/openoffice/contrib/helpcontent/:help \
-		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent/:help \
-		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help \
-		ftp://ftp.linux.cz/pub/localization/OpenOffice.org/1.1.5/build/Files/:help2
-MASTER_SITE_SUBDIR+=	maho/openoffice.org/:moz \
-		mozilla/releases/mozilla${MOZILLA_VERSION}/src/:mozsrc \
-		misc/openoffice/contrib/helpcontent/:help \
-		misc/openoffice/contrib/helpcontent-1.0/:help3
+MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/1.1/ \
+		http://openoffice.lunarshells.com/sources/1.1/ \
+		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc
 DISTFILES+=	OOo_SRX645_m${MILESTONE}_source.tar.bz2
 .if defined(WITH_GPC)
 DISTFILES+=	gpc231.tar.Z:gpc
@@ -39,7 +26,7 @@ MOZILLA_PROJECT=	cws_srx645_mozooo.20040203.tar.gz
 MOZILLA_VERSION=	1.0
 MOZILLA_SOURCE=		mozilla-source-${MOZILLA_VERSION}.tar.gz
 .if !defined(WITHOUT_MOZILLA)
-DISTFILES+=	${MOZILLA_PROJECT}:moz ${MOZILLA_SOURCE}:mozsrc
+DISTFILES+=	${MOZILLA_PROJECT} ${MOZILLA_SOURCE}
 USE_GNOME+=	orbit
 .endif
 
@@ -67,17 +54,17 @@ LANG_EXT?=	01
 LANG_CONFIGURE_ARG?=	ENUS
 L10NHELP?=     helpcontent_01_unix.tgz
 
-DISTFILES+=	${L10NHELP}:help
+DISTFILES+=	${L10NHELP}
 .if defined(ALL_LOCALIZED_LANGS)
-DISTFILES+=	helpcontent_07_unix.tgz:help3 \
-		helpcontent_31_unix.tgz:help  helpcontent_33_unix.tgz:help \
-		helpcontent_34_unix.tgz:help  helpcontent_39_unix.tgz:help \
-		helpcontent_42_unix.tgz:help2 helpcontent_43_unix.tgz:help2 \
-		helpcontent_46_unix.tgz:help  helpcontent_49_unix.tgz:help \
-		helpcontent_50_unix.tgz:help2 helpcontent_55_unix.tgz:help \
-		helpcontent_81_unix.tgz:help  helpcontent_82_unix.tgz:help \
-		helpcontent_86_unix.tgz:help  helpcontent_88_unix.tgz:help \
-		helpcontent_90_unix.tgz:help
+DISTFILES+=	helpcontent_07_unix.tgz \
+		helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
+		helpcontent_34_unix.tgz helpcontent_39_unix.tgz \
+		helpcontent_42_unix.tgz helpcontent_43_unix.tgz \
+		helpcontent_46_unix.tgz helpcontent_49_unix.tgz \
+		helpcontent_50_unix.tgz helpcontent_55_unix.tgz \
+		helpcontent_81_unix.tgz helpcontent_82_unix.tgz \
+		helpcontent_86_unix.tgz helpcontent_88_unix.tgz \
+		helpcontent_90_unix.tgz
 L10NHELPS=	helpcontent_01_unix.tgz helpcontent_07_unix.tgz \
 		helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
 		helpcontent_34_unix.tgz helpcontent_39_unix.tgz \
@@ -91,8 +78,8 @@ L10NHELPS=	helpcontent_01_unix.tgz helpcontent_07_unix.tgz \
 
 CODELINE=		645
 RELEASE_NR=		1.1.5
-MILESTONE=		64
-SNAPDATE=		20061219
+MILESTONE=		65
+SNAPDATE=		20070220
 INSTALLATION_BASEDIR=	OpenOffice.org${RELEASE_NR}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org1.1
