@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ffmpeg
-DISTVERSION=	2007-04-18
+DISTVERSION=	2007-04-29
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -25,18 +25,19 @@ CONFIGURE_ARGS=	--cc="${CC}" --prefix="${PREFIX}" \
 		--enable-memalign-hack \
 		--enable-shared \
 		--enable-pp \
-		--extra-cflags="-fPIC ${CFLAGS} -I${LOCALBASE}/include" \
+		--extra-cflags="-fPIC -DPIC ${CFLAGS} -I${LOCALBASE}/include" \
 		--extra-ldflags="-L${LOCALBASE}/lib" \
 		--extra-libs="${PTHREAD_LIBS}" \
 		--disable-bktr \
-		--enable-gpl
+		--enable-gpl \
+		--enable-pthreads
 CONFIGURE_ENV+=	LANG=C
 MAKE_ENV=	INSTALL="${INSTALL}"
 SHLIB_VER=	1
 PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
 USE_LDCONFIG=	yes
 
-CONFLICTS=	ffmpeg-[0-9]*-*
+CONFLICTS=	ffmpeg-[0-9]*
 
 MAN1=		ffmpeg.1
 
@@ -52,7 +53,6 @@ PORTDOCS=	*
 
 .if ${ARCH}=="amd64"
 EXTRA_PATCHES=	${PATCHDIR}/amd64-patch
-BROKEN=		Does not build
 .endif
 
 ## sse hardware vector support
@@ -80,7 +80,7 @@ CONFIGURE_ARGS+=	--enable-liba52 \
 			--enable-liba52bin
 FFMPEG_LDFLAGS+=		-la52
 .else
-CONFIGURE_ARGS+=	--enable-liba52
+CONFIGURE_ARGS+=	--disable-liba52
 .endif
 ## dts
 .ifdef(WITH_DTS) || exists(${LOCALBASE}/lib/libdts.a)
@@ -140,6 +140,13 @@ MAN1+=		ffplay.1
 PLIST_FILES+=	bin/ffplay
 .else
 CONFIGURE_ARGS+=	--disable-ffplay
+.endif
+# libswscale
+.if !defined(WITHOUT_SWSCALE)
+CONFIGURE_ARGS+=	--enable-swscaler
+PLIST_SUB+=		SWSCALE=""
+.else
+PLIST_SUB+=		SWSCALE="@comment "
 .endif
 ## theora
 .if !defined(WITHOUT_THEORA)
@@ -217,6 +224,10 @@ pre-everything::
 .endif
 .ifndef(WITH_OGG)
 	@${ECHO_MSG} 'Define WITH_OGG to enable OGG codec'
+	@${ECHO_MSG}
+.endif
+.ifndef(WITHOUT_SWSCALE)
+	@${ECHO_MSG} 'You can disable libswscale support by defining WITHOUT_SWSCALE'
 	@${ECHO_MSG}
 .endif
 .ifndef(WITH_OPTIMIZED_CFLAGS)

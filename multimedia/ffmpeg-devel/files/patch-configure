@@ -1,10 +1,25 @@
---- configure.orig	Sun Apr 15 12:34:50 2007
-+++ configure	Wed Apr 18 10:31:48 2007
-@@ -982,14 +982,8 @@
-     arch="x86_32"
+--- configure.orig	Fri Apr 27 03:13:50 2007
++++ configure	Mon Apr 30 09:59:52 2007
+@@ -208,11 +208,11 @@
+ 
+ # "tr '[a-z]' '[A-Z]'" is a workaround for Solaris tr not grokking "tr a-z A-Z"
+ toupper(){
+-    echo "$@" | tr '[a-z]' '[A-Z]'
++    echo "$@" | tr '[:lower:]' '[:upper:]'
+ }
+ 
+ tolower(){
+-    echo "$@" | tr '[A-Z]' '[a-z]'
++    echo "$@" | tr '[:upper:]' '[:lower:]'
+ }
+ 
+ set_all(){
+@@ -986,15 +986,9 @@
+     enable fast_unaligned
    ;;
    x86_64|amd64)
 -    arch="x86_32"
+     enable fast_unaligned
 -    canon_arch="`$cc -dumpmachine | sed -e 's,\([^-]*\)-.*,\1,'`"
 -    if [ x"$canon_arch" = x"x86_64" -o x"$canon_arch" = x"amd64" ]; then
 -      if [ -z "`echo $CFLAGS | grep -- -m32`"  ]; then
@@ -17,6 +32,29 @@
    ;;
    # armv4l is a subset of armv[567]*l
    arm|armv[4567]*l)
+@@ -1749,14 +1743,14 @@
+ # not all compilers support -Os
+ test "$optimize" = "small" && check_cflags -Os
+ 
+-if enabled optimize; then
+-    if test -n "`$cc -v 2>&1 | grep xlc`"; then
+-        add_cflags  "-O5"
+-        add_ldflags "-O5"
+-    else
+-        add_cflags "-O3"
+-    fi
+-fi
++#if enabled optimize; then
++#    if test -n "`$cc -v 2>&1 | grep xlc`"; then
++#        add_cflags  "-O5"
++#        add_ldflags "-O5"
++#    else
++#        add_cflags "-O3"
++#    fi
++#fi
+ 
+ # PIC flags for shared library objects where they are needed
+ if enabled shared; then
 @@ -1965,15 +1959,15 @@
  if enabled shared; then
    echo "BUILD_SHARED=yes" >> config.mak
@@ -38,7 +76,7 @@
    echo "SWSVERSION=$sws_version" >> config.mak
    echo "SLIBNAME=${SLIBNAME}" >> config.mak
    echo "SLIBNAME_WITH_VERSION=${SLIBNAME_WITH_VERSION}" >> config.mak
-@@ -2096,8 +2090,8 @@
+@@ -2095,8 +2089,8 @@
  Version: $version
  Requires: $requires
  Conflicts:
@@ -49,7 +87,7 @@
  EOF
  }
  
-@@ -2120,7 +2114,8 @@
+@@ -2119,7 +2113,8 @@
  Requires: $requires
  Conflicts:
  Libs: \${libdir}/${LIBPREF}${shortname}${LIBSUF} $libs
