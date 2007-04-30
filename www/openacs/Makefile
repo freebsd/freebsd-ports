@@ -6,11 +6,10 @@
 #
 
 PORTNAME?=	openacs
-PORTVERSION?=	5.3.0
-PORTREVISION?=	2
+PORTVERSION?=	5.3.1
 CATEGORIES=	www
 MASTER_SITES?=	http://openacs.org/projects/openacs/download/download/
-EXTRACT_SUFX?=	.tgz?revision_id=583060
+EXTRACT_SUFX?=	.tgz?revision_id=976463
 
 MAINTAINER?=	mm@FreeBSD.org
 COMMENT?=	A modular web application platform for high traffic communities
