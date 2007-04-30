@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	dotlrn
-PORTVERSION=	2.2.1
+PORTVERSION=	2.3.0
 MASTER_SITES=	http://openacs.org/projects/dotlrn/download/download/
-EXTRACT_SUFX=	.tgz?revision_id=559791
+EXTRACT_SUFX=	.tgz?revision_id=976988
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	OpenACS-based e-learning platform for high-traffic communities
