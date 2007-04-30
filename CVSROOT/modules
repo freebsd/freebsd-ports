@@ -6226,6 +6226,7 @@ libcdaudio	ports/audio/libcdaudio
 libcddb		ports/audio/libcddb
 libcddb-doc	ports/audio/libcddb-doc
 libcdio		ports/sysutils/libcdio
+libcfg		ports/devel/libcfg
 libcheck	ports/devel/libcheck
 libchipcard	ports/devel/libchipcard
 libchipcard-kde	ports/devel/libchipcard-kde
