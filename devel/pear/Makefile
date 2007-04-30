@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pear
-PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTVERSION=	1.5.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ale
@@ -28,5 +27,7 @@ post-patch:
 
 do-install:
 	@${LOCALBASE}/bin/php -q ${WRKSRC}/go-pear
+	@${SED} -i "" "s|<?php|<?php dl('pcre.so'); dl('xml.so');|" \
+		${PEARDIR}/peclcmd.php
 
 .include <bsd.port.mk>
