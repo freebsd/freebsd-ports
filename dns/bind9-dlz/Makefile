@@ -59,13 +59,13 @@ NO_DESCRIBE=yes
 
 .if defined(WITH_DLZ_OLD)
 ISCVERSION=	9.2.2
-DISTFILES+=  	DLZ-${DLZVERSION}${EXTRACT_SUFX}:dlz
+DISTFILES+=	DLZ-${DLZVERSION}${EXTRACT_SUFX}:dlz
 PATCHFILES+=	patch.9.2.2-P1
 PLIST_SUB+=	BIND922="" BIND931="@comment "
 EXTRA_PATCHES+=	${WRKDIR}/dlz.patch ${FILESDIR}/db42-bind922.patch
 .else
 ISCVERSION=	9.3.2
-PATCHFILES+=  	ctrix_dlz_${ISCVERSION}-1.patch.gz:it
+PATCHFILES+=	ctrix_dlz_${ISCVERSION}-1.patch.gz:it
 EXTRA_PATCHES+=	${FILESDIR}/db42-bind931.patch
 PLIST_SUB+=	BIND931="" BIND922="@comment "
 .endif
