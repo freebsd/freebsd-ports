@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncdu
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dev.yorhel.nl/download/ CENKES
 
