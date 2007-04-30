@@ -1,6 +1,6 @@
---- tables/zh/Makefile.in.orig	Sun Oct 30 22:07:39 2005
-+++ tables/zh/Makefile.in	Tue Nov  1 23:26:26 2005
-@@ -245,7 +245,7 @@
+--- tables/zh/Makefile.in.old	Mon Apr 30 09:56:00 2007
++++ tables/zh/Makefile.in	Mon Apr 30 09:56:30 2007
+@@ -247,7 +247,7 @@
  subdirs = @subdirs@
  sysconfdir = @sysconfdir@
  target_alias = @target_alias@
