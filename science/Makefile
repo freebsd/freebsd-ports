@@ -85,6 +85,7 @@
     SUBDIR += paje
     SUBDIR += paraview
     SUBDIR += pcp
+    SUBDIR += pnetcdf
     SUBDIR += psi3
     SUBDIR += py-paida
     SUBDIR += py-scipy
