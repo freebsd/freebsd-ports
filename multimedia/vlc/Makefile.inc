@@ -1,12 +1,11 @@
-
 # NOTES about VLC Knobs:
 # Below you will see a number of knobs, if it starts with WITHOUT_ it is
 # enabled by default, if it starts with WITH_ it is disabled by default
 # and will be autodetected to enable
 #
 # $FreeBSD$
-#    $MCom: ports/multimedia/vlc/Makefile.inc,v 1.3 2006/09/30 18:15:02 ahze Exp $
-#
+#    $MCom: ports/multimedia/vlc-devel/Makefile.inc,v 1.8 2006/10/01 18:16:43 ahze Exp $
+#      $Id: Makefile.inc 6 2006-09-27 14:05:34Z buhnux $
 # If you define for example WITH_FAAD and WITHOUT_FAAD
 # the WITHOUT_ will always over ride the WITH_.
 #
@@ -50,14 +49,21 @@
 # WITH_FLAC=yes
 #  Flac Support
 #
+
 # WITHOUT_LAME=yes
 #  Mp3 encoder Support
 #   ** NOT DEFINED if PACKAGE_BUILDING is defined **
 #
 # WITHOUT_A52=yes
-#  liba52 audio Support
+#  liba52 audio support
 #
-# WITH_REALAUDIO
+# WITHOUT_MODDEMUX
+#  ModPlug mod-like music support
+#
+# WITHOUT_MPCDEMUX
+#  Musepack audio compression support
+#
+# WITHOUT_REALAUDIO
 #  Real audio(R) support
 #
 # WITH_SHOUT
@@ -90,9 +96,6 @@
 # WITH_CACA=yes
 #  Console Graphics Support (implies WITH_AALIB)
 #
-# WITH_DV=yes
-#  Digital video input
-#
 # WITH_FRIBIDI=yes
 #
 # WITH_GGI=yes
@@ -107,6 +110,7 @@
 #
 # WITH_XOSD=yes
 #
+
 # Multimedia Knobs:
 #
 # WITH_DIRAC
@@ -123,12 +127,6 @@
 #
 # WITH_THEORA=yes
 #  Video codec for OGG/Vorbis Support
-#
-# WITH_TRANSCODE=yes
-#  Disable transcode of multimedia via transcode (multimedia/transcode).
-#  This option allows you to convert a media file, dvd, A/V stream, etc
-#  in to another format. This also allows you to transcode multimedia
-#  on-the-fly and stream to a network and/or local playback.
 #
 # Streaming Knobs:
 #
@@ -149,6 +147,9 @@
 #
 # WITHOUT_AVAHI=yes
 #  Avahi (Rendezvous/Bonjour (R) ) networking
+#
+# WITHOUT_DBUS=yes
+#  Disable d-bus support
 #
 # WITH_DEBUG=yes
 #  Enable debuging support
@@ -180,6 +181,9 @@
 #
 # WITHOUT_GNOMEVFS
 #  GnomeVFS support
+#
+# WITHOUT_HAL=yes
+#  Disable HAL support
 #
 # WITH_OPENGL=yes
 #  Enable OpenGL visual plugin (not playback, play back is default with X11)
@@ -221,15 +225,6 @@
 #  Do not install Vlc's Documents
 #
 
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Take a careful look at Makefile.inc in order"
-	@${ECHO_MSG} "to learn how to tune VLC to your personal preferences!"
-	@${ECHO_MSG} ""
-.if !defined(BATCH) || !defined(PACKAGE_BUILDING)
-	@sleep 3
-.endif
-
 post-patch:
 # Subtitle default font
 	@${REINPLACE_CMD} -e \
@@ -255,10 +250,6 @@ post-patch:
 		-e 's/-lc_r/${PTHREAD_LIBS}/' \
 		-e 's|-mcpu=pentiumpro||' \
 		${WRKSRC}/configure
-.if ${FFMPEG:L}=="old"
-	@${REINPLACE_CMD} -e 's|postproc/postprocess.h|ffmpeg/postproc/postprocess.h|' \
-			${WRKSRC}/configure
-.endif
 # cdrom/dvd support
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|; \
 		s|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
@@ -270,11 +261,22 @@ post-patch:
 		${WRKSRC}/loader/module.c
 .endif
 
+pre-configure:
+.if !exists(${LOCALBASE}/libdata/pkgconfig/libavcodec.pc) && exists(${LOCALBASE}/lib/libavformat.a)
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "ERROR: ${PKGNAME} requires a newer version of FFMpeg"
+	@${ECHO_CMD} "please deinstall multimedia/ffmpeg before continuing"
+	@${ECHO_CMD} "the build."
+	@${ECHO_CMD} ""
+	@${FALSE}
+.endif
+
+
 pre-build:
 	@${REINPLACE_CMD} -e 's|/intl/libintl.a|${WRKSRC}/intl/libintl.a|' \
 		${WRKSRC}/vlc-config
 
-pre-install:
+pre-install: build
 	${RM} -rf ${PLIST} ${FAKEDIR}
 	${MKDIR} ${FAKEDIR}
 	${TOUCH} -f ${PLIST}
@@ -284,15 +286,14 @@ pre-install:
 .endif
 .if !defined(WITHOUT_WXGTK)
 	${ECHO_CMD} "share/pixmaps/vlc.png" >> ${PLIST}
-	${ECHO_CMD} "share/applications/wxvlc.desktop" >> ${PLIST}
+	${ECHO_CMD} "share/applications/vlc.desktop" >> ${PLIST}
 .endif
 .if !defined(WITHOUT_WXGTK) || defined(WITH_SKINS)
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
 .endif
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET} prefix=${FAKEDIR}
-	${RM} -f ${FAKEDIR}/share/locale/locale.alias \
-		 ${FAKEDIR}/lib/charset.alias
+	${RM} -f ${FAKEDIR}/share/locale/locale.alias
 	cd ${FAKEDIR}/bin && ${FIND} -s * | \
 		${SED} -e 's|^|bin/|' >> ${PLIST}
 	cd ${FAKEDIR}/include && ${FIND} -s * -type f -o -type l | \
@@ -327,7 +328,7 @@ pre-install:
 	cd ${FAKEDIR}/mozilla && ${FIND} -s * | \
 		${SED} -e 's|^|lib/browser_plugins/|' >> ${PLIST}
 .endif
-.for locale in my oc ps tet tl
+.for locale in co fur my oc ps tet tl
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/locale/${locale}/LC_MESSAGES 2>/dev/null || ${TRUE}" >> ${PLIST}
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/locale/${locale} 2>/dev/null || ${TRUE}" >> ${PLIST}
 .endfor
@@ -362,7 +363,7 @@ do-install:
 	${INSTALL_DATA} ${FAKEDIR}/share/vlc/vlc48x48.png ${PREFIX}/share/pixmaps/gvlc.png
 .endif
 .if !defined(WITHOUT_WXGTK)
-	${INSTALL_DATA} ${FILESDIR}/wxvlc.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${FILESDIR}/vlc.desktop ${PREFIX}/share/applications
 	${INSTALL_DATA} ${FAKEDIR}/share/vlc/vlc48x48.png ${PREFIX}/share/pixmaps/vlc.png
 .endif
 .endif

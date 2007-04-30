@@ -3,24 +3,62 @@
 # Whom:			Brian Somers <brian@FreeBSD.org>
 #
 # $FreeBSD$
-#    $MCom: ports/multimedia/vlc/Makefile,v 1.4 2006/10/01 16:05:06 ahze Exp $
-#
+#    $MCom: ports/multimedia/vlc-devel/Makefile,v 1.21 2006/10/01 18:16:43 ahze Exp $
+#      $Id: Makefile 6 2006-09-27 14:05:34Z buhnux $
 # *** PLEASE READ Makefile.inc for more information on knobs ***
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.8.5
-PORTREVISION=	12
+DISTVERSION=	0.8.6b
+PORTEPOCH=	2
 CATEGORIES=	multimedia audio ipv6 net www
-MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
-		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${PORTVERSION}/ \
-		ftp://ftp.crans.org/pub/videolan/vlc/${PORTVERSION}/ \
-		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${PORTVERSION}/ \
+MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
+		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${DISTVERSION}/ \
+		ftp://ftp.crans.org/pub/videolan/vlc/${DISTVERSION}/ \
+		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${DISTVERSION}/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Multimedia streaming server and player for various audio/video formats
 
+LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify \
+		avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel
+
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
+
+OPTIONS+=	A52 "a52 audio support, many DVDs use this" On
+OPTIONS+=	AALIB "Aalib Console Graphics Support" Off
+OPTIONS+=	AVAHI "Avahi (Rendezvous/Bonjour (R) ) networking" On
+OPTIONS+=	CACA "Libcaca Console Graphics Support" Off
+OPTIONS+=	ARTS "Enable arts sound support" Off
+OPTIONS+=	CORBA "Enable a Corba interface via orbit2" Off
+OPTIONS+=	DAAP "Connect to iTunes(R) music shares" On
+OPTIONS+=	DEBUG "Enable debuging support" Off
+OPTIONS+=	DTS "DTS decoder support, many DVDs use this" On
+OPTIONS+=	ESOUND "Esound Support" Off
+OPTIONS+=	FAAC "Faac audio encoder (mp4/aac) support" Off
+OPTIONS+=	FAAD "Faad audio decoder (mp4/aac) support" Off
+OPTIONS+=	FLAC "Flac audio codec support" Off
+OPTIONS+=	HTTPD "Streaming media control via http" On
+OPTIONS+=	LAME "Lame mp3 audio encoder support" On
+OPTIONS+=	LIVEMEDIA "Support for rstp/rtp/sdp protocols" On
+OPTIONS+=	MAD "Mad mp3 audio decoder support" On
+OPTIONS+=	MATROSKA "Matroska Container Format support" On
+OPTIONS+=	MPEG2 "Mpeg-2 audio/video decoder Support" On
+OPTIONS+=	NCURSES "Enable ncueses (console) interface" Off
+OPTIONS+=	OGG "Ogg audio decoder support" On
+OPTIONS+=	REALAUDIO "Real audio(R) support" On
+OPTIONS+=	SAMBA "SAMBA Access module" On
+OPTIONS+=	SDL "SDL video output" On
+OPTIONS+=	SVG "SVG graphics support" Off
+OPTIONS+=	SVGALIB "SVGALIB video output" Off
+OPTIONS+=	SHOUT "Shout2 support" Off
+OPTIONS+=	SKINS "Enable GTK+ skinsned interface" Off
+OPTIONS+=	SPEEX "Speex voice codec support" On
+OPTIONS+=	THEORA "OGG/Vorbis video codec support" Off
+OPTIONS+=	TWOLAME "Twolame mpeg2 audio encoder support" Off
+OPTIONS+=	VORBIS "Vorbis support" On
+OPTIONS+=	WIN32_CODECS "win32 multimedia DLL's" Off
+OPTIONS+=	X264 "Enable H.264/AVC codec support" On
 
 CONFLICTS=	vlc-devel-[0-9]*
 
@@ -36,43 +74,33 @@ WANT_SDL=	yes
 USE_ICONV=	yes
 USE_PERL5_BUILD=yes
 
-FAKEDIR=	${WRKDIR}/fake
+FAKEDIR=	${WRKDIR}/fake/${PREFIX}
 PLIST=		${WRKDIR}/plist
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${FAKEDIR}/include -I${WRKSRC}/include ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include -I${LOCALBASE}/ffmpeg ${PTHREAD_CFLAGS} -DHAVE_POSTPROC_POSTPROCESS_H" \
+		LDFLAGS="${LDFLAGS} -L${FAKEDIR}/lib -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS} -lc" \
+		LIBS="-lc"
 
 CONFIGURE_ARGS+=	--enable-ffmpeg \
 			--with-ffmpeg=${LOCALBASE} \
 			--with-libiconv-prefix=${LOCALBASE} \
+			--with-libintl-prefix=${LOCALBASE} \
 			--with-ffmpeg-zlib \
 			--disable-gnome \
 			--disable-gtk \
 			--without-libintl-prefix \
-			--without-dv-raw1394
+			--without-dv-raw1394 \
+			--disable-dv
 
 MAN1=		vlc.1 \
 		vlc-config.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500035
-BROKEN=	Does not build on FreeBSD 4.x
-.endif
-
 .if ${PERL_LEVEL} < 500800
 BROKEN=	Does not compile with perl ${PERL_VERSION}
-.endif
-
-.if exists(${LOCALBASE}/libdata/pkgconfig/libavcodec.pc) || !exists(${LOCALBASE}/lib/libavformat.a)
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel
-FFMPEG=	new
-.else
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
-FFMPEG=	old
-EXTRA_PATCHES=	${PATCHDIR}/old-ffmpeg-patch
 .endif
 
 # compatible knobs.
@@ -152,10 +180,18 @@ CONFIGURE_ARGS+=--disable-loader
 .endif
 
 .if !defined(WITHOUT_WXGTK)
-USE_WX=		2.6
+USE_WX=		2.8
+WX_UNICODE=	yes
 CONFIGURE_ARGS+=--enable-wxwidgets
 .else
 CONFIGURE_ARGS+=--disable-wxwidgets
+.endif
+
+.if !defined(WITHOUT_HAL)
+LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+CONFIGURE_ARGS+=--enable-hal
+.else
+CONFIGURE_ARGS+=--disable-hal
 .endif
 
 .if (defined(WITH_ARTS) || exists(${LOCALBASE}/lib/libartsc.so)) && !defined(WITHOUT_ARTS)
@@ -176,8 +212,7 @@ CONFIGUE_ARGS+=		--disable-bonjour
 LIB_DEPENDS+=	vcdinfo.2:${PORTSDIR}/multimedia/vcdimager \
 		cdio.7:${PORTSDIR}/sysutils/libcdio
 CONFIGURE_ARGS+=--enable-vcd \
-		--disable-libcdio \
-		--disable-libcddb \
+		--enable-libcddb \
 		--disable-cddax
 .else
 CONFIGURE_ARGS+=--disable-vcd \
@@ -264,13 +299,13 @@ CONFIGURE_ARGS+=--enable-aa
 CONFIGURE_ARGS+=--disable-aa
 .endif
 
-#.if (defined(WITH_DIRAC) || exists(${LOCALBASE}/lib/libdirac_decoder.a)) && !defined(WITHOUT_DIRAC)
-#LIB_DEPENDS+=	dirac_encoder.0:${PORTSDIR}/multimedia/dirac
-#CONFIGURE_ARGS+=--enable-dirac
-#CPPFLAGS+=	-I${LOCALBASE}/include/dirac
-#.else
+.if (defined(WITH_DIRAC) || exists(${LOCALBASE}/lib/libdirac_decoder.a)) && !defined(WITHOUT_DIRAC)
+LIB_DEPENDS+=	dirac_encoder.0:${PORTSDIR}/multimedia/dirac
+CONFIGURE_ARGS+=--enable-dirac
+CPPFLAGS+=	-I${LOCALBASE}/include/dirac
+.else
 CONFIGURE_ARGS+=--disable-dirac
-#.endif
+.endif
 
 .if !defined(WITHOUT_X264)
 CONFIGURE_ARGS+=--enable-x264
@@ -303,13 +338,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libdts.a:${PORTSDIR}/multimedia/libdts
 CONFIGURE_ARGS+=--enable-dts
 .else
 CONFIGURE_ARGS+=--disable-dts
-.endif
-
-.if (defined(WITH_DV) || exists(${LOCALBASE}/lib/libdv.a)) && !defined(WITHOUT_DV)
-LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
-CONFIGURE_ARGS+=--enable-dv
-.else
-CONFIGURE_ARGS+=--disable-dv
 .endif
 
 .if defined(WITHOUT_HTTPD)
@@ -362,7 +390,7 @@ CONFIGURE_ARGS+=--enable-libmpeg2
 CONFIGURE_ARGS+=--disable-libmpeg2
 .endif
 
-.if defined(WITH_REALAUDIO)
+.if !defined(WITHOUT_REALAUDIO)
 CONFIGURE_ARGS+=	--enable-real \
 			--enable-realrtsp
 .endif
@@ -381,10 +409,10 @@ CONFIGURE_ARGS+=--disable-theora
 
 .if (defined(WITH_LIVEMEDIA) || exists(${LOCALBASE}/live/liveMedia/libliveMedia.a)) && !defined(WITHOUT_LIVEMEDIA)
 BUILD_DEPENDS+=	${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
-CONFIGURE_ARGS+=--enable-livedotcom \
-		--with-livedotcom-tree=${LOCALBASE}/live
+CONFIGURE_ARGS+=--enable-live555 \
+		--with-live555-tree=${LOCALBASE}/live
 .else
-CONFIGURE_ARGS+=--disable-livedotcom
+CONFIGURE_ARGS+=--disable-live555
 .endif
 
 .if !defined(WITHOUT_MAD)
@@ -394,6 +422,20 @@ CONFIGURE_ARGS+=--enable-mad \
 		--with-mad=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--disable-mad
+.endif
+
+.if !defined(WITHOUT_MODDEMUX)
+LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
+CONFIGURE_ARGS+=--enable-mod
+.else
+CONFIGURE_ARGS+=--disable-mod
+.endif
+
+.if !defined(WITHOUT_MPCDEMUX)
+LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec
+CONFIGURE_ARGS+=--enable-mpc
+.else
+CONFIGURE_ARGS+=--disable-mpc
 .endif
 
 .if !defined(WITHOUT_OGG)
@@ -433,7 +475,7 @@ CONFIGURE_ARGS+=--disable-sdl
 RUN_DEPENDS+=	transcode:${PORTSDIR}/multimedia/transcode
 .endif
 
-.if !defined(WITHOUT_HTTPD) && (defined(WITH_SSL) || exists(${LOCALBASE}/lib/libgnutls.a))
+.if !defined(WITHOUT_HTTPD)
 LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--enable-gnutls
 .else
