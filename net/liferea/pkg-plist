@@ -72,6 +72,7 @@ share/gnome/liferea/dtd/html.ent
 share/gnome/liferea/media/xspf_license.txt
 share/gnome/liferea/media/xspf_player_slim.swf
 share/gnome/liferea/opml/feedlist.opml
+share/gnome/liferea/opml/feedlist_ca.opml
 share/gnome/liferea/opml/feedlist_de.opml
 share/gnome/liferea/opml/feedlist_es.opml
 share/gnome/liferea/opml/feedlist_fr.opml
