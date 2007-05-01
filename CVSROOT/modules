@@ -6148,6 +6148,7 @@ lgeneral-data	ports/games/lgeneral-data
 lgrind		ports/print/lgrind
 lha		ports/archivers/lha
 lha-ac		ports/archivers/lha-ac
+lhs2TeX		ports/devel/lhs2TeX
 lianliankan	ports/games/lianliankan
 lib3ds		ports/graphics/lib3ds
 lib765		ports/emulators/lib765
