@@ -260,6 +260,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/lib/win32|${LOCALBASE}/lib/win32|' \
 		${WRKSRC}/loader/module.c
 .endif
+	@${REINPLACE_CMD} -e 's|dts|dca|g' ${WRKSRC}/configure
 
 pre-configure:
 .if !exists(${LOCALBASE}/libdata/pkgconfig/libavcodec.pc) && exists(${LOCALBASE}/lib/libavformat.a)
