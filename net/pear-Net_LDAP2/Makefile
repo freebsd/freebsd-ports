@@ -7,6 +7,7 @@
 
 PORTNAME=	Net_LDAP
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	net pear
 
 MAINTAINER=	gerrit.beine@gmx.de
@@ -18,8 +19,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_PHP=	ldap
 CATEGORY=	Net
 FILES=		LDAP.php \
-		LDAP/Entry.php LDAP/RootDSE.php LDAP/Schema.php \
-		LDAP/Search.php LDAP/Util.php
+		LDAP/Entry.php LDAP/Filter.php LDAP/RootDSE.php \
+		LDAP/Schema.php LDAP/Search.php LDAP/Util.php
 DOCS=		README.txt RootDSE.txt STATUS Schema.txt utf8.txt
 _DOCSDIR=	./doc
 TESTS=		tests.php
