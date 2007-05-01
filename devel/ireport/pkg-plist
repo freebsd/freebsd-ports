@@ -62,7 +62,7 @@ bin/iReport
 %%JAVAJARDIR%%/eigenbase-resgen.jar
 %%JAVAJARDIR%%/eigenbase-xom.jar
 %%JAVAJARDIR%%/flexdock-0.4.1.jar
-%%JAVAJARDIR%%/groovy-all-1.0-beta-10.jar
+%%JAVAJARDIR%%/groovy-all-1.0.jar
 %%JAVAJARDIR%%/hibernate3.jar
 %%JAVAJARDIR%%/iReport.jar
 %%JAVAJARDIR%%/jasperreports-extensions-1.3.1.jar
