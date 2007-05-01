@@ -28,10 +28,4 @@ PERL_CONFIGURE=	yes
 MAN3=		Archive::Any.3 Archive::Any::Plugin.3 \
 		Archive::Any::Plugin::Tar.3 Archive::Any::Plugin::Zip.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600	# Inherited from dependencies
-IGNORE=		requires Perl 5.6.0 or newer. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
