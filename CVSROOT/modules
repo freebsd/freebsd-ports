@@ -6248,6 +6248,7 @@ libdaemon	ports/devel/libdaemon
 libdasm		ports/devel/libdasm
 libdbi		ports/databases/libdbi
 libdbi-drivers	ports/databases/libdbi-drivers
+libdca		ports/multimedia/libdca
 libdfui		ports/devel/libdfui
 libdict		ports/devel/libdict
 libdisasm	ports/devel/libdisasm
@@ -6265,7 +6266,6 @@ libdrm		ports/graphics/libdrm
 libds		ports/devel/libds
 libdsp		ports/devel/libdsp
 libdssialsacompat	ports/audio/libdssialsacompat
-libdts		ports/multimedia/libdts
 libdungeonmaker	ports/games/libdungeonmaker
 libdv		ports/multimedia/libdv
 libdvbpsi	ports/multimedia/libdvbpsi
