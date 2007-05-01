@@ -165,8 +165,7 @@ LIB_DEPENDS+=	cdda_interface.0:${PORTSDIR}/audio/cdparanoia
 
 # dts
 .if ${GST_PLUGIN}=="dts"
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libdts_pic.a:${PORTSDIR}/multimedia/libdts
-RUN_DEPENDS+=	${LOCALBASE}/lib/libdts_pic.a:${PORTSDIR}/multimedia/libdts
+LIB_DEPENDS+=	dca.0:${PORTSDIR}/multimedia/libdca
 GST_PLIST_SUFFIX=	dec
 .endif
 

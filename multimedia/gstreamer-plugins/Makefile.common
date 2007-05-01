@@ -144,7 +144,7 @@ gst_cdparanoia_EXTRA_LIBS+=	-lgstcdda-${VERSION}
 gst_cdparanoia_DIST=	base
 
 # dts
-gst_dts_BUILD_DEPENDS+=	${LOCALBASE}/lib/libdts.a:${PORTSDIR}/multimedia/libdts
+gst_dts_LIB_DEPENDS+=	dca.0:${PORTSDIR}/multimedia/libdca
 gst_dts_PLIST_FILES=	${GST_LIB_DIR}/libgstdtsdec.a \
 		${GST_LIB_DIR}/libgstdtsdec.la \
 		${GST_LIB_DIR}/libgstdtsdec.so
