@@ -5,26 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=	libdts
-PORTVERSION=	0.0.2
-PORTREVISION=	2
+PORTNAME=	libdca
+PORTVERSION=	0.0.5
 CATEGORIES=	multimedia
-MASTER_SITES=	http://debian.unnet.nl/pub/videolan/libdts/${PORTVERSION}/ \
-		http://download.videolan.org/pub/videolan/libdts/${PORTVERSION}/
+MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Free DTS Coherent Acoustics decoder
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
+USE_BZIP2=	yes
 USE_GNOME=	pkgconfig gnomehack
+USE_LDCONFIG=	yes
 
-MAN1=		dtsdec.1 extract_dts.1
+MAN1=		dcadec.1 extract_dca.1
+MLINKS=		dcadec.1 dtsdec.1 extract_dca.1 extract_dts.1
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-post-patch:
-	@${REINPLACE_CMD} -e 's|-ldts|-ldts_pic|' ${WRKSRC}/libdts/libdts.pc.in
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

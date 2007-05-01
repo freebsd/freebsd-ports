@@ -2947,3 +2947,4 @@ audio/xmms-real-random||2007-04-24|Removed per maintainer's request, serious mul
 chinese/mldonkey-core||2007-04-26|Obsoleted by net-p2p/mldonkey version 2.8.5
 graphics/gstreamer-plugins-libcaca80||2007-04-29|Obsoleted, use 0.10.x version instead
 devel/make||2007-04-29|Port was only useful on FreeBSD 4.x
+multimedia/libdts|multimedia/libdca|2007-05-01|Project renamed

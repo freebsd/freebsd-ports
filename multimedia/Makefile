@@ -114,10 +114,10 @@
     SUBDIR += kplayer
     SUBDIR += ksubeditor
     SUBDIR += ldvd
+    SUBDIR += libdca
     SUBDIR += libdivxdecore
     SUBDIR += libdivxdecore-devel
     SUBDIR += libdivxencore
-    SUBDIR += libdts
     SUBDIR += libdv
     SUBDIR += libdvbpsi
     SUBDIR += libdvdcss
