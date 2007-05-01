@@ -33,4 +33,6 @@ USE_GNOME=	glib20 libxml2 gtk20 libgnome gtkhtml3 libxslt
 CONFIGURE_ARGS=	--with-libcurl-libraries=${LOCALBASE}/lib \
 		--with-pcre_libraries=${LOCALBASE}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${.CURDIR}/../../www/mozilla/bsd.gecko.mk"
+.include <bsd.port.post.mk>
