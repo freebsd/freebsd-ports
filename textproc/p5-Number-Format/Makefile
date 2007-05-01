@@ -27,8 +27,5 @@ post-patch:
 .if ${PERL_LEVEL} < 500800
 	${PERL} -pi -e '$$_="" if m{5.008}' ${WRKSRC}/Format.pm
 .endif
-.if ${PERL_LEVEL} < 500600
-	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1);$$1/;' ${WRKSRC}/Format.pm
-.endif
 
 .include <bsd.port.post.mk>
