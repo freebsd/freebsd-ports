@@ -8296,6 +8296,7 @@ opendd		ports/dns/opendd
 opendis		ports/graphics/opendis
 opendx		ports/graphics/opendx
 openfoam	ports/science/openfoam
+openftd		ports/news/openftd
 openfts		ports/textproc/openfts
 opengl-man	ports/graphics/opengl-man
 openglad	ports/games/openglad
