@@ -6,6 +6,3 @@ by the driver or not. OpenGL core and extension functionality is exposed
 via a single header file.
 
 WWW: http://glew.sourceforge.net/
-
-- Igor Pokrovsky
-tiamat@comset.net

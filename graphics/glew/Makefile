@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glew
-PORTVERSION=	1.3.5
+PORTVERSION=	1.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,7 +27,7 @@ do-install:
 
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/libGLEW.so.${PORTVERSION} \
 		${PREFIX}/lib/libGLEW.so.1
-	@${LN} -sf ${PREFIX}/lib/libGLEW.so.1 ${PREFIX}/lib/libGLEW.so
+	${LN} -sf ${PREFIX}/lib/libGLEW.so.1 ${PREFIX}/lib/libGLEW.so
 	${INSTALL_DATA} ${WRKSRC}/lib/libGLEW.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/include/GL/*.h ${PREFIX}/include/GL
 
