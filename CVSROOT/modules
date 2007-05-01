@@ -10520,6 +10520,7 @@ p5-SNMP-MIB-Compiler	ports/net-mgmt/p5-SNMP-MIB-Compiler
 p5-SNMP-Util	ports/net-mgmt/p5-SNMP-Util
 p5-SNMP_Session	ports/net-mgmt/p5-SNMP_Session
 p5-SOAP		ports/net/p5-SOAP
+p5-SOAP-Amazon-S3	ports/net/p5-SOAP-Amazon-S3
 p5-SOAP-Data-Builder	ports/net/p5-SOAP-Data-Builder
 p5-SOAP-Lite	ports/net/p5-SOAP-Lite
 p5-SOAP-MySOAP	ports/net/p5-SOAP-MySOAP
