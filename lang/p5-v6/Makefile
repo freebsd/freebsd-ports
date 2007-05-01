@@ -32,10 +32,4 @@ MAN3=	v6.3 \
 	Pugs::Compiler::Perl6.3 \
 	Pugs::Runtime::Perl6.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6 or later. Install lang/perl5 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
