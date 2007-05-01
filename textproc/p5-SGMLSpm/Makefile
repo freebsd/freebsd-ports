@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	SGMLS
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION}ii
 
-MAINTAINER=	B.Candler@pobox.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for postprocessing the output from sgmls and nsgmls
 
 USE_PERL5_RUN=	yes
