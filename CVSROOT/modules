@@ -13951,6 +13951,7 @@ s3mod		ports/audio/s3mod
 s3switch	ports/graphics/s3switch
 s5		ports/textproc/s5
 sabbu		ports/multimedia/sabbu
+sabernetdcs-client	ports/finance/sabernetdcs-client
 sablevm		ports/java/sablevm
 sablotron	ports/textproc/sablotron
 sabnzbd		ports/news/sabnzbd
