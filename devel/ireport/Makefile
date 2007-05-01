@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ireport
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	1.3.3
 CATEGORIES=	devel databases java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -40,7 +39,7 @@ JARFILES=	JasperBabylon-1.0.0.jar LICENSE.asm-attr.txt LICENSE.asm.txt	\
 		asm-attrs.jar asm.jar barbecue-1.1.jar cglib-2.1.jar		\
 		cincom-jr-xmla.jar commons-javaflow-20060411.jar ehcache-1.1.jar\
 		eigenbase-properties.jar eigenbase-resgen.jar eigenbase-xom.jar	\
-		flexdock-0.4.1.jar groovy-all-1.0-beta-10.jar hibernate3.jar	\
+		flexdock-0.4.1.jar groovy-all-1.0.jar hibernate3.jar	\
 		iReport.jar jasperreports-extensions-1.3.1.jar javacup.jar	\
 		jdt-compiler-3.1.1.jar jpa.jar jr-bsh-compiler.jar		\
 		jsmoothgen-ant-0.9.7.jar jta.jar jxl-2.6.jar			\
@@ -57,7 +56,7 @@ CLSSPTH=	JasperBabylon-1.0.0 antlr asm-attrs asm barbecue-1.1 bsh	\
 		commons-dbcp commons-digester commons-javaflow-20060411		\
 		commons-logging commons-logging-api commons-pool dom4j		\
 		ehcache-1.1 eigenbase-properties eigenbase-resgen eigenbase-xom	\
-		flexdock-0.4.1 groovy-all-1.0-beta-10 hibernate3 iReport itext	\
+		flexdock-0.4.1 groovy-all-1.0 hibernate3 iReport itext	\
 		bcel jasperreports jasperreports-extensions-1.3.1 javacup	\
 		jcmdline jcommon jdt-compiler-3.1.1 jfreechart jpa		\
 		jr-bsh-compiler jsmoothgen-ant-0.9.7 jta jxl-2.6 log4j looks	\
