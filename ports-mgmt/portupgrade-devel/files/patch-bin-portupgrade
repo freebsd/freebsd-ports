@@ -1,11 +1,5 @@
 --- bin/portupgrade.orig	Mon Feb 26 19:00:26 2007
 +++ bin/portupgrade	Tue May  1 21:37:49 2007
-@@ -1,4 +1,4 @@
--#!/usr/bin/env ruby
-+#!/usr/local/bin/ruby18
- # -*- ruby -*-
- #
- # Copyright (c) 2000-2004 Akinori MUSHA
 @@ -616,7 +616,9 @@
  
  	  # Track unistalled ports is appeared after updating
