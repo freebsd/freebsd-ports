@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text_Diff
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.1
 CATEGORIES=	devel pear
 
 MAINTAINER=	joseph@randomnetworks.com
