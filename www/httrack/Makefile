@@ -6,22 +6,20 @@
 #
 
 PORTNAME=	httrack
-PORTVERSION=	3.40
-PORTREVISION=	2
+PORTVERSION=	3.41.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.httrack.com/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${PORTREVISION}
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy-to-use offline browser utility and website copier
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.`expr ${PORTREVISION} + 1`
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}0
 
-USE_AUTOTOOLS=	libtool:15
+USE_GNOME=	gnometarget
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=	yes
+USE_AUTOTOOLS=	libtool:15
+USE_LDCONFIG=	yes
 
 MAN1=		htsserver.1 httrack.1 proxytrack.1 webhttrack.1
 
