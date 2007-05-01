@@ -1240,6 +1240,7 @@ chemeq		ports/biology/chemeq
 chemtool	ports/science/chemtool
 chemtool-devel	ports/science/chemtool-devel
 cherokee	ports/www/cherokee
+cherokee-devel	ports/www/cherokee-devel
 chexedit	ports/editors/chexedit
 chgrep		ports/sysutils/chgrep
 chicken		ports/lang/chicken
