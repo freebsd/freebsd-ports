@@ -1,4 +1,9 @@
 %%SITE_PERL%%/Catalyst/Plugin/Static/Simple.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Static/Simple/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Static/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Static
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Static
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin
 @dirrmtry %%SITE_PERL%%/Catalyst
