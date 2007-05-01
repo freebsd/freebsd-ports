@@ -1,7 +1,6 @@
 # New ports collection makefile for:	crm114
 # Date created:				23 February 2004
 # Whom:					Meno Abels <meno.abels@adviser.com>
-#
 # $FreeBSD$
 #
 
@@ -11,8 +10,7 @@ PORTVERSION=	20070406
 # portlint didn't like this variable at this place.
 # So I have to put it down in this file.
 CATEGORIES=	mail
-MASTER_SITES=	http://crm114.sourceforge.net/
-MASTER_SITE_SUBDIR=	crm114
+MASTER_SITES=	http://crm114.sourceforge.net/tarballs/
 # Oliver Eikemeier recommended the following construction
 # to avoid the reduncany of the CRM114RELEASENAME and .src and
 # .css extention.
