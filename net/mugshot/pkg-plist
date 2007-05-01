@@ -16,30 +16,44 @@ lib/mugshot/firefox/chrome/skin/toolbar.css
 lib/mugshot/firefox/components/hippoIControl.xpt
 lib/mugshot/firefox/components/hippoIControlListener.xpt
 lib/mugshot/firefox/components/hippoIExtension.xpt
-lib/mugshot/firefox/components/libhippofirefox.a
 lib/mugshot/firefox/components/libhippofirefox.la
 lib/mugshot/firefox/components/libhippofirefox.so
 lib/mugshot/firefox/defaults/preferences/prefs.js
 lib/mugshot/firefox/install.rdf
+share/applications/mugshot.desktop
 share/autostart/mugshot.desktop
 @unexec %%PREFIX%%/share/mugshot/firefox-update.sh remove
 %%DATADIR%%/firefox-update.sh
 %%DATADIR%%/version
+share/dbus-1/services/org.mugshot.Mugshot.service
 share/icons/hicolor/128x128/apps/mugshot.png
 share/icons/hicolor/16x16/apps/mugshot.png
 share/icons/hicolor/16x16/apps/mugshot_note_off.png
 share/icons/hicolor/16x16/apps/mugshot_note_on.png
 share/icons/hicolor/22x22/apps/mugshot_notification.png
 share/icons/hicolor/22x22/apps/mugshot_notification_disabled.png
-share/icons/hicolor/22x22/apps/mugshot_swarm_1.png
-share/icons/hicolor/22x22/apps/mugshot_swarm_2.png
-share/icons/hicolor/22x22/apps/mugshot_swarm_3.png
-share/icons/hicolor/22x22/apps/mugshot_swarm_4.png
-share/icons/hicolor/22x22/apps/mugshot_swarm_5.png
-share/icons/hicolor/24x24/apps/mugshot.gif
-share/icons/hicolor/32x32/apps/mugshot.gif
-share/icons/hicolor/48x48/apps/mugshot.gif
+share/icons/hicolor/24x24/apps/mugshot.png
+share/icons/hicolor/32x32/apps/mugshot.png
+share/icons/hicolor/48x48/apps/mugshot.png
 @dirrm share/mugshot
+@dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/48x48
+@dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor/24x24/apps
+@dirrm share/icons/hicolor/24x24
+@dirrm share/icons/hicolor/22x22/apps
+@dirrm share/icons/hicolor/22x22
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16
+@dirrm share/icons/hicolor/128x128/apps
+@dirrm share/icons/hicolor/128x128
+@dirrm share/icons/hicolor
+@dirrm share/icons
+@dirrm share/dbus-1/services
+@dirrm share/dbus-1
+@dirrm share/autostart
+@dirrm share/applications
 @dirrm lib/mugshot/firefox/defaults/preferences
 @dirrm lib/mugshot/firefox/defaults
 @dirrm lib/mugshot/firefox/components
@@ -51,5 +65,4 @@ share/icons/hicolor/48x48/apps/mugshot.gif
 @dirrm lib/mugshot/firefox/chrome/content
 @dirrm lib/mugshot/firefox/chrome
 @dirrm lib/mugshot/firefox
-@dirrm share/autostart
 @dirrm lib/mugshot

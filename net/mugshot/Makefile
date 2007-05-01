@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mugshot
-PORTVERSION=	1.1.37
+PORTVERSION=	1.1.42
 CATEGORIES=	net
 MASTER_SITES=	http://download.mugshot.org/client/sources/linux/
 
@@ -23,9 +23,10 @@ BUILD_DEPENDS=	${PKGCONFIG_LOCAL_BASE}/dbus-1.pc:${PORTSDIR}/devel/dbus:install 
 		${LOCALBASE}/include/firefox/caps/nsIScriptSecurityManager.h:${PORTSDIR}/www/firefox:install \
 		${LOCALBASE}/lib/libpcre.a:${PORTSDIR}/devel/pcre:install \
 		${LOCALBASE}/lib/firefox/xpidl:${PORTSDIR}/www/firefox:install \
-		${X11BASE}/include/X11/extensions/scrnsaver.h:${PORTSDIR}/x11/xorg-libraries:install
+		${X11BASE}/include/X11/extensions/scrnsaver.h:${PORTSDIR}/x11/xorg-libraries:install \
+		dbus>=1.0.2:${PORTSDIR}/devel/dbus:install
 
-USE_GNOME=	gnomehack gconf2 glib20 gtk20 pango
+USE_GNOME=	gnomehack gconf2 glib20 gtk20 pango gnomevfs2 gnomedesktop
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
@@ -45,7 +46,9 @@ mugshot_INSTALL_cmd=	install
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	"--with-gecko-idl=${FIREFOX_IDL_PATH}" \
 		"--with-gecko-headers=${LOCALBASE}/include/firefox" \
-		"--with-xpidl=${LOCALBASE}/lib/firefox/xpidl"
+		"--with-xpidl=${LOCALBASE}/lib/firefox/xpidl" \
+		"--x-includes=${X11BASE}/include" \
+		"--x-libraries=${X11BASE}/lib"
 
 FIREFOX_IDL_PATH!=${SH} -c 'for i in ${LOCALBASE}/share/idl/firefox-*; do [ -f $$i/nsIURI.idl ] && ${ECHO} $$i && break; done; exit 0;'
 BUILD_DEPENDS+=${FIREFOX_IDL_PATH}/nsIURI.idl:${PORTSDIR}/www/firefox:install
