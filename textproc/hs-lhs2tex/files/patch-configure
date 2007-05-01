@@ -1,0 +1,11 @@
+--- ./configure.orig	Wed Apr 25 22:41:37 2007
++++ ./configure	Wed Apr 25 22:41:55 2007
+@@ -2726,7 +2726,7 @@
+ 
+ 
+ # docdir and expansion
+-docdir="$datadir/doc/$PACKAGE_TARNAME-$PACKAGE_VERSION"
++#docdir="$datadir/doc/$PACKAGE_TARNAME-$PACKAGE_VERSION"
+ 
+ 
+ # lhs2TeX binary path relative to docdir
