@@ -25,10 +25,4 @@ PERL_MODBUILD=	yes
 MAN3=		Module::Build::Convert.3
 MAN1=		make2build.1
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires at least Perl 5.6.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

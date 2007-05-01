@@ -34,14 +34,4 @@ MAN3=		Test::Metadata.3 Test::Parser.3 Test::Parser::Dbench.3 \
 		Test::Parser::iozone.3 Test::Parser::lhcs_regression.3 \
 		Test::Parser::ltp.3 Test::Parser::newpynfs.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-RUN_DEPENDS+=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser
-
-post-patch:
-	${FIND} ${WRKSRC}/lib -type f | ${XARGS} ${PERL} -pi -e \
-		's/^use (vars|warnings).*$$//g'
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
