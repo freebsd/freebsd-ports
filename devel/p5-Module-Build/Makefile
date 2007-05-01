@@ -36,10 +36,6 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
-.endif
-
 MAN3=		Module::Build.3 \
 		Module::Build::API.3 \
 		Module::Build::Authoring.3 \

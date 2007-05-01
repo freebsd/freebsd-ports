@@ -45,9 +45,6 @@ MAN3=		inc::Module::Install.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=	requires perl 5.6.x or later. Install lang/perl5 then try again
-.endif
 .if ${PERL_LEVEL} < 500805
 BUILD_DEPENDS+=	${SITE_PERL}/Pod/Man.pm:${PORTSDIR}/textproc/p5-podlators
 .endif
