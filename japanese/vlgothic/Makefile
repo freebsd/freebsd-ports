@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vlgothic
-PORTVERSION=	20070317
+PORTVERSION=	20070328
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://vinelinux.org/~daisuke/vlgothic/ \
 		http://dicey.org/vlgothic/
