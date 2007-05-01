@@ -503,6 +503,7 @@
     SUBDIR += p5-ming
     SUBDIR += paintlib
     SUBDIR += passepartout
+    SUBDIR += pear-Image_3D
     SUBDIR += pear-Image_Barcode
     SUBDIR += pear-Image_Canvas
     SUBDIR += pear-Image_Color
