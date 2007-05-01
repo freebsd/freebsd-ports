@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CGI-Ex
-PORTVERSION=	2.09
+PORTVERSION=	2.10
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CGI
@@ -23,7 +23,7 @@ MAN3=		CGI::Ex.3 CGI::Ex::App.3 CGI::Ex::Auth.3 CGI::Ex::Conf.3 \
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
-.for i in app benchmark conf_path_1 conf_path_3 devel
+.for i in app benchmark devel
 	${MKDIR} ${EXAMPLESDIR}/${i}
 .endfor
 	${CP} -R ${WRKSRC}/samples/* ${EXAMPLESDIR}
