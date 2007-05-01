@@ -26,12 +26,4 @@ MAN3=		HTML::Parse.3 HTML::TreeBuilder.3 HTML::AsSubs.3 \
 		HTML::Tree::Scanning.3 HTML::Tree::AboutObjects.3 \
 		HTML::Tree::AboutTrees.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-post-patch:
-	${PERL} -pi -e 's/our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' ${WRKSRC}/t/*.t
-	${PERL} -pi -e 's,-Tw,-,; s/(use|no) warnings;.*//' ${WRKSRC}/t/*.t
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
