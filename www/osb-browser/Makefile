@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	osb-browser
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtk-webcore
@@ -14,8 +14,8 @@ MASTER_SITE_SUBDIR=	gtk-webcore
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+ WebCore reference web browser implementation
 
-BUILD_DEPENDS=	osb-nrcit>=0.5.1:${PORTSDIR}/www/osb-nrcit
-RUN_DEPENDS=	osb-nrcit>=0.5.1:${PORTSDIR}/www/osb-nrcit
+BUILD_DEPENDS=	osb-nrcit>=0.5.2:${PORTSDIR}/www/osb-nrcit
+RUN_DEPENDS=	osb-nrcit>=0.5.2:${PORTSDIR}/www/osb-nrcit
 
 USE_GNOME=	gnomehack gnometarget libglade2
 USE_AUTOTOOLS=	libtool:15
