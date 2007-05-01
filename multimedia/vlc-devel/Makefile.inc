@@ -245,21 +245,18 @@ post-patch:
 	@${RM} -f ${WRKSRC}/po/*.bak
 	@${REINPLACE_CMD} -e 's|Linux OSS|FreeBSD OSS|' \
 		${WRKSRC}/modules/audio_output/oss.c
-# pthreads/cflags
 	@${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/' \
 		-e 's/-lc_r/${PTHREAD_LIBS}/' \
-		-e 's|-mcpu=pentiumpro||' \
+		-e 's|-mcpu=pentiumpro||; s|-ldl||' \
 		${WRKSRC}/configure
 # cdrom/dvd support
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|; \
 		s|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
 		${WRKSRC}/include/vlc_config.h
-.if ${ARCH}=="i386" && defined(WITH_WIN32_CODECS)
 	@${REINPLACE_CMD} -e 's|-DWIN32_PATH=\\"\\"|-DWIN32_PATH=\\"${LOCALBASE}/lib/win32\\"|' \
-		${WRKSRC}/loader/Makefile.in
+		${WRKSRC}/libs/loader/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/lib/win32|${LOCALBASE}/lib/win32|' \
-		${WRKSRC}/loader/module.c
-.endif
+		${WRKSRC}/libs/loader/module.c
 
 pre-configure:
 .if !exists(${LOCALBASE}/libdata/pkgconfig/libavcodec.pc) && exists(${LOCALBASE}/lib/libavformat.a)
