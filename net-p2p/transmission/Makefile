@@ -6,10 +6,13 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	0.71
-PORTREVISION?=	1
+PORTVERSION=	0.72
+PORTREVISION?=	0
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
+#MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://people.freebsd.org/~mezz/distfiles/
+MASTER_SITE_SUBDIR=mezz
 DISTNAME=	Transmission-${PORTVERSION}
 
 MAINTAINER=	mezz@FreeBSD.org
