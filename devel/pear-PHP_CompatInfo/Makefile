@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHP_CompatInfo
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.3
 CATEGORIES=	devel pear
 
 MAINTAINER=	chinsan@FreeBSD.org
