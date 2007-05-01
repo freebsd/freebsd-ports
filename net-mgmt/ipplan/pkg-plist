@@ -18,7 +18,7 @@
 %%IPPLANDIR%%/TRIGGERS
 %%IPPLANDIR%%/UPGRADE
 %%IPPLANDIR%%/admin/changepassword.php
-%%IPPLANDIR%%/admin/changesettings.php
+%%IPPLANDIR%%/user/changesettings.php
 %%IPPLANDIR%%/admin/deletebounds.php
 %%IPPLANDIR%%/admin/displayauditlog.php
 %%IPPLANDIR%%/admin/displayboundsform.php
@@ -545,6 +545,7 @@
 %%IPPLANDIR%%/user/treeview.php
 %%IPPLANDIR%%/user/whois.php
 %%IPPLANDIR%%/xmllib.php
+%%IPPLANDIR%%/PORTERS
 @dirrm %%IPPLANDIR%%/user/Net/DNS/RR
 @dirrm %%IPPLANDIR%%/user/Net/DNS
 @dirrm %%IPPLANDIR%%/user/Net
