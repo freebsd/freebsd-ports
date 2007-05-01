@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+@unexec if cmp -s %%PREFIX%%/etc/amavisd-custom.conf %%PREFIX%%/etc/amavisd-custom.conf-dist; then rm %%PREFIX%%/etc/amavisd-custom.conf; fi
 %%PORTDOCS%%%%DOCSDIR%%/AAAREADME.first
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/LDAP.schema
@@ -21,15 +22,51 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.performance
 %%PORTDOCS%%%%DOCSDIR%%/README.policy-on-notifications
 %%PORTDOCS%%%%DOCSDIR%%/README.postfix
+%%PORTDOCS%%%%DOCSDIR%%/README.postfix.old
+%%PORTDOCS%%%%DOCSDIR%%/README.postfix.html
 %%PORTDOCS%%%%DOCSDIR%%/README.protocol
 %%PORTDOCS%%%%DOCSDIR%%/README.sendmail
 %%PORTDOCS%%%%DOCSDIR%%/README.sendmail-dual
 %%PORTDOCS%%%%DOCSDIR%%/README.sendmail-dual.old
 %%PORTDOCS%%%%DOCSDIR%%/README.sql
+%%PORTDOCS%%%%DOCSDIR%%/README.sql-mysql
+%%PORTDOCS%%%%DOCSDIR%%/README.sql-pg
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
 %%PORTDOCS%%%%DOCSDIR%%/amavisd-new-docs.html
 %%PORTDOCS%%%%DOCSDIR%%/TODO-SNMP-AGENT
+%%PORTDOCS%%%%DOCSDIR%%/screen.css
+%%PORTDOCS%%%%DOCSDIR%%/images/1.png
+%%PORTDOCS%%%%DOCSDIR%%/images/10.png
+%%PORTDOCS%%%%DOCSDIR%%/images/11.png
+%%PORTDOCS%%%%DOCSDIR%%/images/12.png
+%%PORTDOCS%%%%DOCSDIR%%/images/13.png
+%%PORTDOCS%%%%DOCSDIR%%/images/14.png
+%%PORTDOCS%%%%DOCSDIR%%/images/15.png
+%%PORTDOCS%%%%DOCSDIR%%/images/2.png
+%%PORTDOCS%%%%DOCSDIR%%/images/3.png
+%%PORTDOCS%%%%DOCSDIR%%/images/4.png
+%%PORTDOCS%%%%DOCSDIR%%/images/5.png
+%%PORTDOCS%%%%DOCSDIR%%/images/6.png
+%%PORTDOCS%%%%DOCSDIR%%/images/7.png
+%%PORTDOCS%%%%DOCSDIR%%/images/8.png
+%%PORTDOCS%%%%DOCSDIR%%/images/9.png
+%%PORTDOCS%%%%DOCSDIR%%/images/blank.png
+%%PORTDOCS%%%%DOCSDIR%%/images/caution.png
+%%PORTDOCS%%%%DOCSDIR%%/images/draft.png
+%%PORTDOCS%%%%DOCSDIR%%/images/home.png
+%%PORTDOCS%%%%DOCSDIR%%/images/important.png
+%%PORTDOCS%%%%DOCSDIR%%/images/next.png
+%%PORTDOCS%%%%DOCSDIR%%/images/note.png
+%%PORTDOCS%%%%DOCSDIR%%/images/prev.png
+%%PORTDOCS%%%%DOCSDIR%%/images/tip.png
+%%PORTDOCS%%%%DOCSDIR%%/images/toc-blank.png
+%%PORTDOCS%%%%DOCSDIR%%/images/toc-minus.png
+%%PORTDOCS%%%%DOCSDIR%%/images/toc-plus.png
+%%PORTDOCS%%%%DOCSDIR%%/images/up.png
+%%PORTDOCS%%%%DOCSDIR%%/images/warning.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+etc/amavisd-custom.conf-dist
 etc/amavisd.conf-default
 @unexec if cmp -s %D/etc/amavisd.conf %D/etc/amavisd.conf-dist; then rm -f %D/etc/amavisd.conf; fi
 etc/amavisd.conf-dist

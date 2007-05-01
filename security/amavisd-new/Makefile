@@ -7,14 +7,12 @@
 # Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
-PORTVERSION=	2.4.5
-PORTREVISION=	2
+PORTVERSION=	2.5.0
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
 		http://mirrors.catpipe.net/amavisd-new/ \
 		http://mirror.mainloop.se/amavisd/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-p/}
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Performance-enhanced daemonized version of amavis-perl
@@ -23,15 +21,14 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Un
 		${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
-		${SITE_PERL}/${PERL_ARCH}/Convert/UUlib.pm:${PORTSDIR}/converters/p5-Convert-UUlib \
-		${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
-		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
+		p5-Convert-UUlib>=1.08,1:${PORTSDIR}/converters/p5-Convert-UUlib \
+		p5-Compress-Zlib>=1.04:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/IO/Wrap.pm:${PORTSDIR}/devel/p5-IO-stringy \
-		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
-		${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server
+		${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6 \
+		p5-Net-Server>=0.93:${PORTSDIR}/net/p5-Net-Server
 
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
@@ -39,13 +36,16 @@ CONFIGURE_ARGS=	--with-user=${AMAVISUSER} --with-runtime-dir=${AMAVISDIR}
 CONFIGURE_WRKSRC=	${WRKSRC}/helper-progs
 BUILD_WRKSRC=	${WRKSRC}/helper-progs
 
+PORTDOCS=	AAAREADME.first INSTALL LDAP.schema LICENSE RELEASE_NOTES \
+		README_FILES/README.* README_FILES/screen.css \
+		README_FILES/amavisd-new-docs.html \
+		README_FILES/TODO-SNMP-AGENT
+
 AMAVISUSER?=	vscan
 AMAVISGROUP?=	vscan
 AMAVISDIR?=	/var/amavis
 AMAVISQUARANTINE?=	/var/virusmails
 DAEMON?=	/usr/sbin/daemon -p
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.p.+//}
 
 OPTIONS=	BDB	"Use BerkeleyDB for nanny/cache/snmp"	on \
 		SQLITE	"Use SQLite for lookups"	off \
@@ -56,6 +56,7 @@ OPTIONS=	BDB	"Use BerkeleyDB for nanny/cache/snmp"	on \
 		MILTER	"Sendmail milter support" on \
 		SPAMASSASSIN	"Use mail/p5-Mail-SpamAssassin"	on \
 		P0F	"Passive operating system fingerprinting"	off \
+		ALTERMIME	"Use AlterMime for defanging/disclaimers"	off \
 		FILE	"Use newer file(1) utility from ports"	on \
 		RAR	"RAR support with archivers/rar"	off \
 		UNRAR	"RAR support with archivers/unrar"	on \
@@ -70,6 +71,7 @@ OPTIONS=	BDB	"Use BerkeleyDB for nanny/cache/snmp"	on \
 		UNZOO	"ZOO support with archivers/unzoo"	off \
 		LZOP	"LZOP support with archivers/lzop"	on \
 		FREEZE	"FREEZE support with archivers/freeze"	on \
+		P7ZIP	"P7ZIP support with archivers/p7zip"	on \
 		TNEF	"Add external tnef decoder converters/tnef"	off
 
 SUB_FILES=	pkg-install pkg-deinstall pkg-message
@@ -133,6 +135,10 @@ USE_RC_SUBR+=	amavis-p0fanalyzer.sh
 AMAVIS_NOP0F=	"@comment "
 .endif
 
+.if defined(WITH_ALTERMIME)
+RUN_DEPENDS+=	${LOCALBASE}/bin/altermime:${PORTSDIR}/mail/altermime
+.endif
+
 .if defined(WITH_FILE)
 RUN_DEPENDS+=	${LOCALBASE}/bin/file:${PORTSDIR}/sysutils/file
 .endif
@@ -189,6 +195,10 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/lzop:${PORTSDIR}/archivers/lzop
 RUN_DEPENDS+=	${LOCALBASE}/bin/unfreeze:${PORTSDIR}/archivers/freeze
 .endif
 
+.if defined(WITH_P7ZIP)
+RUN_DEPENDS+=	${LOCALBASE}/bin/7zr:${PORTSDIR}/archivers/p7zip
+.endif
+
 .if defined(WITH_TNEF)
 RUN_DEPENDS+=	${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef
 .endif
@@ -238,6 +248,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf ${PREFIX}/etc/amavisd.conf-dist
 	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf-sample ${PREFIX}/etc/amavisd.conf-sample
 	${INSTALL_SCRIPT} ${WRKSRC}/amavisd.conf-default ${PREFIX}/etc/amavisd.conf-default
+	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-custom.conf ${PREFIX}/etc/amavisd-custom.conf-dist
 .if !exists(${PREFIX}/etc/amavisd.conf)
 #
 #  This can contain sensitive information, e.g. SQL passwords, so it should be handled
@@ -245,11 +256,15 @@ do-install:
 #
 	${INSTALL} -o root -g ${AMAVISGROUP} -m 640 ${WRKSRC}/amavisd.conf ${PREFIX}/etc
 .endif
+.if !exists(${PREFIX}/etc/amavisd-custom.conf)
+	${INSTALL} -o root -g ${AMAVISGROUP} -m 640 ${WRKSRC}/amavisd-custom.conf ${PREFIX}/etc
+.endif
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in AAAREADME.first INSTALL LDAP.schema LICENSE RELEASE_NOTES README_FILES/*
+	@${MKDIR} ${DOCSDIR}/images
+.for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
+	@${CP} -pr ${WRKSRC}/README_FILES/images/ ${DOCSDIR}/images
 .endif
 
 post-install:
