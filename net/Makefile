@@ -553,6 +553,7 @@
     SUBDIR += p5-ResourcePool-Resource-Net-LDAP
     SUBDIR += p5-ResourcePool-Resource-SOAP-Lite
     SUBDIR += p5-SOAP
+    SUBDIR += p5-SOAP-Amazon-S3
     SUBDIR += p5-SOAP-Data-Builder
     SUBDIR += p5-SOAP-Lite
     SUBDIR += p5-SOAP-MySOAP
