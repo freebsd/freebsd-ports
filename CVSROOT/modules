@@ -11532,6 +11532,7 @@ pear-Validate_Finance_CreditCard	ports/devel/pear-Validate_Finance_CreditCard
 pear-Var_Dump	ports/devel/pear-Var_Dump
 pear-XML_Beautifier	ports/textproc/pear-XML_Beautifier
 pear-XML_DTD	ports/textproc/pear-XML_DTD
+pear-XML_Feed_Parser	ports/textproc/pear-XML_Feed_Parser
 pear-XML_HTMLSax	ports/textproc/pear-XML_HTMLSax
 pear-XML_NITF	ports/devel/pear-XML_NITF
 pear-XML_Parser	ports/devel/pear-XML_Parser
