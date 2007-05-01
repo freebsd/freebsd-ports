@@ -1,6 +1,6 @@
---- configure.orig	Fri Dec  8 20:33:49 2006
-+++ configure	Sun Dec 10 09:40:46 2006
-@@ -2412,8 +2412,7 @@
+--- configure.orig	Mon Apr 30 18:01:36 2007
++++ configure	Tue May  1 08:22:07 2007
+@@ -2483,8 +2483,7 @@
  done
  if test -z "$ac_aux_dir"; then
    { { echo "$as_me:$LINENO: error: cannot find install-sh or install.sh in autotools \"$srcdir\"/autotools" >&5
@@ -10,7 +10,7 @@
  fi
  
  # These three variables are undocumented and unsupported,
-@@ -37873,8 +37872,7 @@
+@@ -40476,8 +40475,7 @@
          if test -n "${enable_dv}"
          then
            { { echo "$as_me:$LINENO: error: cannot find libraw1394 headers" >&5
@@ -20,7 +20,7 @@
          fi
  
  fi
-@@ -37893,8 +37891,7 @@
+@@ -40496,8 +40494,7 @@
              { echo "$as_me:$LINENO: result: no" >&5
  echo "${ECHO_T}no" >&6; }
        { { echo "$as_me:$LINENO: error: cannot cd to ${real_dv_raw1394_tree}" >&5
@@ -30,7 +30,7 @@
      fi
      if test -f "${real_dv_raw1394_tree}/src/.libs/libraw1394.a"
      then
-@@ -38113,8 +38110,7 @@
+@@ -40716,8 +40713,7 @@
          if test -n "${enable_dv}"
          then
            { { echo "$as_me:$LINENO: error: cannot find libavc1394 headers" >&5
@@ -40,3 +40,16 @@
          fi
  
  fi
+@@ -62436,12 +62432,6 @@
+ 
+   if test "${WX_CONFIG}" != "no" -a "${CXX}" != ""
+   then
+-    if expr 2.6.0 \> `${WX_CONFIG} --version` >/dev/null ||  expr 2.7.0 \<= `${WX_CONFIG} --version` >/dev/null
+-    then
+-      { { echo "$as_me:$LINENO: error: You need wxWidgets of the 2.6 branch. Please upgrade/downgrade and try again. Better yet, you can configure with --disable-wxwidgets." >&5
+-echo "$as_me: error: You need wxWidgets of the 2.6 branch. Please upgrade/downgrade and try again. Better yet, you can configure with --disable-wxwidgets." >&2;}
+-   { (exit 1); exit 1; }; }
+-    fi
+     ac_ext=cpp
+ ac_cpp='$CXXCPP $CPPFLAGS'
+ ac_compile='$CXX -c $CXXFLAGS $CPPFLAGS conftest.$ac_ext >&5'

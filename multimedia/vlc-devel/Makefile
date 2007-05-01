@@ -9,22 +9,22 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	0.8.6b
-PORTREVISION=	1
+DISTVERSION=	0.9.0.20070501
 PORTEPOCH=	2
 CATEGORIES=	multimedia audio ipv6 net www
-MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
-		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${DISTVERSION}/ \
-		ftp://ftp.crans.org/pub/videolan/vlc/${DISTVERSION}/ \
-		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${DISTVERSION}/
+MASTER_SITES=	http://nightlies.videolan.org/build/source/
+#MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
+#		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${DISTVERSION}/ \
+#		ftp://ftp.crans.org/pub/videolan/vlc/${DISTVERSION}/ \
+#		ftp://videolan.cs.pu.edu.tw/Windows/VideoLAN/vlc/${DISTVERSION}/
 PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}-snapshot-${DISTVERSION:S/0.9.0.//}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Multimedia streaming server and player for various audio/video formats
 
 LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel
-
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 
 OPTIONS+=	A52 "a52 audio support, many DVDs use this" On
@@ -48,6 +48,7 @@ OPTIONS+=	MATROSKA "Matroska Container Format support" On
 OPTIONS+=	MPEG2 "Mpeg-2 audio/video decoder Support" On
 OPTIONS+=	NCURSES "Enable ncueses (console) interface" Off
 OPTIONS+=	OGG "Ogg audio decoder support" On
+OPTIONS+=	QT4 "QT4 Interface" On
 OPTIONS+=	REALAUDIO "Real audio(R) support" On
 OPTIONS+=	SAMBA "SAMBA Access module" On
 OPTIONS+=	SDL "SDL video output" On
@@ -60,8 +61,10 @@ OPTIONS+=	THEORA "OGG/Vorbis video codec support" Off
 OPTIONS+=	TWOLAME "Twolame mpeg2 audio encoder support" Off
 OPTIONS+=	VORBIS "Vorbis support" On
 OPTIONS+=	WIN32_CODECS "win32 multimedia DLL's" Off
+OPTIONS+=	WXGTK "WxGTK/WxWidgets Interface" Off
 OPTIONS+=	X264 "Enable H.264/AVC codec support" On
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.9.0-svn
 CONFLICTS=	vlc-[0-9]*
 
 WITH_VLC_DEFAULT_FONT?=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
@@ -95,6 +98,9 @@ CONFIGURE_ARGS+=	--enable-ffmpeg \
 			--without-libintl-prefix \
 			--without-dv-raw1394 \
 			--disable-dv
+
+##### BROKEN ###
+CONFIGURE_ARGS+=	--disable-opengl
 
 MAN1=		vlc.1 \
 		vlc-config.1
@@ -158,10 +164,19 @@ DEFAULT_CDROM_DEVICE=${WITH_CDROM_DEVICE}
 DEFAULT_CDROM_DEVICE=/dev/acd0
 .endif
 
+.if !defined(WITHOUT_QT4)
+USE_QT_VER+=	4
+QT_COMPONENTS+=	gui corelib
+.include "${PORTSDIR}/Mk/bsd.kde.mk"
+CONFIGURE_ARGS+=--enable-qt4
+.else
+CONFIGURE_ARGS+=--disable-qt4
+.endif
+
 .if defined(WITH_SKINS) && !defined(WITHOUT_SKINS)
 LIB_DEPENDS+=	tar.0:${PORTSDIR}/devel/libtar
 CONFIGURE_ARGS+=--enable-skins2
-.undef WITHOUT_WXGTK
+WITH_WXGTK=yes
 .else
 CONFIGURE_ARGS+=--disable-skins2
 .endif
@@ -173,7 +188,7 @@ CONFIGURE_ARGS+=--enable-loader
 CONFIGURE_ARGS+=--disable-loader
 .endif
 
-.if !defined(WITHOUT_WXGTK)
+.if defined(WITH_WXGTK)
 USE_WX=		2.8
 WX_UNICODE=	yes
 CONFIGURE_ARGS+=--enable-wxwidgets
@@ -327,9 +342,9 @@ CONFIGURE_ARGS+=--disable-daap
 
 .if !defined(WITHOUT_DTS)
 LIB_DEPENDS+=	dca.0:${PORTSDIR}/multimedia/libdca
-CONFIGURE_ARGS+=--enable-dts
+CONFIGURE_ARGS+=--enable-dca
 .else
-CONFIGURE_ARGS+=--disable-dts
+CONFIGURE_ARGS+=--disable-dca
 .endif
 
 .if defined(WITHOUT_HTTPD)
