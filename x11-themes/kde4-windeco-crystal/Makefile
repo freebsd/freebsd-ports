@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	crystal
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	kde-windeco-
@@ -16,7 +16,6 @@ MAINTAINER=	decept0@gmail.com
 COMMENT=	Transparent KDE window decoration
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_KDEBASE_VER=3
 USE_AUTOTOOLS=	libtool:15
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
