@@ -42,7 +42,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/HTML.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Image.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Iterator.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Math.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Pod.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/Procedural.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Template/Plugin/String.pm
@@ -114,7 +113,6 @@ share/tt2/docs/html/Modules/Template/Plugin/Format.html
 share/tt2/docs/html/Modules/Template/Plugin/HTML.html
 share/tt2/docs/html/Modules/Template/Plugin/Image.html
 share/tt2/docs/html/Modules/Template/Plugin/Iterator.html
-share/tt2/docs/html/Modules/Template/Plugin/Math.html
 share/tt2/docs/html/Modules/Template/Plugin/Pod.html
 share/tt2/docs/html/Modules/Template/Plugin/Procedural.html
 share/tt2/docs/html/Modules/Template/Plugin/String.html
@@ -199,7 +197,6 @@ share/tt2/docs/src/Modules/Template/Plugin/Format.html
 share/tt2/docs/src/Modules/Template/Plugin/HTML.html
 share/tt2/docs/src/Modules/Template/Plugin/Image.html
 share/tt2/docs/src/Modules/Template/Plugin/Iterator.html
-share/tt2/docs/src/Modules/Template/Plugin/Math.html
 share/tt2/docs/src/Modules/Template/Plugin/Pod.html
 share/tt2/docs/src/Modules/Template/Plugin/Procedural.html
 share/tt2/docs/src/Modules/Template/Plugin/String.html
