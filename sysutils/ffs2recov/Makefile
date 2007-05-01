@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN8=		ffs2recov.8
 PLIST_FILES=	sbin/ffs2recov
 
-MAKE_ENV=	BINDIR=${PREFIX}/sbin MANDIR=${MANPREFIX}/man/man
+MAKE_ENV=	BINDIR=${PREFIX}/sbin MANDIR=${MANPREFIX}/man/man \
+		WARNS=0
 
 .include <bsd.port.mk>
