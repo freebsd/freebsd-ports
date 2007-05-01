@@ -1,0 +1,9 @@
+This package adds an element to the PEAR::HTML_QuickForm package to dynamically
+create an HTML input text element that at every keypressed javascript event,
+returns a list of options in a dynamic dropdown select box
+(live dropdown select). This element use AJAX (Communication from JavaScript
+to your browser without reloading the page).
+This type of livesearch is useful when you have a form with a dropdown list
+with a large number of row.
+
+WWW: http://pear.php.net/package/HTML_QuickForm_Livesearch/

@@ -1,0 +1,27 @@
+# Ports collection makefile for:  pear-HTML_QuickForm_Livesearch
+# Date created:			  01 Mai 2007
+# Whom:				  Martin Wilke <miwi@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	HTML_QuickForm_Livesearch
+PORTVERSION=	0.3.2
+CATEGORIES=	devel www pear
+
+MAINTAINER=	miwi@FreeBSD.org
+COMMENT=	Element for PEAR::HTML_QuickForm to enable a suggest search.
+
+BUILD_DEPENDS=	${PEARDIR}/HTML/QuickForm.php:${PORTSDIR}/devel/pear-HTML_QuickForm \
+		${PEARDIR}/HTML/AJAX.php:${PORTSDIR}/www/pear-HTML_AJAX
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+CATEGORY=	HTML/QuickForm
+FILES=		live.js livesearch_select.php
+EXAMPLES=	auto_server.php index.php live.js livesearch.class.php \
+		myfunction.php shadow.gif shadowAlpha.png style.css
+_EXAMPLESDIR=	example
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/devel/pear/bsd.pear.mk"
+.include <bsd.port.post.mk>
