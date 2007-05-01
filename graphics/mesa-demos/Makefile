@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	demos
-PORTVERSION=	6.5.2
+PORTVERSION=	6.5.3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mesa3d/
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	mesa-
 DISTFILES=	MesaDemos-${PORTVERSION}${EXTRACT_SUFX} \
 		MesaLib-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	araujo@bsdmail.org
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	OpenGL demos distributed with Mesa
 
 LIB_DEPENDS=	glut.4:${PORTSDIR}/graphics/libglut
