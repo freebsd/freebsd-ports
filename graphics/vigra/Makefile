@@ -10,7 +10,7 @@
 # The hugin port is a gui interface to interact with panorama tools.
 
 PORTNAME=	vigra
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://kogs-www.informatik.uni-hamburg.de/~koethe/vigra/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -19,12 +19,12 @@ MAINTAINER=	vd@FreeBSD.org
 COMMENT=	VIGRA stands for "Vision with Generic Algorithms"
 
 USE_AUTOTOOLS=	libtool:15
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--docdir=${PREFIX}/share/doc/vigra
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 USE_GMAKE=	yes
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .if !defined(WITHOUT_VIGRA_TIFF)
 LIB_DEPENDS+=		tiff.4:${PORTSDIR}/graphics/tiff
@@ -59,5 +59,8 @@ CONFIGURE_ARGS+=	--with-fftw
 .else
 CONFIGURE_ARGS+=	--without-fftw
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e 's/--mode=/-m /g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

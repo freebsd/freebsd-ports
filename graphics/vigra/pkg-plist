@@ -1,5 +1,6 @@
 bin/vigra-config
 include/vigra/accessor.hxx
+include/vigra/affinegeometry.hxx
 include/vigra/array_vector.hxx
 include/vigra/basicgeometry.hxx
 include/vigra/basicimage.hxx
@@ -53,6 +54,7 @@ include/vigra/multi_impex.hxx
 include/vigra/multi_iterator.hxx
 include/vigra/multi_pointoperators.hxx
 include/vigra/navigator.hxx
+include/vigra/noise_normalization.hxx
 include/vigra/nonlineardiffusion.hxx
 include/vigra/numerictraits.hxx
 include/vigra/orientedtensorfilters.hxx
@@ -67,6 +69,7 @@ include/vigra/rgbvalue.hxx
 include/vigra/seededregiongrowing.hxx
 include/vigra/separableconvolution.hxx
 include/vigra/sized_int.hxx
+include/vigra/slanted_edge_mtf.hxx
 include/vigra/splineimageview.hxx
 include/vigra/splines.hxx
 include/vigra/static_assert.hxx
@@ -104,7 +107,7 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/ImportExport.html
 %%DOCSDIR%%/Installation.html
 %%DOCSDIR%%/KernelArgumentObjectFactories.html
-%%DOCSDIR%%/LICENSE
+%%DOCSDIR%%/LICENSE.txt
 %%DOCSDIR%%/MathConstants.html
 %%DOCSDIR%%/MathFunctionality.html
 %%DOCSDIR%%/MultiDimensionalArrays.html
@@ -122,6 +125,7 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/TupleTypes.html
 %%DOCSDIR%%/Utilities.html
 %%DOCSDIR%%/accessor_8hxx-source.html
+%%DOCSDIR%%/affinegeometry_8hxx-source.html
 %%DOCSDIR%%/annotated.html
 %%DOCSDIR%%/array__vector_8hxx-source.html
 %%DOCSDIR%%/basicgeometry_8hxx-source.html
@@ -280,6 +284,8 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/classvigra_1_1NeighborhoodCirculator-members.html
 %%DOCSDIR%%/classvigra_1_1NeighborhoodCirculator.html
 %%DOCSDIR%%/classvigra_1_1NeighborhoodCirculator.png
+%%DOCSDIR%%/classvigra_1_1NoiseNormalizationOptions-members.html
+%%DOCSDIR%%/classvigra_1_1NoiseNormalizationOptions.html
 %%DOCSDIR%%/classvigra_1_1Point2D-members.html
 %%DOCSDIR%%/classvigra_1_1Point2D.html
 %%DOCSDIR%%/classvigra_1_1Point2D.png
@@ -344,6 +350,8 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/classvigra_1_1Size2D-members.html
 %%DOCSDIR%%/classvigra_1_1Size2D.html
 %%DOCSDIR%%/classvigra_1_1Size2D.png
+%%DOCSDIR%%/classvigra_1_1SlantedEdgeMTFOptions-members.html
+%%DOCSDIR%%/classvigra_1_1SlantedEdgeMTFOptions.html
 %%DOCSDIR%%/classvigra_1_1SplineImageView-members.html
 %%DOCSDIR%%/classvigra_1_1SplineImageView.html
 %%DOCSDIR%%/classvigra_1_1SplineImageView0-members.html
@@ -496,6 +504,8 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/form_53.png
 %%DOCSDIR%%/form_54.png
 %%DOCSDIR%%/form_55.png
+%%DOCSDIR%%/form_56.png
+%%DOCSDIR%%/form_57.png
 %%DOCSDIR%%/form_6.png
 %%DOCSDIR%%/form_7.png
 %%DOCSDIR%%/form_8.png
@@ -539,6 +549,7 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/group__MultiArrayToImage.html
 %%DOCSDIR%%/group__MultiIteratorGroup.html
 %%DOCSDIR%%/group__MultiPointoperators.html
+%%DOCSDIR%%/group__NoiseNormalization.html
 %%DOCSDIR%%/group__NonLinearDiffusion.html
 %%DOCSDIR%%/group__PixelNeighborhood.html
 %%DOCSDIR%%/group__PolarColors.html
@@ -551,6 +562,7 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/group__ResamplingConvolutionFilters.html
 %%DOCSDIR%%/group__SeededRegionGrowing.html
 %%DOCSDIR%%/group__SeparableConvolution.html
+%%DOCSDIR%%/group__SlantedEdgeMTF.html
 %%DOCSDIR%%/group__StandardConvolution.html
 %%DOCSDIR%%/group__StandardImageTypes.html
 %%DOCSDIR%%/group__SymmetryDetection.html
@@ -597,6 +609,7 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/namespacevigra_1_1EightNeighborhood.html
 %%DOCSDIR%%/namespacevigra_1_1FourNeighborhood.html
 %%DOCSDIR%%/navigator_8hxx-source.html
+%%DOCSDIR%%/noise__normalization_8hxx-source.html
 %%DOCSDIR%%/nonlineardiffusion_8hxx-source.html
 %%DOCSDIR%%/numerictraits_8hxx-source.html
 %%DOCSDIR%%/orientedtensorfilters_8hxx-source.html
@@ -616,6 +629,7 @@ lib/libvigraimpex.so.2
 %%DOCSDIR%%/seededregiongrowing_8hxx-source.html
 %%DOCSDIR%%/separableconvolution_8hxx-source.html
 %%DOCSDIR%%/sized__int_8hxx-source.html
+%%DOCSDIR%%/slanted__edge__mtf_8hxx-source.html
 %%DOCSDIR%%/smooth_8cxx-example.html
 %%DOCSDIR%%/splineimageview_8hxx-source.html
 %%DOCSDIR%%/splines_8hxx-source.html
