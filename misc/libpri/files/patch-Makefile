@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- Makefile.orig
 +++ Makefile
-@@ -27,7 +27,7 @@
+@@ -27,19 +27,19 @@
  # Uncomment if you want libpri to count number of Q921/Q931 sent/received
  #LIBPRI_COUNTERS=-DLIBPRI_COUNTERS
  
@@ -12,9 +12,7 @@ $FreeBSD$
  
  OSARCH=$(shell uname -s)
  PROC?=$(shell uname -m)
-@@ -35,13 +35,13 @@
- TOBJS=testpri.o
- T2OBJS=testprilib.o
+ 
  STATIC_LIBRARY=libpri.a
 -DYNAMIC_LIBRARY=libpri.so.1.0
 +DYNAMIC_LIBRARY=libpri.so.1
@@ -29,11 +27,16 @@ $FreeBSD$
 +INSTALL_BASE=
 +SOFLAGS = -Wl,-hlibpri.so.1
  LDCONFIG = /sbin/ldconfig
- ifneq (,$(findstring $(OSARCH), Linux GNU/kFreeBSD))
+ ifneq (,$(findstring X$(OSARCH)X, XLinuxX XGNU/kFreeBSDX))
  LDCONFIG_FLAGS=-n
-@@ -84,12 +84,11 @@
- 	mkdir -p $(INSTALL_PREFIX)$(INSTALL_BASE)/lib
- 	mkdir -p $(INSTALL_PREFIX)$(INSTALL_BASE)/include
+@@ -77,15 +77,14 @@
+ 	fi
+ 
+ install: $(STATIC_LIBRARY) $(DYNAMIC_LIBRARY)
+-	mkdir -p $(INSTALL_PREFIX)$(INSTALL_BASE)/lib
+-	mkdir -p $(INSTALL_PREFIX)$(INSTALL_BASE)/include
++	mkdir -p $(INSTALL_PREFIX)/lib
++	mkdir -p $(INSTALL_PREFIX)/include
  ifneq (${OSARCH},SunOS)
 -	install -m 644 libpri.h $(INSTALL_PREFIX)$(INSTALL_BASE)/include
 -	install -m 755 $(DYNAMIC_LIBRARY) $(INSTALL_PREFIX)$(INSTALL_BASE)/lib
@@ -49,7 +52,7 @@ $FreeBSD$
  else
  	install -f $(INSTALL_PREFIX)$(INSTALL_BASE)/include -m 644 libpri.h
  	install -f $(INSTALL_PREFIX)$(INSTALL_BASE)/lib -m 755 $(DYNAMIC_LIBRARY)
-@@ -130,10 +129,6 @@
+@@ -126,10 +125,6 @@
  
  $(DYNAMIC_LIBRARY): $(DYNAMIC_OBJS)
  	$(CC) -shared $(SOFLAGS) -o $@ $(DYNAMIC_OBJS)
