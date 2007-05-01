@@ -16,7 +16,7 @@ MAINTAINER=	aaron@FreeBSD.org
 COMMENT=	The Fastest Lexer in the West
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
-		${SITE_PERL}/XSLoader.pm:${PORTSDIR}/devel/p5-XSLoader
+		${SITE_PERL}/${PERL_ARCH}/XSLoader.pm:${PORTSDIR}/devel/p5-XSLoader
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
