@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/MySOAP/.packlist
+%%SITE_PERL%%/SOAP/MySOAP.pm
+@dirrmtry %%SITE_PERL%%/SOAP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/MySOAP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP
