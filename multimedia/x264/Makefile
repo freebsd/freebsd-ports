@@ -7,7 +7,7 @@
 
 PORTNAME=	x264
 PORTVERSION=	0.0.20070402
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245
@@ -85,8 +85,14 @@ post-patch:
 		${WRKSRC}/Makefile \
 		${WRKSRC}/*/Makefile
 
+post-build:
+	cd ${WRKSRC}/tools && ${MAKE} avc2avi
+
 pre-install:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
 		${WRKSRC}/x264.pc
+
+post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/avc2avi ${PREFIX}/bin
 
 .include <bsd.port.post.mk>
