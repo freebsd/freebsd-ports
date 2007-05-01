@@ -6,24 +6,36 @@
 #
 
 PORTNAME=	enblend
-PORTVERSION=	2.5
+PORTVERSION=	3.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Image Blending with Multiresolution Splines. For panorama images, etc
+COMMENT=	A tool for image blending with multiresolution splines
 
-LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		boost_date_time:${PORTSDIR}/devel/boost
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/pool/pool.hpp:${PORTSDIR}/devel/boost
+LIB_DEPENDS=	GLEW.1:${PORTSDIR}/graphics/glew \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		lcms:${PORTSDIR}/graphics/lcms \
+		glut.4:${PORTSDIR}/graphics/libglut \
+		xmi.1:${PORTSDIR}/graphics/plotutils \
+		tiff.4:${PORTSDIR}/graphics/tiff
 
+USE_GNOME=	gnometarget
+USE_GL=		yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/src/vigra_impex -I${WRKSRC}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-USE_GETOPT_LONG=yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-PLIST_FILES=	bin/enblend
 MAN1=		enblend.1
+PLIST_FILES=	bin/enblend
+
+CPPFLAGS=	-I${WRKSRC}/src/vigra_impex -I${WRKSRC}/include \
+		-I${LOCALBASE}/include -I${X11BASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-ffast-math||g ; \
+		 s|-g -O3||g' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
