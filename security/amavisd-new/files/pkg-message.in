@@ -30,7 +30,8 @@
  amavis_p0fanalyzer_flags.
 
  Configuration templates are available in %%PREFIX%%/etc
- as amavisd.conf-dist, amavisd.conf-sample and amavisd.conf-default.
+ as amavisd.conf-dist, amavisd.conf-sample, amavisd.conf-default
+ and amavisd-custom.conf-dist.
  Documentation is available in %%DOCSDIR%%.
 *******************************************************************
 
