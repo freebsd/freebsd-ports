@@ -7,7 +7,7 @@
 
 PORTNAME=	aircrack-ng
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://download.aircrack-ng.org/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
@@ -23,8 +23,12 @@ PLIST_FILES=	bin/aircrack-ng bin/airdecap-ng bin/packetforge-ng bin/ivstools \
 SUB_FILES=	pkg-message
 
 MAN1=		aircrack-ng.1 airdecap-ng.1 packetforge-ng.1 ivstools.1 \
-		makeivs.1 airodump-ng.1 airtun-ng.1
+		makeivs.1 airodump-ng.1 airtun-ng.1 kstats.1
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+BROKEN=		does not compile
+.endif
 
 .if ${OSVERSION} >= 700000
 ALL_TARGET+=	aireplay-ng
