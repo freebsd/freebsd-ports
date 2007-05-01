@@ -7,6 +7,7 @@
 
 PORTNAME=	bcwipe
 PORTVERSION=	1.6.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.jetico.com/linux/ \
 		http://bsd.desa-hosting.de/distfiles/security/
