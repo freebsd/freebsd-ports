@@ -8,7 +8,7 @@
 
 PORTNAME=	xml
 PORTVERSION=	4.2.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES?=	textproc
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -70,5 +70,9 @@ pre-configure:
 post-configure:
 	${REINPLACE_CMD} -e 's|${PREFIX}/lib/QtXml.pc|${PREFIX}/libdata/pkgconfig/QtXml.pc|g' \
 		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
+			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
+			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
+		${WRKSRC}/../../lib/*Qt*
 
 .include <bsd.port.post.mk>
