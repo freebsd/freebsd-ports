@@ -7,6 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	2007-04-29
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -83,9 +84,8 @@ FFMPEG_LDFLAGS+=		-la52
 CONFIGURE_ARGS+=	--disable-liba52
 .endif
 ## dts
-.ifdef(WITH_DTS) || exists(${LOCALBASE}/lib/libdts.a)
+.ifdef(WITH_DTS) || exists(${LOCALBASE}/lib/libdca.a)
 LIB_DEPENDS+=		dca.0:${PORTSDIR}/multimedia/libdca
-
 CONFIGURE_ARGS+=	--enable-libdts
 .endif
 ## faac
@@ -311,6 +311,7 @@ post-patch:
 post-configure:
 .ifdef(WITH_DTS)
 	@${REINPLACE_CMD} -E \
+		-e 's|-ldts|${LOCALBASE}/lib/libdts_pic.a|' \
 		-e 's|(-lx264)|-L${LOCALBASE}/lib \1|' \
 			${WRKSRC}/config.mak \
 			${WRKSRC}/libavcodec/Makefile
