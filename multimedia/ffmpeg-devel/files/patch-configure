@@ -1,5 +1,5 @@
 --- configure.orig	Fri Apr 27 03:13:50 2007
-+++ configure	Mon Apr 30 09:59:52 2007
++++ configure	Tue May  1 06:17:09 2007
 @@ -208,11 +208,11 @@
  
  # "tr '[a-z]' '[A-Z]'" is a workaround for Solaris tr not grokking "tr a-z A-Z"
@@ -32,6 +32,15 @@
    ;;
    # armv4l is a subset of armv[567]*l
    arm|armv[4567]*l)
+@@ -1591,7 +1585,7 @@
+ enabled amr_nb     && require libamrnb amrnb/interf_dec.h Speech_Decode_Frame_init -lamrnb -lm
+ enabled amr_wb     && require libamrwb amrwb/dec_if.h D_IF_init -lamrwb -lm
+ enabled liba52     && require liba52 a52dec/a52.h a52_init -la52
+-enabled libdts     && require libdts dts.h dts_init -ldts -lm
++enabled libdts     && require libdca dca.h dca_init -ldca -lm
+ enabled libgsm     && require libgsm gsm.h gsm_create -lgsm
+ enabled libmp3lame && require LAME lame/lame.h lame_init -lmp3lame -lm
+ enabled libtheora  && require libtheora theora/theora.h theora_info_init -ltheora -logg
 @@ -1749,14 +1743,14 @@
  # not all compilers support -Os
  test "$optimize" = "small" && check_cflags -Os
