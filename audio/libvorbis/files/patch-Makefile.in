@@ -9,6 +9,6 @@ $FreeBSD$
  AUTOMAKE_OPTIONS = foreign dist-zip
 -SUBDIRS = lib include doc examples vq
 +SUBDIRS = lib include $(DOC) examples vq
- m4datadir = $(datadir)/aclocal
+ m4datadir = $(prefix)/share/aclocal
  m4data_DATA = vorbis.m4
- pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfigdir = $(prefix)/libdata/pkgconfig
