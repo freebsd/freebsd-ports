@@ -34,6 +34,59 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0ac89b39-f829-11db-b55c-000e0c6d38a9">
+    <topic>qemu: several vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>qemu</name>
+	<name>qemu-devel</name>
+	<range><lt>0.9.0_1</lt></range>
+	<range><ge>0.9.0s.20070101*</ge><lt>0.9.0s.20070405_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>debian-security-announce@lists.debian.org reports:</p>
+	<blockquote cite="http://lists.debian.org/debian-security-announce/debian-security-announce-2007/msg00040.html">
+	  <p>Several vulnerabilities have been discovered in the QEMU
+	  processor emulator, which may lead to the execution of arbitrary
+	  code or denial of service. The Common Vulnerabilities and Exposures
+	  project identifies the following problems:</p>
+	  <p>CVE-2007-1320<br/>Tavis Ormandy discovered that a memory
+	  management routine of the Cirrus video driver performs insufficient
+	  bounds checking, which might allow the execution of arbitrary code
+	  through a heap overflow.</p>
+	  <p>CVE-2007-1321<br/>Tavis Ormandy discovered that the NE2000
+	  network driver and the socket code perform insufficient input
+	  validation, which might allow the execution of arbitrary code
+	  through a heap overflow.</p>
+	  <p>CVE-2007-1322<br/>Tavis Ormandy discovered that the "icebp"
+	  instruction can be abused to terminate the emulation, resulting
+	  in denial of service.</p>
+	  <p>CVE-2007-1323<br/>Tavis Ormandy discovered that the NE2000
+	  network driver and the socket code perform insufficient input
+	  validation, which might allow the execution of arbitrary code
+	  through a heap overflow.</p>
+	  <p>CVE-2007-1366<br/>Tavis Ormandy discovered that the "aam"
+	  instruction can be abused to crash qemu through a division by
+	  zero, resulting in denial of service.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-1320</cvename>
+      <cvename>CVE-2007-1321</cvename>
+      <cvename>CVE-2007-1322</cvename>
+      <cvename>CVE-2007-1323</cvename>
+      <cvename>CVE-2007-1366</cvename>
+      <mlist msgid="20070501100313.GA4074@galadriel.inutil.org">http://lists.debian.org/debian-security-announce/debian-security-announce-2007/msg00040.html</mlist>
+    </references>
+    <dates>
+      <discovery>2007-05-01</discovery>
+      <entry>2007-05-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="632c98be-aad2-4af2-849f-41a6862afd6a">
     <topic>p5-Imager - possibly exploitable buffer overflow</topic>
     <affects>
