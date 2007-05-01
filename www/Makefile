@@ -75,6 +75,7 @@
     SUBDIR += checkbot
     SUBDIR += cheetah
     SUBDIR += cherokee
+    SUBDIR += cherokee-devel
     SUBDIR += chimera
     SUBDIR += chpasswd
     SUBDIR += chtml
