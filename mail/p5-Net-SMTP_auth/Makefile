@@ -25,10 +25,6 @@ MAN3=		Net::SMTP_auth.3
 
 .include <bsd.port.pre.mk>
 
-#.if ${PERL_LEVEL} < 500600
-#IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 then try again
-#.endif
-
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
 RUN_DEPENDS+=	${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
