@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ZendOptimizer
-DISTVERSION=	3.2.2
+DISTVERSION=	3.2.8
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.zend.com/optimizer/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-freebsd${VER}-${ARCH}
@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-freebsd${VER}-${ARCH}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	An optimizer for PHP code
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 USE_PHP=	yes
 
@@ -28,6 +28,9 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 IGNORE=		this port is for FreeBSD 5 or above
 .else
 .if ${OSVERSION} < 600000
+.if ${ARCH} != "i386"
+IGNORE=		this port is for FreeBSD 6 or above
+.endif
 VER=		5.4
 .else
 VER=		6.0
