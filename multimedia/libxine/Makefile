@@ -17,7 +17,6 @@ DISTNAME=	${PORTNAME}-lib-${PORTVERSION}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libdts.a:${PORTSDIR}/multimedia/libdts
 LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		speex.1:${PORTSDIR}/audio/speex \
@@ -30,7 +29,8 @@ LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		modplug.0:${PORTSDIR}/audio/libmodplug \
 		vcdinfo.2:${PORTSDIR}/multimedia/vcdimager \
 		theora.2:${PORTSDIR}/multimedia/libtheora \
-		mad.2:${PORTSDIR}/audio/libmad
+		mad.2:${PORTSDIR}/audio/libmad \
+		dca.0:${PORTSDIR}/multimedia/libdca
 
 USE_GCC=	3.4+
 USE_GETTEXT=	yes

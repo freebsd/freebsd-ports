@@ -1,6 +1,13 @@
+bin/dcadec
 bin/dtsdec
+bin/extract_dca
 bin/extract_dts
+include/dca.h
 include/dts.h
+lib/libdca.a
+lib/libdca.la
+lib/libdca.so
+lib/libdca.so.0
 lib/libdts.a
-lib/libdts_pic.a
+libdata/pkgconfig/libdca.pc
 libdata/pkgconfig/libdts.pc

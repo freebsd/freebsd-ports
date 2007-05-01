@@ -507,7 +507,7 @@ CONFIGURE_ARGS+=	--disable-xmms
 .if !defined(WITHOUT_DTS)
 CFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-libdts
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libdts.a:${PORTSDIR}/multimedia/libdts
+LIB_DEPENDS+=	dca.0:${PORTSDIR}/multimedia/libdca
 .else
 CONFIGURE_ARGS+=	--disable-libdts
 .endif

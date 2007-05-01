@@ -84,7 +84,7 @@ CONFIGURE_ARGS+=	--disable-liba52
 .endif
 ## dts
 .ifdef(WITH_DTS) || exists(${LOCALBASE}/lib/libdts.a)
-BUILD_DEPENDS+=		${LOCALBASE}/lib/libdts.a:${PORTSDIR}/multimedia/libdts
+LIB_DEPENDS+=		dca.0:${PORTSDIR}/multimedia/libdca
 
 CONFIGURE_ARGS+=	--enable-libdts
 .endif
@@ -311,7 +311,6 @@ post-patch:
 post-configure:
 .ifdef(WITH_DTS)
 	@${REINPLACE_CMD} -E \
-		-e 's|-ldts|${LOCALBASE}/lib/libdts_pic.a|' \
 		-e 's|(-lx264)|-L${LOCALBASE}/lib \1|' \
 			${WRKSRC}/config.mak \
 			${WRKSRC}/libavcodec/Makefile
