@@ -6,23 +6,20 @@
 #
 
 PORTNAME=	irssi-scripts
-PORTVERSION=	20061009
+PORTVERSION=	20070412
 CATEGORIES=	irc
 MASTER_SITES=	http://ftp.debian.org/debian/pool/main/i/${PORTNAME}/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of useful scripts for the irssi IRC-client
 
 RUN_DEPENDS=	irssi:${PORTSDIR}/irc/irssi
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 NO_BUILD=	yes
 
 do-install:
-	cd ${WRKSRC} &&	tar xzf scripts.tar.gz && cd scripts && \
-	${FIND} . | ${CPIO} --quiet -pdm -L -R ${LIBOWN}:${LIBGRP} \
-	${PREFIX}/share/irssi/scripts
+	${MKDIR} ${PREFIX}/share/irssi/scripts
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/*.pl ${PREFIX}/share/irssi/scripts
 
 .include <bsd.port.mk>

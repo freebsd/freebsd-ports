@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 share/irssi/scripts/8-ball.pl
 share/irssi/scripts/UNIBG-autoident.pl
 share/irssi/scripts/accent.pl
@@ -7,12 +8,14 @@ share/irssi/scripts/active_notify.pl
 share/irssi/scripts/ai.pl
 share/irssi/scripts/aidle.pl
 share/irssi/scripts/akftp.pl
+share/irssi/scripts/akilluser.pl
 share/irssi/scripts/alame.pl
 share/irssi/scripts/anotherway.pl
 share/irssi/scripts/antiplenk.pl
 share/irssi/scripts/apm.pl
 share/irssi/scripts/armeija.pl
 share/irssi/scripts/ascii.pl
+share/irssi/scripts/auto_away.pl
 share/irssi/scripts/auto_whois.pl
 share/irssi/scripts/autoaway.pl
 share/irssi/scripts/autocycle.pl
@@ -42,6 +45,8 @@ share/irssi/scripts/bestoiber.pl
 share/irssi/scripts/bgta.pl
 share/irssi/scripts/binary.pl
 share/irssi/scripts/bitlbee_blist.pl
+share/irssi/scripts/bitlbee_join_notice.pl
+share/irssi/scripts/bitlbee_nick_change.pl
 share/irssi/scripts/bitlbee_tab_completion.pl
 share/irssi/scripts/bitlbee_typing_notice.pl
 share/irssi/scripts/blowjob.pl
@@ -50,8 +55,8 @@ share/irssi/scripts/calc.pl
 share/irssi/scripts/callerid.pl
 share/irssi/scripts/centericq.pl
 share/irssi/scripts/cgrep.pl
+share/irssi/scripts/challenge.pl
 share/irssi/scripts/chanact.pl
-share/irssi/scripts/chanact.pl.orig
 share/irssi/scripts/chanfull.pl
 share/irssi/scripts/chanfull_duden.pl
 share/irssi/scripts/chanpeak.pl
@@ -240,6 +245,7 @@ share/irssi/scripts/ppl.pl
 share/irssi/scripts/q_username.pl
 share/irssi/scripts/query.pl
 share/irssi/scripts/queryresume.pl
+share/irssi/scripts/quiet.pl
 share/irssi/scripts/quitrand.pl
 share/irssi/scripts/quiz.pl
 share/irssi/scripts/quizgr.pl
@@ -292,9 +298,7 @@ share/irssi/scripts/tinyurl.pl
 share/irssi/scripts/title.pl
 share/irssi/scripts/tlock.pl
 share/irssi/scripts/topic-diff.pl
-share/irssi/scripts/topic-diff.pl.orig
 share/irssi/scripts/topics.pl
-share/irssi/scripts/topics.pl.orig
 share/irssi/scripts/topicsed.pl
 share/irssi/scripts/trackbar.pl
 share/irssi/scripts/tracknick.pl
@@ -335,5 +339,5 @@ share/irssi/scripts/xmms.pl
 share/irssi/scripts/xmms2.pl
 share/irssi/scripts/xmmsinfo.pl
 share/irssi/scripts/xqf.pl
-@dirrm share/irssi/scripts
-@dirrm share/irssi
+@dirrmtry share/irssi/scripts
+@dirrmtry share/irssi
