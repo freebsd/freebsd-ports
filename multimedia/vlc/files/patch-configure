@@ -1,6 +1,6 @@
---- configure.orig	Fri Dec  8 20:33:49 2006
-+++ configure	Sun Dec 10 09:40:46 2006
-@@ -2412,8 +2412,7 @@
+--- configure.orig	Tue Apr 17 17:46:17 2007
++++ configure	Tue May  1 08:56:07 2007
+@@ -2444,8 +2444,7 @@
  done
  if test -z "$ac_aux_dir"; then
    { { echo "$as_me:$LINENO: error: cannot find install-sh or install.sh in autotools \"$srcdir\"/autotools" >&5
@@ -10,7 +10,7 @@
  fi
  
  # These three variables are undocumented and unsupported,
-@@ -37873,8 +37872,7 @@
+@@ -37905,8 +37904,7 @@
          if test -n "${enable_dv}"
          then
            { { echo "$as_me:$LINENO: error: cannot find libraw1394 headers" >&5
@@ -20,7 +20,7 @@
          fi
  
  fi
-@@ -37893,8 +37891,7 @@
+@@ -37925,8 +37923,7 @@
              { echo "$as_me:$LINENO: result: no" >&5
  echo "${ECHO_T}no" >&6; }
        { { echo "$as_me:$LINENO: error: cannot cd to ${real_dv_raw1394_tree}" >&5
@@ -30,7 +30,7 @@
      fi
      if test -f "${real_dv_raw1394_tree}/src/.libs/libraw1394.a"
      then
-@@ -38113,8 +38110,7 @@
+@@ -38145,8 +38142,7 @@
          if test -n "${enable_dv}"
          then
            { { echo "$as_me:$LINENO: error: cannot find libavc1394 headers" >&5
@@ -40,3 +40,20 @@
          fi
  
  fi
+@@ -43314,15 +43310,11 @@
+ echo "${ECHO_T}$ac_cv_lib_dts_pic_dts_free" >&6; }
+ if test $ac_cv_lib_dts_pic_dts_free = yes; then
+ 
+-  for element in ffmpeg; do
+-    eval "LDFLAGS_${element}="'"'"-ldts_pic "'$'"{LDFLAGS_${element}} "'"'
+-    am_modules_with_ldflags="${am_modules_with_ldflags} ${element}"
+-  done
+ 
+ else
+ 
+   for element in ffmpeg; do
+-    eval "LDFLAGS_${element}="'"'"-ldts "'$'"{LDFLAGS_${element}} "'"'
++    eval "LDFLAGS_${element}="'"'"-ldca "'$'"{LDFLAGS_${element}} "'"'
+     am_modules_with_ldflags="${am_modules_with_ldflags} ${element}"
+   done
+ 

@@ -10,6 +10,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	0.8.6b
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${DISTVERSION}/ \
@@ -334,7 +335,7 @@ CONFIGURE_ARGS+=--disable-daap
 .endif
 
 .if !defined(WITHOUT_DTS)
-LIB_DEPENDS+=	dca.0:${PORTSDIR}/multimedia/libdca
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libdts.a:${PORTSDIR}/multimedia/libdts
 CONFIGURE_ARGS+=--enable-dts
 .else
 CONFIGURE_ARGS+=--disable-dts
