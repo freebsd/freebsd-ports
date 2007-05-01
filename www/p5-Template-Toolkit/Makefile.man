@@ -44,7 +44,6 @@ MAN3+=	Template::Plugin::Format.3
 MAN3+=	Template::Plugin::HTML.3
 MAN3+=	Template::Plugin::Image.3
 MAN3+=	Template::Plugin::Iterator.3
-MAN3+=	Template::Plugin::Math.3
 MAN3+=	Template::Plugin::Pod.3
 MAN3+=	Template::Plugin::Procedural.3
 MAN3+=	Template::Plugin::String.3

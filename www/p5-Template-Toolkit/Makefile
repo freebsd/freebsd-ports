@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Template-Toolkit
-PORTVERSION=	2.18
+PORTVERSION=	2.19
 CATEGORIES=	www textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Template
@@ -58,9 +58,5 @@ CONFIGURE_ENV=	|
 post-patch:
 	${PERL} -pi -e 's,/usr/local/tt2,${TARGETDIR}/share/tt2,g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
-.endif
 
 .include <bsd.port.post.mk>
