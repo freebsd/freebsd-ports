@@ -62,6 +62,7 @@
     SUBDIR += qhacc
     SUBDIR += qtstalker
     SUBDIR += quantlib
+    SUBDIR += sabernetdcs-client
     SUBDIR += sql-ledger
     SUBDIR += tinyerp-server
     SUBDIR += venice
