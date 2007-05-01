@@ -67,6 +67,7 @@
     SUBDIR += noffle
     SUBDIR += nzbget
     SUBDIR += nzbperl
+    SUBDIR += openftd
     SUBDIR += p5-Gateway
     SUBDIR += p5-NNML
     SUBDIR += p5-NNTPClient
