@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 %%WWWDIR%%/blank.gif
+%%WWWDIR%%/easy/load.js
 %%WWWDIR%%/extensions/AMSsymbols.js
 %%WWWDIR%%/extensions/HTML.js
 %%WWWDIR%%/extensions/bbox.js
@@ -16,6 +17,7 @@
 %%WWWDIR%%/jsMath-BaKoMa-fonts.js
 %%WWWDIR%%/jsMath-autoload.html
 %%WWWDIR%%/jsMath-controls.html
+%%WWWDIR%%/jsMath-easy-load.js
 %%WWWDIR%%/jsMath-fallback-mac-mozilla.js
 %%WWWDIR%%/jsMath-fallback-mac-msie.js
 %%WWWDIR%%/jsMath-fallback-mac.js
@@ -39,6 +41,10 @@
 %%WWWDIR%%/plugins/smallFonts.js
 %%WWWDIR%%/plugins/spriteImageFonts.js
 %%WWWDIR%%/plugins/tex2math.js
+%%WWWDIR%%/test/index-images.html
+%%WWWDIR%%/test/index.html
+%%WWWDIR%%/test/jsMath40.jpg
+%%WWWDIR%%/test/sample.html
 %%WWWDIR%%/uncompressed/def.js
 %%WWWDIR%%/uncompressed/font.js
 %%WWWDIR%%/uncompressed/jsMath-fallback-mac.js
@@ -46,7 +52,9 @@
 %%WWWDIR%%/uncompressed/jsMath-fallback-symbols.js
 %%WWWDIR%%/uncompressed/jsMath-fallback-unix.js
 %%WWWDIR%%/uncompressed/jsMath.js
+@dirrm %%WWWDIR%%/easy
 @dirrm %%WWWDIR%%/extensions
 @dirrm %%WWWDIR%%/plugins
+@dirrm %%WWWDIR%%/test
 @dirrm %%WWWDIR%%/uncompressed
 @dirrmtry %%WWWDIR%%

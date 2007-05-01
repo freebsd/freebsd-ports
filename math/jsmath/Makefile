@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	jsMath
-PORTVERSION=	3.3g
+PORTVERSION=	3.4a
 CATEGORIES=	math www
-MASTER_SITES=	http://www.math.union.edu/~dpvc/jsMath/download/ \
-		http://nivi.interfree.it/distfiles/${PORTNAME}/
+MASTER_SITES=	SFE
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A Javascript tool for including mathematics in web pages
