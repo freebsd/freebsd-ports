@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	julien.gabel@thilelli.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small weblog engine written in Bash for the command line
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
