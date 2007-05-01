@@ -15,3 +15,4 @@ share/qt4/phrasebooks/russian.qph
 share/qt4/phrasebooks/spanish.qph
 share/qt4/phrasebooks/swedish.qph
 @dirrm share/qt4/phrasebooks
+@dirrmtry share/qt4
