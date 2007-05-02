@@ -21,16 +21,10 @@ MLINKS=		cdctl.1 eject.1 cdctl.1 pause.1
 PLIST_FILES=	sbin/autocd bin/acdplay bin/cdctl bin/pause bin/eject
 PORTDOCS=	README.rus.html
 
-.include <bsd.port.pre.mk>
-
 USE_RC_SUBR=	yes
 RC_SUFX=	.sh
 SED_SCRIPT+=	-e '{ s,%%PREFIX%%,${PREFIX},g; s,%%RC_SUBR%%,${RC_SUBR},g; }'
 PLIST_FILES+=	etc/rc.d/autocd${RC_SUFX}
-
-.if ${OSVERSION} < 400010
-LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-.endif
 
 post-build:
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/autocd.sh >${WRKDIR}/autocd.sh
@@ -42,4 +36,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
