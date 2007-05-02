@@ -31,10 +31,4 @@ MAKE_ARGS=	CXXFLAGS="${CXXFLAGS}"
 MAN1=		rvm.1
 PLIST_FILES=	bin/rvm
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
