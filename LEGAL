@@ -380,7 +380,6 @@ lgrind/*		print/lgrind		Contains non-free code written by
 libdvdcss-*.tar.bz2	multimedia/libdvdcss	CSS code may violate the DMCA
 libidea-*		security/libidea	Crypto; export-controlled
 libots-*.alpha.rpm	lang/compaq-cc		Distribution not allowed
-LimeWireOther.zip	net-p2p/limewire	No redistribution allowed
 Linux-ACU-Driver-v*	sysutils/linux-acu	Redistribution not allowed
 Linux_MegaCli_*		sysutils/linux-megacli	Redistribution not allowed
 rpm/i386/fedora/4/gtk2-* x11-toolkits/linux-gtk2 LGPL binary, no source
