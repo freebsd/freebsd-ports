@@ -1364,6 +1364,7 @@ clisp-hyperspec	ports/devel/clisp-hyperspec
 clit		ports/textproc/clit
 clive		ports/multimedia/clive
 cln		ports/math/cln
+cloc		ports/misc/cloc
 clockspeed	ports/sysutils/clockspeed
 clockspeed-conf	ports/sysutils/clockspeed-conf
 clog		ports/net-mgmt/clog
