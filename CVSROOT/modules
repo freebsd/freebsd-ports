@@ -3462,6 +3462,7 @@ giftoxic	ports/net-p2p/giftoxic
 giftrans	ports/graphics/giftrans
 giftui		ports/net-p2p/giftui
 gigabase	ports/databases/gigabase
+gigi		ports/x11-toolkits/gigi
 gillo		ports/games/gillo
 gimageview	ports/graphics/gimageview
 gimmie		ports/deskutils/gimmie
