@@ -1,0 +1,22 @@
+Torrent Swapper is an open sourced sociable peer to peer file-sharing client
+based on the Bittorrent protocol that is ideal for high-speed distribution of
+large files that has a basic understanding of human friendships, of user
+tastes in content, and of Internet connectivity between users. Torrent Swapper
+supports simultaneous downloads, download queue, selected downloads in torrent
+package, fast-resume, disk cache, speed limits, port mapping, proxy,
+ip-filter, etc.
+
+Features include:
+
+* Amazon-like recommendations to get interesting files.
+* Doubling the download speed by using the upload capacity of friends.
+* Real-time P2P file sharing with P2P video streaming.
+* Showing the locations of seeders / leechers of the same content with
+  city-level accuracy on a world map.
+* Multiple downloads in a single window.
+* Queueing system with priority.
+* Supporing pause, stop, resume, queue, remove operations.
+* Supporting global setting such as upload and download limiting.
+* Supporting local setting for each torrent as well.
+
+WWW: http://bit-torrent.sourceforge.net/
