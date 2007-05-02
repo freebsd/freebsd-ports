@@ -116,6 +116,7 @@
     SUBDIR += rtorrent
     SUBDIR += rtorrent-devel
     SUBDIR += squall
+    SUBDIR += torrent_swapper
     SUBDIR += torrentflux
     SUBDIR += torrentsniff
     SUBDIR += trackerbt
