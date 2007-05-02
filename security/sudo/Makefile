@@ -37,9 +37,15 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 
 OPTIONS=	LDAP	"With LDAP support" off \
 		OPIE	"With OPIE support" off \
+		INSULTS "With all insults" off \
 		SHELL_SETS_HOME "Set HOME env to target user in shell mode" off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_INSULTS)
+CONFIGURE_ARGS+=--with-insults
+CONFIGURE_ARGS+=--with-all-insults
+.endif
 
 .if defined(WITH_LDAP)
 USE_OPENLDAP=yes
