@@ -28,8 +28,6 @@ CONFIGURE_ARGS=	--without-python
 CONFIGURE_ARGS+=	--with-html-dir="${TARGETDIR}/share/doc"
 .endif
 
-.include <bsd.port.pre.mk>
-
 post-extract: .SILENT
 	${REINPLACE_CMD} -e \
 		's,libdir)/pkgconfig,prefix)/libdata/pkgconfig,' \
@@ -43,9 +41,6 @@ post-extract: .SILENT
 	${REINPLACE_CMD} -e 's,\[\],[0],' ${WRKSRC}/src/db-itunes-parser.h
 .   endif
 .else
-.   if ${OSVERSION} < 500035
-	${REINPLACE_CMD} -e 's,\[\],[0],' ${WRKSRC}/src/db-itunes-parser.h
-.   endif
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
