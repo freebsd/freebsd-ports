@@ -72,10 +72,6 @@ OPTIONS=	LUA "Lua support" on
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=		does not compile on FreeBSD 4.x
-.endif
-
 .if defined(WITH_LUA)
 USE_LUA=	5.0
 CONFIGURE_ARGS+=	--with-lua
