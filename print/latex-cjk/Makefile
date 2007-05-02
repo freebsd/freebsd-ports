@@ -76,7 +76,7 @@ post-patch:
 pre-su-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
-post-su-install:
+post-install:
 .if !defined(NOPORTDOCS)
 	${RM} -fr ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc ${DOCSDIR}
