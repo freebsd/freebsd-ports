@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rgbpaint
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	graphics
 MASTER_SITES=	SF/mtpaint
 
