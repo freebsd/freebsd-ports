@@ -38,6 +38,7 @@
     SUBDIR += chord
     SUBDIR += chord2html
     SUBDIR += clex
+    SUBDIR += cloc
     SUBDIR += clpbar
     SUBDIR += cmatrix
     SUBDIR += colortail
