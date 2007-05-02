@@ -4,6 +4,7 @@ bin/openftd_gui
 bin/openftd_gui_lite
 bin/openftd_open
 
+lib/libftd_http_plugin.so.2.0
 lib/libopenftd.la
 lib/libopenftd.so
 lib/libopenftd.so.0
@@ -16,6 +17,16 @@ lib/libopenftd_guiconfig.so.0
 lib/libopenftd_irc.la
 lib/libopenftd_irc.so
 lib/libopenftd_irc.so.0
+lib/openftd/libopenftd_gui_gtkhtml.la
+lib/openftd/libopenftd_gui_gtkhtml.so
+lib/openftd/libopenftd_gui_gtkhtml.so.0
+lib/openftd/libopenftd_gui_mozilla.la
+lib/openftd/libopenftd_gui_mozilla.so
+lib/openftd/libopenftd_gui_mozilla.so.0
+
+share/applications/openftd.desktop
+share/applications/openftd_lite.desktop
+share/pixmaps/ftd.png
 
 share/openftd/images/allbg.gif
 share/openftd/images/arrow.gif
@@ -358,3 +369,4 @@ share/openftd/converteer_oude_config_files.sh
 @dirrm share/openftd/emoticons
 @dirrm share/openftd/gui
 @dirrm share/openftd/
+@dirrm lib/openftd
