@@ -17,37 +17,25 @@ COMMENT=	A player for many different Amiga and PC module formats
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-WANT_GNOME=	yes
+USE_GNOME=	esound
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:213
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-alsa
-
-CFLAGS+=	-fPIC
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500013 || ${MACHINE_ARCH} == "alpha"
-USE_GNOME+=	esound
-CONFIGURE_ARGS+=	--disable-oss --enable-esd
-PKGNAMESUFFIX=	-esound
-.elif ${HAVE_GNOME:Mesound}!=""
-USE_GNOME+=	esound
-CONFIGURE_ARGS+=	--enable-esd
-PKGNAMESUFFIX=	-esound
-.endif
-
-.if !defined(WITHOUT_XMMS)
-  LIB_DEPENDS+=   xmms.4:${PORTSDIR}/multimedia/xmms
-.else
-  CONFIGURE_ARGS+= --disable-xmms
-.endif
+CONFIGURE_ARGS=	--disable-alsa --disable-oss --enable-esd
 
 MAN1=		xmp.1
 MLINKS=		xmp.1 xxmp.1
 
+CFLAGS+=	-fPIC
+
+.if !defined(WITHOUT_XMMS)
+LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
+.else
+CONFIGURE_ARGS+=--disable-xmms
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/docs/xmp.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
