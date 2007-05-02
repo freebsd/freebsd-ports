@@ -42,15 +42,11 @@ XDFORMAT_LINKS=	setdb pressdb
 .if ${ARCH} == amd64
 .if ${OSVERSION} >= 600000
 DISTNAME=	blast${PORTVERSION:S/.0//}.freebsd-6.x-x64
-.elif ${OSVERSION} >= 500001
-DISTNAME=	blast${PORTVERSION:S/.0//}.freebsd-5.x-x64
 .else
-IGNORE=		There are no WU-BLAST executables for your combination of architecture and FreeBSD version. Consider moving to one of the supported versions for your architecture
+DISTNAME=	blast${PORTVERSION:S/.0//}.freebsd-5.x-x64
 .endif
 .else
-.if ${OSVERSION} < 500000
-DISTNAME=	blast${PORTVERSION:S/.0//}.freebsd-4.x-i686
-.elif ${OSVERSION} >= 50000 && ${OSVERSION} < 600000
+.if ${OSVERSION} >= 50000 && ${OSVERSION} < 600000
 DISTNAME=	blast${PORTVERSION:S/.0//}.freebsd-5.x-i686
 .else
 DISTNAME=	blast${PORTVERSION:S/.0//}.freebsd-6.x-i686
