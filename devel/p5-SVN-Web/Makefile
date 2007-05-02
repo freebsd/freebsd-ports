@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SVN-Web
-PORTVERSION=	0.52
+PORTVERSION=	0.53
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	SVN
@@ -62,19 +62,16 @@ MAN3=		SVN::Web.3 \
 		SVN::Web::action.3
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/svnweb-install ${TARGETDIR}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/svnweb-install ${PREFIX}/bin
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO}
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6.0 or newer. Please install lang/perl5.8 and try again
-.endif
-
 .if ${PERL_LEVEL} < 500703
 BUILD_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
 .endif
+
 .include <bsd.port.post.mk>
