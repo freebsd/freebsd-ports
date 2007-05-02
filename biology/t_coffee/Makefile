@@ -23,6 +23,7 @@ MAKE_ENV=	MV=${MV} USER_BIN=${PREFIX}/bin \
 		CLUSTALW_4_TCOFFEE=${LOCALBASE}/bin/clustalw
 
 MAKEFILE=	makefile
+USE_GCC=	3.3
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/t_coffee ${PREFIX}/bin
@@ -40,10 +41,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/html/* ${DATADIR}/html
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 502126
-USE_GCC=3.3
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
