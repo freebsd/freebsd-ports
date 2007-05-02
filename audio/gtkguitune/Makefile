@@ -21,10 +21,4 @@ USE_GETOPT_LONG=yes
 
 PLIST_FILES=	bin/gtkguitune
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-CFLAGS+=	-fhuge-objects
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
