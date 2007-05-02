@@ -1,5 +1,5 @@
---- SConstruct.orig	Fri Apr 20 18:52:56 2007
-+++ SConstruct	Fri Apr 20 18:53:14 2007
+--- SConstruct.orig	Wed May  2 01:54:48 2007
++++ SConstruct	Wed May  2 01:59:33 2007
 @@ -1,4 +1,4 @@
 -import os, string, sys
 +import os, string, sys, commands, fnmatch
@@ -26,7 +26,7 @@
  
  #
  # Initialize compiler environment base
-@@ -24,15 +28,32 @@
+@@ -24,15 +28,33 @@
  else:
  	env = Environment(ENV = {'PATH' : os.environ['PATH']}, options = opts)
  
@@ -35,7 +35,7 @@
 +	env['CCFLAGS'] = Split(env['CCFLAGS'])
 +	env['CPPPATH'] = Split(env['CPPPATH'])
 +	env['LIBPATH'] = Split(env['LIBPATH'])
-+
+ 
 +	# Supported VM architectures (Linux)
 +	env['vm_archs'] = ['x86', 'x86_64', 'ppc']
 +	env['arch'] = commands.getoutput('uname -m')
@@ -43,12 +43,13 @@
 +	# Equivalent arch names in FreeBSD
 +	if fnmatch.fnmatch(sys.platform, 'freebsd*'):
 +		vm_archs_freebsd = {'i386' : 'x86', 'amd64' : 'x86_64', 'powerpc' : 'ppc'}
-+		env['arch'] = vm_archs_freebsd[env['arch']]
++		if vm_archs_freebsd.has_key(env['arch']):
++			env['arch'] = vm_archs_freebsd[env['arch']]
 +
 +	# Build game libraries if VM is not supported in current arch
 +	if env['vm_archs'].count(env['arch']) == 0 or env['vm'] == 0:
 +		env['gamelibs'] = 1
- 
++
 +Help(opts.GenerateHelpText(env))
  
  #
@@ -61,7 +62,7 @@
  
  if env['warnings'] == '1':
  	env.Append(CCFLAGS = '-Wall')
-@@ -45,7 +66,7 @@
+@@ -45,7 +67,7 @@
  	env.Append(CCFLAGS = '-DNDEBUG')
  
  if env['optimize'] != '0':
@@ -70,7 +71,7 @@
  
  if env['simd'] == 'sse':
  	env.Append(CCFLAGS = '-DSIMD_SSE')
-@@ -54,15 +75,12 @@
+@@ -54,15 +76,12 @@
  
  conf = Configure(env)
  
@@ -88,7 +89,7 @@
  env = conf.Finish()
  
  # Save options
-@@ -70,8 +88,10 @@
+@@ -70,8 +89,10 @@
  
  Export('env')
  
