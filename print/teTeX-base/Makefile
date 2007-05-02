@@ -11,7 +11,7 @@ PORTREVISION=	10
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
-MASTER_SITE_SUBDIR=	systems/unix/teTeX/3.0/distrib
+MASTER_SITE_SUBDIR=	obsolete/systems/unix/teTeX/3.0/distrib
 DISTNAME=	${TETEX_SRC}
 DIST_SUBDIR=	teTeX
 
