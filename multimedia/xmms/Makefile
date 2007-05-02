@@ -7,13 +7,13 @@
 
 PORTNAME=	xmms
 PORTVERSION=	1.2.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES+=	multimedia audio ipv6
 MASTER_SITES=	http://www.xmms.org/files/1.2.x/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	esk@ira.uka.de
-COMMENT?=	X Multimedia System --- An audio player with a Winamp GUI
+COMMENT?=	X Multimedia System -- An audio player with Winamp GUI
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -33,9 +33,9 @@ MAN1=		wmxmms.1 xmms.1
 
 CONFLICTS=	ru-xmms-*
 
-INPUT_PLUGINS=	cdaudio,mpg123,tonegen,wav
-OUTPUT_PLUGINS=	OSS,disk_writer
-VISUALIZATION_PLUGINS=	blur_scope,sanalyzer
+INPUT_PLUGINS=	cdaudio mpg123 tonegen wav
+OUTPUT_PLUGINS=	OSS disk_writer
+VISUALIZATION_PLUGINS=	blur_scope sanalyzer opengl_spectrum
 
 PLIST_SUB=	DATADIR="share"
 
@@ -82,11 +82,6 @@ PLIST_SUB+=	VORBISPLUGIN:="@comment "
 USE_GNOME+=	esound
 OUTPUT_PLUGINS+=	esd
 PLIST_SUB+=	ESDPLUGIN:=""
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-esound
-.else
-PKGNAMESUFFIX=	-esound
-.endif
 .else
 CONFIGURE_ARGS+=	--disable-esd
 PLIST_SUB+=	ESDPLUGIN:="@comment "
