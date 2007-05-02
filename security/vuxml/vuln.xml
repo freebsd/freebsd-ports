@@ -35,7 +35,7 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="0ac89b39-f829-11db-b55c-000e0c6d38a9">
-    <topic>qemu: several vulnerabilities</topic>
+    <topic>qemu - several vulnerabilities</topic>
     <affects>
       <package>
 	<name>qemu</name>
@@ -46,7 +46,7 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>debian-security-announce@lists.debian.org reports:</p>
+	<p>The Debian Security Team reports:</p>
 	<blockquote cite="http://lists.debian.org/debian-security-announce/debian-security-announce-2007/msg00040.html">
 	  <p>Several vulnerabilities have been discovered in the QEMU
 	  processor emulator, which may lead to the execution of arbitrary
@@ -84,6 +84,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-05-01</discovery>
       <entry>2007-05-01</entry>
+      <modified>2007-05-02</modified>
     </dates>
   </vuln>
 
@@ -97,9 +98,8 @@ Note:  Please add new entries to the beginning of this file.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<h1>Problem Description</h1>
 	<p>Imager 0.56 and all earlier versions with BMP support have
-	  security issue when reading compressed 8-bit per pixel BMP
+	  a security issue when reading compressed 8-bit per pixel BMP
 	  files where either a compressed run of data or a literal run
 	  of data overflows the scan-line.</p>
 	<p>Such an overflow causes a buffer overflow in a malloc()
@@ -117,6 +117,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-04-04</discovery>
       <entry>2007-04-30</entry>
+      <modified>2007-05-02</modified>
     </dates>
   </vuln>
 
