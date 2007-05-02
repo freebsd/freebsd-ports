@@ -22,14 +22,8 @@ USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME:C/\.app//}-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile on 4.x
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|linux/soundcard.h|sys/soundcard.h|g' \
 		${WRKSRC}/AppController.m
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
