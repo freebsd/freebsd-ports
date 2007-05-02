@@ -222,6 +222,7 @@
     SUBDIR += freedoko
     SUBDIR += freedroid
     SUBDIR += freedroidrpg
+    SUBDIR += freeorion
     SUBDIR += freera
     SUBDIR += freesci
     SUBDIR += freesweep
