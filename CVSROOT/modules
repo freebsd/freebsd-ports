@@ -3050,6 +3050,7 @@ freemind	ports/deskutils/freemind
 freenet		ports/net-p2p/freenet
 freenet6	ports/net/freenet6
 freenx		ports/net/freenx
+freeorion	ports/games/freeorion
 freepops	ports/mail/freepops
 freera		ports/games/freera
 freeradius	ports/net/freeradius
