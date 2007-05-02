@@ -15211,6 +15211,7 @@ torcs		ports/games/torcs
 tornado		ports/games/tornado
 torque		ports/sysutils/torque
 torrent		ports/games/torrent
+torrent_swapper	ports/net-p2p/torrent_swapper
 torrentflux	ports/net-p2p/torrentflux
 torrentsniff	ports/net-p2p/torrentsniff
 torrentzip	ports/archivers/torrentzip
