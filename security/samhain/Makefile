@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	samhain
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.4
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://redundancy.redundancy.org/mirror/
@@ -35,7 +35,6 @@ BUILD_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 .endif
 
 GNU_CONFIGURE=	yes
-USE_RC_SUBR=	yes
 CONFIGURE_ARGS=	--enable-login-watch --localstatedir=/var \
 		--mandir=${PREFIX}/man --enable-suidcheck
 
