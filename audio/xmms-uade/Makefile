@@ -46,14 +46,8 @@ PORTDOCS=	UAE-CREDITS UAE-README audio_emulation.txt design.tex \
 		play_loop_state_diagram.dia play_loop_state_diagram.eps \
 		play_loop_state_diagram.txt
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on FreeBSD 4.x
-.endif
-
 post-install:
-		@${RM} -rf ${PREFIX}/share/uade2/players/S
+	@${RM} -rf ${PREFIX}/share/uade2/players/S
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -62,4 +56,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
