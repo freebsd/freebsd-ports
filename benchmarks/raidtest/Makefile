@@ -15,12 +15,6 @@ DISTFILES=	# none
 MAINTAINER=	pjd@FreeBSD.org
 COMMENT=	Test performance of storage devices
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 501000
-IGNORE=		supports only FreeBSD 5.1 and above
-.endif
-
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/raidtest
 
@@ -30,4 +24,4 @@ do-extract:
 	${MKDIR} ${WRKDIR}
 	${LN} -sf ${FILESDIR}/${PORTNAME}.c ${FILESDIR}/Makefile ${WRKDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
