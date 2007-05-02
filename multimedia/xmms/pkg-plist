@@ -31,6 +31,7 @@ lib/xmms/Output/libOSS.so
 lib/xmms/Output/libdisk_writer.so
 %%ESDPLUGIN:%%lib/xmms/Output/libesdout.so
 lib/xmms/Visualization/libbscope.so
+lib/xmms/Visualization/libogl_spectrum.so
 lib/xmms/Visualization/libsanalyzer.so
 share/aclocal/xmms.m4
 %%DATADIR%%/xmms/wmxmms.xpm
