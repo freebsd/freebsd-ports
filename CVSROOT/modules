@@ -15284,6 +15284,7 @@ treewm		ports/x11-wm/treewm
 tremor		ports/games/tremor
 tremulous	ports/games/tremulous
 triangle	ports/math/triangle
+tribler		ports/net-p2p/tribler
 trickle		ports/net/trickle
 trickyirc	ports/irc/trickyirc
 tridiavnc	ports/net/tridiavnc
