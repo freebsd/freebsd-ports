@@ -6,25 +6,28 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Prototype
-PORTVERSION=	1.32
+PORTVERSION=	1.33
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/S/SR/SRI
+MASTER_SITE_SUBDIR=	../by-authors/id/M/MR/MRAMBERG
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Catalyst plugin for Prototype
 
-BUILD_DEPENDS=	${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7006:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Catalyst-Devel>=1.00:${PORTSDIR}/www/p5-Catalyst-Devel \
-		${SITE_PERL}/Class/Data/Inheritable.pm:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		${SITE_PERL}/HTML/Prototype.pm:${PORTSDIR}/www/p5-HTML-Prototype
+		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
+		p5-HTML-Prototype>=1.48:${PORTSDIR}/www/p5-HTML-Prototype
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Helper::Prototype.3 \
 	Catalyst::Plugin::Prototype.3
+
+post-extract:
+	${RM} ${WRKSRC}/lib/Catalyst/Plugin/._Prototype.pm
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} < 500801
