@@ -1,0 +1,13 @@
+cap is a network capture utility designed specifically for DNS
+traffic. It produces binary data in pcap(3) format, either on
+standard output (by default) or in successive dump files (if the d
+command line option is given.) This utility is similar to tcpdump(1),
+but has finer grained packet recognition tailored to DNS transactions
+and protocol options. dnscap is expected to be used for gathering
+continuous research or audit traces.
+
+SYNOPSIS
+     dnscap [-avf6] [-i if ...] [-l vlan ...] [-p port] [-m [quire]] [-h [ir]]
+	    [-q host ...] [-r host ...] [-d base [-k cmd]] [-t lim] [-c lim]
+
+WWW: http://public.oarci.net/tools/dnscap

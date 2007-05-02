@@ -22,6 +22,7 @@
     SUBDIR += dlint
     SUBDIR += dnrd
     SUBDIR += dns_balance
+    SUBDIR += dnscap
     SUBDIR += dnscheck
     SUBDIR += dnsdoctor
     SUBDIR += dnsflood
