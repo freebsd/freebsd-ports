@@ -18,17 +18,6 @@ USE_GETOPT_LONG=yes
 
 MAN1=		fapg.1
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's,g2,g2 -I${LOCALBASE}/include \
-		-L${LOCALBASE}/lib -lgnugetopt,' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e '32 s,<,\",; 32 s,>,\",' \
-		${WRKSRC}/fapg.c
-	@${CP} ${FILESDIR}/getopt.h ${WRKSRC}
-.endif
-
 do-build:
 	@cd ${WRKSRC} && ${MAKE} ${PORTNAME}
 
@@ -44,4 +33,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
