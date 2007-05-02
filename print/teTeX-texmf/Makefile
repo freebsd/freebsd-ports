@@ -10,7 +10,7 @@ PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
-MASTER_SITE_SUBDIR=	systems/unix/teTeX/3.0/distrib
+MASTER_SITE_SUBDIR=	obsolete/systems/unix/teTeX/3.0/distrib
 DISTFILES=	${TETEX_TEXMF_SRC} dvipsk-jpatch-p1.6a1${EXTRACT_SUFX}:1
 DIST_SUBDIR=	teTeX
 EXTRACT_ONLY=	dvipsk-jpatch-p1.6a1${EXTRACT_SUFX}

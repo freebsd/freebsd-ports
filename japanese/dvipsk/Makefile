@@ -12,7 +12,7 @@ CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		${MASTER_SITE_LOCAL:S,%SUBDIR%,hrs/teTeX,:S,$,:udvipspatch,}
 #		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:jpatch \
-MASTER_SITE_SUBDIR=	systems/unix/teTeX/3.0/distrib/
+MASTER_SITE_SUBDIR=	obsolete/systems/unix/teTeX/3.0/distrib/
 PKGNAMEPREFIX=	ja-
 PKGNAMESUFFIX=	-tetex
 DISTFILES=	${TETEX_SRC}${EXTRACT_SUFX} \
