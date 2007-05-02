@@ -38,10 +38,6 @@ MAKE_ENV=	QTDIR="${QT_PREFIX}"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=	does not compile on FreeBSD 4.x, due to lack of pselect() in libc
-.endif
-
 .if ${OSVERSION} < 503001
 IGNORE= does not compile on FreeBSD < 5.3, due to lack of round() in libm
 .endif
