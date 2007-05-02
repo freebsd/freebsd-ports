@@ -7,7 +7,6 @@
 
 PORTNAME=	dvbcut
 PORTVERSION=	0.5.4
-PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=dvbcut
@@ -22,13 +21,15 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 LIB_DEPENDS=	avutil.1:${PORTSDIR}/multimedia/ffmpeg-devel \
 		ao.3:${PORTSDIR}/audio/libao
 
+BROKEN=		Not compatible with new ffmpeg port
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	3
 ALL_TARGET=	build
 MAKE_ENV=	QTDIR=${QT_PREFIX} FFMPEG=${PREFIX} LDFLAGS="${LDFLAGS}"
-CFLAGS+=	-pthread
+CFLAGS+=	"'-pthread -D__STDC_CONSTANT_MACROS'"
 LDFLAGS+=	-pthread
 
 MAN1=		dvbcut.1
