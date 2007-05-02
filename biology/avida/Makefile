@@ -26,12 +26,6 @@ CMAKE_ARGS=	-DPROJECT_BINARY_DIR=${WRKSRC}/build/work \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x.
-.endif
-
 do-build:
 	@(cd ${BUILD_WRKSRC}; \
 	${MKDIR} build build/work; \
@@ -55,4 +49,4 @@ post-install:
 	(${CP} -RP ${WRKSRC}/documentation/ ${DOCSDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
