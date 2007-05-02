@@ -16,6 +16,8 @@ DISTNAME=	tclx${PORTVERSION}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Extended TCL
 
+BROKEN=		Regression tests fail
+
 USE_BZIP2=	yes
 USE_TCL_BUILD=	yes
 USE_TCL=	yes
