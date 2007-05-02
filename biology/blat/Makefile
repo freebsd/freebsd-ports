@@ -27,17 +27,11 @@ SUB_FILES=	pkg-message
 EXECUTABLES=	blat faToNib faToTwoBit gfClient gfServer nibFrag \
 		pslPretty pslReps pslSort twoBitInfo twoBitToFa
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${MKDIR} ${WRKSRC}/bin/${MACHTYPE}
 	@${MKDIR} ${WRKSRC}/lib/${MACHTYPE}
 	@${REINPLACE_CMD} -E 's,^(CC|CFLAGS)=,\1 ?=,g' \
 		${WRKSRC}/inc/common.mk
-.if ${OSVERSION} <= 500000
-	@${REINPLACE_CMD} -e 's,strtof,\(float\) strtod,g' \
-		${WRKSRC}/lib/sqlNum.c
-.endif
 
 do-install:
 .for exe in ${EXECUTABLES}
@@ -54,4 +48,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
