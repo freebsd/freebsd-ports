@@ -1,15 +1,15 @@
---- Makefile.in.orig	Thu Jan  4 20:31:47 2007
-+++ Makefile.in	Thu Jan  4 20:33:38 2007
-@@ -238,7 +238,7 @@ target_alias = @target_alias@
+--- Makefile.in.orig	Tue May  1 20:39:42 2007
++++ Makefile.in	Tue May  1 20:40:23 2007
+@@ -239,7 +239,7 @@ target_alias = @target_alias@
  
  AUTOMAKE_OPTIONS = 1.7
  
--SUBDIRS = . m4macros glib gobject gmodule gthread tests po docs
-+SUBDIRS = . m4macros glib gobject gmodule gthread po docs
+-SUBDIRS = . m4macros glib gobject gmodule gthread tests build po docs
++SUBDIRS = . m4macros glib gobject gmodule gthread build po docs
  
  bin_SCRIPTS = glib-gettextize
  
-@@ -286,8 +286,8 @@ BUILT_EXTRA_DIST = \
+@@ -292,8 +292,8 @@ BUILT_EXTRA_DIST = \
  	config.h.win32		\
  	gtk-doc.make
  
