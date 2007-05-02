@@ -19,16 +19,10 @@ USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20 gnomehack gnomeprefix
 
+ONLY_FOR_ARCHS=	alpha i386 ia64
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-ONLY_FOR_ARCHS=	i386
-.else
-ONLY_FOR_ARCHS=	alpha i386 ia64
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -40,4 +34,4 @@ post-patch:
 		 s|COPYING||' \
 		${WRKSRC}/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
