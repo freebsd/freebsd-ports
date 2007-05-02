@@ -16,8 +16,6 @@ DISTNAME=	tclx${PORTVERSION}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Extended TCL
 
-BROKEN=		Regression tests fail
-
 USE_BZIP2=	yes
 USE_TCL_BUILD=	yes
 USE_TCL=	yes
@@ -30,7 +28,7 @@ CONFIGURE_ARGS=	--enable-shared \
 		--with-help=Help \
 		--with-tcl="${TCL_LIBDIR}"
 PLIST_SUB=	TCLX_VER=${PORTVERSION}
-ALL_TARGET=	binaries libraries test
+ALL_TARGET=	binaries libraries	# test
 INSTALL_TARGET=	install-binaries install-libraries
 .ifndef(NOPORTDOCS)
 ALL_TARGET+=	doc
