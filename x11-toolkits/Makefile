@@ -41,6 +41,7 @@
     SUBDIR += gal2-reference
     SUBDIR += gauche-gtk
     SUBDIR += gdl
+    SUBDIR += gigi
     SUBDIR += gnocl
     SUBDIR += gnome-sharp20
     SUBDIR += gnomemm

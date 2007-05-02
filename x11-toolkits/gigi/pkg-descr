@@ -1,0 +1,18 @@
+GiGi (aka GG) is a GUI library for OpenGL. It is platform-independent (it runs
+at least on Linux and Windows, and probably more), compiler-independent (it
+compiles under at GCC 3.2 or higher and MSVC++ 7.1 or higher, and probably
+more), and driver-independent. A reference driver for SDL is provided, and it
+is straightforward to write one for yourself should you decide to do so.
+
+Features:
+* True modularity. You provide the initialized OpenGL environment and user
+  input, and GG provides the GUI behavior. A reference SDL input driver is
+  provided.
+* Independence of platform, compiler, and input driver/application framework.
+* Applicability to multiple types of frame-based apps. Any frame-based app can
+  use GG, from FPS to TBS games.
+
+Documentation. I am the documentation-Nazi you've been hoping for. Ve haf vays
+of makink you understand our code.
+
+WWW: http://gigi.sourceforge.net/

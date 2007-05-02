@@ -1,0 +1,25 @@
+--- ./SConstruct.orig	Tue Aug 22 23:22:16 2006
++++ ./SConstruct	Tue May  1 16:01:52 2007
+@@ -53,6 +53,11 @@
+ options.Add('with_devil', 'Root directory of DevIL installation')
+ options.Add('with_devil_include', 'Specify exact include dir for DevIL headers')
+ options.Add('with_devil_libdir', 'Specify exact library dir for DevIL library')
++options.Add('CC', 'C compiler')
++options.Add('CXX', 'C++ compiler')
++options.Add('CCFLAGS', 'C compiler flags', Split(''))
++options.Add('CPPPATH', 'Compiler include path', Split(''))
++options.Add('LIBPATH', 'Linker library path', Split(''))
+ 
+ 
+ ##################################################
+@@ -103,6 +108,10 @@
+         pass
+ 
+ options.Update(env)
++
++env['CCFLAGS'] = Split(env['CCFLAGS'])
++env['CPPPATH'] = Split(env['CPPPATH'])
++env['LIBPATH'] = Split(env['LIBPATH'])
+ 
+ if env.has_key('use_distcc') and env['use_distcc']:
+     env['CC'] = 'distcc %s' % env['CC']
