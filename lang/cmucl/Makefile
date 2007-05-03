@@ -19,8 +19,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-x86-FreeBSD
 MAINTAINER=	cracauer@cons.org
 COMMENT=	The CMU implementation of Common Lisp
 
-ONLY_FOR_ARCHS=	i386
-USE_BZIP2=	YES
+# To make available on other archs, has to be cross-compiled (there is a
+# script for this, but a configuration file has to be written).
+IA32_BINART_PORT=	yes
+USE_BZIP2=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 MAN1=		lisp.1 cmucl.1
@@ -35,13 +37,11 @@ LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
 .endif
 
 do-install:
-	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} ${WRKDIR}/bin/lisp ${PREFIX}/bin
-	(cd ${WRKDIR} && ${FIND} lib | \
-		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX})
-	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} ${WRKDIR}/man/man1/cmucl.1 \
-		${PREFIX}/man/man1
-	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} ${WRKDIR}/man/man1/lisp.1 \
-		${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKDIR}/bin/lisp ${PREFIX}/bin/${PORTNAME}
+	cd ${WRKDIR} && ${FIND} lib | \
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}
+	${INSTALL_MAN} ${WRKDIR}/man/man1/cmucl.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/man/man1/lisp.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/doc/cmucl/* ${DOCSDIR}
