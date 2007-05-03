@@ -2782,6 +2782,7 @@ fillets-ng	ports/games/fillets-ng
 filtermail	ports/mail/filtermail
 filters		ports/games/filters
 finance_pfpro	ports/finance/pfpro
+finch		ports/net-im/finch
 finchtv		ports/biology/finchtv
 find-zlib	ports/security/find-zlib
 find_ddos	ports/security/find_ddos
@@ -3203,8 +3204,6 @@ gail-reference	ports/accessibility/gail-reference
 gaim		ports/net-im/gaim
 gaim-assistant	ports/net-im/gaim-assistant
 gaim-bangexec	ports/net-im/gaim-bangexec
-gaim-consoleui-devel	ports/net-im/gaim-consoleui-devel
-gaim-devel	ports/net-im/gaim-devel
 gaim-encryption	ports/security/gaim-encryption
 gaim-extprefs	ports/net-im/gaim-extprefs
 gaim-festival	ports/audio/gaim-festival
@@ -6307,7 +6306,6 @@ libftdi		ports/devel/libftdi
 libfwbuilder	ports/security/libfwbuilder
 libg++		ports/devel/libg++
 libgail-gnome	ports/x11-toolkits/libgail-gnome
-libgaim		ports/net-im/libgaim
 libgalago	ports/devel/libgalago
 libgconf-java	ports/devel/libgconf-java
 libgcrypt	ports/security/libgcrypt
@@ -6512,6 +6510,7 @@ libpri		ports/misc/libpri
 libpri-bristuff		ports/misc/libpri-bristuff
 libpst		ports/mail/libpst
 libpthread-stubs	ports/devel/libpthread-stubs
+libpurple	ports/net-im/libpurple
 libqalculate	ports/math/libqalculate
 libqglviewer	ports/graphics/libqglviewer
 libqrencode	ports/graphics/libqrencode
@@ -11899,6 +11898,7 @@ picprog		ports/devel/picprog
 picturebook	ports/graphics/picturebook
 piddle		ports/graphics/piddle
 pidentd		ports/security/pidentd
+pidgin		ports/net-im/pidgin
 pidof		ports/sysutils/pidof
 piewm		ports/x11-wm/piewm
 pikdev		ports/devel/pikdev
