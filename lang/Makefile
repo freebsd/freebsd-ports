@@ -98,6 +98,7 @@
     SUBDIR += gnat-doc-txt
     SUBDIR += gnat-gcc34
     SUBDIR += gnat-gcc41
+    SUBDIR += gnat-gcc42
     SUBDIR += gnat-glade
     SUBDIR += gnomebasic
     SUBDIR += gnustep-base
