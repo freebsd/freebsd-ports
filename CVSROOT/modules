@@ -852,6 +852,7 @@ bitmap-emacs20	ports/editors/bitmap-emacs20
 bitmap-fonts	ports/x11-fonts/bitmap-fonts
 bitstream-vera	ports/x11-fonts/bitstream-vera
 bittwist	ports/net/bittwist
+bittyrant	ports/net-p2p/bittyrant
 bjfilter360	ports/print/bjfilter360
 bjfilter850	ports/print/bjfilter850
 bjfilter850ug	ports/print/bjfilter850ug
