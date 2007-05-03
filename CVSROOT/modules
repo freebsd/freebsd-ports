@@ -3640,6 +3640,7 @@ gnat-doc-texi	ports/lang/gnat-doc-texi
 gnat-doc-txt	ports/lang/gnat-doc-txt
 gnat-gcc34	ports/lang/gnat-gcc34
 gnat-gcc41	ports/lang/gnat-gcc41
+gnat-gcc42	ports/lang/gnat-gcc42
 gnat-glade	ports/lang/gnat-glade
 gnats		ports/databases/gnats
 gnats4		ports/databases/gnats4
