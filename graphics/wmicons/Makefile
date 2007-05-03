@@ -36,7 +36,7 @@ post-extract:
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/isiconpack4.tgz \
 		${EXTRACT_AFTER_ARGS} -C ${WRKDIR}/isiconpack4
 
-pre-install:
+pre-su-install:
 	${MKDIR} ${WMDOCDIR}
 	${MKDIR} ${WMICONDIR}
 	cd ${WRKDIR}/IconFest-1.2; \
