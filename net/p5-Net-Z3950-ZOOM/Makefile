@@ -16,6 +16,8 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A perl interface to the Z39.50 Object-Orientation Model (ZOOM)
 
 LIB_DEPENDS=	yaz.2:${PORTSDIR}/net/yaz
+BUILD_DEPENDS=	p5-MARC-Record>=1.38:${PORTSDIR}/textproc/p5-MARC-Record
+RUN_DEPENDS=	p5-MARC-Record>=1.38:${PORTSDIR}/textproc/p5-MARC-Record
 
 PERL_CONFIGURE=	yes
 
