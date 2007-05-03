@@ -6,23 +6,21 @@
 #   $MCom: ports-stable/net-im/gaim-devel/Makefile,v 1.3 2006/10/29 18:55:29 marcus Exp $
 #
 
-PORTNAME=	gaim
-PKGNAMEPREFIX=
-PKGNAMESUFFIX=	-devel
+PORTNAME=	pidgin
 
 MAINTAINER=	marcus@FreeBSD.org
-COMMENT=	Gaim multi-protocol messaging client (GTK+ UI)
+COMMENT=	Pidgin multi-protocol messaging client (GTK+ UI)
 
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-    		gaim.0:${PORTSDIR}/net-im/libgaim
+    		purple.0:${PORTSDIR}/net-im/libpurple
 
-MASTERDIR=	${.CURDIR}/../libgaim
-BUILD_WRKSRC=	${WRKSRC}/gtk
+MASTERDIR=	${.CURDIR}/../libpurple
+BUILD_WRKSRC=	${WRKSRC}/pidgin
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-GAIM_SLAVE=	yes
+PIDGIN_SLAVE=	yes
 WITH_GTKUI=	yes
 
 USE_LDCONFIG=	yes
