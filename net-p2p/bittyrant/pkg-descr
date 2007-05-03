@@ -1,0 +1,19 @@
+BitTyrant is a new, protocol compatible BitTorrent client that is optimized
+for fast download performance. BitTyrant is:
+
+* Fast: During evaluation testing on more than 100 real BitTorrent swarms,
+  BitTyrant provided an average 70% download performance increase when
+  compared to the existing Azureus 2.5 implementation, with some downloads
+  finishing more than three times as quickly.
+
+* Fair: BitTorrent was designed with incentives in mind: if a user is
+  downloading at 30 KBps, they should upload at 30 KBps. However, due to the
+  unique workload properties of many real-world swarms, this is not always
+  enforced. BitTyrant is designed to make efficient use of your scarce upload
+  bandwidth, rewarding those users whose upload allocations are fair and only
+  allocating excess capacity to other users.
+
+* Familiar: BitTyrant is based on modifications to Azureus 2.5, currently the
+  most popular BitTorrent client. All of our changes are under the hood.
+  You'll find the GUI identical to Azureus, with optional additions to display
+  statistics relevant to BitTyrant's operation.

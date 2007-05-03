@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+export JAVA_VERSION="%%JAVA_VERSION%%"
+export JAVA_OS="%%JAVA_OS%%"
+
+LIB_PATH="%%LIBDIR%%"
+CLASS_PATH="%%JAVAJARDIR%%/%%JARFILE%%:%%SWTJAR%%"
+
+exec "%%JAVA%%" -cp "${CLASS_PATH}" "-Djava.library.path=${LIB_PATH}" "-Dos.name=FreeBSD" "-Dazureus.config.path=${HOME}/.BitTyrant" "-Duser.dir=${HOME}/.BitTyrant" org.gudy.azureus2.ui.swt.Main "${@}"

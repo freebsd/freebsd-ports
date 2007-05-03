@@ -8,6 +8,7 @@
     SUBDIR += apollon
     SUBDIR += azureus
     SUBDIR += bitflu
+    SUBDIR += bittyrant
     SUBDIR += bnbt
     SUBDIR += btpeer
     SUBDIR += btqueue
