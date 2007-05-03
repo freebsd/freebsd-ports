@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	clisp
-PORTVERSION=	2.41
+PORTVERSION=	2.41a
 CATEGORIES=	lang lisp
-MASTER_SITES=	SF/${PORTNAME} \
-		GNU/${PORTNAME}/release/${PORTVERSION} \
+MASTER_SITES=	GNU/${PORTNAME}/release/${PORTVERSION:C/[[:alpha:]]+$//} \
 		ftp://sunsite.unc.edu/pub/Linux/devel/lang/lisp/
 
 MAINTAINER=	alepulver@FreeBSD.org
@@ -25,6 +24,7 @@ USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME:C/[[:alpha:]]+$//}
 BUILD_WRKSRC=	${WRKSRC}/${CONFIGURE_TARGET}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
