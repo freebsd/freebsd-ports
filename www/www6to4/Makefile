@@ -6,6 +6,7 @@
 
 PORTNAME=	www6to4
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.pasta.cs.uit.no/pub/Vermicelli/
 
@@ -13,6 +14,8 @@ MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Lightweight http proxy to help IPv4 only browsers
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/./-/}
+
+USE_RC_SUBR=	www6to4
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}/etc,' \
@@ -31,9 +34,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README \
 		${DOCSDIR}
 .endif
-	@if [ ! -f ${PREFIX}/etc/rc.d/www6to4.sh ]; then \
-		${ECHO} "Installing ${PREFIX}/etc/rc.d/www6to4.sh startup file."; \
-		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/www6to4.sh ${PREFIX}/etc/rc.d/www6to4.sh; \
-	fi
 
 .include <bsd.port.mk>
