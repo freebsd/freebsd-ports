@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkgeomap
-PORTVERSION=	2.11.1
+PORTVERSION=	2.11.2
 CATEGORIES=	astro tk84
 MASTER_SITES=	SF
 
@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	--with-tclgeomap-include=${LOCALBASE}/include/tclgeomap --with-x
 		--mandir=${MANPREFIX}/man \
 		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 CONFIGURE_ENV=	TCLGEOMAP_LIB=${LOCALBASE}/lib/tclgeomap
-USE_TK=		yes
+USE_TK=		82+
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 TKPKG=		${PORTNAME}
