@@ -24,6 +24,8 @@ USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LUA_INCDIR}" LDFLAGS="-L${LUA_LIBDIR}"
 
+PORTSCOUT=	skipv:0.06.1
+
 post-extract:
 	@${FIND} ${WRKSRC}/data -type d -name CVS -print0 | \
 		${XARGS} -0 ${RM} -rf
