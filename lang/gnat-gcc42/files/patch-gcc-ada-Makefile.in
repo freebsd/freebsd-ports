@@ -1,6 +1,6 @@
---- gcc/ada/Makefile.in.orig	Fri Sep  8 00:21:56 2006
-+++ gcc/ada/Makefile.in	Fri Sep  8 00:27:47 2006
-@@ -742,7 +742,7 @@
+--- gcc/ada/Makefile.in.orig	Sun Oct 22 00:57:17 2006
++++ gcc/ada/Makefile.in	Sun Oct 22 00:57:43 2006
+@@ -842,7 +842,7 @@
    mlib-tgt.adb<mlib-tgt-linux.adb
    GNATLIB_SHARED = gnatlib-shared-dual
  
