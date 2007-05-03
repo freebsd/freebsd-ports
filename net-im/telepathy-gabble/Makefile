@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	telepathy-gabble
-PORTVERSION=	0.5.10
+PORTVERSION=	0.5.11
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -26,8 +26,15 @@ RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig
+USE_OPENSSL=	yes
 USE_PYTHON_BUILD=	yes
 
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_OPENSSL_BASE)
+CONFIGURE_ENV=	OPENSSL_LIBS="-L/usr/lib -ssl -crypto" OPENSSL_CFLAGS="-I/usr/include"
+.endif
+
+.include <bsd.port.post.mk>
