@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	telepathy-python
-PORTVERSION=	0.13.8
+PORTVERSION=	0.13.9
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +15,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python bindings for the Telepathy framework
 
 LIB_PC_DEPENDS=	dbus-python.pc:${PORTSDIR}/devel/py-dbus
+
+BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 BUILD_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
