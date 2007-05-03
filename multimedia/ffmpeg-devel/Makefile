@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	2007-04-29
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -31,7 +31,8 @@ CONFIGURE_ARGS=	--cc="${CC}" --prefix="${PREFIX}" \
 		--extra-libs="${PTHREAD_LIBS}" \
 		--disable-bktr \
 		--enable-gpl \
-		--enable-pthreads
+		--enable-pthreads \
+		--enable-swscaler
 CONFIGURE_ENV+=	LANG=C
 MAKE_ENV=	INSTALL="${INSTALL}"
 SHLIB_VER=	1
@@ -141,14 +142,6 @@ PLIST_FILES+=	bin/ffplay
 .else
 CONFIGURE_ARGS+=	--disable-ffplay
 .endif
-# libswscale
-.if !defined(WITHOUT_SWSCALE)
-CONFIGURE_ARGS+=	--enable-swscaler
-PLIST_SUB+=		SWSCALE=""
-.else
-PLIST_SUB+=		SWSCALE="@comment "
-.endif
-## theora
 .if !defined(WITHOUT_THEORA)
 WITH_OGG=	yes
 LIB_DEPENDS+=		theora.2:${PORTSDIR}/multimedia/libtheora
@@ -224,10 +217,6 @@ pre-everything::
 .endif
 .ifndef(WITH_OGG)
 	@${ECHO_MSG} 'Define WITH_OGG to enable OGG codec'
-	@${ECHO_MSG}
-.endif
-.ifndef(WITHOUT_SWSCALE)
-	@${ECHO_MSG} 'You can disable libswscale support by defining WITHOUT_SWSCALE'
 	@${ECHO_MSG}
 .endif
 .ifndef(WITH_OPTIMIZED_CFLAGS)

@@ -40,10 +40,10 @@ lib/libpostproc.a
 lib/libpostproc.so
 lib/libpostproc.so.%%SHLIB_VER%%
 lib/libpostproc.so.51.1.0
-%%SWSCALE%%lib/libswscale.a
-%%SWSCALE%%lib/libswscale.so
-%%SWSCALE%%lib/libswscale.so.%%SHLIB_VER%%
-%%SWSCALE%%lib/libswscale.so.0.5.0
+lib/libswscale.a
+lib/libswscale.so
+lib/libswscale.so.%%SHLIB_VER%%
+lib/libswscale.so.0.5.0
 lib/vhook/fish.so
 lib/vhook/null.so
 lib/vhook/ppm.so
