@@ -8,12 +8,13 @@
      *) $touch $firstmakefile ;;
      esac
  fi
-@@ -129,6 +130,8 @@
+@@ -129,6 +130,9 @@
      $cppstdin $finc -I. $cppflags $cppminus <UU/$file.c |
      $sed \
  	-e '/^#.*<stdin>/d' \
 +	-e '/^#.*<built-in>/d' \
 +	-e '/^#.*<command line>/d' \
++	-e '/^#.*<command-line>/d' \
  	-e '/^#.*"-"/d' \
  	-e 's#\.[0-9][0-9]*\.c#'"$file.c#" \
  	-e 's/^[	 ]*#[	 ]*line/#/' \
