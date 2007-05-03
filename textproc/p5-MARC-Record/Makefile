@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MARC-Record
-PORTVERSION=	1.38
+PORTVERSION=	2.0.0
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	MARC
@@ -17,9 +17,9 @@ COMMENT=	The core class for representing a single MARC record
 
 PERL_CONFIGURE=	yes
 
-MAN1=		marcdump.1 marclint.1
+MAN1=		marcdump.1
 MAN3=		MARC::Batch.3 MARC::Doc::Tutorial.3 MARC::Field.3 \
-		MARC::File.3 MARC::File::MicroLIF.3 MARC::File::USMARC.3 \
-		MARC::Lint.3 MARC::Record.3
+		MARC::File::Encode.3 MARC::File.3 MARC::File::MicroLIF.3 \
+		MARC::File::USMARC.3 MARC::Record.3
 
 .include <bsd.port.mk>
