@@ -3,14 +3,14 @@ share/doc/gaa/gaa.html
 share/doc/gaa/gaa.ps
 share/doc/gaa/img1.png
 share/doc/gaa/gaa.css
-share/examples/gaa/sample.gaa
-share/examples/gaa/sample2.gaa
-share/examples/gaa/sample3.gaa
-share/examples/gaa/sample4.gaa
-share/examples/gaa/smain.c
-share/examples/gaa/smain2.c
-share/examples/gaa/config
 share/gaa/gaa.skel
+%%EXAMPLESDIR%%/sample.gaa
+%%EXAMPLESDIR%%/sample2.gaa
+%%EXAMPLESDIR%%/sample3.gaa
+%%EXAMPLESDIR%%/sample4.gaa
+%%EXAMPLESDIR%%/smain.c
+%%EXAMPLESDIR%%/smain2.c
+%%EXAMPLESDIR%%/config
 @dirrm share/doc/gaa
-@dirrm share/examples/gaa
+@dirrm %%EXAMPLESDIR%%
 @dirrm share/gaa

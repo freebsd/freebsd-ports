@@ -1,17 +1,15 @@
---- configure.orig	Sun Jun  2 01:33:08 2002
-+++ configure	Fri Jul 26 20:08:26 2002
-@@ -1159,8 +1159,8 @@
- 
+--- configure.orig	Thu May  3 12:06:58 2007
++++ configure	Thu May  3 12:07:01 2007
+@@ -1265,7 +1265,7 @@
  
  gaadatadir=$datadir/gaa
--gaadocdir=$datadir/gaa/doc
+ gaadocdir=$datadir/doc/gaa
 -gaasampledir=$datadir/gaa/sample
-+gaadocdir=$datadir/doc/gaa
 +gaasampledir=$datadir/examples/gaa
  
  
  
-@@ -2463,7 +2463,7 @@
+@@ -2888,7 +2888,7 @@
  
  
  if test $ac_cv_c_compiler_gnu != no; then
