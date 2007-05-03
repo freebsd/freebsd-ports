@@ -1,0 +1,8 @@
+bin/umlclass.pl
+%%SITE_PERL%%/UML/Class/Simple.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/UML/Class/Simple/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UML/Class/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UML/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/UML
+@dirrmtry %%SITE_PERL%%/UML/Class
+@dirrmtry %%SITE_PERL%%/UML

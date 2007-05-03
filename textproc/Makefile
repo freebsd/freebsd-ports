@@ -575,6 +575,7 @@
     SUBDIR += p5-Tk-XMLViewer
     SUBDIR += p5-Tree-Nary
     SUBDIR += p5-Tree-Suffix
+    SUBDIR += p5-UML-Class-Simple
     SUBDIR += p5-UML-Sequence
     SUBDIR += p5-UML-State
     SUBDIR += p5-URI-Find
