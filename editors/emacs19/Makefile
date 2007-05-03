@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	emacs
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU editing macros
 
-CONFLICTS=	emacs-21.* \
+CONFLICTS=	emacs-21.* emacs-22.* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
 
