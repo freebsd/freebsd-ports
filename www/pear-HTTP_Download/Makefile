@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	HTTP_Download
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	www devel pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class to send HTTP downloads
 
 BUILD_DEPENDS=	${PEARDIR}/HTTP/Header.php:${PORTSDIR}/www/pear-HTTP_Header
