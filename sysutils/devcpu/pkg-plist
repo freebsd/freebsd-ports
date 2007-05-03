@@ -1,5 +1,12 @@
 bin/cpu_microcode_tool
 include/cpu.h
+%%DATADIR%%/2071-m16f6c6.fw
+%%DATADIR%%/2072-m46f6c6.fw
+%%DATADIR%%/2074-m106f766.fw
+%%DATADIR%%/2075-m406f766.fw
+%%DATADIR%%/2077-m16f256.fw
+%%DATADIR%%/2110-m011066132.fw
+%%DATADIR%%/2111-m801066133.fw
 %%DATADIR%%/2f0708.fw
 %%DATADIR%%/B_c6_612.fw
 %%DATADIR%%/B_c6_616.fw
@@ -67,6 +74,9 @@ include/cpu.h
 %%DATADIR%%/m01f0a13.fw
 %%DATADIR%%/m01f122d.fw
 %%DATADIR%%/m01f2529.fw
+%%DATADIR%%/m01f480c.fw
+%%DATADIR%%/m01f6508.fw
+%%DATADIR%%/m021066114.fw
 %%DATADIR%%/m02f0a15.fw
 %%DATADIR%%/m02f122f.fw
 %%DATADIR%%/m02f241f.fw
@@ -84,6 +94,7 @@ include/cpu.h
 %%DATADIR%%/m04f2737.fw
 %%DATADIR%%/m04f292e.fw
 %%DATADIR%%/m04f620d.fw
+%%DATADIR%%/m04f6507.fw
 %%DATADIR%%/m08f2420.fw
 %%DATADIR%%/m08f2739.fw
 %%DATADIR%%/m08f292f.fw
@@ -97,6 +108,7 @@ include/cpu.h
 %%DATADIR%%/m206d618.fw
 %%DATADIR%%/m206d820.fw
 %%DATADIR%%/m20f4111.fw
+%%DATADIR%%/m22f6809.fw
 %%DATADIR%%/m34f6404.fw
 %%DATADIR%%/m5cf4a04.fw
 %%DATADIR%%/m5df4a02.fw

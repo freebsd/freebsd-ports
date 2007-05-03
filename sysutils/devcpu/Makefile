@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	devcpu
-PORTVERSION=	0.8
+PORTVERSION=	0.8.1
 PORTREVISION=	0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://mbsd.msk.ru/dist/
+MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Kernel module that provides access to i386 MSRs and cpuid info
