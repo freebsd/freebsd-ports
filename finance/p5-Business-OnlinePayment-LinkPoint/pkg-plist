@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Business/OnlinePayment/LinkPoint.pm
-%%SITE_PERL%%/auto/Business/OnlinePayment/LinkPoint/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/LinkPoint/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/LinkPoint
-@dirrm %%SITE_PERL%%/auto/Business/OnlinePayment/LinkPoint
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OnlinePayment
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
 @dirrmtry %%SITE_PERL%%/Business/OnlinePayment
+@dirrmtry %%SITE_PERL%%/Business
