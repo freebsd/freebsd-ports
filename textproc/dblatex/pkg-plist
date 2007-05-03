@@ -133,13 +133,13 @@ bin/dblatex
 %%DATADIR%%/xsl/mathml2/tokens.xsl
 %%DATADIR%%/xsl/mediaobject.xsl
 %%DATADIR%%/xsl/mediaobjectco.xsl
-%%DATADIR%%/xsl/misc.xsl
 %%DATADIR%%/xsl/msgset.xsl
 %%DATADIR%%/xsl/newtbl.xsl
 %%DATADIR%%/xsl/para.xsl
 %%DATADIR%%/xsl/param.xsl
 %%DATADIR%%/xsl/part.xsl
 %%DATADIR%%/xsl/pi.xsl
+%%DATADIR%%/xsl/preamble.xsl
 %%DATADIR%%/xsl/procedure.xsl
 %%DATADIR%%/xsl/qandaset.xsl
 %%DATADIR%%/xsl/quote.xsl
@@ -154,6 +154,7 @@ bin/dblatex
 %%DATADIR%%/xsl/tablen.xsl
 %%DATADIR%%/xsl/texmap.xml
 %%DATADIR%%/xsl/toc_lot.xsl
+%%DATADIR%%/xsl/url.xsl
 %%DATADIR%%/xsl/verbatim.xsl
 %%DATADIR%%/xsl/verbatimco.xsl
 %%DATADIR%%/xsl/version.xsl
@@ -186,6 +187,9 @@ bin/dblatex
 %%PYTHON_SITELIBDIR%%/dbtexmf/dblatex/dblatex.py
 %%PYTHON_SITELIBDIR%%/dbtexmf/dblatex/dblatex.pyc
 %%PYTHON_SITELIBDIR%%/dbtexmf/dblatex/dblatex.pyo
+%%PYTHON_SITELIBDIR%%/dbtexmf/dblatex/rawparse.py
+%%PYTHON_SITELIBDIR%%/dbtexmf/dblatex/rawparse.pyc
+%%PYTHON_SITELIBDIR%%/dbtexmf/dblatex/rawparse.pyo
 %%PYTHON_SITELIBDIR%%/dbtexmf/dblatex/rawtex.py
 %%PYTHON_SITELIBDIR%%/dbtexmf/dblatex/rawtex.pyc
 %%PYTHON_SITELIBDIR%%/dbtexmf/dblatex/rawtex.pyo
