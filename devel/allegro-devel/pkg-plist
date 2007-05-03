@@ -48,6 +48,13 @@ include/allegro/inline/rle.inl
 include/allegro/inline/system.inl
 include/allegro/internal/aintern.h
 include/allegro/internal/aintern2.h
+include/allegro/internal/aintern_dtor.h
+include/allegro/internal/aintern_events.h
+include/allegro/internal/aintern_joystick.h
+include/allegro/internal/aintern_keyboard.h
+include/allegro/internal/aintern_mouse.h
+include/allegro/internal/aintern_thread.h
+include/allegro/internal/aintern_vector.h
 include/allegro/internal/aintvga.h
 include/allegro/internal/alconfig.h
 include/allegro/joystick.h

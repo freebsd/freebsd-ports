@@ -66,8 +66,8 @@ MAN3=	ALLEGRO_DATE.3 ALLEGRO_DATE_STR.3 ALLEGRO_SUB_VERSION.3 \
 	exalpha.3 exbitmap.3 exblend.3 excamera.3 excolmap.3 exconfig.3 \
 	excustom.3 exdata.3 exdbuf.3 exexedat.3 exfixed.3 exflame.3 \
 	exflip.3 exfont.3 exgui.3 exhello.3 exists.3 exjoy.3 exkeys.3 \
-	exlights.3 exmem.3 exmidi.3 exmouse.3 exnewapi.3 expackf.3 \
-	expal.3 expat.3 exquat.3 exrgbhsv.3 exsample.3 exscale.3 \
+	exlights.3 exmem.3 exmidi.3 exmouse.3 exnewapi.3 exnew_events.3 \
+	expackf.3 expal.3 expat.3 exquat.3 exrgbhsv.3 exsample.3 exscale.3 \
 	exscn3d.3 exscroll.3 exshade.3 exspline.3 exsprite.3 exstars.3 \
 	exstream.3 exswitch.3 exsyscur.3 extimer.3 extract_font_range.3 \
 	extrans.3 extruec.3 exunicod.3 exupdate.3 exxfade.3 exzbuf.3 \
@@ -82,7 +82,7 @@ MAN3=	ALLEGRO_DATE.3 ALLEGRO_DATE_STR.3 ALLEGRO_SUB_VERSION.3 \
 	fixtorad_r.3 fixup_datafile.3 fli_bitmap.3 fli_bmp_dirty_from.3 \
 	fli_bmp_dirty_to.3 fli_frame.3 fli_pal_dirty_from.3 \
 	fli_pal_dirty_to.3 fli_palette.3 fli_timer.3 floodfill.3 \
-	flush_config_file.3 font.3 for_each_file_ex.3 \
+	flush_config_file.3 font.3 font_has_alpha.3 for_each_file_ex.3 \
 	free_audio_stream_buffer.3 free_config_entries.3 \
 	free_lzss_pack_data.3 free_lzss_unpack_data.3 \
 	freeze_mouse_flag.3 ftofix.3 generate_332_palette.3 \
@@ -135,7 +135,7 @@ MAN3=	ALLEGRO_DATE.3 ALLEGRO_DATE_STR.3 ALLEGRO_SUB_VERSION.3 \
 	is_color_font.3 is_compatible_font.3 is_inside_bitmap.3 \
 	is_linear_bitmap.3 is_memory_bitmap.3 is_mono_font.3 \
 	is_planar_bitmap.3 is_relative_filename.3 is_same_bitmap.3 \
-	is_screen_bitmap.3 is_sub_bitmap.3 is_system_bitmap.3 \
+	is_screen_bitmap.3 is_sub_bitmap.3 is_system_bitmap.3 is_trans_font.3 \
 	is_video_bitmap.3 is_windowed_mode.3 itofix.3 joy.3 key.3 \
 	key_led_flag.3 key_shifts.3 keyboard_callback.3 \
 	keyboard_lowlevel_callback.3 keyboard_needs_poll.3 \
