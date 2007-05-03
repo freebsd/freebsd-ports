@@ -97,6 +97,7 @@
     SUBDIR += ocaml-jabbr
     SUBDIR += p5-POE-Component-Client-MSN
     SUBDIR += pebrot
+    SUBDIR += pidgin
     SUBDIR += pork
     SUBDIR += py-msnp
     SUBDIR += py-pyxmpp
