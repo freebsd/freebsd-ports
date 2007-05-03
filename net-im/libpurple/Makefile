@@ -6,17 +6,16 @@
 #   $MCom: ports/net-im/libgaim/Makefile,v 1.10 2007/03/11 06:36:56 marcus Exp $
 #
 
-PORTNAME=	gaim
-PORTVERSION=	2.0.0.b6
-PORTREVISION?=	7
+PORTNAME?=	libpurple
+PORTVERSION=	2.0.0.b7
+PORTREVISION?=	0
 CATEGORIES?=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-PKGNAMEPREFIX?=	lib
-DISTNAME=	${PORTNAME}-2.0.0beta6
+MASTER_SITE_SUBDIR=	pidgin
+DISTNAME=	pidgin-2.0.0beta7
 
 MAINTAINER?=	marcus@FreeBSD.org
-COMMENT?=	Backend library for the Gaim multi-protocol messaging client
+COMMENT?=	Backend library for the Pidgin multi-protocol messaging client
 
 CONFLICTS?=	ja-gaim-[0-9]* gaim-1*
 
@@ -31,8 +30,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_C
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}" \
 		PTHREAD_LIB="${PTHREAD_LIBS}"
 
-.if !defined(GAIM_SLAVE)
-# Gaim slave ports that require the following functionality, must explicitly
+.if !defined(PIDGIN_SLAVE)
+# Pidgin slave ports that require the following functionality, must explicitly
 # set these macros themselves.
 USE_GETTEXT=	yes
 USE_ICONV=	yes
@@ -45,7 +44,7 @@ USE_PYTHON=	yes
 WITH_GNOME=	yes
 .endif
 
-MAN1=		gaim.1 gaim-text.1
+MAN1=		pidgin.1 finch.1
 
 .endif
 
@@ -71,18 +70,14 @@ CONFIGURE_ARGS+=--disable-doxygen
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=	does not build on 4.X
-.endif
-
 .if ${OSVERSION} > 700032 || (${OSVERSION} < 700000 && ${OSVERSION} > 602106)
 CFLAGS+=	-D_XOPEN_SOURCE_EXTENDED
 .endif
 
-.if !defined(GAIM_SLAVE)
+.if !defined(PIDGIN_SLAVE)
 .if ${HAVE_GNOME:Mgconf2}!="" || exists(${LOCALBASE}/bin/gconftool-2)
 USE_GNOME+=	gconf2
-GCONF_SCHEMAS=	gaim.schemas
+GCONF_SCHEMAS=	purple.schemas
 .endif
 .endif
 
@@ -161,7 +156,7 @@ PLIST_SUB+=	SAMETIME="@comment not installed: "
 TCLTK_VER?=		8.4	# user can override it
 TCLTK_VER_NODOT=	${TCLTK_VER:S/.//}
 .if ${TCLTK_VER} != 8.3 && ${TCLTK_VER} != 8.4
-.error Currently GAIM can only use Tcl/Tk 8.3 or 8.4
+.error Currently Pidgin can only use Tcl/Tk 8.3 or 8.4
 .endif
 LIB_DEPENDS+=		tk${TCLTK_VER_NODOT}:${PORTSDIR}/x11-toolkits/tk${TCLTK_VER_NODOT}
 CONFIGURE_ARGS+=	--with-tclconfig=${LOCALBASE}/lib/tcl${TCLTK_VER} \
@@ -174,7 +169,7 @@ PLIST_SUB+=		TCL:="@comment not installed: "
 
 .if !defined(WITHOUT_DBUS)
 LIB_DEPENDS+=		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
-.if !defined(GAIM_SLAVE)
+.if !defined(PIDGIN_SLAVE)
 RUN_DEPENDS+=		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 .endif
 CONFIGURE_ARGS+=	--enable-dbus
@@ -188,9 +183,9 @@ PLIST_SUB+=		DBUS="@comment not installed: "
 USE_PERL5=		yes
 CONFIGURE_ARGS+=	--with-perl-lib=site
 PLIST_SUB+=		PERL:=""
-.if !defined(GAIM_SLAVE)
-MAN3PREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3+=			Gaim.3
+.if !defined(PIDGIN_SLAVE)
+MAN3PREFIX=		${TARGETDIR}/lib/perl5/${PERL_VERSION}
+MAN3+=			Purple.3
 .endif
 .else
 CONFIGURE_ARGS+=	--disable-perl
@@ -220,18 +215,15 @@ post-patch:
 		-e 's|TCL_VERSION found but 8.3 required|TCL_VERSION found but ${TCLTK_VER} required|g' \
 		-e 's|TCL_MINOR_VERSION" -ne 3|TCL_MINOR_VERSION" -ne ${TCLTK_VER:E}|' \
 			${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|@bindir@|${PREFIX}/bin|' \
-			${WRKSRC}/gaim.service.in
 	@${REINPLACE_CMD} -e 's|/bin/bash|${SH}|' \
-			${WRKSRC}/libgaim/gaim-send \
-			${WRKSRC}/libgaim/gaim-send-async
+			${WRKSRC}/libpurple/purple-send \
+			${WRKSRC}/libpurple/purple-send-async
 	@${REINPLACE_CMD} -e 's|/python|/env python|' \
-	    		${WRKSRC}/libgaim/gaim-remote \
-			${WRKSRC}/libgaim/gaim-url-handler
-.if defined(GAIM_SLAVE)
+	    		${WRKSRC}/libpurple/purple-remote \
+			${WRKSRC}/libpurple/purple-url-handler
+.if defined(PIDGIN_SLAVE)
 	@${FIND} ${BUILD_WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-		's|[$$][(]top_builddir[)]/libgaim/libgaim.la|${LOCALBASE}/lib/libgaim.la|g' \
-	    		${WRKSRC}/gtk/Makefile.in
+		's|[$$][(]top_builddir[)]/libpurple/libpurple.la|${LOCALBASE}/lib/libpurple.la|g'
 .endif
 
 .include <bsd.port.post.mk>
