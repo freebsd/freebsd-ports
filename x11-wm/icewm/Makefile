@@ -37,6 +37,8 @@ OPTIONS=	GNOMEDESKTOP	"Enable GNOME desktop support"		off \
 		BEASTIE		"Use Beastie'fied startup button"	off \
 		NLS		"Enable National Language Support"	on
 
+PORTSCOUT=	skipv:1.3.0
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GNOMEDESKTOP)
