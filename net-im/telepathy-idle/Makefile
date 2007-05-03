@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	telepathy-idle
-PORTVERSION=	0.0.5
+PORTVERSION=	0.1.0
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -14,7 +14,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	IRC Connection Manager for Telepathy Framework
 
 LIB_PC_DEPENDS=	gobject-2.0.pc:${PORTSDIR}/devel/glib20 \
-		dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib
+		dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib \
+		telepathy-glib.pc:${PORTSDIR}/net-im/telepathy-glib
 
 BUILD_DEPENDS=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 RUN_DEPENDS=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
@@ -38,6 +39,6 @@ CONFIGURE_ENV+=	OPENSSL_LIBS="-L/usr/lib -lssl -lcrypto" OPENSSL_CFLAGS="-I/usr/
 post-patch:
 	@${REINPLACE_CMD} -e 's|strnlen(\([^,]*\), [^)]*)|strlen(\1)|' \
 		${WRKSRC}/src/idle-connection.c \
-		${WRKSRC}/src/idle-server-connection-util.c
+		${WRKSRC}/src/idle-parser.c
 
 .include <bsd.port.post.mk>
