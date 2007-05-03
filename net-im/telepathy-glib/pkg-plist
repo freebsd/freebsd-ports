@@ -49,6 +49,7 @@ include/telepathy-1.0/telepathy-glib/util.h
 include/telepathy-unstable/telepathy-glib/_gen/svc-Channel_Interface_Hold.h
 include/telepathy-unstable/telepathy-glib/_gen/svc-Channel_Interface_Transfer.h
 include/telepathy-unstable/telepathy-glib/_gen/svc-Channel_Type_Contact_Search.h
+include/telepathy-unstable/telepathy-glib/_gen/svc-Channel_Type_Tubes.h
 include/telepathy-unstable/telepathy-glib/_gen/svc-Connection_Interface_Contact_Info.h
 include/telepathy-unstable/telepathy-glib/_gen/svc-Connection_Interface_Forwarding.h
 include/telepathy-unstable/telepathy-glib/_gen/svc-Connection_Interface_Privacy.h
