@@ -2949,3 +2949,6 @@ graphics/gstreamer-plugins-libcaca80||2007-04-29|Obsoleted, use 0.10.x version i
 devel/make||2007-04-29|Port was only useful on FreeBSD 4.x
 multimedia/libdts|multimedia/libdca|2007-05-01|Project renamed
 dns/dnscap||2007-05-03|Removed on authors request until it has reached stability
+net-im/libgaim|net-im/libpurple|2007-05-03|Project renamed
+net-im/gaim-devel|net-im/pidgin|2007-05-03|Project renamed
+net-im/gaim-consoleui-devel|net-im/finch|2007-05-03|Project renamed
