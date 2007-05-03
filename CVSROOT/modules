@@ -1977,7 +1977,6 @@ dnews		ports/news/dnews
 dnrd		ports/dns/dnrd
 dns-proxy-tor	ports/security/dns-proxy-tor
 dns_balance	ports/dns/dns_balance
-dnscap		ports/dns/dnscap
 dnscheck	ports/dns/dnscheck
 dnsdoctor	ports/dns/dnsdoctor
 dnsflood	ports/dns/dnsflood
