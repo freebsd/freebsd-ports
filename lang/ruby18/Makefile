@@ -226,6 +226,7 @@ post-install:
 			${WRKSRC}/ChangeLog	\
 			${WRKSRC}/LEGAL		\
 			${WRKSRC}/README*	\
+			${WRKSRC}/NEWS		\
 			${RUBY_DOCDIR}/
 .endif
 
