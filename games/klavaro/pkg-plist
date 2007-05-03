@@ -1,12 +1,3 @@
-share/locale/cs_CZ/LC_MESSAGES/klavaro.mo
-share/locale/de_DE/LC_MESSAGES/klavaro.mo
-share/locale/eo_EO/LC_MESSAGES/klavaro.mo
-share/locale/es_ES/LC_MESSAGES/klavaro.mo
-share/locale/fr_FR/LC_MESSAGES/klavaro.mo
-share/locale/hu_HU/LC_MESSAGES/klavaro.mo
-share/locale/pl_PL/LC_MESSAGES/klavaro.mo
-share/locale/pt_BR/LC_MESSAGES/klavaro.mo
-share/locale/sv_SE/LC_MESSAGES/klavaro.mo
 bin/klavaro
 %%DATADIR%%/C.paragraphs
 %%DATADIR%%/C.words
@@ -17,6 +8,7 @@ bin/klavaro
 %%DATADIR%%/C_help.txt
 %%DATADIR%%/C_intro.txt
 %%DATADIR%%/C_velo_intro.txt
+%%DATADIR%%/azerty_be.kbd
 %%DATADIR%%/azerty_fr.kbd
 %%DATADIR%%/basic_lessons.txt
 %%DATADIR%%/cs_CZ.paragraphs
@@ -38,6 +30,7 @@ bin/klavaro
 %%DATADIR%%/de_DE_velo_intro.txt
 %%DATADIR%%/dvorak_br.kbd
 %%DATADIR%%/dvorak_fr.kbd
+%%DATADIR%%/dvorak_tr_F.kbd
 %%DATADIR%%/dvorak_us.kbd
 %%DATADIR%%/dvorak_us_br.kbd
 %%DATADIR%%/dvorak_us_es.kbd
@@ -80,6 +73,15 @@ bin/klavaro
 %%DATADIR%%/hu_HU_intro.txt
 %%DATADIR%%/hu_HU_velo_intro.txt
 %%DATADIR%%/jtsuken_ru.kbd
+%%DATADIR%%/nl_BE.paragraphs
+%%DATADIR%%/nl_BE.words
+%%DATADIR%%/nl_BE_about.txt
+%%DATADIR%%/nl_BE_adapt_intro.txt
+%%DATADIR%%/nl_BE_basic_intro.txt
+%%DATADIR%%/nl_BE_fluid_intro.txt
+%%DATADIR%%/nl_BE_help.txt
+%%DATADIR%%/nl_BE_intro.txt
+%%DATADIR%%/nl_BE_velo_intro.txt
 %%DATADIR%%/pixmaps/hands_0.xpm
 %%DATADIR%%/pixmaps/hands_1.xpm
 %%DATADIR%%/pixmaps/hands_2.xpm
@@ -120,6 +122,7 @@ bin/klavaro
 %%DATADIR%%/qwerty_it.kbd
 %%DATADIR%%/qwerty_pt.kbd
 %%DATADIR%%/qwerty_se.kbd
+%%DATADIR%%/qwerty_tr.kbd
 %%DATADIR%%/qwerty_us.kbd
 %%DATADIR%%/qwerty_us2.kbd
 %%DATADIR%%/qwertz_cz.kbd
@@ -135,6 +138,17 @@ bin/klavaro
 %%DATADIR%%/sv_SE_help.txt
 %%DATADIR%%/sv_SE_intro.txt
 %%DATADIR%%/sv_SE_velo_intro.txt
+share/locale/cs_CZ/LC_MESSAGES/klavaro.mo
+share/locale/de_DE/LC_MESSAGES/klavaro.mo
+share/locale/eo_EO/LC_MESSAGES/klavaro.mo
+share/locale/es_ES/LC_MESSAGES/klavaro.mo
+share/locale/fr_FR/LC_MESSAGES/klavaro.mo
+share/locale/hu_HU/LC_MESSAGES/klavaro.mo
+share/locale/nl_BE/LC_MESSAGES/klavaro.mo
+share/locale/nl_NL/LC_MESSAGES/klavaro.mo
+share/locale/pl_PL/LC_MESSAGES/klavaro.mo
+share/locale/pt_BR/LC_MESSAGES/klavaro.mo
+share/locale/sv_SE/LC_MESSAGES/klavaro.mo
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
 @dirrmtry share/locale/cs_CZ/LC_MESSAGES
@@ -147,6 +161,10 @@ bin/klavaro
 @dirrmtry share/locale/fr_FR
 @dirrmtry share/locale/hu_HU/LC_MESSAGES
 @dirrmtry share/locale/hu_HU
+@dirrmtry share/locale/nl_BE/LC_MESSAGES
+@dirrmtry share/locale/nl_BE
+@dirrmtry share/locale/nl_NL/LC_MESSAGES
+@dirrmtry share/locale/nl_NL
 @dirrmtry share/locale/pl_PL/LC_MESSAGES
 @dirrmtry share/locale/pl_PL
 @dirrmtry share/locale/sv_SE/LC_MESSAGES
