@@ -6,22 +6,20 @@
 #   $MCom: ports-stable/net-im/gaim-consoleui-devel/Makefile,v 1.2 2006/10/29 18:55:28 marcus Exp $
 #
 
-PORTNAME=	gaim
-PKGNAMEPREFIX=
-PKGNAMESUFFIX=	-consoleui-devel
+PORTNAME=	finch
 
 MAINTAINER=	marcus@FreeBSD.org
-COMMENT=	Gaim multi-protocol messaging client (Console UI)
+COMMENT=	Finch multi-protocol messaging client (Console UI)
 
-LIB_DEPENDS=	gaim.0:${PORTSDIR}/net-im/libgaim
+LIB_DEPENDS=	purple.0:${PORTSDIR}/net-im/libpurple
 
-MASTERDIR=	${.CURDIR}/../libgaim
-BUILD_WRKSRC=	${WRKSRC}/console
+MASTERDIR=	${.CURDIR}/../libpurple
+BUILD_WRKSRC=	${WRKSRC}/finch
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-GAIM_SLAVE=	yes
+PIDGIN_SLAVE=	yes
 WITH_CONSOLEUI=	yes
 
 USE_LDCONFIG=	yes

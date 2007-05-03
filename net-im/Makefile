@@ -19,6 +19,7 @@
     SUBDIR += echat
     SUBDIR += ejabberd
     SUBDIR += eva
+    SUBDIR += finch
     SUBDIR += firetalk
     SUBDIR += fugu
     SUBDIR += gaim
