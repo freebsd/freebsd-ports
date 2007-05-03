@@ -1,5 +1,5 @@
 --- configure.orig	Fri Apr 27 03:13:50 2007
-+++ configure	Tue May  1 06:17:09 2007
++++ configure	Thu May  3 09:28:33 2007
 @@ -208,11 +208,11 @@
  
  # "tr '[a-z]' '[A-Z]'" is a workaround for Solaris tr not grokking "tr a-z A-Z"
@@ -85,6 +85,15 @@
    echo "SWSVERSION=$sws_version" >> config.mak
    echo "SLIBNAME=${SLIBNAME}" >> config.mak
    echo "SLIBNAME_WITH_VERSION=${SLIBNAME_WITH_VERSION}" >> config.mak
+@@ -2001,7 +1995,7 @@
+ 
+ echo "SRC_PATH=\"$source_path\"" >> config.mak
+ echo "SRC_PATH_BARE=$source_path" >> config.mak
+-echo "BUILD_ROOT=\"$PWD\"" >> config.mak
++echo "BUILD_ROOT=\"$(pwd)\"" >> config.mak
+ 
+ # Apparently it's not possible to portably echo a backslash.
+ if enabled asmalign_pot; then
 @@ -2095,8 +2089,8 @@
  Version: $version
  Requires: $requires
