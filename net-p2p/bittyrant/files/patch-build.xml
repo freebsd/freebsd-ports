@@ -1,0 +1,13 @@
+--- build.xml.orig	Thu Jan  4 15:51:46 2007
++++ build.xml	Thu May  3 00:29:25 2007
+@@ -32,6 +32,10 @@
+    <!-- increasing the memory for javac avoids heap space problems when compiling so many source files -->
+    	<!--- uses java1.5 -->
+    	<javac srcdir="${root.dir}" destdir="${root.dir}" nowarn="yes" source="1.5" target="1.5" includeAntRuntime="no" debug="true" debuglevel="lines,vars,source" fork="yes" memoryMaximumSize="256m">
++         <include name="**/*.java"/>
++         <exclude name="**/Win32*.java"/>
++         <exclude name="**/swt/osx/**"/>
++         <exclude name="**/macosx/**"/>
+          <classpath refid="libs.classpath" />
+       </javac>
+    </target>
