@@ -48,7 +48,7 @@ CONFIGURE_ARGS+=	--disable-pam
 .endif
 
 pre-install:
-	@${CP} ${.CURDIR}/pkg-plist ${PLIST}
+	@${CAT} ${.CURDIR}/pkg-plist > ${PLIST}
 	@cd ${XSCREENSAVER_DIR} && ${FIND} -s * -maxdepth 1 -type f -name "*.xml" | \
 		${GREP} -Ev ${XSCREENSAVER_EXCLUDE} | \
 		${SED} -e 's:^:${SCREENSAVER_DIR}/:' | \
