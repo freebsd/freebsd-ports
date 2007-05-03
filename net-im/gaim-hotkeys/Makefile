@@ -13,9 +13,9 @@ MASTER_SITES=	SF
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A gaim plugin that allows user to assign global hotkeys
 
-LIB_DEPENDS=	gaim.0:${PORTSDIR}/net-im/libgaim
-BUILD_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim-devel
-RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim-devel
+LIB_DEPENDS=	gaim.0:${PORTSDIR}/net-im/libpurple
+BUILD_DEPENDS=	gaim:${PORTSDIR}/net-im/pidgin
+RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/pidgin
 
 USE_GNOME=	pkgconfig gtk20
 GNU_CONFIGURE=	yes
