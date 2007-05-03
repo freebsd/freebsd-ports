@@ -47,11 +47,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_KQUEUE" \
 .if !defined(AVAHI_SLAVE)
 CONFLICTS=	howl-[0-9]*
 
-MAN1=	avahi-browse-domains.1 avahi-browse.1 avahi-publish-address.1 \
-	avahi-publish-service.1 avahi-publish.1 avahi-resolve-address.1 \
-	avahi-resolve-host-name.1 avahi-resolve.1 avahi-set-host-name.1
+MAN1=	avahi-browse.1 avahi-publish.1 avahi-resolve.1 avahi-set-host-name.1
 MAN5=	avahi-daemon.conf.5 avahi.service.5 avahi.hosts.5
 MAN8=	avahi-daemon.8 avahi-dnsconfd.8 avahi-dnsconfd.action.8
+
+MLINKS=	avahi-browse.1 avahi-browse-domains.1 \
+	avahi-publish.1 avahi-publish-address.1 \
+	avahi-publish.1 avahi-publish-service.1 \
+	avahi-resolve.1 avahi-resolve-address.1 \
+	avahi-resolve.1 avahi-resolve-host-name.1
 
 OPTIONS=	GTK2 "Build a GTK+ 2 browser utility and other tools" off \
 		LIBDNS "Enable mDNSResponder compatibility" off
