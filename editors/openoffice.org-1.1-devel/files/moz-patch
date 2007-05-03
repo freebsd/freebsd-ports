@@ -7,6 +7,8 @@ http://qa.openoffice.org/issues/show_bug.cgi?id=11424
 disable freetype2 support since build broken and
 this functionality is not used at all.
 
+fix build after /usr/bin/objformat removal
+
 --- moz/extractfiles.mk.org	Sat Oct 30 22:01:49 2004
 +++ moz/extractfiles.mk	Sat Oct 30 22:00:21 2004
 @@ -269,8 +269,8 @@
@@ -21,14 +23,11 @@ this functionality is not used at all.
  
  .IF "$(GUI)"=="UNX"
 
---- moz/mozilla-source-1.0.patch.org	Tue Feb 10 19:44:34 2004
-+++ moz/mozilla-source-1.0.patch	Sat Mar 19 12:51:35 2005
-@@ -4471,14 +4471,17 @@
-      return NS_OK;
-  }
+--- moz/mozilla-source-1.0.patch	Thu May  3 09:11:47 2007
++++ moz/mozilla-source-1.0.patch	Thu May  3 09:10:12 2007
+@@ -4473,12 +4473,15 @@
  
----- miss/build/mozilla/.mozconfig	Tue Jul 22 21:52:27 2003
-+--- misc/build/mozilla/.mozconfig	Tue Jul 22 21:52:27 2003
+ --- misc/build/mozilla/.mozconfig	Tue Jul 22 21:52:27 2003
  +++ misc/build/mozilla/.mozconfig	Mon Jul 28 15:07:20 2003
 -@@ -0,0 +1,8 @@
 +@@ -0,0 +1,11 @@
@@ -43,7 +42,7 @@ this functionality is not used at all.
  +ac_add_options --enable-optimize
  +ac_add_options --enable-crypto
  +ac_add_options --enable-strip
-@@ -4497,3 +4500,19 @@
+@@ -4497,3 +4500,233 @@
   endif
   
   # Windows equivalents
@@ -63,14 +62,25 @@ this functionality is not used at all.
 + #endif
 + 
 + /*
---- moz/mozilla-source-1.0.patch~	Sun Sep 10 09:28:29 2006
-+++ moz/mozilla-source-1.0.patch	Sun Sep 10 12:01:05 2006
-@@ -4516,3 +4516,49 @@
-  #endif
-  
-  /*
 +*** misc/mozilla/configure	Tue May 28 04:29:00 2002
 +--- misc/build/mozilla/configure	Sun Sep 10 11:56:33 2006
++***************
++*** 4565,4571 ****
++      ;;
++  
++  *-freebsd*)
++!     if test `test -x /usr/bin/objformat && /usr/bin/objformat || echo aout` != "elf"; then
++  	DLL_SUFFIX=".so.1.0"
++  	DSO_LDOPTS="-shared"
++      fi
++--- 4565,4571 ----
++      ;;
++  
++  *-freebsd*)
++!     if test `test -x /usr/bin/objformat && /usr/bin/objformat || echo elf` != "elf"; then
++  	DLL_SUFFIX=".so.1.0"
++  	DSO_LDOPTS="-shared"
++      fi
 +***************
 +*** 6589,6594 ****
 +--- 6589,6596 ----
@@ -85,6 +95,23 @@ this functionality is not used at all.
 +*** misc/mozilla/configure.in	Tue May 28 04:29:12 2002
 +--- misc/build/mozilla/configure.in	Sun Sep 10 11:56:18 2006
 +***************
++*** 787,793 ****
++      ;;
++  
++  *-freebsd*)
++!     if test `test -x /usr/bin/objformat && /usr/bin/objformat || echo aout` != "elf"; then
++  	DLL_SUFFIX=".so.1.0"
++  	DSO_LDOPTS="-shared"
++      fi
++--- 787,793 ----
++      ;;
++  
++  *-freebsd*)
++!     if test `test -x /usr/bin/objformat && /usr/bin/objformat || echo elf` != "elf"; then
++  	DLL_SUFFIX=".so.1.0"
++  	DSO_LDOPTS="-shared"
++      fi
++***************
 +*** 1606,1611 ****
 +--- 1606,1613 ----
 +  case $target in
@@ -95,6 +122,140 @@ this functionality is not used at all.
 +  *)
 +  	AC_CHECK_LIB(c_r, gethostbyname_r)
 +  	;;
++*** misc/mozilla/directory/c-sdk/config/FreeBSD.mk	Wed Apr 10 11:31:55 2002
++--- misc/build/mozilla/directory/c-sdk/config/FreeBSD.mk	Thu May  3 07:55:57 2007
++***************
++*** 66,72 ****
++  
++  ARCH			= freebsd
++  
++! MOZ_OBJFORMAT          := $(shell test -x /usr/bin/objformat && /usr/bin/objformat || echo aout)
++  
++  ifeq ($(MOZ_OBJFORMAT),elf)
++  DLL_SUFFIX		= so
++--- 66,72 ----
++  
++  ARCH			= freebsd
++  
++! MOZ_OBJFORMAT          := $(shell test -x /usr/bin/objformat && /usr/bin/objformat || echo elf)
++  
++  ifeq ($(MOZ_OBJFORMAT),elf)
++  DLL_SUFFIX		= so
++*** misc/mozilla/directory/c-sdk/configure	Wed Apr 10 11:31:53 2002
++--- misc/build/mozilla/directory/c-sdk/configure	Thu May  3 07:58:33 2007
++***************
++*** 3410,3416 ****
++  EOF
++  
++      CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
++!     MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++      if test "$MOZ_OBJFORMAT" = "elf"; then
++          DLL_SUFFIX=so
++      else
++--- 3410,3416 ----
++  EOF
++  
++      CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
++!     MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++      if test "$MOZ_OBJFORMAT" = "elf"; then
++          DLL_SUFFIX=so
++      else
++*** misc/mozilla/directory/c-sdk/configure.in	Wed Apr 10 11:31:54 2002
++--- misc/build/mozilla/directory/c-sdk/configure.in	Thu May  3 07:58:48 2007
++***************
++*** 900,906 ****
++      AC_DEFINE(FREEBSD)
++      AC_DEFINE(HAVE_BSD_FLOCK)
++      CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
++!     MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++      if test "$MOZ_OBJFORMAT" = "elf"; then
++          DLL_SUFFIX=so
++      else
++--- 900,906 ----
++      AC_DEFINE(FREEBSD)
++      AC_DEFINE(HAVE_BSD_FLOCK)
++      CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
++!     MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++      if test "$MOZ_OBJFORMAT" = "elf"; then
++          DLL_SUFFIX=so
++      else
++*** misc/mozilla/nsprpub/configure	Tue Sep 14 17:14:38 2004
++--- misc/build/mozilla/nsprpub/configure	Wed Apr  4 20:56:33 2007
++***************
++*** 3407,3413 ****
++  EOF
++  
++      CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
++!     MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++      if test "$MOZ_OBJFORMAT" = "elf"; then
++          DLL_SUFFIX=so
++      else
++--- 3407,3413 ----
++  EOF
++  
++      CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
++!     MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++      if test "$MOZ_OBJFORMAT" = "elf"; then
++          DLL_SUFFIX=so
++      else
++*** misc/mozilla/nsprpub/configure.in	Tue Sep 14 17:14:38 2004
++--- misc/build/mozilla/nsprpub/configure.in	Wed Apr  4 20:56:40 2007
++***************
++*** 922,928 ****
++      AC_DEFINE(HAVE_BSD_FLOCK)
++      AC_DEFINE(HAVE_SOCKLEN_T)
++      CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
++!     MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++      if test "$MOZ_OBJFORMAT" = "elf"; then
++          DLL_SUFFIX=so
++      else
++--- 922,928 ----
++      AC_DEFINE(HAVE_BSD_FLOCK)
++      AC_DEFINE(HAVE_SOCKLEN_T)
++      CFLAGS="$CFLAGS $(DSO_CFLAGS) -ansi -Wall"
++!     MOZ_OBJFORMAT=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++      if test "$MOZ_OBJFORMAT" = "elf"; then
++          DLL_SUFFIX=so
++      else
++
++*** misc/mozilla/security/coreconf/FreeBSD.mk	Wed Mar 26 20:17:25 2003
++--- misc/build/mozilla/security/coreconf/FreeBSD.mk	Wed Apr  4 20:56:48 2007
++***************
++*** 63,69 ****
++  
++  ARCH			= freebsd
++  
++! MOZ_OBJFORMAT		:= $(shell test -x /usr/bin/objformat && /usr/bin/objformat || echo aout)
++  
++  ifeq ($(MOZ_OBJFORMAT),elf)
++  DLL_SUFFIX		= so
++--- 63,69 ----
++  
++  ARCH			= freebsd
++  
++! MOZ_OBJFORMAT		:= $(shell test -x /usr/bin/objformat && /usr/bin/objformat || echo elf)
++  
++  ifeq ($(MOZ_OBJFORMAT),elf)
++  DLL_SUFFIX		= so
++*** misc/mozilla/nsprpub/config/FreeBSD.mk	Wed Apr 10 12:16:03 2002
++--- misc/build/mozilla/nsprpub/config/FreeBSD.mk	Thu May  3 08:07:27 2007
++***************
++*** 66,72 ****
++  
++  ARCH			= freebsd
++  
++! MOZ_OBJFORMAT          := $(shell test -x /usr/bin/objformat && /usr/bin/objformat || echo aout)
++  
++  ifeq ($(MOZ_OBJFORMAT),elf)
++  DLL_SUFFIX		= so
++--- 66,72 ----
++  
++  ARCH			= freebsd
++  
++! MOZ_OBJFORMAT          := $(shell test -x /usr/bin/objformat && /usr/bin/objformat || echo elf)
++  
++  ifeq ($(MOZ_OBJFORMAT),elf)
++  DLL_SUFFIX		= so
 +*** misc/mozilla/nsprpub/pr/src/misc/prnetdb.c	Wed Apr 10 12:17:35 2002
 +--- misc/build/mozilla/nsprpub/pr/src/misc/prnetdb.c	Sun Sep 10 11:55:27 2006
 +***************
