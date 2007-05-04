@@ -10109,6 +10109,7 @@ p5-Net-Address-Ethernet	ports/net/p5-Net-Address-Ethernet
 p5-Net-Address-IPv4-Local	ports/net/p5-Net-Address-IPv4-Local
 p5-Net-Akismet	ports/www/p5-Net-Akismet
 p5-Net-Amazon	ports/net/p5-Net-Amazon
+p5-Net-Amazon-AWIS	ports/www/p5-Net-Amazon-AWIS
 p5-Net-Amazon-S3	ports/net/p5-Net-Amazon-S3
 p5-Net-Analysis	ports/net/p5-Net-Analysis
 p5-Net-BGP	ports/net/p5-Net-BGP
