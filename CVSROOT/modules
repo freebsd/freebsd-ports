@@ -15221,6 +15221,7 @@ torrent		ports/games/torrent
 torrent_swapper	ports/net-p2p/torrent_swapper
 torrentflux	ports/net-p2p/torrentflux
 torrentsniff	ports/net-p2p/torrentsniff
+torrentvolve	ports/net-p2p/torrentvolve
 torrentzip	ports/archivers/torrentzip
 torrus		ports/net-mgmt/torrus
 torsmo		ports/sysutils/torsmo
