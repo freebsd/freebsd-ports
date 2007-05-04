@@ -1,6 +1,24 @@
---- configure.orig	Sat Mar 19 14:39:26 2005
-+++ configure	Sat Mar 19 14:40:24 2005
-@@ -21821,7 +21821,7 @@
+--- configure.orig	Thu May  3 23:07:19 2007
++++ configure	Thu May  3 23:10:58 2007
+@@ -6120,7 +6120,7 @@ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_GTK_PRINT 1
+ _ACEOF
+ 
+-  gnome_print_extras=""
++  #gnome_print_extras=""
+ else
+   gnome_print_extras="libgnomeprint-2.2 >= 2.1.4 libgnomeprintui-2.2 >= 2.1.4"
+ fi
+@@ -6732,7 +6732,7 @@ if eval "test \"\${$as_ac_Lib+set}\" = s
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lgtkhtml-$i  $LIBS"
++LIBS="-lgtkhtml-$i  $HTML_LIBS $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -7008,7 +7008,7 @@ if test "${ac_cv_lib_ldap_ldap_search+se
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -9,7 +27,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -21885,7 +21885,7 @@
+@@ -7072,7 +7072,7 @@ cat >>confdefs.h <<\_ACEOF
  #define ENABLE_LDAP 1
  _ACEOF
  
@@ -18,7 +36,7 @@
  else
    { { echo "$as_me:$LINENO: error: *** You enabled LDAP but ldap library is not found." >&5
  echo "$as_me: error: *** You enabled LDAP but ldap library is not found." >&2;}
-@@ -22664,13 +22664,13 @@
+@@ -8735,13 +8735,13 @@ _ACEOF
  else
  
  
@@ -36,7 +54,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -22684,11 +22684,11 @@
+@@ -8755,11 +8755,11 @@ extern "C"
  #endif
  /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */

@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION=	2.3.14
-PORTREVISION=	1
+PORTVERSION=	2.3.15
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/
 DISTNAME=	balsa-${PORTVERSION}
@@ -28,8 +27,8 @@ INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_PERL5=	yes
 USE_OPENSSL=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui libgnomeprintui \
-		gtkhtml3
+USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui gtkhtml3 \
+		libgnomeprintui
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libltdl:15
 USE_GCC=	3.4+
@@ -41,12 +40,13 @@ CONFIGURE_ARGS=	--enable-threads \
 		--with-ssl \
 		--enable-gtkhtml=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib -liconv"
+		LIBS="-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}"
 
 MAN1=		balsa.1
 
 OPTIONS=	LDAP "Enable LDAP support" on \
 		GTKSPELL "Spell checking support" on \
+		GTKSV "Enable GtkSourceview support" on \
 		GPG "Enable GnuPG support" off
 
 .include <bsd.port.pre.mk>
@@ -66,6 +66,11 @@ LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 CONFIGURE_ARGS+=--with-gtkspell
 .endif
 
+.if !defined(WITHOUT_GTKSV)
+USE_GNOME+=	gtksourceview
+CONFIGURE_ARGS+=--with-gtksourceview
+.endif
+
 .if ${PREFIX}==${LOCALBASE}
 PLIST_SUB+=	GTKICON="@comment "
 .else
@@ -77,8 +82,7 @@ post-patch:
 		${WRKSRC}/libbalsa/mailbox_imap.c
 # PREFIX safeness
 	@${REINPLACE_CMD} -E \
-		-e 's|^(HICOLOR_ICON_DIR)[^/]+/|\1=${PREFIX}/| ; \
-		s|libgtkhtml-3.8|libgtkhtml-3.14|g' \
+		-e 's|^(HICOLOR_ICON_DIR)[^/]+/|\1=${PREFIX}/|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
