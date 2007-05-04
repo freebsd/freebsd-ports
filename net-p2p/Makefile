@@ -35,6 +35,7 @@
     SUBDIR += giftcurs
     SUBDIR += giftoxic
     SUBDIR += giftui
+    SUBDIR += gift-ares
     SUBDIR += gift-fasttrack
     SUBDIR += gift-gnutella
     SUBDIR += gift-openft
