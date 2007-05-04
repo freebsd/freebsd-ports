@@ -865,6 +865,7 @@
     SUBDIR += p5-Best
     SUBDIR += p5-Bundle-Perl6
     SUBDIR += p5-C-Scan
+    SUBDIR += p5-CLASS
     SUBDIR += p5-CPAN-DistnameInfo
     SUBDIR += p5-CPAN-Mini
     SUBDIR += p5-CPAN-SQLite
