@@ -945,6 +945,7 @@
     SUBDIR += xprobe
     SUBDIR += xpvm
     SUBDIR += xrdesktop
+    SUBDIR += xrdp
     SUBDIR += xsmbrowser
     SUBDIR += xtraceroute
     SUBDIR += xwhois
