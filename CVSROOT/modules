@@ -10517,6 +10517,7 @@ p5-Rose-DB-Object	ports/databases/p5-Rose-DB-Object
 p5-Rose-DateTime	ports/devel/p5-Rose-DateTime
 p5-Rose-Object	ports/devel/p5-Rose-Object
 p5-RunApp	ports/devel/p5-RunApp
+p5-S3		ports/net/p5-S3
 p5-SAVI-Perl	ports/security/p5-SAVI-Perl
 p5-SCGI		ports/www/p5-SCGI
 p5-SDL		ports/devel/p5-SDL
