@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	filezilla
-DISTVERSION=	3.0.0-beta5
+DISTVERSION=	3.0.0-beta7
 CATEGORIES=	ftp
 MASTER_SITES=	SF
 DISTNAME=	FileZilla_${DISTVERSION}_src
@@ -30,10 +30,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|dummy wxrc|&-gtk2-${WX_VERSION}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=		does not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
