@@ -1,0 +1,19 @@
+==============================================================================
+
+XRDP has been installed.
+
+The binaries "sesman" and "sesrun" have been prefixed with "xrdp_" to avoid a
+possible name conflict, as their manual pages, log and pid files.
+
+There is an rc.d script, so the service can be enabled by adding this line
+in /etc/rc.conf:
+
+xrdp_enable="YES"
+
+Do not forget to edit the configuration files in "%%PREFIX%%/etc/xrdp"
+and the "%%PREFIX%%/lib/startwm.sh" script.
+
+Also, you must manually run a VNC server to be able to use this program. Try
+the "vnc-any" example in "xrdp.ini".
+
+==============================================================================

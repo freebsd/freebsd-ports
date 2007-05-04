@@ -1,0 +1,35 @@
+--- ./xrdp/Makefile.orig	Fri Mar  3 22:02:08 2006
++++ ./xrdp/Makefile	Sun Apr 29 12:42:28 2007
+@@ -24,21 +24,23 @@
+ all: xrdp
+ 
+ xrdp: $(XRDPOBJ)
+-	$(CC) $(LDFLAGS) -o xrdp $(XRDPOBJ) $(LIBS)
++	$(CC) $(LDFLAGS) -o xrdp $(XRDPOBJ) $(LIBS) -Wl,-rpath=$(DESTDIR)
+ 	strip xrdp
+ 
+ clean:
+ 	rm -f $(XRDPOBJ) xrdp
+ 
+ install:
+-	install ad256.bmp $(DESTDIR)/ad256.bmp
+-	install xrdp256.bmp $(DESTDIR)/xrdp256.bmp
+-	install cursor0.cur $(DESTDIR)/cursor0.cur
+-	install cursor1.cur $(DESTDIR)/cursor1.cur
+-	install Tahoma-10.fv1 $(DESTDIR)/Tahoma-10.fv1
+-	install xrdp.ini $(CFGDIR)/xrdp.ini
+-	install rsakeys.ini $(CFGDIR)/rsakeys.ini
+-	install xrdp $(DESTDIR)/xrdp
++	$(BSD_INSTALL_DATA) ad256.bmp $(DESTDIR)/ad256.bmp
++	$(BSD_INSTALL_DATA) xrdp256.bmp $(DESTDIR)/xrdp256.bmp
++	$(BSD_INSTALL_DATA) cursor0.cur $(DESTDIR)/cursor0.cur
++	$(BSD_INSTALL_DATA) cursor1.cur $(DESTDIR)/cursor1.cur
++	$(BSD_INSTALL_DATA) Tahoma-10.fv1 $(DESTDIR)/Tahoma-10.fv1
++	$(BSD_INSTALL_PROGRAM) xrdp $(PREFIX)/bin/xrdp
++	$(BSD_INSTALL_DATA) xrdp.ini $(CFGDIR)/xrdp.ini.sample
++	@test -f $(CFGDIR)/xrdp.ini || cp $(CFGDIR)/xrdp.ini.sample $(CFGDIR)/xrdp.ini
++	$(BSD_INSTALL_DATA) rsakeys.ini $(CFGDIR)/rsakeys.ini.sample
++	@test -f $(CFGDIR)/rsakeys.ini || cp $(CFGDIR)/rsakeys.ini.sample $(CFGDIR)/rsakeys.ini
+ 
+ installdeb:
+ 	install ad256.bmp $(DESTDIRDEB)/usr/xrdp/ad256.bmp
