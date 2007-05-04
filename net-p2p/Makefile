@@ -116,6 +116,7 @@
     SUBDIR += rblibtorrent-devel
     SUBDIR += rtorrent
     SUBDIR += rtorrent-devel
+    SUBDIR += sharktorrent
     SUBDIR += squall
     SUBDIR += torrent_swapper
     SUBDIR += torrentflux
