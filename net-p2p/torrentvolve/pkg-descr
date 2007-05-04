@@ -1,0 +1,6 @@
+TorrentVolve is a cross-platform PHP-driven web-based BitTorrent client. It
+focuses on speed and reliability, while also providing a full feature set. It
+includes a user management system, a Torrent file manager, and a configurable
+Torrent downloader.
+
+WWW: http://torrentvolve.sourceforge.net/

@@ -121,6 +121,7 @@
     SUBDIR += torrent_swapper
     SUBDIR += torrentflux
     SUBDIR += torrentsniff
+    SUBDIR += torrentvolve
     SUBDIR += trackerbt
     SUBDIR += transmission
     SUBDIR += transmission-gtk2
