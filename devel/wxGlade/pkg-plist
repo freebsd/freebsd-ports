@@ -26,6 +26,7 @@ bin/wxglade
 %%PYTHON_SITELIBDIR%%/wxglade/main.py
 %%PYTHON_SITELIBDIR%%/wxglade/misc.py
 %%PYTHON_SITELIBDIR%%/wxglade/res/preferences.wxg
+%%PYTHON_SITELIBDIR%%/wxglade/template.py
 %%PYTHON_SITELIBDIR%%/wxglade/tree.py
 %%PYTHON_SITELIBDIR%%/wxglade/widget_properties.py
 %%PYTHON_SITELIBDIR%%/wxglade/widgets/ChoicesCodeHandler.py
@@ -39,9 +40,13 @@ bin/wxglade
 %%PYTHON_SITELIBDIR%%/wxglade/widgets/bitmap_button/perl_codegen.py
 %%PYTHON_SITELIBDIR%%/wxglade/widgets/button/__init__.py
 %%PYTHON_SITELIBDIR%%/wxglade/widgets/button/button.py
+%%PYTHON_SITELIBDIR%%/wxglade/widgets/button/button_stockitems.py
 %%PYTHON_SITELIBDIR%%/wxglade/widgets/button/codegen.py
 %%PYTHON_SITELIBDIR%%/wxglade/widgets/button/lisp_codegen.py
 %%PYTHON_SITELIBDIR%%/wxglade/widgets/button/perl_codegen.py
+%%PYTHON_SITELIBDIR%%/wxglade/widgets/calendar_ctrl/__init__.py
+%%PYTHON_SITELIBDIR%%/wxglade/widgets/calendar_ctrl/calendar_ctrl.py
+%%PYTHON_SITELIBDIR%%/wxglade/widgets/calendar_ctrl/codegen.py
 %%PYTHON_SITELIBDIR%%/wxglade/widgets/checkbox/__init__.py
 %%PYTHON_SITELIBDIR%%/wxglade/widgets/checkbox/checkbox.py
 %%PYTHON_SITELIBDIR%%/wxglade/widgets/checkbox/codegen.py
@@ -62,6 +67,9 @@ bin/wxglade
 %%PYTHON_SITELIBDIR%%/wxglade/widgets/custom_widget/custom_widget.py
 %%PYTHON_SITELIBDIR%%/wxglade/widgets/custom_widget/lisp_codegen.py
 %%PYTHON_SITELIBDIR%%/wxglade/widgets/custom_widget/perl_codegen.py
+%%PYTHON_SITELIBDIR%%/wxglade/widgets/datepicker_ctrl/__init__.py
+%%PYTHON_SITELIBDIR%%/wxglade/widgets/datepicker_ctrl/codegen.py
+%%PYTHON_SITELIBDIR%%/wxglade/widgets/datepicker_ctrl/datepicker_ctrl.py
 %%PYTHON_SITELIBDIR%%/wxglade/widgets/dialog/__init__.py
 %%PYTHON_SITELIBDIR%%/wxglade/widgets/dialog/codegen.py
 %%PYTHON_SITELIBDIR%%/wxglade/widgets/dialog/dialog.py
@@ -305,10 +313,12 @@ bin/wxglade
 @dirrm %%PYTHON_SITELIBDIR%%/wxglade/widgets/gauge
 @dirrm %%PYTHON_SITELIBDIR%%/wxglade/widgets/frame
 @dirrm %%PYTHON_SITELIBDIR%%/wxglade/widgets/dialog
+@dirrm %%PYTHON_SITELIBDIR%%/wxglade/widgets/datepicker_ctrl
 @dirrm %%PYTHON_SITELIBDIR%%/wxglade/widgets/custom_widget
 @dirrm %%PYTHON_SITELIBDIR%%/wxglade/widgets/combo_box
 @dirrm %%PYTHON_SITELIBDIR%%/wxglade/widgets/choice
 @dirrm %%PYTHON_SITELIBDIR%%/wxglade/widgets/checkbox
+@dirrm %%PYTHON_SITELIBDIR%%/wxglade/widgets/calendar_ctrl
 @dirrm %%PYTHON_SITELIBDIR%%/wxglade/widgets/button
 @dirrm %%PYTHON_SITELIBDIR%%/wxglade/widgets/bitmap_button
 @dirrm %%PYTHON_SITELIBDIR%%/wxglade/widgets

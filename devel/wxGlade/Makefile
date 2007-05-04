@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	wxglade
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5
 CATEGORIES=	devel x11-toolkits python
 MASTER_SITES=	SF
 DISTNAME=	wxGlade-${PORTVERSION}
@@ -18,7 +18,7 @@ CONFLICTS=	wxglade-devel-[0-9]*
 WRKSRC=		${WRKDIR}/wxGlade-${PORTVERSION}
 
 USE_PYTHON=	yes
-USE_WX=		2.6
+USE_WX=		2.6+
 WX_COMPS=	python
 
 MAN1=		wxglade.1

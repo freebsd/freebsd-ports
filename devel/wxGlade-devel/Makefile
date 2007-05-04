@@ -5,23 +5,21 @@
 # $FreeBSD$
 
 PORTNAME=	wxglade
-PORTVERSION=	0.4.1
-DISTNAME=	${PORTNAME}-${PORTVERSION}cvs
+PORTVERSION=	0.5
 CATEGORIES=	devel x11-toolkits python
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	alepulver
+MASTER_SITES=	SF
 PKGNAMESUFFIX=	-devel
+DISTNAME=	wxGlade-${PORTVERSION}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	GUI builder for wxPython/wxWindows written in Python
 
 CONFLICTS=	wxglade-[0-9]*
 
-WRKSRC=		${WRKDIR}/wxGlade
+WRKSRC=		${WRKDIR}/wxGlade-${PORTVERSION}
 
-USE_BZIP2=	yes
 USE_PYTHON=	yes
-USE_WX=		2.6
+USE_WX=		2.6+
 WX_COMPS=	python
 
 MAN1=		wxglade.1
@@ -32,26 +30,16 @@ do-build:
 		"$$@"') > ${WRKDIR}/${PORTNAME}
 
 do-install:
-	@${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}
-	@cd ${WRKSRC} && ${FIND} . \
-		\( -name CVS -prune \) -o \
-		\( -name docs -prune \) -o \
-		\( -name debian -prune \) -o \
-		! -name .cvsignore \
-		! -name "*.pyc" \
-		-print | \
-		${CPIO} -dump ${PYTHON_SITELIBDIR}/${PORTNAME}
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+	${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/*.py ${PYTHON_SITELIBDIR}/${PORTNAME}
+.for f in codegen edit_sizers res widgets
+	${CP} -R ${WRKSRC}/${f} ${PYTHON_SITELIBDIR}/${PORTNAME}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/debian/wxglade.1 ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@cd ${WRKSRC}/docs && ${FIND} . \
-		\( -name CVS -prune \) -o \
-		! -name .cvsignore \
-		! -name "*.pyc" \
-		-print | \
-		${CPIO} -dump ${DOCSDIR}
-.endif
-.if !defined(NO_INSTALL_MANPAGES)
-	${INSTALL_MAN} ${WRKSRC}/debian/wxglade.1 ${MANPREFIX}/man/man1
+	${MKDIR} ${DOCSDIR}
+	${CP} -R ${WRKSRC}/docs/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
