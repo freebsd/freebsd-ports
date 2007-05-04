@@ -1,0 +1,23 @@
+The Net::Amazon::AWIS module allows you to use the Amazon Alexa Web
+Information Service.
+
+The Alexa Web Information Service (AWIS) provides developers with
+programmatic access to the information Alexa Internet (www.alexa.com)
+collects from its Web Crawl, which currently encompasses more than 100
+terabytes of data from over 4 billion Web pages. Developers and Web
+site owners can use AWIS as a platform for finding answers to
+difficult and interesting problems on the Web, and incorporating them
+into their Web applications.
+
+In order to access the Alexa Web Information Service, you will need an
+Amazon Web Services Subscription ID. See
+http://www.amazon.com/gp/aws/landing.html
+
+Registered developers have free access to the Alexa Web Information
+Service during its beta period, but it is limited to 10,000 requests
+per subscription ID per day.
+
+There are some limitations, so be sure to read the The Amazon Alexa
+Web Information Service FAQ.
+
+WWW:	http://search.cpan.org/dist/Net-Amazon-AWIS/
