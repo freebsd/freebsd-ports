@@ -1,0 +1,16 @@
+http://en.wikipedia.org/wiki/MogileFS:
+
+MogileFS was created by Danga Interactive for use with LiveJournal. It
+is similar to the Andrew File System in its design goal. It is different
+than a traditional filesystem in that the user has to access files via
+an API. However, it's possible to implement the file system in user
+space using FUSE, or a similar package.
+
+MogileFS enables horizontal scaling of storage across any number of
+machines. Files are replicated between machines according to
+customizable rules such that at any time a number of drives or machines
+could be lost without data becoming unavailable. It is designed for high
+volume applications, such as high traffic websites, to spread storage
+across cheaper machines without relying on technologies such as NFS.
+
+WWW:	http://search.cpan.org/dist/mogilefs-server/
