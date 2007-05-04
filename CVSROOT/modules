@@ -8748,6 +8748,7 @@ p5-CGI-XMLApplication	ports/www/p5-CGI-XMLApplication
 p5-CGI-modules	ports/www/p5-CGI-modules
 p5-CGI.pm	ports/www/p5-CGI.pm
 p5-CGI_Lite	ports/www/p5-CGI_Lite
+p5-CLASS	ports/devel/p5-CLASS
 p5-CPAN-DistnameInfo	ports/devel/p5-CPAN-DistnameInfo
 p5-CPAN-Mini	ports/devel/p5-CPAN-Mini
 p5-CPAN-SQLite	ports/devel/p5-CPAN-SQLite
