@@ -3456,6 +3456,7 @@ gif2png		ports/graphics/gif2png
 gifmerge	ports/graphics/gifmerge
 gifsicle	ports/graphics/gifsicle
 gift	ports/net-p2p/gift
+gift-ares	ports/net-p2p/gift-ares
 gift-fasttrack	ports/net-p2p/gift-fasttrack
 gift-gnutella	ports/net-p2p/gift-gnutella
 gift-openft	ports/net-p2p/gift-openft
