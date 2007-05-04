@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/WebService/CIA.pm
+%%SITE_PERL%%/WebService/CIA/Parser.pm
+%%SITE_PERL%%/WebService/CIA/Source.pm
+%%SITE_PERL%%/WebService/CIA/Source/DBM.pm
+%%SITE_PERL%%/WebService/CIA/Source/Web.pm
+bin/webservice-cia-makedbm.pl
+@dirrmtry %%SITE_PERL%%/WebService/CIA/Source
+@dirrmtry %%SITE_PERL%%/WebService/CIA
+@dirrmtry %%SITE_PERL%%/WebService
