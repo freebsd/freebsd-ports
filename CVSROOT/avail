@@ -12,6 +12,6 @@ group|penaltybox|!badcommitters,!badcommitters.global
 
 unavail
 avail||CVSROOT
-avail|marcus,kris,erwin,pav,linimon,krion,flz,lesi,simon,cperciva|ports
+avail|marcus,kris,erwin,pav,linimon,krion,flz,lesi,simon,cperciva,remko|ports
 avail|:meisters
 unavail|:penaltybox
