@@ -34,6 +34,75 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f5e52bf5-fc77-11db-8163-000e0c2e438a">
+    <topic>php -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php4</name>
+	<name>php4-cgi</name>
+	<name>php4-cli</name>
+	<name>php5</name>
+	<name>php5-cgi</name>
+	<name>php5-cli</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The PHP development team reports:</p>
+	<blockquote cite="http://www.php.net/releases/5_2_2.php">
+	  <p>Security Enhancements and Fixes in PHP 5.2.2 and PHP
+	    4.4.7:</p>
+	  <ul>
+	    <li>Fixed CVE-2007-1001, GD wbmp used with invalid image
+	      size</li>
+	    <li>Fixed asciiz byte truncation inside mail()</li>
+	    <li>Fixed a bug in mb_parse_str() that can be used to
+	      activate register_globals</li>
+	    <li>Fixed unallocated memory access/double free in in
+	      array_user_key_compare()</li>
+	    <li>Fixed a double free inside session_regenerate_id()</li>
+	    <li>Added missing open_basedir &amp; safe_mode checks to zip://
+	      and bzip:// wrappers.</li>
+	    <li>Limit nesting level of input variables with
+	      max_input_nesting_level as fix for.</li>
+	    <li>Fixed CRLF injection inside ftp_putcmd().</li>
+	    <li>Fixed a possible super-global overwrite inside
+	      import_request_variables().</li>
+	    <li>Fixed a remotely trigger-able buffer overflow inside
+	      bundled libxmlrpc library.</li>
+	  </ul>
+	  <p>Security Enhancements and Fixes in PHP 5.2.2 only:</p>
+	  <ul>
+	    <li>Fixed a header injection via Subject and To parameters
+	      to the mail() function</li>
+	    <li>Fixed wrong length calculation in unserialize S
+	      type.</li>
+	    <li>Fixed substr_compare and substr_count information
+	      leak.</li>
+	    <li>Fixed a remotely trigger-able buffer overflow inside
+	      make_http_soap_request().</li>
+	    <li>Fixed a buffer overflow inside
+	      user_filter_factory_create().</li>
+	  </ul>
+	  <p>Security Enhancements and Fixes in PHP 4.4.7 only:</p>
+	  <ul>
+	    <li>XSS in phpinfo()</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-1001</cvename>
+      <url>http://www.php.net/releases/4_4_7.php</url>
+      <url>http://www.php.net/releases/5_2_2.php</url>
+    </references>
+    <dates>
+      <discovery>2007-05-03</discovery>
+      <entry>2007-05-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0ac89b39-f829-11db-b55c-000e0c6d38a9">
     <topic>qemu - several vulnerabilities</topic>
     <affects>
