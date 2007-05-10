@@ -83,8 +83,4 @@ tidy:
 newentry:
 	@${SH} ${FILESDIR}/newentry.sh "${VUXML_FILE}"
 
-eddie:
-	scp "${VUXML_FILE}" eddie.nitro.dk:/FreeBSD/work/vuxml/
-	ssh eddie.nitro.dk make -C /FreeBSD/sec/vuxml-web/freebsd VUXML=/FreeBSD/work/vuxml/vuln.xml TOPDEST=/home/simon/public_html/vuxml all install
-
 .include <bsd.port.mk>
