@@ -34,6 +34,69 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3546a833-03ea-11dc-a51d-0019b95d4f14">
+    <topic>samba -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>samba</name>
+        <name>ja-samba</name>
+        <range><gt>3.*</gt><lt>3.0.25,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Samba Team reports:</p>
+	<blockquote cite="http://de5.samba.org/samba/security/CVE-2007-2444.html">
+	  <p>A bug in the local SID/Name translation routines may
+	    potentially result in a user being able to issue SMB/CIFS
+	    protocol operations as root.</p>
+	  <p>When translating SIDs to/from names using Samba local
+	    list of user and group accounts, a logic error in the smbd
+	    daemon's internal security stack may result in a
+	    transition to the root user id rather than the non-root
+	    user.  The user is then able to temporarily issue SMB/CIFS
+	    protocol operations as the root user.  This window of
+	    opportunity may allow the attacker to establish additional
+	    means of gaining root access to the server.</p>
+	</blockquote>
+	<blockquote cite="http://de5.samba.org/samba/security/CVE-2007-2446.html">
+	  <p>Various bugs in Samba's NDR parsing can allow a user to
+	    send specially crafted MS-RPC requests that will overwrite
+	    the heap space with user defined data.</p>
+	</blockquote>
+	<blockquote cite="http://de5.samba.org/samba/security/CVE-2007-2447.html">
+	  <p>Unescaped user input parameters are passed as arguments
+	    to /bin/sh allowing for remote command execution.</p>
+	  <p>This bug was originally reported against the anonymous
+	    calls to the SamrChangePassword() MS-RPC function in
+	    combination with the "username map script" smb.conf option
+	    (which is not enabled by default).</p>
+	  <p>After further investigation by Samba developers, it was
+	    determined that the problem was much broader and impacts
+	    remote printer and file share management as well.  The
+	    root cause is passing unfiltered user input provided via
+	    MS-RPC calls to /bin/sh when invoking externals scripts
+	    defined in smb.conf.  However, unlike the "username map
+	    script" vulnerability, the remote file and printer
+	    management scripts require an authenticated user
+	    session.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-2444</cvename>
+      <cvename>CVE-2007-2446</cvename>
+      <cvename>CVE-2007-2447</cvename>
+      <url>http://de5.samba.org/samba/security/CVE-2007-2444.html</url>
+      <url>http://de5.samba.org/samba/security/CVE-2007-2446.html</url>
+      <url>http://de5.samba.org/samba/security/CVE-2007-2447.html</url>
+    </references>
+    <dates>
+      <discovery>2007-05-14</discovery>
+      <entry>2007-05-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f5e52bf5-fc77-11db-8163-000e0c2e438a">
     <topic>php -- multiple vulnerabilities</topic>
     <affects>
