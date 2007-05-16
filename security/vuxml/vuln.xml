@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4cb9c513-03ef-11dc-a51d-0019b95d4f14">
+    <topic>png -- DoS crash vulnerability</topic>
+    <affects>
+      <package>
+	<name>png</name>
+	<range><lt>1.2.17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Libpng Security Advisory reports:</p>
+	<blockquote cite="http://www.mirrorservice.org/sites/download.sourceforge.net/pub/sourceforge/l/li/libpng/libpng-1.2.17-ADVISORY.txt">
+	  <p>A grayscale PNG image with a malformed (bad CRC) tRNS
+	    chunk will crash some libpng applications.</p>
+	  <p>This vulnerability could be used to crash a browser when
+	    a user tries to view such a malformed PNG file.  It is not
+	    known whether the vulnerability could be exploited
+	    otherwise.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-2445</cvename>
+      <certvu>684664</certvu>
+      <url>http://www.mirrorservice.org/sites/download.sourceforge.net/pub/sourceforge/l/li/libpng/libpng-1.2.17-ADVISORY.txt</url>
+    </references>
+    <dates>
+      <discovery>2007-05-15</discovery>
+      <entry>2007-05-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3546a833-03ea-11dc-a51d-0019b95d4f14">
     <topic>samba -- multiple vulnerabilities</topic>
     <affects>
