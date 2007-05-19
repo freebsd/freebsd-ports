@@ -57,6 +57,7 @@ SUBDIR += vietnamese
 SUBDIR += www
 SUBDIR += x11
 SUBDIR += x11-clocks
+SUBDIR += x11-drivers
 SUBDIR += x11-fm
 SUBDIR += x11-fonts
 SUBDIR += x11-servers
