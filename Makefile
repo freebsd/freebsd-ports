@@ -98,6 +98,7 @@ ${INDEXDIR}/${INDEXFILE}:
 	if [ "${INDEX_PRISTINE}" != "" ]; then \
 		export LOCALBASE=/nonexistentlocal; \
 		export X11BASE=/nonexistentx; \
+		export USE_NONDEFAULT_X11BASE=1; \
 	fi; \
 	tmpdir=`/usr/bin/mktemp -d -t index` || exit 1; \
 	trap "rm -rf $${tmpdir}; exit 1" 1 2 3 5 10 13 15; \
