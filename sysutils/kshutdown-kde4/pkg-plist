@@ -52,14 +52,6 @@ share/locale/sk/LC_MESSAGES/kshutdown.mo
 share/locale/sv/LC_MESSAGES/kshutdown.mo
 share/locale/tr/LC_MESSAGES/kshutdown.mo
 share/locale/zh_CN/LC_MESSAGES/kshutdown.mo
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/sk/LC_MESSAGES
-@dirrmtry share/locale/sk
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
 @dirrm share/doc/HTML/en/kshutdown
 @dirrm share/doc/HTML/de/kshutdown
 @dirrm share/apps/kshutdown/sounds

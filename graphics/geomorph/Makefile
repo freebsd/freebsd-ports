@@ -7,6 +7,7 @@
 
 PORTNAME=	geomorph
 PORTVERSION=	0.40
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +18,6 @@ COMMENT=	Height field generator and editor
 
 LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 
-USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	mule-common
 PORTVERSION=	${MULE_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	editors japanese
 MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/ \
 		ftp://ftp.jaist.ac.jp/pub/GNU/mule/ \
@@ -20,6 +20,8 @@ COMMENT=	For a multilingual emacs, emacs lisp files, info pages, etc (except exe
 
 MULE_VERSION=	2.3
 EMACS_VERSION=	19.34
+
+USE_XORG=	xbitmaps
 
 .include <bsd.port.pre.mk>
 

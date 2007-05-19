@@ -7,6 +7,7 @@
 
 PORTNAME=	quelcom
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.etse.urv.es/~dmanye/quelcom/src/
 

@@ -131,9 +131,3 @@ share/locale/sv/LC_MESSAGES/alexandria.mo
 @dirrm %%RUBY_SITELIBDIR%%/alexandria/macui
 @dirrm %%RUBY_SITELIBDIR%%/alexandria/book_providers
 @dirrm %%RUBY_SITELIBDIR%%/alexandria
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs

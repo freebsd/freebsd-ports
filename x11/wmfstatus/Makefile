@@ -7,6 +7,7 @@
 
 PORTNAME=	wmfstatus
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.finik.net/files/
 

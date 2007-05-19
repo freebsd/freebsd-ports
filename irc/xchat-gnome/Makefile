@@ -7,6 +7,7 @@
 
 PORTNAME=	xchat
 PORTVERSION=	0.15
+PORTREVISION=	1
 CATEGORIES=	irc gnome ipv6
 MASTER_SITES=	http://releases.navi.cx/xchat-gnome/
 PKGNAMESUFFIX=	-gnome

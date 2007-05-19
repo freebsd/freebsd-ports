@@ -7,6 +7,7 @@
 
 PORTNAME=	tknetmon
 PORTVERSION=	2.0.7a
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://vfom.narod.ru/download/

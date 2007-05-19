@@ -7,6 +7,7 @@
 
 PORTNAME=	fntsample
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF http://unicode.org/Public/5.0.0/ucd/:unidata
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} Blocks.txt:unidata

@@ -7,6 +7,7 @@
 
 PORTNAME=	cosmoplayer
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://opendx.npaci.edu/libs/
 DISTNAME=	${PORTNAME}-jar

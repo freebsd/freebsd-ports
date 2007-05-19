@@ -6,7 +6,7 @@
 
 PORTNAME=	platex-jsclasses
 PORTVERSION=	1.0.20060212
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese print
 MASTER_SITES=	http://oku.edu.mie-u.ac.jp/~okumura/jsclasses/:0 \
 		http://oku.edu.mie-u.ac.jp/~okumura/texfaq/:1

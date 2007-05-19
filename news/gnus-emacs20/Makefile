@@ -7,7 +7,7 @@
 
 PORTNAME=	gnus
 PORTVERSION=	5.8.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	news mail elisp
 MASTER_SITES=	ftp://ftp.monash.edu.au/pub/gnus/ \
 		ftp://ftp.kreonet.re.kr/pub/tools/emacs/gnus/ \

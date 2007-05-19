@@ -473,9 +473,3 @@ share/locale/sk/LC_MESSAGES/ed2k_gui.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/deutsch
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
-@dirrmtry share/locale/sk/LC_MESSAGES
-@dirrmtry share/locale/sk
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca

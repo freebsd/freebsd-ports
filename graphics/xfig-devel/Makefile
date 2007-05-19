@@ -7,7 +7,7 @@
 
 PORTNAME=	xfig
 PORTVERSION=	3.2.5.a5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://xfig.org/software/xfig/${PORTVERSION:R}-alpha/
 DISTNAME=	${PORTNAME}.${PORTVERSION:S,.a,-alpha,}.full

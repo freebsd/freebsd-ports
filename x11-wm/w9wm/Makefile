@@ -7,6 +7,7 @@
 
 PORTNAME=	w9wm
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.grassouille.org/code/w9wm/src/
 

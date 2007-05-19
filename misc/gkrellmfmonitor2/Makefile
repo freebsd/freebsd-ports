@@ -8,7 +8,7 @@
 
 PORTNAME=	gkrellmfmonitor
 PORTVERSION=	2.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://kmlinux.fjfi.cvut.cz/~makovick/gkrellm/
 DISTNAME=	gkrellm-fmonitor-${PORTVERSION}

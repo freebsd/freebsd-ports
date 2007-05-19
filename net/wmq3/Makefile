@@ -7,7 +7,7 @@
 
 PORTNAME=	wmq3
 PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net windowmaker games
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://mirror2.unixfreunde.de/

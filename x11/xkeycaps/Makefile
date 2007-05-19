@@ -7,7 +7,7 @@
 
 PORTNAME=	xkeycaps
 PORTVERSION=	2.46
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xkeycaps/
 EXTRACT_SUFX=	.tar.Z
@@ -16,6 +16,7 @@ MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	Graphically display and edit the keyboard mapping
 
 USE_IMAKE=	yes
+USE_XORG=	xbitmaps
 MAN1=		xkeycaps.1
 PLIST_FILES=	bin/xkeycaps
 

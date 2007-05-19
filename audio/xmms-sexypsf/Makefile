@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-sexypsf
 PORTVERSION=	0.4.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://projects.raphnet.net/sexypsf/ \
 		http://critical.ch/distfiles/ \

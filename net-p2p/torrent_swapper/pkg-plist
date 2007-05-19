@@ -439,4 +439,3 @@ share/pixmaps/swapper.xpm
 @dirrm %%DATADIR%%/ABC
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/pixmaps

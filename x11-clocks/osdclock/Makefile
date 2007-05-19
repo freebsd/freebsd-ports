@@ -7,7 +7,7 @@
 
 PORTNAME=	osdclock
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://leftorium.net/software/ \
 		${MASTER_SITE_LOCAL}

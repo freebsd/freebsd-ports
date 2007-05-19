@@ -7,6 +7,7 @@
 
 PORTNAME=	fujaba
 PORTVERSION=	4.3.2
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://wwwcs.uni-paderborn.de/cs/fujaba/downloads/packages/Fujaba_4/
 DISTNAME=	FujabaToolSuite_Developer${PORTVERSION:S/./_/g}

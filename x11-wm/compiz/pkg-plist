@@ -1,0 +1,166 @@
+@comment $FreeBSD$
+bin/compiz
+%%GTK%%bin/gtk-window-decorator
+include/compiz/compiz.h
+include/compiz/decoration.h
+lib/libdecoration.so.0
+lib/libdecoration.so
+lib/libdecoration.la
+lib/libdecoration.a
+lib/compiz/libgconf.so
+lib/compiz/libgconf.la
+lib/compiz/libgconf.a
+lib/compiz/libdecoration.so
+lib/compiz/libdecoration.la
+lib/compiz/libdecoration.a
+lib/compiz/libwobbly.so
+lib/compiz/libwobbly.la
+lib/compiz/libwobbly.a
+lib/compiz/libfade.so
+lib/compiz/libfade.la
+lib/compiz/libfade.a
+%%FUSEFS%%lib/compiz/libfs.so
+%%FUSEFS%%lib/compiz/libfs.la
+%%FUSEFS%%lib/compiz/libfs.a
+lib/compiz/libminimize.so
+lib/compiz/libminimize.la
+lib/compiz/libminimize.a
+lib/compiz/libcube.so
+lib/compiz/libcube.la
+lib/compiz/libcube.a
+lib/compiz/librotate.so
+lib/compiz/librotate.la
+lib/compiz/librotate.a
+lib/compiz/libzoom.so
+lib/compiz/libzoom.la
+lib/compiz/libzoom.a
+lib/compiz/libscale.so
+lib/compiz/libscale.la
+lib/compiz/libscale.a
+lib/compiz/libmove.so
+lib/compiz/libmove.la
+lib/compiz/libmove.a
+lib/compiz/libresize.so
+lib/compiz/libresize.la
+lib/compiz/libresize.a
+lib/compiz/libplace.so
+lib/compiz/libplace.la
+lib/compiz/libplace.a
+%%DBUS%%lib/compiz/libdbus.so
+%%DBUS%%lib/compiz/libdbus.la
+%%DBUS%%lib/compiz/libdbus.a
+lib/compiz/libswitcher.so
+lib/compiz/libswitcher.la
+lib/compiz/libswitcher.a
+lib/compiz/libwater.so
+lib/compiz/libwater.la
+lib/compiz/libwater.a
+lib/compiz/libscreenshot.so
+lib/compiz/libscreenshot.la
+lib/compiz/libscreenshot.a
+lib/compiz/libplane.so
+lib/compiz/libplane.la
+lib/compiz/libplane.a
+lib/compiz/libclone.so
+lib/compiz/libclone.la
+lib/compiz/libclone.a
+lib/compiz/libpng.so
+lib/compiz/libpng.la
+lib/compiz/libpng.a
+lib/compiz/libblur.so
+lib/compiz/libblur.la
+lib/compiz/libblur.a
+lib/compiz/libregex.so
+lib/compiz/libregex.la
+lib/compiz/libregex.a
+lib/compiz/libvideo.so
+lib/compiz/libvideo.la
+lib/compiz/libvideo.a
+lib/compiz/libini.so
+lib/compiz/libini.la
+lib/compiz/libini.a
+%%RSVG%%lib/compiz/libsvg.so
+%%RSVG%%lib/compiz/libsvg.la
+%%RSVG%%lib/compiz/libsvg.a
+lib/compiz/libannotate.so
+lib/compiz/libannotate.la
+lib/compiz/libannotate.a
+libdata/pkgconfig/libdecoration.pc
+libdata/pkgconfig/compiz.pc
+share/gnome/compiz/icon.png
+share/gnome/compiz/freedesktop.png
+%%GNOME%%@cwd %%WINDOWSETTINGSDATADIR%%
+%%GNOME%%share/gnome/wm-properties/compiz.desktop
+%%GNOME%%@cwd %%WINDOWSETTINGSLIBDIR%%
+%%GNOME%%window-manager-settings/libcompiz.so
+%%GNOME%%window-manager-settings/libcompiz.la
+%%GNOME%%window-manager-settings/libcompiz.a
+%%GNOME%%@cwd
+share/locale/af/LC_MESSAGES/compiz.mo
+share/locale/ar/LC_MESSAGES/compiz.mo
+share/locale/bg/LC_MESSAGES/compiz.mo
+share/locale/bn/LC_MESSAGES/compiz.mo
+share/locale/bs/LC_MESSAGES/compiz.mo
+share/locale/ca/LC_MESSAGES/compiz.mo
+share/locale/cs/LC_MESSAGES/compiz.mo
+share/locale/cy/LC_MESSAGES/compiz.mo
+share/locale/da/LC_MESSAGES/compiz.mo
+share/locale/de/LC_MESSAGES/compiz.mo
+share/locale/el/LC_MESSAGES/compiz.mo
+share/locale/en_GB/LC_MESSAGES/compiz.mo
+share/locale/es/LC_MESSAGES/compiz.mo
+share/locale/et/LC_MESSAGES/compiz.mo
+share/locale/fi/LC_MESSAGES/compiz.mo
+share/locale/fr/LC_MESSAGES/compiz.mo
+share/locale/gl/LC_MESSAGES/compiz.mo
+share/locale/gu/LC_MESSAGES/compiz.mo
+share/locale/he/LC_MESSAGES/compiz.mo
+share/locale/hi/LC_MESSAGES/compiz.mo
+share/locale/hr/LC_MESSAGES/compiz.mo
+share/locale/hu/LC_MESSAGES/compiz.mo
+share/locale/id/LC_MESSAGES/compiz.mo
+share/locale/it/LC_MESSAGES/compiz.mo
+share/locale/ja/LC_MESSAGES/compiz.mo
+share/locale/ka/LC_MESSAGES/compiz.mo
+share/locale/ko/LC_MESSAGES/compiz.mo
+share/locale/lt/LC_MESSAGES/compiz.mo
+share/locale/mk/LC_MESSAGES/compiz.mo
+share/locale/nb/LC_MESSAGES/compiz.mo
+share/locale/nl/LC_MESSAGES/compiz.mo
+share/locale/pa/LC_MESSAGES/compiz.mo
+share/locale/pl/LC_MESSAGES/compiz.mo
+share/locale/pt/LC_MESSAGES/compiz.mo
+share/locale/pt_BR/LC_MESSAGES/compiz.mo
+share/locale/ro/LC_MESSAGES/compiz.mo
+share/locale/ru/LC_MESSAGES/compiz.mo
+share/locale/sk/LC_MESSAGES/compiz.mo
+share/locale/sl/LC_MESSAGES/compiz.mo
+share/locale/sr/LC_MESSAGES/compiz.mo
+share/locale/sv/LC_MESSAGES/compiz.mo
+share/locale/ta/LC_MESSAGES/compiz.mo
+share/locale/tr/LC_MESSAGES/compiz.mo
+share/locale/uk/LC_MESSAGES/compiz.mo
+share/locale/vi/LC_MESSAGES/compiz.mo
+share/locale/zh_CN/LC_MESSAGES/compiz.mo
+share/locale/zh_TW/LC_MESSAGES/compiz.mo
+share/locale/en_US/LC_MESSAGES/compiz.mo
+share/locale/km/LC_MESSAGES/compiz.mo
+share/locale/lo/LC_MESSAGES/compiz.mo
+share/locale/mr/LC_MESSAGES/compiz.mo
+share/locale/xh/LC_MESSAGES/compiz.mo
+share/locale/zu/LC_MESSAGES/compiz.mo
+@dirrmtry share/locale/lo/LC_MESSAGES
+@dirrmtry share/locale/lo
+@dirrmtry share/locale/en_US/LC_MESSAGES
+@dirrmtry share/locale/en_US
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
+@dirrmtry share/locale/mr/LC_MESSAGES
+@dirrmtry share/locale/mr
+@dirrmtry share/locale/xh/LC_MESSAGES
+@dirrmtry share/locale/xh
+@dirrmtry share/locale/zu/LC_MESSAGES
+@dirrmtry share/locale/zu
+@dirrmtry share/gnome/compiz
+@dirrmtry lib/compiz
+@dirrmtry include/compiz

@@ -7,6 +7,7 @@
 
 PORTNAME=	gazpacho
 PORTVERSION=	0.6.6
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://ftp.acc.umu.se/pub/GNOME/sources/gazpacho/0.6/
 

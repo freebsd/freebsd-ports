@@ -7,7 +7,7 @@
 
 PORTNAME=	wmnetload
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net windowmaker afterstep
 MASTER_SITES=	ftp://truffula.com/pub/ \
 				http://dl.fkb.wormulon.net/wmnetload/ \

@@ -157,8 +157,6 @@ share/locale/sv_SE/LC_MESSAGES/klavaro.mo
 @dirrmtry share/locale/de_DE
 @dirrmtry share/locale/eo_EO/LC_MESSAGES
 @dirrmtry share/locale/eo_EO
-@dirrmtry share/locale/fr_FR/LC_MESSAGES
-@dirrmtry share/locale/fr_FR
 @dirrmtry share/locale/hu_HU/LC_MESSAGES
 @dirrmtry share/locale/hu_HU
 @dirrmtry share/locale/nl_BE/LC_MESSAGES

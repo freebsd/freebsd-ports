@@ -7,7 +7,7 @@
 
 PORTNAME=	opensched
 PORTVERSION=	0.1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://mtechit.com/dlsoftware/opensched/
 

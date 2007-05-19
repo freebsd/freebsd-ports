@@ -7,6 +7,7 @@
 
 PORTNAME=	xshisen
 PORTVERSION=	1.51
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.techfirm.co.jp/~masaoki/
 

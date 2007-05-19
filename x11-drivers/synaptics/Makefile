@@ -7,7 +7,7 @@
 
 PORTNAME=	synaptics
 PORTVERSION=	0.14.6
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://web.telia.com/~u89404340/touchpad/files/:synaptics
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:synaptics \
@@ -31,10 +31,15 @@ X11VERSION!=	${MAKE} -C `${MAKE} -f bsd.port.mk -VX_SERVER_PORT` \
 
 .if	${X_WINDOW_SYSTEM:L} == xorg
 
-MASTER_SITES+=	${MASTER_SITE_XORG:C/$/:x11/}
-MASTER_SITE_SUBDIR=	X11R${X11VERSION}/src/:x11
-DIST_SUBDIR=	xorg
-X_DISTFILES=	X11R${X11VERSION}-src3.tar.gz
+MASTER_SITES+=	ftp://ftp.freedesktop.org/pub/xorg/individual/xserver/:x11 \
+                http://xorg.freedesktop.org/releases/individual/xserver/:x11
+DIST_SUBDIR=	xorg/xserver
+X_DISTFILES=	xorg-server-${X11VERSION}.tar.bz2
+PLIST_SUB+=	XORG="" XFREE86="@comment "
+
+post-patch:
+	@${REINPLACE_CMD} 's|\(ALLINCLUDES = -I.\)|\1 -I${X11BASE}/include|' \
+		${WRKSRC}/Makefile
 
 .elif	${X_WINDOW_SYSTEM:L} == xfree86-4
 
@@ -42,6 +47,7 @@ MASTER_SITES+=	${MASTER_SITE_XFREE:C/$/:x11/}
 MASTER_SITE_SUBDIR=	${X11VERSION}/:x11
 DIST_SUBDIR=	xc
 X_DISTFILES=	XFree86-${X11VERSION}-src-3.tgz
+PLIST_SUB+=	XORG="@comment " XFREE86=""
 
 .else
 
@@ -61,6 +67,11 @@ post-extract:
 	@cd ${WRKDIR} && \
 		${GZIP_CMD} -dc ${_DISTDIR}/${FILE} | ${TAR} -xf -
 .endfor
+
+.if	${X_WINDOW_SYSTEM:L} == xorg
+pre-install:
+	${MKDIR} ${X11BASE}/lib/xorg/modules/input/
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)

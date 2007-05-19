@@ -7,6 +7,7 @@
 
 PORTNAME=	xwlans
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://shapeshifter.se/code/xwlans/release/ \
 		http://mirror.shapeshifter.se/code/xwlans/release/

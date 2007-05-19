@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkpool
 PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://gtkpool.seul.org/
 

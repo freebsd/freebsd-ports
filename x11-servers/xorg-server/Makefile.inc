@@ -16,7 +16,7 @@ DIST_SUBDIR?=	xorg
 WRKSRC?=	${WRKDIR}/xc
 USE_X_PREFIX?=	no
 PREFIX?=	${X11BASE}
-MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
+MTREE_FILE=	${PORTSDIR}/Templates/BSD.local.dist
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/*
 
 USE_IMAKE=	YES
@@ -48,7 +48,6 @@ CF_PATCHES=	${PORTSDIR}/x11-servers/xorg-server/files/patch-FreeBSD.cf \
 SERVER_PATCHES=	${PORTSDIR}/x11-servers/xorg-server/files/patch-Xserver-Imakefile \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-Xserver-Xext-xvmc.c \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-Xserver-os-xprintf.c \
-		${PORTSDIR}/x11-servers/xorg-server/files/patch-font-bitmap-pcfread.c \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-mitri.c \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-servermd.h \
 		${PORTSDIR}/x11-servers/xorg-server/files/patch-xf86sym.c

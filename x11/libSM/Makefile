@@ -6,26 +6,14 @@
 #
 
 PORTNAME=	libSM
-PORTVERSION=	6.0.3
+PORTVERSION=	1.0.2
+PORTEPOCH=	1
 CATEGORIES=	x11
-MASTER_SITES=	http://freedesktop.org/~ajax/xlibs-release/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Session Management library for X11
 
-LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/ice.pc:${PORTSDIR}/x11/libICE
-BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto \
-		${LIB_PC_DEPENDS}
-RUN_DEPENDS=	${LIB_PC_DEPENDS}
-
-CONFLICTS=	XFree86-libraries-* xorg-libraries-*
-
-USE_BZIP2=	yes
-PREFIX?=	${X11BASE}
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomehack pkgconfig
+XORG_CAT=	lib
+USE_XORG=	ice xproto:both xtrans
 
 .include <bsd.port.mk>

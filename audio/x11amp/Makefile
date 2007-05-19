@@ -7,7 +7,7 @@
 
 PORTNAME=	x11amp
 PORTVERSION=	0.9.b1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/misc/x11amp/0.9/ \
 		ftp://ftp.x11amp.bz.nu/x11amp/0.9/ \

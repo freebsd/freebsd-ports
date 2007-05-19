@@ -7,6 +7,7 @@
 
 PORTNAME=	imageviewer
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://www.nice.ch/~phip/
 DISTNAME=	ImageViewer-${PORTVERSION}

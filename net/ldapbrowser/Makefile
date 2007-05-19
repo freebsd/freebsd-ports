@@ -7,6 +7,7 @@
 
 PORTNAME=	ldapbrowser
 PORTVERSION=	2.8.2
+PORTREVISION=	1
 CATEGORIES=	net java
 MASTER_SITES=	http://www-unix.mcs.anl.gov/~gawor/ldapcommon/bin/
 DISTNAME=	Browser282b2

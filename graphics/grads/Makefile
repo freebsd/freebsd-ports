@@ -7,6 +7,7 @@
 
 PORTNAME=	grads
 PORTVERSION=	1.9b3
+PORTREVISION=	1
 CATEGORIES=	graphics science math
 MASTER_SITES=	ftp://grads.iges.org/grads/1.9/:src \
 		ftp://grads.iges.org/grads/:other

@@ -7,7 +7,7 @@
 
 PORTNAME=	snd-music-duplicates
 PORTVERSION=	1.9.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia java
 MASTER_SITES=	http://www.pekarna.si/ \
 		http://olofsson.de/mirror/distfiles/

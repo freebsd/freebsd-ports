@@ -7,7 +7,7 @@
 
 PORTNAME=	jce_policy
 PORTVERSION=	1.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security java
 MASTER_SITES=	#http://java.sun.com/products/jce/index-14.html
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\./_/g}

@@ -8,7 +8,7 @@
 
 PORTNAME=	muine
 PORTVERSION=	0.8.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://muine-player.org/releases/
 

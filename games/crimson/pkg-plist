@@ -43,7 +43,6 @@ share/applications/crimson.desktop
 %%DATADIR%%/sound/select.wav
 %%DATADIR%%/title.bmp
 share/pixmaps/crimson.png
-@dirrmtry share/pixmaps/
 @dirrmtry share/applications
 @dirrm %%DATADIR%%/levels
 @dirrm %%DATADIR%%/locale

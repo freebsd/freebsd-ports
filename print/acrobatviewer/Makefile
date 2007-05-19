@@ -7,6 +7,7 @@
 
 PORTNAME=	acrobatviewer
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	print java
 MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/magic/acrobatviewer/unix/1.x/
 DISTNAME=	viewer.bin

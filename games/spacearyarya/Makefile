@@ -7,7 +7,7 @@
 
 PORTNAME=	spacearyarya
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.dvo.ru/pub/Gentoo/distfiles/ \
 		ftp://ftp.uni-erlangen.de/.mirrors/ftpbsd/ftp.freebsd.org/pub/FreeBSD/ports/distfiles/ \

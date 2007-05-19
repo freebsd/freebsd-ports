@@ -15,14 +15,5 @@ share/locale/sv/LC_MESSAGES/gnomad2.mo
 share/pixmaps/gnomad2-logo.png
 @dirrmtry share/locale/sco/LC_MESSAGES
 @dirrmtry share/locale/sco
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/no/LC_MESSAGES
-@dirrmtry share/locale/no
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
 @dirrmtry share/applications
-@dirrmtry share/pixmaps
 @dirrm share/application-registry

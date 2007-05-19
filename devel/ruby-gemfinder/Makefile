@@ -7,6 +7,7 @@
 
 PORTNAME=	gemfinder
 PORTVERSION=	1.9.6
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://onestepback.org/packages/gemfinder/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

@@ -8,6 +8,7 @@
 
 PORTNAME=	xstrp4
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml-programming.de/packages/
 PKGNAMEPREFIX=	ocaml-

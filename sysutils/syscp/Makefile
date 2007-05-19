@@ -7,6 +7,7 @@
 
 PORTNAME=	syscp
 PORTVERSION=	1.2.16
+PORTREVISION=	1
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://canada.syscp.org/releases/tgz/ \
 		http://france.syscp.org/releases/tgz/ \

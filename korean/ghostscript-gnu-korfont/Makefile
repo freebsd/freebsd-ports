@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript-gnu-korfont
 PORTVERSION=	7.07
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	korean print
 MASTER_SITES=	# empty
 DISTFILES=	# empty

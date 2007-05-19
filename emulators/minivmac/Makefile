@@ -7,6 +7,7 @@
 
 PORTNAME=	minivmac
 PORTVERSION=	2.8.2
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,6 +26,9 @@ CFLAGS+=	-I${X11BASE}/include
 ALL_TARGET=	# nothing
 
 PLIST_FILES=	bin/minivmac
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/minivmac ${PREFIX}/bin

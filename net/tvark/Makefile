@@ -7,7 +7,7 @@
 
 PORTNAME=	tvark
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://voodoo.bawue.com/download/ \
 		http://www.tvark.com/

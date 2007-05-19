@@ -7,7 +7,7 @@
 
 PORTNAME=	xfig
 PORTVERSION=	3.2.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://xfig.org/software/xfig/${PORTVERSION}/ \
 		ftp://www-epb.lbl.gov/xfig/%SUBDIR%/

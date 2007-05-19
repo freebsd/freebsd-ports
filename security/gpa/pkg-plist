@@ -17,4 +17,3 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gpa.mo
 share/pixmaps/gpa.png
 @dirrmtry share/applications
 @dirrm %%DATADIR%%
-@dirrmtry share/pixmaps

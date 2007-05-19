@@ -8,6 +8,7 @@
 
 PORTNAME=	jpgraph
 PORTVERSION=	1.20.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://web.comhem.se/jpgraph/jpgdownloads/
 

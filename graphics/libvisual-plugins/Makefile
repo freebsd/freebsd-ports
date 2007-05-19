@@ -7,7 +7,7 @@
 
 PORTNAME=	libvisual-plugins
 PORTVERSION=	0.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libvisual
@@ -19,6 +19,7 @@ LIB_DEPENDS=	visual.0:${PORTSDIR}/graphics/libvisual
 
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget pkgconfig
+USE_GL=		yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa
@@ -31,11 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 BROKEN=		Broken objformat handling
 .endif
 
-.if ${X_WINDOW_SYSTEM} == "xfree86-4"
-BUILD_DEPENDS=	mkdirhier:${PORTSDIR}/devel/imake-4
-.elif ${X_WINDOW_SYSTEM} == "xorg"
-BUILD_DEPENDS=	mkdirhier:${PORTSDIR}/devel/imake-6
-.endif
+BUILD_DEPENDS=	mkdirhier:${X_IMAKE_PORT}
 
 .if defined(WITH_MPLAYER)
 BUILD_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer

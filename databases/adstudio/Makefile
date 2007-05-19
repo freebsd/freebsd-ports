@@ -7,6 +7,7 @@
 
 PORTNAME=	adstudio
 PORTVERSION=	4.7.2
+PORTREVISION=	1
 CATEGORIES=	databases devel java
 MASTER_SITES=	http://download.aquafold.com/download/v${PORTVERSION}/linux/
 DISTNAME=	ads-linux-novm-${PORTVERSION}

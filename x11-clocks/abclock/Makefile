@@ -7,6 +7,7 @@
 
 PORTNAME=	abclock
 PORTVERSION=	1.0d
+PORTREVISION=	1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://odur.let.rug.nl/~kleiweg/abclock/
 

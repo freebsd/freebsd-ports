@@ -6,7 +6,7 @@
 #    $MCom: ports/multimedia/gstreamer-plugins-dts80/Makefile,v 1.1 2006/01/20 02:56:05 ahze Exp $
 #
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 COMMENT=	Gstreamer dts plugin

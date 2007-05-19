@@ -7,7 +7,7 @@
 
 PORTNAME=	irc
 PORTVERSION=	1.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	irc gnome deskutils
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-

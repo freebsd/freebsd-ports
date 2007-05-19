@@ -7,6 +7,7 @@
 
 PORTNAME=	ses
 PORTVERSION=	031130
+PORTREVISION=	1
 CATEGORIES=	math elisp
 MASTER_SITES=	http://home.comcast.net/~jyavner/ses/
 DISTNAME=	ses21-${PORTVERSION}

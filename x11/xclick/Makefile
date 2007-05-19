@@ -7,6 +7,7 @@
 
 PORTNAME=	xclick
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://members.shaw.ca/gehrehmee/ \
 		http://bg.rifetech.com/

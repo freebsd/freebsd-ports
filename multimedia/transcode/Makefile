@@ -7,6 +7,7 @@
 
 PORTNAME=	transcode
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://fromani.exit1.org/
 

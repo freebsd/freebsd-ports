@@ -7,7 +7,7 @@
 
 PORTNAME=	gaddr
 PORTVERSION=	1.1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
 

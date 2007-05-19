@@ -6,7 +6,7 @@
 #    $MCom: ports/sysutils/gstreamer-plugins-cdio80/Makefile,v 1.2 2006/02/25 00:19:56 marcus Exp $
 #
 
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 COMMENT=	Gstreamer compact disc input and control library

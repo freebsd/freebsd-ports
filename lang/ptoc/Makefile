@@ -7,6 +7,7 @@
 
 PORTNAME=	ptoc
 PORTVERSION=	3.56
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.garret.ru/~knizhnik/
 

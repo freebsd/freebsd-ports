@@ -8,7 +8,7 @@
 
 PORTNAME=	planets
 PORTVERSION=	0.1.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
 MASTER_SITES=	http://planets.homedns.org/dist/ \
 		http://sheepkiller.nerim.net/ports/${PORTNAME}/

@@ -116,4 +116,3 @@ share/pixmaps/exaile.png
 @dirrmtry share/locale/zh_CN/LC_MESSAGES
 @dirrmtry share/locale/zh_CN
 @dirrmtry share/applications
-@dirrmtry share/pixmaps

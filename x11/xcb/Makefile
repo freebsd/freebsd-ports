@@ -7,6 +7,7 @@
 
 PORTNAME=	xcb
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.goof.com/pcg/marc/data/
 

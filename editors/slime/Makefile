@@ -7,6 +7,7 @@
 
 PORTNAME=	slime
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://common-lisp.net/project/slime/
 EXTRACT_SUFX=	.tgz

@@ -7,7 +7,7 @@
 
 PORTNAME=	dirdiff
 PORTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils tcl84 tk84
 MASTER_SITES=	ftp://ftp.samba.org/pub/paulus/
 

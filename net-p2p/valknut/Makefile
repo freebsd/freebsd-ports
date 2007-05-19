@@ -8,6 +8,7 @@
 
 PORTNAME=	valknut
 PORTVERSION=	0.3.7
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.berlios.de/dcgui/ \
 		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/

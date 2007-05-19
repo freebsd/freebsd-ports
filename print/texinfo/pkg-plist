@@ -50,17 +50,3 @@ share/locale/zh_TW/LC_MESSAGES/texinfo.mo
 @dirrmtry %%TEXMFLOCAL%%/pdftex
 @dirrmtry %%TEXMFLOCAL%%
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/ro
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/no/LC_MESSAGES
-@dirrmtry share/locale/no
-@dirrmtry share/locale/de_AT/LC_MESSAGES
-@dirrmtry share/locale/de_AT
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs

@@ -373,8 +373,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  case the linux X libraries are referenced.
 #
 # USE_FREETYPE	- If set, this port uses the freetype print libraries.
-# USE_GL		- If set, this port uses libGL (not needed with XFree86 4.x
-#				  which already includes this functionality).
+# USE_GL		- A list of Mesa or GL related dependencies needed by the port.
+#				  Supported components are: glut, glu, glw, gl and linux.
+#				  If set to "yes", this is equivalent to "glu". Note that
+#				  glut depends on glu, glw and glu depend on gl.
 # USE_MOTIF		- If set, this port uses a Motif toolkit.  Implies USE_XPM.
 # NO_OPENMOTIF	- If set, this port uses a custom Motif toolkit
 #				  instead of Openmotif.
@@ -470,6 +472,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_LINUX_RPM	- Set to yes to pull in variables and targets useful to Linux
 #				  RPM ports.
 #				  Implies inclusion of bsd.linux-rpm.mk.
+#
+# USE_XORG			- Set to a list of X.org module dependencies.
+#				  Implies inclusion of bsd.xorg.mk.
+#
 # AUTOMATIC_PLIST
 #				- Set to yes to enable automatic packing list generation.
 #				  Currently has no effect unless USE_LINUX_RPM is set.
@@ -530,9 +536,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Default: not set (means /)
 #
 # X11BASE		- Where X11 ports install things.
-#				  Default: ${DESTDIR}/usr/X11R6
+#				  Default: ${DESTDIR}/${LOCALBASE}
 # X11BASE_REL		- Same as X11BASE, but relative to DESTDIR
-#				  Default: /usr/X11R6
+#				  Default: ${LOCALBASE}
 # LOCALBASE		- Where non-X11 ports install things.
 #				  Default: ${DESTDIR}/usr/local
 # LOCALBASE_REL		- Same as LOCALBASE, but relative to DESTDIR
@@ -886,8 +892,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # NO_MTREE		- If set, will not invoke mtree from bsd.port.mk from
 #				  the "install" target.
 # MTREE_FILE	- The name of the mtree file.
-#				  Default: /etc/mtree/BSD.x11.dist if USE_X_PREFIX is set,
-#				  /etc/mtree/BSD.local.dist otherwise.
+#				  Default: ${PORTSDIR}/Templates/BSD.local.dist or
+#				  /etc/mtree/BSD.usr.dist if ${PREFIX} == "/usr".
 # PLIST_DIRS	- Directories to be added to packing list
 # PLIST_FILES	- Files and symbolic links to be added to packing list
 #
@@ -1357,7 +1363,7 @@ DISTNAME?=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION:C/:(.)/\1/g}${DISTVERSI
 # by individual Makefiles or local system make configuration.
 PORTSDIR?=		/usr/ports
 LOCALBASE?=		/usr/local
-X11BASE?=		/usr/X11R6
+X11BASE?=		${LOCALBASE}
 LINUXBASE?=		/compat/linux
 LOCALBASE_REL:=		${LOCALBASE}
 X11BASE_REL:=		${X11BASE}
@@ -1374,6 +1380,27 @@ TARGETDIR:=		${DESTDIR}${PREFIX}
 
 .if defined(USE_LINUX_RPM)
 .include "${PORTSDIR}/Mk/bsd.linux-rpm.mk"
+.endif
+
+.if ${OSVERSION} >= 502123
+X_WINDOW_SYSTEM ?= xorg
+.else
+X_WINDOW_SYSTEM ?= xfree86-4
+.endif
+
+.if ${OSVERSION} < 602000
+.if ${X11BASE} != ${LOCALBASE} && !defined(USE_NONDEFAULT_X11BASE)
+.BEGIN:
+	@${ECHO_MSG} "On FreeBSD before 6.2 ports system unfortunately can not set default X11BASE by itself so please help it a bit by setting X11BASE=\$${LOCALBASE} in make.conf."
+	@${ECHO_MSG} "On the other hand, if you do wish to use non-default X11BASE, please set variable USE_NONDEFAULT_X11BASE."
+	@${FALSE}
+.endif
+.endif
+
+.if defined(USE_XORG) || defined(XORG_CAT)
+. if ${X_WINDOW_SYSTEM} == "xorg"
+.include "${PORTSDIR}/Mk/bsd.xorg.mk"
+. endif
 .endif
 
 .if defined(USE_BZIP2)
@@ -1843,22 +1870,22 @@ LIB_DEPENDS+=			ttf.4:${PORTSDIR}/print/freetype
 .endif
 
 .if defined(X_WINDOW_SYSTEM) && ${X_WINDOW_SYSTEM:L} == xorg
-X_IMAKE_PORT=		${PORTSDIR}/devel/imake-6
+X_IMAKE_PORT=		${PORTSDIR}/devel/imake
 X_LIBRARIES_PORT=	${PORTSDIR}/x11/xorg-libraries
-X_CLIENTS_PORT=		${PORTSDIR}/x11/xorg-clients
+X_CLIENTS_PORT=		${PORTSDIR}/x11/xorg-apps
 X_SERVER_PORT=		${PORTSDIR}/x11-servers/xorg-server
-X_FONTSERVER_PORT=	${PORTSDIR}/x11-servers/xorg-fontserver
+X_FONTSERVER_PORT=	${PORTSDIR}/x11-fonts/xfs
 X_PRINTSERVER_PORT=	${PORTSDIR}/x11-servers/xorg-printserver
 X_VFBSERVER_PORT=	${PORTSDIR}/x11-servers/xorg-vfbserver
 X_NESTSERVER_PORT=	${PORTSDIR}/x11-servers/xorg-nestserver
-X_FONTS_ENCODINGS_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-encodings
+X_FONTS_ENCODINGS_PORT=	${PORTSDIR}/x11-fonts/encodings
 X_FONTS_MISC_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-miscbitmaps
 X_FONTS_100DPI_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-100dpi
 X_FONTS_75DPI_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-75dpi
 X_FONTS_CYRILLIC_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-cyrillic
 X_FONTS_TTF_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-truetype
 X_FONTS_TYPE1_PORT=	${PORTSDIR}/x11-fonts/xorg-fonts-type1
-X_MANUALS_PORT=		${PORTSDIR}/x11/xorg-manpages
+X_FONTS_ALIAS_PORT=	${PORTSDIR}/x11-fonts/font-alias
 .elif defined(X_WINDOW_SYSTEM) && ${X_WINDOW_SYSTEM:L} == xfree86-4
 X_IMAKE_PORT=		${PORTSDIR}/devel/imake-4
 X_LIBRARIES_PORT=	${PORTSDIR}/x11/XFree86-4-libraries
@@ -1875,7 +1902,6 @@ X_FONTS_75DPI_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-font75dpi
 X_FONTS_CYRILLIC_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontCyrillic
 X_FONTS_TTF_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontScalable
 X_FONTS_TYPE1_PORT=	${PORTSDIR}/x11-fonts/XFree86-4-fontScalable
-X_MANUALS_PORT=		${PORTSDIR}/x11/XFree86-4-manuals
 .else
 IGNORE=	cannot install: bad X_WINDOW_SYSTEM setting; valid values are 'xfree86-4' and 'xorg'
 .endif
@@ -1884,18 +1910,62 @@ IGNORE=	cannot install: bad X_WINDOW_SYSTEM setting; valid values are 'xfree86-4
 BUILD_DEPENDS+=			imake:${X_IMAKE_PORT}
 .endif
 
-.if defined(USE_XPM) || defined(USE_GL)
+.if defined(PACKAGE_BUILDING) && defined(USE_DISPLAY)
+BUILD_DEPENDS+=	Xvfb:${X_VFBSERVER_PORT} \
+	${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT} \
+	${X11BASE}/lib/X11/fonts/misc/fonts.alias:${X_FONTS_ALIAS_PORT}
+.endif
+
+.if ${X_WINDOW_SYSTEM:L} == xfree86-4
+
+.if defined(USE_XPM)
 USE_XLIB=			yes
 .endif
 
-.if ${X_WINDOW_SYSTEM:L} == xorg
-XAWVER=				8
-.else
 XAWVER=				7
-.endif
 PKG_IGNORE_DEPENDS?=		'this_port_does_not_exist'
 
+.else
+
+.if defined(USE_XPM)
+LIB_DEPENDS+=			Xpm.4:${PORTSDIR}/x11/libXpm
+# XXX - At some point we'll have to fix ports to use USE_XORG to
+# the right value and remove both USE_XPM and USE_XLIB. Hopefully
+# XFree86-4 will be gone in the meantime.
+USE_XLIB=			yes
+.endif
+
+XAWVER=				8
+PKG_IGNORE_DEPENDS?=		'this_port_does_not_exist'
+
+.endif
+
 PLIST_SUB+=			XAWVER=${XAWVER}
+
+_GL_gl_LIB_DEPENDS=		GL.1:${PORTSDIR}/graphics/libGL
+_GL_glu_LIB_DEPENDS=		GLU.1:${PORTSDIR}/graphics/libGLU
+_GL_glw_LIB_DEPENDS=		GLw.1:${PORTSDIR}/graphics/libGLw
+_GL_glut_LIB_DEPENDS=		glut.4:${PORTSDIR}/graphics/libglut
+_GL_linux_RUN_DEPENDS=		${LINUXBASE}/usr/X11R6/lib/libGL.so.1:${PORTSDIR}/graphics/linux_dri
+
+.if defined(USE_GL)
+. if ${X_WINDOW_SYSTEM:L} == xfree86-4
+USE_XLIB=	yes
+. else
+.  if ${USE_GL:L} == "yes"
+USE_GL=		glu
+.  endif
+.  for _component in ${USE_GL}
+.   if !defined(_GL_${_component}_LIB_DEPENDS) && \
+		!defined(_GL_${_component}_RUN_DEPENDS)
+IGNORE=	uses unknown GL component
+.   else
+LIB_DEPENDS+=	${_GL_${_component}_LIB_DEPENDS}
+RUN_DEPENDS+=	${_GL_${_component}_RUN_DEPENDS}
+.   endif
+.  endfor
+. endif
+.endif
 
 .if defined(USE_BISON)
 BUILD_DEPENDS+=	bison:${PORTSDIR}/devel/bison
@@ -2208,14 +2278,10 @@ EXTRACT_CMD?=			${GZIP_CMD}
 
 # Figure out where the local mtree file is
 .if !defined(MTREE_FILE) && !defined(NO_MTREE)
-.if ${PREFIX} == ${X11BASE_REL} || defined(USE_X_PREFIX)
-# User may have specified non-standard PREFIX for installing a port that
-# uses X
-MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
-.elif ${PREFIX} == /usr
+.if ${PREFIX} == /usr
 MTREE_FILE=	/etc/mtree/BSD.usr.dist
 .else
-MTREE_FILE=	/etc/mtree/BSD.local.dist
+MTREE_FILE=	${PORTSDIR}/Templates/BSD.local.dist
 .endif
 .endif
 MTREE_CMD?=	/usr/sbin/mtree
@@ -2774,8 +2840,8 @@ VALID_CATEGORIES+= accessibility afterstep arabic archivers astro audio \
 	tcl tcl80 tcl82 tcl83 tcl84 textproc \
 	tk tk80 tk82 tk83 tk84 tkstep80 \
 	ukrainian vietnamese windowmaker www \
-	x11 x11-clocks x11-fm x11-fonts x11-servers x11-themes x11-toolkits \
-	x11-wm xfce zope
+	x11 x11-clocks x11-drivers x11-fm x11-fonts x11-servers x11-themes \
+	x11-toolkits x11-wm xfce zope
 
 check-categories:
 .for cat in ${CATEGORIES}
@@ -3828,7 +3894,7 @@ install-mtree:
 			exit 1; \
 		else \
 			${MTREE_CMD} ${MTREE_ARGS} ${TARGETDIR}/ >/dev/null; \
-			if [ ${MTREE_FILE} = "/etc/mtree/BSD.local.dist" ]; then \
+			if [ ${PREFIX} = ${LOCALBASE_REL} ]; then \
 				cd ${TARGETDIR}/share/nls; \
 				${LN} -shf C POSIX; \
 				${LN} -shf C en_US.US-ASCII; \

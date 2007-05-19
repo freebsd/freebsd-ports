@@ -7,6 +7,7 @@
 
 PORTNAME=	petsc
 DISTVERSION=	2.3.2-p8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/petsc/release-snapshots/

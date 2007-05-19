@@ -2665,7 +2665,6 @@ share/pixmaps/claws-mail.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/en
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/pixmaps
 @dirrmtry share/applications
 @dirrmtry lib/claws-mail/plugins
 @dirrmtry lib/claws-mail

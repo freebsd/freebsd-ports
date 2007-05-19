@@ -6,6 +6,7 @@
 
 PORTNAME=	redact
 PORTVERSION=	0.1.5
+PORTREVISION=	1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	ftp://ftp.code-monkey.de/pub/redact/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

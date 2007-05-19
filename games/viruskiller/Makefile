@@ -7,6 +7,7 @@
 
 PORTNAME=	viruskiller
 DISTVERSION=	1.0-1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.parallelrealities.co.uk/download.php?type=zip&file=
 

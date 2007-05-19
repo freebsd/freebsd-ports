@@ -7,6 +7,7 @@
 
 PORTNAME=	mpich2
 PORTVERSION=	1.0.5p4
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	net parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/	\

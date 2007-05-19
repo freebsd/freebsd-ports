@@ -7,6 +7,7 @@
 
 PORTNAME=	torrentvolve
 DISTVERSION=	1.4-beta
+PORTREVISION=	1
 CATEGORIES=	net-p2p java
 MASTER_SITES=	SF
 

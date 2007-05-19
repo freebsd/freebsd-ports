@@ -1,0 +1,10 @@
+The non-arch keyboard configuration database for X Window.
+The goal is to provide the consistent, well-structured,
+frequently released open source of X keyboard configuration
+data for X Window System implementations (free, open source
+and commercial). The project is targetted to XKB-based systems.
+
+WWW: http://www.freedesktop.org/wiki/Software/xlibs
+
+- Florent Thoumie
+flz@FreeBSD.org

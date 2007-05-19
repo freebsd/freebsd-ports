@@ -7,6 +7,7 @@
 
 PORTNAME=	fcalc
 PORTVERSION=	1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://tangentsoft.net/fcalc/
 DISTNAME=	${PORTNAME}-tcl

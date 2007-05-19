@@ -6,6 +6,7 @@
 
 PORTNAME=		apache-forrest
 PORTVERSION=		0.8
+PORTREVISION=	1
 CATEGORIES=		www java
 MASTER_SITES=		${MASTER_SITE_APACHE} \
 			http://mirror.tomato.it/apache/forrest/ \

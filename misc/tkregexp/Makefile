@@ -7,7 +7,7 @@
 
 PORTNAME=	tkregexp
 PORTVERSION=	3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc tk84
 MASTER_SITES=	http://laurent.riesterer.free.fr/regexp/
 DISTNAME=	visual_regexp-${PORTVERSION}

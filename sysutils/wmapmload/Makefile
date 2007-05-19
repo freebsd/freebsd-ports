@@ -7,6 +7,7 @@
 
 PORTNAME=	wmapmload
 PORTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 

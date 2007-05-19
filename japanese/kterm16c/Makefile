@@ -7,6 +7,7 @@
 
 PORTNAME=	kterm16c
 PORTVERSION=	6.2.0
+PORTREVISION=	1
 CATEGORIES=	japanese x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
 		ftp://ftp.interface-business.de/pub/outgoing/ \

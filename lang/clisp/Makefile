@@ -7,6 +7,7 @@
 
 PORTNAME=	clisp
 PORTVERSION=	2.41a
+PORTREVISION=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	GNU/${PORTNAME}/release/${PORTVERSION:C/[[:alpha:]]+$//} \
 		ftp://sunsite.unc.edu/pub/Linux/devel/lang/lisp/

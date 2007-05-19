@@ -8,7 +8,7 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.4.2
-PORTREVISION?=	1
+PORTREVISION?=	2
 PORTEPOCH?=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://fontconfig.org/release/
@@ -36,8 +36,6 @@ CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
 		--disable-docs
 MAKE_ENV=	LC_ALL=C
 PKGINSTALL=	${WRKDIR}/pkg-install
-
-MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 
 MAN1=		fc-cache.1 fc-cat.1 fc-list.1 fc-match.1
 MAN5=		fonts-conf.5
@@ -72,6 +70,7 @@ post-install:
 .if !defined(PACKAGE_BUILDING)
 	@${LDCONFIG} -m ${PREFIX}/lib
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
 .endif
 
 .include <bsd.port.post.mk>

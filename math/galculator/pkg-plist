@@ -20,7 +20,3 @@ share/locale/ro/LC_MESSAGES/galculator.mo
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/ro

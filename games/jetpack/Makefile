@@ -7,6 +7,7 @@
 
 PORTNAME=	jetpack
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://qiclab.scn.rain.com/pub/games/
 DISTNAME=	${PORTNAME}

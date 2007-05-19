@@ -7,6 +7,7 @@
 
 PORTNAME=	mimp
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	mail www
 
 MAINTAINER=	beech@alaskaparadise.com

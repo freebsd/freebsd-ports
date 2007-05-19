@@ -7,6 +7,7 @@
 
 PORTNAME=	urwvn
 PORTVERSION=	3.04
+PORTREVISION=	1
 CATEGORIES=	vietnamese x11-fonts
 MASTER_SITES=	http://vntex.org/urwvn/download/
 DISTNAME=	urwvn-${PORTVERSION}-ttf

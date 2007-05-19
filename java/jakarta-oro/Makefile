@@ -7,6 +7,7 @@
 
 PORTNAME=	jakarta-oro
 PORTVERSION=	2.0.8
+PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	http://jakarta.apache.org/builds/${PORTNAME}/release/v${PORTVERSION}/ \
 		http://ftp.epix.net/apache/jakarta/oro/binaries/

@@ -7,7 +7,7 @@
 
 PORTNAME=	resourceext
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://freedesktop.org/~ajax/xlibs-release/
 

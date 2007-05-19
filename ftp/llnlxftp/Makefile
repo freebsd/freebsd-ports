@@ -7,7 +7,7 @@
 
 PORTNAME=	llnlxftp
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.llnl.gov/pub/ia/llnlxftp/
 DISTNAME=	latest_xftp

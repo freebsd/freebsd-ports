@@ -7,6 +7,7 @@
 
 PORTNAME=	zangband
 PORTVERSION=	2.4.0${JA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	japanese games
 MASTER_SITES=	ftp://clockwork.dementia.org/angband/Variant/ZAngband/ \
 		ftp://ftp.sunet.se/pub/games/Angband/Variant/ZAngband/

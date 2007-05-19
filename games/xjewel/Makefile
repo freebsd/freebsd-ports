@@ -7,6 +7,7 @@
 
 PORTNAME=	xjewel
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/ \
 		ftp://ftp.x.org/R5contrib/

@@ -7,6 +7,7 @@
 
 PORTNAME=	xvid4conf
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.nerim.net/debian-marillat/pool/main/x/xvid4conf/ \
 		${MASTER_SITE_LOCAL}

@@ -37,17 +37,5 @@ share/locale/zh_TW/LC_MESSAGES/regexxer.mo
 @dirrm share/gnome/regexxer
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
-@dirrmtry share/locale/pa/LC_MESSAGES
-@dirrmtry share/locale/pa
-@dirrmtry share/locale/ne/LC_MESSAGES
-@dirrmtry share/locale/ne
-@dirrmtry share/locale/hu/LC_MESSAGES
-@dirrmtry share/locale/hu
-@dirrmtry share/locale/eu/LC_MESSAGES
-@dirrmtry share/locale/eu
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
-@dirrmtry share/locale/bg/LC_MESSAGES
-@dirrmtry share/locale/bg
-@dirrmtry share/locale/ar/LC_MESSAGES
-@dirrmtry share/locale/ar

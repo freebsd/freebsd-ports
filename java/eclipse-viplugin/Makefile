@@ -7,6 +7,7 @@
 
 PORTNAME=	viPlugin
 PORTVERSION=	1.14.0
+PORTREVISION=	1
 CATEGORIES=	java devel editors
 MASTER_SITES=	http://www.satokar.com/viplugin/files/
 PKGNAMEPREFIX=	eclipse-

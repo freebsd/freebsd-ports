@@ -7,7 +7,7 @@
 
 PORTNAME=	speedbar
 PORTVERSION=	0.14.b4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://dryice.name/computer/FreeBSD/distfiles/

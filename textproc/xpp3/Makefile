@@ -7,6 +7,7 @@
 
 PORTNAME=	xpp3
 DISTVERSION=	1.1.4c
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	http://www.extreme.indiana.edu/dist/java-repository/xpp3/distributions/

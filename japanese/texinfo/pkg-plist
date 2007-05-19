@@ -53,20 +53,6 @@ share/locale/sv/LC_MESSAGES/texinfo.mo
 share/locale/tr/LC_MESSAGES/texinfo.mo
 share/locale/zh_CN/LC_MESSAGES/texinfo.mo
 share/locale/zh_TW/LC_MESSAGES/texinfo.mo
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/de_AT/LC_MESSAGES
-@dirrmtry share/locale/de_AT
-@dirrmtry share/locale/no/LC_MESSAGES
-@dirrmtry share/locale/no
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/ro
-@dirrmtry share/locale/no/LC_MESSAGES
-@dirrmtry share/locale/no
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
 @dirrmtry %%TEXMFLOCAL%%/tex/generic/dvips
 @dirrmtry %%TEXMFLOCAL%%/pdftex/plain/misc
 @dirrmtry %%TEXMFLOCAL%%/pdftex/plain

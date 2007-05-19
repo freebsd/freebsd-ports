@@ -6,7 +6,7 @@
 
 PORTNAME=	kwappen
 PORTVERSION=	1.1.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games kde
 MASTER_SITES=	http://www.lcs-chemie.de/
 

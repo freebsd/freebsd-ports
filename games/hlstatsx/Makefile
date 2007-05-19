@@ -7,6 +7,7 @@
 
 PORTNAME=	hlstatsx
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	games www
 MASTER_SITES=	http://www.hlstatsx.com/downloads/
 DISTNAME=	HLstatsX_V${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	xbl
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www710.univ-lyon1.fr/~exco/XBL/ GENTOO/distfiles
 

@@ -8,6 +8,7 @@
 
 PORTNAME=	pomap
 PORTVERSION=	2.9.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 PKGNAMEPREFIX=	ocaml-

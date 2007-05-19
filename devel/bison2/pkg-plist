@@ -65,16 +65,8 @@ share/aclocal/bison-i18n.m4
 %%NLS%%share/locale/vi/LC_MESSAGES/bison-runtime.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/bison.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/bison-runtime.mo
-%%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_TW
-%%NLS%%@dirrmtry share/locale/sl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sl
 %%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/rw
-%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ro
-%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pl
 %%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%/calc++
 %%PORTDOCS%%@dirrmtry %%EXAMPLESDIR%%
 @dirrmtry %%DATADIR%%/m4sugar

@@ -7,6 +7,7 @@
 
 PORTNAME=	mingunittf
 PORTVERSION=	1.08
+PORTREVISION=	1
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	http://www.info.gov.hk/digital21/chi/hkscs/download/
 DISTNAME=	ming_uni.ttf

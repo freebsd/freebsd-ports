@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkabale
 PORTVERSION=	0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 

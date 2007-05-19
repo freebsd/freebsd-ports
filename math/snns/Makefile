@@ -7,6 +7,7 @@
 
 PORTNAME=	snns
 PORTVERSION=	4.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www-ra.informatik.uni-tuebingen.de/downloads/SNNS/ \
 		ftp://ftp.informatik.uni-stuttgart.de/pub/SNNS/

@@ -7,7 +7,7 @@
 
 PORTNAME=	BitTornado
 PORTVERSION=	0.3.18
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES?=	net-p2p python ipv6
 MASTER_SITES=	http://download.bittornado.com/download/ \

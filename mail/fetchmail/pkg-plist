@@ -25,12 +25,6 @@ libexec/fetchmailconf.py
 %%NLS%%share/locale/ru/LC_MESSAGES/fetchmail.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/fetchmail.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/fetchmail.mo
-%%NLS%%@dirrmtry share/locale/ca/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ca
-%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cs
-%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pl
 @unexec if cmp -s %D/etc/fetchmailrc.sample %D/etc/fetchmailrc; then rm -f %D/etc/fetchmailrc; fi
 etc/fetchmailrc.sample
 @exec if [ ! -f %D/etc/fetchmailrc ] ; then cp -p %D/%F %B/fetchmailrc; fi

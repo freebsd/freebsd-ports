@@ -7,6 +7,7 @@
 
 PORTNAME=	oglext
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.julius.caesar.de/files/oglext/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

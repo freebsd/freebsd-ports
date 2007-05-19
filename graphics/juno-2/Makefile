@@ -7,6 +7,7 @@
 
 PORTNAME=	juno-2
 PORTVERSION=	1.23
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.research.compaq.com/SRC/juno-2/ \
 		http://freebsd.unixfreunde.de/sources/

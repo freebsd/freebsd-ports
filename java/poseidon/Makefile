@@ -7,6 +7,7 @@
 
 PORTNAME=	poseidon
 PORTVERSION=	4.2.1
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	ftp://88.198.45.102/ \
 		http://88.198.45.102:81/

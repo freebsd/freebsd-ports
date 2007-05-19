@@ -3,4 +3,3 @@ bin/belote
 %%DATADIR%%/data.bin
 share/pixmaps/belote.gif
 @dirrm %%DATADIR%%
-@dirrmtry share/pixmaps

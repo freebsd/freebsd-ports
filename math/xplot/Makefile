@@ -7,6 +7,7 @@
 
 PORTNAME=	xplot
 PORTVERSION=	0.90.7.1
+PORTREVISION=	1
 CATEGORIES=	math graphics net
 MASTER_SITES=	http://www.xplot.org/xplot/
 

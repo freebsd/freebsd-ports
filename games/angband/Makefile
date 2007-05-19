@@ -7,6 +7,7 @@
 
 PORTNAME=	angband
 PORTVERSION=	3.0.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://angband.oook.cz/download/
 

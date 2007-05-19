@@ -6,7 +6,7 @@
 
 PORTNAME=	qextmdi
 PORTVERSION=	2.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.geocities.com/gigafalk/qextmdi/
 EXTRACT_SUFX=	.tgz

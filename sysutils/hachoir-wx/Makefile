@@ -7,6 +7,7 @@
 
 PORTNAME=	hachoir-wx
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://cheeseshop.python.org/packages/source/h/${PORTNAME}/ CENKES
 

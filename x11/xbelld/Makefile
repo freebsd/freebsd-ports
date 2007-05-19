@@ -7,6 +7,7 @@
 
 PORTNAME=	xbelld
 PORTVERSION=	0.2b2
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.meowfishies.com/code/
 DISTNAME=	${PORTNAME}-0.2beta2

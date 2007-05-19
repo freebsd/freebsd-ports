@@ -7,6 +7,7 @@
 
 PORTNAME=	dfsongsd
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	# empty
 DISTNAME=	DFSongSd.ttf

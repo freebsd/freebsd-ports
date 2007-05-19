@@ -7,6 +7,7 @@
 
 PORTNAME=	libshhcards
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 DISTNAME=	shhcards-${PORTVERSION}

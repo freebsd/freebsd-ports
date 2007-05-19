@@ -56,7 +56,3 @@ bin/grisbi
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
-%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES

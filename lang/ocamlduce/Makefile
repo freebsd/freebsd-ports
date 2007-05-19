@@ -7,6 +7,7 @@
 
 PORTNAME=	ocamlduce
 PORTVERSION=	3.09.3
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://gallium.inria.fr/~frisch/ocamlcduce/download/
 PKGNAMESUFFIX=	pl1

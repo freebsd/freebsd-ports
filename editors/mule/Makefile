@@ -8,7 +8,7 @@
 PORTNAME=	mule
 PORTVERSION=	${MULE_VERSION}
 PKGNAMESUFFIX=	${INPUT_METHOD}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES+=	editors
 MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/ \
 		ftp://ftp.jaist.ac.jp/pub/GNU/mule/ \
@@ -29,6 +29,7 @@ EMACS_VERSION=	19.34
 SLAVEDIRS=	chinese/mule-freewnn
 
 USE_XLIB=	yes
+USE_XORG=	xbitmaps
 WRKSRC=		${WRKDIR}/mule-${MULE_VERSION}-${EMACS_VERSION}
 PATCHDIR=	${.CURDIR}/../../editors/mule-common/files
 FILESDIR=	${.CURDIR}/../../editors/mule-common/files

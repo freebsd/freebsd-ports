@@ -7,6 +7,7 @@
 
 PORTNAME=	wmcalc
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	math windowmaker
 MASTER_SITES=	http://members.cox.net/ehf_dockapps/wmcalc/ \
 		${MASTER_SITE_LOCAL}

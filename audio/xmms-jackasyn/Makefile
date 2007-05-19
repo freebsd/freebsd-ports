@@ -7,6 +7,7 @@
 
 PORTNAME=	jackasyn
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://gige.xdv.org/libjackasyn/download/
 PKGNAMEPREFIX=	xmms-

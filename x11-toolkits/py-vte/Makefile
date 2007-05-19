@@ -6,7 +6,7 @@
 #   $MCom: ports/x11-toolkits/py-vte/Makefile,v 1.1 2007/02/18 19:12:57 mezz Exp $
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

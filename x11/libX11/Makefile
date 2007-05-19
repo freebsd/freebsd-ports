@@ -6,31 +6,29 @@
 #
 
 PORTNAME=	libX11
-PORTVERSION=	6.2.1
-PORTREVISION=	3
+PORTVERSION=	1.1.1
+PORTREVISION=	1
+PORTEPOCH=	1
 CATEGORIES=	x11
-MASTER_SITES=	http://freedesktop.org/~ajax/xlibs-release/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X11 library
 
-LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/xau.pc:${PORTSDIR}/x11/libXau \
-		${X11BASE}/libdata/pkgconfig/xdmcp.pc:${PORTSDIR}/x11/libXdmcp
-BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/xextensions.pc:${PORTSDIR}/x11/xextensions \
-		${X11BASE}/libdata/pkgconfig/xtrans.pc:${PORTSDIR}/x11/libXtrans \
-		${LIB_PC_DEPENDS}
-RUN_DEPENDS=	${LIB_PC_DEPENDS}
+.if defined(WITH_XCB)
+BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/xcb-xlib.pc:${PORTSDIR}/x11/libxcb
+RUN_DEPENDS=	${BUILD_DEPENDS}
+CONFIGURE_ARGS= --with-xcb=yes
+PLIST_SUB+=	XCB=""
+.else
+CONFIGURE_ARGS= --with-xcb=no
+PLIST_SUB+=	XCB="@comment "
+.endif
 
-CONFLICTS=	XFree86-libraries-* xorg-libraries-*
-
-USE_BZIP2=	yes
-PREFIX?=	${X11BASE}
+XORG_CAT=	lib
+USE_XORG=	bigreqsproto xau xdmcp xextproto xtrans xcmiscproto kbproto:both \
+		inputproto:both xf86bigfontproto xproto:both
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_GMAKE=	yes
-CONFIGURE_ARGS+= --enable-xdmauth
-CFLAGS+=	-DMALLOC_0_RETURNS_NULL
-USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack pkgconfig
+CONFIGURE_ARGS+=	--enable-xdmauth
 
+.include "${.CURDIR}/manpages"
 .include <bsd.port.mk>

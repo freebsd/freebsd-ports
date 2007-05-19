@@ -7,7 +7,7 @@
 
 PORTNAME=	blender
 PORTVERSION=	2.25
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/release/Publisher${PORTVERSION}/
 DISTNAME=	blender-publisher-${PORTVERSION}-freebsd-4.2-i386

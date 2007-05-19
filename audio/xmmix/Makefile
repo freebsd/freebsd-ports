@@ -7,6 +7,7 @@
 
 PORTNAME=	xmmix
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmmix/1.2.2/src/
 

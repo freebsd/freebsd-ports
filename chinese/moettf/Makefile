@@ -7,7 +7,7 @@
 
 PORTNAME=	moettf
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	http://ftp.riken.go.jp/pub/FreeBSD/distfiles/zh-moettf/ \
 		http://ftp.math.uni-bielefeld.de/pub/unix/FreeBSD/distfiles/zh-moettf/

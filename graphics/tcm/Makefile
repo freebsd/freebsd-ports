@@ -7,7 +7,7 @@
 
 PORTNAME=	tcm
 PORTVERSION=	2.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cs.utwente.nl/pub/tcm/ \
 		ftp://ftp.cs.vu.nl/pub/tcm/

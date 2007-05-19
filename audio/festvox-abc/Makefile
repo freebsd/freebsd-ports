@@ -9,6 +9,7 @@
 
 PORTNAME=	festvox-abc
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	audio accessibility spanish
 MASTER_SITES=	${MASTER_SITE_FESTIVAL_OGI}
 DISTNAME=	voice_abc_di-${PORTVERSION}

@@ -241,8 +241,6 @@ share/locale/zh_TW/LC_MESSAGES/pidgin.mo
 @dirrmtry share/locale/gl
 @dirrmtry share/locale/fi/LC_MESSAGES
 @dirrmtry share/locale/fi
-@dirrmtry share/locale/en_AU/LC_MESSAGES
-@dirrmtry share/locale/en_AU
 @dirrmtry share/locale/el/LC_MESSAGES
 @dirrmtry share/locale/el
 @dirrmtry share/locale/dz/LC_MESSAGES

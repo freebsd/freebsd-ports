@@ -6,6 +6,7 @@
 
 PORTNAME=	fonts-te
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://itachi.prudhvi.org/te_fonts/ \
 		http://freebsd.unixfreunde.de/sources/

@@ -7,7 +7,7 @@
 
 PORTNAME=	xwhois
 PORTVERSION=	0.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://c64.org/~nr/xwhois/dist/
 

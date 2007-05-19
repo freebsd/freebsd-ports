@@ -7,7 +7,7 @@
 
 PORTNAME=	gmysql
 PORTVERSION=	0.3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 

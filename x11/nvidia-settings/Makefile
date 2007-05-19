@@ -7,7 +7,7 @@
 
 PORTNAME=	nvidia-settings
 PORTVERSION=	1.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_NVIDIA:S,$,XFree86/${PORTNAME}/,} \
 		${MASTER_SITE_LOCAL:S,$,bland/,}
@@ -18,6 +18,7 @@ COMMENT=	Display Control Panel for X NVidia driver
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
+USE_GL=		gl
 
 PLIST_FILES=	bin/nvidia-settings
 MAN1=		nvidia-settings.1

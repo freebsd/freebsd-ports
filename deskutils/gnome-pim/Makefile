@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-pim
 PORTVERSION=	1.4.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.jroger.in-berlin.de/gnome-pim/
 DIST_SUBDIR=	gnome

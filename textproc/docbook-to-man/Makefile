@@ -7,6 +7,7 @@
 
 PORTNAME=	docbook-to-man
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/tools/dtm/
 DISTNAME=	${PORTNAME}

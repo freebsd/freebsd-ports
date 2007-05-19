@@ -7,7 +7,7 @@
 
 PORTNAME=	ode
 DISTVERSION=	${ODEVER}-060223
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://opende.sourceforge.net/snapshots/
 PKGNAMESUFFIX=	-devel

@@ -1,0 +1,9 @@
+include/GL/glxint.h
+include/GL/glxmd.h
+include/GL/glxproto.h
+include/GL/glxtokens.h
+include/GL/internal/glcore.h
+libdata/pkgconfig/glproto.pc
+@dirrmtry include/GL/internal
+@dirrmtry include/GL
+@dirrmtry include/X11/extensions

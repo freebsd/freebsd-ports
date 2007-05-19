@@ -7,7 +7,7 @@
 
 PORTNAME=	libast
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://critical.ch/distfiles/ \
 		http://www.eterm.org/download/

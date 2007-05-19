@@ -8,6 +8,7 @@
 
 PORTNAME=	advi
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://caml.inria.fr/distrib/bazar-ocaml/${PORTNAME}/
 EXTRACT_SUFX=	.tgz

@@ -1,13 +1,20 @@
 @comment I can't add the below files to the package because pkg_delete
 @comment will complain when removing this package:
-@comment     lib/modules/extensions/XXX-libglx.so.%%XLIBVERSION%%
-@comment     lib/modules/extensions/XXX-libGLcore.so.%%XLIBVERSION%%
+@comment     %%MODULESDIR%%/extensions/XXX-libglx.so.%%XLIBVERSION%%
+@comment     %%MODULESDIR%%/extensions/XXX-libGLcore.so.%%XLIBVERSION%%
 @comment     lib/XXX-libGL.a.%%XLIBVERSION%%
 @comment     lib/XXX-libGL.so.1.%%XLIBVERSION%%
 @comment They are however restored when this package is removed:
-@unexec mv -f %D/lib/modules/extensions/XXX-libglx.so.%%%%.%%XSERVVERSION%% %D/lib/modules/extensions/libglx.so
-@unexec mv -f %D/lib/modules/extensions/XXX-libGLcore.so.%%%%.%%XSERVVERSION%% %D/lib/modules/extensions/libGLcore.so
-@unexec mv -f %D/lib/XXX-libGL.a.%%%%.%%XLIBVERSION%% %D/lib/libGL.a
+%%XFREE86%%@exec mv -f %D/%%MODULESDIR%%/extensions/libglx.la %D/%%MODULESDIR%%/extensions/XXX-libglx.la.%%%%.%%XSERVVERSION%%
+%%XFREE86%%@unexec mv -f %D/%%MODULESDIR%%/extensions/XXX-libglx.la.%%%%.%%XSERVVERSION%% %D/%%MODULESDIR%%/extensions/libglx.la
+@exec mv -f %D/%%MODULESDIR%%/extensions/libglx.so %D/%%MODULESDIR%%/extensions/XXX-libglx.so.%%%%.%%XSERVVERSION%%
+@unexec mv -f %D/%%MODULESDIR%%/extensions/XXX-libglx.so.%%%%.%%XSERVVERSION%% %D/%%MODULESDIR%%/extensions/libglx.so
+%%XFREE86%%@exec mv -f %D/%%MODULESDIR%%/extensions/libGLcore.la %D/%%MODULESDIR%%/extensions/XXX-libGLcore.la.%%%%.%%XSERVVERSION%%
+%%XFREE86%%@unexec mv -f %D/%%MODULESDIR%%/extensions/XXX-libGLcore.la.%%%%.%%XSERVVERSION%% %D/%%MODULESDIR%%/extensions/libGLcore.la
+@exec mv -f %D/%%MODULESDIR%%/extensions/libGLcore.so %D/%%MODULESDIR%%/extensions/XXX-libGLcore.so.%%%%.%%XSERVVERSION%%
+@unexec mv -f %D/%%MODULESDIR%%/extensions/XXX-libGLcore.so.%%%%.%%XSERVVERSION%% %D/%%MODULESDIR%%/extensions/libGLcore.so
+%%XORG%%@unexec mv -f %D/lib/XXX-libGL.a.%%%%.%%XLIBVERSION%% %D/lib/libGL.a
+@exec mv -f %D/lib/libGL.so.1 %D/lib/XXX-libGL.so.1.%%%%.%%XLIBVERSION%%
 lib/libGL.so.1
 @unexec mv -f %D/lib/XXX-libGL.so.1.%%%%.%%XLIBVERSION%% %D/lib/libGL.so.1
 @exec ln -sf %D/lib/libGL.so.1 %D/lib/libGL.so
@@ -27,13 +34,13 @@ lib/libnvidia-tls.so.1
 @exec ln -sf %D/lib/libnvidia-tls.so.1 %D/lib/libnvidia-tls.so
 @unexec rm -f %D/lib/libnvidia-tls.so
 lib/libXvMCNVIDIA.a
-lib/modules/libnvidia-wfb.so.1
-@exec ln -sf %D/lib/modules/libnvidia-wfb.so.1 %D/lib/modules/libwfb.so
-@unexec rm -f %D/lib/modules/libwfb.so
-lib/modules/drivers/nvidia_drv.o
-lib/modules/drivers/nvidia_drv.so
-lib/modules/extensions/libglx.so.1
-@exec ln -sf %D/lib/modules/extensions/libglx.so.1 %D/lib/modules/extensions/libglx.so
+%%MODULESDIR%%/libnvidia-wfb.so.1
+@exec ln -sf %D/%%MODULESDIR%%/libnvidia-wfb.so.1 %D/%%MODULESDIR%%/libwfb.so
+@unexec rm -f %D/%%MODULESDIR%%/libwfb.so
+%%MODULESDIR%%/drivers/nvidia_drv.o
+%%MODULESDIR%%/drivers/nvidia_drv.so
+%%MODULESDIR%%/extensions/libglx.so.1
+@exec ln -sf %D/%%MODULESDIR%%/extensions/libglx.so.1 %D/%%MODULESDIR%%/extensions/libglx.so
 %%PORTDOCS%%%%DOCSDIR%%/html/appendix-a.html
 %%PORTDOCS%%%%DOCSDIR%%/html/appendix-b.html
 %%PORTDOCS%%%%DOCSDIR%%/html/appendix-c.html

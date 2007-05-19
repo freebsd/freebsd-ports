@@ -6,6 +6,7 @@
 
 PORTNAME=	wmmp3
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.dotfiles.com/software/wmmp3/
 

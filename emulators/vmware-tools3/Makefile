@@ -7,6 +7,7 @@
 
 PORTNAME=	vmware-tools
 PORTVERSION=	${VMWARE_VER}.${BUILD_VER}
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	# bundled with VMware itself
 DISTNAME=	vmware-freebsd-tools

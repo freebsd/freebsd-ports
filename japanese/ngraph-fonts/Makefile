@@ -7,6 +7,7 @@
 
 PORTNAME=	ngraph-fonts
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	japanese math x11-fonts
 MASTER_SITES=	# empty
 DISTFILES=	# empty

@@ -7,6 +7,7 @@
 
 PORTNAME=	moth
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://moth.titanothere.com/moth/
 DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX} \

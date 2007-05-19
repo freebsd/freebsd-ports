@@ -44,7 +44,6 @@ share/pixmaps/gpredict/maps/nasa-topo_800.png
 @dirrm share/pixmaps/gpredict/maps
 @dirrm share/pixmaps/gpredict/icons
 @dirrm share/pixmaps/gpredict
-@dirrmtry share/pixmaps
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
 @dirrmtry locale

@@ -7,6 +7,7 @@
 
 PORTNAME=	xpcd
 PORTVERSION=	2.09
+PORTREVISION=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	http://dl.bytesex.org/releases/xpcd/
 

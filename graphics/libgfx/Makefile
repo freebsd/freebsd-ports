@@ -7,6 +7,7 @@
 
 PORTNAME=	libgfx
 DISTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://graphics.cs.uiuc.edu/~garland/dist/ CENKES
 

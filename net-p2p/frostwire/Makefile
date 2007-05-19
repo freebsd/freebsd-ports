@@ -7,6 +7,7 @@
 
 PORTNAME=	frostwire
 PORTVERSION=	4.13.1.7
+PORTREVISION=	1
 CATEGORIES=	net-p2p java
 MASTER_SITES=	http://station1.peercommons.com/frostwire/4.13.1/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.noarch

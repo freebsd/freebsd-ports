@@ -10,7 +10,7 @@
 
 PORTNAME=	rxvt
 PORTVERSION=	2.6.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	x11
 MASTER_SITES=	\
 		http://public.planetmirror.com/pub/rxvt/%SUBDIR%/ \

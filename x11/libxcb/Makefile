@@ -7,7 +7,7 @@
 
 PORTNAME=	libxcb
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
@@ -21,11 +21,12 @@ BUILD_DEPENDS=	${LIB_PC_DEPENDS} \
 		dot:${PORTSDIR}/graphics/graphviz
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
 
-USE_X_PREFIX=	yes
+PREFIX=		${X11BASE}
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack pkgconfig
+USE_GNOME=	gnomehack
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USE_XORG=	xau xdmcp
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
@@ -53,8 +54,5 @@ XPROTO_LIBS=	-L${X11BASE}/lib
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src__xcb.h \
 		${FILESDIR}/extra-patch-src__xcb_auth.c
 .endif
-
-post-build:
-	DISPLAY= ${GMAKE} -C ${WRKSRC} check
 
 .include <bsd.port.post.mk>

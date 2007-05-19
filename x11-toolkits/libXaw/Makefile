@@ -6,32 +6,15 @@
 #
 
 PORTNAME=	libXaw
-PORTVERSION=	7.0.2
+PORTVERSION=	1.0.2
+PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://freedesktop.org/~ajax/xlibs-release/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Athena Widgets library
 
-LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/x11.pc:${PORTSDIR}/x11/libX11 \
-		${X11BASE}/libdata/pkgconfig/xt.pc:${PORTSDIR}/x11-toolkits/libXt \
-		${X11BASE}/libdata/pkgconfig/xmu.pc:${PORTSDIR}/x11-toolkits/libXmu \
-		${X11BASE}/libdata/pkgconfig/xpm.pc:${PORTSDIR}/x11/libXpm
-BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto \
-		${X11BASE}/libdata/pkgconfig/xextensions.pc:${PORTSDIR}/x11/xextensions \
-		${LIB_PC_DEPENDS}
-RUN_DEPENDS=	${LIB_PC_DEPENDS}
-
-CONFLICTS=	XFree86-libraries-* xorg-libraries-*
-
-USE_BZIP2=	yes
-PREFIX?=	${X11BASE}
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_GMAKE=	yes
-CFLAGS+=	-DMALLOC_0_RETURNS_NULL
-INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomehack pkgconfig
+XORG_CAT=	lib
+USE_XORG=	printproto x11 xau xext xextproto xmu xp xpm xproto xt
 
 MAN3=		Xaw.3
 

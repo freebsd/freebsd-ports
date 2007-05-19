@@ -7,7 +7,7 @@
 
 PORTNAME=	cplay
 PORTVERSION=	1.49
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://mask.tf.hut.fi/~flu/hacks/cplay/
 

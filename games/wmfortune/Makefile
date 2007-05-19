@@ -7,7 +7,7 @@
 
 PORTNAME=	wmfortune
 PORTVERSION=	0.241
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games windowmaker afterstep
 MASTER_SITES=	http://dockapps.org/files/90/128/
 

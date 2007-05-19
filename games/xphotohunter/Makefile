@@ -7,7 +7,7 @@
 
 PORTNAME=	xphotohunter
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://micro.ee.nthu.edu.tw/~tomcat/Xphotohunter/ \
 		http://wood.ite.ntnu.edu.tw/~clive/dist/xphotohunter/

@@ -7,6 +7,7 @@
 
 PORTNAME=	xengine
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.kazu.kz/freebsd/
 DISTFILES=	part01.gz patch1.gz

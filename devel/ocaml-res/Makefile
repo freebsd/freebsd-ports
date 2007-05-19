@@ -8,6 +8,7 @@
 
 PORTNAME=	res
 PORTVERSION=	2.2.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 PKGNAMEPREFIX=	ocaml-

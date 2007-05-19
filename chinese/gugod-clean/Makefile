@@ -5,6 +5,7 @@
 
 PORTNAME=	gugod-clean
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/gugod/
 

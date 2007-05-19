@@ -7,6 +7,7 @@
 
 PORTNAME=	rdic
 PORTVERSION=	0.1.8
+PORTREVISION=	1
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://www.yasgursfarm.us/download/
 DIST_SUBDIR=	ruby

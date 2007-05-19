@@ -163,9 +163,3 @@ share/locale/vi/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 @dirrm include/gstreamer-%%VERSION%%/gst/floatcast
 @dirrm include/gstreamer-%%VERSION%%/gst/cdda
 @dirrm include/gstreamer-%%VERSION%%/gst/audio
-@dirrmtry share/locale/uk/LC_MESSAGES
-@dirrmtry share/locale/uk
-@dirrmtry share/locale/sr/LC_MESSAGES
-@dirrmtry share/locale/sr
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs

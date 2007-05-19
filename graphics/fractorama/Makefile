@@ -7,7 +7,7 @@
 
 PORTNAME=	fractorama
 PORTVERSION=	1.6.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://fractorama.com/ \
 		http://critical.ch/distfiles/${PORTNAME}/${PORTVERSION}/ \

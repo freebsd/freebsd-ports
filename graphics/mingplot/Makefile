@@ -7,7 +7,7 @@
 
 PORTNAME=	mingplot
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics www
 MASTER_SITES=	http://namazu.org/~satoru/mingplot/
 

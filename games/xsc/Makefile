@@ -7,6 +7,7 @@
 
 PORTNAME=	xsc
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.panix.com/~mbh/xsc/
 

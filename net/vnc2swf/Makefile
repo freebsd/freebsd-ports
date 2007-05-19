@@ -7,6 +7,7 @@
 
 PORTNAME=	vnc2swf
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.unixuser.org/~euske/${PORTNAME}/ \
 		ftp://ftp.rewt.org.uk/pub/distfiles/

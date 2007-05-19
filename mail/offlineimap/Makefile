@@ -7,6 +7,7 @@
 
 PORTNAME=	offlineimap
 PORTVERSION=	4.0.11
+PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.quux.org/devel/offlineimap/

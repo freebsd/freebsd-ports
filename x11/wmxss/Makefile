@@ -7,6 +7,7 @@
 
 PORTNAME=	wmxss
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
 

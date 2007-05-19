@@ -7,6 +7,7 @@
 
 PORTNAME=	blobandconquer
 DISTVERSION=	0.8-2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.amdmi3.ru/distfiles/ \
 		http://www.parallelrealities.co.uk/download.php?type=zip&file=

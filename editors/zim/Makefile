@@ -7,6 +7,7 @@
 
 PORTNAME=	zim
 PORTVERSION=	0.19
+PORTREVISION=	1
 CATEGORIES=	editors perl5
 MASTER_SITES=	http://pardus-larus.student.utwente.nl/~pardus/downloads/Zim/
 DISTNAME=	Zim-${PORTVERSION}

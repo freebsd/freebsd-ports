@@ -7,7 +7,7 @@
 
 PORTNAME=	kvirc
 PORTVERSION=	3.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	irc kde
 MASTER_SITES=	ftp://ftp.kvirc.net/pub/%SUBDIR%/ \
 		ftp://ftp.kvirc.de/pub/%SUBDIR%/ \

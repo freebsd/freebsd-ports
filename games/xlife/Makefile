@@ -7,6 +7,7 @@
 
 PORTNAME=	xlife
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTNAME=	xlife

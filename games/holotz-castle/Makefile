@@ -7,6 +7,7 @@
 
 PORTNAME=	holotz-castle
 PORTVERSION=	1.3.9
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.mainreactor.net/holotzcastle/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -16,6 +17,7 @@ COMMENT=	A platform game with high doses of mystery
 
 MAKE_ARGS=	HC_BASE=${PREFIX}/share/${PORTNAME}/ HC_BIN_DIR=${PREFIX}/bin/
 
+USE_GL=		gl
 USE_SDL=	image mixer sdl ttf
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -1,0 +1,5 @@
+This package contains xfindproxy, a program for locating available
+proxy services.
+
+- Joel Dahl
+joel@FreeBSD.org

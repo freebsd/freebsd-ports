@@ -7,6 +7,7 @@
 
 PORTNAME=	docproj
 PORTVERSION=	1.17
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty

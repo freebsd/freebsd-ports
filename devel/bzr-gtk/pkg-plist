@@ -186,7 +186,6 @@ share/applications/olive-gtk.desktop
 share/pixmaps/olive-gtk.png
 @dirrm share/olive/icons
 @dirrm share/olive
-@dirrmtry share/pixmaps
 @dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/olive
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/viz

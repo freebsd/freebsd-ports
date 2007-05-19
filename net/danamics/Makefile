@@ -7,7 +7,7 @@
 
 PORTNAME=	danamics
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net java
 MASTER_SITES=	ftp://ftp.cs.uct.ac.za/pub/FreeBSD/distfiles-local/
 

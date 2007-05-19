@@ -3,4 +3,18 @@ bin/efax-0.9a
 bin/efix-0.9a
 etc/efax-gtkrc
 share/applications/efax-gtk.desktop
+share/locale/bg/LC_MESSAGES/efax-gtk.mo
+share/locale/ca/LC_MESSAGES/efax-gtk.mo
+share/locale/de/LC_MESSAGES/efax-gtk.mo
+share/locale/el/LC_MESSAGES/efax-gtk.mo
+share/locale/en_GB/LC_MESSAGES/efax-gtk.mo
+share/locale/he/LC_MESSAGES/efax-gtk.mo
+share/locale/hu/LC_MESSAGES/efax-gtk.mo
+share/locale/it/LC_MESSAGES/efax-gtk.mo
+share/locale/pl/LC_MESSAGES/efax-gtk.mo
+share/locale/ru/LC_MESSAGES/efax-gtk.mo
+share/locale/sq/LC_MESSAGES/efax-gtk.mo
+share/locale/sv/LC_MESSAGES/efax-gtk.mo
+share/locale/zh_CN/LC_MESSAGES/efax-gtk.mo
+share/locale/zh_TW/LC_MESSAGES/efax-gtk.mo
 @dirrmtry share/applications

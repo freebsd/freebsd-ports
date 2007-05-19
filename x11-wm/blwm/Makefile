@@ -7,7 +7,7 @@
 
 PORTNAME=	blwm
 PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm portuguese
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	trevor
@@ -17,29 +17,19 @@ COMMENT=	Portuguese derivative of qvwm, simplified to conserve resources
 
 RUN_DEPENDS=	xsetbg:${PORTSDIR}/x11/xloadimage
 
-USE_AUTOTOOLS=	automake:14 autoconf:213
 USE_PERL5_BUILD=yes
-GNU_CONFIGURE=	yes
 MAN1=		blwm.1x
 PLIST=		${WRKDIR}/pkg-plist
 USE_GMAKE=	yes
+MAKEFILE=	Makefile.std
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 DOCS=		AUTHORS BUGS COPYING CREDITS FreeBSD INSTALAR LEIAME TODO
 
-CONFIGURE_ARGS=	--prefix=${PREFIX}
-
-do-patch:
+post-patch:
 	${PERL} -pi -e "s:wmsetbg:xsetbg:g ; \
 		s:/usr/local/lib/blwm:${PREFIX}/lib/blwm:g" \
 		${WRKSRC}/rc/*
-
-pre-configure:
-	cd ${WRKSRC} && \
-		${ACLOCAL} && \
-		${AUTOHEADER} && \
-		${AUTOCONF} && \
-		${AUTOMAKE}
 
 pre-install:
 	${ECHO_CMD} bin/blwm > ${PLIST}

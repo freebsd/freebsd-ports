@@ -6,7 +6,7 @@
 
 PORTNAME=	xgate
 PORTVERSION=	3.5pl3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese mail www java
 MASTER_SITES=	http://www.orangesoft.co.jp/xGate/download/
 DISTNAME=	${PORTNAME}pkg${PORTVERSION}

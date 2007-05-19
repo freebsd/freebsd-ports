@@ -7,7 +7,7 @@
 
 PORTNAME=	xlaby
 PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://quatramaran.ens.fr/pub/madore/xlaby/

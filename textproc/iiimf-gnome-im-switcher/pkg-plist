@@ -40,15 +40,5 @@ share/locale/zh_TW/LC_MESSAGES/iiimf-im-switcher.mo
 @dirrm share/gnome/help/imswitcher/C
 @dirrm share/gnome/help/imswitcher
 @dirrmtry share/gnome/control-center-2.0/interfaces
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/ko/LC_MESSAGES
-@dirrmtry share/locale/ko
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs

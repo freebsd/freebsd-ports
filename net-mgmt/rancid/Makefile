@@ -7,7 +7,7 @@
 
 PORTNAME=	rancid
 PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
 

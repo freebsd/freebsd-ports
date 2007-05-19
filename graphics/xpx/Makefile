@@ -7,6 +7,7 @@
 
 PORTNAME=	xpx
 PORTVERSION=	1.41
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.oersted.co.jp/~yav/soft/xpx/
 DISTNAME=	xpx141

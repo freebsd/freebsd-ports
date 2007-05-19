@@ -7,7 +7,7 @@
 
 PORTNAME=	grpn
 PORTVERSION=	1.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://lashwhip.com/grpn/
 

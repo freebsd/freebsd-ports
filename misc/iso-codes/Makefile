@@ -7,6 +7,7 @@
 
 PORTNAME=	iso-codes
 DISTVERSION=	0.58
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
 		http://freebsd.powered.net/distfiles/

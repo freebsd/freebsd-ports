@@ -8,6 +8,7 @@
 
 PORTNAME=	flyway
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	misc python
 MASTER_SITES=	http://www.bellz.org/flyway/
 

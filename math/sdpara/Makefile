@@ -7,7 +7,7 @@
 
 PORTNAME=	sdpara
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math parallel
 MASTER_SITES=   http://sdpa.indsys.chuo-u.ac.jp/sdpa/files/
 DISTFILES=	${PORTNAME}.${PORTVERSION}.src.tar.gz

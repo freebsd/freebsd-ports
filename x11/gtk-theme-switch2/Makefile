@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-theme-switch
 PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://www.muhri.net/
 

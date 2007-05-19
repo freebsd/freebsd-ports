@@ -7,6 +7,7 @@
 
 PORTNAME=	egl
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://egl.quakedev.com/files/:src \
 		ftp://ftp.alepulver.com.ar/distfiles/:data

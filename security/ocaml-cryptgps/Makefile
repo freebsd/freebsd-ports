@@ -8,6 +8,7 @@
 
 PORTNAME=	cryptgps
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ocaml-programming.de/packages/
 PKGNAMEPREFIX=	ocaml-

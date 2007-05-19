@@ -7,6 +7,7 @@
 
 PORTNAME=	xbatt
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.clave.gr.jp/~eto/xbatt/
 

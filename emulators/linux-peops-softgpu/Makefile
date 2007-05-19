@@ -7,6 +7,7 @@
 
 PORTNAME=	peops-softgpu
 PORTVERSION=	1.17
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www.pbernert.com/
 PKGNAMEPREFIX=	linux-

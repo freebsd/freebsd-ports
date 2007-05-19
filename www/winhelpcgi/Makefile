@@ -7,6 +7,7 @@
 
 PORTNAME=	winhelpcgi
 PORTVERSION=	1.0r3
+PORTREVISION=	1
 CATEGORIES=	www textproc
 MASTER_SITES=	http://www.herdsoft.com/ftp/
 DISTNAME=	${PORTNAME}_1.0rc3-1

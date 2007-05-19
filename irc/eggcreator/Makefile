@@ -8,6 +8,7 @@
 
 PORTNAME=	eggcreator
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://free.top.bg/tcl/eggcreator/ \
 		http://www.oook.cz/bsd/distfiles/

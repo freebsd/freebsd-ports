@@ -7,6 +7,7 @@
 
 PORTNAME=	jeta
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	security www
 
 MAINTAINER=	beech@alaskaparadise.com

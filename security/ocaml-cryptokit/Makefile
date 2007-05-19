@@ -7,6 +7,7 @@
 
 PORTNAME=	cryptokit
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://caml.inria.fr/distrib/bazar-ocaml/
 PKGNAMEPREFIX=	ocaml-

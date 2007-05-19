@@ -7,7 +7,7 @@
 
 PORTNAME=	handbrake
 PORTVERSION=	0.6.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/ \
 		http://www.mirrors.ausmac.net/ftp/AudioVisual-SW/HandBrake/ \

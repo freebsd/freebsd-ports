@@ -7,7 +7,7 @@
 
 PORTNAME=	orbital_eunuchs_sniper
 PORTVERSION=	1.29
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://filesingularity.timedoctor.org/
 

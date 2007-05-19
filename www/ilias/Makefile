@@ -6,6 +6,7 @@
 
 PORTNAME=	ilias
 PORTVERSION=	3.7.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.ilias.de/download/src/
 

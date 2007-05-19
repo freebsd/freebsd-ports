@@ -45,15 +45,7 @@ share/locale/sv/LC_MESSAGES/ksynaptics.mo
 share/locale/ta/LC_MESSAGES/ksynaptics.mo
 share/locale/th/LC_MESSAGES/ksynaptics.mo
 share/locale/tr/LC_MESSAGES/ksynaptics.mo
-@dirrmtry share/locale/sr/LC_MESSAGES
-@dirrmtry share/locale/sr
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
 @dirrmtry share/autostart
 @dirrmtry share/applications/kde

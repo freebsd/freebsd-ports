@@ -7,6 +7,7 @@
 
 PORTNAME=	mutt-ng
 PORTVERSION=	20061125
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://nion.modprobe.de/mutt-ng/snapshots/		\
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/

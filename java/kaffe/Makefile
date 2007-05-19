@@ -7,7 +7,7 @@
 
 PORTNAME=	kaffe
 PORTVERSION=	1.1.7.r1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 #MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/v1.1.x-development/
 MASTER_SITES=	http://www.kaffe.org/~robilad/

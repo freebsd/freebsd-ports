@@ -7,6 +7,7 @@
 
 PORTNAME=	spread
 PORTVERSION=	3.17.2
+PORTREVISION=	1
 CATEGORIES=	net java
 MASTER_SITES=	http://www.cnds.jhu.edu/download/noformdown/
 PKGNAMESUFFIX=	-j

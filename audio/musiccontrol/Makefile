@@ -7,6 +7,7 @@
 
 PORTNAME=	musiccontrol
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	audio java
 MASTER_SITES=	http://borderworlds.dk/projects/mc/
 DISTNAME=	MusicControl-0.3

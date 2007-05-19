@@ -7,7 +7,7 @@
 
 PORTNAME=	jlex
 PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.cs.princeton.edu/~appel/modern/java/JLex/Archive/1.2.6/
 DISTNAME=	Main

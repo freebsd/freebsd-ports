@@ -8,7 +8,7 @@
 
 PORTNAME=	sdl_gfx
 PORTVERSION=	2.0.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ferzkopp.net/Software/%SUBDIR%/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/

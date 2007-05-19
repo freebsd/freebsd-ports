@@ -400,10 +400,4 @@ lib/libpq.so.3
 %%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/libpq.mo
 %%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/pg_dump.mo
 %%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/psql.mo
-%%GETTEXT%%@dirrmtry share/locale/cs/LC_MESSAGES
-%%GETTEXT%%@dirrmtry share/locale/cs
-%%GETTEXT%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
-%%GETTEXT%%@dirrmtry share/locale/zh_CN
-%%GETTEXT%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
-%%GETTEXT%%@dirrmtry share/locale/zh_TW
 @dirrm include/postgresql

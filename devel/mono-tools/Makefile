@@ -8,6 +8,7 @@
 
 PORTNAME=	mono-tools
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.go-mono.com/sources/${PORTNAME}/
 

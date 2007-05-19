@@ -202,20 +202,6 @@ share/locale/ro/LC_MESSAGES/tellico.mo
 share/locale/ru/LC_MESSAGES/tellico.mo
 share/locale/sv/LC_MESSAGES/tellico.mo
 share/mimelnk/application/x-tellico.desktop
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/ro
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/nn/LC_MESSAGES
-@dirrmtry share/locale/nn
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
 @dirrm share/doc/HTML/fr/tellico
 @dirrm share/doc/HTML/en/tellico
 @dirrm share/apps/tellico/report-templates

@@ -8,6 +8,7 @@
 
 PORTNAME=	libtre
 PORTVERSION=	0.7.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://laurikari.net/tre/ \
 		${MASTER_SITE_LOCAL}

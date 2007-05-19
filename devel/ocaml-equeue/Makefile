@@ -7,6 +7,7 @@
 
 PORTNAME=	equeue
 PORTVERSION=	2.1.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml-programming.de/packages/
 PKGNAMEPREFIX=	ocaml-

@@ -8,7 +8,7 @@
 
 PORTNAME=	MathPlanner
 PORTVERSION=	3.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://koti.mbnet.fi/jarmonik/ \
 		http://fresh.t-systems-sfr.com/unix/src/privat2/

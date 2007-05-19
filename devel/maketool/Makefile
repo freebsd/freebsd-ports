@@ -7,7 +7,7 @@
 
 PORTNAME=	maketool
 PORTVERSION=	0.8.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 MASTER_SITES=	http://home.alphalink.com.au/~gnb/maketool/downloads/
 
@@ -24,7 +24,6 @@ PLIST=		${WRKDIR}/pkg-plist
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	atk glib20 gtk20 pango
-USE_X_PREFIX=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e "s,-Wpointer-arithmetic,," ${WRKSRC}/configure
@@ -51,8 +50,6 @@ pre-install:
 .for ii in /help/C /help /
 	${ECHO_CMD} @dirrm share/maketool${ii} >> ${PLIST}
 .endfor
-	${ECHO_CMD} lib/charset.alias >> ${PLIST}
-	${ECHO_CMD} share/locale/locale.alias >> ${PLIST}
 .for ii in cs ja
 	${ECHO_CMD} share/locale/${ii}/LC_MESSAGES/maketool.mo >> ${PLIST}
 .endfor

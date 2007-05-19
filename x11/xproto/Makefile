@@ -6,21 +6,12 @@
 #
 
 PORTNAME=	xproto
-PORTVERSION=	6.6.2
+PORTVERSION=	7.0.10
 CATEGORIES=	x11
-MASTER_SITES=	http://xlibs.freedesktop.org/release/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X11 protocol headers
 
-CONFLICTS=	XFree86-libraries-* xorg-libraries-*
-
-USE_BZIP2=	yes
-PREFIX?=	${X11BASE}
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_GMAKE=	yes
-NO_BUILD=	yes
-USE_GNOME=	gnomehack
+XORG_CAT=	proto
 
 .include <bsd.port.mk>

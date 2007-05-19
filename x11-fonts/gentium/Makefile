@@ -9,7 +9,7 @@
 
 PORTNAME=	gentium
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?site_id=nrsi&format=file&media_id=Gentium_102_L_tar&_sc=1&filename=/
 DISTNAME=	ttf-sil-${PORTNAME}_${PORTVERSION}

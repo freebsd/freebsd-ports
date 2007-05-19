@@ -99,28 +99,10 @@ share/locale/th/LC_MESSAGES/f-spot.mo
 share/locale/vi/LC_MESSAGES/f-spot.mo
 share/locale/zh_CN/LC_MESSAGES/f-spot.mo
 share/locale/zh_TW/LC_MESSAGES/f-spot.mo
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/sr/LC_MESSAGES
-@dirrmtry share/locale/sr
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/gl/LC_MESSAGES
-@dirrmtry share/locale/gl
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
 @dirrm share/gnome/omf/f-spot
 @dirrm share/gnome/help/f-spot/sv/figures
 @dirrm share/gnome/help/f-spot/sv

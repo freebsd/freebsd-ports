@@ -7,7 +7,7 @@
 
 PORTNAME=	freenx
 PORTVERSION=	0.4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.iem.pw.edu.pl/ftp/distfiles/
 

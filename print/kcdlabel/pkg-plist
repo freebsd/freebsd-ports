@@ -15,8 +15,6 @@ share/locale/de/LC_MESSAGES/kcdlabel.mo
 share/locale/fr/LC_MESSAGES/kcdlabel.mo
 share/locale/hu/LC_MESSAGES/kcdlabel.mo
 share/locale/it/LC_MESSAGES/kcdlabel.mo
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
 @dirrmtry share/icons/small/locolor/apps
 @dirrmtry share/icons/small/locolor
 @dirrmtry share/icons/small

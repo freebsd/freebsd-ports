@@ -7,6 +7,7 @@
 
 PORTNAME=	STk
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://kaolin.unice.fr/pub/STk/

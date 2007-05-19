@@ -7,7 +7,7 @@
 
 PORTNAME=	gsynaptics
 PORTVERSION=	0.9.9
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	gsynaptics/21527
@@ -16,7 +16,6 @@ MAINTAINER=	nork@FreeBSD.org
 COMMENT=	GNOME Synaptics Touchpad setting tool
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
-RUN_DEPENDS=	${X11BASE}/lib/modules/input/synaptics_drv.o:${PORTSDIR}/x11-servers/synaptics
 
 USE_GNOME=	lthack intlhack intltool pkgconfig gtk20 libgnome libglade2 libgnomeui
 USE_ICONV=	yes
@@ -33,4 +32,13 @@ MAN1=		gsynaptics.1 gsynaptics-init.1
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${X_WINDOW_SYSTEM} == "xorg"
+RUN_DEPENDS+=	${X11BASE}/lib/xorg/modules/input/synaptics_drv.so:${PORTSDIR}/x11-servers/synaptics
+.else
+RUN_DEPENDS+=	${X11BASE}/lib/modules/input/synaptics_drv.o:${PORTSDIR}/x11-servers/synaptics
+.endif
+
+
+.include <bsd.port.post.mk>

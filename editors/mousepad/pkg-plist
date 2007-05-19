@@ -36,4 +36,3 @@ share/locale/zh_CN/LC_MESSAGES/mousepad.mo
 share/locale/zh_TW/LC_MESSAGES/mousepad.mo
 share/pixmaps/mousepad.png
 @dirrmtry share/applications
-@dirrmtry share/pixmaps

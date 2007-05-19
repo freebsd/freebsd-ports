@@ -7,7 +7,7 @@
 
 PORTNAME=	xcalib
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 graphics
 MASTER_SITES=	http://www.etg.e-technik.uni-erlangen.de/web/doe/xcalib/
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}

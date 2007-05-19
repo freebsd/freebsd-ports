@@ -1,0 +1,6 @@
+lib/libXxf86vm.a
+lib/libXxf86vm.la
+lib/libXxf86vm.so
+lib/libXxf86vm.so.1
+libdata/pkgconfig/xxf86vm.pc
+@dirrmtry include/X11/extensions

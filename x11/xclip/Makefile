@@ -8,6 +8,7 @@
 
 PORTNAME=	xclip
 PORTVERSION=	0.08
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://people.debian.org/~kims/xclip/
 

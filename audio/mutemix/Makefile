@@ -7,6 +7,7 @@
 
 PORTNAME=	mutemix
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.v-i-t.de/mirkos_hp/pub/
 EXTRACT_SUFX=	.py

@@ -1,0 +1,3 @@
+include/X11/extensions/XResproto.h
+libdata/pkgconfig/resourceproto.pc
+@dirrmtry include/X11/extensions

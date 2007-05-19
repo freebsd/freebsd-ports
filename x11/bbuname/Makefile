@@ -7,6 +7,7 @@
 
 PORTNAME=	bbuname
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://spiritisdigital.com/download/linux/bbuname/
 

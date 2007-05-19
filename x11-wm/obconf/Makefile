@@ -7,7 +7,7 @@
 
 PORTNAME=	obconf
 PORTVERSION=	1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://tr.openmonkey.com/files/obconf/
 

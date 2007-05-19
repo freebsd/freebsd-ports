@@ -10,6 +10,5 @@ share/pixmaps/grig/grig-logo.png
 share/pixmaps/grig/ic910.png
 share/pixmaps/grig/smeter.png
 @dirrm share/pixmaps/grig
-@dirrmtry share/pixmaps
 @dirrm %%DATADIR%%
 @dirrmtry locale

@@ -7,6 +7,7 @@
 
 PORTNAME=		glob2
 PORTVERSION=		0.8.23
+PORTREVISION=	1
 CATEGORIES=		games
 MASTER_SITES=		http://dl.sv.nongnu.org/releases/glob2/${PORTVERSION}/
 MASTER_SITE_SUBDIR=	thierry

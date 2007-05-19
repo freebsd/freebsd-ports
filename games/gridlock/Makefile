@@ -7,6 +7,7 @@
 
 PORTNAME=	gridlock
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	games gnustep
 MASTER_SITES=	http://www.dozingcatsoftware.com/ \
 		${MASTER_SITE_GNUSTEP_CH}

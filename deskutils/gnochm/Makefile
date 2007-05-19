@@ -7,6 +7,7 @@
 
 PORTNAME=	gnochm
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	deskutils python gnome
 MASTER_SITES=	SF
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.1.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -108,9 +108,14 @@ PLIST_SUB+=	WITH_PULSEAUDIO="@comment "
 CONFIGURE_ARGS+=	--disable-pulseaudio
 .endif
 
-.if !defined(WITHOUT_XVMC) && (exists(${X11BASE}/lib/libXvMCNVIDIA.so.1) || defined(WITH_XVMC))
+.if !defined(WITHOUT_XVMC) && (exists(${X11BASE}/lib/libXvMCNVIDIA.so.1) || exists(${X11BASE}/lib/libXvMC.so.1) || defined(WITH_XVMC))
+.if defined(WITH_NVIDIA_GL)
 CONFIGURE_ARGS+=--with-xvmc-lib=XvMCNVIDIA
 LIB_DEPENDS+=	XvMCNVIDIA.1:${PORTSDIR}/x11/nvidia-driver
+.else
+CONFIGURE_ARGS+=--with-xvmc-lib=XvMC
+LIB_DEPENDS+=	XvMC.1:${PORTSDIR}/x11/libXvMC
+.endif
 PLIST_SUB+=	WITH_XVMC=""
 .else
 PLIST_SUB+=	WITH_XVMC="@comment "

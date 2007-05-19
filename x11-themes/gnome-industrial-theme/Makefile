@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-industrial-theme
 PORTVERSION=	0.2.29
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://ftp.ximian.com/pub/xd2/redhat-9-i386/source/ \
 		${MASTER_SITE_GENTOO:S,%SUBDIR%,distfiles,}

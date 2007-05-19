@@ -6,6 +6,7 @@
 
 PORTNAME=	xacpim
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://shapeshifter.se/pub/xacpim/
 

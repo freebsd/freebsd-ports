@@ -1,0 +1,7 @@
+include/X11/fonts/fontenc.h
+lib/libfontenc.a
+lib/libfontenc.la
+lib/libfontenc.so
+lib/libfontenc.so.1
+libdata/pkgconfig/fontenc.pc
+@dirrmtry include/X11/fonts

@@ -7,6 +7,7 @@
 
 PORTNAME=	imm
 PORTVERSION=	3.5a1
+PORTREVISION=	1
 CATEGORIES=	mbone tk82
 MASTER_SITES=	ftp://ftp.hawaii.edu/paccom/imm-3.5a1/
 DISTNAME=	imm.source

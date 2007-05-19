@@ -7,6 +7,7 @@
 
 PORTNAME=	musicextras
 PORTVERSION=	0.6.8
+PORTREVISION=	1
 CATEGORIES=	audio ruby
 MASTER_SITES=	http://www.divineinvasion.net/musicextras/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

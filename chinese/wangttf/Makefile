@@ -9,7 +9,7 @@
 
 PORTNAME=	wangttf
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	http://cle.linux.org.tw/fonts/wangfonts/:main \
 		http://cle.linux.org.tw/fonts/truetype/:another \

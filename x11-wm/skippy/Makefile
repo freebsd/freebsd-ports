@@ -7,7 +7,7 @@
 
 PORTNAME=	skippy
 PORTVERSION=	0.5.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://thegraveyard.org/files/
 

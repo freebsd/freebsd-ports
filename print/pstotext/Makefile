@@ -7,6 +7,7 @@
 
 PORTNAME=	pstotext
 PORTVERSION=	1.8g
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.breuninger.org/files/distfiles/
 DISTNAME=	${PORTNAME}

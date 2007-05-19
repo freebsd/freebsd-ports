@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-menu-editor
 PORTVERSION=	0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	http://manny.cluecoder.org/packages/gnome-menu-editor/
 

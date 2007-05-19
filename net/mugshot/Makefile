@@ -7,6 +7,7 @@
 
 PORTNAME=	mugshot
 PORTVERSION=	1.1.42
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://download.mugshot.org/client/sources/linux/
 

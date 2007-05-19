@@ -7,7 +7,7 @@
 
 PORTNAME=	geogebra-i18n
 PORTVERSION=	2.6b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math java
 MASTER_SITES=	http://www.geogebra.at/download/InstData/Java/ \
 		http://nivi.interfree.it/distfiles/${DIST_SUBDIR}/

@@ -7,7 +7,7 @@
 
 PORTNAME=	gstreamer-plugins-core
 PORTVERSION=	0.10
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia audio
 MASTER_SITES=	# empty
 DISTFILES=	# empty

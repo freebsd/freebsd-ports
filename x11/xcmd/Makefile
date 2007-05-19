@@ -7,6 +7,7 @@
 
 PORTNAME=	xcmd
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.breuninger.org/files/distfiles/

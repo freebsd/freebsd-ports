@@ -7,6 +7,7 @@
 
 PORTNAME=	ecromedos
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	textproc print www
 MASTER_SITES=	http://www.ecromedos.net/files/${PORTVERSION}/
 

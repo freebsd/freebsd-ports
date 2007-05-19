@@ -8,6 +8,7 @@
 
 PORTNAME=	cxterm
 PORTVERSION=	5.0.3
+PORTREVISION=	1
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://ftp.cuhk.hk/pub/chinese/ifcss/software/x-win/cxterm/
 DISTNAME=	cxterm5.0.p3

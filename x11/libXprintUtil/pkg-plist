@@ -1,0 +1,7 @@
+include/X11/XprintUtil/xprintutil.h
+lib/libXprintUtil.a
+lib/libXprintUtil.la
+lib/libXprintUtil.so
+lib/libXprintUtil.so.1
+libdata/pkgconfig/xprintutil.pc
+@dirrm include/X11/XprintUtil

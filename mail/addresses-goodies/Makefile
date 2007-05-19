@@ -7,7 +7,7 @@
 
 PORTNAME=	addresses
 PORTVERSION=	0.4.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail gnustep
 MASTER_SITES=	http://giesler.biz/bjoern/downloads/ \
 		http://www.energyhq.es.eu.org/files/

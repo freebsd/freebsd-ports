@@ -7,6 +7,7 @@
 
 PORTNAME=	pinetreefonts
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	ftp://cglab.snu.ac.kr/pub/hangul/n3f/tar/ \
 		ftp://ftp.kaist.ac.kr/pub/hangul/fonts/ \

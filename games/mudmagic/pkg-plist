@@ -108,7 +108,6 @@ share/applications/mudmagic.desktop
 %%DATADIR%%/interface/wizard.xpm
 %%DATADIR%%/interface/xs_wizard.xpm
 share/pixmaps/mudmagic.png
-@dirrmtry share/pixmaps
 @dirrm %%DATADIR%%/interface
 @dirrm %%DATADIR%%/doc/grafix/hlp
 @dirrm %%DATADIR%%/doc/grafix

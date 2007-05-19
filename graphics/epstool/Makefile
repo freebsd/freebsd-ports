@@ -7,6 +7,7 @@
 
 PORTNAME=	epstool
 PORTVERSION=	3.08
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/ \

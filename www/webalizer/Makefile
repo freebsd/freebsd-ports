@@ -7,7 +7,7 @@
 
 PORTNAME=	webalizer
 PORTVERSION=	2.1.10
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/:main \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/:main \

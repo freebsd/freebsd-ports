@@ -7,6 +7,7 @@
 
 PORTNAME=	baekmukfonts
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	korean
 MASTER_SITES=	ftp://ftp.mizi.com/pub/baekmuk/obsoletes/
 PKGNAMESUFFIX=	-ttf

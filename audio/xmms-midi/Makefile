@@ -6,7 +6,7 @@
 
 PORTNAME=	xmms-midi
 PORTVERSION=	0.03
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://dl.fkb.wormulon.net/xmms-midi/ \
 				http://dl.kel.wormulon.net/xmms-midi/

@@ -8,7 +8,7 @@
 
 PORTNAME=	policykit
 PORTVERSION=	0.1.20060514
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.marcuscom.com/downloads/
 DISTNAME=	PolicyKit-${PORTVERSION}

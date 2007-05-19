@@ -143,18 +143,8 @@ share/services/basketthumbcreator.desktop
 %%KONTACT%%share/services/kontact/basket.desktop
 %%KONTACT%%share/services/kontact/basket_v4.desktop
 %%KONTACT%%@dirrmtry share/services/kontact
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
 @dirrmtry share/locale/pl_PL/LC_MESSAGES
 @dirrmtry share/locale/pl_PL
-@dirrmtry share/locale/nn/LC_MESSAGES
-@dirrmtry share/locale/nn
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
 @dirrm share/doc/HTML/en/basket
 @dirrmtry share/config/magic
 @dirrmtry share/config

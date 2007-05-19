@@ -7,7 +7,7 @@
 
 PORTNAME=	roottail
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.goof.com/pcg/marc/data/
 DISTNAME=	root-tail-${PORTVERSION}

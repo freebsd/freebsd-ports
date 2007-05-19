@@ -1,3 +1,3 @@
-MD5 (rendercheck-1.0.3.tar.bz2) = 2243292499588ea0708c8ec498a532bb
-SHA256 (rendercheck-1.0.3.tar.bz2) = d783108e140e0632276a10fe559679adfbfef188723cacb732fe7d0099e3bd3a
-SIZE (rendercheck-1.0.3.tar.bz2) = 63448
+MD5 (xorg/app/rendercheck-1.2.tar.bz2) = 76ffc65a3b708d380a66823a56b7be15
+SHA256 (xorg/app/rendercheck-1.2.tar.bz2) = 4e2a837b688ff6b50f3e17c2e3a2d6b836fb2eb75560a7c6f2818183d5e64677
+SIZE (xorg/app/rendercheck-1.2.tar.bz2) = 76245

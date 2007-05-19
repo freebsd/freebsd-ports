@@ -6,6 +6,7 @@
 
 PORTNAME=	gx2osd
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	 http://eclipser.no-ip.org/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	xrn
 PORTVERSION=	9.02
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	ftp://sipb.mit.edu/pub/xrn/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/

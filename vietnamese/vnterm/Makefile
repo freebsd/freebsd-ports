@@ -8,7 +8,7 @@
 
 PORTNAME=	vnterm
 PORTVERSION=	3.4	#11.6.6[.0]
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	vietnamese x11
 MASTER_SITES=	ftp://ftp.x.org/pub/R6.6/tars/
 DISTNAME=	xorg-1

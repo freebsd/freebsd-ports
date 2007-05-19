@@ -7,6 +7,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	6.2.1
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://grass.itc.it/grass62/source/ \
@@ -40,6 +41,7 @@ USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_PERL5=	yes
 USE_XLIB=	yes
+USE_GL=		yes
 USE_FREETYPE=	yes
 USE_TCL=	yes
 USE_TCL_BUILD=	yes

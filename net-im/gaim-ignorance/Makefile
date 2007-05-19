@@ -7,7 +7,7 @@
 
 PORTNAME=	ignorance
 PORTVERSION=	2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	http://thefnords.googlepages.com/
 PKGNAMEPREFIX=	gaim-

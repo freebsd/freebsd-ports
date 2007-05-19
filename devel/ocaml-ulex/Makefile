@@ -8,6 +8,7 @@
 
 PORTNAME=	ulex
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cduce.org/download/
 PKGNAMEPREFIX=	ocaml-

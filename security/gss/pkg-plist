@@ -17,10 +17,6 @@ share/locale/sv/LC_MESSAGES/gss.mo
 share/locale/vi/LC_MESSAGES/gss.mo
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/ro
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
 @dirrmtry share/locale/en@quot/LC_MESSAGES
 @dirrmtry share/locale/en@quot
 @dirrmtry share/locale/en@boldquot/LC_MESSAGES

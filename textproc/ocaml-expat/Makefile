@@ -8,7 +8,7 @@
 
 PORTNAME=	ocaml-expat
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.xs4all.nl/~mmzeeman/ocaml/
 

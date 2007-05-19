@@ -6,29 +6,52 @@
 #
 
 PORTNAME=	libXi
-PORTVERSION=	6.0.1
-PORTREVISION=	2
+PORTVERSION=	1.0.2
+PORTEPOCH=	1
 CATEGORIES=	x11
-MASTER_SITES=	http://freedesktop.org/~ajax/xlibs-release/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Input extension library
 
-LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/x11.pc:${PORTSDIR}/x11/libX11 \
-		${X11BASE}/libdata/pkgconfig/xextensions.pc:${PORTSDIR}/x11/xextensions
-BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto \
-		${LIB_PC_DEPENDS}
-RUN_DEPENDS=	${LIB_PC_DEPENDS}
+XORG_CAT=	lib
+USE_XORG=	xproto x11 xext xextproto inputproto:both
 
-CONFLICTS=	XFree86-libraries-* xorg-libraries-*
-
-USE_BZIP2=	yes
-PREFIX?=	${X11BASE}
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_GMAKE=	yes
-CFLAGS+=	-DMALLOC_0_RETURNS_NULL
-INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomehack pkgconfig
+MAN3=		XAllowDeviceEvents.3 \
+		XChangeDeviceControl.3 \
+		XChangeDeviceDontPropagateList.3 \
+		XChangeDeviceKeyMapping.3 \
+		XChangeFeedbackControl.3 \
+		XChangeKeyboardDevice.3 \
+		XChangePointerDevice.3 \
+		XCloseDevice.3 \
+		XDeviceBell.3 \
+		XDeviceTimeCoord.3 \
+		XFreeDeviceList.3 \
+		XGetDeviceControl.3 \
+		XGetDeviceKeyMapping.3 \
+		XGetDeviceModifierMapping.3 \
+		XGetDeviceMotionEvents.3 \
+		XGetExtensionVersion.3 \
+		XGetFeedbackControl.3 \
+		XGetDeviceButtonMapping.3 \
+		XGetDeviceDontPropagateList.3 \
+		XGetDeviceFocus.3 \
+		XGetSelectedExtensionEvents.3 \
+		XGrabDevice.3 \
+		XGrabDeviceButton.3 \
+		XGrabDeviceKey.3 \
+		XListInputDevices.3 \
+		XOpenDevice.3 \
+		XQueryDeviceState.3 \
+		XSelectExtensionEvent.3 \
+		XSendExtensionEvent.3 \
+		XSetDeviceButtonMapping.3 \
+		XSetDeviceFocus.3 \
+		XSetDeviceMode.3 \
+		XSetDeviceModifierMapping.3 \
+		XSetDeviceValuators.3 \
+		XUngrabDeviceButton.3 \
+		XUngrabDeviceKey.3 \
+		XUngrabDevice.3 \
 
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@
 
 PORTNAME=	sdlquake2
 PORTVERSION=	0.1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://koti.mbnet.fi/~turol/sdlquake2/
 

@@ -6,6 +6,7 @@
 
 PORTNAME=	gui
 PORTVERSION=	1.7.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://www.cosc.canterbury.ac.nz/~greg/python_gui/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

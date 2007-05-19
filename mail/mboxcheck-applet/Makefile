@@ -6,7 +6,7 @@
 
 PORTNAME=	mboxcheck-applet
 PORTVERSION=	0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	mail
 MASTER_SITES=	http://perso.orange.fr/seb128/fichiers/
 

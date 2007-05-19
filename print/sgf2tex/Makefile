@@ -7,7 +7,7 @@
 
 PORTNAME=	sgf2tex
 PORTVERSION=	3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://sporadic.stanford.edu/bump/
 

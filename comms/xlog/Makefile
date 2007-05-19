@@ -6,6 +6,7 @@
 
 PORTNAME=	xlog
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://pg4i.chronos.org.uk/download/ \
 		http://www.qsl.net/pg4i/download/

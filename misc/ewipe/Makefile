@@ -7,7 +7,7 @@
 
 PORTNAME=	ewipe
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	misc tk84
 MASTER_SITES=	http://www.jnet-jp.to/~sekisita/ewipe/ \
 		http://www.carpetsmoker.net/distfiles/ \

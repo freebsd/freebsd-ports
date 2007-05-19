@@ -1,0 +1,31 @@
+--- Makefile.std.orig	Thu Mar 22 15:16:18 2007
++++ Makefile.std	Thu Mar 22 15:21:47 2007
+@@ -9,7 +9,7 @@
+ #
+ # Directory of X Window System
+ #
+-XDIR = /usr/X11R6
++XDIR = $(X11BASE)
+ 
+ #
+ # Directory where you install blwm binary
+@@ -127,7 +127,7 @@
+ #
+ INSTALL = install -c
+ #INSTALL = cp
+-MKDIRHIER = mkdirhier
++MKDIRHIER = $(MKDIR)
+ #MKDIRHIER = make -p
+ MV = mv
+ RM = rm -f
+@@ -138,7 +138,9 @@
+ SUBDIRS = src images man rc themes
+ 
+ MAKE = make
+-MFLAGS = BINDIR=$(BINDIR) CONFDIR=$(CONFDIR) MANDIR=$(MANDIR) MANSUFFIX=$(MANSUFFIX) INCDIR=$(INCDIR) LIBDIR=$(LIBDIR) BLWMDIR=$(BLWMDIR) IMGDIR=$(IMGDIR) PATH_RM=$(PATH_RM) CXX="$(CXX)" CXXDEFINES="$(CXXDEFINES)" YACC="$(YACC)" YFLAGS="$(YFLAGS)" LEX="$(LEX)" LEXLIB="$(LEXLIB)" XPG4_LIB=$(XPG4_LIB) IMAGE_LIBS=$(IMAGE_LIBS) INSTALL="$(INSTALL)" MKDIRHIER="$(MKDIRHIER)" MV="$(MV)" RM="$(RM)" -f Makefile.std
++MFLAGS = BINDIR=$(BINDIR) CONFDIR=$(CONFDIR) MANDIR=$(MANDIR) MANSUFFIX=$(MANSUFFIX) INCDIR=$(INCDIR) LIBDIR=$(LIBDIR) BLWMDIR=$(BLWMDIR) IMGDIR=$(IMGDIR) THEMEDIR=$(THEMEDIR) PATH_RM=$(PATH_RM) CXX="$(CXX)" CXXDEFINES="$(CXXDEFINES)" YACC="$(YACC)" YFLAGS="$(YFLAGS)" LEX="$(LEX)" LEXLIB="$(LEXLIB)" XPG4_LIB=$(XPG4_LIB) IMAGE_LIBS=$(IMAGE_LIBS) INSTALL="$(INSTALL)" MKDIRHIER="$(MKDIRHIER)" MV="$(MV)" RM="$(RM)" -f Makefile.std
++
++.PHONY: install
+ 
+ all:
+ 	@for flag in ${MAKEFLAGS} ''; do \

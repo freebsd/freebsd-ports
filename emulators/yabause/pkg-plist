@@ -5,4 +5,3 @@ share/applications/yabause.desktop
 share/pixmaps/yabause.png
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@dirrmtry share/pixmaps

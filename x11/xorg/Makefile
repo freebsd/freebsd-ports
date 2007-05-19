@@ -6,48 +6,43 @@
 #
 
 PORTNAME=	xorg
-PORTVERSION=	6.9.0
+PORTVERSION=	7.2
 CATEGORIES=	x11
 MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	X.Org distribution metaport
-
-LIB_DEPENDS=	X11.6:${PORTSDIR}/x11/xorg-libraries
-RUN_DEPENDS=	xvinfo:${PORTSDIR}/x11/xorg-clients \
-		${X11BASE}/share/doc/X11/ddx.txt:${PORTSDIR}/x11/xorg-documents \
-		${X11BASE}/man/man1/Xserver.1.gz:${PORTSDIR}/x11/xorg-manpages \
-		${FONT100DPI}:${PORTSDIR}/x11-fonts/xorg-fonts-100dpi \
-		${FONT75DPI}:${PORTSDIR}/x11-fonts/xorg-fonts-75dpi \
-		${FONTCYR}:${PORTSDIR}/x11-fonts/xorg-fonts-cyrillic \
-		${FONTDEFAULT}:${PORTSDIR}/x11-fonts/xorg-fonts-miscbitmaps \
-		${FONTTT}:${PORTSDIR}/x11-fonts/xorg-fonts-truetype \
-		${FONTT1}:${PORTSDIR}/x11-fonts/xorg-fonts-type1 \
-		${X11BASE}/bin/xfs:${PORTSDIR}/x11-servers/xorg-fontserver \
-		${X11BASE}/bin/Xnest:${PORTSDIR}/x11-servers/xorg-nestserver \
-		${X11BASE}/bin/Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver \
-		${X11BASE}/bin/Xprt:${PORTSDIR}/x11-servers/xorg-printserver
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != ia64
-RUN_DEPENDS+=	${X11BASE}/bin/Xorg:${PORTSDIR}/x11-servers/xorg-server
-.endif
-
-.if ${ARCH} == i386 || ${ARCH} == alpha || ${ARCH} == amd64
-RUN_DEPENDS+=	${X11BASE}/lib/modules/dri/r200_dri.so:${PORTSDIR}/graphics/dri
-.endif
-
-FONT100DPI=	${X11BASE}/lib/X11/fonts/100dpi/UTBI__10-ISO8859-1.pcf.gz
-FONT75DPI=	${X11BASE}/lib/X11/fonts/75dpi/UTBI__10-ISO8859-1.pcf.gz
-FONTCYR=	${X11BASE}/lib/X11/fonts/cyrillic/crox1c.pcf.gz
-FONTDEFAULT=	${X11BASE}/lib/X11/fonts/misc/cursor.pcf.gz
-FONTTT=		${X11BASE}/lib/X11/fonts/TTF/luximb.ttf
-FONTT1=		${X11BASE}/lib/X11/fonts/Type1/UTBI____.afm
+COMMENT=	X.Org complete distribution metaport
 
 NO_BUILD=	yes
+PREFIX?=	${X11BASE}
+
+RUN_DEPENDS+=	${X11BASE}/lib/dri/r128_dri.so:${PORTSDIR}/graphics/dri
+
+# data
+RUN_DEPENDS+=	${X11BASE}/libdata/pkgconfig/xbitmaps.pc:${PORTSDIR}/x11/xbitmaps \
+		${X11BASE}/lib/X11/icons/handhelds/cursors/X_cursor:${PORTSDIR}/x11-themes/xcursor-themes
+
+# doc
+RUN_DEPENDS+=	${X11BASE}/share/X11/doc/hardcopy/BDF/bdf.PS.gz:${PORTSDIR}/x11/xorg-docs
+
+# app, lib, font, driver, proto
+RUN_DEPENDS+=	${X11BASE}/libdata/xorg/apps:${PORTSDIR}/x11/xorg-apps \
+		${X11BASE}/libdata/xorg/libraries:${PORTSDIR}/x11/xorg-libraries \
+		${X11BASE}/libdata/xorg/fonts:${PORTSDIR}/x11-fonts/xorg-fonts \
+		${X11BASE}/libdata/xorg/drivers:${PORTSDIR}/x11-drivers/xorg-drivers \
+		${X11BASE}/libdata/xorg/protos:${PORTSDIR}/x11/xorg-protos \
+		${X11BASE}/bin/Xorg:${PORTSDIR}/x11-servers/xorg-server
+
+.if defined(COMPLETE_BUILD) || defined(PACKAGE_BUILDING)
+RUN_DEPEND+=	Xnest:${PORTSDIR}/x11-servers/xorg-nestserver \
+		Xdmx:${PORTSDIR}/x11-servers/xorg-dmx \
+		Xprt:${PORTSDIR}/x11-servers/xorg-printserver \
+		Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver
+.endif
+
+do-install:	# empty
 
 pre-everything::
 	@${ECHO_MSG} "This is a meta-port, meaning that it just depends on its subparts of the port."
@@ -56,17 +51,18 @@ pre-everything::
 	@${ECHO_MSG} "upgrade X.Org.  If you simply type 'make install' it may use over 2GB to build"
 	@${ECHO_MSG} "all of the subports.  You can install the ports singly if you are low on space."
 
+.include <bsd.port.pre.mk>
+
 .if make(package)
 .if !defined(DEPENDS_TARGET:Mpackage) || empty(DEPENDS_TARGET:Mpackage)
 DEPENDS_TARGET="package"
 .endif
 .endif
 
-do-install:	# empty
-
 .if ${X_WINDOW_SYSTEM:L} != xorg
-IGNORE=	is part of X.Org and you have ${X_WINDOW_SYSTEM} set for X11\
+IGNORE= is part of X.Org and you have ${X_WINDOW_SYSTEM} set for X11\
 	distribution. See The X Window System and Virtual Consoles chapter\
 	of FAQ for more information
 .endif
+
 .include <bsd.port.post.mk>

@@ -7,7 +7,7 @@
 
 PORTNAME=	rmap
 PORTVERSION=	1.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	astro
 MASTER_SITES=	http://www.reza.net/rmap/
 

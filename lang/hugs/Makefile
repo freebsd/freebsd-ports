@@ -7,6 +7,7 @@
 
 PORTNAME=	hugs98
 PORTVERSION=	200609
+PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://cvs.haskell.org/Hugs/downloads/2006-09/
 DISTNAME=	${PORTNAME}-plus-${HUGS_DATE}

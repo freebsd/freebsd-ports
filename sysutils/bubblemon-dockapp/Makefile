@@ -7,7 +7,7 @@
 
 PORTNAME=	bubblemon-dockapp
 PORTVERSION=	1.46
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/ \
 		http://critical.ch/distfiles/ \

@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomebreakout
 PORTVERSION=	0.5.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games gnome
 MASTER_SITES=	http://www.users.on.net/~mipearson/
 DISTNAME=	gnome-breakout-${PORTVERSION}

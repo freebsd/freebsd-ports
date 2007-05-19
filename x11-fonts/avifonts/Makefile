@@ -7,6 +7,7 @@
 
 PORTNAME=	avifonts
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://graphis.hellug.gr/packages/
 DISTNAME=	avifonts

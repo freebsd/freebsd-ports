@@ -7,7 +7,7 @@
 
 PORTNAME=	fluxbox-sid-pack
 PORTVERSION=	20031226
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://fluxbox.org/download/themes/sid/
 DISTNAME=	sidpack

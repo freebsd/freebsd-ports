@@ -7,6 +7,7 @@
 
 PORTNAME=	kxgenerator
 PORTVERSION=	0.3.7
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	http://dp0154.debowypark.waw.pl/kxgenerator/data/download/
 

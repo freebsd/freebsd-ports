@@ -7,6 +7,7 @@
 
 PORTNAME=	netrek-COW
 PORTVERSION=	3.00.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.netrek.org/pub/netrek/clients/cow/COW-bin/old/
 DISTFILES=	COW.3.00pl0.FreeBSD.gz

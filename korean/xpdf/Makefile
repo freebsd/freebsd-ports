@@ -7,7 +7,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	korean
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/
 DISTNAME=	xpdf-korean

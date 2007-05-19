@@ -76,5 +76,4 @@ share/eboard/themeconf.extras2
 share/eboard/timeseal.FreeBSD
 share/pixmaps/eboard.xpm
 @dirrm share/eboard
-@dirrmtry share/pixmaps
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

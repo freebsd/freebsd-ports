@@ -7,6 +7,7 @@
 
 PORTNAME=	pyBMP
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/ \
 		LOCAL/nivit/${PORTNAME}/

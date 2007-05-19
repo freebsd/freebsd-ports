@@ -42,15 +42,6 @@ share/icons/hicolor/64x64/apps/gxine.png
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gxine.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gxine.theme.mo
 share/pixmaps/gxine.png
-@dirrmtry share/pixmaps
-%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_CN
-%%NLS%%@dirrmtry share/locale/uk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/uk
-%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pl
-%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cs
 @dirrmtry share/icons/hicolor/64x64/apps
 @dirrmtry share/icons/hicolor/64x64
 @dirrmtry share/icons/hicolor

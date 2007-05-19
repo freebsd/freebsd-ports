@@ -7,7 +7,7 @@
 
 PORTNAME=	wmfmixer
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio windowmaker afterstep
 MASTER_SITES=	http://www.finik.net/files/ \
 		http://www.linuks.mine.nu/dockapp/

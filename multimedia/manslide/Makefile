@@ -7,6 +7,7 @@
 
 PORTNAME=	manslide
 DISTVERSION=	1.5.5
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://csgib36.ifrance.com/Manslide/
 

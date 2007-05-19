@@ -1,0 +1,20 @@
+bin/atobm
+bin/bitmap
+bin/bmtoa
+include/X11/bitmaps/Dashes
+include/X11/bitmaps/Down
+include/X11/bitmaps/Excl
+include/X11/bitmaps/FlipHoriz
+include/X11/bitmaps/FlipVert
+include/X11/bitmaps/Fold
+include/X11/bitmaps/Left
+include/X11/bitmaps/Right
+include/X11/bitmaps/RotateLeft
+include/X11/bitmaps/RotateRight
+include/X11/bitmaps/Stipple
+include/X11/bitmaps/Term
+include/X11/bitmaps/Up
+share/X11/app-defaults/Bitmap
+share/X11/app-defaults/Bitmap-color
+share/X11/app-defaults/Bitmap-nocase
+@dirrmtry share/X11/app-defaults

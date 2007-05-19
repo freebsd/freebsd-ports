@@ -7,6 +7,7 @@
 
 PORTNAME=	xipmsg
 PORTVERSION=	0.8088
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.bsddiary.net/xipmsg/
 DISTNAME=	xipmsg-${PORTVERSION:E}

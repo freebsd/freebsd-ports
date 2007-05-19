@@ -7,6 +7,7 @@
 
 PORTNAME=	Image_Transform
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	graphics www pear
 
 MAINTAINER=	miwi@FreeBSD.org

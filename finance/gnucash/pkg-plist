@@ -1013,32 +1013,10 @@ share/locale/tr/LC_MESSAGES/gnucash.mo
 share/locale/uk/LC_MESSAGES/gnucash.mo
 share/locale/zh_CN/LC_MESSAGES/gnucash.mo
 share/locale/zh_TW/LC_MESSAGES/gnucash.mo
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/uk/LC_MESSAGES
-@dirrmtry share/locale/uk
-@dirrmtry share/locale/sk/LC_MESSAGES
-@dirrmtry share/locale/sk
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/ro
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/ne/LC_MESSAGES
-@dirrmtry share/locale/ne
 @dirrmtry share/locale/es_NI/LC_MESSAGES
 @dirrmtry share/locale/es_NI
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
 @dirrm share/gnome/xml/gnucash/xsl
 @dirrm share/gnome/xml/gnucash
 @dirrm share/gnome/xml

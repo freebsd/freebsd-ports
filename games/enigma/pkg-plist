@@ -2736,7 +2736,6 @@ share/locale/it/LC_MESSAGES/enigma.mo
 share/locale/nl/LC_MESSAGES/enigma.mo
 share/pixmaps/enigma.png
 
-@dirrmtry share/pixmaps
 @dirrmtry share/icons/hicolor/48x48/apps
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor

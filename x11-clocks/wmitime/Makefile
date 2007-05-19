@@ -7,6 +7,7 @@
 
 PORTNAME=	wmitime
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	x11-clocks windowmaker afterstep
 MASTER_SITES=	http://dockapps.org/files/22/29/
 

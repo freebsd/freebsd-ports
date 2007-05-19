@@ -1,0 +1,5 @@
+This package contains xhost, a server access control program for the
+X Window System.
+
+- Joel Dahl
+joel@FreeBSD.org

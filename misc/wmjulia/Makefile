@@ -7,7 +7,7 @@
 
 PORTNAME=	wmjulia
 PORTVERSION=	0.40
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc windowmaker afterstep
 MASTER_SITES=	http://web.novalis.org/programs/
 

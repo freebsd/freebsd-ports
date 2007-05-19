@@ -7,6 +7,7 @@
 
 PORTNAME=	gwm
 PORTVERSION=	1.8d
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://koala.ilog.fr/ftp/pub/gwm/
 EXTRACT_SUFX=	.tgz

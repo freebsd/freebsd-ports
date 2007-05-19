@@ -6,6 +6,7 @@
 
 PORTNAME=	joomla
 PORTVERSION=	1.0.12
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://forge.joomla.org/sf/frs/do/downloadFile/projects.joomla/frs.joomla_1_0.1_0_12/frs8162?dl=1/:source1
 DISTFILES=	${JOOMLA_SRC}:source1

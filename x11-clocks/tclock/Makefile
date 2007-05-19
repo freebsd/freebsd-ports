@@ -7,6 +7,7 @@
 
 PORTNAME=	tclock
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	ftp://ftp.uni-potsdam.de/pub/X11/tools/clocks/		\
 		ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/

@@ -7,6 +7,7 @@
 
 PORTNAME=	xscavenger
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.xdr.com/dash/
 EXTRACT_SUFX=	.tgz

@@ -68,5 +68,3 @@ share/locale/sk/LC_MESSAGES/jtag.mo
 @dirrm %%DATADIR%%/altera/ep1c20f400
 @dirrm %%DATADIR%%/altera
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/sk/LC_MESSAGES
-@dirrmtry share/locale/sk

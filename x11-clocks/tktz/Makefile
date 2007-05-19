@@ -7,6 +7,7 @@
 
 PORTNAME=	tktz
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	x11-clocks tk84
 MASTER_SITES=	http://gromnizki.unixdev.net/soft/
 

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Jul  8 12:35:19 2006
++++ Makefile.in	Sat Jul  8 12:35:21 2006
+@@ -289,7 +289,7 @@
+ FSERRORS = /var/log/xfs.log
+ FONTDIR = $(libdir)/X11/fonts
+ FONTPATH = $(FONTDIR)/misc/,$(FONTDIR)/TTF/,$(FONTDIR)/Type1/,$(FONTDIR)/CID/,$(FONTDIR)/100dpi/,$(FONTDIR)/75dpi/
+-config_DATA = config
++#config_DATA = config
+ EXTRA_DIST = xfs.def config.cpp $(appman_PRE)
+ CLEANFILES = config $(appman_DATA)
+ appmandir = $(APP_MAN_DIR)

@@ -6,7 +6,7 @@
 
 PORTNAME=	wmspaceweather
 PORTVERSION=	1.04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://dockapps.org/files/15/22/
 DISTNAME=	wmSpaceWeather-${PORTVERSION}

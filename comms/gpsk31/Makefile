@@ -6,7 +6,7 @@
 
 PORTNAME=	gpsk31
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.qsl.net/pg4i/download/
 

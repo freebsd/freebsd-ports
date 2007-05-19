@@ -7,7 +7,7 @@
 
 PORTNAME=	dsniff
 PORTVERSION=	2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://naughty.monkey.org/~dugsong/dsniff/
 

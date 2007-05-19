@@ -7,6 +7,7 @@
 
 PORTNAME=	rasmol
 PORTVERSION=	2.7.2.1.1
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.bernstein-plus-sons.com/software/
 DISTNAME=	RasMol_${PORTVERSION}

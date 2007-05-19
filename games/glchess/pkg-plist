@@ -199,7 +199,6 @@ share/locale/zh_HK/LC_MESSAGES/glchess.mo
 share/locale/zh_TW/LC_MESSAGES/glchess.mo
 share/mime/packages/glchess.xml
 share/pixmaps/glchess.svg
-@dirrmtry share/pixmaps
 @dirrm %%DATADIR%%/textures
 @dirrm %%DATADIR%%/gui
 @dirrm %%DATADIR%%

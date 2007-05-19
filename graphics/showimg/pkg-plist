@@ -259,22 +259,6 @@ share/mimelnk/image/x-sia.desktop
 %%KEXIDB%%share/services/showimg_kexidb_sqlite3driver.desktop
 share/services/showimgpart.desktop
 %%KEXIDB%%share/servicetypes/showimg_kexidb_driver.desktop
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/sr/LC_MESSAGES
-@dirrmtry share/locale/sr
-@dirrmtry share/locale/sk/LC_MESSAGES
-@dirrmtry share/locale/sk
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
 @dirrm share/doc/HTML/sv/showimg
 @dirrm share/doc/HTML/ru/showimg
 @dirrm share/doc/HTML/pt/showimg

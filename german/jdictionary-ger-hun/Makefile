@@ -7,6 +7,7 @@
 
 PORTNAME=	jdictionary-ger-hun
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	german hungarian textproc
 DISTNAME=	SmartGerHun-1_4.jar
 

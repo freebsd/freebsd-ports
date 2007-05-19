@@ -6,6 +6,7 @@
 
 PORTNAME=	sugarcrm
 PORTVERSION=	4.5.1b
+PORTREVISION=	1
 CATEGORIES=	deskutils www
 MASTER_SITES=	${SCRM_DISPATCHER}/:src \
 		${DOC_DISPATCHER}/:userdoc \

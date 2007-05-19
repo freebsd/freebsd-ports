@@ -7,6 +7,7 @@
 
 PORTNAME=	lusernet
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	news gnustep
 MASTER_SITES=	http://web.telia.com/~u42308495/alex/LuserNET/
 DISTNAME=	LuserNET-${PORTVERSION}

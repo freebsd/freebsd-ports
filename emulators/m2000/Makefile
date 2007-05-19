@@ -8,6 +8,7 @@
 
 PORTNAME=	m2000
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	\
 		http://www.komkon.org/~dekogel/files/p2000/:code \

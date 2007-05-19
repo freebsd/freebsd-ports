@@ -7,6 +7,7 @@
 
 PORTNAME=	xchomp
 PORTVERSION=	pl1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	rqm
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	mbone
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rqm/1.0.0/
 

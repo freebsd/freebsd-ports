@@ -7,6 +7,7 @@
 
 PORTNAME=	freehdl
 PORTVERSION=	0.0.4
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://cran.mit.edu/~enaroska/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	aster
 DISTVERSION=	9.0.0-2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	french cad python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-full-src-${DISTVERSION}.noarch

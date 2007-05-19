@@ -7,6 +7,7 @@
 
 PORTNAME=	dcl
 PORTVERSION=	5.3.2
+PORTREVISION=	1
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.gfd-dennou.org/arch/dcl/
 

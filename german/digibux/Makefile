@@ -7,6 +7,7 @@
 
 PORTNAME=	digibux
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	german gnustep
 MASTER_SITES=	http://gnu.ethz.ch/repository/digibux/
 DISTNAME=	digibux_${PORTVERSION}+CVS20060118.orig

@@ -7,6 +7,7 @@
 
 PORTNAME=	battleball
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://freebsd.aeternal.net/ports/
 DISTNAME=	${PORTNAME}-${PORTVERSION}

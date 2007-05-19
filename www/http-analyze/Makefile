@@ -6,7 +6,7 @@
 
 PORTNAME=	http-analyze
 PORTVERSION=	2.01
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	http://sce-tindy.tecnik93.com/FreeBSD/others_ports/http-analyze/
 DISTNAME=	${PORTNAME}${PORTVERSION}

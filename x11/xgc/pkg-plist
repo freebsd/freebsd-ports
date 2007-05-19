@@ -1,0 +1,3 @@
+bin/xgc
+share/X11/app-defaults/Xgc
+@dirrmtry share/X11/app-defaults

@@ -7,6 +7,7 @@
 
 PORTNAME=	commons-beanutils
 PORTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	commons/beanutils/source/

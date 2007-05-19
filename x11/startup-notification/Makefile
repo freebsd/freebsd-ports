@@ -7,6 +7,7 @@
 
 PORTNAME=	startup-notification
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://www.freedesktop.org/software/startup-notification/releases/

@@ -25,4 +25,3 @@ share/pixmaps/sonatacd.png
 share/pixmaps/sonatacd_large.png
 @dirrmtry share/applications
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/pixmaps

@@ -242,5 +242,4 @@ share/pixmaps/httrack.xpm
 @dirrm %%DOCSDIR%%
 @dirrm lib/httrack
 @dirrm include/httrack
-@dirrmtry share/pixmaps
 @dirrmtry share/applications

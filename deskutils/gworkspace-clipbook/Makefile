@@ -7,6 +7,7 @@
 
 PORTNAME=	gworkspace
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://io.debian.net/~tar/debian/gworkspace/
 PKGNAMESUFFIX=	-clipbook${PKGNAMESUFFIX2}

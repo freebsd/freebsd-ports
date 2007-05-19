@@ -7,6 +7,7 @@
 
 PORTNAME=	speyes
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://okb-1.org/speyes/
 

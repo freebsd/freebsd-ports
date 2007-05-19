@@ -7,6 +7,7 @@
 
 PORTNAME=	diclookup-mule
 PORTVERSION=	2.3.3
+PORTREVISION=	1
 CATEGORIES=	japanese elisp
 MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tools/diclookup-mule/
 

@@ -93,4 +93,3 @@ share/pixmaps/zim/stock_calendar-view-month.png
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrmtry share/pixmaps/zim
-@dirrmtry share/pixmaps

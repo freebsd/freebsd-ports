@@ -6,7 +6,7 @@
 #
 
 PORTNAME=       dtc
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=     sysutils
 PKGNAMESUFFIX=  -toaster
 

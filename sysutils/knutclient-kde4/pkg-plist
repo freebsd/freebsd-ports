@@ -43,8 +43,6 @@ share/locale/it/LC_MESSAGES/knutclient.mo
 share/locale/pt_BR/LC_MESSAGES/knutclient.mo
 share/locale/ru/LC_MESSAGES/knutclient.mo
 share/locale/uk/LC_MESSAGES/knutclient.mo
-@dirrmtry share/locale/uk/LC_MESSAGES
-@dirrmtry share/locale/uk
 @dirrmtry share/icons/locolor/32x32/apps
 @dirrmtry share/icons/locolor/32x32
 @dirrmtry share/icons/locolor/16x16/apps

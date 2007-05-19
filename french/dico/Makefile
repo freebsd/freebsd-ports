@@ -7,7 +7,7 @@
 
 PORTNAME=	dico
 PORTVERSION=	1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	french
 MASTER_SITES=	ftp://ftp.supelec.fr/lsi/pub/security/
 DISTNAME=	le_dico
@@ -21,7 +21,7 @@ BROKEN_WWW=	http://www.montefiore.ulg.ac.be/cgi-bin-ulg/DICO.html
 #
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_AUTOTOOLS=	automake:14 autoconf:213
+USE_AUTOTOOLS=	automake:14 autoconf:253
 USE_GMAKE=	true
 AUTOMAKE_ARGS=	--add-missing --foreign --include-deps
 MAKE_ARGS=	prefix=${PREFIX}

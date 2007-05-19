@@ -7,6 +7,7 @@
 
 PORTNAME=	ggo
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	http://panda-igs.joyjoy.net/java/gGo/download/ \
 		http://www.pandanet.co.jp/java/gGo/download/

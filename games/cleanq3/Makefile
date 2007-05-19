@@ -7,7 +7,7 @@
 
 PORTNAME=	cleanq3
 PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://tremor.quakedev.com/
 DISTNAME=	CleanQ3_v${PORTVERSION}-srcbin

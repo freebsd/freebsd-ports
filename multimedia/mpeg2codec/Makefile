@@ -7,7 +7,7 @@
 
 PORTNAME=	mpeg2codec
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.mpeg.org/pub/mpeg/mssg/
 DISTFILES=	mpeg2vidcodec_v12.tar.gz

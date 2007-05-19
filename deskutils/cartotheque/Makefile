@@ -7,6 +7,7 @@
 
 PORTNAME=	cartotheque
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://stefan.agentfarms.net/Download/GNUstep/Prototypes/
 DISTNAME=	Cartotheque-${PORTVERSION}

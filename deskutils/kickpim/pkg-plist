@@ -26,8 +26,6 @@ share/locale/fr/LC_MESSAGES/kickpim.mo
 share/locale/it/LC_MESSAGES/kickpim.mo
 share/locale/nl/LC_MESSAGES/kickpim.mo
 share/locale/pl/LC_MESSAGES/kickpim.mo
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
 @dirrm share/doc/HTML/en/kickpim
 @dirrmtry share/doc/HTML/en
 @dirrmtry share/doc/HTML

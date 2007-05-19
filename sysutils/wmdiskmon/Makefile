@@ -7,6 +7,7 @@
 
 PORTNAME=	wmdiskmon
 PORTVERSION=	0.0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 

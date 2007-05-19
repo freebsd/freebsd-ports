@@ -7,6 +7,7 @@
 
 PORTNAME=	weewm
 PORTVERSION=	0.0.2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://weewm.flashtux.org/download/

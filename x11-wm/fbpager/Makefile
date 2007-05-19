@@ -7,6 +7,7 @@
 
 PORTNAME=	fbpager
 PORTVERSION=	0.1.4
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.fluxbox.org/download/
 

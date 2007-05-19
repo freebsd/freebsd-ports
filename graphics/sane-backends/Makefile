@@ -7,6 +7,7 @@
 
 PORTNAME=	sane-backends
 PORTVERSION=	1.0.18
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://alioth.debian.org/download.php/1669/ \
 		ftp://ftp.sane-project.org/pub/sane/%SUBDIR%/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	tkabber
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.jabber.ru/files/tkabber/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	xvmines
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 EXTRACT_SUFX=	.tar.Z

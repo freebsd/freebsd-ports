@@ -7,6 +7,7 @@
 
 PORTNAME=	orion
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	x11-wm scheme
 MASTER_SITES=	ftp://ftp.scsh.net/pub/scsh/packages/orion-wm/
 

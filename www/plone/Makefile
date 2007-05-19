@@ -7,6 +7,7 @@
 
 PORTNAME=	plone
 PORTVERSION=	2.5.2
+PORTREVISION=	1
 CATEGORIES=	www zope
 MASTER_SITES=	http://plone.googlecode.com/files/:src
 DISTFILES=	Plone-${PORTVERSION}-1.tar.gz:src

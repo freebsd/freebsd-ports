@@ -7,7 +7,7 @@
 
 PORTNAME=	ttraffic
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games tk84
 MASTER_SITES=	http://alpha.luc.ac.be/Research/Algebra/Members/Ttraffic/ \
 		http://www.tobez.org/download/port-mirrors/games/ttraffic/

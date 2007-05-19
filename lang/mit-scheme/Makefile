@@ -7,7 +7,7 @@
 
 PORTNAME=	mit-scheme
 PORTVERSION=	7.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	ftp://ftp.swiss.ai.mit.edu/pub/mit-scheme/7.7/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION} OLD/${PORTVERSION}

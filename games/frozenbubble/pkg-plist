@@ -3253,26 +3253,6 @@ share/locale/ru/LC_MESSAGES/frozen-bubble.mo
 share/locale/sk/LC_MESSAGES/frozen-bubble.mo
 share/locale/sl/LC_MESSAGES/frozen-bubble.mo
 share/locale/sv/LC_MESSAGES/frozen-bubble.mo
-@dirrmtry share/locale/sl/LC_MESSAGES
-@dirrmtry share/locale/sl
-@dirrmtry share/locale/sk/LC_MESSAGES
-@dirrmtry share/locale/sk
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/ro
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/nn/LC_MESSAGES
-@dirrmtry share/locale/nn
-@dirrmtry share/locale/ne/LC_MESSAGES
-@dirrmtry share/locale/ne
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
 @dirrm %%DATADIR%%/snd
 @dirrm %%DATADIR%%/gfx/pinguins
 @dirrm %%DATADIR%%/gfx/menu/anims

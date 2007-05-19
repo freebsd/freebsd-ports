@@ -7,6 +7,7 @@
 
 PORTNAME=	bdfresize
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://openlab.ring.gr.jp/efont/dist/tools/bdfresize/
 

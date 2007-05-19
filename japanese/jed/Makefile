@@ -7,7 +7,7 @@
 
 PORTNAME=	jed
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese editors
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.kondara.org/~g/slang/

@@ -7,7 +7,7 @@
 
 PORTNAME=	cosmo
 PORTVERSION=	2.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	ftp://133.25.251.9/pub/linux/Vine/VinePlus/1.1/JG-0.9.1/other-sources/jp/ \
 		ftp://ftp.uni-erlangen.de/.mirrors/ftpbsd/ftp.freebsd.org/pub/FreeBSD/ports/distfiles/cosmo/

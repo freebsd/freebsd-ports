@@ -1,17 +1,15 @@
 --- aclocal.in.orig	Sun Oct 15 09:19:37 2006
-+++ aclocal.in	Tue Dec  5 13:19:21 2006
++++ aclocal.in	Sun May  6 13:56:37 2007
 @@ -32,3 +32,3 @@
  {
 -  my $perllibdir = $ENV{'perllibdir'} || '@datadir@/@PACKAGE@-@APIVERSION@';
 +  my $perllibdir = $ENV{'perllibdir'} || '@datadir@/@PACKAGE@@APIPVERSION@';
    unshift @INC, (split '@PATH_SEPARATOR@', $perllibdir);
-@@ -58,4 +58,4 @@
+@@ -58,3 +58,3 @@
  my @user_includes = ();
 -my @automake_includes = ("@datadir@/aclocal-$APIVERSION");
--my @system_includes = ('@datadir@/aclocal');
 +my @automake_includes = ("@datadir@/aclocal$APIPVERSION");
-+my @system_includes = ('@datadir@/aclocal', '%%X11BASE%%/share/aclocal');
- 
+ my @system_includes = ('@datadir@/aclocal');
 @@ -650,3 +650,3 @@
  
 -  my $traces = ($ENV{AUTOM4TE} || 'autom4te');

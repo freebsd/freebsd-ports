@@ -7,6 +7,7 @@
 
 PORTNAME=	wmapm
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://dockapps.org/files/18/25/
 

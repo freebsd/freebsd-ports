@@ -7,7 +7,7 @@
 
 PORTNAME=	caml
 PORTVERSION=	0.75
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang elisp
 MASTER_SITES=	ftp://ftp.inria.fr/lang/caml-light/ \
 	ftp://sunsite.doc.ic.ac.uk/computing/programming/languages/ml/caml-light/ \

@@ -7,7 +7,7 @@
 
 PORTNAME=	hanterm
 PORTVERSION=	2.0.5.173
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	korean x11
 MASTER_SITES=	http://kldp.net/frs/download.php/282/
 PKGNAMESUFFIX=	-xf

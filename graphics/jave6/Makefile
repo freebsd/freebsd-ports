@@ -6,7 +6,7 @@
 
 PORTNAME=	jave6
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics java
 MASTER_SITES=	http://www.jave.de/developer/\
 		http://ikaria.informatik.uni-rostock.de/public_bsd/FreeBSD/

@@ -7,6 +7,7 @@
 
 PORTNAME=	mpd
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cs.arizona.edu/mpd/download/ \
 		http://crypto.riken.go.jp/pub/NetBSD/packages/distfiles/mpd-language/

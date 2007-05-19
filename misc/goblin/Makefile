@@ -8,6 +8,7 @@
 
 PORTNAME=	goblin
 PORTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.math.uni-augsburg.de/~fremuth/goblin.docs/  \
 		${MASTER_SITE_LOCAL}

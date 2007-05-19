@@ -7,7 +7,7 @@
 
 PORTNAME?=	wireshark
 PORTVERSION=	0.99.5
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/
 DISTNAME=	${DATADIR_NAME}-${PORTVERSION}

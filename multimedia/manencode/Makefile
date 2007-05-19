@@ -7,6 +7,7 @@
 
 PORTNAME=	manencode
 DISTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://csgib36.ifrance.com/Manencode/
 DISTNAME=	Manencode-${DISTVERSION}

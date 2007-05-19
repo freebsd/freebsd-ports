@@ -8,7 +8,7 @@
 
 PORTNAME=	gtkdatabox
 PORTVERSION=	0.1.13.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.eudoxos.de/gtk/gtkdatabox/download/
 

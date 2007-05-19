@@ -33,12 +33,6 @@ share/locale/pa/LC_MESSAGES/scim-tables.mo
 %%SKIM%%@dirrmtry share/apps/skim
 %%SKIM%%@dirrmtry share/config.kcfg
 %%SKIM%%@dirrmtry share/services/skimconfiguredialog
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/ko/LC_MESSAGES
-@dirrmtry share/locale/ko
 @dirrmtry lib/scim-1.0/1.4.0/SetupUI
 @dirrmtry lib/scim-1.0/1.4.0/IMEngine
 @dirrmtry lib/scim-1.0/1.4.0

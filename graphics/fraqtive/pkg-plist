@@ -30,12 +30,6 @@ share/locale/ru/LC_MESSAGES/fraqtive.mo
 share/locale/sr/LC_MESSAGES/fraqtive.mo
 share/locale/sv/LC_MESSAGES/fraqtive.mo
 share/locale/vi/LC_MESSAGES/fraqtive.mo
-@dirrmtry share/locale/sr/LC_MESSAGES
-@dirrmtry share/locale/sr
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
 @dirrm share/doc/HTML/en/fraqtive
 @dirrm share/doc/HTML/de/fraqtive
 @dirrmtry share/config

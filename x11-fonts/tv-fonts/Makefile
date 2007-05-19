@@ -7,6 +7,7 @@
 
 PORTNAME=	tv-fonts
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://dl.bytesex.org/releases/${PORTNAME}/
 

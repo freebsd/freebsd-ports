@@ -2,5 +2,5 @@ include/X11/extensions/Xfixes.h
 lib/libXfixes.a
 lib/libXfixes.la
 lib/libXfixes.so
-lib/libXfixes.so.1
+lib/libXfixes.so.3
 libdata/pkgconfig/xfixes.pc

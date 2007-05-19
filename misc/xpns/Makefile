@@ -7,6 +7,7 @@
 
 PORTNAME=	xpns
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	misc cad
 MASTER_SITES=	http://robotics.ee.uwa.edu.au/pns/ftp/
 DISTFILES=	pns_source.tar.Z

@@ -6,6 +6,5 @@ doc/gtkperf/INSTALL
 doc/gtkperf/README
 doc/gtkperf/TODO
 share/pixmaps/duck.png
-@dirrmtry share/pixmaps
 @dirrm doc/gtkperf
 @dirrm doc

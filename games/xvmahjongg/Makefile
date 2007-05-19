@@ -7,6 +7,7 @@
 
 PORTNAME=	xvmahjongg
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTFILES=	${PORTNAME}${PORTVERSION}.tar.Z

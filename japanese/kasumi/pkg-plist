@@ -4,4 +4,3 @@ bin/kasumi
 share/applications/kasumi.desktop
 share/pixmaps/kasumi.png
 @dirrmtry share/applications
-@dirrmtry share/pixmaps

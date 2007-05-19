@@ -7,6 +7,7 @@
 
 PORTNAME=	mpeg_play
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/ \
 		ftp://mm-ftp.cs.berkeley.edu/pub/multimedia/mpeg/play/

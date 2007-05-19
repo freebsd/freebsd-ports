@@ -7,6 +7,7 @@
 
 PORTNAME=	kdmtheme
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://beta.smileaf.org/files/kdmtheme/ \
 		${MASTER_SITE_GENTOO:S/%SUBDIR%/distfiles/}

@@ -7,7 +7,7 @@
 
 PORTNAME=	mozilla-fonts
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 
 CATEGORIES=	x11-fonts www
 MASTER_SITES=	http://www.happygiraffe.net/dist/

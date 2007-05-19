@@ -7,6 +7,7 @@
 
 PORTNAME=	mgv
 PORTVERSION=	3.1.5
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.netsw.org/graphic/postscript/interpreter/mgv/ \
 		http://mirror2.unixfreunde.de/ \

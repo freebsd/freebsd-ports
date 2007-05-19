@@ -7,6 +7,7 @@
 
 PORTNAME=		opencascade
 PORTVERSION=		6.2
+PORTREVISION=		1
 CATEGORIES=		cad science
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	thierry
@@ -21,7 +22,8 @@ RUN_DEPENDS=	${LOCALBASE}/include/stlport/algorithm:${PORTSDIR}/devel/stlport	\
 LIB_DEPENDS=	itcl.${ITCL_VER}:${PORTSDIR}/lang/itcl		\
 		itk.${ITK_VER}:${PORTSDIR}/x11-toolkits/itk	\
 		tix${TIX_VER}:${PORTSDIR}/x11-toolkits/tix	\
-		fltk.1:${PORTSDIR}/x11-toolkits/fltk
+		fltk.1:${PORTSDIR}/x11-toolkits/fltk		\
+		dps.0:${PORTSDIR}/x11/dgs
 
 USE_BZIP2=	yes
 USE_BISON=	yes

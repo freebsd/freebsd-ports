@@ -25,5 +25,3 @@ sbin/shishid
 %%NLS%%@dirrmtry share/locale/en@boldquot
 %%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/en@quot
-%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pl

@@ -1,4 +1,3 @@
 include/GL/glu.h
-lib/libGLU.a
 lib/libGLU.so
 lib/libGLU.so.1

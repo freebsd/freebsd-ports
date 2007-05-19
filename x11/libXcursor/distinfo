@@ -1,3 +1,3 @@
-MD5 (libXcursor-1.1.2.tar.bz2) = cc38e1e1a144f828e6ad216c4ebb876b
-SHA256 (libXcursor-1.1.2.tar.bz2) = 3331d125b093f99e05ccb41df802573b8a679f4941f16e14ba7e6877fc08a4fa
-SIZE (libXcursor-1.1.2.tar.bz2) = 211989
+MD5 (xorg/lib/libXcursor-1.1.8.tar.bz2) = ec2acd10a7736a85dd1e1ed9ea5bec96
+SHA256 (xorg/lib/libXcursor-1.1.8.tar.bz2) = 8f039f81af52c88d583fba48b878abd074542221cb0030638ad52336b4ae1377
+SIZE (xorg/lib/libXcursor-1.1.8.tar.bz2) = 251641

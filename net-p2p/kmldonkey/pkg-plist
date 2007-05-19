@@ -128,16 +128,6 @@ share/servicetypes/kmldonkey_plugin.desktop
 @dirrmtry share/servicetypes
 @dirrmtry share/services/kded
 @dirrmtry share/services
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/ro
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
 @dirrmtry share/icons/hicolor/64x64/apps
 @dirrmtry share/icons/hicolor/64x64
 @dirrmtry share/icons/hicolor/48x48/apps

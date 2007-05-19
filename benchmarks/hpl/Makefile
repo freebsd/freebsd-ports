@@ -7,7 +7,7 @@
 
 PORTNAME=	hpl
 PORTVERSION=	1.0a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.netlib.org/benchmark/hpl/ \
 		ftp://ftp.hipecs.hokudai.ac.jp/netlib/benchmark/hpl/

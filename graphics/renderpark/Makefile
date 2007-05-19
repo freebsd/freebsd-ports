@@ -7,7 +7,7 @@
 
 PORTNAME=	renderpark
 PORTVERSION=	3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cs.kuleuven.ac.be/pub/graphics/software/RenderPark/
 DISTNAME=	RenderPark

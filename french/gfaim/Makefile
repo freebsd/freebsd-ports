@@ -7,7 +7,7 @@
 
 PORTNAME=	gfaim
 PORTVERSION=	0.30
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	french
 MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
 		http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/

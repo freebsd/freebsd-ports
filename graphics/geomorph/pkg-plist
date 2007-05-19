@@ -52,6 +52,9 @@ bin/geomorph
 %%DATADIR%%/GeoMorph.xpm
 %%DATADIR%%/Geomorph-gnome.desktop
 %%DATADIR%%/Geomorph-kde.desktop
+share/locale/de/LC_MESSAGES/geomorph.mo
+share/locale/en/LC_MESSAGES/geomorph.mo
+share/locale/fr/LC_MESSAGES/geomorph.mo
 @dirrm %%DATADIR%%/%%PORTVERSION%%/scenes
 @dirrm %%DATADIR%%/%%PORTVERSION%%
 @dirrm %%DATADIR%%

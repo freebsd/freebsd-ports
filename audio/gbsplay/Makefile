@@ -7,7 +7,7 @@
 
 PORTNAME=	gbsplay
 PORTVERSION=	0.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cgarbs.de/stuff/ \
 		http://download.berlios.de/gbsplay/ \

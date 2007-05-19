@@ -6,7 +6,7 @@
 
 PORTNAME=	ktritoc
 PORTVERSION=	1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games kde
 MASTER_SITES=	http://www.heni-online.de/files/
 

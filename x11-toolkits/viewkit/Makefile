@@ -7,6 +7,7 @@
 
 PORTNAME=	viewkit
 PORTVERSION=	0.00
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.hungry.com/pub/hungry/viewkit/ \
 		${MASTER_SITE_LOCAL}

@@ -7,6 +7,7 @@
 
 PORTNAME=	gle
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://linas.org/gle/pub/ \

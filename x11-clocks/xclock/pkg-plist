@@ -1,0 +1,4 @@
+bin/xclock
+share/X11/app-defaults/XClock-color
+share/X11/app-defaults/XClock
+@dirrmtry share/X11/app-defaults

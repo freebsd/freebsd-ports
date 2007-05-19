@@ -7,6 +7,7 @@
 
 PORTNAME=	pekwm
 PORTVERSION=	20060417
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://bsd-unix.org/downloads/ \
 		http://pekwm.org/files/

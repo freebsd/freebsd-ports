@@ -296,24 +296,6 @@ share/locale/it/LC_MESSAGES/gazpacho.mo
 share/locale/pt_BR/LC_MESSAGES/gazpacho.mo
 share/locale/ru/LC_MESSAGES/gazpacho.mo
 share/locale/zh_CN/LC_MESSAGES/gazpacho.mo
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/ru/LC_MESSAGES
-@dirrmtry share/locale/ru
-@dirrmtry share/locale/pt_BR/LC_MESSAGES
-@dirrmtry share/locale/pt_BR
-@dirrmtry share/locale/it/LC_MESSAGES
-@dirrmtry share/locale/it
-@dirrmtry share/locale/gl/LC_MESSAGES
-@dirrmtry share/locale/gl
-@dirrmtry share/locale/fr/LC_MESSAGES
-@dirrmtry share/locale/fr
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
-@dirrmtry share/locale/es/LC_MESSAGES
-@dirrmtry share/locale/es
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
 @dirrm %%DATADIR%%/resources/base
 @dirrmtry %%DATADIR%%/resources
 @dirrm %%DATADIR%%/pixmaps

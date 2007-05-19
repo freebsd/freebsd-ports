@@ -7,6 +7,7 @@
 
 PORTNAME=	adun
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	biology gnustep
 MASTER_SITES=	http://download.gna.org/adun/
 DISTNAME=	Adun${PORTVERSION}

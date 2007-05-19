@@ -10,9 +10,5 @@ share/locale/tr/LC_MESSAGES/xfce4-timer-plugin.mo
 share/xfce4/panel-plugins/xfce4-timer.desktop
 @dirrm share/xfce4/panel-plugins
 @dirrm share/xfce4
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
 @dirrm libexec/xfce4/panel-plugins
 @dirrm libexec/xfce4

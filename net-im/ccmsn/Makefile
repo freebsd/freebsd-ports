@@ -7,6 +7,7 @@
 
 PORTNAME=	ccmsn
 PORTVERSION=	0.3p3
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://msn.CompuCreations.com/
 EXTRACT_SUFX=	.tgz

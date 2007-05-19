@@ -519,4 +519,3 @@ share/pixmaps/tribler.xpm
 @dirrm %%DATADIR%%/ABC
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/pixmaps

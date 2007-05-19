@@ -7,6 +7,7 @@
 
 PORTNAME=	netgen
 PORTVERSION=	4.4
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	http://www.hpfem.jku.at/cgi/download.cgi?ID=
 DISTNAME=	ngs${PORTVERSION:S/.//g}
@@ -20,6 +21,7 @@ USE_GCC=	3.3+
 USE_GMAKE=	yes
 USE_TK=		yes
 USE_TK_BUILD=	yes
+USE_GL=		yes
 
 ALL_TARGET=	ng
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkjournal
 PORTVERSION=	0.3.5.b
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.alaskaparadise.com/freebsd/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}

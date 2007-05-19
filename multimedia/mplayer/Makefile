@@ -83,7 +83,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.10
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -261,6 +261,7 @@ CFLAGS+=	-fno-force-addr
 
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
+CONFIGURE_ARGS+=--with-x11libdir="${LOCALBASE}/lib"
 .else
 WITHOUT_GUI=	yes
 CONFIGURE_ARGS+=--disable-x11 \

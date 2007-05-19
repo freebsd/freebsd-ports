@@ -7,7 +7,7 @@
 
 PORTNAME=	kde
 PORTVERSION=	3.16.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits python kde
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyKDE3/ \

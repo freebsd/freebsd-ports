@@ -7,6 +7,7 @@
 
 PORTNAME=	xmbdfed
 PORTVERSION=	4.7.1
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://crl.nmsu.edu/~mleisher/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}

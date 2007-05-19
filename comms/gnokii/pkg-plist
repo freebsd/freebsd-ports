@@ -160,13 +160,3 @@ sbin/mgnokiidev
 %%X11%%@dirrm share/xgnokii/help/pl_PL
 %%X11%%@dirrm share/xgnokii/help
 %%X11%%@dirrm share/xgnokii
-%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cs
-%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fi
-%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pl
-%%NLS%%@dirrmtry share/locale/sk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sk
-%%NLS%%@dirrmtry share/locale/sl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sl

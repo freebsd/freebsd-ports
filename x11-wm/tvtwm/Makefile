@@ -7,6 +7,7 @@
 
 PORTNAME=	tvtwm
 PORTVERSION=	pl11
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	window_managers
@@ -18,6 +19,7 @@ COMMENT=	Twm with a virtual desktop
 WRKSRC=		${WRKDIR}/tvtwm
 USE_IMAKE=	yes
 USE_XPM=	yes
+USE_XORG=	xbitmaps
 MAN1=		tvtwm.1
 MANCOMPRESSED=	no
 PLIST_FILES=	bin/tvtwm

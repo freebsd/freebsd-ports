@@ -15,7 +15,6 @@ sbin/fsck.xfs
 sbin/mkfs.xfs
 sbin/xfs_repair
 share/locale/pl/LC_MESSAGES/xfsprogs.mo
-@dirrmtry share/locale/pl/LC_MESSAGES
 %%PORTDOCS%%%%DOCSDIR%%/PORTING
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.gz
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS

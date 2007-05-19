@@ -7,6 +7,7 @@
 
 PORTNAME=	wampager
 PORTVERSION=	0.9.3.20041204
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.ijs.si/~lesi/waimea/ \
 		http://www.daemon.li/distfiles/

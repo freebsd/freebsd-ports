@@ -7,7 +7,7 @@
 
 PORTNAME=	libdockapp
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://solfertje.student.utwente.nl/~dalroi/libdockapp/files/
 

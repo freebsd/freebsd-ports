@@ -89,8 +89,6 @@ sbin/update-alternatives
 %%NLS%%share/locale/nb/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/ne/LC_MESSAGES/dpkg.mo
-%%NLS%%@dirrmtry share/locale/ne/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ne
 %%NLS%%share/locale/nl/LC_MESSAGES/dpkg.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/dselect.mo
 %%NLS%%share/locale/nn/LC_MESSAGES/dpkg.mo

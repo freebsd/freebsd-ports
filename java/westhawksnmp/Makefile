@@ -7,6 +7,7 @@
 
 PORTNAME=	westhawksnmp
 PORTVERSION=	5.1
+PORTREVISION=	1
 CATEGORIES=	java net-mgmt devel
 MASTER_SITES=	http://snmp.westhawk.co.uk/
 DISTNAME=	${PORTNAME:S/westhawk//}${PORTVERSION:S/./_/}

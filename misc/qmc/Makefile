@@ -8,6 +8,7 @@
 
 PORTNAME=	qmc
 PORTVERSION=	0.94
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://qmc.pollaknet.at/program/
 

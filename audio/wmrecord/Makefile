@@ -7,6 +7,7 @@
 
 PORTNAME=	wmrecord
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://linkinnovations.linux.tucows.com/files/x11/dock/ \
 		http://www.bsd-geek.de/FreeBSD/distfiles/

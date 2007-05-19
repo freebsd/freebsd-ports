@@ -7,7 +7,7 @@
 
 PORTNAME=	lxdvdrip
 PORTVERSION=	1.62
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.berlios.de/lxdvdrip/ \
 		ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/

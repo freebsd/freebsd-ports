@@ -7,6 +7,7 @@
 
 PORTNAME=	0verkill
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://artax.karlin.mff.cuni.cz/~brain/0verkill/release/
 EXTRACT_SUFX=	.tgz

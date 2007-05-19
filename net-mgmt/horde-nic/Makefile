@@ -8,6 +8,7 @@
 PORTNAME=	nic
 DISTVERSIONPREFIX=
 DISTVERSION=	0.1.beta20070316
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	CENKES http://freebsd.alaskaparadise.com/source/
 PKGNAMEPREFIX=	horde-

@@ -8,6 +8,7 @@
 
 PORTNAME=	ski
 PORTVERSION=	0.943l.2
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	# http://www.hpl.hp.com/research/linux/ski/
 DISTNAME=	ski-0.943l-2.i386

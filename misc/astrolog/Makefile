@@ -10,7 +10,7 @@
 
 PORTNAME=	astrolog
 PORTVERSION=	5.40
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://www.astrolog.org/ftp/ephem/ \
 		http://www.astrolog.org/ftp/ \

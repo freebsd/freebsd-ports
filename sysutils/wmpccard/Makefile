@@ -7,6 +7,7 @@
 
 PORTNAME=	wmpccard
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.sra.co.jp/people/m-kasahr/wmpccard/src/
 

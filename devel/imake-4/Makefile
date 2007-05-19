@@ -16,10 +16,10 @@ DISTFILES=	XFree86-${PORTVERSION}-src-1.tgz \
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Imake and other utilities from XFree86
 
-CONFLICTS=	imake-6*
+CONFLICTS=	imake-1.[0-9]*
 
 PREFIX?=	${X11BASE}
-MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
+MTREE_FILE=	${PORTSDIR}/Templates/BSD.local.dist
 USE_PERL5=	yes
 MAKE_ENV=	MAKEFLAGS="CC=${CC}"
 SCRIPTS_ENV=	CC=${CC}

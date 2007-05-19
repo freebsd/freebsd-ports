@@ -8,6 +8,7 @@
 
 PORTNAME=	plan
 PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES+=	deskutils
 MASTER_SITES=	ftp://plan.ftp.fu-berlin.de/
 MASTER_SITE_SUBDIR=	applications

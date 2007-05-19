@@ -86,8 +86,6 @@ usr/local/share/stsmon/pixmaps/Inkg_ye.xpm
 @dirrm usr/local/share/stsmon/pixmaps
 @dirrm usr/local/share/stsmon
 @dirrmtry usr/local/share/printui
-@dirrmtry usr/local/share/locale/ja/LC_MESSAGES
-@dirrmtry usr/local/share/locale/ja
 @dirrmtry usr/local/share/locale
 @dirrmtry usr/local/share
 @dirrmtry usr/local

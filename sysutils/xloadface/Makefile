@@ -7,7 +7,7 @@
 
 PORTNAME=	xloadface
 PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.kazu.kz/freebsd/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	libraries
 PORTVERSION=	4.5.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -34,7 +35,7 @@ CONFLICTS=	Mesa-[0-9]* libX11-[0-9]* libGL-[0-9]* libGLU-[0-9]* \
 
 USE_X_PREFIX=		no
 PREFIX?=		${X11BASE}
-MTREE_FILE=		/etc/mtree/BSD.x11-4.dist
+MTREE_FILE=		${PORTSDIR}/Templates/BSD.local.dist
 INSTALLS_SHLIB=		yes
 SCRIPTS_ENV=		DebuggableLibraries=${DebuggableLibraries}
 MAN3=			FontCacheChangeCacheSettings.3 \

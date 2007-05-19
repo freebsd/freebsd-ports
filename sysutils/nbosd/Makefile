@@ -7,6 +7,7 @@
 
 PORTNAME=	nbosd
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
 EXTRACT_SUFX=	.tgz

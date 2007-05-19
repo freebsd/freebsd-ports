@@ -1469,16 +1469,5 @@ share/pixmaps/xfw.png
 @dirrm share/xfe/icons/xfe-theme
 @dirrm share/xfe/icons
 @dirrm share/xfe
-@dirrmtry share/pixmaps
 @dirrmtry share/locale/es_AR/LC_MESSAGES
 @dirrmtry share/locale/es_AR
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/es_AR/LC_MESSAGES
-@dirrmtry share/locale/es_AR
-@dirrmtry share/locale/no/LC_MESSAGES
-@dirrmtry share/locale/no

@@ -7,7 +7,7 @@
 
 PORTNAME=	xtel
 PORTVERSION=	3.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	french comms emulators
 MASTER_SITES=	http://pficheux.free.fr/xtel/download/
 

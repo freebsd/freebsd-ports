@@ -63,8 +63,6 @@ bin/gschem
 %%NLS%%@dirrmtry share/locale/ja_JP
 %%NLS%%@dirrmtry share/locale/it_IT/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/it_IT
-%%NLS%%@dirrmtry share/locale/fr_FR/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fr_FR
 %%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/de_DE
 @dirrmtry %%DATADIR%%/scheme

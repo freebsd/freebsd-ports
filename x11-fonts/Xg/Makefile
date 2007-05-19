@@ -7,6 +7,7 @@
 
 PORTNAME=	libXgFonts
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11-fonts plan9
 MASTER_SITES=	ftp://ftp.cs.usyd.edu.au/matty/unicode/
 DISTNAME=	libXg.utf.fonts

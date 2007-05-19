@@ -7,7 +7,7 @@
 
 PORTNAME=	countdown
 PORTVERSION=	0.8
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-clocks gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-

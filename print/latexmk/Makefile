@@ -8,6 +8,7 @@
 
 PORTNAME=	latexmk
 PORTVERSION=	307a
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.phys.psu.edu/~collins/software/latexmk/
 

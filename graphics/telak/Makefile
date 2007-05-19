@@ -7,7 +7,7 @@
 
 PORTNAME=	telak
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://julien.danjou.info/telak/ \
 		http://critical.ch/distfiles/ \

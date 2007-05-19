@@ -6,6 +6,7 @@
 
 PORTNAME=	kdesvn
 PORTVERSION=	0.11.2
+PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	http://www.alwins-world.de/programs/download/${PORTNAME}/ \
 		http://www.yuanjue.net/download/

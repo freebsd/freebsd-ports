@@ -7,6 +7,7 @@
 
 PORTNAME=		squeak
 PORTVERSION=		3.7
+PORTREVISION=		1
 CATEGORIES=		lang
 ##################################################
 MASTER_SITES=		http://www.squeakvm.org/unix/release/ \
@@ -111,6 +112,7 @@ CONFIGURE_ARGS+=	--without-x
 PLIST_X=		"@comment feature not wanted - "
 .else
 USE_XLIB=		yes
+USE_GL=			yes
 CONFIGURE_ARGS+=	--with-x
 PLIST_X=
 .endif

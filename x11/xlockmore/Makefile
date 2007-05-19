@@ -7,6 +7,7 @@
 
 PORTNAME=	xlockmore
 PORTVERSION=	5.23
+PORTREVISION=	1
 CATEGORIES?=	x11
 MASTER_SITES=	ftp://ftp.tux.org/pub/tux/bagleyd/xlockmore/ \
 		http://www.tux.org/~bagleyd/latest/

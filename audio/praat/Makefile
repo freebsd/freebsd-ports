@@ -7,6 +7,7 @@
 
 PORTNAME=	praat
 PORTVERSION=	4.4.10
+PORTREVISION=	1
 CATEGORIES=	audio science
 MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/Praat/4410/
 DISTNAME=	praat4410_sources

@@ -7,6 +7,7 @@
 
 PORTNAME=	graphicboot
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://matt.sixxgate.com/files/
 

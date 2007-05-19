@@ -7,7 +7,7 @@
 
 PORTNAME=	astk
 DISTVERSION=	1.5.0-1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 .if !defined(CLIENT_SEUL)

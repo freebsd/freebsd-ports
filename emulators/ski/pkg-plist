@@ -3,7 +3,7 @@ bin/ski
 bin/bski
 bin/bskinc
 bin/xski
-../X11R6/lib/X11/app-defaults/XSki
+lib/X11/app-defaults/XSki
 share/doc/ski/HOWTO-ski-networking
 share/doc/ski/README
 share/doc/ski/Makefile

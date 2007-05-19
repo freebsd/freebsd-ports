@@ -7,7 +7,7 @@
 
 PORTNAME=	xtet42
 PORTVERSION=	2.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://utenti.gufi.org/~gmarco/files/distfiles/
 

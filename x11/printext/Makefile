@@ -7,6 +7,7 @@
 
 PORTNAME=	printext
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://xorg.freedesktop.org/X11R6.7.0/src/ \
 		${MASTER_SITE_XORG}

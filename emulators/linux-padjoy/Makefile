@@ -7,6 +7,7 @@
 
 PORTNAME=	padjoy
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://members.chello.at/erich.kitzmueller/ammoq/
 PKGNAMEPREFIX=	linux-

@@ -7,6 +7,7 @@
 
 PORTNAME=	proggy_fonts
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.proggyfonts.com/download/
 DISTFILES=	ProggyClean.pcf.zip ProggySquare.pcf.zip	\

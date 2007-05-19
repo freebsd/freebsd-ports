@@ -7,7 +7,7 @@
 
 PORTNAME=	xroads
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://math.missouristate.edu/~erik/files/fbsd/\
 		http://smluc.org/~erik/files/fbsd/

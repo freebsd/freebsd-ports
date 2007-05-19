@@ -7,7 +7,7 @@
 
 PORTNAME=	giram
 PORTVERSION=	0.3.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.giram.org/downloads/
 

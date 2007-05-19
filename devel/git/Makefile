@@ -7,6 +7,7 @@
 
 PORTNAME=	git
 PORTVERSION=	1.4.4.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 

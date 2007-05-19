@@ -7,6 +7,7 @@
 
 PORTNAME=	libsynaptics
 PORTVERSION=	0.14.6b
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://qsynaptics.sourceforge.net/ \
 		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/

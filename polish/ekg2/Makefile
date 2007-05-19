@@ -6,6 +6,7 @@
 
 PORTNAME=	ekg2
 PORTVERSION=	20070303
+PORTREVISION=	1
 CATEGORIES=	polish net-im
 MASTER_SITES=	http://www.ekg2.org/archive/
 

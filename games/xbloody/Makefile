@@ -7,6 +7,7 @@
 
 PORTNAME=	xbloody
 PORTVERSION=	1.00
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.kazu.kz/freebsd/
 DISTNAME=	${PORTNAME}

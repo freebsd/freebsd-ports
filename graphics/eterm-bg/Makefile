@@ -7,6 +7,7 @@
 
 PORTNAME=	eterm-bg
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.eterm.org/download/
 DISTNAME=	Eterm-bg-${PORTVERSION}

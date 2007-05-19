@@ -1,3 +1,3 @@
-MD5 (libXfixes-2.0.1.tar.bz2) = 89559cae2035b7e640c13075bea63e5e
-SHA256 (libXfixes-2.0.1.tar.bz2) = 8589df5613863557b26f872170f99f2ca3b0d01adbd33030fbd0ee2c3a1843c2
-SIZE (libXfixes-2.0.1.tar.bz2) = 186336
+MD5 (xorg/lib/libXfixes-4.0.3.tar.bz2) = 1990d19725a3c7f32290037f02d3737f
+SHA256 (xorg/lib/libXfixes-4.0.3.tar.bz2) = 547e093c5037c4b85ce653ce26f5bd70a97b177f9b582f5351a626d8e0a829dd
+SIZE (xorg/lib/libXfixes-4.0.3.tar.bz2) = 214287

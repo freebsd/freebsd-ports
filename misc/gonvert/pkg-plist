@@ -10,7 +10,6 @@ share/applications/gonvert.desktop
 %%DATADIR%%/pixmaps/gonvert-icon_alternative.png
 share/locale/pl/LC_MESSAGES/gonvert.mo
 share/pixmaps/gonvert.png
-@comment @dirrmtry share/pixmaps
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -10,7 +10,7 @@
 
 PORTNAME=	rxvt
 PORTVERSION=	2.7.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	x11
 MASTER_SITES=	\
 		http://slackware.osuosl.org/slackware_source/xap/rxvt/ \

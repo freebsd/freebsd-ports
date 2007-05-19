@@ -7,7 +7,7 @@
 
 PORTNAME=	runrev
 PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel linux
 MASTER_SITES=	http://www.runrev.com/revolution/engines11/unix/
 PKGNAMEPREFIX=	linux-

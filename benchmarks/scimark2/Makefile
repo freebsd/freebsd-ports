@@ -7,6 +7,7 @@
 
 PORTNAME=	scimark2
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	benchmarks java
 MASTER_SITES=	http://math.nist.gov/scimark2/
 PKGNAMESUFFIX=	-java

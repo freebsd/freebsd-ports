@@ -7,6 +7,7 @@
 
 PORTNAME=	amiwm
 PORTVERSION=	0.20.p48
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/X11/wm/amiwm/ \
 		http://www.plig.org/xwinman/archive/amiwm/

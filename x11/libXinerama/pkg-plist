@@ -1,4 +1,3 @@
-include/X11/extensions/Xinerama.h
 lib/libXinerama.a
 lib/libXinerama.la
 lib/libXinerama.so

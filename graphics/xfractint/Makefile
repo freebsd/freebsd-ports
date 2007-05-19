@@ -7,6 +7,7 @@
 
 PORTNAME=	xfractint
 PORTVERSION=	3.10
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.phoenix.net/pub/USERS/twegner/ \
 		http://spanky.triumf.ca/pub/fractals/programs/unix/

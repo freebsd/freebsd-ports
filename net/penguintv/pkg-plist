@@ -120,11 +120,8 @@ share/penguintv/defaultsubs.opml
 share/penguintv/penguintv.glade
 share/penguintv/penguintvicon.png
 share/pixmaps/penguintvicon.png
-@dirrmtry share/pixmaps
 @dirrmtry share/applications
 @dirrm share/penguintv
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv/ptvbittorrent
 %%WITH_MOZILLA%%@dirrm %%PYTHON_SITELIBDIR%%/penguintv/democracy_moz
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt

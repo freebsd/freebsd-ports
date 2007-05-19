@@ -8,6 +8,7 @@
 
 PORTNAME=	wmgeneral
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits python windowmaker
 MASTER_SITES=	http://errl.info/pywmdockapps/downloads/current/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

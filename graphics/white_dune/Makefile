@@ -8,7 +8,7 @@
 
 PORTNAME=	white_dune
 PORTVERSION=	0.28.11
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://vrml.cip.ica.uni-stuttgart.de/dune/

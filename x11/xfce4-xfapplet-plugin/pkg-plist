@@ -20,4 +20,3 @@ share/xfce4/panel-plugins/xfapplet.desktop
 @dirrmtry share/xfce4
 @dirrmtry libexec/xfce4/panel-plugins
 @dirrmtry libexec/xfce4
-@dirrmtry share/pixmaps

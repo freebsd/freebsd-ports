@@ -7,7 +7,7 @@
 
 PORTNAME=	sambasentinel
 PORTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.fasta.fh-dortmund.de/pub/linux/gentoo/distfiles/ \
 		http://voodoo.bawue.com/download/

@@ -7,6 +7,7 @@
 
 PORTNAME=	cos
 PORTVERSION=	2002.11.05
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.servlets.com/cos/ \

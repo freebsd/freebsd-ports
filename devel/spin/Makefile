@@ -7,6 +7,7 @@
 
 PORTNAME=	spin
 PORTVERSION=	4.2.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://spinroot.com/spin/Src/
 DISTNAME=	spin${PORTVERSION:S/.//g}

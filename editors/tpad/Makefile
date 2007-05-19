@@ -7,6 +7,7 @@
 
 PORTNAME=	tpad
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	editors tcl84 tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://monitor.deis.unical.it/ant/tpad/ \

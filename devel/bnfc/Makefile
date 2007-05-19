@@ -7,7 +7,7 @@
 
 PORTNAME=	bnfc
 PORTVERSION=	2.3b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cs.chalmers.se/~markus/BNFC/ \
 		http://www.cs.chalmers.se/Cs/Grundutb/Kurser/komp/current/resources/

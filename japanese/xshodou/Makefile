@@ -7,6 +7,7 @@
 
 PORTNAME=	xshodou
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	japanese tk80
 MASTER_SITES=	http://www.saturn.dti.ne.jp/~hsakai/myfreesoft/
 

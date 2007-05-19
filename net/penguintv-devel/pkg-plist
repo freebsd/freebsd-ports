@@ -161,7 +161,6 @@ share/locale/pt/LC_MESSAGES/penguintv.mo
 share/locale/pt_BR/LC_MESSAGES/penguintv.mo
 share/locale/sv/LC_MESSAGES/penguintv.mo
 
-@dirrmtry share/pixmaps
 @dirrmtry share/applications
 @dirrm share/penguintv
 @dirrm %%PYTHON_SITELIBDIR%%/penguintv/trayicon

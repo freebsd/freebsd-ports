@@ -7,7 +7,7 @@
 
 PORTNAME=	plugger
 PORTVERSION=	5.1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www audio graphics multimedia
 MASTER_SITES=	http://fredrik.hubbe.net/plugger/
 

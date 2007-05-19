@@ -7,6 +7,7 @@
 
 PORTNAME=	perf
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.spyz.org/perf/
 

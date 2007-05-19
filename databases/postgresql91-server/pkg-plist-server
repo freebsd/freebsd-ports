@@ -128,20 +128,6 @@ share/postgresql/system_views.sql
 %%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/pg_ctl.mo
 %%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/postgres.mo
-%%GETTEXT%%@dirrmtry share/locale/cs/LC_MESSAGES
-%%GETTEXT%%@dirrmtry share/locale/cs
-%%GETTEXT%%@dirrmtry share/locale/ko/LC_MESSAGES
-%%GETTEXT%%@dirrmtry share/locale/ko
-%%GETTEXT%%@dirrmtry share/locale/sk/LC_MESSAGES
-%%GETTEXT%%@dirrmtry share/locale/sk
-%%GETTEXT%%@dirrmtry share/locale/ro/LC_MESSAGES
-%%GETTEXT%%@dirrmtry share/locale/ro
-%%GETTEXT%%@dirrmtry share/locale/sl/LC_MESSAGES
-%%GETTEXT%%@dirrmtry share/locale/sl
-%%GETTEXT%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
-%%GETTEXT%%@dirrmtry share/locale/zh_CN
-%%GETTEXT%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
-%%GETTEXT%%@dirrmtry share/locale/zh_TW
 share/postgresql/postgres.shdescription
 share/postgresql/timezone/Africa/Abidjan
 share/postgresql/timezone/Africa/Accra

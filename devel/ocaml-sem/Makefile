@@ -7,6 +7,7 @@
 
 PORTNAME=	sem
 PORTVERSION=	0.0.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ocaml-sem.sourceforge.net/files/ \
 		${MASTER_SITE_SOURCEFORGE}

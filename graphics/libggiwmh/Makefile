@@ -7,6 +7,7 @@
 
 PORTNAME=	libggiwmh
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.2/ \
 		${MASTER_SITE_SOURCEFORGE}

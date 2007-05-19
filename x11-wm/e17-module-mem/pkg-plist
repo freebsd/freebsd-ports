@@ -11,8 +11,6 @@ lib/enlightenment/modules/mem/module_icon.png
 %%NLS%%share/locale/ja/LC_MESSAGES/mem.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/mem.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/mem.mo
-%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fi
 @dirrm lib/enlightenment/modules/mem/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/mem
 @dirrmtry lib/enlightenment/modules

@@ -879,26 +879,8 @@ share/config/colors/IDL 39 Rainbow-White
 share/config/colors/IDL 40 Rainbow-Black
 @dirrm share/servicetypes/kst
 @dirrm share/services/kst
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/sr/LC_MESSAGES
-@dirrmtry share/locale/sr
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/ro
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/nn/LC_MESSAGES
-@dirrmtry share/locale/nn
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
 @dirrm share/doc/HTML/sv/kst
 @dirrm share/doc/HTML/pt/kst
 @dirrm share/doc/HTML/nl/kst

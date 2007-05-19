@@ -7,7 +7,7 @@
 
 PORTNAME=	netlist
 PORTVERSION=	20070216
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 		http://geda.seul.org/devel/${PORTVERSION}/

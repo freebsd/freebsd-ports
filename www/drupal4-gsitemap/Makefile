@@ -7,7 +7,7 @@
 
 PORTNAME=	gsitemap
 DISTVERSION=	4.7.x-1.0
-PORTREVISION=	20070111
+PORTREVISION=	20070112
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.osuosl.org/pub/drupal/files/projects/
 

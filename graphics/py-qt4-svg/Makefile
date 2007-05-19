@@ -6,6 +6,7 @@
 
 PORTNAME=	svg
 PORTVERSION=	4.2
+PORTREVISION=	1
 CATEGORIES=	graphics devel python
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyQt4/GPL/ \
 		http://freebsd.ricin.com/ports/distfiles/

@@ -185,20 +185,8 @@ share/sounds/kmess_chat.ogg
 share/sounds/kmess_logoff.ogg
 share/sounds/kmess_logon.ogg
 share/sounds/kmess_msg.ogg
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
 @dirrmtry share/locale/zh_CN.GB18030/LC_MESSAGES
 @dirrmtry share/locale/zh_CN.GB18030
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/sl/LC_MESSAGES
-@dirrmtry share/locale/sl
-@dirrmtry share/locale/ko/LC_MESSAGES
-@dirrmtry share/locale/ko
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
 @dirrm share/emoticons/KMess-new
 @dirrmtry share/emoticons
 @dirrm share/doc/HTML/en/kmess

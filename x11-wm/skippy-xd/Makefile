@@ -7,16 +7,18 @@
 
 PORTNAME=	skippy-xd
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://thegraveyard.org/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full-screen X11 task-switcher like Apple's Expose
 
-LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 
 USE_BZIP2=	yes
 USE_GNOME=	pkgconfig
+USE_XORG=	x11 xft xcomposite xdamage xfixes xrender xinerama xext xmu
 PLIST_FILES=	bin/skippy-xd \
 		%%DATADIR%%/skippy-xd.rc-default
 PLIST_DIRS=	%%DATADIR%%

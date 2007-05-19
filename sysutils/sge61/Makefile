@@ -7,7 +7,7 @@
 
 PORTNAME=	sge
 PORTVERSION=	${SGE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	http://gridengine.sunsource.net/files/documents/7/122/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}

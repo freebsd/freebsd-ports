@@ -7,6 +7,7 @@
 
 PORTNAME=	ktorrent
 PORTVERSION=	2.1.4
+PORTREVISION=	1
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.pwsp.net/downloads/${PORTVERSION}/ \
 		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/

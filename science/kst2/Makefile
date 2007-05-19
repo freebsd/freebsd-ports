@@ -6,6 +6,7 @@
 
 PORTNAME=	kst
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	science kde
 MASTER_SITES=	${MASTER_SITE_KDE} \
 		http://omega.astro.utoronto.ca/${PORTNAME}/

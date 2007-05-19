@@ -23,5 +23,3 @@ share/locale/uz/LC_MESSAGES/kthesaurus.mo
 share/locale/uz/LC_MESSAGES/kugar.mo
 share/locale/uz/LC_MESSAGES/kword.mo
 share/locale/uz/LC_MESSAGES/thesaurus_tool.mo
-@dirrm share/locale/uz/LC_MESSAGES
-@dirrm share/locale/uz

@@ -7,6 +7,7 @@
 
 PORTNAME=	asclock-xlib
 PORTVERSION=	2.0.11
+PORTREVISION=	1
 CATEGORIES=	x11-clocks afterstep windowmaker
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kuriyama

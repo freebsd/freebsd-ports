@@ -103,4 +103,3 @@ share/pixmaps/geany.png
 @dirrm %%PORTDOCS%%%%DOCSDIR%%/html
 @dirrm %%PORTDOCS%%%%DOCSDIR%%
 @dirrmtry share/applications
-@dirrmtry share/pixmaps

@@ -8,6 +8,7 @@
 
 PORTNAME=	unicode-uhoai
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	vietnamese x11-fonts
 MASTER_SITES=	http://www.geocities.com/~starkville/mozilla/
 DISTNAME=	uhoaiw21

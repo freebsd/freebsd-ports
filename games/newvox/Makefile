@@ -7,7 +7,7 @@
 
 PORTNAME=	newvox
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.libsdl.org/projects/newvox/src/
 

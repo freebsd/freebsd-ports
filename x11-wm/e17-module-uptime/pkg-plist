@@ -13,8 +13,6 @@ share/locale/ja/LC_MESSAGES/uptime.mo
 share/locale/sv/LC_MESSAGES/uptime.mo
 share/nls/POSIX
 share/nls/en_US.US-ASCII
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
 @dirrmtry lib/enlightenment/modules/uptime/%%E17_ARCH%%
 @dirrmtry lib/enlightenment/modules/uptime
 @dirrmtry lib/enlightenment/modules

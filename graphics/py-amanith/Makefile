@@ -7,6 +7,7 @@
 
 PORTNAME=	amanith
 PORTVERSION=	0.3.34
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://louhi.kempele.fi/~skyostil/projects/pyamanith/dist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

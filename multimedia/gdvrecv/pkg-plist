@@ -8,5 +8,4 @@ share/pixmaps/gdvrecv/camcorder.png
 share/pixmaps/gdvrecv/dv.png
 share/misc/OUI.db
 @dirrm share/pixmaps/gdvrecv
-@dirrm share/pixmaps
 @dirrm %%PYTHON_SITELIBDIR%%/avc_crom

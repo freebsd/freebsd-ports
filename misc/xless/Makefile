@@ -7,6 +7,7 @@
 
 PORTNAME=	xless
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
 		ftp://ftp.cs.berkeley.edu/ucb/people/dglo/xless/

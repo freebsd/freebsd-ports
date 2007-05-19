@@ -7,7 +7,7 @@
 
 PORTNAME=	xpenguins
 PORTVERSION=	2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://xpenguins.seul.org/:xp \
 		http://www.chrisburkert.de/download/unix/:ch

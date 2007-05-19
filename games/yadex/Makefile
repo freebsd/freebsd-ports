@@ -7,6 +7,7 @@
 
 PORTNAME=	yadex
 PORTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.teaser.fr/~amajorel/yadex/ \
 		http://hjem.get2net.dk/RasII/amajorel/yadex/

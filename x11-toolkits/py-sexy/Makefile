@@ -7,6 +7,7 @@
 
 PORTNAME=	sexy
 PORTVERSION=	0.1.9
+PORTREVISION=	1
 DISTVERSIONPREFIX=	python-
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://releases.chipx86.com/libsexy/sexy-python/ CENKES

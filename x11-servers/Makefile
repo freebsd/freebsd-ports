@@ -15,7 +15,6 @@
     SUBDIR += x2vnc
     SUBDIR += x2x
     SUBDIR += xorg-dmx
-    SUBDIR += xorg-fontserver
     SUBDIR += xorg-nestserver
     SUBDIR += xorg-printserver
     SUBDIR += xorg-server

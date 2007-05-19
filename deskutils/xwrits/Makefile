@@ -7,6 +7,7 @@
 
 PORTNAME=	xwrits
 PORTVERSION=	2.24
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lcdf.org/xwrits/
 

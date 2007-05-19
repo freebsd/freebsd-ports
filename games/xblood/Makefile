@@ -7,6 +7,7 @@
 
 PORTNAME=	xblood
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA014157/myfreesoft/
 

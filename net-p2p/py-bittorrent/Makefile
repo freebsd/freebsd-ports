@@ -7,6 +7,7 @@
 
 PORTNAME=	BitTorrent
 PORTVERSION=	4.26.0
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES?=	net-p2p python
 MASTER_SITES=	http://download.bittorrent.com/dl/

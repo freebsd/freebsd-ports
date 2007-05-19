@@ -6,6 +6,7 @@
 
 PORTNAME=	moodin
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://moodwrod.com/files/
 DISTNAME=	ksplash-engine-moodin_${PORTVERSION}

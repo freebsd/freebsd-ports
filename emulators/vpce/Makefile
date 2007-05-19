@@ -7,7 +7,7 @@
 
 PORTNAME=	vpce
 PORTVERSION=	0.3f
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Way/3340/ \
 		http://freebsd.unixfreunde.de/sources/

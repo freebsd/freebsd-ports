@@ -7,6 +7,7 @@
 
 PORTNAME=	linux-realplayer
 DISTVERSION=	10.0.8.805-20060718
+PORTREVISION=	1
 CATEGORIES=	multimedia audio linux
 MASTER_SITES=	https://helixcommunity.org/download.php/2152/:player \
 		http://ftp.nluug.nl/ftp/pub/os/Linux/distr/pardusrepo/sources/:playeralt \

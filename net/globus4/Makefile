@@ -7,7 +7,7 @@
 
 PORTNAME=	globus
 PORTVERSION=	4.0.3
-PORTREVISION=	20060825
+PORTREVISION=	20060826
 CATEGORIES=	net java parallel
 MASTER_SITES=	ftp://ftp.globus.org/pub/gt4/4.0/${PORTVERSION}/%SUBDIR%/src/:installers,updates
 MASTER_SITE_SUBDIR=	installers/:installers updates/:updates

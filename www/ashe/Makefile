@@ -7,6 +7,7 @@
 
 PORTNAME=	ashe
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.cs.rpi.edu/pub/puninj/ASHE/ASHE-1.3/%SUBDIR%/
 MASTER_SITE_SUBDIR=	src libcci libhtmlw-2.7

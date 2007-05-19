@@ -7,6 +7,7 @@
 
 PORTNAME=	libjbigi
 PORTVERSION=	0.6.1.13
+PORTREVISION=	1
 CATEGORIES=	math java
 MASTER_SITES=	http://dev.i2p.net/i2p/
 DISTNAME=	i2p-${PORTVERSION}

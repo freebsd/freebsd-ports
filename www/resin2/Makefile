@@ -7,7 +7,7 @@
 
 PORTNAME=		resin
 PORTVERSION=		2.1.17
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		www java
 MASTER_SITES=		http://www.caucho.com/download/
 

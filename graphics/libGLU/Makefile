@@ -6,27 +6,32 @@
 #
 
 PORTNAME=	libGLU
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	6.5.3
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_XORG}
-MASTER_SITE_SUBDIR=	X11R6.8.1/tars
-DISTNAME=	X11R6.8.1-src1
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	 mesa3d
+DISTNAME=	MesaLib-${PORTVERSION}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	OpenGL utility library
 
-LIB_DEPENDS=	GL.1:${PORTSDIR}/x11/libGL
+CONFLICTS=	XFree86-libraries-* xorg-libraries-6.*
 
-CONFLICTS=	XFree86-libraries-*
+USE_BZIP2=	yes
+USE_LDCONFIG= yes
+USE_GL=		gl
 
-EXTRA_PATCHES=	${CF_PATCHES}
+USE_X_PREFIX=   yes
+WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}/src/glu/sgi
 
-XBUILD_DIRS=	lib/GLU
-INSTALLS_SHLIB=	yes
+ALL_TARGET=	libGLU.so
 
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/include/GL/glu.h ${PREFIX}/include/GL
+post-patch:
+	${CP} ${FILESDIR}/config ${WRKDIR}/Mesa-${PORTVERSION}/configs/current
 
-.include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/libGLU.so.1 ${PREFIX}/lib
+	${LN} -sf libGLU.so.1 ${PREFIX}/lib/libGLU.so
+	${INSTALL_DATA} ${WRKDIR}/Mesa-${PORTVERSION}/include/GL/glu.h ${PREFIX}/include/GL
+
 .include <bsd.port.mk>

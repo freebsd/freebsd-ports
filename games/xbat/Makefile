@@ -7,6 +7,7 @@
 
 PORTNAME=	xbat
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.nemoto.ecei.tohoku.ac.jp/~wai/Xbat/
 DISTNAME=	xev111

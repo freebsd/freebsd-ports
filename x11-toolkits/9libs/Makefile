@@ -7,6 +7,7 @@
 
 PORTNAME=	9libs
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits plan9
 MASTER_SITES=	ftp://ftp.cs.yorku.ca/pub/wily/src/
 

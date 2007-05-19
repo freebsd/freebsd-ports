@@ -8,6 +8,7 @@
 
 PORTNAME=	hackedbox
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://scrudgeware.org/downloads/hackedbox/
 

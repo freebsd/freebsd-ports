@@ -7,7 +7,7 @@
 
 PORTNAME=	glide3
 PORTVERSION=	20020113
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://people.freebsd.org/~anholt/dri/files/
 DISTNAME=	Glide3-FreeBSD-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	z88
 PORTVERSION=	11.0
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.uni-bayreuth.de/pub/uni-bayreuth/LS-CAD/Version11/unix/:srcs \
 		ftp://ftp.uni-bayreuth.de/pub/uni-bayreuth/LS-CAD/Version11/manual//:dcs
@@ -18,7 +19,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A compact Finite Element Analysis System
 
 NO_WRKSUBDIR=	yes
-USE_GL=		yes
+USE_GL=		glu glw
 USE_MOTIF=	yes
 
 #These defaults can be changed in z88.fcd too

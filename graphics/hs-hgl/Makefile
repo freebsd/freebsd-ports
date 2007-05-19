@@ -7,7 +7,7 @@
 
 PORTNAME=	hgl
 PORTVERSION=	2.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics haskell
 MASTER_SITES=	http://haskell.org/graphics/downloads/
 PKGNAMEPREFIX=	hs-
@@ -26,13 +26,14 @@ HGL_LIBS=	${PREFIX}/lib/hugs/x11
 HGL_DOCS=	${PREFIX}/share/doc/hs-hgl
 
 BUILD_WRKSRC=	${WRKSRC}/lib/x11
-MAKE_ENV=	system=FreeBSD \
-		hugs_install=${HGL_LIBS}
+MAKE_ARGS=	system=FreeBSD \
+		hugs_install=${HGL_LIBS} \
+		X_dir=${X11BASE} \
+		CC=${CC}
 ALL_TARGET=	all
 
-.if ${MACHINE_ARCH:L} == "amd64"
-CFLAGS+=	-fPIC
-.endif
+do-build:
+	@cd ${BUILD_WRKSRC}; ${GMAKE} ${MAKE_ARGS}
 
 do-install:
 	${MKDIR} ${HGL_LIBS}
@@ -54,4 +55,10 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO} ''
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${MACHINE_ARCH:L} == "amd64"
+MAKE_ARGS+=	CFLAGS=-fPIC
+.endif
+
+.include <bsd.port.post.mk>

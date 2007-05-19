@@ -7,7 +7,7 @@
 
 PORTNAME=	tvp
 PORTVERSION=	0.9.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games tk82
 MASTER_SITES=	http://www3.sympatico.ca/john.vanderhoek/tim/src/president/
 

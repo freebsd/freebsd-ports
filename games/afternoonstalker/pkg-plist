@@ -15,5 +15,4 @@ share/pixmaps/afternoonstalker.png
 share/applications/afternoonstalker.desktop
 @dirrm share/afternoonstalker/sounds
 @dirrm share/afternoonstalker
-@dirrmtry share/pixmaps
 @dirrmtry share/applications

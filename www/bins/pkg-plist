@@ -414,8 +414,6 @@ share/locale/nl/LC_MESSAGES/bins.mo
 share/locale/pl/LC_MESSAGES/bins.mo
 share/locale/ru/LC_MESSAGES/bins.mo
 share/locale/zh_TW/LC_MESSAGES/bins.mo
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/templates.swigs
 @dirrm %%DATADIR%%/templates.satyap/static

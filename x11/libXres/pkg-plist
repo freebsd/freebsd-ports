@@ -2,5 +2,7 @@ include/X11/extensions/XRes.h
 lib/libXRes.a
 lib/libXRes.la
 lib/libXRes.so
-lib/libXRes.so.0
+lib/libXRes.so.1
 libdata/pkgconfig/xres.pc
+@dirrm share/X11/app-defaults
+@exec mkdir -p %D/share/X11/app-defaults 2>/dev/null

@@ -7,7 +7,7 @@
 
 PORTNAME=	vat
 PORTVERSION=	4.0b2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mbone tk83
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vat/alpha-test/
 DISTFILES=	vatsrc-4.0b2.tar.gz

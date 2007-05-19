@@ -1,0 +1,5 @@
+lib/libXTrap.so.6
+lib/libXTrap.so
+lib/libXTrap.la
+lib/libXTrap.a
+libdata/pkgconfig/xtrap.pc

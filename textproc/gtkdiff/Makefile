@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkdiff
 PORTVERSION=	1.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http:www.alaskaparadise.com/freebsd/
 

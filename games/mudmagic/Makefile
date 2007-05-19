@@ -7,7 +7,7 @@
 
 PORTNAME=	mudmagic
 PORTVERSION=	1.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.mudmagic.com/mud-client/downloads/
 

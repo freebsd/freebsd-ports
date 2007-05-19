@@ -6,6 +6,7 @@
 
 PORTNAME=	ftjava
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	http://www.warpfish.com/davisje/:file1 \
 		http://home.nycap.rr.com/davisje/ftjava/:doc1

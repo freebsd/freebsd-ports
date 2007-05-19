@@ -7,6 +7,7 @@
 
 PORTNAME=	arkpandora
 PORTVERSION=	2.04
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.users.bigpond.net.au/gavindi/
 DISTNAME=	ttf-${PORTNAME}-${PORTVERSION}

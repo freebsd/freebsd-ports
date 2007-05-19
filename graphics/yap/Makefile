@@ -7,7 +7,7 @@
 
 PORTNAME=	yap
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://www.gnustep.it/marko/GPSText/
 DISTNAME=	Yap

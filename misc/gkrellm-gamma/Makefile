@@ -7,7 +7,7 @@
 
 PORTNAME=	gkrellm-gamma
 PORTVERSION=	2.03
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	misc
 MASTER_SITES=	http://www.sweb.cz/tripie/gkrellm/gamma/dist/
 

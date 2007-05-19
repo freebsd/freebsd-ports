@@ -7,6 +7,7 @@
 
 PORTNAME=	xbomber
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/xbomber/
 DISTNAME=	${PORTNAME}.${PORTVERSION}

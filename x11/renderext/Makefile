@@ -7,7 +7,7 @@
 
 PORTNAME=	renderext
 PORTVERSION=	0.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	http://freedesktop.org/~ajax/xlibs-release/
 

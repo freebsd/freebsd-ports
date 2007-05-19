@@ -7,6 +7,7 @@
 
 PORTNAME=	xneur
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	russian
 MASTER_SITES=	http://dists.xneur.ru/release-0.5.0/tgz/ CENKES
 

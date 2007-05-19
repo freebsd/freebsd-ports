@@ -7,6 +7,7 @@
 
 PORTNAME=	pysol
 PORTVERSION=	4.82
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.pysol.org/download/pysol/:source \
 		${MASTER_SITE_LOCAL:S/$/:support/}

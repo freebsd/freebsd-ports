@@ -7,6 +7,7 @@
 
 PORTNAME=	xml2rfc-xxe
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://rtg.ietf.org/~fenner/ietf/
 PKGNAMESUFFIX=	-${XXE_VERSION}

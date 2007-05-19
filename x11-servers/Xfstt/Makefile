@@ -7,6 +7,7 @@
 
 PORTNAME=	xfstt
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	http://download.berlios.de/xfstt/
 

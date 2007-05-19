@@ -6,37 +6,34 @@
 #
 
 PORTNAME=	xorg-printserver
-PORTVERSION=	6.9.0
-PORTREVISION=	2
+PORTVERSION=	1.2.0
+PORTEPOCH=	1
 CATEGORIES=	x11-servers
-MASTER_SITES=	${MASTER_SITE_XORG}
-MASTER_SITE_SUBDIR=	X11R${PORTVERSION}/src
-DISTFILES=	X11R${PORTVERSION}-src1.tar.gz \
-		X11R${PORTVERSION}-src3.tar.gz
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Print server from X.Org
 
 CONFLICTS=	XFree86-PrintServer-*
 
-EXTRA_PATCHES=	${CF_PATCHES} ${SERVER_PATCHES}
+XORG_CAT=	xserver
 
-USE_XLIB=	yes
+LIB_DEPENDS=	drm:${PORTSDIR}/graphics/libdrm
+BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
-XBUILD_DIRS=	lib/font programs/Xserver
-XINCLUDE_DIRS=	lib/xtrans
-XMAN_DIRS=	programs/Xserver
+USE_XORG=	x11 xf86driproto glproto randrproto renderproto fixesproto \
+		damageproto xcmiscproto xextproto xf86miscproto \
+		xf86vidmodeproto xf86bigfontproto scrnsaverproto bigreqsproto \
+		resourceproto fontsproto xf86dgaproto videoproto \
+		compositeproto trapproto recordproto resourceproto \
+		xineramaproto evieproto xkbfile xfont fontenc xkbui \
+		xxf86misc xxf86vm xaw7 xmu xpm xext
 
-# Ensure that we pick up imake's makedepend instead of devel/makedepend
-MAKE_ENV+=	PATH=${X11BASE}/bin:${PATH}
+CONFIGURE_ARGS=	--disable-dmx --disable-xvfb --disable-xorg --disable-xnest \
+		--localstatedir=/var
 
 MAN1=		Xprt.1
 
-.include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
-.include <bsd.port.pre.mk>
-.if ${X_WINDOW_SYSTEM:L} != xorg
-IGNORE=	is part of X.Org and you have ${X_WINDOW_SYSTEM} set for X11\
-	distribution. See The X Window System and Virtual Consoles chapter\
-	of FAQ for more information
-.endif
-.include <bsd.port.post.mk>
+do-install:
+	cd ${WRKSRC}/hw/xprint; ${MAKE} install
+
+.include <bsd.port.mk>

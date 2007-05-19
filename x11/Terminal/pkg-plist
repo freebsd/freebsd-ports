@@ -125,7 +125,6 @@ share/locale/uk/LC_MESSAGES/Terminal.mo
 share/locale/zh_CN/LC_MESSAGES/Terminal.mo
 share/locale/zh_TW/LC_MESSAGES/Terminal.mo
 share/pixmaps/terminal.xpm
-@dirrmtry share/pixmaps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor/24x24/stock/navigation
 @dirrmtry share/icons/hicolor/24x24/stock

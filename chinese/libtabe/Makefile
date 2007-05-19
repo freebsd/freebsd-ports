@@ -7,7 +7,7 @@
 
 PORTNAME=	libtabe
 PORTVERSION=	0.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://cle.linux.org.tw/pub/xcin/cvs/
 

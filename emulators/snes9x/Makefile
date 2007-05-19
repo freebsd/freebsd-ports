@@ -7,7 +7,7 @@
 
 PORTNAME=	snes9x
 PORTVERSION=	1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://files.ipherswipsite.com/snes9x/ \
 		http://www.geocities.co.jp/SiliconValley-PaloAlto/2560/release/ \

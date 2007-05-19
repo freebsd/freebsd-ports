@@ -7,7 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	19.34b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
@@ -32,6 +32,7 @@ USE_GMAKE=	yes
 .if !defined(WITHOUT_X11)
 CONFIGURE_ARGS=	--with-x-toolkit --sharedstatedir=/var/run
 USE_XLIB=	yes
+USE_XORG=	xbitmaps
 .else
 CONFIGURE_ARGS=	--with-x=no --sharedstatedir=/var/run
 .endif

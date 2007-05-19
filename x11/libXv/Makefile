@@ -6,26 +6,35 @@
 #
 
 PORTNAME=	libXv
-PORTVERSION=	2.2.2
+PORTVERSION=	1.0.3
+PORTEPOCH=	1
 CATEGORIES=	x11
-MASTER_SITES=	http://freedesktop.org/~ajax/xlibs-release/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Video Extension library
 
-LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/xext.pc:${PORTSDIR}/x11/libXext
-BUILD_DEPENDS=	${LIB_PC_DEPENDS}
-RUN_DEPENDS=	${LIB_PC_DEPENDS}
+XORG_CAT=	lib
+USE_XORG=	x11 xext xextproto videoproto:both
 
-CONFLICTS=	XFree86-libraries-* xorg-libraries-*
-
-USE_BZIP2=	yes
-PREFIX?=	${X11BASE}
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_GMAKE=	yes
-CFLAGS+=	-DMALLOC_0_RETURNS_NULL
-INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomehack pkgconfig
+MAN3=	Xv.3 \
+	XvFreeAdaptorInfo.3 \
+	XvFreeEncodingInfo.3 \
+	XvGetPortAttribute.3 \
+	XvGetStill.3 \
+	XvGetVideo.3 \
+	XvGrabPort.3 \
+	XvPortNotify.3 \
+	XvPutStill.3 \
+	XvPutVideo.3 \
+	XvQueryAdaptors.3 \
+	XvQueryBestSize.3 \
+	XvQueryEncodings.3 \
+	XvQueryExtension.3 \
+	XvSelectPortNotify.3 \
+	XvSelectVideoNotify.3 \
+	XvSetPortAttribute.3 \
+	XvStopVideo.3 \
+	XvUngrabPort.3 \
+	XvVideoNotify.3
 
 .include <bsd.port.mk>

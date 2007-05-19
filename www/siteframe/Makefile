@@ -7,6 +7,7 @@
 
 PORTNAME=	siteframe
 PORTVERSION=	5.0.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.broadpool.net/pub/siteframe/
 

@@ -15,6 +15,5 @@ share/pixmaps/tremulous.xpm
 %%DATADIR%%/base/maprotation.cfg
 %%DATADIR%%/base/server.cfg
 %%DATADIR%%/base/vms-1.1.0.pk3
-@dirrmtry share/pixmaps
 @dirrm %%DATADIR%%/base
 @dirrm %%DATADIR%%

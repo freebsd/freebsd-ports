@@ -7,6 +7,7 @@
 
 PORTNAME=	wmbattery
 PORTVERSION=	1.21
+PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.kitenet.net/programs/wmbattery/old/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

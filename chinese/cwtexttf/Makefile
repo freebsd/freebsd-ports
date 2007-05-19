@@ -7,6 +7,7 @@
 
 PORTNAME=	cwtexttf
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	http://ftp.wustl.edu/pub/FreeBSD/distfiles/ \
 		http://ftp.jaist.ac.jp/pub/FreeBSD/distfiles/

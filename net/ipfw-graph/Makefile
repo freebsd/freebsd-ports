@@ -7,7 +7,7 @@
 
 PORTNAME=	ipfw-graph
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.mavetju.org/download/
 

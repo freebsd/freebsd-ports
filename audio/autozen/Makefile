@@ -7,7 +7,7 @@
 
 PORTNAME=	autozen
 PORTVERSION=	2.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.springdaemons.com/soft/
 

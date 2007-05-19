@@ -7,6 +7,7 @@
 
 PORTNAME=	qix
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jmz
@@ -16,10 +17,8 @@ COMMENT=	The classic arcade game
 
 BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
 RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
-.if defined(PACKAGE_BUILDING)
-BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT} \
-		${X11BASE}/lib/X11/fonts/misc/8x13O.pcf.gz:${X_FONTS_MISC_PORT}
-.endif
+
+USE_DISPLAY=	yes
 
 .if defined(WITHOUT_X11)
 MAKE_ARGS=	NO_X11=yes

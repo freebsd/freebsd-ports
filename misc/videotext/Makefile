@@ -7,7 +7,7 @@
 
 PORTNAME=	videotext
 PORTVERSION=	0.6.19991029
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://elektra.e-technik.uni-ulm.de/~mbuck/download/
 

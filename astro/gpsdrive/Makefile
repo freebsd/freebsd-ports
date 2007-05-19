@@ -7,7 +7,7 @@
 
 PORTNAME=	gpsdrive
 PORTVERSION=	2.09
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	astro
 MASTER_SITES=	http://www.ganter.at/software/ \
 		http://www.ostertag.name/gpsdrive.de/

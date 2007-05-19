@@ -6,7 +6,7 @@
 #   $MCom: ports/editors/gnome2-office/Makefile,v 1.41 2006/04/12 22:11:33 marcus Exp $
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	editors gnome
 PKGNAMESUFFIX=	-office
 

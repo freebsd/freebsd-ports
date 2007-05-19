@@ -7,6 +7,7 @@
 
 PORTNAME=	kaname12
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
 		http://www.din.or.jp/~storm/fonts/

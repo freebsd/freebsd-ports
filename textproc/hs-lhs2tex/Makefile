@@ -8,6 +8,7 @@
 
 PORTNAME=	lhs2tex
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.informatik.uni-bonn.de/~loeh/${PORTNAME}/
 

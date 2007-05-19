@@ -7,7 +7,7 @@
 
 PORTNAME=	gbe
 PORTVERSION=	0.0.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zophar.net/unix/Files/
 

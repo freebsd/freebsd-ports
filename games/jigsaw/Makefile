@@ -7,6 +7,7 @@
 
 PORTNAME=	gpuzzle
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	games gnustep
 MASTER_SITES=	http://www.gnustep.it/marko/GPuzzle2/
 DISTNAME=	GPuzzle2

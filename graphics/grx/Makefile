@@ -7,6 +7,7 @@
 
 PORTNAME=	grx
 PORTVERSION=	2.4.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://grx.gnu.de/download/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}

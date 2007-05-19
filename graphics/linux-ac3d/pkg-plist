@@ -176,7 +176,6 @@ share/pixmaps/ac3d.png
 %%EXAMPLESDIR%%/tree_transparent.gif
 %%EXAMPLESDIR%%/world.ac
 %%EXAMPLESDIR%%/world.rgb
-@dirrmtry share/pixmaps
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%/tcl/images
 @dirrm %%DATADIR%%/tcl

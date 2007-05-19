@@ -7,6 +7,7 @@
 
 PORTNAME=	pyxfce
 PORTVERSION=	4.4.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits python xfce
 MASTER_SITES=	http://pyxfce.xfce.org/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/

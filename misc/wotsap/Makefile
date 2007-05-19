@@ -8,6 +8,7 @@
 
 PORTNAME=	wotsap
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lysator.liu.se/~jc/wotsap/download/ \
 		http://freebsd.unixfreunde.de/sources/

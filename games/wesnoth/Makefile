@@ -7,6 +7,7 @@
 
 PORTNAME=	wesnoth
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.wesnoth.org/files/

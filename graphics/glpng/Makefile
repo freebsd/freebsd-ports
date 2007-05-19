@@ -7,6 +7,7 @@
 
 PORTNAME=	glpng
 PORTVERSION=	1.45
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.wyatt100.freeserve.co.uk/ \
 		http://www.amdmi3.ru/distfiles/

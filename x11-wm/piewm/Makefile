@@ -7,6 +7,7 @@
 
 PORTNAME=	piewm
 PORTVERSION=	1.04
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.crynwr.com/piewm/
 
@@ -16,6 +17,7 @@ COMMENT=	A tvtwm with pie (circular) menus
 DISABLE_SIZE=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
+USE_XORG=	xbitmaps
 MAN1=		piewm.1
 
 .include <bsd.port.mk>

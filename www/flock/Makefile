@@ -8,7 +8,7 @@
 
 PORTNAME=	flock
 DISTVERSION=	0.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 # http://ftp.osuosl.org/pub/${PORTNAME}/source/${PORTVERSION}/:flock
@@ -89,7 +89,6 @@ pre-install:
 	${ECHO_CMD} 'share/applications/${MOZILLA}.desktop' >> ${PLIST}
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
 	${ECHO_CMD} 'share/pixmaps/${FLOCK_ICON}' >> ${PLIST}
-	${ECHO_CMD} "@dirrmtry share/pixmaps" >> ${PLIST}
 
 do-install:
 	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \

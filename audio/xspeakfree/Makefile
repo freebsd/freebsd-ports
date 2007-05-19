@@ -7,6 +7,7 @@
 
 PORTNAME=	xspeakfree
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	mbone net audio
 MASTER_SITES=	http://www.liquidx.org/distfiles/
 

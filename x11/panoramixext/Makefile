@@ -7,6 +7,7 @@
 
 PORTNAME=	panoramixext
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://freedesktop.org/~ajax/xlibs-release/
 

@@ -17,6 +17,7 @@
 
 PORTNAME=	afni
 PORTVERSION=	2007.04.18.1830
+PORTREVISION=	1
 CATEGORIES=	science biology graphics
 MASTER_SITES=	http://www.neuro.mcw.edu/~bacon/Ports/distfiles/AFNI/${PORTVERSION}/ \
 		http://afni.nimh.nih.gov/pub/dist/tgz/
@@ -40,6 +41,7 @@ RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg \
 BROKEN=	Does not compile on sparc64: "undefined reference to '_mcount'"
 .endif
 
+USE_GL=		glw
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes

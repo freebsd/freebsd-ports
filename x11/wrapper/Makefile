@@ -7,7 +7,7 @@
 
 PORTNAME=	wrapper
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 DISTNAME=	# intentionally left blank
 EXTRACT_SUFX=	# intentionally left blank

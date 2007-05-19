@@ -1,0 +1,3 @@
+bin/xfontsel
+share/X11/app-defaults/XFontSel
+@dirrmtry share/X11/app-defaults

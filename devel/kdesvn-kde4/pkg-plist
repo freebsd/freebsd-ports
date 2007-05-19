@@ -273,8 +273,6 @@ share/services/svn+http.protocol
 share/services/svn+https.protocol
 share/services/svn+ssh.protocol
 share/services/svn.protocol
-@dirrmtry share/locale/es/LC_MESSAGES
-@dirrmtry share/locale/es
 @dirrmtry share/services/kded
 @dirrm share/doc/HTML/en/kdesvn
 @dirrm share/apps/kdesvnpart

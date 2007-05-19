@@ -36,5 +36,4 @@ share/xca/xca-8.html
 share/xca/xca-9.html
 share/xca/xca.html
 @dirrm share/xca
-@dirrmtry share/pixmaps
 @dirrmtry share/applications

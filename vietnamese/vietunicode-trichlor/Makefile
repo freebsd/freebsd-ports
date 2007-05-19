@@ -7,6 +7,7 @@
 
 PORTNAME=	vietunicode-trichlor
 PORTVERSION=	2004.04.30
+PORTREVISION=	1
 CATEGORIES=	vietnamese x11-fonts
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	vietunicode

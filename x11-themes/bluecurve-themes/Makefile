@@ -22,7 +22,7 @@ PORTVERSION=	1.0
 # added to the global section by someone (with the intent of bumping
 # the revisions of the slave ports) and it cannot be removed without
 # causing a version downgrade or using PORTEPOCH.
-PORTREVISION=	3
+PORTREVISION=	4
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
@@ -41,6 +41,7 @@ do-install:	# empty
 .else					# master port
 
 PORTVERSION=	5.0.11
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX:S|$|:fedora|} ${MASTER_SITE_LOCAL:S|$|:local|}
 MASTER_SITE_SUBDIR=	development/source/SRPMS/:fedora jylefort/:local

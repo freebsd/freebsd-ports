@@ -8,6 +8,7 @@
 
 PORTNAME=	gss
 PORTVERSION=	0.0.20
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/ \
 		${MASTER_SITE_GNU_ALPHA}

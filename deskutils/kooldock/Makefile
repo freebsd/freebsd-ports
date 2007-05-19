@@ -7,6 +7,7 @@
 
 PORTNAME=		kooldock
 PORTVERSION=		0.4.6
+PORTREVISION=		1
 CATEGORIES=		deskutils
 MASTER_SITES=		http://www.kde-apps.org/CONTENT/content-files/ \
 			http://www.kde-look.org/CONTENT/content-files/ \

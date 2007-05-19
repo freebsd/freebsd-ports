@@ -7,6 +7,7 @@
 
 PORTNAME=	tkref
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	devel tk82
 MASTER_SITES=	http://gtcs.com/softdist/ \
 		${MASTER_SITE_LOCAL}

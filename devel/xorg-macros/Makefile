@@ -1,0 +1,21 @@
+# New ports collection makefile for:	xorg-macros
+# Date Created:				24 Mar 2007
+# Whom:					Eric Anholt <anholt@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xorg-macros
+PORTVERSION=	1.1.5
+CATEGORIES=	x11
+DISTNAME=	util-macros-$(PORTVERSION)
+
+MAINTAINER=	x11@FreeBSD.org
+COMMENT=	X.Org development aclocal macros
+
+XORG_CAT=	util
+
+PLIST_FILES=	share/aclocal/xorgversion.m4 \
+		share/aclocal/xorg-macros.m4
+
+.include <bsd.port.mk>

@@ -7,6 +7,7 @@
 
 PORTNAME=	wminet
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://mirror2.unixfreunde.de/

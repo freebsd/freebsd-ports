@@ -7,6 +7,7 @@
 
 PORTNAME=	artwiz-ru
 PORTVERSION=	20041031
+PORTREVISION=	1
 CATEGORIES=	russian x11-fonts
 MASTER_SITES=	http://dev.gentoo.org/~sergey/ \
 		${MASTER_SITE_LOCAL}

@@ -7,6 +7,7 @@
 
 PORTNAME=	xtimer
 PORTVERSION=	0.8089
+PORTREVISION=	1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.bsddiary.net/xtimer/
 DISTNAME=	${PORTNAME}-8089

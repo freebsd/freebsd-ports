@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-honoka-plugin-wnn
 PORTVERSION=	0.9.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese
 MASTER_SITES=	http://nop.net-p.org/files/honoka/
 DISTNAME=	honoka-plugin-wnn-${PORTVERSION}

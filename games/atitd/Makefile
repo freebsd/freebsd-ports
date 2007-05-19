@@ -7,7 +7,7 @@
 
 PORTNAME=	atitd
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games graphics linux
 MASTER_SITES=	http://game3.atitd.com/dl/files/
 DISTNAME=	eClient-linux-i686.run

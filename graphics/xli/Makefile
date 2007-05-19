@@ -7,7 +7,7 @@
 
 PORTNAME=	xli
 PORTVERSION=	1.17.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://pantransit.reptiles.org/prog/xli/ \
 		${MASTER_SITE_XCONTRIB}

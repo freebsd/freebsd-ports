@@ -459,8 +459,6 @@ share/xfce4/panel-plugins/orageclock.desktop
 @dirrmtry libexec/xfce4/panel-plugins
 @dirrmtry libexec/xfce4
 @dirrmtry share/applications
-@dirrmtry share/locale/en_AU/LC_MESSAGES
-@dirrmtry share/locale/en_AU
 @dirrm share/orage/doc/C/images
 @dirrm share/orage/doc/C
 @dirrm share/orage/doc

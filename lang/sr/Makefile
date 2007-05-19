@@ -7,6 +7,7 @@
 
 PORTNAME=	sr
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	lang parallel
 MASTER_SITES=	ftp://ftp.uu.net/.vol/1/languages/sr/ \
 		http://www.it.uc3m.es/~ptb/clases/sr/inst/src/ \

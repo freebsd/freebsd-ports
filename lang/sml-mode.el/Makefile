@@ -7,6 +7,7 @@
 
 PORTNAME=	sml-mode
 PORTVERSION=	3.9.5
+PORTREVISION=	1
 CATEGORIES=	lang elisp
 MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/contrib/emacs/ \
 		${MASTER_SITE_LOCAL}

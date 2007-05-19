@@ -234,5 +234,4 @@ share/pixmaps/cream.svg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs-html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/pixmaps
 @dirrmtry share/applications

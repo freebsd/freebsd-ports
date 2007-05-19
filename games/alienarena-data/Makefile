@@ -7,6 +7,7 @@
 
 PORTNAME=	alienarena
 PORTVERSION=	2007.604
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://cor.planetquake.gamespy.com/codered/files/
 PKGNAMESUFFIX=	-data

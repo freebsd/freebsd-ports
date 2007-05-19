@@ -7,6 +7,7 @@
 
 PORTNAME=	xwit
 PORTVERSION=	3.4
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://downloads.planetmirror.com/pub/x11/contrib/utilities/ \
 		http://www.netsw.org/x11/tools/internal/

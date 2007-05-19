@@ -7,7 +7,7 @@
 
 PORTNAME=	awele
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games tk84
 MASTER_SITES=	http://www-air.inria.fr/ftp/Jean-Paul/ \
 		${MASTER_SITE_XCONTRIB}

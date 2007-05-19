@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-sapplug
 DISTVERSION=	0.3f
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://critical.ch/distfiles/ \
 		http://energy.critical.ch/distfiles/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	wmbutton
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://greek0.net/~greek0/wmbutton/
 

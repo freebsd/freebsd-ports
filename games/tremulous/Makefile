@@ -7,7 +7,7 @@
 
 PORTNAME=	tremulous
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S|$|${PORTNAME}/|} \
 		http://0day.icculus.org/mirrors/tremulous/ \

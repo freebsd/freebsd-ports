@@ -7,6 +7,7 @@
 
 PORTNAME=	3dpong
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/3dpong/src/
 

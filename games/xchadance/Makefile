@@ -7,6 +7,7 @@
 
 PORTNAME=	xchadance
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.mk.bsdclub.org/pub/FreeBSD/distfiles/ \
 		${MASTER_SITE_LOCAL}

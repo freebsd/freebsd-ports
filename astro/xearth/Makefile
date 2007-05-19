@@ -7,6 +7,7 @@
 
 PORTNAME=	xearth
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	ftp://cag.lcs.mit.edu/pub/tuna/ \
 		${MASTER_SITE_XCONTRIB:S/$/:xcontrib/} \

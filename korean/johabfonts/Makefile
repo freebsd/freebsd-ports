@@ -7,6 +7,7 @@
 
 PORTNAME=	johabfonts
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	http://hanterm.org/download/font/
 DISTNAME=	hanterm-font-${PORTVERSION}

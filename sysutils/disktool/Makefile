@@ -7,7 +7,7 @@
 
 PORTNAME=	disktool
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ftp.auxio.org/pub/mirrors/step.polymtl.ca/pub/Xview/apps/disktool/
 DISTNAME=	disktool-2.0c

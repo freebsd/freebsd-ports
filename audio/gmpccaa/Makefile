@@ -7,7 +7,7 @@
 
 PORTNAME=	gmpccaa
 PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://download.qballcow.nl/programs/gmpc-0.13/Plugins/
 

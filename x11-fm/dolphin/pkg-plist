@@ -60,8 +60,6 @@ share/locale/he/LC_MESSAGES/dolphin.mo
 share/locale/it/LC_MESSAGES/dolphin.mo
 share/locale/pl/LC_MESSAGES/dolphin.mo
 share/locale/ru/LC_MESSAGES/dolphin.mo
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
 @dirrm share/doc/HTML/en/dolphin
 @dirrm share/apps/dolphin/servicemenus
 @dirrm share/apps/dolphin/icons/hicolor/64x64/actions

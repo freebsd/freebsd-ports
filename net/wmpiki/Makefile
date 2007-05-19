@@ -7,7 +7,7 @@
 
 PORTNAME=	wmpiki
 PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net windowmaker
 MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 		http://freebsd.unixfreunde.de/sources/

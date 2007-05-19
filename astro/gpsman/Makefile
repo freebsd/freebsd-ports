@@ -7,6 +7,7 @@
 
 PORTNAME=	gpsman
 PORTVERSION=	6.3.1
+PORTREVISION=	1
 CATEGORIES=	astro tk84
 MASTER_SITES=	http://www.ncc.up.pt/gpsman/gpsmanhtml/
 MASTER_SITE_SUBDIR=	science/cartography

@@ -1,3 +1,3 @@
-MD5 (libXdamage-1.0.1.tar.bz2) = ee4d344ac70117b6c5d840e543ce5d26
-SHA256 (libXdamage-1.0.1.tar.bz2) = 619a1e03ff74f6ac623a65965431502f75b251d9d015050349eb06bf36214596
-SIZE (libXdamage-1.0.1.tar.bz2) = 182389
+MD5 (xorg/lib/libXdamage-1.1.1.tar.bz2) = ac0ce6b0063a9858c8f24ddb4c60487d
+SHA256 (xorg/lib/libXdamage-1.1.1.tar.bz2) = 0102754db23952a1c3adf7881bbf191f91ca3e3d183e1b0179452bce932fae2e
+SIZE (xorg/lib/libXdamage-1.1.1.tar.bz2) = 201096

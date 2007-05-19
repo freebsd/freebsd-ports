@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 
 COMMENT=	Gstreamer MPEG-2 and MPEG-4 AAC decoder plugin

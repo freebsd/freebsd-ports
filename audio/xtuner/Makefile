@@ -7,6 +7,7 @@
 
 PORTNAME=	xtuner
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/
 DISTNAME=	Xtuner-${PORTVERSION}

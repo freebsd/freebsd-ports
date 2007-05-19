@@ -7,6 +7,7 @@
 
 PORTNAME=	imlib2
 PORTVERSION=	0.1.00
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-

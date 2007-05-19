@@ -7,7 +7,7 @@
 
 PORTNAME=	geki2
 PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://kxl.hn.org/download/ \
 		http://www.mavetju.org/download/adopted/

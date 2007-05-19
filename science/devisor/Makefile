@@ -7,6 +7,7 @@
 
 PORTNAME=	devisor
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	science java
 MASTER_SITES=	http://www.featflow.de/download/
 DISTNAME=	devisor${PORTVERSION}

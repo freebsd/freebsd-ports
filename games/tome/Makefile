@@ -7,6 +7,7 @@
 
 PORTNAME=	tome
 PORTVERSION=	2.3.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://t-o-m-e.net/dl/src/
 DISTNAME=	tome-234-src

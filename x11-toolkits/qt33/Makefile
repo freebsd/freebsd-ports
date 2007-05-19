@@ -8,7 +8,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.3.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	x11-toolkits ipv6
 MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-free-${PORTVERSION}
@@ -56,7 +56,8 @@ EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
 	--exclude '${DISTNAME}/examples' --exclude '${DISTNAME}/tutorial' \
 	--exclude '${DISTNAME}/extensions/nsplugin/src/[^q]*' \
 	--exclude '${DISTNAME}/include/jri*' \
-	--exclude '${DISTNAME}/include/np*'
+	--exclude '${DISTNAME}/include/np*' \
+	--exclude '${DISTNAME}/doc/html/qmake*'
 
 OPTIONS=	CUPS "Enable CUPS support" on \
 		KDE_PATCHES "Apply KDE patches" off \

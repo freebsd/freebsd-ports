@@ -6,7 +6,7 @@
 #    $MCom: ports/audio/gstreamer-plugins-lame80/Makefile,v 1.2 2006/02/23 18:05:32 marcus Exp $
 #
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 
 COMMENT=	Gstreamer mp3 encode plugin

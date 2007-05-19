@@ -7,6 +7,7 @@
 
 PORTNAME=	xripple
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://crydee.sai.msu.ru/zeus/X11/contrib/ \
 		ftp://ftp.cin.nihon-u.ac.jp/pub/X11/enlightenment/misc/ \

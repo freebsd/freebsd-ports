@@ -7,6 +7,7 @@
 
 PORTNAME=	qcad
 PORTVERSION=	2.0.5.0.1
+PORTREVISION=	1
 #PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.ribbonsoft.com/archives/qcad/

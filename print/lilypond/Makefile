@@ -9,7 +9,7 @@
 
 PORTNAME=	lilypond
 PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/:src \
 		http://distfiles.master.finkmirrors.net/:rpm

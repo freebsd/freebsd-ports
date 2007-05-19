@@ -7,6 +7,7 @@
 
 PORTNAME=	gnu-regexp
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	ftp://ftp.tralfamadore.com/pub/java/
 DISTNAME=	gnu.regexp-${PORTVERSION}

@@ -9,7 +9,7 @@
 
 PORTNAME=	august
 PORTVERSION=	0.63b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www editors
 MASTER_SITES=	http://www.bostream.nu/johanb/august/
 DISTNAME=	${PORTNAME}${PORTVERSION}.src

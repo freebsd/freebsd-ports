@@ -7,6 +7,7 @@
 
 PORTNAME=	ical
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	japanese deskutils tk80
 MASTER_SITES=	ftp://ftp.sco.com/skunkware/src/shellutil/ \
 		ftp://ftp.sunet.se/pub/vendor/sco/skunkware/src/shellutil/ \

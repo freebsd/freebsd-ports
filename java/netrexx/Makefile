@@ -7,7 +7,7 @@
 
 PORTNAME=	NetRexx
 PORTVERSION=	2.05
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java lang
 MASTER_SITES=	ftp://ftp.software.ibm.com/software/awdtools/netrexx/
 DISTNAME=	NetRexx

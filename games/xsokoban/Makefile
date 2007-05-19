@@ -7,6 +7,7 @@
 
 PORTNAME=	xsokoban
 PORTVERSION=	3.3c
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.cs.cornell.edu/andru/release/ \
 		ftp://ftp.pmg.lcs.mit.edu/pub/xsokoban/

@@ -7,6 +7,7 @@
 
 PORTNAME=	xmountains
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.epcc.ed.ac.uk/~spb/xmountains/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -17,6 +18,7 @@ COMMENT=	X11 based fractal landscape generator
 NO_WRKSUBDIR=	yes
 
 USE_IMAKE=	yes
+USE_XORG=	xbitmaps
 MAN6=		xmountains.6
 PLIST_FILES=	bin/xmountains
 

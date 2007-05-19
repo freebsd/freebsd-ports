@@ -46,13 +46,3 @@ share/locale/sv/LC_MESSAGES/mail-notification.mo
 @dirrm share/gnome/help/mail-notification/C
 @dirrm share/gnome/help/mail-notification
 @dirrmtry etc/xdg/autostart
-@dirrmtry share/locale/sr/LC_MESSAGES
-@dirrmtry share/locale/sr
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca

@@ -7,6 +7,7 @@
 
 PORTNAME=	lupe
 PORTVERSION=	0.08
+PORTREVISION=	1
 CATEGORIES=	x11 accessibility
 MASTER_SITES=	http://www.oersted.co.jp/~yav/soft/
 DISTNAME=	lupe008	

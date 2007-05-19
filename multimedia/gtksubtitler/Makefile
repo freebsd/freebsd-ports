@@ -7,7 +7,7 @@
 
 PORTNAME=	GTKsubtitler
 PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://matrix.kamp.pl/~pawelb/gtksubtitler/download/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}

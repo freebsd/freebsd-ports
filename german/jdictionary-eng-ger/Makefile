@@ -7,6 +7,7 @@
 
 PORTNAME=	jdictionary-eng-ger
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	german textproc
 DISTNAME=	SmartEngGer-1_4.jar
 

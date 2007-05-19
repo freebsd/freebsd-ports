@@ -7,6 +7,7 @@
 
 PORTNAME=	imaze
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://home.tu-clausthal.de/student/iMaze/files/
 PKGNAMESUFFIX=	-${TOOLKIT}

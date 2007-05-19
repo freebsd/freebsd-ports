@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-nas
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/willem/
 

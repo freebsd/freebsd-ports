@@ -7,6 +7,7 @@
 
 PORTNAME=		xmailwatcher
 PORTVERSION=		1.6
+PORTREVISION=	1
 CATEGORIES=		mail
 MASTER_SITES=		http://www.dcs.ed.ac.uk/home/gdmr/X11/
 DISTNAME=		xmailwatcher

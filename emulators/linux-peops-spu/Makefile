@@ -7,7 +7,7 @@
 
 PORTNAME=	peops-spu
 PORTVERSION=	1.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www.pbernert.com/
 PKGNAMEPREFIX=	linux-

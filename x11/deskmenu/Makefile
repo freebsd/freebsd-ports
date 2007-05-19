@@ -7,7 +7,7 @@
 
 PORTNAME=	deskmenu
 PORTVERSION=	1.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://matt.peterson.org/FreeBSD/ports/ \
 		http://gd.tuwien.ac.at/opsys/linux/gentoo/distfiles/

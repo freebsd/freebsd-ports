@@ -7,6 +7,7 @@
 
 PORTNAME=	mtr
 PORTVERSION=	0.72
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		http://www.mirrors.wiretapped.net/security/network-mapping/mtr/ \

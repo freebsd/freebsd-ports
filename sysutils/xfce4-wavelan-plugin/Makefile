@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-wavelan-plugin
 PORTVERSION=	0.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4

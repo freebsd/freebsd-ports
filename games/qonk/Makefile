@@ -7,6 +7,7 @@
 
 PORTNAME=	qonk
 DISTVERSION=	0.0.2beta1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://anthony.liekens.net/pub/files/
 

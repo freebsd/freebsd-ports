@@ -7,6 +7,7 @@
 
 PORTNAME=	nxml-mode
 PORTVERSION=	${NXML_VER}
+PORTREVISION=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://www.thaiopensource.com/download/
 

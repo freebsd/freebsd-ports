@@ -9,6 +9,7 @@
 
 PORTNAME=	festvox-ogirab
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	audio accessibility
 MASTER_SITES=	${MASTER_SITE_FESTIVAL_OGI}
 DISTNAME=	voice_ogirab_di-2.0

@@ -4,5 +4,3 @@ share/locale/pl/LC_MESSAGES/jggtrans.mo
 @unexec if cmp -s %D/etc/jggtrans.xml.sample %D/etc/jggtrans.xml; then rm -f %D/etc/jggtrans.xml; fi
 etc/jggtrans.xml.sample
 @exec if [ ! -f %D/etc/jggtrans.xml ] ; then cp -p %D/%F %B/jggtrans.xml; fi
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl

@@ -7,6 +7,7 @@
 
 PORTNAME=	pam_authsrv
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.feep.net/pub/software/PAM/pam_authsrv/
 

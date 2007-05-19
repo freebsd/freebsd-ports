@@ -7,6 +7,7 @@
 
 PORTNAME=	tuareg-mode
 PORTVERSION=	1.46.0
+PORTREVISION=	1
 CATEGORIES=	lang elisp
 MASTER_SITES=	http://www-rocq.inria.fr/~acohen/tuareg/mode/
 

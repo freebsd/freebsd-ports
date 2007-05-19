@@ -7,6 +7,7 @@
 
 PORTNAME=	triangle
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://cm.bell-labs.com/netlib/voronoi/
 DISTNAME=	${PORTNAME}

@@ -8,7 +8,7 @@
 
 PORTNAME=	ical
 PORTVERSION=	2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils tk84
 MASTER_SITES=	ftp://ftp.sunet.se/pub/vendor/sco/skunkware/src/shellutil/
 

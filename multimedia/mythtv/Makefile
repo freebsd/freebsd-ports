@@ -8,7 +8,7 @@
 
 PORTNAME=	mythtv
 PORTVERSION=	0.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://chuggalug.clues.com/mythtv/
 DISTNAME=	mythtv-fixes-0.20-13053

@@ -7,6 +7,7 @@
 
 PORTNAME=	wmoldmenu2new
 PORTVERSION=	20020609
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://largo.windowmaker.org/files/
 DISTNAME=	wm-oldmenu2new

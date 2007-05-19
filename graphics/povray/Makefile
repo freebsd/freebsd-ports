@@ -7,6 +7,7 @@
 
 PORTNAME=	povray
 PORTVERSION=	3.6.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.povray.org/pub/povray/%SUBDIR%/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.povray.org/pub/povray/%SUBDIR%/ \

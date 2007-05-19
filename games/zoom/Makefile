@@ -7,6 +7,7 @@
 
 PORTNAME=	zoom
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.logicalshift.co.uk/unix/zoom/
 

@@ -1,3 +1,3 @@
-MD5 (xproto-6.6.2.tar.bz2) = fc419f3028cc2959b979a7e7464105f9
-SHA256 (xproto-6.6.2.tar.bz2) = 9c2bcfad5cd25c7fafcc86adccd14e0b859c444f351b449354c6524963a75e69
-SIZE (xproto-6.6.2.tar.bz2) = 86759
+MD5 (xorg/proto/xproto-7.0.10.tar.bz2) = 2ed80e90992e7455eaac4c3e977ebd01
+SHA256 (xorg/proto/xproto-7.0.10.tar.bz2) = 6d659920262d41e48714184f94ff9cd2608515e0f3d2f074892fe0c048784df4
+SIZE (xorg/proto/xproto-7.0.10.tar.bz2) = 142954

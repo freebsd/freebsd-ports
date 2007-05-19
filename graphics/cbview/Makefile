@@ -7,7 +7,7 @@
 
 PORTNAME=	cbview
 PORTVERSION=	0.06
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://elvine.org/code/cbview/
 

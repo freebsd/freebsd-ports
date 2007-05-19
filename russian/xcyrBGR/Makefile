@@ -7,6 +7,7 @@
 
 PORTNAME=	xcyrBGR
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	russian
 MASTER_SITES=	ftp://ftp.slavof.net/pub/FreeBSD/X11/cyrillic/ \
 		ftp://mail.partners-bg.org/pub/FreeBSD/X11/cyrillic/ \

@@ -8,6 +8,7 @@
 
 PORTNAME=	floatator
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://floatator.cichon.com/download/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	contacts
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://projects.o-hand.com/sources/contacts/ \
 		http://smyru.petronet.pl/freebsd/
