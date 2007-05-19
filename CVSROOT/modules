@@ -12366,6 +12366,7 @@ ports_whois		ports/net/whois
 ports_www	ports/www
 ports_x11	ports/x11
 ports_x11_clocks	ports/x11-clocks
+ports_x11_drivers	ports/x11-drivers
 ports_x11_fm	ports/x11-fm
 ports_x11_fonts	ports/x11-fonts
 ports_x11_servers	ports/x11-servers
