@@ -7,7 +7,7 @@
 
 PORTNAME=	ump
 PORTVERSION=	1.10
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:timidity/} \
 		http://www.geocities.com/SiliconValley/Lab/2826/1-10/:ump \

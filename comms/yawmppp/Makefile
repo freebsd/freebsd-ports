@@ -7,7 +7,7 @@
 
 PORTNAME=	yawmppp
 PORTVERSION=	2.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms windowmaker
 MASTER_SITES=	ftp://ftp.seul.org/pub/yawmppp/
 

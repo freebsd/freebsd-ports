@@ -1,0 +1,6 @@
+lib/libdmx.a
+lib/libdmx.la
+lib/libdmx.so
+lib/libdmx.so.1
+libdata/pkgconfig/dmx.pc
+@dirrmtry include/X11/extensions

@@ -7,7 +7,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math cad parallel
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/
 EXTRACT_SUFX=	-src.tar.gz

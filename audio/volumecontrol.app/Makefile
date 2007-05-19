@@ -7,6 +7,7 @@
 
 PORTNAME=	volumecontrol
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	audio gnustep
 MASTER_SITES=	http://www.linuks.mine.nu/volumecontrol/ \
 		${MASTER_SITE_GNUSTEP_CH}

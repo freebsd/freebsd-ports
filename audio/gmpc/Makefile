@@ -7,6 +7,7 @@
 
 PORTNAME=	gmpc
 PORTVERSION=	0.13.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.qballcow.nl/programs/gmpc-0.13/

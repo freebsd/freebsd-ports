@@ -7,7 +7,7 @@
 
 PORTNAME=	mjpegtools-yuvfilters
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://silicontrip.net/~mark/lavtools/ \
 		${MASTER_SITE_LOCAL}

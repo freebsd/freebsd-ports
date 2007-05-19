@@ -7,6 +7,7 @@
 
 PORTNAME=	oonsoo
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www4.ncsu.edu/~bwmott/www/oonsoo/distributions/

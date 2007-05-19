@@ -6,6 +6,7 @@
 
 PORTNAME=	mambo
 PORTVERSION=	4.6.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://mamboxchange.com/frs/download.php/8290/:source1
 DISTFILES=	${MAMBO_SRC}:source1

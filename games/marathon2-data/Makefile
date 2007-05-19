@@ -7,6 +7,7 @@
 
 PORTNAME=	marathon2-data
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://files3.bungie.org/trilogy/
 DISTNAME=	marathon2

@@ -7,6 +7,7 @@
 
 PORTNAME=	wmupmon
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://j-z-s.com/projects/downloads/
 

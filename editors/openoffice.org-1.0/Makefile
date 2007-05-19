@@ -7,7 +7,7 @@
 
 PORTNAME=	openoffice.org
 PORTVERSION=	1.0.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES+=	editors java
 MASTER_SITES+=	http://openoffice.lunarshells.com/sources/:moz,ru,src,help \
 		ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/1.0.3/:moz,ru,src,help \

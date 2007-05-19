@@ -8,6 +8,7 @@
 
 PORTNAME=	libqglviewer
 PORTVERSION=	2.2.4.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://artis.imag.fr/Members/Gilles.Debunne/QGLViewer/src/
 DISTNAME=	libQGLViewer-${PORTVERSION:R}-${PORTVERSION:E}
@@ -21,6 +22,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/QGLViewer
 
 USE_QT_VER=	3
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
+USE_GL=		yes
 USE_LDCONFIG=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/QGLViewer

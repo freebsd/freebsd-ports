@@ -13,8 +13,6 @@ lib/enlightenment/modules/snow/tree.png
 %%NLS%%share/locale/it/LC_MESSAGES/snow.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/snow.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/snow.mo
-%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fi
 @dirrm lib/enlightenment/modules/snow/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/snow
 @dirrmtry lib/enlightenment/modules

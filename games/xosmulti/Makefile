@@ -7,6 +7,7 @@
 
 PORTNAME=	xosmulti
 PORTVERSION=	1.00
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	flathill
@@ -18,6 +19,7 @@ COMMENT=	A little girl cartoon on the top of the active window
 
 WRKSRC=		${WRKDIR}/xosmulti
 USE_X_PREFIX=	yes
+USE_XORG=	xbitmaps
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xosmulti ${PREFIX}/bin

@@ -7,6 +7,7 @@
 
 PORTNAME=	nesedah
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.roard.com/gnustep/
 PKGNAMEPREFIX=	camaelon-

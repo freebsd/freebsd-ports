@@ -7,7 +7,7 @@
 
 PORTNAME=	epsxe
 PORTVERSION=	1.6.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www.epsxe.com/files/
 PKGNAMEPREFIX=	linux-

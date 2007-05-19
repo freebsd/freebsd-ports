@@ -7,6 +7,7 @@
 
 PORTNAME=	fmsx
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.mavetju.org/download/adopted/:code \
 		http://fms.komkon.org/fMSX/:code \

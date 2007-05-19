@@ -14,4 +14,3 @@ share/pixmaps/jack-rack-icon.png
 @dirrmtry share/applications
 @dirrmtry share/dtds
 @dirrm share/jack-rack
-@dirrmtry share/pixmaps

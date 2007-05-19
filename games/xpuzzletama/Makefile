@@ -7,6 +7,7 @@
 
 PORTNAME=	xpuzzletama
 PORTVERSION=	1.5b
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.hanzubon.org/mirrors/Vine/VinePlus/1.1/JG-0.9.1/sources/ \
 		http://hanzubon.jp/Vine/VinePlus/1.1/JG-0.9.1/sources/ \

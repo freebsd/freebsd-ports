@@ -7,6 +7,7 @@
 
 PORTNAME=	ftgl
 PORTVERSION=	2.12
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://opengl.geek.nz/ftgl/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/([[:digit:]])$/.\1/}

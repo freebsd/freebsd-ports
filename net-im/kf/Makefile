@@ -7,7 +7,7 @@
 
 PORTNAME=	kf
 PORTVERSION=	0.5.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://files.jabberstudio.org/kf/ \
 		http://jabberstudio.rediris.es/kf/ \

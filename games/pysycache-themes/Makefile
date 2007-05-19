@@ -7,6 +7,7 @@
 
 PORTNAME=	themes
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	http://themes.pysycache.free.fr/
 PKGNAMEPREFIX=	pysycache-

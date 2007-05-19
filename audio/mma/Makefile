@@ -7,6 +7,7 @@
 
 PORTNAME=	mma
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mellowood.ca/${PORTNAME}/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/

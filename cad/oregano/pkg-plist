@@ -77,9 +77,3 @@ share/mime/packages/oregano.xml
 @dirrm share/gnome/help/oregano
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/ro
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca

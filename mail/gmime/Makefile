@@ -7,7 +7,7 @@
 
 PORTNAME=	gmime
 PORTVERSION=	1.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/v1.0/
 

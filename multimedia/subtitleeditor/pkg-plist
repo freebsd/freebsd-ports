@@ -24,10 +24,4 @@ share/locale/pl/LC_MESSAGES/subtitleeditor.mo
 share/locale/pt_BR/LC_MESSAGES/subtitleeditor.mo
 share/locale/pt_PT/LC_MESSAGES/subtitleeditor.mo
 @dirrmtry %%DESKTOPDIR%%
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
 @dirrm %%DATADIR%%

@@ -14,5 +14,3 @@ share/themes/Qt/gtk-2.0/gtkrc
 @dirrm share/themes/Qt/gtk-2.0
 @dirrm share/themes/Qt
 @dirrm share/gtk-qt-engine
-@dirrmtry share/locale/nn/LC_MESSAGES
-@dirrmtry share/locale/nn

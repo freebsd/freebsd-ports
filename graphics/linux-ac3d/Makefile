@@ -7,7 +7,7 @@
 
 PORTNAME=	ac3d
 PORTVERSION=	6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://www.ac3d.org/ac3d/download/ \
 		http://freebsd.unixfreunde.de/sources/

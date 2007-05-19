@@ -7,6 +7,7 @@
 
 PORTNAME=	ghostview
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	ghostview
@@ -15,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 front-end for ghostscript, the GNU postscript previewer
 
 USE_IMAKE=	yes
+USE_XORG=	xbitmaps
 MAN1=		ghostview.1
 
 post-install:

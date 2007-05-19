@@ -7,6 +7,7 @@
 
 PORTNAME=	phylip
 PORTVERSION=	3.66
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://evolution.genetics.washington.edu/pub/phylip/ \

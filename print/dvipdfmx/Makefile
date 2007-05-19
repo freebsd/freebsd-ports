@@ -7,6 +7,7 @@
 
 PORTNAME=	dvipdfmx
 PORTVERSION=	20061211
+PORTREVISION=	1
 #PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/release/

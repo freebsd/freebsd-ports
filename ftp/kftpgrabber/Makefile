@@ -6,6 +6,7 @@
 
 PORTNAME=	kftpgrabber
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	ftp kde
 MASTER_SITES=	http://www.kftp.org/uploads/files/
 

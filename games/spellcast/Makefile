@@ -7,6 +7,7 @@
 
 PORTNAME=	spellcast
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.eblong.com/zarf/ftp/
 DISTNAME=	${PORTNAME}

@@ -12,7 +12,3 @@ share/locale/ko/LC_MESSAGES/xmule.mo
 share/locale/pl/LC_MESSAGES/xmule.mo
 share/locale/tr/LC_MESSAGES/xmule.mo
 @dirrmtry share/gnome/locale
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/ko/LC_MESSAGES
-@dirrmtry share/locale/ko

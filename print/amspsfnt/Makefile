@@ -7,7 +7,7 @@
 
 PORTNAME=	amspsfnt
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print x11-fonts
 MASTER_SITES=	ftp://ftp.ams.org/pub/tex/psfonts/ams/
 DISTNAME=	amsps

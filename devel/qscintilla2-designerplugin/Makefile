@@ -6,6 +6,7 @@
 
 PORTNAME=	designerplugin
 PORTVERSION=	20070410
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/Snapshots/QScintilla2/ \
 		http://freebsd.ricin.com/ports/distfiles/

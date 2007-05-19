@@ -7,6 +7,7 @@
 
 PORTNAME=	Image_Color
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	graphics www pear
 
 MAINTAINER=	gerrit.beine@gmx.de

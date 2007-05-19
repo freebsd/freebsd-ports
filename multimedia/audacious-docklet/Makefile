@@ -7,7 +7,7 @@
 
 PORTNAME=	audacious-docklet
 PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://nedudu.hu/downloads/
 

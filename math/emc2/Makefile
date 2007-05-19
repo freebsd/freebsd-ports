@@ -7,7 +7,7 @@
 
 PORTNAME=	emc2
 PORTVERSION=	2.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math science
 MASTER_SITES=	http://www-rocq1.inria.fr/gamma/cdrom/ftp/emc2/
 .if !defined(NOPORTDOCS)

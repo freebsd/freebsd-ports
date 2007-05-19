@@ -7,6 +7,7 @@
 
 PORTNAME=	gant
 PORTVERSION=	0.0.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www0.get-e.org/Themes/E17/_files/ \

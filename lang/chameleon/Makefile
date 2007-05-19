@@ -6,6 +6,7 @@
 
 PORTNAME=	chameleon
 DISTVERSION=	05-07
+PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.comp.nus.edu.sg/~sulzmann/chameleon/download/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	convertall
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://bellz.org/convertall/
 

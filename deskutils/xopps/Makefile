@@ -7,6 +7,7 @@
 
 PORTNAME=	xopps
 PORTVERSION=	1.13
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://cvsup.theplanet.com/distfiles/ \
 		http://dl.droso.net/ports/

@@ -7,6 +7,7 @@
 
 PORTNAME=	newsfeed
 PORTVERSION=	2.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://home.arcor.de/mdoege/newsfeed/ CENKES
 DISTNAME=	NewsFeed-${DISTVERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	wmusic
 PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://home.jtan.com/~john/wmusic/
 

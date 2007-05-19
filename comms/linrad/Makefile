@@ -7,6 +7,7 @@
 
 PORTNAME=	linrad
 PORTVERSION=	2.28
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.nitehawk.com/sm5bsz/linuxdsp/archive/\
 		http://g7rau.demon.co.uk/sm5bsz/linuxdsp/archive/\

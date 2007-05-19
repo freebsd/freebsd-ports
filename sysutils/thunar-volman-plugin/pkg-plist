@@ -9,12 +9,6 @@ share/locale/fr/LC_MESSAGES/thunar-volman.mo
 share/locale/hu/LC_MESSAGES/thunar-volman.mo
 share/locale/pl/LC_MESSAGES/thunar-volman.mo
 share/locale/zh_TW/LC_MESSAGES/thunar-volman.mo
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
 @dirrm share/icons/hicolor/scalable/apps
 @dirrm share/icons/hicolor/scalable
 @dirrm share/icons/hicolor/48x48/apps

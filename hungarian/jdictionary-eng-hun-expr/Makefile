@@ -7,7 +7,7 @@
 
 PORTNAME=	jdictionary-eng-hun-expr
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	hungarian textproc
 DISTNAME=	SmartEngHunExp-1_4.jar
 

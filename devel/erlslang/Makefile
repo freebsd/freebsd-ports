@@ -7,7 +7,7 @@
 
 PORTNAME=	erlslang
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.erlang.org/contrib/ \
 		http://erlang.stacken.kth.se/contrib/ \

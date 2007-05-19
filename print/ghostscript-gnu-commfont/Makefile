@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript-gnu-commfont
 PORTVERSION=	7.07
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty

@@ -7,6 +7,7 @@
 
 PORTNAME=	wmcp
 PORTVERSION=	1.2.8
+PORTREVISION=	1
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	http://web.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
 

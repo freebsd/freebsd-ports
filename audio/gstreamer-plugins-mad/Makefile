@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 
 COMMENT=	Gstreamer mp3 decoder plugin

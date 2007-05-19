@@ -6,7 +6,7 @@
 
 PORTNAME=	latex-arydshln
 PORTVERSION=	1.71.20040831
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
 		${MASTER_SITE_TEX_CTAN}

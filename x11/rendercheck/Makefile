@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	rendercheck
-PORTVERSION=	1.0.3
+PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	x11
-MASTER_SITES=	http://xapps.freedesktop.org/release/
 
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	A small program for testing basic Render extension conformance
 
-USE_XLIB=	yes
-USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
+XORG_CAT=	app
+USE_XORG=	xrender
+
+MAN1=		rendercheck.1
 
 .include <bsd.port.mk>

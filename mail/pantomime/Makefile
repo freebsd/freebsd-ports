@@ -7,7 +7,7 @@
 
 PORTNAME=	pantomime
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail gnustep
 MASTER_SITES=	http://www.collaboration-world.com/pantomime.data/releases/Stable/
 DISTNAME=	Pantomime-${PORTVERSION}pre3

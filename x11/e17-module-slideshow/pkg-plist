@@ -11,8 +11,6 @@ lib/enlightenment/modules/slideshow/slideshow.edj
 %%NLS%%share/locale/it/LC_MESSAGES/slideshow.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/slideshow.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/slideshow.mo
-%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fi
 @dirrm lib/enlightenment/modules/slideshow/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/slideshow
 @dirrmtry lib/enlightenment/modules

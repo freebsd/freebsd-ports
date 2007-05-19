@@ -7,7 +7,7 @@
 
 PORTNAME=	tovid
 PORTVERSION=	0.24
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://download.berlios.de/tovid/
 

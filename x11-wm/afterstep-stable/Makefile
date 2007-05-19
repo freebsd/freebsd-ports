@@ -7,6 +7,7 @@
 
 PORTNAME=	afterstep
 PORTVERSION=	2.2.4
+PORTREVISION=	2
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	ftp://ftp.afterstep.org/stable/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -29,7 +30,7 @@ RUN_DEPENDS=	${X11BASE}/bin/xli:${PORTSDIR}/graphics/xli
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_XPM=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--disable-ascp \

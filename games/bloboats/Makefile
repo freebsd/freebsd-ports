@@ -7,7 +7,7 @@
 
 PORTNAME=	bloboats
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.kapsi.fi/bloboats.dy.fi/ \
 		http://koti.mbnet.fi/makegho/c/blobtrox/ \

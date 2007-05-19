@@ -7,6 +7,7 @@
 
 PORTNAME=	tktray
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits tk84
 MASTER_SITES=	http://www.sw4me.com/ CENKES
 DISTNAME=	${TKPKG}

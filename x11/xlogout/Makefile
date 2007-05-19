@@ -7,6 +7,7 @@
 
 PORTNAME=	xlogout
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.tu-darmstadt.de/pub/X11/other/
 EXTRACT_SUFX=	.tar.Z

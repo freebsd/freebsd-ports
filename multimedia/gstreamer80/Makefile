@@ -8,7 +8,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.8.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/
 PKGNAMESUFFIX=	80

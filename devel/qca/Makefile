@@ -7,6 +7,7 @@
 
 PORTNAME=	qca
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel security
 MASTER_SITES=	http://delta.affinix.com/download/qca/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/qca/

@@ -1,0 +1,5 @@
+lib/libXfontcache.a
+lib/libXfontcache.la
+lib/libXfontcache.so
+lib/libXfontcache.so.1
+libdata/pkgconfig/xfontcache.pc

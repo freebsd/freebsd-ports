@@ -7,7 +7,7 @@
 
 PORTNAME=	atris
 PORTVERSION=	1.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.cs.berkeley.edu/~weimer/atris/
 

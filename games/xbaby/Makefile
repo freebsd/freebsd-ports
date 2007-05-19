@@ -7,6 +7,7 @@
 
 PORTNAME=	xbaby
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://hpux.cs.utah.edu/ftp/hpux/X11/Misc/xbaby-1.2/ \
 		http://hpux.its.tudelft.nl/ftp/hpux/X11/Misc/xbaby-1.2/ \

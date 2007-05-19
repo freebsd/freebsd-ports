@@ -7,6 +7,7 @@
 
 PORTNAME=	picard
 DISTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	https://helixcommunity.org/frs/download.php/2252/
 

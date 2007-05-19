@@ -7,6 +7,7 @@
 
 PORTNAME=	jboss-mailservices
 PORTVERSION=	m1
+PORTREVISION=	1
 CATEGORIES=	mail java
 MASTER_SITES=	http://www.jboss.org/wiki/attach?page=MailServicesMilestoneReleases/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-final

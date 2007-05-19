@@ -7,6 +7,7 @@
 
 PORTNAME=	xhomer
 DISTVERSION=	9-16-06
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://xhomer.isani.org/xhomer/

@@ -10,6 +10,7 @@
 
 PORTNAME=	filtermail
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://home.in.tum.de/baueran/%SUBDIR%/

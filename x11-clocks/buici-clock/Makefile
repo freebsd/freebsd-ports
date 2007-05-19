@@ -7,6 +7,7 @@
 
 PORTNAME=	buici-clock
 PORTVERSION=	0.4.5
+PORTREVISION=	1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	ftp://ftp.buici.com/pub/buici-clock/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

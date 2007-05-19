@@ -9,6 +9,7 @@
 
 PORTNAME=	mxico
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://people.freebsd.org/~maho/mxico/
 

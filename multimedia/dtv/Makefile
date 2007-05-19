@@ -7,6 +7,7 @@
 
 PORTNAME=	dtv
 PORTVERSION=	0.50
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://apollo.backplane.com/FreeBSDPorts/
 
@@ -17,5 +18,8 @@ USE_XLIB=	yes
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 NOT_FOR_ARCHS=	sparc64
+
+post-patch:
+	@${REINPLACE_CMD} 's|^\(LDADD +=.*\)|\1 -lXau -lXdmcp|' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

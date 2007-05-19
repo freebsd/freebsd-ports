@@ -1,3 +1,3 @@
-MD5 (libXcomposite-1.0.1.tar.bz2) = 6d5eb91ab7023fbc5cad3e410fe126df
-SHA256 (libXcomposite-1.0.1.tar.bz2) = ea26fb4714277a9b82dc2c3da37657da2e6ff83c451167a6bed9a9f5cdca71de
-SIZE (libXcomposite-1.0.1.tar.bz2) = 181910
+MD5 (xorg/lib/libXcomposite-0.3.1.tar.bz2) = a80650d660486ea7bb2e5fd84a83799a
+SHA256 (xorg/lib/libXcomposite-0.3.1.tar.bz2) = d42b59d3c38dae5e4fec375d12e56e7a5764ba10e8b8ec70f9ce951fc9cec72b
+SIZE (xorg/lib/libXcomposite-0.3.1.tar.bz2) = 221073

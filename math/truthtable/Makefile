@@ -7,6 +7,7 @@
 
 PORTNAME=	truthtable
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	math java
 MASTER_SITES=	http://www.kinostudios.com/java/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/

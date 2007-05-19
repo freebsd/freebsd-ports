@@ -7,6 +7,7 @@
 
 PORTNAME=	xplore
 PORTVERSION=	1.2a
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.musikwissenschaft.uni-mainz.de/~ag/${PORTNAME}/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	xgalaga
 PORTVERSION=	2.0.34
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://people.FreeBSD.org/~linimon/public_distfiles/
 

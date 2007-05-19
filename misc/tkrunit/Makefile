@@ -7,6 +7,7 @@
 
 PORTNAME=	tkRunIt
 PORTVERSION=	0.94.1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=   http://thaumaturgy.net/~etgold/software/tkRunIt/
 DISTNAME=	tkRunIt-0941

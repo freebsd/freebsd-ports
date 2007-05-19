@@ -1,0 +1,5 @@
+lib/libXss.so.1
+lib/libXss.so
+lib/libXss.la
+lib/libXss.a
+libdata/pkgconfig/xscrnsaver.pc

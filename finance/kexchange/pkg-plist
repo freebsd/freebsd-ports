@@ -28,8 +28,6 @@ share/icons/locolor/16x16/apps/kexchange.png
 share/icons/locolor/32x32/apps/kexchange.png
 share/locale/de/LC_MESSAGES/kexchange.mo
 share/locale/fi/LC_MESSAGES/kexchange.mo
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
 @dirrmtry share/icons/locolor/32x32/apps
 @dirrmtry share/icons/locolor/32x32
 @dirrmtry share/icons/locolor/16x16/apps

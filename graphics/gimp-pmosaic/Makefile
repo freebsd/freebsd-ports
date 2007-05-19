@@ -7,7 +7,7 @@
 
 PORTNAME=	pmosaic
 PORTVERSION=	1.08
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.kirchgessner.net/pub/gimp-1.2/
 PKGNAMEPREFIX=	gimp-

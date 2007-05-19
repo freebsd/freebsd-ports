@@ -7,6 +7,7 @@
 
 PORTNAME=	SoftMaker-Office
 PORTVERSION=	2006
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.softmaker.net/down/
 DISTFILES=	ofb06trial.tgz

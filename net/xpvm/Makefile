@@ -7,6 +7,7 @@
 
 PORTNAME=	xpvm
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.netlib.org/pvm3/xpvm/
 DISTNAME=	XPVM.src.${PORTVERSION}

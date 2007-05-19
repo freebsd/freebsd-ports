@@ -7,6 +7,7 @@
 
 PORTNAME?=	nmap
 PORTVERSION=	${DISTVERSION:L:C/([a-z])[a-z]+/\1/g:C/[^a-z0-9+]+/./g}
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://download.insecure.org/nmap/dist/ \
 		http://www.mirrors.wiretapped.net/security/network-mapping/nmap/ \

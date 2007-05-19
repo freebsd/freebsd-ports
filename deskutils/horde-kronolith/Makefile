@@ -7,7 +7,7 @@
 
 PORTNAME=	kronolith
 PORTVERSION=	2.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils www
 
 MAINTAINER=	beech@alaskaparadise.com

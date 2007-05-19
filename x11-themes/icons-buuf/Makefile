@@ -7,6 +7,7 @@
 
 PORTNAME=	icons-buuf
 PORTVERSION=	1.6r2
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://ic1.deviantart.com/fs12/f/2006/266/9/0/
 DISTNAME=	Buuf_1.6-r2

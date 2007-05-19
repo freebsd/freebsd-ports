@@ -7,6 +7,7 @@
 
 PORTNAME=	wispy-tools
 PORTVERSION=	200609.r1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kismetwireless.net/code/
 DISTNAME=	wispy-tools-2006-09-R1

@@ -513,19 +513,3 @@ share/postgresql/psqlrc.sample
 %%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/pg_dump.mo
 %%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/pgscripts.mo
 %%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/psql.mo
-%%GETTEXT%%@dirrmtry share/locale/cs/LC_MESSAGES
-%%GETTEXT%%@dirrmtry share/locale/cs
-%%GETTEXT%%@dirrmtry share/locale/ko/LC_MESSAGES
-%%GETTEXT%%@dirrmtry share/locale/ko
-%%GETTEXT%%@dirrmtry share/locale/pl/LC_MESSAGES
-%%GETTEXT%%@dirrmtry share/locale/pl
-%%GETTEXT%%@dirrmtry share/locale/ro/LC_MESSAGES
-%%GETTEXT%%@dirrmtry share/locale/ro
-%%GETTEXT%%@dirrmtry share/locale/sk/LC_MESSAGES
-%%GETTEXT%%@dirrmtry share/locale/sk
-%%GETTEXT%%@dirrmtry share/locale/sl/LC_MESSAGES
-%%GETTEXT%%@dirrmtry share/locale/sl
-%%GETTEXT%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
-%%GETTEXT%%@dirrmtry share/locale/zh_CN
-%%GETTEXT%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
-%%GETTEXT%%@dirrmtry share/locale/zh_TW

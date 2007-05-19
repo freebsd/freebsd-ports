@@ -7,7 +7,7 @@
 
 PORTNAME=	automake
 PORTVERSION=	1.4.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
@@ -33,10 +33,6 @@ STRIP=		# none
 post-patch:
 	@${MV} ${WRKSRC}/automake.texi ${WRKSRC}/automake${BUILD_VERSION}.texi
 	@${RM} ${WRKSRC}/*.info* ${WRKSRC}/*.dvi >/dev/null 2>&1 || true
-
-pre-configure:
-	@${REINPLACE_CMD} -i -e "s,%%X11BASE%%,${X11BASE}," \
-		${WRKSRC}/aclocal.in
 
 pre-su-install:
 	@${RM} -fr ${PREFIX}/share/automake${BUILD_VERSION}

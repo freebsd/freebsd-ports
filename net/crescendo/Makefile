@@ -8,7 +8,7 @@
 
 PORTNAME=	crescendo
 PORTVERSION=	1.1.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net gnome
 # Master Site broken
 #MASTER_SITES=	http://crescendo.lyrical.net/files/

@@ -7,6 +7,7 @@
 
 PORTNAME=	gpa
 PORTVERSION=	0.7.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://wald.intevation.org/frs/download.php/324/
 

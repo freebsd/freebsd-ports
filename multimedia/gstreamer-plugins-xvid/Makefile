@@ -6,7 +6,7 @@
 #    $MCom: ports/multimedia/gstreamer-plugins-xvid80/Makefile,v 1.1 2006/01/20 02:56:07 ahze Exp $
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 COMMENT=	Gstreamer xvid plugin

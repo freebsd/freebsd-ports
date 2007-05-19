@@ -6,6 +6,7 @@
 
 PORTNAME=	xquote
 PORTVERSION=	2.6.10
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	http://xinvest.sunsite.dk/ XCONTRIB
 MASTER_SITE_SUBDIR=	applications

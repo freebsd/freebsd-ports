@@ -7,6 +7,7 @@
 
 PORTNAME=	netrek-BRMH
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://ftp.netrek.org/pub/netrek/mirrors/ftp.csua.berkeley.edu.old/netrek/ \
 		

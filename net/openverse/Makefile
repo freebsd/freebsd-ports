@@ -6,7 +6,7 @@
 
 PORTNAME=	OpenVerse
 PORTVERSION=	0.8.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net tcl84 tk84
 MASTER_SITES=	http://www.openverse.com/files/OpenVerse/
 DISTNAME=	${PORTNAME}-0.8-7

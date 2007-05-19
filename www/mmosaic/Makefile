@@ -7,7 +7,7 @@
 
 PORTNAME=	mmosaic
 PORTVERSION=	3.7.2
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.enst.fr/pub/mbone/mMosaic/ \
 		ftp://ftp.uni-koeln.de/net/inet/WWW/mosaic/unix/ \

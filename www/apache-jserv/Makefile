@@ -7,7 +7,7 @@
 
 PORTNAME=	apache-jserv
 PORTVERSION=	1.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www java
 MASTER_SITES=	http://archive.apache.org/dist/java/jserv/
 DISTNAME=	ApacheJServ-${PORTVERSION}

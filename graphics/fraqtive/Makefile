@@ -7,7 +7,7 @@
 
 PORTNAME=	fraqtive
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://fraqtive.mimec.org/files/
 

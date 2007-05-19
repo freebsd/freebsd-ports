@@ -7,6 +7,7 @@
 
 PORTNAME=	metaocaml
 PORTVERSION=	3.09.a30
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.metaocaml.org/dist/old/
 DISTNAME=	MetaOCaml_309_alpha_030

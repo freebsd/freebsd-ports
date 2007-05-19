@@ -7,6 +7,7 @@
 
 PORTNAME=	fcitx
 PORTVERSION=	3.4.2
+PORTREVISION=	1
 CATEGORIES=	chinese x11
 MASTER_SITES=	http://www.fcitx.org/download/ \
 		${MASTER_SITE_LOCAL} \

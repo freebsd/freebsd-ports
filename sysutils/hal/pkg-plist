@@ -136,26 +136,8 @@ share/locale/zh_TW/LC_MESSAGES/hal.mo
 @unexec rm -rf /var/run/hald/hald-local 2>/dev/null || true
 @unexec rm -rf /var/run/hald/hald-runner 2>/dev/null || true
 @unexec rmdir /var/run/hald 2>/dev/null || true
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/uk/LC_MESSAGES
-@dirrmtry share/locale/uk
 @dirrmtry share/locale/sl_SI/LC_MESSAGES
 @dirrmtry share/locale/sl_SI
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/ko/LC_MESSAGES
-@dirrmtry share/locale/ko
 @dirrmtry share/locale/km/LC_MESSAGES
 @dirrmtry share/locale/km
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
 %%MEDIA%%@unexec rmdir /media 2>/dev/null || true

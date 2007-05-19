@@ -6,7 +6,7 @@
 
 PORTNAME=	KrossWordPlayer
 PORTVERSION=	1.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games kde
 MASTER_SITES=	http://home.houston.rr.com/epasveer/
 EXTRACT_SUFX=	.tgz

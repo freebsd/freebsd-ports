@@ -7,6 +7,7 @@
 
 PORTNAME=	gwave
 PORTVERSION=	20060606
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://geda.seul.org/dist/
 

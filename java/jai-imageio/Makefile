@@ -7,6 +7,7 @@
 
 PORTNAME=	jai-imageio
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	java graphics
 MASTER_SITES=	#
 DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION:S/./_/g}-lib-linux-i586

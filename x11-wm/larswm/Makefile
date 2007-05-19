@@ -7,6 +7,7 @@
 
 PORTNAME=	larswm
 PORTVERSION=	7.5.3
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://home.earthlink.net/~lab1701/larswm/
 

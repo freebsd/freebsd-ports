@@ -7,6 +7,7 @@
 
 PORTNAME=	mtools
 PORTVERSION=	3.9.10
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.tux.org/pub/knaff/mtools/  \
 		http://mtools.linux.lu/

@@ -7,6 +7,7 @@
 
 PORTNAME=	bomb
 PORTVERSION=	1.26
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.draves.org/bomb/
 

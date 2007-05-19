@@ -7,6 +7,7 @@
 
 PORTNAME=	ines
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://fms.komkon.org/iNES/
 DISTNAME=	iNES30-FreeBSD-80x86-bin

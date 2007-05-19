@@ -397,7 +397,6 @@ share/locale/vi/LC_MESSAGES/inkscape.mo
 share/locale/zh_CN/LC_MESSAGES/inkscape.mo
 share/locale/zh_TW/LC_MESSAGES/inkscape.mo
 share/pixmaps/inkscape.png
-@dirrmtry share/pixmaps
 @dirrmtry share/locale/en_US@piglatin/LC_MESSAGES
 @dirrmtry share/locale/en_US@piglatin
 @dirrm %%DATADIR%%/ui

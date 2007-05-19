@@ -1,0 +1,3 @@
+bin/xfd
+share/X11/app-defaults/Xfd
+@dirrmtry share/X11/app-defaults

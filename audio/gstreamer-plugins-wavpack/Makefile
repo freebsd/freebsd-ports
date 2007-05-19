@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 
 GST_PLUGIN=	wavpack

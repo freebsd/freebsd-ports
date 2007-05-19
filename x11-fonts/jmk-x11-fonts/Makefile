@@ -7,6 +7,7 @@
 
 PORTNAME=	jmk-x11-fonts
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.jmknoble.net/fonts/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	ifm
 PORTVERSION=	5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games tk84
 MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/ \
 		http://www.ifarchive.org/%SUBDIR%/

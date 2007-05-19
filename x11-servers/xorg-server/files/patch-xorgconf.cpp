@@ -1,5 +1,5 @@
---- programs/Xserver/hw/xfree86/xorgconf.cpp.orig	Fri Dec 31 14:40:27 2004
-+++ programs/Xserver/hw/xfree86/xorgconf.cpp	Fri Dec 31 14:40:28 2004
+--- hw/xfree86/xorgconf.cpp.orig	Fri Dec 31 14:40:27 2004
++++ hw/xfree86/xorgconf.cpp	Fri Dec 31 14:40:28 2004
 @@ -624,3 +624,11 @@
      InputDevice "Keyboard1" "CoreKeyboard"
  EndSection

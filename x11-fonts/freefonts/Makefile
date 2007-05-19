@@ -7,7 +7,7 @@
 
 PORTNAME=	freefonts
 PORTVERSION=	0.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.fh-heilbronn.de/mirrors/ftp.gimp.org/%SUBDIR%/ \

@@ -7,7 +7,7 @@
 
 PORTNAME=	enfle
 PORTVERSION=	20010130
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://enfle.fennel.org/files/stable/
 

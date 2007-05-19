@@ -8,6 +8,7 @@
 
 PORTNAME=	IMP
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 

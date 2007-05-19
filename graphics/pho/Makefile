@@ -7,7 +7,7 @@
 
 PORTNAME=	pho
 DISTVERSION=	0.9.5-pre4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://shallowsky.com/software/pho/
 

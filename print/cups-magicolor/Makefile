@@ -7,6 +7,7 @@
 
 PORTNAME=	cups-magicolor
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://printer.konicaminolta.net/drivers/linux/
 DISTNAME=	2430DL_sc_linux

@@ -7,6 +7,7 @@
 
 PORTNAME=	ascd
 PORTVERSION=	0.13.2
+PORTREVISION=	1
 CATEGORIES=	audio afterstep windowmaker
 MASTER_SITES=	http://worldserver.oleane.com/rsn/Archives/
 DISTFILES=	${DISTNAME}-src.tgz ${DATAFILES}

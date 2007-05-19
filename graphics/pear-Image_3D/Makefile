@@ -7,6 +7,7 @@
 
 PORTNAME=	Image_3D
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	graphics www pear
 
 MAINTAINER=	miwi@FreeBSD.org

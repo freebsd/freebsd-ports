@@ -8,7 +8,7 @@
 
 PORTNAME=	xvattr
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 

@@ -6,6 +6,7 @@
 
 PORTNAME=	xgospel
 PORTVERSION=	1.12d
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.teaser.fr/~jlgailly/
 

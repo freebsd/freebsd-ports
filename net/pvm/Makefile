@@ -7,7 +7,7 @@
 
 PORTNAME=	pvm
 PORTVERSION=	3.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.netlib.org/pvm3/	\
 		ftp://ftp.chg.ru/pub/prog/parallel/pvm3/

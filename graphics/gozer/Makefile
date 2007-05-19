@@ -7,6 +7,7 @@
 
 PORTNAME=	gozer
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 

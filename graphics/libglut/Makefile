@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	libglut
-PORTVERSION=	6.4.2
+PORTVERSION=	6.5.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mesa3d
 DISTNAME=	MesaGLUT-${PORTVERSION}
 
 MAINTAINER=	shaun@FreeBSD.org
-COMMENT=	A graphics library similar to SGI's OpenGL
+COMMENT=	OpenGL utility toolkit
 
 USE_BZIP2=	yes
-INSTALLS_SHLIB=	yes
-USE_GL=		yes
+USE_LDCONFIG=	yes
+USE_GL=		glu
 
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}/src/glut/glx

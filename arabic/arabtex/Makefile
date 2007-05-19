@@ -7,6 +7,7 @@
 
 PORTNAME=	arabtex
 PORTVERSION=	3.11
+PORTREVISION=	1
 CATEGORIES=	arabic print
 MASTER_SITES=	ftp://ftp.informatik.uni-stuttgart.de/pub/${PORTNAME}/
 DISTNAME=	arab${PORTVERSION:S/.//}

@@ -7,6 +7,7 @@
 
 PORTNAME=	urwfonts-ttf
 PORTVERSION=	1.0.7b18
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://ftp.gnome.ru/fonts/urw/release/
 DISTNAME=	urw-fonts-${PORTVERSION:S/b/pre/}-ttf

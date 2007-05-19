@@ -8,7 +8,7 @@
 
 PORTNAME=	libxklavier
 PORTVERSION=	3.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	gswitchit
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An utility library to make XKB stuff easier
+
+RUN_DEPENDS=	xkbcomp:${PORTSDIR}/x11/xkbcomp
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
@@ -25,7 +27,8 @@ USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 CONFIGURE_ARGS=	--disable-doxygen \
-		--with-xkb-base=${X11BASE}/lib/X11/xkb \
+		--with-xkb-base=${X11BASE}/share/X11/xkb \
+		--with-xkb-bin-base=${X11BASE}/bin \
 		--with-xmodmap-base=${LOCALBASE}/share/gnome/xmodmap \
 		--disable-gtk-doc \
 		--with-html-dir=${GNOME_HTML_DIR}

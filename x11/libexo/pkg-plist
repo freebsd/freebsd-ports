@@ -212,6 +212,5 @@ share/xfce4/helpers/xterm.desktop
 @dirrmtry share/xfce4/doc
 @dirrmtry share/xfce4/helpers
 @dirrmtry share/xfce4
-@dirrmtry share/pixmaps
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz

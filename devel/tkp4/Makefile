@@ -7,6 +7,7 @@
 
 PORTNAME=	tkp4
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	devel tk83 tk84
 MASTER_SITES=	http://www.timshel.ca/tkp4/
 

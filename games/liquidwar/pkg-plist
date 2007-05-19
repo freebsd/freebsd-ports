@@ -66,5 +66,4 @@ games/liquidwar
 @dirrm %%DOCSDIR%%
 
 @dirrmtry share/games
-@dirrmtry share/pixmaps
 @dirrmtry share/applications

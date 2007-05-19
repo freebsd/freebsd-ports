@@ -7,7 +7,7 @@
 
 PORTNAME=	chromium
 PORTVERSION=	0.9.12
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://www.reptilelabour.com/software/files/chromium/ \
 		http://www.amdmi3.ru/distfiles/

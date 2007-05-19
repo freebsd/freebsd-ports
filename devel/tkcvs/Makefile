@@ -7,6 +7,7 @@
 
 PORTNAME=	tkcvs
 PORTVERSION=	8.0.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.twobarleycorns.net/ \
 		${MASTER_SITE_SOURCEFORGE}

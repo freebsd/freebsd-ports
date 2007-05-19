@@ -7,7 +7,7 @@
 
 PORTNAME=	aria
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://aria.rednoah.com/storage/sources/
 

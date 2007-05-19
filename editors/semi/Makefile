@@ -7,7 +7,7 @@
 
 PORTNAME=	semi
 PORTVERSION=	${SEMI_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://www.kanji.zinbun.kyoto-u.ac.jp/~tomo/comp/emacsen/lisp/semi/semi-1.14-for-flim-1.14/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}

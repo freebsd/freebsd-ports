@@ -63,8 +63,6 @@ share/locale/tr/LC_MESSAGES/gnubg.mo
 @dirrmtry share/locale/en_US
 @dirrmtry share/locale/en@quot/LC_MESSAGES
 @dirrmtry share/locale/en@quot
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/met

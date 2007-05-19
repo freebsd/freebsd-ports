@@ -7,6 +7,7 @@
 
 PORTNAME=	xspy
 PORTVERSION=	1.0c
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.acm.vt.edu/~jmaxwell/programs/xspy/
 

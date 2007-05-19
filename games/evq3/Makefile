@@ -7,6 +7,7 @@
 
 PORTNAME=	evq3
 PORTVERSION=	1.0a
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://evolution.quakedev.com/dev/final/
 DISTNAME=	${PORTNAME}-final-src

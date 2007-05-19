@@ -7,6 +7,7 @@
 
 PORTNAME=	last.fm
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://static.last.fm/client/Linux/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src

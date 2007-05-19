@@ -138,4 +138,3 @@ share/pixmaps/xqf_48x48_2.png
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
-@dirrmtry share/pixmaps

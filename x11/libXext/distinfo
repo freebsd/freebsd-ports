@@ -1,3 +1,3 @@
-MD5 (libXext-6.4.3.tar.bz2) = b7117194e69867905da9701dff56f3ee
-SHA256 (libXext-6.4.3.tar.bz2) = 04e6ed9b13b215814db0713c02f9f33d38e7761ffb9d80c637fa18d8e39dfb56
-SIZE (libXext-6.4.3.tar.bz2) = 216253
+MD5 (xorg/lib/libXext-1.0.3.tar.bz2) = 1bf6fa1c26f9957d7cc0bd90b038dfa6
+SHA256 (xorg/lib/libXext-1.0.3.tar.bz2) = 2d706baf206d1cb422c8e0ceb6c5a8546bc3f0587cf090eba51e75a295d9c3f0
+SIZE (xorg/lib/libXext-1.0.3.tar.bz2) = 262116

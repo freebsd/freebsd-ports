@@ -7,6 +7,7 @@
 
 PORTNAME=	ppantsfonts
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://cus.org.uk/~dom/distfiles/ppants-fonts/
 DISTNAME=	${PORTNAME}-default-${PORTVERSION}

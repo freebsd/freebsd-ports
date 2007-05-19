@@ -7,7 +7,7 @@
 
 PORTNAME=	emiclock
 PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://download.vector.co.jp/pack/unix/personal/tokei/
 

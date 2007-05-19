@@ -7,6 +7,7 @@
 
 PORTNAME=	kvirc
 PORTVERSION=	3.2.6
+PORTREVISION=	1
 CATEGORIES=	irc kde
 MASTER_SITES=	ftp://ftp.kvirc.ru/pub/source/dev/
 PKGNAMESUFFIX=	-devel

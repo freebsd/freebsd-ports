@@ -7,6 +7,7 @@
 
 PORTNAME=	latex-tipa
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.braml.org/
 DISTNAME=	tipa-${PORTVERSION}

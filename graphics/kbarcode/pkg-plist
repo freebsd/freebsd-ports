@@ -35,11 +35,5 @@ share/locale/pl/LC_MESSAGES/kbarcode.mo
 share/locale/sv/LC_MESSAGES/kbarcode.mo
 share/locale/tr/LC_MESSAGES/kbarcode.mo
 share/services/kfile_kbarcode.desktop
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
 @dirrm share/apps/kbarcode
 @dirrmtry share/applications/kde

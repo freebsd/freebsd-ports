@@ -8,6 +8,7 @@
 
 PORTNAME=	cairo
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://cairographics.org/releases/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}

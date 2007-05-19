@@ -1,0 +1,7 @@
+include/GL/internal/dri_interface.h
+include/X11/dri/xf86dri.h
+include/X11/dri/xf86dristr.h
+libdata/pkgconfig/xf86driproto.pc
+@dirrm include/X11/dri
+@dirrmtry include/GL/internal
+@dirrmtry include/GL

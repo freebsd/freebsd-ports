@@ -9,6 +9,7 @@
 
 PORTNAME=	festogi-spanish
 PORTVERSION=	2.0.1
+PORTREVISION=	1
 CATEGORIES=	audio accessibility spanish
 MASTER_SITES=	${MASTER_SITE_NETBSD}
 DISTNAME=	OGIspanish-${PORTVERSION}

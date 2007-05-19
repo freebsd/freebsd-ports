@@ -7,6 +7,7 @@
 
 PORTNAME=	xyagamo
 PORTVERSION=	0.1b
+PORTREVISION=	1
 CATEGORIES=	japanese games
 MASTER_SITES=	http://www.dokidoki.ne.jp/home2/shinmaru/mahjong/
 

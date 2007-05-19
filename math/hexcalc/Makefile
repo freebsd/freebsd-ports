@@ -7,6 +7,7 @@
 
 PORTNAME=	hexcalc
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://aixpdslib.seas.ucla.edu/pub/hexcalc/RISC/3.2/src/
 DISTNAME=	${PORTNAME}

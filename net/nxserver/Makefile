@@ -7,6 +7,7 @@
 
 PORTNAME=	nxserver
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${URL}/:X11 \
 		${URL}/:agent \

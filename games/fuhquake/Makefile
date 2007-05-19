@@ -7,7 +7,7 @@
 
 PORTNAME=	fuhquake
 PORTVERSION=	0.31
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.fuhquake.net/files/releases/v${PORTVERSION}/ \
 		ftp://gibbage.mine.nu/clients/fuhquake/releases/v${PORTVERSION}/ \

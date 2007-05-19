@@ -7,6 +7,7 @@
 
 PORTNAME=	jalview
 PORTVERSION=	2.07
+PORTREVISION=	1
 CATEGORIES=	biology java
 MASTER_SITES=	http://www.jalview.org/source/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/}

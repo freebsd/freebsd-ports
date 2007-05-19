@@ -7,6 +7,7 @@
 
 PORTNAME=	elmar-fonts
 PORTVERSION=	3.3
+PORTREVISION=	1
 CATEGORIES=	hebrew x11-fonts
 MASTER_SITES=	ftp://ftp.elmar.co.il/Portable/fonts/
 DISTNAME=	H.fonts

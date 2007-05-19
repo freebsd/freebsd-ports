@@ -7,8 +7,6 @@ lib/enlightenment/modules/flame/module.edj
 %%NLS%%share/locale/fi/LC_MESSAGES/flame.mo
 %%NLS%%share/locale/it/LC_MESSAGES/flame.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/flame.mo
-%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fi
 @dirrm lib/enlightenment/modules/flame/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/flame
 @dirrmtry lib/enlightenment/modules

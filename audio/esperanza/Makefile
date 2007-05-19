@@ -7,6 +7,7 @@
 
 PORTNAME=	esperanza
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://xmms2.xmms.se/~tru/esperanza/0.2/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	dokuwiki
 PORTVERSION=	${DIST_VER:S/${PORTNAME}//:S/-//g}
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/chinsan \
 		http://dev.splitbrain.org/browse/snapshots/

@@ -7,6 +7,7 @@
 
 PORTNAME=	gsbench
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	benchmarks gnustep
 MASTER_SITES=	http://www.nice.ch/~phip/
 DISTNAME=	GSBench-${PORTVERSION}

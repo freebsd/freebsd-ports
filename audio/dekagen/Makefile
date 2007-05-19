@@ -7,6 +7,7 @@
 
 PORTNAME=	dekagen
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.ibiblio.org/pub/linux/apps/sound/convert/
 

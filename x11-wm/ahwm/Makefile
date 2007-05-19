@@ -8,6 +8,7 @@
 
 PORTNAME=	ahwm
 PORTVERSION=	0.90
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://people.cs.uchicago.edu/~ahiorean/ahwm/
 

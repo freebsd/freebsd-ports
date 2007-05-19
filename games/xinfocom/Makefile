@@ -7,6 +7,7 @@
 
 PORTNAME=	xinfocom
 PORTVERSION=	1.8m
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.gmd.de/if-archive/infocom/interpreters/itf/

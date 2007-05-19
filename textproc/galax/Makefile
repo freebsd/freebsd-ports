@@ -7,7 +7,7 @@
 
 PORTNAME=	galax
 PORTVERSION=	0.3.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://db.bell-labs.com/galax/Downloads/
 

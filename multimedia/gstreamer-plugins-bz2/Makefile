@@ -5,7 +5,7 @@
 # $FreeBSD$
 #    $MCom: ports/multimedia/gstreamer-plugins-bz2/Makefile,v 1.2 2006/07/06 19:32:35 ahze Exp $
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 COMMENT=	Gstreamer bz2 plugin

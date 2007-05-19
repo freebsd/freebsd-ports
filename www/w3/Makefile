@@ -7,6 +7,7 @@
 
 PORTNAME=	w3
 PORTVERSION=	2.2.26
+PORTREVISION=	1
 CATEGORIES+=	www elisp
 MASTER_SITES=	http://fresh.t-systems-sfr.com/unix/src/www/
 

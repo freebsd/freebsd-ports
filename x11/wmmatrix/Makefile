@@ -7,7 +7,7 @@
 
 PORTNAME=	wmmatrix
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://www.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
 DISTNAME=	wmMatrix-${PORTVERSION}

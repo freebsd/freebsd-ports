@@ -7,7 +7,7 @@
 
 PORTNAME=	pongix
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.losersjuegos.com.ar/juegos/pongix/descargas/
 

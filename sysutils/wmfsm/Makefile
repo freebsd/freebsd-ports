@@ -7,6 +7,7 @@
 
 PORTNAME=	wmfsm
 PORTVERSION=	0.34
+PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.cs.ubc.ca/~cmg/
 

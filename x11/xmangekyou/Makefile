@@ -7,7 +7,7 @@
 
 PORTNAME=	xmangekyou
 PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA014157/myfreesoft/ \
 		ftp://ftp.vector.co.jp/pack/unix/art/anime/

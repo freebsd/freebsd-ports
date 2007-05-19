@@ -7,6 +7,7 @@
 
 PORTNAME=	mgopen
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.ellak.gr/fonts/mgopen/files/
 DISTNAME=	MgOpen

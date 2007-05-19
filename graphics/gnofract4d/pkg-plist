@@ -635,7 +635,6 @@ share/gnome/help/gnofract4d/C/tutorial002.xml
 share/gnome/help/gnofract4d/C/tutorial003.xml
 share/mime/packages/gnofract4d-mime.xml
 share/pixmaps/gnofract4d-logo.png
-@dirrmtry share/pixmaps
 @dirrm share/gnome/help/gnofract4d/C/figures
 @dirrm share/gnome/help/gnofract4d/C
 @dirrm share/gnome/help/gnofract4d

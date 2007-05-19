@@ -1,3 +1,5 @@
 lib/libXp.a
+lib/libXp.la
 lib/libXp.so
 lib/libXp.so.6
+libdata/pkgconfig/xp.pc

@@ -7,7 +7,7 @@
 
 PORTNAME=	xincluder
 PORTVERSION=	1.0.d11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc java
 MASTER_SITES=	ftp://ftp.ibiblio.org/pub/languages/java/javafaq/
 DISTNAME=	${PORTNAME}-1.0d11

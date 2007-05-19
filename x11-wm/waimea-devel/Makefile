@@ -7,6 +7,7 @@
 
 PORTNAME=	waimea
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://dev.gentoo.org/~nixphoeni/ \
 		${MASTER_SITE_LOCAL}

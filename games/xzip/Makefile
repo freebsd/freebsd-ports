@@ -7,6 +7,7 @@
 
 PORTNAME=	xzip
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/infocom/interpreters/zip/ \
 	ftp://www.plover.net/if-archive/infocom/interpreters/zip/ \

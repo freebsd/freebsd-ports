@@ -7,6 +7,7 @@
 
 PORTNAME=	vcg
 PORTVERSION=	1.30
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/graphics/vcg/
 DISTNAME=	${PORTNAME}.20050204

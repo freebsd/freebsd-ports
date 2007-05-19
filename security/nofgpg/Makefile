@@ -8,7 +8,7 @@
 
 PORTNAME=	nofgpg
 PORTVERSION=	0.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security python
 MASTER_SITES=	http://www.cgabriel.org/download/nofgpg/
 

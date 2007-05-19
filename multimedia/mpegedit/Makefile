@@ -7,6 +7,7 @@
 
 PORTNAME=	mpegedit
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.netsw.org/graphic/movie/mpeg/mpegedit/
 DISTNAME=	${PORTNAME}_v${PORTVERSION}

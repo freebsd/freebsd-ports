@@ -1,0 +1,7 @@
+include/GL/gl.h
+include/GL/glext.h
+include/GL/glx.h
+include/GL/glxext.h
+lib/libGL.so
+lib/libGL.so.1
+@dirrmtry include/GL

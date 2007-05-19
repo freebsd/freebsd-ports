@@ -4,6 +4,4 @@ bin/elmoconf.pl
 %%DATADIR%%/tutorial
 %%NLS%%share/locale/de/LC_MESSAGES/elmo.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/elmo.mo
-%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pl
 @dirrm %%DATADIR%%

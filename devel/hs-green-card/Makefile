@@ -7,7 +7,7 @@
 
 PORTNAME=	green-card
 PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://haskell.org/greencard/downloads/
 PKGNAMEPREFIX=	hs-

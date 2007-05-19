@@ -5,6 +5,7 @@
 
 PORTNAME=	ooo-build
 PORTVERSION=	${OOOBUILD_VERSION}
+PORTREVISION=	1
 MASTER_SITES+=	http://www.go-ooo.org/packages/OOE680/ \
 		http://www.go-ooo.org/packages/SRC680/ \
 		http://www.openclipart.org/downloads/0.18/:openclipart \

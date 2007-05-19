@@ -7,6 +7,7 @@
 
 PORTNAME=	vietunicode-hannom
 PORTVERSION=	2005.02.06
+PORTREVISION=	1
 CATEGORIES=	vietnamese x11-fonts
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	vietunicode

@@ -7,7 +7,7 @@
 
 PORTNAME=	vvv
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.inf.ufes.br/~thomas/graphics/vvv/ \
 		${MASTER_SITE_LOCAL}

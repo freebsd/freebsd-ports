@@ -8,7 +8,7 @@
 
 PORTNAME=	images
 PORTVERSION=	2.2
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/caml-light/bazar-ocaml/

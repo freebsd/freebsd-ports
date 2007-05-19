@@ -8,6 +8,7 @@
 
 PORTNAME=	camlidl
 PORTVERSION=	1.05
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/bazar-ocaml/
 PKGNAMEPREFIX=	ocaml-

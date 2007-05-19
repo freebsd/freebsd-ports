@@ -7,6 +7,7 @@
 
 PORTNAME=	vgba
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://fms.komkon.org/VGBA/
 PKGNAMESUFFIX=	-bin

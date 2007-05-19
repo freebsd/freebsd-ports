@@ -7,7 +7,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.7.13
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	ftp://ftp.mozilla-japan.org/pub/mozilla/mozilla-japan/mozilla/releases/${PORTVERSION}/ \
@@ -21,7 +21,7 @@ COMMENT=	Mozilla Japanese Language Pack (JLP)
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/${MOZILLA}/regxpcom:${PORTSDIR}/www/${MOZILLA}
 RUN_DEPENDS=	${MOZILLA}:${PORTSDIR}/www/${MOZILLA} \
-		${PKG_DBDIR}/ja-alias-fonts-1.0:${PORTSDIR}/japanese/alias-fonts
+		ja-alias-fonts>=1.0:${PORTSDIR}/japanese/alias-fonts
 
 WRKSRC=		${WRKDIR}/bin
 

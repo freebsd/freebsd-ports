@@ -6,34 +6,13 @@
 #
 
 PORTNAME=	libXdmcp
-PORTVERSION=	0.1.3
+PORTVERSION=	1.0.2
 CATEGORIES=	x11
-MASTER_SITES=	http://freedesktop.org/~ajax/xlibs-release/:fdo \
-		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	anholt/:local
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:fdo \
-		Wraphelp2.gz:local
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Display Manager Control Protocol library
 
-LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto
-BUILD_DEPENDS=	${LIB_PC_DEPENDS}
-RUN_DEPENDS=	${LIB_PC_DEPENDS}
-
-CONFLICTS=	XFree86-libraries-* xorg-libraries-*
-
-USE_AUTOTOOLS=	libtool:15
-USE_BZIP2=	yes
-PREFIX?=	${X11BASE}
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomehack pkgconfig
-
-post-extract:
-	${GUNZIP_CMD} -c ${DISTDIR}/Wraphelp2.gz > ${WRKSRC}/Wraphelp.c
+XORG_CAT=	lib
+USE_XORG=	xproto
 
 .include <bsd.port.mk>

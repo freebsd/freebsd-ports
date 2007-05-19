@@ -7,6 +7,7 @@
 
 PORTNAME=	fkiss
 PORTVERSION=	0.33a
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.oersted.co.jp/~yav/soft/fkiss/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/a//}

@@ -7,6 +7,7 @@
 
 PORTNAME=	sharefonts
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/fonts/
 

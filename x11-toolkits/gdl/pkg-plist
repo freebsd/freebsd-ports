@@ -60,30 +60,10 @@ share/locale/sr@Latn/LC_MESSAGES/gdl-1.mo
 share/locale/sv/LC_MESSAGES/gdl-1.mo
 share/locale/vi/LC_MESSAGES/gdl-1.mo
 share/locale/zh_CN/LC_MESSAGES/gdl-1.mo
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/sr/LC_MESSAGES
-@dirrmtry share/locale/sr
-@dirrmtry share/locale/sk/LC_MESSAGES
-@dirrmtry share/locale/sk
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/ne/LC_MESSAGES
-@dirrmtry share/locale/ne
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
 @dirrm share/gnome/gdl/glade
 @dirrm share/gnome/gdl
 @dirrm include/libgdl-1.0/gdl

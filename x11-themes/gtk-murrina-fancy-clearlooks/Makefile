@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk-murrina-fancy-clearlooks
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://home.planet.nl/~bassa052/themes/
 DISTNAME=	MurrinaFancyClearlooks_v${PORTVERSION}

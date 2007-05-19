@@ -7,6 +7,7 @@
 
 PORTNAME=	wmcdplay
 PORTVERSION=	1.0b1
+PORTREVISION=	1
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Vista/2471/files/
 DISTNAME=	wmcdplay-1.0-beta1

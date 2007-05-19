@@ -7,6 +7,7 @@
 
 PORTNAME=	tkinfo
 PORTVERSION=	2.8
+PORTREVISION=	1
 CATEGORIES=	misc tk84
 MASTER_SITES=	http://math-www.uni-paderborn.de/~axel/tkinfo/
 

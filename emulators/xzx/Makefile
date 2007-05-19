@@ -7,6 +7,7 @@
 
 PORTNAME=	xzx
 PORTVERSION=	4.6
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://mitglied.lycos.de/suppentops123/spectrum/xzx/
 DISTNAME=	${PORTNAME}-pro-${PORTVERSION}

@@ -1,3 +1,3 @@
-MD5 (libXrandr-1.0.2.tar.bz2) = 82dcb782307f708ba0155bd952168796
-SHA256 (libXrandr-1.0.2.tar.bz2) = c0f1b4474ac1d6f42a5e9ab5295b3bc8ea184158f119f9d28b60b23fc611f2b6
-SIZE (libXrandr-1.0.2.tar.bz2) = 187231
+MD5 (xorg/lib/libXrandr-1.2.1.tar.bz2) = 5860360f5b038cc728f388f875ce525d
+SHA256 (xorg/lib/libXrandr-1.2.1.tar.bz2) = 2d2df642eb8e0527936cdf4ed1c096f69df53e9b95e2532c8ed0cabd06a45407
+SIZE (xorg/lib/libXrandr-1.2.1.tar.bz2) = 220679

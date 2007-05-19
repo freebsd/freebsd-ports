@@ -6,6 +6,7 @@
 
 PORTNAME=	antlrworks
 PORTVERSION=	1.0b9
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.antlr.org/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

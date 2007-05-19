@@ -6,6 +6,7 @@
 
 PORTNAME=	pronto
 PORTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://muhri.net/pronto/
 

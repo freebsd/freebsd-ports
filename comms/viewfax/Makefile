@@ -7,6 +7,7 @@
 
 PORTNAME=	viewfax
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.ping.de/pub/unix/ \
 		ftp://ftp.leo.org/historic/comp/os/unix/networking/mgetty/

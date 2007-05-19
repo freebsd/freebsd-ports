@@ -7,7 +7,7 @@
 
 PORTNAME=	velocity
 PORTVERSION=	0.1.0b
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.jarrodkoehler.com/velocity/
 DISTNAME=	velocity-0.1.0beta

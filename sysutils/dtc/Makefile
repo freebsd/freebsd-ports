@@ -7,7 +7,7 @@
 
 PORTNAME=	dtc
 PORTVERSION=	0.24.6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.gplhost.com/pub/dtc/bsd/
 

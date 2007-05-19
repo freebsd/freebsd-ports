@@ -7,6 +7,7 @@
 
 PORTNAME=	relate
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	mbone
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/relate-ui/${PORTVERSION}/
 

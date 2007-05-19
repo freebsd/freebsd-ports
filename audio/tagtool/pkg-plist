@@ -37,10 +37,6 @@ share/locale/ua/LC_MESSAGES/tagtool.mo
 @dirrm %%DATADIR%%
 @dirrmtry share/locale/ua/LC_MESSAGES
 @dirrmtry share/locale/ua
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor/48x48/apps

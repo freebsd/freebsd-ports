@@ -7,6 +7,7 @@
 
 PORTNAME=	FuzzyOcr
 DISTVERSION=	3.4.2
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://users.own-hero.net/~decoder/${PORTNAME:L}/	\
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/

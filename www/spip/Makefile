@@ -7,6 +7,7 @@
 
 PORTNAME=	spip
 PORTVERSION=	1.8.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.spip.net/spip-dev/DISTRIB/ \
 		http://trac.rezo.net/files/spip/

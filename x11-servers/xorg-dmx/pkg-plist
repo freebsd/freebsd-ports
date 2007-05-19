@@ -1,0 +1,12 @@
+bin/Xdmx
+bin/dmxaddinput
+bin/dmxaddscreen
+bin/dmxreconfig
+bin/dmxresize
+bin/dmxrminput
+bin/dmxrmscreen
+bin/dmxtodmx
+bin/dmxwininfo
+bin/vdltodmx
+bin/xdmx
+bin/xdmxconfig

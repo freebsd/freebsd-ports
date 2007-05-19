@@ -577,23 +577,5 @@ share/mime/video/x-theora+ogg.xml
 @unexec rmdir %%X11BASE%%/share/mime/application 2>/dev/null || true
 @unexec [ -f %%X11BASE%%/share/mime/mime.cache ] && rm -f %%X11BASE%%/share/mime/mime.cache || true
 @unexec rmdir %%X11BASE%%/share/mime 2>/dev/null || true
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/uk/LC_MESSAGES
-@dirrmtry share/locale/uk
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/nn/LC_MESSAGES
-@dirrmtry share/locale/nn
-@dirrmtry share/locale/ko/LC_MESSAGES
-@dirrmtry share/locale/ko
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs

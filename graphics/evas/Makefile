@@ -7,7 +7,7 @@
 
 PORTNAME=	evas
 PORTVERSION=	20070223
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/

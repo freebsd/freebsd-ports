@@ -7,6 +7,7 @@
 
 PORTNAME=	xmagv
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.vector.co.jp/pack/unix/art/graphics/loader/mag/
 DISTFILES=	xmagv111.tgz

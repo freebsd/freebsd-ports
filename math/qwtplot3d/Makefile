@@ -8,7 +8,7 @@
 
 PORTNAME=	qwtplot3d
 PORTVERSION=	0.2.6
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,6 +20,8 @@ COMMENT=	A 3D plotting widget for scientific data and mathematical expressions
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 USE_QT_VER=	3
+USE_XLIB=	yes
+USE_GL=		yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ENV=	QTDIR=${QT_PREFIX}
 USE_LDCONFIG=	yes

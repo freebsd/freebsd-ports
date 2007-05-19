@@ -7,6 +7,7 @@
 
 PORTNAME=	org-mode.el
 PORTVERSION=	4.64
+PORTREVISION=	1
 CATEGORIES=	deskutils elisp
 MASTER_SITES=	http://staff.science.uva.nl/~dominik/Tools/org/ \
 		http://web.student.chalmers.se/~kaiw/FreeBSD/disfiles/

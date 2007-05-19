@@ -141,7 +141,6 @@ share/pixmaps/xvidcap.png
 %%DATADIR%%/xvidcap.png
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
-@dirrm share/pixmaps
 @dirrm share/omf/xvidcap
 @dirrm share/omf
 @dirrm share/gnome/help/xvidcap/it/figures

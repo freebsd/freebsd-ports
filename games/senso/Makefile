@@ -7,6 +7,7 @@
 
 PORTNAME=	senso
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.v-i-t.de/mirkos_hp/pub/
 EXTRACT_SUFX=	.py

@@ -7,6 +7,7 @@
 
 PORTNAME=	9wm
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm plan9
 MASTER_SITES=	http://www.isc.org/sources/X/window-managers/
 

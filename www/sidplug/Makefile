@@ -7,6 +7,7 @@
 
 PORTNAME=	sidplug
 PORTVERSION=	1.1.5
+PORTREVISION=	1
 CATEGORIES=	www audio
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
 EXTRACT_SUFX=	.tgz

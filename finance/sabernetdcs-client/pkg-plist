@@ -102,7 +102,6 @@ share/pixmaps/sndcs.png
 %%PYTHON_SITELIBDIR%%/sndcs_common/__init__.py
 %%PYTHON_SITELIBDIR%%/sndcs_common/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sndcs_common/__init__.pyo
-@dirrmtry share/pixmaps
 @dirrm etc/sndcs
 @dirrm %%PYTHON_SITELIBDIR%%/sndcs_common
 @dirrm %%PYTHON_SITELIBDIR%%/sndcs_client/gtk

@@ -8,7 +8,7 @@
 
 PORTNAME=	race
 PORTVERSION=	0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	ftp://users.freebsd.org.uk/pub/foobar2k/
 

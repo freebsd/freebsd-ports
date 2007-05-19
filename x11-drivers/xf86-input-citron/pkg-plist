@@ -1,0 +1,5 @@
+lib/xorg/modules/input/citron_drv.la
+lib/xorg/modules/input/citron_drv.so
+@dirrmtry lib/xorg/modules/input
+@dirrmtry lib/xorg/modules
+@dirrmtry lib/xorg

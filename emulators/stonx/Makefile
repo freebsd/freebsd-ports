@@ -7,6 +7,7 @@
 
 PORTNAME=	stonx
 PORTVERSION=	0.6.7e
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.complang.tuwien.ac.at/pub/nino/stonx-current/
 DISTNAME=	STonX-0.6.7-epsilon

@@ -7,7 +7,7 @@
 
 PORTNAME=	xarchon
 PORTVERSION=	0.50
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.seul.org/pub/xarchon/ \
 		http://xarchon.seul.org/

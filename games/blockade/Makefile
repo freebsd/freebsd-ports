@@ -7,6 +7,7 @@
 
 PORTNAME=	blockade
 PORTVERSION=	1.00
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.geocities.com/TimesSquare/Zone/5267/
 DISTFILES=	blockade-1_00-linux.tar.gz

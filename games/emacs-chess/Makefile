@@ -7,6 +7,7 @@
 
 PORTNAME=		emacs-chess
 PORTVERSION=		2.0b5
+PORTREVISION=	1
 CATEGORIES=		games elisp
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
 			http://dryice.name/computer/FreeBSD/distfiles/

@@ -7,7 +7,7 @@
 
 PORTNAME=	fontEncodings
 PORTVERSION=	4.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR= ${PORTVERSION}
@@ -19,7 +19,7 @@ COMMENT=	XFree86-4 font encoding files
 
 BUILD_DEPENDS=	ucs2any:${PORTSDIR}/x11/XFree86-4-clients
 
-CONFLICTS=	xorg-fonts-encodings-*
+CONFLICTS=	encodings-*
 
 USE_IMAKE=		YES
 PROJECTROOT=		-DProjectRoot=${PREFIX}

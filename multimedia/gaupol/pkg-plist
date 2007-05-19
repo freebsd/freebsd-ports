@@ -399,7 +399,3 @@ share/locale/sv/LC_MESSAGES/gaupol.mo
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
-@dirrmtry share/locale/sv/LC_MESSAGES
-@dirrmtry share/locale/sv

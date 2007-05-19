@@ -71,4 +71,3 @@ share/pixmaps/xlog/xlog.xpm
 @dirrmtry share/applications
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
-@dirrmtry share/pixmaps

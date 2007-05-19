@@ -7,6 +7,7 @@
 
 PORTNAME=	lightning
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	mail deskutils
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	calendar/${PORTNAME}/releases/${DISTVERSION}/source
@@ -74,7 +75,6 @@ port-pre-install:
 pre-install:
 	${ECHO_CMD} 'share/applications/${MOZILLA}.desktop' >> ${PLIST}
 	${ECHO_CMD} 'share/pixmaps/${MOZILLA_ICON}' >> ${PLIST}
-	${ECHO_CMD} "@dirrmtry share/pixmaps" >> ${PLIST}
 	${ECHO_CMD} '@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}' >> ${PLIST}
 
 do-install:

@@ -7,6 +7,7 @@
 
 PORTNAME=	tv_grab_au
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.onlinetractorparts.com.au/rohbags/xmltvau/
 # DISTNAME=	${PORTNAME}-${PORTVERSION}

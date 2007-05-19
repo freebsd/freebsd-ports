@@ -7,7 +7,7 @@
 
 PORTNAME=	wmShutdown
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://mirror2.unixfreunde.de/

@@ -6,7 +6,7 @@
 
 PORTNAME=	wmtop
 PORTVERSION=	0.84
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://ftp1.sourceforge.net/wmtop/ \
 		${MASTER_SITE_SOURCEFORGE}

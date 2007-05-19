@@ -7,7 +7,7 @@
 
 PORTNAME=	nice_menus
 DISTVERSION=	${DRUPAL_VERSION}
-PORTREVISION=	20060811
+PORTREVISION=	20060812
 CATEGORIES=	www security
 MASTER_SITE=	http://ftp.osuosl.org/pub/drupal/files/projects/
 

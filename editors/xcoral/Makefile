@@ -7,6 +7,7 @@
 
 PORTNAME=	xcoral
 PORTVERSION=	3.46
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://xcoral.free.fr/
 

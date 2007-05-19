@@ -7,6 +7,7 @@
 
 PORTNAME=	ntuttf
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	chinese x11-fonts
 MASTER_SITES=	ftp://cle.linux.org.tw/pub/fonts/ttf/unicode/ntu/ \
 		ftp://freebsd.sinica.edu.tw/pub/statue/ntuttf/

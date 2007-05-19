@@ -7,6 +7,7 @@
 
 PORTNAME=	xhime
 PORTVERSION=	1.51
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.tcp-ip.or.jp/~shochan/linux/
 DISTFILES=	xhime151.tgz

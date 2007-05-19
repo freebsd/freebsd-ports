@@ -7,10 +7,11 @@
 
 PORTNAME=	xcolorsel
 PORTVERSION=	1.1a
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
-DISTNAME=	${PKGNAME}-src
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X utility to translate rgb values into X color names

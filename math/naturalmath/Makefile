@@ -7,6 +7,7 @@
 
 PORTNAME=	naturalmath
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.math.missouri.edu/~stephen/naturalmath/
 

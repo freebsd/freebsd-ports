@@ -7,6 +7,7 @@
 
 PORTNAME=	xmail
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
@@ -17,6 +18,7 @@ COMMENT=	An X-based interface to the Berkeley mail program
 
 USE_IMAKE=	yes
 USE_XPM=	yes
+USE_XORG=	xbitmaps
 MAN1=		xmail.1
 
 .include <bsd.port.mk>

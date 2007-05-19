@@ -7,7 +7,7 @@
 
 PORTNAME=	okle
 PORTVERSION=	0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://okle.sourceforge.net/
 

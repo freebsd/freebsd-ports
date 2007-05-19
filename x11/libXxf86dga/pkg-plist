@@ -1,0 +1,6 @@
+lib/libXxf86dga.a
+lib/libXxf86dga.la
+lib/libXxf86dga.so
+lib/libXxf86dga.so.1
+libdata/pkgconfig/xxf86dga.pc
+@dirrmtry include/X11/extensions

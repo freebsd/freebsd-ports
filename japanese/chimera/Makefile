@@ -7,6 +7,7 @@
 
 PORTNAME=	chimera
 PORTVERSION=	1.70p1
+PORTREVISION=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	ftp://ftp.cs.unlv.edu/pub/chimera/
 DISTNAME=	${PORTNAME}-${PREV_VERSION}

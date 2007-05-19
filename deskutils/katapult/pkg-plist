@@ -68,12 +68,6 @@ share/servicetypes/katapultdisplay.desktop
 @dirrmtry share/services
 @dirrmtry share/nls/en_US.US-ASCII
 @dirrmtry share/nls/POSIX
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor/64x64/apps

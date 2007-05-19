@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-musepack
 PORTVERSION=	1.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://dl.slik.org/musepack/
 

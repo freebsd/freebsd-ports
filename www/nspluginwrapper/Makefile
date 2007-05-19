@@ -7,6 +7,7 @@
 
 PORTNAME=	nspluginwrapper
 PORTVERSION=	0.9.91.4
+PORTREVISION=	1
 CATEGORIES=	www linux emulators
 MASTER_SITES=	http://gwenole.beauchesne.info/projects/nspluginwrapper/files/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${RPMFILE}

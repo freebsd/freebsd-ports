@@ -8,6 +8,7 @@
 
 PORTNAME=	sunbird
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
@@ -61,7 +62,6 @@ post-patch:
 pre-install:
 	${ECHO_CMD} 'share/applications/sunbird.desktop' >> ${PLIST}
 	${ECHO_CMD} 'share/pixmaps/${SUNBIRD_ICON}' >> ${PLIST}
-	${ECHO_CMD} "@dirrmtry share/pixmaps" >> ${PLIST}
 	${ECHO_CMD} '@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}' >> ${PLIST}
 	${ECHO_CMD} '@dirrmtry lib/sunbird/plugins' >> ${PLIST}
 	${ECHO_CMD} '@dirrmtry lib/sunbird' >> ${PLIST}

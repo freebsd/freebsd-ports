@@ -8,6 +8,7 @@
 
 PORTNAME=	magicpoint
 PORTVERSION=	1.11b
+PORTREVISION=	1
 CATEGORIES?=	misc
 MASTER_SITES=	ftp://sh.wide.ad.jp/WIDE/free-ware/mgp/
 

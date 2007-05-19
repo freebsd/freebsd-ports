@@ -7,6 +7,7 @@
 
 PORTNAME=	GimpUserManual
 PORTVERSION=	2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://kefk.net/Open_Source/FS/GIMP/Download/GUM/ \
 		http://ftp.nluug.nl/ftp/graphics/gimp/manual/

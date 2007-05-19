@@ -7,6 +7,7 @@
 
 PORTNAME=	xfsm
 PORTVERSION=	1.99
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/status/xstatus
@@ -16,6 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X File System Monitor
 
 USE_IMAKE=	yes
+USE_XORG=	xbitmaps
 MAKE_ARGS=	CC="${CC}" CCOPTIONS="-DFreeBSD"
 MAN1=		xfsm.1
 PLIST_FILES=	bin/xfsm

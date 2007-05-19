@@ -6,7 +6,7 @@
 #    $MCom: ports/audio/gstreamer-plugins-mikmod80/Makefile,v 1.2 2006/02/23 18:05:33 marcus Exp $
 #
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 
 COMMENT=	Gstreamer mikmod sound plugin

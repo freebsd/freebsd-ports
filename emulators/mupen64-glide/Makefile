@@ -7,7 +7,7 @@
 
 PORTNAME=	mupen64
 PORTVERSION=	0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	emulators
 MASTER_SITES=	http://mupen64.emulation64.com/files/0.4/
 PKGNAMESUFFIX=	-glide
@@ -23,6 +23,7 @@ USE_GMAKE=	yes
 USE_SDL=	sdl
 USE_GNOME=	gtk12
 USE_XLIB=	yes
+USE_GL=		yes
 USE_GCC=	3.4
 ONLY_FOR_ARCHS=	i386
 

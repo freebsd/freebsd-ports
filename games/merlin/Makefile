@@ -7,6 +7,7 @@
 
 PORTNAME=	merlin
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.doc.ic.ac.uk/~np2/software/download/
 DISTNAME=	${PORTNAME}

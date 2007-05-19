@@ -1,0 +1,6 @@
+lib/libXxf86misc.a
+lib/libXxf86misc.la
+lib/libXxf86misc.so
+lib/libXxf86misc.so.1
+libdata/pkgconfig/xxf86misc.pc
+@dirrmtry include/X11/extensions

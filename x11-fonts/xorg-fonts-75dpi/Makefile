@@ -6,34 +6,35 @@
 #
 
 PORTNAME=	xorg-fonts-75dpi
-PORTVERSION=	6.9.0
-PORTREVISION=	1
+PORTVERSION=	7.2
 CATEGORIES=	x11-fonts
-MASTER_SITES=	${MASTER_SITE_XORG}
-MASTER_SITE_SUBDIR=	X11R${PORTVERSION}/src
-DISTNAME=	X11R${PORTVERSION}-src1
+MASTER_SITES=	# none
+DISTFILES=	# none
+EXTRACT_ONLY=	# none
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org 75dpi bitmap fonts
 
-BUILD_DEPENDS=	ucs2any:${PORTSDIR}/x11/xorg-clients
-RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/encodings/encodings.dir:${PORTSDIR}/x11-fonts/xorg-fonts-encodings
+RUN_DEPENDS=	${FONTDIR}/75dpi/courB08.pcf.gz:${PORTSDIR}/x11-fonts/font-adobe-75dpi \
+		${FONTDIR}/75dpi/UTBI__10.pcf.gz:${PORTSDIR}/x11-fonts/font-adobe-utopia-75dpi \
+		${FONTDIR}/75dpi/luBIS08.pcf.gz:${PORTSDIR}/x11-fonts/font-bh-75dpi \
+		${FONTDIR}/75dpi/lutBS08.pcf.gz:${PORTSDIR}/x11-fonts/font-bh-lucidatypewriter-75dpi \
+		${FONTDIR}/75dpi/charB08.pcf.gz:${PORTSDIR}/x11-fonts/font-bitstream-75dpi \
+		${FONTDIR}/encodings/encodings.dir:${PORTSDIR}/x11-fonts/encodings
 
 CONFLICTS=	XFree86-font75dpi-*
 
-EXTRA_PATCHES=	${CF_PATCHES}
+NO_BUILD=	# none
+FONTDIR=	${X11BASE}/lib/X11/fonts
 
-XBUILD_DIRS=	fonts/encodings fonts/bdf/75dpi
-XINSTALL_DIRS=	fonts/bdf/75dpi
+do-install:	# empty
 
-post-install:
-	@command fc-cache -v ${PREFIX}/lib/X11/fonts/75dpi || true
-
-.include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
 .include <bsd.port.pre.mk>
+
 .if ${X_WINDOW_SYSTEM:L} != xorg
 IGNORE=	is part of X.Org and you have ${X_WINDOW_SYSTEM} set for X11\
 	distribution. See The X Window System and Virtual Consoles chapter\
 	of FAQ for more information
 .endif
+
 .include <bsd.port.post.mk>

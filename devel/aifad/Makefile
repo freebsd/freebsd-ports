@@ -8,7 +8,7 @@
 
 PORTNAME=	aifad
 PORTVERSION=	1.0.27
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml.info/ocaml_sources/
 

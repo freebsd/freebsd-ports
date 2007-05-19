@@ -9,7 +9,6 @@ share/pixmaps/linsmith/Makefile.am~
 share/pixmaps/linsmith/smith4.png
 share/pixmaps/linsmith/smithent.png
 @dirrm share/pixmaps/linsmith
-@dirrmtry share/pixmaps
 %%DATADIR%%/6-1.circ
 %%DATADIR%%/6-1.load
 %%DATADIR%%/6-4.circ

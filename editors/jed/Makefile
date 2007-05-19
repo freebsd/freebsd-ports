@@ -7,6 +7,7 @@
 
 PORTNAME=	jed
 PORTVERSION=	0.99.18
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/jed/v${PORTVERSION:R}/ \
 		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/jed/v${PORTVERSION:R}/ \

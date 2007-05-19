@@ -7,7 +7,7 @@
 
 PORTNAME=	crystality
 PORTVERSION=	0.92
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GENTOO} \
 		http://jkp-se.lunar-linux.org/lunar/cache/

@@ -7,6 +7,7 @@
 
 PORTNAME=	vtwm
 PORTVERSION=	5.4.7
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.vtwm.org/downloads/
 

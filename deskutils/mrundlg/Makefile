@@ -7,6 +7,7 @@
 
 PORTNAME=	mrundlg
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://matt.sixxgate.com/files/
 

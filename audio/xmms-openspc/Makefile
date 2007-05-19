@@ -7,7 +7,7 @@
 
 PORTNAME=	openspc
 PORTVERSION=	0.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://critical.ch/distfiles/ \
 		http://energy.critical.ch/distfiles/

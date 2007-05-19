@@ -7,7 +7,7 @@
 
 PORTNAME=	gftp
 PORTVERSION=	2.0.18
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	http://gftp.seul.org/ \
 		ftp://gftp.seul.org/pub/gftp/

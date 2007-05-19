@@ -7,6 +7,7 @@
 
 PORTNAME=	flightgear-aircrafts
 PORTVERSION=	20060812
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Aircraft/ \
 		ftp://ftp.de.flightgear.org/pub/fgfs/Aircraft/ \

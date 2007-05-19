@@ -7,7 +7,7 @@
 
 PORTNAME=	wmthemeinstall
 PORTVERSION=	0.62
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.jeremias.net/wmthemeinstall/download/
 

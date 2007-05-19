@@ -7,6 +7,7 @@
 
 PORTNAME=	t3d
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.jwdt.com/~paysan/
 DISTNAME=	t3d

@@ -7,6 +7,7 @@
 
 PORTNAME=	xtypo
 PORTVERSION=	1.02
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.intec.co.jp/pub/utils/
 

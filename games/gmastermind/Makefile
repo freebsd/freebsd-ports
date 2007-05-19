@@ -7,6 +7,7 @@
 
 PORTNAME=	gmastermind
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	games gnustep
 MASTER_SITES=	http://www.gnustep.it/marko/GMastermind/
 DISTNAME=	GMastermind2

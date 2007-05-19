@@ -27,5 +27,3 @@ lib/liblinmpluginsftp.so.0
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%NLS%%share/locale/ko/LC_MESSAGES/linm_euckr.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/linm_utf8.mo
-%%NLS%%@dirrmtry share/locale/ko/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ko

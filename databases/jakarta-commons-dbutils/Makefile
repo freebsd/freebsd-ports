@@ -7,6 +7,7 @@
 
 PORTNAME=	commons-dbutils
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	commons/dbutils/source

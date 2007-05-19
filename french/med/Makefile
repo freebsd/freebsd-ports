@@ -7,7 +7,7 @@
 
 PORTNAME=	med
 PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	french science
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 

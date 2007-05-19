@@ -7,6 +7,7 @@
 
 PORTNAME=	${UPPORTNAME:L}
 PORTVERSION=	4.01
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	opentaxsolver
@@ -16,6 +17,7 @@ MAINTAINER=	jhein@timing.com
 COMMENT=	US tax prep software
 
 USE_XLIB=	yes
+USE_GL=		yes
 UPPORTNAME=	OpenTaxSolver
 
 post-patch:

@@ -7,6 +7,7 @@
 
 PORTNAME=	viewer
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	graphics java
 MASTER_SITES=	http://downloads.tonicsystems.com/viewer/
 PKGNAMEPREFIX=	tonicpoint-

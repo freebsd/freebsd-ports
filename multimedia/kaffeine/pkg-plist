@@ -146,6 +146,4 @@ share/servicetypes/kaffeineaudioencoder.desktop
 @dirrmtry share/apps/konqueror
 @dirrmtry share/locale/km/LC_MESSAGES
 @dirrmtry share/locale/km
-@dirrmtry share/locale/uz/LC_MESSAGES
-@dirrmtry share/locale/uz
 %%NOGSTREAMER%%@dirrm share/apps/gstreamerpart

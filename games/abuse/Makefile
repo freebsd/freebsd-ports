@@ -7,7 +7,7 @@
 
 PORTNAME=	abuse
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://www.labyrinth.net.au/~trandor/abuse/files/
 DISTFILES=	abuse_datafiles.tar.gz

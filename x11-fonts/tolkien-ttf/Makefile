@@ -7,6 +7,7 @@
 
 PORTNAME=	tolkien-ttf
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.northernstorm.org/distfiles/
 

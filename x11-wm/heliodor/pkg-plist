@@ -1,0 +1,8 @@
+@comment $FreeBSD$
+bin/heliodor
+@cwd %%WINDOWSETTINGSDATADIR%%
+share/gnome/wm-properties/beryl.desktop
+@cwd %%WINDOWSETTINGSLIBDIR%%
+window-manager-settings/libberyl.a
+window-manager-settings/libberyl.la
+window-manager-settings/libberyl.so

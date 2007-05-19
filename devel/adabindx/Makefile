@@ -7,6 +7,7 @@
 
 PORTNAME=	adabindx
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://home.arcor.de/hfvogt/
 

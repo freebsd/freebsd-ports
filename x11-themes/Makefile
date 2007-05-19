@@ -40,6 +40,7 @@
     SUBDIR += e17-theme-night_bling
     SUBDIR += e17-theme-simply_white
     SUBDIR += engradient
+    SUBDIR += emerald-themes
     SUBDIR += enlightenment-theme-BlueSteel
     SUBDIR += enlightenment-theme-BrushedMetal-Tigert
     SUBDIR += enlightenment-theme-Ganymede
@@ -189,6 +190,7 @@
     SUBDIR += thinice
     SUBDIR += ubuntulooks
     SUBDIR += whistlerk
+    SUBDIR += xcursor-themes
     SUBDIR += xenophilia
     SUBDIR += xenostep
     SUBDIR += xmms-bluecurve-theme

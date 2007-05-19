@@ -7,7 +7,7 @@
 
 PORTNAME=	koctave3
 PORTVERSION=	0.65
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math kde
 MASTER_SITES=	http://lehmann.in-berlin.de/bsd/
 

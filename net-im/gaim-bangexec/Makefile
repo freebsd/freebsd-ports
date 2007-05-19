@@ -7,7 +7,7 @@
 
 PORTNAME=	bangexec
 PORTVERSION=	1.3.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-im
 MASTER_SITES=	http://thefnords.googlepages.com/
 PKGNAMEPREFIX=	gaim-

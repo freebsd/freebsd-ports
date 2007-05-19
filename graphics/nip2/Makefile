@@ -7,7 +7,7 @@
 
 PORTNAME=	nip2
 PORTVERSION=	7.10.21
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/vips-7.10/
 

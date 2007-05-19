@@ -7,7 +7,7 @@
 
 PORTNAME=	automake
 PORTVERSION=	1.5
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -35,8 +35,7 @@ post-patch:
 		${MV} automake.texi automake${BUILD_VERSION}.texi && \
 		${REINPLACE_CMD} -E 's,(automake)\.(info),\1${BUILD_VERSION}\.\2,g' automake${BUILD_VERSION}.texi && \
 		${REINPLACE_CMD} -E 's,(automake)\.(info|texi),\1${BUILD_VERSION}\.\2,g' Makefile.in  && \
-		${REINPLACE_CMD} -e 's,%%BUILD_VERSION%%,${BUILD_VERSION},g; \
-				     s,%%X11BASE%%,${X11BASE},g' aclocal.in \
+		${REINPLACE_CMD} -e 's,%%BUILD_VERSION%%,${BUILD_VERSION},g' aclocal.in \
 	)
 
 pre-su-install:

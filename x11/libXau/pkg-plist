@@ -3,4 +3,5 @@ lib/libXau.a
 lib/libXau.la
 lib/libXau.so
 lib/libXau.so.0
+lib/libXau.so.6
 libdata/pkgconfig/xau.pc

@@ -7,6 +7,7 @@
 
 PORTNAME=	xeyes+
 PORTVERSION=	2.02
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.asahi-net.or.jp/~fj9y-ynym/
 DISTNAME=	${PORTNAME}${PORTVERSION}

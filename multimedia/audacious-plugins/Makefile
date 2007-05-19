@@ -7,6 +7,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://static.audacious-media-player.org/release/
 EXTRACT_SUFX=	.tgz

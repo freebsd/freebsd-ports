@@ -6,6 +6,7 @@
 
 PORTNAME=	medit
 PORTVERSION=	2006.09.24
+PORTREVISION=	1
 CATEGORIES=	science graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL}	\
 		http://www.ann.jussieu.fr/~frey/logiciels/:author

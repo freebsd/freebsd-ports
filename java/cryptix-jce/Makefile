@@ -7,6 +7,7 @@
 
 PORTNAME=	cryptix-jce
 PORTVERSION=	20050328
+PORTREVISION=	1
 CATEGORIES=	java security
 MASTER_SITES=	http://www.cryptix.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-snap

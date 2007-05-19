@@ -6,6 +6,7 @@
 
 PORTNAME=	qscintilla
 PORTVERSION=	1.7.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/QScintilla1/ \
 		http://freebsd.ricin.com/ports/distfiles/

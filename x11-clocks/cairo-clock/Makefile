@@ -7,6 +7,7 @@
 
 PORTNAME=	cairo-clock
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	x11-clocks net gnome
 MASTER_SITES=	http://macslow.thepimp.net/projects/cairo-clock/
 

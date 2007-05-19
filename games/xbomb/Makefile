@@ -7,6 +7,7 @@
 
 PORTNAME=	xbomb
 PORTVERSION=	2.1a
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.gedanken.demon.co.uk/download-xbomb/
 EXTRACT_SUFX=	.tgz

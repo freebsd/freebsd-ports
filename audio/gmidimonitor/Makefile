@@ -7,6 +7,7 @@
 
 PORTNAME=	gmidimonitor
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://files.bountysource.com/file/download/583/
 

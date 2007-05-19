@@ -1,3 +1,3 @@
-MD5 (libXi-6.0.1.tar.bz2) = 7e935a42428d63a387b3c048be0f2756
-SHA256 (libXi-6.0.1.tar.bz2) = 4e7ac30437bc038bc31642230d133c3c6ac9fc71f9afb657c6d6ac60572ecebd
-SIZE (libXi-6.0.1.tar.bz2) = 209914
+MD5 (xorg/lib/libXi-1.0.2.tar.bz2) = 4a5207a29a6b220e5462129854689844
+SHA256 (xorg/lib/libXi-1.0.2.tar.bz2) = 7e6339539d3d0a4fc95cc23ca2b13ae67dd783e011b3cc5ca76040e376bff57f
+SIZE (xorg/lib/libXi-1.0.2.tar.bz2) = 244920

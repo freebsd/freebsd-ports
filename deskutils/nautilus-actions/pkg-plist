@@ -37,17 +37,5 @@ share/locale/zh_TW/LC_MESSAGES/nautilus-actions.mo
 share/nautilus-actions/nact/nautilus-actions-config.glade
 @dirrm share/nautilus-actions/nact
 @dirrm share/nautilus-actions
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/gl/LC_MESSAGES
-@dirrmtry share/locale/gl
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca

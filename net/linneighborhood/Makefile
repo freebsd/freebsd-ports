@@ -7,7 +7,7 @@
 
 PORTNAME=	LinNeighborhood
 PORTVERSION=	0.6.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	http://www.bnro.de/~schmidjo/download/
 

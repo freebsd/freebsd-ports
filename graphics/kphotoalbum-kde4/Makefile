@@ -6,7 +6,7 @@
 
 PORTNAME=		kphotoalbum
 PORTVERSION=		3.0
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		graphics kde
 MASTER_SITES=		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/ \
 			http://www.kphotoalbum.org/download/

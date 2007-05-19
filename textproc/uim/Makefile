@@ -7,6 +7,7 @@
 
 PORTNAME=	uim
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES?=	textproc
 MASTER_SITES=	http://uim.freedesktop.org/releases/
 .if !defined(UIM_SLAVE) && defined(WITHOUT_X11)

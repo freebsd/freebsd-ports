@@ -7,6 +7,7 @@
 
 PORTNAME=	joequake
 PORTVERSION=	0.15b1329
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://runecentral.com/joequake/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}-source

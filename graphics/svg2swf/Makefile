@@ -8,6 +8,7 @@
 
 PORTNAME=	svg2swf
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://robla.net/1996/svg2swf/
 DISTNAME=	${PORTNAME}

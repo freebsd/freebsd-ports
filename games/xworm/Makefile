@@ -7,6 +7,7 @@
 
 PORTNAME=	xworm
 PORTVERSION=	1.02
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.ekran.no/archive/x/
 DISTNAME=	${PORTNAME}102

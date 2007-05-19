@@ -7,6 +7,7 @@
 
 PORTNAME=	groovy
 DISTVERSION=	1.0-jsr-06
+PORTREVISION=	1
 CATEGORIES=	lang java
 MASTER_SITES=	http://dist.codehaus.org/groovy/distributions/
 

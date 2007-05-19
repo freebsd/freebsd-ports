@@ -7,6 +7,7 @@
 
 PORTNAME=	mplayerplug-in
 PORTVERSION=	3.35
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-1.rh9.rf
 CATEGORIES=	www multimedia
 MASTER_SITES=	ftp://fr2.rpmfind.net/linux/dag/redhat/9/en/i386/dag/RPMS/ \

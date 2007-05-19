@@ -7,7 +7,7 @@
 
 PORTNAME=	java-gcj-compat
 PORTVERSION=	1.0.56 # =< requires gcc-4.2 (HEAD)
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	java devel
 MASTER_SITES=	ftp://sources.redhat.com/pub/rhug/
 

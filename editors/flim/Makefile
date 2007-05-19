@@ -7,6 +7,7 @@
 
 PORTNAME=	flim
 PORTVERSION=	${FLIM_VER}
+PORTREVISION=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://www.kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/flim/flim-1.14/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}

@@ -7,6 +7,7 @@
 
 PORTNAME=	cthulhain
 PORTVERSION=	0.3.9
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www0.get-e.org/Themes/E17/_files/ \
 		ftp://ftp.springdaemons.com/pub/snapshots/e17/

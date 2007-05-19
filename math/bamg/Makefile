@@ -7,7 +7,7 @@
 
 PORTNAME=	bamg
 PORTVERSION=	0.68
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math science
 MASTER_SITES=	http://pauillac.inria.fr/cdrom/ftp/bamg/	\
 		http://www-rocq1.inria.fr/gamma/cdrom/ftp/bamg/	\

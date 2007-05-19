@@ -7,7 +7,7 @@
 
 PORTNAME=	wmnet2
 PORTVERSION=	1.06
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 		http://freebsd.unixfreunde.de/sources/

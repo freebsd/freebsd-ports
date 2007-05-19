@@ -8,6 +8,7 @@
 
 PORTNAME=	estickies
 PORTVERSION=	20070223
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
 

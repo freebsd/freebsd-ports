@@ -7,7 +7,7 @@
 
 PORTNAME=	marathon-evil
 PORTVERSION=	3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://archives2.bungie.org/a1sdl/ \
 		ftp://ftp2.bungie.org/archives/a1sdl/

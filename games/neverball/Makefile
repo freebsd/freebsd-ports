@@ -7,7 +7,7 @@
 
 PORTNAME=	neverball
 PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/neverball/
 
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${FREETYPE_CONFIG}:${PORTSDIR}/print/freetype2
 
 FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config
 
+USE_GL=		gl
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_SDL=	image mixer ttf

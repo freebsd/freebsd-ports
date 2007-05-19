@@ -7,6 +7,7 @@
 
 PORTNAME=	jisx0213-fonts
 PORTVERSION=	20040425
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://www12.ocn.ne.jp/~imamura/ \
 		http://gitatsu.hp.infoseek.co.jp/bdf/:yagi

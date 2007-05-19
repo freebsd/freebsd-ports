@@ -7,7 +7,7 @@
 
 PORTNAME=	xarchie
 PORTVERSION=	2.0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
@@ -17,6 +17,7 @@ COMMENT=	X11 front-end program for the archie network search service
 
 USE_IMAKE=	yes
 USE_GMAKE=	yes
+USE_XORG=	xbitmaps
 MAN1=		xarchie.1
 
 .include <bsd.port.mk>

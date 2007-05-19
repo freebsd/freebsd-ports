@@ -7,6 +7,7 @@
 
 PORTNAME=	netclient
 PORTVERSION=	0.92.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.ocaml-programming.de/packages/
 PKGNAMEPREFIX=	ocaml-

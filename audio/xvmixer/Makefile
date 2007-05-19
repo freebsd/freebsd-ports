@@ -7,6 +7,7 @@
 
 PORTNAME=	xvmixer
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.auxio.org/pub/mirrors/step.polymtl.ca/pub/Xview/apps/xvmixer/
 

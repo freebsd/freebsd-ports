@@ -6,35 +6,33 @@
 #
 
 PORTNAME=	xorg-dmx
-PORTVERSION=	6.9.0
-PORTREVISION=	2
+PORTVERSION=	1.2.0
+PORTEPOCH=	1
 CATEGORIES=	x11-servers
-MASTER_SITES=	${MASTER_SITE_XORG}
-MASTER_SITE_SUBDIR=	X11R${PORTVERSION}/src
-DISTFILES=	X11R${PORTVERSION}-src1.tar.gz \
-		X11R${PORTVERSION}-src3.tar.gz
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Distributed Multihead X from X.Org
 
 CONFLICTS=	XFree86-dmx-[0-9]*
 
-EXTRA_PATCHES=	${CF_PATCHES} ${SERVER_PATCHES}
+XORG_CAT=	xserver
 
-USE_XLIB=	yes
+LIB_DEPENDS=	drm:${PORTSDIR}/graphics/libdrm
+USE_XORG=	x11 xf86driproto glproto randrproto renderproto fixesproto \
+		damageproto xcmiscproto xextproto xf86miscproto \
+		xf86vidmodeproto xf86bigfontproto scrnsaverproto bigreqsproto \
+		resourceproto fontsproto xf86dgaproto videoproto \
+		compositeproto trapproto recordproto resourceproto \
+		xineramaproto evieproto xkbfile xfont fontenc xkbui \
+		xxf86misc xxf86vm xaw7 xmu xpm xext xrender xfixes xi dmxproto \
+		xau dmx xtst xres
+		
+CONFIGURE_ARGS=	--disable-xprint --disable-xvfb --disable-xorg --disable-xnest \
+		--enable-dmx --localstatedir=/var
 
-XBUILD_DIRS=	lib/font programs/Xserver/miext/damage programs/Xserver
-XINCLUDE_DIRS=	lib/xtrans
-XMAN_DIRS=	programs/Xserver/hw/dmx
+MAN1=		Xdmx.1 dmxtodmx.1 vdltodmx.1 xdmxconfig.1
 
-MAN1=		Xdmx.1
-PLIST_FILES=	bin/Xdmx
+do-install:
+	cd ${WRKSRC}/hw/dmx; ${MAKE} install
 
-.include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
-.include <bsd.port.pre.mk>
-.if ${X_WINDOW_SYSTEM:L} != xorg
-IGNORE=	is part of X.Org and you have ${X_WINDOW_SYSTEM} set for X11\
-	distribution. See The X Window System and Virtual Consoles chapter\
-	of FAQ for more information
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

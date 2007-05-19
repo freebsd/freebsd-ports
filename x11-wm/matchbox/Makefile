@@ -7,6 +7,7 @@
 
 PORTNAME=	matchbox
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://projects.o-hand.com/matchbox/sources/matchbox-window-manager/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}

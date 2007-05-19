@@ -7,6 +7,7 @@
 
 PORTNAME=	mindfocus
 PORTVERSION=	0.88
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.toyoshima-house.net/classic/mf/files/
 DISTFILES=	mindfocus-0.88.tar.gz mindfocus-data1.tar.gz

@@ -32,29 +32,5 @@ lib/libpopt.so.0
 %%NLS%%share/locale/wa/LC_MESSAGES/popt.mo
 %%NLS%%share/locale/zh/LC_MESSAGES/popt.mo
 %%NLS%%share/locale/zh_CN.GB2312/LC_MESSAGES/popt.mo
-%%NLS%%@dirrmtry share/locale/uk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/uk
-%%NLS%%@dirrmtry share/locale/sr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sr
-%%NLS%%@dirrmtry share/locale/sl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sl
-%%NLS%%@dirrmtry share/locale/sk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sk
-%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ro
-%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pt
-%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pl
-%%NLS%%@dirrmtry share/locale/no/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/no
-%%NLS%%@dirrmtry share/locale/ko/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ko
-%%NLS%%@dirrmtry share/locale/gl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/gl
-%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fi
 %%NLS%%@dirrmtry share/locale/eu_ES/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/eu_ES
-%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cs

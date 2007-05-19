@@ -7,7 +7,7 @@
 
 PORTNAME=	chbg
 PORTVERSION=	1.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.idata.sk/~ondrej/sw/

@@ -7,7 +7,7 @@
 
 PORTNAME=	eieio
 PORTVERSION=	0.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://dryice.name/computer/FreeBSD/distfiles/

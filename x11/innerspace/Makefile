@@ -7,6 +7,7 @@
 
 PORTNAME=	innerspace
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	x11 gnustep
 MASTER_SITES=	http://download.savannah.nongnu.org/releases/gap/
 

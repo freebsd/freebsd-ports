@@ -7,6 +7,7 @@
 
 PORTNAME=	ljdeps
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	# Undefined
 DISTFILES=	# Undefined

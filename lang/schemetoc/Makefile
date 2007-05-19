@@ -7,6 +7,7 @@
 
 PORTNAME=	schemetoc
 PORTVERSION=	93.3.15
+PORTREVISION=	1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.cs.indiana.edu/pub/scheme-repository/imp/Scheme-to-C/
 DISTNAME=	15mar93

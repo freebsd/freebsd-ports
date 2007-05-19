@@ -7,6 +7,7 @@
 
 PORTNAME=	blt
 PORTVERSION=	2.4z
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.csl.sony.co.jp/pub/kjc/ttt-libs/

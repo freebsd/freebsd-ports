@@ -8,6 +8,7 @@
 
 PORTNAME=	sunclock
 PORTVERSION=	3.56
+PORTREVISION=	1
 CATEGORIES=	astro x11-clocks
 MASTER_SITES=	ftp://ftp.ac-grenoble.fr/ge/geosciences/sunclock/ \
 		http://mbsd.msk.ru/dist/

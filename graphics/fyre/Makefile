@@ -7,7 +7,7 @@
 
 PORTNAME=	fyre
 PORTVERSION=	1.0.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://samy.kerneled.org/ports/ \
 		http://www.felinemenace.org/~nemo/

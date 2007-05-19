@@ -7,7 +7,7 @@
 
 PORTNAME=	Xaw3d
 PORTVERSION=	1.5E
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.visi.com/users/hawkeyd/X/
 

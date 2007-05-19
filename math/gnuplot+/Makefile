@@ -7,7 +7,7 @@
 
 PORTNAME=	gnuplot371+
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math japanese graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.yama-ga.com/gnuplot/:patch \

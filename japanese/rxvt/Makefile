@@ -7,6 +7,7 @@
 
 PORTNAME=	rxvt
 PORTVERSION=	2.7.2
+PORTREVISION=	1
 CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/
 

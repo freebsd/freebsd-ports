@@ -7,7 +7,7 @@
 
 PORTNAME=	wmshuffle
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games windowmaker afterstep
 MASTER_SITES=	http://www.linuks.mine.nu/dockapp/ \
 		http://freebsd.nsu.ru/distfiles/

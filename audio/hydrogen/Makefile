@@ -7,6 +7,7 @@
 
 PORTNAME=	hydrogen
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -101,8 +102,6 @@ pre-install:
 	${FIND} data -type d ! -empty | ${SORT} -r | \
 		${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
 	@${ECHO_CMD} '@dirrmtry share/applications' >> ${PLIST}
-	@${ECHO_CMD} '@dirrmtry man/ru.KOI8-R/man1' >> ${PLIST}
-	@${ECHO_CMD} '@dirrmtry man/ru.KOI8-R' >> ${PLIST}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hydrogen ${WRKSRC}/hydrogenPlayer ${PREFIX}/bin

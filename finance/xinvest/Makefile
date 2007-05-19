@@ -7,6 +7,7 @@
 
 PORTNAME=	xinvest
 PORTVERSION=	2.6.9
+PORTREVISION=	1
 CATEGORIES=	finance deskutils
 MASTER_SITES=	http://xinvest.sunsite.dk/
 

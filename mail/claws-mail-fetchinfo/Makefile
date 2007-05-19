@@ -7,7 +7,7 @@
 
 PORTNAME=	fetchinfo
 PORTVERSION=	0.4.18
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-

@@ -8,6 +8,7 @@
 
 PORTNAME=	omake
 PORTVERSION=	0.9.8.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://omake.metaprl.org/downloads/ \
 		http://sunner.elcomnet.ru/~stas/

@@ -7,6 +7,7 @@
 
 PORTNAME=	xnodecor
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.42.org/pub/wmx/contrib/
 DISTFILES=	xnodecor.c

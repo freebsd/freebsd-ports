@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-uade
 PORTVERSION=	2.03
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://zakalwe.fi/uade/uade2/ \
 		http://critical.ch/distfiles/

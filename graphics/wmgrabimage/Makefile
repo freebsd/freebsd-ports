@@ -7,7 +7,7 @@
 
 PORTNAME=	wmGrabImage
 PORTVERSION=	0.72
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics windowmaker
 MASTER_SITES=	http://dockapps.org/files/12/19/
 EXTRACT_SUFX=	.tgz

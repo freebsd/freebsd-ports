@@ -1,0 +1,3 @@
+bin/viewres
+share/X11/app-defaults/Viewres
+@dirrmtry share/X11/app-defaults

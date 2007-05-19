@@ -7,7 +7,7 @@
 
 PORTNAME?=	bjfiltercom
 PORTVERSION?=	1.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print linux
 MASTER_SITES=	ftp://download.canon.jp/pub/driver/bj/linux/
 DISTFILES=	${RPMFILE}

@@ -12,7 +12,6 @@ share/icons/hicolor/48x48/mimetypes/application-x-fyre-animation.png
 share/mime/application/x-fyre-animation.xml
 share/mime/packages/fyre.xml
 share/pixmaps/fyre-48x48.png
-@dirrmtry share/pixmaps
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications

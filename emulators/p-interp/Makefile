@@ -7,6 +7,7 @@
 
 PORTNAME=	p-interp
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.klebsch.de/ \
 		ftp://ftp.apple.asimov.net/pub/apple_II/images/utility/programming/apple_pascal/:disks \

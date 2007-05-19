@@ -288,20 +288,6 @@ bin/nt
 %%NLS%%share/locale/uk/LC_MESSAGES/d4x.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/d4x.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_CN
-%%NLS%%@dirrmtry share/locale/uk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/uk
-%%NLS%%@dirrmtry share/locale/sr/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sr
-%%NLS%%@dirrmtry share/locale/sk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sk
-%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pl
-%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cs
-%%NLS%%@dirrmtry share/locale/ca/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ca
 @dirrm %%DATADIR%%/themes/old_theme/queue
 @dirrm %%DATADIR%%/themes/old_theme/buttons
 @dirrm %%DATADIR%%/themes/old_theme

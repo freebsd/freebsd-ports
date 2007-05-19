@@ -8,7 +8,7 @@
 
 PORTNAME=	gtksourceview-sharp
 PORTVERSION=	0.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://go-mono.com/sources/gtksourceview-sharp-2.0/
 DISTNAME=	${PORTNAME}-2.0-${PORTVERSION}

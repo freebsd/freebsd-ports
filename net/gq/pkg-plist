@@ -11,7 +11,6 @@ share/pixmaps/gq/gq.xpm
 share/pixmaps/gq/textview.png
 share/pixmaps/gq/warning.xpm
 @dirrm share/pixmaps/gq
-@dirrmtry share/pixmaps
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @unexec %%PREFIX%%/bin/update-mime-database %%PREFIX%%/share/mime

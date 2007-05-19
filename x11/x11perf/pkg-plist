@@ -1,0 +1,7 @@
+bin/x11perf
+bin/x11perfcomp
+lib/X11/x11perfcomp/fillblnk
+lib/X11/x11perfcomp/perfboth
+lib/X11/x11perfcomp/perfratio
+lib/X11/x11perfcomp/Xmark
+@dirrm lib/X11/x11perfcomp

@@ -7,6 +7,7 @@
 
 PORTNAME=	spiralloops
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.pawfal.org/Software/SpiralLoops/dload/
 DISTNAME=	SpiralLoops-${PORTVERSION}

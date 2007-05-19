@@ -292,17 +292,3 @@ share/locale/tr/LC_MESSAGES/a2ps.mo
 @dirrm %%DATADIR%%
 %%WITHEMACS%%@dirrm lib/xemacs/site-lisp
 %%WITHEMACS%%@dirrm lib/xemacs
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/ko/LC_MESSAGES
-@dirrmtry share/locale/ko
-@dirrmtry share/locale/no/LC_MESSAGES
-@dirrmtry share/locale/no
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/sl/LC_MESSAGES
-@dirrmtry share/locale/sl

@@ -7,6 +7,7 @@
 
 PORTNAME=	limewire
 PORTVERSION=	4.12.11
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-p2p java
 MASTER_SITES=	http://www10.limewire.com/download/

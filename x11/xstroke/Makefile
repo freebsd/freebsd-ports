@@ -7,7 +7,7 @@
 
 PORTNAME=	xstroke
 PORTVERSION=	0.5.12
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.handhelds.org/projects/xstroke/release-0.5/ \
 		http://www.handhelds.org/download/projects/xstroke/release-0.5/

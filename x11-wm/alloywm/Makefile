@@ -7,7 +7,7 @@
 
 PORTNAME=	alloywm
 PORTVERSION=	0.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.phatboydesigns.net/devel/
 

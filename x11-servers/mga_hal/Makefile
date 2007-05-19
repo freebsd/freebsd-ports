@@ -7,6 +7,7 @@
 
 PORTNAME=	mga_hal
 PORTVERSION=	4.4.0
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	ftp://ftp.matrox.com/pub/mga/archive/linux/%SUBDIR%/:i386,amd64
 MASTER_SITE_SUBDIR=	2006/:i386 2006/64bit/:amd64

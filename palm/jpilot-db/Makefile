@@ -8,6 +8,7 @@
 
 PORTNAME=	jpilot-db
 PORTVERSION=	1.3.20
+PORTREVISION=	1
 CATEGORIES=	palm java
 MASTER_SITES=	http://chickenshick.com/jpilot-db/download/
 EXTRACT_SUFX=	-ej.jar

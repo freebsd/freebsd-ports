@@ -7,6 +7,7 @@
 
 PORTNAME=	dtcyber
 PORTVERSION=	2.0b1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://members.iinet.net.au/~tom-hunter/
 DISTNAME=	dtcyber20b1

@@ -7,7 +7,7 @@
 
 PORTNAME=	qmrtg
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail net-mgmt
 MASTER_SITES=	http://dev.publicshout.org/qmrtg/download/
 

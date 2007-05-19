@@ -7,6 +7,7 @@
 
 PORTNAME=	thinglaunch
 PORTVERSION=	1.03
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://critical.ch/distfiles/ \
 		http://energy.critical.ch/distfiles/

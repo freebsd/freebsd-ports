@@ -7,7 +7,7 @@
 
 PORTNAME=	wmDeskGuide
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	http://charybda.icm.edu.pl/~jarwyp/data/own/wmDeskGuide/build/
 

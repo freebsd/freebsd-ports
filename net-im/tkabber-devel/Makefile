@@ -7,6 +7,7 @@
 
 PORTNAME=	tkabber
 PORTVERSION=	0.9.9.a.20070325
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
 PKGNAMESUFFIX=	-devel

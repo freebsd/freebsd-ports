@@ -7,7 +7,7 @@
 
 PORTNAME=	junglemonkey
 PORTVERSION=	0.1.11
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	ftp gnome
 MASTER_SITES=	http://www.gizmolabs.org/~dhelder/junglemonkey/src/
 DISTNAME=	jm-${PORTVERSION}

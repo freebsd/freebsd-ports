@@ -145,6 +145,7 @@ lib/xine/plugins/1.1.4/xineplug_vo_out_sdl.so
 lib/xine/plugins/1.1.4/xineplug_vo_out_xshm.so
 lib/xine/plugins/1.1.4/xineplug_vo_out_xv.so
 %%WITH_XVMC%%lib/xine/plugins/1.1.4/xineplug_vo_out_xvmc.so
+%%WITH_XVMC%%lib/xine/plugins/1.1.4/xineplug_vo_out_xxmc.so
 libdata/pkgconfig/libxine.pc
 share/aclocal/xine.m4
 %%DOCSDIR%%/README

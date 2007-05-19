@@ -1,0 +1,5 @@
+This package contains mkfontscale, an application for creating an index of
+scalable font files for X.
+
+- Joel Dahl
+joel@FreeBSD.org

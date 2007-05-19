@@ -7,7 +7,7 @@
 
 PORTNAME=	paman
 PORTVERSION=	0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/paman/
 

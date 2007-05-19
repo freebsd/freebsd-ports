@@ -67,12 +67,6 @@ share/postgresql/conversion_create.sql
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_resetxlog.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/postgres.mo
 %%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/postgres.mo
-%%GETTEXT%%@dirrmtry share/locale/cs/LC_MESSAGES
-%%GETTEXT%%@dirrmtry share/locale/cs
-%%GETTEXT%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
-%%GETTEXT%%@dirrmtry share/locale/zh_CN
-%%GETTEXT%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
-%%GETTEXT%%@dirrmtry share/locale/zh_TW
 @unexec if cmp -s ~pgsql/.profile %D/share/postgresql/dot.profile.dist; then rm -f ~pgsql/.profile; fi
 @unexec if cmp -s ~pgsql/.cshrc %D/share/postgresql/dot.cshrc.dist; then rm -f ~pgsql/.cshrc; fi
 @unexec [ -f ~pgsql/dot.profile.dist ] && rm ~pgsql/dot.profile.dist

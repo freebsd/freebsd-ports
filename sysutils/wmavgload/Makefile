@@ -7,6 +7,7 @@
 
 PORTNAME=	wmavgload
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	contrib/old/srcs/utils

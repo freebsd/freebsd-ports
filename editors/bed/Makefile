@@ -7,6 +7,7 @@
 
 PORTNAME=	bed
 PORTVERSION=	0.2.23
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://bedlinux.tripod.com/download/
 EXTRACT_SUFX=	.src.tar.gz

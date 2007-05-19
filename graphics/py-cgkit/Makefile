@@ -8,6 +8,7 @@
 
 PORTNAME=	cgkit
 PORTVERSION=	2.0.0a7
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +20,7 @@ COMMENT=	Python Computer Graphics Kit
 
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-python scons:${PORTSDIR}/devel/scons
 
+USE_GL=		yes
 USE_XLIB=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

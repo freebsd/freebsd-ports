@@ -7,7 +7,7 @@
 
 PORTNAME=	zorro
 PORTVERSION=	1.1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils tk84
 MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 		http://atreides.freenix.no/~anders/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	gxmms2
 PORTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://wejp.k.vu/projects/xmms2/
 

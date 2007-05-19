@@ -6,7 +6,7 @@
 #   $MCom: ports/x11/gnome2-fifth-toe/Makefile,v 1.83 2007/04/03 01:14:24 ahze Exp $
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 PKGNAMESUFFIX=	-fifth-toe
 

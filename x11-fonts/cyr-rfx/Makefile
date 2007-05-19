@@ -7,6 +7,7 @@
 
 PORTNAME=	cyr-rfx-${CYR_RFX_ENCODING}
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	x11-fonts ukrainian russian
 MASTER_SITES=	ftp://ftp.ptc.spbu.ru/mirror/ftp.inp.nsk.su/%SUBDIR%/ \
 		ftp://ftp.inp.nsk.su/%SUBDIR%/

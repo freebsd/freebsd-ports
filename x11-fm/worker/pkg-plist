@@ -67,4 +67,3 @@ share/pixmaps/WorkerIcon48.xpm
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/catalogs
 @dirrm %%DATADIR%%
-@dirrmtry share/pixmaps

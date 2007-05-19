@@ -7,6 +7,7 @@
 
 PORTNAME=	wmmultipop3
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://bart.sm.luth.se/~dansun-8/software/wmMultiPop3/
 DISTNAME=	wmMultiPop3-${PORTVERSION}

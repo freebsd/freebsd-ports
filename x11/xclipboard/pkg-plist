@@ -1,0 +1,4 @@
+bin/xclipboard
+bin/xcutsel
+share/X11/app-defaults/XClipboard
+@dirrmtry share/X11/app-defaults

@@ -7,6 +7,7 @@
 
 PORTNAME=	tremor
 PORTVERSION=	3.2.4.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://qudos.quakedev.com/linux/quake1/:src \
 		http://tremor.quakedev.com/:data

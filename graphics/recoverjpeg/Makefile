@@ -7,7 +7,7 @@
 
 PORTNAME=	recoverjpeg
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.rfc1149.net/download/recoverjpeg/ \
 		http://critical.ch/distfiles/ \

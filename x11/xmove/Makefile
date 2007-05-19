@@ -7,6 +7,7 @@
 
 PORTNAME=	xmove
 PORTVERSION=	2.0b2
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.cs.columbia.edu/pub/xmove/
 DISTNAME=	${PORTNAME}.${PORTVERSION:S/b/beta/}

@@ -257,10 +257,6 @@ share/mime/application/x-planner.xml
 share/mime/packages/planner.xml
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
-@dirrmtry share/locale/ne/LC_MESSAGES
-@dirrmtry share/locale/ne
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrm share/gnome/planner/ui

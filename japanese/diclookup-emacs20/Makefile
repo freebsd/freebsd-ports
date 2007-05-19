@@ -7,6 +7,7 @@
 
 PORTNAME=	diclookup
 PORTVERSION=	2.3.4b8
+PORTREVISION=	1
 CATEGORIES=	japanese elisp
 MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tools/diclookup-mule/beta/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}

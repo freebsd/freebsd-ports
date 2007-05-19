@@ -9,7 +9,3 @@ share/locale/ko/LC_MESSAGES/scim-hangul.mo
 share/locale/zh_CN/LC_MESSAGES/scim-hangul.mo
 share/scim/icons/scim-hangul.png
 @dirrmtry share/scim/icons
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/ko/LC_MESSAGES
-@dirrmtry share/locale/ko

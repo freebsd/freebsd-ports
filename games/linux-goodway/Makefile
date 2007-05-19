@@ -7,7 +7,7 @@
 
 PORTNAME=	linux-goodway
 PORTVERSION=	3.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games linux
 MASTER_SITES=	http://www.xpgoodwayteam.org/dwn_goodway/
 DISTNAME=	goodwayv${GWVERSION}_free

@@ -7,6 +7,7 @@
 
 PORTNAME=	bugzilla
 PORTVERSION=	2.16.8
+PORTREVISION=	1
 CATEGORIES=	japanese devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived

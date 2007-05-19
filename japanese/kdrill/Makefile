@@ -7,6 +7,7 @@
 
 PORTNAME=	kdrill
 PORTVERSION=	6.4
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.bolthole.com/kdrill/
 DISTNAME=	${PORTNAME}${PORTVERSION}

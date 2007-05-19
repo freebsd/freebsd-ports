@@ -8,6 +8,7 @@
 
 PORTNAME=	gecko-sharp
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.go-mono.com/sources/gecko-sharp-2.0/
 DISTNAME=	gecko-sharp-2.0-${PORTVERSION}

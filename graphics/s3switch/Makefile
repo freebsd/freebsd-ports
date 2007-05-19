@@ -7,7 +7,7 @@
 
 PORTNAME=	s3switch
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.probo.com/timr/
 DISTNAME=	s3ssrc

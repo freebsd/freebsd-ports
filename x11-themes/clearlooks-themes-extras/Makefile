@@ -7,7 +7,7 @@
 
 PORTNAME=	clearlooks-themes-extras
 PORTVERSION=	0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.kernow-webhosting.com/~bvc/theme/gtk/clearlooks/
 DISTNAME=	Clearlooks-Big_Pack-${PORTVERSION}.x

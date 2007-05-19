@@ -6,7 +6,7 @@
 #    $MCom: ports/multimedia/gstreamer-plugins-libfame80/Makefile,v 1.1 2006/01/20 02:56:06 ahze Exp $
 #
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 GST_PLUGIN=	libfame

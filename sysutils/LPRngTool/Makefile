@@ -7,6 +7,7 @@
 
 PORTNAME=	LPRngTool
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	 sysutils print
 MASTER_SITES=	ftp://ftp.lprng.com/pub/%SUBDIR%/ \
 		ftp://ftp.cise.ufl.edu/pub/mirrors/%SUBDIR%/ \

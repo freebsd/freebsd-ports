@@ -7,6 +7,7 @@
 
 PORTNAME=	xfsprogs
 PORTVERSION=	2.8.10
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://oss.sgi.com/projects/xfs/cmd_tars/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

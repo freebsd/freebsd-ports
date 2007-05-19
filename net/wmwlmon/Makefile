@@ -7,7 +7,7 @@
 
 PORTNAME=	wmwlmon
 PORTVERSION=	0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net windowmaker
 MASTER_SITES=	http://www.nazgul.ch/dev/ \
 		http://dougbarton.us/Downloads/

@@ -7,5 +7,3 @@ lib/scim-1.0/1.4.0/SetupUI/chewing-imengine-setup.so
 share/locale/zh_TW/LC_MESSAGES/scim-chewing.mo
 share/scim/icons/scim-chewing-swap-colors.png
 share/scim/icons/scim-chewing.png
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW

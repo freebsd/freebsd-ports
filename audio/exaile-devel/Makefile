@@ -7,6 +7,7 @@
 
 PORTNAME=	exaile
 DISTVERSION=	0.2.9
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.exaile.org/files/ GENTOO/distfiles
 DISTNAME=	${PORTNAME}_${DISTVERSION}

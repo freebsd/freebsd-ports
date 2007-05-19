@@ -1,0 +1,4 @@
+bin/xlogo
+share/X11/app-defaults/XLogo
+share/X11/app-defaults/XLogo-color
+@dirrmtry share/X11/app-defaults

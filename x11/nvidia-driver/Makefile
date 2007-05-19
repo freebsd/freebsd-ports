@@ -7,6 +7,7 @@
 
 PORTNAME=	nvidia-driver
 PORTVERSION=	1.0.${NVVERSION}
+PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
 MASTER_SITE_SUBDIR=	freebsd/1.0-${NVVERSION}
@@ -19,6 +20,7 @@ ONLY_FOR_ARCHS=	i386
 
 USE_X_PREFIX=	yes
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
+USE_GL=		gl
 INSTALLS_SHLIB=	yes
 SUB_FILES+=	pkg-message
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
@@ -62,13 +64,24 @@ LIB_DEPENDS+=	m.3:${PORTSDIR}/misc/compat5x
 
 .include <bsd.port.pre.mk>
 
+.if ${X_WINDOW_SYSTEM} == "xorg"
+MODULESDIR=	lib/xorg/modules
+XORG_SUB=	"@comment "
+XFREE86_SUB=	""
+.else
+MODULESDIR=	lib/modules
+XORG_SUB=	""
+XFREE86_SUB=	"@comment "
+.endif
+
 # XXX Should use ${PKG_INFO} XXX
 #
 XSERVVERSION!=	/usr/sbin/pkg_info -O x11-servers/XFree86-4-Server 2>/dev/null | ${GREP} Server- || /usr/sbin/pkg_info -O x11-servers/xorg-server 2>/dev/null | ${GREP} server- || true
-XLIBVERSION!=	/usr/sbin/pkg_info -O x11/XFree86-4-libraries 2>/dev/null | ${GREP} libraries- || /usr/sbin/pkg_info -O x11/xorg-libraries 2>/dev/null | ${GREP} libraries- || true
+XLIBVERSION!=	/usr/sbin/pkg_info -O x11/XFree86-4-libraries 2>/dev/null | ${GREP} libraries- || /usr/sbin/pkg_info -O graphics/libGL 2>/dev/null | ${GREP} libGL- || true
 
 PLIST_SUB+=	XSERVVERSION=${XSERVVERSION} XLIBVERSION=${XLIBVERSION} \
-		LINUXBASE=${LINUXBASE} NVVERSION=${NVVERSION}
+		LINUXBASE=${LINUXBASE} NVVERSION=${NVVERSION} \
+		MODULESDIR=${MODULESDIR} XORG=${XORG_SUB} XFREE86=${XFREE86_SUB}
 
 .if !defined(WITHOUT_LINUX)
 # Add explicit X11 libraries dependency since USE_LINUX causes the port to
@@ -118,7 +131,16 @@ post-patch: .SILENT
 .else
 	${REINPLACE_CMD} -E 's/(lib).*/\1/' ${WRKSRC}/x11/Makefile
 .endif
+.if ${X_WINDOW_SYSTEM} == "xorg"
+	${REINPLACE_CMD} -e 's|lib/modules|lib/xorg/modules|' \
+		${WRKSRC}/x11/driver/Makefile \
+		${WRKSRC}/x11/extension/Makefile \
+		${WRKSRC}/x11/lib/Makefile
+.endif
 	${REINPLACE_CMD} '/bin/d ; /man/d' ${WRKSRC}/x11/Makefile
+
+pre-install:
+	${MKDIR} ${PREFIX}/${MODULESDIR}/drivers
 
 post-install:
 # pkg-plist is already overbloated, so use this hack instead of PLIST_SUB's

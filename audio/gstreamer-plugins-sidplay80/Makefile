@@ -6,7 +6,7 @@
 #    $MCom: ports/audio/gstreamer-plugins-sidplay80/Makefile,v 1.2 2006/02/23 18:05:34 marcus Exp $
 #
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 
 COMMENT=	Gstreamer Commodore SID decoder plugin

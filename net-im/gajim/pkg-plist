@@ -822,7 +822,6 @@ share/pixmaps/gajim_about.png
 %%DOCSDIR%%/THANKS
 @dirrm lib/gajim
 @dirrmtry share/applications
-@dirrmtry share/pixmaps
 @dirrm %%DATADIR%%/src/common/xmpp
 @dirrm %%DATADIR%%/src/common/zeroconf
 @dirrm %%DATADIR%%/src/common

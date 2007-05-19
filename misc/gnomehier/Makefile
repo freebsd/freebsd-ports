@@ -9,6 +9,7 @@
 
 PORTNAME=	gnomehier
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	# none
 DISTFILES=	# none

@@ -7,6 +7,7 @@
 
 PORTNAME=	xg
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://messners.com/code/ \
 		http://www.messners.com/code/

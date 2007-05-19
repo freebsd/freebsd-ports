@@ -941,7 +941,6 @@ devel/ulex|devel/ocaml-ulex|2004-03-19|port renamed
 textproc/yaxi|textproc/ocaml-yaxi|2004-03-19|port renamed
 devel/camomile|devel/ocaml-camomile|2004-03-19|port renamed
 archivers/gshar+gunshar|archivers/sharutils|2004-03-19|port renamed
-devel/imake|devel/imake-4|2004-03-19|removed, obsoleted by imake-4 long ago
 net/arpwatch-devel|net-mgmt/arpwatch-devel|2004-03-20|moved to better fitting category
 multimedia/ffmpeg045|multimedia/ffmpeg|2004-03-20|latest stable version is better
 editors/emacs21|editors/emacs|2004-03-20|emacs 21.x moved to default port location
@@ -2952,3 +2951,10 @@ dns/dnscap||2007-05-03|Removed on authors request until it has reached stability
 net-im/libgaim|net-im/libpurple|2007-05-03|Project renamed
 net-im/gaim-devel|net-im/pidgin|2007-05-03|Project renamed
 net-im/gaim-consoleui-devel|net-im/finch|2007-05-03|Project renamed
+devel/imake-6|devel/imake|2007-05-19|Remove hardcoded version from portname
+x11-fonts/xorg-fonts-encodings|x11-fonts/encodings|2007-05-19|Encoding fonts are now distributed separately
+x11/xorg-documents|x11/xorg-docs|2007-05-19|X.org documentation now has its own distfile, rename accordingly
+x11/xorg-manpages|||X.org manual pages are now installed with every single port
+x11/xorg-clients|x11/xorg-apps|2007-05-19|Rename to new xorg-apps meta-port
+x11/libXfont|x11-fonts/libXfont|2007-05-19|Move to the x11-fonts category
+x11-servers/xorg-fontserver|x11-fonts/xfs|2007-05-19|Rename to follow X.org name

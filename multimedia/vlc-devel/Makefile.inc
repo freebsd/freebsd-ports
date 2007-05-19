@@ -307,7 +307,6 @@ pre-install: build
 		&& ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm share/${dir}/|' >> ${PLIST}
 .endfor
-		${ECHO_CMD} "@dirrmtry share/pixmaps" >> ${PLIST}
 .if !defined(NOPORTDOCS)
 	cd ${FAKEDIR}/share/doc && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|share/doc/|' >> ${PLIST} \

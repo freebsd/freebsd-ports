@@ -7,6 +7,7 @@
 
 PORTNAME=	gj
 PORTVERSION=	0.6m
+PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	http://www.cis.unisa.edu.au/~pizza/gj/Distribution/
 PKGNAMESUFFIX=	-${JDKSUBDIR}

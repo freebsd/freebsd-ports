@@ -7,6 +7,7 @@
 
 PORTNAME=	xfm
 PORTVERSION=	1.4.3
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.musikwissenschaft.uni-mainz.de/~ag/xfm/
 

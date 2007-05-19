@@ -7,7 +7,7 @@
 
 PORTNAME=	wmflame
 PORTVERSION=	0.60
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://web.novalis.org/programs/
 

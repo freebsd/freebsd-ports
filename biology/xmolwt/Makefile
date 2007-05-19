@@ -6,7 +6,7 @@
 
 PORTNAME=	xmolwt
 PORTVERSION=	0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology
 MASTER_SITES=	http://www.st.hirosaki-u.ac.jp/~rmiya/xmolwt/
 

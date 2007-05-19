@@ -7,6 +7,7 @@
 
 PORTNAME=	guspat
 PORTVERSION=	20000706
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.linet.gr.jp/~tamuki/timidity/eawplus/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}

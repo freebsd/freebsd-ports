@@ -7,6 +7,7 @@
 
 PORTNAME=	xrolo
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	ftp://ftp.uni-potsdam.de/pub/X11/open-look/ \
 		ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/

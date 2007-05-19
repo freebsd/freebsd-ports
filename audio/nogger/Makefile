@@ -7,7 +7,7 @@
 
 PORTNAME=	nogger
 PORTVERSION=	0.8.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	audio
 MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/
 

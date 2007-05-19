@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome-commander
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-commander/1.2

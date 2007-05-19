@@ -344,6 +344,7 @@
     SUBDIR += gauche-sdl
     SUBDIR += gaul
     SUBDIR += gazpacho
+    SUBDIR += gccmakedep
     SUBDIR += gccxml
     SUBDIR += gconf
     SUBDIR += gconf2
@@ -456,8 +457,8 @@
     SUBDIR += icu2
     SUBDIR += id-utils
     SUBDIR += ifd-test
+    SUBDIR += imake
     SUBDIR += imake-4
-    SUBDIR += imake-6
     SUBDIR += inilib
     SUBDIR += initutil
     SUBDIR += invitation_to_ruby
@@ -2192,6 +2193,7 @@
     SUBDIR += xfce4-dev-tools
     SUBDIR += xlslib
     SUBDIR += xmake
+    SUBDIR += xorg-macros
     SUBDIR += xparam
     SUBDIR += xtl
     SUBDIR += xtla

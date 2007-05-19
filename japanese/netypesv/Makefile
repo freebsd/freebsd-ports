@@ -7,6 +7,7 @@
 
 PORTNAME=	netypesv
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.i.his.fukui-u.ac.jp/~funakami/software/netype/src/
 DISTNAME=	netypesv-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	matrices
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://mplus.dk/${PORTNAME}/
 

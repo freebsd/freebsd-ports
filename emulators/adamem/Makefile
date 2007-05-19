@@ -7,6 +7,7 @@
 
 PORTNAME=	adamem
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.komkon.org/~dekogel/files/coleco/
 DISTNAME=	${PORTNAME}

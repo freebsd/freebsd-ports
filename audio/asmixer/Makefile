@@ -7,6 +7,7 @@
 
 PORTNAME=	asmixer
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	audio afterstep
 MASTER_SITES=	http://www.tigr.net/afterstep/download/asmixer/
 

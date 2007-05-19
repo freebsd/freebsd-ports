@@ -14,10 +14,6 @@ bin/relaxwebinstaller
 bin/relaxxconf
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/relaxconf.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/relaxconf.mo
-%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_CN
-%%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_TW
 %%DATADIR%%/COPYRIGHT
 %%DATADIR%%/COPYRIGHT.RelaxBSD
 %%DATADIR%%/README

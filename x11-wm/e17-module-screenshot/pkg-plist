@@ -12,8 +12,6 @@ lib/enlightenment/modules/screenshot/screenshot.edj
 %%NLS%%share/locale/ja/LC_MESSAGES/screenshot.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/screenshot.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/screenshot.mo
-%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fi
 @dirrm lib/enlightenment/modules/screenshot/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/screenshot
 @dirrmtry lib/enlightenment/modules

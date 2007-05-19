@@ -8,7 +8,7 @@
 
 PORTNAME=	opendx
 PORTVERSION=	4.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics math
 MASTER_SITES=	http://opendx.npaci.edu/source/
 DISTNAME=	dx-${PORTVERSION}

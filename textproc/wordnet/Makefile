@@ -7,6 +7,7 @@
 
 PORTNAME=	WordNet
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cogsci.princeton.edu/pub/wordnet/${PORTVERSION}/ \
 		http://wordnet.princeton.edu/${PORTVERSION}/

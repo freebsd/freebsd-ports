@@ -8,7 +8,7 @@
 
 PORTNAME=	qglviewer
 PORTVERSION=	1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.gris.uni-tuebingen.de/grisalt/projects/qglviewer/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	vnc
 PORTVERSION=	4.1.2
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.realvnc.com/:vnc
 DISTNAME=	vnc-4_1_2-unixsrc

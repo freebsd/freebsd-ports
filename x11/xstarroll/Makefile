@@ -7,6 +7,7 @@
 
 PORTNAME=	xstarroll
 PORTVERSION=	1.1b
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.saturn.dti.ne.jp/~hsakai/myfreesoft/

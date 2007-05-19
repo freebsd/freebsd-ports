@@ -151,11 +151,8 @@ share/pixmaps/hugin.png
 %%NLS%%@dirrmtry share/locale/ca_ES
 %%NLS%%@dirrmtry share/locale/cs_CZ/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/cs_CZ
-%%NLS%%@dirrmtry share/locale/uk/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/uk
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
-@dirrmtry share/pixmaps
 @dirrm %%DATADIR%%/xrc/data/help_common
 @dirrm %%DATADIR%%/xrc/data/help_en_EN
 @dirrm %%DATADIR%%/xrc/data/help_fr_FR

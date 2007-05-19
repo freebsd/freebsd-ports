@@ -7,6 +7,7 @@
 
 PORTNAME=	xminesweep
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.netlab.is.tsukuba.ac.jp/pub/X/our_collections/games/ \
 		ftp://ftp.uni-halle.de/pub/X11/contrib/games/ \

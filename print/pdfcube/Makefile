@@ -7,6 +7,7 @@
 
 PORTNAME=	pdfcube
 PORTVERSION=	0.0.2
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	# http://code.100allora.it/pdfcube/attachment/wiki/WikiStart/${DISTNAME}${EXTRACT_SUFX}
 

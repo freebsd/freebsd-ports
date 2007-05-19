@@ -7,7 +7,7 @@
 
 PORTNAME=	netsaint
 PORTVERSION=	0.0.7
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://netsaint.sourceforge.net/download/ \

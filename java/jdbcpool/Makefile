@@ -7,7 +7,7 @@
 
 PORTNAME=	jdbcpool
 PORTVERSION=	0.99
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java databases
 MASTER_SITES=	http://www.bitmechanic.com/projects/jdbcpool/dist/
 

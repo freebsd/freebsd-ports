@@ -7,6 +7,7 @@
 
 PORTNAME=	xshodo
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://cclub.cc.tut.ac.jp/pub/xwin/
 DISTNAME=	${PORTNAME}${PORTVERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	turba
 PORTVERSION=	2.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail www
 
 MAINTAINER=	beech@alaskaparadise.com

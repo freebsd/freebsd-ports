@@ -7,6 +7,7 @@
 
 PORTNAME=	glademm
 PORTVERSION=	2.6.0
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://home.wtal.de/petig/Gtk/
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}

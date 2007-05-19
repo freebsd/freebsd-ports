@@ -7,6 +7,7 @@
 
 PORTNAME=	svgviewer
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://web.telia.com/~u42308495/alex/
 DISTNAME=	SVGViewer-${PORTVERSION}

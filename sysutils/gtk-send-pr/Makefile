@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk-send-pr
 PORTVERSION=	0.4.8
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.berlios.de/${PORTNAME}/
 

@@ -6,6 +6,7 @@
 
 PORTNAME=	core
 PORTVERSION=	4.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.riverbankcomputing.com/Downloads/PyQt4/GPL/ \
 		http://freebsd.ricin.com/ports/distfiles/

@@ -6,7 +6,7 @@
 
 PORTNAME=	xmms-status-plugin
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.hellion.org.uk/source/
 

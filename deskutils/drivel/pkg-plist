@@ -72,21 +72,5 @@ share/mime/packages/drivel.xml
 @dirrm share/gnome/drivel
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/sr/LC_MESSAGES
-@dirrmtry share/locale/sr
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/no/LC_MESSAGES
-@dirrmtry share/locale/no
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs

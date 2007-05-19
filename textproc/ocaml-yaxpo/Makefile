@@ -7,6 +7,7 @@
 
 PORTNAME=	yaxpo
 PORTVERSION=	0.0.${DATE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://compbio.mit.edu/mikelin/yaxpo/
 PKGNAMEPREFIX=	ocaml-

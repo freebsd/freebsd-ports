@@ -173,6 +173,3 @@ share/pixmaps/audacious.png
 @dirrm include/audacious
 @dirrmtry lib/audacious
 @dirrmtry share/applications
-%%NLS%%@dirrmtry share/locale/sr@Latn/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/sr@Latn
-@dirrmtry share/pixmaps

@@ -7,7 +7,7 @@
 
 PORTNAME=	tunesbrowser
 PORTVERSION=	0.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://crazney.net/programs/itunes/files/
 

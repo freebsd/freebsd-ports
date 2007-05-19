@@ -7,6 +7,7 @@
 
 PORTNAME=	fec
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	net java
 MASTER_SITES=	http://onionnetworks.com/downloads/
 PKGNAMEPREFIX=	onion-

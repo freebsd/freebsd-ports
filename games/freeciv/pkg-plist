@@ -321,26 +321,8 @@ share/locale/ru/LC_MESSAGES/freeciv.mo
 share/locale/sv/LC_MESSAGES/freeciv.mo
 share/locale/uk/LC_MESSAGES/freeciv.mo
 %%X11%%share/applications/freeciv.desktop
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
 @dirrmtry share/locale/he_IL/LC_MESSAGES
 @dirrmtry share/locale/he_IL
-@dirrmtry share/locale/no/LC_MESSAGES
-@dirrmtry share/locale/no
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/ro/LC_MESSAGES
-@dirrmtry share/locale/ro
-@dirrmtry share/locale/sk/LC_MESSAGES
-@dirrmtry share/locale/sk
-@dirrmtry share/locale/uk/LC_MESSAGES
-@dirrmtry share/locale/uk
 %%X11%%@dirrm %%DATADIR%%/trident
 @dirrm %%DATADIR%%/scenario
 @dirrm %%DATADIR%%/nation

@@ -7,7 +7,7 @@
 
 PORTNAME=	lpr-wrapper
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.mathstat.dal.ca/~selinger/lpr-wrapper/download/
 

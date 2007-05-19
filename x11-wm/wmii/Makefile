@@ -7,6 +7,7 @@
 
 PORTNAME=	wmii
 DISTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.suckless.org/download/ CENKES
 

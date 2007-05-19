@@ -7,6 +7,7 @@
 
 PORTNAME=	lwm
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.jfc.org.uk/files/lwm/
 

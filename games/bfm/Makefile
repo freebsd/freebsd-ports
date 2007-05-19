@@ -7,6 +7,7 @@
 
 PORTNAME=	bfm
 PORTVERSION=	0.0.6.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/battle4mandicor
 EXTRACT_SUFX=	-src.tar.gz

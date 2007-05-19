@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk-murrina-aqua
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.kernow-webhosting.com/~bvc/theme/gtk/murrine/
 DISTNAME=	Murrina-Aqua

@@ -33,9 +33,3 @@ share/locale/sr/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/gst-plugins-ugly-%%VERSION%%.mo
-@dirrmtry share/locale/uk/LC_MESSAGES
-@dirrmtry share/locale/uk
-@dirrmtry share/locale/sr/LC_MESSAGES
-@dirrmtry share/locale/sr
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs

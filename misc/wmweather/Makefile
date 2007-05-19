@@ -6,7 +6,7 @@
 
 PORTNAME=	wmweather
 PORTVERSION=	2.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://www.godisch.de/debian/wmweather/
 

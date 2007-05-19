@@ -7,7 +7,7 @@
 
 PORTNAME=	openjit
 PORTVERSION=	1.1.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java
 MASTER_SITES=	http://www.openjit.org/dist/
 PKGNAMESUFFIX=	-${JAVA_PORT:S,java/,,}

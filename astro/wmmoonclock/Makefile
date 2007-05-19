@@ -7,7 +7,7 @@
 
 PORTNAME=	wmMoonClock
 PORTVERSION=	1.27
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://dockapps.org/files/14/21/
 

@@ -6,7 +6,7 @@
 
 PORTNAME=	cduce
 PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cduce.org/download/
 

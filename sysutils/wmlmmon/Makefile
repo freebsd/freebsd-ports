@@ -7,6 +7,7 @@
 
 PORTNAME=	wmlmmon
 PORTVERSION=	0.60
+PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.fxp.org/~jedgar/wmlmmon/
 

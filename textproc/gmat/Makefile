@@ -7,7 +7,7 @@
 
 PORTNAME=	gmat
 PORTVERSION=	0.2.4c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.ora.com/pub/gmat/
 

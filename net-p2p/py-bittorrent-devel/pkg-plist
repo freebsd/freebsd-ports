@@ -369,15 +369,6 @@ share/locale/zh_TW/LC_MESSAGES/bittorrent.mo
 %%GUI%%@dirrm share/pixmaps/BitTorrent/logo
 %%GUI%%@dirrm share/pixmaps/BitTorrent/flags
 %%GUI%%@dirrm share/pixmaps/BitTorrent
-%%GUI%%@dirrmtry share/pixmaps
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/ko/LC_MESSAGES
-@dirrmtry share/locale/ko
 @dirrm %%PYTHON_SITELIBDIR%%/khashmir
 @dirrm %%PYTHON_SITELIBDIR%%/BitTorrent/GUI_wx
 @dirrm %%PYTHON_SITELIBDIR%%/BitTorrent

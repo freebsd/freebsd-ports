@@ -7,7 +7,7 @@
 
 PORTNAME=	tank
 PORTVERSION=	0.4a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://step.polymtl.ca/~coyote/tank/
 EXTRACT_SUFX=	-src.tar.gz

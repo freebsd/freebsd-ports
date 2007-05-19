@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-launch
 DISTVERSION=	1.1b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://pierric.descamps.free.fr/pierric/downloads/ \
 		http://critical.ch/distfiles/ \

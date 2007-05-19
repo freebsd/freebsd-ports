@@ -801,7 +801,6 @@ share/pixmaps/tuxpaint.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/be
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/af
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/pixmaps
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
 @dirrmtry share/locale/ve/LC_MESSAGES

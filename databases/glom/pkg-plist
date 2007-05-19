@@ -53,13 +53,7 @@ share/mime/packages/glom.xml
 @dirrm share/gnome/glom/doc/examples
 @dirrm share/gnome/glom/doc
 @dirrm share/gnome/glom
-@dirrmtry share/locale/zh_CN/LC_MESSAGES
-@dirrmtry share/locale/zh_CN
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

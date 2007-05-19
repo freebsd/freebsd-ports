@@ -7,6 +7,7 @@
 
 PORTNAME=	shellac
 PORTVERSION=	20060412
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	http://hem.bredband.net/b298027/
 

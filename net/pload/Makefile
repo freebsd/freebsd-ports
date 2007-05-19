@@ -7,6 +7,7 @@
 
 PORTNAME=	pload
 PORTVERSION=	0.9.5
+PORTREVISION=	1
 CATEGORIES=	net sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://opal.com/freebsd/ports/net/pload/

@@ -7,7 +7,7 @@
 
 PORTNAME=	gpaint
 PORTVERSION=	0.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.atai.org/gpaint/
 

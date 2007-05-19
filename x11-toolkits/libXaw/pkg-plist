@@ -32,6 +32,8 @@ include/X11/Xaw/Panner.h
 include/X11/Xaw/PannerP.h
 include/X11/Xaw/Porthole.h
 include/X11/Xaw/PortholeP.h
+include/X11/Xaw/Print.h
+include/X11/Xaw/PrintSP.h
 include/X11/Xaw/Repeater.h
 include/X11/Xaw/RepeaterP.h
 include/X11/Xaw/Reports.h
@@ -49,6 +51,7 @@ include/X11/Xaw/SmeLineP.h
 include/X11/Xaw/SmeP.h
 include/X11/Xaw/StripCharP.h
 include/X11/Xaw/StripChart.h
+include/X11/Xaw/Template.c
 include/X11/Xaw/Template.h
 include/X11/Xaw/TemplateP.h
 include/X11/Xaw/Text.h
@@ -68,9 +71,24 @@ include/X11/Xaw/Viewport.h
 include/X11/Xaw/ViewportP.h
 include/X11/Xaw/XawImP.h
 include/X11/Xaw/XawInit.h
-lib/libXaw.a
-lib/libXaw.la
 lib/libXaw.so
+lib/libXaw.so.6
 lib/libXaw.so.7
-libdata/pkgconfig/xaw.pc
+lib/libXaw.so.8
+lib/libXaw6.a
+lib/libXaw6.la
+lib/libXaw6.so
+lib/libXaw6.so.6
+lib/libXaw7.a
+lib/libXaw7.la
+lib/libXaw7.so
+lib/libXaw7.so.7
+lib/libXaw8.a
+lib/libXaw8.la
+lib/libXaw8.so
+lib/libXaw8.so.8
+libdata/pkgconfig/xaw6.pc
+libdata/pkgconfig/xaw7.pc
+libdata/pkgconfig/xaw8.pc
+share/aclocal/xaw.m4
 @dirrm include/X11/Xaw

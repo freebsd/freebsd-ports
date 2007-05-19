@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libdrm
-PORTVERSION=	2.0.2
+PORTVERSION=	2.3.0
 CATEGORIES=	graphics x11
 MASTER_SITES=	http://dri.freedesktop.org/libdrm/
 
@@ -14,7 +14,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Userspace interface to kernel Direct Rendering Module services
 
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 pre-patch:
 	${REINPLACE_CMD} 's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|g' \

@@ -1,0 +1,9 @@
+bin/ccmakedep
+bin/cleanlinks
+bin/imake
+bin/makeg
+bin/mergelib
+bin/mkdirhier
+bin/mkhtmlindex
+bin/revpath
+bin/xmkmf

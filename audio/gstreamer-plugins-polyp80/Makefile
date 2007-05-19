@@ -6,7 +6,7 @@
 #    $MCom: ports/audio/gstreamer-plugins-polyp80/Makefile,v 1.3 2006/04/22 03:46:50 marcus Exp $
 #
 
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 
 COMMENT=	Gstreamer polypaudio sound server plugin

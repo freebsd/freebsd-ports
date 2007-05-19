@@ -7,7 +7,7 @@
 
 PORTNAME=	amanith
 PORTVERSION=	0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.amanith.org/download/files/ \
 		http://louhi.kempele.fi/~skyostil/projects/pyamanith/dist/

@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-nsf
 PORTVERSION=	0.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://optronic.sourceforge.net/files/ \
 		http://critical.ch/distfiles/ \

@@ -7,7 +7,7 @@
 
 PORTNAME=	nicotine
 PORTVERSION=	1.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://nicotine.thegraveyard.org/
 

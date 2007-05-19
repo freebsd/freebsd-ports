@@ -7,6 +7,7 @@
 
 PORTNAME=	acm
 PORTVERSION=	5.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.websimulations.com/download/
 

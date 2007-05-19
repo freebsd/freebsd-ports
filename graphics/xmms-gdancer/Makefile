@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms-gdancer
 PORTVERSION=	0.4.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.figz.com/gdancer/files/
 DISTNAME=	gdancer-$(PORTVERSION)

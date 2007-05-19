@@ -7,6 +7,7 @@
 
 PORTNAME=	xoris
 PORTVERSION=	0.1b
+PORTREVISION=	1
 CATEGORIES=	graphics x11
 MASTER_SITES=	http://gromnizki.unixdev.net/soft/
 

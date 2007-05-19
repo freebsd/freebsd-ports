@@ -7,6 +7,7 @@
 
 PORTNAME=	tamago
 PORTVERSION=	${EGG_DEBIAN_VER}.${EGG_ANTHY_VER}
+PORTREVISION=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_DEBIAN} \
 		http://www.meadowy.org/~shirai/elips/:anthy

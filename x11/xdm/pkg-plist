@@ -1,0 +1,23 @@
+bin/xdm
+bin/xdmshell
+lib/X11/xdm/pixmaps/xorg-bw.xpm
+lib/X11/xdm/pixmaps/xorg.xpm
+lib/X11/xdm/Xaccess
+lib/X11/xdm/GiveConsole
+lib/X11/xdm/TakeConsole
+lib/X11/xdm/Xsetup_0
+lib/X11/xdm/Xstartup
+lib/X11/xdm/Xreset
+lib/X11/xdm/Xwilling
+lib/X11/xdm/xdm-config
+lib/X11/xdm/Xresources
+lib/X11/xdm/Xservers
+lib/X11/xdm/Xsession
+lib/X11/xdm/libXdmGreet.so
+lib/X11/xdm/libXdmGreet.la
+lib/X11/xdm/libXdmGreet.a
+lib/X11/xdm/chooser
+share/X11/app-defaults/Chooser
+@dirrmtry share/X11/app-defaults
+@dirrm lib/X11/xdm/pixmaps
+@dirrm lib/X11/xdm

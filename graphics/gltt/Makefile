@@ -7,7 +7,7 @@
 
 PORTNAME=	gltt
 PORTVERSION=	2.5.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://gltt.sourceforge.net/download/
 

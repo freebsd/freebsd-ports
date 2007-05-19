@@ -6,6 +6,7 @@
 
 PORTNAME=	portbrowser
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.bytelabs.org/
 DISTNAME=	pb-browser-${PORTVERSION}

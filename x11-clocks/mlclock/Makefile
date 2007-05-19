@@ -7,6 +7,7 @@
 
 PORTNAME=	mlclock
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www2u.biglobe.ne.jp/~y-miyata/mlvwm/
 

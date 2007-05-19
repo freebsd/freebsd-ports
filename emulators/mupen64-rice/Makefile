@@ -7,7 +7,7 @@
 
 PORTNAME=	mupen64
 PORTVERSION=	5.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	emulators
 MASTER_SITES=	http://mupen64.emulation64.com/files/0.4/
 PKGNAMESUFFIX=	-rice
@@ -21,6 +21,7 @@ BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_SDL=	sdl
+USE_GL=		gl
 USE_GNOME=	gtk12
 USE_GCC=	3.4
 ONLY_FOR_ARCHS=	i386

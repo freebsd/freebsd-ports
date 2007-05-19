@@ -7,6 +7,7 @@
 
 PORTNAME=	kochi-ttfonts
 PORTVERSION=	20030809
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://downloads.sourceforge.jp/efont/5411/ \
 		${MASTER_SITE_PORTS_JP}

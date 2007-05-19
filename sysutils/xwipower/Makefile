@@ -7,7 +7,7 @@
 
 PORTNAME=	xwipower
 PORTVERSION=	20000623
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.fumi.org/pub/xwipower/
 EXTRACT_SUFX=	.tgz

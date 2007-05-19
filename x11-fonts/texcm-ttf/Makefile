@@ -7,6 +7,7 @@
 
 PORTNAME=	texcm-ttf
 PORTVERSION=	20010117
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.mozilla.org/projects/mathml/fonts/bakoma/
 DISTFILES=	${PORTNAME}${EXTRACT_SUFX} license.txt

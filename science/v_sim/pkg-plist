@@ -190,7 +190,6 @@ share/pixmaps/v_sim.xpm
 %%DATADIR%%/v_sim.res
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
-@dirrmtry share/pixmaps
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/APIreference/v_sim
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/APIreference

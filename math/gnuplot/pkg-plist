@@ -168,5 +168,3 @@ share/texmf-local/tex/latex/gnuplot/gnuplot.cfg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm libexec/gnuplot/4.2
 @dirrm libexec/gnuplot
-@dirrm lib/X11/app-defaults
-@dirrm lib/X11

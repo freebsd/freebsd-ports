@@ -6,6 +6,7 @@
 
 PORTNAME=	musepack
 PORTVERSION=	1.2
+PORTREVISION=	1
 PORTREIVIOSN=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://files.musepack.net/linux/plugins/

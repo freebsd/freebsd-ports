@@ -7,6 +7,7 @@
 
 PORTNAME=	oneko
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.daidouji.com/oneko/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.sakura.5

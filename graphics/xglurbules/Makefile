@@ -7,6 +7,7 @@
 
 PORTNAME=	xglurbules
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.pepcross.com/glurbules/
 

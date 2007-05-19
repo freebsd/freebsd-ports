@@ -7,6 +7,7 @@
 
 PORTNAME=	rmime
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.subterrain.net/code/
 DISTNAME=	rmime.el

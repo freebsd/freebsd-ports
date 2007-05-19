@@ -13,8 +13,6 @@ lib/enlightenment/modules/rain/module.edj
 %%NLS%%share/locale/it/LC_MESSAGES/rain.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/rain.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/rain.mo
-%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/fi
 @dirrm lib/enlightenment/modules/rain/%%E17_ARCH%%
 @dirrm lib/enlightenment/modules/rain
 @dirrmtry lib/enlightenment/modules

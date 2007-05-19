@@ -7,6 +7,7 @@
 
 PORTNAME=	starlogo
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	lang java
 MASTER_SITES=	http://education.mit.edu/starlogo/download/
 DISTNAME=	${PORTNAME}-2.0

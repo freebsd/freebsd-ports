@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dri
-PORTVERSION=	6.4.1
+PORTVERSION=	6.5.3
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -17,7 +17,7 @@ MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	OpenGL hardware acceleration drivers for the DRI
 
 LIB_DEPENDS=	drm:${PORTSDIR}/graphics/libdrm
-BUILD_DEPENDS=	makedepend:${X_IMAKE_PORT}
+BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 CONFLICTS=	xfree86-dri-* dri-6.2.2005* dri-6.5.2006*
 
@@ -30,9 +30,7 @@ MAKE_ENV+=	FBSDCC="${CC}" FBSDCXX="${CXX}" \
 		PTHREAD_LIBS=${PTHREAD_LIBS}
 USE_GCC=	3.4+
 
-ONLY_FOR_ARCHS=	i386 alpha amd64
-
-DRIMODDIR=	${PREFIX}/lib/modules/dri
+DRIMODDIR=	${PREFIX}/lib/dri
 
 .include <bsd.port.pre.mk>
 
@@ -44,8 +42,8 @@ do-install:
 	${MKDIR} ${DRIMODDIR}
 .if ${ARCH} == i386
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/i810_dri.so ${DRIMODDIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/i830_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/i915_dri.so ${DRIMODDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/i965_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/unichrome_dri.so ${DRIMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/tdfx_dri.so ${DRIMODDIR}
 .elif ${ARCH} == amd64
@@ -62,10 +60,19 @@ do-install:
 
 .if ${OSVERSION} < 500000
 pre-patch:
-	${REINPLACE_CMD} -e 's|stdint.h|sys/types.h|g' \
+	@${REINPLACE_CMD} -e 's|stdint.h|sys/types.h|g' \
 		${WRKSRC}/src/mesa/drivers/dri/mga/mga_xmesa.c \
 		${WRKSRC}/src/mesa/drivers/dri/mga/mgacontext.h
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^CC =/d' -e '/^CXX =/d' \
+		-e 's|/usr/local|$$(LOCALBASE)|g' \
+		-e 's|/usr/X11R6|$$(X11BASE)|g' \
+		-e 's|-lpthread|$$(PTHREAD_LIBS)|g' \
+		-e 's|^\(SRC_DIRS =\).*|\1 mesa|' \
+		-e 's|-DHAVE_POSIX_MEMALIGN||' \
+			${WRKSRC}/configs/freebsd-dri
 
 .if ${ARCH} == i386
 PLIST_SUB+=	I386=""

@@ -7,7 +7,7 @@
 
 PORTNAME=		oolite
 PORTVERSION=		1.65
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		games gnustep
 MASTER_SITES=		${MASTER_SITE_BERLIOS} \
 			ftp://ftp.alioth.net/%SUBDIR%/:alioth
@@ -19,6 +19,7 @@ MAINTAINER=		avg@icyb.net.ua
 COMMENT=		Trade and combat space simulator, clone of Elite
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
+USE_GL=			yes
 USE_SDL=		mixer image gfx
 USE_GMAKE=		yes
 USE_GNUSTEP=		yes

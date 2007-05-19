@@ -7,6 +7,7 @@
 
 PORTNAME=	skk-elisp
 PORTVERSION=	${SKK10_VER}
+PORTREVISION=	1
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://openlab.ring.gr.jp/skk/maintrunk/legacy/

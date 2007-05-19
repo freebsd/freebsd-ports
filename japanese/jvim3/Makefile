@@ -7,7 +7,7 @@
 
 PORTNAME=	jvim
 PORTVERSION=	3.0.j2.1a
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	${INPUT_METHOD}
 CATEGORIES=	japanese editors
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \

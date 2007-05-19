@@ -7,6 +7,7 @@
 
 PORTNAME=	gobby
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://releases.0x539.de/gobby/ \
 		http://www.atarininja.org/~wxs/distfiles/
@@ -30,7 +31,7 @@ PLIST_FILES=	bin/gobby share/pixmaps/gobby.png \
 		share/pixmaps/gobby/userlist.png \
 		share/pixmaps/gobby/doclist.png \
 		share/pixmaps/gobby/chat.png
-PLIST_DIRS=	share/pixmaps/gobby share/pixmaps
+PLIST_DIRS=	share/pixmaps/gobby
 
 MAN1=	gobby.1
 

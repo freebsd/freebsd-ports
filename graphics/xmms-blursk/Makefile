@@ -7,7 +7,7 @@
 
 PORTNAME=	blursk
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://web.cecs.pdx.edu/~kirkenda/blursk/
 PKGNAMEPREFIX=	xmms-

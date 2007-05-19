@@ -35,14 +35,6 @@ share/xfce4/panel-plugins/mailwatch.desktop
 @dirrm share/xfce4/doc/C
 @dirrm share/xfce4/doc
 @dirrm share/xfce4
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/fi
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
 @dirrm share/icons/hicolor/scalable/apps
 @dirrm share/icons/hicolor/scalable
 @dirrm share/icons/hicolor/48x48/apps

@@ -7,7 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.8.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-ffmpeg/
 PKGNAMESUFFIX=	-ffmpeg80

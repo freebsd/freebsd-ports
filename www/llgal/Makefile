@@ -6,6 +6,7 @@
 
 PORTNAME=	llgal
 PORTVERSION=	0.13.12
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.gna.org/llgal/
 

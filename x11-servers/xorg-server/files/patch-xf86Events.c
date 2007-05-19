@@ -1,5 +1,5 @@
---- programs/Xserver/hw/xfree86/common/xf86Events.c.orig	Sun Sep 26 04:17:42 2004
-+++ programs/Xserver/hw/xfree86/common/xf86Events.c	Sun Sep 26 04:17:25 2004
+--- hw/xfree86/common/xf86Events.c.orig	Sun Sep 26 04:17:42 2004
++++ hw/xfree86/common/xf86Events.c	Sun Sep 26 04:17:25 2004
 @@ -448,7 +448,7 @@
  #if defined(SYSCONS_SUPPORT) || defined(PCVT_SUPPORT) || defined(WSCONS_SUPPORT)
    static Bool first_time = TRUE;

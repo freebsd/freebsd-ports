@@ -7,6 +7,7 @@
 
 PORTNAME=	tkrat
 PORTVERSION=	2.1.5
+PORTREVISION=	1
 CATEGORIES=	mail tk84
 MASTER_SITES=	http://tkrat.org/downloads/stable/ \
 		ftp://ftp.tkrat.org/pub/tkrat/

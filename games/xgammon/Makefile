@@ -7,6 +7,7 @@
 
 PORTNAME=	xgammon
 PORTVERSION=	0.98a
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://fawn.unibw-hamburg.de/steuer/xgammon/Downloads/
 

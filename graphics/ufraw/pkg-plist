@@ -15,6 +15,3 @@ share/pixmaps/ufraw.png
 @dirrmtry share/applications
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/pixmaps

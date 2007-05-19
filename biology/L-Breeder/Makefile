@@ -8,7 +8,7 @@
 
 PORTNAME=	LBreeder
 PORTVERSION=	1.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	biology
 MASTER_SITES=	http://www.simonyi.ox.ac.uk/dawkins/software/yan/L-Breeder/
 DISTNAME=	${PORTNAME}-source

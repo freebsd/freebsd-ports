@@ -7,6 +7,7 @@
 
 PORTNAME=	lyx
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \

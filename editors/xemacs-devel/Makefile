@@ -7,6 +7,7 @@
 
 PORTNAME=	xemacs-devel
 PORTVERSION=	${XEMACS_VER:S/-/./}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
@@ -29,6 +30,7 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		compface.1:${PORTSDIR}/mail/faces
 USE_XLIB=	yes
+USE_XORG=	xbitmaps
 USE_XPM=	yes
 .endif
 

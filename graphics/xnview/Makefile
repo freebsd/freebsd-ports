@@ -29,6 +29,7 @@ MLINKS=		nview.1 nv.1 \
 
 .if ${OSVERSION} < 500000
 PORTVERSION=	1.68
+PORTREVISION=	1
 DISTNAME=	XnView-x86-unknown-FreeBSD4.x-static
 WRKSRC=		${WRKDIR}/XnView-${PORTVERSION}-x86-unknown-FreeBSD4.x-static
 PLIST_SUB+=	FREEBSD4=""

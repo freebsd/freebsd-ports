@@ -1,0 +1,24 @@
+bin/xedit
+lib/X11/xedit/lisp/progmodes/c.lsp
+lib/X11/xedit/lisp/progmodes/html.lsp
+lib/X11/xedit/lisp/progmodes/imake.lsp
+lib/X11/xedit/lisp/progmodes/lisp.lsp
+lib/X11/xedit/lisp/progmodes/make.lsp
+lib/X11/xedit/lisp/progmodes/man.lsp
+lib/X11/xedit/lisp/progmodes/patch.lsp
+lib/X11/xedit/lisp/progmodes/rpm.lsp
+lib/X11/xedit/lisp/progmodes/sgml.lsp
+lib/X11/xedit/lisp/progmodes/sh.lsp
+lib/X11/xedit/lisp/progmodes/xconf.lsp
+lib/X11/xedit/lisp/progmodes/xlog.lsp
+lib/X11/xedit/lisp/progmodes/xrdb.lsp
+lib/X11/xedit/lisp/lisp.lsp
+lib/X11/xedit/lisp/xedit.lsp
+lib/X11/xedit/lisp/syntax.lsp
+lib/X11/xedit/lisp/indent.lsp
+share/X11/app-defaults/Xedit-color
+share/X11/app-defaults/Xedit
+@dirrmtry share/X11/app-defaults
+@dirrm lib/X11/xedit/lisp/progmodes
+@dirrm lib/X11/xedit/lisp
+@dirrm lib/X11/xedit

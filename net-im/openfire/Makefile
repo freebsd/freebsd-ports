@@ -7,6 +7,7 @@
 
 PORTNAME=	wildfire
 PORTVERSION=	3.2.4
+PORTREVISION=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	http://www.igniterealtime.org/downloadServlet?filename=wildfire/
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}

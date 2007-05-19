@@ -7,6 +7,7 @@
 
 PORTNAME=	cursor-neutral-theme
 DISTVERSION=	1.13a
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.gnome-look.org/CONTENT/content-files/
 DISTNAME=	28310-neutral-${DISTVERSION}

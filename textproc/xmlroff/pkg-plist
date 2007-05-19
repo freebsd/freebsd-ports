@@ -365,7 +365,6 @@ share/xml/libfo-0.3.9/catalog.xml
 share/xml/libfo-0.3.9/libfo-compat.xsl
 share/xml/libfo-0.3.9/xmlroff.fo
 @dirrm share/xml/libfo-0.3.9
-@dirrmtry share/xml
 @dirrm %%DOCSDIR%%
 @dirrm include/libfo-0.3/util
 @dirrm include/libfo-0.3/property

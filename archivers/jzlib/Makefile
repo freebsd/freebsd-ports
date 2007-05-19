@@ -7,6 +7,7 @@
 
 PORTNAME=	jzlib
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	archivers java
 MASTER_SITES=	http://www.jcraft.com/jzlib/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	csound-manual
 PORTVERSION=	4.23
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.kevindumpscore.com/download/ \
 		ftp://ftp.cs.bath.ac.uk/pub/dream/documentation/manuals/

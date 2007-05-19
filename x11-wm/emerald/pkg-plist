@@ -1,0 +1,106 @@
+bin/emerald
+bin/emerald-theme-manager
+include/emerald/emerald.h
+include/emerald/engine.h
+include/emerald/libengine.h
+include/emerald/titlebar.h
+lib/libemeraldengine.a
+lib/libemeraldengine.la
+lib/libemeraldengine.so
+lib/libemeraldengine.so.0
+lib/emerald/engines/liblegacy.so
+lib/emerald/engines/liblegacy.la
+lib/emerald/engines/liblegacy.a
+lib/emerald/engines/libvrunner.so
+lib/emerald/engines/libvrunner.la
+lib/emerald/engines/libvrunner.a
+lib/emerald/engines/libtruglass.so
+lib/emerald/engines/libtruglass.la
+lib/emerald/engines/libtruglass.a
+lib/emerald/engines/liboxygen.so
+lib/emerald/engines/liboxygen.la
+lib/emerald/engines/liboxygen.a
+lib/emerald/engines/libpixmap.so
+lib/emerald/engines/libpixmap.la
+lib/emerald/engines/libpixmap.a
+lib/emerald/engines/libzootreeves.so
+lib/emerald/engines/libzootreeves.la
+lib/emerald/engines/libzootreeves.a
+libdata/pkgconfig/emeraldengine.pc
+share/applications/emerald-theme-manager.desktop
+share/icons/hicolor/48x48/mimetypes/application-x-emerald-theme.png
+share/mime/packages/emerald.xml
+share/mime-info/emerald.mime
+%%DATADIR%%/settings.ini
+%%DATADIR%%/theme/buttons.above.png
+%%DATADIR%%/theme/buttons.close.png
+%%DATADIR%%/theme/buttons.glow.png
+%%DATADIR%%/theme/buttons.help.png
+%%DATADIR%%/theme/buttons.inactive_glow.png
+%%DATADIR%%/theme/buttons.max.png
+%%DATADIR%%/theme/buttons.menu.png
+%%DATADIR%%/theme/buttons.min.png
+%%DATADIR%%/theme/buttons.restore.png
+%%DATADIR%%/theme/buttons.shade.png
+%%DATADIR%%/theme/buttons.sticky.png
+%%DATADIR%%/theme/buttons.unabove.png
+%%DATADIR%%/theme/buttons.unshade.png
+%%DATADIR%%/theme/buttons.unsticky.png
+%%DATADIR%%/theme/theme.screenshot.png
+%%DATADIR%%/theme/theme.ini
+share/locale/ca/LC_MESSAGES/emerald.mo
+share/locale/cs/LC_MESSAGES/emerald.mo
+share/locale/de_DE/LC_MESSAGES/emerald.mo
+share/locale/en_GB/LC_MESSAGES/emerald.mo
+share/locale/es_AR/LC_MESSAGES/emerald.mo
+share/locale/es_ES/LC_MESSAGES/emerald.mo
+share/locale/fr_FR/LC_MESSAGES/emerald.mo
+share/locale/gu_IN/LC_MESSAGES/emerald.mo
+share/locale/hu_HU/LC_MESSAGES/emerald.mo
+share/locale/it/LC_MESSAGES/emerald.mo
+share/locale/ja/LC_MESSAGES/emerald.mo
+share/locale/ko_KR/LC_MESSAGES/emerald.mo
+share/locale/nb_NO/LC_MESSAGES/emerald.mo
+share/locale/nl/LC_MESSAGES/emerald.mo
+share/locale/pt_BR/LC_MESSAGES/emerald.mo
+share/locale/pt_PT/LC_MESSAGES/emerald.mo
+share/locale/sv_FI/LC_MESSAGES/emerald.mo
+share/locale/sv_SE/LC_MESSAGES/emerald.mo
+share/locale/tr_TR/LC_MESSAGES/emerald.mo
+share/locale/zh_CN/LC_MESSAGES/emerald.mo
+share/locale/zh_HK/LC_MESSAGES/emerald.mo
+share/locale/zh_TW/LC_MESSAGES/emerald.mo
+share/pixmaps/emerald-theme-manager-icon.png
+@dirrmtry share/mime-info
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/tr_TR/LC_MESSAGES
+@dirrmtry share/locale/tr_TR
+@dirrmtry share/locale/sv_SE/LC_MESSAGES
+@dirrmtry share/locale/sv_SE
+@dirrmtry share/locale/sv_FI/LC_MESSAGES
+@dirrmtry share/locale/sv_FI
+@dirrmtry share/locale/nb_NO/LC_MESSAGES
+@dirrmtry share/locale/nb_NO
+@dirrmtry share/locale/ko_KR/LC_MESSAGES
+@dirrmtry share/locale/ko_KR
+@dirrmtry share/locale/ja_JP/LC_MESSAGES
+@dirrmtry share/locale/ja_JP
+@dirrmtry share/locale/it_IT/LC_MESSAGES
+@dirrmtry share/locale/it_IT
+@dirrmtry share/locale/hu_HU/LC_MESSAGES
+@dirrmtry share/locale/hu_HU
+@dirrmtry share/locale/gu_IN/LC_MESSAGES
+@dirrmtry share/locale/gu_IN
+@dirrmtry share/locale/es_AR/LC_MESSAGES
+@dirrmtry share/locale/es_AR
+@dirrmtry share/locale/de_DE/LC_MESSAGES
+@dirrmtry share/locale/de_DE
+@dirrmtry share/locale/ca_ES/LC_MESSAGES
+@dirrmtry share/locale/ca_ES
+@dirrmtry %%DATADIR%%/theme
+@dirrmtry %%DATADIR%%
+@dirrmtry share/applications
+@dirrmtry lib/emerald/engines
+@dirrmtry lib/emerald
+@dirrmtry include/emerald

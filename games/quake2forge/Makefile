@@ -7,7 +7,7 @@
 
 PORTNAME=	quake2forge
 PORTVERSION=	0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.galgenberg.net/distfiles/
 DISTNAME=	quake2-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	skkinput3
 PORTVERSION=	3.0.6
+PORTREVISION=	1
 CATEGORIES=	japanese x11
 MASTER_SITES=	http://downloads.sourceforge.jp/skkinput3/2222/
 DISTNAME=	skkinput-${PORTVERSION}

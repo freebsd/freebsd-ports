@@ -7,7 +7,7 @@
 
 PORTNAME=	jgv
 PORTVERSION=	0.2a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics windowmaker tkstep80
 MASTER_SITES=	http://www.aaa-int.or.jp/~jfactory/JDE/dist/ \
 		${MASTER_SITE_LOCAL}

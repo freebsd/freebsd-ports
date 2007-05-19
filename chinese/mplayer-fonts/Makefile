@@ -6,6 +6,7 @@
 
 PORTNAME=	mplayer-fonts
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	chinese multimedia
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/mplayer/
 DISTFILES=	${SUBFONT_DISTNAME}.tar.bz2 \

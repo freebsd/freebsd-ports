@@ -7,14 +7,14 @@
 
 PORTNAME=	gtkfind
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The program to use to have to remember all the options to find(1)
 
-BUILD_DEPENDS=	xterm:${X_CLIENTS_PORT}
+BUILD_DEPENDS=	appres:${X_CLIENTS_PORT}
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

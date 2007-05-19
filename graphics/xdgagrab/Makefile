@@ -7,6 +7,7 @@
 
 PORTNAME=	xdgagrab
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.infonets.hiroshima-u.ac.jp/~taoka/FreeBSD/ports/
 

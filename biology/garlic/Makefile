@@ -7,6 +7,7 @@
 
 PORTNAME=	garlic
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	http://garlic.mefos.hr/sources/garlic-${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

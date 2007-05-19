@@ -7,7 +7,7 @@
 
 PORTNAME=	wmix
 PORTVERSION=	3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/
 

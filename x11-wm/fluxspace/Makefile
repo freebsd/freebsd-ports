@@ -7,7 +7,7 @@
 
 PORTNAME=	fluxspace
 PORTVERSION=	0.0.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.isomedia.com/homes/stevencooper/files/
 

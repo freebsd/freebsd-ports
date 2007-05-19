@@ -7,7 +7,7 @@
 
 PORTNAME=	artemis
 PORTVERSION=	7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology java
 MASTER_SITES=	http://www.sanger.ac.uk/Software/Artemis/v${PORTVERSION}/
 DISTNAME=	artemis_compiled_v${PORTVERSION}_${PORTREVISION}

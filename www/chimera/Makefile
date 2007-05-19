@@ -7,7 +7,7 @@
 
 PORTNAME=	chimera
 PORTVERSION=	1.70p0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.rocklinux.net/people/ripclaw/projects/software/chimera/devel/
 

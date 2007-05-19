@@ -7,6 +7,7 @@
 
 PORTNAME=	nimbus
 PORTVERSION=	0.0.6
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://dlc.sun.com/osol/jds/downloads/extras/
 

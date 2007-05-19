@@ -7,6 +7,7 @@
 
 PORTNAME=	foo2zjs
 PORTVERSION=	20070120
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://foo2zjs.rkkda.com/ \
 		${MASTER_SITE_LOCAL:S,$,acm/${PORTNAME}/,}

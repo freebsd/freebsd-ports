@@ -7,7 +7,7 @@
 
 PORTNAME=	hfsutils
 PORTVERSION=	3.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators tk84
 MASTER_SITES=	ftp://ftp.mars.org/pub/hfs/
 

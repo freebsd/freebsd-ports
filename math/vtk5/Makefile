@@ -15,7 +15,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math graphics
 MASTER_SITES=	http://ovt.irfu.se/vtk/files/
 DISTFILES?=	VTK-${PORTVERSION}-LatestRelease.tar.gz

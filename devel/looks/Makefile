@@ -7,6 +7,7 @@
 
 PORTNAME=	looks
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	https://looks.dev.java.net/files/documents/31/${DISTREP}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|_|g}-${DISTDATE}

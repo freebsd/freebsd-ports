@@ -42,5 +42,3 @@ share/locale/ru/LC_MESSAGES/hercules.mo
 %%PYTHON_SITELIBDIR%%/Hercules/workoutsql.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/Hercules/gui
 @dirrm %%PYTHON_SITELIBDIR%%/Hercules
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs

@@ -7,6 +7,7 @@
 
 PORTNAME=	icbm3d
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/icbm3d/
 DISTNAME=	${PORTNAME}.${PORTVERSION}

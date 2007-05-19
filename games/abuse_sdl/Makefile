@@ -7,7 +7,7 @@
 
 PORTNAME=	abuse_sdl
 PORTVERSION=	0.7.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://www.labyrinth.net.au/~trandor/abuse/files/
 

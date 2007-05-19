@@ -7,6 +7,7 @@
 
 PORTNAME=	wmmemmon
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://seiichisato.jp/dockapps/src/
 

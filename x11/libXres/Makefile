@@ -6,31 +6,20 @@
 #
 
 PORTNAME=	libXres
-PORTVERSION=	1.0.1
-PORTREVISION=	4
+PORTVERSION=	1.0.3
 CATEGORIES=	x11
-MASTER_SITES=	http://freedesktop.org/~ajax/xlibs-release/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Resource usage library
 
-LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/x11.pc:${PORTSDIR}/x11/libX11 \
-		${X11BASE}/libdata/pkgconfig/xext.pc:${PORTSDIR}/x11/libXext
-BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/resourceext.pc:${PORTSDIR}/x11/resourceext \
-		${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto \
-		${X11BASE}/libdata/pkgconfig/xextensions.pc:${PORTSDIR}/x11/xextensions \
-		${LIB_PC_DEPENDS}
-RUN_DEPENDS=	${LIB_PC_DEPENDS}
+XORG_CAT=	lib
+USE_XORG=	x11 xext xextproto resourceproto
 
-CONFLICTS=	XFree86-libraries-* xorg-libraries-*
-
-USE_BZIP2=	yes
-PREFIX?=	${X11BASE}
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CFLAGS+=	-DMALLOC_0_RETURNS_NULL
-INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomehack pkgconfig
+MAN3=		XRes.3 \
+		XResQueryClients.3 \
+		XResQueryClientPixmapBytes.3 \
+		XResQueryClientResources.3 \
+		XResQueryExtension.3 \
+		XResQueryVersion.3
 
 .include <bsd.port.mk>

@@ -8,7 +8,7 @@
 
 PORTNAME=	asr-utils
 PORTVERSION=	3.04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.adaptec.com/raid/u160raid/unix/ \
 		ftp://ftp.adaptec.com/raid/u160raid/unix/

@@ -7,7 +7,7 @@
 
 PORTNAME=	elvis
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.cs.pdx.edu/pub/elvis/ \
 		ftp://ftp.false.com/pub/elvis/ \

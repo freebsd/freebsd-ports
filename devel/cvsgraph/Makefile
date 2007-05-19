@@ -7,6 +7,7 @@
 
 PORTNAME=	cvsgraph
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.akhphd.au.dk/~bertho/cvsgraph/release/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	kobodeluxe
 DISTVERSION=	0.4pre10
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://olofson.net/kobodl/download/ \
 		http://www.amdmi3.ru/distfiles/

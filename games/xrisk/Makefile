@@ -7,6 +7,7 @@
 
 PORTNAME=	xrisk
 PORTVERSION=	2.15
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://my.pages.de/pub/comp/unix/games/xrisk/old/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	scim-openvanilla
 PORTVERSION=	0.7.2.b20060214
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.csie.org/~llwang/	\
 		http://www.infor.org/~llwang/

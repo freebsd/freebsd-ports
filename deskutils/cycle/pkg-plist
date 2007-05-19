@@ -29,14 +29,6 @@ share/locale/es/LC_MESSAGES/cycle.mo
 share/locale/gl/LC_MESSAGES/cycle.mo
 share/locale/ru/LC_MESSAGES/cycle.mo
 share/locale/sk/LC_MESSAGES/cycle.mo
-@dirrmtry share/locale/ca/LC_MESSAGES
-@dirrmtry share/locale/ca
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/gl/LC_MESSAGES
-@dirrmtry share/locale/gl
-@dirrmtry share/locale/sk/LC_MESSAGES
-@dirrmtry share/locale/sk
 %%DOCSDIR%%/README.html
 %%DOCSDIR%%/README_de.html
 %%DOCSDIR%%/README_ru.html

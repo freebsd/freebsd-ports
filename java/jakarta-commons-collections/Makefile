@@ -7,6 +7,7 @@
 
 PORTNAME=	commons-collections
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	commons/collections/source/

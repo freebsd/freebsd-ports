@@ -6,7 +6,7 @@
 
 PORTNAME=	xfaces
 PORTVERSION=	3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/xfaces/ \
 		http://www.mavetju.org/download/adopted/xfaces/

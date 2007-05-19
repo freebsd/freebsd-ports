@@ -8,6 +8,7 @@
 
 PORTNAME=	xlbiff
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 EXTRACT_SUFX=	.tar.Z

@@ -7,6 +7,7 @@
 
 PORTNAME=	dtdinst
 PORTVERSION=	2003.06.19
+PORTREVISION=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	http://www.thaiopensource.com/download/
 DISTNAME=	${PORTNAME}-20030619

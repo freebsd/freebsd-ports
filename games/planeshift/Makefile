@@ -7,7 +7,7 @@
 
 PORTNAME=	planeshift
 PORTVERSION=	0.3.017
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://alex.foxybanana.com/freebsd/
 

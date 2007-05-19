@@ -7,7 +7,7 @@
 
 PORTNAME=	qtpkg
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ports-mgmt
 # mastersite disappeared around July 6 2003
 MASTER_SITES=	# http://gauss.cord.edu/homepages/twschulz/demo/

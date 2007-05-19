@@ -7,7 +7,7 @@
 
 PORTNAME=	neXtaw
 PORTVERSION=	0.15.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://siag.nu/pub/neXtaw/
 

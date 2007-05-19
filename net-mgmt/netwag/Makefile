@@ -7,6 +7,7 @@
 
 PORTNAME=	netwag
 PORTVERSION=	5.35.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://www.laurentconstantin.com/common/netw/${PORTNAME}/download/v5/ \
 		http://membres.lycos.fr/lauconstantin/common/netw/${PORTNAME}/download/v5/ \
@@ -18,7 +19,7 @@ COMMENT=	A graphical front end for netwox
 
 BUILD_DEPENDS=	netwox:${PORTSDIR}/net-mgmt/netwox \
 		wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
-		xterm:${X_CLIENTS_PORT}
+		appres:${X_CLIENTS_PORT}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/src

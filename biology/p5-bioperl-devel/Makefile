@@ -7,6 +7,7 @@
 
 PORTNAME=	bioperl
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	biology perl5
 MASTER_SITES=	http://bioperl.org/DIST/
 PKGNAMEPREFIX=	p5-

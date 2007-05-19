@@ -7,7 +7,7 @@
 
 PORTNAME=	gmessage
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://www.brettnacher.org/users/dominik/FreeBSD/
 

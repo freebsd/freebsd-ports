@@ -7,6 +7,7 @@
 
 PORTNAME=	ansel
 PORTVERSION=	0.1.b20070319
+PORTREVISION=	1
 DISTVERSIONPREFIX=
 CATEGORIES=	www
 MASTER_SITES=	CENKES http://freebsd.alaskaparadise.com/source/

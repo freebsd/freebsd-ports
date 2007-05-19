@@ -7,6 +7,7 @@
 
 PORTNAME=	xevil
 PORTVERSION=	2.02.r2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.xevil.com/download/stable/
 DISTNAME=	xevilsrc${PORTVERSION:S/.r/r/}

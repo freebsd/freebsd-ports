@@ -1,0 +1,21 @@
+bin/epiwm
+bin/epiwm.inst
+bin/logoepiwm
+etc/epiwm/icons
+etc/epiwm/key
+etc/epiwm/menu
+etc/epiwm/start
+etc/epiwm/style
+etc/epiwm/window
+etc/epiwm/workspace
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/EPIwm-0.5.6.lsm
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm etc/epiwm

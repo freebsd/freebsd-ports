@@ -162,5 +162,4 @@ share/pixmaps/denemo.png
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@dirrmtry share/pixmaps
 @dirrm include/denemo

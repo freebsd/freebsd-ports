@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-keyring-manager
 PORTVERSION=	2.18.0
+PORTREVISION=	1
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

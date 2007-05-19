@@ -7,6 +7,7 @@
 
 PORTNAME=	ifhp
 PORTVERSION=	3.5.20
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lprng.com/pub/%SUBDIR%/ \
 		ftp://ftp.cise.ufl.edu/pub/mirrors/%SUBDIR%/ \

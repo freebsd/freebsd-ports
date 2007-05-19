@@ -7,6 +7,7 @@
 
 PORTNAME=	gimmie
 PORTVERSION=	0.2.5
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.beatniksoftware.com/gimmie/releases/
 

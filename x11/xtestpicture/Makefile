@@ -7,6 +7,7 @@
 
 PORTNAME=	xtestpicture
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.interface-business.de/pub/outgoing/
 

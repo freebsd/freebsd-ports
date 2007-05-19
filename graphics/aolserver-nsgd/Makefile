@@ -7,7 +7,7 @@
 
 PORTNAME=	nsgd
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics www
 MASTER_SITES=	http://www.aolserver.cz/download/
 PKGNAMEPREFIX=	aolserver-

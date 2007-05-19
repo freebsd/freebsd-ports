@@ -7,6 +7,7 @@
 
 PORTNAME=	astzclock
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11-clocks afterstep
 MASTER_SITES=	http://www.eyesbeyond.com/freebsddom/astzclock/
 

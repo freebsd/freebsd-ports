@@ -153,4 +153,3 @@ share/pixmaps/nicotine-plus-32px.png
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@dirrmtry share/pixmaps

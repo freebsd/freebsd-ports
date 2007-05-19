@@ -7,7 +7,7 @@
 
 PORTNAME=	popt
 PORTVERSION=	1.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/%SUBDIR%/ \
 		http://rpmfind.net/linux/rpm.org/rpm/dist/%SUBDIR%/ \

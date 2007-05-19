@@ -7,6 +7,7 @@
 
 PORTNAME=	notify
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=python-
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.galago-project.org/files/releases/source/notify-python/

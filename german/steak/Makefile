@@ -7,7 +7,7 @@
 
 PORTNAME=	steak
 PORTVERSION=	1.7.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	german
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.tm.informatik.uni-frankfurt.de/%7Erazi/steak/program/

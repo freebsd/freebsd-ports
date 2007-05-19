@@ -6,7 +6,7 @@
 #    $MCom: ports/x11-toolkits/gstreamer-plugins-pango80/Makefile,v 1.2 2006/02/25 00:40:47 marcus Exp $
 #
 
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 
 COMMENT=	Gstreamer pango textoverlay plugin

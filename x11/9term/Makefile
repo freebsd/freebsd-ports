@@ -7,6 +7,7 @@
 
 PORTNAME=	9term
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	x11 plan9
 MASTER_SITES=	ftp://ftp.cs.usyd.edu.au/matty/unicode/
 DISTNAME=	${PORTNAME}.${PORTVERSION}

@@ -8,6 +8,7 @@
 
 PORTNAME=	numlockx
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://ktown.kde.org/~seli/numlockx/ \
 		http://caraldi.com/jbq/numlockx/

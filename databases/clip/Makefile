@@ -7,7 +7,7 @@
 
 PORTNAME=	clip
 DISTVERSION=	1.1.16-1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases lang
 MASTER_SITES=	ftp://ftp.linux.ru.net/mirrors/clip/	\
 		ftp://www.cis.by/pub/clip/pub/clip/	\

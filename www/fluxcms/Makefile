@@ -7,6 +7,7 @@
 
 PORTNAME=	fluxcms
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://bitflux.org/download/ \
 		http://www.chruetertee.ch/files/download/

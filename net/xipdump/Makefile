@@ -7,7 +7,7 @@
 
 PORTNAME=	xipdump
 PORTVERSION=	1.5.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.lse.epita.fr/twiki/pub/Projects/XipDump/
 EXTRACT_SUFX=	.tgz

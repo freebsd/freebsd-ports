@@ -7,6 +7,7 @@
 
 PORTNAME=	drexelsnmp
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	java devel net-mgmt
 MASTER_SITES=	http://gicl.cs.drexel.edu/people/sevy/snmp/
 DISTNAME=	source_${PORTVERSION}

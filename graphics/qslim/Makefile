@@ -8,7 +8,7 @@
 
 PORTNAME=	qslim
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://graphics.cs.uiuc.edu/~garland/dist/
 

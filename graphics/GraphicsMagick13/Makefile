@@ -7,6 +7,7 @@
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.1.7
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/

@@ -1,50 +1,30 @@
-# New ports collection makefile for:    xorg-fontserver
-# Date created:		10 June 2004
-# Whom:			anholt@FreeBSD.org
+# New ports collection makefile for:	xfs
+# Date Created:				17 Feb 2006
+# Whom:					Florent Thoumie <flz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	xorg-fontserver
-PORTVERSION=	6.9.0
-PORTREVISION=	1
-CATEGORIES=	x11-servers
-MASTER_SITES=	${MASTER_SITE_XORG}
-MASTER_SITE_SUBDIR=	X11R${PORTVERSION}/src
-DISTFILES=	X11R${PORTVERSION}-src1.tar.gz \
-		X11R${PORTVERSION}-src2.tar.gz
+PORTNAME=	xfs
+PORTVERSION=	1.0.4
+PORTREVISION=	3
+PORTEPOCH=	1
+CATEGORIES=	x11-fonts
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	X font server from X.Org
+COMMENT=	X.Org font server
 
-CONFLICTS=	XFree86-FontServer-*
-
-EXTRA_PATCHES=	${CF_PATCHES}
-
-USE_XLIB=	yes
-USE_RC_SUBR=	yes
+XORG_CAT=	app
+USE_XORG=	libfs xfont xtrans
+USE_RC_SUBR=	xfs
+ALL_TARGET=	all config
 
 MAN1=		xfs.1
 
-XBUILD_DIRS=	programs/xfs
-XINCLUDE_DIRS=	lib/xtrans
-XMAN_DIRS=	programs/xfs
-
-post-build:
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		-e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
-		${FILESDIR}/xfs.sh >${WRKDIR}/xfs.sh
-
 post-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/xfs.sh ${PREFIX}/etc/rc.d
-	${INSTALL_SCRIPT} ${WRKSRC}/programs/xfs/config \
-		${PREFIX}/lib/X11/fs/config.default
+	${INSTALL_SCRIPT} ${WRKSRC}/config ${PREFIX}/lib/X11/fs/config.default
+	@if [ ! -f ${PREFIX}/lib/X11/fs/config ]; then \
+		${INSTALL_SCRIPT} ${WRKSRC}/config ${PREFIX}/lib/X11/fs/config; \
+	fi
 
-.include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
-.include <bsd.port.pre.mk>
-.if ${X_WINDOW_SYSTEM:L} != xorg
-IGNORE=	is part of X.Org and you have ${X_WINDOW_SYSTEM} set for X11\
-	distribution. See The X Window System and Virtual Consoles chapter\
-	of FAQ for more information
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

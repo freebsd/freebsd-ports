@@ -7,6 +7,7 @@
 
 PORTNAME=	asmix
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	audio afterstep
 MASTER_SITES=	http://www.tigr.net/afterstep/download/asmix/
 

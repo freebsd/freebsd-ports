@@ -8,7 +8,7 @@
 
 PORTNAME=	gkrellmmailwatch
 PORTVERSION=	2.4.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://gkrellm.luon.net/files/
 DISTNAME=	gkrellm-mailwatch-${PORTVERSION}

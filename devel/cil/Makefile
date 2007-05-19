@@ -7,6 +7,7 @@
 
 PORTNAME=	cil
 PORTVERSION=	1.3.6
+PORTREVISION=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://hal.cs.berkeley.edu/cil/distrib/

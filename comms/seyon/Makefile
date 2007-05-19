@@ -7,6 +7,7 @@
 
 PORTNAME=	seyon
 PORTVERSION=	2.14b
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://sipb.mit.edu/pub/seyon/
 DISTNAME=	Seyon-${PORTVERSION}

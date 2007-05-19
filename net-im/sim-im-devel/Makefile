@@ -6,6 +6,7 @@
 
 PORTNAME=	sim-im-devel
 PORTVERSION=	0.9.5.1809
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://sim-im.lehis.ru/dist/ \
 		http://www.sim-im.lehis.ru/dist/

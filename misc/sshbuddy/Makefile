@@ -7,6 +7,7 @@
 
 PORTNAME=	sshbuddy
 PORTVERSION=	1.05
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://linuxmafia.com/pub/linux/security/sshbuddy/
 

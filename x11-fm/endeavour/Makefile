@@ -8,7 +8,7 @@
 
 PORTNAME=	endeavour
 PORTVERSION=	1.13.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	arved
@@ -43,6 +43,8 @@ CFLAGS+=	-DNEED_STRCASESTR
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|make |\$$\(MAKE\) |g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|$(X11BASE)|g' \
+		${WRKSRC}/endeavour/platforms.ini ${WRKSRC}/pconf/platforms.ini
 	@${FIND} ${WRKSRC}/endeavour -type f | ${XARGS} ${REINPLACE_CMD} -e \
 		's|#include <malloc.h>||g ; \
 		 s|#include <asm/types.h>||g ; \

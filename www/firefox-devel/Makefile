@@ -7,6 +7,7 @@
 
 PORTNAME=	firefox
 DISTVERSION=	3.0.a2
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -89,7 +90,6 @@ port-pre-install:
 	${ECHO_CMD} 'share/applications/${MOZILLA}.desktop' >> ${PLIST}
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
 	${ECHO_CMD} 'share/pixmaps/${FIREFOX_ICON}' >> ${PLIST}
-	${ECHO_CMD} "@dirrmtry share/pixmaps" >> ${PLIST}
 .if !defined(WITHOUT_NEWTAB)
 	${ECHO_CMD} >> ${SYSTEM_PREFS}
 	${ECHO_CMD} "// Open external links in new tab" >> ${SYSTEM_PREFS}

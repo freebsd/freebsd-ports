@@ -48,4 +48,3 @@ lib/%%PORTNAME%%/Resources/UI.xml
 @dirrm %%EXAMPLESDIR%%
 share/pixmaps/%%PORTNAME%%.png
 share/pixmaps/%%PORTNAME%%.xpm
-@dirrmtry share/pixmaps

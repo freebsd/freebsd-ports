@@ -13,5 +13,4 @@ share/pixmaps/viruskiller.png
 %%PORTDOCS%%%%DOCSDIR%%/virus3.gif
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry share/pixmaps
 @dirrmtry share/applications

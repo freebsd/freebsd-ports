@@ -7,6 +7,7 @@
 
 PORTNAME=	gladtex
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	textproc math www
 MASTER_SITES=	http://www.math.uio.no/~martingu/gladtex/dl/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/

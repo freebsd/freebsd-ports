@@ -7,6 +7,7 @@
 
 PORTNAME=	subtitleeditor
 PORTVERSION=	0.13.6
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://kitone.free.fr/subtitleeditor/files/ CENKES
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	xtris
 PORTVERSION=	1.15
+PORTREVISION=	1
 CATEGORIES=	games ipv6
 MASTER_SITES=	ftp://quatramaran.ens.fr/pub/orabidoo/
 

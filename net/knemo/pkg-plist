@@ -82,17 +82,7 @@ share/locale/tr/LC_MESSAGES/kcm_knemo.mo
 share/locale/tr/LC_MESSAGES/knemod.mo
 share/services/kded/knemod.desktop
 @dirrmtry share/services/kded
-@dirrmtry share/locale/sr/LC_MESSAGES
-@dirrmtry share/locale/sr
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl
-@dirrmtry share/locale/el/LC_MESSAGES
-@dirrmtry share/locale/el
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
 @dirrm share/apps/knemo
 @dirrmtry share/applications/kde

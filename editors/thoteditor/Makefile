@@ -7,7 +7,7 @@
 
 PORTNAME=	thoteditor
 PORTVERSION=	2.1e
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors www
 MASTER_SITES=	ftp://ftp.inrialpes.fr/pub/opera/sources/thot/ \
 		ftp://ftp.ruhr-uni-bochum.de/local/jk.collection/thot/

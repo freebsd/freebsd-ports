@@ -47,7 +47,3 @@ share/locale/nl/LC_MESSAGES/chemtool.mo
 share/locale/pl/LC_MESSAGES/chemtool.mo
 share/locale/pt_BR/LC_MESSAGES/chemtool.mo
 share/locale/ru/LC_MESSAGES/chemtool.mo
-@dirrmtry share/locale/cs/LC_MESSAGES
-@dirrmtry share/locale/cs
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl

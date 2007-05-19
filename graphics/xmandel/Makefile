@@ -7,6 +7,7 @@
 
 PORTNAME=	xmandel
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cray.com/src/graphics/xmandel/
 # The README says the location is ftp.cray.com:/usr/ftp/src/graphics/xmandel,

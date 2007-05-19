@@ -7,11 +7,12 @@
 
 PORTNAME=	xmine
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.sw.ru/pub/x11/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	joerg
-DISTNAME=	${PKGNAME}-Xaw
+DISTNAME=	${PORTNAME}-${PORTVERSION}-Xaw
 
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	The `Athena' port of the xminesweeper game

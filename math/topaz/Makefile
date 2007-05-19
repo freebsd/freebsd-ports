@@ -7,6 +7,7 @@
 
 PORTNAME=	topaz
 PORTVERSION=	3.40
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA007663/topaz/bin/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/}-src

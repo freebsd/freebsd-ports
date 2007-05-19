@@ -7,6 +7,7 @@
 
 PORTNAME=	lincity-ng
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,6 +21,7 @@ LIB_DEPENDS=	physfs-1.0.1:${PORTSDIR}/devel/physfs
 USE_BZIP2=	yes
 USE_GCC=	3.2+
 USE_SDL=	sdl mixer image ttf gfx
+USE_GL=		yes
 USE_GNOME=	libxml2
 
 GNU_CONFIGURE=	yes

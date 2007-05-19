@@ -7,6 +7,7 @@
 
 PORTNAME=	gnuwash
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/g/gnuwash.app

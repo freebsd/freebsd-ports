@@ -7,7 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES+=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
@@ -33,6 +33,7 @@ CONFIGURE_ARGS=	--with-x=no --with-pop
 .else
 CONFIGURE_ARGS=	--with-x-toolkit --with-pop
 USE_XLIB=	yes
+USE_XORG=	xbitmaps
 .endif
 CONFIGURE_ARGS+=	--with-line-space \
 	--bindir='$${archlibdir}' \

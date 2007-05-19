@@ -7,7 +7,7 @@
 
 PORTNAME=	xdu
 PORTVERSION=	3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://sd.wareonearth.com/~phil/xdu/
 EXTRACT_SUFX=	.tar.Z

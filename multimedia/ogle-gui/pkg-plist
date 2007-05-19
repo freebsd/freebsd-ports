@@ -31,5 +31,3 @@ share/locale/sv/LC_MESSAGES/ogle_gui.mo
 @dirrmtry share/locale
 @dirrm share/gnome/ogle_gui
 @dirrm lib/ogle
-@dirrmtry share/locale/pt/LC_MESSAGES
-@dirrmtry share/locale/pt

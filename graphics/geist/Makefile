@@ -7,7 +7,7 @@
 
 PORTNAME=	geist
 PORTVERSION=	0.0.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://linuxbrit.co.uk/downloads/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	yc.el
 PORTVERSION=	4.0.13
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://www.ceres.dti.ne.jp/~knak/

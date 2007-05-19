@@ -7,7 +7,7 @@
 
 PORTNAME=	naga10
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA013391/fonts/
 DISTNAME=	knj10-${PORTVERSION}

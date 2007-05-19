@@ -7,6 +7,7 @@
 
 PORTNAME=	hanyangfonts
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=   ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/ \
 		ftp://ftp.kaist.ac.kr/pub/hangul/fonts/ \

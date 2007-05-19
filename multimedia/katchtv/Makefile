@@ -7,6 +7,7 @@
 
 PORTNAME=	katchtv
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	multimedia kde python
 MASTER_SITES=	http://www.digitalunleashed.com/downloads/${PORTNAME}/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/

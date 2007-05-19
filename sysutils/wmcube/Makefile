@@ -7,7 +7,7 @@
 
 PORTNAME=	wmcube
 PORTVERSION=	0.98
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	${MASTER_SITE_TUCOWS} \
 		http://dockapps.org/download.php/id/222/ \

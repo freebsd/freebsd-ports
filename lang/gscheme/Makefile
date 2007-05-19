@@ -7,6 +7,7 @@
 
 PORTNAME=	gscheme
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	lang gnustep
 MASTER_SITES=	http://www.gnustep.it/marko/GScheme/
 DISTNAME=	GScheme

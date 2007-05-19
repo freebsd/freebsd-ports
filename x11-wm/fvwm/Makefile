@@ -7,7 +7,7 @@
 
 PORTNAME=	fvwm
 PORTVERSION=	1.24r
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-1/ \
 		ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/sources/1.x/
@@ -18,6 +18,7 @@ COMMENT=	The fvwm window manager
 NO_LATEST_LINK=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
+USE_XORG=	xbitmaps
 # must overwrite the default from bsd.port.mk
 XMKMF=		xmkmf
 ALL_TARGET=	Makefiles all

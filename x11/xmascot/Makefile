@@ -7,7 +7,7 @@
 
 PORTNAME=	xmascot
 PORTVERSION=	2.6a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://cclub-flying.dsl.gr.jp/products/xmascot/
 DISTNAME=	${PORTNAME}${PORTVERSION}

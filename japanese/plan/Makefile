@@ -8,6 +8,7 @@
 
 PORTNAME=	plan
 PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	japanese
 
 MAINTAINER=	shaun@FreeBSD.org

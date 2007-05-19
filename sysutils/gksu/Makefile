@@ -7,6 +7,7 @@
 
 PORTNAME=	gksu
 PORTVERSION=	1.3.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.debian.org/~kov/gksu/old_stuff/gksu/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	elisa8x8
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://www.bsdbbq.org/~toshi/distfiles/
 DISTNAME=	elisat10

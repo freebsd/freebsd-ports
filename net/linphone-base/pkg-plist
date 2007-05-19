@@ -56,10 +56,6 @@ share/mediastreamer/images/nowebcamCIF.jpg
 %%NLS%%share/locale/pl/LC_MESSAGES/linphone.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/linphone.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/linphone.mo
-%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/pl
-%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/cs
 @dirrm share/mediastreamer/images
 @dirrm share/mediastreamer
 @dirrm %%DATADIR%%/sounds/rings

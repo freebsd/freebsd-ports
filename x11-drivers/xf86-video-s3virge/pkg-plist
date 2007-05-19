@@ -1,0 +1,5 @@
+lib/xorg/modules/drivers/s3virge_drv.la
+lib/xorg/modules/drivers/s3virge_drv.so
+@dirrmtry lib/xorg/modules/drivers
+@dirrmtry lib/xorg/modules
+@dirrmtry lib/xorg

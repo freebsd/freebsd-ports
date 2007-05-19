@@ -54,14 +54,10 @@ share/applnk/Applications/Apollon.desktop
 %%PORTDOCS%%share/doc/HTML/en/apollon/credits.docbook
 %%PORTDOCS%%share/doc/HTML/en/apollon/index.cache.bz2
 %%PORTDOCS%%share/doc/HTML/en/apollon/common
-@dirrmtry share/locale/sr/LC_MESSAGES
 @dirrmtry share/locale/pt_br/LC_MESSAGES
 @dirrmtry share/locale/pt_br
-@dirrmtry share/locale/pl/LC_MESSAGES
 @dirrmtry share/locale/nb_NO/LC_MESSAGES
 @dirrmtry share/locale/nb_NO
-@dirrmtry share/locale/fi/LC_MESSAGES
-@dirrmtry share/locale/el/LC_MESSAGES
 @dirrmtry share/icons/hicolor/32x32/apps
 @dirrmtry share/icons/hicolor/16x16/apps
 @dirrmtry share/icons/hicolor/16x16/actions

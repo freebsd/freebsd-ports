@@ -7,6 +7,7 @@
 
 PORTNAME=	hobbes-icons-xpm3
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTNAME=	${PORTNAME}

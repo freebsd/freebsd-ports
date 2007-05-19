@@ -7,7 +7,7 @@
 
 PORTNAME=	ingo
 PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail www
 
 MAINTAINER=	beech@alaskaparadise.com

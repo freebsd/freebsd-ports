@@ -6,27 +6,15 @@
 #
 
 PORTNAME=	libXfixes
-PORTVERSION=	2.0.1
-PORTREVISION=	2
+PORTVERSION=	4.0.3
 CATEGORIES=	x11
-MASTER_SITES=	http://xlibs.freedesktop.org/release/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Fixes extension library
 
-LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/x11.pc:${PORTSDIR}/x11/libX11
-BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/fixesext.pc:${PORTSDIR}/x11/fixesext \
-		${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto \
-		${LIB_PC_DEPENDS}
-RUN_DEPENDS=	${LIB_PC_DEPENDS}
+XORG_CAT=	lib
+USE_XORG=	x11 fixesproto:both xproto xextproto
 
-USE_BZIP2=	yes
-PREFIX?=	${X11BASE}
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_GMAKE=	yes
-CFLAGS+=	-DMALLOC_0_RETURNS_NULL
-INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomehack pkgconfig
+MAN3=		Xfixes.3
 
 .include <bsd.port.mk>

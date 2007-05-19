@@ -7,7 +7,7 @@
 
 PORTNAME=	exportvideo
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://tigerente.htu.tuwien.ac.at/~aoe/mystuff/mpeg2_movie-avipatch/
 DISTNAME=	${PORTNAME}.7e-pre9

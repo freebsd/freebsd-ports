@@ -2121,4 +2121,3 @@ share/pixmaps/alienarena.xpm
 @dirrm %%DATADIR%%/arena/pics
 @dirrm %%DATADIR%%/arena
 @dirrm %%DATADIR%%
-@dirrmtry share/pixmaps

@@ -6,6 +6,7 @@
 
 PORTNAME=	unfonts
 PORTVERSION=	1.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	http://kldp.net/frs/download.php/1425/:core \

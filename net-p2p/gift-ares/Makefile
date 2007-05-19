@@ -19,5 +19,6 @@ LIB_DEPENDS=	gift.0:${PORTSDIR}/net-p2p/gift
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_GNOME2=	pkgconfig
 
 .include <bsd.port.mk>

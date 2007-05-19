@@ -6,7 +6,7 @@
 #    $MCom: ports/audio/gstreamer-plugins-cdparanoia80/Makefile,v 1.2 2006/02/23 18:05:30 marcus Exp $
 #
 
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 
 COMMENT=	Gstreamer CDDA extraction (aka audio ripping) plugin

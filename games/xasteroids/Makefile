@@ -7,6 +7,7 @@
 
 PORTNAME=	xasteroids
 PORTVERSION=	5.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.opengroup.org/pub/ftp.x.org/R5contrib/
 DISTFILES=	xasteroids.sh.Z

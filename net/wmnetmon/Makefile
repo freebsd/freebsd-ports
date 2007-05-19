@@ -7,6 +7,7 @@
 
 PORTNAME=	wmnetmon
 PORTVERSION=	0.2p5
+PORTREVISION=	1
 CATEGORIES=	net windowmaker
 MASTER_SITES=	http://www.linuks.mine.nu/dockapps/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	stars
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://hpux.connect.org.uk/ftp/hpux/X11/Demos/${PORTNAME}-${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src-11.00

@@ -7,6 +7,7 @@
 
 PORTNAME=	specimen
 DISTVERSION=	0.5.2-rc1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://zhevny.com/specimen/files/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	cdplayer.app
 PORTVERSION=	1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://freebsd.aeternal.net/ports/
 DISTNAME=	CDPlayer.app-${PORTVERSION}

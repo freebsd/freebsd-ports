@@ -7,7 +7,7 @@
 
 PORTNAME=	jdictionary-int-eng
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 DISTNAME=	Smart_Interlingua_English-1_0.jar
 

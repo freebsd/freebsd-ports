@@ -7,7 +7,7 @@
 
 PORTNAME=	gngb
 PORTVERSION=	20060309
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://m.peponas.free.fr/gngb/download/
 

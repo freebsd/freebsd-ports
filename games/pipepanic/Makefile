@@ -7,7 +7,7 @@
 
 PORTNAME=	pipepanic
 PORTVERSION=	0.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.users.waitrose.com/~thunor/pipepanic/dload/ \
 		${MASTER_SITE_LOCAL} \

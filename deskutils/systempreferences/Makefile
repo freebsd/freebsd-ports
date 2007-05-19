@@ -7,6 +7,7 @@
 
 PORTNAME=	systempreferences
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://www.gnustep.it/enrico/system-preferences/
 

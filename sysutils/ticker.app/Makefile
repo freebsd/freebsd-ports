@@ -7,6 +7,7 @@
 
 PORTNAME=	ticker.app
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://seiichisato.jp/dockapps/src/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	jude-community
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	# you have to register yourself as a member to download
 DISTNAME=	${PORTNAME}-${PORTVERSION:S!.!_!g}

@@ -7,6 +7,7 @@
 
 PORTNAME=	smartdoc
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	http://www.asahi-net.or.jp/~dp8t-asm/java/tools/SmartDoc/
 DISTNAME=	setup${PORTVERSION:S/.//g}

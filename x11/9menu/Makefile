@@ -7,6 +7,7 @@
 
 PORTNAME=	9menu
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	x11 plan9
 MASTER_SITES=	ftp://freefriends.org/arnold/Source/ \
 		${MASTER_SITE_NETBSD}

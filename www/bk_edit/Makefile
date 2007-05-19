@@ -8,7 +8,7 @@
 
 PORTNAME=	bk_edit
 PORTVERSION=	0.6.23
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.allesdurcheinander.de/nettools/bk_edit/
 

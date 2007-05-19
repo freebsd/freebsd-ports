@@ -1,0 +1,4 @@
+bin/xman
+share/X11/app-defaults/Xman
+share/X11/xman.help
+@dirrmtry share/X11/app-defaults

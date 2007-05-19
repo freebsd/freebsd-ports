@@ -7,6 +7,7 @@
 
 PORTNAME=	xspringies
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://aixpdslib.seas.ucla.edu/pub/xspringies/RISC/3.2/src/
 DISTFILES=	xspringies.1.1.tar.Z

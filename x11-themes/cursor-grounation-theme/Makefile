@@ -7,6 +7,7 @@
 
 PORTNAME=	cursor-grounation-theme
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.gnome-look.org/CONTENT/content-files/
 DISTNAME=	14484-Grounation-${PORTVERSION}

@@ -7,7 +7,7 @@
 
 PORTNAME=	wmdate
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-clocks windowmaker afterstep
 MASTER_SITES=	http://solfertje.student.utwente.nl/~dalroi/wmdate/files/
 

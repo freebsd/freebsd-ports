@@ -7,6 +7,7 @@
 
 PORTNAME=	xskyroot
 PORTVERSION=	920428
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/news/fj.sources/V10/
 DISTFILES=	1079.gz

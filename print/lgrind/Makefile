@@ -7,7 +7,7 @@
 
 PORTNAME=	lgrind
 PORTVERSION=	3.67
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 #MASTER_SITES=	ftp://ftp.dante.de/tex-archive/support/ \
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}

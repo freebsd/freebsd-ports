@@ -7,6 +7,7 @@
 
 PORTNAME=	mkvtoolnix
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ CSME
 

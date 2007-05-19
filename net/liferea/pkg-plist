@@ -142,5 +142,3 @@ share/locale/tr/LC_MESSAGES/liferea.mo
 @dirrm lib/liferea
 %%XPI%%@dirrm lib/firefox/extensions/{79ea0ec1-3fc3-4ade-8220-262d4c4825ab}/chrome
 %%XPI%%@dirrm lib/firefox/extensions/{79ea0ec1-3fc3-4ade-8220-262d4c4825ab}
-@dirrmtry share/locale/pl/LC_MESSAGES
-@dirrmtry share/locale/pl

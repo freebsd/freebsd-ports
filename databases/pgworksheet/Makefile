@@ -7,6 +7,7 @@
 
 PORTNAME=	pgworksheet
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/619/
 

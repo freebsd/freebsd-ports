@@ -7,7 +7,7 @@
 
 PORTNAME=	impress
 PORTVERSION=	1.1b9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors tk84
 MASTER_SITES=	TUCOWS http://fresh.t-systems-sfr.com/unix/src/privat2/ \
 		ftp://ftp.plig.net/pub/OpenBSD/distfiles/ \

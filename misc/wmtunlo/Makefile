@@ -7,6 +7,7 @@
 
 PORTNAME=	wmtunlo
 PORTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://clay.ll.pl/download/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	frantk
 PORTVERSION=	1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits haskell
 MASTER_SITES=	http://www.dcs.gla.ac.uk/~meurig/FranTk/
 PKGNAMEPREFIX=	hs-

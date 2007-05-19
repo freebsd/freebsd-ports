@@ -7,6 +7,7 @@
 
 PORTNAME=	Image_Canvas
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	graphics www pear
 
 MAINTAINER=	numisemis@yahoo.com

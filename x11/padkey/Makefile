@@ -7,6 +7,7 @@
 
 PORTNAME=	padkey
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	x11 games
 MASTER_SITES=	http://www.liquidx.org/padkey/releases/dist/
 

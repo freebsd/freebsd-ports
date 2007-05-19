@@ -1,0 +1,6 @@
+include/X11/extensions/Xevie.h
+lib/libXevie.so.1
+lib/libXevie.so
+lib/libXevie.la
+lib/libXevie.a
+libdata/pkgconfig/xevie.pc

@@ -7,6 +7,7 @@
 
 PORTNAME=	bbsmount
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://phoenix.inf.upol.cz/~jezberam/bbsmount/files/
 

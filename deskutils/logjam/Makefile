@@ -7,7 +7,7 @@
 
 PORTNAME=	logjam
 PORTVERSION=	4.5.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	http://logjam.danga.com/download/
 

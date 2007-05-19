@@ -7,6 +7,7 @@
 
 PORTNAME=	demos
 PORTVERSION=	6.5.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mesa3d/
@@ -24,25 +25,34 @@ USE_GMAKE=	yes
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 ALL_TARGET=
-MAKE_ARGS=	SUBDIRS="progs/demos"
+MAKE_ARGS=	SUBDIRS="progs/demos progs/xdemos"
 WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}
 DATADIR=	${PREFIX}/share/mesa-demos
 
-DEMO_PROGS=	glinfo winpos gamma renormal glutfx paltex clearspd glslnoise \
-		singlebuffer bounce spectex readpix arbocclude texobj texdown \
-		lodbias texcyl vao_demo arbfslight fplight fogcoord trispd \
-		drawpix multiarb cubemap tessdemo pointblast gltestperf \
-		arbfplight gears spriteblast gloss terrain gearbox teapot \
-		ipers reflect shadowtex texenv fire stex3d ray morph3d \
-		isosurf engine tunnel tunnel2 geartrain
+DEMO_PROGS=	arbfplight arbfslight arbocclude bounce clearspd cubemap \
+		drawpix engine fire fogcoord fplight fslight gamma gearbox \
+		gears geartrain glinfo gloss glslnoise gltestperf glutfx \
+		ipers isosurf lodbias morph3d multiarb paltex pointblast \
+		ray readpix reflect renormal shadowtex singlebuffer spectex \
+		spriteblast stex3d streaming_rect teapot terrain tessdemo \
+		texcyl texdown texenv texobj trispd tunnel tunnel2 vao_demo \
+		winpos
 
 DEMO_IMAGES=	arch.rgb bw.rgb girl.rgb girl2.rgb reflect.rgb s128.rgb \
 		tile.rgb tree2.rgba tree3.rgb wrs_logo.rgb
 DEMO_DATA=	geartrain.dat isosurf.dat terrain.dat
 
+XDEMO_PROGS=	glthreads glxcontexts glxdemo glxgears glxgears_fbconfig \
+		glxheads glxinfo glxpbdemo glxpixmap glxswapcontrol manywin \
+		offset overlay pbdemo pbinfo wincopy xfont xrotfontdemo \
+		yuvrect_client
+
 # Generate packing list
 PLIST_FILES=
 .for prog in ${DEMO_PROGS}
+PLIST_FILES+=	bin/${prog}
+.endfor
+.for prog in ${XDEMO_PROGS}
 PLIST_FILES+=	bin/${prog}
 .endfor
 .for img in ${DEMO_IMAGES}
@@ -66,6 +76,10 @@ do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/progs/demos/$$prog \
 			${PREFIX}/bin ; \
 	done
+	@for prog in ${XDEMO_PROGS}; do \
+		${INSTALL_PROGRAM} ${WRKSRC}/progs/xdemos/$$prog \
+			${PREFIX}/bin ; \
+	done
 	${MKDIR} ${DATADIR}/images ${DATADIR}/data
 	@for img in ${DEMO_IMAGES}; do \
 		${INSTALL_DATA} ${WRKSRC}/progs/images/$$img \
@@ -79,6 +93,10 @@ do-install:
 
 .if ${X_WINDOW_SYSTEM:L} != xorg
 IGNORE=		does not build with XFree86
+.endif
+
+.if defined(WITH_NVIDIA_GL)
+CFLAGS+=	-DWITH_NVIDIA_GL=1
 .endif
 
 .include <bsd.port.post.mk>

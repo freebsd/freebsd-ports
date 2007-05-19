@@ -8,7 +8,7 @@
 
 PORTNAME=	mircryption
 DISTVERSION=	1.1.27
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc security
 MASTER_SITES=	http://mircryption.sourceforge.net/Downloads/
 PKGNAMEPREFIX=	xchat-

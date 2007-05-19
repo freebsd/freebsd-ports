@@ -7,7 +7,7 @@
 
 PORTNAME=	openmap
 PORTVERSION=	4.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro java devel graphics
 MASTER_SITES=	http://openmap.bbn.com/src/
 

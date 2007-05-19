@@ -7,7 +7,7 @@
 
 PORTNAME=	gicq
 PORTVERSION=	0.33
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	http://download.sourceforge.net/gicq/ \
 		${MASTER_SITE_LOCAL}

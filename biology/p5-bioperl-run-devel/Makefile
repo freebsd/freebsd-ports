@@ -7,6 +7,7 @@
 
 PORTNAME=	bioperl-run
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	biology perl5
 MASTER_SITES=	http://bioperl.org/DIST/
 PKGNAMEPREFIX=	p5-
@@ -14,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mauricio@arareko.net
 COMMENT=	Wrapper modules for common bioinformatics tools (developer release)
 
-BUILD_DEPENDS=	p5-bioperl=1.5.1:${PORTSDIR}/biology/p5-bioperl-devel \
+BUILD_DEPENDS=	p5-bioperl=1.5.1_1:${PORTSDIR}/biology/p5-bioperl-devel \
 		${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

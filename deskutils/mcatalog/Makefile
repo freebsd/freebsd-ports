@@ -8,7 +8,7 @@
 
 PORTNAME=	mcatalog
 PORTVERSION=	0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.mcatalog.net/releases/
 

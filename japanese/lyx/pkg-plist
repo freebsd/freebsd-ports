@@ -236,15 +236,3 @@ share/locale/wa/LC_MESSAGES/lyx.mo
 @dirrm %%DATADIR%%/clipart
 @dirrm %%DATADIR%%/bind
 @dirrm %%DATADIR%%
-@dirrm share/locale/sl/LC_MESSAGES
-@dirrm share/locale/sl
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs

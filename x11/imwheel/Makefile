@@ -7,6 +7,7 @@
 
 PORTNAME=	imwheel
 PORTVERSION=	1.0.0.p12
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://jcatki.no-ip.org/pub/imwheel/ \
 		${MASTER_SITE_SOURCEFORGE}

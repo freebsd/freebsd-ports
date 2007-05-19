@@ -7,6 +7,7 @@
 
 PORTNAME=	yawm
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.sai.msu.su/pub/X11/win_man/
 DISTNAME=	yawm-0.0.1-a4

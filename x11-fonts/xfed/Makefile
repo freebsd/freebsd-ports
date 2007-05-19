@@ -7,6 +7,7 @@
 
 PORTNAME=	xfed
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 		http://mirror2.unixfreunde.de/

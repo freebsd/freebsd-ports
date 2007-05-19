@@ -7,6 +7,7 @@
 
 PORTNAME=	cup
 PORTVERSION=	11.a
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://www2.cs.tum.edu/projects/cup/
 PKGNAMEPREFIX=	java-

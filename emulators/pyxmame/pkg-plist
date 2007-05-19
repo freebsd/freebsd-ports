@@ -35,7 +35,6 @@ bin/pyxmame
 share/pixmaps/pyxmame/penguin-revolt-128.png
 etc/pyxmame/pyxmamerc
 @dirrm share/pixmaps/pyxmame
-@dirrmtry share/pixmaps
 @dirrm %%DATADIR%%/snaps
 @dirrm %%DATADIR%%/roms
 @dirrm %%DATADIR%%/flyers

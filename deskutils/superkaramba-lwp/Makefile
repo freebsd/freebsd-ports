@@ -6,6 +6,7 @@
 
 PORTNAME=		lwp
 PORTVERSION=		14.6
+PORTREVISION=	1
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://www.message.co.nz/~matt-sarah/ \
 			http://mirror1.liquidweather.net/ \

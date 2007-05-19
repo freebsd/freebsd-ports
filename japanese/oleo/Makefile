@@ -7,6 +7,7 @@
 
 PORTNAME=	oleo
 PORTVERSION=	1.99.16
+PORTREVISION=	1
 CATEGORIES=	japanese math
 MASTER_SITES=	http://www.hh.iij4u.or.jp/~hayasida/oleo/ \
 		${MASTER_SITE_GNU}

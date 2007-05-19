@@ -6,6 +6,7 @@
 
 PORTNAME=       ourmon
 PORTVERSION=    2.5
+PORTREVISION=    1
 CATEGORIES=     net-mgmt
 MASTER_SITES=   http://ourmon.cat.pdx.edu/ourmon/
 DISTNAME=       ourmon25

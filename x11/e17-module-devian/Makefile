@@ -7,6 +7,7 @@
 
 PORTNAME=	devian
 PORTVERSION=	20060926
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://sunner.elcomnet.ru/~stas/
