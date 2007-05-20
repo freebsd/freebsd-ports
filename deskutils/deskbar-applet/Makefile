@@ -8,7 +8,7 @@
 
 PORTNAME=	deskbar-applet
 PORTVERSION=	2.18.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -59,7 +59,7 @@ post-patch:
 	@${FIND} ${WRKSRC}/deskbar -name "*.py" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/usr/share/applications|${LOCALBASE}/share/gnome/applications|g'
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
-		s|%%X11BASE%%|${X11BASE}|g ; s|%%LOCALBASE%%|${LOCALBASE}|g' \
+		s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/deskbar/handlers/mozilla.py \
 		${WRKSRC}/deskbar/Utils.py
 
