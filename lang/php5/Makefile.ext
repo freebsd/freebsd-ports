@@ -267,7 +267,8 @@ USE_GCC=	3.4+
 .endif
 
 .if ${PHP_MODNAME} == "pdo_mysql"
-CONFIGURE_ARGS+=--with-pdo-mysql=${LOCALBASE}
+CONFIGURE_ARGS+=--with-pdo-mysql=${LOCALBASE} \
+		--with-zlib-dir=/usr
 
 USE_MYSQL=	yes
 
