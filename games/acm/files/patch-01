@@ -1,15 +1,17 @@
-*** src/Makefile.in~	Wed Dec  9 22:53:42 1998
---- src/Makefile.in	Mon Feb  1 18:05:00 1999
-***************
-*** 18,22 ****
-        TOPDIR = ..
-   CLEAN_THESE = flight-state black_box_input black_box_output bitmap.h TAGS tags
-!       manext = 1
-    MAKEDEPEND = makedepend
-  
---- 18,22 ----
-        TOPDIR = ..
-   CLEAN_THESE = flight-state black_box_input black_box_output bitmap.h TAGS tags
-!       manext = 6
-    MAKEDEPEND = makedepend
-  
+--- src/Makefile.in~	Wed Dec  9 21:53:42 1998
++++ src/Makefile.in	Sun May 20 10:32:43 2007
+@@ -17,12 +17,12 @@
+ 	-I../dis
+       TOPDIR = ..
+  CLEAN_THESE = flight-state black_box_input black_box_output bitmap.h TAGS tags
+-      manext = 1
++      manext = 6
+   MAKEDEPEND = makedepend
+ 
+    PROGRAMS = acm
+     DEFINES = -DSRCDIR=\"$(srcdir)\" -DACM_LIBRARY=\"@OBVDIR@\"
+-     CFLAGS = $(DEFINES) @CFLAGS@ @DEFS@ $(STD_INCLUDES)
++     CFLAGS = $(STD_INCLUDES) $(DEFINES) @CFLAGS@ @DEFS@
+     LDFLAGS = @LDFLAGS@
+        SRCS = main.c pm.c gear.c flaps.c drone.c init.c aim9m.c box.c \
+ 	    aim120.c ccip.c \
