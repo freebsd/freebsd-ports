@@ -137,7 +137,7 @@ post-patch: .SILENT
 		${WRKSRC}/x11/extension/Makefile
 .if ${NVVERSION} >= 9746
 	${REINPLACE_CMD} -e 's|lib/modules|lib/xorg/modules|' \
-	${WRKSRC}/x11/lib/Makefile
+		${WRKSRC}/x11/lib/Makefile
 .endif
 .endif
 	${REINPLACE_CMD} '/bin/d ; /man/d' ${WRKSRC}/x11/Makefile
