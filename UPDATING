@@ -36,15 +36,7 @@ upgrades.
   # portupgrade -f -o ports-mgmt/portupgrade-devel portupgrade
   # rm -f /usr/ports/INDEX*.db /var/db/pkg/pkgdb.db
   # pkgdb -fu
-  # portsdb -fu
-
-  If you are an upgrade-test user (big wave!) you were instructed
-  to created a separate tree for the test. You shouldn't forgot
-  to set your PORTSDIR variable to it, and to create INDEXes:
-
-  # setenv PORTSDIR `realpath .`    <- csh-like users
-  # export PORTSDIR=`realpath .`    <- sh-like users
-  # portsdb -u
+  # cd /usr/ports && make index
 
   It is necessary to set the XORG_UPGRADE environment variable while
   updating from xorg 6.9 to 7.2.  Once the upgrade is complete this
@@ -60,9 +52,19 @@ upgrades.
   the rigors of the xorg upgrade without a small bit of help:
 
   # portupgrade -Rf libXft
-  Now you are ready to upgrade everything:
+
+  If your machine does NOT have any gstreamer ports installed, you can then
+  run:
 
   # portupgrade -a
+
+  However, if you DO have gstreamer ports installed, you must run:
+
+  # portupgrade -a -x 'gstreamer*'
+
+  Followed by:
+
+  # portupgrade -Rr 'gstreamer*'
 
   When packages are available (wait for the announcement on ports@), you
   may prefer to use precompiled packages to speed up the process:
@@ -87,6 +89,10 @@ upgrades.
   help on freebsd-x11@FreeBSD.org).  You may also need to edit the
   script if the default locations are not correct on your system.
 
+  If your /usr/X11R6 is a file system, you will also need to modify the
+  script to pause after /usr/X11R6 is backed up, but before the symlink is
+  created.
+
   # sh /usr/ports/Tools/scripts/mergebase.sh
 
   When the merge operation completes successfully, the /usr/X11R6
@@ -97,6 +103,19 @@ upgrades.
   Congratulations, you are done!
 
   # exit
+
+  CAVEATS
+
+  Make sure you have the x11/xorg meta-port installed.  If you do not have
+  this meta-port installed with X.Org 6.9, you will miss out on a lot of
+  the new X.Org 7.2 sub-ports.
+
+  If you plan on keeping your current /etc/X11/xorg.conf, make sure you
+  change ModulePath to /usr/local/lib/xorg/modules prior to running X.
+
+  If you run into problems running the new X server, try moving aside
+  your /etc/X11/xorg.conf and allow X to auto-create it (this will
+  happen automatically when launching the X server).
 
   IF YOU RUN INTO PROBLEMS:
 
