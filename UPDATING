@@ -12,27 +12,27 @@ upgrades.
 
   Welcome, fearless user!  You are about to embark upon a mystical
   journey to the world of xorg 7.2.
-  
+
   This upgrade procedure is for users of portupgrade.  Users of other
   upgrade tools should contact the author for the corresponding upgrade
   method for that tool.
-  
+
   It is recommended that you run the xorg 7.2 upgrade inside a script(1)
   session.  This way, if something goes wrong, you will have hopefully
   have saved enough information for the developers to debug the problem.
   Make sure you choose a filesystem with lots of space for the script
   output.
-  
+
   # script xorg-upgrade
-  
+
   You may wish to set BATCH=yes in the environment to avoid interactive
   dialogue boxes.
-  
+
   You may want to consider using portupgrade-devel, which fixes some
   annoying bugs that cause upgrades to incorrectly be marked as failed
   when they actually completed successfully.  To switch to
   portupgrade-devel:
-  
+
   # portupgrade -f -o ports-mgmt/portupgrade-devel portupgrade
   # rm -f /usr/ports/INDEX*.db /var/db/pkg/pkgdb.db
   # pkgdb -fu
@@ -49,35 +49,35 @@ upgrades.
   It is necessary to set the XORG_UPGRADE environment variable while
   updating from xorg 6.9 to 7.2.  Once the upgrade is complete this
   is no longer be required.
-  
+
   For users of csh-like shells:
   # setenv XORG_UPGRADE yes
-  
+
   For users of sh-like shells:
   # export XORG_UPGRADE=yes
-  
+
   Unfortunately portupgrade (nor portupgrade-devel) cannot yet handle
   the rigors of the xorg upgrade without a small bit of help:
-  
+
   # portupgrade -Rf libXft
   Now you are ready to upgrade everything:
-  
+
   # portupgrade -a
-  
+
   When packages are available (wait for the announcement on ports@), you
   may prefer to use precompiled packages to speed up the process:
-  
+
   # portupgrade -aP
-  
+
   Once the upgrade completes successfully, you can delete the
   xorg-manpages package, which is now orphaned.
-  
+
   # pkg_delete xorg-manpages\*
-  
+
   The final step is to merge remaining files from /usr/X11R6 into
   /usr/local (/usr/X11R6 is no longer used with xorg 7.2) and replace
   /usr/X11R6 with a symlink.
-  
+
   A script is provided for your convenience (or you may choose to do
   this by hand): it will first attempt to back up your /usr/X11R6 into
   /usr/tmp/mergebase in case something goes wrong, then look for
@@ -86,24 +86,24 @@ upgrades.
   resolve some of these conflicts by hand first (if in doubt, ask for
   help on freebsd-x11@FreeBSD.org).  You may also need to edit the
   script if the default locations are not correct on your system.
-  
+
   # sh /usr/ports/Tools/scripts/mergebase.sh
-  
+
   When the merge operation completes successfully, the /usr/X11R6
   directory hierarchy will be removed and replaced by a symlink to
   /usr/local.  This symlink is necessary because some binary ports (and
   some remaining source ports) have hard-coded references to /usr/X11R6.
-  
+
   Congratulations, you are done!
-  
+
   # exit
-  
+
   IF YOU RUN INTO PROBLEMS:
-  
+
   # uname -a
   # ls -l /var/db/pkg
   # exit
-  
+
   and send an email to freebsd-x11@FreeBSD.org with a full description
   of the problem.  Do not include the above typescript in your email,
   but bzip2 it and make it available to the developers (e.g. put it
@@ -184,7 +184,7 @@ upgrades.
 
   The gimp[-devel] port is now a meta-port so users will need to upgrade via
   one of the following examples. Gimp now depends on gutenprint instead of
-  gimp-print, if you have gimp-print installed you will need to 
+  gimp-print, if you have gimp-print installed you will need to
   pkg_delete gimp-print before you install or upgrade the gimp.
 
   portmaster users:
@@ -205,7 +205,7 @@ upgrades.
   AUTHOR: ahze@FreeBSD.org
 
   The gutenprint port is now a meta-port so users will need to upgrade via
-  one of the following examples. If you have gimp-print installed you 
+  one of the following examples. If you have gimp-print installed you
   will need to pkg_delete gimp-print before installing gutenprint.
 
   portmaster users:
@@ -215,7 +215,7 @@ upgrades.
   portupgrade users:
   portupgrade -o print/gutenprint-base gutenprint
   portupgrade -u print/gutenprint
-  
+
 20070402:
   AFFECTS: users of devel/cvstrac
   AUTHOR: nkoch@demig.de
@@ -333,7 +333,7 @@ upgrades.
      MOUNTING DEVICES THROUGH KDE WILL NO LONGER WORK WITHOUT HAL.
 
   Thus if you wish to use device icons or the media:/ view in konqueror,
-  make sure to turn on the HAL option in the x11/kdebase3 port and also 
+  make sure to turn on the HAL option in the x11/kdebase3 port and also
   read /usr/ports/UPDATING entry 20061219 and
   http://www.freebsd.org/gnome/docs/faq2.html#q19 for more information on
   using HAL.
