@@ -132,7 +132,6 @@ libexec/mysqld
 %%DATADIR%%/mysql-log-rotate
 %%DATADIR%%/mysql.server
 %%DATADIR%%/ndb-config-2-node.ini
-%%NDB%%%%DATADIR%%/ndb_size.tmpl
 %%DATADIR%%/norwegian-ny/errmsg.sys
 %%DATADIR%%/norwegian/errmsg.sys
 %%DATADIR%%/polish/errmsg.sys
