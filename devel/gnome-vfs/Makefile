@@ -82,7 +82,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/libgnomevfs/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g; \
+		s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/libgnomevfs/xdgmime.c \
 		${WRKSRC}/libgnomevfs/gnome-vfs-hal-mounts.c
 	@${REINPLACE_CMD} -e 's|-lacl||g' \
