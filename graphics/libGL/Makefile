@@ -7,7 +7,7 @@
 
 PORTNAME?=	libGL
 PORTVERSION?=	6.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/
@@ -20,7 +20,7 @@ COMMENT?=	OpenGL library that renders using GLX or DRI
 BUILD_DEPENDS+=	makedepend:${PORTSDIR}/devel/makedepend
 LIB_DEPENDS+=	drm:${PORTSDIR}/graphics/libdrm
 
-CONFLICTS=	XFree86-libraries-* xorg-libraries-6.* nvidia-driver-*
+CONFLICTS=	XFree86-libraries-* xorg-libraries-6.*
 
 USE_XORG=	glproto xxf86vm xext xfixes xdamage
 USE_GMAKE=	yes
