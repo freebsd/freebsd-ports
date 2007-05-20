@@ -5,7 +5,7 @@
  	sysdirs = os.getenv("XDG_DATA_DIRS")
  	if sysdirs == None:
 -		sysdirs = "/usr/local/share:/usr/share"
-+	    sysdirs = "%%X11BASE%%/share/gnome/:/usr/local/share/gnome/:%%X11BASE%%/share/:/usr/local/share/:/usr/share/"
++	    sysdirs = "/usr/local/share/gnome:/usr/local/share:/usr/share"
  	
  	dirs = "%s:%s" % (dirs, sysdirs)
  	return [dir for dir in dirs.split(":") if dir.strip() != "" and exists(dir)]

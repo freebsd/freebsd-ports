@@ -7,6 +7,7 @@
 
 PORTNAME=		desktop-file-utils
 PORTVERSION=		0.12
+PORTREVISION=		1
 CATEGORIES=		devel
 MASTER_SITES=		http://freedesktop.org/software/${PORTNAME}/releases/
 
@@ -25,9 +26,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 PKGINSTALL=		${WRKDIR}/pkg-install
 PKGDEINSTALL=		${WRKDIR}/pkg-deinstall
 
-PORT_MIMEDIRS=		${X11BASE}/share/applications \
-			${LOCALBASE}/share/applications \
-			${X11BASE}/share/gnome/applications \
+PORT_MIMEDIRS=		${LOCALBASE}/share/applications \
 			${LOCALBASE}/share/gnome/applications
 
 MIMEDIRS=		${PORT_MIMEDIRS} \
@@ -35,8 +34,7 @@ MIMEDIRS=		${PORT_MIMEDIRS} \
 			/usr/share/gnome/applications
 
 RMDIRS=			${PORT_MIMEDIRS} \
-			${LOCALBASE}/share/gnome \
-			${X11BASE}/share/gnome
+			${LOCALBASE}/share/gnome
 
 post-patch:
 	@${SED} -e 's|%%MIMEDIRS%%|${MIMEDIRS}| ;\
