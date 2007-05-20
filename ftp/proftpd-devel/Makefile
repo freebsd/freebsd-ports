@@ -7,7 +7,7 @@
 
 PORTNAME=	proftpd
 DISTVERSION=	1.3.1rc2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
@@ -171,7 +171,7 @@ LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
 .endif
 
 .if ${MODULES:M*mod_sql_*}
-MODULES:=${MODULES}:mod_sql
+MODULES:=mod_sql${MODULES}
 .endif
 
 .if defined(WITH_OPENSSL)
