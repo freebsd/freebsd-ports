@@ -11,11 +11,13 @@ bin/mysqlimport
 bin/mysqlshow
 bin/mysqlslap
 bin/mysqltest
+include/mysql/decimal.h
 include/mysql/errmsg.h
 include/mysql/keycache.h
 include/mysql/m_ctype.h
 include/mysql/m_string.h
 include/mysql/my_alloc.h
+include/mysql/my_attribute.h
 include/mysql/my_config.h
 include/mysql/my_dbug.h
 include/mysql/my_dir.h
@@ -49,10 +51,6 @@ lib/mysql/libmysqlclient_r.a
 lib/mysql/libmysqlclient_r.la
 lib/mysql/libmysqlclient_r.so
 lib/mysql/libmysqlclient_r.so.15
-%%ZLIB%%lib/mysql/libz.a
-%%ZLIB%%lib/mysql/libz.la
-%%ZLIB%%lib/mysql/libz.so
-%%ZLIB%%lib/mysql/libz.so.3
 share/aclocal/mysql.m4
 %%DATADIR%%/mysql_fix_privilege_tables.sql
 @dirrm include/mysql
