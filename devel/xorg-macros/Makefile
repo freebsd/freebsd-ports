@@ -7,7 +7,7 @@
 
 PORTNAME=	xorg-macros
 PORTVERSION=	1.1.5
-CATEGORIES=	x11
+CATEGORIES=	devel x11
 DISTNAME=	util-macros-$(PORTVERSION)
 
 MAINTAINER=	x11@FreeBSD.org
