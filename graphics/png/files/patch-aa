@@ -31,7 +31,7 @@
  
 -CFLAGS+= -I. -DPNG_USE_PNGGCCRD
 -.if (${MACHINE_ARCH} != "i386")
--CFLAGS+= -DPNG_NO_ASSEMBLER_CODE
+-CFLAGS+= -DPNG_NO_MMX_CODE
 -.endif
 -
  SRCS=	png.c pngset.c pngget.c pngrutil.c pngtrans.c pngwutil.c \
