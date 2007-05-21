@@ -7,6 +7,7 @@
 
 PORTNAME=	dri
 PORTVERSION=	6.5.3
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -16,7 +17,8 @@ DISTNAME=	MesaLib-${PORTVERSION}
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	OpenGL hardware acceleration drivers for the DRI
 
-LIB_DEPENDS=	drm:${PORTSDIR}/graphics/libdrm
+LIB_DEPENDS=	drm:${PORTSDIR}/graphics/libdrm \
+		expat.6:${PORTSDIR}/textproc/expat2
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 CONFLICTS=	xfree86-dri-* dri-6.2.2005* dri-6.5.2006*
