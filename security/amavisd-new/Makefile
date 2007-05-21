@@ -36,7 +36,7 @@ CONFIGURE_ARGS=	--with-user=${AMAVISUSER} --with-runtime-dir=${AMAVISDIR}
 CONFIGURE_WRKSRC=	${WRKSRC}/helper-progs
 BUILD_WRKSRC=	${WRKSRC}/helper-progs
 
-PORTDOCS=	AAAREADME.first INSTALL LDAP.schema LICENSE RELEASE_NOTES \
+DOCS=	AAAREADME.first INSTALL LDAP.schema LICENSE RELEASE_NOTES \
 		README_FILES/README.* README_FILES/screen.css \
 		README_FILES/amavisd-new-docs.html \
 		README_FILES/TODO-SNMP-AGENT
@@ -261,7 +261,7 @@ do-install:
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/images
-.for i in ${PORTDOCS}
+.for i in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 	@${CP} -pr ${WRKSRC}/README_FILES/images/ ${DOCSDIR}/images
