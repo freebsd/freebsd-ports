@@ -19,7 +19,7 @@ upgrades.
 
   It is recommended that you run the xorg 7.2 upgrade inside a script(1)
   session.  This way, if something goes wrong, you will have hopefully
-  have saved enough information for the developers to debug the problem.
+  saved enough information for the developers to debug the problem.
   Make sure you choose a filesystem with lots of space for the script
   output.
 
