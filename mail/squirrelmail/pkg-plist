@@ -427,6 +427,8 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/locale/cs_CZ/LC_MESSAGES/squirrelmail.po
 %%SQUIRRELDIR%%/locale/cs_CZ/LC_MESSAGES/vacation_local.mo
 %%SQUIRRELDIR%%/locale/cs_CZ/LC_MESSAGES/vacation_local.po
+%%SQUIRRELDIR%%/locale/cs_CZ/LC_MESSAGES/vkeyboard.po
+%%SQUIRRELDIR%%/locale/cs_CZ/LC_MESSAGES/vkeyboard.mo
 %%SQUIRRELDIR%%/locale/cs_CZ/LC_MESSAGES/yelp.mo
 %%SQUIRRELDIR%%/locale/cs_CZ/LC_MESSAGES/yelp.po
 %%SQUIRRELDIR%%/locale/cs_CZ/setup.php
@@ -505,6 +507,8 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/locale/es_ES/LC_MESSAGES/squirrelmail.po
 %%SQUIRRELDIR%%/locale/es_ES/LC_MESSAGES/unsafe_image_rules.mo
 %%SQUIRRELDIR%%/locale/es_ES/LC_MESSAGES/unsafe_image_rules.po
+%%SQUIRRELDIR%%/locale/es_ES/LC_MESSAGES/vkeyboard.po
+%%SQUIRRELDIR%%/locale/es_ES/LC_MESSAGES/vkeyboard.mo
 %%SQUIRRELDIR%%/locale/es_ES/setup.php
 %%SQUIRRELDIR%%/locale/et_EE/LC_MESSAGES/squirrelmail.mo
 %%SQUIRRELDIR%%/locale/et_EE/LC_MESSAGES/squirrelmail.po
@@ -549,6 +553,8 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/locale/fr_FR/LC_MESSAGES/squirrelmail.po
 %%SQUIRRELDIR%%/locale/fr_FR/LC_MESSAGES/vacation_local.mo
 %%SQUIRRELDIR%%/locale/fr_FR/LC_MESSAGES/vacation_local.po
+%%SQUIRRELDIR%%/locale/fr_FR/LC_MESSAGES/vkeyboard.po
+%%SQUIRRELDIR%%/locale/fr_FR/LC_MESSAGES/vkeyboard.mo
 %%SQUIRRELDIR%%/locale/fr_FR/LC_MESSAGES/yelp.mo
 %%SQUIRRELDIR%%/locale/fr_FR/LC_MESSAGES/yelp.po
 %%SQUIRRELDIR%%/locale/fr_FR/setup.php
@@ -680,6 +686,8 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/locale/lt_LT/LC_MESSAGES/naguser.po
 %%SQUIRRELDIR%%/locale/lt_LT/LC_MESSAGES/newuser_wiz.mo
 %%SQUIRRELDIR%%/locale/lt_LT/LC_MESSAGES/newuser_wiz.po
+%%SQUIRRELDIR%%/locale/lt_LT/LC_MESSAGES/proon.mo
+%%SQUIRRELDIR%%/locale/lt_LT/LC_MESSAGES/proon.po
 %%SQUIRRELDIR%%/locale/lt_LT/LC_MESSAGES/qmailadmin_login.mo
 %%SQUIRRELDIR%%/locale/lt_LT/LC_MESSAGES/qmailadmin_login.po
 %%SQUIRRELDIR%%/locale/lt_LT/LC_MESSAGES/reply_buttons.mo
@@ -710,6 +718,8 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/locale/lt_LT/LC_MESSAGES/vacation_local.po
 %%SQUIRRELDIR%%/locale/lt_LT/LC_MESSAGES/verify_reply_to.mo
 %%SQUIRRELDIR%%/locale/lt_LT/LC_MESSAGES/verify_reply_to.po
+%%SQUIRRELDIR%%/locale/lt_LT/LC_MESSAGES/vkeyboard.mo
+%%SQUIRRELDIR%%/locale/lt_LT/LC_MESSAGES/vkeyboard.po
 %%SQUIRRELDIR%%/locale/lt_LT/LC_MESSAGES/web_search.mo
 %%SQUIRRELDIR%%/locale/lt_LT/LC_MESSAGES/web_search.po
 %%SQUIRRELDIR%%/locale/lt_LT/LC_MESSAGES/yelp.mo
@@ -731,6 +741,8 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/locale/nl_NL/LC_MESSAGES/squirrelmail.po
 %%SQUIRRELDIR%%/locale/nl_NL/LC_MESSAGES/vacation_local.mo
 %%SQUIRRELDIR%%/locale/nl_NL/LC_MESSAGES/vacation_local.po
+%%SQUIRRELDIR%%/locale/nl_NL/LC_MESSAGES/vkeyboard.po
+%%SQUIRRELDIR%%/locale/nl_NL/LC_MESSAGES/vkeyboard.mo
 %%SQUIRRELDIR%%/locale/nl_NL/setup.php
 %%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/abook_import_export.mo
 %%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/abook_import_export.po
@@ -810,6 +822,8 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/vacation_local.po
 %%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/verify_reply_to.mo
 %%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/verify_reply_to.po
+%%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/vkeyboard.po
+%%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/vkeyboard.mo
 %%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/web_search.mo
 %%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/web_search.po
 %%SQUIRRELDIR%%/locale/nn_NO/LC_MESSAGES/yelp.mo
@@ -826,6 +840,8 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/locale/pt_BR/LC_MESSAGES/squirrelmail.po
 %%SQUIRRELDIR%%/locale/pt_BR/LC_MESSAGES/unsafe_image_rules.mo
 %%SQUIRRELDIR%%/locale/pt_BR/LC_MESSAGES/unsafe_image_rules.po
+%%SQUIRRELDIR%%/locale/pt_BR/LC_MESSAGES/vkeyboard.po
+%%SQUIRRELDIR%%/locale/pt_BR/LC_MESSAGES/vkeyboard.mo
 %%SQUIRRELDIR%%/locale/pt_BR/setup.php
 %%SQUIRRELDIR%%/locale/pt_PT/LC_MESSAGES/askuserinfo.mo
 %%SQUIRRELDIR%%/locale/pt_PT/LC_MESSAGES/askuserinfo.po
@@ -969,6 +985,8 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/locale/uk_UA/LC_MESSAGES/templates.po
 %%SQUIRRELDIR%%/locale/uk_UA/LC_MESSAGES/vacation_local.mo
 %%SQUIRRELDIR%%/locale/uk_UA/LC_MESSAGES/vacation_local.po
+%%SQUIRRELDIR%%/locale/uk_UA/LC_MESSAGES/vkeyboard.po
+%%SQUIRRELDIR%%/locale/uk_UA/LC_MESSAGES/vkeyboard.mo
 %%SQUIRRELDIR%%/locale/uk_UA/LC_MESSAGES/web_search.mo
 %%SQUIRRELDIR%%/locale/uk_UA/LC_MESSAGES/web_search.po
 %%SQUIRRELDIR%%/locale/uk_UA/LC_MESSAGES/yelp.mo
