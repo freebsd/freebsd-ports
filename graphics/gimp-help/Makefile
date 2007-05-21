@@ -7,7 +7,7 @@
 
 PORTNAME=	gimp-help
 PORTVERSION=	0.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		http://gimp.mirrors.hoobly.com/%SUBDIR%/ \
@@ -22,7 +22,7 @@ DISTNAME=	${PORTNAME}-2-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GIMP user's manual
 
-LIB_DEPENDS=	gimp-2.0:${PORTSDIR}/graphics/gimp
+LIB_DEPENDS=	gimp-2.0:${PORTSDIR}/graphics/gimp-app
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
 RUN_DEPENDS=	${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
 
