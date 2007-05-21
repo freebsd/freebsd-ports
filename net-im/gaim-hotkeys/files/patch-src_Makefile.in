@@ -1,0 +1,11 @@
+--- ../gaim-hotkeys-0.2.2.orig/src/Makefile.in	Mon May  7 09:02:50 2007
++++ src/Makefile.in	Mon May  7 09:20:48 2007
+@@ -220,7 +220,7 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-plugindir = $(libdir)/gaim
++plugindir = $(libdir)/pidgin
+ hotkeys_la_LDFLAGS = -module -avoid-version $(am__append_1)
+ hotkeys_la_LIBADD = $(GAIM_LIBS) $(GTK_LIBS) $(am__append_2)
+ plugin_LTLIBRARIES = hotkeys.la

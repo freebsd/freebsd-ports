@@ -1,0 +1,12 @@
+--- ../gaim-hotkeys-0.2.2.orig/configure	Mon May  7 09:02:50 2007
++++ configure	Mon May  7 09:03:46 2007
+@@ -19868,7 +19868,7 @@
+ 
+ 
+ gtk_modules="gtk+-2.0 >= 2.4.0"
+-gaim_modules="gaim >= 2.0.0"
++gaim_modules="pidgin >= 2.0.0"
+ 
+ 
+ if test "x$ac_cv_env_PKG_CONFIG_set" != "xset"; then
+diff -ruN ../gaim-hotkeys-0.2.2.orig/src/hotkeys.c ./src/hotkeys.c
