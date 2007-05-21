@@ -1,0 +1,18 @@
+--- pnggccrd.c.bak	Wed May 16 03:52:23 2007
++++ pnggccrd.c	Mon May 21 13:04:54 2007
+@@ -359,6 +359,7 @@
+    _pctemp = _pctemp;
+    _MMXLength = _MMXLength;
+ #endif
++#if 0
+    _const4  = _const4;
+    _const6  = _const6;
+    _mask8_0  = _mask8_0;
+@@ -377,6 +378,7 @@
+    _mask48_2 = _mask48_2;
+    _mask48_1 = _mask48_1;
+    _mask48_0 = _mask48_0;
++#endif
+ }
+ #endif /* PNG_MMX_CODE_SUPPORTED */
+ 
