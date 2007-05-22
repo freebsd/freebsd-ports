@@ -66,7 +66,7 @@ RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/x11.pc:${PORTSDIR}/x11/libX11 \
 
 .if !defined(XORG_UPGRADE) && !defined(PACKAGE_BUILDING)
 pre-everything::
-	@test -L /usr/X11R6 || ( echo "Read ${PORTSDIR}/UPDATING for the procedure to upgrade to xorg 7.2." && /usr/bin/false )
+	@test -L /usr/X11R6 || ( echo "Read ${PORTSDIR}/UPDATING for the procedure to upgrade or install xorg 7.2." && /usr/bin/false )
 .endif
 
 do-install:
