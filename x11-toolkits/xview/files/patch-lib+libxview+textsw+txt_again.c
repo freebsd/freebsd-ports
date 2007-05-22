@@ -89,7 +89,7 @@
 +    _strbuf._ub._base = NULL;
 +    _strbuf._lb._base = NULL;
 +    VA_START(args, fmt);
-+    result = __svfscanf(&_strbuf, fmt, args);
++    result = vfscanf(&_strbuf, fmt, args);
 +    va_end(args);
 +    TXTSW_STRING_BASE(ptr_to_string) = (char *) _strbuf._p;
 +    return (result);
