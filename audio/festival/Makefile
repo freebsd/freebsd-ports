@@ -51,23 +51,23 @@ do-build:
 post-build test:
 	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKDIR}/speech_tools test
 
+post-patch::
+	${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g'	\
+		${WRKSRC}/*/config/systems/default.mak
+
 .include <bsd.port.pre.mk>
 
-.ifdef WITH_NAS
-LIB_DEPENDS+=	audio:${PORTSDIR}/audio/nas
+.for m in nas esd
+.	ifdef WITH_${m:U}
+LIB_DEPENDS+=	${m:nas=audio}:${PORTSDIR}/audio/$m
 post-patch::
-	${REINPLACE_CMD} -e 's,# INCLUDE_MODULES += NAS_AUDIO,INCLUDE_MODULES += NAS_AUDIO,' \
+	${REINPLACE_CMD} -e 's,# INCLUDE_MODULES += ${m:U}_AUDIO,INCLUDE_MODULES += ${m:U}_AUDIO,' \
 		${WRKDIR}/*/config/config.in
-.else
-CONFIGURE_ARGS+=--disable-nas
-.endif
-
-.ifdef WITH_ESD
-LIB_DEPENDS+=	esd:${PORTSDIR}/audio/esound
-post-patch::
-	${REINPLACE_CMD} -e 's,# INCLUDE_MODULES += ESD_AUDIO,INCLUDE_MODULES += ESD_AUDIO,' \
-		${WRKDIR}/*/config/config.in
-.endif
+CONFIGURE_ARGS+=--enable-$m
+.	else
+CONFIGURE_ARGS+=--disable-$m
+.	endif
+.endfor
 
 do-configure:
 .for d in speech_tools festival
