@@ -8,7 +8,7 @@
 PORTNAME=	vbindiff
 PORTVERSION=	3.0.b1
 CATEGORIES=	textproc
-MASTER_SITES=	http://home.comcast.net/~chris-madsen/vbindiff/
+MASTER_SITES=	http://www.cjmweb.net/vbindiff/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b1/_beta1/}
 
 MAINTAINER=	chinsan@FreeBSD.org
