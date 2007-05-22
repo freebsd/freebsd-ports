@@ -6,8 +6,8 @@
    
 -MOC=$(QTDIR)/bin/moc
 -UIC=$(QTDIR)/bin/uic
-+MOC=$(QTDIR)/bin/moc4
-+UIC=$(QTDIR)/bin/uic4
++MOC=$(QTDIR)/bin/moc-qt4
++UIC=$(QTDIR)/bin/uic-qt4
  RCC=$(QTDIR)/bin/rcc
  
  INCFLAGS=\
