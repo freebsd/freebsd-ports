@@ -5,13 +5,13 @@
  fi
  
 -if [ ! -r $QTDIR/bin/moc ]; then
-+if [ ! -r $QTDIR/bin/moc4 ]; then
++if [ ! -r $QTDIR/bin/moc-qt4 ]; then
    echo "*** ERROR: unable to locate Qt MOC in $QTDIR/bin"
    exit 1
  fi
  
 -if [ ! -r $QTDIR/bin/uic ]; then
-+if [ ! -r $QTDIR/bin/uic4 ]; then
++if [ ! -r $QTDIR/bin/uic-qt4 ]; then
    echo "*** ERROR: unable to locate Qt UIC in $QTDIR/bin"
    exit 1
  fi
