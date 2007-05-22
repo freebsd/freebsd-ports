@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmms-uade
-PORTVERSION=	2.03
-PORTREVISION=	1
+PORTVERSION=	2.05
 CATEGORIES=	audio
 MASTER_SITES=	http://zakalwe.fi/uade/uade2/ \
 		http://critical.ch/distfiles/
@@ -21,19 +20,15 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		ao.3:${PORTSDIR}/audio/libao
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
-BROKEN=		Incomplete pkg-plist
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2007-04-10
-
 HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
-USE_AUTOTOOLS=	libtool:15
 
-DOCSDIR=	${PREFIX}/share/doc/uade
-CONFIGURE_ARGS=	--prefix=${X11BASE}/lib/xmms \
+DOCSDIR=	${PREFIX}/share/doc/uade2
+DATADIR=	${PREFIX}/share/uade2
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--mandir=${MANPREFIX}/man/man1 \
 		--without-audacious --no-debug
 
@@ -47,8 +42,14 @@ PORTDOCS=	UAE-CREDITS UAE-README audio_emulation.txt design.tex \
 		play_loop_state_diagram.dia play_loop_state_diagram.eps \
 		play_loop_state_diagram.txt
 
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,lib/pkgconfig,libdata/pkgconfig,' \
+		${WRKSRC}/configure
+
 post-install:
-	@${RM} -rf ${PREFIX}/share/uade2/players/S
+	@${RM} -rf ${DATADIR}/players/S
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -57,4 +58,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
