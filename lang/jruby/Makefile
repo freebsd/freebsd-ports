@@ -9,7 +9,8 @@ PORTNAME=	jruby
 PORTVERSION=	0.9.9
 PORTREVISION=	1
 CATEGORIES=	lang ruby java
-MASTER_SITES=	http://dist.codehaus.org/jruby/
+MASTER_SITES=	http://dist.codehaus.org/jruby/ \
+		http://dist.codehaus.org/jruby/previous/
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
 
 MAINTAINER=	nemoliu@FreeBSD.org
