@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ardour
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.0.2
 CATEGORIES=	audio
 MASTER_SITES=	http://ardour.org/files/releases/
 DISTFILES=	ardour-${DISTVERSION}.tar.bz2
