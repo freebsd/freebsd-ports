@@ -78,7 +78,6 @@ share/ardour2/icons/crossfade_out_slow-cut.png
 share/ardour2/icons/crossfade_in_slow-cut.png
 share/ardour2/icons/transport_loop.png
 share/ardour2/icons/tool_audition.png
-share/ardour2/icons/fader_belt_negative.png
 share/ardour2/icons/transport_end.png
 share/ardour2/icons/record_tape_red.png
 share/ardour2/icons/hide.png
@@ -86,9 +85,7 @@ share/ardour2/icons/tool_zoom.png
 share/ardour2/icons/transport_range.png
 share/ardour2/icons/zoom_out.png
 share/ardour2/icons/zoom_in.png
-share/ardour2/icons/gain_fader.png
 share/ardour2/icons/crossfade_out_constant.png
-share/ardour2/icons/fader_belt_positive.png
 share/ardour2/icons/tool_gain.png
 share/ardour2/icons/crossfade_in_slow-fade.png
 share/ardour2/icons/strip_width.png
@@ -99,14 +96,8 @@ share/ardour2/icons/transport_record.png
 share/ardour2/icons/crossfade_out_slow-fade.png
 share/ardour2/icons/nudge_right.png
 share/ardour2/icons/ardour_icon_22px.png
-share/ardour2/icons/zoom_smaller_out.png
-share/ardour2/icons/zoom_small_out.png
 share/ardour2/icons/ardour_icon_48px.png
-share/ardour2/icons/zoom_smaller_in.png
 share/ardour2/icons/ardour_icon_32px.png
-share/ardour2/icons/zoom_small_full.png
-share/ardour2/icons/zoom_small_in.png
-share/ardour2/icons/zoom_smaller_full.png
 share/ardour2/icons/ardour_icon_16px.png
 @dirrm share/ardour2/icons
 share/ardour2/templates/16 Tracks.template
@@ -120,7 +111,6 @@ share/locale/it_IT/LC_MESSAGES/libardour.mo
 share/locale/sv_SE/LC_MESSAGES/libardour.mo
 share/locale/el_GR/LC_MESSAGES/libardour.mo
 share/locale/ru_RU/LC_MESSAGES/libardour.mo
-share/locale/de_DE/LC_MESSAGES/libardour.mo
 share/locale/el_GR/LC_MESSAGES/libgtkmm2ext.mo
 share/locale/ru_RU/LC_MESSAGES/libgtkmm2ext.mo
 share/locale/pt_BR/LC_MESSAGES/libgtkmm2ext.mo
