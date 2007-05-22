@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tinylaf
-PORTVERSION=	1.3.05
-PORTREVISION=	1
+PORTVERSION=	1.3.6
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.muntjak.de/hans/java/tinylaf/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
@@ -22,7 +21,7 @@ NO_BUILD=	yes
 
 JARFILE=	${PORTNAME}.jar
 
-PORTDOCS=	readme.txt
+PORTDOCS=	readme.html license.txt
 THEMES=		99\ Earth.theme 99\ Lego.theme 99\ Light.theme 99\ Pool.theme	\
 		YQ\ Forest.theme YQ\ Golden.theme YQ\ Nightly.theme YQ\ Plastic.theme	\
 		YQ\ Silver.theme
