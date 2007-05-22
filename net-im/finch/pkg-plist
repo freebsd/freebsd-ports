@@ -52,5 +52,6 @@ lib/libgnt.la
 lib/libgnt.so
 lib/libgnt.so.0
 libdata/pkgconfig/gnt.pc
+@dirrm lib/finch
 @dirrm include/gnt
 @dirrm include/finch
