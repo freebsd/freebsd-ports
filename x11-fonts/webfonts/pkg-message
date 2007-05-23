@@ -3,19 +3,11 @@ the terms of the Microsoft End-User License Agreement ("EULA").  You will find
 the EULA at %%DOCSDIR%%/LICENSE.  If you read and agree
 to the EULA, you can start using the fonts by following these instructions:
 
---- XFree86 4.x.x (using the freetype module)
-
 Make sure that the freetype module is loaded.  If it is not, add the following
-line to the "Modules" section of XF86Config:
+line to the "Modules" section of xorg.conf or XF86Config:
 
 	Load "freetype"
 
-Add the following line to the "Files" section of XF86Config:
+Add the following line to the "Files" section of xorg.conf or XF86Config:
 
 	FontPath "%%FONTSDIR%%/"
-
---- XFree86 3.x.x (using Xfstt)
-
-Add the following line to the "Files" section of XF86Config:
-
-	FontPath   "unix/:7101"
