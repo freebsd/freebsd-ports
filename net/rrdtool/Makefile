@@ -25,7 +25,8 @@ USE_GMAKE=	yes
 
 CONFIGURE_ARGS=	--enable-perl-site-install --disable-tcl
 
-OPTIONS=	PYTHON_MODULE	"Build PYTHON bindings" off
+OPTIONS=	PYTHON_MODULE	"Build PYTHON bindings" off \
+		RUBY_MODULE	"Build RUBY bindings" off
 
 .include <bsd.port.pre.mk>
 .if defined(WITH_PYTHON_MODULE)
@@ -36,6 +37,16 @@ CONFIGURE_ARGS+=	--enable-python
 .else
 CONFIGURE_ARGS+=	--disable-python
 PLIST_SUB+=	WITH_PYTHON="@comment "
+.endif
+
+.if defined(WITH_RUBY_MODULE)
+USE_RUBY=	yes
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+PLIST_SUB+=	WITH_RUBY=""
+CONFIGURE_ARGS+=	--enable-ruby
+.else
+CONFIGURE_ARGS+=	--disable-ruby
+PLIST_SUB+=	WITH_RUBY="@comment "
 .endif
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
