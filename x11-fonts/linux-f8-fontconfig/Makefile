@@ -7,7 +7,7 @@
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.2.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-fonts linux
 DISTNAME=	${PORTNAME}-${PORTVERSION}-13
 
@@ -24,10 +24,15 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 BRANDELF_DIRS=	usr/bin
 
+# We will use some other configuration file, so delete a linux one
+# Don't let the linux fc-cache mess up the native cache file
 post-extract:
-	${RM} ${WRKSRC}/etc/fonts/fonts.conf
+	@${RM} ${WRKSRC}/etc/fonts/fonts.conf \
+		${WRKSRC}/usr/bin/fc-cache \
+		${WRKSRC}/usr/share/man/man1/fc-cache.1.gz
 
-post-install:
-	${INSTALL_DATA} ${FILESDIR}/fonts.conf ${PREFIX}/etc/fonts/fonts.conf
+# Here is our configuration file
+post-patch:
+	@${CAT} ${FILESDIR}/fonts.conf | ${SED} 's:/usr/X11R6:${LOCALBASE}:g' > ${WRKSRC}/etc/fonts/fonts.conf
 
 .include <bsd.port.mk>
