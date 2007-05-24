@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gnumeric
-PORTVERSION=	1.7.9
-PORTREVISION=	1
+PORTVERSION=	1.7.10
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -17,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The GNOME 2 spreadsheet
 
-LIB_DEPENDS=	goffice-0.3:${PORTSDIR}/devel/goffice \
+LIB_DEPENDS=	goffice-0.4:${PORTSDIR}/devel/goffice \
 		psiconv.10:${PORTSDIR}/converters/psiconv
 
 USE_BZIP2=	yes
