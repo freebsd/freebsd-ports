@@ -6,7 +6,7 @@
 
 PORTNAME=	v_sim
 PORTVERSION=	3.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	http://www-drfmc.cea.fr/sp2m/L_Sim/V_Sim/download/
 
@@ -39,7 +39,7 @@ PLIST_SUB+=	CDF="@comment "
 .endif
 
 .if !defined(WITHOUT_BABEL)
-LIB_DEPENDS+=	openbabel.1:${PORTSDIR}/science/openbabel
+LIB_DEPENDS+=	openbabel.3:${PORTSDIR}/science/openbabel
 CONFIGURE_ARGS+=--with-openbabel --with-openbabel-path=${LOCALBASE}
 PLIST_SUB+=	BABEL=""
 .else

@@ -7,7 +7,7 @@
 
 PORTNAME=	xdrawchem
 PORTVERSION=	1.9.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xdrawchem
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	xdrawchem
 MAINTAINER=	hemi@puresimplicity.net
 COMMENT=	Chemical drawing program
 
-LIB_DEPENDS=	openbabel.1:${PORTSDIR}/science/openbabel
+LIB_DEPENDS=	openbabel.3:${PORTSDIR}/science/openbabel
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
