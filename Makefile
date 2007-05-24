@@ -153,13 +153,7 @@ PORTSNAP_FLAGS?= -p ${.CURDIR}
 SUPFLAGS+=	-h ${SUPHOST}
 .endif
 update:
-.if defined(PORTSNAP_UPDATE)
-	@echo "--------------------------------------------------------------"
-	@echo ">>> Running ${PORTSNAP}"
-	@echo "--------------------------------------------------------------"
-	@${PORTSNAP} ${PORTSNAP_FLAGS} fetch
-	@${PORTSNAP} ${PORTSNAP_FLAGS} update
-.elif defined(SUP_UPDATE) && defined(PORTSSUPFILE)
+.if defined(SUP_UPDATE) && defined(PORTSSUPFILE)
 	@echo "--------------------------------------------------------------"
 	@echo ">>> Running ${SUP}"
 	@echo "--------------------------------------------------------------"
@@ -173,5 +167,17 @@ update:
 	@${ECHO_MSG} "Error: Please define PORTSSUPFILE before doing make update."
 	@exit 1
 .else
-	@${ECHO_MSG} "Error: Please define either PORTSNAP_UPDATE, SUP_UPDATE, or CVS_UPDATE first."
+	@echo "--------------------------------------------------------------"
+	@echo ">>> Running ${PORTSNAP}"
+	@echo "--------------------------------------------------------------"
+.if !exists(${PORTSDIR}/.portsnap.INDEX)
+	@echo "Error: 'make update' uses portsnap(8) by default and"
+	@echo "needs ${PORTSDIR} to be created by portsnap on its first run."
+	@echo "Please run 'portsnap fetch extract' first."
+	@echo "You can also define SUP_UPDATE and PORTSSUPFILE to use csup(1)"
+	@echo "or CVS_UPDATE to use cvs(1) for updating."
+.else
+	@${PORTSNAP} ${PORTSNAP_FLAGS} fetch
+	@${PORTSNAP} ${PORTSNAP_FLAGS} update
+.endif
 .endif
