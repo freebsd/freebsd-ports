@@ -1,5 +1,5 @@
 --- configure.ac.orig	Wed Feb 22 06:53:28 2006
-+++ configure.ac	Thu Dec  7 02:09:59 2006
++++ configure.ac	Wed May 23 22:03:00 2007
 @@ -136,7 +136,7 @@ case "$target_cpu" in
     x86 | i686 | i586 | i486 | i386 ) MACHTYPE=x86
                     ;;
@@ -63,6 +63,39 @@
    dnl   GCSECTIONS=1
    dnl else
    dnl   AC_MSG_RESULT(no)
+@@ -593,12 +593,12 @@ dnl see if using GNU glibc++, because th
+ P_HAS_ATOMIC_INT=0
+ P_NEEDS_GNU_CXX_NAMESPACE=0
+ AC_MSG_CHECKING(if atomic integer available)
+-AC_TRY_COMPILE([#include <bits/atomicity.h>],
++AC_TRY_COMPILE([#include ${ATOMICITY_H}],
+                [_Atomic_word val;], P_HAS_ATOMIC_INT=1)
+ if test ${P_HAS_ATOMIC_INT} = 1 ; then
+   AC_MSG_RESULT(yes)
+   AC_MSG_CHECKING(if __exchange_and_add is in __gnu_cxx namespace)
+-  AC_TRY_COMPILE([#include <bits/atomicity.h>],
++  AC_TRY_COMPILE([#include ${ATOMICITY_H}],
+                  [_Atomic_word val; __gnu_cxx::__exchange_and_add(&val, 1)], P_NEEDS_GNU_CXX_NAMESPACE=1)
+   if test ${P_NEEDS_GNU_CXX_NAMESPACE} = 1 ; then
+     AC_MSG_RESULT(yes)
+@@ -640,7 +640,7 @@ if test "${OSTYPE:-unknown}" = "solaris"
+   AC_MSG_CHECKING(for upad128_t)
+   AC_TRY_COMPILE([#include <sys/types.h>],
+                  [upad128_t upad; upad._q = 0.0;], has_upad128_t=y)
+-  if test ${has_upad128_t} == "y"; then
++  if test ${has_upad128_t} = "y"; then
+     AC_MSG_RESULT(yes)
+     AC_DEFINE(P_HAS_UPAD128_T)
+   else
+@@ -665,7 +665,7 @@ if test ${OSTYPE} != Darwin ; then
+   fi
+ fi
+ 
+-if test "${P_HAS_SEMAPHORES}x" == "x" ; then
++if test "${P_HAS_SEMAPHORES}x" = "x" ; then
+   
+   AC_TRY_COMPILE([#include <semaphore.h>],
+                  [sem_t *s = sem_open("test", O_CREAT)],
 @@ -689,18 +689,18 @@ dnl check for pthreads library
  dnl MSWIN_DISPLAY semaphore,Semaphore Support
  dnl MSWIN_DEFINE  semaphore,P_HAS_SEMAPHORES
@@ -88,6 +121,15 @@
    fi
  fi
  
+@@ -746,7 +746,7 @@ AC_TRY_COMPILE([#include <pthread.h>],
+ if test ${P_HAS_RECURSIVE_MUTEX} = 1 ; then
+   AC_MSG_RESULT(yes)
+ else
+-  if test ${OSTYPE} == Darwin ; then
++  if test ${OSTYPE} = Darwin ; then
+     AC_TRY_COMPILE([#include <pthread.h>],
+     			   [pthread_mutexattr_t attr; pthread_mutexattr_settype(&attr, PTHREAD_MUTEX_RECURSIVE);], P_HAS_RECURSIVE_MUTEX=1)
+     if test ${P_HAS_RECURSIVE_MUTEX} = 1 ; then
 @@ -847,7 +847,7 @@ fi
  AC_SUBST(HAS_PLUGINS)
  
@@ -125,7 +167,14 @@
  else
    dnl SDL checks
    if test "${SDLLIB:-unset}" = "unset" ; then
-@@ -1501,11 +1502,11 @@ else
+@@ -1495,17 +1496,17 @@ else
+   dnl Linux check
+   AC_CHECK_HEADERS(SDL/SDL.h, HAS_SDL=1)
+   if test "${HAS_SDL:-unset}" != "unset" ; then
+-    if test "${X11LIBDIR:-unset}" == "unset" ; then
++    if test "${X11LIBDIR:-unset}" = "unset" ; then
+ 	X11LIBDIR=/usr/X11R6/lib
+     fi
      AC_CHECK_LIB(SDL, SDL_CreateYUVOverlay, HAS_SDL=1, HAS_SDL=, -L${X11LIBDIR} -lpthread -lX11 -lXext)
    fi
  

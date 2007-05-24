@@ -40,6 +40,11 @@ MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -O1 -I${WRKSRC}/include -I${LOCALBASE}/include" 
 		STDCCFLAGS+="-I${LOCALBASE}" \
 		CFLAGS="${CFLAGS} -O1"
 
+.if ${OSVERSION} >= 700042
+CONFIGURE_ENV+=	ATOMICITY_H="<ext/atomicity.h>"
+.else
+CONFIGURE_ENV+=	ATOMICITY_H="<bits/atomicity.h>"
+.endif
 # if explicitely asked for, depend upon it
 .if defined(WITH_SDL)
 USE_SDL+=	sdl
