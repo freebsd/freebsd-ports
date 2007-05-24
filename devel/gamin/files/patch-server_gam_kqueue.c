@@ -1,5 +1,5 @@
---- server/gam_kqueue.c.orig	Wed Aug 10 23:50:32 2005
-+++ server/gam_kqueue.c	Tue Feb 14 10:00:17 2006
+--- server/gam_kqueue.c.orig	Wed Aug 10 17:50:32 2005
++++ server/gam_kqueue.c	Wed May 23 23:50:39 2007
 @@ -10,9 +10,10 @@
   *       FAM should do: we do not call g_dir_open() if the file is a
   *       symbolic link).
@@ -46,7 +46,16 @@
  
  /*** tunable constants, modify to tweak the backend aggressivity *************/
  
-@@ -509,6 +512,9 @@
+@@ -326,7 +329,7 @@ gam_kqueue_isdir (const char *pathname, 
+ static gboolean
+ gam_kqueue_get_uint_sysctl (const char *name, unsigned int *value)
+ {
+-  unsigned int value_len = sizeof(*value);
++  size_t value_len = sizeof(*value);
+ 
+   if (sysctlbyname(name, value, &value_len, (void *)NULL, 0) < 0)
+     {
+@@ -509,6 +512,9 @@ static gboolean
  gam_kqueue_monitor_enable_kqueue (Monitor *mon)
  {
    struct kevent ev[1];
@@ -56,7 +65,7 @@
  
    if (open_files == max_open_files)
      {
-@@ -516,26 +522,36 @@
+@@ -516,26 +522,36 @@ gam_kqueue_monitor_enable_kqueue (Monito
        return FALSE;
      }
    
@@ -99,7 +108,7 @@
  }
  
  static void
-@@ -840,6 +856,8 @@
+@@ -840,6 +856,8 @@ gam_kqueue_sub_monitor_emit_event (SubMo
      case GAMIN_EVENT_MOVED:
        gam_kqueue_sub_monitor_set_missing(smon);
        break;
@@ -108,7 +117,7 @@
      }
  
    gam_server_emit_event(mon->pathname, isdir, event, smon->subs, 1);
-@@ -981,6 +999,8 @@
+@@ -981,6 +999,8 @@ gam_kqueue_file_monitor_emit_event (File
  	
        gam_kqueue_hash_table_remove(fmon->smon->fmons, fmon);
        break;
@@ -117,7 +126,7 @@
      }
  }
  
-@@ -1167,11 +1187,15 @@
+@@ -1167,11 +1187,15 @@ gam_kqueue_init (void)
    channel = g_io_channel_unix_new(kq);
    g_io_add_watch(channel, G_IO_IN, gam_kqueue_kevent_cb, NULL);
  
