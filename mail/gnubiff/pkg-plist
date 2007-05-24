@@ -36,6 +36,6 @@ bin/gnubiff
 @dirrmtry %%BONOBODIR%%
 @dirrmtry %%SHAREDIR%%/gnome-2.0/ui
 @dirrmtry %%SHAREDIR%%/gnome-2.0
-@dirrmtry share/locale/fr_CA/LC_MESSAGES
-@dirrmtry share/locale/fr_CA
+%%NLS%%@dirrmtry share/locale/fr_CA/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fr_CA
 @dirrm %%SHAREDIR%%/gnubiff
