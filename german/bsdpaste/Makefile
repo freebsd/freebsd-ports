@@ -8,7 +8,7 @@
 PORTNAME=	bsdpaste
 PORTVERSION=	1.0
 CATEGORIES=	german ruby
-MASTER_SITES=	http://portal.bsdgroup.de/~as/bsdpaste/
+MASTER_SITES=	http://people.bsdgroup.de/~as/bsdpaste/
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	as@bsdgroup.de
