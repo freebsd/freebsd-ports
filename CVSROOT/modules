@@ -13188,6 +13188,7 @@ pythoncad	ports/cad/pythoncad
 pythonchess	ports/games/pythonchess
 pythondirector	ports/net/pythondirector
 pythontidy	ports/devel/pythontidy
+pytone		ports/audio/pytone
 pyweather	ports/astro/pyweather
 pyweblib	ports/www/pyweblib
 pyxmame		ports/emulators/pyxmame
