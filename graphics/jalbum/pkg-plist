@@ -3,122 +3,6 @@ bin/jalbum
 %%DATADIR%%/JAlbum.jar
 %%DATADIR%%/StartJAlbum.bat
 %%DATADIR%%/filetypes.xml
-%%DATADIR%%/help/addbuttons.html
-%%DATADIR%%/help/advancedsection.html
-%%DATADIR%%/help/consolemode.html
-%%DATADIR%%/help/editsection.html
-%%DATADIR%%/help/faq.html
-%%DATADIR%%/help/features.html
-%%DATADIR%%/help/filters.html
-%%DATADIR%%/help/history.html
-%%DATADIR%%/help/images/a.gif
-%%DATADIR%%/help/images/bean.gif
-%%DATADIR%%/help/images/beanshell.gif
-%%DATADIR%%/help/images/beforefilter-standard.jpg
-%%DATADIR%%/help/images/beforefilter.jpg
-%%DATADIR%%/help/images/blurexample.jpg
-%%DATADIR%%/help/images/book_open2.gif
-%%DATADIR%%/help/images/browsers.gif
-%%DATADIR%%/help/images/buttonedit.gif
-%%DATADIR%%/help/images/camera.gif
-%%DATADIR%%/help/images/closeupwithtext.jpg
-%%DATADIR%%/help/images/console.gif
-%%DATADIR%%/help/images/control_panel.gif
-%%DATADIR%%/help/images/cup.gif
-%%DATADIR%%/help/images/david.jpg
-%%DATADIR%%/help/images/donate.gif
-%%DATADIR%%/help/images/download.gif
-%%DATADIR%%/help/images/dragndrop.png
-%%DATADIR%%/help/images/earth.gif
-%%DATADIR%%/help/images/earth_connection.gif
-%%DATADIR%%/help/images/edit_images.gif
-%%DATADIR%%/help/images/explorer-ui.png
-%%DATADIR%%/help/images/file_types.gif
-%%DATADIR%%/help/images/filterproperties.gif
-%%DATADIR%%/help/images/first.gif
-%%DATADIR%%/help/images/fixedshapeexample.jpg
-%%DATADIR%%/help/images/flag_france.gif
-%%DATADIR%%/help/images/flag_germany.gif
-%%DATADIR%%/help/images/folder_hierarchy.gif
-%%DATADIR%%/help/images/free.gif
-%%DATADIR%%/help/images/grayscaleexample.jpg
-%%DATADIR%%/help/images/grayscalethumb.jpg
-%%DATADIR%%/help/images/heart.gif
-%%DATADIR%%/help/images/image_filters.gif
-%%DATADIR%%/help/images/jlogo-big.png
-%%DATADIR%%/help/images/languages.gif
-%%DATADIR%%/help/images/last.gif
-%%DATADIR%%/help/images/logoexample.jpg
-%%DATADIR%%/help/images/makealbum.png
-%%DATADIR%%/help/images/menubackground.gif
-%%DATADIR%%/help/images/miniheart.gif
-%%DATADIR%%/help/images/navigation1.gif
-%%DATADIR%%/help/images/navigation2.gif
-%%DATADIR%%/help/images/no-spyware.png
-%%DATADIR%%/help/images/openskin.gif
-%%DATADIR%%/help/images/paypaldonate.gif
-%%DATADIR%%/help/images/pil.gif
-%%DATADIR%%/help/images/publish.gif
-%%DATADIR%%/help/images/q.gif
-%%DATADIR%%/help/images/remotedir.png
-%%DATADIR%%/help/images/rotationexample.jpg
-%%DATADIR%%/help/images/scroll.gif
-%%DATADIR%%/help/images/shadowtextexample.jpg
-%%DATADIR%%/help/images/sharpenexample.jpg
-%%DATADIR%%/help/images/skin.gif
-%%DATADIR%%/help/images/skindirectory.gif
-%%DATADIR%%/help/images/skinfolder.gif
-%%DATADIR%%/help/images/slideedit.gif
-%%DATADIR%%/help/images/smiley.gif
-%%DATADIR%%/help/images/textexample.jpg
-%%DATADIR%%/help/images/tintexample.jpg
-%%DATADIR%%/help/images/tip.gif
-%%DATADIR%%/help/images/toolbox.gif
-%%DATADIR%%/help/images/ui-accounts.png
-%%DATADIR%%/help/images/ui-advanced-main.png
-%%DATADIR%%/help/images/ui-advanced-naming.png
-%%DATADIR%%/help/images/ui-advanced-preferences.png
-%%DATADIR%%/help/images/ui-advanced-variables.png
-%%DATADIR%%/help/images/ui-edit-arrange.png
-%%DATADIR%%/help/images/ui-edit-contextmenu.png
-%%DATADIR%%/help/images/ui-edit-generalmenu.png
-%%DATADIR%%/help/images/ui-edit-properties.png
-%%DATADIR%%/help/images/ui-edit-select.png
-%%DATADIR%%/help/images/ui-edit.png
-%%DATADIR%%/help/images/ui-main.png
-%%DATADIR%%/help/images/ui-publish.png
-%%DATADIR%%/help/images/ui-share.png
-%%DATADIR%%/help/images/ui-signupwizard-form.png
-%%DATADIR%%/help/images/ui-signupwizard.png
-%%DATADIR%%/help/images/ui-skin.png
-%%DATADIR%%/help/images/ui-tabs.gif
-%%DATADIR%%/help/images/ui-tabs.png
-%%DATADIR%%/help/images/ui-thumbnail-symbols.png
-%%DATADIR%%/help/images/ui-webserversettings.png
-%%DATADIR%%/help/images/uploading.png
-%%DATADIR%%/help/images/users1.gif
-%%DATADIR%%/help/images/watermarkexample.jpg
-%%DATADIR%%/help/images/wizard.gif
-%%DATADIR%%/help/images/wrench.gif
-%%DATADIR%%/help/images/xborderexample.jpg
-%%DATADIR%%/help/images/zoomexample.jpg
-%%DATADIR%%/help/index.html
-%%DATADIR%%/help/integrate.html
-%%DATADIR%%/help/mainsection.html
-%%DATADIR%%/help/menus.html
-%%DATADIR%%/help/misc.html
-%%DATADIR%%/help/publish.html
-%%DATADIR%%/help/publishsection.html
-%%DATADIR%%/help/quickstart.html
-%%DATADIR%%/help/scripting.html
-%%DATADIR%%/help/sharesection.html
-%%DATADIR%%/help/skincreation.html
-%%DATADIR%%/help/skinsection.html
-%%DATADIR%%/help/style.css
-%%DATADIR%%/help/supporting.html
-%%DATADIR%%/help/tools.html
-%%DATADIR%%/help/tutorials.html
-%%DATADIR%%/help/usermanual.html
 %%DATADIR%%/includes/printing.bsh
 %%DATADIR%%/includes/printing.inc
 %%DATADIR%%/includes/shutterfly.inc
@@ -145,14 +29,8 @@ bin/jalbum
 %%DATADIR%%/plugins/FixedShapeFilter.java
 %%DATADIR%%/plugins/GrayscaleFilter.class
 %%DATADIR%%/plugins/GrayscaleFilter.java
-%%DATADIR%%/plugins/InstallAnywhere/JAlbum.iap_xml
-%%DATADIR%%/plugins/InstallAnywhere/JAlbumBuild.iap_xml
-%%DATADIR%%/plugins/InstallAnywhere/JAlbum_Build_Output/Web_Installers/InstData/WebInst.cab
-%%DATADIR%%/plugins/InstallAnywhere/JAlbum_Build_Output/Web_Installers/install.htm
-%%DATADIR%%/plugins/InstallAnywhere/buildlog.xml
 %%DATADIR%%/plugins/LogoFilter.class
 %%DATADIR%%/plugins/LogoFilter.java
-%%DATADIR%%/plugins/LogoFilter.jbx
 %%DATADIR%%/plugins/Printing.class
 %%DATADIR%%/plugins/Printing.java
 %%DATADIR%%/plugins/PropertySettingFilterWrapper.class
@@ -161,19 +39,16 @@ bin/jalbum
 %%DATADIR%%/plugins/RotationFilter.java
 %%DATADIR%%/plugins/ShadowTextFilter.class
 %%DATADIR%%/plugins/ShadowTextFilter.java
-%%DATADIR%%/plugins/ShadowTextFilter.jbx
 %%DATADIR%%/plugins/SharpenFilter.class
 %%DATADIR%%/plugins/SharpenFilter.java
 %%DATADIR%%/plugins/SimpleFilter.class
 %%DATADIR%%/plugins/SimpleFilter.java
 %%DATADIR%%/plugins/TextFilter.class
 %%DATADIR%%/plugins/TextFilter.java
-%%DATADIR%%/plugins/TextFilter.jbx
 %%DATADIR%%/plugins/TintFilter.class
 %%DATADIR%%/plugins/TintFilter.java
 %%DATADIR%%/plugins/WatermarkFilter.class
 %%DATADIR%%/plugins/WatermarkFilter.java
-%%DATADIR%%/plugins/WatermarkFilter.jbx
 %%DATADIR%%/plugins/XBorderFilter.class
 %%DATADIR%%/plugins/XBorderFilter.java
 %%DATADIR%%/plugins/ZoomFilter.class
@@ -181,7 +56,6 @@ bin/jalbum
 %%DATADIR%%/plugins/makedoc.bat
 %%DATADIR%%/plugins/readme.txt
 %%DATADIR%%/plugins/wishlist.txt
-%%DATADIR%%/readme.html
 %%DATADIR%%/res/djvu.gif
 %%DATADIR%%/res/doc.gif
 %%DATADIR%%/res/folder.gif
@@ -201,10 +75,44 @@ bin/jalbum
 %%DATADIR%%/res/xls.gif
 %%DATADIR%%/res/xml.gif
 %%DATADIR%%/res/zip.gif
+%%DATADIR%%/skins/BananAlbum/comment.txt
+%%DATADIR%%/skins/BananAlbum/hints.jap
+%%DATADIR%%/skins/BananAlbum/index.htt
+%%DATADIR%%/skins/BananAlbum/init.bsh
+%%DATADIR%%/skins/BananAlbum/onload.bsh
+%%DATADIR%%/skins/BananAlbum/preview.jpg
+%%DATADIR%%/skins/BananAlbum/res/BananAlbum.swf
+%%DATADIR%%/skins/BananAlbum/res/bananatree/arial-no-icon.swf
+%%DATADIR%%/skins/BananAlbum/res/bananatree/arial-tree.swf
+%%DATADIR%%/skins/BananAlbum/res/bananatree/chicago-tree.swf
+%%DATADIR%%/skins/BananAlbum/res/bananatree/custom-tree.fla
+%%DATADIR%%/skins/BananAlbum/res/bananatree/custom-tree.swf
+%%DATADIR%%/skins/BananAlbum/res/bananatree/monaco-tree.swf
+%%DATADIR%%/skins/BananAlbum/res/bananatree/no-icon.swf
+%%DATADIR%%/skins/BananAlbum/res/bananatree/rudinpx-tree.swf
+%%DATADIR%%/skins/BananAlbum/res/download.html
+%%DATADIR%%/skins/BananAlbum/res/download.php
+%%DATADIR%%/skins/BananAlbum/res/folder.gif
+%%DATADIR%%/skins/BananAlbum/res/loading.gif
+%%DATADIR%%/skins/BananAlbum/res/scripts.js
+%%DATADIR%%/skins/BananAlbum/res/typefaces/arial.swf
+%%DATADIR%%/skins/BananAlbum/res/typefaces/chicago.swf
+%%DATADIR%%/skins/BananAlbum/res/typefaces/custom1.fla
+%%DATADIR%%/skins/BananAlbum/res/typefaces/custom1.swf
+%%DATADIR%%/skins/BananAlbum/res/typefaces/monaco.swf
+%%DATADIR%%/skins/BananAlbum/res/typefaces/rudinpx.swf
+%%DATADIR%%/skins/BananAlbum/slide.htt
+%%DATADIR%%/skins/BananAlbum/styles/BananAlbum.css
+%%DATADIR%%/skins/BananAlbum/top.htt
 %%DATADIR%%/skins/BluPlusPlus/bsh/index.bsh
 %%DATADIR%%/skins/BluPlusPlus/bsh/slide-original.bsh
 %%DATADIR%%/skins/BluPlusPlus/bsh/slide.bsh
-%%DATADIR%%/skins/BluPlusPlus/cameras.properties
+%%DATADIR%%/skins/BluPlusPlus/config/audio-block.inc
+%%DATADIR%%/skins/BluPlusPlus/config/audio-hidden-block.inc
+%%DATADIR%%/skins/BluPlusPlus/config/cameras.properties
+%%DATADIR%%/skins/BluPlusPlus/config/supported-audios.txt
+%%DATADIR%%/skins/BluPlusPlus/config/supported-videos.txt
+%%DATADIR%%/skins/BluPlusPlus/config/video-block.inc
 %%DATADIR%%/skins/BluPlusPlus/connect.pht
 %%DATADIR%%/skins/BluPlusPlus/docs/ChangesHistory.txt
 %%DATADIR%%/skins/BluPlusPlus/docs/InstallationGuide.txt
@@ -258,14 +166,15 @@ bin/jalbum
 %%DATADIR%%/skins/BluPlusPlus/frames/soft_07.xbp
 %%DATADIR%%/skins/BluPlusPlus/frames/tape_01.xbp
 %%DATADIR%%/skins/BluPlusPlus/hints.jap
+%%DATADIR%%/skins/BluPlusPlus/includes/common-header.inc
 %%DATADIR%%/skins/BluPlusPlus/includes/footer.inc
-%%DATADIR%%/skins/BluPlusPlus/includes/header.inc
 %%DATADIR%%/skins/BluPlusPlus/includes/help.inc
 %%DATADIR%%/skins/BluPlusPlus/includes/html-header.inc
 %%DATADIR%%/skins/BluPlusPlus/includes/index-bottom-navigation.inc
 %%DATADIR%%/skins/BluPlusPlus/includes/index-remarks.inc
 %%DATADIR%%/skins/BluPlusPlus/includes/index-top-navigation.inc
 %%DATADIR%%/skins/BluPlusPlus/includes/index-topbar.inc
+%%DATADIR%%/skins/BluPlusPlus/includes/metatags-header.inc
 %%DATADIR%%/skins/BluPlusPlus/includes/setup-index.js
 %%DATADIR%%/skins/BluPlusPlus/includes/setup-slide-common.js
 %%DATADIR%%/skins/BluPlusPlus/includes/setup-slide-original.js
@@ -307,12 +216,16 @@ bin/jalbum
 %%DATADIR%%/skins/BluPlusPlus/plugins/FrameTypeComboBox$FrameTypeComboBoxModel.class
 %%DATADIR%%/skins/BluPlusPlus/plugins/FrameTypeComboBox.class
 %%DATADIR%%/skins/BluPlusPlus/plugins/FrameTypeComboBox.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/GeneralUtils.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/GeneralUtils.java
 %%DATADIR%%/skins/BluPlusPlus/plugins/Index.class
 %%DATADIR%%/skins/BluPlusPlus/plugins/Index.java
 %%DATADIR%%/skins/BluPlusPlus/plugins/LanguageComboBox$1.class
 %%DATADIR%%/skins/BluPlusPlus/plugins/LanguageComboBox$LanguageComboBoxModel.class
 %%DATADIR%%/skins/BluPlusPlus/plugins/LanguageComboBox.class
 %%DATADIR%%/skins/BluPlusPlus/plugins/LanguageComboBox.java
+%%DATADIR%%/skins/BluPlusPlus/plugins/MediaUtils.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/MediaUtils.java
 %%DATADIR%%/skins/BluPlusPlus/plugins/OriginalSlide.class
 %%DATADIR%%/skins/BluPlusPlus/plugins/OriginalSlide.java
 %%DATADIR%%/skins/BluPlusPlus/plugins/PhotographicMetaInformation.class
@@ -343,6 +256,9 @@ bin/jalbum
 %%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$2.class
 %%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$20.class
 %%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$21.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$22.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$23.class
+%%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$24.class
 %%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$3.class
 %%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$4.class
 %%DATADIR%%/skins/BluPlusPlus/plugins/SkinGUI$5.class
@@ -485,6 +401,7 @@ bin/jalbum
 %%DATADIR%%/skins/BluPlusPlus/res/folder.gif
 %%DATADIR%%/skins/BluPlusPlus/res/js/common.js
 %%DATADIR%%/skins/BluPlusPlus/res/js/keyboard.js
+%%DATADIR%%/skins/BluPlusPlus/res/js/multiple-onloads.js
 %%DATADIR%%/skins/BluPlusPlus/res/js/nav-index.js
 %%DATADIR%%/skins/BluPlusPlus/res/js/nav-slide.js
 %%DATADIR%%/skins/BluPlusPlus/res/js/remarks.js
@@ -493,6 +410,9 @@ bin/jalbum
 %%DATADIR%%/skins/BluPlusPlus/res/js/slideshow.js
 %%DATADIR%%/skins/BluPlusPlus/res/js/statusbar.js
 %%DATADIR%%/skins/BluPlusPlus/res/movie.gif
+%%DATADIR%%/skins/BluPlusPlus/res/php/captcha.php
+%%DATADIR%%/skins/BluPlusPlus/res/php/db_mysql.php
+%%DATADIR%%/skins/BluPlusPlus/res/php/db_postgresql.php
 %%DATADIR%%/skins/BluPlusPlus/res/php/remarks.php
 %%DATADIR%%/skins/BluPlusPlus/res/styles/arcs.css
 %%DATADIR%%/skins/BluPlusPlus/res/styles/arcs/background.jpg
@@ -602,103 +522,112 @@ bin/jalbum
 %%DATADIR%%/skins/BluPlusPlus/texts/texts_uk.properties
 %%DATADIR%%/skins/BluPlusPlus/texts/texts_zh.properties
 %%DATADIR%%/skins/BluPlusPlus/texts/texts_zh.properties_original
-%%DATADIR%%/skins/Bluepro/hints.jap
-%%DATADIR%%/skins/Bluepro/index.htt
-%%DATADIR%%/skins/Bluepro/preview.jpg
-%%DATADIR%%/skins/Bluepro/res/blue-brain-dark.gif
-%%DATADIR%%/skins/Bluepro/res/camera.gif
-%%DATADIR%%/skins/Bluepro/res/corner-w-ll.gif
-%%DATADIR%%/skins/Bluepro/res/corner-w-lr.gif
-%%DATADIR%%/skins/Bluepro/res/corner-w-ul.gif
-%%DATADIR%%/skins/Bluepro/res/corner-w-ur.gif
-%%DATADIR%%/skins/Bluepro/res/download.gif
-%%DATADIR%%/skins/Bluepro/res/folder.gif
-%%DATADIR%%/skins/Bluepro/res/getpicture.gif
-%%DATADIR%%/skins/Bluepro/res/index.gif
-%%DATADIR%%/skins/Bluepro/res/informedia-liten.gif
-%%DATADIR%%/skins/Bluepro/res/movie.gif
-%%DATADIR%%/skins/Bluepro/res/next.gif
-%%DATADIR%%/skins/Bluepro/res/next_disabled.gif
-%%DATADIR%%/skins/Bluepro/res/previous.gif
-%%DATADIR%%/skins/Bluepro/res/previous_disabled.gif
-%%DATADIR%%/skins/Bluepro/res/up.gif
-%%DATADIR%%/skins/Bluepro/slide.htt
-%%DATADIR%%/skins/Bluepro/styles/White.css
-%%DATADIR%%/skins/Camera Geek/about.txt
-%%DATADIR%%/skins/Camera Geek/index.htt
-%%DATADIR%%/skins/Camera Geek/onload.bsh
-%%DATADIR%%/skins/Camera Geek/preview.jpg
-%%DATADIR%%/skins/Camera Geek/res/camera.gif
-%%DATADIR%%/skins/Camera Geek/res/folder.gif
-%%DATADIR%%/skins/Camera Geek/res/index.gif
-%%DATADIR%%/skins/Camera Geek/res/movie.gif
-%%DATADIR%%/skins/Camera Geek/res/next.gif
-%%DATADIR%%/skins/Camera Geek/res/next_disabled.gif
-%%DATADIR%%/skins/Camera Geek/res/previous.gif
-%%DATADIR%%/skins/Camera Geek/res/previous_disabled.gif
-%%DATADIR%%/skins/Camera Geek/res/up.gif
-%%DATADIR%%/skins/Camera Geek/slide.htt
-%%DATADIR%%/skins/Camera Geek/styles/Bright.css
-%%DATADIR%%/skins/Camera Geek/styles/Custom.css
-%%DATADIR%%/skins/Camera Geek/styles/Dark.css
-%%DATADIR%%/skins/Camera Geek/styles/Sunset.css
-%%DATADIR%%/skins/Chameleon/Readme.txt
-%%DATADIR%%/skins/Chameleon/filetypes.xml
+%%DATADIR%%/skins/Chameleon/guestbook/guestbook.swf
+%%DATADIR%%/skins/Chameleon/guestbook/processXML.php
 %%DATADIR%%/skins/Chameleon/help.htt
-%%DATADIR%%/skins/Chameleon/help/chameleon.jpg
+%%DATADIR%%/skins/Chameleon/help/albuminfo.html
+%%DATADIR%%/skins/Chameleon/help/albuminfo.png
+%%DATADIR%%/skins/Chameleon/help/bg.jpg
 %%DATADIR%%/skins/Chameleon/help/colormap.jpg
-%%DATADIR%%/skins/Chameleon/help/filters.gif
 %%DATADIR%%/skins/Chameleon/help/filters.html
-%%DATADIR%%/skins/Chameleon/help/general.gif
+%%DATADIR%%/skins/Chameleon/help/filters1.png
+%%DATADIR%%/skins/Chameleon/help/filters2.png
+%%DATADIR%%/skins/Chameleon/help/filters3.png
+%%DATADIR%%/skins/Chameleon/help/filters4.png
+%%DATADIR%%/skins/Chameleon/help/ftr_1.gif
+%%DATADIR%%/skins/Chameleon/help/ftr_2.gif
 %%DATADIR%%/skins/Chameleon/help/general.html
+%%DATADIR%%/skins/Chameleon/help/general.png
 %%DATADIR%%/skins/Chameleon/help/graysc.jpg
 %%DATADIR%%/skins/Chameleon/help/grayscandcolormap.jpg
+%%DATADIR%%/skins/Chameleon/help/head1.gif
+%%DATADIR%%/skins/Chameleon/help/head2.gif
 %%DATADIR%%/skins/Chameleon/help/help.css
-%%DATADIR%%/skins/Chameleon/help/help.html
 %%DATADIR%%/skins/Chameleon/help/history.html
-%%DATADIR%%/skins/Chameleon/help/index.gif
+%%DATADIR%%/skins/Chameleon/help/images.html
+%%DATADIR%%/skins/Chameleon/help/images.png
+%%DATADIR%%/skins/Chameleon/help/index.png
 %%DATADIR%%/skins/Chameleon/help/indexpage.html
-%%DATADIR%%/skins/Chameleon/help/main.gif
-%%DATADIR%%/skins/Chameleon/help/slide.gif
+%%DATADIR%%/skins/Chameleon/help/knownbugs.html
+%%DATADIR%%/skins/Chameleon/help/metadata.html
+%%DATADIR%%/skins/Chameleon/help/metadata.png
+%%DATADIR%%/skins/Chameleon/help/metadata2.png
+%%DATADIR%%/skins/Chameleon/help/metadata3.png
+%%DATADIR%%/skins/Chameleon/help/slide.png
 %%DATADIR%%/skins/Chameleon/help/slidepage.html
-%%DATADIR%%/skins/Chameleon/help/usage.html
+%%DATADIR%%/skins/Chameleon/help/styles.html
+%%DATADIR%%/skins/Chameleon/help/thumbs.html
+%%DATADIR%%/skins/Chameleon/help/thumbs.png
 %%DATADIR%%/skins/Chameleon/hints.jap
-%%DATADIR%%/skins/Chameleon/includes/albuminfo.inc
-%%DATADIR%%/skins/Chameleon/includes/foldernewcheck.inc
-%%DATADIR%%/skins/Chameleon/includes/generatenew.inc
-%%DATADIR%%/skins/Chameleon/includes/indexlinklist.inc
-%%DATADIR%%/skins/Chameleon/includes/indexslideshow.inc
-%%DATADIR%%/skins/Chameleon/includes/indextitle.inc
-%%DATADIR%%/skins/Chameleon/includes/linklist.inc
-%%DATADIR%%/skins/Chameleon/includes/makethumb.inc
-%%DATADIR%%/skins/Chameleon/includes/metadata.inc
-%%DATADIR%%/skins/Chameleon/includes/photobox.inc
-%%DATADIR%%/skins/Chameleon/includes/slidelinklist.inc
-%%DATADIR%%/skins/Chameleon/includes/slideshow.inc
-%%DATADIR%%/skins/Chameleon/includes/slidetext.inc
-%%DATADIR%%/skins/Chameleon/includes/slidetext1.inc
-%%DATADIR%%/skins/Chameleon/includes/slidethumblist.inc
-%%DATADIR%%/skins/Chameleon/includes/slidetitle.inc
-%%DATADIR%%/skins/Chameleon/includes/sound.inc
-%%DATADIR%%/skins/Chameleon/includes/thumbtext.inc
-%%DATADIR%%/skins/Chameleon/includes/thumbtext1.inc
+%%DATADIR%%/skins/Chameleon/includes/guestbook.inc
+%%DATADIR%%/skins/Chameleon/includes/indexscripts.inc
+%%DATADIR%%/skins/Chameleon/includes/slidescripts.inc
 %%DATADIR%%/skins/Chameleon/index.htt
 %%DATADIR%%/skins/Chameleon/init.bsh
+%%DATADIR%%/skins/Chameleon/license.txt
 %%DATADIR%%/skins/Chameleon/onload.bsh
 %%DATADIR%%/skins/Chameleon/originalmovie.htt
 %%DATADIR%%/skins/Chameleon/originalslide.htt
+%%DATADIR%%/skins/Chameleon/plugins/Chameleon.class
 %%DATADIR%%/skins/Chameleon/plugins/ColorMapFilter.class
-%%DATADIR%%/skins/Chameleon/plugins/ColorMapFilter.java
-%%DATADIR%%/skins/Chameleon/plugins/CompileCMF.bat
+%%DATADIR%%/skins/Chameleon/plugins/Constants.class
+%%DATADIR%%/skins/Chameleon/plugins/FixedShapeFilter.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$1.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$10.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$11.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$12.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$13.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$14.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$15.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$16.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$17.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$18.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$19.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$2.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$20.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$21.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$22.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$23.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$24.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$25.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$26.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$27.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$28.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$29.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$3.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$30.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$31.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$32.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$33.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$34.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$35.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$36.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$37.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$38.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$39.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$4.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$40.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$41.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$42.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$5.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$6.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$7.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$8.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui$9.class
+%%DATADIR%%/skins/Chameleon/plugins/Gui.class
+%%DATADIR%%/skins/Chameleon/plugins/JColorBox.class
+%%DATADIR%%/skins/Chameleon/plugins/Laza.jpg
+%%DATADIR%%/skins/Chameleon/plugins/SkinPanel.class
 %%DATADIR%%/skins/Chameleon/res/avi.gif
 %%DATADIR%%/skins/Chameleon/res/bg.gif
-%%DATADIR%%/skins/Chameleon/res/current.gif
 %%DATADIR%%/skins/Chameleon/res/danger.gif
 %%DATADIR%%/skins/Chameleon/res/dia.gif
 %%DATADIR%%/skins/Chameleon/res/doc.gif
 %%DATADIR%%/skins/Chameleon/res/download.gif
+%%DATADIR%%/skins/Chameleon/res/embedmovie.js
 %%DATADIR%%/skins/Chameleon/res/flvplayer.swf
 %%DATADIR%%/skins/Chameleon/res/folder.gif
+%%DATADIR%%/skins/Chameleon/res/folder0.gif
 %%DATADIR%%/skins/Chameleon/res/folder1.gif
 %%DATADIR%%/skins/Chameleon/res/gif.gif
 %%DATADIR%%/skins/Chameleon/res/hdr_left.gif
@@ -707,14 +636,11 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/res/idx.gif
 %%DATADIR%%/skins/Chameleon/res/idx1.gif
 %%DATADIR%%/skins/Chameleon/res/movie.gif
-%%DATADIR%%/skins/Chameleon/res/newfile.gif
-%%DATADIR%%/skins/Chameleon/res/next-disabled.gif
 %%DATADIR%%/skins/Chameleon/res/next.gif
 %%DATADIR%%/skins/Chameleon/res/next1.gif
 %%DATADIR%%/skins/Chameleon/res/next_disabled.gif
 %%DATADIR%%/skins/Chameleon/res/pdf.gif
 %%DATADIR%%/skins/Chameleon/res/ppt.gif
-%%DATADIR%%/skins/Chameleon/res/prev-disabled.gif
 %%DATADIR%%/skins/Chameleon/res/prev.gif
 %%DATADIR%%/skins/Chameleon/res/prev1.gif
 %%DATADIR%%/skins/Chameleon/res/prev_disabled.gif
@@ -736,18 +662,16 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/styles/3D_dark/dia.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_dark/download.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_dark/folder.gif
+%%DATADIR%%/skins/Chameleon/styles/3D_dark/folder0.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_dark/folder1.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_dark/hdr_left.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_dark/hdr_mid.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_dark/hdr_right.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_dark/idx.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_dark/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/3D_dark/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/3D_dark/next-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_dark/next.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_dark/next1.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_dark/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/3D_dark/prev-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_dark/prev.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_dark/prev1.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_dark/prev_disabled.gif
@@ -763,18 +687,16 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/styles/3D_light/dia.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_light/download.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_light/folder.gif
+%%DATADIR%%/skins/Chameleon/styles/3D_light/folder0.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_light/folder1.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_light/hdr_left.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_light/hdr_mid.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_light/hdr_right.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_light/idx.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_light/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/3D_light/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/3D_light/next-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_light/next.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_light/next1.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_light/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/3D_light/prev-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_light/prev.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_light/prev1.gif
 %%DATADIR%%/skins/Chameleon/styles/3D_light/prev_disabled.gif
@@ -788,19 +710,18 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/styles/Aluminium.jpg
 %%DATADIR%%/skins/Chameleon/styles/Aluminium/bg.gif
 %%DATADIR%%/skins/Chameleon/styles/Aluminium/dia.gif
+%%DATADIR%%/skins/Chameleon/styles/Aluminium/download.gif
 %%DATADIR%%/skins/Chameleon/styles/Aluminium/folder.gif
+%%DATADIR%%/skins/Chameleon/styles/Aluminium/folder0.gif
 %%DATADIR%%/skins/Chameleon/styles/Aluminium/folder1.gif
 %%DATADIR%%/skins/Chameleon/styles/Aluminium/hdr_left.gif
 %%DATADIR%%/skins/Chameleon/styles/Aluminium/hdr_mid.gif
 %%DATADIR%%/skins/Chameleon/styles/Aluminium/hdr_right.gif
 %%DATADIR%%/skins/Chameleon/styles/Aluminium/idx.gif
 %%DATADIR%%/skins/Chameleon/styles/Aluminium/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/Aluminium/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/Aluminium/next-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Aluminium/next.gif
 %%DATADIR%%/skins/Chameleon/styles/Aluminium/next1.gif
 %%DATADIR%%/skins/Chameleon/styles/Aluminium/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Aluminium/prev-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Aluminium/prev.gif
 %%DATADIR%%/skins/Chameleon/styles/Aluminium/prev1.gif
 %%DATADIR%%/skins/Chameleon/styles/Aluminium/prev_disabled.gif
@@ -816,18 +737,16 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/styles/Aqua_dark/dia.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_dark/download.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_dark/folder.gif
+%%DATADIR%%/skins/Chameleon/styles/Aqua_dark/folder0.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_dark/folder1.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_dark/hdr_left.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_dark/hdr_mid.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_dark/hdr_right.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_dark/idx.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_dark/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/Aqua_dark/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/Aqua_dark/next-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_dark/next.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_dark/next1.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_dark/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Aqua_dark/prev-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_dark/prev.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_dark/prev1.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_dark/prev_disabled.gif
@@ -841,19 +760,18 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/styles/Aqua_light.jpg
 %%DATADIR%%/skins/Chameleon/styles/Aqua_light/bg.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_light/dia.gif
+%%DATADIR%%/skins/Chameleon/styles/Aqua_light/download.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_light/folder.gif
+%%DATADIR%%/skins/Chameleon/styles/Aqua_light/folder0.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_light/folder1.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_light/hdr_left.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_light/hdr_mid.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_light/hdr_right.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_light/idx.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_light/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/Aqua_light/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/Aqua_light/next-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_light/next.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_light/next1.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_light/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Aqua_light/prev-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_light/prev.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_light/prev1.gif
 %%DATADIR%%/skins/Chameleon/styles/Aqua_light/prev_disabled.gif
@@ -865,49 +783,22 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/styles/Aqua_light/up1.gif
 %%DATADIR%%/skins/Chameleon/styles/Black.css
 %%DATADIR%%/skins/Chameleon/styles/Black.jpg
-%%DATADIR%%/skins/Chameleon/styles/Black/bg.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/dia.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/download.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/folder.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/folder1.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/hdr_left.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/hdr_mid.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/hdr_right.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/idx.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/next-disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/next.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/next1.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/prev-disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/prev.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/prev1.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/prev_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/show.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/show1.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/stop.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/stop1.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/up.gif
-%%DATADIR%%/skins/Chameleon/styles/Black/up1.gif
 %%DATADIR%%/skins/Chameleon/styles/Carstereo.css
 %%DATADIR%%/skins/Chameleon/styles/Carstereo.jpg
 %%DATADIR%%/skins/Chameleon/styles/Carstereo/bg.gif
 %%DATADIR%%/skins/Chameleon/styles/Carstereo/dia.gif
 %%DATADIR%%/skins/Chameleon/styles/Carstereo/download.gif
 %%DATADIR%%/skins/Chameleon/styles/Carstereo/folder.gif
+%%DATADIR%%/skins/Chameleon/styles/Carstereo/folder0.gif
 %%DATADIR%%/skins/Chameleon/styles/Carstereo/folder1.gif
 %%DATADIR%%/skins/Chameleon/styles/Carstereo/hdr_left.gif
 %%DATADIR%%/skins/Chameleon/styles/Carstereo/hdr_mid.gif
 %%DATADIR%%/skins/Chameleon/styles/Carstereo/hdr_right.gif
 %%DATADIR%%/skins/Chameleon/styles/Carstereo/idx.gif
 %%DATADIR%%/skins/Chameleon/styles/Carstereo/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/Carstereo/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/Carstereo/next-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Carstereo/next.gif
 %%DATADIR%%/skins/Chameleon/styles/Carstereo/next1.gif
 %%DATADIR%%/skins/Chameleon/styles/Carstereo/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Carstereo/prev-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Carstereo/prev.gif
 %%DATADIR%%/skins/Chameleon/styles/Carstereo/prev1.gif
 %%DATADIR%%/skins/Chameleon/styles/Carstereo/prev_disabled.gif
@@ -917,24 +808,46 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/styles/Carstereo/stop1.gif
 %%DATADIR%%/skins/Chameleon/styles/Carstereo/up.gif
 %%DATADIR%%/skins/Chameleon/styles/Carstereo/up1.gif
+%%DATADIR%%/skins/Chameleon/styles/Chrome.css
+%%DATADIR%%/skins/Chameleon/styles/Chrome.jpg
+%%DATADIR%%/skins/Chameleon/styles/Chrome/bg.gif
+%%DATADIR%%/skins/Chameleon/styles/Chrome/dia.gif
+%%DATADIR%%/skins/Chameleon/styles/Chrome/folder.gif
+%%DATADIR%%/skins/Chameleon/styles/Chrome/folder0.gif
+%%DATADIR%%/skins/Chameleon/styles/Chrome/folder1.gif
+%%DATADIR%%/skins/Chameleon/styles/Chrome/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/Chrome/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/Chrome/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/Chrome/idx.gif
+%%DATADIR%%/skins/Chameleon/styles/Chrome/idx1.gif
+%%DATADIR%%/skins/Chameleon/styles/Chrome/next.gif
+%%DATADIR%%/skins/Chameleon/styles/Chrome/next1.gif
+%%DATADIR%%/skins/Chameleon/styles/Chrome/next_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/Chrome/prev.gif
+%%DATADIR%%/skins/Chameleon/styles/Chrome/prev1.gif
+%%DATADIR%%/skins/Chameleon/styles/Chrome/prev_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/Chrome/show.gif
+%%DATADIR%%/skins/Chameleon/styles/Chrome/show1.gif
+%%DATADIR%%/skins/Chameleon/styles/Chrome/stop.gif
+%%DATADIR%%/skins/Chameleon/styles/Chrome/stop1.gif
+%%DATADIR%%/skins/Chameleon/styles/Chrome/up.gif
+%%DATADIR%%/skins/Chameleon/styles/Chrome/up1.gif
 %%DATADIR%%/skins/Chameleon/styles/Coffee.css
 %%DATADIR%%/skins/Chameleon/styles/Coffee.jpg
 %%DATADIR%%/skins/Chameleon/styles/Coffee/bg.gif
 %%DATADIR%%/skins/Chameleon/styles/Coffee/dia.gif
 %%DATADIR%%/skins/Chameleon/styles/Coffee/download.gif
 %%DATADIR%%/skins/Chameleon/styles/Coffee/folder.gif
+%%DATADIR%%/skins/Chameleon/styles/Coffee/folder0.gif
 %%DATADIR%%/skins/Chameleon/styles/Coffee/folder1.gif
 %%DATADIR%%/skins/Chameleon/styles/Coffee/hdr_left.gif
 %%DATADIR%%/skins/Chameleon/styles/Coffee/hdr_mid.gif
 %%DATADIR%%/skins/Chameleon/styles/Coffee/hdr_right.gif
 %%DATADIR%%/skins/Chameleon/styles/Coffee/idx.gif
 %%DATADIR%%/skins/Chameleon/styles/Coffee/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/Coffee/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/Coffee/next-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Coffee/next.gif
 %%DATADIR%%/skins/Chameleon/styles/Coffee/next1.gif
 %%DATADIR%%/skins/Chameleon/styles/Coffee/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Coffee/prev-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Coffee/prev.gif
 %%DATADIR%%/skins/Chameleon/styles/Coffee/prev1.gif
 %%DATADIR%%/skins/Chameleon/styles/Coffee/prev_disabled.gif
@@ -948,20 +861,14 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/styles/Device.jpg
 %%DATADIR%%/skins/Chameleon/styles/Device/bg.gif
 %%DATADIR%%/skins/Chameleon/styles/Device/dia.gif
-%%DATADIR%%/skins/Chameleon/styles/Device/download.gif
-%%DATADIR%%/skins/Chameleon/styles/Device/folder.gif
-%%DATADIR%%/skins/Chameleon/styles/Device/folder1.gif
 %%DATADIR%%/skins/Chameleon/styles/Device/hdr_left.gif
 %%DATADIR%%/skins/Chameleon/styles/Device/hdr_mid.gif
 %%DATADIR%%/skins/Chameleon/styles/Device/hdr_right.gif
 %%DATADIR%%/skins/Chameleon/styles/Device/idx.gif
 %%DATADIR%%/skins/Chameleon/styles/Device/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/Device/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/Device/next-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Device/next.gif
 %%DATADIR%%/skins/Chameleon/styles/Device/next1.gif
 %%DATADIR%%/skins/Chameleon/styles/Device/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Device/prev-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Device/prev.gif
 %%DATADIR%%/skins/Chameleon/styles/Device/prev1.gif
 %%DATADIR%%/skins/Chameleon/styles/Device/prev_disabled.gif
@@ -975,20 +882,17 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/styles/Gold.jpg
 %%DATADIR%%/skins/Chameleon/styles/Gold/bg.gif
 %%DATADIR%%/skins/Chameleon/styles/Gold/dia.gif
-%%DATADIR%%/skins/Chameleon/styles/Gold/download.gif
 %%DATADIR%%/skins/Chameleon/styles/Gold/folder.gif
+%%DATADIR%%/skins/Chameleon/styles/Gold/folder0.gif
 %%DATADIR%%/skins/Chameleon/styles/Gold/folder1.gif
 %%DATADIR%%/skins/Chameleon/styles/Gold/hdr_left.gif
 %%DATADIR%%/skins/Chameleon/styles/Gold/hdr_mid.gif
 %%DATADIR%%/skins/Chameleon/styles/Gold/hdr_right.gif
 %%DATADIR%%/skins/Chameleon/styles/Gold/idx.gif
 %%DATADIR%%/skins/Chameleon/styles/Gold/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/Gold/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/Gold/next-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Gold/next.gif
 %%DATADIR%%/skins/Chameleon/styles/Gold/next1.gif
 %%DATADIR%%/skins/Chameleon/styles/Gold/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Gold/prev-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Gold/prev.gif
 %%DATADIR%%/skins/Chameleon/styles/Gold/prev1.gif
 %%DATADIR%%/skins/Chameleon/styles/Gold/prev_disabled.gif
@@ -1003,18 +907,16 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/styles/Grays/bg.gif
 %%DATADIR%%/skins/Chameleon/styles/Grays/dia.gif
 %%DATADIR%%/skins/Chameleon/styles/Grays/folder.gif
+%%DATADIR%%/skins/Chameleon/styles/Grays/folder0.gif
 %%DATADIR%%/skins/Chameleon/styles/Grays/folder1.gif
 %%DATADIR%%/skins/Chameleon/styles/Grays/hdr_left.gif
 %%DATADIR%%/skins/Chameleon/styles/Grays/hdr_mid.gif
 %%DATADIR%%/skins/Chameleon/styles/Grays/hdr_right.gif
 %%DATADIR%%/skins/Chameleon/styles/Grays/idx.gif
 %%DATADIR%%/skins/Chameleon/styles/Grays/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/Grays/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/Grays/next-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Grays/next.gif
 %%DATADIR%%/skins/Chameleon/styles/Grays/next1.gif
 %%DATADIR%%/skins/Chameleon/styles/Grays/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Grays/prev-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Grays/prev.gif
 %%DATADIR%%/skins/Chameleon/styles/Grays/prev1.gif
 %%DATADIR%%/skins/Chameleon/styles/Grays/prev_disabled.gif
@@ -1029,18 +931,16 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/styles/Happy/bg.gif
 %%DATADIR%%/skins/Chameleon/styles/Happy/dia.gif
 %%DATADIR%%/skins/Chameleon/styles/Happy/folder.gif
+%%DATADIR%%/skins/Chameleon/styles/Happy/folder0.gif
 %%DATADIR%%/skins/Chameleon/styles/Happy/folder1.gif
 %%DATADIR%%/skins/Chameleon/styles/Happy/hdr_left.gif
 %%DATADIR%%/skins/Chameleon/styles/Happy/hdr_mid.gif
 %%DATADIR%%/skins/Chameleon/styles/Happy/hdr_right.gif
 %%DATADIR%%/skins/Chameleon/styles/Happy/idx.gif
 %%DATADIR%%/skins/Chameleon/styles/Happy/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/Happy/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/Happy/next-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Happy/next.gif
 %%DATADIR%%/skins/Chameleon/styles/Happy/next1.gif
 %%DATADIR%%/skins/Chameleon/styles/Happy/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Happy/prev-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Happy/prev.gif
 %%DATADIR%%/skins/Chameleon/styles/Happy/prev1.gif
 %%DATADIR%%/skins/Chameleon/styles/Happy/prev_disabled.gif
@@ -1055,18 +955,16 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/styles/Jungle/bg.gif
 %%DATADIR%%/skins/Chameleon/styles/Jungle/dia.gif
 %%DATADIR%%/skins/Chameleon/styles/Jungle/folder.gif
+%%DATADIR%%/skins/Chameleon/styles/Jungle/folder0.gif
 %%DATADIR%%/skins/Chameleon/styles/Jungle/folder1.gif
 %%DATADIR%%/skins/Chameleon/styles/Jungle/hdr_left.gif
 %%DATADIR%%/skins/Chameleon/styles/Jungle/hdr_mid.gif
 %%DATADIR%%/skins/Chameleon/styles/Jungle/hdr_right.gif
 %%DATADIR%%/skins/Chameleon/styles/Jungle/idx.gif
 %%DATADIR%%/skins/Chameleon/styles/Jungle/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/Jungle/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/Jungle/next-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Jungle/next.gif
 %%DATADIR%%/skins/Chameleon/styles/Jungle/next1.gif
 %%DATADIR%%/skins/Chameleon/styles/Jungle/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Jungle/prev-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Jungle/prev.gif
 %%DATADIR%%/skins/Chameleon/styles/Jungle/prev1.gif
 %%DATADIR%%/skins/Chameleon/styles/Jungle/prev_disabled.gif
@@ -1076,75 +974,46 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/styles/Jungle/stop1.gif
 %%DATADIR%%/skins/Chameleon/styles/Jungle/up.gif
 %%DATADIR%%/skins/Chameleon/styles/Jungle/up1.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard.css
-%%DATADIR%%/skins/Chameleon/styles/Leopard.jpg
-%%DATADIR%%/skins/Chameleon/styles/Leopard/bg.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard/dia.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard/folder.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard/folder1.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard/hdr_left.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard/hdr_mid.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard/hdr_right.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard/idx.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard/next-disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard/next.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard/next1.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard/prev-disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard/prev.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard/prev1.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard/prev_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard/show.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard/show1.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard/stop.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard/stop1.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard/up.gif
-%%DATADIR%%/skins/Chameleon/styles/Leopard/up1.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue.css
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue.jpg
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/bg.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/dia.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/folder.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/folder1.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/hdr_left.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/hdr_mid.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/hdr_right.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/idx.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/next-disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/next.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/next1.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/prev-disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/prev.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/prev1.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/prev_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/show.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/show1.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/stop.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/stop1.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/up.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeBlue/up1.gif
+%%DATADIR%%/skins/Chameleon/styles/Oldbook.css
+%%DATADIR%%/skins/Chameleon/styles/Oldbook.jpg
+%%DATADIR%%/skins/Chameleon/styles/Oldbook/bg.gif
+%%DATADIR%%/skins/Chameleon/styles/Oldbook/dia.gif
+%%DATADIR%%/skins/Chameleon/styles/Oldbook/download.gif
+%%DATADIR%%/skins/Chameleon/styles/Oldbook/folder.gif
+%%DATADIR%%/skins/Chameleon/styles/Oldbook/folder0.gif
+%%DATADIR%%/skins/Chameleon/styles/Oldbook/folder1.gif
+%%DATADIR%%/skins/Chameleon/styles/Oldbook/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/Oldbook/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/Oldbook/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/Oldbook/idx.gif
+%%DATADIR%%/skins/Chameleon/styles/Oldbook/idx1.gif
+%%DATADIR%%/skins/Chameleon/styles/Oldbook/next.gif
+%%DATADIR%%/skins/Chameleon/styles/Oldbook/next1.gif
+%%DATADIR%%/skins/Chameleon/styles/Oldbook/next_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/Oldbook/prev.gif
+%%DATADIR%%/skins/Chameleon/styles/Oldbook/prev1.gif
+%%DATADIR%%/skins/Chameleon/styles/Oldbook/prev_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/Oldbook/show.gif
+%%DATADIR%%/skins/Chameleon/styles/Oldbook/show1.gif
+%%DATADIR%%/skins/Chameleon/styles/Oldbook/stop.gif
+%%DATADIR%%/skins/Chameleon/styles/Oldbook/stop1.gif
+%%DATADIR%%/skins/Chameleon/styles/Oldbook/up.gif
+%%DATADIR%%/skins/Chameleon/styles/Oldbook/up1.gif
 %%DATADIR%%/skins/Chameleon/styles/OrangeGreen.css
 %%DATADIR%%/skins/Chameleon/styles/OrangeGreen.jpg
 %%DATADIR%%/skins/Chameleon/styles/OrangeGreen/bg.gif
 %%DATADIR%%/skins/Chameleon/styles/OrangeGreen/dia.gif
 %%DATADIR%%/skins/Chameleon/styles/OrangeGreen/folder.gif
+%%DATADIR%%/skins/Chameleon/styles/OrangeGreen/folder0.gif
 %%DATADIR%%/skins/Chameleon/styles/OrangeGreen/folder1.gif
 %%DATADIR%%/skins/Chameleon/styles/OrangeGreen/hdr_left.gif
 %%DATADIR%%/skins/Chameleon/styles/OrangeGreen/hdr_mid.gif
 %%DATADIR%%/skins/Chameleon/styles/OrangeGreen/hdr_right.gif
 %%DATADIR%%/skins/Chameleon/styles/OrangeGreen/idx.gif
 %%DATADIR%%/skins/Chameleon/styles/OrangeGreen/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeGreen/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeGreen/next-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/OrangeGreen/next.gif
 %%DATADIR%%/skins/Chameleon/styles/OrangeGreen/next1.gif
 %%DATADIR%%/skins/Chameleon/styles/OrangeGreen/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/OrangeGreen/prev-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/OrangeGreen/prev.gif
 %%DATADIR%%/skins/Chameleon/styles/OrangeGreen/prev1.gif
 %%DATADIR%%/skins/Chameleon/styles/OrangeGreen/prev_disabled.gif
@@ -1154,49 +1023,21 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/styles/OrangeGreen/stop1.gif
 %%DATADIR%%/skins/Chameleon/styles/OrangeGreen/up.gif
 %%DATADIR%%/skins/Chameleon/styles/OrangeGreen/up1.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic.css
-%%DATADIR%%/skins/Chameleon/styles/Plastic.jpg
-%%DATADIR%%/skins/Chameleon/styles/Plastic/bg.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic/dia.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic/folder.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic/folder1.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic/hdr_left.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic/hdr_mid.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic/hdr_right.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic/idx.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic/next-disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic/next.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic/next1.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic/prev-disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic/prev.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic/prev1.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic/prev_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic/show.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic/show1.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic/stop.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic/stop1.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic/up.gif
-%%DATADIR%%/skins/Chameleon/styles/Plastic/up1.gif
 %%DATADIR%%/skins/Chameleon/styles/Royal.css
 %%DATADIR%%/skins/Chameleon/styles/Royal.jpg
 %%DATADIR%%/skins/Chameleon/styles/Royal/bg.gif
 %%DATADIR%%/skins/Chameleon/styles/Royal/dia.gif
 %%DATADIR%%/skins/Chameleon/styles/Royal/folder.gif
+%%DATADIR%%/skins/Chameleon/styles/Royal/folder0.gif
 %%DATADIR%%/skins/Chameleon/styles/Royal/folder1.gif
 %%DATADIR%%/skins/Chameleon/styles/Royal/hdr_left.gif
 %%DATADIR%%/skins/Chameleon/styles/Royal/hdr_mid.gif
 %%DATADIR%%/skins/Chameleon/styles/Royal/hdr_right.gif
 %%DATADIR%%/skins/Chameleon/styles/Royal/idx.gif
 %%DATADIR%%/skins/Chameleon/styles/Royal/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/Royal/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/Royal/next-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Royal/next.gif
 %%DATADIR%%/skins/Chameleon/styles/Royal/next1.gif
 %%DATADIR%%/skins/Chameleon/styles/Royal/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Royal/prev-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Royal/prev.gif
 %%DATADIR%%/skins/Chameleon/styles/Royal/prev1.gif
 %%DATADIR%%/skins/Chameleon/styles/Royal/prev_disabled.gif
@@ -1211,18 +1052,16 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/styles/Silver/bg.gif
 %%DATADIR%%/skins/Chameleon/styles/Silver/dia.gif
 %%DATADIR%%/skins/Chameleon/styles/Silver/folder.gif
+%%DATADIR%%/skins/Chameleon/styles/Silver/folder0.gif
 %%DATADIR%%/skins/Chameleon/styles/Silver/folder1.gif
 %%DATADIR%%/skins/Chameleon/styles/Silver/hdr_left.gif
 %%DATADIR%%/skins/Chameleon/styles/Silver/hdr_mid.gif
 %%DATADIR%%/skins/Chameleon/styles/Silver/hdr_right.gif
 %%DATADIR%%/skins/Chameleon/styles/Silver/idx.gif
 %%DATADIR%%/skins/Chameleon/styles/Silver/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/Silver/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/Silver/next-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Silver/next.gif
 %%DATADIR%%/skins/Chameleon/styles/Silver/next1.gif
 %%DATADIR%%/skins/Chameleon/styles/Silver/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Silver/prev-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Silver/prev.gif
 %%DATADIR%%/skins/Chameleon/styles/Silver/prev1.gif
 %%DATADIR%%/skins/Chameleon/styles/Silver/prev_disabled.gif
@@ -1237,18 +1076,16 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/styles/Simple/bg.gif
 %%DATADIR%%/skins/Chameleon/styles/Simple/dia.gif
 %%DATADIR%%/skins/Chameleon/styles/Simple/folder.gif
+%%DATADIR%%/skins/Chameleon/styles/Simple/folder0.gif
 %%DATADIR%%/skins/Chameleon/styles/Simple/folder1.gif
 %%DATADIR%%/skins/Chameleon/styles/Simple/hdr_left.gif
 %%DATADIR%%/skins/Chameleon/styles/Simple/hdr_mid.gif
 %%DATADIR%%/skins/Chameleon/styles/Simple/hdr_right.gif
 %%DATADIR%%/skins/Chameleon/styles/Simple/idx.gif
 %%DATADIR%%/skins/Chameleon/styles/Simple/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/Simple/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/Simple/next-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Simple/next.gif
 %%DATADIR%%/skins/Chameleon/styles/Simple/next1.gif
 %%DATADIR%%/skins/Chameleon/styles/Simple/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Simple/prev-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Simple/prev.gif
 %%DATADIR%%/skins/Chameleon/styles/Simple/prev1.gif
 %%DATADIR%%/skins/Chameleon/styles/Simple/prev_disabled.gif
@@ -1263,18 +1100,16 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/styles/Snake/bg.gif
 %%DATADIR%%/skins/Chameleon/styles/Snake/dia.gif
 %%DATADIR%%/skins/Chameleon/styles/Snake/folder.gif
+%%DATADIR%%/skins/Chameleon/styles/Snake/folder0.gif
 %%DATADIR%%/skins/Chameleon/styles/Snake/folder1.gif
 %%DATADIR%%/skins/Chameleon/styles/Snake/hdr_left.gif
 %%DATADIR%%/skins/Chameleon/styles/Snake/hdr_mid.gif
 %%DATADIR%%/skins/Chameleon/styles/Snake/hdr_right.gif
 %%DATADIR%%/skins/Chameleon/styles/Snake/idx.gif
 %%DATADIR%%/skins/Chameleon/styles/Snake/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/Snake/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/Snake/next-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Snake/next.gif
 %%DATADIR%%/skins/Chameleon/styles/Snake/next1.gif
 %%DATADIR%%/skins/Chameleon/styles/Snake/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Snake/prev-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Snake/prev.gif
 %%DATADIR%%/skins/Chameleon/styles/Snake/prev1.gif
 %%DATADIR%%/skins/Chameleon/styles/Snake/prev_disabled.gif
@@ -1288,19 +1123,18 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/styles/Steel.jpg
 %%DATADIR%%/skins/Chameleon/styles/Steel/bg.gif
 %%DATADIR%%/skins/Chameleon/styles/Steel/dia.gif
+%%DATADIR%%/skins/Chameleon/styles/Steel/download.gif
 %%DATADIR%%/skins/Chameleon/styles/Steel/folder.gif
+%%DATADIR%%/skins/Chameleon/styles/Steel/folder0.gif
 %%DATADIR%%/skins/Chameleon/styles/Steel/folder1.gif
 %%DATADIR%%/skins/Chameleon/styles/Steel/hdr_left.gif
 %%DATADIR%%/skins/Chameleon/styles/Steel/hdr_mid.gif
 %%DATADIR%%/skins/Chameleon/styles/Steel/hdr_right.gif
 %%DATADIR%%/skins/Chameleon/styles/Steel/idx.gif
 %%DATADIR%%/skins/Chameleon/styles/Steel/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/Steel/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/Steel/next-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Steel/next.gif
 %%DATADIR%%/skins/Chameleon/styles/Steel/next1.gif
 %%DATADIR%%/skins/Chameleon/styles/Steel/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Steel/prev-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/Steel/prev.gif
 %%DATADIR%%/skins/Chameleon/styles/Steel/prev1.gif
 %%DATADIR%%/skins/Chameleon/styles/Steel/prev_disabled.gif
@@ -1310,50 +1144,70 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/styles/Steel/stop1.gif
 %%DATADIR%%/skins/Chameleon/styles/Steel/up.gif
 %%DATADIR%%/skins/Chameleon/styles/Steel/up1.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla.css
-%%DATADIR%%/skins/Chameleon/styles/Vanilla.jpg
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/bg.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/dia.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/folder.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/folder1.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/hdr_left.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/hdr_mid.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/hdr_right.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/idx.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/next-disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/next.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/next1.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/prev-disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/prev.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/prev1.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/prev_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/show.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/show1.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/stop.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/stop1.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/up.gif
-%%DATADIR%%/skins/Chameleon/styles/Vanilla/up1.gif
+%%DATADIR%%/skins/Chameleon/styles/Wedding.css
+%%DATADIR%%/skins/Chameleon/styles/Wedding.jpg
+%%DATADIR%%/skins/Chameleon/styles/Wedding/bg.gif
+%%DATADIR%%/skins/Chameleon/styles/Wedding/dia.gif
+%%DATADIR%%/skins/Chameleon/styles/Wedding/folder.gif
+%%DATADIR%%/skins/Chameleon/styles/Wedding/folder0.gif
+%%DATADIR%%/skins/Chameleon/styles/Wedding/folder1.gif
+%%DATADIR%%/skins/Chameleon/styles/Wedding/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/Wedding/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/Wedding/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/Wedding/idx.gif
+%%DATADIR%%/skins/Chameleon/styles/Wedding/idx1.gif
+%%DATADIR%%/skins/Chameleon/styles/Wedding/next.gif
+%%DATADIR%%/skins/Chameleon/styles/Wedding/next1.gif
+%%DATADIR%%/skins/Chameleon/styles/Wedding/next_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/Wedding/prev.gif
+%%DATADIR%%/skins/Chameleon/styles/Wedding/prev1.gif
+%%DATADIR%%/skins/Chameleon/styles/Wedding/prev_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/Wedding/show.gif
+%%DATADIR%%/skins/Chameleon/styles/Wedding/show1.gif
+%%DATADIR%%/skins/Chameleon/styles/Wedding/stop.gif
+%%DATADIR%%/skins/Chameleon/styles/Wedding/stop1.gif
+%%DATADIR%%/skins/Chameleon/styles/Wedding/up.gif
+%%DATADIR%%/skins/Chameleon/styles/Wedding/up1.gif
+%%DATADIR%%/skins/Chameleon/styles/White.css
+%%DATADIR%%/skins/Chameleon/styles/White.jpg
+%%DATADIR%%/skins/Chameleon/styles/White/bg.gif
+%%DATADIR%%/skins/Chameleon/styles/White/dia.gif
+%%DATADIR%%/skins/Chameleon/styles/White/download.gif
+%%DATADIR%%/skins/Chameleon/styles/White/folder.gif
+%%DATADIR%%/skins/Chameleon/styles/White/folder0.gif
+%%DATADIR%%/skins/Chameleon/styles/White/folder1.gif
+%%DATADIR%%/skins/Chameleon/styles/White/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/White/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/White/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/White/idx.gif
+%%DATADIR%%/skins/Chameleon/styles/White/idx1.gif
+%%DATADIR%%/skins/Chameleon/styles/White/next.gif
+%%DATADIR%%/skins/Chameleon/styles/White/next1.gif
+%%DATADIR%%/skins/Chameleon/styles/White/next_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/White/prev.gif
+%%DATADIR%%/skins/Chameleon/styles/White/prev1.gif
+%%DATADIR%%/skins/Chameleon/styles/White/prev_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/White/show.gif
+%%DATADIR%%/skins/Chameleon/styles/White/show1.gif
+%%DATADIR%%/skins/Chameleon/styles/White/stop.gif
+%%DATADIR%%/skins/Chameleon/styles/White/stop1.gif
+%%DATADIR%%/skins/Chameleon/styles/White/up.gif
+%%DATADIR%%/skins/Chameleon/styles/White/up1.gif
 %%DATADIR%%/skins/Chameleon/styles/World.css
 %%DATADIR%%/skins/Chameleon/styles/World.jpg
 %%DATADIR%%/skins/Chameleon/styles/World/bg.gif
 %%DATADIR%%/skins/Chameleon/styles/World/dia.gif
-%%DATADIR%%/skins/Chameleon/styles/World/download.gif
 %%DATADIR%%/skins/Chameleon/styles/World/folder.gif
+%%DATADIR%%/skins/Chameleon/styles/World/folder0.gif
 %%DATADIR%%/skins/Chameleon/styles/World/folder1.gif
 %%DATADIR%%/skins/Chameleon/styles/World/hdr_left.gif
 %%DATADIR%%/skins/Chameleon/styles/World/hdr_mid.gif
 %%DATADIR%%/skins/Chameleon/styles/World/hdr_right.gif
 %%DATADIR%%/skins/Chameleon/styles/World/idx.gif
 %%DATADIR%%/skins/Chameleon/styles/World/idx1.gif
-%%DATADIR%%/skins/Chameleon/styles/World/movie.gif
-%%DATADIR%%/skins/Chameleon/styles/World/next-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/World/next.gif
 %%DATADIR%%/skins/Chameleon/styles/World/next1.gif
 %%DATADIR%%/skins/Chameleon/styles/World/next_disabled.gif
-%%DATADIR%%/skins/Chameleon/styles/World/prev-disabled.gif
 %%DATADIR%%/skins/Chameleon/styles/World/prev.gif
 %%DATADIR%%/skins/Chameleon/styles/World/prev1.gif
 %%DATADIR%%/skins/Chameleon/styles/World/prev_disabled.gif
@@ -1363,6 +1217,252 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/styles/World/stop1.gif
 %%DATADIR%%/skins/Chameleon/styles/World/up.gif
 %%DATADIR%%/skins/Chameleon/styles/World/up1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Blue.css
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Blue/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Blue/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Blue/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Gray.css
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Gray/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Gray/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Gray/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Green.css
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Green/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Green/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Green/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Pink.css
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Pink/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Pink/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Pink/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Red.css
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Red/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Red/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Red/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/White.css
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/White/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/White/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/White/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Yellow.css
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Yellow/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Yellow/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Yellow/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Blue/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Blue/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Blue/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Cyan/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Cyan/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Cyan/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Gray/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Gray/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Gray/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Orange/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Orange/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Orange/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Red/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Red/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Red/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Sepia/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Sepia/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Sepia/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Violet/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Violet/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Violet/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Yellow/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Yellow/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Black/Yellow/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Blue.css
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Blue/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Blue/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Blue/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Blue/idx.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Blue/idx1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Blue/next.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Blue/next1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Blue/next_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Blue/prev.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Blue/prev1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Blue/prev_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Blue/show.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Blue/show1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Blue/stop.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Blue/stop1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Blue/up.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Blue/up1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Gray.css
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Gray/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Gray/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Gray/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Gray/idx.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Gray/idx1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Gray/next.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Gray/next1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Gray/next_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Gray/prev.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Gray/prev1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Gray/prev_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Gray/show.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Gray/show1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Gray/stop.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Gray/stop1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Gray/up.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Gray/up1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Green.css
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Green/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Green/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Green/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Green/idx.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Green/idx1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Green/next.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Green/next1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Green/next_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Green/prev.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Green/prev1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Green/prev_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Green/show.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Green/show1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Green/stop.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Green/stop1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Green/up.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Green/up1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Red.css
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Red/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Red/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Red/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Red/idx.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Red/idx1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Red/next.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Red/next1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Red/next_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Red/prev.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Red/prev1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Red/prev_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Red/show.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Red/show1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Red/stop.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Red/stop1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Red/up.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Red/up1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Violet.css
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Violet/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Violet/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Violet/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Violet/idx.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Violet/idx1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Violet/next.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Violet/next1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Violet/next_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Violet/prev.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Violet/prev1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Violet/prev_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Violet/show.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Violet/show1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Violet/stop.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Violet/stop1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Violet/up.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Violet/up1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Blue.css
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Blue/bg.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Blue/idx.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Blue/idx1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Blue/next.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Blue/next1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Blue/next_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Blue/prev.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Blue/prev1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Blue/prev_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Blue/show.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Blue/show1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Blue/stop.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Blue/stop1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Blue/up.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Blue/up1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Cyan.css
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Cyan/bg.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Cyan/idx.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Cyan/idx1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Cyan/next.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Cyan/next1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Cyan/next_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Cyan/prev.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Cyan/prev1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Cyan/prev_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Cyan/show.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Cyan/show1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Cyan/stop.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Cyan/stop1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Cyan/up.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Cyan/up1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Gray.css
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Gray/bg.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Gray/idx.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Gray/idx1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Gray/next.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Gray/next1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Gray/next_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Gray/prev.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Gray/prev1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Gray/prev_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Gray/show.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Gray/show1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Gray/stop.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Gray/stop1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Gray/up.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Gray/up1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Green.css
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Green/bg.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Green/idx.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Green/idx1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Green/next.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Green/next1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Green/next_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Green/prev.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Green/prev1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Green/prev_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Green/show.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Green/show1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Green/stop.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Green/stop1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Green/up.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Green/up1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Red.css
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Red/bg.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Red/idx.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Red/idx1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Red/next.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Red/next1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Red/next_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Red/prev.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Red/prev1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Red/prev_disabled.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Red/show.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Red/show1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Red/stop.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Red/stop1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Red/up.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/Device/Red/up1.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Blue.css
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Blue/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Blue/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Blue/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Green.css
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Green/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Green/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Green/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Pink.css
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Pink/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Pink/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Pink/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Turquoise.css
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Turquoise/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Turquoise/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Turquoise/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Violet.css
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Violet/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Violet/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Violet/hdr_right.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Yellow.css
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Yellow/hdr_left.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Yellow/hdr_mid.gif
+%%DATADIR%%/skins/Chameleon/styles/substyles/White/Yellow/hdr_right.gif
 %%DATADIR%%/skins/Chameleon/texts/texts.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_cs.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_da.properties
@@ -1372,8 +1472,10 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/texts/texts_fi.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_fr.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_hu.properties
+%%DATADIR%%/skins/Chameleon/texts/texts_is.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_it.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_nl.properties
+%%DATADIR%%/skins/Chameleon/texts/texts_no.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_pl.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_pt.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_ru.properties
@@ -1383,79 +1485,7 @@ bin/jalbum
 %%DATADIR%%/skins/Chameleon/texts/texts_sr_latin.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_sv.properties
 %%DATADIR%%/skins/Chameleon/texts/texts_uk.properties
-%%DATADIR%%/skins/Colorful/defs.jap
-%%DATADIR%%/skins/Colorful/index.htt
-%%DATADIR%%/skins/Colorful/preview.jpg
-%%DATADIR%%/skins/Colorful/res/bakgrund.jpg
-%%DATADIR%%/skins/Colorful/res/bar.gif
-%%DATADIR%%/skins/Colorful/res/bg-pink.gif
-%%DATADIR%%/skins/Colorful/res/bg-td.gif
-%%DATADIR%%/skins/Colorful/res/bg.gif
-%%DATADIR%%/skins/Colorful/res/camera.gif
-%%DATADIR%%/skins/Colorful/res/first.gif
-%%DATADIR%%/skins/Colorful/res/first_disabled.gif
-%%DATADIR%%/skins/Colorful/res/folder.gif
-%%DATADIR%%/skins/Colorful/res/index.gif
-%%DATADIR%%/skins/Colorful/res/last.gif
-%%DATADIR%%/skins/Colorful/res/last_disabled.gif
-%%DATADIR%%/skins/Colorful/res/movie.gif
-%%DATADIR%%/skins/Colorful/res/next.gif
-%%DATADIR%%/skins/Colorful/res/next_disabled.gif
-%%DATADIR%%/skins/Colorful/res/previous.gif
-%%DATADIR%%/skins/Colorful/res/previous_disabled.gif
-%%DATADIR%%/skins/Colorful/res/ramen_01.jpg
-%%DATADIR%%/skins/Colorful/res/ramen_02.jpg
-%%DATADIR%%/skins/Colorful/res/ramen_03.jpg
-%%DATADIR%%/skins/Colorful/res/ramen_04.jpg
-%%DATADIR%%/skins/Colorful/res/ramen_05.jpg
-%%DATADIR%%/skins/Colorful/res/ramen_06.jpg
-%%DATADIR%%/skins/Colorful/res/ramen_07.jpg
-%%DATADIR%%/skins/Colorful/res/ramen_08.jpg
-%%DATADIR%%/skins/Colorful/res/ramen_09.jpg
-%%DATADIR%%/skins/Colorful/res/up.gif
-%%DATADIR%%/skins/Colorful/slide.htt
-%%DATADIR%%/skins/Colorful/styles/babyblue.css
-%%DATADIR%%/skins/Colorful/styles/pink.css
-%%DATADIR%%/skins/Debug/about.txt
-%%DATADIR%%/skins/Debug/index.htt
-%%DATADIR%%/skins/Debug/res/camera.gif
-%%DATADIR%%/skins/Debug/res/first.gif
-%%DATADIR%%/skins/Debug/res/folder.gif
-%%DATADIR%%/skins/Debug/res/index.gif
-%%DATADIR%%/skins/Debug/res/last.gif
-%%DATADIR%%/skins/Debug/res/movie.gif
-%%DATADIR%%/skins/Debug/res/next.gif
-%%DATADIR%%/skins/Debug/res/next_disabled.gif
-%%DATADIR%%/skins/Debug/res/previous.gif
-%%DATADIR%%/skins/Debug/res/previous_disabled.gif
-%%DATADIR%%/skins/Debug/res/up.gif
-%%DATADIR%%/skins/Debug/slide.htt
-%%DATADIR%%/skins/Debug/styles/plain.css
-%%DATADIR%%/skins/Debug/texts.properties
-%%DATADIR%%/skins/Exhibit/index.htt
-%%DATADIR%%/skins/Exhibit/init.bsh
-%%DATADIR%%/skins/Exhibit/onload.bsh
-%%DATADIR%%/skins/Exhibit/preview.jpg
-%%DATADIR%%/skins/Exhibit/res/OrderPrints.gif
-%%DATADIR%%/skins/Exhibit/res/b_l_corner.jpg
-%%DATADIR%%/skins/Exhibit/res/b_r_corner.jpg
-%%DATADIR%%/skins/Exhibit/res/bottom.jpg
-%%DATADIR%%/skins/Exhibit/res/download.gif
-%%DATADIR%%/skins/Exhibit/res/fill.gif
-%%DATADIR%%/skins/Exhibit/res/folder.gif
-%%DATADIR%%/skins/Exhibit/res/left.gif
-%%DATADIR%%/skins/Exhibit/res/left.jpg
-%%DATADIR%%/skins/Exhibit/res/microthumbseparator.gif
-%%DATADIR%%/skins/Exhibit/res/movie.gif
-%%DATADIR%%/skins/Exhibit/res/right.gif
-%%DATADIR%%/skins/Exhibit/res/right.jpg
-%%DATADIR%%/skins/Exhibit/res/separator.gif
-%%DATADIR%%/skins/Exhibit/res/t_l_corner.jpg
-%%DATADIR%%/skins/Exhibit/res/t_r_corner.jpg
-%%DATADIR%%/skins/Exhibit/res/tab1b.jpg
-%%DATADIR%%/skins/Exhibit/res/top.jpg
-%%DATADIR%%/skins/Exhibit/slide.htt
-%%DATADIR%%/skins/Exhibit/styles/White.css
+%%DATADIR%%/skins/Chameleon/texts/texts_zh.properties
 %%DATADIR%%/skins/ExhibitPlus/Optional files to be copied to image source directory/comments.properties
 %%DATADIR%%/skins/ExhibitPlus/Optional files to be copied to image source directory/footer.inc
 %%DATADIR%%/skins/ExhibitPlus/Optional files to be copied to image source directory/header.inc
@@ -1811,26 +1841,6 @@ bin/jalbum
 %%DATADIR%%/skins/ExhibitPlus/texts/texts_sr.properties
 %%DATADIR%%/skins/ExhibitPlus/texts/texts_sv.properties
 %%DATADIR%%/skins/ExhibitPlus/texts/xlat.pl
-%%DATADIR%%/skins/Experience/about.txt
-%%DATADIR%%/skins/Experience/hints.jap
-%%DATADIR%%/skins/Experience/index.htt
-%%DATADIR%%/skins/Experience/init.bsh
-%%DATADIR%%/skins/Experience/preview.jpg
-%%DATADIR%%/skins/Experience/res/button.gif
-%%DATADIR%%/skins/Experience/res/camera.gif
-%%DATADIR%%/skins/Experience/res/folder.gif
-%%DATADIR%%/skins/Experience/res/footer.inc
-%%DATADIR%%/skins/Experience/res/header.inc
-%%DATADIR%%/skins/Experience/res/index.gif
-%%DATADIR%%/skins/Experience/res/movie.gif
-%%DATADIR%%/skins/Experience/res/next.gif
-%%DATADIR%%/skins/Experience/res/next_disabled.gif
-%%DATADIR%%/skins/Experience/res/previous.gif
-%%DATADIR%%/skins/Experience/res/previous_disabled.gif
-%%DATADIR%%/skins/Experience/res/up.gif
-%%DATADIR%%/skins/Experience/slide.htt
-%%DATADIR%%/skins/Experience/styles/dark.css
-%%DATADIR%%/skins/Experience/styles/white.css
 %%DATADIR%%/skins/Family/footer.inc
 %%DATADIR%%/skins/Family/hints.jap
 %%DATADIR%%/skins/Family/index.htt
@@ -1887,51 +1897,6 @@ bin/jalbum
 %%DATADIR%%/skins/Family/styles/white/left.jpg
 %%DATADIR%%/skins/Family/styles/white/right.jpg
 %%DATADIR%%/skins/Family/styles/white/top.jpg
-%%DATADIR%%/skins/Film/about.txt
-%%DATADIR%%/skins/Film/hints.jap
-%%DATADIR%%/skins/Film/index.htt
-%%DATADIR%%/skins/Film/preview.jpg
-%%DATADIR%%/skins/Film/res/NavLeft.gif
-%%DATADIR%%/skins/Film/res/NavRight.gif
-%%DATADIR%%/skins/Film/res/NavUp.gif
-%%DATADIR%%/skins/Film/res/bottom_background_big_film.gif
-%%DATADIR%%/skins/Film/res/bottom_background_film.gif
-%%DATADIR%%/skins/Film/res/bottom_left_film.gif
-%%DATADIR%%/skins/Film/res/bottom_right_film.gif
-%%DATADIR%%/skins/Film/res/camera.gif
-%%DATADIR%%/skins/Film/res/clearpixel.gif
-%%DATADIR%%/skins/Film/res/folder.gif
-%%DATADIR%%/skins/Film/res/gray_background.gif
-%%DATADIR%%/skins/Film/res/left_background_big_film.gif
-%%DATADIR%%/skins/Film/res/left_background_film.gif
-%%DATADIR%%/skins/Film/res/movie.gif
-%%DATADIR%%/skins/Film/res/night_background.gif
-%%DATADIR%%/skins/Film/res/paper_background.gif
-%%DATADIR%%/skins/Film/res/right_background_big_film.gif
-%%DATADIR%%/skins/Film/res/right_background_film.gif
-%%DATADIR%%/skins/Film/res/spacer.gif
-%%DATADIR%%/skins/Film/res/top_background_big_film.gif
-%%DATADIR%%/skins/Film/res/top_background_film.gif
-%%DATADIR%%/skins/Film/res/top_left_film.gif
-%%DATADIR%%/skins/Film/res/top_right_film.gif
-%%DATADIR%%/skins/Film/slide.htt
-%%DATADIR%%/skins/Film/styles/Gray.css
-%%DATADIR%%/skins/Film/styles/Night.css
-%%DATADIR%%/skins/Film/styles/Paper.css
-%%DATADIR%%/skins/Horizontal/about.txt
-%%DATADIR%%/skins/Horizontal/frameset.htt
-%%DATADIR%%/skins/Horizontal/hints.jap
-%%DATADIR%%/skins/Horizontal/index.htt
-%%DATADIR%%/skins/Horizontal/preview.jpg
-%%DATADIR%%/skins/Horizontal/res/blank.html
-%%DATADIR%%/skins/Horizontal/res/camera.gif
-%%DATADIR%%/skins/Horizontal/res/folder.gif
-%%DATADIR%%/skins/Horizontal/res/movie.gif
-%%DATADIR%%/skins/Horizontal/slide.htt
-%%DATADIR%%/skins/Horizontal/styles/AskUser.css
-%%DATADIR%%/skins/Horizontal/styles/Black.css
-%%DATADIR%%/skins/Horizontal/styles/Pro.css
-%%DATADIR%%/skins/Horizontal/styles/White.css
 %%DATADIR%%/skins/Mamba/index.htt
 %%DATADIR%%/skins/Mamba/preview.jpg
 %%DATADIR%%/skins/Mamba/res/bakgrund.jpg
@@ -1951,6 +1916,7 @@ bin/jalbum
 %%DATADIR%%/skins/Minimal/about.txt
 %%DATADIR%%/skins/Minimal/hints.jap
 %%DATADIR%%/skins/Minimal/index.htt
+%%DATADIR%%/skins/Minimal/preview.jpg
 %%DATADIR%%/skins/Minimal/res/camera.gif
 %%DATADIR%%/skins/Minimal/res/first.gif
 %%DATADIR%%/skins/Minimal/res/folder.gif
@@ -1966,82 +1932,30 @@ bin/jalbum
 %%DATADIR%%/skins/Minimal/styles/lineborder.css
 %%DATADIR%%/skins/Minimal/styles/plain.css
 %%DATADIR%%/skins/Minimal/texts.properties
-%%DATADIR%%/skins/Old Album/frameset.htt
-%%DATADIR%%/skins/Old Album/hints.jap
-%%DATADIR%%/skins/Old Album/index.htt
-%%DATADIR%%/skins/Old Album/res/blank.html
-%%DATADIR%%/skins/Old Album/res/camera.gif
-%%DATADIR%%/skins/Old Album/res/folder.gif
-%%DATADIR%%/skins/Old Album/res/movie.gif
-%%DATADIR%%/skins/Old Album/res/smallalbum.gif
-%%DATADIR%%/skins/Old Album/res/up.gif
-%%DATADIR%%/skins/Old Album/slide.htt
-%%DATADIR%%/skins/Old Album/styles/oldie.css
-%%DATADIR%%/skins/PBase/!readme!.txt
-%%DATADIR%%/skins/PBase/hints.jap
-%%DATADIR%%/skins/PBase/index.htt
-%%DATADIR%%/skins/PBase/notes/notes.htm
-%%DATADIR%%/skins/PBase/notes/propsfiles.htm
-%%DATADIR%%/skins/PBase/notes/uiSettings.jpg
-%%DATADIR%%/skins/PBase/onload.bsh
-%%DATADIR%%/skins/PBase/preview.jpg
-%%DATADIR%%/skins/PBase/res/camera.gif
-%%DATADIR%%/skins/PBase/res/folder.gif
-%%DATADIR%%/skins/PBase/res/folder_blank.gif
-%%DATADIR%%/skins/PBase/res/movie.gif
-%%DATADIR%%/skins/PBase/scripts/indexNav.inc
-%%DATADIR%%/skins/PBase/scripts/infoPropsFolder.inc
-%%DATADIR%%/skins/PBase/scripts/infoPropsImage.inc
-%%DATADIR%%/skins/PBase/scripts/infoPropsSubFolder.inc
-%%DATADIR%%/skins/PBase/scripts/slideNav.inc
-%%DATADIR%%/skins/PBase/skin.properties
-%%DATADIR%%/skins/PBase/slide.htt
-%%DATADIR%%/skins/PBase/styles/alexc.css
-%%DATADIR%%/skins/PBase/styles/athiker95.css
-%%DATADIR%%/skins/PBase/styles/blackstandard.css
-%%DATADIR%%/skins/PBase/styles/joshua.css
-%%DATADIR%%/skins/PBase/styles/karen1109.css
-%%DATADIR%%/skins/PBase/styles/tarheel.css
-%%DATADIR%%/skins/PBase/styles/timmyg.css
-%%DATADIR%%/skins/PBase/styles/webdev.css
-%%DATADIR%%/skins/PBase/styles/wedding.css
-%%DATADIR%%/skins/PBase/styles/whitestandard.css
-%%DATADIR%%/skins/Polaroid/about.txt
-%%DATADIR%%/skins/Polaroid/index.htt
-%%DATADIR%%/skins/Polaroid/preview.jpg
-%%DATADIR%%/skins/Polaroid/res/NavLeft.gif
-%%DATADIR%%/skins/Polaroid/res/NavRight.gif
-%%DATADIR%%/skins/Polaroid/res/NavUp.gif
-%%DATADIR%%/skins/Polaroid/res/bottom_background_polaroid.gif
-%%DATADIR%%/skins/Polaroid/res/bottom_background_polaroid_small.gif
-%%DATADIR%%/skins/Polaroid/res/bottom_left_polaroid.gif
-%%DATADIR%%/skins/Polaroid/res/bottom_left_polaroid_small.gif
-%%DATADIR%%/skins/Polaroid/res/bottom_right_polaroid.gif
-%%DATADIR%%/skins/Polaroid/res/bottom_right_polaroid_small.gif
-%%DATADIR%%/skins/Polaroid/res/camera.gif
-%%DATADIR%%/skins/Polaroid/res/clearpixel.gif
-%%DATADIR%%/skins/Polaroid/res/folder.gif
-%%DATADIR%%/skins/Polaroid/res/leather_background.gif
-%%DATADIR%%/skins/Polaroid/res/left_background_polaroid.gif
-%%DATADIR%%/skins/Polaroid/res/left_background_polaroid_small.gif
-%%DATADIR%%/skins/Polaroid/res/movie.gif
-%%DATADIR%%/skins/Polaroid/res/paper_background.gif
-%%DATADIR%%/skins/Polaroid/res/right_background_polaroid.gif
-%%DATADIR%%/skins/Polaroid/res/right_background_polaroid_small.gif
-%%DATADIR%%/skins/Polaroid/res/romance_background.gif
-%%DATADIR%%/skins/Polaroid/res/sky_background.gif
-%%DATADIR%%/skins/Polaroid/res/spacer.gif
-%%DATADIR%%/skins/Polaroid/res/top_background_polaroid.gif
-%%DATADIR%%/skins/Polaroid/res/top_background_polaroid_small.gif
-%%DATADIR%%/skins/Polaroid/res/top_left_polaroid.gif
-%%DATADIR%%/skins/Polaroid/res/top_left_polaroid_small.gif
-%%DATADIR%%/skins/Polaroid/res/top_right_polaroid.gif
-%%DATADIR%%/skins/Polaroid/res/top_right_polaroid_small.gif
-%%DATADIR%%/skins/Polaroid/slide.htt
-%%DATADIR%%/skins/Polaroid/styles/Leather.css
-%%DATADIR%%/skins/Polaroid/styles/Paper.css
-%%DATADIR%%/skins/Polaroid/styles/Romance.css
-%%DATADIR%%/skins/Polaroid/styles/Sky.css
+%%DATADIR%%/skins/Nature/frameset.htt
+%%DATADIR%%/skins/Nature/hints.jap
+%%DATADIR%%/skins/Nature/index.htt
+%%DATADIR%%/skins/Nature/init.bsh
+%%DATADIR%%/skins/Nature/onload.bsh
+%%DATADIR%%/skins/Nature/png/flower.png
+%%DATADIR%%/skins/Nature/res/borderfade_h.gif
+%%DATADIR%%/skins/Nature/res/borderfade_v.gif
+%%DATADIR%%/skins/Nature/res/borderfade_v.jpg
+%%DATADIR%%/skins/Nature/res/dot.gif
+%%DATADIR%%/skins/Nature/res/folder.gif
+%%DATADIR%%/skins/Nature/res/mainbg.jpg
+%%DATADIR%%/skins/Nature/res/next.gif
+%%DATADIR%%/skins/Nature/res/numberplate.gif
+%%DATADIR%%/skins/Nature/res/prev.gif
+%%DATADIR%%/skins/Nature/res/smnext.gif
+%%DATADIR%%/skins/Nature/res/smprev.gif
+%%DATADIR%%/skins/Nature/res/textplate.gif
+%%DATADIR%%/skins/Nature/res/up.gif
+%%DATADIR%%/skins/Nature/slide.htt
+%%DATADIR%%/skins/Nature/styles/beige.css
+%%DATADIR%%/skins/Nature/styles/beige.jpg
+%%DATADIR%%/skins/Nature/texts/texts.properties
+%%DATADIR%%/skins/Nature/texts/texts_sv.properties
 %%DATADIR%%/skins/ShowOff/about.txt
 %%DATADIR%%/skins/ShowOff/hints.jap
 %%DATADIR%%/skins/ShowOff/index.htt
@@ -2062,54 +1976,10 @@ bin/jalbum
 %%DATADIR%%/skins/ShowOff/styles/Custom.css
 %%DATADIR%%/skins/ShowOff/styles/Dark.css
 %%DATADIR%%/skins/ShowOff/styles/Sunset.css
-%%DATADIR%%/skins/Simple/bottom.htt
-%%DATADIR%%/skins/Simple/frameset.htt
-%%DATADIR%%/skins/Simple/hints.jap
-%%DATADIR%%/skins/Simple/index.htt
-%%DATADIR%%/skins/Simple/init.bsh
-%%DATADIR%%/skins/Simple/res/au.gif
-%%DATADIR%%/skins/Simple/res/b_pil.gif
-%%DATADIR%%/skins/Simple/res/blank.html
-%%DATADIR%%/skins/Simple/res/f_pil.gif
-%%DATADIR%%/skins/Simple/res/folder.gif
-%%DATADIR%%/skins/Simple/res/la.gif
-%%DATADIR%%/skins/Simple/res/movie.gif
-%%DATADIR%%/skins/Simple/res/ra.gif
-%%DATADIR%%/skins/Simple/res/sb_pil.gif
-%%DATADIR%%/skins/Simple/res/sf_pil.gif
-%%DATADIR%%/skins/Simple/res/t.gif
-%%DATADIR%%/skins/Simple/slide.htt
-%%DATADIR%%/skins/Simple/styles/black.css
-%%DATADIR%%/skins/Simple/styles/black.jpg
-%%DATADIR%%/skins/Simple/styles/white.css
-%%DATADIR%%/skins/Simple/styles/white.jpg
-%%DATADIR%%/skins/Simple/texts/texts.properties
-%%DATADIR%%/skins/Simple/texts/texts_sk.properties
-%%DATADIR%%/skins/Simple/texts/texts_sv.properties
-%%DATADIR%%/skins/Simple/top.htt
-%%DATADIR%%/skins/Slide show/index.htt
-%%DATADIR%%/skins/Slide show/init.bsh
-%%DATADIR%%/skins/Slide show/mp3player.swf
-%%DATADIR%%/skins/Slide show/music/readme.html
-%%DATADIR%%/skins/Slide show/onload.bsh
-%%DATADIR%%/skins/Slide show/res/camera.gif
-%%DATADIR%%/skins/Slide show/res/close.gif
-%%DATADIR%%/skins/Slide show/res/folder.gif
-%%DATADIR%%/skins/Slide show/res/index.gif
-%%DATADIR%%/skins/Slide show/res/movie.gif
-%%DATADIR%%/skins/Slide show/res/next.gif
-%%DATADIR%%/skins/Slide show/res/next_disabled.gif
-%%DATADIR%%/skins/Slide show/res/pause.gif
-%%DATADIR%%/skins/Slide show/res/play.gif
-%%DATADIR%%/skins/Slide show/res/previous.gif
-%%DATADIR%%/skins/Slide show/res/previous_disabled.gif
-%%DATADIR%%/skins/Slide show/res/up.gif
-%%DATADIR%%/skins/Slide show/slide.htt
-%%DATADIR%%/skins/Slide show/styles/Black.css
-%%DATADIR%%/skins/Slide show/styles/White.css
 %%DATADIR%%/skins/Standard/about.txt
 %%DATADIR%%/skins/Standard/index.htt
 %%DATADIR%%/skins/Standard/init.bsh
+%%DATADIR%%/skins/Standard/preview.jpg
 %%DATADIR%%/skins/Standard/res/camera.gif
 %%DATADIR%%/skins/Standard/res/first.gif
 %%DATADIR%%/skins/Standard/res/folder.gif
@@ -2123,30 +1993,22 @@ bin/jalbum
 %%DATADIR%%/skins/Standard/res/up.gif
 %%DATADIR%%/skins/Standard/slide.htt
 %%DATADIR%%/skins/Standard/styles/Black.css
+%%DATADIR%%/skins/Standard/styles/Black.jpg
 %%DATADIR%%/skins/Standard/styles/Blue.css
+%%DATADIR%%/skins/Standard/styles/Blue.jpg
 %%DATADIR%%/skins/Standard/styles/Khaki.css
+%%DATADIR%%/skins/Standard/styles/Khaki.jpg
 %%DATADIR%%/skins/Standard/styles/Milkyblue.css
+%%DATADIR%%/skins/Standard/styles/Milkyblue.jpg
 %%DATADIR%%/skins/Standard/styles/Plain.css
+%%DATADIR%%/skins/Standard/styles/Plain.jpg
 %%DATADIR%%/skins/Standard/styles/White.css
+%%DATADIR%%/skins/Standard/styles/White.jpg
 %%DATADIR%%/skins/Standard/subdir/head.inc
 %%DATADIR%%/skins/Standard/texts.properties
 %%DATADIR%%/skins/Standard/texts_cs.properties
 %%DATADIR%%/skins/Standard/texts_en.properties
 %%DATADIR%%/skins/Standard/texts_sv.properties
-%%DATADIR%%/skins/Vertical/about.txt
-%%DATADIR%%/skins/Vertical/frameset.htt
-%%DATADIR%%/skins/Vertical/hints.jap
-%%DATADIR%%/skins/Vertical/index.htt
-%%DATADIR%%/skins/Vertical/preview.jpg
-%%DATADIR%%/skins/Vertical/res/blank.html
-%%DATADIR%%/skins/Vertical/res/camera.gif
-%%DATADIR%%/skins/Vertical/res/folder.gif
-%%DATADIR%%/skins/Vertical/res/movie.gif
-%%DATADIR%%/skins/Vertical/slide.htt
-%%DATADIR%%/skins/Vertical/styles/AskUser.css
-%%DATADIR%%/skins/Vertical/styles/Black.css
-%%DATADIR%%/skins/Vertical/styles/Pro.css
-%%DATADIR%%/skins/Vertical/styles/White.css
 %%DATADIR%%/skins/Wedding/hints.jap
 %%DATADIR%%/skins/Wedding/index.htt
 %%DATADIR%%/skins/Wedding/init.bsh
@@ -2178,18 +2040,6 @@ bin/jalbum
 %%DATADIR%%/skins/Wedding/texts/texts.properties
 %%DATADIR%%/skins/Wedding/texts/texts_sk.properties
 %%DATADIR%%/skins/Wedding/texts/texts_sv.properties
-%%DATADIR%%/skins/Whitey/index.htt
-%%DATADIR%%/skins/Whitey/res/camera.gif
-%%DATADIR%%/skins/Whitey/res/folder.gif
-%%DATADIR%%/skins/Whitey/res/index.gif
-%%DATADIR%%/skins/Whitey/res/movie.gif
-%%DATADIR%%/skins/Whitey/res/next.gif
-%%DATADIR%%/skins/Whitey/res/next_disabled.gif
-%%DATADIR%%/skins/Whitey/res/previous.gif
-%%DATADIR%%/skins/Whitey/res/previous_disabled.gif
-%%DATADIR%%/skins/Whitey/res/up.gif
-%%DATADIR%%/skins/Whitey/slide.htt
-%%DATADIR%%/skins/Whitey/styles/White.css
 %%DATADIR%%/skins/XP/Tree.htt
 %%DATADIR%%/skins/XP/about.txt
 %%DATADIR%%/skins/XP/hints.jap
@@ -2307,6 +2157,7 @@ bin/jalbum
 %%DATADIR%%/sunos/x86/libtray.so
 %%DATADIR%%/texts/texts.properties
 %%DATADIR%%/texts/texts_bg.properties
+%%DATADIR%%/texts/texts_ca.properties
 %%DATADIR%%/texts/texts_cs.properties
 %%DATADIR%%/texts/texts_da.properties
 %%DATADIR%%/texts/texts_de.properties
@@ -2370,9 +2221,6 @@ bin/jalbum
 @dirrm %%DATADIR%%/skins/XP/plugins/Example plugin
 @dirrm %%DATADIR%%/skins/XP/plugins
 @dirrm %%DATADIR%%/skins/XP
-@dirrm %%DATADIR%%/skins/Whitey/styles
-@dirrm %%DATADIR%%/skins/Whitey/res
-@dirrm %%DATADIR%%/skins/Whitey
 @dirrm %%DATADIR%%/skins/Wedding/texts
 @dirrm %%DATADIR%%/skins/Wedding/styles/white
 @dirrm %%DATADIR%%/skins/Wedding/styles/pink
@@ -2380,47 +2228,24 @@ bin/jalbum
 @dirrm %%DATADIR%%/skins/Wedding/res
 @dirrm %%DATADIR%%/skins/Wedding/png
 @dirrm %%DATADIR%%/skins/Wedding
-@dirrm %%DATADIR%%/skins/Vertical/styles
-@dirrm %%DATADIR%%/skins/Vertical/res
-@dirrm %%DATADIR%%/skins/Vertical
 @dirrm %%DATADIR%%/skins/Standard/subdir
 @dirrm %%DATADIR%%/skins/Standard/styles
 @dirrm %%DATADIR%%/skins/Standard/res
 @dirrm %%DATADIR%%/skins/Standard
-@dirrm %%DATADIR%%/skins/Slide show/styles
-@dirrm %%DATADIR%%/skins/Slide show/res
-@dirrm %%DATADIR%%/skins/Slide show/music
-@dirrm %%DATADIR%%/skins/Slide show
-@dirrm %%DATADIR%%/skins/Simple/texts
-@dirrm %%DATADIR%%/skins/Simple/styles
-@dirrm %%DATADIR%%/skins/Simple/res
-@dirrm %%DATADIR%%/skins/Simple
 @dirrm %%DATADIR%%/skins/ShowOff/styles
 @dirrm %%DATADIR%%/skins/ShowOff/res
 @dirrm %%DATADIR%%/skins/ShowOff
-@dirrm %%DATADIR%%/skins/Polaroid/styles
-@dirrm %%DATADIR%%/skins/Polaroid/res
-@dirrm %%DATADIR%%/skins/Polaroid
-@dirrm %%DATADIR%%/skins/PBase/styles
-@dirrm %%DATADIR%%/skins/PBase/scripts
-@dirrm %%DATADIR%%/skins/PBase/res
-@dirrm %%DATADIR%%/skins/PBase/notes
-@dirrm %%DATADIR%%/skins/PBase
-@dirrm %%DATADIR%%/skins/Old Album/styles
-@dirrm %%DATADIR%%/skins/Old Album/res
-@dirrm %%DATADIR%%/skins/Old Album
+@dirrm %%DATADIR%%/skins/Nature/texts
+@dirrm %%DATADIR%%/skins/Nature/styles
+@dirrm %%DATADIR%%/skins/Nature/res
+@dirrm %%DATADIR%%/skins/Nature/png
+@dirrm %%DATADIR%%/skins/Nature
 @dirrm %%DATADIR%%/skins/Minimal/styles
 @dirrm %%DATADIR%%/skins/Minimal/res
 @dirrm %%DATADIR%%/skins/Minimal
 @dirrm %%DATADIR%%/skins/Mamba/styles
 @dirrm %%DATADIR%%/skins/Mamba/res
 @dirrm %%DATADIR%%/skins/Mamba
-@dirrm %%DATADIR%%/skins/Horizontal/styles
-@dirrm %%DATADIR%%/skins/Horizontal/res
-@dirrm %%DATADIR%%/skins/Horizontal
-@dirrm %%DATADIR%%/skins/Film/styles
-@dirrm %%DATADIR%%/skins/Film/res
-@dirrm %%DATADIR%%/skins/Film
 @dirrm %%DATADIR%%/skins/Family/styles/white
 @dirrm %%DATADIR%%/skins/Family/styles/pink
 @dirrm %%DATADIR%%/skins/Family/styles/blue
@@ -2428,9 +2253,6 @@ bin/jalbum
 @dirrm %%DATADIR%%/skins/Family/styles
 @dirrm %%DATADIR%%/skins/Family/res
 @dirrm %%DATADIR%%/skins/Family
-@dirrm %%DATADIR%%/skins/Experience/styles
-@dirrm %%DATADIR%%/skins/Experience/res
-@dirrm %%DATADIR%%/skins/Experience
 @dirrm %%DATADIR%%/skins/ExhibitPlus/texts
 @dirrm %%DATADIR%%/skins/ExhibitPlus/styles
 @dirrm %%DATADIR%%/skins/ExhibitPlus/res
@@ -2453,33 +2275,61 @@ bin/jalbum
 @dirrm %%DATADIR%%/skins/ExhibitPlus/button-sets
 @dirrm %%DATADIR%%/skins/ExhibitPlus/Optional files to be copied to image source directory
 @dirrm %%DATADIR%%/skins/ExhibitPlus
-@dirrm %%DATADIR%%/skins/Exhibit/styles
-@dirrm %%DATADIR%%/skins/Exhibit/res
-@dirrm %%DATADIR%%/skins/Exhibit
-@dirrm %%DATADIR%%/skins/Debug/styles
-@dirrm %%DATADIR%%/skins/Debug/res
-@dirrm %%DATADIR%%/skins/Debug
-@dirrm %%DATADIR%%/skins/Colorful/styles
-@dirrm %%DATADIR%%/skins/Colorful/res
-@dirrm %%DATADIR%%/skins/Colorful
 @dirrm %%DATADIR%%/skins/Chameleon/texts
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/White/Yellow
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/White/Violet
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/White/Turquoise
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/White/Pink
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/White/Green
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/White/Blue
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/White
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Device/Red
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Device/Green
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Device/Gray
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Device/Cyan
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Device/Blue
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Device
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Violet
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Red
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Green
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Gray
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo/Blue
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Carstereo
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Black/Yellow
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Black/Violet
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Black/Sepia
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Black/Red
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Black/Orange
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Black/Gray
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Black/Cyan
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Black/Blue
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Black
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Yellow
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/White
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Red
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Pink
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Green
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Gray
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium/Blue
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles/Aluminium
+@dirrm %%DATADIR%%/skins/Chameleon/styles/substyles
 @dirrm %%DATADIR%%/skins/Chameleon/styles/World
-@dirrm %%DATADIR%%/skins/Chameleon/styles/Vanilla
+@dirrm %%DATADIR%%/skins/Chameleon/styles/White
+@dirrm %%DATADIR%%/skins/Chameleon/styles/Wedding
 @dirrm %%DATADIR%%/skins/Chameleon/styles/Steel
 @dirrm %%DATADIR%%/skins/Chameleon/styles/Snake
 @dirrm %%DATADIR%%/skins/Chameleon/styles/Simple
 @dirrm %%DATADIR%%/skins/Chameleon/styles/Silver
 @dirrm %%DATADIR%%/skins/Chameleon/styles/Royal
-@dirrm %%DATADIR%%/skins/Chameleon/styles/Plastic
 @dirrm %%DATADIR%%/skins/Chameleon/styles/OrangeGreen
-@dirrm %%DATADIR%%/skins/Chameleon/styles/OrangeBlue
-@dirrm %%DATADIR%%/skins/Chameleon/styles/Leopard
+@dirrm %%DATADIR%%/skins/Chameleon/styles/Oldbook
 @dirrm %%DATADIR%%/skins/Chameleon/styles/Jungle
 @dirrm %%DATADIR%%/skins/Chameleon/styles/Happy
 @dirrm %%DATADIR%%/skins/Chameleon/styles/Grays
 @dirrm %%DATADIR%%/skins/Chameleon/styles/Gold
 @dirrm %%DATADIR%%/skins/Chameleon/styles/Device
 @dirrm %%DATADIR%%/skins/Chameleon/styles/Coffee
+@dirrm %%DATADIR%%/skins/Chameleon/styles/Chrome
 @dirrm %%DATADIR%%/skins/Chameleon/styles/Carstereo
 @dirrm %%DATADIR%%/skins/Chameleon/styles/Black
 @dirrm %%DATADIR%%/skins/Chameleon/styles/Aqua_light
@@ -2492,13 +2342,8 @@ bin/jalbum
 @dirrm %%DATADIR%%/skins/Chameleon/plugins
 @dirrm %%DATADIR%%/skins/Chameleon/includes
 @dirrm %%DATADIR%%/skins/Chameleon/help
+@dirrm %%DATADIR%%/skins/Chameleon/guestbook
 @dirrm %%DATADIR%%/skins/Chameleon
-@dirrm %%DATADIR%%/skins/Camera Geek/styles
-@dirrm %%DATADIR%%/skins/Camera Geek/res
-@dirrm %%DATADIR%%/skins/Camera Geek
-@dirrm %%DATADIR%%/skins/Bluepro/styles
-@dirrm %%DATADIR%%/skins/Bluepro/res
-@dirrm %%DATADIR%%/skins/Bluepro
 @dirrm %%DATADIR%%/skins/BluPlusPlus/texts
 @dirrm %%DATADIR%%/skins/BluPlusPlus/styles
 @dirrm %%DATADIR%%/skins/BluPlusPlus/res/topbars/red
@@ -2541,21 +2386,20 @@ bin/jalbum
 @dirrm %%DATADIR%%/skins/BluPlusPlus/frames/images
 @dirrm %%DATADIR%%/skins/BluPlusPlus/frames
 @dirrm %%DATADIR%%/skins/BluPlusPlus/docs
+@dirrm %%DATADIR%%/skins/BluPlusPlus/config
 @dirrm %%DATADIR%%/skins/BluPlusPlus/bsh
 @dirrm %%DATADIR%%/skins/BluPlusPlus
+@dirrm %%DATADIR%%/skins/BananAlbum/styles
+@dirrm %%DATADIR%%/skins/BananAlbum/res/typefaces
+@dirrm %%DATADIR%%/skins/BananAlbum/res/bananatree
+@dirrm %%DATADIR%%/skins/BananAlbum/res
+@dirrm %%DATADIR%%/skins/BananAlbum
 @dirrm %%DATADIR%%/skins
 @dirrm %%DATADIR%%/res
-@dirrm %%DATADIR%%/plugins/documentation
-@dirrm %%DATADIR%%/plugins/InstallAnywhere/JAlbum_Build_Output/Web_Installers/InstData
-@dirrm %%DATADIR%%/plugins/InstallAnywhere/JAlbum_Build_Output/Web_Installers
-@dirrm %%DATADIR%%/plugins/InstallAnywhere/JAlbum_Build_Output
-@dirrm %%DATADIR%%/plugins/InstallAnywhere
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/linux/x86
 @dirrm %%DATADIR%%/linux
 @dirrm %%DATADIR%%/license/sbbi-upnplib
 @dirrm %%DATADIR%%/license
 @dirrm %%DATADIR%%/includes
-@dirrm %%DATADIR%%/help/images
-@dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
