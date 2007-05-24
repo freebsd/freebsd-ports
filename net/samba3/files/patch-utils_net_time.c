@@ -1,6 +1,6 @@
---- utils/net_time.c.orig	Fri Jun 23 15:16:53 2006
-+++ utils/net_time.c	Thu Aug 24 01:30:57 2006
-@@ -79,9 +79,16 @@
+--- ./utils/net_time.c.orig	Thu Mar  1 05:54:59 2007
++++ ./utils/net_time.c	Tue Apr 17 02:06:59 2007
+@@ -83,9 +83,16 @@
  		return "unknown";
  	}
  	

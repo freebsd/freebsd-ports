@@ -1,5 +1,5 @@
---- pam_smbpass/support.c.orig	Tue May 23 20:54:32 2006
-+++ pam_smbpass/support.c	Thu Aug 24 01:30:57 2006
+--- ./pam_smbpass/support.c.orig	Tue May 23 20:54:32 2006
++++ ./pam_smbpass/support.c	Tue Apr 17 02:06:59 2007
 @@ -384,7 +384,7 @@
              if (newauth != NULL) {
  

@@ -1,5 +1,5 @@
---- pam_smbpass/pam_smb_passwd.c.orig	Thu Apr 20 04:29:22 2006
-+++ pam_smbpass/pam_smb_passwd.c	Thu Aug 24 01:30:57 2006
+--- ./pam_smbpass/pam_smb_passwd.c.orig	Thu Apr 20 04:29:22 2006
++++ ./pam_smbpass/pam_smb_passwd.c	Tue Apr 17 02:06:59 2007
 @@ -226,7 +226,7 @@
                                     (const void **)&pass_old );
          } else {

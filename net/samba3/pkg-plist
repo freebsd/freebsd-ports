@@ -32,6 +32,7 @@ sbin/swat
 %%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/password-mature
 %%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/password-migration
 %%SMBPASS%%%%EXAMPLESDIR%%/pam_smbpass/password-sync
+%%EXAMPLESDIR%%/%%SAMBA_CONFIG%%.sample
 %%EXAMPLESDIR%%/LDAP/README
 %%EXAMPLESDIR%%/LDAP/convertSambaAccount
 %%EXAMPLESDIR%%/LDAP/get_next_oid
@@ -66,6 +67,7 @@ sbin/swat
 %%EXAMPLESDIR%%/logon/ntlogon/ntlogon.py
 %%EXAMPLESDIR%%/misc/adssearch.pl
 %%EXAMPLESDIR%%/misc/check_multiple_LDAP_entries.pl
+%%EXAMPLESDIR%%/misc/cldap.pl
 %%EXAMPLESDIR%%/misc/extra_smbstatus
 %%EXAMPLESDIR%%/misc/swat.pl
 %%EXAMPLESDIR%%/misc/wall.perl
@@ -73,6 +75,29 @@ sbin/swat
 %%EXAMPLESDIR%%/nss/nss_winbind.h
 %%EXAMPLESDIR%%/nss/wbtest.c
 %%EXAMPLESDIR%%/pam_winbind/pam_winbind.conf
+%%EXAMPLESDIR%%/pcap2nbench/COPYING
+%%EXAMPLESDIR%%/pcap2nbench/Makefile
+%%EXAMPLESDIR%%/pcap2nbench/README
+%%EXAMPLESDIR%%/pcap2nbench/closerequest.cpp
+%%EXAMPLESDIR%%/pcap2nbench/closerequest.hpp
+%%EXAMPLESDIR%%/pcap2nbench/ethernet.cpp
+%%EXAMPLESDIR%%/pcap2nbench/ethernet.hpp
+%%EXAMPLESDIR%%/pcap2nbench/ip.cpp
+%%EXAMPLESDIR%%/pcap2nbench/ip.hpp
+%%EXAMPLESDIR%%/pcap2nbench/main.cpp
+%%EXAMPLESDIR%%/pcap2nbench/ntcreateandxrequest.cpp
+%%EXAMPLESDIR%%/pcap2nbench/ntcreateandxrequest.hpp
+%%EXAMPLESDIR%%/pcap2nbench/ntcreateandxresponse.cpp
+%%EXAMPLESDIR%%/pcap2nbench/ntcreateandxresponse.hpp
+%%EXAMPLESDIR%%/pcap2nbench/readandxrequest.cpp
+%%EXAMPLESDIR%%/pcap2nbench/readandxrequest.hpp
+%%EXAMPLESDIR%%/pcap2nbench/readandxresponse.hpp
+%%EXAMPLESDIR%%/pcap2nbench/smb.cpp
+%%EXAMPLESDIR%%/pcap2nbench/smb.hpp
+%%EXAMPLESDIR%%/pcap2nbench/tcp.cpp
+%%EXAMPLESDIR%%/pcap2nbench/tcp.hpp
+%%EXAMPLESDIR%%/pcap2nbench/writeandxrequest.cpp
+%%EXAMPLESDIR%%/pcap2nbench/writeandxrequest.hpp
 %%EXAMPLESDIR%%/pdb/Makefile
 %%EXAMPLESDIR%%/pdb/README
 %%EXAMPLESDIR%%/pdb/test.c
@@ -110,7 +135,6 @@ sbin/swat
 %%EXAMPLESDIR%%/scripts/shares/python/smbparm.py
 %%EXAMPLESDIR%%/scripts/wins_hook/README
 %%EXAMPLESDIR%%/scripts/wins_hook/dns_update
-%%EXAMPLESDIR%%/%%SAMBA_CONFIG%%.sample
 %%EXAMPLESDIR%%/smb.conf.default
 %%EXAMPLESDIR%%/tridge/README
 %%EXAMPLESDIR%%/tridge/smb.conf
@@ -141,6 +165,7 @@ sbin/swat
 @dirrm %%EXAMPLESDIR%%/printer-accounting
 @dirrm %%EXAMPLESDIR%%/perfcounter
 @dirrm %%EXAMPLESDIR%%/pdb
+@dirrm %%EXAMPLESDIR%%/pcap2nbench
 @dirrm %%EXAMPLESDIR%%/pam_winbind
 @dirrm %%EXAMPLESDIR%%/nss
 @dirrm %%EXAMPLESDIR%%/misc

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.0.24
+PORTVERSION?=		3.0.25
 PORTREVISION?=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
@@ -22,6 +22,8 @@ CONFLICTS?=		ja-samba-2.* ja-samba-3.* samba-2.* sharity-light-1.*
 USE_ICONV=		yes
 GNU_CONFIGURE=		yes
 USE_AUTOTOOLS=		autoconf:259 autoheader:259
+AUTOHEADER_ARGS=	-I${WRKSRC} -I${WRKSRC}/lib/replace
+AUTOCONF_ARGS=		-I${WRKSRC} -I${WRKSRC}/lib/replace
 
 LATEST_LINK?=		${PKGNAMEPREFIX}${PORTNAME}3${PKGNAMESUFFIX}
 EXAMPLESDIR=		${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
@@ -71,6 +73,7 @@ OPTIONS=	LDAP		"With LDAP support" on \
 		MSDFS		"With MSDFS support" off \
 		PAM_SMBPASS	"With PAM authentication vs passdb backends" off \
 		CLUSTER		"With experimental cluster support" off \
+		DNSUPDATE	"With dynamic DNS update" off \
 		EXP_MODULES	"With experimental modules" off \
 		POPT		"With system-wide POPT library" on \
 		MAX_DEBUG	"With maximum debuging" off
@@ -98,7 +101,8 @@ PLIST=			${WRKDIR}/.PLIST
 CONFIGURE_ARGS+=	--with-pam --with-readline --with-sendfile-support \
 			--without-libsmbclient --without-libmsrpc \
 			--without-libsmbsharemodes --without-python \
-			--with-included-iniparser
+			--without-libaddns --with-included-iniparser \
+			--enable-largefile
 
 .if !defined(WITHOUT_LDAP)
 SAMBA_WANT_LDAP=	yes
@@ -115,8 +119,8 @@ SUB_LIST+=		CUPSD="@comment "
 
 .if defined(WITH_MAX_DEBUG)
 LIB_DEPENDS+=		dmalloc.1:${PORTSDIR}/devel/dmalloc
-CPPFLAGS+=		"-I${LOCALBASE}/include"
-LDFLAGS+=		"-L${LOCALBASE}/lib"
+CPPFLAGS+=		-I${LOCALBASE}/include
+LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--enable-debug --enable-developer --enable-krb5developer --enable-dmalloc --with-profiling-data
 .else
@@ -211,6 +215,13 @@ PLIST_SUB+=		SMBSH="@comment "
 CONFIGURE_ARGS+=	--with-cluster-support
 .else
 CONFIGURE_ARGS+=	--without-cluster-support
+.endif
+
+.if defined(WITH_DNSUPDATE)
+LIB_DEPENDS+=		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid
+CONFIGURE_ARGS+=	--with-dnsupdate
+.else
+CONFIGURE_ARGS+=	--without-dnsupdate
 .endif
 
 .if defined(WITH_AIO_SUPPORT)
@@ -377,7 +388,7 @@ post-install:
 	${INSTALL_PROGRAM} "${WRKSRC}/bin/smbwrapper.so" "${SAMBA_MODULEDIR}"
 .endif
 # Lib
-	@${FIND} "${SAMBA_MODULEDIR}" -type f | ${SED} -E 's|^${PREFIX}/?||;' | ${EGREP} -F -v -f ${WRKDIR}/.PLIST.exclude | ${SORT} >> ${TMPPLIST}
+	@${FIND} "${SAMBA_MODULEDIR}" -type f -o -type l | ${SED} -E 's|^${PREFIX}/?||;' | ${EGREP} -F -v -f ${WRKDIR}/.PLIST.exclude | ${SORT} >> ${TMPPLIST}
 	@for d in `${FIND} "${SAMBA_MODULEDIR}" -type d | ${SORT} -r`; do \
 	    ${ECHO_CMD} "@unexec ${RMDIR} \"$$d\" 2>/dev/null || true" >> ${TMPPLIST}; \
 	done

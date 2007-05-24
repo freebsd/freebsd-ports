@@ -1,5 +1,5 @@
---- script/installswat.sh.orig	Thu Apr 20 04:29:42 2006
-+++ script/installswat.sh	Tue Apr 25 02:12:10 2006
+--- ./script/installswat.sh.orig	Thu Mar  1 05:55:02 2007
++++ ./script/installswat.sh	Tue Apr 17 02:06:59 2007
 @@ -21,8 +21,7 @@
  		;;
  esac

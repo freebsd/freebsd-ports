@@ -1,5 +1,5 @@
---- smbd/aio.c.orig	Tue Jan  3 03:03:05 2006
-+++ smbd/aio.c	Tue Jan  3 03:06:52 2006
+--- ./smbd/aio.c.orig	Thu Mar  1 05:54:07 2007
++++ ./smbd/aio.c	Tue Apr 17 02:06:59 2007
 @@ -25,7 +25,17 @@
  
  /* The signal we'll use to signify aio done. */
@@ -19,7 +19,7 @@
  #endif
  
  /****************************************************************************
-@@ -497,6 +507,11 @@
+@@ -531,6 +541,11 @@
  static BOOL handle_aio_completed(struct aio_extra *aio_ex, int *perr)
  {
  	int err;
