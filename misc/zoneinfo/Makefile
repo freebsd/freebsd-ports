@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	zoneinfo
-DISTVERSION=	2007e
+DISTVERSION=	2007f
 CATEGORIES=	misc
-MASTER_SITES=	ftp://elsie.nci.nih.gov/pub/ \
-		http://people.freebsd.org/~edwin/
+MASTER_SITES=	ftp://elsie.nci.nih.gov/pub/
 DISTNAME=	tzdata${DISTVERSION}
 
 MAINTAINER=	edwin@mavetju.org
@@ -25,6 +24,11 @@ POSIXRULES=	America/New_York
 # it overwrites system files and directories.
 .if defined(PACKAGE_BUILDING)
 NO_PACKAGE=	Overwrites files in the base system
+.endif
+
+# Make sure it breaks when the distfile isn't there anymore.
+.if !defined(PACKAGE_BUILDING)
+MASTER_SITES+=	http://people.freebsd.org/~edwin/
 .endif
 
 .include <bsd.port.pre.mk>
