@@ -6,6 +6,82 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070514:
+  AFFECTS: users of net/samba3, japanese/samba3
+  AUTHOR: timur@gnu.org
+
+  ATTENTION! Besides security fixes this version of Samba3
+  significantly changes a lot of options and behavior of Samba.
+  Please, read WHATSNEW.txt and other port documentation before
+  upgrading production systems.
+
+  Off-line Logons and AD Site Support
+  ===================================
+
+  Winbind's capability to support offline logons has been greatly
+  improved with the 3.0.25 release including support for locating
+  domain controllers asynchronously using Active Directory Site
+  information.
+
+
+  New IdMap Interface for Winbindd
+  ================================
+
+  The 3.0.25 release of Samba includes a rewritten IdMap interface
+  for winbindd which replaces the "idmap backend" parameter.  Please
+  refer to the "idmap domains" description in the smb.conf(5) man
+  page for more details.
+
+  Dynamic DNS Updates
+  ===================
+
+  The "net ads join" command is now able to register the host's DNS
+  A records with Windows 2000 SP4 and 2003 DNS servers.  This feature
+  must be enabled at compile time using the --with-dnsupdate when
+  running the ./configure script.  There is also a related "net ads
+  dns" command for refreshing a host's records which could be launched
+  from a dhcp client script when a new IP address is obtained.
+
+  Support for Additional ACL Modules
+  ==================================
+
+  Samba's POSIX ACL support has been moved inside of the VFS layer
+  which means it is now possible to support multiple ACL
+  implementations on the same server including NFSv4 and GPFS ACLs.
+
+  VFS ReadAhead Plugin
+  ====================
+
+  Windows Vista introduces pipe-lined read support for improved
+  performance when transferring files.  The new vfs_readahead plugin
+  allows Linux file servers to utilize additional Kernel buffers for
+  caching files in order to avoid Disk I/O wait time when serving
+  Vista clients.  If you experience poor read performance between
+  Linux servers and Vista clients, please test the vfs_readahead
+  module by adding the following lines to the share definition in
+  smb.conf:
+
+  [file_share]
+        vfs objects = readahead
+
+  Note that this plugin will result in additional RAM requirements
+  due to the increased amount of kernel buffer caches used by smbd.
+  Please refer to vfs_readahead(8) for more information.
+
+  Windows Vista, Office 2007, and Offline Files
+  =============================================
+
+  Research surrounding offline files, Windows Vista, and Microsoft
+  Office 2007 has revealed a incompatibility between these
+  applications and the "map acl inherit = no" setting in smb.conf.
+  Users requiring support client side caching (csc) and offline
+  files are encouraged to enable the "map acl inherit" for any
+  affected share definitions in the server's configuration.
+  Future versions of Samba will enable this setting by default.
+
+  Please refer to the smb.conf(5) man page for more details on
+  "map acl inherit".
+
 20070519:
   AFFECTS: users of x11/xorg
   AUTHOR: kris@FreeBSD.org
