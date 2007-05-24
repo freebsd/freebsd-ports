@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 $PORTSDIR="/usr/ports";
-$README=`cat ${PORTSDIR}/Templates/README.port`;
+$TEMPLATES=$ENV{TEMPLATES} || "${PORTSDIR}/Templates";
+$README=`cat ${TEMPLATES}/README.port`;
 
 while(<>) {
 	split '\|';
