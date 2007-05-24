@@ -5,12 +5,11 @@
 #
 
 PORTNAME=	boinc-einsteinathome
-PORTVERSION=	4.09
-PORTREVISION=	2
+PORTVERSION=	4.22
 PORTEPOCH=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://einstein.phys.uwm.edu/app_test/FreeBSD/
-DISTNAME=	einstein_S5R1_${PORTVERSION}_i386-unknown-freebsd
+DISTNAME=	einstein_S5R2_${PORTVERSION}_i386-unknown-freebsd
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Search for gravitational waves, a distributed computing project
