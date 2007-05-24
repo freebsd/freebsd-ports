@@ -665,6 +665,7 @@
     SUBDIR += sks
     SUBDIR += slurpie
     SUBDIR += slush
+    SUBDIR += smap
     SUBDIR += smtpmap
     SUBDIR += smtpscan
     SUBDIR += smurflog
