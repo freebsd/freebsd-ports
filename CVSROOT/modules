@@ -1250,6 +1250,7 @@ cheesetracker	ports/audio/cheesetracker
 cheetah		ports/www/cheetah
 chef		ports/misc/chef
 chemeq		ports/biology/chemeq
+chemical-mime-data	ports/science/chemical-mime-data
 chemtool	ports/science/chemtool
 chemtool-devel	ports/science/chemtool-devel
 cherokee	ports/www/cherokee
