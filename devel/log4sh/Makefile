@@ -1,18 +1,18 @@
 # New ports collection makefile for:	log4sh
 # Date created:		2005-02-01
-# Whom:			David Thiel <lx@redundancy.redundancy.org
+# Whom:			David Thiel <lx@redundancy.redundancy.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	log4sh
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lx@redundancy.redundancy.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A common logging library for Bourne shell scripts
 
 PLIST_FILES=	lib/log4sh
