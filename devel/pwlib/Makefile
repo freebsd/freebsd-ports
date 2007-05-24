@@ -7,6 +7,7 @@
 
 PORTNAME=	pwlib
 PORTVERSION=	1.10.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.voxgratia.org/releases/
