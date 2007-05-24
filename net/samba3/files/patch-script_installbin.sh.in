@@ -1,5 +1,5 @@
---- script/installbin.sh.in.orig	Sun Jun 25 04:08:55 2006
-+++ script/installbin.sh.in	Sun Jun 25 04:10:00 2006
+--- ./script/installbin.sh.in.orig	Tue Jun 13 03:52:17 2006
++++ ./script/installbin.sh.in	Tue Apr 17 02:06:59 2007
 @@ -13,11 +13,7 @@
  for p in $*; do
   p2=`basename $p`

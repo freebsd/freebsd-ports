@@ -1,5 +1,5 @@
---- smbd/statvfs.c.orig	Wed Nov  9 19:28:55 2005
-+++ smbd/statvfs.c	Thu Jan  5 04:26:54 2006
+--- ./smbd/statvfs.c.orig	Thu Mar  1 05:54:06 2007
++++ ./smbd/statvfs.c	Tue Apr 17 02:06:59 2007
 @@ -3,6 +3,7 @@
     VFS API's statvfs abstraction
     Copyright (C) Alexander Bokovoy			2005
@@ -38,7 +38,7 @@
  /* 
 @@ -53,6 +75,8 @@
  {
- #if defined(LINUX)
+ #if defined(LINUX) && defined(HAVE_FSID_INT)
  	return linux_statvfs(path, statbuf);
 +#elif defined(FREEBSD)
 +	return bsd_statvfs(path, statbuf);

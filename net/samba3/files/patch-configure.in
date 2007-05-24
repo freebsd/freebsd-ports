@@ -1,6 +1,6 @@
---- configure.in.orig	Tue Nov 14 15:42:15 2006
-+++ configure.in	Sat Nov 18 03:19:57 2006
-@@ -1088,6 +1088,21 @@
+--- configure.in.orig	Mon Apr  9 19:31:00 2007
++++ configure.in	Wed Apr 18 03:30:37 2007
+@@ -1040,6 +1040,21 @@
     AC_DEFINE(HAVE_SIG_ATOMIC_T_TYPE,1,[Whether we have the atomic_t variable type])
  fi
  
@@ -22,67 +22,145 @@
  AC_CACHE_CHECK([for struct timespec type],samba_cv_struct_timespec, [
      AC_TRY_COMPILE([
  #include <sys/types.h>
-@@ -2463,32 +2478,40 @@
- # Check if FAM notifications are available. For FAM info, see
- #	http://oss.sgi.com/projects/fam/
- #	http://savannah.nongnu.org/projects/fam/
-+AC_ARG_ENABLE(fam,
-+[  --enable-fam            Turn on FAM support (default=auto)])
- 
--AC_CHECK_HEADERS(fam.h, [samba_cv_HAVE_FAM_H=yes], [samba_cv_HAVE_FAM_H=no])
--if test x"$samba_cv_HAVE_FAM_H" = x"yes"; then
--    # On IRIX, libfam requires libC, but other FAM implementations might not
--    # need it.
--    AC_CHECK_LIB(fam, FAMOpen2,
--	    [samba_cv_HAVE_LIBFAM=yes; samba_fam_libs="-lfam"],
--	    [samba_cv_HAVE_LIBFAM=no])
--
--    if test x"$samba_cv_HAVE_LIBFAM" = x"no" ; then
--	samba_fam_xtra=-lC
--	AC_CHECK_LIB_EXT(fam, samba_fam_xtra, FAMOpen2,
--		[samba_cv_HAVE_LIBFAM=yes; samba_fam_libs="-lfam -lC"],
--		[samba_cv_HAVE_LIBFAM=no])
--	unset samba_fam_xtra
-+if test x$enable_fam != xno; then
-+    AC_CHECK_HEADERS(fam.h, [samba_cv_HAVE_FAM_H=yes], [samba_cv_HAVE_FAM_H=no])
-+    if test x"$samba_cv_HAVE_FAM_H" = x"yes"; then
-+        # On IRIX, libfam requires libC, but other FAM implementations
-+	# might not need it.
-+        AC_CHECK_LIB(fam, FAMOpen2,
-+            [samba_cv_HAVE_LIBFAM=yes; samba_fam_libs="-lfam"],
-+            [samba_cv_HAVE_LIBFAM=no])
-+
-+        if test x"$samba_cv_HAVE_LIBFAM" = x"no" ; then
-+            samba_fam_xtra=-lC
-+            AC_CHECK_LIB_EXT(fam, samba_fam_xtra, FAMOpen2,
-+                [samba_cv_HAVE_LIBFAM=yes; samba_fam_libs="-lfam -lC"],
-+                [samba_cv_HAVE_LIBFAM=no])
-+            unset samba_fam_xtra
-+        fi
-     fi
--fi
- 
--if test x"$samba_cv_HAVE_LIBFAM" = x"yes" ; then
--    AC_DEFINE(HAVE_FAM_CHANGE_NOTIFY, 1,
--	    [Whether FAM is file notifications are available])
--    AC_TRY_COMPILE([#include <fam.h>],
--		[FAMCodes code = FAMChanged;],
--		AC_DEFINE(HAVE_FAM_H_FAMCODES_TYPEDEF, 1,
--		    [Whether fam.h contains a typedef for enum FAMCodes]),
--		[])
-+    if test x"$samba_cv_HAVE_LIBFAM" = x"yes" ; then
-+        AC_DEFINE(HAVE_FAM_CHANGE_NOTIFY, 1,
-+                [Whether FAM file notifications are available])
-+        AC_TRY_COMPILE([#include <fam.h>],
-+                    [FAMCodes code = FAMChanged;],
-+                    AC_DEFINE(HAVE_FAM_H_FAMCODES_TYPEDEF, 1,
-+                        [Whether fam.h contains a typedef for enum FAMCodes]),
-+                    [])
-+    fi
-+
-+    if test x$enable_fam = xyes && test x"$samba_cv_HAVE_LIBFAM" != xyes ; then
-+        AC_MSG_ERROR(FAM support requested but FAM library not available )
-+    fi
- fi
- 
+@@ -5075,7 +5090,7 @@
  #################################################
+ # check for ACL support
+ 
+-AC_MSG_CHECKING(whether to support ACLs)
++AC_MSG_NOTICE(checking whether to support ACLs...)
+ AC_ARG_WITH(acl-support,
+ [  --with-acl-support      Include ACL support (default=no)],
+ [ case "$withval" in
+@@ -5083,42 +5098,37 @@
+ 
+ 	case "$host_os" in
+ 	*sysv5*)
+-		AC_MSG_RESULT(Using UnixWare ACLs)
++		AC_MSG_NOTICE(Using UnixWare ACLs)
+ 		AC_DEFINE(HAVE_UNIXWARE_ACLS,1,[Whether UnixWare ACLs are available])
+ 		default_static_modules="$default_static_modules vfs_solarisacl"
+ 		;;
+ 	*solaris*)
+-		AC_MSG_RESULT(Using solaris ACLs)
+-		AC_DEFINE(HAVE_SOLARIS_ACLS,1,[Whether solaris ACLs are available])
++		AC_MSG_NOTICE(Using Solaris ACLs)
++		AC_DEFINE(HAVE_SOLARIS_ACLS,1,[Whether Solaris ACLs are available])
+ 		ACL_LIBS="$ACL_LIBS -lsec"
+ 		default_static_modules="$default_static_modules vfs_solarisacl"
+ 		;;
+ 	*hpux*)
+-		AC_MSG_RESULT(Using HPUX ACLs)
++		AC_MSG_NOTICE(Using HPUX ACLs)
+ 		AC_DEFINE(HAVE_HPUX_ACLS,1,[Whether HPUX ACLs are available])
+ 		default_static_modules="$default_static_modules vfs_hpuxacl"
+ 		;;
+ 	*irix*)
+-		AC_MSG_RESULT(Using IRIX ACLs)
++		AC_MSG_NOTICE(Using IRIX ACLs)
+ 		AC_DEFINE(HAVE_IRIX_ACLS,1,[Whether IRIX ACLs are available])
+ 		default_static_modules="$default_static_modules vfs_irixacl"
+ 		;;
+ 	*aix*)
+-		AC_MSG_RESULT(Using AIX ACLs)
++		AC_MSG_NOTICE(Using AIX ACLs)
+ 		AC_DEFINE(HAVE_AIX_ACLS,1,[Whether AIX ACLs are available])
+ 		default_static_modules="$default_static_modules vfs_aixacl"
+ 		;;
+ 	*osf*)
+-		AC_MSG_RESULT(Using Tru64 ACLs)
++		AC_MSG_NOTICE(Using Tru64 ACLs)
+ 		AC_DEFINE(HAVE_TRU64_ACLS,1,[Whether Tru64 ACLs are available])
+ 		ACL_LIBS="$ACL_LIBS -lpacl"
+ 		default_static_modules="$default_static_modules vfs_tru64acl"
+ 		;;
+-	*freebsd[[5-9]]*)
+-		AC_MSG_RESULT(Using FreeBSD posix ACLs)
+-		AC_DEFINE(HAVE_POSIX_ACLS,1,[Whether FreeBSD POSIX ACLs are available])
+-		AC_DEFINE(HAVE_ACL_GET_PERM_NP,1,[Whether acl_get_perm_np() is available])
+-		;;
+ 	*linux*)
+ 		AC_CHECK_LIB(attr,getxattr,[ACL_LIBS="$ACL_LIBS -lattr"])
+        		AC_CHECK_LIB(acl,acl_get_file,[ACL_LIBS="$ACL_LIBS -lacl"])
+@@ -5139,7 +5149,7 @@
+ 			LIBS=$acl_LIBS
+ 		])
+ 		if test x"$samba_cv_HAVE_POSIX_ACLS" = x"yes"; then
+-			AC_MSG_RESULT(Using posix ACLs)
++			AC_MSG_NOTICE(Using posix ACLs)
+ 			AC_DEFINE(HAVE_POSIX_ACLS,1,[Whether POSIX ACLs are available])
+ 			AC_CACHE_CHECK([for acl_get_perm_np],samba_cv_HAVE_ACL_GET_PERM_NP,[
+ 				acl_LIBS=$LIBS
+@@ -5160,12 +5170,18 @@
+ 				AC_DEFINE(HAVE_ACL_GET_PERM_NP,1,[Whether acl_get_perm_np() is available])
+ 			fi
+ 		fi
+-            ;;
++		;;
+          *)
+-		AC_CHECK_LIB(acl,acl_get_file,[ACL_LIBS="$ACL_LIBS -lacl"])
+-		AC_CACHE_CHECK([for ACL support],samba_cv_HAVE_POSIX_ACLS,[
++		AC_CHECK_LIB(acl,acl_get_file,[
++		    ACL_LIBS="$ACL_LIBS -lacl"
++		    samba_cv_acl_get_file=yes
++		],[
++		    AC_CHECK_FUNC(acl_get_file,[samba_cv_acl_get_file=yes])
++		])
++		if test x"$samba_cv_acl_get_file" = x"yes"; then
++		    AC_CACHE_CHECK([for POSIX ACL support],samba_cv_HAVE_POSIX_ACLS,[
+ 			acl_LIBS=$LIBS
+-			LIBS="$LIBS -lacl"
++			LIBS="$LIBS $ACL_LIBS"
+ 			AC_TRY_LINK([
+ 				#include <sys/types.h>
+ 				#include <sys/acl.h>
+@@ -5178,20 +5194,20 @@
+ 			[samba_cv_HAVE_POSIX_ACLS=yes],
+ 			[samba_cv_HAVE_POSIX_ACLS=no])
+ 			LIBS=$acl_LIBS
+-		])
+-		if test x"$samba_cv_HAVE_POSIX_ACLS" = x"yes"; then
+-			AC_MSG_RESULT(Using posix ACLs)
++		    ])
++		    if test x"$samba_cv_HAVE_POSIX_ACLS" = x"yes"; then
++			AC_MSG_NOTICE(Using POSIX ACLs)
+ 			AC_DEFINE(HAVE_POSIX_ACLS,1,[Whether POSIX ACLs are available])
+ 			AC_CACHE_CHECK([for acl_get_perm_np],samba_cv_HAVE_ACL_GET_PERM_NP,[
+ 				acl_LIBS=$LIBS
+-				LIBS="$LIBS -lacl"
++				LIBS="$LIBS $ACL_LIBS"
+ 				AC_TRY_LINK([
+ 					#include <sys/types.h>
+ 					#include <sys/acl.h>
+ 				],[
+ 					acl_permset_t permset_d;
+ 					acl_perm_t perm;
+-					return acl_get_perm_np( permset_d, perm);
++					return acl_get_perm_np(permset_d, perm);
+ 				],
+ 				[samba_cv_HAVE_ACL_GET_PERM_NP=yes],
+ 				[samba_cv_HAVE_ACL_GET_PERM_NP=no])
+@@ -5200,17 +5216,22 @@
+ 			if test x"$samba_cv_HAVE_ACL_GET_PERM_NP" = x"yes"; then
+ 				AC_DEFINE(HAVE_ACL_GET_PERM_NP,1,[Whether acl_get_perm_np() is available])
+ 			fi
++		    fi
++		fi
++		if test x"$samba_cv_HAVE_POSIX_ACLS" != x"yes"; then
++		    AC_MSG_NOTICE(No POSIX ACLs support is availble)
++		    AC_DEFINE(HAVE_NO_ACLS,1,[Whether no ACLs support is available])
+ 		fi
+             ;;
+         esac
+         ;;
+   *)
+-    AC_MSG_RESULT(no)
++    AC_MSG_NOTICE(No ACLs support is availble)
+     AC_DEFINE(HAVE_NO_ACLS,1,[Whether no ACLs support is available])
+     ;;
+   esac ],
++  AC_MSG_NOTICE(No ACLs support is built in)
+   AC_DEFINE(HAVE_NO_ACLS,1,[Whether no ACLs support should be built in])
+-  AC_MSG_RESULT(no)
+ )
+ 
+ if test x"$samba_cv_HAVE_POSIX_ACLS" = x"yes"; then
