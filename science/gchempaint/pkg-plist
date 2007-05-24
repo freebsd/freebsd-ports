@@ -1,37 +1,4 @@
 bin/gchempaint
-bin/gchempaint-viewer
-include/gchempaint/about.h
-include/gchempaint/application.h
-include/gchempaint/arrow.h
-include/gchempaint/atom.h
-include/gchempaint/bond.h
-include/gchempaint/cycle.h
-include/gchempaint/dialog.h
-include/gchempaint/docprop.h
-include/gchempaint/document.h
-include/gchempaint/electron.h
-include/gchempaint/filechooser.h
-include/gchempaint/fragment.h
-include/gchempaint/fragment-atom.h
-include/gchempaint/chain.h
-include/gchempaint/mendeleiev.h
-include/gchempaint/mesomery.h
-include/gchempaint/mesomery-arrow.h
-include/gchempaint/mesomer.h
-include/gchempaint/molecule.h
-include/gchempaint/operation.h
-include/gchempaint/plugin.h
-include/gchempaint/reactant.h
-include/gchempaint/reaction.h
-include/gchempaint/reaction-arrow.h
-include/gchempaint/reaction-operator.h
-include/gchempaint/reaction-step.h
-include/gchempaint/settings.h
-include/gchempaint/text.h
-include/gchempaint/text-object.h
-include/gchempaint/tool.h
-include/gchempaint/view.h
-include/gchempaint/widgetdata.h
 lib/gchempaint/plugins/arrows.la
 lib/gchempaint/plugins/arrows.so
 lib/gchempaint/plugins/atoms.la
@@ -46,63 +13,51 @@ lib/gchempaint/plugins/templates.la
 lib/gchempaint/plugins/templates.so
 lib/gchempaint/plugins/text.la
 lib/gchempaint/plugins/text.so
+lib/goffice/0.4.0/plugins/gchempaint/gchempaint.la
+lib/goffice/0.4.0/plugins/gchempaint/gchempaint.so
+lib/goffice/0.4.0/plugins/gchempaint/plugin.xml
+lib/libgcpcanvas.la
+lib/libgcpcanvas.so
+lib/libgcpcanvas.so.0
 lib/libgchempaint.la
 lib/libgchempaint.so
-lib/libgchempaint.so.6
-libdata/bonobo/servers/gchempaint.server
-share/gnome/applications/gchempaint.desktop
-share/gnome/gchempaint/pixmaps/gchempaint_logo.png
-share/gnome/gchempaint/templates/templates.xml
-share/gnome/gchempaint/ui/arrows.xml
-share/gnome/gchempaint/ui/arrowtool.glade
-share/gnome/gchempaint/ui/arrow1-24.png
-share/gnome/gchempaint/ui/arrow2-24.png
-share/gnome/gchempaint/ui/atoms.xml
-share/gnome/gchempaint/ui/bonds.xml
-share/gnome/gchempaint/ui/bond24.png
-share/gnome/gchempaint/ui/cn-24.png
-share/gnome/gchempaint/ui/cyclentool.glade
-share/gnome/gchempaint/ui/cycles.xml
-share/gnome/gchempaint/ui/c3-24.png
-share/gnome/gchempaint/ui/c4-24.png
-share/gnome/gchempaint/ui/c5-24.png
-share/gnome/gchempaint/ui/c6-24.png
-share/gnome/gchempaint/ui/c7-24.png
-share/gnome/gchempaint/ui/c8-24.png
-share/gnome/gchempaint/ui/docprop.glade
-share/gnome/gchempaint/ui/downbond24.png
-share/gnome/gchempaint/ui/electronpair24.png
-share/gnome/gchempaint/ui/element24.png
-share/gnome/gchempaint/ui/eraser24.png
-share/gnome/gchempaint/ui/fragment24.png
-share/gnome/gchempaint/ui/gchempaint.xml
-share/gnome/gchempaint/ui/group.glade
-share/gnome/gchempaint/ui/horiz24.png
-share/gnome/gchempaint/ui/charge-24.png
-share/gnome/gchempaint/ui/charge+24.png
-share/gnome/gchempaint/ui/mendeleiev.glade
-share/gnome/gchempaint/ui/merge24.png
-share/gnome/gchempaint/ui/mesomery24.png
-share/gnome/gchempaint/ui/new-template.glade
-share/gnome/gchempaint/ui/retrosynth24.png
-share/gnome/gchempaint/ui/rotate24.png
-share/gnome/gchempaint/ui/selection24.png
-share/gnome/gchempaint/ui/selection.xml
-share/gnome/gchempaint/ui/subscript24.png
-share/gnome/gchempaint/ui/superscript24.png
-share/gnome/gchempaint/ui/templates.glade
-share/gnome/gchempaint/ui/templates.xml
-share/gnome/gchempaint/ui/text24.png
-share/gnome/gchempaint/ui/text.xml
-share/gnome/gchempaint/ui/unpairedelectron24.png
-share/gnome/gchempaint/ui/upbond24.png
-share/gnome/gchempaint/ui/vert24.png
-share/gnome/gchempaint/ui/xbond24.png
+lib/libgchempaint.so.0
+share/applications/gchempaint.desktop
+share/gchempaint/pixmaps/gchempaint_logo.png
+share/gchempaint/templates/haworth.xml
+share/gchempaint/templates/templates.xml
+share/gchempaint/ui/H-pos.glade
+share/gchempaint/ui/arrow.png
+share/gchempaint/ui/arrowtool.glade
+share/gchempaint/ui/bond.glade
+share/gchempaint/ui/chain.glade
+share/gchempaint/ui/cycle.glade
+share/gchempaint/ui/cyclen.glade
+share/gchempaint/ui/docprop.glade
+share/gchempaint/ui/fontsel.glade
+share/gchempaint/ui/gchempaint.xml
+share/gchempaint/ui/group.glade
+share/gchempaint/ui/new-template.glade
+share/gchempaint/ui/newfiledlg.glade
+share/gchempaint/ui/preferences.glade
+share/gchempaint/ui/stringdlg.glade
+share/gchempaint/ui/templates.glade
+share/gchempaint/ui/tools.glade
+share/gchempaint/ui/zoom.glade
 share/gnome/help/gchempaint/C/legal.xml
 share/gnome/help/gchempaint/C/gchempaint.xml
+share/gnome/help/gchempaint/C/figures/Hposdlg.png
 share/gnome/help/gchempaint/C/figures/arrow-heads.png
+share/gnome/help/gchempaint/C/figures/arrow-opts.png
+share/gnome/help/gchempaint/C/figures/arrows.png
+share/gnome/help/gchempaint/C/figures/bond-opts.png
 share/gnome/help/gchempaint/C/figures/bond.png
+share/gnome/help/gchempaint/C/figures/chain-opt.png
+share/gnome/help/gchempaint/C/figures/chain.png
 share/gnome/help/gchempaint/C/figures/charges.png
+share/gnome/help/gchempaint/C/figures/choose-elt.png
+share/gnome/help/gchempaint/C/figures/cycle-opt.png
+share/gnome/help/gchempaint/C/figures/cyclentool-opt.png
 share/gnome/help/gchempaint/C/figures/cyclentool.png
 share/gnome/help/gchempaint/C/figures/cycletools.png
 share/gnome/help/gchempaint/C/figures/delocalized-bond.png
@@ -114,36 +69,43 @@ share/gnome/help/gchempaint/C/figures/group.png
 share/gnome/help/gchempaint/C/figures/main-window.png
 share/gnome/help/gchempaint/C/figures/mechanism-arrows.png
 share/gnome/help/gchempaint/C/figures/mendeleiev.png
+share/gnome/help/gchempaint/C/figures/merge.png
 share/gnome/help/gchempaint/C/figures/merge1.png
 share/gnome/help/gchempaint/C/figures/merge2.png
 share/gnome/help/gchempaint/C/figures/merge3.png
-share/gnome/help/gchempaint/C/figures/merge.png
+share/gnome/help/gchempaint/C/figures/mesomery-arrow.png
 share/gnome/help/gchempaint/C/figures/mesomery1.png
 share/gnome/help/gchempaint/C/figures/mesomery2.png
 share/gnome/help/gchempaint/C/figures/mesomery3.png
-share/gnome/help/gchempaint/C/figures/mesomery-arrow.png
 share/gnome/help/gchempaint/C/figures/new-template.png
+share/gnome/help/gchempaint/C/figures/newfile.png
 share/gnome/help/gchempaint/C/figures/plus.png
+share/gnome/help/gchempaint/C/figures/preferences.png
+share/gnome/help/gchempaint/C/figures/prefs-arrows.png
+share/gnome/help/gchempaint/C/figures/prefs-atoms-font.png
+share/gnome/help/gchempaint/C/figures/prefs-atoms-other.png
+share/gnome/help/gchempaint/C/figures/prefs-bonds.png
+share/gnome/help/gchempaint/C/figures/prefs-text.png
 share/gnome/help/gchempaint/C/figures/properties.png
+share/gnome/help/gchempaint/C/figures/reaction-arrows.png
 share/gnome/help/gchempaint/C/figures/reaction1.png
 share/gnome/help/gchempaint/C/figures/reaction2.png
 share/gnome/help/gchempaint/C/figures/reaction3.png
 share/gnome/help/gchempaint/C/figures/reaction4.png
 share/gnome/help/gchempaint/C/figures/reaction5.png
-share/gnome/help/gchempaint/C/figures/reaction-arrows.png
+share/gnome/help/gchempaint/C/figures/retrosynthesis.png
 share/gnome/help/gchempaint/C/figures/retrosynthesis1.png
 share/gnome/help/gchempaint/C/figures/retrosynthesis2.png
 share/gnome/help/gchempaint/C/figures/retrosynthesis3.png
 share/gnome/help/gchempaint/C/figures/retrosynthesis4.png
-share/gnome/help/gchempaint/C/figures/retrosynthesis.png
 share/gnome/help/gchempaint/C/figures/rotate.png
 share/gnome/help/gchempaint/C/figures/selection.png
 share/gnome/help/gchempaint/C/figures/stereobonds.png
-share/gnome/help/gchempaint/C/figures/templates.png
 share/gnome/help/gchempaint/C/figures/templates-tools.png
+share/gnome/help/gchempaint/C/figures/templates.png
 share/gnome/help/gchempaint/C/figures/text.png
 share/gnome/help/gchempaint/C/figures/texttools-bar.png
-share/gnome/mimelnk/application/x-gchempaint.desktop
+share/gnome/help/gchempaint/C/figures/toolbox.png
 share/gnome/omf/gchempaint/gchempaint-C.omf
 share/icons/hicolor/32x32/apps/gchempaint.png
 share/icons/hicolor/32x32/mimetypes/gnome-mime-application-x-gchempaint.png
@@ -161,20 +123,20 @@ share/locale/ru/LC_MESSAGES/gchempaint.mo
 share/locale/zh_CN/LC_MESSAGES/gchempaint.mo
 share/mime/application/x-gchempaint.xml
 share/mime/packages/gchempaint.xml
-share/mime/chemical/x-chemdraw.xml
 share/mime/chemical/x-cml.xml
-@dirrm share/gnome/gchempaint/ui
-@dirrm share/gnome/gchempaint/templates
-@dirrm share/gnome/gchempaint/pixmaps
-@dirrm share/gnome/gchempaint
+share/mimelnk/application/x-gchempaint.desktop
+@dirrmtry share/mimelnk/application
+@dirrmtry share/mimelnk
+@dirrm share/gchempaint/ui
+@dirrm share/gchempaint/templates
+@dirrm share/gchempaint/pixmaps
+@dirrm share/gchempaint
 @dirrm share/gnome/help/gchempaint/C/figures
 @dirrm share/gnome/help/gchempaint/C
 @dirrm share/gnome/help/gchempaint
-@dirrmtry share/gnome/mimelnk/application
-@dirrmtry share/gnome/mimelnk
 @dirrm share/gnome/omf/gchempaint
+@dirrm lib/goffice/0.4.0/plugins/gchempaint
 @dirrm lib/gchempaint/plugins
 @dirrm lib/gchempaint
-@dirrm include/gchempaint
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
