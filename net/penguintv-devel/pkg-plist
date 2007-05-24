@@ -70,6 +70,8 @@
 %%PYTHON_SITELIBDIR%%/penguintv/ajax/__init__.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/feedparser.py
 %%PYTHON_SITELIBDIR%%/penguintv/feedparser.pyc
+%%PYTHON_SITELIBDIR%%/penguintv/itunes.py
+%%PYTHON_SITELIBDIR%%/penguintv/itunes.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/penguintv.py
 %%PYTHON_SITELIBDIR%%/penguintv/penguintv.pyc
 %%PYTHON_SITELIBDIR%%/penguintv/ptvDB.py
