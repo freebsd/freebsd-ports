@@ -7,6 +7,7 @@
 
 PORTNAME=	phpicalendar
 PORTVERSION=	2.22
+PORTREVISION=	1
 CATEGORIES=	deskutils www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,7 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	Webbased calendar with iCal support
 
 NO_BUILD=	yes
-USE_PHP=	session
+USE_PHP=	session pcre
 SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}/
 
