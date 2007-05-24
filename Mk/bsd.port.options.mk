@@ -5,9 +5,9 @@
 #
 # usage:
 #
-#	.include "bsd.port.pre.mk"
-#	<deal with user options>
 #	.include "bsd.port.options.mk"
+#	<deal with user options>
+#	.include "bsd.port.pre.mk"
 #	<other work, including adjusting dependencies>
 #	.include "bsd.port.post.mk"
 #
