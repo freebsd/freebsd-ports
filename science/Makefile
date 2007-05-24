@@ -15,6 +15,7 @@
     SUBDIR += cdf
     SUBDIR += cdo
     SUBDIR += cgnslib
+    SUBDIR += chemical-mime-data
     SUBDIR += chemtool
     SUBDIR += chemtool-devel
     SUBDIR += clhep
