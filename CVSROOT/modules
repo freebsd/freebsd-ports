@@ -943,6 +943,7 @@ boaconstructor	ports/devel/boaconstructor
 bobot++		ports/irc/bobot++
 bochs		ports/emulators/bochs
 boclient	ports/net/boclient
+bodr		ports/science/bodr
 boehm-gc	ports/devel/boehm-gc
 bogged		ports/games/bogged
 bogofilter	ports/mail/bogofilter
