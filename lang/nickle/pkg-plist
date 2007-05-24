@@ -47,6 +47,7 @@ include/nickle/value.h
 %%DATADIR%%/examples/turtle/snowflake.5c
 %%DATADIR%%/examples/turtle/snowflake.tex
 %%DATADIR%%/examples/turtle/turtle.5c
+%%DATADIR%%/examples/fourfours.5c
 %%DATADIR%%/file.5c
 %%DATADIR%%/history.5c
 %%DATADIR%%/math.5c
