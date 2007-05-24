@@ -14505,6 +14505,7 @@ sma		ports/mail/sma
 smail		ports/mail/smail
 smake		ports/devel/smake
 smalltalk	ports/lang/smalltalk
+smap		ports/security/smap
 smartdoc	ports/textproc/smartdoc
 smartdoc-devel	ports/textproc/smartdoc-devel
 smarteiffel	ports/lang/smarteiffel
