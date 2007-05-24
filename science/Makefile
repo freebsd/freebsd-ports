@@ -9,6 +9,7 @@
     SUBDIR += afni
     SUBDIR += at
     SUBDIR += bblimage
+    SUBDIR += bodr
     SUBDIR += buddy
     SUBDIR += cdcl
     SUBDIR += cdf
