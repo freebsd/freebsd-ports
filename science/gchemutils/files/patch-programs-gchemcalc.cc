@@ -1,5 +1,5 @@
---- programs/gchemcalc.cc.orig	Sat Feb 25 18:35:50 2006
-+++ programs/gchemcalc.cc	Mon Mar 20 18:22:41 2006
+--- programs/calc/gchemcalc.cc.orig	Sat Feb 25 18:35:50 2006
++++ programs/calc/gchemcalc.cc	Mon Mar 20 18:22:41 2006
 @@ -140,7 +140,7 @@
  		} else {
  			if (prec < 0) {
