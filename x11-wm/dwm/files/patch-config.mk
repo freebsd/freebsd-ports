@@ -1,5 +1,5 @@
---- config.mk.orig	Wed Feb  7 12:42:14 2007
-+++ config.mk	Thu Feb  8 12:43:49 2007
+--- config.mk.orig	Mon May 21 14:37:17 2007
++++ config.mk	Mon May 21 18:20:11 2007
 @@ -4,18 +4,18 @@
  # Customize below to fit your system
  
@@ -21,7 +21,8 @@
  # flags
 -CFLAGS = -Os ${INCS} -DVERSION=\"${VERSION}\"
 +CFLAGS+= ${INCS} -DVERSION=\"${VERSION}\"
- LDFLAGS = ${LIBS}
+-LDFLAGS = -s ${LIBS}
++LDFLAGS+= ${LIBS}
  #CFLAGS = -g -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\"
  #LDFLAGS = -g ${LIBS}
 @@ -26,4 +26,4 @@
