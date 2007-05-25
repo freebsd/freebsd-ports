@@ -556,6 +556,10 @@ CONFIGURE_ARGS+=--enable-gd-jis-conv
 .endif
 
 .if ${PHP_MODNAME} == "mbstring"
+.	if ${OSVERSION} < 600000 && ${ARCH} == "amd64"
+BROKEN=	Doesn't build on AMD64 with FreeBSD 5.x (varargs issue)
+.	endif
+
 .	if defined(WITHOUT_REGEX)
 CONFIGURE_ARGS+=--disable-mbregex
 .	endif
@@ -572,10 +576,6 @@ post-extract:
 .endif
 
 .if ${PHP_MODNAME} == "oci8" || ${PHP_MODNAME} == "pdo_oci"
-. if ${OSVERSION} < 500000
-BROKEN=	Doesn't work on FreeBSD 4.x
-. endif
-
 pre-configure:
 	@cd ${WRKSRC}; \
 	for lib in ${LOCALBASE}/oracle8-client/lib/libclntsh /usr/lib/libpthread; do \
