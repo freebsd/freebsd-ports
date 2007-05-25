@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+# $Id$
+#
+
+# PROVIDE: varnishlog
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable varnishlog:
+#
+#varnishlog_enable="YES"
+#
+# Configuration variables and their default values:
+#
+#varnishlog_file=${varnishlog_file:-"/var/log/varnish.log"}
+#varnishlog_flags=${varnishlog_flags:-"-D -P ${pidfile} -a -w ${varnishlog_file}"}
+#
+# See varnishlog(1) for a detailed overview of command-line options.
+#
+
+. %%RC_SUBR%%
+
+name=varnishlog
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/varnishlog"
+pidfile="/var/run/${name}.pid"
+
+# set defaults
+
+varnishlog_enable=${varnishlog_enable:-"NO"}
+varnishlog_file=${varnishlog_file:-"/var/log/varnish.log"}
+varnishlog_flags=${varnishlog_flags:-"-P ${pidfile} -D -a -w ${varnishlog_file}"}
+
+load_rc_config ${name}
+
+run_rc_command "$1"

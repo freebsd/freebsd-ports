@@ -3,6 +3,7 @@ bin/varnishlog
 bin/varnishncsa
 bin/varnishstat
 bin/varnishtop
+etc/varnish/default.vcl
 lib/libvarnish.so.0
 lib/libvarnish.so
 lib/libvarnish.la
@@ -16,3 +17,4 @@ lib/libvcl.so
 lib/libvcl.la
 lib/libvcl.a
 sbin/varnishd
+@dirrm etc/varnish
