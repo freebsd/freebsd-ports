@@ -1,7 +1,9 @@
 bin/lockersh
 bin/pidwatch
 bin/lockerd
+bin/pidstat
 bin/pidstatd
+bin/uriexec
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Locker/.packlist
 %%SITE_PERL%%/IPC/Locker/Server.pm
 %%SITE_PERL%%/IPC/Locker.pm
