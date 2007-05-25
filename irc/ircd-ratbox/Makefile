@@ -9,16 +9,14 @@
 PORTNAME=	ircd-ratbox
 PORTVERSION=	2.2.5
 CATEGORIES=	irc ipv6
-MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/	\
-		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/	\
-		http://www.ircd-ratbox.org/download/		\
-		ftp://ftp.parodius.com/pub/ircd-ratbox/
+MASTER_SITES=	ftp://ftp.ircd-ratbox.org/pub/ircd-ratbox/old/		\
+		ftp://ftp.demon.co.uk/pub/mirrors/ircd-ratbox/old/	\
+		http://www.ircd-ratbox.org/download/old/		\
+		ftp://ftp.parodius.com/pub/ircd-ratbox/old/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	An advanced, stable IRC daemon, used on many EFnet servers
-
-BROKEN=		Unfetchable
 
 CONFLICTS=	ircd-ratbox-devel-[0-9]*
 
