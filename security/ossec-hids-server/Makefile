@@ -15,6 +15,8 @@ PKGNAMESUFFIX?=	-server
 MAINTAINER=	valerio.daelli@gmail.com
 COMMENT=	A security tool to monitor and check logs and intrusions
 
+BROKEN=		Unfetchable
+
 USE_RC_SUBR=	ossec-hids
 
 .include <bsd.port.pre.mk>

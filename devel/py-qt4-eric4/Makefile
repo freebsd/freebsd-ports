@@ -17,6 +17,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 INSTALL_CMD=	install.py -c -f eric4config.freebsd
 PLIST_FILES=
 
+BROKEN=		Unfetchable
+
 do-configure:
 	${SED}  -e 's,PYTHON_SITELIBDIR,${PYTHON_SITELIBDIR},' \
 		-e 's,PREFIX,${PREFIX},' \

@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Math::BigInt - Arbitrary size integer math package
 
+BROKEN=		Unfetchable
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Math::BigFloat.3 \
