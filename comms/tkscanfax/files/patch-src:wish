@@ -1,10 +1,10 @@
---- tkfax.orig	Sun Nov 14 20:59:03 2004
+-- tkfax.orig	Sun Nov 14 20:59:03 2004
 +++ tkfax	Sun Nov 14 20:59:40 2004
 @@ -1,6 +1,6 @@
  #!/bin/sh
  # the next line restarts using wish \
 -exec wish "$0" "$@"
-+exec wish8.3 "$0" "$@"
++exec wish8.4 "$0" "$@"
  
  set fax(libdir) /usr/local/lib/tkscanfax1
  if [ file exist fax-init.tcl ] { set fax(libdir) [pwd] }
@@ -14,7 +14,7 @@
  #!/bin/sh
  # the next line restarts using wish \
 -exec wish "$0" "$@"
-+exec wish8.3 "$0" "$@"
++exec wish8.4 "$0" "$@"
  
  # Set TkScan installation directory.
  
