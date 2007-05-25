@@ -1,9 +1,11 @@
 bin/homebank
+share/applications/homebank.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%GNOME:%%share/gnome/application-registry/homebank.applications
 %%DATADIR%%/images/account.svg
 %%DATADIR%%/images/archive.svg
 %%DATADIR%%/images/banktransfert.svg
@@ -18,6 +20,9 @@ bin/homebank
 %%DATADIR%%/images/filter.svg
 %%DATADIR%%/images/homebank.svg
 %%DATADIR%%/images/legend.svg
+%%DATADIR%%/images/lpi-bug.png
+%%DATADIR%%/images/lpi-help.png
+%%DATADIR%%/images/lpi-translate.png
 %%DATADIR%%/images/lst_auto.svg
 %%DATADIR%%/images/lst_edit.svg
 %%DATADIR%%/images/lst_new.svg
@@ -32,6 +37,7 @@ bin/homebank
 %%DATADIR%%/images/ope_valid.svg
 %%DATADIR%%/images/payee.svg
 %%DATADIR%%/images/personaltransfert.svg
+%%DATADIR%%/images/prf_columns.svg
 %%DATADIR%%/images/prf_display.svg
 %%DATADIR%%/images/prf_euro.svg
 %%DATADIR%%/images/prf_general.svg
@@ -49,10 +55,26 @@ bin/homebank
 %%DATADIR%%/images/view_line.svg
 %%DATADIR%%/images/view_list.svg
 %%DATADIR%%/images/view_pie.svg
+share/icons/hicolor/16x16/apps/homebank.png
+share/icons/hicolor/24x24/apps/homebank.png
+share/icons/hicolor/32x32/apps/homebank.png
+share/icons/hicolor/48x48/apps/homebank.png
+share/icons/hicolor/scalable/apps/homebank.svg
 share/locale/es/LC_MESSAGES/homebank.mo
 share/locale/fr/LC_MESSAGES/homebank.mo
 share/locale/nl/LC_MESSAGES/homebank.mo
+share/locale/pt_BR/LC_MESSAGES/homebank.mo
 share/locale/ru/LC_MESSAGES/homebank.mo
+share/locale/zh_CN/LC_MESSAGES/homebank.mo
+share/mime-info/homebank.keys
+share/mime-info/homebank.mime
+share/mime/packages/homebank.xml
+share/pixmaps/homebank.svg
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/applications
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
