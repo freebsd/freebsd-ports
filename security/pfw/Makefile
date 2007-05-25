@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pfw
-PORTVERSION=	0.7.7
+PORTVERSION=	0.7.8
 CATEGORIES=	security www
 MASTER_SITES=	http://www.allard.nu/pfw/download/
 EXTRACT_SUFX=	.tgz
