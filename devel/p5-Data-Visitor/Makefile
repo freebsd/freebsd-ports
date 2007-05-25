@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-Visitor
-PORTVERSION=	0.05
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=	Data::Visitor.3 \
 	Data::Visitor::Callback.3
