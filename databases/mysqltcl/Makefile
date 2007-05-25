@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysqltcl
-PORTVERSION=	3.02
+PORTVERSION=	3.03
 CATEGORIES=	databases tcl83 tcl84
 MASTER_SITES=	http://www.xdobry.de/mysqltcl/
 
@@ -26,7 +26,8 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR} \
 			--with-mysql-include=${LOCALBASE}/include/mysql \
-			--with-mysql-lib=${LOCALBASE}/lib/mysql
+			--with-mysql-lib=${LOCALBASE}/lib/mysql \
+			--exec-prefix=${PREFIX}
 
 PLIST_SUB+=		LIB_DIR=${PORTNAME}-${PORTVERSION} \
 			LIB_NAME=libmysqltcl${PORTVERSION}.so
