@@ -24,6 +24,12 @@ MANL=		artsportagg.l artsports.l artsprotos.l artsnets.l artsdump.l \
 		artsasagg.l artsportms.l artsportmagg.l artsintfms.l \
 		artsintfmagg.l artsnexthops.l artsnexthopagg.l artstos.l
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/ltconfig
 
@@ -41,4 +47,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

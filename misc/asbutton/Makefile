@@ -21,6 +21,12 @@ MAKE_ARGS=	INCLUDES="-I${X11BASE}/include/X11 -I${X11BASE}/include" \
 		LIBINC="-L${X11BASE}/lib" LIBS="-lm -lX11 -lXpm -lXext" \
 		CCFLAGS="${CFLAGS}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's:gcc :${CC} :' ${WRKSRC}/Makefile
 
@@ -37,4 +43,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/.asbuttonrc ${PREFIX}/share/examples/asbutton/asbuttonrc && ${CHMOD} u+rw ${PREFIX}/share/examples/asbutton/asbuttonrc
 	@${ECHO} "===>   Use 'asbutton -h' for help."
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
