@@ -20,6 +20,8 @@ RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 RESTRICTED=	Not sure about redistribution rights
 
+BROKEN=		Checksum mismatch
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\..*//g}/
 
 USE_LINUX=	yes
