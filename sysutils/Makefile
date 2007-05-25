@@ -348,6 +348,7 @@
     SUBDIR += linux-afaapps
     SUBDIR += linux-megacli
     SUBDIR += linux-megamgr
+    SUBDIR += linux-nero
     SUBDIR += linuxfdisk
     SUBDIR += lire
     SUBDIR += livecd
