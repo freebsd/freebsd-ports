@@ -7,7 +7,7 @@
 
 PORTNAME=	ogre3d
 PORTVERSION=	1.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=ogre
@@ -22,13 +22,14 @@ LIB_DEPENDS=	zzip.13:${PORTSDIR}/devel/zziplib \
 WRKSRC=		${WRKDIR}/ogrenew
 CONFIGURE_ARGS=	--disable-cg --program-transform-name= --enable-static --with-platform=SDL \
 		--with-cppunit-prefix=/nonexistent
-CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -DNDEBUG"
+CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -DNDEBUG" \
+		ZZIPLIB_CFLAGS="-I${LOCALBASE}/include" \
+		ZZIPLIB_LIBS="-L${LOCALBASE}/lib -lzzip"
 GNU_CONFIGURE=	YES
 USE_AUTOTOOLS=	libtool:15
 USE_LDCONFIG=	YES
-USE_GCC=	3.4+
 USE_BZIP2=	YES
-USE_X_PREFIX=	YES
+USE_XLIB=	YES
 USE_GNOME=	gnomehack
 USE_GMAKE=	YES
 USE_SDL=	sdl
