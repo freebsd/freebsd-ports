@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gperf
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gperf
@@ -17,6 +17,8 @@ COMMENT=	Generates perfect hash functions for sets of keywords
 GNU_CONFIGURE=	yes
 MAN1=		gperf.1
 INFO=		gperf
-CONFIGURE_ARGS+=	--mandir=${PREFIX}/man
+CONFIGURE_ARGS+=	--mandir=${PREFIX}/man \
+			--infodir=${PREFIX}/${INFO_PATH} \
+			--docdir=${DOCSDIR}
 
 .include <bsd.port.mk>
