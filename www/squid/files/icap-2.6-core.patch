@@ -13,14 +13,17 @@ at cvs.devel.squid-cache.org using
 
 cvs diff -u -b -N -kk -rZ-icap-2_6_merge_HEAD -ricap-2_6
 
+and manually adapted because of changes in the Squid code base.
+
 See http://devel.squid-cache.org/icap/ for further information
 about the ICAP client project.
 
-Patch last updated: 2007-03-18
+Patch last updated: 2007-05-17
 
-Note: the patchset needs manual adjustments once in a while because
-      the ICAP developers develop against Squid-2-HEAD and not
-      Squid-2.6.
+Note: ICAP client support for Squid-2 is no longer supported by
+      the Squid developers. This means that even known bugs in this
+      code will not be fixed. If you need ICAP support please try
+      Squid-3.
 
 Index: errors/Azerbaijani/ERR_ICAP_FAILURE
 ===================================================================
@@ -2644,25 +2647,9 @@ diff -p -u -b -r1.57 -r1.45.4.6
  #endif /* SQUID_ENUMS_H */
 Index: src/forward.c
 ===================================================================
-RCS file: /cvsroot/squid/squid/src/forward.c,v
-retrieving revision 1.43
-retrieving revision 1.20.4.10
-diff -p -u -b -r1.43 -r1.20.4.10
---- src/forward.c	10 Dec 2006 05:51:43 -0000	1.43
-+++ src/forward.c	12 Dec 2006 22:49:45 -0000	1.20.4.10
-@@ -358,8 +358,9 @@ fwdConnectDone(int server_fd, int status
-     } else {
- 	debug(17, 3) ("fwdConnectDone: FD %d: '%s'\n", server_fd, storeUrl(fwdState->entry));
- 	fd_note(server_fd, storeUrl(fwdState->entry));
--	fd_table[server_fd].uses++;
--	if (fd_table[server_fd].uses == 1 && fs->peer)
-+	fd_table[server_fd].pconn.uses++;
-+	fd_table[server_fd].pconn.type = 1;
-+	if (fd_table[server_fd].pconn.uses ==1 && fs->peer)
- 	    peerConnectSucceded(fs->peer);
- #if USE_SSL
- 	if ((fs->peer && fs->peer->use_ssl) ||
-@@ -941,6 +942,8 @@ fwdCheckDeferRead(int fd, void *data)
+--- src/forward.c	Tue Apr 17 11:35:17 2007
++++ src/forward.c	Thu May 17 13:08:19 2007
+@@ -943,6 +943,8 @@ fwdCheckDeferRead(int fd, void *data)
  void
  fwdFail(FwdState * fwdState, ErrorState * errorState)
  {
@@ -2671,7 +2658,7 @@ diff -p -u -b -r1.43 -r1.20.4.10
      debug(17, 3) ("fwdFail: %s \"%s\"\n\t%s\n",
  	err_type_str[errorState->type],
  	httpStatusString(errorState->http_status),
-@@ -979,6 +982,8 @@ fwdPeerClosed(int fd, void *data)
+@@ -981,6 +983,8 @@ fwdPeerClosed(int fd, void *data)
  void
  fwdUnregister(int fd, FwdState * fwdState)
  {
@@ -2680,7 +2667,7 @@ diff -p -u -b -r1.43 -r1.20.4.10
      debug(17, 3) ("fwdUnregister: %s\n", storeUrl(fwdState->entry));
      assert(fd == fwdState->server_fd);
      assert(fd > -1);
-@@ -998,7 +1003,10 @@ fwdUnregister(int fd, FwdState * fwdStat
+@@ -1000,7 +1004,10 @@ fwdUnregister(int fd, FwdState * fwdStat
  void
  fwdComplete(FwdState * fwdState)
  {
@@ -2969,7 +2956,7 @@ diff -p -u -b -r1.58 -r1.28.4.13
 +		 * the icap server, rather than put it into
 +		 * a StoreEntry
 +		 */
-+		storeClientUnregisterAbort(httpState->entry);
++		storeUnregisterAbort(httpState->entry);
 +		storeUnlockObject(httpState->entry);
 +		/*
 +		 * create a bogus entry because the code assumes one is

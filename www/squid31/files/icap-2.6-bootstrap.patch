@@ -7,10 +7,10 @@ ICAP patchset.
 
 Please see icap-2.6-core.patch for further information.
 
-Patch last updated: 2006-11-04
+Patch last updated: 2007-05-17
 
---- configure.orig Sat Nov  4 16:28:41 2006
-+++ configure	Sat Nov  4 16:31:58 2006
+--- configure.orig	Thu May 17 13:34:14 2007
++++ configure	Thu May 17 13:35:15 2007
 @@ -312,7 +312,7 @@
  # include <unistd.h>
  #endif"
@@ -28,6 +28,15 @@ Patch last updated: 2006-11-04
    --enable-useragent-log  Enable logging of User-Agent header
    --enable-referer-log    Enable logging of Referer header
    --disable-wccp          Disable Web Cache Coordination V1 Protocol
+@@ -1818,7 +1818,7 @@
+ 
+ # Define the identity of the package.
+  PACKAGE='squid'
+- VERSION='2.6.STABLE13'
++ VERSION='2.6.STABLE13+ICAP'
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
 @@ -3954,6 +3955,40 @@
  fi;
  

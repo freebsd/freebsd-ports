@@ -75,20 +75,19 @@
 #     Enable experimental multicast notification of cachemisses.
 
 PORTNAME=	squid
-PORTVERSION=	2.6.12
-PORTREVISION=	1
+PORTVERSION=	2.6.13
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://ftp.vistech.net/pub/squid/%SUBDIR%/ \
 		ftp://mirrors.24-7-solutions.net/pub/squid/%SUBDIR%/ \
-		ftp://sunsite.auc.dk/pub/infosystems/squid/%SUBDIR%/ \
+		ftp://ftp.belnet.be/packages/squid/pub/%SUBDIR%/ \
 		ftp://ftp.nl.uu.net/pub/unix/www/squid/%SUBDIR%/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/www/Squid/%SUBDIR%/ \
 		ftp://ftp.ccs.neu.edu/pub/mirrors/squid.nlanr.net/pub/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.6.STABLE12
+DISTNAME=	squid-2.6.STABLE13
 DIST_SUBDIR=	squid2.6
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
@@ -280,10 +279,6 @@ CONFIGURE_ARGS+=	--enable-ssl \
 			--with-openssl="${OPENSSLBASE}"
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
-.if defined(WITH_SQUID_ICAP)
-IGNORE=		is currently broken with both ICAP and SSL support enabled because of conflicting patches. This will be resolved for Squid 2.6.13
-.endif
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-changeset_11375
 .endif
 .if defined(WITH_SQUID_PINGER)
 CONFIGURE_ARGS+=	--enable-icmp
@@ -337,7 +332,7 @@ IGNORE=		pf available only in FreeBSD 5.3 and newer
 # information.
 .if defined(WITH_SQUID_IPFILTER)
 .if (${OSVERSION} >= 470000 && ${OSVERSION} < 500000) || (${OSVERSION} > 500032 && ${OSVERSION} < 501101)
-IGNORE=		IPFilter headers are not part of the base system
+IGNORE=		the IPFilter headers are not part of the base system
 .else
 CONFIGURE_ARGS+=	--enable-ipf-transparent
 .endif
@@ -351,9 +346,7 @@ EXTRA_PATCHES+=		${PATCHDIR}/icap-2.6-bootstrap.patch \
 CONFIGURE_ARGS+=	--enable-icap-support
 error_files+=		ERR_ICAP_FAILURE
 .endif
-.if !defined(WITHOUT_SQUID_KQUEUE)
-CONFIGURE_ARGS+=	--enable-kqueue
-.else
+.if defined(WITHOUT_SQUID_KQUEUE)
 CONFIGURE_ARGS+=	--disable-kqueue
 .endif
 .if defined(WITH_SQUID_LARGEFILE)
