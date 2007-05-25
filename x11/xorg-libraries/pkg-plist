@@ -1,2 +1,3 @@
 libdata/xorg/libraries
+@exec test -e /usr/X11R6 || ln -s %%PREFIX%% /usr/X11R6 || true
 @dirrmtry libdata/xorg
