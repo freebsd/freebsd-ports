@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	Command line twits and an API wrapper
 
+BROKEN=		Does not build
+
 USE_RUBY=	yes
 GEM_NAME=	${DISTNAME}
 

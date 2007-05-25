@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Userland daemon for Sony Vaio Jog Dial
 
+BROKEN=		Does not build
+
 ONLY_FOR_ARCHS=	i386
 USE_AUTOTOOLS=	automake:14 autoconf:213
 GNU_CONFIGURE=	yes

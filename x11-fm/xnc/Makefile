@@ -26,6 +26,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
+BROKEN=		Does not build
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GETTEXT=	yes
 USE_XLIB=	yes
