@@ -6372,6 +6372,7 @@ libecc		ports/security/libecc
 libelf		ports/devel/libelf
 libemf		ports/graphics/libemf
 libepp-nicbr	ports/devel/libepp-nicbr
+liberation-fonts-ttf	ports/x11-fonts/liberation-fonts-ttf
 liberator	ports/net-p2p/liberator
 libesmtp	ports/mail/libesmtp
 libetpan	ports/mail/libetpan
