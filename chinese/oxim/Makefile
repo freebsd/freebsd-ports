@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	oxim
-PORTVERSION=	1.1.2.90
-PORTREVISION=	1
+PORTVERSION=	1.1.3
 CATEGORIES=	chinese textproc
 MASTER_SITES=	ftp://ftp.opendesktop.org.tw/odp/OXIM/Source/ \
 		ftp://apt.nc.hcc.edu.tw/pub/mirror/opendesktop.org.tw/OXIM/Source/ \
@@ -27,7 +26,6 @@ OPTIONS=	GTK2 "Enable GTK2 input method module" On \
 		UNICODE "Enable Unicode input module" On \
 		SETUP "Enable GUI Setup Tool" On
 
-USE_GCC=	3.2+
 USE_ICONV=	yes
 USE_XLIB=	yes
 WANT_GNOME=	yes
@@ -102,10 +100,6 @@ PLIST_SUB+=	NLS=""
 #CONFIGURE_ARGS+=--disable-nls
 #PLIST_SUB+=	NLS="@comment "
 #.endif
-
-.if ${OSVERSION} < 500000
-BROKEN=		lack of stdint.h
-.endif
 
 post-patch:
 	${REINPLACE_CMD} 's|%%PREFIX%%|${TARGETDIR}|' \
