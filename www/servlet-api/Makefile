@@ -16,6 +16,8 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	The Servlet API
 
+BROKEN=		Size mismatch
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_BUILD=	yes
