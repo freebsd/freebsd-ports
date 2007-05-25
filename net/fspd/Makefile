@@ -7,6 +7,7 @@
 
 PORTNAME=	fspd
 PORTVERSION=	2.8.1.24
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fsp
@@ -14,8 +15,6 @@ DISTNAME=	fsp-2.8.1b24
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FSP daemon, clients and scanner
-
-BROKEN=		Incomplete pkg-plist
 
 CLIENTS=	fcatcmd fcdcmd fducmd ffindcmd fgetcmd fgrabcmd fhostcmd \
 		flscmd fmkdir fprocmd fput frmcmd frmdircmd fver fspmerge \
@@ -53,6 +52,7 @@ CONFIGURE_ARGS+=	--disable-timeout
 PLIST_FILES+=	bin/${command}
 .endfor
 .endif
+PLIST_FILES+=	etc/fspd.conf.sample bin/fspscan bin/fspd
 
 post-extract:
 	${CP} ${WRKSRC}/doc/PROTOCOL ${WRKSRC}
