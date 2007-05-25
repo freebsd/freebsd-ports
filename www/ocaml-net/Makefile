@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	ocamlnet
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	ocaml${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	stephane@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml modules for Internet applications
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \

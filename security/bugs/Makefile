@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.encryptsolutions.com/english/download/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	stephane@freebsd-fr.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Great cryptography library and sample programs
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
