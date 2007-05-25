@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmpcdec
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 CATEGORIES=	audio
 MASTER_SITES=	http://files.musepack.net/source/
 
