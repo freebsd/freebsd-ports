@@ -1,5 +1,7 @@
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-bookmarkconflict.xul
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-bookmarkset.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-clobber.js
+%%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-clobber.xul
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-conflicts.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-dialog.js
 %%XPI_XPIDIR%%/chrome/chromeFiles/content/foxmarks-dialog.xul
@@ -50,6 +52,10 @@
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ja/foxmarks.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ja/foxmarks.properties
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ja/setup.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ko-KR/conflicts.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ko-KR/foxmarks.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ko-KR/foxmarks.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/ko-KR/setup.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/nl-NL/conflicts.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/nl-NL/foxmarks.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/nl-NL/foxmarks.properties
@@ -58,6 +64,10 @@
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR/foxmarks.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR/foxmarks.properties
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR/setup.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-PT/conflicts.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-PT/foxmarks.dtd
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-PT/foxmarks.properties
+%%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-PT/setup.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU/conflicts.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU/foxmarks.dtd
 %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU/foxmarks.properties
@@ -94,8 +104,10 @@
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/fr-FR
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/it-IT
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ja
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ko-KR
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/nl-NL
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-BR
+@dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/pt-PT
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/ru-RU
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/tr-TR
 @dirrm %%XPI_XPIDIR%%/chrome/chromeFiles/locale/uk-UA

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	foxmarks
-PORTVERSION=	0.89
+PORTVERSION=	1.0.1
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
@@ -15,6 +15,7 @@ COMMENT=	Bookmark synchronizer
 
 XPI_DISTNAME=	foxmarks_bookmark_synchronizer
 XPI_ID=		foxmarks@kei.com
+XPI_NUM=	2410
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
