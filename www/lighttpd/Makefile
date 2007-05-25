@@ -55,7 +55,6 @@ CONFIGURE_ARGS+=	--with-openssl \
 .endif
 
 .if defined(WITH_BZIP2)
-LIB_DEPENDS+=		bz2:${PORTSDIR}/archivers/bzip2
 CONFIGURE_ARGS+=	--with-bzip2
 .endif
 
