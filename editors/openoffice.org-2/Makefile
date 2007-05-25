@@ -84,7 +84,7 @@ EXECBASE?=		openoffice.org-${OOOVERSION}
 INSTALLATION_BASEDIR=	openoffice.org-${OOOVERSION}-${WITH_CWS}
 EXECBASE=		openoffice.org-${OOOVERSION}-${WITH_CWS}
 .endif
-DIST_SUBDIR=		openoffice.org2.0
+DIST_SUBDIR=		openoffice.org2
 SIMPLEOSVER=		${OSREL:C/\.//g}
 .if ${ARCH} == amd64
 PACKAGE_BASENAME=	OOo_${OOOVERSION}_${OPSYS}${SIMPLEOSVER}X86_64
