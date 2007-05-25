@@ -7,6 +7,7 @@
 
 PORTNAME=	obexapp
 PORTVERSION=	1.4.6
+PORTREVISION=	1
 CATEGORIES=	comms net
 MASTER_SITES=	http://www.geocities.com/m_evmenkin/
 
@@ -18,23 +19,26 @@ LIB_DEPENDS=	openobex:${PORTSDIR}/comms/openobex
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_ICONV=	yes
+PLIST_FILES=	bin/obexapp
+
+.if !defined(NO_INSTALL_MANPAGES)
 MAN1=		obexapp.1
 MANCOMPRESSED=	yes
-PLIST_FILES=	bin/obexapp
+.else
+MAKE_ENV+=	NO_MAN=yes
+.endif
+
+MAKE_ENV+=	NO_WERROR=yes
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 502101
-IGNORE=		Needs 5.x from 20 Jan 2004 or later (sdpd)
+IGNORE=		needs 5.x from 20 Jan 2004 or later (sdpd)
 .endif
 
 .if ${OSVERSION} < 502121
 # libbluetooth is only installed on i386 before this version
 ONLY_FOR_ARCHS=	i386
 .endif
-
-post-patch:
-	@${FIND} ${WRKSRC} -name \*.c | ${XARGS} \
-		${REINPLACE_CMD} -e 's|<sdp.h>|</usr/include/sdp.h>|'
 
 .include <bsd.port.post.mk>
