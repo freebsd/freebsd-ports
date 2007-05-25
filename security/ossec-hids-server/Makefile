@@ -9,13 +9,11 @@ PORTNAME=	ossec-hids
 PORTVERSION=	1.1
 PORTREVISION?=	1
 CATEGORIES=	security
-MASTER_SITES=	http://www.ossec.net/files/
+MASTER_SITES=	http://www.ossec.net/files/old/
 PKGNAMESUFFIX?=	-server
 
 MAINTAINER=	valerio.daelli@gmail.com
 COMMENT=	A security tool to monitor and check logs and intrusions
-
-BROKEN=		Unfetchable
 
 USE_RC_SUBR=	ossec-hids
 
