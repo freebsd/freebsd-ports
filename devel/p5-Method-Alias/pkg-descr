@@ -1,0 +1,14 @@
+Method::Alias is designed to be used as a pragma, to which you provide a
+set of pairs of method names. Only very minimal checking is done, if you
+wish to create infinite loops or what have you, you are more than
+welcome to shoot yourself in the foot.
+
+# Add a single method alias
+    use Method::Alias 'foo' => 'bar';
+
+# Add several method aliases
+    use Method::Alias 'a' => 'b',
+    'c' => 'd',
+    'e' => 'f';
+
+WWW: http://search.cpan.org/dist/Method-Alias

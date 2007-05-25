@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Method/Alias.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Method/Alias/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Method/Alias
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Method
+@dirrmtry %%SITE_PERL%%/Method
