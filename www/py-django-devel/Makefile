@@ -5,16 +5,17 @@
 # $FreeBSD$
 #
 
-PORTNAME=	django-devel
+PORTNAME=	django
 PORTVERSION=	${SNAPSHOT}
 CATEGORIES=	www python
 MASTER_SITES=	http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	lwhsu/django
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	-devel
 DISTNAME=	Django-${PORTVERSION}
 DIST_SUBDIR=	python
-SNAPSHOT=	20070425
+SNAPSHOT=	20070525
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High-level Python Web framework
