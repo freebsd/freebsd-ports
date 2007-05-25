@@ -7,7 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.1.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -31,8 +31,6 @@ LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		theora.2:${PORTSDIR}/multimedia/libtheora \
 		mad.2:${PORTSDIR}/audio/libmad \
 		dca.0:${PORTSDIR}/multimedia/libdca
-
-BROKEN=		Incorrect pkg-plist
 
 USE_GCC=	3.4+
 USE_GETTEXT=	yes
@@ -115,7 +113,7 @@ CONFIGURE_ARGS+=	--disable-pulseaudio
 CONFIGURE_ARGS+=--with-xvmc-lib=XvMCNVIDIA
 LIB_DEPENDS+=	XvMCNVIDIA.1:${PORTSDIR}/x11/nvidia-driver
 .else
-CONFIGURE_ARGS+=--with-xvmc-lib=XvMC
+CONFIGURE_ARGS+=--with-xvmc-lib=XvMCW
 LIB_DEPENDS+=	XvMC.1:${PORTSDIR}/x11/libXvMC
 .endif
 PLIST_SUB+=	WITH_XVMC=""
@@ -238,5 +236,8 @@ pre-configure:
 		  s|-malign-jumps|-falign-jumps|g ; \
 		  s|-malign-functions|-falign-functions|g' ${WRKSRC}/configure
 .endif
+
+pre-build:
+	@${CP} -p ${LOCALBASE}/include/dts.h ${WRKSRC}/src/libdts/
 
 .include <bsd.port.post.mk>
