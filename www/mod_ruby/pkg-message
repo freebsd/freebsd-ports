@@ -3,7 +3,7 @@ Please edit your Apache configuration file to enable and set
 up this module.
 
 Look at the file ${PREFIX}/etc/apache/httpd.conf.mod_ruby
-and the documents held in ${PREFIX}/share/doc/ruby/mod_ruby/
+and the documents held in ${PREFIX}/share/doc/ruby18/mod_ruby/
 for indications on what to do.
 
 (${PREFIX} is typically /usr/local)
