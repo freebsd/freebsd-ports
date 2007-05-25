@@ -9,16 +9,15 @@ PORTNAME=	tkscanfax
 PORTVERSION=	1.1.4
 PORTREVISION=	1
 PORTEPOCH=	1
-CATEGORIES=	comms tk83
+CATEGORIES=	comms tk84
 MASTER_SITES=	http://shino.pos.to/linux/tkscanfax/
 
 MAINTAINER=	mita@FreeBSD.org
 COMMENT=	Tcl/Tk frontend for fax scan/receive/send program (command is tkfax)
 
-RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
-
+USE_TK=		yes
 WRKSRC=	${WRKDIR}/${PORTNAME}1
-NO_BUILD=	YES
+NO_BUILD=	yes
 
 post-extract:
 	${FIND} ${WRKSRC} -name '*~' -delete
