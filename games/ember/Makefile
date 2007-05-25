@@ -7,7 +7,7 @@
 
 PORTNAME=	ember
 PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://amber.worldforge.org/ember/releases/stable/
@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--with-png-prefix=${LOCALBASE} --enable-binreloc --program-trans
 USE_SDL=	sdl
 GNU_CONFIGURE=	YES
 INSTALLS_SHLIB=	YES
-USE_X_PREFIX=	YES
+USE_XLIB=	YES
 USE_GNOME=	gnomehack
 USE_BZIP2=	YES
 CPPFLAGS=	-DBR_NO_MACROS
