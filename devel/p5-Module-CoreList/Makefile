@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-CoreList
-PORTVERSION=	2.09
+PORTVERSION=	2.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,8 +19,4 @@ PERL_CONFIGURE=	yes
 MAN1=		corelist.1
 MAN3=		Module::CoreList.3
 
-.include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6 or later. Please install lang/perl5 or lang/perl5.8, and try again
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
