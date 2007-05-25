@@ -19,6 +19,9 @@ LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
 CONFLICTS?=	ja-gaim-[0-9]* gaim-devel-2*
 
+DEPRECATED=	Obsolete version, use net-im/pidgin instead
+EXPIRATION_DATE=2007-08-24
+
 USE_AUTOTOOLS=	libtool:15
 USE_XLIB=	yes
 USE_GETTEXT=	yes
