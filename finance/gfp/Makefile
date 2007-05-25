@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Personal finances administration software
 
+BROKEN=		Does not build
+
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+

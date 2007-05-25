@@ -19,6 +19,8 @@ LIB_DEPENDS=	IL.1:${PORTSDIR}/graphics/devil \
 		boost_filesystem.3:${PORTSDIR}/devel/boost \
 		freetype.9:${PORTSDIR}/print/freetype2
 
+BROKEN=		Does not build
+
 USE_BZIP2=	yes
 USE_SCONS=	yes
 SCONS_ARGS=	prefix=""
