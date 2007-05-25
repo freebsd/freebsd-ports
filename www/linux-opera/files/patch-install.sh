@@ -1,5 +1,5 @@
---- install.sh.orig	Mon Apr  9 10:57:12 2007
-+++ install.sh	Fri Apr 13 20:17:57 2007
+--- install.sh.orig	Thu May 10 12:01:53 2007
++++ install.sh	Fri May 25 12:47:45 2007
 @@ -805,10 +805,9 @@
      case "${machine}:${os}" in
  	x86:Linux|x86_64:Linux|x86:AnyBSD|x86_64:AnyBSD|x86:OpenBSD)
@@ -135,7 +135,7 @@
  	; do
  	for PREFIX in \${PREFIXES}; do
  	    if test -f \"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}/libjava.so\"; then OPERA_JAVA_DIR=\"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}\" && break; fi
-@@ -1037,11 +996,8 @@
+@@ -1037,11 +996,7 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -145,11 +145,10 @@
 -    /opt/Acrobat[45]/bin \\
 -    /usr/Acrobat[45]/bin \\
 +    %%LOCALBASE%%/Acrobat5/bin \\
-+    %%X11BASE%%/Acrobat5/bin \\
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1063,13 +1019,6 @@
+@@ -1063,13 +1018,6 @@
  done"
  
  case "${os}" in
@@ -163,7 +162,7 @@
      SunOS)
  wrapper_contain="${wrapper_contain}
  
-@@ -1098,7 +1047,7 @@
+@@ -1098,7 +1046,7 @@
  };
  
  // Opera package classes get all permissions
@@ -172,7 +171,7 @@
  	permission java.security.AllPermission;
  };
  
-@@ -1167,7 +1116,7 @@
+@@ -1167,7 +1115,7 @@
      chop "${OPERADESTDIR}" "str_localdirshare"
      chop "${OPERADESTDIR}" "str_localdirplugin"
  
@@ -181,7 +180,7 @@
  
      # Executable
      debug_msg 1 "Executable"
-@@ -1201,7 +1150,7 @@
+@@ -1201,7 +1149,7 @@
  
      #cp $cpv $cpf wrapper.sh $wrapper_dir/opera
      generate_wrapper
@@ -190,7 +189,7 @@
  
      # Manual page
      debug_msg 1 "Manual page"
-@@ -1210,7 +1159,7 @@
+@@ -1210,7 +1158,7 @@
      chmod $chmodv 755 ${man_dir}
      mkdir $mkdirv $mkdirp ${man_dir}/man1
      chmod $chmodv 755 ${man_dir}/man1
@@ -199,7 +198,7 @@
  
      # Documentation
      debug_msg 1 "Documentation"
-@@ -1242,13 +1191,6 @@
+@@ -1242,13 +1190,6 @@
  	mkdir $mkdirv $mkdirp $share_dir/ini/
  	chmod $chmodv 755 $share_dir/ini
  	cp $cpv $cpf $cpR ini/* $share_dir/ini/
@@ -213,7 +212,7 @@
      fi
  
      mkdir $mkdirv $mkdirp $share_dir/locale/
-@@ -1340,43 +1282,11 @@
+@@ -1340,43 +1281,11 @@
  
      if test -z "${OPERADESTDIR}"
      then
@@ -258,7 +257,7 @@
  	fi
  
      fi # OPERADESTDIR
-@@ -1428,19 +1338,19 @@
+@@ -1428,19 +1337,19 @@
      # arg1 = location
      # arg2 = type
  
@@ -281,7 +280,7 @@
  Name[af]=opera
  Name[eo]=Opero
  Name[zu]=I Opera
-@@ -1464,7 +1374,7 @@
+@@ -1464,7 +1373,7 @@
  GenericName[ven]=Buronza ya Webu
  GenericName[xh]=Umkhangeli Zincwadi Zokubhaliweyo
  GenericName[zu]=Umkhangeli zincwadi we Web
@@ -290,7 +289,7 @@
  Terminal=false"
  
  # Application is not a category, according to
-@@ -1479,25 +1389,26 @@
+@@ -1479,25 +1388,26 @@
  	if test "${2}" = "xdg"; then
  	    desktop_contain="${desktop_contain}
  Categories=Application;Qt;Network;WebBrowser;X-Ximian-Main;X-Ximian-Toplevel
@@ -323,7 +322,7 @@
  
      echo "${desktop_contain}" > ${desktop_file}
      chmod $chmodv 644 ${desktop_file}
-@@ -1528,55 +1439,28 @@
+@@ -1528,55 +1438,28 @@
  
      debug_msg 0 "in icons()"
  
