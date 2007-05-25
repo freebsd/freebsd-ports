@@ -15,4 +15,6 @@ COMMENT=	KDE iconset variation of the 'Noia' icons using warm colors
 WRKSRC=		"${WRKDIR}/Noia Warm KDE ${PORTVERSION}"
 PORT_SHAREDIR=	"${PORTNAME}-${PORTVERSION}"
 
+BROKEN=		Unfetchable
+
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

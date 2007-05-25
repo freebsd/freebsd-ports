@@ -16,4 +16,6 @@ COMMENT=	KDE Umicons iconset
 WRKSRC=		${WRKDIR}/Umicons_${PORTVERSION}
 PORT_SHAREDIR?=	"${PORTNAME}-${PORTVERSION}"
 
+BROKEN=		Unfetchable
+
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

@@ -17,6 +17,8 @@ COMMENT=	An Open Source PBX and telephony toolkit
 
 LIB_DEPENDS=	spandsp.0:${PORTSDIR}/comms/spandsp-devel
 
+BROKEN=		Unfetchable
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tiff-includes=${LOCALBASE}/include \
 		--with-tiff-libs=${LOCALBASE}/lib \
