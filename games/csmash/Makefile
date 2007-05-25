@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	cannonsmash
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D tabletennis game
 
+BROKEN=		Configure fails
+
 USE_SDL=	image mixer sdl
 USE_GL=		yes
 USE_GNOME=	gnometarget gtk20
