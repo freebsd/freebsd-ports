@@ -6880,6 +6880,7 @@ linux-megacli	ports/sysutils/linux-megacli
 linux-megamgr	ports/sysutils/linux-megamgr
 linux-mozilla	ports/www/linux-mozilla
 linux-mplayer-plugin	ports/www/linux-mplayer-plugin
+linux-nero	ports/sysutils/linux-nero
 linux-nvu	ports/www/linux-nvu
 linux-nwnclient	ports/games/linux-nwnclient
 linux-nwserver	ports/games/linux-nwserver
