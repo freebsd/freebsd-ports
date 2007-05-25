@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cyphesis
-PORTVERSION=	0.5.11
-PORTREVISION=	0
+PORTVERSION=	0.5.12
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=worldforge
@@ -26,7 +25,6 @@ CONFIGURE_ARGS=	--with-python=${LOCALBASE}
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GCC=	3.4+
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 USE_PGSQL=	yes
@@ -37,20 +35,12 @@ MAN1=		cyclient.1 cycmd.1 cyphesis.1 cyphesis-tools.1 cyaddrules.1 \
 
 .include <bsd.port.pre.mk>
 
-#.if ${OSVERSION} < 500000
-#IGNORE=		does not compile
-#.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's| install-dist_docDATA | |g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's| install-confbackupDATA | |g' ${WRKSRC}/data/Makefile.in
 	@${REINPLACE_CMD} -e 's|-lpython|${PTHREAD_LIBS} &|' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
 		${REINPLACE_CMD} -e 's|$$(datadir)/cyphesis|${DATADIR}|g'
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|<stdint.h>|<inttypes.h>|' \
-		${WRKSRC}/server/CommMDNSPublisher.h
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
