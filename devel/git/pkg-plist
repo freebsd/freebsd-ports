@@ -1,5 +1,6 @@
 bin/git
 bin/git-add
+bin/git-add--interactive
 bin/git-am
 bin/git-annotate
 bin/git-apply
@@ -16,10 +17,12 @@ bin/git-checkout
 bin/git-checkout-index
 bin/git-cherry
 bin/git-cherry-pick
+%%GUI%%bin/git-citool
 bin/git-clean
 bin/git-clone
 bin/git-commit
 bin/git-commit-tree
+bin/git-config
 bin/git-convert-objects
 bin/git-count-objects
 bin/git-cvsexportcommit
@@ -32,19 +35,24 @@ bin/git-diff-files
 bin/git-diff-index
 bin/git-diff-stages
 bin/git-diff-tree
+bin/git-fast-import
 bin/git-fetch
 bin/git-fetch-pack
 bin/git-fmt-merge-msg
 bin/git-for-each-ref
 bin/git-format-patch
+bin/git-fsck
 bin/git-fsck-objects
+bin/git-gc
 bin/git-get-tar-commit-id
 bin/git-grep
+%%GUI%%bin/git-gui
 bin/git-hash-object
 bin/git-http-fetch
 bin/git-http-push
 bin/git-imap-send
 bin/git-index-pack
+bin/git-init
 bin/git-init-db
 bin/git-instaweb
 bin/git-local-fetch
@@ -57,13 +65,12 @@ bin/git-mailinfo
 bin/git-mailsplit
 bin/git-merge
 bin/git-merge-base
+bin/git-merge-file
 bin/git-merge-index
 bin/git-merge-octopus
 bin/git-merge-one-file
 bin/git-merge-ours
-bin/git-merge-recur
 bin/git-merge-recursive
-bin/git-merge-recursive-old
 bin/git-merge-resolve
 bin/git-merge-stupid
 bin/git-merge-tree
@@ -86,7 +93,9 @@ bin/git-quiltimport
 bin/git-read-tree
 bin/git-rebase
 bin/git-receive-pack
+bin/git-reflog
 bin/git-relink
+bin/git-remote
 bin/git-repack
 bin/git-repo-config
 bin/git-request-pull
@@ -137,7 +146,6 @@ lib/xemacs/site-lisp/git/git.el
 lib/xemacs/site-lisp/git/vc-git.el
 share/emacs/site-lisp/git/git.el
 share/emacs/site-lisp/git/vc-git.el
-share/git-core/python/gitMergeCommon.py
 share/git-core/templates/description
 share/git-core/templates/hooks/applypatch-msg
 share/git-core/templates/hooks/commit-msg
@@ -158,7 +166,5 @@ share/git-core/templates/info/exclude
 @dirrm share/git-core/templates/branches
 @dirrm share/git-core/templates/hooks
 @dirrm share/git-core/templates/info
-@dirrm share/git-core/templates/remotes
 @dirrm share/git-core/templates
-@dirrm share/git-core/python
 @dirrm share/git-core

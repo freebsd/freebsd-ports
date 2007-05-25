@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.4.4.4
-PORTREVISION=	1
+PORTVERSION=	1.5.0.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 
@@ -20,8 +19,7 @@ BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		xmlto:${PORTSDIR}/textproc/xmlto
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		cvsps:${PORTSDIR}/devel/cvsps-devel \
-		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
-		wish8.4:${PORTSDIR}/x11-toolkits/tk84
+		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 CONFLICTS=	cogito-0.1[012] git-4.*
@@ -48,6 +46,7 @@ MAN1=		git-add.1 \
 		git-clone.1 \
 		git-commit-tree.1 \
 		git-commit.1 \
+		git-config.1 \
 		git-convert-objects.1 \
 		git-count-objects.1 \
 		git-cvsexportcommit.1 \
@@ -60,12 +59,15 @@ MAN1=		git-add.1 \
 		git-diff-stages.1 \
 		git-diff-tree.1 \
 		git-diff.1 \
+		git-fast-import.1 \
 		git-fetch-pack.1 \
 		git-fetch.1 \
 		git-fmt-merge-msg.1 \
 		git-format-patch.1 \
 		git-for-each-ref.1 \
+		git-fsck.1 \
 		git-fsck-objects.1 \
+		git-gc.1 \
 		git-get-tar-commit-id.1 \
 		git-grep.1 \
 		git-hash-object.1 \
@@ -73,6 +75,7 @@ MAN1=		git-add.1 \
 		git-http-push.1 \
 		git-imap-send.1 \
 		git-index-pack.1 \
+		git-init.1 \
 		git-init-db.1 \
 		git-instaweb.1 \
 		git-local-fetch.1 \
@@ -85,6 +88,7 @@ MAN1=		git-add.1 \
 		git-mailsplit.1 \
 		git-merge.1 \
 		git-merge-base.1 \
+		git-merge-file.1 \
 		git-merge-index.1 \
 		git-merge-one-file.1 \
 		git-merge-tree.1 \
@@ -107,7 +111,9 @@ MAN1=		git-add.1 \
 		git-read-tree.1 \
 		git-rebase.1 \
 		git-receive-pack.1 \
+		git-reflog.1 \
 		git-relink.1 \
+		git-remote.1 \
 		git-repack.1 \
 		git-repo-config.1 \
 		git-request-pull.1 \
@@ -153,6 +159,7 @@ MAN1=		git-add.1 \
 MAN3=		Git.3
 MAN7=		git.7
 
+USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_PYTHON=	yes
 USE_ICONV=	yes
@@ -162,12 +169,30 @@ INSTALL_TARGET=	install install-doc
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV+=	CURLDIR=${LOCALBASE} \
 		NEEDS_LIBICONV=yes \
+		WITH_P4IMPORT=yes \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PYTHON_PATH=${LOCALBASE}/bin/python \
 		PERL_PATH=${PERL}
 MAKE_ARGS+=	prefix="${PREFIX}"
 
+.ifndef WITHOUT_GUI
+PLIST_SUB+=	GUI=""
+GITGUIVERSION=	0.6-GITGUI
+RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+.else
+PLIST_SUB+=	GUI="@comment "
+MAKE_ENV+=	NO_GUI=yes
+.endif
+
+# We should place version files to avoid git's attempt to figure it by itself
+post-patch:
+	${ECHO} "GIT_VERSION = ${PORTVERSION}-dirty" > ${WRKSRC}/GIT-VERSION-FILE; ${ECHO} '#!/bin/sh' > ${WRKSRC}/GIT-VERSION-GEN
+.ifndef WITHOUT_GUI
+	${ECHO} "GIT_VERSION = ${GITGUIVERSION}-dirty" > ${WRKSRC}/git-gui/GIT-VERSION-FILE; ${ECHO} '#!/bin/sh' > ${WRKSRC}/git-gui/GIT-VERSION-GEN
+.endif
+
 post-install:
+	${TEST} -f ${PREFIX}/lib/perl5/${PERL_VERSION}/mach/perllocal.pod && ${RM} -f ${PREFIX}/lib/perl5/${PERL_VERSION}/mach/perllocal.pod
 	${MKDIR} ${PREFIX}/share/emacs/site-lisp/git
 	${MKDIR} ${PREFIX}/lib/xemacs/site-lisp/git
 	${INSTALL_DATA} ${WRKSRC}/contrib/emacs/git.el \
