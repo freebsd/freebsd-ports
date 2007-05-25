@@ -68,6 +68,15 @@ bin/tailor
 %%PYTHON_SITELIBDIR%%/vcpx/repository/monotone.py
 %%PYTHON_SITELIBDIR%%/vcpx/repository/monotone.pyc
 %%PYTHON_SITELIBDIR%%/vcpx/repository/monotone.pyo
+%%PYTHON_SITELIBDIR%%/vcpx/repository/p4/__init__.py
+%%PYTHON_SITELIBDIR%%/vcpx/repository/p4/__init__.pyc
+%%PYTHON_SITELIBDIR%%/vcpx/repository/p4/__init__.pyo
+%%PYTHON_SITELIBDIR%%/vcpx/repository/p4/p4lib.py
+%%PYTHON_SITELIBDIR%%/vcpx/repository/p4/p4lib.pyc
+%%PYTHON_SITELIBDIR%%/vcpx/repository/p4/p4lib.pyo
+%%PYTHON_SITELIBDIR%%/vcpx/repository/p4/source.py
+%%PYTHON_SITELIBDIR%%/vcpx/repository/p4/source.pyc
+%%PYTHON_SITELIBDIR%%/vcpx/repository/p4/source.pyo
 %%PYTHON_SITELIBDIR%%/vcpx/repository/svn.py
 %%PYTHON_SITELIBDIR%%/vcpx/repository/svn.pyc
 %%PYTHON_SITELIBDIR%%/vcpx/repository/svn.pyo
@@ -95,6 +104,7 @@ bin/tailor
 %%PYTHON_SITELIBDIR%%/vcpx/workdir.py
 %%PYTHON_SITELIBDIR%%/vcpx/workdir.pyc
 %%PYTHON_SITELIBDIR%%/vcpx/workdir.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/vcpx/repository/p4
 @dirrm %%PYTHON_SITELIBDIR%%/vcpx/repository/git
 @dirrm %%PYTHON_SITELIBDIR%%/vcpx/repository/darcs
 @dirrm %%PYTHON_SITELIBDIR%%/vcpx/repository
