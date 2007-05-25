@@ -97,7 +97,6 @@ share/gnome/pixmaps/pidgin/arrow-down.xpm
 share/gnome/pixmaps/pidgin/arrow-left.xpm
 share/gnome/pixmaps/pidgin/arrow-right.xpm
 share/gnome/pixmaps/pidgin/arrow-up.xpm
-share/gnome/pixmaps/pidgin/buttons/about_menu.png
 share/gnome/pixmaps/pidgin/buttons/edit.png
 share/gnome/pixmaps/pidgin/buttons/music.png
 share/gnome/pixmaps/pidgin/buttons/pause.png
@@ -123,6 +122,7 @@ share/gnome/pixmaps/pidgin/emblems/16/founder.png
 share/gnome/pixmaps/pidgin/emblems/16/free-for-chat.png
 share/gnome/pixmaps/pidgin/emblems/16/game.png
 share/gnome/pixmaps/pidgin/emblems/16/half-operator.png
+share/gnome/pixmaps/pidgin/emblems/16/hiptop.png
 share/gnome/pixmaps/pidgin/emblems/16/male.png
 share/gnome/pixmaps/pidgin/emblems/16/mobile.png
 share/gnome/pixmaps/pidgin/emblems/16/not-authorized.png
@@ -199,6 +199,7 @@ share/gnome/pixmaps/pidgin/emotes/default/girl.png
 share/gnome/pixmaps/pidgin/emotes/default/glasses-cool.png
 share/gnome/pixmaps/pidgin/emotes/default/glasses-nerdy.png
 share/gnome/pixmaps/pidgin/emotes/default/go-away.png
+share/gnome/pixmaps/pidgin/emotes/default/goat.png
 share/gnome/pixmaps/pidgin/emotes/default/good.png
 share/gnome/pixmaps/pidgin/emotes/default/hammer.png
 share/gnome/pixmaps/pidgin/emotes/default/handcuffs.png
@@ -268,6 +269,7 @@ share/gnome/pixmaps/pidgin/emotes/default/sick.png
 share/gnome/pixmaps/pidgin/emotes/default/sigarette.png
 share/gnome/pixmaps/pidgin/emotes/default/silly.png
 share/gnome/pixmaps/pidgin/emotes/default/skeleton.png
+share/gnome/pixmaps/pidgin/emotes/default/skywalker.png
 share/gnome/pixmaps/pidgin/emotes/default/sleepy.png
 share/gnome/pixmaps/pidgin/emotes/default/smile-big.png
 share/gnome/pixmaps/pidgin/emotes/default/smile.png
@@ -400,12 +402,14 @@ share/gnome/pixmaps/pidgin/toolbar/16/insert-image.png
 share/gnome/pixmaps/pidgin/toolbar/16/insert-link.png
 share/gnome/pixmaps/pidgin/toolbar/16/message-new.png
 share/gnome/pixmaps/pidgin/toolbar/16/plugins.png
+share/gnome/pixmaps/pidgin/toolbar/16/send-file.png
 share/gnome/pixmaps/pidgin/toolbar/16/unblock.png
 share/gnome/pixmaps/pidgin/toolbar/22/select-avatar.png
 share/gnome/pixmaps/pidgin/tray/16/tray-away.png
 share/gnome/pixmaps/pidgin/tray/16/tray-busy.png
 share/gnome/pixmaps/pidgin/tray/16/tray-connecting.png
 share/gnome/pixmaps/pidgin/tray/16/tray-extended-away.png
+share/gnome/pixmaps/pidgin/tray/16/tray-invisible.png
 share/gnome/pixmaps/pidgin/tray/16/tray-message.png
 share/gnome/pixmaps/pidgin/tray/16/tray-offline.png
 share/gnome/pixmaps/pidgin/tray/16/tray-online.png
@@ -413,6 +417,7 @@ share/gnome/pixmaps/pidgin/tray/22/tray-away.png
 share/gnome/pixmaps/pidgin/tray/22/tray-busy.png
 share/gnome/pixmaps/pidgin/tray/22/tray-connecting.png
 share/gnome/pixmaps/pidgin/tray/22/tray-extended-away.png
+share/gnome/pixmaps/pidgin/tray/22/tray-invisible.png
 share/gnome/pixmaps/pidgin/tray/22/tray-message.png
 share/gnome/pixmaps/pidgin/tray/22/tray-offline.png
 share/gnome/pixmaps/pidgin/tray/22/tray-online.png
