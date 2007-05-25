@@ -7,7 +7,7 @@
 
 PORTNAME=	ntop
 PORTVERSION=	3.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,8 +21,8 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
 		png.5:${PORTSDIR}/graphics/png
 
-RUN_DEPENDS=    dot:${PORTSDIR}/graphics/graphviz \
-                ${X11BASE}/lib/X11/fonts/URW/a010013l.afm:${PORTSDIR}/x11-fonts/urwfonts
+RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
+		${X11BASE}/lib/X11/fonts/URW/a010013l.afm:${PORTSDIR}/x11-fonts/urwfonts
 
 DBDIR?=		/var/db
 
@@ -32,7 +32,7 @@ USE_GNOME=	libxml2
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 PLIST_SUB=	DBDIR=${DBDIR} \
 		SHLIB=${PORTVERSION:S/.p/pre/}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -107,6 +107,5 @@ post-extract:
 post-install:
 	@${MKDIR} ${DBDIR}/ntop
 	@${CHOWN} -R nobody:nobody ${DBDIR}/ntop
-	@${RMDIR} ${PREFIX}/lib/plugins
 
 .include <bsd.port.post.mk>
