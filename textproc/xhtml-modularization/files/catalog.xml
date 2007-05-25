@@ -63,9 +63,6 @@
     publicId="-//W3C//ELEMENTS XHTML Block Phrasal 1.0//EN"
     uri="xhtml-blkphras-1.mod" />
   <public
-    publicId="-//W3C//ELEMENTS XHTML Ruby 1.0//EN"
-    uri="xhtml-ruby-1.mod" />
-  <public
     publicId="-//W3C//ELEMENTS XHTML Java Applets 1.0//EN"
     uri="xhtml-applet-1.mod" />
   <public
