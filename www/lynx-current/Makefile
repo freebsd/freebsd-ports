@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	lynx
-PORTVERSION=	2.8.7d4
+PORTVERSION=	2.8.7d5
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
-DISTNAME=	${PORTNAME}2.8.7dev.4
+DISTNAME=	${PORTNAME}2.8.7dev.5
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	A non-graphical, text-based World-Wide Web client
@@ -18,13 +18,17 @@ RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 WRKSRC=		${WRKDIR}/${PORTNAME}2-8-7
 USE_BZIP2=	yes
+USE_ICONV=	yes
 NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
+CONFIGURE_ARGS= --with-screen=ncursesw --with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-nls --with-bzlib \
-		--enable-nested-tables --enable-locale-charset \
-		--enable-scrollbar --enable-addrlist-page
+		--enable-nested-tables --enable-default-colors \
+		--enable-scrollbar --enable-addrlist-page \
+		--enable-gzip-help \
+		--with-mime-libdir=${PREFIX}/etc \
+		--with-libiconv-prefix=${LOCALBASE}
 
 .ifndef NO_OPENSSL
 USE_OPENSSL=	yes
@@ -41,9 +45,7 @@ CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CC="${CC} -Ichrtrans -I${LOCALBASE}/include -Darc4random_push=" LDFLAGS="${LDFLAGS}" \
-		LIBS=-lncurses
+CONFIGURE_ENV+= CC="${CC} -Ichrtrans"
 MAKE_FLAGS=	helpdir=${L_HELP} docdir=${L_DOC} -f
 MAKEFILE=	makefile
 INSTALL_TARGET=	install-full
@@ -60,11 +62,6 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-post-patch:
-	${REINPLACE_CMD} \
-		-e 's:/usr/local/lib/mosaic/mime\.types:${PREFIX}/etc/mime.types:' \
-		${WRKSRC}/lynx.cfg ${WRKSRC}/userdefs.h
 
 post-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${L_DOC}
