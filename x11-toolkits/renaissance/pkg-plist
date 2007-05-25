@@ -1,13 +1,13 @@
 Local/Applications/GSMarkupBrowser.app/GSMarkupBrowser
-Local/Applications/GSMarkupBrowser.app/library_paths.openapp
 Local/Applications/GSMarkupBrowser.app/Resources/Info-gnustep.plist
 Local/Applications/GSMarkupBrowser.app/Resources/GSMarkupBrowser.desktop
 Local/Applications/GSMarkupBrowser.app/stamp.make
 Local/Applications/GSMarkupLocalizableStrings.app/GSMarkupLocalizableStrings
-Local/Applications/GSMarkupLocalizableStrings.app/library_paths.openapp
 Local/Applications/GSMarkupLocalizableStrings.app/Resources/Info-gnustep.plist
 Local/Applications/GSMarkupLocalizableStrings.app/Resources/GSMarkupLocalizableStrings.desktop
 Local/Applications/GSMarkupLocalizableStrings.app/stamp.make
+Local/Tools/GSMarkupBrowser
+Local/Tools/GSMarkupLocalizableStrings
 System/Library/Headers/Renaissance/GSAutoLayoutDefaults.h
 System/Library/Headers/Renaissance/GSAutoLayoutManager.h
 System/Library/Headers/Renaissance/GSAutoLayoutManagerPrivate.h

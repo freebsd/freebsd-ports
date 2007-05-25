@@ -10,6 +10,8 @@ Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/libnetclasses
 Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/libnetclasses.so.%%LIBVERSION%%
 Local/Library/Frameworks/netclasses.framework/Versions/%%VERSION%%/netclasses
 Local/Library/Frameworks/netclasses.framework/Versions/Current
+Local/Library/Frameworks/netclasses.framework/libnetclasses.so
+Local/Library/Frameworks/netclasses.framework/netclasses
 Local/Library/Headers/netclasses
 Local/Library/Libraries/libnetclasses.so
 Local/Library/Libraries/libnetclasses.so.%%MAJORLIBVERSION%%

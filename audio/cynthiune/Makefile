@@ -33,7 +33,8 @@ USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 USE_GNOME+=	esound
 
 WRKSRC=		${WRKDIR}/cynthiune.app-${PORTVERSION}
-MAKE_FLAGS=	disable-windowsmedia=yes
-#ALL_TARGET=
+ADDITIONAL_LIB_DIRS+=	-L${WRKSRC}/Frameworks/Cynthiune/Cynthiune.framework/Versions/Current
+MAKE_ENV+=	GNUSTEP_INSTALLATION_DIR=${GNUSTEP_LOCAL_ROOT}
+MAKE_FLAGS=	disable-windowsmedia=yes debug=no
 
 .include <bsd.port.mk>

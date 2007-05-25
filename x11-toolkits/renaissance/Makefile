@@ -25,4 +25,8 @@ USE_GNUSTEP_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+post-patch:
+	${ECHO_CMD} "GNUSTEP_INSTALLATION_DOMAIN=SYSTEM" \
+		>>${WRKSRC}/Source/GNUmakefile
+
 .include <bsd.port.mk>

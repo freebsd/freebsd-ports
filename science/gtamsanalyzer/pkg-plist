@@ -96,8 +96,8 @@ Local/Applications/GTAMSAnalyzer.app/Resources/txt2Button.tif
 Local/Applications/GTAMSAnalyzer.app/Resources/unmarkRec.tif
 Local/Applications/GTAMSAnalyzer.app/Resources/unmarkRec2.tif
 Local/Applications/GTAMSAnalyzer.app/Resources/wbicn.tif
-Local/Applications/GTAMSAnalyzer.app/library_paths.openapp
 Local/Applications/GTAMSAnalyzer.app/stamp.make
+Local/Tools/GTAMSAnalyzer
 @dirrm Local/Applications/GTAMSAnalyzer.app/Resources/preference.gorm
 @dirrm Local/Applications/GTAMSAnalyzer.app/Resources/myProject.gorm
 @dirrm Local/Applications/GTAMSAnalyzer.app/Resources/myPanedResults.gorm

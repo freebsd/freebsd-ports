@@ -69,7 +69,6 @@ Local/Applications/Cynthiune.app/Resources/song-inspector.tiff
 Local/Applications/Cynthiune.app/Resources/song-pointer.tiff
 Local/Applications/Cynthiune.app/Resources/stop-pushed.tiff
 Local/Applications/Cynthiune.app/Resources/stop.tiff
-Local/Applications/Cynthiune.app/library_paths.openapp
 Local/Applications/Cynthiune.app/stamp.make
 Local/Library/Cynthiune/ASFTags.tags/ASFTags
 Local/Library/Cynthiune/ASFTags.tags/Resources/Info-gnustep.plist
@@ -126,34 +125,37 @@ Local/Library/Cynthiune/VorbisTags.tags/stamp.make
 Local/Library/Cynthiune/aRts.output/Resources/Info-gnustep.plist
 Local/Library/Cynthiune/aRts.output/aRts
 Local/Library/Cynthiune/aRts.output/stamp.make
+Local/Library/Frameworks/Cynthiune.framework/Cynthiune
 Local/Library/Frameworks/Cynthiune.framework/Headers
 Local/Library/Frameworks/Cynthiune.framework/Resources
-Local/Library/Frameworks/Cynthiune.framework/Versions/A/Cynthiune
-Local/Library/Frameworks/Cynthiune.framework/Versions/A/Headers/CynthiuneBundle.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/A/Headers/Format.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/A/Headers/MailService.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/A/Headers/NSArrayExtensions.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/A/Headers/NSCellExtensions.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/A/Headers/NSColorExtensions.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/A/Headers/NSNumberExtensions.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/A/Headers/NSStringExtensions.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/A/Headers/NSTimerExtensions.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/A/Headers/NSViewExtensions.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/A/Headers/Output.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/A/Headers/Preference.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/A/Headers/utils.h
-Local/Library/Frameworks/Cynthiune.framework/Versions/A/Resources/Info-gnustep.plist
-Local/Library/Frameworks/Cynthiune.framework/Versions/A/libCynthiune.so
-Local/Library/Frameworks/Cynthiune.framework/Versions/A/libCynthiune.so.%%MAJORLIBVERSION%%
-Local/Library/Frameworks/Cynthiune.framework/Versions/A/libCynthiune.so.%%LIBVERSION%%
+Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Cynthiune
+Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/CynthiuneBundle.h
+Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/Format.h
+Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/MailService.h
+Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/NSArrayExtensions.h
+Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/NSCellExtensions.h
+Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/NSColorExtensions.h
+Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/NSNumberExtensions.h
+Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/NSStringExtensions.h
+Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/NSTimerExtensions.h
+Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/NSViewExtensions.h
+Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/Output.h
+Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/Preference.h
+Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers/utils.h
+Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
+Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/libCynthiune.so
+Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/libCynthiune.so.%%MAJORLIBVERSION%%
+Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/libCynthiune.so.%%LIBVERSION%%
 Local/Library/Frameworks/Cynthiune.framework/Versions/Current
+Local/Library/Frameworks/Cynthiune.framework/libCynthiune.so
 Local/Library/Headers/Cynthiune
 Local/Library/Libraries/libCynthiune.so
 Local/Library/Libraries/libCynthiune.so.%%MAJORLIBVERSION%%
 Local/Library/Libraries/libCynthiune.so.%%LIBVERSION%%
-@dirrm Local/Library/Frameworks/Cynthiune.framework/Versions/A/Resources
-@dirrm Local/Library/Frameworks/Cynthiune.framework/Versions/A/Headers
-@dirrm Local/Library/Frameworks/Cynthiune.framework/Versions/A
+Local/Tools/Cynthiune
+@dirrm Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Resources
+@dirrm Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%/Headers
+@dirrm Local/Library/Frameworks/Cynthiune.framework/Versions/%%MAJORVERSION%%
 @dirrm Local/Library/Frameworks/Cynthiune.framework/Versions
 @dirrm Local/Library/Frameworks/Cynthiune.framework
 @dirrm Local/Library/Cynthiune/aRts.output/Resources

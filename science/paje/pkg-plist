@@ -11,7 +11,6 @@ Local/Applications/Paje.app/Resources/distant.tiff
 Local/Applications/Paje.app/Resources/near.tiff
 Local/Applications/Paje.app/Resources/toselection.tiff
 Local/Applications/Paje.app/Resources/traceFilePaje.tiff
-Local/Applications/Paje.app/library_paths.openapp
 Local/Applications/Paje.app/stamp.make
 Local/Library/Bundles/Paje/ContainerFilter.bundle/ContainerFilter
 Local/Library/Bundles/Paje/ContainerFilter.bundle/Resources/ContainerSelector.gorm/data.classes
@@ -146,6 +145,7 @@ Local/Library/Headers/StorageController/AnchorFilter.h
 Local/Library/Headers/StorageController/Encapsulate.h
 Local/Library/Headers/StorageController/EventAggregator.h
 Local/Library/Headers/StorageController/StateAggregator.h
+Local/Tools/Paje
 @dirrm Local/Library/Headers/StorageController
 @dirrm Local/Library/Headers/StatViewer
 @dirrm Local/Library/Headers/SpaceTimeViewer

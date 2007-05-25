@@ -4,7 +4,6 @@ Local/Applications/TalkSoup.app/Resources/TalkSoup.desktop
 Local/Applications/TalkSoup.app/Resources/TalkSoup.icns
 Local/Applications/TalkSoup.app/Resources/TalkSoup.tiff
 Local/Applications/TalkSoup.app/TalkSoup
-Local/Applications/TalkSoup.app/library_paths.openapp
 Local/Applications/TalkSoup.app/stamp.make
 Local/Library/ApplicationSupport/TalkSoup/InFilters/DCCSupport/DCCSupport
 Local/Library/ApplicationSupport/TalkSoup/InFilters/DCCSupport/Resources/Defaults.plist
@@ -147,6 +146,7 @@ Local/Library/ApplicationSupport/TalkSoup/Output/GNUstepOutput/Resources/general
 Local/Library/ApplicationSupport/TalkSoup/Output/GNUstepOutput/stamp.make
 Local/Library/Frameworks/TalkSoupBundles.framework/Headers
 Local/Library/Frameworks/TalkSoupBundles.framework/Resources
+Local/Library/Frameworks/TalkSoupBundles.framework/TalkSoupBundles
 Local/Library/Frameworks/TalkSoupBundles.framework/Versions/%%APPVERSION%%/Headers/Encodings.h
 Local/Library/Frameworks/TalkSoupBundles.framework/Versions/%%APPVERSION%%/Headers/TalkSoup.h
 Local/Library/Frameworks/TalkSoupBundles.framework/Versions/%%APPVERSION%%/Headers/TalkSoupMisc.h
@@ -158,10 +158,12 @@ Local/Library/Frameworks/TalkSoupBundles.framework/Versions/%%APPVERSION%%/libTa
 Local/Library/Frameworks/TalkSoupBundles.framework/Versions/%%APPVERSION%%/libTalkSoupBundles.so.%%MAJORLIBVERSION%%
 Local/Library/Frameworks/TalkSoupBundles.framework/Versions/%%APPVERSION%%/libTalkSoupBundles.so.%%LIBVERSION%%
 Local/Library/Frameworks/TalkSoupBundles.framework/Versions/Current
+Local/Library/Frameworks/TalkSoupBundles.framework/libTalkSoupBundles.so
 Local/Library/Headers/TalkSoupBundles
 Local/Library/Libraries/libTalkSoupBundles.so
 Local/Library/Libraries/libTalkSoupBundles.so.%%MAJORLIBVERSION%%
 Local/Library/Libraries/libTalkSoupBundles.so.%%LIBVERSION%%
+Local/Tools/TalkSoup
 @dirrm Local/Library/Frameworks/TalkSoupBundles.framework/Versions/%%APPVERSION%%/Resources/English.lproj
 @dirrm Local/Library/Frameworks/TalkSoupBundles.framework/Versions/%%APPVERSION%%/Resources
 @dirrm Local/Library/Frameworks/TalkSoupBundles.framework/Versions/%%APPVERSION%%/Headers
