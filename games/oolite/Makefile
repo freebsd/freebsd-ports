@@ -27,11 +27,13 @@ USE_GNUSTEP_BASE=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_PREFIX=	yes
 MAKEFILE=		GNUmakefile
+MAKE_FLAGS+=		debug=no
 SUB_FILES=		pkg-message
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
 post-patch:
-	${REINPLACE_CMD} -e "s#sdl-config#${SDL_CONFIG}#g" ${WRKSRC}/${MAKEFILE}
+	${REINPLACE_CMD} -e "s|sdl-config|${SDL_CONFIG}|g" ${WRKSRC}/${MAKEFILE}
+	${REINPLACE_CMD} -e "s|shared_obj|obj|g" ${WRKSRC}/${MAKEFILE}.postamble
 
 do-install:
 	${MKDIR} ${GNUSTEP_PREFIX}/Local/Applications
