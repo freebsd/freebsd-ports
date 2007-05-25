@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Mon May 14 22:53:04 2007
++++ Makefile.in	Mon May 14 22:53:19 2007
+@@ -1359,7 +1359,6 @@
+         done
+ 
+ install-data-local: ntop.txt ntop.html faq.html
+-	@$(top_srcdir)/mkinstalldirs $(DESTDIR)/$(libdir)/plugins;
+ 	@if ! test -d $(DESTDIR)/$(datadir)/ntop; then \
+ 	  $(top_srcdir)/mkinstalldirs $(DESTDIR)/$(datadir)/ntop; \
+ 	  touch $(DESTDIR)/$(datadir)/ntop/warnuser; \
