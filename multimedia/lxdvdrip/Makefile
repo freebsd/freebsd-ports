@@ -70,7 +70,7 @@ post-patch:
 		-e 's|^.+alloca.h.+$$||' \
 		${WRKSRC}/dvdbackup.c
 	@${REINPLACE_CMD} -E \
-		-e 's|fopen64|fopen|' \
+		-e 's|fopen64|fopen|g ; s|__off64_t|off_t|g' \
 		${WRKSRC}/dvdinfo.c \
 		${WRKSRC}/lxdvdrip.c
 	@${REINPLACE_CMD} -E \
