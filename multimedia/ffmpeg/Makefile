@@ -1,272 +1,221 @@
-# New ports collection makefile for:	ffmpeg
-# Date created:		Tue Sep 25 15:52:09 BRT 2001
+# New ports collection makefile for:	ffmpeg cvs
+# Date created:		Sun May  1 20:46:59 UTC 2005
 # Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	ffmpeg
-DISTVERSION=	0.4.9-pre1
-PORTREVISION=	7
-CATEGORIES=	multimedia audio net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	ffmpeg
+DISTVERSION=	2007-04-29
+PORTREVISION=	2
+CATEGORIES=	multimedia audio ipv6 net
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ahze
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Hyper fast realtime audio/video encoder/converter, streaming server
 
-USE_GETOPT_LONG=	yes
 HAS_CONFIGURE=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 WANT_SDL=	yes
 CONFIGURE_ARGS=	--cc="${CC}" --prefix="${PREFIX}" \
-		--make="${GMAKE}" --enable-shared \
-		--extra-ldflags="-L${WRKSRC}/libavcodec -L${WRKSRC}/libavcodec/libpostproc \
-			 -L${LOCALBASE}/lib -L${X11BASE}/lib " \
-		--extra-libs="-lm" \
-		--disable-debug
+		--make="${GMAKE}" \
+		--disable-debug \
+		--enable-memalign-hack \
+		--enable-shared \
+		--enable-pp \
+		--extra-cflags="-fPIC -DPIC ${CFLAGS} -I${LOCALBASE}/include" \
+		--extra-ldflags="-L${LOCALBASE}/lib" \
+		--extra-libs="${PTHREAD_LIBS}" \
+		--disable-bktr \
+		--enable-gpl \
+		--enable-pthreads \
+		--enable-swscaler
+CONFIGURE_ENV+=	LANG=C
+MAKE_ENV=	INSTALL="${INSTALL}"
+SHLIB_VER=	1
+PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
+USE_LDCONFIG=	yes
 
-PLIST_SUB=	SHLIB_VERSION=${SHLIB_VERSION}
-INSTALLS_SHLIB=	yes
-CONFLICTS=	ffmpeg-devel*
+CONFLICTS=	ffmpeg-[0-9]*
 
-SHLIB_VERSION=	1
-#
+MAN1=		ffmpeg.1
+
+##
 DOC_FILES=	COPYING Changelog README
 # under subdir doc
 DOC_DOCFILES=	TODO faq.html ffmpeg-doc.html \
 		ffplay-doc.html ffserver-doc.html \
 		hooks.html optimization.txt
-PORTDOCS=	${DOC_FILES} ${DOC_DOCFILES}
-HEADER_FILES=	libavcodec/avcodec.h libavcodec/common.h \
-		libavcodec/dsputil.h
-LIB_FILES=	libavcodec/libavcodec.a libavformat/libavformat.a
-MAN1=		ffmpeg.1
+PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
+.if ${ARCH}=="amd64"
+EXTRA_PATCHES=	${PATCHDIR}/amd64-patch
 .endif
 
-.if exists(${LOCALBASE}/lib/libavformat.so.0)
-BROKEN=		Please remove previous version of ${PORTNAME} to continue build
-.endif
-
-##
-## arch detection
-##
-.if ${ARCH} != "i386"
-WITHOUT_MMX=	yes
-.else
-# only for i386
-EXTRA_PATCHES+=	${FILESDIR}/extra-bktr-patch-libavformat::Makefile
-#. if ${OSVERSION} >= 502000 && !defined(WITH_OPTIMIZED_CFLAGS)
-#CFLAGS+=-fomit-frame-pointer
-#WITH_OPTIMIZED_CFLAGS=yes
-#. endif
+## sse hardware vector support
+.if (defined(MACHINE_CPU) && ${MACHINE_CPU:Msse} == "sse")
+WITH_BUILTIN_VECTOR=	yes
 .endif
 
 ##
-## system version
-##
-.if ${OSVERSION} < 500000
-# postprocess libraries cannot be built
-OSVERSION4_DONT_WORK=yes
-.endif
-
-## lib detection
-##
-##
-## SDL
-.if ${HAVE_SDL:Msdl}
-WITH_SDL=yes
-.endif
-## faac
-.if exists(${LOCALBASE}/lib/libfaac.so.0)
-WITH_FAAC=yes
-.endif
-## freetype2
-.if exists(${LOCALBASE}/lib/libfreetype.so)
-WITH_FREETYPE2=yes
-.endif
-## imlib2
-.if exists(${X11BASE}/lib/libImlib2.so)
-WITH_IMLIB2=yes
-.endif
-## lame mp3
-.if exists(${LOCALBASE}/lib/libmp3lame.so.0)
-WITH_MP3=yes
-.endif
-## vorbis
-.if exists(${LOCALBASE}/lib/libvorbisenc.so.2)
-WITH_VORBIS=yes
-.endif
-.if exists(${LOCALBASE}/lib/libfaad.so.0)
-WITH_FAAD=yes
-.endif
-
 ## support activation
 ##
 ## PORTDOCS
 .ifndef(NOPORTDOCS)
 BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
 .endif
-## disable a52
-#.ifndef(WITHOUT_LIBA52)
-#LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
-#
-#CONFIGURE_ARGS+=	--enable-a52 \
-#			--enable-a52bin
-#.else
-#CONFIGURE_ARGS+=	--enable-a52 \
-#			--disable-a52bin
-#.endif
-GPLLIBS=	yes
-# --enable-a52bin breaks build
-CONFIGURE_ARGS+=	--enable-a52
-## enable freetype2
-.if defined(WITH_FREETYPE2)
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 
-PLIST_SUB+=	DRAWTEXT=""
-.else
-PLIST_SUB+=	DRAWTEXT="@comment "
+.ifdef(WITH_OPTIMIZED_CFLAGS)
+FFMPEG_CFLAGS+=		-O3 -ffast-math -fomit-frame-pointer
 .endif
-## enable imlib2
-.if !defined(WITHOUT_VHOOK) && defined(WITH_IMLIB2)
-LIB_DEPENDS+=	Imlib2.4:${PORTSDIR}/graphics/imlib2
 
-PLIST_SUB+=	IMLIB2=""
+## a52
+.if !defined(WITHOUT_LIBA52) && !defined(WITHOUT_A52)
+LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
+
+CONFIGURE_ARGS+=	--enable-liba52 \
+			--enable-liba52bin
+FFMPEG_LDFLAGS+=		-la52
 .else
-PLIST_SUB+=	IMLIB2="@comment "
+CONFIGURE_ARGS+=	--disable-liba52
 .endif
-## disable mmx
-.ifdef(WITHOUT_MMX)
+## dts
+.ifdef(WITH_DTS) || exists(${LOCALBASE}/lib/libdca.a)
+LIB_DEPENDS+=		dca.0:${PORTSDIR}/multimedia/libdca
+CONFIGURE_ARGS+=	--enable-libdts
+.endif
+## faac
+.ifdef(WITH_FAAC) || exists(${LOCALBASE}/lib/libfaac.so)
+LIB_DEPENDS+=		faac.0:${PORTSDIR}/audio/faac
+
+CONFIGURE_ARGS+=	--enable-libfaac
+.endif
+## faad
+.ifdef(WITH_FAAD) || exists(${LOCALBASE}/lib/libfaad.so)
+LIB_DEPENDS+=		faad.0:${PORTSDIR}/audio/faad
+
+CONFIGURE_ARGS+=	--enable-libfaad \
+			--enable-libfaadbin
+.endif
+USE_RC_SUBR=		ffserver
+MAN1+=			ffserver.1
+
+#### BROKEN LIST #####
+WITHOUT_THEORA=	yes
+
+.if ${MACHINE_CPU:Mmmx}==""
 CONFIGURE_ARGS+=	--disable-mmx
+
+WITHOUT_BUILTIN_VECTOR=	yes
 .endif
+## gsm
+.ifdef(WITH_GSM) || exists(${LOCALBASE}/lib/libgsm.so)
+LIB_DEPENDS+=		gsm.1:${PORTSDIR}/audio/gsm
+
+CONFIGURE_ARGS+=	--enable-libgsm
+.endif
+## mp3
+.ifdef(WITH_LAME) || exists(${LOCALBASE}/lib/libmp3lame.so) || defined(WITH_MP3)
+LIB_DEPENDS+=		mp3lame.0:${PORTSDIR}/audio/lame
+
+CONFIGURE_ARGS+=	--enable-libmp3lame
+.endif
+## ogg
+.ifndef(WITHOUT_OGG) || exists(${LOCALBASE}/lib/libogg.so)
+LIB_DEPENDS+=		ogg.5:${PORTSDIR}/audio/libogg
+
+CONFIGURE_ARGS+=	--enable-libogg
+.endif
+
 ## SDL
-.ifdef(WITH_SDL)
-USE_SDL=	sdl
+.ifdef(WITH_SDL) || ${HAVE_SDL:Msdl}
+USE_SDL+=	sdl
 
 MAN1+=		ffplay.1
 
-PLIST_SUB+=	SDL=""
+PLIST_FILES+=	bin/ffplay
 .else
-PLIST_SUB+=	SDL="@comment "
+CONFIGURE_ARGS+=	--disable-ffplay
 .endif
-## mp3
-.ifdef(WITH_MP3)
-LIB_DEPENDS+=		mp3lame.0:${PORTSDIR}/audio/lame
+.if !defined(WITHOUT_THEORA)
+WITH_OGG=	yes
+LIB_DEPENDS+=		theora.2:${PORTSDIR}/multimedia/libtheora
 
-CONFIGURE_ARGS+=	--enable-mp3lame
-.endif
-## optimization
-# breaks ffmpeg build if defined
-CFLAGS+=		-fno-force-addr
-.if ${OSVERSION} > 502124
-.	ifdef(WITH_OPTIMIZED_CFLAGS)
-CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
-			${CFLAGS} \
-			-I${X11BASE}/include \
-			-ffast-math -fomit-frame-pointer -fno-unit-at-a-time"
-.	else
-CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
-			-I${X11BASE}/include \
-			-fomit-frame-pointer -fno-unit-at-a-time"
-.	endif
-.else
-.	ifdef(WITH_OPTIMIZED_CFLAGS)
-CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
-			${CFLAGS} \
-			-I${X11BASE}/include \
-			-ffast-math -fomit-frame-pointer"
-.	else
-CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
-			-I${X11BASE}/include"
-.	endif
-.endif
-
-## vhook
-.ifndef(WITHOUT_VHOOK)
-PLIST_SUB+=	VHOOK=""
-.else
-CONFIGURE_ARGS+=	-disable-vhook
-
-PLIST_SUB+=	VHOOK="@comment "
+CONFIGURE_ARGS+=	--enable-libtheora
 .endif
 ## vorbis
-.ifdef(WITH_VORBIS)
+.if !defined(WITHOUT_VORBIS)
+WITH_OGG=	yes
 LIB_DEPENDS+=		vorbisenc.2:${PORTSDIR}/audio/libvorbis
 
-CONFIGURE_ARGS+=	--enable-vorbis
+CONFIGURE_ARGS+=	--enable-libvorbis
+FFMPEG_CFLAGS+=		-I${LOCALBASE}/include/vorbis
 .endif
-## faac
-.ifdef(WITH_FAAC)
-LIB_DEPENDS+=		faac.0:${PORTSDIR}/audio/faac
+# x264
+.ifdef(WITH_X264) || exists(${LOCALBASE}/lib/libx264.so)
+LIB_DEPENDS+=		x264.50:${PORTSDIR}/multimedia/x264
 
-CONFIGURE_ARGS+=	--enable-faac
+CONFIGURE_ARGS+=	--enable-x264
 .endif
-## faad
-.ifdef(WITH_FAAD)
-LIB_DEPENDS+=		faad.0:${PORTSDIR}/audio/faad
+## builtin vector, requires mmx
+.if !defined(WITHOUT_BUILTIN_VECTOR) && defined(WITH_BUILTIN_VECTOR)
+FFMPEG_CFLAGS+=		-msse
+.endif
+. ifdef(WITH_FREETYPE2) || exists(${LOCALBASE}/lib/libfreetype.so)
+LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 
-CONFIGURE_ARGS+=	--enable-faad --enable-faadbin
-GPLLIBS=	yes
-.endif
-## GPLLIBS
-.ifdef(GPLLIBS)
-CONFIGURE_ARGS+=	--enable-gpl
-.endif
-## post processing
-.ifndef(WITHOUT_POSTPROCESS)
-CONFIGURE_ARGS+=	--enable-shared-pp
-PLIST_FILES+=		include/ffmpeg/postproc/postprocess.h
-PLIST_DIRS+=		include/ffmpeg/postproc
-. ifdef(GPLLIBS)
-.  ifndef(OSVERSION4_DONT_WORK)
-CONFIGURE_ARGS+=	--enable-pp
+PLIST_FILES+=	lib/vhook/drawtext.so
+. endif # freetype2
+. ifdef(WITH_IMLIB2) || exists(${LOCALBASE}/lib/libImlib2.so)
+LIB_DEPENDS+=	Imlib2.4:${PORTSDIR}/graphics/imlib2
 
-LIB_POSTPROC=		lib/libpostproc.a \
-			lib/libpostproc.so \
-			lib/libpostproc.so.0 \
-			lib/libpostproc.so.${SHLIB_VERSION}
-PLIST_FILES+=		${LIB_POSTPROC}
-.  endif # OSVERSION4_DONT_WORK
-. endif
-.endif
-## ffserver
-.ifdef(WITHOUT_FFMPEG_FFSERVER)
-CONFIGURE_ARGS+=	--disable-ffserver
+PLIST_FILES+=	lib/vhook/imlib2.so
+. else
+WITHOUT_IMLIB2=	yes
+. endif # imlib2
 
-PLIST_SUB+=		FFSERVER="@comment "
-.else
-USE_RC_SUBR=		yes
-MAN1+=			ffserver.1
+## xvid
+.ifdef(WITH_XVID) || exists(${LOCALBASE}/lib/libxvidcore.so)
+LIB_DEPENDS+=		xvidcore.4:${PORTSDIR}/multimedia/xvid
 
-PLIST_SUB+=		FFSERVER=""
+CONFIGURE_ARGS+=	--enable-xvid
 .endif
-PLIST_DIRS+=		include/ffmpeg
 
 pre-everything::
+.ifndef(WITHOUT_A52)
+	@${ECHO_MSG} 'You can disable liba52 support by defining WITHOUT_LIBA52'
+	@${ECHO_MSG}
+.endif
+.ifndef(WITH_DTS)
+	@${ECHO_MSG} 'Define WITH_DTS to enable DTS codec'
+	@${ECHO_MSG}
+.endif
+.ifndef(WITH_FAAC)
+	@${ECHO_MSG} 'Define WITH_FAAC to enable FAAC codec'
+	@${ECHO_MSG}
+.endif
+.ifndef(WITH_FAAD)
+	@${ECHO_MSG} 'Define WITH_FAAD to enable FAAD codec'
+	@${ECHO_MSG}
+.endif
 .ifndef(WITH_FREETYPE2)
-	@${ECHO_MSG} 'Define WITH_FREETYPE2 to enable drawtext FREETYPE2 codec'
+	@${ECHO_MSG} 'Define WITH_FREETYPE2 to enable VHOOK drawtext FREETYPE2 codec'
 	@${ECHO_MSG}
 .endif
-.ifndef(WITHOUT_LIBA52)
-	@${ECHO_MSG} "You can disable liba52 support by defining WITHOUT_LIBA52"
+.ifndef(WITHOUT_IPV6)
+	@${ECHO_MSG} 'Define WITHOUT_IPV6 to disable IPV6 network support'
 	@${ECHO_MSG}
 .endif
-.ifndef(WITHOUT_MMX)
-	@${ECHO_MSG} "Define WITHOUT_MMX if your system does not support MMX"
+.ifndef(WITH_LAME)
+	@${ECHO_MSG} 'Define WITH_LAME to enable lame MP3 codec'
 	@${ECHO_MSG}
 .endif
-.ifndef(WITH_SDL)
-	@${ECHO_MSG} 'Define WITH_SDL to enable ffplay SDL version'
-	@${ECHO_MSG}
-.endif
-.ifndef(WITH_MP3)
-	@${ECHO_MSG} 'Define WITH_MP3 to enable lame MP3 codec'
+.ifndef(WITH_OGG)
+	@${ECHO_MSG} 'Define WITH_OGG to enable OGG codec'
 	@${ECHO_MSG}
 .endif
 .ifndef(WITH_OPTIMIZED_CFLAGS)
@@ -274,105 +223,96 @@ pre-everything::
 	@${ECHO_MSG} 'by defining WITH_OPTIMIZED_CFLAGS'
 	@${ECHO_MSG}
 .endif
-.ifndef(WITHOUT_POSTPROCESS)
-	@${ECHO_MSG} 'You can disable post process support by defining'
-	@${ECHO_MSG} 'WITHOUT_POSTPROCESS'
-	@${ECHO_MSG} 'Beware that this might break some ports that require it'
-	@${ECHO_MSG}
-.endif
-.ifndef(WITHOUT_VHOOK)
-	@${ECHO_MSG} 'You can disable vhook support by defining WITHOUT_VHOOK'
-	@${ECHO_MSG}
-.endif
 .ifndef(WITH_VORBIS)
 	@${ECHO_MSG} 'Define WITH_VORBIS to enable libvorbisenc VORBIS codec'
 	@${ECHO_MSG}
 .endif
-.ifndef(WITH_FAAC)
-	@${ECHO_MSG} 'Define WITH_FAAC to enable libfaac'
+.ifndef(WITH_X264)
+	@${ECHO_MSG} 'Define WITH_X264 to enable X264 codec'
 	@${ECHO_MSG}
 .endif
-.ifndef(WITH_FAAD)
-	@${ECHO_MSG} 'Define WITH_FAAD to enable libfaad codec'
+.ifndef(WITH_XVID)
+	@${ECHO_MSG} 'Define WITH_XVID to enable XVID codec'
 	@${ECHO_MSG}
 .endif
-.ifndef(WITHOUT_FFMPEG_FFSERVER)
-	@${ECHO_MSG} 'Define WITHOUT_FFMPEG_FFSERVER to disable ffserver build'
-	@${ECHO_MSG}
-.endif
-.if ${ARCH} == "i386"
-.if !(defined(WITH_BKTR_FORMAT) && defined(WITH_BKTR_DEV))
-	@${ECHO_MSG}
-	@${ECHO_MSG} 'If you want to capture from a bktr(4) supported card'
-	@${ECHO_MSG} 'you will probably need to set the input device and format'
-	@${ECHO_MSG} 'You can set WITH_BKTR_FORMAT to NTSC or PAL and you can set'
-	@${ECHO_MSG} 'WITH_BKTR_DEV to 0, 1, 2 or 3 (1 is usually the tuner)'
-	@${ECHO_MSG} 'so for a PAL tuner make WITH_BKTR_FORMAT=PAL WITH_BKTR_DEV=1'
-	@${ECHO_MSG}
-	@${ECHO_MSG} 'Warning: invalid settings will probably dump cores'
-	@${ECHO_MSG}
-.endif
-.endif # ${ARCH} == i386
-
-post-extract:
-.if ${ARCH} == "i386"
-# install booktree extension
-	@${CP} ${FILESDIR}/grab_bsdbktr.c ${WRKSRC}/libavformat/
-.endif # ${ARCH} == i386
 
 post-patch:
+# Faad compat
+	@${REINPLACE_CMD} -e 's|faacD|NeAACD|' ${WRKSRC}/libavcodec/faad.c
+# {C,LD}FLAGS safeness
+# fix x264 math, use correct log base 2 from math(3)
+.if ${OSVERSION} <= 601000
+	@${REINPLACE_CMD} -E \
+		-e 's| log2| log|' \
+		${WRKSRC}/libavcodec/x264.c
+.endif
+	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
+		${WRKSRC}/common.mak
+	@${REINPLACE_CMD} -E \
+		-e "s|(EXTRALIBS[[:space:]]*=)|\1-L${LOCALBASE}/lib |g; \
+		s|%%LOCALBASE%%|${LOCALBASE}|g; s|%%SHLIB_VER%%|${SHLIB_VER}|g; \
+		s|-pthread|${PTHREAD_LIBS}|g" \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 # force detection of texi2html
 .ifndef(NOPORTDOCS)
 	@${REINPLACE_CMD} -E \
 		-e 's|^(texi2html=)no|\1yes|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
-.ifndef(WITHOUT_FFMPEG_FFSERVER)
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|; s|%%RC_SUBR%%|${RC_SUBR}|' \
-		${FILESDIR}/ffserver.sh >${WRKDIR}/ffserver.sh
-	@${REINPLACE_CMD} -e "s!/etc/ffserver.conf!${PREFIX}/etc/ffserver.conf!g" \
-		${WRKSRC}/ffserver.c ${WRKSRC}/doc/ffserver-doc.texi
-	@${REINPLACE_CMD} -e 's!NoDaemon!# NoDaemon!g' \
-		${WRKSRC}/doc/ffserver.conf
-.endif
-.if ${ARCH} == "i386"
-# we support "v4l" per default through Steve O'Hara-Smith's bktr(4)
-# patch
-	@${REINPLACE_CMD} -E -e \
-		's|^(v4l).*$$|\1="yes"|' \
-		${WRKSRC}/configure
-.ifdef(WITH_BKTR_FORMAT)
-	@${REINPLACE_CMD} -e \
-		"s!VIDEO_FORMAT NTSC!VIDEO_FORMAT ${WITH_BKTR_FORMAT}!" \
-		${WRKSRC}/libavformat/grab_bsdbktr.c
-.endif
-.ifdef(WITH_BKTR_DEV)
-	@${REINPLACE_CMD} -e \
-		"s!idev = 0!idev = ${WITH_BKTR_DEV}!" \
-		${WRKSRC}/libavformat/grab_bsdbktr.c
-.endif
-.endif # ${ARCH} == i386
-# malloc.h was deprecated in favor of stdlib.h
-	@${FIND} ${WRKSRC} -type f | \
-		${XARGS} -n 10 ${REINPLACE_CMD} -e \
-		's|malloc\.h|stdlib\.h|'
-.ifndef(WITHOUT_LIBA52)
+	@${FIND} ${WRKSRC} -type f -print0 | \
+		${XARGS} -0 -n 5 -x ${REINPLACE_CMD} -E \
+		-e 's|malloc\.h|stdlib\.h|' \
+		-e 's|^.*please_use_av_log.*$$||'
 	@${REINPLACE_CMD} -e 's|-ldl||' \
-		${WRKSRC}/configure
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.if defined(WITH_IMLIB2) && !defined(WITHOUT_IMLIB2)
+	@${REINPLACE_CMD} -E \
+		-e 's|^(imlib2).*$$|\1=yes|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -E \
+		-e 's|(-lImlib2)|-L ${LOCALBASE}/lib \1|' \
+		${WRKSRC}/vhook/Makefile
+.endif
+.if defined(WITH_IPV6)
+	@${REINPLACE_CMD} -E \
+		-e 's|^(ipv6).*$$|\1=yes|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 .ifdef(WITH_SDL)
 	@${REINPLACE_CMD} -E \
 		-e 's|sdl-config|${SDL_CONFIG}|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${FIND} ${WRKSRC} -type f | \
+		${XARGS} -n 10 ${REINPLACE_CMD} -E \
+		-e 's|#include <SDL|#include <SDL/SDL|'
+.endif
+.if !defined(WITHOUT_BUILTIN_VECTOR) && defined(WITH_BUILTIN_VECTOR)
+	@${REINPLACE_CMD} -E \
+		-e 's|^([[:space:]]+builtin_vector).*$$|\1=yes|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.else
+	@${REINPLACE_CMD} -E \
+		-e 's|^([[:space:]]+builtin_vector).*$$|\1=no|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 
-pre-build:
-.ifndef(WITHOUT_POSTPROCESS)
-.  ifndef(OSVERSION4_DONT_WORK)
-	@cd ${WRKSRC}/libavcodec/libpostproc && ${GMAKE}
-.  endif # OSVERSION4_DONT_WORK
+post-configure:
+.ifdef(WITH_DTS)
+	@${REINPLACE_CMD} -E \
+		-e 's|-ldts|${LOCALBASE}/lib/libdts_pic.a|' \
+		-e 's|(-lx264)|-L${LOCALBASE}/lib \1|' \
+			${WRKSRC}/config.mak \
+			${WRKSRC}/libavcodec/Makefile
 .endif
-
+.ifndef(WITH_THEORA)
+	@${REINPLACE_CMD} -E \
+		-e 's|^(CONFIG_LIBTHEORA).*$$|\1=no|' \
+		${WRKSRC}/config.mak
+.endif
+# shared libraries PIC
+	@${REINPLACE_CMD} -E \
+		-e 's|^(PIC[[:space:]]*=.*)$$|\1 -fpic -fPIC -DPIC|' \
+		${WRKSRC}/config.mak
 post-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -382,41 +322,6 @@ post-install:
 .for file in ${DOC_DOCFILES}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
-.endif
-.ifndef(WITHOUT_FFMPEG_FFSERVER)
-	@${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf \
-		${PREFIX}/etc/ffserver.conf.sample
-	@${INSTALL_SCRIPT} ${WRKDIR}/ffserver.sh ${PREFIX}/etc/rc.d
-.endif
-.for file in ${HEADER_FILES}
-# fix header references prior to installation
-	@${REINPLACE_CMD} -e 's|"common.h"|<ffmpeg/common.h>|; \
-		s|"avcodec.h"|<ffmpeg/avcodec.h>|' \
-		${WRKSRC}/${file}
-	@${INSTALL_DATA} ${WRKSRC}/${file} \
-		${PREFIX}/include/ffmpeg/${file:T}
-# change headers back so reinstall target works
-	@${REINPLACE_CMD} -e 's|<ffmpeg/common.h>|"common.h"|; \
-		s|<ffmpeg/avcodec.h>|"avcodec.h"|' \
-		${WRKSRC}/${file}
-.endfor
-.for file in ${LIB_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib/${file:T}
-.endfor
-.ifndef(WITHOUT_POSTPROCESS)
-	@${MKDIR} ${PREFIX}/include/ffmpeg/postproc
-	@${INSTALL_DATA} ${WRKSRC}/libavcodec/libpostproc/postprocess.h \
-		 ${PREFIX}/include/ffmpeg/postproc/postprocess.h
-. ifdef(GPLLIBS)
-.  ifndef(OSVERSION4_DONT_WORK)
-.  for lib in libpostproc.a libpostproc.so
-	@${INSTALL_DATA} ${WRKSRC}/libavcodec/libpostproc/${lib} \
-		${PREFIX}/lib
-.  endfor
-	@${LN} -sf libpostproc.so ${PREFIX}/lib/libpostproc.so.0
-	@${LN} -sf libpostproc.so ${PREFIX}/lib/libpostproc.so.${SHLIB_VERSION}
-.  endif # OSVERSION4_DONT_WORK
-. endif
 .endif
 
 .include <bsd.port.post.mk>

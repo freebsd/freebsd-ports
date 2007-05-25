@@ -1,29 +1,117 @@
---- configure.orig	Mon Jul  5 15:05:54 2004
-+++ configure	Sun Dec  5 15:49:57 2004
-@@ -88,7 +88,7 @@
- mandir=""
- bindir=""
- cross_prefix=""
--cc="gcc"
-+cc="$CC"
- ar="ar"
- ranlib="ranlib"
- make="make"
-@@ -187,7 +187,7 @@
- BeOS)
- prefix="/boot/home/config"
- # helps building libavcodec
--CFLAGS="-DPIC -fomit-frame-pointer"
-+CFLAGS="$CFLAGS -DPIC -fomit-frame-pointer"
- # 3 gcc releases known for BeOS, each with ugly bugs
- gcc_version="`$cc -v 2>&1 | grep version | cut -d ' ' -f3-`"
- case "$gcc_version" in
-@@ -857,7 +857,7 @@
- EOF
+--- configure.orig	Fri Apr 27 03:13:50 2007
++++ configure	Thu May  3 09:28:33 2007
+@@ -208,11 +208,11 @@
  
- imlib2=no
--if $cc -o $TMPE $TMPC -lImlib2 -lm > /dev/null 2>&1  ; then
-+if $cc $CFLAGS $LDFLAGS -o $TMPE $TMPC -lImlib2 -lm > /dev/null 2>&1  ; then
- imlib2=yes
- fi
+ # "tr '[a-z]' '[A-Z]'" is a workaround for Solaris tr not grokking "tr a-z A-Z"
+ toupper(){
+-    echo "$@" | tr '[a-z]' '[A-Z]'
++    echo "$@" | tr '[:lower:]' '[:upper:]'
+ }
+ 
+ tolower(){
+-    echo "$@" | tr '[A-Z]' '[a-z]'
++    echo "$@" | tr '[:upper:]' '[:lower:]'
+ }
+ 
+ set_all(){
+@@ -986,15 +986,9 @@
+     enable fast_unaligned
+   ;;
+   x86_64|amd64)
+-    arch="x86_32"
+     enable fast_unaligned
+-    canon_arch="`$cc -dumpmachine | sed -e 's,\([^-]*\)-.*,\1,'`"
+-    if [ x"$canon_arch" = x"x86_64" -o x"$canon_arch" = x"amd64" ]; then
+-      if [ -z "`echo $CFLAGS | grep -- -m32`"  ]; then
+-        arch="x86_64"
+-        enable fast_64bit
+-      fi
+-    fi
++    arch="x86_64"
++    enable fast_64bit
+   ;;
+   # armv4l is a subset of armv[567]*l
+   arm|armv[4567]*l)
+@@ -1591,7 +1585,7 @@
+ enabled amr_nb     && require libamrnb amrnb/interf_dec.h Speech_Decode_Frame_init -lamrnb -lm
+ enabled amr_wb     && require libamrwb amrwb/dec_if.h D_IF_init -lamrwb -lm
+ enabled liba52     && require liba52 a52dec/a52.h a52_init -la52
+-enabled libdts     && require libdts dts.h dts_init -ldts -lm
++enabled libdts     && require libdca dca.h dca_init -ldca -lm
+ enabled libgsm     && require libgsm gsm.h gsm_create -lgsm
+ enabled libmp3lame && require LAME lame/lame.h lame_init -lmp3lame -lm
+ enabled libtheora  && require libtheora theora/theora.h theora_info_init -ltheora -logg
+@@ -1749,14 +1743,14 @@
+ # not all compilers support -Os
+ test "$optimize" = "small" && check_cflags -Os
+ 
+-if enabled optimize; then
+-    if test -n "`$cc -v 2>&1 | grep xlc`"; then
+-        add_cflags  "-O5"
+-        add_ldflags "-O5"
+-    else
+-        add_cflags "-O3"
+-    fi
+-fi
++#if enabled optimize; then
++#    if test -n "`$cc -v 2>&1 | grep xlc`"; then
++#        add_cflags  "-O5"
++#        add_ldflags "-O5"
++#    else
++#        add_cflags "-O3"
++#    fi
++#fi
+ 
+ # PIC flags for shared library objects where they are needed
+ if enabled shared; then
+@@ -1965,15 +1959,15 @@
+ if enabled shared; then
+   echo "BUILD_SHARED=yes" >> config.mak
+   echo "PIC=-fPIC -DPIC" >> config.mak
+-  echo "SPPMAJOR=${pp_version%%.*}" >> config.mak
++  echo "SPPMAJOR=1" >> config.mak
+   echo "SPPVERSION=$pp_version" >> config.mak
+-  echo "LAVCMAJOR=${lavc_version%%.*}" >> config.mak
++  echo "LAVCMAJOR=%%SHLIB_VER%%" >> config.mak
+   echo "LAVCVERSION=$lavc_version" >> config.mak
+-  echo "LAVFMAJOR=${lavf_version%%.*}" >> config.mak
++  echo "LAVFMAJOR=%%SHLIB_VER%%" >> config.mak
+   echo "LAVFVERSION=$lavf_version" >> config.mak
+-  echo "LAVUMAJOR=${lavu_version%%.*}" >> config.mak
++  echo "LAVUMAJOR=%%SHLIB_VER%%" >> config.mak
+   echo "LAVUVERSION=$lavu_version" >> config.mak
+-  echo "SWSMAJOR=${sws_version%%.*}" >> config.mak
++  echo "SWSMAJOR=%%SHLIB_VER%%" >> config.mak
+   echo "SWSVERSION=$sws_version" >> config.mak
+   echo "SLIBNAME=${SLIBNAME}" >> config.mak
+   echo "SLIBNAME_WITH_VERSION=${SLIBNAME_WITH_VERSION}" >> config.mak
+@@ -2001,7 +1995,7 @@
+ 
+ echo "SRC_PATH=\"$source_path\"" >> config.mak
+ echo "SRC_PATH_BARE=$source_path" >> config.mak
+-echo "BUILD_ROOT=\"$PWD\"" >> config.mak
++echo "BUILD_ROOT=\"$(pwd)\"" >> config.mak
+ 
+ # Apparently it's not possible to portably echo a backslash.
+ if enabled asmalign_pot; then
+@@ -2095,8 +2089,8 @@
+ Version: $version
+ Requires: $requires
+ Conflicts:
+-Libs: -L\${libdir} $libs
+-Cflags: -I\${includedir} -I\${includedir}/$include
++Libs: -L\${libdir} $libs -L%%LOCALBASE%%/lib
++Cflags: -I\${includedir} -I\${includedir}/$include -I%%LOCALBASE%%/include
+ EOF
+ }
+ 
+@@ -2119,7 +2113,8 @@
+ Requires: $requires
+ Conflicts:
+ Libs: \${libdir}/${LIBPREF}${shortname}${LIBSUF} $libs
+-Cflags: -I\${includedir}
++Ldflags: -L%%LOCALBASE%%/lib
++Cflags: -I\${includedir} -I%%LOCALBASE%%/include
+ EOF
+ }
  

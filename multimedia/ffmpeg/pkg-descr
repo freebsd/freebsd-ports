@@ -21,4 +21,4 @@ ffmpeg is made of two programs:
 * ffserver: high performance live broadcast streaming server based
   on the ffmpeg core encoders.
 
-WWW: http://ffmpeg.sourceforge.net/
+WWW: http://ffmpeg.mplayerhq.hu/
