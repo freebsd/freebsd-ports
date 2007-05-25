@@ -8,7 +8,7 @@
 
 PORTNAME=	dbus
 PORTVERSION=	4.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMESUFFIX=	-qt4
@@ -70,7 +70,7 @@ pre-configure:
 
 post-configure:
 	${REINPLACE_CMD} -e 's|${PREFIX}/lib/QtDBus.pc|${PREFIX}/libdata/pkgconfig/QtDBus.pc|g' \
-		${WRKSRC}/src/Makefile
+			-e 's|.*$$(QMAKE).*||g' ${WRKSRC}/src/Makefile
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
 			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
 			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
