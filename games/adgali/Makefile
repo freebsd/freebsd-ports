@@ -34,6 +34,10 @@ USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		"Does not build with gcc 4.2"
+.endif
+
 .if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
 BROKEN=		"Configure fails"
 .endif
