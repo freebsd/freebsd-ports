@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	rkward
-PORTVERSION=	0.4.7
-PORTREVISION=	1
+DISTVERSION=	0.4.7a
+PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,12 +24,14 @@ USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"	\
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--disable-fast-perl
 INSTALLS_ICONS=	yes
 
 WANT_FORTRAN=	yes #dummy but future use
 BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
-FC=		gfortran#42
-F77=		gfortran#42
+FC=		gfortran42
+F77=		gfortran42
+FORTRANLIBDIR2=	`${DIRNAME} \\`gfortran42 -print-libgcc-file-name\\``/../../../
 CONFIGURE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 MAKE_ENV+=	FC="${FC}" F77="${F77}" FFLAGS="${FFLAGS}"
 
@@ -48,6 +50,8 @@ PHP2FIX=	rkward/plugins/makemakefileam.php	\
 pre-configure:
 	${REINPLACE_CMD} -e 's|/usr/bin/php|${LOCALBASE}/bin/php|'	\
 		${PHP2FIX:S|^|${WRKSRC}/|}
+	${REINPLACE_CMD} -e 's|-lgfortran|-L${FORTRANLIBDIR2} -lgfortran|'	\
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's|rkward po doc debian|rkward po debian|'	\
 		${WRKSRC}/Makefile.in
