@@ -1,0 +1,13 @@
+
+###############################################################
+
+To use pytone, you'll need to put something like this 
+into ~/.pytone/pytonerc:
+
+[database.main]
+musicbasedir=/root/of/your/music/collection
+# use new database layout
+basename=
+
+###############################################################
+

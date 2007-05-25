@@ -66,4 +66,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|src/|${PYTHON_SITELIBDIR}/pytone/|g' \
 		${WRKSRC}/pytonectl
 
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.post.mk>
