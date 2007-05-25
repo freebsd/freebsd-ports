@@ -16,6 +16,8 @@ EXTRACT_SUFX=	-devel.src.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system for Finite Element Analysis
 
+BROKEN=		Does not build
+
 USE_X_PREFIX=	yes
 USE_GL=		yes
 WRKSRC=		${WRKDIR}/FElt-${PORTVERSION}
