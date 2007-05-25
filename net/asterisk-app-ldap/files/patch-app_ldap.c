@@ -1,5 +1,5 @@
---- app_ldap.c.orig	Sun Jul 30 12:22:29 2006
-+++ app_ldap.c	Wed Aug 23 15:18:29 2006
+--- app_ldap.c.orig	Tue Apr 17 14:14:56 2007
++++ app_ldap.c	Tue Apr 17 17:06:42 2007
 @@ -9,6 +9,8 @@
   *
   */
@@ -9,60 +9,112 @@
  #include <stdlib.h>
  #include <stdio.h>
  #include <string.h>
-@@ -27,19 +28,23 @@
- #include <asterisk/utils.h>
- #include <asterisk/callerid.h>
- 
- #include <ctype.h>
- #include <errno.h>
- #include <iconv.h>
+@@ -33,36 +35,43 @@
  #include <ldap.h>
  
+ #define AST_MODULE "app_notify"
+-
  #define LDAP_CONFIG "ldap.conf"
 +#define SIZELIMIT 2048
  
- char *replace_ast_vars(struct ast_channel *chan, const char *string);
-+LDAP* ldap_open_connection(char *host, int port, int version);
-+int ldap_bind_connection(LDAP *ld, char *user, char *pass);
-+int ldap_search_in_connection(LDAP *ld, char *base, char *scope, char *filter, char *attribute, char *result);
- int ldap_lookup(char *host, int port, int version, int timeout, char *user, char *pass, char *base, char *scope, char *filter, char *attribute, char *result);
--int strconvert(const char *incharset, const char *outcharset, char *in, char *out);
+-int ldap_lookup(const char *host, int port, int version, int timeout, const char *user, const char *pass, const char *base, const char *scope, const char *filter, const char *attribute, char *result);
+-int strconvert(const char *incharset, const char *outcharset,
+-#ifdef __Darwin__
+-               const char *in,
+-#else
+-               char *in,
+-#endif
+-               char *out);
++char *replace_ast_vars(struct ast_channel *chan, const char *string);
++LDAP* ldap_open_connection(const char *host, int port, int version);
++int ldap_bind_connection(LDAP *ld, const char *user, const char *pass);
++int ldap_search_in_connection(LDAP *ld, const char *base, const char *scope, const char *filter, const char *attribute, char *result);
++int ldap_lookup(const char *host, int port, int version, int timeout, const char *user, const char *pass, 
++		const char *base, const char *scope, const char *filter, const char *attribute, char *result);
 +int strconvert(const char *incharset, const char *outcharset, const char *in, char *out);
- char *strtrim (char *string);
++char *strtrim (char *string);
  
--static char *tdesc = "LDAP directory lookup function for Asterisk extension logic.";
-+static char *tdesc = "LDAP directory lookup function for Asterisk extension logic(Version: $version$).";
+ static char *app = "LDAPget";
+ static char *synopsis = "Retrieve a value from an ldap directory";
  
- static char *g_descrip =
- "  LDAPget(varname=config-file-section/key): Retrieves a value from an LDAP\n"
-@@ -58,11 +65,11 @@
+ static char *descrip =
+-  "  LDAPget(varname=config-file-section/key): Retrieves a value from an LDAP\n"
+-  "directory and stores it in the given variable. Always returns 0.  If the\n"
+-  "requested key is not found, jumps to priority n+101 if available.\n";
++"  LDAPget(varname=config-file-section/key): Retrieves a value from an LDAP\n"
++"directory and stores it in the given variable. Always returns 0.  If the\n"
++"requested key is not found, jumps to priority n+101 if available.\n";
++
+ 
+ static int ldap_exec (struct ast_channel *chan, void *data)
+ {
    int arglen;
-   struct localuser *u;
+   struct ast_module_user *u;
    char *argv, *varname, *config, *keys = NULL, *key = NULL, *tail = NULL;
--  char result[2048];
++#ifdef __FreeBSD__
 +  char result[SIZELIMIT+1];
++#else
+   char result[2048];
++#endif
++  memset(result,0,sizeof(result));
++  
    char *result_conv;
    struct ast_config *cfg;
  
 -  int port = LDAP_PORT, version = LDAP_VERSION2, timeout = 10;
 +  int port = LDAP_PORT, version = LDAP_VERSION3, timeout = 10;
-   char *temp, *host, *user, *pass, *base, *scope, *filter, *_filter, *attribute,
-     *convert_from = NULL, *convert_to = NULL;
+   const char *temp, *host, *user, *pass, *_base, *scope, *_filter, *attribute;
+   char *convert, *convert_from = NULL, *convert_to = NULL, *filter, *base;
  
-@@ -145,9 +152,11 @@
+@@ -127,8 +136,8 @@ static int ldap_exec (struct ast_channel
+   if (!(scope = ast_variable_retrieve(cfg, config, "scope"))) {
+     scope = "sub";
+   }
+-  if(!(_base = ast_variable_retrieve(cfg, config, "base"))) {
+-    _base = "";
++  if(!(_base = ast_variable_retrieve(cfg, config, "base"))){
++     _base = "";
+   }
+   if(!(_filter = ast_variable_retrieve(cfg, config, "filter"))) {
+     _filter = "(&(objectClass=*)(telephoneNumber=${CALLERID(number)}))";
+@@ -136,7 +145,7 @@ static int ldap_exec (struct ast_channel
+   if(!(attribute = ast_variable_retrieve(cfg, config, "attribute"))) {
+     attribute = "cn";
+   }
+-	
++
+   if((temp = ast_variable_retrieve(cfg, config, "convert"))) {
+     convert = ast_strdupa(temp);
+     if(strchr(convert, ',')) {
+@@ -146,7 +155,7 @@ static int ldap_exec (struct ast_channel
+       ast_log(LOG_WARNING, "syntax error: convert = <source-charset>,<destination charset>\n");
+     }
+   }
+-	
++
    if(option_verbose > 3)
-     ast_verbose (VERBOSE_PREFIX_4 "LDAPget: ldap://%s/%s?%s?%s?%s\n", host, base, attribute, scope, _filter);
+     ast_verbose (VERBOSE_PREFIX_4 "LDAPget: ldap://%s/%s?%s?%s?%s\n", host, _base, attribute, scope, _filter);
  
-+//  ast_log(LOG_WARNING, "LDAPget: filter: before replace_ast_vars in main: -%s-\n", filter);
-   filter = replace_ast_vars(chan, _filter);
+@@ -160,12 +169,16 @@ static int ldap_exec (struct ast_channel
+   memset(base, 0, slen);
+   pbx_substitute_variables_helper(chan, _base, base, slen);
+ 
 +//  ast_log(LOG_WARNING, "LDAPget: filter: after replace_ast_vars in main: -%s-\n", filter);
-   if(option_verbose > 3)
--    ast_verbose (VERBOSE_PREFIX_4 "LDAPget: %s\n", filter);
++  if(option_verbose > 3)
 +    ast_verbose (VERBOSE_PREFIX_4 "LDAPget: replaced string: %s\n", filter);
- 
++
    if(keys && strstr(filter, "%s") != NULL) {
-     filter = (char *)realloc(filter, (strlen(filter)+strlen(keys)+1)*sizeof(char));
-@@ -163,24 +172,31 @@
+     filter = (char *)ast_realloc(filter, (strlen(filter)+strlen(keys)+1)*sizeof(char));
+     while((key = strsep(&keys, "|")) != NULL) {
+       if((tail = strstr(filter, "%s")) != NULL) {
+-				memmove(tail+strlen(key), tail+2, strlen(tail+2)+1);
+-				memcpy(tail, key, strlen(key));
++	 memmove(tail+strlen(key), tail+2, strlen(tail+2)+1);
++	 memcpy(tail, key, strlen(key));
+       }
+     }
+   }
+@@ -173,86 +186,146 @@ static int ldap_exec (struct ast_channel
    if(option_verbose > 2)
      ast_verbose (VERBOSE_PREFIX_3 "LDAPget: ldap://%s/%s?%s?%s?%s\n", host, base, attribute, scope, filter);
  
@@ -72,20 +124,20 @@
 -    if(convert_from) {
 +    if(convert_from && strlen(result)>0) {
        if(option_verbose > 2)
- 	ast_verbose(VERBOSE_PREFIX_3 "LDAPget: convert: %s -> %s\n", convert_from, convert_to);
-       result_conv = malloc(strlen(result) * 2);
+-				ast_verbose(VERBOSE_PREFIX_3 "LDAPget: convert: %s -> %s\n", convert_from, convert_to);
++	ast_verbose(VERBOSE_PREFIX_3 "LDAPget: convert: %s -> %s\n", convert_from, convert_to);
+       result_conv = alloca(strlen(result) * 2);
 -      strconvert(convert_from, convert_to, result, result_conv);
 +      strconvert(convert_from, convert_to, (const char*)result, result_conv);
        strcpy(result, result_conv);
-       free(result_conv);
      }
- 		
-     if(strcmp("CALLERIDNAME", varname)==0) {
+-
+-
++		
+     if(strcmp("CALLERIDNAME", varname)==0 || strcmp("CALLERID(name)", varname)==0) {
  #ifdef CHANNEL_HAS_CID
 +       if(option_verbose > 2)
 +	  ast_verbose(VERBOSE_PREFIX_3 "LDAPget: set callerid with HAS_CID ast_set_callerid\n");
-+      result_conv = malloc(strlen(result) * 2);
-+//      ast_set_callerid(chan, chan->cid.cid_num, result, NULL);
        ast_set_callerid(chan, NULL, result, NULL);
  #else
        char *cidnum, *cidname, newcid[512] = "";
@@ -95,24 +147,53 @@
 +	 ast_verbose(VERBOSE_PREFIX_3 "LDAPget: set callerid with NO HAS_CID ast_set_callerid\n");
        ast_set_callerid(chan, newcid, 0);
  #endif
-       if(option_verbose > 2)
-@@ -237,37 +253,95 @@
-   return ASTERISK_GPL_KEY;
+     } else {
+       pbx_builtin_setvar_helper(chan, varname, result);
+     }
+-		if(option_verbose > 2)
+-			ast_verbose (VERBOSE_PREFIX_3 "LDAPget: set %s='%s'\n", varname, result);
++    if(option_verbose > 2)
++       ast_verbose (VERBOSE_PREFIX_3 "LDAPget: set %s='%s'\n", varname, result);
++		
+   } else {
+     /* Send the call to n+101 priority, where n is the current priority */
+     if(ast_exists_extension (chan, chan->context, chan->exten, chan->priority + 101, 
+ #ifdef CHANNEL_HAS_CID
+-														 chan->cid.cid_num
++			     chan->cid.cid_num
+ #else
+-														 chan->callerid
++			     chan->callerid
+ #endif
+-														 ))
++			     ))
+       chan->priority += 100;
+   }
+-	
+ #ifdef NEW_CONFIG
+   ast_config_destroy(cfg);
+ #else
+   ast_destroy(cfg);
+ #endif
+-	
+   ast_module_user_remove(u);
++  
+   return 0;
  }
  
--int ldap_lookup(char *host, int port, int version, int timeout, char *user, char *pass, 
--		char *base, char *scope, char *filter, char *attribute, char *result) {
+-
+-int ldap_lookup(const char *host, int port, int version, int timeout, const char *user, const char *pass, 
+-		const char *base, const char *scope, const char *filter, const char *attribute, char *result) {
 -  char *attrs[] = { NULL };
 -  char **values;
 -  LDAP *ld;
 -  LDAPMessage *res, *entry;
 -  int ret, ldap_scope = LDAP_SCOPE_SUBTREE;
 -
--  //ast_verbose(VERBOSE_PREFIX_3 "LDAPget: %s\n", filter);
 -  ld = ldap_init(host, port);
 -  if(!ld) {
 -    ast_log(LOG_WARNING, "LDAPget: unable to initialize ldap connection to %s:%d\n", host, port);
-+LDAP* ldap_open_connection(char *host, int port, int version)
++LDAP* ldap_open_connection(const char *host, int port, int version)
 +{
 +   LDAP *ld=NULL;
 +   LDAPURLDesc url;
@@ -138,8 +219,17 @@
 +    ast_log(LOG_WARNING, "LDAPget: unable to initialize ldap connection to %s(%d)\n", ldap_err2string(ret),ret);
      return 0;
    }
++  
++  // Disable option referrals
++  if(ldap_set_option(ld, LDAP_OPT_REFERRALS, LDAP_OPT_OFF) != LDAP_OPT_SUCCESS)
++  {
++     ast_log(LOG_WARNING, "LDAPget: unable to disable LDAP_OPT_REFERRALS\n");
++     return 0;
++  }
+ 
 -  ldap_set_option(ld, LDAP_OPT_TIMELIMIT, &timeout);
 -  ldap_set_option(ld, LDAP_OPT_PROTOCOL_VERSION, &version);
+-
 -  if(user) {
 -    if (option_verbose > 2)
 -      ast_verbose(VERBOSE_PREFIX_3 "LDAPget: bind to %s as %s\n", host, user);
@@ -153,14 +243,6 @@
 -    ast_log(LOG_WARNING, "LDAPget: bind failed: %s\n", ldap_err2string(ret));
 -    ldap_unbind(ld);
 -    return 0;
-+  
-+  // Disable option referrals
-+  if(ldap_set_option(ld, LDAP_OPT_REFERRALS, LDAP_OPT_OFF) != LDAP_OPT_SUCCESS)
-+  {
-+     ast_log(LOG_WARNING, "LDAPget: unable to disable LDAP_OPT_REFERRALS\n");
-+     return 0;
-+  }
-+
 +  // set protocol to version
 +  if(ldap_set_option(ld, LDAP_OPT_PROTOCOL_VERSION, &version)!= LDAP_OPT_SUCCESS)
 +  {
@@ -169,8 +251,8 @@
    }
 +  return ld;
 +}
-+
-+int ldap_bind_connection(LDAP *ld, char *user, char *pass)
+ 
++int ldap_bind_connection(LDAP *ld, const char *user, const char *pass)
 +{
 +   int rc;
 +   char *sasl_secprops=NULL;
@@ -201,9 +283,9 @@
 +   
 +   return 1;
 +}
- 
 +
-+int ldap_search_in_connection(LDAP *ld, char *base, char *scope, char *filter, char *attribute, char *result)
++
++int ldap_search_in_connection(LDAP *ld, const char *base, const char *scope, const char *filter, const char *attribute, char *result)
 +{
 +  char *attrs[] = { NULL };
 +  int ret, ldap_scope = LDAP_SCOPE_SUBTREE;
@@ -214,18 +296,20 @@
 +  BerElement *ber=NULL;
 +  struct berval **vals;
 +  struct berval val;
-+
++  
 +//  ast_log(LOG_WARNING, "LDAPget: filter start of ldap_search_in_connections: -%s-\n", filter);
    if(strncmp(scope,"sub",3)==0) {
      ldap_scope = LDAP_SCOPE_SUBTREE;
    } else if(strncmp(scope,"base",4)==0) {
-@@ -276,48 +350,126 @@
+@@ -261,82 +334,146 @@ int ldap_lookup(const char *host, int po
      ldap_scope = LDAP_SCOPE_ONELEVEL;
    }
  
 -  ret = ldap_search_s(ld, base, ldap_scope, filter, attrs, 0, &res);
 -  if(ret) {
--    ast_log(LOG_DEBUG, "LDAPget: search failed: %s\n", ldap_err2string(ret));
+-    ast_log(LOG_WARNING, "LDAPget: search failed: %s\n", ldap_err2string(ret));
+-    if(version==2)
+-      ast_log(LOG_WARNING, "LDAPget: you may try version=3 in your asterisk ldap.conf file.\n");
 +  if(option_verbose > 2)
 +     ast_verbose(VERBOSE_PREFIX_3 "LDAPget: send search command to LDAP server\n");
 +  ret = ldap_search_ext_s(ld, base, ldap_scope, filter, attrs, 0, NULL, NULL, NULL, SIZELIMIT, &res);
@@ -245,7 +329,7 @@
  
 -  entry = ldap_first_entry(ld, res);
 -  if(!entry) {
--    if (option_verbose > 2)
+-    if(option_verbose > 2)
 -      ast_verbose (VERBOSE_PREFIX_3 "LDAPget: Value not found in directory.\n");
 -    ldap_msgfree(res);
 -    ldap_unbind(ld);
@@ -325,13 +409,22 @@
 +     }
    }
 -  ldap_value_free(values);
+-
 -  ldap_msgfree(res);
 -  ldap_unbind_s(ld);
+-  
    return 1;
  }
  
-+int ldap_lookup(char *host, int port, int version, int timeout, char *user, char *pass, 
-+		char *base, char *scope, char *filter, char *attribute, char *result) {
+-int strconvert(const char *incharset, const char *outcharset,
+-#ifdef __Darwin__
+-               const char *in,
+-#else
+-               char *in,
+-#endif
+-               char *out) {
++int ldap_lookup(const char *host, int port, int version, int timeout, const char *user, const char *pass, 
++		const char *base, const char *scope, const char *filter, const char *attribute, char *result) {
 +   LDAP *ld=NULL;
 +   
 +//   ast_log(LOG_WARNING, "LDAPget: filter in ldap_lookup: -%s-\n", filter);
@@ -365,71 +458,50 @@
 +   return 1;
 +}
 +
- 
- char *replace_ast_vars(struct ast_channel *chan, const char *_string)
- {
-   char *var_start, *var_end, *key, *value, *string;
-   int begin, end;
-+
-   if(!_string) return "";
-   string = (char *)malloc((strlen(_string)+1)*sizeof(char));
-   memcpy(string, _string, strlen(_string)+1);
-@@ -328,21 +480,37 @@
-     key = (char *)alloca((end-begin-1)*sizeof(char));
-     memcpy(key, var_start+2, end-begin-2);
-     key[end-begin-2] = '\0';
--    value = pbx_builtin_getvar_helper(chan, key);
--    if(value) { 
--      //ast_verbose (VERBOSE_PREFIX_3 "LDAPget: %s=%s\n", key, value);
-+    if(!strcmp(key,"CALLERIDNUM"))
-+    {
-+       value=chan->cid.cid_num;
-+    }else
-+    {
-+       value = pbx_builtin_getvar_helper(chan, key);
-+//    ast_log(LOG_WARNING, "LDAPget: key=-%s-, value=-%s-\n",key,value);
-+    }
-+    
-+    if(option_verbose > 2)
-+    {
-+       ast_verbose (VERBOSE_PREFIX_3 "LDAPget: key=%s\n", key);
-+       ast_verbose (VERBOSE_PREFIX_3 "LDAPget: value=%s\n", value);
-+    }
-+    if(strcmp(value,"")) { 
-       string = (char *)realloc(string, (strlen(string)-(end-begin+1)+strlen(value)+1)*sizeof(char));
-+
-       memmove(var_start+strlen(value), var_end+1, strlen(var_end+1)+1);
-       memcpy(var_start, value, strlen(value));
-     } else {
--      memmove(var_start, var_end+1, strlen(var_end+1)+1);
-+       memmove(var_start, var_end+1, strlen(var_end+1)+1);
-     }
--    //ast_verbose (VERBOSE_PREFIX_3 "LDAPget: filter:%s\n", string);
-+    if(option_verbose > 2)
-+       ast_verbose (VERBOSE_PREFIX_3 "LDAPget: filter:%s\n", string);
-   }
-   return string;
- }
- 
--int strconvert(const char *incharset, const char *outcharset, char *in, char *out) 
-+
 +
 +int strconvert(const char *incharset, const char *outcharset, const char *in, char *out) 
- {
++{
    iconv_t cd;
-   size_t incount, outcount, result;
-@@ -352,8 +520,14 @@
-     *out = L'\0';
+-  size_t incount = strlen(in), outcount = strlen(in)*2, result;
+-  cd = iconv_open(outcharset, incharset);
+-  if(cd == (iconv_t) -1) {
+-    ast_log(LOG_ERROR, "conversion from '%s' to '%s' not available. type 'iconv -l' in a shell to list the supported charsets.\n", incharset, outcharset);
+-    memcpy(out, in, strlen(in)+1);
++  size_t incount, outcount, result;
++  incount = outcount = strlen(in) * 2;
++  if((cd = iconv_open(outcharset, incharset)) == (iconv_t)-1) {
++    if(errno == EINVAL) ast_log(LOG_DEBUG, "conversion from '%s' to '%s' not available", incharset, outcharset);
++    *out = L'\0';
      return -1;
    }
 +  if(option_verbose > 2)
 +     ast_verbose(VERBOSE_PREFIX_3 "LDAPget: convert: now with icon string: %s\n", in);
    result = iconv(cd, &in, &incount, &out, &outcount);
+-  if(result == (size_t)-1) {
+-    if(errno == E2BIG) {
+-      ast_log(LOG_WARNING, "Iconv: output buffer too small.\n");
+-    } else if(errno == EILSEQ) {
+-      ast_log(LOG_WARNING,  "Iconv: illegal character.\n");
+-    } else if(errno == EINVAL) {
+-      ast_log(LOG_WARNING,  "Iconv: incomplete character sequence.\n");
+-    } else {
+-      ast_log(LOG_WARNING,  "Iconv: error.\n");
+-    }
+-  }
 +  if(option_verbose > 2)
 +     ast_verbose(VERBOSE_PREFIX_3 "LDAPget: convert: close inconv %d\n",result);
    iconv_close(cd);
+-  *out = '\0';
 +  if(option_verbose > 2)
 +     ast_verbose(VERBOSE_PREFIX_3 "LDAPget: result with icon\n");
-   out[strlen(out)] = '\0';
++  out[strlen(out)] = '\0';
    return 1;
  }
+ 
+ static int load_module(void)
+ {
+-  return ast_register_application(app, ldap_exec, synopsis, descrip);
++   return ast_register_application(app, ldap_exec, synopsis, descrip);
+ }
+ 
+ static int unload_module(void)

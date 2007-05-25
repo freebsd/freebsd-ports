@@ -1,34 +1,35 @@
---- Makefile.orig	Sun Jul 30 12:20:19 2006
-+++ Makefile	Sun Jul 30 12:29:12 2006
-@@ -10,16 +10,16 @@
- CONF=ldap.conf
- 
- CFLAGS=$(shell ./cflags.sh)
--LIBS=-llber -lldap
--RES=$(shell if [ -f /usr/include/asterisk/channel.h ]; then echo "$(NAME).so"; fi)
-+LIBS=-llber -lldap -liconv
-+RES=$(shell if [ -f /usr/local/include/asterisk/channel.h ]; then echo "$(NAME).so"; fi)
- 
- ifeq (${OSARCH},Darwin)
- SOLINK=-dynamic -bundle -undefined suppress -force_flat_namespace
- else
--SOLINK=-shared -Xlinker -x
-+SOLINK=-shared -Xlinker -x -L/usr/local/lib
+--- Makefile.orig	Tue Apr 17 13:55:00 2007
++++ Makefile	Tue Apr 17 18:19:37 2007
+@@ -30,6 +30,14 @@
+   CONF_DIR=/etc/asterisk
  endif
  
--MODULES_DIR=/usr/lib/asterisk/modules
-+MODULES_DIR=/usr/local/lib/asterisk/modules
- 
++ifeq ($(OSARCH),FreeBSD)
++#  CFLAGS+= -D__FreeBSD__
++  SOLINK=-shared -Xlinker -x -L/usr/local/lib
++  LIBS=-llber -lldap -liconv
++  MODULES_DIR=/usr/local/lib/asterisk/modules
++  CONF_DIR=/usr/local/etc/asterisk
++endif
++
  %.so : %.o
  	$(CC) $(SOLINK) -o $@ $(LIBS) $<
-@@ -30,8 +30,8 @@
+ 
+@@ -39,13 +47,13 @@
  	rm -f $(NAME).o $(NAME).so
  
  install: all
--	if ! [ -f /etc/asterisk/$(CONF) ]; then \
--		install -m 644 $(CONF).sample /etc/asterisk/$(CONF) ; \
-+	if ! [ -f /usr/local/etc/asterisk/$(CONF).sample ]; then \
-+		install -m 644 $(CONF).sample /usr/local/etc/asterisk/$(CONF).sample ; \
+-	if ! [ -f $(CONF_DIR)/$(CONF) ]; then \
+-		install -m 644 $(CONF).sample $(CONF_DIR)/$(CONF) ; \
++	if ! [ -f $(CONF_DIR)/$(CONF).sample ]; then \
++		install -m 644 $(CONF).sample $(CONF_DIR)/$(CONF).sample ; \
  	fi
  	if [ -f $(NAME).so ]; then \
  		install -m 755 $(NAME).so $(MODULES_DIR) ; \
+ 	fi
+ 
+ reload: install
+-	asterisk -rx "unload ${RES}"
+-	asterisk -rx "load ${RES}"
++	asterisk -rx "module unload ${RES}"
++	asterisk -rx "module load ${RES}"
