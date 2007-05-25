@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	hte
-PORTVERSION=	2.0.5
-PORTREVISION=	1
+PORTVERSION=	2.0.6
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -42,8 +41,6 @@ post-patch:
 		 s|^CFLAGS=.*$$|CFLAGS="$$CFLAGS"|g ; \
 		 s|-L/usr/X11/lib -L/usr/X11R6/lib|$$LDFLAGS|g' \
 			${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		's|typedef unsigned int uint;||g' ${WRKSRC}/global.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ht ${PREFIX}/bin
