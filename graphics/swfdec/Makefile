@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	swfdec
-PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTVERSION=	0.4.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://swfdec.freedesktop.org/download/swfdec/0.4/
 
@@ -16,6 +15,7 @@ MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	Flash Rendering Library
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
+		avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel \
 		oil-0.3.1:${PORTSDIR}/devel/liboil
 
 USE_XLIB=	yes
@@ -25,7 +25,7 @@ USE_GSTREAMER=	yes
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-Wl,-Bsymbolic -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-mozilla-plugin \
 		--with-audio=none
 INSTALLS_SHLIB=	yes
@@ -36,7 +36,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,int16_t,__int16_t," ${WRKSRC}/libswfdec/swfdec_shape.c
 	@${REINPLACE_CMD} -e 's|plugin||g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|sdl-config|${SDL_CONFIG:T}|g" \
-		-e 's|libavcodec|libavcodec-nonfreebsd|g' \
 		${WRKSRC}/configure
 
 .include <bsd.port.mk>
