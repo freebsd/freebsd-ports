@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/multimedia/ffmpeg/files/Attic/ffserver.sh,v 1.3 2006-02-20 20:47:17 dougb Exp $
+# $FreeBSD$
 #
 
 # PROVIDE: ffserver
@@ -8,7 +8,7 @@
 # KEYWORD: shutdown
 
 #
-# Add the following lines to /etc/rc.conf to enable  ffserver:
+# Add the following lines to /etc/rc.conf to enable ffserver:
 #
 #ffserver_enable="YES"
 #
