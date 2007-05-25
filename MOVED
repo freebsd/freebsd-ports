@@ -2958,3 +2958,4 @@ x11/xorg-manpages|||X.org manual pages are now installed with every single port
 x11/xorg-clients|x11/xorg-apps|2007-05-19|Rename to new xorg-apps meta-port
 x11/libXfont|x11-fonts/libXfont|2007-05-19|Move to the x11-fonts category
 x11-servers/xorg-fontserver|x11-fonts/xfs|2007-05-19|Rename to follow X.org name
+x11/xlibs|xorg-libraries|2007-05-25|Replaced by x11/xorg-libraries
