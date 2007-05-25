@@ -374,6 +374,7 @@
     SUBDIR += xkeycaps
     SUBDIR += xkeywrap
     SUBDIR += xkill
+    SUBDIR += xlibs
     SUBDIR += xload
     SUBDIR += xloadimage
     SUBDIR += xlockmore
