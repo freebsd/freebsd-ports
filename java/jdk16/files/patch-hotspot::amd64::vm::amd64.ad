@@ -1,0 +1,13 @@
+--- ../../hotspot/src/cpu/amd64/vm/amd64.ad.orig	Thu May 24 15:27:42 2007
++++ ../../hotspot/src/cpu/amd64/vm/amd64.ad	Thu May 24 17:15:10 2007
+@@ -662,8 +662,8 @@
+ {
+ #ifdef ASSERT
+   if (rspec.reloc()->type() == relocInfo::oop_type && 
+-      d32 != 0 && d32 != (int) Universe::non_oop_word()) {
+-    assert(oop(d32)->is_oop() && oop(d32)->is_perm(), "cannot embed non-perm oops in code");
++      d32 != 0 && d32 != (intptr_t) Universe::non_oop_word()) {
++    assert(oop((intptr_t)d32)->is_oop() && oop((intptr_t)d32)->is_perm(), "cannot embed non-perm oops in code");
+   }
+ #endif
+   cbuf.relocate(cbuf.mark(), rspec, format);

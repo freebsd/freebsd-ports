@@ -1,0 +1,15 @@
+--- ../../j2se/make/sun/jdbc/Makefile.orig	Thu May 24 15:27:43 2007
++++ ../../j2se/make/sun/jdbc/Makefile	Thu May 24 18:28:12 2007
+@@ -89,10 +89,10 @@
+ make_libs: $(TMPDIR)/libodbcinst.so $(TMPDIR)/libodbc.so
+ 
+ $(TMPDIR)/libodbcinst.so: dummyodbc.c  $(TMPDIR)
+-	$(CC) -shared -o $@ $<
++	$(CC) -shared -fPIC -o $@ $<
+ 
+ $(TMPDIR)/libodbc.so: dummyodbc.c $(TMPDIR) 
+-	$(CC) -shared -o $@ $<
++	$(CC) -shared -fPIC -o $@ $<
+ 
+ clean::
+ 	$(RM) -f $(TMPDIR)/libodbcinst.so $(TMPDIR)/libodbc.so
