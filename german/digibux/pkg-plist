@@ -22,8 +22,8 @@ Local/Applications/Digibux.app/Resources/ldp.gorm/data.classes
 Local/Applications/Digibux.app/Resources/ldp.gorm/data.info
 Local/Applications/Digibux.app/Resources/ldp.gorm/objects.gorm
 Local/Applications/Digibux.app/Resources/unicode.plist
-Local/Applications/Digibux.app/library_paths.openapp
 Local/Applications/Digibux.app/stamp.make
+Local/Tools/Digibux
 @dirrm Local/Applications/Digibux.app/Resources/ldp.gorm
 @dirrm Local/Applications/Digibux.app/Resources/StartWindow.gorm
 @dirrm Local/Applications/Digibux.app/Resources/ImageViewer.gorm

@@ -5,7 +5,6 @@ Local/Applications/Toolbox.app/Resources/ToolboxDefaults.plist
 Local/Applications/Toolbox.app/Resources/ToolboxHelp.rtf
 Local/Applications/Toolbox.app/Resources/ToolboxInfo.plist
 Local/Applications/Toolbox.app/Toolbox
-Local/Applications/Toolbox.app/library_paths.openapp
 Local/Applications/Toolbox.app/stamp.make
 Local/Library/Toolbox/Calculator.toolbox/Calculator
 Local/Library/Toolbox/Calculator.toolbox/Resources/Calculator.tiff
@@ -51,6 +50,7 @@ Local/Library/Toolbox/Preference.toolbox/Resources/PreferenceHelp.rtf
 Local/Library/Toolbox/Preference.toolbox/Resources/PreferenceInfo.plist
 Local/Library/Toolbox/Preference.toolbox/Resources/Toolbox.tiff
 Local/Library/Toolbox/Preference.toolbox/stamp.make
+Local/Tools/Toolbox
 @dirrm Local/Library/Toolbox/Preference.toolbox/Resources
 @dirrm Local/Library/Toolbox/Preference.toolbox
 @dirrm Local/Library/Toolbox/Ploplet.toolbox/Resources

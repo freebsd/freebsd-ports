@@ -7,7 +7,7 @@
 
 PORTNAME=	gnustep-gui
 PORTVERSION=	0.11.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -42,7 +42,6 @@ EXTRA_PATCHES+=		${FILESDIR}/GNUmakefile.patch
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_FLAGS+=	OPTFLAG="${CFLAGS}"
 BREAKS_IF_PEDANTIC=	yes
-
 PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}
 
 .if defined(WITHOUT_GNUSTEP_FAKEMAIN)
@@ -51,11 +50,16 @@ IGNORE=		requires procfs mounted to build or run, for details see procfs(5)
 .endif
 .endif
 
-.if defined(WITH_PORTAUDIO2)
+.if !defined(WITHOUT_PORTAUDIO2) || !defined(WITHOUT_PORTAUDIO)
 LIB_DEPENDS+=	portaudio:${PORTSDIR}/audio/portaudio2
 CPPFLAGS+=	-I${LOCALBASE}/include/portaudio2 ${PTHREAD_CFLAGS}
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib/portaudio2 ${PTHREAD_LIBS}
+ADDITIONAL_INCLUDE_DIRS+=	-I${LOCALBASE}/include/portaudio2
+ADDITIONAL_LDFLAGS+=	-L${LOCALBASE}/lib/portaudio2
+PLIST_SUB+=	WITH_PORTAUDIO=""
+.else
+PLIST_SUB+=	WITH_PORTAUDIO="@comment "
 .endif
 
 .if !defined(WITHOUT_CUPS)

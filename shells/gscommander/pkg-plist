@@ -5,7 +5,7 @@ Local/Applications/GSCommander.app/Resources/GSCommander.tiff
 Local/Applications/GSCommander.app/Resources/GSCommanderInfo.plist
 Local/Applications/GSCommander.app/Resources/Info-gnustep.plist
 Local/Applications/GSCommander.app/Resources/README
-Local/Applications/GSCommander.app/library_paths.openapp
 Local/Applications/GSCommander.app/stamp.make
+Local/Tools/GSCommander
 @dirrm Local/Applications/GSCommander.app/Resources
 @dirrm Local/Applications/GSCommander.app

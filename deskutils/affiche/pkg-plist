@@ -18,8 +18,8 @@ Local/Applications/Affiche.app/Resources/resize_gray.tiff
 Local/Applications/Affiche.app/Resources/resize_green.tiff
 Local/Applications/Affiche.app/Resources/resize_purple.tiff
 Local/Applications/Affiche.app/Resources/resize_yellow.tiff
-Local/Applications/Affiche.app/library_paths.openapp
 Local/Applications/Affiche.app/stamp.make
+Local/Tools/Affiche
 @dirrm Local/Applications/Affiche.app/Resources/Swedish.lproj
 @dirrm Local/Applications/Affiche.app/Resources/Spanish.lproj
 @dirrm Local/Applications/Affiche.app/Resources/Lojban.lproj

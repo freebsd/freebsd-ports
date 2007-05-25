@@ -141,7 +141,6 @@ Local/Applications/Burn.app/Resources/iconGSburn.tiff
 Local/Applications/Burn.app/Resources/iconGeneral.tiff
 Local/Applications/Burn.app/Resources/iconMultiSelection.tiff
 Local/Applications/Burn.app/Resources/iconProgressDisc.tiff
-Local/Applications/Burn.app/library_paths.openapp
 Local/Applications/Burn.app/stamp.make
 Local/Library/Bundles/CDparanoia.bundle/CDparanoia
 Local/Library/Bundles/CDparanoia.bundle/Resources/English.lproj/Localizable.strings
@@ -205,6 +204,7 @@ Local/Library/Headers/Burn/ExternalTools.h
 Local/Library/Headers/Burn/Functions.h
 Local/Library/Headers/Burn/PreferencesModule.h
 Local/Library/Headers/Burn/Track.h
+Local/Tools/Burn
 @dirrm Local/Library/Headers/Burn
 @dirrm Local/Library/Bundles/MkIsoFs.bundle/Resources/German.lproj/Settings.gorm
 @dirrm Local/Library/Bundles/MkIsoFs.bundle/Resources/German.lproj/Parameters.gorm

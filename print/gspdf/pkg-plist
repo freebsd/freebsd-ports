@@ -15,8 +15,8 @@ System/Applications/GSPdf.app/Resources/papersizes.plist
 System/Applications/GSPdf.app/Resources/right.tiff
 System/Applications/GSPdf.app/Resources/zoomin.tiff
 System/Applications/GSPdf.app/Resources/zoomout.tiff
-System/Applications/GSPdf.app/library_paths.openapp
 System/Applications/GSPdf.app/stamp.make
+System/Tools/GSPdf
 @dirrm System/Applications/GSPdf.app/Resources/English.lproj
 @dirrm System/Applications/GSPdf.app/Resources
 @dirrm System/Applications/GSPdf.app

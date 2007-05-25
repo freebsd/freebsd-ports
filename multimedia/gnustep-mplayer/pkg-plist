@@ -85,8 +85,8 @@ Local/Applications/Mplayer.app/Resources/volume2.png
 Local/Applications/Mplayer.app/Resources/volume2.tiff
 Local/Applications/Mplayer.app/Resources/volume3.png
 Local/Applications/Mplayer.app/Resources/volume3.tiff
-Local/Applications/Mplayer.app/library_paths.openapp
 Local/Applications/Mplayer.app/stamp.make
+Local/Tools/Mplayer
 @dirrm Local/Applications/Mplayer.app/Resources/MainMenu.gorm
 @dirrm Local/Applications/Mplayer.app/Resources
 @dirrm Local/Applications/Mplayer.app

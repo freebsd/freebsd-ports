@@ -1,4 +1,5 @@
 GNUstep/Local/Library/Frameworks/PopplerKit.framework/Headers
+GNUstep/Local/Library/Frameworks/PopplerKit.framework/PopplerKit
 GNUstep/Local/Library/Frameworks/PopplerKit.framework/Resources
 GNUstep/Local/Library/Frameworks/PopplerKit.framework/Versions/1.0/Headers/PopplerCachingRenderer.h
 GNUstep/Local/Library/Frameworks/PopplerKit.framework/Versions/1.0/Headers/PopplerCairoImageRenderer.h
@@ -30,6 +31,7 @@ GNUstep/Local/Library/Frameworks/PopplerKit.framework/Versions/1.0/libPopplerKit
 GNUstep/Local/Library/Frameworks/PopplerKit.framework/Versions/1.0/libPopplerKit.so.%%MAJORLIBVERSION%%
 GNUstep/Local/Library/Frameworks/PopplerKit.framework/Versions/1.0/libPopplerKit.so.%%LIBVERSION%%
 GNUstep/Local/Library/Frameworks/PopplerKit.framework/Versions/Current
+GNUstep/Local/Library/Frameworks/PopplerKit.framework/libPopplerKit.so
 GNUstep/Local/Library/Headers/PopplerKit
 GNUstep/Local/Library/Libraries/libPopplerKit.so
 GNUstep/Local/Library/Libraries/libPopplerKit.so.%%MAJORLIBVERSION%%

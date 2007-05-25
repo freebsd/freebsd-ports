@@ -22,8 +22,8 @@ Local/Applications/PlopFolio.app/Resources/anim9.tiff
 Local/Applications/PlopFolio.app/Resources/reload.tiff
 Local/Applications/PlopFolio.app/Resources/resize.tiff
 Local/Applications/PlopFolio.app/Resources/stop.tiff
-Local/Applications/PlopFolio.app/library_paths.openapp
 Local/Applications/PlopFolio.app/stamp.make
+Local/Tools/PlopFolio
 @dirrm Local/Applications/PlopFolio.app/Resources/English.lproj
 @dirrm Local/Applications/PlopFolio.app/Resources
 @dirrm Local/Applications/PlopFolio.app

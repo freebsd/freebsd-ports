@@ -148,8 +148,8 @@ Local/Applications/Pixen.app/Resources/zoom1%%MAJORVERSION%%%%MAJORVERSION%%.png
 Local/Applications/Pixen.app/Resources/zoomIn.png
 Local/Applications/Pixen.app/Resources/zoomOut.png
 Local/Applications/Pixen.app/Resources/zoomfit.png
-Local/Applications/Pixen.app/library_paths.openapp
 Local/Applications/Pixen.app/stamp.make
+Local/Tools/Pixen
 @dirrm Local/Applications/Pixen.app/Resources/English.lproj/PXToolProperties.gorm
 @dirrm Local/Applications/Pixen.app/Resources/English.lproj/PXToolPalette.gorm
 @dirrm Local/Applications/Pixen.app/Resources/English.lproj/PXRectangleToolPropertiesView.gorm

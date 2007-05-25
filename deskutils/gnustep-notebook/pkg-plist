@@ -15,8 +15,8 @@ Local/Applications/NoteBook.app/Resources/Info-gnustep.plist
 Local/Applications/NoteBook.app/Resources/NoteBook.desktop
 Local/Applications/NoteBook.app/Resources/NoteBook.png
 Local/Applications/NoteBook.app/Resources/NoteBookInfo.plist
-Local/Applications/NoteBook.app/library_paths.openapp
 Local/Applications/NoteBook.app/stamp.make
+Local/Tools/NoteBook
 @dirrm Local/Applications/NoteBook.app/Resources/English.lproj/PageName.gorm
 @dirrm Local/Applications/NoteBook.app/Resources/English.lproj/Page.gorm
 @dirrm Local/Applications/NoteBook.app/Resources/English.lproj/NoteBookApp.gorm

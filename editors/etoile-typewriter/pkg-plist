@@ -10,8 +10,8 @@ Local/Applications/Typewriter.app/Resources/English.lproj/MainMenu.gorm/objects.
 Local/Applications/Typewriter.app/Resources/Info-gnustep.plist
 Local/Applications/Typewriter.app/Resources/Typewriter.desktop
 Local/Applications/Typewriter.app/Typewriter
-Local/Applications/Typewriter.app/library_paths.openapp
 Local/Applications/Typewriter.app/stamp.make
+Local/Tools/Typewriter
 @dirrm Local/Applications/Typewriter.app/Resources/English.lproj/MainMenu.gorm
 @dirrm Local/Applications/Typewriter.app/Resources/English.lproj/Document.gorm
 @dirrm Local/Applications/Typewriter.app/Resources/English.lproj/CharacterPanel.gorm

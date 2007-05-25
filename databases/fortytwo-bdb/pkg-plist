@@ -1,36 +1,38 @@
+Local/Library/Frameworks/BDB.framework/BDB
 Local/Library/Frameworks/BDB.framework/Headers
 Local/Library/Frameworks/BDB.framework/Resources
-Local/Library/Frameworks/BDB.framework/Versions/A/BDB
-Local/Library/Frameworks/BDB.framework/Versions/A/Headers/BDB.h
-Local/Library/Frameworks/BDB.framework/Versions/A/Headers/BDBConfig.h
-Local/Library/Frameworks/BDB.framework/Versions/A/Headers/BDBConstants.h
-Local/Library/Frameworks/BDB.framework/Versions/A/Headers/BDBCursor.h
-Local/Library/Frameworks/BDB.framework/Versions/A/Headers/BDBCursorConfig.h
-Local/Library/Frameworks/BDB.framework/Versions/A/Headers/BDBDatabase.h
-Local/Library/Frameworks/BDB.framework/Versions/A/Headers/BDBDatabaseConfig.h
-Local/Library/Frameworks/BDB.framework/Versions/A/Headers/BDBDatabaseEntry.h
-Local/Library/Frameworks/BDB.framework/Versions/A/Headers/BDBDatabaseEntryData.h
-Local/Library/Frameworks/BDB.framework/Versions/A/Headers/BDBDatabaseRecordNumber.h
-Local/Library/Frameworks/BDB.framework/Versions/A/Headers/BDBErrorHandling.h
-Local/Library/Frameworks/BDB.framework/Versions/A/Headers/BDBExceptions.h
-Local/Library/Frameworks/BDB.framework/Versions/A/Headers/BDBLockMode.h
-Local/Library/Frameworks/BDB.framework/Versions/A/Headers/BDBObject.h
-Local/Library/Frameworks/BDB.framework/Versions/A/Headers/BDBOperationStatus.h
-Local/Library/Frameworks/BDB.framework/Versions/A/Headers/BDBSerializer.h
-Local/Library/Frameworks/BDB.framework/Versions/A/Headers/BDBTransaction.h
-Local/Library/Frameworks/BDB.framework/Versions/A/Headers/NSArchiver-BDBExtensions.h
-Local/Library/Frameworks/BDB.framework/Versions/A/Resources/Info-gnustep.plist
-Local/Library/Frameworks/BDB.framework/Versions/A/libBDB.so
-Local/Library/Frameworks/BDB.framework/Versions/A/libBDB.so.%%MAJORLIBVERSION%%
-Local/Library/Frameworks/BDB.framework/Versions/A/libBDB.so.%%LIBVERSION%%
+Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/BDB
+Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDB.h
+Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBConfig.h
+Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBConstants.h
+Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBCursor.h
+Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBCursorConfig.h
+Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBDatabase.h
+Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBDatabaseConfig.h
+Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBDatabaseEntry.h
+Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBDatabaseEntryData.h
+Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBDatabaseRecordNumber.h
+Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBErrorHandling.h
+Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBExceptions.h
+Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBLockMode.h
+Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBObject.h
+Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBOperationStatus.h
+Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBSerializer.h
+Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/BDBTransaction.h
+Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers/NSArchiver-BDBExtensions.h
+Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
+Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/libBDB.so
+Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/libBDB.so.%%MAJORLIBVERSION%%
+Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/libBDB.so.%%LIBVERSION%%
 Local/Library/Frameworks/BDB.framework/Versions/Current
+Local/Library/Frameworks/BDB.framework/libBDB.so
 Local/Library/Headers/BDB
 Local/Library/Libraries/libBDB.so
 Local/Library/Libraries/libBDB.so.%%MAJORLIBVERSION%%
 Local/Library/Libraries/libBDB.so.%%LIBVERSION%%
-@dirrm Local/Library/Frameworks/BDB.framework/Versions/A/Resources
-@dirrm Local/Library/Frameworks/BDB.framework/Versions/A/Headers
-@dirrm Local/Library/Frameworks/BDB.framework/Versions/A
+@dirrm Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Resources
+@dirrm Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%/Headers
+@dirrm Local/Library/Frameworks/BDB.framework/Versions/%%MAJORVERSION%%
 @dirrm Local/Library/Frameworks/BDB.framework/Versions
 @dirrm Local/Library/Frameworks/BDB.framework
 %%PORTDOCS%%%%DOCSDIR%%/BDB/BDB.html

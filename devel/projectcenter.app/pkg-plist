@@ -1,4 +1,3 @@
-System/Applications/ProjectCenter.app/library_paths.openapp
 System/Applications/ProjectCenter.app/ProjectCenter
 System/Applications/ProjectCenter.app/Resources/AggregateProject.bundle/AggregateProject
 System/Applications/ProjectCenter.app/Resources/AggregateProject.bundle/Resources/Info-gnustep.plist
@@ -111,6 +110,9 @@ System/Applications/ProjectCenter.app/Resources/soundSuitcaseH.tiff
 System/Applications/ProjectCenter.app/Resources/subprojectSuitcase.tiff
 System/Applications/ProjectCenter.app/Resources/subprojectSuitcaseH.tiff
 System/Applications/ProjectCenter.app/stamp.make
+System/Library/Frameworks/ProjectCenter.framework/Headers
+System/Library/Frameworks/ProjectCenter.framework/ProjectCenter
+System/Library/Frameworks/ProjectCenter.framework/Resources
 System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCAddFilesPanel.h
 System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCBuildPanel.h
 System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/PCBundleLoader.h
@@ -142,6 +144,7 @@ System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Head
 System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/ProjectCenter.h
 System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/ProjectType.h
 System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers/Server.h
+System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/ProjectCenter
 System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/BuildAttributes.gorm/data.classes
 System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/BuildAttributes.gorm/data.info
 System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/BuildAttributes.gorm/objects.gorm
@@ -177,37 +180,13 @@ System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Reso
 System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/libProjectCenter.so
 System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/libProjectCenter.so.%%MAJORVERSION%%
 System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/libProjectCenter.so.%%FRAMEVERSION%%
+System/Library/Frameworks/ProjectCenter.framework/Versions/Current
+System/Library/Frameworks/ProjectCenter.framework/libProjectCenter.so
+System/Library/Headers/ProjectCenter
 System/Library/Libraries/libProjectCenter.so
 System/Library/Libraries/libProjectCenter.so.%%MAJORVERSION%%
 System/Library/Libraries/libProjectCenter.so.%%FRAMEVERSION%%
-@unexec rm -f %D/System/Library/Frameworks/ProjectCenter.framework/Headers
-@unexec rm -f %D/System/Library/Frameworks/ProjectCenter.framework/Resources
-@unexec rm -f %D/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/ProjectCenter
-@unexec rm -f %D/System/Library/Frameworks/ProjectCenter.framework/Versions/Current
-@unexec rm -f %D/System/Library/Headers/ProjectCenter
-@dirrm System/Applications/ProjectCenter.app/Resources/ProjectCenter.gorm
-@dirrm System/Applications/ProjectCenter.app/Resources/AggregateProject.bundle/Resources/Inspector.gorm
-@dirrm System/Applications/ProjectCenter.app/Resources/AggregateProject.bundle/Resources
-@dirrm System/Applications/ProjectCenter.app/Resources/AggregateProject.bundle
-@dirrm System/Applications/ProjectCenter.app/Resources/ApplicationProject.bundle/Resources/Main.gorm
-@dirrm System/Applications/ProjectCenter.app/Resources/ApplicationProject.bundle/Resources/Inspector.gorm
-@dirrm System/Applications/ProjectCenter.app/Resources/ApplicationProject.bundle/Resources
-@dirrm System/Applications/ProjectCenter.app/Resources/ApplicationProject.bundle
-@dirrm System/Applications/ProjectCenter.app/Resources/BundleProject.bundle/Resources/Inspector.gorm
-@dirrm System/Applications/ProjectCenter.app/Resources/BundleProject.bundle/Resources
-@dirrm System/Applications/ProjectCenter.app/Resources/BundleProject.bundle
-@dirrm System/Applications/ProjectCenter.app/Resources/LibraryProject.bundle/Resources/Inspector.gorm
-@dirrm System/Applications/ProjectCenter.app/Resources/LibraryProject.bundle/Resources
-@dirrm System/Applications/ProjectCenter.app/Resources/LibraryProject.bundle
-@dirrm System/Applications/ProjectCenter.app/Resources/RenaissanceProject.bundle/Resources/Inspector.gorm
-@dirrm System/Applications/ProjectCenter.app/Resources/RenaissanceProject.bundle/Resources
-@dirrm System/Applications/ProjectCenter.app/Resources/RenaissanceProject.bundle
-@dirrm System/Applications/ProjectCenter.app/Resources/ToolProject.bundle/Resources/Inspector.gorm
-@dirrm System/Applications/ProjectCenter.app/Resources/ToolProject.bundle/Resources
-@dirrm System/Applications/ProjectCenter.app/Resources/ToolProject.bundle
-@dirrm System/Applications/ProjectCenter.app/Resources
-@dirrm System/Applications/ProjectCenter.app
-@dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers
+System/Tools/ProjectCenter
 @dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/ProjectInspector.gorm
 @dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/ProjectDescription.gorm
 @dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/Preferences.gorm
@@ -217,11 +196,29 @@ System/Library/Libraries/libProjectCenter.so.%%FRAMEVERSION%%
 @dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/FileAttributes.gorm
 @dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources/BuildAttributes.gorm
 @dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Resources
+@dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/Headers
 @dirrm System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%
 @dirrm System/Library/Frameworks/ProjectCenter.framework/Versions
 @dirrm System/Library/Frameworks/ProjectCenter.framework
-@exec ln -s %%FRAMEVERSION%% %D/System/Library/Frameworks/ProjectCenter.framework/Versions/Current
-@exec ln -s Versions/Current/Headers %D/System/Library/Frameworks/ProjectCenter.framework/Headers
-@exec ln -s Versions/Current/Resources %D/System/Library/Frameworks/ProjectCenter.framework/Resources
-@exec ln -s libProjectCenter.so %D/System/Library/Frameworks/ProjectCenter.framework/Versions/%%FRAMEVERSION%%/ProjectCenter
-@exec ln -s ../Frameworks/ProjectCenter.framework/Headers %D/System/Library/Headers/ProjectCenter
+@dirrm System/Applications/ProjectCenter.app/Resources/ToolProject.bundle/Resources/Inspector.gorm
+@dirrm System/Applications/ProjectCenter.app/Resources/ToolProject.bundle/Resources
+@dirrm System/Applications/ProjectCenter.app/Resources/ToolProject.bundle
+@dirrm System/Applications/ProjectCenter.app/Resources/RenaissanceProject.bundle/Resources/Inspector.gorm
+@dirrm System/Applications/ProjectCenter.app/Resources/RenaissanceProject.bundle/Resources
+@dirrm System/Applications/ProjectCenter.app/Resources/RenaissanceProject.bundle
+@dirrm System/Applications/ProjectCenter.app/Resources/ProjectCenter.gorm
+@dirrm System/Applications/ProjectCenter.app/Resources/LibraryProject.bundle/Resources/Inspector.gorm
+@dirrm System/Applications/ProjectCenter.app/Resources/LibraryProject.bundle/Resources
+@dirrm System/Applications/ProjectCenter.app/Resources/LibraryProject.bundle
+@dirrm System/Applications/ProjectCenter.app/Resources/BundleProject.bundle/Resources/Inspector.gorm
+@dirrm System/Applications/ProjectCenter.app/Resources/BundleProject.bundle/Resources
+@dirrm System/Applications/ProjectCenter.app/Resources/BundleProject.bundle
+@dirrm System/Applications/ProjectCenter.app/Resources/ApplicationProject.bundle/Resources/Main.gorm
+@dirrm System/Applications/ProjectCenter.app/Resources/ApplicationProject.bundle/Resources/Inspector.gorm
+@dirrm System/Applications/ProjectCenter.app/Resources/ApplicationProject.bundle/Resources
+@dirrm System/Applications/ProjectCenter.app/Resources/ApplicationProject.bundle
+@dirrm System/Applications/ProjectCenter.app/Resources/AggregateProject.bundle/Resources/Inspector.gorm
+@dirrm System/Applications/ProjectCenter.app/Resources/AggregateProject.bundle/Resources
+@dirrm System/Applications/ProjectCenter.app/Resources/AggregateProject.bundle
+@dirrm System/Applications/ProjectCenter.app/Resources
+@dirrm System/Applications/ProjectCenter.app

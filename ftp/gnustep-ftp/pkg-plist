@@ -8,8 +8,8 @@ Local/Applications/FTP.app/Resources/FTP.gorm/objects.gorm
 Local/Applications/FTP.app/Resources/Info-gnustep.plist
 Local/Applications/FTP.app/Resources/arrow_left.tiff
 Local/Applications/FTP.app/Resources/arrow_right.tiff
-Local/Applications/FTP.app/library_paths.openapp
 Local/Applications/FTP.app/stamp.make
+Local/Tools/FTP
 @dirrm Local/Applications/FTP.app/Resources/FTP.gorm
 @dirrm Local/Applications/FTP.app/Resources
 @dirrm Local/Applications/FTP.app

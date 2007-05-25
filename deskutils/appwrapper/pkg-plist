@@ -4,7 +4,7 @@ Local/Applications/AppWrapper.app/Resources/AppWrapper.desktop
 Local/Applications/AppWrapper.app/Resources/AppWrapper.gorm
 Local/Applications/AppWrapper.app/Resources/AppWrapperInfo.plist
 Local/Applications/AppWrapper.app/Resources/Info-gnustep.plist
-Local/Applications/AppWrapper.app/library_paths.openapp
 Local/Applications/AppWrapper.app/stamp.make
+Local/Tools/AppWrapper
 @dirrm Local/Applications/AppWrapper.app/Resources
 @dirrm Local/Applications/AppWrapper.app

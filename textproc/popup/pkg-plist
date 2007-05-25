@@ -45,8 +45,8 @@ Local/Applications/Popup.app/Resources/Thai.lproj/MainMenu.gorm/data.classes
 Local/Applications/Popup.app/Resources/Thai.lproj/MainMenu.gorm/data.info
 Local/Applications/Popup.app/Resources/Thai.lproj/MainMenu.gorm/objects.gorm
 Local/Applications/Popup.app/Resources/Wrong.wav
-Local/Applications/Popup.app/library_paths.openapp
 Local/Applications/Popup.app/stamp.make
+Local/Tools/Popup
 @dirrm Local/Applications/Popup.app/Resources/Thai.lproj/MainMenu.gorm
 @dirrm Local/Applications/Popup.app/Resources/Thai.lproj
 @dirrm Local/Applications/Popup.app/Resources/German.lproj/MainMenu.gorm

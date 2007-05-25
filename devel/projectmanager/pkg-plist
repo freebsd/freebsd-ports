@@ -329,8 +329,8 @@ Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/Resour
 Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/Resources/Info-gnustep.plist
 Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/UserPipePreferences
 Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/stamp.make
-Local/Applications/ProjectManager.app/library_paths.openapp
 Local/Applications/ProjectManager.app/stamp.make
+Local/Tools/ProjectManager
 @dirrm Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/Resources/English.lproj/UserPipes.gorm
 @dirrm Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/Resources/English.lproj
 @dirrm Local/Applications/ProjectManager.app/Resources/UserPipePreferences.prefs/Resources

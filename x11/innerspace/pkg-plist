@@ -17,8 +17,8 @@ Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/Resources/NickS
 Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/Resources/NickSpace.gorm/data.info
 Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/Resources/NickSpace.gorm/objects.gorm
 Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/stamp.make
-Local/Applications/InnerSpace.app/library_paths.openapp
 Local/Applications/InnerSpace.app/stamp.make
+Local/Tools/InnerSpace
 @dirrm Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/Resources/NickSpace.gorm
 @dirrm Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace/Resources
 @dirrm Local/Applications/InnerSpace.app/Resources/NickSpace.InnerSpace

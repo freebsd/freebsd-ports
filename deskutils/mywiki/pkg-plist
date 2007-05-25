@@ -18,8 +18,8 @@ Local/Applications/MyWiki.app/Resources/common_ArrowLeft.tif
 Local/Applications/MyWiki.app/Resources/common_ArrowRight.tif
 Local/Applications/MyWiki.app/Resources/information.png
 Local/Applications/MyWiki.app/Resources/note.png
-Local/Applications/MyWiki.app/library_paths.openapp
 Local/Applications/MyWiki.app/stamp.make
+Local/Tools/MyWiki
 @dirrm Local/Applications/MyWiki.app/Resources/English.lproj/MyDocument.gorm
 @dirrm Local/Applications/MyWiki.app/Resources/English.lproj/MainMenu.gorm
 @dirrm Local/Applications/MyWiki.app/Resources/English.lproj

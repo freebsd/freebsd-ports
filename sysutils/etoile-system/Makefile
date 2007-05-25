@@ -28,10 +28,13 @@ USE_GNUSTEP_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 SNAPSHOT=	20061221
 WRKSRC=	${WRKDIR}/Etoile/
 USE_GNUSTEP_MAKE_DIRS+=	Services/Private/System
+MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 
 post-install:
 	${MKDIR} ${GNUSTEP_PREFIX}/System/Library/Etoile
 	${CP} ${WRKSRC}/Services/Private/System/SystemTaskList.plist \
 		${GNUSTEP_PREFIX}/System/Library/Etoile/
+	${INSTALL_SCRIPT} ${WRKSRC}/setdown.sh ${WRKSRC}/setup.sh \
+		${GNUSTEP_PREFIX}/System/Tools/
 
 .include <bsd.port.mk>

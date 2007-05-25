@@ -5,7 +5,6 @@ System/Applications/SystemPreferences.app/Resources/Info-gnustep.plist
 System/Applications/SystemPreferences.app/Resources/SystemPreferences.desktop
 System/Applications/SystemPreferences.app/Resources/SystemPreferences.tiff
 System/Applications/SystemPreferences.app/SystemPreferences
-System/Applications/SystemPreferences.app/library_paths.openapp
 System/Applications/SystemPreferences.app/stamp.make
 System/Library/Bundles/Defaults.prefPane/Defaults
 System/Library/Bundles/Defaults.prefPane/Resources/Defaults.tiff
@@ -50,6 +49,7 @@ System/Library/Bundles/Volumes.prefPane/Resources/Info.plist
 System/Library/Bundles/Volumes.prefPane/Resources/Volumes.tiff
 System/Library/Bundles/Volumes.prefPane/Volumes
 System/Library/Bundles/Volumes.prefPane/stamp.make
+System/Tools/SystemPreferences
 @dirrm System/Library/Bundles/Volumes.prefPane/Resources/English.lproj/Volumes.gorm
 @dirrm System/Library/Bundles/Volumes.prefPane/Resources/English.lproj
 @dirrm System/Library/Bundles/Volumes.prefPane/Resources

@@ -13,8 +13,8 @@ Local/Applications/SlideShow.app/Resources/quit.tiff
 Local/Applications/SlideShow.app/Resources/rotateLeft.tiff
 Local/Applications/SlideShow.app/Resources/rotateRight.tiff
 Local/Applications/SlideShow.app/SlideShow
-Local/Applications/SlideShow.app/library_paths.openapp
 Local/Applications/SlideShow.app/stamp.make
+Local/Tools/SlideShow
 @dirrm Local/Applications/SlideShow.app/Resources/English.lproj/Preferences.gorm
 @dirrm Local/Applications/SlideShow.app/Resources/English.lproj/Main.gorm
 @dirrm Local/Applications/SlideShow.app/Resources/English.lproj

@@ -7,8 +7,8 @@ Local/Applications/LuserNET.app/Resources/LuserNET.desktop
 Local/Applications/LuserNET.app/Resources/News.app.tiff
 Local/Applications/LuserNET.app/Resources/Spanish.lproj/Localizable.strings
 Local/Applications/LuserNET.app/Resources/Swedish.lproj/Localizable.strings
-Local/Applications/LuserNET.app/library_paths.openapp
 Local/Applications/LuserNET.app/stamp.make
+Local/Tools/LuserNET
 @dirrm Local/Applications/LuserNET.app/Resources/Swedish.lproj
 @dirrm Local/Applications/LuserNET.app/Resources/Spanish.lproj
 @dirrm Local/Applications/LuserNET.app/Resources/German.lproj

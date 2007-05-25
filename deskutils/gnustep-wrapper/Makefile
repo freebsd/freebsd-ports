@@ -25,8 +25,16 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 USE_GNUSTEP_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 
+ADDITIONAL_LIB_DIRS+=	-L${WRKSRC}/libGSWrapper/obj
+MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
+MAKE_FLAGS+=	debug=no
+
 post-patch:
-	${REINPLACE_CMD} -e 's|cp -u|cp -p|' \
+	${REINPLACE_CMD} -e 's|cp -u|#cp -p|' \
 		${WRKSRC}/WrapperFactory/GNUmakefile.postamble
+
+post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/Launcher/obj/GSWrapper_Launcher \
+		${GNUSTEP_SYSTEM_ROOT}/Applications/WrapperFactory.app/Resources/
 
 .include <bsd.port.mk>

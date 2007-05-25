@@ -30,6 +30,7 @@ USE_GNUSTEP_SYSTEM_LIBS+=	PrefsModule:${PREFERENCES_PORT}
 USE_GNUSTEP_SYSTEM_LIBS+=	Inspector:${GWORKSPACE_PORT}
 
 WRKSRC=		${WRKDIR}/Burn
+MAKE_ENV+=	GNUSTEP_INSTALLATION_DIR=${GNUSTEP_LOCAL_ROOT}
 HEADERS=	Burn/ExternalTools.h Burn/PreferencesModule.h \
 		Constants.h Functions.h Track.h
 

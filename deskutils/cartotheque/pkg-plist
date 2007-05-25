@@ -16,8 +16,8 @@ Local/Applications/Cartotheque.app/Resources/Info-gnustep.plist
 Local/Applications/Cartotheque.app/Resources/InspectorPanel.gorm/data.classes
 Local/Applications/Cartotheque.app/Resources/InspectorPanel.gorm/data.info
 Local/Applications/Cartotheque.app/Resources/InspectorPanel.gorm/objects.gorm
-Local/Applications/Cartotheque.app/library_paths.openapp
 Local/Applications/Cartotheque.app/stamp.make
+Local/Tools/Cartotheque
 @dirrm Local/Applications/Cartotheque.app/Resources/InspectorPanel.gorm
 @dirrm Local/Applications/Cartotheque.app/Resources/CartothequeWindow.gorm
 @dirrm Local/Applications/Cartotheque.app/Resources/Cartotheque.gorm

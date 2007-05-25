@@ -664,6 +664,7 @@ System/Library/Services/GSspell.service/GSspell
 System/Library/Services/GSspell.service/Resources/Info-gnustep.plist
 System/Tools/gclose
 System/Tools/gcloseall
+%%WITH_PORTAUDIO%%System/Tools/gnustep_sndd
 System/Tools/gopen
 System/Tools/make_services
 System/Tools/set_show_service

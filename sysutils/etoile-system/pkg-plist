@@ -4,5 +4,7 @@ System/Library/Libraries/libWorkspaceCommKit.so
 System/Library/Libraries/libWorkspaceCommKit.so.%%MAJORLIBVERSION%%
 System/Library/Libraries/libWorkspaceCommKit.so.%%LIBVERSION%%
 System/Tools/etoile_system
+System/Tools/setup.sh
+System/Tools/setdown.sh
 @dirrm System/Library/Headers/WorkspaceCommKit
 @dirrm System/Library/Etoile
