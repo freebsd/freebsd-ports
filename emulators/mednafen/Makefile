@@ -18,6 +18,8 @@ LIB_DEPENDS=	cdio.7:${PORTSDIR}/sysutils/libcdio \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
+BROKEN=		Configure fails
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
