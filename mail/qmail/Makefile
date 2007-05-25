@@ -177,10 +177,10 @@ OPTIONS+=	RELAYMAILFROM	"Open relay based on mailfrom" off \
 		VERP		"VERP addresses for recipients" on \
 		MOREIPME	"Add control files (more|not)ipme" off \
 		BIGTODO		"Bruce Guenter's BigToDo patch" off \
-		SMTPEXTFORK		"Allow qmail-smtpd fork external progs" off
+		SMTPEXTFORK	"Allow qmail-smtpd fork external progs" off
 .endif
 
-OPTIONS+=	QEXTRA "enable QUEUE_EXTRA e-mail copy feature" off
+OPTIONS+=	QEXTRA "enable QUEUE_EXTRA copy feature" off
 
 .if !defined(SLAVE_LDAP)
 OPTIONS+=	RCDLINK "create rc.d/qmail.sh" on
