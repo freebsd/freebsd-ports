@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	String-Ediff
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	String
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl module to produce common sub-string indices for two strings
 
 PERL_CONFIGURE=	yes
