@@ -7,7 +7,7 @@
 
 PORTNAME=	webalizer
 PORTVERSION=	2.1.10
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/:main \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/:main \
@@ -104,6 +104,10 @@ EXTRA_PATCHES+=		${FILESDIR}/webalizer-a-urasim_2.patch
 CONFIGURE_ARGS+=	--enable-mininls
 CONFIGURE_ENV+=		LIBS="-L${LOCALBASE}/lib -liconv"
 CFLAGS+=		-I${LOCALBASE}/include
+.endif
+
+.if !defined(WITHOUT_WEBALIZER_FULLREFS)
+EXTRA_PATCHES+=		${FILESDIR}/webalizer-fullrefs.patch
 .endif
 
 do-extract:
