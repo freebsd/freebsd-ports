@@ -11,7 +11,7 @@ CATEGORIES=	audio linux
 MASTER_SITE_SUBDIR=	../extras/${LINUX_DIST_VER}/${LINUX_RPM_ARCH}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.fc${LINUX_DIST_VER}
 
-MAINTAINER=	walkingshadow@grummel.net
+MAINTAINER=	jaj@hcl-club.lu
 COMMENT=	A free implementation of OpenAL's ALUT standard (Linux version)
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libopenal.so.0:${PORTSDIR}/audio/linux-openal
