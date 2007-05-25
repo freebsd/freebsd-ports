@@ -24,6 +24,8 @@ RUN_DEPENDS=	mkres.pl:${PORTSDIR}/japanese/p5-mkres \
 # or
 #		${PREFIX}/share/ghostscript/5.10vflib/Fontmap:${PORTSDIR}/japanese/vfghostscript5
 
+BROKEN=		Broken dependency
+
 PLIST_FILES=	bin/addttfont
 USE_PERL5=	yes
 NO_WRKSUBDIR=	yes
