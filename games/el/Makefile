@@ -23,6 +23,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		alut.1:${PORTSDIR}/audio/freealut
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/el.ini:${PORTSDIR}/games/el-data
 
+BROKEN=		Does not build
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
