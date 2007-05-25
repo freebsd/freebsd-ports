@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	redet
-PORTVERSION=	8.21
-PORTREVISION=	1
+PORTVERSION=	8.22
 CATEGORIES=	textproc tk84
 MASTER_SITES=	http://www.billposer.org/Software/Downloads/ CENKES
 
