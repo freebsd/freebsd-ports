@@ -32,6 +32,8 @@ LIB_DEPENDS=	FLAC.7:${PORTSDIR}/audio/flac \
 		mad.2:${PORTSDIR}/audio/libmad \
 		dca.0:${PORTSDIR}/multimedia/libdca
 
+BROKEN=		Incorrect pkg-plist
+
 USE_GCC=	3.4+
 USE_GETTEXT=	yes
 USE_ICONV=	yes
