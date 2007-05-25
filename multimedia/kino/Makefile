@@ -55,7 +55,7 @@ PLIST_SUB+=	FFMPEG_KINO=""
 .else
 CONFIGURE_ARGS+= --disable-local-ffmpeg
 PLIST_SUB+=	FFMPEG_KINO="@comment "
-LIB_DEPENDS+=	avcodec.1:$(PORTSDIR)/multimedia/ffmpeg-devel
+LIB_DEPENDS+=	avcodec.1:$(PORTSDIR)/multimedia/ffmpeg
 .endif
 
 .include <bsd.port.post.mk>

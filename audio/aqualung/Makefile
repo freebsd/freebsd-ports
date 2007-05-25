@@ -29,7 +29,7 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		lrdf.2:${PORTSDIR}/textproc/liblrdf \
 		cdio.7:${PORTSDIR}/sysutils/libcdio \
 		mp3lame.0:${PORTSDIR}/audio/lame \
-		avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel \
+		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		strfunc.9:${PORTSDIR}/devel/libstrfunc \
 		cddb.4:${PORTSDIR}/audio/libcddb
 

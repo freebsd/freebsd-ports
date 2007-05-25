@@ -7,6 +7,7 @@
 
 PORTNAME=	libquicktime
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +18,8 @@ COMMENT=	A library for reading and writing quicktime files
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
-		dv.4:${PORTSDIR}/multimedia/libdv
+		dv.4:${PORTSDIR}/multimedia/libdv \
+		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes
@@ -46,14 +48,6 @@ PORTDOCS=	api_usage.html codecs.html qt4l_building.html \
 
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 CONFIGURE_ARGS+=--without-cpuflags
-.endif
-
-.if exists(${LOCALBASE}/libdata/pkgconfig/libavcodec.pc) || !exists(${LOCALBASE}/lib/libavformat.a)
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel
-PLIST_SUB+=	FFMPEG=""
-.else
-NO_FFMPEG=	${TRUE}
-PLIST_SUB+=	FFMPEG="@comment "
 .endif
 
 .if ${HAVE_GNOME:Mgtk20}!="" || defined(WITH_GTK2)

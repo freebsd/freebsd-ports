@@ -29,7 +29,8 @@ LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		xvidcore.4:${PORTSDIR}/multimedia/xvid \
-		x264.50:${PORTSDIR}/multimedia/x264
+		x264.50:${PORTSDIR}/multimedia/x264 \
+		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
 WRKSRC=		${WRKDIR}/HandBrake-${PORTVERSION}
 HAS_CONFIGURE=	yes
@@ -45,12 +46,6 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude beos \
 			--exclude wx
 
 .include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/lib/libavformat.a) && !exists(${LOCALBASE}/libdata/pkgconfig/libavcodec.pc)
-BROKEN=	ffmpeg exists, handbrake needs ffmpeg-devel so uninstall ffmpeg if you still want handbrake
-.else
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel
-.endif
 
 .if ${OSVERSION} < 500000
 USE_GETOPT_LONG=	yes

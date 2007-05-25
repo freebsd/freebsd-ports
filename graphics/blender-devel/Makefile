@@ -25,7 +25,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		Half.4:${PORTSDIR}/graphics/OpenEXR \
 		openal.0:${PORTSDIR}/audio/openal \
 		alut.1:${PORTSDIR}/audio/freealut \
-		avutil.1:${PORTSDIR}/multimedia/ffmpeg-devel
+		avutil.1:${PORTSDIR}/multimedia/ffmpeg
 
 PLIST_FILES=	bin/blender
 USE_X_PREFIX=	yes
