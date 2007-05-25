@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Engine-Apache
-PORTVERSION=	1.09
+PORTVERSION=	1.11
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/A/AG/AGRUNDMA
@@ -18,7 +18,7 @@ COMMENT=	Catalyst Apache Engines
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=		Catalyst::Engine::Apache.3 \
 		Catalyst::Engine::Apache2::MP19.3 \
