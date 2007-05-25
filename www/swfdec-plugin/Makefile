@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	swfdec-plugin
-PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTVERSION=	0.4.4
 CATEGORIES=	www
 MASTER_SITES=	http://swfdec.freedesktop.org/download/swfdec-mozilla/0.4/
 DISTNAME=	swfdec-mozilla-${PORTVERSION}
@@ -26,7 +25,6 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${P
 
 USE_SDL=	sdl
 USE_GNOME=	gnomehack gtk20
-USE_GSTREAMER=	yes
 USE_GETOPT_LONG=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include \
@@ -40,11 +38,20 @@ CONFIGURE_ENV+=	MOZILLA_CONFIG="${LOCALBASE}/bin/firefox-config"
 CONFIGURE_ENV+=	MOZILLA_CONFIG="${LOCALBASE}/lib/mozilla/mozilla-config"
 .endif
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
+
+OPTIONS=	GSTREAMER "Support for video playback using GStreamer" on
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|plugindir =.*|plugindir = $(PREFIX)/lib/browser_plugins|g" ${WRKSRC}/src/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if !defined(WITHOUT_GSTREAMER)
+USE_GSTREAMER=	yes
+CONFIGURE_ARGS+=	--enable-gstreamer
+.else
+CONFIGURE_ARGS+=	--disable-gstreamer
+.endif
+.include <bsd.port.post.mk>
