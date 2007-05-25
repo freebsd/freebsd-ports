@@ -94,7 +94,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # EXTRACT_SUFX	- Suffix for archive names
 #				  You never have to set both DISTFILES and EXTRACT_SUFX.
 #				  Default: .tar.bz2 if USE_BZIP2 is set, .zip if USE_ZIP is
-#				  set, .tar.gz otherwise.
+#				  set, .run if USE_MAKESELF is set, .tar.gz otherwise).
 # MASTER_SITES	- Primary location(s) for distribution files if not found
 #				  locally.  See bsd.sites.mk for common choices for
 #				  MASTER_SITES.
@@ -297,6 +297,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_BZIP2		- If set, this port tarballs use bzip2, not gzip, for
 #				  compression.
 # USE_ZIP		- If set, this port distfile uses zip, not tar w/[bg]zip
+#				  for compression.
+# USE_MAKESELF		- If set, this port distfile uses makeself, not tar w/[bg]zip
 #				  for compression.
 # USE_DOS2UNIX	- If set to "YES", remove the ^M from all files
 #				  under ${WRKSRC}. If set to a string, remove in all
@@ -673,24 +675,51 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  installed (for example because NOPORTDOCS is defined).
 #				  Useful for dynamically generated documentation.
 #
+# Set the following to specify all documentation your port installs into
+# ${EXAMPLESDIR}
+#
+# PORTEXAMPLES		- A list of files and directories relative to EXAMPLESDIR.
+#				  Shell glob patterns can be used, directories include
+#				  the entire subtree of contained files and directories.
+#				  Should not be set when no examples files are
+#				  installed (for example because NOPORTEXAMPLES is defined).
+#				  Useful for dynamically generated examples.
+#
+# Set the following to specify all documentation your port installs into
+# ${DATADIR}
+#
+# PORTDATA		- A list of files and directories relative to DATADIR.
+#				  Shell glob patterns can be used, directories include
+#				  the entire subtree of contained files and directories.
+#				  Should not be set when no data files are
+#				  installed (for example because NOPORTDATA is defined).
+#				  Useful for dynamically generated data files.
+#
 # Default targets and their behaviors:
 #
-# fetch			- Retrieves ${DISTFILES} (and ${PATCHFILES} if defined)
-#				  into ${DISTDIR} as necessary.
-# fetch-list	- Show list of files that would be retrieved by fetch.
+# fetch				- Retrieves missing ${DISTFILES} and ${PATCHFILES} for this
+#				  port.
+# fetch-list			- Show list of commands to retrieve missing ${DISTFILES} and
+#				  ${PATCHFILES} for this port.
 # fetch-recursive
-#				- Retrieves ${DISTFILES} (and ${PATCHFILES} if defined),
-#				  for port and dependencies into ${DISTDIR} as necessary.
+#				- Retrieves missing ${DISTFILES} and ${PATCHFILES} for this
+#				  port and dependencies.
 # fetch-recursive-list
-#				- Show list of files that would be retrieved by
-#				  fetch-recursive.
-# fetch-required-list
-#				- Show list of files that would be retrieved by
-#				  fetch-required.
+#				- Show list of commands to retrieve missing ${DISTFILES} and
+#				  ${PATCHFILES} for this port and dependencies.
 # fetch-required
-#				- Retrieves ${DISTFILES} (and ${PATCHFILES} if defined),
-#				  for port and dependencies that are not already installed
-#				  into ${DISTDIR}.
+#				- Retrieves missing ${DISTFILES} and ${PATCHFILES} for this
+#				  port and dependencies.
+# fetch-required-list
+#				- Show list of commands to retrieve missing ${DISTFILES} and
+#				  ${PATCHFILES} for this port and dependencies.
+# fetch-url-list
+#				- Show list of URLS to retrieve missing ${DISTFILES} and
+#				  ${PATCHFILES} for this port.
+# fetch-urlall-list
+#				- Show list of URLS to retrieve ${DISTFILES} and
+#				  ${PATCHFILES} for this port.
+#
 # all-depends-list
 #				- Show all directories which are dependencies
 #				  for this port.
@@ -796,7 +825,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # For extract:
 #
 # EXTRACT_CMD	- Command for extracting archive: "bzip2" if USE_BZIP2
-#				  is set, "unzip" if USE_ZIP is set, "gzip" otherwise.
+#				  is set, "unzip" if USE_ZIP is set, "unmakeself" if
+#				  USE_MAKESELF if set, "gzip" otherwise.
 # EXTRACT_BEFORE_ARGS
 #				- Arguments to ${EXTRACT_CMD} before filename.
 #				  Default: "-dc"
@@ -1160,6 +1190,7 @@ TR?=		LANG=C /usr/bin/tr
 TRUE?=		true				# Shell builtin
 UNAME?=		/usr/bin/uname
 UNZIP_CMD?=	${LOCALBASE}/bin/unzip
+UNMAKESELF_CMD?=	${LOCALBASE}/bin/unmakeself
 WHICH?=		/usr/bin/which
 XARGS?=		/usr/bin/xargs
 YACC?=		/usr/bin/yacc
@@ -1378,6 +1409,12 @@ INDEXFILE?=		INDEX-${OSVERSION:C/([0-9]).*/\1/}
 
 TARGETDIR:=		${DESTDIR}${PREFIX}
 
+DOCSDIR?=		${TARGETDIR}/share/doc/${PORTNAME}
+EXAMPLESDIR?=		${TARGETDIR}/share/examples/${PORTNAME}
+DATADIR?=		${TARGETDIR}/share/${PORTNAME}
+WWWDIR?=		${TARGETDIR}/www/${PORTNAME}
+ETCDIR?=		${TARGETDIR}/etc/${PORTNAME}
+
 .if defined(USE_LINUX_RPM)
 .include "${PORTSDIR}/Mk/bsd.linux-rpm.mk"
 .endif
@@ -1407,6 +1444,8 @@ X_WINDOW_SYSTEM ?= xfree86-4
 EXTRACT_SUFX?=			.tar.bz2
 .elif defined(USE_ZIP)
 EXTRACT_SUFX?=			.zip
+.elif defined(USE_MAKESELF)
+EXTRACT_SUFX?=			.run
 .else
 EXTRACT_SUFX?=			.tar.gz
 .endif
@@ -1645,7 +1684,7 @@ PLIST_SUB+=	OSREL=${OSREL} PREFIX=%D LOCALBASE=${LOCALBASE_REL} X11BASE=${X11BAS
 		DESTDIR=${DESTDIR} TARGETDIR=${TARGETDIR}
 SUB_LIST+=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE_REL} X11BASE=${X11BASE_REL} \
 		DATADIR=${DATADIR} DOCSDIR=${DOCSDIR} EXAMPLESDIR=${EXAMPLESDIR} \
-		WWWDIR=${WWWDIR} DESTDIR=${DESTDIR} TARGETDIR=${TARGETDIR}
+		WWWDIR=${WWWDIR} ETCDIR=${ETCDIR} DESTDIR=${DESTDIR} TARGETDIR=${TARGETDIR}
 
 PLIST_REINPLACE+=	dirrmtry stopdaemon
 PLIST_REINPLACE_DIRRMTRY=s!^@dirrmtry \(.*\)!@unexec rmdir %D/\1 2>/dev/null || true!
@@ -1670,6 +1709,18 @@ CFLAGS:=		${CFLAGS:N-O*:N-fno-strict*} ${DEBUG_FLAGS}
 PLIST_SUB+=		PORTDOCS="@comment "
 .else
 PLIST_SUB+=		PORTDOCS=""
+.endif
+
+.if defined(NOPORTEXAMPLES)
+PLIST_SUB+=	        PORTEXAMPLES="@comment "
+.else
+PLIST_SUB+=	        PORTEXAMPLES=""
+.endif
+
+.if defined(NOPORTDATA)
+PLIST_SUB+=	        PORTDATA="@comment "
+.else
+PLIST_SUB+=	        PORTDATA=""
 .endif
 
 CONFIGURE_SHELL?=	${SH}
@@ -1701,6 +1752,9 @@ PATCH_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
 
 .if defined(USE_ZIP)
 EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+.endif
+.if defined(USE_MAKESELF)
+EXTRACT_DEPENDS+=	unmakeself:${PORTSDIR}/archivers/unmakeself
 .endif
 .if defined(USE_GMAKE)
 BUILD_DEPENDS+=		gmake:${PORTSDIR}/devel/gmake
@@ -2267,6 +2321,10 @@ TAR?=	/usr/bin/tar
 EXTRACT_CMD?=		${UNZIP_CMD}
 EXTRACT_BEFORE_ARGS?=	-qo
 EXTRACT_AFTER_ARGS?=	-d ${WRKDIR}
+.elif defined(USE_MAKESELF)
+EXTRACT_CMD?=		${UNMAKESELF_CMD}
+EXTRACT_BEFORE_ARGS?=
+EXTRACT_AFTER_ARGS?=
 .else
 EXTRACT_BEFORE_ARGS?=	-dc
 .if defined(EXTRACT_PRESERVE_OWNERSHIP)
@@ -3035,19 +3093,17 @@ INFO_PATH?=	share/info
 INFO_PATH?=	info
 .endif
 
-DOCSDIR?=	${TARGETDIR}/share/doc/${PORTNAME}
 DOCSDIR_REL?=	${DOCSDIR:S,^${TARGETDIR}/,,}
-EXAMPLESDIR?=	${TARGETDIR}/share/examples/${PORTNAME}
 EXAMPLESDIR_REL?=	${EXAMPLESDIR:S,^${TARGETDIR}/,,}
-DATADIR?=	${TARGETDIR}/share/${PORTNAME}
 DATADIR_REL?=	${DATADIR:S,^${TARGETDIR}/,,}
-WWWDIR?=	${TARGETDIR}/www/${PORTNAME}
 WWWDIR_REL?=	${WWWDIR:S,^${TARGETDIR}/,,}
+ETCDIR_REL?=	${ETCDIR:S,^${TARGETDIR}/,,}
 
 PLIST_SUB+=	DOCSDIR="${DOCSDIR_REL}" \
 		EXAMPLESDIR="${EXAMPLESDIR_REL}" \
 		DATADIR="${DATADIR_REL}" \
-		WWWDIR="${WWWDIR_REL}"
+		WWWDIR="${WWWDIR_REL}" \
+		ETCDIR="${ETCDIR_REL}"
 
 DESKTOPDIR?=		${TARGETDIR}/share/applications
 _DESKTOPDIR_REL=	${DESKTOPDIR:S,^${TARGETDIR}/,,}/
@@ -3180,6 +3236,18 @@ ${target}:
 ignorelist: package-name
 .else
 ignorelist:
+	@${DO_NADA}
+.endif
+
+.if defined(IGNORE) || defined(NO_PACKAGE)
+ignorelist-verbose:
+.if defined(IGNORE)
+	@${ECHO_MSG} "${PKGNAME}|IGNORE: "${IGNORE:Q}
+.else
+	@${ECHO_MSG} "${PKGNAME}|NO_PACKAGE: "${NO_PACKAGE:Q}
+.endif
+.else
+ignorelist-verbose:
 	@${DO_NADA}
 .endif
 
@@ -4202,7 +4270,8 @@ _INSTALL_SEQ=	install-message check-conflicts \
 _INSTALL_SUSEQ= check-umask install-mtree pre-su-install \
 				pre-su-install-script do-install install-desktop-entries \
 				post-install post-install-script add-plist-info \
-				add-plist-docs add-plist-post install-rc-script compress-man \
+				add-plist-docs add-plist-examples add-plist-data \
+				add-plist-post install-rc-script compress-man \
 				install-ldconfig-file fake-pkg security-check
 _PACKAGE_DEP=	install
 _PACKAGE_SEQ=	package-message pre-package pre-package-script \
@@ -4422,6 +4491,9 @@ deinstall-all:
 	@${ECHO_MSG} "===>  Deinstalling for ${PKGORIGIN} from ${DESTDIR}"
 .endif
 	@deinstall_names=`${PKG_INFO} -q -O ${PKGORIGIN}`; \
+	for oldpkgorigin in $$(${GREP} "|${PKGORIGIN}|" ${PORTSDIR}/MOVED | ${CUT} -f 1 -d '|' | ${SORT} -u); do \
+		deinstall_names="$${deinstall_names} $$(${PKG_INFO} -q -O $${oldpkgorigin})"; \
+	done; \
 	if [ -n "$${deinstall_names}" ]; then \
 		for d in $${deinstall_names}; do \
 			if [ -z "${DESTDIR}" ] ; then \
@@ -4588,6 +4660,83 @@ fetch-list:
 		fi \
 	 done)
 .endif
+.endif
+
+.if !target(fetch-url-list-int)
+fetch-url-list-int:
+	@${MKDIR} ${_DISTDIR}
+	@(cd ${_DISTDIR}; \
+	${_MASTER_SITES_ENV}; \
+	for _file in ${DISTFILES}; do \
+		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
+		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
+		if [ ! -z "${LISTALL}" -o ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
+			if [ ! -z "$$select" ] ; then \
+				__MASTER_SITES_TMP= ; \
+				for group in $$select; do \
+					if [ ! -z \$${_MASTER_SITES_$${group}} ] ; then \
+						eval ___MASTER_SITES_TMP=\$${_MASTER_SITES_$${group}} ; \
+						__MASTER_SITES_TMP="$${__MASTER_SITES_TMP} $${___MASTER_SITES_TMP}" ; \
+					fi \
+				done; \
+				___MASTER_SITES_TMP= ; \
+				SORTED_MASTER_SITES_CMD_TMP="${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} $${__MASTER_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
+			else \
+				SORTED_MASTER_SITES_CMD_TMP="${SORTED_MASTER_SITES_DEFAULT_CMD}" ; \
+			fi ; \
+			for site in `eval $$SORTED_MASTER_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
+				DIR=${DIST_SUBDIR}; \
+				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
+				case $${file} in \
+				*/*)	args="-o $${file} $${site}$${file}";; \
+				*)		args=$${site}$${file};; \
+				esac; \
+				${ECHO_CMD} $${args} ; \
+			done; \
+		fi \
+	done)
+.if defined(PATCHFILES)
+	@(cd ${_DISTDIR}; \
+	${_PATCH_SITES_ENV} ; \
+	for _file in ${PATCHFILES}; do \
+		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
+		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
+		if [ ! -z "${LISTALL}" -o ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
+			if [ ! -z "$$select" ] ; then \
+				__PATCH_SITES_TMP= ; \
+				for group in $$select; do \
+					if [ ! -z \$${_PATCH_SITES_$${group}} ] ; then \
+						eval ___PATCH_SITES_TMP=\$${_PATCH_SITES_$${group}} ; \
+						__PATCH_SITES_TMP="$${__PATCH_SITES_TMP} $${___PATCH_SITES_TMP}" ; \
+					fi \
+				done; \
+				___PATCH_SITES_TMP= ; \
+				SORTED_PATCH_SITES_CMD_TMP="${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} $${__PATCH_SITES_TMP} | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
+			else \
+				SORTED_PATCH_SITES_CMD_TMP="${SORTED_PATCH_SITES_DEFAULT_CMD}" ; \
+			fi ; \
+			for site in `eval $$SORTED_PATCH_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
+				DIR=${DIST_SUBDIR}; \
+				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
+				case $${file} in \
+				*/*)	args="-o $${file} $${site}$${file}";; \
+				*)		args=$${site}$${file};; \
+				esac; \
+				${ECHO_CMD} $${args} ; \
+			done; \
+		fi \
+	 done)
+.endif
+.endif
+
+.if !target(fetch-urlall-list)
+fetch-urlall-list:
+	@LISTALL=yes ${MAKE} fetch-url-list-int
+.endif
+
+.if !target(fetch-url-list)
+fetch-url-list:
+	@${MAKE} fetch-url-list-int
 .endif
 
 # Generates patches.
@@ -5503,6 +5652,54 @@ add-plist-docs:
 	@${FIND} -P -d ${PORTDOCS:S/^/${DOCSDIR}\//} -type d 2>/dev/null | \
 		${SED} -ne 's,^${TARGETDIR}/,@dirrm ,p' >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm ${DOCSDIR_REL}" >> ${TMPPLIST}
+.else
+	@${DO_NADA}
+.endif
+.endif
+
+.if !target(add-plist-examples)
+add-plist-examples:
+.if defined(PORTEXAMPLES) && !defined(NOPORTEXAMPLES)
+	@if ${EGREP} -qe '^@cw?d' ${TMPPLIST} && \
+		[ "`${SED} -En -e '/^@cw?d[ 	]*/s,,,p' ${TMPPLIST} | ${TAIL} -n 1`" != "${PREFIX}" ]; then \
+		${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}; \
+	fi
+.for x in ${PORTEXAMPLES}
+	@if ${ECHO_CMD} "${x}"| ${AWK} '$$1 ~ /(\*|\||\[|\]|\?|\{|\}|\$$)/ { exit 1};'; then \
+		if [ ! -e ${EXAMPLESDIR}/${x} ]; then \
+		${ECHO_CMD} ${EXAMPLESDIR}/${x} | \
+			${SED} -e 's,^${PREFIX}/,,' >> ${TMPPLIST}; \
+	fi;fi
+.endfor
+	@${FIND} -P ${PORTEXAMPLES:S/^/${EXAMPLESDIR}\//} ! -type d 2>/dev/null | \
+		${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
+	@${FIND} -P -d ${PORTEXAMPLES:S/^/${EXAMPLESDIR}\//} -type d 2>/dev/null | \
+		${SED} -ne 's,^${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm ${EXAMPLESDIR:S,^${PREFIX}/,,}" >> ${TMPPLIST}
+.else
+	@${DO_NADA}
+.endif
+.endif
+
+.if !target(add-plist-data)
+add-plist-data:
+.if defined(PORTDATA) && !defined(NOPORTDATA)
+	@if ${EGREP} -qe '^@cw?d' ${TMPPLIST} && \
+		[ "`${SED} -En -e '/^@cw?d[ 	]*/s,,,p' ${TMPPLIST} | ${TAIL} -n 1`" != "${PREFIX}" ]; then \
+		${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}; \
+	fi
+.for x in ${PORTDATA}
+	@if ${ECHO_CMD} "${x}"| ${AWK} '$$1 ~ /(\*|\||\[|\]|\?|\{|\}|\$$)/ { exit 1};'; then \
+		if [ ! -e ${DATADIR}/${x} ]; then \
+		${ECHO_CMD} ${DATADIR}/${x} | \
+			${SED} -e 's,^${PREFIX}/,,' >> ${TMPPLIST}; \
+	fi;fi
+.endfor
+	@${FIND} -P ${PORTDATA:S/^/${DATADIR}\//} ! -type d 2>/dev/null | \
+		${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
+	@${FIND} -P -d ${PORTDATA:S/^/${DATADIR}\//} -type d 2>/dev/null | \
+		${SED} -ne 's,^${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm ${DATADIR:S,^${PREFIX}/,,}" >> ${TMPPLIST}
 .else
 	@${DO_NADA}
 .endif
