@@ -1,6 +1,6 @@
---- configure.orig	Sun Sep 17 17:21:28 2006
-+++ configure	Sun Sep 17 20:59:12 2006
-@@ -31790,7 +31790,7 @@
+--- configure.orig	Mon May  7 13:10:22 2007
++++ configure	Mon May 21 17:03:34 2007
+@@ -29251,7 +29251,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -9,7 +9,7 @@
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -33809,7 +33809,7 @@
+@@ -31110,7 +31110,7 @@
    withval=$with_r_home; use_r_home="$withval"
  else
    use_r_home=`R CMD sh -c 'echo $R_HOME'`
@@ -18,7 +18,7 @@
  
  fi
  
-@@ -33888,7 +33888,7 @@
+@@ -31189,7 +31189,7 @@
    withval=$with_r_includes; use_r_includes="$withval"
  else
    use_r_includes=`$R_HOMEDIR/bin/R CMD sh -c 'echo $R_INCLUDE_DIR'`
@@ -26,4 +26,13 @@
 +  if test "$use_r_includes" = "" ; then use_r_includes="$R_HOMEDIR/include" ; fi
  
  fi
+ 
+@@ -33235,7 +33235,7 @@
+ 
+ 
+ 
+-CPPFLAGS+=" -DQT_NO_ASCII_CAST"
++CPPFLAGS="$CPPFLAGS -DQT_NO_ASCII_CAST"
+ 
+ 
  
