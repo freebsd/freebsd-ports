@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-BigInt
-PORTVERSION=	1.83
+PORTVERSION=	1.84
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Math::BigInt - Arbitrary size integer math package
-
-BROKEN=		Unfetchable
 
 PERL_CONFIGURE=	yes
 
