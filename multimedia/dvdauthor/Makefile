@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dvdauthor
-PORTVERSION=	0.6.11
-PORTREVISION=	2
+PORTVERSION=	0.6.14
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +22,8 @@ USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
-MAN1=	dvdauthor.1 spumux.1
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
+MAN1=	dvdauthor.1 dvddirdel.1 dvdunauthor.1 mpeg2desc.1 spumux.1 spuunmux.1
 
 .include <bsd.port.pre.mk>
 
