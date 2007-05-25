@@ -1,0 +1,11 @@
+This contains XS performance enhancers for Class::C3 version
+0.16 and higher.  The main Class::C3 package will use this
+package automatically if it can find it.  Do not use this
+package directly, use Class::C3 instead.
+
+This module won't do anything for you if you're running a
+version of Class::C3 older than 0.16.  (It's not a
+dependency because it would be circular with the optional
+dep from that package to this one).
+
+WWW: http://search.cpan.org/dist/Class-C3-XS/

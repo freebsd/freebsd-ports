@@ -895,6 +895,7 @@
     SUBDIR += p5-Class-Base
     SUBDIR += p5-Class-BlackHole
     SUBDIR += p5-Class-C3
+    SUBDIR += p5-Class-C3-XS
     SUBDIR += p5-Class-Closure
     SUBDIR += p5-Class-CodeStyler
     SUBDIR += p5-Class-Constant
