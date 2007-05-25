@@ -7,7 +7,7 @@
 
 PORTNAME=	noia-warm
 PORTVERSION=	0.95
-MASTER_SITES=	http://files.deviantart.com/icon/nixicons/
+MASTER_SITES=	http://easylinuxguide.com/downloads/kde-iconthemes/
 DISTNAME=	${PORTNAME:S/-//}kde${PORTVERSION:S/.//g}
 
 COMMENT=	KDE iconset variation of the 'Noia' icons using warm colors
