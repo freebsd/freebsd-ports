@@ -494,7 +494,7 @@ nav/lib/python/nav/dump.py
 nav/lib/python/nav/errors.py
 nav/lib/python/nav/event.py
 nav/lib/python/nav/getstatus.py
-nav/lib/python/nav/logconfig.py
+nav/lib/python/nav/logs.py
 nav/lib/python/nav/maintenance.py
 nav/lib/python/nav/messages.py
 nav/lib/python/nav/path.py
