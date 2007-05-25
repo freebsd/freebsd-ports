@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	downthemall
-PORTVERSION=	0.9.9.8
+PORTVERSION=	0.9.9.10
 DISTVERSIONSUFFIX=	-fx+tb+fl
 CATEGORIES=	www
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Lets you download all the links in a webpage and much more
 
-XPI_DISTNAME=	downthemall_
+XPI_DISTNAME=	downthemall!
+WRKSRC=		${WRKDIR}/${DISTNAME:S/!/_/}
 XPI_ID=		{DDC359D1-844A-42a7-9AA1-88A850A938A8}
 XPI_NUM=	201
 XPI_FILES=	chrome/dta.jar chrome.manifest components/privacycontrol.js \
