@@ -17,8 +17,7 @@ MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A C++ reference implementation of the Atlas protocol
 
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	YES
-USE_GCC=	3.4
+USE_LDCONFIG=	YES
 USE_BZIP2=	YES
 USE_GNOME=	gnomehack
 
