@@ -1369,7 +1369,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @dirrm share/gnome/help/accessx-status/C/figures
 @dirrm share/gnome/help/accessx-status/C
 @dirrm share/gnome/help/accessx-status
-@dirrm share/gnome/gnome-applets/invest-applet
+%%PYTHON%%@dirrm share/gnome/gnome-applets/invest-applet
 @dirrm share/gnome/gnome-applets/gweather
 @dirrm share/gnome/gnome-applets/glade
 @dirrm share/gnome/gnome-applets/geyes/Tango
