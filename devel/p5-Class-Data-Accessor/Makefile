@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-Data-Accessor
-PORTVERSION=	0.03
+PORTVERSION=	0.04001
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Inheritable and overridable class and instance data accessors
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
 MAN3=	Class::Data::Accessor.3
 
