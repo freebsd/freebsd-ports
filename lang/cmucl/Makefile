@@ -19,6 +19,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-x86-FreeBSD
 MAINTAINER=	cracauer@cons.org
 COMMENT=	The CMU implementation of Common Lisp
 
+BROKEN=		Incorrect pkg-plist
+
 # To make available on other archs, has to be cross-compiled (there is a
 # script for this, but a configuration file has to be written).
 IA32_BINART_PORT=	yes
