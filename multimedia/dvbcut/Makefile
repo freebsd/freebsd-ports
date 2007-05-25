@@ -19,7 +19,7 @@ COMMENT=	Qt application for cutting of MPEG PS and MPEG TS streams (DVB)
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \
 		mplayer:${PORTSDIR}/multimedia/mplayer
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
-LIB_DEPENDS=	avutil.1:${PORTSDIR}/multimedia/ffmpeg-devel \
+LIB_DEPENDS=	avutil.1:${PORTSDIR}/multimedia/ffmpeg \
 		ao.3:${PORTSDIR}/audio/libao
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

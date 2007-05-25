@@ -18,7 +18,8 @@ EXTRACT_SUFX=	.tbz2
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	The ffmpeg shared extension for php
 
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
+		avutil.1:${PORTSDIR}/multimedia/ffmpeg
 
 USE_BZIP2=	yes
 USE_PHP=	yes
@@ -28,14 +29,4 @@ IGNORE_WITH_PHP?=5
 DEFAULT_PHP_VER?=4
 CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
 
-OPTIONS=	FFMPEG_DEVEL	"Use ffmpeg development version"	off
-
-.include <bsd.port.pre.mk>
-
-.if !defined(WITH_FFMPEG_DEVEL)
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
-.else
-LIB_DEPENDS+=	avutil.1:${PORTSDIR}/multimedia/ffmpeg-devel
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

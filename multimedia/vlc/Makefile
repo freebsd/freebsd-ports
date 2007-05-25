@@ -22,7 +22,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Multimedia streaming server and player for various audio/video formats
 
 LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify \
-		avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel
+		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
 

@@ -21,7 +21,7 @@ LIB_DEPENDS=	Magick.10:${PORTSDIR}/graphics/ImageMagick \
 		jack.0:${PORTSDIR}/audio/jack \
 		visual-0.4.0:${PORTSDIR}/graphics/libvisual04 \
 		theora.2:${PORTSDIR}/multimedia/libtheora \
-		avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel \
+		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		dv.4:${PORTSDIR}/multimedia/libdv \
 		matroska.0:${PORTSDIR}/multimedia/libmatroska \
 		oil-0.3.1:${PORTSDIR}/devel/liboil \

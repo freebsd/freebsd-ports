@@ -120,7 +120,7 @@ PLIST_SUB+=	FAAD="@comment "
 .endif
 
 .if defined(WITH_WMA)
-LIB_DEPENDS+=	avutil.1:${PORTSDIR}/multimedia/ffmpeg-devel
+LIB_DEPENDS+=	avutil.1:${PORTSDIR}/multimedia/ffmpeg
 PLIST_SUB+=	WMA=""
 .else
 EXCLUDE+=	wma

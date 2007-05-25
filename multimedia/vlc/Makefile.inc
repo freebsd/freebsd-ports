@@ -41,7 +41,7 @@
 #
 # WITH_FAAC=yes
 #  Faac audio encoder (mp4/aac) Support
-#  ** Only enable this if you compiled multimedia/ffmpeg-devel with WITH_FAAC knob **
+#  ** Only enable this if you compiled multimedia/ffmpeg with WITH_FAAC knob **
 #
 # WITH_FAAD=yes
 #  Faad audio decoder (mp4/aac) Support
@@ -261,17 +261,6 @@ post-patch:
 		${WRKSRC}/loader/module.c
 .endif
 	@${REINPLACE_CMD} -e 's|dts_free|dca_free|g' ${WRKSRC}/configure
-
-pre-configure:
-.if !exists(${LOCALBASE}/libdata/pkgconfig/libavcodec.pc) && exists(${LOCALBASE}/lib/libavformat.a)
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "ERROR: ${PKGNAME} requires a newer version of FFMpeg"
-	@${ECHO_CMD} "please deinstall multimedia/ffmpeg before continuing"
-	@${ECHO_CMD} "the build."
-	@${ECHO_CMD} ""
-	@${FALSE}
-.endif
-
 
 pre-build:
 	@${REINPLACE_CMD} -e 's|/intl/libintl.a|${WRKSRC}/intl/libintl.a|' \
