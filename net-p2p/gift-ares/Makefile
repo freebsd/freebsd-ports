@@ -7,6 +7,7 @@
 
 PORTNAME=	giFT-Ares
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	gift-ares
@@ -17,10 +18,8 @@ COMMENT=	giFT plugin for the Ares peer-to-peer filesharing network
 
 LIB_DEPENDS=	gift.0:${PORTSDIR}/net-p2p/gift
 
-BROKEN=		Configure fails
-
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME2=	pkgconfig
+USE_GNOME=	pkgconfig
 
 .include <bsd.port.mk>
