@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Widget-DBIC
-PORTVERSION=	0.01
+PORTVERSION=	0.03
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -16,7 +16,7 @@ MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Subclass of HTML::Widget for dealing with DBIx::Class
 
 RUN_DEPENDS=	p5-DBIx-Class>=0:${PORTSDIR}/databases/p5-DBIx-Class \
-		p5-HTML-Widget>=0:${PORTSDIR}/www/p5-HTML-Widget
+		p5-HTML-Widget>=1.11:${PORTSDIR}/www/p5-HTML-Widget
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
