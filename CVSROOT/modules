@@ -8969,6 +8969,7 @@ p5-Class-Autouse	ports/devel/p5-Class-Autouse
 p5-Class-Base	ports/devel/p5-Class-Base
 p5-Class-BlackHole	ports/devel/p5-Class-BlackHole
 p5-Class-C3	ports/devel/p5-Class-C3
+p5-Class-C3-XS	ports/devel/p5-Class-C3-XS
 p5-Class-CSV	ports/textproc/p5-Class-CSV
 p5-Class-Closure	ports/devel/p5-Class-Closure
 p5-Class-CodeStyler	ports/devel/p5-Class-CodeStyler
