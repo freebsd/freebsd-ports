@@ -18,7 +18,7 @@ BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	stunnel:${PORTSDIR}/security/stunnel
 
-BROKEN=		Unfetchable
+BROKEN=		Unfetchable - Size mismatch
 
 USE_XLIB=	yes
 USE_TCL_RUN=	84
