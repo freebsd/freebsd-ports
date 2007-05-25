@@ -15,12 +15,14 @@ include/libexif/exif-utils.h
 lib/libexif.a
 lib/libexif.la
 lib/libexif.so
-lib/libexif.so.12
+lib/libexif.so.13
 libdata/pkgconfig/libexif.pc
 %%NLS%%share/locale/de/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/es/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/libexif-12.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/libexif-12.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/libexif-12.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/libexif-12.mo
 %%DOCSDIR%%/ABOUT-NLS
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/COPYING
