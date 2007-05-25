@@ -7,7 +7,7 @@
 
 PORTNAME=	xawtv
 PORTVERSION=	3.95
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dl.bytesex.org/releases/xawtv/
 
@@ -32,11 +32,11 @@ USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 CONFIGURE_ENV=	LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib" \
 		CFLAGS="-I${WRKSRC}/common"
 MAKE_ENV=	verbose=yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 FILES_LIBJPEG=	console/Subdir.mk debug/Subdir.mk x11/Subdir.mk
 
