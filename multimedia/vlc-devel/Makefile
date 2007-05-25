@@ -9,8 +9,9 @@
 #
 
 PORTNAME=	vlc
+
 DISTVERSION=	0.9.0.20070501
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://nightlies.videolan.org/build/source/
@@ -167,7 +168,7 @@ DEFAULT_CDROM_DEVICE=/dev/acd0
 
 .if !defined(WITHOUT_QT4)
 USE_QT_VER+=	4
-QT_COMPONENTS+=	gui corelib moc
+QT_COMPONENTS+=	gui corelib moc rcc uic
 .include "${PORTSDIR}/Mk/bsd.kde.mk"
 CONFIGURE_ARGS+=--enable-qt4
 .else
