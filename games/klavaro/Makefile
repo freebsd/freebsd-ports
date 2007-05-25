@@ -14,6 +14,8 @@ MASTER_SITES=	SF
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Touchtyping trainer
 
+BROKEN=		Size mismatch
+
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_GETTEXT=	yes
