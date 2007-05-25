@@ -9,8 +9,8 @@ PORTNAME=	tinker
 PORTVERSION=	4.2.20040908
 PORTREVISION=	1
 CATEGORIES=	biology
-MASTER_SITES=	ftp://dasher.wustl.edu/pub/ \
-		${MASTER_SITE_GENTOO}
+MASTER_SITES=	${MASTER_SITE_GENTOO} \
+		ftp://dasher.wustl.edu/pub/
 MASTER_SITE_SUBDIR=	distfiles
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
@@ -19,8 +19,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general purpose molecular modelling package
 
 BUILD_DEPENDS=	imake:${X_IMAKE_PORT}
-
-BROKEN=		Unfetchable
 
 MAKE_ENV+=	HAVE_G2C=yes INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
