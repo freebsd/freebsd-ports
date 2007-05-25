@@ -33,6 +33,8 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		sipXvxml.sh:${PORTSDIR}/net/sipxvxml \
 		psql:${PORTSDIR}/databases/postgresql81-client
 
+BROKEN=		Incorrect pkg-plist
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf:259:env automake:19:env
