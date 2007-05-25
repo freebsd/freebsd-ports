@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:	libquicktime
 # Date Created:			Jul 17, 2002
 # Whom:				ijliao
@@ -7,8 +6,7 @@
 #
 
 PORTNAME=	libquicktime
-PORTVERSION=	0.9.10
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,14 +20,16 @@ LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		dv.4:${PORTSDIR}/multimedia/libdv
 
 USE_LDCONFIG=	yes
+USE_GETTEXT=	yes
 USE_GL=		yes
 USE_GNOME=	gnometarget gnomehack pkgconfig
 WANT_GNOME=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf:259
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--disable-firewire --with-x
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS} -lintl"
+CONFIGURE_ARGS=	--disable-firewire --with-x --enable-gpl
 CFLAGS+=	-fPIC
 MAN1=		lqtplay.1
 
@@ -38,7 +38,7 @@ OPTIONS=	LAME "Enable Lame mp3 encoding support" Off \
 		OPTIMIZED_CFLAGS "Enable Optimized CFLAGS" Off
 
 PORTDOCS=	api_usage.html codecs.html qt4l_building.html \
-		qt4l_codecs.html qt4l_firewire.html qt4l_index.html \
+		qt4l_codecs.html qt4l_index.html \
 		qt4l_license.html qt4l_opening.html qt4l_positioning.html \
 		qt4l_reading.html qt4l_util.html qt4l_writing.html
 
@@ -81,13 +81,6 @@ post-patch:
 		${WRKSRC}/plugins/audiocodec/* \
 		${WRKSRC}/plugins/videocodec/*
 	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${REINPLACE_CMD} -e 's|-O3 -funroll-all-loops -fomit-frame-pointer|${CFLAGS}|' \
-		${WRKSRC}/configure
-.else
-	@${REINPLACE_CMD} -e 's|-O3|${CFLAGS} -O3|' \
-		${WRKSRC}/configure
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -2,6 +2,7 @@
 bin/lqt-config
 bin/lqt_transcode
 bin/lqtplay
+bin/qt2text
 bin/qtdechunk
 bin/qtdump
 bin/qtinfo
@@ -39,5 +40,6 @@ lib/libquicktime/lqt_vorbis.la
 lib/libquicktime/lqt_vorbis.so
 libdata/pkgconfig/libquicktime.pc
 share/aclocal/lqt.m4
+share/locale/de/LC_MESSAGES/libquicktime.mo
 @dirrm lib/libquicktime
 @dirrm include/lqt
