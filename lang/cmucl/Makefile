@@ -19,8 +19,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-x86-FreeBSD
 MAINTAINER=	cracauer@cons.org
 COMMENT=	The CMU implementation of Common Lisp
 
-BROKEN=		Incorrect pkg-plist
-
 # To make available on other archs, has to be cross-compiled (there is a
 # script for this, but a configuration file has to be written).
 IA32_BINART_PORT=	yes
@@ -39,7 +37,7 @@ LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/bin/lisp ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKDIR}/bin/lisp ${PREFIX}/bin
 	cd ${WRKDIR} && ${FIND} lib | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}
 	${INSTALL_MAN} ${WRKDIR}/man/man1/cmucl.1 ${MANPREFIX}/man/man1
