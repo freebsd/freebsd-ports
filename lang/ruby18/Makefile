@@ -175,7 +175,7 @@ post-build:
 	@${RB_SET_CONF_VAR} "INSTALL_SCRIPT" "ENV['RB_USER_INSTALL'] ? '${INSTALL} ${COPY} -m ${BINMODE}' : '${INSTALL_SCRIPT}'"
 	@${RB_SET_CONF_VAR} "INSTALL_DATA" "ENV['RB_USER_INSTALL'] ? '${INSTALL} ${COPY} -m ${SHAREMODE}' : '${INSTALL_DATA}'"
 
-pre-install:
+pre-su-install:
 	${MKDIR}	${RUBY_DOCDIR}		\
 			${RUBY_ELISPDIR}	\
 			${RUBY_EXAMPLESDIR}	\
