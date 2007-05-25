@@ -19,6 +19,8 @@ COMMENT=	SCIM table based input method engine
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Incomplete pkg-plist
+
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

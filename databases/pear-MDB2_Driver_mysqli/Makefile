@@ -16,6 +16,8 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
 		${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Incomplete pkg-plist
+
 USE_PHP=	mysqli
 
 FILES=		MDB2/Driver/Datatype/mysqli.php \
