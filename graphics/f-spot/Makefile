@@ -8,7 +8,7 @@
 
 PORTNAME=	f-spot
 PORTVERSION=	0.3.5
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -18,7 +18,7 @@ MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	Personal photo management to the GNOME desktop
 
 LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
-		exif.12:${PORTSDIR}/graphics/libexif \
+		exif.13:${PORTSDIR}/graphics/libexif \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 RUN_DEPENDS=	dbus-daemon:${PORTSDIR}/devel/dbus
 

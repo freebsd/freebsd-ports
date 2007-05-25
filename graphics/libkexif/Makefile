@@ -6,7 +6,7 @@
 
 PORTNAME=	libkexif
 PORTVERSION=	0.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kipi
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	kipi
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Library for manipulating EXIF information embedded in images
 
-LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS=	exif.13:${PORTSDIR}/graphics/libexif
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3

@@ -7,7 +7,7 @@
 
 PORTNAME=	gimp-app
 PORTVERSION=	2.2.14
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -25,7 +25,7 @@ COMMENT=	A GNU Image Manipulation Program
 
 LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf \
 		aa.1:${PORTSDIR}/graphics/aalib \
-		exif.12:${PORTSDIR}/graphics/libexif \
+		exif.13:${PORTSDIR}/graphics/libexif \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

@@ -81,7 +81,7 @@ CONFIGURE_ARGS+=--disable-gconf
 CONFIGURE_ARGS+=--enable-apr-plugin
 PLIST_SUB+=	PLUGIN_APR=""
 .if defined(WITH_PLUG_APR_EXIF)
-LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS+=	exif.13:${PORTSDIR}/graphics/libexif
 CONFIGURE_ARGS+=--enable-exif
 .else
 CONFIGURE_ARGS+=--disable-exif
