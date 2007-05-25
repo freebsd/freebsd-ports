@@ -32,8 +32,8 @@ Local/Applications/Preview.app/Resources/fitWidth.tiff
 Local/Applications/Preview.app/Resources/fitWindow.tiff
 Local/Applications/Preview.app/Resources/hand.tiff
 Local/Applications/Preview.app/Resources/last_page.tiff
-Local/Applications/Preview.app/library_paths.openapp
 Local/Applications/Preview.app/stamp.make
+Local/Tools/Preview
 @dirrm Local/Applications/Preview.app/Resources/French.lproj/Preview.help
 @dirrm Local/Applications/Preview.app/Resources/French.lproj/Preview.gorm
 @dirrm Local/Applications/Preview.app/Resources/French.lproj/Main.gorm

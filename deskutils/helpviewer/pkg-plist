@@ -31,8 +31,8 @@ Local/Applications/HelpViewer.app/Resources/listing.png
 Local/Applications/HelpViewer.app/Resources/note.png
 Local/Applications/HelpViewer.app/Resources/notloaded.tiff
 Local/Applications/HelpViewer.app/Resources/part.tiff
-Local/Applications/HelpViewer.app/library_paths.openapp
 Local/Applications/HelpViewer.app/stamp.make
+Local/Tools/HelpViewer
 @dirrm Local/Applications/HelpViewer.app/Resources/Main.gorm
 @dirrm Local/Applications/HelpViewer.app/Resources/HelpViewer.help
 @dirrm Local/Applications/HelpViewer.app/Resources

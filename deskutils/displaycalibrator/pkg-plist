@@ -8,8 +8,8 @@ Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/object
 Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm/white-black.png
 Local/Applications/DisplayCalibrator.app/Resources/Info-gnustep.plist
 Local/Applications/DisplayCalibrator.app/Resources/gammascrew.png
-Local/Applications/DisplayCalibrator.app/library_paths.openapp
 Local/Applications/DisplayCalibrator.app/stamp.make
+Local/Tools/DisplayCalibrator
 @dirrm Local/Applications/DisplayCalibrator.app/Resources/DisplayCalibrator.gorm
 @dirrm Local/Applications/DisplayCalibrator.app/Resources
 @dirrm Local/Applications/DisplayCalibrator.app

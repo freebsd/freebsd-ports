@@ -12,8 +12,8 @@ Local/Applications/GNUWash.app/Resources/alarm.tiff
 Local/Applications/GNUWash.app/Resources/gnuwash.tiff
 Local/Applications/GNUWash.app/Resources/pizza.tiff
 Local/Applications/GNUWash.app/Resources/tea.tiff
-Local/Applications/GNUWash.app/library_paths.openapp
 Local/Applications/GNUWash.app/stamp.make
+Local/Tools/GNUWash
 @dirrm Local/Applications/GNUWash.app/Resources/Preferences.gorm
 @dirrm Local/Applications/GNUWash.app/Resources/GNUWash.gorm
 @dirrm Local/Applications/GNUWash.app/Resources

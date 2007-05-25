@@ -7,8 +7,8 @@ Local/Applications/RemoteDesk.app/Resources/RemoteDesk.gorm/data.classes
 Local/Applications/RemoteDesk.app/Resources/RemoteDesk.gorm/data.info
 Local/Applications/RemoteDesk.app/Resources/RemoteDesk.gorm/objects.gorm
 Local/Applications/RemoteDesk.app/Resources/remotedesk.tiff
-Local/Applications/RemoteDesk.app/library_paths.openapp
 Local/Applications/RemoteDesk.app/stamp.make
+Local/Tools/RemoteDesk
 @dirrm Local/Applications/RemoteDesk.app/Resources/RemoteDesk.gorm
 @dirrm Local/Applications/RemoteDesk.app/Resources
 @dirrm Local/Applications/RemoteDesk.app

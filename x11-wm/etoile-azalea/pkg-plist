@@ -12,8 +12,8 @@ Local/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/max.xbm
 Local/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/max_toggled.xbm
 Local/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/shade.xbm
 Local/Applications/Azalea.app/Resources/themes/Azalea/openbox-3/themerc
-Local/Applications/Azalea.app/library_paths.openapp
 Local/Applications/Azalea.app/stamp.make
+Local/Tools/Azalea
 @dirrm Local/Applications/Azalea.app/Resources/themes/Azalea/openbox-3
 @dirrm Local/Applications/Azalea.app/Resources/themes/Azalea
 @dirrm Local/Applications/Azalea.app/Resources/themes

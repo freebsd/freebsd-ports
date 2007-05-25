@@ -159,16 +159,17 @@ Local/Applications/GNUMail.app/Resources/trash_12.tiff
 Local/Applications/GNUMail.app/Resources/trash_16.tiff
 Local/Applications/GNUMail.app/Resources/trash_20.tiff
 Local/Applications/GNUMail.app/Resources/up_15.tiff
-Local/Applications/GNUMail.app/library_paths.openapp
 Local/Applications/GNUMail.app/stamp.make
+Local/Library/Frameworks/GNUMail.framework/GNUMail
 Local/Library/Frameworks/GNUMail.framework/Headers
 Local/Library/Frameworks/GNUMail.framework/Resources
-Local/Library/Frameworks/GNUMail.framework/Versions/A/GNUMail
-Local/Library/Frameworks/GNUMail.framework/Versions/A/Resources/Info-gnustep.plist
-Local/Library/Frameworks/GNUMail.framework/Versions/A/libGNUMail.so
-Local/Library/Frameworks/GNUMail.framework/Versions/A/libGNUMail.so.%%MAJORVERSION%%
-Local/Library/Frameworks/GNUMail.framework/Versions/A/libGNUMail.so.%%VERSION%%
+Local/Library/Frameworks/GNUMail.framework/Versions/%%MAJORVERSION%%/GNUMail
+Local/Library/Frameworks/GNUMail.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
+Local/Library/Frameworks/GNUMail.framework/Versions/%%MAJORVERSION%%/libGNUMail.so
+Local/Library/Frameworks/GNUMail.framework/Versions/%%MAJORVERSION%%/libGNUMail.so.%%MAJORVERSION%%
+Local/Library/Frameworks/GNUMail.framework/Versions/%%MAJORVERSION%%/libGNUMail.so.%%VERSION%%
 Local/Library/Frameworks/GNUMail.framework/Versions/Current
+Local/Library/Frameworks/GNUMail.framework/libGNUMail.so
 Local/Library/GNUMail/Account.prefs/Account
 Local/Library/GNUMail/Account.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/Account.prefs/Resources/account.tiff
@@ -216,6 +217,7 @@ Local/Library/Headers/GNUMail
 Local/Library/Libraries/libGNUMail.so
 Local/Library/Libraries/libGNUMail.so.%%MAJORVERSION%%
 Local/Library/Libraries/libGNUMail.so.%%VERSION%%
+Local/Tools/GNUMail
 @dirrm Local/Library/GNUMail/Viewing.prefs/Resources
 @dirrm Local/Library/GNUMail/Viewing.prefs
 @dirrm Local/Library/GNUMail/Sending.prefs/Resources
@@ -239,9 +241,9 @@ Local/Library/Libraries/libGNUMail.so.%%VERSION%%
 @dirrm Local/Library/GNUMail/Account.prefs/Resources
 @dirrm Local/Library/GNUMail/Account.prefs
 @dirrm Local/Library/GNUMail
-@dirrm Local/Library/Frameworks/GNUMail.framework/Versions/A/Resources
-@dirrm Local/Library/Frameworks/GNUMail.framework/Versions/A/Headers
-@dirrm Local/Library/Frameworks/GNUMail.framework/Versions/A
+@dirrm Local/Library/Frameworks/GNUMail.framework/Versions/%%MAJORVERSION%%/Resources
+@dirrm Local/Library/Frameworks/GNUMail.framework/Versions/%%MAJORVERSION%%/Headers
+@dirrm Local/Library/Frameworks/GNUMail.framework/Versions/%%MAJORVERSION%%
 @dirrm Local/Library/Frameworks/GNUMail.framework/Versions
 @dirrm Local/Library/Frameworks/GNUMail.framework
 @dirrm Local/Applications/GNUMail.app/Resources/Turkish.lproj

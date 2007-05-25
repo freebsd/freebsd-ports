@@ -4,7 +4,6 @@ Local/Applications/GSBench.app/Resources/GSBench.desktop
 Local/Applications/GSBench.app/Resources/GSBench.tiff
 Local/Applications/GSBench.app/Resources/GSBenchInfo.plist
 Local/Applications/GSBench.app/Resources/Info-gnustep.plist
-Local/Applications/GSBench.app/library_paths.openapp
 Local/Applications/GSBench.app/stamp.make
 Local/Library/Bundles/Dhry.bundle/Dhry
 Local/Library/Bundles/Dhry.bundle/Resources/Info-gnustep.plist
@@ -12,6 +11,7 @@ Local/Library/Bundles/Dhry.bundle/stamp.make
 Local/Library/Bundles/GSFactor.bundle/GSFactor
 Local/Library/Bundles/GSFactor.bundle/Resources/Info-gnustep.plist
 Local/Library/Bundles/GSFactor.bundle/stamp.make
+Local/Tools/GSBench
 @dirrm Local/Library/Bundles/GSFactor.bundle/Resources
 @dirrm Local/Library/Bundles/GSFactor.bundle
 @dirrm Local/Library/Bundles/Dhry.bundle/Resources

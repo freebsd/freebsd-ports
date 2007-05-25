@@ -31,4 +31,10 @@ USE_GNUSTEP_MAKE_DIRS+=	Services/User/Terminal
 
 ADDRESSES_PORT?=	mail/addresses
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600000
+IGNORE=		incompatible thread functions
+.endif
+
+.include <bsd.port.post.mk>

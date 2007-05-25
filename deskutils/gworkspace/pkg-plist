@@ -225,7 +225,6 @@ System/Applications/GWorkspace.app/Resources/tabUnSelectedLeft.tiff
 System/Applications/GWorkspace.app/Resources/tabUnSelectedRight.tiff
 System/Applications/GWorkspace.app/Resources/tiffPboard.tiff
 System/Applications/GWorkspace.app/Resources/watch.tiff
-System/Applications/GWorkspace.app/library_paths.openapp
 System/Applications/GWorkspace.app/stamp.make
 System/Applications/Recycler.app/Recycler
 System/Applications/Recycler.app/Resources/English.lproj/Localizable.strings
@@ -236,7 +235,6 @@ System/Applications/Recycler.app/Resources/English.lproj/StartAppWin.gorm/object
 System/Applications/Recycler.app/Resources/Info-gnustep.plist
 System/Applications/Recycler.app/Resources/Recycler.desktop
 System/Applications/Recycler.app/Resources/Recycler.tiff
-System/Applications/Recycler.app/library_paths.openapp
 System/Applications/Recycler.app/stamp.make
 System/Library/Bundles/AppViewer.inspector/AppViewer
 System/Library/Bundles/AppViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
@@ -357,153 +355,159 @@ System/Library/Bundles/SoundViewer.inspector/Resources/progind10.tiff
 System/Library/Bundles/SoundViewer.inspector/Resources/stop.tiff
 System/Library/Bundles/SoundViewer.inspector/SoundViewer
 System/Library/Bundles/SoundViewer.inspector/stamp.make
+System/Library/Frameworks/FSNode.framework/FSNode
 System/Library/Frameworks/FSNode.framework/Headers
 System/Library/Frameworks/FSNode.framework/Resources
-System/Library/Frameworks/FSNode.framework/Versions/A/Headers/FSNBrowser.h
-System/Library/Frameworks/FSNode.framework/Versions/A/Headers/FSNBrowserCell.h
-System/Library/Frameworks/FSNode.framework/Versions/A/Headers/FSNBrowserColumn.h
-System/Library/Frameworks/FSNode.framework/Versions/A/Headers/FSNBrowserMatrix.h
-System/Library/Frameworks/FSNode.framework/Versions/A/Headers/FSNBrowserScroll.h
-System/Library/Frameworks/FSNode.framework/Versions/A/Headers/FSNFunctions.h
-System/Library/Frameworks/FSNode.framework/Versions/A/Headers/FSNIcon.h
-System/Library/Frameworks/FSNode.framework/Versions/A/Headers/FSNIconsView.h
-System/Library/Frameworks/FSNode.framework/Versions/A/Headers/FSNListView.h
-System/Library/Frameworks/FSNode.framework/Versions/A/Headers/FSNPathComponentsViewer.h
-System/Library/Frameworks/FSNode.framework/Versions/A/Headers/FSNTextCell.h
-System/Library/Frameworks/FSNode.framework/Versions/A/Headers/FSNode.h
-System/Library/Frameworks/FSNode.framework/Versions/A/Headers/FSNodeRep.h
-System/Library/Frameworks/FSNode.framework/Versions/A/Resources/ArrowRight.tiff
-System/Library/Frameworks/FSNode.framework/Versions/A/Resources/English.lproj/Localizable.strings
-System/Library/Frameworks/FSNode.framework/Versions/A/Resources/FolderOpen.tiff
-System/Library/Frameworks/FSNode.framework/Versions/A/Resources/HardDisk.tiff
-System/Library/Frameworks/FSNode.framework/Versions/A/Resources/HardDiskOpen.tiff
-System/Library/Frameworks/FSNode.framework/Versions/A/Resources/Info-gnustep.plist
-System/Library/Frameworks/FSNode.framework/Versions/A/Resources/MultipleSelection.tiff
-System/Library/Frameworks/FSNode.framework/Versions/A/Resources/Recycler.tiff
-System/Library/Frameworks/FSNode.framework/Versions/A/Resources/RecyclerFull.tiff
-System/Library/Frameworks/FSNode.framework/Versions/A/Resources/Workspace.tiff
-System/Library/Frameworks/FSNode.framework/Versions/A/FSNode
-System/Library/Frameworks/FSNode.framework/Versions/A/libFSNode.so
-System/Library/Frameworks/FSNode.framework/Versions/A/libFSNode.so.%%MAJORLIBVERSION2%%
-System/Library/Frameworks/FSNode.framework/Versions/A/libFSNode.so.%%LIBVERSION2%%
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/FSNode
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNBrowser.h
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNBrowserCell.h
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNBrowserColumn.h
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNBrowserMatrix.h
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNBrowserScroll.h
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNFunctions.h
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNIcon.h
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNIconsView.h
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNListView.h
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNPathComponentsViewer.h
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNTextCell.h
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNode.h
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers/FSNodeRep.h
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/ArrowRight.tiff
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Localizable.strings
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/FolderOpen.tiff
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/HardDisk.tiff
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/HardDiskOpen.tiff
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Info-gnustep.plist
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/MultipleSelection.tiff
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Recycler.tiff
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/RecyclerFull.tiff
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Workspace.tiff
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/libFSNode.so
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/libFSNode.so.%%MAJORLIBVERSION2%%
+System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/libFSNode.so.%%LIBVERSION2%%
 System/Library/Frameworks/FSNode.framework/Versions/Current
+System/Library/Frameworks/FSNode.framework/libFSNode.so
 System/Library/Frameworks/Inspector.framework/Headers
+System/Library/Frameworks/Inspector.framework/Inspector
 System/Library/Frameworks/Inspector.framework/Resources
-System/Library/Frameworks/Inspector.framework/Versions/A/Headers/ContentViewersProtocol.h
-System/Library/Frameworks/Inspector.framework/Versions/A/Headers/Inspector.h
-System/Library/Frameworks/Inspector.framework/Versions/A/Inspector
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Date-0.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Date-1.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Date-2.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Date-3.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Date-4.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Date-5.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Date-6.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Date-7.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Date-8.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Date-9.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Date-Colon.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Date.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/Annotations.gorm/data.classes
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/Annotations.gorm/data.info
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/Annotations.gorm/objects.gorm
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/Attributes.gorm/data.classes
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/Attributes.gorm/data.info
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/Attributes.gorm/objects.gorm
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/Contents.gorm/data.classes
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/Contents.gorm/data.info
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/Contents.gorm/objects.gorm
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/InspectorWin.gorm/data.classes
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/InspectorWin.gorm/data.info
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/InspectorWin.gorm/objects.gorm
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/Localizable.strings
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/Tools.gorm/data.classes
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/Tools.gorm/data.info
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/Tools.gorm/objects.gorm
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Info-gnustep.plist
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Inspector.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/LED-0.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/LED-1.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/LED-2.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/LED-3.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/LED-4.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/LED-5.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/LED-6.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/LED-7.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/LED-8.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/LED-9.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/LED-AM.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/LED-Colon.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/LED-PM.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/LED.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Magnify.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Mask.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Month-10.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Month-1.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Month-11.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Month-12.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Month-2.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Month-3.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Month-4.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Month-5.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Month-6.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Month-7.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Month-8.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Month-9.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Month.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/MultipleSelection.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Pboard.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Weekday-0.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Weekday-1.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Weekday-2.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Weekday-3.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Weekday-4.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Weekday-5.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Weekday-6.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/Weekday.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/anim-logo-0.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/anim-logo-1.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/anim-logo-2.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/anim-logo-3.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/anim-logo-4.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/anim-logo-5.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/anim-logo-6.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/anim-logo-7.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/colorPboard.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/filecontsPboard.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/gormPboard.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/progind.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/progind10.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/rtfPboard.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/rtfdPboard.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/stringPboard.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/switchMultiple.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/switchOff.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/switchOn.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/Resources/tiffPboard.tiff
-System/Library/Frameworks/Inspector.framework/Versions/A/libInspector.so
-System/Library/Frameworks/Inspector.framework/Versions/A/libInspector.so.%%MAJORLIBVERSION2%%
-System/Library/Frameworks/Inspector.framework/Versions/A/libInspector.so.%%LIBVERSION2%%
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Headers/ContentViewersProtocol.h
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Headers/Inspector.h
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Inspector
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-0.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-1.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-2.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-3.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-4.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-5.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-6.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-7.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-8.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-9.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date-Colon.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Date.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Annotations.gorm/data.classes
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Annotations.gorm/data.info
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Annotations.gorm/objects.gorm
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Attributes.gorm/data.classes
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Attributes.gorm/data.info
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Attributes.gorm/objects.gorm
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Contents.gorm/data.classes
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Contents.gorm/data.info
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Contents.gorm/objects.gorm
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/InspectorWin.gorm/data.classes
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/InspectorWin.gorm/data.info
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/InspectorWin.gorm/objects.gorm
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Localizable.strings
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Tools.gorm/data.classes
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Tools.gorm/data.info
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Tools.gorm/objects.gorm
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Info-gnustep.plist
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Inspector.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-0.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-1.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-2.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-3.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-4.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-5.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-6.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-7.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-8.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-9.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-AM.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-Colon.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED-PM.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/LED.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Magnify.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Mask.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-10.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-1.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-11.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-12.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-2.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-3.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-4.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-5.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-6.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-7.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-8.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month-9.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Month.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/MultipleSelection.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Pboard.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday-0.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday-1.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday-2.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday-3.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday-4.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday-5.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday-6.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/Weekday.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-0.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-1.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-2.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-3.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-4.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-5.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-6.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/anim-logo-7.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/colorPboard.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/filecontsPboard.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/gormPboard.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/progind.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/progind10.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/rtfPboard.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/rtfdPboard.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/stringPboard.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/switchMultiple.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/switchOff.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/switchOn.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/tiffPboard.tiff
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/libInspector.so
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/libInspector.so.%%MAJORLIBVERSION2%%
+System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/libInspector.so.%%LIBVERSION2%%
 System/Library/Frameworks/Inspector.framework/Versions/Current
+System/Library/Frameworks/Inspector.framework/libInspector.so
 System/Library/Frameworks/Operation.framework/Headers
+System/Library/Frameworks/Operation.framework/Operation
 System/Library/Frameworks/Operation.framework/Resources
-System/Library/Frameworks/Operation.framework/Versions/A/Headers/Operation.h
-System/Library/Frameworks/Operation.framework/Versions/A/Operation
-System/Library/Frameworks/Operation.framework/Versions/A/Resources/English.lproj/FileOperationWin.gorm/data.classes
-System/Library/Frameworks/Operation.framework/Versions/A/Resources/English.lproj/FileOperationWin.gorm/data.info
-System/Library/Frameworks/Operation.framework/Versions/A/Resources/English.lproj/FileOperationWin.gorm/objects.gorm
-System/Library/Frameworks/Operation.framework/Versions/A/Resources/English.lproj/Localizable.strings
-System/Library/Frameworks/Operation.framework/Versions/A/Resources/Info-gnustep.plist
-System/Library/Frameworks/Operation.framework/Versions/A/Resources/Operation.tiff
-System/Library/Frameworks/Operation.framework/Versions/A/Resources/progind.tiff
-System/Library/Frameworks/Operation.framework/Versions/A/libOperation.so
-System/Library/Frameworks/Operation.framework/Versions/A/libOperation.so.1
-System/Library/Frameworks/Operation.framework/Versions/A/libOperation.so.1.%%MAJORLIBVERSION2%%.%%MAJORLIBVERSION2%%
+System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Headers/Operation.h
+System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Operation
+System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/English.lproj/FileOperationWin.gorm/data.classes
+System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/English.lproj/FileOperationWin.gorm/data.info
+System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/English.lproj/FileOperationWin.gorm/objects.gorm
+System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/English.lproj/Localizable.strings
+System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/Info-gnustep.plist
+System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/Operation.tiff
+System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/progind.tiff
+System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/libOperation.so
+System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/libOperation.so.%%MAJORLIBVERSION3%%
+System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/libOperation.so.%%LIBVERSION3%%
 System/Library/Frameworks/Operation.framework/Versions/Current
+System/Library/Frameworks/Operation.framework/libOperation.so
 System/Library/Headers/DBKit/DBKBTree.h
 System/Library/Headers/DBKit/DBKBTreeNode.h
-System/Library/Headers/DBKit/DBKPathsTree.h
 System/Library/Headers/DBKit/DBKFixLenRecordsFile.h
+System/Library/Headers/DBKit/DBKPathsTree.h
 System/Library/Headers/DBKit/DBKVarLenRecordsFile.h
 System/Library/Headers/FSNode
 System/Library/Headers/Inspector
@@ -518,10 +522,12 @@ System/Library/Libraries/libInspector.so
 System/Library/Libraries/libInspector.so.%%MAJORLIBVERSION2%%
 System/Library/Libraries/libInspector.so.%%LIBVERSION2%%
 System/Library/Libraries/libOperation.so
-System/Library/Libraries/libOperation.so.1
-System/Library/Libraries/libOperation.so.1.0.0
+System/Library/Libraries/libOperation.so.%%MAJORLIBVERSION3%%
+System/Library/Libraries/libOperation.so.%%LIBVERSION3%%
 System/Library/Services/thumbnailer.service/Resources/Info-gnustep.plist
 System/Library/Services/thumbnailer.service/thumbnailer
+System/Tools/GWorkspace
+System/Tools/Recycler
 System/Tools/ddbd
 System/Tools/fswatcher
 System/Tools/lsfupdater
@@ -531,28 +537,28 @@ System/Tools/wopen
 @dirrm System/Library/Services/thumbnailer.service/Resources
 @dirrm System/Library/Services/thumbnailer.service
 @dirrm System/Library/Headers/DBKit
-@dirrm System/Library/Frameworks/Operation.framework/Versions/A/Resources/English.lproj/FileOperationWin.gorm
-@dirrm System/Library/Frameworks/Operation.framework/Versions/A/Resources/English.lproj
-@dirrm System/Library/Frameworks/Operation.framework/Versions/A/Resources
-@dirrm System/Library/Frameworks/Operation.framework/Versions/A/Headers
-@dirrm System/Library/Frameworks/Operation.framework/Versions/A
+@dirrm System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/English.lproj/FileOperationWin.gorm
+@dirrm System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources/English.lproj
+@dirrm System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Resources
+@dirrm System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%/Headers
+@dirrm System/Library/Frameworks/Operation.framework/Versions/%%MAJORLIBVERSION3%%
 @dirrm System/Library/Frameworks/Operation.framework/Versions
 @dirrm System/Library/Frameworks/Operation.framework
-@dirrm System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/Tools.gorm
-@dirrm System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/InspectorWin.gorm
-@dirrm System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/Contents.gorm
-@dirrm System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/Attributes.gorm
-@dirrm System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj/Annotations.gorm
-@dirrm System/Library/Frameworks/Inspector.framework/Versions/A/Resources/English.lproj
-@dirrm System/Library/Frameworks/Inspector.framework/Versions/A/Resources
-@dirrm System/Library/Frameworks/Inspector.framework/Versions/A/Headers
-@dirrm System/Library/Frameworks/Inspector.framework/Versions/A
+@dirrm System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Tools.gorm
+@dirrm System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/InspectorWin.gorm
+@dirrm System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Contents.gorm
+@dirrm System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Attributes.gorm
+@dirrm System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj/Annotations.gorm
+@dirrm System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj
+@dirrm System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Resources
+@dirrm System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%/Headers
+@dirrm System/Library/Frameworks/Inspector.framework/Versions/%%MAJORLIBVERSION2%%
 @dirrm System/Library/Frameworks/Inspector.framework/Versions
 @dirrm System/Library/Frameworks/Inspector.framework
-@dirrm System/Library/Frameworks/FSNode.framework/Versions/A/Resources/English.lproj
-@dirrm System/Library/Frameworks/FSNode.framework/Versions/A/Resources
-@dirrm System/Library/Frameworks/FSNode.framework/Versions/A/Headers
-@dirrm System/Library/Frameworks/FSNode.framework/Versions/A
+@dirrm System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources/English.lproj
+@dirrm System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Resources
+@dirrm System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%/Headers
+@dirrm System/Library/Frameworks/FSNode.framework/Versions/%%MAJORLIBVERSION2%%
 @dirrm System/Library/Frameworks/FSNode.framework/Versions
 @dirrm System/Library/Frameworks/FSNode.framework
 @dirrm System/Library/Bundles/SoundViewer.inspector/Resources/English.lproj/Help.rtfd
@@ -631,8 +637,8 @@ System/Tools/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/Portuguese.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/Norvegian.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/Italian.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/German.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/Hungarian.lproj
+@dirrm System/Applications/GWorkspace.app/Resources/German.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/French.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/Esperanto.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/XTermPref.gorm

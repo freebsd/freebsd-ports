@@ -6,8 +6,8 @@ Local/Applications/Fortunate.app/Resources/Fortunate.desktop
 Local/Applications/Fortunate.app/Resources/Fortunate.tiff
 Local/Applications/Fortunate.app/Resources/FortunateInfo.plist
 Local/Applications/Fortunate.app/Resources/Info-gnustep.plist
-Local/Applications/Fortunate.app/library_paths.openapp
 Local/Applications/Fortunate.app/stamp.make
+Local/Tools/Fortunate
 @dirrm Local/Applications/Fortunate.app/Resources/English.lproj/Fortunate.gorm
 @dirrm Local/Applications/Fortunate.app/Resources/English.lproj
 @dirrm Local/Applications/Fortunate.app/Resources

@@ -24,6 +24,8 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 USE_GNUSTEP_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 
+DEAFULT_LIBVERSION=	1.1.1
+MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 MODIFY=		GNUmakefile.preamble PrefsModule/GNUmakefile.preamble \
 		Modules/Keyboard/GNUmakefile.preamble \
 		Modules/PrefsApp/GNUmakefile.preamble

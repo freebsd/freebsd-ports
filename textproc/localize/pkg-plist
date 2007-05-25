@@ -18,8 +18,8 @@ Local/Applications/Localize.app/Resources/Thai.lproj/Localize.gorm/data.classes
 Local/Applications/Localize.app/Resources/Thai.lproj/Localize.gorm/objects.gorm
 Local/Applications/Localize.app/Resources/Translated.tiff
 Local/Applications/Localize.app/Resources/UnMatched.tiff
-Local/Applications/Localize.app/library_paths.openapp
 Local/Applications/Localize.app/stamp.make
+Local/Tools/Localize
 @dirrm Local/Applications/Localize.app/Resources/Thai.lproj/Localize.gorm
 @dirrm Local/Applications/Localize.app/Resources/Thai.lproj
 @dirrm Local/Applications/Localize.app/Resources/English.lproj/MakeStrings.gorm

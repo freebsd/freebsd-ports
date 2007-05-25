@@ -14,8 +14,8 @@ Local/Applications/Babbler.app/Resources/pause.tiff
 Local/Applications/Babbler.app/Resources/play.tiff
 Local/Applications/Babbler.app/Resources/seek_back.tiff
 Local/Applications/Babbler.app/Resources/seek_fwd.tiff
-Local/Applications/Babbler.app/library_paths.openapp
 Local/Applications/Babbler.app/stamp.make
+Local/Tools/Babbler
 @dirrm Local/Applications/Babbler.app/Resources/English.lproj/StreamPanel.gorm
 @dirrm Local/Applications/Babbler.app/Resources/English.lproj/Player.gorm
 @dirrm Local/Applications/Babbler.app/Resources/English.lproj/MainMenu.gorm

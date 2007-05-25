@@ -1,9 +1,7 @@
-%%USEX11%%System/Applications/guile-gui.app/library_paths.openapp
 %%USEX11%%System/Applications/guile-gui.app/Resources/Info-gnustep.plist
 %%USEX11%%System/Applications/guile-gui.app/Resources/guile-gui.desktop
 %%USEX11%%System/Applications/guile-gui.app/guile-gui
 %%USEX11%%System/Applications/guile-gui.app/stamp.make
-%%USEX11%%System/Applications/gui.app/library_paths.openapp
 %%USEX11%%System/Applications/gui.app/Resources/Info-gnustep.plist
 %%USEX11%%System/Applications/gui.app/Resources/gui.desktop
 %%USEX11%%System/Applications/gui.app/gui
@@ -36,7 +34,9 @@ System/Library/Libraries/libgstep_guile.so.%%VERSION%%
 System/Library/Libraries/libgstep_guile.so.1
 System/Library/Makefiles/Additional/guile.make
 System/Tools/go
+%%USEX11%%System/Tools/gui
 System/Tools/guile-base
+%%USEX11%%System/Tools/guile-gui
 bin/greg
 info/dir
 @comment @unexec install-info --delete %D/info/greg.info %D/info/dir

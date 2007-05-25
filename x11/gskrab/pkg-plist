@@ -1,22 +1,24 @@
+Local/Library/Frameworks/GSKrab.framework/GSKrab
 Local/Library/Frameworks/GSKrab.framework/Headers
 Local/Library/Frameworks/GSKrab.framework/Resources
-Local/Library/Frameworks/GSKrab.framework/Versions/A/GSKrab
-Local/Library/Frameworks/GSKrab.framework/Versions/A/Headers/GSKrab.h
-Local/Library/Frameworks/GSKrab.framework/Versions/A/Headers/GSKrabClient.h
-Local/Library/Frameworks/GSKrab.framework/Versions/A/Headers/GSKrabKeyCode.h
-Local/Library/Frameworks/GSKrab.framework/Versions/A/Headers/GSKrabServer.h
-Local/Library/Frameworks/GSKrab.framework/Versions/A/Resources/Info-gnustep.plist
-Local/Library/Frameworks/GSKrab.framework/Versions/A/libGSKrab.so
-Local/Library/Frameworks/GSKrab.framework/Versions/A/libGSKrab.so.%%MAJORVERSION%%
-Local/Library/Frameworks/GSKrab.framework/Versions/A/libGSKrab.so.%%VERSION%%
+Local/Library/Frameworks/GSKrab.framework/Versions/%%MAJORVERSION%%/GSKrab
+Local/Library/Frameworks/GSKrab.framework/Versions/%%MAJORVERSION%%/Headers/GSKrab.h
+Local/Library/Frameworks/GSKrab.framework/Versions/%%MAJORVERSION%%/Headers/GSKrabClient.h
+Local/Library/Frameworks/GSKrab.framework/Versions/%%MAJORVERSION%%/Headers/GSKrabKeyCode.h
+Local/Library/Frameworks/GSKrab.framework/Versions/%%MAJORVERSION%%/Headers/GSKrabServer.h
+Local/Library/Frameworks/GSKrab.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
+Local/Library/Frameworks/GSKrab.framework/Versions/%%MAJORVERSION%%/libGSKrab.so
+Local/Library/Frameworks/GSKrab.framework/Versions/%%MAJORVERSION%%/libGSKrab.so.%%MAJORVERSION%%
+Local/Library/Frameworks/GSKrab.framework/Versions/%%MAJORVERSION%%/libGSKrab.so.%%VERSION%%
 Local/Library/Frameworks/GSKrab.framework/Versions/Current
+Local/Library/Frameworks/GSKrab.framework/libGSKrab.so
 Local/Library/Headers/GSKrab
 Local/Library/Libraries/libGSKrab.so
 Local/Library/Libraries/libGSKrab.so.%%MAJORVERSION%%
 Local/Library/Libraries/libGSKrab.so.%%VERSION%%
 Local/Tools/gsks
-@dirrm Local/Library/Frameworks/GSKrab.framework/Versions/A/Resources
-@dirrm Local/Library/Frameworks/GSKrab.framework/Versions/A/Headers
-@dirrm Local/Library/Frameworks/GSKrab.framework/Versions/A
+@dirrm Local/Library/Frameworks/GSKrab.framework/Versions/%%MAJORVERSION%%/Resources
+@dirrm Local/Library/Frameworks/GSKrab.framework/Versions/%%MAJORVERSION%%/Headers
+@dirrm Local/Library/Frameworks/GSKrab.framework/Versions/%%MAJORVERSION%%
 @dirrm Local/Library/Frameworks/GSKrab.framework/Versions
 @dirrm Local/Library/Frameworks/GSKrab.framework

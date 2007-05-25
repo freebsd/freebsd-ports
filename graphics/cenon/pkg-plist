@@ -227,7 +227,6 @@ Local/Applications/Cenon.app/Resources/typeHPGL.tiff
 Local/Applications/Cenon.app/Resources/typeHPGL_128x128.tiff
 Local/Applications/Cenon.app/Resources/typeHPGL_48x48.tiff
 Local/Applications/Cenon.app/Resources/typePS.tiff
-Local/Applications/Cenon.app/library_paths.openapp
 Local/Applications/Cenon.app/stamp.make
 Local/Library/Cenon/.dir.tiff
 Local/Library/Cenon/Devices/.dir.tiff
@@ -383,6 +382,7 @@ Local/Library/Cenon/Projects/Cenon.cenon/output
 %%FULL%%Local/Library/Cenon/Projects/TurboDuck.cenon/document
 %%FULL%%Local/Library/Cenon/Projects/TurboDuck.cenon/output
 Local/Library/Cenon/README
+Local/Tools/Cenon
 %%FULL%%@dirrm Local/Library/Cenon/Projects/TurboDuck.cenon
 %%FULL%%@dirrm Local/Library/Cenon/Projects/Teddy.cenon
 %%FULL%%@dirrm Local/Library/Cenon/Projects/Shapes/Tree.cenon

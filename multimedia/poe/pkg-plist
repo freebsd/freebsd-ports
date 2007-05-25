@@ -48,8 +48,8 @@ Local/Applications/Poe.app/Resources/Poe.desktop
 Local/Applications/Poe.app/Resources/Poe.tiff
 Local/Applications/Poe.app/Resources/Thai.lproj/CommentInfo.strings
 Local/Applications/Poe.app/Resources/Thai.lproj/Localizable.strings
-Local/Applications/Poe.app/library_paths.openapp
 Local/Applications/Poe.app/stamp.make
+Local/Tools/Poe
 @dirrm Local/Applications/Poe.app/Resources/Thai.lproj
 @dirrm Local/Applications/Poe.app/Resources/Japanese.lproj/Editor.gorm
 @dirrm Local/Applications/Poe.app/Resources/Japanese.lproj/AddPanel.gorm

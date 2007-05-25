@@ -24,11 +24,14 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
+MAKE_FLAGS+=	debug=no
+
 post-extract:
 	${FIND} ${WRKSRC}/ -type f -name '.cvsignore' -delete
 	${FIND} -d ${WRKSRC}/ -type d -name CVS -exec ${RM} -rf "{}" ";"
 
 post-patch:
+	${ECHO_CMD} "" > ${WRKSRC}/Source/${MAKEFILE}.postamble
 	${RUBY} -i~ -p \
 		-e 'gsub(/-lpthread/, "-pthread");' \
 		-e 'gsub(/-lgmodel/, "");' \
@@ -37,6 +40,7 @@ post-patch:
 		${XARGS} ${RUBY} -i -pe 'gsub(/ ruby -/, " ${RUBY} -")'
 
 post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/Source/obj/librigs.so $(RUBY_SITEARCHLIBDIR)/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${CP} -R ${WRKSRC}/Examples/* ${RUBY_MODEXAMPLESDIR}/

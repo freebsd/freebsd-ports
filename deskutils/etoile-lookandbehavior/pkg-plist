@@ -20,8 +20,8 @@ Local/Applications/LookAndBehavior.app/Resources/LookAndBehaviorInfo.plist
 Local/Applications/LookAndBehavior.app/Resources/MainMenu.gorm/data.classes
 Local/Applications/LookAndBehavior.app/Resources/MainMenu.gorm/data.info
 Local/Applications/LookAndBehavior.app/Resources/MainMenu.gorm/objects.gorm
-Local/Applications/LookAndBehavior.app/library_paths.openapp
 Local/Applications/LookAndBehavior.app/stamp.make
+Local/Tools/LookAndBehavior
 @dirrm Local/Applications/LookAndBehavior.app/Resources/MainMenu.gorm
 @dirrm Local/Applications/LookAndBehavior.app/Resources
 @dirrm Local/Applications/LookAndBehavior.app/PlugIns/LanguagesPrefPane.prefPane/Resources/Languages.gorm

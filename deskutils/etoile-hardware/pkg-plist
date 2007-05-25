@@ -5,8 +5,8 @@ Local/Applications/Hardware.app/Resources/Info-gnustep.plist
 Local/Applications/Hardware.app/Resources/MainMenu.gorm/data.classes
 Local/Applications/Hardware.app/Resources/MainMenu.gorm/data.info
 Local/Applications/Hardware.app/Resources/MainMenu.gorm/objects.gorm
-Local/Applications/Hardware.app/library_paths.openapp
 Local/Applications/Hardware.app/stamp.make
+Local/Tools/Hardware
 @dirrm Local/Applications/Hardware.app/Resources/MainMenu.gorm
 @dirrm Local/Applications/Hardware.app/Resources
 @dirrm Local/Applications/Hardware.app

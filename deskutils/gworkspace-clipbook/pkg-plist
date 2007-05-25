@@ -19,8 +19,8 @@ System/Applications/ClipBook.app/Resources/rtfPboard.tiff
 System/Applications/ClipBook.app/Resources/rtfdPboard.tiff
 System/Applications/ClipBook.app/Resources/stringPboard.tiff
 System/Applications/ClipBook.app/Resources/tiffPboard.tiff
-System/Applications/ClipBook.app/library_paths.openapp
 System/Applications/ClipBook.app/stamp.make
+System/Tools/ClipBook
 @dirrm System/Applications/ClipBook.app/Resources/Resources/English.lproj/ClipBookWindow.gorm
 @dirrm System/Applications/ClipBook.app/Resources/Resources/English.lproj
 @dirrm System/Applications/ClipBook.app/Resources/Resources

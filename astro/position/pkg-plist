@@ -209,8 +209,8 @@ System/Applications/Position.app/Resources/navigationCircle.tiff
 System/Applications/Position.app/Resources/point.tiff
 System/Applications/Position.app/Resources/satCircle.tiff
 System/Applications/Position.app/Resources/wayPointHiLight.tiff
-System/Applications/Position.app/library_paths.openapp
 System/Applications/Position.app/stamp.make
+System/Tools/Position
 @dirrm System/Applications/Position.app/Resources/Resources/English.lproj/WayPointInspector.gorm
 @dirrm System/Applications/Position.app/Resources/Resources/English.lproj/UnitsAndTuningPref.gorm
 @dirrm System/Applications/Position.app/Resources/Resources/English.lproj/SatsInspector.gorm

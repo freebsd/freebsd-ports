@@ -6,7 +6,6 @@ System/Applications/MDFinder.app/Resources/Info-gnustep.plist
 System/Applications/MDFinder.app/Resources/MDFinder.desktop
 System/Applications/MDFinder.app/Resources/MDFinder.tiff
 System/Applications/MDFinder.app/Resources/SavedSearch.tiff
-System/Applications/MDFinder.app/library_paths.openapp
 System/Applications/MDFinder.app/stamp.make
 System/Library/Bundles/AbiwordExtractor.extr/AbiwordExtractor
 System/Library/Bundles/AbiwordExtractor.extr/Resources/Info-gnustep.plist
@@ -53,85 +52,88 @@ System/Library/Bundles/XmlExtractor.extr/Resources/Info-gnustep.plist
 System/Library/Bundles/XmlExtractor.extr/XmlExtractor
 System/Library/Bundles/XmlExtractor.extr/stamp.make
 System/Library/Frameworks/MDKit.framework/Headers
+System/Library/Frameworks/MDKit.framework/MDKit
 System/Library/Frameworks/MDKit.framework/Resources
-System/Library/Frameworks/MDKit.framework/Versions/A/Headers/MDKAttribute.h
-System/Library/Frameworks/MDKit.framework/Versions/A/Headers/MDKAttributeChooser.h
-System/Library/Frameworks/MDKit.framework/Versions/A/Headers/MDKAttributeEditor.h
-System/Library/Frameworks/MDKit.framework/Versions/A/Headers/MDKAttributeView.h
-System/Library/Frameworks/MDKit.framework/Versions/A/Headers/MDKQuery.h
-System/Library/Frameworks/MDKit.framework/Versions/A/Headers/MDKQueryManager.h
-System/Library/Frameworks/MDKit.framework/Versions/A/Headers/MDKWindow.h
-System/Library/Frameworks/MDKit.framework/Versions/A/Headers/MDKit.h
-System/Library/Frameworks/MDKit.framework/Versions/A/Headers/SQLite.h
-System/Library/Frameworks/MDKit.framework/Versions/A/MDKit
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/Help.rtfd/TXT.rtf
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/Help.rtfd/dummy.tiff
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKArrayEditor.gorm/data.classes
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKArrayEditor.gorm/data.info
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKArrayEditor.gorm/objects.gorm
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKAttributeChooser.gorm/data.classes
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKAttributeChooser.gorm/data.info
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKAttributeChooser.gorm/objects.gorm
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKAttributeView.gorm/data.classes
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKAttributeView.gorm/data.info
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKAttributeView.gorm/objects.gorm
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKCategoryControls.gorm/data.classes
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKCategoryControls.gorm/data.info
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKCategoryControls.gorm/objects.gorm
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKDateEditor.gorm/data.classes
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKDateEditor.gorm/data.info
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKDateEditor.gorm/objects.gorm
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKNumberEditor.gorm/data.classes
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKNumberEditor.gorm/data.info
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKNumberEditor.gorm/objects.gorm
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKStringEditor.gorm/data.classes
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKStringEditor.gorm/data.info
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKStringEditor.gorm/objects.gorm
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKWindow.gorm/data.classes
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKWindow.gorm/data.info
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKWindow.gorm/objects.gorm
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/Info-gnustep.plist
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/MDFinder.tiff
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/add.tiff
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/anim-logo-%%MAJORVERSION%%.tiff
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/anim-logo-1.tiff
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/anim-logo-2.tiff
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/anim-logo-3.tiff
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/anim-logo-4.tiff
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/anim-logo-5.tiff
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/anim-logo-6.tiff
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/anim-logo-7.tiff
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/attributes.plist
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/casesens.tiff
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/remove.tiff
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/switchOff.tiff
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/switchOn.tiff
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/whiteArrowDown.tiff
-System/Library/Frameworks/MDKit.framework/Versions/A/Resources/whiteArrowRight.tiff
-System/Library/Frameworks/MDKit.framework/Versions/A/libMDKit.so
-System/Library/Frameworks/MDKit.framework/Versions/A/libMDKit.so.%%MAJORVERSION%%
-System/Library/Frameworks/MDKit.framework/Versions/A/libMDKit.so.%%MAJORVERSION%%.1.%%MAJORVERSION%%
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKAttribute.h
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKAttributeChooser.h
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKAttributeEditor.h
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKAttributeView.h
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKQuery.h
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKQueryManager.h
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKWindow.h
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/MDKit.h
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers/SQLite.h
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/MDKit
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/Help.rtfd/TXT.rtf
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/Help.rtfd/dummy.tiff
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKArrayEditor.gorm/data.classes
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKArrayEditor.gorm/data.info
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKArrayEditor.gorm/objects.gorm
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeChooser.gorm/data.classes
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeChooser.gorm/data.info
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeChooser.gorm/objects.gorm
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeView.gorm/data.classes
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeView.gorm/data.info
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeView.gorm/objects.gorm
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKCategoryControls.gorm/data.classes
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKCategoryControls.gorm/data.info
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKCategoryControls.gorm/objects.gorm
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKDateEditor.gorm/data.classes
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKDateEditor.gorm/data.info
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKDateEditor.gorm/objects.gorm
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKNumberEditor.gorm/data.classes
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKNumberEditor.gorm/data.info
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKNumberEditor.gorm/objects.gorm
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKStringEditor.gorm/data.classes
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKStringEditor.gorm/data.info
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKStringEditor.gorm/objects.gorm
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKWindow.gorm/data.classes
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKWindow.gorm/data.info
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKWindow.gorm/objects.gorm
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/MDFinder.tiff
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/add.tiff
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-%%MAJORVERSION%%.tiff
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-1.tiff
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-2.tiff
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-3.tiff
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-4.tiff
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-5.tiff
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-6.tiff
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/anim-logo-7.tiff
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/attributes.plist
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/casesens.tiff
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/remove.tiff
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/switchOff.tiff
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/switchOn.tiff
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/whiteArrowDown.tiff
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/whiteArrowRight.tiff
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/libMDKit.so
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/libMDKit.so.%%MAJORVERSION%%
+System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/libMDKit.so.%%MAJORVERSION%%.1.%%MAJORVERSION%%
 System/Library/Frameworks/MDKit.framework/Versions/Current
+System/Library/Frameworks/MDKit.framework/libMDKit.so
 System/Library/Headers/MDKit
 System/Library/Libraries/libMDKit.so
 System/Library/Libraries/libMDKit.so.%%MAJORLIBVERSION%%
 System/Library/Libraries/libMDKit.so.%%LIBVERSION%%
+System/Tools/MDFinder
 System/Tools/gmds
 System/Tools/mdextractor
 System/Tools/mdfind
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKWindow.gorm
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKStringEditor.gorm
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKNumberEditor.gorm
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKDateEditor.gorm
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKCategoryControls.gorm
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKAttributeView.gorm
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKAttributeChooser.gorm
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/MDKArrayEditor.gorm
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj/Help.rtfd
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Resources/English.lproj
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Resources
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/A/Headers
-@dirrm System/Library/Frameworks/MDKit.framework/Versions/A
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKWindow.gorm
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKStringEditor.gorm
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKNumberEditor.gorm
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKDateEditor.gorm
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKCategoryControls.gorm
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeView.gorm
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKAttributeChooser.gorm
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/MDKArrayEditor.gorm
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj/Help.rtfd
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources/English.lproj
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Resources
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%/Headers
+@dirrm System/Library/Frameworks/MDKit.framework/Versions/%%MAJORVERSION%%
 @dirrm System/Library/Frameworks/MDKit.framework/Versions
 @dirrm System/Library/Frameworks/MDKit.framework
 @dirrm System/Library/Bundles/XmlExtractor.extr/Resources

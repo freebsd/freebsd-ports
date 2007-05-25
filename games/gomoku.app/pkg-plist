@@ -38,8 +38,8 @@ Local/Applications/Gomoku.app/Resources/Norwegian.lproj/Localizable.strings
 Local/Applications/Gomoku.app/Resources/Spanish.lproj/Localizable.strings
 Local/Applications/Gomoku.app/Resources/Swedish.lproj/Localizable.strings
 Local/Applications/Gomoku.app/Resources/TraditionalChinese.lproj/Localizable.strings
-Local/Applications/Gomoku.app/library_paths.openapp
 Local/Applications/Gomoku.app/stamp.make
+Local/Tools/Gomoku
 @dirrm Local/Applications/Gomoku.app/Resources/TraditionalChinese.lproj
 @dirrm Local/Applications/Gomoku.app/Resources/Swedish.lproj
 @dirrm Local/Applications/Gomoku.app/Resources/Spanish.lproj

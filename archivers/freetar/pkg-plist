@@ -10,8 +10,8 @@ Local/Applications/FreeTar.app/Resources/French.lproj/MainMenu.gorm/objects.gorm
 Local/Applications/FreeTar.app/Resources/French.lproj/Preferences.gorm/data.classes
 Local/Applications/FreeTar.app/Resources/French.lproj/Preferences.gorm/objects.gorm
 Local/Applications/FreeTar.app/Resources/Info-gnustep.plist
-Local/Applications/FreeTar.app/library_paths.openapp
 Local/Applications/FreeTar.app/stamp.make
+Local/Tools/FreeTar
 @dirrm Local/Applications/FreeTar.app/Resources/French.lproj/Preferences.gorm
 @dirrm Local/Applications/FreeTar.app/Resources/French.lproj/MainMenu.gorm
 @dirrm Local/Applications/FreeTar.app/Resources/French.lproj

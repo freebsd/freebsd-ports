@@ -48,8 +48,8 @@ Local/Applications/MPDCon.app/Resources/StatisticsViewer.gorm/data.classes
 Local/Applications/MPDCon.app/Resources/StatisticsViewer.gorm/data.info
 Local/Applications/MPDCon.app/Resources/StatisticsViewer.gorm/objects.gorm
 Local/Applications/MPDCon.app/Resources/Stop.tiff
-Local/Applications/MPDCon.app/library_paths.openapp
 Local/Applications/MPDCon.app/stamp.make
+Local/Tools/MPDCon
 @dirrm Local/Applications/MPDCon.app/Resources/StatisticsViewer.gorm
 @dirrm Local/Applications/MPDCon.app/Resources/Preferences.gorm
 @dirrm Local/Applications/MPDCon.app/Resources/PlaylistsManager.gorm

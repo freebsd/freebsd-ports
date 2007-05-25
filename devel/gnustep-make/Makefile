@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnustep-make
-PORTVERSION=	1.13.0
-PORTREVISION=	4
+PORTVERSION=	2.0.0
 CATEGORIES=	devel gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -33,6 +32,28 @@ GNUSTEP_WITHOUT_LIBOBJC=	yes
 
 post-install:
 	${LN} -s Library/Makefiles ${PREFIX}/System/
+	-${MKDIR} ${PREFIX}/System/Applications
+	-${MKDIR} ${PREFIX}/System/Library/ApplicationSupport
+	-${MKDIR} ${PREFIX}/System/Library/Bundles
+	-${MKDIR} ${PREFIX}/System/Library/ColorPickers
+	-${MKDIR} ${PREFIX}/System/Library/Colors
+	-${MKDIR} ${PREFIX}/System/Library/DocTemplates
+	-${MKDIR} ${PREFIX}/System/Library/Documentation/info
+	-${MKDIR} ${PREFIX}/System/Library/Documentation/man
+	-${MKDIR} ${PREFIX}/System/Library/Documentation/Developer
+	-${MKDIR} ${PREFIX}/System/Library/Documentation/User
+	-${MKDIR} ${PREFIX}/System/Library/Fonts
+	-${MKDIR} ${PREFIX}/System/Library/Frameworks
+	-${MKDIR} ${PREFIX}/System/Library/Headers
+	-${MKDIR} ${PREFIX}/System/Library/Images
+	-${MKDIR} ${PREFIX}/System/Library/KeyBindings
+	-${MKDIR} ${PREFIX}/System/Library/Libraries/Java
+	-${MKDIR} ${PREFIX}/System/Library/Libraries/Resources
+	-${MKDIR} ${PREFIX}/System/Library/PostScript
+	-${MKDIR} ${PREFIX}/System/Library/Services
+	-${MKDIR} ${PREFIX}/System/Library/Sounds
+	-${MKDIR} ${PREFIX}/System/Tools/Java
+	-${MKDIR} ${PREFIX}/System/Tools/Resources
 	-${MKDIR} ${PREFIX}/Local/Applications
 	-${MKDIR} ${PREFIX}/Local/Library/ApplicationSupport
 	-${MKDIR} ${PREFIX}/Local/Library/Bundles

@@ -26,9 +26,11 @@ WRKSRC=		${WRKDIR}/GWorkspace-${PORTVERSION}
 GNU_CONFIGURE=	yes
 ADDITIONAL_LDFLAGS+=	-L${WRKSRC}/FSNode/FSNode.framework/Versions/A
 DEFAULT_LIBVERSION2=	0.1.0
+DEFAULT_LIBVERSION3=	1.0.0
 PLIST_SUB+=	LIBVERSION2=${DEFAULT_LIBVERSION2}
 PLIST_SUB+=	MAJORLIBVERSION2=${DEFAULT_LIBVERSION2:C/([0-9]).*/\1/1}
-MAKE_ENV+=	GNUSTEP_INSTALLATION_DIR="${GNUSTEP_SYSTEM_ROOT}"
+PLIST_SUB+=	LIBVERSION3=${DEFAULT_LIBVERSION3}
+PLIST_SUB+=	MAJORLIBVERSION3=${DEFAULT_LIBVERSION3:C/([0-9]).*/\1/1}
 
 .if defined(WITHOUT_GHOSTSCRIPT)
 PLIST_SUB+=	PDFVIEW="@comment "
@@ -39,6 +41,6 @@ USE_GHOSTSCRIPT=	yes
 
 post-install:
 	${CP} ${WRKSRC}/Inspector/ContentViewersProtocol.h \
-		${GNUSTEP_SYSTEM_ROOT}/Library/Frameworks/Inspector.framework/Versions/A/Headers/ContentViewersProtocol.h
+		${GNUSTEP_SYSTEM_ROOT}/Library/Frameworks/Inspector.framework/Versions/${DEFAULT_LIBVERSION2:C/([0-9]).*/\1/1}/Headers/ContentViewersProtocol.h
 
 .include <bsd.port.mk>

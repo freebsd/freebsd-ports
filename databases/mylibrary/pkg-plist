@@ -46,8 +46,8 @@ Local/Applications/MyLibrary.app/Resources/refresh12.png
 Local/Applications/MyLibrary.app/Resources/remove11.png
 Local/Applications/MyLibrary.app/Resources/remove12.png
 Local/Applications/MyLibrary.app/Resources/remove13.png
-Local/Applications/MyLibrary.app/library_paths.openapp
 Local/Applications/MyLibrary.app/stamp.make
+Local/Tools/MyLibrary
 @dirrm Local/Applications/MyLibrary.app/Resources/English.lproj/SummaryViewer.gorm
 @dirrm Local/Applications/MyLibrary.app/Resources/English.lproj/SmartFolderEditor.gorm
 @dirrm Local/Applications/MyLibrary.app/Resources/English.lproj/MainLibrary.gorm
