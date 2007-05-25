@@ -1,4 +1,7 @@
 %%SITE_PERL%%/Data/Visitor/Callback.pm
 %%SITE_PERL%%/Data/Visitor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Visitor/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Visitor
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
 @dirrmtry %%SITE_PERL%%/Data/Visitor
 @dirrmtry %%SITE_PERL%%/Data
