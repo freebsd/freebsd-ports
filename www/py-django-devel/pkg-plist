@@ -45,6 +45,10 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/conf/locale/ar/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/django/conf/locale/ar/LC_MESSAGES/djangojs.mo
 %%PYTHON_SITELIBDIR%%/django/conf/locale/ar/LC_MESSAGES/djangojs.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/bg/LC_MESSAGES/django.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/bg/LC_MESSAGES/django.po
+%%PYTHON_SITELIBDIR%%/django/conf/locale/bg/LC_MESSAGES/djangojs.mo
+%%PYTHON_SITELIBDIR%%/django/conf/locale/bg/LC_MESSAGES/djangojs.po
 %%PYTHON_SITELIBDIR%%/django/conf/locale/bn/LC_MESSAGES/django.mo
 %%PYTHON_SITELIBDIR%%/django/conf/locale/bn/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/django/conf/locale/ca/LC_MESSAGES/django.mo
@@ -452,6 +456,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/contenttypes/__init__.py
 %%PYTHON_SITELIBDIR%%/django/contrib/contenttypes/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/contenttypes/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/contenttypes/generic.py
+%%PYTHON_SITELIBDIR%%/django/contrib/contenttypes/generic.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/contenttypes/generic.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/contenttypes/management.py
 %%PYTHON_SITELIBDIR%%/django/contrib/contenttypes/management.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/contenttypes/management.pyo
@@ -558,6 +565,21 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/br/forms.py
 %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/br/forms.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/br/forms.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/ch/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/ch/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/ch/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/ch/ch_states.py
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/ch/ch_states.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/ch/ch_states.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/ch/forms.py
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/ch/forms.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/ch/forms.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/cl/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/cl/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/cl/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/cl/forms.py
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/cl/forms.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/cl/forms.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/de/__init__.py
 %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/de/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/de/__init__.pyo
@@ -585,6 +607,15 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/fr/fr_department.py
 %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/fr/fr_department.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/fr/fr_department.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/is_/__init__.py
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/is_/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/is_/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/is_/forms.py
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/is_/forms.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/is_/forms.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/is_/is_postalcodes.py
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/is_/is_postalcodes.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/localflavor/is_/is_postalcodes.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/it/__init__.py
 %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/it/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/it/__init__.pyo
@@ -636,12 +667,18 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/markup/__init__.py
 %%PYTHON_SITELIBDIR%%/django/contrib/markup/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/markup/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/markup/models.py
+%%PYTHON_SITELIBDIR%%/django/contrib/markup/models.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/markup/models.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/markup/templatetags/__init__.py
 %%PYTHON_SITELIBDIR%%/django/contrib/markup/templatetags/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/markup/templatetags/__init__.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/markup/templatetags/markup.py
 %%PYTHON_SITELIBDIR%%/django/contrib/markup/templatetags/markup.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/markup/templatetags/markup.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/markup/tests.py
+%%PYTHON_SITELIBDIR%%/django/contrib/markup/tests.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/markup/tests.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/redirects/__init__.py
 %%PYTHON_SITELIBDIR%%/django/contrib/redirects/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/redirects/__init__.pyo
@@ -660,6 +697,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/sessions/models.py
 %%PYTHON_SITELIBDIR%%/django/contrib/sessions/models.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/sessions/models.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/sessions/tests.py
+%%PYTHON_SITELIBDIR%%/django/contrib/sessions/tests.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/sessions/tests.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/__init__.py
 %%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/sitemaps/__init__.pyo
@@ -695,12 +735,18 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/webdesign/lorem_ipsum.py
 %%PYTHON_SITELIBDIR%%/django/contrib/webdesign/lorem_ipsum.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/webdesign/lorem_ipsum.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/webdesign/models.py
+%%PYTHON_SITELIBDIR%%/django/contrib/webdesign/models.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/webdesign/models.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/webdesign/templatetags/__init__.py
 %%PYTHON_SITELIBDIR%%/django/contrib/webdesign/templatetags/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/webdesign/templatetags/__init__.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/webdesign/templatetags/webdesign.py
 %%PYTHON_SITELIBDIR%%/django/contrib/webdesign/templatetags/webdesign.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/webdesign/templatetags/webdesign.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/webdesign/tests.py
+%%PYTHON_SITELIBDIR%%/django/contrib/webdesign/tests.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/webdesign/tests.pyo
 %%PYTHON_SITELIBDIR%%/django/core/__init__.py
 %%PYTHON_SITELIBDIR%%/django/core/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/core/__init__.pyo
@@ -944,9 +990,6 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/db/models/fields/__init__.py
 %%PYTHON_SITELIBDIR%%/django/db/models/fields/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/db/models/fields/__init__.pyo
-%%PYTHON_SITELIBDIR%%/django/db/models/fields/generic.py
-%%PYTHON_SITELIBDIR%%/django/db/models/fields/generic.pyc
-%%PYTHON_SITELIBDIR%%/django/db/models/fields/generic.pyo
 %%PYTHON_SITELIBDIR%%/django/db/models/fields/related.py
 %%PYTHON_SITELIBDIR%%/django/db/models/fields/related.pyc
 %%PYTHON_SITELIBDIR%%/django/db/models/fields/related.pyo
@@ -1112,6 +1155,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/utils/__init__.py
 %%PYTHON_SITELIBDIR%%/django/utils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/utils/__init__.pyo
+%%PYTHON_SITELIBDIR%%/django/utils/_decimal.py
+%%PYTHON_SITELIBDIR%%/django/utils/_decimal.pyc
+%%PYTHON_SITELIBDIR%%/django/utils/_decimal.pyo
 %%PYTHON_SITELIBDIR%%/django/utils/_threading_local.py
 %%PYTHON_SITELIBDIR%%/django/utils/_threading_local.pyc
 %%PYTHON_SITELIBDIR%%/django/utils/_threading_local.pyo
@@ -1295,9 +1341,12 @@ bin/django-admin.py
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/no
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/jp
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/it
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/is_
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/fr
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/fi
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/de
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/cl
+@dirrm %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/ch
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/br
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/localflavor/au
 @dirrm %%PYTHON_SITELIBDIR%%/django/contrib/localflavor
@@ -1418,6 +1467,8 @@ bin/django-admin.py
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/ca
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/bn/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/bn
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/bg/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/bg
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/ar/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale/ar
 @dirrm %%PYTHON_SITELIBDIR%%/django/conf/locale
