@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.etek.chalmers.se/~e8cal1/sge/files/ \
 		http://www.digitalfanatics.org/cal/sge/files/
 DISTNAME=	sge030809
 
-MAINTAINER=	walkingshadow@grummel.net
+MAINTAINER=	jaj@hcl-club.lu
 COMMENT=	A graphic library for the Simple DirectMedia Layer (SDL)
 
 USE_GMAKE=		yes

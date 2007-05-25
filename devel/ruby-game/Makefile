@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	walkingshadow@grummel.net
+MAINTAINER=	jaj@hcl-club.lu
 COMMENT=	A game-development extension and library for the ruby language
 
 USE_SDL=	gfx image ttf

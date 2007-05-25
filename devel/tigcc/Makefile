@@ -17,7 +17,7 @@ DISTFILES=		gcc-core-4.1-20060728.tar.bz2:gcc \
 			binutils-2.16.1.tar.bz2:gas \
 			tigcc_src.tar.bz2:tigcc
 
-MAINTAINER=	walkingshadow@grummel.net
+MAINTAINER=	jaj@hcl-club.lu
 COMMENT=	C compiler for the TI89, 92, and 92+ calculators
 
 USE_BZIP2=	yes
