@@ -7,7 +7,7 @@
 
 PORTNAME=	koffice
 PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpq
 LIB_DEPENDS=	GraphicsMagick++:${PORTSDIR}/graphics/GraphicsMagick \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
 		aspell:${PORTSDIR}/textproc/aspell \
-		exif.12:${PORTSDIR}/graphics/libexif \
+		exif.13:${PORTSDIR}/graphics/libexif \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype:${PORTSDIR}/print/freetype2 \
 		lcms:${PORTSDIR}/graphics/lcms \
