@@ -10,6 +10,28 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20070524:
+AUTHOR: portmgr@FreeBSD.org
+The following changes were made to the ports infrastructure:
+
+  * The 'make-deinstall-all' target now checks for moved ports.
+
+  * The installation directories PORTEXAMPLES and PORTDATA are now defined.
+
+  * The USE_MAKESELF knob is added for ports that use the makeself archiver.
+
+  * The description of fetch-list was updated.  The targets fetch-required-list,
+    fetch-url-list, and fetch-urlall-list were added.
+
+  * 'make search' will also now search in ports/MOVED.
+
+  * The default method for 'make update' is now portsnap.  Previously,
+    you had to manually select one of 3 methods: SUP_UPDATE, CVS_UPDATE,
+    or PORTSNAP_UPDATE.  The latter is now obsolete.
+
+  * Several Makevar definitions have been moved to the pre-makefile section:
+    DATADIR, DOCSDIR, ETCDIR, EXAMPLESDIR, WWWDIR.
+
 20070403:
 AUTHOR: portmgr@FreeBSD.org
 The following changes were made to the ports infrastructure:

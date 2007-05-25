@@ -34,7 +34,8 @@
 #	clean-for-cdrom, clean-restricted,
 #	clean-for-cdrom-list, clean-restricted-list,
 #	configure, deinstall,
-#	depend, depends, describe, extract, fetch, fetch-list, ignorelist,
+#	depend, depends, describe, extract, fetch, fetch-list,
+#	ignorelist, ignorelist-verbose,
 #	install, maintainer, makesum, package, readmes, realinstall, reinstall,
 #	tags
 #
@@ -104,6 +105,7 @@ TARGETS+=	extract
 TARGETS+=	fetch
 TARGETS+=	fetch-list
 TARGETS+=	ignorelist
+TARGETS+=	ignorelist-verbose
 TARGETS+=	makesum
 TARGETS+=	maintainer
 TARGETS+=	package
@@ -271,6 +273,8 @@ INDEXFILE?=	INDEX-${OSVERSION:C/([0-9]).*/\1/}
 .else
 INDEXFILE?=	INDEX
 .endif
+MOVEDDIR?=	${PORTSDIR}
+MOVEDFILE?=	MOVED
 
 HTMLIFY=	sed -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
 
@@ -330,6 +334,7 @@ PORTSEARCH_DISPLAY_FIELDS?=name,path,info,maint,index,bdeps,rdeps,www
 PORTSEARCH_KEYLIM?=0
 PORTSEARCH_XKEYLIM?=0
 PORTSEARCH_IGNORECASE?=1
+PORTSEARCH_MOVED?=1
 
 _PORTSEARCH=	\
 	here=${.CURDIR}; \
@@ -408,11 +413,11 @@ _PORTSEARCH=	\
 	    split(display, d, /,[ \t]*/); \
 	    split(xdisplay, xd, /,[ \t]*/); \
 	    for (i in d) { \
-            toprint = 1;\
+            toprint = 1; \
 	      for (j in xd) { \
                 if (d[i] == xd[j] ) { \
                        toprint=0; \
-                       break;\
+                       break; \
                  }\
 	      } \
       	    if (toprint == 1 ) disp[fields[d[i]]] = 1; \
@@ -444,7 +449,31 @@ _PORTSEARCH=	\
 	        printf("%s:\t%s\n", names[i], $$i); \
 	    print(""); \
 	  }' ${INDEXDIR}/${INDEXFILE}; \
-	fi
+	  if [ "$$name" -o "$$xname" ] && [ ${PORTSEARCH_MOVED} -gt 0 ]; \
+	  then \
+	    awk -F\| -v name="$$name"        -v xname="$$xname" \
+	        -v icase="$${icase:-${PORTSEARCH_IGNORECASE}}" \
+	    'BEGIN { \
+	        if (icase) { \
+	    	if (length(name))  name = tolower(name);  if (length(xname))  xname = tolower(xname); \
+	        } \
+	        fields["name"]  = 1;  names[1]  = "Port"; \
+	        fields["destination"]  = 2;  names[2]  = "Moved"; \
+	        fields["date"]  = 3;  names[3]  = "Date"; \
+	        fileds["reason"] = 4;  names[4] = "Reason"; \
+	     } \
+	    { \
+		oldname = $$1;  newname = $$2; \
+		sub(".*\/", "", oldname);  newname = sub(".*\/", "", newname); \
+	        if (((icase ? tolower(oldname) : oldname) ~ name) || ((icase ? tolower(newname) : newname) ~ name)) { \
+	    	    for (i = 1; i <= 4; i++) { \
+	    		printf("%s:\t%s\n", names[i], $$i); \
+	    	    } \
+	        print(""); \
+	        } \
+	    }' ${MOVEDDIR}/${MOVEDFILE}; \
+	  fi \
+	fi 
 
 search:
 	@${_PORTSEARCH}
