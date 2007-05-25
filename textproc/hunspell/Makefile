@@ -30,6 +30,8 @@ PORTDOCS=	README README.myspell
 
 .if ${OSVERSION} < 500000
 BROKEN=		Does not compile on FreeBSD-4.x at this time
+.elif ${OSVERSION} >= 602001
+BROKEN=		Does not compile on FreeBSD >= 6.x
 .endif
 
 post-patch:
