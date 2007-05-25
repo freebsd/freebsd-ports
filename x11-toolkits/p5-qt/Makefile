@@ -22,6 +22,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:cpan \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of Perl bindings for the Qt toolkit
 
+BROKEN=		Configure fails
+
 USE_AUTOTOOLS=	libtool:15
 USE_GL=		yes
 USE_QT_VER=	3

@@ -15,6 +15,8 @@ MASTER_SITES=	http://mitglied.lycos.de/pageofmh/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A real 3-D molecule viewer
 
+BROKEN=		Configure fails
+
 USE_QT_VER=	3
 USE_GL=		yes
 USE_GMAKE=	yes
