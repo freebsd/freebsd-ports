@@ -7,16 +7,15 @@
 
 PORTNAME=	servlet-api
 PORTVERSION=	2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www java
-MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/maven2/javax/servlet/servlet-api/2.5/
+MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/maven2/javax/servlet/servlet-api/2.5/ \
+		http://repo1.maven.org/maven2/javax/servlet/servlet-api/2.5/
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	nemoliu@FreeBSD.org
 COMMENT=	The Servlet API
-
-BROKEN=		Size mismatch
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
