@@ -15,6 +15,8 @@ COMMENT=	PHP implementation of the XML-RPC protocol
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Incomplete pkg-plist
+
 CATEGORY=	XML
 FILES=		RPC.php RPC/Server.php RPC/Dump.php
 TESTS=		allgot.inc empty-value-struct.php empty-value.php \

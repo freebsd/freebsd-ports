@@ -15,6 +15,8 @@ DISTNAME=	fsp-2.8.1b24
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FSP daemon, clients and scanner
 
+BROKEN=		Incomplete pkg-plist
+
 CLIENTS=	fcatcmd fcdcmd fducmd ffindcmd fgetcmd fgrabcmd fhostcmd \
 		flscmd fmkdir fprocmd fput frmcmd frmdircmd fver fspmerge \
 		fstatcmd fmvcmd fbye fsetupcmd
