@@ -1,0 +1,24 @@
+etc/ld.so.conf.d/qt-i386.conf
+usr/lib/qt-3.3/lib/libqt-mt.so.3
+usr/lib/qt-3.3/lib/libqt-mt.so.3.3
+usr/lib/qt-3.3/lib/libqt-mt.so.3.3.4
+usr/lib/qt-3.3/lib/libqui.so.1
+usr/lib/qt-3.3/lib/libqui.so.1.0
+usr/lib/qt-3.3/lib/libqui.so.1.0.0
+usr/lib/qt-3.3/plugins/inputmethods/libqimsw-multi.so
+usr/lib/qt-3.3/plugins/inputmethods/libqimsw-none.so
+usr/lib/qt-3.3/plugins/inputmethods/libqsimple.so
+usr/lib/qt-3.3/plugins/inputmethods/libqxim.so
+usr/share/doc/qt-3.3.4/FAQ
+usr/share/doc/qt-3.3.4/LICENSE.QPL
+usr/share/doc/qt-3.3.4/README
+usr/share/doc/qt-3.3.4/README-QT.TXT
+usr/share/doc/qt-3.3.4/README.immodule
+usr/share/doc/qt-3.3.4/changes-3.3.4
+usr/share/doc/qt-3.3.4/changes.immodule
+@dirrm usr/share/doc/qt-3.3.4
+@dirrm usr/lib/qt-3.3/plugins/inputmethods
+@dirrm usr/lib/qt-3.3/plugins
+@dirrm usr/lib/qt-3.3/lib
+@dirrm usr/lib/qt-3.3/bin
+@dirrm usr/lib/qt-3.3

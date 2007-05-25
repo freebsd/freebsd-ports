@@ -1,0 +1,7 @@
+Qt sets the standard for high-performance, cross-platform application
+development. It includes a C++ class library and tools for cross-platform
+development and internationalization.
+
+This is a port of linux libraries of QT3.
+
+WWW: http://trolltech.com/products/qt/qt3
