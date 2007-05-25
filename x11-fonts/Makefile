@@ -85,6 +85,7 @@
     SUBDIR += lfpfonts-fix
     SUBDIR += lfpfonts-var
     SUBDIR += libFS
+    SUBDIR += liberation-fonts-ttf
     SUBDIR += libfontenc
     SUBDIR += libXfont
     SUBDIR += libXfontcache
