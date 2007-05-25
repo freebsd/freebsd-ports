@@ -25,6 +25,10 @@ USE_GNUSTEP_INSTALL=	yes
 USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
 WRKSRC=		${WRKDIR}/Adun
+MAKE_ENV+=	AdunKernel_CURRENT_VERSION_NAME=0
+DEFAULT_LIBVERSION2=	0.0
+PLIST_SUB+=	LIBVERSION2=${DEFAULT_LIBVERSION2}
+PLIST_SUB+=	MAJORLIBVERSION2=${DEFAULT_LIBVERSION2:C/([0-9]).*/\1/1}
 
 post-patch:
 	${REINPLACE_CMD} -e 's|include Defs/|-include Defs/|' \
@@ -41,7 +45,7 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 600000
-IGNORE=		not enough math funtions
+IGNORE=		not enough math functions
 .endif
 
 .include <bsd.port.post.mk>

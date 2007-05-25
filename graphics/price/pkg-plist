@@ -43,8 +43,8 @@ Local/Applications/PRICE.app/Resources/TraceEdges.gorm/data.classes
 Local/Applications/PRICE.app/Resources/TraceEdges.gorm/data.info
 Local/Applications/PRICE.app/Resources/TraceEdges.gorm/objects.gorm
 Local/Applications/PRICE.app/Resources/price-icon-os.tiff
-Local/Applications/PRICE.app/library_paths.openapp
 Local/Applications/PRICE.app/stamp.make
+Local/Tools/PRICE
 @dirrm Local/Applications/PRICE.app/Resources/TraceEdges.gorm
 @dirrm Local/Applications/PRICE.app/Resources/Scale.gorm
 @dirrm Local/Applications/PRICE.app/Resources/ProgressPanel.gorm

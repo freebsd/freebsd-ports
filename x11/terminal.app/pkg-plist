@@ -16,8 +16,8 @@ System/Applications/Terminal.app/Resources/cursor_inverted.tiff
 System/Applications/Terminal.app/Resources/cursor_line.tiff
 System/Applications/Terminal.app/Resources/cursor_stroked.tiff
 System/Applications/Terminal.app/Terminal
-System/Applications/Terminal.app/library_paths.openapp
 System/Applications/Terminal.app/stamp.make
+System/Tools/Terminal
 @dirrm System/Applications/Terminal.app/Resources/Turkish.lproj
 @dirrm System/Applications/Terminal.app/Resources/Swedish.lproj
 @dirrm System/Applications/Terminal.app/Resources/Spanish.lproj

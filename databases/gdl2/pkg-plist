@@ -1,20 +1,22 @@
 Local/Library/Frameworks/Postgres95EOAdaptor.framework/Headers
+Local/Library/Frameworks/Postgres95EOAdaptor.framework/Postgres95EOAdaptor
 Local/Library/Frameworks/Postgres95EOAdaptor.framework/Resources
-Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/A/Headers/Postgres95Adaptor.h
-Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/A/Headers/Postgres95Channel.h
-Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/A/Headers/Postgres95Context.h
-Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/A/Headers/Postgres95SQLExpression.h
-Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/A/Headers/Postgres95Values.h
-Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/A/Postgres95EOAdaptor
-Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/A/Resources/Info-gnustep.plist
-Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/A/Resources/LoginPanel.bundle/LoginPanel
-Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/A/Resources/LoginPanel.bundle/Resources/Info-gnustep.plist
-Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/A/Resources/LoginPanel.bundle/Resources/postgreslogo.tif
-Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/A/Resources/LoginPanel.bundle/stamp.make
-Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/A/libPostgres95EOAdaptor.so
-Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/A/libPostgres95EOAdaptor.so.%%MAJORVERSION%%
-Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/A/libPostgres95EOAdaptor.so.%%VERSION%%
+Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/%%MAJORVERSION%%/Headers/Postgres95Adaptor.h
+Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/%%MAJORVERSION%%/Headers/Postgres95Channel.h
+Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/%%MAJORVERSION%%/Headers/Postgres95Context.h
+Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/%%MAJORVERSION%%/Headers/Postgres95SQLExpression.h
+Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/%%MAJORVERSION%%/Headers/Postgres95Values.h
+Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/%%MAJORVERSION%%/Postgres95EOAdaptor
+Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/%%MAJORVERSION%%/Resources/Info-gnustep.plist
+Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/%%MAJORVERSION%%/Resources/LoginPanel.bundle/LoginPanel
+Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/%%MAJORVERSION%%/Resources/LoginPanel.bundle/Resources/Info-gnustep.plist
+Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/%%MAJORVERSION%%/Resources/LoginPanel.bundle/Resources/postgreslogo.tif
+Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/%%MAJORVERSION%%/Resources/LoginPanel.bundle/stamp.make
+Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/%%MAJORVERSION%%/libPostgres95EOAdaptor.so
+Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/%%MAJORVERSION%%/libPostgres95EOAdaptor.so.%%MAJORVERSION%%
+Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/%%MAJORVERSION%%/libPostgres95EOAdaptor.so.%%VERSION%%
 Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/Current
+Local/Library/Frameworks/Postgres95EOAdaptor.framework/libPostgres95EOAdaptor.so
 Local/Library/Headers/Postgres95EOAdaptor
 Local/Library/Libraries/libPostgres95EOAdaptor.so
 Local/Library/Libraries/libPostgres95EOAdaptor.so.%%MAJORVERSION%%
@@ -46,7 +48,6 @@ System/Applications/DBModeler.app/Resources/RelationshipInspector.tiff
 System/Applications/DBModeler.app/Resources/SQLGenerator.gorm/data.classes
 System/Applications/DBModeler.app/Resources/SQLGenerator.gorm/data.info
 System/Applications/DBModeler.app/Resources/SQLGenerator.gorm/objects.gorm
-System/Applications/DBModeler.app/library_paths.openapp
 System/Applications/DBModeler.app/stamp.make
 System/Library/ApplicationSupport/Palettes/GDL2.palette/GDL2
 System/Library/ApplicationSupport/Palettes/GDL2.palette/Resources/GDL2ConnectionInspector.gorm/data.classes
@@ -144,6 +145,7 @@ System/Library/Libraries/libgnustep-db2modeler.so
 System/Library/Libraries/libgnustep-db2modeler.so.%%MAJORVERSION%%
 System/Library/Libraries/libgnustep-db2modeler.so.%%VERSION%%
 System/Library/Makefiles/Auxiliary/gdl2.make
+System/Tools/DBModeler
 System/Tools/eoutil
 System/Tools/gdlgsdoc
 @dirrm System/Library/Headers/EOModeler
@@ -161,10 +163,10 @@ System/Tools/gdlgsdoc
 @dirrm System/Applications/DBModeler.app/Resources/AttributeInspector.gorm
 @dirrm System/Applications/DBModeler.app/Resources
 @dirrm System/Applications/DBModeler.app
-@dirrm Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/A/Resources/LoginPanel.bundle/Resources
-@dirrm Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/A/Resources/LoginPanel.bundle
-@dirrm Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/A/Resources
-@dirrm Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/A/Headers
-@dirrm Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/A
+@dirrm Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/%%MAJORVERSION%%/Resources/LoginPanel.bundle/Resources
+@dirrm Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/%%MAJORVERSION%%/Resources/LoginPanel.bundle
+@dirrm Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/%%MAJORVERSION%%/Resources
+@dirrm Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/%%MAJORVERSION%%/Headers
+@dirrm Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions/%%MAJORVERSION%%
 @dirrm Local/Library/Frameworks/Postgres95EOAdaptor.framework/Versions
 @dirrm Local/Library/Frameworks/Postgres95EOAdaptor.framework

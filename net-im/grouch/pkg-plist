@@ -32,7 +32,6 @@ Local/Applications/Grouch.app/Resources/SetAwayMessage.gsmarkup
 Local/Applications/Grouch.app/Resources/SetProfile.gsmarkup
 Local/Applications/Grouch.app/Resources/StatusWindow.gsmarkup
 Local/Applications/Grouch.app/Resources/UserChooser.gsmarkup
-Local/Applications/Grouch.app/library_paths.openapp
 Local/Applications/Grouch.app/stamp.make
 Local/Library/Bundles/Oscar.bundle/Oscar
 Local/Library/Bundles/Oscar.bundle/Resources/English.lproj/Localizable.strings
@@ -54,6 +53,7 @@ Local/Library/Headers/Grouch/NSBundle+Grouch.h
 Local/Library/Libraries/libGrouchCore.so
 Local/Library/Libraries/libGrouchCore.so.%%LIBVERSION%%
 Local/Library/Libraries/libGrouchCore.so.%%MAJORLIBVERSION%%
+Local/Tools/Grouch
 @dirrm Local/Library/Headers/Grouch
 @dirrm Local/Library/Bundles/Oscar.bundle/Resources/English.lproj
 @dirrm Local/Library/Bundles/Oscar.bundle/Resources

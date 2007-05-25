@@ -1,13 +1,13 @@
 Local/Applications/Camera.app/Camera
-Local/Applications/Camera.app/library_paths.openapp
-Local/Applications/Camera.app/Resources/Info-gnustep.plist
+Local/Applications/Camera.app/Resources/Camera.desktop
 Local/Applications/Camera.app/Resources/Camera.gorm/data.classes
 Local/Applications/Camera.app/Resources/Camera.gorm/objects.gorm
-Local/Applications/Camera.app/Resources/Camera.desktop
-Local/Applications/Camera.app/Resources/CameraInfo.plist
 Local/Applications/Camera.app/Resources/Camera.png
+Local/Applications/Camera.app/Resources/CameraInfo.plist
+Local/Applications/Camera.app/Resources/Info-gnustep.plist
 Local/Applications/Camera.app/Resources/no_thumbnail.jpg
 Local/Applications/Camera.app/stamp.make
+Local/Tools/Camera
 @dirrm Local/Applications/Camera.app/Resources/Camera.gorm
 @dirrm Local/Applications/Camera.app/Resources
 @dirrm Local/Applications/Camera.app

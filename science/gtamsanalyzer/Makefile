@@ -24,4 +24,7 @@ USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=	${WRKDIR}/${DISTNAME}/Source
 
+post-patch:	
+	${RM} "${WRKSRC}/obj"
+
 .include <bsd.port.mk>

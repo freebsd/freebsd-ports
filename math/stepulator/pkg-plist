@@ -4,8 +4,8 @@ Local/Applications/Stepulator.app/Resources/Stepulator.gorm/data.classes
 Local/Applications/Stepulator.app/Resources/Stepulator.gorm/objects.gorm
 Local/Applications/Stepulator.app/Resources/StepulatorInfo.plist
 Local/Applications/Stepulator.app/Stepulator
-Local/Applications/Stepulator.app/library_paths.openapp
 Local/Applications/Stepulator.app/stamp.make
+Local/Tools/Stepulator
 @dirrm Local/Applications/Stepulator.app/Resources/Stepulator.gorm
 @dirrm Local/Applications/Stepulator.app/Resources
 @dirrm Local/Applications/Stepulator.app

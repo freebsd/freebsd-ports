@@ -23,8 +23,8 @@ System/Applications/TextEdit.app/Resources/rtf.tiff
 System/Applications/TextEdit.app/Resources/rtfd.tiff
 System/Applications/TextEdit.app/Resources/text.tiff
 System/Applications/TextEdit.app/TextEdit
-System/Applications/TextEdit.app/library_paths.openapp
 System/Applications/TextEdit.app/stamp.make
+System/Tools/TextEdit
 @dirrm System/Applications/TextEdit.app/Resources/Russian.lproj
 @dirrm System/Applications/TextEdit.app/Resources/German.lproj
 @dirrm System/Applications/TextEdit.app/Resources/English.lproj/Preferences.gorm
