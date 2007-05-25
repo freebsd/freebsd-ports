@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	plans
-PORTVERSION=	7.9.4
+PORTVERSION=	7.9.5
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.planscalendar.com/release/:plans \
 		http://www.planscalendar.com/addons/:addons \
-		http://www.freebsd.org/gifs/:logo
+		http://www.freebsd.org/gifs/:logo CENKES:plans,addons,logo
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:plans \
 		danish.pl:addons \
