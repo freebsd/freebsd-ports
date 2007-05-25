@@ -8,7 +8,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	2.0.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	finance gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.gnucash.org/pub/gnucash/sources/stable/
@@ -20,7 +20,8 @@ COMMENT=	Quicken-like money and finance manager
 BUILD_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		ofx.3:${PORTSDIR}/finance/libofx \
-		gwrap-core-runtime.0:${PORTSDIR}/devel/g-wrap
+		gwrap-core-runtime.0:${PORTSDIR}/devel/g-wrap \
+    		libgtkhtml-3.8.15:${PORTSDIR}/www/gtkhtml38
 RUN_DEPENDS=	guile>=1.6.8_2:${PORTSDIR}/lang/guile \
 		${LOCALBASE}/share/guile/1.6/slibcat:${PORTSDIR}/lang/slib-guile \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
@@ -38,7 +39,7 @@ USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_PERL5=	yes
-USE_GNOME=	gnomeprefix gtkhtml3 libgsf_gnome libglade2 \
+USE_GNOME=	gnomeprefix libgsf_gnome libglade2 \
 		libgnomeprint libgnomeprintui
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -80,8 +81,7 @@ PLIST_SUB=	AQBANKING="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$${datarootdir}/info|${PREFIX}/info| ; \
-	    	s|libgtkhtml-3.8|libgtkhtml-3.14|g' \
+	@${REINPLACE_CMD} -e 's|$${datarootdir}/info|${PREFIX}/info|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|$$(datadir)/aclocal|${PREFIX}/share/aclocal|' \
 		${WRKSRC}/Makefile.in

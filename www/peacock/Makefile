@@ -7,7 +7,7 @@
 
 PORTNAME=	peacock
 PORTVERSION=	1.9.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,13 +15,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	A GUI-based HTML Editor for GTK+/GNOME
 
+LIB_DEPENDS=	libgtkhtml-3.8.15:${PORTSDIR}/www/gtkhtml38
+
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomeui gtksourceview gtkhtml3
+USE_GNOME=	gnomeprefix gnomehack libgnomeui gtksourceview
 GNU_CONFIGURE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|libgtkhtml-3.8|libgtkhtml-3.14|g' \
-	    	${WRKSRC}/configure
 
 .include <bsd.port.mk>
