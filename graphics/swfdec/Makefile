@@ -15,7 +15,7 @@ MAINTAINER=	rainer.alves@gmail.com
 COMMENT=	Flash Rendering Library
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
-		avcodec.1:${PORTSDIR}/multimedia/ffmpeg-devel \
+		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		oil-0.3.1:${PORTSDIR}/devel/liboil
 
 USE_XLIB=	yes
