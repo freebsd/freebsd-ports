@@ -18,6 +18,8 @@ COMMENT=	Lingua::EN::Fathom - Measure readability of English text
 BUILD_DEPENDS=	${SITE_PERL}/Lingua/EN/Syllable.pm:${PORTSDIR}/textproc/p5-Lingua-EN-Syllable
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Incorrect pkg-plist
+
 PERL_CONFIGURE=	yes
 
 MAN3=	Lingua::EN::Fathom.3
