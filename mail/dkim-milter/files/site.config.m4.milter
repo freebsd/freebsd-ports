@@ -1,2 +1,2 @@
-APPENDDEF(`confENVDEF',`-I%%LOCALBASE%%/include')
-APPENDDEF(`confLIBDIRS', `-L%%LOCALBASE%%/lib')
+APPENDDEF(`bld_dkim_filter_INCDIRS',`-I%%LOCALBASE%%/include')
+APPENDDEF(`bld_dkim_filter_LIBDIRS', `-L%%LOCALBASE%%/lib')
