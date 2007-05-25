@@ -13,10 +13,13 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	freeguide-tv
 DISTNAME=	FreeGuide-${PORTVERSION}
 
-MAINTAINER=	shurd@sasktel.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive TV guide which will create personalized TV listings
 
 RUN_DEPENDS=	tv_cat:${PORTSDIR}/textproc/p5-xmltv
+
+DEPRECATED=	Old version, no maintainer
+EXPIRATION_DATE=	2007-11-25
 
 USE_JAVA=	yes
 USE_JIKES=	no
