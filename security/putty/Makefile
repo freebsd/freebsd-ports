@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	putty
-PORTVERSION=	0.59
-PORTREVISION=	1
+PORTVERSION=	0.60
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://the.earth.li/~sgtatham/putty/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
