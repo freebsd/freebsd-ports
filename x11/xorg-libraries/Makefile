@@ -7,6 +7,7 @@
 
 PORTNAME=	xorg-libraries
 PORTVERSION=	7.2
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -64,9 +65,12 @@ RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/x11.pc:${PORTSDIR}/x11/libX11 \
 		${X11BASE}/libdata/pkgconfig/libfs.pc:${PORTSDIR}/x11-fonts/libFS \
 		${X11BASE}/libdata/pkgconfig/oldx.pc:${PORTSDIR}/x11/liboldX
 
-.if !defined(XORG_UPGRADE) && !defined(PACKAGE_BUILDING)
+.if !defined(XORG_UPGRADE) && !defined(PACKAGE_BUILDING) && exists(/usr/X11R6)
 pre-everything::
 	@test -L /usr/X11R6 || ( echo "Read ${PORTSDIR}/UPDATING for the procedure to upgrade or install xorg 7.2." && /usr/bin/false )
+.elif !exists(/usr/X11R6) && !defined(WITHOUT_X11R6_SYMLINK)
+pre-everything::
+	${LN} -s ${X11BASE} /usr/X11R6 || ${TRUE}
 .endif
 
 do-install:
