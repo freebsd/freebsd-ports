@@ -187,20 +187,6 @@ share/locale/xh/LC_MESSAGES/gnome-system-tools.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-system-tools.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-system-tools.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-system-tools.mo
-@dirrm share/locale/zh_HK/LC_MESSAGES
-@dirrm share/locale/zh_HK
-@dirrm share/locale/xh/LC_MESSAGES
-@dirrm share/locale/xh
-@dirrm share/locale/rw/LC_MESSAGES
-@dirrm share/locale/rw
-@dirrm share/locale/mg/LC_MESSAGES
-@dirrm share/locale/mg
-@dirrm share/locale/ku/LC_MESSAGES
-@dirrm share/locale/ku
-@dirrm share/locale/dz/LC_MESSAGES
-@dirrm share/locale/dz
-@dirrm share/locale/bn_IN/LC_MESSAGES
-@dirrm share/locale/bn_IN
 @dirrm share/gnome/omf/users-admin
 @dirrm share/gnome/omf/time-admin
 @dirrm share/gnome/omf/shares-admin
