@@ -4297,6 +4297,7 @@ gtkgraph	ports/graphics/gtkgraph
 gtkguitune	ports/audio/gtkguitune
 gtkhtml		ports/www/gtkhtml
 gtkhtml3	ports/www/gtkhtml3
+gtkhtml38	ports/www/gtkhtml38
 gtkhx		ports/net-p2p/gtkhx
 gtkjournal	ports/deskutils/gtkjournal
 gtklife		ports/games/gtklife
