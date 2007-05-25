@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	zipper
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	archivers gnustep
 MASTER_SITES=	http://xanthippe.dyndns.org/Zipper/ \
 		${MASTER_SITE_GNUSTEP_CH}
