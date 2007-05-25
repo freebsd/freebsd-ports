@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lzma
-PORTVERSION=	4.45
+PORTVERSION=	4.46
 CATEGORIES=	archivers
 MASTER_SITES=	SF/sevenzip
 DISTNAME=	7z${PORTVERSION:S/.//g}
@@ -25,12 +25,9 @@ CFLAGS+=	-D_LZMA_SYSTEM_SIZE_T
 PORTDOCS=	7zC.txt 7zFormat.txt Methods.txt history.txt lzma.txt
 
 post-patch:
-	@${EGREP} -lr '(malloc.h|MyAlloc|MyFree)' ${WRKSRC}|\
-		${XARGS} ${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|'
 	@${REINPLACE_CMD} -e \
-		's|^CXX.*||;s|CXX_C|CC|;s|^CFLAGS =|CFLAGS +=|;\
-		 s|Alloc.cpp|Alloc.c|;s|/Alloc.c|/C/Alloc.c|;/Alloc.c/s|CXX|CC|'\
-		${BUILD_WRKSRC}/${MAKEFILE}
+		's|^CXX.*||;s|CXX_C|CC|;s|^CFLAGS =|CFLAGS +=|'\
+			${BUILD_WRKSRC}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/lzma ${TARGETDIR}/bin/
