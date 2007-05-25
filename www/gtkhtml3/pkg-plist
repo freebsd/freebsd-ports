@@ -114,7 +114,7 @@ share/locale/zh_HK/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 share/locale/zh_TW/LC_MESSAGES/gtkhtml-%%VERSION%%.mo
 @dirrm share/gnome/gtkhtml-%%VERSION%%/icons
 @dirrm share/gnome/gtkhtml-%%VERSION%%
-@dirrm lib/gtkhtml
+@dirrmtry lib/gtkhtml
 @dirrm include/libgtkhtml-%%VERSION%%/gtkhtml
 @dirrm include/libgtkhtml-%%VERSION%%
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
