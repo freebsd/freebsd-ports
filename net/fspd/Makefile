@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fsp
 DISTNAME=	fsp-2.8.1b24
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bg1tpt@gmail.com
 COMMENT=	FSP daemon, clients and scanner
 
 CLIENTS=	fcatcmd fcdcmd fducmd ffindcmd fgetcmd fgrabcmd fhostcmd \
@@ -46,6 +46,8 @@ OPTIONS=	NOCLIENTS "Omit client commands" off \
 .if defined(WITH_INFINITE)
 CONFIGURE_ARGS+=	--disable-timeout
 .endif
+
+PLIST_FILES=	bin/fspscan bin/fspd etc/fspd.conf.sample
 
 .if !defined(WITH_NOCLIENTS)
 .for command in ${CLIENTS}
