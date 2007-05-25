@@ -21,7 +21,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-C
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple
 
-BROKEN=		Unfetchable
+BROKEN=		Unfetchable - Size mismatch
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
