@@ -19,6 +19,8 @@ EXTRACT_ONLY=	${RPMFILE}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Canon Bubble Jet Print Filter for Linux -- Common files
 
+BROKEN=		Incomplete pkg-plist
+
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 .if defined(SLAVE_PORT)
 RUN_DEPENDS=	stsmon:${PORTSDIR}/print/bjfiltercom \
