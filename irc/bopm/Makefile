@@ -29,6 +29,12 @@ SUB_FILES=	pkg-message pkg-install pkg-deinstall
 PLIST_SUB=	LOGDIR=${LOGDIR}
 SUB_LIST=	LOGDIR=${LOGDIR}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 pre-su-install:
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
@@ -50,4 +56,4 @@ post-install:
 	@${CHMOD} 640 ${PREFIX}/etc/bopm.conf.sample
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

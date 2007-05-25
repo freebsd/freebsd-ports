@@ -22,6 +22,12 @@ PLIST=		${WRKDIR}/pkg-plist
 
 USE_X_PREFIX=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -o buttonbox -L${X11BASE}/lib \
 		-I${X11BASE}/include -lX11 -lXext button.c configuration.c \
@@ -47,4 +53,4 @@ do-install:
 	done
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
