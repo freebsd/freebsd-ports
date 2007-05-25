@@ -31,6 +31,7 @@
     SUBDIR += asterisk12
     SUBDIR += asterisk-addons
     SUBDIR += asterisk12-addons
+    SUBDIR += asterisk12-app-ldap
     SUBDIR += asterisk-app-ldap
     SUBDIR += asterisk-app-notify
     SUBDIR += asterisk-bristuff

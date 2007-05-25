@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	app_ldap
+PORTNAME=	asterisk12-app-ldap
 DISTVERSION=	1.0rc6
 PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.mezzo.net/asterisk/
+DISTNAME=	app_ldap-${DISTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	idefix@fechner.net
