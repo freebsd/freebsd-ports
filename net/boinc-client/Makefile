@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	boinc-client
-PORTVERSION=	5.8.15
-PORTREVISION=	1
+PORTVERSION=	5.8.17
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pav
@@ -71,6 +70,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|gui_rpc_auth.cfg|${BOINC_HOME}/gui_rpc_auth.cfg|g' \
 		${WRKSRC}/client/file_names.h ${WRKSRC}/lib/boinc_cmd.C \
 		${WRKSRC}/clientgui/MainDocument.cpp
+	@${REINPLACE_CMD} -e 's|ca-bundle.crt|${LOCALBASE}/share/curl/curl-ca-bundle.crt|' ${WRKSRC}/client/http_curl.C
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' ${WRKSRC}/clientgui/stdwx.h
 
 # kill -O3 from clientgui build, it triggers some optimization bug and segfaults on runtime with -O3
