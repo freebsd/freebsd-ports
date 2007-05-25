@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	varnish
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,12 +22,17 @@ USE_LDCONFIG=	yes
 MAN1=		varnishd.1 varnishhist.1 varnishlog.1 varnishncsa.1 \
 		varnishstat.1 varnishtop.1
 MAN7=		vcl.7
-USE_RC_SUBR+=   varnishd
+USE_RC_SUBR=	varnishd varnishlog
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 601000
 BROKEN=		does not compile
 .endif
+
+post-install:
+	${MKDIR} ${PREFIX}/etc/varnish
+	@[ -f ${PREFIX}/etc/varnish/default.vcl ] || \
+	    ${INSTALL_DATA} ${WRKSRC}/etc/default.vcl ${PREFIX}/etc/varnish/
 
 .include <bsd.port.post.mk>

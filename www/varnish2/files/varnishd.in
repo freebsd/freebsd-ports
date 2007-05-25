@@ -12,7 +12,15 @@
 #
 #varnishd_enable="YES"
 #
-# See varnishd(1) for flags.
+# Configuration variables and their default values:
+#
+#varnishd_listen=":6081"
+#varnishd_config="%%PREFIX%%/etc/varnish/default.vcl"
+#varnishd_telnet="localhost:6082"
+#varnishd_storage="file,/tmp,50%"
+#varnishd_flags="-P ${pidfile} -a ${varnishd_listen} -f ${varnishd_config} -T ${varnishd_telnet} -s ${varnishd_storage}"
+#
+# See varnishd(1) for a detailed overview of command-line options.
 #
 
 . %%RC_SUBR%%
@@ -20,12 +28,17 @@
 name=varnishd
 rcvar=`set_rcvar`
 
-command=%%PREFIX%%/sbin/varnishd
+command="%%PREFIX%%/sbin/varnishd"
+pidfile="/var/run/${name}.pid"
 
 # set defaults
 
 varnishd_enable=${varnishd_enable:-"NO"}
-varnishd_flags=${varnishd_flags:-""}
+varnishd_listen=${varnishd_listen:-":6081"}
+varnishd_config=${varnishd_config:-"%%PREFIX%%/etc/varnish/default.vcl"}
+varnishd_telnet=${varnishd_telnet:-"localhost:6082"}
+varnishd_storage=${varnishd_storage:-"file,/tmp,50%"}
+varnishd_flags=${varnishd_flags:-"-P ${pidfile} -a ${varnishd_listen} -f ${varnishd_config} -T ${varnishd_telnet} -s ${varnishd_storage}"}
 
 load_rc_config ${name}
 
