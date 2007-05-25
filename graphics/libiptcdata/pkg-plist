@@ -25,6 +25,7 @@ share/gtk-doc/html/libiptcdata/iptc-libjpeg.html
 share/gtk-doc/html/libiptcdata/iptc-overview.html
 share/gtk-doc/html/libiptcdata/left.png
 share/gtk-doc/html/libiptcdata/libiptcdata.devhelp
+share/gtk-doc/html/libiptcdata/libiptcdata.devhelp2
 share/gtk-doc/html/libiptcdata/libiptcdata-dataset.html
 share/gtk-doc/html/libiptcdata/libiptcdata-data.html
 share/gtk-doc/html/libiptcdata/libiptcdata-jpeg.html
@@ -33,6 +34,7 @@ share/gtk-doc/html/libiptcdata/libiptcdata-mem.html
 share/gtk-doc/html/libiptcdata/libiptcdata-tag.html
 share/gtk-doc/html/libiptcdata/libiptcdata-utils.html
 share/gtk-doc/html/libiptcdata/right.png
+share/gtk-doc/html/libiptcdata/style.css
 share/gtk-doc/html/libiptcdata/up.png
 @dirrm share/gtk-doc/html/libiptcdata
 @dirrmtry share/gtk-doc/html
