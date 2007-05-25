@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.ocaml-programming.de/packages/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	stephane@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Validating XML parser for OCaml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \

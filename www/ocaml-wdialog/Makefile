@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	wdialog
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	stephane@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced system to create dialog-centric web applications
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \

@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnocl
 
-MAINTAINER=	stephane@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ and Gnome extension for Tcl
 
 BUILD_DEPENDS=	${LOCALBASE}/include/tcl8.4/tcl.h:${PORTSDIR}/lang/tcl84

@@ -13,7 +13,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.ocaml-programming.de/packages/
 PKGNAMEPREFIX=	ocaml-
 
-MAINTAINER=	stephane@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCaml package manager
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
