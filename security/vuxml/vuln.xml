@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="de2fab2d-0a37-11dc-aae2-00304881ac9a">
+    <topic>FreeType 2 -- Heap overflow vulnerability</topic>
+    <affects>
+      <package>
+        <name>freetype2</name>
+        <range><lt>2.2.1_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+  <blockquote cite="http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-2754">
+    <p>Integer signedness error in truetype/ttgload.c in Freetype 2.3.4 and 
+      earlier might allow remote attackers to execute arbitrary code via a 
+      crafted TTF image with a negative n_points value, which leads to an 
+      integer overflow and heap-based buffer overflow.</p>
+  </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-2754</cvename>
+      <mlist>http://lists.gnu.org/archive/html/freetype-devel/2007-04/msg00041.html</mlist>
+      <url>http://nvd.nist.gov/nvd.cfm?cvename=CVE-2007-2754</url>
+      <url>https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=240200</url>
+      <freebsdpr>ports/112769</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2007-04-27</discovery>
+      <entry>2007-05-24</entry>
+    </dates>
+  </vuln>
   <vuln vid="8e01ab5b-0949-11dc-8163-000e0c2e438a">
     <topic>FreeBSD -- heap overflow in file(1)</topic>
     <affects>
