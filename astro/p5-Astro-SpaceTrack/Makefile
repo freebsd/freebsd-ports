@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Astro-SpaceTrack
-PORTVERSION=	0.027
+PORTVERSION=	0.028
 CATEGORIES=	astro perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Astro
@@ -22,10 +22,4 @@ PERL_CONFIGURE=	yes
 MAN1=		SpaceTrack.1
 MAN3=		Astro::SpaceTrack.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600	# Inherited from www/p5-libwww
-IGNORE=		requires Perl 5.6.0 or newer.  Please install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
