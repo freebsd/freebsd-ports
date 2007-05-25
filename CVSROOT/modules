@@ -10154,6 +10154,7 @@ p5-MediaWiki	ports/www/p5-MediaWiki
 p5-Memoize	ports/devel/p5-Memoize
 p5-Memoize-ExpireLRU	ports/devel/p5-Memoize-ExpireLRU
 p5-Metadata	ports/databases/p5-Metadata
+p5-Method-Alias	ports/devel/p5-Method-Alias
 p5-Mknod	ports/devel/p5-Mknod
 p5-Module-Build	ports/devel/p5-Module-Build
 p5-Module-Build-Convert	ports/devel/p5-Module-Build-Convert
