@@ -15,8 +15,6 @@ DISTNAME=	wxGlade-${PORTVERSION}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	GUI builder for wxPython/wxWindows written in Python
 
-BROKEN=		Incorrect pkg-plist
-
 CONFLICTS=	wxglade-[0-9]*
 
 WRKSRC=		${WRKDIR}/wxGlade-${PORTVERSION}
