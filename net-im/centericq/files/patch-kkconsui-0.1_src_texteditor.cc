@@ -1,5 +1,8 @@
---- kkconsui-0.1/src/texteditor.cc.orig	Wed Aug  9 12:23:58 2006
-+++ kkconsui-0.1/src/texteditor.cc	Wed Aug  9 12:24:17 2006
+
+$FreeBSD$
+
+--- kkconsui-0.1/src/texteditor.cc.orig
++++ kkconsui-0.1/src/texteditor.cc
 @@ -106,7 +106,7 @@
  	fread(p, st.st_size, 1, f);
  	p[st.st_size] = 0;
@@ -65,3 +68,12 @@
  		} else {
  		    if(next) nextlen = strlen(next); else nextlen = 0;
  		    char *newline = new char[nextlen+strlen(p)+1];
+@@ -1940,7 +1940,7 @@
+ }
+ 
+ int texteditor::findint(void *p1, void *p2) {
+-    return *(int *) p1 != (int) p2;
++    return *(int *) p1 != (intptr_t) p2;
+ }
+ 
+ int texteditor::findhighline(void *p1, void *p2) {

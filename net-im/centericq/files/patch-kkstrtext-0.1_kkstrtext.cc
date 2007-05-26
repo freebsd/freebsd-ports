@@ -1,5 +1,8 @@
---- kkstrtext-0.1/kkstrtext.cc.orig	Wed Aug  9 10:44:43 2006
-+++ kkstrtext-0.1/kkstrtext.cc	Wed Aug  9 10:50:27 2006
+
+$FreeBSD$
+
+--- kkstrtext-0.1/kkstrtext.cc.orig
++++ kkstrtext-0.1/kkstrtext.cc
 @@ -154,7 +154,7 @@
      string r;
      char *buf = (char *) utf8_to_str(text.c_str());
@@ -27,6 +30,24 @@
  }
  
  void nothingfree(void *p) {
+@@ -431,7 +431,7 @@
+ }
+ 
+ int intcompare(void *s1, void *s2) {
+-    return (int) s1 != (int) s2;
++    return (intptr_t) s1 != (intptr_t) s2;
+ }
+ 
+ string i2str(int i) {
+@@ -885,7 +885,7 @@
+ #ifdef HAVE_ICONV
+     iconv_t cd = iconv_open(tocs.c_str(), fromcs.c_str());
+ 
+-    if(((int) cd) != -1) {
++    if(((intptr_t) cd) != -1) {
+ 	string r, text(atext);
+ 	size_t inleft, outleft, soutleft;
+ 	char *inbuf, *outbuf, *sinbuf, *soutbuf;
 @@ -907,8 +907,8 @@
  	    r += soutbuf;
  	    text.erase(0, text.size()-inleft);
