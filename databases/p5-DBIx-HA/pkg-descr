@@ -1,0 +1,9 @@
+DBIx::HA is a High Availability module for DBI. It is implemented by
+overloading the DBI connect, prepare and execute methods and can be
+seamlessly used without code modification except for initialization.
+
+DBIx::HA also works seamlessly with Apache::DBI when available, and
+ensures that cached database handles in the Apache::DBI module are
+properly updated when failing over.
+
+WWW:	http://search.cpan.org/dist/DBIx-HA/
