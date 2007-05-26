@@ -1,96 +1,96 @@
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.TXT
-%%DATADIR%%/site/admin/addUser.php
-%%DATADIR%%/site/admin/index.php
-%%DATADIR%%/site/admin/install.php
-%%DATADIR%%/site/admin/login.php
-%%DATADIR%%/site/admin/users.php
-%%DATADIR%%/site/archive.php
-%%DATADIR%%/site/download.php
-%%DATADIR%%/site/forgotPassword.php
-%%DATADIR%%/site/index.php
-%%DATADIR%%/site/install.php
-%%DATADIR%%/site/lib/configuration.php
-%%DATADIR%%/site/lib/directory.php
-%%DATADIR%%/site/lib/driveSpace.php
-%%DATADIR%%/site/lib/load_settings.php
-%%DATADIR%%/site/lib/pclzip.lib.php
-%%DATADIR%%/site/lib/torrent.php
-%%DATADIR%%/site/lib/torrent_module_loader.php
-%%DATADIR%%/site/lib/torrentmodules/i_torrent_functions.php
-%%DATADIR%%/site/lib/torrentmodules/tvAzureusBridge/azureusServer/Azureus2.jar
-%%DATADIR%%/site/lib/torrentmodules/tvAzureusBridge/azureusServer/commons-cli.jar
-%%DATADIR%%/site/lib/torrentmodules/tvAzureusBridge/azureusServer/log4j.jar
-%%DATADIR%%/site/lib/torrentmodules/tvAzureusBridge/torrent_functions.php
-%%DATADIR%%/site/lib/torrentmodules/tvAzureusBridge/tvTelnetClient/client.php
-%%DATADIR%%/site/lib/update_manager.php
-%%DATADIR%%/site/lib/user.php
-%%DATADIR%%/site/load.php
-%%DATADIR%%/site/login.php
-%%DATADIR%%/site/logout.php
-%%DATADIR%%/site/master.php
-%%DATADIR%%/site/master/css/adminAddUser.css
-%%DATADIR%%/site/master/css/adminIndex.css
-%%DATADIR%%/site/master/css/adminUsers.css
-%%DATADIR%%/site/master/css/archive.css
-%%DATADIR%%/site/master/css/forgotPassword.css
-%%DATADIR%%/site/master/css/index.css
-%%DATADIR%%/site/master/css/install.css
-%%DATADIR%%/site/master/css/load.css
-%%DATADIR%%/site/master/css/login.css
-%%DATADIR%%/site/master/css/master.css
-%%DATADIR%%/site/master/css/masterIndex.css
-%%DATADIR%%/site/master/css/torrentSettings.css
-%%DATADIR%%/site/master/css/userIndex.css
-%%DATADIR%%/site/master/images/admin.gif
-%%DATADIR%%/site/master/images/adminAddUser.gif
-%%DATADIR%%/site/master/images/archiveDownloadedFiles.gif
-%%DATADIR%%/site/master/images/archiveTorrents.gif
-%%DATADIR%%/site/master/images/background.gif
-%%DATADIR%%/site/master/images/bannerAutoDownload.gif
-%%DATADIR%%/site/master/images/bannerTorrents.gif
-%%DATADIR%%/site/master/images/btnBrowse.gif
-%%DATADIR%%/site/master/images/btnUpload.gif
-%%DATADIR%%/site/master/images/configureTorrent.gif
-%%DATADIR%%/site/master/images/driveInformation.gif
-%%DATADIR%%/site/master/images/driveStatus.gif
-%%DATADIR%%/site/master/images/installLogo.gif
-%%DATADIR%%/site/master/images/leftBorder.gif
-%%DATADIR%%/site/master/images/loadTorrent.gif
-%%DATADIR%%/site/master/images/loginButton.gif
-%%DATADIR%%/site/master/images/loginLogo.gif
-%%DATADIR%%/site/master/images/logo.gif
-%%DATADIR%%/site/master/images/logo.old.gif
-%%DATADIR%%/site/master/images/minus.gif
-%%DATADIR%%/site/master/images/password.gif
-%%DATADIR%%/site/master/images/plus.gif
-%%DATADIR%%/site/master/images/removeTorrent.gif
-%%DATADIR%%/site/master/images/retrievePassword.gif
-%%DATADIR%%/site/master/images/searchHDD.gif
-%%DATADIR%%/site/master/images/single.gif
-%%DATADIR%%/site/master/images/startTorrent.gif
-%%DATADIR%%/site/master/images/stopTorrent.gif
-%%DATADIR%%/site/master/images/topBannerBack.gif
-%%DATADIR%%/site/master/images/torrentPercent.gif
-%%DATADIR%%/site/master/images/userAdministration.gif
-%%DATADIR%%/site/master/js/adminAddUser.js
-%%DATADIR%%/site/master/js/login.js
-%%DATADIR%%/site/master/js/userIndex.js
-%%DATADIR%%/site/torrentSettings.php
-%%DATADIR%%/site/user/index.php
-%%DATADIR%%/site/user/install.php
-%%DATADIR%%/site/user/login.php
-@dirrm %%DATADIR%%/site/user
-@dirrm %%DATADIR%%/site/master/js
-@dirrm %%DATADIR%%/site/master/images
-@dirrm %%DATADIR%%/site/master/css
-@dirrm %%DATADIR%%/site/master
-@dirrm %%DATADIR%%/site/lib/torrentmodules/tvAzureusBridge/tvTelnetClient
-@dirrm %%DATADIR%%/site/lib/torrentmodules/tvAzureusBridge/azureusServer
-@dirrm %%DATADIR%%/site/lib/torrentmodules/tvAzureusBridge
-@dirrm %%DATADIR%%/site/lib/torrentmodules
-@dirrm %%DATADIR%%/site/lib
-@dirrm %%DATADIR%%/site/admin
-@dirrm %%DATADIR%%/site
-@dirrm %%DATADIR%%/config
-@dirrm %%DATADIR%%
+%%WWWDIR%%/site/admin/addUser.php
+%%WWWDIR%%/site/admin/index.php
+%%WWWDIR%%/site/admin/install.php
+%%WWWDIR%%/site/admin/login.php
+%%WWWDIR%%/site/admin/users.php
+%%WWWDIR%%/site/archive.php
+%%WWWDIR%%/site/download.php
+%%WWWDIR%%/site/forgotPassword.php
+%%WWWDIR%%/site/index.php
+%%WWWDIR%%/site/install.php
+%%WWWDIR%%/site/lib/configuration.php
+%%WWWDIR%%/site/lib/directory.php
+%%WWWDIR%%/site/lib/driveSpace.php
+%%WWWDIR%%/site/lib/load_settings.php
+%%WWWDIR%%/site/lib/pclzip.lib.php
+%%WWWDIR%%/site/lib/torrent.php
+%%WWWDIR%%/site/lib/torrent_module_loader.php
+%%WWWDIR%%/site/lib/torrentmodules/i_torrent_functions.php
+%%WWWDIR%%/site/lib/torrentmodules/tvAzureusBridge/azureusServer/Azureus2.jar
+%%WWWDIR%%/site/lib/torrentmodules/tvAzureusBridge/azureusServer/commons-cli.jar
+%%WWWDIR%%/site/lib/torrentmodules/tvAzureusBridge/azureusServer/log4j.jar
+%%WWWDIR%%/site/lib/torrentmodules/tvAzureusBridge/torrent_functions.php
+%%WWWDIR%%/site/lib/torrentmodules/tvAzureusBridge/tvTelnetClient/client.php
+%%WWWDIR%%/site/lib/update_manager.php
+%%WWWDIR%%/site/lib/user.php
+%%WWWDIR%%/site/load.php
+%%WWWDIR%%/site/login.php
+%%WWWDIR%%/site/logout.php
+%%WWWDIR%%/site/master.php
+%%WWWDIR%%/site/master/css/adminAddUser.css
+%%WWWDIR%%/site/master/css/adminIndex.css
+%%WWWDIR%%/site/master/css/adminUsers.css
+%%WWWDIR%%/site/master/css/archive.css
+%%WWWDIR%%/site/master/css/forgotPassword.css
+%%WWWDIR%%/site/master/css/index.css
+%%WWWDIR%%/site/master/css/install.css
+%%WWWDIR%%/site/master/css/load.css
+%%WWWDIR%%/site/master/css/login.css
+%%WWWDIR%%/site/master/css/master.css
+%%WWWDIR%%/site/master/css/masterIndex.css
+%%WWWDIR%%/site/master/css/torrentSettings.css
+%%WWWDIR%%/site/master/css/userIndex.css
+%%WWWDIR%%/site/master/images/admin.gif
+%%WWWDIR%%/site/master/images/adminAddUser.gif
+%%WWWDIR%%/site/master/images/archiveDownloadedFiles.gif
+%%WWWDIR%%/site/master/images/archiveTorrents.gif
+%%WWWDIR%%/site/master/images/background.gif
+%%WWWDIR%%/site/master/images/bannerAutoDownload.gif
+%%WWWDIR%%/site/master/images/bannerTorrents.gif
+%%WWWDIR%%/site/master/images/btnBrowse.gif
+%%WWWDIR%%/site/master/images/btnUpload.gif
+%%WWWDIR%%/site/master/images/configureTorrent.gif
+%%WWWDIR%%/site/master/images/driveInformation.gif
+%%WWWDIR%%/site/master/images/driveStatus.gif
+%%WWWDIR%%/site/master/images/installLogo.gif
+%%WWWDIR%%/site/master/images/leftBorder.gif
+%%WWWDIR%%/site/master/images/loadTorrent.gif
+%%WWWDIR%%/site/master/images/loginButton.gif
+%%WWWDIR%%/site/master/images/loginLogo.gif
+%%WWWDIR%%/site/master/images/logo.gif
+%%WWWDIR%%/site/master/images/logo.old.gif
+%%WWWDIR%%/site/master/images/minus.gif
+%%WWWDIR%%/site/master/images/password.gif
+%%WWWDIR%%/site/master/images/plus.gif
+%%WWWDIR%%/site/master/images/removeTorrent.gif
+%%WWWDIR%%/site/master/images/retrievePassword.gif
+%%WWWDIR%%/site/master/images/searchHDD.gif
+%%WWWDIR%%/site/master/images/single.gif
+%%WWWDIR%%/site/master/images/startTorrent.gif
+%%WWWDIR%%/site/master/images/stopTorrent.gif
+%%WWWDIR%%/site/master/images/topBannerBack.gif
+%%WWWDIR%%/site/master/images/torrentPercent.gif
+%%WWWDIR%%/site/master/images/userAdministration.gif
+%%WWWDIR%%/site/master/js/adminAddUser.js
+%%WWWDIR%%/site/master/js/login.js
+%%WWWDIR%%/site/master/js/userIndex.js
+%%WWWDIR%%/site/torrentSettings.php
+%%WWWDIR%%/site/user/index.php
+%%WWWDIR%%/site/user/install.php
+%%WWWDIR%%/site/user/login.php
+@dirrm %%WWWDIR%%/site/user
+@dirrm %%WWWDIR%%/site/master/js
+@dirrm %%WWWDIR%%/site/master/images
+@dirrm %%WWWDIR%%/site/master/css
+@dirrm %%WWWDIR%%/site/master
+@dirrm %%WWWDIR%%/site/lib/torrentmodules/tvAzureusBridge/tvTelnetClient
+@dirrm %%WWWDIR%%/site/lib/torrentmodules/tvAzureusBridge/azureusServer
+@dirrm %%WWWDIR%%/site/lib/torrentmodules/tvAzureusBridge
+@dirrm %%WWWDIR%%/site/lib/torrentmodules
+@dirrm %%WWWDIR%%/site/lib
+@dirrm %%WWWDIR%%/site/admin
+@dirrm %%WWWDIR%%/site
+@dirrm %%WWWDIR%%/config
+@dirrm %%WWWDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
