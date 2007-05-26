@@ -6,10 +6,8 @@
 #
 
 PORTNAME=	openvpn
-DISTVERSION=	2.1_rc2
+DISTVERSION=	2.1_rc4
 CATEGORIES=	security net
-# MASTER_SITES points to hosts in distinct data centers,
-# so just one MASTER_SITES entry should be OK.
 MASTER_SITES=	http://openvpn.net/release/
 PKGNAMESUFFIX=	-devel
 
@@ -23,6 +21,7 @@ USE_OPENSSL=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-lzo-lib=${LOCALBASE}/lib \
 		--with-lzo-headers=${LOCALBASE}/include
+INSTALL_TARGET=	install mandir=${MANPREFIX}/man
 
 MAN8=		openvpn.8
 
