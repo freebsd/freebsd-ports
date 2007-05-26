@@ -6,7 +6,7 @@
 #   $MCom: ports/x11/gnome2-fifth-toe/Makefile,v 1.83 2007/04/03 01:14:24 ahze Exp $
 #
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 PKGNAMESUFFIX=	-fifth-toe
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan \
 		sodipodi:${PORTSDIR}/graphics/sodipodi \
 		gnomeicu:${PORTSDIR}/net-im/gnomeicu \
 		gthumb:${PORTSDIR}/graphics/gthumb \
-		${LOCALBASE}/lib/gaim/docklet.so:${PORTSDIR}/net-im/gaim \
+		pidgin:${PORTSDIR}/net-im/pidgin \
 		tsclient:${PORTSDIR}/net/tsclient \
 		galeon:${PORTSDIR}/www/galeon \
 		${LOCALBASE}/share/gnome/themes/Gorilla/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/gnome-themes-extras \
