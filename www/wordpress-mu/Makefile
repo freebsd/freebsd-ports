@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	wordpress-mu
-PORTVERSION=	1.0
+PORTVERSION=	1.2.1
 PORTEPOCH=	2
 CATEGORIES=	www
-MASTER_SITES=	http://blogs.linux.ie/download/wpmu/ \
-		http://ftp.twaren.net/local-distfiles/wpmu/
+MASTER_SITES=	http://ftp.twaren.net/local-distfiles/wpmu/ \
+		ftp://ftp.stu.edu.tw/pub/wpmu/
 DISTNAME=	wordpressmu-${PORTVERSION}
 
-MAINTAINER=	tjs@cdpa.nsysu.edu.tw
+MAINTAINER=	araujo@bsdmail.org
 COMMENT=	Multi-user version of the famous WordPress blogging application
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_PHP=	mysql pcre xml
 NO_BUILD=	YES
