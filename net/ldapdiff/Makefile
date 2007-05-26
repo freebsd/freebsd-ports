@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ldapdiff
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.ale.org/pub/mirrors/openpkg/sources/DST/ldapdiff/ \
 		http://webtomware.rhoen.de/
