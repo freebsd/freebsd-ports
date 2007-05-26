@@ -12,12 +12,13 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	cpiazza
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gahr@gahr.ch
 COMMENT=	X11/gtk+ mixer control
 
 ALL_TARGET=	gmixer
 
 USE_GNOME=	gtk12
+PLIST_FILES=	bin/gmixer share/pixmaps/gmixer.xpm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gmixer ${PREFIX}/bin
