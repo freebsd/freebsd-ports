@@ -22,12 +22,6 @@ PLIST=		${WRKDIR}/pkg-plist
 
 USE_X_PREFIX=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -o buttonbox -L${X11BASE}/lib \
 		-I${X11BASE}/include -lX11 -lXext button.c configuration.c \
@@ -36,6 +30,7 @@ do-build:
 pre-install:
 	${ECHO_CMD} bin/buttonbox > ${PLIST}
 	${ECHO_CMD} lib/X11/app-defaults/ButtonBox.ad >> ${PLIST}
+
 .if !defined(NOPORTDOCS)
 	for i in ${DOCS}; \
 		do ${ECHO_CMD} ${DOCDIR}/$${i} >> ${PLIST}; \
@@ -53,4 +48,4 @@ do-install:
 	done
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
