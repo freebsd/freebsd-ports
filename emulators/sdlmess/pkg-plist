@@ -47,7 +47,6 @@ libexec/testkeys
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/update.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs/windows/win32cmd.htm
 %%PORTDOCS%%%%DOCSDIR%%/docs/wintoc.xml
-%%PORTDOCS%%%%DOCSDIR%%/whatsnew.txt
 %%DATADIR%%/artwork/avigo.zip
 %%DATADIR%%/artwork/dir.txt
 %%DATADIR%%/artwork/floppyr.png
@@ -108,6 +107,7 @@ libexec/testkeys
 %%DATADIR%%/hash/lynx.hsi
 %%DATADIR%%/hash/max.hsi
 %%DATADIR%%/hash/mc10.hsi
+%%DATADIR%%/hash/megaduck.hsi
 %%DATADIR%%/hash/microtan.hsi
 %%DATADIR%%/hash/msx.hsi
 %%DATADIR%%/hash/msx2.hsi
