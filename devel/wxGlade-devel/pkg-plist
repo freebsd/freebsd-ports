@@ -190,8 +190,6 @@ bin/wxglade
 %%PYTHON_SITELIBDIR%%/wxglade/wxglade.py
 %%PYTHON_SITELIBDIR%%/wxglade/xml_parse.py
 %%PYTHON_SITELIBDIR%%/wxglade/xrc2wxg.py
-%%PYTHON_SITELIBDIR%%/wxglade/zmain.py
-%%PYTHON_SITELIBDIR%%/wxglade/zwxglade.py
 %%PORTDOCS%%%%DOCSDIR%%/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/html/apa.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ch01.html
