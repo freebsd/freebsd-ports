@@ -6,15 +6,14 @@
 #
 
 PORTNAME=		kicad
-DISTVERSION=		2007-01-15
-PORTREVISION=		1
+DISTVERSION=		2007-05-25
 CATEGORIES=		cad
 MASTER_SITES=		ftp://iut-tice.ujf-grenoble.fr/cao/:dat		\
 			ftp://ftp.lis.inpg.fr/uploads/kicad/:dat	\
 			http://iut-tice.ujf-grenoble.fr/cao/:dat	\
-			ftp://iut-tice.ujf-grenoble.fr/cao/sources/:src	\
-			ftp://ftp.lis.inpg.fr/uploads/kicad/sources/:src\
-			http://iut-tice.ujf-grenoble.fr/cao/sources/:src
+			ftp://iut-tice.ujf-grenoble.fr/cao/:src	\
+			ftp://ftp.lis.inpg.fr/uploads/kicad/:src\
+			http://iut-tice.ujf-grenoble.fr/cao/:src
 DISTFILES=		${PORTNAME}-${DISTVERSION}.tgz:dat		\
 			${PORTNAME}-sources-${DISTVERSION}${EXTRACT_SUFX}:src
 DIST_SUBDIR=		${PORTNAME}
@@ -25,7 +24,7 @@ COMMENT=		Schematic and PCB editing software
 
 .if !defined(NOPORTDOCS)
 DISTFILES+=	doc_components-${DOCVERSION}.tgz:dat
-DOCVERSION=	2006-12-08
+DOCVERSION=	2007-05-11
 .endif
 
 WRKSRC=		${WRKDIR}/kicad-dev
@@ -35,7 +34,9 @@ USE_ZIP=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GL=		yes
-USE_WX=		2.6
+USE_WX=		2.8
+USE_GNOME=	atk	# Required by libwx_gtk2_aui-2.8.so
+#TODO	Add support for Python.
 
 INSTDIR=	${PORTNAME}
 PLIST_SUB=	INSTDIR=${INSTDIR} OPSYS=${OPSYS}
@@ -49,10 +50,6 @@ BINS=		cvpcb eeschema gerbview kicad pcbnew
 RUN_DEPENDS+=	konqueror:${PORTSDIR}/x11/kdebase3
 .else
 RUN_DEPENDS+=	xpdf:${PORTSDIR}/graphics/xpdf
-.endif
-
-.if ${OSVERSION} < 500000
-BROKEN=	Does not compile on 4.X
 .endif
 
 post-extract:
@@ -88,7 +85,6 @@ pre-install:
 	${RM} -rf ${PREFIX}/${INSTDIR}/linux-non_unicode		\
 		${PREFIX}/${INSTDIR}/linux ${PREFIX}/${INSTDIR}/wings3d	\
 		${PREFIX}/${INSTDIR}/LINUX.README
-	${RMDIR} ${PREFIX}/${INSTDIR}/modules/packages3d/conn_HExx
 
 post-install:
 	${LN} -sf ${BINS:S|^|${PREFIX}/${INSTDIR}/${OPSYS}/|} ${PREFIX}/bin

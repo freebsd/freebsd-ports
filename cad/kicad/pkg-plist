@@ -30,9 +30,13 @@
 %%INSTDIR%%/demos/electric/electric.cache.lib
 %%INSTDIR%%/demos/electric/electric.pro
 %%INSTDIR%%/demos/electric/electric.sch
+%%INSTDIR%%/demos/interf_u/interf_u-Component.pho
+%%INSTDIR%%/demos/interf_u/interf_u-Copper.pho
 %%INSTDIR%%/demos/interf_u/interf_u.brd
 %%INSTDIR%%/demos/interf_u/interf_u.cache.lib
 %%INSTDIR%%/demos/interf_u/interf_u.cmp
+%%INSTDIR%%/demos/interf_u/interf_u.drl
+%%INSTDIR%%/demos/interf_u/interf_u.drl.rpt
 %%INSTDIR%%/demos/interf_u/interf_u.net
 %%INSTDIR%%/demos/interf_u/interf_u.pro
 %%INSTDIR%%/demos/interf_u/interf_u.sch
@@ -44,6 +48,7 @@
 %%INSTDIR%%/demos/pic_programmer/pic_programmer.cache.bck
 %%INSTDIR%%/demos/pic_programmer/pic_programmer.cache.lib
 %%INSTDIR%%/demos/pic_programmer/pic_programmer.cmp
+%%INSTDIR%%/demos/pic_programmer/pic_programmer.lst
 %%INSTDIR%%/demos/pic_programmer/pic_programmer.net
 %%INSTDIR%%/demos/pic_programmer/pic_programmer.pro
 %%INSTDIR%%/demos/pic_programmer/pic_programmer.sch
@@ -55,6 +60,7 @@
 %%INSTDIR%%/demos/sonde xilinx/sonde xilinx.brd
 %%INSTDIR%%/demos/sonde xilinx/sonde xilinx.cache.lib
 %%INSTDIR%%/demos/sonde xilinx/sonde xilinx.cmp
+%%INSTDIR%%/demos/sonde xilinx/sonde xilinx.drl
 %%INSTDIR%%/demos/sonde xilinx/sonde xilinx.net
 %%INSTDIR%%/demos/sonde xilinx/sonde xilinx.pro
 %%INSTDIR%%/demos/sonde xilinx/sonde xilinx.sch
@@ -76,19 +82,20 @@
 %%INSTDIR%%/demos/video/video.cmp
 %%INSTDIR%%/demos/video/video.net
 %%INSTDIR%%/demos/video/video.pro
+%%INSTDIR%%/demos/video/video.ps
 %%INSTDIR%%/demos/video/video.sch
 %%INSTDIR%%/doc_conv_orcad_to_kicad.txt
 %%INSTDIR%%/doc_conv_orcad_to_kicad_spanish.txt
 %%INSTDIR%%/gpl.txt
 %%INSTDIR%%/help/GUI_comment_traduire.sxw
 %%INSTDIR%%/help/de/contents.hhc
-%%INSTDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_01_DE.sxw
-%%INSTDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_02_DE.sxw
-%%INSTDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_03_DE.sxw
-%%INSTDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_06_DE.sxw
-%%INSTDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_07_DE.sxw
-%%INSTDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_09_DE.sxw
-%%INSTDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_12_DE.sxw
+%%INSTDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_01_DE.odt
+%%INSTDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_02_DE.odt
+%%INSTDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_03_DE.odt
+%%INSTDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_06_DE.odt
+%%INSTDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_07_DE.odt
+%%INSTDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_09_DE.odt
+%%INSTDIR%%/help/de/docs_src/eeschema/Eeschema_Teil_12_DE.odt
 %%INSTDIR%%/help/de/kicad.hhp
 %%INSTDIR%%/help/en/contents.hhc
 %%INSTDIR%%/help/en/cvpcb/cvpcb-en.html
@@ -161,6 +168,7 @@
 %%INSTDIR%%/help/en/docs_src/pcbnew/pcbnew_chap8_EN.sxw
 %%INSTDIR%%/help/en/docs_src/pcbnew/pcbnew_chap9_EN.sxw
 %%INSTDIR%%/help/en/docs_src/pcbnew/pcbnew_covers_EN.sxw
+%%INSTDIR%%/help/en/docs_src/python_binding/python.odt
 %%INSTDIR%%/help/en/eeschema/doc_eeschema.zip
 %%INSTDIR%%/help/en/eeschema/eeschema.html
 %%INSTDIR%%/help/en/file_formats/file_formats.html
@@ -622,6 +630,7 @@
 %%INSTDIR%%/library/digital-audio.lib
 %%INSTDIR%%/library/display.dcm
 %%INSTDIR%%/library/display.lib
+%%INSTDIR%%/library/ttl_ieee.dcm
 %%PORTDOCS%%%%INSTDIR%%/library/doc/74xx/74f181.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/74xx/74hc573.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/74xx/74hc_hct74.pdf
@@ -638,12 +647,6 @@
 %%PORTDOCS%%%%INSTDIR%%/library/doc/analog-dev/ad629_a.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/analog-dev/ad9280.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/analog-dev/ad9708.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/analog-dev/adg417.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/analog-dev/adg419.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/analog-dev/adg441.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/analog-dev/adg611_2_3_0.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/analog-dev/adg619-620.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/analog-dev/adg636.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/analog-dev/mat02.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/analog-dev/mat03.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/analog-dev/op275.pdf
@@ -699,7 +702,6 @@
 %%PORTDOCS%%%%INSTDIR%%/library/doc/linear-tec/ltc1594-8.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/linear-tec/ltc1624.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/linear-tec/ltc1878.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/maxim/DG417-DG419.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/maxim/MAX1647-MAX1648.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/maxim/MAX220-MAX249.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/maxim/MAX2605-MAX2609.pdf
@@ -720,7 +722,6 @@
 %%PORTDOCS%%%%INSTDIR%%/library/doc/memory/28c256.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/micrel/mic2177.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/microchip/PIC16F819.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/microchip/dspic30f.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/microchip/pic16c62b-72b.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/microchip/pic16f62x.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/microchip/pic16f84.pdf
@@ -763,34 +764,25 @@
 %%PORTDOCS%%%%INSTDIR%%/library/doc/regulator/lt1373.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/regulator/lt3472.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/regulator/mc34063.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/siliconix/dg308.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/siliconix/dg417L_8L_9L.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/siliconix/dg9421-22.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/siliconix/si9986.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/temic/tk5550.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/temic/u2770B.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/temic/u2770b.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/texas/pga4311.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/texas/tl497a.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/texas/tl7702a.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/texas/tl7702b.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/texas/tms320c240.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/texas/tms320f2810.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/texas/tms320lf240x/tms320LF2407.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/texas/tms320lf240x/tms320LF240x.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/texas/tms320lf240x/tms320lf2406a.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/texas/tms320lf240x/tms320lf240x-periph-spru357.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/texas/tms320lf240x/tms320lf240x.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/that_corporation/vca-2180x.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/that_corporation/vca-2181x.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/transistors/bipolar/2n4401.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/transistors/bipolar/2n7000.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/transistors/bipolar/bc237.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/transistors/bipolar/bc307.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/transistors/bipolar/bc807.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/transistors/mos/2n4401.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/transistors/mos/2n7000-7002.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/transistors/mos/2n7000.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/transistors/mos/irf530.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/video/av9173.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/xicor/x9118.pdf
@@ -803,20 +795,13 @@
 %%PORTDOCS%%%%INSTDIR%%/library/doc/xilinx/spartan2/description.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/xilinx/spartan2/intro.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/xilinx/spartan2/pinout.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/xilinx/spartan2e/ac_dc_car.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/xilinx/spartan2e/decription.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/xilinx/spartan2e/intro.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/xilinx/spartan2e/pinout.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/xilinx/spartan2e/spartan2e.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/xilinx/spartan3/spartan3.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/xilinx/xc18V00proms.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/xilinx/xc18v00proms.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/xilinx/xc400x-pinout.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/xilinx/xc95108.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/xilinx/xc9536.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/xilinx/xc9572.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/xilinx/xcr30128xl.pdf
-%%PORTDOCS%%%%INSTDIR%%/library/doc/xilinx/xcr30256xl.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/xilinx/xcr3032xl.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/xilinx/xcr3064a.pdf
 %%PORTDOCS%%%%INSTDIR%%/library/doc/xilinx/xcr3064xl.pdf
@@ -934,6 +919,8 @@
 %%INSTDIR%%/modules/packages3d/conn_DBxx/db9_male.wrl
 %%INSTDIR%%/modules/packages3d/conn_DBxx/db9_male_pin90deg.wings
 %%INSTDIR%%/modules/packages3d/conn_DBxx/db9_male_pin90deg.wrl
+%%INSTDIR%%/modules/packages3d/conn_HExx/he10_20.wings
+%%INSTDIR%%/modules/packages3d/conn_HExx/he10_20.wrl
 %%INSTDIR%%/modules/packages3d/conn_europe/c64abfd.wings
 %%INSTDIR%%/modules/packages3d/conn_europe/c64abfd.wrl
 %%INSTDIR%%/modules/packages3d/conn_europe/c64abmd.wings
@@ -1037,6 +1024,8 @@
 %%INSTDIR%%/modules/packages3d/discret/c_vert_c1v8l.wings
 %%INSTDIR%%/modules/packages3d/discret/c_vert_c2v10.wings
 %%INSTDIR%%/modules/packages3d/discret/c_vert_c2v10.wrl
+%%INSTDIR%%/modules/packages3d/discret/c_vert_c2v8.wings
+%%INSTDIR%%/modules/packages3d/discret/c_vert_c2v8.wrl
 %%INSTDIR%%/modules/packages3d/discret/capa_1_pas.wings
 %%INSTDIR%%/modules/packages3d/discret/capa_1_pas.wrl
 %%INSTDIR%%/modules/packages3d/discret/capa_2pas_5x5mm.wings
@@ -1106,6 +1095,8 @@
 %%INSTDIR%%/modules/packages3d/pin_array/pins_array_2x1.wrl
 %%INSTDIR%%/modules/packages3d/pin_array/pins_array_2x2.wings
 %%INSTDIR%%/modules/packages3d/pin_array/pins_array_2x2.wrl
+%%INSTDIR%%/modules/packages3d/pin_array/pins_array_30x2.wings
+%%INSTDIR%%/modules/packages3d/pin_array/pins_array_30x2.wrl
 %%INSTDIR%%/modules/packages3d/pin_array/pins_array_3x1.wings
 %%INSTDIR%%/modules/packages3d/pin_array/pins_array_3x1.wrl
 %%INSTDIR%%/modules/packages3d/pin_array/pins_array_3x2.wings
@@ -1221,6 +1212,7 @@
 %%INSTDIR%%/news.txt
 %%INSTDIR%%/template/kicad.pro
 %%INSTDIR%%/template/kicad.pro~
+%%INSTDIR%%/tutorial/Kicad_Tutorial_de.odt
 %%INSTDIR%%/tutorial/Kicad_Tutorial_en.odt
 %%INSTDIR%%/tutorial/Kicad_Tutorial_ru.odt
 %%INSTDIR%%/tutorial/Tutorial_Kicad_FR.odt
@@ -1238,6 +1230,7 @@
 @dirrm %%INSTDIR%%/modules/packages3d/device
 @dirrm %%INSTDIR%%/modules/packages3d/connectors
 @dirrm %%INSTDIR%%/modules/packages3d/conn_europe
+@dirrm %%INSTDIR%%/modules/packages3d/conn_HExx
 @dirrm %%INSTDIR%%/modules/packages3d/conn_DBxx
 @dirrm %%INSTDIR%%/modules/packages3d
 @dirrm %%INSTDIR%%/modules/docpackages
@@ -1355,6 +1348,7 @@
 @dirrm %%INSTDIR%%/help/en/gerbview
 @dirrm %%INSTDIR%%/help/en/file_formats
 @dirrm %%INSTDIR%%/help/en/eeschema
+@dirrm %%INSTDIR%%/help/en/docs_src/python_binding
 @dirrm %%INSTDIR%%/help/en/docs_src/pcbnew
 @dirrm %%INSTDIR%%/help/en/docs_src/kicad
 @dirrm %%INSTDIR%%/help/en/docs_src/gerbview
