@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	thierry
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	OpenCascade sample tutorial
 
-LIB_DEPENDS=	TKernel.0:${PORTSDIR}/cad/opencascade
+LIB_DEPENDS=	GLU.1:${PORTSDIR}/graphics/libGLU	\
+		TKernel.0:${PORTSDIR}/cad/opencascade
 
 USE_BZIP2=	yes
 USE_GL=		yes
@@ -47,6 +48,7 @@ PLIST_SUB=	INSTDIR=${LINSTDIR}
 pre-configure:
 	${CHMOD} a+x ${WRKSRC}/${CONFIGURE_SCRIPT}
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|'	\
+		-e 's|/usr/X11R6|${X11BASE}|'			\
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:
