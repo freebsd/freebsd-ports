@@ -1,5 +1,5 @@
---- cnf/mak/afnix-rule.mak.orig	Thu Aug 25 07:13:37 2005
-+++ cnf/mak/afnix-rule.mak	Wed Aug 31 22:43:14 2005
+--- cnf/mak/afnix-rule.mak.orig	Fri Apr 20 08:10:38 2007
++++ cnf/mak/afnix-rule.mak	Sat May 26 23:59:55 2007
 @@ -24,7 +24,7 @@
  ifeq ($(CCMODE),optimized)
    ENVFLAGS      = $(STDEVFLAGS) $(PLTEVFLAGS)
@@ -9,7 +9,7 @@
    CCDEFINE      = $(STDDEFINES) $(PLTDEFINES) $(OPTDEFINES)
  endif
  
-@@ -89,7 +89,7 @@
+@@ -95,7 +95,7 @@
  -include *.d
  
  %.o   : %.cpp 
@@ -18,7 +18,7 @@
  
  %.o   : %.cxx 
  	$(ENVFLAGS) $(CC) $(XXFLAGS) $(DEFINES) $(XXINCLS) -o $@ -c $<
-@@ -117,7 +117,7 @@
+@@ -124,7 +124,7 @@
  
  install-arlib: $(ARLIB)
  	@$(MKDIR) $(LIBDIR)
@@ -27,7 +27,7 @@
  .PHONY: install-arlib
  else
  install-arlib: $(ARLIB)
-@@ -141,7 +141,7 @@
+@@ -148,7 +148,7 @@
  
  install-dylib : $(DYLIB)
  	@$(MKDIR)       $(LIBDIR)
@@ -36,7 +36,7 @@
  .PHONY: install-dylib
  endif
  
-@@ -160,8 +160,5 @@
+@@ -167,11 +167,8 @@
  
  install-dylib : $(DYLIB)
  	@$(MKDIR)        $(LIBDIR)
@@ -47,7 +47,10 @@
 -	@$(LN) $(SOMIN)  $(LIBDIR)/$(DYLIB)
 +	@$(BSD_INSTALL_PROGRAM) $(SOVRS)  $(LIBDIR)/$(SOMAJ)
 +	@$(LN) $(SOMAJ)  $(LIBDIR)/$(DYLIB)
-@@ -187,7 +187,7 @@
+ .PHONY: install-dylib
+ endif
+ 
+@@ -194,7 +191,7 @@
  
  install-dylib : $(DYLIB)
  	@$(MKDIR)        $(LIBDIR)

@@ -39,10 +39,6 @@ MAN7=	eul::afnix.7 vol-0::afnix.7 vol-1::afnix.7 vol-2::afnix.7
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 post-extract:
 	@cd ${WRKSRC}/cnf/mak && ${CP} -f afnix-gcc-3.mak afnix-freebsd.mak
 
