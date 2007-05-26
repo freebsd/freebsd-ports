@@ -7,8 +7,8 @@
 
 PORTNAME=	torrentvolve
 DISTVERSION=	1.4-beta
+CATEGORIES=	net-p2p java www
 PORTREVISION=	1
-CATEGORIES=	net-p2p java
 MASTER_SITES=	SF
 
 MAINTAINER=	alepulver@FreeBSD.org
@@ -23,11 +23,12 @@ USE_PHP=	simplexml
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-DATADIR=	${WWWDIR}/${PORTNAME}
+post-patch:
+	@${RM} ${WRKSRC}/site/lib/torrentmodules/tvAzureusBridge/tvTelnetClient/client.php.orig
 
 do-install:
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${CP} -R config site ${DATADIR}
+	${MKDIR} ${WWWDIR}
+	cd ${WRKSRC} && ${CP} -R config site ${WWWDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/INSTALL.TXT ${DOCSDIR}
