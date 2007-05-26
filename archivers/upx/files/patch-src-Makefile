@@ -1,0 +1,11 @@
+--- src/Makefile.orig	Fri Apr 27 15:00:00 2007
++++ src/Makefile	Wed May  9 22:55:18 2007
+@@ -52,7 +52,7 @@
+ # we need UCL and zlib - you can set envvar UPX_UCLDIR
+ ifneq ($(wildcard $(UPX_UCLDIR)/include/ucl/ucl.h),)
+ INCLUDES += -I$(UPX_UCLDIR)/include
+-LIBS += $(addprefix -L,$(dir $(wildcard $(UPX_UCLDIR)/libucl$(libext) $(UPX_UCLDIR)/src/.libs/libucl$(libext))))
++LIBS += -L$(UPX_UCLDIR)/lib
+ endif
+ LIBS += -lucl -lz
+ # you should set envvar UPX_LZMADIR to point to your unpacked lzma443.tar.bz2
