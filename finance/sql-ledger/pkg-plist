@@ -1,3 +1,4 @@
+etc/sql-ledger-httpd.conf
 sql-ledger/SL/AA.pm
 sql-ledger/SL/AM.pm
 sql-ledger/SL/BP.pm
@@ -8,6 +9,7 @@ sql-ledger/SL/Form.pm
 sql-ledger/SL/GL.pm
 sql-ledger/SL/HR.pm
 sql-ledger/SL/IC.pm
+sql-ledger/SL/IM.pm
 sql-ledger/SL/IR.pm
 sql-ledger/SL/IS.pm
 sql-ledger/SL/Inifile.pm
@@ -21,6 +23,7 @@ sql-ledger/SL/PE.pm
 sql-ledger/SL/RC.pm
 sql-ledger/SL/RP.pm
 sql-ledger/SL/User.pm
+sql-ledger/SL/VR.pm
 sql-ledger/VERSION
 sql-ledger/admin.pl
 sql-ledger/am.pl
@@ -40,6 +43,7 @@ sql-ledger/bin/lynx/ct.pl
 sql-ledger/bin/lynx/gl.pl
 sql-ledger/bin/lynx/hr.pl
 sql-ledger/bin/lynx/ic.pl
+sql-ledger/bin/lynx/im.pl
 sql-ledger/bin/lynx/io.pl
 sql-ledger/bin/lynx/ir.pl
 sql-ledger/bin/lynx/is.pl
@@ -53,6 +57,7 @@ sql-ledger/bin/lynx/ps.pl
 sql-ledger/bin/lynx/pw.pl
 sql-ledger/bin/lynx/rc.pl
 sql-ledger/bin/lynx/rp.pl
+sql-ledger/bin/lynx/vr.pl
 sql-ledger/bin/mozilla/aa.pl
 sql-ledger/bin/mozilla/admin.pl
 sql-ledger/bin/mozilla/am.pl
@@ -67,6 +72,7 @@ sql-ledger/bin/mozilla/ct.pl
 sql-ledger/bin/mozilla/gl.pl
 sql-ledger/bin/mozilla/hr.pl
 sql-ledger/bin/mozilla/ic.pl
+sql-ledger/bin/mozilla/im.pl
 sql-ledger/bin/mozilla/io.pl
 sql-ledger/bin/mozilla/ir.pl
 sql-ledger/bin/mozilla/is.pl
@@ -80,6 +86,7 @@ sql-ledger/bin/mozilla/ps.pl
 sql-ledger/bin/mozilla/pw.pl
 sql-ledger/bin/mozilla/rc.pl
 sql-ledger/bin/mozilla/rp.pl
+sql-ledger/bin/mozilla/vr.pl
 sql-ledger/bp.pl
 sql-ledger/ca.pl
 sql-ledger/cp.pl
@@ -110,11 +117,16 @@ sql-ledger/doc/UPGRADE-2.4.16-2.6.0
 sql-ledger/doc/UPGRADE-2.4.2-2.4.3
 sql-ledger/doc/UPGRADE-2.4.3-2.4.16
 sql-ledger/doc/UPGRADE-2.6.0-2.6.27
+sql-ledger/doc/UPGRADE-2.6.27-2.8.0
+sql-ledger/doc/UPGRADE-2.8.0-2.8.2
+sql-ledger/doc/UPGRADE-2.8.2-2.8.4
+sql-ledger/doc/UPGRADE-2.8.4-2.8.5
 sql-ledger/doc/faq.html
 sql-ledger/favicon.ico
 sql-ledger/gl.pl
 sql-ledger/hr.pl
 sql-ledger/ic.pl
+sql-ledger/im.pl
 sql-ledger/index.html
 sql-ledger/ir.pl
 sql-ledger/is.pl
@@ -137,6 +149,7 @@ sql-ledger/locale/be_fr/ct
 sql-ledger/locale/be_fr/gl
 sql-ledger/locale/be_fr/hr
 sql-ledger/locale/be_fr/ic
+sql-ledger/locale/be_fr/im
 sql-ledger/locale/be_fr/io
 sql-ledger/locale/be_fr/ir
 sql-ledger/locale/be_fr/is
@@ -151,6 +164,7 @@ sql-ledger/locale/be_fr/ps
 sql-ledger/locale/be_fr/pw
 sql-ledger/locale/be_fr/rc
 sql-ledger/locale/be_fr/rp
+sql-ledger/locale/be_fr/vr
 sql-ledger/locale/be_nl/COPYING
 sql-ledger/locale/be_nl/LANGUAGE
 sql-ledger/locale/be_nl/Num2text
@@ -169,6 +183,7 @@ sql-ledger/locale/be_nl/ct
 sql-ledger/locale/be_nl/gl
 sql-ledger/locale/be_nl/hr
 sql-ledger/locale/be_nl/ic
+sql-ledger/locale/be_nl/im
 sql-ledger/locale/be_nl/io
 sql-ledger/locale/be_nl/ir
 sql-ledger/locale/be_nl/is
@@ -183,6 +198,7 @@ sql-ledger/locale/be_nl/ps
 sql-ledger/locale/be_nl/pw
 sql-ledger/locale/be_nl/rc
 sql-ledger/locale/be_nl/rp
+sql-ledger/locale/be_nl/vr
 sql-ledger/locale/bg_utf/COPYING
 sql-ledger/locale/bg_utf/LANGUAGE
 sql-ledger/locale/bg_utf/aa
@@ -200,6 +216,7 @@ sql-ledger/locale/bg_utf/ct
 sql-ledger/locale/bg_utf/gl
 sql-ledger/locale/bg_utf/hr
 sql-ledger/locale/bg_utf/ic
+sql-ledger/locale/bg_utf/im
 sql-ledger/locale/bg_utf/io
 sql-ledger/locale/bg_utf/ir
 sql-ledger/locale/bg_utf/is
@@ -214,6 +231,7 @@ sql-ledger/locale/bg_utf/ps
 sql-ledger/locale/bg_utf/pw
 sql-ledger/locale/bg_utf/rc
 sql-ledger/locale/bg_utf/rp
+sql-ledger/locale/bg_utf/vr
 sql-ledger/locale/br/COPYING
 sql-ledger/locale/br/LANGUAGE
 sql-ledger/locale/br/aa
@@ -231,6 +249,7 @@ sql-ledger/locale/br/ct
 sql-ledger/locale/br/gl
 sql-ledger/locale/br/hr
 sql-ledger/locale/br/ic
+sql-ledger/locale/br/im
 sql-ledger/locale/br/io
 sql-ledger/locale/br/ir
 sql-ledger/locale/br/is
@@ -245,6 +264,7 @@ sql-ledger/locale/br/ps
 sql-ledger/locale/br/pw
 sql-ledger/locale/br/rc
 sql-ledger/locale/br/rp
+sql-ledger/locale/br/vr
 sql-ledger/locale/ca_en/COPYING
 sql-ledger/locale/ca_en/LANGUAGE
 sql-ledger/locale/ca_en/aa
@@ -262,6 +282,7 @@ sql-ledger/locale/ca_en/ct
 sql-ledger/locale/ca_en/gl
 sql-ledger/locale/ca_en/hr
 sql-ledger/locale/ca_en/ic
+sql-ledger/locale/ca_en/im
 sql-ledger/locale/ca_en/io
 sql-ledger/locale/ca_en/ir
 sql-ledger/locale/ca_en/is
@@ -276,6 +297,7 @@ sql-ledger/locale/ca_en/ps
 sql-ledger/locale/ca_en/pw
 sql-ledger/locale/ca_en/rc
 sql-ledger/locale/ca_en/rp
+sql-ledger/locale/ca_en/vr
 sql-ledger/locale/ca_fr/COPYING
 sql-ledger/locale/ca_fr/LANGUAGE
 sql-ledger/locale/ca_fr/Num2text
@@ -294,6 +316,7 @@ sql-ledger/locale/ca_fr/ct
 sql-ledger/locale/ca_fr/gl
 sql-ledger/locale/ca_fr/hr
 sql-ledger/locale/ca_fr/ic
+sql-ledger/locale/ca_fr/im
 sql-ledger/locale/ca_fr/io
 sql-ledger/locale/ca_fr/ir
 sql-ledger/locale/ca_fr/is
@@ -308,6 +331,7 @@ sql-ledger/locale/ca_fr/ps
 sql-ledger/locale/ca_fr/pw
 sql-ledger/locale/ca_fr/rc
 sql-ledger/locale/ca_fr/rp
+sql-ledger/locale/ca_fr/vr
 sql-ledger/locale/ch/COPYING
 sql-ledger/locale/ch/LANGUAGE
 sql-ledger/locale/ch/Num2text
@@ -326,6 +350,7 @@ sql-ledger/locale/ch/ct
 sql-ledger/locale/ch/gl
 sql-ledger/locale/ch/hr
 sql-ledger/locale/ch/ic
+sql-ledger/locale/ch/im
 sql-ledger/locale/ch/io
 sql-ledger/locale/ch/ir
 sql-ledger/locale/ch/is
@@ -340,6 +365,7 @@ sql-ledger/locale/ch/ps
 sql-ledger/locale/ch/pw
 sql-ledger/locale/ch/rc
 sql-ledger/locale/ch/rp
+sql-ledger/locale/ch/vr
 sql-ledger/locale/ch_utf/COPYING
 sql-ledger/locale/ch_utf/LANGUAGE
 sql-ledger/locale/ch_utf/Num2text
@@ -358,6 +384,7 @@ sql-ledger/locale/ch_utf/ct
 sql-ledger/locale/ch_utf/gl
 sql-ledger/locale/ch_utf/hr
 sql-ledger/locale/ch_utf/ic
+sql-ledger/locale/ch_utf/im
 sql-ledger/locale/ch_utf/io
 sql-ledger/locale/ch_utf/ir
 sql-ledger/locale/ch_utf/is
@@ -372,6 +399,7 @@ sql-ledger/locale/ch_utf/ps
 sql-ledger/locale/ch_utf/pw
 sql-ledger/locale/ch_utf/rc
 sql-ledger/locale/ch_utf/rp
+sql-ledger/locale/ch_utf/vr
 sql-ledger/locale/cn_utf/COPYING
 sql-ledger/locale/cn_utf/LANGUAGE
 sql-ledger/locale/cn_utf/aa
@@ -389,6 +417,7 @@ sql-ledger/locale/cn_utf/ct
 sql-ledger/locale/cn_utf/gl
 sql-ledger/locale/cn_utf/hr
 sql-ledger/locale/cn_utf/ic
+sql-ledger/locale/cn_utf/im
 sql-ledger/locale/cn_utf/io
 sql-ledger/locale/cn_utf/ir
 sql-ledger/locale/cn_utf/is
@@ -404,6 +433,7 @@ sql-ledger/locale/cn_utf/ps
 sql-ledger/locale/cn_utf/pw
 sql-ledger/locale/cn_utf/rc
 sql-ledger/locale/cn_utf/rp
+sql-ledger/locale/cn_utf/vr
 sql-ledger/locale/co/COPYING
 sql-ledger/locale/co/LANGUAGE
 sql-ledger/locale/co/Num2text
@@ -422,6 +452,7 @@ sql-ledger/locale/co/ct
 sql-ledger/locale/co/gl
 sql-ledger/locale/co/hr
 sql-ledger/locale/co/ic
+sql-ledger/locale/co/im
 sql-ledger/locale/co/io
 sql-ledger/locale/co/ir
 sql-ledger/locale/co/is
@@ -436,6 +467,7 @@ sql-ledger/locale/co/ps
 sql-ledger/locale/co/pw
 sql-ledger/locale/co/rc
 sql-ledger/locale/co/rp
+sql-ledger/locale/co/vr
 sql-ledger/locale/co_utf/COPYING
 sql-ledger/locale/co_utf/LANGUAGE
 sql-ledger/locale/co_utf/Num2text
@@ -454,6 +486,7 @@ sql-ledger/locale/co_utf/ct
 sql-ledger/locale/co_utf/gl
 sql-ledger/locale/co_utf/hr
 sql-ledger/locale/co_utf/ic
+sql-ledger/locale/co_utf/im
 sql-ledger/locale/co_utf/io
 sql-ledger/locale/co_utf/ir
 sql-ledger/locale/co_utf/is
@@ -469,6 +502,7 @@ sql-ledger/locale/co_utf/ps
 sql-ledger/locale/co_utf/pw
 sql-ledger/locale/co_utf/rc
 sql-ledger/locale/co_utf/rp
+sql-ledger/locale/co_utf/vr
 sql-ledger/locale/ct/COPYING
 sql-ledger/locale/ct/LANGUAGE
 sql-ledger/locale/ct/Num2text
@@ -487,6 +521,7 @@ sql-ledger/locale/ct/ct
 sql-ledger/locale/ct/gl
 sql-ledger/locale/ct/hr
 sql-ledger/locale/ct/ic
+sql-ledger/locale/ct/im
 sql-ledger/locale/ct/io
 sql-ledger/locale/ct/ir
 sql-ledger/locale/ct/is
@@ -501,6 +536,7 @@ sql-ledger/locale/ct/ps
 sql-ledger/locale/ct/pw
 sql-ledger/locale/ct/rc
 sql-ledger/locale/ct/rp
+sql-ledger/locale/ct/vr
 sql-ledger/locale/cz/COPYING
 sql-ledger/locale/cz/LANGUAGE
 sql-ledger/locale/cz/aa
@@ -518,6 +554,7 @@ sql-ledger/locale/cz/ct
 sql-ledger/locale/cz/gl
 sql-ledger/locale/cz/hr
 sql-ledger/locale/cz/ic
+sql-ledger/locale/cz/im
 sql-ledger/locale/cz/io
 sql-ledger/locale/cz/ir
 sql-ledger/locale/cz/is
@@ -532,6 +569,7 @@ sql-ledger/locale/cz/ps
 sql-ledger/locale/cz/pw
 sql-ledger/locale/cz/rc
 sql-ledger/locale/cz/rp
+sql-ledger/locale/cz/vr
 sql-ledger/locale/de/COPYING
 sql-ledger/locale/de/LANGUAGE
 sql-ledger/locale/de/Num2text
@@ -550,6 +588,7 @@ sql-ledger/locale/de/ct
 sql-ledger/locale/de/gl
 sql-ledger/locale/de/hr
 sql-ledger/locale/de/ic
+sql-ledger/locale/de/im
 sql-ledger/locale/de/io
 sql-ledger/locale/de/ir
 sql-ledger/locale/de/is
@@ -564,6 +603,7 @@ sql-ledger/locale/de/ps
 sql-ledger/locale/de/pw
 sql-ledger/locale/de/rc
 sql-ledger/locale/de/rp
+sql-ledger/locale/de/vr
 sql-ledger/locale/de_utf/COPYING
 sql-ledger/locale/de_utf/LANGUAGE
 sql-ledger/locale/de_utf/Num2text
@@ -581,6 +621,7 @@ sql-ledger/locale/de_utf/ct
 sql-ledger/locale/de_utf/gl
 sql-ledger/locale/de_utf/hr
 sql-ledger/locale/de_utf/ic
+sql-ledger/locale/de_utf/im
 sql-ledger/locale/de_utf/io
 sql-ledger/locale/de_utf/ir
 sql-ledger/locale/de_utf/is
@@ -596,6 +637,7 @@ sql-ledger/locale/de_utf/ps
 sql-ledger/locale/de_utf/pw
 sql-ledger/locale/de_utf/rc
 sql-ledger/locale/de_utf/rp
+sql-ledger/locale/de_utf/vr
 sql-ledger/locale/dk/COPYING
 sql-ledger/locale/dk/LANGUAGE
 sql-ledger/locale/dk/aa
@@ -613,6 +655,7 @@ sql-ledger/locale/dk/ct
 sql-ledger/locale/dk/gl
 sql-ledger/locale/dk/hr
 sql-ledger/locale/dk/ic
+sql-ledger/locale/dk/im
 sql-ledger/locale/dk/io
 sql-ledger/locale/dk/ir
 sql-ledger/locale/dk/is
@@ -627,6 +670,7 @@ sql-ledger/locale/dk/ps
 sql-ledger/locale/dk/pw
 sql-ledger/locale/dk/rc
 sql-ledger/locale/dk/rp
+sql-ledger/locale/dk/vr
 sql-ledger/locale/ec/COPYING
 sql-ledger/locale/ec/LANGUAGE
 sql-ledger/locale/ec/Num2text
@@ -645,6 +689,7 @@ sql-ledger/locale/ec/ct
 sql-ledger/locale/ec/gl
 sql-ledger/locale/ec/hr
 sql-ledger/locale/ec/ic
+sql-ledger/locale/ec/im
 sql-ledger/locale/ec/io
 sql-ledger/locale/ec/ir
 sql-ledger/locale/ec/is
@@ -659,6 +704,7 @@ sql-ledger/locale/ec/ps
 sql-ledger/locale/ec/pw
 sql-ledger/locale/ec/rc
 sql-ledger/locale/ec/rp
+sql-ledger/locale/ec/vr
 sql-ledger/locale/ee/COPYING
 sql-ledger/locale/ee/LANGUAGE
 sql-ledger/locale/ee/Num2text
@@ -677,6 +723,7 @@ sql-ledger/locale/ee/ct
 sql-ledger/locale/ee/gl
 sql-ledger/locale/ee/hr
 sql-ledger/locale/ee/ic
+sql-ledger/locale/ee/im
 sql-ledger/locale/ee/io
 sql-ledger/locale/ee/ir
 sql-ledger/locale/ee/is
@@ -691,6 +738,7 @@ sql-ledger/locale/ee/ps
 sql-ledger/locale/ee/pw
 sql-ledger/locale/ee/rc
 sql-ledger/locale/ee/rp
+sql-ledger/locale/ee/vr
 sql-ledger/locale/ee_utf/COPYING
 sql-ledger/locale/ee_utf/LANGUAGE
 sql-ledger/locale/ee_utf/Num2text
@@ -709,6 +757,7 @@ sql-ledger/locale/ee_utf/ct
 sql-ledger/locale/ee_utf/gl
 sql-ledger/locale/ee_utf/hr
 sql-ledger/locale/ee_utf/ic
+sql-ledger/locale/ee_utf/im
 sql-ledger/locale/ee_utf/io
 sql-ledger/locale/ee_utf/ir
 sql-ledger/locale/ee_utf/is
@@ -723,6 +772,7 @@ sql-ledger/locale/ee_utf/ps
 sql-ledger/locale/ee_utf/pw
 sql-ledger/locale/ee_utf/rc
 sql-ledger/locale/ee_utf/rp
+sql-ledger/locale/ee_utf/vr
 sql-ledger/locale/eg_utf/COPYING
 sql-ledger/locale/eg_utf/LANGUAGE
 sql-ledger/locale/eg_utf/aa
@@ -740,6 +790,7 @@ sql-ledger/locale/eg_utf/ct
 sql-ledger/locale/eg_utf/gl
 sql-ledger/locale/eg_utf/hr
 sql-ledger/locale/eg_utf/ic
+sql-ledger/locale/eg_utf/im
 sql-ledger/locale/eg_utf/io
 sql-ledger/locale/eg_utf/ir
 sql-ledger/locale/eg_utf/is
@@ -754,6 +805,7 @@ sql-ledger/locale/eg_utf/ps
 sql-ledger/locale/eg_utf/pw
 sql-ledger/locale/eg_utf/rc
 sql-ledger/locale/eg_utf/rp
+sql-ledger/locale/eg_utf/vr
 sql-ledger/locale/en_GB/COPYING
 sql-ledger/locale/en_GB/LANGUAGE
 sql-ledger/locale/en_GB/aa
@@ -771,6 +823,7 @@ sql-ledger/locale/en_GB/ct
 sql-ledger/locale/en_GB/gl
 sql-ledger/locale/en_GB/hr
 sql-ledger/locale/en_GB/ic
+sql-ledger/locale/en_GB/im
 sql-ledger/locale/en_GB/io
 sql-ledger/locale/en_GB/ir
 sql-ledger/locale/en_GB/is
@@ -785,6 +838,7 @@ sql-ledger/locale/en_GB/ps
 sql-ledger/locale/en_GB/pw
 sql-ledger/locale/en_GB/rc
 sql-ledger/locale/en_GB/rp
+sql-ledger/locale/en_GB/vr
 sql-ledger/locale/es/COPYING
 sql-ledger/locale/es/LANGUAGE
 sql-ledger/locale/es/Num2text
@@ -803,6 +857,7 @@ sql-ledger/locale/es/ct
 sql-ledger/locale/es/gl
 sql-ledger/locale/es/hr
 sql-ledger/locale/es/ic
+sql-ledger/locale/es/im
 sql-ledger/locale/es/io
 sql-ledger/locale/es/ir
 sql-ledger/locale/es/is
@@ -817,6 +872,7 @@ sql-ledger/locale/es/ps
 sql-ledger/locale/es/pw
 sql-ledger/locale/es/rc
 sql-ledger/locale/es/rp
+sql-ledger/locale/es/vr
 sql-ledger/locale/es_utf/COPYING
 sql-ledger/locale/es_utf/LANGUAGE
 sql-ledger/locale/es_utf/Num2text
@@ -835,6 +891,7 @@ sql-ledger/locale/es_utf/ct
 sql-ledger/locale/es_utf/gl
 sql-ledger/locale/es_utf/hr
 sql-ledger/locale/es_utf/ic
+sql-ledger/locale/es_utf/im
 sql-ledger/locale/es_utf/io
 sql-ledger/locale/es_utf/ir
 sql-ledger/locale/es_utf/is
@@ -849,6 +906,7 @@ sql-ledger/locale/es_utf/ps
 sql-ledger/locale/es_utf/pw
 sql-ledger/locale/es_utf/rc
 sql-ledger/locale/es_utf/rp
+sql-ledger/locale/es_utf/vr
 sql-ledger/locale/fi/COPYING
 sql-ledger/locale/fi/LANGUAGE
 sql-ledger/locale/fi/aa
@@ -866,6 +924,7 @@ sql-ledger/locale/fi/ct
 sql-ledger/locale/fi/gl
 sql-ledger/locale/fi/hr
 sql-ledger/locale/fi/ic
+sql-ledger/locale/fi/im
 sql-ledger/locale/fi/io
 sql-ledger/locale/fi/ir
 sql-ledger/locale/fi/is
@@ -880,6 +939,7 @@ sql-ledger/locale/fi/ps
 sql-ledger/locale/fi/pw
 sql-ledger/locale/fi/rc
 sql-ledger/locale/fi/rp
+sql-ledger/locale/fi/vr
 sql-ledger/locale/fi_utf/COPYING
 sql-ledger/locale/fi_utf/LANGUAGE
 sql-ledger/locale/fi_utf/aa
@@ -897,6 +957,7 @@ sql-ledger/locale/fi_utf/ct
 sql-ledger/locale/fi_utf/gl
 sql-ledger/locale/fi_utf/hr
 sql-ledger/locale/fi_utf/ic
+sql-ledger/locale/fi_utf/im
 sql-ledger/locale/fi_utf/io
 sql-ledger/locale/fi_utf/ir
 sql-ledger/locale/fi_utf/is
@@ -911,6 +972,7 @@ sql-ledger/locale/fi_utf/ps
 sql-ledger/locale/fi_utf/pw
 sql-ledger/locale/fi_utf/rc
 sql-ledger/locale/fi_utf/rp
+sql-ledger/locale/fi_utf/vr
 sql-ledger/locale/fr/COPYING
 sql-ledger/locale/fr/LANGUAGE
 sql-ledger/locale/fr/Num2text
@@ -929,6 +991,7 @@ sql-ledger/locale/fr/ct
 sql-ledger/locale/fr/gl
 sql-ledger/locale/fr/hr
 sql-ledger/locale/fr/ic
+sql-ledger/locale/fr/im
 sql-ledger/locale/fr/io
 sql-ledger/locale/fr/ir
 sql-ledger/locale/fr/is
@@ -943,6 +1006,7 @@ sql-ledger/locale/fr/ps
 sql-ledger/locale/fr/pw
 sql-ledger/locale/fr/rc
 sql-ledger/locale/fr/rp
+sql-ledger/locale/fr/vr
 sql-ledger/locale/gr/COPYING
 sql-ledger/locale/gr/LANGUAGE
 sql-ledger/locale/gr/aa
@@ -960,6 +1024,7 @@ sql-ledger/locale/gr/ct
 sql-ledger/locale/gr/gl
 sql-ledger/locale/gr/hr
 sql-ledger/locale/gr/ic
+sql-ledger/locale/gr/im
 sql-ledger/locale/gr/io
 sql-ledger/locale/gr/ir
 sql-ledger/locale/gr/is
@@ -974,6 +1039,7 @@ sql-ledger/locale/gr/ps
 sql-ledger/locale/gr/pw
 sql-ledger/locale/gr/rc
 sql-ledger/locale/gr/rp
+sql-ledger/locale/gr/vr
 sql-ledger/locale/hu/COPYING
 sql-ledger/locale/hu/LANGUAGE
 sql-ledger/locale/hu/Num2text
@@ -991,8 +1057,8 @@ sql-ledger/locale/hu/cp
 sql-ledger/locale/hu/ct
 sql-ledger/locale/hu/gl
 sql-ledger/locale/hu/hr
-sql-ledger/locale/hu/hr.missing
 sql-ledger/locale/hu/ic
+sql-ledger/locale/hu/im
 sql-ledger/locale/hu/io
 sql-ledger/locale/hu/ir
 sql-ledger/locale/hu/is
@@ -1007,6 +1073,7 @@ sql-ledger/locale/hu/ps
 sql-ledger/locale/hu/pw
 sql-ledger/locale/hu/rc
 sql-ledger/locale/hu/rp
+sql-ledger/locale/hu/vr
 sql-ledger/locale/id/COPYING
 sql-ledger/locale/id/LANGUAGE
 sql-ledger/locale/id/aa
@@ -1024,6 +1091,7 @@ sql-ledger/locale/id/ct
 sql-ledger/locale/id/gl
 sql-ledger/locale/id/hr
 sql-ledger/locale/id/ic
+sql-ledger/locale/id/im
 sql-ledger/locale/id/io
 sql-ledger/locale/id/ir
 sql-ledger/locale/id/is
@@ -1038,6 +1106,7 @@ sql-ledger/locale/id/ps
 sql-ledger/locale/id/pw
 sql-ledger/locale/id/rc
 sql-ledger/locale/id/rp
+sql-ledger/locale/id/vr
 sql-ledger/locale/is/COPYING
 sql-ledger/locale/is/LANGUAGE
 sql-ledger/locale/is/aa
@@ -1055,6 +1124,7 @@ sql-ledger/locale/is/ct
 sql-ledger/locale/is/gl
 sql-ledger/locale/is/hr
 sql-ledger/locale/is/ic
+sql-ledger/locale/is/im
 sql-ledger/locale/is/io
 sql-ledger/locale/is/ir
 sql-ledger/locale/is/is
@@ -1069,6 +1139,7 @@ sql-ledger/locale/is/ps
 sql-ledger/locale/is/pw
 sql-ledger/locale/is/rc
 sql-ledger/locale/is/rp
+sql-ledger/locale/is/vr
 sql-ledger/locale/it/COPYING
 sql-ledger/locale/it/LANGUAGE
 sql-ledger/locale/it/Num2text
@@ -1087,6 +1158,7 @@ sql-ledger/locale/it/ct
 sql-ledger/locale/it/gl
 sql-ledger/locale/it/hr
 sql-ledger/locale/it/ic
+sql-ledger/locale/it/im
 sql-ledger/locale/it/io
 sql-ledger/locale/it/ir
 sql-ledger/locale/it/is
@@ -1102,6 +1174,7 @@ sql-ledger/locale/it/pw
 sql-ledger/locale/it/qe
 sql-ledger/locale/it/rc
 sql-ledger/locale/it/rp
+sql-ledger/locale/it/vr
 sql-ledger/locale/lt/COPYING
 sql-ledger/locale/lt/LANGUAGE
 sql-ledger/locale/lt/aa
@@ -1119,6 +1192,7 @@ sql-ledger/locale/lt/ct
 sql-ledger/locale/lt/gl
 sql-ledger/locale/lt/hr
 sql-ledger/locale/lt/ic
+sql-ledger/locale/lt/im
 sql-ledger/locale/lt/io
 sql-ledger/locale/lt/ir
 sql-ledger/locale/lt/is
@@ -1133,6 +1207,7 @@ sql-ledger/locale/lt/ps
 sql-ledger/locale/lt/pw
 sql-ledger/locale/lt/rc
 sql-ledger/locale/lt/rp
+sql-ledger/locale/lt/vr
 sql-ledger/locale/lv/COPYING
 sql-ledger/locale/lv/LANGUAGE
 sql-ledger/locale/lv/aa
@@ -1150,6 +1225,7 @@ sql-ledger/locale/lv/ct
 sql-ledger/locale/lv/gl
 sql-ledger/locale/lv/hr
 sql-ledger/locale/lv/ic
+sql-ledger/locale/lv/im
 sql-ledger/locale/lv/io
 sql-ledger/locale/lv/ir
 sql-ledger/locale/lv/is
@@ -1164,6 +1240,7 @@ sql-ledger/locale/lv/ps
 sql-ledger/locale/lv/pw
 sql-ledger/locale/lv/rc
 sql-ledger/locale/lv/rp
+sql-ledger/locale/lv/vr
 sql-ledger/locale/mx/COPYING
 sql-ledger/locale/mx/LANGUAGE
 sql-ledger/locale/mx/Num2text
@@ -1182,6 +1259,7 @@ sql-ledger/locale/mx/ct
 sql-ledger/locale/mx/gl
 sql-ledger/locale/mx/hr
 sql-ledger/locale/mx/ic
+sql-ledger/locale/mx/im
 sql-ledger/locale/mx/io
 sql-ledger/locale/mx/ir
 sql-ledger/locale/mx/is
@@ -1196,6 +1274,7 @@ sql-ledger/locale/mx/ps
 sql-ledger/locale/mx/pw
 sql-ledger/locale/mx/rc
 sql-ledger/locale/mx/rp
+sql-ledger/locale/mx/vr
 sql-ledger/locale/nb/COPYING
 sql-ledger/locale/nb/LANGUAGE
 sql-ledger/locale/nb/aa
@@ -1213,6 +1292,7 @@ sql-ledger/locale/nb/ct
 sql-ledger/locale/nb/gl
 sql-ledger/locale/nb/hr
 sql-ledger/locale/nb/ic
+sql-ledger/locale/nb/im
 sql-ledger/locale/nb/io
 sql-ledger/locale/nb/ir
 sql-ledger/locale/nb/is
@@ -1227,6 +1307,7 @@ sql-ledger/locale/nb/ps
 sql-ledger/locale/nb/pw
 sql-ledger/locale/nb/rc
 sql-ledger/locale/nb/rp
+sql-ledger/locale/nb/vr
 sql-ledger/locale/nl/COPYING
 sql-ledger/locale/nl/LANGUAGE
 sql-ledger/locale/nl/Num2text
@@ -1245,6 +1326,7 @@ sql-ledger/locale/nl/ct
 sql-ledger/locale/nl/gl
 sql-ledger/locale/nl/hr
 sql-ledger/locale/nl/ic
+sql-ledger/locale/nl/im
 sql-ledger/locale/nl/io
 sql-ledger/locale/nl/ir
 sql-ledger/locale/nl/is
@@ -1260,6 +1342,7 @@ sql-ledger/locale/nl/ps
 sql-ledger/locale/nl/pw
 sql-ledger/locale/nl/rc
 sql-ledger/locale/nl/rp
+sql-ledger/locale/nl/vr
 sql-ledger/locale/pa/COPYING
 sql-ledger/locale/pa/LANGUAGE
 sql-ledger/locale/pa/Num2text
@@ -1278,6 +1361,7 @@ sql-ledger/locale/pa/ct
 sql-ledger/locale/pa/gl
 sql-ledger/locale/pa/hr
 sql-ledger/locale/pa/ic
+sql-ledger/locale/pa/im
 sql-ledger/locale/pa/io
 sql-ledger/locale/pa/ir
 sql-ledger/locale/pa/is
@@ -1292,6 +1376,7 @@ sql-ledger/locale/pa/ps
 sql-ledger/locale/pa/pw
 sql-ledger/locale/pa/rc
 sql-ledger/locale/pa/rp
+sql-ledger/locale/pa/vr
 sql-ledger/locale/pl/COPYING
 sql-ledger/locale/pl/LANGUAGE
 sql-ledger/locale/pl/aa
@@ -1309,6 +1394,7 @@ sql-ledger/locale/pl/ct
 sql-ledger/locale/pl/gl
 sql-ledger/locale/pl/hr
 sql-ledger/locale/pl/ic
+sql-ledger/locale/pl/im
 sql-ledger/locale/pl/io
 sql-ledger/locale/pl/ir
 sql-ledger/locale/pl/is
@@ -1323,6 +1409,7 @@ sql-ledger/locale/pl/ps
 sql-ledger/locale/pl/pw
 sql-ledger/locale/pl/rc
 sql-ledger/locale/pl/rp
+sql-ledger/locale/pl/vr
 sql-ledger/locale/pt/COPYING
 sql-ledger/locale/pt/LANGUAGE
 sql-ledger/locale/pt/aa
@@ -1340,6 +1427,7 @@ sql-ledger/locale/pt/ct
 sql-ledger/locale/pt/gl
 sql-ledger/locale/pt/hr
 sql-ledger/locale/pt/ic
+sql-ledger/locale/pt/im
 sql-ledger/locale/pt/io
 sql-ledger/locale/pt/ir
 sql-ledger/locale/pt/is
@@ -1354,6 +1442,7 @@ sql-ledger/locale/pt/ps
 sql-ledger/locale/pt/pw
 sql-ledger/locale/pt/rc
 sql-ledger/locale/pt/rp
+sql-ledger/locale/pt/vr
 sql-ledger/locale/py/COPYING
 sql-ledger/locale/py/LANGUAGE
 sql-ledger/locale/py/Num2text
@@ -1372,6 +1461,7 @@ sql-ledger/locale/py/ct
 sql-ledger/locale/py/gl
 sql-ledger/locale/py/hr
 sql-ledger/locale/py/ic
+sql-ledger/locale/py/im
 sql-ledger/locale/py/io
 sql-ledger/locale/py/ir
 sql-ledger/locale/py/is
@@ -1386,6 +1476,7 @@ sql-ledger/locale/py/ps
 sql-ledger/locale/py/pw
 sql-ledger/locale/py/rc
 sql-ledger/locale/py/rp
+sql-ledger/locale/py/vr
 sql-ledger/locale/ru/COPYING
 sql-ledger/locale/ru/LANGUAGE
 sql-ledger/locale/ru/Num2text
@@ -1404,6 +1495,7 @@ sql-ledger/locale/ru/ct
 sql-ledger/locale/ru/gl
 sql-ledger/locale/ru/hr
 sql-ledger/locale/ru/ic
+sql-ledger/locale/ru/im
 sql-ledger/locale/ru/io
 sql-ledger/locale/ru/ir
 sql-ledger/locale/ru/is
@@ -1418,6 +1510,7 @@ sql-ledger/locale/ru/ps
 sql-ledger/locale/ru/pw
 sql-ledger/locale/ru/rc
 sql-ledger/locale/ru/rp
+sql-ledger/locale/ru/vr
 sql-ledger/locale/ru_utf/COPYING
 sql-ledger/locale/ru_utf/LANGUAGE
 sql-ledger/locale/ru_utf/Num2text
@@ -1436,6 +1529,7 @@ sql-ledger/locale/ru_utf/ct
 sql-ledger/locale/ru_utf/gl
 sql-ledger/locale/ru_utf/hr
 sql-ledger/locale/ru_utf/ic
+sql-ledger/locale/ru_utf/im
 sql-ledger/locale/ru_utf/io
 sql-ledger/locale/ru_utf/ir
 sql-ledger/locale/ru_utf/is
@@ -1450,6 +1544,7 @@ sql-ledger/locale/ru_utf/ps
 sql-ledger/locale/ru_utf/pw
 sql-ledger/locale/ru_utf/rc
 sql-ledger/locale/ru_utf/rp
+sql-ledger/locale/ru_utf/vr
 sql-ledger/locale/se/COPYING
 sql-ledger/locale/se/LANGUAGE
 sql-ledger/locale/se/aa
@@ -1467,6 +1562,7 @@ sql-ledger/locale/se/ct
 sql-ledger/locale/se/gl
 sql-ledger/locale/se/hr
 sql-ledger/locale/se/ic
+sql-ledger/locale/se/im
 sql-ledger/locale/se/io
 sql-ledger/locale/se/ir
 sql-ledger/locale/se/is
@@ -1481,10 +1577,40 @@ sql-ledger/locale/se/ps
 sql-ledger/locale/se/pw
 sql-ledger/locale/se/rc
 sql-ledger/locale/se/rp
+sql-ledger/locale/se/vr
 sql-ledger/locale/sk/COPYING
 sql-ledger/locale/sk/LANGUAGE
+sql-ledger/locale/sk/aa
+sql-ledger/locale/sk/admin
 sql-ledger/locale/sk/all
+sql-ledger/locale/sk/am
+sql-ledger/locale/sk/ap
+sql-ledger/locale/sk/ar
+sql-ledger/locale/sk/arap
+sql-ledger/locale/sk/arapprn
+sql-ledger/locale/sk/bp
+sql-ledger/locale/sk/ca
+sql-ledger/locale/sk/cp
+sql-ledger/locale/sk/ct
+sql-ledger/locale/sk/gl
+sql-ledger/locale/sk/hr
+sql-ledger/locale/sk/ic
+sql-ledger/locale/sk/im
+sql-ledger/locale/sk/io
+sql-ledger/locale/sk/ir
+sql-ledger/locale/sk/is
+sql-ledger/locale/sk/jc
 sql-ledger/locale/sk/locales.pl
+sql-ledger/locale/sk/login
+sql-ledger/locale/sk/menu
+sql-ledger/locale/sk/oe
+sql-ledger/locale/sk/pe
+sql-ledger/locale/sk/pos
+sql-ledger/locale/sk/ps
+sql-ledger/locale/sk/pw
+sql-ledger/locale/sk/rc
+sql-ledger/locale/sk/rp
+sql-ledger/locale/sk/vr
 sql-ledger/locale/sv/COPYING
 sql-ledger/locale/sv/LANGUAGE
 sql-ledger/locale/sv/Num2text
@@ -1503,6 +1629,7 @@ sql-ledger/locale/sv/ct
 sql-ledger/locale/sv/gl
 sql-ledger/locale/sv/hr
 sql-ledger/locale/sv/ic
+sql-ledger/locale/sv/im
 sql-ledger/locale/sv/io
 sql-ledger/locale/sv/ir
 sql-ledger/locale/sv/is
@@ -1517,6 +1644,7 @@ sql-ledger/locale/sv/ps
 sql-ledger/locale/sv/pw
 sql-ledger/locale/sv/rc
 sql-ledger/locale/sv/rp
+sql-ledger/locale/sv/vr
 sql-ledger/locale/tr/COPYING
 sql-ledger/locale/tr/LANGUAGE
 sql-ledger/locale/tr/aa
@@ -1534,6 +1662,7 @@ sql-ledger/locale/tr/ct
 sql-ledger/locale/tr/gl
 sql-ledger/locale/tr/hr
 sql-ledger/locale/tr/ic
+sql-ledger/locale/tr/im
 sql-ledger/locale/tr/io
 sql-ledger/locale/tr/ir
 sql-ledger/locale/tr/is
@@ -1548,6 +1677,7 @@ sql-ledger/locale/tr/ps
 sql-ledger/locale/tr/pw
 sql-ledger/locale/tr/rc
 sql-ledger/locale/tr/rp
+sql-ledger/locale/tr/vr
 sql-ledger/locale/tw_big5/COPYING
 sql-ledger/locale/tw_big5/LANGUAGE
 sql-ledger/locale/tw_big5/aa
@@ -1565,6 +1695,7 @@ sql-ledger/locale/tw_big5/ct
 sql-ledger/locale/tw_big5/gl
 sql-ledger/locale/tw_big5/hr
 sql-ledger/locale/tw_big5/ic
+sql-ledger/locale/tw_big5/im
 sql-ledger/locale/tw_big5/io
 sql-ledger/locale/tw_big5/ir
 sql-ledger/locale/tw_big5/is
@@ -1580,6 +1711,7 @@ sql-ledger/locale/tw_big5/pw
 sql-ledger/locale/tw_big5/rc
 sql-ledger/locale/tw_big5/rp
 sql-ledger/locale/tw_big5/temp
+sql-ledger/locale/tw_big5/vr
 sql-ledger/locale/tw_utf/COPYING
 sql-ledger/locale/tw_utf/LANGUAGE
 sql-ledger/locale/tw_utf/aa
@@ -1597,6 +1729,7 @@ sql-ledger/locale/tw_utf/ct
 sql-ledger/locale/tw_utf/gl
 sql-ledger/locale/tw_utf/hr
 sql-ledger/locale/tw_utf/ic
+sql-ledger/locale/tw_utf/im
 sql-ledger/locale/tw_utf/io
 sql-ledger/locale/tw_utf/ir
 sql-ledger/locale/tw_utf/is
@@ -1612,6 +1745,7 @@ sql-ledger/locale/tw_utf/ps
 sql-ledger/locale/tw_utf/pw
 sql-ledger/locale/tw_utf/rc
 sql-ledger/locale/tw_utf/rp
+sql-ledger/locale/tw_utf/vr
 sql-ledger/locale/ua/COPYING
 sql-ledger/locale/ua/LANGUAGE
 sql-ledger/locale/ua/aa
@@ -1629,6 +1763,7 @@ sql-ledger/locale/ua/ct
 sql-ledger/locale/ua/gl
 sql-ledger/locale/ua/hr
 sql-ledger/locale/ua/ic
+sql-ledger/locale/ua/im
 sql-ledger/locale/ua/io
 sql-ledger/locale/ua/ir
 sql-ledger/locale/ua/is
@@ -1643,6 +1778,7 @@ sql-ledger/locale/ua/ps
 sql-ledger/locale/ua/pw
 sql-ledger/locale/ua/rc
 sql-ledger/locale/ua/rp
+sql-ledger/locale/ua/vr
 sql-ledger/locale/ua_utf/COPYING
 sql-ledger/locale/ua_utf/LANGUAGE
 sql-ledger/locale/ua_utf/aa
@@ -1660,6 +1796,7 @@ sql-ledger/locale/ua_utf/ct
 sql-ledger/locale/ua_utf/gl
 sql-ledger/locale/ua_utf/hr
 sql-ledger/locale/ua_utf/ic
+sql-ledger/locale/ua_utf/im
 sql-ledger/locale/ua_utf/io
 sql-ledger/locale/ua_utf/ir
 sql-ledger/locale/ua_utf/is
@@ -1675,6 +1812,7 @@ sql-ledger/locale/ua_utf/ps
 sql-ledger/locale/ua_utf/pw
 sql-ledger/locale/ua_utf/rc
 sql-ledger/locale/ua_utf/rp
+sql-ledger/locale/ua_utf/vr
 sql-ledger/locale/ve/COPYING
 sql-ledger/locale/ve/LANGUAGE
 sql-ledger/locale/ve/Num2text
@@ -1693,6 +1831,7 @@ sql-ledger/locale/ve/ct
 sql-ledger/locale/ve/gl
 sql-ledger/locale/ve/hr
 sql-ledger/locale/ve/ic
+sql-ledger/locale/ve/im
 sql-ledger/locale/ve/io
 sql-ledger/locale/ve/ir
 sql-ledger/locale/ve/is
@@ -1707,6 +1846,7 @@ sql-ledger/locale/ve/ps
 sql-ledger/locale/ve/pw
 sql-ledger/locale/ve/rc
 sql-ledger/locale/ve/rp
+sql-ledger/locale/ve/vr
 sql-ledger/login.pl
 sql-ledger/menu.ini
 sql-ledger/menu.pl
@@ -1747,6 +1887,7 @@ sql-ledger/sql/Default-chart.sql
 sql-ledger/sql/Dutch_Default-chart.sql
 sql-ledger/sql/Dutch_Standard-chart.sql
 sql-ledger/sql/Egypt-UTF8-chart.sql
+sql-ledger/sql/Estonian_KA2-chart.sql
 sql-ledger/sql/France-chart.sql
 sql-ledger/sql/German-Sample-chart.sql
 sql-ledger/sql/German-Sample-gifi.sql
@@ -1800,13 +1941,31 @@ sql-ledger/sql/Pg-upgrade-2.5.0-2.5.2.sql
 sql-ledger/sql/Pg-upgrade-2.5.2-2.6.0.sql
 sql-ledger/sql/Pg-upgrade-2.6.0-2.6.1.sql
 sql-ledger/sql/Pg-upgrade-2.6.1-2.6.2.sql
+sql-ledger/sql/Pg-upgrade-2.6.12-2.7.0.sql
 sql-ledger/sql/Pg-upgrade-2.6.2-2.6.3.sql
 sql-ledger/sql/Pg-upgrade-2.6.3-2.6.4.sql
 sql-ledger/sql/Pg-upgrade-2.6.4-2.6.7.sql
 sql-ledger/sql/Pg-upgrade-2.6.7-2.6.12.sql
+sql-ledger/sql/Pg-upgrade-2.7.0-2.7.5.sql
+sql-ledger/sql/Pg-upgrade-2.7.10-2.7.11.sql
+sql-ledger/sql/Pg-upgrade-2.7.11-2.7.12.sql
+sql-ledger/sql/Pg-upgrade-2.7.12-2.7.13.sql
+sql-ledger/sql/Pg-upgrade-2.7.13-2.7.16.sql
+sql-ledger/sql/Pg-upgrade-2.7.16-2.8.0.sql
+sql-ledger/sql/Pg-upgrade-2.7.5-2.7.6.sql
+sql-ledger/sql/Pg-upgrade-2.7.6-2.7.7.sql
+sql-ledger/sql/Pg-upgrade-2.7.7-2.7.8.sql
+sql-ledger/sql/Pg-upgrade-2.7.8-2.7.9.sql
+sql-ledger/sql/Pg-upgrade-2.7.9-2.7.10.sql
+sql-ledger/sql/Pg-upgrade-2.8.0-2.8.2.sql
+sql-ledger/sql/Pg-upgrade-2.8.2-2.8.3.sql
+sql-ledger/sql/Pg-upgrade-2.8.3-2.8.4.sql
+sql-ledger/sql/Pg-upgrade-2.8.4-2.8.5.sql
 sql-ledger/sql/Poland-chart.sql
 sql-ledger/sql/Simplified-Chinese_Default-UTF8-chart.sql
 sql-ledger/sql/Simplified-Chinese_Default-chart.sql
+sql-ledger/sql/Slovak-Republic-chart.sql
+sql-ledger/sql/Slovak-Republic-gifi.sql
 sql-ledger/sql/Spain-ISO-chart.sql
 sql-ledger/sql/Spain-UTF8-chart.sql
 sql-ledger/sql/Sweden-chart.sql
@@ -1834,6 +1993,14 @@ sql-ledger/templates/Brazilian_Portuguese-balance_sheet.html
 sql-ledger/templates/Brazilian_Portuguese-bin_list.html
 sql-ledger/templates/Brazilian_Portuguese-bin_list.tex
 sql-ledger/templates/Brazilian_Portuguese-check.tex
+sql-ledger/templates/Brazilian_Portuguese-credit_invoice.html
+sql-ledger/templates/Brazilian_Portuguese-credit_invoice.tex
+sql-ledger/templates/Brazilian_Portuguese-credit_note.html
+sql-ledger/templates/Brazilian_Portuguese-credit_note.tex
+sql-ledger/templates/Brazilian_Portuguese-debit_invoice.html
+sql-ledger/templates/Brazilian_Portuguese-debit_invoice.tex
+sql-ledger/templates/Brazilian_Portuguese-debit_note.html
+sql-ledger/templates/Brazilian_Portuguese-debit_note.tex
 sql-ledger/templates/Brazilian_Portuguese-income_statement.html
 sql-ledger/templates/Brazilian_Portuguese-invoice.html
 sql-ledger/templates/Brazilian_Portuguese-invoice.tex
@@ -1847,6 +2014,8 @@ sql-ledger/templates/Brazilian_Portuguese-pos_invoice.txt
 sql-ledger/templates/Brazilian_Portuguese-purchase_order.html
 sql-ledger/templates/Brazilian_Portuguese-purchase_order.tex
 sql-ledger/templates/Brazilian_Portuguese-receipt.tex
+sql-ledger/templates/Brazilian_Portuguese-remittance_voucher.html
+sql-ledger/templates/Brazilian_Portuguese-remittance_voucher.tex
 sql-ledger/templates/Brazilian_Portuguese-request_quotation.html
 sql-ledger/templates/Brazilian_Portuguese-request_quotation.tex
 sql-ledger/templates/Brazilian_Portuguese-sales_order.html
@@ -1857,6 +2026,8 @@ sql-ledger/templates/Brazilian_Portuguese-statement.html
 sql-ledger/templates/Brazilian_Portuguese-statement.tex
 sql-ledger/templates/Brazilian_Portuguese-timecard.html
 sql-ledger/templates/Brazilian_Portuguese-timecard.tex
+sql-ledger/templates/Brazilian_Portuguese-vendor_invoice.html
+sql-ledger/templates/Brazilian_Portuguese-vendor_invoice.tex
 sql-ledger/templates/Brazilian_Portuguese-work_order.html
 sql-ledger/templates/Brazilian_Portuguese-work_order.tex
 sql-ledger/templates/Danish-ap_transaction.html
@@ -1867,6 +2038,14 @@ sql-ledger/templates/Danish-balance_sheet.html
 sql-ledger/templates/Danish-bin_list.html
 sql-ledger/templates/Danish-bin_list.tex
 sql-ledger/templates/Danish-check.tex
+sql-ledger/templates/Danish-credit_invoice.html
+sql-ledger/templates/Danish-credit_invoice.tex
+sql-ledger/templates/Danish-credit_note.html
+sql-ledger/templates/Danish-credit_note.tex
+sql-ledger/templates/Danish-debit_invoice.html
+sql-ledger/templates/Danish-debit_invoice.tex
+sql-ledger/templates/Danish-debit_note.html
+sql-ledger/templates/Danish-debit_note.tex
 sql-ledger/templates/Danish-income_statement.html
 sql-ledger/templates/Danish-invoice.html
 sql-ledger/templates/Danish-invoice.tex
@@ -1880,6 +2059,8 @@ sql-ledger/templates/Danish-pos_invoice.txt
 sql-ledger/templates/Danish-purchase_order.html
 sql-ledger/templates/Danish-purchase_order.tex
 sql-ledger/templates/Danish-receipt.tex
+sql-ledger/templates/Danish-remittance_voucher.html
+sql-ledger/templates/Danish-remittance_voucher.tex
 sql-ledger/templates/Danish-request_quotation.html
 sql-ledger/templates/Danish-request_quotation.tex
 sql-ledger/templates/Danish-sales_order.html
@@ -1890,6 +2071,8 @@ sql-ledger/templates/Danish-statement.html
 sql-ledger/templates/Danish-statement.tex
 sql-ledger/templates/Danish-timecard.html
 sql-ledger/templates/Danish-timecard.tex
+sql-ledger/templates/Danish-vendor_invoice.html
+sql-ledger/templates/Danish-vendor_invoice.tex
 sql-ledger/templates/Danish-work_order.html
 sql-ledger/templates/Danish-work_order.tex
 sql-ledger/templates/Default-ap_transaction.html
@@ -1900,6 +2083,14 @@ sql-ledger/templates/Default-balance_sheet.html
 sql-ledger/templates/Default-bin_list.html
 sql-ledger/templates/Default-bin_list.tex
 sql-ledger/templates/Default-check.tex
+sql-ledger/templates/Default-credit_invoice.html
+sql-ledger/templates/Default-credit_invoice.tex
+sql-ledger/templates/Default-credit_note.html
+sql-ledger/templates/Default-credit_note.tex
+sql-ledger/templates/Default-debit_invoice.html
+sql-ledger/templates/Default-debit_invoice.tex
+sql-ledger/templates/Default-debit_note.html
+sql-ledger/templates/Default-debit_note.tex
 sql-ledger/templates/Default-income_statement.html
 sql-ledger/templates/Default-invoice.html
 sql-ledger/templates/Default-invoice.tex
@@ -1915,6 +2106,8 @@ sql-ledger/templates/Default-pos_invoice.txt
 sql-ledger/templates/Default-purchase_order.html
 sql-ledger/templates/Default-purchase_order.tex
 sql-ledger/templates/Default-receipt.tex
+sql-ledger/templates/Default-remittance_voucher.html
+sql-ledger/templates/Default-remittance_voucher.tex
 sql-ledger/templates/Default-request_quotation.html
 sql-ledger/templates/Default-request_quotation.tex
 sql-ledger/templates/Default-sales_order.html
@@ -1925,6 +2118,8 @@ sql-ledger/templates/Default-statement.html
 sql-ledger/templates/Default-statement.tex
 sql-ledger/templates/Default-timecard.html
 sql-ledger/templates/Default-timecard.tex
+sql-ledger/templates/Default-vendor_invoice.html
+sql-ledger/templates/Default-vendor_invoice.tex
 sql-ledger/templates/Default-work_order.html
 sql-ledger/templates/Default-work_order.tex
 sql-ledger/templates/Dutch-ap_transaction.html
@@ -1935,6 +2130,14 @@ sql-ledger/templates/Dutch-balance_sheet.html
 sql-ledger/templates/Dutch-bin_list.html
 sql-ledger/templates/Dutch-bin_list.tex
 sql-ledger/templates/Dutch-check.tex
+sql-ledger/templates/Dutch-credit_invoice.html
+sql-ledger/templates/Dutch-credit_invoice.tex
+sql-ledger/templates/Dutch-credit_note.html
+sql-ledger/templates/Dutch-credit_note.tex
+sql-ledger/templates/Dutch-debit_invoice.html
+sql-ledger/templates/Dutch-debit_invoice.tex
+sql-ledger/templates/Dutch-debit_note.html
+sql-ledger/templates/Dutch-debit_note.tex
 sql-ledger/templates/Dutch-income_statement.html
 sql-ledger/templates/Dutch-invoice.html
 sql-ledger/templates/Dutch-invoice.tex
@@ -1948,6 +2151,8 @@ sql-ledger/templates/Dutch-pos_invoice.txt
 sql-ledger/templates/Dutch-purchase_order.html
 sql-ledger/templates/Dutch-purchase_order.tex
 sql-ledger/templates/Dutch-receipt.tex
+sql-ledger/templates/Dutch-remittance_voucher.html
+sql-ledger/templates/Dutch-remittance_voucher.tex
 sql-ledger/templates/Dutch-request_quotation.html
 sql-ledger/templates/Dutch-request_quotation.tex
 sql-ledger/templates/Dutch-sales_order.html
@@ -1958,6 +2163,8 @@ sql-ledger/templates/Dutch-statement.html
 sql-ledger/templates/Dutch-statement.tex
 sql-ledger/templates/Dutch-timecard.html
 sql-ledger/templates/Dutch-timecard.tex
+sql-ledger/templates/Dutch-vendor_invoice.html
+sql-ledger/templates/Dutch-vendor_invoice.tex
 sql-ledger/templates/Dutch-work_order.html
 sql-ledger/templates/Dutch-work_order.tex
 sql-ledger/templates/Estonian-ap_transaction.html
@@ -1968,6 +2175,14 @@ sql-ledger/templates/Estonian-balance_sheet.html
 sql-ledger/templates/Estonian-bin_list.html
 sql-ledger/templates/Estonian-bin_list.tex
 sql-ledger/templates/Estonian-check.tex
+sql-ledger/templates/Estonian-credit_invoice.html
+sql-ledger/templates/Estonian-credit_invoice.tex
+sql-ledger/templates/Estonian-credit_note.html
+sql-ledger/templates/Estonian-credit_note.tex
+sql-ledger/templates/Estonian-debit_invoice.html
+sql-ledger/templates/Estonian-debit_invoice.tex
+sql-ledger/templates/Estonian-debit_note.html
+sql-ledger/templates/Estonian-debit_note.tex
 sql-ledger/templates/Estonian-income_statement.html
 sql-ledger/templates/Estonian-invoice.html
 sql-ledger/templates/Estonian-invoice.tex
@@ -1983,6 +2198,8 @@ sql-ledger/templates/Estonian-pos_invoice.txt
 sql-ledger/templates/Estonian-purchase_order.html
 sql-ledger/templates/Estonian-purchase_order.tex
 sql-ledger/templates/Estonian-receipt.tex
+sql-ledger/templates/Estonian-remittance_voucher.html
+sql-ledger/templates/Estonian-remittance_voucher.tex
 sql-ledger/templates/Estonian-request_quotation.html
 sql-ledger/templates/Estonian-request_quotation.tex
 sql-ledger/templates/Estonian-sales_order.html
@@ -1993,6 +2210,8 @@ sql-ledger/templates/Estonian-statement.html
 sql-ledger/templates/Estonian-statement.tex
 sql-ledger/templates/Estonian-timecard.html
 sql-ledger/templates/Estonian-timecard.tex
+sql-ledger/templates/Estonian-vendor_invoice.html
+sql-ledger/templates/Estonian-vendor_invoice.tex
 sql-ledger/templates/Estonian-work_order.html
 sql-ledger/templates/Estonian-work_order.tex
 sql-ledger/templates/Estonian_UTF8-ap_transaction.html
@@ -2003,6 +2222,14 @@ sql-ledger/templates/Estonian_UTF8-balance_sheet.html
 sql-ledger/templates/Estonian_UTF8-bin_list.html
 sql-ledger/templates/Estonian_UTF8-bin_list.tex
 sql-ledger/templates/Estonian_UTF8-check.tex
+sql-ledger/templates/Estonian_UTF8-credit_invoice.html
+sql-ledger/templates/Estonian_UTF8-credit_invoice.tex
+sql-ledger/templates/Estonian_UTF8-credit_note.html
+sql-ledger/templates/Estonian_UTF8-credit_note.tex
+sql-ledger/templates/Estonian_UTF8-debit_invoice.html
+sql-ledger/templates/Estonian_UTF8-debit_invoice.tex
+sql-ledger/templates/Estonian_UTF8-debit_note.html
+sql-ledger/templates/Estonian_UTF8-debit_note.tex
 sql-ledger/templates/Estonian_UTF8-income_statement.html
 sql-ledger/templates/Estonian_UTF8-invoice.html
 sql-ledger/templates/Estonian_UTF8-invoice.tex
@@ -2018,6 +2245,8 @@ sql-ledger/templates/Estonian_UTF8-pos_invoice.txt
 sql-ledger/templates/Estonian_UTF8-purchase_order.html
 sql-ledger/templates/Estonian_UTF8-purchase_order.tex
 sql-ledger/templates/Estonian_UTF8-receipt.tex
+sql-ledger/templates/Estonian_UTF8-remittance_voucher.html
+sql-ledger/templates/Estonian_UTF8-remittance_voucher.tex
 sql-ledger/templates/Estonian_UTF8-request_quotation.html
 sql-ledger/templates/Estonian_UTF8-request_quotation.tex
 sql-ledger/templates/Estonian_UTF8-sales_order.html
@@ -2038,6 +2267,14 @@ sql-ledger/templates/French-balance_sheet.html
 sql-ledger/templates/French-bin_list.html
 sql-ledger/templates/French-bin_list.tex
 sql-ledger/templates/French-check.tex
+sql-ledger/templates/French-credit_invoice.html
+sql-ledger/templates/French-credit_invoice.tex
+sql-ledger/templates/French-credit_note.html
+sql-ledger/templates/French-credit_note.tex
+sql-ledger/templates/French-debit_invoice.html
+sql-ledger/templates/French-debit_invoice.tex
+sql-ledger/templates/French-debit_note.html
+sql-ledger/templates/French-debit_note.tex
 sql-ledger/templates/French-income_statement.html
 sql-ledger/templates/French-invoice.html
 sql-ledger/templates/French-invoice.tex
@@ -2051,6 +2288,8 @@ sql-ledger/templates/French-pos_invoice.txt
 sql-ledger/templates/French-purchase_order.html
 sql-ledger/templates/French-purchase_order.tex
 sql-ledger/templates/French-receipt.tex
+sql-ledger/templates/French-remittance_voucher.html
+sql-ledger/templates/French-remittance_voucher.tex
 sql-ledger/templates/French-request_quotation.html
 sql-ledger/templates/French-request_quotation.tex
 sql-ledger/templates/French-sales_order.html
@@ -2061,6 +2300,8 @@ sql-ledger/templates/French-statement.html
 sql-ledger/templates/French-statement.tex
 sql-ledger/templates/French-timecard.html
 sql-ledger/templates/French-timecard.tex
+sql-ledger/templates/French-vendor_invoice.html
+sql-ledger/templates/French-vendor_invoice.tex
 sql-ledger/templates/French-work_order.html
 sql-ledger/templates/French-work_order.tex
 sql-ledger/templates/German-ap_transaction.html
@@ -2071,6 +2312,14 @@ sql-ledger/templates/German-balance_sheet.html
 sql-ledger/templates/German-bin_list.html
 sql-ledger/templates/German-bin_list.tex
 sql-ledger/templates/German-check.tex
+sql-ledger/templates/German-credit_invoice.html
+sql-ledger/templates/German-credit_invoice.tex
+sql-ledger/templates/German-credit_note.html
+sql-ledger/templates/German-credit_note.tex
+sql-ledger/templates/German-debit_invoice.html
+sql-ledger/templates/German-debit_invoice.tex
+sql-ledger/templates/German-debit_note.html
+sql-ledger/templates/German-debit_note.tex
 sql-ledger/templates/German-income_statement.html
 sql-ledger/templates/German-invoice.html
 sql-ledger/templates/German-invoice.tex
@@ -2084,6 +2333,8 @@ sql-ledger/templates/German-pos_invoice.txt
 sql-ledger/templates/German-purchase_order.html
 sql-ledger/templates/German-purchase_order.tex
 sql-ledger/templates/German-receipt.tex
+sql-ledger/templates/German-remittance_voucher.html
+sql-ledger/templates/German-remittance_voucher.tex
 sql-ledger/templates/German-request_quotation.html
 sql-ledger/templates/German-request_quotation.tex
 sql-ledger/templates/German-sales_order.html
@@ -2094,6 +2345,8 @@ sql-ledger/templates/German-statement.html
 sql-ledger/templates/German-statement.tex
 sql-ledger/templates/German-timecard.html
 sql-ledger/templates/German-timecard.tex
+sql-ledger/templates/German-vendor_invoice.html
+sql-ledger/templates/German-vendor_invoice.tex
 sql-ledger/templates/German-work_order.html
 sql-ledger/templates/German-work_order.tex
 sql-ledger/templates/Hungarian-ap_transaction.html
@@ -2104,6 +2357,15 @@ sql-ledger/templates/Hungarian-balance_sheet.html
 sql-ledger/templates/Hungarian-bin_list.html
 sql-ledger/templates/Hungarian-bin_list.tex
 sql-ledger/templates/Hungarian-check.tex
+sql-ledger/templates/Hungarian-credit_invoice.html
+sql-ledger/templates/Hungarian-credit_invoice.tex
+sql-ledger/templates/Hungarian-credit_note.html
+sql-ledger/templates/Hungarian-credit_note.tex
+sql-ledger/templates/Hungarian-debit_invoice.html
+sql-ledger/templates/Hungarian-debit_invoice.tex
+sql-ledger/templates/Hungarian-debit_invoice.text
+sql-ledger/templates/Hungarian-debit_note.html
+sql-ledger/templates/Hungarian-debit_note.tex
 sql-ledger/templates/Hungarian-income_statement.html
 sql-ledger/templates/Hungarian-invoice.html
 sql-ledger/templates/Hungarian-invoice.tex
@@ -2117,6 +2379,8 @@ sql-ledger/templates/Hungarian-pos_invoice.txt
 sql-ledger/templates/Hungarian-purchase_order.html
 sql-ledger/templates/Hungarian-purchase_order.tex
 sql-ledger/templates/Hungarian-receipt.tex
+sql-ledger/templates/Hungarian-remittance_voucher.html
+sql-ledger/templates/Hungarian-remittance_voucher.tex
 sql-ledger/templates/Hungarian-request_quotation.html
 sql-ledger/templates/Hungarian-request_quotation.tex
 sql-ledger/templates/Hungarian-sales_order.html
@@ -2127,6 +2391,8 @@ sql-ledger/templates/Hungarian-statement.html
 sql-ledger/templates/Hungarian-statement.tex
 sql-ledger/templates/Hungarian-timecard.html
 sql-ledger/templates/Hungarian-timecard.tex
+sql-ledger/templates/Hungarian-vendor_invoice.html
+sql-ledger/templates/Hungarian-vendor_invoice.tex
 sql-ledger/templates/Hungarian-work_order.html
 sql-ledger/templates/Hungarian-work_order.tex
 sql-ledger/templates/Italian-ap_transaction.html
@@ -2137,6 +2403,14 @@ sql-ledger/templates/Italian-balance_sheet.html
 sql-ledger/templates/Italian-bin_list.html
 sql-ledger/templates/Italian-bin_list.tex
 sql-ledger/templates/Italian-check.tex
+sql-ledger/templates/Italian-credit_invoice.html
+sql-ledger/templates/Italian-credit_invoice.tex
+sql-ledger/templates/Italian-credit_note.html
+sql-ledger/templates/Italian-credit_note.tex
+sql-ledger/templates/Italian-debit_invoice.html
+sql-ledger/templates/Italian-debit_invoice.tex
+sql-ledger/templates/Italian-debit_note.html
+sql-ledger/templates/Italian-debit_note.tex
 sql-ledger/templates/Italian-income_statement.html
 sql-ledger/templates/Italian-invoice.html
 sql-ledger/templates/Italian-invoice.tex
@@ -2150,6 +2424,8 @@ sql-ledger/templates/Italian-pos_invoice.txt
 sql-ledger/templates/Italian-purchase_order.html
 sql-ledger/templates/Italian-purchase_order.tex
 sql-ledger/templates/Italian-receipt.tex
+sql-ledger/templates/Italian-remittance_voucher.html
+sql-ledger/templates/Italian-remittance_voucher.tex
 sql-ledger/templates/Italian-request_quotation.html
 sql-ledger/templates/Italian-request_quotation.tex
 sql-ledger/templates/Italian-sales_order.html
@@ -2160,6 +2436,8 @@ sql-ledger/templates/Italian-statement.html
 sql-ledger/templates/Italian-statement.tex
 sql-ledger/templates/Italian-timecard.html
 sql-ledger/templates/Italian-timecard.tex
+sql-ledger/templates/Italian-vendor_invoice.html
+sql-ledger/templates/Italian-vendor_invoice.tex
 sql-ledger/templates/Italian-work_order.html
 sql-ledger/templates/Italian-work_order.tex
 sql-ledger/templates/Norwegian-ap_transaction.html
@@ -2170,6 +2448,14 @@ sql-ledger/templates/Norwegian-balance_sheet.html
 sql-ledger/templates/Norwegian-bin_list.html
 sql-ledger/templates/Norwegian-bin_list.tex
 sql-ledger/templates/Norwegian-check.tex
+sql-ledger/templates/Norwegian-credit_invoice.html
+sql-ledger/templates/Norwegian-credit_invoice.tex
+sql-ledger/templates/Norwegian-credit_note.html
+sql-ledger/templates/Norwegian-credit_note.tex
+sql-ledger/templates/Norwegian-debit_invoice.html
+sql-ledger/templates/Norwegian-debit_invoice.tex
+sql-ledger/templates/Norwegian-debit_note.html
+sql-ledger/templates/Norwegian-debit_note.tex
 sql-ledger/templates/Norwegian-income_statement.html
 sql-ledger/templates/Norwegian-invoice.html
 sql-ledger/templates/Norwegian-invoice.tex
@@ -2183,6 +2469,8 @@ sql-ledger/templates/Norwegian-pos_invoice.txt
 sql-ledger/templates/Norwegian-purchase_order.html
 sql-ledger/templates/Norwegian-purchase_order.tex
 sql-ledger/templates/Norwegian-receipt.tex
+sql-ledger/templates/Norwegian-remittance_voucher.html
+sql-ledger/templates/Norwegian-remittance_voucher.tex
 sql-ledger/templates/Norwegian-request_quotation.html
 sql-ledger/templates/Norwegian-request_quotation.tex
 sql-ledger/templates/Norwegian-sales_order.html
@@ -2193,6 +2481,8 @@ sql-ledger/templates/Norwegian-statement.html
 sql-ledger/templates/Norwegian-statement.tex
 sql-ledger/templates/Norwegian-timecard.html
 sql-ledger/templates/Norwegian-timecard.tex
+sql-ledger/templates/Norwegian-vendor_invoice.html
+sql-ledger/templates/Norwegian-vendor_invoice.tex
 sql-ledger/templates/Norwegian-work_order.html
 sql-ledger/templates/Norwegian-work_order.tex
 sql-ledger/templates/Russian-ap_transaction.html
@@ -2203,6 +2493,14 @@ sql-ledger/templates/Russian-balance_sheet.html
 sql-ledger/templates/Russian-bin_list.html
 sql-ledger/templates/Russian-bin_list.tex
 sql-ledger/templates/Russian-check.tex
+sql-ledger/templates/Russian-credit_invoice.html
+sql-ledger/templates/Russian-credit_invoice.tex
+sql-ledger/templates/Russian-credit_note.html
+sql-ledger/templates/Russian-credit_note.tex
+sql-ledger/templates/Russian-debit_invoice.html
+sql-ledger/templates/Russian-debit_invoice.tex
+sql-ledger/templates/Russian-debit_note.html
+sql-ledger/templates/Russian-debit_note.tex
 sql-ledger/templates/Russian-income_statement.html
 sql-ledger/templates/Russian-invoice.html
 sql-ledger/templates/Russian-invoice.tex
@@ -2216,6 +2514,8 @@ sql-ledger/templates/Russian-pos_invoice.txt
 sql-ledger/templates/Russian-purchase_order.html
 sql-ledger/templates/Russian-purchase_order.tex
 sql-ledger/templates/Russian-receipt.tex
+sql-ledger/templates/Russian-remittance_voucher.html
+sql-ledger/templates/Russian-remittance_voucher.tex
 sql-ledger/templates/Russian-request_quotation.html
 sql-ledger/templates/Russian-request_quotation.tex
 sql-ledger/templates/Russian-sales_order.html
@@ -2226,6 +2526,8 @@ sql-ledger/templates/Russian-statement.html
 sql-ledger/templates/Russian-statement.tex
 sql-ledger/templates/Russian-timecard.html
 sql-ledger/templates/Russian-timecard.tex
+sql-ledger/templates/Russian-vendor_invoice.html
+sql-ledger/templates/Russian-vendor_invoice.tex
 sql-ledger/templates/Russian-work_order.html
 sql-ledger/templates/Russian-work_order.tex
 sql-ledger/templates/Service-ap_transaction.html
@@ -2236,6 +2538,14 @@ sql-ledger/templates/Service-balance_sheet.html
 sql-ledger/templates/Service-bin_list.html
 sql-ledger/templates/Service-bin_list.tex
 sql-ledger/templates/Service-check.tex
+sql-ledger/templates/Service-credit_invoice.html
+sql-ledger/templates/Service-credit_invoice.tex
+sql-ledger/templates/Service-credit_note.html
+sql-ledger/templates/Service-credit_note.tex
+sql-ledger/templates/Service-debit_invoice.html
+sql-ledger/templates/Service-debit_invoice.tex
+sql-ledger/templates/Service-debit_note.html
+sql-ledger/templates/Service-debit_note.tex
 sql-ledger/templates/Service-income_statement.html
 sql-ledger/templates/Service-invoice.html
 sql-ledger/templates/Service-invoice.tex
@@ -2249,6 +2559,8 @@ sql-ledger/templates/Service-pos_invoice.txt
 sql-ledger/templates/Service-purchase_order.html
 sql-ledger/templates/Service-purchase_order.tex
 sql-ledger/templates/Service-receipt.tex
+sql-ledger/templates/Service-remittance_voucher.html
+sql-ledger/templates/Service-remittance_voucher.tex
 sql-ledger/templates/Service-request_quotation.html
 sql-ledger/templates/Service-request_quotation.tex
 sql-ledger/templates/Service-sales_order.html
@@ -2259,6 +2571,8 @@ sql-ledger/templates/Service-statement.html
 sql-ledger/templates/Service-statement.tex
 sql-ledger/templates/Service-timecard.html
 sql-ledger/templates/Service-timecard.tex
+sql-ledger/templates/Service-vendor_invoice.html
+sql-ledger/templates/Service-vendor_invoice.tex
 sql-ledger/templates/Service-work_order.html
 sql-ledger/templates/Service-work_order.tex
 sql-ledger/templates/Slovak-ap_transaction.html
@@ -2269,6 +2583,14 @@ sql-ledger/templates/Slovak-balance_sheet.html
 sql-ledger/templates/Slovak-bin_list.html
 sql-ledger/templates/Slovak-bin_list.tex
 sql-ledger/templates/Slovak-check.tex
+sql-ledger/templates/Slovak-credit_invoice.html
+sql-ledger/templates/Slovak-credit_invoice.tex
+sql-ledger/templates/Slovak-credit_note.html
+sql-ledger/templates/Slovak-credit_note.tex
+sql-ledger/templates/Slovak-debit_invoice.html
+sql-ledger/templates/Slovak-debit_invoice.tex
+sql-ledger/templates/Slovak-debit_note.html
+sql-ledger/templates/Slovak-debit_note.tex
 sql-ledger/templates/Slovak-income_statement.html
 sql-ledger/templates/Slovak-invoice.html
 sql-ledger/templates/Slovak-invoice.tex
@@ -2284,6 +2606,8 @@ sql-ledger/templates/Slovak-pos_invoice.txt
 sql-ledger/templates/Slovak-purchase_order.html
 sql-ledger/templates/Slovak-purchase_order.tex
 sql-ledger/templates/Slovak-receipt.tex
+sql-ledger/templates/Slovak-remittance_voucher.html
+sql-ledger/templates/Slovak-remittance_voucher.tex
 sql-ledger/templates/Slovak-request_quotation.html
 sql-ledger/templates/Slovak-request_quotation.tex
 sql-ledger/templates/Slovak-sales_order.html
@@ -2294,6 +2618,8 @@ sql-ledger/templates/Slovak-statement.html
 sql-ledger/templates/Slovak-statement.tex
 sql-ledger/templates/Slovak-timecard.html
 sql-ledger/templates/Slovak-timecard.tex
+sql-ledger/templates/Slovak-vendor_invoice.html
+sql-ledger/templates/Slovak-vendor_invoice.tex
 sql-ledger/templates/Slovak-work_order.html
 sql-ledger/templates/Slovak-work_order.tex
 sql-ledger/templates/Spanish_A4-ap_transaction.html
@@ -2304,6 +2630,14 @@ sql-ledger/templates/Spanish_A4-balance_sheet.html
 sql-ledger/templates/Spanish_A4-bin_list.html
 sql-ledger/templates/Spanish_A4-bin_list.tex
 sql-ledger/templates/Spanish_A4-check.tex
+sql-ledger/templates/Spanish_A4-credit_invoice.html
+sql-ledger/templates/Spanish_A4-credit_invoice.tex
+sql-ledger/templates/Spanish_A4-credit_note.html
+sql-ledger/templates/Spanish_A4-credit_note.tex
+sql-ledger/templates/Spanish_A4-debit_invoice.html
+sql-ledger/templates/Spanish_A4-debit_invoice.tex
+sql-ledger/templates/Spanish_A4-debit_note.html
+sql-ledger/templates/Spanish_A4-debit_note.tex
 sql-ledger/templates/Spanish_A4-income_statement.html
 sql-ledger/templates/Spanish_A4-invoice.html
 sql-ledger/templates/Spanish_A4-invoice.tex
@@ -2317,6 +2651,8 @@ sql-ledger/templates/Spanish_A4-pos_invoice.txt
 sql-ledger/templates/Spanish_A4-purchase_order.html
 sql-ledger/templates/Spanish_A4-purchase_order.tex
 sql-ledger/templates/Spanish_A4-receipt.tex
+sql-ledger/templates/Spanish_A4-remittance_voucher.html
+sql-ledger/templates/Spanish_A4-remittance_voucher.tex
 sql-ledger/templates/Spanish_A4-request_quotation.html
 sql-ledger/templates/Spanish_A4-request_quotation.tex
 sql-ledger/templates/Spanish_A4-sales_order.html
@@ -2327,6 +2663,8 @@ sql-ledger/templates/Spanish_A4-statement.html
 sql-ledger/templates/Spanish_A4-statement.tex
 sql-ledger/templates/Spanish_A4-timecard.html
 sql-ledger/templates/Spanish_A4-timecard.tex
+sql-ledger/templates/Spanish_A4-vendor_invoice.html
+sql-ledger/templates/Spanish_A4-vendor_invoice.tex
 sql-ledger/templates/Spanish_A4-work_order.html
 sql-ledger/templates/Spanish_A4-work_order.tex
 sql-ledger/templates/Spanish_Letter-ap_transaction.html
@@ -2337,6 +2675,14 @@ sql-ledger/templates/Spanish_Letter-balance_sheet.html
 sql-ledger/templates/Spanish_Letter-bin_list.html
 sql-ledger/templates/Spanish_Letter-bin_list.tex
 sql-ledger/templates/Spanish_Letter-check.tex
+sql-ledger/templates/Spanish_Letter-credit_invoice.html
+sql-ledger/templates/Spanish_Letter-credit_invoice.tex
+sql-ledger/templates/Spanish_Letter-credit_note.html
+sql-ledger/templates/Spanish_Letter-credit_note.tex
+sql-ledger/templates/Spanish_Letter-debit_invoice.html
+sql-ledger/templates/Spanish_Letter-debit_invoice.tex
+sql-ledger/templates/Spanish_Letter-debit_note.html
+sql-ledger/templates/Spanish_Letter-debit_note.tex
 sql-ledger/templates/Spanish_Letter-income_statement.html
 sql-ledger/templates/Spanish_Letter-invoice.html
 sql-ledger/templates/Spanish_Letter-invoice.tex
@@ -2350,6 +2696,8 @@ sql-ledger/templates/Spanish_Letter-pos_invoice.txt
 sql-ledger/templates/Spanish_Letter-purchase_order.html
 sql-ledger/templates/Spanish_Letter-purchase_order.tex
 sql-ledger/templates/Spanish_Letter-receipt.tex
+sql-ledger/templates/Spanish_Letter-remittance_voucher.html
+sql-ledger/templates/Spanish_Letter-remittance_voucher.tex
 sql-ledger/templates/Spanish_Letter-request_quotation.html
 sql-ledger/templates/Spanish_Letter-request_quotation.tex
 sql-ledger/templates/Spanish_Letter-sales_order.html
@@ -2360,6 +2708,8 @@ sql-ledger/templates/Spanish_Letter-statement.html
 sql-ledger/templates/Spanish_Letter-statement.tex
 sql-ledger/templates/Spanish_Letter-timecard.html
 sql-ledger/templates/Spanish_Letter-timecard.tex
+sql-ledger/templates/Spanish_Letter-vendor_invoice.html
+sql-ledger/templates/Spanish_Letter-vendor_invoice.tex
 sql-ledger/templates/Spanish_Letter-work_order.html
 sql-ledger/templates/Spanish_Letter-work_order.tex
 sql-ledger/templates/Swedish-ap_transaction.html
@@ -2370,6 +2720,14 @@ sql-ledger/templates/Swedish-balance_sheet.html
 sql-ledger/templates/Swedish-bin_list.html
 sql-ledger/templates/Swedish-bin_list.tex
 sql-ledger/templates/Swedish-check.tex
+sql-ledger/templates/Swedish-credit_invoice.html
+sql-ledger/templates/Swedish-credit_invoice.tex
+sql-ledger/templates/Swedish-credit_note.html
+sql-ledger/templates/Swedish-credit_note.tex
+sql-ledger/templates/Swedish-debit_invoice.html
+sql-ledger/templates/Swedish-debit_invoice.tex
+sql-ledger/templates/Swedish-debit_note.html
+sql-ledger/templates/Swedish-debit_note.tex
 sql-ledger/templates/Swedish-income_statement.html
 sql-ledger/templates/Swedish-invoice.html
 sql-ledger/templates/Swedish-invoice.tex
@@ -2383,6 +2741,8 @@ sql-ledger/templates/Swedish-pos_invoice.txt
 sql-ledger/templates/Swedish-purchase_order.html
 sql-ledger/templates/Swedish-purchase_order.tex
 sql-ledger/templates/Swedish-receipt.tex
+sql-ledger/templates/Swedish-remittance_voucher.html
+sql-ledger/templates/Swedish-remittance_voucher.tex
 sql-ledger/templates/Swedish-request_quotation.html
 sql-ledger/templates/Swedish-request_quotation.tex
 sql-ledger/templates/Swedish-sales_order.html
@@ -2403,6 +2763,14 @@ sql-ledger/templates/Traditional_Chinese_Big5-balance_sheet.html
 sql-ledger/templates/Traditional_Chinese_Big5-bin_list.html
 sql-ledger/templates/Traditional_Chinese_Big5-bin_list.tex
 sql-ledger/templates/Traditional_Chinese_Big5-check.tex
+sql-ledger/templates/Traditional_Chinese_Big5-credit_invoice.html
+sql-ledger/templates/Traditional_Chinese_Big5-credit_invoice.tex
+sql-ledger/templates/Traditional_Chinese_Big5-credit_note.html
+sql-ledger/templates/Traditional_Chinese_Big5-credit_note.tex
+sql-ledger/templates/Traditional_Chinese_Big5-debit_invoice.html
+sql-ledger/templates/Traditional_Chinese_Big5-debit_invoice.tex
+sql-ledger/templates/Traditional_Chinese_Big5-debit_note.html
+sql-ledger/templates/Traditional_Chinese_Big5-debit_note.tex
 sql-ledger/templates/Traditional_Chinese_Big5-income_statement.html
 sql-ledger/templates/Traditional_Chinese_Big5-invoice.html
 sql-ledger/templates/Traditional_Chinese_Big5-invoice.tex
@@ -2418,6 +2786,8 @@ sql-ledger/templates/Traditional_Chinese_Big5-pos_invoice.txt
 sql-ledger/templates/Traditional_Chinese_Big5-purchase_order.html
 sql-ledger/templates/Traditional_Chinese_Big5-purchase_order.tex
 sql-ledger/templates/Traditional_Chinese_Big5-receipt.tex
+sql-ledger/templates/Traditional_Chinese_Big5-remittance_voucher.html
+sql-ledger/templates/Traditional_Chinese_Big5-remittance_voucher.tex
 sql-ledger/templates/Traditional_Chinese_Big5-request_quotation.html
 sql-ledger/templates/Traditional_Chinese_Big5-request_quotation.tex
 sql-ledger/templates/Traditional_Chinese_Big5-sales_order.html
@@ -2438,6 +2808,14 @@ sql-ledger/templates/Traditional_Chinese_UTF8-balance_sheet.html
 sql-ledger/templates/Traditional_Chinese_UTF8-bin_list.html
 sql-ledger/templates/Traditional_Chinese_UTF8-bin_list.tex
 sql-ledger/templates/Traditional_Chinese_UTF8-check.tex
+sql-ledger/templates/Traditional_Chinese_UTF8-credit_invoice.html
+sql-ledger/templates/Traditional_Chinese_UTF8-credit_invoice.tex
+sql-ledger/templates/Traditional_Chinese_UTF8-credit_note.html
+sql-ledger/templates/Traditional_Chinese_UTF8-credit_note.tex
+sql-ledger/templates/Traditional_Chinese_UTF8-debit_invoice.html
+sql-ledger/templates/Traditional_Chinese_UTF8-debit_invoice.tex
+sql-ledger/templates/Traditional_Chinese_UTF8-debit_note.html
+sql-ledger/templates/Traditional_Chinese_UTF8-debit_note.tex
 sql-ledger/templates/Traditional_Chinese_UTF8-income_statement.html
 sql-ledger/templates/Traditional_Chinese_UTF8-invoice.html
 sql-ledger/templates/Traditional_Chinese_UTF8-invoice.tex
@@ -2453,6 +2831,8 @@ sql-ledger/templates/Traditional_Chinese_UTF8-pos_invoice.txt
 sql-ledger/templates/Traditional_Chinese_UTF8-purchase_order.html
 sql-ledger/templates/Traditional_Chinese_UTF8-purchase_order.tex
 sql-ledger/templates/Traditional_Chinese_UTF8-receipt.tex
+sql-ledger/templates/Traditional_Chinese_UTF8-remittance_voucher.html
+sql-ledger/templates/Traditional_Chinese_UTF8-remittance_voucher.tex
 sql-ledger/templates/Traditional_Chinese_UTF8-request_quotation.html
 sql-ledger/templates/Traditional_Chinese_UTF8-request_quotation.tex
 sql-ledger/templates/Traditional_Chinese_UTF8-sales_order.html
@@ -2467,7 +2847,7 @@ sql-ledger/templates/Traditional_Chinese_UTF8-work_order.html
 sql-ledger/templates/Traditional_Chinese_UTF8-work_order.tex
 sql-ledger/users/sql-ledger.eps
 sql-ledger/users/sql-ledger.png
-etc/sql-ledger-httpd.conf
+sql-ledger/vr.pl
 @dirrmtry sql-ledger/users
 @dirrmtry sql-ledger/templates
 @dirrm sql-ledger/sql
