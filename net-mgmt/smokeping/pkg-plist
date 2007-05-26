@@ -109,13 +109,18 @@ etc/smokeping/tmail.dist
 %%PORTDOCS%%%%EXAMPLESDIR%%/config.targetvars-with-Curl
 %%PORTDOCS%%%%EXAMPLESDIR%%/config.template
 smokeping/htdocs/smokeping.cgi
+smokeping/lib/Config/Grammar.pm
 smokeping/lib/Smokeping.pm
+smokeping/lib/Smokeping/Colorspace.pm
+smokeping/lib/Smokeping/Examples.pm
+smokeping/lib/Smokeping/RRDtools.pm
 smokeping/lib/Smokeping/ciscoRttMonMIB.pm
-smokeping/lib/Smokeping/matchers/base.pm
+smokeping/lib/Smokeping/matchers/Avgratio.pm
 smokeping/lib/Smokeping/matchers/CheckLatency.pm
 smokeping/lib/Smokeping/matchers/CheckLoss.pm
 smokeping/lib/Smokeping/matchers/Median.pm
-smokeping/lib/Smokeping/matchers/Avgratio.pm
+smokeping/lib/Smokeping/matchers/Medratio.pm
+smokeping/lib/Smokeping/matchers/base.pm
 smokeping/lib/Smokeping/probes/AnotherDNS.pm
 smokeping/lib/Smokeping/probes/AnotherSSH.pm
 smokeping/lib/Smokeping/probes/CiscoRTTMonDNS.pm
@@ -125,13 +130,18 @@ smokeping/lib/Smokeping/probes/Curl.pm
 smokeping/lib/Smokeping/probes/DNS.pm
 smokeping/lib/Smokeping/probes/EchoPing.pm
 smokeping/lib/Smokeping/probes/EchoPingChargen.pm
+smokeping/lib/Smokeping/probes/EchoPingDNS.pm
 smokeping/lib/Smokeping/probes/EchoPingDiscard.pm
 smokeping/lib/Smokeping/probes/EchoPingHttp.pm
 smokeping/lib/Smokeping/probes/EchoPingHttps.pm
 smokeping/lib/Smokeping/probes/EchoPingIcp.pm
+smokeping/lib/Smokeping/probes/EchoPingLDAP.pm
+smokeping/lib/Smokeping/probes/EchoPingPlugin.pm
 smokeping/lib/Smokeping/probes/EchoPingSmtp.pm
+smokeping/lib/Smokeping/probes/EchoPingWhois.pm
 smokeping/lib/Smokeping/probes/FPing.pm
 smokeping/lib/Smokeping/probes/FPing6.pm
+smokeping/lib/Smokeping/probes/FTPtransfer.pm
 smokeping/lib/Smokeping/probes/IOSPing.pm
 smokeping/lib/Smokeping/probes/LDAP.pm
 smokeping/lib/Smokeping/probes/Radius.pm
@@ -139,14 +149,18 @@ smokeping/lib/Smokeping/probes/RemoteFPing.pm
 smokeping/lib/Smokeping/probes/SSH.pm
 smokeping/lib/Smokeping/probes/TacacsPlus.pm
 smokeping/lib/Smokeping/probes/TelnetIOSPing.pm
+smokeping/lib/Smokeping/probes/TelnetJunOSPing.pm
+smokeping/lib/Smokeping/probes/WebProxyFilter.pm
 smokeping/lib/Smokeping/probes/base.pm
 smokeping/lib/Smokeping/probes/basefork.pm
 smokeping/lib/Smokeping/probes/basevars.pm
 smokeping/lib/Smokeping/probes/passwordchecker.pm
 smokeping/lib/Smokeping/probes/skel.pm
-smokeping/lib/Smokeping/Examples.pm
-smokeping/lib/Smokeping/RRDtools.pm
-smokeping/lib/Config/Grammar.pm
+smokeping/lib/Smokeping/sorters/Loss.pm
+smokeping/lib/Smokeping/sorters/Max.pm
+smokeping/lib/Smokeping/sorters/Median.pm
+smokeping/lib/Smokeping/sorters/StdDev.pm
+smokeping/lib/Smokeping/sorters/base.pm
 @dirrmtry etc/smokeping
 @exec mkdir -p %D/smokeping/htdocs/img; chown www:www %D/smokeping/htdocs/img
 @unexec rm -rf %D/smokeping/htdocs/img 2>/dev/null || true
@@ -156,13 +170,15 @@ smokeping/lib/Config/Grammar.pm
 @dirrmtry var
 @dirrm smokeping/htdocs
 @dirrm smokeping/lib/Config
-@dirrm smokeping/lib/Smokeping/probes
 @dirrm smokeping/lib/Smokeping/matchers
+@dirrm smokeping/lib/Smokeping/probes
+@dirrm smokeping/lib/Smokeping/sorters
 @dirrm smokeping/lib/Smokeping
 @dirrm smokeping/lib
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Config
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/Smokeping/probes
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Smokeping/matchers
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Smokeping/probes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Smokeping/sorters
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Smokeping
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

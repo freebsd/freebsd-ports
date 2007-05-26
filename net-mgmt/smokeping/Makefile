@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	smokeping
-PORTVERSION=	2.0.9
-PORTREVISION=	2
+PORTVERSION=	2.1.0
 CATEGORIES=	net www
 MASTER_SITES=	http://oss.oetiker.ch/smokeping/pub/ \
 		http://smokeping.cs.pu.edu.tw/pub/
@@ -188,6 +187,8 @@ ETC1=		basepage.html config smokemail tmail
 post-extract:
 	@${RM} ${WRKSRC}/lib/BER.pm
 	@${RM} ${WRKSRC}/lib/SNMP_*.pm
+	@${RM} ${WRKSRC}/lib/Smokeping/svn-commit.tmp
+	@${RM} ${WRKSRC}/lib/svn-commit.tmp
 
 pre-patch:
 	@${REINPLACE_CMD} -e s!/usr/bin/!%%PREFIX%%/bin/! \
