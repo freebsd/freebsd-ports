@@ -246,6 +246,7 @@
     SUBDIR += p5-DBIx-DBSchema
     SUBDIR += p5-DBIx-DataSource
     SUBDIR += p5-DBIx-Ease
+    SUBDIR += p5-DBIx-HA
     SUBDIR += p5-DBIx-Log4perl
     SUBDIR += p5-DBIx-MySQLSequence
     SUBDIR += p5-DBIx-Password
