@@ -9228,6 +9228,7 @@ p5-DBIx-ContextualFetch	ports/databases/p5-DBIx-ContextualFetch
 p5-DBIx-DBSchema	ports/databases/p5-DBIx-DBSchema
 p5-DBIx-DataSource	ports/databases/p5-DBIx-DataSource
 p5-DBIx-Ease	ports/databases/p5-DBIx-Ease
+p5-DBIx-HA	ports/databases/p5-DBIx-HA
 p5-DBIx-Log4perl	ports/databases/p5-DBIx-Log4perl
 p5-DBIx-MySQLSequence	ports/databases/p5-DBIx-MySQLSequence
 p5-DBIx-Password	ports/databases/p5-DBIx-Password
