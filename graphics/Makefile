@@ -711,6 +711,7 @@
     SUBDIR += vvv
     SUBDIR += whirlgif
     SUBDIR += white_dune
+    SUBDIR += wildmagic
     SUBDIR += wings
     SUBDIR += wmgrabimage
     SUBDIR += wmicons
