@@ -1,5 +1,5 @@
---- cnf/mak/afnix-freebsd.mak.orig	Sat Oct  7 20:11:57 2006
-+++ cnf/mak/afnix-freebsd.mak	Sat Oct  7 20:14:17 2006
+--- cnf/mak/afnix-freebsd.mak.orig	Sat May 26 23:59:55 2007
++++ cnf/mak/afnix-freebsd.mak	Sun May 27 00:00:45 2007
 @@ -18,21 +18,21 @@
  # - compiler and linker section                                              -
  # ----------------------------------------------------------------------------
@@ -11,7 +11,8 @@
 +LD              = $(CXX)
 +LK		= $(CXX)
  AR              = ar
- STDCCFLAGS      = -Wall -Werror -MMD -fno-builtin
+-STDCCFLAGS      = -Wall -Werror -MMD -fno-builtin
++STDCCFLAGS      = -Wall -W -MMD -fno-builtin
  STACCFLAGS	=
  DYNCCFLAGS	= -fPIC
  PLTCCFLAGS      =
@@ -43,8 +44,8 @@
 -endif
  endif
  
- # ----------------------------------------------------------------------------
-@@ -93,7 +90,7 @@
+ # adjust for gnu/freebsd platform
+@@ -102,7 +99,7 @@
  
  # adjust linker flags for freebsd
  ifeq ($(PLATNAME),freebsd)
