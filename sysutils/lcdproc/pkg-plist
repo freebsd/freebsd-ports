@@ -14,6 +14,7 @@ lib/lcdproc/CFontz.so
 lib/lcdproc/CFontz633.so
 lib/lcdproc/CFontzPacket.so
 lib/lcdproc/CwLnx.so
+lib/lcdproc/ea65.so
 lib/lcdproc/EyeboxOne.so
 %%USB%%lib/lcdproc/IOWarrior.so
 lib/lcdproc/MD8800.so
@@ -33,6 +34,7 @@ lib/lcdproc/mtc_s16209x.so
 lib/lcdproc/pyramid.so
 lib/lcdproc/sed1330.so
 lib/lcdproc/sed1520.so
+lib/lcdproc/serialPOS.so
 lib/lcdproc/serialVFD.so
 lib/lcdproc/sli.so
 lib/lcdproc/stv5730.so
