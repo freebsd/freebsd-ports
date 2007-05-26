@@ -15,6 +15,8 @@ DISTNAME=	artemis_compiled_v${PORTVERSION}_${PORTREVISION}
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	A DNA sequence viewer and annotation tool
 
+BROKEN=		Unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_JAVA=	yes
