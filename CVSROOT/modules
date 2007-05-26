@@ -15982,6 +15982,7 @@ widentd		ports/net/widentd
 widgetfactory	ports/x11/widgetfactory
 wikindx		ports/www/wikindx
 wildfire	ports/net-im/wildfire
+wildmagic	ports/graphics/wildmagic
 wiliki		ports/www/wiliki
 wily		ports/editors/wily
 win32-codecs	ports/multimedia/win32-codecs
