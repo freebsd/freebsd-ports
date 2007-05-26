@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shttpd
-PORTVERSION=	1.35
+PORTVERSION=	1.37
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	shttpd
@@ -16,15 +16,13 @@ MAINTAINER=	valenok@gmail.com
 COMMENT=	Small, fast, embeddable web server with CGI, SSL, Authorization
 
 MAN1=		shttpd.1
+ALL_TARGET=	unix
+BUILD_WRKSRC=	${WRKSRC}/src
 
 PLIST_FILES=	bin/shttpd
 
-do-build:
-	${CC} ${CFLAGS} -DCONFIG=\"${PREFIX}/etc/shttpd.conf\" \
-		${WRKSRC}/shttpd.c -o ${WRKSRC}/shttpd
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/shttpd ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/shttpd.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/src/shttpd ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/src/shttpd.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
