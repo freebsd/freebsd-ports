@@ -22,6 +22,7 @@
     SUBDIR += fandango
     SUBDIR += feappv
     SUBDIR += findhier
+    SUBDIR += freecad
     SUBDIR += freehdl
     SUBDIR += gdsreader
     SUBDIR += gdt
