@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	upx
-PORTVERSION=	1.25
+PORTVERSION=	3.00
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	upx/
+MASTER_SITES=	http://upx.sourceforge.net/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	fjoe@FreeBSD.org
@@ -17,32 +16,23 @@ COMMENT=	The Ultimate Packer for eXecutables
 
 LIB_DEPENDS=	ucl.1:${PORTSDIR}/archivers/ucl
 
-ONLY_FOR_ARCHS=	i386
-
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
-MAKE_ENV=	UCLDIR=${LOCALBASE} target=freebsd
+MAKE_ENV=	UPX_UCLDIR=${LOCALBASE} target=freebsd
 
 PORTDOCS=	BUGS COPYING LICENSE NEWS README THANKS
 MAN1=		upx.1
 PLIST_FILES=	bin/upx
 
-post-patch:
-	@${CP} ${FILESDIR}/l_b_n2?.h ${WRKSRC}/stub
-
-post-build:
-	@cd ${WRKSRC}/../doc && ${GMAKE}
-
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/upx ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/../doc/upx.1 ${MANPREFIX}/man/man1
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/upx.out ${PREFIX}/bin/upx
+	@${INSTALL_MAN} ${WRKSRC}/doc/upx.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@for i in ${PORTDOCS}; do \
-		${INSTALL_DATA} ${WRKSRC}/../$$i ${DOCSDIR}; \
+		${INSTALL_DATA} ${WRKSRC}/$$i ${DOCSDIR}; \
 	done
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
