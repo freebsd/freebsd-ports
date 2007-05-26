@@ -316,6 +316,181 @@
  --- misc/build/libwpd-0.8.8/src/lib/WP1Part.cpp	2007-01-13 00:18:52.000000000 +0100
  ***************
 
+--- libxml2/libxml2-2.6.17.patch	26 Mar 2007 12:25:19 -0000	1.5
++++ libxml2/libxml2-2.6.17.patch	3 May 2007 17:31:33 -0000
+@@ -34,6 +34,74 @@
+   fi
+   echo "$as_me:$LINENO: checking for $CC option to accept ANSI C" >&5
+ ***************
++*** 8547,8553 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 8547,8553 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
++*** 12266,12272 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 12266,12272 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
++*** 15436,15442 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 15436,15442 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
++*** 17804,17810 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 17804,17810 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
+ *** 26339,26347 ****
+   
+   echo "$as_me:$LINENO: checking for setsockopt" >&5
+--- libxmlsec/xmlsec1-1.2.6.patch	27 Mar 2007 09:36:38 -0000	1.19
++++ libxmlsec/xmlsec1-1.2.6.patch	3 May 2007 18:12:52 -0000
+@@ -158,6 +158,23 @@
+   	# is EXPORTS), use it as is; otherwise, prepend...
+   	archive_expsym_cmds='if test "x`$SED 1q $export_symbols`" = xEXPORTS; then
+ ***************
++*** 7778,7784 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 7779,7785 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
+ *** 9046,9052 ****
+         ;;
+       esac
+@@ -215,6 +232,23 @@
+         # built for inclusion in a dll (and should export symbols for example).
+         lt_prog_compiler_pic_CXX='-DDLL_EXPORT'
+ ***************
++*** 11497,11503 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 11498,11504 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
+ *** 13259,13269 ****
+         lt_prog_compiler_pic_F77='-m68020 -resident32 -malways-restore-a4'
+         ;;
+@@ -257,6 +291,23 @@
+   	# is EXPORTS), use it as is; otherwise, prepend...
+   	archive_expsym_cmds_F77='if test "x`$SED 1q $export_symbols`" = xEXPORTS; then
+ ***************
++*** 14667,14673 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 14668,14674 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
+ *** 15607,15617 ****
+         lt_prog_compiler_pic_GCJ='-m68020 -resident32 -malways-restore-a4'
+         ;;
+@@ -316,6 +367,23 @@
+   	# is EXPORTS), use it as is; otherwise, prepend...
+   	archive_expsym_cmds_GCJ='if test "x`$SED 1q $export_symbols`" = xEXPORTS; then
+ ***************
++*** 17035,17041 ****
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++--- 17036,17042 ----
++    ;;
++  
++  freebsd*)
++!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
++    version_type=freebsd-$objformat
++    case $version_type in
++      freebsd-elf*)
++***************
+ *** 24598,24604 ****
+   fi
+   
 --- moz/mozilla-source-1.7.5.patch.orig	Fri Apr 27 15:23:29 2007
 +++ moz/mozilla-source-1.7.5.patch	Fri Apr 27 15:32:07 2007
 @@ -266,6 +266,23 @@
@@ -540,31 +715,6 @@
  ***************
  *** 1 ****
  ! dummy
---- sablot/Sablot-0.52.patch	19 Jun 2006 17:27:11 -0000	1.20
-+++ sablot/Sablot-0.52.patch	5 Apr 2007 00:24:32 -0000
-@@ -632,3 +632,22 @@
-       };
-       return cnt;
-   }
-+*** misc/Sablot-0.52/tools/ltconfig	Fri Apr 13 05:50:59 2001
-+--- misc/build/Sablot-0.52/tools/ltconfig	Wed Apr  4 20:22:37 2007
-+***************
-+*** 1887,1893 ****
-+    ;;
-+    
-+  freebsd*)
-+!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
-+    version_type=freebsd-$objformat
-+    case "$version_type" in
-+      freebsd-elf*)
-+--- 1887,1893 ----
-+    ;;
-+    
-+  freebsd*)
-+!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
-+    version_type=freebsd-$objformat
-+    case "$version_type" in
-+      freebsd-elf*)
 --- sndfile/libsndfile-1.0.9.patch	3 Feb 2006 17:31:46 -0000	1.3
 +++ sndfile/libsndfile-1.0.9.patch	5 Apr 2007 00:31:26 -0000
 @@ -83,6 +83,23 @@
@@ -708,611 +858,3 @@
  diff -uprN misc/vigra1.4.0/include/vigra/array_vector.hxx misc/build/vigra1.4.0/include/vigra/array_vector.hxx
  --- misc/vigra1.4.0/include/vigra/array_vector.hxx	2005-12-21 05:53:30.000000000 +0100
  +++ misc/build/vigra1.4.0/include/vigra/array_vector.hxx	2006-08-31 12:08:15.172679000 +0200
-
-
-Index: libxmlsec/xmlsec1-1.2.6.patch
-===================================================================
-RCS file: /cvs/external/libxmlsec/xmlsec1-1.2.6.patch,v
-retrieving revision 1.19
-diff -u -r1.19 xmlsec1-1.2.6.patch
---- libxmlsec/xmlsec1-1.2.6.patch	27 Mar 2007 09:36:38 -0000	1.19
-+++ libxmlsec/xmlsec1-1.2.6.patch	28 Apr 2007 23:12:51 -0000
-@@ -1,5 +1,5 @@
--*** misc/xmlsec1-1.2.6/apps/Makefile.in	Thu Aug 26 08:00:30 2004
----- misc/build/xmlsec1-1.2.6/apps/Makefile.in	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/apps/Makefile.in	Thu Aug 26 15:00:30 2004
-+--- misc/build/xmlsec1-1.2.6/apps/Makefile.in	Sun Apr 29 08:10:05 2007
- ***************
- *** 370,376 ****
-   	$(CRYPTO_DEPS) \
-@@ -17,8 +17,8 @@
-   
-   .SUFFIXES:
-   .SUFFIXES: .c .lo .o .obj
--*** misc/xmlsec1-1.2.6/configure	Thu Aug 26 08:00:34 2004
----- misc/build/xmlsec1-1.2.6/configure	Tue Mar 27 11:26:19 2007
-+*** misc/xmlsec1-1.2.6/configure	Thu Aug 26 15:00:34 2004
-+--- misc/build/xmlsec1-1.2.6/configure	Sun Apr 29 08:10:06 2007
- ***************
- *** 463,469 ****
-   # include <unistd.h>
-@@ -158,6 +158,23 @@
-   	# is EXPORTS), use it as is; otherwise, prepend...
-   	archive_expsym_cmds='if test "x`$SED 1q $export_symbols`" = xEXPORTS; then
- ***************
-+*** 7778,7784 ****
-+    ;;
-+  
-+  freebsd*)
-+!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
-+    version_type=freebsd-$objformat
-+    case $version_type in
-+      freebsd-elf*)
-+--- 7779,7785 ----
-+    ;;
-+  
-+  freebsd*)
-+!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
-+    version_type=freebsd-$objformat
-+    case $version_type in
-+      freebsd-elf*)
-+***************
- *** 9046,9052 ****
-         ;;
-       esac
-@@ -215,6 +232,23 @@
-         # built for inclusion in a dll (and should export symbols for example).
-         lt_prog_compiler_pic_CXX='-DDLL_EXPORT'
- ***************
-+*** 11497,11503 ****
-+    ;;
-+  
-+  freebsd*)
-+!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
-+    version_type=freebsd-$objformat
-+    case $version_type in
-+      freebsd-elf*)
-+--- 11498,11504 ----
-+    ;;
-+  
-+  freebsd*)
-+!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
-+    version_type=freebsd-$objformat
-+    case $version_type in
-+      freebsd-elf*)
-+***************
- *** 13259,13269 ****
-         lt_prog_compiler_pic_F77='-m68020 -resident32 -malways-restore-a4'
-         ;;
-@@ -257,6 +291,23 @@
-   	# is EXPORTS), use it as is; otherwise, prepend...
-   	archive_expsym_cmds_F77='if test "x`$SED 1q $export_symbols`" = xEXPORTS; then
- ***************
-+*** 14667,14673 ****
-+    ;;
-+  
-+  freebsd*)
-+!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
-+    version_type=freebsd-$objformat
-+    case $version_type in
-+      freebsd-elf*)
-+--- 14668,14674 ----
-+    ;;
-+  
-+  freebsd*)
-+!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
-+    version_type=freebsd-$objformat
-+    case $version_type in
-+      freebsd-elf*)
-+***************
- *** 15607,15617 ****
-         lt_prog_compiler_pic_GCJ='-m68020 -resident32 -malways-restore-a4'
-         ;;
-@@ -316,6 +367,23 @@
-   	# is EXPORTS), use it as is; otherwise, prepend...
-   	archive_expsym_cmds_GCJ='if test "x`$SED 1q $export_symbols`" = xEXPORTS; then
- ***************
-+*** 17035,17041 ****
-+    ;;
-+  
-+  freebsd*)
-+!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
-+    version_type=freebsd-$objformat
-+    case $version_type in
-+      freebsd-elf*)
-+--- 17036,17042 ----
-+    ;;
-+  
-+  freebsd*)
-+!   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo elf`
-+    version_type=freebsd-$objformat
-+    case $version_type in
-+      freebsd-elf*)
-+***************
- *** 24598,24604 ****
-   fi
-   
-@@ -2379,8 +2447,8 @@
-   s,@XMLSEC_NO_SHA1_TRUE@,$XMLSEC_NO_SHA1_TRUE,;t t
-   s,@XMLSEC_NO_SHA1_FALSE@,$XMLSEC_NO_SHA1_FALSE,;t t
-   s,@XMLSEC_NO_SHA1@,$XMLSEC_NO_SHA1,;t t
--*** misc/xmlsec1-1.2.6/configure.in	Thu Aug 26 04:49:24 2004
----- misc/build/xmlsec1-1.2.6/configure.in	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/configure.in	Thu Aug 26 11:49:24 2004
-+--- misc/build/xmlsec1-1.2.6/configure.in	Sun Apr 29 08:10:06 2007
- ***************
- *** 143,149 ****
-   dnl find libxml
-@@ -2496,8 +2564,8 @@
-           	dnl do not add -L/usr/lib because compiler does it anyway
-       		if test "z$dir" = "z/usr/lib" ; then
-           	    NSS_LIBS="$NSS_LIBS_LIST"
--*** misc/xmlsec1-1.2.6/include/xmlsec/mscrypto/Makefile.in	Tue Mar 27 11:34:32 2007
----- misc/build/xmlsec1-1.2.6/include/xmlsec/mscrypto/Makefile.in	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/include/xmlsec/mscrypto/Makefile.in	Sun Apr 29 08:10:41 2007
-+--- misc/build/xmlsec1-1.2.6/include/xmlsec/mscrypto/Makefile.in	Sun Apr 29 08:10:06 2007
- ***************
- *** 1 ****
- ! dummy
-@@ -2560,8 +2628,8 @@
- ! # Tell versions [3.59,3.63) of GNU make to not export all variables.
- ! # Otherwise a system limit (for SysV at least) may be exceeded.
- ! .NOEXPORT:
--*** misc/xmlsec1-1.2.6/include/xmlsec/mscrypto/akmngr.h	Tue Mar 27 11:34:32 2007
----- misc/build/xmlsec1-1.2.6/include/xmlsec/mscrypto/akmngr.h	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/include/xmlsec/mscrypto/akmngr.h	Sun Apr 29 08:10:41 2007
-+--- misc/build/xmlsec1-1.2.6/include/xmlsec/mscrypto/akmngr.h	Sun Apr 29 08:10:06 2007
- ***************
- *** 1 ****
- ! dummy
-@@ -2637,8 +2705,8 @@
- ! #endif /* __XMLSEC_MSCRYPTO_AKMNGR_H__ */
- ! 
- ! 
--*** misc/xmlsec1-1.2.6/include/xmlsec/mscrypto/x509.h	Fri Sep 26 08:12:46 2003
----- misc/build/xmlsec1-1.2.6/include/xmlsec/mscrypto/x509.h	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/include/xmlsec/mscrypto/x509.h	Fri Sep 26 15:12:46 2003
-+--- misc/build/xmlsec1-1.2.6/include/xmlsec/mscrypto/x509.h	Sun Apr 29 08:10:06 2007
- ***************
- *** 77,82 ****
- --- 77,97 ----
-@@ -2663,8 +2731,8 @@
-   
-   #endif /* XMLSEC_NO_X509 */
-   
--*** misc/xmlsec1-1.2.6/include/xmlsec/nss/Makefile.am	Wed Jul 30 04:46:35 2003
----- misc/build/xmlsec1-1.2.6/include/xmlsec/nss/Makefile.am	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/include/xmlsec/nss/Makefile.am	Wed Jul 30 11:46:35 2003
-+--- misc/build/xmlsec1-1.2.6/include/xmlsec/nss/Makefile.am	Sun Apr 29 08:10:06 2007
- ***************
- *** 3,8 ****
- --- 3,9 ----
-@@ -2686,8 +2754,8 @@
-   $(NULL)
-   
-   install-exec-hook:
--*** misc/xmlsec1-1.2.6/include/xmlsec/nss/Makefile.in	Thu Aug 26 08:00:31 2004
----- misc/build/xmlsec1-1.2.6/include/xmlsec/nss/Makefile.in	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/include/xmlsec/nss/Makefile.in	Thu Aug 26 15:00:31 2004
-+--- misc/build/xmlsec1-1.2.6/include/xmlsec/nss/Makefile.in	Sun Apr 29 08:10:06 2007
- ***************
- *** 273,278 ****
- --- 273,279 ----
-@@ -2709,8 +2777,8 @@
-   $(NULL)
-   
-   all: all-am
--*** misc/xmlsec1-1.2.6/include/xmlsec/nss/akmngr.h	Tue Mar 27 11:34:32 2007
----- misc/build/xmlsec1-1.2.6/include/xmlsec/nss/akmngr.h	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/include/xmlsec/nss/akmngr.h	Sun Apr 29 08:10:41 2007
-+--- misc/build/xmlsec1-1.2.6/include/xmlsec/nss/akmngr.h	Sun Apr 29 08:10:06 2007
- ***************
- *** 1 ****
- ! dummy
-@@ -2771,8 +2839,8 @@
- ! #endif /* __XMLSEC_NSS_AKMNGR_H__ */
- ! 
- ! 
--*** misc/xmlsec1-1.2.6/include/xmlsec/nss/app.h	Mon Jan 12 22:06:14 2004
----- misc/build/xmlsec1-1.2.6/include/xmlsec/nss/app.h	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/include/xmlsec/nss/app.h	Tue Jan 13 06:06:14 2004
-+--- misc/build/xmlsec1-1.2.6/include/xmlsec/nss/app.h	Sun Apr 29 08:10:06 2007
- ***************
- *** 22,27 ****
- --- 22,30 ----
-@@ -2796,8 +2864,8 @@
-   XMLSEC_CRYPTO_EXPORT int 		xmlSecNssAppDefaultKeysMngrLoad	(xmlSecKeysMngrPtr mngr,
-   									 const char* uri);
-   XMLSEC_CRYPTO_EXPORT int 		xmlSecNssAppDefaultKeysMngrSave	(xmlSecKeysMngrPtr mngr,
--*** misc/xmlsec1-1.2.6/include/xmlsec/nss/ciphers.h	Tue Mar 27 11:34:32 2007
----- misc/build/xmlsec1-1.2.6/include/xmlsec/nss/ciphers.h	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/include/xmlsec/nss/ciphers.h	Sun Apr 29 08:10:41 2007
-+--- misc/build/xmlsec1-1.2.6/include/xmlsec/nss/ciphers.h	Sun Apr 29 08:10:06 2007
- ***************
- *** 1 ****
- ! dummy
-@@ -2837,8 +2905,8 @@
- ! #endif /* __XMLSEC_NSS_CIPHERS_H__ */
- ! 
- ! 
--*** misc/xmlsec1-1.2.6/include/xmlsec/nss/crypto.h	Mon Jan 12 22:06:14 2004
----- misc/build/xmlsec1-1.2.6/include/xmlsec/nss/crypto.h	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/include/xmlsec/nss/crypto.h	Tue Jan 13 06:06:14 2004
-+--- misc/build/xmlsec1-1.2.6/include/xmlsec/nss/crypto.h	Sun Apr 29 08:10:06 2007
- ***************
- *** 264,269 ****
- --- 264,278 ----
-@@ -2857,8 +2925,8 @@
-   #endif /* XMLSEC_NO_RSA */
-   
-   
--*** misc/xmlsec1-1.2.6/include/xmlsec/nss/keysstore.h	Wed Jul 30 04:46:35 2003
----- misc/build/xmlsec1-1.2.6/include/xmlsec/nss/keysstore.h	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/include/xmlsec/nss/keysstore.h	Wed Jul 30 11:46:35 2003
-+--- misc/build/xmlsec1-1.2.6/include/xmlsec/nss/keysstore.h	Sun Apr 29 08:10:06 2007
- ***************
- *** 16,21 ****
- --- 16,23 ----
-@@ -2881,8 +2949,8 @@
-   XMLSEC_CRYPTO_EXPORT int		xmlSecNssKeysStoreLoad 	(xmlSecKeyStorePtr store,
-   								 const char *uri,
-   								 xmlSecKeysMngrPtr keysMngr);
--*** misc/xmlsec1-1.2.6/include/xmlsec/nss/tokens.h	Tue Mar 27 11:34:32 2007
----- misc/build/xmlsec1-1.2.6/include/xmlsec/nss/tokens.h	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/include/xmlsec/nss/tokens.h	Sun Apr 29 08:10:41 2007
-+--- misc/build/xmlsec1-1.2.6/include/xmlsec/nss/tokens.h	Sun Apr 29 08:10:06 2007
- ***************
- *** 1 ****
- ! dummy
-@@ -3069,8 +3137,8 @@
- ! 
- ! #endif	/* __XMLSEC_NSS_TOKENS_H__ */
- ! 
--*** misc/xmlsec1-1.2.6/libxml2-config	Tue Mar 27 11:34:32 2007
----- misc/build/xmlsec1-1.2.6/libxml2-config	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/libxml2-config	Sun Apr 29 08:10:41 2007
-+--- misc/build/xmlsec1-1.2.6/libxml2-config	Sun Apr 29 08:10:06 2007
- ***************
- *** 1 ****
- ! dummy
-@@ -3123,8 +3191,8 @@
- ! done
- ! 
- ! exit 0
--*** misc/xmlsec1-1.2.6/ltmain.sh	Thu Aug 26 08:00:15 2004
----- misc/build/xmlsec1-1.2.6/ltmain.sh	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/ltmain.sh	Thu Aug 26 15:00:15 2004
-+--- misc/build/xmlsec1-1.2.6/ltmain.sh	Sun Apr 29 08:10:06 2007
- ***************
- *** 1661,1666 ****
- --- 1661,1671 ----
-@@ -3199,8 +3267,8 @@
-   	      fi
-   	    elif test -n "$runpath_var"; then
-   	      case "$perm_rpath " in
--*** misc/xmlsec1-1.2.6/src/bn.c	Mon Jun 21 20:33:27 2004
----- misc/build/xmlsec1-1.2.6/src/bn.c	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/src/bn.c	Tue Jun 22 03:33:27 2004
-+--- misc/build/xmlsec1-1.2.6/src/bn.c	Sun Apr 29 08:10:06 2007
- ***************
- *** 170,177 ****
-    */
-@@ -3766,8 +3834,8 @@
-       }
-   
-       return(0);
--*** misc/xmlsec1-1.2.6/src/dl.c	Wed Oct 29 16:57:20 2003
----- misc/build/xmlsec1-1.2.6/src/dl.c	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/src/dl.c	Thu Oct 30 00:57:20 2003
-+--- misc/build/xmlsec1-1.2.6/src/dl.c	Sun Apr 29 08:10:06 2007
- ***************
- *** 329,334 ****
- --- 329,338 ----
-@@ -3793,8 +3861,8 @@
-   }
-   
- --- 354,359 ----
--*** misc/xmlsec1-1.2.6/src/mscrypto/Makefile.in	Tue Mar 27 11:34:32 2007
----- misc/build/xmlsec1-1.2.6/src/mscrypto/Makefile.in	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/src/mscrypto/Makefile.in	Sun Apr 29 08:10:41 2007
-+--- misc/build/xmlsec1-1.2.6/src/mscrypto/Makefile.in	Sun Apr 29 08:10:06 2007
- ***************
- *** 1 ****
- ! dummy
-@@ -3977,8 +4045,8 @@
- ! # Tell versions [3.59,3.63) of GNU make to not export all variables.
- ! # Otherwise a system limit (for SysV at least) may be exceeded.
- ! .NOEXPORT:
--*** misc/xmlsec1-1.2.6/src/mscrypto/akmngr.c	Tue Mar 27 11:34:32 2007
----- misc/build/xmlsec1-1.2.6/src/mscrypto/akmngr.c	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/src/mscrypto/akmngr.c	Sun Apr 29 08:10:41 2007
-+--- misc/build/xmlsec1-1.2.6/src/mscrypto/akmngr.c	Sun Apr 29 08:10:06 2007
- ***************
- *** 1 ****
- ! dummy
-@@ -4218,8 +4286,8 @@
- ! 	return( 0 ) ;
- ! }
- ! 
--*** misc/xmlsec1-1.2.6/src/mscrypto/certkeys.c	Wed Mar 17 06:06:43 2004
----- misc/build/xmlsec1-1.2.6/src/mscrypto/certkeys.c	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/src/mscrypto/certkeys.c	Wed Mar 17 14:06:43 2004
-+--- misc/build/xmlsec1-1.2.6/src/mscrypto/certkeys.c	Sun Apr 29 08:10:06 2007
- ***************
- *** 41,46 ****
- --- 41,47 ----
-@@ -4896,8 +4964,8 @@
-   }
-   
-   static xmlSecKeyDataType
--*** misc/xmlsec1-1.2.6/src/mscrypto/ciphers.c	Fri Sep 26 08:12:51 2003
----- misc/build/xmlsec1-1.2.6/src/mscrypto/ciphers.c	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/src/mscrypto/ciphers.c	Fri Sep 26 15:12:51 2003
-+--- misc/build/xmlsec1-1.2.6/src/mscrypto/ciphers.c	Sun Apr 29 08:10:06 2007
- ***************
- *** 785,791 ****
-    * AES CBC cipher transforms
-@@ -4966,8 +5034,8 @@
-       /* klass/object sizes */
-       sizeof(xmlSecTransformKlass),	/* size_t klassSize */
-       xmlSecMSCryptoBlockCipherSize,	/* size_t objSize */
--*** misc/xmlsec1-1.2.6/src/mscrypto/crypto.c	Wed Nov 12 03:38:51 2003
----- misc/build/xmlsec1-1.2.6/src/mscrypto/crypto.c	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/src/mscrypto/crypto.c	Wed Nov 12 11:38:51 2003
-+--- misc/build/xmlsec1-1.2.6/src/mscrypto/crypto.c	Sun Apr 29 08:10:06 2007
- ***************
- *** 330,342 ****
-   BYTE* 
-@@ -4999,8 +5067,8 @@
-   	return(NULL);
-       }
-   	
--*** misc/xmlsec1-1.2.6/src/mscrypto/digests.c	Tue Sep 30 04:09:51 2003
----- misc/build/xmlsec1-1.2.6/src/mscrypto/digests.c	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/src/mscrypto/digests.c	Tue Sep 30 11:09:51 2003
-+--- misc/build/xmlsec1-1.2.6/src/mscrypto/digests.c	Sun Apr 29 08:10:06 2007
- ***************
- *** 96,107 ****
-   
-@@ -5031,8 +5099,8 @@
-       }
-   
-       return(0);
--*** misc/xmlsec1-1.2.6/src/mscrypto/kt_rsa.c	Fri Sep 26 22:29:25 2003
----- misc/build/xmlsec1-1.2.6/src/mscrypto/kt_rsa.c	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/src/mscrypto/kt_rsa.c	Sat Sep 27 05:29:25 2003
-+--- misc/build/xmlsec1-1.2.6/src/mscrypto/kt_rsa.c	Sun Apr 29 08:10:06 2007
- ***************
- *** 66,72 ****
-   static int  	xmlSecMSCryptoRsaPkcs1Process			(xmlSecTransformPtr transform, 
-@@ -5050,8 +5118,8 @@
-       /* klass/object sizes */
-       sizeof(xmlSecTransformKlass),		/* xmlSecSize klassSize */
-       xmlSecMSCryptoRsaPkcs1Size,			/* xmlSecSize objSize */
--*** misc/xmlsec1-1.2.6/src/mscrypto/signatures.c	Fri Sep 26 22:29:25 2003
----- misc/build/xmlsec1-1.2.6/src/mscrypto/signatures.c	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/src/mscrypto/signatures.c	Sat Sep 27 05:29:25 2003
-+--- misc/build/xmlsec1-1.2.6/src/mscrypto/signatures.c	Sun Apr 29 08:10:06 2007
- ***************
- *** 483,489 ****
-    * RSA-SHA1 signature transform
-@@ -5086,8 +5154,8 @@
-       /* klass/object sizes */
-       sizeof(xmlSecTransformKlass),		/* xmlSecSize klassSize */
-       xmlSecMSCryptoSignatureSize,	        /* xmlSecSize objSize */
--*** misc/xmlsec1-1.2.6/src/mscrypto/symkeys.c	Fri Sep 26 02:58:13 2003
----- misc/build/xmlsec1-1.2.6/src/mscrypto/symkeys.c	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/src/mscrypto/symkeys.c	Fri Sep 26 09:58:13 2003
-+--- misc/build/xmlsec1-1.2.6/src/mscrypto/symkeys.c	Sun Apr 29 08:10:06 2007
- ***************
- *** 72,78 ****
-    * <xmlsec:AESKeyValue> processing
-@@ -5122,8 +5190,8 @@
-       sizeof(xmlSecKeyDataKlass),
-       xmlSecKeyDataBinarySize,
-   
--*** misc/xmlsec1-1.2.6/src/mscrypto/x509.c	Fri Sep 26 02:58:13 2003
----- misc/build/xmlsec1-1.2.6/src/mscrypto/x509.c	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/src/mscrypto/x509.c	Fri Sep 26 09:58:13 2003
-+--- misc/build/xmlsec1-1.2.6/src/mscrypto/x509.c	Sun Apr 29 08:10:06 2007
- ***************
- *** 240,246 ****
-   
-@@ -5369,8 +5437,8 @@
-       sizeof(xmlSecKeyDataKlass),
-       sizeof(xmlSecKeyData),
-   
--*** misc/xmlsec1-1.2.6/src/mscrypto/x509vfy.c	Sat Sep 27 05:12:22 2003
----- misc/build/xmlsec1-1.2.6/src/mscrypto/x509vfy.c	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/src/mscrypto/x509vfy.c	Sat Sep 27 12:12:22 2003
-+--- misc/build/xmlsec1-1.2.6/src/mscrypto/x509vfy.c	Sun Apr 29 08:10:06 2007
- ***************
- *** 70,76 ****
-   static xmlSecByte * 	xmlSecMSCryptoX509NameRead	(xmlSecByte *str, 
-@@ -6115,8 +6183,8 @@
-   	    }
-   	}
-   	xmlFree(cName);
--*** misc/xmlsec1-1.2.6/src/nss/Makefile.am	Tue Sep 16 11:43:03 2003
----- misc/build/xmlsec1-1.2.6/src/nss/Makefile.am	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/src/nss/Makefile.am	Tue Sep 16 18:43:03 2003
-+--- misc/build/xmlsec1-1.2.6/src/nss/Makefile.am	Sun Apr 29 08:10:06 2007
- ***************
- *** 20,40 ****
-   	$(NULL)
-@@ -6163,8 +6231,8 @@
-   	$(NULL)
-   
-   libxmlsec1_nss_la_LIBADD = \
--*** misc/xmlsec1-1.2.6/src/nss/Makefile.in	Thu Aug 26 08:00:32 2004
----- misc/build/xmlsec1-1.2.6/src/nss/Makefile.in	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/src/nss/Makefile.in	Thu Aug 26 15:00:32 2004
-+--- misc/build/xmlsec1-1.2.6/src/nss/Makefile.in	Sun Apr 29 08:10:06 2007
- ***************
- *** 54,62 ****
-   	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-@@ -6288,8 +6356,8 @@
-   @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pkikeys.Plo@am__quote@
-   @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/signatures.Plo@am__quote@
-   @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/symkeys.Plo@am__quote@
--*** misc/xmlsec1-1.2.6/src/nss/akmngr.c	Tue Mar 27 11:34:32 2007
----- misc/build/xmlsec1-1.2.6/src/nss/akmngr.c	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/src/nss/akmngr.c	Sun Apr 29 08:10:41 2007
-+--- misc/build/xmlsec1-1.2.6/src/nss/akmngr.c	Sun Apr 29 08:10:06 2007
- ***************
- *** 1 ****
- ! dummy
-@@ -6678,8 +6746,8 @@
- ! 	return(0) ;
- ! }
- ! 
--*** misc/xmlsec1-1.2.6/src/nss/ciphers.c	Fri Sep 26 02:58:15 2003
----- misc/build/xmlsec1-1.2.6/src/nss/ciphers.c	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/src/nss/ciphers.c	Fri Sep 26 09:58:15 2003
-+--- misc/build/xmlsec1-1.2.6/src/nss/ciphers.c	Sun Apr 29 08:10:06 2007
- ***************
- *** 1,838 ****
- ! /** 
-@@ -8472,8 +8540,8 @@
-   }
- ! 
-   
--*** misc/xmlsec1-1.2.6/src/nss/crypto.c	Wed Oct 29 16:57:25 2003
----- misc/build/xmlsec1-1.2.6/src/nss/crypto.c	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/src/nss/crypto.c	Thu Oct 30 00:57:25 2003
-+--- misc/build/xmlsec1-1.2.6/src/nss/crypto.c	Sun Apr 29 08:10:06 2007
- ***************
- *** 130,135 ****
- --- 130,136 ----
-@@ -8526,8 +8594,8 @@
-   
-       return(gXmlSecNssFunctions);
-   }
--*** misc/xmlsec1-1.2.6/src/nss/digests.c	Fri Sep 26 02:58:15 2003
----- misc/build/xmlsec1-1.2.6/src/nss/digests.c	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/src/nss/digests.c	Fri Sep 26 09:58:15 2003
-+--- misc/build/xmlsec1-1.2.6/src/nss/digests.c	Sun Apr 29 08:10:06 2007
- ***************
- *** 21,27 ****
-   #include <xmlsec/transforms.h>
-@@ -8623,8 +8691,8 @@
-   		return(-1);
-   	    }
-   	    xmlSecAssert2(ctx->dgstSize > 0, -1);
--*** misc/xmlsec1-1.2.6/src/nss/hmac.c	Fri Sep 26 02:58:15 2003
----- misc/build/xmlsec1-1.2.6/src/nss/hmac.c	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/src/nss/hmac.c	Fri Sep 26 09:58:15 2003
-+--- misc/build/xmlsec1-1.2.6/src/nss/hmac.c	Sun Apr 29 08:10:06 2007
- ***************
- *** 23,30 ****
-   #include <xmlsec/transforms.h>
-@@ -8758,8 +8826,8 @@
-   		return(-1);
-   	    }
-   	    xmlSecAssert2(dgstSize > 0, -1);
--*** misc/xmlsec1-1.2.6/src/nss/keysstore.c	Fri Sep 26 02:58:15 2003
----- misc/build/xmlsec1-1.2.6/src/nss/keysstore.c	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/src/nss/keysstore.c	Fri Sep 26 09:58:15 2003
-+--- misc/build/xmlsec1-1.2.6/src/nss/keysstore.c	Sun Apr 29 08:10:06 2007
- ***************
- *** 1,119 ****
-   /** 
-@@ -9826,8 +9894,8 @@
- !     return(0);
-   }
- + 
--*** misc/xmlsec1-1.2.6/src/nss/keytrans.c	Tue Mar 27 11:34:32 2007
----- misc/build/xmlsec1-1.2.6/src/nss/keytrans.c	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/src/nss/keytrans.c	Sun Apr 29 08:10:41 2007
-+--- misc/build/xmlsec1-1.2.6/src/nss/keytrans.c	Sun Apr 29 08:10:06 2007
- ***************
- *** 1 ****
- ! dummy
-@@ -10576,8 +10644,8 @@
- ! 
- ! #endif /* XMLSEC_NO_RSA */
- ! 
--*** misc/xmlsec1-1.2.6/src/nss/keywrapers.c	Tue Mar 27 11:34:32 2007
----- misc/build/xmlsec1-1.2.6/src/nss/keywrapers.c	Tue Mar 27 11:21:29 2007
-+*** misc/xmlsec1-1.2.6/src/nss/keywrapers.c	Sun Apr 29 08:10:41 2007
-+--- misc/build/xmlsec1-1.2.6/src/nss/keywrapers.c	Sun Apr 29 08:10:07 2007
- ***************
- *** 1 ****
- ! dummy
-@@ -11779,8 +11847,8 @@
- ! 
- ! #endif /* XMLSEC_NO_DES */
- ! 
--*** misc/xmlsec1-1.2.6/src/nss/pkikeys.c	Wed Mar 17 06:06:45 2004
----- misc/build/xmlsec1-1.2.6/src/nss/pkikeys.c	Tue Mar 27 11:21:30 2007
-+*** misc/xmlsec1-1.2.6/src/nss/pkikeys.c	Wed Mar 17 14:06:45 2004
-+--- misc/build/xmlsec1-1.2.6/src/nss/pkikeys.c	Sun Apr 29 08:10:07 2007
- ***************
- *** 5,10 ****
- --- 5,11 ----
-@@ -12579,8 +12647,8 @@
-   
-       return(8 * SECKEY_PublicKeyStrength(ctx->pubkey));
-   }
--*** misc/xmlsec1-1.2.6/src/nss/signatures.c	Fri Sep 26 02:58:15 2003
----- misc/build/xmlsec1-1.2.6/src/nss/signatures.c	Tue Mar 27 11:21:30 2007
-+*** misc/xmlsec1-1.2.6/src/nss/signatures.c	Fri Sep 26 09:58:15 2003
-+--- misc/build/xmlsec1-1.2.6/src/nss/signatures.c	Sun Apr 29 08:10:07 2007
- ***************
- *** 199,205 ****
-   			xmlSecErrorsSafeString(xmlSecTransformGetName(transform)),
-@@ -12717,8 +12785,8 @@
-   		return(-1);
-   	    }
-   
--*** misc/xmlsec1-1.2.6/src/nss/symkeys.c	Mon Jul 21 05:12:52 2003
----- misc/build/xmlsec1-1.2.6/src/nss/symkeys.c	Tue Mar 27 11:21:30 2007
-+*** misc/xmlsec1-1.2.6/src/nss/symkeys.c	Mon Jul 21 12:12:52 2003
-+--- misc/build/xmlsec1-1.2.6/src/nss/symkeys.c	Sun Apr 29 08:10:07 2007
- ***************
- *** 15,192 ****
-   #include <stdio.h>
-@@ -14049,8 +14117,8 @@
-    *
-    * Sets the value of HMAC key data.
-    *
--*** misc/xmlsec1-1.2.6/src/nss/tokens.c	Tue Mar 27 11:34:32 2007
----- misc/build/xmlsec1-1.2.6/src/nss/tokens.c	Tue Mar 27 11:21:30 2007
-+*** misc/xmlsec1-1.2.6/src/nss/tokens.c	Sun Apr 29 08:10:41 2007
-+--- misc/build/xmlsec1-1.2.6/src/nss/tokens.c	Sun Apr 29 08:10:07 2007
- ***************
- *** 1 ****
- ! dummy
-@@ -14599,8 +14667,8 @@
- ! 	return(0);
- ! }
- ! 
--*** misc/xmlsec1-1.2.6/src/nss/x509.c	Fri Sep 26 05:53:09 2003
----- misc/build/xmlsec1-1.2.6/src/nss/x509.c	Tue Mar 27 11:21:30 2007
-+*** misc/xmlsec1-1.2.6/src/nss/x509.c	Fri Sep 26 12:53:09 2003
-+--- misc/build/xmlsec1-1.2.6/src/nss/x509.c	Sun Apr 29 08:10:07 2007
- ***************
- *** 34,40 ****
-   #include <xmlsec/keys.h>
-@@ -15708,8 +15776,8 @@
-   static void 
-   xmlSecNssX509CertDebugDump(CERTCertificate* cert, FILE* output) {
- --- 1700,1705 ----
--*** misc/xmlsec1-1.2.6/src/nss/x509vfy.c	Fri Sep 26 02:58:15 2003
----- misc/build/xmlsec1-1.2.6/src/nss/x509vfy.c	Tue Mar 27 11:21:30 2007
-+*** misc/xmlsec1-1.2.6/src/nss/x509vfy.c	Fri Sep 26 09:58:15 2003
-+--- misc/build/xmlsec1-1.2.6/src/nss/x509vfy.c	Sun Apr 29 08:10:07 2007
- ***************
- *** 30,35 ****
- --- 30,36 ----
-@@ -16851,8 +16919,8 @@
-   
- + #endif /* XMLSEC_NO_X509 */
-   
--*** misc/xmlsec1-1.2.6/win32/Makefile.msvc	Wed Jun  9 16:35:12 2004
----- misc/build/xmlsec1-1.2.6/win32/Makefile.msvc	Tue Mar 27 11:21:30 2007
-+*** misc/xmlsec1-1.2.6/win32/Makefile.msvc	Wed Jun  9 23:35:12 2004
-+--- misc/build/xmlsec1-1.2.6/win32/Makefile.msvc	Sun Apr 29 08:10:07 2007
- ***************
- *** 223,228 ****
- --- 223,232 ----

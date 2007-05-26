@@ -1,0 +1,45 @@
+g++42  -fmessage-length=0 -c -Os -fno-strict-aliasing   -ftemplate-depth-128 -I.  -I../../../unxfbsdi.pro/inc/chcdialogs -I../inc -I../../../source/inc -I../../../inc/pch -I../../../inc/chart2 -I../../../inc -I../../../unx/inc -I../../../unxfbsdi.pro/inc -I. -I/work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/solver/680/unxfbsdi.pro/inc/stl -I/work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/solver/680/unxfbsdi.pro/inc/external -I/work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/solver/680/unxfbsdi.pro/inc -I/work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/solenv/unxfbsdi/inc -I/work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/solenv/inc -I/work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/res -I/work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/solver/680/unxfbsdi.pro/inc/stl -I/work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/solenv/inc/Xp31 -I/usr/local/diablo-jdk1.5.0/include -I/usr/local/diablo-jdk1.5.0/include/freebsd -I/usr/local/diablo-jdk1.5.0/include/bsd -I/usr/local/diablo-jdk1.5.0/include/linux -I/usr/local/diablo-jdk1.5.0/include/native_threads/include -I/usr/local/include     -I/work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/solver/680/unxfbsdi.pro/inc/offuh -I. -I../../../res -I. -pipe -mtune=pentiumpro -fvisibility-inlines-hidden -g1 -Wall -Wextra -Wendif-labels -Wshadow -Wno-ctor-dtor-privacy     -Wno-non-virtual-dtor   -fpic -DFREEBSD -DUNX -DVCL -DGCC -DC341 -DINTEL -DCVER=C341 -DX86  -D_PTHREADS -D_REENTRANT -DNEW_SOLAR -D_USE_NAMESPACE=1 -DSTLPORT_VERSION=450 -DHAVE_GCC_VISIBILITY_FEATURE -D__DMAKE -DUNIX -DCPPU_ENV=gcc3 -DGXX_INCLUDE_PATH=/usr/local/lib/gcc-4.2.0/include/c++ -DSUPD=680 -DPRODUCT -DNDEBUG -DPRODUCT_FULL -DOSL_DEBUG_LEVEL=0 -DOPTIMIZE -DCUI -DSOLAR_JAVA -DSRC680=SRC680   -DSHAREDLIB -D_DLL_   -fexceptions -fno-enforce-eh-specs -DEXCEPTIONS_ON  -o ../../../unxfbsdi.pro/slo/DataBrowser.o /work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/chart2/source/controller/dialogs/DataBrowser.cxx 
+In file included from /work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/solver/680/unxfbsdi.pro/inc/cppuhelper/implbase1.hxx:42,
+                 from /work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/solver/680/unxfbsdi.pro/inc/svtools/transfer.hxx:54,
+                 from /work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/solver/680/unxfbsdi.pro/inc/svtools/brwbox.hxx:56,
+                 from /work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/solver/680/unxfbsdi.pro/inc/svtools/editbrowsebox.hxx:69,
+                 from /work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/chart2/source/controller/dialogs/DataBrowser.hxx:40,
+                 from /work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/chart2/source/controller/dialogs/DataBrowser.cxx:51:
+/work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/solver/680/unxfbsdi.pro/inc/rtl/instance.hxx: In static member function 'static Inst*<unnamed>::rtl_Instance<Inst, InstCtor, Guard, GuardCtor, Data, DataCtor>::create(InstCtor, GuardCtor)':
+/work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/solver/680/unxfbsdi.pro/inc/rtl/instance.hxx:305: warning: empty body in an else-statement
+/work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/solver/680/unxfbsdi.pro/inc/rtl/instance.hxx: In static member function 'static Inst*<unnamed>::rtl_Instance<Inst, InstCtor, Guard, GuardCtor, Data, DataCtor>::create(InstCtor, GuardCtor, DataCtor)':
+/work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/solver/680/unxfbsdi.pro/inc/rtl/instance.hxx:329: warning: empty body in an else-statement
+In file included from /work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/chart2/source/controller/dialogs/DataBrowser.cxx:52:
+/work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/chart2/source/controller/dialogs/DataBrowserModel.hxx: At global scope:
+/work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/chart2/source/controller/dialogs/DataBrowserModel.hxx:110: error: extra qualification 'chart::DataBrowserModel::' on member 'setCellAny'
+/work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/chart2/source/controller/dialogs/DataBrowser.cxx: In member function 'bool chart::DataBrowser::MaySwapColumns() const':
+/work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/chart2/source/controller/dialogs/DataBrowser.cxx:574: warning: declaration of 'bHasFocus' shadows a member of 'this'
+/work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/chart2/source/controller/dialogs/DataBrowser.cxx: In member function 'void chart::DataBrowser::RenewTable()':
+/work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/chart2/source/controller/dialogs/DataBrowser.cxx:634: warning: declaration of 'nRowCount' shadows a member of 'this'
+dmake:  Error code 1, while making '../../../unxfbsdi.pro/slo/DataBrowser.obj'
+---* tg_merge.mk *---
+
+ERROR: Error 65280 occurred while making /work/ports/editors/openoffice.org-2-devel/work/SRC680_m213/chart2/source/controller/dialogs
+dmake:  Error code 1, while making 'build_instsetoo_native'
+---*  *---
+*** Error code 255
+
+Stop in /work/ports/editors/openoffice.org-2-devel.
+
+Index: chart2/source/controller/dialogs/DataBrowserModel.hxx
+===================================================================
+RCS file: /cvs/graphics/chart2/source/controller/dialogs/DataBrowserModel.hxx,v
+retrieving revision 1.2
+diff -u -r1.2 DataBrowserModel.hxx
+--- chart2/source/controller/dialogs/DataBrowserModel.hxx	22 May 2007 17:27:59 -0000	1.2
++++ chart2/source/controller/dialogs/DataBrowserModel.hxx	26 May 2007 10:47:37 -0000
+@@ -106,8 +106,7 @@
+     bool setCellNumber( sal_Int32 nAtColumn, sal_Int32 nAtRow, double fValue );
+     /// returns </TRUE> if the text could successfully be set at the given position
+     bool setCellText( sal_Int32 nAtColumn, sal_Int32 nAtRow, const ::rtl::OUString & rText );
+-    bool DataBrowserModel::setCellAny( sal_Int32 nAtColumn, sal_Int32 nAtRow,
+-                                       const ::com::sun::star::uno::Any & aValue );
++    bool setCellAny( sal_Int32 nAtColumn, sal_Int32 nAtRow, const ::com::sun::star::uno::Any & aValue );
+ 
+     sal_Int32 getColumnCount() const;
+     sal_Int32 getMaxRowCount() const;
