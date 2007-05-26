@@ -28,7 +28,6 @@ USE_GL=		yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_GNOME=	gtk20
-USE_GSTREAMER80=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libpng=sys\
 		--with-libjpeg=sys\
@@ -38,7 +37,6 @@ CONFIGURE_ARGS=	--with-libpng=sys\
 		--with-opengl\
 		--with-mspack\
 		--with-gtk\
-		--enable-mediactrl\
 		--disable-backtrace
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			  -I${X11BASE}/include" \
@@ -53,7 +51,7 @@ PLIST=		${.CURDIR}/pkg-plist
 WXGTK_FLAVOR?=	gtk2
 
 .if ${WXGTK_FLAVOR} == "gtk2"
-PORTREVISION=	3
+PORTREVISION=	4
 CONFLICTS=	wxgtk2-contrib-devel-2.5.2*
 .endif
 
