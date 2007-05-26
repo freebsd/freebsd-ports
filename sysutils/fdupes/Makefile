@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fdupes
-DISTVERSION=	1.50-PR1
+DISTVERSION=	1.50-PR2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://netdial.caribe.net/~adrian2/programs/ \
 		http://critical.ch/distfiles/ \
