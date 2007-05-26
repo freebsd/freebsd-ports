@@ -47,7 +47,7 @@ RESTRICTED=	"Not sure if we can redistribute this."
 NO_PACKAGE=	${RESTRICTED}
 
 VMWARE_VER=	6.0.0
-BUILD_VER=	44426
+BUILD_VER=	45731
 
 .include <bsd.port.pre.mk>
 
@@ -70,7 +70,7 @@ BITS?=		32
 .else # ${ARCH} == amd64
 BITS?=		64
 .endif
-.if ((${OSVERSION} >= 500000) && (${OSVERSION} < 530000)) || (${ARCH} == i386)
+.if ((${OSVERSION} >= 500000) && (${OSVERSION} < 530000)) && (${ARCH} == i386)
 OSSFX?=		-50
 .elif ${OSVERSION} < 600000
 OSSFX?=
