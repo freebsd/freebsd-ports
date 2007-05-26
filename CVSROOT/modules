@@ -10484,6 +10484,7 @@ p5-POSIX-Regex	ports/textproc/p5-POSIX-Regex
 p5-POSIX-strptime	ports/devel/p5-POSIX-strptime
 p5-PPI		ports/textproc/p5-PPI
 p5-PPI-HTML	ports/textproc/p5-PPI-HTML
+p5-PPI-XS	ports/textproc/p5-PPI-XS
 p5-PPerl	ports/devel/p5-PPerl
 p5-PV		ports/devel/p5-PV
 p5-Package-Constants	ports/devel/p5-Package-Constants
