@@ -29,6 +29,10 @@ MAN1=	aldo.1
 BROKEN=	"Doesn't build on FreeBSD < 5.x"
 .endif
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/aldo ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/aldo.1 ${MANPREFIX}/man/man1

@@ -36,6 +36,10 @@ SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 ALLIANCE_TOP=	${PREFIX}/alliance
 SRCDIRLIST!=	${CAT} ${FILESDIR}/srcdirs.list
 CFLAGS+=	${SRCDIRLIST:S,^,-I${WRKSRC}/,}
