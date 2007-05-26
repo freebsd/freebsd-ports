@@ -1,0 +1,14 @@
+--- src/Makefile.in.orig	Fri May  4 20:11:59 2007
++++ src/Makefile.in	Fri May  4 20:12:14 2007
+@@ -523,9 +523,9 @@
+ 
+ info-am:
+ 
+-install-data-am: install-data-local install-man
++install-data-am: install-man
+ 
+-install-exec-am: install-binPROGRAMS install-exec-local
++install-exec-am: install-binPROGRAMS
+ 	@$(NORMAL_INSTALL)
+ 	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
+ 
