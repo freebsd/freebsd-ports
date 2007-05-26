@@ -1,8 +1,11 @@
 diff -urp xmms-scrobbler-0.3.8.1/gtkstuff.c xmms-scrobbler-0.3.8.1-enc/gtkstuff.c
 --- xmms-scrobbler-0.3.8.1/gtkstuff.c	2005-02-20 05:26:08.000000000 +0100
 +++ xmms-scrobbler-0.3.8.1-enc/gtkstuff.c	2005-12-13 22:02:56.000000000 +0100
-@@ -15,9 +15,11 @@
+@@ -13,11 +13,14 @@
+ #endif
+ #include <stdio.h>
  #include <string.h>
++#include <wchar.h>
  #include "config.h"
  #include "md5.h"
 +#include "tags/include/unicode.h"
@@ -14,7 +17,7 @@ diff -urp xmms-scrobbler-0.3.8.1/gtkstuff.c xmms-scrobbler-0.3.8.1-enc/gtkstuff.
  static int errorbox_done;
  void about_show(void)
  {
-@@ -115,6 +117,10 @@ static void saveconfig(GtkWidget *wid, g
+@@ -115,6 +118,10 @@
  
  	const char *pwd = gtk_entry_get_text(GTK_ENTRY(edpwd));
  	const char *uid = gtk_entry_get_text(GTK_ENTRY(eduname));
@@ -25,7 +28,7 @@ diff -urp xmms-scrobbler-0.3.8.1/gtkstuff.c xmms-scrobbler-0.3.8.1-enc/gtkstuff.
  
  	if ((cfgfile = xmms_cfg_open_default_file())) {
  	
-@@ -130,6 +136,9 @@ static void saveconfig(GtkWidget *wid, g
+@@ -130,6 +137,9 @@
  			xmms_cfg_write_string(cfgfile, "audioscrobbler", "password",
  					(char *)hexify(md5pword, sizeof(md5pword)));
  		}
@@ -35,7 +38,7 @@ diff -urp xmms-scrobbler-0.3.8.1/gtkstuff.c xmms-scrobbler-0.3.8.1-enc/gtkstuff.
  #ifdef MAKE_XMMS
  		xmms_cfg_write_default_file(cfgfile);
  #endif
-@@ -147,8 +156,10 @@ void configure_dialog(void)
+@@ -147,8 +157,10 @@
  			*hbox,
  			*unhbox,
  			*pwhbox,
@@ -46,7 +49,7 @@ diff -urp xmms-scrobbler-0.3.8.1/gtkstuff.c xmms-scrobbler-0.3.8.1-enc/gtkstuff.
  			*frame;
  			
  	ConfigFile 	*cfgfile;
-@@ -184,9 +195,16 @@ void configure_dialog(void)
+@@ -184,9 +196,16 @@
  	gtk_entry_set_visibility(GTK_ENTRY(edpwd), FALSE);
  	gtk_box_pack_start(GTK_BOX(pwhbox), lblpw, FALSE, FALSE, 3);
  	gtk_box_pack_start(GTK_BOX(pwhbox), edpwd, FALSE, FALSE, 3);
@@ -63,7 +66,7 @@ diff -urp xmms-scrobbler-0.3.8.1/gtkstuff.c xmms-scrobbler-0.3.8.1-enc/gtkstuff.
  	
  	hbox = gtk_hbox_new(FALSE, 0);
  
-@@ -202,17 +220,26 @@ void configure_dialog(void)
+@@ -202,17 +221,26 @@
  	
  	gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 3);
  
