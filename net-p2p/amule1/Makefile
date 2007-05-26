@@ -48,6 +48,10 @@ CURL_CONFIG?=	${LOCALBASE}/bin/curl-config
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 # Configure options
 .if !defined(WITHOUT_OPTIMIZE)
 CONFIGURE_ARGS+=	--enable-optimise

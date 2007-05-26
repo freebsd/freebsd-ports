@@ -44,6 +44,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 IGNORE=		does not build on FreeBSD 4.x
 .endif
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|3rdpart||' ${WRKSRC}/amanith.pro
 
