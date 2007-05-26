@@ -571,6 +571,7 @@ asterisk-fop	ports/www/asterisk-fop
 asterisk-oh323	ports/net/asterisk-oh323
 asterisk12	ports/net/asterisk12
 asterisk12-addons	ports/net/asterisk12-addons
+asterisk12-app-ldap	ports/net/asterisk12-app-ldap
 astfax		ports/net/astfax
 astime		ports/x11-clocks/astime
 astk-client	ports/cad/astk-client
