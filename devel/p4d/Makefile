@@ -19,7 +19,8 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Perforce client and server
 
-ONLY_FOR_ARCHS=	i386 amd64 alpha
+ONLY_FOR_ARCHS=	alpha amd64 i386 sparc64
+
 DIST_SUBDIR=	perforce/${VERSION}/${ARCH}
 MD5_FILE=	${MASTERDIR}/distinfo.${PLATFORM}
 
@@ -30,16 +31,15 @@ MD5_FILE=	${MASTERDIR}/distinfo.${PLATFORM}
 ARCH!=	/usr/bin/uname -p
 ARCH?=	i386
 
-.if (${ARCH} == i386) || (${ARCH} == amd64)
-VERSION=	06.1
-REVISION=	6
+.if ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == sparc64
+VERSION=	06.2
+REVISION=	0
 BIN_FILES=	p4
 SBIN_FILES=	p4d p4ftpd p4p p4web
-REL_NOTES=	http://www.perforce.com/perforce/doc.061/user/relnotes.txt
+REL_NOTES=	http://www.perforce.com/perforce/doc.062/user/relnotes.txt
 .elif ${ARCH} == alpha
 VERSION=	99.1
 REVISION=	1
-PLATFORM=	freebsdaxp
 BIN_FILES=	p4
 SBIN_FILES=	p4d
 REL_NOTES=	http://www.perforce.com/perforce/doc.991/user/relnotes.txt
@@ -59,30 +59,27 @@ PLIST_FILES=	${BIN_FILES:S+^+bin/+g} \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 700017
+BROKEN=		requires compat6x, which has not yet been relased
+.endif
+
 # Figure out what to install
-.if (${ARCH} == i386) || (${ARCH} == amd64)
-.if ${OSVERSION} > 504000
-.if ${ARCH} == amd64
+.if ${ARCH} == alpha
+PLATFORM=	freebsdaxp
+.elif ${ARCH} == amd64
 PLATFORM=	freebsd54x86_64
-.else
-PLATFORM=	freebsd54x86
-.endif
-.elif ${OSVERSION} > 400000
-PLATFORM=	freebsd4
-.else
-IGNORE=		only supported on FreeBSD 4.x and greater
-.endif
-.endif
-
-.if (${ARCH} == amd64) && (${OSVERSION} < 504000)
-IGNORE=		amd64 is only supported on FreeBSD 5.4 and later
-.endif
-
-# Add compatability dependencies.
-.if ${OSVERSION} > 600000
+.if ${OSVERSION} >= 600000
 LIB_DEPENDS+=	c_r.5:${PORTSDIR}/misc/compat5x
-.elif (${OSVERSION} < 504000) && (${OSVERSION} > 500000)
-LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
+.endif
+.elif ${ARCH} == i386
+PLATFORM=	freebsd54x86
+.if ${OSVERSION} >= 600000
+LIB_DEPENDS+=	c_r.5:${PORTSDIR}/misc/compat5x
+.endif
+.elif ${ARCH} == sparc64 && ${OSVERSION} >= 601000
+PLATFORM=	freebsd61sparc64
+.else
+IGNORE=		unsupported OS release, sorry
 .endif
 
 # These variables are all configurable.
