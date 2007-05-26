@@ -31,7 +31,7 @@
 name="ccxstream"
 rcvar=`set_rcvar`
 
-command="%%PREFIX%%/bin/ccxstream"
+command="%%PREFIX%%/sbin/ccxstream"
 
 load_rc_config "$name"
 : ${ccxstream_enable="NO"}

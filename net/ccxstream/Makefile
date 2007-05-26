@@ -7,6 +7,7 @@
 
 PORTNAME=		ccxstream
 PORTVERSION=		1.0.15
+PORTREVISION=		1
 CATEGORIES=		net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xbplayer
@@ -14,28 +15,25 @@ MASTER_SITE_SUBDIR=	xbplayer
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Stream media files to XBox Media Center via XBMSP
 
+OPTIONS=		SO_KEEPALIVE "Build with SO_KEEPALIVE" ON \
+			TCP_NODELAY "Build with TCP_NODELAY" OFF
+
 USE_GMAKE=		yes
+MAKE_ENV=		CC="${CC}"
+USE_RC_SUBR=		ccxstream
 
-USE_RC_SUBR=		yes
-RC_SCRIPTS_SUB=		PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
-SAMPLERC=		${PORTNAME}.sh.sample
-REALRC=			${SAMPLERC:S/.sample//}
-
-PLIST_FILES=		bin/ccxstream bin/ccxtest etc/rc.d/${REALRC}
+PLIST_FILES=		\
+			bin/ccxtest \
+			sbin/ccxstream
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=		README ChangeLog TODO xbmsp-xml.txt xbmsp.txt
 .endif
 
-post-build:
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/${SAMPLERC} > ${WRKDIR}/${SAMPLERC}
-
 do-install:
-	@${MKDIR} ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/ccxstream ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/sbin
+	@${INSTALL_PROGRAM} ${WRKSRC}/ccxstream ${PREFIX}/sbin
 	@${INSTALL_PROGRAM} ${WRKSRC}/ccxtest ${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKDIR}/${SAMPLERC} ${PREFIX}/etc/rc.d/${REALRC}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
@@ -44,6 +42,18 @@ do-install:
 .endif
 
 post-install:
-	@${CAT} pkg-message
+	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# enable SO_KEEPALIVE
+.if defined(WITH_SO_KEEPALIVE)
+CFLAGS+=	-DSO_KEEPALIVE
+.endif
+
+# enable TCP_NODELAY
+.if defined(WITH_TCP_NODELAY)
+CFLAGS+=	-DTCP_NODELAY
+.endif
+
+.include <bsd.port.post.mk>
