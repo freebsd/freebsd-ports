@@ -1,13 +1,10 @@
 #!/bin/sh
 #
-# $FreeBSD$
-
-export JAVA_VERSION
-export JAVA_OS
+# $FreeBSD: /tmp/pcvs/ports/net-p2p/azureus/files/Attic/azureus.in,v 1.1 2007-05-26 00:56:11 alepulver Exp $
 
 # java
-JAVA_VERSION="%%JAVA_VERSION%%"
-JAVA_OS="%%JAVA_OS%%"
+export JAVA_VERSION="%%JAVA_VERSION%%"
+export JAVA_OS="%%JAVA_OS%%"
 
 ECLIPSE_BASE=%%LOCALBASE%%/eclipse
 ECLIPSE_SWT_JAR=%%SWTJAR%%
