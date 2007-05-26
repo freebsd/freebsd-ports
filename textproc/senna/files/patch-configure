@@ -1,0 +1,115 @@
+--- configure.orig	Sat Apr 28 02:32:01 2007
++++ configure	Tue May  1 20:11:40 2007
+@@ -1057,9 +1057,9 @@
+                           specify Senna default initial_n_segments
+   --with-query-escalation-threshold=NUMBER
+                           specify Senna default query escalation threshold
++  --with-mecab            use mecab for morphological analysis. [default=yes]
+   --with-mecab-config=PATH
+                           set mecab-config location. [search], [path]
+-  --with-mecab            use mecab for morphological analysis. [default=yes]
+   --with-mysqlsrc=DIR     specify MySQL source dictionary.
+ 
+ Some influential environment variables:
+@@ -21440,13 +21440,52 @@
+ _ACEOF
+ 
+ 
+-# mecab-config
++# mecab
++
++# Check whether --with-mecab or --without-mecab was given.
++if test "${with_mecab+set}" = set; then
++  withval="$with_mecab"
++  with_mecab="$withval"
++else
++  with_mecab="yes"
++fi;
++if test "x$with_mecab" = "xno"; then
++
++cat >>confdefs.h <<\_ACEOF
++#define NO_MECAB 1
++_ACEOF
++
++else
++  # mecab-config
+ 
+ # Check whether --with-mecab-config or --without-mecab-config was given.
+ if test "${with_mecab_config+set}" = set; then
+   withval="$with_mecab_config"
++  as_ac_File=`echo "ac_cv_file_"$withval"" | $as_tr_sh`
++echo "$as_me:$LINENO: checking for \"$withval\"" >&5
++echo $ECHO_N "checking for \"$withval\"... $ECHO_C" >&6
++if eval "test \"\${$as_ac_File+set}\" = set"; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  test "$cross_compiling" = yes &&
++  { { echo "$as_me:$LINENO: error: cannot check for file existence when cross compiling" >&5
++echo "$as_me: error: cannot check for file existence when cross compiling" >&2;}
++   { (exit 1); exit 1; }; }
++if test -r ""$withval""; then
++  eval "$as_ac_File=yes"
++else
++  eval "$as_ac_File=no"
++fi
++fi
++echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_File'}'`" >&5
++echo "${ECHO_T}`eval echo '${'$as_ac_File'}'`" >&6
++if test `eval echo '${'$as_ac_File'}'` = yes; then
+   MECAB_CONFIG="$withval"
+ else
++  MECAB_CONFIG=no
++fi
++
++else
+   # Extract the first word of "mecab-config", so it can be a program name with args.
+ set dummy mecab-config; ac_word=$2
+ echo "$as_me:$LINENO: checking for $ac_word" >&5
+@@ -21488,24 +21527,13 @@
+ fi
+ 
+ fi;
++  if test "x$MECAB_CONFIG" = "xno"; then
++    { { echo "$as_me:$LINENO: error: mecab-config is missing." >&5
++echo "$as_me: error: mecab-config is missing." >&2;}
++   { (exit 1); exit 1; }; }
++  fi
+ 
+-# mecab
+-
+-# Check whether --with-mecab or --without-mecab was given.
+-if test "${with_mecab+set}" = set; then
+-  withval="$with_mecab"
+-  with_mecab="$withval"
+-else
+-  with_mecab="yes"
+-fi;
+-if test "x$with_mecab" = "xno"; then
+-
+-cat >>confdefs.h <<\_ACEOF
+-#define NO_MECAB 1
+-_ACEOF
+-
+-else
+-  INCLUDES="$INCLUDES `$MECAB_CONFIG --inc-dir`"
++  MECAB_CFLAGS="-I`$MECAB_CONFIG --inc-dir`"
+   LDFLAGS="$LDFLAGS -L`$MECAB_CONFIG --libs-only-L`"
+ 
+ echo "$as_me:$LINENO: checking for mecab_new in -lmecab" >&5
+@@ -21585,6 +21613,7 @@
+    { (exit 1); exit 1; }; }
+ fi
+ 
++  CPPFLAGS="$CPPFLAGS $MECAB_CFLAGS"
+   if test "${ac_cv_header_mecab_h+set}" = set; then
+   echo "$as_me:$LINENO: checking for mecab.h" >&5
+ echo $ECHO_N "checking for mecab.h... $ECHO_C" >&6
+@@ -22053,7 +22082,7 @@
+ 
+ 
+ # flags for compile senna
+-CFLAGS="$CFLAGS $OPT_CFLAGS $GCOV_CFLAGS"
++CFLAGS="$CFLAGS $MECAB_CFLAGS $OPT_CFLAGS $GCOV_CFLAGS"
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define CONFIGURE_OPTIONS "$ac_configure_args"
