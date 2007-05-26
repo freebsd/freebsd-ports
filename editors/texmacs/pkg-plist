@@ -246,6 +246,10 @@ share/TeXmacs/doc/about/projects/improvements.fr.tm
 share/TeXmacs/doc/about/projects/projects.en.tm
 share/TeXmacs/doc/about/projects/projects.es.tm
 share/TeXmacs/doc/about/projects/projects.fr.tm
+share/TeXmacs/doc/about/projects/roadmap-external.en.tm
+share/TeXmacs/doc/about/projects/roadmap-major.en.tm
+share/TeXmacs/doc/about/projects/roadmap-minor.en.tm
+share/TeXmacs/doc/about/projects/roadmap.en.tm
 share/TeXmacs/doc/about/welcome/first.de.tm
 share/TeXmacs/doc/about/welcome/first.en.tm
 share/TeXmacs/doc/about/welcome/first.es.tm
@@ -1592,6 +1596,33 @@ share/TeXmacs/misc/mime/texmacs.applications
 share/TeXmacs/misc/mime/texmacs.desktop
 share/TeXmacs/misc/mime/texmacs.keys
 share/TeXmacs/misc/mime/texmacs.mime
+share/TeXmacs/misc/patterns/wood-xdark.png
+share/TeXmacs/misc/patterns/granite-light.png
+share/TeXmacs/misc/patterns/granite-medium.png
+share/TeXmacs/misc/patterns/granite-xdark.png
+share/TeXmacs/misc/patterns/metal-brushed-dark.png
+share/TeXmacs/misc/patterns/metal-brushed-light.png
+share/TeXmacs/misc/patterns/metal-brushed-medium.png
+share/TeXmacs/misc/patterns/metal-rough-dark.png
+share/TeXmacs/misc/patterns/metal-rough-light.png
+share/TeXmacs/misc/patterns/metal-rough-medium.png
+share/TeXmacs/misc/patterns/paper-manila-bright.png
+share/TeXmacs/misc/patterns/paper-manila-light.png
+share/TeXmacs/misc/patterns/paper-manila-medium.png
+share/TeXmacs/misc/patterns/paper-ridged-bright.png
+share/TeXmacs/misc/patterns/paper-ridged-light.png
+share/TeXmacs/misc/patterns/pine.png
+share/TeXmacs/misc/patterns/paper-ridged-medium.png
+share/TeXmacs/misc/patterns/paper-rough-bright.png
+share/TeXmacs/misc/patterns/paper-rough-light.png
+share/TeXmacs/misc/patterns/paper-rough-medium.png
+share/TeXmacs/misc/patterns/ridged-brushed-dark.png
+share/TeXmacs/misc/patterns/ridged-brushed-light.png
+share/TeXmacs/misc/patterns/ridged-brushed-medium.png
+share/TeXmacs/misc/patterns/wood-dark.png
+share/TeXmacs/misc/patterns/wood-light.png
+share/TeXmacs/misc/patterns/wood-medium.png
+share/TeXmacs/misc/patterns/granite-dark.png
 share/TeXmacs/misc/pixmaps/LICENSE
 share/TeXmacs/misc/pixmaps/TeXmacs-einstein.xpm
 share/TeXmacs/misc/pixmaps/TeXmacs-gnu.xpm
@@ -1837,9 +1868,12 @@ share/TeXmacs/packages/example/alt-colors.ts
 share/TeXmacs/packages/example/bpr.ts
 share/TeXmacs/packages/example/framed-envs.ts
 share/TeXmacs/packages/example/vdh.ts
+share/TeXmacs/packages/gui/gui-brushed.ts
 share/TeXmacs/packages/gui/gui-form.ts
-share/TeXmacs/packages/gui/gui-widget.ts
+share/TeXmacs/packages/gui/gui-granite.ts
 share/TeXmacs/packages/gui/gui-layout.ts
+share/TeXmacs/packages/gui/gui-metal.ts
+share/TeXmacs/packages/gui/gui-widget.ts
 share/TeXmacs/packages/gui/gui.ts
 share/TeXmacs/packages/header/header-article.ts
 share/TeXmacs/packages/header/header-book.ts
@@ -2112,6 +2146,7 @@ share/TeXmacs/progs/kernel/drd/drd-unify.scm
 share/TeXmacs/progs/kernel/gui/kbd-define.scm
 share/TeXmacs/progs/kernel/gui/gui-factory.scm
 share/TeXmacs/progs/kernel/gui/gui-form.scm
+share/TeXmacs/progs/kernel/gui/gui-test.scm
 share/TeXmacs/progs/kernel/gui/gui-widget.scm
 share/TeXmacs/progs/kernel/gui/menu-define.scm
 share/TeXmacs/progs/kernel/gui/menu-widget.scm
@@ -2132,6 +2167,7 @@ share/TeXmacs/progs/kernel/texmacs/tm-overload.scm
 share/TeXmacs/progs/kernel/texmacs/tm-plugins.scm
 share/TeXmacs/progs/kernel/texmacs/tm-preferences.scm
 share/TeXmacs/progs/kernel/texmacs/tm-secure.scm
+share/TeXmacs/progs/kernel/texmacs/tm-states.scm
 share/TeXmacs/progs/link/link-edit.scm
 share/TeXmacs/progs/link/link-extern.scm
 share/TeXmacs/progs/link/link-extract.scm
@@ -2395,6 +2431,7 @@ share/TeXmacs/texts/test/overview.tm
 @dirrm share/TeXmacs/packages
 @dirrm share/TeXmacs/misc/sounds
 @dirrm share/TeXmacs/misc/pixmaps
+@dirrm share/TeXmacs/misc/patterns
 @dirrm share/TeXmacs/misc/mime
 @dirrm share/TeXmacs/misc/latex
 @dirrm share/TeXmacs/misc/images
