@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ssvnc
-PORTVERSION=	1.0.15
-PORTREVISION=	1
+PORTVERSION=	1.0.16
 CATEGORIES=	net security
 MASTER_SITES=	http://www.karlrunge.com/x11vnc/etv/
 
@@ -17,8 +16,6 @@ COMMENT=	Enhanced TightVNC Viewer (SSVNC: SSL/SSH VNC viewer)
 BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	stunnel:${PORTSDIR}/security/stunnel
-
-BROKEN=		Unfetchable - Size mismatch
 
 USE_XLIB=	yes
 USE_TCL_RUN=	84
