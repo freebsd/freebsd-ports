@@ -1,0 +1,11 @@
+--- sw/source/core/unocore/unotbl.cxx	2007-05-25 13:02:05.000000000 +0200
++++ sw/source/core/unocore/unotbl.cxx	2007-05-25 13:09:00.000000000 +0200
+@@ -4455,7 +4455,7 @@
+                             // now we'll try to get a useful numerical value
+                             // from the text in the cell...
+ 
+-                            ULONG nFIndex;
++                            sal_uInt32 nFIndex;
+                             SvNumberFormatter* pNumFormatter = pTblCrsr->GetDoc()->GetNumberFormatter();
+ 
+                             // look for SwTblBoxNumFormat value in parents as well

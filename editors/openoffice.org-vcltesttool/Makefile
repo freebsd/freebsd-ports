@@ -7,10 +7,9 @@
 
 PORTNAME?=	openoffice.org
 PORTVERSION?=	2.3.${SNAPDATE}
-PORTREVISION=	1
 CATEGORIES+=	editors java
-MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
-		http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
+MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
+		http://openoffice.lunarshells.com/sources/ \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/cws/:cws \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:antbin,} \
@@ -20,9 +19,6 @@ MASTER_SITE_SUBDIR+=	mozilla/releases/mozilla${MOZILLA_VERSION}/source/:mozsrc
 DISTFILES+=	${OOOSRC} unowinreg.dll:unowinreg
 .if defined(WITH_GPC)
 DISTFILES+=	gpc231.tar.Z:gpc
-.endif
-.if defined(WITH_GNUGCJ)
-DISTFILES+=	${ANT_DISTFILE}:antbin
 .endif
 EXTRACT_ONLY=	${OOOSRC}
 
@@ -53,38 +49,34 @@ USE_PERL5=	yes
 USE_BZIP2=	yes
 WITHOUT_CPU_CFLAGS=	true
 
-.if !defined(WITH_GNUGCJ)
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
 JAVA_BUILD=	jdk
 JAVA_VENDOR=	freebsd bsdjava
-.endif
 
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386 #amd64
 
 .if ${ARCH} == amd64
-GCC_TARGET=		x86_64-portbld-freebsd${OSREL}
 FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set
 .else
-GCC_TARGET=		${ARCH}-portbld-freebsd${OSREL}
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
 CODELINE=		680
-MILESTONE?=		211
+MILESTONE?=		213
 OOOTAG?=		SRC680_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
-SNAPDATE=		20070428
+SNAPDATE=		20070525
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 .if defined(WITH_CWS)
 INSTALLATION_BASEDIR=	openoffice.org-${OOOTAG}-${WITH_CWS}
 EXECBASE=		openoffice.org-${OOOTAG}-${WITH_CWS}
 .endif
-DIST_SUBDIR=		openoffice.org2.0
+DIST_SUBDIR=		openoffice.org2
 SIMPLEOSVER=		${OSREL:C/\.//g}
 .if ${ARCH} == amd64
 PACKAGE_BASENAME=	OOo_${OOOTAG}_${OPSYS}${SIMPLEOSVER}X86_64
@@ -103,39 +95,13 @@ PKGNAMESUFFIX=		-${LANG_SUFFIX}
 
 RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
-.if defined(WITH_GNUGCJ)
-GCCVER=41
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/ldconfig/gcc41-withgcjawt:${PORTSDIR}/lang/gcc41-withgcjawt
-BUILD_DEPENDS+=	${LOCALBASE}/lib/jvm/java-gcj41/bin/java:${PORTSDIR}/java/java-gcj-compat
-RUN_DEPENDS+=	${LOCALBASE}/libdata/ldconfig/gcc41-withgcjawt:${PORTSDIR}/lang/gcc41-withgcjawt
-RUN_DEPENDS+=	${LOCALBASE}/lib/jvm/java-gcj41/bin/java:${PORTSDIR}/java/java-gcj-compat
-.else
-.if ${ARCH} == amd64
-GCCVER=41
-BUILD_DEPENDS+=	gcc41:${PORTSDIR}/lang/gcc41
-RUN_DEPENDS+=	gcc41:${PORTSDIR}/lang/gcc41
-.else
-GCCVER=34
-BUILD_DEPENDS+=	gcc-ooo:${PORTSDIR}/lang/gcc-ooo
-.endif
-.endif
-
+USE_GCC=	4.2
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
 CCACHE_PREFIX=	ccache
-.else
-CCACHE_PREFIX=
-.endif
-.if (${GCCVER} == 41)
-CC=	gcc41
-CXX=	g++41
-.endif
-.if (${GCCVER} == 34)
-CC=	gcc-ooo
-CXX=	g++-ooo
-.endif
 CC:=	${CCACHE_PREFIX} ${CC}
 CXX:=	${CCACHE_PREFIX} ${CXX}
+.endif
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
@@ -144,14 +110,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		bison2:${PORTSDIR}/devel/bison2 \
 		imake:${X_IMAKE_PORT}
-.if defined(WITH_GNUGCJ)
-LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
-ANT_DISTFILE=	apache-ant-${ANT_VERSION}-bin.tar.bz2
-ANT_VERSION=	1.6.5
-.else
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
-.endif
 .if !defined(WITH_GPC)
 LIB_DEPENDS+=	art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl
 .endif
@@ -162,27 +121,19 @@ CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 TCSH?=		/bin/tcsh
 PKGMESSAGE=	${WRKDIR}/pkg-message
 NUMOFPROCESSES?=	1
-.if defined(WITH_GNUGCJ)
-CONFIGURE_ENV+=		PATH="${LOCALBASE}/lib/jvm/java-gcj41/bin:${PATH}"
-.endif
 
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch	\
 			--enable-crashdump=yes				\
 			--enable-symbols=SMALL
 
-.if ${ARCH} == amd64 || ${GCCVER} == 41
+.if ${ARCH} == amd64
 WITHOUT_MOZILLA=	yes
 .endif
-.if (${GCCVER} == 41)
-LIB_DEPENDS+=		boost_regex:${PORTSDIR}/devel/boost
-CONFIGURE_ARGS+=	--with-system-boost=yes #i58343#
-.endif
+#LIB_DEPENDS+=		boost_regex:${PORTSDIR}/devel/boost
+#CONFIGURE_ARGS+=	--with-system-boost=yes #i58343#
 .if (${OSVERSION} <= 602102)
 EXTRA_PATCHES+=	${FILESDIR}/rtld-workaround-i66667
-.endif
-.if defined(WITH_GNUGCJ)
-EXTRA_PATCHES+=	${FILESDIR}/gcj-fbsdworkaround
 .endif
 .if !defined(WITH_SYSTEM_FREETYPE) && defined(WITH_TTF_BYTECODE_ENABLED)
 EXTRA_PATCHES+=	 ${FILESDIR}/optpatch-freetype
@@ -213,9 +164,6 @@ post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
 .if defined(WITH_CWS)
 	cd ${WRKSRC} ; ${TAR} xvfz ${DISTDIR}/${DIST_SUBDIR}/${CWSARCHIVE}
-.endif
-.if defined(WITH_GNUGCJ)
-	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/${ANT_DISTFILE} | ${BZIP2_CMD} -d | ${TAR} xf -
 .endif
 .if defined(WITH_GPC)
 	@cd ${WRKDIR} ; ${CAT} ${DISTDIR}/${DIST_SUBDIR}/gpc231.tar.Z | ${TAR} xfz -
