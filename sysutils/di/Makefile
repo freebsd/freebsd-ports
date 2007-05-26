@@ -18,6 +18,12 @@ USE_GETTEXT=	yes
 
 MAN1=		di.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 do-configure:
 	(cd ${WRKSRC}; \
 		CC="${CC}" CFLAGS="${CFLAGS}" \
@@ -52,4 +58,4 @@ do-install:
 	${RM} -f $$j.mo; \
 	done)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

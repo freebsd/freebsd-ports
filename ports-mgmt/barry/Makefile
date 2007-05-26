@@ -24,6 +24,12 @@ USE_AUTOTOOLS=	libtool:15
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.h" -and -not -name "linklocator.h" | \
 		${XARGS} ${REINPLACE_CMD} -e 's/^};/}/g'
@@ -32,4 +38,4 @@ post-patch:
 pre-install:
 	@${MKDIR} ${DESTDIR}${PREFIX}/share/applnk/Utilities
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

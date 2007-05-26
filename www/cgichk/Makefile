@@ -18,6 +18,12 @@ COMMENT=	A web site vulnerability scanner
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	cgichk
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s/^(CC|CFLAGS).+//g" ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e \
@@ -31,4 +37,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

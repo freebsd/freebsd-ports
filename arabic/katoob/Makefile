@@ -27,6 +27,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 .if ${HAVE_GNOME:Mgtksourceview}!="" || defined(WITH_HIGHLIGHTING)
 CONFIGURE_ARGS+=	"--enable-highlight"
 USE_GNOME+=		gtksourceview
