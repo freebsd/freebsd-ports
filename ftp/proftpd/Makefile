@@ -86,6 +86,7 @@ MODULES:=${MODULES}:mod_rewrite
 MODULES:=${MODULES}:mod_wrap2
 INCLUDEDIRS:=${INCLUDEDIRS}:${WORKDIR}/include
 LIBDIRS:=${LIBDIRS}:${LOCALBASE}/lib
+PLIST_FILES+=	include/proftpd/mod_wrap2.h
 .endif
 
 .if defined(WITH_WRAP_FILE)

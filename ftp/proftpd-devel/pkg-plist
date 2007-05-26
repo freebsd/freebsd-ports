@@ -29,7 +29,6 @@ include/proftpd/libsupp.h
 include/proftpd/log.h
 include/proftpd/mkhome.h
 include/proftpd/mod_ctrls.h
-include/proftpd/mod_wrap2.h
 include/proftpd/modules.h
 include/proftpd/netacl.h
 include/proftpd/netaddr.h
