@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070525:
+  AFFECTS: users of textproc/{senna,p5-Senna}
+  AUTHOR: kuriyama@FreeBSD.org
+
+  Index format (binary) and some of APIs are changed.  At least you
+  need to rebuild all indexes, and maybe need to change your code (if
+  you use senna API) to follow up to new API.
+
 20070514:
   AFFECTS: users of net/samba3, japanese/samba3
   AUTHOR: timur@gnu.org
