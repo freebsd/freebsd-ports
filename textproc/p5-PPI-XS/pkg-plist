@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/PPI/XS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PPI/XS/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PPI/XS/XS.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PPI/XS/XS.so
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PPI/XS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PPI
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/PPI
