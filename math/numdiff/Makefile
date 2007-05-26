@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	numdiff
-PORTVERSION=	4.0.0
+PORTVERSION=	4.2.0
 CATEGORIES=	math textproc
 MASTER_SITES=	http://download.savannah.gnu.org/releases/numdiff/
 
