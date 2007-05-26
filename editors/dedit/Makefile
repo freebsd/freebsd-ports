@@ -27,6 +27,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		dedit.1
 MANLANG=	"" ja
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 pre-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|\(\$$(datadir)/\)gnome/|\1|g ; \
@@ -35,4 +41,4 @@ pre-patch:
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/dedit.ja.1 ${MANPREFIX}/man/ja/man1/dedit.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

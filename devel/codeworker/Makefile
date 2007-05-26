@@ -30,6 +30,10 @@ PLIST_FILES=	bin/codeworker
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 .if ${OSVERSION} < 500035
 CFLAGS+=	-fpermissive
 .endif

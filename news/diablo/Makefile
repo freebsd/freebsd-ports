@@ -25,6 +25,12 @@ MAN8=		dicmd.8 didump.8 dexpireover.8 dfeedinfo.8 dgrpctl.8 \
 		doverctl.8 drequeue.8 dhisexpire.8
 PORTDOCS=	COPYRIGHT INSTALL README.READER README.SERVER RELEASE_NOTES
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-extract:
 	@${CP} ${SCRIPTDIR}/diablo.sh-sample ${WRKDIR}
 
@@ -57,4 +63,4 @@ post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${RM} -rf ${PREFIX}/news/man
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

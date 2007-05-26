@@ -38,6 +38,12 @@ USE_AUTOTOOLS=	automake:19 autoconf:259
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 pre-patch:
 	@${PERL} -pi.orig -e 's|^aclocal|${ACLOCAL}|; \
 		s|^autoconf|${AUTOCONF}|; s|^automake|${AUTOMAKE}|' \
@@ -55,4 +61,4 @@ post-configure:
 		's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
