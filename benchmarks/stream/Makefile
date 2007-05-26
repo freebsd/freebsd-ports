@@ -8,15 +8,15 @@ PORTNAME=	stream
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	benchmarks
-MASTER_SITES=	ftp://ftp.cs.virginia.edu/pub/stream/Code/
-DISTFILES=	stream.c README
+MASTER_SITES=	http://www.cs.virginia.edu/stream/FTP/Code/
+DISTFILES=	stream.c
 DIST_SUBDIR=	stream-${PORTVERSION}
 
 MAINTAINER=	sf@slappy.org
 COMMENT=	Synthetic benchmark program that measures sustainable memory bandwidth
 
 PLIST_FILES=	bin/stream
-PORTDOCS=	stream.c README
+PORTDOCS=	stream.c
 
 do-extract:
 	@${MKDIR} ${BUILD_WRKSRC}
