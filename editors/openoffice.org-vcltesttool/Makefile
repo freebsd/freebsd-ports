@@ -99,9 +99,13 @@ USE_GCC=	4.2
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
 CCACHE_PREFIX=	ccache
-CC:=	${CCACHE_PREFIX} ${CC}
-CXX:=	${CCACHE_PREFIX} ${CXX}
+OOOCC=		${CCACHE_PREFIX} ${CC}
+OOOCXX=		${CCACHE_PREFIX} ${CXX}
+.else
+OOOCC=		${CC}
+OOOCXX=		${CXX}
 .endif
+CONFIGURE_ENV+=	CC="${OOOCC}" CXX="${OOOCXX}"
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
@@ -126,7 +130,6 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--with-gnu-patch=${LOCALBASE}/bin/gpatch	\
 			--enable-crashdump=yes				\
 			--enable-symbols=SMALL
-
 .if ${ARCH} == amd64
 WITHOUT_MOZILLA=	yes
 .endif
