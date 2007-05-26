@@ -18,21 +18,14 @@ MAINTAINER=	sf@slappy.org
 COMMENT=	Optional extras for the CMU implementation of Common Lisp
 
 BUILD_DEPENDS=	lisp:${PORTSDIR}/lang/cmucl
+RUN_DEPENDS=	lisp:${PORTSDIR}/lang/cmucl
 
-ONLY_FOR_ARCHS=	i386
 USE_BZIP2=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
-.endif
-
 do-install:
-	@${MKDIR} ${PREFIX}/lib/cmucl
 	cd ${WRKDIR} && ${FIND} lib | \
-		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}
+		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
