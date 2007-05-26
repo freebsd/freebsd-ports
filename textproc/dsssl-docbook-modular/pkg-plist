@@ -57,6 +57,8 @@ share/sgml/docbook/dsssl/modular/common/dbl1ja.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1ja.ent
 share/sgml/docbook/dsssl/modular/common/dbl1ko.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1ko.ent
+share/sgml/docbook/dsssl/modular/common/dbl1mn.dsl
+share/sgml/docbook/dsssl/modular/common/dbl1mn.ent
 share/sgml/docbook/dsssl/modular/common/dbl1nl.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1nl.ent
 share/sgml/docbook/dsssl/modular/common/dbl1nn.dsl

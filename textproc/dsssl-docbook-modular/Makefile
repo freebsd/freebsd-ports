@@ -7,13 +7,17 @@
 
 PORTNAME=	dsssl-docbook-modular
 PORTVERSION=	1.79
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	docbook
 DISTNAME=	docbook-dsssl-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} docbook-dsssl-doc-${PORTVERSION}${EXTRACT_SUFX}
+
+PATCH_SITES=	http://dist.bsdlab.org/
+PATCHFILES=	docbook-dsssl-mn-20070525.diff.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	DSSSL stylesheets for the DocBook DTD by Norman Walsh
