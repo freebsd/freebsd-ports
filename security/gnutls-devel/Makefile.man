@@ -315,6 +315,8 @@ MAN3=	\
 	gnutls_x509_crl_get_issuer_dn.3 \
 	gnutls_x509_crl_get_issuer_dn_by_oid.3 \
 	gnutls_x509_crl_get_next_update.3 \
+	gnutls_x509_crt_get_raw_issuer_dn.3 \
+	gnutls_x509_crt_get_raw_dn.3 \
 	gnutls_x509_crt_get_signature.3 \
 	gnutls_x509_crl_get_signature_algorithm.3 \
 	gnutls_x509_crt_get_subject_alt_othername_oid.3 \
