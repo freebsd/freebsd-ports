@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Geo-Proj4
-PORTVERSION=	0.96
+PORTVERSION=	0.98
 CATEGORIES=	graphics devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Geo
@@ -18,13 +18,8 @@ COMMENT=	Perl cartographic projections wrapper for Proj library
 LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj
 
 MAN3=		Geo::Proj4.3
-CFLAGS+=	-I ${PREFIX}/include	# XXX - This seems ugly
+CONFIGURE_ENV=	GEOPROJ_FWTOOLS_DIR=${LOCALBASE}
+MAKE_ENV=	INC=-I${LOCALBASE}/include
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
