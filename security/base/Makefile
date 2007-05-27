@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	base
-PORTVERSION=	1.3.5
-PORTREVISION=	1
+PORTVERSION=	1.3.6
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	secureideas
@@ -23,7 +22,8 @@ USE_PHP=	gd gettext pcre session zlib
 ADODB_DIR=	${LOCALBASE}/share/adodb
 
 SUB_FILES=	pkg-message
-DOCS=		docs/CHANGELOG docs/CREDITS docs/README docs/TODO docs/UPGRADE
+DOCS=		docs/CHANGELOG docs/CREDITS docs/README docs/README.mssql \
+		docs/TODO docs/UPGRADE docs/GPL docs/base_faq.rtf
 
 OPTIONS=	MYSQL "Enable MySQL support" off \
 		PGSQL "Enable PostgreSQL support" off \
