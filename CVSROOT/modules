@@ -15398,6 +15398,7 @@ trac-tags	ports/www/trac-tags
 trac-wantedpages	ports/www/trac-wantedpages
 trac-webadmin	ports/www/trac-webadmin
 trac-wikinotification	ports/www/trac-wikinotification
+trac-wikirename	ports/www/trac-wikirename
 trackballs	ports/games/trackballs
 tracker		ports/sysutils/tracker
 trackerbt	ports/net-p2p/trackerbt
