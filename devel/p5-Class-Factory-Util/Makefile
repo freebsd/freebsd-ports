@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-Factory-Util
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Utility functions for (factory) classes
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		Class::Factory::Util.3
 
