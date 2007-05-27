@@ -1156,6 +1156,7 @@
     SUBDIR += trac-down
     SUBDIR += trac-gantt
     SUBDIR += trac-hierwiki
+    SUBDIR += trac-iniadmin
     SUBDIR += trac-macropost
     SUBDIR += trac-nav
     SUBDIR += trac-pagetopdf
