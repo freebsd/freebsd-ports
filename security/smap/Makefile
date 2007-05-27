@@ -8,6 +8,7 @@
 
 PORTNAME=	smap
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://www.wormulon.net/smap/
 
@@ -15,7 +16,7 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	SIP scanner and identifier
 
 PLIST_FILES=	bin/smap share/smap/fingerprint.db
-PLIST_DIRS=	share/map
+PLIST_DIRS=	share/smap
 
 USE_GMAKE=	yes
 
