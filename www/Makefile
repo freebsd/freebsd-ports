@@ -1161,6 +1161,7 @@
     SUBDIR += trac-iniadmin
     SUBDIR += trac-ldap
     SUBDIR += trac-macropost
+    SUBDIR += trac-mastertickets
     SUBDIR += trac-nav
     SUBDIR += trac-pagelist
     SUBDIR += trac-pagetopdf
