@@ -1,0 +1,29 @@
+# New ports collection makefile for:	audacious-dumb
+# Date created:				27 May 2007
+# Whom:					Emanuel Haupt <ehaupt@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	audacious-dumb
+PORTVERSION=	0.42
+CATEGORIES=	audio
+MASTER_SITES=	http://www.netswarm.net/misc/ \
+		http://critical.ch/distfiles/ \
+		http://energy.critical.ch/distfiles/
+
+MAINTAINER=	ehaupt@FreeBSD.org
+COMMENT=	Audacious plugin that support the IT, XM, S3M or MOD formats
+
+RUN_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious
+BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious \
+		dumbout:${PORTSDIR}/devel/dumb
+
+USE_GMAKE=	yes
+USE_LDCONFIG=	yes
+
+MAKE_ENV+=	CC="${CC}"
+
+ONLY_FOR_ARCHS=	i386 amd64
+
+.include <bsd.port.mk>
