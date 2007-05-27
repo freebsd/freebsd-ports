@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	3.5.10
-PORTREVISION=	1
+PORTVERSION=	3.5.11
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.wiretapped.net/pub/mirrors/lftp/ \
 		ftp://ftp.wiretapped.net/pub/mirrors/lftp/old/ \
@@ -24,8 +23,6 @@ MAINTAINER=	fm@cross-road.org.ua
 COMMENT=	Shell-like command line ftp client
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libreadline.so.5:${PORTSDIR}/devel/readline
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_ICONV=	yes
 USE_BZIP2=	yes
@@ -39,6 +36,11 @@ OPTIONS=	GNUTLS "With GnutTLS support" off \
 		NLS "With i18n support" on
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 602109 || (${OSVERSION} > 700000 && ${OSVERSION} < 700029)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libreadline.so.5:${PORTSDIR}/devel/readline
+RUN_DEPENDS+=	${LOCALBASE}/lib/libreadline.so.5:${PORTSDIR}/devel/readline
+.endif
 
 .if defined(WITH_GNUTLS)
 CONFIGURE_ARGS+=	--with-gnutls
