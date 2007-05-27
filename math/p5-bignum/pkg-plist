@@ -1,0 +1,10 @@
+%%SITE_PERL%%/Math/BigFloat/Trace.pm
+%%SITE_PERL%%/Math/BigInt/Trace.pm
+%%SITE_PERL%%/bigint.pm
+%%SITE_PERL%%/bignum.pm
+%%SITE_PERL%%/bigrat.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/bignum/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/bignum
+@dirrmtry %%SITE_PERL%%/Math/BigFloat
+@dirrmtry %%SITE_PERL%%/Math/BigInt
+@dirrmtry %%SITE_PERL%%/Math

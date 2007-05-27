@@ -269,6 +269,7 @@
     SUBDIR += p5-Statistics-OLS
     SUBDIR += p5-Statistics-Regression
     SUBDIR += p5-Task-Math-Symbolic
+    SUBDIR += p5-bignum
     SUBDIR += pari
     SUBDIR += parmetis
     SUBDIR += pecl-big_int
