@@ -1162,6 +1162,7 @@
     SUBDIR += trac-macropost
     SUBDIR += trac-nav
     SUBDIR += trac-pagetopdf
+    SUBDIR += trac-pendingticket
     SUBDIR += trac-privatetickets
     SUBDIR += trac-remind
     SUBDIR += trac-restrictedarea
