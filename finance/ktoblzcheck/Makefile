@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ktoblzcheck
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	finance german
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,6 +18,7 @@ USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_PYTHON=	2.3+
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 USE_LDCONFIG=	yes
 
 MAN1=		ktoblzcheck.1
