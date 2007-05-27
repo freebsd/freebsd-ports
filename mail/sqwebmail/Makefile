@@ -27,10 +27,10 @@ OPTIONS=	CACHEDIR	"Cache logins"					on \
 		GZIP		"Compress messages with gzip"			on \
 		HTTPS		"Generate https:// URLs for all accesses"	off \
 		HTTPS_LOGIN	"Generate https:// URLs only for login"		off \
-		IMAP		"Use the Courier IMAP Server"			on \
 		ISPELL		"Provide spell checking"			off \
 		MIMETYPES	"search for a mime.types file"			off \
-		SENTRENAME	"Periodic rename the Sent folder"		on
+		SENTRENAME	"Periodic rename the Sent folder"		on \
+		CHARSET		"Enable charsets"				off
 
 .if exists(${.CURDIR}/../../security/courier-authlib/Makefile.opt)
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.opt"
@@ -55,14 +55,6 @@ CACHEOWNER?=	bin
 # set WITH_MAXARGSIZE to max size of a text message (excluding attachments)
 # set WITH_MAXFORMARGSIZE to max size of attachments
 #
-# set WITH_CHARSET=chset,chset,... to enable charsets.
-# Set it to "all" will enable all unicode charset mappings.
-# "iconv -l" may give you an idea of some usable character sets, although
-# this is not exactly the same as the set which sqwebmail provides.
-# Do not forget the template character set and UTF-8. For example, to be
-# able to read ISO-8859-15 correctly, you need at least
-# WITH_CHARSET=ISO-8859-15,ISO-8859-1,UTF-8
-
 # End of user variables
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-unknown-freebsd${OSREL}
@@ -136,10 +128,6 @@ CONFIGURE_ARGS+=	--enable-https
 CONFIGURE_ARGS+=	--disable-autorenamesent
 .endif
 
-.if defined(WITHOUT_IMAP)
-CONFIGURE_ARGS+=	--disable-utf7-folder-encoding
-.endif
-
 .if defined(WITHOUT_GZIP)
 CONFIGURE_ARGS+=	--without-gzip
 .endif
@@ -180,11 +168,7 @@ CONFIGURE_ARGS+=	--with-maxformargsize=${WITH_MAXFORMARGSIZE}
 .endif
 
 .if defined(WITH_CHARSET)
-.if ${WITH_CHARSET:U} == ALL
 CONFIGURE_ARGS+=	--enable-unicode
-.else
-CONFIGURE_ARGS+=	--enable-unicode=${WITH_CHARSET}
-.endif
 .endif
 
 .if defined(WITH_AUTOPURGE)
