@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.5.0.3
+PORTVERSION=	1.5.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 
@@ -36,7 +36,9 @@ MAN1=		git-add.1 \
 		git-bisect.1 \
 		git-blame.1 \
 		git-branch.1 \
+		git-bundle.1 \
 		git-cat-file.1 \
+		git-check-attr.1 \
 		git-check-ref-format.1 \
 		git-checkout-index.1 \
 		git-checkout.1 \
@@ -56,7 +58,6 @@ MAN1=		git-add.1 \
 		git-describe.1 \
 		git-diff-files.1 \
 		git-diff-index.1 \
-		git-diff-stages.1 \
 		git-diff-tree.1 \
 		git-diff.1 \
 		git-fast-import.1 \
@@ -92,6 +93,7 @@ MAN1=		git-add.1 \
 		git-merge-index.1 \
 		git-merge-one-file.1 \
 		git-merge-tree.1 \
+		git-mergetool.1 \
 		git-mktag.1 \
 		git-mktree.1 \
 		git-mv.1 \
@@ -119,7 +121,6 @@ MAN1=		git-add.1 \
 		git-request-pull.1 \
 		git-rerere.1 \
 		git-reset.1 \
-		git-resolve.1 \
 		git-rev-list.1 \
 		git-rev-parse.1 \
 		git-revert.1 \
@@ -157,6 +158,7 @@ MAN1=		git-add.1 \
 		git-write-tree.1 \
 		gitk.1
 MAN3=		Git.3
+MAN5=		gitattributes.5
 MAN7=		git.7
 
 USE_BZIP2=	yes

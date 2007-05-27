@@ -11,7 +11,9 @@ bin/git-archive
 bin/git-bisect
 bin/git-blame
 bin/git-branch
+bin/git-bundle
 bin/git-cat-file
+bin/git-check-attr
 bin/git-check-ref-format
 bin/git-checkout
 bin/git-checkout-index
@@ -33,11 +35,11 @@ bin/git-describe
 bin/git-diff
 bin/git-diff-files
 bin/git-diff-index
-bin/git-diff-stages
 bin/git-diff-tree
 bin/git-fast-import
 bin/git-fetch
 bin/git-fetch-pack
+bin/git-fetch--tool
 bin/git-fmt-merge-msg
 bin/git-for-each-ref
 bin/git-format-patch
@@ -73,7 +75,9 @@ bin/git-merge-ours
 bin/git-merge-recursive
 bin/git-merge-resolve
 bin/git-merge-stupid
+bin/git-merge-subtree
 bin/git-merge-tree
+bin/git-mergetool
 bin/git-mktag
 bin/git-mktree
 bin/git-mv
@@ -101,7 +105,6 @@ bin/git-repo-config
 bin/git-request-pull
 bin/git-rerere
 bin/git-reset
-bin/git-resolve
 bin/git-rev-list
 bin/git-rev-parse
 bin/git-revert
@@ -151,11 +154,28 @@ share/git-core/templates/hooks/applypatch-msg
 share/git-core/templates/hooks/commit-msg
 share/git-core/templates/hooks/post-commit
 share/git-core/templates/hooks/post-update
+share/git-core/templates/hooks/post-receive
 share/git-core/templates/hooks/pre-applypatch
 share/git-core/templates/hooks/pre-commit
 share/git-core/templates/hooks/pre-rebase
 share/git-core/templates/hooks/update
 share/git-core/templates/info/exclude
+%%GUI%%share/git-gui/lib/tclIndex
+%%GUI%%share/git-gui/lib/blame.tcl
+%%GUI%%share/git-gui/lib/branch.tcl
+%%GUI%%share/git-gui/lib/browser.tcl
+%%GUI%%share/git-gui/lib/class.tcl
+%%GUI%%share/git-gui/lib/commit.tcl
+%%GUI%%share/git-gui/lib/console.tcl
+%%GUI%%share/git-gui/lib/database.tcl
+%%GUI%%share/git-gui/lib/diff.tcl
+%%GUI%%share/git-gui/lib/error.tcl
+%%GUI%%share/git-gui/lib/index.tcl
+%%GUI%%share/git-gui/lib/merge.tcl
+%%GUI%%share/git-gui/lib/option.tcl
+%%GUI%%share/git-gui/lib/remote.tcl
+%%GUI%%share/git-gui/lib/shortcut.tcl
+%%GUI%%share/git-gui/lib/transport.tcl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git
 @dirrm lib/xemacs/site-lisp/git
 @dirrmtry lib/xemacs/site-lisp
@@ -163,6 +183,8 @@ share/git-core/templates/info/exclude
 @dirrm share/emacs/site-lisp/git
 @dirrmtry share/emacs/site-lisp
 @dirrmtry share/emacs
+%%GUI%%@dirrm share/git-gui/lib
+%%GUI%%@dirrm share/git-gui
 @dirrm share/git-core/templates/branches
 @dirrm share/git-core/templates/hooks
 @dirrm share/git-core/templates/info
