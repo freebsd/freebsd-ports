@@ -1176,6 +1176,7 @@
     SUBDIR += trac-webadmin
     SUBDIR += trac-wikinotification
     SUBDIR += trac-wikirename
+    SUBDIR += trac-wikitemplates
     SUBDIR += trac-xmlrpc
     SUBDIR += transproxy
     SUBDIR += twhttpd
