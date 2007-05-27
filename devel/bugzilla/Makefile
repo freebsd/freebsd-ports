@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	bugzilla
-PORTVERSION?=	2.22.2
-PORTREVISION=	1
+PORTVERSION?=	3.0
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -15,25 +14,31 @@ MASTER_SITE_SUBDIR=	webtools webtools/archived
 MAINTAINER?=	skv@FreeBSD.org
 COMMENT?=	Bug-tracking system developed by Mozilla Project
 
-OPTIONS=	MYSQL "MySQL database support" on \
+OPTIONS=	MYSQL "MySQL database support" off \
 		PGSQL "PostgreSQL database support" off \
+		GRAPH_REPORTS "Graphical Reports" on \
 		CHARTING_MODULES "Bug charting support" on \
+		PATCH_VIEWER "Patch Viewer" on \
+		MORE_HTML "More HTML in Product/Group Descriptions" on \
+		INBOUND_EMAIL "Inbound Email" off \
+		MOVE_BUGZ "Move Bugs Between Installations" off \
+		BMP2PNG "BMP Attachments to PNGs" off \
+		XMLRPC "XML-RPC Interface" off \
+		MODPERL2 "With mod_perl2 support" off \
 		GRAPHVIZ "Use GraphViz" off \
 		EXPORT_IMPORT "Import/export bugs (via XML)" off \
 		CONTRIB	"Install user-contributed scripts" off \
-		LDAP "Enable LDAP support" off
+		LDAP "LDAP Authentication" off
 
 RUN_DEPENDS+=	\
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
-		${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig \
 		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
+		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
-		${SITE_PERL}/Text/Wrap.pm:${PORTSDIR}/textproc/p5-Text-Tabs+Wrap \
 		${SITE_PERL}/${PERL_ARCH}/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper \
 		${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
-		${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-		${SITE_PERL}/Mail/Mailer.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${SITE_PERL}/PatchReader.pm:${PORTSDIR}/devel/p5-PatchReader
+		${SITE_PERL}/Email/Send.pm:${PORTSDIR}/mail/p5-Email-Send \
+		${SITE_PERL}/Email/MIME/Modifier.pm:${PORTSDIR}/mail/p5-Email-MIME-Modifier
 
 CONFLICTS?=	ja-bugzilla-2.*
 
@@ -52,7 +57,6 @@ BUGZILLADIR=	${PREFIX}/www/data/bugzilla
 
 PLIST_SUB+=	BUGZILLADIR=${BUGZILLADIR:S!^${PREFIX}/!!}
 
-CONTRIB_DOCS=	README README.Mailif bugmail_help.html bugzilla.procmailrc
 DATA_DIRS_LIST=	images js skins/standard skins/standard/global \
 		skins/standard/index
 
@@ -69,11 +73,47 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-P
 USE_PGSQL=	yes
 .endif
 
-.ifdef WITH_CHARTING_MODULES
+.ifdef WITH_GRAPH_REPORTS
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
-		${SITE_PERL}/Chart/Base.pm:${PORTSDIR}/graphics/p5-chart \
 		${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph \
-		${SITE_PERL}/GD/Text/Align.pm:${PORTSDIR}/graphics/p5-GD-TextUtil
+		${SITE_PERL}/GD/Text.pm:${PORTSDIR}/graphics/p5-GD-TextUtil \
+		${SITE_PERL}/Template/Plugin/GD/Image:${PORTSDIR}/www/p5-Template-GD
+.endif
+
+.ifdef WITH_CHARTING_MODULES
+RUN_DEPENDS+=	${SITE_PERL}/Chart/Base.pm:${PORTSDIR}/graphics/p5-chart
+.endif
+
+.ifdef WITH_PATCH_VIEWER
+RUN_DEPENDS+=	${SITE_PERL}/PatchReader.pm:${PORTSDIR}/devel/p5-PatchReader
+.endif
+
+.ifdef WITH_MORE_HTML
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
+		${SITE_PERL}/HTML/Scrubber.pm:${PORTSDIR}/www/p5-HTML-Scrubber
+.endif
+
+.ifdef WITH_INBOUND_EMAIL
+RUN_DEPENDS+=	${SITE_PERL}/Email/MIME/Attachment/Stripper.pm:${PORTSDIR}/mail/p5-Email-MIME-Attachment-Stripper \
+		${SITE_PERL}/Email/Reply:${PORTSDIR}/mail/p5-Email-Reply
+.endif
+
+.ifdef WITH_MOVE_BUGZ
+RUN_DEPENDS+=	${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools \
+		${SITE_PERL}/XML/Twig.pm:${PORTSDIR}/textproc/p5-XML-Twig
+.endif
+
+.ifdef WITH_BMP2PNG
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick
+.endif
+
+.ifdef WITH_XMLRPC
+RUN_DEPENDS+=	${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
+.endif
+
+.ifdef WITH_MODPERL2
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
+		${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI
 .endif
 
 .ifdef WITH_GRAPHVIZ
@@ -127,10 +167,6 @@ do-install:
 	@cd ${WRKSRC}/contrib && \
 		${FIND} . -type d -exec ${MKDIR} "${BUGZILLADIR}/contrib/{}" \; && \
 		${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${BUGZILLADIR}/contrib/{}" \;
-.ifndef NOPORTDOCS
-	${MKDIR} ${DOCSDIR}/contrib
-	${INSTALL_DATA} ${CONTRIB_DOCS:S!^!${WRKSRC}/contrib/!} ${DOCSDIR}/contrib
-.endif
 .endif
 .if !defined(BATCH)
 	@${ECHO_MSG}
