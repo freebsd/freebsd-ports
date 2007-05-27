@@ -15379,6 +15379,7 @@ tr2latex	ports/print/tr2latex
 trac		ports/www/trac
 trac-accountmanager	ports/www/trac-accountmanager
 trac-addcomment	ports/www/trac-addcomment
+trac-blog	ports/www/trac-blog
 trac-bzr	ports/www/trac-bzr
 trac-calendar	ports/www/trac-calendar
 trac-codetags	ports/www/trac-codetags
