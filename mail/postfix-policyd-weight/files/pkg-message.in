@@ -1,7 +1,7 @@
 **********
 * Start with:
 
-# %%PREFIX%%/libexec/postfix/policyd-weight start
+# %%PREFIX%%/bin/policyd-weight start
 
 * To use this from Postfix SMTPD, use in %%PREFIX%%/etc/postfix/main.cf
 
@@ -23,10 +23,13 @@ smtpd_recipient_restrictions =
 * An example is provided in %%PREFIX%%/etc/policyd-weight.conf.sample
 *
 *
-* ATTENTION !!! ATTENTION
+* Notes:
 *
 * Since version 0.1.14 beta the master.cf mode is deprecated. Use the daemon
 * mode instead. More info in man 8 policyd-weight.
+*
+* Since version 0.1.14.5 beta the policyd-weight executable is located in
+* %%PREFIX%%/bin. Please remove older versions in %%PREFIX%%/libexec/postfix/
+* manually.
 * 
-* ATTENTION !!! ATTENTION
 *************
