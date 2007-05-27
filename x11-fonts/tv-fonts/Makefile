@@ -7,7 +7,7 @@
 
 PORTNAME=	tv-fonts
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://dl.bytesex.org/releases/${PORTNAME}/
 
@@ -16,7 +16,7 @@ COMMENT=	A number of fonts which are useful for TV applications
 
 BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 
