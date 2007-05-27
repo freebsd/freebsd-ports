@@ -6,29 +6,32 @@
 #
 
 PORTNAME=	scim-openvanilla
-PORTVERSION=	0.7.2.b20060214
-PORTREVISION=	4
+PORTVERSION=	0.7.2.20070514
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.csie.org/~llwang/	\
-		http://www.infor.org/~llwang/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	rafan
 DISTNAME=	openvanilla-${PORTVERSION}
 
 MAINTAINER=	llwang@infor.org
 COMMENT=	SCIM OpenVanilla input method (IM)/output filter (OF) framework
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim	\
-		${X11BASE}/include/OpenVanilla/OpenVanilla.h:${PORTSDIR}/textproc/openvanilla-framework
+		${LOCALBASE}/include/OpenVanilla/OpenVanilla.h:${PORTSDIR}/textproc/openvanilla-framework
 RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
+LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 USE_AUTOTOOLS=	libltdl:15
 WRKSRC=		${WRKDIR}/${DISTNAME}/Loaders/SCIM
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
+USE_GETTEXT=	yes
+USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS=-I${X11BASE}/include	\
+CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include	\
 		OV_MODULEDIR=${PREFIX}/lib/openvanilla/
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+PLIST_FILES=	lib/scim-1.0/1.4.0/IMEngine/OVLoader-SCIM.a	\
+		lib/scim-1.0/1.4.0/IMEngine/OVLoader-SCIM.la	\
+		lib/scim-1.0/1.4.0/IMEngine/OVLoader-SCIM.so
 
 .include <bsd.port.mk>

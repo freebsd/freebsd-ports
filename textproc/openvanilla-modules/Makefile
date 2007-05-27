@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	openvanilla-modules
-PORTVERSION=	0.7.2.b20060214
-PORTREVISION=	2
+PORTVERSION=	0.7.2.20070514
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.csie.org/~llwang/	\
-		http://www.infor.org/~llwang/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	rafan
 DISTNAME=	openvanilla-${PORTVERSION}
 
 MAINTAINER=	llwang@infor.org
 COMMENT=	Input method modules for OpenVanilla
 
-BUILD_DEPENDS=	${X11BASE}/include/OpenVanilla/OpenVanilla.h:${PORTSDIR}/textproc/openvanilla-framework
-RUN_DEPENDS=	${LOCALBASE}/lib/scim-1.0/IMEngine/OVLoader-SCIM.so:${PORTSDIR}/textproc/scim-openvanilla
+BUILD_DEPENDS=	${LOCALBASE}/include/OpenVanilla/OpenVanilla.h:${PORTSDIR}/textproc/openvanilla-framework
+RUN_DEPENDS=	${LOCALBASE}/lib/scim-1.0/1.4.0/IMEngine/OVLoader-SCIM.so:${PORTSDIR}/textproc/scim-openvanilla
 
 USE_AUTOTOOLS=	libtool:15:env
 USE_GMAKE=	yes
@@ -29,10 +28,11 @@ OPTIONS=	OVIMArray		"Array Input Module"		on \
 		OVIMPOJ_Holo		"POJ-Holo Input Module"		on \
 		OVIMPhonetic		"Phonetic Input Module"		on \
 		OVIMRoman		"Roman Input Module"		off \
+		OVIMSpaceChewing	"Chewing Input Module"		on \
 		OVIMTibetan		"Tibetan Input Module"		off \
 		OVIMUnicode		"Unicode Input Module"		off
 
-MAKE_ARGS+=	INSTALL_PREFIX=${PREFIX} OV_INCLUDE=${X11BASE}/include
+MAKE_ARGS+=	INSTALL_PREFIX=${PREFIX} OV_INCLUDE=${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 
@@ -46,6 +46,11 @@ PLIST_SUB+=	OVIMBig5=""
 .else
 PLIST_SUB+=	OVIMBig5="@comment "
 .endif
+#.if defined(WITH_OVIMBoshiamy)
+#PLIST_SUB+=	OVIMBoshiamy=""
+#.else
+#PLIST_SUB+=	OVIMBoshiamy="@comment "
+#.endif
 .if !defined(WITHOUT_OVIMGeneric)
 PLIST_SUB+=	OVIMGeneric=""
 .else
@@ -66,6 +71,11 @@ PLIST_SUB+=	OVIMRoman=""
 .else
 PLIST_SUB+=	OVIMRoman="@comment "
 .endif
+.if !defined(WITHOUT_OVIMSpaceChewing)
+PLIST_SUB+=	OVIMSpaceChewing=""
+.else
+PLIST_SUB+=	OVIMSpaceChewing="@comment "
+.endif
 .if defined(WITH_OVIMTibetan)
 PLIST_SUB+=	OVIMTibetan=""
 .else
@@ -77,6 +87,23 @@ PLIST_SUB+=	OVIMUnicode=""
 PLIST_SUB+=	OVIMUnicode="@comment "
 .endif
 
+#.if defined(WITH_OVIMBoshiamy)
+#DISTFILES+=	liu5.cin
+#NOFETCHFILES=	liu5.cin
+#EXTRACT_ONLY+=	openvanilla-${PORTVERSION}${EXTRACT_SUFX}
+#LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+#LDFLAGS+=	${LOCALBASE}/lib
+#.if !exists(${DISTDIR}/liu5.cin)
+#IGNORE=		need liu5.cin from a legal copy of LIU57 standard version CDROM to use Boshiamy input module. Please copy /UNIX/xcin2.5/liu5.cin from the CDROM to ${DISTDIR} and run make again
+#.endif
+#post-extract:
+#	@${CP} ${DISTDIR}/liu5.cin ${WRKSRC}/Modules/OVIMBoshiamy
+#.endif
+
+#.if !defined(WITHOUT_OVIMSpaceChewing)
+#LIB_DEPENDS+=	chewing.3:${PORTSDIR}/chinese/libchewing
+#.endif
+
 do-build:
 .if !defined(WITHOUT_OVIMArray)
 	@(cd ${WRKSRC}/Modules/OVIMArray; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
@@ -84,6 +111,9 @@ do-build:
 .if defined(WITH_OVIMBig5)
 	@(cd ${WRKSRC}/Modules/OVIMBig5; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
 .endif
+#.if defined(WITH_OVIMBoshiamy)
+#	@(cd ${WRKSRC}/Modules/OVIMBoshiamy; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
+#.endif
 .if !defined(WITHOUT_OVIMGeneric)
 	@(cd ${WRKSRC}/Modules/OVIMGeneric; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
 .endif
@@ -93,10 +123,13 @@ do-build:
 .if !defined(WITHOUT_OVIMPhonetic)
 	@(cd ${WRKSRC}/Modules/OVIMPhonetic; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
 .endif
+.if !defined(WITHOUT_OVIMSpaceChewing)
+	@(cd ${WRKSRC}/Modules/OVIMSpaceChewing0.3; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} data all)
+.endif
 .if defined(WITH_OVIMRoman)
 	@(cd ${WRKSRC}/Modules/OVIMRoman; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
 .endif
-.if !defined(WITHOUT_OVIMTibetan)
+.if defined(WITH_OVIMTibetan)
 	@(cd ${WRKSRC}/Modules/OVIMTibetan; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} all)
 .endif
 .if defined(WITH_OVIMUnicode)
@@ -110,6 +143,9 @@ do-install:
 .if defined(WITH_OVIMBig5)
 	@(cd ${WRKSRC}/Modules/OVIMBig5; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
 .endif
+#.if defined(WITH_OVIMBoshiamy)
+#	@(cd ${WRKSRC}/Modules/OVIMBoshiamy; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
+#.endif
 .if !defined(WITHOUT_OVIMGeneric)
 	@(cd ${WRKSRC}/Modules/OVIMGeneric; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
 .endif
@@ -122,7 +158,10 @@ do-install:
 .if defined(WITH_OVIMRoman)
 	@(cd ${WRKSRC}/Modules/OVIMRoman; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
 .endif
-.if !defined(WITHOUT_OVIMTibetan)
+.if !defined(WITHOUT_OVIMSpaceChewing)
+	@(cd ${WRKSRC}/Modules/OVIMSpaceChewing0.3; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
+.endif
+.if defined(WITH_OVIMTibetan)
 	@(cd ${WRKSRC}/Modules/OVIMTibetan; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} install)
 .endif
 .if defined(WITH_OVIMUnicode)
