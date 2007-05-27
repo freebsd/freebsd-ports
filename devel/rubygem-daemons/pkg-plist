@@ -6,7 +6,6 @@
 %%GEM_LIB_DIR%%/README
 %%GEM_LIB_DIR%%/LICENSE
 %%GEM_LIB_DIR%%/setup.rb
-%%GEM_LIB_DIR%%/lib/daemons.rb
 %%GEM_LIB_DIR%%/lib/daemons/application.rb
 %%GEM_LIB_DIR%%/lib/daemons/application_group.rb
 %%GEM_LIB_DIR%%/lib/daemons/cmdline.rb
@@ -17,6 +16,7 @@
 %%GEM_LIB_DIR%%/lib/daemons/pid.rb
 %%GEM_LIB_DIR%%/lib/daemons/pidfile.rb
 %%GEM_LIB_DIR%%/lib/daemons/pidmem.rb
+%%GEM_LIB_DIR%%/lib/daemons.rb
 %%GEM_LIB_DIR%%/test/call_as_daemon.rb
 %%GEM_LIB_DIR%%/test/tc_main.rb
 %%GEM_LIB_DIR%%/test/test1.rb
@@ -31,16 +31,13 @@
 %%GEM_LIB_DIR%%/examples/run/ctrl_multiple.rb
 %%GEM_LIB_DIR%%/examples/run/ctrl_normal.rb
 %%GEM_LIB_DIR%%/examples/run/ctrl_ontop.rb
+%%GEM_LIB_DIR%%/examples/run/ctrl_optionparser.rb
 %%GEM_LIB_DIR%%/examples/run/ctrl_proc.rb
-%%GEM_LIB_DIR%%/examples/run/ctrl_proc.rb.output
 %%GEM_LIB_DIR%%/examples/run/ctrl_proc_simple.rb
 %%GEM_LIB_DIR%%/examples/run/myserver.rb
 %%GEM_LIB_DIR%%/examples/run/myserver_crashing.rb
-%%GEM_LIB_DIR%%/examples/run/myserver_crashing.rb.output
 %%GEM_LIB_DIR%%/examples/run/myserver_exiting.rb
-%%GEM_DOC_DIR%%/rdoc/created.rid
 %%GEM_DOC_DIR%%/rdoc/rdoc-style.css
-%%GEM_DOC_DIR%%/rdoc/files/lib/daemons_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/daemons/application_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/daemons/application_group_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/daemons/cmdline_rb.html
@@ -51,6 +48,7 @@
 %%GEM_DOC_DIR%%/rdoc/files/lib/daemons/pid_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/daemons/pidfile_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/lib/daemons/pidmem_rb.html
+%%GEM_DOC_DIR%%/rdoc/files/lib/daemons_rb.html
 %%GEM_DOC_DIR%%/rdoc/files/README.html
 %%GEM_DOC_DIR%%/rdoc/files/Releases.html
 %%GEM_DOC_DIR%%/rdoc/files/TODO.html
@@ -84,13 +82,13 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/Application.src/M000028.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/Application.src/M000029.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/Application.src/M000030.html
-%%GEM_DOC_DIR%%/rdoc/classes/Daemons/Controller.src/M000031.html
+%%GEM_DOC_DIR%%/rdoc/classes/Daemons/Application.src/M000031.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/Controller.src/M000032.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/Controller.src/M000033.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/Controller.src/M000034.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/Controller.src/M000035.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/Controller.src/M000036.html
-%%GEM_DOC_DIR%%/rdoc/classes/Daemons/PidFile.src/M000037.html
+%%GEM_DOC_DIR%%/rdoc/classes/Daemons/Controller.src/M000037.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/PidFile.src/M000038.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/PidFile.src/M000039.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/PidFile.src/M000040.html
@@ -98,12 +96,12 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/PidFile.src/M000042.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/PidFile.src/M000043.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/PidFile.src/M000044.html
-%%GEM_DOC_DIR%%/rdoc/classes/Daemons/SystemError.src/M000045.html
-%%GEM_DOC_DIR%%/rdoc/classes/Daemons/Monitor.src/M000046.html
+%%GEM_DOC_DIR%%/rdoc/classes/Daemons/PidFile.src/M000045.html
+%%GEM_DOC_DIR%%/rdoc/classes/Daemons/SystemError.src/M000046.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/Monitor.src/M000047.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/Monitor.src/M000048.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/Monitor.src/M000049.html
-%%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.src/M000050.html
+%%GEM_DOC_DIR%%/rdoc/classes/Daemons/Monitor.src/M000050.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.src/M000051.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.src/M000052.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.src/M000053.html
@@ -113,6 +111,7 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.src/M000057.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.src/M000058.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.src/M000059.html
+%%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.src/M000060.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/Pid.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/RuntimeException.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/Optparse.html
@@ -126,17 +125,18 @@
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/ApplicationGroup.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/PidMem.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons/CmdException.html
-%%GEM_DOC_DIR%%/rdoc/classes/Daemonize.src/M000060.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemonize.src/M000061.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemonize.src/M000062.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemonize.src/M000063.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemonize.src/M000064.html
+%%GEM_DOC_DIR%%/rdoc/classes/Daemonize.src/M000065.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemons.html
 %%GEM_DOC_DIR%%/rdoc/classes/Daemonize.html
 %%GEM_DOC_DIR%%/rdoc/fr_file_index.html
 %%GEM_DOC_DIR%%/rdoc/fr_class_index.html
 %%GEM_DOC_DIR%%/rdoc/fr_method_index.html
 %%GEM_DOC_DIR%%/rdoc/index.html
+%%GEM_DOC_DIR%%/rdoc/created.rid
 @dirrm %%GEM_LIB_DIR%%/examples/run
 @dirrm %%GEM_LIB_DIR%%/examples/daemonize
 @dirrm %%GEM_LIB_DIR%%/examples/call
