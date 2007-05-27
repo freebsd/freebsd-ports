@@ -19,11 +19,13 @@ include/vamos/body/Tire.h
 include/vamos/body/Transmission.h
 include/vamos/body/Wheel.h
 include/vamos/geometry/Constants.h
+include/vamos/geometry/Contact_Info.h
 include/vamos/geometry/Conversions.h
 include/vamos/geometry/Inertia_Tensor.h
 include/vamos/geometry/Interpolator.h
 include/vamos/geometry/Linear_Interpolator.h
 include/vamos/geometry/Material.h
+include/vamos/geometry/Numeric.h
 include/vamos/geometry/Rectangle.h
 include/vamos/geometry/Spline.h
 include/vamos/geometry/Three_Matrix.h

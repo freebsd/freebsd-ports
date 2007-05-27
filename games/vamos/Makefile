@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	vamos
-PORTVERSION=	0.5.5
-PORTREVISION=	4
+PORTVERSION=	0.5.6
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,15 +21,15 @@ LIB_DEPENDS=	cppunit-1.10.2:${PORTSDIR}/devel/cppunit \
 		glut.4:${PORTSDIR}/graphics/libglut \
 		png.5:${PORTSDIR}/graphics/png
 
-USE_AUTOTOOLS=	libtool:15
+USE_GNOME=	gnometarget
 USE_GL=		yes
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		MAKEINFO="makeinfo --no-split"
-CONFIGURE_ARGS=	--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
+CONFIGURE_ARGS=	--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib \
+		--infodir=${PREFIX}/${INFO_PATH}
 USE_LDCONFIG=	yes
 
 INFO=		vamos
