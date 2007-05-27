@@ -7,10 +7,14 @@
 
 PORTNAME=	eva
 PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	evaq
+
+PATCH_SITES=	ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
+PATCHFILES=	eva-0.4.1_20070504.patch.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	liu_yinghong@yahoo.com.cn
 COMMENT=	QQ IM Client for KDE3
@@ -19,16 +23,10 @@ USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-MAKE_ARGS=  ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
-            AUTOHEADER="${TRUE}"
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	"does not compile"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(LIBS\ =\ @LIBS@\)|\1 -pthread|' \
@@ -36,4 +34,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/-pedantic //g; s/-O2//g; \
 		s/-lpthread/${PTHREAD_LIBS}/g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
