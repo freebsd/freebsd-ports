@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mumps
-PORTVERSION=	4.6.3
-PORTREVISION=	3
+PORTVERSION=	4.7.3
 CATEGORIES=	math
-MASTER_SITES=	http://www.enseeiht.fr/apo/MUMPS/	\
-		http://www.enseeiht.fr/irit/apo/MUMPS/	\
-		http://graal.ens-lyon.fr/MUMPS/
+MASTER_SITES=	http://mumps.enseeiht.fr/		\
+		http://graal.ens-lyon.fr/MUMPS/		\
+		http://www.enseeiht.fr/apo/MUMPS/	\
+		http://www.enseeiht.fr/irit/apo/MUMPS/
 DISTNAME=	MUMPS_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -31,7 +31,10 @@ COMMENT=	MUltifrontal Massively Parallel sparse direct Solver
 #-----------------------------------------------------------------------
 
 WANT_FORTRAN=yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+
+SLAVEDIRS=	math/mumps-mpich
+
 FC=	gfortran42
 F77=	gfortran42
 FORTRANLIBS=	-lgfortranbegin -lgfortran
@@ -51,14 +54,14 @@ PLIST_SUB+=	MUMPSVERSION=${PORTVERSION}
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
-WITH_ATLAS=     yes
+WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=   atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 BLAS_LIBS=	-lf77blas -latlas
 LAPACK_LIBS=	-lalapack -lcblas
 .else
-LIB_DEPENDS+=   blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 BLAS_LIBS=	-lblas
 LAPACK_LIBS=	-llapack
 .endif
