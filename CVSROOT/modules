@@ -15392,6 +15392,7 @@ trac-iniadmin	ports/www/trac-iniadmin
 trac-macropost	ports/www/trac-macropost
 trac-nav	ports/www/trac-nav
 trac-pagetopdf	ports/www/trac-pagetopdf
+trac-pendingticket	ports/www/trac-pendingticket
 trac-privatetickets	ports/www/trac-privatetickets
 trac-remind	ports/www/trac-remind
 trac-restrictedarea	ports/www/trac-restrictedarea
