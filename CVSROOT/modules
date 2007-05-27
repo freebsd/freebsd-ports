@@ -4363,6 +4363,7 @@ guile-lib	ports/devel/guile-lib
 guile-www	ports/www/guile-www
 guilib		ports/graphics/guilib
 guiloader	ports/devel/guiloader
+guiloader-c++	ports/devel/guiloader-c++
 guitartex	ports/print/guitartex
 gup		ports/news/gup
 guppi		ports/math/guppi
