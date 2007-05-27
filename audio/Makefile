@@ -35,6 +35,7 @@
     SUBDIR += asmixer
     SUBDIR += aube
     SUBDIR += audacious-crossfade
+    SUBDIR += audacious-dumb
     SUBDIR += audacity
     SUBDIR += audacity-devel
     SUBDIR += aumix

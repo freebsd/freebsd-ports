@@ -1,0 +1,13 @@
+--- ./Makefile.orig	Sun May 27 12:12:15 2007
++++ ./Makefile	Sun May 27 12:12:23 2007
+@@ -24,10 +24,6 @@
+ OBJECTS := $(SOURCES:%.c=$(OBJDIR)/%.o)
+ 
+ all:	$(PLUGIN_FILE)
+-	@echo
+-	@echo "The plug-in has been compiled. Run one of the following:"
+-	@echo "make install      - for global (root) installation to $(INSTALL_DIR)"
+-	@echo "make install-home - for installation to home directory $(INSTALL_DIR_HOME)"
+ 
+ $(PLUGIN_FILE): $(OBJECTS)
+ 	$(CC) -shared -o $@ $^ $(DUMBLIBS) $(AUDACIOUSLIBS)
