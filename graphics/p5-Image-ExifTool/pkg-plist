@@ -27,6 +27,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/GIF.pm
 %%SITE_PERL%%/Image/ExifTool/GPS.pm
 %%SITE_PERL%%/Image/ExifTool/GeoTiff.pm
+%%SITE_PERL%%/Image/ExifTool/HP.pm
 %%SITE_PERL%%/Image/ExifTool/HTML.pm
 %%SITE_PERL%%/Image/ExifTool/HtmlDump.pm
 %%SITE_PERL%%/Image/ExifTool/ICC_Profile.pm
@@ -102,6 +103,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/style.css
 %%PORTDOCS%%%%DOCSDIR%%/verbose.html
 %%PORTDOCS%%%%DOCSDIR%%/writing.html
+%%PORTDOCS%%%%DOCSDIR%%/MIE1.1-20070121.pdf
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/AFCP.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/AIFF.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/APE.html
@@ -125,6 +127,7 @@ bin/exiftool
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/FujiFilm.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/GPS.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/GeoTiff.html
+%%PORTDOCS%%%%DOCSDIR%%/TagNames/HP.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/HTML.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/ICC_Profile.html
 %%PORTDOCS%%%%DOCSDIR%%/TagNames/ID3.html
