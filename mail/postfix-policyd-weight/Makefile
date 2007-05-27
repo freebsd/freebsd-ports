@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	policyd-weight
-PORTVERSION=	0.1.14.3
+PORTVERSION=	0.1.14.5
 
 CATEGORIES=	mail
 MASTER_SITES=	http://www.policyd-weight.org/releases/
@@ -15,11 +15,10 @@ PKGNAMEPREFIX=	postfix-
 MAINTAINER=	robtone@ek-muc.de
 COMMENT=	Weighted policy daemon for postfix
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
-		postfix:${PORTSDIR}/mail/postfix
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
 
 SUB_FILES=	pkg-message
-PLIST_FILES=	libexec/postfix/${PORTNAME} etc/${PORTNAME}.conf.sample
+PLIST_FILES=	bin/${PORTNAME} etc/${PORTNAME}.conf.sample
 
 USE_RC_SUBR+=	policyd-weight
 
@@ -29,7 +28,7 @@ MAN5+=	policyd-weight.conf.5
 .include <bsd.port.pre.mk>
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/libexec/postfix/
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.sample ${PREFIX}/etc/
 .for i in 5 8
 	@${MKDIR} ${PREFIX}/man/man$i
