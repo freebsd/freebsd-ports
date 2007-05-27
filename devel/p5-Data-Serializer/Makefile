@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-Serializer
-PORTVERSION=	0.36
+PORTVERSION=	0.41
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Data
@@ -34,10 +34,4 @@ MAN3=		Data::Serializer.3 Data::Serializer::Config::General.3 \
 		Data::Serializer::XML::Simple.3 Data::Serializer::YAML.3 \
 		Data::Serializer::YAML::Syck.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-EXTRA_PATCHES=	${PATCHDIR}/500503-Makefile.PL
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
