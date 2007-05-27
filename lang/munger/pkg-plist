@@ -1,5 +1,5 @@
 bin/munger
-lib/libmunger.so.25
+lib/libmunger.so.26
 %%DKNS_BIN%%
 %%DATADIR%%/ipdatabase.munger
 %%DATADIR%%/httpd.munger
@@ -11,7 +11,6 @@ lib/libmunger.so.25
 %%DATADIR%%/xml2sqlite.munger
 %%DATADIR%%/xmlsqlite.munger
 %%DATADIR%%/login.css
-%%DATADIR%%/httpd.munger
 %%DATADIR%%/login.fcgi
 %%DATADIR%%/incorporation.munger
 %%DATADIR%%/blog.css
