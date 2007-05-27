@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Rose/Object/MakeMethods.pm
 %%SITE_PERL%%/Rose/Object/MakeMethods/DateTime.pm
 %%SITE_PERL%%/Rose/Object/MakeMethods/Generic.pm
+%%SITE_PERL%%/Rose/Object/MixIn.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rose/Object/.packlist
 @dirrmtry %%SITE_PERL%%/Rose/Object/MakeMethods
 @dirrmtry %%SITE_PERL%%/Rose/Class/MakeMethods

@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	Rose-Object
-PORTVERSION=	0.821
+PORTVERSION=	0.830
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Rose
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 
 MAINTAINER=	hideo@lastamericanempire.com
 COMMENT=	A simple object base class
@@ -25,7 +26,8 @@ MAN3=	Rose::Class.3 \
 	Rose::Object.3 \
 	Rose::Object::MakeMethods.3 \
 	Rose::Object::MakeMethods::DateTime.3 \
-	Rose::Object::MakeMethods::Generic.3
+	Rose::Object::MakeMethods::Generic.3 \
+	Rose::Object::MixIn.3 \
 
 .include <bsd.port.pre.mk>
 
