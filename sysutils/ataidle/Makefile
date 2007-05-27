@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ataidle
-PORTVERSION=	0.9
+PORTVERSION=	1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cran.org.uk/bruce/software/
 
 MAINTAINER=	bruce@cran.org.uk
-COMMENT=	Utility to set spindown timeout for ATA drives
+COMMENT=	Utility to spin down ATA drives
 
 MAN8=		ataidle.8
 PORTDOCS=	COPYING ChangeLog README
@@ -28,7 +28,7 @@ do-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 501105
-IGNORE=		requires ATAng, available in 5.1-CURRENT or newer
+IGNORE=		requires FreeBSD 5.2 or newer
 .endif
 
 .include <bsd.port.post.mk>
