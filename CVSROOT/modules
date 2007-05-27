@@ -15401,6 +15401,7 @@ trac-restrictedarea	ports/www/trac-restrictedarea
 trac-robotstxt	ports/www/trac-robotstxt
 trac-simpleticket	ports/www/trac-simpleticket
 trac-tags	ports/www/trac-tags
+trac-ticketdelete	ports/www/trac-ticketdelete
 trac-tocmacro	ports/www/trac-tocmacro
 trac-wantedpages	ports/www/trac-wantedpages
 trac-webadmin	ports/www/trac-webadmin
