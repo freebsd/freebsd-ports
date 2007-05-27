@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcapy
-PORTVERSION=	0.10.4
+PORTVERSION=	0.10.5
 CATEGORIES=	net python
 MASTER_SITES=	http://oss.coresecurity.com/repo/ \
 		http://www.yazzy.org/ports/pcapy/
