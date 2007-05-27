@@ -6,25 +6,22 @@
 #
 
 PORTNAME=	nav
-PORTVERSION=	3.92p6
+PORTVERSION=	3.92
 CATEGORIES=	www devel python
-MASTER_SITES=	http://www.gerritbeine.de/downloads/trac-hacks/
+MASTER_SITES=	http://www.gerritbeine.de/download/trac/
 PKGNAMEPREFIX=	trac-
-DISTNAME=	TracNav-${PORTVERSION:S/p/pre/}
+DISTNAME=	trac${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	A fully customizable navigation bar for Trac
 
-BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools \
-		tracd:${PORTSDIR}/www/trac
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
+RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
-USE_ZIP=	yes
+WRKSRC=		${WRKDIR}/trac${PORTNAME}
+NO_BUILD=	yes
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=yes
-PLIST_SUB+=	PORTVERSION=${PORTVERSION:S/p/pre/} PYTHONVERSION=${_PYTHON_VERSION}
-
-do-build:
-	@${DO_NADA}
+PLIST_SUB+=	PORTVERSION=${PORTVERSION} PYTHONVERSION=${_PYTHON_VERSION}
 
 .include <bsd.port.mk>
