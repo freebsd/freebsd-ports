@@ -7,6 +7,7 @@
 
 PORTNAME=	lynx
 PORTVERSION=	2.8.7d5
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
 DISTNAME=	${PORTNAME}2.8.7dev.5
@@ -22,13 +23,19 @@ USE_ICONV=	yes
 NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS= --with-screen=ncursesw --with-zlib --libdir="${L_LIB}" \
+CONFIGURE_ARGS= --with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-nls --with-bzlib \
 		--enable-nested-tables --enable-default-colors \
 		--enable-scrollbar --enable-addrlist-page \
 		--enable-gzip-help \
 		--with-mime-libdir=${PREFIX}/etc \
 		--with-libiconv-prefix=${LOCALBASE}
+
+.if ${OSVERSION} >= 602107
+CONFIGURE_ARGS+=	--with-screen=ncursesw
+.else
+CONFIGURE_ARGS+=	--with-screen=ncurses
+.endif
 
 .ifndef NO_OPENSSL
 USE_OPENSSL=	yes
