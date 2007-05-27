@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-commander
 PORTVERSION=	1.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-commander/1.2
@@ -18,7 +18,7 @@ MAINTAINER=	araujo@bsdmail.org
 COMMENT=	File manager for Gnome2
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
-		exif.13:${PORTSDIR}/graphics/libexif \
+		exif.12:${PORTSDIR}/graphics/libexif \
 		iptcdata.3:${PORTSDIR}/graphics/libiptcdata
 
 CONFLICTS=	gnome-commander-*

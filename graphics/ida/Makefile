@@ -7,7 +7,7 @@
 
 PORTNAME=	ida
 PORTVERSION=	0.21
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://dl.bytesex.org/releases/fbida/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		ungif.5:${PORTSDIR}/graphics/libungif \
-		exif.13:${PORTSDIR}/graphics/libexif
+		exif.12:${PORTSDIR}/graphics/libexif
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

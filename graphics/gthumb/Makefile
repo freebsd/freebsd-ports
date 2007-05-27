@@ -7,6 +7,7 @@
 
 PORTNAME=	gthumb
 PORTVERSION=	2.10.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.10
@@ -15,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	An image viewer and browser for the GNOME 2 environment
 
-LIB_DEPENDS=	exif.13:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif
 
 USE_BZIP2=	yes
 USE_XLIB=	yes

@@ -40,7 +40,7 @@ WITH_IMLIB=	yes
 CONFIGURE_ARGS+=	--disable-gdk-pixbuf
 .endif
 
-.if exists(${LOCALBASE}/lib/libexif.so.13)
+.if exists(${LOCALBASE}/lib/libexif.so.12)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-exit_view.c
 .endif
 
