@@ -1,6 +1,6 @@
---- lib/Makefile.in.orig	Tue May 23 18:27:51 2006
-+++ lib/Makefile.in	Sun Oct  8 02:07:54 2006
-@@ -22,6 +22,11 @@
+--- lib/Makefile.in.orig	Mon Apr 16 10:13:11 2007
++++ lib/Makefile.in	Mon May 21 16:10:51 2007
+@@ -25,6 +25,11 @@
  
  have_gtk = @have_gtk@
  
@@ -12,7 +12,7 @@
  ifeq ($(INSTALL_PROGRAM),)
    INSTALL_PROGRAM = $(INSTALL) -m 755
  endif
-@@ -36,7 +41,7 @@
+@@ -39,7 +44,7 @@
  libdir = $(prefix)/lib
  includedir = $(prefix)/include/gretl
  aclocaldir = $(prefix)/share/aclocal
@@ -21,18 +21,18 @@
  
  INSTALLDIRS = $(libdir) $(includedir) $(aclocaldir)
  
-@@ -52,8 +57,8 @@
+@@ -55,8 +60,8 @@
  
  # hard-coded -L/usr/local/lib is a bodge!!
  
 -LIBS = $(LAPACK_LIBS) -lm -ldl -L/usr/local/lib -lz $(XML_LIBS) \
--	$(GLIB_LIBS) $(GMP_LIBS)
+-	$(GLIB_LIBS) $(GMP_LIBS) $(FFTW_LIBS)
 +LIBS = $(LAPACK_LIBS) -lm -lz $(XML_LIBS) \
-+	$(GLIB_LIBS) $(GMP_LIBS) $(INTL_LIBS)
++	$(GLIB_LIBS) $(GMP_LIBS) $(FFTW_LIBS) $(INTL_LIBS)
  
  #### End of system configuration section. ####
  
-@@ -187,10 +192,10 @@
+@@ -204,10 +209,10 @@
  LOBJS = $(SRCS:.c=.lo)
  AUX_LOBJ = $(CEPHES_SRC:.c=.lo) $(MINPACK_SRC:.c=.lo)
  
@@ -40,12 +40,12 @@
 +LIBTOOL = @LIBTOOL@
  
  override CFLAGS += -I.. -I$(topsrc) -I$(libsrc) $(XML_CFLAGS) $(GLIB_CFLAGS) \
--	$(GMP_CFLAGS) -DHAVE_CONFIG_H
-+	$(GMP_CFLAGS) -DHAVE_CONFIG_H $(CPPFLAGS)
+-	$(GMP_CFLAGS) $(FFTW_CFLAGS) -DHAVE_CONFIG_H
++	$(GMP_CFLAGS) $(FFTW_CFLAGS) $(CPPFLAGS) -DHAVE_CONFIG_H
  
  COMPILE = $(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) 
  
-@@ -199,7 +204,7 @@
+@@ -216,7 +221,7 @@
  	$(CC) $(CFLAGS) -MM -MT $*.lo $< > .deps/$*.d
  
  $(LIBGRETL): .deps $(LOBJS) $(AUX_LOBJ)

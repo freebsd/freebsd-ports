@@ -7,17 +7,16 @@
 #
 
 PORTNAME=	gretl
-PORTVERSION=	1.6.2
-PORTREVISION=	1
+PORTVERSION=	1.6.5
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnu Regression, Econometrics and Time-series Library
 
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
-LIB_DEPENDS=	mpfr.1:${PORTSDIR}/math/mpfr
+LIB_DEPENDS=	fftw3.4:${PORTSDIR}/math/fftw3 \
+		mpfr.1:${PORTSDIR}/math/mpfr
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 USE_BZIP2=	yes
@@ -25,12 +24,12 @@ WANT_GNOME=	yes
 USE_GNOME=	gnometarget gtk20 libxml2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15 autoconf:259
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -DGNUPLOT_PNG" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DGNUPLOT_PNG" \
 		LDFLAGS="-L${LOCALBASE}/lib ${GCCLIBDIR}"
-CONFIGURE_ARGS+=	--enable-static --enable-shared --with-gmake
+CONFIGURE_ARGS=	--enable-static --enable-shared --with-gmake
 ALL_TARGET=	# empty
+USE_LDCONFIG=	yes
 
 MAN1=		gretl.1 gretl-config.1
 
@@ -44,9 +43,23 @@ GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "alpha"
+BROKEN=		math/lapack appears to be broken on alpha
+.endif
+
+.if ${HAVE_GNOME:Mlibgnomeui}!=""
+PKGNAMESUFFIX=	-gnome
+USE_GNOME+=	gnomeprefix gtksourceview libgnomeui
+GCONF_SCHEMAS=	gretl.schemas
+DATADIR=	${PREFIX}/share/gnome/${PORTNAME}
+.else
+CONFIGURE_ARGS+=	--without-gnome --without-gtksourceview
+.endif
+
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)
 WITH_ATLAS=	yes
 .endif
+
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
 BLAS=		-lf77blas -latlas
@@ -60,18 +73,5 @@ LAPACK=		-llapack
 
 pre-configure:
 	@${DIRNAME} `${F77} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
-
-.if ${ARCH} == "alpha"
-BROKEN=		math/lapack appears to be broken on alpha
-.endif
-
-.if ${HAVE_GNOME:Mlibgnomeui}!=""
-PKGNAMESUFFIX=	-gnome
-USE_GNOME+=	gnomeprefix gtksourceview libgnomeui
-GCONF_SCHEMAS=	gretl.schemas
-DATADIR=	${PREFIX}/share/gnome/${PORTNAME}
-.else
-CONFIGURE_ARGS+=	--without-gnome --without-gtksourceview
-.endif
 
 .include <bsd.port.post.mk>

@@ -3,6 +3,7 @@ bin/gretl_x11
 bin/gretlcli
 include/gretl/adf_kpss.h
 include/gretl/bhhh_max.h
+include/gretl/bootstrap.h
 include/gretl/calendar.h
 include/gretl/compare.h
 include/gretl/compat.h
@@ -18,6 +19,7 @@ include/gretl/genmain.h
 include/gretl/graphing.h
 include/gretl/gretl_commands.h
 include/gretl/gretl_errors.h
+include/gretl/gretl_fft.h
 include/gretl/gretl_func.h
 include/gretl/gretl_intl.h
 include/gretl/gretl_list.h
@@ -357,6 +359,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/greene12_1.inp
 %%DATADIR%%/scripts/greene14_1.inp
 %%DATADIR%%/scripts/greene14_2.inp
+%%DATADIR%%/scripts/greene15_3.inp
 %%DATADIR%%/scripts/greene18_6.inp
 %%DATADIR%%/scripts/greene19_1.inp
 %%DATADIR%%/scripts/greene19_3.inp
@@ -369,6 +372,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/misc/armaloop.inp
 %%DATADIR%%/scripts/misc/bjg.inp
 %%DATADIR%%/scripts/misc/camtriv.inp
+%%DATADIR%%/scripts/misc/convolve.inp
 %%DATADIR%%/scripts/misc/denmark.inp
 %%DATADIR%%/scripts/misc/ects_nls.inp
 %%DATADIR%%/scripts/misc/garch.inp
