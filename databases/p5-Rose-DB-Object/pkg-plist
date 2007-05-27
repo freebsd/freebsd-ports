@@ -3,6 +3,7 @@
 %%SITE_PERL%%/Rose/DB/Object/Constants.pm
 %%SITE_PERL%%/Rose/DB/Object/ConventionManager.pm
 %%SITE_PERL%%/Rose/DB/Object/ConventionManager/Null.pm
+%%SITE_PERL%%/Rose/DB/Object/Exception.pm
 %%SITE_PERL%%/Rose/DB/Object/Helpers.pm
 %%SITE_PERL%%/Rose/DB/Object/Iterator.pm
 %%SITE_PERL%%/Rose/DB/Object/Loader.pm
@@ -18,6 +19,7 @@
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Auto/Generic.pm
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Auto/Informix.pm
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Auto/MySQL.pm
+%%SITE_PERL%%/Rose/DB/Object/Metadata/Auto/Oracle.pm
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Auto/Pg.pm
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Auto/SQLite.pm
 %%SITE_PERL%%/Rose/DB/Object/Metadata/Column.pm
