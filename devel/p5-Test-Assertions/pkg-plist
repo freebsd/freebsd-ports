@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Test/Assertions.pm
+%%SITE_PERL%%/Test/Assertions/Manual.pod
+%%SITE_PERL%%/Test/Assertions/TestScript.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Assertions/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Assertions
+@dirrmtry %%SITE_PERL%%/Test/Assertions
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test

@@ -1,0 +1,9 @@
+Test::Assertions provides a convenient set of tools for constructing
+tests, such as unit tests or run-time assertion checks (like C's
+ASSERT macro).  Unlike some of the Test:: modules available on CPAN,
+Test::Assertions is not limited to unit test scripts; for example
+it can be used to check output is as expected within a benchmarking
+script.  When it is used for unit tests, it generates output in the
+standard form for CPAN unit testing (under Test::Harness).
+
+WWW: http://search.cpan.org/dist/Test-Assertions/
