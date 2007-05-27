@@ -1,0 +1,27 @@
+# New ports collection makefile for: trac-hierwiki
+# Date created:                      May 18 2007
+# Whom:                              Gerrit Beine <gerrit.beine@gmx.de>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	hierwiki
+PORTVERSION=	0.1r1
+CATEGORIES=	www devel python
+MASTER_SITES=	http://www.gerritbeine.de/download/trac/
+PKGNAMEPREFIX=	trac-
+DISTNAME=	${PORTNAME}plugin-${PORTVERSION:S/r/-r/}
+
+MAINTAINER=	gerrit.beine@gmx.de
+COMMENT=	Dealing with the trac wiki as a hierarchy
+
+BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
+RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
+
+WRKSRC=		${WRKDIR}/${PORTNAME}plugin
+NO_BUILD=	yes
+USE_PYTHON=	2.3+
+USE_PYDISTUTILS=yes
+PLIST_SUB+=	PORTVERSION=${PORTVERSION:S/r/_r/} PYTHONVERSION=${_PYTHON_VERSION}
+
+.include <bsd.port.mk>
