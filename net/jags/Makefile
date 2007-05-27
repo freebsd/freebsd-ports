@@ -23,10 +23,16 @@ USE_GNOME=	gtk12
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 pre-patch:
 	@${PERL} -pi.fbsd -e 's@/usr/local/share/jags/@${PREFIX}/share/jags/@g' \
 		${WRKSRC}/src/jagsconfig.cpp
 	@${PERL} -pi.fbsd -e 's@/usr/local/share/jags/pixmaps/@${PREFIX}/share/jags/pixmaps/@g' \
 		${WRKSRC}/src/gtk_common.cpp
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

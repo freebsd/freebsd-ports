@@ -23,6 +23,12 @@ PLIST=		${WRKDIR}/pkg-plist
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.orig
 	@${SED} -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g ; \
@@ -50,4 +56,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

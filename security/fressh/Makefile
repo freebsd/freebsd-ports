@@ -19,6 +19,10 @@ USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 .if !exists(/usr/lib/libssl.a) || !exists(/usr/lib/libcrypto.a)
 .if exists(${LOCALBASE}/lib/libssl.a) && exists(${LOCALBASE}/lib/libcrypto.a)
 LIB_DEPENDS+=	ssl.3:${PORTSDIR}/security/openssl

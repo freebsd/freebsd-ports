@@ -25,6 +25,12 @@ QTDIR?=		${QT_PREFIX}
 MAKE_ENV+=	QTDIR=${QTDIR} QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 ALL_TARGET=	install
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
 		${WRKSRC}/src/main.cpp \
@@ -45,4 +51,4 @@ do-install:
 	${CP} -R ${WRKSRC}/LinCVS/Help/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

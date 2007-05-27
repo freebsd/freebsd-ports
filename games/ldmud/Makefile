@@ -29,6 +29,12 @@ PLIST_SUB+=	LPMUD="@comment " MUDLIB=""
 PLIST_SUB+=	LPMUD="@comment " MUDLIB="@comment "
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-install:
 	# Install an RC script for ldmud
 	${CAT} ${FILESDIR}/ldmud.sh | ${SED} -e "s:%%PREFIX%%:${PREFIX}:" \
@@ -56,4 +62,4 @@ post-install:
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} \
 		POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

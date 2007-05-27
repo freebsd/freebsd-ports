@@ -27,6 +27,12 @@ CONFIGURE_ARGS+=	--with-db3=${LOCALBASE}
 CONFIGURE_SCRIPT=	../dist/configure
 MAN1=			ex.1 vi.1 view.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 # XXX: nvi doesn't really need sys/select.h, but I don't think the
 # build should break when it includes it (this happens on RELENG_4;
 # sys/select.h is effectively empty on -current).
@@ -39,4 +45,4 @@ post-install:
 	${RM} ${PREFIX}/man/cat1/${__p}.0
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

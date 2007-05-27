@@ -31,9 +31,15 @@ LIBTOOLFLAGS=		--tag=CXX
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|CCLD = $$(CC)|CCLD = $$(CXX)|; \
 		s|-lpthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/roboradio/mp3/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

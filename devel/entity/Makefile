@@ -28,10 +28,16 @@ USE_LDCONFIG=	yes
 
 MAN1=		entity.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib/entity/clib ${PREFIX}/lib
 	${MKDIR} ${PREFIX}/share/entity
 	cd ${WRKSRC}/apps && ${PAX} -r -w `${LS} | \
 		${GREP} -v Makefile` ${PREFIX}/share/entity
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

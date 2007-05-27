@@ -31,6 +31,10 @@ OPTIONS=	EXTRA "Extra programs required to record/playback/save" off
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 # This program does not actually require the programs below unless you
 #   use audio/video recording and/or playback and save to a non-raw format.
 .if defined(WITH_EXTRA)

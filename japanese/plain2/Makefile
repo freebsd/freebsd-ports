@@ -25,6 +25,12 @@ BUILD_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:R}p${PORTVERSION:E}.orig/src
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DBSD -DKANJI -DPICTURE -DHTML -fwritable-strings"
 ALL_TARGET=	${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/lib/plain2|${DATADIR}|g' ${BUILD_WRKSRC}/plain2.h
@@ -34,4 +40,4 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/lib/*.p2 ${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

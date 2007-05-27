@@ -28,6 +28,12 @@ MAN5=		gsi.conf.5
 MAN7=		gsi_overview.7
 MAN8=		gsi_server.8
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-extract:
 	@${RM} -f ${WRKSRC}/lib/include/gsi/gsisynth.h
 
@@ -57,4 +63,4 @@ post-install:
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

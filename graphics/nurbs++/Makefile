@@ -22,4 +22,10 @@ USE_LDCONFIG=	yes
 
 MAN1=	nurbs++-config.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
+.include <bsd.port.post.mk>

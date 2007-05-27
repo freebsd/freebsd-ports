@@ -27,6 +27,12 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAN1=	expack.1 ipack.1 shp2pcx.1 splitshp.1 textpack.1
 MAN6=	exult.6
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|desktop||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/configure
@@ -40,4 +46,4 @@ post-install:
 .endif
 	@${SED} -e 's|%%DOCSDIR%%|${DOCSDIR}|' <${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

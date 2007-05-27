@@ -24,6 +24,12 @@ USE_XPM=	yes
 USE_GMAKE=	yes
 MAN6=		nighthawk.6
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	${REINPLACE_CMD} "s/malloc.h/stdlib.h/g" ${WRKSRC}/src/floor.cc \
 		${WRKSRC}/src/ship.cc ${WRKSRC}/src_sound/nighthawk_sound.c \
@@ -34,4 +40,4 @@ post-install:
 	${CHMOD} g+s ${PREFIX}/bin/nighthawk
 	${SH} pkg-install ${PORTNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

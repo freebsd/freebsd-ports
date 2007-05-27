@@ -27,6 +27,10 @@ OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 .if ${ARCH} == "ia64"
 BROKEN=		does not link on ${ARCH}
 .endif

@@ -28,6 +28,12 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 MAN1=	js.1 jsdas.1
 INFO=	js
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-extract:
 	@${RM} ${WRKSRC}/docs/js.info*
 
@@ -41,4 +47,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

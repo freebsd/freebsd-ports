@@ -19,9 +19,15 @@ LIB_DEPENDS=	shout.2:${PORTSDIR}/audio/libshout
 PLIST_FILES=	bin/holyshout
 USE_GMAKE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's,,\\r,g' ${WRKSRC}/holyshout.c
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

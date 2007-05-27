@@ -28,6 +28,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 .if defined(WITH_IDESK) || exists(${X11BASE}/bin/idesk)
 RUN_DEPENDS+=	idesk:${PORTSDIR}/x11/idesk
 .endif

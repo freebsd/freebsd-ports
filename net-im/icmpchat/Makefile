@@ -14,6 +14,12 @@ MASTER_SITE_SUBDIR=	icmpchat
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple console-based chat that uses the ICMP protocol
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 pre-patch:
 	@${REINPLACE_CMD} -e 's|-O2 -Wall -pedantic|${CFLAGS}|;\
 		s|= gcc|?= gcc|;s|default|all|' ${WRKSRC}/Makefile
@@ -29,4 +35,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/Todo ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

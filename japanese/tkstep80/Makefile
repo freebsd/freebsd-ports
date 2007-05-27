@@ -43,10 +43,14 @@ TCLVERSION=	8.0
 TOPDIR=		${WRKDIR}/${DISTNAME}
 PORTDOCDIR=	${PREFIX}/share/doc/tkstep${TCLVERSION}jp
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/xpg4/d' ${WRKSRC}/configure.in
-
-.include <bsd.port.pre.mk>
 
 pre-install:
 	cd ${TOPDIR}/library/demos.jp && ${RM} -f *.orig

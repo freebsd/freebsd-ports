@@ -26,6 +26,10 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 post-patch:

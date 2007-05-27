@@ -21,6 +21,12 @@ WRKSRC=		${WRKDIR}/funkgold
 MAKE_ARGS=	EXTRA_CFLAGS="${PTHREAD_CFLAGS}" \
 		EXTRA_LDFLAGS="${PTHREAD_LIBS}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/funkgold ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
@@ -28,4 +34,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/${PORTNAME}/README
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

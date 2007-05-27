@@ -26,6 +26,12 @@ DOCS=		AUTHORS BUGS COPYING ChangeLog EPIwm-0.5.6.lsm INSTALL NEWS \
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	${REINPLACE_CMD} 's|/etc/X11/epiwm|${PREFIX}/etc/epiwm|' \
 	    ${WRKSRC}/configure
@@ -38,4 +44,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

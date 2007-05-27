@@ -59,6 +59,12 @@ ONEW_CONF=	${FILESDIR}/ONEW_CONF-for${INPUT_METHOD}
 LIB_NAME=	libonew${INPUT_METHOD}.a
 PORT_DOCDIR=	${LOCALBASE}/share/doc/ja-onew${INPUT_METHOD}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	${SED}	-e 's,%LOCALBASE%,${LOCALBASE},g' \
 		-e 's,%X11BASE%,${X11BASE},g' \
@@ -87,4 +93,4 @@ do-install:
 	@${ECHO} "############################################################"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
