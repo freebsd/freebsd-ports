@@ -10010,6 +10010,7 @@ p5-Log-Message	ports/devel/p5-Log-Message
 p5-Log-Message-Simple	ports/devel/p5-Log-Message-Simple
 p5-Log-Procmail	ports/mail/p5-Log-Procmail
 p5-Log-Simple	ports/devel/p5-Log-Simple
+p5-Log-Trace	ports/devel/p5-Log-Trace
 p5-Log-TraceMessages	ports/devel/p5-Log-TraceMessages
 p5-Logfile-Rotate	ports/devel/p5-Logfile-Rotate
 p5-Lucene	ports/textproc/p5-Lucene
