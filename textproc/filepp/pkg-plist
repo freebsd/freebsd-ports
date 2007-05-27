@@ -1,22 +1,23 @@
 @comment $FreeBSD$
 bin/filepp
-share/filepp/modules/bigdef.pm
-share/filepp/modules/bigfunc.pm
-share/filepp/modules/blc.pm
-share/filepp/modules/c-comment.pm
-share/filepp/modules/cmacros.pm
-share/filepp/modules/comment.pm
-share/filepp/modules/cpp.pm
-share/filepp/modules/defplus.pm
-share/filepp/modules/for.pm
-share/filepp/modules/foreach.pm
-share/filepp/modules/format.pm
-share/filepp/modules/function.pm
-share/filepp/modules/hash-comment.pm
-share/filepp/modules/literal.pm
-share/filepp/modules/maths.pm
-share/filepp/modules/regexp.pm
-share/filepp/modules/tolower.pm
-share/filepp/modules/toupper.pm
-@dirrm share/filepp/modules
-@dirrm share/filepp
+%%DATADIR%%/modules/bigdef.pm
+%%DATADIR%%/modules/bigfunc.pm
+%%DATADIR%%/modules/blc.pm
+%%DATADIR%%/modules/c-comment.pm
+%%DATADIR%%/modules/cmacros.pm
+%%DATADIR%%/modules/comment.pm
+%%DATADIR%%/modules/cpp.pm
+%%DATADIR%%/modules/defplus.pm
+%%DATADIR%%/modules/for.pm
+%%DATADIR%%/modules/foreach.pm
+%%DATADIR%%/modules/format.pm
+%%DATADIR%%/modules/function.pm
+%%DATADIR%%/modules/grab.pm
+%%DATADIR%%/modules/hash-comment.pm
+%%DATADIR%%/modules/literal.pm
+%%DATADIR%%/modules/maths.pm
+%%DATADIR%%/modules/regexp.pm
+%%DATADIR%%/modules/tolower.pm
+%%DATADIR%%/modules/toupper.pm
+@dirrm %%DATADIR%%/modules
+@dirrm %%DATADIR%%
