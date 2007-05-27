@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Want
-PORTVERSION=	0.12
+PORTVERSION=	0.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/R/RO/ROBIN
@@ -19,10 +19,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Want.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires Perl 5.6 or newer. Install lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
