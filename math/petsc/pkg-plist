@@ -19,28 +19,35 @@
 %%PFX%%/bin/config/install-sh
 %%PFX%%/bin/configarch
 %%PFX%%/bin/hostnames.chiba
+%%PFX%%/bin/matlab/@freader/close.m
+%%PFX%%/bin/matlab/@freader/freader.m
+%%PFX%%/bin/matlab/@freader/read.m
+%%PFX%%/bin/matlab/@sreader/close.m
+%%PFX%%/bin/matlab/@sreader/read.m
+%%PFX%%/bin/matlab/@sreader/sreader.m
 %%PFX%%/bin/matlab/PetscBagRead.m
 %%PFX%%/bin/matlab/PetscBinaryRead.m
 %%PFX%%/bin/matlab/PetscBinaryWrite.m
 %%PFX%%/bin/matlab/PetscReadBinaryMatlab.m
-%%PFX%%/bin/matlab/closeport.m
 %%PFX%%/bin/matlab/launch.m
-%%PFX%%/bin/matlab/openport.m
-%%PFX%%/bin/matlab/receive.m
+%%PFX%%/bin/mpiexec.chiba
+%%PFX%%/bin/mpiexec.gmalloc
+%%PFX%%/bin/mpiexec.lam
+%%PFX%%/bin/mpiexec.llrun
+%%PFX%%/bin/mpiexec.poe
+%%PFX%%/bin/mpiexec.prun
+%%PFX%%/bin/mpiexec.sshsync
+%%PFX%%/bin/mpiexec.uni
 %%PFX%%/bin/mpiexec.valgrind
-%%PFX%%/bin/mpirun.chiba
-%%PFX%%/bin/mpirun.gmalloc
-%%PFX%%/bin/mpirun.lam
-%%PFX%%/bin/mpirun.llrun
-%%PFX%%/bin/mpirun.poe
-%%PFX%%/bin/mpirun.prun
-%%PFX%%/bin/mpirun.uni
 %%PFX%%/bin/parseargs.py
 %%PFX%%/bin/parseargs.pyc
 %%PFX%%/bin/parseargs.pyo
 %%PFX%%/bin/petsc_libtool
-%%PFX%%/bin/petscmpirun
+%%PFX%%/bin/petscmpiexec
 %%PFX%%/bin/popup
+%%PFX%%/bin/portabilitycheck.py
+%%PFX%%/bin/portabilitycheck.pyc
+%%PFX%%/bin/portabilitycheck.pyo
 %%PFX%%/bin/processSummary.py
 %%PFX%%/bin/processSummary.pyc
 %%PFX%%/bin/processSummary.pyo
@@ -61,9 +68,6 @@
 %%PFX%%/bmake/adicmfb.init
 %%PFX%%/bmake/common/base
 %%PFX%%/bmake/common/rules
-%%PFX%%/bmake/common/rules.fortran.cpp
-%%PFX%%/bmake/common/rules.fortran.nocpp
-%%PFX%%/bmake/common/rules.fortran.none
 %%PFX%%/bmake/common/rules.shared.basic
 %%PFX%%/bmake/common/test
 %%PFX%%/bmake/common/variables
@@ -108,8 +112,11 @@
 %%PFX%%/include/finclude/moddeps
 %%PFX%%/include/finclude/petsc.h
 %%PFX%%/include/finclude/petsc.h.html
+%%PFX%%/include/finclude/petscall.h
+%%PFX%%/include/finclude/petscall.h90
 %%PFX%%/include/finclude/petscao.h
 %%PFX%%/include/finclude/petscao.h.html
+%%PFX%%/include/finclude/petscbag.h
 %%PFX%%/include/finclude/petscda.h
 %%PFX%%/include/finclude/petscda.h.html
 %%PFX%%/include/finclude/petscda.h90
@@ -131,6 +138,8 @@
 %%PFX%%/include/finclude/petscmat.h.html
 %%PFX%%/include/finclude/petscmat.h90
 %%PFX%%/include/finclude/petscmat.h90.html
+%%PFX%%/include/finclude/petscmesh.h
+%%PFX%%/include/finclude/petscmesh.h90
 %%PFX%%/include/finclude/petscmg.h
 %%PFX%%/include/finclude/petscmg.h.html
 %%PFX%%/include/finclude/petscpc.h
@@ -147,6 +156,7 @@
 %%PFX%%/include/finclude/petscvec.h90.html
 %%PFX%%/include/finclude/petscviewer.h
 %%PFX%%/include/finclude/petscviewer.h.html
+%%PFX%%/include/finclude/petscviewer.h90
 %%PFX%%/include/index.html
 %%PFX%%/include/makefile
 %%PFX%%/include/makefile.html
@@ -216,10 +226,21 @@
 %%PFX%%/include/petscversion.h.html
 %%PFX%%/include/petscviewer.h
 %%PFX%%/include/petscviewer.h.html
+%%PFX%%/include/private/isimpl.h
+%%PFX%%/include/private/isimpl.h.html
+%%PFX%%/include/private/kspimpl.h
+%%PFX%%/include/private/kspimpl.h.html
+%%PFX%%/include/private/matimpl.h
+%%PFX%%/include/private/matimpl.h.html
+%%PFX%%/include/private/meshimpl.h
 %%PFX%%/include/private/pcimpl.h
 %%PFX%%/include/private/pcimpl.h.html
 %%PFX%%/include/private/petscimpl.h
 %%PFX%%/include/private/petscimpl.h.html
+%%PFX%%/include/private/snesimpl.h
+%%PFX%%/include/private/snesimpl.h.html
+%%PFX%%/include/private/tsimpl.h
+%%PFX%%/include/private/tsimpl.h.html
 %%PFX%%/include/private/vecimpl.h
 %%PFX%%/include/private/vecimpl.h.html
 %%PFX%%/include/zpetsc.h
@@ -253,6 +274,8 @@
 @dirrm %%PFX%%/bmake/common
 @dirrm %%PFX%%/bmake
 @dirrm %%PFX%%/bin/win32fe
+@dirrm %%PFX%%/bin/matlab/@sreader
+@dirrm %%PFX%%/bin/matlab/@freader
 @dirrm %%PFX%%/bin/matlab
 @dirrm %%PFX%%/bin/config
 @dirrm %%PFX%%/bin

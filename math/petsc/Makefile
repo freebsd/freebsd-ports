@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	petsc
-DISTVERSION=	2.3.2-p8
-PORTREVISION=	1
+DISTVERSION=	2.3.3-p0
 PORTEPOCH=	1
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
@@ -15,18 +14,20 @@ MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable, Extensible Toolkit for Scientific computation
 
-RUN_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh
+RUN_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh	\
+		qsub:${PORTSDIR}/sysutils/torque
+
+SLAVEDIRS=	math/petsc-mpich
 
 HAS_CONFIGURE=		yes
 USE_PYTHON=		yes
-USE_LDCONFIG=		yes
 CONFIGURE_SCRIPT=	config/configure.py
 CONFIGURE_LOG=		configure.log
 CONFIGURE_ENV=		PETSC_ARCH=${TARGET}	\
 			PETSC_DIR=${WRKSRC}
 CONFIGURE_ARGS=		--prefix=${PREFIX}/${PFX} --COPTFLAGS="${CFLAGS}"	\
 			--CXXOPTFLAGS="${CXXFLAGS}" --FOPTFLAGS="${FFLAGS}"	\
-			--with-shared=1 --with-cc=${CC} --with-fc=${F77}	\
+			--with-shared=1 --with-cc=${CC} --with-fc=${FC}	\
 			--CPPFLAGS="-I${LOCALBASE}/include"
 ALL_TARGET=		all
 MAKEFILE=		makefile
@@ -43,9 +44,9 @@ CONFIGURE_ARGS+=	--with-x-include=${X11BASE}/include	\
 .endif
 
 WANT_FORTRAN=yes #dummy but future use
-BUILD_DEPENDS+= gfortran42:${PORTSDIR}/lang/gcc42
-FC=	gfortran42
-F77=	gfortran42
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 FFLAGS+=	-O2
 PFX=		${PORTNAME}
 TARGET=		${OPSYS:L}
@@ -144,20 +145,22 @@ CONFIGURE_ARGS+=	--with-blocksolve95-include=${LOCALBASE}/mpich2/include	\
 			--with-blocksolve95-lib=${LOCALBASE}/lib/libBS95.a
 .endif
 
-.if defined(WITHOUT_PARMETIS)
+.if defined(WITHOUT_PARMETIS) || exists(${LOCALBASE}/lib/libmetis.so)
+# parmetis cannot be built with suitesparse
 CONFIGURE_ARGS+=	--with-parmetis=0
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/lib/parmetis/libparmetis.a:${PORTSDIR}/math/parmetis
 CONFIGURE_ARGS+=	--with-parmetis=1					\
 			--with-parmetis-include=${LOCALBASE}/include/parmetis	\
 			--with-parmetis-lib=[${LOCALBASE}/lib/parmetis/libparmetis.a,${LOCALBASE}/lib/parmetis/libmetis.a]
+CONFLICTS+=		metis-4*
 .endif
 
 .if exists(${LIBBLACS})
 WITH_BLACS=	yes
 .endif
 .if defined(WITH_BLACS) && defined(WITH_MPI)
-BUILD_DEPENDS+=	${LIBBLACS}:${PORTSDIR}/math/blacs
+LIB_DEPENDS+=		blacs.1:${PORTSDIR}/math/blacs
 CONFIGURE_ARGS+=	--with_blacs=1	\
 			--with-blacs-include=${LOCALBASE}/include	\
 			--with-blacs-lib=[${LOCALBASE}/lib/libblacsc.a,${LOCALBASE}/lib/libblacsf77.a,${LOCALBASE}/lib/libblacs.a]
@@ -165,7 +168,7 @@ CONFIGURE_ARGS+=	--with_blacs=1	\
 WITH_SCALAPACK=	yes
 . endif
 . if defined(WITH_SCALAPACK)
-BUILD_DEPENDS+=	${LIBSCALAPACK}:${PORTSDIR}/math/scalapack
+LIB_DEPENDS+=		scalapack.1:${PORTSDIR}/math/scalapack
 CONFIGURE_ARGS+=	--with-scalapack=1	\
 			--with-scalapack-dir=${LOCALBASE}
 . endif
@@ -183,7 +186,7 @@ CONFIGURE_ARGS+=	--with-scalapack=1	\
 WITH_NETCDF=	yes
 .endif
 .if defined(WITH_NETCDF)
-LIB_DEPENDS+=	netcdf.1:${PORTSDIR}/science/netcdf
+LIB_DEPENDS+=	netcdf.4:${PORTSDIR}/science/netcdf
 CONFIGURE_ENV+=	PNETCDF_INCLUDE=${LOCALBASE}/include	\
 		PNETCDF_LIB=${LOCALBASE}/lib
 .endif
@@ -251,18 +254,18 @@ pre-everything::
 
 pre-configure:
 	@${RM} ${WRKSRC}/bmake/common/rules.shared.basic.orig
-	@${REINPLACE_CMD} -e "s|AMD/Include|include/AMD|"	\
+	${REINPLACE_CMD} -e "s|AMD/Include|include/AMD|"	\
 			-e "s|AMD/Lib|${LOCALBASE}/lib|"	\
 		${WRKSRC}/python/PETSc/packages/UMFPACK.py
-	@${REINPLACE_CMD} -e "s|/bin/ksh|${LOCALBASE}/bin/ksh|"	\
+	${REINPLACE_CMD} -e "s|/bin/ksh|${LOCALBASE}/bin/ksh|"	\
 		${WRKSRC}/bin/popup
 	@${RM} ${WRKSRC}/bin/popup.bak
 .if defined(PACKAGE_BUILDING)
-	@${REINPLACE_CMD} -e "s|%%PACKAGE%%exit 1; ||"		\
+	${REINPLACE_CMD} -e "s|%%PACKAGE%%exit 1; ||"		\
 		-e "s|%%PACKAGE%%sys.exit(3)||"			\
 		${WRKSRC}/makefile ${WRKSRC}/config/configure.py
 .else
-	@${REINPLACE_CMD} -e "s|%%PACKAGE%%||"			\
+	${REINPLACE_CMD} -e "s|%%PACKAGE%%||"			\
 		${WRKSRC}/makefile ${WRKSRC}/config/configure.py
 .endif
 
@@ -272,7 +275,7 @@ post-install:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/${PFX}/bmake
 	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${PREFIX}/${PFX}/bmake
 .if !defined(NOPORTDOCS)
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS}	\
+	(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS}	\
 		${MAKEFILE} ${MAKE_ARGS} install_docs)
 .endif
 	@${ECHO_MSG}
@@ -289,7 +292,7 @@ regression-test:
 .  endif
 	${LOCALBASE}/mpich2/bin/mpd &
 . endif
-	@(cd ${BUILD_WRKSRC};	\
+	(cd ${BUILD_WRKSRC};	\
 	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
 . if defined (WITH_MPI) && !defined(WITH_OPENMPI)
 	${LOCALBASE}/mpich2/bin/mpdallexit
