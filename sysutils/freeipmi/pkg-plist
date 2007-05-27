@@ -92,7 +92,7 @@ lib/libipmiconsole.so
 lib/libipmiconsole.so.%%IPMICONSOLE_SHLIBVER%%
 var/lib/freeipmi/ipckey
 var/lib/freeipmi/bmc-config-template
-@dirrm var/lib/freeipmi
-@dirrm var/lib
+@dirrmtry var/lib/freeipmi
+@dirrmtry var/lib
 @exec mkdir -p -m 0700 %D/var/log/freeipmi
-@dirrm var/log/freeipmi
+@dirrmtry var/log/freeipmi
