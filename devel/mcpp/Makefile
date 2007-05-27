@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mcpp
-PORTVERSION=	2.6.3
+PORTVERSION=	2.6.4
 CATEGORIES=	devel
 MASTER_SITES=	http://prdownloads.sourceforge.net/mcpp/ \
 		http://jaist.dl.sourceforge.net/sourceforge/mcpp/
@@ -23,10 +23,8 @@ PLIST_FILES=	bin/mcpp    \
 		share/doc/mcpp/LICENSE  \
 		share/doc/mcpp/NEWS     \
 		share/doc/mcpp/README   \
-		share/doc/mcpp/doc-jp/mcpp-manual.html  \
-		share/doc/mcpp/doc/mcpp-manual.html
-PLIST_DIRS=	share/doc/mcpp/doc-jp   \
-		share/doc/mcpp/doc      \
-		share/doc/mcpp
+		share/doc/mcpp/mcpp-manual.html  \
+		share/doc/mcpp/mcpp-manual-jp.html
+PLIST_DIRS=	share/doc/mcpp
 
 .include <bsd.port.mk>
