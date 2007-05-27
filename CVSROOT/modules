@@ -15406,6 +15406,7 @@ trac-ticketdelete	ports/www/trac-ticketdelete
 trac-tocmacro	ports/www/trac-tocmacro
 trac-wantedpages	ports/www/trac-wantedpages
 trac-webadmin	ports/www/trac-webadmin
+trac-wikinegotiator	ports/www/trac-wikinegotiator
 trac-wikinotification	ports/www/trac-wikinotification
 trac-wikirename	ports/www/trac-wikirename
 trac-wikitemplates	ports/www/trac-wikitemplates
