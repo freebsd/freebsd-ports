@@ -12,17 +12,17 @@ CATEGORIES=	www ftp
 MASTER_SITES=	http://cr.yp.to/publicfile/ \
 		ftp://cr.yp.to/publicfile/
 
-MAINTAINER=	lx@redundancy.redundancy.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A secure, read-only, anonymous HTTP/FTP server
 
 RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
 		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 
 OPTIONS=	BASICAUTH "basic HTTP authentication support" off \
-		COMMONLOG "support for Apache common log format" on \
-		REDIRECT_SLASH "don't complain when omitting trailing slash" off \
-		ENV_FILETYPES "get filetypes from the environment" off \
-		SSL "provide SSL support through ucspi-ssl" on
+		COMMONLOG "support for Apache common log format" off \
+		REDIRECT_SLASH "don't require trailing slash on directories" off \
+		ENV_FILETYPES "get mime types from the environment" off \
+		SSL "provide SSL support through ucspi-ssl" off
 
 .include <bsd.port.pre.mk>
 
@@ -31,14 +31,14 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Currently the common log and auth patches conflict."
 	@${ECHO_MSG}
-BROKEN=	"Currently the common log and auth patches conflict."
+BROKEN=	Currently the common log and auth patches conflict.
 .endif
 
 .if defined(WITH_BASICAUTH) && defined(WITH_REDIRECT_SLASH)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Currently the redirect slash and auth patches conflict."
 	@${ECHO_MSG}
-BROKEN=	"Currently the redirect slash and auth patches conflict."
+BROKEN=	Currently the redirect slash and auth patches conflict.
 .endif
 
 .if defined(WITH_REDIRECT_SLASH)
