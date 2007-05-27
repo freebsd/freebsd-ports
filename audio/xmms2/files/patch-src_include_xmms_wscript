@@ -1,0 +1,11 @@
+--- src/include/xmms/wscript.orig	Fri May 25 16:49:48 2007
++++ src/include/xmms/wscript	Fri May 25 16:50:17 2007
+@@ -45,7 +45,7 @@
+ 
+     conf.env['XMMS_DEFS'] = defs
+     conf.env['PLUGINDIR'] = defs['PKGLIBDIR']
+-    conf.env['PKGCONFIGDIR'] = os.path.join(conf.env["PREFIX"], "lib", "pkgconfig")
++    conf.env['PKGCONFIGDIR'] = os.path.join(conf.env["PREFIX"], "libdata", "pkgconfig")
+ 
+     for i in defs:
+         conf.add_define(i, defs[i])

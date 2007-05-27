@@ -25,4 +25,6 @@ USE_GNOME=	gtk20
 
 PLIST_FILES=bin/azrael
 
+BROKEN=	Not updated to the DrJekyll clientlib API
+
 .include <bsd.port.mk>

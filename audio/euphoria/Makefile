@@ -29,6 +29,8 @@ USE_BZIP2=	yes
 USE_RUBY=	yes
 RUBY_SHEBANG_FILES=	${WRKSRC}/bin/euphoria
 
+BROKEN=	Not updated to the DrJekyll clientlib API
+
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "ia64"
 BROKEN=		edje is broken on ia64

@@ -6,9 +6,8 @@
 #
 
 PORTNAME?=	xmms2
-PORTVERSION=	0.2.d.8
-PORTREVISION=	1
-DISTVERSION=	0.2DrHouse
+PORTVERSION=	0.2.d.9
+DISTVERSION=	0.2DrJekyll
 CATEGORIES?=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,8 +22,7 @@ LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
 .endif
 
 USE_BZIP2=	yes
-USE_SCONS=	yes
-SCONS_ARGS=	INSTALLDIR=${DESTDIR} SHAREDIR=${DATADIR} EXCLUDE="${EXCLUDE}"
+USE_PYTHON_BUILD=	yes
 
 .if !defined(XMMS2_SLAVE)
 USE_GNOME=	glib20
@@ -34,7 +32,7 @@ USE_LDCONFIG=	yes
 .endif
 
 .if !defined(XMMS2_SLAVE)
-MAN1=		xmms2.1 xmms2-et.1 xmms2d.1 xmms2-launcher.1 xmms2-mdns-avahi.1
+MAN1=		xmms2.1 xmms2-et.1 xmms2d.1 xmms2-launcher.1
 MANCOMPRESSED=	yes
 
 OPTIONS=	FAAD "Support to playback AAC files" on \
@@ -42,7 +40,7 @@ OPTIONS=	FAAD "Support to playback AAC files" on \
 		MODPLUG "Support to playback MOD files" off \
 		MUSEPACK "Support to playback MPC files" off \
 		SID "Support to playback SID files" off \
-		WMA "Support to playback WMA files" off \
+		AVCODEC "Support to playback files with avcodec/avformat" off \
 		APE "Support to playback Monkey's Audio files" off \
 		CURL "Support to playback files via HTTP" on \
 		LASTFM "Support to playback audio via Last.fm radio" on \
@@ -50,6 +48,8 @@ OPTIONS=	FAAD "Support to playback AAC files" on \
 		MMS "Support to playback streams via MMS" off \
 		SAMBA "Support to playback files via SMB" off \
 		DAAP "Support to playback files via DAAP" on \
+		OFA "Support to collect MusicDNS fingerprints" off \
+		XML "Support for XML based playlists (XSPF, RSS)" off \
 		FAM "Support to update Media Library on file change" off \
 		MDNS_AVAHI "Support to announce XMMS2d via mDNS (Avahi)" off \
 		MDNS_APPLE "Support to announce XMMS2d via mDNS (Apple)" on \
@@ -62,26 +62,33 @@ OPTIONS=	FAAD "Support to playback AAC files" on \
 
 .include <bsd.port.pre.mk>
 
+.if defined(XMMS2_SLAVE)
+EXCLUDE+=	--without-xmms2d=1
+EXTRA_PATCHES=	${PATCHDIR}/slaveport-wscript ${PATCHDIR}/slaveport-src_include_wscript
+.endif
+
 .if defined(XMMS2_SLAVE) && ${XMMS2_SLAVE} == "python"
-EXCLUDE+=	ruby java xmmsclient-ecore xmmsclient++ xmmsclient++-glib
+EXCLUDE+=	--with-optionals="python"
 .elif defined(XMMS2_SLAVE) && ${XMMS2_SLAVE} == "ruby"
-EXCLUDE+=	python java xmmsclient-ecore xmmsclient++ xmmsclient++-glib
+EXCLUDE+=	--with-optionals="ruby"
+.elif defined(XMMS2_SLAVE) && ${XMMS2_SLAVE} == "perl"
+EXCLUDE+=	--with-optionals="perl"
 .elif defined(XMMS2_SLAVE) && ${XMMS2_SLAVE} == "ruby-ecore"
-EXCLUDE+=	python java xmmsclient++ xmmsclient++-glib
-.elif defined(XMMS2_SLAVE) && ${XMMS2_SLAVE} == "java"
-EXCLUDE+=	ruby python xmmsclient-ecore xmmsclient++ xmmsclient++-glib
+EXCLUDE+=	--with-optionals="ruby" --with-optionals="xmmsclient-ecore"
 .elif defined(XMMS2_SLAVE) && ${XMMS2_SLAVE} == "cpp"
-EXCLUDE+=	ruby python java xmmsclient-ecore
+EXCLUDE+=	--with-optionals="xmmsclient++" --with-optionals="xmmsclient++-glib"
 .elif !defined(XMMS2_SLAVE)
-EXCLUDE+=	python ruby java xmmsclient-ecore xmmsclient++ xmmsclient++-glib
+EXCLUDE+=	--without-optionals="python" --without-optionals="ruby" --without-optionals="xmmsclient-ecore" --without-optionals="xmmsclient++" --without-optionals="xmmsclient++-glib" --without-optionals="perl"
 .endif
 
 .if !defined(XMMS2_SLAVE)
+
+EXCLUDE+=	--without-plugins="cdda"
 .if !defined(WITHOUT_CURL)
 LIB_DEPENDS+=	curl.4:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	CURL=""
 .else
-EXCLUDE+=	curl
+EXCLUDE+=	--without-plugins="curl" --without-plugins="icymetaint"
 PLIST_SUB+=	CURL="@comment "
 .endif
 
@@ -91,7 +98,7 @@ LIB_DEPENDS+=	curl.3:${PORTSDIR}/ftp/curl
 .endif
 PLIST_SUB+=	LASTFM=""
 .else
-EXCLUDE+=	lastfm lastfmeta
+EXCLUDE+=	--without-plugins="lastfm" --without-plugins="lastfmeta"
 PLIST_SUB+=	LASTFM="@comment "
 .endif
 
@@ -99,7 +106,7 @@ PLIST_SUB+=	LASTFM="@comment "
 LIB_DEPENDS+=	sidplay2.[0-9]:${PORTSDIR}/audio/libsidplay2
 PLIST_SUB+=	SID=""
 .else
-EXCLUDE+=	sid
+EXCLUDE+=	--without-plugins="sid"
 PLIST_SUB+=	SID="@comment "
 .endif
 
@@ -107,7 +114,7 @@ PLIST_SUB+=	SID="@comment "
 LIB_DEPENDS+=	FLAC.7:${PORTSDIR}/audio/flac
 PLIST_SUB+=	FLAC=""
 .else
-EXCLUDE+=	flac
+EXCLUDE+=	--without-plugins="flac"
 PLIST_SUB+=	FLAC="@comment "
 .endif
 
@@ -115,15 +122,15 @@ PLIST_SUB+=	FLAC="@comment "
 LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
 PLIST_SUB+=	FAAD=""
 .else
-EXCLUDE+=	faad
+EXCLUDE+=	--without-plugins="faad" --without-plugins="mp4"
 PLIST_SUB+=	FAAD="@comment "
 .endif
 
-.if defined(WITH_WMA)
+.if defined(WITH_AVCODEC)
 LIB_DEPENDS+=	avutil.1:${PORTSDIR}/multimedia/ffmpeg
 PLIST_SUB+=	WMA=""
 .else
-EXCLUDE+=	wma
+EXCLUDE+=	--without-plugins="avcodec" --without-plugins="avformat"
 PLIST_SUB+=	WMA="@comment "
 .endif
 
@@ -131,7 +138,7 @@ PLIST_SUB+=	WMA="@comment "
 LIB_DEPENDS+=	mac.2:${PORTSDIR}/audio/mac
 PLIST_SUB+=	MAC=""
 .else
-EXCLUDE+=	mac
+EXCLUDE+=	--without-plugins="mac"
 PLIST_SUB+=	MAC="@comment "
 .endif
 
@@ -141,7 +148,6 @@ USE_SDL=	sdl ttf
 PLIST_SUB+=	SDL=""
 #EXTRA_PATCHES+=	${FILESDIR}/extraPatch-src::clients::sdl-vis::Program
 .else
-EXCLUDE+=	sdl-vis
 PLIST_SUB+=	SDL="@comment "
 .endif
 
@@ -149,16 +155,15 @@ PLIST_SUB+=	SDL="@comment "
 LIB_DEPENDS+=	mpcdec.5:${PORTSDIR}/audio/libmpcdec
 PLIST_SUB+=	MUSEPACK=""
 .else
-EXCLUDE+=	musepack
+EXCLUDE+=	--without-plugins="musepack"
 PLIST_SUB+=	MUSEPACK="@comment "
 .endif
 
 .if defined(WITH_JACK)
-IGNORE=		the Jack plugin has not been updated to the Transforms API
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 PLIST_SUB+=	JACK=""
 .else
-EXCLUDE+=	jack
+EXCLUDE+=	--without-plugins="jack"
 PLIST_SUB+=	JACK="@comment "
 .endif
 
@@ -166,22 +171,38 @@ PLIST_SUB+=	JACK="@comment "
 LIB_DEPENDS+=	modplug.0:${PORTSDIR}/audio/libmodplug
 PLIST_SUB+=	MODPLUG=""
 .else
-EXCLUDE+=	modplug
+EXCLUDE+=	--without-plugins="modplug"
 PLIST_SUB+=	MODPLUG="@comment "
+.endif
+
+.if defined(WITH_OFA)
+LIB_DEPENDS+=	ofa.0:${PORTSDIR}/audio/libofa
+PLIST_SUB+=	OFA=""
+.else
+EXCLUDE+=	--without-plugins="ofa"
+PLIST_SUB+=	OFA="@comment "
+.endif
+
+.if defined(WITH_XML)
+USE_GNOME=	xml2
+PLIST_SUB+=	XML=""
+.else
+EXCLUDE+=	--without-plugins="xml" --without-plugins="rss" --without-plugins="xspf"
+PLIST_SUB+=	XML="@comment "
 .endif
 
 .if defined(WITH_SAMBA)
 LIB_DEPENDS+=	smbclient.0:${PORTSDIR}/net/samba-libsmbclient
 PLIST_SUB+=	SAMBA=""
 .else
-EXCLUDE+=	samba
+EXCLUDE+=	--without-plugins="samba"
 PLIST_SUB+=	SAMBA="@comment "
 .endif
 
 .if !defined(WITHOUT_DAAP)
 PLIST_SUB+=	DAAP=""
 .else
-EXCLUDE+=	daap
+EXCLUDE+=	--without-plugins="daap"
 PLIST_SUB+=	DAAP="@comment "
 .endif
 
@@ -189,7 +210,7 @@ PLIST_SUB+=	DAAP="@comment "
 USE_GNOME+=	gnomevfs2
 PLIST_SUB+=	GNOMEVFS=""
 .else
-EXCLUDE+=	gnomevfs
+EXCLUDE+=	--without-plugins="gnomevfs"
 PLIST_SUB+=	GNOMEVFS="@comment "
 .endif
 
@@ -197,7 +218,7 @@ PLIST_SUB+=	GNOMEVFS="@comment "
 LIB_DEPENDS+=	mms.0:${PORTSDIR}/net/libmms
 PLIST_SUB+=	MMS=""
 .else
-EXCLUDE+=	mms
+EXCLUDE+=	--without-plugins="mms"
 PLIST_SUB+=	MMS="@comment "
 .endif
 
@@ -206,7 +227,7 @@ USE_FAM=	yes
 WANT_FAM_SYSTEM=gamin
 PLIST_SUB+=	FAM=""
 .else
-EXCLUDE+=	medialib-updater
+EXCLUDE+=	--without-optionals="medialib-updater"
 PLIST_SUB+=	FAM="@comment "
 .endif
 
@@ -214,7 +235,7 @@ PLIST_SUB+=	FAM="@comment "
 LIB_DEPENDS+=	shout.5:${PORTSDIR}/audio/libshout2
 PLIST_SUB+=	ICES=""
 .else
-EXCLUDE+=	ices
+EXCLUDE+=	--without-plugins="ices"
 PLIST_SUB+=	ICES="@comment "
 .endif
 
@@ -222,7 +243,7 @@ PLIST_SUB+=	ICES="@comment "
 LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
 PLIST_SUB+=	AO=""
 .else
-EXCLUDE+=	ao
+EXCLUDE+=	--without-plugins="ao"
 PLIST_SUB+=	AO="@comment "
 .endif
 
@@ -230,11 +251,12 @@ PLIST_SUB+=	AO="@comment "
 .if !defined(WITHOUT_MDNS_APPLE)
 BROKEN=		You may choose either MDNS_APPLE or MDNS_AVAHI, but not both
 .endif
-EXCLUDE+=	dnssd dns_sd
+EXCLUDE+=	--without-optionals="dnssd"
 LIB_DEPENDS+=	avahi-core:${PORTSDIR}/net/avahi
 PLIST_SUB+=	MDNS_AVAHI=""
+MAN1+=	xmms2-mdns-avahi.1
 .else
-EXCLUDE+=	avahi
+EXCLUDE+=	--without-optionals="avahi"
 PLIST_SUB+=	MDNS_AVAHI="@comment "
 .endif
 
@@ -242,13 +264,12 @@ PLIST_SUB+=	MDNS_AVAHI="@comment "
 .if defined(WITH_MDNS_AVAHI)
 BROKEN=		You may choose either MDNS_APPLE or MDNS_AVAHI, but not both
 .endif
-EXCLUDE+=	avahi
+EXCLUDE+=	--without-optionals="avahi"
 LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
 PLIST_SUB+=	MDNS_APPLE=""
 .else
-EXCLUDE+=	dnssd dns_sd
+EXCLUDE+=	--without-optionals="dnssd"
 PLIST_SUB+=	MDNS_APPLE="@comment "
-.endif
 .endif
 
 .if defined(WITH_VOCODER)
@@ -256,8 +277,18 @@ LIB_DEPENDS+=	fftw3f.4:${PORTSDIR}/math/fftw3-float
 LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
 PLIST_SUB+=	VOCODER=""
 .else
-EXCLUDE+=	vocoder
+EXCLUDE+=	--without-plugins="vocoder"
 PLIST_SUB+=	VOCODER="@comment "
 .endif
+.endif
+
+do-configure:
+	cd ${WRKSRC} && ./waf configure --conf-prefix=${LOCALBASE} --prefix=${PREFIX} --with-mandir=${PREFIX}/man ${EXCLUDE}
+
+do-build:
+	cd ${WRKSRC} && ./waf build
+
+do-install:
+	cd ${WRKSRC} && ./waf install
 
 .include <bsd.port.post.mk>

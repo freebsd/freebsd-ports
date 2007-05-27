@@ -27,24 +27,7 @@ PLIST=		${.CURDIR}/pkg-plist
 SCONS_BUILDENV=	JAVA_HOME=${JAVA_HOME}
 SCONS_TARGET=	src/clients/lib/java
 
+BROKEN=	Requires Java 1.6 and are no longer included with xmms2
 XMMS2_SLAVE=	java
-
-# Crazy workaround for a bug introduced sometime after DrDoolittle that
-# causes the java bindings to not be built completely on the first
-# run of scons.
-
-do-build:
-	@cd ${WRKSRC} && \
-	${SETENV} ${SCONS_BUILDENV} ${SCONS_BIN} ${SCONS_ENV} ${SCONS_ARGS} \
-	${SCONS_TARGET}
-	@cd ${WRKSRC} && \
-	${SETENV} ${SCONS_BUILDENV} ${SCONS_BIN} ${SCONS_ENV} ${SCONS_ARGS} \
-	${SCONS_TARGET}
-
-do-install:
-	@cd ${WRKSRC} && ${INSTALL_DATA} src/clients/lib/java/xmms2java.jar \
-	${JAVAJARDIR}/xmms2java.jar
-	@cd ${WRKSRC} && ${INSTALL_DATA} src/clients/lib/java/libxmms2java.so \
-	${PREFIX}/lib/libxmms2java.so
 
 .include "${MASTERDIR}/Makefile"
