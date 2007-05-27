@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	odt2txt
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://stosberg.net/odt2txt/
 
