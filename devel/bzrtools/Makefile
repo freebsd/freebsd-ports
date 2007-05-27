@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bzrtools
-PORTVERSION=	0.15.4
-PORTREVISION=	1
+PORTVERSION=	0.16.1
 CATEGORIES=	devel
 MASTER_SITES=	http://panoramicfeedback.com/opensource/
 
