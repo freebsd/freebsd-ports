@@ -6,7 +6,7 @@
 
 PORTNAME=	kst
 PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science kde
 MASTER_SITES=	${MASTER_SITE_KDE} \
 		http://omega.astro.utoronto.ca/${PORTNAME}/
@@ -41,7 +41,7 @@ LIB_DEPENDS+=	readline.5:${PORTSDIR}/devel/readline
 .endif
 
 .if defined(WITH_NETCDF)
-LIB_DEPENDS+=	netcdf.1:${PORTSDIR}/science/netcdf
+LIB_DEPENDS+=	netcdf.4:${PORTSDIR}/science/netcdf
 PLIST_SUB+=	NETCDF=""
 .else
 CONFIGURE_ARGS+=	--without-netcdf
