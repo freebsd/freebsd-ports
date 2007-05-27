@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	hpt
-DISTVERSION=	1.4-rc4
+DISTVERSION=	1.4-rc5
 CATEGORIES=	news mail
-DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	os@rsu.ru
 COMMENT=	Highly Portable Tosser (full-featured FTN tosser). Development version
@@ -24,7 +23,7 @@ USE_PERL5=	yes
 MAKE_ARGS+=	PERL=0
 .endif
 
-MAN1=		hpt.1 hptlink.1 hpttree.1 txt2pkt.1
+MAN1=		hpt.1 hptlink.1 hpttree.1 pktinfo.1 txt2pkt.1
 MANCOMPRESSED=	yes
 INFO=		hpt
 
