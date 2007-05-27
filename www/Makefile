@@ -1171,6 +1171,7 @@
     SUBDIR += trac-robotstxt
     SUBDIR += trac-simpleticket
     SUBDIR += trac-tags
+    SUBDIR += trac-ticketdelete
     SUBDIR += trac-tocmacro
     SUBDIR += trac-wantedpages
     SUBDIR += trac-webadmin

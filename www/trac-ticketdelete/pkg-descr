@@ -1,0 +1,5 @@
+This is a small plugin to allow deleting tickets from within Trac. This as a
+method of dealing with tickets very often, it is a commonly requested feature,
+and it is needed on rare occasions (generally dealing with spam).
+
+WWW: http://trac-hacks.org/wiki/TicketDeletePlugin
