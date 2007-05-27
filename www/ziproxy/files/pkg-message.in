@@ -1,12 +1,10 @@
-By default, to prevent creating non-controllable public proxies, ziproxy is
-configured to accept connections only on localhost.
-You have to edit %%PREFIX%%/etc/ziproxy.conf
-to enable remote access to service.
+By default ziproxy is configured to accept connections on localhost only.
+Edit %%PREFIX%%/etc/ziproxy.conf to allow remote access.
 
-There is no man page for ziproxy, but info can be found in
+There is no man page yet, but information can be found in
 %%DOCSDIR%%/README.
 
-ziproxy can be started by the following ways:
+ziproxy can be started the following ways:
 o daemon mode:
     * add ziproxy_enable="YES" to your /etc/rc.conf
     * use rc(8) script %%PREFIX%%/etc/rc.d/ziproxy.sh
