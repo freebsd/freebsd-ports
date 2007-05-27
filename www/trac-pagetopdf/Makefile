@@ -9,9 +9,9 @@ PORTNAME=	pagetopdf
 PORTVERSION=	0.2
 PORTREVISION=	1
 CATEGORIES=	www devel python
-MASTER_SITES=	http://www.gerritbeine.de/downloads/trac-hacks/
+MASTER_SITES=	http://www.gerritbeine.de/download/trac/
 PKGNAMEPREFIX=	trac-
-DISTNAME=	pagetopdfplugin
+DISTNAME=	pagetopdfplugin-${PORTVERSION}
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Export trac wiki pages as PDFs
@@ -20,10 +20,10 @@ RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
 		htmldoc:${PORTSDIR}/textproc/htmldoc
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 
-USE_ZIP=	yes
 USE_PYTHON=	2.3+
+NO_BUILD=	yes
 USE_PYDISTUTILS=yes
-WRKSRC=		${WRKDIR}/${DISTNAME}/0.10
+WRKSRC=		${WRKDIR}/${PORTNAME}plugin
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} PYTHONVERSION=${_PYTHON_VERSION}
 
 do-build:
