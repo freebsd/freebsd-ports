@@ -1,0 +1,5 @@
+#!/bin/sh
+
+%%PREFIX%%/share/freesynd/freesynd -p %%PREFIX%%/share/freesynd/data/ "$@"
+
+exit 0
