@@ -2,6 +2,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Schedule/Load/.packlist
 bin/rschedule
 bin/slchoosed
+bin/slchoosed_watchd
 bin/slpolice
 bin/slreportd
 bin/slrsh
