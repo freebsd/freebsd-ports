@@ -82,6 +82,19 @@ lib/sbcl/sb-cltl2/sb-cltl2.fasl
 lib/sbcl/sb-cltl2/test-passed
 lib/sbcl/sb-cltl2/tests.fasl
 lib/sbcl/sb-cltl2/tests.lisp
+lib/sbcl/sb-cover/Makefile
+lib/sbcl/sb-cover/cover.lisp
+lib/sbcl/sb-cover/sb-cover.asd
+lib/sbcl/sb-cover/sb-cover.texinfo
+lib/sbcl/sb-cover/test-data-1.lisp
+lib/sbcl/sb-cover/test-data-2.lisp
+lib/sbcl/sb-cover/tests.lisp
+lib/sbcl/sb-cover/cover.fasl
+lib/sbcl/sb-cover/tests.fasl
+lib/sbcl/sb-cover/sb-cover.fasl
+lib/sbcl/sb-cover/test-data-1.fasl
+lib/sbcl/sb-cover/test-data-2.fasl
+lib/sbcl/sb-cover/test-passed
 lib/sbcl/sb-executable/sb-executable.fasl
 lib/sbcl/sb-grovel/.cvsignore
 lib/sbcl/sb-grovel/Makefile
@@ -208,6 +221,7 @@ lib/sbcl/sbcl.core
 @dirrm lib/sbcl/sb-introspect
 @dirrm lib/sbcl/sb-grovel
 @dirrm lib/sbcl/sb-executable
+@dirrm lib/sbcl/sb-cover
 @dirrm lib/sbcl/sb-cltl2
 @dirrm lib/sbcl/sb-bsd-sockets
 @dirrm lib/sbcl/sb-aclrepl
