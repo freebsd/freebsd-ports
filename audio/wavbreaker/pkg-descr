@@ -10,4 +10,4 @@ only work on files that are alike. For example, 44100 khz
 sample rate, 16-bit sample size, etc. (use sox to convert files
 first if necessary).
 
-WWW: http://huli.org/wavbreaker
+WWW: http://wavbreaker.sourceforge.net/

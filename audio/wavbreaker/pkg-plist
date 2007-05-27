@@ -1,10 +1,14 @@
 bin/wavbreaker
 bin/wavinfo
 bin/wavmerge
-%%DATADIR%%/images/break.png
-%%DATADIR%%/images/break2.png
-%%DATADIR%%/images/del-break.png
-%%DATADIR%%/images/play.png
-%%DATADIR%%/images/stop.png
-@dirrm share/wavbreaker/images
-@dirrm share/wavbreaker
+share/applications/wavbreaker.desktop
+share/icons/hicolor/16x16/apps/wavbreaker.png
+share/icons/hicolor/22x22/apps/wavbreaker.png
+share/icons/hicolor/24x24/apps/wavbreaker.png
+share/icons/hicolor/48x48/apps/wavbreaker.png
+share/icons/hicolor/scalable/apps/wavbreaker.svg
+share/locale/de/LC_MESSAGES/wavbreaker.mo
+share/locale/fr/LC_MESSAGES/wavbreaker.mo
+share/locale/pt/LC_MESSAGES/wavbreaker.mo
+share/pixmaps/wavbreaker.png
+@dirrmtry share/applications
