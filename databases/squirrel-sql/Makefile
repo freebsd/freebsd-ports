@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	squirrel
-PORTVERSION=	2.4
-PORTREVISION=	2
+PORTVERSION=	2.5
 CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
 PKGNAMESUFFIX=	-sql
-DISTNAME=	squirrel-sql-2.4-standard
+DISTNAME=	squirrel-sql-2.5-standard
 
 MAINTAINER=	roy.boerner@bsd-crew.de
 COMMENT=	A universal SQL Client
