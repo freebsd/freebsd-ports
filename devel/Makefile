@@ -2183,7 +2183,6 @@
     SUBDIR += vstr
     SUBDIR += vtcl
     SUBDIR += websvn
-    SUBDIR += wfut
     SUBDIR += wininfo
     SUBDIR += winpdb
     SUBDIR += wizardkit
