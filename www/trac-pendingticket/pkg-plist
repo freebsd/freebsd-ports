@@ -1,0 +1,2 @@
+bin/close_old_pending.py
+%%PYTHON_SITELIBDIR%%/RemovePendingStatusPlugin-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg
