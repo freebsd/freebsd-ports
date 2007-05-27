@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt-GCrypt
-PORTVERSION=	1.15
+PORTVERSION=	1.16
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
@@ -25,6 +25,11 @@ USE_GCC=	3.2+
 MAN3=		Crypt::GCrypt.3
 
 .include <bsd.port.pre.mk>
+
+post-extract:
+	${RM} -f ${WRKSRC}/._Makefile.PL
+	${RM} -f ${WRKSRC}/._GCrypt.pm
+	${RM} -f ${WRKSRC}/._GCrypt.xs
 
 .if ${PERL_LEVEL} < 500600
 post-patch:
