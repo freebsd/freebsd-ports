@@ -15381,6 +15381,7 @@ trac-accountmanager	ports/www/trac-accountmanager
 trac-addcomment	ports/www/trac-addcomment
 trac-bzr	ports/www/trac-bzr
 trac-calendar	ports/www/trac-calendar
+trac-codetags	ports/www/trac-codetags
 trac-ctxtnavadd	ports/www/trac-ctxtnavadd
 trac-down	ports/www/trac-down
 trac-gantt	ports/www/trac-gantt
