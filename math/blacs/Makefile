@@ -95,6 +95,9 @@ do-build:
 post-build:
 	${RM} -rf ${WRKDIR}/tmp_shared
 	${MKDIR} ${WRKDIR}/tmp_shared
+	${MV} ${WRKSRC_SHARED}/LIB/blacs_MPI-FreeBSD-${DEBUG_LEVEL}.a          ${WRKSRC_SHARED}/LIB/libblacsc.a
+	${MV} ${WRKSRC_SHARED}/LIB/blacsF77init_MPI-FreeBSD-${DEBUG_LEVEL}.a   ${WRKSRC_SHARED}/LIB/libblacsf77.a
+	${MV} ${WRKSRC_SHARED}/LIB/blacsCinit_MPI-FreeBSD-${DEBUG_LEVEL}.a     ${WRKSRC_SHARED}/LIB/libblacs.a
 	${FIND} ${WRKSRC_SHARED} -name "*\.a" -exec ${MV} {} ${WRKDIR}/tmp_shared \;
 	cd ${WRKDIR}/tmp_shared ; for i in `ls *.a | ${SED}  's/\.a//' `; do \
 		ld -Bshareable -o $${i}.so.${SVERSION} -x -soname $${i}.so.${SVERSION} --whole-archive $${i}.a ;\
@@ -106,13 +109,13 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/LIB/blacsF77init_MPI-FreeBSD-${DEBUG_LEVEL}.a ${PREFIX}/lib/libblacsf77.a
 	${INSTALL_DATA} ${WRKSRC}/LIB/blacs_MPI-FreeBSD-${DEBUG_LEVEL}.a ${PREFIX}/lib/libblacs.a
 
-	${INSTALL_DATA} ${WRKDIR}/tmp_shared/blacsCinit_MPI-FreeBSD-${DEBUG_LEVEL}.so.${SVERSION} ${PREFIX}/lib/libblacsc.so.${SVERSION}
-	${INSTALL_DATA} ${WRKDIR}/tmp_shared/blacsF77init_MPI-FreeBSD-${DEBUG_LEVEL}.so.${SVERSION} ${PREFIX}/lib/libblacsf77.so.${SVERSION}
-	${INSTALL_DATA} ${WRKDIR}/tmp_shared/blacs_MPI-FreeBSD-${DEBUG_LEVEL}.so.${SVERSION} ${PREFIX}/lib/libblacs.so.${SVERSION}
+	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacsc.so.${SVERSION}   ${PREFIX}/lib/libblacsc.so.${SVERSION}
+	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacsf77.so.${SVERSION} ${PREFIX}/lib/libblacsf77.so.${SVERSION}
+	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacs.so.${SVERSION}    ${PREFIX}/lib/libblacs.so.${SVERSION}
 
-	${INSTALL_DATA} ${WRKDIR}/tmp_shared/blacsCinit_MPI-FreeBSD-${DEBUG_LEVEL}.so ${PREFIX}/lib/libblacsc.so
-	${INSTALL_DATA} ${WRKDIR}/tmp_shared/blacsF77init_MPI-FreeBSD-${DEBUG_LEVEL}.so ${PREFIX}/lib/libblacsf77.so
-	${INSTALL_DATA} ${WRKDIR}/tmp_shared/blacs_MPI-FreeBSD-${DEBUG_LEVEL}.so ${PREFIX}/lib/libblacs.so
+	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacsc.so   ${PREFIX}/lib/libblacsc.so
+	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacsf77.so ${PREFIX}/lib/libblacsf77.so
+	${INSTALL_DATA} ${WRKDIR}/tmp_shared/libblacs.so    ${PREFIX}/lib/libblacs.so
 
 	${MKDIR} ${PREFIX}/share/BLACS/TESTING
 	( cd ${WRKSRC_SHARED}/TESTING/EXE ; \
