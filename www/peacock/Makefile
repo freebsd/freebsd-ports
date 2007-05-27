@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	A GUI-based HTML Editor for GTK+/GNOME
 
-LIB_DEPENDS=	libgtkhtml-3.8.15:${PORTSDIR}/www/gtkhtml38
+LIB_DEPENDS=	gtkhtml-3.8.15:${PORTSDIR}/www/gtkhtml38
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
