@@ -610,6 +610,7 @@ aube		ports/audio/aube
 auctex		ports/print/auctex
 audacious	ports/multimedia/audacious
 audacious-docklet	ports/multimedia/audacious-docklet
+audacious-dumb	ports/audio/audacious-dumb
 audacious-plugins	ports/multimedia/audacious-plugins
 audacious-crossfade	ports/audio/audacious-crossfade
 audacity	ports/audio/audacity
