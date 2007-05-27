@@ -1163,6 +1163,7 @@
     SUBDIR += trac-nav
     SUBDIR += trac-pagetopdf
     SUBDIR += trac-privatetickets
+    SUBDIR += trac-remind
     SUBDIR += trac-restrictedarea
     SUBDIR += trac-robotstxt
     SUBDIR += trac-simpleticket
