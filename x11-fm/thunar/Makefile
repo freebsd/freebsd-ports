@@ -7,7 +7,7 @@
 
 PORTNAME=	Thunar
 PORTVERSION=	0.8.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	${MASTER_SITES_XFCE}
 DIST_SUBDIR=	xfce4
@@ -81,7 +81,7 @@ CONFIGURE_ARGS+=--disable-gconf
 CONFIGURE_ARGS+=--enable-apr-plugin
 PLIST_SUB+=	PLUGIN_APR=""
 .if defined(WITH_PLUG_APR_EXIF)
-LIB_DEPENDS+=	exif.13:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif
 CONFIGURE_ARGS+=--enable-exif
 .else
 CONFIGURE_ARGS+=--disable-exif

@@ -8,7 +8,7 @@
 
 PORTNAME=	eog
 PORTVERSION=	2.18.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -34,9 +34,9 @@ GCONF_SCHEMAS=	eog.schemas
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_EXIF) || (exists(${LOCALBASE}/lib/libexif.so.13) || \
+.if !defined(WITHOUT_EXIF) || (exists(${LOCALBASE}/lib/libexif.so.12) || \
 	defined(WITH_EXIF))
-LIB_DEPENDS+=	exif.13:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif
 .endif
 
 post-install:
