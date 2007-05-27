@@ -139,9 +139,8 @@ bin/puppetmasterd
 %%RUBY_SITELIBDIR%%/puppet/rails/external/tagging/init.rb
 %%RUBY_SITELIBDIR%%/puppet/rails/database/schema.rb
 %%RUBY_SITELIBDIR%%/puppet/rails/database/001_add_indexes.rb
-%%RUBY_SITELIBDIR%%/puppet/feature/ldap.rb
+%%RUBY_SITELIBDIR%%/puppet/feature/base.rb
 %%RUBY_SITELIBDIR%%/puppet/feature/rails.rb
-%%RUBY_SITELIBDIR%%/puppet/feature/usage.rb
 %%RUBY_SITELIBDIR%%/puppet/network/authconfig.rb
 %%RUBY_SITELIBDIR%%/puppet/network/client_request.rb
 %%RUBY_SITELIBDIR%%/puppet/network/authorization.rb
@@ -246,6 +245,7 @@ bin/puppetmasterd
 %%RUBY_SITELIBDIR%%/puppet/provider/package/sunfreeware.rb
 %%RUBY_SITELIBDIR%%/puppet/provider/package/ports.rb
 %%RUBY_SITELIBDIR%%/puppet/provider/package/apt.rb
+%%RUBY_SITELIBDIR%%/puppet/provider/package/aptrpm.rb
 %%RUBY_SITELIBDIR%%/puppet/provider/package/apple.rb
 %%RUBY_SITELIBDIR%%/puppet/provider/package/gem.rb
 %%RUBY_SITELIBDIR%%/puppet/provider/package/aptitude.rb
@@ -253,6 +253,7 @@ bin/puppetmasterd
 %%RUBY_SITELIBDIR%%/puppet/provider/package/darwinport.rb
 %%RUBY_SITELIBDIR%%/puppet/provider/package/sun.rb
 %%RUBY_SITELIBDIR%%/puppet/provider/package/yum.rb
+%%RUBY_SITELIBDIR%%/puppet/provider/package/rug.rb
 %%RUBY_SITELIBDIR%%/puppet/provider/package/openbsd.rb
 %%RUBY_SITELIBDIR%%/puppet/provider/package/blastwave.rb
 @dirrmtry %%RUBY_SITELIBDIR%%/puppet/provider/cron
@@ -315,6 +316,7 @@ bin/puppetmasterd
 %%PORTDOCS%%%%EXAMPLESDIR%%/code/selectors
 %%PORTDOCS%%%%EXAMPLESDIR%%/code/execs
 %%PORTDOCS%%%%EXAMPLESDIR%%/code/nodes
+%%PORTDOCS%%%%EXAMPLESDIR%%/code/mac_automount.pp
 %%PORTDOCS%%%%EXAMPLESDIR%%/code/filerecursion
 %%PORTDOCS%%%%EXAMPLESDIR%%/code/components
 %%PORTDOCS%%%%EXAMPLESDIR%%/code/file.bl
