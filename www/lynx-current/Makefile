@@ -31,17 +31,17 @@ CONFIGURE_ARGS= --with-zlib --libdir="${L_LIB}" \
 		--with-mime-libdir=${PREFIX}/etc \
 		--with-libiconv-prefix=${LOCALBASE}
 
-.if ${OSVERSION} >= 602107
-CONFIGURE_ARGS+=	--with-screen=ncursesw
-.else
-CONFIGURE_ARGS+=	--with-screen=ncurses
-.endif
-
 .ifndef NO_OPENSSL
 USE_OPENSSL=	yes
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 602107
+CONFIGURE_ARGS+=	--with-screen=ncursesw
+.else
+CONFIGURE_ARGS+=	--with-screen=ncurses
+.endif
 
 .ifdef USE_OPENSSL
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
