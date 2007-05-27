@@ -1048,6 +1048,7 @@ bugs		ports/security/bugs
 bugsquish	ports/games/bugsquish
 bugsx		ports/games/bugsx
 bugzilla	ports/devel/bugzilla
+bugzilla2	ports/devel/bugzilla2
 buici-clock	ports/x11-clocks/buici-clock
 buildbot	ports/devel/buildbot
 buildtool	ports/devel/buildtool
