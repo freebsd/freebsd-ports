@@ -1151,6 +1151,7 @@
     SUBDIR += trac-addcomment
     SUBDIR += trac-bzr
     SUBDIR += trac-calendar
+    SUBDIR += trac-codetags
     SUBDIR += trac-ctxtnavadd
     SUBDIR += trac-down
     SUBDIR += trac-gantt
