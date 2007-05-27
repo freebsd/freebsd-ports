@@ -7,6 +7,7 @@
 
 PORTNAME=	XML_RSS
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -14,7 +15,7 @@ COMMENT=	PEAR RSS parser
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${BUILD_DEPENDS} \
-		${PEARDIR}/XML/Tree.php:${PORTSDIR}/devel/pear-XML_Tree
+		${PEARDIR}/XML/Parser.php:${PORTSDIR}/devel/pear-XML_Parser
 
 CATEGORY=	XML
 FILES=		RSS.php
