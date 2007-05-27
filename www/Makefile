@@ -1154,6 +1154,7 @@
     SUBDIR += trac-codetags
     SUBDIR += trac-ctxtnavadd
     SUBDIR += trac-down
+    SUBDIR += trac-email2trac
     SUBDIR += trac-gantt
     SUBDIR += trac-hierwiki
     SUBDIR += trac-iniadmin
