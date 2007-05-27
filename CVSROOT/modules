@@ -15395,6 +15395,7 @@ trac-pagetopdf	ports/www/trac-pagetopdf
 trac-privatetickets	ports/www/trac-privatetickets
 trac-robotstxt	ports/www/trac-robotstxt
 trac-tags	ports/www/trac-tags
+trac-wantedpages	ports/www/trac-wantedpages
 trac-webadmin	ports/www/trac-webadmin
 trac-wikinotification	ports/www/trac-wikinotification
 trackballs	ports/games/trackballs
