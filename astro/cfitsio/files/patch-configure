@@ -5,7 +5,7 @@
  
  
 -for ac_prog in f77 xlf cf77 gf77 g77 af77 ncf f2c ifort g95
-+for ac_prog in %%FC% f77 xlf cf77 gf77 g77 af77 ncf f2c ifort g95
++for ac_prog in %%FC%% f77 xlf cf77 gf77 g77 af77 ncf f2c ifort g95
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
  set dummy $ac_prog; ac_word=$2
@@ -16,7 +16,7 @@
  AC_PROG_CC
  
 -AC_CHECK_PROGS(FC, f77 xlf cf77 gf77 g77 af77 ncf f2c ifort g95 , nope)
-+AC_CHECK_PROGS(FC, %%FC%, f77 xlf cf77 gf77 g77 af77 ncf f2c ifort g95 , nope)
++AC_CHECK_PROGS(FC, %%FC%%, f77 xlf cf77 gf77 g77 af77 ncf f2c ifort g95 , nope)
  if test $FC = 'nope' ; then
     AC_MSG_WARN(cfitsio: == No acceptable f77 found in \$PATH)
     AC_MSG_WARN(cfitsio: == Cfitsio will be built without Fortran wrapper support)
