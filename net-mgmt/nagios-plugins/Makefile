@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nagios-plugins
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.8
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
@@ -21,7 +21,7 @@ USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_PERL5=	yes
 USE_AUTOTOOLS=	aclocal:19 automake:19 autoconf:259
-ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I gl/m4
+ACLOCAL_ARGS=	--acdir=${ACLOCAL_DIR} -I m4 -I gl/m4
 
 OPTIONS=	QSTAT "Game server query support (check_game)" OFF \
 		FPING "Support for non-flooding fast ping (check_fping)" OFF \
@@ -34,6 +34,8 @@ OPTIONS=	QSTAT "Game server query support (check_game)" OFF \
 
 GNU_CONFIGURE=	yes
 
+NAGIOSUSER?=	nagios
+NAGIOSGROUP?=	nagios
 NAGIOSDIR?=	/var/spool/nagios
 
 NAGIOSWWWDIR?=	www/nagios
@@ -42,7 +44,9 @@ NAGIOSCGIURL?=	${NAGIOSHTMURL}/cgi-bin
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS=	--with-cgiurl=${NAGIOSCGIURL} \
+CONFIGURE_ARGS=	--with-nagios-user=${NAGIOSUSER} \
+		--with-nagios-group=${NAGIOSGROUP} \
+		--with-cgiurl=${NAGIOSCGIURL} \
 		--sbindir=${PREFIX}/${NAGIOSWWWDIR}/cgi-bin \
 		--libexecdir=${PREFIX}/libexec/nagios \
 		--datadir=${PREFIX}/share/nagios \
@@ -55,8 +59,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib" \
 		PERL=${PERL}
-
-MAKE_ARGS=	MKINSTALLDIRS=../mkinstalldirs
 
 .if defined(WITH_QSTAT)
 BUILD_DEPENDS+=	qstat:${PORTSDIR}/games/qstat

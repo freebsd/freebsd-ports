@@ -1,5 +1,5 @@
---- configure.in.orig	Mon Feb  5 23:43:05 2007
-+++ configure.in	Thu Feb 22 19:10:56 2007
+--- configure.in.orig	Wed Apr 11 21:38:05 2007
++++ configure.in	Sun May 27 12:27:04 2007
 @@ -12,8 +12,6 @@
  RELEASE=1
  AC_SUBST(RELEASE)
@@ -7,9 +7,9 @@
 -AC_PREFIX_DEFAULT(/usr/local/nagios)
 -
  dnl Deprecated configure options
- AC_ARG_WITH(nagios_user,,
-  	AC_MSG_ERROR([--with-nagios-user is a deprecated option]))
-@@ -27,7 +25,7 @@
+ 
+ 
+@@ -43,7 +41,7 @@
  AC_PROG_CC
  gl_EARLY
  AC_PROG_GCC_TRADITIONAL
@@ -18,7 +18,7 @@
  
  AM_PROG_CC_C_O
  
-@@ -150,11 +148,12 @@
+@@ -166,11 +164,12 @@
  	ACX_HELP_STRING([--with-pgsql=DIR],
  		[sets path to pgsql installation]),
  	PGSQL=$withval,)
@@ -33,7 +33,7 @@
    fi
    AC_CHECK_LIB(pq,PQsetdbLogin,,,-lcrypt)
    if test "$ac_cv_lib_pq_PQsetdbLogin" = "yes"; then
-@@ -191,30 +190,42 @@
+@@ -207,30 +206,42 @@
    AC_MSG_WARN([Skipping PostgreSQL plugin (check_pgsql)])
    AC_MSG_WARN([install lib crypt and PostgreSQL libs to compile this plugin (see REQUIREMENTS).])
  fi
@@ -83,43 +83,18 @@
    AC_CHECK_FUNCS(ldap_set_option)
    EXTRAS="$EXTRAS check_ldap"
  	AC_CHECK_FUNCS(ldap_init ldap_set_option ldap_get_option ldap_start_tls_s)
-@@ -223,6 +234,7 @@
+@@ -239,6 +250,7 @@
    AC_MSG_WARN([install LDAP libs to compile this plugin (see REQUIREMENTS).])
  fi
  LIBS="$_SAVEDLIBS"
 +fi
  
  dnl Check for mysql libraries
- dnl Default is to search path for mysql_config
-@@ -485,47 +497,10 @@
- 	ac_cv_ps_cols="$PS_COLS"
- 	AC_MSG_RESULT([(command-line) $ac_cv_ps_command])
+ np_mysqlclient
+@@ -492,22 +504,10 @@
+ 	ac_cv_ps_cols=8
+ 	AC_MSG_RESULT([$ac_cv_ps_command])
  
--dnl Now using the pst3/kmem hack for solaris systems to avoid truncation
--elif test "$ac_cv_uname_s" = "SunOS"; then
--	#
--	# this is a very, very ugly hack, to hardcode the location for plugins
--	#
--	if test "$libexecdir" = '${exec_prefix}/libexec'; then
--		if test "$exec_prefix" = "NONE"; then
--			if test "$prefix" = "NONE"; then
--				pst3="$ac_default_prefix/libexec/pst3"
--			else
--				pst3="$prefix/libexec/pst3"
--			fi
--		else
--			pst3="$exec_prefix/libexec/pst3"
--		fi
--	else
--		pst3="$libexecdir/pst3"
--	fi
--	ac_cv_ps_command="$pst3"
--	ac_cv_ps_format="%s %d %d %d %d %f %s %n"
--	ac_cv_ps_varlist="[procstat,&procuid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos]"
--	ac_cv_ps_cols=8
--	AC_MSG_RESULT([using nagios-plugins internal ps for solaris])
--	EXTRAS_ROOT="$EXTRAS_ROOT pst3"
--
 -dnl Some gnu/linux systems (debian for one) don't like -axwo and need axwo.
 -dnl so test for this first...
 -elif ps axwo 'stat comm vsz rss user uid pid ppid args' 2>/dev/null | \
@@ -142,7 +117,7 @@
  then
  	ac_cv_ps_varlist="[procstat,&procuid,&procpid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos]"
  	ac_cv_ps_command="$PATH_TO_PS -axwo 'stat uid pid ppid vsz rss pcpu comm args'"
-@@ -533,9 +508,8 @@
+@@ -515,9 +515,8 @@
  	ac_cv_ps_cols=9
  	AC_MSG_RESULT([$ac_cv_ps_command])
  
@@ -154,7 +129,7 @@
  elif ps -axwo 'stat uid pid ppid vsz rss pcpu ucomm command' 2>/dev/null | \
  	egrep -i ["^ *STAT +UID +PID +PPID +VSZ +RSS +%CPU +UCOMM +COMMAND"] > /dev/null
  then
-@@ -545,209 +519,6 @@
+@@ -527,209 +526,6 @@
  	ac_cv_ps_cols=9
  	AC_MSG_RESULT([$ac_cv_ps_command])
  
@@ -364,7 +339,7 @@
  else
  	AC_MSG_WARN([unable to find usable ps syntax - check_procs and check_nagios will not be compiled])
  fi
-@@ -1117,6 +888,8 @@
+@@ -1099,6 +895,8 @@
  AC_DEFINE_UNQUOTED(WHO_COMMAND,"$ac_cv_path_to_who",
  	[path and arguments for invoking 'who'])
  
@@ -373,7 +348,7 @@
  AC_PATH_PROG(PATH_TO_SNMPGET,snmpget)
  AC_ARG_WITH(snmpget_command,
              ACX_HELP_STRING([--with-snmpget-command=PATH],
-@@ -1147,7 +920,10 @@
+@@ -1129,7 +927,10 @@
  else
  	AC_MSG_WARN([Tried $PERL - install Net::SNMP perl module if you want to use the perl snmp plugins])
  fi
@@ -384,7 +359,7 @@
  AC_PATH_PROG(PATH_TO_QUAKESTAT,quakestat)
  AC_PATH_PROG(PATH_TO_QSTAT,qstat)
  AC_ARG_WITH(qstat_command,
-@@ -1172,7 +948,10 @@
+@@ -1154,7 +955,10 @@
  	AC_DEFINE_UNQUOTED(PATH_TO_QSTAT,"$ac_cv_path_to_qstat",
  		[path to qstat/quakestat])
  fi
@@ -395,7 +370,7 @@
  AC_PATH_PROG(PATH_TO_FPING,fping)
  AC_ARG_WITH(fping_command,
              ACX_HELP_STRING([--with-fping-command=PATH],
-@@ -1184,6 +963,7 @@
+@@ -1166,6 +970,7 @@
  else
  	AC_MSG_WARN([Get fping from http://www.fping.com in order to make check_fping plugin])
  fi
@@ -403,7 +378,7 @@
  
  AC_PATH_PROG(PATH_TO_SSH,ssh)
  AC_ARG_WITH(ssh_command,
-@@ -1251,32 +1031,12 @@
+@@ -1233,32 +1038,12 @@
  dnl end if for PATH_TO_SWAP
  fi
  
