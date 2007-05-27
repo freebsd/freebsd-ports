@@ -183,6 +183,7 @@
     SUBDIR += cppi
     SUBDIR += cppunit
     SUBDIR += cproto
+    SUBDIR += crow
     SUBDIR += cscope
     SUBDIR += cscout
     SUBDIR += cssc
