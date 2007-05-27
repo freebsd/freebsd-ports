@@ -15395,6 +15395,7 @@ trac-pagetopdf	ports/www/trac-pagetopdf
 trac-privatetickets	ports/www/trac-privatetickets
 trac-restrictedarea	ports/www/trac-restrictedarea
 trac-robotstxt	ports/www/trac-robotstxt
+trac-simpleticket	ports/www/trac-simpleticket
 trac-tags	ports/www/trac-tags
 trac-tocmacro	ports/www/trac-tocmacro
 trac-wantedpages	ports/www/trac-wantedpages
