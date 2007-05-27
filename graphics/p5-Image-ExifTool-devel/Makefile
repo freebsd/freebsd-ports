@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-ExifTool
-PORTVERSION=	6.76
+PORTVERSION=	6.90
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/ \
 		${MASTER_SITE_PERL_CPAN}
@@ -21,7 +21,7 @@ PERL_CONFIGURE=	yes
 MANTAGS=	AFCP AIFF APE APP12 ASF BMP BuildTagLookup Canon	 \
 		CanonCustom CanonRaw CanonVRD Casio DICOM DNG Exif FLAC	 \
 		Fixup Flash FlashPix FotoStation FujiFilm GIF GPS	 \
-		GeoTiff HTML HtmlDump ICC_Profile ID3 IPTC JPEG JVC	 \
+		GeoTiff HTML HP HtmlDump ICC_Profile ID3 IPTC JPEG JVC	 \
 		Jpeg2000 Kodak KyoceraRaw Leaf MIE MIFF MNG MPC MPEG	 \
 		MakerNotes Minolta MinoltaRaw Nikon NikonCapture Olympus \
 		PDF PICT PNG PPM Panasonic Pentax PhotoMechanic		 \
@@ -41,6 +41,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/html/*.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/html/*.pdf ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/html/*.css ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/TagNames
 	${INSTALL_DATA} ${WRKSRC}/html/TagNames/*.html ${DOCSDIR}/TagNames
