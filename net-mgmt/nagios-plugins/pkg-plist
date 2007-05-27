@@ -64,11 +64,3 @@ libexec/nagios/urlize
 libexec/nagios/utils.pm
 libexec/nagios/utils.sh
 @dirrmtry libexec/nagios
-share/nagios/locale/de/LC_MESSAGES/nagios-plugins.mo
-@dirrm share/nagios/locale/de/LC_MESSAGES
-@dirrm share/nagios/locale/de
-share/nagios/locale/fr/LC_MESSAGES/nagios-plugins.mo
-@dirrm share/nagios/locale/fr/LC_MESSAGES
-@dirrm share/nagios/locale/fr
-@dirrm share/nagios/locale
-@dirrmtry share/nagios
