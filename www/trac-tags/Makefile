@@ -8,8 +8,9 @@
 PORTNAME=	tags
 PORTVERSION=	0.4
 CATEGORIES=	www devel python
-MASTER_SITES=	http://www.gerritbeine.de/downloads/trac-hacks/
+MASTER_SITES=	http://www.gerritbeine.de/download/trac/
 PKGNAMEPREFIX=	trac-
+DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	A generic tags frontend for trac
@@ -17,10 +18,11 @@ COMMENT=	A generic tags frontend for trac
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 
-USE_ZIP=	yes
 USE_PYTHON=	2.3+
+NO_BUILD=	yes
 USE_PYDISTUTILS=yes
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} PYTHONVERSION=${_PYTHON_VERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}plugin
 
 do-build:
 	@${DO_NADA}
