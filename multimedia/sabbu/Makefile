@@ -37,4 +37,12 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	WITH_NLS=""
 .endif
 
+ASPELL_PORT?=	textproc/aspell
+.if !defined(WITHOUT_GTKSPELL)
+LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
+PLIST_SUB+=	WITH_ASPELL=""
+.else
+PLIST_SUB+=	WITH_ASPELL="@comment "
+.endif
+
 .include <bsd.port.mk>

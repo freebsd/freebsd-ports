@@ -1,0 +1,11 @@
+--- configure.orig	Sun Nov 27 01:30:25 2005
++++ configure	Sun May 27 09:45:46 2007
+@@ -6320,6 +6320,8 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
++
++#define __STDC_CONSTANT_MACROS
+ #include <ffmpeg/avformat.h>
+ int
+ main ()
