@@ -7,6 +7,7 @@
 
 PORTNAME=	git
 PORTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.kernel.org/pub/software/scm/git/
 
@@ -24,7 +25,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 CONFLICTS=	cogito-0.1[012] git-4.*
 
-MAN3PREFIX=	${TARGETDIR}/lib/perl5/${PERL_VERSION}
+.if !defined(NOPORTDOCS)
 MAN1=		git-add.1 \
 		git-am.1 \
 		git-annotate.1 \
@@ -157,17 +158,23 @@ MAN1=		git-add.1 \
 		git-whatchanged.1 \
 		git-write-tree.1 \
 		gitk.1
-MAN3=		Git.3
 MAN5=		gitattributes.5
 MAN7=		git.7
+.endif
+MAN3PREFIX=	${TARGETDIR}/lib/perl5/${PERL_VERSION}
+MAN3=		Git.3
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_PYTHON=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
-ALL_TARGET=	all doc
-INSTALL_TARGET=	install install-doc
+ALL_TARGET=	all
+INSTALL_TARGET=	install
+.if !defined(NOPORTDOCS)
+ALL_TARGET+=	doc
+INSTALL_TARGET+=install-doc
+.endif
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_ENV+=	CURLDIR=${LOCALBASE} \
 		NEEDS_LIBICONV=yes \
@@ -179,22 +186,15 @@ MAKE_ARGS+=	prefix="${PREFIX}"
 
 .ifndef WITHOUT_GUI
 PLIST_SUB+=	GUI=""
-GITGUIVERSION=	0.6-GITGUI
 RUN_DEPENDS+=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+MAKE_ENV+=	TCL_PATH=tclsh8.4 TCLTK_PATH=wish8.4
 .else
 PLIST_SUB+=	GUI="@comment "
-MAKE_ENV+=	NO_GUI=yes
-.endif
-
-# We should place version files to avoid git's attempt to figure it by itself
-post-patch:
-	${ECHO} "GIT_VERSION = ${PORTVERSION}-dirty" > ${WRKSRC}/GIT-VERSION-FILE; ${ECHO} '#!/bin/sh' > ${WRKSRC}/GIT-VERSION-GEN
-.ifndef WITHOUT_GUI
-	${ECHO} "GIT_VERSION = ${GITGUIVERSION}-dirty" > ${WRKSRC}/git-gui/GIT-VERSION-FILE; ${ECHO} '#!/bin/sh' > ${WRKSRC}/git-gui/GIT-VERSION-GEN
+MAKE_ENV+=	NO_TCLTK=yes
 .endif
 
 post-install:
-	${TEST} -f ${PREFIX}/lib/perl5/${PERL_VERSION}/mach/perllocal.pod && ${RM} -f ${PREFIX}/lib/perl5/${PERL_VERSION}/mach/perllocal.pod
+	-${RM} -f ${PREFIX}/lib/perl5/${PERL_VERSION}/mach/perllocal.pod
 	${MKDIR} ${PREFIX}/share/emacs/site-lisp/git
 	${MKDIR} ${PREFIX}/lib/xemacs/site-lisp/git
 	${INSTALL_DATA} ${WRKSRC}/contrib/emacs/git.el \
