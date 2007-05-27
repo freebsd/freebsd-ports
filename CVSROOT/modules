@@ -15389,6 +15389,7 @@ trac-email2trac	ports/www/trac-email2trac
 trac-gantt	ports/www/trac-gantt
 trac-hierwiki	ports/www/trac-hierwiki
 trac-iniadmin	ports/www/trac-iniadmin
+trac-ldap	ports/www/trac-ldap
 trac-macropost	ports/www/trac-macropost
 trac-nav	ports/www/trac-nav
 trac-pagelist	ports/www/trac-pagelist
