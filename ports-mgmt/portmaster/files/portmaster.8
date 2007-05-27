@@ -24,43 +24,48 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd March 8, 2007
+.Dd May 27, 2007
 .Dt PORTMASTER 8
 .Os
 .Sh NAME
 .Nm portmaster
 .Nd manage your ports without external databases or languages
 .Sh SYNOPSIS
+Common Flags:
+.Op Fl -force-config CGgntvw [B|b] [uf|i] [D|d]
+.Op Fl m Ar arguments for make
+.Op Fl x Ar glob pattern to exclude from building
 .Nm
-.Op Fl CGgntv [B|b] [uf|i] [D|d] m Ar arguments for make
-.Op Ar full name of port directory in /var/db/pkg
+.Op Common Flags
+.Ar full name of port directory in /var/db/pkg
 .Nm
-.Op Fl CGgntv [B|b] [uf|i] [D|d] m Ar arguments for make
-.Op Ar full path to /usr/ports/foo/bar
+.Op Common Flags
+.Ar full path to /usr/ports/foo/bar
 .Nm
-.Op Fl CGgntv [B|b] [uf|i] [D|d] m Ar arguments for make
-.Op Ar Multiple full names/paths from either of the above
+.Op Common Flags
+.Ar Multiple full names/paths from either of the above
 .Nm
-.Op Fl CGgntv [B|b] [uf|i] [D|d] m Ar arguments for make
-.Op Ar glob pattern from /var/db/pkg
+.Op Common Flags
+.Ar glob pattern from /var/db/pkg
 .Nm
-.Op Fl CGgntv [B|b] [uf|i] [D|d] m Ar arguments for make
-.Op Fl p Ar port directory in /usr/ports
+.Op Common Flags
+.Fl p Ar port directory in /usr/ports
 .Nm
-.Op Fl CGgntv [B|b] [uf|i] [D|d] m Ar arguments for make
-.Op . [Use in /usr/ports/foo/bar to build that port]
+.Op Common Flags
+ . (Use in /usr/ports/foo/bar to build that port)
 .Nm
 .Fl -show-work
 .Op Fl Gv m Ar args for make
 <port, specified as above>
 .Nm
-.Op Fl CGgntv [B|b] [uf|i] [D|d] m Ar arguments for make
+.Op Common Flags
 .Fl o Ar <new port dir in /usr/ports> <installed port>
 .Nm
-.Op Fl CGgntv [B|b] [uf|i] [D|d] m Ar arguments for make
+.Op Common Flags
+.Op Fl R
 .Fl r Ar name/glob of port in /var/db/pkg
 .Nm
-.Op Fl CGgntv [B|b] [uf|i] [D|d] m Ar arguments for make
+.Op Common Flags
 .Fl a
 .Nm
 .Fl [l|L]
@@ -81,7 +86,7 @@
 .Sh DESCRIPTION
 The
 .Nm
-utility is a simple tool for managing your ports.
+utility is a tool for updating your ports.
 It uses no external database to track what you
 have installed.
 Rather it uses the existing ports infrastructure,
@@ -104,6 +109,12 @@ By default
 will first recurse through the port to update,
 and all of its dependencies (if any) to handle
 any port OPTIONS via the 'make config' interface.
+You will be presented with an OPTIONS dialog if
+you have never built the port before,
+or if the OPTIONS have changed.
+You can force dialogs for all ports by using the
+.Fl -force-config
+option.
 It will then start building all ports that need
 updating.
 While recursing through dependencies,
@@ -159,23 +170,37 @@ If the installation fails for whatever reason,
 a helpful message will be printed, along with instructions
 on where to find the backup package.
 .Pp
+After the port is built, if the
+.Fl w
+option is being used, all shared libraries installed
+by the old port (if any) will be saved to
+.Pa /usr/local/compat/pkg .
+After installation if there are any new files with
+the same names as those in
+.Pa /usr/local/compat/pkg
+the old files will be deleted.
+.Pp
+After the new port is built, but before it is installed
+the runtime dependencies will be checked to make sure
+they are up to date.
+.Pp
 At the conclusion of a successful installation,
-whether of an individual port, a list of ports,
-or when using the
-.Fl a
-option, any
+any
 .Pa pkg-message
-files that were installed during the installation
+files that were installed
 will be displayed.
 .Sh OPTIONS
 The options are as follows:
 .Bl -tag -width F1
+.It Fl -force-config
+run 'make config' for all ports (must be the first option)
 .It Fl B
 prevents creation of the backup package for the installed port
 .It Fl C
 prevents 'make clean' being run in port directory
 .It Fl G
-prevents the recursive 'make config'
+prevents the recursive 'make config' (unsets
+.Fl -force-config )
 .It Fl b
 create and keep a backup package of an installed port
 .It Fl g
@@ -186,11 +211,13 @@ do not actually perform any updates
 recurse dependencies thoroughly, using all-depends-list
 .It Fl v
 verbose output
+.It Fl w
+save old shared libraries before deinstall
 .It Fl u
 unattended mode, accepts defaults for all
 .Nm
 dialogues
-.It Fl f
+.It [-R] Fl f
 always rebuild ports (overrides
 .Fl i )
 .It Fl i
@@ -202,6 +229,8 @@ always clean distfiles
 .It Fl m Ar arguments for make
 any arguments to supply to
 .Xr make 1
+.It Fl x
+avoid building ports as dependencies that match this pattern
 .It Fl p Ar port directory in /usr/ports
 specify the full path to a port directory
 .It Fl -show-work
@@ -210,8 +239,15 @@ show what dependent ports are, and are not installed (implies
 This flag must come first on the command line.
 .It Fl o Ar <new port dir in /usr/ports> <installed port>
 replace the installed port with a port from a different origin
-.It Fl r Ar name/glob of port in /var/db/pkg
+.It [-R] Fl r Ar name/glob of port in /var/db/pkg
 rebuild port, and all ports that depend on it
+.It Fl R
+restart an update, skipping ports already up to date.
+Used with
+.Fl r
+or
+.Fl f
+options.
 .It Fl a
 check all ports, update as necessary
 .It Fl l
@@ -221,7 +257,7 @@ list all installed ports by category, and search for updates
 .It Fl e Ar name of port directory in /var/db/pkg
 expunge port using
 .Xr pkg_delete 1 ,
-and optionally removing all distfiles.
+and optionally remove all distfiles.
 Calls
 .Fl s
 mode after it is done expunging in case removing
@@ -240,13 +276,13 @@ If not, offer to delete the stale file.
 .It Fl -clean-distfiles-all
 do the same as above, but delete all files without prompting.
 .It Fl h
-display help file
+display help message
 .El
 .Sh MAKE ENVIRONMENT
-If the directory pointed to by the PKGREPOSITORY
-variable exists (by default
+The directory pointed to by the PKGREPOSITORY
+variable (by default
 .Pa /usr/ports/packages/All )
-then it will be used to store new and backup packages.
+will be used to store new and backup packages.
 .Pp
 The UPGRADE_TOOL variable is set to
 .Dq portmaster ,
@@ -265,6 +301,15 @@ If this file exists,
 .Nm
 will ignore this port for the purpose of dependency
 updates.
+.It Pa /var/db/pkg/*/PM_UPGRADE_DONE_FLAG
+Indicates to a subsequent
+.Fl f
+or
+.Fl r
+run which includes the
+.Fl R
+option that a port has already been rebuilt,
+so it can be safely ignored.
 .El
 .Sh EXIT STATUS
 .Ex -std
@@ -281,10 +326,12 @@ command:
 .Dl "portmaster foo/fooport"
 .Dl "portmaster -r fooport-1.23"
 .Dl "portmaster -o emulators/linux_base-fc4 linux_base-8-8.0_15"
+.Dl "portmaster -x cvsup -f -a"
 .Pp
-.Dl "portmaster -L | grep -B1 '	'"
+.Dl "portmaster -L |"
+.Dl "egrep -B1 'ew version|Aborting|installed|dependencies' |"
+.Dl "grep -v '^--'"
 Print only the ports that have available updates.
-(Note that the whitespace between single quotes is a tab.)
 .Sh SEE ALSO
 .Xr make 1 ,
 .Xr pkg_delete 1 ,
