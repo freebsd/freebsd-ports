@@ -93,6 +93,7 @@ share/gnome/pixmaps/pidgin/animations/16/typing1.png
 share/gnome/pixmaps/pidgin/animations/16/typing2.png
 share/gnome/pixmaps/pidgin/animations/16/typing3.png
 share/gnome/pixmaps/pidgin/animations/16/typing4.png
+share/gnome/pixmaps/pidgin/animations/16/typing5.png
 share/gnome/pixmaps/pidgin/arrow-down.xpm
 share/gnome/pixmaps/pidgin/arrow-left.xpm
 share/gnome/pixmaps/pidgin/arrow-right.xpm
@@ -309,6 +310,7 @@ share/gnome/pixmaps/pidgin/logo.png
 share/gnome/pixmaps/pidgin/protocols/16/aim.png
 share/gnome/pixmaps/pidgin/protocols/16/bonjour.png
 share/gnome/pixmaps/pidgin/protocols/16/gadu-gadu.png
+share/gnome/pixmaps/pidgin/protocols/16/google-talk.png
 share/gnome/pixmaps/pidgin/protocols/16/icq.png
 share/gnome/pixmaps/pidgin/protocols/16/irc.png
 share/gnome/pixmaps/pidgin/protocols/16/jabber.png
@@ -323,6 +325,7 @@ share/gnome/pixmaps/pidgin/protocols/16/zephyr.png
 share/gnome/pixmaps/pidgin/protocols/22/aim.png
 share/gnome/pixmaps/pidgin/protocols/22/bonjour.png
 share/gnome/pixmaps/pidgin/protocols/22/gadu-gadu.png
+share/gnome/pixmaps/pidgin/protocols/22/google-talk.png
 share/gnome/pixmaps/pidgin/protocols/22/icq.png
 share/gnome/pixmaps/pidgin/protocols/22/irc.png
 share/gnome/pixmaps/pidgin/protocols/22/jabber.png
