@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Spreadsheet-ParseExcel
-PORTVERSION=	0.3000
+PORTVERSION=	0.3200
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Spreadsheet
@@ -37,10 +37,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/sample/Excel/* ${EXAMPLESDIR}/Excel
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=	perl 5.6 or newer required. Install lang/perl5.8 or lang/perl5 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
