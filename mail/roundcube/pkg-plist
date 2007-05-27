@@ -17,6 +17,8 @@
 %%RCUBEDIR%%/program/include/bugs.inc
 %%RCUBEDIR%%/program/include/cache.inc
 %%RCUBEDIR%%/program/include/main.inc
+%%RCUBEDIR%%/program/include/rcmail_template.inc
+%%RCUBEDIR%%/program/include/rcube_contacts.inc
 %%RCUBEDIR%%/program/include/rcube_db.inc
 %%RCUBEDIR%%/program/include/rcube_imap.inc
 %%RCUBEDIR%%/program/include/rcube_ldap.inc
@@ -299,6 +301,7 @@
 %%RCUBEDIR%%/program/lib/icl_commons.inc
 %%RCUBEDIR%%/program/lib/imap.inc
 %%RCUBEDIR%%/program/lib/mime.inc
+%%RCUBEDIR%%/program/lib/rc_mail_mime.inc
 %%RCUBEDIR%%/program/lib/utf7.inc
 %%RCUBEDIR%%/program/lib/utf8.class.php
 %%RCUBEDIR%%/program/localization/am/labels.inc
@@ -331,10 +334,14 @@
 %%RCUBEDIR%%/program/localization/et_EE/messages.inc
 %%RCUBEDIR%%/program/localization/eu/labels.inc
 %%RCUBEDIR%%/program/localization/eu/messages.inc
+%%RCUBEDIR%%/program/localization/fa/labels.inc
+%%RCUBEDIR%%/program/localization/fa/messages.inc
 %%RCUBEDIR%%/program/localization/fi/labels.inc
 %%RCUBEDIR%%/program/localization/fi/messages.inc
 %%RCUBEDIR%%/program/localization/fr/labels.inc
 %%RCUBEDIR%%/program/localization/fr/messages.inc
+%%RCUBEDIR%%/program/localization/hi/labels.inc
+%%RCUBEDIR%%/program/localization/hi/messages.inc
 %%RCUBEDIR%%/program/localization/hr/labels.inc
 %%RCUBEDIR%%/program/localization/hr/messages.inc
 %%RCUBEDIR%%/program/localization/hu/labels.inc
@@ -346,6 +353,8 @@
 %%RCUBEDIR%%/program/localization/it/messages.inc
 %%RCUBEDIR%%/program/localization/ja/labels.inc
 %%RCUBEDIR%%/program/localization/ja/messages.inc
+%%RCUBEDIR%%/program/localization/kur_KU/labels.inc
+%%RCUBEDIR%%/program/localization/kur_KU/messages.inc
 %%RCUBEDIR%%/program/localization/lt/labels.inc
 %%RCUBEDIR%%/program/localization/lt/messages.inc
 %%RCUBEDIR%%/program/localization/lv/labels.inc
@@ -374,6 +383,8 @@
 %%RCUBEDIR%%/program/localization/si/messages.inc
 %%RCUBEDIR%%/program/localization/sk/labels.inc
 %%RCUBEDIR%%/program/localization/sk/messages.inc
+%%RCUBEDIR%%/program/localization/sl/labels.inc
+%%RCUBEDIR%%/program/localization/sl/messages.inc
 %%RCUBEDIR%%/program/localization/sr_cyrillic/labels.inc
 %%RCUBEDIR%%/program/localization/sr_cyrillic/messages.inc
 %%RCUBEDIR%%/program/localization/sr_latin/labels.inc
@@ -382,18 +393,20 @@
 %%RCUBEDIR%%/program/localization/th/messages.inc
 %%RCUBEDIR%%/program/localization/tr/labels.inc
 %%RCUBEDIR%%/program/localization/tr/messages.inc
-%%RCUBEDIR%%/program/localization/tw/labels.inc
-%%RCUBEDIR%%/program/localization/tw/messages.inc
 %%RCUBEDIR%%/program/localization/vn/labels.inc
 %%RCUBEDIR%%/program/localization/vn/messages.inc
 %%RCUBEDIR%%/program/localization/zh_CN/labels.inc
 %%RCUBEDIR%%/program/localization/zh_CN/messages.inc
+%%RCUBEDIR%%/program/localization/zh_TW/labels.inc
+%%RCUBEDIR%%/program/localization/zh_TW/messages.inc
+%%RCUBEDIR%%/program/steps/addressbook/copy.inc
 %%RCUBEDIR%%/program/steps/addressbook/delete.inc
 %%RCUBEDIR%%/program/steps/addressbook/edit.inc
 %%RCUBEDIR%%/program/steps/addressbook/func.inc
-%%RCUBEDIR%%/program/steps/addressbook/ldapsearchform.inc
 %%RCUBEDIR%%/program/steps/addressbook/list.inc
+%%RCUBEDIR%%/program/steps/addressbook/mailto.inc
 %%RCUBEDIR%%/program/steps/addressbook/save.inc
+%%RCUBEDIR%%/program/steps/addressbook/search.inc
 %%RCUBEDIR%%/program/steps/addressbook/show.inc
 %%RCUBEDIR%%/program/steps/error.inc
 %%RCUBEDIR%%/program/steps/mail/addcontact.inc
@@ -407,7 +420,6 @@
 %%RCUBEDIR%%/program/steps/mail/mark.inc
 %%RCUBEDIR%%/program/steps/mail/move_del.inc
 %%RCUBEDIR%%/program/steps/mail/quotadisplay.inc
-%%RCUBEDIR%%/program/steps/mail/quotaimg.inc
 %%RCUBEDIR%%/program/steps/mail/rss.inc
 %%RCUBEDIR%%/program/steps/mail/search.inc
 %%RCUBEDIR%%/program/steps/mail/sendmail.inc
@@ -562,7 +574,6 @@
 %%RCUBEDIR%%/skins/default/includes/settingscripts.html
 %%RCUBEDIR%%/skins/default/includes/settingstabs.html
 %%RCUBEDIR%%/skins/default/includes/taskbar.html
-%%RCUBEDIR%%/skins/default/ldapsearchform.css
 %%RCUBEDIR%%/skins/default/%%MAIL%%.css
 %%RCUBEDIR%%/skins/default/pngbehavior.htc
 %%RCUBEDIR%%/skins/default/print.css
@@ -576,7 +587,6 @@
 %%RCUBEDIR%%/skins/default/templates/editidentity.html
 %%RCUBEDIR%%/skins/default/templates/error.html
 %%RCUBEDIR%%/skins/default/templates/identities.html
-%%RCUBEDIR%%/skins/default/templates/ldappublicsearch.html
 %%RCUBEDIR%%/skins/default/templates/login.html
 %%RCUBEDIR%%/skins/default/templates/%%MAIL%%.html
 %%RCUBEDIR%%/skins/default/templates/managefolders.html
@@ -602,13 +612,14 @@
 @dirrm %%RCUBEDIR%%/program/steps/mail
 @dirrm %%RCUBEDIR%%/program/steps/addressbook
 @dirrm %%RCUBEDIR%%/program/steps
+@dirrm %%RCUBEDIR%%/program/localization/zh_TW
 @dirrm %%RCUBEDIR%%/program/localization/zh_CN
 @dirrm %%RCUBEDIR%%/program/localization/vn
-@dirrm %%RCUBEDIR%%/program/localization/tw
 @dirrm %%RCUBEDIR%%/program/localization/tr
 @dirrm %%RCUBEDIR%%/program/localization/th
 @dirrm %%RCUBEDIR%%/program/localization/sr_latin
 @dirrm %%RCUBEDIR%%/program/localization/sr_cyrillic
+@dirrm %%RCUBEDIR%%/program/localization/sl
 @dirrm %%RCUBEDIR%%/program/localization/sk
 @dirrm %%RCUBEDIR%%/program/localization/si
 @dirrm %%RCUBEDIR%%/program/localization/se
@@ -623,13 +634,16 @@
 @dirrm %%RCUBEDIR%%/program/localization/nb_NO
 @dirrm %%RCUBEDIR%%/program/localization/lv
 @dirrm %%RCUBEDIR%%/program/localization/lt
+@dirrm %%RCUBEDIR%%/program/localization/kur_KU
 @dirrm %%RCUBEDIR%%/program/localization/ja
 @dirrm %%RCUBEDIR%%/program/localization/it
 @dirrm %%RCUBEDIR%%/program/localization/id_ID
 @dirrm %%RCUBEDIR%%/program/localization/hu
 @dirrm %%RCUBEDIR%%/program/localization/hr
+@dirrm %%RCUBEDIR%%/program/localization/hi
 @dirrm %%RCUBEDIR%%/program/localization/fr
 @dirrm %%RCUBEDIR%%/program/localization/fi
+@dirrm %%RCUBEDIR%%/program/localization/fa
 @dirrm %%RCUBEDIR%%/program/localization/eu
 @dirrm %%RCUBEDIR%%/program/localization/et_EE
 @dirrm %%RCUBEDIR%%/program/localization/es
