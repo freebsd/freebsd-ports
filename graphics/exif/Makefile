@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	exif
-PORTVERSION=	0.6.9
-PORTREVISION=	1
+PORTVERSION=	0.6.15
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libexif
@@ -15,11 +14,12 @@ MASTER_SITE_SUBDIR=	libexif
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Command line utility to read and manipulate EXIF data
 
-LIB_DEPENDS=	exif.13:${PORTSDIR}/graphics/libexif \
+LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
 		popt.0:${PORTSDIR}/devel/popt
 
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-popt-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--with-popt-prefix=${LOCALBASE} --mandir=${PREFIX}/man
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
