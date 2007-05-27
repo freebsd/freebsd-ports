@@ -1287,6 +1287,7 @@
     SUBDIR += p5-Log-Message
     SUBDIR += p5-Log-Message-Simple
     SUBDIR += p5-Log-Simple
+    SUBDIR += p5-Log-Trace
     SUBDIR += p5-Log-TraceMessages
     SUBDIR += p5-Logfile-Rotate
     SUBDIR += p5-Luka
