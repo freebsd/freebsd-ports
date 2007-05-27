@@ -15391,6 +15391,7 @@ trac-hierwiki	ports/www/trac-hierwiki
 trac-iniadmin	ports/www/trac-iniadmin
 trac-macropost	ports/www/trac-macropost
 trac-nav	ports/www/trac-nav
+trac-pagelist	ports/www/trac-pagelist
 trac-pagetopdf	ports/www/trac-pagetopdf
 trac-pendingticket	ports/www/trac-pendingticket
 trac-privatetickets	ports/www/trac-privatetickets
