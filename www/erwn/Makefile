@@ -7,13 +7,15 @@
 
 PORTNAME=	erwn
 PORTVERSION=	0.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www editors
 MASTER_SITES=	http://lisas.de/erwin/
 DISTNAME=	erwin-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple GTK+-2 HTML editor
+
+LIB_DEPENDS=	gtkhtml-3.8.15:${PORTSDIR}/www/gtkhtml38
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gtksourceview
