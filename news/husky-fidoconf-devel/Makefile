@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	fidoconf
-DISTVERSION=	1.4-rc4
+DISTVERSION=	1.4-rc5
 CATEGORIES=	news mail
-DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	os@rsu.ru
 COMMENT=	Configuration library for Husky Fidosoft Project. Development version
@@ -18,7 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/etc/fido/huskymak.cfg:${PORTSDIR}/news/husky-base-deve
 
 CONFLICTS=	husky-fidoconf-[0-9]*
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 INSTALL_TARGET=	install install-man
 
 MAN1=		dumpfcfg.1 fconf2.1 linked.1 linkedto.1 tparser.1
