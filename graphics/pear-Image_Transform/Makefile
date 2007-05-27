@@ -7,7 +7,7 @@
 
 PORTNAME=	Image_Transform
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -19,10 +19,17 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_PHP=	gd
 
 CATEGORY=	Image
-FILES=		Transform.php Driver/ColorsDefs.php Driver/GD.php Driver/GD1.php \
-		Driver/IM.php Driver/IMAGETYPE.php Driver/Imagick.php \
-		Driver/Imagick2.php Driver/Imlib.php Driver/NetPBM.php \
-		Driver/image_type_to_mime_type.php Driver/Imagick/ImageTypes.php
+FILES=		Transform.php Transform/Driver/ColorsDefs.php \
+		Transform/Driver/GD.php Transform/Driver/GD1.php \
+		Transform/Driver/IM.php Transform/Driver/IMAGETYPE.php \
+		Transform/Driver/Imagick.php Transform/Driver/Imagick2.php \
+		Transform/Driver/Imlib.php Transform/Driver/NetPBM.php \
+		Transform/Driver/image_type_to_mime_type.php \
+		Transform/Driver/Imagick/ImageTypes.php
+
+post-extract:
+	@${MKDIR} ${WRKSRC}/Transform
+	@${MV} ${WRKSRC}/Driver ${WRKSRC}/Transform/
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
