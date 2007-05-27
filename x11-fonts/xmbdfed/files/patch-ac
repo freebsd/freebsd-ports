@@ -1,0 +1,10 @@
+--- xmbdfed.h.orig	Sat May 26 05:29:27 2007
++++ xmbdfed.h	Sat May 26 05:29:38 2007
+@@ -280,7 +280,6 @@
+ extern XtAppContext app;
+ extern Boolean yes_no_answer;
+ extern Boolean yes_no_done;
+-extern unsigned long active_editor;
+ extern String app_name;
+ extern String app_class;
+ extern char title[];
