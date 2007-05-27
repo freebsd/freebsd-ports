@@ -56,6 +56,10 @@ EXAMPLE_FILES=	README ascend.rw c3620.rw cisco.rw comos.rw config.syntax \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 .if defined(WITH_SNMP)
 CONFIGURE_ARGS+=	--enable-snmp
 .endif

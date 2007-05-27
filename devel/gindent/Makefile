@@ -34,6 +34,12 @@ PLIST_SUB+=	NLS="@comment "
 MAN1=		gindent.1
 INFO=		indent
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
@@ -44,4 +50,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/indent.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

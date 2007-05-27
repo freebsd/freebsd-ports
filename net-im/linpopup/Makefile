@@ -28,10 +28,16 @@ USE_X_PREFIX=	yes
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-samba3
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s#/doc/#/share/doc/#" ${WRKSRC}/Makefile
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

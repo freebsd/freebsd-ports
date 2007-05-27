@@ -31,6 +31,12 @@ EXAMPLES=	3ones2zeroes.tur  add.tur  bb3.tur  dashnumbers.tur  addbin.tur \
 		bb5.tur  dec2bin.tur  dec2bin_shift.tur  bb2.tur  bin2dec.tur \
 		bin2dec_shift.tur  sort.tur  subst.tur
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/configure
@@ -47,4 +53,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

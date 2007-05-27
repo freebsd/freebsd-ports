@@ -54,6 +54,10 @@ PLIST_FILES+=	bin/oof2abaqus
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 .if ${ARCH}==sparc64
 BROKEN=		does not compile on ${ARCH}
 .endif

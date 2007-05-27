@@ -16,6 +16,12 @@ COMMENT=	Builds FFS images
 MAN8=		makefs.8
 PLIST_FILES=	sbin/makefs
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 do-build:
 	cd ${WRKSRC} && ${SH} -xe build.sh
 
@@ -27,4 +33,4 @@ do-install:
 		${PREFIX}/man/man8/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -67,6 +67,16 @@ CONFIGURE_ARGS+=	--with-python
 CONFIGURE_ARGS+=	--without-python
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
+.if ${ARCH} == "sparc64"
+BROKEN=		does not compile on sparc64
+.endif
+
 post-extract:
 	${GUNZIP_CMD} --stdout ${DISTDIR}/${DIST_SUBDIR}/gnubg.weights-${GNUBG_WEIGHTS_VERSION}.gz > ${WRKSRC}/gnubg.weights
 	${GUNZIP_CMD} --stdout ${DISTDIR}/${DIST_SUBDIR}/gnubg_os0.bd.gz > ${WRKSRC}/gnubg_os0.bd
@@ -76,11 +86,5 @@ post-patch:
 .for file in gnubg.c makebearoff.c makebearoff1.c makehyper.c
 	${REINPLACE_CMD} -e 's|"getopt\.h"|<getopt.h>|g' ${WRKSRC}/${file}
 .endfor
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		does not compile on sparc64
-.endif
 
 .include <bsd.port.post.mk>

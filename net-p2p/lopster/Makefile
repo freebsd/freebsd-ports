@@ -25,6 +25,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 .if exists(${LOCALBASE}/lib/libogg.so.4)
 WITH_OGG=	yes
 .endif

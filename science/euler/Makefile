@@ -20,6 +20,12 @@ COMMENT=	A program computes with real and complex numbers and matrices
 USE_GNOME=	gnometarget gtk20
 GNU_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|docs||g ; \
 		 /^install-data-am/s|install-eulerdocDATA||g' ${WRKSRC}/Makefile.in
@@ -36,4 +42,4 @@ post-install:
 	@${FIND} ${DOCSDIR} -type d | ${XARGS} ${CHMOD} ${BINMODE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

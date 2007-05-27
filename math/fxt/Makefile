@@ -23,6 +23,12 @@ USE_GMAKE=	yes
 MAKEFILE=	makefile
 MAKE_ENV=	CXX="${CXX}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's,^(FXT_CXXFLAGS),#\1,' \
@@ -73,4 +79,4 @@ plist:
 		's,^${DOCSDIR}(.*),%%PORTDOCS%%@dirrm %%DOCSDIR%%\1,' \
 		>> pkg-plist
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

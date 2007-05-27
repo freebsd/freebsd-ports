@@ -30,7 +30,13 @@ LDFLAGS=	${PTHREAD_LIBS}
 CFLAGS+=	-O2 -fno-strict-aliasing
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

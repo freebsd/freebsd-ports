@@ -27,6 +27,12 @@ ALL_TARGET=	${PORTNAME}
 
 MAN6=		glaxium.6
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|/usr/X11R6|${X11BASE}|g; \
 		s|\$datadir/games/glaxium|\$datadir/glaxium|g' \
@@ -34,4 +40,4 @@ post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

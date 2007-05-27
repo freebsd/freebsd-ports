@@ -78,6 +78,12 @@ MAN3=	V3DGLInterpriteDelete.3 \
 	v3d_hf_options_struct.3 \
 	v3d_texture_ref_struct.3
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,make,${GMAKE},g" ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s,%%CFLAGS%%,${CFLAGS},g" \
@@ -86,4 +92,4 @@ post-patch:
 		-e "s,%%PTHREAD_LIBS%%,${PTHREAD_LIBS},g" \
 		${WRKSRC}/libv3d/platforms.ini
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -19,6 +19,12 @@ COMMENT=	Conference-calling phone with Japanese support
 PATCH_DIST_STRIP=	-p1
 MAN1=			phone.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/phone.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
@@ -29,4 +35,4 @@ post-install:
 .endif
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

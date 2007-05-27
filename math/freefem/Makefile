@@ -24,6 +24,12 @@ USE_LDCONFIG=	yes
 
 MAN1=		freefem.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3 |\$$CXXFLAGS |g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|debian doc freefem|debian freefem|g ; \
@@ -39,4 +45,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/*.pde ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

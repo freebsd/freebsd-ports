@@ -30,6 +30,12 @@ MAKE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" DOCSDIR="${DOCSDIR}" \
 
 PKGMESSAGE=	${WRKDIR}/pkgmessage
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
 		${REINPLACE_CMD} -e "s,-O2,${CFLAGS} -I${LOCALBASE}/include,"
@@ -63,4 +69,4 @@ post-install:
 	@${FIND} ${EXAMPLESDIR}/ -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

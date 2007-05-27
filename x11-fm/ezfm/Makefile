@@ -25,6 +25,12 @@ USE_GMAKE=	yes
 
 MAN1=		ezfm.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/ezfm ${PREFIX}/bin
 	@ ${MKDIR} ${PREFIX}/share/ezfm
@@ -41,4 +47,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

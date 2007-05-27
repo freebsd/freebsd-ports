@@ -27,6 +27,12 @@ USE_XLIB=	yes
 ALL_TARGET=	x11
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|$$(SDL_CONFIG)|g' \
 		${WRKSRC}/src/Makefile
@@ -49,4 +55,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

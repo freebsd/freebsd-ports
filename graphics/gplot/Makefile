@@ -26,6 +26,12 @@ FC=		gfortran42
 F77=		gfortran42
 MAKE_ENV+=	FC="${FC}" F77="${F77}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gplot ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/gtex ${PREFIX}/bin
@@ -39,4 +45,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -23,6 +23,10 @@ ALL_TARGET=	everything
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 do-install:
 	@${MKDIR} ${PREFIX}/include/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/${PORTNAME}

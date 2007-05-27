@@ -19,6 +19,12 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/mimekit
 PORTDOCS=	README README-LIB README-PGP
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/deMime ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/enMime ${PREFIX}/bin
@@ -33,4 +39,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -27,4 +27,10 @@ USE_LDCONFIG=	yes
 MAKE_ENV=	MKDIR="${MKDIR}" \
 		LN="${LN}"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
+.include <bsd.port.post.mk>

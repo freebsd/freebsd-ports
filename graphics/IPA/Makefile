@@ -24,8 +24,14 @@ MAN1=		iterm.1
 MAN3=		IPA.3
 MANCOMPRESSED=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 do-configure:
 	@(cd ${WRKSRC} ; ${PERL} ./${CONFIGURE_SCRIPT})
 	@(cd ${WRKSRC} ; ${REINPLACE_CMD} -e 's,-o,-fPIC &, ; s|perl/man|man|' Makefile)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

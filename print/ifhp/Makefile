@@ -53,6 +53,10 @@ PLIST_SUB+=		NLS="@comment "
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 .if defined(WITHOUT_FOOMATIC)
 CONFIGURE_ARGS+=	--disable-foomatic
 .else

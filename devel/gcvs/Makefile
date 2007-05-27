@@ -33,4 +33,10 @@ MAN8=		cvsbug.8
 INFO=		cvs cvsclient
 USE_AUTOTOOLS=	automake:15:env autoconf:259:env
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
+.include <bsd.port.post.mk>

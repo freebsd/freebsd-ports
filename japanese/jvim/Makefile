@@ -52,6 +52,10 @@ JPLIB+=		-ljd -lcrypt
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 #
 # Make a value of INPUT_METHOD
 .if defined(INPUT_METHOD)

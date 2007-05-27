@@ -22,6 +22,12 @@ DOCDIR=		${PREFIX}/share/doc/ja-Wnn7-lib
 
 USE_LDCONFIG=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},g' \
 		${WRKSRC}/config/Project.tmpl \
@@ -38,4 +44,4 @@ post-install:
 	@${MKDIR} ${DOCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
