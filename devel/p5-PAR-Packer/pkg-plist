@@ -12,7 +12,6 @@ bin/tkpp
 %%SITE_PERL%%/PAR/Filter/PatchContent.pm
 %%SITE_PERL%%/PAR/Filter/PodStrip.pm
 %%SITE_PERL%%/PAR/Packer.pm
-%%SITE_PERL%%/PAR/StrippedPARL
 %%SITE_PERL%%/PAR/StrippedPARL/Base.pm
 %%SITE_PERL%%/PAR/StrippedPARL/Dynamic.pm
 %%SITE_PERL%%/PAR/StrippedPARL/Static.pm
