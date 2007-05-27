@@ -82,5 +82,4 @@ bin/egg-helper
 %%PORTDOCS%%%%DOCSDIR%%/README.ja.txt
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/changelog.Debian
-%%PORTDOCS%%%%DOCSDIR%%/egg-anthy.readme
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
