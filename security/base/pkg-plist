@@ -1,9 +1,12 @@
 @comment $FreeBSD$
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.mssql
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE
+%%PORTDOCS%%%%DOCSDIR%%/GPL
+%%PORTDOCS%%%%DOCSDIR%%/base_faq.rtf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 www/base/admin/base_roleadmin.php
 www/base/admin/base_useradmin.php
