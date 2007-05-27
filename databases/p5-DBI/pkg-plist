@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+bin/dbilogstrip
 bin/dbiprof
 bin/dbiproxy
 %%SITE_PERL%%/%%PERL_ARCH%%/Bundle/DBI.pm
@@ -11,7 +12,6 @@ bin/dbiproxy
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/Gofer/Policy/pedantic.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/Gofer/Policy/rush.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/Gofer/Transport/Base.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/DBD/Gofer/Transport/http.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/Gofer/Transport/null.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/Gofer/Transport/pipeone.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBD/Gofer/Transport/stream.pm
@@ -31,7 +31,6 @@ bin/dbiproxy
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Gofer/Request.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Gofer/Response.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Gofer/Transport/Base.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/DBI/Gofer/Transport/mod_perl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Gofer/Transport/pipeone.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Gofer/Transport/stream.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Profile.pm
@@ -58,6 +57,7 @@ bin/dbiproxy
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/dbi_sql.h
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/dbipport.h
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI/dbivport.h
+%%SITE_PERL%%/%%PERL_ARCH%%/goferperf.pl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Win32
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/DBI/Util
