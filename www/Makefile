@@ -1168,6 +1168,7 @@
     SUBDIR += trac-wantedpages
     SUBDIR += trac-webadmin
     SUBDIR += trac-wikinotification
+    SUBDIR += trac-wikirename
     SUBDIR += transproxy
     SUBDIR += twhttpd
     SUBDIR += twig
