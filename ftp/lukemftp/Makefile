@@ -13,6 +13,9 @@ MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/lukemftp/old/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced ftp client from NetBSD
 
+DEPRECATED=	Project became tnftp a long time ago
+EXPIRATION_DATE=2007-06-30
+
 GNU_CONFIGURE=	yes
 
 MAN1=		lukemftp.1
