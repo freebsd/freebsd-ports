@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	jude-community
-PORTVERSION=	3.2.1
-PORTREVISION=	1
+PORTVERSION=	5.0
 CATEGORIES=	devel java
 MASTER_SITES=	# you have to register yourself as a member to download
 DISTNAME=	${PORTNAME}-${PORTVERSION:S!.!_!g}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	mistral@imasy.or.jp
 COMMENT=	A Java/UML Object-Oriented Design Tool
