@@ -1,0 +1,17 @@
+bin/crow
+bin/crow-service
+include/crow/crow.h
+lib/libcrow.la
+lib/libcrow.so
+libdata/pkgconfig/crow.pc
+share/applications/crow.desktop
+share/mime/packages/crow.xml
+share/pixmaps/crow.png
+@dirrm share/mime/packages
+@dirrm share/mime
+@dirrmtry share/applications
+@dirrm include/crow
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

@@ -1,0 +1,10 @@
+Crow is a modern GUI builder for the GTK+ toolkit. It is an advanced
+IDE-embeddable RAD tool designed to fulfill the needs of desktop programmers
+who want to create multi-platform GTK+ based applications with minimal
+GUI coding. Crow is full-featured yet lightweight: its tree-based Property
+Explorer solves many GUI constructing tasks in a versatile manner without
+additional popup dialogs. The project is targeted to develop a tool that
+is coherent and productive for experienced GTK+ users as well as simple
+and accessible for newcomers.
+
+WWW: http://crow-designer.sourceforge.net/
