@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	openvanilla-framework
-PORTVERSION=	0.7.2.b20060214
-PORTREVISION=	1
+PORTVERSION=	0.7.2.20070514
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.csie.org/~llwang/	\
-		http://www.infor.org/~llwang/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	rafan
 DISTNAME=	openvanilla-${PORTVERSION}
 
 MAINTAINER=	llwang@infor.org
 COMMENT=	Development header files for OpenVanilla
 
-USE_X_PREFIX=	yes
 NO_BUILD=	yes
 
 do-install:

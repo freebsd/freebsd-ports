@@ -26,6 +26,15 @@
 %%OVIMRoman%%lib/openvanilla/OVIMRoman.a
 %%OVIMRoman%%lib/openvanilla/OVIMRoman.la
 %%OVIMRoman%%lib/openvanilla/OVIMRoman.so
+%%OVIMSpaceChewing%%lib/openvanilla/OVIMSpaceChewing03.a
+%%OVIMSpaceChewing%%lib/openvanilla/OVIMSpaceChewing03.la
+%%OVIMSpaceChewing%%lib/openvanilla/OVIMSpaceChewing03.so
+%%OVIMSpaceChewing%%lib/openvanilla/OVIMSpaceChewing03/ch_index.dat
+%%OVIMSpaceChewing%%lib/openvanilla/OVIMSpaceChewing03/dict.dat
+%%OVIMSpaceChewing%%lib/openvanilla/OVIMSpaceChewing03/fonetree.dat
+%%OVIMSpaceChewing%%lib/openvanilla/OVIMSpaceChewing03/ph_index.dat
+%%OVIMSpaceChewing%%lib/openvanilla/OVIMSpaceChewing03/pinyin.tab
+%%OVIMSpaceChewing%%lib/openvanilla/OVIMSpaceChewing03/us_freq.dat
 %%OVIMTibetan%%lib/openvanilla/OVIMTibetan.a
 %%OVIMTibetan%%lib/openvanilla/OVIMTibetan.la
 %%OVIMTibetan%%lib/openvanilla/OVIMTibetan.so
@@ -34,6 +43,7 @@
 %%OVIMUnicode%%lib/openvanilla/OVIMUnicode.so
 %%OVIMUnicode%%@dirrmtry lib/openvanilla/OVIMUnicode
 %%OVIMTibetan%%@dirrmtry lib/openvanilla/OVIMTibetan
+%%OVIMSpaceChewing%%@dirrmtry lib/openvanilla/OVIMSpaceChewing03
 %%OVIMRoman%%@dirrmtry lib/openvanilla/OVIMRoman
 %%OVIMPhonetic%%@dirrmtry lib/openvanilla/OVIMPhonetic
 %%OVIMPOJ_Holo%%@dirrmtry lib/openvanilla/OVIMPOJ-Holo
