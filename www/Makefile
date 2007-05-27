@@ -1165,6 +1165,7 @@
     SUBDIR += trac-privatetickets
     SUBDIR += trac-restrictedarea
     SUBDIR += trac-robotstxt
+    SUBDIR += trac-simpleticket
     SUBDIR += trac-tags
     SUBDIR += trac-tocmacro
     SUBDIR += trac-wantedpages
