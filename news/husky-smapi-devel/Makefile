@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	smapi
-DISTVERSION=	2.4-rc4
+DISTVERSION=	2.4-rc5
 CATEGORIES=	news mail
-DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	os@rsu.ru
 COMMENT=	MSGAPI for Husky Fidosoft Project. Development version
 
 CONFLICTS=	husky-smapi-[0-9]*
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../news/husky-base-devel/Makefile.inc"
