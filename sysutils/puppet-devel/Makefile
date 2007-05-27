@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	puppet
-PORTVERSION=	0.22.3
+PORTVERSION=	0.22.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.reductivelabs.com/downloads/puppet/
 EXTRACT_SUFX=	.tgz
@@ -24,6 +24,9 @@ USE_RC_SUBR=	puppetmasterd puppetd
 DOCS=	CHANGELOG TODO README LICENSE COPYING
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	${RM} ${WRKSRC}/bin/*.orig || true
 
 do-install:
 	cd ${WRKSRC} && \
