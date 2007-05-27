@@ -15406,6 +15406,7 @@ trac-wantedpages	ports/www/trac-wantedpages
 trac-webadmin	ports/www/trac-webadmin
 trac-wikinotification	ports/www/trac-wikinotification
 trac-wikirename	ports/www/trac-wikirename
+trac-wikitemplates	ports/www/trac-wikitemplates
 trac-xmlrpc	ports/www/trac-xmlrpc
 trackballs	ports/games/trackballs
 tracker		ports/sysutils/tracker
