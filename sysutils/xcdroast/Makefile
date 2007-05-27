@@ -7,7 +7,7 @@
 
 PORTNAME=	xcdroast
 PORTVERSION=	0.98.a.15
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.xcdroast.org/download/:src \
@@ -23,7 +23,7 @@ OPTIONS=	GTK2	"Enable GTK2 support"		off \
 		NONROOT	"Use xcdroast w/o being root"	off \
 		NLS	"Native language support"	on
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_CDRTOOLS=	yes
