@@ -17,15 +17,6 @@ bin/marutex
 %%GEM_LIB_DIR%%/lib/maruku/toc.rb
 %%GEM_LIB_DIR%%/lib/maruku/version.rb
 %%GEM_LIB_DIR%%/lib/maruku/ext/math.rb
-%%GEM_LIB_DIR%%/lib/maruku/ext/diagrams/diagrams.rb
-%%GEM_LIB_DIR%%/lib/maruku/ext/diagrams/grid.rb
-%%GEM_LIB_DIR%%/lib/maruku/ext/diagrams/inspect.rb
-%%GEM_LIB_DIR%%/lib/maruku/ext/diagrams/layout.rb
-%%GEM_LIB_DIR%%/lib/maruku/ext/diagrams/parser.rb
-%%GEM_LIB_DIR%%/lib/maruku/ext/diagrams/structures.rb
-%%GEM_LIB_DIR%%/lib/maruku/ext/diagrams/to_html.rb
-%%GEM_LIB_DIR%%/lib/maruku/ext/diagrams/to_latex.rb
-%%GEM_LIB_DIR%%/lib/maruku/ext/diagrams/unittest.rb
 %%GEM_LIB_DIR%%/lib/maruku/ext/math/elements.rb
 %%GEM_LIB_DIR%%/lib/maruku/ext/math/parsing.rb
 %%GEM_LIB_DIR%%/lib/maruku/ext/math/to_html.rb
@@ -139,11 +130,14 @@ bin/marutex
 %%GEM_LIB_DIR%%/tests/unittest/inline_html.md
 %%GEM_LIB_DIR%%/tests/unittest/inline_html2.md
 %%GEM_LIB_DIR%%/tests/unittest/links.md
+%%GEM_LIB_DIR%%/tests/unittest/links2.md
 %%GEM_LIB_DIR%%/tests/unittest/list1.md
 %%GEM_LIB_DIR%%/tests/unittest/list2.md
 %%GEM_LIB_DIR%%/tests/unittest/list3.md
 %%GEM_LIB_DIR%%/tests/unittest/list4.md
 %%GEM_LIB_DIR%%/tests/unittest/lists.md
+%%GEM_LIB_DIR%%/tests/unittest/lists10.md
+%%GEM_LIB_DIR%%/tests/unittest/lists11.md
 %%GEM_LIB_DIR%%/tests/unittest/lists6.md
 %%GEM_LIB_DIR%%/tests/unittest/lists7.md
 %%GEM_LIB_DIR%%/tests/unittest/lists8.md
@@ -192,6 +186,8 @@ bin/marutex
 %%GEM_LIB_DIR%%/bin/maruku
 %%GEM_LIB_DIR%%/bin/marutest
 %%GEM_LIB_DIR%%/bin/marutex
+%%GEM_LIB_DIR%%/unit_test_block.sh
+%%GEM_LIB_DIR%%/unit_test_span.sh
 %%GEM_LIB_DIR%%/Rakefile
 %%GEM_LIB_DIR%%/maruku_gem.rb
 @dirrm %%GEM_LIB_DIR%%/bin
@@ -220,7 +216,6 @@ bin/marutex
 @dirrm %%GEM_LIB_DIR%%/lib/maruku/input
 @dirrm %%GEM_LIB_DIR%%/lib/maruku/ext/math/mathml_engines
 @dirrm %%GEM_LIB_DIR%%/lib/maruku/ext/math
-@dirrm %%GEM_LIB_DIR%%/lib/maruku/ext/diagrams
 @dirrm %%GEM_LIB_DIR%%/lib/maruku/ext
 @dirrm %%GEM_LIB_DIR%%/lib/maruku
 @dirrm %%GEM_LIB_DIR%%/lib
