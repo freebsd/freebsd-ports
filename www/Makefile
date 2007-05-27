@@ -1153,6 +1153,7 @@
     SUBDIR += trac-ctxtnavadd
     SUBDIR += trac-down
     SUBDIR += trac-gantt
+    SUBDIR += trac-macropost
     SUBDIR += trac-nav
     SUBDIR += trac-pagetopdf
     SUBDIR += trac-privatetickets
