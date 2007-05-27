@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	webtools webtools/archived
 MAINTAINER?=	skv@FreeBSD.org
 COMMENT?=	Bug-tracking system developed by Mozilla Project
 
+LATEST_LINK=	bugzilla2
+
 OPTIONS=	MYSQL "MySQL database support" on \
 		PGSQL "PostgreSQL database support" off \
 		CHARTING_MODULES "Bug charting support" on \
