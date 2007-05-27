@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	cups-pdf
-PORTVERSION=	2.4.5
-PORTREVISION=	1
+PORTVERSION=	2.4.6
 CATEGORIES=	print
 MASTER_SITES=	http://www.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/src/ \
-		http://olofsson.de/mirror/distfiles/
+		http://olofsson.de/distfiles/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	simon@olofsson.de
