@@ -15393,6 +15393,7 @@ trac-macropost	ports/www/trac-macropost
 trac-nav	ports/www/trac-nav
 trac-pagetopdf	ports/www/trac-pagetopdf
 trac-privatetickets	ports/www/trac-privatetickets
+trac-restrictedarea	ports/www/trac-restrictedarea
 trac-robotstxt	ports/www/trac-robotstxt
 trac-tags	ports/www/trac-tags
 trac-tocmacro	ports/www/trac-tocmacro
