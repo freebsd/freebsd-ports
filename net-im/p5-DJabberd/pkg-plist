@@ -16,13 +16,14 @@ bin/djabberd
 %%SITE_PERL%%/DJabberd/Component.pm
 %%SITE_PERL%%/DJabberd/Component/Example.pm
 %%SITE_PERL%%/DJabberd/Component/External.pm
-%%SITE_PERL%%/DJabberd/Component/External/Connection.pm
 %%SITE_PERL%%/DJabberd/Component/Node.pm
 %%SITE_PERL%%/DJabberd/Connection.pm
 %%SITE_PERL%%/DJabberd/Connection/Admin.pm
 %%SITE_PERL%%/DJabberd/Connection/ClientIn.pm
 %%SITE_PERL%%/DJabberd/Connection/ClusterIn.pm
 %%SITE_PERL%%/DJabberd/Connection/ClusterOut.pm
+%%SITE_PERL%%/DJabberd/Connection/ComponentIn.pm
+%%SITE_PERL%%/DJabberd/Connection/ComponentOut.pm
 %%SITE_PERL%%/DJabberd/Connection/DialbackVerify.pm
 %%SITE_PERL%%/DJabberd/Connection/OldSSLClientIn.pm
 %%SITE_PERL%%/DJabberd/Connection/ServerIn.pm
@@ -30,6 +31,7 @@ bin/djabberd
 %%SITE_PERL%%/DJabberd/Connection/SimpleIn.pm
 %%SITE_PERL%%/DJabberd/DNS.pm
 %%SITE_PERL%%/DJabberd/Delivery.pm
+%%SITE_PERL%%/DJabberd/Delivery/ComponentConnection.pm
 %%SITE_PERL%%/DJabberd/Delivery/Local.pm
 %%SITE_PERL%%/DJabberd/Delivery/LocalVHosts.pm
 %%SITE_PERL%%/DJabberd/Delivery/S2S.pm
@@ -71,7 +73,6 @@ bin/djabberd
 @dirrm %%SITE_PERL%%/DJabberd/Authen
 @dirrm %%SITE_PERL%%/DJabberd/Bot
 @dirrm %%SITE_PERL%%/DJabberd/ClusterMessage
-@dirrm %%SITE_PERL%%/DJabberd/Component/External
 @dirrm %%SITE_PERL%%/DJabberd/Component
 @dirrm %%SITE_PERL%%/DJabberd/Connection
 @dirrm %%SITE_PERL%%/DJabberd/Delivery

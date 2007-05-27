@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DJabberd
-PORTVERSION=	0.81
+PORTVERSION=	0.83
 CATEGORIES=	net-im perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/B/BR/BRADFITZ
@@ -28,7 +28,9 @@ PERL_CONFIGURE=	yes
 
 MAN3=		DJabberd.3 DJabberd::Component.3 \
 		DJabberd::Component::Example.3 DJabberd::Component::External.3 \
-		DJabberd::Component::External::Connection.3 \
+		DJabberd::Connection::ComponentIn.3 \
+		DJabberd::Connection::ComponentOut.3 \
+		DJabberd::Delivery::ComponentConnection.3 \
 		DJabberd::Delivery::LocalVHosts.3
 
 .include <bsd.port.mk>
