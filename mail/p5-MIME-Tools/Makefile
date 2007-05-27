@@ -7,6 +7,7 @@
 
 PORTNAME=	p5-MIME-Tools
 PORTVERSION=	5.420
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -49,26 +50,14 @@ MAN3=	MIME::Body.3 \
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	ChangeLog README
-PORTEXAMPLES=	examples/README examples/mimeabuse examples/mimedump examples/mimeencode \
-		examples/mimeexplode examples/mimepostcard examples/mimeprint \
-		examples/mimeref examples/mimesend examples/mimesender examples/mimetour
 
 post-install:
 	@${MKDIR} ${DOCSDIR}
-	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-	@${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/|} ${EXAMPLESDIR}
-	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or later. Install lang/perl5.8 and try again
 .endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" | ${XARGS} ${RM} -f
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
