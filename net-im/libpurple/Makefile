@@ -7,12 +7,12 @@
 #
 
 PORTNAME?=	libpurple
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.1
 PORTREVISION?=	0
 CATEGORIES?=	net-im
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pidgin
-DISTNAME=	pidgin-2.0.0
+DISTNAME=	pidgin-${PORTVERSION}
 
 MAINTAINER?=	marcus@FreeBSD.org
 COMMENT?=	Backend library for the Pidgin multi-protocol messaging client
