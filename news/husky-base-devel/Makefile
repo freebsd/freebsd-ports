@@ -7,18 +7,12 @@
 
 PORTNAME=	base
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	news mail
-DISTNAME=	huskybse-${PORTVERSION:S/./_/g}-stable
-EXTRACT_SUFX=	.rar
+DISTFILES=	huskybase-${PORTVERSION}-tar.gz
 
 MAINTAINER=	os@rsu.ru
 COMMENT=	Common files for Husky Fidosoft Project. Development version
-
-EXTRACT_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar
-
-EXTRACT_CMD=		unrar
-EXTRACT_BEFORE_ARGS=	x
-EXTRACT_AFTER_ARGS=	huskybse/
 
 CONFLICTS=	husky-base-[0-9]*
 
