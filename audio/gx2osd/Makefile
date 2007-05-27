@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gx2osd
-PORTVERSION=	0.1
-PORTREVISION=	1
+PORTVERSION=	0.2
 CATEGORIES=	audio
 MASTER_SITES=	 http://eclipser.no-ip.org/
 
@@ -14,33 +13,27 @@ MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	An OSD client for XMMS2
 
 LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
+				glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
 				xerces-c.27:${PORTSDIR}/textproc/xerces-c2
-BUILD_DEPENDS=	${LOCALBASE}/lib/libxmmsclient++.so:${PORTSDIR}/audio/cpp-xmms2
-RUN_DEPENDS=	${LOCALBASE}/lib/libxmmsclient++.so:${PORTSDIR}/audio/cpp-xmms2
+BUILD_DEPENDS=	${LOCALBASE}/lib/libxmmsclient++.so.1:${PORTSDIR}/audio/cpp-xmms2
+RUN_DEPENDS=	${LOCALBASE}/lib/libxmmsclient++.so.1:${PORTSDIR}/audio/cpp-xmms2
 
 USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include
-LINKFLAGS+=	${LDFLAGS} -L${LOCALBASE}/lib
-
-MAKE_ENV+=	LINKFAGS="${LINKFLAGS}" WAF_HOME=.
+MAKE_ENV+=	WAF_HOME=.
 
 MAN1=	gx2osd.1
 
 .include <bsd.port.pre.mk>
 
-pre-patch:
-	@${REINPLACE_CMD} -e 's|share/man/man1|man/man1|g' ${WRKSRC}/wscript
-
 do-configure:
-	-@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf --prefix ${PREFIX} configure
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf --prefix ${PREFIX} configure
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf --conf-prefix=${LOCALBASE} --with-mandir=${LOCALBASE}/man --prefix=${PREFIX} configure
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf --prefix ${PREFIX} build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf build
 
 do-install:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf --prefix ${PREFIX} ${INSTALL_TARGET}
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf ${INSTALL_TARGET}
 
 .include <bsd.port.post.mk>

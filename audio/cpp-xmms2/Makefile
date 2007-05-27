@@ -11,25 +11,15 @@ PKGNAMEPREFIX=	cpp-
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	C++ Bindings for XMMS2
 
-LIB_DEPENDS=	boost_signals.3:${PORTSDIR}/devel/boost
-BUILD_DEPENDS=	${LOCALBASE}/lib/libxmmsclient.so:${PORTSDIR}/audio/xmms2
-RUN_DEPENDS=	${LOCALBASE}/lib/libxmmsclient.so:${PORTSDIR}/audio/xmms2
+LIB_DEPENDS+=	boost_signals.3:${PORTSDIR}/devel/boost \
+				xmmsclient.2:${PORTSDIR}/audio/xmms2
 
 MASTERDIR=	${.CURDIR}/../xmms2
 USE_LDCONFIG=	yes
+USE_GNOME=	glib20
 
 PLIST=		${.CURDIR}/pkg-plist
 
-SCONS_TARGET=	src/clients/lib/xmmsclient++/libxmmsclient++.so \
-		src/clients/lib/xmmsclient++-glib//libxmmsclient++-glib.so
 XMMS2_SLAVE=	cpp
-
-do-install:
-	@cd ${WRKSRC} && ${INSTALL_PROGRAM} \
-		src/clients/lib/xmmsclient++/libxmmsclient++.so \
-		${TARGETDIR}/lib/libxmmsclient++.so
-	@cd ${WRKSRC} && ${INSTALL_PROGRAM} \
-		src/clients/lib/xmmsclient++-glib/libxmmsclient++-glib.so \
-		${TARGETDIR}/lib/libxmmsclient++-glib.so
 
 .include "${MASTERDIR}/Makefile"

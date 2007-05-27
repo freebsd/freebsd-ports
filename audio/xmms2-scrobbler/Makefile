@@ -5,23 +5,26 @@
 # $FreeBSD$
 
 PORTNAME=	xmms2-scrobbler
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	audio ruby
-MASTER_SITES=	ftp://ftp.code-monkey.de/pub/xmms2-scrobbler/
+MASTER_SITES=	http://exodus.xmms.se/~tilman/
 
 MAINTAINER=	alexbl@FreeBSD.org
 COMMENT=	A last.fm submission client for XMMS2
 
-BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmmsclient.so:${PORTSDIR}/audio/ruby-xmms2 \
+BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmmsclient_ext.so:${PORTSDIR}/audio/ruby-xmms2 \
 		${RUBY_SITELIBDIR}/event-loop.rb:${PORTSDIR}/devel/ruby-event-loop \
 		${LOCALBASE}/bin/rake:${PORTSDIR}/devel/rubygem-rake
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmmsclient.so:${PORTSDIR}/audio/ruby-xmms2 \
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmmsclient_ext.so:${PORTSDIR}/audio/ruby-xmms2 \
 		${RUBY_SITELIBDIR}/event-loop.rb:${PORTSDIR}/devel/ruby-event-loop
 
 USE_RUBY=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/xmms2-scrobbler
+PLIST_FILES=	bin/xmms2-scrobbler \
+				%%DATADIR%%/filters/britney.rb \
+				%%DATADIR%%/filters/musicbrainz.rb
+PLIST_DIRS=	%%DATADIR%%/filters %%DATADIR%%
 
 SUB_FILES=	pkg-message
 

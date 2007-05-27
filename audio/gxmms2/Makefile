@@ -25,6 +25,8 @@ PLIST_FILES=	bin/gxmms2 \
 				%%DATADIR%%/gxmms2_mini.xpm
 PLIST_DIRS=		%%DATADIR%%
 
+BROKEN=	Not updated to DrJekyll clientlib API
+
 .include <bsd.port.pre.mk>
 
 do-install:

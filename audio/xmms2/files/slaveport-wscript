@@ -1,0 +1,11 @@
+--- wscript.orig	Fri May 25 16:27:23 2007
++++ wscript	Fri May 25 16:27:28 2007
+@@ -41,8 +41,6 @@
+           src/lib/xmmssocket
+           src/lib/xmmsipc
+           src/lib/xmmsutils
+-          src/clients/lib/xmmsclient
+-          src/clients/lib/xmmsclient-glib
+           src/include
+           src/includepriv
+           """.split()

@@ -21,6 +21,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_RUBY=	yes
 NO_BUILD=	yes
 
+BROKEN=	Not updated to the DrJekyll clientlib API
 do-install:
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/rake PREFIX=${PREFIX}/ ${INSTALL_TARGET}
 

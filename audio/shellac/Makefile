@@ -20,6 +20,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_GNOME=	pygtk2
 
+BROKEN=	Not updated to the DrJekyl clientlib API
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

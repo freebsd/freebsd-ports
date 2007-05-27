@@ -25,4 +25,6 @@ CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
 WRKSRC=		${WRKDIR}/${DISTNAME}
 PLIST_FILES=	bin/nyello
 
+BROKEN=	Not updated to the DrJekyll clientlib API
+
 .include <bsd.port.mk>

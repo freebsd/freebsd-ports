@@ -1,4 +1,5 @@
 bin/gx2osd
+%%DATADIR%%/gx2osd.glade
 %%DATADIR%%/skins/skin.xsd
 %%DATADIR%%/skins/default/default.xml
 %%DATADIR%%/skins/default/noimage.png
