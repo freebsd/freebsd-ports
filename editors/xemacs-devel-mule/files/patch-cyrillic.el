@@ -1,16 +1,6 @@
---- lisp/mule/cyrillic.el	2004-03-10 15:05:21.000000000 +0300
-+++ lisp/mule/cyrillic.el	2004-03-11 19:19:17.000000000 +0300
-@@ -30,6 +30,9 @@
- ;; converted to ISO8859-5 internally.
- 
- ;; Windows-1251 support deleted because XEmacs has automatic support.
-+;; WINDOWS-1251 was deleted by Ben Wing.  Put back by Nickolay Pakoulin,
-+;; <npak@ispras.ru>, see comment below.
-+
- 
- ;;; Code:
- 
-@@ -188,6 +191,104 @@
+--- lisp/mule/cyrillic.el.orig	Sat Dec 30 19:04:32 2006
++++ lisp/mule/cyrillic.el	Fri May 25 23:03:45 2007
+@@ -242,6 +242,104 @@
  
  ;;; WINDOWS-1251 deleted; we support it automatically in XEmacs
  

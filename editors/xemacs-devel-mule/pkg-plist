@@ -12,7 +12,9 @@ bin/xemacs-%%XEMACS_VER%%
 @exec mkdir -p %D/lib/xemacs/site-lisp ; chmod 755 %D/lib/xemacs/site-lisp
 lib/xemacs-%%XEMACS_VER%%/etc/COPYING
 lib/xemacs-%%XEMACS_VER%%/etc/ChangeLog
+lib/xemacs-%%XEMACS_VER%%/etc/ETAGS.ChangeLog
 lib/xemacs-%%XEMACS_VER%%/etc/ETAGS.EBNF
+lib/xemacs-%%XEMACS_VER%%/etc/ETAGS.README
 lib/xemacs-%%XEMACS_VER%%/etc/Emacs.ad
 lib/xemacs-%%XEMACS_VER%%/etc/HELLO
 lib/xemacs-%%XEMACS_VER%%/etc/InstallGuide
@@ -97,7 +99,9 @@ lib/xemacs-%%XEMACS_VER%%/etc/eos/eos-stop-in.xbm
 lib/xemacs-%%XEMACS_VER%%/etc/eos/eos-stop.xbm
 lib/xemacs-%%XEMACS_VER%%/etc/eos/eos-type.xbm
 lib/xemacs-%%XEMACS_VER%%/etc/eos/eos-up.xbm
+lib/xemacs-%%XEMACS_VER%%/etc/dbxrc.in
 lib/xemacs-%%XEMACS_VER%%/etc/etags.1
+lib/xemacs-%%XEMACS_VER%%/etc/gdbinit.in
 lib/xemacs-%%XEMACS_VER%%/etc/gnuattach.1
 lib/xemacs-%%XEMACS_VER%%/etc/gnuclient.1
 lib/xemacs-%%XEMACS_VER%%/etc/gnudoit.1
@@ -424,6 +428,7 @@ lib/xemacs-%%XEMACS_VER%%/etc/unicode/unicode-consortium/8859-8.TXT
 lib/xemacs-%%XEMACS_VER%%/etc/unicode/unicode-consortium/8859-9.TXT
 lib/xemacs-%%XEMACS_VER%%/etc/unicode/unicode-consortium/BIG5.TXT
 lib/xemacs-%%XEMACS_VER%%/etc/unicode/unicode-consortium/CNS11643.TXT
+lib/xemacs-%%XEMACS_VER%%/etc/unicode/unicode-consortium/COPYING
 lib/xemacs-%%XEMACS_VER%%/etc/unicode/unicode-consortium/CP1250.TXT
 lib/xemacs-%%XEMACS_VER%%/etc/unicode/unicode-consortium/CP1251.TXT
 lib/xemacs-%%XEMACS_VER%%/etc/unicode/unicode-consortium/CP1252.TXT
@@ -450,6 +455,8 @@ lib/xemacs-%%XEMACS_VER%%/etc/unicode/unicode-consortium/KSC5601.TXT
 lib/xemacs-%%XEMACS_VER%%/etc/unicode/unicode-consortium/KSX1001.TXT
 lib/xemacs-%%XEMACS_VER%%/etc/unicode/unicode-consortium/OLD5601.TXT
 lib/xemacs-%%XEMACS_VER%%/etc/unicode/unicode-consortium/SHIFTJIS.TXT
+lib/xemacs-%%XEMACS_VER%%/etc/unicode/unicode-consortium/oreilly.html
+lib/xemacs-%%XEMACS_VER%%/etc/unicode/unicode-consortium/unicode-consortium.html
 lib/xemacs-%%XEMACS_VER%%/etc/xemacs-beta.xpm
 lib/xemacs-%%XEMACS_VER%%/etc/xemacs-enhanced.png
 lib/xemacs-%%XEMACS_VER%%/etc/xemacs-fe.sh
@@ -1199,8 +1206,8 @@ lib/xemacs-%%XEMACS_VER%%/lisp/mule/ethio-util.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/ethio-util.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/ethiopic.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/ethiopic.elc
-lib/xemacs-%%XEMACS_VER%%/lisp/mule/european.el
-lib/xemacs-%%XEMACS_VER%%/lisp/mule/european.elc
+lib/xemacs-%%XEMACS_VER%%/lisp/mule/general-late.el
+lib/xemacs-%%XEMACS_VER%%/lisp/mule/general-late.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/greek.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/greek.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/hebrew.el

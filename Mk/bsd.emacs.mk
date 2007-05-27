@@ -1,5 +1,5 @@
 #
-#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.64 2007-04-29 08:27:32 clsung Exp $
+#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.65 2007-05-27 17:43:21 anray Exp $
 #
 #	bsd.emacs.mk - 19990829 Shigeyuki Fukushima.
 #
@@ -183,7 +183,7 @@ PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 # XEmacs-21 development version
 .elif (${EMACS_PORT_NAME} == "xemacs-devel")
 EMACS_NAME=		xemacs
-EMACS_VER=		21.5-b27
+EMACS_VER=		21.5-b28
 EMACS_MAJOR_VER=	21
 EMACS_LIBDIR?=		lib/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	lib/${EMACS_NAME}-${EMACS_VER}
@@ -201,7 +201,7 @@ PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 .elif (${EMACS_PORT_NAME} == "xemacs-devel-mule") || \
 	(${EMACS_PORT_NAME} == "xemacs-mule-xft")
 EMACS_NAME=		xemacs
-EMACS_VER=		21.5-b27
+EMACS_VER=		21.5-b28
 EMACS_MAJOR_VER=	21
 EMACS_LIBDIR?=		lib/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	lib/${EMACS_NAME}-${EMACS_VER}
