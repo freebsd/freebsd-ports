@@ -1,0 +1,6 @@
+This package attempts to make it easier to write scripts that use
+BigInts/BigFloats in a transparent way. They use the rewritten
+versions of Math::BigInt and Math::BigFloat, Math::BigRat (for
+bigrat) and optionally Math::BigInt::Lite.
+
+WWW: http://search.cpan.org/dist/bignum/
