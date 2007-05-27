@@ -15383,6 +15383,7 @@ trac-bzr	ports/www/trac-bzr
 trac-ctxtnavadd	ports/www/trac-ctxtnavadd
 trac-down	ports/www/trac-down
 trac-gantt	ports/www/trac-gantt
+trac-macropost	ports/www/trac-macropost
 trac-nav	ports/www/trac-nav
 trac-pagetopdf	ports/www/trac-pagetopdf
 trac-privatetickets	ports/www/trac-privatetickets
