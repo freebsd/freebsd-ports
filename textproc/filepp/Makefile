@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	filepp
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.cabaret.demon.co.uk/filepp/
 
@@ -16,7 +16,8 @@ COMMENT=	A generic file preprocessor
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
+			--mandir=${PREFIX}/man
 NO_BUILD=	yes
 
 MAN1=	filepp.1
