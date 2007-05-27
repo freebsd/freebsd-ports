@@ -1176,6 +1176,7 @@
     SUBDIR += trac-tocmacro
     SUBDIR += trac-wantedpages
     SUBDIR += trac-webadmin
+    SUBDIR += trac-wikinegotiator
     SUBDIR += trac-wikinotification
     SUBDIR += trac-wikirename
     SUBDIR += trac-wikitemplates
