@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	emelfm2
-PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTVERSION=	0.3.4
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.emelfm2.net/rel/ \
 		${MASTER_SITE_LOCAL}
@@ -28,7 +27,49 @@ LDFLAGS+=	${PTHREAD_LIBS}
 MAKE_ENV=	CC=${CC} LDFLAGS="${LDFLAGS}" DOC_DIR="${DOCSDIR}/"
 MAN1=		emelfm2.1
 
+OPTIONS=	DEBUG	"Enable debugging messages" off \
+		GAMIN 	"Enable Gamin for file monitoring" off \
+		FAM	"Enable FAM for file monitoring" off \
+		THUMB	"Enable the thumbnail plugin" off \
+		TRACKER	"Enable the tracker plugin" off \
+		NLS	"Enable gettext support" on
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_DEBUG)
+MAK_ENV+=	DEBUG=1
+.endif
+
+.if defined(WITH_GAMIN) && defined(WITH_FAM)
+BROKEN=	"WITH_GAMIN and WITH_FAM cannot be enabled at the same time for this port"
+.endif
+
+.if defined(WITH_GAMIN)
+USE_FAM=	yes
+WANT_FAM_SYSTEM=gamin
+MAKE_ENV+=	USE_GAMIN=1
+.endif
+
+.if defined(WITH_FAM)
+USE_FAM=	yes
+WANT_FAM_SYSTEM=fam
+MAKE_ENV+=	USE_FAM=1
+.endif
+
+.if defined(WITH_THUMB)
+LIB_DEPENDS+=	gimp:${PORTSDIR}/graphics/gimp
+MAKE_ENV+=	WITH_THUMB=1
+PLIST_SUB+=	THUMB=""
+.else
+PLIST_SUB+=	THUMB="@comment "
+.endif
+
+.if defined(WITH_TRACKER)
+MAKE_ENV+=	WITH_TRACKER=1
+PLIST_SUB+=	TRACKER=""
+.else
+PLIST_SUB+=	TRACKER="@comment "
+.endif
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
