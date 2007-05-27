@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	crm114
-PORTVERSION=	20070406
+PORTVERSION=	20070428
 # WARNING change versionname in CRM114RELEASENAME too.
 # portlint didn't like this variable at this place.
 # So I have to put it down in this file.
