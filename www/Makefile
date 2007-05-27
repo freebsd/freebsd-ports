@@ -1165,6 +1165,7 @@
     SUBDIR += trac-privatetickets
     SUBDIR += trac-robotstxt
     SUBDIR += trac-tags
+    SUBDIR += trac-wantedpages
     SUBDIR += trac-webadmin
     SUBDIR += trac-wikinotification
     SUBDIR += transproxy
