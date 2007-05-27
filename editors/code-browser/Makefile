@@ -7,11 +7,9 @@
 #
 
 PORTNAME=	code-browser
-PORTVERSION=	2.13
-PORTREVISION=	1
+PORTVERSION=	2.14
 CATEGORIES=	editors
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
@@ -27,6 +25,7 @@ PORTDOCS=	code-browser.chm doc.css doc.html
 PLIST_FILES=	bin/code-browser \
 		%%DATADIR%%/config/preferences.cbc \
 		%%DATADIR%%/config-default/preferences.cbc \
+		%%DATADIR%%/config-optional/AVR-asm.cbc \
 		%%DATADIR%%/config-optional/perforce.cbc \
 		%%DATADIR%%/config-optional/torque.cbc
 PLIST_DIRS=	%%DATADIR%%/config-optional \
