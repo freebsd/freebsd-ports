@@ -418,6 +418,7 @@
     SUBDIR += guikachu
     SUBDIR += guile-lib
     SUBDIR += guiloader
+    SUBDIR += guiloader-c++
     SUBDIR += gwenhywfar
     SUBDIR += gzstream
     SUBDIR += hachoir-core
