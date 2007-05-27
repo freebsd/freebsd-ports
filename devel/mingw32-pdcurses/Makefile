@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pdcurses
-PORTVERSION=	2.8
+PORTVERSION=	3.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,7 +26,7 @@ PDCURSES_LIBS=	pdcurses.a panel.a
 do-build:
 	@${GMAKE} -C ${WRKSRC}/win32 -f gccwin32.mak PDCURSES_SRCDIR=.. \
 		CC=${PKGNAMEPREFIX}gcc LIBEXE=${PKGNAMEPREFIX}ar \
-		SHELL=${SH} ${PDCURSES_LIBS}
+		${PDCURSES_LIBS}
 
 do-install:
 .for f in curses.h curspriv.h panel.h term.h
