@@ -417,6 +417,7 @@
     SUBDIR += guichan
     SUBDIR += guikachu
     SUBDIR += guile-lib
+    SUBDIR += guiloader
     SUBDIR += gwenhywfar
     SUBDIR += gzstream
     SUBDIR += hachoir-core
