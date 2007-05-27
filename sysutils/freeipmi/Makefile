@@ -4,9 +4,13 @@
 #
 # $FreeBSD$
 #
+# Available KNOBs:
+#
+# WITH_DEBUG   - Build binaries suitable for debugging with gdb(1).
+#
 
 PORTNAME=	freeipmi
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.zresearch.com/pub/freeipmi/${PORTVERSION}/
 
@@ -45,8 +49,18 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 BROKEN=	missing getpw*_r functions in this FreeBSD release
 .endif
 
-.if defined(WITH_IOPERM)
+# Use i386_set_ioperm(2) instead of io(4) to gain access to I/O
+# ports. Note: there is a bug in FreeBSD 5 before 5.5-RELEASE that
+# causes SIGBUS to the process sometimes when i386_set_ioperm is used
+# (PR 84842).
+.if defined(WITH_IOPERM) || \
+	${OSVERSION} < 500000 || ${OSVERSION} >= 505000
 CPPFLAGS+=	-DUSE_IOPERM
+.endif
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+STRIP=	# empty
 .endif
 
 post-install:
