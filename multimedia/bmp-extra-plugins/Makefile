@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://wrzask.pl/files/
 
-MAINTAINER=	w@wrzask.pl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of additional plugins for beep media player
 
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \
