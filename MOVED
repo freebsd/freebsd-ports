@@ -2960,3 +2960,5 @@ x11/libXfont|x11-fonts/libXfont|2007-05-19|Move to the x11-fonts category
 x11-servers/xorg-fontserver|x11-fonts/xfs|2007-05-19|Rename to follow X.org name
 x11/xlibs|xorg-libraries|2007-05-25|Replaced by x11/xorg-libraries
 multimedia/ffmpeg-devel|multimedia/ffmpeg|2007-05-25|Merged multimedia/ffmpeg-devel into multimedia/ffmpeg
+devel/wfut||2007-05-27|Obsolete
+
