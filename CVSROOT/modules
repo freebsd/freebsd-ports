@@ -3129,6 +3129,7 @@ freesbie	ports/sysutils/freesbie
 freesci		ports/games/freesci
 freescope	ports/devel/freescope
 freesweep	ports/games/freesweep
+freesynd	ports/games/freesynd
 freetar		ports/archivers/freetar
 freetds		ports/databases/freetds
 freetds-msdblib	ports/databases/freetds-msdblib
