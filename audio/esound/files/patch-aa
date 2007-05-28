@@ -1,20 +1,20 @@
---- Makefile.in.orig	Mon Mar  1 16:37:33 2004
-+++ Makefile.in	Mon Mar  1 16:38:38 2004
-@@ -119,7 +119,7 @@
- lib_LTLIBRARIES = libesd.la $(libesddsp_la)
+--- Makefile.in.orig	Mon May 28 15:23:55 2007
++++ Makefile.in	Mon May 28 15:24:56 2007
+@@ -341,7 +341,7 @@ bin_SCRIPTS = \
  
+ lib_LTLIBRARIES = libesd.la $(libesddsp_la)
  libesd_la_CFLAGS = $(AM_CFLAGS)
 -libesd_la_LDFLAGS = -version-info $(ESD_VERSION_INFO) -no-undefined
 +libesd_la_LDFLAGS = -version-info 2:0:0 -no-undefined
  libesd_la_LIBADD = $(AUDIOFILE_LIBS) $(SOUND_LIBS)
- 
- libesd_la_SOURCES =  	esdlib.c		esdmgr.c		esdfile.c		esd-config.h		esd_config.c		audio.c			genrand.c		genrand.h		util.c
-@@ -129,7 +129,7 @@
- AUDIO_BACKENDS =  	audio_aix.c			audio_alsa.c			audio_alsa09.c  		audio_coreaudio.c		audio_dart.c			audio_hpux.c			audio_mklinux.c			audio_irix.c			audio_none.c			audio_osf.c			audio_oss.c			audio_solaris.c			audio_win32.c
- 
+ libesd_la_SOURCES = \
+ 	esdlib.c	\
+@@ -372,7 +372,7 @@ AUDIO_BACKENDS = \
+ 	audio_solaris.c		\
+ 	audio_win32.c
  
 -libesddsp_la_LDFLAGS = -version-info $(ESD_VERSION_INFO)
 +libesddsp_la_LDFLAGS = -version-info 2:0:0
- libesddsp_la_LIBADD = $(DL_LIB) -lm
- 
- libesddsp_la_SOURCES =  	esddsp.c
+ libesddsp_la_LIBADD = $(DL_LIB) -lm libesd.la
+ libesddsp_la_SOURCES = \
+ 	esddsp.c
