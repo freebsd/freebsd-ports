@@ -32,15 +32,11 @@ MODIFY=		Makefile.in data/Makefile.in
 USE_XLIB=	yes
 USE_GNOME=	gnomelibs
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|txtOutput|txtNotepadOutput|g' \
+		${WRKSRC}/src/notepad.c
 
 pre-patch:
 .for i in ${MODIFY}
@@ -58,4 +54,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
