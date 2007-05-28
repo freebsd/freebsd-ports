@@ -8,7 +8,7 @@
 
 PORTNAME=	sql
 PORTVERSION=	4.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_QT}
 PKGNAMEPREFIX=	qt4-
@@ -75,7 +75,7 @@ pre-configure:
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../bin/moc
 post-configure:
 	${REINPLACE_CMD} -e 's|${PREFIX}/lib/QtSql.pc|${PREFIX}/libdata/pkgconfig/QtSql.pc|g' \
-		-e 's|(test -z.*||g' \
+		-e 's|.*$$(QMAKE).*||g' -e 's|(test -z.*||g' \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
 			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
