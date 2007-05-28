@@ -19,7 +19,7 @@ COMMENT=	Converts HTML to PDF and/or PostScript
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg	\
 		png:${PORTSDIR}/graphics/png
 
-OPTIONS=	HTMLDOCGUI "Build GUI front-end" no
+OPTIONS=	HTMLDOCGUI "Build GUI front-end" off
 # .bz2 file is available since Aug 2, but we don't want to
 # start mirroring _in addition to_ the .gz variant. When the
 # vendor's release is updated again, we should switch to .bz2
@@ -51,5 +51,7 @@ post-configure:
 .if !defined(WITHOUT_HTMLDOCGUI)
 LIB_DEPENDS+=	fltk:${PORTSDIR}/x11-toolkits/fltk
 CONFIGURE_ARGS+=--enable-gui
+.else
+CONFIGURE_ARGS+=--disable-gui
 .endif
 .include <bsd.port.post.mk>
