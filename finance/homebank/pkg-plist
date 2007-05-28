@@ -6,6 +6,8 @@ share/applications/homebank.desktop
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%GNOME:%%share/gnome/application-registry/homebank.applications
+%%GNOME:%%share/gnome/mime-info/homebank.keys
+%%GNOME:%%share/gnome/mime-info/homebank.mime
 %%DATADIR%%/images/account.svg
 %%DATADIR%%/images/archive.svg
 %%DATADIR%%/images/banktransfert.svg
@@ -66,8 +68,6 @@ share/locale/nl/LC_MESSAGES/homebank.mo
 share/locale/pt_BR/LC_MESSAGES/homebank.mo
 share/locale/ru/LC_MESSAGES/homebank.mo
 share/locale/zh_CN/LC_MESSAGES/homebank.mo
-share/mime-info/homebank.keys
-share/mime-info/homebank.mime
 share/mime/packages/homebank.xml
 share/pixmaps/homebank.svg
 @dirrm %%DATADIR%%/images
