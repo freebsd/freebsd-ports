@@ -7,6 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
 		http://ftp.digium.com/pub/asterisk/old-releases/
@@ -44,6 +45,7 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		RADIUS		"Enable RADIUS accounting support" on \
 		SNMP		"Enable SNMP support" on \
 		H323		"Enable H.323 support" on \
+		FREETDS		"Enable FreeTDS support" on \
 		JABBER		"Enable Jabber and Gtalk support" on
 
 .include <bsd.port.pre.mk>
@@ -86,6 +88,15 @@ CONFIGURE_ARGS+= --without-odbc
 PLIST_SUB+=	WITH_ODBC=""
 CONFIGURE_ARGS+= --with-odbc
 LIB_DEPENDS+=	odbc.1:${PORTSDIR}/databases/unixODBC
+.endif
+
+.if defined(WITHOUT_FREETDS)
+PLIST_SUB+=	WITH_FREETDS="@comment "
+CONFIGURE_ARGS+= --without-tds
+.else
+PLIST_SUB+=	WITH_FREETDS=""
+CONFIGURE_ARGS+= --with-tds=${LOCALBASE}
+LIB_DEPENDS+=	tds.5:${PORTSDIR}/databases/freetds
 .endif
 
 .if defined(WITHOUT_POSTGRES)
