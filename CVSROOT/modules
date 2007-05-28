@@ -11579,6 +11579,7 @@ pear-Image_Barcode	ports/graphics/pear-Image_Barcode
 pear-Image_Canvas	ports/graphics/pear-Image_Canvas
 pear-Image_Color	ports/graphics/pear-Image_Color
 pear-Image_Graph	ports/graphics/pear-Image_Graph
+pear-Image_GraphViz	ports/graphics/pear-Image_GraphViz
 pear-Image_Transform	ports/graphics/pear-Image_Transform
 pear-LiveUser	ports/security/pear-LiveUser
 pear-LiveUser_Admin	ports/security/pear-LiveUser_Admin
