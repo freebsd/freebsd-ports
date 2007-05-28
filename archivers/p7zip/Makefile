@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p7zip
-PORTVERSION=	4.45
+PORTVERSION=	4.47
 CATEGORIES=	archivers
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src_all
@@ -59,7 +59,6 @@ do-install:
 	${INSTALL} -d ${DLLDIR}/Codecs/
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/Codecs/Rar29.so ${DLLDIR}/Codecs/
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/7z.so ${DLLDIR}/
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/7za.so ${DLLDIR}/
 .endif
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}/
