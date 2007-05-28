@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	k3b
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.0.1
 CATEGORIES=	sysutils multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,6 +28,7 @@ USE_CDRTOOLS=	yes
 USE_LDCONFIG=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 USE_KDELIBS_VER=	3
+INSTALLS_ICONS=	yes
 
 OPTIONS=	FLAC "Add audio/flac decoder" On \
 		LAME "Add audio/lame encoder (for mp3 files)" On \
