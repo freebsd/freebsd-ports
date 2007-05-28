@@ -4,7 +4,6 @@ bin/7zr
 bin/p7zip
 %%MODULES%%libexec/p7zip/7z
 %%MODULES%%libexec/p7zip/7z.so
-%%MODULES%%libexec/p7zip/7za.so
 %%MODULES%%libexec/p7zip/Client7z
 libexec/p7zip/7za
 libexec/p7zip/7zr
@@ -32,7 +31,6 @@ libexec/p7zip/7zCon.sfx
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL/switches/ar_include.htm
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL/switches/ar_no.htm
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL/switches/charset.htm
-%%PORTDOCS%%%%DOCSDIR%%/MANUAL/switches/email.htm
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL/switches/exclude.htm
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL/switches/include.htm
 %%PORTDOCS%%%%DOCSDIR%%/MANUAL/switches/index.htm
