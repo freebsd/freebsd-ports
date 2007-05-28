@@ -7,7 +7,7 @@
 
 PORTNAME=	pnetcdf
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science parallel
 MASTER_SITES=	http://www-unix.mcs.anl.gov/parallel-netcdf/
 DISTNAME=	parallel-netcdf-${PORTVERSION}
@@ -24,6 +24,11 @@ OPTIONS=	OPENMPI "Use openmpi instead of mpich2" off
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
+
+WANT_FORTRAN=	yes
+BUILD_DEPENDS+=	gfortran42:${PORTSDIR}/lang/gcc42
+FC=		gfortran42
+F77=		gfortran42
 
 MAN1=		ncmpigen.1 ncmpidump.1
 MAN3=		pnetcdf.3
