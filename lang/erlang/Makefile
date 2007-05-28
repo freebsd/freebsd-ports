@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	erlang
-PORTVERSION=	r11b3
-PORTREVISION=	4
+PORTVERSION=	r11b4
 PORTEPOCH=	1
 CATEGORIES=	lang parallel
 MASTER_SITES=	http://www.erlang.org/download/        \
@@ -15,7 +14,7 @@ MASTER_SITES=	http://www.erlang.org/download/        \
 		http://www.erlang.org/download/        \
 		http://erlang.stacken.kth.se/download/ \
 		http://www.csd.uu.se/ftp/mirror/erlang/download/
-DISTNAME=	otp_src_R11B-3
+DISTNAME=	otp_src_R11B-4
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ERLANG_MAN} ${ERLANG_DOCS}
 DIST_SUBDIR=	erlang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -26,6 +25,7 @@ COMMENT=	A functional programming language from Ericsson
 CONFLICTS?=	erlang-lite-r[0-9]*
 
 SUB_FILES=	pkg-message
+SUB_LIST=	TOOLS_VSN=${TOOLS_VSN}
 
 # The Java applications that are part of the Erlang distribution are
 # not strictly necessary - it is included for completeness sake. A
@@ -50,10 +50,6 @@ USE_TK_RUN=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not build on sparc64
-.endif
-
 .if ${OSVERSION} < 502102
 WITHOUT_ODBC=	yes
 .endif
@@ -67,23 +63,20 @@ LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
 .endif
 .endif
 
-ERLANG_MAN=	otp_doc_man_R11B-3.tar.gz
+ERLANG_MAN=	otp_doc_man_R11B-4.tar.gz
 .if !defined(NOPORTDOCS)
-ERLANG_DOCS=	otp_doc_html_R11B-3.tar.gz
+ERLANG_DOCS=	otp_doc_html_R11B-4.tar.gz
 .endif
 ERLANG_PLIST=	${WRKDIR}/pkg-plist
 
 USE_GMAKE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-ONLY_FOR_ARCHS=	i386 amd64 sparc64
+ONLY_FOR_ARCHS=	i386 amd64
 REINPLACE_ARGS=	-i
 
 CONFIGURE_TARGET=	# Empty
 CONFIGURE_ARGS+=	--enable-threads
-.if ${ARCH} == "i386"
-CONFIGURE_ARGS+=	--enable-hipe
-.endif
 NOPRECIOUSMAKEVARS=	yes # Prevent exporting of "ARCH"
 
 CFLAGS+=	-I${LOCALBASE}/include
@@ -102,11 +95,6 @@ MAN1PREFIX=	${TARGETDIR}/lib/erlang
 MAN3PREFIX=	${TARGETDIR}/lib/erlang
 MAN4PREFIX=	${TARGETDIR}/lib/erlang
 MAN6PREFIX=	${TARGETDIR}/lib/erlang
-
-# Workaround for a ./configure recursion bug which leads to INSTALL being
-# set to "../../../../[...]"
-post-patch:
-	@cd ${WRKSRC} && ${CAT} ${FILESDIR}/post-patch-configure | ${PATCH}
 
 pre-configure:
 # Check if ${JAVAC} exists.

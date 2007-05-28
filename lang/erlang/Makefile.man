@@ -5,6 +5,7 @@ MAN1=	epmd.1 \
 	erl_call.1 \
 	erlc.1 \
 	erlsrv.1 \
+	escript.1 \
 	run_erl.1 \
 	start.1 \
 	start_erl.1 \
@@ -84,6 +85,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	asn1ct.3 \
 	asn1rt.3 \
 	auth.3 \
+	base64.3 \
 	beam_lib.3 \
 	c.3 \
 	calendar.3 \
@@ -173,6 +175,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	gb_trees.3 \
 	gen_event.3 \
 	gen_fsm.3 \
+	gen_sctp.3 \
 	gen_server.3 \
 	gen_tcp.3 \
 	gen_udp.3 \
@@ -201,6 +204,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	inviso_lfm.3 \
 	inviso_lfm_tpfreader.3 \
 	inviso_rt.3 \
+	inviso_rt_meta.3 \
 	io.3 \
 	io_lib.3 \
 	lib.3 \
@@ -280,6 +284,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	snmp_user_based_sm_mib.3 \
 	snmp_view_based_acm_mib.3 \
 	snmpa.3 \
+	snmpa_conf.3 \
 	snmpa_error.3 \
 	snmpa_error_io.3 \
 	snmpa_error_logger.3 \
@@ -291,6 +296,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	snmpa_supervisor.3 \
 	snmpc.3 \
 	snmpm.3 \
+	snmpm_conf.3 \
 	snmpm_mpd.3 \
 	snmpm_network_interface.3 \
 	snmpm_user.3 \
