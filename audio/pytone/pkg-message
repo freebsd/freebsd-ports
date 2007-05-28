@@ -1,13 +1,15 @@
 
 ###############################################################
 
-To use pytone, you'll need to put something like this 
-into ~/.pytone/pytonerc:
+To use pytone, you should copy ${LOCALBASE}/etc/pytonerc to:
+
+~/.pytone/pytonerc
+
+Or simply create a minimal one with the location of your music 
+collection:
 
 [database.main]
 musicbasedir=/root/of/your/music/collection
-# use new database layout
-basename=
 
 ###############################################################
 

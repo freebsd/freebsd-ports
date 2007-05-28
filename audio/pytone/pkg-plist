@@ -1,5 +1,6 @@
 bin/pytone
 bin/pytonectl
+etc/pytonerc
 lib/%%PYTHON_VERSION%%/site-packages/pytone/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/pytone/config.py
 lib/%%PYTHON_VERSION%%/site-packages/pytone/dbitem.py
