@@ -77,7 +77,7 @@ USE_PGSQL=	yes
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
 		${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph \
 		${SITE_PERL}/GD/Text.pm:${PORTSDIR}/graphics/p5-GD-TextUtil \
-		${SITE_PERL}/Template/Plugin/GD/Image:${PORTSDIR}/www/p5-Template-GD
+		${SITE_PERL}/Template/Plugin/GD/Image.pm:${PORTSDIR}/www/p5-Template-GD
 .endif
 
 .ifdef WITH_CHARTING_MODULES
@@ -85,7 +85,8 @@ RUN_DEPENDS+=	${SITE_PERL}/Chart/Base.pm:${PORTSDIR}/graphics/p5-chart
 .endif
 
 .ifdef WITH_PATCH_VIEWER
-RUN_DEPENDS+=	${SITE_PERL}/PatchReader.pm:${PORTSDIR}/devel/p5-PatchReader
+RUN_DEPENDS+=	${SITE_PERL}/PatchReader.pm:${PORTSDIR}/devel/p5-PatchReader \
+		interdiff:${PORTSDIR}/misc/patchutils
 .endif
 
 .ifdef WITH_MORE_HTML
@@ -95,7 +96,7 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-P
 
 .ifdef WITH_INBOUND_EMAIL
 RUN_DEPENDS+=	${SITE_PERL}/Email/MIME/Attachment/Stripper.pm:${PORTSDIR}/mail/p5-Email-MIME-Attachment-Stripper \
-		${SITE_PERL}/Email/Reply:${PORTSDIR}/mail/p5-Email-Reply
+		${SITE_PERL}/Email/Reply.pm:${PORTSDIR}/mail/p5-Email-Reply
 .endif
 
 .ifdef WITH_MOVE_BUGZ
@@ -140,8 +141,8 @@ post-patch:
 		${WRKSRC}/checksetup.pl
 	@${FIND} ${WRKSRC} \( -name "CVS" -or -name ".cvsignore" -or -name "*.orig" \
 		-or -name "README.docs" \) | ${XARGS} ${RM} -rf
-	@${FIND} ${WRKSRC} -name "*.p[ml]" | \
-		${XARGS} ${REINPLACE_CMD} -i '' -e 's!/usr/lib/sendmail!/usr/sbin/sendmail!'
+	${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} -i '' \
+		-e 's!/usr/lib/sendmail!/usr/sbin/sendmail!g; s=/usr/bin/perl=${PERL}=g' {} \+
 
 do-build:
 	@${SED} -e "s:%%BUGZILLADIR%%:${BUGZILLADIR}:g; s:%%DOCSDIR%%:${DOCSDIR}:g" \
