@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pcre
-PORTVERSION=	7.0
-PORTREVISION=	1
+PORTVERSION=	7.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/unix/misc/%SUBDIR%/ \
@@ -50,7 +49,7 @@ post-install:
 	@${STRIP_CMD} ${DESTDIR}${PREFIX}/bin/pcregrep ${DESTDIR}${PREFIX}/bin/pcretest
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DESTDIR}${DOCSDIR} ${DESTDIR}${DOCSDIR}/html
-	@cd ${WRKSRC}; ${INSTALL_DATA} ChangeLog NEWS LICENCE doc/Tech.Notes doc/*.txt ${DESTDIR}${DOCSDIR}
+	@cd ${WRKSRC}; ${INSTALL_DATA} ChangeLog NEWS LICENCE doc/*.txt ${DESTDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/html/*.html ${DESTDIR}${DOCSDIR}/html
 .endif
 
