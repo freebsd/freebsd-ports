@@ -15,12 +15,12 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Command line virus scanner written entirely in C
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
-RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
-		arj:${PORTSDIR}/archivers/arj \
-		unzoo:${PORTSDIR}/archivers/unzoo \
-		arc:${PORTSDIR}/archivers/arc
 
-OPTIONS=	MILTER "Compile the milter interface" Off \
+OPTIONS=	ARC "Enable arch archives support" On \
+		ARJ "Enable arj archives support" On \
+		LHA "Enable lha archives support" On \
+		UNZOO "Enavle zoo archives support" On \
+		MILTER "Compile the milter interface" Off \
 		LDAP "libmilter was built with LDAP" Off \
 		CURL "Support URL downloading" Off \
 		STDERR "Print logs to stderr instead of stdout" Off \
@@ -114,6 +114,19 @@ PTHREAD_LIBS=	-lthr
 # and -pthread have both issues there.
 .if ${OSVERSION} == 502010
 PTHREAD_LIBS=	-pthread
+.endif
+
+.if !defined(WITHOUT_ARC)
+RUN_DEPENDS+=	arc:${PORTSDIR}/archivers/arc
+.endif
+.if !defined(WITHOUT_ARJ)
+RUN_DEPENDS+=	arj:${PORTSDIR}/archivers/arj
+.endif
+.if !defined(WITHOUT_LHA)
+RUN_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
+.endif
+.if !defined(WITHOUT_UNZOO)
+RUN_DEPENDS+=	unzoo:${PORTSDIR}/archivers/unzoo
 .endif
 
 .if defined(WITH_MILTER)
