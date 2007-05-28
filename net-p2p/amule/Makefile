@@ -51,10 +51,6 @@ OPTIONS=	OPTIMIZE "Build with optimization" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		Will not compile on FreeBSD 4.x - See net-p2p/amule1 for 4.x compatibility
-.endif
-
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 .else
