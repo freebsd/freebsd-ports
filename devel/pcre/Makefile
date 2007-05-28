@@ -31,7 +31,7 @@ PORTDOCS=	*
 CONFIGURE_ARGS+=--with-link-size=${WITH_LINK_SIZE}
 .endif
 
-MAN1=		pcregrep.1 pcretest.1
+MAN1=		pcre-config.1 pcregrep.1 pcretest.1
 MAN3=		pcre.3 pcre_compile.3 pcre_compile2.3 pcre_config.3 \
 		pcre_copy_named_substring.3 pcre_copy_substring.3 \
 		pcre_dfa_exec.3 pcre_exec.3 pcre_free_substring.3 \
