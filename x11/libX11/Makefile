@@ -7,7 +7,7 @@
 
 PORTNAME=	libX11
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -28,7 +28,7 @@ XORG_CAT=	lib
 USE_XORG=	bigreqsproto xau xdmcp xextproto xtrans xcmiscproto kbproto:both \
 		inputproto:both xf86bigfontproto xproto:both
 USE_AUTOTOOLS=	libtool:15
-CONFIGURE_ARGS+=	--enable-xdmauth
+CONFIGURE_ARGS+=	--enable-xdmauth --datadir=${PREFIX}/lib
 
 .include "${.CURDIR}/manpages"
 .include <bsd.port.mk>
