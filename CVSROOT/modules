@@ -376,7 +376,6 @@ amrcoder	ports/audio/amrcoder
 amrstat		ports/sysutils/amrstat
 amsn		ports/net-im/amsn
 amspsfnt	ports/print/amspsfnt
-amule1		ports/net-p2p/amule1
 amule2		ports/net-p2p/amule2
 amy		ports/games/amy
 an		ports/games/an
@@ -7195,8 +7194,6 @@ mapserver	ports/graphics/mapserver
 mapyrus		ports/graphics/mapyrus
 mar		ports/archivers/mar
 maradns		ports/dns/maradns
-marathon-evil	ports/games/marathon-evil
-marathon2-data	ports/games/marathon2-data
 markdown	ports/textproc/markdown
 mars		ports/cad/mars
 mars_nwe	ports/net/mars_nwe
