@@ -3,16 +3,12 @@ $FreeBSD$
 
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -522,9 +522,9 @@
- 		$(LIBTOOL) --mode=install $(INSTALL) pcregrep@EXEEXT@ $(DESTDIR)$(BINDIR)/pcregrep@EXEEXT@
- 		$(LIBTOOL) --mode=install $(INSTALL) pcretest@EXEEXT@ $(DESTDIR)$(BINDIR)/pcretest@EXEEXT@
- 		$(INSTALL) pcre-config $(DESTDIR)$(BINDIR)/pcre-config
--		$(mkinstalldirs) $(DESTDIR)$(LIBDIR)/pkgconfig
--		$(INSTALL_DATA) libpcre.pc $(DESTDIR)$(LIBDIR)/pkgconfig/libpcre.pc
--		$(INSTALL_DATA) libpcrecpp.pc $(DESTDIR)$(LIBDIR)/pkgconfig/libpcrecpp.pc
-+		$(mkinstalldirs) $(DESTDIR)$(prefix)/libdata/pkgconfig
-+		$(INSTALL_DATA) libpcre.pc $(DESTDIR)$(prefix)/libdata/pkgconfig/libpcre.pc
-+		$(INSTALL_DATA) libpcrecpp.pc $(DESTDIR)$(prefix)/libdata/pkgconfig/libpcrecpp.pc
+@@ -502,7 +502,7 @@
+ pcredemo_LDADD = libpcre.la
  
- # The uninstall target removes all the files that were installed.
- 
+ # We have .pc files for pkg-config users.
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(DESTDIR)$(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = libpcre.pc $(am__append_7)
+ dist_man_MANS = \
+   doc/pcre.3 \
