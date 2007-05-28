@@ -1,4 +1,5 @@
 %%JAVAJARDIR%%/postgis.jar
+%%JAVAJARDIR%%/postgis_debug.jar
 %%EXAMPLESDIR%%/Test.java
 %%EXAMPLESDIR%%/TestAutoregister.java
 %%EXAMPLESDIR%%/TestBoxes.java
