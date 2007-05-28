@@ -251,7 +251,7 @@ PLIST_SUB+=	AO="@comment "
 .if !defined(WITHOUT_MDNS_APPLE)
 BROKEN=		You may choose either MDNS_APPLE or MDNS_AVAHI, but not both
 .endif
-EXCLUDE+=	--without-optionals="dnssd"
+EXCLUDE+=	--without-optionals="dns_sd"
 LIB_DEPENDS+=	avahi-core:${PORTSDIR}/net/avahi
 PLIST_SUB+=	MDNS_AVAHI=""
 MAN1+=	xmms2-mdns-avahi.1
@@ -268,7 +268,7 @@ EXCLUDE+=	--without-optionals="avahi"
 LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
 PLIST_SUB+=	MDNS_APPLE=""
 .else
-EXCLUDE+=	--without-optionals="dnssd"
+EXCLUDE+=	--without-optionals="dns_sd"
 PLIST_SUB+=	MDNS_APPLE="@comment "
 .endif
 
