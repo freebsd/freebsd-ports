@@ -569,3 +569,5 @@ share/icons/hicolor/scalable/apps/pidgin.svg
 @dirrm share/gnome/pixmaps/pidgin/animations/16
 @dirrm share/gnome/pixmaps/pidgin/animations
 @dirrm share/gnome/pixmaps/pidgin
+@dirrm lib/pidgin
+@dirrm include/pidgin
