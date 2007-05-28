@@ -510,6 +510,7 @@
     SUBDIR += pear-Image_Canvas
     SUBDIR += pear-Image_Color
     SUBDIR += pear-Image_Graph
+    SUBDIR += pear-Image_GraphViz
     SUBDIR += pear-Image_Transform
     SUBDIR += pecl-imagick
     SUBDIR += pecl-imlib2
