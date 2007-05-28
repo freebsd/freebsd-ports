@@ -3,8 +3,8 @@
 @@ -11,9 +11,9 @@
  #endif
  
--char *wnrelease = "2.1";
-+const char *wnrelease = "2.1";
+-char *wnrelease = "3.0";
++const char *wnrelease = "3.0";
  
  /* Lexicographer file names and numbers */
  

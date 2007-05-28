@@ -16,12 +16,12 @@ dictionaries and the bitmap into ${PREFIX}/share/WordNet.
  
  if {$tcl_platform(platform) == "unix"} {
 -   if {[lsearch -exact [array names env] WNHOME] == -1} {
--	set resourcedir "/usr/local/WordNet-2.1/lib/wnres"
+-	set resourcedir "/usr/local/WordNet-3.0/lib/wnres"
 -   } else {
 -	set resourcedir "$env(WNHOME)/lib/wnres"
 +   set resourcedirs {
-+	/usr/local/WordNet-2.1
-+	/usr/local/WordNet-2.1/lib/wnres
++	/usr/local/WordNet-3.0
++	/usr/local/WordNet-3.0/lib/wnres
 +   }
 +   if {[info exists env(WNHOME)]} {
 +	lappend resourcedirs $env(WNHOME) $env(WNHOME)/lib/wnres

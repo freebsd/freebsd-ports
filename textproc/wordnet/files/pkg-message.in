@@ -1,0 +1,7 @@
+
+	For the GUI word-browser ``wnb'' to function, Tk-%%TCL_VER%% must
+	be installed. This dependency is not automatic, because there
+	are plenty of uses for WordNet on servers without X11.
+
+	The command-line utilit ``wn'', for example, requires only Tcl.
+

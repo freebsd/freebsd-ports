@@ -1,13 +1,5 @@
 --- include/wn.h	Wed Jul  6 14:48:44 2005
 +++ include/wn.h	Wed Dec 21 17:24:58 2005
-@@ -31,5 +31,7 @@
- #else
- #define DICTDIR         "/dict"
-+#ifndef DEFAULTPATH
- #define DEFAULTPATH	"/usr/local/WordNet-2.1/dict"
-+#endif
- #define DATAFILE	"%s/data.%s"
- #define INDEXFILE	"%s/index.%s"
 @@ -152,12 +154,12 @@
  #define IMMED_POSTNOMINAL	IPADJ
  
