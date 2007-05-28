@@ -266,13 +266,14 @@ pre-install: build
 	${RM} -rf ${PLIST} ${FAKEDIR}
 	${MKDIR} ${FAKEDIR}
 	${TOUCH} -f ${PLIST}
+	${ECHO_CMD} "share/applications/vlc.desktop" >> ${PLIST}
 .if defined(WITH_SKINS) && !defined(WITHOUT_SKINS)
 	${ECHO_CMD} "share/pixmaps/gvlc.png" >> ${PLIST}
 	${ECHO_CMD} "share/applications/svlc.desktop" >> ${PLIST}
 .endif
 .if !defined(WITHOUT_WXGTK)
-	${ECHO_CMD} "share/pixmaps/vlc.png" >> ${PLIST}
-	${ECHO_CMD} "share/applications/vlc.desktop" >> ${PLIST}
+	${ECHO_CMD} "share/pixmaps/wxvlc.png" >> ${PLIST}
+	${ECHO_CMD} "share/applications/wxvlc.desktop" >> ${PLIST}
 .endif
 .if !defined(WITHOUT_WXGTK) || defined(WITH_SKINS)
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
@@ -348,7 +349,7 @@ do-install:
 	${INSTALL_DATA} ${FAKEDIR}/share/vlc/vlc48x48.png ${PREFIX}/share/pixmaps/gvlc.png
 .endif
 .if !defined(WITHOUT_WXGTK)
-	${INSTALL_DATA} ${FILESDIR}/vlc.desktop ${PREFIX}/share/applications
-	${INSTALL_DATA} ${FAKEDIR}/share/vlc/vlc48x48.png ${PREFIX}/share/pixmaps/vlc.png
+	${INSTALL_DATA} ${FILESDIR}/wxvlc.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${FAKEDIR}/share/vlc/vlc48x48.png ${PREFIX}/share/pixmaps/wxvlc.png
 .endif
 .endif
