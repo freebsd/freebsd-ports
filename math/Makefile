@@ -110,6 +110,7 @@
     SUBDIR += jsmath
     SUBDIR += jsmath-fonts
     SUBDIR += jsmath-fonts-sprite
+    SUBDIR += jts
     SUBDIR += k3dsurf
     SUBDIR += kash3
     SUBDIR += kaskade

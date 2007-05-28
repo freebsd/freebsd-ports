@@ -1,0 +1,12 @@
+The JTS Topology Suite is an API of 2D spatial predicates and functions. It has
+the following design goals:
+
+    * JTS conforms to the Simple Features Specification for SQL published by the
+	Open GIS Consortium
+    * JTS provides a complete, consistent, robust implementation of fundamental
+	2D spatial algorithms
+    * JTS is fast enough for production use
+    * JTS is written in 100% pure Java(TM)
+    * JTS is open source (under the LGPL license)
+
+WWW:	http://www.vividsolutions.com/Jts/JTSHome.htm

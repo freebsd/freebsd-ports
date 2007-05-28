@@ -1,0 +1,17 @@
+#! /bin/sh
+# $FreeBSD$
+
+JLD="%%JAVALIBDIR%%"
+JJD="%%JAVAJARDIR%%"
+JAVA="%%JAVA%%"
+
+classpath=""
+for file in junit.jar xml-apis.jar
+do
+classpath="$JLD/$file:$classpath"
+done
+for file in JTS_Test.jar acme.jar jts.jar jtsio.jar jdom-old.jar
+do
+classpath="$JJD/$file:$classpath"
+done
+$JAVA -cp "$classpath" com.vividsolutions.jtstest.testrunner.TopologyTestApp -Files testxml/validate testxml/general
