@@ -68,6 +68,7 @@ PLIST_SUB+=	WITH_TCL="@comment "
 
 pre-patch:
 	${REINPLACE_CMD} -e "s=doc/==" ${WRKSRC}/../Metakit.html
+	${REINPLACE_CMD} -e "s=echo aout=echo elf=" ${WRKSRC}/../unix/configure
 .if defined(METAKIT_WITH_TCL83) || defined(METAKIT_WITH_TCL84)
 	${REINPLACE_CMD} \
 		-e "s/= tclsh/=tclsh${TCL_V}/" -e "s/tcl8.4/tcl${TCL_V}/" \
