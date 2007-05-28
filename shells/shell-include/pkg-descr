@@ -7,3 +7,5 @@ sh example...
 . `which sh-include`
 include fileGetLine
 line=`fileGetLine /etc/group 4`
+
+WWW: http://vvelox.net/projects/shell-include/
