@@ -1,15 +1,15 @@
-# New ports collection makefile for:	gaim-hotkeys
+# New ports collection makefile for:	pidgin-hotkeys
 # Date created:		2006-11-23
 # Whom:			garga
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gaim-hotkeys
-PORTVERSION=	0.2.2
-PORTREVISION=	2
+PORTNAME=	pidgin-hotkeys
+PORTVERSION=	0.2.3
 CATEGORIES=	net-im
 MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	gaim-hotkeys
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A gaim plugin that allows user to assign global hotkeys

@@ -27,7 +27,6 @@
     SUBDIR += gaim-bangexec
     SUBDIR += gaim-extprefs
     SUBDIR += gaim-guifications
-    SUBDIR += gaim-hotkeys
     SUBDIR += gaim-ignorance
     SUBDIR += gaim-latex
     SUBDIR += gaim-openq
@@ -96,6 +95,7 @@
     SUBDIR += p5-POE-Component-Client-MSN
     SUBDIR += pebrot
     SUBDIR += pidgin
+    SUBDIR += pidgin-hotkeys
     SUBDIR += pork
     SUBDIR += py-msnp
     SUBDIR += py-pyxmpp
