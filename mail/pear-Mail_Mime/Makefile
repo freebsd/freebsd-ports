@@ -7,6 +7,7 @@
 
 PORTNAME=	Mail_Mime
 PORTVERSION=	1.4.0
+PORTEPOCH=	1
 CATEGORIES=	mail www pear
 DISTNAME=	Mail_Mime-1.4.0
 
