@@ -1,5 +1,5 @@
---- src/straw	Thu Jan 26 15:11:29 2006
-+++ src/straw	Wed Jan  3 23:44:51 2007
+--- src/straw	Sat Oct 21 07:53:23 2006
++++ src/straw	Sun May 20 09:49:06 2007
 @@ -49,7 +49,7 @@
      if not sdir:
          h, t = os.path.split(os.path.split(os.path.abspath(sys.argv[0]))[0])
@@ -8,4 +8,13 @@
 +            libdir = os.path.join(h, 'share', 'gnome')
              fp = os.path.join(libdir, 'straw')
              if os.path.isdir(fp):
-                 sdir = libdir
+                 sdir = fp
+@@ -102,7 +102,7 @@
+     if ENV_IN_SOURCE:
+         from lib import Application, Config
+     else:
+-        from straw import Application, Config
++        import Application, Config
+ 
+     # set offline to false if offline. Previous releases just rely on the
+     # previous state of the 'offline' config. So if the user specifies
