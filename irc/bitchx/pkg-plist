@@ -986,7 +986,6 @@ share/bx/translation/SWISS
 share/bx/translation/UNITED_KINGDOM
 share/bx/translation/UNITED_KINGDOM_COM
 %%NOGNOME%%share/bx/wserv
-%%PORTDOCS%%@dirrm share/doc/bitchx
 @dirrm share/bx/translation
 @dirrm share/bx/script
 @dirrm share/bx/plugins

@@ -111,7 +111,6 @@ pre-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/bx/help
-	${MKDIR} ${PREFIX}/share/doc/bitchx
 	${TAR} --directory ${WRKSRC}/bitchx-docs -cf - . | \
 	${TAR} --directory ${PREFIX}/share/bx/help -xf -
 .else
