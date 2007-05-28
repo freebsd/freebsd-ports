@@ -15204,7 +15204,6 @@ tiff2png	ports/graphics/tiff2png
 tifmerge	ports/graphics/tifmerge
 tigcc		ports/devel/tigcc
 tightvnc	ports/net/tightvnc
-tik		ports/net-im/tik
 tikiwiki	ports/www/tikiwiki
 tilda		ports/x11/tilda
 tile		ports/x11-toolkits/tile

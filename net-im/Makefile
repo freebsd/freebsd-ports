@@ -129,7 +129,6 @@
     SUBDIR += telepathy-idle
     SUBDIR += telepathy-python
     SUBDIR += telepathy-salut
-    SUBDIR += tik
     SUBDIR += tkabber
     SUBDIR += tkabber-devel
     SUBDIR += tmsnc

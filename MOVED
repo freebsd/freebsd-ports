@@ -2968,3 +2968,4 @@ devel/tkref||2007-05-28|Has expired: is seriously outdated, take a look at http:
 net-p2p/amule1||2007-05-28|Has expired: use net-p2p/amule2 if you are running OSVERSION > 500000
 games/marathon-evil||2007-05-28|Has expired: Installed by games/alephone-scenarios with wrapper script
 games/marathon2-data||2007-05-28|Has expired: Installed by games/alephone-data with wrapper script
+net-im/tik||2007-05-28|Has expired: uses the old and unsupported TOC protocol, use net-im/aim or net-im/gaim instead
