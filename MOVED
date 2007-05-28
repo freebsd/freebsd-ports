@@ -2963,3 +2963,5 @@ multimedia/ffmpeg-devel|multimedia/ffmpeg|2007-05-25|Merged multimedia/ffmpeg-de
 devel/wfut||2007-05-27|Obsolete
 net-im/gaim-hotkeys|net-im/pidgin-hotkeys|2007-05-28|Project renamed
 
+devel/ruby-inline||2007-05-28|Has expired: New versions only available in rubygems. Use devel/rubygem-inline instead.
+devel/tkref||2007-05-28|Has expired: is seriously outdated, take a look at http://www.tcl.tk/doc/ for TCL/TK documentation

@@ -2005,7 +2005,6 @@
     SUBDIR += ruby-glib2
     SUBDIR += ruby-gnomevfs
     SUBDIR += ruby-gnustep
-    SUBDIR += ruby-inline
     SUBDIR += ruby-intl
     SUBDIR += ruby-io-reactor
     SUBDIR += ruby-jttui
@@ -2160,7 +2159,6 @@
     SUBDIR += tkinspect
     SUBDIR += tkmerge
     SUBDIR += tkp4
-    SUBDIR += tkref
     SUBDIR += tla
     SUBDIR += tmake
     SUBDIR += tnt

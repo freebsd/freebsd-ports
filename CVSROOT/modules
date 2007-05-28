@@ -13875,7 +13875,6 @@ ruby-icmp	ports/net/ruby-icmp
 ruby-iconv	ports/converters/ruby-iconv
 ruby-image_size	ports/graphics/ruby-image_size
 ruby-imlib2	ports/graphics/ruby-imlib2
-ruby-inline	ports/devel/ruby-inline
 ruby-interbase	ports/databases/ruby-interbase
 ruby-intl	ports/devel/ruby-intl
 ruby-io-reactor	ports/devel/ruby-io-reactor
@@ -15293,7 +15292,6 @@ tknetmon	ports/net-mgmt/tknetmon
 tkp4		ports/devel/tkp4
 tkpng		ports/graphics/tkpng
 tkrat2		ports/mail/tkrat2
-tkref		ports/devel/tkref
 tkregexp	ports/misc/tkregexp
 tkrunit		ports/misc/tkrunit
 tkscanfax	ports/comms/tkscanfax
