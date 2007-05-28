@@ -12,6 +12,7 @@ include/libgdl-1.0/gdl/gdl-dock.h
 include/libgdl-1.0/gdl/gdl-icons.h
 include/libgdl-1.0/gdl/gdl-stock-icons.h
 include/libgdl-1.0/gdl/gdl-stock.h
+include/libgdl-1.0/gdl/gdl-switcher.h
 include/libgdl-1.0/gdl/gdl-tools.h
 include/libgdl-1.0/gdl/gdl.h
 include/libgdl-1.0/gdl/libgdltypebuiltins.h
