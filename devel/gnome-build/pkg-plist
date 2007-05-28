@@ -13,10 +13,8 @@ lib/gnome-build-1.0/backends/gbf-am.server
 lib/gnome-build-1.0/backends/gbf-mkfile.server
 lib/gnome-build-1.0/backends/libgbf-am.la
 lib/gnome-build-1.0/backends/libgbf-am.so
-lib/gnome-build-1.0/backends/libgbf-am.so.0
 lib/gnome-build-1.0/backends/libgbf-mkfile.la
 lib/gnome-build-1.0/backends/libgbf-mkfile.so
-lib/gnome-build-1.0/backends/libgbf-mkfile.so.0
 lib/libgbf-1.la
 lib/libgbf-1.so
 lib/libgbf-1.so.0
@@ -32,11 +30,13 @@ share/gnome/gnome-build/glade/gbf-am-dialogs.glade
 share/gnome/pixmaps/gbf-build.png
 share/gnome/pixmaps/gbf-install.png
 share/locale/am/LC_MESSAGES/gbf-1.mo
+share/locale/ar/LC_MESSAGES/gbf-1.mo
 share/locale/az/LC_MESSAGES/gbf-1.mo
 share/locale/be/LC_MESSAGES/gbf-1.mo
 share/locale/ca/LC_MESSAGES/gbf-1.mo
 share/locale/cs/LC_MESSAGES/gbf-1.mo
 share/locale/de/LC_MESSAGES/gbf-1.mo
+share/locale/dz/LC_MESSAGES/gbf-1.mo
 share/locale/el/LC_MESSAGES/gbf-1.mo
 share/locale/en_CA/LC_MESSAGES/gbf-1.mo
 share/locale/en_GB/LC_MESSAGES/gbf-1.mo
