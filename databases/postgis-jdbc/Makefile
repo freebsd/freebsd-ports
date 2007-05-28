@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	postgis-jdbc
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	databases java
 MASTER_SITES=	http://postgis.refractions.net/download/
 DISTNAME=	postgis-${PORTVERSION}
@@ -15,13 +14,13 @@ DISTNAME=	postgis-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostGIS spatial data structures for JDBC
 
-BUILD_DEPENDS=	${JAVALIBDIR}/postgresql.jar:${PORTSDIR}/databases/postgresql-jdbc
-
-BROKEN=		Does not build
+BUILD_DEPENDS=	${JAVALIBDIR}/jts.jar:${PORTSDIR}/math/jts	\
+		${JAVALIBDIR}/postgresql.jar:${PORTSDIR}/databases/postgresql-jdbc
+RUN_DEPENDS=	${JAVALIBDIR}/jts.jar:${PORTSDIR}/math/jts	\
+		${JAVALIBDIR}/postgresql.jar:${PORTSDIR}/databases/postgresql-jdbc
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
-EXAMPLESDIR=	${PREFIX}/share/examples/${PKGBASE}
 USE_GMAKE=	yes
 MAKE_ARGS=	EXAMPLESDIR="${EXAMPLESDIR}" \
 		DESTDIR="${JAVAJARDIR}" \
@@ -29,14 +28,22 @@ MAKE_ARGS=	EXAMPLESDIR="${EXAMPLESDIR}" \
 		JAVAC="${JAVAC}" \
 		JAVA="${JAVA}" \
 		JAR="${JAR}" \
-		CLASSPATH="${JAVALIBDIR}/postgresql.jar" \
+		CLASSPATH="${JAVALIBDIR}/postgresql.jar:${JAVALIBDIR}/jts.jar" \
 		mkinstalldirs="${MKDIR}"
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/jdbc2
+WRKSRC=		${WRKDIR}/${DISTNAME}/java/jdbc
+
+PORTDOCS=	README
 
 do-install:
-		${INSTALL_DATA} ${WRKSRC}/postgis.jar ${JAVAJARDIR}
-		${MKDIR} ${EXAMPLESDIR}
-		${INSTALL_DATA} ${WRKSRC}/src/examples/* ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/postgis.jar ${WRKSRC}/postgis_debug.jar	\
+		${JAVAJARDIR}
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/examples/* ${EXAMPLESDIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.mk>
