@@ -455,8 +455,6 @@
     SUBDIR += maitretarot
     SUBDIR += mangband
     SUBDIR += mangos
-    SUBDIR += marathon-evil
-    SUBDIR += marathon2-data
     SUBDIR += marsnomercy
     SUBDIR += masterserver
     SUBDIR += meqcc

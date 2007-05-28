@@ -2965,3 +2965,6 @@ net-im/gaim-hotkeys|net-im/pidgin-hotkeys|2007-05-28|Project renamed
 
 devel/ruby-inline||2007-05-28|Has expired: New versions only available in rubygems. Use devel/rubygem-inline instead.
 devel/tkref||2007-05-28|Has expired: is seriously outdated, take a look at http://www.tcl.tk/doc/ for TCL/TK documentation
+net-p2p/amule1||2007-05-28|Has expired: use net-p2p/amule2 if you are running OSVERSION > 500000
+games/marathon-evil||2007-05-28|Has expired: Installed by games/alephone-scenarios with wrapper script
+games/marathon2-data||2007-05-28|Has expired: Installed by games/alephone-data with wrapper script
