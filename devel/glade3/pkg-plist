@@ -49,43 +49,6 @@ lib/libgladeui-1.la
 lib/libgladeui-1.so
 lib/libgladeui-1.so.5
 libdata/pkgconfig/gladeui-1.0.pc
-%%DOCSDIR%%/GladeApp.html
-%%DOCSDIR%%/GladeClipboard.html
-%%DOCSDIR%%/GladeClipboardView.html
-%%DOCSDIR%%/GladeEditor.html
-%%DOCSDIR%%/GladeEditorProperty.html
-%%DOCSDIR%%/GladeFixed.html
-%%DOCSDIR%%/GladePalette.html
-%%DOCSDIR%%/GladePlaceholder.html
-%%DOCSDIR%%/GladeProject.html
-%%DOCSDIR%%/GladeProjectView.html
-%%DOCSDIR%%/GladeProperty.html
-%%DOCSDIR%%/GladeWidget.html
-%%DOCSDIR%%/catalog.html
-%%DOCSDIR%%/catalogintro.html
-%%DOCSDIR%%/children.html
-%%DOCSDIR%%/core.html
-%%DOCSDIR%%/dockables.html
-%%DOCSDIR%%/gladeui-GladeCommand.html
-%%DOCSDIR%%/gladeui-GladePropertyClass.html
-%%DOCSDIR%%/gladeui-GladeWidgetClass.html
-%%DOCSDIR%%/gladeui-glade-base-editor.html
-%%DOCSDIR%%/gladeui-glade-parameter.html
-%%DOCSDIR%%/gladeui-glade-signal-editor.html
-%%DOCSDIR%%/gladeui-glade-utils.html
-%%DOCSDIR%%/gladeui.devhelp
-%%DOCSDIR%%/gladeui.devhelp2
-%%DOCSDIR%%/home.png
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/index.sgml
-%%DOCSDIR%%/ix01.html
-%%DOCSDIR%%/left.png
-%%DOCSDIR%%/misc.html
-%%DOCSDIR%%/properties.html
-%%DOCSDIR%%/right.png
-%%DOCSDIR%%/style.css
-%%DOCSDIR%%/up.png
-%%DOCSDIR%%/widgetclasses.html
 share/gnome/applications/glade-3.desktop
 %%GNOME:%%share/gnome/glade3/catalogs/bonobo.xml
 %%GNOME:%%share/gnome/glade3/catalogs/bonobo.xml.in
@@ -329,12 +292,20 @@ share/gnome/help/glade/bg/legal.xml
 share/gnome/help/glade/en_GB/figures/main-window.png
 share/gnome/help/glade/en_GB/glade.xml
 share/gnome/help/glade/en_GB/legal.xml
+share/gnome/help/glade/es/figures/main-window.png
+share/gnome/help/glade/es/glade.xml
+share/gnome/help/glade/es/legal.xml
+share/gnome/help/glade/fr/figures/main-window.png
+share/gnome/help/glade/fr/glade.xml
+share/gnome/help/glade/fr/legal.xml
 share/gnome/help/glade/sv/figures/main-window.png
 share/gnome/help/glade/sv/glade.xml
 share/gnome/help/glade/sv/legal.xml
 share/gnome/omf/glade/glade-C.omf
 share/gnome/omf/glade/glade-bg.omf
 share/gnome/omf/glade/glade-en_GB.omf
+share/gnome/omf/glade/glade-es.omf
+share/gnome/omf/glade/glade-fr.omf
 share/gnome/omf/glade/glade-sv.omf
 share/icons/hicolor/16x16/apps/glade-3.png
 share/icons/hicolor/22x22/apps/glade-3.png
@@ -348,6 +319,7 @@ share/locale/bg/LC_MESSAGES/glade3.mo
 share/locale/ca/LC_MESSAGES/glade3.mo
 share/locale/da/LC_MESSAGES/glade3.mo
 share/locale/de/LC_MESSAGES/glade3.mo
+share/locale/dz/LC_MESSAGES/glade3.mo
 share/locale/el/LC_MESSAGES/glade3.mo
 share/locale/en_CA/LC_MESSAGES/glade3.mo
 share/locale/en_GB/LC_MESSAGES/glade3.mo
@@ -370,6 +342,7 @@ share/locale/pt/LC_MESSAGES/glade3.mo
 share/locale/pt_BR/LC_MESSAGES/glade3.mo
 share/locale/ru/LC_MESSAGES/glade3.mo
 share/locale/sk/LC_MESSAGES/glade3.mo
+share/locale/sq/LC_MESSAGES/glade3.mo
 share/locale/sv/LC_MESSAGES/glade3.mo
 share/locale/ta/LC_MESSAGES/glade3.mo
 share/locale/th/LC_MESSAGES/glade3.mo
@@ -382,6 +355,10 @@ share/locale/zh_TW/LC_MESSAGES/glade3.mo
 @dirrm share/gnome/omf/glade
 @dirrm share/gnome/help/glade/sv/figures
 @dirrm share/gnome/help/glade/sv
+@dirrm share/gnome/help/glade/fr/figures
+@dirrm share/gnome/help/glade/fr
+@dirrm share/gnome/help/glade/es/figures
+@dirrm share/gnome/help/glade/es
 @dirrm share/gnome/help/glade/en_GB/figures
 @dirrm share/gnome/help/glade/en_GB
 @dirrm share/gnome/help/glade/bg/figures
@@ -394,7 +371,6 @@ share/locale/zh_TW/LC_MESSAGES/glade3.mo
 @dirrm share/gnome/glade3/pixmaps
 @dirrm share/gnome/glade3/catalogs
 @dirrm share/gnome/glade3
-@dirrm %%DOCSDIR%%
 @dirrm lib/glade3/modules
 @dirrm lib/glade3/bindings
 @dirrm lib/glade3
@@ -404,3 +380,5 @@ share/locale/zh_TW/LC_MESSAGES/glade3.mo
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/dz/LC_MESSAGES
+@dirrmtry share/locale/dz
