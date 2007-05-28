@@ -7,7 +7,6 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_EXIM:S/$/:exim/}
 MASTER_SITE_SUBDIR=	exim4/:exim
@@ -187,6 +186,7 @@ WITH_DEFAULT_CHARSET?=	ISO-8859-1
 #WITHOUT_PAM=			yes
 #WITHOUT_AUTH_CRAM_MD5=		yes
 #WITHOUT_AUTH_PLAINTEXT=	yes
+#WITHOUT_AUTH_DOVECOT=		yes
 #WITHOUT_AUTH_SPA=		yes
 #
 # Enable support for authenticating via the Cyrus SASL library
@@ -395,6 +395,10 @@ SEDLIST+=	-e 's,^\# (AUTH_CRAM_MD5=),\1,'
 SEDLIST+=	-e 's,^\# (AUTH_PLAINTEXT=),\1,'
 .endif
 
+.if !defined(WITHOUT_DOVECOT)
+SEDLIST+=	-e 's,^\# (AUTH_DOVECOT=),\1,'
+.endif
+
 .if !defined(WITHOUT_AUTH_SPA)
 SEDLIST+=	-e 's,^\# (AUTH_SPA=),\1,'
 .endif
@@ -542,33 +546,18 @@ SEDLIST+=	-e 's,^\# (WITH_CONTENT_SCAN=),\1,'
 SEDLIST+=	-e 's,^\# (WITH_OLD_DEMIME=),\1,'
 .endif
 
+.if !defined(EXIMON_ONLY) && !defined(WITHOUT_DAEMON)
+USE_RC_SUBR=	exim.sh
+PLIST_SUB+=	DAEMON=""
+SUB_LIST+=	LOGDIR="${LOGDIR}"
+.else
+PLIST_SUB+=	DAEMON="@comment "
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if defined(EXIMON_ONLY) && ${MASTERDIR} == ${PKGDIR}
 .error EXIMON_ONLY is not user settable
-.endif
-
-.if !defined(EXIMON_ONLY) && !defined(WITHOUT_DAEMON)
-USE_RC_SUBR=	yes
-.if defined(WITH_RCORDER) && ${OSVERSION} >= 500037
-RC_DIR=		/etc/rc.d
-RC_SUFX=
-PLIST_SUB+=	RCORDER="" \
-		RC_DIR=${RC_DIR} \
-		RC_SUFX=${RC_SUFX}
-.else
-RC_DIR=		${PREFIX}/etc/rc.d
-RC_SUFX=	.sh
-PLIST_SUB+=	RCORDER="@comment " \
-		RC_DIR="%D/etc/rc.d" \
-		RC_SUFX=${RC_SUFX}
-.endif
-SED_SCRIPT+=	-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
-		-e 's,%%RC_DIR%%,${RC_DIR},g' \
-		-e 's,%%RC_SUFX%%,${RC_SUFX},g'
-PLIST_SUB+=	DAEMON=""
-.else
-PLIST_SUB+=	DAEMON="@comment "
 .endif
 
 .if ${OSVERSION} < 400014
@@ -625,7 +614,7 @@ do-configure:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} configure)
 
 post-build:
-.for script in exim ${DAILY_SCRIPTS}
+.for script in ${DAILY_SCRIPTS}
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/${script}.sh > ${WRKDIR}/${script}.sh
 .endfor
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/POST-INSTALL-NOTES > \
@@ -645,7 +634,6 @@ pre-install:
 
 post-install:
 .if !defined(WITHOUT_DAEMON)
-	@${INSTALL_SCRIPT} ${WRKDIR}/exim.sh ${DESTDIR}${RC_DIR}/exim${RC_SUFX}
 	@${MKDIR} ${DESTDIR}${PREFIX}/etc/periodic/daily
 .for script in ${DAILY_SCRIPTS}
 	@${INSTALL_SCRIPT} ${WRKDIR}/${script}.sh ${DESTDIR}${PREFIX}/etc/periodic/daily/${script}

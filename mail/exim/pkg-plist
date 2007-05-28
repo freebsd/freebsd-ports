@@ -1,5 +1,4 @@
 @comment $FreeBSD$
-%%DAEMON%%@unexec [ ! -f /var/run/exim.pid ] || %%RC_DIR%%/exim%%RC_SUFX%% stop || true
 sbin/exim
 sbin/exim-%%EXIM_VERSION%%
 sbin/exim_checkaccess
@@ -52,7 +51,5 @@ etc/exim/configure.default
 %%SA_EXIM%%@unexec if cmp -s %D/etc/exim/sa-exim.conf %D/etc/exim/sa-exim.conf.default; then rm -f %D/etc/exim/sa-exim.conf; fi
 %%SA_EXIM%%etc/exim/sa-exim.conf.default
 %%SA_EXIM%%@exec [ -f %B/sa-exim.conf ] || cp %B/%f %B/sa-exim.conf
-@unexec rmdir %B 2>/dev/null || true
-%%DAEMON%%%%RCORDER%%@cwd /
-%%DAEMON%%etc/rc.d/exim%%RC_SUFX%%
+@dirrmtry %B
 @dirrmtry %%LOGDIR%%
