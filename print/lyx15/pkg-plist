@@ -38,13 +38,33 @@ share/locale/tr/LC_MESSAGES/lyx.mo
 %%DATADIR%%/bind/sv_menus.bind
 %%DATADIR%%/bind/xemacs.bind
 %%DATADIR%%/chkconfig.ltx
+%%DATADIR%%/clipart/BoxInsetDefault.png
+%%DATADIR%%/clipart/ComentNotaImagen.png
+%%DATADIR%%/clipart/CommentNoteImage.png
+%%DATADIR%%/clipart/CuadroMinipag.png
+%%DATADIR%%/clipart/GreyedOutNoteImage.png
+%%DATADIR%%/clipart/GrisNotaImagen.png
+%%DATADIR%%/clipart/LyXNoteImage.png
+%%DATADIR%%/clipart/NotaLyXImagen.png
+%%DATADIR%%/clipart/endnotes.pdf
+%%DATADIR%%/clipart/etiqueta.png
+%%DATADIR%%/clipart/float.png
+%%DATADIR%%/clipart/flotante.png
+%%DATADIR%%/clipart/footnote.png
+%%DATADIR%%/clipart/label.png
+%%DATADIR%%/clipart/notapie.png
 %%DATADIR%%/clipart/platypus.eps
+%%DATADIR%%/clipart/reference2.png
+%%DATADIR%%/clipart/referencia2.png
+%%DATADIR%%/clipart/with_fntright.pdf
+%%DATADIR%%/clipart/without_fntright.pdf
 %%DATADIR%%/configure.py
 %%DATADIR%%/configure.pyc
 %%DATADIR%%/configure.pyo
 %%DATADIR%%/doc/Customization.lyx
 %%DATADIR%%/doc/DocStyle.lyx
 %%DATADIR%%/doc/Extended.lyx
+%%DATADIR%%/doc/EmbeddedObjects.lyx
 %%DATADIR%%/doc/FAQ.lyx
 %%DATADIR%%/doc/Intro.lyx
 %%DATADIR%%/doc/LaTeXConfig.lyx.in
@@ -63,6 +83,7 @@ share/locale/tr/LC_MESSAGES/lyx.mo
 %%DATADIR%%/doc/de_TOC.lyx
 %%DATADIR%%/doc/de_Tutorial.lyx
 %%DATADIR%%/doc/de_UserGuide.lyx
+%%DATADIR%%/doc/es_EmbeddedObjects.lyx
 %%DATADIR%%/doc/es_Intro.lyx
 %%DATADIR%%/doc/es_TOC.lyx
 %%DATADIR%%/doc/es_Tutorial.lyx
@@ -81,6 +102,9 @@ share/locale/tr/LC_MESSAGES/lyx.mo
 %%DATADIR%%/doc/fr_TOC.lyx
 %%DATADIR%%/doc/fr_Tutorial.lyx
 %%DATADIR%%/doc/fr_UserGuide.lyx
+%%DATADIR%%/doc/gl_Intro.lyx
+%%DATADIR%%/doc/gl_TOC.lyx
+%%DATADIR%%/doc/gl_Tutorial.lyx
 %%DATADIR%%/doc/he_Intro.lyx
 %%DATADIR%%/doc/he_TOC.lyx
 %%DATADIR%%/doc/he_Tutorial.lyx
@@ -131,6 +155,18 @@ share/locale/tr/LC_MESSAGES/lyx.mo
 %%DATADIR%%/examples/aas_sample.lyx
 %%DATADIR%%/examples/amsart-test.lyx
 %%DATADIR%%/examples/amsbook-test.lyx
+%%DATADIR%%/examples/beamer-g4-mask.jpg
+%%DATADIR%%/examples/beamer-g4.jpg
+%%DATADIR%%/examples/beamer-icsi-logo.pdf
+%%DATADIR%%/examples/beamer-knight1-mask.png
+%%DATADIR%%/examples/beamer-knight1.png
+%%DATADIR%%/examples/beamer-knight2-mask.png
+%%DATADIR%%/examples/beamer-knight2.png
+%%DATADIR%%/examples/beamer-knight3-mask.png
+%%DATADIR%%/examples/beamer-knight3.png
+%%DATADIR%%/examples/beamer-knight4-mask.png
+%%DATADIR%%/examples/beamer-knight4.png
+%%DATADIR%%/examples/beamerlyxexample1.lyx
 %%DATADIR%%/examples/ca_splash.lyx
 %%DATADIR%%/examples/cs_splash.lyx
 %%DATADIR%%/examples/chess-article.lyx
@@ -171,6 +207,9 @@ share/locale/tr/LC_MESSAGES/lyx.mo
 %%DATADIR%%/examples/fr_multicol.lyx
 %%DATADIR%%/examples/fr_splash.lyx
 %%DATADIR%%/examples/g-brief2.lyx
+%%DATADIR%%/examples/gl_exemplo_bruto.lyx
+%%DATADIR%%/examples/gl_exemplo_lyxificado.lyx
+%%DATADIR%%/examples/gl_splash.lyx
 %%DATADIR%%/examples/he_example_raw.lyx
 %%DATADIR%%/examples/he_he_example_lyxified.lyx
 %%DATADIR%%/examples/he_he_example_raw.lyx
@@ -247,6 +286,7 @@ share/locale/tr/LC_MESSAGES/lyx.mo
 %%DATADIR%%/images/footnote-insert.xpm
 %%DATADIR%%/images/index-insert.xpm
 %%DATADIR%%/images/label-insert.xpm
+%%DATADIR%%/images/layout.xpm
 %%DATADIR%%/images/layout-document.xpm
 %%DATADIR%%/images/layout-paragraph.xpm
 %%DATADIR%%/images/layout_Description.xpm
@@ -843,7 +883,9 @@ share/locale/tr/LC_MESSAGES/lyx.mo
 %%DATADIR%%/layouts/amsmaths-seq.inc
 %%DATADIR%%/layouts/amsmaths.inc
 %%DATADIR%%/layouts/apa.layout
+%%DATADIR%%/layouts/arab-article.layout
 %%DATADIR%%/layouts/article.layout
+%%DATADIR%%/layouts/beamer.layout
 %%DATADIR%%/layouts/book.layout
 %%DATADIR%%/layouts/broadway.layout
 %%DATADIR%%/layouts/chess.layout
@@ -979,6 +1021,9 @@ share/locale/tr/LC_MESSAGES/lyx.mo
 %%DATADIR%%/scripts/convertDefault.py
 %%DATADIR%%/scripts/convertDefault.pyc
 %%DATADIR%%/scripts/convertDefault.pyo
+%%DATADIR%%/scripts/date.py
+%%DATADIR%%/scripts/date.pyc
+%%DATADIR%%/scripts/date.pyo
 %%DATADIR%%/scripts/fen2ascii.py
 %%DATADIR%%/scripts/fen2ascii.pyc
 %%DATADIR%%/scripts/fen2ascii.pyo
@@ -1014,9 +1059,12 @@ share/locale/tr/LC_MESSAGES/lyx.mo
 %%DATADIR%%/templates/aa.lyx
 %%DATADIR%%/templates/aastex.lyx
 %%DATADIR%%/templates/agu_article.lyx
+%%DATADIR%%/templates/beamer-conference-ornate-20min.lyx
+%%DATADIR%%/templates/de_beamer-conference-ornate-20min.lyx
 %%DATADIR%%/templates/dinbrief.lyx
 %%DATADIR%%/templates/docbook_article.lyx
 %%DATADIR%%/templates/elsart.lyx
+%%DATADIR%%/templates/fr_beamer-conference-ornate-20min.lyx
 %%DATADIR%%/templates/g-brief-de.lyx
 %%DATADIR%%/templates/g-brief-en.lyx
 %%DATADIR%%/templates/hollywood.lyx
@@ -1038,8 +1086,10 @@ share/locale/tr/LC_MESSAGES/lyx.mo
 %%DATADIR%%/tex/revtex.cls
 %%DATADIR%%/ui/classic.ui
 %%DATADIR%%/ui/default.ui
-%%DATADIR%%/ui/stdmenus.ui
-%%DATADIR%%/ui/stdtoolbars.ui
+%%DATADIR%%/ui/default-alltoolbars.ui
+%%DATADIR%%/ui/default-autotoolbars.ui
+%%DATADIR%%/ui/stdmenus.inc
+%%DATADIR%%/ui/stdtoolbars.inc
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%/tex
 @dirrm %%DATADIR%%/templates

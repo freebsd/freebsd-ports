@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	1.4.3
-PORTREVISION=	1
+PORTVERSION=	1.4.4
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.planetmirror.com/pub/lyx/stable/ \
@@ -27,6 +26,7 @@ LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost
 
 OPTIONS=	QT	"Use Qt (instead of XForms)"	${QT_PRESENT}	\
 		ASPELL	"Utilize ASPELL library"	on	\
+		AIKSAUR	"Build Aiksaurus support (English thesaurus)"	on	\
 		ISPELL	"Depend on ISPELL as well"	off
 ALL_TARGET=	all check
 USE_BZIP2=	yes
@@ -67,6 +67,12 @@ PLIST_SUB+=	PSRES=
 PLIST_SUB+=	PSRES='@comment '
 .endif
 
+.if defined(WITH_AIKSAUR)
+LIB_DEPENDS+=	Aiksaurus:${PORTSDIR}/textproc/aiksaurus
+.else
+CONFIGURE_ARGS+=--without-aiksaurus
+.endif
+
 .if defined(WITH_QT)
 LIB_DEPENDS+=	qt-mt:${PORTSDIR}/x11-toolkits/qt33
 CONFIGURE_ARGS+=	--with-frontend=qt
@@ -84,10 +90,14 @@ LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=	--with-pspell \
 			--with-pspell-lib="${LOCALBASE}/lib" \
 			--with-pspell-include="${LOCALBASE}/include"
+.else
+CONFIGURE_ARGS+=--without-aspell --without-pspell
 .endif
 
 .if defined(WITH_ISPELL)
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
+.else
+CONFIGURE_ARGS+=--without-ispell
 .endif
 
 .if exists(${X11BASE}/lib/libqt-mt.prl)
@@ -99,11 +109,11 @@ QT_PRESENT=	off
 .if ${OSVERSION} < 500035
 CFLAGS+=	-Wno-non-template-friend -ftemplate-depth-30
 .elif ${OSVERSION} >= 700007 && ${ARCH} == i386 && ${CXX} == c++
-BROKEN=		C++ compiler seg-faults, try using a different one and report to ${MAINTAINER}
+#BROKEN=		C++ compiler seg-faults, try using a different one and report to ${MAINTAINER}
 .endif
 
 .if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
+#BROKEN=		Does not compile on 4.x
 .endif
 
 .include <bsd.port.post.mk>
