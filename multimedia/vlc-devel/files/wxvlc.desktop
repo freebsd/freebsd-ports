@@ -1,9 +1,9 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=VideoLAN (wxgtk) Media Player
+Name=VideoLAN (WxGTK) Media Player
 Comment=Video and Audio player and server
-Icon=vlc.png
-Exec=vlc
+Icon=wxvlc.png
+Exec=wxvlc
 TryExec=wxvlc
 Terminal=false
 Type=Application
