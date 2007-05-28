@@ -51,8 +51,8 @@ start_precmd()
     chown -RL "$slapd_owner" "%%DATABASEDIR%%"
     chown "$slapd_owner" "%%PREFIX%%/etc/openldap/slapd.conf"
 
-    slapd_ownername=`expr //"$slapd_owner" : //'\([^:]*\)'`
-    slapd_groupname=`expr //"$slapd_owner" : //'.*:\([^:]*\)'`
+    slapd_ownername="${slapd_owner%:*}"
+    slapd_groupname="${slapd_owner#*:}"
 
     if [ -n "$slapd_ownername" ]; then
       rc_flags="$rc_flags -u $slapd_ownername"
