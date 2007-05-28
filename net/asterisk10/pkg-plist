@@ -786,6 +786,7 @@ share/asterisk/static-http/prototype.js
 @dirrm lib/asterisk/modules
 @dirrm lib/asterisk
 @dirrm include/asterisk
+@dirrmtry etc/asterisk
 @cwd /var
 spool/asterisk/voicemail/default/1234/busy.gsm
 spool/asterisk/voicemail/default/1234/unavail.gsm
