@@ -3278,7 +3278,6 @@ gaim-encryption	ports/security/gaim-encryption
 gaim-extprefs	ports/net-im/gaim-extprefs
 gaim-festival	ports/audio/gaim-festival
 gaim-guifications	ports/net-im/gaim-guifications
-gaim-hotkeys	ports/net-im/gaim-hotkeys
 gaim-ignorance	ports/net-im/gaim-ignorance
 gaim-irchelper	ports/irc/gaim-irchelper
 gaim-latex	ports/net-im/gaim-latex
@@ -12023,6 +12022,7 @@ picturebook	ports/graphics/picturebook
 piddle		ports/graphics/piddle
 pidentd		ports/security/pidentd
 pidgin		ports/net-im/pidgin
+pidgin-hotkeys	ports/net-im/pidgin-hotkeys
 pidof		ports/sysutils/pidof
 piewm		ports/x11-wm/piewm
 pikdev		ports/devel/pikdev
