@@ -3,8 +3,8 @@
 @@ -17,5 +17,5 @@
  #include "wn.h"
  
--static char *Id = "$Id: search.c,v 1.165 2005/02/24 15:36:00 wn Exp $";
-+__FBSDID("$Id: search.c,v 1.165 2005/02/24 15:36:00 wn Exp $");
+-static char *Id = "$Id: search.c,v 1.166 2006/11/14 20:52:45 wn Exp $";
++__FBSDID("$Id: search.c,v 1.166 2006/11/14 20:52:45 wn Exp $");
  
  /* For adjectives, indicates synset type */
 @@ -45,12 +45,12 @@

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	WordNet
-PORTVERSION=	2.1
-PORTREVISION=	1
+PORTVERSION=	3.0
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cogsci.princeton.edu/pub/wordnet/${PORTVERSION}/ \
 		http://wordnet.princeton.edu/${PORTVERSION}/
@@ -15,21 +14,23 @@ MASTER_SITES=	ftp://ftp.cogsci.princeton.edu/pub/wordnet/${PORTVERSION}/ \
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Dictionaries and thesauri with devel. libraries (C, TCL) and browsers
 
-LIB_DEPENDS=	tk${TCL_VER}:${PORTSDIR}/x11-toolkits/tk${TCL_VER}
-
-TCL_DVER?=	8.4
-TCL_VER=	${TCL_DVER:C/\.//}
-SCRIPTS_ENV+=	TCL_DVER=${TCL_DVER} VER=${PORTVERSION}
-MAKE_ENV+=	TCL_DVER=${TCL_DVER} VER=${PORTVERSION}
-PLIST_SUB+=	TCL_DVER=${TCL_DVER} VER=${PORTVERSION}
+USE_TCL=	yes
+SCRIPTS_ENV+=	TCL_DVER=${TCL_VER} VER=${PORTVERSION}
+MAKE_ENV+=	TCL_DVER=${TCL_VER} VER=${PORTVERSION}
+PLIST_SUB+=	TCL_DVER=${TCL_VER} VER=${PORTVERSION}
 USE_BZIP2=	yes
 REINPLACE_ARGS=	-i ""
 INSTALLS_SHLIB=	yes
+SUB_FILES=	pkg-message
+SUB_LIST+=	TCL_VER=${TCL_VER}
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local/WordNet-2.1,${DATADIR},g' \
 	    ${WRKSRC}/src/wnb ${WRKSRC}/doc/man/*.?
 	${REINPLACE_CMD} -e 's,  *\\n,\\n,' ${WRKSRC}/include/wn.h
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
 

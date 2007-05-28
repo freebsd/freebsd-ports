@@ -3,8 +3,8 @@
 @@ -19,7 +19,7 @@
  #endif
  
--static char *Id = "$Id: morph.c,v 1.66 2005/03/18 18:14:24 wn Exp $";
-+__FBSDID("$Id: morph.c,v 1.66 2005/03/18 18:14:24 wn Exp $");
+-static char *Id = "$Id: morph.c,v 1.67 2006/11/14 21:00:23 wn Exp $";
++__FBSDID("$Id: morph.c,v 1.67 2006/11/14 21:00:23 wn Exp $");
  
 -static char *sufx[] ={ 
 +static const char *sufx[] ={ 
