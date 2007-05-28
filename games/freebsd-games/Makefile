@@ -59,10 +59,6 @@ PATHNAME_FILES=	atc/atc.6 \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
 post-extract:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} extract)
