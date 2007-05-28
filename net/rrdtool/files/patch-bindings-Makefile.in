@@ -1,6 +1,6 @@
---- bindings/Makefile.in.orig	Thu May  3 02:06:59 2007
-+++ bindings/Makefile.in	Tue May  8 13:20:37 2007
-@@ -539,14 +539,14 @@
+--- ./bindings/Makefile.in.orig	Thu May  3 02:06:59 2007
++++ ./bindings/Makefile.in	Tue May 29 03:45:40 2007
+@@ -539,18 +539,18 @@
  all-local:  @COMP_PERL@ @COMP_RUBY@ @COMP_PYTHON@
  
  install-data-local:
@@ -19,3 +19,8 @@
  
  # rules for buildung the pyton module
  python:
+-	cd python && env LIBDIR=../../src/.libs $(PYTHON) setup.py build
++	cd python && env LIBDIR=../../src/.libs INCDIR=../../src $(PYTHON) setup.py build
+ 
+ # rules for building the perl module
+ perl_piped: perl-piped/Makefile
