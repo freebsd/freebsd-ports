@@ -22,6 +22,6 @@ USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 
-ADDITIONAL_OBJCFLAGS+=	-Dlog2=__log2
+ADDITIONAL_OBJCFLAGS+=	-Dlog2=logb
 
 .include <bsd.port.mk>
