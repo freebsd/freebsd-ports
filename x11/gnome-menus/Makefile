@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gnome-menus
-PORTVERSION=	2.18.0
-PORTREVISION=	1
+PORTVERSION=	2.18.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -44,8 +43,7 @@ post-patch:
 		${WRKSRC}/layout/settings.menu
 	@${SED} -e 's|/usr/local|${LOCALBASE}|g' \
 		< ${FILESDIR}/KDE.directory > ${WRKSRC}/KDE.directory
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g ; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g' \
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/simple-editor/GMenuSimpleEditor/menutreemodel.py
 
 post-install:
