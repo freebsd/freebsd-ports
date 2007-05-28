@@ -23,6 +23,7 @@ share/gnome/help/fdl/C/fdl.xml
 share/gnome/help/fdl/ar/fdl.xml
 share/gnome/help/fdl/es/fdl.xml
 share/gnome/help/fdl/fr/fdl.xml
+share/gnome/help/fdl/ko/fdl.xml
 share/gnome/help/fdl/sv/fdl.xml
 share/gnome/help/fdl/uk/fdl.xml
 share/gnome/help/gpl/C/gpl.xml
@@ -31,6 +32,7 @@ share/gnome/help/gpl/ca/gpl.xml
 share/gnome/help/gpl/es/gpl.xml
 share/gnome/help/gpl/fi/gpl.xml
 share/gnome/help/gpl/fr/gpl.xml
+share/gnome/help/gpl/ko/gpl.xml
 share/gnome/help/gpl/pa/gpl.xml
 share/gnome/help/gpl/sv/gpl.xml
 share/gnome/help/gpl/uk/gpl.xml
@@ -40,6 +42,7 @@ share/gnome/help/lgpl/C/lgpl.xml
 share/gnome/help/lgpl/ar/lgpl.xml
 share/gnome/help/lgpl/es/lgpl.xml
 share/gnome/help/lgpl/fr/lgpl.xml
+share/gnome/help/lgpl/ko/lgpl.xml
 share/gnome/help/lgpl/pa/lgpl.xml
 share/gnome/help/lgpl/sv/lgpl.xml
 share/gnome/help/lgpl/uk/lgpl.xml
@@ -48,6 +51,7 @@ share/gnome/omf/fdl/fdl-C.omf
 share/gnome/omf/fdl/fdl-ar.omf
 share/gnome/omf/fdl/fdl-es.omf
 share/gnome/omf/fdl/fdl-fr.omf
+share/gnome/omf/fdl/fdl-ko.omf
 share/gnome/omf/fdl/fdl-sv.omf
 share/gnome/omf/fdl/fdl-uk.omf
 share/gnome/omf/gpl/gpl-C.omf
@@ -56,6 +60,7 @@ share/gnome/omf/gpl/gpl-ca.omf
 share/gnome/omf/gpl/gpl-es.omf
 share/gnome/omf/gpl/gpl-fi.omf
 share/gnome/omf/gpl/gpl-fr.omf
+share/gnome/omf/gpl/gpl-ko.omf
 share/gnome/omf/gpl/gpl-pa.omf
 share/gnome/omf/gpl/gpl-sv.omf
 share/gnome/omf/gpl/gpl-uk.omf
@@ -65,6 +70,7 @@ share/gnome/omf/lgpl/lgpl-C.omf
 share/gnome/omf/lgpl/lgpl-ar.omf
 share/gnome/omf/lgpl/lgpl-es.omf
 share/gnome/omf/lgpl/lgpl-fr.omf
+share/gnome/omf/lgpl/lgpl-ko.omf
 share/gnome/omf/lgpl/lgpl-pa.omf
 share/gnome/omf/lgpl/lgpl-sv.omf
 share/gnome/omf/lgpl/lgpl-uk.omf
@@ -200,6 +206,7 @@ share/locale/ne/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/nso/LC_MESSAGES/gnome-desktop-2.0.mo
+share/locale/oc/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/or/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/pa/LC_MESSAGES/gnome-desktop-2.0.mo
 share/locale/pl/LC_MESSAGES/gnome-desktop-2.0.mo
@@ -249,6 +256,8 @@ share/locale/zu/LC_MESSAGES/gnome-desktop-2.0.mo
 @dirrmtry share/locale/te
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/nso/LC_MESSAGES
 @dirrmtry share/locale/nso
 @dirrmtry share/locale/mr/LC_MESSAGES
@@ -276,6 +285,7 @@ share/locale/zu/LC_MESSAGES/gnome-desktop-2.0.mo
 @dirrm share/gnome/help/lgpl/uk
 @dirrm share/gnome/help/lgpl/sv
 @dirrm share/gnome/help/lgpl/pa
+@dirrm share/gnome/help/lgpl/ko
 @dirrm share/gnome/help/lgpl/fr
 @dirrm share/gnome/help/lgpl/es
 @dirrm share/gnome/help/lgpl/ar
@@ -284,6 +294,7 @@ share/locale/zu/LC_MESSAGES/gnome-desktop-2.0.mo
 @dirrm share/gnome/help/gpl/uk
 @dirrm share/gnome/help/gpl/sv
 @dirrm share/gnome/help/gpl/pa
+@dirrm share/gnome/help/gpl/ko
 @dirrm share/gnome/help/gpl/fr
 @dirrm share/gnome/help/gpl/fi
 @dirrm share/gnome/help/gpl/es
@@ -291,6 +302,7 @@ share/locale/zu/LC_MESSAGES/gnome-desktop-2.0.mo
 @dirrm share/gnome/help/gpl/ar
 @dirrm share/gnome/help/fdl/uk
 @dirrm share/gnome/help/fdl/sv
+@dirrm share/gnome/help/fdl/ko
 @dirrm share/gnome/help/fdl/fr
 @dirrm share/gnome/help/fdl/es
 @dirrm share/gnome/help/fdl/ar
