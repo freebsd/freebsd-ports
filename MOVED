@@ -2961,4 +2961,5 @@ x11-servers/xorg-fontserver|x11-fonts/xfs|2007-05-19|Rename to follow X.org name
 x11/xlibs|xorg-libraries|2007-05-25|Replaced by x11/xorg-libraries
 multimedia/ffmpeg-devel|multimedia/ffmpeg|2007-05-25|Merged multimedia/ffmpeg-devel into multimedia/ffmpeg
 devel/wfut||2007-05-27|Obsolete
+net-im/gaim-hotkeys|net-im/pidgin-hotkeys|2007-05-28|Project renamed
 
