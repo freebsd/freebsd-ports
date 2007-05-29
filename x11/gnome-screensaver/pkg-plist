@@ -27,6 +27,7 @@ share/gnome/pixmaps/backgrounds/cosmos/sombrero.jpg
 share/gnome/pixmaps/backgrounds/cosmos/whirlpool.jpg
 share/gnome/pixmaps/gnome-logo-white.svg
 share/locale/ar/LC_MESSAGES/gnome-screensaver.mo
+share/locale/be@latin/LC_MESSAGES/gnome-screensaver.mo
 share/locale/bg/LC_MESSAGES/gnome-screensaver.mo
 share/locale/bn/LC_MESSAGES/gnome-screensaver.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-screensaver.mo
@@ -99,3 +100,5 @@ share/locale/zh_TW/LC_MESSAGES/gnome-screensaver.mo
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/be@latin/LC_MESSAGES
+@dirrmtry share/locale/be@latin
