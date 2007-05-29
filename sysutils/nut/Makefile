@@ -66,16 +66,23 @@ MAN5+=		hosts.conf.5 upsset.conf.5 upsstats.html.5
 MAN8+=		upsset.cgi.8 upsstats.cgi.8 upsimage.cgi.8
 .if !exists(${PREFIX}/www) && exists(${PREFIX}/share/apache)
 CGIDIR?=	share/apache/cgi-bin
+WWWDIR?=	share/apache/htdocs
 .else
 CGIDIR?=	www/cgi-bin
+WWWDIR?=	www/data
 .endif
 CONFIGURE_ARGS+=	--with-cgi --with-cgipath=${PREFIX}/${CGIDIR}/nut \
+			--with-htmlpath=${PREFIX}/${WWWDIR}/nut \
 			--with-gd-includes=-I${PREFIX}/include \
 			--with-gd-libs="-L${PREFIX}/lib -lgd"
+PLIST_SUB+=	WWWFILES="${WWWDIR}/nut/"
+PLIST_SUB+=	WWWDIRRM="@dirrm ${WWWDIR}/nut"
 PLIST_SUB+=	CGIFILES="${CGIDIR}/nut/"
 PLIST_SUB+=	CGIDIRRM="@dirrm ${CGIDIR}/nut"
 PLIST_SUB+=	CGIETC="etc/nut/"
 .else
+PLIST_SUB+=	WWWFILES="@comment "
+PLIST_SUB+=	WWWDIRRM="@comment "
 PLIST_SUB+=	CGIFILES="@comment "
 PLIST_SUB+=	CGIDIRRM="@comment "
 PLIST_SUB+=	CGIETC="@comment "
