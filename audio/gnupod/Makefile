@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnupod
-PORTVERSION=	0.99
+PORTVERSION=	0.99.2
 CATEGORIES=	audio perl5
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://www.blinkenlights.ch/gnupod-dist/stable/
@@ -34,13 +34,25 @@ USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 NO_BUILD=	yes
 
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--infodir=${PREFIX}/info \
+		--mandir=${PREFIX}/man
 CONFIGURE_ENV=	ac_cv_path_PERL=${PERL}
+
+OPTIONS=	FLAC "Enable FLAC support" off
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
 IGNORE=	gnupod only support perl 5.8 or above
+.endif
+
+.if exists(${SITE_PERL}/${PERL_ARCH}/Audio/FLAC/Header.pm)
+WITH_FLAC=	YES
+.endif
+
+.if defined(WITH_FLAC)
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Audio/FLAC/Header.pm:${PORTSDIR}/audio/p5-Audio-FLAC-Header
 .endif
 
 .ifndef(NOPORTDOCS)
