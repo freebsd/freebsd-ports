@@ -1,0 +1,8 @@
+--- pear-phpdoc.orig	Thu Apr  5 20:46:28 2007
++++ pear-phpdoc	Thu May 17 20:25:36 2007
+@@ -1,4 +1,4 @@
+-#!@PHP-BIN@
++#!@php_bin@
+ <?php
+ //
+ // PhpDoc, a program for creating javadoc style documentation from php code
