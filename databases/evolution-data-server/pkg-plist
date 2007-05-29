@@ -176,8 +176,8 @@ include/evolution-data-server-%%VERSION%%/libecal/e-cal-view-listener.h
 include/evolution-data-server-%%VERSION%%/libecal/e-cal-view.h
 include/evolution-data-server-%%VERSION%%/libecal/e-cal.h
 include/evolution-data-server-%%VERSION%%/libedata-book/Evolution-DataServer-Addressbook.h
-include/evolution-data-server-%%VERSION%%/libedata-book/e-book-backend-db-cache.h
 include/evolution-data-server-%%VERSION%%/libedata-book/e-book-backend-cache.h
+include/evolution-data-server-%%VERSION%%/libedata-book/e-book-backend-db-cache.h
 include/evolution-data-server-%%VERSION%%/libedata-book/e-book-backend-factory.h
 include/evolution-data-server-%%VERSION%%/libedata-book/e-book-backend-sexp.h
 include/evolution-data-server-%%VERSION%%/libedata-book/e-book-backend-summary.h
@@ -408,6 +408,7 @@ share/doc/libebook/EBookListener.html
 share/doc/libebook/EBookView.html
 share/doc/libebook/EBookViewListener.html
 share/doc/libebook/EContact.html
+share/doc/libebook/EDestination.html
 share/doc/libebook/EVCard.html
 share/doc/libebook/ch01.html
 share/doc/libebook/home.png
@@ -417,7 +418,6 @@ share/doc/libebook/ix01.html
 share/doc/libebook/left.png
 share/doc/libebook/libebook-EAddressWestern.html
 share/doc/libebook/libebook-ENameWestern.html
-share/doc/libebook/EDestination.html
 share/doc/libebook/libebook-e-book-query.html
 share/doc/libebook/libebook-e-book-types.html
 share/doc/libebook/libebook.devhelp
@@ -426,8 +426,8 @@ share/doc/libebook/right.png
 share/doc/libebook/style.css
 share/doc/libebook/up.png
 share/doc/libecal/ECal.html
-share/doc/libecal/ECalListener.html
 share/doc/libecal/ECalComponent.html
+share/doc/libecal/ECalListener.html
 share/doc/libecal/ECalView.html
 share/doc/libecal/ECalViewListener.html
 share/doc/libecal/ch01.html
@@ -488,11 +488,6 @@ share/doc/libedata-cal/libedata-cal.devhelp2
 share/doc/libedata-cal/right.png
 share/doc/libedata-cal/style.css
 share/doc/libedata-cal/up.png
-share/doc/libedataserver/ch01.html
-share/doc/libedataserver/home.png
-share/doc/libedataserver/index.html
-share/doc/libedataserver/index.sgml
-share/doc/libedataserver/left.png
 share/doc/libedataserver/EAccount.html
 share/doc/libedataserver/EAccountList.html
 share/doc/libedataserver/EComponentListener.html
@@ -503,7 +498,12 @@ share/doc/libedataserver/EListIterator.html
 share/doc/libedataserver/ESource.html
 share/doc/libedataserver/ESourceGroup.html
 share/doc/libedataserver/ESourceList.html
+share/doc/libedataserver/ch01.html
+share/doc/libedataserver/home.png
+share/doc/libedataserver/index.html
+share/doc/libedataserver/index.sgml
 share/doc/libedataserver/ix01.html
+share/doc/libedataserver/left.png
 share/doc/libedataserver/libedataserver-ESExp.html
 share/doc/libedataserver/libedataserver-e-categories.html
 share/doc/libedataserver/libedataserver-e-data-server-module.html
