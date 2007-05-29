@@ -7,12 +7,12 @@
 
 PORTNAME=	docbook-utils
 PORTVERSION=	0.6.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	docbook-tools/new-trials/SOURCES
 
-MAINTAINER=	B.Candler@pobox.com
+MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Generates various output formats from DocBook SGML documents
 
 BUILD_DEPENDS+=	nsgmls:${PORTSDIR}/textproc/jade \
@@ -20,7 +20,8 @@ BUILD_DEPENDS+=	nsgmls:${PORTSDIR}/textproc/jade \
 		${LOCALBASE}/share/sgml/docbook/dsssl:${PORTSDIR}/textproc/dsssl-docbook-modular
 RUN_DEPENDS+=	${LOCALBASE}/share/texmf/tex/jadetex/dsssl.def:${PORTSDIR}/print/jadetex \
 		sgmlspl:${PORTSDIR}/textproc/p5-SGMLSpm \
-    		jade:${PORTSDIR}/textproc/jade
+    		jade:${PORTSDIR}/textproc/jade \
+		lynx:${PORTSDIR}/www/lynx
 
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
@@ -41,6 +42,10 @@ MLINKS=		jw.1 docbook2dvi.1 \
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
+
+post-patch:
+	 @${REINPLACE_CMD} -e '254 s/install-htmlDATA//' \
+		${WRKSRC}/doc/HTML/Makefile.in
 
 pre-configure:
 	${RM} -f ${WRKSRC}/config.cache
