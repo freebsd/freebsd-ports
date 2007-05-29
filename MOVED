@@ -2962,7 +2962,6 @@ x11/xlibs|xorg-libraries|2007-05-25|Replaced by x11/xorg-libraries
 multimedia/ffmpeg-devel|multimedia/ffmpeg|2007-05-25|Merged multimedia/ffmpeg-devel into multimedia/ffmpeg
 devel/wfut||2007-05-27|Obsolete
 net-im/gaim-hotkeys|net-im/pidgin-hotkeys|2007-05-28|Project renamed
-
 devel/ruby-inline||2007-05-28|Has expired: New versions only available in rubygems. Use devel/rubygem-inline instead.
 devel/tkref||2007-05-28|Has expired: is seriously outdated, take a look at http://www.tcl.tk/doc/ for TCL/TK documentation
 net-p2p/amule1||2007-05-28|Has expired: use net-p2p/amule2 if you are running OSVERSION > 500000
