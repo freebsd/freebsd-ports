@@ -117,10 +117,12 @@ post-patch:
 		${WRKSRC}/docs/Makefile.in
 
 post-install:
+.if !defined(GIMP_SLAVE)
 .if ${HAVE_GNOME:Mgnomehier}!="" || defined(WITH_GNOME)
 	${MKDIR} ${PREFIX}/share/gnome/mime-info ${PREFIX}/share/gnome/application-registry
 	${INSTALL_DATA} ${WRKSRC}/desktop/gimp.applications ${PREFIX}/share/gnome/application-registry
 	${INSTALL_DATA} ${WRKSRC}/desktop/gimp.keys ${PREFIX}/share/gnome/mime-info
+.endif
 .endif
 	@-update-desktop-database
 
