@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	vte
-PORTVERSION=	0.16.3
-PORTREVISION?=	1
+PORTVERSION=	0.16.4
+PORTREVISION?=	0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -28,8 +28,8 @@ USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 USE_GETTEXT=	yes
 USE_GNOME?=	gnomeprefix gnomehack gtk20 ltverhack referencehack
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
 		BSD_PTHREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS?=--disable-python \
 		--disable-freetypetest
