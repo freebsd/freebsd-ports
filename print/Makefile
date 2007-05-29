@@ -197,6 +197,7 @@
     SUBDIR += pdq
     SUBDIR += pear-File_PDF
     SUBDIR += pecl-pdflib
+    SUBDIR += pecl-ps
     SUBDIR += perlftlib
     SUBDIR += pfbtopfa
     SUBDIR += phppdflib
