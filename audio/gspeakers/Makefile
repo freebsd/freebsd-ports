@@ -17,7 +17,7 @@ COMMENT=	Gnome-based loudspeaker design program
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
 USE_XLIB=	yes
-USE_GCC=	3.4
+USE_GCC=	3.4+
 USE_GNOME=	gnomeprefix gnometarget libxml2
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	automake:19:env
