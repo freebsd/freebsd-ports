@@ -1,6 +1,6 @@
---- configure.orig	Thu Jun 23 23:12:00 2005
-+++ configure	Tue Jun 28 20:53:10 2005
-@@ -11195,19 +11201,25 @@
+--- configure.orig	Thu Mar  1 20:46:19 2007
++++ configure	Tue Mar 13 10:28:27 2007
+@@ -22431,19 +22431,25 @@
      sendmailver_c=`echo $sendmailver | awk -F. '{printf $3}'`
  
  
@@ -26,3 +26,21 @@
  
    fi
  fi
+@@ -23087,7 +23093,7 @@
+     ;;
+ freebsd*)
+     if test "$have_pthreads" = "yes"; then
+-	THREAD_LIBS="-pthread -lc_r"
++	THREAD_LIBS="%%PTHREAD_LIBS%%"
+ 	TH_SAFE="-thread-safe"
+ 
+ cat >>confdefs.h <<\_ACEOF
+@@ -23427,7 +23433,7 @@
+ if test "$have_milter" = "yes"; then
+ 
+         save_LDFLAGS="$LDFLAGS"
+-	CLAMAV_MILTER_LIBS="$CLAMAV_MILTER_LIBS -lpthread"
++	CLAMAV_MILTER_LIBS="$CLAMAV_MILTER_LIBS %%PTHREAD_LIBS%%"
+     if test -d /usr/lib/libmilter ; then
+ 	CLAMAV_MILTER_LIBS="$CLAMAV_MILTER_LIBS -L/usr/lib/libmilter"
+     fi

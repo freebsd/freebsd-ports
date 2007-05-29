@@ -8,10 +8,11 @@ bin/sigtool
 %%CLAMAV-MILTER%%sbin/clamav-milter
 sbin/clamd
 include/clamav.h
+include/clamav-config.h
 lib/libclamav.a
 lib/libclamav.la
 lib/libclamav.so
-lib/libclamav.so.1
+lib/libclamav.so.2
 libdata/pkgconfig/libclamav.pc
 @unexec if cmp -s %D/etc/clamd.conf %D/etc/clamd.conf.default; then rm -f %D/etc/clamd.conf; fi
 etc/clamd.conf.default
@@ -21,6 +22,6 @@ etc/freshclam.conf.default
 @exec [ -f %B/freshclam.conf ] || cp %B/%f %B/freshclam.conf
 @unexec [ -s %%DBDIR%%/daily.cvd ] || rm -f %%DBDIR%%/daily.cvd || true
 @unexec [ -s %%DBDIR%%/main.cvd ] || rm -f %%DBDIR%%/main.cvd || true
-@unexec rmdir %%DBDIR%% 2>/dev/null || true
-@unexec rmdir %%LOGDIR%% 2>/dev/null || true
-@unexec rmdir %%RUNDIR%% 2>/dev/null || true
+@dirrmtry %%DBDIR%%
+@dirrmtry %%LOGDIR%%
+@dirrmtry %%RUNDIR%%
