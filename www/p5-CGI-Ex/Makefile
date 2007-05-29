@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CGI-Ex
-PORTVERSION=	2.10
+PORTVERSION=	2.13
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CGI
@@ -19,6 +19,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		CGI::Ex.3 CGI::Ex::App.3 CGI::Ex::Auth.3 CGI::Ex::Conf.3 \
 		CGI::Ex::Die.3 CGI::Ex::Dump.3 CGI::Ex::Fill.3 \
+		CGI::Ex::Template::HTE.3 CGI::Ex::Template::Extra.3 \
 		CGI::Ex::JSONDump.3 CGI::Ex::Template.3 CGI::Ex::Validate.3
 
 post-install:
