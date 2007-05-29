@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xvile
-PORTVERSION=	9.5n
-PORTREVISION=	1
+PORTVERSION=	9.5q
 CATEGORIES=	editors
 MASTER_SITES=	ftp://invisible-island.net/vile/ \
 		ftp://dickey.his.com/vile/ \
@@ -29,7 +28,10 @@ PATCHFILES=	vile-9.5a.patch.gz \
 		vile-9.5k.patch.gz \
 		vile-9.5l.patch.gz \
 		vile-9.5m.patch.gz \
-		vile-9.5n.patch.gz
+		vile-9.5n.patch.gz \
+		vile-9.5o.patch.gz \
+		vile-9.5p.patch.gz \
+		vile-9.5q.patch.gz
 
 MAINTAINER=	gj@FreeBSD.org
 COMMENT=	VI Like Emacs, X11 version -- a fully "X aware" vi work-alike
@@ -46,26 +48,26 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--x-libraries=${X11BASE}/lib
 MAN1=		xvile.1
 
-.if defined(WITH_ALL)
-WITH_FILTERS=1
-WITH_MENUS=1
-WITH_PERL=1
-WITH_XAW3D=1
-.endif
+OPTIONS= FILTERS "Add support for loadable filters" OFF
+OPTIONS+= MENUS "Add support for menus" OFF
+OPTIONS+= PERL "Add support for perl functions" OFF
+OPTIONS+= XAW3D "Use XAW3D to get a 3D effect" OFF
+
+.include <bsd.port.pre.mk>
 
 pre-configure:
 .if ! defined(WITH_MENUS)
-	@${ECHO_MSG} "To use xvile with menus, set the environment variable WITH_MENUS,"
+	@${ECHO_MSG} "To use xvile with menus, choose the option MENUS,"
 	@${ECHO_MSG} "which will also turn on Xaw. If you have Xaw3d, you can use it"
-	@${ECHO_MSG} "by also settting the environment variable WITH_XAW3D."
+	@${ECHO_MSG} "by also choosing the option XAW3D."
 .endif
 
 .if ! defined(WITH_PERL)
-	@${ECHO_MSG} "To use xvile with PERL, set the environment variable WITH_PERL."
+	@${ECHO_MSG} "To use xvile with PERL, choose the option PERL."
 .endif
 
 .if ! defined(WITH_FILTERS)
-	@${ECHO_MSG} "Define WITH_FILTERS if you want to make an xvile which will"
+	@${ECHO_MSG} "Choose the option FILTERS if you want to make an xvile which will"
 	@${ECHO_MSG} "dynamically load filters as needed."
 .endif
 
@@ -105,4 +107,4 @@ post-install:
 	@${ECHO_MSG} "Look in ${PREFIX}/share/doc/xvile for documentation."
 	@${ECHO_MSG} "Look in ${PREFIX}/share/xvile/macros for macros."
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
