@@ -273,6 +273,7 @@
     SUBDIR += p5-bignum
     SUBDIR += pari
     SUBDIR += parmetis
+    SUBDIR += pear-Math_Combinatorics
     SUBDIR += pecl-big_int
     SUBDIR += pecl-stats
     SUBDIR += petsc
