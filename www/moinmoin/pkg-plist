@@ -617,6 +617,9 @@ bin/moin
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050700.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050700.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050700.pyo
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050800.py
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050800.pyc
+%%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/1050800.pyo
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.py
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyc
 %%PYTHON_SITELIBDIR%%/MoinMoin/script/migration/__init__.pyo
