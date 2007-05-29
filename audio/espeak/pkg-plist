@@ -4,12 +4,13 @@ include/espeak/speak_lib.h
 lib/libespeak.a
 lib/libespeak.so
 lib/libespeak.so.1
-lib/libespeak.so.1.1.23
+lib/libespeak.so.1.1.24
 %%PORTDOCS%%%%DOCSDIR%%/add_language.html
 %%PORTDOCS%%%%DOCSDIR%%/analyse.html
 %%PORTDOCS%%%%DOCSDIR%%/commands.html
 %%PORTDOCS%%%%DOCSDIR%%/dictionary.html
 %%PORTDOCS%%%%DOCSDIR%%/docindex.html
+%%PORTDOCS%%%%DOCSDIR%%/download.html
 %%PORTDOCS%%%%DOCSDIR%%/editor.html
 %%PORTDOCS%%%%DOCSDIR%%/editor_if.html
 %%PORTDOCS%%%%DOCSDIR%%/images/lips.png
@@ -92,7 +93,6 @@ lib/libespeak.so.1.1.23
 %%DATADIR%%/espeak-data/voices/es
 %%DATADIR%%/espeak-data/voices/fi
 %%DATADIR%%/espeak-data/voices/fr
-%%DATADIR%%/espeak-data/voices/fr-ca
 %%DATADIR%%/espeak-data/voices/hi
 %%DATADIR%%/espeak-data/voices/hr
 %%DATADIR%%/espeak-data/voices/hu
