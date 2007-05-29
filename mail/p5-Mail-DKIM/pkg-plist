@@ -1,30 +1,36 @@
-lib/perl5/site_perl/5.8.8/Mail/DKIM.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/Algorithm/Base.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/Algorithm/dk_rsa_sha1.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/Algorithm/rsa_sha1.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/Algorithm/rsa_sha256.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/Canonicalization/Base.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/Canonicalization/DkCommon.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/Canonicalization/DkimCommon.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/Canonicalization/dk_nofws.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/Canonicalization/dk_simple.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/Canonicalization/nowsp.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/Canonicalization/relaxed.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/Canonicalization/simple.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/Common.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/DkSignature.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/Key.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/KeyValueList.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/MessageParser.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/Policy.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/PrivateKey.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/PublicKey.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/Signature.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/Signer.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/SignerPolicy.pm
-lib/perl5/site_perl/5.8.8/Mail/DKIM/Verifier.pm
-lib/perl5/site_perl/5.8.8/mach/auto/Mail/DKIM/.packlist
-@dirrm lib/perl5/site_perl/5.8.8/mach/auto/Mail/DKIM
-@dirrm lib/perl5/site_perl/5.8.8/Mail/DKIM/Canonicalization
-@dirrm lib/perl5/site_perl/5.8.8/Mail/DKIM/Algorithm
-@dirrm lib/perl5/site_perl/5.8.8/Mail/DKIM
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/DKIM/.packlist
+%%SITE_PERL%%/Mail/DKIM.pm
+%%SITE_PERL%%/Mail/DKIM/Algorithm/Base.pm
+%%SITE_PERL%%/Mail/DKIM/Algorithm/dk_rsa_sha1.pm
+%%SITE_PERL%%/Mail/DKIM/Algorithm/rsa_sha1.pm
+%%SITE_PERL%%/Mail/DKIM/Algorithm/rsa_sha256.pm
+%%SITE_PERL%%/Mail/DKIM/Canonicalization/Base.pm
+%%SITE_PERL%%/Mail/DKIM/Canonicalization/DkCommon.pm
+%%SITE_PERL%%/Mail/DKIM/Canonicalization/DkimCommon.pm
+%%SITE_PERL%%/Mail/DKIM/Canonicalization/dk_nofws.pm
+%%SITE_PERL%%/Mail/DKIM/Canonicalization/dk_simple.pm
+%%SITE_PERL%%/Mail/DKIM/Canonicalization/nowsp.pm
+%%SITE_PERL%%/Mail/DKIM/Canonicalization/relaxed.pm
+%%SITE_PERL%%/Mail/DKIM/Canonicalization/simple.pm
+%%SITE_PERL%%/Mail/DKIM/Common.pm
+%%SITE_PERL%%/Mail/DKIM/DkSignature.pm
+%%SITE_PERL%%/Mail/DKIM/Key.pm
+%%SITE_PERL%%/Mail/DKIM/KeyValueList.pm
+%%SITE_PERL%%/Mail/DKIM/MessageParser.pm
+%%SITE_PERL%%/Mail/DKIM/Policy.pm
+%%SITE_PERL%%/Mail/DKIM/PrivateKey.pm
+%%SITE_PERL%%/Mail/DKIM/PublicKey.pm
+%%SITE_PERL%%/Mail/DKIM/Signature.pm
+%%SITE_PERL%%/Mail/DKIM/Signer.pm
+%%SITE_PERL%%/Mail/DKIM/SignerPolicy.pm
+%%SITE_PERL%%/Mail/DKIM/TextWrap.pm
+%%SITE_PERL%%/Mail/DKIM/Verifier.pm
+bin/dkimsign.pl
+bin/dkimverify.pl
+@dirrm %%SITE_PERL%%/Mail/DKIM/Canonicalization
+@dirrm %%SITE_PERL%%/Mail/DKIM/Algorithm
+@dirrm %%SITE_PERL%%/Mail/DKIM
+@dirrmtry %%SITE_PERL%%/Mail
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/DKIM
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
