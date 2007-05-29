@@ -1,0 +1,17 @@
+@comment $FreeBSD$
+%%RUBY_SITELIBDIR%%/flv.rb
+%%RUBY_SITELIBDIR%%/flv/amf_string_buffer.rb
+%%RUBY_SITELIBDIR%%/flv/audio_tag.rb
+%%RUBY_SITELIBDIR%%/flv/core_extensions.rb
+%%RUBY_SITELIBDIR%%/flv/meta_tag.rb
+%%RUBY_SITELIBDIR%%/flv/stream.rb
+%%RUBY_SITELIBDIR%%/flv/tag.rb
+%%RUBY_SITELIBDIR%%/flv/video_tag.rb
+%%RUBY_SITELIBDIR%%/flvtool2.rb
+%%RUBY_SITELIBDIR%%/flvtool2/base.rb
+%%RUBY_SITELIBDIR%%/flvtool2/version.rb
+%%RUBY_SITELIBDIR%%/mixml.rb
+%%RUBY_SITELIBDIR%%/miyaml.rb
+bin/flvtool2
+@dirrmtry %%RUBY_SITELIBDIR%%/flvtool2
+@dirrmtry %%RUBY_SITELIBDIR%%/flv
