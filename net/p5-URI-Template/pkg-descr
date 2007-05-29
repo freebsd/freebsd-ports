@@ -1,0 +1,8 @@
+URI::Template - Object for handling URI templates
+
+This is an initial attempt to provide a wrapper around URI templates 
+as described at:
+
+http://www.ietf.org/internet-drafts/draft-gregorio-uritemplate-00.txt
+
+WWW: http://search.cpan.org/dist/URI-Template/
