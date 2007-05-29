@@ -233,6 +233,7 @@ do-install:
 	&& ${FIND} . -type f -exec ${INSTALL_PROGRAM} {}	\
 		${PREFIX}/${REALNAME}/${APPDIR}/{} \;
 	${TOUCH} ${PREFIX}/${REALNAME}/jobControl/.keepme
+	@${RM} -f ${PREFIX}/${REALNAME}/applications/utilities/mesh/conversion/ccm26ToFoam/libccmio/libadf/wmkdep.core
 .if !defined(NOPORTDOCS)
 	${CP} -R ${DOCS:S|^|${WRKSRC}/|} ${PREFIX}/${REALNAME}
 	${CP} -R ${WRKSRC}/tutorials ${PREFIX}/${REALNAME}
