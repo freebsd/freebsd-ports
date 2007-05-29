@@ -65,6 +65,10 @@ sbin/upssched
 %%CGIETC%%upsset.conf.sample
 %%CGIETC%%upsstats.html.sample
 %%CGIETC%%upsstats-single.html.sample
+%%WWWFILES%%bottom.html
+%%WWWFILES%%header.html
+%%WWWFILES%%index.html
+%%WWWFILES%%nut-banner.png
 %%PORTDOCS%%@exec mkdir %D/%%DOCSDIR%%
 %%PORTDOCS%%@exec mkdir %D/%%DOCSDIR%%/cables
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -113,3 +117,4 @@ sbin/upssched
 @dirrmtry libexec/nut
 @dirrmtry %%STATEDIR%%
 %%CGIDIRRM%%
+%%WWWDIRRM%%
