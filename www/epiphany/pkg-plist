@@ -252,6 +252,7 @@ share/locale/nb/LC_MESSAGES/epiphany.mo
 share/locale/ne/LC_MESSAGES/epiphany.mo
 share/locale/nl/LC_MESSAGES/epiphany.mo
 share/locale/nn/LC_MESSAGES/epiphany.mo
+share/locale/oc/LC_MESSAGES/epiphany.mo
 share/locale/or/LC_MESSAGES/epiphany.mo
 share/locale/pa/LC_MESSAGES/epiphany.mo
 share/locale/pl/LC_MESSAGES/epiphany.mo
@@ -346,6 +347,8 @@ share/locale/zh_TW/LC_MESSAGES/epiphany.mo
 @dirrmtry share/locale/te
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/mi/LC_MESSAGES
