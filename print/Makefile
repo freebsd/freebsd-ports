@@ -277,6 +277,7 @@
     SUBDIR += rubygem-pdfwriter
     SUBDIR += scribus
     SUBDIR += sgf2tex
+    SUBDIR += splix
     SUBDIR += sv-acroread
     SUBDIR += t1utils
     SUBDIR += teTeX
