@@ -17,8 +17,6 @@ DISTNAME=	pidgin-${PORTVERSION}
 MAINTAINER?=	marcus@FreeBSD.org
 COMMENT?=	Backend library for the Pidgin multi-protocol messaging client
 
-CONFLICTS?=	ja-gaim-[0-9]* gaim-1*
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME?=	gnomeprefix gnomehack intlhack glib20
