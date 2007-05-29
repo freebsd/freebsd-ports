@@ -7,7 +7,7 @@
 
 PORTNAME=	rssyl
 PORTVERSION=	0.12
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
