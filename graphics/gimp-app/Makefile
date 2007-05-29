@@ -6,8 +6,7 @@
 #    $MCom: ports/graphics/gimp-app/Makefile,v 1.12 2007/03/30 18:22:45 ahze Exp $
 
 PORTNAME=	gimp-app
-PORTVERSION=	2.2.14
-PORTREVISION=	3
+PORTVERSION=	2.2.15
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
