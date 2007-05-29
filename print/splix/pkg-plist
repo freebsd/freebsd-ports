@@ -1,0 +1,18 @@
+@comment $FreeBSD$
+libexec/cups/filter/rastertospl2
+share/cups/model/samsung/ml1510.ppd
+share/cups/model/samsung/ml1520.ppd
+share/cups/model/samsung/ml1610.ppd
+share/cups/model/samsung/ml1710.ppd
+share/cups/model/samsung/ml1740.ppd
+share/cups/model/samsung/ml1750.ppd
+share/cups/model/samsung/ml2010.ppd
+share/cups/model/samsung/ml2150.ppd
+share/cups/model/samsung/ml2250.ppd
+share/cups/model/samsung/ml2550.ppd
+share/cups/model/samsung/clp300.ppd
+share/cups/model/samsung/clp500.ppd
+share/cups/model/samsung/clp510.ppd
+share/cups/model/samsung/clp600.ppd
+share/cups/model/samsung/xerox-phaser6100.ppd
+@dirrm share/cups/model/samsung

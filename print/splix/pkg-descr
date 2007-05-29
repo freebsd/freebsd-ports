@@ -1,0 +1,24 @@
+SpliX is a set of CUPS printer drivers for SPL (Samsung Printer Language)
+printers. Below is a non-exhaustive list of currently supported printers. Note
+that only SPL2 and SPLc printers are currently supported!
+
+Manufacturer    Model       State
+Xerox	        Phaser 6100	Works
+Samsung	        CLP-300 	Non-working
+Samsung	        CLP-500	    Works
+Samsung	        CLP-510	    Works
+Samsung	        CLP-600	    Non-working
+Samsung	        ML-1510	    Works
+Samsung	        ML-1520	    Works
+Samsung	        ML-1610	    Works
+Samsung	        ML-1710	    Works
+Samsung	        ML-1740	    Works
+Samsung	        ML-1750	    Works
+Samsung	        ML-2010	    Works
+Samsung	        ML-2150	    Untested
+Samsung	        ML-2250	    Works
+Samsung	        ML-2550	    Untested
+Samsung	        ML-2571	    Works
+
+
+WWW:	http://splix.sourceforge.net/
