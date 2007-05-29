@@ -1,11 +1,11 @@
---- makefile.orig	Fri Feb  2 07:12:20 2007
-+++ makefile	Sun Feb 11 15:57:23 2007
-@@ -10,7 +10,7 @@
+--- makefile.orig	Tue Feb  6 19:24:54 2007
++++ makefile	Tue May 22 20:10:20 2007
+@@ -13,7 +13,7 @@
+ ifeq ($(OSTYPE),macos)
+ CC = gcc -std=c99 -O2 -U__STRICT_ANSI__ -g -lm -lrt $(OS_CCDEFS) -I .
  else
- OS_CCDEFS = -D_GNU_SOURCE
- endif
--CC = gcc -std=c99 -O2 -U__STRICT_ANSI__ -g -lm -lrt $(OS_CCDEFS) -I .
+-CC = gcc -std=c99 -O2 -U__STRICT_ANSI__ -g -lm $(OS_CCDEFS) -I .
 +CC += ${CFLAGS} -lm $(OS_CCDEFS) -I .
+ endif
  ifeq ($(USE_NETWORK),)
  else
- NETWORK_OPT = -DUSE_NETWORK -isystem /usr/local/include /usr/local/lib/libpcap.a

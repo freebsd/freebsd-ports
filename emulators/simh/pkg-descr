@@ -16,3 +16,5 @@ SIMH implements simulators for:
 These simulators are capable of running the Unix V5, V6 and V7 binaries
 licenced for non-commercial use by SCO.  See ${WRKDIR}/simh_doc.txt for
 further details.
+
+WWW:	http://simh.trailing-edge.com
