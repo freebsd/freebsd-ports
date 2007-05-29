@@ -31,6 +31,7 @@ NOT_FOR_ARCHS=	ia64
 
 CONFIGURE_TARGET=	--build=${ARCH:S/amd64/x86_64/}-portbld-freebsd${OSREL}
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS} -fPIC"
+CONFIGURE_ARGS=		--disable-Werror
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' ${WRKSRC}/configure
