@@ -7,17 +7,15 @@
 
 PORTNAME=	nautilus-sendto
 PORTVERSION=	0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integration between nautilus, evolution, and gaim
 
-BUILD_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim \
-		evolution:${PORTSDIR}/mail/evolution
-RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim \
-		evolution:${PORTSDIR}/mail/evolution
+BUILD_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
+RUN_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
 
 MAN1=		nautilus-sendto.1
 GCONF_SCHEMAS=	nst.schemas
@@ -30,4 +28,14 @@ USE_GETTEXT=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/bin/gaim)
+BUILD_DEPENDS+=	gaim:${PORTSDIR}/net-im/gaim
+RUN_DEPENDS+=	gaim:${PORTSDIR}/net-im/gaim
+PLIST_SUB+=	GAIM=""
+.else
+PLIST_SUB+=	GAIM="@comment "
+.endif
+
+.include <bsd.port.post.mk>
