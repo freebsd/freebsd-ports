@@ -13823,6 +13823,7 @@ ruby-fftw3	ports/math/ruby-fftw3
 ruby-filelock	ports/devel/ruby-filelock
 ruby-filemagic	ports/devel/ruby-filemagic
 ruby-flexmock	ports/devel/ruby-flexmock
+ruby-flvtool2	ports/multimedia/ruby-flvtool2
 ruby-format	ports/textproc/ruby-format
 ruby-formvalidator	ports/textproc/ruby-formvalidator
 ruby-fox10	ports/x11-toolkits/ruby-fox10
