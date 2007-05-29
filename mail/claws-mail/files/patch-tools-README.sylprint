@@ -1,5 +1,5 @@
---- tools/README.sylprint.orig	Sat Nov  5 11:35:01 2005
-+++ tools/README.sylprint	Sat Nov  5 11:36:54 2005
+--- tools/README.sylprint.orig	Tue May  8 07:59:23 2007
++++ tools/README.sylprint	Tue May 29 00:43:03 2007
 @@ -144,11 +144,12 @@
  	sylprint.pl
  		The script itself.
@@ -12,7 +12,7 @@
 -		command line options. Must be stored in the same
 -		directory of the script and/or in the ~/.claws-mail
 +		command line options. Must be stored in the local
-+		configuration directory and/or in the ~/.claws-mail√
- 		one (Sylpheed user's configuration directory).
++		configuration directory and/or in the ~/.claws-mail
+ 		one (Claws Mail user's configuration directory).
  	
  	/tmp/sylprint.username.number
