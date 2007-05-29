@@ -11644,6 +11644,7 @@ pear-PHP_Beautifier	ports/devel/pear-PHP_Beautifier
 pear-PHP_Compat	ports/devel/pear-PHP_Compat
 pear-PHP_CompatInfo	ports/devel/pear-PHP_CompatInfo
 pear-Pager	ports/devel/pear-Pager
+pear-PhpDocumentor	ports/devel/pear-PhpDocumentor
 pear-SOAP	ports/net/pear-SOAP
 pear-Services_Delicious	ports/www/pear-Services_Delicious
 pear-Services_Digg	ports/www/pear-Services_Digg
