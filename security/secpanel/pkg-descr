@@ -5,7 +5,7 @@ It also manages the SSH-agent. SecPanel works with ssh 1.2.x and
 OpenSSH.
 
 WWW: http://secpanel.mymediahost.de/
-Author: Steffen Leich <leich at web dot de>
+Author: Steffen Leich <steffen.leich _at_ gmail.com>
 
 - Pete
 petef@databits.net

@@ -5,19 +5,21 @@ bin/secpanel
 %%DATADIR%%/default.profile
 %%DATADIR%%/export_profiles.tcl
 %%DATADIR%%/gui.tcl
+%%DATADIR%%/images/arrow_left.gif
+%%DATADIR%%/images/arrow_right.gif
+%%DATADIR%%/images/back.gif
+%%DATADIR%%/images/configs_gr.gif
+%%DATADIR%%/images/connects_gr.gif
+%%DATADIR%%/images/folder.gif
+%%DATADIR%%/images/keys_gr.gif
+%%DATADIR%%/images/profiles_gr.gif
+%%DATADIR%%/images/scp_gr.gif
+%%DATADIR%%/images/sscreen_gr.gif
+%%DATADIR%%/images/swinback.gif
+%%DATADIR%%/images/swinback_gr.gif
 %%DATADIR%%/listserver.tcl
 %%DATADIR%%/secpanel.dist
 %%DATADIR%%/secpanel.wait
 %%DATADIR%%/sp_scp.tcl
-%%DATADIR%%/images/arrow_left.gif
-%%DATADIR%%/images/arrow_right.gif
-%%DATADIR%%/images/back.gif
-%%DATADIR%%/images/configs.gif
-%%DATADIR%%/images/connects.gif
-%%DATADIR%%/images/folder.gif
-%%DATADIR%%/images/keys.gif
-%%DATADIR%%/images/profiles.gif
-%%DATADIR%%/images/scp.gif
-%%DATADIR%%/images/sscreen.gif
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
