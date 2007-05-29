@@ -1,21 +1,10 @@
---- configure.orig	Fri Apr 27 02:18:29 2007
-+++ configure	Fri Apr 27 02:19:20 2007
-@@ -1943,10 +1943,6 @@
- 
- ac_config_headers="$ac_config_headers config.h"
+--- configure.orig	Tue May 29 08:40:19 2007
++++ configure	Tue May 29 08:41:29 2007
+@@ -4584,43 +4584,6 @@
+   am__fastdepCXX_FALSE=
+ fi
  
 -
--# force use of gnu compiler
--CC=gcc
--
- # specific configuration.
- ac_aux_dir=
- for ac_dir in auxconf "$srcdir"/auxconf; do
-@@ -4112,41 +4108,6 @@
-   { echo "$as_me:$LINENO: result: no" >&5
- echo "${ECHO_T}no" >&6; }
-   SET_MAKE="MAKE=${MAKE-make}"
--fi
 -
 -
 -#force use of flex/bison
@@ -50,6 +39,8 @@
 -echo "$as_me: WARNING: We advice you to use gcc as C-compiler" >&2;}
 -  { echo "$as_me:$LINENO: WARNING: You can install it from http://www.gnu.org/software/gcc/" >&5
 -echo "$as_me: WARNING: You can install it from http://www.gnu.org/software/gcc/" >&2;}
- fi
- 
+-fi
+-
  # Checks for header files.
+ 
+ { echo "$as_me:$LINENO: checking for grep that handles long lines and -e" >&5
