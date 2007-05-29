@@ -1,0 +1,5 @@
+A package that returns all the combinations and
+permutations, without repitition, of a given set
+and subset size. Associative arrays are preserved.
+
+WWW: http://pear.php.net/package/Math_Combinatorics/
