@@ -23,7 +23,7 @@ USE_GMAKE=		yes
 USE_GETTEXT=		yes
 USE_LDCONFIG=		yes
 USE_AUTOTOOLS=		libtool:15
-CONFIGURE_ENV=		CXXFLAGS="${CFLAGS}" CFLAGS="${CFLAGS} -I${WRKSRC}"
+CONFIGURE_ENV=		CXXFLAGS="${CFLAGS} -I${WRKSRC}" CFLAGS="${CFLAGS} -I${WRKSRC}"
 CONFIGURE_TARGET=
 DVB_HEADERS=		ca.h dmx.h frontend.h net.h
 
@@ -40,11 +40,6 @@ PLIST_SUB+=	NOLAME=""
 CONFIGURE_ARGS+=	--without-lame
 PLIST_SUB+=	NOLAME="@comment "
 .endif
-.ifdef (WITH_DVB)
-PLIST_SUB+=	NODVB=""
-.else
-PLIST_SUB+=	NODVB="@comment "
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -60,10 +55,8 @@ post-patch:
 	${REINPLACE_CMD} -e "s,xx,," ${WRKSRC}/po/Makefile.in
 	${REINPLACE_CMD} "s,#include <endian.h>,," \
 		${WRKSRC}/kaffeine/src/input/disc/paranoia.cpp
-.ifdef (WITH_DVB)
 	${MKDIR} ${WRKSRC}/linux/dvb
 	cd ${FILESDIR}; ${CP} ${DVB_HEADERS} ${WRKSRC}/linux/dvb
-.endif
 
 post-install:
 	${RM} ${PREFIX}/share/doc/HTML/en/doc/CMakeLists.txt
