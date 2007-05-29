@@ -9,7 +9,7 @@
 _CC := $(CC)
 _CXX := $(CXX)
 _CFLAGS := -fPIC -pedantic -I$(X11BASE)/include -DUSE_XSHM -DHZ=100 $(CFLAGS) \
-	-DPTHREADS
+	-DPTHREADS $(PTHREAD_CFLAGS)
 _CXXFLAGS := -fPIC -pedantic $(CXXFLAGS)
 
 include $(TOP)/configs/default
@@ -26,5 +26,5 @@ GLUT_CFLAGS = -fexceptions
 
 LIB_DIR = $(X11BASE)/lib
 
-APP_LIB_DEPS = -L$(LIB_DIR) -l$(GLUT_LIB) -l$(GLU_LIB) -l$(GL_LIB) -lXext -lXmu -lXi -lX11 -lm
+APP_LIB_DEPS = -L$(LIB_DIR) -l$(GLUT_LIB) -l$(GLU_LIB) -l$(GL_LIB) -lXext -lXmu -lXi -lX11 -lm $(PTHREAD_LIBS)
 
