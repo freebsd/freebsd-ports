@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Archive-Tar
-PORTVERSION=	1.31
+PORTVERSION=	1.32
 CATEGORIES=	archivers perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Archive
@@ -31,10 +31,6 @@ OPTIONS=	TEXT_DIFF "Text::Diff support for ptardiff" off
 
 .if defined(WITH_TEXT_DIFF)
 RUN_DEPENDS+=	${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff
-.endif
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		requires perl 5.6.0 or above
 .endif
 
 .include <bsd.port.post.mk>
