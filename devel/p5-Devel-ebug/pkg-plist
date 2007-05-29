@@ -1,0 +1,32 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Devel/ebug.pm
+%%SITE_PERL%%/Devel/ebug/Backend.pm
+%%SITE_PERL%%/Devel/ebug/Backend/Plugin/ActionPoints.pm
+%%SITE_PERL%%/Devel/ebug/Backend/Plugin/Basic.pm
+%%SITE_PERL%%/Devel/ebug/Backend/Plugin/Codelines.pm
+%%SITE_PERL%%/Devel/ebug/Backend/Plugin/Commands.pm
+%%SITE_PERL%%/Devel/ebug/Backend/Plugin/Eval.pm
+%%SITE_PERL%%/Devel/ebug/Backend/Plugin/Filenames.pm
+%%SITE_PERL%%/Devel/ebug/Backend/Plugin/Output.pm
+%%SITE_PERL%%/Devel/ebug/Backend/Plugin/Pad.pm
+%%SITE_PERL%%/Devel/ebug/Backend/Plugin/Ping.pm
+%%SITE_PERL%%/Devel/ebug/Backend/Plugin/Run.pm
+%%SITE_PERL%%/Devel/ebug/Backend/Plugin/StackTrace.pm
+%%SITE_PERL%%/Devel/ebug/Console.pm
+%%SITE_PERL%%/Devel/ebug/Plugin/ActionPoints.pm
+%%SITE_PERL%%/Devel/ebug/Plugin/Basic.pm
+%%SITE_PERL%%/Devel/ebug/Plugin/Codelines.pm
+%%SITE_PERL%%/Devel/ebug/Plugin/Eval.pm
+%%SITE_PERL%%/Devel/ebug/Plugin/Filenames.pm
+%%SITE_PERL%%/Devel/ebug/Plugin/Output.pm
+%%SITE_PERL%%/Devel/ebug/Plugin/Pad.pm
+%%SITE_PERL%%/Devel/ebug/Plugin/Run.pm
+%%SITE_PERL%%/Devel/ebug/Plugin/StackTrace.pm
+bin/ebug
+bin/ebug_client
+bin/ebug_server
+@dirrmtry %%SITE_PERL%%/Devel/ebug/Plugin
+@dirrmtry %%SITE_PERL%%/Devel/ebug/Backend/Plugin
+@dirrmtry %%SITE_PERL%%/Devel/ebug/Backend
+@dirrmtry %%SITE_PERL%%/Devel/ebug
+@dirrmtry %%SITE_PERL%%/Devel

@@ -1110,6 +1110,7 @@
     SUBDIR += p5-Devel-Trace
     SUBDIR += p5-Devel-TraceCalls
     SUBDIR += p5-Devel-TraceUse
+    SUBDIR += p5-Devel-ebug
     SUBDIR += p5-Devel-ptkdb
     SUBDIR += p5-Dialog
     SUBDIR += p5-Dir-Project

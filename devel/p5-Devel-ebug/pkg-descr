@@ -1,0 +1,21 @@
+A debugger is a computer program that is used to debug other programs.
+Devel::ebug is a simple, extensible Perl debugger with a clean API.
+Using this module, you may easily write a Perl debugger to debug your
+programs. Alternatively, it comes with an interactive debugger, ebug.
+
+perl5db.pl, Perl's current debugger is currently 2,600 lines of magic
+and special cases. The code is nearly unreadable: fixing bugs and
+adding new features is fraught with difficulties. The debugger has no
+test suite which has caused breakage with changes that couldn't be
+properly tested. It will also not debug regexes. Devel::ebug is aimed
+at fixing these problems and delivering a replacement debugger which
+provides a well-tested simple programmatic interface to debugging
+programs. This makes it easier to build debuggers on top of
+Devel::ebug, be they console-, curses-, GUI- or Ajax-based.
+
+There are currently two user interfaces to Devel::debug, ebug and
+ebug_http. ebug is a console-based interface to debugging programs,
+much like perl5db.pl. ebug_http is an innovative web-based interface
+to debugging programs.
+
+WWW:	http://search.cpan.org/dist/Devel-ebug/
