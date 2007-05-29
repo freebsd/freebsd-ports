@@ -1,0 +1,10 @@
+--- configure.in.orig	Tue May 29 13:09:51 2007
++++ configure.in	Tue May 29 13:09:57 2007
+@@ -335,7 +335,6 @@
+ memory.h \
+ poll.h \
+ pwd.h \
+-search.h \
+ select.h \
+ setjmp.h \
+ sgtty.h \

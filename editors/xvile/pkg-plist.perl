@@ -55,6 +55,7 @@ lib/xvile/vile-rc-filt
 lib/xvile/vile-rcs-filt
 lib/xvile/vile-rexx-filt
 lib/xvile/vile-rpm-filt
+lib/xvile/vile-rtf-filt
 lib/xvile/vile-ruby-filt
 lib/xvile/vile-sccs-filt
 lib/xvile/vile-sed-filt
@@ -184,6 +185,7 @@ share/xvile/vile/rc.keywords
 share/xvile/vile/rcs.keywords
 share/xvile/vile/rexx.keywords
 share/xvile/vile/rpm.keywords
+share/xvile/vile/rtf.keywords
 share/xvile/vile/sccs.keywords
 share/xvile/vile/sh.keywords
 share/xvile/vile/sml.keywords
