@@ -3,6 +3,7 @@ etc/sound/events/gossip.soundlist
 libdata/bonobo/servers/GNOME_Peekaboo_Applet.server
 libexec/peekaboo-applet
 share/gnome/applications/gossip.desktop
+share/gnome/gossip/GNOME_Peekaboo_Applet.xml
 share/gnome/gossip/chat.glade
 share/gnome/gossip/file-transfer.glade
 share/gnome/gossip/gossip-account.dtd
@@ -39,7 +40,6 @@ share/gnome/help/gossip/C/figures/gossip-personal-details.png
 share/gnome/help/gossip/C/figures/gossip-roster.png
 share/gnome/help/gossip/C/gossip.xml
 share/gnome/help/gossip/C/legal.xml
-share/gnome/gossip/GNOME_Peekaboo_Applet.xml
 share/gnome/help/gossip/es/figures/gossip-available.png
 share/gnome/help/gossip/es/figures/gossip-away.png
 share/gnome/help/gossip/es/figures/gossip-busy.png
@@ -48,6 +48,14 @@ share/gnome/help/gossip/es/figures/gossip-offline.png
 share/gnome/help/gossip/es/figures/gossip-personal-details.png
 share/gnome/help/gossip/es/figures/gossip-roster.png
 share/gnome/help/gossip/es/gossip.xml
+share/gnome/help/gossip/fr/figures/gossip-available.png
+share/gnome/help/gossip/fr/figures/gossip-away.png
+share/gnome/help/gossip/fr/figures/gossip-busy.png
+share/gnome/help/gossip/fr/figures/gossip-extended-away.png
+share/gnome/help/gossip/fr/figures/gossip-offline.png
+share/gnome/help/gossip/fr/figures/gossip-personal-details.png
+share/gnome/help/gossip/fr/figures/gossip-roster.png
+share/gnome/help/gossip/fr/gossip.xml
 share/gnome/help/gossip/sv/figures/gossip-available.png
 share/gnome/help/gossip/sv/figures/gossip-away.png
 share/gnome/help/gossip/sv/figures/gossip-busy.png
@@ -58,6 +66,7 @@ share/gnome/help/gossip/sv/figures/gossip-roster.png
 share/gnome/help/gossip/sv/gossip.xml
 share/gnome/omf/gossip/gossip-C.omf
 share/gnome/omf/gossip/gossip-es.omf
+share/gnome/omf/gossip/gossip-fr.omf
 share/gnome/omf/gossip/gossip-sv.omf
 share/gnome/sounds/gossip/chat1.wav
 share/gnome/sounds/gossip/chat2.wav
@@ -113,6 +122,8 @@ share/locale/zh_TW/LC_MESSAGES/gossip.mo
 @dirrm share/gnome/omf/gossip
 @dirrm share/gnome/help/gossip/sv/figures
 @dirrm share/gnome/help/gossip/sv
+@dirrm share/gnome/help/gossip/fr/figures
+@dirrm share/gnome/help/gossip/fr
 @dirrm share/gnome/help/gossip/es/figures
 @dirrm share/gnome/help/gossip/es
 @dirrm share/gnome/help/gossip/C/figures
