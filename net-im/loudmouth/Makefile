@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	loudmouth
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	net-im gnome
 MASTER_SITES=	http://ftp.imendio.com/pub/imendio/loudmouth/src/ \
 		${MASTER_SITE_GNOME}
