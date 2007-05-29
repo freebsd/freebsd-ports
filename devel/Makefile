@@ -1691,6 +1691,7 @@
     SUBDIR += pear-PHP_Compat
     SUBDIR += pear-PHP_CompatInfo
     SUBDIR += pear-Pager
+    SUBDIR += pear-PhpDocumentor
     SUBDIR += pear-Structures_DataGrid
     SUBDIR += pear-System_Command
     SUBDIR += pear-Text_Diff
