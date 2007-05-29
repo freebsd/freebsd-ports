@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	netbeans
-PORTVERSION=	5.5
-PORTREVISION=	1
+PORTVERSION=	5.5.1
 CATEGORIES=	java devel
-MASTER_SITES=	http://us1.mirror.netbeans.org/download/5_5/fcs/200610171010/ \
-		http://us2.mirror.netbeans.org/download/5_5/fcs/200610171010/
-DISTNAME=	netbeans-5_5
+MASTER_SITES=	http://us1.mirror.netbeans.org/download/5_5_1/fcs/200704122300/ \
+		http://us2.mirror.netbeans.org/download/5_5_1/fcs/200704122300/
+
+DISTNAME=	netbeans-5_5_1
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
