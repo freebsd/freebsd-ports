@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20070218
+PORTVERSION=	20070529
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		${MASTER_SITE_LOCAL}
@@ -18,12 +18,12 @@ MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Command line virus scanner written entirely in C
 
 LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
-RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
-		arj:${PORTSDIR}/archivers/arj \
-		unzoo:${PORTSDIR}/archivers/unzoo \
-		arc:${PORTSDIR}/archivers/arc
 
-OPTIONS=	MILTER "Compile the milter interface" Off \
+OPTIONS=	ARC "Enable arch archives support" On \
+		ARJ "Enable arj archives support" On \
+		LHA "Enable lha archives support" On \
+		UNZOO "Enavle zoo archives support" On \
+		MILTER "Compile the milter interface" Off \
 		LDAP "libmilter was built with LDAP" Off \
 		CURL "Support URL downloading" Off \
 		STDERR "Print logs to stderr instead of stdout" Off
@@ -49,7 +49,6 @@ CONFIGURE_ARGS=	--with-dbdir=${DBDIR} \
 		--disable-clamuko \
 		--disable-clamav \
 		--enable-bigstack \
-		--disable-gethostbyname_r \
 		--enable-readdir_r \
 		--disable-dependency-tracking \
 		--enable-experimental
@@ -103,8 +102,35 @@ PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 601103
+CONFIGURE_ARGS+=	--disable-gethostbyname_r
+.else
+CONFIGURE_ARGS+=	--enable-gethostbyname_r
+.endif
+
+# This port has a problem with -pthread,
+# force to use -lthr until it's not fixed.
+.if ${OSVERSION} >= 601000
+PTHREAD_LIBS=	-lthr
+.endif
+# Maybe the port is broken for
+# FreeBSD 5.2.1 since -lc_r
+# and -pthread have both issues there.
 .if ${OSVERSION} == 502010
 PTHREAD_LIBS=	-pthread
+.endif
+
+.if !defined(WITHOUT_ARC)
+RUN_DEPENDS+=	arc:${PORTSDIR}/archivers/arc
+.endif
+.if !defined(WITHOUT_ARJ)
+RUN_DEPENDS+=	arj:${PORTSDIR}/archivers/arj
+.endif
+.if !defined(WITHOUT_LHA)
+RUN_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
+.endif
+.if !defined(WITHOUT_UNZOO)
+RUN_DEPENDS+=	unzoo:${PORTSDIR}/archivers/unzoo
 .endif
 
 .if defined(WITH_MILTER)
@@ -139,7 +165,7 @@ EXTRA_PATCHES+=		${FILESDIR}/extra-patch-shared_output.c
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-pthread -lc_r|${PTHREAD_LIBS}|g' \
+	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -E 's,^(pkgconfigdir = ).*$$,\1$$(prefix)/libdata/pkgconfig,g' \
 		${WRKSRC}/Makefile.in
@@ -153,6 +179,7 @@ pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
+	@${INSTALL_DATA} ${WRKSRC}/clamav-config.h ${PREFIX}/include
 .for c in clamd freshclam
 	@[ -f ${PREFIX}/etc/${c}.conf ] || \
 		${CP} ${PREFIX}/etc/${c}.conf.default ${PREFIX}/etc/${c}.conf
