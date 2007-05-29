@@ -2782,7 +2782,6 @@
 %%REALNAME%%/applications/utilities/mesh/conversion/ccm26ToFoam/libccmio/libadf/patch/ADF_internals.c
 %%REALNAME%%/applications/utilities/mesh/conversion/ccm26ToFoam/libccmio/libadf/qmake.vars
 %%REALNAME%%/applications/utilities/mesh/conversion/ccm26ToFoam/libccmio/libadf/version.pro
-%%REALNAME%%/applications/utilities/mesh/conversion/ccm26ToFoam/libccmio/libadf/wmkdep.core
 %%REALNAME%%/applications/utilities/mesh/conversion/ccm26ToFoam/libccmio/libccmio/.cvsignore
 %%REALNAME%%/applications/utilities/mesh/conversion/ccm26ToFoam/libccmio/libccmio/Make/files
 %%REALNAME%%/applications/utilities/mesh/conversion/ccm26ToFoam/libccmio/libccmio/Make/options
