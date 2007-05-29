@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	gnome-panel
-PORTVERSION=	2.18.1
-PORTREVISION?=	1
+PORTVERSION=	2.18.2
+PORTREVISION?=	0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-panel/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -61,8 +61,8 @@ CONFIGURE_ARGS+=--disable-eds
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|evolution.desktop|evolution-2.8.desktop|g' \
-		${WRKSRC}/gnome-panel/panel-default-setup.entries
+#	@${REINPLACE_CMD} -e 's|evolution.desktop|evolution-2.8.desktop|g' \
+#		${WRKSRC}/gnome-panel/panel-default-setup.entries
 	@${FIND} ${WRKSRC} -type f | \
 		${XARGS} -n 10 ${REINPLACE_CMD} -e \
 		's|"applications.menu"|"gnome-applications.menu"|'
@@ -72,8 +72,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%-|%|g' ${WRKSRC}/po/${po}
 .endfor
 .endif
-	@${REINPLACE_CMD} -e 's|True|true|' \
-		${WRKSRC}/gnome-panel/gnome-panel.desktop.in
 
 .include <bsd.port.post.mk>
 
