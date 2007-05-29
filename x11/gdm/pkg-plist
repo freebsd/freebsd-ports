@@ -1,4 +1,4 @@
-%%X11%%bin/gdm-dmx-reconnect-proxy
+bin/gdm-dmx-reconnect-proxy
 bin/gdmXnest
 bin/gdmXnestchooser
 bin/gdmdynamic
