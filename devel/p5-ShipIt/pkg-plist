@@ -1,0 +1,31 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ShipIt/.packlist
+%%SITE_PERL%%/ShipIt.pm
+%%SITE_PERL%%/ShipIt/Conf.pm
+%%SITE_PERL%%/ShipIt/ProjectType.pm
+%%SITE_PERL%%/ShipIt/ProjectType/AutoConf.pm
+%%SITE_PERL%%/ShipIt/ProjectType/Perl.pm
+%%SITE_PERL%%/ShipIt/ProjectType/Perl/MakeMaker.pm
+%%SITE_PERL%%/ShipIt/ProjectType/Perl/ModuleBuild.pm
+%%SITE_PERL%%/ShipIt/State.pm
+%%SITE_PERL%%/ShipIt/Step.pm
+%%SITE_PERL%%/ShipIt/Step/AddToSVNDir.pm
+%%SITE_PERL%%/ShipIt/Step/ChangeVersion.pm
+%%SITE_PERL%%/ShipIt/Step/CheckChangeLog.pm
+%%SITE_PERL%%/ShipIt/Step/Commit.pm
+%%SITE_PERL%%/ShipIt/Step/DistTest.pm
+%%SITE_PERL%%/ShipIt/Step/FindVersion.pm
+%%SITE_PERL%%/ShipIt/Step/MakeDist.pm
+%%SITE_PERL%%/ShipIt/Step/Tag.pm
+%%SITE_PERL%%/ShipIt/Step/UploadCPAN.pm
+%%SITE_PERL%%/ShipIt/Util.pm
+%%SITE_PERL%%/ShipIt/VC.pm
+%%SITE_PERL%%/ShipIt/VC/SVK.pm
+%%SITE_PERL%%/ShipIt/VC/SVN.pm
+bin/shipit
+@dirrmtry %%SITE_PERL%%/ShipIt/VC
+@dirrmtry %%SITE_PERL%%/ShipIt/Step
+@dirrmtry %%SITE_PERL%%/ShipIt/ProjectType/Perl
+@dirrmtry %%SITE_PERL%%/ShipIt/ProjectType
+@dirrmtry %%SITE_PERL%%/ShipIt
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ShipIt
