@@ -11712,6 +11712,7 @@ pecl-operator	ports/devel/pecl-operator
 pecl-pdflib	ports/print/pecl-pdflib
 pecl-pecl_http	ports/www/pecl-pecl_http
 pecl-perl	ports/lang/pecl-perl
+pecl-ps		ports/print/pecl-ps
 pecl-qrencode	ports/graphics/pecl-qrencode
 pecl-radius	ports/net/pecl-radius
 pecl-rar	ports/archivers/pecl-rar
