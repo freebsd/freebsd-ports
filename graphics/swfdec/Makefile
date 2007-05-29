@@ -20,7 +20,7 @@ LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
 
 USE_XLIB=	yes
 USE_SDL=	sdl
-USE_GNOME=	gnomehack gtk20
+USE_GNOME=	gnomehack gtk20 gnomevfs2
 USE_GSTREAMER=	yes
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
