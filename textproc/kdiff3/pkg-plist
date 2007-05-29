@@ -2,6 +2,10 @@ bin/kdiff3
 lib/kde3/libkdiff3part.a
 lib/kde3/libkdiff3part.la
 lib/kde3/libkdiff3part.so
+lib/kde3/libkdiff3plugin.a
+lib/kde3/libkdiff3plugin.la
+lib/kde3/libkdiff3plugin.so
+share/applnk/.hidden/kdiff3plugin.desktop
 share/applnk/Development/kdiff3.desktop
 share/apps/kdiff3/kdiff3_shell.rc
 share/apps/kdiff3part/kdiff3_part.rc
@@ -181,6 +185,7 @@ share/icons/hicolor/16x16/apps/kdiff3.png
 share/icons/hicolor/32x32/apps/kdiff3.png
 share/icons/locolor/16x16/apps/kdiff3.png
 share/icons/locolor/32x32/apps/kdiff3.png
+share/locale/ar/LC_MESSAGES/kdiff3.mo
 share/locale/az/LC_MESSAGES/kdiff3.mo
 share/locale/bg/LC_MESSAGES/kdiff3.mo
 share/locale/br/LC_MESSAGES/kdiff3.mo
@@ -195,6 +200,7 @@ share/locale/es/LC_MESSAGES/kdiff3.mo
 share/locale/et/LC_MESSAGES/kdiff3.mo
 share/locale/fr/LC_MESSAGES/kdiff3.mo
 share/locale/ga/LC_MESSAGES/kdiff3.mo
+share/locale/gl/LC_MESSAGES/kdiff3.mo
 share/locale/hi/LC_MESSAGES/kdiff3.mo
 share/locale/hu/LC_MESSAGES/kdiff3.mo
 share/locale/is/LC_MESSAGES/kdiff3.mo
@@ -210,13 +216,16 @@ share/locale/pt_BR/LC_MESSAGES/kdiff3.mo
 share/locale/ro/LC_MESSAGES/kdiff3.mo
 share/locale/ru/LC_MESSAGES/kdiff3.mo
 share/locale/rw/LC_MESSAGES/kdiff3.mo
+share/locale/sk/LC_MESSAGES/kdiff3.mo
 share/locale/sr/LC_MESSAGES/kdiff3.mo
 share/locale/sr@Latn/LC_MESSAGES/kdiff3.mo
 share/locale/sv/LC_MESSAGES/kdiff3.mo
 share/locale/ta/LC_MESSAGES/kdiff3.mo
 share/locale/tg/LC_MESSAGES/kdiff3.mo
 share/locale/tr/LC_MESSAGES/kdiff3.mo
+share/locale/uk/LC_MESSAGES/kdiff3.mo
 share/locale/zh_CN/LC_MESSAGES/kdiff3.mo
+share/services/kdiff3_plugin.desktop
 share/services/kdiff3part.desktop
 @dirrm share/doc/HTML/sv/kdiff3
 @dirrmtry share/doc/HTML/sv
@@ -224,6 +233,7 @@ share/services/kdiff3part.desktop
 @dirrmtry share/doc/HTML/pt
 @dirrm share/doc/HTML/nl/kdiff3
 @dirrmtry share/doc/HTML/nl
+@dirrm share/doc/HTML/kdiff3
 @dirrm share/doc/HTML/it/kdiff3
 @dirrmtry share/doc/HTML/it
 @dirrm share/doc/HTML/fr/kdiff3
@@ -238,7 +248,6 @@ share/services/kdiff3part.desktop
 @dirrmtry share/doc/HTML/de
 @dirrm share/doc/HTML/da/kdiff3
 @dirrmtry share/doc/HTML/da
-@dirrm share/doc/HTML/kdiff3
 @dirrmtry share/doc/HTML
 @dirrmtry share/doc
 @dirrm share/apps/kdiff3part
