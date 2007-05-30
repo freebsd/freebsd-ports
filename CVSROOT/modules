@@ -8903,6 +8903,7 @@ p5-Catalyst-Model-XML-Feed	ports/www/p5-Catalyst-Model-XML-Feed
 p5-Catalyst-Model-Xapian	ports/www/p5-Catalyst-Model-Xapian
 p5-Catalyst-Plugin-Authentication	ports/www/p5-Catalyst-Plugin-Authentication
 p5-Catalyst-Plugin-Authentication-CDBI	ports/www/p5-Catalyst-Plugin-Authentication-CDBI
+p5-Catalyst-Plugin-Authentication-OpenID	ports/www/p5-Catalyst-Plugin-Authentication-OpenID
 p5-Catalyst-Plugin-Authentication-Store-DBIC	ports/www/p5-Catalyst-Plugin-Authentication-Store-DBIC
 p5-Catalyst-Plugin-Authentication-Store-Htpasswd	ports/www/p5-Catalyst-Plugin-Authentication-Store-Htpasswd
 p5-Catalyst-Plugin-Authorization-ACL	ports/www/p5-Catalyst-Plugin-Authorization-ACL
