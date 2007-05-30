@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.45.1
-PORTREVISION=	1
+PORTVERSION=	4.60.5
 CATEGORIES=	mail
-MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
+MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
 
@@ -19,6 +18,7 @@ COMMENT=	Powerful virus/spam scanning framework for mail gateways
 BUILD_DEPENDS=	\
 	${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
 	${SITE_PERL}/${PERL_ARCH}/File/Spec.pm:${PORTSDIR}/devel/p5-PathTools \
+	${SITE_PERL}/${PERL_ARCH}/Bundle/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 	${SITE_PERL}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools \
@@ -28,18 +28,27 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
 	${SITE_PERL}/Convert/BinHex.pm:${PORTSDIR}/converters/p5-Convert-BinHex \
 	${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
+	${SITE_PERL}/Net/Ident.pm:${PORTSDIR}/net/p5-Net-Ident \
 	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
+	${SITE_PERL}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
+	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \
+	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
+	${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
+	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
+	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
+	${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate \
+	${SITE_PERL}/${PERL_ARCH}/Filesys/Df.pm:${PORTSDIR}/sysutils/p5-Filesys-Df \
+	${SITE_PERL}/Sys/Hostname/Long.pm:${PORTSDIR}/sysutils/p5-Sys-Hostname-Long
+
 RUN_DEPENDS=	${BUILD_DEPENDS} \
-		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash \
-		${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef \
-		${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget \
-		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip \
-		${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar \
-		${LOCALBASE}/bin/zoo:${PORTSDIR}/archivers/zoo \
-		${LOCALBASE}/bin/unarj:${PORTSDIR}/archivers/unarj \
-		${LOCALBASE}/bin/unace:${PORTSDIR}/archivers/unace \
-		${LOCALBASE}/bin/lha:${PORTSDIR}/archivers/lha
+		bash:${PORTSDIR}/shells/bash \
+		tnef:${PORTSDIR}/converters/tnef \
+		wget:${PORTSDIR}/ftp/wget
+
+OPTIONS=	SPAMASSASSIN "Install SpamAssassin" on \
+		CLAMAV "Install ClamAV" on \
+		CLAMAVMODULE "Install ClamAV Module" off \
+		BDC "Install BitDefender" off
 
 CONFLICTS=	MailScanner-[0-9]*
 
@@ -51,17 +60,59 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-install-${PORTVERSION}
 SUB_FILES=	pkg-message
 
 MAN8=		MailScanner.8
-MAN5=		MailScanner.conf.5
-MLINKS=		MailScanner.8 mailscanner.8 \
-		MailScanner.conf.5 mailscanner.conf.5
+MLINKS=		MailScanner.8 mailscanner.8
 
 .include <bsd.port.pre.mk>
 
-DOC_FILES=	INSTALL INSTALL.FreeBSD INSTALL.OpenBSD README
+.if ${PERL_LEVEL} < 500600
+IGNORE=		dependency requires newer Perl
+.endif
+
+.if defined(WITH_SPAMASSASSIN)
+RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+PLIST_SUB+=	SPAMASSASSIN=""
+.else
+PLIST_SUB+=	SPAMASSASSIN="@comment "
+.endif
+
+# backwards compatibility
+.if defined(NO_SPAMASSASSIN_SYMLINK)
+WITHOUT_SPAMASSASSIN_SYMLINK=${NO_SPAMASSASSIN_SYMLINK}
+.endif
+
+.if defined(WITHOUT_SPAMASSASSIN_SYMLINK)
+PLIST_SUB+=	SPAMASSASSIN_SYMLINK="@comment "
+.else
+PLIST_SUB+=	SPAMASSASSIN_SYMLINK=""
+.endif
+
+.if !defined(WITHOUT_CLAMAV)
+RUN_DEPENDS+=	clamscan:${PORTSDIR}/security/clamav
+.endif
+
+.if defined(WITH_CLAMAVMODULE)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Mail/ClamAV.pm:${PORTSDIR}/mail/p5-Mail-ClamAV
+.endif
+
+.if defined(WITH_CLAMAV)||defined(WITH_CLAMAVMODULE)
+RUN_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip \
+		unrar:${PORTSDIR}/archivers/unrar \
+		zoo:${PORTSDIR}/archivers/zoo \
+		unarj:${PORTSDIR}/archivers/unarj \
+		unace:${PORTSDIR}/archivers/unace \
+		lha:${PORTSDIR}/archivers/lha
+.endif
+
+.if defined(WITH_BDC)
+RUN_DEPENDS+=	bdc:${PORTSDIR}/security/bdc
+.endif
+
+DOC_FILES=	INSTALL.FreeBSD INSTALL.OpenBSD README
 ETC_FILES=	MailScanner.conf filename.rules.conf \
 		filetype.rules.conf spam.assassin.prefs.conf \
 		spam.lists.conf virus.scanners.conf \
-		phishing.safe.sites.conf
+		phishing.safe.sites.conf \
+		country.domains.conf
 MCP_FILES=	mcp.spam.assassin.prefs.conf \
 		10_example.cf
 USRLOCAL_FILES_LIB=	\
@@ -70,6 +121,9 @@ USRLOCAL_FILES_LIB=	\
 		kavdaemonclient-wrapper mcafee-autoupdate \
 		nod32-autoupdate rav-autoupdate \
 		rav-wrapper sophos-autoupdate
+
+USE_RC_SUBR=	mailscanner mta
+SUB_LIST+=	RC_SUBR_SUFFIX=${RC_SUBR_SUFFIX}
 
 post-extract:
 	cd ${WRKSRC} && ${TAR} xvzf perl-tar/MailScanner-${PORTVERSION}-${PATCHLEVEL}.tar.gz > /dev/null && ${MV} MailScanner-${PORTVERSION}/* .
@@ -87,6 +141,7 @@ do-build:
 		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g; \
 		s,/opt/MailScanner/lib,${PREFIX}/lib/MailScanner,g; \
 		s,/usr/bin/unrar,${LOCALBASE}/bin/unrar,g; \
+		s,/bin/gunzip,/usr/bin/gunzip,g; \
 		s,/etc/mail/spamassassin,${LOCALBASE}/etc/mail/spamassassin,g;' \
 		${WRKSRC}/etc/MailScanner.conf
 	${PERL} -pi -e \
@@ -96,6 +151,28 @@ do-build:
 		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
 		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g;' \
 		${WRKSRC}/bin/update_virus_scanners
+	${PERL} -pi -e \
+		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
+		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g; \
+		s,%%RC_SUBR%%,${RC_SUBR},g;' \
+		${WRKSRC}/bin/cron/update_virus_scanners.cron
+	${PERL} -pi -e \
+		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
+		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g;' \
+		${WRKSRC}/bin/update_phishing_sites
+	${PERL} -pi -e \
+		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
+		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g; \
+		s,%%RC_SUBR%%,${RC_SUBR},g;' \
+		${WRKSRC}/bin/cron/update_phishing_sites.cron
+	${PERL} -pi -e \
+		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
+		s,/usr/bin/sa-update,${LOCALBASE}/bin/sa-update,g; \
+		s,%%RC_SUBR%%,${RC_SUBR},g;' \
+		${WRKSRC}/bin/cron/sa-update.cron
+	${PERL} -pi -e \
+		's,/etc/MailScanner/MailScanner.conf,${PREFIX}/etc/MailScanner/MailScanner.conf,g;' \
+		${WRKSRC}/bin/clean.SA.cache
 	${PERL} -pi -e \
 		's,/opt/MailScanner/var/MailScanner.pid,/var/run/MailScanner.pid,g; \
 		s,/usr/lib/sendmail,/usr/sbin/sendmail,g; \
@@ -121,19 +198,38 @@ do-build:
 .endfor
 
 do-install:
-	# Step 1: Install libexec files
+	#
+	# Step 1: Install bin files
+	#
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/MailScanner ${PREFIX}/sbin/mailscanner
+	${LN} -s ${LOCALBASE}/sbin/mailscanner ${PREFIX}/sbin/MailScanner
+	#
+	# Step 2: Install libexec files
 	#
 	${MKDIR} ${PREFIX}/libexec/MailScanner
 	${CHMOD} -R ${BINMODE} ${PREFIX}/libexec/MailScanner
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/MailScanner ${PREFIX}/libexec/MailScanner
 	cd ${WRKSRC}/lib && ${FIND} * -name "*-wrapper" -exec \
 		${INSTALL_SCRIPT} {} ${PREFIX}/libexec/MailScanner/{}.sample \;
 	cd ${WRKSRC}/lib && ${FIND} * -name "*-autoupdate" -exec \
 		${INSTALL_SCRIPT} {} ${PREFIX}/libexec/MailScanner/{}.sample \;
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/analyse_SpamAssassin_cache \
+		${PREFIX}/libexec/MailScanner/analyse_SpamAssassin_cache
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/clean.SA.cache \
+		${PREFIX}/libexec/MailScanner/clean.SA.cache
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/clean.quarantine \
+		${PREFIX}/libexec/MailScanner/clean.quarantine
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/update_phishing_sites \
+		${PREFIX}/libexec/MailScanner/update_phishing_sites
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/cron/update_phishing_sites.cron \
+		${PREFIX}/libexec/MailScanner/update_phishing_sites.cron
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/update_virus_scanners \
 		${PREFIX}/libexec/MailScanner/update_virus_scanners
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/cron/update_virus_scanners.cron \
+		${PREFIX}/libexec/MailScanner/update_virus_scanners.cron
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/cron/sa-update.cron \
+		${PREFIX}/libexec/MailScanner/sa-update.cron
 	#
-	# Step 2: Install etc files
+	# Step 3: Install etc files
 	#
 	${MKDIR} ${PREFIX}/etc/MailScanner
 	${CHMOD} ${BINMODE} ${PREFIX}/etc/MailScanner
@@ -153,16 +249,18 @@ do-install:
 		${PREFIX}/etc/MailScanner/mcp/${FILE}.sample
 .endfor
 	#
-	# Step 3: Install files in share
+	# Step 4: Install files in share
 	#
 	@${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/etc && ${FIND} reports -type d ! -name "*.old" -exec \
 		${MKDIR} ${DATADIR}/{} \;
+	# cd ${WRKSRC}/etc && ${FIND} reports -type f ! \( -name "*.orig" -exec ...
 	cd ${WRKSRC}/etc && ${FIND} reports \( -type d -name "*.old" -prune \) \
-		-o \( -type f ! -name "*.orig" -exec ${INSTALL_DATA} {} ${DATADIR}/{}.sample \; \)
+		-o \( -type f ! \( -name "*.orig" -o -name "*.bak" \) \
+		-exec ${INSTALL_DATA} {} ${DATADIR}/{}.sample \; \)
 	${CHMOD} -R ${BINMODE} ${DATADIR}/reports
 	#
-	# Step 4: Install lib
+	# Step 5: Install lib
 	#
 	${MKDIR} ${PREFIX}/lib/MailScanner/MailScanner
 	${MKDIR} ${PREFIX}/lib/MailScanner/MailScanner/CustomFunctions
@@ -171,35 +269,25 @@ do-install:
 	cd ${WRKSRC}/lib/MailScanner && ${FIND} * -type f ! -name "*.orig" -exec \
 		${INSTALL_SCRIPT} {} ${PREFIX}/lib/MailScanner/MailScanner/{} \;
 	#
-	# Step 5: Install Start/Stop scripts
-	#
-	${INSTALL_SCRIPT} ${FILESDIR}/mailscanner.sh \
-		${PREFIX}/etc/rc.d/mailscanner.sh.sample
-	${INSTALL_SCRIPT} ${FILESDIR}/mta.sh ${PREFIX}/etc/rc.d/mta.sh.sample
-	#
 	# Step 6: Docs & Manpages
 	#
+	# Manpage
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD.port ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOC_FILES} ${DOCSDIR}
-	cd ${WRKSRC}/docs && \
-		${FIND} * -type d -exec ${MKDIR} ${DOCSDIR}/{} \; && \
-		${FIND} * -type f ! -name "*.orig" -exec \
-			${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-.endif
-	cd ${WRKSRC}/docs/man && \
-		${INSTALL_MAN} ${MAN5} ${MAN5PREFIX}/man/man5 && \
-		${INSTALL_MAN} ${MAN8} ${MAN8PREFIX}/man/man8
 	# Sophos install script
 	${INSTALL_SCRIPT} ${FILESDIR}/Sophos.install.freebsd ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOC_FILES} ${DOCSDIR}
+.endif
+	cd ${FILESDIR} && \
+		${INSTALL_MAN} ${MAN8} ${MAN5PREFIX}/man/man8
 	${PERL} -pi -e \
 		's,%%LOCALBASE%%,${LOCALBASE},g; \
 		s,%%PREFIX%%,${PREFIX},g;' \
 		${DOCSDIR}/Sophos.install.freebsd
 .if exists(${PREFIX}/etc/MailScanner/MailScanner.conf)
 	# Upgrading MailScanner.conf file... Please wait
-	@${WRKSRC}/bin/upgrade_MailScanner_conf \
+	@${PERL} ${WRKSRC}/bin/upgrade_MailScanner_conf \
 		${PREFIX}/etc/MailScanner/MailScanner.conf \
 		${PREFIX}/etc/MailScanner/MailScanner.conf.sample > \
 		${PREFIX}/etc/MailScanner/MailScanner.conf.new.${PORTVERSION} \
@@ -218,7 +306,7 @@ do-install:
 	@for LANG_DIR in ${DATADIR}/reports/*; do \
 		if [ -f $${LANG_DIR}/languages.conf ]; then \
 			${ECHO} -n Upgrading $${LANG_DIR}/languages.conf... Please wait...; \
-			${WRKSRC}/bin/upgrade_languages_conf \
+			${PERL} ${WRKSRC}/bin/upgrade_languages_conf \
 				$${LANG_DIR}/languages.conf \
 				$${LANG_DIR}/languages.conf.sample > \
 				$${LANG_DIR}/languages.conf.new.${PORTVERSION} \
@@ -234,15 +322,31 @@ do-install:
 	done
 	@${CAT} ${PKGMESSAGE}
 
-renew-wrapper: install
+post-install:
+.if defined(WITH_SPAMASSASSIN) && !defined(WITHOUT_SPAMASSASSIN_SYMLINK)
+	@if [ ! -r ${PREFIX}/etc/mail/spamassassin/mailscanner.cf ]; then \
+		${ECHO} ${LN} -s ${PREFIX}/etc/MailScanner/spam.assassin.prefs.conf ${PREFIX}/etc/mail/spamassassin/mailscanner.cf; \
+		${LN} -s ${PREFIX}/etc/MailScanner/spam.assassin.prefs.conf ${PREFIX}/etc/mail/spamassassin/mailscanner.cf; \
+	else \
+		${ECHO} "File ${PREFIX}/etc/mail/spamassassin/mailscanner.cf already exists!"; \
+	fi;
+.endif
+	# Display warning about new start/stop scripts
+	@${CAT} ${FILESDIR}/rcwarning.txt
+.if !defined(BATCH)
+	@${ECHO} Press ENTER to continue...
+	@read a
+.endif
+
+renew-wrapper: configure
 	# Renew virus wrapper scripts
 	${INSTALL_SCRIPT} ${WRKSRC}/lib/*-wrapper ${PREFIX}/libexec/MailScanner
 
-renew-autoupdate: install
+renew-autoupdate: configure
 	# Renew autoupdate scripts
 	${INSTALL_SCRIPT} ${WRKSRC}/lib/*-autoupdate ${PREFIX}/libexec/MailScanner
 
-renew-reports: install
+renew-reports: configure
 	# Renew reports
 	cd ${WRKSRC}/etc/reports/en && ${FIND} * -type f ! -name "*.orig" \
 		-exec ${INSTALL_DATA} {} ${DATADIR}/reports/en/{}  \;
