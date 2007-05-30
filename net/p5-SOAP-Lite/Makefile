@@ -24,6 +24,8 @@ RUN_DEPENDS=	${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
 		${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+CONFLICTS=	p5-SOAP-Lite-0.60*
+
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--noprompt
 INSTALL_TARGET=	pure_install
