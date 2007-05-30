@@ -509,6 +509,7 @@
     SUBDIR += virtuoso
     SUBDIR += wfb2sql
     SUBDIR += wmjsql
+    SUBDIR += xapian-bindings
     SUBDIR += xapian-core
     SUBDIR += xbase
     SUBDIR += xbsql
