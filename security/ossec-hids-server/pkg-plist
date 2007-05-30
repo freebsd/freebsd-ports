@@ -59,6 +59,7 @@ ossec-hids/rules/vpn_concentrator_rules.xml
 ossec-hids/rules/vpopmail_rules.xml
 ossec-hids/rules/vsftpd_rules.xml
 ossec-hids/rules/web_rules.xml
+ossec-hids/rules/zeus_rules.xml
 @dirrm ossec-hids/var/run
 @dirrm ossec-hids/var
 @dirrm ossec-hids/tmp
