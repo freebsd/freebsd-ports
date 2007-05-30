@@ -10648,6 +10648,7 @@ p5-SOAP		ports/net/p5-SOAP
 p5-SOAP-Amazon-S3	ports/net/p5-SOAP-Amazon-S3
 p5-SOAP-Data-Builder	ports/net/p5-SOAP-Data-Builder
 p5-SOAP-Lite	ports/net/p5-SOAP-Lite
+p5-SOAP-Lite-060	ports/net/p5-SOAP-Lite-060
 p5-SOAP-MySOAP	ports/net/p5-SOAP-MySOAP
 p5-SPOPS	ports/devel/p5-SPOPS
 p5-SQL-Abstract	ports/databases/p5-SQL-Abstract
