@@ -21,11 +21,10 @@
 %%SITE_PERL%%/Bigtop/Deparser.pm
 %%SITE_PERL%%/Bigtop/Docs/About.pod
 %%SITE_PERL%%/Bigtop/Docs/AutoBackends.pod
-%%SITE_PERL%%/Bigtop/Docs/AutoKeywords.pod
 %%SITE_PERL%%/Bigtop/Docs/Cookbook.pod
-%%SITE_PERL%%/Bigtop/Docs/Keywords.pod
+%%SITE_PERL%%/Bigtop/Docs/FullKeywords.pod
 %%SITE_PERL%%/Bigtop/Docs/Modules.pod
-%%SITE_PERL%%/Bigtop/Docs/QuickRef.pod
+%%SITE_PERL%%/Bigtop/Docs/QuickKeywords.pod
 %%SITE_PERL%%/Bigtop/Docs/QuickStart.pod
 %%SITE_PERL%%/Bigtop/Docs/Syntax.pod
 %%SITE_PERL%%/Bigtop/Docs/TOC.pod
