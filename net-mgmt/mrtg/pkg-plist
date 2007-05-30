@@ -2,7 +2,7 @@ bin/cfgmaker
 bin/indexmaker
 bin/mrtg
 bin/rateup
-etc/mrtg/mrtg.cfg.sample
+%%ETCDIR%%/mrtg.cfg.sample
 %%SITE_PERL%%/MRTG_lib.pm
 %%SITE_PERL%%/Net_SNMP_util.pm
 %%SITE_PERL%%/locales_mrtg.pm
@@ -57,7 +57,7 @@ etc/mrtg/mrtg.cfg.sample
 %%DATADIR%%/mrtg-r.png
 %%DATADIR%%/mrtg-ti.gif
 %%DATADIR%%/mrtg-ti.png
-@dirrmtry etc/mrtg
+@dirrmtry %%ETCDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
 @dirrmtry /var/run/mrtg
