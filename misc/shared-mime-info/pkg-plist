@@ -1,13 +1,3 @@
-@exec mkdir -p %%X11BASE%%/share/mime/application
-@exec mkdir -p %%X11BASE%%/share/mime/audio
-@exec mkdir -p %%X11BASE%%/share/mime/image
-@exec mkdir -p %%X11BASE%%/share/mime/inode
-@exec mkdir -p %%X11BASE%%/share/mime/message
-@exec mkdir -p %%X11BASE%%/share/mime/model
-@exec mkdir -p %%X11BASE%%/share/mime/multipart
-@exec mkdir -p %%X11BASE%%/share/mime/packages
-@exec mkdir -p %%X11BASE%%/share/mime/text
-@exec mkdir -p %%X11BASE%%/share/mime/video
 bin/update-mime-database
 libdata/pkgconfig/shared-mime-info.pc
 @unexec [ -f %D/share/mime/XMLnamespaces ] && rm -f %D/share/mime/XMLnamespaces || true
@@ -560,22 +550,5 @@ share/mime/video/x-theora+ogg.xml
 @dirrmtry share/mime/application
 @unexec [ -f %D/share/mime/mime.cache ] && rm -f %D/share/mime/mime.cache || true
 @dirrmtry share/mime
-@unexec [ -f %%X11BASE%%/share/mime/XMLnamespaces ] && rm -f %%X11BASE%%/share/mime/XMLnamespaces || true
-@unexec [ -f %%X11BASE%%/share/mime/globs ] && rm -f %%X11BASE%%/share/mime/globs || true
-@unexec [ -f %%X11BASE%%/share/mime/magic ] && rm -f %%X11BASE%%/share/mime/magic || true
-@unexec [ -f %%X11BASE%%/share/mime/aliases ] && rm -f %%X11BASE%%/share/mime/aliases || true
-@unexec [ -f %%X11BASE%%/share/mime/subclasses ] && rm -f %%X11BASE%%/share/mime/subclasses || true
-@unexec rmdir %%X11BASE%%/share/mime/video 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/share/mime/text 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/share/mime/packages 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/share/mime/multipart 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/share/mime/model 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/share/mime/message 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/share/mime/inode 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/share/mime/image 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/share/mime/audio 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/share/mime/application 2>/dev/null || true
-@unexec [ -f %%X11BASE%%/share/mime/mime.cache ] && rm -f %%X11BASE%%/share/mime/mime.cache || true
-@unexec rmdir %%X11BASE%%/share/mime 2>/dev/null || true
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
