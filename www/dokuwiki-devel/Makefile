@@ -9,7 +9,7 @@ PORTNAME=	dokuwiki
 PORTVERSION=	${DIST_VER:S/${PORTNAME}//:S/-//g}
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	LOCAL/chinsan \
+MASTER_SITES=	LOCAL/chinsan/${PORTNAME} \
 		http://dev.splitbrain.org/browse/snapshots/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${DIST_VER}
@@ -18,20 +18,17 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	chinsan@FreeBSD.org
 COMMENT=	A simple and easy to use wiki, no database required
 
-DIST_VER=	${PORTNAME}-2006-11-27
+DIST_VER=	${PORTNAME}-2007-05-24
 USE_PHP=	gd mbstring pcre session xml zlib
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 
 DOKUWIKI_DIR?=	www/${PORTNAME}
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-rc2007-05-24
 PLIST_SUB=	DOKUWIKI_DIR=${DOKUWIKI_DIR}
 TEMP_PLIST=	${WRKDIR}/temp-pkg-plist
 
 .include <bsd.port.pre.mk>
-
-post-patch:
-	${FIND} ${WRKSRC}/ -name "*.orig" -delete
 
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:
