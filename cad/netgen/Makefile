@@ -7,7 +7,7 @@
 
 PORTNAME=	netgen
 PORTVERSION=	4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 MASTER_SITES=	http://www.hpfem.jku.at/cgi/download.cgi?ID=
 DISTNAME=	ngs${PORTVERSION:S/.//g}
@@ -17,7 +17,6 @@ COMMENT=	An automatic 3D tetrahedral mesh generator
 
 LIB_DEPENDS=	tix8184:${PORTSDIR}/x11-toolkits/tix
 
-USE_GCC=	3.3+
 USE_GMAKE=	yes
 USE_TK=		yes
 USE_TK_BUILD=	yes
@@ -26,6 +25,11 @@ USE_GL=		yes
 ALL_TARGET=	ng
 
 FETCH_BEFORE_ARGS+=	-o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+
+.if !defined(WITHOUT_OCC)
+LIB_DEPENDS+=	TKernel.0:${PORTSDIR}/cad/opencascade
+CXXFLAGS+=	-DOCCGEOMETRY -DOCC52 -DHAVE_WOK_CONFIG_H -DHAVE_CONFIG_H -D${ARCH} -I${LOCALBASE}/OpenCAS/ros/inc
+.endif
 
 TUTOS=		boxcyl.geo cone.geo cube.geo cubeandspheres.geo cubemcyl.geo		\
 		cubemsphere.geo cylinder.geo cylsphere.geo demo2d.in2d ellipsoid.geo	\
@@ -36,16 +40,6 @@ TUTOS=		boxcyl.geo cone.geo cube.geo cubeandspheres.geo cubemcyl.geo		\
 
 DIRTCL=		demoapp ngsolve ngtcltk
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
-
-.if ${ARCH} == "sparc64"
-BROKEN=		internal gcc error (Bug 23159)
-.endif
-
 MACHINE=	${OPSYS:U}
 
 MAKE_ENV=	TK_VER=${TK_VER} TCL_VER=${TCL_VER}	\
@@ -54,9 +48,28 @@ MAKE_ENV=	TK_VER=${TK_VER} TCL_VER=${TCL_VER}	\
 		MACHINE=${MACHINE} MAKE=${GMAKE}	\
 		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		internal gcc error (Bug 23159)
+.endif
+
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Define WITHOUT_OCC if IGES and STEP support is not required."
+	@${ECHO_MSG}
+
 pre-configure:
-	@${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"		\
+	${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"		\
 		${WRKSRC}/ngtcltk/ngappinit.cpp
+.if !defined(WITHOUT_OCC)
+	${REINPLACE_CMD} -e 's|^# occlib|occlib|;s|-pthread|${PTHREAD_LIBS}|'	\
+		${WRKSRC}/libsrc/makefile.mach.FREEBSD	\
+		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|^#OCC|OCC|;s|ros/lin/|ros/bsd/|;	\
+		s|/opt/OpenCASCADE5.2|${LOCALBASE}/OpenCAS|'	\
+		${WRKSRC}/Makefile
+.endif
 
 do-install:
 	${MKDIR} ${DIRTCL:S|^|${PREFIX}/netgen/|g}
@@ -67,11 +80,11 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/tutorials ${DOCSDIR}/ngsolve
-	@${INSTALL_DATA} ${WRKSRC}/doc/ng4.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/ng4.pdf ${DOCSDIR}
 . for doc in ${TUTOS}
-	@${INSTALL_DATA} ${WRKSRC}/tutorials/${doc} ${DOCSDIR}/tutorials
+	${INSTALL_DATA} ${WRKSRC}/tutorials/${doc} ${DOCSDIR}/tutorials
 . endfor
-	@${CP} ${WRKSRC}/ngsolve/doc/* ${DOCSDIR}/ngsolve
+	${CP} ${WRKSRC}/ngsolve/doc/* ${DOCSDIR}/ngsolve
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 

@@ -1,5 +1,5 @@
 --- Makefile.orig	Tue Nov 16 15:29:39 2004
-+++ Makefile	Thu Nov 18 00:05:27 2004
++++ Makefile	Mon May 28 22:20:53 2007
 @@ -21,7 +21,7 @@
  # system libraries:
  #
@@ -18,7 +18,7 @@
  # (maybe you have to remove -ldl)
  #
  #
-@@ -43,9 +43,9 @@
+@@ -43,12 +43,12 @@
  # OCCINC_DIR=$(OCC_DIR)/inc
  # OCCLIB_DIR=$(OCC_DIR)/lib
  #
@@ -30,7 +30,11 @@
 +#OCCLIB_DIR=$(OCC_DIR)/ros/lin/lib
  
  # add libs in makefile.mach.$(MACHINE)
- # occlib = -L$(OCCLIB_DIR) -lTKIGES -lTKBRep -lTKSTEP -lTKSTL
+-# occlib = -L$(OCCLIB_DIR) -lTKIGES -lTKBRep -lTKSTEP -lTKSTL
++# occlib = -L$(OCCLIB_DIR) -lTKIGES -lTKBRep -lTKSTEP -lTKSTL -pthread
+ #
+ include $(LIBSRC_DIR)/makefile.mach.$(MACHINE)
+ #
 @@ -58,7 +58,7 @@
  #
  #
