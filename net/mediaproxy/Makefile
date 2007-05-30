@@ -5,9 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	mediaproxy
-PORTVERSION=	1.7.2
+PORTVERSION=	1.8.2
 CATEGORIES=	net
-MASTER_SITES=	http://mediaproxy.ag-projects.com/old/
+MASTER_SITES=	http://mediaproxy.ag-projects.com/ \
+		http://mediaproxy.ag-projects.com/old/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	steve@energistic.com
