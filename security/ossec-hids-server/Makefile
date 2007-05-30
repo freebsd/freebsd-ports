@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	ossec-hids
-PORTVERSION=	1.1
-PORTREVISION?=	1
+PORTVERSION=	1.2
+PORTREVISION?=	0
 CATEGORIES=	security
-MASTER_SITES=	http://www.ossec.net/files/old/
+MASTER_SITES=	http://www.ossec.net/files/ \
+		http://www.ossec.net/files/old/
 PKGNAMESUFFIX?=	-server
 
 MAINTAINER=	valerio.daelli@gmail.com
