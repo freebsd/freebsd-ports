@@ -7,22 +7,22 @@
 #
 
 PORTNAME=	mutt
-PORTVERSION=	1.4.2.2
-PORTREVISION=	0
+PORTVERSION=	1.4.2.3
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
 		ftp://ftp.demon.co.uk/pub/mirrors/mutt/ \
 		ftp://ftp.parodius.com/pub/mutt/
-DISTFILES=	${DISTNAME}i${EXTRACT_SUFX}
 
-PATCH_SITES=	http://www.mutt.org.ua/download/mutt-${PORTVERSION}/:vvv \
-		http://www2.mutt.org.ua/download/mutt-${PORTVERSION}/:vvv \
-		http://www3.mutt.org.ua/download/mutt-${PORTVERSION}/:vvv \
-		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${PORTVERSION}/:vvv \
-		ftp://ftp3.mutt.org.ua/pub/mutt/mutt-${PORTVERSION}/:vvv
-PATCHFILES=	patch-${PORTVERSION}.rr.compressed.gz:vvv \
-		patch-${PORTVERSION}.vvv.initials.gz:vvv
+PATCHVERSION?=	${PORTVERSION}
+PATCHVERSION=	1.4.2.2
+PATCH_SITES=	http://www.mutt.org.ua/download/mutt-${PATCHVERSION}/:vvv \
+		http://www2.mutt.org.ua/download/mutt-${PATCHVERSION}/:vvv \
+		http://www3.mutt.org.ua/download/mutt-${PATCHVERSION}/:vvv \
+		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${PATCHVERSION}/:vvv \
+		ftp://ftp3.mutt.org.ua/pub/mutt/mutt-${PATCHVERSION}/:vvv
+PATCHFILES=	patch-${PATCHVERSION}.rr.compressed.gz:vvv \
+		patch-${PATCHVERSION}.vvv.initials.gz:vvv
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER?=	udo.schweigert@siemens.com
