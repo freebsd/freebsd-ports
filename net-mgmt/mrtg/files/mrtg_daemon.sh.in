@@ -18,7 +18,7 @@ load_rc_config $name
 : ${mrtg_daemon_pidfile="/var/run/mrtg/mrtg.pid"}
 : ${mrtg_daemon_user="mrtg"}
 : ${mrtg_daemon_group="mrtg"}
-: ${mrtg_daemon_config="%%PREFIX%%/etc/mrtg/mrtg.cfg"}
+: ${mrtg_daemon_config="%%ETCDIR%%/mrtg.cfg"}
 
 : ${mrtg_daemon_flags="--pid-file $mrtg_daemon_pidfile --lock-file /var/run/mrtg/lockfile --confcache-file /var/run/mrtg/confcache --user $mrtg_daemon_user --group $mrtg_daemon_group --daemon $mrtg_daemon_config"}
 

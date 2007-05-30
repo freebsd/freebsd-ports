@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mrtg
-PORTVERSION=	2.15.1
-PORTREVISION=	1
+PORTVERSION=	2.15.2
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
@@ -55,7 +54,7 @@ pre-install:
 		@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-		${MKDIR} -m 755 ${PREFIX}/etc/mrtg
+		${MKDIR} -m 755 ${ETCDIR}
 		${MKDIR} -m 755 ${DATADIR}
 .if !defined(NOPORTDOCS)
 		${MKDIR} -m 755 ${DOCSDIR}
@@ -64,7 +63,7 @@ do-install:
 			${INSTALL_DATA} ${WRKSRC}/$$file ${DOCSDIR}; \
 		done
 .endif
-		${INSTALL_DATA} ${WRKSRC}/contrib/mrtgmk/cfg/mrtg.cfg ${PREFIX}/etc/mrtg/mrtg.cfg.sample
+		${INSTALL_DATA} ${WRKSRC}/contrib/mrtgmk/cfg/mrtg.cfg ${ETCDIR}/mrtg.cfg.sample
 		${INSTALL_DATA} ${WRKSRC}/images/* ${DATADIR}
 		${INSTALL_DATA} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1
 		${INSTALL_DATA} ${WRKSRC}/lib/mrtg2/*.pm ${SITE_PERL}
@@ -78,7 +77,7 @@ post-install:
 .if !defined(BATCH)
 	@${ECHO} ""
 	@${ECHO} "############################################################################"
-	@${ECHO} "# Please create a MRTG config file in ${PREFIX}/etc/mrtg                  #"
+	@${ECHO} "# Please create a MRTG config file in ${ETCDIR}                  #"
 	@${ECHO} "# A configuration file can be automatically generated with cfgmaker        #"
 	@${ECHO} "# A sample configuration file is installed as mrtg.cfg.sample              #"
 	@${ECHO} "#                                                                          #"
