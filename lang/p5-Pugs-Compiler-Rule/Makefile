@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Pugs-Compiler-Rule
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/F/FG/FGLOCK
@@ -16,11 +16,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Compiler for Perl 6 Rules
 
-BUILD_DEPENDS=	p5-Class-InsideOut>=0:${PORTSDIR}/devel/p5-Class-InsideOut \
-		p5-Data-Dump-Streamer>=0:${PORTSDIR}/devel/p5-Data-Dump-Streamer \
+RUN_DEPENDS=	p5-Cache-Cache>=1.05:${PORTSDIR}/devel/p5-Cache-Cache \
 		p5-PadWalker>=1.0:${PORTSDIR}/devel/p5-PadWalker \
-		p5-Parse-Yapp>=0:${PORTSDIR}/devel/p5-Parse-Yapp
-RUN_DEPENDS=	${BUILD_DEPENDS}
+		p5-Parse-Yapp>=0:${PORTSDIR}/devel/p5-Parse-Yapp \
+		p5-YAML-Syck>=0.60:${PORTSDIR}/textproc/p5-YAML-Syck
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
