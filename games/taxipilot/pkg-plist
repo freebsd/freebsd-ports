@@ -5,7 +5,11 @@ lib/libEXT_wavpo.so
 lib/libEXT_wavpo.so.0
 lib/mcop/EXT_WavPlayObject.mcopclass
 share/applnk/Games/taxipilot.desktop
+share/apps/taxipilot/game_data/everything_startscreen.png
+share/apps/taxipilot/game_data/everything.mission
 share/apps/taxipilot/game_data/game_data_tag
+share/apps/taxipilot/game_data/recent_additions_startscreen.png
+share/apps/taxipilot/game_data/joe/joe.mission
 share/apps/taxipilot/game_data/joe/levels/billy_bobs_back_porch.level
 share/apps/taxipilot/game_data/joe/levels/billy_bobs_back_porch.splash
 share/apps/taxipilot/game_data/joe/levels/billy_bobs_back_porch_background.jpg
@@ -84,6 +88,24 @@ share/apps/taxipilot/game_data/joe/taxies/yellow_cab/teleporting_right0008.png
 share/apps/taxipilot/game_data/joe/taxies/yellow_cab/teleporting_right0009.png
 share/apps/taxipilot/game_data/joe/taxies/yellow_cab/teleporting_right0010.png
 share/apps/taxipilot/game_data/joe/taxies/yellow_cab/teleporting_right0011.png
+share/apps/taxipilot/game_data/old_mission/imperfect_mission_startscreen.png
+share/apps/taxipilot/game_data/old_mission/imperfect_mission2_startscreen.png
+share/apps/taxipilot/game_data/old_mission/levels/tubes_fore.png
+share/apps/taxipilot/game_data/old_mission/levels/tubes.level
+share/apps/taxipilot/game_data/old_mission/levels/drawing_board_fore.png
+share/apps/taxipilot/game_data/old_mission/levels/black_border.png
+share/apps/taxipilot/game_data/old_mission/levels/black_background.png
+share/apps/taxipilot/game_data/old_mission/levels/drawing_board.level
+share/apps/taxipilot/game_data/old_mission/levels/drawing_board_back.png
+share/apps/taxipilot/game_data/old_mission/levels/in_the_dark.level
+share/apps/taxipilot/game_data/old_mission/levels/objects/tubes_tube_bottom.png
+share/apps/taxipilot/game_data/old_mission/levels/objects/tubes_tube_right.png
+share/apps/taxipilot/game_data/old_mission/levels/objects/dark_circle.png
+share/apps/taxipilot/game_data/old_mission/levels/objects/tubes_tube_left.png
+share/apps/taxipilot/game_data/old_mission/levels/objects/black_platform.png
+share/apps/taxipilot/game_data/old_mission/levels/objects/black_circle.png
+share/apps/taxipilot/game_data/old_mission/levels/objects/tubes_tube_top.png
+share/apps/taxipilot/game_data/old_mission/levels/objects/dark_platform.png
 share/apps/taxipilot/game_data/old_mission/levels/backgr_1.jpg
 share/apps/taxipilot/game_data/old_mission/levels/desktop.level
 share/apps/taxipilot/game_data/old_mission/levels/desktop_back.jpg
@@ -137,12 +159,8 @@ share/apps/taxipilot/game_data/old_mission/levels/wonderland_fore.png
 share/apps/taxipilot/game_data/old_mission/levels/zero_g.level
 share/apps/taxipilot/game_data/old_mission/levels/zero_g_back.jpg
 share/apps/taxipilot/game_data/old_mission/levels/zero_g_fore.png
-share/apps/taxipilot/game_data/old_mission/mission1_start_screen.jpg
-share/apps/taxipilot/game_data/old_mission/mission2_start_screen.jpg
-share/apps/taxipilot/game_data/old_mission/mission3_start_screen.jpg
 share/apps/taxipilot/game_data/old_mission/old_mission1.mission
 share/apps/taxipilot/game_data/old_mission/old_mission2.mission
-share/apps/taxipilot/game_data/old_mission/old_mission3.mission
 share/apps/taxipilot/game_data/old_mission/passengers/evilbot/idle1_0000.png
 share/apps/taxipilot/game_data/old_mission/passengers/evilbot/idle1_0001.png
 share/apps/taxipilot/game_data/old_mission/passengers/evilbot/idle1_0002.png
@@ -363,12 +381,6 @@ share/apps/taxipilot/game_data/old_mission/taxies/taxi3/teleporting_right0007.pn
 share/apps/taxipilot/game_data/recent_additions.mission
 share/apps/taxipilot/game_data/stefan/crashandburn/CrashAndBurn.mission
 share/apps/taxipilot/game_data/stefan/crashandburn/crashandburn-splash.jpg
-share/apps/taxipilot/game_data/stefan/crashandburn/levels/blubbred0000.png
-share/apps/taxipilot/game_data/stefan/crashandburn/levels/blubbred0001.png
-share/apps/taxipilot/game_data/stefan/crashandburn/levels/blubbred0002.png
-share/apps/taxipilot/game_data/stefan/crashandburn/levels/blubbyel0000.png
-share/apps/taxipilot/game_data/stefan/crashandburn/levels/blubbyel0001.png
-share/apps/taxipilot/game_data/stefan/crashandburn/levels/blubbyel0002.png
 share/apps/taxipilot/game_data/stefan/crashandburn/levels/level-01-bg.jpg
 share/apps/taxipilot/game_data/stefan/crashandburn/levels/level-01-front.png
 share/apps/taxipilot/game_data/stefan/crashandburn/levels/level-02-bg.jpg
@@ -506,9 +518,10 @@ share/icons/hicolor/32x32/apps/taxipilot.png
 share/icons/hicolor/48x48/apps/taxipilot.png
 share/icons/locolor/16x16/apps/taxipilot.png
 share/icons/locolor/32x32/apps/taxipilot.png
+share/locale/it/LC_MESSAGES/taxipilot.mo
 @dirrm share/doc/HTML/en/taxipilot
-@dirrm share/applnk/Games
-@dirrm share/applnk
+@dirrmtry share/applnk/Games
+@dirrmtry share/applnk
 @dirrm share/apps/taxipilot/game_data/stefan/crashandburn/levels/sounds
 @dirrm share/apps/taxipilot/game_data/stefan/crashandburn/levels/objects
 @dirrm share/apps/taxipilot/game_data/stefan/crashandburn/levels

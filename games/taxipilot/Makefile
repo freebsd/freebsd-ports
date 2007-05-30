@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	taxipilot
-PORTVERSION=	0.9.1
-PORTREVISION=	3
+PORTVERSION=	0.9.2
 PORTEPOCH=	1
 CATEGORIES=	games kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -24,4 +23,9 @@ USE_LDCONFIG=	yes
 EXTRA_PATCHES= ${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}" CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-install:
+	-${RM} ${PREFIX}/share/apps/taxipilot/game_data/Makefile*
+
+.include <bsd.port.post.mk>
