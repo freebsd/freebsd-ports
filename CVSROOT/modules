@@ -1592,6 +1592,7 @@ cstringbuffer	ports/devel/cstringbuffer
 csv2latex	ports/textproc/csv2latex
 csv2xml		ports/textproc/csv2xml
 csvdiff		ports/textproc/csvdiff
+csync2		ports/net/csync2
 ct		ports/net/ct
 ctemplate	ports/www/ctemplate
 cthumb		ports/graphics/cthumb
