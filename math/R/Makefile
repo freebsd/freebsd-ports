@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	R
-PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTVERSION=	2.5.0
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -44,7 +43,7 @@ OPTIONS=	ATLAS        "Use ATLAS instead of BLAS/LAPACK"           off \
 		INFO_MANUALS "Install GNU info manuals"                   on  \
 		LETTER_PAPER "Use US Letter paper"                        off
 
-MAN1=		R.1
+MAN1=		R.1 Rscript.1
 
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install install-libR
@@ -57,6 +56,7 @@ USE_PERL5=	yes
 
 CONFIGURE_ENV=	INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644" F77="${F77}" FC="${FC}"
 CONFIGURE_ARGS=	--enable-R-shlib --with-system-bzlib --with-system-zlib \
+		--mandir=${MANPREFIX}/man \
 		rdocdir=${DOCSDIR}
 
 .include <bsd.port.pre.mk>
@@ -167,6 +167,11 @@ BROKEN=		does not compile
 CONFIGURE_ENV+=	MAKEINFO_CMD=${LOCALBASE}/bin/makeinfo
 BUILD_DEPENDS+=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
+		${WRKSRC}/src/nmath/standalone/Makefile.in \
+		${WRKSRC}/src/unix/Makefile.in
 
 post-install:
 	${MV} ${PREFIX}/lib/libR.so ${PREFIX}/lib/libR.so.0
