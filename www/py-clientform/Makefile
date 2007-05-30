@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clientform
-PORTVERSION=	0.2.6
+PORTVERSION=	0.2.7
 CATEGORIES=	www python
 MASTER_SITES=	http://wwwsearch.sourceforge.net/ClientForm/src/ \
 		http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
