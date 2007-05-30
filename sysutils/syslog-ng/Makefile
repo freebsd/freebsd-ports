@@ -8,10 +8,9 @@
 PORTNAME=	syslog-ng
 PORTVERSION=	1.6.12
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.balabit.com/downloads/syslog-ng/1.6/src/ \
-		http://www.balabit.com/downloads/syslog-ng/1.6/src/old/
+MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/1.9/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lars.engels@0x20.net
 COMMENT=	A powerful syslogd replacement
 
 CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
@@ -22,6 +21,8 @@ USE_RC_SUBR=	syslog-ng.sh
 
 OPTIONS=	TCP_WRAPPERS "Enable TCP wrapper support" off
 
+SUB_FILES=	pkg-message
+
 MAN5=		syslog-ng.conf.5
 MAN8=		syslog-ng.8
 
@@ -30,14 +31,6 @@ MAN8=		syslog-ng.8
 .if defined(WITH_TCP_WRAPPERS)
 CONFIGURE_ARGS+=	--enable-tcp-wrapper
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's:__PREFIX__:${PREFIX}:g' \
-		${WRKSRC}/src/syslog-ng.h
-
-post-build:
-	@${SED} -e 's,__PREFIX__,${PREFIX},g' ${PKGDIR}/pkg-message \
-		> ${PKGMESSAGE}
 
 post-install:
 .if !defined(NOPORTDOCS)
