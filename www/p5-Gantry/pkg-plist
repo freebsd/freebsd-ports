@@ -40,6 +40,7 @@
 %%SITE_PERL%%/Gantry/Control/Model/auth_users_cdbi.pm
 %%SITE_PERL%%/Gantry/Docs.pod
 %%SITE_PERL%%/Gantry/Docs/About.pod
+%%SITE_PERL%%/Gantry/Docs/Cookbook.pod
 %%SITE_PERL%%/Gantry/Docs/DBConn.pod
 %%SITE_PERL%%/Gantry/Docs/FAQ.pod
 %%SITE_PERL%%/Gantry/Docs/QuickStart.pod
@@ -59,9 +60,12 @@
 %%SITE_PERL%%/Gantry/Plugins/Cache.pm
 %%SITE_PERL%%/Gantry/Plugins/Cache/FastMmap.pm
 %%SITE_PERL%%/Gantry/Plugins/Cache/Memcached.pm
+%%SITE_PERL%%/Gantry/Plugins/Cache/Storable.pm
 %%SITE_PERL%%/Gantry/Plugins/Calendar.pm
 %%SITE_PERL%%/Gantry/Plugins/DBIxClassConn.pm
-%%SITE_PERL%%/Gantry/Plugins/SOAPMP20.pm
+%%SITE_PERL%%/Gantry/Plugins/PageCache.pm
+%%SITE_PERL%%/Gantry/Plugins/SOAP/Doc.pm
+%%SITE_PERL%%/Gantry/Plugins/SOAP/RPC.pm
 %%SITE_PERL%%/Gantry/Plugins/Session.pm
 %%SITE_PERL%%/Gantry/Plugins/Static.pm
 %%SITE_PERL%%/Gantry/Plugins/Validate.pm
@@ -83,6 +87,7 @@
 %%SITE_PERL%%/Gantry/Utils/DBConnHelper/Script.pm
 %%SITE_PERL%%/Gantry/Utils/DBIxClass.pm
 %%SITE_PERL%%/Gantry/Utils/FormErrors.pm
+%%SITE_PERL%%/Gantry/Utils/FormMunger.pm
 %%SITE_PERL%%/Gantry/Utils/HTML.pm
 %%SITE_PERL%%/Gantry/Utils/Model.pm
 %%SITE_PERL%%/Gantry/Utils/Model/Auth.pm
@@ -91,6 +96,8 @@
 %%SITE_PERL%%/Gantry/Utils/PODViewer.pm
 %%SITE_PERL%%/Gantry/Utils/PerlbalFixup.pm
 %%SITE_PERL%%/Gantry/Utils/SQL.pm
+%%SITE_PERL%%/Gantry/Utils/TablePerms.pm
+%%SITE_PERL%%/Gantry/Utils/Threeway.pm
 %%SITE_PERL%%/Gantry/Utils/Validate.pm
 %%SITE_PERL%%/Template/Plugin/GantryAuthCookie.pm
 @dirrmtry %%SITE_PERL%%/Template/Plugin
@@ -101,6 +108,7 @@
 @dirrmtry %%SITE_PERL%%/Gantry/Template
 @dirrmtry %%SITE_PERL%%/Gantry/Stash/View
 @dirrmtry %%SITE_PERL%%/Gantry/Stash
+@dirrmtry %%SITE_PERL%%/Gantry/Plugins/SOAP
 @dirrmtry %%SITE_PERL%%/Gantry/Plugins/Cache
 @dirrmtry %%SITE_PERL%%/Gantry/Plugins/AutoCRUDHelper
 @dirrmtry %%SITE_PERL%%/Gantry/Plugins

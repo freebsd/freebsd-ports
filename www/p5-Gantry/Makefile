@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Gantry
-PORTVERSION=	3.47
+PORTVERSION=	3.49
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Gantry
@@ -68,9 +68,10 @@ MAN3=		Gantry.3 \
 		Gantry::Control::Model::auth_pages_cdbi.3 \
 		Gantry::Control::Model::auth_users.3 \
 		Gantry::Control::Model::auth_users_cdbi.3 \
-		Gantry::Docs::About.3 Gantry::Docs::DBConn.3 \
-		Gantry::Docs::FAQ.3 Gantry::Docs::QuickStart.3 \
 		Gantry::Docs.3 Gantry::Docs::Tutorial.3 \
+		Gantry::Docs::About.3 Gantry::Docs::DBConn.3 \
+		Gantry::Docs::Cookbook.3 \
+		Gantry::Docs::FAQ.3 Gantry::Docs::QuickStart.3 \
 		Gantry::Docs::Why.3 Gantry::Engine::CGI.3 \
 		Gantry::Engine::MP13.3 Gantry::Engine::MP20.3 \
 		Gantry::Init.3 Gantry::Plugins::AutoCRUD.3 \
@@ -83,8 +84,11 @@ MAN3=		Gantry.3 \
 		Gantry::Plugins::Cache.3 \
 		Gantry::Plugins::Cache::FastMmap.3 \
 		Gantry::Plugins::Cache::Memcached.3 \
+		Gantry::Plugins::Cache::Storable.3 \
 		Gantry::Plugins::DBIxClassConn.3 Gantry::Plugins::Static.3 \
-		Gantry::Plugins::SOAPMP20.3 \
+		Gantry::Plugins::PageCache.3 \
+		Gantry::Plugins::SOAP::Doc.3 \
+		Gantry::Plugins::SOAP::RPC.3 \
 		Gantry::Plugins::Session.3 \
 		Gantry::Plugins::Validate.3 Gantry::Server.3 Gantry::Stash.3 \
 		Gantry::Stash::Controller.3 Gantry::Stash::View.3 \
@@ -97,10 +101,13 @@ MAN3=		Gantry.3 \
 		Gantry::Utils::DBConnHelper::MP20.3 \
 		Gantry::Utils::DBConnHelper::Script.3 \
 		Gantry::Utils::DBIxClass.3 Gantry::Utils::FormErrors.3 Gantry::Utils::HTML.3 \
+		Gantry::Utils::FormMunger.3 \
 		Gantry::Utils::Model.3 Gantry::Utils::Model::Auth.3 \
 		Gantry::Utils::Model::Regular.3 Gantry::Utils::ModelHelper.3 \
 		Gantry::Utils::PODViewer.3 Gantry::Utils::PerlbalFixup.3 \
 		Gantry::Utils::SQL.3 Gantry::Utils::Validate.3 \
+		Gantry::Utils::TablePerms.3 \
+		Gantry::Utils::Threeway.3 \
 		Template::Plugin::GantryAuthCookie.3
 
 .include <bsd.port.pre.mk>
