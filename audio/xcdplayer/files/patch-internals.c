@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
 --- internals.c.orig	Tue Jan 12 19:59:45 1993
-+++ internals.c	Mon Aug 25 00:38:35 2003
++++ internals.c	Wed May 30 19:20:48 2007
 @@ -22,6 +22,9 @@
  
  # include "debug.h"
@@ -29,6 +26,22 @@ $FreeBSD$
  
  int
  cdrom_get_curtime() {
+@@ -76,6 +80,7 @@
+ 	}
+ }
+ 
++static void	update_track();
+ 
+ /*
+  * we poll the cd-rom drive every TIMER_PERIOD milliseconds to see where 
+@@ -83,7 +88,6 @@
+  */
+ void
+ cdrom_timer_on() {
+-	static void	update_track();
+ 
+ 	if (cdi.state & CDROM_STATE_PLAY)
+ 		ivid = XtAppAddTimeOut(appc, TIMER_PERIOD, update_track, NULL);
 @@ -170,7 +174,6 @@
  	struct msf	track_start;
          struct msf	start_addr, end_addr;
