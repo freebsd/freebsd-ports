@@ -81,6 +81,7 @@
     SUBDIR += crescendo
     SUBDIR += cryptcat
     SUBDIR += csup
+    SUBDIR += csync2
     SUBDIR += ct
     SUBDIR += ctrace
     SUBDIR += cvsup
