@@ -55,6 +55,12 @@ bin/olive-gtk
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/status.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tortoise-bzr.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/ui.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/initialize.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tags.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/initialize.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tags.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/initialize.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/tags.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/viz/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/viz/branchwin.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/gtk/viz/graph.py
