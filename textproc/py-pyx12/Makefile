@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyx12
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	textproc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,15 +16,17 @@ DISTNAME=	pyx12-${PORTVERSION:S/.b/b/}
 MAINTAINER=	jholland@kazoocmh.org
 COMMENT=	Validate and convert HIPAA X12 documents
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
+		${PYTHON_SITELIBDIR}/libxslt.py:${PORTSDIR}/textproc/py-libxslt
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
+		${PYTHON_SITELIBDIR}/libxslt.py:${PORTSDIR}/textproc/py-libxslt
 
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 
-MAN1=	x12valid.1 x12norm.1 x12xml.1
+MAN1=	x12valid.1 x12norm.1 x12xml.1 x12html.1 xmlx12.1
 MAN5=	pyx12.conf.xml.5
 SUB_FILES=	pkg-deinstall
 
