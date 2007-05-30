@@ -14,21 +14,19 @@ MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/vips-7.10/
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Free image processing system
 
-LIB_DEPENDS=	fftw3.4:${PORTSDIR}/math/fftw3 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		png.5:${PORTSDIR}/graphics/png \
-		lcms.1:${PORTSDIR}/graphics/lcms
-
-BROKEN=		Missing dependency
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2007-04-10
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		tiff:${PORTSDIR}/graphics/tiff \
+		png:${PORTSDIR}/graphics/png \
+		lcms:${PORTSDIR}/graphics/lcms
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
+USE_PERL5_BUILD=	yes
 USE_GNOME=	gnomehack glib20 pkgconfig pango
 USE_AUTOTOOLS=	libtool:15
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--without-magick --without-x
 
