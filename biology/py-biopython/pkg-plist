@@ -323,6 +323,9 @@
 %%PYTHON_SITELIBDIR%%/Bio/GenBank/Record.py
 %%PYTHON_SITELIBDIR%%/Bio/GenBank/Record.pyc
 %%PYTHON_SITELIBDIR%%/Bio/GenBank/Record.pyo
+%%PYTHON_SITELIBDIR%%/Bio/GenBank/Scanner.py
+%%PYTHON_SITELIBDIR%%/Bio/GenBank/Scanner.pyc
+%%PYTHON_SITELIBDIR%%/Bio/GenBank/Scanner.pyo
 %%PYTHON_SITELIBDIR%%/Bio/GenBank/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/GenBank/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/GenBank/__init__.pyo
@@ -389,6 +392,16 @@
 %%PYTHON_SITELIBDIR%%/Bio/InterPro/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/InterPro/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/InterPro/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Bio/KDTree/CKDTree.py
+%%PYTHON_SITELIBDIR%%/Bio/KDTree/CKDTree.pyc
+%%PYTHON_SITELIBDIR%%/Bio/KDTree/CKDTree.pyo
+%%PYTHON_SITELIBDIR%%/Bio/KDTree/KDTree.py
+%%PYTHON_SITELIBDIR%%/Bio/KDTree/KDTree.pyc
+%%PYTHON_SITELIBDIR%%/Bio/KDTree/KDTree.pyo
+%%PYTHON_SITELIBDIR%%/Bio/KDTree/_CKDTree.so
+%%PYTHON_SITELIBDIR%%/Bio/KDTree/__init__.py
+%%PYTHON_SITELIBDIR%%/Bio/KDTree/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Bio/KDTree/__init__.pyo
 %%PYTHON_SITELIBDIR%%/Bio/KEGG/Compound/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/KEGG/Compound/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/KEGG/Compound/__init__.pyo
@@ -642,6 +655,9 @@
 %%PYTHON_SITELIBDIR%%/Bio/PDB/PDBParser.py
 %%PYTHON_SITELIBDIR%%/Bio/PDB/PDBParser.pyc
 %%PYTHON_SITELIBDIR%%/Bio/PDB/PDBParser.pyo
+%%PYTHON_SITELIBDIR%%/Bio/PDB/PSEA.py
+%%PYTHON_SITELIBDIR%%/Bio/PDB/PSEA.pyc
+%%PYTHON_SITELIBDIR%%/Bio/PDB/PSEA.pyo
 %%PYTHON_SITELIBDIR%%/Bio/PDB/Polypeptide.py
 %%PYTHON_SITELIBDIR%%/Bio/PDB/Polypeptide.pyc
 %%PYTHON_SITELIBDIR%%/Bio/PDB/Polypeptide.pyo
@@ -793,9 +809,33 @@
 %%PYTHON_SITELIBDIR%%/Bio/SeqFeature.py
 %%PYTHON_SITELIBDIR%%/Bio/SeqFeature.pyc
 %%PYTHON_SITELIBDIR%%/Bio/SeqFeature.pyo
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/ClustalIO.py
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/ClustalIO.pyc
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/ClustalIO.pyo
 %%PYTHON_SITELIBDIR%%/Bio/SeqIO/FASTA.py
 %%PYTHON_SITELIBDIR%%/Bio/SeqIO/FASTA.pyc
 %%PYTHON_SITELIBDIR%%/Bio/SeqIO/FASTA.pyo
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/FastaIO.py
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/FastaIO.pyc
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/FastaIO.pyo
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/InsdcIO.py
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/InsdcIO.pyc
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/InsdcIO.pyo
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/Interfaces.py
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/Interfaces.pyc
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/Interfaces.pyo
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/NexusIO.py
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/NexusIO.pyc
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/NexusIO.pyo
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/PhylipIO.py
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/PhylipIO.pyc
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/PhylipIO.pyo
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/StockholmIO.py
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/StockholmIO.pyc
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/StockholmIO.pyo
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/SwissIO.py
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/SwissIO.pyc
+%%PYTHON_SITELIBDIR%%/Bio/SeqIO/SwissIO.pyo
 %%PYTHON_SITELIBDIR%%/Bio/SeqIO/__init__.py
 %%PYTHON_SITELIBDIR%%/Bio/SeqIO/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Bio/SeqIO/__init__.pyo
@@ -1154,91 +1194,92 @@
 %%PYTHON_SITELIBDIR%%/Martel/setup.py
 %%PYTHON_SITELIBDIR%%/Martel/setup.pyc
 %%PYTHON_SITELIBDIR%%/Martel/setup.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/Martel
-@dirrm %%PYTHON_SITELIBDIR%%/BioSQL
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/writers/SeqRecord
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/writers
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/formatdefs
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/expressions/swissprot
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/expressions/embl
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/expressions/blast
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/expressions
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/dbdefs
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/config
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/builders/SeqRecord
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/builders/Search
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/builders
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Wise
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/WWW
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/UniGene
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/SwissProt
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/SubsMat
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Statistics
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Sequencing
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/SeqUtils
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/SeqIO
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Saf
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/SVDSuperimposer
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/SCOP
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Restriction/_Update
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Restriction
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Rebase
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Prosite
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Pathway/Rep
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Pathway
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Parsers
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/PDB
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Nexus
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/NeuralNetwork/Gene
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/NeuralNetwork/BackPropagation
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/NeuralNetwork
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Ndb
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/NMR
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/NBRF
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/MultiProc
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Mindy
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/MetaTool
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Medline
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/MEME
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/LocusLink
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Kabat
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/KEGG/Map
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/KEGG/Enzyme
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/KEGG/Compound
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/KEGG
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/InterPro
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/IntelliGenetics
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/HMM
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Graphics
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Gobase
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Geo
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/GenBank
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/GFF
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/GA/Selection
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/GA/Repair
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/GA/Mutation
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/GA/Crossover
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/GA
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Fasta
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/FSSP
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Enzyme
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Encodings
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Emboss
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Affy
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Ais
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Align
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/AlignAce
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Alphabet
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Application
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Blast
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/CAPS
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/CDD
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Clustalw
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Cluster
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Compass
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Crystal
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Data
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/ECell
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/EUtils/DTDs
 @dirrm %%PYTHON_SITELIBDIR%%/Bio/EUtils
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/ECell
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Data
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Crystal
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Compass
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Cluster
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Clustalw
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/CDD
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/CAPS
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Blast
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Application
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Alphabet
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/AlignAce
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Align
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Ais
-@dirrm %%PYTHON_SITELIBDIR%%/Bio/Affy
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Emboss
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Encodings
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Enzyme
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/FSSP
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Fasta
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/GA/Crossover
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/GA/Mutation
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/GA/Repair
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/GA/Selection
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/GA
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/GFF
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/GenBank
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Geo
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Gobase
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Graphics
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/HMM
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/IntelliGenetics
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/InterPro
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/KDTree
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/KEGG/Compound
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/KEGG/Enzyme
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/KEGG/Map
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/KEGG
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Kabat
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/LocusLink
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/MEME
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Medline
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/MetaTool
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Mindy
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/MultiProc
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/NBRF
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/NMR
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Ndb
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/NeuralNetwork/BackPropagation
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/NeuralNetwork/Gene
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/NeuralNetwork
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Nexus
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/PDB
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Parsers
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Pathway/Rep
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Pathway
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Prosite
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Rebase
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Restriction/_Update
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Restriction
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/SCOP
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/SVDSuperimposer
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Saf
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/SeqIO
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/SeqUtils
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Sequencing
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Statistics
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/SubsMat
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/SwissProt
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/UniGene
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/WWW
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/Wise
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/builders/Search
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/builders/SeqRecord
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/builders
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/config
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/dbdefs
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/expressions/blast
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/expressions/embl
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/expressions/swissprot
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/expressions
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/formatdefs
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/writers/SeqRecord
+@dirrm %%PYTHON_SITELIBDIR%%/Bio/writers
 @dirrm %%PYTHON_SITELIBDIR%%/Bio
+@dirrm %%PYTHON_SITELIBDIR%%/BioSQL
+@dirrm %%PYTHON_SITELIBDIR%%/Martel
