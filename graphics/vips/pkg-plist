@@ -1104,26 +1104,25 @@ libdata/pkgconfig/vipsCC-7.10.pc
 %%PORTDOCS%%%%DOCSDIR%%/ps/libguide.ps
 %%PORTDOCS%%%%DOCSDIR%%/ps/refguide.ps
 share/locale/en_GB/LC_MESSAGES/vips7.mo
-share/locale/malkovich/LC_MESSAGES/vips7.mo
-share/vips/vdump.pro
-share/vips/vips2dj/cmyk/head1
-share/vips/vips2dj/cmyk/head2
-share/vips/vips2dj/cmyk/head3
-share/vips/vips2dj/cmyk/head4
-share/vips/vips2dj/cmyk/head5
-share/vips/vips2dj/cmyk/head6
-share/vips/vips2dj/lab/head1
-share/vips/vips2dj/lab/head2
-share/vips/vips2dj/lab/head3
-share/vips/vips2dj/lab/head4
-share/vips/vips2dj/lab/head5
-share/vips/vips2dj/lab/head6
-share/vips/vips2dj/mono/head1
-share/vips/vips2dj/mono/head2
-share/vips/vips2dj/mono/head3
-share/vips/vips2dj/mono/head4
-share/vips/vips2dj/mono/head5
-share/vips/vips2dj/mono/head6
+%%DATADIR%%/vdump.pro
+%%DATADIR%%/vips2dj/cmyk/head1
+%%DATADIR%%/vips2dj/cmyk/head2
+%%DATADIR%%/vips2dj/cmyk/head3
+%%DATADIR%%/vips2dj/cmyk/head4
+%%DATADIR%%/vips2dj/cmyk/head5
+%%DATADIR%%/vips2dj/cmyk/head6
+%%DATADIR%%/vips2dj/lab/head1
+%%DATADIR%%/vips2dj/lab/head2
+%%DATADIR%%/vips2dj/lab/head3
+%%DATADIR%%/vips2dj/lab/head4
+%%DATADIR%%/vips2dj/lab/head5
+%%DATADIR%%/vips2dj/lab/head6
+%%DATADIR%%/vips2dj/mono/head1
+%%DATADIR%%/vips2dj/mono/head2
+%%DATADIR%%/vips2dj/mono/head3
+%%DATADIR%%/vips2dj/mono/head4
+%%DATADIR%%/vips2dj/mono/head5
+%%DATADIR%%/vips2dj/mono/head6
 @dirrm include/vips
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/appguide
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/cppguide
@@ -1133,8 +1132,8 @@ share/vips/vips2dj/mono/head6
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ps
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/vips/vips2dj/cmyk
-@dirrm share/vips/vips2dj/lab
-@dirrm share/vips/vips2dj/mono
-@dirrm share/vips/vips2dj
-@dirrm share/vips
+@dirrm %%DATADIR%%/vips2dj/cmyk
+@dirrm %%DATADIR%%/vips2dj/lab
+@dirrm %%DATADIR%%/vips2dj/mono
+@dirrm %%DATADIR%%/vips2dj
+@dirrm %%DATADIR%%
