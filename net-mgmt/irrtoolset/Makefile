@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	irrtoolset
-PORTVERSION=	4.8.4
-PORTREVISION=	1
+PORTVERSION=	4.8.5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		ftp://ftp.ripe.net/tools/
@@ -21,6 +20,7 @@ PLIST_FILES=	bin/rpslcheck bin/peval bin/RtConfig
 
 USE_BISON=	yes
 USE_GMAKE=	yes
+USE_GCC=	3.4
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
