@@ -1,0 +1,19 @@
+--- Makefile.in.orig	Mon Jan 29 15:59:00 2007
++++ Makefile.in	Thu May 24 17:13:23 2007
+@@ -245,6 +245,7 @@
+ infodir = @infodir@
+ install_sh = @install_sh@
+ libdir = @libdir@
++libdatadir = @exec_prefix@/libdata
+ libexecdir = @libexecdir@
+ localedir = @localedir@
+ localstatedir = @localstatedir@
+@@ -262,7 +263,7 @@
+ SUBDIRS = nucleo apps demos data docs tests build-utils
+ EXTRA_DIST = nucleo-config.in LICENSE
+ bin_SCRIPTS = nucleo-config
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(libdatadir)/pkgconfig
+ pkgconfig_DATA = nucleo.pc
+ all: all-recursive
+ 

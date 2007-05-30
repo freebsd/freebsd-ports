@@ -1,0 +1,153 @@
+bin/nBundle
+bin/nTest
+bin/nucleo-config
+bin/videoClient
+bin/videoServer
+include/nucleo/core/FileKeeper.H
+include/nucleo/core/PluginManager.H
+include/nucleo/core/ReactiveEngine.H
+include/nucleo/core/ReactiveObject.H
+include/nucleo/core/TimeKeeper.H
+include/nucleo/core/TimeStamp.H
+include/nucleo/core/URI.H
+include/nucleo/core/UUID.H
+include/nucleo/gl/glIncludes.H
+include/nucleo/gl/glUtils.H
+include/nucleo/gl/scenegraph/sgClipper.H
+include/nucleo/gl/scenegraph/sgNode.H
+include/nucleo/gl/scenegraph/sgViewpoint.H
+include/nucleo/gl/shading/glShader.H
+include/nucleo/gl/text/glFont.H
+include/nucleo/gl/text/glFontManager.H
+include/nucleo/gl/text/glString.H
+include/nucleo/gl/texture/glTexture.H
+include/nucleo/gl/texture/glTextureTile.H
+include/nucleo/gl/window/_events.H
+include/nucleo/gl/window/_extEvents.H
+include/nucleo/gl/window/_macos2keysym.H
+include/nucleo/gl/window/glWindow.H
+include/nucleo/gl/window/glWindow_GLX.H
+include/nucleo/gl/window/keysym.H
+include/nucleo/helpers/OpenCV.H
+include/nucleo/helpers/Phone.H
+include/nucleo/image/Image.H
+include/nucleo/image/ImageBridge.H
+include/nucleo/image/RegionOfInterest.H
+include/nucleo/image/encoding/Conversion.H
+include/nucleo/image/encoding/JPEG.H
+include/nucleo/image/encoding/PAM.H
+include/nucleo/image/encoding/PNGenc.H
+include/nucleo/image/encoding/RGBAL.H
+include/nucleo/image/encoding/YpCbCr420.H
+include/nucleo/image/processing/ImageFilter.H
+include/nucleo/image/processing/basic/Paint.H
+include/nucleo/image/processing/basic/Resize.H
+include/nucleo/image/processing/basic/Transform.H
+include/nucleo/image/processing/chromakeying/ChromaKeyingFilter.H
+include/nucleo/image/processing/convolution/Blur.H
+include/nucleo/image/processing/convolution/Convolution.H
+include/nucleo/image/processing/difference/Difference.H
+include/nucleo/image/processing/difference/MotionDetection.H
+include/nucleo/image/processing/difference/SceneChangeDetector.H
+include/nucleo/image/processing/gamma/GammaCorrection.H
+include/nucleo/image/processing/noise/PerlinNoise.H
+include/nucleo/image/sink/ImageSink.H
+include/nucleo/image/sink/bufferedImageSink.H
+include/nucleo/image/sink/glwindowImageSink.H
+include/nucleo/image/sink/imagefileImageSink.H
+include/nucleo/image/sink/nserverImageSink.H
+include/nucleo/image/sink/nudpImageSink.H
+include/nucleo/image/sink/nudppImageSink.H
+include/nucleo/image/sink/serverpushImageSink.H
+include/nucleo/image/source/ImageSource.H
+include/nucleo/image/source/imagefileImageSource.H
+include/nucleo/image/source/noiseImageSource.H
+include/nucleo/image/source/nucImageSource.H
+include/nucleo/image/source/nudpImageSource.H
+include/nucleo/image/source/nudpcImageSource.H
+include/nucleo/image/source/nudppImageSource.H
+include/nucleo/image/source/serverpushImageSource.H
+include/nucleo/image/source/vssImageSource.H
+include/nucleo/network/NetworkUtils.H
+include/nucleo/network/dnssd/DNSService.H
+include/nucleo/network/dnssd/DNSServiceAnnouncer.H
+include/nucleo/network/dnssd/DNSServiceBrowser.H
+include/nucleo/network/http/HttpMessage.H
+include/nucleo/network/http/ServerPush.H
+include/nucleo/network/tcp/BufferedTcpConnection.H
+include/nucleo/network/tcp/Ping.H
+include/nucleo/network/tcp/TcpConnection.H
+include/nucleo/network/tcp/TcpServer.H
+include/nucleo/network/tcp/TcpUtils.H
+include/nucleo/network/udp/StunResolver.H
+include/nucleo/network/udp/UdpPlus.H
+include/nucleo/network/udp/UdpPlusReceiver.H
+include/nucleo/network/udp/UdpPlusSender.H
+include/nucleo/network/udp/UdpReceiver.H
+include/nucleo/network/udp/UdpSender.H
+include/nucleo/network/udp/UdpSocket.H
+include/nucleo/nucleo.H
+%%QT4%%include/nucleo/plugins/qt/qtReactiveEngine.H
+%%QT4%%include/nucleo/plugins/qt/qtFileKeeper.H
+%%QT4%%include/nucleo/plugins/qt/qtTimeKeeper.H
+include/nucleo/utils/AppUtils.H
+include/nucleo/utils/Base64.H
+include/nucleo/utils/ByteOrder.H
+include/nucleo/utils/ConfigDict.H
+include/nucleo/utils/FileUtils.H
+include/nucleo/utils/MD5.H
+include/nucleo/utils/SignalUtils.H
+include/nucleo/utils/StringUtils.H
+include/nucleo/utils/TimeUtils.H
+lib/libNucleo.la
+lib/libNucleo.so
+lib/libNucleo.so.0
+%%QT4%%lib/nucleo/nPqt.la
+%%QT4%%lib/nucleo/nPqt.so
+%%QT4%%lib/nucleo/nPqt.so.0
+libdata/pkgconfig/nucleo.pc
+%%DATADIR%%/Info.plist.tmpl
+%%DATADIR%%/fonts/Vera.ttf
+%%DATADIR%%/fonts/VeraBI.ttf
+%%DATADIR%%/fonts/VeraBd.ttf
+%%DATADIR%%/fonts/VeraIt.ttf
+%%DATADIR%%/fonts/VeraMoBI.ttf
+%%DATADIR%%/fonts/VeraMoBd.ttf
+%%DATADIR%%/fonts/VeraMoIt.ttf
+%%DATADIR%%/fonts/VeraMono.ttf
+%%DATADIR%%/fonts/VeraSe.ttf
+%%DATADIR%%/fonts/VeraSeBd.ttf
+%%DATADIR%%/nucleo.icns
+%%DATADIR%%/nucleo.pdf
+%%DATADIR%%/plugin-list
+@dirrm share/nucleo/fonts
+@dirrm share/nucleo
+%%QT4%%@dirrm lib/nucleo
+@dirrm include/nucleo/utils
+%%QT4%%@dirrm include/nucleo/plugins/qt
+%%QT4%%@dirrm include/nucleo/plugins
+@dirrm include/nucleo/network/udp
+@dirrm include/nucleo/network/tcp
+@dirrm include/nucleo/network/http
+@dirrm include/nucleo/network/dnssd
+@dirrm include/nucleo/network
+@dirrm include/nucleo/image/source
+@dirrm include/nucleo/image/sink
+@dirrm include/nucleo/image/processing/noise
+@dirrm include/nucleo/image/processing/gamma
+@dirrm include/nucleo/image/processing/difference
+@dirrm include/nucleo/image/processing/convolution
+@dirrm include/nucleo/image/processing/chromakeying
+@dirrm include/nucleo/image/processing/basic
+@dirrm include/nucleo/image/processing
+@dirrm include/nucleo/image/encoding
+@dirrm include/nucleo/image
+@dirrm include/nucleo/helpers
+@dirrm include/nucleo/gl/window
+@dirrm include/nucleo/gl/texture
+@dirrm include/nucleo/gl/text
+@dirrm include/nucleo/gl/shading
+@dirrm include/nucleo/gl/scenegraph
+@dirrm include/nucleo/gl
+@dirrm include/nucleo/core
+@dirrm include/nucleo

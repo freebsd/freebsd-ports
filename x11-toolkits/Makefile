@@ -129,6 +129,7 @@
     SUBDIR += movingmotif
     SUBDIR += mowitz
     SUBDIR += neXtaw
+    SUBDIR += nucleo
     SUBDIR += ocaml-lablgtk
     SUBDIR += ocaml-lablgtk2
     SUBDIR += open-motif
