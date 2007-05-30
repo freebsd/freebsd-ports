@@ -597,6 +597,7 @@
     SUBDIR += p5-Catalyst-Model-Xapian
     SUBDIR += p5-Catalyst-Plugin-Authentication
     SUBDIR += p5-Catalyst-Plugin-Authentication-CDBI
+    SUBDIR += p5-Catalyst-Plugin-Authentication-OpenID
     SUBDIR += p5-Catalyst-Plugin-Authentication-Store-DBIC
     SUBDIR += p5-Catalyst-Plugin-Authentication-Store-Htpasswd
     SUBDIR += p5-Catalyst-Plugin-Authorization-ACL
