@@ -21,6 +21,10 @@ bin/fwbuilder
 %%DOCSDIR%%/ReleaseNotes_2.1.7.txt
 %%DOCSDIR%%/ReleaseNotes_2.1.8.html
 %%DOCSDIR%%/ReleaseNotes_2.1.8.txt
+%%DOCSDIR%%/ReleaseNotes_2.1.9.html
+%%DOCSDIR%%/ReleaseNotes_2.1.9.txt
+%%DOCSDIR%%/ReleaseNotes_2.1.10.html
+%%DOCSDIR%%/ReleaseNotes_2.1.10.txt
 share/fwbuilder%%BUILD_VERSION%%/objects_init.xml
 share/fwbuilder%%BUILD_VERSION%%/templates.xml
 share/fwbuilder%%BUILD_VERSION%%/resources.xml
