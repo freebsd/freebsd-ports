@@ -9,9 +9,11 @@ etc/prelude-lml/prelude-lml.conf-dist
 etc/prelude-lml/ruleset/apc-emu.rules
 etc/prelude-lml/ruleset/arbor.rules
 etc/prelude-lml/ruleset/arpwatch.rules
+etc/prelude-lml/ruleset/bonding.rules
 etc/prelude-lml/ruleset/cacti-thold.rules
 etc/prelude-lml/ruleset/checkpoint.rules
 etc/prelude-lml/ruleset/cisco-asa.rules
+etc/prelude-lml/ruleset/cisco-common.rules
 etc/prelude-lml/ruleset/cisco-css.rules
 etc/prelude-lml/ruleset/cisco-ips.rules
 etc/prelude-lml/ruleset/cisco-router.rules
