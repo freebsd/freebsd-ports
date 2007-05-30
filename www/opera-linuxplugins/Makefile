@@ -32,11 +32,11 @@ COMMENT=	Linux plugin support for the native Opera browser
 
 RUN_DEPENDS=	${LOCALBASE}/share/opera/plugins/libnpp.so:${PORTSDIR}/www/opera
 
-OPERA_VER=	9.20
+OPERA_VER=	9.21
 OPERA_MINVER=
 OPERA_REL=	final
-OPERA_DATE=	20070409
-OPERA_BUILD=	638
+OPERA_DATE=	20070510
+OPERA_BUILD=	641
 
 USE_BZIP2=	yes
 USE_LINUX=	yes
