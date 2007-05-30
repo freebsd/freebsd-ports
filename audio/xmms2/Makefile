@@ -184,7 +184,7 @@ PLIST_SUB+=	OFA="@comment "
 .endif
 
 .if defined(WITH_XML)
-USE_GNOME=	xml2
+USE_GNOME=	libxml2
 PLIST_SUB+=	XML=""
 .else
 EXCLUDE+=	--without-plugins="xml" --without-plugins="rss" --without-plugins="xspf"
