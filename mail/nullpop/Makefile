@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	nullpop
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	mail
-MASTER_SITES=	http://memberwebs.com/nielsen/software/nullpop/
+MASTER_SITES=	http://memberwebs.com/stef/software/nullpop/
 
 MAINTAINER=	pankov_p@mail.ru
 COMMENT=	A POP3 server that allows logins, but never returns any email
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--libexecdir="${TARGETDIR}/bin"
+CONFIGURE_ARGS+=--libexecdir="${TARGETDIR}/bin" --mandir="${TARGETDIR}/man"
 
 PLIST_FILES=	bin/nullpop
 MAN8=		nullpop.8
