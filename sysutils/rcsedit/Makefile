@@ -1,4 +1,4 @@
-# New ports collection makefile for:  rcsedit
+# Ports collection makefile for:  rcsedit
 # Date created:  22 June 2006
 # Whom:		Antonio Querubin <tony@lava.net>
 #
@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	rcsedit
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://lava.net/rcsedit/ \
-		http://www.ipv6.lava.net/rcsedit/
+MASTER_SITES=	http://malasada.lava.net/rcsedit/ \
+		http://lava.net/files/rcsedit/ \
+		http://ipv6.lava.net/rcsedit/
 
 MAINTAINER=	rcsedit@lava.net
 COMMENT=	A simple wrapper for RCS written in Perl
