@@ -19,6 +19,9 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		xaric.1
 
+post-patch:
+	${REINPLACE_CMD} -e "s,-Werror,," ${WRKSRC}/Makefile.in
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xaric ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xaric.1 ${MANPREFIX}/man/man1
