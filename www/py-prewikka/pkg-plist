@@ -11,7 +11,7 @@ bin/prewikka-httpd
 %%PYTHON_SITELIBDIR%%/prewikka/Core.py
 %%PYTHON_SITELIBDIR%%/prewikka/Request.py
 %%PYTHON_SITELIBDIR%%/prewikka/ModPythonHandler.py
-%%PYTHON_SITELIBDIR%%/prewikka/locale.py
+%%PYTHON_SITELIBDIR%%/prewikka/localization.py
 %%PYTHON_SITELIBDIR%%/prewikka/view.py
 %%PYTHON_SITELIBDIR%%/prewikka/CheetahFilters.py
 %%PYTHON_SITELIBDIR%%/prewikka/Config.py
@@ -147,7 +147,7 @@ bin/prewikka-httpd
 %%PYTHON_SITELIBDIR%%/prewikka/Core.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/Request.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/ModPythonHandler.pyc
-%%PYTHON_SITELIBDIR%%/prewikka/locale.pyc
+%%PYTHON_SITELIBDIR%%/prewikka/localization.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/view.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/CheetahFilters.pyc
 %%PYTHON_SITELIBDIR%%/prewikka/Config.pyc
@@ -166,7 +166,7 @@ bin/prewikka-httpd
 %%PYTHON_SITELIBDIR%%/prewikka/Core.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/Request.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/ModPythonHandler.pyo
-%%PYTHON_SITELIBDIR%%/prewikka/locale.pyo
+%%PYTHON_SITELIBDIR%%/prewikka/localization.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/view.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/CheetahFilters.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/Config.pyo
@@ -176,7 +176,11 @@ bin/prewikka-httpd
 %%PYTHON_SITELIBDIR%%/prewikka/MyConfigParser.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/siteconfig.pyo
 %%PYTHON_SITELIBDIR%%/prewikka/utils.pyo
+%%NLS%%share/locale/de/LC_MESSAGES/prewikka.mo
+%%NLS%%share/locale/es/LC_MESSAGES/prewikka.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/prewikka.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/prewikka.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/prewikka.mo
 %%DATADIR%%/cgi-bin/prewikka.cgi
 %%DATADIR%%/htdocs/images/prelude-logo.gif
 %%DATADIR%%/htdocs/images/prelude-logo.png
@@ -192,10 +196,13 @@ bin/prewikka-httpd
 %%DATADIR%%/htdocs/css/style.css
 %%DATADIR%%/htdocs/js/functions.js
 %%DATADIR%%/database/sqlite.sql
+%%DATADIR%%/database/sqlite-update-0.9.11.sql
+%%DATADIR%%/database/mysql.sql
 %%DATADIR%%/database/mysql-update-0.9.1.sql
+%%DATADIR%%/database/mysql-update-0.9.11.sql
 %%DATADIR%%/database/pgsql.sql
 %%DATADIR%%/database/pgsql-update-0.9.1.sql
-%%DATADIR%%/database/mysql.sql
+%%DATADIR%%/database/pgsql-update-0.9.11.sql
 %%DATADIR%%/database/mysql2sqlite.sh
 %%DATADIR%%/database/mysql2pgsql.sh
 @dirrmtry %%PYTHON_SITELIBDIR%%/prewikka/modules/auth/cgi
@@ -210,6 +217,20 @@ bin/prewikka-httpd
 @dirrmtry %%DATADIR%%/htdocs/images
 @dirrmtry %%DATADIR%%/htdocs/css
 @dirrmtry %%DATADIR%%/htdocs/js
+%%NLS%%@dirrmtry share/locale/uz/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/uz
+%%NLS%%@dirrmtry share/locale/tk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/tk
+%%NLS%%@dirrmtry share/locale/ne/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ne
+%%NLS%%@dirrmtry share/locale/li/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/li
+%%NLS%%@dirrmtry share/locale/fr_FR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fr_FR
+%%NLS%%@dirrmtry share/locale/fa_IR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fa_IR
+%%NLS%%@dirrmtry share/locale/en_AU/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en_AU
 @dirrm %%DATADIR%%/htdocs
 @dirrm %%DATADIR%%/cgi-bin
 @dirrm %%DATADIR%%/database
