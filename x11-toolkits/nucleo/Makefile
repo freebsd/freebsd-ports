@@ -39,7 +39,7 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif
 .endif
 
-.if !defined(WITHOUT_QT4)
+.if defined(WITH_QT4)
 LIB_DEPENDS+=	QtCore:${PORTSDIR}/devel/qt4-corelib
 MAKE_ARGS+=	QT4MOC=${LOCALBASE}/bin/moc-qt4
 PLIST_SUB+=	QT4=""
