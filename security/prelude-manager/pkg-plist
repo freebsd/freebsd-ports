@@ -1,4 +1,8 @@
 @comment $FreeBSD$
+@exec mkdir -p /var/spool/prelude-manager/failover
+@exec mkdir -p /var/spool/prelude-manager/scheduler
+@exec chmod 700 /var/spool/prelude-manager /var/spool/prelude-manager/failover /var/spool/prelude-manager/scheduler
+@exec chown %%PRELUDEUSER%%:%%PRELUDEGROUP%% /var/run/prelude-manager /var/spool/prelude-manager /var/spool/prelude-manager/failover /var/spool/prelude-manager/scheduler
 bin/prelude-manager
 @unexec if cmp -s %D/etc/prelude-manager/prelude-manager.conf %D/etc/prelude-manager/prelude-manager.conf-dist; then rm -f %D/etc/prelude-manager/prelude-manager.conf; fi
 etc/prelude-manager/prelude-manager.conf-dist
@@ -6,6 +10,8 @@ etc/prelude-manager/prelude-manager.conf-dist
 include/prelude-manager/prelude-manager.h
 lib/prelude-manager/filters/idmef-criteria.la
 lib/prelude-manager/filters/idmef-criteria.so
+lib/prelude-manager/filters/thresholding.so
+lib/prelude-manager/filters/thresholding.la
 lib/prelude-manager/decodes/normalize.so
 lib/prelude-manager/decodes/normalize.la
 %%WITH_PRELUDEDB%%lib/prelude-manager/reports/db.la
