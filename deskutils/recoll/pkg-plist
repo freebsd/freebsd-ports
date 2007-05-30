@@ -43,6 +43,7 @@ share/icons/hicolor/48x48/apps/recoll-searchgui.png
 %%DATADIR%%/images/wordprocessing.png
 %%DATADIR%%/translations/recoll_fr.qm
 %%DATADIR%%/translations/recoll_it.qm
+%%DATADIR%%/translations/recoll_de.qm
 %%DATADIR%%/translations/recoll_uk.qm
 %%DATADIR%%/translations/recoll_ru.qm
 @dirrm %%DATADIR%%/doc
