@@ -6,6 +6,7 @@
 
 PORTNAME=	libvolume_id
 PORTVERSION=	0.75.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.marcuscom.com/downloads/
 
