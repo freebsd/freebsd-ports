@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	prelude-manager
-PORTVERSION=	0.9.7.2
+PORTVERSION=	0.9.8
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/ \
 		http://www.prelude-ids.org/download/releases/old/
@@ -23,6 +23,13 @@ USE_RC_SUBR=	prelude-manager.sh
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		--with-html-dir=${PREFIX}/share/doc \
 			--localstatedir=/var
+
+PRELUDEUSER?=	prelude
+PRELUDEGROUP?=	prelude
+PRELUDEDIR?=	/nonexistent
+
+PRELUDEUID=	281
+PRELUDEGID=	${PRELUDEUID}
 
 .include <bsd.port.pre.mk>
 
