@@ -105,7 +105,9 @@ OOOCXX=		${CCACHE_PREFIX} ${CXX}
 OOOCC=		${CC}
 OOOCXX=		${CXX}
 .endif
-CONFIGURE_ENV+=	CC="${OOOCC}" CXX="${OOOCXX}"
+CONFIGURE_ENV+=	CC="${OOOCC}" CXX="${OOOCXX}"		\
+		CPPFLAGS="-I${LOCALBASE}/include"	\
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
