@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-linuxx86-ja-${PORTVERSION}
 MAINTAINER=	thomas@goodking.ca
 COMMENT=	Citrix(R) Presentation Server(TM) client
 
-RUN_DEPENDS=	${LINUXBASE}${X11BASE}/lib/libXm.so.3:${PORTSDIR}/x11-toolkits/linux-openmotif
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.3:${PORTSDIR}/x11-toolkits/linux-openmotif
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX=	yes
