@@ -7,6 +7,7 @@
 
 PORTNAME=	citrix_ica
 PORTVERSION=	10.0
+PORTREVISION=	1
 CATEGORIES=	japanese net comms linux
 MASTER_SITES=
 DISTNAME=	${PORTNAME}-linuxx86-ja-${PORTVERSION}
