@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xapian-core
-PORTVERSION=	0.9.10
+PORTVERSION=	1.0.0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		${MASTER_SITE_LOCAL}
@@ -19,8 +19,9 @@ CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-MAN1=		quartzcheck.1 quartzcompact.1 quartzdump.1 xapian-compact.1 \
-		xapian-config.1 xapian-progsrv.1 xapian-tcpsrv.1
+MAN1=		quartzcheck.1 quartzcompact.1 quartzdump.1 \
+		xapian-check.1 xapian-compact.1 xapian-config.1 \
+		xapian-progsrv.1 xapian-tcpsrv.1
 
 post-install:
 .for file in delve quest copydatabase
