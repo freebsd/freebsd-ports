@@ -1,3 +1,4 @@
 bin/xload
 share/X11/app-defaults/XLoad
 @dirrmtry share/X11/app-defaults
+@dirrmtry share/X11

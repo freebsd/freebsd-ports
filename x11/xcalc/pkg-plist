@@ -2,3 +2,4 @@ bin/xcalc
 share/X11/app-defaults/XCalc
 share/X11/app-defaults/XCalc-color
 @dirrmtry share/X11/app-defaults
+@dirrmtry share/X11

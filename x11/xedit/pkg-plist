@@ -19,6 +19,7 @@ lib/X11/xedit/lisp/indent.lsp
 share/X11/app-defaults/Xedit-color
 share/X11/app-defaults/Xedit
 @dirrmtry share/X11/app-defaults
+@dirrmtry share/X11
 @dirrm lib/X11/xedit/lisp/progmodes
 @dirrm lib/X11/xedit/lisp
 @dirrm lib/X11/xedit

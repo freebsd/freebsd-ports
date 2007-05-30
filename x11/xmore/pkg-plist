@@ -1,3 +1,4 @@
 bin/xmore
 share/X11/app-defaults/XMore
 @dirrmtry share/X11/app-defaults
+@dirrmtry share/X11

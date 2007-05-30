@@ -2,3 +2,4 @@ bin/editres
 share/X11/app-defaults/Editres-color
 share/X11/app-defaults/Editres
 @dirrmtry share/X11/app-defaults
+@dirrmtry share/X11
