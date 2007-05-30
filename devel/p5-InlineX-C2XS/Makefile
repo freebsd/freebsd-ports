@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	InlineX-C2XS
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/S/SI/SISYPHUS/
@@ -22,14 +22,4 @@ PERL_CONFIGURE=	yes
 
 MAN3=		InlineX::C2XS.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-do-patch:
-	${PERL} -pi -e 's/^our (\W\w+);/use vars q($$1);/o;' \
-	    -e 's/^our\s+(\W\w+)(?!;)/use vars q($$1); $$1/o;' \
-	    -e 'undef $$_ if /^\s*(no|use) warnings/o;' \
-	    ${WRKSRC}/C2XS.pm
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
