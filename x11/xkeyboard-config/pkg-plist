@@ -309,4 +309,5 @@ share/X11/xkb/types/README
 @dirrm share/X11/xkb/symbols
 @dirrm share/X11/xkb/types
 @dirrm share/X11/xkb
+@dirrmtry share/X11
 @dirrmtry /var/lib/xkb

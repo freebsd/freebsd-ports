@@ -1,3 +1,4 @@
 bin/xmag
 share/X11/app-defaults/Xmag
 @dirrmtry share/X11/app-defaults
+@dirrmtry share/X11

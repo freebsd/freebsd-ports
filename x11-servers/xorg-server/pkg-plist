@@ -283,3 +283,4 @@ share/aclocal/xorg-server.m4
 @dirrmtry lib/xorg/modules
 @dirrmtry lib/xorg
 @dirrmtry share/X11/app-defaults
+@dirrmtry share/X11

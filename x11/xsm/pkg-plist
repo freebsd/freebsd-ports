@@ -2,4 +2,5 @@ bin/xsm
 lib/X11/xsm/system.xsm
 share/X11/app-defaults/XSm
 @dirrmtry share/X11/app-defaults
+@dirrmtry share/X11
 @dirrm lib/X11/xsm
