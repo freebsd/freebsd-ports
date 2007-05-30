@@ -1,5 +1,4 @@
 bin/gkbd-indicator-plugins-capplet
-etc/gconf/schemas/desktop_gnome_peripherals_keyboard_xkb.schemas
 include/libgnomekbd/gkbd-config-registry-client.h
 include/libgnomekbd/gkbd-config-registry.h
 include/libgnomekbd/gkbd-desktop-config.h
