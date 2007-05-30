@@ -28,5 +28,6 @@ post-patch:
 		-e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g" \
 		-e "s|/usr/X11R6|${X11BASE}|g" \
 		${WRKSRC}/configure.in
+	${REINPLACE_CMD} -e "s|-Werror||" ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
