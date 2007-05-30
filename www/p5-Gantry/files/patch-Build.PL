@@ -1,5 +1,5 @@
---- Build.PL.orig	Tue Dec 12 00:12:23 2006
-+++ Build.PL	Wed Jan  3 11:37:09 2007
+--- Build.PL.orig	Tue May  1 05:49:23 2007
++++ Build.PL	Wed May  2 09:23:17 2007
 @@ -36,10 +36,10 @@
      web_files => \@web_dirs,
      build_web_directory => 'root',
@@ -15,7 +15,7 @@
      },
      create_makefile_pl => 'passthrough',
      license            => 'perl',
-@@ -98,7 +98,7 @@
+@@ -105,7 +105,7 @@
  if ( not -d $template_path ) {
      my $make_path = $build->y_n(
          "$template_path does not exist, should I make it?",
@@ -24,11 +24,10 @@
      );
  
      if ( $make_path ) {
-@@ -131,101 +131,6 @@
-         $self->process_web_files( 'web' );
+@@ -139,103 +139,6 @@
  
      }
--
+ 
 -    sub ACTION_install {
 -        my $self = shift;
 -        
@@ -77,14 +76,18 @@
 -
 -EO_INIT
 -
--            open( INIT_FILE, "> blib/lib/Gantry/Init.pm" ) or die "$!";
--            print INIT_FILE $init_pkg;
--            close INIT_FILE;
+-            for my $dst ("blib/lib/Gantry/Init.pm", $initf) {
+-                my $orig_mode = (stat $dst)[2];
+-                my $rw_mode = 0666;
+-                chmod $rw_mode, $dst or die "Can't chmod $rw_mode $dst: $!";
+-                open( INIT_FILE, "> $dst" ) or die "$!";
+-                print INIT_FILE $init_pkg;
+-                close INIT_FILE;
 -
--            open( INIT_FILE, "> $initf" ) or die "$!";
--            print INIT_FILE $init_pkg;
--            close INIT_FILE;
--            
+-                # restore the perms
+-                chmod $orig_mode, $dst or die "Can't chmod $orig_mode $dst: $!";
+-            } 
+-
 -            eval {  
 -                # this should have been done during perl Build.PL
 -                if ( not -d $tmpl_dir ) {
@@ -101,12 +104,11 @@
 -                $self->blib, 'web', $p->{build_web_directory} 
 -            );  
 -            
--            my $num;
 -            eval {
 -                require File::Copy::Recursive;
 -                import File::Copy::Recursive 'dircopy';
 -
--                $num = dircopy($blib_tmpl_dir, $tmpl_dir);
+-                $num = dircopy($blib_tmpl_dir, $tmpl_dir) || 0;
 -            };
 -            if ( $@ ) {
 -                print "\nError coping templates:\n";
