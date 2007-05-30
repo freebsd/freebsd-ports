@@ -16264,6 +16264,7 @@ xanim		ports/multimedia/xanim
 xaniroc		ports/x11/xaniroc
 xantfarm	ports/x11/xantfarm
 xaos		ports/graphics/xaos
+xapian-bindings	ports/databases/xapian-bindings
 xapian-core	ports/databases/xapian-core
 xapply		ports/sysutils/xapply
 xar		ports/archivers/xar
