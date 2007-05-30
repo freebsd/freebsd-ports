@@ -1,0 +1,13 @@
+--- pdns_recursor.cc.orig	Wed Jan 17 23:45:51 2007
++++ pdns_recursor.cc	Thu Jan 18 00:01:47 2007
+@@ -1669,8 +1669,8 @@
+     ::arg().set("daemon","Operate as a daemon")="yes";
+     ::arg().set("log-common-errors","If we should log rather common errors")="yes";
+     ::arg().set("chroot","switch to chroot jail")="";
+-    ::arg().set("setgid","If set, change group id to this gid for more security")="";
+-    ::arg().set("setuid","If set, change user id to this uid for more security")="";
++    ::arg().set("setgid","If set, change group id to this gid for more security")="pdns";
++    ::arg().set("setuid","If set, change user id to this uid for more security")="pdns_recursor";
+ #ifdef WIN32
+     ::arg().set("quiet","Suppress logging of questions and answers")="off";
+     ::arg().setSwitch( "register-service", "Register the service" )= "no";

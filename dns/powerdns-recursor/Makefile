@@ -7,7 +7,7 @@
 
 PORTNAME=	powerdns-recursor
 PORTVERSION=	3.1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/ \
 		http://mirrors.evolva.ro/powerdns.com/releases/
@@ -20,9 +20,10 @@ BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GCC=	3.4
+USE_GCC=	3.4+
 
-OPTIONS=	STATIC	"Enable Full STATIC" off
+OPTIONS=	STATIC	"Enable Full STATIC" off \
+		SETUID	"Run as pdns_recursor user" on
 
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -41,6 +42,10 @@ MAKE_ENV+=STATIC=full
 PLIST_SUB+=	STATIC="@comment "
 .endif
 
+.if defined(WITH_SETUID)
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-setuid
+.endif
+
 .if exists(/usr/include/ucontext.h) && ${OSVERSION} >= 500000
 UCONTEXT!=	${AWK} '/setcontext/ { print "YES" }' \
 		/usr/include/ucontext.h
@@ -57,9 +62,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's;"/etc/powerdns/";"${PREFIX}/etc/pdns/";' \
 		${WRKSRC}/config.h
 
+.if defined(WITH_SETUID)
 pre-install:
 		@${ECHO} "==>  Creating custom user to run pdns_recursor..."
 		@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+.endif
 
 post-install:
 .if !exists(${PREFIX}/etc/pdns/recursor.conf)
