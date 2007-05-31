@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lives
-DISTVERSION=	0.9.8.4
-PORTREVISION=	2
+DISTVERSION=	0.9.8.5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.xs4all.nl/%7Esalsaman/lives/current/ CENKES
 DISTNAME=	LiVES-${DISTVERSION}
@@ -60,6 +59,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-d alsa|-d oss|' ${WRKSRC}/src/main.c
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|weed-plugins||' ${WRKSRC}/lives-plugins/Makefile.in
 	@${REINPLACE_CMD} -e '/^docdir/s|=.*|=${DOCSDIR}|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' ${WRKSRC}/Makefile.in
 	@${FIND} ${WRKSRC}/ -name Makefile.in |\
 		${XARGS} ${EGREP} -lm1 '(-O3|-fexpensive-optimizations)' |\
 		${XARGS} ${REINPLACE_CMD} -e 's|-O3||;s|-fexpensive-optimizations||'
