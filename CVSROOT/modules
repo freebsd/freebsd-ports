@@ -15964,6 +15964,7 @@ wdiag		ports/net-mgmt/wdiag
 wdiff		ports/textproc/wdiff
 wdm		ports/x11/wdm
 weatherget	ports/astro/weatherget
+weathermap	ports/net-mgmt/weathermap
 weatherspect	ports/astro/weatherspect
 web-traceroute	ports/www/web-traceroute
 web2ldap	ports/www/web2ldap
