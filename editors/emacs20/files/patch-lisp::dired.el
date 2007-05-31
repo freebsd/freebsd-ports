@@ -4,7 +4,7 @@
           ;; weiand: changed: year potentially unaligned
  ;;old			  s "\\(" HH:MM "\\|" s yyyy "\\|" yyyy s "\\)"))
  			  s "\\(" HH:MM "\\|" s "?" yyyy "\\|" yyyy s "\\)"))
-+	 (freebsd-ja (concat s mm "/" dd s "\\(" HH:MM "\\|" s yyyy "\\)"))
++	 (freebsd-ja (concat s "?" mm "\\(/\\|" s "\\)" dd s "\\(" HH:MM "\\|" s yyyy "\\)"))
  	 (japanese (concat mm k s dd k s "\\(" s HH:MM "\\|" yyyy k "\\)")))
  	 ;; The "[0-9]" below requires the previous column to end in a digit.
  	 ;; This avoids recognizing `1 may 1997' as a date in the line:
