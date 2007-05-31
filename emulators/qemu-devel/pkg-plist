@@ -1,19 +1,20 @@
 bin/qemu
 bin/qemu-img
 bin/qemu-system-arm
+bin/qemu-system-m68k
 bin/qemu-system-mips
 bin/qemu-system-mips64
 bin/qemu-system-mips64el
 bin/qemu-system-mipsel
 bin/qemu-system-ppc
 bin/qemu-system-ppc64
+bin/qemu-system-ppcemb
 bin/qemu-system-sparc
 bin/qemu-system-x86_64
 %%PORTDOCS%%%%DOCSDIR%%/qemu-doc.html
 %%PORTDOCS%%%%DOCSDIR%%/qemu-tech.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%DATADIR%%/bios.bin
-%%DATADIR%%/linux_boot.bin
 %%DATADIR%%/vgabios.bin
 %%DATADIR%%/vgabios-cirrus.bin
 %%DATADIR%%/ppc_rom.bin

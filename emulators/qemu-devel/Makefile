@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.9.0s.20070405
-PORTREVISION=	4
+PORTVERSION=	0.9.0s.20070526
 CATEGORIES=	emulators
 MASTER_SITES=	http://qemu.org/:release \
 		http://qemu-forum.ipi.fi/qemu-snapshots/:snapshot \
@@ -15,11 +14,11 @@ MASTER_SITES=	http://qemu.org/:release \
 		http://www.volny.cz/xnavara/qemu/:snapshot \
 		http://people.brandeis.edu/~jcoiner/qemu_idedma/:idedma \
 		http://people.freebsd.org/~maho/qemu/:misc
-DISTNAME=	${PORTNAME}-snapshot-2007-04-05_05
+PKGNAMESUFFIX=	-devel
+DISTNAME=	${PORTNAME}-snapshot-2007-05-26_05
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
 DIST_SUBDIR=	qemu
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	QEMU CPU Emulator - development snapshot
@@ -31,7 +30,6 @@ USE_GETOPT_LONG=	yes
 USE_PERL5=	yes
 USE_GCC=	3.4
 PATCH_STRIP=	-p1
-CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}
 MAKE_ENV+=	BSD_MAKE="${MAKE}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 MAN1=		qemu.1 qemu-img.1
 ONLY_FOR_ARCHS=	amd64 i386
@@ -47,6 +45,7 @@ OPTIONS=	KQEMU "Build with (alpha!) accelerator module" Off \
 .include <bsd.port.pre.mk>
 
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
+CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}
 
 .if defined(WITHOUT_SDL)
 CONFIGURE_ARGS+=	--disable-sdl --disable-gfx-check
