@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xscreensaver
-PORTVERSION=	5.01
-PORTREVISION=	4
+PORTVERSION=	5.02
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/ \
 		http://dougbarton.us/Downloads/
@@ -104,7 +103,7 @@ post-patch:
 	@ ${CP} ${WRKSRC}/configure ${WRKSRC}/configure.Patched
 	@ ${SED} -e 's#-lpthread#${PTHREAD_LIBS}#g' \
 		-e 's#malloc.h#stdlib.h#g' \
-		-e 's#/usr/X11R6#${X11BASE}#g' \
+		-e 's#/usr/X11R6#${LOCALBASE}#g' \
 		${WRKSRC}/configure.Patched > ${WRKSRC}/configure
 
 post-install:
