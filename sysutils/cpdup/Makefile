@@ -6,17 +6,23 @@
 #
 
 PORTNAME=	cpdup
-PORTVERSION=	1.05
-PORTREVISION=	1
+PORTVERSION=	1.07
 CATEGORIES=	sysutils
 MASTER_SITES=	http://apollo.backplane.com/FreeBSDPorts/ \
 		http://utenti.gufi.org/~gmarco/files/distfiles/
 
 MAINTAINER=	gmarco@gufi.org
-COMMENT=	A comprehensive filesystem mirroring program
+COMMENT=	A comprehensive filesystem mirroring and backup program
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+CFLAGS+=	-D_ST_FLAGS_PRESENT_
 
 MAN1=		cpdup.1
-MANCOMPRESSED=	yes
 PLIST_FILES=	bin/cpdup
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/cpdup ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/cpdup.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
