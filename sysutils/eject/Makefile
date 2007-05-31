@@ -16,6 +16,8 @@ MASTER_SITES=	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/OD/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for ejecting media from CD or optical disk drive
 
+FORBIDDEN=	Setuid root and has security issues
+
 PLIST_FILES=	sbin/eject
 PORTDOCS=	README README-J
 
