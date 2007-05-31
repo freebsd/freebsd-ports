@@ -1,0 +1,11 @@
+bin/weathermap
+%%EXAMPLESDIR%%/weathermap.conf
+%%EXAMPLESDIR%%/weathermap.html
+%%EXAMPLESDIR%%/weathermap.png
+%%EXAMPLESDIR%%/overlib_mini.js
+%%EXAMPLESDIR%%/weathermap-background.png
+%%EXAMPLESDIR%%/weathermap-overlib.html
+@unexec if cmp -s %%PREFIX%%/etc/weathermap/weathermap.conf %%PREFIX%%/etc/weathermap/weathermap.sample.conf; then rm %%PREFIX%%/etc/weathermap/weathermap.conf; fi
+etc/weathermap/weathermap.sample.conf
+@dirrmtry etc/weathermap
+@dirrm %%EXAMPLESDIR%%
