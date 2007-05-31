@@ -1,5 +1,5 @@
---- maketorrent.py.orig	Tue Jun  6 20:43:43 2006
-+++ maketorrent.py	Thu Jun 15 14:46:45 2006
+--- ./maketorrent.py.orig	Thu Mar  1 22:12:55 2007
++++ ./maketorrent.py	Mon May  7 06:06:21 2007
 @@ -14,6 +14,13 @@
  
  from __future__ import division

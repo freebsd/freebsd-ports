@@ -1,5 +1,5 @@
---- torrentinfo-console.py.orig	Tue Jun  6 20:44:39 2006
-+++ torrentinfo-console.py	Thu Jun 15 14:47:13 2006
+--- ./torrentinfo-console.py.orig	Thu Mar  1 22:13:28 2007
++++ ./torrentinfo-console.py	Mon May  7 06:06:21 2007
 @@ -12,6 +12,13 @@
  
  # Written by Henry 'Pi' James, Loring Holden and Matt Chisholm

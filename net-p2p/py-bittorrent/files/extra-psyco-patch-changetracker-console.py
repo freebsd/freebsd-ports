@@ -1,5 +1,5 @@
---- changetracker-console.py.orig	Tue Jun  6 20:43:34 2006
-+++ changetracker-console.py	Thu Jun 15 14:45:47 2006
+--- ./changetracker-console.py.orig	Thu Mar  1 22:12:53 2007
++++ ./changetracker-console.py	Mon May  7 06:06:21 2007
 @@ -12,6 +12,13 @@
  
  # Written by Henry 'Pi' James and Bram Cohen

@@ -1,5 +1,5 @@
---- maketorrent-console.py	Wed Oct 12 01:08:27 2005
-+++ maketorrent-console.py	Wed Oct 12 07:58:31 2005
+--- ./maketorrent-console.py.orig	Thu Mar  1 22:12:55 2007
++++ ./maketorrent-console.py	Mon May  7 06:06:21 2007
 @@ -12,6 +12,13 @@
  
  # Written by Bram Cohen
@@ -11,6 +11,6 @@
 +except:
 +  pass
 +
- if __name__ == '__main__':
-     from BitTorrent.platform import install_translation
-     install_translation()
+ app_name = "BitTorrent"
+ from BTL.translation import _
+ 

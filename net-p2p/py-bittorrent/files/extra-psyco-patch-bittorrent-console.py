@@ -1,5 +1,5 @@
---- bittorrent-console.py.orig	Tue Jun  6 20:43:25 2006
-+++ bittorrent-console.py	Thu Jun 15 14:44:32 2006
+--- ./bittorrent-console.py.orig	Thu Mar  1 22:12:51 2007
++++ ./bittorrent-console.py	Mon May  7 06:06:21 2007
 @@ -14,6 +14,13 @@
  
  from __future__ import division

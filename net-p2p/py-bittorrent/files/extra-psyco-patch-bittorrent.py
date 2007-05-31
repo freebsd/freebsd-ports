@@ -1,5 +1,5 @@
---- bittorrent.py.orig	Tue May 16 20:59:49 2006
-+++ bittorrent.py	Thu May 18 23:04:01 2006
+--- ./bittorrent.py.orig	Thu Mar  1 22:12:53 2007
++++ ./bittorrent.py	Mon May  7 06:06:21 2007
 @@ -14,6 +14,13 @@
  
  from __future__ import division
@@ -12,5 +12,5 @@
 +  pass
 +
  app_name = "BitTorrent"
+ 
  import os
- import sys
