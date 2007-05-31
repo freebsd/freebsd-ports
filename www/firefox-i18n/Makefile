@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox-i18n
-PORTVERSION=	2.0.0.3
+PORTVERSION=	2.0.0.4
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA_EXTENDED/firefox/releases/${PORTVERSION}/linux-i686/xpi \
 		CENKES/myports/xpi/firefox-i18n-2.0.0.2:alt
@@ -29,7 +29,7 @@ USE_XPI=	*firefox
 # perl -ne 'if (/([a-zA-Z_-]+)\.xpi/){print "$1 ";};' fetch.out
 
 FIREFOX_I18N_ALL=	af ar be bg ca cs da de el en-GB es-AR es-ES eu fi fr fy-NL ga-IE gu-IN he hu it \
-			ja ka ko ku lt mk mn nb-NO nl nn-NO pa-IN pl pt-BR pt-PT ru sk sl sv-SE tr \
+			ja ka ko ku lt mk mn nb-NO nl nn-NO pa-IN pl pt-BR pt-PT ro ru sk sl sv-SE tr \
 			uk-UA zh-CN zh-TW
 .ifdef PACKAGE_BUILDING
 FIREFOX_I18N?=	all
