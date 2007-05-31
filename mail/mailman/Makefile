@@ -7,7 +7,7 @@
 
 PORTNAME=	mailman
 DISTVERSION=	2.1.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.list.org/
@@ -22,6 +22,7 @@ OPTIONS=	SENDMAIL "for use with sendmail" off \
 		EXIM3 "for use with exim3" off \
 		EXIM4 "for use with exim4" off \
 		POSTFIX "for use with postfix" off \
+		COURIER "for use with courier" off \
 		CHINESE "support for Chinese mailing lists" off \
 		HTDIG "htdig integration patches" off
 
@@ -64,31 +65,43 @@ IMGFILES=	PythonPowered.png mailman.jpg mm-icon.png
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SENDMAIL)
-.if defined(WITH_EXIM3) || defined(WITH_EXIM4) || defined(WITH_POSTFIX)
+.if defined(WITH_EXIM3) || defined(WITH_EXIM4) || defined(WITH_POSTFIX) || \
+defined(WITH_COURIER)
 BROKEN=	choose only one MTA integration
 .endif
 MAIL_GID?=	mailnull
 .endif
 
 .if defined(WITH_EXIM3)
-.if defined(WITH_SENDMAIL) || defined(WITH_EXIM4) || defined(WITH_POSTFIX)
+.if defined(WITH_SENDMAIL) || defined(WITH_EXIM4) || defined(WITH_POSTFIX) || \
+defined(WITH_COURIER)
 BROKEN=	choose only one MTA integration
 .endif
 MAIL_GID?=	nobody
 .endif
 
 .if defined(WITH_EXIM4)
-.if defined(WITH_SENDMAIL) || defined(WITH_EXIM3) || defined(WITH_POSTFIX)
+.if defined(WITH_SENDMAIL) || defined(WITH_EXIM3) || defined(WITH_POSTFIX) || \
+defined(WITH_COURIER)
 BROKEN=	choose only one MTA integration
 .endif
 MAIL_GID?=	mail
 .endif
 
 .if defined(WITH_POSTFIX)
-.if defined(WITH_SENDMAIL) || defined(WITH_EXIM3) || defined(WITH_EXIM4)
+.if defined(WITH_SENDMAIL) || defined(WITH_EXIM3) || defined(WITH_EXIM4) || \
+defined(WITH_COURIER)
 BROKEN=	choose only one MTA integration
 .endif
 MAIL_GID?=	mailman
+.endif
+
+.if defined(WITH_COURIER)
+.if defined(WITH_SENDMAIL) || defined(WITH_EXIM3) || defined(WITH_EXIM4) || \
+defined(WITH_POSTFIX)
+BROKEN=	choose only one MTA integration
+.endif
+MAIL_GID?=	courier
 .endif
 
 .if defined(WITH_CHINESE)
