@@ -5,7 +5,13 @@ and other related problems.
 
 The GLPK package includes the following main components:
 
-- implementation of the simplex method;
-- implementation of the exact simplex method based on bignum (rational)
+* implementation of the simplex method;
+* implementation of the exact simplex method based on
+  bignum (rational) arithmetic;
+* implementation of the primal-dual interior-point method;
+* implementation of the branch-and-bound method;
+* application program interface (API);
+* GNU MathProg modeling language (a subset of AMPL);
+* GLPSOL, a stand-alone LP/MIP solver.
 
 WWW: http://www.gnu.org/software/glpk/glpk.html
