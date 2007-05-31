@@ -40,6 +40,7 @@
     SUBDIR += xf86-video-i740
     SUBDIR += xf86-video-i810
     SUBDIR += xf86-video-imstt
+    SUBDIR += xf86-video-intel
     SUBDIR += xf86-video-mga
     SUBDIR += xf86-video-neomagic
     SUBDIR += xf86-video-newport
