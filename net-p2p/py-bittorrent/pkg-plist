@@ -18,15 +18,15 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BTL/ConvertedMetainfo.py
 %%PYTHON_SITELIBDIR%%/BTL/ConvertedMetainfo.pyc
 %%PYTHON_SITELIBDIR%%/BTL/ConvertedMetainfo.pyo
+%%PYTHON_SITELIBDIR%%/BTL/CurrentRateMeasure.py
+%%PYTHON_SITELIBDIR%%/BTL/CurrentRateMeasure.pyc
+%%PYTHON_SITELIBDIR%%/BTL/CurrentRateMeasure.pyo
 %%PYTHON_SITELIBDIR%%/BTL/DictWithLists.py
 %%PYTHON_SITELIBDIR%%/BTL/DictWithLists.pyc
 %%PYTHON_SITELIBDIR%%/BTL/DictWithLists.pyo
 %%PYTHON_SITELIBDIR%%/BTL/EventLoop.py
 %%PYTHON_SITELIBDIR%%/BTL/EventLoop.pyc
 %%PYTHON_SITELIBDIR%%/BTL/EventLoop.pyo
-%%PYTHON_SITELIBDIR%%/BTL/GetTorrent.py
-%%PYTHON_SITELIBDIR%%/BTL/GetTorrent.pyc
-%%PYTHON_SITELIBDIR%%/BTL/GetTorrent.pyo
 %%PYTHON_SITELIBDIR%%/BTL/HostIP.py
 %%PYTHON_SITELIBDIR%%/BTL/HostIP.pyc
 %%PYTHON_SITELIBDIR%%/BTL/HostIP.pyo
@@ -54,6 +54,9 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BTL/ThreadProxy.py
 %%PYTHON_SITELIBDIR%%/BTL/ThreadProxy.pyc
 %%PYTHON_SITELIBDIR%%/BTL/ThreadProxy.pyo
+%%PYTHON_SITELIBDIR%%/BTL/TimeLeftEstimator.py
+%%PYTHON_SITELIBDIR%%/BTL/TimeLeftEstimator.pyc
+%%PYTHON_SITELIBDIR%%/BTL/TimeLeftEstimator.pyo
 %%PYTHON_SITELIBDIR%%/BTL/__init__.py
 %%PYTHON_SITELIBDIR%%/BTL/__init__.pyc
 %%PYTHON_SITELIBDIR%%/BTL/__init__.pyo
@@ -61,6 +64,9 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BTL/atexit_threads.py
 %%PYTHON_SITELIBDIR%%/BTL/atexit_threads.pyc
 %%PYTHON_SITELIBDIR%%/BTL/atexit_threads.pyo
+%%PYTHON_SITELIBDIR%%/BTL/auth_xmlrpc.py
+%%PYTHON_SITELIBDIR%%/BTL/auth_xmlrpc.pyc
+%%PYTHON_SITELIBDIR%%/BTL/auth_xmlrpc.pyo
 %%PYTHON_SITELIBDIR%%/BTL/bdistutils.py
 %%PYTHON_SITELIBDIR%%/BTL/bdistutils.pyc
 %%PYTHON_SITELIBDIR%%/BTL/bdistutils.pyo
@@ -85,9 +91,15 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BTL/cache_map.py
 %%PYTHON_SITELIBDIR%%/BTL/cache_map.pyc
 %%PYTHON_SITELIBDIR%%/BTL/cache_map.pyo
+%%PYTHON_SITELIBDIR%%/BTL/circular_list.py
+%%PYTHON_SITELIBDIR%%/BTL/circular_list.pyc
+%%PYTHON_SITELIBDIR%%/BTL/circular_list.pyo
 %%PYTHON_SITELIBDIR%%/BTL/connection_cache.py
 %%PYTHON_SITELIBDIR%%/BTL/connection_cache.pyc
 %%PYTHON_SITELIBDIR%%/BTL/connection_cache.pyo
+%%PYTHON_SITELIBDIR%%/BTL/cpu_meter.py
+%%PYTHON_SITELIBDIR%%/BTL/cpu_meter.pyc
+%%PYTHON_SITELIBDIR%%/BTL/cpu_meter.pyo
 %%PYTHON_SITELIBDIR%%/BTL/crypto_message.py
 %%PYTHON_SITELIBDIR%%/BTL/crypto_message.pyc
 %%PYTHON_SITELIBDIR%%/BTL/crypto_message.pyo
@@ -100,6 +112,9 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BTL/defer.py
 %%PYTHON_SITELIBDIR%%/BTL/defer.pyc
 %%PYTHON_SITELIBDIR%%/BTL/defer.pyo
+%%PYTHON_SITELIBDIR%%/BTL/dlock.py
+%%PYTHON_SITELIBDIR%%/BTL/dlock.pyc
+%%PYTHON_SITELIBDIR%%/BTL/dlock.pyo
 %%PYTHON_SITELIBDIR%%/BTL/ebencode.py
 %%PYTHON_SITELIBDIR%%/BTL/ebencode.pyc
 %%PYTHON_SITELIBDIR%%/BTL/ebencode.pyo
@@ -118,6 +133,9 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BTL/fileutils.py
 %%PYTHON_SITELIBDIR%%/BTL/fileutils.pyc
 %%PYTHON_SITELIBDIR%%/BTL/fileutils.pyo
+%%PYTHON_SITELIBDIR%%/BTL/formatters.py
+%%PYTHON_SITELIBDIR%%/BTL/formatters.pyc
+%%PYTHON_SITELIBDIR%%/BTL/formatters.pyo
 %%PYTHON_SITELIBDIR%%/BTL/greenlet_yielddefer.py
 %%PYTHON_SITELIBDIR%%/BTL/greenlet_yielddefer.pyc
 %%PYTHON_SITELIBDIR%%/BTL/greenlet_yielddefer.pyo
@@ -133,12 +151,24 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BTL/ipfreemmap.py
 %%PYTHON_SITELIBDIR%%/BTL/ipfreemmap.pyc
 %%PYTHON_SITELIBDIR%%/BTL/ipfreemmap.pyo
+%%PYTHON_SITELIBDIR%%/BTL/iphelp.py
+%%PYTHON_SITELIBDIR%%/BTL/iphelp.pyc
+%%PYTHON_SITELIBDIR%%/BTL/iphelp.pyo
+%%PYTHON_SITELIBDIR%%/BTL/iptypes.py
+%%PYTHON_SITELIBDIR%%/BTL/iptypes.pyc
+%%PYTHON_SITELIBDIR%%/BTL/iptypes.pyo
 %%PYTHON_SITELIBDIR%%/BTL/language.py
 %%PYTHON_SITELIBDIR%%/BTL/language.pyc
 %%PYTHON_SITELIBDIR%%/BTL/language.pyo
+%%PYTHON_SITELIBDIR%%/BTL/likewin32api.py
+%%PYTHON_SITELIBDIR%%/BTL/likewin32api.pyc
+%%PYTHON_SITELIBDIR%%/BTL/likewin32api.pyo
 %%PYTHON_SITELIBDIR%%/BTL/log.py
 %%PYTHON_SITELIBDIR%%/BTL/log.pyc
 %%PYTHON_SITELIBDIR%%/BTL/log.pyo
+%%PYTHON_SITELIBDIR%%/BTL/md5crypt.py
+%%PYTHON_SITELIBDIR%%/BTL/md5crypt.pyc
+%%PYTHON_SITELIBDIR%%/BTL/md5crypt.pyo
 %%PYTHON_SITELIBDIR%%/BTL/obsoletepythonsupport.py
 %%PYTHON_SITELIBDIR%%/BTL/obsoletepythonsupport.pyc
 %%PYTHON_SITELIBDIR%%/BTL/obsoletepythonsupport.pyo
@@ -154,21 +184,33 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BTL/protocol.py
 %%PYTHON_SITELIBDIR%%/BTL/protocol.pyc
 %%PYTHON_SITELIBDIR%%/BTL/protocol.pyo
+%%PYTHON_SITELIBDIR%%/BTL/psapi.py
+%%PYTHON_SITELIBDIR%%/BTL/psapi.pyc
+%%PYTHON_SITELIBDIR%%/BTL/psapi.pyo
 %%PYTHON_SITELIBDIR%%/BTL/pycurllib.py
 %%PYTHON_SITELIBDIR%%/BTL/pycurllib.pyc
 %%PYTHON_SITELIBDIR%%/BTL/pycurllib.pyo
+%%PYTHON_SITELIBDIR%%/BTL/rand_tools.py
+%%PYTHON_SITELIBDIR%%/BTL/rand_tools.pyc
+%%PYTHON_SITELIBDIR%%/BTL/rand_tools.pyo
 %%PYTHON_SITELIBDIR%%/BTL/reactor_magic.py
 %%PYTHON_SITELIBDIR%%/BTL/reactor_magic.pyc
 %%PYTHON_SITELIBDIR%%/BTL/reactor_magic.pyo
 %%PYTHON_SITELIBDIR%%/BTL/replication.py
 %%PYTHON_SITELIBDIR%%/BTL/replication.pyc
 %%PYTHON_SITELIBDIR%%/BTL/replication.pyo
+%%PYTHON_SITELIBDIR%%/BTL/routes.py
+%%PYTHON_SITELIBDIR%%/BTL/routes.pyc
+%%PYTHON_SITELIBDIR%%/BTL/routes.pyo
 %%PYTHON_SITELIBDIR%%/BTL/sparse_set.py
 %%PYTHON_SITELIBDIR%%/BTL/sparse_set.pyc
 %%PYTHON_SITELIBDIR%%/BTL/sparse_set.pyo
 %%PYTHON_SITELIBDIR%%/BTL/stackthreading.py
 %%PYTHON_SITELIBDIR%%/BTL/stackthreading.pyc
 %%PYTHON_SITELIBDIR%%/BTL/stackthreading.pyo
+%%PYTHON_SITELIBDIR%%/BTL/torrent_health.py
+%%PYTHON_SITELIBDIR%%/BTL/torrent_health.pyc
+%%PYTHON_SITELIBDIR%%/BTL/torrent_health.pyo
 %%PYTHON_SITELIBDIR%%/BTL/translation.py
 %%PYTHON_SITELIBDIR%%/BTL/translation.pyc
 %%PYTHON_SITELIBDIR%%/BTL/translation.pyo
@@ -181,15 +223,9 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BTL/ubencode.py
 %%PYTHON_SITELIBDIR%%/BTL/ubencode.pyc
 %%PYTHON_SITELIBDIR%%/BTL/ubencode.pyo
-%%PYTHON_SITELIBDIR%%/BTL/uos.py
-%%PYTHON_SITELIBDIR%%/BTL/uos.pyc
-%%PYTHON_SITELIBDIR%%/BTL/uos.pyo
-%%PYTHON_SITELIBDIR%%/BTL/upath.py
-%%PYTHON_SITELIBDIR%%/BTL/upath.pyc
-%%PYTHON_SITELIBDIR%%/BTL/upath.pyo
-%%PYTHON_SITELIBDIR%%/BTL/uplatform.py
-%%PYTHON_SITELIBDIR%%/BTL/uplatform.pyc
-%%PYTHON_SITELIBDIR%%/BTL/uplatform.pyo
+%%PYTHON_SITELIBDIR%%/BTL/win32icmp.py
+%%PYTHON_SITELIBDIR%%/BTL/win32icmp.pyc
+%%PYTHON_SITELIBDIR%%/BTL/win32icmp.pyo
 %%PYTHON_SITELIBDIR%%/BTL/xmlrpclib2.py
 %%PYTHON_SITELIBDIR%%/BTL/xmlrpclib2.pyc
 %%PYTHON_SITELIBDIR%%/BTL/xmlrpclib2.pyo
@@ -199,9 +235,6 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BTL/yielddefer25.py
 %%PYTHON_SITELIBDIR%%/BTL/yielddefer25.pyc
 %%PYTHON_SITELIBDIR%%/BTL/yielddefer25.pyo
-%%PYTHON_SITELIBDIR%%/BTL/zurllib.py
-%%PYTHON_SITELIBDIR%%/BTL/zurllib.pyc
-%%PYTHON_SITELIBDIR%%/BTL/zurllib.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/AutoUpdateButler.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/AutoUpdateButler.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/AutoUpdateButler.pyo
@@ -259,6 +292,9 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BitTorrent/GUI_wx/ListCtrl.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/GUI_wx/ListCtrl.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/GUI_wx/ListCtrl.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/GUI_wx/MakeTorrent.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/GUI_wx/MakeTorrent.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/GUI_wx/MakeTorrent.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/GUI_wx/OpenDialog.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/GUI_wx/OpenDialog.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/GUI_wx/OpenDialog.pyo
@@ -274,6 +310,9 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BitTorrent/GUI_wx/__init__.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/GUI_wx/__init__.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/GUI_wx/__init__.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/GetTorrent.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/GetTorrent.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/GetTorrent.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/HTTPConnector.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/HTTPConnector.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/HTTPConnector.pyo
@@ -343,6 +382,9 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BitTorrent/RawServer_twisted.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/RawServer_twisted.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/RawServer_twisted.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/RequestManager.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/RequestManager.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/RequestManager.pyo
 %%PYTHON_SITELIBDIR%%/BitTorrent/Rerequester.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/Rerequester.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/Rerequester.pyo
@@ -430,6 +472,9 @@ bin/torrentinfo-console
 %%PYTHON_SITELIBDIR%%/BitTorrent/uplatform.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/uplatform.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/uplatform.pyo
+%%PYTHON_SITELIBDIR%%/BitTorrent/zurllib.py
+%%PYTHON_SITELIBDIR%%/BitTorrent/zurllib.pyc
+%%PYTHON_SITELIBDIR%%/BitTorrent/zurllib.pyo
 %%PYTHON_SITELIBDIR%%/Zeroconf.py
 %%PYTHON_SITELIBDIR%%/Zeroconf.pyc
 %%PYTHON_SITELIBDIR%%/Zeroconf.pyo
@@ -542,6 +587,7 @@ share/locale/zh_TW/LC_MESSAGES/bittorrent.mo
 %%GUI%%@dirrm share/pixmaps/BitTorrent/logo
 %%GUI%%@dirrm share/pixmaps/BitTorrent/flags
 %%GUI%%@dirrm share/pixmaps/BitTorrent
+%%GUI%%@dirrmtry share/pixmaps
 @dirrmtry share/locale/nb_NO/LC_MESSAGES
 @dirrmtry share/locale/nb_NO
 @dirrm %%PYTHON_SITELIBDIR%%/khashmir

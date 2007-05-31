@@ -1,7 +1,10 @@
---- launchmany-curses.py.orig	Tue Jun  6 20:43:42 2006
-+++ launchmany-curses.py	Thu Jun 15 14:46:16 2006
-@@ -13,6 +13,14 @@
+--- ./launchmany-curses.py.orig	Thu Mar  1 22:12:55 2007
++++ ./launchmany-curses.py	Mon May  7 06:06:21 2007
+@@ -14,8 +14,16 @@
+ # License.
  
+ # Written by John Hoffman
+
  from __future__ import division
 +
 +try:

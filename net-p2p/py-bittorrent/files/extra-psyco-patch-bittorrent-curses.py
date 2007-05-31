@@ -1,5 +1,5 @@
---- bittorrent-curses.py.orig	Tue Jun  6 20:43:25 2006
-+++ bittorrent-curses.py	Thu Jun 15 14:45:05 2006
+--- ./bittorrent-curses.py.orig	Thu Mar  1 22:12:51 2007
++++ ./bittorrent-curses.py	Mon May  7 06:06:21 2007
 @@ -15,6 +15,13 @@
  
  from __future__ import division

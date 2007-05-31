@@ -1,6 +1,6 @@
---- BitTorrent/platform.py.orig	Tue Oct 10 19:23:41 2006
-+++ BitTorrent/platform.py	Sat Dec 16 08:32:18 2006
-@@ -281,7 +281,7 @@
+--- ./BitTorrent/platform.py.orig	Mon May  7 05:42:18 2007
++++ ./BitTorrent/platform.py	Mon May  7 05:42:46 2007
+@@ -289,7 +289,7 @@
              osx = True
  
  def calc_unix_dirs():

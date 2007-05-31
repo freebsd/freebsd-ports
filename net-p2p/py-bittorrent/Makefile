@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	BitTorrent
-PORTVERSION=	4.26.0
-PORTREVISION=	2
+PORTVERSION=	5.0.7
 PORTEPOCH=	1
 CATEGORIES?=	net-p2p python
 MASTER_SITES=	http://download.bittorrent.com/dl/
@@ -34,7 +33,7 @@ PORTDOCS=	\
 		README.txt \
 		TRACKERLESS.txt \
 		credits.txt \
-		credits-l10n.txt
+		redirdonate.html
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-noportdocs-setup.py
 .endif
@@ -200,7 +199,7 @@ pre-everything::
 pre-patch:
 # do not install public.key, we will do it ourselves
 	@${REINPLACE_CMD} -E \
-		-e "s|^.*'public.key'.*$$||" \
+		-e "s|'public.key',||" \
 		${WRKSRC}/setup.py
 
 post-patch:

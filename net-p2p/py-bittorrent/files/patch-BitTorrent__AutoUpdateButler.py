@@ -1,6 +1,6 @@
---- BitTorrent/AutoUpdateButler.py.orig	Sat Dec 16 08:30:05 2006
-+++ BitTorrent/AutoUpdateButler.py	Sat Dec 16 08:30:27 2006
-@@ -301,7 +301,7 @@
+--- ./BitTorrent/AutoUpdateButler.py.orig	Mon May  7 05:41:38 2007
++++ ./BitTorrent/AutoUpdateButler.py	Mon May  7 05:42:02 2007
+@@ -300,7 +300,7 @@
  
      def _check_signature(self, torrentfile, signature):
          """Check the torrent file's signature using the public key."""

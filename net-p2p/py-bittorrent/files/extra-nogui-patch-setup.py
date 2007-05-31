@@ -1,13 +1,17 @@
---- setup.py.orig	Sat Jun 24 16:54:04 2006
-+++ setup.py	Sat Jun 24 16:54:55 2006
-@@ -42,2 +42,2 @@
--symlinks = ["bittorrent" , "bittorrent-curses", "bittorrent-console",
--           "maketorrent",                      "maketorrent-console",
-+symlinks = ["bittorrent-curses", "bittorrent-console",
-+           "maketorrent-console",
-@@ -68,1 +68,0 @@
+--- setup.py.orig	Mon May  7 05:50:40 2007
++++ setup.py	Mon May  7 05:53:17 2007
+@@ -46,7 +46,6 @@
+-symlinks = ["bittorrent" ,
++symlinks = [
+             "bittorrent-curses",
+             "bittorrent-console",
+-            "maketorrent",
+             "maketorrent-console",
+             "launchmany-curses",
+             "launchmany-console",
+@@ -81,1 +80,0 @@
 -    (img_root, ['images/bittorrent.ico',]),
-@@ -74,7 +74,0 @@
+@@ -87,7 +87,0 @@
 -for d in ('flags', 'logo', 'themes/default',
 -          'themes/default/statuslight', 'themes/default/torrentstate',
 -          'themes/default/torrentops' , 'themes/default/fileops'     ,):
