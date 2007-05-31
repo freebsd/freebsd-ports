@@ -1,0 +1,13 @@
+--- src/Configure.orig	Thu May 31 12:16:27 2007
++++ src/Configure	Thu May 31 12:20:30 2007
+@@ -968,8 +968,8 @@
+ 
+ for uppercase in "tr [a-z] [A-Z]" "tr [:lower:] [:upper:]" "sed y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/"
+ do
+-  case `echo Apache | $uppercase` in
+-    APACHE) break;;
++  case `echo abcdefghijklmnopqrstuvwxyz | $uppercase` in
++    ABCDEFGHIJKLMNOPQRSTUVWXYZ) break;;
+   esac
+ done
+ echo " + using \"$uppercase\" to uppercase"
