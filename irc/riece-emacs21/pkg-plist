@@ -123,6 +123,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-skk-kakutei.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-toolbar.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-toolbar.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-twitter.el
+%%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-twitter.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-unread.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-unread.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-url.el
