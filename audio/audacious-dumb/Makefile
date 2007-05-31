@@ -22,7 +22,7 @@ BUILD_DEPENDS=	audacious:${PORTSDIR}/multimedia/audacious \
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-MAKE_ENV+=	CC="${CC}"
+MAKE_ENV+=	CC="${CC}" LOCALBASE="${LOCALBASE}"
 
 ONLY_FOR_ARCHS=	i386 amd64
 
