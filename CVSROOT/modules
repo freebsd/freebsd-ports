@@ -15043,7 +15043,6 @@ tcl-Mysql	ports/databases/tcl-Mysql
 tcl-manual	ports/lang/tcl-manual
 tcl-memchan	ports/devel/tcl-memchan
 tcl-neo		ports/devel/tcl-neo
-tcl-tk-wrapper	ports/lang/tcl-tk-wrapper
 tcl-trf		ports/devel/tcl-trf
 tcl-wrapper	ports/lang/tcl-wrapper
 tcl80		ports/lang/tcl80

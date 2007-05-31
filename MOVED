@@ -22,6 +22,7 @@
 # (e.g. upgraded to a later version), don't record it here.
 #
 # Port|Moved to|Date|Why
+lang/tcl-tk-wrapper||2007-05-31|Replaced by tcl-wrapper and tk-wrapper
 net/ratoolset|net/irrtoolset|2002-11-16|software was renamed
 chinese/linux-netscape47-communicator||2002-11-17|security vulnerability
 chinese/linux-netscape47-navigator||2002-11-17|security vulnerability
