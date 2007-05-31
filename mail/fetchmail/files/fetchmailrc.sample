@@ -1,1 +1,4 @@
-# Sample
+# Your fetchmail configuration goes here.
+#
+# See fetchmail(1), and/or use fetchmailconf (must not build the port
+# WITHOUT_X11).
