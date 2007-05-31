@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	PenguinTV
-PORTVERSION=	2.95
-PORTREVISION=	1
+PORTVERSION=	3.0
 CATEGORIES=	net audio multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	penguintv
@@ -18,6 +17,7 @@ COMMENT=	Graphical RSS feed reader with incorperated playback functions - develo
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/_sqlite.so:${PORTSDIR}/databases/py-pysqlite21 \
 		${PYTHON_SITELIBDIR}/pycurl.so:${PORTSDIR}/ftp/py-curl \
 		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/_pynotify.so:${PORTSDIR}/devel/py-notify \
+		${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer \
 		${PYXML} \
 		${PYTHON_SITELIBDIR}/Pyrex/__init__.py:${PORTSDIR}/devel/pyrex
 .if defined(PACKAGE_BUILDING)
