@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glpk
-PORTVERSION=	4.15
+PORTVERSION=	4.17
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glpk
@@ -24,7 +24,7 @@ USE_LDCONFIG=	yes
 CFLAGS+=	-trigraphs
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	lang.ps refman.ps bench.txt bench1.txt
+PORTDOCS=	bench.txt bench1.txt glpk.ps glpk_faq.txt
 .endif
 
 post-install:
