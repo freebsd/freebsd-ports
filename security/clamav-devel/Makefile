@@ -7,6 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	20070529
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		${MASTER_SITE_LOCAL}
@@ -73,7 +74,7 @@ CONFLICTS=	clamav-0.[0-9]*
 CLAMAVUSER?=	clamav
 CLAMAVGROUP?=	clamav
 
-CLAMAV_CLAMD_SOCKET?=	${RUNDIR}/clamd
+CLAMAV_CLAMD_SOCKET?=	${RUNDIR}/clamd.sock
 CLAMAV_MILTER_SOCKET?=	${RUNDIR}/clmilter.sock
 
 SUB_FILES=	pkg-install pkg-deinstall
