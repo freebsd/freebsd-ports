@@ -90,9 +90,10 @@ libexec/sipx-utils.sh
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 share/sipx/schema/authrules.xsd
 share/sipx/schema/urlmap.xsd
-@dirrm share/sipxpbx
-@dirrm share/sipx/schema
-@dirrm share/sipx
+share/sipxpbx/.sipxcommserverlib_dummy
+@dirrmtry share/sipxpbx
+@dirrmtry share/sipx/schema
+@dirrmtry share/sipx
 @dirrm include/testlib
 @dirrm include/sipdb
 @dirrm include/odbc
@@ -100,8 +101,9 @@ share/sipx/schema/urlmap.xsd
 @dirrm include/fastdb
 @dirrm include/digitmaps
 @dirrm include/configrpc
+@exec mkdir -p %D/etc/sipxpbx/ssl/authorities
 @dirrm etc/sipxpbx/ssl/authorities
 @dirrm etc/sipxpbx/ssl
-@dirrm etc/sipxpbx/process.d
-@dirrm etc/sipxpbx
-@dirrm bin/ssl-cert
+@dirrmtry etc/sipxpbx/process.d
+@dirrmtry etc/sipxpbx
+@dirrmtry bin/ssl-cert

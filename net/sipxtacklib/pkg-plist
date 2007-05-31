@@ -120,8 +120,8 @@ lib/libsipXtack.so.2
 lib/sipviewer/jdom.jar
 lib/sipviewer/sipviewer.jar
 share/sipx/schema/sip_types.xsd
-@dirrm share/sipx/schema
-@dirrm share/sipx
+@dirrmtry share/sipx/schema
+@dirrmtry share/sipx
 @dirrm lib/sipviewer
 @dirrm include/tapi
 @dirrm include/siptest

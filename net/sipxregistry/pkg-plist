@@ -13,8 +13,8 @@ lib/libRegistrarImpliedMWI.so.1
 share/sipx/schema/alias.xsd
 share/sipx/schema/caller-alias.xsd
 share/sipx/schema/huntgroup.xsd
-@dirrm share/sipx/schema
-@dirrm share/sipx
+@dirrmtry share/sipx/schema
+@dirrmtry share/sipx
 @dirrm include/registry
-@dirrm etc/sipxpbx/process.d
-@dirrm etc/sipxpbx
+@dirrmtry etc/sipxpbx/process.d
+@dirrmtry etc/sipxpbx

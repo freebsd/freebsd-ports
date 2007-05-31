@@ -7,7 +7,7 @@
 
 PORTNAME=	sipxpbx
 PORTVERSION=	3.6.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://www.sipfoundry.org/pub/sipX/3.6/SRC/
 
@@ -32,8 +32,6 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		sipstatus.sh:${PORTSDIR}/net/sipxpublisher \
 		sipXvxml.sh:${PORTSDIR}/net/sipxvxml \
 		psql:${PORTSDIR}/databases/postgresql81-client
-
-BROKEN=		Incorrect pkg-plist
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

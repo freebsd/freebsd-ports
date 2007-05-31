@@ -31,6 +31,20 @@ PRE-INSTALL)
 	fi
 	;;
 POST-INSTALL)
+	# Create a dummy file in /usr/local/share/sipxpbx to act
+	# as a poorman's reference count.  Both sipxcommserverlib
+	# and sipxconfig create this directory.  Though sipxcommserverlib
+	# does not put any files in it.  When sipxconfig deinstalls
+	# there is nothing to prevent it from completely removing
+	# the directory.  Then when sipxcommservlib deinstalls, it
+	# finds the directory it created is now gone.
+	#
+	# By creating a dummy file here, we'll prevent sipxconfig
+	# from completely removing the directory and this will make
+	# tinderbox happy when it deinstalls sipxcommserverlib.
+	mkdir -p %%PREFIX%%/share/sipxpbx
+	/usr/bin/touch %%PREFIX%%/share/sipxpbx/.sipxcommserverlib_dummy
+
 	chown ${USER}:${GROUP} %%PREFIX%%/etc/sipxpbx
 	;;
 esac
