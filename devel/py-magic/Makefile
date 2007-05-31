@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	magic
-PORTVERSION=	4.20
+PORTVERSION=	4.21
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.gw.com/mirrors/pub/unix/file/ \
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	file-${PORTVERSION}
 
-MAINTAINER=	python@FreeBSD.org
+MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Python module for determing file type
 
 USE_PYTHON=	yes
