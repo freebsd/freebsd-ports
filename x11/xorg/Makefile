@@ -35,8 +35,8 @@ RUN_DEPENDS+=	${X11BASE}/libdata/xorg/apps:${PORTSDIR}/x11/xorg-apps \
 		${X11BASE}/libdata/xorg/protos:${PORTSDIR}/x11/xorg-protos \
 		${X11BASE}/bin/Xorg:${PORTSDIR}/x11-servers/xorg-server
 
-.if defined(COMPLETE_BUILD) || defined(PACKAGE_BUILDING)
-RUN_DEPEND+=	Xnest:${PORTSDIR}/x11-servers/xorg-nestserver \
+.if defined(COMPLETE_BUILD)
+RUN_DEPENDS+=	Xnest:${PORTSDIR}/x11-servers/xorg-nestserver \
 		Xdmx:${PORTSDIR}/x11-servers/xorg-dmx \
 		Xprt:${PORTSDIR}/x11-servers/xorg-printserver \
 		Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver
