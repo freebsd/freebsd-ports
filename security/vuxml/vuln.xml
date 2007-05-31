@@ -67,6 +67,10 @@ Note:  Please add new entries to the beginning of this file.
   <vuln vid="8e01ab5b-0949-11dc-8163-000e0c2e438a">
     <topic>FreeBSD -- heap overflow in file(1)</topic>
     <affects>
+      <package>
+        <name>file</name>
+        <range><lt>4.21</lt></range>
+      </package>
       <system>
 	<name>FreeBSD</name>
 	<range><gt>6.2</gt><lt>6.2_5</lt></range>
@@ -101,6 +105,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2007-05-23</discovery>
       <entry>2007-05-23</entry>
+      <modified>2007-05-31</modified>
     </dates>
   </vuln>
 
