@@ -395,7 +395,7 @@ SEDLIST+=	-e 's,^\# (AUTH_CRAM_MD5=),\1,'
 SEDLIST+=	-e 's,^\# (AUTH_PLAINTEXT=),\1,'
 .endif
 
-.if !defined(WITHOUT_DOVECOT)
+.if !defined(WITHOUT_AUTH_DOVECOT)
 SEDLIST+=	-e 's,^\# (AUTH_DOVECOT=),\1,'
 .endif
 
