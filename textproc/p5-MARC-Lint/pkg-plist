@@ -1,0 +1,6 @@
+bin/marclint
+%%SITE_PERL%%/MARC/Lint.pm
+%%SITE_PERL%%/MARC/Lint/CodeData.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MARC/Lint/.packlist
+@dirrm %%SITE_PERL%%/MARC/Lint
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MARC/Lint

@@ -402,6 +402,7 @@
     SUBDIR += p5-Lingua-StopWords
     SUBDIR += p5-Lucene
     SUBDIR += p5-MARC
+    SUBDIR += p5-MARC-Lint
     SUBDIR += p5-MARC-Record
     SUBDIR += p5-MKDoc-XML
     SUBDIR += p5-Makefile-Parser
