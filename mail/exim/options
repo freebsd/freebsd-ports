@@ -70,6 +70,7 @@
 #WITH_PAM
 #WITH_AUTH_CRAM_MD5
 #WITH_AUTH_PLAINTEXT
+#WITH_AUTH_DOVECOT
 #WITH_AUTH_SPA
 # Built-in support for the PAM, RFC 2195, RFC 2595 and
 # Microsoft "Secure Password Authentication" authentication mechanisms,
@@ -228,6 +229,9 @@ WITH_AUTH_CRAM_MD5?=yes
 .endif
 .ifndef WITHOUT_AUTH_PLAINTEXT
 WITH_AUTH_PLAINTEXT?=yes
+.endif
+.ifndef WITHOUT_AUTH_DOVECOT
+WITH_AUTH_DOVECOT?=yes
 .endif
 .ifndef WITHOUT_AUTH_SPA
 WITH_AUTH_SPA?=yes
