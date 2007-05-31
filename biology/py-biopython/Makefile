@@ -1,6 +1,6 @@
-# New ports collection makefile for:    py-biopython
-# Date created:         28 July 2000
-# Whom:                 Johann Visagie <johann@egenetics.com>
+# New ports collection makefile for:	py-biopython
+# Date created:		28 July 2000
+# Whom:			Johann Visagie <johann@egenetics.com>
 #
 # $FreeBSD$
 #
