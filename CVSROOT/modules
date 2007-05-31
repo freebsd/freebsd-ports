@@ -10022,6 +10022,7 @@ p5-Logfile-Rotate	ports/devel/p5-Logfile-Rotate
 p5-Lucene	ports/textproc/p5-Lucene
 p5-Luka		ports/devel/p5-Luka
 p5-MARC		ports/textproc/p5-MARC
+p5-MARC-Lint	ports/textproc/p5-MARC-Lint
 p5-MARC-Record	ports/textproc/p5-MARC-Record
 p5-MD5		ports/security/p5-MD5
 p5-MIDI		ports/audio/p5-MIDI
