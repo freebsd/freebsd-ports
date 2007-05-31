@@ -129,7 +129,6 @@ lib/libsipXcall.a
 lib/libsipXcall.la
 lib/libsipXcall.so
 lib/libsipXcall.so.1
-@dirrm include/tapi
 @dirrm include/tao
 @dirrm include/ptapi
 @dirrm include/ps/wnt
