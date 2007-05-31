@@ -28,6 +28,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root.crt:${PORTSDIR}/security/ca-roots
 
 USE_RC_SUBR=	fetchmail
 FETCHMAILRC=	${PREFIX}/etc/fetchmailrc
+SUB_FILES=	pkg-message
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -165,5 +166,9 @@ post-install:
 	if [ ! -f ${PREFIX}/etc/fetchmailrc ]; then \
 		${CP} -p ${PREFIX}/etc/fetchmailrc.sample ${PREFIX}/etc/fetchmailrc ; \
 	fi
+
+	@${ECHO_CMD} ""
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD} ""
 
 .include <bsd.port.post.mk>

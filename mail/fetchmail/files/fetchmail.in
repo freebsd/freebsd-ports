@@ -9,16 +9,17 @@
 # KEYWORD: shutdown
 
 #
-# Add the following lines to /etc/rc.conf to enable fetchmail:
+# Add the following lines to /etc/rc.conf to fetchmail in daemon
+# mode.
 #
 # fetchmail_enable="YES"
 #
-# There are two modes:
+# There are two variants:
 #
 #  * Single system-wide fetchmail daemon:
 #    - It is run as user `fetchmail_user' (default: fetchmail)
 #    - All configuration is contained in one global file
-#      `fetchmail_config' (default: %%PREFIX/etc/fetchmailrc),
+#      `fetchmail_config' (default: %%PREFIX%%/etc/fetchmailrc),
 #      that must be owned by `fetchmail_user' (mode 700)
 #    - The fetchmail daemon awakes to fetch mail every 
 #      `fetchmail_polling_interval' seconds (default: 900).
@@ -37,7 +38,7 @@
 #      defaults, i.e. for the user `user1' there are variables
 #      `fetchmail_user1_config' and `fetchmail_user1_polling_interval'
 #    - All commands (e.g. start, stop, awaken (see below)) can be either
-#      passed to all instances of the daemon (if %%PREFIX/etc/rc.d/fetchmail)
+#      passed to all instances of the daemon (if %%PREFIX%%/etc/rc.d/fetchmail)
 #      is run as root), or just to the instance belonging to the respective
 #      user.
 #
@@ -45,6 +46,12 @@
 #
 #  * `awaken': Sends a signal to the daemon(s) to check for new mail
 #     immediately
+#
+# Fetchmail configuration:
+#
+# In any case, you will need a working fetchmailrc file. Please consult
+# the man page fetchmail(1), the documentation in %%PREFIX%%/share/doc/fetchmail/
+# and/or the material found at http://fetchmail.berlios.de/.
 
 . %%RC_SUBR%%
 
