@@ -317,10 +317,6 @@ lib/%%APP_NAME%%/components/xuldoc.xpt
 lib/%%APP_NAME%%/components/xultmpl.xpt
 lib/%%APP_NAME%%/defaults/autoconfig/platform.js
 lib/%%APP_NAME%%/defaults/autoconfig/prefcalls.js
-lib/%%APP_NAME%%/defaults/isp/US/movemail.rdf
-lib/%%APP_NAME%%/defaults/isp/movemail.rdf
-lib/%%APP_NAME%%/defaults/messenger/SpamAssassin.sfd
-lib/%%APP_NAME%%/defaults/messenger/SpamPal.sfd
 lib/%%APP_NAME%%/defaults/messenger/US/mailViews.dat
 lib/%%APP_NAME%%/defaults/messenger/mailViews.dat
 lib/%%APP_NAME%%/defaults/pref/browser-prefs.js
@@ -360,6 +356,9 @@ lib/%%APP_NAME%%/greprefs/security-prefs.js
 lib/%%APP_NAME%%/greprefs/xpinstall.js
 lib/%%APP_NAME%%/init.d/README
 lib/%%APP_NAME%%/install.rdf
+lib/%%APP_NAME%%/isp/SpamAssassin.sfd
+lib/%%APP_NAME%%/isp/SpamPal.sfd
+lib/%%APP_NAME%%/isp/movemail.rdf
 lib/%%APP_NAME%%/libfreebl3.chk
 lib/%%APP_NAME%%/libfreebl3.so
 lib/%%APP_NAME%%/libgfxpsshar.so
@@ -485,8 +484,6 @@ lib/%%APP_NAME%%/xpt_link
 @dirrm lib/%%APP_NAME%%/chrome
 @dirrm lib/%%APP_NAME%%/components
 @dirrm lib/%%APP_NAME%%/defaults/autoconfig
-@dirrm lib/%%APP_NAME%%/defaults/isp/US
-@dirrm lib/%%APP_NAME%%/defaults/isp
 @dirrm lib/%%APP_NAME%%/defaults/messenger/US
 @dirrm lib/%%APP_NAME%%/defaults/messenger
 @dirrm lib/%%APP_NAME%%/defaults/pref
@@ -499,6 +496,7 @@ lib/%%APP_NAME%%/xpt_link
 @dirrm lib/%%APP_NAME%%/dictionaries
 @dirrm lib/%%APP_NAME%%/greprefs
 @dirrm lib/%%APP_NAME%%/init.d
+@dirrm lib/%%APP_NAME%%/isp
 @dirrm lib/%%APP_NAME%%/plugins
 @dirrm lib/%%APP_NAME%%/res/dtd
 @dirrm lib/%%APP_NAME%%/res/entityTables
