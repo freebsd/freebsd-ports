@@ -15,5 +15,5 @@ include/statusserver/SubscribeServerPluginBase.h
 include/statusserver/SubscribeServerThread.h
 include/statusserver/WebServer.h
 @dirrm include/statusserver
-@dirrm etc/sipxpbx/process.d
-@dirrm etc/sipxpbx
+@dirrmtry etc/sipxpbx/process.d
+@dirrmtry etc/sipxpbx

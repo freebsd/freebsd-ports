@@ -22,7 +22,6 @@ bin/sipxpresence.sh
 bin/voicemail_clean
 bin/watchdog
 bin/watchdog.sh
-etc/rc.d/sipxpbx
 etc/sipxpbx/ProcessDefinitions.xml
 etc/sipxpbx/WatchDog.xml
 etc/sipxpbx/cbadmission.xml.in
@@ -47,6 +46,7 @@ www/sipX/cgi-bin/cbadmission/cbadmission.cgi
 www/sipX/cgi-bin/processmonitor/process.cgi
 www/sipX/cgi-bin/replication/replication.cgi
 www/sipX/cgi-bin/voicemail/mediaserver.cgi
+www/sipX/conf/.sipxpbx_dummy
 www/sipX/doc/aa_vxml/autoattendant-afterhour.vxml
 www/sipX/doc/aa_vxml/autoattendant-operator.vxml
 www/sipX/doc/aa_vxml/dialbyname.vxml
@@ -1168,17 +1168,16 @@ www/sipX/doc/vm_vxml/savemessage_no_operator.vxml.in
 @dirrm www/sipX/doc/adminui
 @dirrm www/sipX/doc/aa_vxml
 @dirrm www/sipX/doc
-@exec mkdir -p %D/www/sipX/conf
-@dirrm www/sipX/conf
+@dirrmtry www/sipX/conf
 @dirrm www/sipX/cgi-bin/voicemail
 @dirrm www/sipX/cgi-bin/replication
 @dirrm www/sipX/cgi-bin/processmonitor
 @dirrm www/sipX/cgi-bin/cbadmission
 @dirrm www/sipX/cgi-bin
-@dirrm www/sipX
-@dirrm share/sipx/schema
-@dirrm share/sipx
+@dirrmtry www/sipX
+@dirrmtry share/sipx/schema
+@dirrmtry share/sipx
 @dirrm share/doc/sipx/sipxpbx
 @dirrm share/doc/sipx
-@dirrm etc/sipxpbx/process.d
-@dirrm etc/sipxpbx
+@dirrmtry etc/sipxpbx/process.d
+@dirrmtry etc/sipxpbx

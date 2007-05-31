@@ -15,6 +15,6 @@ etc/sipxpbx/forwardingrules.xml.in
 etc/sipxpbx/process.d/sipauthproxy.process.xml
 etc/sipxpbx/process.d/sipproxy.process.xml
 etc/sipxpbx/proxy-config.in
-@dirrm etc/sipxpbx/process.d
+@dirrmtry etc/sipxpbx/process.d
 @dirrm etc/sipxpbx/cdr
-@dirrm etc/sipxpbx
+@dirrmtry etc/sipxpbx

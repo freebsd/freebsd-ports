@@ -152,7 +152,7 @@ share/sipxpbx/lib/wsdl4j-1.5.1.jar
 share/sipxpbx/lib/xercesImpl-2.7.0.jar
 share/sipxpbx/lib/xml-apis-1.3.1.jar
 share/sipxpbx/lib/xmlrpc-2.0.jar
-@dirrm bin/ssl-cert
+@dirrmtry bin/ssl-cert
 @dirrm etc/sipxpbx/acme
 @dirrm etc/sipxpbx/audiocodes
 @dirrm etc/sipxpbx/ciscoAta
@@ -165,23 +165,25 @@ share/sipxpbx/lib/xmlrpc-2.0.jar
 @dirrm etc/sipxpbx/kphone
 @dirrm etc/sipxpbx/polycom/mac-address.d
 @dirrm etc/sipxpbx/polycom
-@dirrm etc/sipxpbx/process.d
+@dirrmtry etc/sipxpbx/process.d
 @dirrm etc/sipxpbx/sipxconference
 @dirrm etc/sipxpbx/sipxpark
 @dirrm etc/sipxpbx/sipxvxml
 @dirrm etc/sipxpbx/snom
 @dirrm etc/sipxpbx/unmanagedPhone
-@dirrm etc/sipxpbx
-@dirrm lib/ruby/gems/1.8/cache
+@dirrmtry etc/sipxpbx
+@dirrmtry lib/ruby/gems/1.8/cache
+@exec mkdir -p %D/lib/ruby/gems/1.8/doc/sipXconfig-agent-1.0.0
 @dirrm lib/ruby/gems/1.8/doc/sipXconfig-agent-1.0.0
+@dirrmtry lib/ruby/gems/1.8/doc
 @dirrm lib/ruby/gems/1.8/gems/sipXconfig-agent-1.0.0/bin
 @dirrm lib/ruby/gems/1.8/gems/sipXconfig-agent-1.0.0/lib
 @dirrm lib/ruby/gems/1.8/gems/sipXconfig-agent-1.0.0/tests
 @dirrm lib/ruby/gems/1.8/gems/sipXconfig-agent-1.0.0
-@dirrm lib/ruby/gems/1.8/gems
-@dirrm lib/ruby/gems/1.8/specifications
-@dirrm lib/ruby/gems/1.8
-@dirrm lib/ruby/gems
-@dirrm lib/ruby
+@dirrmtry lib/ruby/gems/1.8/gems
+@dirrmtry lib/ruby/gems/1.8/specifications
+@dirrmtry lib/ruby/gems/1.8
+@dirrmtry lib/ruby/gems
+@dirrmtry lib/ruby
 @dirrm share/sipxpbx/lib
-@dirrm share/sipxpbx
+@dirrmtry share/sipxpbx

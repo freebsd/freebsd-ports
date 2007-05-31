@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PATH=/bin:/usr/sbin
+PATH=/bin:/sbin:/usr/bin:/usr/sbin
 
 USER=sipx
 GROUP=sipx
@@ -31,8 +31,18 @@ PRE-INSTALL)
 	fi
 	;;
 POST-INSTALL)
+	# Create a dummy file in /usr/local/www/sipX/conf to act
+	# as a poorman's reference count.  Both sipxpbx and sipxvxml
+	# create this empty directory.  If we leave it empty,
+	# when we remove either package, the directory will be removed
+	# (assuming it is still empty).  However, the other package
+	# still thinks the empty directory still exists.  Tinderbox
+	# doesn't like this.
+	mkdir -p %%PREFIX%%/www/sipX/conf
+	touch %%PREFIX%%/www/sipX/conf/.sipxvxml_dummy
+
 	chown ${USER}:${GROUP} %%PREFIX%%/etc/sipxpbx
-	chown ${USER}:${GROUP} %%PREFIX%%/www/sipX/conf
+	chown -R ${USER}:${GROUP} %%PREFIX%%/www/sipX/conf
 	chown ${USER}:${GROUP} %%PREFIX%%/www/sipX
 	;;
 esac
