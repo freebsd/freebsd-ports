@@ -157,12 +157,14 @@ bin/theora_encoder.py
 %%DATADIR%%/themes/pinks/main.jpg
 %%DATADIR%%/themes/sunburst/frame.jpg
 %%DATADIR%%/themes/sunburst/main.jpg
+share/applications/LiVES.desktop
 share/locale/cs/LC_MESSAGES/lives.mo
 share/locale/de_DE/LC_MESSAGES/lives.mo
 share/locale/fr/LC_MESSAGES/lives.mo
 share/locale/ja/LC_MESSAGES/lives.mo
 share/locale/nl_NL/LC_MESSAGES/lives.mo
 share/locale/pt_BR/LC_MESSAGES/lives.mo
+share/pixmaps/lives.xpm
 @dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/plugins/effects/RFXscripts
@@ -181,6 +183,7 @@ share/locale/pt_BR/LC_MESSAGES/lives.mo
 @dirrm %%DATADIR%%/themes/sunburst
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
 @dirrmtry share/locale/cs/LC_MESSAGES
 @dirrmtry share/locale/cs
 @dirrmtry share/locale/de_DE/LC_MESSAGES
