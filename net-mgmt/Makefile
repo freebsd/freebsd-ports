@@ -216,6 +216,7 @@
     SUBDIR += trafd
     SUBDIR += vidalia
     SUBDIR += wdiag
+    SUBDIR += weathermap
     SUBDIR += weplab
     SUBDIR += whatmask
     SUBDIR += wide-dhcp
