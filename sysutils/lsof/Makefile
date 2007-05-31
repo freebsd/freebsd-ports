@@ -30,7 +30,7 @@ DISTNAME=	${PORTNAME}_4.77D.freebsd
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 .endif
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ler@lerctr.org
 COMMENT=	Lists information about open files (similar to fstat(1))
 
 .if defined(FIXUP_RELEASE)
