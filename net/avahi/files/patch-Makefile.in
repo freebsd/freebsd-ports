@@ -30,7 +30,7 @@
  @ENABLE_COMPAT_LIBDNS_SD_TRUE@@HAVE_DBUS_TRUE@	    -e 's,@PACKAGE_VERSION\@,$(PACKAGE_VERSION),g' $< > $@
  
  @HAVE_DBUS_TRUE@@HAVE_MONO_TRUE@avahi-sharp.pc: avahi-sharp.pc.in
-@@ -1082,6 +1089,8 @@ avahi-core.pc: avahi-core.pc.in
+@@ -1096,6 +1104,8 @@
  @HAVE_GLIB_TRUE@avahi-glib.pc: avahi-glib.pc.in
  @HAVE_GLIB_TRUE@	sed -e 's,@prefix\@,$(prefix),g' \
  @HAVE_GLIB_TRUE@	    -e 's,@libdir\@,$(libdir),g' \
@@ -38,4 +38,13 @@
 +@HAVE_GLIB_TRUE@	    -e 's,@PTHREAD_LIBS\@,$(PTHREAD_LIBS),g' \
  @HAVE_GLIB_TRUE@	    -e 's,@PACKAGE_VERSION\@,$(PACKAGE_VERSION),g' $< > $@
  
+ @HAVE_DBUS_TRUE@@HAVE_GTK_TRUE@avahi-ui.pc: avahi-ui.pc.in
+@@ -1106,6 +1116,8 @@
  @HAVE_QT3_TRUE@avahi-qt3.pc: avahi-qt3.pc.in
+ @HAVE_QT3_TRUE@	sed -e 's,@prefix\@,$(prefix),g' \
+ @HAVE_QT3_TRUE@	    -e 's,@libdir\@,$(libdir),g' \
++@HAVE_QT3_TRUE@	    -e 's,@PTHREAD_CFLAGS\@,$(PTHREAD_CFLAGS),g' \
++@HAVE_QT3_TRUE@	    -e 's,@PTHREAD_LIBS\@,$(PTHREAD_LIBS),g' \
+ @HAVE_QT3_TRUE@	    -e 's,@PACKAGE_VERSION\@,$(PACKAGE_VERSION),g' $< > $@
+ 
+ @HAVE_QT4_TRUE@avahi-qt4.pc: avahi-qt4.pc.in
