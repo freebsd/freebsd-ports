@@ -304,7 +304,6 @@
     SUBDIR += sxm
     SUBDIR += t3x
     SUBDIR += tcl-manual
-    SUBDIR += tcl-tk-wrapper
     SUBDIR += tcl-wrapper
     SUBDIR += tcl80
     SUBDIR += tcl82
