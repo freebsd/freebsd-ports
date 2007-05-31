@@ -25,7 +25,7 @@ NOT_FOR_ARCHS=	sparc64
 USE_XLIB=	yes
 .endif
 
-USE_GCC=	3.4
+USE_GCC=	3.4+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
