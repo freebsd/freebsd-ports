@@ -1,5 +1,14 @@
 --- src/Configure.orig	Wed Jul 12 12:16:05 2006
-+++ src/Configure	Wed Apr  4 19:03:41 2007
++++ src/Configure	Thu May 31 15:03:01 2007
+@@ -26,7 +26,7 @@
+ #	fp2rp:
+ #	slo.sh:
+ 
+-LANG=C; export LANG
++LC_ALL=C; export LC_ALL
+ exitcode=0
+ trap 'rm -f $tmpfile $tmpfile2 $tmpfile3 $tmpconfig $awkfile; exit $exitcode' 0 1 2 3 15
+ 
 @@ -457,7 +457,7 @@
      	PLATOSVERS=`echo $PLAT | sed 's/^.*freebsd//'`
  	OS="FreeBSD $PLATOSVERS"
