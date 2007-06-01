@@ -21,6 +21,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/SimpleStopper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/Stem.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/Stopper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/TermGenerator.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/TermIterator.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/TradWeight.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Search/Xapian/ValueIterator.pm
