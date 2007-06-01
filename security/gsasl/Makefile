@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gsasl
-PORTVERSION=	0.2.12
+PORTVERSION=	0.2.16
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
 		http://josefsson.org/${PORTNAME}/releases/
@@ -24,8 +24,10 @@ USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GETOPT_LONG=	yes
 USE_PERL5_BUILD=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man \
+		--infodir=${PREFIX}/info
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 INFO=	gsasl
 
