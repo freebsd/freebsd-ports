@@ -439,6 +439,7 @@
     SUBDIR += netoffice
     SUBDIR += netrik
     SUBDIR += netstiff
+    SUBDIR += newsbeuter
     SUBDIR += newsfeed
     SUBDIR += nginx
     SUBDIR += notftp
