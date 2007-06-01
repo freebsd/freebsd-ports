@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dynamips
-DISTVERSION=	0.2.7-RC2
+DISTVERSION=	0.2.7-RC3
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.ipflow.utc.fr/dynamips/
 PKGNAMESUFFIX=	-devel
@@ -34,6 +34,24 @@ MAN1=		${PORTNAME}.1 nvram_export.1
 MAN7=		hypervisor_mode.7
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+DYNAMIPS_ARCH=	"x86"
+.elif ${ARCH} == "amd64"
+DYNAMIPS_ARCH=	"amd64"
+.else
+DYNAMIPS_ARCH=	"nojit"
+.endif
+
+.if ${OSVERSION} < 602100 || ${OSVERSION} < 700021
+BUILD_DEPENDS+=	libpcap>=0.9.4:${PORTSDIR}/net/libpcap
+.endif
+
+.if ${OSVERSION} >= 700013
+MAKE_ENV+=	HAS_POSIX_MEMALIGN=1
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/nvram_export ${PREFIX}/bin
@@ -46,26 +64,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/nvram_export.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/hypervisor_mode.7 ${PREFIX}/man/man7
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386"
-DYNAMIPS_ARCH=	"x86"
-.elif ${ARCH} == "amd64"
-DYNAMIPS_ARCH=	"amd64"
-.else
-DYNAMIPS_ARCH=	"nojit"
-.endif
-
-.if ${OSVERSION} < 602100 || ${OSVERSION} < 700021
-#
-# Requires libpcap 0.9.4
-BUILD_DEPENDS+=	libpcap>=0.9.4:${PORTSDIR}/net/libpcap
-.endif
-
-.if ${OSVERSION} >= 700013
-MAKE_ENV+=	HAS_POSIX_MEMALIGN=1
 .endif
 
 .include <bsd.port.post.mk>
