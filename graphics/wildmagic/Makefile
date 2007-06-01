@@ -7,6 +7,7 @@
 
 PORTNAME=	WildMagic
 DISTVERSION=	4p4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.geometrictools.com/Downloads/
 DISTNAME=	${PORTNAME}${DISTVERSION}
@@ -18,6 +19,7 @@ USE_ZIP=	yes
 USE_DOS2UNIX=	yes
 USE_GL=		yes
 USE_GMAKE=	yes
+USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/GeometricTools/${PORTNAME}${MV}
 DOS2UNIX_REGEX=	.*\.(wm${MV}|h|inl)
@@ -43,7 +45,9 @@ PLIST_SUB+=	OGL="@comment " SOFT=""
 
 MV=		${PORTVERSION:R}
 SAMPLEDIRS=	SampleFoundation SampleGraphics SampleImagics SamplePhysics
+SOLIBS=		Foundation Graphics Imagics Physics ${GRF}Application ${GRF}Renderer
 
+CFLAGS+=	-fPIC
 .if defined(WITH_DEBUG)
 CONFIG=		Debug
 CFLAGS+=	-D_DEBUG
@@ -70,8 +74,13 @@ post-build:
 
 do-install:
 	${MKDIR} ${PREFIX}/include/Wm${MV} ${DATADIR}
-	${FIND} ${WRKSRC}/SDK/Library/Release -name "libWm*" -exec	\
-		${INSTALL_DATA} {} ${PREFIX}/lib \;
+.for li in ${SOLIBS}
+	${INSTALL_DATA} ${WRKSRC}/SDK/Library/${CONFIG}/libWm${MV}${li}.a	\
+		${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/SDK/Library/${CONFIG}/libWm${MV}${li}.so.0	\
+		${PREFIX}/lib
+	(cd ${PREFIX}/lib && ${LN} -sf libWm${MV}${li}.so.0 libWm${MV}${li}.so)
+.endfor
 	${FIND} ${WRKSRC}/SDK/Include  -name "Wm*" -exec	\
 		${INSTALL_DATA} {} ${PREFIX}/include/Wm${MV} \;
 	${CP} -R ${WRKSRC}/Data ${DATADIR}
