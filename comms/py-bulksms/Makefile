@@ -8,10 +8,10 @@
 PORTNAME=	bulksms
 PORTVERSION=	0.1
 CATEGORIES=	comms python
-MASTER_SITES=	http://botanicus.net/dw/py-bulksms/
+MASTER_SITES=	http://ngsoftwareltd.com/freebsd/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	craig001@lerwick.hopto.org
 COMMENT=	Python client for the BulkSMS.co.uk HTTP API
 
 USE_PYTHON=	yes
