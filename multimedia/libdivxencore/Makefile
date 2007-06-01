@@ -16,7 +16,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	OpenDivX encoding engine from Project Mayo
 
 DEPRECATED=	Obsolete, Project Mayo is dead
-EXPIRATION_DATE=2007-06-31
+EXPIRATION_DATE=2007-06-30
 
 ONLY_FOR_ARCHS=	i386
 USE_ZIP=	yes
