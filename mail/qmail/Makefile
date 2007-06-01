@@ -177,7 +177,8 @@ OPTIONS+=	RELAYMAILFROM	"Open relay based on mailfrom" off \
 		VERP		"VERP addresses for recipients" on \
 		MOREIPME	"Add control files (more|not)ipme" off \
 		BIGTODO		"Bruce Guenter's BigToDo patch" off \
-		SMTPEXTFORK	"Allow qmail-smtpd fork external progs" off
+		SMTPEXTFORK	"Allow qmail-smtpd fork external progs" off \
+		XF_QUITASAP	"Close SMTP session ASAP (SMTPEXTFORK)" off
 .endif
 
 OPTIONS+=	QEXTRA "enable QUEUE_EXTRA copy feature" off
@@ -463,7 +464,7 @@ PATCHFILES+=	tarpit.patch:tarpit
 .if defined(WITH_SMTPEXTFORK) && defined(SLAVE_SPAMCONTROL)
 MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:extfork/}
 MASTER_SITE_SUBDIR+=	garga/qmail/:extfork
-DISTFILES+=	smtpextfork-spamcontrol-${SPAMCONTROL_VERSION}.patch:extfork \
+DISTFILES+=	smtpextfork-spamcontrol-${SPAMCONTROL_VERSION}_1.patch:extfork \
 		README.smtpextfork:extfork
 .endif
 
@@ -585,7 +586,11 @@ post-patch:
 	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/outgoingip.patch-spamcontrol
 . endif
 . if defined(WITH_SMTPEXTFORK)
-	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/smtpextfork-spamcontrol-${SPAMCONTROL_VERSION}.patch
+	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/smtpextfork-spamcontrol-${SPAMCONTROL_VERSION}_1.patch
+.  if defined(WITH_XF_QUITASAP)
+	@${REINPLACE_CMD} 's!//#define XF_QUITASAP!#define XF_QUITASAP!g' \
+		${WRKSRC}/qmail-smtpd.c
+.  endif
 . endif
 .elif defined(SLAVE_TLS)
 	@${HEAD} -105 ${DISTDIR}/${DIST_SUBDIR}/qmail-1.03-tls-${TLS_PATCH_DATE}-renato.patch > \
