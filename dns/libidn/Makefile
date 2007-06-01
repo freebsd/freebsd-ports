@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libidn
-PORTVERSION=	0.6.12
+PORTVERSION=	0.6.14
 CATEGORIES=	dns
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
 		http://josefsson.org/libidn/releases/
@@ -40,6 +40,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|@image{components}||g' \
 		${WRKSRC}/doc/libidn.texi
 	@${REINPLACE_CMD} -e 's|$$(AUTOMAKE)|${TRUE}|' \
+			-e 's|imagesdir = $$(infodir)|imagesdir = $$(docdir)|' \
 		${WRKSRC}/doc/Makefile.in
 
 post-install:
