@@ -65,7 +65,7 @@ OPTIONS=	CUPS "Enable printing support (requires CUPS)" off \
 
 .if !defined(WITHOUT_CUPS) || defined(PACKAGE_BUILDING)
 BUILD_DEPENDS+=	cupsd:${PORTSDIR}/print/cups-base
-CUPS=		-cups -L${LOCALBASE}/lib -I${LOCALBASE}/include
+CUPS=		-cups -L${LOCALBASE}/lib -I. -I${LOCALBASE}/include
 .elif defined(WITHOUT_CUPS)
 CUPS=
 .endif
