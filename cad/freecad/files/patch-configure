@@ -1,5 +1,5 @@
 --- configure.orig	Mon Feb 26 14:00:53 2007
-+++ configure	Sat Apr 21 23:40:36 2007
++++ configure	Thu May 31 23:43:44 2007
 @@ -21008,7 +21008,7 @@
  fc_py_ac_save_libs=$LIBS
  CPPFLAGS="$CPPFLAGS -I$fc_py_incs"
@@ -45,3 +45,21 @@
  fc_cv_lib_occ_ver_6=no
  if test x"$fc_cv_lib_occ_avail" = xyes; then
  	if test "${ac_cv_header_Standard_hxx+set}" = set; then
+@@ -24705,7 +24705,7 @@
+ fc_wm3_ac_save_libs=$LIBS
+ CPPFLAGS="$CPPFLAGS -I$fc_wm3_incs"
+ LDFLAGS="$LDFLAGS -L$fc_wm3_libs"
+-LIBS="-l$fc_wm3_lib"
++LIBS="-l$fc_wm3_lib -lcompat"
+ 
+ fc_cv_lib_wm3_avail=no
+ if test "${ac_cv_header_Wm3Math_h+set}" = set; then
+@@ -24901,7 +24901,7 @@
+ 
+ 	WM3_LDFLAGS=-L$fc_wm3_libs
+ 
+-	WM3_LIBS=-l$fc_wm3_lib
++	WM3_LIBS="-l$fc_wm3_lib -lcompat"
+ 
+ 	WM3_VERSION=$fc_wm3_ver
+ 
