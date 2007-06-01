@@ -1985,6 +1985,7 @@ dkimap4		ports/mail/dkimap4
 dkimproxy	ports/mail/dkimproxy
 dlint		ports/dns/dlint
 dlume		ports/deskutils/dlume
+dlv		ports/lang/dlv
 dlx		ports/emulators/dlx
 dmachine	ports/ftp/dmachine
 dmake		ports/devel/dmake
