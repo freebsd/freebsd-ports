@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION?=	2.2
-PORTREVISION=	1
+PORTVERSION?=	2.2.15
 PORTEPOCH?=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES?=	# empty
@@ -26,13 +25,6 @@ OPTIONS=	PRINT "Gutenprint (gimp-print) plugin" On \
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
-
-pre-everything::
-	@if [ -n "`${PKG_INFO} -xI '^gimp[-gnome]*[0-9].[0-9].[0-9]*' 2>/dev/null`" ]; then \
-		${ECHO_CMD} "${PKGNAME}: Old version of gimp detected! Please see ${PORTSDIR}/UPDATING for information on upgrading ${PKGNAME}" ; \
-		${FALSE}; \
-	fi
-
 
 .if defined(WITH_HELP)
 RUN_DEPENDS+=	gimp-help>0:${PORTSDIR}/graphics/gimp-help
