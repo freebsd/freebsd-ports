@@ -6,10 +6,15 @@
 #
 
 PORTNAME=	tovid
-PORTVERSION=	0.24
-PORTREVISION=	9
+PORTVERSION=	0.30
+PORTREVISION=	2
 CATEGORIES=	multimedia python
-MASTER_SITES=	http://download.berlios.de/tovid/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	tovid
+
+PATCH_SITES=	http://tovid.sourceforge.net/download/patches/
+PATCHFILES=	tovid-0.30.2.patch.gz
+PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A collection of video disc authoring tools
@@ -33,26 +38,50 @@ BUILD_DEPENDS=	\
 		tcrequant:${PORTSDIR}/multimedia/transcode \
 		vcdxbuild:${PORTSDIR}/multimedia/vcdimager \
 		cdrdao:${PORTSDIR}/sysutils/cdrdao \
-		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
+		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
+		txt2tags:${PORTSDIR}/textproc/txt2tags
 RUN_DEPENDS=	\
-		${BUILD_DEPENDS} \
+		sox:${PORTSDIR}/audio/sox \
+		composite:${PORTSDIR}/graphics/ImageMagick \
+		convert:${PORTSDIR}/graphics/ImageMagick \
+		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
+		spumux:${PORTSDIR}/multimedia/dvdauthor \
+		ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
+		mp2enc:${PORTSDIR}/multimedia/mjpegtools \
+		mpeg2enc:${PORTSDIR}/multimedia/mjpegtools \
+		mplex:${PORTSDIR}/multimedia/mjpegtools \
+		ppmtoy4m:${PORTSDIR}/multimedia/mjpegtools \
+		yuvdenoise:${PORTSDIR}/multimedia/mjpegtools \
+		yuvfps:${PORTSDIR}/multimedia/mjpegtools \
+		mencoder:${PORTSDIR}/multimedia/mplayer \
+		mplayer:${PORTSDIR}/multimedia/mplayer \
+		tcprobe:${PORTSDIR}/multimedia/transcode \
+		tcrequant:${PORTSDIR}/multimedia/transcode \
+		vcdxbuild:${PORTSDIR}/multimedia/vcdimager \
+		cdrdao:${PORTSDIR}/sysutils/cdrdao \
+		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
+		txt2tags:${PORTSDIR}/textproc/txt2tags \
 		bash:${PORTSDIR}/shells/bash
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	yes
+#USE_PYDISTUTILS=	yes
 USE_CDRTOOLS=	yes
 USE_WX=		2.6
 WX_COMPS=	python
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+NO_BUILD=	yes
 
-MAN1=	idvid.1 makedvd.1 makemenu.1 makeslides.1 makexml.1 postproc.1 \
-	tovid-suite.1 tovid.1
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man/
+
+MAN1=	idvid.1 makedvd.1 makemenu.1 makeslides.1 makevcd.1 makexml.1 \
+	postproc.1 todisc.1 tovid.1 tovid-stats.1
 
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|gawk|${AWK}|' \
 		-e 's|md5sum|md5|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT} \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 # md5sum -> md5
 # gnu sed -> sed
 # linux du -b -> emulation with awk
@@ -79,14 +108,12 @@ post-patch:
 		${WRKSRC}/src/*
 # python interpreter safeness
 .for dir in libtovid src
-	@${REINPLACE_CMD} -E \
-		-e 's|/usr/bin/env[[:space:]]+python|${PYTHON_CMD}|' \
-		${WRKSRC}/${dir}/*
+	@${FIND} ${WRKSRC}/${dir} -type f | ${XARGS} \
+	${REINPLACE_CMD} -E \
+		-e 's|/usr/bin/env[[:space:]]+python|${PYTHON_CMD}|'
 .endfor
-# sh interpreter safeness
-	@${REINPLACE_CMD} -E \
-		-e 's|`which env`[[:space:]]+sh|${LOCALBASE}/bin/bash|' \
-		${WRKSRC}/src/Makefile.in
+
+	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 post-build:
 	@cd ${WRKSRC} && ${MAKE}
