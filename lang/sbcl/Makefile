@@ -7,6 +7,7 @@
 
 PORTNAME=	sbcl
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF
 DISTFILES=	${DISTNAME}-source${EXTRACT_SUFX}
@@ -48,14 +49,16 @@ BOOT_VERSION=	${PORTVERSION}
 BOOT_ARCH_OS_LIST=	x86-freebsd x86-64-freebsd
 .elif ${ARCH} == "i386"
 BOOT_ARCH_OS_LIST=	x86-freebsd
+LISP_EXTRA_ARG=	--dynamic-space-size 512
 .elif ${ARCH} == "amd64"
 BOOT_ARCH_OS_LIST=	x86-64-freebsd
+LISP_EXTRA_ARG=
 .endif
 .for BOOT_ARCH_OS in ${BOOT_ARCH_OS_LIST}
 BOOT_DISTNAME=	${PORTNAME}-${BOOT_VERSION}-${BOOT_ARCH_OS}
 DISTFILES:=	${DISTFILES} ${BOOT_DISTNAME}-binary${EXTRACT_SUFX}
 .endfor
-LISP_CMD=	"${WRKDIR}/${BOOT_DISTNAME}/src/runtime/sbcl --core ${WRKDIR}/${BOOT_DISTNAME}/output/sbcl.core --disable-debugger --userinit /dev/null --sysinit /dev/null"
+LISP_CMD=	"${WRKDIR}/${BOOT_DISTNAME}/src/runtime/sbcl --core ${WRKDIR}/${BOOT_DISTNAME}/output/sbcl.core ${LISP_EXTRA_ARG} --disable-debugger --userinit /dev/null --sysinit /dev/null"
 .if ${OSVERSION} >= 600000
 BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libc.so.5:${PORTSDIR}/misc/compat5x
 .endif
