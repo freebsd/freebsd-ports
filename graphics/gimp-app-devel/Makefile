@@ -8,7 +8,7 @@
 
 PORTNAME=	gimp-app
 PORTVERSION=	2.3.16
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -39,7 +39,7 @@ USE_GETTEXT=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-USE_GNOME+=	gnomehack intltool intlhack gtk20 libartlgpl2 ltverhack desktopfileutils libgtkhtml
+USE_GNOME+=	gnomehack intltool intlhack gtk20 libartlgpl2 ltverhack desktopfileutils
 WANT_GNOME=	yes
 USE_GCC=	3.4+
 USE_LDCONFIG=	yes
@@ -58,6 +58,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 .if !defined(GIMP_SLAVE)
 OPTIONS?=	DEBUG "debugging" off \
+		HELPBROWSER "internal help browser" on \
 		MP "multiple processor support" off \
 		RSVG "SVG format support" on
 .endif
@@ -102,6 +103,15 @@ USE_GNOME+=		desktopfileutils gnomehier
 PLIST_SUB+=		GNOME=""
 .else
 PLIST_SUB+=		GNOME="@comment "
+.endif
+
+.if defined(WITH_HELPBROWSER)
+USE_GNOME+=		libgtkhtml
+CONFIGURE_ARGS+=	--with-gtkhtml2
+PLIST_SUB+=		HELPBROWSER=""
+.else
+CONFIGURE_ARGS+=	--without-gtkhtml2
+PLIST_SUB+=		HELPBROWSER="@comment "
 .endif
 
 .endif
