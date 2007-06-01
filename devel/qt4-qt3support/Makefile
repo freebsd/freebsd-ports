@@ -71,7 +71,7 @@ pre-configure:
 	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/../../bin/moc
 post-configure:
 	${REINPLACE_CMD} -e 's|${PREFIX}/lib/Qt3Support.pc|${PREFIX}/libdata/pkgconfig/Qt3Support.pc|g' \
-		${WRKSRC}/Makefile
+		-e 's|.*$$(QMAKE).*||g' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
 			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
 			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
