@@ -27,7 +27,7 @@ USE_LDCONFIG=	yes
 
 OPTIONS=	EXIF	"Build with EXIF support"		on \
 		DNSSD	"Build with DNS-SD support"		off \
-		QT4	"Enable Qt4 plugin"			off \
+		QT4	"Enable Qt4 plugin"			off
 
 .include <bsd.port.pre.mk>
 
