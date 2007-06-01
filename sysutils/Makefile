@@ -268,7 +268,6 @@
     SUBDIR += growspd
     SUBDIR += grub
     SUBDIR += gstopd
-    SUBDIR += gstreamer-plugins-cdio80
     SUBDIR += gstreamer-plugins-hal
     SUBDIR += gtk-imonc
     SUBDIR += gtk-send-pr

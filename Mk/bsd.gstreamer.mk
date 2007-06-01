@@ -20,8 +20,6 @@ Gstreamer_Pre_Include=		bsd.gstreamer.mk
 #
 #  For Gstreamer 0.10:
 # USE_GSTREAMER=	lame faac ffmpeg
-#  For Gstreamer 0.8:
-# USE_GSTREAMER80=	dvd lame flac
 #
 # If you want to use USE_GSTREAMER after <bsd.port.pre.mk>
 # you must follow one of the examples listed below
@@ -48,15 +46,10 @@ Gstreamer_Pre_Include=		bsd.gstreamer.mk
 #
 
 GSTREAMER_PORT=		${PORTSDIR}/multimedia/gstreamer-plugins
-GSTREAMER80_PORT=	${GSTREAMER_PORT}80
 _GST_LIB_BASE=		${LOCALBASE}/lib/gstreamer-${GST_VERSION}
-_GST80_LIB_BASE=	${LOCALBASE}/lib/gstreamer-${GST80_VERSION}
 GST_VERSION=		0.10
 GST_MINOR_VERSION=	.0
-GST80_VERSION=		0.8
-GST80_MINOR_VERSION=	.10
 GST_SHLIB_VERSION=	1
-GST80_SHLIB_VERSION=	1
 #
 # These are the current supported gstreamer-plugins modules
 #
@@ -66,27 +59,16 @@ _USE_GSTREAMER_ALL=	a52dec aalib annodex bad bz2 cairo cdaudio cdparanoia dts \
 			libcaca libmms libpng libvisual mad mpeg2enc mpeg2dec \
 			musepack neon ogg pango pulse python sdl shout2 sidplay \
 			spc speex swfdec theora ugly vorbis wavpack xvid
-_USE_GSTREAMER80_ALL=	a52dec aalib artsd audiofile cairo cdaudio cdio cdparanoia \
-			dts dv dvd esound faac faad ffmpeg flac \
-			gconf gdkpixbuf gnomevfs gsm hermes ivorbis jack jpeg \
-			ladspa lame libfame libmms libmng \
-			libpng libvisual mad mikmod mpeg2dec mpeg2enc mplex \
-			musepack musicbrainz nas sdl shout shout2 sidplay \
-			smoothwave sndfile speex theora ogg pango polyp \
-			python swfdec vorbis x264 xvid
+
 # other plugins
 OTHER_GSTREAMER_PLUGINS+=	core yes
-OTHER_GSTREAMER80_PLUGINS+=	${OTHER_GSTREAMER_PLUGINS}
 
 _USE_GSTREAMER_ALL+=	${OTHER_GSTREAMER_PLUGINS}
-_USE_GSTREAMER80_ALL+=	${OTHER_GSTREAMER80_PLUGINS}
 
 core_DEPENDS=	multimedia/gstreamer-plugins-core
 
 yes_DEPENDS=	multimedia/gstreamer-plugins
 yes_NAME=	gstreamer-plugins
-yes_GST80_PREFIX=	# empty
-yes_GST_PREFIX=		# empty
 
 cdio_DEPENDS=	sysutils/gstreamer-plugins-cdio
 
@@ -194,11 +176,8 @@ bad_DEPENDS=	multimedia/gstreamer-plugins-bad
 bz2_DEPENDS=	multimedia/gstreamer-plugins-bz2
 
 ffmpeg_DEPENDS=	multimedia/gstreamer-ffmpeg
-ffmpeg_GST80_SUFX=	80
-ffmpeg_GST80_PREFIX=	gstreamer-
 ffmpeg_GST_PREFIX=	gstreamer-
 ffmpeg_GST_SUFX=	# empty
-ffmpeg_GST80_VERSION=	0.8.7
 ffmpeg_GST_VERSION=	0.10.0
 
 dts_DEPENDS=	multimedia/gstreamer-plugins-dts
@@ -225,11 +204,8 @@ PYTHON_PKGNAMEPREFIX?=	py*-
 
 python_DEPENDS=	multimedia/py-gstreamer
 python_NAME=	gstreamer
-python_GST80_SUFX=      80
-python_GST80_PREFIX=    ${PYTHON_PKGNAMEPREFIX}
 python_GST_PREFIX=      ${PYTHON_PKGNAMEPREFIX}
 python_GST_SUFX=        # empty
-python_GST80_VERSION=   0.8.2
 python_GST_VERSION=     0.10.4
 
 theora_DEPENDS=	multimedia/gstreamer-plugins-theora
@@ -250,18 +226,6 @@ pango_DEPENDS=	x11-toolkits/gstreamer-plugins-pango
 .if defined(_POSTMKINCLUDED) && !defined(Gstreamer_Post_Include)
 Gstreamer_Post_Include=	bsd.gstreamer.mk
 
-.for ext in ${USE_GSTREAMER80}
-${ext}_GST80_SUFX?=	80
-${ext}_GST80_PREFIX?=	gstreamer-plugins-
-${ext}_GST80_VERSION?=	${GST80_VERSION}${GST80_MINOR_VERSION}
-${ext}_NAME?=		${ext}
-. if ${_USE_GSTREAMER80_ALL:M${ext}}!= "" && exists(${PORTSDIR}/${${ext}_DEPENDS}${${ext}_GST80_SUFX})
-BUILD_DEPENDS+=	${${ext}_GST80_PREFIX}${${ext}_NAME}${${ext}_GST80_SUFX}>=${${ext}_GST80_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}${${ext}_GST80_SUFX}
-RUN_DEPENDS+=	${${ext}_GST80_PREFIX}${${ext}_NAME}${${ext}_GST80_SUFX}>=${${ext}_GST80_VERSION}:${PORTSDIR}/${${ext}_DEPENDS}${${ext}_GST80_SUFX}
-. else
-IGNORE=	cannot install: unknown gstreamer-plugin -- ${ext}
-. endif
-.endfor
 .for ext in ${USE_GSTREAMER}
 ${ext}_GST_PREFIX?=	gstreamer-plugins-
 ${ext}_GST_VERSION?=	${GST_VERSION}${GST_MINOR_VERSION}

@@ -1,4 +1,0 @@
-lib/gstreamer-%%VERSION%%/libpitfdll.la
-lib/gstreamer-%%VERSION%%/libpitfdll.so
-@exec %%LOCALBASE%%/bin/gst-register-0.8 --gst-registry=%D/share/gnome/cache/gstreamer-%%VERSION%%/registry.xml 2>/dev/null || true
-@unexec %%LOCALBASE%%/bin/gst-register-0.8 --gst-registry=%D/share/gnome/cache/gstreamer-%%VERSION%%/registry.xml 2>/dev/null || true
