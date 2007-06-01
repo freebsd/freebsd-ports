@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	softfail
-PORTVERSION=	1.15
+PORTVERSION=	1.18
 CATEGORIES=	mail
-MASTER_SITES=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail-smtpextfork/
+MASTER_SITES=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail-smtpextfork/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	jmelo/${PORTNAME}
 DISTNAME=	${PORTNAME}_fbsdbrasil-${PORTVERSION}
 
 MAINTAINER=	eksffa@freebsdbrasil.com.br
@@ -30,6 +32,8 @@ IGNORE=		this software only works with qmail-spamcontrol
 
 QMAIL_SLAVEPORT=	spamcontrol
 
+SUB_FILES=	pkg-message
+
 .include <bsd.port.pre.mk>
 
 crontab-entry: extract
@@ -44,14 +48,14 @@ pre-everything::
 	@${ECHO_MSG} " WITH_MYSQL_PASSWD=<value>	Set user's password to mysql"
 	@${ECHO_MSG} " WITH_MYSQL_DB=<value>		Set MySQL database to use"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} " WITH_UNBLOCK_TIME=<value>	How long (minutes) before"
-	@${ECHO_MSG} "				accepting greylisted e-mails"
-	@${ECHO_MSG} " WITH_SEEN_TIME=<value>		Minium time a retry should wait"
-	@${ECHO_MSG} " WITH_SEEN_MAXTIMES=<value>	Number of times we will allow"
-	@${ECHO_MSG} "				WITH_SEEN_TIME be not respected"
-	@${ECHO_MSG} "				before AUTO blacklisting IP"
-	@${ECHO_MSG} " WITH_MAXDAYS_AUTO=<value>	How long (days) an AUTOmatically"
-	@${ECHO_MSG} "				added entry will exist in DB"
+	@${ECHO_MSG} " WITH_MAXDAYSAUTOBLACKINDB=<value>"
+	@${ECHO_MSG} "		How long (days) an AUTOmatically"
+	@${ECHO_MSG} "		added blacklist entry will exist in DB"
+	@${ECHO_MSG} "		(used for rotate-softfail-db program)"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} " WITH_REPORTMAIL=<e-mail>"
+	@${ECHO_MSG} "		Whom (e-mail address) to report statistics when"
+	@${ECHO_MSG} "		qmail-sf.log get rotated."
 	@${ECHO_MSG} ""
 
 pre-build:
@@ -85,20 +89,20 @@ pre-build:
 	@${REINPLACE_CMD} -e 's|USE softfail|USE ${WITH_MYSQL_DB}|g' \
 		${WRKSRC}/softfail.sql
 .endif
-.if defined(WITH_UNBLOCK_TIME)
-	@${ECHO_CMD} "#define UNBLOCK_AFTER_SEEN	${WITH_UNBLOCK_TIME}" \
+.if defined(WITH_SFGLTIME)
+	@${ECHO_CMD} "#define UNBLOCK_AFTER_SEEN	${WITH_SFGLTIME}" \
 		>> ${WRKSRC}/conf.h
 .endif
-.if defined(WITH_SEEN_TIME)
-	@${ECHO_CMD} "#define RFCSEENTIME	${WITH_SEEN_TIME}" \
+.if defined(WITH_SFSEENTIME)
+	@${ECHO_CMD} "#define RFCSEENTIME	${WITH_SFSEENTIME}" \
 		>> ${WRKSRC}/conf.h
 .endif
-.if defined(WITH_SEEN_MAXTIMES)
-	@${ECHO_CMD} "#define SEENCONSECMAXTIME	${WITH_SEEN_MAXTIMES}" \
+.if defined(WITH_SFMAXSEENTIMES)
+	@${ECHO_CMD} "#define SEENCONSECMAXTIME	${WITH_SFMAXSEENTIMES}" \
 		>> ${WRKSRC}/conf.h
 .endif
-.if defined(WITH_MAXDAYS_AUTO)
-	@${ECHO_CMD} "#define MAXDAYSAUTOINDB	${WITH_MAXDAYS_AUTO}" \
+.if defined(WITH_MAXDAYSAUTOBLACKINDB)
+	@${ECHO_CMD} "#define MAXDAYSAUTOINDB	${WITH_MAXDAYSAUTOBLACKINDB}" \
 		>> ${WRKSRC}/conf.h
 .endif
 
@@ -108,11 +112,13 @@ post-patch:
 		${WRKSRC}/rotate-softfail.sh
 .endif
 
-post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/softfail.sql ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
+
+post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
