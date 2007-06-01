@@ -7,6 +7,7 @@
 
 PORTNAME=	FreeCAD
 DISTVERSION=	0.6.472
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	free-cad
@@ -14,12 +15,12 @@ MASTER_SITE_SUBDIR=	free-cad
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A general purpose 3D CAD modeller
 
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake			\
-		${LOCALBASE}/lib/libWm4Foundation.a:${PORTSDIR}/graphics/wildmagic
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	gts.5:${PORTSDIR}/graphics/gts			\
 		SoQt.24:${PORTSDIR}/x11-toolkits/soqt		\
 		TKernel.0:${PORTSDIR}/cad/opencascade		\
-		xerces-c.27:${PORTSDIR}/textproc/xerces-c2
+		xerces-c.27:${PORTSDIR}/textproc/xerces-c2	\
+		Wm4Foundation.0:${PORTSDIR}/graphics/wildmagic
 
 USE_PYTHON=	yes
 USE_QT_VER=	3
