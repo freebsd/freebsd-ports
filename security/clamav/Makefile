@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	0.90.2
-PORTREVISION=	1
+PORTVERSION=	0.90.3
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -19,7 +18,6 @@ LIB_DEPENDS=	gmp.7:${PORTSDIR}/math/libgmp4
 OPTIONS=	ARC "Enable arch archives support" On \
 		ARJ "Enable arj archives support" On \
 		LHA "Enable lha archives support" On \
-		UNZOO "Enavle zoo archives support" On \
 		MILTER "Compile the milter interface" Off \
 		LDAP "libmilter was built with LDAP" Off \
 		CURL "Support URL downloading" Off \
@@ -124,9 +122,6 @@ RUN_DEPENDS+=	arj:${PORTSDIR}/archivers/arj
 .endif
 .if !defined(WITHOUT_LHA)
 RUN_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
-.endif
-.if !defined(WITHOUT_UNZOO)
-RUN_DEPENDS+=	unzoo:${PORTSDIR}/archivers/unzoo
 .endif
 
 .if defined(WITH_MILTER)
