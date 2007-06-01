@@ -1,0 +1,11 @@
+bin/cchess
+@unexec if cmp -s %D/etc/cchess/sdklircrc %D/etc/cchess/sdklircrc.sample; then rm -f %D/etc/cchess/sdklircrc; fi
+etc/cchess/sdklircrc.sample
+@exec if [ ! -f %D/etc/cchess/sdklircrc ]; then cp -p %D/etc/cchess/sdklircrc.sample %D/etc/cchess/sdklircrc; fi
+%%DATADIR%%/BOOK.DAT
+%%DATADIR%%/jiang.wav
+%%DATADIR%%/qizi.bmp
+%%DATADIR%%/xqbg.bmp
+%%DATADIR%%/big.dat
+@dirrmtry etc/cchess
+@dirrm %%DATADIR%%

@@ -101,6 +101,7 @@
     SUBDIR += cake
     SUBDIR += cardpics
     SUBDIR += cavezofphear
+    SUBDIR += cchess
     SUBDIR += ceferino
     SUBDIR += cgoban
     SUBDIR += cgoban2
