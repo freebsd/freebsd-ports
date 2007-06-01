@@ -13,27 +13,23 @@ MASTER_SITES=	http://insitu.lri.fr/metisse/download/latest/
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Toolkit to explore video and human-computer interaction
 
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GL=		glu
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
 
-OPTIONS=	JPEG	"Build with JPEG image support"		on \
-		PNG	"Build with PNG image support"		on \
-		EXIF	"Build with EXIF support"		on \
-		QT4	"Enable Qt4 plugin"			off
+OPTIONS=	EXIF	"Build with EXIF support"		on \
+		DNSSD	"Build with DNS-SD support"		off \
+		QT4	"Enable Qt4 plugin"			off \
 
 .include <bsd.port.pre.mk>
-
-.if !defined(WITHOUT_JPEG)
-LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
-.endif
-
-.if !defined(WITHOUT_PNG)
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
-.endif
 
 .if !defined(WITHOUT_EXIF)
 LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif
@@ -46,6 +42,12 @@ PLIST_SUB+=	QT4=""
 .else
 CONFIGURE_ARGS+=	--disable-qt
 PLIST_SUB+=	QT4="@comment "
+.endif
+
+.if exists(${LOCALBASE}/include/avahi-compat-libdns_sd/dns_sd.h)
+LIB_DEPENDS+=	dns_sd.1:${PORTSDIR}/net/avahi
+.elif defined(WITH_DNSSD)
+LIB_DEPENDS+=	dns_sd.1:${PORTSDIR}/net/mDNSResponder
 .endif
 
 .include <bsd.port.post.mk>
