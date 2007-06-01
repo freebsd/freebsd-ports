@@ -8076,6 +8076,7 @@ newpki-client	ports/security/newpki-client
 newpki-lib	ports/security/newpki-lib
 newpki-server	ports/security/newpki-server
 newportsversioncheck	ports/ports-mgmt/newportsversioncheck
+newsbeuter	ports/www/newsbeuter
 newsbot		ports/net-im/newsbot
 newscache	ports/news/newscache
 newsfeed	ports/www/newsfeed
