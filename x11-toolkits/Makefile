@@ -52,7 +52,6 @@
     SUBDIR += gnustep-xdps
     SUBDIR += gob
     SUBDIR += gstreamer-plugins-pango
-    SUBDIR += gstreamer-plugins-pango80
     SUBDIR += gtk-sharp10
     SUBDIR += gtk-sharp20
     SUBDIR += gtk12
