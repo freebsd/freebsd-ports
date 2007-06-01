@@ -6,6 +6,7 @@
 
 PORTNAME=	mediaproxy
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://mediaproxy.ag-projects.com/ \
 		http://mediaproxy.ag-projects.com/old/
