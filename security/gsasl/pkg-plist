@@ -3,14 +3,17 @@ include/gsasl-compat.h
 include/gsasl-mech.h
 include/gsasl.h
 lib/libgsasl.a
+lib/libgsasl.la
 lib/libgsasl.so
-lib/libgsasl.so.9
+lib/libgsasl.so.10
 libdata/pkgconfig/libgsasl.pc
 %%PORTDOCS%%%%DOCSDIR%%/gsasl.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/abstraction.png
 %%PORTDOCS%%%%DOCSDIR%%/reference/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/controlflow.png
 %%PORTDOCS%%%%DOCSDIR%%/reference/controlflow2.png
+%%PORTDOCS%%%%DOCSDIR%%/reference/gsasl-gsasl.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/gsasl-gsasl-compat.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/gsasl-gsasl-mech.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/gsasl.devhelp
 %%PORTDOCS%%%%DOCSDIR%%/reference/gsasl.devhelp2
@@ -30,6 +33,7 @@ libdata/pkgconfig/libgsasl.pc
 %%NLS%%share/locale/fr/LC_MESSAGES/libgsasl.mo
 %%NLS%%share/locale/ga/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/ga/LC_MESSAGES/libgsasl.mo
+%%NLS%%share/locale/id/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/libgsasl.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gsasl.mo
@@ -44,5 +48,6 @@ libdata/pkgconfig/libgsasl.pc
 %%NLS%%share/locale/vi/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/libgsasl.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gsasl.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/gsasl.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/reference
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
