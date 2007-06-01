@@ -15,6 +15,9 @@ COMMENT=	An automatic theorem prover for the SMT problem
 
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/libgmp4
 
+DEPRECATED=	CVC Lite is no longer supported. Please use CVC3 (math/cvc3) for all your validity checking needs!
+EXPIRATION_DATE=	2007-06-30
+
 CONFIGURE_ARGS=	--with-arith=gmp \
 		--with-extra-libs=${LOCALBASE}/lib \
 		--with-extra-includes=${LOCALBASE}/include \
@@ -27,4 +30,10 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/cvcl-20060527
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=	Broken with gcc 4.2
+.endif
+
+.include <bsd.port.post.mk>
