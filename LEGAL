@@ -158,6 +158,7 @@ djbdns*			dns/djbdns		No license -- see
 						http://cr.yp.to/softwarelaw.html
 djbfft-*		math/djbfft		No license -- see
 						http://cr.yp.to/softwarelaw.html
+dlv			lang/dlv		Not sure if we can redistribute it
 dn*.tgz			emulators/darcnes	Commercial use is restricted
 dnews_*			news/dnews		Only free for schools and
 						universities, but they have to
