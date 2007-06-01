@@ -356,7 +356,7 @@ libexec/gimp/2.2/plug-ins/gtm
 libexec/gimp/2.2/plug-ins/guillotine
 libexec/gimp/2.2/plug-ins/header
 libexec/gimp/2.2/plug-ins/help
-libexec/gimp/2.2/plug-ins/helpbrowser
+%%HELPBROWSER%%libexec/gimp/2.2/plug-ins/helpbrowser
 libexec/gimp/2.2/plug-ins/hot
 libexec/gimp/2.2/plug-ins/ifscompose
 libexec/gimp/2.2/plug-ins/illusion
