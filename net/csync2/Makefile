@@ -17,7 +17,9 @@ COMMENT=	A cluster synchronization tool
 LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync \
 		tasn1.3:${PORTSDIR}/security/libtasn1 \
 		gnutls.15:${PORTSDIR}/security/gnutls \
-		sqlite.2:${PORTSDIR}/databases/sqlite2
+		sqlite.2:${PORTSDIR}/databases/sqlite2 \
+		gcrypt.13:${PORTSDIR}/security/libgcrypt \
+		gpg-error.0:${PORTSDIR}/security/libgpg-error
 
 MAN1=	csync2.1
 
