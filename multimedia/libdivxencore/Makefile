@@ -8,12 +8,15 @@
 PORTNAME=	libdivxencore
 PORTVERSION=	0.4.0.50
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.projectmayo.com/dnload/divxcore/
+MASTER_SITES=	http://ftp.intron.ac/pub/algorithm/MPEG4/opendivx/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	encore${PORTVERSION:E}src
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	OpenDivX encoding engine from Project Mayo
+
+DEPRECATED=	Obsolete, Project Mayo is dead
+EXPIRATION_DATE=2007-06-31
 
 ONLY_FOR_ARCHS=	i386
 USE_ZIP=	yes
