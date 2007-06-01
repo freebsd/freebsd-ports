@@ -17,6 +17,7 @@ COMMENT=	A Disjunctive Datalog System
 NO_BUILD=	yes
 PLIST_FILES=	bin/dlv
 ONLY_FOR_ARCHS=	i386 amd64
+RESTRICTED=	Not sure if we can redistribute it
 
 do-extract:
 
