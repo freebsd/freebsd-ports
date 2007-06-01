@@ -3,8 +3,10 @@ bin/epmd
 bin/erl
 bin/erl_call
 bin/erlc
+bin/escript
 bin/run_erl
 bin/to_erl
+bin/typer
 @comment Insert PLIST here
 @comment -=[ begin PLIST.lib-erlang ]=-
 @comment -=[ end PLIST.lib-erlang ]=-
