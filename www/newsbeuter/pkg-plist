@@ -1,0 +1,7 @@
+bin/newsbeuter
+bin/podbeuter
+share/locale/de/LC_MESSAGES/newsbeuter.mo
+share/locale/it/LC_MESSAGES/newsbeuter.mo
+share/doc/newsbeuter/docbook-xsl.css
+share/doc/newsbeuter/newsbeuter.html
+@dirrm share/doc/newsbeuter
