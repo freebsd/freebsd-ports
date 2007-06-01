@@ -7,6 +7,7 @@
 
 PORTNAME=	Search-Xapian
 PORTVERSION=	1.0.0.0
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Search
@@ -31,6 +32,7 @@ MAN3=	Search::Xapian.3 \
 	Search::Xapian::PostingIterator.3 \
 	Search::Xapian::QueryParser.3 \
 	Search::Xapian::Stem.3 \
+	Search::Xapian::TermGenerator.3 \
 	Search::Xapian::TermIterator.3 \
 	Search::Xapian::TradWeight.3 \
 	Search::Xapian::Weight.3 \
