@@ -243,6 +243,7 @@
     SUBDIR += vstream-client
     SUBDIR += win32-codecs
     SUBDIR += x264
+    SUBDIR += x264-gtk
     SUBDIR += xanim
     SUBDIR += xawtv
     SUBDIR += xdvshow
