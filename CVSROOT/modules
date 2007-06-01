@@ -16254,6 +16254,7 @@ x11iraf		ports/science/x11iraf
 x11perf		ports/x11/x11perf
 x11vnc		ports/net/x11vnc
 x264		ports/multimedia/x264
+x264-gtk	ports/multimedia/x264-gtk
 x2vnc		ports/x11-servers/x2vnc
 x2x		ports/x11-servers/x2x
 x3270		ports/x11/x3270
