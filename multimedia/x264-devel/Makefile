@@ -6,14 +6,14 @@
 #      $Id: Makefile 30 2006-10-30 22:15:26Z buhnux $
 
 PORTNAME=	x264
-PORTVERSION=	0.0.20070402
-PORTREVISION=	3
+PORTVERSION=	0.0.20070531
+PORTREVISION?=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION:S/0.0.//}-2245
 
 MAINTAINER=	multimedia@FreeBSD.org
-COMMENT=	Multimedia library and tool for encoding H.264/AVC video streams
+COMMENT?=	Multimedia library and tool for encoding H.264/AVC video streams
 
 WANT_GNOME=	yes
 USE_BZIP2=	yes
@@ -25,11 +25,8 @@ ALL_TARGET=	default
 USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 
-OPTIONS=	GPAC "Enable MPEG-4 Output" On \
-		GTK2 "Enable GTK2+ Frontend" On \
-		DEBUG "Enable Debugging" Off \
-		OPTIMIZED_CFLAGS "Enable Optimized CFLAGS" Off \
-		X11_OUTPUT "Enable X11 Output" Off
+OPTIONS=	DEBUG "Enable Debugging" Off \
+		OPTIMIZED_CFLAGS "Enable Optimized CFLAGS" Off
 
 CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/include -I${X11BASE}/include" \
 			--extra-ldflags="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib" \
@@ -37,13 +34,17 @@ CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/incl
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_GTK2) || ${HAVE_GNOME:Mgtk20}!=""
+.if defined(WITH_GTK2) && ${SLAVE_PORT:L}=="yes"
+LIB_DEPENDS+=	x264.50:${PORTSDIR}/multimedia/x264
+BUILD_WRKSRC=	${WRKSRC}/gtk
+INSTALL_WRKSRC=	${WRKSRC}/gtk
+ALL_TARGET=	all
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20
 CONFIGURE_ARGS+=	--enable-gtk
-PLIST_SUB+=	GTK=""
 .else
-PLIST_SUB+=	GTK="@comment "
+OPTIONS+=	GPAC "Enable MPEG-4 Output" On \
+		X11_OUTPUT "Enable X11 Output" Off
 .endif
 
 .if ${ARCH}=="i386"
@@ -85,6 +86,7 @@ post-patch:
 		${WRKSRC}/Makefile \
 		${WRKSRC}/*/Makefile
 
+.if ${SLAVE_PORT:L}=="no"
 post-build:
 	cd ${WRKSRC}/tools && ${MAKE} avc2avi
 
@@ -94,5 +96,6 @@ pre-install:
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/avc2avi ${PREFIX}/bin
+.endif
 
 .include <bsd.port.post.mk>
