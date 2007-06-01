@@ -1150,6 +1150,7 @@ ccaudio		ports/audio/ccaudio
 cccc		ports/devel/cccc
 ccd2iso		ports/sysutils/ccd2iso
 ccdoc		ports/devel/ccdoc
+cchess		ports/games/cchess
 cclient		ports/mail/cclient
 ccmalloc	ports/devel/ccmalloc
 ccmath		ports/math/ccmath
