@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	igraph
-PORTVERSION=	0.3.3
+PORTVERSION=	0.4.1
 CATEGORIES=	math python
-MASTER_SITES=	http://cheeseshop.python.org/packages/source/i/igraph/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org
@@ -16,7 +16,7 @@ COMMENT=	High performance graph data structures and algorithms
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>

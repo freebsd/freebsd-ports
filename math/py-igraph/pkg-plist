@@ -1,7 +1,20 @@
+bin/igraph
 %%PYTHON_SITELIBDIR%%/igraph/__init__.py
 %%PYTHON_SITELIBDIR%%/igraph/__init__.pyc
 %%PYTHON_SITELIBDIR%%/igraph/__init__.pyo
+%%PYTHON_SITELIBDIR%%/igraph/app/__init__.py
+%%PYTHON_SITELIBDIR%%/igraph/app/__init__.pyc
+%%PYTHON_SITELIBDIR%%/igraph/app/__init__.pyo
+%%PYTHON_SITELIBDIR%%/igraph/app/shell.py
+%%PYTHON_SITELIBDIR%%/igraph/app/shell.pyc
+%%PYTHON_SITELIBDIR%%/igraph/app/shell.pyo
+%%PYTHON_SITELIBDIR%%/igraph/clustering.py
+%%PYTHON_SITELIBDIR%%/igraph/clustering.pyc
+%%PYTHON_SITELIBDIR%%/igraph/clustering.pyo
 %%PYTHON_SITELIBDIR%%/igraph/core.so
+%%PYTHON_SITELIBDIR%%/igraph/statistics.py
+%%PYTHON_SITELIBDIR%%/igraph/statistics.pyc
+%%PYTHON_SITELIBDIR%%/igraph/statistics.pyo
 %%PYTHON_SITELIBDIR%%/igraph/test/__init__.py
 %%PYTHON_SITELIBDIR%%/igraph/test/__init__.pyc
 %%PYTHON_SITELIBDIR%%/igraph/test/__init__.pyo
@@ -36,4 +49,5 @@
 %%PYTHON_SITELIBDIR%%/igraph/test/structural.pyc
 %%PYTHON_SITELIBDIR%%/igraph/test/structural.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/igraph/test
+@dirrm %%PYTHON_SITELIBDIR%%/igraph/app
 @dirrm %%PYTHON_SITELIBDIR%%/igraph
