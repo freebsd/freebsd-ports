@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.1.18
+PORTVERSION=	5.1.19
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
@@ -129,6 +129,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|install-data-am: install-pkgincludeHEADERS|install-data-am:|g" ${WRKSRC}/extra/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-data-am: install-pkgincludeHEADERS|install-data-am:|g" ${WRKSRC}/include/Makefile.in
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/mysys/default.c
+	@${REINPLACE_CMD} -e "/^AM_CXXFLAGS/s|=.*|+= \$$(NDB_CXXFLAGS)|" `${FIND} ${WRKSRC}/storage/ndb -name Makefile.in`
 .if defined(WITH_PROC_SCOPE_PTH)
 	@${REINPLACE_CMD} -e "s|PTHREAD_SCOPE_SYSTEM|PTHREAD_SCOPE_PROCESS|g" ${WRKSRC}/sql/mysqld.cc
 .endif
