@@ -1,0 +1,19 @@
+--- LibApplications/OpenGLApplication/makefile.wm4.orig	Wed May 30 23:35:15 2007
++++ LibApplications/OpenGLApplication/makefile.wm4	Wed May 30 23:41:15 2007
+@@ -55,10 +55,15 @@
+ OBJDIR := $(CFG)
+ OBJ := $(SRC:%.cpp=$(CFG)/%.o)
+ LIB := ../../SDK/Library/$(CFG)/libWm4OpenGLApplication.a
++LIBSH := ../../SDK/Library/$(CFG)/libWm4OpenGLApplication.so.0
++LIBSO := ../../SDK/Library/$(CFG)/libWm4OpenGLApplication.so
++SHLIBLDFLAGS = -shared
+ 
+ build : $(OBJ)
+ 	$(AR) $(ARFLAGS) $(LIB) $(OBJ)
+-	cp -fp $(INC) $(INCDIR) 
++	$(CC) $(SHLIBLDFLAGS) -o $(LIBSH) $(OBJ)
++	ln -sf $(LIBSH) $(LIBSO)
++	cp -fp $(INC) $(INCDIR)
+ 
+ $(CFG)/TreeControl.o : TreeControl/TreeControl.cpp
+ 	@mkdir -p $(CFG)
