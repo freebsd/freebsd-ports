@@ -28,7 +28,7 @@ COMMENT=	Emacs + Canna + Wnn + Sj3
 BUILD_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs
 RUN_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs
 
-CONFLICTS=	emacs-19.* emacs-20.* \
+CONFLICTS=	emacs-19.* emacs-20.* emacs-22.* \
 		ja-emcws-20.* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
