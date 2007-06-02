@@ -17,7 +17,6 @@ COMMENT=	New flavor of asclock
 
 WRKSRC=		${WRKDIR}/asclock-xlib
 USE_XPM=	YES
-MAN1=		asclock.1
 
 .if defined(BATCH)
 USE_IMAKE=	YES
@@ -46,5 +45,6 @@ post-install:
 	  ${MKDIR} ${PREFIX}/share/asclock/${i}; \
 	  ${INSTALL_DATA} *.xpm config ${PREFIX}/share/asclock/${i}/ )
 .endfor
+	cd ${WRKSRC} && ${MAKE} install.man
 
 .include <bsd.port.post.mk>

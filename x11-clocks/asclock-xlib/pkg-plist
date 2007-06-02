@@ -1,4 +1,5 @@
 bin/asclock
+man/man1/asclock.1.gz
 share/asclock/Freeamp/beats.xpm
 share/asclock/Freeamp/clock.xpm
 share/asclock/Freeamp/config
