@@ -54,8 +54,10 @@ post-patch: gbsplay-post-patch
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/include|${LOCALBASE}/include|; \
 		 s|/usr/local/lib|${LOCALBASE}/lib|; \
-		 s|/usr/X11R6/include|${X11BASE}/include|; \
-		 s|/usr/X11R6/lib|${X11BASE}/lib|; \
+		 s|/usr/X11R6/include||; \
+		 s|/usr/X11R6/lib||; \
+		 s|/usr/X11/lib|${LOCALBASE}/lib|; \
+		 s|/usr/lib/X11|${LOCALBASE}/lib/X11|; \
 		 s|-Os||; s|-pipe||; s|-fomit-frame-pointer||; \
 		 s|-march=$$ARCH||' ${WRKSRC}/configure
 
