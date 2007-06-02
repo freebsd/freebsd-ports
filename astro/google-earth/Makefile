@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-earth
-PORTVERSION=	4.0.2735
+PORTVERSION=	4.1.7076.4458
 CATEGORIES=	astro deskutils
 MASTER_SITES=	http://dl.google.com/earth/GE${PORTVERSION:C/\..*//g}/
 DISTFILES=	${TARGET_DISTFILE}
@@ -19,8 +19,6 @@ EXTRACT_DEPENDS=	unmakeself:${PORTSDIR}/archivers/unmakeself
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 RESTRICTED=	Not sure about redistribution rights
-
-BROKEN=		Checksum mismatch
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\..*//g}/
 
@@ -71,7 +69,7 @@ do-build:
 do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/googleearth-mimetypes.xml ${PREFIX}/share/mime/packages/
-	${INSTALL_DATA} ${WRKSRC}/googleearth.desktop ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/Google-googleearth.desktop ${PREFIX}/share/applications/googleearth.desktop
 	${CP} -rp ${WRKSRC}/* ${DATADIR}
 	${RM} -f ${DATADIR}/googleearth-mimetypes.xml ${DATADIR}/googleearth.desktop
 	${LN} -sf ${DATADIR}/bin/googleearth ${PREFIX}/bin/
