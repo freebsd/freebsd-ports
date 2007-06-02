@@ -69,6 +69,7 @@ core_DEPENDS=	multimedia/gstreamer-plugins-core
 
 yes_DEPENDS=	multimedia/gstreamer-plugins
 yes_NAME=	gstreamer-plugins
+yes_GST_PREFIX=	# empty
 
 cdio_DEPENDS=	sysutils/gstreamer-plugins-cdio
 
