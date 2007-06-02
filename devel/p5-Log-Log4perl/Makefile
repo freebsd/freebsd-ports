@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Log4perl
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Log
@@ -59,6 +59,7 @@ MAN3=		Log::Log4perl.3 \
 		Log::Log4perl::Layout.3 \
 		Log::Log4perl::Layout::NoopLayout.3 \
 		Log::Log4perl::Layout::PatternLayout.3 \
+		Log::Log4perl::Layout::PatternLayout::Multiline.3 \
 		Log::Log4perl::Layout::SimpleLayout.3 \
 		Log::Log4perl::Level.3 \
 		Log::Log4perl::Logger.3 \
