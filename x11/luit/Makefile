@@ -7,18 +7,16 @@
 
 PORTNAME=	luit
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	Locale and ISO 2022 support for Unicode terminals.
+COMMENT=	Locale and ISO 2022 support for Unicode terminals
 
 XORG_CAT=	app
 USE_XORG=	x11 fontenc
 
 PLIST_FILES=	bin/luit
-
-CONFIGURE_ARGS=	--with-localealiasfile=${LOCALBASE}/share/X11/locale/locale.alias
 
 MAN1=		luit.1
 
