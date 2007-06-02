@@ -36,6 +36,7 @@
 %%SITE_PERL%%/Log/Log4perl/Layout.pm
 %%SITE_PERL%%/Log/Log4perl/Layout/NoopLayout.pm
 %%SITE_PERL%%/Log/Log4perl/Layout/PatternLayout.pm
+%%SITE_PERL%%/Log/Log4perl/Layout/PatternLayout/Multiline.pm
 %%SITE_PERL%%/Log/Log4perl/Layout/SimpleLayout.pm
 %%SITE_PERL%%/Log/Log4perl/Level.pm
 %%SITE_PERL%%/Log/Log4perl/Logger.pm
@@ -45,6 +46,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Log4perl/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Log4perl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log
+@dirrm %%SITE_PERL%%/Log/Log4perl/Layout/PatternLayout
 @dirrm %%SITE_PERL%%/Log/Log4perl/Layout
 @dirrm %%SITE_PERL%%/Log/Log4perl/JavaMap
 @dirrm %%SITE_PERL%%/Log/Log4perl/Filter
