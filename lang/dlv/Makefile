@@ -20,6 +20,8 @@ ONLY_FOR_ARCHS=	i386 amd64
 RESTRICTED=	Not sure if we can redistribute it
 
 do-extract:
+	${RM} -rf ${WRKDIR}
+	${MKDIR} ${WRKDIR}
 
 do-install:
 	${INSTALL_PROGRAM} ${DISTDIR}/${DISTNAME} ${PREFIX}/bin/dlv
