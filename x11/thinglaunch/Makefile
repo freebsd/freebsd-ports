@@ -17,8 +17,8 @@ COMMENT=	A very fast launcher program for X
 
 USE_X_PREFIX=	yes
 
-CPPFLAGS=	-I${X11BASE}/include -lX11
-LDFLAGS=	-L${X11BASE}/lib
+CPPFLAGS=	-I${LOCALBASE}/include -lX11
+LDFLAGS=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/thinglaunch
 
