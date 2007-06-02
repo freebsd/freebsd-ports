@@ -15,7 +15,7 @@ include/libpurple/conversation.h
 include/libpurple/core.h
 %%DBUS%%include/libpurple/dbus-bindings.h
 %%DBUS%%include/libpurple/dbus-define-api.h
-%%DBUS%%include/libpurple/dbus-maybe.h
+include/libpurple/dbus-maybe.h
 %%DBUS%%include/libpurple/dbus-purple.h
 %%DBUS%%include/libpurple/dbus-server.h
 %%DBUS%%include/libpurple/dbus-useful.h
