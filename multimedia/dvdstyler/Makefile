@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dvdstyler
-DISTVERSION=	1.5b5
-PORTREVISION=	2
+PORTVERSION=	1.5
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -18,39 +17,38 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	WXGTK2 front end to dvd recoding and authoring programs
 
 BUILD_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
-		mpgcat:${PORTSDIR}/multimedia/mpgtx \
+		mplex:${PORTSDIR}/multimedia/mjpegtools \
+		jpegtopnm:${PORTSDIR}/graphics/netpbm \
+		mpgtx:${PORTSDIR}/multimedia/mpgtx \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
-LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm \
-		lavfile-1.8.0:${PORTSDIR}/multimedia/mjpegtools \
-		wxsvg.0:${PORTSDIR}/graphics/wxsvg
 RUN_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
-		mpgcat:${PORTSDIR}/multimedia/mpgtx \
+		mplex:${PORTSDIR}/multimedia/mjpegtools \
+		jpegtopnm:${PORTSDIR}/graphics/netpbm \
+		mpgtx:${PORTSDIR}/multimedia/mpgtx \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
-#RUN_DEPENDS+=	xine:${PORTSDIR}/multimedia/xine
 
-DVDSTYLER_ICON=	${DATADIR}/rc/dvdstyler.png
-USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
+USE_WX=		2.6
+WX_COMPS=	wx svg
+WX_CONF_ARGS=	absolute
 USE_GMAKE=	yes
+USE_GNOME=	gnometarget desktopfileutils
+WANT_GNOME=	yes
 USE_GETTEXT=	yes
-CONFIGURE_ARGS=	--with-wx-config=wxgtk2-2.6-config
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
+USE_CDRTOOLS=	yes	# dvdstyler needs mkisofs
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=	Does not build.
+.if ${HAVE_GNOME:Mlibgnomeui}!=""
+USE_GNOME+=	libgnomeui
 .endif
 
 .if defined(WITH_DVD_DEVICE)
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
 .else
-.if ${OSVERSION} < 500000
-DEFAULT_DVD_DEVICE=/dev/cd0c
-.else
 DEFAULT_DVD_DEVICE=/dev/cd0
-.endif
 .endif
 
 pre-everything::
@@ -60,28 +58,20 @@ pre-everything::
 	@${ECHO_MSG} "===> Define WITH_DVD_DEVICE if you want to change the default"
 	@${ECHO_MSG} "===> For example, 'make WITH_DVD_DEVICE=\"/dev/somedevice\"'"
 .endif
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG} "===>"
-	@${ECHO_MSG} "===> Define WITH_OPTIMIZED_CFLAGS to enable optimized cflags"
-.endif
 
 post-patch:
-	@${SED} -e 's|%%COMMENT%%|${COMMENT}|; \
-		s|%%DVDSTYLER_ICON%%|${DVDSTYLER_ICON}|' \
-		< ${FILESDIR}/dvdstyler.desktop.in > ${WRKDIR}/dvdstyler.desktop
-	@${REINPLACE_CMD} -e 's|$$prefix/dvdstyler|${DATADIR}|' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|@datadir@/docs/@PACKAGE@|${DOCSDIR}|' \
-		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|g' \
-		${WRKSRC}/src/Config.h
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${REINPLACE_CMD} -e 's|-O3||' \
-		${WRKSRC}/configure
-.endif
+		${WRKSRC}/src/BurnDlg.cpp ${WRKSRC}/src/Config.h
+	@${REINPLACE_CMD} -e 's|gnome-config|disable-config|g ;  \
+		s|kde-config|disable-config|g' ${WRKSRC}/configure
 
 post-install:
-	${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKDIR}/dvdstyler.desktop ${PREFIX}/share/applications
+	@${MKDIR} ${PREFIX}/share/applications
+	@${INSTALL_DATA} ${WRKSRC}/install.win32/dvdstyler.desktop \
+		${PREFIX}/share/applications/
+	@${MKDIR} ${PREFIX}/share/pixmaps
+	@${INSTALL_DATA} ${WRKSRC}/src/rc/dvdstyler.png \
+		${PREFIX}/share/pixmaps/
+	@-update-desktop-database
 
 .include <bsd.port.post.mk>
