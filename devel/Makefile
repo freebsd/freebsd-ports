@@ -27,10 +27,6 @@
     SUBDIR += adime
     SUBDIR += adocman
     SUBDIR += afay
-    SUBDIR += agenda-headers
-    SUBDIR += agenda-libs
-    SUBDIR += agenda-snow-libs
-    SUBDIR += agenda-static-libs
     SUBDIR += agide
     SUBDIR += aifad
     SUBDIR += ald
@@ -715,9 +711,6 @@
     SUBDIR += mips-rtems-gcc
     SUBDIR += mips-rtems-gdb
     SUBDIR += mips-rtems-objc
-    SUBDIR += mipsel-linux-binutils
-    SUBDIR += mipsel-linux-gcc
-    SUBDIR += mipsel-linux-kernel-headers
     SUBDIR += mk
     SUBDIR += mkcmd
     SUBDIR += mkmf
