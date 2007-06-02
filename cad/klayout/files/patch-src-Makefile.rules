@@ -1,0 +1,13 @@
+--- src/Makefile.rules.orig	Tue May  8 04:41:19 2007
++++ src/Makefile.rules	Sat Jun  2 16:45:56 2007
+@@ -16,8 +16,8 @@
+ endif
+ CCOPTS=$(CCWARN) $(DEFS) $(CCOPT)
+ 
+-MOC=$(QTDIR)/bin/moc
+-UIC=$(QTDIR)/bin/uic
++MOC=$(QTDIR)/bin/moc-qt4
++UIC=$(QTDIR)/bin/uic-qt4
+ RCC=$(QTDIR)/bin/rcc
+ 
+ # this target must be first:
