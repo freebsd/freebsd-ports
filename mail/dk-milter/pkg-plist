@@ -7,4 +7,5 @@ sbin/gentxt-dk
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
 %%PORTDOCS%%%%DOCSDIR%%/autorespond.csh
+%%PORTDOCS%%%%DOCSDIR%%/rfc4870.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
