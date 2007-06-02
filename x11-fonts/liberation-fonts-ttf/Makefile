@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liberation-fonts-ttf
-PORTVERSION=	2
+PORTVERSION=	3
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://www.redhat.com/f/fonts/
 
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale	\
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
 USE_X_PREFIX=	yes
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/liberation-fonts-0.2
 
 PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"
 
