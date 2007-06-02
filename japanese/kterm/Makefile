@@ -38,7 +38,6 @@ PATCH_DIST_STRIP=	-p1
 
 USE_IMAKE=	yes
 USE_XPM=	yes
-MANCOMPRESSED=	no
 
 MAN1=		kterm.1
 MANLANG=	"" ja
