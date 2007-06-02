@@ -48,7 +48,7 @@ post-patch:
 		 s|-I$${QTROOT}/include|$${QTCPPFLAGS}| ; \
 		 s|-O2|$${CXXFLAGS}| ; \
 		 /WARN.*:=/d'
-	@${REINPLACE_CMD} -e 's|/tools/qt-3.0.4|$${X11BASE}|' \
+	@${REINPLACE_CMD} -e 's|/tools/qt-3.0.4|$${LOCALBASE}|' \
 		${WRKSRC}/directories.inc
 	@${REINPLACE_CMD} -e 's|\(VariableComplexNode::\(evaluate\)\)|\2|' \
 		${WRKSRC}/lib/fractal/VariableComplexNode.h
