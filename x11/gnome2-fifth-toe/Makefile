@@ -27,7 +27,6 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan \
 		liferea:${PORTSDIR}/net/liferea \
 		gnotime:${PORTSDIR}/deskutils/gnotime \
 		rhythmbox:${PORTSDIR}/audio/rhythmbox \
-		jamboree:${PORTSDIR}/audio/jamboree \
 		${LOCALBASE}/share/gnome/pixmaps/glines/classic.png:${PORTSDIR}/games/gnome-games-extra-data \
 		nautilus-sendto:${PORTSDIR}/deskutils/nautilus-sendto \
 		goobox:${PORTSDIR}/audio/goobox \
