@@ -1,0 +1,28 @@
+--- src/vte.c	2007/05/28 06:31:47	1901
++++ src/vte.c	2007/05/30 15:33:21	1904
+@@ -9464,14 +9464,14 @@
+ 	do {
+ 		row_data = _vte_terminal_find_row_data(terminal, row);
+ 		if (row_data == NULL) {
+-			goto fg_next_row;
++			goto fg_skip_row;
+ 		}
+ 		/* Back up in case this is a multicolumn character,
+ 		 * making the drawing area a little wider. */
+ 		i = start_column;
+ 		cell = _vte_row_data_find_charcell(row_data, i);
+ 		if (cell == NULL) {
+-			goto fg_next_row;
++			goto fg_skip_row;
+ 		}
+ 		while (cell->attr.fragment && i > 0) {
+ 			cell = _vte_row_data_find_charcell(row_data, --i);
+@@ -9482,7 +9482,7 @@
+ 			/* Get the character cell's contents. */
+ 			cell = _vte_row_data_find_charcell(row_data, i);
+ 			if (cell == NULL) {
+-				goto fg_next_row;
++				goto fg_skip_row;
+ 			}
+ 			while (cell->c == 0 ||
+ 					cell->c == ' ' ||
