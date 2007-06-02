@@ -214,7 +214,6 @@
     SUBDIR += gsi
     SUBDIR += gsm
     SUBDIR += gspeakers
-    SUBDIR += gstreamer-monkeysaudio
     SUBDIR += gstreamer-plugins-a52dec
     SUBDIR += gstreamer-plugins-cdaudio
     SUBDIR += gstreamer-plugins-cdparanoia
