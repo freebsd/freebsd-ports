@@ -31,7 +31,7 @@ post-extract:
 gbsplay-post-patch:
 	@${REINPLACE_CMD} -e \
 		's|`which xmms-config`||; \
-		 s|\(xmms-config\)|${X11BASE}/bin/\1|g; \
+		 s|\(xmms-config\)|${LOCALBASE}/bin/\1|g; \
 		 s|`which glib-config`||; \
 		 s|glib-config|${GLIB_CONFIG}|g; \
 		 /LOCALE_PREFIX/ s|$$localedir|${LOCALBASE}/share/locale|' \
