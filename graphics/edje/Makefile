@@ -7,7 +7,7 @@
 
 PORTNAME=	edje
 PORTVERSION=	20070223
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.springdaemons.com/pub/snapshots/e17/
@@ -17,7 +17,7 @@ COMMENT=	Edje is a complex graphical design and layout engine
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GCC=	3.4
+USE_GCC=	3.4+
 USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_EFL=	embryo eet evas ecore imlib2
 USE_LDCONFIG=	yes
