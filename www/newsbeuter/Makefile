@@ -23,8 +23,13 @@ USE_PERL5_BUILD=yes
 
 MAN1=	newsbeuter.1 podbeuter.1
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	${REINPLACE_CMD} -e "s,share/man,man,; \
 				s,prefix,PREFIX," ${WRKSRC}/Makefile
+.if ${OSVERSION} < 602107
+	${REINPLACE_CMD} -e "s,ncursesw,ncurses," ${WRKSRC}/Makefile
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
