@@ -26,6 +26,6 @@ USE_GCC=	3.4+
 MAKE_ENV+=	CXX="${CXX}" DATADIR="${DATADIR}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
