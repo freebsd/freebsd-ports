@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ng_car
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	net
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	mpd
@@ -27,8 +27,8 @@ IGNORE=	This port requires kernel sources
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=	Not supported < 5.x
+.if ${OSVERSION} >= 700041
+IGNORE=	"Already exists in base system"
 .endif
 
 post-install:
