@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	2007-04-29
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -28,7 +28,6 @@ CONFIGURE_ARGS=	--cc="${CC}" --prefix="${PREFIX}" \
 		--extra-cflags="-fPIC -DPIC ${CFLAGS} -I${LOCALBASE}/include" \
 		--extra-ldflags="-L${LOCALBASE}/lib" \
 		--extra-libs="${PTHREAD_LIBS}" \
-		--disable-bktr \
 		--enable-gpl \
 		--enable-pthreads \
 		--enable-swscaler
@@ -185,6 +184,11 @@ LIB_DEPENDS+=		xvidcore.4:${PORTSDIR}/multimedia/xvid
 CONFIGURE_ARGS+=	--enable-xvid
 .endif
 
+## bktr
+.ifdef(WITHOUT_BKTR)
+CONFIGURE_ARGS+=	--disable-bktr
+.endif
+
 pre-everything::
 .ifndef(WITHOUT_A52)
 	@${ECHO_MSG} 'You can disable liba52 support by defining WITHOUT_LIBA52'
@@ -233,6 +237,10 @@ pre-everything::
 .endif
 .ifndef(WITH_XVID)
 	@${ECHO_MSG} 'Define WITH_XVID to enable XVID codec'
+	@${ECHO_MSG}
+.endif
+.ifndef(WITHOUT_BKTR)
+	@${ECHO_MSG} 'Define WITHOUT_BKTR to disable bktr video grab'
 	@${ECHO_MSG}
 .endif
 
