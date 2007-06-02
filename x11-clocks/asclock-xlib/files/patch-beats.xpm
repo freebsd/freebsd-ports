@@ -1,0 +1,6 @@
+--- themes/Freeamp/beats.xpm.orig	Sat Jun  2 11:33:56 2007
++++ themes/Freeamp/beats.xpm	Sat Jun  2 11:34:00 2007
+@@ -1,2 +1,2 @@
+-static char *beats_xpm[] = { NULL };
++char *beats_xpm[] = { NULL };
+ 
