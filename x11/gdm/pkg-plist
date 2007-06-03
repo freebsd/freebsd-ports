@@ -254,7 +254,6 @@ share/locale/zu/LC_MESSAGES/gdm.mo
 @dirrm share/gnome/gdm/themes
 @dirrm share/gnome/gdm/BuiltInSessions
 @dirrm share/gnome/gdm
-@dirrm etc/pam.d
 @dirrm etc/gdm/modules
 @dirrm etc/gdm/Sessions
 @dirrm etc/gdm/PreSession
