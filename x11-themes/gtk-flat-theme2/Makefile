@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-flat-theme2
 PORTVERSION=	0.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_THEMES}
 MASTER_SITE_SUBDIR=	gtk2flat
@@ -24,8 +24,7 @@ USE_GNOME=	gnomehack gtk20
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700029
-BROKEN=		Incorrect objformat handling
-.endif
+post-extract:
+	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
