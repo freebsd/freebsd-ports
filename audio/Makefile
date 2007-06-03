@@ -333,6 +333,7 @@
     SUBDIR += linux-mbrola
     SUBDIR += linux-mikmod
     SUBDIR += linux-openal
+    SUBDIR += linux-sdl_mixer
     SUBDIR += linux-shoutcast
     SUBDIR += linux-vsound
     SUBDIR += listener
