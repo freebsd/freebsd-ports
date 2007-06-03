@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://devel.pluto.linux.it/projects/Gringotts/current/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK application to securely store sensitive data
 
 LIB_DEPENDS=	gringotts.2:${PORTSDIR}/security/libgringotts \
