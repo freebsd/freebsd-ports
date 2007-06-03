@@ -33,6 +33,10 @@ LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		xvidcore.4:${PORTSDIR}/multimedia/xvid
 
+BROKEN=		Does not build with new ffmpeg
+DEPRECATED=	Obsolete, getting old to keep unsupport version around
+EXPIRATION_DATE=2007-06-30
+
 PLIST_FILES=	bin/handbrake-gtk2
 WRKSRC=		${WRKDIR}/HandBrake-${PORTVERSION}
 
