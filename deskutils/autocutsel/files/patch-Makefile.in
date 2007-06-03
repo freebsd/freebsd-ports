@@ -1,5 +1,5 @@
---- Makefile.in.orig	Wed Jul  5 13:49:11 2006
-+++ Makefile.in	Wed Jul  5 13:50:04 2006
+--- Makefile.in.orig	Mon May 14 14:27:24 2007
++++ Makefile.in	Mon May 14 14:28:29 2007
 @@ -118,7 +118,7 @@
  cutsel_DEPENDENCIES = 
  cutsel_LDFLAGS = 
