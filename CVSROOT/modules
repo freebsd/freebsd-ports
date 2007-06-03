@@ -563,6 +563,7 @@ asterisk-app-ldap	ports/net/asterisk-app-ldap
 asterisk-app-notify	ports/net/asterisk-app-notify
 asterisk-bristuff	ports/net/asterisk-bristuff
 asterisk-fop	ports/www/asterisk-fop
+asterisk-gui	ports/www/asterisk-gui
 asterisk-oh323	ports/net/asterisk-oh323
 asterisk12	ports/net/asterisk12
 asterisk12-addons	ports/net/asterisk12-addons
