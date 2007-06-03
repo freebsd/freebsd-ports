@@ -1,14 +1,5 @@
 --- lib/gs_init.ps.orig	Sat Mar  5 07:02:23 2005
 +++ lib/gs_init.ps	Thu Apr 21 13:05:43 2005
-@@ -1440,7 +1440,7 @@
- % Set the default screen and BG/UCR.
- /.setdefaultbgucr {
-   systemdict /setblackgeneration known {
--    { pop 0 } dup setblackgeneration setundercolorremoval
-+    {} dup setblackgeneration setundercolorremoval
-   } if
- } bind def
- /.useloresscreen {	% - .useloresscreen <bool>
 @@ -2241,3 +2241,7 @@
  ifelse
  

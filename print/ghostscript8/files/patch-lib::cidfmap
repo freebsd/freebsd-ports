@@ -1,6 +1,6 @@
 --- lib/cidfmap.orig	Thu Dec 29 04:56:24 2005
-+++ lib/cidfmap	Mon Apr  9 00:47:56 2007
-@@ -26,3 +26,27 @@
++++ lib/cidfmap	Sat Apr 28 15:25:55 2007
+@@ -26,3 +26,31 @@
  %   /ShinGo-Bold   /HeiseiKakuGo-W5 ;
  %   /Ryumin-Medium << /FileType /TrueType /Path (H:/AuxFiles/Fonts/BATANG.TTC) /SubfontID 3 /CSI [(Japan1) 2] >> ;
  %
@@ -28,3 +28,7 @@
 +/HYGoThic-Medium	/MunhwaGothic-Regular ;
 +/HYSMyeongJo-Medium	/Munhwa-Regular ;
 +/HYRGoThic-Medium	/MunhwaGothic-Bold ;
++
++/STHeiti-Regular << /FileType /TrueType /Path (STHeiti-Regular.ttf) /SubfontID 0 /CSI [(CNS1) 5] >> ;
++/STSong-Light << /FileType /TrueType /Path (STSong-Light.ttf) /SubfontID 0 /CSI [(GB1) 5] >> ;
++/MSung-Light << /FileType /TrueType /Path (MSung-Light.ttf) /SubfontID 0 /CSI [(GB1) 5] >> ;

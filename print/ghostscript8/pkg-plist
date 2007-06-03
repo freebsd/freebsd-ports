@@ -40,26 +40,39 @@ bin/wftopfa
 %%SHLIB%%lib/libgs.so
 %%SHLIB%%lib/libgs.so.%%SHLIB_VER%%
 %%SHLIB%%lib/libgs.so.%%GS_VERSION%%
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/alps/README.gdevalps
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/bj10v/gdev10v.jis
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/dmprt/gdevdmpr.sj
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/chp2200/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/chp2200/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/epag/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/epag/ert.txt
 %%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/epag/gdevepag.txt
 %%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/epag/gsepagif.sh
 %%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/epag/psprint
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/eplaser/readme-eplaser-705.euc
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/gdi/README
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/lips/Gdevlips.htm
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/lxm3200/README
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/lxm3200/RELEASE_NOTES
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/lxm3200/Z12-Z31-QuickSetup
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/md2k/README.jis
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/mjc/MJ700V2C.FAQ
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/mjc/README.mjc
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/mjc/README.mje
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/mjc/README.noz
-%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/mjc/cpem.doc
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/epson740/README
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/epson740/upp-HowTo-to-be
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/japanese/Gdevlips.htm
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/japanese/README.gs550j
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/japanese/cdj880.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/japanese/dj505j.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/japanese/djgpp.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/japanese/gdev10v.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/japanese/gdevalps.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/japanese/gdevcd8.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/japanese/gdevdmpr.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/japanese/gdevfmlbp.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/japanese/gdevj100.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/japanese/gdevlbp3.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/japanese/gdevmag.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/japanese/gdevmd2k.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/japanese/gdevmjc.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/japanese/gdevml6.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/japanese/gdevp201.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/japanese/gs261j.euc
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/japanese/gs261j.txt
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/lxm3200-tweaked/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/lxm3200-tweaked/README
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/lxm3200-tweaked/RELEASE_NOTES
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/lxm3200-tweaked/Z12-Z31-QuickSetup
+%%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/md2k_md5k/README.jis
 %%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/pcl3/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/pcl3/gs-pcl3.html
 %%PORTDOCS%%%%DOCSDIR%%/%%GS_VERSION%%/pcl3/how-to-report.txt
@@ -373,6 +386,24 @@ bin/wftopfa
 %%DATADIR%%/%%GS_VERSION%%/lib/Fontmap.GS
 %%DATADIR%%/%%GS_VERSION%%/lib/PDFA_def.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/PDFX_def.ps
+%%DATADIR%%/%%GS_VERSION%%/lib/PM760p.upp
+%%DATADIR%%/%%GS_VERSION%%/lib/PM760pl.upp
+%%DATADIR%%/%%GS_VERSION%%/lib/PM820p.upp
+%%DATADIR%%/%%GS_VERSION%%/lib/PM820pl.upp
+%%DATADIR%%/%%GS_VERSION%%/lib/Stc670p.upp
+%%DATADIR%%/%%GS_VERSION%%/lib/Stc670pl.upp
+%%DATADIR%%/%%GS_VERSION%%/lib/Stc680p.upp
+%%DATADIR%%/%%GS_VERSION%%/lib/Stc680pl.upp
+%%DATADIR%%/%%GS_VERSION%%/lib/Stc740p.upp
+%%DATADIR%%/%%GS_VERSION%%/lib/Stc740pl.upp
+%%DATADIR%%/%%GS_VERSION%%/lib/Stc760p.upp
+%%DATADIR%%/%%GS_VERSION%%/lib/Stc760pl.upp
+%%DATADIR%%/%%GS_VERSION%%/lib/Stc777p.upp
+%%DATADIR%%/%%GS_VERSION%%/lib/Stc777pl.upp
+%%DATADIR%%/%%GS_VERSION%%/lib/Stp720p.upp
+%%DATADIR%%/%%GS_VERSION%%/lib/Stp720pl.upp
+%%DATADIR%%/%%GS_VERSION%%/lib/Stp870p.upp
+%%DATADIR%%/%%GS_VERSION%%/lib/Stp870pl.upp
 %%DATADIR%%/%%GS_VERSION%%/lib/acctest.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/addxchar.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/align.ps
@@ -384,6 +415,8 @@ bin/wftopfa
 %%DATADIR%%/%%GS_VERSION%%/lib/bj8pa06n.upp
 %%DATADIR%%/%%GS_VERSION%%/lib/bj8pp12f.upp
 %%DATADIR%%/%%GS_VERSION%%/lib/bj8ts06n.upp
+%%DATADIR%%/%%GS_VERSION%%/lib/bjc6000a1.upp
+%%DATADIR%%/%%GS_VERSION%%/lib/bjc6000b1.upp
 %%DATADIR%%/%%GS_VERSION%%/lib/bjc610a0.upp
 %%DATADIR%%/%%GS_VERSION%%/lib/bjc610a1.upp
 %%DATADIR%%/%%GS_VERSION%%/lib/bjc610a2.upp
@@ -551,8 +584,12 @@ bin/wftopfa
 %%DATADIR%%/%%GS_VERSION%%/lib/ras4.upp
 %%DATADIR%%/%%GS_VERSION%%/lib/ras8m.upp
 %%DATADIR%%/%%GS_VERSION%%/lib/rollconv.ps
+%%DATADIR%%/%%GS_VERSION%%/lib/s400a1.upp
+%%DATADIR%%/%%GS_VERSION%%/lib/s400b1.upp
+%%DATADIR%%/%%GS_VERSION%%/lib/sharp.upp
 %%DATADIR%%/%%GS_VERSION%%/lib/showchar.ps
 %%DATADIR%%/%%GS_VERSION%%/lib/showpage.ps
+%%DATADIR%%/%%GS_VERSION%%/lib/sipixa6.upp
 %%DATADIR%%/%%GS_VERSION%%/lib/st640ih.upp
 %%DATADIR%%/%%GS_VERSION%%/lib/st640ihg.upp
 %%DATADIR%%/%%GS_VERSION%%/lib/st640p.upp
@@ -575,8 +612,6 @@ bin/wftopfa
 %%DATADIR%%/%%GS_VERSION%%/lib/stc600pl.upp
 %%DATADIR%%/%%GS_VERSION%%/lib/stc640p.upp
 %%DATADIR%%/%%GS_VERSION%%/lib/stc740ih.upp
-%%DATADIR%%/%%GS_VERSION%%/lib/stc740p.upp
-%%DATADIR%%/%%GS_VERSION%%/lib/stc740pl.upp
 %%DATADIR%%/%%GS_VERSION%%/lib/stc800ih.upp
 %%DATADIR%%/%%GS_VERSION%%/lib/stc800p.upp
 %%DATADIR%%/%%GS_VERSION%%/lib/stc800pl.upp
@@ -634,15 +669,11 @@ bin/wftopfa
 @dirrmtry %%DATADIR%%/%%GS_VERSION%%
 @dirrmtry %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/pcl3
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/mjc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/md2k
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/lxm3200
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/lips
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/gdi
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/eplaser
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/japanese
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/md2k_md5k
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/lxm3200-tweaked
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/epson740
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/epag
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/dmprt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/bj10v
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/alps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%/chp2200
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/%%GS_VERSION%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
