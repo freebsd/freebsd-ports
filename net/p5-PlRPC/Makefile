@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	PlRPC
-PORTVERSION=	0.2018
-PORTREVISION=	1
+PORTVERSION=	0.2019
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	RPC
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl module for writing RPC servers and clients
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/Daemon.pm:${PORTSDIR}/net/p5-Net-Daemon
@@ -24,6 +23,9 @@ PERL_CONFIGURE=	yes
 MAN3=		Bundle::PlRPC.3 \
 		RPC::PlClient.3 \
 		RPC::PlServer.3
+
+post-patch:
+	@${FIND} ${WRKSRC} -name ".svn" | ${XARGS} ${RM} -rf
 
 .include <bsd.port.pre.mk>
 
