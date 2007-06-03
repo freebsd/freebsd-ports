@@ -4936,7 +4936,6 @@ ja-Wnn7-lib	ports/japanese/Wnn7-lib
 ja-a2ps		ports/japanese/a2ps
 ja-ack		ports/japanese/ack
 ja-acroread	ports/japanese/acroread
-ja-addttfont	ports/japanese/addttfont
 ja-alias-fonts	ports/japanese/alias-fonts
 ja-another-htmllint	ports/japanese/another-htmllint
 ja-anthy	ports/japanese/anthy
@@ -5201,7 +5200,6 @@ ja-p5-Unicode-Japanese	ports/japanese/p5-Unicode-Japanese
 ja-p5-jcode.pl	ports/japanese/p5-jcode.pl
 ja-p5-man	ports/japanese/p5-manual
 ja-p5-manual	ports/japanese/p5-manual
-ja-p5-mkres	ports/japanese/p5-mkres
 ja-p5-nkf	ports/japanese/p5-nkf
 ja-paledit	ports/japanese/paledit
 ja-pejv-fpw	ports/japanese/pejv-fpw

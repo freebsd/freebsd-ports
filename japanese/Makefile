@@ -15,7 +15,6 @@
     SUBDIR += a2ps
     SUBDIR += ack
     SUBDIR += acroread
-    SUBDIR += addttfont
     SUBDIR += alias-fonts
     SUBDIR += another-htmllint
     SUBDIR += anthy
@@ -282,7 +281,6 @@
     SUBDIR += p5-WWW-2ch
     SUBDIR += p5-jcode.pl
     SUBDIR += p5-manual
-    SUBDIR += p5-mkres
     SUBDIR += p5-nkf
     SUBDIR += paledit
     SUBDIR += pejv-fpw
