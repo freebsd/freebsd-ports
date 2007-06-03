@@ -331,6 +331,7 @@
     SUBDIR += linux-libogg
     SUBDIR += linux-libvorbis
     SUBDIR += linux-mbrola
+    SUBDIR += linux-mikmod
     SUBDIR += linux-openal
     SUBDIR += linux-shoutcast
     SUBDIR += linux-vsound
