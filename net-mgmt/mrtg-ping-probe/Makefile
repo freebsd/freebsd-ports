@@ -8,7 +8,7 @@
 PORTNAME=	mrtg-ping-probe
 PORTVERSION=	2.2.0
 PORTREVISION=	1
-CATEGORIES=	net
+CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.pwo.de/pub/pwo/mrtg/${PORTNAME}/
 
 MAINTAINER=	sanpei@FreeBSD.org
