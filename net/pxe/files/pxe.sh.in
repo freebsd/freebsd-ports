@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: pxe
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable the pxe daemon:
+#
+# pxe_enable="YES"
+
+. %%RC_SUBR%%
+
+name=pxe
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/sbin/pxe"
+required_files=%%PREFIX%%/etc/pxe.conf
+command_args="-c ${required_files}"
+pidfile=/var/pxe/${name}.pid
+
+# set defaults
+pxe_enable=${pxe_enable:-"NO"}
+
+load_rc_config ${name}
+run_rc_command "$1"
