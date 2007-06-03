@@ -1,0 +1,6 @@
+===>  CONFIGURATION NOTE:
+	You need to create a configuration file. Copy
+	%%PREFIX%%/etc/pxe.conf.sample to %%PREFIX%%/etc/pxe.conf
+	and change what you need there.
+
+	To enable the pxe daemon, add pxe_enable="YES" to your /etc/rc.conf.
