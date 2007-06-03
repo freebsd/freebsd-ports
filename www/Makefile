@@ -33,6 +33,7 @@
     SUBDIR += ashe
     SUBDIR += asp2php
     SUBDIR += asterisk-fop
+    SUBDIR += asterisk-gui
     SUBDIR += aswedit
     SUBDIR += aswiki
     SUBDIR += august

@@ -1,0 +1,22 @@
+--- ./tools/zapscan.orig	Thu Dec 21 18:25:26 2006
++++ ./tools/zapscan	Sat Mar 31 17:54:39 2007
+@@ -1,12 +1,12 @@
+ #!/bin/sh
+-if [ -f /etc/zaptel.conf.zapscan ] && [ -f /etc/asterisk/zapata.conf.zapscan ]; then
+-	rm -f /etc/zaptel.conf
+-	rm -f /etc/asterisk/zapata.conf
+-	( echo "# Created by zapscan -- edit zaptel.conf.zapscan instead" ; cat /etc/zaptel.conf.zapscan ) > /etc/zaptel.conf
+-	( echo "; Created by zapscan -- edit zapata.conf.zapscan instead" ; cat /etc/asterisk/zapata.conf.zapscan ) > /etc/asterisk/zapata.conf
+-	rm -f /etc/asterisk/zapscan.conf
++if [ -f %%PREFIX%%/etc/zaptel.conf.zapscan ] && [ -f %%PREFIX%%/etc/asterisk/zapata.conf.zapscan ]; then
++	rm -f %%PREFIX%%/etc/zaptel.conf
++	rm -f %%PREFIX%%/etc/asterisk/zapata.conf
++	( echo "# Created by zapscan -- edit zaptel.conf.zapscan instead" ; cat %%PREFIX%%/etc/zaptel.conf.zapscan ) > %%PREFIX%%/etc/zaptel.conf
++	( echo "; Created by zapscan -- edit zapata.conf.zapscan instead" ; cat %%PREFIX%%/etc/asterisk/zapata.conf.zapscan ) > %%PREFIX%%/etc/asterisk/zapata.conf
++	rm -f %%PREFIX%%/etc/asterisk/zapscan.conf
+ 	echo -n "Scanning for zaptel devices..."
+-	if /sbin/zapscan.bin; then
++	if %%PREFIX%%/sbin/zapscan.bin; then
+ 		echo "OK"
+ 	else
+ 		echo "Failed!"

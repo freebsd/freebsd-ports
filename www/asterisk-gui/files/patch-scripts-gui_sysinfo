@@ -1,0 +1,42 @@
+--- scripts/gui_sysinfo.orig	Fri Apr 27 18:08:53 2007
++++ scripts/gui_sysinfo	Tue May  1 17:01:25 2007
+@@ -1,5 +1,5 @@
+ #!/bin/sh
+-SYSINFO_OUTPUT="/var/lib/asterisk/static-http/config/sysinfo_output.html"
++SYSINFO_OUTPUT="%%PREFIX%%/share/asterisk/static-http/config/sysinfo_output.html"
+ 
+ #SYSINFO_OUTPUT="/var/lib/asterisk/static-http/config/sysinfo_output.html"
+ 
+@@ -9,13 +9,13 @@
+ UPTIME="`uptime`"
+ /bin/echo "<div id=si_uptime>$UPTIME</div>" >> $SYSINFO_OUTPUT 
+                   
+-ASTERISK="`/usr/sbin/asterisk -V`"
++ASTERISK="`%%PREFIX%%/sbin/asterisk -V`"
+ /bin/echo "<div id=si_astver>$ASTERISK</div>" >> $SYSINFO_OUTPUT 
+                 
+ TODAY="`date`"
+ /bin/echo "<div id=si_date>$TODAY</div>" >> $SYSINFO_OUTPUT 
+ 
+-HOSTNAME="`hostname -f`"
++HOSTNAME="`hostname`"
+ /bin/echo "<div id=si_hostname>$HOSTNAME</div>" >> $SYSINFO_OUTPUT 
+      
+ IFCONFIG=`ifconfig`
+@@ -24,14 +24,14 @@
+ DISKUSAGE=`df -h`
+ /bin/echo "<div id=si_du><pre>$DISKUSAGE</pre></div>" >> $SYSINFO_OUTPUT 
+                         
+-MEMORYUSAGE=`free`
++MEMORYUSAGE=`vmstat`
+ /bin/echo "<div id=si_free><pre>$MEMORYUSAGE</pre></div>" >> $SYSINFO_OUTPUT 
+ 
+ 
+ THISMONTH=`/bin/date +%b`
+ THISDAY=`/bin/date +%d`
+ THIS_DAY=`/bin/date +%_d`
+-/bin/grep /var/log/asterisk/messages -e "$THISMONTH\( $THISDAY\| $THIS_DAY\)" > /var/lib/asterisk/static-http/config/today_log.html
++grep /var/log/asterisk/messages -e "$THISMONTH\( $THISDAY\| $THIS_DAY\)" > %%PREFIX%%/share/asterisk/static-http/config/today_log.html
+ 
+ #/bin/echo "<div id=bkp_files>" >> $SYSINFO_OUTPUT 
+ #/bin/mkdir -p /var/lib/asterisk/gui_configbackups

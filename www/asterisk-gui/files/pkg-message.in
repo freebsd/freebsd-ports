@@ -1,0 +1,17 @@
+
+=============== Asterisk GUI FreeBSD Instalation =============
+
+You just installed asterisk-gui into %%PREFIX%%.
+
+Make sure to check out the following items:
+	* Configure you PBX enrivonment
+	* Check the configs: make checkconfig
+	* Asterisk is running
+	* manager.conf has 'write' uncommented
+
+You should be able to access the setup process in:
+http://localhost:8088/asterisk/static/config/setup/install.html
+
+Good luck!
+
+=============================================================
