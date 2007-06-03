@@ -7,7 +7,7 @@
 
 PORTNAME=	liveMedia
 PORTVERSION=	2007.05.24
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.live555.com/liveMedia/public/
@@ -172,6 +172,13 @@ liveMedia=		\
 		liveMedia/include/uLawAudioFilter.hh
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fPIC
+.else
+CFLAGS+=	-fpic
+.endif
+
 
 post-extract:
 	@${CP} ${FILESDIR}/config.fixed-${OPSYS:L} ${WRKSRC}/
