@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTVERSION=	1.2.4
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.wesnoth.org/files/
@@ -16,7 +15,7 @@ MASTER_SITE_SUBDIR=	wesnoth
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	A fantasy turn-based strategy game
 
-USE_GCC=	3.4
+USE_GCC=	3.4+
 USE_SDL=	image mixer net
 USE_GNOME=	gnometarget
 USE_GMAKE=	yes
