@@ -6856,6 +6856,7 @@ linux-runrev	ports/devel/linux-runrev
 linux-savage	ports/games/linux-savage
 linux-sdl12	ports/devel/linux-sdl12
 linux-sdl_image	ports/graphics/linux-sdl_image
+linux-sdl_mixer	ports/audio/linux-sdl_mixer
 linux-seamonkey	ports/www/linux-seamonkey
 linux-seamonkey-devel	ports/www/linux-seamonkey-devel
 linux-shoutcast	ports/audio/linux-shoutcast
