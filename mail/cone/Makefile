@@ -6,13 +6,8 @@
 #
 
 PORTNAME=	cone
-PORTVERSION=	0.69
-PORTREVISION=	3
+PORTVERSION=	0.70
 CATEGORIES=	mail
-# This is for beta versions, leave it in please:
-#MASTER_SITES=	http://www.courier-mta.org/beta/${PORTNAME}/ \
-#		http://www.lerctr.org/~ler/
-# This is for release versions, leave it in please:
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
 
@@ -58,7 +53,7 @@ post-extract:
 		${LN} -s ${LOCALBASE}/include/ncurses/ncurses.h ${WRKDIR}/ncursesw/curses.h
 .else
 
-CONFIGURE_ARGS+=      --disable-unicode
+CONFIGURE_ARGS+=	--disable-unicode
 
 pre-everything::
 	 @${ECHO_CMD} ""
