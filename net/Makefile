@@ -322,7 +322,6 @@
     SUBDIR += mpich2
     SUBDIR += mping
     SUBDIR += mrouted
-    SUBDIR += mrtg-ping-probe
     SUBDIR += msend
     SUBDIR += msntp
     SUBDIR += mtr

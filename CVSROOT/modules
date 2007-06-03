@@ -7675,7 +7675,7 @@ mr-aspell	ports/textproc/mr-aspell
 mreport		ports/mail/mreport
 mrtg		ports/net-mgmt/mrtg
 mrtg-mysql-load	ports/databases/mrtg-mysql-load
-mrtg-ping-probe	ports/net/mrtg-ping-probe
+mrtg-ping-probe	ports/net-mgmt/mrtg-ping-probe
 mrundlg		ports/deskutils/mrundlg
 mrxvt		ports/x11/mrxvt
 mrxvt-devel	ports/x11/mrxvt-devel

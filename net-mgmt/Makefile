@@ -87,6 +87,7 @@
     SUBDIR += libsmi
     SUBDIR += mbrowse
     SUBDIR += mrtg
+    SUBDIR += mrtg-ping-probe
     SUBDIR += mtrace
     SUBDIR += nagcon
     SUBDIR += nagios
