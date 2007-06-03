@@ -12,7 +12,7 @@ CATEGORIES=	java devel net-mgmt
 MASTER_SITES=	http://gicl.cs.drexel.edu/people/sevy/snmp/
 DISTNAME=	source_${PORTVERSION}
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java SNMP protocol implementation
 
 USE_JAVA=	yes
