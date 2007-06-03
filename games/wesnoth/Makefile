@@ -34,7 +34,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
 MAN6=		wesnoth.6
-MANLANG=	"" cs de en_GB fr ja nl pt_BR sk sv
+MANLANG=	"" cs de en_GB fr it ja nl pt_BR ru sk sv
 
 .if defined(WITH_CAMPAIGN) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-campaign-server
