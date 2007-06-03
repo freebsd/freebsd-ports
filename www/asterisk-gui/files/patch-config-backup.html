@@ -1,0 +1,29 @@
+--- config/backup.html.orig	Thu Apr 26 21:57:18 2007
++++ config/backup.html	Thu Apr 26 21:57:54 2007
+@@ -116,7 +116,7 @@
+ 
+ 
+ function restore_bkp(filename){
+-	//parent.astmanEngine.run_tool("rm /etc/asterisk/* -rf ", callback=function(){ restore_bkp_step2(filename);} );
++	//parent.astmanEngine.run_tool("rm %%PREFIX%%/etc/asterisk/* -rf ", callback=function(){ restore_bkp_step2(filename);} );
+ 	restore_bkp_step2(filename);
+ }
+ 
+@@ -131,7 +131,7 @@
+ 
+ function delete_bkp( filename ){
+ 	if(!confirm("Delete selected Backup Configuration ?")){ return ; }
+-	parent.astmanEngine.run_tool("/bin/rm -f "+ asterisk_ConfigBkpPath + filename , callback=function(){
++	parent.astmanEngine.run_tool("rm -f "+ asterisk_ConfigBkpPath + filename , callback=function(){
+ 		gui_feedback('Delete Request Successfull !','default');
+ 		window.location.href = window.location.href ;
+ 	});
+@@ -177,7 +177,7 @@
+ 	//var seconds =addzero(today.getSeconds());
+ 	var bkpfile =  _nn.value +"__" + year + month + day +".tar";
+ 
+-	parent.astmanEngine.run_tool("/bin/tar -cf "+ asterisk_ConfigBkpPath + bkpfile + " " + asterisk_configfolder, callback=function(){
++	parent.astmanEngine.run_tool("tar -cf "+ asterisk_ConfigBkpPath + bkpfile + " " + asterisk_configfolder, callback=function(){
+ 			gui_feedback('Backup Successfull!','blue');
+ 			window.location.href = window.location.href ;
+ 		}

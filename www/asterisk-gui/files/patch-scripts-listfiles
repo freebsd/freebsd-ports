@@ -1,0 +1,9 @@
+--- scripts/listfiles.orig	Tue May  1 16:16:13 2007
++++ scripts/listfiles	Tue May  1 16:19:27 2007
+@@ -1,5 +1,5 @@
+ #!/bin/sh
+-SYSINFO_OUTPUT="/var/lib/asterisk/static-http/config/sysinfo_output.html"
++SYSINFO_OUTPUT="%%PREFIX%%/share/asterisk/static-http/config/sysinfo_output.html"
+ 
+ #/bin/echo "<div id=list_files>" > $SYSINFO_OUTPUT
+ /bin/mkdir -p $1
