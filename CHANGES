@@ -83,7 +83,7 @@ AUTHOR: portmgr@FreeBSD.org
 The following changes were made to the ports infrastructure:
 
   * The remainging vestiges of FreeBSD 4.X support were removed.  Any
-    remaining users of 4.X should have stayed with the RELENG_4_EOL tag.
+    remaining users of 4.X should have stayed with the RELEASE_4_EOL tag.
 
   * It is now possible to include USE_PHP after bsd.port.pre.mk.
 
