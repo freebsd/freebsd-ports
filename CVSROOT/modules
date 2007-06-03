@@ -6819,6 +6819,7 @@ linux-libxml	ports/textproc/linux-libxml
 linux-mbrola	ports/audio/linux-mbrola
 linux-megacli	ports/sysutils/linux-megacli
 linux-megamgr	ports/sysutils/linux-megamgr
+linux-mikmod	ports/audio/linux-mikmod
 linux-mozilla	ports/www/linux-mozilla
 linux-mplayer-plugin	ports/www/linux-mplayer-plugin
 linux-nero	ports/sysutils/linux-nero
