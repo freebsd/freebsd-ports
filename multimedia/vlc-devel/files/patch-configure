@@ -1,6 +1,6 @@
---- configure.orig	Mon Apr 30 18:01:36 2007
-+++ configure	Tue May  1 08:22:07 2007
-@@ -2483,8 +2483,7 @@
+--- configure.orig	Sat Jun  2 18:01:50 2007
++++ configure	Sun Jun  3 16:20:03 2007
+@@ -2499,8 +2499,7 @@
  done
  if test -z "$ac_aux_dir"; then
    { { echo "$as_me:$LINENO: error: cannot find install-sh or install.sh in autotools \"$srcdir\"/autotools" >&5
@@ -10,7 +10,7 @@
  fi
  
  # These three variables are undocumented and unsupported,
-@@ -40476,8 +40475,7 @@
+@@ -42336,8 +42335,7 @@
          if test -n "${enable_dv}"
          then
            { { echo "$as_me:$LINENO: error: cannot find libraw1394 headers" >&5
@@ -20,7 +20,7 @@
          fi
  
  fi
-@@ -40496,8 +40494,7 @@
+@@ -42356,8 +42354,7 @@
              { echo "$as_me:$LINENO: result: no" >&5
  echo "${ECHO_T}no" >&6; }
        { { echo "$as_me:$LINENO: error: cannot cd to ${real_dv_raw1394_tree}" >&5
@@ -30,7 +30,7 @@
      fi
      if test -f "${real_dv_raw1394_tree}/src/.libs/libraw1394.a"
      then
-@@ -40716,8 +40713,7 @@
+@@ -42576,8 +42573,7 @@
          if test -n "${enable_dv}"
          then
            { { echo "$as_me:$LINENO: error: cannot find libavc1394 headers" >&5
@@ -40,14 +40,14 @@
          fi
  
  fi
-@@ -62436,12 +62432,6 @@
+@@ -64307,12 +64303,6 @@
  
    if test "${WX_CONFIG}" != "no" -a "${CXX}" != ""
    then
--    if expr 2.6.0 \> `${WX_CONFIG} --version` >/dev/null ||  expr 2.7.0 \<= `${WX_CONFIG} --version` >/dev/null
+-    if expr 2.6.0 \> `${WX_CONFIG} --version` >/dev/null
 -    then
--      { { echo "$as_me:$LINENO: error: You need wxWidgets of the 2.6 branch. Please upgrade/downgrade and try again. Better yet, you can configure with --disable-wxwidgets." >&5
--echo "$as_me: error: You need wxWidgets of the 2.6 branch. Please upgrade/downgrade and try again. Better yet, you can configure with --disable-wxwidgets." >&2;}
+-      { { echo "$as_me:$LINENO: error: You need wxWidgets version 2.6.0 or upwards. Please upgrade and try again." >&5
+-echo "$as_me: error: You need wxWidgets version 2.6.0 or upwards. Please upgrade and try again." >&2;}
 -   { (exit 1); exit 1; }; }
 -    fi
      ac_ext=cpp
