@@ -364,6 +364,7 @@
     SUBDIR += lookupd_ldap
     SUBDIR += lsof
     SUBDIR += ltrace
+    SUBDIR += lugtools
     SUBDIR += luma
     SUBDIR += lxsplit
     SUBDIR += magicrescue
