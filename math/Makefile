@@ -93,6 +93,7 @@
     SUBDIR += grace
     SUBDIR += gracetmpl
     SUBDIR += graphthing
+    SUBDIR += gretl
     SUBDIR += gri
     SUBDIR += grpn
     SUBDIR += gsl

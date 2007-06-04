@@ -138,7 +138,6 @@
     SUBDIR += granulate
     SUBDIR += grc
     SUBDIR += gregexp
-    SUBDIR += gretl
     SUBDIR += grun
     SUBDIR += gtk-gopod
     SUBDIR += gtkfind

@@ -8,7 +8,7 @@
 
 PORTNAME=	gretl
 PORTVERSION=	1.6.5
-CATEGORIES=	misc
+CATEGORIES=	math finance
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
