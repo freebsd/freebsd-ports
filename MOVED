@@ -3052,3 +3052,6 @@ misc/gretl|math/gretl|2007-06-04|New category
 devel/ups-debug||2007-06-04|Has expired: only runs on FreeBSD 4.X/386
 korean/han||2007-06-04|Has expired: Broken on all supported versions of FreeBSD
 net/tspc2||2007-06-04|Has expired: development is discontinued
+net-p2p/freenet||2007-06-04|Has expired: Does not work with existing Freenet network
+net-p2p/libfreenet||2007-06-04|Has expired: Does not work with existing Freenet network
+net-p2p/microdc||2007-06-04|Has expired: microdc is no longer in development. Consider using net-p2p/microdc2 instead
