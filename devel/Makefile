@@ -499,6 +499,7 @@
     SUBDIR += lbpp
     SUBDIR += leaktracer
     SUBDIR += lemon
+    SUBDIR += lexi
     SUBDIR += lhs2TeX
     SUBDIR += libIDL
     SUBDIR += libPropList
