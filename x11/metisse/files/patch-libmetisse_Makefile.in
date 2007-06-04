@@ -1,0 +1,19 @@
+--- metisse-0.4.0-rc4/libmetisse/Makefile.in.orig	Sun Jun  3 22:50:15 2007
++++ metisse-0.4.0-rc4/libmetisse/Makefile.in	Sun Jun  3 22:51:48 2007
+@@ -307,6 +307,7 @@
+ infodir = @infodir@
+ install_sh = @install_sh@
+ libdir = @libdir@
++libdatadir = @exec_prefix@/libdata
+ libexecdir = @libexecdir@
+ localstatedir = @localstatedir@
+ mandir = @mandir@
+@@ -362,7 +363,7 @@
+ libmetisse_la_LDFLAGS = -version-info @LT_LIBMETISSE_VERSION@
+ libmetisseincludedir = @LIBMETISSE_INCLUDEDIR@
+ libmetisseinclude_HEADERS = auth.h proto.h
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(libdatadir)/pkgconfig
+ pkgconfig_DATA = libmetisse.pc
+ all: all-am
+ 

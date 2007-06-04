@@ -198,6 +198,7 @@
     SUBDIR += luit
     SUBDIR += lupe
     SUBDIR += lxpanel
+    SUBDIR += metisse
     SUBDIR += mgapdesk
     SUBDIR += mkcomposecache
     SUBDIR += mlterm
