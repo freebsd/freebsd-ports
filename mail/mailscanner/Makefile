@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.59.4
+PORTVERSION=	4.60.8
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -51,7 +51,7 @@ OPTIONS=	SPAMASSASSIN "Install SpamAssassin" on \
 
 CONFLICTS=	MailScanner-devel-[0-9]*
 
-PATCHLEVEL=	2
+PATCHLEVEL=	1
 
 USE_PERL5=	yes
 
