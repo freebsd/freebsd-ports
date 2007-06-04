@@ -11,7 +11,7 @@ CATEGORIES=		net-im
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ojnk
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		wxs@atarininja.org
 COMMENT=		Console-based AIM client
 
 USE_PERL5=		yes
