@@ -10,7 +10,7 @@ PORTVERSION=	1.0.2
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
-COMMENT=	XKB file library
+COMMENT=	The xkbui library
 
 XORG_CAT=	lib
 USE_XORG=	x11 xt xkbfile kbproto
