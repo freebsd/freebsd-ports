@@ -1,9 +1,17 @@
---- src/filelist.c.orig Mon Feb 23 02:17:30 2004
-+++ src/filelist.c Wed May 19 18:30:04 2004
-@@ -12,6 +12,30 @@
- #include "opts.h"
+--- src/filelist.c.orig	Wed Apr 19 21:42:28 2006
++++ src/filelist.c	Mon Jun  4 21:31:54 2007
+@@ -4,7 +4,6 @@
+ #include <stdlib.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+-#include <error.h>
+ #include "gettext.h"
+ #include <libgen.h>
+ #include <unistd.h>
+@@ -16,6 +15,31 @@
  #include "listdirs.h"
  extern struct arguments_t arguments;
+ 
 +#if defined(__FreeBSD__)
 +ssize_t getline(char **lineptr, size_t *n, FILE *stream)
 +{
@@ -28,6 +36,16 @@
 + return len;
 +}
 +#endif
- int for_every_filename(int (*for_every_file)(int (*)(void *, char *), void *list), int (*add_it_to_the)(void *list, char *filename), void *list)
- {
-  for_every_file(add_it_to_the, list);
++
+ /*
+  * filelist.c:
+  *   int filelist_populate (void *list_of_files_to_monitor);
+@@ -74,7 +98,7 @@
+     {
+       fileptr = fopen (filename, "r");
+       if (!fileptr)
+-	error(1, 0, _("Error: couldn't open '%s'\n"), filename);
++	fprintf(stderr, _("Error: couldn't open '%s'\n"), filename);
+     }
+   while (getline (&line, &n, fileptr) > 0)
+     {

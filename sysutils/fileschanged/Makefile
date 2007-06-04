@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	fileschanged
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.6.5
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,20 +20,13 @@ BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone \
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_FAM=	yes
-WANT_FAM_SYSTEM=fam
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="-largp"
-CONFIGURE_ARGS+=--datadir=${PREFIX}/share/doc
+CONFIGURE_ARGS=	--datadir=${PREFIX}/share/doc --disable-nls
 
 INFO=		fileschanged
 MAN1=		fileschanged.1
-PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README fileschanged.lsm
+PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
 PLIST_FILES=	bin/fileschanged
-
-post-patch:
-	${REINPLACE_CMD} -e "s,-Werror,," ${WRKSRC}/src/Makefile.in
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
