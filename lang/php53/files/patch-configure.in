@@ -1,6 +1,6 @@
---- configure.in.orig	Sat Jan 20 10:52:51 2007
-+++ configure.in	Sat Jan 20 10:55:48 2007
-@@ -227,7 +227,6 @@
+--- configure.in.orig	Mon Jun  4 08:08:43 2007
++++ configure.in	Mon Jun  4 08:13:47 2007
+@@ -233,7 +233,6 @@
  dnl .
  dnl -------------------------------------------------------------------------
  
@@ -8,15 +8,15 @@
  PHP_HELP_SEPARATOR([SAPI modules:])
  PHP_SHLIB_SUFFIX_NAMES
  PHP_SAPI=default
-@@ -252,7 +251,6 @@
+@@ -258,7 +257,6 @@
  
  if test "$enable_maintainer_zts" = "yes"; then
    PTHREADS_ASSIGN_VARS
 -  PTHREADS_FLAGS
  fi
  
- if test "$PHP_ENABLE_FASTCGI" = "yes"; then
-@@ -1100,7 +1098,7 @@
+ divert(3)
+@@ -1123,7 +1121,7 @@
  EXPANDED_DATADIR=$datadir
  EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
  EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
@@ -25,7 +25,7 @@
  
  exec_prefix=$old_exec_prefix
  libdir=$old_libdir
-@@ -1271,25 +1269,22 @@
+@@ -1295,22 +1293,19 @@
  INLINE_CFLAGS="$INLINE_CFLAGS $standard_libtool_flag"
  CXXFLAGS="$CXXFLAGS $standard_libtool_flag"
  
@@ -35,16 +35,12 @@
 +install_targets="$PHP_INSTALL_CLI_TARGET $PHP_INSTALL_CGI_TARGET $install_modules install-build install-headers install-programs $install_pear"
  
  case $PHP_SAPI in
--  cgi)
-+  apache)
-     install_targets="install-sapi $install_targets"
-     ;;
 -  cli)
 -    install_targets="$PHP_INSTALL_CLI_TARGET $install_targets"
 -    ;;
 -  *)
 -    install_targets="install-sapi $PHP_INSTALL_CLI_TARGET $install_targets"
-+  apache2handler)
++  apache|apache2handler)
 +    install_targets="install-sapi $install_targets"
      ;;
  esac

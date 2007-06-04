@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	php5
-PORTVERSION=	5.2.2
+PORTVERSION=	5.2.3
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
-MASTER_SITES=	${MASTER_SITE_PHP:S,$,:release,} \
-		http://downloads.php.net/ilia/:rc \
-		http://downloads.php.net/jani/:rc
-MASTER_SITE_SUBDIR=	distributions/:release
-DISTNAME=	php-${PORTVERSION:S/.r/RC/}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release
+MASTER_SITES=	${MASTER_SITE_PHP}
+MASTER_SITE_SUBDIR=	distributions
+DISTNAME=	php-${PORTVERSION}
 
 MAINTAINER?=	ale@FreeBSD.org
 COMMENT?=	PHP Scripting Language (Apache Module and CLI)
@@ -60,8 +57,7 @@ PATCH_DIST_STRIP=	-p1
 
 .if !defined(WITHOUT_SUHOSIN)
 PATCHFILES+=	suhosin-patch-${PORTVERSION}-0.9.6.2.patch.gz:suhosin
-PATCH_SITES+=	http://www.hardened-php.net/suhosin/_media/:suhosin \
-		${MASTER_SITE_LOCAL:S/%SUBDIR%\//erwin\/:suhosin/}
+PATCH_SITES+=	http://www.hardened-php.net/suhosin/_media/:suhosin
 PLIST_SUB+=	SUHOSIN=""
 .else
 PLIST_SUB+=	SUHOSIN="@comment "
