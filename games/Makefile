@@ -435,6 +435,7 @@
     SUBDIR += linux-savage
     SUBDIR += linux-spheresofchaos-demo
     SUBDIR += linux-steam
+    SUBDIR += linux-uplink-demo
     SUBDIR += linux-ut
     SUBDIR += linux-ut2003-demo
     SUBDIR += linux-ut2004-demo
