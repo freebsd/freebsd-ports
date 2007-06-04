@@ -147,6 +147,7 @@
     SUBDIR += deng
     SUBDIR += diameter
     SUBDIR += digger-vgl
+    SUBDIR += djgame2
     SUBDIR += dmjava
     SUBDIR += dodgindiamond2
     SUBDIR += dontspace
