@@ -124,6 +124,7 @@
     SUBDIR += lapack95
     SUBDIR += laspack
     SUBDIR += ldouble
+    SUBDIR += lensnns
     SUBDIR += libRmath
     SUBDIR += libgmp4
     SUBDIR += libjbigi
