@@ -8050,6 +8050,7 @@ nimbus		ports/x11-themes/nimbus
 ninix-aya	ports/games/ninix-aya
 ninja		ports/irc/ninja
 nip2		ports/graphics/nip2
+nipper		ports/net-mgmt/nipper
 nitpicker	ports/net-mgmt/nitpicker
 njam		ports/games/njam
 njs		ports/lang/njs
