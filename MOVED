@@ -3047,3 +3047,4 @@ devel/mipsel-linux-kernel-headers||2007-06-02|Has expired: This is Agenda VR3-sp
 net/mrtg-ping-probe|net-mgmt/mrtg-ping-probe|2007-06-03|related ports mrtg was moved to net-mgmt from net
 japanese/addttfont||2007-06-03|obsolete
 japanese/p5-mkres||2007-06-03|obsolete
+x11-toolkits/py-wmgeneral||2007-06-04|Renamed to x11-toolkits/py-wmdockapps

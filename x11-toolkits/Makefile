@@ -202,7 +202,6 @@
     SUBDIR += py-tktreectrl
     SUBDIR += py-vte
     SUBDIR += py-wax
-    SUBDIR += py-wmgeneral
     SUBDIR += py-wxPython24
     SUBDIR += py-wxPython26
     SUBDIR += py-wxPython26-common
