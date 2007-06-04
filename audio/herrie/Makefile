@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	herrie
-PORTVERSION=	1.6.1
+PORTVERSION=	1.7
 CATEGORIES=	audio
 MASTER_SITES=	http://herrie.info/distfiles/ \
 		http://www.il.fontys.nl/~ed/projects/herrie/distfiles/ \
@@ -15,19 +15,17 @@ MASTER_SITES=	http://herrie.info/distfiles/ \
 MAINTAINER=	ed@fxq.nl
 COMMENT=	A small command line interface music player
 
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
-
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV+=	PREFIX=${PREFIX}
 
 USE_BZIP2=	yes
-USE_OPENSSL=	yes
 USE_GNOME=	glib20
 
 OPTIONS=	MAD "MAD MP3 support" on \
 		VORBIS "Ogg Vorbis support" on \
-		SNDFILE "libsndfile support" on \
+		SNDFILE "libsndfile support" off \
 		MODPLUG "libmodplug support" off \
+		HTTP "HTTP streams and AudioScrobbler support" on \
 		LIBAO "LibAO support (breaks chroot)" off \
 		XCURSES "Build XCurses version" off \
 		XSPF "Support for XSPF playlists" on
@@ -61,6 +59,11 @@ CONFIGURE_ARGS+=no_sndfile
 LIB_DEPENDS+=	modplug:${PORTSDIR}/audio/libmodplug
 .else
 CONFIGURE_ARGS+=no_modplug
+.endif
+.if !defined(WITHOUT_HTTP)
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+.else
+CONFIGURE_ARGS+=no_http no_scrobbler
 .endif
 .if !defined(WITHOUT_LIBAO)
 LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao
