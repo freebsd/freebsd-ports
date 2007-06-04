@@ -6873,6 +6873,7 @@ linux-thunderbird	ports/mail/linux-thunderbird
 linux-tiff	ports/graphics/linux-tiff
 linux-ucl	ports/archivers/linux-ucl
 linux-ungif	ports/graphics/linux-ungif
+linux-upx	ports/archivers/linux-upx
 linux-ut	ports/games/linux-ut
 linux-ut2003-demo	ports/games/linux-ut2003-demo
 linux-ut2004-demo	ports/games/linux-ut2004-demo
