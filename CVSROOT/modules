@@ -715,7 +715,6 @@ base		ports/security/base
 base64		ports/converters/base64
 bash		ports/shells/bash
 bash-completion	ports/shells/bash-completion
-bash2		ports/shells/bash2
 basiliskII	ports/emulators/basiliskII
 basket		ports/deskutils/basket
 bass		ports/games/bass
@@ -8315,7 +8314,6 @@ oooqs		ports/x11/oooqs
 oooqs2		ports/x11/oooqs2
 oops		ports/www/oops
 oorexx		ports/lang/oorexx
-op		ports/security/op
 opal		ports/net/opal
 open		ports/sysutils/open
 open-beagle	ports/devel/open-beagle
@@ -16819,7 +16817,6 @@ xpbiff		ports/mail/xpbiff
 xpcd		ports/graphics/xpcd
 xpdf		ports/graphics/xpdf
 xpenguins	ports/games/xpenguins
-xperfmon	ports/sysutils/xperfmon
 xphelloworld	ports/x11/xphelloworld
 xphoon		ports/astro/xphoon
 xphotohunter	ports/games/xphotohunter
