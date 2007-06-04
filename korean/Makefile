@@ -19,7 +19,6 @@
     SUBDIR += ghostscript-gnu-korfont
     SUBDIR += gtkcomm
     SUBDIR += h2ps
-    SUBDIR += han
     SUBDIR += hanIM
     SUBDIR += hanemacs
     SUBDIR += hanmiscutils
