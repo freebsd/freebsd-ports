@@ -1912,6 +1912,7 @@
     SUBDIR += py-unit
     SUBDIR += py-urlimport
     SUBDIR += py-urwid
+    SUBDIR += py-usb
     SUBDIR += py-utils
     SUBDIR += py-vmaps
     SUBDIR += py-wsgiutils

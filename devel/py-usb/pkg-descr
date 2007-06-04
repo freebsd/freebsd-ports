@@ -1,0 +1,4 @@
+PyUSB is a native Python module written in C (meanwhile, because the next major
+version will use ctypes), that provides USB access for it.
+
+WWW: http://pyusb.berlios.de/
