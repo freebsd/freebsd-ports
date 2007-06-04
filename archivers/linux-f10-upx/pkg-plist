@@ -1,0 +1,12 @@
+usr/bin/upx
+usr/share/doc/upx-1.25/BUGS
+usr/share/doc/upx-1.25/COPYING
+usr/share/doc/upx-1.25/LICENSE
+usr/share/doc/upx-1.25/NEWS
+usr/share/doc/upx-1.25/PROJECTS
+usr/share/doc/upx-1.25/README
+usr/share/doc/upx-1.25/THANKS
+usr/share/doc/upx-1.25/loader.txt
+usr/share/doc/upx-1.25/upx.html
+usr/share/man/man1/upx.1.gz
+@dirrm usr/share/doc/upx-1.25
