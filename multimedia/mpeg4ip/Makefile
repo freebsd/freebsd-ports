@@ -7,7 +7,7 @@
 
 PORTNAME=	mpeg4ip
 PORTVERSION=	1.5.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -137,7 +137,7 @@ PLIST_SUB+=	XVID="@comment "
 .endif
 
 post-patch:
-	${TOUCH} -f ${WRKSRC}/bootstrapped
+	@${TOUCH} -f ${WRKSRC}/bootstrapped
 # don't compile or use libmp4v2
 	@${REINPLACE_CMD} -e 's|mp4v2||; s|gnu||; s|mp4av||' \
 		${WRKSRC}/lib/Makefile.in
@@ -182,6 +182,8 @@ post-patch:
 		${WRKSRC}/doc/mp4v2/Makefile.in
 # objformat
 	@${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} -e 's|echo aout|echo elf|'
+	@${REINPLACE_CMD} -e 's|$${enable_ffmpeg}/lib/libavcodec.a|-lavcodec|g' \
+		${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${DATADIR}
