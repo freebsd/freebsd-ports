@@ -3048,3 +3048,4 @@ net/mrtg-ping-probe|net-mgmt/mrtg-ping-probe|2007-06-03|related ports mrtg was m
 japanese/addttfont||2007-06-03|obsolete
 japanese/p5-mkres||2007-06-03|obsolete
 x11-toolkits/py-wmgeneral||2007-06-04|Renamed to x11-toolkits/py-wmdockapps
+misc/gretl|math/gretl|2007-06-04|New category
