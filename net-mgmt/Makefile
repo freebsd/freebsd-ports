@@ -125,6 +125,7 @@
     SUBDIR += nfdump
     SUBDIR += nfsen
     SUBDIR += ng_ipacct
+    SUBDIR += nipper
     SUBDIR += nitpicker
     SUBDIR += nocol
     SUBDIR += nrg
