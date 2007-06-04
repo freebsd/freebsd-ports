@@ -9,7 +9,7 @@ PORTNAME=	fluxspace
 PORTVERSION=	0.0.3
 PORTREVISION=	3
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.isomedia.com/homes/stevencooper/files/
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A window manager and workspace enhancer and integrator
@@ -17,20 +17,15 @@ COMMENT=	A window manager and workspace enhancer and integrator
 BUILD_DEPENDS=	imlib2-config:${PORTSDIR}/graphics/imlib2 \
 		swig:${PORTSDIR}/devel/swig13
 
-USE_AUTOTOOLS=	libtool:15
-USE_PYTHON=	yes
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_LDCONFIG=	yes
 USE_XLIB=	yes
+USE_PYTHON=	yes
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
 
 .if defined(WITH_IDESK) || exists(${X11BASE}/bin/idesk)
 RUN_DEPENDS+=	idesk:${PORTSDIR}/x11/idesk
@@ -40,10 +35,10 @@ RUN_DEPENDS+=	rox:${PORTSDIR}/x11-fm/rox-filer
 .endif
 
 pre-everything::
-	@${ECHO_CMD} "WITH_IDESK	- To install idesk"
-	@${ECHO_CMD} "WITH_ROX-FILER	- To install rox-filer"
+	@${ECHO_MSG} "WITH_IDESK	- To install idesk"
+	@${ECHO_MSG} "WITH_ROX-FILER	- To install rox-filer"
 
-post-install::
-	@${CAT} pkg-message
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
