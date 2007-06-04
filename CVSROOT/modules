@@ -5910,6 +5910,7 @@ ko-pgp.language	ports/korean/pgp.language
 ko-pinetreefonts	ports/korean/pinetreefonts
 ko-scim-hangul	ports/korean/scim-hangul
 ko-scim-tables	ports/korean/scim-tables
+ko-stardict2-dict-kr	ports/korean/stardict2-dict-kr
 ko-texinfo	ports/korean/texinfo
 ko-unfonts-ttf	ports/korean/unfonts-ttf
 ko-uniksc	ports/korean/uniksc
