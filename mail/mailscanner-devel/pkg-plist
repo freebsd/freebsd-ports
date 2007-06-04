@@ -519,7 +519,6 @@ sbin/MailScanner
 %%DATADIR%%/reports/sk/sender.size.report.txt.sample
 %%DATADIR%%/reports/sk/stored.size.message.txt.sample
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD.port
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES.port
 %%PORTDOCS%%%%DOCSDIR%%/Sophos.install.freebsd
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.FreeBSD
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.OpenBSD
