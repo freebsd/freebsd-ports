@@ -7265,6 +7265,7 @@ metasploit	ports/security/metasploit
 metasploit-devel	ports/security/metasploit-devel
 metis		ports/math/metis
 metis-edf	ports/math/metis-edf
+metisse		ports/x11/metisse
 metromap	ports/misc/metromap
 mew		ports/mail/mew
 mew-emacs20	ports/mail/mew-emacs20
