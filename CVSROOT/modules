@@ -7014,6 +7014,7 @@ lua50-posix	ports/devel/lua50-posix
 lua50-pty	ports/devel/lua50-pty
 luasocket	ports/net/luasocket
 lucidlife	ports/games/lucidlife
+lugtools	ports/sysutils/lugtools
 luit		ports/x11/luit
 luma		ports/sysutils/luma
 luna		ports/astro/luna
