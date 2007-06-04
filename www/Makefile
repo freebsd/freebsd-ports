@@ -1000,7 +1000,6 @@
     SUBDIR += py-forgethtml
     SUBDIR += py-formencode
     SUBDIR += py-funkload
-    SUBDIR += py-htmltestcase
     SUBDIR += py-httplib2
     SUBDIR += py-imdbpy
     SUBDIR += py-jonpy

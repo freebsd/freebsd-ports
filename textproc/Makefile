@@ -829,14 +829,12 @@
     SUBDIR += ruby-formvalidator
     SUBDIR += ruby-gdome
     SUBDIR += ruby-html-fillinform
-    SUBDIR += ruby-html-parser
     SUBDIR += ruby-html-template
     SUBDIR += ruby-htmlrepair
     SUBDIR += ruby-htmlsplit
     SUBDIR += ruby-htmltools
     SUBDIR += ruby-htree
     SUBDIR += ruby-libxml
-    SUBDIR += ruby-libxslt
     SUBDIR += ruby-mwdom
     SUBDIR += ruby-nqxml
     SUBDIR += ruby-quixml
