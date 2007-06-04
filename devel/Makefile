@@ -2171,7 +2171,6 @@
     SUBDIR += upnp104
     SUBDIR += upp
     SUBDIR += uppaal
-    SUBDIR += ups-debug
     SUBDIR += ustl
     SUBDIR += valgrind
     SUBDIR += valgrind-snapshot

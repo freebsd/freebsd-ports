@@ -878,7 +878,6 @@
     SUBDIR += tshark
     SUBDIR += tshark-lite
     SUBDIR += tsocks
-    SUBDIR += tspc2
     SUBDIR += ttlscan
     SUBDIR += ttt
     SUBDIR += tvark

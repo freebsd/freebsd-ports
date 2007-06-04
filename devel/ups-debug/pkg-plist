@@ -1,7 +1,0 @@
-@comment $FreeBSD$
-bin/ups
-lib/X11/app-defaults/Ups
-%%PORTDOCS%%share/doc/ups/CHANGES
-%%PORTDOCS%%share/doc/ups/FAQ
-%%PORTDOCS%%share/doc/ups/README
-%%PORTDOCS%%@dirrm share/doc/ups

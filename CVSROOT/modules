@@ -5876,7 +5876,6 @@ ko-gdick	ports/korean/gdick
 ko-ghostscript-gnu-korfont	ports/korean/ghostscript-gnu-korfont
 ko-gtkcomm	ports/korean/gtkcomm
 ko-h2ps		ports/korean/h2ps
-ko-han		ports/korean/han
 ko-hanIM	ports/korean/hanIM
 ko-hanemacs	ports/korean/hanemacs
 ko-hanmiscutils	ports/korean/hanmiscutils
@@ -15429,7 +15428,6 @@ tshark		ports/net/tshark
 tshark-lite	ports/net/tshark-lite
 tsito		ports/games/tsito
 tsocks		ports/net/tsocks
-tspc2		ports/net/tspc2
 tss		ports/sysutils/tss
 tt		ports/games/tt
 tta		ports/audio/tta
@@ -15612,7 +15610,6 @@ upp		ports/devel/upp
 uppaal		ports/devel/uppaal
 uppc-kmod	ports/palm/uppc-kmod
 uproxy		ports/net/uproxy
-ups-debug	ports/devel/ups-debug
 upsd		ports/sysutils/upsd
 upsdaemon	ports/sysutils/upsdaemon
 upsmon		ports/sysutils/upsmon
