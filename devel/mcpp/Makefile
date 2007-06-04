@@ -7,6 +7,7 @@
 
 PORTNAME=	mcpp
 PORTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://prdownloads.sourceforge.net/mcpp/ \
 		http://jaist.dl.sourceforge.net/sourceforge/mcpp/
