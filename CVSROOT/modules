@@ -6154,6 +6154,7 @@ leocad		ports/cad/leocad
 lep		ports/security/lep
 lesspipe	ports/misc/lesspipe
 lesstif		ports/x11-toolkits/lesstif
+lexi		ports/devel/lexi
 lexter		ports/games/lexter
 lfhex		ports/editors/lfhex
 lfm		ports/sysutils/lfm
