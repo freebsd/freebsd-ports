@@ -26,7 +26,7 @@ USE_GMAKE=	yes
 CFLAGS+=	-DSBCL_HOME=\\"${PREFIX}/lib/sbcl/\\"
 
 OPTIONS=	SBCL "Use installed SBCL binary if available" off \
-		THREADS "Enable experimental theading support" off
+		THREADS "Enable experimental threading support" off
 
 MAN1=		sbcl.1
 INFO=		asdf sbcl
