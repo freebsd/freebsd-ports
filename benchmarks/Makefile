@@ -55,6 +55,7 @@
     SUBDIR += tcpblast
     SUBDIR += thrulay
     SUBDIR += tmetric
+    SUBDIR += tsung
     SUBDIR += ttcp
     SUBDIR += ubench
     SUBDIR += unixbench
