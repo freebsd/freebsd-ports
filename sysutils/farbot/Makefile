@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	farbot
-PORTVERSION=	1.0.a2
+PORTVERSION=	1.0.b1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dpw.threerings.net/projects/farbot/
-DISTNAME=	farbot-1.0-alpha2
+DISTNAME=	farbot-1.0-beta1
 
 MAINTAINER=	snb@threerings.net
 COMMENT=	FreeBSD Automated Release Bot
