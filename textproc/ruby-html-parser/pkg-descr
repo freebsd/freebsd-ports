@@ -1,6 +1,0 @@
-The html-parser package is a Ruby implementation of the Python's SGML
-parser (sgmllib.py), HTML parser (htmllib.py) and Formatter
-(formatter.py).
-
-Author:	Takahiro Maebashi <maebashi@iij.ad.jp>
-WWW:	http://www.jin.gr.jp/~nahi/Ruby/html-parser/README.html
