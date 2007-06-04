@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dwm
-PORTVERSION=	4.1
+PORTVERSION=	4.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.suckless.org/download/ \
 		http://schot.a-eskwadraat.nl/files/
@@ -18,10 +18,6 @@ USE_XLIB=	yes
 
 MAN1=		dwm.1
 PLIST_FILES=	bin/dwm
-
-.if defined(DWM_CONF)
-PKGNAMESUFFIX=-custom
-.endif
 
 pre-everything::
 	@${ECHO_MSG} "You can build dwm with your own config.h using the DWM_CONF knob:"
