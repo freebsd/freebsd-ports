@@ -15,13 +15,12 @@ MASTER_SITES=	http://mitglied.lycos.de/pageofmh/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A real 3-D molecule viewer
 
-BROKEN=		Configure fails
-
 USE_QT_VER=	3
 USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
