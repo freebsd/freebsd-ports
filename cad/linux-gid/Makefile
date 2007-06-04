@@ -9,7 +9,7 @@ PORTNAME=	gid
 PORTVERSION=	7.4.9b
 PORTREVISION=	1
 CATEGORIES=	cad linux
-MASTER_SITES=	ftp://gid.cimne.upc.es/pub/gid_adds/Linux/Old/
+MASTER_SITES=	ftp://gid.cimne.upc.es/pub/gid_adds/Linux/kernel-2.2/Old/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
