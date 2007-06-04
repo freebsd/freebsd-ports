@@ -581,6 +581,7 @@
     SUBDIR += pscan
     SUBDIR += pure-sfv
     SUBDIR += putty
+    SUBDIR += pvt
     SUBDIR += pwauth
     SUBDIR += pwman
     SUBDIR += pxytest
