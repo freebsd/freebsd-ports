@@ -415,6 +415,7 @@
     SUBDIR += lincity-ng
     SUBDIR += linux-alienarena
     SUBDIR += linux-americasarmy
+    SUBDIR += linux-darwinia-demo
     SUBDIR += linux-defcon
     SUBDIR += linux-doom3
     SUBDIR += linux-doom3-demo
