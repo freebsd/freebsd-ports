@@ -1,0 +1,14 @@
+--- tools/Makefile.orig	Wed May  9 21:32:43 2007
++++ tools/Makefile	Wed May  9 21:33:17 2007
+@@ -25,9 +25,9 @@
+ ifeq ($(PBX_ZAPTEL),1)
+ 	mkdir -p $(ASTSBINDIR)
+ 	$(INSTALL) -m 755 zapscan.bin $(ASTSBINDIR)
+-	$(INSTALL) -m 755 zapscan.bin /sbin
++	$(INSTALL) -m 755 zapscan.bin $(ASTSBINDIR)/../sbin
+ 	$(INSTALL) -m 755 zapscan $(ASTSBINDIR)
+-	$(INSTALL) -m 755 zapscan /sbin	
++	$(INSTALL) -m 755 zapscan $(ASTSBINDIR)/../sbin	
+ endif
+ 
+ clean: 
