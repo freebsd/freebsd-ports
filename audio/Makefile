@@ -9,6 +9,7 @@
     SUBDIR += abcde
     SUBDIR += abcmidi
     SUBDIR += abcselect
+    SUBDIR += abraca
     SUBDIR += adpcm
     SUBDIR += adplay
     SUBDIR += afsp
