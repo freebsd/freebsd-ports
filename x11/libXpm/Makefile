@@ -7,14 +7,15 @@
 
 PORTNAME=	libXpm
 PORTVERSION=	3.5.6
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Pixmap library
 
 XORG_CAT=	lib
-USE_XORG=	xproto x11
+USE_XORG=	xproto x11 xext xextproto xt
 
-MAN1=		cxpm.1
+MAN1=		cxpm.1 sxpm.1
 
 .include <bsd.port.mk>
