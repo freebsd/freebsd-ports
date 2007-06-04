@@ -56,6 +56,7 @@
     SUBDIR += qt4-codecs-kr
     SUBDIR += scim-hangul
     SUBDIR += scim-tables
+    SUBDIR += stardict2-dict-kr
     SUBDIR += texinfo
     SUBDIR += unfonts-ttf
     SUBDIR += uniksc
