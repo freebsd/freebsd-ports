@@ -254,9 +254,7 @@
 %%PGADMDIR%%/libraries/adodb/adodb-exceptions.inc.php
 %%PGADMDIR%%/libraries/adodb/adodb-iterator.inc.php
 %%PGADMDIR%%/libraries/adodb/adodb-lib.inc.php
-%%PGADMDIR%%/libraries/adodb/adodb-pager.inc.php
 %%PGADMDIR%%/libraries/adodb/adodb-pear.inc.php
-%%PGADMDIR%%/libraries/adodb/adodb-perf.inc.php
 %%PGADMDIR%%/libraries/adodb/adodb-php4.inc.php
 %%PGADMDIR%%/libraries/adodb/adodb-time.inc.php
 %%PGADMDIR%%/libraries/adodb/adodb-xmlschema.inc.php
