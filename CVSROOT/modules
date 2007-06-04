@@ -184,6 +184,7 @@ abiword		ports/editors/abiword
 abiword-plugins	ports/editors/abiword-plugins
 abntex		ports/print/abntex
 abook		ports/mail/abook
+abraca		ports/audio/abraca
 abridge		ports/games/abridge
 abs		ports/math/abs
 abuse		ports/games/abuse
