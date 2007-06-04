@@ -12634,6 +12634,7 @@ py-avahi	ports/net/py-avahi
 py-axiom	ports/databases/py-axiom
 py-basemap	ports/math/py-basemap
 py-basemap-data	ports/math/py-basemap-data
+py-bcfg2	ports/sysutils/py-bcfg2
 py-bcrypt	ports/security/py-bcrypt
 py-beautifulsoup	ports/www/py-beautifulsoup
 py-biopython	ports/biology/py-biopython
