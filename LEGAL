@@ -128,6 +128,7 @@ dansguardian-2.[678]*	www/dansguardian	Not free for installation by
 						free for commercial use
 DarwinStreamingSrvr*-Source.tar net/DarwinStreamingServer Server License restrictions
 						See http://www.opensource.apple.com/apsl/
+darwinia-demo		games/linux-darwinia-demo Redistribution limited
 vbsd*e.tar.Z		security/vscan		Restricted to the license
 						terms set for VirusScan
 dbvis			java/dbvis		Redistribution is not permitted
@@ -135,6 +136,7 @@ dc3play-*		graphics/dc3play	No redistribution due to
 						beta status
 dcl-*-C.tar.gz		science/cdcl		No commercial use
 dcl-*.tar.gz		science/dcl		No commercial use
+defcon			games/linux-defcon	Redistribution limited
 DFSongSd.ttf		chinese/dfsongsd	No redistribution or
 						commercial use is allowed
 dgd/*			net/dgd			License required for commercial
@@ -598,6 +600,7 @@ upsmon*			sysutils/upsmon		Redistribute only with
 						original source code
 ut_linux_mgr_*		sysutils/linux-megamgr	Redistribution prohibited
 linux-ut/*		games/linux-ut		Redistribution limited
+uplink-demo		games/linux-uplink-demo	Redistribution limited
 ut2004-lnx-*		games/linux-ut2004-demo	Redistribution limited
 uzap.tar.gz             editors/uzap		Restrictive copyright
 vbsd440e.tar.Z		security/vscan		Commercial software
