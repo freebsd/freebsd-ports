@@ -6151,6 +6151,7 @@ lemmatizer	ports/textproc/lemmatizer
 lemmatizer2	ports/textproc/lemmatizer2
 lemon		ports/devel/lemon
 lens		ports/mail/lens
+lensnns		ports/math/lensnns
 leo		ports/editors/leo
 leocad		ports/cad/leocad
 lep		ports/security/lep
