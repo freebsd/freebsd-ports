@@ -50,6 +50,7 @@
     SUBDIR += libmspack
     SUBDIR += libunrar
     SUBDIR += libzip
+    SUBDIR += linux-ucl
     SUBDIR += lzma
     SUBDIR += lzo
     SUBDIR += lzo2
