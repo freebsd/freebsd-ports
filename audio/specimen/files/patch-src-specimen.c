@@ -1,13 +1,14 @@
---- src/specimen.c.orig	Tue Mar  6 13:10:22 2007
-+++ src/specimen.c	Tue Mar  6 13:10:29 2007
-@@ -48,14 +48,12 @@
+--- src/specimen.c.orig	Mon Mar 12 01:32:12 2007
++++ src/specimen.c	Tue May 22 20:43:41 2007
+@@ -73,7 +73,6 @@
       }
-      
+ 
       /* start */
 -     midi_start();
-      driver_start(0, forced_instance_name);
+      driver_start(0, client_name);
+ #ifdef HAVE_LASH
       lashdriver_start();
- 
+@@ -81,7 +80,6 @@
       gtk_main();
  
       /* stop */
