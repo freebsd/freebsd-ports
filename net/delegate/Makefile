@@ -7,6 +7,7 @@
 
 PORTNAME=	delegate
 PORTVERSION=	9.5.6
+PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	ftp://www.delegate.org/pub/DeleGate/ \
 		ftp://ftp.delegate.org/pub/DeleGate/
@@ -18,6 +19,9 @@ COMMENT=	General purpose TCP/IP proxy system
 IS_INTERACTIVE=	YES
 PORTDOCS=	Manual.htm tutor-jp.htm tutor-en.htm
 PLIST_FILES=	sbin/delegated etc/rc.d/delegated.sh-dist
+
+# Strip breaks binary checksumming
+STRIP=
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/delegated ${PREFIX}/sbin
