@@ -19,7 +19,6 @@ COMMENT=	A Post-it(R) like application with network support
 LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		gtksourceview-1.0:${PORTSDIR}/x11-toolkits/gtksourceview
 
-USE_GCC=	3.4
 USE_GNOME=	libxml2
 USE_XLIB=	yes
 
