@@ -7,6 +7,7 @@
 
 PORTNAME=	emelfm2
 PORTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.emelfm2.net/rel/ \
 		${MASTER_SITE_LOCAL}
@@ -41,7 +42,7 @@ MAK_ENV+=	DEBUG=1
 .endif
 
 .if defined(WITH_GAMIN) && defined(WITH_FAM)
-BROKEN=	"WITH_GAMIN and WITH_FAM cannot be enabled at the same time for this port"
+BROKEN=	WITH_GAMIN and WITH_FAM cannot be enabled at the same time for this port
 .endif
 
 .if defined(WITH_GAMIN)
@@ -79,14 +80,10 @@ PLIST_SUB+=	NLS=""
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4
-.endif
-
 .if ${OSVERSION} < 600000
 post-patch:
 	@${REINPLACE_CMD} -e 's|blksize_t buf_size =|__int32_t buf_size =|g' \
-		${WRKSRC}/src/e2_task_backend.c
+ 		${WRKSRC}/src/filesystem/e2_fs.c
 .endif
 
 .include <bsd.port.post.mk>
