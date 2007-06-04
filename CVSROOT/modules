@@ -15856,6 +15856,7 @@ w3mir		ports/www/w3mir
 w9wm		ports/x11-wm/w9wm
 wa-aspell	ports/textproc/wa-aspell
 waccess	ports/www/waccess
+wackamole	ports/net/wackamole
 wacko		ports/www/wacko
 wahcade		ports/emulators/wahcade
 waiho		ports/ftp/waiho
