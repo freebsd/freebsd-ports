@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-C3
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -20,7 +20,7 @@ OPTIONS=	XS "XS Speedoffs" off
 .include <bsd.port.pre.mk>
 
 .ifdef(WITH_XS)
-RUN_DEPENDS=	p5-Class-C3-XS>=0.06:${PORTSDIR}/devel/p5-Class-C3-XS
+RUN_DEPENDS=	p5-Class-C3-XS>=0.07:${PORTSDIR}/devel/p5-Class-C3-XS
 .else
 RUN_DEPENDS=	p5-Algorithm-C3>=0.06:${PORTSDIR}/devel/p5-Algorithm-C3
 .endif
