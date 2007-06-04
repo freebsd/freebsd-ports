@@ -3,9 +3,49 @@ abills/soft/kha0s-mpd.tar.gz
 abills/soft/expppd-0.2.1.tar.gz
 abills/soft/exppp_asm-0.2.4.tar.gz
 abills/misc/usr-trafic
+abills/misc/sslcerts.sh
+abills/misc/pppoe/install
 abills/misc/pppd_kill
 abills/misc/pppd_hangup.pl
+abills/misc/postfix/sql/virtual_mailbox_limits.cf
+abills/misc/postfix/sql/virtual_mailbox.cf
+abills/misc/postfix/sql/virtual_domains.cf
+abills/misc/postfix/sql/transport.cf
+abills/misc/postfix/sql/relay_domains.cf
+abills/misc/postfix/sql/aliases.cf
+abills/misc/postfix/sql/access.cf
+abills/misc/postfix/smtpd.conf
+abills/misc/postfix/main.cf
+abills/misc/postfix/local.cf
+abills/misc/postfix/install.sh
+abills/misc/postfix/install
+abills/misc/postfix/authmysqlrc
+abills/misc/postfix/.mailfilter
+abills/misc/poptop/install
+abills/misc/mysql/install
+abills/misc/mrtg/mrtg.cfg
+abills/misc/mrtg/install
+abills/misc/ipcad/ipcad.conf
+abills/misc/freeradius/users
+abills/misc/freeradius/radiusd.conf
+abills/misc/freeradius/install
+abills/misc/freeradius/eap.conf
+abills/misc/freeradius/clients.conf
+abills/misc/freeradius/acct_users
+abills/misc/flow-tools/install
+abills/misc/external_adduser
+abills/misc/exppp/radius.conf
+abills/misc/exppp/ppp.linkup
+abills/misc/exppp/ppp.linkdown
+abills/misc/exppp/ppp.conf
+abills/misc/exppp/install
+abills/misc/exppp/exppp
+abills/misc/exppp/dictionary.exppp
+abills/misc/cisco_access
 abills/misc/calculation_detail.pl
+abills/misc/autoconf
+abills/misc/apache/install
+abills/misc/apache/abills_httpd.conf
 abills/misc/abills_httpd.conf
 abills/miniserv/miniserv.pl
 abills/miniserv/miniserv.pem
@@ -30,12 +70,17 @@ abills/language/english.pl
 abills/language/bulgarian.pl
 abills/docs/INSTALL.ru
 abills/docs/INSTALL
-abills/db/Netlist.pm
+abills/db/Snmputils.sql
+abills/db/Paysys.sql
+abills/db/Netlist.sql
 abills/db/Mdelivery.sql
+abills/db/Mail.sql
 abills/db/Ipn.sql
 abills/db/Filearch.pm
 abills/db/Dunes.sql
+abills/db/Dhcphosts.sql
 abills/db/Cards.sql
+abills/db/Abon.sql
 abills/cgi-bin/print.css
 abills/cgi-bin/index.cgi
 abills/cgi-bin/img/vertyellow.gif
@@ -53,6 +98,10 @@ abills/cgi-bin/img/network.gif
 abills/cgi-bin/img/msg_savebox.gif
 abills/cgi-bin/img/msg_inbox.gif
 abills/cgi-bin/img/host.gif
+abills/cgi-bin/img/goryellow.gif
+abills/cgi-bin/img/gorred.gif
+abills/cgi-bin/img/gorgreen.gif
+abills/cgi-bin/img/gorblue.gif
 abills/cgi-bin/img/email-g.gif
 abills/cgi-bin/img/down_pointer.png
 abills/cgi-bin/functions.js
@@ -92,6 +141,7 @@ abills/Abills/mysql/Voip.pm
 abills/Abills/mysql/Users.pm
 abills/Abills/mysql/Tariffs.pm
 abills/Abills/mysql/Sqlcmd.pm
+abills/Abills/mysql/Snmputils.pm
 abills/Abills/mysql/Shedule.pm
 abills/Abills/mysql/Payments.pm
 abills/Abills/mysql/Netlist.pm
@@ -108,6 +158,7 @@ abills/Abills/mysql/Dv_Sessions.pm
 abills/Abills/mysql/Dv.pm
 abills/Abills/mysql/Dunes.pm
 abills/Abills/mysql/Docs.pm
+abills/Abills/mysql/Dhcphosts.pm
 abills/Abills/mysql/Customers.pm
 abills/Abills/mysql/Companies.pm
 abills/Abills/mysql/Bonus.pm
@@ -136,7 +187,9 @@ abills/Abills/modules/Snmputils/webinterface
 abills/Abills/modules/Snmputils/templates/snmputils_set.tpl
 abills/Abills/modules/Snmputils/templates/snmputils_route.tpl
 abills/Abills/modules/Snmputils/templates/snmputils_main.tpl
+abills/Abills/modules/Snmputils/templates/snmputils_ip_mac_port.tpl
 abills/Abills/modules/Snmputils/templates/snmputils_cisco_air_client_info.tpl
+abills/Abills/modules/Snmputils/templates/snmputils_binding.tpl
 abills/Abills/modules/Snmputils/config
 abills/Abills/modules/Paysys/webinterface
 abills/Abills/modules/Paysys/templates/paysys_webmoney_add.tpl
@@ -149,6 +202,7 @@ abills/Abills/modules/Paysys/lng_english.pl
 abills/Abills/modules/Paysys/config
 abills/Abills/modules/Netlist/webinterface
 abills/Abills/modules/Netlist/templates/netlist_ip_search.tpl
+abills/Abills/modules/Netlist/templates/netlist_ip_calc.tpl
 abills/Abills/modules/Netlist/templates/netlist_ip.tpl
 abills/Abills/modules/Netlist/templates/netlist_group.tpl
 abills/Abills/modules/Netlist/config
@@ -162,10 +216,16 @@ abills/Abills/modules/Mdelivery/templates/mdelivery_form.tpl
 abills/Abills/modules/Mdelivery/config
 abills/Abills/modules/Mail/webinterface
 abills/Abills/modules/Mail/templates/mail_transport.tpl
+abills/Abills/modules/Mail/templates/mail_spam_search.tpl
+abills/Abills/modules/Mail/templates/mail_spam_conf.tpl
+abills/Abills/modules/Mail/templates/mail_spam_awl_search.tpl
+abills/Abills/modules/Mail/templates/mail_spam.tpl
 abills/Abills/modules/Mail/templates/mail_domain.tpl
 abills/Abills/modules/Mail/templates/mail_box.tpl
 abills/Abills/modules/Mail/templates/mail_alias.tpl
 abills/Abills/modules/Mail/templates/mail_access.tpl
+abills/Abills/modules/Mail/lng_russian.pl
+abills/Abills/modules/Mail/lng_english.pl
 abills/Abills/modules/Mail/config
 abills/Abills/modules/Ipn/webinterface
 abills/Abills/modules/Ipn/traffic2sql
@@ -192,6 +252,10 @@ abills/Abills/modules/Dv/templates/dv_user.tpl
 abills/Abills/modules/Dv/templates/dv_tt.tpl
 abills/Abills/modules/Dv/templates/dv_tp.tpl
 abills/Abills/modules/Dv/templates/dv_session_detail.tpl
+abills/Abills/modules/Dv/templates/dv_registration.tpl
+abills/Abills/modules/Dv/templates/dv_reg_complete_mail.tpl
+abills/Abills/modules/Dv/templates/dv_reg_complete.tpl
+abills/Abills/modules/Dv/registration.cgi
 abills/Abills/modules/Dv/config
 abills/Abills/modules/Dunes/webinterface
 abills/Abills/modules/Dunes/config
@@ -204,6 +268,17 @@ abills/Abills/modules/Docs/lng_ukraine.pl
 abills/Abills/modules/Docs/lng_russian.pl
 abills/Abills/modules/Docs/lng_english.pl
 abills/Abills/modules/Docs/config
+abills/Abills/modules/Dhcphosts/webinterface
+abills/Abills/modules/Dhcphosts/templates/dhcphosts_search.tpl
+abills/Abills/modules/Dhcphosts/templates/dhcphosts_routes.tpl
+abills/Abills/modules/Dhcphosts/templates/dhcphosts_network.tpl
+abills/Abills/modules/Dhcphosts/templates/dhcphosts_ipguard.tpl
+abills/Abills/modules/Dhcphosts/templates/dhcphosts_host.tpl
+abills/Abills/modules/Dhcphosts/templates/dhcphosts_dhcp_conf_main.tpl
+abills/Abills/modules/Dhcphosts/templates/dhcphosts_dhcp_conf_host.tpl
+abills/Abills/modules/Dhcphosts/lng_russian.pl
+abills/Abills/modules/Dhcphosts/lng_english.pl
+abills/Abills/modules/Dhcphosts/config
 abills/Abills/modules/Cisco/templates/cisco_aironet_client_info.tpl
 abills/Abills/modules/Cards/webinterface
 abills/Abills/modules/Cards/templates/cards_search.tpl
@@ -230,10 +305,62 @@ abills/Abills/SNMP_util.pm
 abills/Abills/SNMP_Session.pm
 abills/Abills/Radius.pm
 abills/Abills/MSCHAP.pm
+abills/Abills/MIBs/session.mib
+abills/Abills/MIBs/product.mib
+abills/Abills/MIBs/livingston.mib
+abills/Abills/MIBs/corporat.mib
+abills/Abills/MIBs/common.mib
+abills/Abills/MIBs/SNMPv2-TC
+abills/Abills/MIBs/SNMPv2-SMI
+abills/Abills/MIBs/SNMPv2-MIB
+abills/Abills/MIBs/SNMPv2-CONF
+abills/Abills/MIBs/RFC1213-MIB
+abills/Abills/MIBs/RFC1212-MIB
+abills/Abills/MIBs/RFC1158-MIB
+abills/Abills/MIBs/RFC1155-SMI
+abills/Abills/MIBs/RDN-SYSLOG-MIB
+abills/Abills/MIBs/RDN-MIB
+abills/Abills/MIBs/RDN-CMTS-MIB
+abills/Abills/MIBs/RDN-CABLE-SPECTRUM-GROUP-MIB
+abills/Abills/MIBs/RDN-CABLE-SPECTRUM
+abills/Abills/MIBs/OLD-CISCO-SYS-MIB
+abills/Abills/MIBs/IP-MIB
+abills/Abills/MIBs/IF-MIB
+abills/Abills/MIBs/IEEE802dot11-MIB
+abills/Abills/MIBs/IANAifType-MIB
+abills/Abills/MIBs/EtherLike-MIB
+abills/Abills/MIBs/ENTITY-MIB
+abills/Abills/MIBs/DOCS-IF-MIB
+abills/Abills/MIBs/DOCS-IF-EXT-MIB
+abills/Abills/MIBs/DOCS-CABLE-DEVICE-MIB
+abills/Abills/MIBs/CISCO-SMI
+abills/Abills/MIBs/CISCO-DOT11-IF-MIB
+abills/Abills/MIBs/CISCO-DOT11-ASSOCIATION-MIB
+abills/Abills/MIBs/CISCO-AAA-SESSION-MIB
+abills/Abills/MIBs/ASCEND-SESSION-MIB
+abills/Abills/MIBs/ASCEND-MIB
 abills/Abills/HTML.pm
 abills/Abills/DES.pm
 abills/Abills/Base.pm
 abills/Abills/BER.pm
+@dirrm abills/var/log/q
+@dirrm abills/var/log/devices
+@dirrm abills/var/devices
+@dirrm abills/misc/pppoe
+@dirrm abills/misc/postfix/sql
+@dirrm abills/misc/postfix
+@dirrm abills/misc/poptop
+@dirrm abills/misc/mysql
+@dirrm abills/misc/mrtg
+@dirrm abills/misc/ipcad
+@dirrm abills/misc/freeradius
+@dirrm abills/misc/flow-tools
+@dirrm abills/misc/exppp
+@dirrm abills/misc/apache
+@dirrm abills/cgi-bin/admin/nets
+@dirrm abills/Abills/modules/Dhcphosts/templates
+@dirrm abills/Abills/modules/Dhcphosts
+@dirrm abills/Abills/MIBs
 @dirrm abills/var/q
 @dirrm abills/var/log/ipn
 @dirrm abills/var/log
