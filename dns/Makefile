@@ -55,6 +55,7 @@
     SUBDIR += ipcheck
     SUBDIR += ldapdns
     SUBDIR += ldns
+    SUBDIR += ldnsm
     SUBDIR += libdjbdns
     SUBDIR += libidn
     SUBDIR += maradns
