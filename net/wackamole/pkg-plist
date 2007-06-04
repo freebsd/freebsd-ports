@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+etc/wackamole.conf.sample
+sbin/wackamole
+sbin/wackatrl
