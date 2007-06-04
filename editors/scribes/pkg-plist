@@ -191,7 +191,7 @@ share/gnome/help/scribes/C/figures/scribes_window.png
 share/gnome/help/scribes/C/legal.xml
 share/gnome/help/scribes/C/scribes.xml
 share/gnome/omf/scribes/scribes-C.omf
-share/gnome/pixmaps/scribes.svg
+share/gnome/pixmaps/scribes.png
 share/gnome/scribes/ModificationDialog.glade
 share/gnome/scribes/bookmarks.png
 share/gnome/scribes/plugins/About/AboutDialog.py
@@ -620,6 +620,7 @@ share/gnome/scribes/plugins/ReplaceBar/WordButton.py
 share/gnome/scribes/plugins/ReplaceBar/WordButton.pyo
 share/gnome/scribes/plugins/ReplaceBar/__init__.py
 share/gnome/scribes/plugins/ReplaceBar/__init__.pyo
+share/gnome/scribes/plugins/SaveDialog/Dialog.glade
 share/gnome/scribes/plugins/SaveDialog/Dialog.py
 share/gnome/scribes/plugins/SaveDialog/Dialog.pyo
 share/gnome/scribes/plugins/SaveDialog/i18n.py
@@ -830,7 +831,6 @@ share/gnome/scribes/plugins/__init__.py
 share/gnome/scribes/plugins/__init__.pyo
 share/gnome/scribes/throbber-active.gif
 share/gnome/scribes/throbber-inactive.png
-share/icons/hicolor/scalable/apps/scribes.svg
 share/icons/hicolor/48x48/apps/scribes.png
 @dirrm share/gnome/scribes/plugins/WordCompletionGUI
 @dirrm share/gnome/scribes/plugins/WordCompletion
