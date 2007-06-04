@@ -1,7 +1,0 @@
-This package contains xperfmon++ V2.0 a X based system performance meter.
-
-The program monitors:
-  system load, user-, nice-, system-, interrupt-, idle-cputime,
-  free swap, disk io, number of interrupts,
-  network-input, -output, -collision packets and
-  NFS client and server activity.

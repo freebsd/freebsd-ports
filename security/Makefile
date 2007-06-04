@@ -292,7 +292,6 @@
     SUBDIR += ocaml-ssl
     SUBDIR += oidentd
     SUBDIR += oinkmaster
-    SUBDIR += op
     SUBDIR += openbsm
     SUBDIR += opencdk
     SUBDIR += openct

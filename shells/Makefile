@@ -6,7 +6,6 @@
     SUBDIR += 44bsd-csh
     SUBDIR += bash
     SUBDIR += bash-completion
-    SUBDIR += bash2
     SUBDIR += bush
     SUBDIR += ch
     SUBDIR += es

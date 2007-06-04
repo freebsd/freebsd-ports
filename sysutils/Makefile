@@ -727,7 +727,6 @@
     SUBDIR += xlogmaster
     SUBDIR += xmbmon
     SUBDIR += xosview
-    SUBDIR += xperfmon
     SUBDIR += xsi
     SUBDIR += xstow
     SUBDIR += xsu
