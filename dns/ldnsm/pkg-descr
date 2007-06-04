@@ -1,0 +1,9 @@
+Manages LDAP entries for the BIND9 SDB LDAP patch.
+
+Supports adding, removing, and modifying enteries.
+
+The attributes it can handle are TTL, A record, C name, AAAA
+record, and MX record. Outside of TTL, multiple attributes
+for each type record.
+
+WWW: http://vvelox.net/projects/ldnsm/
