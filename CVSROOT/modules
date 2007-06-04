@@ -3117,7 +3117,6 @@ freelibiberty	ports/devel/freelibiberty
 freemat		ports/math/freemat
 freemat-mpi	ports/math/freemat-mpi
 freemind	ports/deskutils/freemind
-freenet		ports/net-p2p/freenet
 freenet6	ports/net/freenet6
 freenx		ports/net/freenx
 freeorion	ports/games/freeorion
@@ -6334,7 +6333,6 @@ libflash	ports/graphics/libflash
 libfontenc	ports/x11-fonts/libfontenc
 libfov		ports/games/libfov
 libfpx		ports/graphics/libfpx
-libfreenet	ports/net-p2p/libfreenet
 libfs++		ports/devel/libfs++
 libftdi		ports/devel/libftdi
 libfwbuilder	ports/security/libfwbuilder
@@ -7301,7 +7299,6 @@ micq		ports/net-im/micq
 micro_httpd	ports/www/micro_httpd
 micro_inetd	ports/net/micro_inetd
 micro_proxy	ports/net/micro_proxy
-microdc		ports/net-p2p/microdc
 microdc2	ports/net-p2p/microdc2
 middleman	ports/www/middleman
 midimountain	ports/audio/midimountain

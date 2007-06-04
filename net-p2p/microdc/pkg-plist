@@ -1,7 +1,0 @@
-bin/microdc
-%%NLS%%share/locale/pl/LC_MESSAGES/microdc.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/microdc.mo
-@dirrmtry man/pl/man1
-@dirrmtry man/pl
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl

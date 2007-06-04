@@ -27,7 +27,6 @@
     SUBDIR += ed2k
     SUBDIR += fcptools
     SUBDIR += fidelio
-    SUBDIR += freenet
     SUBDIR += frost
     SUBDIR += frostwire
     SUBDIR += gift
@@ -55,7 +54,6 @@
     SUBDIR += ktorrent-devel
     SUBDIR += libbt
     SUBDIR += liberator
-    SUBDIR += libfreenet
     SUBDIR += libpdtp
     SUBDIR += libtorrent
     SUBDIR += libtorrent-devel
@@ -67,7 +65,6 @@
     SUBDIR += linux-jigdo
     SUBDIR += linuxdcpp
     SUBDIR += lopster
-    SUBDIR += microdc
     SUBDIR += microdc2
     SUBDIR += minder
     SUBDIR += mldonkey
