@@ -14510,6 +14510,7 @@ smv		ports/devel/smv
 smx		ports/mail/smx
 sn		ports/news/sn
 snack		ports/audio/snack
+snap		ports/sysutils/snap
 snarf		ports/www/snarf
 snd		ports/audio/snd
 snd-music-duplicates	ports/multimedia/snd-music-duplicates
