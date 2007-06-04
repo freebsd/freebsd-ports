@@ -16381,6 +16381,7 @@ xf86-input-penmount	ports/x11-drivers/xf86-input-penmount
 xf86-input-spaceorb	ports/x11-drivers/xf86-input-spaceorb
 xf86-input-summa	ports/x11-drivers/xf86-input-summa
 xf86-input-tek4957	ports/x11-drivers/xf86-input-tek4957
+xf86-input-vmmouse	ports/x11-drivers/xf86-input-vmmouse
 xf86-input-void	ports/x11-drivers/xf86-input-void
 xf86-video-apm	ports/x11-drivers/xf86-video-apm
 xf86-video-ark	ports/x11-drivers/xf86-video-ark
