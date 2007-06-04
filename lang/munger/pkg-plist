@@ -1,5 +1,5 @@
 bin/munger
-lib/libmunger.so.26
+lib/libmunger.so.27
 %%DKNS_BIN%%
 %%DATADIR%%/ipdatabase.munger
 %%DATADIR%%/httpd.munger
