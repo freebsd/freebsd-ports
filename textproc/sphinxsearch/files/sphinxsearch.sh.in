@@ -30,21 +30,20 @@
 name=%%PORTNAME%%
 rcvar=`set_rcvar`
 
-%%PORTNAME%%_enable=${%%PORTNAME%%_enable-"NO"}
-%%PORTNAME%%_conffile=${%%PORTNAME%%_conffile-"%%CFGFILE%%"}
-%%PORTNAME%%_pidfile=${%%PORTNAME%%_pidfile-"%%SPHINX_RUN%%/searchd.pid"}
-%%PORTNAME%%_user=${%%PORTNAME%%_user-"%%SPHINX_USR%%"}
-%%PORTNAME%%_group=${%%PORTNAME%%_group-"%%SPHINX_GRP%%"}
-%%PORTNAME%%_logdir=${%%PORTNAME%%_logdir-"%%SPHINX_LOG%%"}
+load_rc_config ${name}
 
-start_precmd="create_dirs"
+: ${%%PORTNAME%%_enable="NO"}
+: ${%%PORTNAME%%_conffile="%%CFGFILE%%"}
+: ${%%PORTNAME%%_pidfile="%%SPHINX_RUN%%/searchd.pid"}
+: ${%%PORTNAME%%_user="%%SPHINX_USR%%"}
+: ${%%PORTNAME%%_group="%%SPHINX_GRP%%"}
+: ${%%PORTNAME%%_logdir="%%SPHINX_LOG%%"}
 
 command=%%PREFIX%%/sbin/searchd
 pidfile=${%%PORTNAME%%_pidfile}
 required_files=${%%PORTNAME%%_conffile}
-%%PORTNAME%%_flags="--config ${%%PORTNAME%%_conffile}"
 
-create_dirs ()
+%%PORTNAME%%_precmd ()
 {
     piddir=$(dirname ${%%PORTNAME%%_pidfile})
     if [ ! -d ${piddir} ]; then
@@ -58,5 +57,14 @@ create_dirs ()
     fi
 }
 
-load_rc_config ${name}
+case "${%%PORTNAME%%_flags}" in
+    *--config\ *)
+    echo "Warning \$%%PORTNAME%%_flags includes --config option." \
+	"Please use \$%%PORTNAME%%_conffile instead."
+    ;;
+    *)
+    %%PORTNAME%%_flags="--config ${%%PORTNAME%%_conffile} ${%%PORTNAME%%_flags}"
+    ;;
+esac
+
 run_rc_command "$1"
