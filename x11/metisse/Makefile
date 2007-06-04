@@ -105,7 +105,8 @@ MAN1=	FvwmAnimate.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 \
 	fvwm-menu-directory.1 fvwm-menu-headlines.1 \
 	fvwm-menu-xlock.1 fvwm-perllib.1 fvwm-root.1 fvwm.1
 
-.if ${USE_GNOME:Mgtk12} || ${USE_GNOME:Mimlib}
+_GTK=	${USE_GNOME:Mgtk12} ${USE_GNOME:Mimlib}
+.if !empty(_GTK)
 MAN1+=		FvwmGtk.1
 PLIST_SUB+=	GTK=""
 .else
