@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://modeemi.fi/~tuomov/dl/
 
-MAINTAINER=	ed@fxq.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The development version of the Ion window manager
 
 RUN_DEPENDS=	run-mailcap:${PORTSDIR}/misc/mime-support
