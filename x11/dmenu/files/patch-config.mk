@@ -1,6 +1,6 @@
---- config.mk.orig	Wed Feb 21 22:21:27 2007
-+++ config.mk	Wed Feb 21 22:21:26 2007
-@@ -4,18 +4,18 @@
+--- config.mk.orig	Wed May 30 12:21:59 2007
++++ config.mk	Wed May 30 20:20:51 2007
+@@ -4,19 +4,19 @@
  # Customize below to fit your system
  
  # paths
@@ -20,10 +20,12 @@
  
  # flags
 -CFLAGS = -Os ${INCS} -DVERSION=\"${VERSION}\"
+-LDFLAGS = -s ${LIBS}
 +CFLAGS+= ${INCS} -DVERSION=\"${VERSION}\"
- LDFLAGS = ${LIBS}
++LDFLAGS+= ${LIBS}
  #CFLAGS = -g -Wall -O2 ${INCS} -DVERSION=\"${VERSION}\"
  #LDFLAGS = -g ${LIBS}
+ 
 @@ -26,4 +26,4 @@
  #CFLAGS += -xtarget=ultra
  
