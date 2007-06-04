@@ -910,6 +910,7 @@
     SUBDIR += vserver
     SUBDIR += vtun
     SUBDIR += vyqchat
+    SUBDIR += wackamole
     SUBDIR += wakeonlan
     SUBDIR += warppipe
     SUBDIR += whois

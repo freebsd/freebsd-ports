@@ -1,0 +1,15 @@
+Wackamole is an application that helps with making a cluster highly
+available.
+
+It manages a bunch of virtual IPs, that should be available
+to the outside world at all times. Wackamole ensures that a single
+machine within a cluster is listening on each virtual IP address
+that Wackamole manages. If it discovers that particular machines
+within the cluster are not alive, it will almost immediately ensure
+that other machines acquire these public IPs.
+At no time will more than one machine listen on any virtual IP.
+
+Wackamole also works toward achieving a balanced distribution of
+number IPs on the machine within the cluster it manages.
+
+WWW:	http://www.backhand.org/wackamole/
