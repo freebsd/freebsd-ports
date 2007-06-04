@@ -10,8 +10,7 @@
 
 PORTNAME=	vlc
 
-DISTVERSION=	0.9.0.20070501
-PORTREVISION=	3
+DISTVERSION=	0.9.0.20070603
 PORTEPOCH=	2
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://nightlies.videolan.org/build/source/

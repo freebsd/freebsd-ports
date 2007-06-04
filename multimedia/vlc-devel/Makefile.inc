@@ -275,7 +275,7 @@ pre-install: build
 	${ECHO_CMD} "share/pixmaps/wxvlc.png" >> ${PLIST}
 	${ECHO_CMD} "share/applications/wxvlc.desktop" >> ${PLIST}
 .endif
-.if !defined(WITHOUT_WXGTK) || defined(WITH_SKINS)
+.if !defined(WITHOUT_WXGTK) || defined(WITH_SKINS) || !defined(WITHOUT_QT)
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
 .endif
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
