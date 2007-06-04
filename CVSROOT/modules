@@ -6134,6 +6134,7 @@ ldapvi		ports/sysutils/ldapvi
 ldconfig_compat		ports/misc/ldconfig_compat
 ldmud		ports/games/ldmud
 ldns		ports/dns/ldns
+ldnsm		ports/dns/ldnsm
 ldouble		ports/math/ldouble
 ldvd		ports/multimedia/ldvd
 le		ports/editors/le
