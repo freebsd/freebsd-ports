@@ -1,0 +1,68 @@
+--- metisse-0.4.0-rc4/xserver/GL/mesa/Makefile.in.orig	Wed Jul 14 11:57:56 2004
++++ metisse-0.4.0-rc4/xserver/GL/mesa/Makefile.in	Fri Jun  1 20:59:53 2007
+@@ -89,7 +89,7 @@
+ 	main/texobj.c main/texobj.h main/texstate.c main/texstate.h \
+ 	main/texstore.c main/texstore.h main/texutil.c main/texutil.h \
+ 	main/texutil_tmp.h main/varray.c main/varray.h main/version.h \
+-	main/vsnprintf.c main/vtxfmt.c main/vtxfmt.h main/vtxfmt_tmp.h \
++	main/vtxfmt.c main/vtxfmt.h main/vtxfmt_tmp.h \
+ 	glapi/glapi.c glapi/glapi.h glapi/glapioffsets.h \
+ 	glapi/glapitable.h glapi/glapitemp.h glapi/glprocs.h \
+ 	glapi/glthread.c glapi/glthread.h array_cache/acache.h \
+@@ -188,7 +188,7 @@
+ 	libglcore_a-texformat.$(OBJEXT) libglcore_a-teximage.$(OBJEXT) \
+ 	libglcore_a-texobj.$(OBJEXT) libglcore_a-texstate.$(OBJEXT) \
+ 	libglcore_a-texstore.$(OBJEXT) libglcore_a-texutil.$(OBJEXT) \
+-	libglcore_a-varray.$(OBJEXT) libglcore_a-vsnprintf.$(OBJEXT) \
++	libglcore_a-varray.$(OBJEXT) \
+ 	libglcore_a-vtxfmt.$(OBJEXT) libglcore_a-glapi.$(OBJEXT) \
+ 	libglcore_a-glthread.$(OBJEXT)
+ am__objects_3 = libglcore_a-ac_context.$(OBJEXT) \
+@@ -665,7 +665,6 @@
+ 	main/varray.c  \
+ 	main/varray.h  \
+ 	main/version.h \
+-	main/vsnprintf.c  \
+ 	main/vtxfmt.c  \
+ 	main/vtxfmt.h  \
+ 	main/vtxfmt_tmp.h  \
+@@ -949,8 +948,8 @@
+ 
+ #CFLAGS = -g -O3
+ # -D_POSIX_SOURCE  -DPTHREADS
+-libglcore_a_CFLAGS = -UHAVE_CONFIG_H -DXFree86Server -D_POSIX_SOURCE \
+-	-D_POSIX_C_SOURCE=199309L -D_SVID_SOURCE -D_BSD_SOURCE $(ASM_DEFINE)
++libglcore_a_CFLAGS = -UHAVE_CONFIG_H -DXFree86Server \
++	-D_SVID_SOURCE -D_BSD_SOURCE $(ASM_DEFINE)
+ 
+ 
+ # -DPTHREADS
+@@ -1132,7 +1131,6 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libglcore_a-texstore.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libglcore_a-texutil.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libglcore_a-varray.Po@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libglcore_a-vsnprintf.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libglcore_a-vtxfmt.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libglcore_a-x86.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libglcore_a-xf86glx.Po@am__quote@
+@@ -2114,20 +2112,6 @@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='main/varray.c' object='libglcore_a-varray.obj' libtool=no @AMDEPBACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libglcore_a_CFLAGS) $(CFLAGS) -c -o libglcore_a-varray.obj `if test -f 'main/varray.c'; then $(CYGPATH_W) 'main/varray.c'; else $(CYGPATH_W) '$(srcdir)/main/varray.c'; fi`
+-
+-libglcore_a-vsnprintf.o: main/vsnprintf.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libglcore_a_CFLAGS) $(CFLAGS) -MT libglcore_a-vsnprintf.o -MD -MP -MF "$(DEPDIR)/libglcore_a-vsnprintf.Tpo" -c -o libglcore_a-vsnprintf.o `test -f 'main/vsnprintf.c' || echo '$(srcdir)/'`main/vsnprintf.c; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libglcore_a-vsnprintf.Tpo" "$(DEPDIR)/libglcore_a-vsnprintf.Po"; else rm -f "$(DEPDIR)/libglcore_a-vsnprintf.Tpo"; exit 1; fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='main/vsnprintf.c' object='libglcore_a-vsnprintf.o' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libglcore_a_CFLAGS) $(CFLAGS) -c -o libglcore_a-vsnprintf.o `test -f 'main/vsnprintf.c' || echo '$(srcdir)/'`main/vsnprintf.c
+-
+-libglcore_a-vsnprintf.obj: main/vsnprintf.c
+-@am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libglcore_a_CFLAGS) $(CFLAGS) -MT libglcore_a-vsnprintf.obj -MD -MP -MF "$(DEPDIR)/libglcore_a-vsnprintf.Tpo" -c -o libglcore_a-vsnprintf.obj `if test -f 'main/vsnprintf.c'; then $(CYGPATH_W) 'main/vsnprintf.c'; else $(CYGPATH_W) '$(srcdir)/main/vsnprintf.c'; fi`; \
+-@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/libglcore_a-vsnprintf.Tpo" "$(DEPDIR)/libglcore_a-vsnprintf.Po"; else rm -f "$(DEPDIR)/libglcore_a-vsnprintf.Tpo"; exit 1; fi
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='main/vsnprintf.c' object='libglcore_a-vsnprintf.obj' libtool=no @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libglcore_a_CFLAGS) $(CFLAGS) -c -o libglcore_a-vsnprintf.obj `if test -f 'main/vsnprintf.c'; then $(CYGPATH_W) 'main/vsnprintf.c'; else $(CYGPATH_W) '$(srcdir)/main/vsnprintf.c'; fi`
+ 
+ libglcore_a-vtxfmt.o: main/vtxfmt.c
+ @am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libglcore_a_CFLAGS) $(CFLAGS) -MT libglcore_a-vtxfmt.o -MD -MP -MF "$(DEPDIR)/libglcore_a-vtxfmt.Tpo" -c -o libglcore_a-vtxfmt.o `test -f 'main/vtxfmt.c' || echo '$(srcdir)/'`main/vtxfmt.c; \

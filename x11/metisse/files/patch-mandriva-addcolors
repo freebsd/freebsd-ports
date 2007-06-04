@@ -1,0 +1,386 @@
+--- metisse-0.4.0-rc4/FvwmCompositor/config/colours/Ia_Ora_free.theme.newcolor	2007-03-06 19:41:37.000000000 +0100
++++ metisse-0.4.0-rc4/FvwmCompositor/config/colours/Ia_Ora_free.theme	2007-03-06 19:41:37.000000000 +0100
+@@ -0,0 +1,176 @@
++# Ia Ora free colours
++# from Mandriva ia_ora-gnome-1.0.9 free variante
++
++#### defaults
++
++# gtkrc black fg[NORMAL] + gray0 (bg[NORMAL])
++Colorset 0 bg #eff3f7,  sh, hi, bgTint, \
++  fg black, fgsh #eff3f7,  fgAlpha, fgTint, \
++  Plain, NoShape, IconAlpha, IconTint
++
++FuncFontsSet-DefaultFont 0 Normal Regular
++
++#### windows inactive / active 
++
++# metacity titlebar_bg_gray+title_text_no_icon
++Colorset 1 bg average, sh, hi, bgTint, \
++  fg #eff3f7, fgsh #8692A6, fgAlpha, fgTint, \
++  Vgradient 100 3 #dfe7ef 51 #c7d3df 0 #b6c3cf 49 #cfd7df, dither, Tint, \
++  Alpha, NoShape, IconAlpha, IconTint
++# hi #CFD7DF, sh #CFD7DF,
++# metacity titlebar_bg_blue+title_text_focused_no_icon
++Colorset 2 bg average, sh, hi, bgTint, \
++  fg white, fgsh black, fgAlpha, fgTint, \
++  Vgradient 100 3 #c7dfff 51 #69b6ff 0 #69b6ff 49 #8ec7ff, dither, Tint, \
++  Alpha, NoShape, IconAlpha, IconTint
++# hi #4965AE, sh #4965AE,
++# use #CFD7DF and #4965AE as bg (average more powerful?)
++
++# shadow [bold|normal|] [Italic|Regular|] [bold|medium|*] [o|r|i|*]
++FuncFontsSet-WinFont 1 Bold Regular bold r
++FuncFontsSet-ActiveWinFont 1 Bold Regular bold r
++
++# Border InActive/Active (no fg any way)
++# From fred: They are 3 pixels wide : from exterior to interior, colors are :
++# #CFD7DF (1 pixel), #DFE7EF (1 pixel) and #EFF3F7 (1 pixel). 
++# ... cannot do that
++#
++Colorset 3 bg #DFE7EF, hi #CFD7DF, sh #CFD7DF, bgTint, \
++  Plain, NoShape, IconAlpha, IconTint
++Colorset 4 bg #DFE7EF, hi #CFD7DF, sh #CFD7DF, bgTint, \
++  Plain, NoShape, IconAlpha, IconTint
++
++#### menu  active / normal /greyed
++
++# bg
++# gtkrc black fg[NORMAL] + gray0 (bg[NORMAL])
++Colorset 5 bg #eff3f7, sh, hi, bgTint, \
++  fg black, fgsh grey80, fgAlpha, fgTint, \
++  Plain, NoShape, IconAlpha, IconTint
++# selected (depends on ActiveForeOff, HilightBackOff ...)
++# gtkrc black fg[SELECTED] + blue2 (bg[SELECTED]) ... no the hi gradient
++Colorset 6 bg average, sh, hi, bgTint, \
++  fg black, fgsh black, fgAlpha, fgTint, \
++  Vgradient 100 3 #c7dfff 45 #79beff 0 #69b6ff 55 #4965ae, dither, Tint, \
++  Alpha, NoShape, IconAlpha, IconTint
++# greyed, Only the fg is useful
++# gtkrc gray4 fg[INSENSITIVE]
++Colorset 7 bg #eff3f7, fg #B6C3CF, fgsh #eff3f7, fgAlpha 100, fgTint, Plain
++
++# No shadow in fonts ... used in menustyle
++
++DestroyFunc FuncColoursMenuStyleOverRide
++AddToFunc   FuncColoursMenuStyleOverRide
+++ I MenuStyle "$0" ActiveFore, HilightBack, Hilight3DThickness 0, TrianglesSolid
+++ I FuncFontsSet-MenuFont "$0" 0 Normal Regular medium r
++
++DestroyFunc FuncColoursWinMenuStyleOverRide
++AddToFunc   FuncColoursWinMenuStyleOverRide
+++ I FuncFontsSet-WinMenuFont "$0" 0 Normal Regular medium r
++
++DestroyFunc FuncColoursUtf8MenuStyleOverRide
++AddToFunc   FuncColoursUtf8MenuStyleOverRide
+++ I FuncFontsSet-Utf8MenuFont "$0" 0 Normal Regular medium r
++
++#### colors for modules
++
++### panel defaults
++
++# default
++# gtkrc black fg[NORMAL] + gray0 (bg[NORMAL])
++Colorset 10 bg #eff3f7, sh, hi, bgTint, \
++  fg black, fgsh, fgAlpha, fgTint, \
++  Plain, NoShape, IconAlpha, IconTint
++# active
++Colorset 11 bg average, sh, hi, bgTint, \
++  fg white, fgsh grey10, fgAlpha, fgTint, \
++  Vgradient 100 3 #c7dfff 45 #79beff 0 #69b6ff 55 #8ec7ff, dither, NoTint, \
++  Alpha,  NoShape, IconAlpha, IconTint
++# pressed
++# first colors of the hi gradient ...
++Colorset 12 bg #c7dfff, sh, hi, bgTint, \
++  fg white, fgsh grey10, fgAlpha,  fgTint, \
++  Plain, NoShape, IconAlpha, IconTint
++
++### pager
++
++# Hmm, I've check gnome code and it is using some dark version of
++# bg[active], so use #39496b. And for not selected, dark version of
++# bg[normal], so use #94aabd. (From fred)
++# These in the place of  gtkrc black fg[NORMAL] + gray0 (bg[NORMAL])
++# and gtkrc white fg[SELECTED] + blue2 (bg[SELECTED])
++# 8cc7ff 398ede
++# 39496b 94aabd
++
++# bg
++Colorset 14 bg #94aabd, sh, hi, bgTint, \
++  fg black, fgsh, fgAlpha, fgTint, \
++  Plain, NoShape, IconAlpha, IconTint 
++# hi 
++Colorset 15 bg #398ede, sh, hi, bgTint, \
++  fg white, fgsh, fgAlpha, fgTint, \
++  Plain, NoShape, IconAlpha, IconTint
++
++### tips
++
++# gtkrc "yellow"
++Colorset 16 bg #FFFF94, sh, hi, bgTint, \
++  fg black, fgsh, fgAlpha, fgTint, \
++  Plain,  NoShape, IconAlpha, IconTint
++
++### "taskbar"
++
++# normal item as title bar 
++Colorset 17 bg average, sh, hi, bgTint, \
++  fg #eff3f7, fgsh black, fgAlpha, fgTint, \
++  Vgradient 100 3 #dfe7ef 45 #c7d3df 0 #b6c3cf 55 #cfd7df, dither, NoTint, \
++  Alpha,  NoShape, IconAlpha, IconTint
++# hi item as title bar hi 
++Colorset 18 bg average, sh, hi, bgTint, \
++  fg white, fgsh black, fgAlpha, fgTint, \
++  Vgradient 100 3 #c7dfff 45 #79beff 0 #69b6ff 55 #8ec7ff, dither, NoTint, \
++  Alpha,  NoShape, IconAlpha, IconTint
++# iconified item as title + some alpha
++Colorset 19 bg average, sh, hi, bgTint, \
++  fg #eff3f7, fgsh black, fgAlpha 60, IconAlpha 60, \
++  Vgradient 100 3 #c7dfff 45 #79beff 0 #69b6ff 55 #8ec7ff, dither, NoTint, \
++  Alpha,  NoShape, IconAlpha 60, IconTint
++
++# as above selected
++# normal item 
++Colorset 20 bg average, sh, hi, bgTint white 15, \
++  fg #eff3f7, fgsh black, fgAlpha, fgTint, \
++  Vgradient 100 3 #dfe7ef 45 #c7d3df 0 #b6c3cf 55 #cfd7df, dither, Tint black 15, \
++  Alpha,  NoShape, IconAlpha, IconTint
++# hi item
++Colorset 21 bg average, sh, hi, bgTint white 15, \
++  fg white, fgsh black, fgAlpha, fgTint, \
++  Vgradient 100 3 #c7dfff 45 #79beff 0 #69b6ff 55 #8ec7ff, dither, Tint white 15, \
++  Alpha,  NoShape, IconAlpha, IconTint
++# iconified
++Colorset 22 bg average, sh, hi, bgTint white 15, \
++  fg #eff3f7, fgsh black, fgAlpha 60, fgTint, \
++  Vgradient 100 3 #dfe7ef 45 #c7d3df 0 #b6c3cf 55 #cfd7df, dither, Tint black 15, \
++  Alpha,  NoShape, IconAlpha 60, IconTint
++
++# attention colorset ... from ia ora orange
++# normal 
++Colorset 23 bg average, sh, hi, bgTint, \
++  fg white, fgsh black, fgAlpha, fgTint, \
++  Vgradient 100 3 #ffcb10 45 #ffa208 0 #f79600 55 #f7b610, dither, Tint, \
++  Alpha,  NoShape, IconAlpha, IconTint
++# selected
++Colorset 24 bg average, sh, hi, bgTint white 15, \
++  fg white, fgsh black, fgAlpha, fgTint,  \
++  Vgradient 100 3 #ffcb10 45 #ffa208 0 #f79600 55 #f7b610, dither, Tint white 15, \
++  Alpha,  NoShape, IconAlpha, IconTint
++# icon
++Colorset 25 bg average, sh, hi, bgTint white 15, \
++  fg black, fgsh white, fgAlpha 60, fgTint, \
++  Vgradient 100 3 #ffcb10 45 #ffa208 0 #f79600 55 #f7b610, dither, Tint, \
++  Alpha,  NoShape, IconAlpha 60, IconTint
++# icon and selected
++Colorset 26 bg average, sh, hi, bgTint, \
++  fg black, fgsh white, fgAlpha 60, fgTint, \
++  Vgradient 100 3 #ffcb10 45 #ffa208 0 #f79600 55 #f7b610, dither, Tint white 15, \
++  Alpha,  NoShape, IconAlpha 60, IconTint
+--- metisse-0.4.0-rc4/FvwmCompositor/config/colours/Makefile.in.newcolor	2007-03-06 19:42:03.000000000 +0100
++++ metisse-0.4.0-rc4/FvwmCompositor/config/colours/Makefile.in	2007-03-06 19:52:55.000000000 +0100
+@@ -300,7 +300,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ configdir = $(METISSE_FVWM_CONFIG_DIR)/colours
+-CONFIG_FILES = Ia_Ora_blue.theme Ia_Ora_orange.theme Metisse_Contrast.theme \
++CONFIG_FILES = Ia_Ora_blue.theme Ia_Ora_orange.theme Ia_Ora_free.theme Ia_Ora_gray.theme Metisse_Contrast.theme \
+ 	Metisse.theme Opale.theme
+ 
+ config_DATA = $(CONFIG_FILES)
+--- metisse-0.4.0-rc4/FvwmCompositor/config/colours/Ia_Ora_gray.theme.newcolor	2007-03-06 19:45:12.000000000 +0100
++++ metisse-0.4.0-rc4/FvwmCompositor/config/colours/Ia_Ora_gray.theme	2007-03-06 19:51:27.000000000 +0100
+@@ -0,0 +1,171 @@
++# Ia Ora orange colours
++# from Mandriva ia_ora-gnome-1.0.9 orange variante
++
++#### defaults
++
++# gtkrc black fg[NORMAL] + gray0 (bg[NORMAL])
++Colorset 0 bg #eff3f7,  sh, hi, bgTint, \
++  fg black, fgsh #eff3f7,  fgAlpha, fgTint, \
++  Plain, NoShape, IconAlpha, IconTint
++
++FuncFontsSet-DefaultFont 0 Normal Regular
++
++#### windows inactive / active 
++
++# metacity titlebar_bg_gray+title_text_no_icon
++Colorset 1 bg average, sh, hi, bgTint, \
++  fg #eff3f7, fgsh #8692A6, fgAlpha, fgTint, \
++  Vgradient 100 3 #dfe7ef 51 #c7d3df 0 #b6c3cf 49 #cfd7df, dither, Tint, \
++  Alpha, NoShape, IconAlpha, IconTint
++# hi #CFD7DF, sh #CFD7DF,
++# metacity titlebar_bg_blue+title_text_focused_no_icon
++Colorset 2 bg average, sh, hi, bgTint, \
++  fg white, fgsh black, fgAlpha, fgTint, \
++  Vgradient 100 3 #cfd7df 51 #a6b2c7 0 #8692a6 49 #c7d3df, dither, Tint, \
++  Alpha, NoShape, IconAlpha, IconTint
++# hi #F7B610, sh #F7B610,
++# use #CFD7DF and #F7B610 as bg (average more powerful?)
++
++# shadow [bold|normal|] [Italic|Regular|] [bold|medium|*] [o|r|i|*]
++FuncFontsSet-WinFont 1 Bold Regular bold r
++FuncFontsSet-ActiveWinFont 1 Bold Regular bold r
++
++# Border InActive/Active
++# From fred: They are 3 pixels wide : from exterior to interior, colors are :
++# #CFD7DF (1 pixel), #DFE7EF (1 pixel) and #EFF3F7 (1 pixel). 
++# ... cannot do that
++#
++Colorset 3 bg #DFE7EF, hi #CFD7DF, sh #CFD7DF, bgTint, \
++  Plain, NoShape, IconAlpha, IconTint
++Colorset 4 bg #DFE7EF, hi #CFD7DF, sh #CFD7DF, bgTint, \
++  Plain, NoShape, IconAlpha, IconTint
++
++#### menu  active / normal /greyed
++
++# bg
++# gtkrc black fg[NORMAL] + gray0 (bg[NORMAL])
++Colorset 5 bg #eff3f7, sh, hi, bgTint, \
++  fg black, fgsh grey80, fgAlpha, fgTint, \
++  Plain, NoShape, IconAlpha, IconTint
++# selected (depends on ActiveForeOff, HilightBackOff ...)
++# gtkrc white fg[SELECTED] + blue2 (bg[SELECTED]) ... no the hi gradient
++Colorset 6 bg average, sh, hi, bgTint, \
++  fg white, fgsh black, fgAlpha, fgTint, \
++  Vgradient 100 3 #cfd7df 45 #a6b2c7 0 #8692a6 55 #c7d3df, \
++  Alpha, NoShape, IconAlpha, IconTint
++# greyed, Only the fg is useful
++# gtkrc gray4 fg[INSENSITIVE]
++Colorset 7 bg #eff3f7, fg #B6C3CF, fgsh #eff3f7, fgAlpha 100, fgTint, Plain, NoShape
++
++
++# No shadow in fonts ... used in menustyle
++
++DestroyFunc FuncColoursMenuStyleOverRide
++AddToFunc   FuncColoursMenuStyleOverRide
+++ I MenuStyle "$0" ActiveFore, HilightBack, Hilight3DThickness 0, TrianglesSolid
+++ I FuncFontsSet-MenuFont "$0" 0 Normal Regular medium r
++
++DestroyFunc FuncColoursWinMenuStyleOverRide
++AddToFunc   FuncColoursWinMenuStyleOverRide
+++ I FuncFontsSet-WinMenuFont "$0" 0 Normal Regular medium r
++
++DestroyFunc FuncColoursUtf8MenuStyleOverRide
++AddToFunc   FuncColoursUtf8MenuStyleOverRide
+++ I FuncFontsSet-Utf8MenuFont "$0" 0 Normal Regular medium r
++
++#### colors afor modules
++
++### panel defaults
++
++#default
++# gtkrc black fg[NORMAL] + gray0 (bg[NORMAL])
++Colorset 10 bg #eff3f7, sh, hi, bgTint, \
++  fg black, fgsh, fgAlpha, fgTint, \
++  Plain, NoShape, IconAlpha, IconTint
++# active
++Colorset 11 bg average, sh, hi, bgTint, \
++  fg white, fgsh grey10, fgAlpha, fgTint, \
++  Vgradient 100 3 #ffcb10 45 #a6b2c7 0 #8692a6 55 #c7d3df, dither, NoTint, \
++  Alpha,  NoShape, IconAlpha, IconTint
++# pressed
++Colorset 12 bg #c7d7df, sh, hi, bgTint, \
++  fg white, fgsh grey10, fgAlpha,  fgTint, \
++  Plain, NoShape, IconAlpha, IconTint
++
++### pager bg
++
++# Hmm, I've check gnome code and it is using some dark version of
++# bg[active], so use #39496b. And for not selected, dark version of
++# bg[normal], so use #94aabd. (From fred)
++# These in the place of  gtkrc black fg[NORMAL] + gray0 (bg[NORMAL])
++# and gtkrc white fg[SELECTED] + blue2 (bg[SELECTED])
++
++# bg
++Colorset 14 bg #94aabd, sh, hi, bgTint, \
++  fg black, fgsh, fgAlpha, fgTint, \
++  Plain, NoShape, IconAlpha, IconTint 
++# hi 
++Colorset 15 bg #c6d3de, sh, hi, bgTint, \
++  fg white, fgsh, fgAlpha, fgTint, \
++  Plain, NoShape, IconAlpha, IconTint
++
++### tips
++
++# gtkrc "yellow"
++Colorset 16 bg #FFFF94, fg black, Plain
++
++### "taskbar"
++
++# normal item as title bar 
++Colorset 17 bg average, sh, hi, bgTint, \
++  fg #eff3f7, fgsh black, fgAlpha, fgTint, \
++  Vgradient 100 3 #dfe7ef 45 #c7d3df 0 #b6c3cf 55 #cfd7df, dither, NoTint, \
++  Alpha,  NoShape, IconAlpha, IconTint
++# hi item as title bar hi 
++Colorset 18 bg average, sh, hi, bgTint, \
++  fg white, fgsh black, fgAlpha, fgTint, \
++  Vgradient 100 3 #cfd7df 45 #a6b2c7 0 #8692a6 55 #c6d3df, dither, NoTint, \
++  Alpha,  NoShape, IconAlpha, IconTint
++# iconified item as title + some alpha
++Colorset 19 bg average, sh, hi, bgTint, \
++  fg #eff3f7, fgsh black, fgAlpha 60, IconAlpha 60, \
++  Vgradient 100 3 #dfe7ef 45 #c7d3df 0 #b6c3cf 55 #cfd7df, dither, NoTint, \
++  Alpha,  NoShape, IconAlpha 60, IconTint
++
++# as above selected
++# normal item 
++Colorset 20 bg average, sh, hi, bgTint white 15, \
++  fg #eff3f7, fgsh black, fgAlpha, fgTint, \
++  Vgradient 100 3 #dfe7ef 45 #c7d3df 0 #b6c3cf 55 #cfd7df, dither, Tint black 15, \
++  Alpha,  NoShape, IconAlpha, IconTint
++# hi item as title bar hi 
++Colorset 21 bg average, sh, hi, bgTint white 15, \
++  fg white, fgsh black, fgAlpha, fgTint, \
++  Vgradient 100 3 #cfd7df 45 #a6b2c7 0 #8692a6 55 #c7d3df, dither, Tint white 15, \
++  Alpha,  NoShape, IconAlpha, IconTint
++# iconified item as title + some alpha
++Colorset 22 bg average, sh, hi, bgTint white 15, \
++  fg #eff3f7, fgsh black, fgAlpha 60, fgTint, \
++  Vgradient 100 3 #dfe7ef 45 #c7d3df 0 #b6c3cf 55 #cfd7df, dither, Tint black 15, \
++  Alpha,  NoShape, IconAlpha 60, IconTint
++
++# attention colorset ... from ia ora blue
++# normal 
++Colorset 23 bg average, sh, hi, bgTint, \
++  fg white, fgsh black, fgAlpha 100, fgTint, \
++  Vgradient 100 3 #8ea2cf 45 #415da6 0 #21459c 55 #4965ae, dither, Tint, \
++  Alpha,  NoShape, IconAlpha, IconTint
++# selected
++Colorset 24 bg average,  sh, hi, bgTint white 15, \
++  fg white, fgsh black, fgAlpha,  fgTint,  \
++  Vgradient 100 3 #8ea2cf 45 #415da6 0 #21459c 55 #4965ae, dither, Tint white 15, \
++  Alpha,  NoShape, IconAlpha, IconTint
++Colorset 25 bg average, sh, hi, bgTint white 15, \
++  fg black, fgsh white, fgAlpha 60, fgTint, \
++  Vgradient 100 3 #8ea2cf 45 #415da6 0 #21459c 55 #4965ae, dither, Tint, \
++  Alpha,  NoShape, IconAlpha 60, IconTint
++# icon and selected
++Colorset 26 bg average, sh, hi, bgTint, \
++  fg black, fgsh white, fgAlpha 60, fgTint, \
++  Vgradient 100 3 #8ea2cf 45 #415da6 0 #21459c 55 #4965ae, Tint white 15, \
++  Alpha,  NoShape, IconAlpha 60, IconTint
+--- metisse-0.4.0-rc4/FvwmCompositor/config/themes/Ia_Ora_free.theme.newcolor	2007-03-06 19:41:05.000000000 +0100
++++ metisse-0.4.0-rc4/FvwmCompositor/config/themes/Ia_Ora_free.theme	2007-03-06 19:41:17.000000000 +0100
+@@ -0,0 +1,2 @@
++Read window/Ia_Ora.theme
++Read colours/Ia_Ora_free.theme
+--- metisse-0.4.0-rc4/FvwmCompositor/config/themes/Makefile.in.newcolor	2007-03-06 19:42:29.000000000 +0100
++++ metisse-0.4.0-rc4/FvwmCompositor/config/themes/Makefile.in	2007-03-06 19:52:14.000000000 +0100
+@@ -302,7 +302,8 @@
+ configdir = $(METISSE_FVWM_CONFIG_DIR)/themes
+ CONFIG_FILES = Ia_Ora_blue.theme Opale_Vectors.theme \
+ 	Metisse_Constrast.theme Metisse.theme \
+-	Redmond_Ia_Ora.theme Ia_Ora_orange.theme Opale_Devel.theme \
++	Redmond_Ia_Ora.theme Ia_Ora_orange.theme Ia_Ora_free.theme \
++	Ia_Ora_gray.theme Opale_Devel.theme \
+ 	Redmond_Opale.theme
+ 
+ config_DATA = $(CONFIG_FILES)
+--- metisse-0.4.0-rc4/FvwmCompositor/config/themes/Ia_Ora_gray.theme.newcolor	2007-03-06 19:52:24.000000000 +0100
++++ metisse-0.4.0-rc4/FvwmCompositor/config/themes/Ia_Ora_gray.theme	2007-03-06 19:51:55.000000000 +0100
+@@ -0,0 +1,2 @@
++Read window/Ia_Ora.theme
++Read colours/Ia_Ora_gray.theme

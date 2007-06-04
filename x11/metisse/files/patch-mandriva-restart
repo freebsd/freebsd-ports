@@ -1,0 +1,75 @@
+--- metisse/FvwmCompositor/config/menus	8 Jan 2007 13:49:05 -0000	1.6
++++ metisse/FvwmCompositor/config/menus	5 Mar 2007 10:14:49 -0000	1.7
+@@ -10,9 +10,14 @@
+ + "&Terminal"		FuncFvwmSimpleTerminal
+ + "&FVWM Console"	FuncFvwmConsole
+ + "" Nop
+-+ "&Restart"		Restart
+-+ "&Quit"		Quit
+-
++#+ "&Restart"		Restart
++#+ "&Quit"		Quit
++Test (!EnvIsSet SESSION_MANAGER) + "&Restart"		Restart
++Test (!EnvIsSet SESSION_MANAGER) + "&Quit"		Quit
++Test (EnvIsSet SESSION_MANAGER !EnvIsSet KDE_FULL_SESSION !EnvIsSet GNOME_DESKTOP_SESSION_ID) \
++	+ "&Restart Session"	Restart
++Test (EnvIsSet SESSION_MANAGER)  + "&Quit Session" QuitSession
++Test (EnvIsSet SESSION_MANAGER)  + "&Quit \& Save Session" SaveQuitSession
+ 
+ #------------------------------------
+ # some window ops menu
+Index: FvwmCompositor/config/metisserc.in
+===================================================================
+RCS file: /users/asspro/ihm/metisse-cvs/metisse/FvwmCompositor/config/metisserc.in,v
+retrieving revision 1.11
+retrieving revision 1.12
+diff -u -r1.11 -r1.12
+--- metisse/FvwmCompositor/config/metisserc.in	30 Jan 2007 08:48:16 -0000	1.11
++++ metisse/FvwmCompositor/config/metisserc.in	5 Mar 2007 10:14:49 -0000	1.12
+@@ -34,6 +34,7 @@
+ # define the background: AFuncSetBackground
+ read background
+ 
++# always executed (start, restart, session)
+ DestroyFunc StartFunction
+ AddToFunc   StartFunction
+ #+ I FvwmTrace -n fmtrace
+@@ -43,6 +44,38 @@
+ + I ModuleSynchronous FvwmEvent FvwmEvent-EventsHandler
+ # start our panel
+ + I FuncStartFuncStartPanel
+++ I Echo fvwmi StartFunction executed
++
++# only executed at start without a session manager (not restart)
++DestroyFunc InitFunction
++AddToFunc   InitFunction
+++ I Echo fvwmi InitFunction executed
++
++# as above under a session manager
++DestroyFunc SessionInitFunction
++AddToFunc   SessionInitFunction
+++ I Echo fvwmi SessionInitFunction executed
++
++# only executed at restart without a session manager (not start)
++DestroyFunc RestartFunction
++AddToFunc   RestartFunction
+++ I Echo fvwmi RestartFunction executed
++
++# as above under a session manager
++DestroyFunc SessionRestartFunction
++AddToFunc   SessionRestartFunction
+++ I Echo fvwmi SessionRestartFunction executed
++
++DestroyFunc ExitFunction
++AddToFunc   ExitFunction
+++ I Test (Quit) Echo fvwmi ExitFunction quiting 
+++ I Test (ToRestart) Echo fvwmi ExitFunction to restart
++ 
++DestroyFunc SessionExitFunction
++AddToFunc   SessionExitFunction
+++ I Test (Quit) Exec killall Xmetisse
+++ I Test (Quit) Echo fvwmi SessionExitFunction quiting
+++ I Test (ToRestart) Echo fvwmi SessionExitFunction to restart
+ 
+ # ---------------------------------------------------------------------------
+ # Desk config (e.g., number of desks)
