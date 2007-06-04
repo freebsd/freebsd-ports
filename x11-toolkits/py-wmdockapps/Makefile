@@ -1,21 +1,20 @@
-# ex:ts=8
-# Ports collection makefile for:	pywmgeneral
-# Date created:			Jan 5, 2004
-# Whom:				ijliao
+# New ports collection makefile for:	pywmdockapps
+# Date created:		2007-05-09
+# Whom:			David Thiel <lx@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	wmgeneral
-PORTVERSION=	0.1
-PORTREVISION=	1
+PORTNAME=	wmdockapps
+PORTVERSION=	1.18
 CATEGORIES=	x11-toolkits python windowmaker
-MASTER_SITES=	http://errl.info/pywmdockapps/downloads/current/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	pywmdockapps
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A library that makes it possible to write WindowMaker dockapps in Python
+MAINTAINER=	lx@FreeBSD.org
+COMMENT=	Tools for making dockapps in Python
 
 USE_XLIB=	yes
 USE_PYTHON=	yes
