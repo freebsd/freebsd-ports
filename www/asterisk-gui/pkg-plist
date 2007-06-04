@@ -40,8 +40,10 @@ share/asterisk/static-http/config/setup/setup.css
 share/asterisk/static-http/config/setup/template.html
 share/asterisk/static-http/config/backup.html
 share/asterisk/static-http/config/cfgbasic.html
-share/asterisk/static-http/config/guialert.html
+share/asterisk/static-http/config/cli.html
+share/asterisk/static-http/config/emailsettings.html
 share/asterisk/static-http/config/feditor.html
+share/asterisk/static-http/config/guialert.html
 share/asterisk/static-http/config/graphs.html
 share/asterisk/static-http/config/home.html
 share/asterisk/static-http/config/iax.html
@@ -56,9 +58,12 @@ share/asterisk/static-http/config/numberplan.html
 share/asterisk/static-http/config/options.html
 share/asterisk/static-http/config/queues.html
 share/asterisk/static-http/config/record.html
+share/asterisk/static-http/config/ringgroups.html
 share/asterisk/static-http/config/sip.html
 share/asterisk/static-http/config/status.html
 share/asterisk/static-http/config/sysinfo.html
+share/asterisk/static-http/config/syslog.html
+share/asterisk/static-http/config/timerules.html
 share/asterisk/static-http/config/trunks.html
 share/asterisk/static-http/config/users.html
 share/asterisk/static-http/config/voicemail.html

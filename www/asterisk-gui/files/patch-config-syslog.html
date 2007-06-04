@@ -1,13 +1,13 @@
---- config/sysinfo.html.orig	Sat Mar 31 20:31:33 2007
-+++ config/sysinfo.html	Sat Mar 31 20:32:18 2007
-@@ -34,8 +34,8 @@
+--- config/syslog.html.orig	Mon May 14 19:21:38 2007
++++ config/syslog.html	Mon May 14 19:27:37 2007
+@@ -31,8 +31,8 @@
  	 _$('status_message').style.display = "" ;
  	var _ld = _$('log_day').value; 
  	if(  _ld < 10 ){ var space = "  "; }else{ var space = " ";  }
 -	var tmp_command = "/bin/grep /var/log/asterisk/messages -e '" + _$('log_month').value + space + _ld 
 -						+ " ' > /var/lib/asterisk/static-http/config/today_log.html" ;
 +	var tmp_command = "grep /var/log/asterisk/messages -e '" + _$('log_month').value + space + _ld 
-+						+ " ' > %%PREFIX%%/share/asterisk/static-http/config/today_log.html" ;
++						+ " ' >  %%PREFIX%%/share/asterisk/static-http/config/today_log.html" ;
  	parent.astmanEngine.run_tool( tmp_command , onSuccess = function() { _$('status_message').style.display='none'; load_todayslog(); } );
  }
  

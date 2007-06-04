@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	asterisk-gui
-PORTVERSION=	0.0.1r20070501
+PORTVERSION=	0.0.1r20070528
 CATEGORIES=	www
 MASTER_SITES=	http://asterisk-bsd.googlecode.com/files/
-DISTNAME=	${PORTNAME}-snap-2007-05-01
+DISTNAME=	${PORTNAME}-snap-2007-05-28
 
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	An asterisk ajax web manager
@@ -21,13 +21,13 @@ USE_GMAKE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
-OPTIONS=	SIP_QUEUES	"In queues register users as SIP, not Agents" on \
+OPTIONS=	SIP_QUEUES	"In queues register users as SIP, not Agents" off \
 		SAMPLE_CONFIG   "Install sample configuration files" off
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/config/backup.html \
-		${WRKSRC}/config/sysinfo.html \
+		${WRKSRC}/config/syslog.html \
 		${WRKSRC}/config/scripts/astman.js \
 		${WRKSRC}/tools/zapscan.c \
 		${WRKSRC}/tools/zapscan \
