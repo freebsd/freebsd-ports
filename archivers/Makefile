@@ -51,6 +51,7 @@
     SUBDIR += libunrar
     SUBDIR += libzip
     SUBDIR += linux-ucl
+    SUBDIR += linux-upx
     SUBDIR += lzma
     SUBDIR += lzo
     SUBDIR += lzo2
