@@ -1,3 +1,6 @@
 MD5 (rpm/i386/fedora/4/mikmod-3.1.6-34.i386.rpm) = 307e98dd8a18ee8dc9b80b02c947c739
 SHA256 (rpm/i386/fedora/4/mikmod-3.1.6-34.i386.rpm) = 6d0e50bc3048584fe3a3ed8289f202eec8a10b2bef3a36cd8263cad3700bfb6b
 SIZE (rpm/i386/fedora/4/mikmod-3.1.6-34.i386.rpm) = 182645
+MD5 (rpm/i386/fedora/4/mikmod-3.1.6-34.src.rpm) = 3b8837c5b566440921f4bc1499b3a5b7
+SHA256 (rpm/i386/fedora/4/mikmod-3.1.6-34.src.rpm) = 144665df79dbff6949fbbff0f7afee4486068e9be9b59184252f31b7408b6bf9
+SIZE (rpm/i386/fedora/4/mikmod-3.1.6-34.src.rpm) = 868
