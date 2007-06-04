@@ -1,12 +1,15 @@
 ==============================================================================
 
-Wah!Cade has been successfully installed!
+Wah!Cade has been installed!
 
 The default config files are stored in
 "%%DATADIR%%/config.dist".
 
 When Wah!Cade is first run these files are copied into the user's
-"~/.wahcade" directory.
+"~/.wahcade" directory. But as they are read-only and permissions are
+preserved during the copy, you have to run the following command (only once):
+
+$ find ~/.wahcade -type f -name "*.ini" | xargs chmod u+w
 
 Please read the README file for information on initial setup & configuration
 in "%%DOCSDIR%%".
