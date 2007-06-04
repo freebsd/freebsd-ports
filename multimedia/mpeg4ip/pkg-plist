@@ -117,9 +117,9 @@ lib/mp4player_plugin/latm_rtp_plugin.so.0
 lib/mp4player_plugin/mp3_plugin.la
 lib/mp4player_plugin/mp3_plugin.so
 lib/mp4player_plugin/mp3_plugin.so.0
-%%GCC%%lib/mp4player_plugin/mpeg2dec_video_plugin.la
-%%GCC%%lib/mp4player_plugin/mpeg2dec_video_plugin.so
-%%GCC%%lib/mp4player_plugin/mpeg2dec_video_plugin.so.0
+lib/mp4player_plugin/mpeg2dec_video_plugin.la
+lib/mp4player_plugin/mpeg2dec_video_plugin.so
+lib/mp4player_plugin/mpeg2dec_video_plugin.so.0
 lib/mp4player_plugin/mpeg4_iso_plugin.la
 lib/mp4player_plugin/mpeg4_iso_plugin.so
 lib/mp4player_plugin/mpeg4_iso_plugin.so.0

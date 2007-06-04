@@ -32,8 +32,8 @@ USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/SDL -I${LOCALBASE}/include/ffmpeg -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include/SDL -I${LOCALBASE}/include/ffmpeg -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-ffmpeg=${LOCALBASE} \
 		--enable-mp4live \
 		--disable-static
@@ -84,13 +84,6 @@ MAN3=	MP4.3 MP4AddAudioTrack.3 MP4AddHintTrack.3 MP4AddODTrack.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-CFLAGS+=	-O2
-PLIST_SUB+=	GCC="@comment "
-.else
-PLIST_SUB+=	GCC=""
-.endif
-
 ###
 ## Auto detect possible extensions
 ###
@@ -128,6 +121,12 @@ PKG_NAME_SUFFIX+=-esound
 .if defined(WITH_NAS)
 LIB_DEPENDS+=	audio.2:${PORTSDIR}/audio/nas
 .endif
+
+# ipv6
+.if !defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
+.endif
+
 # xvid
 .if !defined(WITHOUT_XVID)
 LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
@@ -202,14 +201,6 @@ post-install:
 WITH_MMX=yes
 .else
 WITHOUT_MMX=yes
-.endif
-
-###
-## FreeBSD extensions detection
-###
-# ipv6
-.if ${OSVERSION} >= 400014 && !defined(WITHOUT_IPV6)
-CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 ###
