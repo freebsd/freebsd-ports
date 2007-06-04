@@ -9,7 +9,7 @@ PORTNAME=	knifty
 PORTVERSION=	0.4.2
 PORTREVISION=	4
 CATEGORIES=	x11-themes kde
-MASTER_SITES=	http://kde-look.org/content/files/
+MASTER_SITES=	http://www.kde-look.org/CONTENT/content-files/
 PKGNAMEPREFIX=	kde-windeco-
 DISTNAME=	8841-${PORTNAME}-${PORTVERSION}
 
