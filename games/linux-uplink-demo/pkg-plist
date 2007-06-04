@@ -1,0 +1,18 @@
+bin/linux-uplink
+%%DATADIR%%/uplink.bin.x86
+%%DATADIR%%/libftgl.so.0
+%%DATADIR%%/data.dat
+%%DATADIR%%/fonts.dat
+%%DATADIR%%/graphics.dat
+%%DATADIR%%/loading.dat
+%%DATADIR%%/music.dat
+%%DATADIR%%/patch.dat
+%%DATADIR%%/patch2.dat
+%%DATADIR%%/patch3.dat
+%%DATADIR%%/sounds.dat
+%%PORTDOCS%%%%DOCSDIR%%/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/mods.txt
+%%PORTDOCS%%%%DOCSDIR%%/Readme-UplinkSupport.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
