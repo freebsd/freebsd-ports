@@ -128,10 +128,10 @@ PLIST_SUB+=	FAAD="@comment "
 
 .if defined(WITH_AVCODEC)
 LIB_DEPENDS+=	avutil.1:${PORTSDIR}/multimedia/ffmpeg
-PLIST_SUB+=	WMA=""
+PLIST_SUB+=	AVCODEC=""
 .else
 EXCLUDE+=	--without-plugins="avcodec" --without-plugins="avformat"
-PLIST_SUB+=	WMA="@comment "
+PLIST_SUB+=	AVCODEC="@comment "
 .endif
 
 .if defined(WITH_APE)

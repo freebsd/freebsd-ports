@@ -81,7 +81,7 @@ lib/xmms2/libxmms_file.so
 %%ICES%%lib/xmms2/libxmms_ices.so
 %%LASTFM%%lib/xmms2/libxmms_lastfm.so
 %%LASTFM%%lib/xmms2/libxmms_lastfmeta.so
-lib/xmms2/libxmms_icymetaint.so
+%%CURL%%lib/xmms2/libxmms_icymetaint.so
 lib/xmms2/libxmms_id3v2.so
 %%JACK%%lib/xmms2/libxmms_jack.so
 lib/xmms2/libxmms_m3u.so
@@ -101,7 +101,8 @@ lib/xmms2/libxmms_replaygain.so
 %%VOCODER%%lib/xmms2/libxmms_vocoder.so
 lib/xmms2/libxmms_vorbis.so
 lib/xmms2/libxmms_wave.so
-%%WMA%%lib/xmms2/libxmms_wma.so
+%%AVCODEC%%lib/xmms2/libxmms_avcodec.so
+%%AVCODEC%%lib/xmms2/libxmms_avformat.so
 libdata/pkgconfig/xmms2-client-glib.pc
 libdata/pkgconfig/xmms2-client.pc
 libdata/pkgconfig/xmms2-plugin.pc
