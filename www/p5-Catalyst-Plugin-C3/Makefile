@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-C3
-PORTVERSION=	0.02
+PORTVERSION=	0.03
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Catalyst
@@ -15,9 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lbr@FreeBSD.org
 COMMENT=	Catalyst Plugin to subvert NEXT to use Class::C3
 
-BUILD_DEPENDS=	p5-Algorithm-C3>=0.06:${PORTSDIR}/devel/p5-Algorithm-C3 \
-		p5-Catalyst-Runtime>=5.7006:${PORTSDIR}/www/p5-Catalyst-Runtime \
-		p5-Class-C3>=0.14:${PORTSDIR}/devel/p5-Class-C3
+BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7006:${PORTSDIR}/www/p5-Catalyst-Runtime \
+		p5-Class-C3>=0.19:${PORTSDIR}/devel/p5-Class-C3
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
