@@ -1968,6 +1968,7 @@ dixit		ports/textproc/dixit
 djbdns		ports/dns/djbdns
 djbdns-tools	ports/dns/djbdns-tools
 djbfft		ports/math/djbfft
+djgame2		ports/games/djgame2
 djgpp-binutils	ports/devel/djgpp-binutils
 djgpp-crx	ports/devel/djgpp-crx
 djgpp-gcc	ports/devel/djgpp-gcc
