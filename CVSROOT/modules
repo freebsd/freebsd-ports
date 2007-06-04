@@ -15429,6 +15429,7 @@ tshark-lite	ports/net/tshark-lite
 tsito		ports/games/tsito
 tsocks		ports/net/tsocks
 tss		ports/sysutils/tss
+tsung		ports/benchmarks/tsung
 tt		ports/games/tt
 tta		ports/audio/tta
 ttcp		ports/benchmarks/ttcp
