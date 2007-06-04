@@ -7,6 +7,7 @@
 
 PORTNAME=	wordpress
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	chinese www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}-zh
@@ -23,8 +24,6 @@ USE_PHP=	mysql pcre xml
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 WORDPRESS?=	www/wordpress
-PLIST_SUB+=	WORDPRESS=${WORDPRESS}
-PLIST=		${WRKDIR}/pkg-plist
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PORTDOCS=	license.txt readme.html
@@ -35,13 +34,7 @@ pre-everything::
 	@sleep 1
 
 pre-install:
-	@${ECHO_CMD} "@unexec if cmp -s %D/www/wordpress/wp-config.php %D/www/wordpress/wp-config-sample.php; then ${RM} -f %D/www/wordpress/wp-config.php; fi" > ${PLIST}
-	@cd ${WRKSRC} && ${FIND} -s * -type f | \
-		${SED} -e 's|^|${WORDPRESS}/|' >> ${PLIST} \
-		&& ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm ${WORDPRESS}/|' >> ${PLIST} \
-		&& ${ECHO_CMD} @dirrmtry ${WORDPRESS} >> ${PLIST}
-	@if [ ! -f ${WRKSRC}/wp-config.php ]; then ${CP} \
+	if [ ! -f ${WRKSRC}/wp-config.php ]; then ${CP} \
 		${WRKSRC}/wp-config-sample.php ${WRKSRC}/wp-config.php; fi
 
 do-install:
