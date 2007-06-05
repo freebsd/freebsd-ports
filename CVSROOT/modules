@@ -6227,6 +6227,7 @@ libadplug	ports/audio/libadplug
 libafterbase	ports/devel/libafterbase
 libafterimage	ports/graphics/libafterimage
 libaiff		ports/audio/libaiff
+libamrnb	ports/audio/libamrnb
 libao		ports/audio/libao
 libapreq2	ports/www/libapreq2
 libarc		ports/archivers/libarc
