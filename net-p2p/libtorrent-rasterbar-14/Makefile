@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	libtorrent
-DISTVERSION=	0.12rc3
+PORTVERSION=	0.12
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://www.rasterbar.com/products/libtorrent/
+MASTER_SITES=	SF
 PKGNAMEPREFIX=	rb
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	alepulver@FreeBSD.org
-COMMENT=	A C++ library implementing a BitTorrent client
+COMMENT=	A C++ library implementing a BitTorrent client (devel version)
 
 LIB_DEPENDS=	boost_date_time.3:${PORTSDIR}/devel/boost
 
@@ -22,7 +22,6 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-debug
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/rc[[:digit:]]//}
 
 CONFLICTS=	libtorrent-[0-9]* \
 		libtorrent-devel-[0-9]* \
