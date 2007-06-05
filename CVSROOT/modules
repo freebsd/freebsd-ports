@@ -3083,7 +3083,6 @@ fraqtive	ports/graphics/fraqtive
 free-sa		ports/www/free-sa
 freealut	ports/audio/freealut
 freebase	ports/devel/freebase
-freebirth	ports/audio/freebirth
 freebsd-games	ports/games/freebsd-games
 freebsd-sha1	ports/sysutils/freebsd-sha1
 freebsd-sha256	ports/sysutils/freebsd-sha256
