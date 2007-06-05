@@ -2,6 +2,7 @@
 bin/gunzip
 bin/gzexe
 bin/gzip
+bin/uncompress
 bin/zcat
 bin/zcmp
 bin/zdiff
