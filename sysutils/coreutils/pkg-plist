@@ -1,4 +1,5 @@
 bin/g[
+bin/gbase64
 bin/gbasename
 bin/gcat
 bin/gchgrp
@@ -59,7 +60,12 @@ bin/grm
 bin/grmdir
 bin/gseq
 bin/gsha1sum
+bin/gsha224sum
+bin/gsha256sum
+bin/gsha384sum
+bin/gsha512sum
 bin/gshred
+bin/gshuf
 bin/gsleep
 bin/gsort
 bin/gsplit
@@ -88,16 +94,12 @@ bin/gwc
 bin/gwho
 bin/gwhoami
 bin/gyes
-bin/gsha224sum
-bin/gsha256sum
-bin/gsha384sum
-bin/gsha512sum
-bin/gshuf
-bin/gbase64
 %%NLS%%share/locale/af/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/af/LC_TIME/coreutils.mo
 %%NLS%%share/locale/be/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/be/LC_TIME/coreutils.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/coreutils.mo
+%%NLS%%share/locale/bg/LC_TIME/coreutils.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/ca/LC_TIME/coreutils.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/coreutils.mo
@@ -112,6 +114,8 @@ bin/gbase64
 %%NLS%%share/locale/es/LC_TIME/coreutils.mo
 %%NLS%%share/locale/et/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/et/LC_TIME/coreutils.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/coreutils.mo
+%%NLS%%share/locale/eu/LC_TIME/coreutils.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/fi/LC_TIME/coreutils.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/coreutils.mo
@@ -144,6 +148,8 @@ bin/gbase64
 %%NLS%%share/locale/pt_BR/LC_TIME/coreutils.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/ru/LC_TIME/coreutils.mo
+%%NLS%%share/locale/rw/LC_MESSAGES/coreutils.mo
+%%NLS%%share/locale/rw/LC_TIME/coreutils.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/sk/LC_TIME/coreutils.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/coreutils.mo
@@ -156,18 +162,14 @@ bin/gbase64
 %%NLS%%share/locale/zh_CN/LC_TIME/coreutils.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/zh_TW/LC_TIME/coreutils.mo
-%%NLS%%share/locale/bg/LC_MESSAGES/coreutils.mo
-%%NLS%%share/locale/bg/LC_TIME/coreutils.mo
-%%NLS%%share/locale/eu/LC_MESSAGES/coreutils.mo
-%%NLS%%share/locale/eu/LC_TIME/coreutils.mo
-%%NLS%%share/locale/rw/LC_MESSAGES/coreutils.mo
-%%NLS%%share/locale/rw/LC_TIME/coreutils.mo
 %%NLS%%@dirrmtry share/locale/zh_TW/LC_TIME
 %%NLS%%@dirrmtry share/locale/zh_CN/LC_TIME
 %%NLS%%@dirrmtry share/locale/tr/LC_TIME
 %%NLS%%@dirrmtry share/locale/sv/LC_TIME
 %%NLS%%@dirrmtry share/locale/sl/LC_TIME
 %%NLS%%@dirrmtry share/locale/sk/LC_TIME
+%%NLS%%@dirrmtry share/locale/rw/LC_TIME
+%%NLS%%@dirrmtry share/locale/rw
 %%NLS%%@dirrmtry share/locale/ru/LC_TIME
 %%NLS%%@dirrmtry share/locale/pt_BR/LC_TIME
 %%NLS%%@dirrmtry share/locale/pt/LC_TIME
@@ -176,9 +178,6 @@ bin/gbase64
 %%NLS%%@dirrmtry share/locale/nl/LC_TIME
 %%NLS%%@dirrmtry share/locale/nb/LC_TIME
 %%NLS%%@dirrmtry share/locale/ms/LC_TIME
-%%NLS%%@dirrmtry share/locale/lg/LC_TIME
-%%NLS%%@dirrmtry share/locale/lg/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/lg
 %%NLS%%@dirrmtry share/locale/ko/LC_TIME
 %%NLS%%@dirrmtry share/locale/ja/LC_TIME
 %%NLS%%@dirrmtry share/locale/it/LC_TIME
@@ -187,6 +186,7 @@ bin/gbase64
 %%NLS%%@dirrmtry share/locale/ga/LC_TIME
 %%NLS%%@dirrmtry share/locale/fr/LC_TIME
 %%NLS%%@dirrmtry share/locale/fi/LC_TIME
+%%NLS%%@dirrmtry share/locale/eu/LC_TIME
 %%NLS%%@dirrmtry share/locale/et/LC_TIME
 %%NLS%%@dirrmtry share/locale/es/LC_TIME
 %%NLS%%@dirrmtry share/locale/el/LC_TIME
@@ -194,10 +194,6 @@ bin/gbase64
 %%NLS%%@dirrmtry share/locale/da/LC_TIME
 %%NLS%%@dirrmtry share/locale/cs/LC_TIME
 %%NLS%%@dirrmtry share/locale/ca/LC_TIME
+%%NLS%%@dirrmtry share/locale/bg/LC_TIME
 %%NLS%%@dirrmtry share/locale/be/LC_TIME
 %%NLS%%@dirrmtry share/locale/af/LC_TIME
-%%NLS%%@dirrmtry share/locale/bg/LC_TIME
-%%NLS%%@dirrmtry share/locale/eu/LC_TIME
-%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/rw/LC_TIME
-%%NLS%%@dirrmtry share/locale/rw
