@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.12
-PORTREVISION=	1
+PORTVERSION=	0.10.13
 CATEGORIES=	multimedia
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/ \
 		${MASTER_SITE_LOCAL}
@@ -31,6 +30,7 @@ CONFIGURE_ARGS=	--disable-tests \
 		--disable-examples \
 		--disable-docs-build \
 		--disable-failing-tests \
+		--disable-gtk-doc \
 		--mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \

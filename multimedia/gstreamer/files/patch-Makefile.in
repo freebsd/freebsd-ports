@@ -1,0 +1,18 @@
+--- Makefile.in.orig	Tue Jun  5 11:28:51 2007
++++ Makefile.in	Tue Jun  5 11:29:23 2007
+@@ -431,7 +431,6 @@
+ aclocal_DATA = gst-element-check-@GST_MAJORMINOR@.m4
+ SUBDIRS = \
+ 	gst libs plugins tools tests \
+-	docs \
+ 	pkgconfig po \
+ 	common
+ 
+@@ -439,7 +438,6 @@
+ # These are all the possible subdirs
+ DIST_SUBDIRS = \
+ 	gst libs plugins tools tests \
+-	docs \
+ 	pkgconfig po \
+ 	common
+ 
