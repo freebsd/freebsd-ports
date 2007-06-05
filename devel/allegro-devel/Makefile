@@ -16,8 +16,6 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	A cross-platform library for games and multimedia programming
 
-BROKEN=		Incorrect pkg-plist
-
 USE_AUTOTOOLS=	autoconf:259
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
