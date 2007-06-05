@@ -19,6 +19,7 @@ LIB_DEPENDS=	boost_date_time.3:${PORTSDIR}/devel/boost
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+USE_GCC=	3.4
 CONFIGURE_ARGS=	--disable-debug
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
