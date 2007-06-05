@@ -6,38 +6,48 @@
 #
 
 PORTNAME=	nighthawk
-PORTVERSION=	2.2
-PORTREVISION=	2
+PORTVERSION=	3.0.0
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://jsno.leal.com.au/rel/unix_projects/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/arcade
-EXTRACT_SUFX=	-1.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 shoot-'em up which requires some lateral thinking
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-scores=/var/games/nighthawk.scores --enable-sound
-USE_X_PREFIX=	yes
-USE_XPM=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+USE_BZIP2=	yes
+USE_GL=		glut
 USE_GMAKE=	yes
+MAKE_ARGS=	CC="${CC}" CPP="${CXX}" CC_FLAGS="${CXXFLAGS}" \
+		LIB_FLAGS="${LDFLAGS}"
+
 MAN6=		nighthawk.6
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
+CFLAGS+=	-DINSTALL_DIR=\\\"\${DATADIR}\\\" \
+		-DSCORES_FILE=\\\"/var/games/nighthawk.scores\\\" \
+		-I${X11BASE}/include
+LDFLAGS=	-lm -L${X11BASE}/lib -lX11 -lGL -lGLU -lglut
 
 post-patch:
-	${REINPLACE_CMD} "s/malloc.h/stdlib.h/g" ${WRKSRC}/src/floor.cc \
-		${WRKSRC}/src/ship.cc ${WRKSRC}/src_sound/nighthawk_sound.c \
-		${WRKSRC}/src_sound/funkload.c ${WRKSRC}/src_sound/dsp_mixxer.c
+	${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|make|$$(MAKE)|g ; \
+		 s|strip nighthawk||g'
+	${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' \
+		${WRKSRC}/src/util/mkprotos2.c
+	${REINPLACE_CMD} -e 's|^|#|g' ${WRKSRC}/config.user
 
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/nighthawk ${PREFIX}/bin
 	${CHOWN} root:games ${PREFIX}/bin/nighthawk
 	${CHMOD} g+s ${PREFIX}/bin/nighthawk
-	${SH} pkg-install ${PORTNAME} POST-INSTALL
+	${INSTALL_DATA} ${WRKSRC}/doc/nighthawk.6 ${MANPREFIX}/man/man6
+	@${MKDIR} ${DATADIR}
+	${TAR} -C ${WRKSRC} --exclude ".xvpics" -cf - data | \
+		${TAR} -C ${DATADIR} --unlink -xf -
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
+	@${FIND} ${DATADIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	@${FIND} ${DATADIR} -type d | ${XARGS} ${CHMOD} a+rx
+	@${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
