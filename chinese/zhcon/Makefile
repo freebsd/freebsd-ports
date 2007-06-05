@@ -22,6 +22,8 @@ USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_GETOPT_LONG=	yes
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
