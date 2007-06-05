@@ -25,7 +25,7 @@
 name=varnishlog
 rcvar=`set_rcvar`
 
-command="%%PREFIX%%/sbin/varnishlog"
+command="%%PREFIX%%/bin/varnishlog"
 pidfile="/var/run/${name}.pid"
 
 # set defaults
