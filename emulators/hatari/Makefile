@@ -6,21 +6,30 @@
 #
 
 PORTNAME=	hatari
-PORTVERSION=	0.90
-PORTREVISION=	1
+PORTVERSION=	0.95
 CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Atari ST emulator
 
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_GMAKE=	yes
+USE_GNOME=	gnometarget
 USE_SDL=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--datadir=${DATADIR}
 
-PLIST_FILES=	bin/hatari %%DATADIR%%/tos.img
-PLIST_DIRS=	%%DATADIR%%
+MAN1=		hatari.1
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/doc/hatari.1 ${MANPREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/images
+	${INSTALL_DATA} ${WRKSRC}/doc/images/*.png ${DOCSDIR}/images
+.endif
 
 .include <bsd.port.mk>
