@@ -17,17 +17,11 @@ COMMENT=	Paul Nasca's AlienWah LADSPA Plugin
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
 USE_GMAKE=	yes
-USE_LDCONFIG=	yes
-PLIST_FILES=	lib/ladspa/aw.so
 MAKE_ARGS=	CPP="${CXX}" CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -fPIC"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-BROKEN=		Broken with gcc 4.2
-.endif
+PLIST_FILES=	lib/ladspa/aw.so
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/aw.so ${LOCALBASE}/lib/ladspa
+	${INSTALL_DATA} ${WRKSRC}/aw.so ${LOCALBASE}/lib/ladspa
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
