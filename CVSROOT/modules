@@ -6912,6 +6912,7 @@ linuxfdisk	ports/sysutils/linuxfdisk
 linuxigd	ports/net/linuxigd
 linuxpluginwrapper	ports/www/linuxpluginwrapper
 linuxthreads	ports/devel/linuxthreads
+linxt		ports/devel/linxt
 lion		ports/devel/lion
 liquidwar	ports/games/liquidwar
 lirc		ports/comms/lirc
