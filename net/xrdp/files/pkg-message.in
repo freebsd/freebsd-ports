@@ -13,7 +13,4 @@ xrdp_enable="YES"
 Do not forget to edit the configuration files in "%%PREFIX%%/etc/xrdp"
 and the "%%PREFIX%%/lib/startwm.sh" script.
 
-Also, you must manually run a VNC server to be able to use this program. Try
-the "vnc-any" example in "xrdp.ini".
-
 ==============================================================================
