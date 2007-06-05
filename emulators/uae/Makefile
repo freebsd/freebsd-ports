@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.freiburg.linux.de/pub/uae/sources/develop/ \
 MAINTAINER=	simond@irrelevant.org
 COMMENT=	Amiga emulator
 
-CONFLICTS=	e-uae-*
+CONFLICTS=	e-uae-[0-9]*
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -23,6 +23,7 @@ USE_AUTOTOOLS=	autoconf:259
 CONFIGURE_ARGS=	--enable-sound --enable-vidmode --enable-dga
 USE_XLIB=	yes
 USE_GNOME=	gtk20
+USE_GCC=	3.4
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 
