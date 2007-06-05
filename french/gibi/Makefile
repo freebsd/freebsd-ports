@@ -54,11 +54,7 @@ SHRG=		ksh93
 .else
 SHRG=		zsh
 .endif
-.if ${SHRG} == "bash"
-SHRGDEP=	bash2
-.else
 SHRGDEP=	${SHRG}
-.endif
 SHELL_RUN_GIBI=	${LOCALBASE}/bin/${SHRG}
 
 LGIBIDIR?=	apps/${PORTNAME}

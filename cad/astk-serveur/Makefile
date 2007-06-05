@@ -98,11 +98,7 @@ SHIA=		ksh93
 .else
 SHIA=		zsh
 .endif
-.if ${SHIA} == "bash"
-SHIADEP=	bash2
-.else
 SHIADEP=	${SHIA}
-.endif
 
 .if !defined(WITH_ED)
 . if exists(${X11BASE}/bin/nedit)
