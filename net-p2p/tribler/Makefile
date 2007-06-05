@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tribler
-PORTVERSION=	3.6.0
-PORTREVISION=	2
+PORTVERSION=	4.0.1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 DISTNAME=	Tribler_${PORTVERSION}_src
@@ -27,12 +26,16 @@ WX_UNICODE=	yes
 post-extract:
 	@cd ${WRKSRC} && \
 		${RM} -rf *.bat *.exe.* *.nsi *.sh *LICENSE.txt debian mac && \
-		${MV} lastest_version.txt protocol_v3.txt readme.txt \
-			tribler.xpm ..
+		${MV} protocol_v3.txt readme.txt tribler.xpm ..
+
+post-patch:
+	@${REINPLACE_CMD} -i '' -e 's|/bin/netstat|netstat|' \
+		${WRKSRC}/Tribler/NATFirewall/guessip.py
 
 do-build:
 	@(${ECHO_CMD} "#!${SH}"; ${ECHO_CMD} "cd ${DATADIR} || exit 1"; \
-	  ${ECHO_CMD} 'exec ${PYTHON_CMD} abc.py "$$@"') > ${WRKDIR}/${PORTNAME}
+	  ${ECHO_CMD} 'exec ${PYTHON_CMD} ${PORTNAME}.py "$$@"') \
+	  > ${WRKDIR}/${PORTNAME}
 	@${PYTHON_CMD} -Oc 'import compileall; \
 		compileall.compile_dir("${WRKSRC}", force=1)'
 
