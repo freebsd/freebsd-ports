@@ -11309,6 +11309,7 @@ p5-tagged	ports/audio/p5-tagged
 p5-threads	ports/devel/p5-threads
 p5-threads-shared	ports/devel/p5-threads-shared
 p5-type1inst	ports/x11-fonts/p5-type1inst
+p5-usb		ports/devel/p5-usb
 p5-v6		ports/lang/p5-v6
 p5-version	ports/devel/p5-version
 p5-vpopmail	ports/mail/p5-vpopmail
