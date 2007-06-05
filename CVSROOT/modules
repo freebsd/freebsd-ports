@@ -12923,6 +12923,7 @@ py-pysqlite21	ports/databases/py-pysqlite21
 py-pysqlite22	ports/databases/py-pysqlite22
 py-pysqlite23	ports/databases/py-pysqlite23
 py-pytz		ports/devel/py-pytz
+py-pyutil	ports/devel/py-pyutil
 py-pyx12	ports/textproc/py-pyx12
 py-pyxfce	ports/x11-toolkits/py-pyxfce
 py-pyxmpp	ports/net-im/py-pyxmpp
