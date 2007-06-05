@@ -14134,6 +14134,7 @@ scilab		ports/math/scilab
 scilab-toolbox-swt	ports/math/scilab-toolbox-swt
 scim		ports/textproc/scim
 scim-input-pad	ports/textproc/scim-input-pad
+scim-m17n	ports/textproc/scim-m17n
 scim-openvanilla	ports/textproc/scim-openvanilla
 scim-table-imengine	ports/textproc/scim-table-imengine
 scimark2	ports/benchmarks/scimark2
