@@ -30,6 +30,10 @@ COMMENT=	FSF C/C++/JAVA-gcc-3.2.3 base-port for RTEMS development
 BROKEN=		Configure fails on amd64
 .endif
 
+.if ${OSVERSION} >= 700042
+BROKEN=		Fails with gcc 4.2
+.endif
+
 RTEMS_ARCH?=	i386
 LCLTARGET=	${RTEMS_ARCH}-rtems
 
