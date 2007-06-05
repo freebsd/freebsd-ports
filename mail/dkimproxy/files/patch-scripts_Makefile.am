@@ -1,0 +1,11 @@
+--- scripts/Makefile.am.orig	Wed Oct 11 03:13:00 2006
++++ scripts/Makefile.am	Sat Jun  2 18:40:45 2007
+@@ -1,8 +1,6 @@
+ perldir = $(bindir)
+ perl_scripts = \
+ 	dkim_responder.pl \
+-	dkimsign.pl \
+-	dkimverify.pl \
+ 	dkimproxy.in \
+ 	dkimproxy.out
+ 
