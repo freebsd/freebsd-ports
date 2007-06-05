@@ -4031,7 +4031,7 @@ grepcidr	ports/net-mgmt/grepcidr
 grepip		ports/net-mgmt/grepip
 grepmail	ports/mail/grepmail
 gresolver	ports/dns/gresolver
-gretl		ports/misc/gretl
+gretl		ports/math/gretl
 gretools	ports/games/gretools
 grhino		ports/games/grhino
 gri		ports/math/gri
