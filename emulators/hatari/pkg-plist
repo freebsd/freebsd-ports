@@ -1,0 +1,27 @@
+bin/hatari
+%%PORTDOCS%%%%DOCSDIR%%/alsa-midi.txt
+%%PORTDOCS%%%%DOCSDIR%%/authors.txt
+%%PORTDOCS%%%%DOCSDIR%%/changelog.txt
+%%PORTDOCS%%%%DOCSDIR%%/compatibility.html
+%%PORTDOCS%%%%DOCSDIR%%/images/devices.png
+%%PORTDOCS%%%%DOCSDIR%%/images/discs.png
+%%PORTDOCS%%%%DOCSDIR%%/images/fileselector.png
+%%PORTDOCS%%%%DOCSDIR%%/images/joystick.png
+%%PORTDOCS%%%%DOCSDIR%%/images/keyboard.png
+%%PORTDOCS%%%%DOCSDIR%%/images/main.png
+%%PORTDOCS%%%%DOCSDIR%%/images/memory.png
+%%PORTDOCS%%%%DOCSDIR%%/images/screen.png
+%%PORTDOCS%%%%DOCSDIR%%/images/sound.png
+%%PORTDOCS%%%%DOCSDIR%%/images/system.png
+%%PORTDOCS%%%%DOCSDIR%%/images/tos.png
+%%PORTDOCS%%%%DOCSDIR%%/keymap-sample.txt
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/memory-usage.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/release-notes.txt
+%%PORTDOCS%%%%DOCSDIR%%/todo.txt
+%%DATADIR%%/hatari-icon.bmp
+%%DATADIR%%/tos.img
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
