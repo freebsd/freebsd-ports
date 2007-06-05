@@ -1,5 +1,5 @@
---- SConscript_quake3.orig	Fri Apr 20 17:28:47 2007
-+++ SConscript_quake3	Fri Apr 20 17:51:18 2007
+--- SConscript_quake3.orig	Mon Jun  4 23:40:27 2007
++++ SConscript_quake3	Mon Jun  4 23:44:57 2007
 @@ -1,4 +1,4 @@
 -import os, string, sys
 +import os, string, sys, fnmatch
@@ -26,9 +26,10 @@
 +	if env['vm'] != 0 and env['vm_archs'].count(env['arch']) > 0:
 +		vm_src += ['engine/qcommon/vm_' + env['arch'] + '.c']
  	else:
- 		quake3_env.Append(CCFLAGS='-DDLL_ONLY')
+-		quake3_env.Append(CCFLAGS='-DDLL_ONLY')
 -		
 -	if env['smp'] == 1:
++		quake3_env.Append(CCFLAGS='-DNO_VM_COMPILED')
 +
 +	if env['smp'] != 0:
  		quake3_env.Append(CCFLAGS='-DSMP')
