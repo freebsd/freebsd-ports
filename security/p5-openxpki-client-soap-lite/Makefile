@@ -17,6 +17,10 @@ DIST_SUBDIR=	openxpki
 MAINTAINER=	svysh@cryptocom.ru
 COMMENT=	SOAP-Lite toolkit for openxpki
 
+DEPRECATED=		No longer maintained by Developers.
+IGNORE=			${DEPRECATED}
+EXPIRATION_DATE=	2007-08-01
+
 BUILD_DEPENDS=	\
 	${SITE_PERL}/OpenXPKI/Client.pm:${PORTSDIR}/security/p5-openxpki-client \
 	${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
