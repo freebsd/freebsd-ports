@@ -52,6 +52,10 @@ MAN1=		clisp.1
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 700000
+BROKEN=		coredumps when building on FreeBSD 7.x
+.endif
+
 MODULES=	BDB CLX_MIT CLX_NEW FASTCGI ORACLE PARI PCRE PGSQL RAWSOCK \
 		WILDCARD ZLIB
 
