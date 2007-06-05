@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	coreutils
-PORTVERSION=	6.7
-PORTREVISION=	1
+PORTVERSION=	6.9
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,6 +20,7 @@ CONFLICTS=	fileutils-[0-9]* id-utils-[0-9]* linux-gid-[0-9]* \
 USE_GCC=	3.4+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--program-prefix=g --infodir=${PREFIX}/info --mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 

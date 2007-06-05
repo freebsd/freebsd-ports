@@ -1,10 +1,6 @@
-===================================================================
-RCS file: configure,v
-retrieving revision 1.1
-diff -u -r1.1 configure
---- configure	2006/12/13 01:35:51	1.1
-+++ configure	2006/12/13 01:36:59
-@@ -2257,13 +2257,13 @@
+--- configure.orig	Thu Mar 22 14:20:28 2007
++++ configure
+@@ -2415,13 +2415,13 @@
    for ac_prog in mkdir gmkdir; do
  	 for ac_exec_ext in '' $ac_executable_extensions; do
  	   { test -f "$as_dir/$ac_prog$ac_exec_ext" && $as_test_x "$as_dir/$ac_prog$ac_exec_ext"; } || continue
