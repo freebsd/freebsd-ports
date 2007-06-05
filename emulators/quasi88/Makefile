@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	quasi88
-PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTVERSION=	0.6.3
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.117.ne.jp/~show/pc8801/
 EXTRACT_SUFX=	.tgz
@@ -18,11 +17,12 @@ COMMENT=	PC-8801 emulator for X
 USE_XLIB=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	DATADIR="${DATADIR}" _CC="${CC}" _CFLAGS="${CFLAGS}" \
-		_CXX="${CXX}" LD="${CXX}"
+		_CXX="${CXX}" LD="${CXX}" PROGRAM="${PORTNAME}"
 
 PORTDOCS=	FAQ.TXT FORMAT.TXT GET-IMAGE.TXT HISTORY.TXT MANUAL.TXT \
 		QUASI88.TXT
-PLIST_FILES=	bin/quasi88 %%EXAMPLESDIR%%/quasi88.rc
+PLIST_FILES=	bin/quasi88 %%EXAMPLESDIR%%/keyconf.rc \
+		%%EXAMPLESDIR%%/quasi88.rc
 PLIST_DIRS=	%%EXAMPLESDIR%%
 
 .include <bsd.port.pre.mk>
@@ -43,17 +43,19 @@ post-patch:
 		 s|~/quasi88|$${DATADIR}|g ; \
 		 s|^LSB_|# LSB_|g ; \
 		 s|^JOY|# JOY|g ; \
+		 s|^SDL_|# SDL_|g ; \
 		 s|gcc|$${_CC}|g ; \
 		 s|-O2|$${_CFLAGS}|g ; \
 		 s|/usr/X11R6|$${X11BASE}|g ; \
 		 s|g++|$${_CXX}|g ; \
-		 s|-lstdc++||g ; \
-		 s|^LD|# LD|g' ${WRKSRC}/Makefile
+		 s|^CXXLIBS|# CXXLIBS|g ; \
+		 s|^LD|# LD|g ; \
+		 s|^PROGRAM|# PROGRAM|g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/quasi88 ${PREFIX}/bin
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/quasi88.rc ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.rc ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
