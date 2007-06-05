@@ -1,0 +1,17 @@
+--- Makefile.in.orig	Tue Jun  5 12:43:40 2007
++++ Makefile.in	Tue Jun  5 12:43:53 2007
+@@ -423,14 +423,12 @@
+ 	gst sys $(SUBDIRS_EXT) 	\
+ 	tools 			\
+ 	tests 			\
+-	docs			\
+ 	po 			\
+ 	common 			\
+ 	m4 			\
+ 	pkgconfig
+ 
+ DIST_SUBDIRS = \
+-	docs			\
+ 	gst-libs		\
+ 	gst sys ext		\
+ 	tools 			\
