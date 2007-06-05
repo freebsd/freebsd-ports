@@ -12,13 +12,10 @@ CATEGORIES=	net python
 MASTER_SITES=	http://pypcap.googlecode.com/files/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	gnn@freebsd.org
+MAINTAINER=	tmclaugh@FreeBSD.org
 COMMENT=	Simplified object-oriented Python extension module for libpcap
 
 BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
-
-DEPRECATED=	Project included in net/pcs, please use that port instead
-EXPIRATION_DATE=	2007-06-24
 
 USE_PYTHON=	yes
 USE_PYTHON_PREFIX=	yes
