@@ -135,7 +135,7 @@ samba_reload_cmd() {
 		debug "reloading ${name} configuration"
 		echo "Reloading ${name}."
 		# XXX: Hack with pid_extra
-		"${smbcontrol_command}" "${name}${pid_extra}" 'reload-config' ${command_args}
+		"${smbcontrol_command}" "${name}${pid_extra}" 'reload-config' ${command_args} >/dev/null 2>&1
 	    fi
 	fi
     done

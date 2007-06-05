@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.0.25
+PORTVERSION?=		3.0.25a
 PORTREVISION?=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
@@ -76,7 +76,8 @@ OPTIONS=	LDAP		"With LDAP support" on \
 		DNSUPDATE	"With dynamic DNS update" off \
 		EXP_MODULES	"With experimental modules" off \
 		POPT		"With system-wide POPT library" on \
-		MAX_DEBUG	"With maximum debuging" off
+		MAX_DEBUG	"With maximum debuging" off \
+		SMBTORTURE	"With smbtorture" off
 .endif
 
 .include <bsd.port.pre.mk>
@@ -180,9 +181,10 @@ WANT_EXP_MODULES=	idmap_ad idmap_rid charset_weird
 .		if !defined(WITH_MAX_DEBUG)
 WANT_EXP_MODULES+=	rpc_echo
 .		endif
+WANT_EXP_MODULES+=	vfs_catia vfs_cacheprime vfs_commit
 .	endif
-WANT_EXP_MODULES!=	${ECHO_CMD} ${WANT_EXP_MODULES} | ${SED} -E 's/ +/,/g'
-CONFIGURE_ARGS+=	--with-shared-modules="${WANT_EXP_MODULES}"
+USE_EXP_MODULES!=	${ECHO_CMD} ${WANT_EXP_MODULES} | ${SED} -E 's/ +/,/g'
+CONFIGURE_ARGS+=	--with-shared-modules="${USE_EXP_MODULES}"
 .endif
 
 .if defined(WITH_PAM_SMBPASS)
@@ -218,6 +220,9 @@ CONFIGURE_ARGS+=	--without-cluster-support
 .endif
 
 .if defined(WITH_DNSUPDATE)
+.	if !defined(WITH_ADS)
+IGNORE=			dynamic DNS updates require ADS support
+.	endif
 LIB_DEPENDS+=		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid
 CONFIGURE_ARGS+=	--with-dnsupdate
 .else
@@ -283,6 +288,12 @@ CONFIGURE_ARGS+=	--with-ldap
 CONFIGURE_ARGS+=	--without-ldap
 .endif
 
+.if defined(WITH_SMBTORTURE)
+PLIST_SUB+=		SMBTORTURE=""
+.else
+PLIST_SUB+=		SMBTORTURE="@comment "
+.endif
+
 .if !defined(SAMBA_SUBPORT)
 # Samba server itself
 MAN1=		findsmb.1 log2pcap.1 nmblookup.1 ntlm_auth.1 profiles.1 \
@@ -290,8 +301,14 @@ MAN1=		findsmb.1 log2pcap.1 nmblookup.1 ntlm_auth.1 profiles.1 \
 		smbget.1 smbstatus.1 smbtar.1 smbtree.1 testparm.1 vfstest.1
 MAN5=		lmhosts.5 smb.conf.5 smbgetrc.5 smbpasswd.5
 MAN7=		samba.7
-MAN8=		net.8 nmbd.8 pdbedit.8 smbd.8 smbpasswd.8 smbspool.8 \
-		swat.8 tdbbackup.8 tdbdump.8
+MAN8=		eventlogadm.8 net.8 nmbd.8 pdbedit.8 smbd.8 smbpasswd.8 \
+		smbspool.8 swat.8 tdbbackup.8 tdbdump.8 tdbtool.8 \
+		idmap_nss.8 idmap_tdb.8 \
+		vfs_audit.8 vfs_cap.8 vfs_default_quota.8 vfs_extd_audit.8 \
+		vfs_fake_perms.8 vfs_full_audit.8 vfs_netatalk.8 \
+		vfs_readahead.8	vfs_readonly.8 vfs_recycle.8 \
+		vfs_shadow_copy.8
+
 .if defined(WITH_SMBSH)
 MAN1+=		smbsh.1
 .endif
@@ -299,6 +316,34 @@ MAN1+=		smbsh.1
 MAN1+=		wbinfo.1
 MAN7+=		pam_winbind.7
 MAN8+=		winbindd.8
+.endif
+
+.if defined(WITH_FAM_SUPPORT)
+MAN8+=		vfs_notify_fam.8
+.endif
+
+.if defined(SAMBA_WANT_LDAP)
+MAN8+=		idmap_ldap.8
+.endif
+
+.if !empty(WANT_EXP_MODULES:Midmap_ad)
+MAN8+=		idmap_ad.8
+.endif
+
+.if !empty(WANT_EXP_MODULES:Midmap_rid)
+MAN8+=		idmap_rid.8
+.endif
+
+.if !empty(WANT_EXP_MODULES:Mvfs_cacheprime)
+MAN8+=		vfs_cacheprime.8
+.endif
+
+.if !empty(WANT_EXP_MODULES:Mvfs_catia)
+MAN8+=		vfs_catia.8
+.endif
+
+.if !empty(WANT_EXP_MODULES:Mvfs_commit)
+MAN8+=		vfs_commit.8
 .endif
 
 PLIST_SUB+=	SAMBA_LOGDIR="${SAMBA_LOGDIR}" \
@@ -346,6 +391,17 @@ post-patch:
 	@${FIND} ${WRKDIR}/${DISTNAME} -type d | ${XARGS} ${CHMOD} u+w,a+rx
 	@${FIND} ${WRKDIR}/${DISTNAME} -type f | ${XARGS} ${CHMOD} u+w,a+r
 
+# This would speedup compilation for gcc 3.4(available in FreeBSD 5.2) and higher
+.if ${OSVERSION} >= 502126
+pre-build:
+	cd ${WRKSRC} && ${MAKE} pch
+.endif
+
+.if defined(WITH_SMBTORTURE)
+post-build:
+	cd ${WRKSRC} && ${MAKE} smbtorture
+.endif
+
 pre-install:
 	-@${FIND} "${SAMBA_MODULEDIR}" -type f 2>/dev/null | ${SORT} | ${SED} -E 's|^${PREFIX}/?||;' >> ${WRKDIR}/.PLIST.exclude
 	@${CAT} ${PKGDIR}/pkg-plist > ${PLIST}
@@ -381,6 +437,10 @@ post-install:
 .if defined(WITH_PAM_SMBPASS)
 	${INSTALL_PROGRAM} "${WRKSRC}/bin/pam_smbpass.so" "${SAMBA_LIBDIR}"
 	@${ECHO_CMD} "${SAMBA_LIB}/pam_smbpass.so" >> ${TMPPLIST};
+.endif
+# smbtorture
+.if defined(WITH_SMBTORTURE)
+	${INSTALL_PROGRAM} "${WRKSRC}/bin/smbtorture" "${PREFIX}/bin"
 .endif
 # smbwrapper.so
 .if defined(WITH_SMBSH)
