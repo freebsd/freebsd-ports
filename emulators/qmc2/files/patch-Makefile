@@ -1,5 +1,5 @@
---- ./Makefile.orig	Fri Feb  2 10:19:00 2007
-+++ ./Makefile	Sun Feb 25 18:58:18 2007
+--- ./Makefile.orig	Fri Mar 23 15:37:30 2007
++++ ./Makefile	Mon Jun  4 22:54:25 2007
 @@ -37,9 +37,6 @@
  # you want to test-compile a specific target's code branch or if the "uname"
  # command doesn't tell the correct OS-type of your system (see also OSREL and
@@ -19,20 +19,27 @@
  
  # QMAKEV: qmake version (major release)
  ifndef QMAKEV
-@@ -183,7 +180,7 @@
+@@ -183,15 +180,16 @@
  
  install: bin lang
  	@echo "Installing QMC2 build v$(VERSION). Please wait..."
 -	@$(MKDIR) $(DESTDIR)/$(PREFIX)/bin $(DESTDIR)/$(PREFIX)/share/$(PROJECT) $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)
+-	@$(RSYNC) --exclude '*svn*' ./$(PROJECT) $(DESTDIR)/$(PREFIX)/bin
+-	@$(RSYNC) --exclude '*svn*' ./data/lng/*.qm $(DESTDIR)/$(DATADIR)/$(PROJECT)/lng/
+-	@$(RSYNC) --exclude '*svn*' ./data/opt $(DESTDIR)/$(DATADIR)/$(PROJECT)/
+-	@$(RSYNC) --exclude '*svn*' ./data/img $(DESTDIR)/$(DATADIR)/$(PROJECT)/
+-	@$(RSYNC) --exclude '*svn*' ./data/doc $(DESTDIR)/$(DATADIR)/$(PROJECT)/
+-	@$(RSYNC) --exclude '*svn*' ./data/prv $(DESTDIR)/$(DATADIR)/$(PROJECT)/
+-	@$(RSYNC) --exclude '*svn*' ./data/fly $(DESTDIR)/$(DATADIR)/$(PROJECT)/
+-	@$(SED) -e "s_DATADIR_$(DATADIR)_g" < ./inst/$(PROJECT).ini.template > $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)/$(PROJECT).ini
 +	@$(MKDIR) $(DESTDIR)/$(PREFIX)/bin $(DESTDIR)/$(PREFIX)/share/$(PROJECT) $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT) $(DESTDIR)/$(PREFIX)/share/$(PROJECT)/lng
- 	@$(RSYNC) ./$(PROJECT) $(DESTDIR)/$(PREFIX)/bin
- 	@$(RSYNC) ./data/lng/*.qm $(DESTDIR)/$(DATADIR)/$(PROJECT)/lng/
- 	@$(RSYNC) ./data/opt $(DESTDIR)/$(DATADIR)/$(PROJECT)/
-@@ -191,7 +188,8 @@
- 	@$(RSYNC) ./data/doc $(DESTDIR)/$(DATADIR)/$(PROJECT)/
- 	@$(RSYNC) ./data/prv $(DESTDIR)/$(DATADIR)/$(PROJECT)/
- 	@$(RSYNC) ./data/fly $(DESTDIR)/$(DATADIR)/$(PROJECT)/
--	@$(SED) -e "s_DATADIR_$(DATADIR)_" < ./inst/$(PROJECT).ini.template > $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)/$(PROJECT).ini
++	@$(CP) -r ./$(PROJECT) $(DESTDIR)/$(PREFIX)/bin
++	@$(CP) -r ./data/lng/*.qm $(DESTDIR)/$(DATADIR)/$(PROJECT)/lng/
++	@$(CP) -r ./data/opt $(DESTDIR)/$(DATADIR)/$(PROJECT)/
++	@$(CP) -r ./data/img $(DESTDIR)/$(DATADIR)/$(PROJECT)/
++	@$(CP) -r ./data/doc $(DESTDIR)/$(DATADIR)/$(PROJECT)/
++	@$(CP) -r ./data/prv $(DESTDIR)/$(DATADIR)/$(PROJECT)/
++	@$(CP) -r ./data/fly $(DESTDIR)/$(DATADIR)/$(PROJECT)/
 +	@$(SED) -e "s_DATADIR_$(DATADIR)_" < ./inst/$(PROJECT).ini.template > $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)/$(PROJECT).ini.sample
 +	@test -f $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)/$(PROJECT).ini || $(CP) $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)/$(PROJECT).ini.sample $(DESTDIR)/$(SYSCONFDIR)/$(PROJECT)/$(PROJECT).ini
  	@echo "Installation complete."
