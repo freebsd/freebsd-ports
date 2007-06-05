@@ -10,9 +10,8 @@
 PORTNAME=		gnat-gcc
 PORTVERSION=		4.2.0
 CATEGORIES=		lang
-MASTER_SITES=		${MASTER_SITE_GCC} \
-			http://lovetemple.net/data/:boot
-MASTER_SITE_SUBDIR=	snapshots/${versionstring}
+MASTER_SITES=		GCC/snapshots/${versionstring} \
+			CENKES:boot http://lovetemple.net/data/:boot
 DISTFILES=		gcc-core-${versionstring}${EXTRACT_SUFX} \
 			gcc-ada-${versionstring}${EXTRACT_SUFX} \
 			gcc-testsuite-${versionstring}${EXTRACT_SUFX} \
