@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	subclipse
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	devel java
-MASTER_SITES=	http://subclipse.tigris.org/files/documents/906/36425
+MASTER_SITES=	http://subclipse.tigris.org/files/documents/906/37653/
 DISTNAME=	site-${PORTVERSION}
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	A subversion plugin for the Eclipse IDE Framework
 
-RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
+#RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 FETCH_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
 CONFLICTS=	phpeclipse-[0-9]*
@@ -30,7 +29,7 @@ SUBCLIPSE=	org.tigris.subversion.subclipse
 SUBCLIPSEFILES=	features/${SUBCLIPSE}_${PORTVERSION} \
 		features/org.tigris.subversion.subclipse.mylar_1.0.1 \
 		plugins/${SUBCLIPSE}.core_${PORTVERSION} \
-		plugins/${SUBCLIPSE}.doc_${PORTVERSION} \
+		plugins/${SUBCLIPSE}.doc_1.2.0 \
 		plugins/${SUBCLIPSE}.mylar_1.0.1 \
 		plugins/${SUBCLIPSE}.ui_${PORTVERSION}
 
