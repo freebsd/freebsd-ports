@@ -1,5 +1,26 @@
 bin/autopsy
-
+lib/autopsy/Appsort.pm
+lib/autopsy/Appview.pm
+lib/autopsy/Args.pm
+lib/autopsy/Caseman.pm
+lib/autopsy/Data.pm
+lib/autopsy/Exec.pm
+lib/autopsy/File.pm
+lib/autopsy/Filesystem.pm
+lib/autopsy/Frame.pm
+lib/autopsy/Fs.pm
+lib/autopsy/Hash.pm
+lib/autopsy/Kwsrch.pm
+lib/autopsy/Main.pm
+lib/autopsy/Meta.pm
+lib/autopsy/Notes.pm
+lib/autopsy/Print.pm
+lib/autopsy/Timeline.pm
+lib/autopsy/Vs.pm
+lib/autopsy/conf.pl
+lib/autopsy/define.pl
+lib/autopsy/search.pl
+@dirrm lib/autopsy
 %%DATADIR%%/pict/back_pix.jpg
 %%DATADIR%%/pict/but_addnote.jpg
 %%DATADIR%%/pict/but_alloc_list.jpg
