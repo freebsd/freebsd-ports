@@ -52,3 +52,6 @@ SIZE (vile-9.5p.patch.gz) = 10993
 MD5 (vile-9.5q.patch.gz) = 901827470a6b81a86b52877a4b6de4c1
 SHA256 (vile-9.5q.patch.gz) = d05f28c92a1d872f7838c107c6ed1f7675cc9eafc652e9d4e454fb06e16f855f
 SIZE (vile-9.5q.patch.gz) = 107182
+MD5 (vile-9.5r.patch.gz) = 0869bea3e588ac2fbf21f5129e10c7eb
+SHA256 (vile-9.5r.patch.gz) = 10b281c0a44d05c256c795dd6dcab251d9b366ba804852b487337bbbbc7a623e
+SIZE (vile-9.5r.patch.gz) = 61798
