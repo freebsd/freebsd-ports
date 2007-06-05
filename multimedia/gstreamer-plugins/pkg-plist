@@ -36,6 +36,7 @@ include/gstreamer-%%VERSION%%/gst/riff/riff-read.h
 include/gstreamer-%%VERSION%%/gst/rtp/gstbasertpaudiopayload.h
 include/gstreamer-%%VERSION%%/gst/rtp/gstbasertpdepayload.h
 include/gstreamer-%%VERSION%%/gst/rtp/gstbasertppayload.h
+include/gstreamer-%%VERSION%%/gst/rtp/gstrtcpbuffer.h
 include/gstreamer-%%VERSION%%/gst/rtp/gstrtpbuffer.h
 include/gstreamer-%%VERSION%%/gst/tag/tag.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideofilter.h
@@ -71,6 +72,9 @@ lib/gstreamer-%%VERSION%%/libgstgdp.so
 lib/gstreamer-%%VERSION%%/libgstplaybin.a
 lib/gstreamer-%%VERSION%%/libgstplaybin.la
 lib/gstreamer-%%VERSION%%/libgstplaybin.so
+lib/gstreamer-%%VERSION%%/libgstqueue2.a
+lib/gstreamer-%%VERSION%%/libgstqueue2.la
+lib/gstreamer-%%VERSION%%/libgstqueue2.so
 lib/gstreamer-%%VERSION%%/libgstsubparse.a
 lib/gstreamer-%%VERSION%%/libgstsubparse.la
 lib/gstreamer-%%VERSION%%/libgstsubparse.so
@@ -80,6 +84,9 @@ lib/gstreamer-%%VERSION%%/libgsttcp.so
 lib/gstreamer-%%VERSION%%/libgsttypefindfunctions.a
 lib/gstreamer-%%VERSION%%/libgsttypefindfunctions.la
 lib/gstreamer-%%VERSION%%/libgsttypefindfunctions.so
+lib/gstreamer-%%VERSION%%/libgsturidecodebin.a
+lib/gstreamer-%%VERSION%%/libgsturidecodebin.la
+lib/gstreamer-%%VERSION%%/libgsturidecodebin.so
 lib/gstreamer-%%VERSION%%/libgstvideo4linux.a
 lib/gstreamer-%%VERSION%%/libgstvideo4linux.la
 lib/gstreamer-%%VERSION%%/libgstvideo4linux.so
