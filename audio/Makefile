@@ -173,7 +173,6 @@
     SUBDIR += fluidsynth-dssi
     SUBDIR += fmio
     SUBDIR += freealut
-    SUBDIR += freebirth
     SUBDIR += funktrackergold
     SUBDIR += gai-album
     SUBDIR += gai-visual-audio
