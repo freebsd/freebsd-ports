@@ -20,6 +20,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/Tktable2.8/libTktable2.8.so:${PORTSDIR}/x11-toolki
 
 USE_TK=		84
 
+PORTSCOUT=	limit:^[^-]+$
+
 post-extract:
 	@${RM} ${WRKSRC}/install.*
 
