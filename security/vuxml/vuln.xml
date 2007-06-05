@@ -34,6 +34,38 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d9405748-1342-11dc-a35c-001485ab073e">
+    <topic>mod_jk -- information disclosure</topic>
+    <affects>
+      <package>
+	<name>mod_jk</name>
+	<name>mod_jk-ap2</name>
+	<range><lt>1.2.23</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kazu Nambo reports:</p>
+	<blockquote cite="http://tomcat.apache.org/security-jk.html">
+	  <p>URL decoding the the Apache webserver prior to
+	    decoding in the Tomcat server could pypass access
+	    control rules and give access to pages on a different
+	    AJP by sending a crafted URL.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2007-1860</cvename>
+      <url>http://secunia.com/advisories/25383/</url>
+      <url>http://tomcat.apache.org/connectors-doc/news/20070301.html#20070518.1</url>
+      <url>http://tomcat.apache.org/security-jk.html</url>
+    </references>
+    <dates>
+      <discovery>2007-05-18</discovery>
+      <entry>2007-06-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="62b8f253-12d9-11dc-a35c-001485ab073e">
     <topic>typo3 -- email header injection</topic>
     <affects>
