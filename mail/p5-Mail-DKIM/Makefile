@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-DKIM
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -23,8 +23,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Crypt/OpenSSL/RSA.pm:${PORTSDIR}/security
 		${SITE_PERL}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-MASTER_SITE_BACKUP=	http://freebsd.unixfreunde.de/sources/ \
-			http://jason.long.name/dkimproxy/
+MASTER_SITE_BACKUP=	http://jason.long.name/dkimproxy/
 
 PERL_CONFIGURE=	yes
 
