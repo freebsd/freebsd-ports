@@ -6,7 +6,7 @@
  	    SHLIB_CFLAGS="-fPIC"
 -	    SHLIB_LD="ld -Bshareable -x"
 +	    TCL_SHLIB_LD_EXTRAS="-soname \$@"
-+	    SHLIB_LD="ld -shared -x"
++	    SHLIB_LD="${CC} -shared"
  	    SHLIB_LD_LIBS='${LIBS}'
  	    SHLIB_SUFFIX=".so"
  	    DL_OBJS="tclLoadDl.o"
