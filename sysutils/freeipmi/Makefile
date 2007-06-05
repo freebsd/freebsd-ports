@@ -53,8 +53,8 @@ BROKEN=	missing getpw*_r functions in this FreeBSD release
 # ports. Note: there is a bug in FreeBSD 5 before 5.5-RELEASE that
 # causes SIGBUS to the process sometimes when i386_set_ioperm is used
 # (PR 84842).
-.if defined(WITH_IOPERM) || \
-	${OSVERSION} < 500000 || ${OSVERSION} >= 505000
+.if ${ARCH} == "i386" && (defined(WITH_IOPERM) || \
+	${OSVERSION} < 500000 || ${OSVERSION} >= 505000)
 CPPFLAGS+=	-DUSE_IOPERM
 .endif
 
