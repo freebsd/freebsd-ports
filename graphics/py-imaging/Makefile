@@ -7,7 +7,7 @@
 
 PORTNAME=	imaging
 PORTVERSION=	1.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics python
 MASTER_SITES=	http://effbot.org/downloads/ \
 		http://www.pythonware.net/storage/
@@ -41,6 +41,11 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkint
 PLIST_SUB+=	TKINTER=""
 .else
 PLIST_SUB+=	TKINTER="@comment "
+.endif
+
+.if defined(WITHOUT_TKINTER)
+post-patch:
+	@${REINPLACE_CMD} -e 's|if _tkinter|if None|g' ${WRKSRC}/setup.py
 .endif
 
 post-install:
