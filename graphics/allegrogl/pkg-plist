@@ -13,7 +13,9 @@ include/allegrogl/GLext/glx_ext_list.h
 @dirrm include/allegrogl/GLext
 @dirrm include/allegrogl
 lib/libagl.so
-lib/libagl.so.%%SHLIB_VER%%
+lib/libagl.so.0
+lib/libagl.so.0.4
+lib/libagl.so.0.4.1
 %%EXAMPLESDIR%%/a1.bmp
 %%EXAMPLESDIR%%/a24.tga
 %%EXAMPLESDIR%%/a32.tga
@@ -24,6 +26,7 @@ lib/libagl.so.%%SHLIB_VER%%
 %%EXAMPLESDIR%%/dumbtest.c
 %%EXAMPLESDIR%%/exalleg.c
 %%EXAMPLESDIR%%/exalpfnt.c
+%%EXAMPLESDIR%%/exblend.c
 %%EXAMPLESDIR%%/excamera.c
 %%EXAMPLESDIR%%/exext.c
 %%EXAMPLESDIR%%/exgui.c
