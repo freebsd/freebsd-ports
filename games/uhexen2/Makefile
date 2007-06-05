@@ -30,6 +30,8 @@ OPTIONS=	DEMO "Install demo version of the game data" off \
 		LAUNCHER_GTK2 "Build graphical (GTK2) game launcher" off \
 		X86_ASM "Enable use of optimized x86 assembly code" on
 
+PORTSCOUT=	skipb:yes
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_HEXEN2) && defined(WITHOUT_HW)
