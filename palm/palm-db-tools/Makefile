@@ -24,10 +24,9 @@ PLIST_FILES=	lib/libpdbtools.so \
 		bin/csv2pdb \
 		bin/pdb2csv
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e "s|-Wno-deprecated|& -fPIC -DPIC|" \
+		${WRKSRC}/libflatfile/Makefile.in ${WRKSRC}/libpalm/Makefile.in \
+		${WRKSRC}/libsupport/Makefile.in ${WRKSRC}/flatfile/Makefile.in
 
-.if ${ARCH} == "amd64"
-BROKEN=		Does not build on amd64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
