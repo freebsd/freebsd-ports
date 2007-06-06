@@ -15,9 +15,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	The @stake Sleuth Kit for forensic analysis
 
-CONFLICTS=	ja-ls-[0-9]*
-
 RUN_DEPENDS=	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip
+
+CONFLICTS=	ja-ls-[0-9]*
 
 USE_PERL5=	yes
 
@@ -39,12 +39,17 @@ MAN1=		dcalc.1 dcat.1 disk_sreset.1 disk_stat.1 dls.1 \
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's/^CC[[:space:]]*=/CC \?=/' \
-		-e 's/[[:space:]]+file test[[:space:]]*$$//' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e '/^CC[[:space:]]*=/d' -e 's/\$$(OPT) \$$(DEBUG)//' \
+		-e 's/[[:space:]]+file test[[:space:]]*$$//' \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e '/^CC[[:space:]]*=/d' \
+		-e 's/\$$(OPT) \$$(DEBUG)//' \
 		-e 's/^CFLAGS[[:space:]]*=/CFLAGS \+=/' \
-		${WRKSRC}/src/disktools/Makefile ${WRKSRC}/src/fstools/Makefile \
-		${WRKSRC}/src/hashtools/Makefile ${WRKSRC}/src/imgtools/Makefile \
-		${WRKSRC}/src/auxtools/Makefile ${WRKSRC}/src/mmtools/Makefile \
+		${WRKSRC}/src/disktools/Makefile \
+		${WRKSRC}/src/fstools/Makefile \
+		${WRKSRC}/src/hashtools/Makefile \
+		${WRKSRC}/src/imgtools/Makefile \
+		${WRKSRC}/src/auxtools/Makefile \
+		${WRKSRC}/src/mmtools/Makefile \
 		${WRKSRC}/src/srchtools/Makefile
 	@${REINPLACE_CMD} -e 's/$${BIN_DIR}file/\/usr\/bin\/file/' \
 		${WRKSRC}/src/sorter/sorter.base
