@@ -795,7 +795,6 @@
     SUBDIR += sipxtacklib
     SUBDIR += sipxvxml
     SUBDIR += sixxs-aiccu
-    SUBDIR += sixxs-heartbeatd
     SUBDIR += skstream
     SUBDIR += skype
     SUBDIR += skype-devel

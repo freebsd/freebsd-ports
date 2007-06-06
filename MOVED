@@ -3063,3 +3063,4 @@ textproc/ruby-libxslt||2007-06-04|Has expired: Broken on all supported versions 
 www/py-htmltestcase||2007-06-04|Has expired: Upstream site disappeared and dependency is set to expire
 multimedia/snd-music-duplicates||2007-06-05|Has expired: Development has been ceased, successor is shareware.
 audio/freebirth||2007-06-05|Has expired: Doesn't work on FreeBSD 5.0 and higher
+net/sixxs-heartbeatd||2007-06-05|obsolete, use net/sixxs-aiccu instead
