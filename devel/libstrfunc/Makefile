@@ -1,21 +1,21 @@
 # New ports collection makefile for:	libstrfunc
 # Date created:				2001-07-19
-# Whom:					Lev Walkin <vlm@spelio.net.ru>
+# Whom:					Lev Walkin <vlm@lionet.info>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	libstrfunc
-PORTVERSION=	8.2
-PORTREVISION=	1
+PORTVERSION=	8.3
 CATEGORIES=	devel www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}	\
+		http://lionet.info/soft/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	vlm@lionet.info
 COMMENT=	Handles CGI forms, MIME, templates, date conversions, etc
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--program-prefix=""
 
