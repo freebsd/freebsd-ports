@@ -954,6 +954,7 @@
     SUBDIR += phpSysInfo
     SUBDIR += phpadsnew
     SUBDIR += phpbb
+    SUBDIR += phpbb-devel
     SUBDIR += phpgedview
     SUBDIR += phpmp
     SUBDIR += phpmyfaq
