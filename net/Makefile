@@ -199,6 +199,7 @@
     SUBDIR += icmpinfo
     SUBDIR += icpld
     SUBDIR += ifdepd
+    SUBDIR += iffinder
     SUBDIR += ifstat
     SUBDIR += ifstated
     SUBDIR += ilbc
