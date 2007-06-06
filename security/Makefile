@@ -214,6 +214,7 @@
     SUBDIR += klamav
     SUBDIR += knock
     SUBDIR += knocker
+    SUBDIR += kopete-otr
     SUBDIR += kovpn
     SUBDIR += krb4
     SUBDIR += krb5
