@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gauche
-PORTVERSION=	0.8.9	# Keep databases/gauche-gdbm in sync with this
-PORTREVISION=	1
+PORTVERSION=	0.8.10	# Keep databases/gauche-gdbm in sync with this
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -39,7 +38,7 @@ PLIST_SUB=	VERSION="${PORTVERSION}" \
 		TARGET="${CONFIGURE_TARGET}" \
 		INFOSECTION="${INFOSECTION}"
 USE_ICONV=	yes
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 INFO=		gauche-refe gauche-refj
 
 .include <bsd.port.pre.mk>
