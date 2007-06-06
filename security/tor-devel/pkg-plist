@@ -1,4 +1,5 @@
 bin/tor
+bin/tor-gencert
 bin/tor-resolve
 bin/torify
 etc/tor/tor-tsocks.conf.sample
