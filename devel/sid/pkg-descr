@@ -1,0 +1,6 @@
+Sid is a LL(1) parser generator that turns specifications of languages into
+programs that recognise those languages. One of the aims of sid was to separate
+the specification of the language to be recognised from the language that the
+recogniser program is written in. For this reason, input to sid is split into
+two components: output language independent information, and output language
+dependent information.
