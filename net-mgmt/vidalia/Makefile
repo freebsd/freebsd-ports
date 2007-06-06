@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vidalia
-PORTVERSION=	0.0.11
-PORTREVISION=	2
+PORTVERSION=	0.0.12
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://vidalia-project.net:8001/\
 		http://tor.eff.org/dist/vidalia-bundles/
@@ -52,9 +51,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/tor:${PORTSDIR}/security/tor-devel
 .elif defined(WITH_TOR)
 RUN_DEPENDS+=	${LOCALBASE}/bin/tor:${PORTSDIR}/security/tor
 .endif
-
-pre-extract:
-	@${CAT} ${PKGMESSAGE}
 
 post-extract:
 	${REINPLACE_CMD} -e 's@/bin/lrelease@/bin/lrelease-qt4@' ${WRKSRC}/configure
