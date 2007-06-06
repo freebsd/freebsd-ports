@@ -7,6 +7,7 @@
 
 PORTNAME=	lxml
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://codespeak.net/lxml/ \
 		http://cheeseshop.python.org/packages/source/l/lxml/
