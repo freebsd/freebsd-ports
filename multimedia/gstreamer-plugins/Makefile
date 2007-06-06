@@ -102,6 +102,7 @@ EXTRACT_ONLY=${GOOD_DISTFILE}
 WRKSRC=${WRKDIR}/${GOOD_DISTNAME}
 PORTVERSION=	${GOOD_PORTVERSION}
 DISTFILES+=	${GOOD_DISTFILE}:good
+PATCHDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins-good/files
 .endif
 
 # cdrom default device
