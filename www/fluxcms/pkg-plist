@@ -81,6 +81,7 @@
 %%INSTALLDIR%%/admin/data/admin/images/.configxml
 %%INSTALLDIR%%/admin/data/admin/listview/.configxml
 %%INSTALLDIR%%/admin/data/admin/navi/.configxml
+%%INSTALLDIR%%/admin/data/admin/openid/.configxml
 %%INSTALLDIR%%/admin/data/admin/overview/.configxml
 %%INSTALLDIR%%/admin/data/admin/properties/.configxml
 %%INSTALLDIR%%/admin/data/admin/siteoptions/.configxml
@@ -350,10 +351,12 @@
 %%INSTALLDIR%%/bin/switch-to-1_4_0-tag.sh
 %%INSTALLDIR%%/bin/switch-to-1_5-branch.sh
 %%INSTALLDIR%%/bin/switch-to-trunk.sh
+%%INSTALLDIR%%/dbforms2/bilder.xml
 %%INSTALLDIR%%/dbforms2/blogcategories.xml
 %%INSTALLDIR%%/dbforms2/blogcomments.xml
 %%INSTALLDIR%%/dbforms2/bloglinks.xml
 %%INSTALLDIR%%/dbforms2/bloglinkscategories.xml
+%%INSTALLDIR%%/dbforms2/blogpodcasts.xml
 %%INSTALLDIR%%/dbforms2/blogposts.xml
 %%INSTALLDIR%%/dbforms2/blogposts2.xml
 %%INSTALLDIR%%/dbforms2/events.xml
@@ -363,6 +366,11 @@
 %%INSTALLDIR%%/dbforms2/newsletter_mailservers.xml
 %%INSTALLDIR%%/dbforms2/newsletter_users.xml
 %%INSTALLDIR%%/dbforms2/perm_groups.xml
+%%INSTALLDIR%%/dbforms2/projekte.xml
+%%INSTALLDIR%%/dbforms2/staticpages
+%%INSTALLDIR%%/dbforms2/staticpages.xml
+%%INSTALLDIR%%/dbforms2/subprojekte.xml
+%%INSTALLDIR%%/dbforms2/test.xml
 %%INSTALLDIR%%/dbforms2/users.xml
 %%INSTALLDIR%%/div/db/bxcms.sql
 %%INSTALLDIR%%/div/db/dbexport.sh
@@ -399,9 +407,16 @@
 %%INSTALLDIR%%/inc/.registry/xml_rpc.reg
 %%INSTALLDIR%%/inc/Archive/Tar.php
 %%INSTALLDIR%%/inc/Auth.php
+%%INSTALLDIR%%/inc/Auth/Anonymous.php
 %%INSTALLDIR%%/inc/Auth/Auth.php
 %%INSTALLDIR%%/inc/Auth/Container.php
+%%INSTALLDIR%%/inc/Auth/Container/File.php
+%%INSTALLDIR%%/inc/Auth/Container/LDAP.php
 %%INSTALLDIR%%/inc/Auth/Container/MDB2.php
+%%INSTALLDIR%%/inc/Auth/Container/PEAR.php
+%%INSTALLDIR%%/inc/Auth/Controller.php
+%%INSTALLDIR%%/inc/Auth/Frontend/Html.php
+%%INSTALLDIR%%/inc/Auth/Frontend/md5.js
 %%INSTALLDIR%%/inc/Auth/HTTP.php
 %%INSTALLDIR%%/inc/Auth/OpenID.php
 %%INSTALLDIR%%/inc/Auth/OpenID/Association.php
@@ -411,6 +426,7 @@
 %%INSTALLDIR%%/inc/Auth/OpenID/CryptUtil.php
 %%INSTALLDIR%%/inc/Auth/OpenID/DatabaseConnection.php
 %%INSTALLDIR%%/inc/Auth/OpenID/DiffieHellman.php
+%%INSTALLDIR%%/inc/Auth/OpenID/Discover.php
 %%INSTALLDIR%%/inc/Auth/OpenID/DumbStore.php
 %%INSTALLDIR%%/inc/Auth/OpenID/FileStore.php
 %%INSTALLDIR%%/inc/Auth/OpenID/HMACSHA1.php
@@ -427,6 +443,7 @@
 %%INSTALLDIR%%/inc/Auth/OpenID/Server.php
 %%INSTALLDIR%%/inc/Auth/OpenID/ServerRequest.php
 %%INSTALLDIR%%/inc/Auth/OpenID/TrustRoot.php
+%%INSTALLDIR%%/inc/Auth/OpenID/URINorm.php
 %%INSTALLDIR%%/inc/Cache.php
 %%INSTALLDIR%%/inc/Cache/Container.php
 %%INSTALLDIR%%/inc/Cache/Container/db.php
@@ -545,6 +562,17 @@
 %%INSTALLDIR%%/inc/PHPUnit2/Util/CodeCoverage/Renderer/HTML.php
 %%INSTALLDIR%%/inc/PHPUnit2/Util/CodeCoverage/Renderer/Text.php
 %%INSTALLDIR%%/inc/SQL/Tree.php
+%%INSTALLDIR%%/inc/Services/Yadis/HTTPFetcher.php
+%%INSTALLDIR%%/inc/Services/Yadis/Manager.php
+%%INSTALLDIR%%/inc/Services/Yadis/Misc.php
+%%INSTALLDIR%%/inc/Services/Yadis/ParanoidHTTPFetcher.php
+%%INSTALLDIR%%/inc/Services/Yadis/ParseHTML.php
+%%INSTALLDIR%%/inc/Services/Yadis/PlainHTTPFetcher.php
+%%INSTALLDIR%%/inc/Services/Yadis/XML.php
+%%INSTALLDIR%%/inc/Services/Yadis/XRDS.php
+%%INSTALLDIR%%/inc/Services/Yadis/XRI.php
+%%INSTALLDIR%%/inc/Services/Yadis/XRIRes.php
+%%INSTALLDIR%%/inc/Services/Yadis/Yadis.php
 %%INSTALLDIR%%/inc/Services/flickr.php
 %%INSTALLDIR%%/inc/System.php
 %%INSTALLDIR%%/inc/Text/CAPTCHA.php
@@ -594,6 +622,7 @@
 %%INSTALLDIR%%/inc/bx/dbforms2/config.php
 %%INSTALLDIR%%/inc/bx/dbforms2/data.php
 %%INSTALLDIR%%/inc/bx/dbforms2/datasource/foreign.php
+%%INSTALLDIR%%/inc/bx/dbforms2/datasource/pagetree.php
 %%INSTALLDIR%%/inc/bx/dbforms2/datasource/sql.php
 %%INSTALLDIR%%/inc/bx/dbforms2/field.php
 %%INSTALLDIR%%/inc/bx/dbforms2/fields/checkbox.php
@@ -630,6 +659,7 @@
 %%INSTALLDIR%%/inc/bx/dbforms2/groups/xml.php
 %%INSTALLDIR%%/inc/bx/dbforms2/helpers.php
 %%INSTALLDIR%%/inc/bx/dbforms2/liveselect.php
+%%INSTALLDIR%%/inc/bx/dbforms2/liveselect/pagetree.php
 %%INSTALLDIR%%/inc/bx/dbforms2/nofield.php
 %%INSTALLDIR%%/inc/bx/dbforms2/nofield/text.php
 %%INSTALLDIR%%/inc/bx/dbforms2/sql.php
@@ -842,6 +872,7 @@
 %%INSTALLDIR%%/inc/bx/metadata.php
 %%INSTALLDIR%%/inc/bx/metadatas/text/datetimefield.php
 %%INSTALLDIR%%/inc/bx/metadatas/text/readonly.php
+%%INSTALLDIR%%/inc/bx/metadatas/text/select.php
 %%INSTALLDIR%%/inc/bx/metadatas/text/tags.php
 %%INSTALLDIR%%/inc/bx/metadatas/text/textarea.php
 %%INSTALLDIR%%/inc/bx/metadatas/text/textfield.php
@@ -851,8 +882,10 @@
 %%INSTALLDIR%%/inc/bx/notifications/mail.php
 %%INSTALLDIR%%/inc/bx/permm.php
 %%INSTALLDIR%%/inc/bx/permm/auth/common.php
+%%INSTALLDIR%%/inc/bx/permm/auth/confluence.php
 %%INSTALLDIR%%/inc/bx/permm/auth/http.php
 %%INSTALLDIR%%/inc/bx/permm/auth/pearauth.php
+%%INSTALLDIR%%/inc/bx/permm/auth/pearcontainer/confluence.php
 %%INSTALLDIR%%/inc/bx/permm/perm/common.php
 %%INSTALLDIR%%/inc/bx/permm/perm/matrix.php
 %%INSTALLDIR%%/inc/bx/permm/perm/simple.php
@@ -869,6 +902,7 @@
 %%INSTALLDIR%%/inc/bx/php/openid/finish_auth.php
 %%INSTALLDIR%%/inc/bx/php/openid/start_auth.php
 %%INSTALLDIR%%/inc/bx/php/preview.php
+%%INSTALLDIR%%/inc/bx/php/rating.php
 %%INSTALLDIR%%/inc/bx/php/setthemecookie.php
 %%INSTALLDIR%%/inc/bx/plugin.php
 %%INSTALLDIR%%/inc/bx/plugins/address.php
@@ -884,6 +918,7 @@
 %%INSTALLDIR%%/inc/bx/plugins/admin/editpopup.php
 %%INSTALLDIR%%/inc/bx/plugins/admin/listview.php
 %%INSTALLDIR%%/inc/bx/plugins/admin/navi.php
+%%INSTALLDIR%%/inc/bx/plugins/admin/openid.php
 %%INSTALLDIR%%/inc/bx/plugins/admin/overview.php
 %%INSTALLDIR%%/inc/bx/plugins/admin/properties.php
 %%INSTALLDIR%%/inc/bx/plugins/admin/siteoptions.php
@@ -894,6 +929,8 @@
 %%INSTALLDIR%%/inc/bx/plugins/basket.php
 %%INSTALLDIR%%/inc/bx/plugins/blog.php
 %%INSTALLDIR%%/inc/bx/plugins/blog/akismet.php
+%%INSTALLDIR%%/inc/bx/plugins/blog/akismet2.php
+%%INSTALLDIR%%/inc/bx/plugins/blog/allposts.php
 %%INSTALLDIR%%/inc/bx/plugins/blog/authorarchive.php
 %%INSTALLDIR%%/inc/bx/plugins/blog/categories.php
 %%INSTALLDIR%%/inc/bx/plugins/blog/comments.php
@@ -909,9 +946,11 @@
 %%INSTALLDIR%%/inc/bx/plugins/blog/preview.xml
 %%INSTALLDIR%%/inc/bx/plugins/blog/preview.xsl
 %%INSTALLDIR%%/inc/bx/plugins/blog/prevnext.php
+%%INSTALLDIR%%/inc/bx/plugins/blog/rating.php
 %%INSTALLDIR%%/inc/bx/plugins/blog/spam.php
 %%INSTALLDIR%%/inc/bx/plugins/blog/tagarchive.php
 %%INSTALLDIR%%/inc/bx/plugins/blog/trackback.php
+%%INSTALLDIR%%/inc/bx/plugins/blogauthors.php
 %%INSTALLDIR%%/inc/bx/plugins/collection.php
 %%INSTALLDIR%%/inc/bx/plugins/comments.php
 %%INSTALLDIR%%/inc/bx/plugins/db2xml.php
@@ -944,6 +983,7 @@
 %%INSTALLDIR%%/inc/bx/plugins/sql2xml.php
 %%INSTALLDIR%%/inc/bx/plugins/structure2xml.php
 %%INSTALLDIR%%/inc/bx/plugins/subcontent.php
+%%INSTALLDIR%%/inc/bx/plugins/tagcloud.php
 %%INSTALLDIR%%/inc/bx/plugins/tree.php
 %%INSTALLDIR%%/inc/bx/plugins/uparamsmenu.php
 %%INSTALLDIR%%/inc/bx/plugins/vote.php
@@ -1094,6 +1134,7 @@
 %%INSTALLDIR%%/inc/patForms/Rule.php
 %%INSTALLDIR%%/inc/patForms/Rule/ConditionalEnum.php
 %%INSTALLDIR%%/inc/patForms/Rule/ConditionalRequired.php
+%%INSTALLDIR%%/inc/patForms/Rule/ConditionalRequiredPreg.php
 %%INSTALLDIR%%/inc/patForms/Rule/Email.php
 %%INSTALLDIR%%/inc/patForms/Rule/EmailEN.php
 %%INSTALLDIR%%/inc/patForms/Rule/Enum.php
@@ -1658,9 +1699,16 @@
 %%INSTALLDIR%%/install/unlock.sh
 %%INSTALLDIR%%/robots.txt
 %%INSTALLDIR%%/structure/bloglinks.xml
+%%INSTALLDIR%%/structure/blogpodcast.xml
 %%INSTALLDIR%%/structure/news.xml
+%%INSTALLDIR%%/structure/projekte.xml
+%%INSTALLDIR%%/structure/projekte.xml~
 %%INSTALLDIR%%/structure/quicklinks.php
+%%INSTALLDIR%%/structure/quicklinks.php~
+%%INSTALLDIR%%/structure/staticpages.xml
+%%INSTALLDIR%%/structure/staticpages.xml~
 %%INSTALLDIR%%/themes/2-cols/aggregator.xsl
+%%INSTALLDIR%%/themes/2-cols/allposts.xsl
 %%INSTALLDIR%%/themes/2-cols/blog.xsl
 %%INSTALLDIR%%/themes/2-cols/blogmicrosummary.xsl
 %%INSTALLDIR%%/themes/2-cols/buttons/bxcms.png
@@ -1697,6 +1745,7 @@
 %%INSTALLDIR%%/themes/2-cols/templates/default.xhtml
 %%INSTALLDIR%%/themes/2-cols/vote.xsl
 %%INSTALLDIR%%/themes/3-cols/aggregator.xsl
+%%INSTALLDIR%%/themes/3-cols/allposts.xsl
 %%INSTALLDIR%%/themes/3-cols/blog.xsl
 %%INSTALLDIR%%/themes/3-cols/blogmicrosummary.xsl
 %%INSTALLDIR%%/themes/3-cols/buttons/bxcms.png
@@ -1777,12 +1826,14 @@
 %%INSTALLDIR%%/themes/standard/admin/listview.xsl
 %%INSTALLDIR%%/themes/standard/admin/login.html
 %%INSTALLDIR%%/themes/standard/admin/navi.xsl
+%%INSTALLDIR%%/themes/standard/admin/openid.xsl
 %%INSTALLDIR%%/themes/standard/admin/overview.xsl
 %%INSTALLDIR%%/themes/standard/admin/plugins/dbforms2.xsl
 %%INSTALLDIR%%/themes/standard/admin/plugins/properties.xsl
 %%INSTALLDIR%%/themes/standard/admin/properties.xsl
 %%INSTALLDIR%%/themes/standard/admin/themes.xsl
 %%INSTALLDIR%%/themes/standard/admin/users.xsl
+%%INSTALLDIR%%/themes/standard/admin/xrds.xsl
 %%INSTALLDIR%%/themes/standard/common.xsl
 %%INSTALLDIR%%/themes/standard/copy.xsl
 %%INSTALLDIR%%/themes/standard/mastercommon.xsl
@@ -2208,6 +2259,7 @@
 %%INSTALLDIR%%/webinc/js/openId.js
 %%INSTALLDIR%%/webinc/js/prototype.js
 %%INSTALLDIR%%/webinc/js/prototype.lite.js
+%%INSTALLDIR%%/webinc/js/rating.js
 %%INSTALLDIR%%/webinc/js/sarissa.js
 %%INSTALLDIR%%/webinc/js/sarissa_dbform.js
 %%INSTALLDIR%%/webinc/js/scriptaculous/builder.js
@@ -2648,6 +2700,7 @@
 @dirrm %%INSTALLDIR%%/inc/bx/php/openid
 @dirrm %%INSTALLDIR%%/inc/bx/php
 @dirrm %%INSTALLDIR%%/inc/bx/permm/perm
+@dirrm %%INSTALLDIR%%/inc/bx/permm/auth/pearcontainer
 @dirrm %%INSTALLDIR%%/inc/bx/permm/auth
 @dirrm %%INSTALLDIR%%/inc/bx/permm
 @dirrm %%INSTALLDIR%%/inc/bx/notifications
@@ -2705,6 +2758,7 @@
 @dirrm %%INSTALLDIR%%/inc/bx/dbreports
 @dirrm %%INSTALLDIR%%/inc/bx/dbforms2/xsl
 @dirrm %%INSTALLDIR%%/inc/bx/dbforms2/nofield
+@dirrm %%INSTALLDIR%%/inc/bx/dbforms2/liveselect
 @dirrm %%INSTALLDIR%%/inc/bx/dbforms2/groups
 @dirrm %%INSTALLDIR%%/inc/bx/dbforms2/fields/text/area
 @dirrm %%INSTALLDIR%%/inc/bx/dbforms2/fields/text
@@ -2735,6 +2789,7 @@
 @dirrm %%INSTALLDIR%%/inc/Text/CAPTCHA/Driver
 @dirrm %%INSTALLDIR%%/inc/Text/CAPTCHA
 @dirrm %%INSTALLDIR%%/inc/Text
+@dirrm %%INSTALLDIR%%/inc/Services/Yadis
 @dirrm %%INSTALLDIR%%/inc/Services
 @dirrm %%INSTALLDIR%%/inc/SQL
 @dirrm %%INSTALLDIR%%/inc/PHPUnit2/Util/CodeCoverage/Renderer
@@ -2772,6 +2827,7 @@
 @dirrm %%INSTALLDIR%%/inc/Cache/Container
 @dirrm %%INSTALLDIR%%/inc/Cache
 @dirrm %%INSTALLDIR%%/inc/Auth/OpenID
+@dirrm %%INSTALLDIR%%/inc/Auth/Frontend
 @dirrm %%INSTALLDIR%%/inc/Auth/Container
 @dirrm %%INSTALLDIR%%/inc/Auth
 @dirrm %%INSTALLDIR%%/inc/Archive
@@ -2844,6 +2900,7 @@
 @dirrm %%INSTALLDIR%%/admin/data/admin/siteoptions
 @dirrm %%INSTALLDIR%%/admin/data/admin/properties
 @dirrm %%INSTALLDIR%%/admin/data/admin/overview
+@dirrm %%INSTALLDIR%%/admin/data/admin/openid
 @dirrm %%INSTALLDIR%%/admin/data/admin/navi/tree
 @dirrm %%INSTALLDIR%%/admin/data/admin/navi
 @dirrm %%INSTALLDIR%%/admin/data/admin/listview
