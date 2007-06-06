@@ -7,7 +7,7 @@
 
 PORTNAME=	gdb
 
-MAINTAINER=	jeh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LCLTARGET=	powerpc-rtems
 CONFIGURE_ARGS=	--verbose --enable-sim --enable-sim-powerpc \

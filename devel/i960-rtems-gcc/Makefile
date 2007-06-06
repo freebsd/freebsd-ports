@@ -7,7 +7,7 @@
 
 PORTNAME=	gcc
 
-MAINTAINER=	jeh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RTEMS_ARCH=	i960
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	gdb
 
-MAINTAINER=	jeh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LCLTARGET=	arm-rtems
 

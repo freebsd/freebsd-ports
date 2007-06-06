@@ -12,7 +12,7 @@ CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://healthd.thehousleys.net/ \
 		http://healthd1.thehousleys.net/
 
-MAINTAINER=	jeh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A daemon to monitor vital motherboard parameters
 
 ONLY_FOR_ARCHS=	i386 amd64
