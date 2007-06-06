@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/mach/auto/HTML/FillInForm/ForceUTF8/.packlist
+%%SITE_PERL%%/HTML/FillInForm/ForceUTF8.pm
+@dirrmtry %%SITE_PERL%%/mach/auto/HTML/FillInForm/ForceUTF8
+@dirrmtry %%SITE_PERL%%/HTML/FillInForm
