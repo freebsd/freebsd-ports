@@ -35,7 +35,7 @@
 +LIBS=	-ltermcap -L${PREFIX}/lib -lcanna
 +BIN=	${PREFIX}/bin
 +CC=	cc
-+CFLAGS+=	-Dbsd -O -I${PREFIX}/include -D_HAVE_PARAM_H -DNO_EXITCODE -DHAVE_OFF_T -D__386BSD__
++CFLAGS+=	-Dbsd -O -I${PREFIX}/include -D_HAVE_PARAM_H -DNO_EXITCODE -DHAVE_OFF_T -D__386BSD__ -DTERMIOS
 +SMALL=
 +LARGE=
 +OF=	-o ""
