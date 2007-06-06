@@ -64,14 +64,17 @@ share/pixmaps/quodlibet.png
 %%DATADIR%%/formats/mp4.py
 %%DATADIR%%/formats/mpc.py
 %%DATADIR%%/formats/remote.py
+%%DATADIR%%/formats/spc.py
 %%DATADIR%%/formats/trueaudio.py
 %%DATADIR%%/formats/wav.py
 %%DATADIR%%/formats/wavpack.py
+%%DATADIR%%/formats/wma.py
 %%DATADIR%%/formats/xiph.py
 %%DATADIR%%/library/__init__.py
 %%DATADIR%%/library/_library.py
 %%DATADIR%%/library/songs.py
 %%DATADIR%%/media-eject.png
+%%DATADIR%%/missing-cover.svg
 %%DATADIR%%/parse/__init__.py
 %%DATADIR%%/parse/_match.py
 %%DATADIR%%/parse/_pattern.py
