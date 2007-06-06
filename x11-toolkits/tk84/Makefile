@@ -7,7 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.4.15
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	x11-toolkits tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -387,9 +387,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		-e 's|$${TCL_TRIM_DOTS}|$${TCL_TRIM_DOTS}${THREADS_SUFFIX}|g' \
 		-e 's|-ltk$${VERSION}|-ltk$${VERSION}${THREADS_SUFFIX}|g' \
-		-e 's/-ltk`echo $${VERSION} | ${TR} -d .`/-ltk`echo $${VERSION} | ${TR} -d .`${THREADS_SUFFIX}/g' \
+		-e 's/-ltk`echo $${VERSION} | tr -d .`/-ltk`echo $${VERSION} | tr -d .`${THREADS_SUFFIX}/g' \
 		-e 's|-ltkstub$${TK_VERSION}|-ltkstub$${TK_VERSION}${THREADS_SUFFIX}|g' \
-		-e 's/-ltkstub`echo $${TK_VERSION} | ${TR} -d .`/-ltkstub`echo $${TK_VERSION} | ${TR} -d .`${THREADS_SUFFIX}/g' \
+		-e 's/-ltkstub`echo $${TK_VERSION} | tr -d .`/-ltkstub`echo $${TK_VERSION} | tr -d .`${THREADS_SUFFIX}/g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|libtk$${SHORT_TK_VER}|libtk$${SHORT_TK_VER}${THREADS_SUFFIX}|g' \
 		-e 's|$$(BIN_INSTALL_DIR)/wish$$(VERSION)|$$(BIN_INSTALL_DIR)/wish$$(VERSION)${THREADS_SUFFIX}|g' \

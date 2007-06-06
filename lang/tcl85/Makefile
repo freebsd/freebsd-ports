@@ -7,7 +7,7 @@
 
 PORTNAME=	tcl
 PORTVERSION=	8.5.a.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
@@ -707,9 +707,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		-e 's|$${TCL_TRIM_DOTS}|$${TCL_TRIM_DOTS}${THREADS_SUFFIX}|g' \
 		-e 's|-ltcl$${TCL_VERSION}|-ltcl$${TCL_VERSION}${THREADS_SUFFIX}|g' \
-		-e 's/-ltcl`echo $${TCL_VERSION} | ${TR} -d .`/-ltcl`echo $${TCL_VERSION} | ${TR} -d .`${THREADS_SUFFIX}/g' \
+		-e 's/-ltcl`echo $${TCL_VERSION} | tr -d .`/-ltcl`echo $${TCL_VERSION} | tr -d .`${THREADS_SUFFIX}/g' \
 		-e 's|-ltclstub$${TCL_VERSION}|-ltclstub$${TCL_VERSION}${THREADS_SUFFIX}|g' \
-		-e 's/-ltclstub`echo $${TCL_VERSION} | ${TR} -d .`/-ltclstub`echo $${TCL_VERSION} | ${TR} -d .`${THREADS_SUFFIX}/g' \
+		-e 's/-ltclstub`echo $${TCL_VERSION} | tr -d .`/-ltclstub`echo $${TCL_VERSION} | tr -d .`${THREADS_SUFFIX}/g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|libtcl$${SHORT_TCL_VER}|libtcl$${SHORT_TCL_VER}${THREADS_SUFFIX}|g' \
 		-e 's|$$(BIN_INSTALL_DIR)/tclsh$$(VERSION)|$$(BIN_INSTALL_DIR)/tclsh$$(VERSION)${THREADS_SUFFIX}|g' \
