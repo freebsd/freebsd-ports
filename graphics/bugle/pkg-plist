@@ -23,9 +23,9 @@ lib/bugle/validate.so
 lib/libbugle.a
 lib/libbugle.la
 lib/libbugle.so
-lib/libbugle.so.1
+lib/libbugle.so.2
 lib/libbugleutils.a
 lib/libbugleutils.la
 lib/libbugleutils.so
-lib/libbugleutils.so.1
+lib/libbugleutils.so.2
 @dirrm lib/bugle
