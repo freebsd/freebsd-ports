@@ -7,6 +7,7 @@
 
 PORTNAME=	subclipse
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://subclipse.tigris.org/files/documents/906/37653/
 DISTNAME=	site-${PORTVERSION}
@@ -15,7 +16,7 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	A subversion plugin for the Eclipse IDE Framework
 
-#RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
+RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 FETCH_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
 CONFLICTS=	phpeclipse-[0-9]*
