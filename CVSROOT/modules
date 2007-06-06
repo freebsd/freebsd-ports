@@ -5980,6 +5980,7 @@ konwert		ports/converters/konwert
 kooka		ports/graphics/kooka
 kooldock	ports/deskutils/kooldock
 kopete		ports/net-im/kopete
+kopete-otr	ports/security/kopete-otr
 koth		ports/games/koth
 kover		ports/print/kover
 kovpn		ports/security/kovpn
