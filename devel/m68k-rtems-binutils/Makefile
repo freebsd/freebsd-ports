@@ -7,7 +7,7 @@
 
 PORTNAME=	binutils
 
-MAINTAINER=	jeh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LCLTARGET=	m68k-rtems
 

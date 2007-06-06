@@ -7,7 +7,7 @@
 
 PORTNAME=	g77
 
-MAINTAINER=	jeh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LCLTARGET=	powerpc-rtems
 

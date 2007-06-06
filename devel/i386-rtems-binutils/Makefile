@@ -15,7 +15,7 @@ PATCHFILES=	${BINNAME}-rtems-20050816.diff
 PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/SOURCES/ \
 		http://rtems.thehousleys.net/
 
-MAINTAINER=	jeh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FSF binutils-2.16.1 base-port for RTEMS development
 
 LCLTARGET?=	i386-rtems

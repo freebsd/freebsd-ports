@@ -11,7 +11,7 @@ PORTREVISION=	11
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rtems.com/ftp/pub/rtems/snapshots/c_tools/gdb-5.2-1/source/
 
-MAINTAINER=	jeh@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FSF gdb-5.2 base-port for RTEMS development
 
 PATCHFILES=	${GDBNAME}-rtems-base-20020612.diff \
