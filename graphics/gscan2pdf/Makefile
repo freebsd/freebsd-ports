@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gscan2pdf
-PORTVERSION=	0.9.9
-PORTREVISION=	1
+PORTVERSION=	0.9.10
 CATEGORIES=	graphics
 MASTER_SITES=	SFE
 
@@ -19,12 +18,13 @@ RUN_DEPENDS=	p5-PDF-API2>=0.57:${PORTSDIR}/textproc/p5-PDF-API2 \
 		scanadf:${PORTSDIR}/graphics/sane-frontends \
 		cjb2:${PORTSDIR}/graphics/djvulibre \
 		unpaper:${PORTSDIR}/graphics/unpaper \
+		rsvg-2.2:${PORTSDIR}/graphics/librsvg2 \
 		p5-Gtk2>=1.112:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Gtk2-Ex-PodViewer>=0.17:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-PodViewer \
 		p5-Gtk2-Ex-Simple-List>=0.50:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-Simple-List \
+		gocr:${PORTSDIR}/graphics/gocr \
 		p5-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext
-#		gocr:${PORTSDIR}/graphics/gocr \
-#		xdg-email:${PORTSDIR}/devel/xdg-utils \
+#		xdg-email:${PORTSDIR}/devel/xdg-utils
 
 USE_PERL5=	yes
 USE_GETTEXT=	yes
