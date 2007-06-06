@@ -2088,6 +2088,7 @@
     SUBDIR += shmap
     SUBDIR += showgrammar
     SUBDIR += shtool
+    SUBDIR += sid
     SUBDIR += sigslot
     SUBDIR += silc-toolkit
     SUBDIR += simgear
