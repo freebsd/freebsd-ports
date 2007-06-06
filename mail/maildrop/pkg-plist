@@ -4,6 +4,8 @@ bin/lockmail
 bin/mailbot
 bin/maildirmake
 bin/maildrop
+bin/makedat
+bin/makedatprog
 bin/makemime
 bin/reformail
 bin/reformime
@@ -33,6 +35,7 @@ etc/quotawarnmsg.sample
 %%PORTDOCS%%%%DOCSDIR%%/maildropfilter.html
 %%PORTDOCS%%%%DOCSDIR%%/maildropgdbm.html
 %%PORTDOCS%%%%DOCSDIR%%/maildroptips.txt
+%%PORTDOCS%%%%DOCSDIR%%/makedat.html
 %%PORTDOCS%%%%DOCSDIR%%/makemime.html
 %%PORTDOCS%%%%DOCSDIR%%/manpage.css
 %%PORTDOCS%%%%DOCSDIR%%/reformail.html

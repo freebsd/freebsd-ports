@@ -17,7 +17,7 @@
 #			to use
 
 PORTNAME=	maildrop
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -55,7 +55,7 @@ USE_GMAKE	=yes
 LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=	--with-db=gdbm
 .else
-CONFIGURE_ARGS+=	--without-db
+CONFIGURE_ARGS+=	--with-db=db
 .endif
 
 .if defined(MAILDROP_SUID)
@@ -72,7 +72,6 @@ CONFIGURE_ARGS+=	--enable-sendmail=/usr/sbin/sendmail
 
 .if defined(WITH_FAM) || exists(${LOCALBASE}/lib/libfam.so.0)
 USE_FAM=	yes
-WANT_FAM_SYSTEM=	fam
 .endif
 
 .if defined(MAILDROP_TRUSTED_USERS)
