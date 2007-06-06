@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.gna.org/muse-el/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	An authoring and publishing environment for Emacs
 
 USE_EMACS=	yes
