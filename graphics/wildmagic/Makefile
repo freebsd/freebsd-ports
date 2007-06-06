@@ -57,6 +57,12 @@ CONFIG=		Release
 #CFLAGS+=	-DNDEBUG
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 700042
+BROKEN=		Broken with gcc 4.2
+.endif
+
 pre-configure:
 	${FIND} ${WRKSRC} -name "*.wm${MV}" | ${XARGS}	\
 	${REINPLACE_CMD} -e 's|make -f|${SETENV} ${MAKE_ENV} ${GMAKE} -f|;	\
@@ -96,4 +102,4 @@ do-install:
 	${FIND} ${EXAMPLESDIR} -name "*.bak" -delete
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
