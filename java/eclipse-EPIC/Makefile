@@ -7,6 +7,7 @@
 
 PORTNAME=	EPIC
 PORTVERSION=	0.5.33
+PORTREVISION=	1
 CATEGORIES=	java editors devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	e-p-i-c
@@ -16,7 +17,7 @@ DISTNAME=	${EPIC}_${PORTVERSION}_20070406
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	EPIC adds Perl support to the Eclipse IDE Framework
 
-#RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
+RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 NO_BUILD=	yes
 USE_ZIP=	yes
