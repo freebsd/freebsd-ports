@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	quodlibet
-PORTVERSION=	0.24
-PORTREVISION=	4
+PORTVERSION=	1.0
 CATEGORIES=	multimedia audio python gnome
 MASTER_SITES=	http://www.sacredchao.net/~piman/software/ \
 		http://www.tortall.net/mirrors/piman-software/
@@ -32,6 +31,7 @@ OPTIONS+=	MP3 "MP3 audio support" on
 OPTIONS+=	MPEG4IP "AAC/mp4 support with MPEG4IP" on
 OPTIONS+=	MUSEPACK "Musepack (MPC, musicpd, libmpcdec) support" on
 OPTIONS+=	OGG "OGG multimedia container support" on
+OPTIONS+=	SPC "SPC (SNES ROM audio) support" on
 OPTIONS+=	SPEEX "OGG/Speex audio support" on
 OPTIONS+=	VORBIS "OGG/Vorbis audio support" on
 OPTIONS+=	WAVPACK "Wavpack support" on
@@ -47,6 +47,10 @@ USE_GSTREAMER+=	ogg
 
 .if !defined(WITHOUT_VORBIS)
 USE_GSTREAMER+=	vorbis
+.endif
+
+.if !defined(WITHOUT_SPC)
+USE_GSTREAMER+=	spc
 .endif
 
 .if !defined(WITHOUT_SPEEX)
