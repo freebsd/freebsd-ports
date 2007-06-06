@@ -2168,6 +2168,7 @@ dvbcut		ports/multimedia/dvbcut
 dvd+rw-tools	ports/sysutils/dvd+rw-tools
 dvd-slideshow	ports/multimedia/dvd-slideshow
 dvdauthor	ports/multimedia/dvdauthor
+dvdauthorwizard	ports/multimedia/dvdauthorwizard
 dvdbackup	ports/sysutils/dvdbackup
 dvdimagecmp	ports/sysutils/dvdimagecmp
 dvdisaster	ports/sysutils/dvdisaster
