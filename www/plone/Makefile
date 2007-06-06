@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	plone
-PORTVERSION=	2.5.2
-PORTREVISION=	1
+PORTVERSION=	2.5.3
 CATEGORIES=	www zope
 MASTER_SITES=	http://plone.googlecode.com/files/:src
-DISTFILES=	Plone-${PORTVERSION}-1.tar.gz:src
+DISTFILES=	Plone-${PORTVERSION}-final.tar.gz:src
 DIST_SUBDIR=	zope
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,7 +17,7 @@ COMMENT=	A user friendly implementation of the CMF written on top of ZOPE
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 
-WRKSRC=	${WRKDIR}/Plone-${PORTVERSION}-1
+WRKSRC=	${WRKDIR}/Plone-${PORTVERSION}-final
 USE_ZOPE=	yes
 ZOPE_VERSION=	2.9
 USE_PYTHON=	2.4
