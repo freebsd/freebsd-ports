@@ -42,24 +42,36 @@ lib/gauche/%%VERSION%%/%%TARGET%%/vport.so
 lib/gauche/%%VERSION%%/include/gauche.h
 lib/gauche/%%VERSION%%/include/gauche/arch.h
 lib/gauche/%%VERSION%%/include/gauche/bignum.h
+lib/gauche/%%VERSION%%/include/gauche/bits.h
 lib/gauche/%%VERSION%%/include/gauche/builtin-syms.h
 lib/gauche/%%VERSION%%/include/gauche/char_euc_jp.h
 lib/gauche/%%VERSION%%/include/gauche/char_none.h
 lib/gauche/%%VERSION%%/include/gauche/char_sjis.h
 lib/gauche/%%VERSION%%/include/gauche/char_utf_8.h
+lib/gauche/%%VERSION%%/include/gauche/charset.h
 lib/gauche/%%VERSION%%/include/gauche/class.h
 lib/gauche/%%VERSION%%/include/gauche/code.h
+lib/gauche/%%VERSION%%/include/gauche/collection.h
 lib/gauche/%%VERSION%%/include/gauche/config.h
 lib/gauche/%%VERSION%%/include/gauche/exception.h
 lib/gauche/%%VERSION%%/include/gauche/extend.h
+lib/gauche/%%VERSION%%/include/gauche/float.h
+lib/gauche/%%VERSION%%/include/gauche/gloc.h
+lib/gauche/%%VERSION%%/include/gauche/hash.h
 lib/gauche/%%VERSION%%/include/gauche/int64.h
+lib/gauche/%%VERSION%%/include/gauche/keyword.h
+lib/gauche/%%VERSION%%/include/gauche/load.h
 lib/gauche/%%VERSION%%/include/gauche/mingw-compat.h
 lib/gauche/%%VERSION%%/include/gauche/net.h
 lib/gauche/%%VERSION%%/include/gauche/number.h
+lib/gauche/%%VERSION%%/include/gauche/parameter.h
 lib/gauche/%%VERSION%%/include/gauche/port.h
 lib/gauche/%%VERSION%%/include/gauche/pthread.h
 lib/gauche/%%VERSION%%/include/gauche/scmconst.h
+lib/gauche/%%VERSION%%/include/gauche/string.h
+lib/gauche/%%VERSION%%/include/gauche/symbol.h
 lib/gauche/%%VERSION%%/include/gauche/system.h
+lib/gauche/%%VERSION%%/include/gauche/treemap.h
 lib/gauche/%%VERSION%%/include/gauche/uthread.h
 lib/gauche/%%VERSION%%/include/gauche/uvector.h
 lib/gauche/%%VERSION%%/include/gauche/vector.h
@@ -73,16 +85,13 @@ lib/libgauche.so
 lib/libgauche.so.%%VERSION%%
 lib/libgauche.so.0
 share/aclocal/gauche.m4
-share/gauche/%%VERSION%%/lib/compat/norational.scm
-share/gauche/%%VERSION%%/lib/sxml/serializer.scm
-share/gauche/%%VERSION%%/lib/util/rbtree.scm
-share/gauche/%%VERSION%%/lib/util/trie.scm
 %%DATADIR%%/%%VERSION%%/aclocal.m4
 %%DATADIR%%/%%VERSION%%/lib/.packages/.keepme
 %%DATADIR%%/%%VERSION%%/lib/binary/io.scm
 %%DATADIR%%/%%VERSION%%/lib/binary/pack.scm
 %%DATADIR%%/%%VERSION%%/lib/cesconv
 %%DATADIR%%/%%VERSION%%/lib/compat/jfilter.scm
+%%DATADIR%%/%%VERSION%%/lib/compat/norational.scm
 %%DATADIR%%/%%VERSION%%/lib/compat/stk.scm
 %%DATADIR%%/%%VERSION%%/lib/dbd/null.scm
 %%DATADIR%%/%%VERSION%%/lib/dbi.scm
@@ -101,6 +110,7 @@ share/gauche/%%VERSION%%/lib/util/trie.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/condutil.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/config.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/defvalues.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/dictionary.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/fcntl.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/fileutil.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/hashutil.scm
@@ -148,6 +158,7 @@ share/gauche/%%VERSION%%/lib/util/trie.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/test.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/threads.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/time.scm
+%%DATADIR%%/%%VERSION%%/lib/gauche/treeutil.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/uvector.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/validator.scm
 %%DATADIR%%/%%VERSION%%/lib/gauche/version.scm
@@ -161,8 +172,11 @@ share/gauche/%%VERSION%%/lib/util/trie.scm
 %%DATADIR%%/%%VERSION%%/lib/rfc/822.scm
 %%DATADIR%%/%%VERSION%%/lib/rfc/base64.scm
 %%DATADIR%%/%%VERSION%%/lib/rfc/cookie.scm
+%%DATADIR%%/%%VERSION%%/lib/rfc/ftp.scm
 %%DATADIR%%/%%VERSION%%/lib/rfc/hmac.scm
 %%DATADIR%%/%%VERSION%%/lib/rfc/http.scm
+%%DATADIR%%/%%VERSION%%/lib/rfc/icmp.scm
+%%DATADIR%%/%%VERSION%%/lib/rfc/ip.scm
 %%DATADIR%%/%%VERSION%%/lib/rfc/md5.scm
 %%DATADIR%%/%%VERSION%%/lib/rfc/mime.scm
 %%DATADIR%%/%%VERSION%%/lib/rfc/quoted-printable.scm
@@ -192,6 +206,7 @@ share/gauche/%%VERSION%%/lib/util/trie.scm
 %%DATADIR%%/%%VERSION%%/lib/srfi-7.scm
 %%DATADIR%%/%%VERSION%%/lib/srfi-9.scm
 %%DATADIR%%/%%VERSION%%/lib/sxml/adaptor.scm
+%%DATADIR%%/%%VERSION%%/lib/sxml/serializer.scm
 %%DATADIR%%/%%VERSION%%/lib/sxml/ssax.scm
 %%DATADIR%%/%%VERSION%%/lib/sxml/sxpath.scm
 %%DATADIR%%/%%VERSION%%/lib/sxml/to-html.scm
@@ -203,6 +218,7 @@ share/gauche/%%VERSION%%/lib/util/trie.scm
 %%DATADIR%%/%%VERSION%%/lib/text/html-lite.scm
 %%DATADIR%%/%%VERSION%%/lib/text/info.scm
 %%DATADIR%%/%%VERSION%%/lib/text/parse.scm
+%%DATADIR%%/%%VERSION%%/lib/text/progress.scm
 %%DATADIR%%/%%VERSION%%/lib/text/sql.scm
 %%DATADIR%%/%%VERSION%%/lib/text/tr.scm
 %%DATADIR%%/%%VERSION%%/lib/text/tree.scm
@@ -213,13 +229,16 @@ share/gauche/%%VERSION%%/lib/util/trie.scm
 %%DATADIR%%/%%VERSION%%/lib/util/list.scm
 %%DATADIR%%/%%VERSION%%/lib/util/match.scm
 %%DATADIR%%/%%VERSION%%/lib/util/queue.scm
+%%DATADIR%%/%%VERSION%%/lib/util/rbtree.scm
 %%DATADIR%%/%%VERSION%%/lib/util/record.scm
 %%DATADIR%%/%%VERSION%%/lib/util/relation.scm
 %%DATADIR%%/%%VERSION%%/lib/util/stream.scm
 %%DATADIR%%/%%VERSION%%/lib/util/toposort.scm
 %%DATADIR%%/%%VERSION%%/lib/util/tree.scm
+%%DATADIR%%/%%VERSION%%/lib/util/trie.scm
 %%DATADIR%%/%%VERSION%%/lib/www/cgi-test.scm
 %%DATADIR%%/%%VERSION%%/lib/www/cgi.scm
+%%DATADIR%%/%%VERSION%%/lib/www/cgi/test.scm
 %%DATADIR%%/%%VERSION%%/template.DIST
 %%DATADIR%%/%%VERSION%%/template.Makefile.in
 %%DATADIR%%/%%VERSION%%/template.configure.ac
@@ -232,6 +251,7 @@ share/gauche/%%VERSION%%/lib/util/trie.scm
 @dirrm %%DATADIR%%/site/lib/.packages
 @dirrm %%DATADIR%%/site/lib
 @dirrm %%DATADIR%%/site
+@dirrm %%DATADIR%%/%%VERSION%%/lib/www/cgi
 @dirrm %%DATADIR%%/%%VERSION%%/lib/www
 @dirrm %%DATADIR%%/%%VERSION%%/lib/util
 @dirrm %%DATADIR%%/%%VERSION%%/lib/text
