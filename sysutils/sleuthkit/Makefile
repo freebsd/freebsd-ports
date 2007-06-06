@@ -7,6 +7,7 @@
 
 PORTNAME=	sleuthkit
 PORTVERSION=	2.08
+PORTREVISION=	1
 CATEGORIES=	sysutils security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +16,8 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	The @stake Sleuth Kit for forensic analysis
 
 CONFLICTS=	ja-ls-[0-9]*
+
+RUN_DEPENDS=	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip
 
 USE_PERL5=	yes
 
@@ -43,6 +46,8 @@ post-patch:
 		${WRKSRC}/src/hashtools/Makefile ${WRKSRC}/src/imgtools/Makefile \
 		${WRKSRC}/src/auxtools/Makefile ${WRKSRC}/src/mmtools/Makefile \
 		${WRKSRC}/src/srchtools/Makefile
+	@${REINPLACE_CMD} -e 's/$${BIN_DIR}file/\/usr\/bin\/file/' \
+		${WRKSRC}/src/sorter/sorter.base
 
 do-install:
 .if !defined(NOPORTDOCS)
