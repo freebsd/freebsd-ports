@@ -14343,6 +14343,7 @@ shuffle-db	ports/misc/shuffle-db
 shujit		ports/java/shujit
 sic		ports/irc/sic
 siconv		ports/converters/siconv
+sid		ports/devel/sid
 sid-milter	ports/mail/sid-milter
 sidplay		ports/audio/sidplay
 sidplay2	ports/audio/sidplay2
