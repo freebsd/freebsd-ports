@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Charset/.packlist
+%%SITE_PERL%%/MIME/Charset-ja_JP.pod
+%%SITE_PERL%%/MIME/Charset.pm
+%%SITE_PERL%%/MIME/Charset/_Compat.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Charset
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME
+@dirrm %%SITE_PERL%%/MIME/Charset
+@dirrmtry %%SITE_PERL%%/MIME
