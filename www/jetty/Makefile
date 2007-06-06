@@ -7,7 +7,7 @@
 
 PORTNAME=	jetty
 DISTVERSION=	6.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,6 +22,8 @@ JAVA_VERSION=	1.4+
 USE_PYTHON=	1.6+
 PLIST=			${WRKDIR}/pkg-plist
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+USE_RC_SUBR=	jetty
 
 APP_NAME=	${PORTNAME}
 APP_HOME=	${PREFIX}/${PORTNAME}
@@ -85,9 +87,6 @@ do-install:
 
 	@${ECHO_MSG} "===>    Installing into ${PREFIX}/sbin"
 	@${INSTALL_SCRIPT} ${WRKDIR}/${APP_NAME}ctl ${PREFIX}/sbin
-
-	@${ECHO_MSG} "===>    Installing ${PREFIX}/etc/rc.d/${APP_NAME}"
-	@${INSTALL_SCRIPT} ${WRKDIR}/${APP_NAME} ${PREFIX}/etc/rc.d
 
 post-install:
 	@${ECHO_CMD}
