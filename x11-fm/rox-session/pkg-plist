@@ -53,6 +53,9 @@ apps/ROX-Session/children.pyo
 apps/ROX-Session/constants.py
 apps/ROX-Session/constants.pyc
 apps/ROX-Session/constants.pyo
+apps/ROX-Session/env_helper.py
+apps/ROX-Session/env_helper.pyc
+apps/ROX-Session/env_helper.pyo
 apps/ROX-Session/findrox.py
 apps/ROX-Session/findrox.pyc
 apps/ROX-Session/findrox.pyo
