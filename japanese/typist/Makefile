@@ -9,8 +9,8 @@ PORTNAME=	typist
 PORTVERSION=	2.0
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://tuba.csedu.kobe-u.ac.jp/pub/UNIX/
-EXTRACT_SUFX=	.src.tar.gz
 DISTNAME=	${PORTNAME}${PORTVERSION}
+EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Typing lessons (Japanese version)
