@@ -255,4 +255,3 @@ lib/X11/locale/compose.dir
 @dirrm lib/X11/locale/C
 @dirrm lib/X11/locale/armscii-8
 @dirrm lib/X11/locale
-@dirrm lib/X11
