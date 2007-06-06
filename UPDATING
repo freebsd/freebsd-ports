@@ -128,8 +128,6 @@ upgrades.
   portupgrade-devel:
 
   # portupgrade -f -o ports-mgmt/portupgrade-devel portupgrade
-  # rm -f /usr/ports/INDEX*.db /var/db/pkg/pkgdb.db
-  # pkgdb -fu
 
   If you have changed your ports environment in /etc/make.conf,
   /usr/local/etc/pkgtools.conf or similar you need to rebuild INDEX:
@@ -217,8 +215,9 @@ upgrades.
   change ModulePath to /usr/local/lib/xorg/modules prior to running X.
 
   If you run into problems running the new X server, try moving aside
-  your /etc/X11/xorg.conf and allow X to auto-create it (this will
-  happen automatically when launching the X server).
+  your /etc/X11/xorg.conf and allow X to run with default valuse. After
+  that you can see the default values in a log file (e.g. /var/log/Xorg.0.log)
+  and fix your xorg.conf according to the defaults.
 
   IF YOU RUN INTO PROBLEMS:
 
