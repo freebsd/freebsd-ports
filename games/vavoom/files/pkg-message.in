@@ -9,4 +9,9 @@ additional IWAD files in "%%DMDIR%%".
 
 The real executables (and utils) are in "%%PREFIX%%/libexec/vavoom".
 
+To run in OpenGL mode add the "-opengl" parameter.
+
+If you want to install additional textures, models, editing tools or
+soundtracks (needs VORBIS option) use the "games/vavoom-extras" port.
+
 ==============================================================================

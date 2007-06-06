@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	vavoom
-PORTVERSION=	1.23
-PORTREVISION=	1
+PORTVERSION=	1.23.1
 CATEGORIES=	games
 MASTER_SITES=	SF
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Doom, Doom II, Heretic, Hexen and Strife source port
@@ -23,15 +20,13 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 OPTIONS=	ALLEGRO "Use Allegro for hardware API" off \
-		DEVEL "Install development tools (Doom/Vavoom)" off \
+		EDITING "Install Doom and Vavoom editing tools" off \
 		FLAC "Enable FLAC support" off \
 		LIBMAD "Enable MP3 support" off \
 		MIKMOD "Enable MikMod support" off \
-		MODELS "Install 3D models for supported games" off \
 		OPENAL "Enable OpenAL support" off \
 		OPENGL "Enable OpenGL support" on \
 		OPTIMIZED_CFLAGS "Enable compilation optimizations" off \
@@ -41,7 +36,6 @@ OPTIONS=	ALLEGRO "Use Allegro for hardware API" off \
 SUB_FILES=	${PORTNAME} pkg-message
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/games/doom-data/Makefile.include"
 
 # The `-fno-strict-aliasing' flag (default on FreeBSD 6.0+) produces
 # non-working code for `vcc', so we remove it here if present.
@@ -64,10 +58,10 @@ CONFIGURE_ARGS+=--with-allegro
 CONFIGURE_ARGS+=--without-allegro
 .endif
 
-.if defined(WITH_DEVEL)
-PLIST_SUB+=	DEVEL=""
+.if defined(WITH_EDITING)
+PLIST_SUB+=	EDITING=""
 .else
-PLIST_SUB+=	DEVEL="@comment "
+PLIST_SUB+=	EDITING="@comment "
 .endif
 
 .if defined(WITH_FLAC)
@@ -89,16 +83,6 @@ LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
 CONFIGURE_ARGS+=--with-mikmod
 .else
 CONFIGURE_ARGS+=--without-mikmod
-.endif
-
-.if defined(WITH_MODELS)
-EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
-.for f in doom heretic hexen strife
-DISTFILES+=	vmdl_${f}_13.zip
-.endfor
-PLIST_SUB+=	MODELS=""
-.else
-PLIST_SUB+=	MODELS="@comment "
 .endif
 
 .if defined(WITH_OPENAL)
@@ -128,38 +112,29 @@ CONFIGURE_ARGS+=--without-vorbis
 
 .if defined(WITH_SDL)
 USE_SDL=	mixer sdl
-CONFIGURE_ARGS+=--with-sdl --with-sdl-config=${SDL_CONFIG}
+CONFIGURE_ARGS+=--with-sdl
 .else
 CONFIGURE_ARGS+=--without-sdl
 .endif
 
-.if defined(WITH_MODELS)
-post-extract:
-.for f in doom heretic hexen strife
-	@${UNZIP_CMD} -aqo ${DISTDIR}/vmdl_${f}_13.zip -d ${WRKDIR}
-.endfor
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|SDL/||g' ${WRKSRC}/source/s_sdl.cpp
 	@${REINPLACE_CMD} -e 's|\.$$host_cpu||' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@cd ${WRKSRC} && ${SH} fixunix.sh
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-.if defined(WITH_DEVEL)
+.if defined(WITH_EDITING)
 	${INSTALL_PROGRAM} ${WRKSRC}/utils/bin/* ${PREFIX}/libexec/${PORTNAME}
-	${CP} -r ${WRKSRC}/utils/editing ${WRKSRC}/progs ${DATADIR}
+. for f in utils/editing progs
+	${CP} -r ${WRKSRC}/${f} ${DATADIR}
+	@${FIND} ${DATADIR}/${f:T} -type d -print0 | \
+		${XARGS} -0 ${CHMOD} ${BINMODE}
+	@${FIND} ${DATADIR}/${f:T} -type f -print0 | \
+		${XARGS} -0 ${CHMOD} ${SHAREMODE}
+. endfor
 	@${FIND} ${DATADIR}/progs -type f -name "Makefile*" -print0 | \
 		${XARGS} -0 ${REINPLACE_CMD} -i '' -Ee 's|^(VCC =).*|\1 vcc|'
-.endif
-.if defined(WITH_MODELS)
-	${CP} -r ${WRKDIR}/basev ${DATADIR}
-.endif
-.if defined(WITH_DEVEL) || defined(WITH_MODELS)
-	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} ${BINMODE}
-	@${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -168,5 +143,7 @@ post-install:
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
+
+.include "${PORTSDIR}/games/doom-data/Makefile.include"
 
 .include <bsd.port.post.mk>
