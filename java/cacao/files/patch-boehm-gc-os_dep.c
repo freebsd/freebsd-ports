@@ -1,5 +1,5 @@
 --- src/boehm-gc/os_dep.c.orig	Thu May 19 20:48:49 2005
-+++ src/boehm-gc/os_dep.c	Fri Jun 17 21:28:07 2005
++++ src/mm/boehm-gc/os_dep.c	Fri Jun 17 21:28:07 2005
 @@ -699,7 +699,7 @@
      || defined(HURD) || defined(NETBSD)
  	static struct sigaction old_segv_act;

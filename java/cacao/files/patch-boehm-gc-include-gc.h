@@ -1,5 +1,5 @@
 --- src/boehm-gc/include/gc.h.orig	Wed Jun  4 17:07:33 2003
-+++ src/boehm-gc/include/gc.h	Wed May 12 20:03:22 2004
++++ src/mm/boehm-gc/include/gc.h	Wed May 12 20:03:22 2004
 @@ -487,6 +487,7 @@
      /* gcc knows how to retrieve return address, but we don't know */
      /* how to generate call stacks.				   */

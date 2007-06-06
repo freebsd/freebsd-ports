@@ -1,5 +1,5 @@
 --- src/boehm-gc/dbg_mlc.c.orig	Tue May 13 16:59:49 2003
-+++ src/boehm-gc/dbg_mlc.c	Wed May 12 20:13:19 2004
++++ src/mm/boehm-gc/dbg_mlc.c	Wed May 12 20:13:19 2004
 @@ -414,6 +414,23 @@
      GC_register_displacement((word)sizeof(oh) + offset);
  }

@@ -1,5 +1,5 @@
 --- src/boehm-gc/dyn_load.c.orig	Thu May  6 08:03:06 2004
-+++ src/boehm-gc/dyn_load.c	Sun Oct 31 01:53:01 2004
++++ src/mm/boehm-gc/dyn_load.c	Sun Oct 31 01:53:01 2004
 @@ -97,6 +97,12 @@
  #      else
  #        define ElfW(type) Elf64_##type

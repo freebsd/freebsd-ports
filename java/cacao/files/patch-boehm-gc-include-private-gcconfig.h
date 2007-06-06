@@ -1,5 +1,5 @@
 --- src/boehm-gc/include/private/gcconfig.h.rorig	Sat Oct 15 16:40:25 2005
-+++ src/boehm-gc/include/private/gcconfig.h	Sat Oct 15 16:42:43 2005
++++ src/mm/boehm-gc/include/private/gcconfig.h	Sat Oct 15 16:42:43 2005
 @@ -62,7 +62,7 @@
  /* Determine the machine type: */
  # if defined(__arm__) || defined(__thumb__)
