@@ -1,17 +1,21 @@
-Tarpits like spamd are fake SMTP servers, which accept connections but don't
-deliver mail. Instead, they keep the connections open and reply very slowly.
-If the peer is patient enough to actually complete the SMTP dialogue (which
-will take ten minutes or more), the tarpit returns a 'temporary error' code
-(4xx), which indicates that the mail could not be delivered successfully and
-that the sender should keep the mail in his queue and retry again later. If
-he does, the same procedure repeats. Until, after several attempts, wasting
-both his queue space and socket handles for several days, he gives up. The
-resources I have to waste to do this are minimal.
+Spamd is a fake sendmail(8)-like daemon which rejects false mail. It is 
+designed to be very efficient so that it does not slow down the receiving
+machine.
 
-If the sender is badly configured, an uncooperative recipient might actually
-delay his entire queue handling for several minutes each time he connects to
-the tarpit. And many spammers use badly configured open relays
+spamd considers sending hosts to be of three types:
 
-WWW: http://www.OpenBSD.org/spamd/
+ blacklisted hosts are redirected to spamd and tarpitted i.e. they are 
+ communicated with very slowly to consume the sender's resources. Mail is
+ rejected with either a 450 or 550 error message. A blacklisted host will not
+ be allowed to talk to a real mail server.
+
+ whitelisted hosts do not talk to spamd. Their connections are instead sent to
+ a real mail server, such as sendmail(8).
+
+ greylisted hosts are redirected to spamd, but spamd has not yet decided if
+ they are likely spammers. They are given a temporary failure message by spamd
+ when they try to deliver mail.
+
+WWW: http://freebsdspamd.berlios.de/
 
 -Max <max@love2party.net>

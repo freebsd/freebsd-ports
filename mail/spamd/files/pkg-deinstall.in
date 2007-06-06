@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+#
+
+SPAMDDIR=%%SPAMDDIR%%
+SPAMDUSER=%%SPAMDUSER%%
+SPAMDGROUP=%%SPAMDGROUP%%
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+  if /usr/sbin/pw group show "${SPAMDGROUP}" 2>&1 >/dev/null; then
+    echo "You should manually remove the \"${SPAMDGROUP}\" group."
+  fi
+
+  if /usr/sbin/pw user show "${SPAMDUSER}" 2>&1 >/dev/null; then
+    echo "You should manually remove the \"${SPAMDUSER}\" user."
+  fi
+
+  if [ -e "${SPAMDDIR}" ]; then
+    echo "You should manually remove the \"${SPAMDDIR}\" directory."
+  fi
+fi

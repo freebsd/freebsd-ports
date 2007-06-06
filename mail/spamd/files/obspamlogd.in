@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: obspamlogd
+# REQUIRE: NETWORKING SERVERS obspamd
+# BEFORE:  DAEMON
+# KEYWORD: shutdown
+
+#
+# Define these obspamlogd_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#
+# obspamlogd_enable="YES"	# Run the spamlogd(8) daemon (YES/NO).
+# obspamlogd_flags=""		# Extra flags for spamlogd(8) (if enabled).
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+obspamlogd_enable=${obspamlogd_enable:-"NO"}
+obspamlogd_flags=${obspamlogd_flags:-""}
+
+. %%RC_SUBR%%
+
+name="obspamlogd"
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/libexec/spamlogd"
+start_precmd="${name}_precmd"
+
+obspamlogd_precmd()
+{
+	_rc=0
+	/sbin/mount -p | grep 'fdescfs.*/dev/fd.*fdescfs.*rw' 2>&1 > /dev/null
+	_rc=${?}
+	if [ ${_rc} -ne 0 ]; then
+		echo "Unable to start ${name}"
+		echo ""
+		echo "Please mount fdescfs with the following line in /etc/fstab"
+		echo ""
+		echo "  fdescfs /dev/fd fdescfs rw 0 0"
+		echo ""
+	fi
+	return ${_rc}
+}
+
+load_rc_config $name
+run_rc_command "$1"
