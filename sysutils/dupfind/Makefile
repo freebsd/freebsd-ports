@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dupfind
-PORTVERSION=	2.0
+PORTVERSION=	3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.heitec.net/pub/distfiles/
 
@@ -18,10 +18,5 @@ LIB_DEPENDS=	fcrc.1:${PORTSDIR}/devel/fastcrc
 MAN1=		dupfind.1
 
 PLIST_FILES=	bin/dupfind
-.include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"no ftw.h header file on 4.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
