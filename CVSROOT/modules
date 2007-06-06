@@ -11927,6 +11927,7 @@ php_doc-tw	ports/chinese/php_doc-tw
 php_doc-zh	ports/chinese/php_doc-zh
 phpadsnew	ports/www/phpadsnew
 phpbb		ports/www/phpbb
+phpbb-devel	ports/www/phpbb-devel
 phpbt		ports/devel/phpbt
 phpeclipse	ports/java/phpeclipse
 phpgedview	ports/www/phpgedview
