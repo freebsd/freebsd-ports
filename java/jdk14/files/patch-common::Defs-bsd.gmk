@@ -1,7 +1,26 @@
 $FreeBSD$
-
---- ../../j2se/make/common/Defs-bsd.gmk.orig	Fri Dec  8 11:50:23 2006
-+++ ../../j2se/make/common/Defs-bsd.gmk	Fri Dec  8 11:58:29 2006
+--- ../../j2se/make/common/Defs-bsd.gmk.orig	Sun Jun  3 10:46:29 2007
++++ ../../j2se/make/common/Defs-bsd.gmk	Sun Jun  3 11:04:08 2007
+@@ -40,15 +40,15 @@
+ BASENAME       = $(USRBIN_PATH)basename
+ CAT            = $(UNIXCOMMAND_PATH)cat
+ ifneq ($(TRUE_PLATFORM), OpenBSD)
+-CC             = $(COMPILER_PATH)gcc
+-CPP            = $(COMPILER_PATH)gcc -E
++CC             ?= $(COMPILER_PATH)gcc
++CPP            ?= $(COMPILER_PATH)gcc -E
+ ifeq ($(STATIC_CXX),true)
+ # g++ always dynamically links libstdc++, even we use "-Wl,-Bstatic -lstdc++"
+ # We need to use gcc to statically link the C++ runtime. gcc and g++ use
+ # the same subprocess to compile C++ files, so it is OK to build using gcc.
+-CXX            = $(COMPILER_PATH)gcc
++CXX            ?= $(COMPILER_PATH)gcc
+ else
+-CXX            = $(COMPILER_PATH)g++
++CXX            ?= $(COMPILER_PATH)g++
+ endif
+ else
+ # Allow ports/pkgsrc infrastructure to override CC, CPP and CXX.
 @@ -192,7 +192,7 @@
  ifeq ($(TRUE_PLATFORM), NetBSD)
  DEVTOOLS_PATH = /usr/pkg/bin/
