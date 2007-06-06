@@ -783,6 +783,7 @@
     SUBDIR += utserver
     SUBDIR += vamos
     SUBDIR += vavoom
+    SUBDIR += vavoom-extras
     SUBDIR += vdrift
     SUBDIR += vdrift-data
     SUBDIR += vectoroids
