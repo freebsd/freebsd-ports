@@ -857,6 +857,10 @@ Note:  Please add new entries to the beginning of this file.
 	<range><ge>2.9.0</ge><le>2.9.6</le></range>
 	<range><ge>2.10.0</ge><le>2.10.2</le></range>
       </package>
+      <package>
+	<name>plone</name>
+	<range><lt>2.5.3</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -873,11 +877,12 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2007-0240</cvename>
       <freebsdpr>ports/111119</freebsdpr>
       <url>http://www.zope.org/Products/Zope/Hotfix-2007-03-20/announcement/view</url>
+      <url>http://plone.org/products/plone/releases/2.5.3</url>
     </references>
     <dates>
       <discovery>2007-01-16</discovery>
       <entry>2007-04-05</entry>
-      <modified>2007-04-08</modified>
+      <modified>2007-06-06</modified>
     </dates>
   </vuln>
 
