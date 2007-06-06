@@ -14414,7 +14414,6 @@ siteframe	ports/www/siteframe
 sitescooper	ports/palm/sitescooper
 six		ports/games/six
 sixxs-aiccu	ports/net/sixxs-aiccu
-sixxs-heartbeatd	ports/net/sixxs-heartbeatd
 sjeng		ports/games/sjeng
 sjitter		ports/net-mgmt/sjitter
 sjog		ports/sysutils/sjog
