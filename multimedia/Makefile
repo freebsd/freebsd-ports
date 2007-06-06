@@ -25,6 +25,7 @@
     SUBDIR += dvbcut
     SUBDIR += dvd-slideshow
     SUBDIR += dvdauthor
+    SUBDIR += dvdauthorwizard
     SUBDIR += dvdrip
     SUBDIR += dvdstyler
     SUBDIR += dvts
