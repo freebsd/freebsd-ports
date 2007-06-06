@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmdockapps
-PORTVERSION=	1.18
+PORTVERSION=	1.21
 CATEGORIES=	x11-toolkits python windowmaker
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pywmdockapps

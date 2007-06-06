@@ -2,8 +2,10 @@ bin/pywmdatetime.py
 bin/pywmhdmon.py
 bin/pywmseti.py
 bin/pywmsysmon.py
-bin/pywmPhoto.py
+bin/pywmphoto.py
 bin/pywmgeneric.py
+bin/pywmwet.py
+bin/pywmradio.py
 %%PYTHON_SITELIBDIR%%/wmdocklib/__init__.py
 %%PYTHON_SITELIBDIR%%/wmdocklib/pywmhelpers.py
 %%PYTHON_SITELIBDIR%%/wmdocklib/3x5.xpm
@@ -30,4 +32,12 @@ bin/pywmgeneric.py
 %%PYTHON_SITELIBDIR%%/wmdocklib/pywmhelpers.pyc
 %%PYTHON_SITELIBDIR%%/wmdocklib/__init__.pyo
 %%PYTHON_SITELIBDIR%%/wmdocklib/pywmhelpers.pyo
+%%PYTHON_SITELIBDIR%%/wmdocklib/5x8-utf-8.xpm
+%%PYTHON_SITELIBDIR%%/wmdocklib/6x11-utf-8.xpm
+%%PYTHON_SITELIBDIR%%/wmdocklib/7x14-utf-8.xpm
+%%PYTHON_SITELIBDIR%%/wmdocklib/8x13-utf-8.xpm
+%%PYTHON_SITELIBDIR%%/wmdocklib/9x18-utf-8.xpm
+%%PYTHON_SITELIBDIR%%/wmdocklib/wmoo.py
+%%PYTHON_SITELIBDIR%%/wmdocklib/wmoo.pyc
+%%PYTHON_SITELIBDIR%%/wmdocklib/wmoo.pyo
 @dirrmtry %%PYTHON_SITELIBDIR%%/wmdocklib
