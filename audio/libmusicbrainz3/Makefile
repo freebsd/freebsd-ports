@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmusicbrainz
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.5
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/ \
     		http://uk.musicbrainz.org/pub/musicbrainz/
@@ -23,7 +23,7 @@ USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}

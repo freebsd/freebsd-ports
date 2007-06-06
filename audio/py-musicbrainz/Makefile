@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	musicbrainz
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.5
 PORTEPOCH=	1
 CATEGORIES=	audio python
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/ \
@@ -17,8 +17,8 @@ DISTNAME=	libmusicbrainz-${PORTVERSION}
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	MusicBrainz bindings for Python
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/ctypes/__init__.py:${PORTSDIR}/devel/py-ctypes
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ctypes/__init__.py:${PORTSDIR}/devel/py-ctypes
+BUILD_DEPENDS=	${PYCTYPES}
+RUN_DEPENDS=	${PYCTYPES}
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
