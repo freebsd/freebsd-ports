@@ -1,11 +1,11 @@
---- ../../src/uncompr.c.orig	Sun Nov 30 22:59:30 2003
-+++ ../../src/uncompr.c	Wed Feb 16 22:11:32 2005
-@@ -39,7 +39,7 @@
+--- ../../src/uncompr.c.orig	Sun May 20 02:10:22 2007
++++ ../../src/uncompr.c	Mon Jun  4 11:40:00 2007
+@@ -60,7 +60,7 @@
  
      stream.next_out = dest;
-     stream.avail_out = (uInt)*destLen;
--    if ((uLong)stream.avail_out != *destLen) return Z_BUF_ERROR;
-+    if ((uLong)stream.avail_out != (uInt)*destLen) return Z_BUF_ERROR;
+     stream.avail_out = (uInt) * destLen;
+-    if ((uLong) stream.avail_out != *destLen)
++    if ((uLong) stream.avail_out != (uInt) *destLen)
+         return Z_BUF_ERROR;
  
-     stream.zalloc = (alloc_func)0;
-     stream.zfree = (free_func)0;
+     stream.zalloc = (alloc_func) 0;
