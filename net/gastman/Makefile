@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://ftp.digium.com/pub/gastman/
 DISTNAME=	${PORTNAME}-1.0-RC1
 
-MAINTAINER=	filippo.natali@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical Manager interface for Asterisk
 
 USE_X_PREFIX=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	boa-constructor
 DISTNAME=	boa-constructor-${PORTVERSION}
 
-MAINTAINER=	filippo.natali@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross platform RAD GUI Building IDE for wxPython
 
 WRKSRC=		${WRKDIR}/boa-constructor-${PORTVERSION}

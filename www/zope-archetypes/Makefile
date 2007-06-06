@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	zope-
 DISTNAME=	Archetypes-${PORTVERSION}-final
 DIST_SUBDIR=	zope
 
-MAINTAINER=	filippo.natali@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework for the development of new Content Types in Zope/CMF/Plone
 
 RUN_DEPENDS=	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFPlone/__init__.py:${PORTSDIR}/www/plone \

@@ -13,7 +13,7 @@ MASTER_SITES=	http://plone.googlecode.com/files/:src
 DISTFILES=	Plone-${PORTVERSION}-1.tar.gz:src
 DIST_SUBDIR=	zope
 
-MAINTAINER=	filippo.natali@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A user friendly implementation of the CMF written on top of ZOPE
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging

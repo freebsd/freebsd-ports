@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	archetypes
 PKGNAMEPREFIX=	zope-
 DISTNAME=	PortalTransforms-${PORTVERSION}-final01
 
-MAINTAINER=	filippo.natali@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PortalTransforms product for Zope/CMF
 
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf \

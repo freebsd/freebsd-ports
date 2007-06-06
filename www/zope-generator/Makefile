@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	archetypes
 PKGNAMEPREFIX=	zope-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-final01
 
-MAINTAINER=	filippo.natali@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generator product for Zope
 
 USE_PYTHON=	yes
