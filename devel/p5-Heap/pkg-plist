@@ -10,28 +10,6 @@
 %%SITE_PERL%%/Heap/Elem/StrRev.pm
 %%SITE_PERL%%/Heap/Fibonacci.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap/.packlist
-%%SITE_PERL%%/auto/Heap/Binary/autosplit.ix
-%%SITE_PERL%%/auto/Heap/Binomial/autosplit.ix
-%%SITE_PERL%%/auto/Heap/Elem/Num/autosplit.ix
-%%SITE_PERL%%/auto/Heap/Elem/NumRev/autosplit.ix
-%%SITE_PERL%%/auto/Heap/Elem/Ref/autosplit.ix
-%%SITE_PERL%%/auto/Heap/Elem/RefRev/autosplit.ix
-%%SITE_PERL%%/auto/Heap/Elem/Str/autosplit.ix
-%%SITE_PERL%%/auto/Heap/Elem/StrRev/autosplit.ix
-%%SITE_PERL%%/auto/Heap/Elem/autosplit.ix
-%%SITE_PERL%%/auto/Heap/Fibonacci/autosplit.ix
-%%SITE_PERL%%/auto/Heap/autosplit.ix
 @dirrm %%SITE_PERL%%/Heap/Elem
 @dirrmtry %%SITE_PERL%%/Heap
-@dirrm %%SITE_PERL%%/auto/Heap/Binary
-@dirrm %%SITE_PERL%%/auto/Heap/Binomial
-@dirrm %%SITE_PERL%%/auto/Heap/Fibonacci
-@dirrm %%SITE_PERL%%/auto/Heap/Elem/Num
-@dirrm %%SITE_PERL%%/auto/Heap/Elem/NumRev
-@dirrm %%SITE_PERL%%/auto/Heap/Elem/Ref
-@dirrm %%SITE_PERL%%/auto/Heap/Elem/RefRev
-@dirrm %%SITE_PERL%%/auto/Heap/Elem/Str
-@dirrm %%SITE_PERL%%/auto/Heap/Elem/StrRev
-@dirrmtry %%SITE_PERL%%/auto/Heap/Elem
-@dirrmtry %%SITE_PERL%%/auto/Heap
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap
