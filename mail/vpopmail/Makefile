@@ -7,6 +7,7 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	5.4.17
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -203,7 +204,7 @@ EXTRA_PATCHES+=	${FILESDIR}/Makefile.in-noportdocs.patch
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_FPIC) && ${ARCH} == "amd64"
+.if !defined(WITHOUT_FPIC) && ( ${ARCH} == "amd64" || ${ARCH} == "ia64" )
 CFLAGS+=	-fPIC
 .endif
 
