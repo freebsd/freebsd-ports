@@ -1841,6 +1841,7 @@
     SUBDIR += py-levenshtein
     SUBDIR += py-libgsf
     SUBDIR += py-ll-core
+    SUBDIR += py-lock_file
     SUBDIR += py-log4py
     SUBDIR += py-logilab-common
     SUBDIR += py-lxml
