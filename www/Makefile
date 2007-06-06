@@ -676,6 +676,7 @@
     SUBDIR += p5-HTML-Embperl
     SUBDIR += p5-HTML-Encoding
     SUBDIR += p5-HTML-FillInForm
+    SUBDIR += p5-HTML-FillInForm-ForceUTF8
     SUBDIR += p5-HTML-FromANSI
     SUBDIR += p5-HTML-FromText
     SUBDIR += p5-HTML-LinkExtractor
