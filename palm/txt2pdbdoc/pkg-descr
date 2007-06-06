@@ -1,2 +1,4 @@
-Converts plain text files to/from the Doc format used by PalmPilots;
-also utilities to convert HTML files to Doc and vice versa;
+Converts plain text and HTML files to the Doc format used by PalmPilots,
+and vice versa.
+
+WWW: http://homepage.mac.com/pauljlucas/software/txt2pdbdoc
