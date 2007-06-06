@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	cacao
-PORTVERSION=	0.97
-PORTREVISION=	2
+PORTVERSION=	0.98
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.complang.tuwien.ac.at/cacaojvm/download/cacao-${PORTVERSION}/
 
@@ -15,6 +14,7 @@ COMMENT=	JIT compiler for JAVA
 
 BUILD_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath
 
+USE_BZIP2=	yes
 USE_AUTOTOOLS=	libltdl
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+

@@ -1,16 +1,16 @@
---- src/Makefile.in.orig	Sun Feb  4 20:06:59 2007
-+++ src/Makefile.in	Sun Feb  4 20:07:09 2007
-@@ -243,7 +243,6 @@
- 	cacaoh \
+--- src/Makefile.in.orig	Wed Jun  6 16:32:20 2007
++++ src/Makefile.in	Wed Jun  6 16:32:35 2007
+@@ -271,7 +271,6 @@
+ 	lib \
+ 	mm \
  	native \
- 	cacao \
--	scripts
- 
- @DISABLE_GC_FALSE@BOEHM = boehm-gc
- @DISABLE_GC_TRUE@BOEHM = 
-@@ -260,7 +259,6 @@
- 	cacaoh \
- 	native \
+-	scripts \
+ 	threads \
+ 	toolbox \
+ 	vm \
+@@ -299,7 +298,6 @@
+ 	$(THREADS_DIR) \
+ 	vm \
  	cacao \
 -	scripts
  
