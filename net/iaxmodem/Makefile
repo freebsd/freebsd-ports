@@ -11,7 +11,7 @@ CATEGORIES=	net comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	filippo.natali@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software modem that connects to IAX channel
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff

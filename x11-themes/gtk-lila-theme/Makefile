@@ -12,7 +12,7 @@ CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://lila-theme.uni.cc/files/tarballs/
 DISTNAME=	lila-gtk-${PORTVERSION}
 
-MAINTAINER=	filippo.natali@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ 2.0 Lila theme
 
 WRKSRC=		${WRKDIR}

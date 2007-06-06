@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.morettoni.net/bsd/
 
-MAINTAINER=	filippo.natali@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DJB's tinydns statistics generator
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

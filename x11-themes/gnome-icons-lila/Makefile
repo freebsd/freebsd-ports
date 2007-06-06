@@ -16,7 +16,7 @@ CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://lila-theme.uni.cc/files/tarballs/
 DISTNAME=	${PORTNAME}-gnome-${PORTVERSION}
 
-MAINTAINER=	filippo.natali@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lila Icons for Gnome
 
 RESTRICTED=	${REASON}

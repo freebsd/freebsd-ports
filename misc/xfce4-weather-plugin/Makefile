@@ -12,7 +12,7 @@ CATEGORIES=	misc xfce
 MASTER_SITES=	http://goodies.xfce.org/releases/${PORTNAME}/
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	filippo.natali@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XFce 4 weather module for xfce4-panel
 
 GNU_CONFIGURE=	yes

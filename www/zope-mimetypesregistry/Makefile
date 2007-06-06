@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	archetypes
 PKGNAMEPREFIX=	zope-
 DISTNAME=	MimetypesRegistry-${PORTVERSION}-final01
 
-MAINTAINER=	filippo.natali@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MimetypesRegistry product for Zope/CMF
 
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf

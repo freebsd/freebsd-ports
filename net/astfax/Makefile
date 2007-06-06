@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.inter7.com/astfax/
 
-MAINTAINER=	filippo.natali@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AstFax provides an outgoing email to fax gateway for Asterisk
 
 LIB_DEPENDS=	spandsp.0:${PORTSDIR}/comms/spandsp

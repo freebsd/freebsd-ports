@@ -11,7 +11,7 @@ CATEGORIES=	www zope
 MASTER_SITES=	http://www.zope.org/Products/CMF/CMF-${PORTVERSION}/
 DISTNAME=	CMF-${PORTVERSION}
 
-MAINTAINER=	filippo.natali@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Zope Content Management Framework (CMF)
 
 USE_PYTHON=	yes
