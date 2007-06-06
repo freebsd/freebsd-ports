@@ -32,6 +32,12 @@ share/pixmaps/tmw.png
 %%DATADIR%%/data/graphics/gui/sansserif8.png
 %%DATADIR%%/data/graphics/gui/selection.png
 %%DATADIR%%/data/graphics/gui/slider.png
+%%DATADIR%%/data/graphics/gui/target-cursor-blue-l.png
+%%DATADIR%%/data/graphics/gui/target-cursor-blue-m.png
+%%DATADIR%%/data/graphics/gui/target-cursor-blue-s.png
+%%DATADIR%%/data/graphics/gui/target-cursor-red-l.png
+%%DATADIR%%/data/graphics/gui/target-cursor-red-m.png
+%%DATADIR%%/data/graphics/gui/target-cursor-red-s.png
 %%DATADIR%%/data/graphics/gui/thickborder.png
 %%DATADIR%%/data/graphics/gui/vscroll_blue.png
 %%DATADIR%%/data/graphics/gui/vscroll_down_default.png
@@ -76,9 +82,7 @@ share/pixmaps/tmw.png
 %%DATADIR%%/data/help/skills.txt
 %%DATADIR%%/data/help/support.txt
 %%DATADIR%%/data/help/team.txt
-%%DATADIR%%/data/icons/tmw-icon.ico
-%%DATADIR%%/data/icons/tmw-icon.png
-%%DATADIR%%/data/icons/tmw-icon.xpm
+%%DATADIR%%/data/icons/tmw.png
 %%MUSICADDON%%%%DATADIR%%/data/music/Faith.ogg
 %%MUSICADDON%%%%DATADIR%%/data/music/Magick - Casino.ogg
 %%MUSICADDON%%%%DATADIR%%/data/music/Magick - Real.ogg
