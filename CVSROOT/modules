@@ -15679,6 +15679,7 @@ varkon		ports/cad/varkon
 varnish		ports/www/varnish
 vat		ports/mbone/vat
 vavoom		ports/games/vavoom
+vavoom-extras	ports/games/vavoom-extras
 vb2c		ports/devel/vb2c
 vba		ports/emulators/vba
 vbidecode	ports/misc/vbidecode
