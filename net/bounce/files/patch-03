@@ -1,0 +1,44 @@
+--- bounce.c.orig	Mon May 28 09:07:37 2007
++++ bounce.c	Mon May 28 09:08:41 2007
+@@ -138,7 +138,7 @@
+ }
+ 
+ int main(int argc,char *argv[]) {
+-    int srv_fd, rem_fd, len, cl_fd, on=1, b=0;
++    int srv_fd, rem_fd, len, cl_fd, on=1, b=0, d=0;
+     int myport=DEFAULT_PORT, remoteport;
+     struct sockaddr_in rem_addr, srv_addr, cl_addr;
+     char *myname;
+@@ -153,9 +153,10 @@
+ 
+     /* Process arguments */
+ 
+-    while( (ch = getopt(argc, argv, "p:a:b:")) != -1  ) {
++    while( (ch = getopt(argc, argv, "p:a:b:d")) != -1  ) {
+       switch(ch) { 
+       case 'b': b = 1;
++      case 'd': d = 1; break;
+       case 'a':
+ 	hostname = malloc( strlen(optarg) + 1);
+ 	if( !hostname ) {
+@@ -178,7 +179,7 @@
+     argv += optind;
+ 
+     if (argc!=2) {
+-	fprintf(stderr,"Use: %s [-a localaddr | -b localaddr] [-p localport] machine port \n",myname);
++	fprintf(stderr,"Use: %s [-a localaddr | -b localaddr] [-p localport] [-d] machine port \n",myname);
+ 	exit(-1);
+     }
+     if ((remoteport=atoi(argv[1]))<=0) {
+@@ -261,6 +262,11 @@
+ 	    if (bind(cl_fd,(struct sockaddr *)&srv_addr,sizeof(srv_addr))<0) {
+ 		close(rem_fd);
+ 		exit(-1);
++	    }
++	    }
++	    if (d) {
++	    if ((hp=gethostbyname(argv[0]))!=NULL) {
++		cl_addr.sin_addr=*(struct in_addr *)(hp->h_addr_list[0]);
+ 	    }
+ 	    }
+ 	    if (connect(cl_fd, (struct sockaddr *)&cl_addr, 
