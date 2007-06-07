@@ -50,6 +50,7 @@
 %%DATADIR%%/htdocs/lib/getsession.mhtml
 %%DATADIR%%/htdocs/lib/html/a.mhtml
 %%DATADIR%%/htdocs/lib/html/hidden.mhtml
+%%DATADIR%%/htdocs/lib/html/hidden_reqargs.mhtml
 %%DATADIR%%/htdocs/lib/html/input.mhtml
 %%DATADIR%%/htdocs/lib/html/safe.mhtml
 %%DATADIR%%/htdocs/lib/html/select.mhtml
