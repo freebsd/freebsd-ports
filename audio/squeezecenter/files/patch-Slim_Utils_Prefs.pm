@@ -20,12 +20,12 @@ $FreeBSD$
  
 -		$CacheDir = catdir($ENV{'HOME'},'Cache');
 +		$CacheDir = "/var/db/slimserver/cache";
- 	}
  
- 	my @CacheDirs = splitdir($CacheDir);
-@@ -1014,7 +1018,7 @@
- 	} elsif (Slim::Utils::OSDetect::OS() eq 'win')  {
- 		$prefsPath = $Bin;
+ 	} elsif ($os eq 'win' && Slim::Utils::OSDetect::details->{'osName'} =~ /Vista/) {
+ 
+@@ -1022,7 +1026,7 @@
+ 			$prefsPath = $Bin;
+ 		}
  	} else {
 -	 	$prefsPath = $ENV{'HOME'};
 +	 	$prefsPath = "/var/db/slimserver";
