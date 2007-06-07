@@ -39,19 +39,25 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>mplayer</name>
-	<range><lt>0.99.10_9</lt></range>
+	<name>mplayer-esound</name>
+	<name>mplayer-gtk</name>
+	<name>mplayer-gtk2</name>
+	<name>mplayer-gtk-esound</name>
+	<name>mplayer-gtk2-esound</name>
+	<range><lt>0.99.10_10</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Mplayer Team reports:</p>
 	<blockquote cite="http://www.mplayerhq.hu/design7/news.html">
-	  <p>A stack overflow was found in the code used to handle cddb queries.
-	    When copying the album title and category, no checking was performed
-	    on the size of the strings before storing them in a fixed-size array.
-	    A malicious entry in the database could trigger a stack overflow in
-	    the program, leading to arbitrary code execution with the uid of the
-	    user running MPlayer.</p>
+	  <p>A stack overflow was found in the code used to handle
+	    cddb queries.  When copying the album title and category,
+	    no checking was performed on the size of the strings
+	    before storing them in a fixed-size array.  A malicious
+	    entry in the database could trigger a stack overflow in
+	    the program, leading to arbitrary code execution with the
+	    uid of the user running MPlayer.</p>
 	</blockquote>
       </body>
     </description>
