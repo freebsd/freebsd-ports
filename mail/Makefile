@@ -317,6 +317,7 @@
     SUBDIR += p5-Email-Valid-Loose
     SUBDIR += p5-FuzzyOcr
     SUBDIR += p5-FuzzyOcr-devel
+    SUBDIR += p5-GMail-IMAPD
     SUBDIR += p5-IMAP-Admin
     SUBDIR += p5-IMAP-Client
     SUBDIR += p5-IMAP-Sieve

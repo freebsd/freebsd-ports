@@ -1,0 +1,5 @@
+%%SITE_PERL%%/GMail/IMAPD.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/GMail/IMAPD/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GMail/IMAPD
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GMail
+@dirrm %%SITE_PERL%%/GMail
