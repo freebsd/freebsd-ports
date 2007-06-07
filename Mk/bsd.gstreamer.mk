@@ -112,6 +112,8 @@ mad_DEPENDS=	audio/gstreamer-plugins-mad
 
 mikmod_DEPENDS=	audio/gstreamer-plugins-mikmod
 
+mp3_DEPENDS=	audio/gstreamer-plugins-mp3
+
 musepack_DEPENDS=	audio/gstreamer-plugins-musepack
 
 musicbrainz_DEPENDS=	audio/gstreamer-plugins-musicbrainz
