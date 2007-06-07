@@ -59,7 +59,7 @@ PLIST_FILES=	${BIN_FILES:S+^+bin/+g} \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 700017
+.if ${ARCH} == sparc64 && ${OSVERSION} > 700017
 BROKEN=		requires compat6x, which has not yet been relased
 .endif
 
