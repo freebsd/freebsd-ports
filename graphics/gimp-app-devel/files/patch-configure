@@ -8,15 +8,6 @@
        CFLAGS="$CFLAGS $GTK_CFLAGS"
        LIBS="$GTK_LIBS $LIBS"
        rm -f conf.gtktest
-@@ -35211,7 +35212,7 @@
-   fi
-   { echo "$as_me:$LINENO: result: $have_exif_0_6" >&5
- echo "${ECHO_T}$have_exif_0_6" >&6; }
--  if test x$have_exif_0_6 == xyes; then
-+  if test x$have_exif_0_6 = xyes; then
- 
- cat >>confdefs.h <<\_ACEOF
- #define HAVE_EXIF_0_6 1
 @@ -38514,9 +38515,9 @@
  fi
  
