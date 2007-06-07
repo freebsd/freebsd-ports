@@ -1,4 +1,6 @@
-The floating-point Adaptive Multi Rate (AMR) speech codec libraries, based on
-the reference implementation.
+Adaptive Multi-Rate Narrow-Band decoder and encoder library.
+(3GPP TS 26.104 V 6.1.0)
+
+http://www.3gpp.org/ftp/Specs/html-info/26104.htm
 
 WWW: http://www.penguin.cz/~utx/amr
