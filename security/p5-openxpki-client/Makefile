@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openxpki-client
-PORTVERSION=	0.9.651
+PORTVERSION=	0.9.848
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openxpki
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	OpenXPKI-Client-${PORTVERSION}
 DIST_SUBDIR=	openxpki
 
-MAINTAINER=	svysh@cryptocom.ru
+MAINTAINER=	svysh@pn.sinp.msu.ru
 COMMENT=	Perl based trustcenter software for PKI: base class for actual clients
 
 BUILD_DEPENDS=	\
