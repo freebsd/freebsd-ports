@@ -31,6 +31,10 @@ lib/smalltalk/tcp-%%VERSION%%.so
 lib/smalltalk/tcp.a
 lib/smalltalk/tcp.la
 lib/smalltalk/tcp.so
+lib/smalltalk/zlib-%%VERSION%%.so
+lib/smalltalk/zlib.a
+lib/smalltalk/zlib.la
+lib/smalltalk/zlib.so
 libdata/pkgconfig/gnu-smalltalk.pc
 share/aclocal/gst.m4
 share/aclocal/snprintfv.m4
@@ -77,11 +81,13 @@ share/emacs/site-lisp/smalltalk-mode.el
 %%DATADIR%%/browser/bear.gif
 %%DATADIR%%/browser/test.st
 %%DATADIR%%/compiler/ChangeLog
+%%DATADIR%%/compiler/OrderedSet.st
 %%DATADIR%%/compiler/ParseTreeSearcher.st
 %%DATADIR%%/compiler/RBFormatter.st
 %%DATADIR%%/compiler/RBParseNodes.st
 %%DATADIR%%/compiler/RBParser.st
 %%DATADIR%%/compiler/RBToken.st
+%%DATADIR%%/compiler/RewriteTests.st
 %%DATADIR%%/compiler/STCompLit.st
 %%DATADIR%%/compiler/STCompiler.st
 %%DATADIR%%/compiler/STDecompiler.st
@@ -117,6 +123,7 @@ share/emacs/site-lisp/smalltalk-mode.el
 %%DATADIR%%/examples/MemUsage.st
 %%DATADIR%%/examples/Methods.st
 %%DATADIR%%/examples/MiniDebugger.st
+%%DATADIR%%/examples/PipeStream.st
 %%DATADIR%%/examples/Prolog.st
 %%DATADIR%%/examples/PrtHier.st
 %%DATADIR%%/examples/Publish.st
@@ -127,21 +134,26 @@ share/emacs/site-lisp/smalltalk-mode.el
 %%DATADIR%%/examples/RegExp.st
 %%DATADIR%%/examples/Richards.st
 %%DATADIR%%/examples/SortCriter.st
-%%DATADIR%%/examples/StreamFilter.st
 %%DATADIR%%/examples/Sync.st
 %%DATADIR%%/examples/Tetris.st
 %%DATADIR%%/examples/Timer.st
 %%DATADIR%%/examples/Tokenizer.st
 %%DATADIR%%/examples/gdbm-c.st
 %%DATADIR%%/examples/gdbm.st
+%%DATADIR%%/examples/gdbmtests.st
 %%DATADIR%%/examples/md5.st
+%%DATADIR%%/examples/md5tests.st
 %%DATADIR%%/examples/modules/gdbm-c.st
 %%DATADIR%%/examples/modules/gdbm.st
 %%DATADIR%%/examples/modules/md5.st
+%%DATADIR%%/examples/modules/zlib.st
+%%DATADIR%%/examples/modules/zlibtests.st
 %%DATADIR%%/examples/ncurses.st
 %%DATADIR%%/examples/pepe.sed
 %%DATADIR%%/examples/shell
 %%DATADIR%%/examples/xml.sed
+%%DATADIR%%/examples/zlib.st
+%%DATADIR%%/examples/zlibtests.st
 %%DATADIR%%/gst.im
 %%DATADIR%%/gtk/.keep_me
 %%DATADIR%%/i18n/ChangeLog
@@ -294,6 +306,7 @@ share/emacs/site-lisp/smalltalk-mode.el
 %%DATADIR%%/kernel/SmallInt.st
 %%DATADIR%%/kernel/SortCollect.st
 %%DATADIR%%/kernel/Stream.st
+%%DATADIR%%/kernel/StreamOps.st
 %%DATADIR%%/kernel/String.st
 %%DATADIR%%/kernel/SymLink.st
 %%DATADIR%%/kernel/Symbol.st
@@ -354,6 +367,9 @@ share/emacs/site-lisp/smalltalk-mode.el
 %%DATADIR%%/numerics/RNG.st
 %%DATADIR%%/numerics/Statistics.st
 %%DATADIR%%/packages.xml
+%%DATADIR%%/scripts/Getopt.st
+%%DATADIR%%/scripts/Load.st
+%%DATADIR%%/scripts/Test.st
 %%DATADIR%%/sunit/SUnit.st
 %%DATADIR%%/sunit/SUnitPreload.st
 %%DATADIR%%/sunit/SUnitScript.st
@@ -407,6 +423,7 @@ share/emacs/site-lisp/smalltalk-mode.el
 %%DATADIR%%/unsupported/cint/LineTokenStream.st
 %%DATADIR%%/unsupported/cint/README
 %%DATADIR%%/unsupported/cint/StreamStack.st
+%%DATADIR%%/unsupported/echo.st
 %%DATADIR%%/unsupported/er2.st
 %%DATADIR%%/unsupported/market.st
 %%DATADIR%%/unsupported/resolve.st
@@ -435,6 +452,7 @@ share/emacs/site-lisp/smalltalk-mode.el
 @dirrm %%DATADIR%%/unsupported
 @dirrm %%DATADIR%%/tcp
 @dirrm %%DATADIR%%/sunit
+@dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/numerics
 @dirrm %%DATADIR%%/net/httpd
 @dirrm %%DATADIR%%/net
