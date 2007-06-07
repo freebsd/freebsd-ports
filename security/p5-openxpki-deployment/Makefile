@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openxpki-deployment
-PORTVERSION=	0.9.781
+PORTVERSION=	0.9.913
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openxpki
@@ -32,5 +32,18 @@ USE_GMAKE=	yes
 USE_RC_SUBR=	openxpki.sh
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${PREFIX}
+
+post-install:
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "================================ A piece of advice ==================================="
+	@${ECHO_MSG} "===> Install your favorite database (enable utf-8 support if needed) and a web server."
+	@${ECHO_MSG} "===> Perform deployment procedure for openxpki in a regular way."
+	@${ECHO_MSG} "===> When asked for the name of the \"openxpki user\" answer \"openxpki\","
+	@${ECHO_MSG} "===> and do not forget to add a line: \"User openxpki\" to the zone of your"
+	@${ECHO_MSG} "===> OpenXPI-related (virtual) web server in your Apache configuration file."
+	@${ECHO_MSG} ""
+.if !defined(BATCH)
+	@sleep 9
+.endif
 
 .include <bsd.port.mk>
