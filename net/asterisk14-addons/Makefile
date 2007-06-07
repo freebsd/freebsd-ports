@@ -6,34 +6,39 @@
 #
 
 PORTNAME=	asterisk-addons
-PORTVERSION=	1.2.3
-PORTREVISION=   1
+PORTVERSION=	1.4.1
 CATEGORIES=	net
-MASTER_SITES=	http://ftp.digium.com/pub/asterisk/ \
-		http://ftp.digium.com/pub/asterisk/old-releases/ \
-		ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
-		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/
+MASTER_SITES=	http://ftp.digium.com/pub/asterisk/releases/
 
 MAINTAINER=	fgast@only640k.org
-COMMENT=	Additional modules for the Asterisk Open Source PBX
+COMMENT=	GPL modules for the Asterisk Open Source PBX
 
 BUILD_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
 RUN_DEPENDS=	asterisk:${PORTSDIR}/net/asterisk
 
+OPTIONS=	SAMPLE_CONFIG	"Install sample configuration files" off
+
 ONLY_FOR_ARCHS=	i386
+USE_AUTOTOOLS=	libtool:15
 USE_MYSQL=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
-CONF_SAMPLES=	cdr_mysql.conf.sample res_mysql.conf.sample
-ASTETCDIR=	${PREFIX}/etc/asterisk
+.include <bsd.port.pre.mk>
 
-post-patch:
-	@${REINPLACE_CMD} 's,^CFLAGS+=-I../asterisk,CFLAGS+=-I${LOCALBASE}/include,' ${WRKSRC}/Makefile
+.if ${OSVERSION} >= 700000
+BROKEN=	Does not build on 7-CURRENT
+.endif
+
+.if defined(WITH_SAMPLE_CONFIG)
+PLIST_SUB+=	SAMPLE_CONFIG=""
+.else
+PLIST_SUB+=	SAMPLE_CONFIG="@comment "
+.endif
 
 post-install:
-	${MKDIR} ${ASTETCDIR}
-.for f in ${CONF_SAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/configs/$f ${ASTETCDIR}
-.endfor
+.if defined(WITH_SAMPLE_CONFIG)
+	@cd ${WRKSRC} && ${GMAKE} samples
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
