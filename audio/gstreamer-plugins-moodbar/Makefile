@@ -7,7 +7,7 @@
 
 PORTNAME=	gstreamer-plugins-moodbar
 PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://pwsp.net/~qbob/ \
 		http://redundancy.redundancy.org/mirror/
@@ -37,7 +37,7 @@ PLIST_SUB+=	VERSION="${GST_VERSION}"
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MP3)
-USE_GSTREAMER+=	mad
+USE_GSTREAMER+=	mp3
 .endif
 
 .if defined(WITH_OGG)

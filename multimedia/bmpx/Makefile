@@ -7,7 +7,7 @@
 
 PORTNAME=	bmpx
 PORTVERSION=	0.36.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://files.beep-media-player.org/releases/0.36/
 
@@ -35,7 +35,7 @@ USE_GCC=	3.4+
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2 desktopfileutils
 INSTALLS_ICONS=	yes
-USE_GSTREAMER=	good mad ogg vorbis cdparanoia
+USE_GSTREAMER=	good mp3 ogg vorbis cdparanoia
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-hal \
