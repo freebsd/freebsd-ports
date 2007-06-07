@@ -6,7 +6,7 @@
 
 PORTNAME=		gnomebaker
 PORTVERSION=		0.6.1
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		sysutils gnome
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnomebaker
@@ -26,7 +26,7 @@ USE_GMAKE=		yes
 INSTALLS_OMF=		yes
 USE_GCC=		3.4+
 USE_GETTEXT=		yes
-USE_GSTREAMER=		vorbis mad flac
+USE_GSTREAMER=		vorbis mp3 flac
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -export-dynamic"
 

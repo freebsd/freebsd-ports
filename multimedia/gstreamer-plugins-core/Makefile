@@ -7,7 +7,7 @@
 
 PORTNAME=	gstreamer-plugins-core
 PORTVERSION=	0.10
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia audio
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -25,7 +25,7 @@ WANT_GSTREAMER=	yes
 .include <bsd.port.pre.mk>
 
 # Audio plugins
-USE_GSTREAMER+=	mad ogg vorbis
+USE_GSTREAMER+=	mp3 ogg vorbis
 
 # Graphics plugins
 USE_GSTREAMER+=	libpng

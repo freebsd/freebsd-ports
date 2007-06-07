@@ -8,6 +8,7 @@
 
 PORTNAME=	rhythmbox
 PORTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.10
@@ -31,7 +32,7 @@ INSTALLS_OMF=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix libgnomeui nautiluscdburner
 WANT_GNOME=	yes
-USE_GSTREAMER=	flac mad gnomevfs gconf jpeg
+USE_GSTREAMER=	flac mp3 gnomevfs gconf jpeg
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--enable-nautilus-menu --with-playback=gstreamer-0-10
 INSTALLS_ICONS=	yes

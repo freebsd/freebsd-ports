@@ -8,7 +8,7 @@
 
 PORTNAME=	gstreamer-plugins-all
 PORTVERSION=	1.3.${GST_VERSION}.${GST_SHLIB_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -30,7 +30,7 @@ WITHOUT_LAME=	yes	# MP3 License , no package
 .endif
 
 # Remove core, yes
-PLUGS=	${_USE_GSTREAMER_ALL:S/core//:S/yes//}
+PLUGS=	${_USE_GSTREAMER10_ALL}
 
 .for all in ${PLUGS}
 OPTIONS+=	${all:U} "${all} plugin " on

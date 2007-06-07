@@ -7,6 +7,7 @@
 
 PORTNAME=	quodlibet
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	multimedia audio python gnome
 MASTER_SITES=	http://www.sacredchao.net/~piman/software/ \
 		http://www.tortall.net/mirrors/piman-software/
@@ -58,7 +59,7 @@ USE_GSTREAMER+=	speex
 .endif
 
 .if !defined(WITHOUT_MP3)
-USE_GSTREAMER+=	mad
+USE_GSTREAMER+=	mp3
 .endif
 
 .if !defined(WITHOUT_FLAC)
