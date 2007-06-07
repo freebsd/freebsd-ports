@@ -6,8 +6,7 @@
 #    $MCom: ports/graphics/gimp-help/Makefile,v 1.1 2006/07/18 13:04:28 ahze Exp $
 
 PORTNAME=	gimp-help
-PORTVERSION=	0.11
-PORTREVISION=	3
+PORTVERSION=	0.12
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		http://gimp.mirrors.hoobly.com/%SUBDIR%/ \
