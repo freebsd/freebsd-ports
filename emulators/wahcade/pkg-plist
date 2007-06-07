@@ -46,6 +46,7 @@ share/applications/wahcade.desktop
 %%DATADIR%%/glade/layout_editor.glade
 %%DATADIR%%/glade/wahcade_setup.glade
 %%DATADIR%%/glade/win_cpviewer.png
+%%DATADIR%%/glade/win_history.png
 %%DATADIR%%/glade/win_main.png
 %%DATADIR%%/glade/win_msg.png
 %%DATADIR%%/glade/win_options.png
@@ -57,6 +58,8 @@ share/applications/wahcade.desktop
 %%DATADIR%%/layout_scr_props.py
 %%DATADIR%%/locale/en/LC_MESSAGES/wahcade.mo
 %%DATADIR%%/locale/en_GB/LC_MESSAGES/wahcade.mo
+%%DATADIR%%/locale/es/LC_MESSAGES/wahcade.mo
+%%DATADIR%%/locale/fr/LC_MESSAGES/wahcade.mo
 %%DATADIR%%/locale/sv/LC_MESSAGES/wahcade.mo
 %%DATADIR%%/mamewah_ini.py
 %%DATADIR%%/mplayer.py
@@ -65,6 +68,7 @@ share/applications/wahcade.desktop
 %%DATADIR%%/pixmaps/wahcade.ico
 %%DATADIR%%/pixmaps/wahcade.png
 %%DATADIR%%/pixmaps/win_cpviewer.png
+%%DATADIR%%/pixmaps/win_history.png
 %%DATADIR%%/pixmaps/win_main.png
 %%DATADIR%%/pixmaps/win_msg.png
 %%DATADIR%%/pixmaps/win_options.png
@@ -90,6 +94,10 @@ share/applications/wahcade.desktop
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/locale/sv/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/sv
+@dirrm %%DATADIR%%/locale/fr/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/fr
+@dirrm %%DATADIR%%/locale/es/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/es
 @dirrm %%DATADIR%%/locale/en_GB/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/en_GB
 @dirrm %%DATADIR%%/locale/en/LC_MESSAGES
