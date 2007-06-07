@@ -2,10 +2,12 @@ bin/openxpki-configure
 bin/openxpki-metaconf
 bin/openxpkiadm
 bin/openxpkictl
+etc/rc.d/openxpki
 share/openxpki/templates/default/acl.xml
 share/openxpki/templates/default/auth.xml
 share/openxpki/templates/default/config.xml
 share/openxpki/templates/default/database.xml
+share/openxpki/templates/default/ldappublic.xml
 share/openxpki/templates/default/log.conf
 share/openxpki/templates/default/log_database.xml
 share/openxpki/templates/default/notification.xml
@@ -19,7 +21,6 @@ share/openxpki/templates/default/openxpki.conf
 share/openxpki/templates/default/profile.xml
 share/openxpki/templates/default/token.xml
 share/openxpki/templates/default/workflow.xml
-share/openxpki/templates/default/workflow_activity.xml
 share/openxpki/templates/default/workflow_activity_certificate_issuance.xml
 share/openxpki/templates/default/workflow_activity_certificate_ldap_publishing.xml
 share/openxpki/templates/default/workflow_activity_certificate_revocation_request.xml
