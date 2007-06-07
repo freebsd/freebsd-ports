@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--with-png-prefix=${LOCALBASE} --enable-binreloc --program-trans
 USE_SDL=	sdl
 GNU_CONFIGURE=	YES
 INSTALLS_SHLIB=	YES
+USE_GCC=	3.4
 USE_XLIB=	YES
 USE_GNOME=	gnomehack
 USE_BZIP2=	YES
