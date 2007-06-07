@@ -13,6 +13,9 @@ DISTFILES=	# none
 MAINTAINER=	secteam@FreeBSD.org
 COMMENT=	A list of SSL CA root certificates
 
+DEPRECATED=	Not supported by FreeBSD Security Officer anymore
+EXPIRATION_DATE=2007-07-07
+
 NO_BUILD=	yes
 
 do-install:
