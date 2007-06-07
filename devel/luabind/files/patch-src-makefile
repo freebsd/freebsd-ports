@@ -1,0 +1,17 @@
+--- src/makefile.orig	Mon Nov 28 23:55:34 2005
++++ src/makefile	Wed Jun  6 21:18:26 2007
+@@ -1,5 +1,3 @@
+-include ../config
+-
+ SOURCES = \
+ 	wrapper_base.cpp \
+ 	pcall.cpp \
+@@ -37,7 +35,7 @@
+ 	ranlib $@
+ 
+ %.o:%.cpp
+-	$(CXX) -g -ftemplate-depth-100 -Wall -DLUABIND_BUILDING -c $? -o $@ -I$(LUA_PATH)/include -I- -I.. -I$(BOOST_ROOT) $(CONFIG)
++	$(CXX) $(CXXFLAGS) -ftemplate-depth-100 -Wall -DLUABIND_BUILDING -c $? -o $@ -I$(LUA_INCDIR) -I.. -I$(BOOST_ROOT) -DNODEBUG
+ 
+ clean:
+ 	rm -f $(OBJECTS) $(TARGET)
