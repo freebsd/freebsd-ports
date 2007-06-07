@@ -7023,6 +7023,7 @@ lua50-filename	ports/devel/lua50-filename
 lua50-gettext	ports/devel/lua50-gettext
 lua50-posix	ports/devel/lua50-posix
 lua50-pty	ports/devel/lua50-pty
+luabind		ports/devel/luabind
 luasocket	ports/net/luasocket
 lucidlife	ports/games/lucidlife
 lugtools	ports/sysutils/lugtools
