@@ -1,0 +1,34 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Brackup/.packlist
+%%SITE_PERL%%/Brackup.pm
+%%SITE_PERL%%/Brackup/Backup.pm
+%%SITE_PERL%%/Brackup/BackupStats.pm
+%%SITE_PERL%%/Brackup/ChunkIterator.pm
+%%SITE_PERL%%/Brackup/CompositeChunk.pm
+%%SITE_PERL%%/Brackup/Config.pm
+%%SITE_PERL%%/Brackup/ConfigSection.pm
+%%SITE_PERL%%/Brackup/Dict/SQLite.pm
+%%SITE_PERL%%/Brackup/DigestCache.pm
+%%SITE_PERL%%/Brackup/File.pm
+%%SITE_PERL%%/Brackup/GPGProcManager.pm
+%%SITE_PERL%%/Brackup/GPGProcess.pm
+%%SITE_PERL%%/Brackup/InventoryDatabase.pm
+%%SITE_PERL%%/Brackup/Manual/Overview.pod
+%%SITE_PERL%%/Brackup/PositionedChunk.pm
+%%SITE_PERL%%/Brackup/Restore.pm
+%%SITE_PERL%%/Brackup/Root.pm
+%%SITE_PERL%%/Brackup/StoredChunk.pm
+%%SITE_PERL%%/Brackup/Target.pm
+%%SITE_PERL%%/Brackup/Target/Amazon.pm
+%%SITE_PERL%%/Brackup/Target/Filesystem.pm
+%%SITE_PERL%%/Brackup/TargetBackupStatInfo.pm
+%%SITE_PERL%%/Brackup/Test.pm
+%%SITE_PERL%%/Brackup/Util.pm
+bin/brackup
+bin/brackup-restore
+bin/brackup-target
+@dirrmtry %%SITE_PERL%%/Brackup/Target
+@dirrmtry %%SITE_PERL%%/Brackup/Manual
+@dirrmtry %%SITE_PERL%%/Brackup/Dict
+@dirrmtry %%SITE_PERL%%/Brackup
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Brackup
