@@ -21,6 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libxmmsclient++.so.1:${PORTSDIR}/audio/cpp-xmms2
 USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
 
+WRKSRC=	${WRKDIR}/${PORTNAME}
 MAKE_ENV+=	WAF_HOME=.
 
 MAN1=	gx2osd.1
