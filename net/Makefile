@@ -681,6 +681,7 @@
     SUBDIR += py-rrdpipe
     SUBDIR += py-rrdtool_lgpl
     SUBDIR += py-rt
+    SUBDIR += py-s3cmd
     SUBDIR += py-samba
     SUBDIR += py-smb
     SUBDIR += py-smbpasswd
