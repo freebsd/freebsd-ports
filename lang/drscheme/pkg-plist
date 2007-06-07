@@ -1,35 +1,37 @@
-%%MMM%%bin/drscheme3m
-%%MMM%%bin/gmzc3m
-%%MMM%%bin/help-desk3m
-%%MMM%%bin/mred3m
-%%MMM%%bin/mzc3m
-%%MMM%%bin/mzpp3m
-%%MMM%%bin/mzscheme3m
-%%MMM%%bin/mztext3m
-%%MMM%%bin/pdf-slatex3m
-%%MMM%%bin/planet3m
-%%MMM%%bin/plt-games3m
-%%MMM%%bin/plt-web-server-monitor3m
-%%MMM%%bin/plt-web-server-setup3m
-%%MMM%%bin/plt-web-server-text3m
-%%MMM%%bin/plt-web-server3m
-%%MMM%%bin/setup-plt3m
-%%MMM%%bin/slatex3m
-%%MMM%%bin/slideshow3m
-%%MMM%%bin/swindle3m
-%%MMM%%bin/tex2page3m
-%%MMM%%lib/libmred3m-360.so
-%%MMM%%lib/libmred3m.a
-%%MMM%%lib/libmred3m.la
-%%MMM%%lib/libmred3m.so
-%%MMM%%lib/libmzscheme3m-360.so
-%%MMM%%lib/libmzscheme3m.a
-%%MMM%%lib/libmzscheme3m.la
-%%MMM%%lib/libmzscheme3m.so
-%%MMM%%lib/plt/collects/sgl/compiled/native/%%ARCH%%-freebsd/3m/make-gl-info-helper.so
-%%MMM%%lib/plt/mzdyn3m.o
+%%CGC%%bin/drschemecgc
+%%CGC%%bin/help-deskcgc
+%%CGC%%bin/mredcgc
+%%CGC%%bin/mzccgc
+%%CGC%%bin/mzppcgc
+%%CGC%%bin/mzschemecgc
+%%CGC%%bin/mztextcgc
+%%CGC%%bin/pdf-slatexcgc
+%%CGC%%bin/planetcgc
+%%CGC%%bin/plt-gamescgc
+%%CGC%%bin/plt-web-server-monitorcgc
+%%CGC%%bin/plt-web-server-setupcgc
+%%CGC%%bin/plt-web-server-textcgc
+%%CGC%%bin/plt-web-servercgc
+%%CGC%%bin/setup-pltcgc
+%%CGC%%bin/slatexcgc
+%%CGC%%bin/slideshowcgc
+%%CGC%%bin/swindlecgc
+%%CGC%%bin/tex2pagecgc
+%%CGC%%lib/libmred-370.so
+%%CGC%%lib/libmred.a
+%%CGC%%lib/libmred.la
+%%CGC%%lib/libmred.so
+%%CGC%%lib/libmzscheme-370.so
+%%CGC%%lib/libmzscheme.la
+%%CGC%%lib/libmzscheme.a
+%%CGC%%lib/libmzscheme.so
+%%CGC%%lib/libmzgc-370.so
+%%CGC%%lib/libmzgc.la
+%%CGC%%lib/libmzgc.a
+%%CGC%%lib/libmzgc.so
+%%CGC%%lib/plt/mzdyn.o
+%%CGC%%lib/plt/collects/sgl/compiled/native/%%ARCH%%-freebsd/make-gl-info-helper.so
 bin/drscheme
-bin/gmzc
 bin/help-desk
 bin/mred
 bin/mzc
@@ -63,18 +65,14 @@ include/plt/schvers.h
 include/plt/sconfig.h
 include/plt/stypes.h
 include/plt/uconfig.h
-lib/libmred-360.so
-lib/libmred.a
-lib/libmred.la
-lib/libmred.so
-lib/libmzgc-360.so
-lib/libmzgc.a
-lib/libmzgc.la
-lib/libmzgc.so
-lib/libmzscheme-360.so
-lib/libmzscheme.a
-lib/libmzscheme.la
-lib/libmzscheme.so
+lib/libmred3m-370.so
+lib/libmred3m.a
+lib/libmred3m.la
+lib/libmred3m.so
+lib/libmzscheme3m-370.so
+lib/libmzscheme3m.a
+lib/libmzscheme3m.la
+lib/libmzscheme3m.so
 lib/plt/buildinfo
 lib/plt/collects/afm/Courier-Bold.afm
 lib/plt/collects/afm/Courier-BoldOblique.afm
@@ -365,9 +363,12 @@ lib/plt/collects/drscheme/info.ss
 lib/plt/collects/drscheme/installer.ss
 lib/plt/collects/drscheme/pltdoc.icns
 lib/plt/collects/drscheme/private/app.ss
+lib/plt/collects/drscheme/private/auto-language.ss
 lib/plt/collects/drscheme/private/bindings-browser.ss
 lib/plt/collects/drscheme/private/compiled/app.dep
 lib/plt/collects/drscheme/private/compiled/app.zo
+lib/plt/collects/drscheme/private/compiled/auto-language.dep
+lib/plt/collects/drscheme/private/compiled/auto-language.zo
 lib/plt/collects/drscheme/private/compiled/bindings-browser.dep
 lib/plt/collects/drscheme/private/compiled/bindings-browser.zo
 lib/plt/collects/drscheme/private/compiled/debug.dep
@@ -418,8 +419,6 @@ lib/plt/collects/drscheme/private/compiled/rep.dep
 lib/plt/collects/drscheme/private/compiled/rep.zo
 lib/plt/collects/drscheme/private/compiled/syncheck-debug.dep
 lib/plt/collects/drscheme/private/compiled/syncheck-debug.zo
-lib/plt/collects/drscheme/private/compiled/teachpack.dep
-lib/plt/collects/drscheme/private/compiled/teachpack.zo
 lib/plt/collects/drscheme/private/compiled/text.dep
 lib/plt/collects/drscheme/private/compiled/text.zo
 lib/plt/collects/drscheme/private/compiled/time-keystrokes.dep
@@ -456,7 +455,6 @@ lib/plt/collects/drscheme/private/multi-file-search.ss
 lib/plt/collects/drscheme/private/number-snip.ss
 lib/plt/collects/drscheme/private/rep.ss
 lib/plt/collects/drscheme/private/syncheck-debug.ss
-lib/plt/collects/drscheme/private/teachpack.ss
 lib/plt/collects/drscheme/private/text.ss
 lib/plt/collects/drscheme/private/time-keystrokes.ss
 lib/plt/collects/drscheme/private/tool-contract-language.ss
@@ -501,7 +499,6 @@ lib/plt/collects/dynext/doc.txt
 lib/plt/collects/dynext/dynext-sig.ss
 lib/plt/collects/dynext/dynext-unit.ss
 lib/plt/collects/dynext/dynext.ss
-lib/plt/collects/dynext/extension-project
 lib/plt/collects/dynext/file-sig.ss
 lib/plt/collects/dynext/file-unit.ss
 lib/plt/collects/dynext/file.ss
@@ -510,7 +507,6 @@ lib/plt/collects/dynext/info.ss
 lib/plt/collects/dynext/link-sig.ss
 lib/plt/collects/dynext/link-unit.ss
 lib/plt/collects/dynext/link.ss
-lib/plt/collects/dynext/linking-project
 lib/plt/collects/dynext/private/cmdargs.ss
 lib/plt/collects/dynext/private/compiled/cmdargs.dep
 lib/plt/collects/dynext/private/compiled/cmdargs.zo
@@ -714,6 +710,8 @@ lib/plt/collects/framework/compiled/info.dep
 lib/plt/collects/framework/compiled/info.zo
 lib/plt/collects/framework/compiled/keybinding-lang.dep
 lib/plt/collects/framework/compiled/keybinding-lang.zo
+lib/plt/collects/framework/compiled/preferences.dep
+lib/plt/collects/framework/compiled/preferences.zo
 lib/plt/collects/framework/compiled/splash.dep
 lib/plt/collects/framework/compiled/splash.zo
 lib/plt/collects/framework/compiled/test.dep
@@ -726,6 +724,7 @@ lib/plt/collects/framework/framework.ss
 lib/plt/collects/framework/gui-utils.ss
 lib/plt/collects/framework/info.ss
 lib/plt/collects/framework/keybinding-lang.ss
+lib/plt/collects/framework/preferences.ss
 lib/plt/collects/framework/private/application.ss
 lib/plt/collects/framework/private/autosave.ss
 lib/plt/collects/framework/private/bday.ss
@@ -759,8 +758,6 @@ lib/plt/collects/framework/private/compiled/encode-decode.dep
 lib/plt/collects/framework/private/compiled/encode-decode.zo
 lib/plt/collects/framework/private/compiled/exit.dep
 lib/plt/collects/framework/private/compiled/exit.zo
-lib/plt/collects/framework/private/compiled/exn.dep
-lib/plt/collects/framework/private/compiled/exn.zo
 lib/plt/collects/framework/private/compiled/finder.dep
 lib/plt/collects/framework/private/compiled/finder.zo
 lib/plt/collects/framework/private/compiled/frame.dep
@@ -806,7 +803,6 @@ lib/plt/collects/framework/private/compiled/version.zo
 lib/plt/collects/framework/private/editor.ss
 lib/plt/collects/framework/private/encode-decode.ss
 lib/plt/collects/framework/private/exit.ss
-lib/plt/collects/framework/private/exn.ss
 lib/plt/collects/framework/private/finder.ss
 lib/plt/collects/framework/private/frame.ss
 lib/plt/collects/framework/private/gen-standard-menus.ss
@@ -852,6 +848,12 @@ lib/plt/collects/frtime/compiled/frp-snip.dep
 lib/plt/collects/frtime/compiled/frp-snip.zo
 lib/plt/collects/frtime/compiled/frtime-big.dep
 lib/plt/collects/frtime/compiled/frtime-big.zo
+lib/plt/collects/frtime/compiled/frtime-lang-only.dep
+lib/plt/collects/frtime/compiled/frtime-lang-only.zo
+lib/plt/collects/frtime/compiled/frtime-opt-lang.dep
+lib/plt/collects/frtime/compiled/frtime-opt-lang.zo
+lib/plt/collects/frtime/compiled/frtime-opt.dep
+lib/plt/collects/frtime/compiled/frtime-opt.zo
 lib/plt/collects/frtime/compiled/frtime-tool.dep
 lib/plt/collects/frtime/compiled/frtime-tool.zo
 lib/plt/collects/frtime/compiled/frtime.dep
@@ -876,6 +878,8 @@ lib/plt/collects/frtime/compiled/lang-ext.dep
 lib/plt/collects/frtime/compiled/lang-ext.zo
 lib/plt/collects/frtime/compiled/list.dep
 lib/plt/collects/frtime/compiled/list.zo
+lib/plt/collects/frtime/compiled/lowered-equivs.dep
+lib/plt/collects/frtime/compiled/lowered-equivs.zo
 lib/plt/collects/frtime/compiled/math.dep
 lib/plt/collects/frtime/compiled/math.zo
 lib/plt/collects/frtime/compiled/mymatch.dep
@@ -930,6 +934,9 @@ lib/plt/collects/frtime/etc.ss
 lib/plt/collects/frtime/frp-core.ss
 lib/plt/collects/frtime/frp-snip.ss
 lib/plt/collects/frtime/frtime-big.ss
+lib/plt/collects/frtime/frtime-lang-only.ss
+lib/plt/collects/frtime/frtime-opt-lang.ss
+lib/plt/collects/frtime/frtime-opt.ss
 lib/plt/collects/frtime/frtime-tool.ss
 lib/plt/collects/frtime/frtime.ss
 lib/plt/collects/frtime/ft-qq.ss
@@ -942,6 +949,7 @@ lib/plt/collects/frtime/heap.ss
 lib/plt/collects/frtime/info.ss
 lib/plt/collects/frtime/lang-ext.ss
 lib/plt/collects/frtime/list.ss
+lib/plt/collects/frtime/lowered-equivs.ss
 lib/plt/collects/frtime/math.ss
 lib/plt/collects/frtime/mymatch.ss
 lib/plt/collects/frtime/mzscheme-core.ss
@@ -1275,10 +1283,23 @@ lib/plt/collects/games/memory/images/unhappy.png
 lib/plt/collects/games/memory/info.ss
 lib/plt/collects/games/memory/memory.png
 lib/plt/collects/games/memory/memory.ss
+lib/plt/collects/games/mines/compiled/gen-tiles.dep
+lib/plt/collects/games/mines/compiled/gen-tiles.zo
 lib/plt/collects/games/mines/compiled/info.dep
 lib/plt/collects/games/mines/compiled/info.zo
 lib/plt/collects/games/mines/compiled/mines.dep
 lib/plt/collects/games/mines/compiled/mines.zo
+lib/plt/collects/games/mines/gen-tiles.ss
+lib/plt/collects/games/mines/images/bg.png
+lib/plt/collects/games/mines/images/bomb.png
+lib/plt/collects/games/mines/images/explode.png
+lib/plt/collects/games/mines/images/flag.png
+lib/plt/collects/games/mines/images/hilite-tile.png
+lib/plt/collects/games/mines/images/lclick-tile.png
+lib/plt/collects/games/mines/images/local-tile.png
+lib/plt/collects/games/mines/images/near-tile.png
+lib/plt/collects/games/mines/images/rclick-tile.png
+lib/plt/collects/games/mines/images/tile.png
 lib/plt/collects/games/mines/info.ss
 lib/plt/collects/games/mines/mines.png
 lib/plt/collects/games/mines/mines.ss
@@ -1920,7 +1941,9 @@ lib/plt/collects/htdp/Test/pingp.ss
 lib/plt/collects/htdp/Test/protect.ss
 lib/plt/collects/htdp/Test/rectangle.ss
 lib/plt/collects/htdp/Test/tester.ss
+lib/plt/collects/htdp/Test/world-add-line.ss
 lib/plt/collects/htdp/Test/world-mouse.ss
+lib/plt/collects/htdp/Test/world.ss
 lib/plt/collects/htdp/arrow-gui.ss
 lib/plt/collects/htdp/arrow.ss
 lib/plt/collects/htdp/big-draw.ss
@@ -1972,6 +1995,8 @@ lib/plt/collects/htdp/compiled/servlet2.dep
 lib/plt/collects/htdp/compiled/servlet2.zo
 lib/plt/collects/htdp/compiled/show-queen.dep
 lib/plt/collects/htdp/compiled/show-queen.zo
+lib/plt/collects/htdp/compiled/testing.dep
+lib/plt/collects/htdp/compiled/testing.zo
 lib/plt/collects/htdp/compiled/world.dep
 lib/plt/collects/htdp/compiled/world.zo
 lib/plt/collects/htdp/convert.ss
@@ -1986,6 +2011,8 @@ lib/plt/collects/htdp/guess-gui.ss
 lib/plt/collects/htdp/guess.ss
 lib/plt/collects/htdp/gui.ss
 lib/plt/collects/htdp/hangman-play.ss
+lib/plt/collects/htdp/hangman-world-play.ss
+lib/plt/collects/htdp/hangman-world.ss
 lib/plt/collects/htdp/hangman.ss
 lib/plt/collects/htdp/image.ss
 lib/plt/collects/htdp/info.ss
@@ -1995,6 +2022,7 @@ lib/plt/collects/htdp/master.ss
 lib/plt/collects/htdp/servlet.ss
 lib/plt/collects/htdp/servlet2.ss
 lib/plt/collects/htdp/show-queen.ss
+lib/plt/collects/htdp/testing.ss
 lib/plt/collects/htdp/world.ss
 lib/plt/collects/html/case.ss
 lib/plt/collects/html/compiled/html-sig.dep
@@ -2045,7 +2073,7 @@ lib/plt/collects/icons/bb-small.bmp
 lib/plt/collects/icons/bb.gif
 lib/plt/collects/icons/book.gif
 lib/plt/collects/icons/break.png
-lib/plt/collects/icons/bug09.gif
+lib/plt/collects/icons/bug09.png
 lib/plt/collects/icons/checksyn.jpg
 lib/plt/collects/icons/eli-purple.jpg
 lib/plt/collects/icons/eof.gif
@@ -2116,18 +2144,30 @@ lib/plt/collects/icons/xml-box.jpg
 lib/plt/collects/info-domain/compiled/cache.ss
 lib/plt/collects/lang/compiled/error.dep
 lib/plt/collects/lang/compiled/error.zo
+lib/plt/collects/lang/compiled/htdp-advanced-reader.dep
+lib/plt/collects/lang/compiled/htdp-advanced-reader.zo
 lib/plt/collects/lang/compiled/htdp-advanced.dep
 lib/plt/collects/lang/compiled/htdp-advanced.zo
+lib/plt/collects/lang/compiled/htdp-beginner-abbr-reader.dep
+lib/plt/collects/lang/compiled/htdp-beginner-abbr-reader.zo
 lib/plt/collects/lang/compiled/htdp-beginner-abbr.dep
 lib/plt/collects/lang/compiled/htdp-beginner-abbr.zo
+lib/plt/collects/lang/compiled/htdp-beginner-reader.dep
+lib/plt/collects/lang/compiled/htdp-beginner-reader.zo
 lib/plt/collects/lang/compiled/htdp-beginner.dep
 lib/plt/collects/lang/compiled/htdp-beginner.zo
+lib/plt/collects/lang/compiled/htdp-intermediate-lambda-reader.dep
+lib/plt/collects/lang/compiled/htdp-intermediate-lambda-reader.zo
 lib/plt/collects/lang/compiled/htdp-intermediate-lambda.dep
 lib/plt/collects/lang/compiled/htdp-intermediate-lambda.zo
+lib/plt/collects/lang/compiled/htdp-intermediate-reader.dep
+lib/plt/collects/lang/compiled/htdp-intermediate-reader.zo
 lib/plt/collects/lang/compiled/htdp-intermediate.dep
 lib/plt/collects/lang/compiled/htdp-intermediate.zo
 lib/plt/collects/lang/compiled/htdp-langs.dep
 lib/plt/collects/lang/compiled/htdp-langs.zo
+lib/plt/collects/lang/compiled/htdp-reader.dep
+lib/plt/collects/lang/compiled/htdp-reader.zo
 lib/plt/collects/lang/compiled/imageeq.dep
 lib/plt/collects/lang/compiled/imageeq.zo
 lib/plt/collects/lang/compiled/info.dep
@@ -2148,12 +2188,18 @@ lib/plt/collects/lang/compiled/r5rs.dep
 lib/plt/collects/lang/compiled/r5rs.zo
 lib/plt/collects/lang/doc.txt
 lib/plt/collects/lang/error.ss
+lib/plt/collects/lang/htdp-advanced-reader.ss
 lib/plt/collects/lang/htdp-advanced.ss
+lib/plt/collects/lang/htdp-beginner-abbr-reader.ss
 lib/plt/collects/lang/htdp-beginner-abbr.ss
+lib/plt/collects/lang/htdp-beginner-reader.ss
 lib/plt/collects/lang/htdp-beginner.ss
+lib/plt/collects/lang/htdp-intermediate-lambda-reader.ss
 lib/plt/collects/lang/htdp-intermediate-lambda.ss
+lib/plt/collects/lang/htdp-intermediate-reader.ss
 lib/plt/collects/lang/htdp-intermediate.ss
 lib/plt/collects/lang/htdp-langs.ss
+lib/plt/collects/lang/htdp-reader.ss
 lib/plt/collects/lang/imageeq.ss
 lib/plt/collects/lang/info.ss
 lib/plt/collects/lang/plt-mred.ss
@@ -2245,6 +2291,10 @@ lib/plt/collects/macro-debugger/compiled/expand.dep
 lib/plt/collects/macro-debugger/compiled/expand.zo
 lib/plt/collects/macro-debugger/compiled/info.dep
 lib/plt/collects/macro-debugger/compiled/info.zo
+lib/plt/collects/macro-debugger/compiled/stepper-text.dep
+lib/plt/collects/macro-debugger/compiled/stepper-text.zo
+lib/plt/collects/macro-debugger/compiled/stepper.dep
+lib/plt/collects/macro-debugger/compiled/stepper.zo
 lib/plt/collects/macro-debugger/compiled/syntax-browser.dep
 lib/plt/collects/macro-debugger/compiled/syntax-browser.zo
 lib/plt/collects/macro-debugger/compiled/tool.dep
@@ -2280,6 +2330,8 @@ lib/plt/collects/macro-debugger/model/compiled/steps.dep
 lib/plt/collects/macro-debugger/model/compiled/steps.zo
 lib/plt/collects/macro-debugger/model/compiled/stx-util.dep
 lib/plt/collects/macro-debugger/model/compiled/stx-util.zo
+lib/plt/collects/macro-debugger/model/compiled/synth-derivs.dep
+lib/plt/collects/macro-debugger/model/compiled/synth-derivs.zo
 lib/plt/collects/macro-debugger/model/compiled/synth-engine.dep
 lib/plt/collects/macro-debugger/model/compiled/synth-engine.zo
 lib/plt/collects/macro-debugger/model/compiled/trace-raw.dep
@@ -2304,11 +2356,14 @@ lib/plt/collects/macro-debugger/model/reductions-engine.ss
 lib/plt/collects/macro-debugger/model/reductions.ss
 lib/plt/collects/macro-debugger/model/steps.ss
 lib/plt/collects/macro-debugger/model/stx-util.ss
+lib/plt/collects/macro-debugger/model/synth-derivs.ss
 lib/plt/collects/macro-debugger/model/synth-engine.ss
 lib/plt/collects/macro-debugger/model/trace-raw.ss
 lib/plt/collects/macro-debugger/model/trace.ss
 lib/plt/collects/macro-debugger/model/yacc-ext.ss
 lib/plt/collects/macro-debugger/model/yacc-interrupted.ss
+lib/plt/collects/macro-debugger/stepper-text.ss
+lib/plt/collects/macro-debugger/stepper.ss
 lib/plt/collects/macro-debugger/syntax-browser.ss
 lib/plt/collects/macro-debugger/syntax-browser/browser.ss
 lib/plt/collects/macro-debugger/syntax-browser/color.ss
@@ -2350,6 +2405,8 @@ lib/plt/collects/macro-debugger/syntax-browser/compiled/snipclass.dep
 lib/plt/collects/macro-debugger/syntax-browser/compiled/snipclass.zo
 lib/plt/collects/macro-debugger/syntax-browser/compiled/syntax-snip.dep
 lib/plt/collects/macro-debugger/syntax-browser/compiled/syntax-snip.zo
+lib/plt/collects/macro-debugger/syntax-browser/compiled/text.dep
+lib/plt/collects/macro-debugger/syntax-browser/compiled/text.zo
 lib/plt/collects/macro-debugger/syntax-browser/compiled/typesetter.dep
 lib/plt/collects/macro-debugger/syntax-browser/compiled/typesetter.zo
 lib/plt/collects/macro-debugger/syntax-browser/compiled/util.dep
@@ -2373,6 +2430,7 @@ lib/plt/collects/macro-debugger/syntax-browser/pretty-range.ss
 lib/plt/collects/macro-debugger/syntax-browser/properties.ss
 lib/plt/collects/macro-debugger/syntax-browser/snipclass.ss
 lib/plt/collects/macro-debugger/syntax-browser/syntax-snip.ss
+lib/plt/collects/macro-debugger/syntax-browser/text.ss
 lib/plt/collects/macro-debugger/syntax-browser/typesetter.ss
 lib/plt/collects/macro-debugger/syntax-browser/util.ss
 lib/plt/collects/macro-debugger/syntax-browser/widget.ss
@@ -2440,6 +2498,8 @@ lib/plt/collects/mred/compiled/info.dep
 lib/plt/collects/mred/compiled/info.zo
 lib/plt/collects/mred/compiled/mred-sig.dep
 lib/plt/collects/mred/compiled/mred-sig.zo
+lib/plt/collects/mred/compiled/mred-unit.dep
+lib/plt/collects/mred/compiled/mred-unit.zo
 lib/plt/collects/mred/compiled/mred.dep
 lib/plt/collects/mred/compiled/mred.zo
 lib/plt/collects/mred/compiled/script-installer.dep
@@ -2449,6 +2509,7 @@ lib/plt/collects/mred/edit-main.ss
 lib/plt/collects/mred/edit.ss
 lib/plt/collects/mred/info.ss
 lib/plt/collects/mred/mred-sig.ss
+lib/plt/collects/mred/mred-unit.ss
 lib/plt/collects/mred/mred.ss
 lib/plt/collects/mred/private/afm.ss
 lib/plt/collects/mred/private/app.ss
@@ -2595,6 +2656,8 @@ lib/plt/collects/mrlib/compiled/cache-image-snip.dep
 lib/plt/collects/mrlib/compiled/cache-image-snip.zo
 lib/plt/collects/mrlib/compiled/click-forwarding-editor.dep
 lib/plt/collects/mrlib/compiled/click-forwarding-editor.zo
+lib/plt/collects/mrlib/compiled/gif.dep
+lib/plt/collects/mrlib/compiled/gif.zo
 lib/plt/collects/mrlib/compiled/graph.dep
 lib/plt/collects/mrlib/compiled/graph.zo
 lib/plt/collects/mrlib/compiled/include-bitmap.dep
@@ -2615,6 +2678,7 @@ lib/plt/collects/mrlib/compiled/tab-choice.dep
 lib/plt/collects/mrlib/compiled/tab-choice.zo
 lib/plt/collects/mrlib/compiled/text-string-style-desc.dep
 lib/plt/collects/mrlib/compiled/text-string-style-desc.zo
+lib/plt/collects/mrlib/gif.ss
 lib/plt/collects/mrlib/graph.ss
 lib/plt/collects/mrlib/include-bitmap.ss
 lib/plt/collects/mrlib/info.ss
@@ -2682,6 +2746,8 @@ lib/plt/collects/mrlib/private/info.ss
 lib/plt/collects/mrlib/syntax-browser.ss
 lib/plt/collects/mrlib/tab-choice.ss
 lib/plt/collects/mrlib/text-string-style-desc.ss
+lib/plt/collects/mzlib/a-signature.ss
+lib/plt/collects/mzlib/a-unit.ss
 lib/plt/collects/mzlib/async-channel.ss
 lib/plt/collects/mzlib/awk.ss
 lib/plt/collects/mzlib/class-traced.ss
@@ -2693,6 +2759,10 @@ lib/plt/collects/mzlib/cmdline.ss
 lib/plt/collects/mzlib/cml.ss
 lib/plt/collects/mzlib/compat.ss
 lib/plt/collects/mzlib/compile.ss
+lib/plt/collects/mzlib/compiled/a-signature.dep
+lib/plt/collects/mzlib/compiled/a-signature.zo
+lib/plt/collects/mzlib/compiled/a-unit.dep
+lib/plt/collects/mzlib/compiled/a-unit.zo
 lib/plt/collects/mzlib/compiled/async-channel.dep
 lib/plt/collects/mzlib/compiled/async-channel.zo
 lib/plt/collects/mzlib/compiled/awk.dep
@@ -2769,6 +2839,10 @@ lib/plt/collects/mzlib/compiled/process.dep
 lib/plt/collects/mzlib/compiled/process.zo
 lib/plt/collects/mzlib/compiled/restart.dep
 lib/plt/collects/mzlib/compiled/restart.zo
+lib/plt/collects/mzlib/compiled/runtime-path.dep
+lib/plt/collects/mzlib/compiled/runtime-path.zo
+lib/plt/collects/mzlib/compiled/sandbox.dep
+lib/plt/collects/mzlib/compiled/sandbox.zo
 lib/plt/collects/mzlib/compiled/sendevent.dep
 lib/plt/collects/mzlib/compiled/sendevent.zo
 lib/plt/collects/mzlib/compiled/serialize.dep
@@ -2797,10 +2871,16 @@ lib/plt/collects/mzlib/compiled/trait.dep
 lib/plt/collects/mzlib/compiled/trait.zo
 lib/plt/collects/mzlib/compiled/transcr.dep
 lib/plt/collects/mzlib/compiled/transcr.zo
+lib/plt/collects/mzlib/compiled/unit-exptime.dep
+lib/plt/collects/mzlib/compiled/unit-exptime.zo
 lib/plt/collects/mzlib/compiled/unit.dep
 lib/plt/collects/mzlib/compiled/unit.zo
+lib/plt/collects/mzlib/compiled/unit200.dep
+lib/plt/collects/mzlib/compiled/unit200.zo
 lib/plt/collects/mzlib/compiled/unitsig.dep
 lib/plt/collects/mzlib/compiled/unitsig.zo
+lib/plt/collects/mzlib/compiled/unitsig200.dep
+lib/plt/collects/mzlib/compiled/unitsig200.zo
 lib/plt/collects/mzlib/compiled/zip.dep
 lib/plt/collects/mzlib/compiled/zip.zo
 lib/plt/collects/mzlib/contract.ss
@@ -2870,6 +2950,10 @@ lib/plt/collects/mzlib/private/compiled/package-helper.dep
 lib/plt/collects/mzlib/private/compiled/package-helper.zo
 lib/plt/collects/mzlib/private/compiled/port.dep
 lib/plt/collects/mzlib/private/compiled/port.zo
+lib/plt/collects/mzlib/private/compiled/runtime-path-table.dep
+lib/plt/collects/mzlib/private/compiled/runtime-path-table.zo
+lib/plt/collects/mzlib/private/compiled/sandbox-coverage.dep
+lib/plt/collects/mzlib/private/compiled/sandbox-coverage.zo
 lib/plt/collects/mzlib/private/compiled/serialize-structs.dep
 lib/plt/collects/mzlib/private/compiled/serialize-structs.zo
 lib/plt/collects/mzlib/private/compiled/sigmatch.dep
@@ -2882,6 +2966,14 @@ lib/plt/collects/mzlib/private/compiled/stxparamkey.dep
 lib/plt/collects/mzlib/private/compiled/stxparamkey.zo
 lib/plt/collects/mzlib/private/compiled/stxset.dep
 lib/plt/collects/mzlib/private/compiled/stxset.zo
+lib/plt/collects/mzlib/private/compiled/unit-compiletime.dep
+lib/plt/collects/mzlib/private/compiled/unit-compiletime.zo
+lib/plt/collects/mzlib/private/compiled/unit-keywords.dep
+lib/plt/collects/mzlib/private/compiled/unit-keywords.zo
+lib/plt/collects/mzlib/private/compiled/unit-runtime.dep
+lib/plt/collects/mzlib/private/compiled/unit-runtime.zo
+lib/plt/collects/mzlib/private/compiled/unit-syntax.dep
+lib/plt/collects/mzlib/private/compiled/unit-syntax.zo
 lib/plt/collects/mzlib/private/compiled/unitidmap.dep
 lib/plt/collects/mzlib/private/compiled/unitidmap.zo
 lib/plt/collects/mzlib/private/contract-arrow.ss
@@ -2983,6 +3075,8 @@ lib/plt/collects/mzlib/private/match/update-counts.scm
 lib/plt/collects/mzlib/private/mkmatch.ss
 lib/plt/collects/mzlib/private/package-helper.ss
 lib/plt/collects/mzlib/private/port.ss
+lib/plt/collects/mzlib/private/runtime-path-table.ss
+lib/plt/collects/mzlib/private/sandbox-coverage.ss
 lib/plt/collects/mzlib/private/serialize-structs.ss
 lib/plt/collects/mzlib/private/shared-body.ss
 lib/plt/collects/mzlib/private/sigmatch.ss
@@ -2990,9 +3084,15 @@ lib/plt/collects/mzlib/private/sigutil.ss
 lib/plt/collects/mzlib/private/structure-helper.ss
 lib/plt/collects/mzlib/private/stxparamkey.ss
 lib/plt/collects/mzlib/private/stxset.ss
+lib/plt/collects/mzlib/private/unit-compiletime.ss
+lib/plt/collects/mzlib/private/unit-keywords.ss
+lib/plt/collects/mzlib/private/unit-runtime.ss
+lib/plt/collects/mzlib/private/unit-syntax.ss
 lib/plt/collects/mzlib/private/unitidmap.ss
 lib/plt/collects/mzlib/process.ss
 lib/plt/collects/mzlib/restart.ss
+lib/plt/collects/mzlib/runtime-path.ss
+lib/plt/collects/mzlib/sandbox.ss
 lib/plt/collects/mzlib/sendevent.ss
 lib/plt/collects/mzlib/serialize.ss
 lib/plt/collects/mzlib/shared.ss
@@ -3007,8 +3107,11 @@ lib/plt/collects/mzlib/trace.ss
 lib/plt/collects/mzlib/traceld.ss
 lib/plt/collects/mzlib/trait.ss
 lib/plt/collects/mzlib/transcr.ss
+lib/plt/collects/mzlib/unit-exptime.ss
 lib/plt/collects/mzlib/unit.ss
+lib/plt/collects/mzlib/unit200.ss
 lib/plt/collects/mzlib/unitsig.ss
+lib/plt/collects/mzlib/unitsig200.ss
 lib/plt/collects/mzlib/zip.ss
 lib/plt/collects/mzscheme/compiled/info.dep
 lib/plt/collects/mzscheme/compiled/info.zo
@@ -3029,7 +3132,6 @@ lib/plt/collects/mzscheme/examples/msgbox.ss
 lib/plt/collects/mzscheme/examples/tree-finish.ss
 lib/plt/collects/mzscheme/examples/tree.cxx
 lib/plt/collects/mzscheme/info.ss
-lib/plt/collects/mzscheme/lib/mzdyn.c
 lib/plt/collects/mztake/TODO.txt
 lib/plt/collects/mztake/annotator.ss
 lib/plt/collects/mztake/compiled/annotator.dep
@@ -3123,6 +3225,8 @@ lib/plt/collects/net/compiled/ftp-unit.dep
 lib/plt/collects/net/compiled/ftp-unit.zo
 lib/plt/collects/net/compiled/ftp.dep
 lib/plt/collects/net/compiled/ftp.zo
+lib/plt/collects/net/compiled/gifwrite.dep
+lib/plt/collects/net/compiled/gifwrite.zo
 lib/plt/collects/net/compiled/head-sig.dep
 lib/plt/collects/net/compiled/head-sig.zo
 lib/plt/collects/net/compiled/head-unit.dep
@@ -3211,6 +3315,7 @@ lib/plt/collects/net/doc.txt
 lib/plt/collects/net/ftp-sig.ss
 lib/plt/collects/net/ftp-unit.ss
 lib/plt/collects/net/ftp.ss
+lib/plt/collects/net/gifwrite.ss
 lib/plt/collects/net/head-sig.ss
 lib/plt/collects/net/head-unit.ss
 lib/plt/collects/net/head.ss
@@ -3417,13 +3522,13 @@ lib/plt/collects/plot/demos/fit-demo-2.ss
 lib/plt/collects/plot/doc.txt
 lib/plt/collects/plot/fit-low-level.ss
 lib/plt/collects/plot/fit.ss
+lib/plt/collects/plot/fonts/plstnd5.fnt
+lib/plt/collects/plot/fonts/plxtnd5.fnt
 lib/plt/collects/plot/info.ss
 lib/plt/collects/plot/math.ss
 lib/plt/collects/plot/plot-extend.ss
 lib/plt/collects/plot/plot.ss
 lib/plt/collects/plot/plplot.ss
-lib/plt/collects/plot/plstnd5.fnt
-lib/plt/collects/plot/plxtnd5.fnt
 lib/plt/collects/plot/pre-installer.ss
 lib/plt/collects/plot/renderer-helpers.ss
 lib/plt/collects/plot/renderers.ss
@@ -3903,24 +4008,6 @@ lib/plt/collects/profj/tester.scm
 lib/plt/collects/profj/to-scheme.ss
 lib/plt/collects/profj/tool.ss
 lib/plt/collects/profj/types.ss
-lib/plt/collects/profjBoxes/compiled/info.dep
-lib/plt/collects/profjBoxes/compiled/info.zo
-lib/plt/collects/profjBoxes/compiled/tool.dep
-lib/plt/collects/profjBoxes/compiled/tool.zo
-lib/plt/collects/profjBoxes/info.ss
-lib/plt/collects/profjBoxes/private/box-helpers.ss
-lib/plt/collects/profjBoxes/private/compiled/box-helpers.dep
-lib/plt/collects/profjBoxes/private/compiled/box-helpers.zo
-lib/plt/collects/profjBoxes/private/compiled/example-box.dep
-lib/plt/collects/profjBoxes/private/compiled/example-box.zo
-lib/plt/collects/profjBoxes/private/compiled/interactions-box.dep
-lib/plt/collects/profjBoxes/private/compiled/interactions-box.zo
-lib/plt/collects/profjBoxes/private/compiled/table.dep
-lib/plt/collects/profjBoxes/private/compiled/table.zo
-lib/plt/collects/profjBoxes/private/example-box.ss
-lib/plt/collects/profjBoxes/private/interactions-box.ss
-lib/plt/collects/profjBoxes/private/table.ss
-lib/plt/collects/profjBoxes/tool.ss
 lib/plt/collects/profjWizard/assoc-list.scm
 lib/plt/collects/profjWizard/aux-class.scm
 lib/plt/collects/profjWizard/aux-contract.scm
@@ -3973,6 +4060,8 @@ lib/plt/collects/readline/compiled/pread.dep
 lib/plt/collects/readline/compiled/pread.zo
 lib/plt/collects/readline/compiled/readline.dep
 lib/plt/collects/readline/compiled/readline.zo
+lib/plt/collects/readline/compiled/rep-start.dep
+lib/plt/collects/readline/compiled/rep-start.zo
 lib/plt/collects/readline/compiled/rep.dep
 lib/plt/collects/readline/compiled/rep.zo
 lib/plt/collects/readline/doc.txt
@@ -3980,6 +4069,7 @@ lib/plt/collects/readline/info.ss
 lib/plt/collects/readline/mzrl.ss
 lib/plt/collects/readline/pread.ss
 lib/plt/collects/readline/readline.ss
+lib/plt/collects/readline/rep-start.ss
 lib/plt/collects/readline/rep.ss
 lib/plt/collects/setup/compiled/configtab.dep
 lib/plt/collects/setup/compiled/configtab.zo
@@ -4017,6 +4107,8 @@ lib/plt/collects/setup/compiled/unixstyle-install.dep
 lib/plt/collects/setup/compiled/unixstyle-install.zo
 lib/plt/collects/setup/compiled/unpack.dep
 lib/plt/collects/setup/compiled/unpack.zo
+lib/plt/collects/setup/compiled/variant.dep
+lib/plt/collects/setup/compiled/variant.zo
 lib/plt/collects/setup/compiled/winvers-change.dep
 lib/plt/collects/setup/compiled/winvers-change.zo
 lib/plt/collects/setup/compiled/winvers.dep
@@ -4042,6 +4134,7 @@ lib/plt/collects/setup/setup.lch
 lib/plt/collects/setup/setup.ss
 lib/plt/collects/setup/unixstyle-install.ss
 lib/plt/collects/setup/unpack.ss
+lib/plt/collects/setup/variant.ss
 lib/plt/collects/setup/winvers-change.ss
 lib/plt/collects/setup/winvers.ss
 lib/plt/collects/sgl/bitmap.ss
@@ -4061,7 +4154,7 @@ lib/plt/collects/sgl/compiled/make-gl-info.dep
 lib/plt/collects/sgl/compiled/make-gl-info.zo
 lib/plt/collects/sgl/compiled/makefile.dep
 lib/plt/collects/sgl/compiled/makefile.zo
-lib/plt/collects/sgl/compiled/native/%%ARCH%%-freebsd/make-gl-info-helper.so
+lib/plt/collects/sgl/compiled/native/%%ARCH%%-freebsd/3m/make-gl-info-helper.so
 lib/plt/collects/sgl/compiled/sgl.dep
 lib/plt/collects/sgl/compiled/sgl.zo
 lib/plt/collects/sgl/doc.txt
@@ -4093,12 +4186,6 @@ lib/plt/collects/slatex/slatex-launcher.ss
 lib/plt/collects/slatex/slatex-wrapper.ss
 lib/plt/collects/slatex/slatex.ss
 lib/plt/collects/slatex/slatex.sty
-lib/plt/collects/slibinit/compiled/info.dep
-lib/plt/collects/slibinit/compiled/info.zo
-lib/plt/collects/slibinit/doc.txt
-lib/plt/collects/slibinit/info.ss
-lib/plt/collects/slibinit/init.ss
-lib/plt/collects/slibinit/load.ss
 lib/plt/collects/slideshow/cmdline.ss
 lib/plt/collects/slideshow/code.ss
 lib/plt/collects/slideshow/compiled/cmdline.dep
@@ -4299,6 +4386,10 @@ lib/plt/collects/srfi/34.ss
 lib/plt/collects/srfi/34/compiled/exception.dep
 lib/plt/collects/srfi/34/compiled/exception.zo
 lib/plt/collects/srfi/34/exception.ss
+lib/plt/collects/srfi/35.ss
+lib/plt/collects/srfi/35/compiled/condition.dep
+lib/plt/collects/srfi/35/compiled/condition.zo
+lib/plt/collects/srfi/35/condition.ss
 lib/plt/collects/srfi/38.ss
 lib/plt/collects/srfi/39.ss
 lib/plt/collects/srfi/4.ss
@@ -4312,29 +4403,8 @@ lib/plt/collects/srfi/42/compiled/comprehensions.zo
 lib/plt/collects/srfi/42/comprehensions.ss
 lib/plt/collects/srfi/42/examples-42.ss
 lib/plt/collects/srfi/43.ss
-lib/plt/collects/srfi/43/compiled/constructors.dep
-lib/plt/collects/srfi/43/compiled/constructors.zo
-lib/plt/collects/srfi/43/compiled/conversion.dep
-lib/plt/collects/srfi/43/compiled/conversion.zo
-lib/plt/collects/srfi/43/compiled/iteration.dep
-lib/plt/collects/srfi/43/compiled/iteration.zo
-lib/plt/collects/srfi/43/compiled/mutators.dep
-lib/plt/collects/srfi/43/compiled/mutators.zo
-lib/plt/collects/srfi/43/compiled/predicates.dep
-lib/plt/collects/srfi/43/compiled/predicates.zo
-lib/plt/collects/srfi/43/compiled/searching.dep
-lib/plt/collects/srfi/43/compiled/searching.zo
-lib/plt/collects/srfi/43/compiled/util.dep
-lib/plt/collects/srfi/43/compiled/util.zo
 lib/plt/collects/srfi/43/compiled/vector-lib.dep
 lib/plt/collects/srfi/43/compiled/vector-lib.zo
-lib/plt/collects/srfi/43/constructors.ss
-lib/plt/collects/srfi/43/conversion.ss
-lib/plt/collects/srfi/43/iteration.ss
-lib/plt/collects/srfi/43/mutators.ss
-lib/plt/collects/srfi/43/predicates.ss
-lib/plt/collects/srfi/43/searching.ss
-lib/plt/collects/srfi/43/util.ss
 lib/plt/collects/srfi/43/vector-lib.ss
 lib/plt/collects/srfi/45.ss
 lib/plt/collects/srfi/45/compiled/lazy.dep
@@ -4348,6 +4418,10 @@ lib/plt/collects/srfi/5.ss
 lib/plt/collects/srfi/5/compiled/let.dep
 lib/plt/collects/srfi/5/compiled/let.zo
 lib/plt/collects/srfi/5/let.ss
+lib/plt/collects/srfi/54.ss
+lib/plt/collects/srfi/54/cat.ss
+lib/plt/collects/srfi/54/compiled/cat.dep
+lib/plt/collects/srfi/54/compiled/cat.zo
 lib/plt/collects/srfi/57.ss
 lib/plt/collects/srfi/57/compiled/records.dep
 lib/plt/collects/srfi/57/compiled/records.zo
@@ -4372,6 +4446,10 @@ lib/plt/collects/srfi/63.ss
 lib/plt/collects/srfi/63/63.ss
 lib/plt/collects/srfi/63/compiled/63.dep
 lib/plt/collects/srfi/63/compiled/63.zo
+lib/plt/collects/srfi/64.ss
+lib/plt/collects/srfi/64/compiled/testing.dep
+lib/plt/collects/srfi/64/compiled/testing.zo
+lib/plt/collects/srfi/64/testing.ss
 lib/plt/collects/srfi/66.ss
 lib/plt/collects/srfi/66/66.ss
 lib/plt/collects/srfi/66/compiled/66.dep
@@ -4389,6 +4467,10 @@ lib/plt/collects/srfi/7.ss
 lib/plt/collects/srfi/7/compiled/program.dep
 lib/plt/collects/srfi/7/compiled/program.zo
 lib/plt/collects/srfi/7/program.ss
+lib/plt/collects/srfi/71.ss
+lib/plt/collects/srfi/71/compiled/letvalues.dep
+lib/plt/collects/srfi/71/compiled/letvalues.zo
+lib/plt/collects/srfi/71/letvalues.ss
 lib/plt/collects/srfi/74.ss
 lib/plt/collects/srfi/74/74.ss
 lib/plt/collects/srfi/74/blob.scm
@@ -4404,6 +4486,14 @@ lib/plt/collects/srfi/8.ss
 lib/plt/collects/srfi/8/compiled/receive.dep
 lib/plt/collects/srfi/8/compiled/receive.zo
 lib/plt/collects/srfi/8/receive.ss
+lib/plt/collects/srfi/86.ss
+lib/plt/collects/srfi/86/86.ss
+lib/plt/collects/srfi/86/compiled/86.dep
+lib/plt/collects/srfi/86/compiled/86.zo
+lib/plt/collects/srfi/87.ss
+lib/plt/collects/srfi/87/case.ss
+lib/plt/collects/srfi/87/compiled/case.dep
+lib/plt/collects/srfi/87/compiled/case.zo
 lib/plt/collects/srfi/9.ss
 lib/plt/collects/srfi/9/compiled/record.dep
 lib/plt/collects/srfi/9/compiled/record.zo
@@ -4446,6 +4536,8 @@ lib/plt/collects/srfi/compiled/32.dep
 lib/plt/collects/srfi/compiled/32.zo
 lib/plt/collects/srfi/compiled/34.dep
 lib/plt/collects/srfi/compiled/34.zo
+lib/plt/collects/srfi/compiled/35.dep
+lib/plt/collects/srfi/compiled/35.zo
 lib/plt/collects/srfi/compiled/38.dep
 lib/plt/collects/srfi/compiled/38.zo
 lib/plt/collects/srfi/compiled/39.dep
@@ -4464,6 +4556,8 @@ lib/plt/collects/srfi/compiled/48.dep
 lib/plt/collects/srfi/compiled/48.zo
 lib/plt/collects/srfi/compiled/5.dep
 lib/plt/collects/srfi/compiled/5.zo
+lib/plt/collects/srfi/compiled/54.dep
+lib/plt/collects/srfi/compiled/54.zo
 lib/plt/collects/srfi/compiled/57.dep
 lib/plt/collects/srfi/compiled/57.zo
 lib/plt/collects/srfi/compiled/59.dep
@@ -4476,6 +4570,8 @@ lib/plt/collects/srfi/compiled/61.dep
 lib/plt/collects/srfi/compiled/61.zo
 lib/plt/collects/srfi/compiled/63.dep
 lib/plt/collects/srfi/compiled/63.zo
+lib/plt/collects/srfi/compiled/64.dep
+lib/plt/collects/srfi/compiled/64.zo
 lib/plt/collects/srfi/compiled/66.dep
 lib/plt/collects/srfi/compiled/66.zo
 lib/plt/collects/srfi/compiled/67.dep
@@ -4484,12 +4580,18 @@ lib/plt/collects/srfi/compiled/69.dep
 lib/plt/collects/srfi/compiled/69.zo
 lib/plt/collects/srfi/compiled/7.dep
 lib/plt/collects/srfi/compiled/7.zo
+lib/plt/collects/srfi/compiled/71.dep
+lib/plt/collects/srfi/compiled/71.zo
 lib/plt/collects/srfi/compiled/74.dep
 lib/plt/collects/srfi/compiled/74.zo
 lib/plt/collects/srfi/compiled/78.dep
 lib/plt/collects/srfi/compiled/78.zo
 lib/plt/collects/srfi/compiled/8.dep
 lib/plt/collects/srfi/compiled/8.zo
+lib/plt/collects/srfi/compiled/86.dep
+lib/plt/collects/srfi/compiled/86.zo
+lib/plt/collects/srfi/compiled/87.dep
+lib/plt/collects/srfi/compiled/87.zo
 lib/plt/collects/srfi/compiled/9.dep
 lib/plt/collects/srfi/compiled/9.zo
 lib/plt/collects/srfi/compiled/features.dep
@@ -4515,6 +4617,8 @@ lib/plt/collects/stepper/compiled/stepper-language-interface.dep
 lib/plt/collects/stepper/compiled/stepper-language-interface.zo
 lib/plt/collects/stepper/compiled/stepper-tool.dep
 lib/plt/collects/stepper/compiled/stepper-tool.zo
+lib/plt/collects/stepper/compiled/xml-sig.dep
+lib/plt/collects/stepper/compiled/xml-sig.zo
 lib/plt/collects/stepper/compiled/xml-tool.dep
 lib/plt/collects/stepper/compiled/xml-tool.zo
 lib/plt/collects/stepper/debugger-doc.txt
@@ -4590,6 +4694,7 @@ lib/plt/collects/stepper/private/xml-snip-helpers.ss
 lib/plt/collects/stepper/stepper+xml-tool.ss
 lib/plt/collects/stepper/stepper-language-interface.ss
 lib/plt/collects/stepper/stepper-tool.ss
+lib/plt/collects/stepper/xml-sig.ss
 lib/plt/collects/stepper/xml-tool.ss
 lib/plt/collects/string-constants/compiled/danish-string-constants.dep
 lib/plt/collects/string-constants/compiled/danish-string-constants.zo
@@ -4706,8 +4811,16 @@ lib/plt/collects/syntax/compiled/info.dep
 lib/plt/collects/syntax/compiled/info.zo
 lib/plt/collects/syntax/compiled/kerncase.dep
 lib/plt/collects/syntax/compiled/kerncase.zo
+lib/plt/collects/syntax/compiled/modcode.dep
+lib/plt/collects/syntax/compiled/modcode.zo
+lib/plt/collects/syntax/compiled/modcollapse.dep
+lib/plt/collects/syntax/compiled/modcollapse.zo
 lib/plt/collects/syntax/compiled/moddep.dep
 lib/plt/collects/syntax/compiled/moddep.zo
+lib/plt/collects/syntax/compiled/modread.dep
+lib/plt/collects/syntax/compiled/modread.zo
+lib/plt/collects/syntax/compiled/modresolve.dep
+lib/plt/collects/syntax/compiled/modresolve.zo
 lib/plt/collects/syntax/compiled/name.dep
 lib/plt/collects/syntax/compiled/name.zo
 lib/plt/collects/syntax/compiled/path-spec.dep
@@ -4738,7 +4851,11 @@ lib/plt/collects/syntax/doc.txt
 lib/plt/collects/syntax/docprovide.ss
 lib/plt/collects/syntax/info.ss
 lib/plt/collects/syntax/kerncase.ss
+lib/plt/collects/syntax/modcode.ss
+lib/plt/collects/syntax/modcollapse.ss
 lib/plt/collects/syntax/moddep.ss
+lib/plt/collects/syntax/modread.ss
+lib/plt/collects/syntax/modresolve.ss
 lib/plt/collects/syntax/name.ss
 lib/plt/collects/syntax/path-spec.ss
 lib/plt/collects/syntax/primitives.ss
@@ -4747,7 +4864,10 @@ lib/plt/collects/syntax/private/compiled/boundmap.dep
 lib/plt/collects/syntax/private/compiled/boundmap.zo
 lib/plt/collects/syntax/private/compiled/doctable.dep
 lib/plt/collects/syntax/private/compiled/doctable.zo
+lib/plt/collects/syntax/private/compiled/modhelp.dep
+lib/plt/collects/syntax/private/compiled/modhelp.zo
 lib/plt/collects/syntax/private/doctable.ss
+lib/plt/collects/syntax/private/modhelp.ss
 lib/plt/collects/syntax/readerr.ss
 lib/plt/collects/syntax/struct.ss
 lib/plt/collects/syntax/stx.ss
@@ -4779,56 +4899,10 @@ lib/plt/collects/teachpack/htdp/master.ss
 lib/plt/collects/teachpack/htdp/servlet.ss
 lib/plt/collects/teachpack/htdp/servlet2.ss
 lib/plt/collects/teachpack/htdp/show-queen.ss
+lib/plt/collects/teachpack/htdp/testing.ss
 lib/plt/collects/teachpack/htdp/world.ss
 lib/plt/collects/teachpack/turtles.ss
 lib/plt/collects/teachpack/value-turtles.ss
-lib/plt/collects/test-suite/compiled/extension.dep
-lib/plt/collects/test-suite/compiled/extension.zo
-lib/plt/collects/test-suite/compiled/info.dep
-lib/plt/collects/test-suite/compiled/info.zo
-lib/plt/collects/test-suite/compiled/tool.dep
-lib/plt/collects/test-suite/compiled/tool.zo
-lib/plt/collects/test-suite/extension.ss
-lib/plt/collects/test-suite/info.ss
-lib/plt/collects/test-suite/private/compiled/convert-to-string.dep
-lib/plt/collects/test-suite/private/compiled/convert-to-string.zo
-lib/plt/collects/test-suite/private/compiled/find-scheme-menu.dep
-lib/plt/collects/test-suite/private/compiled/find-scheme-menu.zo
-lib/plt/collects/test-suite/private/compiled/info.dep
-lib/plt/collects/test-suite/private/compiled/info.zo
-lib/plt/collects/test-suite/private/compiled/make-snipclass.dep
-lib/plt/collects/test-suite/private/compiled/make-snipclass.zo
-lib/plt/collects/test-suite/private/compiled/print-to-text.dep
-lib/plt/collects/test-suite/private/compiled/print-to-text.zo
-lib/plt/collects/test-suite/private/compiled/test-case-box.dep
-lib/plt/collects/test-suite/private/compiled/test-case-box.zo
-lib/plt/collects/test-suite/private/compiled/test-case.dep
-lib/plt/collects/test-suite/private/compiled/test-case.zo
-lib/plt/collects/test-suite/private/compiled/text-syntax-object.dep
-lib/plt/collects/test-suite/private/compiled/text-syntax-object.zo
-lib/plt/collects/test-suite/private/convert-to-string.ss
-lib/plt/collects/test-suite/private/doc/ChangeLog
-lib/plt/collects/test-suite/private/doc/TODO
-lib/plt/collects/test-suite/private/doc/old-todo
-lib/plt/collects/test-suite/private/find-scheme-menu.ss
-lib/plt/collects/test-suite/private/icons/check-mark.jpeg
-lib/plt/collects/test-suite/private/icons/checkbox_enabled_checked.gif
-lib/plt/collects/test-suite/private/icons/checkbox_enabled_notchecked.gif
-lib/plt/collects/test-suite/private/icons/cross.jpeg
-lib/plt/collects/test-suite/private/icons/empty.jpeg
-lib/plt/collects/test-suite/private/icons/question-mark.jpeg
-lib/plt/collects/test-suite/private/icons/question-mark.png
-lib/plt/collects/test-suite/private/icons/small-check-mark.jpeg
-lib/plt/collects/test-suite/private/icons/small-cross.jpeg
-lib/plt/collects/test-suite/private/icons/small-empty.gif
-lib/plt/collects/test-suite/private/icons/small-no.gif
-lib/plt/collects/test-suite/private/info.ss
-lib/plt/collects/test-suite/private/make-snipclass.ss
-lib/plt/collects/test-suite/private/print-to-text.ss
-lib/plt/collects/test-suite/private/test-case-box.ss
-lib/plt/collects/test-suite/private/test-case.ss
-lib/plt/collects/test-suite/private/text-syntax-object.ss
-lib/plt/collects/test-suite/tool.ss
 lib/plt/collects/tests/compiled/info.dep
 lib/plt/collects/tests/compiled/info.zo
 lib/plt/collects/tests/drscheme/README
@@ -4856,8 +4930,6 @@ lib/plt/collects/tests/drscheme/compiled/syncheck-test.dep
 lib/plt/collects/tests/drscheme/compiled/syncheck-test.zo
 lib/plt/collects/tests/drscheme/compiled/teachpack.dep
 lib/plt/collects/tests/drscheme/compiled/teachpack.zo
-lib/plt/collects/tests/drscheme/compiled/test-box-test.dep
-lib/plt/collects/tests/drscheme/compiled/test-box-test.zo
 lib/plt/collects/tests/drscheme/compiled/tool.dep
 lib/plt/collects/tests/drscheme/compiled/tool.zo
 lib/plt/collects/tests/drscheme/drscheme-test-util.ss
@@ -4872,7 +4944,6 @@ lib/plt/collects/tests/drscheme/sample-solutions-testsuite-tp.scm
 lib/plt/collects/tests/drscheme/stepper-test.ss
 lib/plt/collects/tests/drscheme/syncheck-test.ss
 lib/plt/collects/tests/drscheme/teachpack.ss
-lib/plt/collects/tests/drscheme/test-box-test.ss
 lib/plt/collects/tests/drscheme/tool.ss
 lib/plt/collects/tests/framework/README
 lib/plt/collects/tests/framework/canvas.ss
@@ -4935,6 +5006,7 @@ lib/plt/collects/tests/mred/README
 lib/plt/collects/tests/mred/auto.ss
 lib/plt/collects/tests/mred/blits.ss
 lib/plt/collects/tests/mred/button-steps.txt
+lib/plt/collects/tests/mred/cache-image8.mre
 lib/plt/collects/tests/mred/canvas-steps.txt
 lib/plt/collects/tests/mred/checkbox-steps.txt
 lib/plt/collects/tests/mred/choice-list-steps.txt
@@ -4950,7 +5022,9 @@ lib/plt/collects/tests/mred/gui.ss
 lib/plt/collects/tests/mred/imred.ss
 lib/plt/collects/tests/mred/item.ss
 lib/plt/collects/tests/mred/loadtest.ss
-lib/plt/collects/tests/mred/media.mre
+lib/plt/collects/tests/mred/media3.mre
+lib/plt/collects/tests/mred/media6.mre
+lib/plt/collects/tests/mred/media8.mre
 lib/plt/collects/tests/mred/mediastream.example
 lib/plt/collects/tests/mred/mediastream.ss
 lib/plt/collects/tests/mred/mem.ss
@@ -4958,11 +5032,15 @@ lib/plt/collects/tests/mred/menu-steps.txt
 lib/plt/collects/tests/mred/nruter.xbm
 lib/plt/collects/tests/mred/paramz.ss
 lib/plt/collects/tests/mred/png.ss
+lib/plt/collects/tests/mred/prog6.mre
+lib/plt/collects/tests/mred/prog8.mre
 lib/plt/collects/tests/mred/radiobox-steps.txt
 lib/plt/collects/tests/mred/random.ss
 lib/plt/collects/tests/mred/showkey.ss
 lib/plt/collects/tests/mred/sixlib.ss
 lib/plt/collects/tests/mred/slider-steps.txt
+lib/plt/collects/tests/mred/testbox6.mre
+lib/plt/collects/tests/mred/testbox8.mre
 lib/plt/collects/tests/mred/testing.ss
 lib/plt/collects/tests/mred/text-scale.ss
 lib/plt/collects/tests/mred/windowing.ss
@@ -5076,6 +5154,7 @@ lib/plt/collects/tests/mzscheme/benchmarks/shootout/fibo.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/hash.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/hash2.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/heapsort.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/k-nucleotide.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/lists.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/mandelbrot.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/matrix.ss
@@ -5095,8 +5174,10 @@ lib/plt/collects/tests/mzscheme/benchmarks/shootout/reversecomplement.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/reversefile.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/run.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/sieve.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/spectralnorm.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/spellcheck.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/strcat.ss
+lib/plt/collects/tests/mzscheme/benchmarks/shootout/sumcol-input.txt
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/sumcol.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/wc.ss
 lib/plt/collects/tests/mzscheme/benchmarks/shootout/wordfreq.ss
@@ -5121,11 +5202,17 @@ lib/plt/collects/tests/mzscheme/date.ss
 lib/plt/collects/tests/mzscheme/deep.ss
 lib/plt/collects/tests/mzscheme/em-imp.ss
 lib/plt/collects/tests/mzscheme/embed-me1.ss
+lib/plt/collects/tests/mzscheme/embed-me10.ss
+lib/plt/collects/tests/mzscheme/embed-me11-rd.ss
+lib/plt/collects/tests/mzscheme/embed-me11.ss
 lib/plt/collects/tests/mzscheme/embed-me2.ss
 lib/plt/collects/tests/mzscheme/embed-me3.ss
 lib/plt/collects/tests/mzscheme/embed-me4.ss
 lib/plt/collects/tests/mzscheme/embed-me5.ss
 lib/plt/collects/tests/mzscheme/embed-me6.ss
+lib/plt/collects/tests/mzscheme/embed-me7.ss
+lib/plt/collects/tests/mzscheme/embed-me8.c
+lib/plt/collects/tests/mzscheme/embed-me9.ss
 lib/plt/collects/tests/mzscheme/embed.ss
 lib/plt/collects/tests/mzscheme/etc.ss
 lib/plt/collects/tests/mzscheme/expand.ss
@@ -5203,6 +5290,7 @@ lib/plt/collects/tests/mzscheme/port.ss
 lib/plt/collects/tests/mzscheme/portlib.ss
 lib/plt/collects/tests/mzscheme/pp-regression.ss
 lib/plt/collects/tests/mzscheme/pretty.ss
+lib/plt/collects/tests/mzscheme/prompt-tests.ss
 lib/plt/collects/tests/mzscheme/prompt.ss
 lib/plt/collects/tests/mzscheme/quiet.ss
 lib/plt/collects/tests/mzscheme/read.ss
@@ -5210,6 +5298,7 @@ lib/plt/collects/tests/mzscheme/readtable.ss
 lib/plt/collects/tests/mzscheme/restart.ss
 lib/plt/collects/tests/mzscheme/runflats.ss
 lib/plt/collects/tests/mzscheme/rx.ss
+lib/plt/collects/tests/mzscheme/sandbox.ss
 lib/plt/collects/tests/mzscheme/serialize.ss
 lib/plt/collects/tests/mzscheme/shared-tests.ss
 lib/plt/collects/tests/mzscheme/shared.ss
@@ -5562,8 +5651,6 @@ lib/plt/collects/web-server/compiled/response-structs.dep
 lib/plt/collects/web-server/compiled/response-structs.zo
 lib/plt/collects/web-server/compiled/response.dep
 lib/plt/collects/web-server/compiled/response.zo
-lib/plt/collects/web-server/compiled/servlet-sig.dep
-lib/plt/collects/web-server/compiled/servlet-sig.zo
 lib/plt/collects/web-server/compiled/servlet-structs.dep
 lib/plt/collects/web-server/compiled/servlet-structs.zo
 lib/plt/collects/web-server/compiled/servlet.dep
@@ -5622,10 +5709,10 @@ lib/plt/collects/web-server/default-web-root/mime.types
 lib/plt/collects/web-server/default-web-root/passwords
 lib/plt/collects/web-server/default-web-root/servlets/configure.ss
 lib/plt/collects/web-server/default-web-root/servlets/examples/README
+lib/plt/collects/web-server/default-web-root/servlets/examples/add-module.ss
 lib/plt/collects/web-server/default-web-root/servlets/examples/add.ss
 lib/plt/collects/web-server/default-web-root/servlets/examples/compound/README
 lib/plt/collects/web-server/default-web-root/servlets/examples/compound/add.ss
-lib/plt/collects/web-server/default-web-root/servlets/examples/compound/helper-sig.ss
 lib/plt/collects/web-server/default-web-root/servlets/examples/compound/helper.ss
 lib/plt/collects/web-server/default-web-root/servlets/examples/compound/multiply.ss
 lib/plt/collects/web-server/default-web-root/servlets/examples/count.ss
@@ -5642,6 +5729,40 @@ lib/plt/collects/web-server/default-web-root/servlets/tests/cut-module.ss
 lib/plt/collects/web-server/default-web-root/servlets/tests/incremental.ss
 lib/plt/collects/web-server/default-web-root/servlets/tests/mime.ss
 lib/plt/collects/web-server/default-web-root/servlets/tests/module-suspended-init.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/bad-xexpr.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/bus-error.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/button.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/counter-cells.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/counter-cps.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/counter.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/cust.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/expiration.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/fault.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/form.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/fupload.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/hang.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/hod-0618.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/inf-essence.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/inf.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/instance-expiration-2.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/instance-expiration.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/jas01-fix-param.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/jas01-fix.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/jas01-param.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/jas01-test.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/jas01.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/lock.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/none-test.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/plus.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/pr5490.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/pr5565.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/pr7359.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/pr7533.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/pr7935-other.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/ssd.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/static.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/update.ss
+lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite/utf8.ss
 lib/plt/collects/web-server/default-web-root/servlets/tests/non-unit.ss
 lib/plt/collects/web-server/default-web-root/servlets/tests/response.ss
 lib/plt/collects/web-server/default-web-root/servlets/tests/size.ss
@@ -5765,7 +5886,6 @@ lib/plt/collects/web-server/private/web-server-structs.ss
 lib/plt/collects/web-server/request-structs.ss
 lib/plt/collects/web-server/response-structs.ss
 lib/plt/collects/web-server/response.ss
-lib/plt/collects/web-server/servlet-sig.ss
 lib/plt/collects/web-server/servlet-structs.ss
 lib/plt/collects/web-server/servlet.ss
 lib/plt/collects/web-server/sig.ss
@@ -5774,6 +5894,52 @@ lib/plt/collects/web-server/tools/compiled/servlet-env.zo
 lib/plt/collects/web-server/tools/servlet-env.ss
 lib/plt/collects/web-server/web-server-unit.ss
 lib/plt/collects/web-server/web-server.ss
+lib/plt/collects/wxme/cache-image.ss
+lib/plt/collects/wxme/comment.ss
+lib/plt/collects/wxme/compiled/cache-image.dep
+lib/plt/collects/wxme/compiled/cache-image.zo
+lib/plt/collects/wxme/compiled/comment.dep
+lib/plt/collects/wxme/compiled/comment.zo
+lib/plt/collects/wxme/compiled/editor.dep
+lib/plt/collects/wxme/compiled/editor.zo
+lib/plt/collects/wxme/compiled/image.dep
+lib/plt/collects/wxme/compiled/image.zo
+lib/plt/collects/wxme/compiled/info.dep
+lib/plt/collects/wxme/compiled/info.zo
+lib/plt/collects/wxme/compiled/number.dep
+lib/plt/collects/wxme/compiled/number.zo
+lib/plt/collects/wxme/compiled/read.dep
+lib/plt/collects/wxme/compiled/read.zo
+lib/plt/collects/wxme/compiled/scheme.dep
+lib/plt/collects/wxme/compiled/scheme.zo
+lib/plt/collects/wxme/compiled/test-case.dep
+lib/plt/collects/wxme/compiled/test-case.zo
+lib/plt/collects/wxme/compiled/text.dep
+lib/plt/collects/wxme/compiled/text.zo
+lib/plt/collects/wxme/compiled/wxme.dep
+lib/plt/collects/wxme/compiled/wxme.zo
+lib/plt/collects/wxme/compiled/xml.dep
+lib/plt/collects/wxme/compiled/xml.zo
+lib/plt/collects/wxme/doc.txt
+lib/plt/collects/wxme/editor.ss
+lib/plt/collects/wxme/image.ss
+lib/plt/collects/wxme/info.ss
+lib/plt/collects/wxme/number.ss
+lib/plt/collects/wxme/private/class-help.ss
+lib/plt/collects/wxme/private/compat.ss
+lib/plt/collects/wxme/private/compiled/class-help.dep
+lib/plt/collects/wxme/private/compiled/class-help.zo
+lib/plt/collects/wxme/private/compiled/compat.dep
+lib/plt/collects/wxme/private/compiled/compat.zo
+lib/plt/collects/wxme/private/compiled/readable-editor.dep
+lib/plt/collects/wxme/private/compiled/readable-editor.zo
+lib/plt/collects/wxme/private/readable-editor.ss
+lib/plt/collects/wxme/read.ss
+lib/plt/collects/wxme/scheme.ss
+lib/plt/collects/wxme/test-case.ss
+lib/plt/collects/wxme/text.ss
+lib/plt/collects/wxme/wxme.ss
+lib/plt/collects/wxme/xml.ss
 lib/plt/collects/xml/XML.jpg
 lib/plt/collects/xml/compiled/info.dep
 lib/plt/collects/xml/compiled/info.zo
@@ -5785,6 +5951,8 @@ lib/plt/collects/xml/compiled/test.dep
 lib/plt/collects/xml/compiled/test.zo
 lib/plt/collects/xml/compiled/text-box-tool.dep
 lib/plt/collects/xml/compiled/text-box-tool.zo
+lib/plt/collects/xml/compiled/text-snipclass.dep
+lib/plt/collects/xml/compiled/text-snipclass.zo
 lib/plt/collects/xml/compiled/xml-sig.dep
 lib/plt/collects/xml/compiled/xml-sig.zo
 lib/plt/collects/xml/compiled/xml-snipclass.dep
@@ -5823,12 +5991,13 @@ lib/plt/collects/xml/private/xexpr.ss
 lib/plt/collects/xml/scheme-snipclass.ss
 lib/plt/collects/xml/test.ss
 lib/plt/collects/xml/text-box-tool.ss
+lib/plt/collects/xml/text-snipclass.ss
 lib/plt/collects/xml/xml-sig.ss
 lib/plt/collects/xml/xml-snipclass.ss
 lib/plt/collects/xml/xml-unit.ss
 lib/plt/collects/xml/xml.png
 lib/plt/collects/xml/xml.ss
-lib/plt/mzdyn.o
+lib/plt/mzdyn3m.o
 lib/plt/starter
 share/plt/doc/advanced/-.html
 share/plt/doc/advanced/42.html
@@ -6029,6 +6198,7 @@ share/plt/doc/advanced/real-part.html
 share/plt/doc/advanced/real63.html
 share/plt/doc/advanced/recur.html
 share/plt/doc/advanced/remainder.html
+share/plt/doc/advanced/require.html
 share/plt/doc/advanced/rest.html
 share/plt/doc/advanced/reverse.html
 share/plt/doc/advanced/round.html
@@ -6253,6 +6423,7 @@ share/plt/doc/beginning-abbr/rational63.html
 share/plt/doc/beginning-abbr/real-part.html
 share/plt/doc/beginning-abbr/real63.html
 share/plt/doc/beginning-abbr/remainder.html
+share/plt/doc/beginning-abbr/require.html
 share/plt/doc/beginning-abbr/rest.html
 share/plt/doc/beginning-abbr/reverse.html
 share/plt/doc/beginning-abbr/round.html
@@ -6441,6 +6612,7 @@ share/plt/doc/beginning/rational63.html
 share/plt/doc/beginning/real-part.html
 share/plt/doc/beginning/real63.html
 share/plt/doc/beginning/remainder.html
+share/plt/doc/beginning/require.html
 share/plt/doc/beginning/rest.html
 share/plt/doc/beginning/reverse.html
 share/plt/doc/beginning/round.html
@@ -6490,7 +6662,6 @@ share/plt/doc/drscheme/drscheme-Z-G-5.gif
 share/plt/doc/drscheme/drscheme-Z-G-6.gif
 share/plt/doc/drscheme/drscheme-Z-G-7.gif
 share/plt/doc/drscheme/drscheme-Z-G-8.gif
-share/plt/doc/drscheme/drscheme-Z-G-9.gif
 share/plt/doc/drscheme/drscheme-Z-H-1.html
 share/plt/doc/drscheme/drscheme-Z-H-2.html
 share/plt/doc/drscheme/drscheme-Z-H-3.html
@@ -6690,6 +6861,7 @@ share/plt/doc/intermediate-lambda/rational63.html
 share/plt/doc/intermediate-lambda/real-part.html
 share/plt/doc/intermediate-lambda/real63.html
 share/plt/doc/intermediate-lambda/remainder.html
+share/plt/doc/intermediate-lambda/require.html
 share/plt/doc/intermediate-lambda/rest.html
 share/plt/doc/intermediate-lambda/reverse.html
 share/plt/doc/intermediate-lambda/round.html
@@ -6914,6 +7086,7 @@ share/plt/doc/intermediate/rational63.html
 share/plt/doc/intermediate/real-part.html
 share/plt/doc/intermediate/real63.html
 share/plt/doc/intermediate/remainder.html
+share/plt/doc/intermediate/require.html
 share/plt/doc/intermediate/rest.html
 share/plt/doc/intermediate/reverse.html
 share/plt/doc/intermediate/round.html
@@ -7046,7 +7219,13 @@ share/plt/doc/mzlib/mzlib-Z-H-52.html
 share/plt/doc/mzlib/mzlib-Z-H-53.html
 share/plt/doc/mzlib/mzlib-Z-H-54.html
 share/plt/doc/mzlib/mzlib-Z-H-55.html
+share/plt/doc/mzlib/mzlib-Z-H-56.html
+share/plt/doc/mzlib/mzlib-Z-H-57.html
+share/plt/doc/mzlib/mzlib-Z-H-58.html
+share/plt/doc/mzlib/mzlib-Z-H-59.html
 share/plt/doc/mzlib/mzlib-Z-H-6.html
+share/plt/doc/mzlib/mzlib-Z-H-60.html
+share/plt/doc/mzlib/mzlib-Z-H-61.html
 share/plt/doc/mzlib/mzlib-Z-H-7.html
 share/plt/doc/mzlib/mzlib-Z-H-8.html
 share/plt/doc/mzlib/mzlib-Z-H-9.html
@@ -7337,6 +7516,7 @@ share/plt/doc/srfi/srfi-29.html
 share/plt/doc/srfi/srfi-30.html
 share/plt/doc/srfi/srfi-31.html
 share/plt/doc/srfi/srfi-34.html
+share/plt/doc/srfi/srfi-35.html
 share/plt/doc/srfi/srfi-38.html
 share/plt/doc/srfi/srfi-39.html
 share/plt/doc/srfi/srfi-4.html
@@ -7346,12 +7526,15 @@ share/plt/doc/srfi/srfi-43.html
 share/plt/doc/srfi/srfi-45.html
 share/plt/doc/srfi/srfi-48.html
 share/plt/doc/srfi/srfi-5.html
+share/plt/doc/srfi/srfi-54.html
 share/plt/doc/srfi/srfi-57.html
 share/plt/doc/srfi/srfi-59.html
 share/plt/doc/srfi/srfi-6.html
 share/plt/doc/srfi/srfi-60.html
 share/plt/doc/srfi/srfi-61.html
+share/plt/doc/srfi/srfi-62.html
 share/plt/doc/srfi/srfi-63.html
+share/plt/doc/srfi/srfi-64.html
 share/plt/doc/srfi/srfi-66.html
 share/plt/doc/srfi/srfi-67/index.htm
 share/plt/doc/srfi/srfi-67/index.html
@@ -7367,9 +7550,12 @@ share/plt/doc/srfi/srfi-67/srfi-67-Z-S.css
 share/plt/doc/srfi/srfi-67/srfi-67.html
 share/plt/doc/srfi/srfi-69.html
 share/plt/doc/srfi/srfi-7.html
+share/plt/doc/srfi/srfi-71.html
 share/plt/doc/srfi/srfi-74.html
 share/plt/doc/srfi/srfi-78.html
 share/plt/doc/srfi/srfi-8.html
+share/plt/doc/srfi/srfi-86.html
+share/plt/doc/srfi/srfi-87.html
 share/plt/doc/srfi/srfi-9.html
 share/plt/doc/swindle/SwindleFlash.gif
 share/plt/doc/swindle/base-doc.html
@@ -7461,6 +7647,7 @@ share/plt/doc/teachpack/master.html
 share/plt/doc/teachpack/servlet.html
 share/plt/doc/teachpack/servlet2.html
 share/plt/doc/teachpack/show-queen.html
+share/plt/doc/teachpack/testing.html
 share/plt/doc/teachpack/world.html
 share/plt/doc/tex2page/hdindex
 share/plt/doc/tools/hdindex
@@ -7498,6 +7685,7 @@ share/plt/doc/tour/images/profile-num-calls.gif
 share/plt/doc/tour/images/qquote-notn.gif
 share/plt/doc/tour/images/rt-source-corr.gif
 share/plt/doc/tour/images/stepper.gif
+share/plt/doc/tour/images/syncheck.gif
 share/plt/doc/tour/images/tabbed-edit.gif
 share/plt/doc/tour/images/test-suite-1.gif
 share/plt/doc/tour/images/test-suite-2.gif
@@ -7613,6 +7801,7 @@ share/plt/doc/web-server/keywords
 @dirrm lib/plt/collects/games/memory/images
 @dirrm lib/plt/collects/games/memory/compiled
 @dirrm lib/plt/collects/games/memory
+@dirrm lib/plt/collects/games/mines/images
 @dirrm lib/plt/collects/games/mines/compiled
 @dirrm lib/plt/collects/games/mines
 @dirrm lib/plt/collects/games/paint-by-numbers/problems
@@ -7712,7 +7901,6 @@ share/plt/doc/web-server/keywords
 @dirrm lib/plt/collects/mzlib/compiled
 @dirrm lib/plt/collects/mzlib
 @dirrm lib/plt/collects/mzscheme/examples
-@dirrm lib/plt/collects/mzscheme/lib
 @dirrm lib/plt/collects/mzscheme/compiled
 @dirrm lib/plt/collects/mzscheme
 @dirrm lib/plt/collects/mztake/demos/dijkstra
@@ -7743,6 +7931,7 @@ share/plt/doc/web-server/keywords
 @dirrm lib/plt/collects/planet/compiled
 @dirrm lib/plt/collects/planet
 @dirrm lib/plt/collects/plot/demos
+@dirrm lib/plt/collects/plot/fonts
 @dirrm lib/plt/collects/plot/src/all
 @dirrm lib/plt/collects/plot/src/fit
 @dirrm lib/plt/collects/plot/src
@@ -7768,10 +7957,6 @@ share/plt/doc/web-server/keywords
 @dirrm lib/plt/collects/profj/parsers
 @dirrm lib/plt/collects/profj/compiled
 @dirrm lib/plt/collects/profj
-@dirrm lib/plt/collects/profjBoxes/private/compiled
-@dirrm lib/plt/collects/profjBoxes/private
-@dirrm lib/plt/collects/profjBoxes/compiled
-@dirrm lib/plt/collects/profjBoxes
 @dirrm lib/plt/collects/profjWizard/compiled
 @dirrm lib/plt/collects/profjWizard
 @dirrm lib/plt/collects/r5rs/compiled
@@ -7781,15 +7966,13 @@ share/plt/doc/web-server/keywords
 @dirrm lib/plt/collects/setup/compiled
 @dirrm lib/plt/collects/setup
 @dirrm lib/plt/collects/sgl/examples
-%%MMM%%@dirrm lib/plt/collects/sgl/compiled/native/%%ARCH%%-freebsd/3m
+@dirrm lib/plt/collects/sgl/compiled/native/%%ARCH%%-freebsd/3m
 @dirrm lib/plt/collects/sgl/compiled/native/%%ARCH%%-freebsd
 @dirrm lib/plt/collects/sgl/compiled/native
 @dirrm lib/plt/collects/sgl/compiled
 @dirrm lib/plt/collects/sgl
 @dirrm lib/plt/collects/slatex/compiled
 @dirrm lib/plt/collects/slatex
-@dirrm lib/plt/collects/slibinit/compiled
-@dirrm lib/plt/collects/slibinit
 @dirrm lib/plt/collects/slideshow/examples
 @dirrm lib/plt/collects/slideshow/private/compiled
 @dirrm lib/plt/collects/slideshow/private
@@ -7823,6 +8006,8 @@ share/plt/doc/web-server/keywords
 @dirrm lib/plt/collects/srfi/32
 @dirrm lib/plt/collects/srfi/34/compiled
 @dirrm lib/plt/collects/srfi/34
+@dirrm lib/plt/collects/srfi/35/compiled
+@dirrm lib/plt/collects/srfi/35
 @dirrm lib/plt/collects/srfi/40/compiled
 @dirrm lib/plt/collects/srfi/40
 @dirrm lib/plt/collects/srfi/42/compiled
@@ -7835,6 +8020,8 @@ share/plt/doc/web-server/keywords
 @dirrm lib/plt/collects/srfi/48
 @dirrm lib/plt/collects/srfi/5/compiled
 @dirrm lib/plt/collects/srfi/5
+@dirrm lib/plt/collects/srfi/54/compiled
+@dirrm lib/plt/collects/srfi/54
 @dirrm lib/plt/collects/srfi/57/compiled
 @dirrm lib/plt/collects/srfi/57
 @dirrm lib/plt/collects/srfi/59/compiled
@@ -7845,6 +8032,8 @@ share/plt/doc/web-server/keywords
 @dirrm lib/plt/collects/srfi/61
 @dirrm lib/plt/collects/srfi/63/compiled
 @dirrm lib/plt/collects/srfi/63
+@dirrm lib/plt/collects/srfi/64/compiled
+@dirrm lib/plt/collects/srfi/64
 @dirrm lib/plt/collects/srfi/66/compiled
 @dirrm lib/plt/collects/srfi/66
 @dirrm lib/plt/collects/srfi/67/compiled
@@ -7853,12 +8042,18 @@ share/plt/doc/web-server/keywords
 @dirrm lib/plt/collects/srfi/69
 @dirrm lib/plt/collects/srfi/7/compiled
 @dirrm lib/plt/collects/srfi/7
+@dirrm lib/plt/collects/srfi/71/compiled
+@dirrm lib/plt/collects/srfi/71
 @dirrm lib/plt/collects/srfi/74/compiled
 @dirrm lib/plt/collects/srfi/74
 @dirrm lib/plt/collects/srfi/78/compiled
 @dirrm lib/plt/collects/srfi/78
 @dirrm lib/plt/collects/srfi/8/compiled
 @dirrm lib/plt/collects/srfi/8
+@dirrm lib/plt/collects/srfi/86/compiled
+@dirrm lib/plt/collects/srfi/86
+@dirrm lib/plt/collects/srfi/87/compiled
+@dirrm lib/plt/collects/srfi/87
 @dirrm lib/plt/collects/srfi/9/compiled
 @dirrm lib/plt/collects/srfi/9
 @dirrm lib/plt/collects/srfi/compiled
@@ -7882,12 +8077,6 @@ share/plt/doc/web-server/keywords
 @dirrm lib/plt/collects/teachpack/htdc
 @dirrm lib/plt/collects/teachpack/htdp
 @dirrm lib/plt/collects/teachpack
-@dirrm lib/plt/collects/test-suite/private/doc
-@dirrm lib/plt/collects/test-suite/private/icons
-@dirrm lib/plt/collects/test-suite/private/compiled
-@dirrm lib/plt/collects/test-suite/private
-@dirrm lib/plt/collects/test-suite/compiled
-@dirrm lib/plt/collects/test-suite
 @dirrm lib/plt/collects/tests/drscheme/compiled
 @dirrm lib/plt/collects/tests/drscheme
 @dirrm lib/plt/collects/tests/framework/compiled
@@ -7953,6 +8142,7 @@ share/plt/doc/web-server/keywords
 @dirrm lib/plt/collects/web-server/default-web-root/htdocs
 @dirrm lib/plt/collects/web-server/default-web-root/servlets/examples/compound
 @dirrm lib/plt/collects/web-server/default-web-root/servlets/examples
+@dirrm lib/plt/collects/web-server/default-web-root/servlets/tests/new-suite
 @dirrm lib/plt/collects/web-server/default-web-root/servlets/tests
 @dirrm lib/plt/collects/web-server/default-web-root/servlets
 @dirrm lib/plt/collects/web-server/default-web-root
@@ -7966,6 +8156,10 @@ share/plt/doc/web-server/keywords
 @dirrm lib/plt/collects/web-server/tools
 @dirrm lib/plt/collects/web-server/compiled
 @dirrm lib/plt/collects/web-server
+@dirrm lib/plt/collects/wxme/private/compiled
+@dirrm lib/plt/collects/wxme/private
+@dirrm lib/plt/collects/wxme/compiled
+@dirrm lib/plt/collects/wxme
 @dirrm lib/plt/collects/xml/private/compiled
 @dirrm lib/plt/collects/xml/private
 @dirrm lib/plt/collects/xml/compiled
