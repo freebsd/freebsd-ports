@@ -289,6 +289,7 @@
     SUBDIR += libadplug
     SUBDIR += libaiff
     SUBDIR += libamrnb
+    SUBDIR += libamrwb
     SUBDIR += libao
     SUBDIR += libaudiofile
     SUBDIR += libcdaudio
