@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openxpki-client-html-mason
-PORTVERSION=	0.9.783
+PORTVERSION=	0.9.876
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openxpki
@@ -45,6 +45,9 @@ post-install:
 	@${ECHO_MSG} "===> CGI scripts and htdocs for ${DISTNAME} installed in ${DATADIR}."
 	@${ECHO_MSG} "================================================================================"
 	@${ECHO_MSG} ""
+.if !defined(BATCH)
+	@sleep 7
+.endif
 .endif
 
 .include <bsd.port.mk>
