@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	afnix
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.afnix.org/ftp/%SUBDIR%/ \
 		ftp://ftp.stack.nl/pub/users/johans/afnix/
