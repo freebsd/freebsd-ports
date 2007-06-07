@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xdaliclock
-PORTVERSION=	2.23
-PORTREVISION=	1
+PORTVERSION=	2.24
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.jwz.org/xdaliclock/
 MASTER_SITE_SUBDIR=	applications
@@ -17,9 +16,9 @@ COMMENT=	A rather neat animated clock
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/X11
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} --mandir=${PREFIX}/man
 MAN1=		xdaliclock.1
 PLIST_FILES=	bin/xdaliclock
 
