@@ -178,6 +178,7 @@ share/locale/fr/LC_MESSAGES/scribes.mo
 share/locale/it/LC_MESSAGES/scribes.mo
 share/locale/nl/LC_MESSAGES/scribes.mo
 share/locale/pt_BR/LC_MESSAGES/scribes.mo
+share/locale/sv/LC_MESSAGES/scribes.mo
 share/gnome/applications/scribes.desktop
 share/gnome/help/scribes/C/figures/scribes_add_dialog.png
 share/gnome/help/scribes/C/figures/scribes_completion.png
@@ -436,6 +437,7 @@ share/gnome/scribes/plugins/NewWindow/Trigger.py
 share/gnome/scribes/plugins/NewWindow/Trigger.pyo
 share/gnome/scribes/plugins/NewWindow/__init__.py
 share/gnome/scribes/plugins/NewWindow/__init__.pyo
+share/gnome/scribes/plugins/OpenDialog/Dialog.glade
 share/gnome/scribes/plugins/OpenDialog/Dialog.py
 share/gnome/scribes/plugins/OpenDialog/Dialog.pyo
 share/gnome/scribes/plugins/OpenDialog/i18n.py
@@ -444,6 +446,22 @@ share/gnome/scribes/plugins/OpenDialog/Trigger.py
 share/gnome/scribes/plugins/OpenDialog/Trigger.pyo
 share/gnome/scribes/plugins/OpenDialog/__init__.py
 share/gnome/scribes/plugins/OpenDialog/__init__.pyo
+share/gnome/scribes/plugins/Paragraph/i18n.py
+share/gnome/scribes/plugins/Paragraph/i18n.pyc
+share/gnome/scribes/plugins/Paragraph/i18n.pyo
+share/gnome/scribes/plugins/Paragraph/Manager.py
+share/gnome/scribes/plugins/Paragraph/Manager.pyc
+share/gnome/scribes/plugins/Paragraph/Manager.pyo
+share/gnome/scribes/plugins/Paragraph/PopupMenuItem.py
+share/gnome/scribes/plugins/Paragraph/PopupMenuItem.pyc
+share/gnome/scribes/plugins/Paragraph/PopupMenuItem.pyo
+share/gnome/scribes/plugins/Paragraph/Trigger.py
+share/gnome/scribes/plugins/Paragraph/Trigger.pyc
+share/gnome/scribes/plugins/Paragraph/Trigger.pyo
+share/gnome/scribes/plugins/Paragraph/.__junk
+share/gnome/scribes/plugins/Paragraph/__init__.py
+share/gnome/scribes/plugins/Paragraph/__init__.pyc
+share/gnome/scribes/plugins/Paragraph/__init__.pyo
 share/gnome/scribes/plugins/PluginAbout.py
 share/gnome/scribes/plugins/PluginAbout.pyo
 share/gnome/scribes/plugins/PluginAutoReplaceGUI.py
@@ -488,6 +506,8 @@ share/gnome/scribes/plugins/PluginNewWindow.py
 share/gnome/scribes/plugins/PluginNewWindow.pyo
 share/gnome/scribes/plugins/PluginOpenDialog.py
 share/gnome/scribes/plugins/PluginOpenDialog.pyo
+share/gnome/scribes/plugins/PluginParagraph.py
+share/gnome/scribes/plugins/PluginParagraph.pyo
 share/gnome/scribes/plugins/PluginPreferences.py
 share/gnome/scribes/plugins/PluginPreferences.pyo
 share/gnome/scribes/plugins/PluginPrintDialog.py
@@ -504,6 +524,8 @@ share/gnome/scribes/plugins/PluginSaveDialog.py
 share/gnome/scribes/plugins/PluginSaveDialog.pyo
 share/gnome/scribes/plugins/PluginSaveFile.py
 share/gnome/scribes/plugins/PluginSaveFile.pyo
+share/gnome/scribes/plugins/PluginScrollNavigation.py
+share/gnome/scribes/plugins/PluginScrollNavigation.pyo
 share/gnome/scribes/plugins/PluginSearchPreviousNext.py
 share/gnome/scribes/plugins/PluginSearchPreviousNext.pyo
 share/gnome/scribes/plugins/PluginSearchReplace.py
@@ -637,6 +659,19 @@ share/gnome/scribes/plugins/SaveFile/Trigger.py
 share/gnome/scribes/plugins/SaveFile/Trigger.pyo
 share/gnome/scribes/plugins/SaveFile/__init__.py
 share/gnome/scribes/plugins/SaveFile/__init__.pyo
+share/gnome/scribes/plugins/ScrollNavigation/i18n.py
+share/gnome/scribes/plugins/ScrollNavigation/i18n.pyc
+share/gnome/scribes/plugins/ScrollNavigation/i18n.pyo
+share/gnome/scribes/plugins/ScrollNavigation/Manager.py
+share/gnome/scribes/plugins/ScrollNavigation/Manager.pyc
+share/gnome/scribes/plugins/ScrollNavigation/Manager.pyo
+share/gnome/scribes/plugins/ScrollNavigation/Trigger.py
+share/gnome/scribes/plugins/ScrollNavigation/Trigger.pyc
+share/gnome/scribes/plugins/ScrollNavigation/Trigger.pyo
+share/gnome/scribes/plugins/ScrollNavigation/.__junk
+share/gnome/scribes/plugins/ScrollNavigation/__init__.py
+share/gnome/scribes/plugins/ScrollNavigation/__init__.pyc
+share/gnome/scribes/plugins/ScrollNavigation/__init__.pyo
 share/gnome/scribes/plugins/SearchPreviousNext/i18n.py
 share/gnome/scribes/plugins/SearchPreviousNext/i18n.pyo
 share/gnome/scribes/plugins/SearchPreviousNext/Next.py
@@ -667,6 +702,8 @@ share/gnome/scribes/plugins/Selection/i18n.py
 share/gnome/scribes/plugins/Selection/i18n.pyo
 share/gnome/scribes/plugins/Selection/lines.py
 share/gnome/scribes/plugins/Selection/lines.pyo
+share/gnome/scribes/plugins/Selection/Manager.py
+share/gnome/scribes/plugins/Selection/Manager.pyo
 share/gnome/scribes/plugins/Selection/paragraph.py
 share/gnome/scribes/plugins/Selection/paragraph.pyo
 share/gnome/scribes/plugins/Selection/PopupMenuItem.py
@@ -845,6 +882,7 @@ share/icons/hicolor/48x48/apps/scribes.png
 @dirrm share/gnome/scribes/plugins/Selection
 @dirrm share/gnome/scribes/plugins/SearchReplace
 @dirrm share/gnome/scribes/plugins/SearchPreviousNext
+@dirrm share/gnome/scribes/plugins/ScrollNavigation
 @dirrm share/gnome/scribes/plugins/SaveFile
 @dirrm share/gnome/scribes/plugins/SaveDialog
 @dirrm share/gnome/scribes/plugins/ReplaceBar
@@ -853,6 +891,7 @@ share/icons/hicolor/48x48/apps/scribes.png
 @dirrm share/gnome/scribes/plugins/ReadOnly
 @dirrm share/gnome/scribes/plugins/PrintDialog
 @dirrm share/gnome/scribes/plugins/Preferences
+@dirrm share/gnome/scribes/plugins/Paragraph
 @dirrm share/gnome/scribes/plugins/OpenDialog
 @dirrm share/gnome/scribes/plugins/NewWindow
 @dirrm share/gnome/scribes/plugins/MatchingBracket
