@@ -23,11 +23,14 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 DOCS=		AUTHORS COPYING ChangeLog INSTALL NEWS README
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/configure
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}	
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 	${MKDIR} ${PREFIX}/share/examples/synergy
