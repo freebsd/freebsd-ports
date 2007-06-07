@@ -676,6 +676,7 @@
     SUBDIR += lua-gettext
     SUBDIR += lua-posix
     SUBDIR += lua-pty
+    SUBDIR += luabind
     SUBDIR += lwp
     SUBDIR += m17n-db
     SUBDIR += m17n-docs
