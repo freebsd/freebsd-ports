@@ -12,8 +12,8 @@ then
 else
 	echo "Creating ~/.doomlegacy directory."
 	cd %%DATADIR%% || exit 1
-	find * -type d -exec mkdir -p ~/.doomlegacy/{} \;
-	find * -type f -exec ln -sf %%DATADIR%%/{} ~/.doomlegacy/{} \;
+	mkdir -p ~/.doomlegacy
+	ln -s %%DATADIR%%/* ~/.doomlegacy
 fi
 
 cd ~/.doomlegacy || exit 1
