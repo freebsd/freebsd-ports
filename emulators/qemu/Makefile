@@ -9,7 +9,8 @@ PORTNAME=	qemu
 PORTVERSION=	0.9.0
 PORTREVISION=	3
 CATEGORIES=	emulators
-MASTER_SITES=	http://qemu.org/:release \
+MASTER_SITES=	http://fabrice.bellard.free.fr/qemu/:release \
+		http://qemu.org/:release \
 		http://qemu-forum.ipi.fi/qemu-snapshots/:snapshot \
 		http://people.fruitsalad.org/nox/qemu/:snapshot \
 		http://www.volny.cz/xnavara/qemu/:snapshot \
