@@ -12981,6 +12981,7 @@ py-rt		ports/net/py-rt
 py-rtf		ports/print/py-rtf
 py-ruledispatch	ports/devel/py-ruledispatch
 py-rxp		ports/textproc/py-rxp
+py-s3cmd	ports/net/py-s3cmd
 py-samba	ports/net/py-samba
 py-scgi		ports/www/py-scgi
 py-scientific	ports/math/py-scientific
