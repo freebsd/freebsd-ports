@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openxpki
-PORTVERSION=	0.9.781
+PORTVERSION=	0.9.914
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -178,6 +178,7 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Workflow::Activity::CertIssuance::Issue.3 \
 	OpenXPKI::Server::Workflow::Activity::CertIssuance::PersistCertificate.3 \
 	OpenXPKI::Server::Workflow::Activity::CertLdapPublish::AddMissingNode.3 \
+	OpenXPKI::Server::Workflow::Activity::CertLdapPublish::ImportPublicData.3 \
 	OpenXPKI::Server::Workflow::Activity::CertLdapPublish::PublicCertLdap.3 \
 	OpenXPKI::Server::Workflow::Activity::DataExchange::Cleanup.3 \
 	OpenXPKI::Server::Workflow::Activity::DataExchange::ExportLogs.3 \
@@ -189,11 +190,6 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Workflow::Activity::DataExchange::ReadArchive.3 \
 	OpenXPKI::Server::Workflow::Activity::DataExchange::UnpackArchive.3 \
 	OpenXPKI::Server::Workflow::Activity::DataExchange::WriteArchive.3 \
-	OpenXPKI::Server::Workflow::Activity::Key::Generate.3 \
-	OpenXPKI::Server::Workflow::Activity::Passphrase::Generate.3 \
-	OpenXPKI::Server::Workflow::Activity::Profile::Create.3 \
-	OpenXPKI::Server::Workflow::Activity::Request::Certificate::DataOnly::Create.3 \
-	OpenXPKI::Server::Workflow::Activity::Request::Certificate::PKCS10::Create.3 \
 	OpenXPKI::Server::Workflow::Activity::SCEP::ExtractCSR.3 \
 	OpenXPKI::Server::Workflow::Activity::SCEP::SetContextFromCSR.3 \
 	OpenXPKI::Server::Workflow::Activity::SCEP::SetContextFromOriginalCert.3 \
@@ -246,6 +242,8 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Server::Workflow::Validator::CertRole.3 \
 	OpenXPKI::Server::Workflow::Validator::CertSubject.3 \
 	OpenXPKI::Server::Workflow::Validator::CertSubjectAltName.3 \
+	OpenXPKI::Server::Workflow::Validator::CertSubjectAltNameParts.3 \
+	OpenXPKI::Server::Workflow::Validator::CertSubjectParts.3 \
 	OpenXPKI::Server::Workflow::Validator::Creator.3 \
 	OpenXPKI::Server::Workflow::Validator::InvalidityTime.3 \
 	OpenXPKI::Server::Workflow::Validator::KeyReuse.3 \
@@ -261,6 +259,8 @@ MAN3=	OpenXPKI.3 \
 	OpenXPKI::Service::SCEP::Command.3 \
 	OpenXPKI::Service::SCEP::Command::GetCACert.3 \
 	OpenXPKI::Service::SCEP::Command::PKIOperation.3 \
+	OpenXPKI::Template::Plugin::RandomPassword.3 \
+	OpenXPKI::Tests.3 \
 	OpenXPKI::Transport::Simple.3 \
 	OpenXPKI::VERSION.3 \
 	OpenXPKI::XML::Cache.3 \
