@@ -1,0 +1,11 @@
+--- Makefile.orig	Thu Jun  7 13:16:14 2007
++++ Makefile	Thu Jun  7 13:16:41 2007
+@@ -24,8 +24,6 @@
+ 
+ all: $(TARGET)
+ 
+-$(TARGET): $(OBJECTS)
+-	$(CC) $(OBJECTS) -o $(TARGET)
+ 
+ install:
+ 	$(INSTALL) -cs $(TARGET) /usr/local/sbin
