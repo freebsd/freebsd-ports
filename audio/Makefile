@@ -229,6 +229,7 @@
     SUBDIR += gstreamer-plugins-lame
     SUBDIR += gstreamer-plugins-mad
     SUBDIR += gstreamer-plugins-moodbar
+    SUBDIR += gstreamer-plugins-mp3
     SUBDIR += gstreamer-plugins-musepack
     SUBDIR += gstreamer-plugins-musicbrainz
     SUBDIR += gstreamer-plugins-ogg
