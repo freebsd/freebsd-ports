@@ -201,7 +201,6 @@ include/gimp-2.0/libgimpwidgets/gimppreviewarea.h
 include/gimp-2.0/libgimpwidgets/gimppropwidgets.h
 include/gimp-2.0/libgimpwidgets/gimpquerybox.h
 include/gimp-2.0/libgimpwidgets/gimpratioentry.h
-include/gimp-2.0/libgimpwidgets/gimpresolutionentry.h
 include/gimp-2.0/libgimpwidgets/gimpscrolledpreview.h
 include/gimp-2.0/libgimpwidgets/gimpsizeentry.h
 include/gimp-2.0/libgimpwidgets/gimpstock.h
@@ -343,8 +342,8 @@ libexec/gimp/2.2/plug-ins/gee_zoom
 libexec/gimp/2.2/plug-ins/gfig
 libexec/gimp/2.2/plug-ins/gflare
 libexec/gimp/2.2/plug-ins/gfli
-libexec/gimp/2.2/plug-ins/gif
-libexec/gimp/2.2/plug-ins/gifload
+libexec/gimp/2.2/plug-ins/gif-load
+libexec/gimp/2.2/plug-ins/gif-save
 libexec/gimp/2.2/plug-ins/gih
 libexec/gimp/2.2/plug-ins/gimpressionist
 libexec/gimp/2.2/plug-ins/glasstile
@@ -398,8 +397,8 @@ libexec/gimp/2.2/plug-ins/polar
 libexec/gimp/2.2/plug-ins/poppler
 libexec/gimp/2.2/plug-ins/postscript
 libexec/gimp/2.2/plug-ins/procedure-browser
-libexec/gimp/2.2/plug-ins/psd
-libexec/gimp/2.2/plug-ins/psd_save
+libexec/gimp/2.2/plug-ins/psd-load
+libexec/gimp/2.2/plug-ins/psd-save
 libexec/gimp/2.2/plug-ins/psp
 libexec/gimp/2.2/plug-ins/randomize
 libexec/gimp/2.2/plug-ins/raw
@@ -431,7 +430,8 @@ libexec/gimp/2.2/plug-ins/sunras
 libexec/gimp/2.2/plug-ins/svg
 libexec/gimp/2.2/plug-ins/tga
 libexec/gimp/2.2/plug-ins/threshold_alpha
-libexec/gimp/2.2/plug-ins/tiff
+libexec/gimp/2.2/plug-ins/tiff-load
+libexec/gimp/2.2/plug-ins/tiff-save
 libexec/gimp/2.2/plug-ins/tile
 libexec/gimp/2.2/plug-ins/tileit
 libexec/gimp/2.2/plug-ins/tiler
@@ -1120,6 +1120,7 @@ share/gimp/brushes/hsparks.gih
 share/gimp/brushes/pepper.gbr
 share/gimp/brushes/pixel.gbr
 share/gimp/brushes/vine.gih
+@exec mkdir -p %D/share/gimp/fonts
 share/gimp/fractalexplorer/Asteroid_Field
 share/gimp/fractalexplorer/Bar_Code_Label
 share/gimp/fractalexplorer/Beauty_of_Nature
@@ -1738,6 +1739,12 @@ share/locale/eu/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/eu/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/eu/LC_MESSAGES/gimp20-tips.mo
 share/locale/eu/LC_MESSAGES/gimp20.mo
+share/locale/fa/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/fa/LC_MESSAGES/gimp20-python.mo
+share/locale/fa/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/fa/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/fa/LC_MESSAGES/gimp20-tips.mo
+share/locale/fa/LC_MESSAGES/gimp20.mo
 share/locale/fi/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/fi/LC_MESSAGES/gimp20-python.mo
 share/locale/fi/LC_MESSAGES/gimp20-script-fu.mo
@@ -1852,6 +1859,12 @@ share/locale/nl/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/nl/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/nl/LC_MESSAGES/gimp20-tips.mo
 share/locale/nl/LC_MESSAGES/gimp20.mo
+share/locale/oc/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/oc/LC_MESSAGES/gimp20-python.mo
+share/locale/oc/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/oc/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/oc/LC_MESSAGES/gimp20-tips.mo
+share/locale/oc/LC_MESSAGES/gimp20.mo
 share/locale/pa/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/pa/LC_MESSAGES/gimp20-python.mo
 share/locale/pa/LC_MESSAGES/gimp20-script-fu.mo
