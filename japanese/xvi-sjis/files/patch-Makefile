@@ -18,7 +18,7 @@
  
 -CFLAGS= 	$(SYSDEFS) $(INCDIRS) -O
 -LINTFLAGS=	$(SYSDEFS) $(INCDIRS) -ah
-+CFLAGS+= 	${SYSDEFS} ${INCDIRS} -DHELPFILE=\"/usr/local/share/xvi/sxvi.help\"
++CFLAGS+=       ${SYSDEFS} ${INCDIRS} -DHELPFILE=\"/usr/local/share/xvi/xvi.help\" -DTERMIO -DTERMIOS -DPOSIX
 +LINTFLAGS=	${SYSDEFS} ${INCDIRS} -ah
  
  MACHSRC=	unix.c termcap.c defscr.c
