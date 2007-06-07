@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnome-speech
-PORTVERSION=	0.4.12
+PORTVERSION=	0.4.13
 CATEGORIES=	accessibility audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -22,8 +22,8 @@ USE_GNOME=	gnomehack libbonobo
 GNU_CONFIGURE=  yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
