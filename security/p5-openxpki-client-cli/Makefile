@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openxpki-client-cli
-PORTVERSION=	0.9.651
+PORTVERSION=	0.9.850
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	openxpki
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	OpenXPKI-Client-CLI-${PORTVERSION}
 DIST_SUBDIR=	openxpki
 
-MAINTAINER=	svysh@cryptocom.ru
+MAINTAINER=	svysh@pn.sinp.msu.ru
 COMMENT=	Command line interface for local openxpki daemon
 
 BUILD_DEPENDS=	\
