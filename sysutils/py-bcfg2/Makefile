@@ -8,7 +8,8 @@
 PORTNAME=	bcfg2
 PORTVERSION=	0.9.3
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/bcfg/
+MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/bcfg/ \
+		http://mirror.opensysadmin.com/bcfg/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gogo@cs.uni-sb.de
