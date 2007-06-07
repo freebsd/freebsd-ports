@@ -7,13 +7,13 @@
 
 PORTNAME=	libamrnb
 PORTVERSION=	6.1.0.4
+PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://ftp.penguin.cz/pub/users/utx/amr/testing/ \
-		http://ftp.penguin.cz/pub/users/utx/amr/
-DISTNAME=	amrnb-${DISTVERSION}rc1
+MASTER_SITES=	http://ftp.penguin.cz/pub/users/utx/amr/
+DISTNAME=	amrnb-${DISTVERSION}
 
 MAINTAINER=	tatsuki_makino@hotmail.com
-COMMENT=	The floating-point Adaptive Multi Rate speech codec libraries
+COMMENT=	Adaptive Multi-Rate (AMR) Speech Codec
 
 BUILD_DEPENDS=	wget:${PORTSDIR}/ftp/wget \
 		${UNZIP_CMD}:${PORTSDIR}/archivers/unzip \
@@ -22,11 +22,10 @@ BUILD_DEPENDS=	wget:${PORTSDIR}/ftp/wget \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
-WRKSRC=		${WRKDIR}/amrnb-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--srcdir=${WRKSRC}
 CONFIGURE_ENV+=	LANG=C
 USE_LDCONFIG=	yes
+NO_PACKAGE=	See Important legal notice of http://www.penguin.cz/~utx/amr.en.html
 
 post-patch:
 	@${REINPLACE_CMD} -E \
