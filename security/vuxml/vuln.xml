@@ -39,7 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>mplayer</name>
-	<range><lt>0.99.10_8</lt></range>
+	<range><lt>0.99.10_9</lt></range>
       </package>
     </affects>
     <description>
