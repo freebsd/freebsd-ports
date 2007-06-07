@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fribidi
-PORTVERSION=	0.10.7
+PORTVERSION=	0.10.8
 CATEGORIES=	converters
 MASTER_SITES=	http://fribidi.org/download/
 
