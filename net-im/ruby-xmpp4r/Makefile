@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	stephan@spaceboyz.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMPP/Jabber library for Ruby
 
 USE_RUBY=	YES
