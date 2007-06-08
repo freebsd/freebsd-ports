@@ -9,11 +9,11 @@ PORTNAME=	BitchX
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES+=	irc
-MASTER_SITES=	ftp://ftp.bitchx.org/pub/BitchX/ \
-		ftp://ftp.cyberpunkz.org/pub/BitchX/
+MASTER_SITES=	ftp://ftp.bitchx.org/pub/BitchX/source/ \
+		CENKES
 DISTNAME=	ircii-pana-${PORTVERSION}-final
 
-MAINTAINER?=	beech@alaskaparadise.com
+MAINTAINER?=	beech@FreeBSD.org
 COMMENT?=	ircII color client with GTK/GNOME support
 
 WRKSRC=		${WRKDIR}/BitchX
