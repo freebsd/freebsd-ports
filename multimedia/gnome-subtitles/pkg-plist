@@ -2,5 +2,12 @@ bin/gnome-subtitles
 lib/gnome-subtitles/gnome-subtitles.exe
 lib/gnome-subtitles/sublib.dll
 share/gnome/applications/gnome-subtitles.desktop
+share/gnome/help/gnome-subtitles/C/legal.xml
+share/gnome/help/gnome-subtitles/C/gnome-subtitles.xml
+share/gnome/omf/gnome-subtitles/gnome-subtitles-C.omf
 share/gnome/pixmaps/gnome-subtitles.png
-@dirrm lib/gnome-subtitles
+@dirrmtry lib/gnome-subtitles
+@dirrmtry share/gnome/omf/gnome-subtitles
+@dirrmtry share/gnome/help/gnome-subtitles/C
+@dirrmtry share/gnome/help/gnome-subtitles
+@dirrmtry locale

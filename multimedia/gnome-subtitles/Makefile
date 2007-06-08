@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnome-subtitles
-PORTVERSION=	0.4
-PORTREVISION=	1
+PORTVERSION=	0.5.1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,19 +17,18 @@ COMMENT=	Subtitle editor with video preview
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
-USE_GNOME=	gnomeprefix gtksharp20 gnomesharp20
+USE_GMAKE=	yes
+USE_GNOME=	gnomeprefix gtksharp20 gnomesharp20 gnomedocutils
 GNU_CONFIGURE=	yes
 GCONF_SCHEMAS=	gnome-subtitles.schemas
+INSTALLS_OMF=	yes
+INSTALLS_ICONS=	yes
 
 MAN1=		gnome-subtitles.1
 
 .if !defined(WITHOUT_MPLAYER)
     RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
-
-pre-install:
-	# workaround for incorrect permissions in the disfile
-	${CHMOD} +x ${WRKSRC}/install-sh
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"
