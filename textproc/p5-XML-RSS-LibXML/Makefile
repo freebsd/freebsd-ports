@@ -6,34 +6,37 @@
 #
 
 PORTNAME=	XML-RSS-LibXML
-PORTVERSION=	0.23
-PORTREVISION=	1
+PORTVERSION=	0.30.01
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-0.3001
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	XML::RSS with XML::LibXML
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
+		${SITE_PERL}/Class/Accessor/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor \
+		${SITE_PERL}/DateTime/Format/Mail.pm:${PORTSDIR}/devel/p5-DateTime-Format-Mail \
+		${SITE_PERL}/DateTime/Format/W3CDTF.pm:${PORTSDIR}/devel/p5-DateTime-Format-W3CDTF \
+		${SITE_PERL}/UNIVERSAL/require.pm:${PORTSDIR}/devel/p5-UNIVERSAL-require
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
-MAN3=	XML::RSS::LibXML.3 \
-	XML::RSS::LibXML::Format.3 \
-	XML::RSS::LibXML::Generator.3 \
-	XML::RSS::LibXML::MagicElement.3 \
-	XML::RSS::LibXML::Parser.3 \
-	XML::RSS::LibXML::V09.3 \
-	XML::RSS::LibXML::V10.3 \
-	XML::RSS::LibXML::V20.3
+MAN3=		XML::RSS::LibXML.3 XML::RSS::LibXML::ImplBase.3 \
+		XML::RSS::LibXML::MagicElement.3 \
+		XML::RSS::LibXML::Namespaces.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500703 #inherited from converters/p5-Encode
-IGNORE=	requires perl 5.7.3 or later. Install lang/perl5.8 then try again
+.if ${PERL_LEVEL} < 500703	# inherited from converters/p5-Encode
+IGNORE=		requires perl 5.7.3 or later. Install lang/perl5.8 then try again
 .endif
+
+post-install:
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/benchmark.pl ${EXAMPLESDIR}
 
 .include <bsd.port.post.mk>

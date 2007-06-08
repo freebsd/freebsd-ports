@@ -1,11 +1,19 @@
+@comment $FreeBSD$
+%%EXAMPLESDIR%%/benchmark.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS/LibXML/.packlist
 %%SITE_PERL%%/XML/RSS/LibXML.pm
-%%SITE_PERL%%/XML/RSS/LibXML/Format.pm
-%%SITE_PERL%%/XML/RSS/LibXML/Generator.pm
+%%SITE_PERL%%/XML/RSS/LibXML/ImplBase.pm
 %%SITE_PERL%%/XML/RSS/LibXML/MagicElement.pm
-%%SITE_PERL%%/XML/RSS/LibXML/Parser.pm
-%%SITE_PERL%%/XML/RSS/LibXML/V09.pm
-%%SITE_PERL%%/XML/RSS/LibXML/V10.pm
-%%SITE_PERL%%/XML/RSS/LibXML/V20.pm
-@dirrm %%SITE_PERL%%/XML/RSS/LibXML
+%%SITE_PERL%%/XML/RSS/LibXML/Namespaces.pm
+%%SITE_PERL%%/XML/RSS/LibXML/Null.pm
+%%SITE_PERL%%/XML/RSS/LibXML/V0_9.pm
+%%SITE_PERL%%/XML/RSS/LibXML/V0_91.pm
+%%SITE_PERL%%/XML/RSS/LibXML/V1_0.pm
+%%SITE_PERL%%/XML/RSS/LibXML/V2_0.pm
+@dirrmtry %%SITE_PERL%%/XML/RSS/LibXML
 @dirrmtry %%SITE_PERL%%/XML/RSS
 @dirrmtry %%SITE_PERL%%/XML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS/LibXML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrmtry %%EXAMPLESDIR%%
