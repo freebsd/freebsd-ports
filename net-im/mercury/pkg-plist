@@ -2,8 +2,7 @@ bin/Mercury_Messenger
 %%INSTDIR%%/Mercury_Messenger
 %%VID%%%%INSTDIR%%/lib/VidConf-libs.jar
 %%INSTDIR%%/lib/dMSN.jar
-%%INSTDIR%%/lib/jdom1_0.jar
-%%INSTDIR%%/lib/xmlpull.jar
+%%INSTDIR%%/lib/xpp3.jar
 %%INSTDIR%%/resources/AppData/CustomEmoticons/MSN7.zip
 %%INSTDIR%%/resources/AppData/Games/.keep_me
 %%INSTDIR%%/resources/AppData/Images/Default.zip
@@ -53,6 +52,9 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/AppData/Winks/Sunflower.zip
 %%INSTDIR%%/resources/AppData/Winks/Ufo.zip
 %%INSTDIR%%/resources/AppData/Winks/WaterBalloon.zip
+%%INSTDIR%%/resources/config/HotKeys.xml
+%%INSTDIR%%/resources/config/Locations.xml
+%%INSTDIR%%/resources/config/RSSFeeds.xml
 %%INSTDIR%%/resources/lang/en.xml
 %%INSTDIR%%/resources/menu/FirstTab.xml
 %%INSTDIR%%/resources/menu/MSN.xml
@@ -64,15 +66,13 @@ bin/Mercury_Messenger
 %%INSTDIR%%/resources/settings/Window_Advanced_Account.xml
 %%INSTDIR%%/resources/settings/Window_Advanced_Global.xml
 %%INSTDIR%%/resources/settings/Window_View.xml
-%%INSTDIR%%/resources/text/EventExampleLog.xml
-%%INSTDIR%%/resources/text/EventLog.xsl
-%%INSTDIR%%/resources/text/Locations.xml
-%%INSTDIR%%/resources/text/MessageLog.xsl
-%%INSTDIR%%/resources/text/RSSFeeds.xml
-@dirrm %%INSTDIR%%/resources/text
+%%INSTDIR%%/resources/xsl/EventLog.xsl
+%%INSTDIR%%/resources/xsl/MessageLog.xsl
+@dirrm %%INSTDIR%%/resources/xsl
 @dirrm %%INSTDIR%%/resources/settings
 @dirrm %%INSTDIR%%/resources/menu
 @dirrm %%INSTDIR%%/resources/lang
+@dirrm %%INSTDIR%%/resources/config
 @dirrm %%INSTDIR%%/resources/AppData/Winks
 @dirrm %%INSTDIR%%/resources/AppData/Views
 @dirrm %%INSTDIR%%/resources/AppData/StatusIcons
