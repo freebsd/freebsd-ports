@@ -25,7 +25,7 @@ USE_AUTOTOOLS=	libtool:15
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LANG=C
 USE_LDCONFIG=	yes
-NO_PACKAGE=	See Important legal notice of http://www.penguin.cz/~utx/amr.en.html
+RESTRICTED=	See Important legal notice of http://www.penguin.cz/~utx/amr.en.html
 
 post-patch:
 	@${REINPLACE_CMD} -E \
