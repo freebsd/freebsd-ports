@@ -9,10 +9,10 @@
 #  - etc/*.sample support
 
 PORTNAME=	openmpi
-DISTVERSION=	1.1.4
+DISTVERSION=	1.2.2
 PORTREVISION=	1
 CATEGORIES=	net parallel
-MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.1/downloads/
+MASTER_SITES=	http://www.open-mpi.org/software/ompi/v1.2/downloads/
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	A High Performance Message Passing Library
@@ -29,17 +29,13 @@ MPIDIR?=	${MPIBASE}/${UNIQUENAME}
 PLIST_SUB+=	MPIBASE=${MPIBASE}
 PLIST_SUB+=	MPIDIR=${MPIDIR}
 
-SUB_FILES+=	pkg-message
-SUB_LIST+=	MPIDIR=${MPIDIR}
-
-PKGMESSAGE=	${WRKDIR}/pkg-message
-
 CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} ${CONFIGURE_TARGET}
 
-USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib/openmpi
+USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib \
+		${PREFIX}/${MPIDIR}/lib/openmpi
 
-MAN1=		mpiexec.1 mpirun.1 orterun.1
 MANPREFIX=	${TARGETDIR}/${MPIDIR}
+.include "${.CURDIR}/Makefile.man"
 
 .include <bsd.port.pre.mk>
 
@@ -64,27 +60,35 @@ PLIST_SUB+=	TORQUE=""
 PLIST_SUB+=	TORQUE="@comment "
 .endif
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 #######################################################################
 # The following targets are for the port maintainer.  Use at your own #
 # risk, no user-serviceable parts inside.                             #
+#                                                                     #
+# XXX: we should generate MLINKS programaticaly, but it would take    #
+# some effort and there's only one entry at this time.                #
 #######################################################################
 build-plist: Makefile
-	${RM} -f pkg-plist
-	${FIND} ${PREFIX}/${MPIDIR}/* -type f | \
+	${RM} ${PLIST}
+	${FIND} ${PREFIX}/${MPIDIR} -name man -prune -o -type f -print | \
 	    ${SED} -e 's|${PREFIX}/${MPIDIR}|%%MPIDIR%%|' | \
-	    ${SORT} >> pkg-plist
-	${FIND} ${PREFIX}/${MPIDIR}/* -type l | \
+	    ${SORT} >> ${PLIST}
+	${FIND} ${PREFIX}/${MPIDIR} -name man -prune -o -type l -print | \
 	    ${SED} -e 's|${PREFIX}/${MPIDIR}|%%MPIDIR%%|' | \
-	    ${SORT} >> pkg-plist
-	${FIND} ${PREFIX}/${MPIDIR}/* -type d | \
+	    ${SORT} >> ${PLIST}
+	${FIND} ${PREFIX}/${MPIDIR} -type d | \
+	    egrep -v "${PREFIX}/${MPIDIR}$$" | \
 	    ${SED} -e 's|${PREFIX}/${MPIDIR}|@dirrm %%MPIDIR%%|' | \
-	    ${SORT} -r >> pkg-plist
+	    ${SORT} -r >> ${PLIST}
 	${ECHO} "@dirrmtry %%MPIDIR%%" \
-	    >> pkg-plist
-	${ECHO} "@dirrmtry %D/%%MPIBASE%%" \
-	    >> pkg-plist
+	    >> ${PLIST}
+	${ECHO} "@dirrmtry %%MPIBASE%%" \
+	    >> ${PLIST}
+	@echo "# Do not edit!  Auto-generated file." > ${.CURDIR}/Makefile.man
+	@echo "# See build-plist target in Makefile." >> ${.CURDIR}/Makefile.man
+	@echo "#" >> ${.CURDIR}/Makefile.man
+	@echo "MLINKS=mpic++.1 mpiCC.1" >> ${.CURDIR}/Makefile.man
+	${FIND} ${PREFIX}/${MPIDIR}/man -type f | \
+	    ${SED} -e 's|.*man\([0-9LN]\)/\(.*\)|MAN\1+=\2|' -e 's/\.gz$$//' \
+	    >> ${.CURDIR}/Makefile.man
 
 .include <bsd.port.post.mk>
