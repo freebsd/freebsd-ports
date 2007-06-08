@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	MogileFS-Client
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	sysutils net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/B/BR/BRADFITZ
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Client library for the MogileFS distributed file system
 
 RUN_DEPENDS=	${SITE_PERL}/IO/WrapTie.pm:${PORTSDIR}/devel/p5-IO-stringy \
