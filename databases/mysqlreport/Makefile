@@ -5,9 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	mysqlreport
-PORTVERSION=	3.0a
+PORTVERSION=	3.2
 CATEGORIES=	databases
-MASTER_SITES=	http://hackmysql.com/scripts/
+MASTER_SITES=	http://hackmysql.com/scripts/ \
+		http://zaa.pp.ru/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	zaa@zaa.pp.ru
