@@ -32,6 +32,7 @@ include/gsk-1.0/gsk/gskmacros.h
 include/gsk-1.0/gsk/gskmain.h
 include/gsk-1.0/gsk/gskmainloop.h
 include/gsk-1.0/gsk/gskmemory.h
+include/gsk-1.0/gsk/gskmemorybarrier.h
 include/gsk-1.0/gsk/gskmempool.h
 include/gsk-1.0/gsk/gskmodule.h
 include/gsk-1.0/gsk/gsknameresolver.h
