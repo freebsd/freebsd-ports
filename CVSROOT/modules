@@ -12905,6 +12905,7 @@ py-ply		ports/devel/py-ply
 py-pmock	ports/devel/py-pmock
 py-poker-eval	ports/games/py-poker-eval
 py-posix1e	ports/security/py-posix1e
+py-postmarkup	ports/www/py-postmarkup
 py-pow		ports/security/py-pow
 py-pp		ports/devel/py-pp
 py-pqueue	ports/devel/py-pqueue
