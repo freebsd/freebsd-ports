@@ -117,6 +117,7 @@
 %%WWWDIR%%/core/resource/RESOURCECUSTOM.php
 %%WWWDIR%%/core/resource/RESOURCEEDIT.php
 %%WWWDIR%%/core/resource/RESOURCEFORM.php
+%%WWWDIR%%/core/resource/RESOURCEKEYWORDCATEGORY.php
 %%WWWDIR%%/core/resource/RESOURCEMAP.php
 %%WWWDIR%%/core/resource/RESOURCEMUSING.php
 %%WWWDIR%%/core/resource/RESOURCENEW.php

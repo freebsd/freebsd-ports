@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wikindx
-PORTVERSION=	3.6
+PORTVERSION=	3.6.5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wikindx
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/g}
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	Bibliographic and quotations/notes management system
 
-USE_PHP=	session mysql xml
+USE_PHP=	session mysql xml ctype
 
 NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/wikindx3
