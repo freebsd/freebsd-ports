@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freefem++
-DISTVERSION=	2.16-4
+DISTVERSION=	2.17
 CATEGORIES=	math science
 MASTER_SITES=	http://www.freefem.org/ff++/ftp/
 
@@ -31,6 +31,8 @@ RESTRICTED=	No resale or commercial use
 WANT_FORTRAN=		yes
 FC=			gfortran42
 F77=			gfortran42
+FORTRANLIBDIR=		`${DIRNAME} \`gfortran42 -print-libgcc-file-name\``
+FORTRANLIBDIR2=		`${DIRNAME} \`gfortran42 -print-libgcc-file-name\``/../../../
 USE_BISON=		yes
 USE_GL=			yes
 USE_GMAKE=		yes
@@ -66,7 +68,7 @@ WITH_ATLAS=	yes
 .endif
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-BLAS=		-lcblas -lf77blas -latlas
+BLAS=		-lcblas -lf77blas -latlas -L${FORTRANLIBDIR} -L${FORTRANLIBDIR2} -lgfortranbegin -lgfortran
 LAPACK=		-lalapack ${BLAS}
 ARPACK=		-larpack
 .else
