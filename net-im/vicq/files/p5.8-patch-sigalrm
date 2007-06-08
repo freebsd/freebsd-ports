@@ -1,0 +1,19 @@
+--- vicq.orig	Thu Jun  7 23:15:28 2007
++++ vicq	Thu Jun  7 23:16:41 2007
+@@ -20,6 +20,7 @@
+ use Getopt::Std;
+ use Socket;
+ use POSIX qw(mktime getcwd);
++use POSIX ':signal_h';
+ package main;
+ use locale;
+ #use Data::Dumper;
+@@ -3347,7 +3348,7 @@
+ 	if(!$err)
+ 	{
+ 		print "done!\n";
+-		$SIG{ALRM} = \&tick_handler;
++		sigaction SIGALRM, new POSIX::SigAction \&tick_handler;
+ 		alarm 1;
+ 		return 0;
+ 	} else
