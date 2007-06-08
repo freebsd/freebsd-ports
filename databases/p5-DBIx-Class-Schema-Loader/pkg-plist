@@ -2,11 +2,17 @@
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/Base.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/DB2.pm
+%%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Oracle.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Pg.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/SQLite.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/Writing.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI/mysql.pm
 %%SITE_PERL%%/DBIx/Class/Schema/Loader/RelBuilder.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema/Loader/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema/Loader
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Schema
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader/DBI
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Schema/Loader
 @dirrmtry %%SITE_PERL%%/DBIx/Class/Schema
