@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvs2cl
-PORTVERSION=	2.59
+PORTVERSION=	2.62
 CATEGORIES=	devel
 MASTER_SITES=	http://www.red-bean.com/cvs2cl/
 DISTFILES=	${PORTNAME}.pl
