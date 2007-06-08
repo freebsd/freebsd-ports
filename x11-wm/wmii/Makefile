@@ -19,6 +19,8 @@ RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu \
 
 CONFLICTS=	wmii-3.5.[2-9]*
 
+USE_XLIB=	yes
+
 MAKE_ARGS=	PREFIX="${PREFIX}" X11LIB="${X11BASE}/lib" \
 		X11INC="${X11BASE}/include" CC="${CC}" \
 		MANPREFIX="${MANPREFIX}/man"
