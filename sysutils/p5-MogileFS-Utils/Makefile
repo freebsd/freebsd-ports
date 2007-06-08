@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	MogileFS-Utils
-PORTVERSION=	2.08
+PORTVERSION=	2.10
 CATEGORIES=	sysutils net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../../authors/id/B/BR/BRADFITZ
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	MogileFS tools
 
 RUN_DEPENDS=	${SITE_PERL}/LWP/Simple.pm:${PORTSDIR}/www/p5-libwww \
