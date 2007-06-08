@@ -7,8 +7,9 @@
 
 PORTNAME=	vicq
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	net-im
-MASTER_SITES=	http://gonzo.kiev.ua/projects/vicq/
+MASTER_SITES=	http://gonzo.kiev.ua/projects/vicq.old/
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	A text-based ICQ implementation
@@ -30,4 +31,13 @@ post-install:
 	${MKDIR} ${PREFIX}/share/examples/vicq
 	${INSTALL_DATA} ${WRKSRC}/vicqrc.example ${PREFIX}/share/examples/vicq
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 500800
+SIGNAL_PATCH=p5.8-patch-sigalrm
+post-patch:
+	@${ECHO_MSG} "===>  Applying patch ${SIGNAL_PATCH} for ${PKGNAME}"
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/${SIGNAL_PATCH}
+.endif
+
+.include <bsd.port.post.mk>
