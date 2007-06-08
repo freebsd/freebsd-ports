@@ -2,7 +2,6 @@ bin/openxpki-configure
 bin/openxpki-metaconf
 bin/openxpkiadm
 bin/openxpkictl
-etc/rc.d/openxpki
 share/openxpki/templates/default/acl.xml
 share/openxpki/templates/default/auth.xml
 share/openxpki/templates/default/config.xml
