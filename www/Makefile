@@ -1013,6 +1013,7 @@
     SUBDIR += py-paste
     SUBDIR += py-pastedeploy
     SUBDIR += py-pastescript
+    SUBDIR += py-postmarkup
     SUBDIR += py-prewikka
     SUBDIR += py-pullparser
     SUBDIR += py-pysearch
