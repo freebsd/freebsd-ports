@@ -38,11 +38,11 @@ WANT_OPENLDAP_VER?=	24
 BROKEN=			incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}
 .endif
 
-PORTREVISION_CLIENT=	0
+PORTREVISION_CLIENT=	1
 PORTREVISION_SERVER=	2
 
 .if !defined(CLIENT_ONLY)
-OPTIONS=	SASL "With (Cyrus) SASL2 support" on \
+OPTIONS=	SASL "With (Cyrus) SASL2 support" off \
 		DNSSRV "With Dnssrv backend" off \
 		PASSWD "With Passwd backend" off \
 		PERL "With Perl backend" off \
