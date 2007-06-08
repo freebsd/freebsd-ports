@@ -1,3 +1,6 @@
+@exec if ! pw groupshow cups 2>/dev/null; then pw groupadd cups -g 193; fi
+@exec if ! pw usershow cups 2>/dev/null; then pw useradd cups -g cups -u 193 -h - -d /nonexistent -s /usr/sbin/nologin -c "CUPS Owner"; fi
+@unexec if pw usershow cups; then pw userdel cups; fi
 @exec mkdir -p /var/spool/cups/tmp || true
 @exec chown -R root:daemon /var/spool/cups
 @exec mkdir -p /var/cache/cups || true

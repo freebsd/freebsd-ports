@@ -8,7 +8,7 @@
 PORTNAME=	cups
 PORTVERSION=	1.2.10
 DISTVERSIONSUFFIX=	-source
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
 PKGNAMESUFFIX=	-base${PKGNAMESUFFIX2}
@@ -144,6 +144,9 @@ post-patch:
 
 pre-install:
 	@${INSTALL} -d ${DESKTOPDIR}/
+	if ! pw groupshow ${CUPSGRP}; then pw groupadd ${CUPSGRP} -g 193; fi
+	if ! pw usershow ${CUPSOWN}; then pw useradd ${CUPSOWN} -g ${CUPSGRP} -u 193 \
+		-h - -d ${NONEXISTENT} -s /usr/sbin/nologin -c "CUPS Owner"; fi
 
 post-install:
 	${INSTALL} -d ${CUPS_ETCDIR}/
