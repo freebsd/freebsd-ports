@@ -13,12 +13,12 @@ MASTER_SITES=	SFE
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Produce PDF from scanned documents
 
+LIB_DEPENDS=	rsvg-2.2:${PORTSDIR}/graphics/librsvg2
 RUN_DEPENDS=	p5-PDF-API2>=0.57:${PORTSDIR}/textproc/p5-PDF-API2 \
 		scanimage:${PORTSDIR}/graphics/sane-backends \
 		scanadf:${PORTSDIR}/graphics/sane-frontends \
 		cjb2:${PORTSDIR}/graphics/djvulibre \
 		unpaper:${PORTSDIR}/graphics/unpaper \
-		rsvg-2.2:${PORTSDIR}/graphics/librsvg2 \
 		p5-Gtk2>=1.112:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		p5-Gtk2-Ex-PodViewer>=0.17:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-PodViewer \
 		p5-Gtk2-Ex-Simple-List>=0.50:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-Simple-List \
