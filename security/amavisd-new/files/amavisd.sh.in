@@ -23,6 +23,20 @@ command=%%PREFIX%%/sbin/amavisd > /dev/null 2>&1
 pidfile=%%AMAVISDIR%%/amavisd.pid
 required_files=%%PREFIX%%/etc/amavisd.conf
 
+start_precmd=start_precmd
+
+# possible values include: amavisd_ram="512m"
+# adds ram disk for amavisd defanging/decoding, speeds up large systems 10%
+start_precmd()
+{
+rm -rf %%AMAVISDIR%%/tmp/* %%AMAVISDIR%%/tmp/.* 2>/dev/null || true
+if [ ${amavisd_ram} ];then
+  df %%AMAVISDIR%%/tmp |  grep '^/dev/md' > /dev/null
+  if [ $? -eq 1 ];then
+   mdmfs -M -s ${amavisd_ram} -w %%AMAVISUSER%%:%%AMAVISGROUP%% md %%AMAVISDIR%%/tmp || true
+  fi
+fi
+}
 stop_postcmd=stop_postcmd
 
 stop_postcmd()

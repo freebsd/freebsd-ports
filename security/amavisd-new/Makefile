@@ -7,7 +7,7 @@
 # Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Un
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
 		p5-Convert-UUlib>=1.08,1:${PORTSDIR}/converters/p5-Convert-UUlib \
-		p5-Compress-Zlib>=1.04:${PORTSDIR}/archivers/p5-Compress-Zlib \
+		p5-Compress-Zlib>=2.04:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
@@ -140,7 +140,8 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/altermime:${PORTSDIR}/mail/altermime
 .endif
 
 .if defined(WITH_FILE)
-RUN_DEPENDS+=	${LOCALBASE}/bin/file:${PORTSDIR}/sysutils/file
+# security fix, file > 4.21 needed
+RUN_DEPENDS+=	file>=4.21:${PORTSDIR}/sysutils/file
 .endif
 
 .if defined(WITH_RAR)
@@ -180,11 +181,12 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 .endif
 
 .if defined(WITH_ZOO)
-RUN_DEPENDS+=	${LOCALBASE}/bin/zoo:${PORTSDIR}/archivers/zoo
+# DOS condition in 2.10.1_2
+RUN_DEPENDS+=	zoo>=2.10.1_2:${PORTSDIR}/archivers/zoo
 .endif
 
 .if defined(WITH_UNZOO)
-RUN_DEPENDS+=	${LOCALBASE}/bin/unzoo:${PORTSDIR}/archivers/unzoo
+RUN_DEPENDS+=	unzoo>=4.4_1:${PORTSDIR}/archivers/unzoo
 .endif
 
 .if defined(WITH_LZOP)
@@ -268,6 +270,7 @@ do-install:
 .endif
 
 post-install:
+	${LN} -s ${PREFIX}/sbin/amavisd-release ${PREFIX}/sbin/amavisd-requeue
 	@${CAT} ${PKGMESSAGE}
 
 .if ${PERL_LEVEL} < 500802
