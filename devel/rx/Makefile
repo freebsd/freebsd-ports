@@ -14,6 +14,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	alepulver@FreeBSD.org
 COMMENT=	Replacement for the GNU regex library
 
+BROKEN=		distfile was deleted
+DEPRECATED=	has been decommissioned and is no longer developed
+EXPIRATION_DATE=2007-07-09
+
 EXTRACT_AFTER_ARGS=	| ${TAR} -Pxf -
 
 GNU_CONFIGURE=	yes
