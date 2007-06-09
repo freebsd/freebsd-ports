@@ -1,0 +1,11 @@
+After installation, you need to edit the ossec.conf file to reflect the correct settings
+for your environment.  All the files related to %%PORTNAME%% have been installed in
+%%PREFIX%%/%%PORTNAME%% and its subdirectories.
+
+For information on proper configuration, see http://www.ossec.net/.
+
+To enable the startup script, add ossec-hids_enable="YES" to /etc/rc.conf.
+
+When you deinstall this port after starting the daemons once, many directories that are
+created by the daemons will remain.  To fully remove the port you need to delete those
+directories manually.

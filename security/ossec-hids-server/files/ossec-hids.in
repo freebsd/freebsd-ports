@@ -20,8 +20,8 @@ stop_cmd=${name}_stop
 restart_cmd=${name}_restart
 status_cmd=${name}_status
 
-command="%%PREFIX%%/bin/ossec-control"
-required_files="%%PREFIX%%/etc/ossec.conf"
+command="%%PREFIX%%/%%PORTNAME%%/bin/ossec-control"
+required_files="%%PREFIX%%/%%PORTNAME%%/etc/ossec.conf"
 
 ossechids_start() {
 	$command start

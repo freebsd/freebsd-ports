@@ -1,85 +1,84 @@
-ossec-hids/active-response/bin/disable-account.sh
-ossec-hids/active-response/bin/firewall-drop.sh
-ossec-hids/active-response/bin/host-deny.sh
-ossec-hids/active-response/bin/route-null.sh
-ossec-hids/bin/clear_stats
-ossec-hids/bin/list_agents
-ossec-hids/bin/manage_agents
-ossec-hids/bin/ossec-agentd
-ossec-hids/bin/ossec-analysisd
-ossec-hids/bin/ossec-control
-ossec-hids/bin/ossec-execd
-ossec-hids/bin/ossec-logcollector
-ossec-hids/bin/ossec-maild
-ossec-hids/bin/ossec-monitord
-ossec-hids/bin/ossec-remoted
-ossec-hids/bin/ossec-syscheckd
-ossec-hids/bin/syscheck_update
-ossec-hids/etc/decoder.xml
-ossec-hids/etc/internal_options.conf
-@unexec if cmp -s %D/ossec-hids/etc/ossec.conf.sample %D/ossec-hids/etc/ossec.conf; then rm -f %D/ossec-hids/etc/ossec.conf; fi
-ossec-hids/etc/ossec.conf.sample
-@exec if [ ! -f %D/ossec-hids/etc/ossec.conf ] ; then cp -p %D/ossec-hids/etc/ossec.conf.sample %D/ossec-hids/etc/orbit.conf; fi
-ossec-hids/etc/shared/rootkit_files.txt
-ossec-hids/etc/shared/rootkit_trojans.txt
-ossec-hids/logs/ossec.log
-ossec-hids/rules/apache_rules.xml
-ossec-hids/rules/arpwatch_rules.xml
-ossec-hids/rules/attack_rules.xml
-ossec-hids/rules/firewall_rules.xml
-ossec-hids/rules/ftpd_rules.xml
-ossec-hids/rules/hordeimp_rules.xml
-ossec-hids/rules/ids_rules.xml
-ossec-hids/rules/imapd_rules.xml
-ossec-hids/rules/local_rules.xml
-ossec-hids/rules/mailscanner_rules.xml
-ossec-hids/rules/ms-exchange_rules.xml
-ossec-hids/rules/ms_ftpd_rules.xml
-ossec-hids/rules/msauth_rules.xml
-ossec-hids/rules/named_rules.xml
-ossec-hids/rules/netscreenfw_rules.xml
-ossec-hids/rules/ossec_rules.xml
-ossec-hids/rules/pam_rules.xml
-ossec-hids/rules/pix_rules.xml
-ossec-hids/rules/policy_rules.xml
-ossec-hids/rules/postfix_rules.xml
-ossec-hids/rules/proftpd_rules.xml
-ossec-hids/rules/pure-ftpd_rules.xml
-ossec-hids/rules/racoon_rules.xml
-ossec-hids/rules/rules_config.xml
-ossec-hids/rules/sendmail_rules.xml
-ossec-hids/rules/smbd_rules.xml
-ossec-hids/rules/spamd_rules.xml
-ossec-hids/rules/squid_rules.xml
-ossec-hids/rules/sshd_rules.xml
-ossec-hids/rules/symantec-av_rules.xml
-ossec-hids/rules/syslog_rules.xml
-ossec-hids/rules/telnetd_rules.xml
-ossec-hids/rules/vpn_concentrator_rules.xml
-ossec-hids/rules/vpopmail_rules.xml
-ossec-hids/rules/vsftpd_rules.xml
-ossec-hids/rules/web_rules.xml
-ossec-hids/rules/zeus_rules.xml
-@dirrm ossec-hids/var/run
-@dirrm ossec-hids/var
-@dirrm ossec-hids/tmp
-@dirrm ossec-hids/stats
-@dirrm ossec-hids/rules
-@dirrm ossec-hids/queue/syscheck
-@dirrm ossec-hids/queue/rootcheck
-@dirrm ossec-hids/queue/rids
-@dirrm ossec-hids/queue/ossec
-@dirrm ossec-hids/queue/fts
-@dirrm ossec-hids/queue/alerts
-@dirrm ossec-hids/queue/agent-info
-@dirrm ossec-hids/queue
-@dirrm ossec-hids/logs/firewall
-@dirrm ossec-hids/logs/archives
-@dirrm ossec-hids/logs/alerts
-@dirrm ossec-hids/logs
-@dirrm ossec-hids/etc/shared
-@dirrm ossec-hids/etc
-@dirrm ossec-hids/bin
-@dirrm ossec-hids/active-response/bin
-@dirrm ossec-hids/active-response
-@dirrm ossec-hids
+%%PORTNAME%%/active-response/bin/disable-account.sh
+%%PORTNAME%%/active-response/bin/firewall-drop.sh
+%%PORTNAME%%/active-response/bin/host-deny.sh
+%%PORTNAME%%/active-response/bin/route-null.sh
+%%PORTNAME%%/bin/clear_stats
+%%PORTNAME%%/bin/list_agents
+%%PORTNAME%%/bin/manage_agents
+%%PORTNAME%%/bin/ossec-agentd
+%%PORTNAME%%/bin/ossec-analysisd
+%%PORTNAME%%/bin/ossec-control
+%%PORTNAME%%/bin/ossec-execd
+%%PORTNAME%%/bin/ossec-logcollector
+%%PORTNAME%%/bin/ossec-maild
+%%PORTNAME%%/bin/ossec-monitord
+%%PORTNAME%%/bin/ossec-remoted
+%%PORTNAME%%/bin/ossec-syscheckd
+%%PORTNAME%%/bin/syscheck_update
+%%PORTNAME%%/etc/decoder.xml
+%%PORTNAME%%/etc/internal_options.conf
+@unexec if cmp -s %D/%%PORTNAME%%/etc/ossec.conf %D/%%PORTNAME%%/etc/ossec.conf.sample; then rm -f %D/%%PORTNAME%%/etc/ossec.conf; fi
+%%PORTNAME%%/etc/ossec.conf.sample
+%%PORTNAME%%/etc/shared/rootkit_files.txt
+%%PORTNAME%%/etc/shared/rootkit_trojans.txt
+%%PORTNAME%%/logs/ossec.log
+%%PORTNAME%%/rules/apache_rules.xml
+%%PORTNAME%%/rules/arpwatch_rules.xml
+%%PORTNAME%%/rules/attack_rules.xml
+%%PORTNAME%%/rules/firewall_rules.xml
+%%PORTNAME%%/rules/ftpd_rules.xml
+%%PORTNAME%%/rules/hordeimp_rules.xml
+%%PORTNAME%%/rules/ids_rules.xml
+%%PORTNAME%%/rules/imapd_rules.xml
+%%PORTNAME%%/rules/local_rules.xml
+%%PORTNAME%%/rules/mailscanner_rules.xml
+%%PORTNAME%%/rules/ms-exchange_rules.xml
+%%PORTNAME%%/rules/ms_ftpd_rules.xml
+%%PORTNAME%%/rules/msauth_rules.xml
+%%PORTNAME%%/rules/named_rules.xml
+%%PORTNAME%%/rules/netscreenfw_rules.xml
+%%PORTNAME%%/rules/ossec_rules.xml
+%%PORTNAME%%/rules/pam_rules.xml
+%%PORTNAME%%/rules/pix_rules.xml
+%%PORTNAME%%/rules/policy_rules.xml
+%%PORTNAME%%/rules/postfix_rules.xml
+%%PORTNAME%%/rules/proftpd_rules.xml
+%%PORTNAME%%/rules/pure-ftpd_rules.xml
+%%PORTNAME%%/rules/racoon_rules.xml
+%%PORTNAME%%/rules/rules_config.xml
+%%PORTNAME%%/rules/sendmail_rules.xml
+%%PORTNAME%%/rules/smbd_rules.xml
+%%PORTNAME%%/rules/spamd_rules.xml
+%%PORTNAME%%/rules/squid_rules.xml
+%%PORTNAME%%/rules/sshd_rules.xml
+%%PORTNAME%%/rules/symantec-av_rules.xml
+%%PORTNAME%%/rules/syslog_rules.xml
+%%PORTNAME%%/rules/telnetd_rules.xml
+%%PORTNAME%%/rules/vpn_concentrator_rules.xml
+%%PORTNAME%%/rules/vpopmail_rules.xml
+%%PORTNAME%%/rules/vsftpd_rules.xml
+%%PORTNAME%%/rules/web_rules.xml
+%%PORTNAME%%/rules/zeus_rules.xml
+@dirrmtry %%PORTNAME%%/var/run
+@dirrmtry %%PORTNAME%%/var
+@dirrmtry %%PORTNAME%%/tmp
+@dirrmtry %%PORTNAME%%/stats
+@dirrmtry %%PORTNAME%%/rules
+@dirrmtry %%PORTNAME%%/queue/syscheck
+@dirrmtry %%PORTNAME%%/queue/rootcheck
+@dirrmtry %%PORTNAME%%/queue/rids
+@dirrmtry %%PORTNAME%%/queue/ossec
+@dirrmtry %%PORTNAME%%/queue/fts
+@dirrmtry %%PORTNAME%%/queue/alerts
+@dirrmtry %%PORTNAME%%/queue/agent-info
+@dirrmtry %%PORTNAME%%/queue
+@dirrmtry %%PORTNAME%%/logs/firewall
+@dirrmtry %%PORTNAME%%/logs/archives
+@dirrmtry %%PORTNAME%%/logs/alerts
+@dirrmtry %%PORTNAME%%/logs
+@dirrmtry %%PORTNAME%%/etc/shared
+@dirrmtry %%PORTNAME%%/etc
+@dirrmtry %%PORTNAME%%/bin
+@dirrmtry %%PORTNAME%%/active-response/bin
+@dirrmtry %%PORTNAME%%/active-response
+@dirrmtry %%PORTNAME%%
