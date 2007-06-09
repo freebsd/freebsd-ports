@@ -630,6 +630,7 @@
     SUBDIR += ruby-svg
     SUBDIR += ruby-tgif
     SUBDIR += rubygem-captcha
+    SUBDIR += rubygem-gd2
     SUBDIR += rubygem-gruff
     SUBDIR += rubygem-railroad
     SUBDIR += rubygem-scruffy
