@@ -8,11 +8,12 @@
 
 PORTNAME=	centerim
 PORTVERSION=	4.22.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://cim.sbisinger.net/tars/ \
 		http://www.centerim.org/download/ \
 		ftp://ftp.centerim.org/
-DISTNAME=	${PORTNAME}-20070418
+DISTNAME=	${PORTNAME}-20070518
 
 MAINTAINER=	frank@altpeter.de
 COMMENT=	A text mode menu- and window-driven IM interface
@@ -42,7 +43,7 @@ OPTIONS=	NLS             "Native Language Support" on \
 		LJ              "Support for LiveJournal" off \
 		GG              "Support for Gadu-Gadu Protocol" off
 
-MAN1=	cicqconv.1 cicqsync.1
+MAN1=	cicqconv.1
 
 PORTDOCS=	FAQ README
 
