@@ -8481,6 +8481,7 @@ ossp-xds	ports/devel/ossp-xds
 otcl		ports/lang/otcl
 otk		ports/x11-toolkits/otk
 otrs		ports/devel/otrs
+ots		ports/textproc/ots
 otter		ports/misc/otter
 ourmon		ports/net-mgmt/ourmon
 outerspace	ports/games/outerspace
