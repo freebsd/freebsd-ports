@@ -7,6 +7,7 @@
 
 PORTNAME=	trac
 PORTVERSION=	0.10.4
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 		ftp://ftp.edgewall.com/pub/trac/
@@ -60,7 +61,7 @@ RUN_DEPENDS+=	${PREFIX}/bin/rst2html:${PORTSDIR}/textproc/py-docutils
 .if defined(WITH_PGSQL)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopg2/__init__.py:${PORTSDIR}/databases/py-psycopg2
 .else
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite20
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23
 .endif
 
 .if !defined(WITHOUT_SUBVERSION)
