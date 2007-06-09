@@ -109,10 +109,6 @@ Note:  Please add new entries to the beginning of this file.
 	<name>zh-wordpress</name>
 	<range><gt>0</gt></range>
       </package>
-      <package>
-	<name>de-wordpress</name>
-	<range><gt>0</gt></range>
-      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
