@@ -1942,6 +1942,16 @@ libexec/vavoom/vavoom-dedicated
 %%EDITING%%@dirrm %%DATADIR%%/editing/dbuilder
 %%EDITING%%@dirrm %%DATADIR%%/editing/acs
 %%EDITING%%@dirrm %%DATADIR%%/editing
+@dirrm %%DATADIR%%/basev/tnt
+@dirrm %%DATADIR%%/basev/strife
+@dirrm %%DATADIR%%/basev/plutonia
+@dirrm %%DATADIR%%/basev/hexen
+@dirrm %%DATADIR%%/basev/heretic
+@dirrm %%DATADIR%%/basev/doom2
+@dirrm %%DATADIR%%/basev/doom1
+@dirrm %%DATADIR%%/basev/doom
 @dirrm %%DATADIR%%/basev/common
+@dirrm %%DATADIR%%/basev
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm libexec/vavoom
