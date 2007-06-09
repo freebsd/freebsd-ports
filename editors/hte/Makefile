@@ -24,6 +24,10 @@ PLIST_FILES=	bin/ht
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64"
+BROKEN=	Does not build on ia64
+.endif
+
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS=--disable-x11-textmode
