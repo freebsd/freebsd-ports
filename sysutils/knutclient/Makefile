@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	knutclient
-PORTVERSION=	0.8.6
-PORTREVISION=	1
+PORTVERSION=	0.9.3
 CATEGORIES=	sysutils kde
-MASTER_SITES=	ftp://ftp.buzuluk.cz/pub/alo/knutclient/stable/
+MASTER_SITES=	ftp://ftp.buzuluk.cz/pub/alo/knutclient/stable/ \
+		http://www.vg.kernel.org/pub/mirrors/gentoo/source/distfiles/
 
 MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	A visual client for UPS system NUT
 
 USE_KDELIBS_VER=3
+USE_GMAKE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:15
 CONFIGURE_ARGS=	--enable-mt --program-transform-name=''

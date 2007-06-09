@@ -1,6 +1,9 @@
 bin/knutclient
-share/applnk/Applications/knutclient.desktop
+share/applnk/Utilities/knutclient.desktop
 share/apps/knutclient/knutclientui.rc
+share/apps/knutclient/pics/knc_conn.png
+share/apps/knutclient/pics/knc_error.png
+share/apps/knutclient/pics/knc_main.png
 share/doc/HTML/cs/knutclient/asetting-cs.png
 share/doc/HTML/cs/knutclient/common
 share/doc/HTML/cs/knutclient/fsetting-cs.png
@@ -30,14 +33,17 @@ share/doc/HTML/en/knutclient/tkicker-en.png
 share/doc/HTML/en/knutclient/usetting-en.png
 share/doc/HTML/en/knutclient/variables-en.png
 share/icons/hicolor/16x16/apps/knutclient.png
+share/icons/hicolor/16x16/apps/knutclientconn.png
 share/icons/hicolor/16x16/apps/knutclienterr.png
 share/icons/hicolor/32x32/apps/knutclient.png
 share/icons/hicolor/48x48/apps/knutclient.png
 share/icons/locolor/16x16/apps/knutclient.png
+share/icons/locolor/16x16/apps/knutclientconn.png
 share/icons/locolor/16x16/apps/knutclienterr.png
 share/icons/locolor/32x32/apps/knutclient.png
 share/locale/cs/LC_MESSAGES/knutclient.mo
 share/locale/de/LC_MESSAGES/knutclient.mo
+share/locale/es/LC_MESSAGES/knutclient.mo
 share/locale/fr/LC_MESSAGES/knutclient.mo
 share/locale/it/LC_MESSAGES/knutclient.mo
 share/locale/pt_BR/LC_MESSAGES/knutclient.mo
@@ -61,7 +67,8 @@ share/locale/uk/LC_MESSAGES/knutclient.mo
 @dirrm share/doc/HTML/cs/knutclient
 @dirrmtry share/doc/HTML/cs
 @dirrmtry share/doc/HTML
+@dirrm share/apps/knutclient/pics
 @dirrm share/apps/knutclient
 @dirrmtry share/apps
-@dirrmtry share/applnk/Applications
+@dirrmtry share/applnk/Utilities
 @dirrmtry share/applnk
