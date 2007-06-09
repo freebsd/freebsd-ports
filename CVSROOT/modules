@@ -15139,7 +15139,6 @@ textproc-flip	ports/textproc/flip
 textproc-muse	ports/textproc/muse
 tftp-hpa	ports/ftp/tftp-hpa
 tgif		ports/graphics/tgif
-tgif-nls	ports/graphics/tgif-nls
 tgif2tex	ports/print/tgif2tex
 thailocale	ports/misc/thailocale
 thales		ports/irc/thales
