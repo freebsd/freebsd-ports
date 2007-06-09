@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.133 2007/02/11 19:19:23 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.137 2007/06/09 19:00:58 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_g $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -46,7 +46,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 9;
-my $micro = 3;
+my $micro = 4;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -1186,7 +1186,6 @@ sub checkmakefile {
 			(?:LIB)?RUBY
 			LINUX_PREFIX
 			OPENSSL
-			PHP
 			PYTHON
 			QT2?
 			QT_VER
@@ -2278,7 +2277,7 @@ EXTRACT_DEPENDS LIB_DEPENDS PATCH_DEPENDS BUILD_DEPENDS RUN_DEPENDS
 FETCH_DEPENDS DEPENDS_TARGET
 	);
 
-	if ($tmp =~ /(LIB_|BUILD_|RUN_|FETCH_)DEPENDS/) {
+	if ($tmp =~ /^(PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|FETCH_)DEPENDS/m) {
 		&checkearlier($file, $tmp, @varnames);
 
 		my %seen_depends;
@@ -2286,8 +2285,8 @@ FETCH_DEPENDS DEPENDS_TARGET
 		if (!defined $ENV{'PORTSDIR'}) {
 			$ENV{'PORTSDIR'} = $portsdir;
 		}
-		foreach my $i (grep(/^[A-Z_]*DEPENDS[?+]?=/, split(/\n/, $tmp))) {
-			$i =~ s/^([A-Z_]*DEPENDS)[?+]?=[ \t]*//;
+		foreach my $i (grep(/^(PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|FETCH_)*DEPENDS[?+]?=/, split(/\n/, $tmp))) {
+			$i =~ s/^((PATCH_|EXTRACT_|LIB_|BUILD_|RUN_|FETCH_)*DEPENDS)[?+]?=[ \t]*//;
 			$j = $1;
 			$seen_depends{$j}++;
 			if ($j ne 'DEPENDS' &&
