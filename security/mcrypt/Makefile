@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	mcrypt
-PORTVERSION=	2.6.5
+PORTVERSION=	2.6.6
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://argeas.cs-net.gr/pub/unix/mcrypt/attic/ \
@@ -16,7 +16,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://mcrypt.hellug.gr/pub/mcrypt/attic/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	Replacement for crypt(1)
 
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
@@ -41,6 +41,9 @@ PLIST_FILES=	bin/mcrypt \
 PLIST_DIRS=	%%EXAMPLESDIR%%
 
 PLIST=		${WRKDIR}/pkg-plist
+
+post-patch:
+	${REINPLACE_CMD} -e '/malloc\.h/d' ${WRKSRC}/src/rfc2440.c
 
 pre-install:
 .for i in es_AR
