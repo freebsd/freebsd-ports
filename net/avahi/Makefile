@@ -6,8 +6,8 @@
 #    $MCom: ports/net/avahi/Makefile,v 1.19 2006/10/12 16:44:41 marcus Exp $
 
 PORTNAME=	avahi
-PORTVERSION=	0.6.18
-PORTREVISION?=	1
+PORTVERSION=	0.6.19
+PORTREVISION?=	0
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 
@@ -77,6 +77,8 @@ PLIST_SUB+=	LIBDNS="@comment "
 .if defined(WITH_GTK2)
 USE_GNOME+=	libglade2
 PLIST_SUB+=	GTK=""
+MAN1+=		bssh.1
+MLINKS+=	bssh.1 bvnc.1
 .else
 CONFIGURE_ARGS+=--disable-gtk
 PLIST_SUB+=	GTK="@comment "

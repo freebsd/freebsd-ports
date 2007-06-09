@@ -1,26 +1,19 @@
---- avahi-daemon/main.c.orig	Sat Apr 14 20:34:33 2007
-+++ avahi-daemon/main.c	Fri Apr 20 20:06:05 2007
-@@ -42,11 +42,19 @@
- #include <sys/resource.h>
- #include <sys/socket.h>
- 
-+#ifdef HAVE_INOTIFY
- #ifdef HAVE_SYS_INOTIFY_H
- #include <sys/inotify.h>
- #else
- #include "inotify-nosys.h"
+--- avahi-daemon/main.c.orig	Wed May  9 09:09:19 2007
++++ avahi-daemon/main.c	Sat Jun  9 13:56:02 2007
+@@ -50,6 +50,12 @@
  #endif
-+#endif
-+
+ #endif
+ 
 +#ifdef HAVE_KQUEUE
 +#include <sys/types.h>
 +#include <sys/event.h>
 +#include <unistd.h>
 +#endif
- 
++
  #include <libdaemon/dfork.h>
  #include <libdaemon/dsignal.h>
-@@ -681,6 +689,53 @@ static void add_inotify_watches(void) {
+ #include <libdaemon/dlog.h>
+@@ -691,6 +697,53 @@ static void add_inotify_watches(void) {
  
  #endif
  
@@ -74,7 +67,7 @@
  static void reload_config(void) {
  
  #ifdef HAVE_INOTIFY
-@@ -688,6 +743,10 @@ static void reload_config(void) {
+@@ -698,6 +751,10 @@ static void reload_config(void) {
      add_inotify_watches();
  #endif
  
@@ -85,7 +78,7 @@
  #ifdef ENABLE_CHROOT
      static_service_load(config.use_chroot);
      static_hosts_load(config.use_chroot);
-@@ -736,6 +795,31 @@ static void inotify_callback(AvahiWatch 
+@@ -746,6 +803,31 @@ static void inotify_callback(AvahiWatch 
  
  #endif
  
@@ -117,7 +110,7 @@
  static void signal_callback(AvahiWatch *watch, AVAHI_GCC_UNUSED int fd, AVAHI_GCC_UNUSED AvahiWatchEvent event, AVAHI_GCC_UNUSED void *userdata) {
      int sig;
      const AvahiPoll *poll_api;
-@@ -791,6 +875,10 @@ static int run_server(DaemonConfig *c) {
+@@ -801,6 +883,10 @@ static int run_server(DaemonConfig *c) {
  #ifdef HAVE_INOTIFY
      AvahiWatch *inotify_watch = NULL;
  #endif
@@ -128,7 +121,7 @@
  
      assert(c);
  
-@@ -866,6 +954,19 @@ static int run_server(DaemonConfig *c) {
+@@ -876,6 +962,19 @@ static int run_server(DaemonConfig *c) {
      }
  #endif
  
@@ -148,7 +141,7 @@
      load_resolv_conf();
  #ifdef ENABLE_CHROOT
      static_service_load(config.use_chroot);
-@@ -934,6 +1035,17 @@ finish:
+@@ -944,6 +1043,17 @@ finish:
          poll_api->watch_free(inotify_watch);
      if (inotify_fd >= 0)
          close(inotify_fd);
