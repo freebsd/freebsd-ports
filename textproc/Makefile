@@ -330,6 +330,7 @@
     SUBDIR += openvanilla-framework
     SUBDIR += openvanilla-modules
     SUBDIR += or-aspell
+    SUBDIR += ots
     SUBDIR += p5-AI-Categorizer
     SUBDIR += p5-Algorithm-RabinKarp
     SUBDIR += p5-Apache-ParseLog
