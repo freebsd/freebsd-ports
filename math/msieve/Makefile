@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	msieve
-PORTVERSION=	1.14
+PORTVERSION=	1.23
 CATEGORIES=	math
 MASTER_SITES=	http://www.boo.net/~jasonp/ \
 		http://mirror.roe.ch/dist/msieve/
@@ -31,14 +31,28 @@ OPTIONS=	OCFLAGS "Enable optimized CFLAGS" On \
 
 .include <bsd.port.pre.mk>
 
+# Does not build with GCC 4.2
+.if ${OSVERSION} >= 700042
+USE_GCC=	3.4
+.endif
+
 .if !defined(WITHOUT_OCFLAGS)
 CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .endif
 
 .if !defined(WITHOUT_GNFS)
 LIB_DEPENDS+=	gsl.9:${PORTSDIR}/math/gsl
-ALL_TARGET=	nfs
+ALLTGT_SUFX=	_nfs
 .endif
+
+ALLTGT=		generic
+.if ${ARCH} == "i386"
+ALLTGT=		x86
+.endif
+.if ${ARCH} == "amd64"
+ALLTGT=		x86_64
+.endif
+ALL_TARGET=	${ALLTGT}${ALLTGT_SUFX}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/msieve ${PREFIX}/bin
