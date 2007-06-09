@@ -57,9 +57,9 @@ esac
 case $1 in
 --install-plugin)
 	echo "installing PDF plugin..."
-	echo "%%PREFIX%%/%%ACRODIR%%/${ADOBE_LANG}/Browser/intellinux/nppdf.so -> %%PREFIX%%/%%PLUGINDIR%%/nppdf.so"
+	echo "%%PREFIX%%/%%ACROBASE%%/${ADOBE_LANG}/Browser/intellinux/nppdf.so -> %%PREFIX%%/%%PLUGINDIR%%/nppdf.so"
 	mkdir -p /../%%PREFIX%%/%%PLUGINDIR%%
-	ln -s -f %%PREFIX%%/%%ACRODIR%%/${ADOBE_LANG}/Browser/intellinux/nppdf.so \
+	ln -s -f %%PREFIX%%/%%ACROBASE%%/${ADOBE_LANG}/Browser/intellinux/nppdf.so \
 	/../%%PREFIX%%/%%PLUGINDIR%%/nppdf.so
 	exit 0
 ;;
@@ -72,10 +72,10 @@ case $1 in
 esac
 
 UNAME_s=Linux; export UNAME_s
-if [ -x %%PREFIX%%/%%ACRODIR%%/${ADOBE_LANG}/bin/acroread ]; then
-	exec %%PREFIX%%/%%ACRODIR%%/${ADOBE_LANG}/bin/acroread "$@"
-elif [ -x %%PREFIX%%/%%ACRODIR%%/ENU/bin/acroread ]; then
-	exec %%PREFIX%%/%%ACRODIR%%/ENU/bin/acroread "$@"
+if [ -x %%PREFIX%%/%%ACROBASE%%/${ADOBE_LANG}/bin/acroread ]; then
+	exec %%PREFIX%%/%%ACROBASE%%/${ADOBE_LANG}/bin/acroread "$@"
+elif [ -x %%PREFIX%%/%%ACROBASE%%/ENU/bin/acroread ]; then
+	exec %%PREFIX%%/%%ACROBASE%%/ENU/bin/acroread "$@"
 else
 	echo "!fatal: acroread binary not found."
 	exit 1
