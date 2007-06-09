@@ -7,7 +7,6 @@
 
 PORTNAME=	w3m
 PORTVERSION=	${W3M_VERSION}
-PORTREVISION=	6
 CATEGORIES+=	www ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,11 +21,11 @@ COMMENT?=	A pager/text-based WWW browser
 
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 
-W3M_VERSION=	0.5.1
+W3M_VERSION=	0.5.2
 
 CONFLICTS?=	ja-w3m-0.5.* ja-w3m-img-0.5.* w3m-m17n-0.5.* w3m-img-0.5.* w3m-m17n-img-0.5.*
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gc=${LOCALBASE}
+CONFIGURE_ARGS=	--with-gc=${LOCALBASE} --mandir=${PREFIX}/man
 
 MAN1=		w3m.1 w3mman.1
 MANLANG=	"" ja
@@ -64,8 +63,8 @@ PLIST_SUB+=	JAPANESE="@comment "
 .endif
 
 .if defined(INLINE_IMAGE)
-USE_GNOME=	gdkpixbuf
-CONFIGURE_ARGS+=	--with-imagelib=gdk-pixbuf
+USE_GNOME=	gtk20
+CONFIGURE_ARGS+=	--with-imagelib=gtk2
 
 DOCS+=		README.img
 DOCS_JP+=	README.img

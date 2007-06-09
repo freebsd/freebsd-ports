@@ -1,5 +1,5 @@
---- file.c.orig	Tue Jan  2 22:11:50 2007
-+++ file.c	Tue Jan  2 22:14:11 2007
+--- file.c.orig	Thu May 24 00:06:05 2007
++++ file.c	Sat Jun  9 12:44:09 2007
 @@ -262,7 +262,8 @@
  {
      return (type == NULL || type[0] == '\0' ||
@@ -10,21 +10,3 @@
  }
  
  static int
-@@ -7799,7 +7800,7 @@
- 	ans = inputChar(prompt);
-     }
-     else {
--	printf(prompt);
-+	printf("%s", prompt);
- 	fflush(stdout);
- 	ans = Strfgets(stdin)->ptr;
-     }
-@@ -7891,7 +7892,7 @@
- 	    uf->scheme = SCM_LOCAL;
-     }
-     UFhalfclose(uf);
--    uf->stream = newFileStream(f1, (void (*)())pclose);
-+    uf->stream = newFileStream(f1, (void (*)())fclose);
- }
- 
- static FILE *
