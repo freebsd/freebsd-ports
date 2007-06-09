@@ -13,6 +13,10 @@
 
     amavisd_enable="YES"
 
+ Optionally enable amavisd tmp ram disk with: (example 512k)
+
+    amavisd_ram="512m"
+
  If you have installed and want to use the amavis sendmail milter interface,
  you need the following additional line in /etc/rc.conf:
 
