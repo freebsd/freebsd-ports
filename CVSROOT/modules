@@ -4955,6 +4955,7 @@ ja-chasen-base	ports/japanese/chasen-base
 ja-chimera	ports/japanese/chimera
 ja-citrix_ica	ports/japanese/citrix_ica
 ja-csrd		ports/japanese/csrd
+ja-ctags	ports/japanese/ctags
 ja-dbskkd-cdb	ports/japanese/dbskkd-cdb
 ja-ddskk	ports/japanese/ddskk
 ja-ddskk-emacs20	ports/japanese/ddskk-emacs20
