@@ -12,7 +12,7 @@ MASTER_SITES=	http://klh10.trailing-edge.com/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tgz klh10-2.0a-aux.tgz
 
-MAINTAINER=	kstailey@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emulator for DEC PDP-10
 
 ONLY_FOR_ARCHS=	i386
