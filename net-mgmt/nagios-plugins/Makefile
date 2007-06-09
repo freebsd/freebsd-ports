@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nagios-plugins
-PORTVERSION=	1.4.8
+PORTVERSION=	1.4.9
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
@@ -49,7 +49,7 @@ CONFIGURE_ARGS=	--with-nagios-user=${NAGIOSUSER} \
 		--with-cgiurl=${NAGIOSCGIURL} \
 		--sbindir=${PREFIX}/${NAGIOSWWWDIR}/cgi-bin \
 		--libexecdir=${PREFIX}/libexec/nagios \
-		--datadir=${PREFIX}/share/nagios \
+		--datadir=${PREFIX}/share \
 		--sysconfdir=${PREFIX}/etc/nagios \
 		--localstatedir=${NAGIOSDIR} \
 		--prefix=${PREFIX}
@@ -127,6 +127,13 @@ CONFIGURE_ARGS+=	--enable-ldap
 PLIST_SUB+=	SUB_LDAP=""
 .else
 PLIST_SUB+=	SUB_LDAP="@comment "
+.endif
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+PLIST_SUB+=	NLS=""
 .endif
 
 post-patch:
