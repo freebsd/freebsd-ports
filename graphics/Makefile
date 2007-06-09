@@ -181,6 +181,7 @@
     SUBDIR += giftool
     SUBDIR += giftrans
     SUBDIR += gimageview
+    SUBDIR += gimmage
     SUBDIR += gimp
     SUBDIR += gimp-app
     SUBDIR += gimp-app-devel
