@@ -18,6 +18,11 @@ COMMENT=	A security tool to monitor and check logs and intrusions
 
 USE_RC_SUBR=	ossec-hids
 
+SUB_LIST=	PORTNAME=${PORTNAME}
+SUB_FILES=	pkg-message
+PLIST_SUB=	PORTNAME=${PORTNAME}
+PORTDOCS=	BUGS CONFIG CONTRIB INSTALL LICENSE README
+
 .include <bsd.port.pre.mk>
 
 .if defined(CLIENT_ONLY)
@@ -34,8 +39,6 @@ post-patch:
 	@${REINPLACE_CMD} 's|PREFIX|${PREFIX}/${PORTNAME}|' ${WRKSRC}/src/LOCATION
 	@${REINPLACE_CMD} 's|PREFIX|${PREFIX}/${PORTNAME}|' ${WRKSRC}/src/headers/defs.h
 
-do-configure:
-
 do-build:
 	@cd ${WRKSRC}/src;${MAKE} all;${MAKE} build
 
@@ -51,12 +54,27 @@ do-install:
 .endif
 
 post-install:
-	@if [ ! -f ${PREFIX}/${PORTNAME}/etc/ossec.conf ]; then \
-	${CP} ${PREFIX}/${PORTNAME}/etc/ossec.conf.sample ${PREFIX}/${PORTNAME}/etc/ossec.conf ; \
-	fi
-
 .if defined(CLIENT_ONLY)
-PLIST=${PKGDIR}/pkg-plist.client
+	${CP} ${WRKSRC}/etc/ossec-agent.conf ${PREFIX}/${PORTNAME}/etc/ossec.conf.sample
+	@if [ ! -f ${PREFIX}/${PORTNAME}/etc/ossec.conf ]; then \
+	${CP} ${WRKSRC}/etc/ossec-agent.conf ${PREFIX}/${PORTNAME}/etc/ossec.conf; \
+	fi
+.elif defined(LOCAL_ONLY)
+	${CP} ${WRKSRC}/etc/ossec-local.conf ${PREFIX}/${PORTNAME}/etc/ossec.conf.sample
+	@if [ ! -f ${PREFIX}/${PORTNAME}/etc/ossec.conf ]; then \
+	${CP} ${WRKSRC}/etc/ossec-local.conf ${PREFIX}/${PORTNAME}/etc/ossec.conf; \
+	fi
+.else
+	@if [ ! -f ${PREFIX}/${PORTNAME}/etc/ossec.conf ]; then \
+	${CP} ${WRKSRC}/etc/ossec-server.conf ${PREFIX}/${PORTNAME}/etc/ossec.conf; \
+	fi
 .endif
+
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.endif
+
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
