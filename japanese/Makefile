@@ -30,6 +30,7 @@
     SUBDIR += chimera
     SUBDIR += citrix_ica
     SUBDIR += csrd
+    SUBDIR += ctags
     SUBDIR += dbskkd-cdb
     SUBDIR += ddskk
     SUBDIR += ddskk-emacs20
