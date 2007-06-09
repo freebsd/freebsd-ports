@@ -1,0 +1,34 @@
+%%PORTNAME%%/active-response/bin/firewalls/ipfw.sh
+%%PORTNAME%%/active-response/bin/firewalls/ipfw_mac.sh
+%%PORTNAME%%/active-response/bin/firewalls/pf.sh
+%%PORTNAME%%/active-response/bin/disable-account.sh
+%%PORTNAME%%/active-response/bin/firewall-drop.sh
+%%PORTNAME%%/active-response/bin/host-deny.sh
+%%PORTNAME%%/active-response/bin/route-null.sh
+%%PORTNAME%%/bin/manage_agents
+%%PORTNAME%%/bin/ossec-agentd
+%%PORTNAME%%/bin/ossec-control
+%%PORTNAME%%/bin/ossec-execd
+%%PORTNAME%%/bin/ossec-logcollector
+%%PORTNAME%%/bin/ossec-syscheckd
+%%PORTNAME%%/etc/internal_options.conf
+%%PORTNAME%%/etc/shared/rootkit_trojans.txt
+%%PORTNAME%%/etc/shared/rootkit_files.txt
+@unexec if cmp -s %D/%%PORTNAME%%/etc/ossec.conf %D/%%PORTNAME%%/etc/ossec.conf.sample; then rm -f %D/%%PORTNAME%%/etc/ossec.conf; fi
+%%PORTNAME%%/etc/ossec.conf.sample
+%%PORTNAME%%/logs/ossec.log
+@dirrmtry %%PORTNAME%%/active-response/bin/firewalls
+@dirrmtry %%PORTNAME%%/active-response/bin
+@dirrmtry %%PORTNAME%%/active-response
+@dirrmtry %%PORTNAME%%/etc/shared
+@dirrmtry %%PORTNAME%%/etc/
+@dirrmtry %%PORTNAME%%/var/run
+@dirrmtry %%PORTNAME%%/var
+@dirrmtry %%PORTNAME%%/queue/syscheck
+@dirrmtry %%PORTNAME%%/queue/rids
+@dirrmtry %%PORTNAME%%/queue/ossec
+@dirrmtry %%PORTNAME%%/queue/alerts
+@dirrmtry %%PORTNAME%%/queue
+@dirrmtry %%PORTNAME%%/logs
+@dirrmtry %%PORTNAME%%/bin
+@dirrmtry %%PORTNAME%%

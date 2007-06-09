@@ -9,4 +9,6 @@ CLIENT_ONLY=	yes
 
 MASTERDIR=	${.CURDIR}/../ossec-hids-server
 
+PLIST=	pkg-plist.client
+
 .include "${MASTERDIR}/Makefile"
