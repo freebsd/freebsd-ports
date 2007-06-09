@@ -77,7 +77,7 @@ Note:  Please add new entries to the beginning of this file.
       <package>
 	<name>wordpress</name>
 	<name>de-wordpress</name>
-	<name>de-wordpress</name>
+	<name>zh-wordpress</name>
 	<range><gt>0</gt></range>
       </package>
       <package>
