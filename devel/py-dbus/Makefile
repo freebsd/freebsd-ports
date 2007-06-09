@@ -6,8 +6,7 @@
 #    $MCom: ports/devel/py-dbus/Makefile,v 1.8 2007/03/01 05:52:46 marcus Exp $
 
 PORTNAME=	dbus
-PORTVERSION=	0.80.2
-PORTREVISION=	3
+PORTVERSION=	0.81.1
 CATEGORIES=	devel gnome python
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
