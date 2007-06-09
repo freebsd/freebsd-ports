@@ -13998,6 +13998,7 @@ rubygem-eventmachine	ports/devel/rubygem-eventmachine
 rubygem-fastercsv	ports/devel/rubygem-fastercsv
 rubygem-fastthread	ports/devel/rubygem-fastthread
 rubygem-ferret	ports/textproc/rubygem-ferret
+rubygem-gd2	ports/graphics/rubygem-gd2
 rubygem-gem_plugin	ports/devel/rubygem-gem_plugin
 rubygem-gruff	ports/graphics/rubygem-gruff
 rubygem-hoe		ports/devel/rubygem-hoe
