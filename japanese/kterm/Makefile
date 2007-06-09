@@ -78,6 +78,7 @@ post-build:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/ja/man1
+	${GZIP_CMD} ${MANPREFIX}/man/ja/man1/${MAN1}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.kt ${DOCSDIR}
