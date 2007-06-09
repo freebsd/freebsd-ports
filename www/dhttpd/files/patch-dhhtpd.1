@@ -1,0 +1,15 @@
+--- dhttpd.1.orig	Tue Mar  4 01:35:54 1997
++++ dhttpd.1	Sat Jun  9 12:42:17 2007
+@@ -13,6 +13,12 @@
+ and it was in working condition, it was  realized that it was memory
+ efficient, low profile, quick, and served the one need for 
+ an HTTP daemon: to transmit files.
++
++The document root is /usr/local/www/data.
++
++To enable dhttp, add 'dhttpd_enable="YES"' to /etc/rc.conf.
++If you want to change the default port from 80 to another port, add
++\'dhhtdp_flags="- p <PORT>"\' to /etc/rc.conf.
+ .SH OPTIONS
+ .TP
+ .B \-h

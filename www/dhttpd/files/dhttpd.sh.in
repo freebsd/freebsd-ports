@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: dhttpd
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable dhttpd:
+#
+# dhttpd_enable (bool):	Set it to "YES" to enable dhttpd
+#
+
+. %%RC_SUBR%%
+
+name="dhttpd"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${dhttpd_enable="NO"}
+
+command=%%PREFIX%%/sbin/${name}
+
+run_rc_command "$1"
