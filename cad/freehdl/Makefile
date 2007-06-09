@@ -9,7 +9,8 @@ PORTNAME=	freehdl
 PORTVERSION=	0.0.4
 PORTREVISION=	1
 CATEGORIES=	cad
-MASTER_SITES=	http://cran.mit.edu/~enaroska/
+MASTER_SITES=	http://www.home.hs-karlsruhe.de/~fado0011/ \
+		http://cran.mit.edu/~enaroska/
 
 MAINTAINER=	lon_kamikaze@gmx.de
 COMMENT=	A free VHDL simulator
