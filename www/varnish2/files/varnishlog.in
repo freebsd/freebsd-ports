@@ -28,11 +28,11 @@ rcvar=`set_rcvar`
 command="%%PREFIX%%/bin/varnishlog"
 pidfile="/var/run/${name}.pid"
 
-# set defaults
-
-varnishlog_enable=${varnishlog_enable:-"NO"}
-varnishlog_file=${varnishlog_file:-"/var/log/varnish.log"}
-varnishlog_flags=${varnishlog_flags:-"-P ${pidfile} -D -a -w ${varnishlog_file}"}
+# read configuration and set defaults
+load_rc_config ${name}
+: ${varnishlog_enable="NO"}
+: ${varnishlog_file="/var/log/varnish.log"}
+: ${varnishlog_flags="-P ${pidfile} -D -a -w ${varnishlog_file}"}
 
 load_rc_config ${name}
 
