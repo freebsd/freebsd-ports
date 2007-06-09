@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	jdk
-PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	3
+PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VERSION}p${JDK_PATCHSET_VERSION}
+PORTEPOCH=	1
 CATEGORIES=	java devel
-MASTER_SITES=	# http://www.sun.com/software/java2/download.html
+MASTER_SITES=	# http://download.java.net/tiger/
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk15.html
 #		 http://java.sun.com/javase/downloads/index.jsp
-DISTFILES=	${SCSL_SRCFILE} ${SCSL_BINFILE} ${PATCHSETFILE}
-EXTRACT_ONLY=	${SCSL_SRCFILE} ${SCSL_BINFILE}
+DISTFILES=	${JRL_SRCFILE} ${JRL_BINFILE} ${PATCHSETFILE}
+EXTRACT_ONLY=	${JRL_SRCFILE} ${JRL_BINFILE}
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Java Development Kit 1.5.0
@@ -46,20 +46,23 @@ WRKSRC=		${WRKDIR}/control/make
 
 USE_ZIP=	YES
 
-SCSL_SRCFILE=	jdk-${JDK_VERSION:S/./_/g}-src-scsl.zip
-SCSL_BINFILE=	jdk-${JDK_VERSION:S/./_/g}-bin-scsl.zip
+JRL_SRCFILE=	jdk-${JDK_VERSION:S/./_/g}_${JDK_UPDATE_VERSION}-fcs-src-b${JDK_BUILD_NUMBER}-jrl-${JDK_BUILD_DATE}.jar
+JRL_BINFILE=	jdk-${JDK_VERSION:S/./_/g}_${JDK_UPDATE_VERSION}-fcs-bin-b${JDK_BUILD_NUMBER}-jrl-${JDK_BUILD_DATE}.jar
 PATCHSETFILE=	bsd-jdk15-patches-${JDK_PATCHSET_VERSION}.tar.bz2
 POLICYFILE=	jce_policy-${JDK_VERSION:S/./_/g}.zip
 TZUPDATEFILE=	tzupdater-${TZUPDATE_VERSION:S/./_/g}-${TZUPDATE_TZVERSION}.zip
 
 JDK_VERSION=	1.5.0
-JDK_PATCHSET_VERSION=	4
+JDK_UPDATE_VERSION=	11
+JDK_PATCHSET_VERSION=	5
+JDK_BUILD_NUMBER=	03
+JDK_BUILD_DATE=		15_dec_2006
 LATEST_LINK=	jdk15
 
 TZUPDATE_VERSION=	1.2.1
 TZUPDATE_TZVERSION=	2007f
 
-SUN_LINUX_JDK_VERSION=	1.4.2
+SUN_LINUX_JDK_VERSION=	1.5.0
 
 .if !defined(WITH_LINUX_BOOTSTRAP)
 NATIVE_BOOTSTRAP_JDKS+=	${LOCALBASE}/diablo-jdk1.5.0 \
@@ -67,7 +70,8 @@ NATIVE_BOOTSTRAP_JDKS+=	${LOCALBASE}/diablo-jdk1.5.0 \
 			${LOCALBASE}/jdk1.4.2
 .endif
 
-LINUX_BOOTSTRAP_JDKS=	${LOCALBASE}/linux-sun-jdk1.4.2
+LINUX_BOOTSTRAP_JDKS=	${LOCALBASE}/linux-sun-jdk1.5.0 \
+			${LOCALBASE}/linux-sun-jdk1.4.2
 
 .include <bsd.port.pre.mk>
 
@@ -88,28 +92,28 @@ EXTRACT_ONLY+=	${TZUPDATEFILE}
 # do we have valid native jdk installed?
 .if !defined(WITH_LINUX_BOOTSTRAP)
 .for CJDK in ${NATIVE_BOOTSTRAP_JDKS}
-.  if !defined(JDK14DIR) && exists(${CJDK}/bin/javac)
-JDK14DIR=	${CJDK}
+.  if !defined(BOOTSTRAPJDKDIR) && exists(${CJDK}/bin/javac)
+BOOTSTRAPJDKDIR=	${CJDK}
 .  endif
 .endfor
 .endif
 
 # do we have valid linux jdk installed?
-.if !defined(JDK14DIR)
+.if !defined(BOOTSTRAPJDKDIR)
 .for CJDK in ${LINUX_BOOTSTRAP_JDKS}
-.  if !defined(JDK14DIR) && exists(${CJDK}/bin/javac)
-JDK14DIR=	${CJDK}
+.  if !defined(BOOTSTRAPJDKDIR) && exists(${CJDK}/bin/javac)
+BOOTSTRAPJDKDIR=	${CJDK}
 WITH_LINUX_BOOTSTRAP=	YES
 .  endif
 .endfor
 .endif
 
 # if no valid jdk found, set dependency
-.if !defined(JDK14DIR)
-JDK14DIR?=	${LOCALBASE}/linux-sun-jdk${SUN_LINUX_JDK_VERSION}
+.if !defined(BOOTSTRAPJDKDIR)
+BOOTSTRAPJDKDIR?=	${LOCALBASE}/linux-sun-jdk${SUN_LINUX_JDK_VERSION}
 .endif
 
-BUILD_DEPENDS+=	${JDK14DIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk14
+BUILD_DEPENDS+=	${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk15
 
 .if defined(WITHOUT_WEB)
 MAKE_ENV+=	DONT_BUILD_DEPLOY="YES"
@@ -124,7 +128,7 @@ USE_ICONV=	YES
 RESTRICTED=	"Redistribution of pre-compiled binaries is not permitted"
 NO_CDROM=	"Redistribution of pre-compiled binaries is not permitted"
 
-MAKE_ENV+=	ALT_BOOTDIR="${JDK14DIR}" \
+MAKE_ENV+=	ALT_BOOTDIR="${BOOTSTRAPJDKDIR}" \
 		ALT_MOTIF_DIR="${X11BASE}" \
 		SYS_CFLAGS="${CFLAGS}" \
 		LANG="C" \
@@ -175,24 +179,21 @@ X11_FILES=	../../j2se/src/share/classes/com/sun/java/swing/plaf/gtk/GTKLookAndFe
 		../../j2se/src/solaris/native/sun/awt/fontpath.c
 
 # Check for JDK sources and patch file
-.if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${SCSL_SRCFILE}) || !exists(${DISTDIR}/${SCSL_BINFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})) || (defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
+.if !defined(PACKAGE_BUILDING) && (!exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE}) || (defined(WITH_POLICY) && !exists(${DISTDIR}/${POLICYFILE})) || (defined(WITH_TZUPDATE) && !exists(${DISTDIR}/${TZUPDATEFILE})) || !exists(${DISTDIR}/${PATCHSETFILE}))#{
 ECHO_MSG=/usr/bin/printf
 IGNORE=	:\n\
 Due to licensing restrictions, certain files must be fetched manually.\n\n
-.if !exists(${DISTDIR}/${SCSL_SRCFILE}) || !exists(${DISTDIR}/${SCSL_BINFILE})#{
-IGNORE += Please open http://www.sun.com/software/java2/download.html\n\
-in a web browser and follow the \"Download\" link for the\n\
-\"JDK ${JDK_VERSION:S/1.//}\".  You will be required to log in and register,\n\
-but you can create an account on this page.  After registration and\n\
-accepting the Sun Community Source License, download the\n
-.if !exists(${DISTDIR}/${SCSL_SRCFILE})#{
-IGNORE += SCSL Source file, ${SCSL_SRCFILE}
+.if !exists(${DISTDIR}/${JRL_SRCFILE}) || !exists(${DISTDIR}/${JRL_BINFILE})#{
+IGNORE += Please open http://download.java.net/tiger/archive/tiger_u${JDK_UPDATE_VERSION}/index.csp\n\
+in a web browser.  Download the\n
+.if !exists(${DISTDIR}/${JRL_SRCFILE})#{
+IGNORE += Update ${JDK_UPDATE_VERSION} Source, ${JRL_SRCFILE}
 .endif#}
-.if !exists(${DISTDIR}/${SCSL_BINFILE})#{
-.if !exists(${DISTDIR}/${SCSL_SRCFILE})#{
+.if !exists(${DISTDIR}/${JRL_BINFILE})#{
+.if !exists(${DISTDIR}/${JRL_SRCFILE})#{
 IGNORE += and the\n
 .endif#}
-IGNORE += SCSL Binaries file, ${SCSL_BINFILE}
+IGNORE += Source Binaries, ${JRL_BINFILE}
 .endif#}
 IGNORE += .\n\n
 .endif#}
@@ -226,6 +227,31 @@ pre-fetch:
 	@${ECHO_MSG} "mounted."
 	@${ECHO_MSG}
 .endif
+
+# Get JRL agreement
+.if !defined(PACKAGE_BUILDING)
+pre-extract:
+	${SH} ${FILESDIR}/pkg-install.in ${PKGNAME} PRE-INSTALL
+.endif
+
+# Extract the files
+do-extract:
+	@${RM} -rf ${WRKDIR}
+	@${MKDIR} ${WRKDIR}
+	@${CC} ${CFLAGS} -o ${WRKDIR}/x_x2zip ${FILESDIR}/x_x2zip.c
+	@for file in ${EXTRACT_ONLY}; do \
+		if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} "${DISTDIR}/$$file" ${EXTRACT_AFTER_ARGS}); \
+		then \
+			exit 1; \
+		fi; \
+		if [ `basename $$file .jar` != $$file ]; \
+		then \
+			if ! (cd ${WRKDIR} && ${WRKDIR}/x_x2zip 'YES I ACCEPT THE CLICK THROUGH LICENSE.  ' X_X && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKDIR}/X_X.zip ${EXTRACT_AFTER_ARGS}); \
+			then \
+				exit 1; \
+			fi; \
+		fi \
+	done
 
 pre-patch:
 	@cd ${WRKDIR} &&  \

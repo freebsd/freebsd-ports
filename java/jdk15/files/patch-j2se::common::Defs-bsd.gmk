@@ -20,17 +20,3 @@ $FreeBSD$
  override OPENWIN_LIB             = $(OPENWIN_HOME)/lib
  override OTHER_M4FLAGS           = -DGNU_ASSEMBLER
  override SUN_CMM_SUBDIR          =
-@@ -463,10 +463,10 @@
- # Motif settings
- #
- # XXX: OpenBSD confirm static motif still causes issues - truk
--ifeq ($(TRUE_PLATFORM), OpenBSD)
--STATIC_MOTIF=false
--else
-+ifeq ($(TRUE_PLATFORM), NetBSD)
- STATIC_MOTIF=true
-+else
-+STATIC_MOTIF=false
- endif
- LIBM=-lm
- 

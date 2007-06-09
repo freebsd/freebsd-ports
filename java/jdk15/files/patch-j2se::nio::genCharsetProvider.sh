@@ -6,12 +6,12 @@ $FreeBSD$
    }
  '
  
--$JAVA -cp $TMPDIR Hasher -i Aliases <$TMPDIR/aliases >>$OUT
--$JAVA -cp $TMPDIR Hasher -i Classes <$TMPDIR/classes >>$OUT
--$JAVA -cp $TMPDIR Hasher -i -e Cache -t Charset <$TMPDIR/classes >>$OUT
-+$JAVA -cp $TMPDIR Hasher -i Aliases <$TMPDIR/aliases | egrep -v '^Java Hotspot' >>$OUT
-+$JAVA -cp $TMPDIR Hasher -i Classes <$TMPDIR/classes | egrep -v '^Java Hotspot' >>$OUT
-+$JAVA -cp $TMPDIR Hasher -i -e Cache -t Charset <$TMPDIR/classes | egrep -v '^Java Hotspot' >>$OUT
+-$JAVA -cp $NIO_TMPDIR Hasher -i Aliases <$NIO_TMPDIR/aliases >>$OUT
+-$JAVA -cp $NIO_TMPDIR Hasher -i Classes <$NIO_TMPDIR/classes >>$OUT
+-$JAVA -cp $NIO_TMPDIR Hasher -i -e Cache -t Charset <$NIO_TMPDIR/classes >>$OUT
++$JAVA -cp $NIO_TMPDIR Hasher -i Aliases <$NIO_TMPDIR/aliases | egrep -v '^Java Hotspot' >>$OUT
++$JAVA -cp $NIO_TMPDIR Hasher -i Classes <$NIO_TMPDIR/classes | egrep -v '^Java Hotspot' >>$OUT
++$JAVA -cp $NIO_TMPDIR Hasher -i -e Cache -t Charset <$NIO_TMPDIR/classes | egrep -v '^Java Hotspot' >>$OUT
  
  
  # Constructor
