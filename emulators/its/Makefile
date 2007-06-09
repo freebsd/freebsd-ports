@@ -8,14 +8,13 @@
 PORTNAME=	its
 PORTVERSION=	1.0
 CATEGORIES=	emulators
-MASTER_SITES=	http://filbert.tubas.net/~kstailey/ITS/ \
-		http://free.babolo.ru/src/ \
+MASTER_SITES=	http://free.babolo.ru/src/ \
 		http://dl.droso.net/FreeBSD/distfiles/
 DISTNAME=	PI-ITS-RP06.0-dbd9
 EXTRACT_SUFX=	.bz2
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	kstailey@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bootable ITS filesystem for KLH-10 PDP-10 emulator
 
 BUILD_DEPENDS=	kn10-ks:${PORTSDIR}/emulators/klh10
