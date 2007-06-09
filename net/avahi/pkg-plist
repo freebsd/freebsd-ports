@@ -8,8 +8,8 @@ bin/avahi-resolve
 bin/avahi-resolve-address
 bin/avahi-resolve-host-name
 bin/avahi-set-host-name
-%%GTK%%bin/zssh
-%%GTK%%bin/zvnc
+%%GTK%%bin/bssh
+%%GTK%%bin/bvnc
 etc/avahi/avahi-daemon.conf
 etc/avahi/avahi-dnsconfd.action
 etc/avahi/hosts
@@ -100,8 +100,8 @@ libdata/pkgconfig/avahi-glib.pc
 %%GTK%%libdata/pkgconfig/avahi-ui.pc
 sbin/avahi-daemon
 sbin/avahi-dnsconfd
-%%GTK%%share/applications/zssh.desktop
-%%GTK%%share/applications/zvnc.desktop
+%%GTK%%share/applications/bssh.desktop
+%%GTK%%share/applications/bvnc.desktop
 %%DATADIR%%/avahi-service.dtd
 %%GTK%%%%DATADIR%%/interfaces/avahi-discover.glade
 %%DATADIR%%/introspection/AddressResolver.introspect
