@@ -1,0 +1,13 @@
+bin/gimmage
+%%DATADIR%%/pixmaps/1to1.png
+%%DATADIR%%/pixmaps/anticlockwise.png
+%%DATADIR%%/pixmaps/clockwise.png
+%%DATADIR%%/pixmaps/unreadable.png
+share/gnome/apps/Graphics/gimmage.desktop
+share/locale/de/LC_MESSAGES/gimmage.mo
+share/locale/fr/LC_MESSAGES/gimmage.mo
+@dirrm share/gimmage/pixmaps
+@dirrm share/gimmage
+@dirrmtry share/gnome/apps/Graphics
+@dirrmtry share/gnome/apps
+@dirrmtry share/gnome

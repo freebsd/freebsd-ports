@@ -1,0 +1,10 @@
+Gimmage is a simple image viewer that aims to have a minimalist
+interface and tries to be keyboard operable for browsing through a
+large number of images quickly. It is appropriate for command line
+usage as it accepts directories and image filenames as arguments. It
+has an in-application file browser that allows users to select and
+drag images and directories into the image viewing area in order to
+have them displayed.
+
+WWW: http://gimmage.berlios.de/
+Author: Bartek Kostrzewa
