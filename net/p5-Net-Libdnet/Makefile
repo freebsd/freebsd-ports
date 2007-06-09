@@ -17,6 +17,7 @@ COMMENT=	Libdnet interface
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS=	INC='-I${LOCALBASE}/include'
 MAN3=		${PORTNAME:S/-/::/g}.3
 
 .include <bsd.port.pre.mk>
