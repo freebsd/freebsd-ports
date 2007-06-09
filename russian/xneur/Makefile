@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xneur
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.6.1
 CATEGORIES=	russian
-MASTER_SITES=	http://dists.xneur.ru/release-0.5.0/tgz/ CENKES
+MASTER_SITES=	http://dists.xneur.ru/release-0.6.1/tgz/ CENKES
 
 MAINTAINER=	admin@lissyara.su
 COMMENT=	Auto keyboard switcher
@@ -21,10 +20,11 @@ CONFIGURE_ARGS=	--disable-static
 USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
+MAKE_ARGS=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^am__strip_dir/s#`;#|sed -Ee \
-		"s/^(dict.dist|proto|proto3|langdef|regexp|xneurrc|xneurrc-be|xneurrc-uk|dict)$$$$/\\1.dist/"`;#' \
+		"s/^(dict.dist|proto|proto3|langdef|regexp|xneurrc|xneurrc-be|xneurrc-uk|xneurrc-fr|xneurrc-ro|dict)$$$$/\\1.dist/"`;#' \
 		${WRKSRC}/etc/Makefile.in ${WRKSRC}/etc/*/Makefile.in
 
 post-install:
