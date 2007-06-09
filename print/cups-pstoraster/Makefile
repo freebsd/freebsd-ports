@@ -19,6 +19,12 @@ COMMENT=	Postscript interpreter for CUPS printing to non-PS printers
 
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
 
+.if defined(WITH_CJK)
+RUN_DEPENDS+=	${LOCALBASE}/share/fonts/TrueType/ipag.ttf:${PORTSDIR}/japanese/ipa-ttfonts \
+		${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-lib_cidfmap
+.endif
+
 ESPGS_VER=	${PORTVERSION}
 GS_VERSION=	8.15
 
@@ -38,6 +44,13 @@ CONFIGURE_ARGS=	--without-x --with-gs=espgs
 MAKE_ARGS=	CFLAGS_STANDARD="${CFLAGS} -DUPD_SIGNAL=0" \
 		DEVICE_DEVS="\$$(DD)cups.dev \$$(DD)pxlcolor.dev \$$(DD)pxlmono.dev"
 PLIST_SUB=	GS_VERSION="${GS_VERSION}"
+
+pre-everything::
+.if !defined(WITH_CJK)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Define WITH_CJK to enable Japanese PostScript documents processing"
+	@${ECHO_MSG} ""
+.endif
 
 pre-configure:
 	${RM} -f ${WRKSRC}/ijs/config.guess ${WRKSRC}/ijs/missing ${WRKSRC}/ijs/config.sub ${WRKSRC}/ijs/install-sh ${WRKSRC}/ijs/ltmain.sh
