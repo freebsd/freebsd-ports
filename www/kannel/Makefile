@@ -17,6 +17,7 @@ COMMENT=	WAP / SMS Gateway
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
+USE_RC_SUBR=	kannel
 USE_GNOME=	libxml2
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
