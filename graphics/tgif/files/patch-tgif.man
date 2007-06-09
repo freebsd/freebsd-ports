@@ -1,0 +1,11 @@
+--- tgif.man.orig	Wed Jun 14 07:30:00 2006
++++ tgif.man	Tue May 22 17:05:48 2007
+@@ -8,7 +8,7 @@
+ .\"
+ .\"
+ .\"
+-.TH tgif n "Version 4.1 Patchlevel 45 and Above" "Tgif"
++.TH tgif 1L "Version 4.1 Patchlevel 45 and Above" "Tgif"
+ .\"
+ .SH NAME
+ .\"

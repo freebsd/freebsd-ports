@@ -674,7 +674,6 @@
     SUBDIR += tcm
     SUBDIR += telak
     SUBDIR += tgif
-    SUBDIR += tgif-nls
     SUBDIR += tif22pnm
     SUBDIR += tiff
     SUBDIR += tiff2png
