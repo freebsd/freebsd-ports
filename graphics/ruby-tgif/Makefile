@@ -28,7 +28,7 @@ USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_XLIB=	yes
 
-TGIF_PORT=	graphics/tgif-nls
+TGIF_PORT=	graphics/tgif
 
 WRKSRC=		${WRKDIR}/ruby-${PORTNAME}-${PORTVERSION}
 CONFIGURE_ARGS=	--with-x-dir="${X11BASE}" \
