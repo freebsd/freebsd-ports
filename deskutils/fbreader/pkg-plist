@@ -8,9 +8,11 @@ share/FBReader/formats/xhtml/xhtml-lat1.ent
 share/FBReader/formats/xhtml/xhtml-special.ent
 share/FBReader/formats/xhtml/xhtml-symbol.ent
 share/FBReader/help/MiniHelp.en.fb2
+share/FBReader/help/MiniHelp.fr.fb2
 share/FBReader/help/MiniHelp.ru.fb2
 share/FBReader/hyphenationPatterns.zip
 share/FBReader/resources/en.xml
+share/FBReader/resources/fr.xml
 share/FBReader/resources/ru.xml
 share/applications/FBReader.desktop
 share/pixmaps/FBReader/TOCHANGE
@@ -70,6 +72,7 @@ share/zlibrary/encodings/windows-1251
 share/zlibrary/encodings/windows-1252
 share/zlibrary/keynames-qt4.xml
 share/zlibrary/resources/en.xml
+share/zlibrary/resources/fr.xml
 share/zlibrary/resources/ru.xml
 @dirrm share/FBReader/default
 @dirrm share/FBReader/formats/html
