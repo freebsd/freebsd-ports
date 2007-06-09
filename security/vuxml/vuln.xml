@@ -34,6 +34,77 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0838733d-1698-11dc-a197-0011098b2f36">
+    <topic>wordpress -- XMLRPC SQL Injection</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<name>de-wordpress</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/25552/">
+	  <p>Slappter has discovered a vulnerability in WordPress, which can
+	    be exploited by malicious users to conduct SQL injection
+	    attacks.</p>
+	  <p>Input passed to the "wp.suggestCategories" method in xmlrpc.php
+	    is not properly sanitised before being used in SQL queries.  This
+	    can be exploited to manipulate SQL queries by injecting arbitrary
+	    SQL code.</p>
+	  <p>Successful exploitation allows e.g. retrieving usernames and
+	    password hashes, but requires valid user credentials and knowledge
+	    of the database table prefix.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>24344</bid>
+      <url>http://secunia.com/advisories/25552/</url>
+    </references>
+    <dates>
+      <discovery>2007-06-06</discovery>
+      <entry>2007-06-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6a31cbe3-1695-11dc-a197-0011098b2f36">
+    <topic>wordpress -- unmoderated comments disclosure</topic>
+    <affects>
+      <package>
+	<name>wordpress</name>
+	<name>de-wordpress</name>
+	<range><gt>0</gt></range>
+      </package>
+      <package>
+	<name>de-wordpress</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Blogsecurity reports:</p>
+	<blockquote cite="http://blogsecurity.net/news/news-310507/">
+	  <p>An attacker can read comments on posts that have not been
+	    moderated.  This can be a real security risk if blog admins
+	    are using unmoderated comments (comments that have not been
+	    made public) to hide sensitive notes regarding posts, future
+	    work, passwords etc.  So please be careful if you are one of
+	    these blog admins.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://blogsecurity.net/news/news-310507/</url>
+    </references>
+    <dates>
+      <discovery>2007-06-01</discovery>
+      <entry>2007-06-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="12b7286f-16a2-11dc-b803-0016179b2dd5">
     <topic>webmin -- cross site scripting vulnerability</topic>
     <affects>
