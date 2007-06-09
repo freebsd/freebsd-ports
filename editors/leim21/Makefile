@@ -17,11 +17,10 @@ COMMENT=	Libraries of (GNU) Emacs Input Method
 
 LATEST_LINK=	leim21
 
-BUILD_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs
-RUN_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs
+USE_EMACS=		yes
+EMACS_PORT_NAME=	emacs21
 
 USE_GMAKE=	yes
-EMACS_VER=	21.3
 WRKSRC=		${WRKDIR}/emacs-${EMACS_VER}/leim
 PLIST_SUB=	EMACS_VER=${EMACS_VER}
 SCRIPTS_ENV=	EMACS_VER=${EMACS_VER}
