@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkada
 PORTVERSION=	2.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://libre2.adacore.com/GtkAda/ \
 		http://libre.act-europe.fr/GtkAda/ \
@@ -22,11 +22,12 @@ BUILD_DEPENDS=	gnatgcc:${PORTSDIR}/lang/gnat
 
 CONFLICTS=	gtkada-devel-[0-9]* gtkada-gcc-[0-9]*
 
-USE_X_PREFIX=	yes
+USE_GL=		gl
 USE_GNOME=	gtk20 libglade2
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-GL=GL
 
 EXAMPLESDIR=	${DATADIR}/examples
 

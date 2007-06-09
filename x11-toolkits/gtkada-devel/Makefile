@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkada
 PORTVERSION=	20060615
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://sitola.fi.muni.cz/~hopet/gtkada/
 PKGNAMESUFFIX=	-devel
@@ -23,11 +23,12 @@ CONFLICTS=	gtkada-[0-9]* gtkada-gcc-[0-9]*
 
 WRKSRC=		${WRKDIR}/GtkAda
 
-USE_X_PREFIX=	yes
+USE_GL=		gl
 USE_GNOME=	gtk20 libglade2 libgnomeui
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-GL=Gl
 
 EXTRA_PATCHES=	${FILESDIR}/obsolescence.patch
 
