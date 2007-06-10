@@ -1,14 +1,6 @@
---- fig2dev/fig2dev.h.orig	Thu Dec 19 07:45:28 2002
-+++ fig2dev/fig2dev.h	Tue Jan  7 20:08:45 2003
-@@ -22,7 +22,6 @@
- #include <sys/file.h>
- #include <signal.h>
- #include <string.h>
--#include <varargs.h>
- #include <pwd.h>
- #include <errno.h>
- #include <time.h>
-@@ -210,7 +209,7 @@
+--- fig2dev/fig2dev.h.orig	Tue Jul 15 09:21:12 2003
++++ fig2dev/fig2dev.h
+@@ -213,7 +213,7 @@
  #endif /* MAXPATHLEN */
  #endif /* PATH_MAX */
  

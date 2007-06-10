@@ -1,0 +1,10 @@
+--- fig2dev/dev/Imakefile.orig	Tue Sep 30 08:48:08 2003
++++ fig2dev/dev/Imakefile
+@@ -23,6 +23,7 @@
+ #ifdef USE_PNG
+ READPNGS=readpng.c
+ READPNGO=readpng.o
++DEPEND_DEFINES=-I${LOCALBASE}/include/libpng DependDefines
+ #endif
+ 
+ #ifdef USE_XPM
