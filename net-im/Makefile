@@ -92,6 +92,7 @@
     SUBDIR += naim
     SUBDIR += newsbot
     SUBDIR += ocaml-jabbr
+    SUBDIR += openfire
     SUBDIR += p5-POE-Component-Client-MSN
     SUBDIR += pebrot
     SUBDIR += pidgin
