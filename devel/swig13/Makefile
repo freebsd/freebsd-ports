@@ -7,6 +7,7 @@
 
 PORTNAME=	swig
 PORTVERSION=	1.3.31
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,6 +33,8 @@ PLIST_SUB+=	VER="${VER}"
 post-patch:
 	${REINPLACE_CMD} -e 's/SKIP_CHICKEN=$$/&"1"/' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|$$RUBY |${RUBY} |' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' \
+		${WRKSRC}/Lib/lua/luarun.swg
 
 post-configure:
 	${REINPLACE_CMD} -e 's#null#&|| true#' ${WRKSRC}/Makefile
