@@ -13093,6 +13093,7 @@ py-utils	ports/devel/py-utils
 py-vertex	ports/net-p2p/py-vertex
 py-visual	ports/graphics/py-visual
 py-vmaps	ports/devel/py-vmaps
+py-vobject	ports/deskutils/py-vobject
 py-vorbis	ports/audio/py-vorbis
 py-vte		ports/x11-toolkits/py-vte
 py-wax		ports/x11-toolkits/py-wax
