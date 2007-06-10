@@ -1,31 +1,42 @@
-# New ports collection makefile for:	musicbrainz
-# Date Created:				26 Oct 2000
-# Whom:					Roman Shterenzon <roman@xpert.com>
+# New ports collection makefile for:	libmusicbrainz3
+# Date Created:				2007-05-17
+# Whom:					Jason E. Hale <bsdkaffee@gmail.com>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	libmusicbrainz
-PORTVERSION=	2.1.5
+PORTNAME=	libmusicbrainz3
+PORTVERSION=	3.0.0
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/ \
     		http://uk.musicbrainz.org/pub/musicbrainz/
+DISTNAME=	${PORTNAME:S/3//}-${PORTVERSION}
 
 MAINTAINER=	bsdkaffee@gmail.com
-COMMENT=	2nd generation incarnation of the CD Index - audio metadata
+COMMENT=	MusicBrainz client library for audio metadata lookup
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
+LIB_DEPENDS=	neon.26:${PORTSDIR}/www/neon
 
-CONFLICTS=	musicbrainz-1.*
+CMAKE_ARGS=	-DCMAKE_BUILD_TYPE:STRING=Release \
+		-DCMAKE_C_COMPILER:STRING='${CC}' \
+		-DCMAKE_CXX_COMPILER:STRING=${CXX} \
+		-DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS}" \
+		-DCMAKE_INSTALL_PREFIX=${PREFIX}
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnometarget pkgconfig
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g'	${WRKSRC}/${CONFIGURE_SCRIPT}
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+pre-configure:
+	${MKDIR} ${WRKSRC}
+	${REINPLACE_CMD} -e 's|$${LIB_INSTALL_DIR}\/pkgconfig|libdata\/pkgconfig|' \
+		${WRKSRC}/CMakeLists.txt
+
+do-configure:
+	@(cd ${WRKSRC}; \
+	${LOCALBASE}/bin/cmake ${CMAKE_ARGS})
+
+.include <bsd.port.post.mk>
