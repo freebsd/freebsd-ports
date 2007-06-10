@@ -4794,7 +4794,7 @@ iodine		ports/net/iodine
 iog		ports/net-mgmt/iog
 ion		ports/x11-wm/ion
 ion-2		ports/x11-wm/ion-2
-ion-3ds		ports/x11-wm/ion-3ds
+ion-3		ports/x11-wm/ion-3
 ioquake3	ports/games/ioquake3
 iozone		ports/benchmarks/iozone
 iozone21	ports/benchmarks/iozone21
