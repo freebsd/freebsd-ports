@@ -1,0 +1,8 @@
+bin/gx
+share/app-install/icons/gx.png
+share/app-install/desktop/gx.desktop
+share/pixmaps/gx.png
+share/pixmaps/gx_logo.png
+@dirrmtry share/app-install/icons
+@dirrmtry share/app-install/desktop
+@dirrmtry share/app-install
