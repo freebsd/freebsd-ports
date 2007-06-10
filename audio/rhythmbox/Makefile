@@ -48,8 +48,8 @@ OPTIONS=	DAAP "Enable iTunes music sharing" off \
 		FAAD "Enable FAAD decoder support" off \
 		NOTIFY "Enable libnotify support" on \
 		VORBIS "Enable Ogg/Vorbis support" on \
-		GDA "Enable GDA database storage" off \
 		LIRC "Enable Infrared syncing support" off
+#		GDA "Enable GDA database storage" off
 
 .include <bsd.port.pre.mk>
 
@@ -63,12 +63,12 @@ CONFIGURE_ARGS+=	--disable-vorbis --disable-vorbistest
 USE_GSTREAMER+=		faad
 .endif
 
-.if defined(WITH_GDA)
-USE_GNOME+=	libgda2
-CONFIGURE_ARGS+=--with-database=libgda
-.else
+#.if defined(WITH_GDA)
+#USE_GNOME+=	libgda2
+#CONFIGURE_ARGS+=--with-database=libgda
+#.else
 CONFIGURE_ARGS+=--with-database=tree
-.endif
+#.endif
 
 .if defined(WITH_LIRC)
 LIB_DEPENDS+=	lirc_client.1:${PORTSDIR}/comms/lirc
