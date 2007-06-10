@@ -309,6 +309,7 @@
     SUBDIR += libmpd
     SUBDIR += libmtp
     SUBDIR += libmusicbrainz
+    SUBDIR += libmusicbrainz3
     SUBDIR += libnjb
     SUBDIR += libnoise
     SUBDIR += libofa
