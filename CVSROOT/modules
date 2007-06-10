@@ -6893,6 +6893,7 @@ linux-virtual-jay-peak	ports/games/linux-virtual-jay-peak
 linux-vmware-toolbox2	ports/emulators/linux-vmware-toolbox2
 linux-vmware-toolbox4	ports/emulators/linux-vmware-toolbox4
 linux-vmware-toolbox5	ports/emulators/linux-vmware-toolbox5
+linux-vmware-toolbox6	ports/emulators/linux-vmware-toolbox6
 linux-vsound	ports/audio/linux-vsound
 linux-warsow	ports/games/linux-warsow
 linux-winetools	ports/emulators/linux-winetools
@@ -15815,9 +15816,11 @@ vmw		ports/emulators/vmw
 vmware-guestd3	ports/emulators/vmware-guestd3
 vmware-guestd4	ports/emulators/vmware-guestd4
 vmware-guestd5	ports/emulators/vmware-guestd5
+vmware-guestd6	ports/emulators/vmware-guestd6
 vmware-tools3	ports/emulators/vmware-tools3
 vmware-tools4	ports/emulators/vmware-tools4
 vmware-tools5	ports/emulators/vmware-tools5
+vmware-tools6	ports/emulators/vmware-tools6
 vmware3		ports/emulators/vmware3
 vnc		ports/net/vnc
 vnc2swf		ports/net/vnc2swf
