@@ -78,11 +78,11 @@ fcron:*:247:
 _tor:*:256:
 _dns-proxy-tor:*:257:
 _trans-proxy-tor:*:258:
-smxs:*:260:
-smxq:*:261:
-smxc:*:262:
-smxm:*:263:
-smx:*:264:
+meta1s:*:260:
+meta1q:*:261:
+meta1c:*:262:
+meta1m:*:263:
+meta1:*:264:
 haclient:*:275:
 mrtg:*:279:
 prelude:*:281:
