@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	bftpd
-PORTVERSION=	1.8.4
+PORTVERSION=	1.9
 CATEGORIES=	ftp
-MASTER_SITES=	CENKES http://freebsd.alaskaparadise.com/source/ \
-		http://bftpd.sourceforge.net/downloads/testing/
+MASTER_SITES=	SF
 
-MAINTAINER=	beech@alaskaparadise.com
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Very configurable FTP server that can do chroot easily
 
 GNU_CONFIGURE=	yes
