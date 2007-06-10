@@ -21,6 +21,8 @@ LIB_DEPENDS=	rsync.1:${PORTSDIR}/net/librsync \
 		gcrypt.13:${PORTSDIR}/security/libgcrypt \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error
 
+BROKEN=		Installs config file in /etc
+
 MAN1=	csync2.1
 
 GNU_CONFIGURE=	yes
