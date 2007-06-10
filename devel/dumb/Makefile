@@ -7,6 +7,7 @@
 
 PORTNAME=	dumb
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	devel audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dumb
@@ -27,8 +28,7 @@ PLIST_SUB+=	ALLEGRO="@comment "
 MAKE_ARGS=	_PORT_ALLEGRO_CFLAGS=
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e "s,-O2,${CFLAGS}," ${WRKSRC}/Makefile
+MAKE_ENV+=	CC="${CC}"
 
 pre-configure:
 	@${CP} ${FILESDIR}/config.txt ${WRKSRC}/make
