@@ -8,12 +8,29 @@ lib/blam/libblam.la
 lib/blam/libblam.so
 lib/blam/libblam.so.0
 share/gnome/applications/blam.desktop
+share/gnome/blam/themes/planet/theme.html
+share/gnome/blam/themes/planet/planet.css
+share/gnome/blam/themes/planet/bubble-top.png
+share/gnome/blam/themes/planet/bubble-top-right.png
+share/gnome/blam/themes/planet/bubble-top-left.png
+share/gnome/blam/themes/planet/bubble-right.png
+share/gnome/blam/themes/planet/bubble-nipple.png
+share/gnome/blam/themes/planet/bubble-left.png
+share/gnome/blam/themes/planet/bubble-bottom.png
+share/gnome/blam/themes/planet/bubble-bottom-right.png
+share/gnome/blam/themes/planet/bubble-bottom-left.png
+share/gnome/blam/themes/pimped/theme.html
+share/gnome/blam/themes/pimped/pimped.css
+share/gnome/blam/themes/pimped/news.png
+share/gnome/blam/themes/pimped/blam.png
+share/gnome/blam/themes/blam/theme.html
+share/gnome/blam/themes/blam/blam-box-top-right.png
+share/gnome/blam/themes/blam/blam-box-top-left.png
+share/gnome/blam/themes/blam/blam-box-pad.png
+share/gnome/blam/themes/blam/blam-box-bottom-right.png
+share/gnome/blam/themes/blam/blam-box-bottom-left.png
+share/gnome/blam/themes/akregator/theme.html
 share/gnome/blam/collection.xml
-share/gnome/blam/images/blam-box-bottom-left.png
-share/gnome/blam/images/blam-box-bottom-right.png
-share/gnome/blam/images/blam-box-pad.png
-share/gnome/blam/images/blam-box-top-left.png
-share/gnome/blam/images/blam-box-top-right.png
 share/gnome/pixmaps/blam.png
 share/locale/bg/LC_MESSAGES/blam.mo
 share/locale/bs/LC_MESSAGES/blam.mo
@@ -36,24 +53,39 @@ share/locale/hu/LC_MESSAGES/blam.mo
 share/locale/it/LC_MESSAGES/blam.mo
 share/locale/ja/LC_MESSAGES/blam.mo
 share/locale/lt/LC_MESSAGES/blam.mo
+share/locale/lv/LC_MESSAGES/blam.mo
 share/locale/nb/LC_MESSAGES/blam.mo
+share/locale/ne/LC_MESSAGES/blam.mo
 share/locale/nl/LC_MESSAGES/blam.mo
-share/locale/no/LC_MESSAGES/blam.mo
 share/locale/pa/LC_MESSAGES/blam.mo
 share/locale/pl/LC_MESSAGES/blam.mo
 share/locale/pt/LC_MESSAGES/blam.mo
 share/locale/pt_BR/LC_MESSAGES/blam.mo
 share/locale/rw/LC_MESSAGES/blam.mo
+share/locale/ru/LC_MESSAGES/blam.mo
 share/locale/sq/LC_MESSAGES/blam.mo
 share/locale/sr/LC_MESSAGES/blam.mo
 share/locale/sr@Latn/LC_MESSAGES/blam.mo
 share/locale/sv/LC_MESSAGES/blam.mo
+share/locale/sk/LC_MESSAGES/blam.mo
 share/locale/tr/LC_MESSAGES/blam.mo
 share/locale/uk/LC_MESSAGES/blam.mo
+share/locale/vi/LC_MESSAGES/blam.mo
 share/locale/zh_CN/LC_MESSAGES/blam.mo
+share/locale/zh_HK/LC_MESSAGES/blam.mo
 share/locale/zh_TW/LC_MESSAGES/blam.mo
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/sk/LC_MESSAGES
+@dirrmtry share/locale/sk
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
-@dirrm share/gnome/blam/images
+@dirrmtry share/locale/ne/LC_MESSAGES
+@dirrmtry share/locale/ne
+@dirrm share/gnome/blam/themes/planet
+@dirrm share/gnome/blam/themes/pimped
+@dirrm share/gnome/blam/themes/blam
+@dirrm share/gnome/blam/themes/akregator
+@dirrm share/gnome/blam/themes
 @dirrm share/gnome/blam
 @dirrm lib/blam
