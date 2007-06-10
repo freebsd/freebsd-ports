@@ -8,6 +8,7 @@ libexec/grmt
 %%NLS%%share/locale/el/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/es/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/et/LC_MESSAGES/tar.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/tar.mo
 %%NLS%%share/locale/ga/LC_MESSAGES/tar.mo
@@ -40,3 +41,5 @@ libexec/grmt
 %%NLS%%@dirrmtry share/locale/rw
 %%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ky
+%%NLS%%@dirrmtry share/locale/eu/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/eu
