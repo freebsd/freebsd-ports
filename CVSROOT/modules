@@ -8040,6 +8040,7 @@ nexfontsel	ports/x11-fonts/nexfontsel
 nextgo		ports/games/nextgo
 nexuiz		ports/games/nexuiz
 nfdump		ports/net-mgmt/nfdump
+nfdump-devel	ports/net-mgmt/nfdump-devel
 nfsen		ports/net-mgmt/nfsen
 nfsshell	ports/net/nfsshell
 ng_car		ports/net/ng_car
