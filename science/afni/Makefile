@@ -35,6 +35,8 @@ RUN_DEPENDS=	cjpeg:${PORTSDIR}/graphics/jpeg \
 		ppmtogif:${PORTSDIR}/graphics/netpbm \
 		endian:${PORTSDIR}/sysutils/endian
 
+BROKEN=		Does not compile
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
