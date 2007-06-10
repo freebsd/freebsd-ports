@@ -1,6 +1,6 @@
---- configure.orig	Sat Feb 24 16:28:42 2007
-+++ configure	Sat Feb 24 16:29:20 2007
-@@ -3821,12 +3821,6 @@
+--- configure.orig	Fri Jun  1 16:11:57 2007
++++ configure	Fri Jun  1 16:16:42 2007
+@@ -4896,12 +4896,6 @@
  	lib_static_enabled=no
  fi
  
@@ -10,18 +10,10 @@
 -   { (exit 1); exit 1; }; }
 -fi
 -
- # Check whether --enable-dynamic or --disable-dynamic was given.
+ # Check whether --enable-dynamic was given.
  if test "${enable_dynamic+set}" = set; then
-   enableval="$enable_dynamic"
-@@ -3834,7 +3828,6 @@
- fi;
- 
- 
--
- # Check whether --with-c99-vsnprintf or --without-c99-vsnprintf was given.
- if test "${with_c99_vsnprintf+set}" = set; then
-   withval="$with_c99_vsnprintf"
-@@ -4786,7 +4779,6 @@
+   enableval=$enable_dynamic;
+@@ -5941,7 +5935,6 @@
  	if test "x$enable_libgadu_openssl" != "xno"; then
  		LIBS_LIBGADU="$LIBS_LIBGADU $OPENSSL_LIBS"
  		CFLAGS_LIBGADU="$CFLAGS_LIBGADU $OPENSSL_INCLUDES"

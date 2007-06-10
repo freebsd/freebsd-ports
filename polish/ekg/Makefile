@@ -5,12 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=		ekg
-PORTVERSION=		1.7.r3
-PORTREVISION=		1
+PORTVERSION=		1.7
 PORTEPOCH=		2
 CATEGORIES=		polish net-im
 MASTER_SITES=		http://ekg.chmurka.net/
-DISTNAME=		${PORTNAME}-1.7rc3
 
 MAINTAINER=		alex@bsdguru.org
 COMMENT=		Text-mode Gadu-Gadu client
@@ -27,6 +25,7 @@ CONFIGURE_ARGS+=	--disable-shared \
 			--without-openssl \
 			--disable-libgadu-openssl \
 			--without-libungif \
+			--mandir=${MANPREFIX}/man \
 			--without-libjpeg
 
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
