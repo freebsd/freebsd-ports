@@ -14542,7 +14542,6 @@ smtpscan	ports/security/smtpscan
 smtptrapd	ports/mail/smtptrapd
 smurflog	ports/security/smurflog
 smv		ports/devel/smv
-smx		ports/mail/smx
 sn		ports/news/sn
 snack		ports/audio/snack
 snap		ports/sysutils/snap
