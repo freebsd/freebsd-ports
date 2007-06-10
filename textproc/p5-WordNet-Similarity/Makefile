@@ -20,6 +20,8 @@ BUILD_DEPENDS=	${SITE_PERL}/WordNet/QueryData.pm:${PORTSDIR}/textproc/p5-WordNet
 		${SITE_PERL}/Text/OverlapFinder.pm:${PORTSDIR}/textproc/p5-Text-Similarity
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Does not build
+
 WNHOME?=	${LOCALBASE}/share/WordNet
 
 PERL_CONFIGURE=	yes
