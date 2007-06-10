@@ -7255,6 +7255,7 @@ meshviewer	ports/graphics/meshviewer
 mess822		ports/mail/mess822
 messagewall	ports/mail/messagewall
 meta-cvs	ports/devel/meta-cvs
+meta1		ports/mail/meta1
 metabar		ports/deskutils/metabar
 metacam		ports/graphics/metacam
 metacity	ports/x11-wm/metacity
