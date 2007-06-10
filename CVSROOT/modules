@@ -4332,6 +4332,7 @@ gworkspace	ports/deskutils/gworkspace
 gworkspace-clipbook	ports/deskutils/gworkspace-clipbook
 gworkspace-gwmetadata	ports/deskutils/gworkspace-gwmetadata
 gwyddion	ports/science/gwyddion
+gx		ports/graphics/gx
 gx2osd		ports/audio/gx2osd
 gxanim		ports/multimedia/gxanim
 gxditview	ports/textproc/gxditview
