@@ -7314,6 +7314,7 @@ mhonarc		ports/www/mhonarc
 mhwaveedit	ports/audio/mhwaveedit
 mi-aspell	ports/textproc/mi-aspell
 miau		ports/irc/miau
+mical		ports/deskutils/mical
 mico		ports/devel/mico
 micq		ports/net-im/micq
 micro_httpd	ports/www/micro_httpd
