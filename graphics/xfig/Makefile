@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	xfig
-PORTVERSION=	3.2.4
-PORTREVISION=	5
+PORTVERSION=	3.2.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://xfig.org/software/xfig/${PORTVERSION}/ \
-		ftp://www-epb.lbl.gov/xfig/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. previous_versions
+		ftp://www-epb.lbl.gov/xfig/
 DISTNAME=	${PORTNAME}.${PORTVERSION}.full
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,31 +17,55 @@ COMMENT=	A drawing program for X11
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
-		Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
+		Xaw3d.8:${PORTSDIR}/x11-toolkits/Xaw3d
 RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
-CONFLICTS=	xfig-3.2.5*
+CONFLICTS=	xfig-[12].* xfig-3.1* xfig-3.2.[1234]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		xfig.1
+MANCOMPRESSED=	yes
+
+MAKE_ENV+=	DOCSDIR=${DOCSDIR} CHMOD=${CHMOD} TAR=${TAR}
+MAKE_ARGS+=	INSTALLFLAGS="${COPY}" \
+		INSTPGMFLAGS="${STRIP} ${_BINOWNGRP} -m ${BINMODE}" \
+		INSTDATFLAGS="${_SHROWNGRP} -m ${SHAREMODE}" \
+		INSTMANFLAGS="${_MANOWNGRP} -m ${MANMODE}"
 
 .if !defined(NOPORTDOCS)
-INSTALL_TARGET=	install install.all
+INSTALL_TARGET=	install install.libs install.html
 .endif
 
-OPTIONS=	GHOSTSCRIPT "Ghostscript support" on
+OPTIONS=	GHOSTSCRIPT "Ghostscript support" on \
+		I18N "I18N support and Japanese docs" on
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITHOUT_I18N) || defined(NOPORTDOCS)
+PLIST_SUB+=	JPORTDOCS="@comment "
+.else
+PLIST_SUB=	JPORTDOCS=""
+.endif
+
 post-extract:
+	@cd ${WRKSRC}/Doc && ${FIND} . -type f -print0 | ${XARGS} -0 ${CHMOD} a-x
+	@${CHMOD} -R +rX ${WRKSRC}/Libraries/Fasteners
+	@cd ${WRKSRC}/Libraries && ${FIND} . -type f -print0 | ${XARGS} -0 ${CHMOD} a-x
 	@${CP} ${WRKSRC}/Doc/xfig.man ${WRKSRC}
 
 post-patch:
 .if defined(WITHOUT_GHOSTSCRIPT)
+.if defined(WITHOUT_I18N)
 	@${REINPLACE_CMD} -e 's|-DGSBIT ||g' ${WRKSRC}/Imakefile
+.else
+	@${REINPLACE_CMD} -e '/^XCOMM #define I18N/s|XCOMM ||' \
+		-e 's|-DGSBIT ||g' ${WRKSRC}/Imakefile
+.endif
+.elif !defined(WITHOUT_I18N)
+	@${REINPLACE_CMD} -e '/^XCOMM #define I18N/s|XCOMM ||' ${WRKSRC}/Imakefile
 .endif
 
 .include <bsd.port.post.mk>

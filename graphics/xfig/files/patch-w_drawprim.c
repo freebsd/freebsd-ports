@@ -1,10 +1,11 @@
---- w_drawprim.c.orig   Mon Jan 23 11:45:22 2006
-+++ w_drawprim.c        Mon Jan 23 11:45:40 2006
-@@ -35,6 +35,7 @@
- #include "paintop.h"
- #include "mode.h"
- #include "object.h"
-+#include "u_create.h"
- #include "u_fonts.h"
- #include "w_canvas.h"
- #include "w_drawprim.h"
+--- w_drawprim.c.orig	Sun Jan 14 16:51:46 2007
++++ w_drawprim.c
+@@ -512,7 +512,7 @@
+     gccache[ERASE] = makegc(ERASE, x_fg_color.pixel, x_bg_color.pixel);
+     gccache[INV_PAINT] = makegc(INV_PAINT, x_fg_color.pixel, x_bg_color.pixel);
+     /* parse any grid color spec */
+-fprintf(stderr,"color = '%s'\n",appres.grid_color);
++if (appres.DEBUG) fprintf(stderr,"color = '%s'\n",appres.grid_color);
+     XParseColor(tool_d, tool_cm, appres.grid_color, &tmp_color);
+     if (XAllocColor(tool_d, tool_cm, &tmp_color)==0) {
+ 	fprintf(stderr,"Can't allocate color for grid \n");
