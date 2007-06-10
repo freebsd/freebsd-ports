@@ -11603,6 +11603,7 @@ pear-PEAR_PackageFileManager	ports/devel/pear-PEAR_PackageFileManager
 pear-PHPDoc	ports/devel/pear-PHPDoc
 pear-PHPUnit	ports/devel/pear-PHPUnit
 pear-PHPUnit2	ports/devel/pear-PHPUnit2
+pear-PHPUnit3	ports/devel/pear-PHPUnit3
 pear-PHP_Beautifier	ports/devel/pear-PHP_Beautifier
 pear-PHP_Compat	ports/devel/pear-PHP_Compat
 pear-PHP_CompatInfo	ports/devel/pear-PHP_CompatInfo
