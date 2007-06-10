@@ -18,6 +18,8 @@ COMMENT=	Kwiki Gnome Icons plugin
 BUILD_DEPENDS=	${SITE_PERL}/Kwiki.pm:${PORTSDIR}/www/p5-Kwiki
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Broken dependency
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Kwiki::Icons::Gnome.3
