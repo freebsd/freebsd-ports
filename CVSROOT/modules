@@ -6493,6 +6493,7 @@ libmt_client	ports/games/libmt_client
 libmtp		ports/audio/libmtp
 libmtrie	ports/devel/libmtrie
 libmusicbrainz	ports/audio/libmusicbrainz
+libmusicbrainz3	ports/audio/libmusicbrainz3
 libmxp		ports/net/libmxp
 libnaji		ports/devel/libnaji
 libnet		ports/net/libnet
