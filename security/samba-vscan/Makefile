@@ -17,6 +17,8 @@ COMMENT=	On-access virus scanning with Samba
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/${VSCAN_SAMBA_PORT}:configure
 
+BROKEN=		Does not compile
+
 OPTIONS=	VSCAN_ANTIVIR "for use with AntiVir" off \
 		VSCAN_CLAMAV "for use with Clam AntiVirus Daemon" off \
 		VSCAN_FPROTD "for use with F-Prot Daemon" off \

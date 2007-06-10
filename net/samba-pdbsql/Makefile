@@ -16,6 +16,8 @@ DISTNAME=		${PORTNAME}-${PORTVERSION}-${PKGNAMEPREFIX}${SAMBA_VERSION}
 MAINTAINER=		timur@gnu.org
 COMMENT=		Multiplexor, MySQL and PostgeSQL passdb backends for Samba3
 
+BROKEN=			Does not compile
+
 USE_BZIP2=		yes
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
