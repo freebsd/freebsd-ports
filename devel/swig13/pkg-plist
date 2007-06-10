@@ -2797,8 +2797,6 @@ bin/swig%%VER%%
 @dirrm %%DATADIR%%/%%PORTVERSION%%/tcl
 @dirrm %%DATADIR%%/%%PORTVERSION%%/std
 @dirrm %%DATADIR%%/%%PORTVERSION%%/ruby
-@dirrm %%DATADIR%%/%%PORTVERSION%%/r/simple
-@dirrm %%DATADIR%%/%%PORTVERSION%%/r/class
 @dirrm %%DATADIR%%/%%PORTVERSION%%/r
 @dirrm %%DATADIR%%/%%PORTVERSION%%/python
 @dirrm %%DATADIR%%/%%PORTVERSION%%/pike
