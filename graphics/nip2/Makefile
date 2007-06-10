@@ -17,6 +17,8 @@ COMMENT=	Graphical user interface for VIPS
 LIB_DEPENDS=	vips.18:${PORTSDIR}/graphics/vips \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
+BROKEN=		Incomplete pkg-plist
+
 USE_GMAKE=	yes
 USE_GNOME=	gnomemimedata glib20 pkgconfig gtk20
 GNU_CONFIGURE=	yes

@@ -22,6 +22,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-H
 		${SITE_PERL}/IPC/PidStat.pm:${PORTSDIR}/devel/p5-IPC-Locker
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+BROKEN=		Incomplete pkg-plist
+
 PERL_CONFIGURE=	yes
 
 MAN1=		rschedule.1 slchoosed.1 slpolice.1 slreportd.1 slrsh.1
