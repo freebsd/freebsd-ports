@@ -16,14 +16,15 @@ MAINTAINER=	quetzal@zone3000.net
 COMMENT=	Openfire (formerly Wildfire) is an enterprise instant messaging server
 
 RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
+
+USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 
-USE_ANT=	yes
+CONFLICTS=	openfire-[0-9]*
 
-USE_RC_SUBR=	wildfire
 ALL_TARGET=	wildfire
-
+USE_RC_SUBR=	wildfire
 SUB_FILES=	pkg-message
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_src
