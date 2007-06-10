@@ -132,6 +132,7 @@
     SUBDIR += metabar
     SUBDIR += mhc
     SUBDIR += mhc-emacs20
+    SUBDIR += mical
     SUBDIR += mnemo
     SUBDIR += moregroupware
     SUBDIR += mrundlg
