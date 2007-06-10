@@ -1,0 +1,11 @@
+--- mcs/class/Managed.Windows.Forms/build-csproj.orig	Thu Jan 25 01:19:43 2007
++++ mcs/class/Managed.Windows.Forms/build-csproj	Sun Jun 10 15:27:31 2007
+@@ -177,7 +177,7 @@
+ {
+ cat $Resource | while read SRC; do
+ SRC=`echo $SRC | $tr '/' '\\\\'`
+-SRC=`echo $SRC | sed 's/-resource://' | gawk -F , '{print "                    RelPath = \"" $1 "\"\n                    CustomToolNameSpace = \"" $2 "\""}' | fgrep -v \"\"`
++SRC=`echo $SRC | sed 's/-resource://' | awk -F , '{print "                    RelPath = \"" $1 "\"\n                    CustomToolNameSpace = \"" $2 "\""}' | fgrep -v \"\"`
+ 
+ cat << EOT
+                 <File
