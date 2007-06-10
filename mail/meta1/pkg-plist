@@ -1,0 +1,64 @@
+@exec if ! pw groupshow meta1s 2>/dev/null; then pw groupadd meta1s -g 260; fi
+@exec if ! pw groupshow meta1q 2>/dev/null; then pw groupadd meta1q -g 261; fi
+@exec if ! pw groupshow meta1c 2>/dev/null; then pw groupadd meta1c -g 262; fi
+@exec if ! pw groupshow meta1m 2>/dev/null; then pw groupadd meta1m -g 263; fi
+@exec if ! pw groupshow meta1 2>/dev/null; then pw groupadd meta1 -g 264; fi
+@exec if ! pw usershow meta1s 2>/dev/null; then pw useradd meta1s -g meta1s -u 260 -h - -d /nonexistent -s %%NOLOGIN%% -c "MeTA1 SMTPS"; fi
+@exec if ! pw usershow meta1q 2>/dev/null; then pw useradd meta1q -g meta1q -u 261 -h - -d /nonexistent -s %%NOLOGIN%% -c "MeTA1 QMGR"; fi
+@exec if ! pw usershow meta1c 2>/dev/null; then pw useradd meta1c -g meta1c -u 262 -h - -d /nonexistent -s %%NOLOGIN%% -c "MeTA1 SMTPC"; fi
+@exec if ! pw usershow meta1m 2>/dev/null; then pw useradd meta1m -g meta1m -u 263 -h - -d /nonexistent -s %%NOLOGIN%% -c "MeTA1 misc"; fi
+@exec if ! pw usershow meta1 2>/dev/null; then pw useradd meta1 -g meta1 -u 264 -h - -d /nonexistent -s %%NOLOGIN%% -c "MeTA1 other"; fi
+@exec pw groupmod meta1c -m meta1s
+@exec pw groupmod meta1m -m meta1s,meta1q
+@unexec if pw usershow meta1s; then pw userdel meta1s; fi
+@unexec if pw usershow meta1q; then pw userdel meta1q; fi
+@unexec if pw usershow meta1c; then pw userdel meta1c; fi
+@unexec if pw usershow meta1m; then pw userdel meta1m; fi
+@unexec if pw usershow meta1; then pw userdel meta1; fi
+%%WITH_BDBINT%%bin/db_archive
+%%WITH_BDBINT%%bin/db_checkpoint
+%%WITH_BDBINT%%bin/db_deadlock
+%%WITH_BDBINT%%bin/db_dump
+%%WITH_BDBINT%%bin/db_load
+%%WITH_BDBINT%%bin/db_printlog
+%%WITH_BDBINT%%bin/db_recover
+%%WITH_BDBINT%%bin/db_stat
+%%WITH_BDBINT%%bin/db_upgrade
+%%WITH_BDBINT%%bin/db_verify
+%%WITH_BDBINT%%include/db.h
+%%WITH_BDBINT%%lib/libdb-4.3.a
+%%WITH_BDBINT%%lib/libdb.a
+bin/createmap
+bin/log2time
+bin/mailq
+bin/mailq.sh
+bin/qmgrctl
+bin/qmgrctl.sh
+bin/rcvrenvfromlog.sh
+bin/runas
+bin/smconf
+include/meta1/hdrmoddef.h
+include/meta1/mfapi.h
+include/meta1/pmfapi.h
+include/meta1/pmfdef.h
+include/meta1/smreplycodes.h
+include/meta1/smmts.h
+lib/meta1/libpmilter.a
+lib/meta1/libpmutil.a
+libexec/qmgr
+libexec/smar
+libexec/smtpc
+libexec/smtps
+sbin/greyprint
+sbin/greyrm
+sbin/mcp
+sbin/noroot
+sbin/sm.check.sh
+sbin/sm.setup.sh
+sbin/statit
+sbin/t-hostname
+sbin/t-getgroup
+sbin/tree
+@dirrm include/meta1
+@dirrm lib/meta1
+@exec %D/sbin/sm.setup.sh

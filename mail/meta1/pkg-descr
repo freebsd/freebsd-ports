@@ -1,0 +1,21 @@
+MeTA1 is a message transfer agent that has been designed with
+these main topics in minds:
+
+  * Security
+  * Reliability
+  * Efficiency
+  * Configurability
+  * Extendibility 
+
+MeTA1 consists of five main modules of which only one runs as root:
+
+  * mcp: the main control program is similar to inetd(8):
+    it starts all other MeTA1 modules and watches over their execution.
+    mcp runs as root in order to bind to port 25 and to change the uid
+    of the processes it starts.
+  * smtps: the SMTP server receives e-mails.
+  * smtpc: the SMTP client sends e-mails.
+  * smar: the address resolver provides lookups in various maps
+    including DNS for mail routing.
+  * qmgr: the queue manager controls the flow of e-mails through the
+    SMTP servers and clients. 
