@@ -1,5 +1,5 @@
---- system.mk.orig	Sun Mar 18 21:32:12 2007
-+++ system.mk	Sat Mar 31 22:49:58 2007
+--- system.mk.orig	Fri Jun  8 18:57:05 2007
++++ system.mk	Sun Jun 10 11:48:58 2007
 @@ -7,7 +7,7 @@
  ## Installation paths
  ##
@@ -9,14 +9,20 @@
  
  # Unless you are creating a package conforming to some OS's standards, you
  # probably do not want to modify the following directories:
-@@ -19,7 +19,7 @@
+@@ -17,11 +17,11 @@
+ # Configuration .lua files
+ ETCDIR=$(PREFIX)/etc/ion3
  # Some .lua files and ion-* shell scripts
- SHAREDIR=$(PREFIX)/share/ion3
+-SHAREDIR=$(PREFIX)/share/ion3
++SHAREDIR=$(PREFIX)/share/ion-3rc
  # Manual pages
 -MANDIR=$(PREFIX)/share/man
 +MANDIR=$(MANPREFIX)/man
  # Some documents
- DOCDIR=$(PREFIX)/share/doc/ion3
+-DOCDIR=$(PREFIX)/share/doc/ion3
++DOCDIR=$(PREFIX)/share/doc/ion-3rc
+ # Nothing at the moment
+ INCDIR=$(PREFIX)/include/ion3
  # Nothing at the moment
 @@ -47,7 +47,7 @@
  #PRELOAD_MODULES=1
@@ -71,7 +77,7 @@
  
  # If you're on an archaic system (such as relatively recent *BSD releases)
  # without even dummy multibyte/widechar and localisation support, you may 
-@@ -112,24 +112,24 @@
+@@ -112,8 +112,8 @@
  #DEFINES += -DCF_NO_LOCALE
  
  # On some other systems you may something like this:
@@ -80,8 +86,9 @@
 +EXTRA_LIBS += -L$(LOCALBASE)/lib -lintl
 +EXTRA_INCLUDES += -I$(LOCALBASE)/include
  
- 
- ##
+ # clock_gettime for monotonic time
+ EXTRA_LIBS += -lrt
+@@ -123,7 +123,7 @@
  ## C compiler
  ##
  
@@ -90,10 +97,9 @@
  
  # Same as '-Wall -pedantic' without '-Wunused' as callbacks often
  # have unused variables.
- WARN=	-W -Wimplicit -Wreturn-type -Wswitch -Wcomment \
+@@ -131,8 +131,8 @@
  	-Wtrigraphs -Wformat -Wchar-subscripts \
--	-Wparentheses -pedantic -Wuninitialized
-+	-Wparentheses
+ 	-Wparentheses -pedantic -Wuninitialized
  
 -CFLAGS=-g -Os $(WARN) $(DEFINES) $(EXTRA_INCLUDES) $(INCLUDES)
 -LDFLAGS=-g -Os $(EXTRA_LIBS) $(LIBS)
@@ -102,7 +108,7 @@
  EXPORT_DYNAMIC=-Xlinker --export-dynamic
  
  # The following options are mainly for development use and can be used
-@@ -143,7 +143,7 @@
+@@ -146,7 +146,7 @@
  #POSIX_SOURCE=-D_POSIX_SOURCE
  
  # Most systems

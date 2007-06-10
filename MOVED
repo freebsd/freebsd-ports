@@ -3065,3 +3065,4 @@ multimedia/snd-music-duplicates||2007-06-05|Has expired: Development has been ce
 audio/freebirth||2007-06-05|Has expired: Doesn't work on FreeBSD 5.0 and higher
 net/sixxs-heartbeatd||2007-06-05|obsolete, use net/sixxs-aiccu instead
 graphics/tgif-nls|graphics/tgif|2007-06-09|graphics/tgif now supports NLS by default
+x11-wm/ion-3ds|x11-wm/ion-3|2007-06-10|Upstream project became -rc, soon to become release
