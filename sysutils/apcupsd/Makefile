@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apcupsd
-PORTVERSION=	3.14.0
+PORTVERSION=	3.14.1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:src_sf/g} \
 		http://sce-tindy.tecnik93.com/FreeBSD/ports/${PORTNAME}/sources/:src_bk \
@@ -42,7 +42,6 @@ OPTIONS=	CLIENT_ONLY "Build NIS client only (no network server)" off \
 		USB "Compile with USB Support (READ MANUAL!)" on \
 		SNMP "Compile with SNMP Support (READ MANUAL!)" on
 
-IGNOREFILES=	${PORTNAME}.pdf
 PORTDOCS=	${PORTNAME}.pdf
 
 .include <bsd.port.pre.mk>
