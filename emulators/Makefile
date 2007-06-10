@@ -68,6 +68,7 @@
     SUBDIR += linux-vmware-toolbox2
     SUBDIR += linux-vmware-toolbox4
     SUBDIR += linux-vmware-toolbox5
+    SUBDIR += linux-vmware-toolbox6
     SUBDIR += linux-winetools
     SUBDIR += linux_dist-gentoo-stage1
     SUBDIR += linux_dist-gentoo-stage2
@@ -146,9 +147,11 @@
     SUBDIR += vmware-guestd3
     SUBDIR += vmware-guestd4
     SUBDIR += vmware-guestd5
+    SUBDIR += vmware-guestd6
     SUBDIR += vmware-tools3
     SUBDIR += vmware-tools4
     SUBDIR += vmware-tools5
+    SUBDIR += vmware-tools6
     SUBDIR += vmware3
     SUBDIR += vpce
     SUBDIR += vxtools
