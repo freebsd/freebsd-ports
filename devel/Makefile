@@ -1681,6 +1681,7 @@
     SUBDIR += pear-PHPDoc
     SUBDIR += pear-PHPUnit
     SUBDIR += pear-PHPUnit2
+    SUBDIR += pear-PHPUnit3
     SUBDIR += pear-PHP_Beautifier
     SUBDIR += pear-PHP_Compat
     SUBDIR += pear-PHP_CompatInfo
