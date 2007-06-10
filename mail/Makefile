@@ -237,6 +237,7 @@
     SUBDIR += mdpop3d
     SUBDIR += mess822
     SUBDIR += messagewall
+    SUBDIR += meta1
     SUBDIR += metamail
     SUBDIR += mew
     SUBDIR += mew-emacs20
