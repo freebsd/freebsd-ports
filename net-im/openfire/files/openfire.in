@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# PROVIDE: wildfire
+# PROVIDE: openfire
 # REQUIRE: NETWORKING SERVERS
 # BEFORE: DAEMON
 # KEYWORD: shutdown
@@ -8,24 +8,24 @@
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
-# wildfire_enable (bool):   Set to NO by default.
-#               Set it to YES to enable wildfire.
+# openfire_enable (bool):   Set to NO by default.
+#               Set it to YES to enable openfire.
 
 . %%RC_SUBR%%
 
-name="wildfire"
+name="openfire"
 rcvar=${name}_enable
 # Set defaults
-: ${wildfire_enable:=NO}
-: ${wildfire_user:=${name}}
-: ${wildfire_group:=${name}}
+: ${openfire_enable:=NO}
+: ${openfire_user:=${name}}
+: ${openfire_group:=${name}}
 
 pidfile=/var/run/${name}.pid
 
-required_files="%%PREFIX%%/etc/wildfire/wildfire.xml"
+required_files="%%PREFIX%%/etc/openfire/openfire.xml"
 java_options=" 	-server -jar \
-		-Dwildfire.lib.dir=%%JAVAJARDIR%% \
-		-DwildfireHome=%%DATADIR%%"
+		-Dopenfire.lib.dir=%%JAVAJARDIR%% \
+		-DopenfireHome=%%DATADIR%%"
 
 java_command="	%%LOCALBASE%%/bin/java ${java_options} \
 		%%JAVAJARDIR%%/startup.jar"
@@ -40,17 +40,17 @@ fi
 
 command="/usr/sbin/daemon"
 command_args="-f -p ${pidfile} ${java_command}"
-start_precmd="wildfire_precmd"
-status_cmd="wildfire_status"
-stop_cmd="wildfire_stop"
+start_precmd="openfire_precmd"
+status_cmd="openfire_status"
+stop_cmd="openfire_stop"
 load_rc_config $name
 
-wildfire_precmd() {
+openfire_precmd() {
         touch ${pidfile}
-        chown ${wildfire_user}:${wildfire_group} ${pidfile}
+        chown ${openfire_user}:${openfire_group} ${pidfile}
 }
 
-wildfire_status() {
+openfire_status() {
 	rc_pid=$(check_pidfile $pidfile *$procname*)
 
         if [ -z "$rc_pid" ]; then
@@ -66,7 +66,7 @@ wildfire_status() {
 }
 
 
-wildfire_stop() {
+openfire_stop() {
         rc_pid=$(check_pidfile $pidfile *$procname*)
 
         if [ -z "$rc_pid" ]; then

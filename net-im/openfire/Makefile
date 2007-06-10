@@ -1,44 +1,43 @@
-# New ports collection makefile for:    wildfire
+# New ports collection makefile for:    openfire
 # Date created:                         2006-11-12
 # Whom:                                 Nikolay Pavlov <quetzal@zone3000.net>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	wildfire
-PORTVERSION=	3.2.4
-PORTREVISION=	1
+PORTNAME=	openfire
+PORTVERSION=	3.3.1
 CATEGORIES=	net-im java
-MASTER_SITES=	http://www.igniterealtime.org/downloadServlet?filename=wildfire/
+MASTER_SITES=	http://www.igniterealtime.org/downloadServlet?filename=openfire/
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	quetzal@zone3000.net
 COMMENT=	Openfire (formerly Wildfire) is an enterprise instant messaging server
 
 RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
+
+USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 
-USE_ANT=	yes
+CONFLICTS=	wildfire-[0-9]*
 
-USE_RC_SUBR=	wildfire
-ALL_TARGET=	wildfire
-
+ALL_TARGET=	openfire
+USE_RC_SUBR=	openfire
 SUB_FILES=	pkg-message
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_src
 BUILD_WRKSRC=	${WRKSRC}/build
-INSTALL_WRKSRC=	${WRKSRC}/target/wildfire
+INSTALL_WRKSRC=	${WRKSRC}/target/openfire
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-VARLOG=		/var/log/wildfire
-VARDB=		/var/db/wildfire
-WETC=		${PREFIX}/etc/wildfire
-PUSER=		wildfire
+VARLOG=		/var/log/openfire
+VARDB=		/var/db/openfire
+PUSER=		openfire
 PGROUP=		${PUSER}
 
 MLINKS=		${VARLOG} ${DATADIR}/logs \
 	       	${VARDB} ${DATADIR}/embedded-db \
-		${WETC} ${DATADIR}/conf
+		${ETCDIR} ${DATADIR}/conf
 
 do-install:
 
@@ -66,13 +65,13 @@ do-install:
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR};
-	${CP} -p ${INSTALL_WRKSRC}/conf/wildfire.xml ${EXAMPLESDIR}/wildfire.xml
-	@if [ ! -f ${WETC}/wildfire.xml ]; then \
-		${MKDIR} ${WETC}; \
-		${CP} -p ${INSTALL_WRKSRC}/conf/wildfire.xml ${WETC}/wildfire.xml; \
+	${CP} -p ${INSTALL_WRKSRC}/conf/openfire.xml ${EXAMPLESDIR}/openfire.xml
+	@if [ ! -f ${ETCDIR}/openfire.xml ]; then \
+		${MKDIR} ${ETCDIR}; \
+		${CP} -p ${INSTALL_WRKSRC}/conf/openfire.xml ${ETCDIR}/openfire.xml; \
 	fi
 	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	${CHOWN} -R ${PUSER}:${PGROUP} ${WETC}
+	${CHOWN} -R ${PUSER}:${PGROUP} ${ETCDIR}
 	${CHOWN} -R ${PUSER}:${PGROUP} ${VARDB}
 	${CHOWN} -R ${PUSER}:${PGROUP} ${VARLOG}
 	${CHOWN} -R ${PUSER}:${PGROUP} ${DATADIR}
