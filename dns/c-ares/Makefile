@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	c-ares
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	dns
 MASTER_SITES=	http://daniel.haxx.se/projects/c-ares/
 
@@ -50,6 +50,9 @@ MAN3=	ares_cancel.3 \
 	ares_send.3 \
 	ares_strerror.3 \
 	ares_timeout.3 \
-	ares_version.3
+	ares_version.3 \
+	ares_parse_ns_reply.3 \
+	ares_destroy_options.3 \
+	ares_save_options.3
 
 .include <bsd.port.post.mk>
