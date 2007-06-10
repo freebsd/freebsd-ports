@@ -24,6 +24,6 @@ USE_LDCONFIG=	yes
 
 MAKE_ENV+=	CC="${CC}" LOCALBASE="${LOCALBASE}"
 
-ONLY_FOR_ARCHS=	i386 amd64
+ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.mk>
