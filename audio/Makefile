@@ -497,6 +497,7 @@
     SUBDIR += pytone
     SUBDIR += q-audio
     SUBDIR += qjackctl
+    SUBDIR += qmpdclient
     SUBDIR += quelcom
     SUBDIR += raop_play
     SUBDIR += raproxy
