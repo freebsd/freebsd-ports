@@ -89,6 +89,7 @@ share/locale/ja_JP.SJIS/LC_MESSAGES/namazu.mo
 %%DATADIR%%/filter/mhonarc.pl
 %%DATADIR%%/filter/mp3.pl
 %%DATADIR%%/filter/msword.pl
+%%DATADIR%%/filter/msofficexml.pl
 %%DATADIR%%/filter/ooo.pl
 %%DATADIR%%/filter/pdf.pl
 %%DATADIR%%/filter/pipermail.pl
@@ -101,6 +102,7 @@ share/locale/ja_JP.SJIS/LC_MESSAGES/namazu.mo
 %%DATADIR%%/filter/taro56.pl
 %%DATADIR%%/filter/taro7_10.pl
 %%DATADIR%%/filter/tex.pl
+%%DATADIR%%/filter/visio.pl
 %%DATADIR%%/filter/zip.pl
 @dirrm %%DATADIR%%/filter
 %%DATADIR%%/pl/codeconv.pl
