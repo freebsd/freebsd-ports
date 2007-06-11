@@ -621,6 +621,59 @@ sbin/reject
 %%DOCSDIR%%/sv/images/button-view-page-log.gif
 %%DOCSDIR%%/sv/images/button-view-printable-version.gif
 %%DOCSDIR%%/sv/index.html
+%%DOCSDIR%%/zh_TW/images/button-accept-jobs.gif
+%%DOCSDIR%%/zh_TW/images/button-add-class.gif
+%%DOCSDIR%%/zh_TW/images/button-add-printer.gif
+%%DOCSDIR%%/zh_TW/images/button-add-this-printer.gif
+%%DOCSDIR%%/zh_TW/images/button-cancel-all-jobs.gif
+%%DOCSDIR%%/zh_TW/images/button-cancel-job.gif
+%%DOCSDIR%%/zh_TW/images/button-change-settings.gif
+%%DOCSDIR%%/zh_TW/images/button-clean-print-heads.gif
+%%DOCSDIR%%/zh_TW/images/button-clear.gif
+%%DOCSDIR%%/zh_TW/images/button-continue.gif
+%%DOCSDIR%%/zh_TW/images/button-delete-class.gif
+%%DOCSDIR%%/zh_TW/images/button-delete-printer.gif
+%%DOCSDIR%%/zh_TW/images/button-edit-configuration-file.gif
+%%DOCSDIR%%/zh_TW/images/button-export-samba.gif
+%%DOCSDIR%%/zh_TW/images/button-help.gif
+%%DOCSDIR%%/zh_TW/images/button-hold-job.gif
+%%DOCSDIR%%/zh_TW/images/button-manage-classes.gif
+%%DOCSDIR%%/zh_TW/images/button-manage-jobs.gif
+%%DOCSDIR%%/zh_TW/images/button-manage-printers.gif
+%%DOCSDIR%%/zh_TW/images/button-manage-server.gif
+%%DOCSDIR%%/zh_TW/images/button-modify-class.gif
+%%DOCSDIR%%/zh_TW/images/button-modify-printer.gif
+%%DOCSDIR%%/zh_TW/images/button-move-job.gif
+%%DOCSDIR%%/zh_TW/images/button-move-jobs.gif
+%%DOCSDIR%%/zh_TW/images/button-print-self-test-page.gif
+%%DOCSDIR%%/zh_TW/images/button-print-test-page.gif
+%%DOCSDIR%%/zh_TW/images/button-publish-printer.gif
+%%DOCSDIR%%/zh_TW/images/button-reject-jobs.gif
+%%DOCSDIR%%/zh_TW/images/button-release-job.gif
+%%DOCSDIR%%/zh_TW/images/button-restart-job.gif
+%%DOCSDIR%%/zh_TW/images/button-save-changes.gif
+%%DOCSDIR%%/zh_TW/images/button-search.gif
+%%DOCSDIR%%/zh_TW/images/button-set-allowed-users.gif
+%%DOCSDIR%%/zh_TW/images/button-set-as-default.gif
+%%DOCSDIR%%/zh_TW/images/button-set-printer-options.gif
+%%DOCSDIR%%/zh_TW/images/button-show-active.gif
+%%DOCSDIR%%/zh_TW/images/button-show-all.gif
+%%DOCSDIR%%/zh_TW/images/button-show-completed.gif
+%%DOCSDIR%%/zh_TW/images/button-show-next.gif
+%%DOCSDIR%%/zh_TW/images/button-show-previous.gif
+%%DOCSDIR%%/zh_TW/images/button-sort-ascending.gif
+%%DOCSDIR%%/zh_TW/images/button-sort-descending.gif
+%%DOCSDIR%%/zh_TW/images/button-start-class.gif
+%%DOCSDIR%%/zh_TW/images/button-start-printer.gif
+%%DOCSDIR%%/zh_TW/images/button-stop-class.gif
+%%DOCSDIR%%/zh_TW/images/button-stop-printer.gif
+%%DOCSDIR%%/zh_TW/images/button-unpublish-printer.gif
+%%DOCSDIR%%/zh_TW/images/button-use-default-config.gif
+%%DOCSDIR%%/zh_TW/images/button-view-access-log.gif
+%%DOCSDIR%%/zh_TW/images/button-view-error-log.gif
+%%DOCSDIR%%/zh_TW/images/button-view-page-log.gif
+%%DOCSDIR%%/zh_TW/images/button-view-printable-version.gif
+%%DOCSDIR%%/zh_TW/index.html
 share/icons/hicolor/16x16/apps/cups.png
 share/icons/hicolor/32x32/apps/cups.png
 share/icons/hicolor/64x64/apps/cups.png
@@ -633,6 +686,7 @@ share/locale/it/cups_it.po
 share/locale/ja/cups_ja.po
 share/locale/pl/cups_pl.po
 share/locale/sv/cups_sv.po
+share/locale/zh_TW/cups_zh_TW.po
 %%DATADIR%%/banners/classified
 %%DATADIR%%/banners/confidential
 %%DATADIR%%/banners/secret
@@ -1279,6 +1333,69 @@ share/locale/sv/cups_sv.po
 %%DATADIR%%/templates/sv/test-page.tmpl
 %%DATADIR%%/templates/sv/trailer.tmpl
 %%DATADIR%%/templates/sv/users.tmpl
+%%DATADIR%%/templates/zh_TW/add-class.tmpl
+%%DATADIR%%/templates/zh_TW/add-printer.tmpl
+%%DATADIR%%/templates/zh_TW/admin.tmpl
+%%DATADIR%%/templates/zh_TW/choose-device.tmpl
+%%DATADIR%%/templates/zh_TW/choose-make.tmpl
+%%DATADIR%%/templates/zh_TW/choose-model.tmpl
+%%DATADIR%%/templates/zh_TW/choose-serial.tmpl
+%%DATADIR%%/templates/zh_TW/choose-uri.tmpl
+%%DATADIR%%/templates/zh_TW/class-added.tmpl
+%%DATADIR%%/templates/zh_TW/class-confirm.tmpl
+%%DATADIR%%/templates/zh_TW/class-deleted.tmpl
+%%DATADIR%%/templates/zh_TW/class-jobs-header.tmpl
+%%DATADIR%%/templates/zh_TW/class-modified.tmpl
+%%DATADIR%%/templates/zh_TW/classes-header.tmpl
+%%DATADIR%%/templates/zh_TW/classes.tmpl
+%%DATADIR%%/templates/zh_TW/edit-config.tmpl
+%%DATADIR%%/templates/zh_TW/error-op.tmpl
+%%DATADIR%%/templates/zh_TW/error.tmpl
+%%DATADIR%%/templates/zh_TW/header.tmpl
+%%DATADIR%%/templates/zh_TW/help-header.tmpl
+%%DATADIR%%/templates/zh_TW/help-printable.tmpl
+%%DATADIR%%/templates/zh_TW/job-cancel.tmpl
+%%DATADIR%%/templates/zh_TW/job-hold.tmpl
+%%DATADIR%%/templates/zh_TW/job-move.tmpl
+%%DATADIR%%/templates/zh_TW/job-moved.tmpl
+%%DATADIR%%/templates/zh_TW/job-release.tmpl
+%%DATADIR%%/templates/zh_TW/job-restart.tmpl
+%%DATADIR%%/templates/zh_TW/jobs-header.tmpl
+%%DATADIR%%/templates/zh_TW/jobs.tmpl
+%%DATADIR%%/templates/zh_TW/maintenance.tmpl
+%%DATADIR%%/templates/zh_TW/modify-class.tmpl
+%%DATADIR%%/templates/zh_TW/modify-printer.tmpl
+%%DATADIR%%/templates/zh_TW/norestart.tmpl
+%%DATADIR%%/templates/zh_TW/option-boolean.tmpl
+%%DATADIR%%/templates/zh_TW/option-conflict.tmpl
+%%DATADIR%%/templates/zh_TW/option-header.tmpl
+%%DATADIR%%/templates/zh_TW/option-pickmany.tmpl
+%%DATADIR%%/templates/zh_TW/option-pickone.tmpl
+%%DATADIR%%/templates/zh_TW/option-trailer.tmpl
+%%DATADIR%%/templates/zh_TW/pager.tmpl
+%%DATADIR%%/templates/zh_TW/printer-accept.tmpl
+%%DATADIR%%/templates/zh_TW/printer-added.tmpl
+%%DATADIR%%/templates/zh_TW/printer-configured.tmpl
+%%DATADIR%%/templates/zh_TW/printer-confirm.tmpl
+%%DATADIR%%/templates/zh_TW/printer-default.tmpl
+%%DATADIR%%/templates/zh_TW/printer-deleted.tmpl
+%%DATADIR%%/templates/zh_TW/printer-jobs-header.tmpl
+%%DATADIR%%/templates/zh_TW/printer-modified.tmpl
+%%DATADIR%%/templates/zh_TW/printer-purge.tmpl
+%%DATADIR%%/templates/zh_TW/printer-reject.tmpl
+%%DATADIR%%/templates/zh_TW/printer-start.tmpl
+%%DATADIR%%/templates/zh_TW/printer-stop.tmpl
+%%DATADIR%%/templates/zh_TW/printers-header.tmpl
+%%DATADIR%%/templates/zh_TW/printers.tmpl
+%%DATADIR%%/templates/zh_TW/restart.tmpl
+%%DATADIR%%/templates/zh_TW/samba-export.tmpl
+%%DATADIR%%/templates/zh_TW/samba-exported.tmpl
+%%DATADIR%%/templates/zh_TW/search.tmpl
+%%DATADIR%%/templates/zh_TW/set-printer-options-header.tmpl
+%%DATADIR%%/templates/zh_TW/set-printer-options-trailer.tmpl
+%%DATADIR%%/templates/zh_TW/test-page.tmpl
+%%DATADIR%%/templates/zh_TW/trailer.tmpl
+%%DATADIR%%/templates/zh_TW/users.tmpl
 etc/cups/cupsd.conf.default
 libexec/cups/backend/ipp
 libexec/cups/backend/lpd
@@ -1331,7 +1448,6 @@ sbin/lpmove
 @dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry share/locale/pl
 @dirrm %%DOCSDIR%%/de/images
 @dirrm %%DOCSDIR%%/de
 @dirrm %%DOCSDIR%%/es/images
@@ -1348,6 +1464,8 @@ sbin/lpmove
 @dirrm %%DOCSDIR%%/pl
 @dirrm %%DOCSDIR%%/sv/images
 @dirrm %%DOCSDIR%%/sv
+@dirrm %%DOCSDIR%%/zh_TW/images
+@dirrm %%DOCSDIR%%/zh_TW
 @dirrm %%DOCSDIR%%/images
 @dirrm %%DOCSDIR%%/help
 @dirrm %%DOCSDIR%%
@@ -1359,6 +1477,7 @@ sbin/lpmove
 @dirrm %%DATADIR%%/templates/ja
 @dirrm %%DATADIR%%/templates/pl
 @dirrm %%DATADIR%%/templates/sv
+@dirrm %%DATADIR%%/templates/zh_TW
 @dirrm %%DATADIR%%/templates
 @exec  mkdir -p %D/%%DATADIR%%/profiles
 @dirrm %%DATADIR%%/profiles
