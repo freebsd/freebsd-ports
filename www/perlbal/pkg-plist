@@ -1,8 +1,16 @@
-bin/perlbal
+@comment $FreeBSD$
+%%PORTDOCS%%%%DOCSDIR%%/config-guide.txt
+%%PORTDOCS%%%%DOCSDIR%%/hacking/classes.txt
+%%PORTDOCS%%%%DOCSDIR%%/hacking/hooks.txt
+%%PORTDOCS%%%%DOCSDIR%%/hacking/todo.txt
+%%PORTDOCS%%%%DOCSDIR%%/http-versions.txt
+%%PORTDOCS%%%%DOCSDIR%%/reproxying.txt
+%%PORTDOCS%%%%DOCSDIR%%/service-parameters.txt
 %%SITE_PERL%%/Perlbal.pm
 %%SITE_PERL%%/Perlbal/AIO.pm
 %%SITE_PERL%%/Perlbal/BackendHTTP.pm
 %%SITE_PERL%%/Perlbal/Cache.pm
+%%SITE_PERL%%/Perlbal/ChunkedUploadState.pm
 %%SITE_PERL%%/Perlbal/ClientHTTP.pm
 %%SITE_PERL%%/Perlbal/ClientHTTPBase.pm
 %%SITE_PERL%%/Perlbal/ClientManage.pm
@@ -11,16 +19,15 @@ bin/perlbal
 %%SITE_PERL%%/Perlbal/HTTPHeaders.pm
 %%SITE_PERL%%/Perlbal/ManageCommand.pm
 %%SITE_PERL%%/Perlbal/Plugin/AccessControl.pm
-%%SITE_PERL%%/Perlbal/ChunkedUploadState.pm
+%%SITE_PERL%%/Perlbal/Plugin/AutoRemoveLeadingDir.pm
 %%SITE_PERL%%/Perlbal/Plugin/EchoService.pm
 %%SITE_PERL%%/Perlbal/Plugin/Highpri.pm
+%%SITE_PERL%%/Perlbal/Plugin/LazyCDN.pm
+%%SITE_PERL%%/Perlbal/Plugin/NotModified.pm
 %%SITE_PERL%%/Perlbal/Plugin/Palimg.pm
 %%SITE_PERL%%/Perlbal/Plugin/Queues.pm
 %%SITE_PERL%%/Perlbal/Plugin/Stats.pm
 %%SITE_PERL%%/Perlbal/Plugin/Vhosts.pm
-%%SITE_PERL%%/Perlbal/Plugin/LazyCDN.pm
-%%SITE_PERL%%/Perlbal/Plugin/AutoRemoveLeadingDir.pm
-%%SITE_PERL%%/Perlbal/Plugin/NotModified.pm
 %%SITE_PERL%%/Perlbal/Pool.pm
 %%SITE_PERL%%/Perlbal/ReproxyManager.pm
 %%SITE_PERL%%/Perlbal/Service.pm
@@ -32,7 +39,10 @@ bin/perlbal
 %%SITE_PERL%%/Perlbal/UploadListener.pm
 %%SITE_PERL%%/Perlbal/Util.pm
 %%SITE_PERL%%/mach/auto/Perlbal/.packlist
-@dirrm %%SITE_PERL%%/Perlbal/Plugin
-@dirrm %%SITE_PERL%%/Perlbal/Test
-@dirrm %%SITE_PERL%%/Perlbal
+bin/perlbal
 @dirrm %%SITE_PERL%%/mach/auto/Perlbal
+@dirrm %%SITE_PERL%%/Perlbal/Test
+@dirrm %%SITE_PERL%%/Perlbal/Plugin
+@dirrm %%SITE_PERL%%/Perlbal
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/hacking
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
