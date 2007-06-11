@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-MimeInfo
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 PORTREVISION=	0
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -16,11 +16,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rafan@FreeBSD.org
 COMMENT=	Determine file type
 
-BUILD_DEPENDS=	${SITE_PERL}/File/BaseDir.pm:${PORTSDIR}/devel/p5-File-BaseDir\
+BUILD_DEPENDS=	${SITE_PERL}/File/BaseDir.pm:${PORTSDIR}/devel/p5-File-BaseDir \
+		${SITE_PERL}/File/DesktopEntry.pm:${PORTSDIR}/devel/p5-File-DesktopEntry \
 		${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN1=		mimetype.1 mimeopen.1
 MAN3=		File::MimeInfo::Applications.3 \
@@ -29,10 +30,4 @@ MAN3=		File::MimeInfo::Applications.3 \
 		File::MimeInfo::Rox.3 \
 		File::MimeInfo.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} <= 500503
-IGNORE=	newer perl version required. Install lang/perl5 or lang/perl5.8 and try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
