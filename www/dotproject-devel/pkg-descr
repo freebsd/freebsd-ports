@@ -6,6 +6,7 @@ themes.
 Features Include
 
     * User Management
+    * LDAP / Active Directory authentication
     * Email based trouble Ticket System, (Integrated voxel.net's ticketsmith)
     * Client/Company Management
     * Project listings
@@ -15,6 +16,5 @@ Features Include
     * Calendar
     * Discussion Forum
     * Resource Based Permissions 
-
 
 WWW: http://www.dotproject.net
