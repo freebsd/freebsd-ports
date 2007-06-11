@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libarena
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.25thandclement.com/~william/projects/releases/
 EXTRACT_SUFX=	.tgz
@@ -17,7 +17,9 @@ COMMENT=	Custom Memory Allocator Interface
 
 USE_GMAKE=	yes
 
-PLIST_FILES=	include/arena/pool.h \
+PLIST_FILES=	include/arena/align.h \
+		include/arena/arena.h \
+		include/arena/pool.h \
 		include/arena/proto.h \
 		include/arena/rbits.h \
 		include/arena/util.h \
