@@ -70,11 +70,12 @@ lib/ion3/mod/mod_tiling.so
 %%DATADIR%%/welcome.txt
 %%NLS%%share/locale/cs/LC_MESSAGES/ion3.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/ion3.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/ion3.mo
 @dirrm lib/ion3/bin
 @dirrm lib/ion3/lc
 @dirrm lib/ion3/mod
 @dirrm lib/ion3
-@dirrm share/ion-3
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry etc/ion3
 @dirrmtry man/cs/man1

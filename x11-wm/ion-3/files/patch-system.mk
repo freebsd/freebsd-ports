@@ -1,5 +1,5 @@
 --- system.mk.orig	Fri Jun  8 18:57:05 2007
-+++ system.mk	Sun Jun 10 11:48:58 2007
++++ system.mk	Mon Jun 11 10:06:38 2007
 @@ -7,7 +7,7 @@
  ## Installation paths
  ##
@@ -77,7 +77,7 @@
  
  # If you're on an archaic system (such as relatively recent *BSD releases)
  # without even dummy multibyte/widechar and localisation support, you may 
-@@ -112,8 +112,8 @@
+@@ -112,18 +112,18 @@
  #DEFINES += -DCF_NO_LOCALE
  
  # On some other systems you may something like this:
@@ -87,8 +87,11 @@
 +EXTRA_INCLUDES += -I$(LOCALBASE)/include
  
  # clock_gettime for monotonic time
- EXTRA_LIBS += -lrt
-@@ -123,7 +123,7 @@
+-EXTRA_LIBS += -lrt
++#EXTRA_LIBS += -lrt
+ 
+ 
+ ##
  ## C compiler
  ##
  
