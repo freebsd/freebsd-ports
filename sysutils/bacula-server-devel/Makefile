@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bacula
-DISTVERSION=	1.39.34
+DISTVERSION=	2.1.12
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -18,10 +18,13 @@ COMMENT?=	The network backup solution (server) - DEVELOPMENT Version
 CONFLICTS=	bacula-server-[0-9]* bacula-client-[0-9]*
 
 UNIQUENAME?=${PORTNAME}${PKGNAMESUFFIX}
+USE_RC_SUBR?=	bacula-dir bacula-sd
 
-USE_RC_SUBR?=	bacula-dir.sh bacula-sd.sh
-
-SUB_FILES+=	pkg-message
+.if defined(WITH_CLIENT_ONLY)
+SUB_FILES+=	pkg-message.client
+.else
+SUB_FILES+=	pkg-message.server
+.endif
 
 # The user/group IDs below are registered, see
 # http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/book.html#DADS-UID
@@ -53,8 +56,6 @@ CONFIGURE_ENV+=	CPPFLAGS="-I/usr/include/readline -I${LOCALBASE}/include" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-ALL_OPTIONS=	CLIENT_ONLY WXCONSOLE GNOMECONSOLE SQLITE3 MYSQL POSTGRESQL MTX OPENSSL DOCS
-
 .for opt in ${ALL_OPTIONS}
 .if defined(WITH_${opt})
 BATCH=	yes
@@ -68,12 +69,12 @@ IS_INTERACTIVE=	yes
 .if defined(WITH_CLIENT_ONLY)
 OPTIONS+=	WXCONSOLE "Build with wxGTK based GUI console" off
 OPTIONS+=	GNOMECONSOLE "Build with GNOME based GUI console" off
-OPTIONS+=	DOCS "Install documention" off
 .else
 OPTIONS=	SQLITE3 "Use SqLite-3 database instead of SqLite-2" off
 OPTIONS+=	MYSQL "Use MySQL database instead of SqLite" off
 OPTIONS+=	POSTGRESQL "Use PostgreSQL database instead of SqLite" off
 OPTIONS+=	MTX "Install mtx for control of autochanger devices" off
+OPTIONS+=	AUTOSETEOT "Enable auto seteotmodel" off
 .endif
 
 OPTIONS+=	NLS "Native Language Support via gettext utilities" on
@@ -90,20 +91,11 @@ PLIST_SUB+=	BACULA_DIR=${BACULA_DIR}
 
 .include <bsd.port.pre.mk>
 
-#DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
-#.if defined(WITH_DOCS)
-#DISTFILES+=	${PORTNAME}-docs-${PORTVERSION}.tar.gz
-#.endif
-
-.if defined(WITH_DOCS)
-PORTDOCS=	ReleaseNotes bacula.pdf developers.pdf kernstodo manual bacula-web
-.endif
-
 .if defined(WITH_NLS)
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=	--enable-nls
 .else
-CONFIGURE_ARGS+=	--disable-nls   
+CONFIGURE_ARGS+=	--disable-nls
 .endif
 
 # Client only or full server version
@@ -150,7 +142,7 @@ DBTYPE=			postgresql
 SUB_LIST+=		REQ_MYSQL="" REQ_PGSQL=postgresql
 .elif defined(WITH_SQLITE3)
 CONFIGURE_ARGS+=	--with-sqlite3=yes
-LIB_DEPENDS+=		sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=		sqlite3-threads>=0:${PORTSDIR}/databases/sqlite3-threads
 DBTYPE=			sqlite3
 .else
 CONFIGURE_ARGS+=	--with-sqlite=yes
@@ -172,7 +164,7 @@ CONFIGURE_ARGS+=	--with-openssl
 MAN8=bacula-fd.8 bconsole.8
 .else
 MAN8=bacula.8 bacula-dir.8 bacula-sd.8 bcopy.8 bextract.8 bls.8 bscan.8 btape.8 btraceback.8 dbcheck.8
-MAN1=bsmtp.1 bacula-console-gnome.1 bacula-tray-monitor.1 bacula-wxconsole.1
+MAN1=bsmtp.1 bat.1
 .endif
 MAKE_ARGS+=	-E MAN8 -E MAN1
 MAKE_ENV+=	MAN8="${MAN8}" MAN1="${MAN1}"
@@ -199,8 +191,10 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "The default DB is SQLite-2!"
 .endif
-	@${ECHO_MSG} "  WITH_DOCS=yes  		if you want the documentation installed."
 	@${ECHO_MSG} "  WITH_OPENSSL=yes  	Enable OpenSSL for encrypted communication."
+.if !defined(WITH_AUTOSETEOT)
+	@${ECHO_MSG} "  WITH_AUTOSETEOT=yes  	Enable auto seteotmodel (especially useful with TWO EOF = no.)"
+.endif
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "===> Using ${DBTYPE} as the bacula database."
 	@${ECHO_MSG} ""
@@ -219,6 +213,9 @@ post-patch:
 .else
 #	In server port don't install filed
 	@${REINPLACE_CMD} -e '/^fd_subdirs = /s|src/filed||' -e 's|src/console||' ${WRKSRC}/Makefile.in
+.endif
+.if defined(WITH_AUTOSETEOT)
+	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/eotmodel-src-stored-dev.c.patch
 .endif
 
 pre-install:
@@ -264,19 +261,6 @@ post-install:
 	fi
 .endif
 
-# Documentation is only installed in -client port
-.if !defined(NOPORTDOCS) && defined(WITH_DOCS)
-	for na in manual bacula-web; do \
-		${MKDIR} ${DOCSDIR}/$$na ;\
-		cd ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION} && ${FIND} $$na | \
-			${CPIO} -pdm -L -R root:wheel ${DOCSDIR}; \
-	done
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/ReleaseNotes ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION}/manual/bacula.pdf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-docs-${PORTVERSION}/developers/developers.pdf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/kernstodo ${DOCSDIR}
-.endif
-
 #	ensure that users in the bacula group can run bconsole
 	${CHGRP} bacula ${PREFIX}/sbin/bconsole
 .else
@@ -304,60 +288,6 @@ post-install:
 		fi; \
 	done
 
-# Inform user after install about important things ....
-	@${ECHO_MSG} "*********************************************************************"
-	@${ECHO_MSG} "NOTE:"
-	@${ECHO_MSG} "Sample files are installed in ${PREFIX}/etc:"
-	@${ECHO_MSG} "  bconsole.conf.sample, bacula-barcodes.sample, bacula-fd.conf.sample"
-.if !defined(WITH_CLIENT_ONLY)
-	@${ECHO_MSG} "  bacula-sd.conf.sample, bacula-dir.conf.sample"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "An auto-changer manipulation script based on FreeBSDs"
-	@${ECHO_MSG} "chio command is included and installed at"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  ${PREFIX}/sbin/chio-bacula"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Please have a look at it if you want to use an"
-	@${ECHO_MSG} "autochanger. You have to configure the usage in"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  ${PREFIX}/etc/bacula-dir.conf"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Take care of correct permissions for changer and"
-	@${ECHO_MSG} "tape device (e.g. /dev/ch0 and /dev/n[r]sa0) i.e."
-	@${ECHO_MSG} "they must be accessible by user bacula."
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Due to lack of some features in the FreeBSD tape driver"
-	@${ECHO_MSG} "implementation you MUST add some OS dependent options to"
-	@${ECHO_MSG} "the bacula-sd.conf file:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  Hardware End of Medium = no;"
-	@${ECHO_MSG} "  Backward Space Record = no;"
-	@${ECHO_MSG} "  Backward Space File = no;"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "With 2 filemarks at EOT (see man mt):"
-	@${ECHO_MSG} "  Fast Forward Space File = no;"
-	@${ECHO_MSG} "  BSF at EOM = yes;"
-	@${ECHO_MSG} "  TWO EOF = yes;"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "With 1 filemarks at EOT (see man mt):"
-	@${ECHO_MSG} "  Fast Forward Space File = yes;"
-	@${ECHO_MSG} "  BSF at EOM = no;"
-	@${ECHO_MSG} "  TWO EOF = no;"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "NOTE: YOU CAN SWITCH EOT model ONLY when starting"
-	@${ECHO_MSG} "      from scratch with EMPTY tapes!!!!"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "It is also important that all the scripts accessed"
-	@${ECHO_MSG} "by RunBeforeJob and RunAfterJob can be executed by"
-	@${ECHO_MSG} "the user bacula."
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "For USB support read the bacula manual!! It could be necessary"
-	@${ECHO_MSG} "to configure/compile a new kernel!"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Look at ${PREFIX}/share/bacula/update_bacula_tables for"
-	@${ECHO_MSG} "database update procedure. Details can be found in the"
-	@${ECHO_MSG} "ReleaseNotes"
-.endif
-	@${ECHO_MSG} "*********************************************************************"
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
