@@ -42,9 +42,11 @@ post-patch:
 	# The tests in ciphers.test are meaningless so far:
 	${MV} ${WRKSRC}/tests/ciphers.test ${WRKSRC}/tests/ciphers.test.broken
 
+.if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/tls
 	${INSTALL_DATA} ${WRKSRC}/tls.htm ${PREFIX}/share/doc/tls/
+.endif
 
 post-build test:
 	cd ${WRKSRC}/tests && env TCL_LIBRARY="${WRKSRC}" \
