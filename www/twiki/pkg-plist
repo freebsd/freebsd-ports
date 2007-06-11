@@ -460,6 +460,12 @@
 %%TWIKI%%/data/TWiki/TWikiStoreRcsLiteDotPm.txt,v
 %%TWIKI%%/data/TWiki/TWikiStoreRcsWrapDotPm.txt
 %%TWIKI%%/data/TWiki/TWikiStoreRcsWrapDotPm.txt,v
+%%TWIKI%%/data/TWiki/TWikiStoreSearchAlgorithmsForkingDotPm.txt
+%%TWIKI%%/data/TWiki/TWikiStoreSearchAlgorithmsForkingDotPm.txt,v
+%%TWIKI%%/data/TWiki/TWikiStoreSearchAlgorithmsNativeDotPm.txt
+%%TWIKI%%/data/TWiki/TWikiStoreSearchAlgorithmsNativeDotPm.txt,v
+%%TWIKI%%/data/TWiki/TWikiStoreSearchAlgorithmsPurePerlDotPm.txt
+%%TWIKI%%/data/TWiki/TWikiStoreSearchAlgorithmsPurePerlDotPm.txt,v
 %%TWIKI%%/data/TWiki/TWikiSystemRequirements.txt
 %%TWIKI%%/data/TWiki/TWikiSystemRequirements.txt,v
 %%TWIKI%%/data/TWiki/TWikiTemplates.txt
@@ -1023,7 +1029,7 @@
 %%TWIKI%%/lib/CPAN/lib/Locale/Maketext/Lexicon/Msgcat.pm
 %%TWIKI%%/lib/CPAN/lib/Locale/Maketext/Lexicon/Tie.pm
 %%TWIKI%%/lib/CPAN/lib/Text/Diff.pm
-%%TWIKI%%/lib/LocalSite.cfg.txt
+%%TWIKI%%/lib/DEPENDENCIES
 %%TWIKI%%/lib/TWiki.pm
 %%TWIKI%%/lib/TWiki.spec
 %%TWIKI%%/lib/TWiki/Access.pm
@@ -1044,9 +1050,7 @@
 %%TWIKI%%/lib/TWiki/Configure/Checkers/DebugFileName.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/DefaultUrlHost.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/DispScriptUrlPath.pm
-%%TWIKI%%/lib/TWiki/Configure/Checkers/EgrepCmd.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/Environment.pm
-%%TWIKI%%/lib/TWiki/Configure/Checkers/FgrepCmd.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/Htpasswd/Encoding.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/Htpasswd/FileName.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/LocalesDir.pm
@@ -1060,11 +1064,13 @@
 %%TWIKI%%/lib/TWiki/Configure/Checkers/MinPasswordLength.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/NameFilter.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/OS.pm
-%%TWIKI%%/lib/TWiki/Configure/Checkers/PassthroughDir.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/PubDir.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/PubUrlPath.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/RCS/Checker.pm
+%%TWIKI%%/lib/TWiki/Configure/Checkers/RCS/EgrepCmd.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/RCS/ExtOption.pm
+%%TWIKI%%/lib/TWiki/Configure/Checkers/RCS/FgrepCmd.pm
+%%TWIKI%%/lib/TWiki/Configure/Checkers/RCS/SearchAlgorithm.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/RCS/asciiFileSuffixes.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/RCS/ciCmd.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/RCS/ciDateCmd.pm
@@ -1082,11 +1088,11 @@
 %%TWIKI%%/lib/TWiki/Configure/Checkers/RegistrationApprovals.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/ScriptSuffix.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/ScriptUrlPath.pm
-%%TWIKI%%/lib/TWiki/Configure/Checkers/Sessions/Dir.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/Sessions/ExpireAfter.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/Site/CharSet.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/Site/Locale.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/StoreImpl.pm
+%%TWIKI%%/lib/TWiki/Configure/Checkers/TempfileDir.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/TemplateDir.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/UploadFilter.pm
 %%TWIKI%%/lib/TWiki/Configure/Checkers/UpperNational.pm
@@ -1193,6 +1199,9 @@
 %%TWIKI%%/lib/TWiki/Store/RcsFile.pm
 %%TWIKI%%/lib/TWiki/Store/RcsLite.pm
 %%TWIKI%%/lib/TWiki/Store/RcsWrap.pm
+%%TWIKI%%/lib/TWiki/Store/SearchAlgorithms/Forking.pm
+%%TWIKI%%/lib/TWiki/Store/SearchAlgorithms/Native.pm
+%%TWIKI%%/lib/TWiki/Store/SearchAlgorithms/PurePerl.pm
 %%TWIKI%%/lib/TWiki/Templates.pm
 %%TWIKI%%/lib/TWiki/Time.pm
 %%TWIKI%%/lib/TWiki/UI.pm
@@ -1921,6 +1930,8 @@
 %%TWIKI%%/pub/TWiki/TWiki/thoth_baboon.gif
 %%TWIKI%%/pub/TWiki/TWikiContributor/AUTHORS
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/_filetypes.txt
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/addon.gif
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/application.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/arrowbdown.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/arrowbleft.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/arrowbright.gif
@@ -1935,6 +1946,7 @@
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/attachfile.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/bat.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/bmp.gif
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/book.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/bubble.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/building.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/buildings.gif
@@ -1947,6 +1959,7 @@
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/choice-no.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/choice-yes.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/closed.gif
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/code.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/days.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/detail.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/dll.gif
@@ -2049,19 +2062,23 @@
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/newtopic.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/note.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/notify.gif
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/package.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/parked.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/pdf.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/pencil.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/person.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/persons.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/pl.gif
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/plugin.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/plus.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/png.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/ppt.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/printtopic.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/proportional.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/ps.gif
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/puzzle.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/py.gif
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/question.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/ram.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/recentchanges.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/refreshtopic.gif
@@ -2072,8 +2089,11 @@
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/rss-small.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/save.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/search-small.gif
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/searchpackage.gif
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/searchtag.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/searchtopic.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/sh.gif
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/skin.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/sniff.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/sort.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/stargold.gif
@@ -2081,6 +2101,19 @@
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/statistics.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/stop.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/swf.gif
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/tablesortdiamond.gif
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/tablesortdown.gif
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/tablesortup.gif
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/tag-black.gif
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/tag-blue.gif
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/tag-brown.gif
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/tag-green.gif
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/tag-magenta.gif
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/tag-orange.gif
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/tag-purple.gif
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/tag-red.gif
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/tag-yellow.gif
+%%TWIKI%%/pub/TWiki/TWikiDocGraphics/tag.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/target.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/tip.gif
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/todo.gif
@@ -2119,16 +2152,22 @@
 %%TWIKI%%/pub/TWiki/TWikiDocGraphics/zip.gif
 %%TWIKI%%/pub/TWiki/TWikiJavascripts/twiki.js
 %%TWIKI%%/pub/TWiki/TWikiJavascripts/twikiArray.js
+%%TWIKI%%/pub/TWiki/TWikiJavascripts/twikiCSS.js
 %%TWIKI%%/pub/TWiki/TWikiJavascripts/twikiEvent.js
 %%TWIKI%%/pub/TWiki/TWikiJavascripts/twikiForm.js
 %%TWIKI%%/pub/TWiki/TWikiJavascripts/twikiFunction.js
 %%TWIKI%%/pub/TWiki/TWikiJavascripts/twikiHTML.js
+%%TWIKI%%/pub/TWiki/TWikiJavascripts/twikiPref.js
+%%TWIKI%%/pub/TWiki/TWikiJavascripts/twikiString.js
+%%TWIKI%%/pub/TWiki/TWikiJavascripts/twikiStringUnicodeChars.js
 %%TWIKI%%/pub/TWiki/TWikiJavascripts/twikiWindow.js
+%%TWIKI%%/pub/TWiki/TWikiJavascripts/twiki.compressed.js
 %%TWIKI%%/pub/TWiki/TWikiJavascripts/twiki_attach.js
 %%TWIKI%%/pub/TWiki/TWikiJavascripts/twiki_edit.js
 %%TWIKI%%/pub/TWiki/TWikiJavascripts/twiki_renamebase.js
 %%TWIKI%%/pub/TWiki/TWikiJavascripts/twiki_renamedelete.js
 %%TWIKI%%/pub/TWiki/TWikiJavascripts/twikilib.js
+%%TWIKI%%/pub/TWiki/TWikiJavascripts/twikiuiToggle.js
 %%TWIKI%%/pub/TWiki/TWikiJavascripts/unicode_chars.js
 %%TWIKI%%/pub/TWiki/TWikiLogos/T-logo-124x35-t.gif
 %%TWIKI%%/pub/TWiki/TWikiLogos/T-logo-124x35.png
@@ -2264,6 +2303,7 @@
 %%TWIKI%%/templates/oopsattention.pattern.tmpl
 %%TWIKI%%/templates/oopsattention.tmpl
 %%TWIKI%%/templates/oopschangelanguage.tmpl
+%%TWIKI%%/templates/oopsgeneric.tmpl
 %%TWIKI%%/templates/oopslanguagechanged.pattern.tmpl
 %%TWIKI%%/templates/oopslanguagechanged.tmpl
 %%TWIKI%%/templates/oopsleaseconflict.classic.tmpl
@@ -2339,6 +2379,7 @@
 %%TWIKI%%/templates/styles.pattern.tmpl
 %%TWIKI%%/templates/stylesdynamic.pattern.tmpl
 %%TWIKI%%/templates/twiki.classic.tmpl
+%%TWIKI%%/templates/twiki.pattern.tmpl
 %%TWIKI%%/templates/twiki.tmpl
 %%TWIKI%%/templates/view.classic.tmpl
 %%TWIKI%%/templates/view.kupu.tmpl
@@ -2363,14 +2404,19 @@
 %%TWIKI%%/templates/viewtoolbar.pattern.tmpl
 %%TWIKI%%/templates/viewtopbar.pattern.tmpl
 %%TWIKI%%/templates/viewtopicactionbuttons.pattern.tmpl
-%%TWIKI%%/tools/DEPENDENCIES
 %%TWIKI%%/tools/geturl.pl
 %%TWIKI%%/tools/html2tml.pl
 %%TWIKI%%/tools/mailnotify
+%%TWIKI%%/tools/native_search/Makefile.PL
+%%TWIKI%%/tools/native_search/NativeTWikiSearch.pm
+%%TWIKI%%/tools/native_search/NativeTWikiSearch.xs
+%%TWIKI%%/tools/native_search/cgrep.c
+%%TWIKI%%/tools/native_search/test.pl
 %%TWIKI%%/tools/rewriteshbang.pl
 %%TWIKI%%/tools/tick_twiki.pl
 %%TWIKI%%/tools/upgrade_emails.pl
 %%TWIKI%%/twiki_httpd_conf.txt
+@dirrm %%TWIKI%%/tools/native_search
 @dirrm %%TWIKI%%/tools
 @dirrm %%TWIKI%%/templates
 @dirrm %%TWIKI%%/pub/_work_areas
@@ -2458,6 +2504,7 @@
 @dirrm %%TWIKI%%/locale
 @dirrm %%TWIKI%%/lib/TWiki/Users
 @dirrm %%TWIKI%%/lib/TWiki/UI
+@dirrm %%TWIKI%%/lib/TWiki/Store/SearchAlgorithms
 @dirrm %%TWIKI%%/lib/TWiki/Store
 @dirrm %%TWIKI%%/lib/TWiki/Prefs
 @dirrm %%TWIKI%%/lib/TWiki/Plugins/WysiwygPlugin/HTML2TML
