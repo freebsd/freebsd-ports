@@ -1,0 +1,8 @@
+RRDman is a set of utilities that manipulate the RRDtool database files.
+Currently it consists of the following utilities:
+
+    * rrd_hwreapply: Re-apply Holt-Winters prediction parameters to RRD data
+
+RRDman is hosted as a subproject of RRFW
+
+WWW:	http://rrfw.sourceforge.net/rrdman/
