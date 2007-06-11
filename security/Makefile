@@ -390,6 +390,7 @@
     SUBDIR += p5-Crypt-OpenSSL-DSA
     SUBDIR += p5-Crypt-OpenSSL-RSA
     SUBDIR += p5-Crypt-OpenSSL-Random
+    SUBDIR += p5-Crypt-OpenSSL-X509
     SUBDIR += p5-Crypt-PGPSimple
     SUBDIR += p5-Crypt-PassGen
     SUBDIR += p5-Crypt-PasswdMD5
