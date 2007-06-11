@@ -8277,6 +8277,7 @@ ocamlweb	ports/devel/ocamlweb
 oclock		ports/x11/oclock
 ocp		ports/audio/ocp
 ocrad		ports/graphics/ocrad
+ocre		ports/graphics/ocre
 ocs-unix-agent	ports/net-mgmt/ocs-unix-agent
 ocsigen		ports/www/ocsigen
 octave		ports/math/octave
