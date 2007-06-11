@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twiki
-PORTVERSION=	4.1.0
+PORTVERSION=	4.1.2
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://twiki.org/p/pub/Codev/Release/ \
@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	farrokhi@FreeBSD.org
 COMMENT=	A flexible, powerful, and easy to use Web-based collaboration platform
+
+RUN_DEPENDS=	${SITE_PERL}/CGI/Session.pm:${PORTSDIR}/www/p5-CGI-Session
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
@@ -39,14 +41,14 @@ pre-everything::
 	@sleep 1
 
 post-patch:
+.for F in data/TWiki/TWikiInstallationGuide.txt,v data/TWiki/TWikiDocumentation.txt,v data/TWiki/TWikiInstallationGuide.txt INSTALL.html lib/TWiki.spec twiki_httpd_conf.txt
 	@${REINPLACE_CMD} -i "" -e "s|\/home\/httpd\/twiki|${TWIKIDIR}|g" \
-	${WRKSRC}/twiki_httpd_conf.txt
-	@${REINPLACE_CMD} -i "" -e "s|\/home\/httpd\/twiki|${TWIKIDIR}|g" \
-	${WRKSRC}/lib/LocalSite.cfg.txt
+		${WRKSRC}/$F
+.endfor
 
 do-install:
 	${INSTALL} -d -m 0755 ${TWIKIDIR}
-	(cd ${WRKSRC} && ${FIND} . -not -name .PLIST.mktmp -not -name '.*_done.*' -not -name pkg-install | \
+	(cd ${WRKSRC} && ${FIND} . -not -name ".PLIST.*" -not -name '.*_done.*' -not -name pkg-install | \
 		${CPIO} -pdmu -R${SHAREOWN}:${SHAREGRP} ${TWIKIDIR})
 
 post-install:
