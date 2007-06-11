@@ -10,18 +10,17 @@ PORTNAME=	feedparser
 PORTVERSION=	4.1
 PORTREVISION=	2
 CATEGORIES=	textproc python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+MASTER_SITES=	http://feedparser.googlecode.com/files/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
-MASTER_SITE_SUBDIR=	feedparser
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	An RSS feed parser written in Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/chardet/__init__.py:${PORTSDIR}/textproc/py-chardet
 
 WRKSRC=		${WRKDIR}
-USE_PYTHON=	2.1+
+USE_PYTHON=	yes
 USE_ZIP=	yes
 USE_PYDISTUTILS=	yes
 
