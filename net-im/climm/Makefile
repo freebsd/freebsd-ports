@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	micq
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4.1
 CATEGORIES=	net-im
 MASTER_SITES=	http://micq.org/source/ \
 		http://micq.alpha345.com/source/ \
 		http://http.bg.micq.org/source/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@stack.nl
 COMMENT=	Text-based ICQ implementation
 
 USE_GMAKE=	yes
