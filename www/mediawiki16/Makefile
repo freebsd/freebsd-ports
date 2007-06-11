@@ -8,13 +8,12 @@
 PORTNAME=	mediawiki
 PORTVERSION=	1.6.10
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	wikipedia
+MASTER_SITES=	http://download.wikimedia.org/mediawiki/1.6/
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	The wiki engine used by Wikipedia
 
-CONFLICTS=	mediawiki-1.[0-57-9].*
+CONFLICTS=	mediawiki-1.[0-57-9].* mediawiki-1.1[0-9].*
 
 NO_LATEST_LINK=	yes
 
