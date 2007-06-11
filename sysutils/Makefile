@@ -455,6 +455,7 @@
     SUBDIR += p5-Stat-lsMode
     SUBDIR += p5-Sys-CpuLoad
     SUBDIR += p5-Sys-Filesystem
+    SUBDIR += p5-Sys-Gamin
     SUBDIR += p5-Sys-Hostname-FQDN
     SUBDIR += p5-Sys-Hostname-Long
     SUBDIR += p5-Sys-Utmp
