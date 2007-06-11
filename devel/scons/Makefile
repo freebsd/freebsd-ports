@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scons
-PORTVERSION=	0.96.94
+PORTVERSION=	0.97
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,4 +21,12 @@ USE_PYDISTUTILS=	yes
 
 PLIST_SUB=	SCONS_VER=${PORTVERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 250
+PLIST_SUB+=	NO_EGG="@comment "
+.else
+PLIST_SUB+=	NO_EGG=""
+.endif
+
+.include <bsd.port.post.mk>

@@ -424,6 +424,24 @@ lib/scons-%%SCONS_VER%%/SCons/Warnings.pyo
 lib/scons-%%SCONS_VER%%/SCons/__init__.py
 lib/scons-%%SCONS_VER%%/SCons/__init__.pyc
 lib/scons-%%SCONS_VER%%/SCons/__init__.pyo
+lib/scons-%%SCONS_VER%%/SCons/compat/__init__.py
+lib/scons-%%SCONS_VER%%/SCons/compat/__init__.pyc
+lib/scons-%%SCONS_VER%%/SCons/compat/__init__.pyo
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_UserString.py
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_UserString.pyc
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_UserString.pyo
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_sets.py
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_sets.pyc
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_sets.pyo
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_sets15.py
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_sets15.pyc
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_sets15.pyo
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_subprocess.py
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_subprocess.pyc
+lib/scons-%%SCONS_VER%%/SCons/compat/_scons_subprocess.pyo
+lib/scons-%%SCONS_VER%%/SCons/compat/builtins.py
+lib/scons-%%SCONS_VER%%/SCons/compat/builtins.pyc
+lib/scons-%%SCONS_VER%%/SCons/compat/builtins.pyo
 lib/scons-%%SCONS_VER%%/SCons/cpp.py
 lib/scons-%%SCONS_VER%%/SCons/cpp.pyc
 lib/scons-%%SCONS_VER%%/SCons/cpp.pyo
@@ -433,6 +451,8 @@ lib/scons-%%SCONS_VER%%/SCons/dblite.pyo
 lib/scons-%%SCONS_VER%%/SCons/exitfuncs.py
 lib/scons-%%SCONS_VER%%/SCons/exitfuncs.pyc
 lib/scons-%%SCONS_VER%%/SCons/exitfuncs.pyo
+%%NO_EGG%%lib/scons-%%SCONS_VER%%/scons-%%SCONS_VER%%-py2.5.egg-info
+@dirrm lib/scons-%%SCONS_VER%%/SCons/compat
 @dirrm lib/scons-%%SCONS_VER%%/SCons/Tool
 @dirrm lib/scons-%%SCONS_VER%%/SCons/Sig
 @dirrm lib/scons-%%SCONS_VER%%/SCons/Script
