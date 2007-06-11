@@ -2,19 +2,6 @@ bin/guikachu
 bin/guikachu2rcp
 share/gnome/application-registry/guikachu.applications
 share/gnome/applications/guikachu.desktop
-share/gnome/guikachu/fonts/bigbold.txt
-share/gnome/guikachu/fonts/bigfont.txt
-share/gnome/guikachu/fonts/boldfont.txt
-share/gnome/guikachu/fonts/ledfont.txt
-share/gnome/guikachu/fonts/stdfont.txt
-share/gnome/guikachu/fonts/symbol.txt
-share/gnome/guikachu/fonts/symbol11.txt
-share/gnome/guikachu/fonts/symbol7.txt
-share/gnome/guikachu/glade/guikachu.glade
-share/gnome/guikachu/target-defs/ebook-l.guikachu-target
-share/gnome/guikachu/target-defs/ebook-p.guikachu-target
-share/gnome/guikachu/target-defs/palm-color.guikachu-target
-share/gnome/guikachu/target-defs/palm.guikachu-target
 share/gnome/help/guikachu/C/bitmaps.html
 share/gnome/help/guikachu/C/form-editor.html
 share/gnome/help/guikachu/C/guikachu-doc-html.css
@@ -47,8 +34,6 @@ share/gnome/help/guikachu/C/resource-win.html
 share/gnome/help/guikachu/C/resources.html
 share/gnome/help/guikachu/C/using.html
 share/gnome/help/guikachu/C/widgets.html
-share/gnome/mime-info/guikachu.keys
-share/gnome/mime-info/guikachu.mime
 share/gnome/pixmaps/guikachu-96.png
 share/gnome/pixmaps/guikachu-application-x-guikachu-96.png
 share/gnome/pixmaps/guikachu.png
@@ -71,15 +56,14 @@ share/locale/sr@Latn/LC_MESSAGES/guikachu.mo
 share/locale/sv/LC_MESSAGES/guikachu.mo
 share/locale/tr/LC_MESSAGES/guikachu.mo
 share/locale/uk/LC_MESSAGES/guikachu.mo
+share/locale/vi/LC_MESSAGES/guikachu.mo
 share/locale/wa/LC_MESSAGES/guikachu.mo
 share/locale/zh_CN/LC_MESSAGES/guikachu.mo
+share/mime/guikachu.keys
+share/mime/guikachu.mime
 share/mime/packages/guikachu.mime.xml
 @dirrm share/gnome/help/guikachu/C/pictures
 @dirrm share/gnome/help/guikachu/C
 @dirrm share/gnome/help/guikachu
-@dirrm share/gnome/guikachu/target-defs
-@dirrm share/gnome/guikachu/glade
-@dirrm share/gnome/guikachu/fonts
-@dirrm share/gnome/guikachu
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
