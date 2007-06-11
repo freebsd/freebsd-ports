@@ -7,7 +7,7 @@
 
 PORTNAME=		hastymail
 PORTVERSION=		1.5
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		www
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	hastymail
@@ -27,16 +27,30 @@ USE_PHP=	session imap
 
 .include <bsd.port.pre.mk>
 
+# Don't install automatically CVS directories, patched files and the default config file.
+FIND_SKIP_OPTS=	-not -name hastymail.conf-example -not -name '*.orig' \
+		-not -name '*.bak' -not -path '*/CVS/*' -not -name CVS
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," \
+		${WRKSRC}/lib/constant.php
+
 pre-install:
-		@${FIND} -s -d ${WRKSRC}/ -type f | ${SED} "s?${WRKSRC}?${INSTALL_DIR}?g" >${PLIST}
-		@${FIND} -s -d ${WRKSRC}/ -type d  | ${SED} "s?${WRKSRC}?@dirrm ${INSTALL_DIR}?g" >> ${PLIST}
+	@${FIND} -s -d ${WRKSRC}/ -type f ${FIND_SKIP_OPTS} | \
+		${SED} "s?${WRKSRC}?${INSTALL_DIR}?g" >${PLIST}
+	@${FIND} -s -d ${WRKSRC}/ -type d ${FIND_SKIP_OPTS} | \
+		${SED} "s?${WRKSRC}?@dirrm ${INSTALL_DIR}?g" >> ${PLIST}
+	@${ECHO_CMD} etc/hastymail.conf.sample >> ${PLIST}
 
 do-install:
-		@${MKDIR} ${PREFIX}/${INSTALL_DIR}
-		@cd ${WRKSRC} && ${FIND} . | ${PAX} -rw ${PREFIX}/${INSTALL_DIR}
-		@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${INSTALL_DIR}
+	@${MKDIR} ${PREFIX}/${INSTALL_DIR}
+	@cd ${WRKSRC} && ${FIND} . ${FIND_SKIP_OPTS} | \
+		${PAX} -rwd ${PREFIX}/${INSTALL_DIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${INSTALL_DIR}
+	@${INSTALL_DATA} ${WRKSRC}/hastymail.conf-example \
+		${PREFIX}/etc/hastymail.conf.sample
 
 post-install:
-		@${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
