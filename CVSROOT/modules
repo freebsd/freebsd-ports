@@ -13104,6 +13104,7 @@ py-wax		ports/x11-toolkits/py-wax
 py-webunit	ports/www/py-webunit
 py-webware	ports/www/py-webware
 py-webware-component	ports/www/py-webware-component
+py-wmdockapps	ports/x11-toolkits/py-wmdockapps
 py-wordnet	ports/textproc/py-wordnet
 py-wsgiref	ports/www/py-wsgiref
 py-wsgiutils	ports/devel/py-wsgiutils
