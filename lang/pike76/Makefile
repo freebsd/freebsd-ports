@@ -85,6 +85,10 @@ USE_GMAKE=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
+.if ${ARCH} == "amd64" && ${OSVERSION} >= 700019 
+BROKEN=	Does not compile
+.endif
+
 # FreeBSD 5.0 Needs to have libgmp port to support gmp.
 .if ${OSVERSION} >= 500000
 LIB_DEPENDS+=	gmp.7:${PORTSDIR}/math/libgmp4
