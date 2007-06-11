@@ -1,12 +1,13 @@
 ******************************************************
 
 You have successfully installed Hastymail webmail client.
-Dont forget to move config file to proper directory and
-to change that variable in hastymail/lib/constant.php
+Don't forget to edit your own config file. A sample config
+has been installed in:
 
-$config_file = '/etc/hastymail.conf';
+%%PREFIX%%/etc/hastymail.conf.sample
 
-as needed. After that, follow the instructions in INSTALL
-file to configure Hastymail finally.
+The proper config file path is:
+
+%%PREFIX%%/etc/hastymail.conf
 
 ******************************************************
