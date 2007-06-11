@@ -1,0 +1,14 @@
+QMPDClient is an easy to use MPD client written in Qt 4.
+
+Features:
+
+- Multimedia keys support
+- System tray icon
+- Annouce songs with passive popups
+- Drag and drop
+- Stream support
+- Playlist management
+- Tag-guessing for untagged files
+- Directory browser
+
+WWW: http://havtknut.tihlde.org/
