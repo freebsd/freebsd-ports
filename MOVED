@@ -3068,3 +3068,6 @@ graphics/tgif-nls|graphics/tgif|2007-06-09|graphics/tgif now supports NLS by def
 x11-wm/ion-3ds|x11-wm/ion-3|2007-06-10|Upstream project became -rc, soon to become release
 mail/smx|mail/meta1|2007-06-10|Project renamed
 devel/py-clientcookie||2007-06-10|Module rolled into www/py-mechanize by author
+lang/ghc5||2007-07-11|Outdated software, removed on upstream's request
+lang/ghc5-doc||2007-07-11|Outdated software, removed on upstream's request
+devel/hs-popenhs||2007-07-11|Remove software depending on outdated lang/ghc5
