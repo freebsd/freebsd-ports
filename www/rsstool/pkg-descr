@@ -1,0 +1,8 @@
+rsstool is a tool to read, parse, merge, and write RSS (and Atom)
+feeds. It has some other functions built-in like text, HTML, or
+property file output, or templates with custom tags to insert RSS
+feeds into pages that could be uploaded to a server that supports
+only static HTML.
+
+WWW: http://rsstool.y7.ath.cx/
+Author: Dirk <noisyb at users.berlios.de>
