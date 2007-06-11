@@ -21,10 +21,4 @@ LIB_DEPENDS=	cdk.5:${PORTSDIR}/devel/cdk
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
