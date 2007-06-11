@@ -6,6 +6,7 @@
 
 PORTNAME=	eGroupWare
 PORTVERSION=	1.2.106
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:C,http://nchc[^ ]+,,}
 MASTER_SITE_SUBDIR=	egroupware
@@ -49,7 +50,7 @@ USE_PHP+=	imap
 USE_PHP+=	gd
 .endif
 .if defined(WITH_PEAR)
-RUN_DEPENDS=	${LOCALBASE}/share/pear/Log.php:${PORTSDIR}/sysutils/pear-Log
+RUN_DEPENDS=	${LOCALBASE}/share/pear/Log/null.php:${PORTSDIR}/sysutils/pear-Log
 .endif
 .if defined(WITH_LDAP)
 USE_PHP+=	ldap

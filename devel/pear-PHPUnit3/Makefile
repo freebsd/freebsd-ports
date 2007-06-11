@@ -7,6 +7,7 @@
 
 PORTNAME=	PHPUnit
 PORTVERSION=	3.0.6
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 MASTER_SITES=	http://pear.phpunit.de/get/
 
@@ -259,7 +260,7 @@ _TESTSDIR=	PHPUnit/Tests
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PEAR_LOG)
-RUN_DEPENDS+=	${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log
+RUN_DEPENDS+=	${PEARDIR}/Log/null.php:${PORTSDIR}/sysutils/pear-Log
 .endif
 
 .if defined(WITH_JSON)

@@ -7,6 +7,7 @@
 
 PORTNAME=	PHPUnit2
 PORTVERSION=	2.3.4
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -90,7 +91,7 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PEAR_LOG)
-RUN_DEPENDS+=	${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log
+RUN_DEPENDS+=	${PEARDIR}/Log/null.php:${PORTSDIR}/sysutils/pear-Log
 .endif
 
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
