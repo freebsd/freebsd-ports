@@ -1,0 +1,15 @@
+reclinker is a recursive symlinking utility. It mirrors a hierarchy of
+files by means of symlinks. It's similar to GNU Stow, however:
+* written in pure C (no dependencies, fast)
+* free of forced, confusing package management terminology (like stow
+  dir, target dir, package)
+* supports both absolut and relative linking
+* supports linking into existing hierarchies, handles properly already
+  existing directory symlinks in the target hierarchy (like /usr/man ->
+  share/man)
+* supports access control (set ownership/mode of created
+  links/directories, filter processed files based on ownership/mode
+  requirements)
+
+WWW: http://creo.hu/~csaba/stuff/reclinker/
+Author: Csaba Henk

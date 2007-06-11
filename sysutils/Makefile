@@ -533,6 +533,7 @@
     SUBDIR += rdiff-backup
     SUBDIR += rdiff-backup-devel
     SUBDIR += readlink
+    SUBDIR += reclinker
     SUBDIR += recoverdm
     SUBDIR += reed
     SUBDIR += rej
