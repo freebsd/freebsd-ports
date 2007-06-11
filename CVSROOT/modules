@@ -3505,8 +3505,6 @@ ggz-txt-client	ports/games/ggz-txt-client
 ghasher		ports/sysutils/ghasher
 ghc		ports/lang/ghc
 ghc-doc		ports/lang/ghc-doc
-ghc5		ports/lang/ghc5
-ghc5-doc	ports/lang/ghc5-doc
 ghemical	ports/science/ghemical
 ghex		ports/editors/ghex
 ghfaxviewer	ports/comms/ghfaxviewer
@@ -4525,7 +4523,6 @@ hs-hgl		ports/graphics/hs-hgl
 hs-hmake		ports/devel/hs-hmake
 hs-hpl		ports/devel/hs-hpl
 hs-idoc		ports/devel/hs-idoc
-hs-popenhs	ports/devel/hs-popenhs
 hs-tclhaskell-ghc	ports/devel/hs-tclhaskell-ghc
 hsb-aspell	ports/textproc/hsb-aspell
 hsetroot	ports/graphics/hsetroot
