@@ -21,6 +21,8 @@ bin/gpredict
 share/pixmaps/gpredict/icons/gpredict-antenna.png
 share/pixmaps/gpredict/icons/gpredict-azel-small.png
 share/pixmaps/gpredict/icons/gpredict-calendar.png
+share/pixmaps/gpredict/icons/gpredict-clock-small.png
+share/pixmaps/gpredict/icons/gpredict-clock.png
 share/pixmaps/gpredict/icons/gpredict-crash.png
 share/pixmaps/gpredict/icons/gpredict-icon.png
 share/pixmaps/gpredict/icons/gpredict-layout-1.png
@@ -40,10 +42,13 @@ share/pixmaps/gpredict/icons/gpredict-polar-small.png
 share/pixmaps/gpredict/icons/gpredict-sat-list.png
 share/pixmaps/gpredict/icons/gpredict-sat-pref.png
 share/pixmaps/gpredict/maps/earth_800.png
+share/pixmaps/gpredict/maps/nasa-topo_1024.jpg
+share/pixmaps/gpredict/maps/nasa-topo_1600.jpg
+share/pixmaps/gpredict/maps/nasa-topo_2048.jpg
 share/pixmaps/gpredict/maps/nasa-topo_800.png
 @dirrm share/pixmaps/gpredict/maps
 @dirrm share/pixmaps/gpredict/icons
 @dirrm share/pixmaps/gpredict
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrmtry locale
+@dirrmtry lib/locale
