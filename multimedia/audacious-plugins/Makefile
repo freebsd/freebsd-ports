@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://static.audacious-media-player.org/release/
 EXTRACT_SUFX=	.tgz
@@ -20,10 +20,11 @@ LIB_DEPENDS=	curl.4:${PORTSDIR}/ftp/curl
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib" \
+		CFLAGS="-I${LOCALBASE}/include" \
+		CPP=${CPP}
 CONFIGURE_ARGS=	--disable-evdevplug --disable-alsa --disable-amidiplug \
-		--disable-pulse --disable-coreaudio --disable-projectm
+		--disable-pulse --disable-projectm
 WANT_GNOME=	yes
 WANT_SDL=	yes
 
@@ -292,6 +293,9 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$EGREP|egrep|g' ${WRKSRC}/configure
 
 post-install:
 .if defined(WITH_GNOME)
