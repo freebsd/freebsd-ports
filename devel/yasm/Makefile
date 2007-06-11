@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	yasm
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	devel lang
 MASTER_SITES=	http://www.tortall.net/projects/yasm/releases/
 
