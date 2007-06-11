@@ -3067,3 +3067,4 @@ net/sixxs-heartbeatd||2007-06-05|obsolete, use net/sixxs-aiccu instead
 graphics/tgif-nls|graphics/tgif|2007-06-09|graphics/tgif now supports NLS by default
 x11-wm/ion-3ds|x11-wm/ion-3|2007-06-10|Upstream project became -rc, soon to become release
 mail/smx|mail/meta1|2007-06-10|Project renamed
+devel/py-clientcookie||2007-06-10|Module rolled into www/py-mechanize by author

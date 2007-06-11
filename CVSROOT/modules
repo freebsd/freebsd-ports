@@ -12694,7 +12694,6 @@ py-ciphon	ports/devel/py-ciphon
 py-cjkcodecs	ports/converters/py-cjkcodecs
 py-cjson	ports/devel/py-cjson
 py-clamav	ports/security/py-clamav
-py-clientcookie	ports/devel/py-clientcookie
 py-clientform	ports/www/py-clientform
 py-cog		ports/devel/py-cog
 py-compiler	ports/lang/py-compiler
