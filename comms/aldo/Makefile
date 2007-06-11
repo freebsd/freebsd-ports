@@ -25,10 +25,6 @@ MAN1=	aldo.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=	"Doesn't build on FreeBSD < 5.x"
-.endif
-
 .if ${OSVERSION} >= 700042
 BROKEN=		Broken with gcc 4.2
 .endif
