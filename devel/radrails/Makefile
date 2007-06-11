@@ -41,14 +41,6 @@ DESKTOP_ENTRIES=	\
 PLIST_FILES=	%%DATADIR%%/${ICON} bin/radrails
 PLIST_DIRS=	%%DATADIR%%/${ICONDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=	does not build
-.endif
-
-#do-configure:
-
 pre-install:
 	(cd ${WRKDIR}; jar -xf ${WRKSRC}/plugins/org.radrails.ide.ui_${PORTVERSION}.jar ${ICON})
 	${CP} ${FILESDIR}/radrails.sh ${WRKDIR}/radrails.sh
@@ -72,4 +64,4 @@ post-install:
 	    | ${SED} 's,^\.,@dirrm ${DATADIR:S,^${PREFIX}/,,},' >>${TMPPLIST}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
