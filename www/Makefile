@@ -1050,6 +1050,7 @@
     SUBDIR += rnews
     SUBDIR += roundup
     SUBDIR += roxen
+    SUBDIR += rsstail
     SUBDIR += rsstool
     SUBDIR += rssowl
     SUBDIR += rt2
