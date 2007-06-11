@@ -635,6 +635,7 @@
     SUBDIR += rubygem-gruff
     SUBDIR += rubygem-railroad
     SUBDIR += rubygem-scruffy
+    SUBDIR += rubygem-turing
     SUBDIR += rubyphoto
     SUBDIR += s10sh
     SUBDIR += s3switch

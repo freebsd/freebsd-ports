@@ -1,0 +1,5 @@
+Ruby implementation of captcha (Completely Automated Public Turing-Test to
+Tell Computers and Humans Apart) that is both easy to use and easy to
+customize/extend.
+
+WWW: http://turing.rubyforge.org/
