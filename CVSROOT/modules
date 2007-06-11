@@ -13275,6 +13275,7 @@ qmake4		ports/devel/qmake4
 qmc		ports/misc/qmc
 qmc2		ports/emulators/qmc2
 qmls		ports/cad/qmls
+qmpdclient	ports/audio/qmpdclient
 qmqtool		ports/mail/qmqtool
 qmrtg		ports/mail/qmrtg
 qnetchess	ports/games/qnetchess
