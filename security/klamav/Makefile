@@ -7,7 +7,7 @@
 
 PORTNAME=	klamav
 PORTVERSION=	0.41
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	klamav
@@ -17,7 +17,7 @@ MAINTAINER=	anderson@cnpm.embrapa.br
 COMMENT=	A KDE 3 front-end to Clam Anti-Virus
 
 LIB_DEPENDS=	clamav:${PORTSDIR}/security/clamav \
-		sqlite3:${PORTSDIR}/databases/sqlite3
+		sqlite3:${PORTSDIR}/databases/sqlite3-threads
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -34,19 +34,16 @@ USE_AUTOTOOLS=	libtool:15
 USE_AUTOTOOLS+=	aclocal:19
 
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS} -lintl -L${PREFIX}/lib"
-CONFIGURE_ARGS+=--with-qt-dir=${X11BASE} \
+CONFIGURE_ARGS+=--with-qt-dir=${QT_PREFIX} \
 		--without-included-sqlite
 
 USE_KDELIBS_VER=	3
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-IGNORE=	klamav doesn't compile on FreeBSD 4.X
-.endif
-
 pre-configure:
 	@${CP} ${LTMAIN} ${WRKSRC}/admin
 	@${CP} ${LIBTOOL_M4} ${WRKSRC}/admin
+	@${CP} ${PREFIX}/include/clamav-config.h ${WRKSRC}/src/klamd
 
 .include <bsd.port.post.mk>
