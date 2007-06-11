@@ -109,6 +109,7 @@
     SUBDIR += dokuwiki
     SUBDIR += dokuwiki-devel
     SUBDIR += dotproject
+    SUBDIR += dotproject-devel
     SUBDIR += dpsearch
     SUBDIR += drraw
     SUBDIR += drupal4

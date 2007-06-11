@@ -2073,6 +2073,7 @@ dotconf		ports/devel/dotconf
 dotconf++	ports/devel/dotconf++
 dotfile		ports/misc/dotfile
 dotproject	ports/www/dotproject
+dotproject-devel	ports/www/dotproject-devel
 dotter		ports/biology/dotter
 dovecot		ports/mail/dovecot
 dovecot-sieve	ports/mail/dovecot-sieve
