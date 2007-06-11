@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xglurbules
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.pepcross.com/glurbules/
+MASTER_SITES=	http://stephenroome.com/xglurbules/
 
 MAINTAINER=	steve@pepcross.com
 COMMENT=	Burning particle system eye candy program thingy for X11
@@ -22,16 +21,6 @@ USE_X_PREFIX=	yes
 MANCOMPRESSED=	yes
 
 PLIST_FILES=	bin/xglurbules \
-		bin/xglurbules-noshm \
-		bin/xglurbules-test
+		bin/xglurbules-noshm
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		does not compile on !i386
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},' ${WRKSRC}/Makefile
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
