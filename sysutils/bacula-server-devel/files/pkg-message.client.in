@@ -1,11 +1,14 @@
 ################################################################################
+
+NOTE:
+Sample files are installed in ${PREFIX}/etc:
+bconsole.conf.sample, bacula-barcodes.sample, bacula-fd.conf.sample
+
   Please read this file:
 
 	%%DOCSDIR%%/ReleaseNotes
 
-  for the upgrade procedure!
-
-  IF YOU IGNORE THIS you may !! LOSE DATA !!
+  as installed by docs port for the upgrade procedure.
 
 IMPORTANT UPGRADE NOTES:
 
@@ -16,9 +19,5 @@ IMPORTANT UPGRADE NOTES:
 - Lots of new features
 
 Read the ReleaseNotes for further information.
-
-  Please note that bacula-server no longer installs the client
-  and that the documentation can be optionally installed with the
-  client port (sysutils/bacula-client).
 
 ################################################################################
