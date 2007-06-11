@@ -5,8 +5,5 @@ bin/mimetype
 %%SITE_PERL%%/File/MimeInfo/Cookbook.pod
 %%SITE_PERL%%/File/MimeInfo/Magic.pm
 %%SITE_PERL%%/File/MimeInfo/Rox.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/MimeInfo/.packlist
 @dirrmtry %%SITE_PERL%%/File/MimeInfo
 @dirrmtry %%SITE_PERL%%/File
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/MimeInfo
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
