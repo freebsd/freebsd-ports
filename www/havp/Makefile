@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	havp
-PORTVERSION=	0.85
+PORTVERSION=	0.86
 CATEGORIES=	www
 MASTER_SITES=	http://www.server-side.de/download/ \
 				http://bio3k.softboard.ru/uploads/arch/
@@ -36,10 +36,6 @@ OPTIONS=	SSL "Enable SSL proxying (not scanned, only forwarded!)" on \
 			TROPHIE "Enable Trend Micro (Trophie) support" off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		this port does not compile on FreeBSD 4.x.
-.endif
 
 .if defined(WITH_SSL)
 CONFIGURE_ARGS+=	--enable-ssl-tunnel

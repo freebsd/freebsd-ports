@@ -1,26 +1,33 @@
---- havp/Makefile.in.orig	Fri Mar  9 10:18:56 2007
-+++ havp/Makefile.in	Fri Mar  9 10:20:54 2007
-@@ -25,23 +25,6 @@
- 	$(INSTALL) -m 755 -d $(etcdir)
- 	$(INSTALL) -s -m 755 havp $(prefix)/sbin/havp
- 	$(INSTALL) -m 644 ../etc/havp/havp.config $(etcdir)/havp.config.default
--	if [ ! -f $(etcdir)/havp.config ]; then \
--		$(INSTALL) -m 644 ../etc/havp/havp.config $(etcdir)/havp.config; \
+--- havp/Makefile.in.orig	Fri May  4 14:37:52 2007
++++ havp/Makefile.in	Fri May  4 14:40:43 2007
+@@ -26,30 +26,7 @@
+ install: all
+ 	$(INSTALL) -d $(DESTDIR)$(sbindir)
+ 	$(INSTALL) -s -m 755 havp $(DESTDIR)$(sbindir)/havp
+-	$(INSTALL) -d -m 755 $(DESTDIR)$(localstatedir)/log/havp
+-	$(INSTALL) -d -m 755 $(DESTDIR)$(localstatedir)/tmp/havp
+-	$(INSTALL) -d -m 755 $(DESTDIR)$(localstatedir)/run/havp
+-	$(INSTALL) -d $(DESTDIR)/etc/init.d
+ 	$(INSTALL) -m 644 ../etc/havp/havp.config $(DESTDIR)$(sysconfdir)/havp/havp.config.default
+-	@if [ ! -f $(DESTDIR)$(sysconfdir)/havp/havp.config ]; then \
+-		echo "$(INSTALL) -m 644 ../etc/havp/havp.config $(DESTDIR)$(sysconfdir)/havp/havp.config"; \
+-	        $(INSTALL) -m 644 ../etc/havp/havp.config $(DESTDIR)$(sysconfdir)/havp/havp.config; \
 -	else \
--		../update-conf $(etcdir)/havp.config; \
+-		echo "Updating config $(DESTDIR)$(sysconfdir)/havp/havp.config"; \
+-		../update-conf $(DESTDIR)$(sysconfdir)/havp/havp.config; \
 -	fi
--	if [ ! -f $(etcdir)/whitelist ]; then \
--		$(INSTALL) -m 644 ../etc/havp/whitelist $(etcdir)/whitelist; \
+-	@if [ ! -f $(DESTDIR)$(sysconfdir)/havp/whitelist ]; then \
+-		$(INSTALL) -m 644 ../etc/havp/whitelist $(DESTDIR)$(sysconfdir)/havp/whitelist; \
+-	else \
+-		echo "Not overwriting old $(DESTDIR)$(sysconfdir)/havp/whitelist"; \
 -	fi
--	if [ ! -f $(etcdir)/blacklist ]; then \
--		$(INSTALL) -m 644 ../etc/havp/blacklist $(etcdir)/blacklist; \
+-	@if [ ! -f $(DESTDIR)$(sysconfdir)/havp/blacklist ]; then \
+-		$(INSTALL) -m 644 ../etc/havp/blacklist $(DESTDIR)$(sysconfdir)/havp/blacklist; \
+-	else \
+-		echo "Not overwriting old $(DESTDIR)$(sysconfdir)/havp/blacklist"; \
 -	fi
--	cp -r ../etc/havp/templates $(etcdir)
--	chmod -R a+rX $(etcdir)/templates
--
--	@echo ""
--	@echo "HAVP installed - see documentation for needed extra steps"
--	@echo ""
+-	cp -r ../etc/havp/templates $(DESTDIR)$(sysconfdir)/havp/
+-	chmod -R a+rX $(DESTDIR)$(sysconfdir)/havp/templates
  
  clean:
  	cd scanners && $(MAKE) clean
