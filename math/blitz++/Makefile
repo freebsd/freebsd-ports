@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	blitz
 DISTNAME=	blitz-${PORTVERSION}
 
-MAINTAINER=	olivier.saut@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ class library for scientific computing
 
 .ifndef NOPORTDOCS
