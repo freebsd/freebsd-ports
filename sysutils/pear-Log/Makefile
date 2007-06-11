@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log
-PORTVERSION=	1.9.10
+PORTVERSION=	1.9.11
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	thomas@goodking.ca
@@ -17,19 +17,22 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PHP=	yes
 
-FILES=		Log/composite.php Log/console.php Log/daemon.php Log/display.php \
-		Log/error_log.php Log/file.php Log/mail.php Log/mcal.php \
-		Log/mdb2.php Log/null.php Log/observer.php Log/sql.php \
-		Log/sqlite.php Log/syslog.php Log/win.php Log.php
+FILES=		Log/composite.php Log/console.php Log/daemon.php \
+		Log/display.php Log/error_log.php Log/file.php \
+		Log/firebug.php Log/mail.php Log/mcal.php Log/mdb2.php \
+		Log/null.php Log/observer.php Log/sql.php Log/sqlite.php \
+		Log/syslog.php Log/win.php
 DOCS=		guide.txt
-EXAMPLES=	composite.php console.php display.php error_log.php file.php \
-		mail.php null.php observer_mail.php pear_error_handler.php \
-		php_error_handler.php sql.php sqlite.php syslog.php win.php
-TESTS=		composite.phpt console.phpt display.phpt error_log.phpt \
-		extract-zend1.phpt extract-zend2.0.phpt extract-zend2.2.phpt \
-		factory.phpt file.phpt levels.phpt null.phpt priority.phpt \
-		singleton.phpt sqlite.phpt sql_ident.phpt
-
+EXAMPLES=	composite.php firebug.php php_error_handler.php \
+		console.php mail.php sql.php display.php null.php \
+		sqlite.php error_log.php observer_mail.php syslog.php \
+		file.php pear_error_handler.php win.php
+TESTS=		composite.phpt extract-zend2.2.phpt priority.phpt \
+		console.phpt factory.phpt singleton.phpt \
+		display.phpt file.phpt sql_ident.phpt \
+		error_log.phpt firebug.phpt sqlite.phpt \
+		extract-zend1.phpt levels.phpt \
+		extract-zend2.0.phpt null.phpt
 SQLS=		log.sql
 
 _EXAMPLESDIR=	docs/examples
