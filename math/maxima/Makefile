@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	maxima
-PORTVERSION=	5.10.0
-PORTREVISION=	1
+PORTVERSION=	5.12.0
+PORTREVISION=	0
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=${PORTNAME}
 MAINTAINER=	sf@slappy.org
 COMMENT=	Symbolic mathematics program
 
-BUILD_DEPENDS=	${LISPPORT}
+BUILD_DEPENDS=	${LOCALBASE}/bin/${LISPPORT}
 LIB_DEPENDS=	tk84:${PORTSDIR}/x11-toolkits/tk84
 RUN_DEPENDS=	${LOCALBASE}/bin/${LISPPORT} \
 		${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot \
@@ -32,7 +32,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}"
 
 MAN1=	maxima.1
-INFO=	maxima
+INFO=	maxima xmaxima
 
 PLIST_SUB=	BINDIR=${BINDIRECTORY}
 PLIST_SUB+=	LISPBIN=${LISPBINARY}
@@ -95,17 +95,6 @@ pre-everything::
 # rebuild older aclocal.m4
 pre-configure:
 	(cd ${WRKSRC} ; ${CP} -p aclocal.m4 aclocal.m4.orig ; ${ACLOCAL})
-
-post-install:
-	@${RM} -f ${PREFIX}/info/contrib.info
-	@${RM} -f ${PREFIX}/info/descriptive.info
-	@${RM} -f ${PREFIX}/info/distrib.info
-	@${RM} -f ${PREFIX}/info/numericalio.info
-	@${RM} -f ${PREFIX}/info/simplex.info
-	@${RM} -f ${PREFIX}/info/solve_rec.info
-	@${RM} -f ${PREFIX}/info/stringproc.info
-	@${RM} -f ${PREFIX}/info/linearalgebra.info
-	@${RM} -f ${PREFIX}/info/orthopoly.info
-	@${RM} -f ${PREFIX}/info/simplification.info
+	(cd ${WRKSRC}/doc/info ; ${SH} fix_crlf ; ${SH} fix_tab)
 
 .include <bsd.port.post.mk>
