@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tkabber
-PORTVERSION=	0.9.9.a.20070325
-PORTREVISION=	1
+PORTVERSION=	0.10.0.a.20070529
 CATEGORIES=	net-im
 MASTER_SITES=	http://ports.internal.vlink.ru/distfiles/
 PKGNAMESUFFIX=	-devel
@@ -26,8 +25,8 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BZIP2=	yes
-USE_TCL_RUN=	yes
-USE_TK_RUN=	yes
+USE_TCL_RUN=	84+
+USE_TK_RUN=	84+
 
 SUBDIRS=	emoticons ifacetk jabberlib-tclxml mclistbox msgs pixmaps \
 		plugins sounds trans

@@ -4,8 +4,8 @@
      return $snapshot
  }
  
--set tkabber_version "0.9.9-SVN[get_snapshot [fullpath ChangeLog]]"
-+set tkabber_version "0.9.9-SVN[get_snapshot [fullpath version]]"
+-set tkabber_version "0.10.0-svn[get_snapshot [fullpath ChangeLog]]"
++set tkabber_version "0.10.0-svn[get_snapshot [fullpath version]]"
  set toolkit_version "Tcl/Tk [info patchlevel]"
  
  proc rescmd {id res ls} {

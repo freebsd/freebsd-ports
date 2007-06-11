@@ -9,13 +9,13 @@ bin/tkabber
 %%DATADIR%%/datagathering.tcl
 %%DATADIR%%/default.tcl
 %%DATADIR%%/disco.tcl
-%%DATADIR%%/emoticons/default/FaceIronic.gif
-%%DATADIR%%/emoticons/default/FaceStartled.gif
-%%DATADIR%%/emoticons/default/FaceStraight.gif
 %%DATADIR%%/emoticons/default/beer.gif
 %%DATADIR%%/emoticons/default/facegrinning.gif
 %%DATADIR%%/emoticons/default/facehappy.gif
+%%DATADIR%%/emoticons/default/faceironic.gif
 %%DATADIR%%/emoticons/default/facesad.gif
+%%DATADIR%%/emoticons/default/facestartled.gif
+%%DATADIR%%/emoticons/default/facestraight.gif
 %%DATADIR%%/emoticons/default/facewinking.gif
 %%DATADIR%%/emoticons/default/faceyukky.gif
 %%DATADIR%%/emoticons/default/icondef.xml
@@ -24,6 +24,7 @@ bin/tkabber
 %%DATADIR%%/gpgme.tcl
 %%DATADIR%%/hooks.tcl
 %%DATADIR%%/iface.tcl
+%%DATADIR%%/ifacetk/buttonbar.tcl
 %%DATADIR%%/ifacetk/bwidget_workarounds.tcl
 %%DATADIR%%/ifacetk/default.xrdb
 %%DATADIR%%/ifacetk/idefault.tcl
@@ -83,11 +84,13 @@ bin/tkabber
 %%DATADIR%%/pixmaps.tcl
 %%DATADIR%%/pixmaps/default-blue/docking/available-away.gif
 %%DATADIR%%/pixmaps/default-blue/docking/available-chat.gif
+%%DATADIR%%/pixmaps/default-blue/docking/available-dnd.gif
 %%DATADIR%%/pixmaps/default-blue/docking/available.gif
 %%DATADIR%%/pixmaps/default-blue/docking/tkabber.ico
 %%DATADIR%%/pixmaps/default-blue/icondef.xml
 %%DATADIR%%/pixmaps/default-blue/roster/available-away.gif
 %%DATADIR%%/pixmaps/default-blue/roster/available-chat.gif
+%%DATADIR%%/pixmaps/default-blue/roster/available-dnd.gif
 %%DATADIR%%/pixmaps/default-blue/roster/available.gif
 %%DATADIR%%/pixmaps/default/docking/available-away.gif
 %%DATADIR%%/pixmaps/default/docking/available-chat.gif
@@ -144,6 +147,7 @@ bin/tkabber
 %%DATADIR%%/pixmaps/default/services/msn_xa.gif
 %%DATADIR%%/pixmaps/default/services/rss_offline.gif
 %%DATADIR%%/pixmaps/default/services/rss_online.gif
+%%DATADIR%%/pixmaps/default/services/server.gif
 %%DATADIR%%/pixmaps/default/services/sms.gif
 %%DATADIR%%/pixmaps/default/services/weather_away.gif
 %%DATADIR%%/pixmaps/default/services/weather_chat.gif
