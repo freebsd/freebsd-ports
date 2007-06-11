@@ -427,6 +427,7 @@
     SUBDIR += ocaml-images
     SUBDIR += ocaml-lablgl
     SUBDIR += ocrad
+    SUBDIR += ocre
     SUBDIR += oglext
     SUBDIR += ogre3d
     SUBDIR += openclipart
