@@ -13508,6 +13508,7 @@ re_graph	ports/textproc/re_graph
 readline	ports/devel/readline
 readlink	ports/sysutils/readlink
 reallyslick	ports/graphics/reallyslick
+reclinker	ports/sysutils/reclinker
 recmpeg		ports/multimedia/recmpeg
 recode		ports/converters/recode
 recoll		ports/deskutils/recoll
