@@ -7,7 +7,7 @@
 
 PORTNAME=	gdb
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 
 LCLTARGET=	sh-rtems
 CONFIGURE_ARGS=	--verbose --enable-sim

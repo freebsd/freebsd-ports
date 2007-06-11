@@ -7,7 +7,7 @@
 
 PORTNAME=	g77
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 
 LCLTARGET=	mips-rtems
 

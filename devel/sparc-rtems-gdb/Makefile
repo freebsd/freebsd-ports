@@ -7,7 +7,7 @@
 
 PORTNAME=	gdb
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 
 LCLTARGET=	sparc-rtems
 
