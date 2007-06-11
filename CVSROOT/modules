@@ -10762,6 +10762,7 @@ p5-Syntax-Highlight-Perl-Improved	ports/textproc/p5-Syntax-Highlight-Perl-Improv
 p5-Syntax-Highlight-Shell	ports/www/p5-Syntax-Highlight-Shell
 p5-Sys-CpuLoad	ports/sysutils/p5-Sys-CpuLoad
 p5-Sys-Filesystem	ports/sysutils/p5-Sys-Filesystem
+p5-Sys-Gamin	ports/sysutils/p5-Sys-Gamin
 p5-Sys-Hostname-FQDN	ports/sysutils/p5-Sys-Hostname-FQDN
 p5-Sys-Hostname-Long	ports/sysutils/p5-Sys-Hostname-Long
 p5-Sys-Mmap	ports/devel/p5-Sys-Mmap
