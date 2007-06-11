@@ -1,4 +1,5 @@
-bin/config-model
+@comment $FreeBSD$
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config-Model/.packlist
 %%SITE_PERL%%/Config/Model.pm
 %%SITE_PERL%%/Config/Model/AnyId.pm
 %%SITE_PERL%%/Config/Model/AnyThing.pm
@@ -8,6 +9,7 @@ bin/config-model
 %%SITE_PERL%%/Config/Model/Dumper.pm
 %%SITE_PERL%%/Config/Model/Exception.pm
 %%SITE_PERL%%/Config/Model/HashId.pm
+%%SITE_PERL%%/Config/Model/IdElementReference.pm
 %%SITE_PERL%%/Config/Model/Instance.pm
 %%SITE_PERL%%/Config/Model/ListId.pm
 %%SITE_PERL%%/Config/Model/Loader.pm
@@ -21,7 +23,7 @@ bin/config-model
 %%SITE_PERL%%/Config/Model/WarpedNode.pm
 %%SITE_PERL%%/Config/Model/WarpedThing.pm
 %%SITE_PERL%%/Config/Model/WizardHelper.pm
-@dirrm %%SITE_PERL%%/Config/Model
+bin/config-edit
+@dirrmtry %%SITE_PERL%%/Config/Model
 @dirrmtry %%SITE_PERL%%/Config
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config-Model/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config-Model
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Config-Model
