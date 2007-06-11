@@ -7,13 +7,14 @@
 
 PORTNAME=	MDB_QueryTool
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	databases www pear
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR OO-interface for easily retrieving and modifying data in a DB
 
 BUILD_DEPENDS=	${PEARDIR}/MDB.php:${PORTSDIR}/databases/pear-MDB \
-		${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log
+		${PEARDIR}/Log/null.php:${PORTSDIR}/sysutils/pear-Log
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	MDB

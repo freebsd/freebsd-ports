@@ -7,6 +7,7 @@
 
 PORTNAME=	LiveUser
 PORTVERSION=	0.15.1
+PORTREVISION=	1
 CATEGORIES=	security www pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -62,7 +63,7 @@ RUN_DEPENDS+=	${PEARDIR}/MDB2.php:${PORTSDIR}/databases/pear-MDB2
 .endif
 
 .if defined(WITH_PEAR_LOG)
-RUN_DEPENDS+=	 ${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log
+RUN_DEPENDS+=	 ${PEARDIR}/Log/null.php:${PORTSDIR}/sysutils/pear-Log
 .endif
 
 .if defined(WITH_PEAR_XML_TREE)

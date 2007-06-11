@@ -7,13 +7,14 @@
 
 PORTNAME=	VFS
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	devel pear
 
 MAINTAINER=	bg1tpt@gmail.com
 COMMENT=	PEAR Virtual File System API
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
-		${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log
+		${PEARDIR}/Log/null.php:${PORTSDIR}/sysutils/pear-Log
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PHP=	gettext
