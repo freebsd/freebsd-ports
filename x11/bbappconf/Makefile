@@ -9,7 +9,8 @@ PORTNAME=	bbappconf
 PORTVERSION=	0.0.2
 PORTREVISION=	1
 CATEGORIES=	x11
-MASTER_SITES=	http://bbtools.windsofstorm.net/sources/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	bbtools
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	Application configuring tool for the blackbox window manager
