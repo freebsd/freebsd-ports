@@ -5,10 +5,10 @@ SHELL=/bin/sh
 PATH=/etc:/bin:/sbin:/usr/bin:/usr/sbin
 HOME=/var/log
 #
-@serial,lavg5(1.5) 5 /usr/libexec/atrun
+@nolog,lavg5(1.5) 5 /usr/libexec/atrun
 #
 # Rotate log files every hour, if necessary.
-%hourly *	newsyslog
+%nolog,hourly *	newsyslog
 #
 # Perform daily/weekly/monthly maintenance.
 %daily,serial * * periodic daily

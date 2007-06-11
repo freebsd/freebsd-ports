@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fcron
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://fcron.free.fr/archives/ \
@@ -21,7 +21,8 @@ COMMENT=	A periodic command scheduler
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
-CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --with-cflags="${CFLAGS}" \
+CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc --localstatedir=/var \
+		--with-cflags="${CFLAGS}" \
 		--with-rootname=root --with-rootgroup=wheel \
 		--with-docdir=${DOCSDIR}
 
