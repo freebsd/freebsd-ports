@@ -113,6 +113,7 @@ etc/pear.conf
 %%DATADIR%%/PEAR/Packager.php
 %%DATADIR%%/PEAR/REST/10.php
 %%DATADIR%%/PEAR/REST/11.php
+%%DATADIR%%/PEAR/REST/13.php
 %%DATADIR%%/PEAR/REST.php
 %%DATADIR%%/PEAR/Registry.php
 %%DATADIR%%/PEAR/Remote.php
