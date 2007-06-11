@@ -7,7 +7,7 @@
 
 PORTNAME=	objc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 
 LCLTARGET=	arm-rtems
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	gcc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 
 RTEMS_ARCH=	sh
 

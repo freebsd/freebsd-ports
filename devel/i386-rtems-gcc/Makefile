@@ -21,7 +21,7 @@ PATCHFILES=	${GCCNAME}-rtems-20030507a.diff \
 PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/snapshots/c_tools/source/ \
 		http://rtems.thehousleys.net/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 COMMENT=	FSF C/C++/JAVA-gcc-3.2.3 base-port for RTEMS development
 
 .include <bsd.port.pre.mk>
