@@ -1,0 +1,5 @@
+bin/a2pdf
+%%SITE_PERL%%/App/a2pdf.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/a2pdf/.packlist
+@dirrmtry %%SITE_PERL%%/App
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/a2pdf
