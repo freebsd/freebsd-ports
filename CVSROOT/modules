@@ -13680,6 +13680,7 @@ rsibreak	ports/x11/rsibreak
 rsnapshot	ports/sysutils/rsnapshot
 rssh		ports/shells/rssh
 rssowl		ports/www/rssowl
+rsstool		ports/www/rsstool
 rst.el		ports/textproc/rst.el
 rstart		ports/x11/rstart
 rsync		ports/net/rsync
