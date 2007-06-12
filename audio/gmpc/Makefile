@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.qballcow.nl/programs/gmpc-0.13/
 
-MAINTAINER=	redchrom@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tray-aware GTK2 client for musicpd
 
 LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd
