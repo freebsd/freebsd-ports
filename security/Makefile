@@ -692,6 +692,7 @@
     SUBDIR += ssh_askpass_gtk2
     SUBDIR += sshblock
     SUBDIR += sshguard
+    SUBDIR += sshguard-ipfw
     SUBDIR += sshguard-pf
     SUBDIR += sshit
     SUBDIR += sslproxy
