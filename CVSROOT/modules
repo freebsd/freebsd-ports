@@ -14715,6 +14715,7 @@ squash		ports/audio/squash
 squeak		ports/lang/squeak
 squid		ports/www/squid
 squid25		ports/www/squid25
+squid30		ports/www/squid30
 squid_radius_auth	ports/www/squid_radius_auth
 squidclam	ports/security/squidclam
 squidclients	ports/www/squidclients
