@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sshguard
-PORTVERSION=	0.91
-PORTREVISION=	1
+DISTVERSION=	1.0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,35 +14,46 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mij@bitchx.it
 COMMENT=	Protect networked hosts from brute force attacks against ssh
 
+CONFLICTS?=	sshguard-ipfw-1.0* sshguard-pf-1.0*
+
 PLIST_FILES=	sbin/sshguard
 
-IS_INTERACTIVE=	yes
+MAN8=		sshguard.8
+MANCOMPRESSED=	no
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 
-OPTIONS=	PF	"Use PF as firewall backend"	off \
-		IPFW	"Use IPFW as firewall backend"	off
+# sublist will be set afterward
+SUB_FILES=	pkg-message
+#SUB_LIST=
+
+# backend type in { hosts, ipfw, pf }
+SSHGUARDFW?=	hosts
 
 .include <bsd.port.pre.mk>
 
-.if ! ( (defined(WITH_PF) && !defined(WITH_IPFW)) || !defined(WITH_PF))
-# some error occurred. Configure will handle this.
+.if defined(PREFIX)
+CONFIGURE_ARGS+=	--prefix=${PREFIX}
 .endif
 
-.if defined(WITH_PF)
-# compile with PF support
-CONFIGURE_ARGS+=	--with-firewall=pf
-.elif defined(WITH_IPFW)
-# compile with IPFW support
-CONFIGURE_ARGS+=	--with-firewall=ipfw
+.if ${SSHGUARDFW} == pf
+PKGMSG_FWBLOCK="  To activate or configure PF see http://sshguard.sf.net/doc/setup/blockingpf.html"
+.elif ${SSHGUARDFW} == ipfw
+PKGMSG_FWBLOCK="  Verify that IPFW is active with \"ipfw show\"."
+.elif ${SSHGUARDFW} == hosts
+PKGMSG_FWBLOCK="  Sshguard is going to use /etc/hosts.allow, I have touched it for you."
 .endif
+
+# for substitution in subfiles
+SUB_LIST+=	PKGMSG_FWBLOCK=${PKGMSG_FWBLOCK}
+
+CONFIGURE_ARGS+=	--with-firewall=${SSHGUARDFW}
 
 post-install:
-	# spare pkg-message
-	${ECHO_MSG} "		Sshguard installed successfully."
-	${ECHO_MSG} "Make it active by putting in /etc/syslog.conf something like:"
-	${ECHO_MSG} "	auth.info;authpriv.info     |exec ${PREFIX}/sbin/sshguard"
-	${ECHO_MSG} "Otherwise, run sshguard standalone with (as root):"
-	${ECHO_MSG} "	tail -n 0 -f /var/log/auth.log | ${PREFIX}/sbin/sshguard"
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${CAT}	${PKGMESSAGE}
+
+pre-deinstall:
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDEINSTALL} ${PKGNAME} DEINSTALL
 
 .include <bsd.port.post.mk>

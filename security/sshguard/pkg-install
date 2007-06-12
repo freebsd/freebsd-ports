@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# If:
+#   1) syslog.conf exists
+#   2) it doesn't already contain some (uncommented) sshguard directive
+# then add $SSHGUARDCONFLINE (commented) right at the end of the header
+# comments section in syslog.conf
+
+# real syslog.conf configuration file path
+SYSLOGCONF=/etc/syslog.conf
+# configuration line to add
+SSHGUARDCONFLINE="auth.info;authpriv.info     |exec $PKG_PREFIX/sbin/sshguard"
+
+case "$2" in
+    "POST-INSTALL")
+        if test "x$SSHGUARDFW" = xhosts
+        then
+            touch /etc/hosts.allow
+        fi
+        if (test -f "$SYSLOGCONF" && ! grep -q sshguard "$SYSLOGCONF")
+        then
+            # append default sshguard entry in syslog.conf (first line after comments header)
+	    TMPFILE=`mktemp -q /tmp/syslogcXX`
+	    # make sure our file has the same permissions as the original, since we mv it back
+	    cp -p $SYSLOGCONF ${TMPFILE}
+	    echo > ${TMPFILE}
+            inheader=1
+            cat "$SYSLOGCONF" | while read cline ;
+            do
+                if (test $inheader -eq 1 && !(echo "$cline" | grep -q "^[[:space:]]*#"))
+                then
+                    # got off of header comments
+                    inheader=0
+                    echo "#$SSHGUARDCONFLINE" >> $TMPFILE
+                fi
+                echo "$cline" >> $TMPFILE
+            done
+            mv $TMPFILE "$SYSLOGCONF"
+        fi
+;;
+esac
