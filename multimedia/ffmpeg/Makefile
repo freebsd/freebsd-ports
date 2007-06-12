@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ffmpeg
-DISTVERSION=	2007-04-29
-PORTREVISION=	3
+DISTVERSION=	2007-05-30
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -36,8 +35,6 @@ MAKE_ENV=	INSTALL="${INSTALL}"
 SHLIB_VER=	1
 PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
 USE_LDCONFIG=	yes
-
-CONFLICTS=	ffmpeg-[0-9]*
 
 MAN1=		ffmpeg.1
 
@@ -83,10 +80,10 @@ FFMPEG_LDFLAGS+=		-la52
 CONFIGURE_ARGS+=	--disable-liba52
 .endif
 ## dts
-.ifdef(WITH_DTS) || exists(${LOCALBASE}/lib/libdca.a)
-LIB_DEPENDS+=		dca.0:${PORTSDIR}/multimedia/libdca
-CONFIGURE_ARGS+=	--enable-libdts
-.endif
+#.ifdef(WITH_DTS) || exists(${LOCALBASE}/lib/libdca.a)
+#LIB_DEPENDS+=		dca.0:${PORTSDIR}/multimedia/libdca
+#CONFIGURE_ARGS+=	--enable-libdts
+#.endif
 ## faac
 .ifdef(WITH_FAAC) || exists(${LOCALBASE}/lib/libfaac.so)
 LIB_DEPENDS+=		faac.0:${PORTSDIR}/audio/faac
@@ -184,20 +181,15 @@ LIB_DEPENDS+=		xvidcore.4:${PORTSDIR}/multimedia/xvid
 CONFIGURE_ARGS+=	--enable-xvid
 .endif
 
-## bktr
-.ifdef(WITHOUT_BKTR)
-CONFIGURE_ARGS+=	--disable-bktr
-.endif
-
 pre-everything::
 .ifndef(WITHOUT_A52)
 	@${ECHO_MSG} 'You can disable liba52 support by defining WITHOUT_LIBA52'
 	@${ECHO_MSG}
 .endif
-.ifndef(WITH_DTS)
-	@${ECHO_MSG} 'Define WITH_DTS to enable DTS codec'
-	@${ECHO_MSG}
-.endif
+#.ifndef(WITH_DTS)
+#	@${ECHO_MSG} 'Define WITH_DTS to enable DTS codec'
+#	@${ECHO_MSG}
+#.endif
 .ifndef(WITH_FAAC)
 	@${ECHO_MSG} 'Define WITH_FAAC to enable FAAC codec'
 	@${ECHO_MSG}
@@ -237,10 +229,6 @@ pre-everything::
 .endif
 .ifndef(WITH_XVID)
 	@${ECHO_MSG} 'Define WITH_XVID to enable XVID codec'
-	@${ECHO_MSG}
-.endif
-.ifndef(WITHOUT_BKTR)
-	@${ECHO_MSG} 'Define WITHOUT_BKTR to disable bktr video grab'
 	@${ECHO_MSG}
 .endif
 
@@ -322,13 +310,17 @@ post-configure:
 		-e 's|^(PIC[[:space:]]*=.*)$$|\1 -fpic -fPIC -DPIC|' \
 		${WRKSRC}/config.mak
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf ${PREFIX}/etc/ffserver.conf-dist
+	if [ ! -f ${PREFIX}/etc/ffserver.conf ]; then \
+		${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf ${PREFIX}/etc; \
+	fi
 .ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
 .for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .for file in ${DOC_DOCFILES}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 .endif
 

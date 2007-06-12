@@ -1,5 +1,7 @@
 bin/ffmpeg
 bin/ffserver
+@unexec if cmp -s %D/etc/ffserver.conf %D/etc/ffserver.conf-dist; then rm -f %D/etc/ffserver.conf; fi
+etc/ffserver.conf-dist
 include/ffmpeg/adler32.h
 include/ffmpeg/avcodec.h
 include/ffmpeg/avformat.h
