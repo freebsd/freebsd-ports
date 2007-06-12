@@ -15,6 +15,6 @@ COMMENT=	The network backup solution (client) - DEVELOPMENT Version
 PLIST=		${PKGDIR}/pkg-plist.client
 
 WITH_CLIENT_ONLY=	yes
-USE_RC_SUBR=   bacula-fd.sh
+USE_RC_SUBR=   bacula-fd
 
 .include "${MASTERDIR}/Makefile"
