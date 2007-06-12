@@ -7,7 +7,7 @@
 
 PORTNAME=	metamail
 PORTVERSION=	2.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	http://ftp.funet.fi/pub/unix/mail/metamail/ \
 		ftp://ftp.research.telcordia.com/pub/nsb/
@@ -17,11 +17,8 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	jean-francois.dockes@wanadoo.fr
 COMMENT=	Implementation of MIME, the Multipurpose Internet Mail Extensions
 
-BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
-RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
-		mkfontdir:${X_CLIENTS_PORT}
+OPTIONS=	X11 "X11 hebrew font support" on
 
-USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAN1=		audiocompose.1 audiosend.1 extcompose.1 \
 		getfilename.1 mailto-hebrew.1 mailto.1 metamail.1 \
@@ -31,7 +28,23 @@ MAN1=		audiocompose.1 audiosend.1 extcompose.1 \
 		showpicture.1 splitmail.1
 MAN4=		mailcap.4
 
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_X11)
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+USE_XLIB=	yes
+PLIST_SUB+=	X11=""
+.else
+PLIST_SUB+=	X11="@comment "
+.endif
+
 post-patch:
+.if defined(WITHOUT_X11)
+	@${REINPLACE_CMD} -e '/fonts/d' ${WRKSRC}/Makefile
+.endif
 	@${RM} ${WRKSRC}/bin/*.orig
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

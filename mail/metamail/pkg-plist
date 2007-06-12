@@ -4,7 +4,7 @@ bin/extcompose
 bin/getfilename
 bin/mailserver
 bin/mailto
-bin/mailto-hebrew
+%%X11%%bin/mailto-hebrew
 bin/metamail
 bin/metasend
 bin/mimencode
@@ -15,7 +15,7 @@ bin/richtext
 bin/richtoatk
 bin/showaudio
 bin/showexternal
-bin/shownonascii
+%%X11%%bin/shownonascii
 bin/showpartial
 bin/showpicture
 bin/sndAppleSingle
@@ -24,11 +24,11 @@ bin/sun-audio-file
 bin/sun-message.csh
 bin/sun-to-mime
 bin/sun2mime
-lib/metamail/fonts/heb6x13.pcf
-lib/metamail/fonts/heb8x13.pcf
-lib/metamail/fonts/heb8x13B.pcf
-lib/metamail/fonts/fonts.dir
-lib/metamail/fonts/fonts.alias
+%%X11%%lib/metamail/fonts/heb6x13.pcf
+%%X11%%lib/metamail/fonts/heb8x13.pcf
+%%X11%%lib/metamail/fonts/heb8x13B.pcf
+%%X11%%lib/metamail/fonts/fonts.dir
+%%X11%%lib/metamail/fonts/fonts.alias
 etc/mailcap
-@dirrm lib/metamail/fonts
-@dirrm lib/metamail
+@dirrmtry lib/metamail/fonts
+@dirrmtry lib/metamail
