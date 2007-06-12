@@ -7,6 +7,7 @@
 
 PORTNAME=	ffmpeg
 DISTVERSION=	2007-05-30
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
@@ -36,7 +37,7 @@ SHLIB_VER=	1
 PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
 USE_LDCONFIG=	yes
 
-MAN1=		ffmpeg.1
+FFMPEG_MAN1=	ffmpeg.1
 
 ##
 DOC_FILES=	COPYING Changelog README
@@ -98,7 +99,7 @@ CONFIGURE_ARGS+=	--enable-libfaad \
 			--enable-libfaadbin
 .endif
 USE_RC_SUBR=		ffserver
-MAN1+=			ffserver.1
+FFMPEG_MAN1+=		ffserver.1
 
 #### BROKEN LIST #####
 WITHOUT_THEORA=	yes
@@ -131,7 +132,7 @@ CONFIGURE_ARGS+=	--enable-libogg
 .ifdef(WITH_SDL) || ${HAVE_SDL:Msdl}
 USE_SDL+=	sdl
 
-MAN1+=		ffplay.1
+FFMPEG_MAN1+=	ffplay.1
 
 PLIST_FILES+=	bin/ffplay
 .else
@@ -181,6 +182,10 @@ LIB_DEPENDS+=		xvidcore.4:${PORTSDIR}/multimedia/xvid
 CONFIGURE_ARGS+=	--enable-xvid
 .endif
 
+.ifndef(NOPORTDOCS)
+MAN1=	${FFMPEG_MAN1}
+.endif
+
 pre-everything::
 .ifndef(WITHOUT_A52)
 	@${ECHO_MSG} 'You can disable liba52 support by defining WITHOUT_LIBA52'
@@ -219,8 +224,8 @@ pre-everything::
 	@${ECHO_MSG} 'by defining WITH_OPTIMIZED_CFLAGS'
 	@${ECHO_MSG}
 .endif
-.ifndef(WITH_VORBIS)
-	@${ECHO_MSG} 'Define WITH_VORBIS to enable libvorbisenc VORBIS codec'
+.ifndef(WITHOUT_VORBIS)
+	@${ECHO_MSG} 'Define WITHOUT_VORBIS to enable libvorbisenc VORBIS codec'
 	@${ECHO_MSG}
 .endif
 .ifndef(WITH_X264)
@@ -244,6 +249,8 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/common.mak
+	@${REINPLACE_CMD} -e 's|/etc/ffserver.conf|${PREFIX}/etc/ffserver.conf|' \
+		${WRKSRC}/ffserver.c
 	@${REINPLACE_CMD} -E \
 		-e "s|(EXTRALIBS[[:space:]]*=)|\1-L${LOCALBASE}/lib |g; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g; s|%%SHLIB_VER%%|${SHLIB_VER}|g; \
@@ -269,7 +276,7 @@ post-patch:
 		-e 's|(-lImlib2)|-L ${LOCALBASE}/lib \1|' \
 		${WRKSRC}/vhook/Makefile
 .endif
-.if defined(WITH_IPV6)
+.if !defined(WITHOUT_IPV6)
 	@${REINPLACE_CMD} -E \
 		-e 's|^(ipv6).*$$|\1=yes|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
@@ -300,7 +307,7 @@ post-configure:
 			${WRKSRC}/config.mak \
 			${WRKSRC}/libavcodec/Makefile
 .endif
-.ifndef(WITH_THEORA)
+.ifdef(WITHOUT_THEORA)
 	@${REINPLACE_CMD} -E \
 		-e 's|^(CONFIG_LIBTHEORA).*$$|\1=no|' \
 		${WRKSRC}/config.mak
