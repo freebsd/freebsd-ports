@@ -6,7 +6,7 @@
 
 PORTNAME=	vice
 PORTVERSION=	1.21
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
 		http://fresh.t-systems-sfr.com/linux/src/ \
