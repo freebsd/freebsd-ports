@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# If:
+#   1) syslog.conf exists
+#   2) it does contain some directive for sshguard
+# then do the following:
+#   @ if the directive was the default directive (as installed by pkg-install)
+#       then remove it
+#   @ if the directive is some custom (uncommented) directive, comment it
+# and reload syslogd eventually.
+
+# real syslog.conf configuration file path
+SYSLOGCONF=/etc/syslog.conf
+# configuration line to add
+SSHGUARDCONFLINE="auth.info;authpriv.info     |exec $PKG_PREFIX/sbin/sshguard"
+
+case "$2" in
+	"DEINSTALL")
+		if (test -f "$SYSLOGCONF" && grep -q '^[^#].*sshguard' "$SYSLOGCONF")
+        then
+            TMPFILE=`mktemp -q /tmp/syslogcXX`
+            if grep -qx "$SSHGUARDCONFLINE" "$SYSLOGCONF"
+            then
+                # remove default sshguard entry from syslog.conf
+                echo "I'm removing the default sshguard syslog entry for you..."
+                grep -vx "$SSHGUARDCONFLINE" "$SYSLOGCONF" > $TMPFILE
+            else
+                # comment customized sshguard configuration line
+                echo "I'm commenting your custom sshguard syslog entry for you..."
+                sed "s/^[^#].*sshguard.*/#&/" < "$SYSLOGCONF" > $TMPFILE
+            fi
+            mv $TMPFILE "$SYSLOGCONF"
+            /etc/rc.d/syslogd reload
+		fi
+	;;
+esac

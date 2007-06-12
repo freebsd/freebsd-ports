@@ -1,0 +1,10 @@
+##########################################################################
+  Sshguard installed successfully.
+
+%%PKGMSG_FWBLOCK%%
+
+  Your /etc/syslog.conf has been added a line for sshguard; uncomment it
+  and use "/etc/rc.d/syslogd reload" for activating it.
+  
+  See sshguard(8) and http://sshguard.sourceforge.net for additional info.
+##########################################################################
