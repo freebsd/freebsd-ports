@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://download.qballcow.nl/programs/gmpc-0.13/Plugins/
 
-MAINTAINER=	redchrom@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Amazon cover art provider for gmpc
 
 LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd \

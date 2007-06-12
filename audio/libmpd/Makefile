@@ -10,7 +10,7 @@ PORTVERSION=	0.12.0
 CATEGORIES=	audio
 MASTER_SITES=	http://download.qballcow.nl/programs/gmpc-0.13/
 
-MAINTAINER=	redchrom@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abstraction around libmpdclient
 
 USE_AUTOTOOLS=	libtool:15
