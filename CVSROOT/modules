@@ -3252,6 +3252,7 @@ fxscintilla-fox14	ports/x11-toolkits/fxscintilla-fox14
 fxsudoku	ports/games/fxsudoku
 fxt		ports/math/fxt
 fxtv		ports/multimedia/fxtv
+fy-aspell	ports/textproc/fy-aspell
 fyre		ports/graphics/fyre
 g-cows		ports/www/g-cows
 g-gcl		ports/www/g-gcl
