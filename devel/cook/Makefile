@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	cook
-PORTVERSION=	2.26
+PORTVERSION=	2.28
 CATEGORIES=	devel
 MASTER_SITES=	http://gd.tuwien.ac.at/softeng/Aegis/cook/ \
-		http://www.canb.auug.org.au/~millerp/cook/
+		http://miller.emu.id.au/pmiller/software/cook/
 
 MAINTAINER=	jasone@FreeBSD.org
 COMMENT=	Like make(1), but more powerful and clean
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib \
 		YACC=yacc
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
