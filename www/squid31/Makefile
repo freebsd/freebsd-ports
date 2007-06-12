@@ -42,25 +42,18 @@
 #
 #    --enable-dlmalloc
 #     Compile and use the malloc package from Doug Lea
-#    --enable-gnuregex
-#     Compile and use the supplied GNUregex routines instead of BSD regex
-#     (not recommended).
 #    --enable-xmalloc-statistics
 #     Show malloc statistics in status page
 #    --enable-cachemgr-hostname=some.hostname
-#     Set an explicit hostname in cachemgr.cgi
-#    --enable-truncate
-#     Use truncate() rather than unlink()
+#     Make cachemgr.cgi default to this host
 #    --disable-unlinkd
 #     Do not use "unlinkd"
 #    --with-aufs-threads=N_THREADS
 #     Tune the number of worker threads for the aufs object
 #    --with-coss-membuf-size
 #     COSS membuf size (default: 1048576 bytes)
-#    --with-maxfd=N
-#     Override the maximum number of filedescriptors. Useful if you
-#     build as another user who is not privileged to use the amount
-#     of filedescriptors the resulting binary is expected to support.
+#    --with-filedescriptors=N
+#     Force Squid to use N filedescriptors.
 #    --enable-ntlm-fail-open
 #     Enable NTLM fail open, where a helper that fails one of the
 #     Authentication steps can allow Squid to still authenticate the user
@@ -69,13 +62,9 @@
 #     to indicate variance within an accelerator setup. Typically used
 #     together with other code that adds custom HTTP headers to the
 #     requests.
-#    --enable-forward-log
-#     Enable experimental forward_log directive.
-#    --enable-multicast-miss
-#     Enable experimental multicast notification of cachemisses.
 
 PORTNAME=	squid
-PORTVERSION=	2.6.13
+PORTVERSION=	3.0.p6.${PATCHSET_DATE}
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://ftp.vistech.net/pub/squid/%SUBDIR%/ \
@@ -86,9 +75,9 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/www/Squid/%SUBDIR%/ \
 		ftp://ftp.ccs.neu.edu/pub/mirrors/squid.nlanr.net/pub/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
-MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.6.STABLE13
-DIST_SUBDIR=	squid2.6
+MASTER_SITE_SUBDIR=	squid-3/DEVEL
+DISTNAME=	squid-3.0.PRE6
+DIST_SUBDIR=	squid3.0
 
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www2.us.squid-cache.org/%SUBDIR%/ \
@@ -99,15 +88,29 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.uk.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www1.tw.squid-cache.org/%SUBDIR%/
-PATCH_SITE_SUBDIR=	Versions/v2/2.6/changesets
-PATCHFILES=
+PATCH_SITE_SUBDIR=	Versions/v3/3.0/changesets
+# Inspired by editors/vim:
+# (I know that portlint is not happy with this, but putting this code at any
+# other location makes it even unhappier.)
+PATCHSET_DATE=		20070529
+FIRST_PATCHSET=		10789
+LAST_PATCHSET=		10834
+IGNORE_PATCHSETS=	10792 10793 10794 10795 10796 10798 10799 10803 10807 \
+			10810 10814 10819
+PATCHFILES!=	jot -w "%d.patch" - ${FIRST_PATCHSET} ${LAST_PATCHSET} 1
+.for cs in ${IGNORE_PATCHSETS}
+PATCHFILES:=	${PATCHFILES:N${cs}\.patch}
+.endfor
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
-COMMENT=	HTTP Caching Proxy
+COMMENT=	HTTP Caching Proxy (development version)
 
-CONFLICTS=	squid-2.[^6]*
+LATEST_LINK=	squid30
+
+CONFLICTS=	squid-2.[0-9].*
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf:259 automake:19 libtool:15
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_RC_SUBR=	squid
@@ -139,15 +142,17 @@ OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_REFERER_LOG "Enable Referer-header logging" off \
 		SQUID_USERAGENT_LOG "Enable User-Agent-header logging" off \
 		SQUID_ARP_ACL "Enable ACLs based on ethernet address" off \
+		SQUID_IPFW "Enable transparent proxying with IPFW" off \
 		SQUID_PF "Enable transparent proxying with PF" off \
 		SQUID_IPFILTER "Enable transp. proxying with IPFilter" off \
-		SQUID_FOLLOW_XFF "Follow X-Forwarded-For headers" off \
 		SQUID_ICAP "Enable ICAP client functionality" off \
+		SQUID_ESI "Enable ESI support (experimental)" off \
 		SQUID_AUFS "Enable the aufs storage scheme" off \
 		SQUID_COSS "Enable the COSS storage scheme" off \
 		SQUID_KQUEUE "Use kqueue(2) instead of poll(2)" on \
 		SQUID_LARGEFILE "Support log and cache files >2GB" off \
-		SQUID_STACKTRACES "Create backtraces on fatal errors" off
+		SQUID_STACKTRACES "Create backtraces on fatal errors" off \
+		SQUID_DEBUG "Enable debugging options" off
 
 etc_files=	squid/cachemgr.conf.default \
 		squid/mib.txt squid/mime.conf.default \
@@ -165,17 +170,17 @@ icon_files=	anthony-binhex.gif anthony-bomb.gif anthony-box.gif \
 
 error_files=	ERR_ACCESS_DENIED ERR_CACHE_ACCESS_DENIED \
 		ERR_CACHE_MGR_ACCESS_DENIED ERR_CANNOT_FORWARD \
-		ERR_CONNECT_FAIL ERR_DNS_FAIL ERR_FORWARDING_DENIED \
+		ERR_CONNECT_FAIL ERR_DNS_FAIL ERR_ESI ERR_FORWARDING_DENIED \
 		ERR_FTP_DISABLED ERR_FTP_FAILURE ERR_FTP_FORBIDDEN \
 		ERR_FTP_NOT_FOUND ERR_FTP_PUT_CREATED \
 		ERR_FTP_PUT_ERROR ERR_FTP_PUT_MODIFIED ERR_FTP_UNAVAILABLE \
-		ERR_INVALID_REQ ERR_INVALID_RESP ERR_INVALID_URL \
-		ERR_LIFETIME_EXP ERR_NO_RELAY ERR_ONLY_IF_CACHED_MISS \
-		ERR_READ_ERROR ERR_READ_TIMEOUT ERR_SHUTTING_DOWN \
-		ERR_SOCKET_FAILURE ERR_TOO_BIG ERR_UNSUP_REQ \
+		ERR_ICAP_FAILURE ERR_INVALID_REQ ERR_INVALID_RESP \
+		ERR_INVALID_URL ERR_LIFETIME_EXP ERR_NO_RELAY \
+		ERR_ONLY_IF_CACHED_MISS ERR_READ_ERROR ERR_READ_TIMEOUT \
+		ERR_SHUTTING_DOWN ERR_SOCKET_FAILURE ERR_TOO_BIG ERR_UNSUP_REQ \
 		ERR_URN_RESOLVE ERR_WRITE_ERROR ERR_ZERO_SIZE_OBJECT
 
-libexec=	cachemgr.cgi digest_pw_auth diskd-daemon ip_user_check \
+libexec=	cachemgr.cgi digest_pw_auth diskd ip_user_check \
 		msnt_auth ncsa_auth ntlm_auth \
 		pam_auth smb_auth smb_auth.sh squid_session squid_unix_group \
 		wbinfo_group.pl
@@ -183,7 +188,7 @@ libexec=	cachemgr.cgi digest_pw_auth diskd-daemon ip_user_check \
 libexec+=	unlinkd
 .endif
 
-sbin=		RunCache squidclient squid
+sbin=		RunAccel RunCache squidclient squid
 
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  \
 		--sbindir=${PREFIX}/sbin  \
@@ -203,7 +208,7 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  \
 basic_auth=	NCSA PAM MSNT SMB
 digest_auth=	password
 external_acl=	ip_user session unix_group wbinfo_group
-MAN8+=		ncsa_auth.8 pam_auth.8 squid_session.8 squid_unix_group.8
+MAN8+=		pam_auth.8 squid_session.8 squid_unix_group.8
 .if defined(WITH_SQUID_LDAP_AUTH)
 USE_OPENLDAP=	yes
 CFLAGS+=	-I${LOCALBASE}/include
@@ -237,8 +242,9 @@ CONFIGURE_ARGS+=	--enable-auth="basic ntlm digest" \
 storage_schemes=	ufs diskd null
 .if defined(WITH_SQUID_AUFS)
 storage_schemes+=	aufs
-.if ${OSVERSION}>=501000
-# Only document libmap.conf where it is available:
+# Only document switching from libpthread to libthr using libmap.conf
+# where lipthread is the default threading library:
+.if (${OSVERSION} >= 501000) && (${OSVERSION} < 700041)
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-src-cf.data.pre.aufs
 .endif
 # Nil aufs threads is default, set any other value via SQUID_CONFIGURE_ARGS
@@ -247,14 +253,6 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 .endif
 .if defined(WITH_SQUID_COSS)
 storage_schemes+=	coss
-.if !defined(WITH_SQUID_AUFS)
-# use Posix AIO instead of aufs' AIO; note that you then need the kernel to
-# supply AIO support, either by loading the aio(4) module (n/a on 4.x) or by
-# adding the option VFS_AIO to your kernel configuration if you want to
-# actually use COSS storage:
-CONFIGURE_ARGS+=	--enable-coss-aio-ops
-.endif
-sbin+=		cossdump
 .endif
 CONFIGURE_ARGS+=	--enable-storeio="${storage_schemes}"
 
@@ -318,6 +316,9 @@ CONFIGURE_ARGS+=	--enable-useragent-log
 .if defined(WITH_SQUID_ARP_ACL)
 CONFIGURE_ARGS+=	--enable-arp-acl
 .endif
+.if defined(WITH_SQUID_IPFW)
+CONFIGURE_ARGS+=	--enable-ipfw-transparent
+.endif
 .if defined(WITH_SQUID_PF)
 CONFIGURE_ARGS+=	--enable-pf-transparent
 .if ${OSVERSION} < 502106
@@ -337,27 +338,35 @@ IGNORE=		the IPFilter headers are not part of the base system
 CONFIGURE_ARGS+=	--enable-ipf-transparent
 .endif
 .endif
-.if defined(WITH_SQUID_FOLLOW_XFF)
-CONFIGURE_ARGS+=	--enable-follow-x-forwarded-for
-.endif
 .if defined(WITH_SQUID_ICAP)
-EXTRA_PATCHES+=		${PATCHDIR}/icap-2.6-bootstrap.patch \
-			${PATCHDIR}/icap-2.6-core.patch
-CONFIGURE_ARGS+=	--enable-icap-support
-error_files+=		ERR_ICAP_FAILURE
+CONFIGURE_ARGS+=	--enable-icap-client
+.endif
+.if defined(WITH_SQUID_ESI)
+CONFIGURE_ARGS+=	--enable-esi
+LIB_DEPENDS+=		xml2:${PORTSDIR}/textproc/libxml2
 .endif
 .if defined(WITHOUT_SQUID_KQUEUE)
+# XXX: Squid3 -- unlike Squid2 -- does not automatically enable kqueue(2) at
+#      this time so this is a no-op for now:
 CONFIGURE_ARGS+=	--disable-kqueue
+.else
+CONFIGURE_ARGS+=	--enable-kqueue
 .endif
 .if defined(WITH_SQUID_LARGEFILE)
-CONFIGURE_ARGS+=	--with-large-files --enable-large-cache-files
+CONFIGURE_ARGS+=	--with-large-files
 .endif
-.if defined(WITH_SQUID_STACKTRACES) || defined(WITH_DEBUG)
+.if defined(WITH_SQUID_STACKTRACES)
 CONFIGURE_ARGS+=	--enable-stacktraces
 CFLAGS+=	-g
 STRIP=			""
 .endif
-
+.if defined(WITH_SQUID_DEBUG) || defined(WITH_DEBUG)
+# TODO: are there other useful options that can/should be set to help
+#       the developers in debugging failures?
+CONFIGURE_ARGS+=	--disable-optimizations
+CFLAGS+=	-g
+STRIP=		""
+.endif
 # Languages:
 #
 # If you do not define SQUID_LANGUAGES yourself, all available language files
@@ -390,7 +399,18 @@ PLIST_FILES+=	${error_files:S,^,etc/squid/errors/${d}/,}
 .endfor
 PLIST_DIRS+=	etc/squid/errors etc/squid squid/logs squid/cache squid
 
+pre-patch:
+# special handling for ChangeSet 10817 that relies on metadata information
+# supplied by a non applicable earlier patch; can be removed when the port
+# is updated to a post-pre6 tarball:
+	@${REINPLACE_CMD} -e 's|v 1.453 2007/05/09 22:14:24 wessels|v 1.454 2007/05/13 10:57:41 hno|' \
+	    -e 's|\(Revision:\) 1.453|\1 1.454|' \
+	    ${WRKSRC}/configure.in
+
 post-patch:
+# add this version's datestamp so that Squid identifies itself as patched-up:
+	@${REINPLACE_CMD} -e 's|3.0.PRE6|&+PatchSets-${PATCHSET_DATE}|' \
+	    ${WRKSRC}/configure.in
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%SQUID_UID%%|${SQUID_UID}|g' \
 	    -e 's|%%SQUID_GID%%|${SQUID_GID}|g' \
@@ -409,6 +429,10 @@ pre-su-install:
 	    ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
+# Create cachemgr.conf.default manually since squid-3's install routine
+# unfortunately fails to do so (as it did in the old 2.5 days...):
+	${INSTALL_DATA} ${WRKSRC}/tools/cachemgr.conf \
+	    ${PREFIX}/etc/squid/cachemgr.conf.default
 .if defined(WITH_SQUID_PINGER)
 	${CHMOD} 4510 ${PREFIX}/libexec/squid/pinger; \
 	${CHGRP} ${SQUID_GID} ${PREFIX}/libexec/squid/pinger
