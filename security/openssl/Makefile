@@ -15,7 +15,7 @@ PORTVERSION=	0.9.7m
 PORTREVISION?=	0
 .else
 PORTVERSION=	0.9.8e
-PORTREVISION?=	0
+PORTREVISION?=	1
 .endif
 .endif
 CATEGORIES=	security devel
@@ -58,6 +58,7 @@ PATCHDIR=		${MASTERDIR}/files-beta
 PLIST_SUB+=		OPENSSL_BETA=""
 PLIST_SUB+=		OPENSSL_STABLE="@comment "
 CONFLICTS?=		openssl-beta-0.* openssl-stable-0.*
+EXTRACONFIGURE+=	enable-camellia
 .endif
 
 MAKE_ARGS+=		WHOLE_ARCHIVE_FLAG=--whole-archive
