@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aspell
-DISTVERSION=	6-uk-1.3.1-0
+DISTVERSION=	6-uk-1.4.0-0
 PORTEPOCH=	2
 CATEGORIES=	ukrainian textproc
 
