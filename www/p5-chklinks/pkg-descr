@@ -1,0 +1,9 @@
+chklinks is a Perl link checker. It helps finding broken links on your
+website.
+
+chklinks differs from linkchecker in that chklinks is non- threaded. It does
+not raises many simultaneously connections for its job. It won't run out of
+the resources and crash your system in a moment. This is certainly more
+desirable for most webmasters and users.
+
+WWW: http://search.cpan.org/dist/chklinks/
