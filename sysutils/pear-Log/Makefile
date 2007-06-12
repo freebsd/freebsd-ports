@@ -7,6 +7,7 @@
 
 PORTNAME=	Log
 PORTVERSION=	1.9.11
+PORTREVISION=	1
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	thomas@goodking.ca
@@ -21,7 +22,7 @@ FILES=		Log/composite.php Log/console.php Log/daemon.php \
 		Log/display.php Log/error_log.php Log/file.php \
 		Log/firebug.php Log/mail.php Log/mcal.php Log/mdb2.php \
 		Log/null.php Log/observer.php Log/sql.php Log/sqlite.php \
-		Log/syslog.php Log/win.php
+		Log/syslog.php Log/win.php Log.php
 DOCS=		guide.txt
 EXAMPLES=	composite.php firebug.php php_error_handler.php \
 		console.php mail.php sql.php display.php null.php \
