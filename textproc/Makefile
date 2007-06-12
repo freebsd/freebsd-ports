@@ -149,6 +149,7 @@
     SUBDIR += foiltex
     SUBDIR += fop
     SUBDIR += freegrep
+    SUBDIR += fy-aspell
     SUBDIR += ga-aspell
     SUBDIR += galax
     SUBDIR += gastex
