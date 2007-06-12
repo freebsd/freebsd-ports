@@ -7,7 +7,7 @@ LIBS=   -ltermcap
 PREFIX?=/usr/local
 BIN=    ${PREFIX}/bin 
 CC=     cc
-CFLAGS= -Dbsd -O
+CFLAGS= -Dbsd -O -DTERMIOS -DUNIXV=1
 SMALL=
 LARGE=
 OF=     -o ""
