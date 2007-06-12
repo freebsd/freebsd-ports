@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mij@bitchx.it
-COMMENT=	Protect networked hosts from brute force attacks against ssh
+COMMENT?=	Protect networked hosts from brute force attacks against ssh
 
 CONFLICTS?=	sshguard-ipfw-1.0* sshguard-pf-1.0*
 
