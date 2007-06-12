@@ -7,6 +7,7 @@
 
 PORTNAME=	jasper
 PORTVERSION=	1.900.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ece.uvic.ca/~mdadams/jasper/software/ \
 		${MASTER_SITE_IMAGEMAGICK}
@@ -15,7 +16,7 @@ MASTER_SITE_SUBDIR=	ImageMagick/delegates
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of the codec specified in the JPEG-2000 standard
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
 USE_AUTOTOOLS=	libtool:15
 USE_ZIP=	yes
