@@ -783,6 +783,7 @@ beryl		ports/x11-wm/beryl
 beryl-core	ports/x11-wm/beryl-core
 beryl-manager	ports/x11-wm/beryl-manager
 beryl-plugins	ports/x11-wm/beryl-plugins
+beryl-plugins-unsupported	ports/x11-wm/beryl-plugins-unsupported
 beryl-settings	ports/x11-wm/beryl-settings
 beryl-settings-bindings	ports/x11-wm/beryl-settings-bindings
 bestfit		ports/misc/bestfit
