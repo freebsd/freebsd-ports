@@ -7813,6 +7813,7 @@ myfaces		ports/www/myfaces
 myghty		ports/www/myghty
 mylibrary	ports/databases/mylibrary
 mymoon		ports/astro/mymoon
+mypaint		ports/graphics/mypaint
 mypasswordsafe	ports/security/mypasswordsafe
 myphpmoney	ports/finance/myphpmoney
 mysar		ports/www/mysar
