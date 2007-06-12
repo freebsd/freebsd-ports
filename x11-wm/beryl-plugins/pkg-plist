@@ -97,9 +97,9 @@ lib/beryl/libimgjpeg.a
 lib/beryl/libannotate.so
 lib/beryl/libannotate.la
 lib/beryl/libannotate.a
-lib/beryl/libdbus.so
-lib/beryl/libdbus.la
-lib/beryl/libdbus.a
+%%DBUS%%lib/beryl/libdbus.so
+%%DBUS%%lib/beryl/libdbus.la
+%%DBUS%%lib/beryl/libdbus.a
 share/locale/es/LC_MESSAGES/beryl-plugins.mo
 share/locale/fr/LC_MESSAGES/beryl-plugins.mo
 share/locale/nl/LC_MESSAGES/beryl-plugins.mo

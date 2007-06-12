@@ -18,8 +18,7 @@ COMMENT=	Plugins for Beryl Composite/Window Manager
 
 # XXX - Might depends on graphics/libsvg-cairo instead.
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/beryl.pc:${PORTSDIR}/x11-wm/beryl-core \
-		${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/beryl.pc:${PORTSDIR}/x11-wm/beryl-core
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
@@ -35,4 +34,17 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-.include <bsd.port.mk>
+OPTIONS=	DBUS "Enable dbus support" On
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_DBUS)
+CONFIGURE_ARGS=	--enable-dbus
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus
+PLIST_SUB=	DBUS=""
+.else
+CONFIGURE_ARGS=	--disable-dbus
+PLIST_SUB=	DBUS="@comment "
+.endif
+
+.include <bsd.port.post.mk>
