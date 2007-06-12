@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	aspell-pt_BR
-DISTVERSION=	6-pt_BR-20070206
+DISTVERSION=	6-pt_BR-20070411-0
 CATEGORIES=	portuguese textproc
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aspell Brazilian Portuguese dictionary
 
 DICT=	 	pt_BR
