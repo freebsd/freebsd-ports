@@ -71,7 +71,7 @@ COMMENT=	Common code-base used by Horde applications, written in PHP
 #----------------------------------------------------------------------------
 
 RUN_DEPENDS+=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
-		${PEARDIR}/Log/null.php:${PORTSDIR}/sysutils/pear-Log		\
+		${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log		\
 		${PEARDIR}/Mail/RFC822.php:${PORTSDIR}/mail/pear-Mail		\
 		${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime	\
 		${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB			\
