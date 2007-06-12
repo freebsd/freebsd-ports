@@ -11292,6 +11292,7 @@ p5-bioperl-run	ports/biology/p5-bioperl-run
 p5-bioperl-run-devel	ports/biology/p5-bioperl-run-devel
 p5-capitalization	ports/devel/p5-capitalization
 p5-chart	ports/graphics/p5-chart
+p5-chklinks	ports/www/p5-chklinks
 p5-dTemplate	ports/textproc/p5-dTemplate
 p5-ePerl	ports/lang/p5-ePerl
 p5-enum		ports/devel/p5-enum
