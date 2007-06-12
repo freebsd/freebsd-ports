@@ -38,6 +38,10 @@ MAKE_ARGS+=	INSTALL_DOC_DIR=${WRKSRC}/dummy
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 600000 && ${ARCH} == "amd64"
+BROKEN=		internal compiler error on 5.x/amd64
+.endif
+
 post-patch:
 .if ${OSVERSION} < 503000
 	@${REINPLACE_CMD} -e 's/round/rint/' ${WRKSRC}/src/Math.hh
