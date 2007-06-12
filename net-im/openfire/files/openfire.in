@@ -10,6 +10,16 @@
 #
 # openfire_enable (bool):   Set to NO by default.
 #               Set it to YES to enable openfire.
+# openfire_user (username): Set to openfire by default.
+#               Set it to required username.
+# openfire_group (group):   Set to openfire by default.
+#               Set it to required group.
+# openfire_libdir (path):   Set to %%JAVAJARDIR%% by default.
+#               Set it to java classes directory.
+# openfire_home (path):     Set to %%DATADIR%% by default.
+#               Set it to java home directory.
+# openfire_javargs (args):  Set to -Xmx256M by default.
+#               See java -h for available arguments.
 
 . %%RC_SUBR%%
 
@@ -19,13 +29,16 @@ rcvar=${name}_enable
 : ${openfire_enable:=NO}
 : ${openfire_user:=${name}}
 : ${openfire_group:=${name}}
+: ${openfire_libdir:=%%JAVAJARDIR%%}
+: ${openfire_home:=%%DATADIR%%}
+: ${openfire_javargs:='-Xmx256M'}
 
 pidfile=/var/run/${name}.pid
 
-required_files="%%PREFIX%%/etc/openfire/openfire.xml"
-java_options=" 	-server -jar \
-		-Dopenfire.lib.dir=%%JAVAJARDIR%% \
-		-DopenfireHome=%%DATADIR%%"
+required_files="%%ETCDIR%%/openfire.xml"
+java_options=" 	-server -jar ${openfire_javargs} \
+		-Dopenfire.lib.dir=${openfire_libdir} \
+		-DopenfireHome=${openfire_home}"
 
 java_command="	%%LOCALBASE%%/bin/java ${java_options} \
 		%%JAVAJARDIR%%/startup.jar"
