@@ -1119,6 +1119,7 @@
     SUBDIR += sqstat
     SUBDIR += squid
     SUBDIR += squid25
+    SUBDIR += squid30
     SUBDIR += squid_radius_auth
     SUBDIR += squidclients
     SUBDIR += squidguard
