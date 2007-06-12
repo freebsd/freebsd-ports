@@ -14,7 +14,7 @@ CATEGORIES=	comms graphics print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	itetcu@people.tecnik93.com
+MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Mono/color multipage tiff/fax files visualisation/printing utility
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
@@ -35,10 +35,6 @@ OPTIONS=	GDBM "For sender-id look-up (recomended)" on
 
 .if !defined(WITHOUT_GDBM) || exists(${LOCALBASE}/include/gdbm.h)
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
-.endif
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile
 .endif
 
 .include  <bsd.port.post.mk>
