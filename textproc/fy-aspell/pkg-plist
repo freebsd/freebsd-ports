@@ -1,0 +1,8 @@
+lib/aspell-%%VER%%/fy.dat
+lib/aspell-%%VER%%/fy_affix.dat
+lib/aspell-%%VER%%/l-fy.cmap
+lib/aspell-%%VER%%/l-fy.cset
+share/aspell/frisian.alias
+share/aspell/frysk.alias
+share/aspell/fy.rws
+share/aspell/fy.multi
