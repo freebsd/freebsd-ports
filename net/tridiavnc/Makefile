@@ -7,7 +7,7 @@
 
 PORTNAME=	tridiavnc
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=dwcjr
@@ -24,10 +24,12 @@ ALL_TARGET=	World
 NO_INSTALL_MANPAGES=	yes
 XFREE86_HTML_MAN=	no
 
+CONFLICTS=	tightvnc-[0-9]* vnc-[0-9]*
+
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} != i386
-BROKEN=		"Does not compile on ${MACHINE_ARCH}"
+.if ${ARCH} != i386
+BROKEN=		Does not compile on ${MACHINE_ARCH}
 .endif
 
 post-patch:
