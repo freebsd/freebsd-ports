@@ -25,6 +25,7 @@ include/CImg.h
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard1.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard2.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/postcard3.jpg
+%%PORTDOCS%%%%DOCSDIR%%/img/postcard4.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/project-support.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/screenshots_item.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/ss_blobs.jpg
