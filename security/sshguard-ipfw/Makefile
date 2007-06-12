@@ -11,6 +11,6 @@ CONFLICTS=	sshguard-1.0* sshguard-pf-1.0*
 COMMENT=        Protect networked hosts from brute force attacks against ssh using ipfw
 
 SSHGUARDFW=	ipfw
-MASTERDIR=	${PORTSDIR}/security/sshguard
+MASTERDIR=	${.CURDIR}/../sshguard
 
 .include "${MASTERDIR}/Makefile"
