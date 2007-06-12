@@ -89,7 +89,6 @@ share/locale/vi/LC_MESSAGES/xmms.mo
 share/locale/wa/LC_MESSAGES/xmms.mo
 share/locale/zh_CN/LC_MESSAGES/xmms.mo
 share/locale/zh_TW/LC_MESSAGES/xmms.mo
-@dirrm %%DATADIR%%/xmms
 @dirrm lib/xmms/Visualization
 @dirrm lib/xmms/Output
 @dirrm lib/xmms/Input
