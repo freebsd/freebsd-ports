@@ -15,6 +15,11 @@
 @unexec rmdir /var/log/cups 2>/dev/null || true
 @unexec rmdir /var/run/cups/certs 2>/dev/null || true
 @unexec rmdir /var/run/cups 2>/dev/null || true
+%%OVERWRITE%%@exec if test -e /usr/bin/lp; then chmod -h 0 /usr/bin/lp; fi
+%%OVERWRITE%%@exec if test -e /usr/bin/lpq; then chmod -h 0 /usr/bin/lpq; fi
+%%OVERWRITE%%@exec if test -e /usr/bin/lpr; then chmod -h 0 /usr/bin/lpr; fi
+%%OVERWRITE%%@exec if test -e /usr/bin/lprm; then chmod -h 0 /usr/bin/lprm; fi
+%%OVERWRITE%%@exec if test -e /usr/sbin/lpc; then chmod -h 0 /usr/sbin/lpc; fi
 @unexec if cmp -s %D/etc/cups/cupsd.conf.N %D/etc/cups/cupsd.conf; then rm -f %D/etc/cups/cupsd.conf; fi
 etc/cups/cupsd.conf.N
 @exec if test ! -f %D/etc/cups/cupsd.conf; then cp -p %D/etc/cups/cupsd.conf.N %D/etc/cups/cupsd.conf; fi
