@@ -7643,6 +7643,7 @@ mp3gain		ports/audio/mp3gain
 mp3guessenc	ports/audio/mp3guessenc
 mp3info		ports/audio/mp3info
 mp3mover	ports/audio/mp3mover
+mp3plot		ports/audio/mp3plot
 mp3rename	ports/audio/mp3rename
 mp3riot		ports/audio/mp3riot
 mp3splt		ports/audio/mp3splt
