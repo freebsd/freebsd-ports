@@ -243,6 +243,7 @@
     SUBDIR += gtick
     SUBDIR += gtkgep
     SUBDIR += gtkguitune
+    SUBDIR += gtkhirad
     SUBDIR += gtkpod
     SUBDIR += guspat
     SUBDIR += gx2osd

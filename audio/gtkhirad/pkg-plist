@@ -1,0 +1,6 @@
+bin/gtkhirad
+lib/gtkhirad/play.pl
+lib/gtkhirad/update_menu.pl
+share/pixmaps/gtkhirad.png
+share/applications/gtkhirad.desktop
+@dirrmtry lib/gtkhirad
