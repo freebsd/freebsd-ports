@@ -14779,6 +14779,7 @@ sshblock	ports/security/sshblock
 sshbuddy	ports/misc/sshbuddy
 sshfp		ports/dns/sshfp
 sshguard	ports/security/sshguard
+sshguard-pf	ports/security/sshguard-pf
 sshit		ports/security/sshit
 ssldump		ports/net/ssldump
 sslproxy	ports/security/sslproxy
