@@ -6,19 +6,16 @@
 #
 
 PORTNAME=	gpaint
-PORTVERSION=	0.2.2
-PORTREVISION=	3
+PORTVERSION=	0.3.1
+DISTVERSIONPREFIX=	2-
 CATEGORIES=	graphics gnome
-MASTER_SITES=	http://www.atai.org/gpaint/
+MASTER_SITES=	ftp://alpha.gnu.org/gnu/gpaint/ CENKES
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small-scale painting program for GNOME
 
-USE_X_PREFIX=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix gnomeprint
+USE_GNOME=	libgnomeprint libgnomeprintui
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+PLIST_FILES=	bin/${PORTNAME}-2
 
 .include <bsd.port.mk>
