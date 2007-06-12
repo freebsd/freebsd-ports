@@ -1,6 +1,6 @@
---- configure.orig	Fri Apr 27 03:13:50 2007
-+++ configure	Thu May  3 09:28:33 2007
-@@ -208,11 +208,11 @@
+--- configure.orig	Sun May 27 12:31:02 2007
++++ configure	Wed May 30 21:50:21 2007
+@@ -210,11 +210,11 @@
  
  # "tr '[a-z]' '[A-Z]'" is a workaround for Solaris tr not grokking "tr a-z A-Z"
  toupper(){
@@ -14,7 +14,7 @@
  }
  
  set_all(){
-@@ -986,15 +986,9 @@
+@@ -1020,15 +1020,9 @@
      enable fast_unaligned
    ;;
    x86_64|amd64)
@@ -32,16 +32,7 @@
    ;;
    # armv4l is a subset of armv[567]*l
    arm|armv[4567]*l)
-@@ -1591,7 +1585,7 @@
- enabled amr_nb     && require libamrnb amrnb/interf_dec.h Speech_Decode_Frame_init -lamrnb -lm
- enabled amr_wb     && require libamrwb amrwb/dec_if.h D_IF_init -lamrwb -lm
- enabled liba52     && require liba52 a52dec/a52.h a52_init -la52
--enabled libdts     && require libdts dts.h dts_init -ldts -lm
-+enabled libdts     && require libdca dca.h dca_init -ldca -lm
- enabled libgsm     && require libgsm gsm.h gsm_create -lgsm
- enabled libmp3lame && require LAME lame/lame.h lame_init -lmp3lame -lm
- enabled libtheora  && require libtheora theora/theora.h theora_info_init -ltheora -logg
-@@ -1749,14 +1743,14 @@
+@@ -1781,14 +1775,14 @@
  # not all compilers support -Os
  test "$optimize" = "small" && check_cflags -Os
  
@@ -64,7 +55,7 @@
  
  # PIC flags for shared library objects where they are needed
  if enabled shared; then
-@@ -1965,15 +1959,15 @@
+@@ -1996,15 +1990,15 @@
  if enabled shared; then
    echo "BUILD_SHARED=yes" >> config.mak
    echo "PIC=-fPIC -DPIC" >> config.mak
@@ -85,7 +76,7 @@
    echo "SWSVERSION=$sws_version" >> config.mak
    echo "SLIBNAME=${SLIBNAME}" >> config.mak
    echo "SLIBNAME_WITH_VERSION=${SLIBNAME_WITH_VERSION}" >> config.mak
-@@ -2001,7 +1995,7 @@
+@@ -2039,7 +2033,7 @@
  
  echo "SRC_PATH=\"$source_path\"" >> config.mak
  echo "SRC_PATH_BARE=$source_path" >> config.mak
@@ -94,7 +85,7 @@
  
  # Apparently it's not possible to portably echo a backslash.
  if enabled asmalign_pot; then
-@@ -2095,8 +2089,8 @@
+@@ -2119,8 +2113,8 @@
  Version: $version
  Requires: $requires
  Conflicts:
@@ -105,7 +96,7 @@
  EOF
  }
  
-@@ -2119,7 +2113,8 @@
+@@ -2143,7 +2137,8 @@
  Requires: $requires
  Conflicts:
  Libs: \${libdir}/${LIBPREF}${shortname}${LIBSUF} $libs
