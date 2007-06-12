@@ -1,9 +1,9 @@
---- src/delugegtk.py.orig	Tue Mar  6 20:46:00 2007
-+++ src/delugegtk.py	Tue Mar  6 22:42:58 2007
-@@ -33,9 +33,9 @@
+--- src/interface.py.orig	Sat Jun  9 12:20:35 2007
++++ src/interface.py	Sat Jun  9 12:20:54 2007
+@@ -75,9 +75,9 @@
  	def __init__(self):
  		APP = 'deluge'
- 		DIR = os.path.join(dcommon.INSTALL_PREFIX, 'share', 'locale')
+ 		DIR = os.path.join(common.INSTALL_PREFIX, 'share', 'locale')
 -		locale.setlocale(locale.LC_ALL, '')
 -		locale.bindtextdomain(APP, DIR)
 -		locale.textdomain(APP)
