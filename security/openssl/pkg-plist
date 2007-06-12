@@ -9,6 +9,7 @@ include/openssl/blowfish.h
 include/openssl/bn.h
 include/openssl/buffer.h
 include/openssl/cast.h
+%%OPENSSL_BETA%%include/openssl/camellia.h
 include/openssl/comp.h
 include/openssl/conf.h
 include/openssl/conf_api.h
