@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="39988ee8-1918-11dc-b6bd-0016179b2dd5">
+    <topic>cups -- Incomplete SSL Negotiation Denial of Service</topic>
+    <affects>
+      <package>
+	<name>cups-base</name>
+	<range><lt>1.2.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/24517/">
+	  <p>CUPS is not using multiple workers to handle connections.
+	    This can be exploited to stop CUPS from accepting new connections
+	    by starting but never completing an SSL negotiation.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://secunia.com/advisories/24517/</url>
+      <url>http://security.gentoo.org/glsa/glsa-200703-28.xml</url>
+      <cvename>CVE-2007-0720</cvename>
+    </references>
+    <dates>
+      <discovery>2007-05-05</discovery>
+      <entry>2007-06-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="70ae62b0-16b0-11dc-b803-0016179b2dd5">
     <topic>c-ares -- DNS Cache Poisoning Vulnerability</topic>
     <affects>
