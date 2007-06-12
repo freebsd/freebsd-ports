@@ -1,0 +1,8 @@
+MyPaint is a fast painting/scribbling program. It supports pressure
+sensitive graphic tablets and comes with an easy to use brush
+collection. There is a complex interface for creating your own brushes,
+focusing on brush dynamics (changes with speed, pressure, or randomly).
+The canvas size is unlimited and undo is supported, but not layers.
+
+WWW: http://people.ee.ethz.ch/~mrenold/mypaint/
+Author: Martin Renold <martinxyz@gmx.ch>
