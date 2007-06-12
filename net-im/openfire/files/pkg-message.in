@@ -3,12 +3,13 @@ Due to the name change the product releases will work as follows:
 
 o  3.2.x series: these releases will continue to use the Wildfire name so
    that critical bug fixes can be delivered with minimal hassle to existing
-   users. (/usr/ports/net-im/wildfire)
+   users. 
+   (net-im/wildfire)
 
 o  3.3.x series: starting with 3.3.0, the server is called Openfire. 
    There will be a small amount of upgrade pain associated with this release
    since configuration files like wildfire.xml will now be openfire.xml, etc.
-   (/usr/ports/net-im/openfire)
+   (net-im/openfire)
 
 WARNING:
 ===========================================================================
@@ -16,12 +17,12 @@ This is an upgrade procedure from wildfire 3.2.4 to openfire 3.3.0:
 
 1) Stop the wildfire server if it still running.
 2) Back up setup.
-3) Go to %%PREFIX%%/etc/openfire and copy configuration from old setup
+3) Go to %%ETCDIR%% and copy configuration from old setup
    a) Copy wildfire.xml and rename it to openfire.xml.
    b) Search for org.jivesoftware.wildfire. and replace with
       org.jivesoftware.openfire. in openfire.xml
    c) Change owner for configurations files:
-      chown -R openfire:openfire %%PREFIX%%/etc/openfire
+      chown -R openfire:openfire %%ETCDIR%%
 4) If using embedded database:
    a) Copy and rename files:
       /var/db/wildfire/wildfire* files to /var/db/openfire/openfire*
