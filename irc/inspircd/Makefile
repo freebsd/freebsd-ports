@@ -42,6 +42,6 @@ post-install:
 	@${STRIP_CMD} ${PREFIX}/lib/inspircd/modules/*.so
 	@${STRIP_CMD} ${PREFIX}/lib/inspircd/*.so
 	@${STRIP_CMD} ${PREFIX}/bin/inspircd
-	@${CHMOD} -R a+rX ${PREFIX}/bin/inspitcd ${PREFIX}/inspircd/ ${PREFIX}/lib/inspircd/
+	@${CHMOD} -R a+rX ${PREFIX}/bin/inspircd ${PREFIX}/inspircd/ ${PREFIX}/lib/inspircd/
 
 .include <bsd.port.mk>
