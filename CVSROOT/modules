@@ -4240,6 +4240,7 @@ gtkglext	ports/x11-toolkits/gtkglext
 gtkglextmm	ports/x11-toolkits/gtkglextmm
 gtkgraph	ports/graphics/gtkgraph
 gtkguitune	ports/audio/gtkguitune
+gtkhirad	ports/audio/gtkhirad
 gtkhtml		ports/www/gtkhtml
 gtkhtml3	ports/www/gtkhtml3
 gtkhtml38	ports/www/gtkhtml38
