@@ -21,6 +21,10 @@ PORTDOCS=	README LICENSE pcapy.html
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 600000
+BROKEN=		does not compile on 5.x
+.endif
+
 .if ${OSVERSION} < 503000
 LIB_DEPENDS+=	pcap.2:${PORTSDIR}/net/libpcap
 PYDISTUTILS_BUILDARGS=	build_ext -I${LOCALBASE}/include -L${LOCALBASE}/lib
