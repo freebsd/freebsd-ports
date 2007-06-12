@@ -58,6 +58,7 @@ share/locale/it/LC_MESSAGES/nightfall.mo
 %%DATADIR%%/doc/C/help5.txt
 %%DATADIR%%/doc/C/help6.txt
 %%DATADIR%%/doc/C/help7.txt
+%%DATADIR%%/doc/C/help8.txt
 %%DATADIR%%/doc/de/help0.txt
 %%DATADIR%%/doc/de/help1.txt
 %%DATADIR%%/doc/de/help2.txt
@@ -66,6 +67,7 @@ share/locale/it/LC_MESSAGES/nightfall.mo
 %%DATADIR%%/doc/de/help5.txt
 %%DATADIR%%/doc/de/help6.txt
 %%DATADIR%%/doc/de/help7.txt
+%%DATADIR%%/doc/de/help8.txt
 %%DATADIR%%/pixmaps/checker_256.jpg
 %%DATADIR%%/pixmaps/disk_128.jpg
 %%DATADIR%%/pixmaps/disk_256.jpg
