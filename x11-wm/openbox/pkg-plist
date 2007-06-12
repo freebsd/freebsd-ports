@@ -1,34 +1,37 @@
 bin/gnome-panel-control
-bin/kdetrayproxy
 bin/openbox
+bin/openbox-gnome-session
+bin/openbox-kde-session
+bin/openbox-session
+etc/xdg/openbox/autostart.sh
 etc/xdg/openbox/menu.xml
 etc/xdg/openbox/rc.xml
-include/openbox/3.3/openbox/color.h
-include/openbox/3.3/openbox/font.h
-include/openbox/3.3/openbox/geom.h
-include/openbox/3.3/openbox/gradient.h
-include/openbox/3.3/openbox/image.h
-include/openbox/3.3/openbox/instance.h
-include/openbox/3.3/openbox/mask.h
-include/openbox/3.3/openbox/parse.h
-include/openbox/3.3/openbox/render.h
-include/openbox/3.3/openbox/theme.h
-include/openbox/3.3/openbox/version.h
+include/openbox/3.4/openbox/color.h
+include/openbox/3.4/openbox/font.h
+include/openbox/3.4/openbox/geom.h
+include/openbox/3.4/openbox/gradient.h
+include/openbox/3.4/openbox/image.h
+include/openbox/3.4/openbox/instance.h
+include/openbox/3.4/openbox/mask.h
+include/openbox/3.4/openbox/parse.h
+include/openbox/3.4/openbox/render.h
+include/openbox/3.4/openbox/theme.h
+include/openbox/3.4/openbox/version.h
 lib/libobparser.a
 lib/libobparser.la
 lib/libobparser.so
-lib/libobparser.so.4
+lib/libobparser.so.15
 lib/libobrender.a
 lib/libobrender.la
 lib/libobrender.so
-lib/libobrender.so.4
+lib/libobrender.so.15
 libdata/pkgconfig/obparser-3.0.pc
 libdata/pkgconfig/obrender-3.0.pc
 share/gnome/wm-properties/openbox.desktop
-%%DATADIR%%/menu.xsd
-%%DATADIR%%/rc.xsd
-%%DATADIR%%/themeupdate.py
 share/pixmaps/openbox.png
+share/themes/Artwiz-boxed/openbox-3/themerc
+share/themes/Clearlooks/openbox-3/themerc
+share/themes/Clearlooks-Olive/openbox-3/themerc
 share/themes/Mikachu/openbox-3/bullet.xbm
 share/themes/Mikachu/openbox-3/close.xbm
 share/themes/Mikachu/openbox-3/desk.xbm
@@ -38,90 +41,116 @@ share/themes/Mikachu/openbox-3/themerc
 share/themes/Natura/openbox-3/close.xbm
 share/themes/Natura/openbox-3/close_hover.xbm
 share/themes/Natura/openbox-3/desk.xbm
+share/themes/Natura/openbox-3/desk_hover.xbm
 share/themes/Natura/openbox-3/desk_toggled.xbm
 share/themes/Natura/openbox-3/iconify.xbm
-share/themes/Natura/openbox-3/iconify_disabled.xbm
 share/themes/Natura/openbox-3/iconify_hover.xbm
 share/themes/Natura/openbox-3/max.xbm
-share/themes/Natura/openbox-3/max_disabled.xbm
 share/themes/Natura/openbox-3/max_hover.xbm
 share/themes/Natura/openbox-3/max_toggled.xbm
 share/themes/Natura/openbox-3/shade.xbm
+share/themes/Natura/openbox-3/shade_hover.xbm
 share/themes/Natura/openbox-3/themerc
-share/themes/artwiz-boxed/openbox-3/bullet.xbm
-share/themes/artwiz-boxed/openbox-3/close.xbm
-share/themes/artwiz-boxed/openbox-3/desk.xbm
-share/themes/artwiz-boxed/openbox-3/desk_toggled.xbm
-share/themes/artwiz-boxed/openbox-3/iconify.xbm
-share/themes/artwiz-boxed/openbox-3/max.xbm
-share/themes/artwiz-boxed/openbox-3/max_toggled.xbm
-share/themes/artwiz-boxed/openbox-3/themerc
-share/themes/bear2/openbox-3/close.xbm
-share/themes/bear2/openbox-3/close_pressed.xbm
-share/themes/bear2/openbox-3/desk.xbm
-share/themes/bear2/openbox-3/desk_toggled.xbm
-share/themes/bear2/openbox-3/iconify.xbm
-share/themes/bear2/openbox-3/iconify_disabled.xbm
-share/themes/bear2/openbox-3/iconify_pressed.xbm
-share/themes/bear2/openbox-3/max.xbm
-share/themes/bear2/openbox-3/max_disabled.xbm
-share/themes/bear2/openbox-3/max_pressed.xbm
-share/themes/bear2/openbox-3/max_toggled.xbm
-share/themes/bear2/openbox-3/shade.xbm
-share/themes/bear2/openbox-3/shade_pressed.xbm
-share/themes/bear2/openbox-3/themerc
-share/themes/orang/openbox-3/themerc
-share/themes/syscrash/openbox-3/bullet.xbm
-share/themes/syscrash/openbox-3/close.xbm
-share/themes/syscrash/openbox-3/close_disabled.xbm
-share/themes/syscrash/openbox-3/desk.xbm
-share/themes/syscrash/openbox-3/desk_toggled.xbm
-share/themes/syscrash/openbox-3/iconify.xbm
-share/themes/syscrash/openbox-3/max.xbm
-share/themes/syscrash/openbox-3/max_disabled.xbm
-share/themes/syscrash/openbox-3/max_pressed.xbm
-share/themes/syscrash/openbox-3/max_toggled.xbm
-share/themes/syscrash/openbox-3/shade.xbm
-share/themes/syscrash/openbox-3/themerc
+share/themes/Onyx/openbox-3/themerc
+share/themes/Onyx-Citrus/openbox-3/themerc
+share/themes/Orang/openbox-3/themerc
+share/themes/Syscrash/openbox-3/max_disabled.xbm
+share/themes/Syscrash/openbox-3/max_pressed.xbm
+share/themes/Syscrash/openbox-3/max_toggled.xbm
+share/themes/Syscrash/openbox-3/max.xbm
+share/themes/Syscrash/openbox-3/themerc
+share/themes/Bear2/openbox-3/close.xbm
+share/themes/Bear2/openbox-3/close_pressed.xbm
+share/themes/Bear2/openbox-3/desk.xbm
+share/themes/Bear2/openbox-3/desk_toggled.xbm
+share/themes/Bear2/openbox-3/iconify.xbm
+share/themes/Bear2/openbox-3/iconify_pressed.xbm
+share/themes/Bear2/openbox-3/max.xbm
+share/themes/Bear2/openbox-3/max_pressed.xbm
+share/themes/Bear2/openbox-3/max_toggled.xbm
+share/themes/Bear2/openbox-3/shade.xbm
+share/themes/Bear2/openbox-3/shade_pressed.xbm
+share/themes/Bear2/openbox-3/themerc
+share/xsessions/openbox.desktop
+share/xsessions/openbox-gnome.desktop
+share/xsessions/openbox-kde.desktop
+%%DOCSDIR%%/COMPLIANCE
+%%DOCSDIR%%/README
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/CHANGELOG
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/rc.xsd
+%%DOCSDIR%%/menu.xsd
+%%DOCSDIR%%/rc-mouse-focus.xml
+%%DOCSDIR%%/xbm/bullet.xbm
+%%DOCSDIR%%/xbm/close.xbm
+%%DOCSDIR%%/xbm/desk_toggled.xbm
+%%DOCSDIR%%/xbm/desk.xbm
+%%DOCSDIR%%/xbm/iconify.xbm
+%%DOCSDIR%%/xbm/max_toggled.xbm
+%%DOCSDIR%%/xbm/max.xbm
+%%DOCSDIR%%/xbm/shade_toggled.xbm
+%%DOCSDIR%%/xbm/shade.xbm
+%%NLS%%share/locale/ar/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/bn_IN/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/de/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/en@boldquot/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/es/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/et/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/openbox.mo
-%%NLS%%share/locale/hr/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/it/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/no/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/openbox.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/openbox.mo
-%%NLS%%share/locale/en@quot/LC_MESSAGES/openbox.mo
-%%NLS%%share/locale/en@boldquot/LC_MESSAGES/openbox.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/openbox.mo
+%%NLS%%@dirrmtry share/locale/bn_IN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/bn_IN
 %%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/en@quot
 %%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/en@boldquot
-@dirrm share/themes/syscrash/openbox-3
-@dirrm share/themes/syscrash
-@dirrm share/themes/orang/openbox-3
-@dirrm share/themes/orang
-@dirrm share/themes/bear2/openbox-3
-@dirrm share/themes/bear2
-@dirrm share/themes/artwiz-boxed/openbox-3
-@dirrm share/themes/artwiz-boxed
-@dirrm share/themes/Natura/openbox-3
-@dirrm share/themes/Natura
+@dirrm %%DOCSDIR%%/xbm
+@dirrm %%DOCSDIR%%
+@dirrm share/themes/Artwiz-boxed/openbox-3
+@dirrm share/themes/Artwiz-boxed
+@dirrm share/themes/Bear2/openbox-3
+@dirrm share/themes/Bear2
+@dirrm share/themes/Clearlooks/openbox-3
+@dirrm share/themes/Clearlooks
+@dirrm share/themes/Clearlooks-Olive/openbox-3
+@dirrm share/themes/Clearlooks-Olive
 @dirrm share/themes/Mikachu/openbox-3
 @dirrm share/themes/Mikachu
+@dirrm share/themes/Natura/openbox-3
+@dirrm share/themes/Natura
+@dirrm share/themes/Orang/openbox-3
+@dirrm share/themes/Orang
+@dirrm share/themes/Onyx/openbox-3
+@dirrm share/themes/Onyx-Citrus/openbox-3
+@dirrm share/themes/Onyx-Citrus
+@dirrm share/themes/Onyx
+@dirrm share/themes/Syscrash/openbox-3
+@dirrm share/themes/Syscrash
 @dirrmtry share/themes
-@dirrm %%DATADIR%%
+@comment @dirrm %%DATADIR%%
 @dirrmtry share/gnome/wm-properties
 @dirrmtry share/gnome
 @dirrmtry libdata/pkgconfig
-@dirrm include/openbox/3.3/openbox
-@dirrm include/openbox/3.3
+@dirrm include/openbox/3.4/openbox
+@dirrm include/openbox/3.4
 @dirrm include/openbox
 @dirrm etc/xdg/openbox
-@dirrmtry etc/xdg
+@dirrm etc/xdg
+@dirrmtry share/xsessions
