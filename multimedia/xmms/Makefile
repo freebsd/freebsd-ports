@@ -7,7 +7,7 @@
 
 PORTNAME=	xmms
 PORTVERSION=	1.2.10
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES+=	multimedia audio ipv6
 MASTER_SITES=	http://www.xmms.org/files/1.2.x/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -15,10 +15,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER?=	esk@ira.uka.de
 COMMENT?=	X Multimedia System -- An audio player with Winamp GUI
 
-BROKEN=		Incorrect pkg-plist
-
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
+USE_GL=		gl
 USE_GNOME=	gtk12 gnomehack
 WANT_GNOME=	yes
 USE_GMAKE=	yes
