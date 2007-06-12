@@ -379,6 +379,7 @@
     SUBDIR += mp3guessenc
     SUBDIR += mp3info
     SUBDIR += mp3mover
+    SUBDIR += mp3plot
     SUBDIR += mp3rename
     SUBDIR += mp3riot
     SUBDIR += mp3splt
