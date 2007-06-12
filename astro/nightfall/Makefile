@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	nightfall
-PORTVERSION=	1.52
-PORTREVISION=	2
+PORTVERSION=	1.61
 CATEGORIES=	astro
-MASTER_SITES=	http://www.la-samhna.de/nightfall/
+MASTER_SITES=	http://www.la-samhna.de/nightfall/ CENKES
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive binary star application
@@ -20,6 +19,7 @@ USE_XLIB=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack gnomehier gnometarget gtk20
 USE_PERL5=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -57,7 +57,7 @@ LIB_DEPENDS+=	glut.4:${PORTSDIR}/graphics/libglut \
 CONFIGURE_ARGS+=	--with-lib-GL
 .endif
 
-pre-everything::
+pre-configure:
 	@${ECHO_MSG} "Nightfall has the following tunable option(s):"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "	WITHOUT_GNOME=libgnomeui	Turns off Gnome support"
@@ -66,13 +66,13 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|CFLAGS -O3|CFLAGS|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|^Icon=gnome|Icon=${DATADIR}/pixmaps/gnome|g' \
 		${WRKSRC}/nightfall.desktop
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/gnome/applications
-	${INSTALL_DATA} ${WRKSRC}/nightfall.desktop \
-		${PREFIX}/share/gnome/applications
+	@${INSTALL} -d ${PREFIX}/share/gnome/applications/
+	@${INSTALL_DATA} ${WRKSRC}/nightfall.desktop \
+		${PREFIX}/share/gnome/applications/
 
 .include <bsd.port.post.mk>
