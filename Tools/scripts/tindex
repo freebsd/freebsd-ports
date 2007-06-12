@@ -33,8 +33,10 @@ export SRCDIR5=${BASEDIR}/src.5
 export SRCDIR6=${BASEDIR}/src.6
 export SRCDIR7=${BASEDIR}/src.7
 
-# Target architecture
-export ARCH=i386
+# Target architecture if not set in the environment
+if [ "${ARCH}" = "" ]; then
+	export ARCH=i386
+fi
 
 # SSH key to use for copying INDEXes to www host (if non-default)
 export SSHKEY="-i /home/kris/.ssh/id_dsa-index"
