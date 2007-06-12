@@ -1,0 +1,26 @@
+--- Makefile.orig	Sat Jun  9 21:08:22 2007
++++ Makefile	Tue Jun 12 17:46:28 2007
+@@ -2,7 +2,7 @@
+ GTK2_LIBS=`pkg-config gtk+-2.0 --libs`
+ 
+ OBJS=gtkhirad.o eggtrayicon.o
+-PREFIX=/usr
++PREFIX?=	$(prefix)
+ 
+ all: $(OBJS)
+ 	cc -o gtkhirad $(GTK2_LIBS) $(OBJS)
+@@ -18,10 +18,13 @@
+ 	rm -f *.o
+ 
+ install: all
++	install -d $(PREFIX)/bin
+ 	install -s gtkhirad $(PREFIX)/bin/gtkhirad
+-	mkdir -p $(PREFIX)/lib/gtkhirad
++	install -d $(PREFIX)/share/applications
+ 	install gtkhirad.desktop $(PREFIX)/share/applications/gtkhirad.desktop
++	install -d $(PREFIX)/share/pixmaps
+ 	install gtkhirad.png $(PREFIX)/share/pixmaps/gtkhirad.png
++	install -d $(PREFIX)/lib/gtkhirad
+ 	install play.pl $(PREFIX)/lib/gtkhirad/play.pl
+ 	install update_menu.pl $(PREFIX)/lib/gtkhirad/update_menu.pl
+ 
