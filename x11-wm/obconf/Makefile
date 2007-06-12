@@ -6,36 +6,35 @@
 #
 
 PORTNAME=	obconf
-PORTVERSION=	1.6
-PORTREVISION=	2
+PORTVERSION=	2.0.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://tr.openmonkey.com/files/obconf/
+MASTER_SITES=	http://offload1.icculus.org/openbox/obconf/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Preferences manager for the Openbox window manager
 
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-		obparser.4:${PORTSDIR}/x11-wm/openbox
+		obparser.15:${PORTSDIR}/x11-wm/openbox
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 USE_GNOME=	gnomehier gnometarget libglade2
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/openbox
+MAKE_ARGS=	mkdir_p='${MKDIR}'
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
 PORTDOCS=	ABOUT-NLS AUTHORS README TODO
-PLIST_FILES=	bin/obconf \
-		share/applications/obconf.desktop \
-		%%DATADIR%%/obconf.glade
-PLIST_DIRS=	%%DATADIR%%
-PLIST=		${WRKDIR}/pkg-plist
 
-pre-install:
-	@${ECHO_CMD} "@dirrmtry share/applications" > ${PLIST}
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
+.else
+USE_GETTEXT=		yes
+PLIST_SUB+=		NLS=""
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)

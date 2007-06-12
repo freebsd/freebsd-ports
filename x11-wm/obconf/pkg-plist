@@ -1,0 +1,16 @@
+bin/obconf
+share/applications/obconf.desktop
+share/mimelnk/application/x-openbox-theme.desktop
+share/mime/packages/obconf.xml
+%%DATADIR%%/obconf.glade
+%%NLS%%share/locale/en@boldquot/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/en@quot/LC_MESSAGES/obconf.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/obconf.mo
+%%NLS%%@dirrmtry share/locale/en@boldquot/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en@boldquot
+%%NLS%%@dirrmtry share/locale/en@quot/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en@quot
+@dirrm %%DATADIR%%
+@dirrmtry share/applications
+@dirrmtry share/mimelnk/application
+@dirrmtry share/mimelnk
