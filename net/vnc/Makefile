@@ -7,7 +7,7 @@
 
 PORTNAME=	vnc
 PORTVERSION=	4.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.realvnc.com/:vnc
 DISTNAME=	vnc-4_1_2-unixsrc
@@ -26,7 +26,7 @@ USE_XPM=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 PLIST=		${WRKDIR}/pkg-plist
-CONFLICTS=	tightvnc-[0-9]*
+CONFLICTS=	tightvnc-[0-9]* tridiavnc-[0-9]*
 
 OPTIONS=	SERVER "Install VNC server components" on
 
