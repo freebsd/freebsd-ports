@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	silktools
-PORTVERSION=	0.10.5
+PORTVERSION=	0.11.1
 CATEGORIES=	security net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://tools.netsa.cert.org/releases/
+DISTNAME=	silk-${PORTVERSION}
 
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Tools for large-scale network capture analysis
@@ -29,16 +29,13 @@ MAN1=	rwip2cc.1 rwpmapbuild.1 mapsid.1 num2dot.1 rwaddrcount.1 rwappend.1 \
 	rwnetmask.1 rwrandomizeip.1 rwset.1 rwsetbuild.1 rwsetcat.1 rwsort.1 \
 	rwsetintersect.1 rwsetunion.1 rwstats.1 rwswapbytes.1 rwtotal.1 \
 	rwtuc.1 rwuniq.1 rwptoflow.1 rwpmatch.1 rwpdedupe.1 rwpcut.1 \
-	rwp2yaf2silk.1
+	rwp2yaf2silk.1 rwgeoip2ccmap.1 rwpmapcat.1 rwresolve.1 rwscan.1 \
+	rwscanquery.1 rwsetmember.1 rwsettool.1 rwsplit.1
 
 MAN3=	libaddrtype.3 libccfilter.3 libpmapfilter.3
 
-MAN5=	sensor.conf.5
+MAN5=	sensor.conf.5 silk.conf.5
 
-MAN8=	rwflowpack.8 flowcap.8
-
-post-install:
-	@${MV} ${PREFIX}/share/silk/rwfpd.conf ${PREFIX}/share/silk/rwfpd.conf.sample
-	@${MV} ${PREFIX}/share/silk/flowcap.conf ${PREFIX}/share/silk/flowcap.conf.sample
+MAN8=	rwflowpack.8 rwpackchecker.8 rwflowappend.8 rwreceiver.8 rwsender.8
 
 .include <bsd.port.mk>
