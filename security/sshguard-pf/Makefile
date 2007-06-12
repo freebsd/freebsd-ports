@@ -7,7 +7,7 @@
 
 PKGNAMESUFFIX=	-pf
 CONFLICTS=	sshguard-1.0* sshguard-ipfw-1.0*
-COMMENT=	Protect networked hosts from brute force attacks against ssh using pf
+COMMENT=	Protect hosts from brute force attacks against ssh using pf
 
 SSHGUARDFW=	pf
 MASTERDIR=	${.CURDIR}/../sshguard
