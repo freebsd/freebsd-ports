@@ -29,6 +29,10 @@ CONFIGURE_ARGS=	--with-cc=${CXX} --config-dir=${PREFIX}/etc/inspircd \
 		--prefix=${PREFIX}/inspircd --binary-dir=${PREFIX}/bin \
 		--enable-remote-ipv6 --disable-interactive
 
+post-patch:
+	@${REINPLACE_CMD} -e '/INSTMODE/s|700|755|;/install -d.*BINPATH/d'\
+		${WRKSRC}/.Makefile.inc
+
 # 1.0.6 Makefile forgets to make these directories
 # during install. We make these ourselves. This may
 # be fixed in a later version of InspIRCd.
@@ -42,6 +46,5 @@ post-install:
 	@${STRIP_CMD} ${PREFIX}/lib/inspircd/modules/*.so
 	@${STRIP_CMD} ${PREFIX}/lib/inspircd/*.so
 	@${STRIP_CMD} ${PREFIX}/bin/inspircd
-	@${CHMOD} -R a+rX ${PREFIX}/bin/inspircd ${PREFIX}/inspircd/ ${PREFIX}/lib/inspircd/
 
 .include <bsd.port.mk>
