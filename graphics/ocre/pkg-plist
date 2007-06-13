@@ -1952,3 +1952,5 @@ share/locale/es/LC_MESSAGES/ocre.mo
 @dirrm %%DATADIR%%/decsWoodCur
 @dirrm %%DATADIR%%/decsWoodLatin
 @dirrm %%DATADIR%%
+@dirrmtry man/es/man1
+@dirrmtry man/es
