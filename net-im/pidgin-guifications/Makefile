@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
 USE_XLIB=	yes
-use_BZIP2=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
