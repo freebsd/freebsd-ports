@@ -96,6 +96,7 @@
     SUBDIR += p5-POE-Component-Client-MSN
     SUBDIR += pebrot
     SUBDIR += pidgin
+    SUBDIR += pidgin-guifications
     SUBDIR += pidgin-hotkeys
     SUBDIR += pork
     SUBDIR += py-msnp
