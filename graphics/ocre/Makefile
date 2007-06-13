@@ -42,6 +42,7 @@ post-patch:
 
 do-install:
 	@${INSTALL} -d ${DATADIR}/
+	@${INSTALL} -d ${MAN1PREFIX}/man/es/man1/
 	@${TAR} xof ${WRKSRC}/ocre-decsWood-${DISTVERSION}.tgz -C ${DATADIR}/
 	@${CHMOD} -h 755 ${DATADIR}/decsWood
 	@${INSTALL_PROGRAM} ${WRKSRC}/ocre ${PREFIX}/bin/
