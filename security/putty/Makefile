@@ -8,7 +8,8 @@
 PORTNAME=	putty
 PORTVERSION=	0.60
 CATEGORIES=	security ipv6
-MASTER_SITES=	http://the.earth.li/~sgtatham/putty/%SUBDIR%/
+MASTER_SITES=	http://the.earth.li/~sgtatham/putty/%SUBDIR%/ \
+		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=	garga@FreeBSD.org
