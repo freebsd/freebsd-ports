@@ -36,12 +36,7 @@ post-extract: .SILENT
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's, docs$$,,' ${WRKSRC}/Makefile.in
 .endif
+	# Stop configure script want Perl and XML::Parser
 	${REINPLACE_CMD} '19491,19513d' ${WRKSRC}/configure
-.if defined(GCCVERSION)
-.   if ${GCCVERSION} < 030000
-	${REINPLACE_CMD} -e 's,\[\],[0],' ${WRKSRC}/src/db-itunes-parser.h
-.   endif
-.else
-.endif
 
 .include <bsd.port.mk>
