@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	doxygen
-PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTVERSION=	1.5.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
 EXTRACT_SUFX=	.src.tar.gz
@@ -18,13 +17,13 @@ COMMENT=	A documentation system for C, C++ and other languages
 BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
 
+USE_ICONV=	yes
 ALL_TARGET=	all
 
 EXTRACT_AFTER_ARGS=|${TAR} -xpf - \
 		--exclude '*/libmd5'	\
 		--exclude '*/libpng'	\
-		--exclude '*/tmake'	\
-		--exclude '*/.gdb_history' # XXX: remove this when no longer needed
+		--exclude '*/tmake'
 
 CONFIGURE_ENV+=	CXX="${CXX}"
 
@@ -76,6 +75,10 @@ PLIST_FILES=	bin/doxygen \
 .ifndef WITHOUT_DOXYWIZARD
 PLIST_FILES+=	bin/doxywizard
 .endif
+
+pre-configure:
+	@cd ${WRKSRC};for pro in src/*.pro.in addon/doxywizard/doxywizard.pro.in;do \
+		${ECHO} "unix:LIBS += -liconv" >> $$pro; done
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|TMAKE *=.*|TMAKE=${LOCALBASE}/bin/tmake|' \
