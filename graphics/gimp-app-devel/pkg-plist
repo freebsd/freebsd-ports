@@ -129,6 +129,7 @@ include/gimp-2.0/libgimpcolor/gimpadaptivesupersample.h
 include/gimp-2.0/libgimpcolor/gimpbilinear.h
 include/gimp-2.0/libgimpcolor/gimpcmyk.h
 include/gimp-2.0/libgimpcolor/gimpcolor.h
+include/gimp-2.0/libgimpcolor/gimpcolormanaged.h
 include/gimp-2.0/libgimpcolor/gimpcolorspace.h
 include/gimp-2.0/libgimpcolor/gimpcolortypes.h
 include/gimp-2.0/libgimpcolor/gimphsl.h
@@ -582,6 +583,7 @@ share/doc/gimp/libgimpcolor/left.png
 share/doc/gimp/libgimpcolor/libgimpcolor-GimpAdaptiveSupersample.html
 share/doc/gimp/libgimpcolor/libgimpcolor-GimpBilinear.html
 share/doc/gimp/libgimpcolor/libgimpcolor-GimpCMYK.html
+share/doc/gimp/libgimpcolor/libgimpcolor-GimpColorManaged.html
 share/doc/gimp/libgimpcolor/libgimpcolor-GimpColorSpace.html
 share/doc/gimp/libgimpcolor/libgimpcolor-GimpHSV.html
 share/doc/gimp/libgimpcolor/libgimpcolor-GimpRGB.html
