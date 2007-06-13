@@ -9,10 +9,9 @@ PORTNAME=	pidgin-hotkeys
 PORTVERSION=	0.2.3
 CATEGORIES=	net-im
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	gaim-hotkeys
 
 MAINTAINER=	garga@FreeBSD.org
-COMMENT=	A gaim plugin that allows user to assign global hotkeys
+COMMENT=	A pidgin plugin that allows user to assign global hotkeys
 
 LIB_DEPENDS=	purple.0:${PORTSDIR}/net-im/libpurple
 BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
