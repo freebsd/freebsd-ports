@@ -9,9 +9,9 @@ PORTNAME=	gtkdiff
 PORTVERSION=	1.8.0
 PORTREVISION=	3
 CATEGORIES=	textproc gnome
-MASTER_SITES=	http:www.alaskaparadise.com/freebsd/
+MASTER_SITES=	LOCAL/beech
 
-MAINTAINER=	beech@alaskaparadise.com
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	A frontend program for diff(1) written for GNOME
 
 USE_X_PREFIX=	yes
