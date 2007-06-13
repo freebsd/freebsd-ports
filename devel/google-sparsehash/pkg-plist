@@ -2,9 +2,8 @@ include/google/dense_hash_map
 include/google/dense_hash_set
 include/google/sparse_hash_map
 include/google/sparse_hash_set
-include/google/sparsehash/config.h
+include/google/sparsehash/sparseconfig.h
 include/google/sparsehash/densehashtable.h
-include/google/sparsehash/hash_fun.h
 include/google/sparsehash/sparsehashtable.h
 include/google/sparsetable
 include/google/type_traits.h
