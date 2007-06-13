@@ -41,5 +41,3 @@ libexec/grmt
 %%NLS%%@dirrmtry share/locale/rw
 %%NLS%%@dirrmtry share/locale/ky/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ky
-%%NLS%%@dirrmtry share/locale/eu/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/eu
