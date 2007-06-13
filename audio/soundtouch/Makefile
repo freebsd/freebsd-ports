@@ -25,7 +25,7 @@ post-patch: .SILENT
 .endfor
 	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g; \
-		s|-O3|${CFLAGS}|; s|$$(prefix)/doc|$$(datadir)/doc|; \
+		s|-O3[^I]*|${CXXFLAGS} -|; s|$$(prefix)/doc|$$(datadir)/doc|; \
 		s|COPYING.TXT||'
 	# Fix for GCC 4.x
 	${REINPLACE_CMD} -e 's|SoundTouch::||' ${WRKSRC}/include/SoundTouch.h
