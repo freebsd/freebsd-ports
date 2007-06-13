@@ -1,0 +1,6 @@
+fcitx stands for Free Chinese Input Toy of X,it's a ollection of Simplified
+Chinese input methods based on XIM (X Input Method), including WuBi, PinYin,
+and QuWei.
+scim-fcitx is an SCIM IMEngine module for fcitx.
+
+WWW: http://www.fcitx.org
