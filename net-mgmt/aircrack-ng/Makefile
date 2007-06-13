@@ -36,8 +36,11 @@ MAN1+=		aireplay-ng.1
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} \
+		-e 's|/usr/local|${PREFIX}|g' \
+		-e 's|-lpthread|${PTHREAD_LIBS}|g;' \
+		-e '/^CC/d;' \
+			${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/aircrack-ng ${PREFIX}/bin
