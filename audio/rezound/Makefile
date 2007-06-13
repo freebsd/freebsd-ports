@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rezound
-DISTVERSION=	0.12.1beta
-PORTREVISION=	1
+DISTVERSION=	0.12.3beta
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -130,8 +129,5 @@ post-patch: .SILENT
 .else
 	${REINPLACE_CMD} -e '/AUTHORS/d; /COPYING/d' ${WRKSRC}/Makefile.in
 .endif
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/share/key_bindings.dat ${DATADIR}
 
 .include <bsd.port.post.mk>
