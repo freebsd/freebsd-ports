@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	nagios-spamd-plugin
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://jhweiss.de/pub/users/weiss/nagios/plugins/
 DISTNAME=	check_spamd-${PORTVERSION}.pl

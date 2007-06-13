@@ -1,3 +1,3 @@
-MD5 (check_spamd-1.3.pl) = cbb993397c6dafde08e7fcc5fc57d907
-SHA256 (check_spamd-1.3.pl) = 1040515583d09439b8cafd2711de6e8c738e1b0f085d7dd13e877fbf34fb1fed
-SIZE (check_spamd-1.3.pl) = 5442
+MD5 (check_spamd-1.4.pl) = 27d059c33c3d96646ed5256c18f770b1
+SHA256 (check_spamd-1.4.pl) = e0a8244dcd44c39903244749492fcc66f177d1bcfd2ccaa1141950cf58cbedc9
+SIZE (check_spamd-1.4.pl) = 6215
