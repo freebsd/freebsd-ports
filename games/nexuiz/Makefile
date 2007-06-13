@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	nexuiz
-PORTVERSION=	2.2.3
-PORTREVISION=	2
+PORTVERSION=	2.3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A fast-paced, chaotic, and intense multiplayer first person shooter
 
-NO_PACKAGE=	Package will be 180MB, set FORCE_PACKAGE if you really want to build it
+NO_PACKAGE=	Package will be 368MB, set FORCE_PACKAGE if you really want to build it
 
 USE_ZIP=	yes
 
@@ -25,16 +25,19 @@ MAKEFILE=	BSDmakefile
 MAKE_ARGS=	CC="${CC}" OPTIM_RELEASE="${CFLAGS} -fno-strict-aliasing -funroll-loops"
 ALL_TARGET=	#
 
-PLIST_FILES=	%%CLIENT%%bin/${PORTNAME}-glx %%SDL_CLIENT%%bin/${PORTNAME}-sdl \
-		%%SERVER%%bin/${PORTNAME}-dedicated %%DATADIR%%/data/common-spog.pk3 \
-		%%DATADIR%%/data/data20070123.pk3
-PLIST_DIRS=	%%DATADIR%%/data %%DATADIR%%
-
 OPTIONS=	CLIENT		"Build GLX client"		on \
 		SDL_CLIENT	"Build SDL client"		on \
-		SERVER		"Build dedicated server"	on
+		SERVER		"Build dedicated server"	on \
+		MAPPACK		"Install community map pack"	on
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_MAPPACK)
+DISTFILES+=	nexmappack_r2${EXTRACT_SUFX}
+PLIST_SUB+=	MAPPACK=""
+.else
+PLIST_SUB+=	MAPPACK="@comment "
+.endif
 
 .if !(defined(WITHOUT_CLIENT) && defined(WITHOUT_SDL_CLIENT))
 # Loads libraries on run-time, thus RUN_DEPENDS
@@ -68,13 +71,11 @@ PLIST_SUB+=	SERVER="@comment "
 .endif
 
 post-extract:
-	@${EXTRACT_CMD} ${WRKDIR}/Nexuiz/sources/enginesource20070123.zip \
+	@${EXTRACT_CMD} ${WRKDIR}/Nexuiz/sources/enginesource20070531.zip \
 		-d ${WRKDIR}/Nexuiz/sources
-	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},; 88,$$d' \
+	@${REINPLACE_CMD} -e 's,/usr/X11R6,${X11BASE},; 96,$$d' \
 		${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -E 's,(fs_basedir\, )"",\1"${DATADIR}",' ${WRKSRC}/fs.c
-	@${REINPLACE_CMD} -e 's,RTLD_LAZY,& | RTLD_GLOBAL,' ${WRKSRC}/vid_glx.c
-	@${REINPLACE_CMD} -E 's,(libcurl\.so)\.3,\1,' ${WRKSRC}/libcurl.c
 
 do-build:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
@@ -85,5 +86,8 @@ do-install:
 		do ${INSTALL_PROGRAM} $${f} ${PREFIX}/bin/${PORTNAME}-$${f##*-} ; done'
 	@${MKDIR} ${DATADIR}/data
 	${INSTALL_DATA} ${WRKDIR}/Nexuiz/data/*.pk3 ${DATADIR}/data
+.if !defined(WITHOUT_MAPPACK)
+	${INSTALL_DATA} ${WRKDIR}/data/*.pk3 ${DATADIR}/data
+.endif
 
 .include <bsd.port.post.mk>
