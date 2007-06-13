@@ -29,7 +29,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--datadir="${PREFIX}/lib" \
 		--with-tutorial-path="${DOCSDIR}" \
 		--with-lib3ds-prefix="${LOCALBASE}"
-MAN1=		giram.1
+
+OPTIONS=	POVRAY31	"Build against POV-Ray 3.1"	off
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_POVRAY31)
 BUILD_DEPENDS+=	povray:${PORTSDIR}/graphics/povray31
@@ -39,10 +42,15 @@ BUILD_DEPENDS+=	povray:${PORTSDIR}/graphics/povray
 RUN_DEPENDS+=	povray:${PORTSDIR}/graphics/povray
 .endif
 
+MAN1=		giram.1
+
+post-patch:
+	@${REINPLACE_CMD} -e '36s,static ,,' ${WRKSRC}/src/tools/tool_disc.c
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/*.pov ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
