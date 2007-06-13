@@ -8,7 +8,7 @@
 
 PORTNAME=	gdm
 PORTVERSION=	2.18.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -76,6 +76,9 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -e 's|root:root|root:wheel|g' \
 		${WRKSRC}/config/Makefile.in
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
+		${WRKSRC}/configure ${WRKSRC}/po/*.po ${WRKSRC}/gui/*.glade \
+		${WRKSRC}/daemon/*.c ${WRKSRC}/docs/*/*.xml
 
 post-install:
 .if !defined(PACKAGE_BUILDING)
