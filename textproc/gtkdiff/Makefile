@@ -9,13 +9,12 @@ PORTNAME=	gtkdiff
 PORTVERSION=	1.8.0
 PORTREVISION=	3
 CATEGORIES=	textproc gnome
-MASTER_SITES=	LOCAL/beech
+MASTER_SITES=	TUCOWS
 
 MAINTAINER=	beech@FreeBSD.org
-COMMENT=	A frontend program for diff(1) written for GNOME
+COMMENT=	A frontend for diff(1)
 
-USE_X_PREFIX=	yes
-USE_GNOME=		gnomehack gnomeprefix gnomelibs
+USE_GNOME=	gnomehack gnomeprefix gnomelibs
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
