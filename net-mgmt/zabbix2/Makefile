@@ -28,7 +28,10 @@ USE_GMAKE=	yes
 USE_PHP=	gd snmp sockets pcre bcmath
 USE_RC_SUBR=	zabbix_server.sh
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-agent --enable-server --with-net-snmp --with-jabber
+CONFIGURE_ARGS=	--disable-agent --enable-server \
+		--with-net-snmp=${LOCALBASE}/bin/net-snmp-config \
+		--with-curl=${LOCALBASE}/bin/curl-config \
+		--with-jabber=${LOCALBASE}
 MAKE_ARGS=	ARCH=freebsd
 SUB_FILES=	pkg-message
 
@@ -36,7 +39,7 @@ SUB_FILES=	pkg-message
 
 .ifndef WITHOUT_LDAP
 USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=--with-ldap
+CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 LIB_DEPENDS+=	gnutls.15:${PORTSDIR}/security/gnutls \
 		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 .endif
@@ -45,13 +48,13 @@ RUN_DEPENDS+=	fping:${PORTSDIR}/net/fping
 .endif
 .ifndef WITHOUT_MYSQL
 USE_PHP+=	mysql
-CONFIGURE_ARGS+=--with-mysql
+CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}/bin/mysql_config
 .elifdef WITH_PGSQL
 USE_PHP+=	pgsql
-CONFIGURE_ARGS+=--with-pgsql
+CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}/bin/pg_config
 .elifdef WITH_SQLITE
 USE_PHP+=	sqlite
-CONFIGURE_ARGS+=--with-sqlite
+CONFIGURE_ARGS+=--with-sqlite=${LOCALBASE}
 .else
 IGNORE=	zabbix needs a database backend
 .endif
