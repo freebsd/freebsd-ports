@@ -11398,6 +11398,7 @@ panoramixext	ports/x11/panoramixext
 pantera		ports/security/pantera
 pantomime	ports/mail/pantomime
 papercut	ports/news/papercut
+papi		ports/devel/papi
 paq		ports/archivers/paq
 par		ports/textproc/par
 par2cmdline	ports/archivers/par2cmdline
