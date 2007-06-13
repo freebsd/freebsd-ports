@@ -5,44 +5,31 @@
 # $FreeBSD$
 #
 
-PORTNAME=	guifications
-PORTVERSION=	2.12
-PORTREVISION=	4
+PORTNAME=	pidgin-guifications
+PORTVERSION=	2.14
 CATEGORIES=	net-im
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
-PKGNAMEPREFIX=	gaim-
+MASTER_SITES=	http://downloads.guifications.org/plugins/Guifications2/
 
 MAINTAINER=	ports@c0decafe.net
-COMMENT=	Plugin to add msn style "toaster" popups to Gaim
+COMMENT=	Plugin to add msn style "toaster" popups to Pidgin
 
-BUILD_DEPENDS=	${LOCALBASE}/include/gaim/config.h:${PORTSDIR}/net-im/gaim
-RUN_DEPENDS=	gaim:${PORTSDIR}/net-im/gaim
+BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:${PORTSDIR}/net-im/pidgin
+RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
 USE_XLIB=	yes
+use_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 GNU_CONFIGURE=	yes
-
-OPTIONS=	NLS "Native Language Support" on
+CONFIGURE_ENV=	"CPPFLAGS=-I${LOCALBASE}/include" "LIBS=-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-CONFIGURE_ARGS+=--with-libintl-prefix=${LOCALBASE}
-CONFIGURE_ENV+="CPPFLAGS=-I${LOCALBASE}/include" "LIBS=-L${LOCALBASE}/lib"
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
 post-extract:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} \
-		-e 's#\([@(]\)GAIM_LIBDIR\([@)]\)#\1libdir\2#' \
-		-e 's#\([@(]\)GAIM_DATADIR\([@)]\)#\1datadir\2#'
-	@${REINPLACE_CMD} -e 's|-g3||' ${WRKSRC}/configure
+		-e 's#\([@(]\)PIDGIN_LIBDIR\([@)]\)#\1libdir\2#' \
+		-e 's#\([@(]\)PIDGIN_DATADIR\([@)]\)#\1datadir\2#'
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
