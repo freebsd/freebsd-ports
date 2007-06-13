@@ -1,9 +1,4 @@
 bin/inspircd
-etc/inspircd/inspircd.motd.example
-etc/inspircd/inspircd.helpop-full.example
-etc/inspircd/inspircd.helpop.example
-etc/inspircd/inspircd.censor.example
-etc/inspircd/inspircd.filter.example
 inspircd/inspircd
 inspircd/.gdbargs
 lib/inspircd/libIRCDasyncdns.so
@@ -195,13 +190,27 @@ lib/inspircd/modules/m_antibear.so
 @dirrm inspircd
 @dirrm lib/inspircd/modules
 @dirrm lib/inspircd
+@unexec if cmp -s %D/etc/inspircd/inspircd.censor.example %D/etc/inspircd/inspircd.censor; then rm -f %D/etc/inspircd/inspircd.censor; fi
+etc/inspircd/inspircd.censor.example
+@exec if [ ! -f %B/inspircd.censor ] ; then cp -p %D/%F %B/inspircd.censor; fi
 @unexec if cmp -s %D/etc/inspircd/inspircd.conf.example %D/etc/inspircd/inspircd.conf; then rm -f %D/etc/inspircd/inspircd.conf; fi
 etc/inspircd/inspircd.conf.example
-@exec if [ ! -f %D/etc/inspircd/inspircd.conf ] ; then cp -p %D/%F %B/inspircd.conf; fi
+@exec if [ ! -f %B/inspircd.conf ] ; then cp -p %D/%F %B/inspircd.conf; fi
+@unexec if cmp -s %D/etc/inspircd/inspircd.filter.example %D/etc/inspircd/inspircd.filter; then rm -f %D/etc/inspircd/inspircd.filter; fi
+etc/inspircd/inspircd.filter.example
+@exec if [ ! -f %B/inspircd.filter ] ; then cp -p %D/%F %B/inspircd.filter; fi
+@unexec if cmp -s %D/etc/inspircd/inspircd.helpop.example %D/etc/inspircd/inspircd.helpop; then rm -f %D/etc/inspircd/inspircd.helpop; fi
+etc/inspircd/inspircd.helpop.example
+@exec if [ ! -f %B/inspircd.helpop ] ; then cp -p %D/%F %B/inspircd.helpop; fi
+@unexec if cmp -s %D/etc/inspircd/inspircd.helpop-full.example %D/etc/inspircd/inspircd.helpop; then rm -f %D/etc/inspircd/inspircd.helpop; fi
+etc/inspircd/inspircd.helpop-full.example
+@unexec if cmp -s %D/etc/inspircd/inspircd.motd.example %D/etc/inspircd/inspircd.motd; then rm -f %D/etc/inspircd/inspircd.motd; fi
+etc/inspircd/inspircd.motd.example
+@exec if [ ! -f %B/inspircd.motd ] ; then cp -p %D/%F %B/inspircd.motd; fi
 @unexec if cmp -s %D/etc/inspircd/inspircd.quotes.example %D/etc/inspircd/inspircd.quotes; then rm -f %D/etc/inspircd/inspircd.quotes; fi
 etc/inspircd/inspircd.quotes.example
-@exec if [ ! -f %D/etc/inspircd/inspircd.quotes ] ; then cp -p %D/%F %B/inspircd.quotes; fi
+@exec if [ ! -f %B/inspircd.quotes ] ; then cp -p %D/%F %B/inspircd.quotes; fi
 @unexec if cmp -s %D/etc/inspircd/inspircd.rules.example %D/etc/inspircd/inspircd.rules; then rm -f %D/etc/inspircd/inspircd.rules; fi
 etc/inspircd/inspircd.rules.example
-@exec if [ ! -f %D/etc/inspircd/inspircd.rules ] ; then cp -p %D/%F %B/inspircd.rules; fi
+@exec if [ ! -f %B/inspircd.rules ] ; then cp -p %D/%F %B/inspircd.rules; fi
 @dirrmtry etc/inspircd

@@ -7,6 +7,7 @@
 
 PORTNAME=	inspircd
 PORTVERSION=	1.1.8
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://www.inspircd.org/downloads/ \
 		http://www.chatspike.net/downloads/
@@ -18,6 +19,7 @@ COMMENT=	A modular C++ IRC daemon
 WRKSRC=	${WRKDIR}/inspircd
 USE_GMAKE=	yes
 USE_BZIP2=	yes
+USE_LDCONFIG=	${PREFIX}/lib/inspircd
 
 # Configure script is written in perl
 USE_PERL5_BUILD=yes
@@ -46,5 +48,9 @@ post-install:
 	@${STRIP_CMD} ${PREFIX}/lib/inspircd/modules/*.so
 	@${STRIP_CMD} ${PREFIX}/lib/inspircd/*.so
 	@${STRIP_CMD} ${PREFIX}/bin/inspircd
+.for FILE in censor conf filter helpop motd quotes rules
+	@${TEST} -f ${PREFIX}/etc/inspircd/inspircd.${FILE} || \
+		${CP} ${PREFIX}/etc/inspircd/inspircd.${FILE}.example ${PREFIX}/etc/inspircd/inspircd.${FILE}
+.endfor
 
 .include <bsd.port.mk>
