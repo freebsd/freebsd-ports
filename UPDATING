@@ -6,14 +6,21 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
-20070612:
- AFFECTS: userd of security/sshguard
- AUTHOR: itetcu@FreeBSD.org
+20070613:
+  AFFECTS: users of net-mgmt/zabbix
+  AUTHOR: infofarmer@FreeBSD.org
 
- The port has been splitted in 3, if you use it with ipfw please:
- # portupgrade -o security/sshguard-ipfw sshguard\*
- or if you use it with pf:
- # portupgrade -o security/sshguard-pf sshguard\*
+  The agent part has been moved out into net/zabbix-agent. If you
+  need both the server and the agent, install both ports.
+
+20070612:
+  AFFECTS: users of security/sshguard
+  AUTHOR: itetcu@FreeBSD.org
+
+  The port has been split in 3, if you use it with ipfw please:
+  # portupgrade -o security/sshguard-ipfw sshguard\*
+  or if you use it with pf:
+  # portupgrade -o security/sshguard-pf sshguard\*
 
 20070526:
   AFFECTS: users of devel/perforce
