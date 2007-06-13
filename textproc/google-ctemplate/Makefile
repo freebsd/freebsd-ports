@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	google-ctemplate
-PORTVERSION=	0.4
+PORTVERSION=	0.6
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	goog-ctemplate
+MASTER_SITES=	http://google-ctemplate.googlecode.com/files/
 DISTNAME=	ctemplate-${PORTVERSION}
 
 MAINTAINER=	clsung@FreeBSD.org
