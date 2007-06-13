@@ -1636,6 +1636,7 @@
     SUBDIR += p5-usb
     SUBDIR += p5-version
     SUBDIR += p65
+    SUBDIR += papi
     SUBDIR += pas2dox
     SUBDIR += patch
     SUBDIR += pccts
