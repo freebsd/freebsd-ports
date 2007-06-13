@@ -6,7 +6,7 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
-2007-05-12:
+20070612:
  AFFECTS: userd of security/sshguard
  AUTHOR: itetcu@FreeBSD.org
 
