@@ -8,6 +8,16 @@
 # Some of the knobs are not tunable by the OPTIONS framework. These are
 # explained here in detail.
 #
+# Core funcionality:
+#
+# MPLAYER_GENERIC_BUILD
+# default: undefined
+# By default, the mplayer port creates a custom build based on personal
+# preferences.
+# If you want to build a generic package with certain fixed options,
+# suitable for any CPU within ${ARCH}, define this knob.
+# Note: Other knobs and especially OPTIONS
+#
 # CPU features:
 #
 # The following is only of interest if you haven't enabled
@@ -73,7 +83,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.10
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -117,12 +127,11 @@ CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 OPTIONS=	DEBUG "Include debug symbols in mplayer's binary files" off
 
 #Collect OPTIONS menu
+.if !defined(MPLAYER_GENERIC_BUILD)
 OPTIONS+=	RTCPU "Let mplayer dynamically check for CPU features" on
 OPTIONS+=	OCFLAGS "Use optimized compiler flags" on
 OPTIONS+=	SIMD "Allow mplayer to use vector engines (MMX...)" on
-.if !defined(PACKAGE_BUILDING)
 OPTIONS+=	MENCODER "Support encoding of multimedia files" on
-.endif
 OPTIONS+=	IPV6 "Include inet6 network support" on
 OPTIONS+=	X11 "Enable X11 support for mplayer's video output" on
 OPTIONS+=	GUI "Enable GTK2 graphical user interface with X11" on
@@ -153,9 +162,7 @@ OPTIONS+=	SPEEX "Enable speex audio codec support" off
 OPTIONS+=	TREMOR "Use built-in tremor instead of libvorbis" off
 OPTIONS+=	XMMS "Enable XMMS plugin support" off
 OPTIONS+=	THEORA "Enable ogg theora video support" off
-.if !defined(PACKAGE_BUILDING)
 OPTIONS+=	WIN32 "Enable win32 codec set on the IA32 arch" on
-.endif
 OPTIONS+=	X264 "Enable x264 (H.264) video codec support" off
 OPTIONS+=	XANIM "Enable xanim DLL support" off
 OPTIONS+=	XVID "Enable XVID video codec support" on
@@ -168,6 +175,7 @@ OPTIONS+=	LIBCDIO "Enable libcdio support" off
 OPTIONS+=	CDPARANOIA "Enable cdparanoia support" off
 OPTIONS+=	LIBLZO "Enable external liblzo library" off
 OPTIONS+=	JOYSTICK "Enable joystick support" off
+.endif
 
 WANT_GNOME=	yes
 WANT_SDL=	yes
@@ -216,6 +224,41 @@ CONFIGURE_ARGS+=--disable-vidix-internal
 PLIST_SUB+=	VIDIX="@comment "
 .endif
 
+# Esablish de-facto dependencies for either building generic mplayer
+# binary-suitable package or custom build
+
+.if defined(MPLAYER_GENERIC_BUILD)
+#Compiler flags
+CFLAGS=		#let mplayer decide the flags
+
+#Defaults for generic build
+INCL_MODULES=	RTCPU IPV6 X11 GUI SDL SKINS FREETYPE AALIB TREMOR \
+		WIN32 XVID
+EXCL_MODULES=	OCFLAGS MENCODER VIDIX NVIDIA RTC ARTS ESOUND \
+		JACK POLYP NAS OPENAL LIBUNGIF LIBCACA SVGALIB \
+		LIBDV MAD TWOLAME DTS LIBMPCDEC FAAC LADSPA SPEEX \
+		XMMS THEORA X264 XANIM REALPLAYER LIVEMEDIA SMB \
+		FRIBIDI LIRC LIBCDIO CDPARANOIA LIBLZO
+
+.for module in ${EXCL_MODULES}
+WITHOUT_${module}=yes
+.undef(WITH_${module})
+.endfor
+
+.for module in ${INCL_MODULES}
+WITH_${module}=yes
+.undef(WITHOUT_${module})
+.endfor
+
+.undef(WITH_DVD_DEVICE)
+.undef(WITH_CDROM_DEVICE)
+.undef(WITH_LANG)
+
+#Kernel granularity
+DEFAULT_KERN_HZ=1024
+CFLAGS+=	-fno-force-addr
+.endif 	#MPLAYER_GENERIC_BUILD
+
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 CONFIGURE_ARGS+=--with-x11libdir="${LOCALBASE}/lib"
@@ -229,18 +272,8 @@ CONFIGURE_ARGS+=--disable-x11 \
 CONFIGURE_ARGS+=--language=${WITH_LANG}
 .endif
 
-#On i386, gcc runs out of general purpose registers when
-#trying to compile a debug version with the default flags.
-.if defined(WITH_DEBUG)
-.if ${ARCH} == "i386"
-DEBUG_FLAGS=	-g -O -fomit-frame-pointer
-.endif
-.else
 .if !defined(WITHOUT_OCFLAGS)
 CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
-.else
-CFLAGS+=	-O -fomit-frame-pointer
-.endif
 .endif
 
 .if defined(WITHOUT_IPV6)
@@ -276,7 +309,7 @@ CONFIGURE_ENV+=		CFLAGS+="-I/${LOCALBASE}/include"
 CONFIGURE_ARGS+=	--disable-rtc
 .endif
 
-.if !defined(WITHOUT_MENCODER) && !defined(PACKAGE_BUILDING)
+.if !defined(WITHOUT_MENCODER)
 LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
 MLINKS+=	mplayer.1 mencoder.1
 PLIST_SUB+=	MENCODER=""
@@ -318,7 +351,7 @@ CONFIGURE_ARGS+=	--disable-cdparanoia
 .endif
 
 .if defined(WITH_LIBCACA)
-LIB_DEPENDS+=caca.0:${PORTSDIR}/graphics/libcaca
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libcaca.a:${PORTSDIR}/graphics/libcaca
 .else
 CONFIGURE_ARGS+=	--disable-caca
 .endif
@@ -434,7 +467,7 @@ CONFIGURE_ARGS+=	--enable-real \
 RUN_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
 BUILD_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
 .else
-.if !defined(WITHOUT_WIN32) && !defined(PACKAGE_BUILDING)
+.if !defined(WITHOUT_WIN32)
 CONFIGURE_ARGS+=	--enable-real \
 			--with-reallibdir=${LOCALBASE}/lib/win32
 .else
@@ -577,7 +610,7 @@ CONFIGURE_ARGS+=--disable-3dnow --disable-3dnowext
 CONFIGURE_ARGS+=--disable-mmxext --disable-sse --disable-sse2
 .endif
 .endif #WITH_RTCPU
-.if !defined(WITHOUT_WIN32) && !defined(PACKAGE_BUILDING)
+.if !defined(WITHOUT_WIN32)
 RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 CONFIGURE_ARGS+=	--with-win32libdir=${LOCALBASE}/lib/win32
 CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
@@ -627,6 +660,15 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|irqp = 1024|irqp = ${DEFAULT_KERN_HZ}|' \
 		${WRKSRC}/mplayer.c
+.endif
+.if defined(MPLAYER_GENERIC_BUILD) && defined(WITH_DEBUG)
+	@${REINPLACE_CMD} -e \
+		's|1.0pre8|1.0pre8-FreeBSD-generic-debug|' \
+		${WRKSRC}/version.sh
+.elif defined(MPLAYER_GENERIC_BUILD)
+	@${REINPLACE_CMD} -e \
+		's|1.0pre8|1.0pre8-FreeBSD-generic|' \
+		${WRKSRC}/version.sh
 .endif
 
 post-configure:
