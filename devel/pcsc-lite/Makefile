@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.2
 PORTEPOCH=	2
 CATEGORIES=	devel security
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://alioth.debian.org/frs/download.php/1819/
-MASTER_SITE_SUBDIR=	arved
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/1977/
 DISTNAME=	pcsc-lite-${PORTVERSION:S/.b./-beta/}
 
 MAINTAINER=	arved@FreeBSD.org
@@ -58,12 +56,7 @@ pre-everything::
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/README.DAEMON ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/pcsc-lite.pdf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/ifdhandler-3.pdf ${DOCSDIR}
-.endif
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/example/Makefile.am ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/example/Makefile.in ${EXAMPLESDIR}

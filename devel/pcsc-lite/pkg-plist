@@ -13,14 +13,15 @@ lib/pcsc/services/.keep_me
 libdata/pkgconfig/libpcsclite.pc
 sbin/pcscd
 sbin/update-reader.conf
-%%PORTDOCS%%%%DOCSDIR%%/README.DAEMON
-%%PORTDOCS%%%%DOCSDIR%%/pcsc-lite.pdf
-%%PORTDOCS%%%%DOCSDIR%%/ifdhandler-3.pdf
+%%DOCSDIR%%/README.DAEMON
+%%DOCSDIR%%/pcsc-lite.tex
+%%DOCSDIR%%/pcsc-lite.bib
+%%DOCSDIR%%/ifdhandler-3.tex
 %%EXAMPLESDIR%%/Makefile.am
 %%EXAMPLESDIR%%/Makefile.in
 %%EXAMPLESDIR%%/pcsc_demo.c
 @dirrm include/PCSC
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%
 @dirrm lib/pcsc/drivers
 @dirrm lib/pcsc/services

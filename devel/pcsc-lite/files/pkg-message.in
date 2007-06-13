@@ -5,7 +5,6 @@ You can fetch drivers from http://www.linuxnet.com/sourcedrivers.html
 or install one of the following ports:
 devel/libccid
 security/ifd-gempc410
-security/ifd-gpr400
 security/ifd-slb_rf60
 
 After installing the driver, please update the pcscd configuration file
