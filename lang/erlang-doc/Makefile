@@ -9,7 +9,7 @@ PORTNAME=	erlang-doc
 PORTVERSION=	r11b4
 PORTEPOCH=	1
 CATEGORIES=	lang
-MASTER_SITES=	http://www.erlang.org/doc/doc-5.5.4/pdf/:release \
+MASTER_SITES=	http://www.erlang.org/documentation/doc-5.5.4/pdf/:release \
 		http://erlang.org/download/:erlangorg \
 		http://www.erlang.se/doc/:erlangse \
 		http://www.sics.se/~joe/thesis/:joe \
