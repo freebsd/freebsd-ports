@@ -12008,6 +12008,7 @@ picturebook	ports/graphics/picturebook
 piddle		ports/graphics/piddle
 pidentd		ports/security/pidentd
 pidgin		ports/net-im/pidgin
+pidgin-guifications	ports/net-im/pidgin-guifications
 pidgin-hotkeys	ports/net-im/pidgin-hotkeys
 pidof		ports/sysutils/pidof
 piewm		ports/x11-wm/piewm
