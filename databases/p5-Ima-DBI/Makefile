@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	Ima-DBI
-PORTVERSION=	0.34
+PORTVERSION=	0.35
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Class/TMTM
+MASTER_SITE_SUBDIR=	../../authors/id/P/PE/PERRIN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Database connection caching and organization
 
 BUILD_DEPENDS=	${SITE_PERL}/DBIx/ContextualFetch.pm:${PORTSDIR}/databases/p5-DBIx-ContextualFetch \
+		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/Class/Data/Inheritable.pm:${PORTSDIR}/devel/p5-Class-Data-Inheritable
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -24,14 +25,6 @@ PERL_CONFIGURE=	yes
 MAN3=		Ima::DBI.3
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
-.else
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-.endif
 
 .if ${PERL_LEVEL} < 500702
 BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
