@@ -18,7 +18,7 @@ DISTFILES=	dpsrc.12_19_2006.tar.gz:source \
 DIST_SUBDIR=	dataplot
 EXTRACT_ONLY=	dpsrc.12_19_2006.tar.gz
 
-MAINTAINER=	beech@alaskaparadise.com
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	A free software system for statistical visualization
 
 LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \

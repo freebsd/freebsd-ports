@@ -10,7 +10,7 @@ PORTVERSION=	2.1.4
 PORTREVISION=	2
 CATEGORIES=	mail www
 
-MAINTAINER=	beech@alaskaparadise.com
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	The Horde contact management application
 
 USE_HORDE=	base

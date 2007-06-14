@@ -1,6 +1,6 @@
 # Ports collection makefile for:	trean3
 # Date created:			Fri Mar 16, 2007
-# Whom:				Beech Rintoul <beech@alaskaparadise.com>
+# Whom:				Beech Rintoul <beech@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ CATEGORIES=	www
 MASTER_SITES=	CENKES
 PKGNAMEPREFIX=	horde-
 
-MAINTAINER=	beech@alaskaparadise.com
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Bookmark manager
 
 USE_HORDE=	base pkg-message

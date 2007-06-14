@@ -12,7 +12,7 @@ CATEGORIES=	www mail
 PKGNAMEPREFIX=	horde-
 DIST_SUBDIR=	horde
 
-MAINTAINER=	beech@alaskaparadise.com
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Password changing module for Horde
 
 USE_HORDE=	base

@@ -10,7 +10,7 @@ PORTVERSION=	1.0.2
 PORTREVISION=	2
 CATEGORIES=	ftp www
 
-MAINTAINER=	beech@alaskaparadise.com
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Gollem is the Horde web-based File Manager
 
 USE_HORDE=	base

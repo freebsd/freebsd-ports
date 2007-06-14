@@ -11,7 +11,7 @@ CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	beech@alaskaparadise.com
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Token's 'Internet Relay Chat' Client
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
