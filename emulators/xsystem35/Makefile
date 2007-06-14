@@ -53,24 +53,18 @@ CONFIGURE_ARGS+=	--enable-audio=oss --with-default-output=oss
 #.else
 CONFIGURE_ARGS+=	--disable-sdl
 #.endif
-.if ${ARCH} == "i386"
-.if defined(WITHOUT_MMX)
-CONFIGURE_ARGS+=	--disable-mmx
-.else
+
+.if ${MACHINE_CPU:Mmmx}
 CONFIGURE_ARGS+=	--enable-mmx
 BUILD_DEPENDS+=		nasm:${PORTSDIR}/devel/nasm
-.endif
+.else
+CONFIGURE_ARGS+=	--disable-mmx
 .endif
 
 pre-everything::
 #.if !defined(WITH_SDL)
 #	@${ECHO_MSG} '===> Define WITH_SDL to enable SDL support'
 #.endif
-.if ${ARCH} == "i386"
-.if !defined(WITHOUT_MMX)
-	@${ECHO_MSG} '===> Define WITHOUT_MMX to disable MMX routines'
-.endif
-.endif
 
 post-extract:
 	@${CP} ${WRKSRC}/INSTALL ${WRKSRC}/doc/INSTALL

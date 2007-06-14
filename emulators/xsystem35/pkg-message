@@ -1,15 +1,15 @@
 
-o make sure your kernel has been configured with options SHMMAXPGS=4096
+o Make sure your kernel has been configured with options SHMMAXPGS=4096
   when you run on display 16bpp or deeper color.
 
-o copy PREFIX/share/example/xsystem35/xsys35rc.sample
+o Copy PREFIX/share/example/xsystem35/xsys35rc.sample
   to ~/.xsys35rc and fit it to your environment.
 
-o install game data from AliceSoft's cdrom with
+o Install game data from AliceSoft's cdrom with
   PREFIX/bin/instgame.
 
 o pcm0 sound device doesn't work well with this program for now.
   Try snd0 instead, OSS commercial product or
-  -devdsp none commandline option as the last resort.
+  `-devdsp none' command line option as the last resort.
 
-enjoy!
+Enjoy!
