@@ -11800,6 +11800,7 @@ phoon		ports/astro/phoon
 photo_gallery	ports/www/photo_gallery
 photoclip	ports/graphics/photoclip
 photopc		ports/graphics/photopc
+php-Auth_OpenID	ports/security/php-Auth_OpenID
 php-dbg		ports/devel/php-dbg
 php-dyn		ports/www/php-dyn
 php-gtk		ports/x11-toolkits/php-gtk
