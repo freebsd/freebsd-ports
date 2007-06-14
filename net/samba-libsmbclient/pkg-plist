@@ -1,52 +1,14 @@
 include/libsmbclient.h
-%%MSRPC%%include/libmsrpc.h
+%%ADDNS%%include/addns.h
 lib/libsmbclient.a
 lib/libsmbclient.so
 lib/libsmbclient.so.0
-%%MSRPC%%lib/libmsrpc.a
-%%MSRPC%%lib/libmsrpc.so
-%%MSRPC%%lib/libmsrpc.so.0
+%%ADDNS%%lib/libaddns.a
+%%ADDNS%%lib/libaddns.so
+%%ADDNS%%lib/libaddns.so.0
 %%SHAREMODES%%lib/libsmbsharemodes.a
 %%SHAREMODES%%lib/libsmbsharemodes.so
 %%SHAREMODES%%lib/libsmbsharemodes.so.0
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/cacusermgr/Makefile
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/cacusermgr/cacusermgr.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/cacusermgr/cacusermgr.h
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/cacusermgr/mgr_group.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/cacusermgr/mgr_user.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/cacusermgr/util.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/Makefile
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/README
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/lsa/ear.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/lsa/lsaenum.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/lsa/lsaenumprivs.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/lsa/lsapol.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/lsa/lsapriv.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/lsa/lsaq.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/lsa/lsatrust.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/reg/regdelete.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/reg/regkey.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/reg/regkeycreate.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/reg/regkeyenum.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/reg/regopen.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/reg/regopenkey.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/reg/regqueryval.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/reg/regsetval.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/reg/regvalenum.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/reg/security.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/reg/shutdown.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/sam/adduser.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/sam/disable.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/sam/dominfo.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/sam/enable.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/sam/samenum.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/sam/samgroup.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/sam/samlookup.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/sam/samuser.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/smbc_test/smbc.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/svcctl/svc.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/test_util.c
-%%MSRPC%%%%EXAMPLESDIR%%/libmsrpc/test/test_util.h
 %%EXAMPLESDIR%%/libsmbclient/Makefile
 %%EXAMPLESDIR%%/libsmbclient/README
 %%EXAMPLESDIR%%/libsmbclient/get_auth_data_fn.h
@@ -65,6 +27,7 @@ lib/libsmbclient.so.0
 %%EXAMPLESDIR%%/libsmbclient/smbwrapper/wrapper.c
 %%EXAMPLESDIR%%/libsmbclient/smbwrapper/wrapper.h
 %%EXAMPLESDIR%%/libsmbclient/testacl.c
+%%EXAMPLESDIR%%/libsmbclient/testacl2.c
 %%EXAMPLESDIR%%/libsmbclient/testbrowse.c
 %%EXAMPLESDIR%%/libsmbclient/testbrowse2.c
 %%EXAMPLESDIR%%/libsmbclient/testchmod.c
@@ -76,12 +39,4 @@ lib/libsmbclient.so.0
 %%EXAMPLESDIR%%/libsmbclient/tree.c
 @dirrm %%EXAMPLESDIR%%/libsmbclient/smbwrapper
 @dirrm %%EXAMPLESDIR%%/libsmbclient
-%%MSRPC%%@dirrm %%EXAMPLESDIR%%/libmsrpc/test/svcctl
-%%MSRPC%%@dirrm %%EXAMPLESDIR%%/libmsrpc/test/smbc_test
-%%MSRPC%%@dirrm %%EXAMPLESDIR%%/libmsrpc/test/sam
-%%MSRPC%%@dirrm %%EXAMPLESDIR%%/libmsrpc/test/reg
-%%MSRPC%%@dirrm %%EXAMPLESDIR%%/libmsrpc/test/lsa
-%%MSRPC%%@dirrm %%EXAMPLESDIR%%/libmsrpc/test
-%%MSRPC%%@dirrm %%EXAMPLESDIR%%/libmsrpc/cacusermgr
-%%MSRPC%%@dirrm %%EXAMPLESDIR%%/libmsrpc
 @dirrm %%EXAMPLESDIR%%
