@@ -8,7 +8,7 @@
 PORTNAME=	permute
 PORTVERSION=	1.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://pigseye.kennesaw.edu/~rbentley/
+MASTER_SITES=	http://atlas.kennesaw.edu/~rbentley/
 
 MAINTAINER=	erik@smluc.org
 COMMENT=	Generate all permutations of lines from stdin
