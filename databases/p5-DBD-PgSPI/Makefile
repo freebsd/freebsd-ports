@@ -18,7 +18,9 @@ COMMENT=	Provides access to PostgreSQL db through DBI within pl/perl functions
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${NONEXISTENT}:${PORTSDIR}/${POSTGRESQL_PORT}:configure
-RUN_DEPENDS=	${LOCALBASE}/lib/postgresql/plperl.so:${PORTSDIR}/databases/p5-postgresql-plperl
+RUN_DEPENDS=	${LOCALBASE}/lib/postgresql/plperl.so:${PORTSDIR}/databases/p5-postgresql-plperl \
+		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
+		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 
 BROKEN=		Does not compile
 
@@ -45,14 +47,6 @@ PGSQL_VER!=	${LOCALBASE}/bin/postmaster -V | \
 PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | ${SED} -n 's/PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\)\..*/\1\2/p'
 .else
 PGSQL_VER=	${DEFAULT_PGSQL_VER}
-.endif
-
-.if ${PERL_LEVEL} < 500600
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137 \
-		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg-13
-.else
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
-		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
 CONFIGURE_ENV=	POSTGRES_HOME="`${PGSQL_WRKSRC_CMD}`/src" \
