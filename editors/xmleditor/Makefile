@@ -28,4 +28,10 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 USE_LDCONFIG=	yes
 
+# Fix for GCC 4.2
+post-patch:
+	@${REINPLACE_CMD} -e '257s,((char\*)\*n),n,' \
+		-e '/gtk_xml_modules_add_module/s,const ,,' \
+		${WRKSRC}/src/gtkxmlmodules.*
+
 .include <bsd.port.mk>
