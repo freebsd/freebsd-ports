@@ -9,8 +9,7 @@ PORTNAME=	xroads
 PORTVERSION=	0.6
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://math.missouristate.edu/~erik/files/fbsd/\
-		http://smluc.org/~erik/files/fbsd/
+MASTER_SITES=	http://math.missouristate.edu/~erik/files/fbsd/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	erik@smluc.org
@@ -19,10 +18,6 @@ COMMENT=	Commodore 64 "Crossroads"-like video game for X Window System
 USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-IGNORE=		crashes after a short time
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xroads ${PREFIX}/bin
