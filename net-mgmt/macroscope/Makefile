@@ -20,8 +20,8 @@ OPTIONS=	MYSQL		"With MySQL support" on \
 USE_BZIP2=	yes
 USE_RC_SUBR=	macroscope
 
-BUILD_DEPENDS+=	cmake:${PORTSDIR}/devel/cmake
-LIB_DEPENDS+=	lzo2:${PORTSDIR}/archivers/lzo2 \
+BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
+LIB_DEPENDS=	lzo2:${PORTSDIR}/archivers/lzo2 \
 		odbc:${PORTSDIR}/databases/unixODBC \
 		pcap:${PORTSDIR}/net/libpcap
 
@@ -38,7 +38,7 @@ CMAKE_ARGS=	-DCMAKE_BUILD_TYPE:STRING=Release \
 CMAKE_ARGS+=	-DCMAKE_NOT_INSTALL_DOC:BOOL=ON
 .endif
 
-.if defined(WITHOUT_MYSQL)
+.if !defined(WITHOUT_MYSQL)
 USE_MYSQL=	yes
 .endif
 
