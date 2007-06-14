@@ -4,12 +4,13 @@ CONFIGURE_ARGS+=	--without-python
 CONFIGURE_ARGS+=	--with-libsmbclient
 SAMBA_INSTALL_LIBS=	libsmbclient
 
-.if !defined(WITHOUT_MSRPC)
-CONFIGURE_ARGS+=	--with-libmsrpc
-SAMBA_INSTALL_LIBS+=	libmsrpc
-PLIST_SUB+=		MSRPC=""
+.if !defined(WITHOUT_ADDNS)
+CONFIGURE_ARGS+=	--with-libaddns
+SAMBA_INSTALL_LIBS+=	libaddns
+PLIST_SUB+=		ADDNS=""
 .else
-PLIST_SUB+=		MSRPC="@comment "
+CONFIGURE_ARGS+=	--without-libaddns
+PLIST_SUB+=		ADDNS="@comment "
 .endif
 
 .if !defined(WITHOUT_SHAREMODES)
@@ -17,6 +18,7 @@ CONFIGURE_ARGS+=	--with-libsmbsharemodes
 SAMBA_INSTALL_LIBS+=	libsmbsharemodes
 PLIST_SUB+=		SHAREMODES=""
 .else
+CONFIGURE_ARGS+=	--without-libsmbsharemodes
 PLIST_SUB+=		SHAREMODES="@comment "
 .endif
 
@@ -25,8 +27,8 @@ MAN7=			libsmbclient.7
 do-build:
 	cd ${WRKSRC} && ${MAKE} proto
 	cd ${WRKSRC} && ${MAKE} libsmbclient
-.if !defined(WITHOUT_MSRPC)
-	cd ${WRKSRC} && ${MAKE} cac
+.if !defined(WITHOUT_ADDNS)
+	cd ${WRKSRC} && ${MAKE} libaddns
 .endif
 .if !defined(WITHOUT_SHAREMODES)
 	cd ${WRKSRC} && ${MAKE} libsmbsharemodes
@@ -39,8 +41,8 @@ do-install:
 .endfor
 	-@${MKDIR} ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/include/libsmbclient.h ${PREFIX}/include
-.if !defined(WITHOUT_MSRPC)
-	${INSTALL_DATA} ${WRKSRC}/include/libmsrpc.h ${PREFIX}/include
+.if !defined(WITHOUT_ADDNS)
+	${INSTALL_DATA} ${WRKSRC}/libaddns/addns.h ${PREFIX}/include
 .endif
 	-@${MKDIR} ${PREFIX}/lib
 .for lib in ${SAMBA_INSTALL_LIBS}
@@ -50,6 +52,3 @@ do-install:
 .endfor
 	-@${MKDIR} ${EXAMPLESDIR}
 	@${CP} -Rp ${WRKDIR}/${DISTNAME}/examples/libsmbclient ${EXAMPLESDIR}
-.if !defined(WITHOUT_MSRPC)
-	@${CP} -Rp ${WRKDIR}/${DISTNAME}/examples/libmsrpc ${EXAMPLESDIR}
-.endif
