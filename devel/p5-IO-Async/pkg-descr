@@ -1,0 +1,10 @@
+This collection of modules allows programs to be written that perform
+asynchronous filehandle IO operations. A typical program using them
+would consist of a single subclass of IO::Async::Set to act as a
+container for a number of IO::Async::Notifier objects (or subclasses
+thereof). The set itself is responsible for checking read- or
+write-readiness, and informing the notifiers of these conditions. The
+notifiers then perform whatever work is required on these conditions,
+by using subclass methods or callback functions.
+
+WWW:	http://search.cpan.org/dist/IO-Async/

@@ -1205,6 +1205,7 @@
     SUBDIR += p5-IO
     SUBDIR += p5-IO-AIO
     SUBDIR += p5-IO-All
+    SUBDIR += p5-IO-Async
     SUBDIR += p5-IO-Capture
     SUBDIR += p5-IO-CaptureOutput
     SUBDIR += p5-IO-Digest
