@@ -1,10 +1,10 @@
---- gcc/ada/Makefile.in.orig	Sun Oct 22 00:57:17 2006
-+++ gcc/ada/Makefile.in	Sun Oct 22 00:57:43 2006
-@@ -842,7 +842,7 @@
-   mlib-tgt.adb<mlib-tgt-linux.adb
+--- gcc/ada/Makefile.in.orig	Wed May  9 06:22:48 2007
++++ gcc/ada/Makefile.in	Wed May  9 06:31:51 2007
+@@ -855,7 +855,7 @@
    GNATLIB_SHARED = gnatlib-shared-dual
  
--  THREADSLIB= -lc_r
+   EH_MECHANISM=-gcc
+-  THREADSLIB= -lpthread
 +  THREADSLIB= ${PTHREAD_LIBS}
    GMEM_LIB = gmemlib
    PREFIX_OBJS = $(PREFIX_REAL_OBJS)
