@@ -8,6 +8,6 @@ bin/spell
 bin/ispell
 bin/munchlist
 bin/tryaffix
-share/ispell/english.aff
-share/ispell/english.dict
-share/ispell/english.hash
+%%DATADIR%%/english.aff
+%%DATADIR%%/english.dict
+%%DATADIR%%/english.hash
