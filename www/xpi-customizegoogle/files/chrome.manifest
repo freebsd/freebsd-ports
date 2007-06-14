@@ -1,0 +1,91 @@
+
+overlay	chrome://browser/content/browser.xul	chrome://customizegoogle/content/browser.xul
+content	customizegoogle	jar:chrome/customizegoogle.jar!/content/customizegoogle/
+
+skin	customizegoogle	classic/1.0	jar:chrome/customizegoogle.jar!/skin/customizegoogle/
+
+locale	customizegoogle	ar-SA	jar:chrome/customizegoogle.jar!/locale/customizegoogle/ar-SA/
+
+locale	customizegoogle	be-BY	jar:chrome/customizegoogle.jar!/locale/customizegoogle/be-BY/
+
+locale	customizegoogle	bg-BG	jar:chrome/customizegoogle.jar!/locale/customizegoogle/bg-BG/
+
+locale	customizegoogle	ca-AD	jar:chrome/customizegoogle.jar!/locale/customizegoogle/ca-AD/
+
+locale	customizegoogle	cs-CZ	jar:chrome/customizegoogle.jar!/locale/customizegoogle/cs-CZ/
+
+locale	customizegoogle	da-DK	jar:chrome/customizegoogle.jar!/locale/customizegoogle/da-DK/
+
+locale	customizegoogle	de-DE	jar:chrome/customizegoogle.jar!/locale/customizegoogle/de-DE/
+
+locale	customizegoogle	el-GR	jar:chrome/customizegoogle.jar!/locale/customizegoogle/el-GR/
+
+locale	customizegoogle	en-GB	jar:chrome/customizegoogle.jar!/locale/customizegoogle/en-GB/
+
+locale	customizegoogle	en-US	jar:chrome/customizegoogle.jar!/locale/customizegoogle/en-US/
+
+locale	customizegoogle	es-AR	jar:chrome/customizegoogle.jar!/locale/customizegoogle/es-AR/
+
+locale	customizegoogle	es-CL	jar:chrome/customizegoogle.jar!/locale/customizegoogle/es-CL/
+
+locale	customizegoogle	es-ES	jar:chrome/customizegoogle.jar!/locale/customizegoogle/es-ES/
+
+locale	customizegoogle	eu-ES	jar:chrome/customizegoogle.jar!/locale/customizegoogle/eu-ES/
+
+locale	customizegoogle	fa-IR	jar:chrome/customizegoogle.jar!/locale/customizegoogle/fa-IR/
+
+locale	customizegoogle	fi-FI	jar:chrome/customizegoogle.jar!/locale/customizegoogle/fi-FI/
+
+locale	customizegoogle	fr-FR	jar:chrome/customizegoogle.jar!/locale/customizegoogle/fr-FR/
+
+locale	customizegoogle	fy-NL	jar:chrome/customizegoogle.jar!/locale/customizegoogle/fy-NL/
+
+locale	customizegoogle	he-IL	jar:chrome/customizegoogle.jar!/locale/customizegoogle/he-IL/
+
+locale	customizegoogle	hr-HR	jar:chrome/customizegoogle.jar!/locale/customizegoogle/hr-HR/
+
+locale	customizegoogle	hu-HU	jar:chrome/customizegoogle.jar!/locale/customizegoogle/hu-HU/
+
+locale	customizegoogle	id-ID	jar:chrome/customizegoogle.jar!/locale/customizegoogle/id-ID/
+
+locale	customizegoogle	it-IT	jar:chrome/customizegoogle.jar!/locale/customizegoogle/it-IT/
+
+locale	customizegoogle	ja-JP	jar:chrome/customizegoogle.jar!/locale/customizegoogle/ja-JP/
+
+locale	customizegoogle	ko-KR	jar:chrome/customizegoogle.jar!/locale/customizegoogle/ko-KR/
+
+locale	customizegoogle	lt-LT	jar:chrome/customizegoogle.jar!/locale/customizegoogle/lt-LT/
+
+locale	customizegoogle	nb-NO	jar:chrome/customizegoogle.jar!/locale/customizegoogle/nb-NO/
+
+locale	customizegoogle	nl-BE	jar:chrome/customizegoogle.jar!/locale/customizegoogle/nl-BE/
+
+locale	customizegoogle	nl-NL	jar:chrome/customizegoogle.jar!/locale/customizegoogle/nl-NL/
+
+locale	customizegoogle	pl-PL	jar:chrome/customizegoogle.jar!/locale/customizegoogle/pl-PL/
+
+locale	customizegoogle	pt-BR	jar:chrome/customizegoogle.jar!/locale/customizegoogle/pt-BR/
+
+locale	customizegoogle	pt-PT	jar:chrome/customizegoogle.jar!/locale/customizegoogle/pt-PT/
+
+locale	customizegoogle	ro-RO	jar:chrome/customizegoogle.jar!/locale/customizegoogle/ro-RO/
+
+locale	customizegoogle	ru-RU	jar:chrome/customizegoogle.jar!/locale/customizegoogle/ru-RU/
+
+locale	customizegoogle	sk-SK	jar:chrome/customizegoogle.jar!/locale/customizegoogle/sk-SK/
+
+locale	customizegoogle	sq-AL	jar:chrome/customizegoogle.jar!/locale/customizegoogle/sq-AL/
+
+locale	customizegoogle	sr-YU	jar:chrome/customizegoogle.jar!/locale/customizegoogle/sr-YU/
+
+locale	customizegoogle	sv-SE	jar:chrome/customizegoogle.jar!/locale/customizegoogle/sv-SE/
+
+locale	customizegoogle	th-TH	jar:chrome/customizegoogle.jar!/locale/customizegoogle/th-TH/
+
+locale	customizegoogle	tr-TR	jar:chrome/customizegoogle.jar!/locale/customizegoogle/tr-TR/
+
+locale	customizegoogle	uk-UA	jar:chrome/customizegoogle.jar!/locale/customizegoogle/uk-UA/
+
+locale	customizegoogle	zh-CN	jar:chrome/customizegoogle.jar!/locale/customizegoogle/zh-CN/
+
+locale	customizegoogle	zh-TW	jar:chrome/customizegoogle.jar!/locale/customizegoogle/zh-TW/

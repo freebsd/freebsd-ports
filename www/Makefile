@@ -1266,6 +1266,7 @@
     SUBDIR += xpi-clearfields
     SUBDIR += xpi-colorfultabs
     SUBDIR += xpi-cssviewer
+    SUBDIR += xpi-customizegoogle
     SUBDIR += xpi-cutemenus-crystalsvg
     SUBDIR += xpi-delicious
     SUBDIR += xpi-downthemall
