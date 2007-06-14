@@ -19,7 +19,7 @@ LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player \
 		artsc.0:${PORTSDIR}/audio/arts
 
 USE_GNOME=	libglade2 esound
-USE_X_PREFIX=	yes
+USE_GETTEXT=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
@@ -29,7 +29,11 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,-pthread,${PTHREAD_LIBS},g ; s|echo aout|echo elf|' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,-pthread,${PTHREAD_LIBS},g ; \
+		s,echo aout,echo elf,' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '38,40s,^static ,,' \
+		${WRKSRC}/output/crossfade/monitor.c
+	@${REINPLACE_CMD} -e '97s,^static ,,' \
+		${WRKSRC}/output/crossfade/oss.c
 
 .include <bsd.port.mk>
