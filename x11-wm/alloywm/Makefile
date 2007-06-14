@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.phatboydesigns.net/devel/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Has title bars, shading, resizing, automatic placement, window list
 
+BROKEN=		Checksum mismatch
+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--xroot=${X11BASE}
 PLIST=		${WRKDIR}/pkg-plist
