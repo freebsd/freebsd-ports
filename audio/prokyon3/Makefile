@@ -20,19 +20,19 @@ LIB_DEPENDS=	id3-3.8:${PORTSDIR}/audio/id3lib \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-BROKEN=		Does not compile
-
 USE_QT_VER=	3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
+USE_GETTEXT=	yes
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-qtdir=${X11BASE} --with-id3-libs=${LOCALBASE}\
 	 	--with-ogg-libs=${LOCALBASE} --with-vorbis-libs=${LOCALBASE} \
 		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 QT_NONSTANDARD=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include \
-		-I${QT_PREFIX}/include"
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include \
+		-I${QT_PREFIX}/include" LDFLAGS="${LDFLAGS}"
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if defined(WITH_BURN)
 USE_CDRTOOLS=	yes
