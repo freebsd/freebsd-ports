@@ -27,5 +27,8 @@ MAN6=	xarchon.6
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e '169s|^static ||' ${WRKSRC}/src/board.c
+	@${REINPLACE_CMD} -e 's|Xarchon_Evolution::||' \
+		${WRKSRC}/src/Xarchon_Genetic.hpp
 
 .include <bsd.port.mk>
