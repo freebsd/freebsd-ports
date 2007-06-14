@@ -1,15 +1,17 @@
---- build.sh.orig	Fri Feb  2 17:43:50 2007
-+++ build.sh	Fri Mar  2 23:12:01 2007
-@@ -65,7 +65,7 @@
+--- build.sh.orig	Thu May 31 18:04:22 2007
++++ build.sh	Mon Jun 11 18:25:04 2007
+@@ -65,15 +65,16 @@
  esac
  
  # For 64-bit CPUs, we have a switch
--if [ ${MODEL} = 'x86_64' -o ${MODEL} = 'ppc64' -o ${MODEL} = 'ia64' ]; then
-+if [ ${MODEL} = 'x86_64' -o ${MODEL} = 'ppc64' -o ${MODEL} = 'ia64' -o ${MODEL} = 'amd64' ]; then
+-if [ ${MODEL} = 'x86_64' -o ${MODEL} = 'ppc64' -o ${MODEL} = 'ia64' -o ${MODEL} = 's390x' ]; then
++if [ ${MODEL} = 'x86_64' -o ${MODEL} = 'ppc64' -o ${MODEL} = 'ia64' -o ${MODEL} = 's390x' -o ${MODEL} = 'amd64' ]; then
  	SWT_PTR_CFLAGS=-DSWT_PTR_SIZE_64
  	export SWT_PTR_CFLAGS
  	if [ -d /lib64 ]; then
-@@ -74,6 +74,7 @@
+-		XLIB64=-L/usr/X11R6/lib64
++		XLIB64=-L${X11BASE}/lib64
+ 		export XLIB64
  	fi
  fi
  
