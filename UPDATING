@@ -7,6 +7,13 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20070614:
+  AFFECTS: users of www/oscommerce
+  AUTHOR: vlad@vlad.uz.ua
+
+  osCommerce now installs into /usr/local/www/oscommerce instead of
+  /usr/local/www/data/oscommerce.
+
+20070614:
   AFFECTS: users of www/mediawiki
   AUTHOR: miwi@FreeBSD.org
 
