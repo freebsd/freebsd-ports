@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.cran.org.uk/bruce/software/
 MAINTAINER=	bruce@cran.org.uk
 COMMENT=	Utility to spin down ATA drives
 
+USE_RC_SUBR=	${PORTNAME}
 MAN8=		ataidle.8
 PORTDOCS=	COPYING ChangeLog README
 PLIST_FILES=	sbin/ataidle

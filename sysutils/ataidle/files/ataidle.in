@@ -1,0 +1,37 @@
+#!/bin/sh
+# Author: <luc@2113.ch> Sep 30, 2006
+
+# PROVIDE: ataidle
+# BEFORE: LOGIN
+
+#
+# Add the following lines to /etc/rc.conf to enable ataidle:
+#
+#ataidle_enable="YES" # Spindown disk after 120 mins
+#ataidle_device="ad1 ad2 ad3"
+#ataidle_ad1="-I 60 -S 120 -A 127 -P 254 0 1"
+#ataidle_ad2="-I 60 -S 120 -A 127 -P 254 1 0"
+#ataidle_ad3="-I 60 -S 120 -A 127 -P 254 1 1"
+#
+
+. %%RC_SUBR%%
+
+name="ataidle"
+rcvar=${name}_enable
+command="%%LOCALBASE%%/sbin/${name}"
+
+load_rc_config $name
+
+start_cmd="start_cmd"
+start_cmd()
+{
+if [ -n "${ataidle_device}" ]; then
+for i in ${ataidle_device}; do
+eval ataidle_args=\$ataidle_${i}
+${command} ${ataidle_args}
+done
+fi
+
+}
+
+run_rc_command "$1"
