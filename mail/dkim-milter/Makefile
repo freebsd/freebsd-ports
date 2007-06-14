@@ -14,6 +14,7 @@
 
 PORTNAME=	dkim-milter
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -43,7 +44,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_MILTER_
 .endif
 .endif
 
-.if defined(WITH_SENDMAIL_STATIC_MILTER) || !defined(SENDMAIL_WITH_SHARED_MILTER)
+.if defined(WITH_SENDMAIL_STATIC_MILTER) && !defined(SENDMAIL_WITH_SHARED_MILTER)
 SITE+=		-e '\|-static|s|%%STATIC%%||g'
 .else
 SITE+=		-e '\|-static|s|%%STATIC%%|dnl |g'
