@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20070614:
+  AFFECTS: users of www/xshttpd-devel and web apps porters
+  AUTHOR: johans@FreeBSD.org
+
+  www/xshttpd-devel now uses ${LOCALBASE}/www/xshttpd/ as a root
+  directory for its data files. The xshttpd configuration files have
+  been moved to ${LOCALBASE}/www/xshttpd/conf/. Move the appropriate
+  local files manually if you are upgrading from versions <= 3.5.b07
+
 20070613:
   AFFECTS: users of net-mgmt/zabbix
   AUTHOR: infofarmer@FreeBSD.org
