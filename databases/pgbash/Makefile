@@ -16,8 +16,11 @@ DISTFILES=	pgbash-7.3.tar.gz:pgsource \
 	        bash-2.05a.tar.gz:bashsrc
 EXTRACT_ONLY=	pgbash-7.3.tar.gz
 
-MAINTAINER=	sascha@root-login.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SQL Bash Shell for PostgreSQL
+
+DEPRECATED=	Last release in 2003, relies on outdated Postgre 7.3 and bash 2.05a
+EXPIRATION_DATE=2007-09-15
 
 USE_PGSQL=	yes
 
