@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	k3dsurf
-PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTVERSION=	0.6.2
 CATEGORIES=	math graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,16 +26,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_FILES=	bin/k3dsurf
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500035
-BROKEN=		Does not compile with gcc-2.95
-.endif
-
 pre-build:
 	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} qmake
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/k3dsurf ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
