@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xshttpd
-DISTVERSION=	3.5b07
+DISTVERSION=	3.5b10
 CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.stack.nl/pub/xs-httpd/release/ \
 		ftp://mud.stack.nl/pub/xs-httpd/release/
@@ -16,13 +16,15 @@ DISTNAME=	${PORTNAME}-${DISTVERSION:S/.//}
 MAINTAINER=	johans@stack.nl
 COMMENT=	A webserver with CGI as own user and SSL suport
 
-RUN_DEPENDS=	run-mailcap:${PORTSDIR}/misc/mime-support
+RUN_DEPENDS=	run-mailcap:${PORTSDIR}/misc/mime-support \
+		ppmtogif:${PORTSDIR}/graphics/netpbm
 
-CONFLICTS+=	apache-[0-9]* xshttpd-[0-9]*
+CONFLICTS+=	xshttpd-[0-9]*
 
 MAN1=		clearxs.1 gfxcount.1 httpd.1 httpdc.1 imagemap.1 \
 		readxs.1 xsindex.1 xspasswd.1
 MAN5=		httpd.conf.5 xsauth.5 xsconf.5 xsscripts.5 xsredir.5
+MAN7=		httpd_cgi.7 httpd_ssi.7
 USE_BZIP2=	yes
 USE_RC_SUBR=	xshttpd.sh
 
@@ -30,19 +32,18 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 OPTIONS=	SSL "Enable https support" On \
+		PCRE "Enable pcre rewriting support" On \
 		LDAP "Enable ldap support" Off \
-		PCRE "Enable pcre rewriting support" Off \
 		CURL "Enable curl (proxy) support" Off \
 		M4_CONFIG "Enable m4 configuration preprocessor" Off \
 		PERSISTENT_PERL "Enable persistent perl interpreter" Off
 
 PORTDOCS=	README COPYING ChangeLog
 
-# By default XS-HTTPD stores its data in ${PREFIX}/lib/httpd
-WWWDIR?=	${PREFIX}/www
-CONFIGURE_ARGS+=--with-rootdir=${WWWDIR} --mandir=${MANPREFIX}/man
-
 .include <bsd.port.pre.mk>
+# By default XS-HTTPD stores its data in ${PREFIX}/lib/httpd
+WWWDIR?=	${PREFIX}/www/${PORTNAME}
+CONFIGURE_ARGS+=--with-rootdir=${WWWDIR} --mandir=${MANPREFIX}/man
 
 .if !defined(WITHOUT_SSL)
 .include <${PORTSDIR}/Mk/bsd.openssl.mk>
@@ -96,7 +97,8 @@ post-patch:
 		-e 's|nogroup|${WWWGRP}|g' \
 		${WRKSRC}/$i
 .endfor
-	@${REINPLACE_CMD} -e 's|\(MIMETYPESFILE\ "\).*|\1${LOCALBASE}/etc/mime.types"|' \
+	@${REINPLACE_CMD} \
+		-e 's|\(MIMETYPESFILE\ "\).*|\1${LOCALBASE}/etc/mime.types"|' \
 		${WRKSRC}/src/confuser.h
 	@${REINPLACE_CMD} -e 's|mime.types ||g' \
 		${WRKSRC}/config/Makefile.in
