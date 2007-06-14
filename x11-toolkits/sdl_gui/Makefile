@@ -10,7 +10,7 @@ PORTNAME=	sdl_gui
 PORTVERSION=	0.10.3
 PORTREVISION=	6
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.newimage.com/~rhk/SDL_gui/ \
+MASTER_SITES=	http://rhk.dataslab.com/SDL_gui/ \
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
 DISTNAME=	SDL_gui-${PORTVERSION}
 
