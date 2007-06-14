@@ -550,6 +550,7 @@
     SUBDIR += pgpdump
     SUBDIR += pgpgpg
     SUBDIR += pgpin
+    SUBDIR += php-Auth_OpenID
     SUBDIR += php-suhosin
     SUBDIR += php4-crack
     SUBDIR += php4-mcrypt
