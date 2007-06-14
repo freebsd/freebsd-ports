@@ -1,6 +1,6 @@
-# New ports collection makefile for:  roadmap
-# Date created:        4 November 2002
-# Whom:                Nick Esborn <nick@netdot.net>
+# New ports collection makefile for:	RoadMap
+# Date created:				4 November 2002
+# Whom:					Nick Esborn <nick@netdot.net>
 #
 # $FreeBSD$
 #
@@ -9,7 +9,9 @@ PORTNAME=	roadmap
 PORTVERSION=	1.0.6
 PORTREVISION=	3
 CATEGORIES=	astro
-MASTER_SITES=	http://roadmap.digitalomaha.net/roadmap/
+MASTER_SITES=	http://roadmap.digitalomaha.net/roadmap/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/.r/rc/:S/./_/g}_src
 
 MAINTAINER=	ports@FreeBSD.org
@@ -31,6 +33,11 @@ GUI_BINS=	gtkroadmap gtkroadgps
 SCRIPTS=	rdmdownload rdmgetall rdmgenmaps rdmcompare
 DATA=		sprites preferences schema
 PORTDOCS=	AUTHORS BUGS README TODO
+SUB_FILES+=	pkg-message
+
+post-patch:
+	@${REINPLACE_CMD} -e '150s,static ,, ; 423s,static ,,' \
+		${WRKSRC}/src/roadmap_download.c
 
 do-install:
 .for _GUI_BIN in ${GUI_BINS}
@@ -42,18 +49,18 @@ do-install:
 .for _SCRIPT in ${SCRIPTS}
 	${INSTALL_SCRIPT} ${INSTALL_WRKSRC}/${_SCRIPT} ${PREFIX}/bin/${_BIN}
 .endfor
-	${MKDIR} ${DATADIR}
+	@${MKDIR} ${DATADIR}
 .for _DATA in ${DATA}
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/${_DATA} ${DATADIR}/${_DATA}
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 .for _DOC in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${_DOC} ${DOCSDIR}/${_DOC}
 .endfor
 .endif
 
 post-install:
-	@${SED} -e "s|%%DOCSDIR%%|${DOCSDIR}|" ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
