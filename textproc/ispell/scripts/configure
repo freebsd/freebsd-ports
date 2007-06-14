@@ -6,7 +6,7 @@ if [ "`echo a|sed -e P`" = "aa" ]; then
 fi
 if [ ! -f /usr/share/dict/words ]; then
   echo "you need to install /usr/share/dict/words from the 'dict' distribution first"
-  echo "(This is done using /stand/sysinstall.  The 'textproc/dict' port in the ports"
+  echo "(This is done using sysinstall.  The 'textproc/dict' port in the ports"
   echo " tree is NOT what you need.)"
   exit 1
 fi

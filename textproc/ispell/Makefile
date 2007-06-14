@@ -16,7 +16,8 @@ DISTFILES=	ispell-3.2.06.tar.gz    # needed for slave ports / options
 
 MAINTAINER?=	jmz@FreeBSD.org
 COMMENT=	An interactive spelling checker for multiple languages
-ISPELL_FILES= 	ispell-3.2.06.tar.gz
+
+ISPELL_FILES=	ispell-3.2.06.tar.gz
 
 MAN1=		ispell.1
 MAN4=		ispell.4 english.4
@@ -67,7 +68,7 @@ pre-everything::
 .if defined(ISPELL_BRITISH)
 SCRIPTS_ENV+=	ISPELL_BRITISH=${ISPELL_BRITISH}
 .if defined(ISPELL_INCLAMERICAN)
-SCRIPTS_ENV+=   ISPELL_INCLAMERICAN=${ISPELL_INCLAMERICAN}
+SCRIPTS_ENV+=	ISPELL_INCLAMERICAN=${ISPELL_INCLAMERICAN}
 .endif
 .endif
 .if defined(ISPELL_IT)
