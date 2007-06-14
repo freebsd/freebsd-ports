@@ -121,12 +121,15 @@ lib/libsktransfer.so.0
 lib/libsktransfer.so
 lib/libsktransfer.la
 lib/libsktransfer.a
+sbin/flowcap
 sbin/rwflowpack
 sbin/rwpackchecker
 sbin/rwflowappend
 sbin/rwreceiver
 sbin/rwsender
+share/silk/etc/flowcap.conf
 share/silk/etc/rwflowpack.conf
+share/silk/etc/init.d/flowcap
 share/silk/etc/init.d/rwflowpack
 share/silk/etc/init.d/rwflowappend
 share/silk/etc/init.d/rwreceiver
