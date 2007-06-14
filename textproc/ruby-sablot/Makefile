@@ -19,6 +19,8 @@ COMMENT=	Ruby interface to the Sablotron XSLT processor
 LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron \
 		expat.6:${PORTSDIR}/textproc/expat2
 
+BROKEN=		Checksum mismatch
+
 USE_ICONV=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
