@@ -15,6 +15,12 @@
 #				Default: "" 
 # snort_conf (str):		Snort configuration file
 #				Default: ${PREFIX}/etc/snort/snort.conf
+# snort_expression (str):	filter expression
+#				If your expression is very long, set 
+#				kern.ps_arg_cache_limit sysctl variable
+#				to large value. Otherwise, snort won't
+#				restart!
+#				Default: ""
 #
 
 . %%RC_SUBR%%
@@ -33,5 +39,6 @@ load_rc_config $name
 [ -n "$snort_interface" ] && snort_flags="$snort_flags -i $snort_interface" \
                           && pidfile="/var/run/snort_${snort_interface}.pid"
 [ -n "$snort_conf" ]      && snort_flags="$snort_flags -c $snort_conf"
+[ -n "$snort_expression" ] && snort_flags="$snort_flags $snort_expression"
 
 run_rc_command "$1"
