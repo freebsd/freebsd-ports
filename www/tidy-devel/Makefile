@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	tidy
-DISTVERSION=	070211-cvs
+DISTVERSION=	070614-cvs
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 #MASTER_SITES=	http://tidy.sourceforge.net/src/%SUBDIR%/	\
@@ -26,12 +26,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 .if !defined(WITH_SHLIB)
 USE_GMAKE=	yes
 PLIST_SUB=	SHLIB="@comment " NSHLIB=""
+CONFLICTS=	tidy-20000804* tidy-lib-[0-9]*
 .else
 USE_AUTOTOOLS=	automake:15 autoconf:253 libtool:15
 AUTOMAKE_ARGS+=	-a -c --foreign
 CONFIGURE_TARGET=	 --target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LDCONFIG=	yes
 PLIST_SUB=	SHLIB="" NSHLIB="@comment "
+CONFLICTS=	tidy-20000804* tidy-devel-[0-9]*
 .endif
 
 DESCR=		${.CURDIR}/pkg-descr
@@ -97,15 +99,6 @@ patch-autotools::
 			$$ltf.tmp > $$ltf;	\
 	 done);
 .endif
-
-pre-install:
-	@if [ -f ${LOCALBASE}/bin/tidy ]; then \
-		${ECHO_MSG} "" ; \
-		${ECHO_MSG} "Conflict: another tidy has been found; please deinstall it." ; \
-		${ECHO_MSG} "(`pkg_info -W ${LOCALBASE}/bin/tidy`)" ; \
-		${ECHO_MSG} "" ; \
-		${FALSE} ; \
-	fi
 
 post-install:
 .for pgm in ${BIN2STRIP}
