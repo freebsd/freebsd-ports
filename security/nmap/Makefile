@@ -11,8 +11,8 @@ PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://download.insecure.org/nmap/dist/ \
 		http://www.mirrors.wiretapped.net/security/network-mapping/nmap/ \
-		http://ftp.iasi.roedu.net/mirrors/download.insecure.org/nmap/dist/ \
-		http://shadow.cc.columbia.edu/pub/software/nmap/
+		http://www.mirrorservice.org/sites/ftp.wiretapped.net/pub/security/network-mapping/nmap/ \
+		http://mirror.sg.depaul.edu/pub/security/nmap/
 DISTNAME=	nmap-${DISTVERSION}	# needed for security/nmapfe
 
 MAINTAINER=	daniel@roe.ch
