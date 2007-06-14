@@ -6,70 +6,74 @@
 #
 
 PORTNAME=	erlang-doc
-PORTVERSION=	r11b4
+PORTVERSION=	r11b5
 PORTEPOCH=	1
 CATEGORIES=	lang
-MASTER_SITES=	http://www.erlang.org/documentation/doc-5.5.4/pdf/:release \
+MASTER_SITES=	http://erlang.org/doc/pdf/:release \
 		http://erlang.org/download/:erlangorg \
 		http://www.erlang.se/doc/:erlangse \
 		http://www.sics.se/~joe/thesis/:joe \
 		http://www.st.se/telecom/eng/projects/:stse \
 		${MASTER_SITE_LOCAL:S/$/:local/}
 MASTER_SITE_SUBDIR=     olgeni/:local
-DISTFILES=	appmon-2.1.8.pdf:release \
-		asn1-1.4.4.14.pdf:release \
-		compiler-4.4.4.pdf:release \
-		cosEvent-2.1.pdf:release \
-		cosEventDomain-1.1.pdf:release \
-		cosFileTransfer-1.1.2.pdf:release \
-		cosNotification-1.1.4.pdf:release \
-		cosProperty-1.1.2.pdf:release \
-		cosTime-1.1.pdf:release \
-		cosTransactions-1.2.1.pdf:release \
-		crypto-1.5.1.pdf:release \
-		debugger-3.1.1.pdf:release \
-		design_principles-5.5.4.pdf:release \
-		dialyzer-1.6.0.pdf:release \
-		efficiency_guide-5.5.4.pdf:release \
-		embedded-5.5.4.pdf:release \
-		erl_interface-3.5.5.3.pdf:release \
-		erts-5.5.4.pdf:release \
-		et-1.0.pdf:release \
-		getting_started-5.5.4.pdf:release \
-		gs-1.5.6.pdf:release \
-		ic-4.2.12.pdf:release \
-		inets-4.7.11.pdf:release \
-		installation_guide-5.5.4.pdf:release \
-		inviso-0.2.1.pdf:release \
-		jinterface-1.3.pdf:release \
-		kernel-2.11.4.pdf:release \
-		megaco-3.5.3.pdf:release \
-		mnemosyne-1.2.7.pdf:release \
-		mnesia-4.3.4.pdf:release \
-		mnesia_session-1.1.6.pdf:release \
-		oam-5.5.4.pdf:release \
-		observer-0.9.7.3.pdf:release \
-		odbc-2.0.7.pdf:release \
-		orber-3.6.5.pdf:release \
-		os_mon-2.1.2.pdf:release \
-		otp_mibs-1.0.4.pdf:release \
-		parsetools-1.4.1.pdf:release \
-		pman-2.5.3.pdf:release \
-		programming_examples-5.5.4.pdf:release \
-		reference_manual-5.5.4.pdf:release \
-		runtime_tools-1.6.5.pdf:release \
-		sasl-2.1.5.pdf:release \
-		snmp-4.9.2.pdf:release \
-		ssh-0.9.9.pdf:release \
-		ssl-3.1.pdf:release \
-		stdlib-1.14.4.pdf:release \
-		system_principles-5.5.4.pdf:release \
-		toolbar-1.3.pdf:release \
-		tools-2.5.4.pdf:release \
-		tutorial-5.5.4.pdf:release \
-		tv-2.1.4.pdf:release \
-		webtool-0.8.3.pdf:release \
-		xmerl-1.1.2.pdf:release \
+DISTFILES=	appmon.pdf:release \
+		asn1.pdf:release \
+		compiler.pdf:release \
+		cosEvent.pdf:release \
+		cosEventDomain.pdf:release \
+		cosFileTransfer.pdf:release \
+		cosNotification.pdf:release \
+		cosProperty.pdf:release \
+		cosTime.pdf:release \
+		cosTransactions.pdf:release \
+		crypto.pdf:release \
+		debugger.pdf:release \
+		design_principles.pdf:release \
+		dialyzer.pdf:release \
+		docbuilder.pdf:release \
+		edoc.pdf:release \
+		efficiency_guide.pdf:release \
+		embedded.pdf:release \
+		erl_interface.pdf:release \
+		erts.pdf:release \
+		et.pdf:release \
+		getting_started.pdf:release \
+		gs.pdf:release \
+		ic.pdf:release \
+		inets.pdf:release \
+		installation_guide.pdf:release \
+		inviso.pdf:release \
+		jinterface.pdf:release \
+		kernel.pdf:release \
+		megaco.pdf:release \
+		mnemosyne.pdf:release \
+		mnesia.pdf:release \
+		mnesia_session.pdf:release \
+		oam.pdf:release \
+		observer.pdf:release \
+		odbc.pdf:release \
+		orber.pdf:release \
+		os_mon.pdf:release \
+		otp_mibs.pdf:release \
+		parsetools.pdf:release \
+		pman.pdf:release \
+		programming_examples.pdf:release \
+		reference_manual.pdf:release \
+		runtime_tools.pdf:release \
+		sasl.pdf:release \
+		snmp.pdf:release \
+		ssh.pdf:release \
+		ssl.pdf:release \
+		stdlib.pdf:release \
+		syntax_tools.pdf:release \
+		system_architecture_intro.pdf:release \
+		system_principles.pdf:release \
+		toolbar.pdf:release \
+		tools.pdf:release \
+		tutorial.pdf:release \
+		tv.pdf:release \
+		webtool.pdf:release \
+		xmerl.pdf:release \
 		course.pdf:erlangorg \
 		erlang-book-part1.pdf:erlangorg \
 		programming_rules.pdf:erlangse \

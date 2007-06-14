@@ -114,6 +114,9 @@ MAN3=	CosEventChannelAdmin.3 \
 	digraph_utils.3 \
 	disk_log.3 \
 	disksup.3 \
+	docb_gen.3 \
+	docb_transform.3 \
+	docb_xml_check.3 \
 	driver_entry.3 \
 	edoc.3 \
 	edoc_doclet.3 \
@@ -158,6 +161,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	error_handler.3 \
 	error_logger.3 \
 	erts_alloc.3 \
+	erts_alloc_config.3 \
 	et.3 \
 	et_collector.3 \
 	et_selector.3 \
@@ -184,7 +188,6 @@ MAN3=	CosEventChannelAdmin.3 \
 	gs.3 \
 	heart.3 \
 	http.3 \
-	http_base_64.3 \
 	httpd.3 \
 	httpd_conf.3 \
 	httpd_socket.3 \
@@ -217,6 +220,7 @@ MAN3=	CosEventChannelAdmin.3 \
 	megaco.3 \
 	megaco_codec_meas.3 \
 	megaco_codec_transform.3 \
+	megaco_edist_compress.3 \
 	megaco_encoder.3 \
 	megaco_flex_scanner.3 \
 	megaco_tcp.3 \
@@ -345,6 +349,7 @@ MAN4=	app.4 \
 	script.4
 
 MAN6=	crypto.6 \
+	docbuilder.6 \
 	kernel.6 \
 	observer.6 \
 	runtime_tools.6 \
