@@ -7,6 +7,13 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20070614:
+  AFFECTS: users of www/mediawiki
+  AUTHOR: miwi@FreeBSD.org
+
+  www/mediawiki version is 1.10 now. 1.9 version was preserved on
+  www/mediawiki19 port.
+
+20070614:
   AFFECTS: users of www/xshttpd-devel and web apps porters
   AUTHOR: johans@FreeBSD.org
 
