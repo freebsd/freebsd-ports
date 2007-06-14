@@ -6,10 +6,10 @@ to:
 
         http://localhost/oscommerce/catalog/install/
 
-Once you've finished the rest of the installation, it is highly encouraged 
+Once you've finished the rest of the installation, it is highly encouraged
 that you 
 
-        chmod -R 000 %%OSCOMMERCE%%/catalog/install
+        chmod -R 000 %%WWWDIR%%/catalog/install
 
 to disable the installation utilities.
 
@@ -17,7 +17,7 @@ The administrative interface can be found at
 
         http://localhost/oscommerce/catalog/admin/
 
-and should have its access appropriately restricted to prevent someone 
+and should have its access appropriately restricted to prevent someone
 from modifying parts of your catalog.
 
 -----------------------------------------------------------------------------
