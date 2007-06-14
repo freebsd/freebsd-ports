@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=	--disable-daemon
 .endif
 
 .if defined(WITHOUT_LOG)
-CONFIGURE_ARGS+=	--without-log
+CONFIGURE_ARGS+=	--disable-log
 .endif
 
 .if defined(WITH_MSDAV)
