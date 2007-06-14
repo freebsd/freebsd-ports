@@ -7,7 +7,7 @@
 
 PORTNAME=	tin
 PORTVERSION=	1.8.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	news ipv6
 MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
 		ftp://ftp.sunet.se/pub/news/readers/tin/stable/ \
@@ -35,7 +35,14 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 WITH_TIN_EDITOR?=	/usr/bin/ee
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 602107
+WITH_TIN_SCREEN?=	ncursesw
+.else
 WITH_TIN_SCREEN?=	ncurses
+.endif
 
 # --with-mime-default-charset=US-ASCII needed to build tin in the non-ascii
 # national environment.
@@ -62,8 +69,6 @@ MLINKS=		tin.1 rtin.1
 .if defined(WITH_TIN_NNTP_ONLY)
 CONFIGURE_ARGS+=	--enable-nntp-only
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_TIN_PGP_GPG)
 CONFIGURE_ARGS+=	--disable-pgp-gpg
