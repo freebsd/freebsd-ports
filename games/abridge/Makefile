@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	abridge
-PORTVERSION=	0.4.0
-PORTREVISION=	7
+DISTVERSION=	0.4.0-1
 CATEGORIES=	games
 MASTER_SITES=	http://www.abridgegame.org/debian/unstable/
-DISTFILES=	${PORTNAME}_${PORTVERSION}-1${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Bridge game
