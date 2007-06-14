@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	mcabber
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/ CENKES
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Small Jabber console client
 
-LIB_DEPENDS=	gpgme.17:${PORTSDIR}/security/gpgme
+LIB_DEPENDS=	gpgme.17:${PORTSDIR}/security/gpgme \
+		aspell.16:${PORTSDIR}/textproc/aspell
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man --with-ssl
+CONFIGURE_ARGS=	--mandir=${MANPREFIX}/man --with-ssl --enable-aspell=yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_OPENSSL=	yes
 USE_ICONV=	yes
@@ -40,10 +41,12 @@ LIB_DEPENDS+=	ncursesw.5:${PORTSDIR}/devel/ncurses
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's#$$"$${datadir}"#"$${datadir}"#' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|$$"$${datadir}"|"$${datadir}"|;s|-O2||'\
+		${WRKSRC}/configure ${WRKSRC}/*/configure
 
 post-install:
-	@${INSTALL} -d ${EXAMPLESDIR}/
+	@${INSTALL} -d ${PREFIX}/share/applications/ ${EXAMPLESDIR}/
+	@${INSTALL} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/applications/
 	@${CP} -R ${WRKSRC}/contrib ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/mcabberrc.example ${EXAMPLESDIR}/mcabberrc
 
