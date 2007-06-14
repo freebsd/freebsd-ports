@@ -8,7 +8,8 @@
 PORTNAME=	silktools
 PORTVERSION=	0.11.1
 CATEGORIES=	security net
-MASTER_SITES=	http://tools.netsa.cert.org/releases/
+MASTER_SITES=	http://tools.netsa.cert.org/releases/ \
+		http://redundancy.redundancy.org/mirror/
 DISTNAME=	silk-${PORTVERSION}
 
 MAINTAINER=	lx@FreeBSD.org
@@ -17,7 +18,7 @@ COMMENT=	Tools for large-scale network capture analysis
 LIB_DEPENDS=	lzo:${PORTSDIR}/archivers/lzo
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-lzo=${LOCALBASE}
+CONFIGURE_ARGS=	--with-lzo=${LOCALBASE} --enable-packing-tools
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" GCC_FLAGS="" CFLAGS_RELEASE=""
 USE_LDCONFIG=	yes
@@ -36,6 +37,7 @@ MAN3=	libaddrtype.3 libccfilter.3 libpmapfilter.3
 
 MAN5=	sensor.conf.5 silk.conf.5
 
-MAN8=	rwflowpack.8 rwpackchecker.8 rwflowappend.8 rwreceiver.8 rwsender.8
+MAN8=	rwflowpack.8 rwpackchecker.8 rwflowappend.8 rwreceiver.8 rwsender.8 \
+	flowcap.8
 
 .include <bsd.port.mk>
