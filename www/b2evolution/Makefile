@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	b2evolution
-PORTVERSION=	1.9.3
+PORTVERSION=	1.10.2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	evocms
@@ -20,7 +20,7 @@ PATCH_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 USE_ZIP=	YES
 USE_DOS2UNIX=	YES
 
-B2EVO_DATE?=	2007-03-10
+B2EVO_DATE?=	2007-06-08
 USE_PHP=	mysql pcre session xml
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
@@ -49,7 +49,7 @@ do-install:
 	@${CHMOD} 665 ${TARGETDIR}/${B2EVO_DIR}/blogs/conf/_config.php
 
 post-install:
-	@${SED} -e 's|%%TARGETDIR%%|${TARGETDIR}|; s|%%PORTNAME%%|${PORTNAME}|' \
+	@${SED} -e 's|%%TARGETDIR%%|${TARGETDIR}|' \
 		-e 's|%%B2EVO_DIR%%|${B2EVO_DIR}|; s|%%B2EVO_URL%%|${B2EVO_URL}|' \
 		${PKGMESSAGE}
 
