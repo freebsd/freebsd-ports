@@ -87,8 +87,8 @@ lib/purple-2/libnovell.so
 lib/purple-2/liboscar.la
 lib/purple-2/liboscar.so
 lib/purple-2/liboscar.so.0
-%%SILC%%lib/purple-2/libsilcpidgin.la
-%%SILC%%lib/purple-2/libsilcpidgin.so
+%%SILC%%lib/purple-2/libsilcpurple.la
+%%SILC%%lib/purple-2/libsilcpurple.so
 lib/purple-2/libqq.la
 lib/purple-2/libqq.so
 %%SAMETIME%%lib/purple-2/libsametime.la
