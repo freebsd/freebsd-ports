@@ -9,7 +9,7 @@
 %%DATADIR%%/metaf-text.xsl
 %%DATADIR%%/metaf-ui.xsl
 %%DATADIR%%/metaf.xsl
-%%SITE_PERL%%/metaf2xml/FGFS.pm
+%%DATADIR%%/stations.xml
 %%SITE_PERL%%/metaf2xml/XML.pm
 %%SITE_PERL%%/metaf2xml/parser.pm
 bin/metaf2xml.pl
@@ -20,6 +20,7 @@ www/metaf2xml/htdocs/metaf-sum-ui.xsl
 www/metaf2xml/htdocs/metaf-sum.xsl
 www/metaf2xml/htdocs/metaf-ui.xsl
 www/metaf2xml/htdocs/metaf.xsl
+www/metaf2xml/htdocs/stations.xml
 @dirrmtry %%DATADIR%%
 @dirrmtry %%SITE_PERL%%/metaf2xml
 @dirrmtry www/metaf2xml/cgi-bin
