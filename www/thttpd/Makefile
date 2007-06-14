@@ -27,10 +27,18 @@ SUB_FILES=	pkg-message thttpd.conf.sample
 SUB_LIST=	WWWOWN=${WWWOWN}
 PORTDOCS=	notes.html
 
-MAN1=		makeweb.1 htpasswd.1
+MAN1=		makeweb.1 thttpdpasswd.1
 MAN8=		thttpd.8 redirect.8 ssi.8 syslogtocern.8
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+.for f in extras/htpasswd.1 extras/htpasswd.c thttpd.8 extras/Makefile.in
+	${REINPLACE_CMD} -e \
+	's|htpasswd|thttpdpasswd|g;s|\.thttpdpasswd|.htpasswd|g' ${WRKSRC}/${f}
+.endfor
+	${MV} ${WRKSRC}/extras/htpasswd.1 ${WRKSRC}/extras/thttpdpasswd.1
+	${MV} ${WRKSRC}/extras/htpasswd.c ${WRKSRC}/extras/thttpdpasswd.c
 
 .if ${OSVERSION} > 502101
 post-configure:
@@ -49,10 +57,10 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/cgi-src/redirect.8 ${PREFIX}/man/man8
 	@${INSTALL_MAN} ${WRKSRC}/cgi-src/ssi.8 ${PREFIX}/man/man8
 	@${INSTALL_PROGRAM} ${WRKSRC}/extras/makeweb ${PREFIX}/bin/
-	@${INSTALL_PROGRAM} ${WRKSRC}/extras/htpasswd ${PREFIX}/bin/
+	@${INSTALL_PROGRAM} ${WRKSRC}/extras/thttpdpasswd ${PREFIX}/bin/
 	@${INSTALL_SCRIPT} ${WRKSRC}/extras/syslogtocern ${PREFIX}/bin/
 	@${INSTALL_MAN} ${WRKSRC}/extras/makeweb.1 ${PREFIX}/man/man1
-	@${INSTALL_MAN} ${WRKSRC}/extras/htpasswd.1 ${PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/extras/thttpdpasswd.1 ${PREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/extras/syslogtocern.8 ${PREFIX}/man/man8
 	@${INSTALL_DATA} ${WRKDIR}/thttpd.conf.sample ${PREFIX}/etc/thttpd.conf.sample
 .if !defined(NOPORTDOCS)

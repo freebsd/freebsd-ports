@@ -1,4 +1,4 @@
-bin/htpasswd
+bin/thttpdpasswd
 bin/makeweb
 bin/syslogtocern
 etc/thttpd.conf.sample
