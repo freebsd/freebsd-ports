@@ -10,7 +10,7 @@ PORTVERSION=	1.1.3
 PORTREVISION=	2
 CATEGORIES=	mail www
 
-MAINTAINER=	beech@alaskaparadise.com
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Horde's email-filter management application
 
 #-----------------------------------------------------------------------

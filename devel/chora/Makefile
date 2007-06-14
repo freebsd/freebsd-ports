@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel www
 DIST_SUBDIR=	horde
 
-MAINTAINER=	beech@alaskaparadise.com
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	The Horde CVS web-viewer
 
 #-----------------------------------------------------------------------

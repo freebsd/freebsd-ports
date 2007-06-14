@@ -12,7 +12,7 @@ PORTREVISION=	3
 CATEGORIES=	www
 PKGNAMESUFFIX=	-base
 
-MAINTAINER=	beech@alaskaparadise.com
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Common code-base used by Horde applications, written in PHP
 
 #----------------------------------------------------------------------------

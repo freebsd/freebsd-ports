@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.cherokee-project.com/download/${PORTVERSION:R}/${PORTVE
 		CENKES http://www.alaskaparadise.com/freebsd/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	beech@alaskaparadise.com
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Extremely fast and flexible web server
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre

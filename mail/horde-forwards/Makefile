@@ -1,6 +1,6 @@
 # Ports collection makefile for:	forwards3
 # Date created:			Mon Mar 26, 2007
-# Whom:				Beech Rintoul <beech@alaskaparadise.com>
+# Whom:				Beech Rintoul <beech@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	mail www
 PKGNAMEPREFIX=	horde-
 DIST_SUBDIR=	horde
 
-MAINTAINER=	beech@alaskaparadise.com
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	E-mail forward
 
 #-----------------------------------------------------------------------

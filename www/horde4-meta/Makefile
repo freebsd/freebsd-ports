@@ -1,6 +1,6 @@
 # New ports collection makefile for:	horde
-# Date created:		24 February 2007
-# Whom:			beech@alaskaparadise.com
+# Date created:			24 February 2007
+# Whom:				Beech Rintoul <beech@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	# Empty
 PKGNAMEPREFIX=	horde-
 DISTFILES=	# None
 
-MAINTAINER=	beech@alaskaparadise.com
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Meta port for the horde framework
 
 NO_BUILD=	yes

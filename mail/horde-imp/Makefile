@@ -10,7 +10,7 @@ PORTVERSION=	4.1.4
 PORTREVISION=	2
 CATEGORIES=	mail www
 
-MAINTAINER=	beech@alaskaparadise.com
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Webmail system for IMAP/POP3 mailboxes
 
 #-----------------------------------------------------------------------

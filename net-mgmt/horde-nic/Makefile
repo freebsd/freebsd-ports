@@ -1,6 +1,6 @@
 # Ports collection makefile for:	nic
 # Date created:			Fri Mar 16, 2007
-# Whom:				Beech Rintoul <beech@alaskaparadise.com>
+# Whom:				Beech Rintoul <beech@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	CENKES http://freebsd.alaskaparadise.com/source/
 PKGNAMEPREFIX=	horde-
 
-MAINTAINER=	beech@alaskaparadise.com
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Very basic network service monitor
 
 USE_HORDE=	base pkg-message

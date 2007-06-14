@@ -1,6 +1,6 @@
 # Ports collection makefile for:	ansel
 # Date created:			Mon Mar 19, 2007
-# Whom:				Beech Rintoul <beech@alaskaparadise.com>
+# Whom:				Beech Rintoul <beech@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ CATEGORIES=	www
 MASTER_SITES=	CENKES http://freebsd.alaskaparadise.com/source/
 PKGNAMEPREFIX=	horde-
 
-MAINTAINER=	beech@alaskaparadise.com
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Image gallery
 
 USE_HORDE=	base pkg-message
