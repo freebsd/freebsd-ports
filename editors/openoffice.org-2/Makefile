@@ -7,10 +7,9 @@
 
 PORTNAME?=	openoffice.org
 PORTVERSION?=	${OOOVERSION}
-PORTREVISION=	1
 CATEGORIES+=	editors java
-MASTER_SITES+=	http://openoffice.lunarshells.com/sources/ \
-		http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
+MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
+		http://openoffice.lunarshells.com/sources/ \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/cws/:cws \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:antbin,} \
@@ -35,7 +34,7 @@ DISTFILES+=	${CWSARCHIVE}:cws
 .endif
 CWSARCHIVE=	${WITH_CWS}.tar.gz
 
-OOOVERSION=	2.2.0
+OOOVERSION=	2.2.1
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20
 MOZILLA_VERSION=	1.7.5
@@ -75,7 +74,7 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set
 .endif
 
 CODELINE=		680
-MILESTONE?=		14
+MILESTONE?=		18
 OOOTAG?=		OOF680_m${MILESTONE}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOVERSION}
