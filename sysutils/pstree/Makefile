@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pstree
-PORTVERSION=	2.27
+PORTVERSION=	2.31
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.thp.uni-duisburg.de/pub/source/ \
 		http://fresh.t-systems-sfr.com/unix/src/misc/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@logvinov.com
 COMMENT=	List processes as a tree
 
 NO_WRKSUBDIR=	yes
