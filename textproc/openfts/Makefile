@@ -16,7 +16,8 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Open Source Full Text Search engine
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes	\
-		${LOCALBASE}/lib/postgresql/tsearch2.so:${PORTSDIR}/databases/postgresql-contrib
+		${LOCALBASE}/lib/postgresql/tsearch2.so:${PORTSDIR}/databases/postgresql-contrib \
+		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 
 PERL_CONFIGURE=	yes
 
@@ -30,12 +31,6 @@ MAN3=	Search::OpenFTS.3 Search::OpenFTS::Base.3 \
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes INSTALL README primer.html
-
-.if ${PERL_LEVEL} < 500600
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg-13
-.else
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
-.endif	# ${PERL_LEVEL} < 500600
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
