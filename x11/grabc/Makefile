@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Grab a color from screen
 
+BROKEN=		Checksum mismatch
+
 PLIST_FILES=	bin/grabc
 USE_XLIB=	yes
 CFLAGS+=	-I${X11BASE}/include
