@@ -7074,6 +7074,7 @@ mDNSResponder	ports/net/mDNSResponder
 mac		ports/audio/mac
 mac-robber	ports/security/mac-robber
 macopix		ports/games/macopix
+macroscope	ports/net-mgmt/macroscope
 macutils	ports/archivers/macutils
 mad		ports/audio/mad
 mad_fcl		ports/net/mad_fcl
