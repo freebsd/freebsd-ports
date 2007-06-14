@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	s3cmd
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	net python
 MASTER_SITES=	SOURCEFORGE
 MASTER_SITE_SUBDIR=	s3tools
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Unix-like tools to manipulate stored files from the command line
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/elementtree/__init__.py:${PORTSDIR}/devel/py-elementtree
