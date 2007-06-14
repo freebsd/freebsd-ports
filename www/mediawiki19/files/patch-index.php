@@ -3,7 +3,7 @@
 @@ -434,7 +434,7 @@
  $diff3locations = array( "/usr/bin", "/usr/local/bin", "/opt/csw/bin", "/usr/gnu/bin", "/usr/sfw/bin" ) + explode( $sep, getenv( "PATH" ) );
  $diff3names = array( "gdiff3", "diff3", "diff3.exe" );
- 
+
 -$diff3versioninfo = array( '$1 --version 2>&1', 'diff3 (GNU diffutils)' );
 +$diff3versioninfo = array('$1 --version 2>&1', 'diff3 - GNU diffutils');
  foreach ($diff3locations as $loc) {

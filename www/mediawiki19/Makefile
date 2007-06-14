@@ -8,13 +8,12 @@
 PORTNAME=	mediawiki
 PORTVERSION=	1.9.3
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	wikipedia
+MASTER_SITES=	http://download.wikimedia.org/mediawiki/1.9/
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	The wiki engine used by Wikipedia
 
-CONFLICTS=	mediawiki-1.[0-79].*
+CONFLICTS=	mediawiki-1.[0-8].* mediawiki-1.1[0-9].*
 
 NO_BUILD=	yes
 USE_MYSQL=	yes
