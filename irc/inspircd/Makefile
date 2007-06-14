@@ -7,7 +7,7 @@
 
 PORTNAME=	inspircd
 PORTVERSION=	1.1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	http://www.inspircd.org/downloads/ \
 		http://www.chatspike.net/downloads/
@@ -33,6 +33,7 @@ CONFIGURE_ARGS=	--with-cc=${CXX} --config-dir=${PREFIX}/etc/inspircd \
 
 post-patch:
 	@${REINPLACE_CMD} -e '/INSTMODE/s|700|755|;/install -d.*BINPATH/d'\
+		-e 's/FLAGS = @FLAGS@/FLAGS = ${CXXFLAGS} @FLAGS@/' \
 		${WRKSRC}/.Makefile.inc
 
 # 1.0.6 Makefile forgets to make these directories
@@ -49,8 +50,9 @@ post-install:
 	@${STRIP_CMD} ${PREFIX}/lib/inspircd/*.so
 	@${STRIP_CMD} ${PREFIX}/bin/inspircd
 .for FILE in censor conf filter helpop motd quotes rules
-	@${TEST} -f ${PREFIX}/etc/inspircd/inspircd.${FILE} || \
-		${CP} ${PREFIX}/etc/inspircd/inspircd.${FILE}.example ${PREFIX}/etc/inspircd/inspircd.${FILE}
+	@if ${TEST} -f ${PREFIX}/etc/inspircd/inspircd.${FILE}; then \
+		${CP} ${PREFIX}/etc/inspircd/inspircd.${FILE}.example ${PREFIX}/etc/inspircd/inspircd.${FILE}; \
+	fi
 .endfor
 
 .include <bsd.port.mk>
