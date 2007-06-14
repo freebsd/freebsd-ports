@@ -7,7 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	1.3.37
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	apache_${PORTVERSION}
@@ -25,7 +25,7 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 		apache+mod_ssl+mod_snmp+mod_accel-1.* \
 		apache+ipv6-1.* apache+ssl-1.* apache-2.* apache_fp-1.* \
 		caudium-devel-1.* caudium10-1.* caudium12-* \
-		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.*
+		ru-apache+mod_ssl-1.* ru-apache-1.*
 USE_PERL5=	yes
 USE_RC_SUBR=	yes
 
