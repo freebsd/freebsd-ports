@@ -11,4 +11,4 @@ This will help to get a hint as to if you can safely remove shared
 libraries that look obsolete.
 
 Author: Akinori MUSHA <knu@FreeBSD.org>
-WWW:	http://www.iDaemons.org/cgi-bin/cvsweb.cgi/libchk/
+WWW: http://svn.idaemons.org/cgi-bin/viewvc.cgi/trunk/?root=libchk
