@@ -12,7 +12,7 @@ upgrades.
 
   www/xshttpd-devel now uses ${PREFIX}/www/xshttpd/ as a root
   directory for its data files. The xshttpd configuration files have
-  been moved to ${PEFIX}/www/xshttpd/conf/. Move the appropriate
+  been moved to ${PREFIX}/www/xshttpd/conf/. Move the appropriate
   local files manually if you are upgrading from versions <= 3.5.b07
 
 20070613:
