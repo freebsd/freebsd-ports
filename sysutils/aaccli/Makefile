@@ -22,8 +22,8 @@ RESTRICTED=		"May not be redistributed in binary form"
 NO_CDROM=		yes
 
 IA32_BINARY_PORT=	yes
-PLIST=			${MASTERDIR}/pkg-plist.${MACHINE_ARCH}
-MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
+PLIST=			${MASTERDIR}/pkg-plist.i386
+MD5_FILE=		${MASTERDIR}/distinfo.i386
 
 NO_BUILD=		yes
 NO_WRKSUBDIR=		yes
