@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	WebService-CIA
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	WebService
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Information from the CIA World Factbook
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
