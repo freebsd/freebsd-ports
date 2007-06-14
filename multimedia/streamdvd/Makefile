@@ -9,7 +9,7 @@ PORTNAME=	streamdvd
 PORTVERSION=	0.4
 PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.badabum.de/down/
+MASTER_SITES=	ftp://quenix2.dyndns.org/FreeBSD/ports/distfiles/
 
 MAINTAINER=	serge.gagnon@b2b2c.ca
 COMMENT=	A fast tool to backup Video DVDs 'on the fly'
