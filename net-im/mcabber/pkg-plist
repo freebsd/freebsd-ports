@@ -1,4 +1,5 @@
 bin/mcabber
+share/applications/mcabber.desktop
 %%EXAMPLESDIR%%/mcabberrc
 %%DATADIR%%/contrib/cicq2mcabber.pl
 %%DATADIR%%/contrib/events/eventcmd
@@ -16,6 +17,7 @@ bin/mcabber
 %%DATADIR%%/help/de/hlp_authorization.txt
 %%DATADIR%%/help/de/hlp_bind.txt
 %%DATADIR%%/help/de/hlp_buffer.txt
+%%DATADIR%%/help/de/hlp_chat_disable.txt
 %%DATADIR%%/help/de/hlp_clear.txt
 %%DATADIR%%/help/de/hlp_connect.txt
 %%DATADIR%%/help/de/hlp_del.txt
@@ -23,6 +25,7 @@ bin/mcabber
 %%DATADIR%%/help/de/hlp_event.txt
 %%DATADIR%%/help/de/hlp_group.txt
 %%DATADIR%%/help/de/hlp_help.txt
+%%DATADIR%%/help/de/hlp_iline.txt
 %%DATADIR%%/help/de/hlp_info.txt
 %%DATADIR%%/help/de/hlp_move.txt
 %%DATADIR%%/help/de/hlp_msay.txt
@@ -35,7 +38,9 @@ bin/mcabber
 %%DATADIR%%/help/de/hlp_roster.txt
 %%DATADIR%%/help/de/hlp_say.txt
 %%DATADIR%%/help/de/hlp_say_to.txt
+%%DATADIR%%/help/de/hlp_screen_refresh.txt
 %%DATADIR%%/help/de/hlp_set.txt
+%%DATADIR%%/help/de/hlp_source.txt
 %%DATADIR%%/help/de/hlp_status.txt
 %%DATADIR%%/help/de/hlp_status_to.txt
 %%DATADIR%%/help/de/hlp_version.txt
@@ -45,6 +50,7 @@ bin/mcabber
 %%DATADIR%%/help/en/hlp_authorization.txt
 %%DATADIR%%/help/en/hlp_bind.txt
 %%DATADIR%%/help/en/hlp_buffer.txt
+%%DATADIR%%/help/en/hlp_chat_disable.txt
 %%DATADIR%%/help/en/hlp_clear.txt
 %%DATADIR%%/help/en/hlp_connect.txt
 %%DATADIR%%/help/en/hlp_del.txt
@@ -52,6 +58,7 @@ bin/mcabber
 %%DATADIR%%/help/en/hlp_event.txt
 %%DATADIR%%/help/en/hlp_group.txt
 %%DATADIR%%/help/en/hlp_help.txt
+%%DATADIR%%/help/en/hlp_iline.txt
 %%DATADIR%%/help/en/hlp_info.txt
 %%DATADIR%%/help/en/hlp_move.txt
 %%DATADIR%%/help/en/hlp_msay.txt
@@ -64,7 +71,9 @@ bin/mcabber
 %%DATADIR%%/help/en/hlp_roster.txt
 %%DATADIR%%/help/en/hlp_say.txt
 %%DATADIR%%/help/en/hlp_say_to.txt
+%%DATADIR%%/help/en/hlp_screen_refresh.txt
 %%DATADIR%%/help/en/hlp_set.txt
+%%DATADIR%%/help/en/hlp_source.txt
 %%DATADIR%%/help/en/hlp_status.txt
 %%DATADIR%%/help/en/hlp_status_to.txt
 %%DATADIR%%/help/en/hlp_version.txt
@@ -74,6 +83,7 @@ bin/mcabber
 %%DATADIR%%/help/fr/hlp_authorization.txt
 %%DATADIR%%/help/fr/hlp_bind.txt
 %%DATADIR%%/help/fr/hlp_buffer.txt
+%%DATADIR%%/help/fr/hlp_chat_disable.txt
 %%DATADIR%%/help/fr/hlp_clear.txt
 %%DATADIR%%/help/fr/hlp_connect.txt
 %%DATADIR%%/help/fr/hlp_del.txt
@@ -81,6 +91,7 @@ bin/mcabber
 %%DATADIR%%/help/fr/hlp_event.txt
 %%DATADIR%%/help/fr/hlp_group.txt
 %%DATADIR%%/help/fr/hlp_help.txt
+%%DATADIR%%/help/fr/hlp_iline.txt
 %%DATADIR%%/help/fr/hlp_info.txt
 %%DATADIR%%/help/fr/hlp_move.txt
 %%DATADIR%%/help/fr/hlp_msay.txt
@@ -93,7 +104,9 @@ bin/mcabber
 %%DATADIR%%/help/fr/hlp_roster.txt
 %%DATADIR%%/help/fr/hlp_say.txt
 %%DATADIR%%/help/fr/hlp_say_to.txt
+%%DATADIR%%/help/fr/hlp_screen_refresh.txt
 %%DATADIR%%/help/fr/hlp_set.txt
+%%DATADIR%%/help/fr/hlp_source.txt
 %%DATADIR%%/help/fr/hlp_status.txt
 %%DATADIR%%/help/fr/hlp_status_to.txt
 %%DATADIR%%/help/fr/hlp_version.txt
@@ -103,6 +116,7 @@ bin/mcabber
 %%DATADIR%%/help/nl/hlp_authorization.txt
 %%DATADIR%%/help/nl/hlp_bind.txt
 %%DATADIR%%/help/nl/hlp_buffer.txt
+%%DATADIR%%/help/nl/hlp_chat_disable.txt
 %%DATADIR%%/help/nl/hlp_clear.txt
 %%DATADIR%%/help/nl/hlp_connect.txt
 %%DATADIR%%/help/nl/hlp_del.txt
@@ -110,6 +124,7 @@ bin/mcabber
 %%DATADIR%%/help/nl/hlp_event.txt
 %%DATADIR%%/help/nl/hlp_group.txt
 %%DATADIR%%/help/nl/hlp_help.txt
+%%DATADIR%%/help/nl/hlp_iline.txt
 %%DATADIR%%/help/nl/hlp_info.txt
 %%DATADIR%%/help/nl/hlp_move.txt
 %%DATADIR%%/help/nl/hlp_msay.txt
@@ -122,7 +137,9 @@ bin/mcabber
 %%DATADIR%%/help/nl/hlp_roster.txt
 %%DATADIR%%/help/nl/hlp_say.txt
 %%DATADIR%%/help/nl/hlp_say_to.txt
+%%DATADIR%%/help/nl/hlp_screen_refresh.txt
 %%DATADIR%%/help/nl/hlp_set.txt
+%%DATADIR%%/help/nl/hlp_source.txt
 %%DATADIR%%/help/nl/hlp_status.txt
 %%DATADIR%%/help/nl/hlp_status_to.txt
 %%DATADIR%%/help/nl/hlp_version.txt
@@ -161,6 +178,7 @@ bin/mcabber
 %%DATADIR%%/help/ru/hlp_authorization.txt
 %%DATADIR%%/help/ru/hlp_bind.txt
 %%DATADIR%%/help/ru/hlp_buffer.txt
+%%DATADIR%%/help/ru/hlp_chat_disable.txt
 %%DATADIR%%/help/ru/hlp_clear.txt
 %%DATADIR%%/help/ru/hlp_connect.txt
 %%DATADIR%%/help/ru/hlp_del.txt
@@ -168,6 +186,7 @@ bin/mcabber
 %%DATADIR%%/help/ru/hlp_event.txt
 %%DATADIR%%/help/ru/hlp_group.txt
 %%DATADIR%%/help/ru/hlp_help.txt
+%%DATADIR%%/help/ru/hlp_iline.txt
 %%DATADIR%%/help/ru/hlp_info.txt
 %%DATADIR%%/help/ru/hlp_move.txt
 %%DATADIR%%/help/ru/hlp_msay.txt
@@ -180,7 +199,9 @@ bin/mcabber
 %%DATADIR%%/help/ru/hlp_roster.txt
 %%DATADIR%%/help/ru/hlp_say.txt
 %%DATADIR%%/help/ru/hlp_say_to.txt
+%%DATADIR%%/help/ru/hlp_screen_refresh.txt
 %%DATADIR%%/help/ru/hlp_set.txt
+%%DATADIR%%/help/ru/hlp_source.txt
 %%DATADIR%%/help/ru/hlp_status.txt
 %%DATADIR%%/help/ru/hlp_status_to.txt
 %%DATADIR%%/help/ru/hlp_version.txt
@@ -190,6 +211,7 @@ bin/mcabber
 %%DATADIR%%/help/uk/hlp_authorization.txt
 %%DATADIR%%/help/uk/hlp_bind.txt
 %%DATADIR%%/help/uk/hlp_buffer.txt
+%%DATADIR%%/help/uk/hlp_chat_disable.txt
 %%DATADIR%%/help/uk/hlp_clear.txt
 %%DATADIR%%/help/uk/hlp_connect.txt
 %%DATADIR%%/help/uk/hlp_del.txt
@@ -197,6 +219,7 @@ bin/mcabber
 %%DATADIR%%/help/uk/hlp_event.txt
 %%DATADIR%%/help/uk/hlp_group.txt
 %%DATADIR%%/help/uk/hlp_help.txt
+%%DATADIR%%/help/uk/hlp_iline.txt
 %%DATADIR%%/help/uk/hlp_info.txt
 %%DATADIR%%/help/uk/hlp_move.txt
 %%DATADIR%%/help/uk/hlp_msay.txt
@@ -209,7 +232,9 @@ bin/mcabber
 %%DATADIR%%/help/uk/hlp_roster.txt
 %%DATADIR%%/help/uk/hlp_say.txt
 %%DATADIR%%/help/uk/hlp_say_to.txt
+%%DATADIR%%/help/uk/hlp_screen_refresh.txt
 %%DATADIR%%/help/uk/hlp_set.txt
+%%DATADIR%%/help/uk/hlp_source.txt
 %%DATADIR%%/help/uk/hlp_status.txt
 %%DATADIR%%/help/uk/hlp_status_to.txt
 %%DATADIR%%/help/uk/hlp_version.txt
@@ -226,3 +251,4 @@ bin/mcabber
 @dirrm %%DATADIR%%/help/uk
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
+@dirrmtry share/applications
