@@ -1,17 +1,18 @@
 # ex:ts=8
 #
-# Ports collection makefile for:   gnat-gcc
-# Date created:         9 Jul 2006
-# Whom:                 Karel Miklav <karel@lovetemple.net>
+# Ports collection makefile for: gnat-gcc
+# Date created:		9 Jul 2006
+# Whom:			Karel Miklav <karel@lovetemple.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=		gnat-gcc
-PORTVERSION=		4.2.0
+PORTVERSION=		4.3.0
 CATEGORIES=		lang
-MASTER_SITES=		GCC/snapshots/${versionstring} \
-			CENKES:boot http://lovetemple.net/data/:boot
+MASTER_SITES=		${MASTER_SITE_GCC} \
+			http://lovetemple.net/data/:boot
+MASTER_SITE_SUBDIR=	snapshots/${versionstring}
 DISTFILES=		gcc-core-${versionstring}${EXTRACT_SUFX} \
 			gcc-ada-${versionstring}${EXTRACT_SUFX} \
 			gcc-testsuite-${versionstring}${EXTRACT_SUFX} \
@@ -19,6 +20,9 @@ DISTFILES=		gcc-core-${versionstring}${EXTRACT_SUFX} \
 
 MAINTAINER=		karel@lovetemple.net
 COMMENT=		The GNU Ada Compiler system
+
+LIB_DEPENDS=		gmp.7:${PORTSDIR}/math/libgmp4 \
+			mpfr.1:${PORTSDIR}/math/mpfr
 
 ONLY_FOR_ARCHS=		i386
 
@@ -28,7 +32,7 @@ USE_ICONV=		yes
 USE_PERL5_BUILD=	yes # Needed for man pages.
 USE_BISON=		yes
 
-CONFLICTS=		gcc-4.2.*
+CONFLICTS=		gcc-4.3.*
 WRKSRC=			${WRKDIR}/build
 
 MAN1=			cpp${gcc_suffix}.1 \
@@ -50,15 +54,16 @@ LATEST_LINK=		${PORTNAME}${gcc_suffix}
 
 .include <bsd.port.pre.mk>
 
-gcc_snapshot=		20070307
+gcc_snapshot=		20070518
 versionstring=		${PORTVERSION:C/\.[0-9]*$//}-${gcc_snapshot}
 srcdir=			${WRKDIR}/gcc-${versionstring}
-gcc_suffix=		42
+gcc_suffix=		43
 fsf_mans=		fsf-funding gfdl gpl
 fsf_suffix=		-${PORTNAME}${gcc_suffix}
 targlib=		${PREFIX}/lib/gcc-${PORTVERSION}
 gcc_link=		${PREFIX}/bin/gcc${gcc_suffix}/gcc
 boot_stamp=		${ARCH}-freebsd-${OSREL:C/\.[0-9.]*//}
+check_target=		check
 
 PATCH_WRKSRC=		${srcdir}
 
