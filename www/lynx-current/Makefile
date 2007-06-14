@@ -37,10 +37,10 @@ USE_OPENSSL=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 602107
-CONFIGURE_ARGS+=	--with-screen=ncursesw
-.else
+.if ${OSVERSION} < 602107 || (${OSVERSION} >= 700000 && ${OSVERSION} < 700033)
 CONFIGURE_ARGS+=	--with-screen=ncurses
+.else
+CONFIGURE_ARGS+=	--with-screen=ncursesw
 .endif
 
 .ifdef USE_OPENSSL

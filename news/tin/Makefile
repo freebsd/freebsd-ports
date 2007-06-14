@@ -38,10 +38,10 @@ WITH_TIN_EDITOR?=	/usr/bin/ee
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 602107
-WITH_TIN_SCREEN?=	ncursesw
-.else
+.if ${OSVERSION} < 602107 || (${OSVERSION} >= 700000 && ${OSVERSION} < 700033)
 WITH_TIN_SCREEN?=	ncurses
+.else
+WITH_TIN_SCREEN?=	ncursesw
 .endif
 
 # --with-mime-default-charset=US-ASCII needed to build tin in the non-ascii
