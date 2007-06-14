@@ -7,18 +7,16 @@
 
 PORTNAME=		aaccli
 PORTVERSION=		1.0
-PORTREVISION=		0
 CATEGORIES=		sysutils
 MASTER_SITES=		http://download.adaptec.com/raid/ccu/freebsd/
 DISTNAME=		5400s_fbsd_cli_v10
-EXTRACT_SUFX=		.zip
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Adaptec SCSI RAID administration tool
 
-EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+USE_ZIP=		yes
 
-RESTRICTED=		"May not be redistributed in binary form"
+RESTRICTED=		May not be redistributed in binary form
 NO_CDROM=		yes
 
 IA32_BINARY_PORT=	yes
@@ -30,12 +28,8 @@ NO_WRKSUBDIR=		yes
 
 .include <bsd.port.pre.mk>
 
-do-extract:
-	${MKDIR} ${WRKSRC}
-	cd ${WRKSRC} && ${UNZIP_CMD} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
-
 .if ${OSVERSION} >= 600000
-IGNORE_POST_INSTALL=   I
+IGNORE_POST_INSTALL=	I
 .endif
 
 do-install:
