@@ -6,6 +6,7 @@
 
 PORTNAME=	lookupd
 PORTVERSION=	0.3.c
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsu.ru/~bushman/lookupd/downloads/
 
@@ -28,6 +29,10 @@ post-install:
 
 .if ${OSVERSION} < 500112
 IGNORE=		is only supported on FreeBSD 5.1 or later
+.endif
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+CFLAGS+=	-fPIC
 .endif
 
 .include <bsd.port.post.mk>
