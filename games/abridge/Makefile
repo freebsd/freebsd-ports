@@ -6,12 +6,12 @@
 
 PORTNAME=	abridge
 PORTVERSION=	0.4.0
-PORTREVISION=	6
-PORTREVISON=	1
+PORTREVISION=	7
 CATEGORIES=	games
-MASTER_SITES=	http://www.abridgegame.org/src/
+MASTER_SITES=	http://www.abridgegame.org/debian/unstable/
+DISTFILES=	${PORTNAME}_${PORTVERSION}-1${EXTRACT_SUFX}
 
-MAINTAINER=	Janos.Mohacsi@bsd.hu
+MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Bridge game
 
 USE_WX=		2.4
@@ -24,7 +24,7 @@ PLIST_FILES=	bin/abridge
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+BROKEN=		Does not compile on !i386
 .endif
 
 .include <bsd.port.post.mk>
