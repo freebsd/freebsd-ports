@@ -85,6 +85,7 @@
     SUBDIR += kismet
     SUBDIR += knowlan
     SUBDIR += libsmi
+    SUBDIR += macroscope
     SUBDIR += mbrowse
     SUBDIR += mrtg
     SUBDIR += mrtg-ping-probe
