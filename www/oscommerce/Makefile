@@ -8,37 +8,36 @@
 #
 
 PORTNAME=	oscommerce
-PORTVERSION=	2.2r2
+DISTVERSION=	2.2r2-060817
+PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tep
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/ms/}
+DISTNAME=	${PORTNAME}-${DISTVERSION:S/r/ms/}
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vlad@vlad.uz.ua
 COMMENT=	An full-featured open source e-commerce system
 
 USE_PHP=	mysql session pcre
 WANT_PHP_WEB=	yes
 NO_BUILD=	yes
-OSCOMMERCE=	${PREFIX}/www/data/oscommerce
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message
+DOCS=		CHANGELOG LICENSE STANDARD documentation.pdf \
+		tep_database-pr2.2-CVS.pdf update-20060817.txt
 
 do-install:
-	${MKDIR} ${OSCOMMERCE}
-	${CP} -R ${WRKSRC}/catalog ${OSCOMMERCE}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${OSCOMMERCE}
+	${MKDIR} ${WWWDIR}
+	${CP} -R ${WRKSRC}/catalog ${WWWDIR}
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/FAQ ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/STANDARD ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/tep_database-pr2.2-CVS.pdf ${DOCSDIR}
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
 .endif
 
 post-install:
-	@${SED} -e 's#%%OSCOMMERCE%%#${OSCOMMERCE}#g' pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
