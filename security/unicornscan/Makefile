@@ -9,7 +9,7 @@ PORTNAME=	unicornscan
 PORTVERSION=	0.4.2
 PORTREVISION=	3
 CATEGORIES=	security
-MASTER_SITES=	http://www.dyadsecurity.com/unicornscan/
+MASTER_SITES=	http://www.unicornscan.org/releases/
 
 MAINTAINER=	cykyc@yahoo.com
 COMMENT=	Next-generation of udpscan plus a high-speed TCP scanner
