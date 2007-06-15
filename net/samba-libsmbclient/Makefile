@@ -13,7 +13,7 @@ COMMENT=		Shared libs from the samba package
 
 CONFLICTS=
 
-SAMBA_PORT=		samba3
+SAMBA_PORT?=		samba3
 SAMBA_SUBPORT=		yes
 
 MASTERDIR=		${.CURDIR}/../${SAMBA_PORT}
