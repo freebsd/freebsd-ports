@@ -10,10 +10,10 @@ PORTNAME=	eggcreator
 PORTVERSION=	0.1
 PORTREVISION=	1
 CATEGORIES=	irc
-MASTER_SITES=	http://free.top.bg/tcl/eggcreator/ \
-		http://www.oook.cz/bsd/distfiles/
+MASTER_SITES=	http://www.oook.cz/bsd/distfiles/ \
+		LOCAL/beech
 
-MAINTAINER=	beech@alaskaparadise.com
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Eggdrop.conf creator
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

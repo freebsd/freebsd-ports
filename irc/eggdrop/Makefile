@@ -7,14 +7,16 @@
 
 PORTNAME=	eggdrop
 PORTVERSION=	1.6.18
-CATEGORIES=	irc tcl84
-MASTER_SITES=	ftp://ftp.eggheads.org/pub/eggdrop/source/1.6/
+CATEGORIES=	irc
+MASTER_SITES=	ftp://ftp.eggheads.org/pub/eggdrop/source/1.6/ \
+		LOCAL/beech
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 PATCHFILES=	${PORTNAME}-${PORTVERSION}-ssl.patch.gz
-PATCH_SITES=	http://www.egghelp.org/files/patches/
+PATCH_SITES=	http://www.egghelp.org/files/patches/ \
+		LOCAL/beech
 
-MAINTAINER=	beech@alaskaparadise.com
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	The most popular open source Internet Relay Chat bot
 
 LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
