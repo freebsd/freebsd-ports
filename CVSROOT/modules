@@ -8060,6 +8060,7 @@ ng_ipacct	ports/net-mgmt/ng_ipacct
 ng_netflow	ports/net/ng_netflow
 nget		ports/news/nget
 nginx		ports/www/nginx
+nginx-devel	ports/www/nginx-devel
 ngircd		ports/irc/ngircd
 ngpt		ports/devel/ngpt
 ngraph		ports/math/ngraph
