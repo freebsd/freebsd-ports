@@ -9,25 +9,18 @@ PORTNAME=	DBIx-Ease
 PORTVERSION=	0.07
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:local/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
-MASTER_SITE_SUBDIR=	mat/:local DBIx/:cpan 
+MASTER_SITE_SUBDIR=	mat/:local DBIx/:cpan
 PKGNAMEPREFIX=	p5-
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:local,cpan
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Less-code DBI interactions for all drivers
 
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+
 PERL_CONFIGURE=	yes
 
 MAN3=		DBIx::Ease.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
-.else
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
