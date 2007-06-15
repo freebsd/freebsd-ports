@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	polyester
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	x11-themes kde
 MASTER_SITES=	http://www.notmart.org/files/ \
 		${MASTER_SITE_LOCAL}
@@ -25,10 +24,4 @@ USE_AUTOTOOLS=	libtool:15
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
