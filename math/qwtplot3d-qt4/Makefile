@@ -1,42 +1,45 @@
-# ex:ts=8
-# Ports collection makefile for:	qwtplot3d
-# Date created:			Aug 30, 2004
-# Whom:				ijliao
+# New ports collection makefile for:	qwtplot3d-qt4
+# Date created:		2007-05-27
+# Whom:			Max Brazhnikov <makc@issp.ac.ru>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	qwtplot3d
 PORTVERSION=	0.2.6
-PORTREVISION=	3
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SF
+PKGNAMESUFFIX=	-qt4
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	makc@issp.ac.ru
-COMMENT=	A 3D plotting widget for scientific data and mathematical expressions
+COMMENT=	3D plotting widgets for scientific data and math expressions
 
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
-
-USE_QT_VER=	3
-USE_XLIB=	yes
-USE_GL=		yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
-MAKE_ENV=	QTDIR=${QT_PREFIX}
+USE_QT_VER=	4
+QT_COMPONENTS=	gui moc qmake opengl
 USE_LDCONFIG=	yes
+HAS_CONFIGURE=	yes
+
+WRKSRC=	${WRKDIR}/${PORTNAME}
+
+do-configure:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${QMAKE} -unix ${PORTNAME}.pro
 
 pre-build:
-	@cd ${WRKSRC}; qmake -spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ ${PORTNAME}.pro
+	cd ${WRKSRC} && ${REINPLACE_CMD} -e \
+		's|^CC .*|CC=${CC}|; \
+		 s|^CXX .*|CXX=${CXX}|; \
+		 s|^LINK .*|LINK=${CXX}|; \
+		 s|-pipe||; \
+		 s|^\(CFLAGS .*= \)|\1${CFLAGS}|; \
+		 s|^\(CXXFLAGS = \)|\1${CXXFLAGS}|; \
+		 /^INCPATH/s|-I\.|-Iinclude|;'  Makefile
 
 do-install:
-	${CP} ${WRKSRC}/include/* ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/lib/libqwtplot3d.so.${PORTVERSION} ${PREFIX}/lib
-	${LN} -fs ${PREFIX}/lib/libqwtplot3d.so.${PORTVERSION} ${PREFIX}/lib/libqwtplot3d.so.0
-	${LN} -fs ${PREFIX}/lib/libqwtplot3d.so.${PORTVERSION} ${PREFIX}/lib/libqwtplot3d.so
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
-.endif
+	(cd ${WRKSRC}/include/ && ${COPYTREE_SHARE} \* ${PREFIX}/include/qwtplot3d-qt4)
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/libqwtplot3d-qt4.so.${PORTVERSION} ${PREFIX}/lib
+	${LN} -fs ${PREFIX}/lib/libqwtplot3d-qt4.so.${PORTVERSION} ${PREFIX}/lib/libqwtplot3d-qt4.so.0
+	${LN} -fs ${PREFIX}/lib/libqwtplot3d-qt4.so.${PORTVERSION} ${PREFIX}/lib/libqwtplot3d-qt4.so
 
 .include <bsd.port.mk>
