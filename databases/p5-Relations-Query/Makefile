@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Relations
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	bat@cpan.org
+MAINTAINER=	timur@FreeBSD.org
 COMMENT=	Object for building queries with DBI/DBD::mysql
 
 BUILD_DEPENDS=	${SITE_PERL}/Relations.pm:${PORTSDIR}/databases/p5-Relations

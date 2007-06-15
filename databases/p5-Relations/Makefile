@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Relations
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	bat@cpan.org
+MAINTAINER=	timur@FreeBSD.org
 COMMENT=	Functions to Use with Databases and Queries
 
 PERL_CONFIGURE=	yes
