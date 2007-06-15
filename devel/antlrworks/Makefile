@@ -19,6 +19,8 @@ EXTRACT_AFTER_ARGS=	"-d${DISTNAME}"
 USE_X_PREFIX=	yes
 BUILD_WRKSRC=	${WRKSRC}/source
 
+BROKEN=		Does not fetch
+
 ONLY_FOR_ARCHS=	i386 amd64
 
 USE_JAVA=	yes
