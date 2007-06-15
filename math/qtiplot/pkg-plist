@@ -7,6 +7,7 @@ bin/qtiplot
 %%NLS%%%%DATADIR%%/translations/qtiplot_de.qm
 %%NLS%%%%DATADIR%%/translations/qtiplot_es.qm
 %%NLS%%%%DATADIR%%/translations/qtiplot_fr.qm
+%%NLS%%%%DATADIR%%/translations/qtiplot_ja.qm
 %%NLS%%%%DATADIR%%/translations/qtiplot_ru.qm
 %%NLS%%%%DATADIR%%/translations/qtiplot_sv.qm
 %%NLS%%@dirrm %%DATADIR%%/translations
