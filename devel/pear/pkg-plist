@@ -26,14 +26,11 @@ etc/pear.conf
 %%DOCSDIR%%/Structures_Graph/docs/html/packages.html
 %%DOCSDIR%%/Structures_Graph/docs/html/todolist.html
 %%DOCSDIR%%/Structures_Graph/docs/tutorials/Structures_Graph/Structures_Graph.pkg
-@exec mkdir -p %D/share/pear/.channels/.alias
-@exec mkdir -p %D/share/pear/.registry/.channel.__uri
-@exec mkdir -p %D/share/pear/.registry/.channel.pecl.php.net
-@exec touch %D/share/pear/.channels/.alias/pear.txt
-@exec touch %D/share/pear/.channels/.alias/pecl.txt
-@exec touch %D/share/pear/.channels/__uri.reg
-@exec touch %D/share/pear/.channels/pear.php.net.reg
-@exec touch %D/share/pear/.channels/pecl.php.net.reg
+%%DATADIR%%/.channels/.alias/pear.txt
+%%DATADIR%%/.channels/.alias/pecl.txt
+%%DATADIR%%/.channels/__uri.reg
+%%DATADIR%%/.channels/pear.php.net.reg
+%%DATADIR%%/.channels/pecl.php.net.reg
 @exec touch %D/share/pear/.depdb
 @exec touch %D/share/pear/.depdblock
 @exec touch %D/share/pear/.filemap
@@ -158,11 +155,6 @@ etc/pear.conf
 @dirrm %%DOCSDIR%%/Structures_Graph/docs
 @dirrm %%DOCSDIR%%/Structures_Graph
 @dirrmtry share/doc/pear
-@unexec rm %D/share/pear/.channels/.alias/pear.txt 2> /dev/null || true
-@unexec rm %D/share/pear/.channels/.alias/pecl.txt 2> /dev/null || true
-@unexec rm %D/share/pear/.channels/__uri.reg 2> /dev/null || true
-@unexec rm %D/share/pear/.channels/pear.php.net.reg 2> /dev/null || true
-@unexec rm %D/share/pear/.channels/pecl.php.net.reg 2> /dev/null || true
 @unexec rm %D/share/pear/.depdb 2> /dev/null || true
 @unexec rm %D/share/pear/.depdblock 2> /dev/null || true
 @unexec rm %D/share/pear/.filemap 2> /dev/null || true
