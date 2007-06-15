@@ -7,7 +7,7 @@
 
 PORTNAME=	nginx
 PORTVERSION=	0.5.25
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -26,6 +26,7 @@ HTTP_PORT?=	80
 USE_PERL5=	yes
 .endif
 
+CONFLICTS?=	nginx-devel-0.*
 USE_RC_SUBR=	nginx.sh
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX}/etc/nginx \
