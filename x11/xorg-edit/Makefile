@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xorg-edit
-PORTVERSION=	07.04.23
-PORTREVISION=	1
+PORTVERSION=	07.06.15
 CATEGORIES=	x11
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
@@ -26,7 +25,7 @@ post-extract:
 	@${CHMOD} -R a+rX,u+w ${WRKSRC}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|g;s|/usr/local|$${PREFIX}|g'\
+	@${REINPLACE_CMD} -e 's|wx-config|${WX_CONFIG}|g;s|/usr/local|$${PREFIX}|g;/rm -f/d'\
 		${BUILD_WRKSRC}/xorgedit/${MAKEFILE}
 
 do-install:
