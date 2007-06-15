@@ -317,6 +317,7 @@
     SUBDIR += qtiplot
     SUBDIR += qtiplot-doc
     SUBDIR += qwtplot3d
+    SUBDIR += qwtplot3d-qt4
     SUBDIR += rascal
     SUBDIR += reed-solomon
     SUBDIR += rkward
