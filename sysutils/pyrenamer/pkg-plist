@@ -1,0 +1,37 @@
+bin/pyrenamer
+%%PYTHON_SITELIBDIR%%/pyrenamer/TreeViewTooltips.py
+%%PYTHON_SITELIBDIR%%/pyrenamer/TreeViewTooltips.pyc
+%%PYTHON_SITELIBDIR%%/pyrenamer/TreeViewTooltips.pyo
+%%PYTHON_SITELIBDIR%%/pyrenamer/__init__.py
+%%PYTHON_SITELIBDIR%%/pyrenamer/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pyrenamer/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pyrenamer/pyrenamer.py
+%%PYTHON_SITELIBDIR%%/pyrenamer/pyrenamer.pyc
+%%PYTHON_SITELIBDIR%%/pyrenamer/pyrenamer.pyo
+%%PYTHON_SITELIBDIR%%/pyrenamer/pyrenamer_globals.py
+%%PYTHON_SITELIBDIR%%/pyrenamer/pyrenamer_globals.pyc
+%%PYTHON_SITELIBDIR%%/pyrenamer/pyrenamer_globals.pyo
+%%PYTHON_SITELIBDIR%%/pyrenamer/pyrenamerfilefuncs.py
+%%PYTHON_SITELIBDIR%%/pyrenamer/pyrenamerfilefuncs.pyc
+%%PYTHON_SITELIBDIR%%/pyrenamer/pyrenamerfilefuncs.pyo
+%%PYTHON_SITELIBDIR%%/pyrenamer/tooltips.py
+%%PYTHON_SITELIBDIR%%/pyrenamer/tooltips.pyc
+%%PYTHON_SITELIBDIR%%/pyrenamer/tooltips.pyo
+%%PYTHON_SITELIBDIR%%/pyrenamer/treefilebrowser.py
+%%PYTHON_SITELIBDIR%%/pyrenamer/treefilebrowser.pyc
+%%PYTHON_SITELIBDIR%%/pyrenamer/treefilebrowser.pyo
+share/applications/pyrenamer.desktop
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%EXAMPLESDIR%%/treefilebrowser_example.py
+%%DATADIR%%/pyrenamer.glade
+%%DATADIR%%/pyrenamer.png
+%%DATADIR%%/pyrenamer.svg
+@dirrm %%DATADIR%%
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/applications
+@dirrm %%PYTHON_SITELIBDIR%%/pyrenamer
