@@ -38,22 +38,22 @@ lib/kde3/libkdesvnpart.so
 lib/libsvnqt.la
 lib/libsvnqt.so
 lib/libsvnqt.so.3
-lib/libsvnqt.so.3.1.1
+lib/libsvnqt.so.3.1.2
 share/applications/kde/kdesvn.desktop
 share/apps/kdesvn/kdesvnui.rc
 share/apps/kdesvnpart/kdesvn_part.rc
 share/apps/konqueror/servicemenus/kdesvn_subversion.desktop
 share/config.kcfg/kdesvn_part.kcfg
-share/doc/HTML/en/kdesvn/common
-share/doc/HTML/en/kdesvn/hi128-filesys-kdesvnadded.png
-share/doc/HTML/en/kdesvn/hi128-filesys-kdesvnconflicted.png
-share/doc/HTML/en/kdesvn/hi128-filesys-kdesvndeleted.png
-share/doc/HTML/en/kdesvn/hi128-filesys-kdesvnlocked.png
-share/doc/HTML/en/kdesvn/hi128-filesys-kdesvnmodified.png
-share/doc/HTML/en/kdesvn/hi128-filesys-kdesvnneedlock.png
-share/doc/HTML/en/kdesvn/hi128-filesys-kdesvnupdates.png
-share/doc/HTML/en/kdesvn/index.cache.bz2
-share/doc/HTML/en/kdesvn/index.docbook
+%%PORTDOCS%%%%DOCSDIR%%/common
+%%PORTDOCS%%%%DOCSDIR%%/hi128-filesys-kdesvnadded.png
+%%PORTDOCS%%%%DOCSDIR%%/hi128-filesys-kdesvnconflicted.png
+%%PORTDOCS%%%%DOCSDIR%%/hi128-filesys-kdesvndeleted.png
+%%PORTDOCS%%%%DOCSDIR%%/hi128-filesys-kdesvnlocked.png
+%%PORTDOCS%%%%DOCSDIR%%/hi128-filesys-kdesvnmodified.png
+%%PORTDOCS%%%%DOCSDIR%%/hi128-filesys-kdesvnneedlock.png
+%%PORTDOCS%%%%DOCSDIR%%/hi128-filesys-kdesvnupdates.png
+%%PORTDOCS%%%%DOCSDIR%%/index.cache.bz2
+%%PORTDOCS%%%%DOCSDIR%%/index.docbook
 share/icons/hicolor/128x128/actions/kdesvnadd.png
 share/icons/hicolor/128x128/actions/kdesvnaddrecursive.png
 share/icons/hicolor/128x128/actions/kdesvnblame.png
@@ -250,18 +250,18 @@ share/icons/hicolor/scalable/filesystems/kdesvnlocked.svgz
 share/icons/hicolor/scalable/filesystems/kdesvnmodified.svgz
 share/icons/hicolor/scalable/filesystems/kdesvnneedlock.svgz
 share/icons/hicolor/scalable/filesystems/kdesvnupdates.svgz
-share/locale/ca/LC_MESSAGES/kdesvn.mo
-share/locale/cs/LC_MESSAGES/kdesvn.mo
-share/locale/de/LC_MESSAGES/kdesvn.mo
-share/locale/es/LC_MESSAGES/kdesvn.mo
-share/locale/fr/LC_MESSAGES/kdesvn.mo
-share/locale/gl/LC_MESSAGES/kdesvn.mo
-share/locale/it/LC_MESSAGES/kdesvn.mo
-share/locale/lt/LC_MESSAGES/kdesvn.mo
-share/locale/nl/LC_MESSAGES/kdesvn.mo
-share/locale/pa/LC_MESSAGES/kdesvn.mo
-share/locale/ru/LC_MESSAGES/kdesvn.mo
-share/locale/sv/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/de/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/es/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/it/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/kdesvn.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/kdesvn.mo
 share/services/kded/kdesvnd.desktop
 share/services/ksvn+file.protocol
 share/services/ksvn+http.protocol
@@ -273,9 +273,11 @@ share/services/svn+http.protocol
 share/services/svn+https.protocol
 share/services/svn+ssh.protocol
 share/services/svn.protocol
+@dirrmtry share/locale/es/LC_MESSAGES
+@dirrmtry share/locale/es
 @dirrmtry share/services/kded
-@dirrm share/doc/HTML/en/kdesvn
 @dirrm share/apps/kdesvnpart
 @dirrm share/apps/kdesvn
 @dirrmtry share/applications/kde
 @dirrm include/svnqt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

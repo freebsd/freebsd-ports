@@ -5,13 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	kdesvn
-PORTVERSION=	0.11.2
-PORTREVISION=	1
+PORTVERSION=	0.12.1
 CATEGORIES=	devel kde
-MASTER_SITES=	http://www.alwins-world.de/programs/download/${PORTNAME}/ \
+MASTER_SITES=	http://www.alwins-world.de/programs/download/${PORTNAME}/${PORTVERSION:R}.x/ \
 		http://www.yuanjue.net/download/
 
-MAINTAINER=	yuanjue@yuanjue.net
+MAINTAINER=	yuanjue@freebsd.org
 COMMENT=	KDE frontend for Subversion
 
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
@@ -32,22 +31,32 @@ LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr-svn \
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+.if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+.if !defined(NOPORTDOCS)
+DOCSDIR=	${PREFIX}/share/doc/HTML/en/kdesvn
+.endif
 
 MAN1=	kdesvn.1 kdesvnaskpass.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		Does not compile on 4.x
-.endif
-
 post-extract:
 	${MKDIR} ${WRKSRC}
+.if defined(NOPORTDOCS)
+	${RM} -f ${PATCH_WRKSRC}/doc/CMakeLists.txt
+	${ECHO} "ADD_SUBDIRECTORY(man)" > ${PATCH_WRKSRC}/doc/CMakeLists.txt
+.endif
 
 do-configure:
 	@(cd ${WRKSRC}; \
 	${LOCALBASE}/bin/cmake ${CMAKE_ARGS} ${PATCH_WRKSRC})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
