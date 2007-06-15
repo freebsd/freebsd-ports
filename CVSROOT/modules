@@ -11536,6 +11536,7 @@ pear-HTML_Form	ports/devel/pear-HTML_Form
 pear-HTML_Javascript	ports/devel/pear-HTML_Javascript
 pear-HTML_Page2	ports/devel/pear-HTML_Page2
 pear-HTML_QuickForm	ports/devel/pear-HTML_QuickForm
+pear-HTML_QuickForm2	ports/devel/pear-HTML_QuickForm2
 pear-HTML_QuickForm_Controller	ports/devel/pear-HTML_QuickForm_Controller
 pear-HTML_QuickForm_Livesearch	ports/devel/pear-HTML_QuickForm_Livesearch
 pear-HTML_QuickForm_SelectFilter	ports/devel/pear-HTML_QuickForm_SelectFilter
