@@ -521,6 +521,7 @@
     SUBDIR += pwgen2
     SUBDIR += pwsafe
     SUBDIR += py-bcfg2
+    SUBDIR += pyrenamer
     SUBDIR += qlogtools
     SUBDIR += qpxtool
     SUBDIR += radeontool
