@@ -14,10 +14,10 @@ MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		ftp://ftp.dataguard.no/ftp/pub/proftpd/distrib/source/ \
 		ftp://spirit.bentel.sk/mirrors/Proftpd/distrib/source/ \
 		ftp://proftpd.networkedsystems.co.uk/distrib/source/ \
-		ftp://ftp.ethereal.com/mirrors/ftp.proftpd.org/distrib/source/ \
-		ftp://mirror.cybercomm.nl/pub/proftpd/distrib/source/
+		http://mirrors.ibiblio.org/pub/mirrors/proftpd/distrib/source/ \
+		http://www.mirrorservice.org/sites/ftp.proftpd.org/distrib/source/
 
-MAINTAINER?=	beech@alaskaparadise.com
+MAINTAINER?=	beech@FreeBSD.org
 COMMENT?=	Highly configurable ftp daemon
 
 MAN1=	ftpcount.1 ftpwho.1 ftptop.1
