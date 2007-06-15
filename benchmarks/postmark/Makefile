@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.c
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetApps file system benchmark
 
+BROKEN=		Checksum mismatch
+
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	sbin/postmark
 
