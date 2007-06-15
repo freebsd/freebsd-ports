@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	stardict
 PKGNAMESUFFIX=	-dictd_mova
 DIST_SUBDIR=	stardict
 
-MAINTAINER=	timur@gnome.org
+MAINTAINER=	timur@FreeBSD.org
 COMMENT=	Dictionaries from www.mova.org for StarDict
 
 RUN_DEPENDS=	stardict:${PORTSDIR}/textproc/stardict2
@@ -60,10 +60,10 @@ DISTFILES+=	${PORTNAME}${DISTSUFFIX}_${dict}-${PORTVERSION}${EXTRACT_SUFX}
 .endfor
 
 do-build:
-	@${DO_NADA}
+	    @${DO_NADA}
 
 do-install:
-		${MKDIR} ${PREFIX}/${DICTDIR}
+	    ${MKDIR} ${PREFIX}/${DICTDIR}
 .for dict in ${INSTALL_DICTIONARIES}
 .for ext in dict.dz idx ifo
 	    ${INSTALL_DATA} \

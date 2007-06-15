@@ -13,14 +13,14 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bat@cpan.org
+MAINTAINER=	timur@FreeBSD.org
 COMMENT=	Efficiently match IP addresses against IP ranges via regexp
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_MODBUILD=	yes
 
-MAN3=	Net::IP::Match::Regexp.3
+MAN3=		Net::IP::Match::Regexp.3
 
 .include <bsd.port.pre.mk>
 

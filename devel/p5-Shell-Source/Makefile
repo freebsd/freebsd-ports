@@ -12,11 +12,11 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Shell
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	bat@cpan.org
-COMMENT=	Shell::Source - run programs and inherit environment changes
+MAINTAINER=	timur@FreeBSD.org
+COMMENT=	Run programs and inherit environment changes
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Shell::Source.3
+MAN3=		Shell::Source.3
 
 .include <bsd.port.mk>

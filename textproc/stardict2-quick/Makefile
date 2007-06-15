@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	stardict
 PKGNAMESUFFIX=	-quick
 DIST_SUBDIR=	stardict
 
-MAINTAINER=	timur@gnome.org
+MAINTAINER=	timur@FreeBSD.org
 COMMENT=	Dictionaries from Quick for StarDict
 
 RUN_DEPENDS=	stardict:${PORTSDIR}/textproc/stardict2

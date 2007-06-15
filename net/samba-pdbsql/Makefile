@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	pdbsql
 PKGNAMEPREFIX=		samba-
 DISTNAME=		${PORTNAME}-${PORTVERSION}-${PKGNAMEPREFIX}${SAMBA_VERSION}
 
-MAINTAINER=		timur@gnu.org
+MAINTAINER=		timur@FreeBSD.org
 COMMENT=		Multiplexor, MySQL and PostgeSQL passdb backends for Samba3
 
 BROKEN=			Does not compile
