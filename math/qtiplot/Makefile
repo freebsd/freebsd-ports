@@ -6,25 +6,25 @@
 #
 
 PORTNAME=	qtiplot
-PORTVERSION=	0.8.9
-PORTREVISION=	1
+DISTVERSION=	0.9rc2
 CATEGORIES=	math science
 MASTER_SITES=	http://soft.proindependent.com/src/
 
 MAINTAINER=	makc@issp.ac.ru
 COMMENT=	An Origin clone for data analysis and scientific plotting
 
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	gsl.9:${PORTSDIR}/math/gsl \
 		muparser.0:${PORTSDIR}/math/muparser \
 		origin.0:${PORTSDIR}/math/liborigin \
-		qwtplot3d:${PORTSDIR}/math/qwtplot3d \
+		qwtplot3d-qt4:${PORTSDIR}/math/qwtplot3d-qt4 \
 		qwt.5:${PORTSDIR}/x11-toolkits/qwt-devel
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_QT_VER=	3
-MAKE_ENV=	QTDIR=${QT_PREFIX}
+USE_QT_VER=	4
+QT_COMPONENTS=	gui moc qmake opengl qt3support network assistantclient
+HAS_CONFIGURE=	yes
+USE_DOS2UNIX=	qtiplot/qtiplot.pro
 
 DESKTOP_ENTRIES="QtiPlot" "Data analysis and plotting" \
 		"${DATADIR}/manual/common/qtiplot_logo.png" \
@@ -36,13 +36,13 @@ OPTIONS=	DOCS "Install the QtiPlot Handbook" on \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PYTHON)
+BROKEN=	py-qt4-\* ports should be fixed first
 USE_PYTHON=	yes
 # manually include this, because USE_PYTHON is defined
 # after including bsd.port.pre.mk
 .include "${PORTSDIR}/Mk/bsd.python.mk"
-BUILD_DEPENDS+=	sip:${PORTSDIR}/devel/py-sip \
-		${PYTHON_SITELIBDIR}/qt.so:${PORTSDIR}/x11-toolkits/py-qt
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/qt.so:${PORTSDIR}/x11-toolkits/py-qt
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
 PLIST_SUB+=	PYTHON=""
 MAKE_ENV+=	PYTHON_INCLUDEDIR=${PYTHON_INCLUDEDIR} \
 		PYTHON_VERSION=${PYTHON_VERSION}
@@ -55,24 +55,18 @@ RUN_DEPENDS+=	qtiplot-doc>=0:${PORTSDIR}/math/qtiplot-doc
 .endif
 
 .if !defined(WITHOUT_NLS)
-QTI_LANG=	de es fr ru sv
+#QT_COMPONENTS+=	linguist
+BUILD_DEPENDS+=	${LOCALBASE}/bin/lupdate-qt4:${PORTSDIR}/devel/qt4-linguist
+QTI_LANG=	de es fr ja ru sv
 PLIST_SUB+=	NLS=""
 .else
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-QMAKE=		qmake
-QMAKESPEC=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
-
 QPRO_DIRS=	. \
 		fitPlugins/fitRational0 \
 		fitPlugins/fitRational1 \
 		qtiplot
-
-pre-patch:
-	@${RM} -r ${WRKSRC}/3rdparty/muParser
-	@${RM} -r ${WRKSRC}/3rdparty/qwt
-	@${CP} ${FILESDIR}/${PORTNAME}.pro ${WRKSRC}/${PORTNAME}/${PORTNAME}.pro
 
 post-patch:
 .if defined(WITH_PYTHON)
@@ -81,22 +75,13 @@ post-patch:
 		${WRKSRC}/${PORTNAME}/src/PythonScripting.cpp
 .else
 	@${REINPLACE_CMD} \
-		-e "s/unix:SCRIPTING_LANGS += Python//" \
+		-e "s/^SCRIPTING_LANGS += Python//" \
 		${WRKSRC}/${PORTNAME}/qtiplot.pro
 .endif
-	@${REINPLACE_CMD} -e "s:3rdparty/qwt::" ${WRKSRC}/${PORTNAME}.pro
-	@${REINPLACE_CMD} -e 's:"/usr/share/doc/qtiplot:"${DATADIR}/manual:' \
-		-e 's:QDir( "./" ).absPath():"":g' \
-		${WRKSRC}/${PORTNAME}/src/application.cpp
-	@${REINPLACE_CMD} -e 's:"../3rdparty/muParser/muParser.h":<muParser.h>:' \
-		${WRKSRC}/${PORTNAME}/src/parser.h
-	@${REINPLACE_CMD} -e 's:"../3rdparty/muParser/muParser.h":<muParser.h>:' \
-		${WRKSRC}/${PORTNAME}/src/muParserScripting.h
 
 do-configure:
 .for d in ${QPRO_DIRS}
-	@cd ${WRKSRC}/${d} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
-		-spec ${QMAKESPEC} *.pro
+	(cd ${WRKSRC}/${d} && ${SETENV} ${MAKE_ENV} ${QMAKE})
 .endfor
 
 post-configure:
@@ -109,6 +94,11 @@ post-configure:
 		 s|^\(CFLAGS .*= \)|\1${CFLAGS}|; \
 		 s|^\(CXXFLAGS = \)|\1${CXXFLAGS}|' \
 		${WRKSRC}/${d}/Makefile
+.endfor
+
+do-build:
+.for d in ${QPRO_DIRS}
+	(cd ${WRKSRC}/${d}; ${SETENV} ${MAKE_ENV} ${GMAKE})
 .endfor
 
 do-install:
@@ -126,11 +116,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/qtiplotrc.pyc ${DATADIR}/qtiplotrc.pyc
 .endif
 .if !defined(WITHOUT_NLS)
-.for i in ${QTI_LANG}
-	${MKDIR} ${DATADIR}/translations/
-	${INSTALL_DATA}	${WRKSRC}/qtiplot/translations/qtiplot_${i}.qm \
-	${DATADIR}/translations/
-.endfor
+	(cd ${WRKSRC}/qtiplot/translations/ && ${COPYTREE_SHARE} '*.qm' ${DATADIR}/translations)
 .endif
 
 .include <bsd.port.post.mk>
