@@ -10,9 +10,9 @@ PORTVERSION=	0.5.6
 PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://www.cherokee-project.com/download/${PORTVERSION:R}/${PORTVERSION}/ \
-		CENKES http://www.alaskaparadise.com/freebsd/
+		CENKES LOCAL/beech
 
-MAINTAINER=	beech@alaskaparadise.com
+MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Extremely fast and flexible web server
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
