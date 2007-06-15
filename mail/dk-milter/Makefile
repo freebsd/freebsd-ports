@@ -7,6 +7,7 @@
 
 PORTNAME=	dk-milter
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dk-milter
@@ -23,7 +24,7 @@ IGNORE=		your system does not support sysvipc
 .endif
 
 .if defined(WITH_POSTFIX_MILTER) || defined(WITH_POSTFIX) || defined(WITH_POSTFIX_CURRENT)
-SENDMAIL_MILTER_IN_BASE=	yes
+WITH_SENDMAIL_BASE=	yes
 PKGMESSAGE=	pkg-message.postfix
 
 .if defined(WITH_POSTFIX_CURRENT)
@@ -33,35 +34,29 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/postfix/smtpd:${PORTSDIR}/mail/postfix
 .endif
 .endif
 
-.if !defined(SENDMAIL_MILTER_IN_BASE)
-.if defined(SENDMAIL_WITH_SHARED_MILTER)
-LIB_DEPENDS+=	milter.3:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
-.else
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_MILTER_PORT}
-.endif
-.endif
-
-.if defined(WITH_SENDMAIL_STATIC_MILTER) || !defined(SENDMAIL_WITH_SHARED_MILTER)
-SITE+=		-e '\|-static|s|%%STATIC%%||g'
-.else
-SITE+=		-e '\|-static|s|%%STATIC%%|dnl |g'
-.endif
-
-SENDMAIL_MILTER_PORT?=	sendmail
 WCONF=		${WRKSRC}/devtools/Site
 MAN8=		dk-filter.8
 DOCSFILES=	FEATURES INSTALL KNOWNBUGS LICENSE README RELEASE_NOTES \
 		rfc4870.txt dk-filter/autorespond.csh
 
 SITE+=		${FILESDIR}/site.config.m4
-.if !defined(SENDMAIL_MILTER_IN_BASE)
-SITE+=		${FILESDIR}/site.config.m4.milter
-.endif
-SITE+=		${WRKSRC}/site.config.m4.dist
 SITE_SUB+=	-e "s|%%PREFIX%%|${PREFIX}|g" \
 		-e "s|%%LOCALBASE%%|${LOCALBASE}|g"
 
 .include <bsd.port.pre.mk>
+
+.include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
+
+SITE+=		${WRKSRC}/site.config.m4.dist
+.if defined(WITH_SENDMAIL_PORT)
+SITE+=		${FILESDIR}/site.config.m4.milter
+.endif
+
+.if defined(WITH_SENDMAIL_STATIC_MILTER)
+SITE_SUB+=	-e '\|-static|s|%%STATIC%%||g'
+.else
+SITE_SUB+=	-e '\|-static|s|%%STATIC%%|dnl |g'
+.endif
 
 SUB_LIST=	"RC_SCRIPT=${PREFIX}/etc/rc.d/${USE_RC_SUBR:S/.sh$//}${RC_SUBR_SUFFIX}"
 
@@ -91,14 +86,6 @@ SITE_SUB+=	-e 's|%%OPENSSL%%|dnl |g'
 SITE_SUB+=	-e 's|%%OPENSSL%%||g' \
 		-e "s|%%OPENSSLINC%%|${OPENSSLINC}|g" \
 		-e "s|%%OPENSSLLIB%%|${OPENSSLLIB}|g"
-.endif
-
-.if defined(SENDMAIL_WITHOUT_MILTER)
-pre-fetch:
-	@${ECHO_MSG}
-	@${ECHO_MSG} You must unset variable SENDMAIL_WITHOUT_MILTER,
-	@${ECHO_MSG} and rebuild sendmail in the ports
-	@${FALSE}
 .endif
 
 .include	"${.CURDIR}/Makefile.features"
