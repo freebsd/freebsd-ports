@@ -1,5 +1,5 @@
---- doc/Makefile.in.orig	Wed Sep 20 10:27:06 2006
-+++ doc/Makefile.in	Fri Dec 15 12:24:05 2006
+--- doc/Makefile.in.orig	Tue May 29 11:07:06 2007
++++ doc/Makefile.in	Wed May 30 10:58:27 2007
 @@ -52,8 +52,12 @@
  CONFIG_CLEAN_FILES =
  SOURCES =
@@ -13,12 +13,28 @@
  am__TEXINFO_TEX_DIR = $(srcdir)
  DVIS = cfengine-Reference.dvi cfengine-Tutorial.dvi \
  	cfengine-Anomalies.dvi
-@@ -205,15 +209,23 @@
+@@ -171,7 +175,7 @@
+ build_vendor = @build_vendor@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+-docdir = $(pkgdatadir)/doc
++docdir = $(prefix)/share/doc/cfengine
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@
+@@ -179,7 +183,7 @@
+ host_cpu = @host_cpu@
+ host_os = @host_os@
+ host_vendor = @host_vendor@
+-htmldir = $(pkgdatadir)/html
++htmldir = $(docdir)
+ includedir = @includedir@
+ infodir = @infodir@
+ install_sh = @install_sh@
+@@ -213,13 +217,21 @@
  
  # Info used in building and installing HTML files
  htmlfiles = $(info_TEXINFOS:.texinfo=.html)
--htmldir = $(pkgdatadir)/html
-+htmldir = $(docdir)
 +.if defined(NOPORTDOCS)
 +html_DATA = 
 +.else
@@ -29,8 +45,6 @@
  psfiles = $(info_TEXINFOS:.texinfo=.ps)
  pdffiles = $(info_TEXINFOS:.texinfo=.pdf)
  dvifiles = $(info_TEXINFOS:.texinfo=.dvi)
--docdir = $(pkgdatadir)/doc
-+docdir = $(prefix)/share/doc/cfengine
 +.if defined(NOPORTDOCS)
 +doc_DATA = 
 +.else
@@ -39,7 +53,7 @@
  
  # Make sure these get distributed with everything else.
  EXTRA_DIST = cfagent.8 cfenvd.8 cfenvgraph.8 cfexecd.8 cfkey.8 cfrun.8 cfservd.8 cfengine.8 cfshow.8 cfetoolcheck.8   cfetooldump.8   cfetoolimport.8  cfetoolupdate.8 cfetoolcreate.8  cfetoolgraph.8  cfetoolinfo.8 cfetoolcheck.8   cfetooldump.8   cfetoolimport.8  cfetoolupdate.8 cfetoolcreate.8  cfetoolgraph.8  cfetoolinfo.8 texinfo.tex $(htmlfiles) $(infofiles)  $(psfiles) $(dvifiles) $(pdffiles)
-@@ -316,7 +328,7 @@
+@@ -324,7 +336,7 @@
  	  exit 1; \
  	fi
  $(srcdir)/version1.texi:  $(srcdir)/stamp-vti
@@ -48,7 +62,7 @@
  	@(dir=.; test -f ./cfengine-Reference.texinfo || dir=$(srcdir); \
  	set `$(SHELL) $(srcdir)/mdate-sh $$dir/cfengine-Reference.texinfo`; \
  	echo "@set UPDATED $$1 $$2 $$3"; \
-@@ -375,7 +387,7 @@
+@@ -385,7 +397,7 @@
  	  exit 1; \
  	fi
  $(srcdir)/version2.texi:  $(srcdir)/stamp-1
@@ -57,7 +71,7 @@
  	@(dir=.; test -f ./cfengine-Tutorial.texinfo || dir=$(srcdir); \
  	set `$(SHELL) $(srcdir)/mdate-sh $$dir/cfengine-Tutorial.texinfo`; \
  	echo "@set UPDATED $$1 $$2 $$3"; \
-@@ -434,7 +446,7 @@
+@@ -446,7 +458,7 @@
  	  exit 1; \
  	fi
  $(srcdir)/version3.texi:  $(srcdir)/stamp-2
@@ -66,7 +80,7 @@
  	@(dir=.; test -f ./cfengine-Anomalies.texinfo || dir=$(srcdir); \
  	set `$(SHELL) $(srcdir)/mdate-sh $$dir/cfengine-Anomalies.texinfo`; \
  	echo "@set UPDATED $$1 $$2 $$3"; \
-@@ -579,6 +591,7 @@
+@@ -592,6 +604,7 @@
  	  rm -f "$(DESTDIR)$(man8dir)/$$inst"; \
  	done
  install-docDATA: $(doc_DATA)
@@ -74,7 +88,7 @@
  	@$(NORMAL_INSTALL)
  	test -z "$(docdir)" || $(mkdir_p) "$(DESTDIR)$(docdir)"
  	@list='$(doc_DATA)'; for p in $$list; do \
-@@ -587,6 +600,7 @@
+@@ -600,6 +613,7 @@
  	  echo " $(docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
  	  $(docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
  	done
@@ -82,7 +96,7 @@
  
  uninstall-docDATA:
  	@$(NORMAL_UNINSTALL)
-@@ -596,6 +610,7 @@
+@@ -609,6 +623,7 @@
  	  rm -f "$(DESTDIR)$(docdir)/$$f"; \
  	done
  install-htmlDATA: $(html_DATA)
@@ -90,7 +104,7 @@
  	@$(NORMAL_INSTALL)
  	test -z "$(htmldir)" || $(mkdir_p) "$(DESTDIR)$(htmldir)"
  	@list='$(html_DATA)'; for p in $$list; do \
-@@ -604,6 +619,7 @@
+@@ -617,6 +632,7 @@
  	  echo " $(htmlDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(htmldir)/$$f'"; \
  	  $(htmlDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(htmldir)/$$f"; \
  	done
@@ -98,7 +112,7 @@
  
  uninstall-htmlDATA:
  	@$(NORMAL_UNINSTALL)
-@@ -712,6 +728,7 @@
+@@ -725,6 +741,7 @@
  install-info: install-info-am
  
  install-info-am: $(INFO_DEPS)
@@ -106,7 +120,7 @@
  	@$(NORMAL_INSTALL)
  	test -z "$(infodir)" || $(mkdir_p) "$(DESTDIR)$(infodir)"
  	@srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`; \
-@@ -741,6 +758,7 @@
+@@ -754,6 +771,7 @@
  	    install-info --info-dir="$(DESTDIR)$(infodir)" "$(DESTDIR)$(infodir)/$$relfile" || :;\
  	  done; \
  	else : ; fi

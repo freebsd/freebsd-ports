@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cfengine
-PORTVERSION=	2.1.22
+PORTVERSION=	2.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.iu.hio.no/pub/cfengine/ \
 		${MASTER_SITE_GNU}
@@ -15,11 +15,16 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	A systems administration tool for networks
 
-USE_BDB=	44
+USE_RC_SUBR=	cfexecd cfservd
+
+USE_BDB?=	44
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-docs
+CONFIGURE_ARGS=	--with-docs \
+		--docdir=${DOCSDIR} \
+		--infodir=${PREFIX}/info \
+		--mandir=${MANPREFIX}/man
 CONFIGURE_ENV+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS} \
 		BERKELEY_DB_CFLAGS=-I${BDB_INCLUDE_DIR} \
 		BERKELEY_DB_LDFLAGS=-L${BDB_LIB_DIR} \
