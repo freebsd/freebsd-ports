@@ -6426,6 +6426,7 @@ libgtkhtml	ports/www/libgtkhtml
 libgtksourceviewmm	ports/x11-toolkits/libgtksourceviewmm
 libgtop		ports/devel/libgtop
 libgutenfetch	ports/devel/libgutenfetch
+libharu		ports/print/libharu
 libhash		ports/devel/libhash
 libhoard	ports/devel/libhoard
 libhome		ports/misc/libhome
