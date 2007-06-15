@@ -1,6 +1,17 @@
---- classes/include/CflowdNetMatrixKey.hh.orig	Fri Aug 29 20:35:27 2003
-+++ classes/include/CflowdNetMatrixKey.hh	Fri Aug 29 20:36:00 2003
-@@ -191,9 +191,9 @@
+--- classes/include/CflowdNetMatrixKey.hh.orig	Fri Jun 15 16:36:13 2007
++++ classes/include/CflowdNetMatrixKey.hh	Fri Jun 15 16:45:41 2007
+@@ -53,8 +53,10 @@
+ }
+ 
+ #include <map>
++#include <strstream>
+ 
+ #include "ArtsPrimitive.hh"
++using namespace std;
+ 
+ extern ArtsPrimitive g_CfdArtsPrimitive;
+ 
+@@ -191,9 +193,9 @@
    inline istream & read(istream & is)
    {
      g_CfdArtsPrimitive.ReadIpv4Network(is,this->_src,sizeof(this->_src));
@@ -12,7 +23,7 @@
      
      return(is);
    }
-@@ -263,9 +263,9 @@
+@@ -263,9 +265,9 @@
    inline ostream & write(ostream & os) const
    {
      g_CfdArtsPrimitive.WriteIpv4Network(os,this->_src,sizeof(this->_src));
