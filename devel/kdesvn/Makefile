@@ -10,7 +10,7 @@ CATEGORIES=	devel kde
 MASTER_SITES=	http://www.alwins-world.de/programs/download/${PORTNAME}/${PORTVERSION:R}.x/ \
 		http://www.yuanjue.net/download/
 
-MAINTAINER=	yuanjue@freebsd.org
+MAINTAINER=	yuanjue@FreeBSD.org
 COMMENT=	KDE frontend for Subversion
 
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
@@ -42,9 +42,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.if !defined(NOPORTDOCS)
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/kdesvn
-.endif
 
 MAN1=	kdesvn.1 kdesvnaskpass.1
 
