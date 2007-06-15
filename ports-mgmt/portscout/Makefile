@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	portscout
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/	\
+		http://www.atarininja.org/~wxs/distfiles/		\
 		http://www.inerd.com/software/${PORTNAME}/
 
 MAINTAINER=	shaun@FreeBSD.org
@@ -25,8 +26,9 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI	\
 		${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite		\
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
-.if defined(WITH_MYSQL)
+.if defined(WITH_MYSQL) || defined(WITH_SQLITE3)
 WITHOUT_PGSQL=	true
+BROKEN=		MySQL/SQLite3 is not supported yet; portscout will not work with it
 .endif
 
 .if !defined(WITHOUT_PGSQL)
@@ -35,10 +37,15 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-P
 .elif defined(WITH_MYSQL)
 USE_MYSQL=	yes
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER:S/323//}
+EXTRA_PATCHES+=	${WRKSRC}/patches/mysql.diff
+.elif defined(WITH_SQLITE3)
+USE_SQLITE=	3
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
+EXTRA_PATCHES+=	${WRKSRC}/patches/sqlite3.diff
 .endif
 
 pre-everything::
-.if defined(WITH_MYSQL)
+.if defined(WITH_MYSQL) || defined(WITH_SQLITE3)
 	@${ECHO_MSG} "+-------------------------------------------------------------+"
 	@${ECHO_MSG} "| Warning! portscout has only been tested with PostgreSQL.    |"
 	@${ECHO_MSG} "| The author makes no guarantee that anything else will work, |"
@@ -49,6 +56,8 @@ pre-everything::
 post-patch:
 .if defined(WITH_MYSQL)
 	@${REINPLACE_CMD} 's/DBI:Pg/DBI:mysql/g' ${WRKSRC}/portscout.conf
+.elif defined(WITH_SQLITE3)
+	@${REINPLACE_CMD} 's/DBI:Pg/DBI:SQLite/g' ${WRKSRC}/portscout.conf
 .endif
 	@${REINPLACE_CMD} -e "s#^\(templates .*\)/etc#\1/share#"	\
 	                  -e "s#^prefix\( *= *\).*#prefix\1${PREFIX}#"	\
