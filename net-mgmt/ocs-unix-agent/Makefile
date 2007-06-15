@@ -19,9 +19,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
 
-#NOTES: that's not a mistake it's a bug in configure.
-#Author will fix this with next uptream release.
-CONFIGURE_ARGS=	--with-zlib=${PREFIW}/usr
+CONFIGURE_ARGS=	--with-zlib=/usr
 
 PLIST_SUB=	RELEASE=${RELEASE}
 PLIST_FILES=	bin/ocs-agent-freebsd-%%RELEASE%% \
@@ -29,6 +27,6 @@ PLIST_FILES=	bin/ocs-agent-freebsd-%%RELEASE%% \
 
 .include <bsd.port.pre.mk>
 
-RELEASE!=	/usr/bin/uname -r
+RELEASE!=	${UNAME} -r
 
 .include <bsd.port.post.mk>
