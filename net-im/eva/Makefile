@@ -19,8 +19,6 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	liu_yinghong@yahoo.com.cn
 COMMENT=	QQ IM Client for KDE3
 
-BROKEN=		Unfetchable
-
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool:15
 USE_GMAKE=	yes
