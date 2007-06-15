@@ -1,0 +1,6 @@
+==================================================================
+You need to set the environment variable TCM_HOME to
+%%PREFIX%%/tcm for tcm to be able to start.
+
+You may also want to add %%PREFIX%%/tcm/man in your manpath.config.
+==================================================================

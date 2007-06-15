@@ -11,21 +11,23 @@ PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cs.utwente.nl/pub/tcm/ \
 		ftp://ftp.cs.vu.nl/pub/tcm/
-PATCHFILES=	patch-tcm-64bit
+DISTNAME=	${PORTNAME}-${PORTVERSION}.src
+
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	lawrance
-DISTNAME=	${PORTNAME}-${PORTVERSION}.src
+PATCHFILES=	patch-tcm-64bit
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Toolkit for Conceptual Modeling, create diagrams/tables/trees
 
 RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-PKGMESSAGE=	${WRKSRC}/pkg-message
-USE_MOTIF=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
+USE_MOTIF=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+SUB_FILES+=	pkg-message
 
 MANPREFIX=	${TARGETDIR}/tcm
 MAN1=		psf.1 tatd.1 tcbd.1 tcm.1 tcmd.1 tcmdv.1 tcmt.1 tcpd.1 tcrd.1 \
@@ -37,10 +39,6 @@ post-patch:
 	@${RM} ${WRKSRC}/man/windex
 	@${CHMOD} 0644 ${WRKSRC}/lib/colorrgb.txt
 	@${REINPLACE_CMD} -e 's:gcc:g++:g' ${WRKSRC}/bin/makedepend.sh
-
-post-build:
-	@${CP} pkg-message ${PKGMESSAGE}
-	@${REINPLACE_CMD} -e 's:%%LOCALBASE%%:${PREFIX}:g' ${PKGMESSAGE}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

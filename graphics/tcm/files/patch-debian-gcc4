@@ -1,0 +1,105 @@
+--- src/sd/dv/relationshipnode.h.orig
++++ src/sd/dv/relationshipnode.h
+@@ -26,6 +26,9 @@
+ class ERGraph;
+ 
+ /// relationship (ER) node class.
++
++int CompareComponent(string *c1, string *c2);
++
+ class RelationshipNode: public Node {
+ /*@Doc: {\large {\bf scope:} TERD} */
+ public:
+--- src/sd/bv/adsactivity.h.orig
++++ src/sd/bv/adsactivity.h
+@@ -23,7 +23,7 @@
+ 
+ #include "llist.h"
+ #include "lstring.h"
+-;
++
+ class ADSVar;
+ class OutputFile;
+ 
+--- src/sd/bv/bvinstances.h.orig
++++ src/sd/bv/bvinstances.h
+@@ -49,7 +49,7 @@
+ #include "../sd/bv/scdtransitionedge.h"
+ 
+ template class List<SCNode *>;
+-template class List <SCDTransitionEdge *>
++template class List <SCDTransitionEdge *>;
+ 
+ 
+ #ifdef MODELCHECK
+--- src/sd/bv/adshyperedge.c.orig
++++ src/sd/bv/adshyperedge.c
+@@ -33,7 +33,7 @@
+   cc=NULL;
+   edgelist.add(e);
+   sendevent=NULL;
+-};
++}
+ 
+ bool ADSHyperEdge::AddProp(Prop *p){
+   for (propl.first();!propl.done();propl.next()){
+--- src/tb/cellcolumn.h.orig
++++ src/tb/cellcolumn.h
+@@ -26,6 +26,9 @@
+ #include "tableviewer.h"
+ 
+ /// (table) column class.
++
++int Compare(CellColumn *c1, CellColumn *c2);
++
+ class CellColumn: public CellVector {	
+ /*@Doc: {\large {\bf scope:} table} */
+ public:
+--- src/tb/cellrow.h.orig
++++ src/tb/cellrow.h
+@@ -26,6 +26,9 @@
+ #include "tableviewer.h"
+ 
+ /// (table) row class.
++
++int Compare(CellRow *r1, CellRow *r2);
++
+ class CellRow: public CellVector {
+ /*@Doc: {\large {\bf scope:} table} */
+ public:
+--- src/tb/celltext.h.orig
++++ src/tb/celltext.h
+@@ -31,6 +31,10 @@
+ class OutputFile;
+ 
+ /// cell text class.
++
++class CellText;
++int Compare(CellText *r1, CellText *r2);
++
+ class CellText: public SimpleLabel {
+ /*@Doc: {\large {\bf scope:} table} */
+ public:
+--- src/tb/cellvector.h.orig
++++ src/tb/cellvector.h
+@@ -34,6 +34,10 @@
+ class OutputFile;
+ 
+ /// abstract base class of table rows and columns.
++
++class CellVector;
++int Compare(CellVector *c1, CellVector *c2);
++
+ class CellVector {
+ /*@Doc: {\large {\bf scope:} table} */
+ public:
+--- src/ui/application.h.orig
++++ src/ui/application.h
+@@ -28,6 +28,7 @@
+ class PrinterOptions;
+ class Color;
+ class Config;
++class MainWindow;
+ 
+ /// generic window-based application class. See: MWidget.
+ class Application: public MWidget {
