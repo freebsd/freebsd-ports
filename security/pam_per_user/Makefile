@@ -7,6 +7,7 @@
 
 PORTNAME=	pam_per_user
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.feep.net/pub/software/PAM/pam_per_user/
 
