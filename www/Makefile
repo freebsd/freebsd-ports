@@ -445,6 +445,7 @@
     SUBDIR += newsbeuter
     SUBDIR += newsfeed
     SUBDIR += nginx
+    SUBDIR += nginx-devel
     SUBDIR += notftp
     SUBDIR += npapi-xine
     SUBDIR += npc
