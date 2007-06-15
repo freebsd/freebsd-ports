@@ -112,13 +112,12 @@ post-patch:
 		${WRKSRC}/rotate-softfail.sh
 .endif
 
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/softfail.sql ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
-
-post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
