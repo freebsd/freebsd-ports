@@ -51,5 +51,5 @@ etc/exim/configure.default
 %%SA_EXIM%%@unexec if cmp -s %D/etc/exim/sa-exim.conf %D/etc/exim/sa-exim.conf.default; then rm -f %D/etc/exim/sa-exim.conf; fi
 %%SA_EXIM%%etc/exim/sa-exim.conf.default
 %%SA_EXIM%%@exec [ -f %B/sa-exim.conf ] || cp %B/%f %B/sa-exim.conf
-@dirrmtry %B
-@dirrmtry %%LOGDIR%%
+@unexec rmdir %B 2> /dev/null || true
+@unexec rmdir %%LOGDIR%% 2> /dev/null || true
