@@ -1,6 +1,6 @@
-# New ports collection makefile for:   xsidplay
-# Date created:        28 November 1999
-# Whom:                Anders Nordby <anders@fix.no>
+# New ports collection makefile for:	xsidplay
+# Date created:				28 November 1999
+# Whom:					Anders Nordby <anders@fix.no>
 #
 # $FreeBSD$
 #
@@ -32,7 +32,7 @@ QTCFGLIBS+=	${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == "alpha"
+.if ${ARCH} == "alpha"
 CFLAGS+=	-O0
 .endif
 
@@ -62,6 +62,8 @@ PORTDOCS=	README STIL.faq hv_sids.faq
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}|g' ${WRKSRC}/xsidplay.1
+	@${REINPLACE_CMD} -e '60s|HistoryFile|class &|' \
+		${WRKSRC}/src/HistoryDialog.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/xsidplay ${PREFIX}/bin
