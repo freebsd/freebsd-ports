@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.w3.org/People/Raggett/
 DISTNAME=	tidy4aug00
 EXTRACT_SUFX=	.tgz
 
+CONFLICTS=	tidy-devel-[0-9]* tidy-lib-[0-9]*
+
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Fixes and tidies up HTML files
 
