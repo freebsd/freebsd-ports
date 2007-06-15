@@ -24,7 +24,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-png-inc=${LOCALBASE}/include \
 		--with-rgbtxt=${X11BASE}/lib/X11/rgb.txt
-USE_GMAKE=	yes
 
 MAN1=		sng.1
 PLIST_FILES=	bin/sng bin/sng_regress
@@ -34,6 +33,6 @@ pre-patch:
 	@${REINPLACE_CMD} -e '33,34s|^static ||' ${WRKSRC}/sngd.c
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/sng_regress ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/sng_regress ${PREFIX}/bin
 
 .include <bsd.port.mk>
