@@ -19,7 +19,6 @@ LINUX_DIST_VER=	4
 USE_LDCONFIG=	yes
 AUTOMATIC_PLIST=yes
 DESCR=		${.CURDIR}/../${PORTNAME}/pkg-descr
-MASTER_SITE_SRC_SUBDIR=	../extras/${LINUX_DIST_VER}/SRPMS
 BRANDELF_DIRS=	usr/bin
 
 .include <bsd.port.mk>
