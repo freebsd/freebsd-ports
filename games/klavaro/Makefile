@@ -10,11 +10,10 @@ PORTVERSION=	1.0.3
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
+DIST_SUBDIR=	rerolled
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	Touchtyping trainer
-
-BROKEN=		Size mismatch
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
