@@ -13183,6 +13183,7 @@ pypanda		ports/misc/pypanda
 pypanel		ports/deskutils/pypanel
 pypersrc	ports/devel/pypersrc
 pypvm		ports/net/pypvm
+pyrenamer	ports/sysutils/pyrenamer
 pyrex		ports/devel/pyrex
 pyro		ports/graphics/pyro
 pyslsk		ports/net-p2p/pyslsk
