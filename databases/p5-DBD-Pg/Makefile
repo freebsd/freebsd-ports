@@ -18,8 +18,6 @@ COMMENT=	Provides access to PostgreSQL databases through the DBI
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-CONFLICTS=	p5-DBD-Pg-1.3*
-
 USE_PGSQL=	yes
 
 PERL_CONFIGURE=	yes
@@ -36,10 +34,6 @@ post-install:
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		needs DBI 1.38 which needs perl 5.6, install lang/perl5.8 and try again
-.endif
 
 PG_CONFIG=	${LOCALBASE}/bin/pg_config
 CONFIGURE_ENV+=	POSTGRES_INCLUDE=`${PG_CONFIG} --includedir` \
