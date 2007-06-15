@@ -1,52 +1,80 @@
-# Ports collection makefile for:  pear-HTML_QuickForm
-# Date created:			  30 March 2004
-# Whom:				  Gerrit Beine (<gerrit@beine-computer.de>)
+# Ports collection makefile for:  pear-HTML_QuickForm2
+# Date created:			  17 May 2007
+# Whom:				  Gerrit Beine (<gerrit.beine@gmx.de>)
 #
 # $FreeBSD$
 #
 
-PORTNAME=	HTML_QuickForm
-PORTVERSION=	3.2.9
+PORTNAME=	HTML_QuickForm2
+PORTVERSION=	0.1.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	gerrit.beine@gmx.de
-COMMENT=	Provide methods for creating, validating and processing HTML forms
+COMMENT=	PHP5 rewrite of the HTML_QuickForm package
 
-BUILD_DEPENDS=	${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common
+BUILD_DEPENDS=	${PEARDIR}/HTML/Common2.php:${PORTSDIR}/devel/pear-HTML_Common2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+DEFAULT_PHP_VER=5
+IGNORE_WITH_PHP=4
+
 CATEGORY=	HTML
-FILES=		QuickForm.php \
-		QuickForm/advcheckbox.php QuickForm/autocomplete.php QuickForm/button.php \
-		QuickForm/checkbox.php QuickForm/date.php QuickForm/element.php \
-		QuickForm/file.php QuickForm/group.php QuickForm/header.php \
-		QuickForm/hidden.php QuickForm/hiddenselect.php QuickForm/hierselect.php \
-		QuickForm/html.php QuickForm/image.php QuickForm/input.php \
-		QuickForm/link.php QuickForm/password.php QuickForm/radio.php \
-		QuickForm/reset.php QuickForm/select.php QuickForm/static.php \
-		QuickForm/submit.php QuickForm/text.php QuickForm/textarea.php \
-		QuickForm/xbutton.php \
-		QuickForm/Renderer.php QuickForm/Rule.php QuickForm/RuleRegistry.php \
-		QuickForm/Renderer/Array.php QuickForm/Renderer/ArraySmarty.php \
-		QuickForm/Renderer/Default.php \
-		QuickForm/Renderer/ITDynamic.php QuickForm/Renderer/ITStatic.php \
-		QuickForm/Renderer/Object.php \
-		QuickForm/Renderer/ObjectFlexy.php QuickForm/Renderer/QuickHtml.php \
-		QuickForm/Rule/Callback.php QuickForm/Rule/Compare.php QuickForm/Rule/Email.php \
-		QuickForm/Rule/Range.php QuickForm/Rule/Regex.php QuickForm/Rule/Required.php
-DOCS=		elements.php filters.php formrule.php groups.php rules-builtin.php rules-custom.php \
-		renderers/FlexyDynamic_example.php renderers/FlexyStatic_example.php \
-		renderers/ITDynamic_example.php renderers/ITDynamic_example2.php \
-		renderers/ITStatic_example.php renderers/QuickHtml_example.php \
-		renderers/SmartyDynamic_example.php renderers/SmartyStatic_example.php \
-		renderers/multiple-labels.php renderers/templates/it-dynamic-2.html \
-		renderers/templates/it-dynamic.html renderers/templates/it-static.html \
-		renderers/templates/smarty-dynamic-fancygroup.tpl \
-		renderers/templates/smarty-dynamic-green.tpl renderers/templates/smarty-dynamic.tpl \
-		renderers/templates/smarty-static.tpl renderers/templates/html.html \
-		renderers/templates/flexy-dynamic.html renderers/templates/flexy-static.html \
-		renderers/templates/label.html renderers/templates/styles/green.html \
-		renderers/templates/styles/fancygroup.html
+FILES=		QuickForm2/Container/Fieldset.php \
+		QuickForm2/DataSource/Array.php \
+		QuickForm2/DataSource/Submit.php \
+		QuickForm2/DataSource/SuperGlobal.php \
+		QuickForm2/Element/Button.php \
+		QuickForm2/Element/Input.php \
+		QuickForm2/Element/InputButton.php \
+		QuickForm2/Element/InputCheckable.php \
+		QuickForm2/Element/InputCheckbox.php \
+		QuickForm2/Element/InputFile.php \
+		QuickForm2/Element/InputHidden.php \
+		QuickForm2/Element/InputImage.php \
+		QuickForm2/Element/InputPassword.php \
+		QuickForm2/Element/InputRadio.php \
+		QuickForm2/Element/InputReset.php \
+		QuickForm2/Element/InputSubmit.php \
+		QuickForm2/Element/InputText.php \
+		QuickForm2/Element/Select.php \
+		QuickForm2/Element/Textarea.php \
+		QuickForm2/Container.php \
+		QuickForm2/DataSource.php \
+		QuickForm2/Element.php \
+		QuickForm2/Exception.php \
+		QuickForm2/Factory.php \
+		QuickForm2/Node.php \
+		QuickForm2.php
+EXAMPLES=	basic-elements.php
+TESTS=		QuickForm2/Container/AllTests.php \
+		QuickForm2/Container/FieldsetTest.php \
+		QuickForm2/DataSource/AllTests.php \
+		QuickForm2/DataSource/ArrayTest.php \
+		QuickForm2/DataSource/SuperGlobalTest.php \
+		QuickForm2/Element/AllTests.php \
+		QuickForm2/Element/ButtonTest.php \
+		QuickForm2/Element/InputButtonTest.php \
+		QuickForm2/Element/InputCheckableTest.php \
+		QuickForm2/Element/InputCheckboxTest.php \
+		QuickForm2/Element/InputFileTest.php \
+		QuickForm2/Element/InputHiddenTest.php \
+		QuickForm2/Element/InputImageTest.php \
+		QuickForm2/Element/InputPasswordTest.php \
+		QuickForm2/Element/InputResetTest.php \
+		QuickForm2/Element/InputSubmitTest.php \
+		QuickForm2/Element/InputTest.php \
+		QuickForm2/Element/SelectTest.php \
+		QuickForm2/Element/TextareaTest.php \
+		QuickForm2/_files/FakeElement.php \
+		QuickForm2/_files/InvalidFile.php \
+		QuickForm2/AllTests.php \
+		QuickForm2/ContainerTest.php \
+		QuickForm2/ElementTest.php \
+		QuickForm2/FactoryTest.php \
+		QuickForm2/NodeTest.php \
+		AllTests.php \
+		QuickForm2Test.php
+_EXAMPLESDIR=	docs/examples
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"
