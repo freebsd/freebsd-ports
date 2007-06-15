@@ -1,6 +1,6 @@
-# New ports collection makefile for:  	shaaft
-# Date created:       		02 Jan 2004
-# Whom:  			krion@FreeBSD.org
+# New ports collection makefile for:	Shaaft
+# Date created:				02 Jan 2004
+# Whom:					Kirill Ponomarew <krion@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -25,22 +25,27 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-optimize
+DATADIR=	${PREFIX}/share/Shaaft
+
+PLIST_FILES=	bin/Packer bin/shaaft %%DATADIR%%/resource.dat
+PLIST_DIRS=	%%DATADIR%%
 
 MAN6=		${PORTNAME}.6
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
+BROKEN=		Does not compile on sparc64
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG:T}|g ; \
-		 s|^CXXFLAGS|#CXXFLAGS|g ; \
-		 s|/usr/X11R6|${X11BASE}|g ; \
-		 s|-lSDL | |g ; \
-		 s|-lpng12|-lpng|g' ${WRKSRC}/configure
+		s|^CXXFLAGS|#CXXFLAGS|g ; \
+		s|/usr/X11R6|${X11BASE}|g ; \
+		s|-lSDL | |g ; \
+		s|-lpng12|-lpng|g' ${WRKSRC}/configure
 	@${GREP} -lR "SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|SDL/SDL|SDL|g'
+	@${REINPLACE_CMD} -e 's|== 3|>= 3|' ${WRKSRC}/utils/hashMap.hpp
 
 .include <bsd.port.post.mk>
