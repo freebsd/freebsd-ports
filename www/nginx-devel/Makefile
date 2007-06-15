@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.5.25
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	osa
+PKGNAMESUFFIX=	-devel
+DISTNAME=	nginx-${PORTVERSION}
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Robust and small WWW server
@@ -26,6 +27,7 @@ HTTP_PORT?=	80
 USE_PERL5=	yes
 .endif
 
+CONFLICTS?=	nginx-0.5.*
 USE_RC_SUBR=	nginx.sh
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX}/etc/nginx \
