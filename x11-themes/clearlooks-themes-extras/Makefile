@@ -15,6 +15,8 @@ DISTNAME=	Clearlooks-Big_Pack-${PORTVERSION}.x
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extras colour schemes for Clearlooks engine theme
 
+BROKEN=		Checksum mismatch
+
 NO_BUILD=	yes
 USE_GNOME=	gtk20
 
