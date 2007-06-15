@@ -1,9 +1,10 @@
 PlanetPenguin Racer is an OpenGL racing game featuring Tux, the
 Linux mascot. The goal of the game is to slide down a snow- and
 ice-covered mountain as quickly as possible. It is based on the
-GPL version of TuxRacer. 
+GPL version of TuxRacer.
 
 Differences from TuxRacer include:
+
 	* Course progress bar
 	* Themes
 	* New terrain types (lava, etc.)
