@@ -13440,6 +13440,7 @@ qwdtools	ports/games/qwdtools
 qwt		ports/x11-toolkits/qwt
 qwt-devel	ports/x11-toolkits/qwt-devel
 qwtplot3d	ports/math/qwtplot3d
+qwtplot3d-qt4	ports/math/qwtplot3d-qt4
 r1q2		ports/games/r1q2
 rabl_client	ports/mail/rabl_client
 rabl_server	ports/mail/rabl_server
