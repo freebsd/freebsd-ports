@@ -38,6 +38,7 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/fe-vect.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/func.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/laptopbig.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/bug/ll.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/mesh.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/zArithmetic_bug1.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/ccc-adp.edp
@@ -94,13 +95,19 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P3.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P3.o
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P3.so
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P3dc.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P3dc.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P4.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P4.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P4.o
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P4.so
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P4dc.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/Element_P4dc.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/FESpace.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/FQuadTree.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/InitFunct.hpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/LapDG3.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/LapDG4.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/LaplaceP3.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/LaplaceP4.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/MatriceCreuse.hpp
@@ -135,6 +142,7 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/error.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/fem.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/fem3.hpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/ff-mt19937ar.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/ffstack.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/funcTemplate.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/funcTemplate.edp
@@ -154,6 +162,7 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/myfunction.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/myfunction.so
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/plot-fb-P3.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/plot-fb-P3dc.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/plot-fb-P4.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/problem.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/qf11to25.cpp
@@ -165,6 +174,8 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/rgraph.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/showverb.hpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/strversionnumber.hpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/testFE-P3.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/load/testFE-P3dc.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/testFE.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/testFEMorley.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/load/throwassert.hpp
