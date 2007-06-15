@@ -155,6 +155,7 @@
     SUBDIR += libgnomeprint
     SUBDIR += libgnomeprint-reference
     SUBDIR += libgnomeprintmm
+    SUBDIR += libharu
     SUBDIR += libijs
     SUBDIR += libotf
     SUBDIR += libpaper
