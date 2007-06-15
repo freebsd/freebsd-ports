@@ -1,0 +1,10 @@
+--- themes/Human/gtk-2.0/gtkrc.orig	Fri Jun  8 00:06:54 2007
++++ themes/Human/gtk-2.0/gtkrc	Fri Jun  8 00:07:19 2007
+@@ -7,6 +7,7 @@
+ #
+ # Feel free to modify and share!
+ 
++gtk-icon-sizes = "panel-menu=24,24"
+ 
+ style "clearlooks-default"
+ {

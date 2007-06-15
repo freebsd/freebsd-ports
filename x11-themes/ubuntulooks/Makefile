@@ -7,7 +7,7 @@
 
 PORTNAME=	ubuntulooks
 PORTVERSION=	0.9.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://archive.ubuntu.com/ubuntu/pool/main/u/ubuntulooks/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
@@ -23,10 +23,4 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		does not compile
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
