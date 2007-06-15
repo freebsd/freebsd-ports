@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compiler/decompiler for Scriptable Network Graphics
 
 BUILD_DEPENDS=	${X11BASE}/lib/X11/rgb.txt:${X_CLIENTS_PORT}
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
@@ -26,11 +26,12 @@ CONFIGURE_ARGS=	--with-png-inc=${LOCALBASE}/include \
 		--with-rgbtxt=${X11BASE}/lib/X11/rgb.txt
 USE_GMAKE=	yes
 
-MAN1=	sng.1
+MAN1=		sng.1
 PLIST_FILES=	bin/sng bin/sng_regress
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|-static||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '33,34s|^static ||' ${WRKSRC}/sngd.c
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/sng_regress ${PREFIX}/bin
