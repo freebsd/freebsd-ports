@@ -12,7 +12,6 @@ MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	osa
 PKGNAMESUFFIX=	-devel
-DISTNAME=	nginx-${PORTVERSION}
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Robust and small WWW server
