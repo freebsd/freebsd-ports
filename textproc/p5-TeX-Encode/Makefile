@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	TeX-Encode
-PORTVERSION=	0.8
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/T/TI/TIMBRODY
@@ -18,8 +17,6 @@ COMMENT=	Encode/decode Perl utf-8 strings into TeX
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		Unfetchable
 
 MAN3=	TeX::Encode.3
 
