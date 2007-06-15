@@ -39,8 +39,10 @@ MAKE_ENV=	LDFLAGS=${PTHREAD_LIBS}
 CFLAGS+=-DNO_THREADS
 .endif
 
+.if defined (WITH_SSH)
 post-patch:
 	${REINPLACE_CMD} -e 's|shell\,\"rsh\"|shell\,\"ssh\"|' ${WRKSRC}/iozone.c
+.endif
 
 do-install:
 	${STRIP_CMD} ${WRKSRC}/iozone
