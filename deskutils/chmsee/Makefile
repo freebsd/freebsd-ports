@@ -7,7 +7,7 @@
 
 PORTNAME=	chmsee
 PORTVERSION=	0.9.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://chmsee.gro.clinux.org/
 
@@ -15,7 +15,7 @@ MAINTAINER=	liu_yinghong@yahoo.com.cn
 COMMENT=	A viewer for Microsoft Help "CHM" files
 
 LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib \
-    		gtkhtml-3.8.15:${PORTSDIR}/www/gtkhtml38
+		gtkhtml-3.14:${PORTSDIR}/www/gtkhtml3
 
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20 libglade2 gnomeprefix gnomehack libgnome
@@ -25,7 +25,11 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} 's|libgtkhtml-3.8|libgtkhtml-3.14|g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
