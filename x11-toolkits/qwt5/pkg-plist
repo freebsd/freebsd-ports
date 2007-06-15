@@ -66,7 +66,7 @@ include/qwt/qwt_valuelist.h
 include/qwt/qwt_wheel.h
 lib/libqwt.so
 lib/libqwt.so.5
-%%DESIGNER_PLUGIN%%lib/kde3/plugins/designer/libqwtplugin.so
+%%DESIGNER_PLUGIN%%lib/plugins/designer/libqwt_designer_plugin.so
 %%PORTDOCS%%%%DOCSDIR%%/analogclock.png
 %%PORTDOCS%%%%DOCSDIR%%/annotated.html
 %%PORTDOCS%%%%DOCSDIR%%/class_qwt_abstract_scale-members.html
@@ -902,7 +902,6 @@ lib/libqwt.so.5
 %%PORTDOCS%%%%DOCSDIR%%/tabs.css
 %%PORTDOCS%%%%DOCSDIR%%/todo.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%DESIGNER_PLUGIN%%@dirrmtry lib/kde3/plugins/designer/
-%%DESIGNER_PLUGIN%%@dirrmtry lib/kde3/plugins/
-%%DESIGNER_PLUGIN%%@dirrmtry lib/kde3/
+%%DESIGNER_PLUGIN%%@dirrmtry lib/plugins/designer
+%%DESIGNER_PLUGIN%%@dirrmtry lib/plugins
 @dirrm include/qwt
