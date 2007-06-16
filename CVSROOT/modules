@@ -4088,6 +4088,7 @@ gsm		ports/audio/gsm
 gsmc		ports/science/gsmc
 gsmlib		ports/comms/gsmlib
 gsnes9x		ports/emulators/gsnes9x
+gsnmp		ports/net-mgmt/gsnmp
 gsoap		ports/devel/gsoap
 gspdf		ports/print/gspdf
 gspeakers	ports/audio/gspeakers
