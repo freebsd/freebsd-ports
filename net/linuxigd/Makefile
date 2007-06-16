@@ -6,27 +6,26 @@
 #
 
 PORTNAME=	linuxigd
-PORTVERSION=	0.92
-PORTREVISION=	2
+PORTVERSION=	1.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	linux-igd
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux UPnP Internet Gateway Device
 
-LIB_DEPENDS=	upnp.1:${PORTSDIR}/devel/upnp104
+LIB_DEPENDS=	upnp.2:${PORTSDIR}/devel/upnp
 
+USE_RC_SUBR=	linuxigd
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/linux-igd
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/gateway.h
+MAN8=		upnpd.8
 
-post-install:
-	@${MKDIR} ${PREFIX}/etc/rc.d
-	@${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.sh.sample ${PREFIX}/etc/rc.d
+post-extract:
+	@${RM} ${WRKSRC}/iptc.?
+
+post-patch:
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g"
 
 .include <bsd.port.mk>
