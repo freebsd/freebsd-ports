@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Pager
-PORTVERSION=	2.3.4
+PORTVERSION=	2.4.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR data paging class
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
