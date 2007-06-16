@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	libdasm
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.klake.org/~jt/misc/
 
 MAINTAINER=	antoine.brodin@laposte.net
 COMMENT=	A simple x86 disassembly library
 
-INSTALLS_SHLIB=	yes
+USE_LDCONFIG=	yes
+
+PORTDOCS=	HISTORY.txt README.txt
 
 .if !defined(WITHOUT_EXAMPLES)
 PLIST_SUB+=	EXAMPLES=""
@@ -43,8 +45,9 @@ post-install:
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/HISTORY.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
+	@for f in ${PORTDOCS}; do \
+	  ${INSTALL_DATA} ${WRKSRC}/$${f} ${DOCSDIR}; \
+	 done
 .endif
 
 .include <bsd.port.post.mk>
